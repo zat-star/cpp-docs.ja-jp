@@ -1,5 +1,5 @@
 ---
-title: "CVSListBox クラス |Microsoft ドキュメント"
+title: CVSListBox Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,8 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CVSListBox::PreTranslateMessage method
-- CVSListBox class
+- CVSListBox [MFC], CVSListBox
+- CVSListBox [MFC], AddItem
+- CVSListBox [MFC], EditItem
+- CVSListBox [MFC], GetCount
+- CVSListBox [MFC], GetItemData
+- CVSListBox [MFC], GetItemText
+- CVSListBox [MFC], GetSelItem
+- CVSListBox [MFC], RemoveItem
+- CVSListBox [MFC], SelectItem
+- CVSListBox [MFC], SetItemData
+- CVSListBox [MFC], GetListHwnd
 ms.assetid: c79be7b4-46ed-4af8-a41e-68962782d8ef
 caps.latest.revision: 30
 author: mikeblome
@@ -46,66 +55,66 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 4527249fc1a22a1db0623ea46954065fcbd071f4
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d84db3fe2c27925db01188f43a3d467e6119ca2b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cvslistbox-class"></a>CVSListBox クラス
-`CVSListBox`クラスが編集可能なリスト コントロールをサポートします。  
+# <a name="cvslistbox-class"></a>CVSListBox Class
+The `CVSListBox` class supports an editable list control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CVSListBox : public CVSListBoxBase  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CVSListBox::CVSListBox](#cvslistbox)|`CVSListBox` オブジェクトを構築します。|  
-|`CVSListBox::~CVSListBox`|デストラクターです。|  
+|[CVSListBox::CVSListBox](#cvslistbox)|Constructs a `CVSListBox` object.|  
+|`CVSListBox::~CVSListBox`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CVSListBox::AddItem](#additem)|リスト コントロールに文字列を追加します。 (`CVSListBoxBase::AddItem` をオーバーライドします)。|  
-|[CVSListBox::EditItem](#edititem)|リスト コントロール項目のテキストの編集操作を開始します。 (`CVSListBoxBase::EditItem` をオーバーライドします)。|  
-|[CVSListBox::GetCount](#getcount)|編集可能なリスト コントロール内の文字列の数を取得します。 (`CVSListBoxBase::GetCount` をオーバーライドします)。|  
-|[CVSListBox::GetItemData](#getitemdata)|編集可能なリスト コントロール項目に関連付けられているアプリケーション固有の 32 ビット値を取得します。 (`CVSListBoxBase::GetItemData` をオーバーライドします)。|  
-|[CVSListBox::GetItemText](#getitemtext)|編集可能なリスト コントロール項目のテキストを取得します。 (`CVSListBoxBase::GetItemText` をオーバーライドします)。|  
-|[CVSListBox::GetSelItem](#getselitem)|編集可能なリスト コントロールで現在選択されている項目の&0; から始まるインデックスを取得します。 (`CVSListBoxBase::GetSelItem` をオーバーライドします)。|  
-|`CVSListBox::PreTranslateMessage`|ウィンドウのメッセージの変換にディスパッチされる前に、 [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955)と[DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows 関数です。 詳細およびメソッドの構文は、「 [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage)します。 (`CVSListBoxBase::PreTranslateMessage` をオーバーライドします)。|  
-|[CVSListBox::RemoveItem](#removeitem)|編集可能なリスト コントロールから項目を削除します。 (`CVSListBoxBase::RemoveItem` をオーバーライドします)。|  
-|[CVSListBox::SelectItem](#selectitem)|編集可能なリスト コントロール文字列を選択します。 (`CVSListBoxBase::SelectItem` をオーバーライドします)。|  
-|[CVSListBox::SetItemData](#setitemdata)|アプリケーション固有の 32 ビット値を編集可能なリスト コントロール項目に関連付けます。 (`CVSListBoxBase::SetItemData` をオーバーライドします)。|  
+|[CVSListBox::AddItem](#additem)|Adds a string to a list control. (Overrides `CVSListBoxBase::AddItem`.)|  
+|[CVSListBox::EditItem](#edititem)|Starts an edit operation on the text of a list control item. (Overrides `CVSListBoxBase::EditItem`.)|  
+|[CVSListBox::GetCount](#getcount)|Retrieves the number of strings in an editable list control. (Overrides `CVSListBoxBase::GetCount`.)|  
+|[CVSListBox::GetItemData](#getitemdata)|Retrieves an application-specific 32-bit value that is associated with an editable list control item. (Overrides `CVSListBoxBase::GetItemData`.)|  
+|[CVSListBox::GetItemText](#getitemtext)|Retrieves the text of an editable list control item. (Overrides `CVSListBoxBase::GetItemText`.)|  
+|[CVSListBox::GetSelItem](#getselitem)|Retrieves the zero-based index of the currently selected item in an editable list control. (Overrides `CVSListBoxBase::GetSelItem`.)|  
+|`CVSListBox::PreTranslateMessage`|Translates window messages before they are dispatched to the [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955) and [DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows functions. For more information and method syntax, see [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage). (Overrides `CVSListBoxBase::PreTranslateMessage`.)|  
+|[CVSListBox::RemoveItem](#removeitem)|Removes an item from an editable list control. (Overrides `CVSListBoxBase::RemoveItem`.)|  
+|[CVSListBox::SelectItem](#selectitem)|Selects an editable list control string. (Overrides `CVSListBoxBase::SelectItem`.)|  
+|[CVSListBox::SetItemData](#setitemdata)|Associates an application-specific 32-bit value with an editable list control item. (Overrides `CVSListBoxBase::SetItemData`.)|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CVSListBox::GetListHwnd](#getlisthwnd)|現在の埋め込みリスト ビュー コントロールにハンドルを返します。|  
+|[CVSListBox::GetListHwnd](#getlisthwnd)|Returns the handle to the current embedded list view control.|  
   
-## <a name="remarks"></a>コメント  
- `CVSListBox`クラスには、一連のユーザーが作成、変更、削除、またはリスト コントロール項目を再配置できるように編集ボタンが用意されています。  
+## <a name="remarks"></a>Remarks  
+ The `CVSListBox` class provides a set of edit buttons that enable the user to create, modify, delete, or rearrange the items in a list control.  
   
- 編集可能なリスト コントロールの画像を次に示します。 2 番目の一覧のエントリは、"Item2"のタイトルは編集用に選択します。  
+ The following is a picture of the editable list control. The second list entry, which is titled "Item2", is selected for editing.  
   
- ![CVSListBox コントロール](../../mfc/reference/media/cvslistbox.png "cvslistbox")  
+ ![CVSListBox control](../../mfc/reference/media/cvslistbox.png "cvslistbox")  
   
- 場合は編集可能なリスト コントロールを追加するには、リソース エディターを使用することに注意して、**ツールボックス**エディターのペインがコントロールを定義済みの編集可能なリストを提供していません。 など、スタティック コントロールの代わりに、追加、**グループ ボックス**コントロールです。 フレームワークでは、プレース ホルダーとして静的コントロールを使用して、サイズおよび編集可能なリスト コントロールの位置を指定します。  
+ If you use the resource editor to add an editable list control, notice that the **Toolbox** pane of the editor does not provide a predefined editable list control. Instead, add a static control such as the **Group Box** control. The framework uses the static control as a placeholder to specify the size and position of the editable list control.  
   
- 編集可能なリスト コントロールをダイアログ ボックスのテンプレートを使用する宣言、`CVSListBox`ダイアログ ボックス クラスの変数です。 変数とコントロール間のデータ交換をサポートするためには、定義、`DDX_Control`マクロのエントリ、 `DoDataExchange`  ダイアログ ボックスのメソッドです。 既定では、編集ボタンなし、編集可能なリスト コントロールが作成されます。 編集用のボタンを有効にするのにには、継承された CVSListBoxBase::SetStandardButtons メソッドを使用します。  
+ To use an editable list control in a dialog box template, declare a `CVSListBox` variable in your dialog box class. To support data exchange between the variable and the control, define a `DDX_Control` macro entry in the `DoDataExchange` method of the dialog box. By default, the editable list control is created without edit buttons. Use the inherited CVSListBoxBase::SetStandardButtons method to enable the edit buttons.  
   
- 詳細については、サンプル ディレクトリを参照してください、 `New Controls` Page3.cpp と Page3.h ファイルのサンプルです。  
+ For more information, see the Samples directory, the `New Controls` sample, the Page3.cpp and Page3.h files.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -118,11 +127,11 @@ class CVSListBox : public CVSListBoxBase
   
  [CVSListBox](../../mfc/reference/cvslistbox-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxvslistbox.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxvslistbox.h  
   
-##  <a name="additem"></a>CVSListBox::AddItem  
- リスト コントロールに文字列を追加します。  
+##  <a name="additem"></a>  CVSListBox::AddItem  
+ Adds a string to a list control.  
   
 ```  
 virtual int AddItem(
@@ -131,156 +140,156 @@ virtual int AddItem(
     int iIndex=-1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `strIext`  
- 文字列への参照。  
+### <a name="parameters"></a>Parameters  
+ [in] `strIext`  
+ A reference to a string.  
   
- [入力] `dwData`  
- 文字列に関連付けられているアプリケーション固有の 32 ビット値。 既定値は 0 です。  
+ [in] `dwData`  
+ An application-specific 32-bit value that is associated with the string. The default value is 0.  
   
- [入力] `iIndex`  
- 文字列を保持する位置の&0; から始まるインデックス。 場合、`iIndex`パラメーターは戻り値-1 は、文字列がリストの末尾に追加します。 既定値は -1 です。  
+ [in] `iIndex`  
+ The zero-based index of the position that will hold the string. If the `iIndex` parameter is -1, the string is added to the end of the list. The default value is -1.  
   
-### <a name="return-value"></a>戻り値  
- リスト コントロール内の文字列の位置の&0; から始まるインデックス。  
+### <a name="return-value"></a>Return Value  
+ The zero-based index of the position of the string in the list control.  
   
-### <a name="remarks"></a>コメント  
- 使用して、 [CVSListBox::GetItemData](#getitemdata)で指定された値を取得するメソッド、`dwData`パラメーター。 この値は、アプリケーション固有の整数値またはその他のデータへのポインターを指定できます。  
+### <a name="remarks"></a>Remarks  
+ Use the [CVSListBox::GetItemData](#getitemdata) method to retrieve the value that is specified by the `dwData` parameter. This value can be an application-specific integer or a pointer to other data.  
   
-##  <a name="cvslistbox"></a>CVSListBox::CVSListBox  
- `CVSListBox` オブジェクトを構築します。  
+##  <a name="cvslistbox"></a>  CVSListBox::CVSListBox  
+ Constructs a `CVSListBox` object.  
   
 ```  
 CVSListBox();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="edititem"></a>CVSListBox::EditItem  
- リスト コントロール項目のテキストの編集操作を開始します。  
+##  <a name="edititem"></a>  CVSListBox::EditItem  
+ Starts an edit operation on the text of a list control item.  
   
 ```  
 virtual BOOL EditItem(int iIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iIndex`  
- リスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iIndex`  
+ Zero-based index of a list control item.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`編集操作が正常に起動した場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the edit operation starts successfully; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- ユーザーが、項目のラベルをダブルクリックするか、キーを押して編集操作を開始、 **F2**または**space キーを押す**キーの項目にフォーカスがあります。  
+### <a name="remarks"></a>Remarks  
+ The user starts an edit operation either by double-clicking the label of an item, or by pressing the **F2** or **SPACEBAR** key when an item has the focus.  
   
-##  <a name="getcount"></a>CVSListBox::GetCount  
- 編集可能なリスト コントロール内の文字列の数を取得します。  
+##  <a name="getcount"></a>  CVSListBox::GetCount  
+ Retrieves the number of strings in an editable list control.  
   
 ```  
 virtual int GetCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- リスト コントロールの項目の数。  
+### <a name="return-value"></a>Return Value  
+ The number of items in the list control.  
   
-### <a name="remarks"></a>コメント  
- 数がである最後の項目のインデックス値より&1; 大きいインデックスが&0; から始まるため、注意してください。  
+### <a name="remarks"></a>Remarks  
+ Note that the count is one greater than the index value of the last item because the index is zero-based.  
   
-##  <a name="getitemdata"></a>CVSListBox::GetItemData  
- 編集可能なリスト コントロール項目に関連付けられているアプリケーション固有の 32 ビット値を取得します。  
+##  <a name="getitemdata"></a>  CVSListBox::GetItemData  
+ Retrieves an application-specific 32-bit value that is associated with an editable list control item.  
   
 ```  
 virtual DWORD_PTR GetItemData(int iIndex) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iIndex`  
- 編集可能なリスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iIndex`  
+ The zero-based index of an editable list control item.  
   
-### <a name="return-value"></a>戻り値  
- 指定した項目に関連付けられている 32 ビット値。  
+### <a name="return-value"></a>Return Value  
+ The 32-bit value that is associated with the specified item.  
   
-### <a name="remarks"></a>コメント  
- 使用して、 [CVSListBox::SetItemData](#setitemdata)または[CVSListBox::AddItem](#additem)に 32 ビット値をリスト コントロール項目に関連付けるメソッド。 この値は、アプリケーション固有の整数値またはその他のデータへのポインターを指定できます。  
+### <a name="remarks"></a>Remarks  
+ Use the [CVSListBox::SetItemData](#setitemdata) or [CVSListBox::AddItem](#additem) method to associate the 32-bit value with the list control item. This value can be an application-specific integer or a pointer to other data.  
   
-##  <a name="getitemtext"></a>CVSListBox::GetItemText  
- 編集可能なリスト コントロール項目のテキストを取得します。  
+##  <a name="getitemtext"></a>  CVSListBox::GetItemText  
+ Retrieves the text of an editable list control item.  
   
 ```  
 virtual CString GetItemText(int iIndex) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iIndex`  
- 編集可能なリスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iIndex`  
+ The zero-based index of an editable list control item.  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)指定した項目のテキストを含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that contains the text of the specified item.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getlisthwnd"></a>CVSListBox::GetListHwnd  
- 現在の埋め込みリスト ビュー コントロールにハンドルを返します。  
+##  <a name="getlisthwnd"></a>  CVSListBox::GetListHwnd  
+ Returns the handle to the current embedded list view control.  
   
 ```  
 virtual HWND GetListHwnd() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 埋め込みリスト ビュー コントロールへのハンドル。  
+### <a name="return-value"></a>Return Value  
+ A handle to the embedded list view control.  
   
-### <a name="remarks"></a>コメント  
- サポートする組み込みのリスト ビュー コントロールを識別するハンドルを取得するには、このメソッドを使用して、`CVSListBox`クラスです。  
+### <a name="remarks"></a>Remarks  
+ Use this method to retrieve a handle to the embedded list view control that supports the `CVSListBox` class.  
   
-##  <a name="getselitem"></a>CVSListBox::GetSelItem  
- 編集可能なリスト コントロールで現在選択されている項目の&0; から始まるインデックスを取得します。  
+##  <a name="getselitem"></a>  CVSListBox::GetSelItem  
+ Retrieves the zero-based index of the currently selected item in an editable list control.  
   
 ```  
 virtual int GetSelItem() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- このメソッドが成功した場合、現在選択されている項目の&0; から始まるインデックスそれ以外の場合、-1 を返します。  
+### <a name="return-value"></a>Return Value  
+ If this method is successful, the zero-based index of the currently selected item; otherwise, -1.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="removeitem"></a>CVSListBox::RemoveItem  
- 編集可能なリスト コントロールから項目を削除します。  
+##  <a name="removeitem"></a>  CVSListBox::RemoveItem  
+ Removes an item from an editable list control.  
   
 ```  
 virtual BOOL RemoveItem(int iIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iIndex`  
- 編集可能なリスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iIndex`  
+ The zero-based index of an editable list control item.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`指定した項目が削除された場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the specified item is removed; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="selectitem"></a>CVSListBox::SelectItem  
- 編集可能なリスト コントロール文字列を選択します。  
+##  <a name="selectitem"></a>  CVSListBox::SelectItem  
+ Selects an editable list control string.  
   
 ```  
 virtual BOOL SelectItem(int iItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iItem`  
- 編集可能なリスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iItem`  
+ The zero-based index of an editable list control item.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method is successful; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、指定された項目を選択し、必要な場合は、ビューにアイテムをスクロールします。  
+### <a name="remarks"></a>Remarks  
+ This method selects the specified item, and if it is required, scrolls the item into view.  
   
-##  <a name="setitemdata"></a>CVSListBox::SetItemData  
- アプリケーション固有の 32 ビット値を編集可能なリスト コントロール項目に関連付けます。  
+##  <a name="setitemdata"></a>  CVSListBox::SetItemData  
+ Associates an application-specific 32-bit value with an editable list control item.  
   
 ```  
 virtual void SetItemData(
@@ -288,16 +297,16 @@ virtual void SetItemData(
     DWORD_PTR dwData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iIndex`  
- 編集可能なリスト コントロール項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iIndex`  
+ The zero-based index of an editable list control item.  
   
- [入力] `dwData`  
- 32 ビット値です。 この値は、アプリケーション固有の整数値またはその他のデータへのポインターを指定できます。  
+ [in] `dwData`  
+ A 32-bit value. This value can be an application-specific integer or a pointer to other data.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

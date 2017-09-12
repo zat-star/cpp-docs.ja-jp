@@ -1,52 +1,72 @@
 ---
-title: "方法: リボン コントロールとイベント ハンドラーを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント ハンドラー, 追加"
-  - "リボン コントロール, 追加"
+title: 'How to: Add Ribbon Controls and Event Handlers | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- event handlers [MFC], adding
+- ribbon controls [MFC], adding
 ms.assetid: b31f25bc-ede7-49c3-9e3c-dffe4e174a69
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 方法: リボン コントロールとイベント ハンドラーを追加する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 99bd07de331cb9281bffeb39eb78123377fe31b6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リボン コントロールは、ボタンやコンボ ボックスなど、パネルに追加する要素です。  パネルは、関連するコントロールのグループが表示されるリボン バーの領域です。  
+---
+# <a name="how-to-add-ribbon-controls-and-event-handlers"></a>How to: Add Ribbon Controls and Event Handlers
+Ribbon controls are elements, such as buttons and combo boxes, that you add to panels. Panels are areas of the ribbon bar that display a group of related controls.  
   
- このトピックでは、リボン デザイナーを開き、ボタンを追加して、"Hello World" を表示するイベントをリンクします。  
+ In this topic, you will open the Ribbon Designer, add a button, and then link an event that displays "Hello World".  
   
-### リボン デザイナーを開くには  
+### <a name="to-open-the-ribbon-designer"></a>To open the Ribbon Designer  
   
-1.  Visual Studio で、**\[表示\]** メニューの **\[リソース ビュー\]** をクリックします。  
+1.  In Visual Studio, on the **View** menu, click **Resource View**.  
   
-2.  **\[リソース ビュー\]** でリボン リソースをダブルクリックして、デザイン サーフェイスに表示します。  
+2.  In **Resource View**, double-click the ribbon resource to display it on the design surface.  
   
-### ボタンとイベント ハンドラーを追加するには  
+### <a name="to-add-a-button-and-an-event-handler"></a>To add a Button and an Event Handler  
   
-1.  **ツール バー**の **\[Button\]** をクリックし、デザイン サーフェイスのパネルにドラッグします。  
+1.  From the **Toolbar**, click **Button** and drag it on to a panel in the design surface.  
   
-2.  ボタンを右クリックし、**\[イベント ハンドラーの追加\]** をクリックします。  
+2.  Right-click the button, and click **Add Event Handler**.  
   
-3.  **イベント ハンドラー ウィザード**で、既定の設定を確認し、**\[追加と編集\]** をクリックします。  詳細については、「[イベント ハンドラー ウィザード](../ide/event-handler-wizard.md)」を参照してください。  
+3.  In the **Event Handler Wizard**, confirm the default settings and click **Add and Edit**. For more information, see [Event Handler Wizard](../ide/event-handler-wizard.md).  
   
-4.  コード エディターで、ハンドラー関数に次のコードを追加します。  
+4.  In the code editor, add the following code into the handler function:  
   
-    ```  
-    MessageBox((LPCTSTR)L"Hello World");  
-    ```  
+ ```  
+    MessageBox((LPCTSTR)L"Hello World");
+
+ ```  
   
-## 参照  
- [RibbonGadgets サンプル : Ribbon Gadgets アプリケーション](../top/visual-cpp-samples.md)   
- [リボン デザイナー \(MFC\)](../mfc/ribbon-designer-mfc.md)
+## <a name="see-also"></a>See Also  
+ [RibbonGadgets Sample: Ribbon Gadgets Application](../visual-cpp-samples.md)   
+ [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)
+
+

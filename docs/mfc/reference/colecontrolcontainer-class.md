@@ -1,5 +1,5 @@
 ---
-title: "メンバー クラス |Microsoft ドキュメント"
+title: COleControlContainer Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -47,9 +47,39 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- custom controls [MFC], sites
-- COleControlContainer class
-- ActiveX control containers [C++], control site
+- COleControlContainer [MFC], COleControlContainer
+- COleControlContainer [MFC], AttachControlSite
+- COleControlContainer [MFC], BroadcastAmbientPropertyChange
+- COleControlContainer [MFC], CheckDlgButton
+- COleControlContainer [MFC], CheckRadioButton
+- COleControlContainer [MFC], CreateControl
+- COleControlContainer [MFC], CreateOleFont
+- COleControlContainer [MFC], FindItem
+- COleControlContainer [MFC], FreezeAllEvents
+- COleControlContainer [MFC], GetAmbientProp
+- COleControlContainer [MFC], GetDlgItem
+- COleControlContainer [MFC], GetDlgItemInt
+- COleControlContainer [MFC], GetDlgItemText
+- COleControlContainer [MFC], HandleSetFocus
+- COleControlContainer [MFC], HandleWindowlessMessage
+- COleControlContainer [MFC], IsDlgButtonChecked
+- COleControlContainer [MFC], OnPaint
+- COleControlContainer [MFC], OnUIActivate
+- COleControlContainer [MFC], OnUIDeactivate
+- COleControlContainer [MFC], ScrollChildren
+- COleControlContainer [MFC], SendDlgItemMessage
+- COleControlContainer [MFC], SetDlgItemInt
+- COleControlContainer [MFC], SetDlgItemText
+- COleControlContainer [MFC], m_crBack
+- COleControlContainer [MFC], m_crFore
+- COleControlContainer [MFC], m_listSitesOrWnds
+- COleControlContainer [MFC], m_nWindowlessControls
+- COleControlContainer [MFC], m_pOleFont
+- COleControlContainer [MFC], m_pSiteCapture
+- COleControlContainer [MFC], m_pSiteFocus
+- COleControlContainer [MFC], m_pSiteUIActive
+- COleControlContainer [MFC], m_pWnd
+- COleControlContainer [MFC], m_siteMap
 ms.assetid: f7ce9246-0fb7-4f07-a83a-6c2390d0fdf8
 caps.latest.revision: 21
 author: mikeblome
@@ -69,89 +99,89 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 764583d28bf71319eac5b7e51e0915ae786261a7
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6f668fb6613b0970efbe198523d5e3a27a01dbc6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="colecontrolcontainer-class"></a>メンバー クラス
-ActiveX コントロールのコントロール コンテナーとして機能します。  
+# <a name="colecontrolcontainer-class"></a>COleControlContainer Class
+Acts as a control container for ActiveX controls.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleControlContainer : public CCmdTarget  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleControlContainer::COleControlContainer](#colecontrolcontainer)|`COleControlContainer` オブジェクトを構築します。|  
+|[COleControlContainer::COleControlContainer](#colecontrolcontainer)|Constructs a `COleControlContainer` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleControlContainer::AttachControlSite](#attachcontrolsite)|コンテナーによってホストされるコントロール サイトを作成します。|  
-|[COleControlContainer::BroadcastAmbientPropertyChange](#broadcastambientpropertychange)|アンビエント プロパティが変更されたホストされるすべてのコントロールに通知します。|  
-|[COleControlContainer::CheckDlgButton](#checkdlgbutton)|指定されたボタン コントロールを変更します。|  
-|[COleControlContainer::CheckRadioButton](#checkradiobutton)|グループの指定されたオプション ボタンを選択します。|  
-|[COleControlContainer::CreateControl](#createcontrol)|ホストされている ActiveX コントロールを作成します。|  
-|[COleControlContainer::CreateOleFont](#createolefont)|OLE フォントを作成します。|  
-|[COleControlContainer::FindItem](#finditem)|指定されたコントロールのカスタムのサイトを返します。|  
-|[COleControlContainer::FreezeAllEvents](#freezeallevents)|コントロール サイトがイベントを受け入れるかどうかを判断します。|  
-|[COleControlContainer::GetAmbientProp](#getambientprop)|指定されたアンビエント プロパティを取得します。|  
-|[COleControlContainer::GetDlgItem](#getdlgitem)|指定されたダイアログ コントロールを取得します。|  
-|[COleControlContainer::GetDlgItemInt](#getdlgitemint)|指定したダイアログ コントロールの値を取得します。|  
-|[COleControlContainer::GetDlgItemText](#getdlgitemtext)|指定したダイアログ コントロールのキャプションを取得します。|  
-|[COleControlContainer::HandleSetFocus](#handlesetfocus)|コンテナーが処理を決定`WM_SETFOCUS`メッセージです。|  
-|[COleControlContainer::HandleWindowlessMessage](#handlewindowlessmessage)|ウィンドウなしのコントロールに送信されたメッセージを処理します。|  
-|[COleControlContainer::IsDlgButtonChecked](#isdlgbuttonchecked)|指定したボタンの状態を判断します。|  
-|[COleControlContainer::OnPaint](#onpaint)|コンテナーの一部を再描画と呼ばれます。|  
-|[COleControlContainer::OnUIActivate](#onuiactivate)|コントロールが埋め込みでアクティブ化されると呼び出されます。|  
-|[COleControlContainer::OnUIDeactivate](#onuideactivate)|コントロールが非アクティブにすると呼び出されます。|  
-|[COleControlContainer::ScrollChildren](#scrollchildren)|子ウィンドウからスクロール メッセージを受信するときに、フレームワークによって呼び出されます。|  
-|[COleControlContainer::SendDlgItemMessage](#senddlgitemmessage)|指定されたコントロールにメッセージを送信します。|  
-|[COleControlContainer::SetDlgItemInt](#setdlgitemint)|指定したコントロールの値を設定します。|  
-|[COleControlContainer::SetDlgItemText](#setdlgitemtext)|指定したコントロールのテキストを設定します。|  
+|[COleControlContainer::AttachControlSite](#attachcontrolsite)|Creates a control site, hosted by the container.|  
+|[COleControlContainer::BroadcastAmbientPropertyChange](#broadcastambientpropertychange)|Informs all hosted controls that an ambient property has changed.|  
+|[COleControlContainer::CheckDlgButton](#checkdlgbutton)|Modifies the specified button control.|  
+|[COleControlContainer::CheckRadioButton](#checkradiobutton)|Selects the specified radio button of a group.|  
+|[COleControlContainer::CreateControl](#createcontrol)|Creates a hosted ActiveX control.|  
+|[COleControlContainer::CreateOleFont](#createolefont)|Creates an OLE font.|  
+|[COleControlContainer::FindItem](#finditem)|Returns the custom site of the specified control.|  
+|[COleControlContainer::FreezeAllEvents](#freezeallevents)|Determines if the control site is accepting events.|  
+|[COleControlContainer::GetAmbientProp](#getambientprop)|Retrieves the specified ambient property.|  
+|[COleControlContainer::GetDlgItem](#getdlgitem)|Retrieves the specified dialog control.|  
+|[COleControlContainer::GetDlgItemInt](#getdlgitemint)|Retrieves the value of the specified dialog control.|  
+|[COleControlContainer::GetDlgItemText](#getdlgitemtext)|Retrieves the caption of the specified dialog control.|  
+|[COleControlContainer::HandleSetFocus](#handlesetfocus)|Determines if the container handles `WM_SETFOCUS` messages.|  
+|[COleControlContainer::HandleWindowlessMessage](#handlewindowlessmessage)|Handles messages sent to a windowless control.|  
+|[COleControlContainer::IsDlgButtonChecked](#isdlgbuttonchecked)|Determines the state of the specified button.|  
+|[COleControlContainer::OnPaint](#onpaint)|Called to repaint a portion of the container.|  
+|[COleControlContainer::OnUIActivate](#onuiactivate)|Called when a control is about to be in-place activated.|  
+|[COleControlContainer::OnUIDeactivate](#onuideactivate)|Called when a control is about to be deactivated.|  
+|[COleControlContainer::ScrollChildren](#scrollchildren)|Called by the framework when scroll messages are received from a child window.|  
+|[COleControlContainer::SendDlgItemMessage](#senddlgitemmessage)|Sends a message to the specified control.|  
+|[COleControlContainer::SetDlgItemInt](#setdlgitemint)|Sets the value of the specified control.|  
+|[COleControlContainer::SetDlgItemText](#setdlgitemtext)|Sets the text of the specified control.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleControlContainer::m_crBack](#m_crback)|コンテナーの背景色。|  
-|[COleControlContainer::m_crFore](#m_crfore)|コンテナーの前景色。|  
-|[COleControlContainer::m_listSitesOrWnds](#m_listsitesorwnds)|サポートされているコントロールのサイトの一覧。|  
-|[COleControlContainer::m_nWindowlessControls](#m_nwindowlesscontrols)|ホストされたウィンドウなしのコントロールの数。|  
-|[COleControlContainer::m_pOleFont](#m_polefont)|OLE フォントのカスタム コントロール サイトへのポインター。|  
-|[COleControlContainer::m_pSiteCapture](#m_psitecapture)|キャプチャ コントロール サイトへのポインター。|  
-|[COleControlContainer::m_pSiteFocus](#m_psitefocus)|現在入力フォーカス コントロールへのポインター。|  
-|[COleControlContainer::m_pSiteUIActive](#m_psiteuiactive)|インプレースでアクティブになっているコントロールへのポインター。|  
-|[COleControlContainer::m_pWnd](#m_pwnd)|コントロールのコンテナーを実装するウィンドウへのポインター。|  
-|[COleControlContainer::m_siteMap](#m_sitemap)|サイト マップします。|  
+|[COleControlContainer::m_crBack](#m_crback)|The background color of the container.|  
+|[COleControlContainer::m_crFore](#m_crfore)|The foreground color of the container.|  
+|[COleControlContainer::m_listSitesOrWnds](#m_listsitesorwnds)|A list of the supported control sites.|  
+|[COleControlContainer::m_nWindowlessControls](#m_nwindowlesscontrols)|The number of hosted windowless controls.|  
+|[COleControlContainer::m_pOleFont](#m_polefont)|A pointer to the OLE font of the custom control site.|  
+|[COleControlContainer::m_pSiteCapture](#m_psitecapture)|Pointer to the capture control site.|  
+|[COleControlContainer::m_pSiteFocus](#m_psitefocus)|Pointer to the control that currently has input focus.|  
+|[COleControlContainer::m_pSiteUIActive](#m_psiteuiactive)|Pointer to the control that is currently in-place activated.|  
+|[COleControlContainer::m_pWnd](#m_pwnd)|Pointer to the window implementing the control container.|  
+|[COleControlContainer::m_siteMap](#m_sitemap)|The site map.|  
   
-## <a name="remarks"></a>コメント  
- これは、1 つまたは複数の ActiveX コントロール サイトをサポートすることで (によって実装される`COleControlSite`)。 `COleControlContainer`完全に実装する、 [IOleInPlaceFrame](http://msdn.microsoft.com/library/windows/desktop/ms692770)と[IOleContainer](http://msdn.microsoft.com/library/windows/desktop/ms690103)インターフェイス、埋め込み先アイテムとして、必要条件を満たすために格納されている ActiveX コントロールを許可します。  
+## <a name="remarks"></a>Remarks  
+ This is done by providing support for one or more ActiveX control sites (implemented by `COleControlSite`). `COleControlContainer` fully implements the [IOleInPlaceFrame](http://msdn.microsoft.com/library/windows/desktop/ms692770) and [IOleContainer](http://msdn.microsoft.com/library/windows/desktop/ms690103) interfaces, allowing the contained ActiveX controls to fulfill their qualifications as in-place items.  
   
- 一般的には、このクラスと組み合わせて使用`COccManager`と`COleControlSite`を&1; つまたは複数の ActiveX コントロールのカスタムのサイトとカスタム ActiveX コントロール コンテナーを実装します。  
+ Commonly, this class is used in conjunction with `COccManager` and `COleControlSite` to implement a custom ActiveX control container, with custom sites for one or more ActiveX controls.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
  `COleControlContainer`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxocc.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxocc.h  
   
-##  <a name="attachcontrolsite"></a>COleControlContainer::AttachControlSite  
- 作成し、コントロールのサイトに接続するためにフレームワークによって呼び出されます。  
+##  <a name="attachcontrolsite"></a>  COleControlContainer::AttachControlSite  
+ Called by the framework to create and attach a control site.  
   
 ```  
 virtual void AttachControlSite(
@@ -164,35 +194,35 @@ void AttachControlSite(
     UINT nIDC = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- ポインター、`CWnd`オブジェクトです。  
+ A pointer to a `CWnd` object.  
   
  `nIDC`  
- 接続する、コントロールの ID。  
+ The ID of the control to be attached.  
   
-### <a name="remarks"></a>コメント  
- このプロセスをカスタマイズする場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Override this function if you want to customize this process.  
   
 > [!NOTE]
->  MFC ライブラリに静的にリンクしている場合は、この関数の最初の形式を使用します。 MFC ライブラリに動的にリンクしている場合は、2 番目の形式を使用します。  
+>  Use the first form of this function if you are statically linking to the MFC library. Use the second form if you are dynamically linking to the MFC library.  
   
-##  <a name="broadcastambientpropertychange"></a>COleControlContainer::BroadcastAmbientPropertyChange  
- アンビエント プロパティが変更されたホストされるすべてのコントロールに通知します。  
+##  <a name="broadcastambientpropertychange"></a>  COleControlContainer::BroadcastAmbientPropertyChange  
+ Informs all hosted controls that an ambient property has changed.  
   
 ```  
 virtual void BroadcastAmbientPropertyChange(DISPID dispid);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dispid`  
- 変更されたアンビエント プロパティのディスパッチの ID。  
+ The dispatch ID of the ambient property being changed.  
   
-### <a name="remarks"></a>コメント  
- アンビエント プロパティの値が変更されたときに、この関数は、フレームワークによって呼び出されます。 この動作をカスタマイズするには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ This function is called by the framework when an ambient property has changed value. Override this function to customize this behavior.  
   
-##  <a name="checkdlgbutton"></a>COleControlContainer::CheckDlgButton  
- ボタンの現在の状態を変更します。  
+##  <a name="checkdlgbutton"></a>  COleControlContainer::CheckDlgButton  
+ Modifies the current state of the button.  
   
 ```  
 virtual void CheckDlgButton(
@@ -200,21 +230,21 @@ virtual void CheckDlgButton(
     UINT nCheck);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIDButton`  
- 変更するボタンの ID。  
+ The ID of the button to be modified.  
   
  `nCheck`  
- ボタンの状態を指定します。 次のいずれかの値を指定します。  
+ Specifies the state of the button. Can be one of the following:  
   
-- **BST_CHECKED**ボタンの状態をオフに設定します。  
+- **BST_CHECKED** Sets the button state to checked.  
   
-- **BST_INDETERMINATE**淡色表示されている、不確定な状態を示すボタンの状態を設定します。 この値を使用して、ボタンがある場合のみ、 **BS_3STATE**または**BS_AUTO3STATE**スタイル。  
+- **BST_INDETERMINATE** Sets the button state to grayed, indicating an indeterminate state. Use this value only if the button has the **BS_3STATE** or **BS_AUTO3STATE** style.  
   
-- **設定されている**ボタンの状態をオフに設定します。  
+- **BST_UNCHECKED** Sets the button state to cleared.  
   
-##  <a name="checkradiobutton"></a>COleControlContainer::CheckRadioButton  
- グループ内の指定されたオプション ボタンを選択し、グループ内の残りのボタンをクリアします。  
+##  <a name="checkradiobutton"></a>  COleControlContainer::CheckRadioButton  
+ Selects a specified radio button in a group and clears the remaining buttons in the group.  
   
 ```  
 virtual void CheckRadioButton(
@@ -223,32 +253,32 @@ virtual void CheckRadioButton(
     int nIDCheckButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIDFirstButton`  
- グループ内の最初のオプション ボタンの識別子を指定します。  
+ Specifies the identifier of the first radio button in the group.  
   
  `nIDLastButton`  
- グループ内の最後のオプション ボタンの識別子を指定します。  
+ Specifies the identifier of the last radio button in the group.  
   
  `nIDCheckButton`  
- チェックするオプション ボタンの識別子を指定します。  
+ Specifies the identifier of the radio button to be checked.  
   
-##  <a name="colecontrolcontainer"></a>COleControlContainer::COleControlContainer  
- `COleControlContainer` オブジェクトを構築します。  
+##  <a name="colecontrolcontainer"></a>  COleControlContainer::COleControlContainer  
+ Constructs a `COleControlContainer` object.  
   
 ```  
 explicit COleControlContainer(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- コントロールのコンテナーの親ウィンドウへのポインター。  
+ A pointer to the parent window of the control container.  
   
-### <a name="remarks"></a>コメント  
- オブジェクトが正常に作成される追加のカスタム コントロール サイトへの呼び出しを`AttachControlSite`します。  
+### <a name="remarks"></a>Remarks  
+ Once the object has been successfully created, add a custom control site with a call to `AttachControlSite`.  
   
-##  <a name="createcontrol"></a>COleControlContainer::CreateControl  
- 指定したホストされている、ActiveX コントロールを作成`COleControlSite`オブジェクトです。  
+##  <a name="createcontrol"></a>  COleControlContainer::CreateControl  
+ Creates an ActiveX control, hosted by the specified `COleControlSite` object.  
   
 ```  
 BOOL CreateControl(
@@ -278,104 +308,104 @@ BOOL CreateControl(
     COleControlSite** ppNewSite =NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWndCtrl`  
- コントロールを表すウィンドウ オブジェクトへのポインター。  
+ A pointer to the window object representing the control.  
   
  `clsid`  
- コントロールの一意のクラス ID。  
+ The unique class ID of the control.  
   
  `lpszWindowName`  
- コントロールに表示されるテキストへのポインター。 (もしあれば) は、コントロールのキャプションまたはテキストのプロパティの値を設定します。 場合**NULL**コントロールのキャプションまたはテキストのプロパティは変更されません。  
+ A pointer to the text to be displayed in the control. Sets the value of the control's Caption or Text property (if any). If **NULL**, the control's Caption or Text property is not changed.  
   
  `dwStyle`  
- ウィンドウ スタイル。 使用できるスタイルについては、「、**解説**セクションです。  
+ Windows styles. The available styles are listed under the **Remarks** section.  
   
  `rect`  
- コントロールのサイズと位置を指定します。 いずれかになります、`CRect`オブジェクトまたは`RECT`構造体。  
+ Specifies the control's size and position. It can be either a `CRect` object or a `RECT` structure.  
   
  `nID`  
- コントロールの子ウィンドウの ID を指定します  
+ Specifies the control's child window ID.  
   
  `pPersist`  
- ポインター、`CFile`コントロールの永続的な状態を格納します。 既定値は**NULL**、このコントロール自体の初期化を任意の永続的なストレージからの状態を復元しないことを示します。 ない場合**NULL**へのポインターである必要があります、 `CFile`-ストリームまたはストレージのいずれかの形式でのコントロールの永続的なデータを含むオブジェクトを派生します。 クライアントの以前の操作でこのデータが保存された可能性があります。 `CFile`その他のデータを含めることができますが、読み取り/書き込みを指すポインターへの呼び出しの時に永続的なデータの最初のバイトに設定する必要がありますが、`CreateControl`です。  
+ A pointer to a `CFile` containing the persistent state for the control. The default value is **NULL**, indicating that the control initializes itself without restoring its state from any persistent storage. If not **NULL**, it should be a pointer to a `CFile`-derived object that contains the control's persistent data, in the form of either a stream or a storage. This data could have been saved in a previous activation of the client. The `CFile` can contain other data, but must have its read-write pointer set to the first byte of persistent data at the time of the call to `CreateControl`.  
   
  `bStorage`  
- 示すかどうかのデータ`pPersist`として解釈する必要があります`IStorage`または`IStream`データ。 場合にデータ`pPersist`、記憶域は、`bStorage`する必要があります**TRUE**します。 場合にデータ`pPersist`、ストリームは、`bStorage`する必要があります**FALSE**します。 既定値は**FALSE**します。  
+ Indicates whether the data in `pPersist` should be interpreted as `IStorage` or `IStream` data. If the data in `pPersist` is a storage, `bStorage` should be **TRUE**. If the data in `pPersist` is a stream, `bStorage` should be **FALSE**. The default value is **FALSE**.  
   
  `bstrLicKey`  
- 省略可能なライセンス キーのデータ。 このデータは、実行時ライセンス キーが必要なコントロールを作成するときだけ必要です。 コントロールは、ライセンスをサポートする場合を成功させるのにコントロールを作成するためのライセンス キーを提供する必要があります。 既定値は**NULL**します。  
+ Optional license key data. This data is needed only for creating controls that require a run-time license key. If the control supports licensing, you must provide a license key for the creation of the control to succeed. The default value is **NULL**.  
   
  *ppNewSite*  
- 作成されるコントロールをホストする既存のコントロール サイトへのポインター。 既定値は**NULL**、新しいコントロールのサイトが自動的に作成され、新しいコントロールにアタッチされていることを示します。  
+ A pointer to the existing control site that will host the control being created. The default value is **NULL**, indicating that a new control site will be automatically created and attached to the new control.  
   
  `ppt`  
- ポインター、**ポイント**コントロールの左上隅を格納する構造体。 コントロールのサイズの値によって決まります*psize*します。 `ppt`と*psize*値は、サイズと、コントロールの位置を指定するオプションのメソッドです。  
+ A pointer to a **POINT** structure that contains the upper-left corner of the control. The size of the control is determined by the value of *psize*. The `ppt` and *psize* values are an optional method of specifying the size and position of the control.  
   
  *psize*  
- ポインター、**サイズ**コントロールのサイズを格納する構造体。 左上隅の値によって決まります`ppt`します。 `ppt`と*psize*値は、サイズと、コントロールの位置を指定するオプションのメソッドです。  
+ A pointer to a **SIZE** structure that contains the size of the control. The upper-left corner is determined by the value of `ppt`. The `ppt` and *psize* values are an optional method of specifying the size and position of the control.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Windows のサブセットのみ`dwStyle`でフラグがサポートされている`CreateControl`:  
+### <a name="remarks"></a>Remarks  
+ Only a subset of the Windows `dwStyle` flags are supported by `CreateControl`:  
   
-- **WS_VISIBLE**が最初に表示されるウィンドウを作成します。 通常のウィンドウと同様に、すぐに表示されるようにコントロールするかどうかに必要です。  
+- **WS_VISIBLE** Creates a window that is initially visible. Required if you want the control to be visible immediately, like ordinary windows.  
   
-- **WS_DISABLED**最初に無効になっているウィンドウを作成します。 無効になっているウィンドウは、ユーザーからの入力を受け取ることはできません。 コントロールは、Enabled プロパティに設定できます。  
+- **WS_DISABLED** Creates a window that is initially disabled. A disabled window cannot receive input from the user. Can be set if the control has an Enabled property.  
   
-- `WS_BORDER`ウィンドウは、細い罫線を作成します。 コントロールの境界線スタイルのプロパティの場合、設定できます。  
+- `WS_BORDER` Creates a window with a thin-line border. Can be set if control has a BorderStyle property.  
   
-- **WS_GROUP**コントロールのグループの最初のコントロールを指定します。 ユーザーを変更できますキーボード フォーカス、グループ内の&1; つのコントロールから次の方向キーを使用しています。 定義されたすべてのコントロール、 **WS_GROUP**後、同じグループに属している最初のコントロールのスタイルを設定します。 次のコントロールで、 **WS_GROUP**スタイルは、グループを終了し、次のグループを開始します。  
+- **WS_GROUP** Specifies the first control of a group of controls. The user can change the keyboard focus from one control in the group to the next by using the direction keys. All controls defined with the **WS_GROUP** style after the first control belong to the same group. The next control with the **WS_GROUP** style ends the group and starts the next group.  
   
-- **WS_TABSTOP**ユーザーが TAB キーを押したときにキーボード フォーカスが受信可能なコントロールを指定します。 次のコントロールにキーボード フォーカスを移した TAB キーを押すと、 **WS_TABSTOP**スタイル。  
+- **WS_TABSTOP** Specifies a control that can receive the keyboard focus when the user presses the TAB key. Pressing the TAB key changes the keyboard focus to the next control of the **WS_TABSTOP** style.  
   
- 2 番目のオーバー ロードを使用すると、既定のサイズのコントロールを作成できます。  
+ Use the second overload to create default-sized controls.  
   
-##  <a name="createolefont"></a>COleControlContainer::CreateOleFont  
- OLE フォントを作成します。  
+##  <a name="createolefont"></a>  COleControlContainer::CreateOleFont  
+ Creates an OLE font.  
   
 ```  
 void CreateOleFont(CFont* pFont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFont`  
- コントロール コンテナーで使用するフォントへのポインター。  
+ A pointer to the font to be used by the control container.  
   
-##  <a name="finditem"></a>COleControlContainer::FindItem  
- 指定した項目をホストするカスタムのサイトを検索します。  
+##  <a name="finditem"></a>  COleControlContainer::FindItem  
+ Finds the custom site that hosts the specified item.  
   
 ```  
 virtual COleControlSite* FindItem(UINT nID) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- 検索するアイテムの識別子。  
+ The identifier of the item to be found.  
   
-### <a name="return-value"></a>戻り値  
- 指定した項目のカスタムのサイトへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the custom site of the specified item.  
   
-##  <a name="freezeallevents"></a>COleControlContainer::FreezeAllEvents  
- かどうかは、コンテナーは関連付けられたコントロールのサイトからのイベントを無視するか、ライセンス条項に同意を決定します。  
+##  <a name="freezeallevents"></a>  COleControlContainer::FreezeAllEvents  
+ Determines if the container will ignore events from the attached control sites or accept them.  
   
 ```  
 void FreezeAllEvents(BOOL bFreeze);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bFreeze`  
- イベントが処理される場合は 0 以外それ以外の場合 0 を返します。  
+ Nonzero if events will be processed; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  コントロールは、コントロール コンテナーによって要求された場合のイベントの発生を停止する必要はありません。 起動処理を続行できますが、コントロール コンテナーで後続のすべてのイベントは無視されます。  
+>  The control is not required to stop firing events if requested by the control container. It can continue firing but all subsequent events will be ignored by the control container.  
   
-##  <a name="getambientprop"></a>COleControlContainer::GetAmbientProp  
- 指定されたアンビエント プロパティの値を取得します。  
+##  <a name="getambientprop"></a>  COleControlContainer::GetAmbientProp  
+ Retrieves the value of a specified ambient property.  
   
 ```  
 virtual BOOL GetAmbientProp(
@@ -384,21 +414,21 @@ virtual BOOL GetAmbientProp(
     VARIANT* pvarResult);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSite`  
- アンビエント プロパティの取得元となるコントロール サイトへのポインター。  
+ A pointer to a control site from which the ambient property will be retrieved.  
   
  `dispid`  
- 目的のアンビエント プロパティのディスパッチの ID。  
+ The dispatch ID of the desired ambient property.  
   
  *pVarResult*  
- アンビエント プロパティの値へのポインター。  
+ A pointer to the value of the ambient property.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-##  <a name="getdlgitem"></a>COleControlContainer::GetDlgItem  
- ダイアログ ボックスで指定されたコントロールまたは子ウィンドウまたはその他のウィンドウへのポインターを取得します。  
+##  <a name="getdlgitem"></a>  COleControlContainer::GetDlgItem  
+ Retrieves a pointer to the specified control or child window in a dialog box or other window.  
   
 ```  
 virtual CWnd* GetDlgItem(int nID) const;  
@@ -408,18 +438,18 @@ virtual void GetDlgItem(
     HWND* phWnd) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- 取得する ダイアログの項目の識別子です。  
+ Identifier of the dialog item to retrieve.  
   
  `phWnd`  
- 指定したダイアログ アイテムのウィンドウ オブジェクトのハンドルへのポインター。  
+ A pointer to the handle of the specified dialog item's window object.  
   
-### <a name="return-value"></a>戻り値  
- ダイアログのアイテムのウィンドウへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the dialog item's window.  
   
-##  <a name="getdlgitemint"></a>COleControlContainer::GetDlgItemInt  
- 指定されたコントロールの翻訳されたテキストの値を取得します。  
+##  <a name="getdlgitemint"></a>  COleControlContainer::GetDlgItemInt  
+ Retrieves the value of the translated text of the given control.  
   
 ```  
 virtual UINT GetDlgItemInt(
@@ -428,30 +458,30 @@ virtual UINT GetDlgItemInt(
     BOOL bSigned) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- コントロールの識別子です。  
+ The identifier of the control.  
   
  `lpTrans`  
- 関数の成功/失敗の値を受け取ってブール変数を指すポインター ( **TRUE**は成功を示し**FALSE**失敗を示します)。  
+ Pointer to a Boolean variable that receives a function success/failure value ( **TRUE** indicates success, **FALSE** indicates failure).  
   
  `bSigned`  
- 関数が先頭にマイナス記号のテキストを調べるしが見つかった場合は、符号付き整数値を返すかどうか指定します。 場合、`bSigned`パラメーターは**TRUE**、戻り値を取得する値を符号付き整数の値に指定するキャスト、`int`型です。 拡張エラー情報を取得する[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
+ Specifies whether the function should examine the text for a minus sign at the beginning and return a signed integer value if it finds one. If the `bSigned` parameter is **TRUE**, specifying that the value to be retrieved is a signed integer value, cast the return value to an `int` type. To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="return-value"></a>戻り値  
- かどうかは成功すると、変数が指す`lpTrans`に設定されている**TRUE**、戻り値は、コントロール テキストの翻訳済みの値とします。  
+### <a name="return-value"></a>Return Value  
+ If successful, the variable pointed to by `lpTrans` is set to **TRUE**, and the return value is the translated value of the control text.  
   
- 関数が失敗した場合は、変数が指す`lpTrans`に設定されている**FALSE**、戻り値は&0; です。 0 が使用可能な変換された値であるため、戻り値が&0; は単独で障害を示していないことを注意してください。  
+ If the function fails, the variable pointed to by `lpTrans` is set to **FALSE**, and the return value is zero. Note that, since zero is a possible translated value, a return value of zero does not by itself indicate failure.  
   
- 場合`lpTrans`は**NULL**関数を使用しないため、成功または失敗に関する情報を返します。  
+ If `lpTrans` is **NULL**, the function returns no information about success or failure.  
   
-### <a name="remarks"></a>コメント  
- 関数は、テキストの先頭にある余分なスペースを削除し、10 進数字に変換して取得したテキストを変換します。 関数は、文字列の終端に達したまたは数値以外の文字を検出したときの変換を停止します。  
+### <a name="remarks"></a>Remarks  
+ The function translates the retrieved text by stripping any extra spaces at the beginning of the text and then converting the decimal digits. The function stops translating when it reaches the end of the text or encounters a nonnumeric character.  
   
- 変換された値がより大きい場合、この関数は&0; を返します**INT_MAX**の符号付き数値または**UINT_MAX** (の符号なしの数値)。  
+ This function returns zero if the translated value is greater than **INT_MAX** (for signed numbers) or **UINT_MAX** (for unsigned numbers).  
   
-##  <a name="getdlgitemtext"></a>COleControlContainer::GetDlgItemText  
- 指定されたコントロールのテキストを取得します。  
+##  <a name="getdlgitemtext"></a>  COleControlContainer::GetDlgItemText  
+ Retrieves the text of the given control.  
   
 ```  
 virtual int GetDlgItemText(
@@ -460,33 +490,33 @@ virtual int GetDlgItemText(
     int nMaxCount) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- コントロールの識別子です。  
+ The identifier of the control.  
   
  `lpStr`  
- コントロールのテキストへのポインター。  
+ Pointer to the text of the control.  
   
  `nMaxCount`  
- 指すバッファーにコピーする文字列の文字の最大長の指定`lpStr`します。 文字列の長さが、制限を超える場合、文字列は切り捨てられます。  
+ Specifies the maximum length, in characters, of the string to be copied to the buffer pointed to by `lpStr`. If the length of the string exceeds the limit, the string is truncated.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合、戻り値は、終端の null 文字を含まない、バッファーにコピーされた文字数を指定します。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value specifies the number of characters copied to the buffer, not including the terminating null character.  
   
- 関数が失敗した場合は、0 を返します。 拡張エラー情報を取得する[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
+ If the function fails, the return value is zero. To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-##  <a name="handlesetfocus"></a>COleControlContainer::HandleSetFocus  
- コンテナーが処理を決定`WM_SETFOCUS`メッセージです。  
+##  <a name="handlesetfocus"></a>  COleControlContainer::HandleSetFocus  
+ Determines if the container handles `WM_SETFOCUS` messages.  
   
 ```  
 virtual BOOL HandleSetFocus();
 ```  
   
-### <a name="return-value"></a>戻り値  
- コンテナーが処理する場合は&0; 以外。`WM_SETFOCUS`メッセージ。 それ以外の場合&0; です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the container handles `WM_SETFOCUS` messages; otherwise zero.  
   
-##  <a name="handlewindowlessmessage"></a>COleControlContainer::HandleWindowlessMessage  
- ウィンドウなしのコントロールのウィンドウ メッセージを処理します。  
+##  <a name="handlewindowlessmessage"></a>  COleControlContainer::HandleWindowlessMessage  
+ Processes window messages for windowless controls.  
   
 ```  
 virtual BOOL HandleWindowlessMessage(
@@ -496,165 +526,165 @@ virtual BOOL HandleWindowlessMessage(
     LRESULT* plResult);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `message`  
- Windows によって提供される、ウィンドウ メッセージの識別子。  
+ The identifier for the window message, provided by Windows.  
   
  `wParam`  
- メッセージのパラメーターWindows によって提供されます。 その他のメッセージに固有の情報を指定します。 このパラメーターの内容の値に依存、`message`パラメーター。  
+ Parameter of the message; provided by Windows. Specifies additional message-specific information. The contents of this parameter depend on the value of the `message` parameter.  
   
  `lParam`  
- メッセージのパラメーターWindows によって提供されます。 その他のメッセージに固有の情報を指定します。 このパラメーターの内容の値に依存、`message`パラメーター。  
+ Parameter of the message; provided by Windows. Specifies additional message-specific information. The contents of this parameter depend on the value of the `message` parameter.  
   
  *plResult*  
- Windows の結果コード。 メッセージの処理の結果を指定し、送信メッセージに依存します。  
+ Windows result code. Specifies the result of the message processing and depends on the message sent.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise zero.  
   
-### <a name="remarks"></a>コメント  
- ウィンドウなしのコントロール メッセージの処理をカスタマイズするには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Override this function to customize the handling of windowless control messages.  
   
-##  <a name="isdlgbuttonchecked"></a>COleControlContainer::IsDlgButtonChecked  
- 指定したボタンの状態を判断します。  
+##  <a name="isdlgbuttonchecked"></a>  COleControlContainer::IsDlgButtonChecked  
+ Determines the state of the specified button.  
   
 ```  
 virtual UINT IsDlgButtonChecked(int nIDButton) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIDButton`  
- ボタン コントロールの識別子です。  
+ The identifier of the button control.  
   
-### <a name="return-value"></a>戻り値  
- 作成したボタンからの戻り値、 **BS_AUTOCHECKBOX**、 **BS_AUTORADIOBUTTON**、 **BS_AUTO3STATE**、 **BS_CHECKBOX**、 **BS_RADIOBUTTON**、または**BS_3STATE**スタイル。 次のいずれかの値を指定します。  
+### <a name="return-value"></a>Return Value  
+ The return value, from a button created with the **BS_AUTOCHECKBOX**, **BS_AUTORADIOBUTTON**, **BS_AUTO3STATE**, **BS_CHECKBOX**, **BS_RADIOBUTTON**, or **BS_3STATE** style. Can be one of the following:  
   
-- **BST_CHECKED**ボタンがオンになっています。  
+- **BST_CHECKED** Button is checked.  
   
-- **BST_INDETERMINATE**ボタンは淡色表示、不確定な状態を示す (ボタンには、場合にのみ、 **BS_3STATE**または**BS_AUTO3STATE**スタイル)。  
+- **BST_INDETERMINATE** Button is grayed, indicating an indeterminate state (applies only if the button has the **BS_3STATE** or **BS_AUTO3STATE** style).  
   
-- **設定されている**ボタンは無効です。  
+- **BST_UNCHECKED** Button is cleared.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、決定するかどうか、淡色表示をオンになっているボタンが&3; つの状態のコントロールの場合は、どちらかです。  
+### <a name="remarks"></a>Remarks  
+ If the button is a three-state control, the member function determines whether it is dimmed, checked, or neither.  
   
-##  <a name="m_crback"></a>COleControlContainer::m_crBack  
- コンテナーの背景色。  
+##  <a name="m_crback"></a>  COleControlContainer::m_crBack  
+ The background color of the container.  
   
 ```  
 COLORREF m_crBack;  
 ```  
   
-##  <a name="m_crfore"></a>COleControlContainer::m_crFore  
- コンテナーの前景色。  
+##  <a name="m_crfore"></a>  COleControlContainer::m_crFore  
+ The foreground color of the container.  
   
 ```  
 COLORREF m_crFore;  
 ```  
   
-##  <a name="m_listsitesorwnds"></a>COleControlContainer::m_listSitesOrWnds  
- コンテナーによってホストされるコントロールのサイトの一覧。  
+##  <a name="m_listsitesorwnds"></a>  COleControlContainer::m_listSitesOrWnds  
+ A list of the control sites hosted by the container.  
   
 ```  
 CTypedPtrList<CPtrList, COleControlSiteOrWnd*> m_listSitesOrWnds;  
 ```  
   
-##  <a name="m_nwindowlesscontrols"></a>COleControlContainer::m_nWindowlessControls  
- コントロール コンテナーでホストされているウィンドウなしのコントロールの数。  
+##  <a name="m_nwindowlesscontrols"></a>  COleControlContainer::m_nWindowlessControls  
+ The number of windowless controls hosted by the control container.  
   
 ```  
 int m_nWindowlessControls;  
 ```  
   
-##  <a name="m_polefont"></a>COleControlContainer::m_pOleFont  
- OLE フォントのカスタム コントロール サイトへのポインター。  
+##  <a name="m_polefont"></a>  COleControlContainer::m_pOleFont  
+ A pointer to the OLE font of the custom control site.  
   
 ```  
 LPFONTDISP m_pOleFont;  
 ```  
   
-##  <a name="m_psitecapture"></a>COleControlContainer::m_pSiteCapture  
- キャプチャ コントロール サイトへのポインター。  
+##  <a name="m_psitecapture"></a>  COleControlContainer::m_pSiteCapture  
+ Pointer to the capture control site.  
   
 ```  
 COleControlSite* m_pSiteCapture;  
 ```  
   
-##  <a name="m_psitefocus"></a>COleControlContainer::m_pSiteFocus  
- 現在入力フォーカス コントロール サイトへのポインター。  
+##  <a name="m_psitefocus"></a>  COleControlContainer::m_pSiteFocus  
+ A pointer to the control site that currently has input focus.  
   
 ```  
 COleControlSite* m_pSiteFocus;  
 ```  
   
-##  <a name="m_psiteuiactive"></a>COleControlContainer::m_pSiteUIActive  
- インプレース アクティブ化は、コントロール サイトへのポインター。  
+##  <a name="m_psiteuiactive"></a>  COleControlContainer::m_pSiteUIActive  
+ A pointer to the control site that is in-place activated.  
   
 ```  
 COleControlSite* m_pSiteUIActive;  
 ```  
   
-##  <a name="m_pwnd"></a>COleControlContainer::m_pWnd  
- コンテナーに関連付けられたウィンドウ オブジェクトへのポインター。  
+##  <a name="m_pwnd"></a>  COleControlContainer::m_pWnd  
+ A pointer to the window object associated with the container.  
   
 ```  
 CWnd* m_pWnd;  
 ```  
   
-##  <a name="m_sitemap"></a>COleControlContainer::m_siteMap  
- サイト マップします。  
+##  <a name="m_sitemap"></a>  COleControlContainer::m_siteMap  
+ The site map.  
   
 ```  
 CMapPtrToPtr m_siteMap;  
 ```  
   
-##  <a name="onpaint"></a>COleControlContainer::OnPaint  
- 処理するためにフレームワークによって呼び出される`WM_PAINT`要求します。  
+##  <a name="onpaint"></a>  COleControlContainer::OnPaint  
+ Called by the framework to handle `WM_PAINT` requests.  
   
 ```  
 virtual BOOL OnPaint(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- コンテナーで使用されるデバイス コンテキストへのポインター。  
+ A pointer to the device context used by the container.  
   
-### <a name="return-value"></a>戻り値  
- メッセージが処理された場合は&0; 以外。それ以外の場合&0; を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the message was handled; otherwise zero.  
   
-### <a name="remarks"></a>コメント  
- 描画プロセスをカスタマイズするには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Override this function to customize the painting process.  
   
-##  <a name="onuiactivate"></a>COleControlContainer::OnUIActivate  
- フレームワークによって呼び出されますとコントロール サイトが指す`pSite`、しようインプレース アクティブ化します。  
+##  <a name="onuiactivate"></a>  COleControlContainer::OnUIActivate  
+ Called by the framework when the control site, pointed to by `pSite`, is about to be activated in-place.  
   
 ```  
 virtual void OnUIActivate(COleControlSite* pSite);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSite`  
- インプレース アクティブ化しようとしてコントロール サイトへのポインター。  
+ A pointer to the control site about to be in-place activated.  
   
-### <a name="remarks"></a>コメント  
- インプレース アクティブ化では、コンテナーのメイン メニューがインプレースで複合メニューに置き換えられることを意味します。  
+### <a name="remarks"></a>Remarks  
+ In-place activation means that the container's main menu is replaced with an in-place composite menu.  
   
-##  <a name="onuideactivate"></a>COleControlContainer::OnUIDeactivate  
- フレームワークによって呼び出されるとコントロール サイトが指す`pSite`が非アクティブ化しようとしています。  
+##  <a name="onuideactivate"></a>  COleControlContainer::OnUIDeactivate  
+ Called by the framework when the control site, pointed to by `pSite`, is about to be deactivated.  
   
 ```  
 virtual void OnUIDeactivate(COleControlSite* pSite);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSite`  
- 非アクティブ化するには、約コントロール サイトへのポインター。  
+ A pointer to the control site about to be deactivated.  
   
-### <a name="remarks"></a>コメント  
- この通知を受信すると、コンテナーは、ユーザー インターフェイスを再インストールし、フォーカスを取得する必要があります。  
+### <a name="remarks"></a>Remarks  
+ When this notification is received, the container should reinstall its user interface and take focus.  
   
-##  <a name="scrollchildren"></a>COleControlContainer::ScrollChildren  
- 子ウィンドウからスクロール メッセージを受信するときに、フレームワークによって呼び出されます。  
+##  <a name="scrollchildren"></a>  COleControlContainer::ScrollChildren  
+ Called by the framework when scroll messages are received from a child window.  
   
 ```  
 virtual void ScrollChildren(
@@ -662,15 +692,15 @@ virtual void ScrollChildren(
     int dy);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dx`  
- X 軸方向のスクロールの (ピクセル単位) の量。  
+ The amount, in pixels, of scrolling along the x-axis.  
   
  *dy*  
- Y 軸方向のスクロールの (ピクセル単位) の量。  
+ The amount, in pixels, of scrolling along the y-axis.  
   
-##  <a name="senddlgitemmessage"></a>COleControlContainer::SendDlgItemMessage  
- 指定されたコントロールにメッセージを送信します。  
+##  <a name="senddlgitemmessage"></a>  COleControlContainer::SendDlgItemMessage  
+ Sends a message to the specified control.  
   
 ```  
 virtual LRESULT SendDlgItemMessage(
@@ -680,21 +710,21 @@ virtual LRESULT SendDlgItemMessage(
     LPARAM lParam);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- メッセージを受信するコントロールの識別子を指定します。  
+ Specifies the identifier of the control that receives the message.  
   
  `message`  
- 送信するメッセージを指定します。  
+ Specifies the message to be sent.  
   
  `wParam`  
- その他のメッセージに固有の情報を指定します。  
+ Specifies additional message-specific information.  
   
  `lParam`  
- その他のメッセージに固有の情報を指定します。  
+ Specifies additional message-specific information.  
   
-##  <a name="setdlgitemint"></a>COleControlContainer::SetDlgItemInt  
- 指定した整数値の文字列形式にダイアログ ボックスで、コントロールのテキストを設定します。  
+##  <a name="setdlgitemint"></a>  COleControlContainer::SetDlgItemInt  
+ Sets the text of a control in a dialog box to the string representation of a specified integer value.  
   
 ```  
 virtual void SetDlgItemInt(
@@ -703,18 +733,18 @@ virtual void SetDlgItemInt(
     BOOL bSigned);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- コントロールの識別子です。  
+ The identifier of the control.  
   
  `nValue`  
- 表示される整数値。  
+ The integer value to be displayed.  
   
  `bSigned`  
- 指定するかどうか、`nValue`パラメーターの符号付きまたは符号なし。 このパラメーターがある場合**TRUE**、`nValue`が署名されています。 このパラメーターがある場合**TRUE**と`nValue`は&0; より小さく、マイナス記号は、文字列の最初の桁の前に置かれます。 このパラメーターは、する場合**FALSE**、`nValue`が署名されていません。  
+ Specifies whether the `nValue` parameter is signed or unsigned. If this parameter is **TRUE**, `nValue` is signed. If this parameter is **TRUE** and `nValue` is less than zero, a minus sign is placed before the first digit in the string. If this parameter is **FALSE**, `nValue` is unsigned.  
   
-##  <a name="setdlgitemtext"></a>COleControlContainer::SetDlgItemText  
- 含まれているテキストを使用して、指定したコントロールのテキストを設定`lpszString`します。  
+##  <a name="setdlgitemtext"></a>  COleControlContainer::SetDlgItemText  
+ Sets the text of the specified control, using the text contained in `lpszString`.  
   
 ```  
 virtual void SetDlgItemText(
@@ -722,16 +752,16 @@ virtual void SetDlgItemText(
     LPCTSTR lpszString);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- コントロールの識別子です。  
+ The identifier of the control.  
   
  `lpszString`  
- コントロールのテキストへのポインター。  
+ Pointer to the text of the control.  
   
-## <a name="see-also"></a>関連項目  
- [CCmdTarget クラス](../../mfc/reference/ccmdtarget-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [メンバー クラス](../../mfc/reference/colecontrolsite-class.md)   
- [関数のクラス](../../mfc/reference/coccmanager-class.md)
+## <a name="see-also"></a>See Also  
+ [CCmdTarget Class](../../mfc/reference/ccmdtarget-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleControlSite Class](../../mfc/reference/colecontrolsite-class.md)   
+ [COccManager Class](../../mfc/reference/coccmanager-class.md)
 

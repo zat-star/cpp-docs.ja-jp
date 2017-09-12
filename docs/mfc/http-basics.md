@@ -1,52 +1,71 @@
 ---
-title: "HTTP の基礎 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "HTTP 要求, 戻り値"
-  - "HTTP, 戻り値"
-  - "戻り値"
+title: HTTP Basics | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- HTTP [MFC], return codes
+- return codes [MFC]
+- HTTP requests [MFC], return codes
 ms.assetid: 5b7421bf-42c8-4f3a-8566-8ff5957f58cc
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# HTTP の基礎
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eb737fbca0bccb35ea6038d6279dadb064ca2328
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-インターネット アプリケーションを記述する場合は、通常、HTTP ヘッダーの情報を確認し、追加します。  リターン コードは要求されたイベントの成功または失敗を示します。  複数の共通のリターン コードは、次の表に示します。  
+---
+# <a name="http-basics"></a>HTTP Basics
+When writing an internet application, you often examine and add to the information in HTTP header. Return codes indicate the success or failure of the requested event. Several common return codes are listed in the following table.  
   
-|リターン コード|説明|  
-|--------------|--------|  
-|200|ある URL 送信です。|  
-|400|わかりにくい要求|  
-|404|要求された URL。|  
-|405|サーバーは要求されたメソッドをサポートしません。|  
-|500|不明なサーバー エラー|  
-|503|サービスを使用できません。|  
+|Return Code|Meaning|  
+|-----------------|-------------|  
+|200|URL located, transmission follows|  
+|400|Unintelligible request|  
+|404|Requested URL not found|  
+|405|Server does not support requested method|  
+|500|Unknown server error|  
+|503|Service unavailable|  
   
- HTTP 応答は、次の表に示すようにグループ化されます。  
+ The HTTP responses are grouped as shown in the following table.  
   
-|グループ|説明|  
-|----------|--------|  
-|200–299|成功|  
-|300–399|情報|  
-|400–499|要求のエラー|  
-|500–599|サーバー エラー|  
+|Group|Meaning|  
+|-----------|-------------|  
+|200-299|Success|  
+|300-399|Information|  
+|400-499|Request error|  
+|500-599|Server error|  
   
- ハイパーテキストの転送プロトコル \(HTTP\) は hypermedia の情報システム用のアプリケーション レベルのプロトコルです。  Web ブラウザーとサーバーとの通信を HTTP に関する詳細について、ハイパーテキストの転送プロトコル \(HTTP\) 仕様を参照し:  
+ The Hypertext Transfer Protocol (HTTP) is an application-level protocol for hypermedia information systems. For more information about HTTP, and how Web browsers and servers communicate, see the Hypertext Transfer Protocol (HTTP) specification:  
   
- [http:\/\/www.w3.org\/pub\/WWW\/Protocols\/](http://www.w3.org/pub/WWW/Protocols/)  
+ [http://www.w3.org/pub/WWW/Protocols/](http://www.w3.org/pub/www/protocols/)  
   
-## 参照  
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)
+
+

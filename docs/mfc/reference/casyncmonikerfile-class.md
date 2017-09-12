@@ -1,5 +1,5 @@
 ---
-title: "CAsyncMonikerFile クラス |Microsoft ドキュメント"
+title: CAsyncMonikerFile Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -27,12 +27,19 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ActiveX controls [C++], asynchronous
-- OLE controls [C++], asynchronous
-- monikers [C++], MFC
-- asynchronous controls [C++]
-- CAsyncMonikerFile class
-- IMoniker interface, binding
+- CAsyncMonikerFile [MFC], CAsyncMonikerFile
+- CAsyncMonikerFile [MFC], Close
+- CAsyncMonikerFile [MFC], GetBinding
+- CAsyncMonikerFile [MFC], GetFormatEtc
+- CAsyncMonikerFile [MFC], Open
+- CAsyncMonikerFile [MFC], CreateBindStatusCallback
+- CAsyncMonikerFile [MFC], GetBindInfo
+- CAsyncMonikerFile [MFC], GetPriority
+- CAsyncMonikerFile [MFC], OnDataAvailable
+- CAsyncMonikerFile [MFC], OnLowResource
+- CAsyncMonikerFile [MFC], OnProgress
+- CAsyncMonikerFile [MFC], OnStartBinding
+- CAsyncMonikerFile [MFC], OnStopBinding
 ms.assetid: 17378b66-a49a-4b67-88e3-7756ad26a2fc
 caps.latest.revision: 23
 author: mikeblome
@@ -52,213 +59,213 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 47ba3137b5d0d38aa59e9d627101de8350eebd50
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d188df15c70be6eb32bb53f72eb974ac286d723e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="casyncmonikerfile-class"></a>CAsyncMonikerFile クラス
-ActiveX コントロール (以前の OLE コントロール) で非同期モニカーを使用するための機能が用意されています。  
+# <a name="casyncmonikerfile-class"></a>CAsyncMonikerFile Class
+Provides functionality for the use of asynchronous monikers in ActiveX controls (formerly OLE controls).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CAsyncMonikerFile : public CMonikerFile  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAsyncMonikerFile::CAsyncMonikerFile](#casyncmonikerfile)|`CAsyncMonikerFile` オブジェクトを構築します。|  
+|[CAsyncMonikerFile::CAsyncMonikerFile](#casyncmonikerfile)|Constructs a `CAsyncMonikerFile` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAsyncMonikerFile::Close](#close)|閉じるし、すべてのリソースを解放します。|  
-|[CAsyncMonikerFile::GetBinding](#getbinding)|非同期転送バインドへのポインターを取得します。|  
-|[CAsyncMonikerFile::GetFormatEtc](#getformatetc)|ストリーム内のデータの形式を取得します。|  
-|[CAsyncMonikerFile::Open](#open)|非同期的にファイルを開きます。|  
+|[CAsyncMonikerFile::Close](#close)|Closes and releases all resources.|  
+|[CAsyncMonikerFile::GetBinding](#getbinding)|Retrieves a pointer to the asynchronous transfer binding.|  
+|[CAsyncMonikerFile::GetFormatEtc](#getformatetc)|Retrieves the format of the data in the stream.|  
+|[CAsyncMonikerFile::Open](#open)|Opens a file asynchronously.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAsyncMonikerFile::CreateBindStatusCallback](#createbindstatuscallback)|実装する COM オブジェクトを作成`IBindStatusCallback`です。|  
-|[CAsyncMonikerFile::GetBindInfo](#getbindinfo)|作成するバインドの種類に関する情報を要求する OLE システム ライブラリによって呼び出されます。|  
-|[CAsyncMonikerFile::GetPriority](#getpriority)|バインディングの優先度を取得する OLE システム ライブラリによって呼び出されます。|  
-|[CAsyncMonikerFile::OnDataAvailable](#ondataavailable)|非同期バインド操作中に、クライアントに利用可能になったデータを提供するには、呼び出されます。|  
-|[CAsyncMonikerFile::OnLowResource](#onlowresource)|リソースが低いときに呼び出されます。|  
-|[CAsyncMonikerFile::OnProgress](#onprogress)|データのダウンロード処理の進行状況を示すために呼び出されます。|  
-|[CAsyncMonikerFile::OnStartBinding](#onstartbinding)|バインディングが開始されるときに呼び出されます。|  
-|[CAsyncMonikerFile::OnStopBinding](#onstopbinding)|非同期転送が停止したときに呼び出されます。|  
+|[CAsyncMonikerFile::CreateBindStatusCallback](#createbindstatuscallback)|Creates a COM object that implements `IBindStatusCallback`.|  
+|[CAsyncMonikerFile::GetBindInfo](#getbindinfo)|Called by the OLE system library to request information on the type of bind to be created.|  
+|[CAsyncMonikerFile::GetPriority](#getpriority)|Called by the OLE system library to get the priority of the binding.|  
+|[CAsyncMonikerFile::OnDataAvailable](#ondataavailable)|Called to provide data as it becomes available to the client during asynchronous bind operations.|  
+|[CAsyncMonikerFile::OnLowResource](#onlowresource)|Called when resources are low.|  
+|[CAsyncMonikerFile::OnProgress](#onprogress)|Called to indicate progress on the data downloading process.|  
+|[CAsyncMonikerFile::OnStartBinding](#onstartbinding)|Called when binding is starting up.|  
+|[CAsyncMonikerFile::OnStopBinding](#onstopbinding)|Called when asynchronous transfer is stopped.|  
   
-## <a name="remarks"></a>コメント  
- 派生した[CMonikerFile](../../mfc/reference/cmonikerfile-class.md)からさらに派生した[関数](../../mfc/reference/colestreamfile-class.md)、`CAsyncMonikerFile`を使用して、 [IMoniker](http://msdn.microsoft.com/library/windows/desktop/ms679705) URL から非同期的にファイルの読み込みを含む任意のデータ ストリームに非同期的にアクセスするインターフェイスです。 ファイルは、ActiveX コントロールのデータパス プロパティであることができます。  
+## <a name="remarks"></a>Remarks  
+ Derived from [CMonikerFile](../../mfc/reference/cmonikerfile-class.md), which in turn is derived from [COleStreamFile](../../mfc/reference/colestreamfile-class.md), `CAsyncMonikerFile` uses the [IMoniker](http://msdn.microsoft.com/library/windows/desktop/ms679705) interface to access any data stream asynchronously, including loading files asynchronously from a URL. The files can be datapath properties of ActiveX controls.  
   
- 非同期モニカーは、ファイル転送中に、応答性の高いユーザー インターフェイスを提供するインターネット対応のアプリケーションと ActiveX コントロールで、主に使用されます。 この主要な例は、の使用[関数](../../mfc/reference/cdatapathproperty-class.md)ActiveX コントロールの非同期プロパティを指定します。 `CDataPathProperty`オブジェクトは、時間のかかるプロパティ exchange プロセス中に新しいデータの可用性を通知するコールバックを取得して繰り返しです。  
+ Asynchronous monikers are used primarily in Internet-enabled applications and ActiveX controls to provide a responsive user-interface during file transfers. A prime example of this is the use of [CDataPathProperty](../../mfc/reference/cdatapathproperty-class.md) to provide asynchronous properties for ActiveX controls. The `CDataPathProperty` object will repeatedly get a callback to indicate availability of new data during a lengthy property exchange process.  
   
- インターネット アプリケーションで非同期モニカーと ActiveX コントロールを使用する方法の詳細については、次の記事を参照してください。  
+ For more information about how to use asynchronous monikers and ActiveX controls in Internet applications, see the following articles:  
   
-- [インターネット最初のステップ: 非同期モニカー](../../mfc/asynchronous-monikers-on-the-internet.md)  
+- [Internet First Steps: Asynchronous Monikers](../../mfc/asynchronous-monikers-on-the-internet.md)  
   
-- [インターネット最初のステップ: ActiveX コントロール](../../mfc/activex-controls-on-the-internet.md)  
+- [Internet First Steps: ActiveX Controls](../../mfc/activex-controls-on-the-internet.md)  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CFile](../../mfc/reference/cfile-class.md)  
   
- [関数](../../mfc/reference/colestreamfile-class.md)  
+ [COleStreamFile](../../mfc/reference/colestreamfile-class.md)  
   
  [CMonikerFile](../../mfc/reference/cmonikerfile-class.md)  
   
  `CAsyncMonikerFile`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
   
-##  <a name="casyncmonikerfile"></a>CAsyncMonikerFile::CAsyncMonikerFile  
- `CAsyncMonikerFile` オブジェクトを構築します。  
+##  <a name="casyncmonikerfile"></a>  CAsyncMonikerFile::CAsyncMonikerFile  
+ Constructs a `CAsyncMonikerFile` object.  
   
 ```  
 CAsyncMonikerFile();
 ```  
   
-### <a name="remarks"></a>コメント  
- 作成されません、`IBindHost`インターフェイスです。 `IBindHost`指定した場合にのみに使用、**開く**メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ It does not create the `IBindHost` interface. `IBindHost` is used only if you provide it in the **Open** member function.  
   
- 詳細については、`IBindHost`インターフェイスを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a description of the `IBindHost` interface, see the Windows SDK.  
   
-##  <a name="close"></a>CAsyncMonikerFile::Close  
- この関数では、閉じ、すべてのリソースを解放します。  
+##  <a name="close"></a>  CAsyncMonikerFile::Close  
+ Call this function to close and release all resources.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- 開かれていないか、既に閉じられているファイルに呼び出すことができます。  
+### <a name="remarks"></a>Remarks  
+ Can be called on unopened or already closed files.  
   
-##  <a name="createbindstatuscallback"></a>CAsyncMonikerFile::CreateBindStatusCallback  
- 実装する COM オブジェクトを作成`IBindStatusCallback`です。  
+##  <a name="createbindstatuscallback"></a>  CAsyncMonikerFile::CreateBindStatusCallback  
+ Creates a COM object that implements `IBindStatusCallback`.  
   
 ```  
 virtual IUnknown* CreateBindStatusCallback(IUnknown* pUnkControlling);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pUnkControlling`  
- Controlling unknown へのポインター (外側**IUnknown**) または**NULL**集計が使用されていない場合。  
+ A pointer to the controlling unknown (the outer **IUnknown**) or **NULL** if aggregation is not being used.  
   
-### <a name="return-value"></a>戻り値  
- 場合`pUnkControlling`は**NULL**、関数の内部にポインターを返します**IUnknown** 、新しい COM オブジェクトのサポートに`IBindStatusCallback`です。 場合`pUnkControlling`は**NULL**へのポインターを返します、 **IUnknown** 、新しい COM オブジェクトのサポートに`IBindStatusCallback`です。  
+### <a name="return-value"></a>Return Value  
+ If `pUnkControlling` is not **NULL**, the function returns a pointer to the inner **IUnknown** on a new COM object supporting `IBindStatusCallback`. If `pUnkControlling` is **NULL**, the function returns a pointer to an **IUnknown** on a new COM object supporting `IBindStatusCallback`.  
   
-### <a name="remarks"></a>コメント  
- `CAsyncMonikerFile`実装する COM オブジェクトが必要です`IBindStatusCallback`です。 MFC は、このようなオブジェクトを実装し、集計可能であります。 オーバーライドできます`CreateBindStatusCallback`独自の COM オブジェクトを取得します。 呼び出すことによって、COM オブジェクトが MFC の実装を集計できる`CreateBindStatusCallback`COM オブジェクトの制御、不明なとします。 使用して実装されている COM オブジェクト、 `CCmdTarget` COM サポートを制御する不明なを使用して、取得できます**CCmdTarget::GetControllingUnknown**です。  
+### <a name="remarks"></a>Remarks  
+ `CAsyncMonikerFile` requires a COM object that implements `IBindStatusCallback`. MFC implements such an object, and it is aggregatable. You can override `CreateBindStatusCallback` to return your own COM object. Your COM object can aggregate MFC's implementation by calling `CreateBindStatusCallback` with the controlling unknown of your COM object. COM objects implemented using the `CCmdTarget` COM support can retrieve the controlling unknown using **CCmdTarget::GetControllingUnknown**.  
   
- COM オブジェクトを呼び出すことで MFC の実装に委任できます代わりに、 **CreateBindStatusCallback (NULL)**です。  
+ Alternately, your COM object can delegate to MFC's implementation by calling **CreateBindStatusCallback( NULL )**.  
   
- [CAsyncMonikerFile::Open](#open)呼び出し`CreateBindStatusCallback`です。  
+ [CAsyncMonikerFile::Open](#open) calls `CreateBindStatusCallback`.  
   
- 非同期モニカーおよび非同期のバインドの詳細については、次を参照してください。、 [IBindStatusCallback](http://msdn.microsoft.com/library/ie/ms775060)インターフェイスと[非同期バインド方法と記憶域作業](http://msdn.microsoft.com/library/windows/desktop/aa379152)です。 集計の詳細については、次を参照してください。[集計](http://msdn.microsoft.com/library/windows/desktop/ms686558)です。 次の 3 つすべてのトピックは、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about asynchronous monikers and asynchronous binding, see the [IBindStatusCallback](http://msdn.microsoft.com/library/ie/ms775060) interface and [How Asynchronous Binding and Storage Work](http://msdn.microsoft.com/library/windows/desktop/aa379152). For a discussion of aggregation, see [Aggregation](http://msdn.microsoft.com/library/windows/desktop/ms686558). All three topics are in the Windows SDK.  
   
-##  <a name="getbindinfo"></a>CAsyncMonikerFile::GetBindInfo  
- 非同期モニカーをバインドする方法を確認する非同期モニカーのクライアントから呼び出されます。  
+##  <a name="getbindinfo"></a>  CAsyncMonikerFile::GetBindInfo  
+ Called from the client of an asynchronous moniker to tell the asynchronous moniker how it wants to bind.  
   
 ```  
 virtual DWORD GetBindInfo() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 設定を取得**IBindStatusCallBack**です。 詳細については、`IBindStatusCallback`インターフェイスを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="return-value"></a>Return Value  
+ Retrieves the settings for **IBindStatusCallBack**. For a description of the `IBindStatusCallback` interface, see the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、非同期、ストレージ メディア (ストリーム) を使用して、データ プッシュ モデルを使用するバインディングを設定します。 バインディングの動作を変更する場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation sets the binding to be asynchronous, to use a storage medium (a stream), and to use the data-push model. Override this function if you want to change the behavior of the binding.  
   
- これを行うための 1 つの理由は、データ プッシュ モデルではなくデータ プル モデルを使用してバインドすることです。 データ プル モデルでは、クライアントがバインド操作を駆動し、モニカーのみデータをクライアントに提供が読み取られるとします。 データ プッシュ モデルでは、モニカーは、バインドの非同期操作を駆動し、継続的に新しいデータがあるたびにクライアントに通知します。  
+ One reason for doing this would be to bind using the data-pull model instead of the data-push model. In a data-pull model, the client drives the bind operation, and the moniker only provides data to the client when it is read. In a data-push model, the moniker drives the asynchronous bind operation and continuously notifies the client whenever new data is available.  
   
-##  <a name="getbinding"></a>CAsyncMonikerFile::GetBinding  
- 非同期転送バインドへのポインターを取得するには、この関数を呼び出します。  
+##  <a name="getbinding"></a>  CAsyncMonikerFile::GetBinding  
+ Call this function to retrieve a pointer to the asynchronous transfer binding.  
   
 ```  
 IBinding* GetBinding() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`IBinding`非同期転送が開始されるときに提供されるインターフェイス。 返します**NULL**何らかの理由で、転送を実行できない場合に非同期的にします。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the `IBinding` interface provided when asynchronous transfer begins. Returns **NULL** if for any reason the transfer cannot be made asynchronously.  
   
-### <a name="remarks"></a>コメント  
- これにより、データ転送プロセスを通じてコントロールを`IBinding`インターフェイス例についてで**IBinding::Abort**、 **IBinding::Pause**、および**IBinding::Resume**です。  
+### <a name="remarks"></a>Remarks  
+ This allows you to control the data transfer process through the `IBinding` interface, for example, with **IBinding::Abort**, **IBinding::Pause**, and **IBinding::Resume**.  
   
- 詳細については、`IBinding`インターフェイスを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a description of the `IBinding` interface, see the Windows SDK.  
   
-##  <a name="getformatetc"></a>CAsyncMonikerFile::GetFormatEtc  
- ストリーム内のデータの形式を取得するには、この関数を呼び出します。  
+##  <a name="getformatetc"></a>  CAsyncMonikerFile::GetFormatEtc  
+ Call this function to retrieve the format of the data in the stream.  
   
 ```  
 FORMATETC* GetFormatEtc() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- Windows の構造体へのポインター [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177)現在開いているストリーム。 返します**NULL**モニカーがバインドされていない場合、非同期ではない場合、または非同期操作が開始されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the Windows structure [FORMATETC](http://msdn.microsoft.com/library/windows/desktop/ms682177) for the currently opened stream. Returns **NULL** if the moniker has not been bound, if it is not asynchronous, or if the asynchronous operation has not begun.  
   
-##  <a name="getpriority"></a>CAsyncMonikerFile::GetPriority  
- バインディング プロセスの開始を受け取るための優先順位のスレッドにバインド操作と非同期モニカーのクライアントから呼び出されます。  
+##  <a name="getpriority"></a>  CAsyncMonikerFile::GetPriority  
+ Called from the client of an asynchronous moniker as the binding process starts to receive the priority given to the thread for the binding operation.  
   
 ```  
 virtual LONG GetPriority() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 非同期転送を行うを優先度です。 標準スレッドの優先順位フラグのいずれかの: **THREAD_PRIORITY_ABOVE_NORMAL**、 **THREAD_PRIORITY_BELOW_NORMAL**、 **THREAD_PRIORITY_HIGHEST**、 **THREAD_PRIORITY_IDLE**、 **THREAD_PRIORITY_LOWEST**、 **THREAD_PRIORITY_NORMAL**、および**THREAD_PRIORITY_TIME_CRITICAL**です。 Windows の関数を参照してください[SetThreadPriority](http://msdn.microsoft.com/library/windows/desktop/ms686277)これらの値の詳細についてはします。  
+### <a name="return-value"></a>Return Value  
+ The priority at which the asynchronous transfer will take place. One of the standard thread priority flags: **THREAD_PRIORITY_ABOVE_NORMAL**, **THREAD_PRIORITY_BELOW_NORMAL**, **THREAD_PRIORITY_HIGHEST**, **THREAD_PRIORITY_IDLE**, **THREAD_PRIORITY_LOWEST**, **THREAD_PRIORITY_NORMAL**, and **THREAD_PRIORITY_TIME_CRITICAL**. See the Windows function [SetThreadPriority](http://msdn.microsoft.com/library/windows/desktop/ms686277) for a description of these values.  
   
-### <a name="remarks"></a>コメント  
- `GetPriority`呼び出すことはできません直接です。 **THREAD_PRIORITY_NORMAL**が既定の実装によって返されます。  
+### <a name="remarks"></a>Remarks  
+ `GetPriority` should not be called directly. **THREAD_PRIORITY_NORMAL** is returned by the default implementation.  
   
-##  <a name="ondataavailable"></a>CAsyncMonikerFile::OnDataAvailable  
- 非同期モニカーは`OnDataAvailable`を指定するデータをクライアントに使用可能になったら、非同期の中に、バインド操作します。  
+##  <a name="ondataavailable"></a>  CAsyncMonikerFile::OnDataAvailable  
+ An asynchronous moniker calls `OnDataAvailable` to provide data to the client as it becomes available, during asynchronous bind operations.  
   
 ```  
 virtual void OnDataAvailable(DWORD dwSize, DWORD bscfFlag);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwSize`  
- 累積的な量 (バイト) をデータ バインドの開始以降で使用可能です。 データの量が、操作に関連するかいる特定の量が利用できないことを示す、0 にすることができます。  
+ The cumulative amount (in bytes) of data available since the beginning of the binding. Can be zero, indicating that the amount of data is not relevant to the operation, or that no specific amount became available.  
   
  *bscfFlag*  
- A **BSCF**列挙値。 次の値の 1 つ以上を指定できます。  
+ A **BSCF** enumeration value. Can be one or more of the following values:  
   
-- **BSCF_FIRSTDATANOTIFICATION**を識別する最初の呼び出し`OnDataAvailable`操作が指定されたバインド。  
+- **BSCF_FIRSTDATANOTIFICATION** Identifies the first call to `OnDataAvailable` for a given bind operation.  
   
-- **BSCF_INTERMEDIATEDATANOTIFICATION**を識別するための中間の呼び出し`OnDataAvailable`バインド操作します。  
+- **BSCF_INTERMEDIATEDATANOTIFICATION** Identifies an intermediary call to `OnDataAvailable` for a bind operation.  
   
-- **知らせる**最後の呼び出しを識別`OnDataAvailable`バインド操作します。  
+- **BSCF_LASTDATANOTIFICATION** Identifies the last call to `OnDataAvailable` for a bind operation.  
   
-### <a name="remarks"></a>コメント  
- この関数の既定の実装は、何も行いません。 実装のサンプルについては、次の例を参照してください。  
+### <a name="remarks"></a>Remarks  
+ The default implementation of this function does nothing. See the following example for a sample implementation.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCWinInet #5](../../mfc/codesnippet/cpp/casyncmonikerfile-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCWinInet#5](../../mfc/codesnippet/cpp/casyncmonikerfile-class_1.cpp)]  
   
-##  <a name="onlowresource"></a>CAsyncMonikerFile::OnLowResource  
- リソースが低いときに、モニカーによって呼び出されます。  
+##  <a name="onlowresource"></a>  CAsyncMonikerFile::OnLowResource  
+ Called by the moniker when resources are low.  
   
 ```  
 virtual void OnLowResource();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定の実装`GetBinding( )-> Abort( )`です。  
+### <a name="remarks"></a>Remarks  
+ The default implementation calls `GetBinding( )-> Abort( )`.  
   
-##  <a name="onprogress"></a>CAsyncMonikerFile::OnProgress  
- モニカー バインド操作、時間のかかる操作中に適切な間隔で通常の現在の進行状況を示すために繰り返しによって呼び出されます。  
+##  <a name="onprogress"></a>  CAsyncMonikerFile::OnProgress  
+ Called by the moniker repeatedly to indicate the current progress of this bind operation, typically at reasonable intervals during a lengthy operation.  
   
 ```  
 virtual void OnProgress(
@@ -268,80 +275,80 @@ virtual void OnProgress(
     LPCTSTR szStatusText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ulProgress`  
- 示される予想最大相対バインド操作の現在の進行状況を示す`ulProgressMax`です。  
+ Indicates the current progress of the bind operation relative to the expected maximum indicated in `ulProgressMax`.  
   
  `ulProgressMax`  
- 予想最大値を示す`ulProgress`への呼び出しの間`OnProgress`この操作にします。  
+ Indicates the expected maximum value of `ulProgress` for the duration of calls to `OnProgress` for this operation.  
   
  `ulStatusCode`  
- バインド操作の進行状況に関する追加情報を提供します。 有効な値から取得されますが、`BINDSTATUS`列挙します。 使用可能な値は、「解説」を参照してください。  
+ Provides additional information regarding the progress of the bind operation. Valid values are taken from the `BINDSTATUS` enumeration. See Remarks for possible values.  
   
  `szStatusText`  
- 値に応じて、現在の進行状況に関する情報`ulStatusCode`です。 使用可能な値は、「解説」を参照してください。  
+ Information about the current progress, depending on the value of `ulStatusCode`. See Remarks for possible values.  
   
-### <a name="remarks"></a>コメント  
- 指定できる値`ulStatusCode`(および`szStatusText`値ごとに) は。  
+### <a name="remarks"></a>Remarks  
+ Possible values for `ulStatusCode` (and the `szStatusText` for each value) are:  
   
  **BINDSTATUS_FINDINGRESOURCE**  
- バインド操作では、オブジェクトにバインドされている記憶域を含むリソースを見つけることです。 `szStatusText`検索対象となるリソースの表示名を提供 (たとえば、"www.microsoft.com") にします。  
+ The bind operation is finding the resource that holds the object or storage being bound to. The `szStatusText` provides the display name of the resource being searched for (for example, "www.microsoft.com").  
   
  **BINDSTATUS_CONNECTING**  
- バインド操作は、オブジェクトにバインドされている記憶域を含むリソースに接続します。 `szStatusText` (たとえば、IP アドレス) に接続されているリソースの表示名を提供します。  
+ The bind operation is connecting to the resource that holds the object or storage being bound to. The `szStatusText` provides the display name of the resource being connected to (for example, an IP address).  
   
  **BINDSTATUS_SENDINGREQUEST**  
- バインド操作は、オブジェクトまたはにバインドされているストレージに要求しています。 `szStatusText`オブジェクト (たとえば、ファイル名) の表示名を提供します。  
+ The bind operation is requesting the object or storage being bound to. The `szStatusText` provides the display name of the object (for example, a file name).  
   
  **BINDSTATUS_REDIRECTING**  
- バインド操作は、さまざまなデータの場所にリダイレクトされています。 `szStatusText`データの新しい場所の表示名を提供します。  
+ The bind operation has been redirected to a different data location. The `szStatusText` provides the display name of the new data location.  
   
  **BINDSTATUS_USINGCACHEDCOPY**  
- バインド操作は、キャッシュされたコピーから、記憶域、要求されたオブジェクトを取得しています。 The `szStatusText` is **NULL**.  
+ The bind operation is retrieving the requested object or storage from a cached copy. The `szStatusText` is **NULL**.  
   
  **BINDSTATUS_BEGINDOWNLOADDATA**  
- バインド操作では、オブジェクトまたはにバインドされているストレージの受信を開始しました。 `szStatusText`データの場所の表示名を提供します。  
+ The bind operation has begun receiving the object or storage being bound to. The `szStatusText` provides the display name of the data location.  
   
  **BINDSTATUS_DOWNLOADINGDATA**  
- バインド操作にバインドされている記憶域、オブジェクトを受信し続けます。 `szStatusText`データの場所の表示名を提供します。  
+ The bind operation continues to receive the object or storage being bound to. The `szStatusText` provides the display name of the data location.  
   
  **BINDSTATUS_ENDDOWNLOADDATA**  
- バインド操作では、オブジェクトまたはにバインドされているストレージの受信を終了しました。 `szStatusText`データの場所の表示名を提供します。  
+ The bind operation has finished receiving the object or storage being bound to. The `szStatusText` provides the display name of the data location.  
   
  **BINDSTATUS_CLASSIDAVAILABLE**  
- バインドされているオブジェクトのインスタンスが作成されるだけです。 `szStatusText`必要な場合は、クライアント、bind 操作を取り消す機会を許可する文字列の形式で、新しいオブジェクトの CLSID を提供します。  
+ An instance of the object being bound to is just about to be created. The `szStatusText` provides the CLSID of the new object in string format, allowing the client an opportunity to cancel the bind operation, if desired.  
   
-##  <a name="onstartbinding"></a>CAsyncMonikerFile::OnStartBinding  
- バインドが開始されるときにアクションを実行する派生クラスでは、この関数をオーバーライドします。  
+##  <a name="onstartbinding"></a>  CAsyncMonikerFile::OnStartBinding  
+ Override this function in your derived classes to perform actions when binding is starting up.  
   
 ```  
 virtual void OnStartBinding();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数がモニカーによってコールバックされます。 既定の実装では、何も行われません。  
+### <a name="remarks"></a>Remarks  
+ This function is called back by the moniker. The default implementation does nothing.  
   
-##  <a name="onstopbinding"></a>CAsyncMonikerFile::OnStopBinding  
- モニカー バインド操作の最後にによって呼び出されます。  
+##  <a name="onstopbinding"></a>  CAsyncMonikerFile::OnStopBinding  
+ Called by the moniker at the end of the bind operation.  
   
 ```  
 virtual void OnStopBinding(HRESULT hresult, LPCTSTR szError);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hresult`  
- `HRESULT`つまりエラーまたは警告の値。  
+ An `HRESULT` that is the error or warning value.  
   
  *szErrort*  
- エラーを説明する文字列を返します。  
+ A character string describing the error.  
   
-### <a name="remarks"></a>コメント  
- 転送が停止したときにアクションを実行するには、この関数をオーバーライドします。 既定では、解放`IBinding`です。  
+### <a name="remarks"></a>Remarks  
+ Override this function to perform actions when the transfer is stopped. By default, the function releases `IBinding`.  
   
- 詳細については、`IBinding`インターフェイスを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a description of the `IBinding` interface, see the Windows SDK.  
   
-##  <a name="open"></a>CAsyncMonikerFile::Open  
- 非同期的にファイルを開くには、このメンバー関数を呼び出します。  
+##  <a name="open"></a>  CAsyncMonikerFile::Open  
+ Call this member function to open a file asynchronously.  
   
 ```  
 virtual BOOL Open(
@@ -383,42 +390,42 @@ virtual BOOL Open(
     CFileException* pError = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszURL`  
- 非同期的に開かれるファイルへのポインター。 ファイルは、有効な URL またはファイル名にすることはできます。  
+ A pointer to file to be opened asynchronously. The file can be any valid URL or filename.  
   
  `pError`  
- ファイルの例外へのポインター。 エラーが発生した場合、原因に設定されます。  
+ A pointer to the file exceptions. In the event of an error, it will be set to the cause.  
   
  `pMoniker`  
- 非同期モニカー インターフェイスへのポインター `IMoniker`、正確なモニカーで取得できる、ドキュメントのモニカーの組み合わせである**IOleClientSite::GetMoniker (** *OLEWHICHMK_CONTAINER* **)**、およびパス名から作成されたモニカーです。 コントロールは、このモニカーを使用してバインドするには、これは、コントロールを保存する必要がありますモニカーではありません。  
+ A pointer to the asynchronous moniker interface `IMoniker`, a precise moniker that is the combination of the document's own moniker, which you can retrieve with **IOleClientSite::GetMoniker(** *OLEWHICHMK_CONTAINER* **)**, and a moniker created from the path name. The control can use this moniker to bind, but this is not the moniker the control should save.  
   
  *pBindHost*  
- ポインター、`IBindHost`可能性のある相対パス名からモニカーを作成するために使用するインターフェイスです。 バインド ホストは、正しくないか、モニカーは提供されない場合、は、呼び出し既定**開く (** `lpszFileName` **、**`pError`**)**です。 詳細については、`IBindHost`インターフェイスを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ A pointer to the `IBindHost` interface that will be used to create the moniker from a potentially relative pathname. If the bind host is invalid or does not provide a moniker, the call defaults to **Open(** `lpszFileName`**,**`pError`**)**. For a description of the `IBindHost` interface, see the Windows SDK.  
   
  `pServiceProvider`  
- ポインター、`IServiceProvider`インターフェイスです。 サービス プロバイダーが正しくないか、サービスを提供する失敗したかどうかは`IBindHost`、呼び出しの既定値は**開く (** `lpszFileName` **、**`pError`**)**です。  
+ A pointer to the `IServiceProvider` interface. If the service provider is invalid or fails to provide the service for `IBindHost`, the call defaults to **Open(** `lpszFileName`**,**`pError`**)**.  
   
  *pUnknown*  
- ポインター、 **IUnknown**インターフェイスです。 場合`IServiceProvider`が見つかると、関数を検索するクエリ`IBindHost`です。 サービス プロバイダーが正しくないか、サービスを提供する失敗したかどうかは`IBindHost`、呼び出しの既定値は**開く (** `lpszFileName` **、**`pError`**)**です。  
+ A pointer to the **IUnknown** interface. If `IServiceProvider` is found, the function queries for `IBindHost`. If the service provider is invalid or fails to provide the service for `IBindHost`, the call defaults to **Open(** `lpszFileName`**,**`pError`**)**.  
   
-### <a name="return-value"></a>戻り値  
- ファイルが正常に開かれている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the file is opened successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この呼び出しでは、バインディング プロセスを開始します。  
+### <a name="remarks"></a>Remarks  
+ This call initiates the binding process.  
   
- URL またはのファイル名を使用することができます、`lpszURL`パラメーター。 例:  
+ You can use a URL or a filename for the `lpszURL` parameter. For example:  
   
- [!code-cpp[NVC_MFCWinInet #6](../../mfc/codesnippet/cpp/casyncmonikerfile-class_2.cpp)]  
+ [!code-cpp[NVC_MFCWinInet#6](../../mfc/codesnippet/cpp/casyncmonikerfile-class_2.cpp)]  
   
- - または  
+ - or -  
   
- [!code-cpp[NVC_MFCWinInet #7](../../mfc/codesnippet/cpp/casyncmonikerfile-class_3.cpp)]  
+ [!code-cpp[NVC_MFCWinInet#7](../../mfc/codesnippet/cpp/casyncmonikerfile-class_3.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CMonikerFile クラス](../../mfc/reference/cmonikerfile-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CMonikerFile クラス](../../mfc/reference/cmonikerfile-class.md)   
- [CDataPathProperty クラス](../../mfc/reference/cdatapathproperty-class.md)
+## <a name="see-also"></a>See Also  
+ [CMonikerFile Class](../../mfc/reference/cmonikerfile-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CMonikerFile Class](../../mfc/reference/cmonikerfile-class.md)   
+ [CDataPathProperty Class](../../mfc/reference/cdatapathproperty-class.md)
 

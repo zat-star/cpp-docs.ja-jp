@@ -1,57 +1,76 @@
 ---
-title: "クリップボード : その他のデータ形式の追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クリップボードのトピック, 書式"
-  - "カスタム クリップボード データの形式"
-  - "カスタム形式"
-  - "カスタム形式, 配置 (クリップボードに)"
-  - "書式 [C++], クリップボードのトピック"
-  - "登録 (カスタム クリップボード データ形式を)"
+title: 'Clipboard: Adding Other Formats | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- formats [MFC], Clipboard
+- Clipboard, formats
+- custom formats, placing on Clipboard
+- custom formats
+- registering custom Clipboard data formats
+- custom Clipboard data formats
 ms.assetid: aea58159-65ed-4385-aeaa-3d9d5281903b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# クリップボード : その他のデータ形式の追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0df2fcfdc762b7e47ffc051a257b9406ba2cc48a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、OLE サポートのサポートされている形式のリスト \(特に展開する方法について説明します。  トピック [クリップボード: データのコピーと貼り付け](../Topic/Clipboard:%20Copying%20and%20Pasting%20Data.md)、クリップボードからコピーと貼り付けをサポートするために必要な最小限の実装について説明します。  これはすべての場合、クリップボードに配置される唯一の形式です `CF_METAFILEPICT`、**CF\_EMBEDSOURCE**、**CF\_OBJECTDESCRIPTOR**可能性が `CF_LINKSOURCE`実装します。  ほとんどのアプリケーションでは、この 3 をクリップボードの形式が必要です。  
+---
+# <a name="clipboard-adding-other-formats"></a>Clipboard: Adding Other Formats
+This topic explains how to expand the list of supported formats, particularly for OLE support. The topic [Clipboard: Copying and Pasting Data](../mfc/clipboard-copying-and-pasting-data.md) describes the minimum implementation necessary to support copying and pasting from the Clipboard. If this is all you implement, the only formats placed on the Clipboard are `CF_METAFILEPICT`, **CF_EMBEDSOURCE**, **CF_OBJECTDESCRIPTOR**, and possibly `CF_LINKSOURCE`. Most applications will need more formats on the Clipboard than these three.  
   
-##  <a name="_core_registering_custom_formats"></a> カスタム書式の登録  
- 独自のカスタム書式設定を作成するには、カスタム クリップボード形式を登録するときに使用するのと同じ手順に従います。: 形式の名前を **RegisterClipboardFormat** 関数に渡し、形式 ID として戻り値を使用します。  
+##  <a name="_core_registering_custom_formats"></a> Registering Custom Formats  
+ To create your own custom formats, follow the same procedure you would use when registering any custom Clipboard format: pass the name of the format to the **RegisterClipboardFormat** function and use its return value as the format ID.  
   
-##  <a name="_core_placing_formats_on_the_clipboard"></a> クリップボードの形式を指定できます。  
- データがネイティブであるコピーされるかどうかによってクリップボードに置くことによって多くの形式を追加するには、`COleClientItem` または `COleServerItem` から派生したクラスの `OnGetClipboardData` 関数をオーバーライドする必要があります。  この関数では、次の手順を実行する必要があります。  
+##  <a name="_core_placing_formats_on_the_clipboard"></a> Placing Formats on the Clipboard  
+ To add more formats to those placed on the Clipboard, you must override the `OnGetClipboardData` function in the class you derived from either `COleClientItem` or `COleServerItem` (depending on whether the data to be copied is native). In this function, you should use the following procedure.  
   
-#### クリップボードの形式に  
+#### <a name="to-place-formats-on-the-clipboard"></a>To place formats on the Clipboard  
   
-1.  `COleDataSource` オブジェクトを作成します。  
+1.  Create a `COleDataSource` object.  
   
-2.  サポートされる形式の一覧に `COleDataSource::CacheGlobalData`を呼び出してネイティブ データ形式を追加する関数にこのデータ ソースを渡します。  
+2.  Pass this data source to a function that adds your native data formats to the list of supported formats by calling `COleDataSource::CacheGlobalData`.  
   
-3.  、サポートする各標準書式の `COleDataSource::CacheGlobalData` を呼び出して標準書式を追加します。  
+3.  Add standard formats by calling `COleDataSource::CacheGlobalData` for each standard format you want to support.  
   
- この方法は、MFC の OLE サンプル プログラム [HIERSVR](../top/visual-cpp-samples.md) で使用されます。**CServerItem** クラスの `OnGetClipboardData` メンバー関数を参照してください\)。  このサンプルの違いは HIERSVR が他の標準形式をサポートしないため、ステップ 3 が実装されないことです。  
+ This technique is used in the MFC OLE sample program [HIERSVR](../visual-cpp-samples.md) (examine the `OnGetClipboardData` member function of the **CServerItem** class). The only difference in this sample is that step three is not implemented because HIERSVR supports no other standard formats.  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [OLE データ オブジェクトとデータ ソースと汎用データ転送](../mfc/data-objects-and-data-sources-ole.md)  
+-   [OLE data objects and data sources and uniform data transfer](../mfc/data-objects-and-data-sources-ole.md)  
   
--   [OLE ドラッグ アンド ドロップ](../mfc/drag-and-drop-ole.md)  
+-   [OLE drag and drop](../mfc/drag-and-drop-ole.md)  
   
 -   [OLE](../mfc/ole-background.md)  
   
-## 参照  
- [クリップボード : OLE クリップボード機構の使用方法](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)
+## <a name="see-also"></a>See Also  
+ [Clipboard: Using the OLE Clipboard Mechanism](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)
+
+

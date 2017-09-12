@@ -1,5 +1,5 @@
 ---
-title: "CMFCToolBarImages クラス |Microsoft ドキュメント"
+title: CMFCToolBarImages Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -81,7 +81,73 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCToolBarImages class
+- CMFCToolBarImages [MFC], CMFCToolBarImages
+- CMFCToolBarImages [MFC], AdaptColors
+- CMFCToolBarImages [MFC], AddIcon
+- CMFCToolBarImages [MFC], AddImage
+- CMFCToolBarImages [MFC], CleanUp
+- CMFCToolBarImages [MFC], Clear
+- CMFCToolBarImages [MFC], ConvertTo32Bits
+- CMFCToolBarImages [MFC], CopyImageToClipboard
+- CMFCToolBarImages [MFC], CopyTo
+- CMFCToolBarImages [MFC], CreateFromImageList
+- CMFCToolBarImages [MFC], CreateRegionFromImage
+- CMFCToolBarImages [MFC], DeleteImage
+- CMFCToolBarImages [MFC], Draw
+- CMFCToolBarImages [MFC], DrawEx
+- CMFCToolBarImages [MFC], EnableRTL
+- CMFCToolBarImages [MFC], EndDrawImage
+- CMFCToolBarImages [MFC], ExtractIcon
+- CMFCToolBarImages [MFC], FillDitheredRect
+- CMFCToolBarImages [MFC], GetAlwaysLight
+- CMFCToolBarImages [MFC], GetBitsPerPixel
+- CMFCToolBarImages [MFC], GetCount
+- CMFCToolBarImages [MFC], GetDisabledImageAlpha
+- CMFCToolBarImages [MFC], GetFadedImageAlpha
+- CMFCToolBarImages [MFC], GetImageSize
+- CMFCToolBarImages [MFC], GetImageWell
+- CMFCToolBarImages [MFC], GetImageWellLight
+- CMFCToolBarImages [MFC], GetLastImageRect
+- CMFCToolBarImages [MFC], GetLightPercentage
+- CMFCToolBarImages [MFC], GetMapTo3DColors
+- CMFCToolBarImages [MFC], GetMask
+- CMFCToolBarImages [MFC], GetResourceOffset
+- CMFCToolBarImages [MFC], GetScale
+- CMFCToolBarImages [MFC], GetTransparentColor
+- CMFCToolBarImages [MFC], GrayImages
+- CMFCToolBarImages [MFC], Is32BitTransparencySupported
+- CMFCToolBarImages [MFC], IsPreMultiplyAutoCheck
+- CMFCToolBarImages [MFC], IsRTL
+- CMFCToolBarImages [MFC], IsReadOnly
+- CMFCToolBarImages [MFC], IsScaled
+- CMFCToolBarImages [MFC], IsUserImagesList
+- CMFCToolBarImages [MFC], IsValid
+- CMFCToolBarImages [MFC], Load
+- CMFCToolBarImages [MFC], LoadStr
+- CMFCToolBarImages [MFC], MapFromSysColor
+- CMFCToolBarImages [MFC], MapTo3dColors
+- CMFCToolBarImages [MFC], MapToSysColor
+- CMFCToolBarImages [MFC], MapToSysColorAlpha
+- CMFCToolBarImages [MFC], Mirror
+- CMFCToolBarImages [MFC], MirrorBitmap
+- CMFCToolBarImages [MFC], MirrorBitmapVert
+- CMFCToolBarImages [MFC], MirrorVert
+- CMFCToolBarImages [MFC], OnSysColorChange
+- CMFCToolBarImages [MFC], PrepareDrawImage
+- CMFCToolBarImages [MFC], Save
+- CMFCToolBarImages [MFC], SetAlwaysLight
+- CMFCToolBarImages [MFC], SetDisabledImageAlpha
+- CMFCToolBarImages [MFC], SetFadedImageAlpha
+- CMFCToolBarImages [MFC], SetImageSize
+- CMFCToolBarImages [MFC], SetLightPercentage
+- CMFCToolBarImages [MFC], SetMapTo3DColors
+- CMFCToolBarImages [MFC], SetPreMultiplyAutoCheck
+- CMFCToolBarImages [MFC], SetSingleImage
+- CMFCToolBarImages [MFC], SetTransparentColor
+- CMFCToolBarImages [MFC], SmoothResize
+- CMFCToolBarImages [MFC], UpdateImage
+- CMFCToolBarImages [MFC], PreMultiplyAlpha
+- CMFCToolBarImages [MFC], m_bDisableTrueColorAlpha
 ms.assetid: d4e50518-9ffc-406f-9996-f79e5cd38155
 caps.latest.revision: 31
 author: mikeblome
@@ -101,129 +167,129 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: ff94497108033b17d52b79594fdbe30e8ed7da03
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1b8303ab4a6d8199c5f9adeee51cf01d1d4254b4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfctoolbarimages-class"></a>CMFCToolBarImages クラス
-ツールバー上のイメージです。 `CMFCToolBarImages`クラスはアプリケーション リソースまたはファイルから読み込んだツール バー イメージを管理します。  
+# <a name="cmfctoolbarimages-class"></a>CMFCToolBarImages Class
+The images on a toolbar. The `CMFCToolBarImages` class manages toolbar images loaded from application resources or from files.  
    [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCToolBarImages : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCToolBarImages::CMFCToolBarImages](#cmfctoolbarimages)|`CMFCToolBarImages` オブジェクトを構築します。|  
+|[CMFCToolBarImages::CMFCToolBarImages](#cmfctoolbarimages)|Constructs a `CMFCToolBarImages` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
 |[CMFCToolBarImages::AdaptColors](#adaptcolors)||  
-|[CMFCToolBarImages::AddIcon](#addicon)|ツール バー イメージにアイコンを追加します。|  
-|[CMFCToolBarImages::AddImage](#addimage)|ツール バー イメージをビットマップを追加します。|  
+|[CMFCToolBarImages::AddIcon](#addicon)|Adds an icon to the toolbar images.|  
+|[CMFCToolBarImages::AddImage](#addimage)|Adds a bitmap to the toolbar images.|  
 |[CMFCToolBarImages::CleanUp](#cleanup)||  
-|[CMFCToolBarImages::Clear](#clear)|このオブジェクトに割り当てられたシステム リソースを解放します。|  
-|[CMFCToolBarImages::ConvertTo32Bits](#convertto32bits)|変換では、32 ビット/ピクセルの画像にビットマップを下線が付きます。|  
+|[CMFCToolBarImages::Clear](#clear)|Frees the system resources that were allocated to this object.|  
+|[CMFCToolBarImages::ConvertTo32Bits](#convertto32bits)|Converts underlined bitmaps to 32 bpp images.|  
 |[CMFCToolBarImages::CopyImageToClipboard](#copyimagetoclipboard)||  
 |[CMFCToolBarImages::CopyTo](#copyto)||  
-|[CMFCToolBarImages::CreateFromImageList](#createfromimagelist)|イメージ リストのツール バー イメージを初期化します ( [CImageList クラス](../../mfc/reference/cimagelist-class.md))。|  
+|[CMFCToolBarImages::CreateFromImageList](#createfromimagelist)|Initializes the toolbar images from an image list ( [CImageList Class](../../mfc/reference/cimagelist-class.md)).|  
 |[CMFCToolBarImages::CreateRegionFromImage](#createregionfromimage)||  
-|[CMFCToolBarImages::DeleteImage](#deleteimage)|このツール バー イメージのセットには、ユーザー定義のイメージが含まれている場合は、ツール バー イメージの指定したインデックスを持つイメージを削除します。|  
-|[CMFCToolBarImages::Draw](#draw)|単一のツール バー イメージ (ボタン) を描画します。|  
+|[CMFCToolBarImages::DeleteImage](#deleteimage)|Deletes the image that has a specified index from the toolbar images if this set of toolbar images contains user-defined images.|  
+|[CMFCToolBarImages::Draw](#draw)|Draws a single toolbar image (button).|  
 |[CMFCToolBarImages::DrawEx](#drawex)||  
 |[CMFCToolBarImages::EnableRTL](#enablertl)||  
-|[CMFCToolBarImages::EndDrawImage](#enddrawimage)|ツール バー イメージを描画した後は、システム リソースを解放します。|  
-|[CMFCToolBarImages::ExtractIcon](#extracticon)|ツール バー イメージからイメージを指定したインデックス位置にあるアイコンを返します。|  
-|[CMFCToolBarImages::FillDitheredRect](#fillditheredrect)|ツールバーの背景色のブラシを使用して、四角形を格納します。|  
+|[CMFCToolBarImages::EndDrawImage](#enddrawimage)|Frees system resources after a toolbar image is drawn.|  
+|[CMFCToolBarImages::ExtractIcon](#extracticon)|Returns the icon that has a specified image index from the toolbar images.|  
+|[CMFCToolBarImages::FillDitheredRect](#fillditheredrect)|Fills a rectangle by using a brush that has the toolbar background colors.|  
 |[CMFCToolBarImages::GetAlwaysLight](#getalwayslight)||  
-|[CMFCToolBarImages::GetBitsPerPixel](#getbitsperpixel)|下線付きのイメージの現在の解像度を返します。|  
-|[CMFCToolBarImages::GetCount](#getcount)|ツールバーのイメージの数を返します。|  
-|[CMFCToolBarImages::GetDisabledImageAlpha](#getdisabledimagealpha)|無効なイメージに使用するアルファ チャネル値を返します。|  
+|[CMFCToolBarImages::GetBitsPerPixel](#getbitsperpixel)|Returns current resolution of underlined images.|  
+|[CMFCToolBarImages::GetCount](#getcount)|Returns the number of images on the toolbar.|  
+|[CMFCToolBarImages::GetDisabledImageAlpha](#getdisabledimagealpha)|Returns the alpha channel value that is used for disabled images.|  
 |[CMFCToolBarImages::GetFadedImageAlpha](#getfadedimagealpha)||  
-|[CMFCToolBarImages::GetImageSize](#getimagesize)|メモリ (ソース サイズ) に格納されているツール バー イメージのサイズ、または (コピー先のサイズ)、画面上に描画されるツール バー イメージのサイズを取得します。|  
-|[CMFCToolBarImages::GetImageWell](#getimagewell)|すべてのツール バー イメージを含むビットマップへのハンドルを返します。|  
+|[CMFCToolBarImages::GetImageSize](#getimagesize)|Retrieves either the size of the toolbar images that are stored in memory (source size), or the size of the toolbar images that are drawn on the screen (destination size).|  
+|[CMFCToolBarImages::GetImageWell](#getimagewell)|Returns the handle to the bitmap that contains all the toolbar images.|  
 |[CMFCToolBarImages::GetImageWellLight](#getimagewelllight)||  
 |[CMFCToolBarImages::GetLastImageRect](#getlastimagerect)||  
 |[CMFCToolBarImages::GetLightPercentage](#getlightpercentage)||  
 |[CMFCToolBarImages::GetMapTo3DColors](#getmapto3dcolors)||  
 |[CMFCToolBarImages::GetMask](#getmask)||  
-|[CMFCToolBarImages::GetResourceOffset](#getresourceoffset)|特定のリソース ID をイメージのインデックスを返します|  
-|[CMFCToolBarImages::GetScale](#getscale)|下線付きのイメージの現在のスケール比を返します。|  
+|[CMFCToolBarImages::GetResourceOffset](#getresourceoffset)|Returns the image index for a specified resource ID.|  
+|[CMFCToolBarImages::GetScale](#getscale)|Returns current scale ratio of underlined images.|  
 |[CMFCToolBarImages::GetTransparentColor](#gettransparentcolor)||  
-|[CMFCToolBarImages::GrayImages](#grayimages)|無効な外観にすることのツール バー イメージを淡色表示されます。|  
-|[CMFCToolBarImages::Is32BitTransparencySupported](#is32bittransparencysupported)|オペレーティング システムが 32 ビットのアルファ ブレンドをサポートしているかどうかを決定します。|  
+|[CMFCToolBarImages::GrayImages](#grayimages)|Grays the toolbar images to make them look disabled.|  
+|[CMFCToolBarImages::Is32BitTransparencySupported](#is32bittransparencysupported)|Determines whether the operating system supports 32-bit alpha blending.|  
 |[CMFCToolBarImages::IsPreMultiplyAutoCheck](#ispremultiplyautocheck)||  
-|[CMFCToolBarImages::IsRTL](#isrtl)|右から左 (RTL) のサポートが有効になっているかどうかを判断します。|  
-|[CMFCToolBarImages::IsReadOnly](#isreadonly)|ツール バー イメージは読み取り専用であるかどうかを決定します。|  
-|[CMFCToolBarImages::IsScaled](#isscaled)|下線付きのイメージをスケーリングするかどうかどうかを指示します。|  
-|[CMFCToolBarImages::IsUserImagesList](#isuserimageslist)|このツール バー イメージのセットにユーザー定義のイメージが含まれているかどうかを判断します。|  
-|[CMFCToolBarImages::IsValid](#isvalid)|このツール バー イメージのセットが有効なツール バー イメージを含むかどうかを決定します。|  
-|[CMFCToolBarImages::Load](#load)|システム リソースまたはファイルからは、ツール バー イメージを読み込みます。|  
+|[CMFCToolBarImages::IsRTL](#isrtl)|Determines whether right-to-left (RTL) support is enabled.|  
+|[CMFCToolBarImages::IsReadOnly](#isreadonly)|Determines whether the toolbar images are read-only.|  
+|[CMFCToolBarImages::IsScaled](#isscaled)|Tells whether the underlined images are scaled or not.|  
+|[CMFCToolBarImages::IsUserImagesList](#isuserimageslist)|Determines whether this set of toolbar images contains user-defined images.|  
+|[CMFCToolBarImages::IsValid](#isvalid)|Determines whether this set of toolbar images contains a valid toolbar image.|  
+|[CMFCToolBarImages::Load](#load)|Loads toolbar images from system resources or from a file.|  
 |[CMFCToolBarImages::LoadStr](#loadstr)||  
 |[CMFCToolBarImages::MapFromSysColor](#mapfromsyscolor)||  
 |[CMFCToolBarImages::MapTo3dColors](#mapto3dcolors)||  
 |[CMFCToolBarImages::MapToSysColor](#maptosyscolor)||  
 |[CMFCToolBarImages::MapToSysColorAlpha](#maptosyscoloralpha)||  
-|[CMFCToolBarImages::Mirror](#mirror)|ツール バー イメージのすべてを水平方向に反転します。|  
-|[CMFCToolBarImages::MirrorBitmap](#mirrorbitmap)|水平方向にビットマップを反転します。|  
+|[CMFCToolBarImages::Mirror](#mirror)|Horizontally mirrors all of the toolbar images.|  
+|[CMFCToolBarImages::MirrorBitmap](#mirrorbitmap)|Horizontally mirrors a bitmap.|  
 |[CMFCToolBarImages::MirrorBitmapVert](#mirrorbitmapvert)||  
 |[CMFCToolBarImages::MirrorVert](#mirrorvert)||  
 |[CMFCToolBarImages::OnSysColorChange](#onsyscolorchange)||  
-|[CMFCToolBarImages::PrepareDrawImage](#preparedrawimage)|指定されたサイズにツール バー イメージを描画するために必要なリソースが割り当てられます。|  
-|[CMFCToolBarImages::Save](#save)|このツール バー イメージのセットには、ユーザー定義のイメージが含まれている場合、ツール バー イメージをファイルに格納します。|  
+|[CMFCToolBarImages::PrepareDrawImage](#preparedrawimage)|Allocates the resources that are required to draw a toolbar image at a specified size.|  
+|[CMFCToolBarImages::Save](#save)|Stores the toolbar images in a file if this set of toolbar images contains user-defined images.|  
 |[CMFCToolBarImages::SetAlwaysLight](#setalwayslight)||  
-|[CMFCToolBarImages::SetDisabledImageAlpha](#setdisabledimagealpha)|無効なイメージに使用するアルファ チャネル値を設定します。|  
+|[CMFCToolBarImages::SetDisabledImageAlpha](#setdisabledimagealpha)|Sets the alpha channel value that is used for disabled images.|  
 |[CMFCToolBarImages::SetFadedImageAlpha](#setfadedimagealpha)||  
-|[CMFCToolBarImages::SetImageSize](#setimagesize)|ツール バー イメージ (ソースのサイズ) のサイズを設定します。|  
+|[CMFCToolBarImages::SetImageSize](#setimagesize)|Sets the size of a toolbar image (source size).|  
 |[CMFCToolBarImages::SetLightPercentage](#setlightpercentage)||  
 |[CMFCToolBarImages::SetMapTo3DColors](#setmapto3dcolors)||  
 |[CMFCToolBarImages::SetPreMultiplyAutoCheck](#setpremultiplyautocheck)||  
 |[CMFCToolBarImages::SetSingleImage](#setsingleimage)||  
-|[CMFCToolBarImages::SetTransparentColor](#settransparentcolor)|ツール バー イメージの透明色を設定します。|  
-|[CMFCToolBarImages::SmoothResize](#smoothresize)|スムーズに下線付きのイメージのサイズを変更します。|  
-|[CMFCToolBarImages::UpdateImage](#updateimage)|ビットマップからツールバーのユーザー定義のイメージを更新します。|  
+|[CMFCToolBarImages::SetTransparentColor](#settransparentcolor)|Sets the transparent color of the toolbar images.|  
+|[CMFCToolBarImages::SmoothResize](#smoothresize)|Smoothly resizes underlined images.|  
+|[CMFCToolBarImages::UpdateImage](#updateimage)|Updates a user-defined toolbar image from a bitmap.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
 |[CMFCToolBarImages::PreMultiplyAlpha](#premultiplyalpha)||  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCToolBarImages::m_bDisableTrueColorAlpha](#m_bdisabletruecoloralpha)|`TRUE`場合は true カラー アルファ ブレンド (32 ビット カラー) は無効です。|  
+|[CMFCToolBarImages::m_bDisableTrueColorAlpha](#m_bdisabletruecoloralpha)|`TRUE` if truecolor alpha blending (32-bit color) is disabled.|  
   
-## <a name="remarks"></a>コメント  
- 管理のツール バー イメージの完全なビットマップ`CMFCToolbarImages`固定サイズの小さなツール バー イメージ (ボタン) を&1; つまたは複数ので構成されています。  
+## <a name="remarks"></a>Remarks  
+ The full bitmap of toolbar images managed by `CMFCToolbarImages` consists of one or more small toolbar images (buttons) of a fixed size.  
   
-## <a name="example"></a>例  
- 次の例では、構成、`CMFCToolBarImages`オブジェクトのさまざまなメソッドを使用して、`CMFCToolBarImages`クラスです。 この例では、ツール バー イメージのサイズを設定し、イメージの読み込み、画像の透明色を設定する方法を示します。 このコード スニペットの一部である、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to configure a `CMFCToolBarImages` object by using various methods in the `CMFCToolBarImages` class. The example shows how to set the size of the toolbar image, load an image, and set the transparent color of the image. This code snippet is part of the [Visual Studio Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_VisualStudioDemo&#32;](../../mfc/codesnippet/cpp/cmfctoolbarimages-class_1.h)]  
-[!code-cpp[NVC_MFC_VisualStudioDemo #&33;](../../mfc/codesnippet/cpp/cmfctoolbarimages-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_VisualStudioDemo#32](../../mfc/codesnippet/cpp/cmfctoolbarimages-class_1.h)]  
+[!code-cpp[NVC_MFC_VisualStudioDemo#33](../../mfc/codesnippet/cpp/cmfctoolbarimages-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CMFCToolBarImages`   
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxtoolbarimages.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxtoolbarimages.h  
   
-##  <a name="adaptcolors"></a>CMFCToolBarImages::AdaptColors  
+##  <a name="adaptcolors"></a>  CMFCToolBarImages::AdaptColors  
 
   
 ```  
@@ -232,14 +298,14 @@ void AdaptColors(
     COLORREF clrTone);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `clrBase`  
- [入力] `clrTone`  
+### <a name="parameters"></a>Parameters  
+ [in] `clrBase`  
+ [in] `clrTone`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addicon"></a>CMFCToolBarImages::AddIcon  
- ツール バー イメージの一覧にアイコンを追加します。  
+##  <a name="addicon"></a>  CMFCToolBarImages::AddIcon  
+ Adds an icon to the list of toolbar images.  
   
 ```  
 int AddIcon(
@@ -247,18 +313,18 @@ int AddIcon(
     BOOL bAlphaBlend=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hIcon`  
- 追加するアイコンへのハンドル。  
+### <a name="parameters"></a>Parameters  
+ [in] `hIcon`  
+ A handle to the icon to be added.  
   
- [入力] `bAlphaBlend`  
- `TRUE`このアイコンをアルファ ブレンドで使用する場合それ以外の場合`FALSE`します。  
+ [in] `bAlphaBlend`  
+ `TRUE` if this icon is used with alpha blending; otherwise `FALSE`.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合に追加されたツール バー イメージの&0; から始まるインデックスそれ以外の場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The zero-based index of the toolbar image that was added if the method is successful; otherwise -1.  
   
-##  <a name="addimage"></a>CMFCToolBarImages::AddImage  
- ツール バー イメージをビットマップを追加します。  
+##  <a name="addimage"></a>  CMFCToolBarImages::AddImage  
+ Adds a bitmap to the toolbar images.  
   
 ```  
 int AddImage(
@@ -270,94 +336,94 @@ int AddImage(
     int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hbmp`  
- 追加するビットマップへのハンドル。  
+### <a name="parameters"></a>Parameters  
+ [in] `hbmp`  
+ The handle to the bitmap to add.  
   
- [入力] `bSetBitPerPixel`  
- `TRUE`場合、`CMFCToolBarImages`オブジェクトは、新しいイメージの色深度 (ビット/ピクセル) を使用`FALSE`場合、`CMFCToolbarImages`オブジェクトが現在の色深度を保持します。  
+ [in] `bSetBitPerPixel`  
+ `TRUE` if the `CMFCToolBarImages`  object uses the color depth (bits per pixel) of the new image; `FALSE` if the `CMFCToolbarImages` object keeps the current color depth.  
   
- [入力] `imageList`  
- 参照、`CMFCToolbarImages`を追加するイメージを含むオブジェクト。  
+ [in] `imageList`  
+ A reference to a `CMFCToolbarImages` object that contains the image to add.  
   
- [入力] `nIndex`  
- ソースのインデックス`CMFCToolbarImages`を追加するイメージのオブジェクト。  
+ [in] `nIndex`  
+ The index in the source `CMFCToolbarImages` object of the image to add.  
   
-### <a name="return-value"></a>戻り値  
- イメージのツールバーの数、`CMFCToolBarImages`オブジェクトは、新しいビットマップを正常に追加した後、保持、操作が失敗した場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The number of toolbar images that the `CMFCToolBarImages`  object maintains after the new bitmap was added successfully; -1 if the operation failed.  
   
-##  <a name="cleanup"></a>CMFCToolBarImages::CleanUp  
+##  <a name="cleanup"></a>  CMFCToolBarImages::CleanUp  
 
   
 ```  
 static void __stdcall CleanUp();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="clear"></a>CMFCToolBarImages::Clear  
- システム リソースを解放する、 [CMFCToolbarImages](../../mfc/reference/cmfctoolbarimages-class.md)に割り当てられたオブジェクト。  
+##  <a name="clear"></a>  CMFCToolBarImages::Clear  
+ Frees the system resources that the [CMFCToolbarImages](../../mfc/reference/cmfctoolbarimages-class.md) object allocated.  
   
 ```  
 void Clear();
 ```  
   
-##  <a name="cmfctoolbarimages"></a>CMFCToolBarImages::CMFCToolBarImages  
- `CMFCToolBarImages` オブジェクトを構築します。  
+##  <a name="cmfctoolbarimages"></a>  CMFCToolBarImages::CMFCToolBarImages  
+ Constructs a `CMFCToolBarImages` object.  
   
 ```  
 CMFCToolBarImages();
 ```  
   
-### <a name="remarks"></a>コメント  
- 構築、`CMFCToolBarImages`オブジェクト、そのレンダリング エンジンを初期化および 16 × 15 ピクセル イメージのサイズをその既定値に設定します。 使用[CMFCToolBarImages::SetImageSize](#setimagesize)イメージを追加する前に、イメージのサイズを変更します。  
+### <a name="remarks"></a>Remarks  
+ Constructs a `CMFCToolBarImages` object, initializes its rendering engine and sets the image size to its default value 16x15 pixels. Use [CMFCToolBarImages::SetImageSize](#setimagesize) to change the image size before you add images.  
   
-##  <a name="copyimagetoclipboard"></a>CMFCToolBarImages::CopyImageToClipboard  
+##  <a name="copyimagetoclipboard"></a>  CMFCToolBarImages::CopyImageToClipboard  
 
   
 ```  
 BOOL CopyImageToClipboard(int iImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iImage`  
+### <a name="parameters"></a>Parameters  
+ [in] `iImage`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="copyto"></a>CMFCToolBarImages::CopyTo  
+##  <a name="copyto"></a>  CMFCToolBarImages::CopyTo  
 
   
 ```  
 BOOL CopyTo(CMFCToolBarImages& imageList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `imageList`  
+### <a name="parameters"></a>Parameters  
+ [in] `imageList`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="createfromimagelist"></a>CMFCToolBarImages::CreateFromImageList  
- ツール バー イメージからの初期化、 [CImageList クラス](../../mfc/reference/cimagelist-class.md)オブジェクトです。  
+##  <a name="createfromimagelist"></a>  CMFCToolBarImages::CreateFromImageList  
+ Initializes the toolbar images from a [CImageList Class](../../mfc/reference/cimagelist-class.md) object.  
   
 ```  
 BOOL CreateFromImageList(const CImageList& imageList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `imageList`  
- ツール バー イメージのソースとして使用するイメージのリスト。  
+### <a name="parameters"></a>Parameters  
+ [in] `imageList`  
+ The image list to be used as a source for toolbar images.  
   
-### <a name="return-value"></a>戻り値  
- 常に `TRUE` を返します。  
+### <a name="return-value"></a>Return Value  
+ Always returns `TRUE`.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用して、外部イメージの一覧からツールバーのイメージ リストを簡単に初期化します。  
+### <a name="remarks"></a>Remarks  
+ Use this function to quickly initialize the toolbar images list from an external image list.  
   
-##  <a name="createregionfromimage"></a>CMFCToolBarImages::CreateRegionFromImage  
+##  <a name="createregionfromimage"></a>  CMFCToolBarImages::CreateRegionFromImage  
 
   
 ```  
@@ -366,30 +432,30 @@ static HRGN __stdcall CreateRegionFromImage(
     COLORREF clrTransparent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bmp`  
- [入力] `clrTransparent`  
+### <a name="parameters"></a>Parameters  
+ [in] `bmp`  
+ [in] `clrTransparent`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="deleteimage"></a>CMFCToolBarImages::DeleteImage  
- ツール バー イメージの指定したインデックスを持つユーザー定義のイメージを削除します。  
+##  <a name="deleteimage"></a>  CMFCToolBarImages::DeleteImage  
+ Deletes the user-defined image that has a specified index from the toolbar images.  
   
 ```  
 BOOL DeleteImage(int iImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iImage`  
- 削除するイメージの&0; から始まるインデックスを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `iImage`  
+ Specifies the zero-based index of the image to delete.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージが正常に削除された場合`FALSE`イメージのインデックスが有効でない場合、`CMFCToolbarImages`オブジェクトは、一時的なもの、`CMFCToolbarImages`オブジェクトにユーザー定義のイメージが含まれていないか、エラーが発生するその他の場合。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the image was deleted successfully; `FALSE` if the image index is invalid, the `CMFCToolbarImages` object is temporary, the `CMFCToolbarImages` object does not contain user-defined images, or if some other error occurred.  
   
-##  <a name="draw"></a>CMFCToolBarImages::Draw  
- 単一のツール バー イメージを描画します。  
+##  <a name="draw"></a>  CMFCToolBarImages::Draw  
+ Draws a single toolbar image.  
   
 ```  
 BOOL Draw(
@@ -405,41 +471,41 @@ BOOL Draw(
     BYTE alphaSrc=255);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
- [入力] `x`  
- イメージが描画する四角形の左端の X 座標。  
+ [in] `x`  
+ The X coordinate of the left side of the rectangle where the image is to be drawn.  
   
- [入力] `y`  
- イメージが描画する四角形の上端の Y 座標。  
+ [in] `y`  
+ The Y coordinate of the top of the rectangle where the image is to be drawn.  
   
- [入力] `iImageIndex`  
- 表示するイメージの&0; から始まるインデックス。  
+ [in] `iImageIndex`  
+ The zero-based index of the image to be displayed.  
   
- [入力] `bHilite`  
- `TRUE`場合は、イメージが強調表示されます。それ以外の場合`FALSE`します。  
+ [in] `bHilite`  
+ `TRUE` if the image is to be highlighted; otherwise `FALSE`.  
   
- [入力] `bDisabled`  
- `TRUE`イメージが無効なスタイルで描画する場合それ以外の場合`FALSE`します。  
+ [in] `bDisabled`  
+ `TRUE` if the image is to be drawn in the disabled style; otherwise `FALSE`.  
   
- [入力] `bIndeterminate`  
- `TRUE`イメージが中間状態のスタイルで描画する場合それ以外の場合`FALSE`します。  
+ [in] `bIndeterminate`  
+ `TRUE` if the image is to be drawn in the indeterminate state style; otherwise `FALSE`.  
   
- [入力] `bShadow`  
- `TRUE`イメージが; 影付きで描画する場合それ以外の場合`FALSE`します。  
+ [in] `bShadow`  
+ `TRUE` if the image is to be drawn with a drop shadow; otherwise `FALSE`.  
   
- [入力] `bInactive`  
- `TRUE`イメージが、非アクティブな状態のスタイルで描画する場合それ以外の場合`FALSE`します。  
+ [in] `bInactive`  
+ `TRUE` if the image is to be drawn in the inactive state style; otherwise `FALSE`.  
   
- [入力] `alphaSrc`  
- アルファ チャネル (不透明度) の値。 255 の値が、イメージを描画非透過的です。 値が 0 の場合、イメージ透明を描画します。 この値は、32 ビット カラー イメージと Windows Vista のグラス スタイルを表示イメージのみに使用されます。  
+ [in] `alphaSrc`  
+ The alpha channel (opacity) value. A value of 255 means the image is drawn opaque. A value of 0 means the image is drawn transparent. This value is used only for 32 bit color images and for images that displayed a Windows Vista glass style.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`指定したイメージが正常に表示された場合`FALSE`場合は、イメージのインデックスが無効か、その他のエラーが発生しました。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the specified image was displayed successfully; `FALSE` if the image index was invalid or some other error occurred.  
   
-##  <a name="drawex"></a>CMFCToolBarImages::DrawEx  
+##  <a name="drawex"></a>  CMFCToolBarImages::DrawEx  
 
   
 ```  
@@ -456,60 +522,60 @@ BOOL DrawEx(
     BYTE alphaSrc = 255);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `iImageIndex`  
- [入力] `horzAlign`  
- [入力] `vertAlign`  
- [入力] `rectSrc`  
- [入力] `0`  
- [入力] `0)`  
- [入力] `alphaSrc`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `iImageIndex`  
+ [in] `horzAlign`  
+ [in] `vertAlign`  
+ [in] `rectSrc`  
+ [in] `0`  
+ [in] `0)`  
+ [in] `alphaSrc`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="enablertl"></a>CMFCToolBarImages::EnableRTL  
+##  <a name="enablertl"></a>  CMFCToolBarImages::EnableRTL  
 
   
 ```  
 static void __stdcall EnableRTL(BOOL bIsRTL = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bIsRTL`  
+### <a name="parameters"></a>Parameters  
+ [in] `bIsRTL`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="enddrawimage"></a>CMFCToolBarImages::EndDrawImage  
- システム リソースを解放する[CMFCToolBarImages::PrepareDrawImage](#preparedrawimage)を呼び出してツール バー イメージを描画した後に割り当てられた[CMFCToolBarImages::Draw](#draw)します。  
+##  <a name="enddrawimage"></a>  CMFCToolBarImages::EndDrawImage  
+ Frees system resources that [CMFCToolBarImages::PrepareDrawImage](#preparedrawimage) allocated after you draw a toolbar image by calling [CMFCToolBarImages::Draw](#draw).  
   
 ```  
 void EndDrawImage(CAfxDrawState& ds);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `ds`  
- 参照、`CAfxDrawState`に渡されたオブジェクト、`PrepareDrawImage`メソッドです。  
+### <a name="parameters"></a>Parameters  
+ [in] `ds`  
+ A reference to the `CAfxDrawState` object that was passed to the `PrepareDrawImage` method.  
   
-##  <a name="extracticon"></a>CMFCToolBarImages::ExtractIcon  
- ツール バー イメージからイメージを指定したインデックス位置にあるアイコンを返します。  
+##  <a name="extracticon"></a>  CMFCToolBarImages::ExtractIcon  
+ Returns the icon that has a specified image index from the toolbar images.  
   
 ```  
 HICON ExtractIcon(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nIndex`  
- イメージ リストには、アイコンとして抽出するイメージが存在する場所の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `nIndex`  
+ The zero-based index in the image list at which the image to be extracted as an icon is located.  
   
-### <a name="return-value"></a>戻り値  
- 抽出したアイコンへのハンドルまたは`NULL`場合`nIndex`が範囲外です。  
+### <a name="return-value"></a>Return Value  
+ A handle to the extracted icon, or `NULL` if `nIndex` is out of range.  
   
-##  <a name="fillditheredrect"></a>CMFCToolBarImages::FillDitheredRect  
- ツールバーの背景色で四角形を塗りつぶします。  
+##  <a name="fillditheredrect"></a>  CMFCToolBarImages::FillDitheredRect  
+ Fills a rectangle with the toolbar background colors.  
   
 ```  
 static void FillDitheredRect(
@@ -517,271 +583,271 @@ static void FillDitheredRect(
     const CRect& rect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
- [入力] `rect`  
- 塗りつぶす四角形の座標。  
+ [in] `rect`  
+ The coordinates of a rectangle to fill.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを使用すると、四角形をシステム カラー COLOR_BTNFACE と COLOR_BTNHIGHLIGHT の平均値である色で塗りつぶされます。 システムが 256 色以下を使用している場合、四角形が入力されますそれら 2 つの色のディザー パターン代わりにします。  
+### <a name="remarks"></a>Remarks  
+ Use this method to fill a rectangle with a color that is the average of the system colors COLOR_BTNFACE and COLOR_BTNHIGHLIGHT. If the system is using 256 or fewer colors, the rectangle will be filled with a dithered pattern of those two colors instead.  
   
-##  <a name="getalwayslight"></a>CMFCToolBarImages::GetAlwaysLight  
+##  <a name="getalwayslight"></a>  CMFCToolBarImages::GetAlwaysLight  
 
   
 ```  
 BOOL GetAlwaysLight() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcount"></a>CMFCToolBarImages::GetCount  
- ツール バー イメージの一覧で、イメージの数を返します。  
+##  <a name="getcount"></a>  CMFCToolBarImages::GetCount  
+ Returns the number of images in the toolbar images list.  
   
 ```  
 int GetCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- イメージの数、`CMFCToolBarImages`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ The number of images in the `CMFCToolBarImages`  object.  
   
-##  <a name="getdisabledimagealpha"></a>CMFCToolBarImages::GetDisabledImageAlpha  
- 無効なイメージに使用するアルファ チャネル (不透明度) の値を返します。  
+##  <a name="getdisabledimagealpha"></a>  CMFCToolBarImages::GetDisabledImageAlpha  
+ Returns the alpha channel (opacity) value that is used for disabled images.  
   
 ```  
 static BYTE GetDisabledImageAlpha();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のアルファ チャネル値。  
+### <a name="return-value"></a>Return Value  
+ The current alpha channel value.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すことができます[CMFCToolBarImages::SetDisabledImageAlpha](#setdisabledimagealpha)アルファ チャネル値を変更します。  
+### <a name="remarks"></a>Remarks  
+ You can call [CMFCToolBarImages::SetDisabledImageAlpha](#setdisabledimagealpha) to change the alpha channel value.  
   
-##  <a name="getfadedimagealpha"></a>CMFCToolBarImages::GetFadedImageAlpha  
+##  <a name="getfadedimagealpha"></a>  CMFCToolBarImages::GetFadedImageAlpha  
 
   
 ```  
 static BYTE __stdcall GetFadedImageAlpha();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getimagesize"></a>CMFCToolBarImages::GetImageSize  
- メモリ (ソース サイズ) に格納されているツール バー イメージのサイズ、または (コピー先のサイズ)、画面上に描画されるツール バー イメージのサイズを取得します。  
+##  <a name="getimagesize"></a>  CMFCToolBarImages::GetImageSize  
+ Retrieves either the size of the toolbar images that are stored in memory (source size), or the size of the toolbar images that are drawn on the screen (destination size).  
   
 ```  
 SIZE GetImageSize(BOOL bDest=FALSE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bDest`  
- `TRUE`コピー先のサイズを取得するには`FALSE`ソース イメージのサイズを取得します。  
+### <a name="parameters"></a>Parameters  
+ [in] `bDest`  
+ `TRUE` to retrieve the destination size; `FALSE` to retrieve the source image size.  
   
-### <a name="return-value"></a>戻り値  
- A`SIZE`構造体は、イメージのサイズをピクセル単位で指定します。  
+### <a name="return-value"></a>Return Value  
+ A `SIZE` structure, which specifies the size of an image in pixels.  
   
-### <a name="remarks"></a>コメント  
- ソース イメージのサイズに格納されているイメージのサイズ、 [CMFCToolbarImages](../../mfc/reference/cmfctoolbarimages-class.md)オブジェクトです。 呼び出すことができます[CMFCToolBarImages::SetImageSize](#setimagesize)ソースのサイズを設定します。 既定値は、16 × 15 ピクセルです。  
+### <a name="remarks"></a>Remarks  
+ The size of the source image is the size of the images that are stored in the [CMFCToolbarImages](../../mfc/reference/cmfctoolbarimages-class.md) object. You can call [CMFCToolBarImages::SetImageSize](#setimagesize) to set the source size. The default value is 16x15 pixels.  
   
- 既定では、送信先のイメージ サイズは、0x0 です。 呼び出したときに、送信先のサイズを指定する[CMFCToolBarImages::PrepareDrawImage](#preparedrawimage)します。 [CMFCToolBarImages::EndDrawImage](#enddrawimage)メソッドでは、送信先のサイズを既定値にリセットします。  
+ By default, the destination image size is 0x0. You specify the destination size when you call [CMFCToolBarImages::PrepareDrawImage](#preparedrawimage). The [CMFCToolBarImages::EndDrawImage](#enddrawimage) method resets the destination size to the default value.  
   
-##  <a name="getimagewell"></a>CMFCToolBarImages::GetImageWell  
- すべてのツール バー イメージを含むビットマップへのハンドルを返します。  
+##  <a name="getimagewell"></a>  CMFCToolBarImages::GetImageWell  
+ Returns the handle to the bitmap that contains all the toolbar images.  
   
 ```  
 HBITMAP GetImageWell() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ツール バー イメージを含むビットマップへのハンドル。  
+### <a name="return-value"></a>Return Value  
+ A handle to a bitmap that contains toolbar images.  
   
-### <a name="remarks"></a>コメント  
- ツール バー イメージと呼ばれる&1; つのビットマップの行に格納されている、*イメージ ウェル*します。 イメージ ウェル内のツール バー イメージを検索するには、ツール バー イメージの幅をイメージのインデックスを掛けます (を参照してください[CMFCToolBarImages::GetImageSize](#getimagesize)) も、イメージ内のイメージの水平方向のオフセットを取得します。  
+### <a name="remarks"></a>Remarks  
+ The toolbar images are stored in a row in a single bitmap that is known as an *image well*. To find a toolbar image in the image well, multiply the index of the image by the width of the toolbar images (see [CMFCToolBarImages::GetImageSize](#getimagesize)) to obtain the horizontal offset of the image inside the image well.  
   
-##  <a name="getimagewelllight"></a>CMFCToolBarImages::GetImageWellLight  
+##  <a name="getimagewelllight"></a>  CMFCToolBarImages::GetImageWellLight  
 
   
 ```  
 HBITMAP GetImageWellLight() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getlastimagerect"></a>CMFCToolBarImages::GetLastImageRect  
+##  <a name="getlastimagerect"></a>  CMFCToolBarImages::GetLastImageRect  
 
   
 ```  
 CRect GetLastImageRect() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getlightpercentage"></a>CMFCToolBarImages::GetLightPercentage  
+##  <a name="getlightpercentage"></a>  CMFCToolBarImages::GetLightPercentage  
 
   
 ```  
 int GetLightPercentage() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getmapto3dcolors"></a>CMFCToolBarImages::GetMapTo3DColors  
+##  <a name="getmapto3dcolors"></a>  CMFCToolBarImages::GetMapTo3DColors  
 
   
 ```  
 BOOL GetMapTo3DColors() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getmask"></a>CMFCToolBarImages::GetMask  
+##  <a name="getmask"></a>  CMFCToolBarImages::GetMask  
 
   
 ```  
 HBITMAP GetMask(int iImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iImage`  
+### <a name="parameters"></a>Parameters  
+ [in] `iImage`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getresourceoffset"></a>CMFCToolBarImages::GetResourceOffset  
- 特定のリソース ID をイメージのインデックスを返します  
+##  <a name="getresourceoffset"></a>  CMFCToolBarImages::GetResourceOffset  
+ Returns the image index for a specified resource ID.  
   
 ```  
 int GetResourceOffset(UINT uiResId) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiResId`  
- イメージのリソース ID  
+### <a name="parameters"></a>Parameters  
+ [in] `uiResId`  
+ An image resource ID.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、イメージのインデックス指定されたリソース ID を使用してイメージが存在しない場合は-1 を返します。  
+### <a name="return-value"></a>Return Value  
+ An image index if the method was successful; -1 if the image with the specified resource ID does not exist.  
   
-##  <a name="gettransparentcolor"></a>CMFCToolBarImages::GetTransparentColor  
+##  <a name="gettransparentcolor"></a>  CMFCToolBarImages::GetTransparentColor  
 
   
 ```  
 COLORREF GetTransparentColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="grayimages"></a>CMFCToolBarImages::GrayImages  
- 無効な外観にすることのツール バー イメージを淡色表示されます。  
+##  <a name="grayimages"></a>  CMFCToolBarImages::GrayImages  
+ Grays the toolbar images to make them look disabled.  
   
 ```  
 BOOL GrayImages(int nGrayImageLuminancePercentage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nGrayImageLuminancePercentage`  
- 輝度の割合。  
+### <a name="parameters"></a>Parameters  
+ [in] `nGrayImageLuminancePercentage`  
+ Luminance percentage.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`コレクション内のイメージが正常に淡色表示された場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if images in the collection were grayed successfully; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、各ピクセルの赤、緑、および青のコンポーネントの平均を計算して、結果の乗算で、ツール バー イメージを変更`nGrayImageLuminancePercentage`100 で除算します。 場合`nGrayImageLuminancePercentage`がゼロまたは負の場合、130 の既定値は、代わりに使用します。  
+### <a name="remarks"></a>Remarks  
+ This method modifies the toolbar images by averaging the red, green, and blue components of each pixel and multiplying the result by `nGrayImageLuminancePercentage` divided by 100. If `nGrayImageLuminancePercentage` is zero or negative, the default value of 130 is used instead.  
   
 > [!NOTE]
->  変更を元に戻す場合は、元のイメージを再読み込みする必要があります。 呼び出すことによってこれを行う[CMFCToolBarImages::Load](#load)または[CMFCToolBarImages::UpdateImage](#updateimage) (だけのユーザー定義のイメージ)、またはを呼び出して[CMFCToolBarImages::Clear](#clear)を呼び出して、イメージをもう一度追加[CMFCToolBarImages::AddIcon](#addicon)または[CMFCToolBarImages::AddImage](#addimage)します。  
+>  If you want to undo the change, you must reload the images from the source. You can do this by calling [CMFCToolBarImages::Load](#load) or [CMFCToolBarImages::UpdateImage](#updateimage) (only for user-defined images), or by calling [CMFCToolBarImages::Clear](#clear) and adding the images again by calling [CMFCToolBarImages::AddIcon](#addicon) or [CMFCToolBarImages::AddImage](#addimage).  
   
-##  <a name="is32bittransparencysupported"></a>CMFCToolBarImages::Is32BitTransparencySupported  
- オペレーティング システムが 32 ビットのアルファ ブレンドをサポートしているかどうかを指定します。  
+##  <a name="is32bittransparencysupported"></a>  CMFCToolBarImages::Is32BitTransparencySupported  
+ Specifies whether the operating system supports 32-bit alpha blending.  
   
 ```  
 static BOOL Is32BitTransparencySupported();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`32 ビットのアルファ ブレンドがサポートされている場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if 32-bit alpha blending is supported; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- この静的メソッドを使用して、実行時に、オペレーティング システムが 32 ビットのアルファ ブレンドをサポートしているかどうかを決定します。 この機能はサポート[!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)]以降のバージョン。  
+### <a name="remarks"></a>Remarks  
+ Use this static method to determine at runtime whether the operating system supports 32-bit alpha blending. This feature is supported on [!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] and later versions.  
   
-##  <a name="ispremultiplyautocheck"></a>CMFCToolBarImages::IsPreMultiplyAutoCheck  
+##  <a name="ispremultiplyautocheck"></a>  CMFCToolBarImages::IsPreMultiplyAutoCheck  
 
   
 ```  
 BOOL IsPreMultiplyAutoCheck() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isreadonly"></a>CMFCToolBarImages::IsReadOnly  
- ツール バー イメージは読み取り専用であるかどうかを指定します。  
+##  <a name="isreadonly"></a>  CMFCToolBarImages::IsReadOnly  
+ Specifies whether the toolbar images are read-only.  
   
 ```  
 BOOL IsReadOnly() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ツール バー イメージか読み取り専用、それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the toolbar images are read-only, otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- `CMFCToolbarImages`ツール バー イメージのビットマップが読み取り専用のファイルから読み込まれたとき、またはを使用して、ビットマップがコピーされたオブジェクトは読み取り専用、`CMFCToolBarImages::CopyTemp`メソッドです。  
+### <a name="remarks"></a>Remarks  
+ The `CMFCToolbarImages` object is read-only when the bitmap with toolbar images was loaded from a read-only file, or when the bitmap was copied in using the `CMFCToolBarImages::CopyTemp` method.  
   
-##  <a name="isrtl"></a>CMFCToolBarImages::IsRTL  
- 右から左 (RTL) のサポートが有効になっているかどうかを指定します。  
+##  <a name="isrtl"></a>  CMFCToolBarImages::IsRTL  
+ Specifies whether right-to-left (RTL) support is enabled.  
   
 ```  
 static BOOL IsRTL();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`RTL のサポートが有効の場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if RTL support is enabled; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- RTL のサポートは、アプリケーションを右から左、アラビア語、ヘブライ語、ペルシア語、またはウルドゥ語などに読まれる言語にローカライズするときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ RTL support is used when the application is localized to a language that is read from right to left, such as Arabic, Hebrew, Persian, or Urdu.  
   
-##  <a name="isuserimageslist"></a>CMFCToolBarImages::IsUserImagesList  
- このツール バー イメージのセットがユーザー定義のイメージを含むかどうかを指定します。  
+##  <a name="isuserimageslist"></a>  CMFCToolBarImages::IsUserImagesList  
+ Specifies whether this set of toolbar images contains user-defined images.  
   
 ```  
 BOOL IsUserImagesList() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合、`CMFCToolBarImages`オブジェクトには、ユーザー定義のツール バー イメージが含まれています。 そうしないと`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the `CMFCToolBarImages`  object contains user-defined toolbar images; otherwise `FALSE`.  
   
-##  <a name="isvalid"></a>CMFCToolBarImages::IsValid  
- このツール バー イメージのセットが有効なツール バー イメージを含むかどうかを示します。  
+##  <a name="isvalid"></a>  CMFCToolBarImages::IsValid  
+ Indicates whether this set of toolbar images contains a valid toolbar image.  
   
 ```  
 BOOL IsValid() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合、`CMFCToolBarImages`オブジェクトが有効な`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if a `CMFCToolBarImages`  object is valid; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- `CMFCToolBarImages`オブジェクトがツール バー イメージのビットマップへのハンドルが無効`NULL`します。  
+### <a name="remarks"></a>Remarks  
+ The `CMFCToolBarImages` object is not valid when its handle to a bitmap with toolbar images is `NULL`.  
   
-##  <a name="load"></a>CMFCToolBarImages::Load  
- システム リソースまたはファイルからは、ツール バー イメージを読み込みます。  
+##  <a name="load"></a>  CMFCToolBarImages::Load  
+ Loads toolbar images from system resources or from a file.  
   
 ```  
 BOOL Load(
@@ -794,29 +860,29 @@ BOOL Load(
     DWORD nMaxFileSize = 819200);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiResID`  
- ビットマップ リソースの ID です。  
+### <a name="parameters"></a>Parameters  
+ [in] `uiResID`  
+ The ID of a bitmap resource.  
   
- [入力] `hinstRes`  
- リソース DLL のインスタンス。  
+ [in] `hinstRes`  
+ An instance of the resource DLL.  
   
- [入力] `bAdd`  
- `TRUE`既存のビットマップに読み込まれたビットマップを追加するまたは`FALSE`を既存のビットマップを置き換えます。  
+ [in] `bAdd`  
+ `TRUE` to add the loaded bitmap to the existing bitmap, or `FALSE` to replace the existing bitmap.  
   
- [入力] `lpszBmpFileName`  
- ビットマップの読み込み元のディスク ファイルへのパス。  
+ [in] `lpszBmpFileName`  
+ A path to a disk file from which to load the bitmap.  
   
- [入力] `nMaxFileSize`  
- ビットマップ ファイル内のバイトの最大数または、ファイル サイズに関係なく、ビットマップを読み込む場合は 0 です。 メソッドが戻るかどうかは、ファイルのサイズは、この最大サイズを超えている`FALSE`ビットマップは読み込まれません。  
+ [in] `nMaxFileSize`  
+ Maximum number of bytes in the bitmap file; or 0 to load the bitmap regardless of file size. If the size of the file exceeds this maximum size, the method returns `FALSE` and does not load the bitmap.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ビットマップが正常に読み込まれている場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the bitmap was loaded successfully; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- ファイルに読み取り専用属性がある場合、イメージ リストは読み取り専用とマークされます。  
+### <a name="remarks"></a>Remarks  
+ If the file has the read-only attribute, the image list is marked as read-only.  
   
-##  <a name="loadstr"></a>CMFCToolBarImages::LoadStr  
+##  <a name="loadstr"></a>  CMFCToolBarImages::LoadStr  
 
   
 ```  
@@ -826,16 +892,16 @@ BOOL LoadStr(
     BOOL bAdd = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszResourceName`  
- [入力] `hinstRes`  
- [入力] `bAdd`  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszResourceName`  
+ [in] `hinstRes`  
+ [in] `bAdd`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="mapfromsyscolor"></a>CMFCToolBarImages::MapFromSysColor  
+##  <a name="mapfromsyscolor"></a>  CMFCToolBarImages::MapFromSysColor  
 
   
 ```  
@@ -844,15 +910,15 @@ static COLORREF __stdcall MapFromSysColor(
     BOOL bUseRGBQUAD = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `color`  
- [入力] `bUseRGBQUAD`  
+### <a name="parameters"></a>Parameters  
+ [in] `color`  
+ [in] `bUseRGBQUAD`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="mapto3dcolors"></a>CMFCToolBarImages::MapTo3dColors  
+##  <a name="mapto3dcolors"></a>  CMFCToolBarImages::MapTo3dColors  
 
   
 ```  
@@ -862,16 +928,16 @@ BOOL MapTo3dColors(
     COLORREF clrDest = (COLORREF)-1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bUseRGBQUAD`  
- [入力] `clrSrc`  
- [入力] `clrDest`  
+### <a name="parameters"></a>Parameters  
+ [in] `bUseRGBQUAD`  
+ [in] `clrSrc`  
+ [in] `clrDest`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="maptosyscolor"></a>CMFCToolBarImages::MapToSysColor  
+##  <a name="maptosyscolor"></a>  CMFCToolBarImages::MapToSysColor  
 
   
 ```  
@@ -880,43 +946,43 @@ static COLORREF __stdcall MapToSysColor(
     BOOL bUseRGBQUAD = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `color`  
- [入力] `bUseRGBQUAD`  
+### <a name="parameters"></a>Parameters  
+ [in] `color`  
+ [in] `bUseRGBQUAD`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="maptosyscoloralpha"></a>CMFCToolBarImages::MapToSysColorAlpha  
+##  <a name="maptosyscoloralpha"></a>  CMFCToolBarImages::MapToSysColorAlpha  
 
   
 ```  
 static COLORREF __stdcall MapToSysColorAlpha(COLORREF color);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `color`  
+### <a name="parameters"></a>Parameters  
+ [in] `color`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="mirror"></a>CMFCToolBarImages::Mirror  
- ツール バー イメージを水平方向のミラー イメージで置き換えます。  
+##  <a name="mirror"></a>  CMFCToolBarImages::Mirror  
+ Replaces the toolbar images with their horizontal mirror image.  
   
 ```  
 BOOL Mirror();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージが正常にミラー化された場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the images were successfully mirrored; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、右から左へ記述するシステムをサポートするために使用されます。  
+### <a name="remarks"></a>Remarks  
+ This method is used to support right-to-left writing systems.  
   
-##  <a name="mirrorbitmap"></a>CMFCToolBarImages::MirrorBitmap  
- ビットマップを水平方向のミラー イメージに置き換えます。  
+##  <a name="mirrorbitmap"></a>  CMFCToolBarImages::MirrorBitmap  
+ Replaces a bitmap with its horizontal mirror image.  
   
 ```  
 static BOOL MirrorBitmap(
@@ -924,20 +990,20 @@ static BOOL MirrorBitmap(
     int cxImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力、出力] `hbmp`  
- ミラー化するビットマップへのハンドル。  
+### <a name="parameters"></a>Parameters  
+ [in, out] `hbmp`  
+ A handle to bitmap to mirror.  
   
- [入力] `cxImage`  
- ピクセル単位でイメージの幅。  
+ [in] `cxImage`  
+ Width of the image in pixels.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージが正常にミラー化された場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the image was successfully mirrored; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、右から左へ記述するシステムをサポートするために使用されます。  
+### <a name="remarks"></a>Remarks  
+ This function is used to support right-to-left writing systems.  
   
-##  <a name="mirrorbitmapvert"></a>CMFCToolBarImages::MirrorBitmapVert  
+##  <a name="mirrorbitmapvert"></a>  CMFCToolBarImages::MirrorBitmapVert  
 
   
 ```  
@@ -946,35 +1012,35 @@ static BOOL __stdcall MirrorBitmapVert(
     int cyImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hbmp`  
- [入力] `cyImage`  
+### <a name="parameters"></a>Parameters  
+ [in] `hbmp`  
+ [in] `cyImage`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="mirrorvert"></a>CMFCToolBarImages::MirrorVert  
+##  <a name="mirrorvert"></a>  CMFCToolBarImages::MirrorVert  
 
   
 ```  
 BOOL MirrorVert();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onsyscolorchange"></a>CMFCToolBarImages::OnSysColorChange  
+##  <a name="onsyscolorchange"></a>  CMFCToolBarImages::OnSysColorChange  
 
   
 ```  
 void OnSysColorChange();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="premultiplyalpha"></a>CMFCToolBarImages::PreMultiplyAlpha  
+##  <a name="premultiplyalpha"></a>  CMFCToolBarImages::PreMultiplyAlpha  
 
   
 ```  
@@ -985,28 +1051,28 @@ static BOOL __stdcall PreMultiplyAlpha(
 BOOL PreMultiplyAlpha(HBITMAP hbmp);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hbmp`  
- [入力] `bAutoCheckPremlt`  
+### <a name="parameters"></a>Parameters  
+ [in] `hbmp`  
+ [in] `bAutoCheckPremlt`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_bdisabletruecoloralpha"></a>CMFCToolBarImages::m_bDisableTrueColorAlpha  
- `TRUE`場合は true カラー アルファ ブレンド (32 ビット カラー) は無効です。  
+##  <a name="m_bdisabletruecoloralpha"></a>  CMFCToolBarImages::m_bDisableTrueColorAlpha  
+ `TRUE` if truecolor alpha blending (32-bit color) is disabled.  
   
 ```  
 static BOOL m_bDisableTrueColorAlpha;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー変数を設定`FALSE`true カラー ツール バー イメージのアルファ ブレンドを有効にします。  
+### <a name="remarks"></a>Remarks  
+ Set this member variable to `FALSE` to enable truecolor alpha-blending for toolbar images.  
   
- 既定値は`TRUE`旧バージョンとの互換性のためです。  
+ The default value is `TRUE` for backward compatibility.  
   
-##  <a name="preparedrawimage"></a>CMFCToolBarImages::PrepareDrawImage  
- 指定されたサイズにツール バー イメージを描画するために必要なリソースが割り当てられます。  
+##  <a name="preparedrawimage"></a>  CMFCToolBarImages::PrepareDrawImage  
+ Allocates the resources that are required to draw a toolbar image at a specified size.  
   
 ```  
 BOOL PrepareDrawImage(
@@ -1016,79 +1082,79 @@ BOOL PrepareDrawImage(
     BOOL bFadeInactive=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `ds`  
- 参照を`CAfxDrawState`イメージ レンダリング ステージ間で割り当てられたリソースを格納する構造体。  
+### <a name="parameters"></a>Parameters  
+ [in] `ds`  
+ A reference to `CAfxDrawState` structure, which stores the allocated resources between image rendering stages.  
   
- [入力] `sizeImageDest`  
- コピー先の画像のサイズを指定します。  
+ [in] `sizeImageDest`  
+ Specifies the size of a destination image.  
   
- [入力] `bFadeInactive`  
- `TRUE`アクティブでない場合、描画されるイメージがフェードします。  
+ [in] `bFadeInactive`  
+ `TRUE` if you want inactive images to be drawn faded.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ツール バー イメージを描画するために必要なリソースそれ以外の場合、正常に割り当てられた場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the resources required to draw the toolbar image were allocated successfully, otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを呼び出した後は、呼び出す[CMFCToolBarImages::Draw](#draw)何回でも。 描画が完了した後に呼び出す必要があります[CMFCToolBarImages::EndDrawImage](#enddrawimage)によって割り当てられたリソースを解放する`PrepareDrawImage`です。  
+### <a name="remarks"></a>Remarks  
+ After you call this method, you can call [CMFCToolBarImages::Draw](#draw) any number of times. After you finished drawing, you must call [CMFCToolBarImages::EndDrawImage](#enddrawimage) to release the resources allocated by `PrepareDrawImage`.  
   
-##  <a name="save"></a>CMFCToolBarImages::Save  
- このツール バー イメージのセットには、ユーザー定義のイメージが含まれている場合、ツール バー イメージをファイルに格納します。  
+##  <a name="save"></a>  CMFCToolBarImages::Save  
+ Stores the toolbar images in a file if this set of toolbar images contains user-defined images.  
   
 ```  
 BOOL Save(LPCTSTR lpszBmpFileName=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszBmpFileName`  
- ディスク ファイルへのパス。  
+ A path to a disk file.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ツール バー イメージが正常に保存されている場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the toolbar images were saved successfully; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- ユーザー定義のイメージをディスク ファイルに保存するには、このメソッドを呼び出します。 場合`lpszBmpFileName`は`NULL`、メソッドでは、ビットマップを格納して、ビットマップの読み込み元ファイルに、 [CMFCToolBarImages::Load](#load)メソッドです。  
+### <a name="remarks"></a>Remarks  
+ Call this method to store the user-defined images into a disk file. If `lpszBmpFileName` is `NULL`, the method stores the bitmap into the file from which the bitmap was loaded by the [CMFCToolBarImages::Load](#load) method.  
   
-##  <a name="setalwayslight"></a>CMFCToolBarImages::SetAlwaysLight  
+##  <a name="setalwayslight"></a>  CMFCToolBarImages::SetAlwaysLight  
 
   
 ```  
 void SetAlwaysLight(BOOL bAlwaysLight = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bAlwaysLight`  
+### <a name="parameters"></a>Parameters  
+ [in] `bAlwaysLight`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setdisabledimagealpha"></a>CMFCToolBarImages::SetDisabledImageAlpha  
- 無効なイメージに使用するアルファ チャネル (不透明度) の値を設定します。  
+##  <a name="setdisabledimagealpha"></a>  CMFCToolBarImages::SetDisabledImageAlpha  
+ Sets the alpha channel (opacity) value that is used for disabled images.  
   
 ```  
 static void SetDisabledImageAlpha(BYTE nValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nValue`  
- アルファ チャネルの新しい値。  
+### <a name="parameters"></a>Parameters  
+ [in] `nValue`  
+ The new value of the alpha channel.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを使用すると、無効なイメージのカスタムのアルファ値を設定できます。 既定値は、127 はそれが原因で無効にされたボタンの画像を半透明にします。 値 0 を設定した場合、無効なイメージは完全に透過的になります。 255 の値を設定した場合、無効なイメージは完全に不透明になります。  
+### <a name="remarks"></a>Remarks  
+ Use this method to set a custom alpha value for disabled images. The default value is 127, which causes disabled button images to be semitransparent. If you set a value of 0, disabled images will be completely transparent. If you set a value of 255, disabled images will be completely opaque.  
   
-##  <a name="setfadedimagealpha"></a>CMFCToolBarImages::SetFadedImageAlpha  
+##  <a name="setfadedimagealpha"></a>  CMFCToolBarImages::SetFadedImageAlpha  
 
   
 ```  
 static void __stdcall SetFadedImageAlpha(BYTE nValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nValue`  
+### <a name="parameters"></a>Parameters  
+ [in] `nValue`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setimagesize"></a>CMFCToolBarImages::SetImageSize  
- ツール バー イメージ (ソースのサイズ) のサイズを設定します。  
+##  <a name="setimagesize"></a>  CMFCToolBarImages::SetImageSize  
+ Sets the size of each toolbar image (source size).  
   
 ```  
 void SetImageSize(
@@ -1096,77 +1162,77 @@ void SetImageSize(
     BOOL bUpdateCount=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `sizeImage`  
- ツール バー イメージの新しいサイズ。  
+### <a name="parameters"></a>Parameters  
+ [in] `sizeImage`  
+ The new size of toolbar images.  
   
-### <a name="remarks"></a>コメント  
- 既定では、ツール バー イメージのサイズは 16 × 15 ピクセルです。 異なるサイズのツール バー イメージを使用する場合は、このメソッドを呼び出します。  
+### <a name="remarks"></a>Remarks  
+ By default the size of the toolbar image is 16x15 pixels. Call this method if you want to use toolbar images of a different size.  
   
-##  <a name="setlightpercentage"></a>CMFCToolBarImages::SetLightPercentage  
+##  <a name="setlightpercentage"></a>  CMFCToolBarImages::SetLightPercentage  
 
   
 ```  
 void SetLightPercentage(int nValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nValue`  
+### <a name="parameters"></a>Parameters  
+ [in] `nValue`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setmapto3dcolors"></a>CMFCToolBarImages::SetMapTo3DColors  
+##  <a name="setmapto3dcolors"></a>  CMFCToolBarImages::SetMapTo3DColors  
 
   
 ```  
 void SetMapTo3DColors(BOOL bMapTo3DColors);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bMapTo3DColors`  
+### <a name="parameters"></a>Parameters  
+ [in] `bMapTo3DColors`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setpremultiplyautocheck"></a>CMFCToolBarImages::SetPreMultiplyAutoCheck  
+##  <a name="setpremultiplyautocheck"></a>  CMFCToolBarImages::SetPreMultiplyAutoCheck  
 
   
 ```  
 void SetPreMultiplyAutoCheck(BOOL bAuto = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bAuto`  
+### <a name="parameters"></a>Parameters  
+ [in] `bAuto`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setsingleimage"></a>CMFCToolBarImages::SetSingleImage  
+##  <a name="setsingleimage"></a>  CMFCToolBarImages::SetSingleImage  
 
   
 ```  
 void SetSingleImage();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="settransparentcolor"></a>CMFCToolBarImages::SetTransparentColor  
- ツール バー イメージの透明色を設定します。  
+##  <a name="settransparentcolor"></a>  CMFCToolBarImages::SetTransparentColor  
+ Sets the transparent color of the toolbar images.  
   
 ```  
 COLORREF SetTransparentColor(COLORREF clrTransparent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `clrTransparent`  
- RGB 値。  
+### <a name="parameters"></a>Parameters  
+ [in] `clrTransparent`  
+ An RGB value.  
   
-### <a name="return-value"></a>戻り値  
- 前の透明色。  
+### <a name="return-value"></a>Return Value  
+ The previous transparent color.  
   
-### <a name="remarks"></a>コメント  
- またはフレームワークが呼び出す場合[CMFCToolBarImages::Draw](#draw)、メソッドがによって指定された色に一致する任意のピクセルを描画しない`clrTransparent`します。  
+### <a name="remarks"></a>Remarks  
+ When you or the framework call [CMFCToolBarImages::Draw](#draw), the method does not draw any pixel that matches the color specified by `clrTransparent`.  
   
-##  <a name="updateimage"></a>CMFCToolBarImages::UpdateImage  
- ビットマップからツールバーのユーザー定義のイメージを更新します。  
+##  <a name="updateimage"></a>  CMFCToolBarImages::UpdateImage  
+ Updates a user-defined toolbar image from a bitmap.  
   
 ```  
 BOOL UpdateImage(
@@ -1174,85 +1240,85 @@ BOOL UpdateImage(
     HBITMAP hbmp);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iImage`  
- 更新するイメージの&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iImage`  
+ The zero-based index of the image to update.  
   
- [入力] `hbmp`  
- 元のイメージを更新するビットマップへのハンドル。  
+ [in] `hbmp`  
+ A handle to the bitmap from which to update the image.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージが正常に更新された場合`FALSE`イメージの一覧にある、またはユーザー定義の一時的な場合です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the image was updated successfully; `FALSE` if the image list is not user-defined or temporary.  
   
-##  <a name="convertto32bits"></a>CMFCToolBarImages::ConvertTo32Bits  
- 変換では、32 ビット/ピクセルの画像にビットマップを下線が付きます。  
+##  <a name="convertto32bits"></a>  CMFCToolBarImages::ConvertTo32Bits  
+ Converts underlined bitmaps to 32 bpp images.  
   
 ```  
 BOOL ConvertTo32Bits(COLORREF clrTransparent = (COLORREF)-1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clrTransparent`  
- 下線付きのビットマップの透明色を指定します。  
+ Specifies transparent color of underlined bitmaps.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getbitsperpixel"></a>CMFCToolBarImages::GetBitsPerPixel  
- 下線付きのイメージの現在の解像度を返します。  
+##  <a name="getbitsperpixel"></a>  CMFCToolBarImages::GetBitsPerPixel  
+ Returns current resolution of underlined images.  
   
 ```  
 int GetBitsPerPixel() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ビット/ピクセル (bpp) 内の下線付きのイメージの現在の解像度を表す整数値。  
+### <a name="return-value"></a>Return Value  
+ An integer value representing the current resolution of underlined images, in bits per pixel (bpp).  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getscale"></a>CMFCToolBarImages::GetScale  
- 下線付きのイメージの現在のスケール比を返します。  
+##  <a name="getscale"></a>  CMFCToolBarImages::GetScale  
+ Returns the current scale ratio of underlined images.  
   
 ```  
 double GetScale() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のスケール比を表す値。  
+### <a name="return-value"></a>Return Value  
+ A value representing the current scale ratio.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isscaled"></a>CMFCToolBarImages::IsScaled  
- 下線付きのイメージをスケーリングするかどうかどうかを指示します。  
+##  <a name="isscaled"></a>  CMFCToolBarImages::IsScaled  
+ Tells whether the underlined images are scaled or not.  
   
 ```  
 BOOL IsScaled () const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`下線付きのイメージがスケーリングされる場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if underlined images are scaled; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="smoothresize"></a>CMFCToolBarImages::SmoothResize  
- スムーズに下線付きのイメージのサイズを変更します。  
+##  <a name="smoothresize"></a>  CMFCToolBarImages::SmoothResize  
+ Smoothly resizes underlined images.  
   
 ```  
 BOOL SmoothResize(double dblImageScale);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dblImageScale`  
- スケールの比率です。  
+ Scale ratio.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`サイズ変更が成功した場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if resize succeeds; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)   
- [CMFCToolBarButton クラス](../../mfc/reference/cmfctoolbarbutton-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [CMFCToolBar Class](../../mfc/reference/cmfctoolbar-class.md)   
+ [CMFCToolBarButton Class](../../mfc/reference/cmfctoolbarbutton-class.md)
 

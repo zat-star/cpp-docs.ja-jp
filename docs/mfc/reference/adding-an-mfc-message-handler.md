@@ -1,5 +1,5 @@
 ---
-title: "MFC メッセージ ハンドラーの追加 |Microsoft ドキュメント"
+title: Adding an MFC Message Handler | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- message handling, adding handlers
+- message handling [MFC], adding handlers
 ms.assetid: 4251cfce-76ca-443d-bd2f-6303afa6d942
 caps.latest.revision: 9
 author: mikeblome
@@ -33,28 +33,28 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4fafe461008e3545243d693e0d9e34acd57163e0
-ms.openlocfilehash: b80ebf607b7a11bf80f14c5375a5ace27ce1047c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c5568c7d75b0d98349c7086d9efd367c15deda51
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="adding-an-mfc-message-handler"></a>MFC メッセージ ハンドラーの追加
-ことができます[メッセージ ハンドラーを追加する [プロパティ] ウィンドウを使用して](../../mfc/reference/mapping-messages-to-functions.md)(Windows メッセージを処理するメンバー関数)、メッセージ ハンドラーへのクラスおよびマップの Windows メッセージにします。 追加することも[ダイアログ ボックス コントロールのイベント ハンドラー](../../windows/adding-event-handlers-for-dialog-box-controls.md)します。  
+# <a name="adding-an-mfc-message-handler"></a>Adding an MFC Message Handler
+You can [use the Properties window to add a message handler](../../mfc/reference/mapping-messages-to-functions.md) (a member function that handles Windows messages) to a class and map Windows messages to the message handler. You can also add [an event handler for any dialog box control](../../windows/adding-event-handlers-for-dialog-box-controls.md).  
   
- [プロパティ] ウィンドウを使用して、メッセージとイベント処理関数を定義する、自動的に更新できますメッセージ ディスパッチ テーブル (またはメッセージ マップ) とクラスのヘッダー ファイルです。  
+ By using the Properties window to define message- and event-handling functions, you can automatically update the message-dispatch table (or message map) and your class header file.  
   
 > [!NOTE]
->  メッセージ ハンドラーを追加するには、プロパティ ウィンドウを使用して ATL クラスにただし、いくつかの結果が異なる場合があります。 詳細については、ATL のトピックを参照してください。 [ATL メッセージ ハンドラーの追加](../../atl/adding-an-atl-message-handler.md)します。  
+>  You can add a message handler to an ATL class using the Properties window; however, some results may vary. For more information, see the ATL topic [Adding an ATL Message Handler](../../atl/adding-an-atl-message-handler.md).  
   
-## <a name="see-also"></a>関連項目  
- [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
- [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
- [メンバー関数の追加](../../ide/adding-a-member-function-visual-cpp.md)   
- [メンバー変数の追加](../../ide/adding-a-member-variable-visual-cpp.md)   
- [仮想関数のオーバーライド](../../ide/overriding-a-virtual-function-visual-cpp.md)   
- [クラス各部へ](../../ide/navigating-the-class-structure-visual-cpp.md)   
- [ダイアログ エディター](../../windows/dialog-editor.md)
+## <a name="see-also"></a>See Also  
+ [Adding Functionality with Code Wizards](../../ide/adding-functionality-with-code-wizards-cpp.md)   
+ [Adding a Class](../../ide/adding-a-class-visual-cpp.md)   
+ [Adding a Member Function](../../ide/adding-a-member-function-visual-cpp.md)   
+ [Adding a Member Variable](../../ide/adding-a-member-variable-visual-cpp.md)   
+ [Overriding a Virtual Function](../../ide/overriding-a-virtual-function-visual-cpp.md)   
+ [Navigating the Class Structure](../../ide/navigating-the-class-structure-visual-cpp.md)   
+ [Dialog Editor](../../windows/dialog-editor.md)
 
 

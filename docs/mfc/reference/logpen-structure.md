@@ -1,5 +1,5 @@
 ---
-title: "LOGPEN 構造体 |Microsoft ドキュメント"
+title: LOGPEN Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- LOGPEN structure
+- LOGPEN structure [MFC]
 ms.assetid: a89e8690-6b61-4af5-990c-7c82da24f3b0
 caps.latest.revision: 12
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: f3868d2ac6a7b18cfe43f7da8865aed0a3ecf88d
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d87f885848fd7f77b05475de0ab99e1214e474a7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="logpen-structure"></a>LOGPEN 構造体
-`LOGPEN`構造体は、スタイル、幅、およびペンの色を定義、描画に使用する描画オブジェクトの直線し罫線します。 [CPen::CreatePenIndirect](../../mfc/reference/cpen-class.md#createpenindirect)関数は、`LOGPEN`構造体。  
+# <a name="logpen-structure"></a>LOGPEN Structure
+The `LOGPEN` structure defines the style, width, and color of a pen, a drawing object used to draw lines and borders. The [CPen::CreatePenIndirect](../../mfc/reference/cpen-class.md#createpenindirect) function uses the `LOGPEN` structure.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct tagLOGPEN {  /* lgpn */  
@@ -53,42 +53,42 @@ typedef struct tagLOGPEN {  /* lgpn */
 } LOGPEN;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *lopnStyle*  
- ペンの種類を指定します。 このメンバーは、次の値のいずれかになります。  
+ Specifies the pen type. This member can be one of the following values:  
   
-- **きは**ソリッド ペンを作成します。  
+- **PS_SOLID** Creates a solid pen.  
   
-- **PS_DASH**破線のペンを作成します。 (ペンの幅が 1 である場合にのみ有効です。)  
+- **PS_DASH** Creates a dashed pen. (Valid only when the pen width is 1.)  
   
-- **PS_DOT**ピリオドで区切られたペンを作成します。 (ペンの幅が 1 である場合にのみ有効です。)  
+- **PS_DOT** Creates a dotted pen. (Valid only when the pen width is 1.)  
   
-- **PS_DASHDOT**の代替ダッシュとドットでペンを作成します。 (ペンの幅が 1 である場合にのみ有効です。)  
+- **PS_DASHDOT** Creates a pen with alternating dashes and dots. (Valid only when the pen width is 1.)  
   
-- **PS_DASHDOTDOT**の代替ダッシュと&2; つのドットでペンを作成します。 (ペンの幅が 1 である場合にのみ有効です。)  
+- **PS_DASHDOTDOT** Creates a pen with alternating dashes and double dots. (Valid only when the pen width is 1.)  
   
-- **必ず**null ペンを作成します。  
+- **PS_NULL** Creates a null pen.  
   
-- **ペン**GDI 関数外接する四角形を指定することによって生成される、閉じた図形のフレーム内の行を描画するペンを作成 (たとえば、**楕円**、**四角形**、 `RoundRect`、 `Pie`、および`Chord`メンバー関数)。 外接する四角形が指定されていない関数の出力 GDI を使用してこのスタイルを使用する場合 (たとえば、`LineTo`メンバー関数)、ペンの描画領域は、フレームによって制限されません。  
+- **PS_INSIDEFRAME** Creates a pen that draws a line inside the frame of closed shapes produced by GDI output functions that specify a bounding rectangle (for example, the **Ellipse**, **Rectangle**, `RoundRect`, `Pie`, and `Chord` member functions). When this style is used with GDI output functions that do not specify a bounding rectangle (for example, the `LineTo` member function), the drawing area of the pen is not limited by a frame.  
   
-     ペンがある場合、**ペン**スタイルおよび色の論理テーブルで使用する色に一致しない色ディザー カラーでペンを描画します。 **きは**にディザー カラー ペンを作成するのには、ペンのスタイルを使用できません。 **ペン**スタイルは**きは**ペンの幅が 1 以下である場合。  
+     If a pen has the **PS_INSIDEFRAME** style and a color that does not match a color in the logical color table, the pen is drawn with a dithered color. The **PS_SOLID** pen style cannot be used to create a pen with a dithered color. The **PS_INSIDEFRAME** style is identical to **PS_SOLID** if the pen width is less than or equal to 1.  
   
-     ときに、**ペン**スタイルが以外の関数によって生成される GDI オブジェクトと共に使用される**楕円**、**四角形**、および`RoundRect`、行あります完全に指定したフレームの中。  
+     When the **PS_INSIDEFRAME** style is used with GDI objects produced by functions other than **Ellipse**, **Rectangle**, and `RoundRect`, the line may not be completely inside the specified frame.  
   
  *lopnWidth*  
- 論理ユニットでは、ペンの幅を指定します。 場合、 **lopnWidth**メンバーが 0 のペンが現在のマッピング モードに関係なくラスター デバイス上の 1 ピクセル場合、です。  
+ Specifies the pen width, in logical units. If the **lopnWidth** member is 0, the pen is 1 pixel wide on raster devices regardless of the current mapping mode.  
   
  *lopnColor*  
- ペンの色を指定します。  
+ Specifies the pen color.  
   
-## <a name="remarks"></a>コメント  
- **Y**内の値、[ポイント](../../mfc/reference/point-structure1.md)の構造体、 **lopnWidth**メンバーは使用されません。  
+## <a name="remarks"></a>Remarks  
+ The **y** value in the [POINT](../../mfc/reference/point-structure1.md) structure for the **lopnWidth** member is not used.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** wingdi.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CPen::CreatePenIndirect](../../mfc/reference/cpen-class.md#createpenindirect)
 
 

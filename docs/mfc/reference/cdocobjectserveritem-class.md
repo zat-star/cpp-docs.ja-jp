@@ -1,5 +1,5 @@
 ---
-title: "CDocObjectServerItem クラス |Microsoft ドキュメント"
+title: CDocObjectServerItem Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -18,12 +18,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- document object server
-- CDocObjectServerItem class
-- servers [C++], ActiveX documents
-- docobject server
-- servers [C++], doc objects
-- ActiveX documents [C++], document server
+- CDocObjectServerItem [MFC], CDocObjectServerItem
+- CDocObjectServerItem [MFC], GetDocument
+- CDocObjectServerItem [MFC], OnHide
+- CDocObjectServerItem [MFC], OnShow
 ms.assetid: 530f7156-50c8-4806-9328-602c9133f622
 caps.latest.revision: 22
 author: mikeblome
@@ -43,114 +41,114 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 06cf873512fbf43b729d9a70f185582a4e48cafc
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7076a90ba5af3a4d3b15f798bd8e4ba8f74d5d1f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdocobjectserveritem-class"></a>CDocObjectServerItem クラス
-OLE サーバー動詞を DocObject サーバー用に実装します。  
+# <a name="cdocobjectserveritem-class"></a>CDocObjectServerItem Class
+Implements OLE server verbs specifically for DocObject servers.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDocObjectServerItem : public COleServerItem  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="protected-constructors"></a>プロテクト コンストラクター  
+### <a name="protected-constructors"></a>Protected Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDocObjectServerItem::CDocObjectServerItem](#cdocobjectserveritem)|`CDocObjectServerItem` オブジェクトを構築します。|  
+|[CDocObjectServerItem::CDocObjectServerItem](#cdocobjectserveritem)|Constructs a `CDocObjectServerItem` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDocObjectServerItem::GetDocument](#getdocument)|項目を含むドキュメントへのポインターを取得します。|  
+|[CDocObjectServerItem::GetDocument](#getdocument)|Retrieves a pointer to the document that contains the item.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDocObjectServerItem::OnHide](#onhide)|フレームワーク DocObject アイテムを非表示にしようとする場合は、例外をスローします。|  
-|[CDocObjectServerItem::OnShow](#onshow)|DocObject アイテムの埋め込みを行うために、フレームワークによって呼び出されるアクティブです。 項目がない場合、DocObject、呼び出します[COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onshow)します。|  
+|[CDocObjectServerItem::OnHide](#onhide)|Throws an exception if the framework tries to hide a DocObject item.|  
+|[CDocObjectServerItem::OnShow](#onshow)|Called by the framework to make the DocObject item in-place active. If the item is not a DocObject, calls [COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onshow).|  
   
-## <a name="remarks"></a>コメント  
- `CDocObjectServerItem`オーバーライド可能なメンバー関数を定義します。 [OnHide](#onhide)、 [OnOpen](http://msdn.microsoft.com/en-us/7a9b1363-6ad8-4732-9959-4e35c07644fd)、および[OnShow](#onshow)します。  
+## <a name="remarks"></a>Remarks  
+ `CDocObjectServerItem` defines overridable member functions: [OnHide](#onhide), [OnOpen](http://msdn.microsoft.com/en-us/7a9b1363-6ad8-4732-9959-4e35c07644fd), and [OnShow](#onshow).  
   
- 使用する`CDocObjectServerItem`、されるようにする、 [OnGetEmbeddedItem](../../mfc/reference/coleserverdoc-class.md#ongetembeddeditem)でオーバーライド、 `COleServerDoc`-派生クラスの新しい返します`CDocObjectServerItem`オブジェクトです。 機能で、項目を変更する必要がある場合は、独自の新しいインスタンスを作成できます`CDocObjectServerItem`-クラスを派生します。  
+ To use `CDocObjectServerItem`, assure that the [OnGetEmbeddedItem](../../mfc/reference/coleserverdoc-class.md#ongetembeddeditem) override in your `COleServerDoc`-derived class returns a new `CDocObjectServerItem` object. If you need to change any functionality in your item, you can create a new instance of your own `CDocObjectServerItem`-derived class.  
   
- DocObjects については、次を参照してください。[関数](../../mfc/reference/cdocobjectserver-class.md)と[COleCmdUI](../../mfc/reference/colecmdui-class.md)で、 *『 MFC リファレンス*します。 参照してください[インターネットの最初の手順: アクティブなドキュメント](../../mfc/active-documents-on-the-internet.md)と[アクティブ ドキュメント](../../mfc/active-documents-on-the-internet.md)します。  
+ For further information on DocObjects, see [CDocObjectServer](../../mfc/reference/cdocobjectserver-class.md) and [COleCmdUI](../../mfc/reference/colecmdui-class.md) in the *MFC Reference*. Also see [Internet First Steps: Active Documents](../../mfc/active-documents-on-the-internet.md) and [Active Documents](../../mfc/active-documents-on-the-internet.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
  [CDocItem](../../mfc/reference/cdocitem-class.md)  
   
- [実際](../../mfc/reference/coleserveritem-class.md)  
+ [COleServerItem](../../mfc/reference/coleserveritem-class.md)  
   
  `CDocObjectServerItem`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdocob.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdocob.h  
   
-##  <a name="cdocobjectserveritem"></a>CDocObjectServerItem::CDocObjectServerItem  
- `CDocObjectServerItem` オブジェクトを構築します。  
+##  <a name="cdocobjectserveritem"></a>  CDocObjectServerItem::CDocObjectServerItem  
+ Constructs a `CDocObjectServerItem` object.  
   
 ```  
 CDocObjectServerItem(COleServerDoc* pServerDoc, BOOL bAutoDelete);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pServerDoc`  
- 新しい DocObject アイテムを格納するドキュメントへのポインター。  
+ A pointer to the document that will contain the new DocObject item.  
   
  `bAutoDelete`  
- リンクがリリースされたときに、オブジェクトを削除するかどうかを示します。 引数に設定します**FALSE**場合、`CDocObjectServerItem`オブジェクトは、ドキュメントのデータに不可欠な要素です。 設定**TRUE**オブジェクトが、ドキュメントのデータを削除するには、フレームワークを内の範囲を識別するために使用されるセカンダリ構造体である場合。  
+ Indicates whether the object can be deleted when a link to it is released. Set the argument to **FALSE** if the `CDocObjectServerItem` object is an integral part of your document's data. Set it to **TRUE** if the object is a secondary structure used to identify a range in your document's data that can be deleted by the framework.  
   
-##  <a name="getdocument"></a>CDocObjectServerItem::GetDocument  
- 項目を含むドキュメントへのポインターを取得します。  
+##  <a name="getdocument"></a>  CDocObjectServerItem::GetDocument  
+ Retrieves a pointer to the document that contains the item.  
   
 ```  
 COleServerDoc* GetDocument() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- アイテムを保持するドキュメントへのポインター**NULL**場合は、項目は、ドキュメントの一部ではありません。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the document that contains the item; **NULL** if the item is not part of a document.  
   
-### <a name="remarks"></a>コメント  
- これは、引数として渡された server ドキュメントへのアクセス、 [CDocObjectServerItem](#cdocobjectserveritem)コンス トラクターです。  
+### <a name="remarks"></a>Remarks  
+ This allows access to the server document that you passed as an argument to the [CDocObjectServerItem](#cdocobjectserveritem) constructor.  
   
-##  <a name="onhide"></a>CDocObjectServerItem::OnHide  
- アイテムを非表示にするために、フレームワークによって呼び出されます。  
+##  <a name="onhide"></a>  CDocObjectServerItem::OnHide  
+ Called by the framework to hide the item.  
   
 ```  
 virtual void OnHide();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、項目が DocObject は例外をスローします。 ビュー全体を受け取るのでは、アクティブな DocObject アイテムを非表示にすることはできません。 非表示にする DocObject アイテムを非アクティブ化する必要があります。 アイテムが DocObject でない場合は、既定の実装を呼び出す[COleServerItem::OnHide](../../mfc/reference/coleserveritem-class.md#onhide)します。  
+### <a name="remarks"></a>Remarks  
+ The default implementation throws an exception if the item is a DocObject. You cannot hide an active DocObject item because it takes the whole view. You must deactivate the DocObject item to make it disappear. If the item is not a DocObject, the default implementation calls [COleServerItem::OnHide](../../mfc/reference/coleserveritem-class.md#onhide).  
   
-##  <a name="onshow"></a>CDocObjectServerItem::OnShow  
- サーバー アプリケーションは、アイテムの埋め込みを DocObject に実行を指示するために、フレームワークによって呼び出されますアクティブです。  
+##  <a name="onshow"></a>  CDocObjectServerItem::OnShow  
+ Called by the framework to instruct the server application to make the DocObject item in-place active.  
   
 ```  
 virtual void OnShow();
 ```  
   
-### <a name="remarks"></a>コメント  
- アイテムが DocObject でない場合は、既定の実装を呼び出す[COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onopen)します。 特別な DocObject アイテムを開くときの処理を実行する場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ If the item is not a DocObject, the default implementation calls [COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onopen). Override this function if you want to perform special processing when opening a DocObject item.  
   
-## <a name="see-also"></a>関連項目  
- [実際のクラス](../../mfc/reference/coleserveritem-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/cdocobjectserver-class.md)   
- [関数のクラス](../../mfc/reference/coledocobjectitem-class.md)
+## <a name="see-also"></a>See Also  
+ [COleServerItem Class](../../mfc/reference/coleserveritem-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDocObjectServer Class](../../mfc/reference/cdocobjectserver-class.md)   
+ [COleDocObjectItem Class](../../mfc/reference/coledocobjectitem-class.md)
 

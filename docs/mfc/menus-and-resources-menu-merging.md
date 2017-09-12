@@ -1,68 +1,85 @@
 ---
-title: "メニューとリソース : メニューの結合 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "座標 (メニュー構成)"
-  - "メニュー [C++], OLE ドキュメント アプリケーション"
-  - "マージ (ツール バーとステータス バーを)"
-  - "OLE コンテナー, メニューとリソース"
-  - "ステータス バー, OLE ドキュメント アプリケーション"
-  - "ツール バー [C++], OLE ドキュメント アプリケーション"
-  - "ビジュアル編集, アプリケーションのメニューとリソース"
+title: 'Menus and Resources: Menu Merging | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- status bars [MFC], OLE document applications
+- visual editing [MFC], application menus and resources
+- coordinating menu layouts [MFC]
+- OLE containers [MFC], menus and resources
+- toolbars [MFC], OLE document applications
+- merging toolbar and status bar [MFC]
+- menus [MFC], OLE document applications
 ms.assetid: 80b6bb17-d830-4122-83f0-651fc112d4d1
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# メニューとリソース : メニューの結合
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eba298c25c4be89d83913ff35f2f4d0af9e9f91d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、OLE ドキュメントのアプリケーションがビジュアル編集、埋め込み先編集の有効化を適切に処理するために必要な手順を詳しく説明します。  埋め込み先編集の有効化はコンテナーとサーバーの両方 \(コンポーネント\) アプリケーションの困難になる可能性があります。  ユーザーは同じフレーム ウィンドウに \(コンテナー ドキュメントにおける\) 残りましたりが実際に別のアプリケーション \(サーバー\) を実行します。  これはコンテナーのリソースとサーバー アプリケーション間の調整が必要です。  
+---
+# <a name="menus-and-resources-menu-merging"></a>Menus and Resources: Menu Merging
+This article details the steps necessary for OLE document applications to handle visual editing and in-place activation properly. In-place activation poses a challenge for both container and server (component) applications. The user remains in the same frame window (within the context of the container document) but is actually running another application (the server). This requires coordination between the resources of the container and server applications.  
   
- この記事で説明されているトピックは次のとおりです。:  
+ Topics covered in this article include:  
   
--   [レイアウト メニュー](#_core_menu_layouts)  
+- [Menu Layouts](#_core_menu_layouts)  
   
--   [ツール バーとステータス バー](#_core_toolbars_and_status_bars)  
+- [Toolbars and Status Bars](#_core_toolbars_and_status_bars)  
   
-##  <a name="_core_menu_layouts"></a> レイアウト メニュー  
- まず、レイアウト メニューを調整します。  詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [メニュー プログラミングに関する考慮事項](https://msdn.microsoft.com/en-us/library/ms647557.aspx) の **Menu Creation** セクションを参照します。  
+##  <a name="_core_menu_layouts"></a> Menu Layouts  
+ The first step is to coordinate menu layouts. For more information, see the **Menu Creation** section in [Menu Programming Considerations](https://msdn.microsoft.com/library/ms647557.aspx) in the Windows SDK.  
   
- コンテナー アプリケーションは埋め込まれたアイテムをアクティブにする場合に使用する新しいメニューを作成する必要があります。  少なくとも、このメニューに示されている順序で次の、構成する必要があります:  
+ Container applications should create a new menu to be used only when embedded items are activated in place. At the minimum, this menu should consist of the following, in the order listed:  
   
-1.  ファイルを開くときに使用されるものと同じのファイル メニュー。\(通常は他のメニュー項目は、次の項目の前に配置されません。  
+1.  File menu identical to the one used when files are open. (Usually no other menu items are placed before the next item.)  
   
-2.  2 個の連続する区切り記号。  
+2.  Two consecutive separators.  
   
-3.  ファイルを開くときに使用されるものと同じウィンドウ メニュー \(のみ MDI アプリケーション コンテナー アプリケーション\)。  アプリケーションによっては埋め込まれたアイテムがアクティブ化されたときに、メニューに残り、このグループに属する他のメニューが、オプション メニューなどの場合があります。  
+3.  Window menu identical to the one used when files are open (only if the container application in an MDI application). Some applications may have other menus, such as an Options menu, that belong in this group, which remains on the menu when an embedded item is activated in place.  
   
     > [!NOTE]
-    >  コンテナー ドキュメントのビューに影響するズームなどのメニューを持つ場合があります。  これらのコンテナーのメニューには、メニュー リソースの 2 種類の区切り記号の間に表示されます。  
+    >  There may be other menus that affect the view of the container document, such as Zoom. These container menus appear between the two separators in this menu resource.  
   
- サーバー コンポーネント \(\) アプリケーションでは、埋め込み先編集の有効化の新しいメニューを作成する必要があります。  これはなしでファイルが開かれているが、データではなくサーバー ドキュメントを処理するファイル、ウィンドウなどのメニュー項目、ように使用されるメニューのようになります。  通常、このメニューには、次の要素から構成されます。:  
+ Server (component) applications should also create a new menu specifically for in-place activation. It should be like the menu used when files are open, but without menu items, such as File and Window that manipulate the server document instead of the data. Typically, this menu consists of the following:  
   
-1.  ファイルを開くときに使用されるものと同じのメニューを編集します。  
+1.  Edit menu identical to the one used when files are open.  
   
-2.  区切り線  
+2.  Separator.  
   
-3.  オブジェクト、Scribble サンプル アプリケーションのペン メニューなどのメニューを編集します。  
+3.  Object editing menus, such as the Pen menu in the Scribble sample application.  
   
-4.  区切り線  
+4.  Separator.  
   
-5.  ヘルプ メニュー。  
+5.  Help menu.  
   
- 例については、コンテナーとサーバーを持つサンプル埋め込み先編集用メニューのレイアウトを確認します。  各メニュー項目の詳細は、この例のさらに明確にするために、削除されました。  コンテナーの埋め込み先編集用メニューに次のエントリがあります:  
+ For an example, look at the layout of some sample in-place menus for a container and a server. The details of each menu item have been removed to make the example clearer. The container's in-place menu has the following entries:  
   
 ```  
 IDR_CONTAINERTYPE_CNTR_IP MENU PRELOAD DISCARDABLE   
@@ -76,7 +93,7 @@ BEGIN
 END  
 ```  
   
- 連続する区切り記号はサーバーのメニューの最初の部分が完了する必要があるかを示します。  これで、サーバーの埋め込み先編集用メニューを表示する:  
+ The consecutive separators indicate where the first part of the server's menu should go. Now look at the server's in-place menu:  
   
 ```  
 IDR_SERVERTYPE_SRVR_IP MENU PRELOAD DISCARDABLE   
@@ -89,7 +106,7 @@ BEGIN
 END  
 ```  
   
- ここでは、区切り記号はコンテナーのメニュー項目の 2 番目のグループ先必要があるかを示します。  このサーバーからオブジェクトがこのようにこのコンテナーの内のアクティブな設定されるときに表示されるメニュー構造:  
+ The separators here indicate where the second group of container menu items should go. The resulting menu structure when an object from this server is activated in place inside this container looks like this:  
   
 ```  
 BEGIN  
@@ -103,19 +120,21 @@ BEGIN
 END  
 ```  
   
- 参照できるように区切り記号は、各アプリケーションのメニューのグループに置き換えられました。  
+ As you can see, the separators have been replaced with the different groups of each application's menu.  
   
- 埋め込み先編集用メニューに関連付けられているアクセラレータ テーブルは、サーバー アプリケーションが指定されます。  コンテナーは独自のアクセラレータ テーブルに取り込みます。  
+ Accelerator tables associated with the in-place menu should also be supplied by the server application. The container will incorporate them into its own accelerator tables.  
   
- 埋め込まれたアイテムをアクティブにすると、フレームワークは埋め込み先編集用メニューを読み込みます。  これは、埋め込み先編集の有効化、および区切り記号の位置にメニューのサーバー アプリケーションに要求し、挿入します。  これは、メニューを結合できます。  ファイルとウィンドウの配置をアクティブ化するためのコンテナーからメニューを取得し、項目のアクティブ化のサーバーからメニューを取得します。  
+ When an embedded item is activated in place, the framework loads the in-place menu. It then asks the server application for its menu for in-place activation and inserts it where the separators are. This is how the menus combine. You get menus from the container for operating on the file and window placement, and you get menus from the server for operating on the item.  
   
-##  <a name="_core_toolbars_and_status_bars"></a> ツール バーとステータス バー  
- サーバー アプリケーションでは、新しいツール バーを作成し、別のファイルにビットマップを保存する必要があります。  アプリケーション wizard–generated アプリケーションは ITOOLBAR.BMP というファイルにこのビットマップを保存します。  新しいツール バー、サーバー上の項目を操作する関数は、通常のツール バーと同じ項目を含めるファイル、ウィンドウ メニュー内の項目を表すアイコンを削除すると、コンテナー アプリケーション ツール バーです。  
+##  <a name="_core_toolbars_and_status_bars"></a> Toolbars and Status Bars  
+ Server applications should create a new toolbar and store its bitmap in a separate file. The application wizard-generated applications store this bitmap in a file called ITOOLBAR.BMP. The new toolbar replaces the container application's toolbar when your server's item is activated in place, and should contain the same items as your normal toolbar, but remove icons representing items on the File and Window menus.  
   
- このツール バーは `COleIPFrameWnd`\-アプリケーション ウィザードが作成した派生クラスで読み込まれます。  ステータス バーは、コンテナー アプリケーションによって処理されます。  埋め込み先フレーム ウィンドウの実装の詳細については、「[サーバー: サーバーの実装](../mfc/servers-implementing-a-server.md)」を参照してください。  
+ This toolbar is loaded in your `COleIPFrameWnd`-derived class, created for you by the application wizard. The status bar is handled by the container application. For more information on the implementation of in-place frame windows, see [Servers: Implementing a Server](../mfc/servers-implementing-a-server.md).  
   
-## 参照  
- [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md)   
- [アクティベーション](../mfc/activation-cpp.md)   
- [サーバー](../mfc/servers.md)   
- [コンテナー](../mfc/containers.md)
+## <a name="see-also"></a>See Also  
+ [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md)   
+ [Activation](../mfc/activation-cpp.md)   
+ [Servers](../mfc/servers.md)   
+ [Containers](../mfc/containers.md)
+
+

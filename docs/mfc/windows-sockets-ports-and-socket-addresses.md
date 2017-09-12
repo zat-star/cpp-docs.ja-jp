@@ -1,61 +1,80 @@
 ---
-title: "Windows ソケット : ポートとソケット アドレス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アドレス [C++], ソケット"
-  - "ポート [C++]"
-  - "ポート [C++], 定義"
-  - "ソケット [C++], アドレス"
-  - "ソケット [C++], ポート"
-  - "Windows ソケット [C++], アドレス"
-  - "Windows ソケット [C++], ポート"
+title: 'Windows Sockets: Ports and Socket Addresses | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ports [MFC], definition
+- Windows Sockets [MFC], ports
+- Windows Sockets [MFC], addresses
+- ports [MFC]
+- addresses [MFC], socket
+- sockets [MFC], addresses
+- sockets [MFC], ports
 ms.assetid: e050261a-9285-4f31-a1c5-6c8033af5b4a
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# Windows ソケット : ポートとソケット アドレス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9c2f722c08af117d2394efac46496f9c6a144029
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、用語を「Ported」示し、「解決します。Windows ソケットに使用される」。  
+---
+# <a name="windows-sockets-ports-and-socket-addresses"></a>Windows Sockets: Ports and Socket Addresses
+This article explains the terms "port" and "address" as used with Windows Sockets.  
   
-##  <a name="_core_port"></a> ポート  
- ポート、サービスが提供できる一意のプロセスを識別します。  現在のコンテキストでは、ポートの Windows Sockets をサポートするアプリケーションに関連付けられます。  つまり、それぞれの Windows ソケットのアプリケーションを識別することです。したがって、コンピューターの Windows ソケットのアプリケーションの実行を同時に実行できます。  
+##  <a name="_core_port"></a> Port  
+ A port identifies a unique process for which a service can be provided. In the present context, a port is associated with an application that supports Windows Sockets. The idea is to identify each Windows Sockets application uniquely so you can have more than one Windows Sockets application running on a machine at the same time.  
   
- 特定のポートは FTP などの共通サービス用に予約されています。  この種類のサービスを提供するこれらのポートの使用を避ける必要があります。  Windows ソケットの仕様では、予約済みのポートについて詳しく説明します。  ファイル WINSOCK.H はそれらを一覧表示します。  
+ Certain ports are reserved for common services, such as FTP. You should avoid using those ports unless you are providing that kind of service. The Windows Sockets specification details these reserved ports. The file WINSOCK.H also lists them.  
   
- Windows が DLL が使用可能なポートを選択ソケットはポート値として有効にするには、\- 0 を渡します。  MFC はポート値を超える 1,024 の小数点を選択します。  MFC が [CAsyncSocket::GetSockName](../Topic/CAsyncSocket::GetSockName.md) のメンバー関数を呼び出して、選択したポート値を取得できます。  
+ To let the Windows Sockets DLL select a usable port for you, pass 0 as the port value. MFC selects a port value greater than 1,024 decimal. You can retrieve the port value that MFC selected by calling the [CAsyncSocket::GetSockName](../mfc/reference/casyncsocket-class.md#getsockname) member function.  
   
-##  <a name="_core_socket_address"></a> ソケット アドレス  
- 各ソケット オブジェクトはネットワークのインターネット プロトコル \(IP\) のアドレスに関連付けられます。  通常、アドレスは「ftp.microsoft.com」などのコンピューター名、または「128.56.22.8」のような点を打たれた数です。  
+##  <a name="_core_socket_address"></a> Socket Address  
+ Each socket object is associated with an Internet Protocol (IP) address on the network. Typically, the address is a machine name, such as "ftp.microsoft.com", or a dotted number, such as "128.56.22.8".  
   
- ソケットを作成して追求に対して独自のアドレスを指定する必要はありません。  
+ When you seek to create a socket, you typically do not need to specify your own address.  
   
 > [!NOTE]
->  コンピューターに複数のネットワーク カード \(またはアプリケーションがいつの日またはそのようなコンピューターで実行される場合があります\)、別のネットワークを表す個別に置くことができます。  この場合、どのネットワーク カードをソケットを使用するかを指定するにはアドレスを与える必要がある場合があります。  これは高度なと使用可能な移植性の問題になるのは確実です。  
+>  It is possible that your machine has multiple network cards (or your application might someday run on such a machine), each representing a different network. If so, you might need to give an address to specify which network card the socket will use. This is certain to be an advanced usage and a possible portability issue.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [Windows ソケット: CAsyncSocket クラスの使い方](../mfc/windows-sockets-using-class-casyncsocket.md)  
+-   [Windows Sockets: Using Class CAsyncSocket](../mfc/windows-sockets-using-class-casyncsocket.md)  
   
--   [Windows ソケット: アーカイブ付きソケットの使用](../mfc/windows-sockets-using-sockets-with-archives.md)  
+-   [Windows Sockets: Using Sockets with Archives](../mfc/windows-sockets-using-sockets-with-archives.md)  
   
--   [Windows ソケット: アーカイブが持つソケットのしくみについて](../mfc/windows-sockets-how-sockets-with-archives-work.md)  
+-   [Windows Sockets: How Sockets with Archives Work](../mfc/windows-sockets-how-sockets-with-archives-work.md)  
   
--   [Windows ソケット: ストリーム ソケット](../mfc/windows-sockets-stream-sockets.md)  
+-   [Windows Sockets: Stream Sockets](../mfc/windows-sockets-stream-sockets.md)  
   
--   [Windows ソケット: データグラム ソケット](../mfc/windows-sockets-datagram-sockets.md)  
+-   [Windows Sockets: Datagram Sockets](../mfc/windows-sockets-datagram-sockets.md)  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)
+
+

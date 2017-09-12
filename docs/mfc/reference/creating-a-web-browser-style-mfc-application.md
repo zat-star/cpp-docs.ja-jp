@@ -1,5 +1,5 @@
 ---
-title: "Web ブラウザー スタイルの MFC アプリケーションの作成 |Microsoft ドキュメント"
+title: Creating a Web Browser-Style MFC Application | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,7 +16,7 @@ helpviewer_keywords:
 - MFC, Web applications
 - Web browsers, creating from MFC architecture
 - Web browsers
-- Web applications, creating
+- Web applications [MFC], creating
 ms.assetid: 257f8c03-33c3-428c-832e-0b70aff6168d
 caps.latest.revision: 9
 author: mikeblome
@@ -36,36 +36,36 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: da53bdff088c336b0e7eb33c49025ec0a48675f2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f653db3b9423e88fa1071d936e6dd6656a9e743d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="creating-a-web-browser-style-mfc-application"></a>Web ブラウザー形式の MFC アプリケーションの作成
-ネットワークとローカル ファイル システムで Web ブラウザー形式のアプリケーション (HTML またはアクティブ ドキュメント) など、インターネットまたはイントラネットでは、フォルダーから情報にアクセスできます。 アプリケーションのビュー クラスから派生することによって[CHtmlView](../../mfc/reference/chtmlview-class.md)、効果的に WebBrowser コントロールと、ビューを提供することで Web ブラウザー アプリケーションを作成します。  
+# <a name="creating-a-web-browser-style-mfc-application"></a>Creating a Web Browser-Style MFC Application
+A Web browser-style application can access information from the Internet (such as HTML or active documents) or an intranet, as well as folders in the local file system and on a network. By deriving the application's view class from [CHtmlView](../../mfc/reference/chtmlview-class.md), effectively you make the application a Web browser by providing the view with the WebBrowser control.  
   
-### <a name="to-create-a-web-browser-application-based-on-the-mfc-documentview-architecture"></a>MFC ドキュメント/ビュー アーキテクチャに基づいて、Web ブラウザー アプリケーションを作成するには  
+### <a name="to-create-a-web-browser-application-based-on-the-mfc-documentview-architecture"></a>To create a Web browser application based on the MFC document/view architecture  
   
-1.  指示に従い[MFC アプリケーションの作成](../../mfc/reference/creating-an-mfc-application.md)です。  
+1.  Follow the directions in [Creating an MFC Application](../../mfc/reference/creating-an-mfc-application.md).  
   
-2.  MFC アプリケーション ウィザードで[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md) ページであることを確認、**ドキュメント/ビュー アーキテクチャ**ボックスがオンにします。 (いずれかを選択することができます**1 つのドキュメント**または**複数ドキュメント**、ではなく**ダイアログ ベース**)。  
+2.  In the MFC Application Wizard [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md) page, make certain that the **Document/view architecture** box is selected. (You can choose either **Single document** or **Multiple documents**, but not **Dialog based**.)  
   
-3.  [生成されたクラス](../../mfc/reference/generated-classes-mfc-application-wizard.md) ページで、使用して、**基底クラス**を選択するドロップダウン メニュー`CHtmlView`です。  
+3.  On the [Review Generated Classes](../../mfc/reference/generated-classes-mfc-application-wizard.md) page, use the **Base class** drop-down menu to select `CHtmlView`.  
   
-4.  その他のオプションをスケルトン アプリケーションに組み込まれているを選択します。  
+4.  Select any other options you want built into the skeleton application.  
   
-5.  **[完了]**をクリックします。  
+5.  Click **Finish**.  
   
- WebBrowser コントロールは、ハイパーリンクと Uniform Resource Locator (URL) ナビゲーションを通じて Web サイトの参照をサポートします。 コントロールがユーザーが前後に参照できる履歴一覧を保持しを旧バージョンと以前に参照したサイト、フォルダー、およびドキュメント。 コントロールは、ナビゲーション、ハイパーリンク、履歴の一覧、お気に入り、およびセキュリティに直接処理します。 アプリケーションは、ホストのアクティブなドキュメントもへの active ドキュメント コンテナーとして WebBrowser コントロールを使用できます。 したがって、表現力豊かな書式設定された Microsoft Excel スプレッドシートなどまたは Word のドキュメントを開くおよび編集できますから WebBrowser コントロール内で。 WebBrowser コントロールが ActiveX コントロールをホストできる ActiveX コントロール コンテナーもできます。  
+ The WebBrowser control supports Web browsing through hyperlinks and Uniform Resource Locator (URL) navigation. The control maintains a history list that allows the user to browse forward and backward through previously browsed sites, folders, and documents. The control directly handles the navigation, hyperlinks, history lists, favorites, and security. Applications can use the WebBrowser control as an active document container to host active documents as well. Thus, richly formatted documents such as Microsoft Excel spreadsheets or Word documents can be opened and edited in place from within the WebBrowser control. The WebBrowser control is also an ActiveX control container that can host any ActiveX control.  
   
 > [!NOTE]
->  WebBrowser ActiveX コントロール (および`CHtmlView`) 以降がインストールされているか Internet Explorer 4.0 でのバージョンの Windows で実行されるアプリケーションにのみ使用できます。  
+>  The WebBrowser ActiveX control (and therefore `CHtmlView`) is available only to applications running under Windows versions in which Internet Explorer 4.0 or later has been installed.  
   
- `CHtmlView`だけ印刷が他のマイクロソフトの Web ブラウザー コントロールのサポートを実装[CView](../../mfc/reference/cview-class.md)-クラスを派生します。 代わりに、WebBrowser コントロールは、印刷、プリンターのユーザー インターフェイスを実装します。 その結果、`CHtmlView`は印刷プレビューをサポートしていないと、フレームワークは他の印刷のサポート機能を提供しません: たとえば、[関数](../../mfc/reference/cview-class.md#onprepareprinting)、[値](../../mfc/reference/cview-class.md#onbeginprinting)、および[CView::OnEndPrinting](../../mfc/reference/cview-class.md#onendprinting)、他の MFC アプリケーションで使用可能な。  
+ Because `CHtmlView` simply implements the Microsoft Web browser control, its support for printing is not like other [CView](../../mfc/reference/cview-class.md)-derived classes. Rather, the WebBrowser control implements the printer user interface and printing. As a result, `CHtmlView` does not support print preview, and the framework does not provide for other printing support functions: for example, [CView::OnPreparePrinting](../../mfc/reference/cview-class.md#onprepareprinting), [CView::OnBeginPrinting](../../mfc/reference/cview-class.md#onbeginprinting), and [CView::OnEndPrinting](../../mfc/reference/cview-class.md#onendprinting), which are available in other MFC applications.  
   
- `CHtmlView`で、アプリケーションを Web または HTML ページに表示する、Web ブラウザー コントロール用のラッパーとして機能します。 ウィザードでの上書きを作成、[フィルターと並べ替え順序](../../mfc/reference/cview-class.md#oninitialupdate)Microsoft Visual C の Web サイトへのナビゲーション リンクを提供するビュー クラスの関数。  
+ `CHtmlView` acts as a wrapper for the Web browser control, which gives your application a view onto a Web or an HTML page. The wizard creates an override to the [OnInitialUpdate](../../mfc/reference/cview-class.md#oninitialupdate) function in the view class, providing a navigational link to the Microsoft Visual C++ Web site:  
   
 ```  
 void CWebView::OnInitialUpdate()  
@@ -80,7 +80,7 @@ void CWebView::OnInitialUpdate()
 } 
 ```  
   
- このサイトは、独自のいずれかで置き換えることができますか、使用して、 [LoadFromResource](../../mfc/reference/chtmlview-class.md#loadfromresource)メンバー関数、ビューの既定のコンテンツとして、プロジェクトのリソース スクリプトに存在する HTML ページを開きます。 例:  
+ You can replace this site with one of your own, or you can use the [LoadFromResource](../../mfc/reference/chtmlview-class.md#loadfromresource) member function to open an HTML page that resides in the project's resource script as the default content for the view. For example:  
   
 ```  
 void CWebView::OnInitialUpdate()  
@@ -93,12 +93,12 @@ void CWebView::OnInitialUpdate()
 } 
 ```  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル MFCIE](http://msdn.microsoft.com/en-us/7391aa0c-fca8-4994-a6c9-6c5c7470fba0)   
- [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)   
- [プロジェクトのプロパティの使用](../../ide/working-with-project-properties.md)   
- [プロパティ ページ](../../ide/property-pages-visual-cpp.md)   
- [プロジェクトのプロパティの使用](../../ide/working-with-project-properties.md)   
- [アプリケーションを展開します。](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)
+## <a name="see-also"></a>See Also  
+ [MFC Sample MFCIE](http://msdn.microsoft.com/en-us/7391aa0c-fca8-4994-a6c9-6c5c7470fba0)   
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)   
+ [Working with Project Properties](../../ide/working-with-project-properties.md)   
+ [Property Pages](../../ide/property-pages-visual-cpp.md)   
+ [Working with Project Properties](../../ide/working-with-project-properties.md)   
+ [Deploying Applications](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)
 
 

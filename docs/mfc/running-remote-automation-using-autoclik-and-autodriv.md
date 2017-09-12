@@ -1,58 +1,77 @@
 ---
-title: "AUTOCLIK と AUTODRIV を使用したリモート オートメーションの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AUTOCLIK サンプル [MFC]"
+title: Running Remote Automation Using AUTOCLIK and AUTODRIV | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- AUTOCLIK sample [MFC]
 ms.assetid: 8900c0de-8dba-4f0a-8d9e-7db77a1f4f46
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# AUTOCLIK と AUTODRIV を使用したリモート オートメーションの実行
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 56240a60197b63f5098ecef080719bd96bde81d1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-AUTOCLIK では、リモート オートメーションの詳細については、基本クラスとして使用できる単純なオートメーション サーバー サンプル アプリケーションです。  また、オートメーション クライアントの単純なアプリケーションでドライブ AUTOCLIK です。  リモート オートメーションを示すために使用できます。  
+---
+# Running Remote Automation Using AUTOCLIK and AUTODRIV
+AUTOCLIK is a simple Automation server sample application that you can use as a base from which to learn more about Remote Automation. AUTODRIV is a simple Automation client application that drives AUTOCLIK. You can use them to demonstrate Remote Automation.  
   
-#### AUTOCLIK.EXE を 2 台のコンピューターにインストールし、リモート オートメーションを使用して実行できます。  
+#### To install AUTOCLIK.EXE on two machines and drive it using Remote Automation  
   
-1.  開発用コンピューターに [AUTOCLIK](../top/visual-cpp-samples.md) サンプル アプリケーションをインストールします。  
+1.  Install the [AUTOCLIK](../visual-cpp-samples.md) sample application onto your development machine.  
   
-2.  AUTOCLIK.EXE をビルドします。  
+2.  Build AUTOCLIK.EXE.  
   
-3.  スタンドアロン スキーム AUTOCLIK.EXE を実行し、次にする。  これは、オートメーション サーバーとして登録します。  
+3.  Run AUTOCLIK.EXE in standalone fashion and then shut it down. This will register it as an Automation server.  
   
-4.  AUTOCLIK.EXE をリモート コンピューターにコピーして、そこに実行し、よりします。  
+4.  Copy AUTOCLIK.EXE to a remote machine, run it there, and then shut it down.  
   
-5.  ローカル コンピューターの AUTODRIV.EXE を実行し、実行することが AUTOCLIK.EXE が開始されることを確認します。  AUTODRIV.EXE の詳細を確認するには、[AUTOCLIK](../top/visual-cpp-samples.md)を参照してください。  
+5.  Run AUTODRIV.EXE on the local machine and verify that running it starts AUTOCLIK.EXE. To find out more about AUTODRIV.EXE, see [AUTOCLIK](../visual-cpp-samples.md).  
   
-6.  リモート コンピューターで、AUTMGR32.EXE \(オートメーション マネージャー\) を起動します。  
+6.  On the remote machine, start AUTMGR32.EXE (Automation Manager).  
   
-7.  リモート コンピューターで、RACMGR32.EXE \(リモート オートメーション接続マネージャー\) を起動します。  
+7.  On the remote machine, start RACMGR32.EXE (Remote Automation Connection Manager).  
   
-8.  リモート オートメーション接続マネージャーで、**OLE クラス** の一覧から AutoClik.Document を選択します。  
+8.  In the Remote Automation Connection Manager, select AutoClik.Document from the **OLE Classes** list.  
   
-9. AutoClik.Document へのクライアント アクセスを許可するように **クライアント アクセス** タブからシステム セキュリティ ポリシーをクリックします。  
+9. Choose a system security policy from the **Client Access** tab to grant client access to AutoClik.Document.  
   
-10. ローカル コンピューターで、RACMGR32.EXE を起動し、**OLE クラス** の一覧から AutoClik.Document を選択します。  
+10. On the local machine, start RACMGR32.EXE and select AutoClik.Document from the **OLE Classes** list.  
   
-11. **サーバー接続** タブから、リモート コンピューターのネットワーク アドレスと適切なネットワーク プロトコルを選択します。  
+11. From the **Server Connection** tab, choose both the network address of the remote machine and the appropriate network protocol.  
   
-12. まだ **OLE クラス** のリスト ボックスで選択 AutoClik.Document が `Register` メニューから **リモート** コマンドを選択します。  
+12. With AutoClik.Document still selected in the **OLE Classes** list box, choose the **Remote** command from the `Register` menu.  
   
-13. ローカル コンピューター、実行された AUTODRIV.EXE または等価 AUTOCLIK.MAK Visual Basic の Visual Basic プロジェクトがある場合は、MFC ではなく、クライアント。  
+13. On the local machine, run AUTODRIV.EXE or the equivalent AUTOCLIK.MAK Visual Basic project if you want to have a Visual Basic, rather than an MFC, client.  
   
- リモート コンピューターで、ローカル クライアントから開始コマンドを実行している AUTOCLIK を参照できるようになります。  
+ On the remote machine, you should now be able to see AUTOCLIK executing commands initiated from the local client.  
   
-## 参照  
- [リモート オートメーション](../mfc/remote-automation.md)
+## See Also  
+ [Remote Automation](../mfc/remote-automation.md)
+
+

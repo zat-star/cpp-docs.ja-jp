@@ -1,11 +1,11 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: CWinFormsControl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,9 +18,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- MFC [C++], Windows Forms support
-- CWinFormsControl class
-- Windows Forms [C++], MFC support
+- CWinFormsControl [MFC], CWinFormsControl
+- CWinFormsControl [MFC], CreateManagedControl
+- CWinFormsControl [MFC], GetControl
+- CWinFormsControl [MFC], GetControlHandle
 ms.assetid: 6406dd7b-fb89-4a18-ac3a-c010d6b6289a
 caps.latest.revision: 28
 author: mikeblome
@@ -40,64 +41,65 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 49e24c04deda3df5683908fa9ca485cf7802214b
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bcebe98f8e276a2092195eef49c3de4049c07b90
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cwinformscontrol-class"></a>関数のクラス
-Windows フォーム コントロールのホスティング用の基本機能を提供します。  
+# <a name="cwinformscontrol-class"></a>CWinFormsControl Class
+Provides the basic functionality for hosting of a Windows Forms control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template<class TManagedControl>  
 class CWinFormsControl : public CWnd  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `TManagedControl`  
- MFC アプリケーションに表示される .NET Framework の Windows フォーム コントロール。  
+ A .NET Framework Windows Forms control to be displayed in the MFC application.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CWinFormsControl::CWinFormsControl](#cwinformscontrol)|MFC Windows フォーム コントロールのラッパー オブジェクトを構築します。|  
+|[CWinFormsControl::CWinFormsControl](#cwinformscontrol)|Constructs an MFC Windows Forms control wrapper object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CWinFormsControl::CreateManagedControl](#createmanagedcontrol)|MFC コンテナー内には、Windows フォーム コントロールを作成します。|  
-|[CWinFormsControl::GetControl](#getcontrol)|Windows フォーム コントロールへのポインターを取得します。|  
-|[CWinFormsControl::GetControlHandle](#getcontrolhandle)|Windows フォーム コントロールへのハンドルを取得します。|  
+|[CWinFormsControl::CreateManagedControl](#createmanagedcontrol)|Creates a Windows Forms control in an MFC container.|  
+|[CWinFormsControl::GetControl](#getcontrol)|Retrieves a pointer to the Windows Forms control.|  
+|[CWinFormsControl::GetControlHandle](#getcontrolhandle)|Retrieves a handle to the Windows Forms control.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CWinFormsControl::operator-&gt;](#operator_-_gt)|置換[CWinFormsControl::GetControl](#getcontrol)式にします。|  
-|[CWinFormsControl::operator TManagedControl ^](#operator_tmanagedcontrol)|Windows フォーム コントロールへのポインターとして型をキャストします。|  
+|[CWinFormsControl::operator -&gt;](#operator_-_gt)|Replaces [CWinFormsControl::GetControl](#getcontrol) in expressions.|  
+|[CWinFormsControl::operator TManagedControl^](#operator_tmanagedcontrol)|Casts a type as a pointer to a Windows Forms control.|  
   
-## <a name="remarks"></a>コメント  
- `CWinFormsControl`クラスには、Windows フォーム コントロールのホスティングの基本的な機能が用意されています。  
+## <a name="remarks"></a>Remarks  
+ The `CWinFormsControl` class provides the basic functionality for hosting of a Windows Forms control.  
   
- Windows フォームの使用に関する詳細については、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
+ For more information on using Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
- MFC コードは、ウィンドウ ハンドルをキャッシュする必要があります (通常`m_hWnd`)。 一部の Windows フォーム コントロールのプロパティを必要とする、基になる Win32`Window`が破棄され、使用して再作成`DestroyWindow`と`CreateWindow`です。 MFC Windows フォームの実装のハンドル、`Destroy`と`Create`を更新するコントロールのイベント、`m_hWnd`メンバーです。  
+ Your MFC code should not cache Window handles (usually stored in `m_hWnd`). Some Windows Forms control properties require that the underlying Win32 `Window` be destroyed and recreated using `DestroyWindow` and `CreateWindow`. The MFC Windows Forms implementation handles the `Destroy` and `Create` events of the controls to update the `m_hWnd` member.  
   
 > [!NOTE]
->  MFC Windows フォームの統合は、MFC (AFXDLL が定義されている) を動的にリンクしているプロジェクトでのみ動作します。  
+>  MFC Windows Forms integration works only in projects which link dynamically with MFC (in which AFXDLL is defined).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwinforms.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwinforms.h  
   
-##  <a name="createmanagedcontrol"></a>CWinFormsControl::CreateManagedControl  
- MFC コンテナー内には、Windows フォーム コントロールを作成します。  
+##  <a name="createmanagedcontrol"></a>  CWinFormsControl::CreateManagedControl  
+ Creates a Windows Forms control in an MFC container.  
   
 ```  
 inline BOOL CreateManagedControl(
@@ -127,103 +129,103 @@ inline BOOL CreateManagedControl(
     int nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pType`  
- 作成されるコントロールのデータ型。 必要があります、[型](https://msdn.microsoft.com/en-us/library/system.type)データ型。  
+ The data type of the control to be created. Must be a [Type](https://msdn.microsoft.com/en-us/library/system.type) data type.  
   
  `dwStyle`  
- コントロールに適用するウィンドウ スタイル。 組み合わせを指定[ウィンドウ スタイル](../../mfc/reference/window-styles.md)します。 現時点では、次のスタイルのみがサポートされている: WS_TABSTOP、WS_VISIBLE、WS_DISABLED および WS_GROUP します。  
+ The window style to apply to the control. Specify a combination of [Window Styles](../../mfc/reference/styles-used-by-mfc.md#window-styles). Currently, only the following styles are supported: WS_TABSTOP, WS_VISIBLE, WS_DISABLED and WS_GROUP.  
   
  `rect`  
- A [RECT 構造体](../../mfc/reference/rect-structure1.md)コントロールの左上隅および右下隅の座標を定義する (最初のオーバー ロードだけ)。  
+ A [RECT Structure](../../mfc/reference/rect-structure1.md) that defines the coordinates of the upper-left and lower-right corners of the control (first overload only).  
   
  `nPlaceHolderID`  
- 静的なプレース ホルダー コントロールのハンドルでは、リソース エディターで配置されます。 新しく作成された Windows フォーム コントロールの位置、z オーダーとスタイルと仮定した場合、静的コントロールが置き換えられます (2 つ目のオーバー ロードだけ)。  
+ The handle of the static place holder control placed in the Resource Editor. The newly created Windows Forms control replaces the static control, assuming its position, z-order, and styles (second overload only).  
   
  `pParentWnd`  
- 親ウィンドウへのポインター。  
+ A pointer to the parent window.  
   
  `nID`  
- 新しく作成されたコントロールに割り当てられるリソース ID 番号。  
+ The resource ID number to be assigned to the newly created control.  
   
  `pControl`  
- 関連付けられる Windows フォーム コントロールのインスタンス、[関数](../../mfc/reference/cwinformscontrol-class.md)(4 番目のオーバー ロードだけ) のオブジェクトします。  
+ An instance of a Windows Forms control to be associated with the [CWinFormsControl](../../mfc/reference/cwinformscontrol-class.md) object (fourth overload only).  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は、0 以外の値を返します。 失敗した場合は、0 を返します。  
+### <a name="return-value"></a>Return Value  
+ If successful, returns a nonzero value. If unsuccessful, returns zero.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、MFC コンテナー内の .NET Framework の Windows フォーム コントロールをインスタンス化します。  
+### <a name="remarks"></a>Remarks  
+ This method instantiates a .NET Framework Windows Forms control in an MFC container.  
   
- メソッドの最初のオーバー ロードは、.NET Framework データ型を受け入れる`pType`MFC は、この型の新しいオブジェクトをインスタンス化できるようにします。 `pType`必要があります、[型](https://msdn.microsoft.com/en-us/library/system.type)データ型。  
+ The first overload of the method accepts a .NET Framework data type `pType` so that MFC can instantiate a new object of this type. `pType` must be a [Type](https://msdn.microsoft.com/en-us/library/system.type) data type.  
   
- メソッドの&2; 番目のオーバー ロードに基づき、Windows フォーム コントロールの作成、`TManagedControl`のテンプレート パラメーター、`CWinFormsControl`クラスです。 コントロールの位置とサイズがに基づいて、`RECT`メソッドに渡された構造体。 のみ`dwStyle`スタイルの順序は重要です。  
+ The second overload of the method creates a Windows Forms control based on the `TManagedControl` template parameter of the `CWinFormsControl` class. The size and position of the control is based on the `RECT` structure passed to the method. Only `dwStyle` matters for the styles.  
   
- 3 番目のオーバー ロード メソッドでは、破棄して、その位置、z オーダー、およびスタイルを仮定して、静的コントロールを置換する Windows フォーム コントロールを作成します。 静的コントロールは、Windows フォーム コントロールのプレース ホルダーとしてのみ機能します。 このオーバー ロードがからスタイルを組み合わせて、コントロールを作成するときに`dwStyle`静的コントロールのリソースのスタイルを使用します。  
+ The third overload of the method creates a Windows Forms control that replaces a static control, destroying it and assuming its position, z-order, and styles. The static control serves only as a placeholder for the Windows Forms control. When creating the control, this overload combines the styles from `dwStyle` with the static control's resource styles.  
   
- メソッドの&4; 番目のオーバー ロードは、既にインスタンス化された Windows フォーム コントロールに渡すことができる`pControl`MFC をラップします。 同じ型でなければなりません、`TManagedControl`のテンプレート パラメーター、`CWinFormsControl`クラスです。  
+ The fourth overload of the method allows you to pass in an already instantiated Windows Forms control `pControl` that MFC will wrap. It must be of the same type as the `TManagedControl` template parameter of the `CWinFormsControl` class.  
   
- 参照してください[MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)Windows フォームを使用するサンプルを制御します。  
+ See [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md) for samples on using Windows Form controls.  
   
-##  <a name="cwinformscontrol"></a>CWinFormsControl::CWinFormsControl  
- MFC Windows フォーム コントロールのラッパー オブジェクトを構築します。  
+##  <a name="cwinformscontrol"></a>  CWinFormsControl::CWinFormsControl  
+ Constructs an MFC Windows Forms control wrapper object.  
   
 ```  
 CWinFormsControl();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出したときに、Windows フォーム コントロールがインスタンス化される[CWinFormsControl::CreateManagedControl](#createmanagedcontrol)します。  
+### <a name="remarks"></a>Remarks  
+ The Windows Forms control is instantiated when you call [CWinFormsControl::CreateManagedControl](#createmanagedcontrol).  
   
-##  <a name="getcontrol"></a>CWinFormsControl::GetControl  
- Windows フォーム コントロールへのポインターを取得します。  
+##  <a name="getcontrol"></a>  CWinFormsControl::GetControl  
+ Retrieves a pointer to the Windows Forms control.  
   
 ```  
 inline TManagedControl^ GetControl() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- Windows フォーム コントロールへのポインターを返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a pointer to the Windows Forms control.  
   
-### <a name="example"></a>例  
-  参照してください[CWinFormsControl::CreateManagedControl](#createmanagedcontrol)します。  
+### <a name="example"></a>Example  
+  See [CWinFormsControl::CreateManagedControl](#createmanagedcontrol).  
   
-##  <a name="getcontrolhandle"></a>CWinFormsControl::GetControlHandle  
- Windows フォーム コントロールへのハンドルを取得します。  
+##  <a name="getcontrolhandle"></a>  CWinFormsControl::GetControlHandle  
+ Retrieves a handle to the Windows Forms control.  
   
 ```  
 inline HWND GetControlHandle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- Windows フォーム コントロールのハンドルを返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a handle to the Windows Forms control.  
   
-### <a name="remarks"></a>コメント  
- `GetControlHandle`.NET Framework のコントロールのプロパティに格納されているウィンドウ ハンドルを返すヘルパー メソッド。 ウィンドウ ハンドルの値にコピー [CWnd::m_hWnd](../../mfc/reference/cwnd-class.md#m_hwnd)呼び出し中に[CWnd::Attach](../../mfc/reference/cwnd-class.md#attach)します。  
+### <a name="remarks"></a>Remarks  
+ `GetControlHandle` is a helper method that returns the window handle stored in the .NET Framework control properties. The window handle value is copied to [CWnd::m_hWnd](../../mfc/reference/cwnd-class.md#m_hwnd) during the call to [CWnd::Attach](../../mfc/reference/cwnd-class.md#attach).  
   
-##  <a name="operator_-_gt"></a>CWinFormsControl::operator-&gt;  
- 置換[CWinFormsControl::GetControl](#getcontrol)式にします。  
+##  <a name="operator_-_gt"></a>  CWinFormsControl::operator -&gt;  
+ Replaces [CWinFormsControl::GetControl](#getcontrol) in expressions.  
   
 ```  
 inline TManagedControl^  operator->() const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この演算子は、便利な構文を置き換える`GetControl`式にします。  
+### <a name="remarks"></a>Remarks  
+ This operator provides a convenient syntax that replaces `GetControl` in expressions.  
   
- Windows フォームの詳細については、次を参照してください。 [MFC では、Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)します。  
+ For more information on Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
-##  <a name="operator_tmanagedcontrol"></a>CWinFormsControl::operator TManagedControl ^  
- Windows フォーム コントロールへのポインターとして型をキャストします。  
+##  <a name="operator_tmanagedcontrol"></a>  CWinFormsControl::operator TManagedControl^  
+ Casts a type as a pointer to a Windows Forms control.  
   
 ```  
 inline operator TManagedControl^() const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この演算子は渡します`CWinFormsControl<``TManagedControl``>`を Windows フォーム コントロールへのポインターを受け取る関数にします。  
+### <a name="remarks"></a>Remarks  
+ This operator passes `CWinFormsControl<TManagedControl>` to functions that accept a pointer to a Windows Forms control.  
   
-## <a name="see-also"></a>関連項目  
- [CWinFormsDialog クラス](../../mfc/reference/cwinformsdialog-class.md)   
- [CWinFormsView クラス](../../mfc/reference/cwinformsview-class.md)
+## <a name="see-also"></a>See Also  
+ [CWinFormsDialog Class](../../mfc/reference/cwinformsdialog-class.md)   
+ [CWinFormsView Class](../../mfc/reference/cwinformsview-class.md)
 

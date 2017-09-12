@@ -1,60 +1,78 @@
 ---
-title: "フレームワーク (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "API [C++], カプセル化 (MFC Win32 によって)"
-  - "アプリケーション フレームワーク [C++], MFC アプリケーション フレームワークの概要"
-  - "カプセル化された Win32 API"
-  - "カプセル化 [C++]"
-  - "カプセル化 [C++], Win32 API"
-  - "MFC [C++], アプリケーション フレームワーク"
-  - "Win32 [C++], API カプセル化 MFC"
-  - "Windows API [C++], カプセル化 (MFC によって)"
-  - "ラッパー クラス, 説明"
+title: Framework (MFC) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- encapsulation [MFC], Win32 API
+- MFC, application framework
+- wrapper classes [MFC], explained
+- Win32 [MFC], API encapsulation by MFC
+- application framework [MFC], about MFC application framework
+- APIs [MFC], encapsulation by MFC Win32
+- encapsulation [MFC]
+- Windows API [MFC], encapsulation by MFC
+- encapsulated Win32 API [MFC]
 ms.assetid: 3be0fec8-9843-4119-ae42-ece993ef500b
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# フレームワーク (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1a4c0add4e7bb64ffd3aac08500bc05cd9aad502
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Microsoft Foundation Class \(MFC\) ライブラリ フレームワークを使用するには、いくつかの主要なクラスおよび Visual C\+\+ のいくつかのツールとして主に基づいています。  このクラスは、Win32 アプリケーション プログラミング インターフェイスの大きな \(API\) 部分をカプセル化します。  そのほかのクラスは、ドキュメント、ビュー、アプリケーション自体のようなアプリケーションの概念をカプセル化しています。  さらに、OLE 機能と ODBC と DAO のデータ アクセスの機能をカプセル化します。  
+---
+# <a name="framework-mfc"></a>Framework (MFC)
+Your work with the Microsoft Foundation Class (MFC) Library framework is based largely on a few major classes and several Visual C++ tools. Some classes encapsulate a large portion of the Win32 application programming interface (API). Other classes encapsulate application concepts such as documents, views, and the application itself. Still others encapsulate OLE features and ODBC and DAO data-access functionality.  
   
- たとえば、ウィンドウの Win32 の概念は、MFC クラス `CWnd`にカプセル化されます。  つまり、C\+\+. C\+\+ クラスによって呼び出される `CWnd` はカプセル化しますまたはウィンドウを表す `HWND` ハンドルを「ラップします」。  同様に、クラス `CDialog` は Win32 ダイアログ ボックスをカプセル化します。  
+ For example, Win32's concept of window is encapsulated by MFC class `CWnd`. That is, a C++ class called `CWnd` encapsulates or "wraps" the `HWND` handle that represents a Windows window. Likewise, class `CDialog` encapsulates Win32 dialog boxes.  
   
- カプセル化は C\+\+ クラス `CWnd`がたとえば `HWND`型のメンバー変数が含まれ、クラスのメンバー関数をパラメーターとして `HWND` を受け取る Win32 の呼び出しを処理するカプセル化することを意味します。  クラス メンバー関数には、Win32 関数をカプセル化するのと同じ名前になります。  
+ Encapsulation means that the C++ class `CWnd`, for example, contains a member variable of type `HWND`, and the class's member functions encapsulate calls to Win32 functions that take an `HWND` as a parameter. The class member functions typically have the same name as the Win32 function they encapsulate.  
   
-## このセクションの内容  
- [SDI と MDI](../mfc/sdi-and-mdi.md)  
+## <a name="in-this-section"></a>In This Section  
+ [SDI and MDI](../mfc/sdi-and-mdi.md)  
   
- [ドキュメント、ビュー、およびフレームワーク](../mfc/documents-views-and-the-framework.md)  
+ [Documents, Views, and the Framework](../mfc/documents-views-and-the-framework.md)  
   
- [ウィザードとリソース エディター](../Topic/Wizards%20and%20the%20Resource%20Editors.md)  
+ [Wizards and Resource Editors](../mfc/wizards-and-the-resource-editors.md)  
   
-## 関連するセクション  
- [フレームワークを使ったアプリケーションの作成](../mfc/building-on-the-framework.md)  
+## <a name="in-related-sections"></a>In Related Sections  
+ [Building on the Framework](../mfc/building-on-the-framework.md)  
   
- [フレームワークがコードを呼び出す。](../mfc/how-the-framework-calls-your-code.md)  
+ [How the Framework Calls Your Code](../mfc/how-the-framework-calls-your-code.md)  
   
- [CWinApp : アプリケーション クラス](../Topic/CWinApp:%20The%20Application%20Class.md)  
+ [CWinApp: The Application Class](../mfc/cwinapp-the-application-class.md)  
   
- [ドキュメント テンプレートとドキュメント\/ビューの作成手順](../mfc/document-templates-and-the-document-view-creation-process.md)  
+ [Document Templates and the Document/View Creation Process](../mfc/document-templates-and-the-document-view-creation-process.md)  
   
- [メッセージの処理とマップ](../mfc/message-handling-and-mapping.md)  
+ [Message Handling and Mapping](../mfc/message-handling-and-mapping.md)  
   
- [ウィンドウ オブジェクト](../mfc/window-objects.md)  
+ [Window Objects](../mfc/window-objects.md)  
   
-## 参照  
- [クラスを使用した Windows アプリケーションの作成](../Topic/Using%20the%20Classes%20to%20Write%20Applications%20for%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Using the Classes to Write Applications for Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)
+

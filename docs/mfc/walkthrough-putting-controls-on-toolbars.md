@@ -1,110 +1,128 @@
 ---
-title: "チュートリアル: ツール バーへのコントロールの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "[ユーザー設定] ダイアログ ボックス, 追加 (コントロールを)"
-  - "ツール バー, 追加 (コントロールを)"
+title: 'Walkthrough: Putting Controls On Toolbars | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Customize dialog box, adding controls
+- toolbars [MFC], adding controls
 ms.assetid: 8fc94bdf-0da7-45d9-8bc4-52b7b1edf205
 caps.latest.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
----
-# チュートリアル: ツール バーへのコントロールの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c79b45a2e33653cab514460395c4a7130997d687
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このトピックでは、Windows コントロールを含むツール バー ボタンをツール バーに追加する方法を説明します。  MFC では、ツール バー ボタンは、[CMFCToolBarButton クラス](../mfc/reference/cmfctoolbarbutton-class.md) の派生クラス、たとえば、[CMFCToolBarComboBoxButton クラス](../Topic/CMFCToolBarComboBoxButton%20Class.md), [CMFCToolBarEditBoxButton クラス](../Topic/CMFCToolBarEditBoxButton%20Class.md)、[CMFCDropDownToolbarButton クラス](../mfc/reference/cmfcdropdowntoolbarbutton-class.md)、[CMFCToolBarMenuButton クラス](../mfc/reference/cmfctoolbarmenubutton-class.md) などであることが必要です。  
+---
+# <a name="walkthrough-putting-controls-on-toolbars"></a>Walkthrough: Putting Controls On Toolbars
+This topic describes how to add a toolbar button that contains a Windows control to a toolbar. In MFC, a toolbar button must be a [CMFCToolBarButton Class](../mfc/reference/cmfctoolbarbutton-class.md)-derived class, for example [CMFCToolBarComboBoxButton Class](../mfc/reference/cmfctoolbarcomboboxbutton-class.md), [CMFCToolBarEditBoxButton Class](../mfc/reference/cmfctoolbareditboxbutton-class.md), [CMFCDropDownToolbarButton Class](../mfc/reference/cmfcdropdowntoolbarbutton-class.md), or [CMFCToolBarMenuButton Class](../mfc/reference/cmfctoolbarmenubutton-class.md).  
   
-## ツール バーへのコントロールの追加  
- ツール バーにコントロールを追加するには、次の手順を実行します。  
+## <a name="adding-controls-to-toolbars"></a>Adding Controls to Toolbars  
+ To add a control to a toolbar, follow these steps:  
   
-1.  親ツール バー リソースでボタンのダミー リソース ID を予約します。  Visual Studio でツール バー エディターを使用してボタンを作成する方法の詳細については、「[Toolbar Editor](../mfc/toolbar-editor.md)」を参照してください。  
+1.  Reserve a dummy resource ID for the button in the parent toolbar resource. For more information about how to create buttons by using the Toolbar Editor in Visual Studio, see the [Toolbar Editor](../windows/toolbar-editor.md) topic.  
   
-2.  親ツール バーのすべてのビットマップでボタンのツール バー イメージ \(ボタン アイコン\) を予約します。  
+2.  Reserve a toolbar image (button icon) for the button in all bitmaps of the parent toolbar.  
   
-3.  `AFX_WM_RESETTOOLBAR` メッセージを処理するメッセージ ハンドラーで、次の操作を行います。  
+3.  In the message handler that processes the `AFX_WM_RESETTOOLBAR` message, do the following:  
   
-    1.  `CMFCToolbarButton` 派生クラスを使用して、ボタン コントロールを作成します。  
+    1.  Construct the button control by using a `CMFCToolbarButton`-derived class.  
   
-    2.  [CMFCToolBar::ReplaceButton](../Topic/CMFCToolBar::ReplaceButton.md) を使用して、ダミー ボタンを新しいコントロールに置き換えます。  `ReplaceButton` はボタン オブジェクトをコピーしてそのコピーを保持するため、開発者はスタックでボタン オブジェクトを作成できます。  
+    2.  Replace the dummy button with the new control by using [CMFCToolBar::ReplaceButton](../mfc/reference/cmfctoolbar-class.md#replacebutton). You can construct the button object on the stack, because `ReplaceButton` copies the button object and maintains the copy.  
   
 > [!NOTE]
->  アプリケーションでカスタマイズを有効にしているとき、再コンパイル後に更新したコントロールがアプリケーションのツール バーに表示されるようにするには、**\[カスタマイズ\]** ダイアログ ボックスの **\[ツール バー\]** タブの **\[リセット\]** ボタンを使用して、ツール バーをリセットすることが必要になる場合があります。  ツール バーの状態は Windows レジストリに保存され、アプリケーションの起動中に `ReplaceButton` メソッドが実行された後、レジストリ情報が読み込まれ適用されます。  
+>  If you enabled customization in your application, you may have to reset the toolbar by using the **Reset** button on the **Toolbars** tab of the **Customize** dialog box to see the updated control in your application after recompiling. The toolbar state is saved in the Windows registry, and the registry information is loaded and applied after the `ReplaceButton` method is executed during application startup.  
   
-## ツール バー コントロールとカスタマイズ  
- **\[カスタマイズ\]** ダイアログ ボックスの **\[コマンド\]** タブには、アプリケーションで使用できるコマンドの一覧が表示されます。  既定では、**\[カスタマイズ\]** ダイアログ ボックスはアプリケーション メニューを処理し、各メニュー カテゴリで標準ツール バー ボタンの一覧を作成します。  ツール バー コントロールが提供する拡張機能を保持するには、**\[カスタマイズ\]** ダイアログ ボックスで、標準ツール バー ボタンをカスタム コントロールに置き換える必要があります。  
+## <a name="toolbar-controls-and-customization"></a>Toolbar Controls and Customization  
+ The **Commands** tab of the **Customize** dialog box contains a list of commands that are available in the application. By default, the **Customize** dialog box processes the application menus and builds a list of standard toolbar buttons in each menu category. To retain the extended functionality that the toolbar controls provide, you must replace the standard toolbar button with the custom control in the **Customize** dialog box.  
   
- カスタマイズを有効にする場合は、[CMFCToolBarsCustomizeDialog クラス](../mfc/reference/cmfctoolbarscustomizedialog-class.md) クラスを使用して、カスタマイズ ハンドラー `OnViewCustomize` で **\[カスタマイズ\]** ダイアログ ボックスを作成します。  [CMFCToolBarsCustomizeDialog::Create](../Topic/CMFCToolBarsCustomizeDialog::Create.md) を呼び出して **\[カスタマイズ\]** ダイアログ ボックスを表示する前に、[CMFCToolBarsCustomizeDialog::ReplaceButton](../Topic/CMFCToolBarsCustomizeDialog::ReplaceButton.md) を呼び出して、標準のボタンを新しいコントロールに置き換えます。  
+ When you enable customization, you create the **Customize** dialog box in the customization handler `OnViewCustomize` by using the [CMFCToolBarsCustomizeDialog Class](../mfc/reference/cmfctoolbarscustomizedialog-class.md) class. Before you display the **Customize** dialog box by calling [CMFCToolBarsCustomizeDialog::Create](../mfc/reference/cmfctoolbarscustomizedialog-class.md#create), call [CMFCToolBarsCustomizeDialog::ReplaceButton](../mfc/reference/cmfctoolbarscustomizedialog-class.md#replacebutton) to replace the standard button with the new control.  
   
-## 例 : \[Find\] コンボ ボックスの作成  
- ここでは、`Find` コンボ ボックスを作成する方法について説明します。このコンボ ボックスはツール バーに表示され、最近使用した検索文字列が表示されます。  ユーザーはコントロールに文字列を入力した後、Enter キーを押してドキュメントを検索するか、Esc キーを押してフォーカスをメイン フレームに戻します。  ここでは、ドキュメントが [CEditView クラス](../Topic/CEditView%20Class.md) 派生ビューに表示されていることを前提としています。  
+## <a name="example-creating-a-find-combo-box"></a>Example: Creating a Find Combo Box  
+ This section describes how to create a `Find` combo box control that appears on a toolbar and contains recently-used search strings. The user can type a string in the control and then press the enter key to search a document, or press the escape key to return the focus to the main frame. This example assumes that the document is displayed in a [CEditView Class](../mfc/reference/ceditview-class.md)-derived view.  
   
-### Find コントロールの作成  
- まず、`Find` コンボ ボックス コントロールを作成します。  
+### <a name="creating-the-find-control"></a>Creating the Find Control  
+ First, create the `Find` combo box control:  
   
-1.  アプリケーション リソースにボタンとコマンドを追加します。  
+1.  Add the button and its commands to the application resources:  
   
-    1.  アプリケーション リソースで、`ID_EDIT_FIND` コマンド ID を持つ新しいボタンをアプリケーションのツール バー、およびツール バーに関連付けられたビットマップに追加します。  
+    1.  In the application resources, add a new button with an `ID_EDIT_FIND` command ID to a toolbar in your application and to any bitmaps associated with the toolbar.  
   
-    2.  ID\_EDIT\_FIND コマンド ID を使用して新しいメニュー項目を作成します。  
+    2.  Create a new menu item with the ID_EDIT_FIND command ID.  
   
-    3.  新しい文字列 "Find the text\\nFind" を文字列テーブルに追加し、`ID_EDIT_FIND_COMBO` コマンド ID を割り当てます。  この ID は、`Find` コンボ ボックスのコマンド ID として使用されます。  
+    3.  Add a new string "Find the text\nFind" to the string table and assign it an `ID_EDIT_FIND_COMBO` command ID. This ID will be used as the command ID of the `Find` combo box button.  
   
         > [!NOTE]
-        >  `ID_EDIT_FIND` は `CEditView` によって処理される標準のコマンドであるため、このコマンド用の特別なハンドラーを実装する必要はありません。ただし、新しいコマンド `ID_EDIT_FIND_COMBO` のハンドラーを実装する必要があります。  
+        >  Because `ID_EDIT_FIND` is a standard command that is processed by `CEditView`, you are not required to implement a special handler for this command.  However, you must implement a handler for the new command `ID_EDIT_FIND_COMBO`.  
   
-2.  [CComboBox クラス](../mfc/reference/ccombobox-class.md) から派生した新しい `CFindComboBox` クラスを作成します。  
+2.  Create a new class, `CFindComboBox`, derived from [CComboBox Class](../mfc/reference/ccombobox-class.md).  
   
-3.  `CFindComboBox` クラスで、`PreTranslateMessage` 仮想メソッドをオーバーライドします。  このメソッドにより、コンボ ボックスは [WM\_KEYDOWN](http://msdn.microsoft.com/library/windows/desktop/ms646280) メッセージを処理できます。  ユーザーが Esc キーを押す \(`VK_ESCAPE`\) と、フォーカスがメイン フレーム ウィンドウに戻ります。  ユーザーが Enter キーを押す \(`VK_ENTER`\) と、`ID_EDIT_FIND_COMBO` コマンド ID を含む `WM_COMMAND` メッセージがメイン フレーム ウィンドウにポストされます。  
+3.  In the `CFindComboBox` class, override the `PreTranslateMessage` virtual method. This method will enable the combo box to process the [WM_KEYDOWN](http://msdn.microsoft.com/library/windows/desktop/ms646280) message. If the user hits the escape key (`VK_ESCAPE`), return the focus to the main frame window. If the user hits the Enter key (`VK_ENTER`), post to the main frame window a `WM_COMMAND` message that contains the `ID_EDIT_FIND_COMBO` command ID.  
   
-4.  [CMFCToolBarComboBoxButton クラス](../Topic/CMFCToolBarComboBoxButton%20Class.md) から派生した `Find` コンボ ボックス ボタンのクラスを作成します。  この例では、`CFindComboButton` という名前が付いています。  
+4.  Create a class for the `Find` combo box button, derived from [CMFCToolBarComboBoxButton Class](../mfc/reference/cmfctoolbarcomboboxbutton-class.md). In this example, it is named `CFindComboButton`.  
   
-5.  `CMFCToolbarComboBoxButton` のコンストラクターは、3 つのパラメーター \(ボタンのコマンド ID、ボタン イメージのインデックス、およびコンボ ボックスのスタイル\) を受け取ります。  これらのパラメーターを次のように設定します。  
+5.  The constructor of `CMFCToolbarComboBoxButton` takes three parameters: the command ID of the button, the button image index, and the style of the combo box. Set these parameters as follows:  
   
-    1.  `ID_EDIT_FIND_COMBO` をコマンド ID として渡します。  
+    1.  Pass the `ID_EDIT_FIND_COMBO` as the command ID.  
   
-    2.  [CCommandManager::GetCmdImage](http://msdn.microsoft.com/ja-jp/4094d08e-de74-4398-a483-76d27a742dca) を `ID_EDIT_FIND` と共に使用して、イメージのインデックスを取得します。  
+    2.  Use [CCommandManager::GetCmdImage](http://msdn.microsoft.com/en-us/4094d08e-de74-4398-a483-76d27a742dca) with `ID_EDIT_FIND` to obtain the image index.  
   
-    3.  使用可能なコンボ ボックス スタイルの一覧については、「[コンボ ボックス スタイル](../mfc/reference/combo-box-styles.md)」を参照してください。  
+    3.  For a list of available combo box styles, see [Combo-Box Styles](../mfc/reference/styles-used-by-mfc.md#combo-box-styles).  
   
-6.  `CFindComboButton` クラスで、`CMFCToolbarComboBoxButton::CreateCombo` メソッドをオーバーライドします。  ここで、`CFindComboButton` オブジェクトを作成し、オブジェクトへのポインターを返す必要があります。  
+6.  In the `CFindComboButton` class, override the `CMFCToolbarComboBoxButton::CreateCombo` method. Here you should create the `CFindComboButton` object and return a pointer to it.  
   
-7.  コンボ ボタンを永続化するには、[IMPLEMENT\_SERIAL](../Topic/IMPLEMENT_SERIAL.md) マクロを使用します。  ワークスペース マネージャーは、ボタンの状態を自動的に読み込み、Windows レジストリに保存します。  
+7.  Use the [IMPLEMENT_SERIAL](../mfc/reference/run-time-object-model-services.md#implement_serial) macro to make the combo button persistent. The workspace manager automatically loads and saves the button's state in the Windows registry.  
   
-8.  ドキュメント ビューで `ID_EDIT_FIND_COMBO` ハンドラーを実装します。  すべての `Find` コンボ ボックス ボタンを取得するには、[CMFCToolBar::GetCommandButtons](../Topic/CMFCToolBar::GetCommandButtons.md) を `ID_EDIT_FIND_COMBO` と共に使用します。  カスタマイズにより、同じコマンド ID を持つ複数のボタンが存在する可能性があります。  
+8.  Implement the `ID_EDIT_FIND_COMBO` handler in your document view. Use [CMFCToolBar::GetCommandButtons](../mfc/reference/cmfctoolbar-class.md#getcommandbuttons) with `ID_EDIT_FIND_COMBO` to retrieve all `Find` combo box buttons. There can be several copies of a button with the same command ID because of customization.  
   
-9. ID\_EDIT\_FIND メッセージ ハンドラー `OnFind` で、[CMFCToolBar::IsLastCommandFromButton](../Topic/CMFCToolBar::IsLastCommandFromButton.md) を使用して、検索コマンドが `Find` コンボ ボックスから送信されたかどうかを判断します。  該当する場合は、テキストを検索し、検索文字列をコンボ ボックスに追加します。  
+9. In the ID_EDIT_FIND message handler `OnFind`, use [CMFCToolBar::IsLastCommandFromButton](../mfc/reference/cmfctoolbar-class.md#islastcommandfrombutton) to determine whether the find command was sent from the `Find` combo box button. If so, find the text and add the search string to the combo box.  
   
-### メイン ツール バーへの Find コントロールの追加  
- ツール バーにコンボ ボックス ボタンを追加するには、次の手順を実行します。  
+### <a name="adding-the-find-control-to-the-main-toolbar"></a>Adding the Find Control to the Main Toolbar  
+ To add the combo box button to the toolbar, follow these steps:  
   
-1.  メイン フレーム ウィンドウに `AFX_WM_RESETTOOLBAR` メッセージ ハンドラー `OnToolbarReset` を実装します。  
-  
-    > [!NOTE]
-    >  アプリケーションの起動中にツール バーが初期化されたとき、またはカスタマイズ中にツール バーがリセットされたときに、フレームワークはこのメッセージをメイン フレーム ウィンドウに送信します。  どちらの場合も、標準のツール バー ボタンをカスタム `Find` コンボ ボックス ボタンに置き換える必要があります。  
-  
-2.  `AFX_WM_RESETTOOLBAR` ハンドラーで、ツール バー ID、つまり `AFX_WM_RESETTOOLBAR` メッセージの `WPARAM` を確認します。  ツール バー ID が、`Find` コンボ ボックス ボタンを含むツール バーの ID と同じ場合、[CMFCToolBar::ReplaceButton](../Topic/CMFCToolBar::ReplaceButton.md) を呼び出して、`Find` ボタン \(コマンド ID が `ID_EDIT_FIND)` のボタン\) を `CFindComboButton` オブジェクトに置き換えます。  
+1.  Implement the `AFX_WM_RESETTOOLBAR` message handler `OnToolbarReset` in the main frame window.  
   
     > [!NOTE]
-    >  `ReplaceButton` はボタン オブジェクトをコピーしてそのコピーを保持するため、開発者はスタックで `CFindComboBox` オブジェクトを作成できます。  
+    >  The framework sends this message to the main frame window when a toolbar is initialized during application startup, or when a toolbar is reset during customization. In either case, you must replace the standard toolbar button with the custom `Find` combo box button.  
   
-### \[カスタマイズ\] ダイアログ ボックスへの Find コントロールの追加  
- カスタマイズ ハンドラー `OnViewCustomize` で、[CMFCToolBarsCustomizeDialog::ReplaceButton](../Topic/CMFCToolBarsCustomizeDialog::ReplaceButton.md) を呼び出して、`Find` ボタン \(コマンド ID が `ID_EDIT_FIND)` のボタン\) を `CFindComboButton` オブジェクトに置き換えます。  
+2.  In the `AFX_WM_RESETTOOLBAR` handler, examine the toolbar ID, that is, the `WPARAM` of the `AFX_WM_RESETTOOLBAR` message. If the toolbar ID is equal to that of the toolbar that contains the `Find` combo box button, call [CMFCToolBar::ReplaceButton](../mfc/reference/cmfctoolbar-class.md#replacebutton) to replace the `Find` button (that is, the button with the command ID `ID_EDIT_FIND)` with a `CFindComboButton` object.  
   
-## 参照  
- [階層図](../mfc/hierarchy-chart.md)   
- [クラス](../Topic/MFC%20Classes.md)   
- [CMFCToolBar クラス](../mfc/reference/cmfctoolbar-class.md)   
- [CMFCToolBarButton クラス](../mfc/reference/cmfctoolbarbutton-class.md)   
- [CMFCToolBarComboBoxButton クラス](../Topic/CMFCToolBarComboBoxButton%20Class.md)   
- [CMFCToolBarsCustomizeDialog クラス](../mfc/reference/cmfctoolbarscustomizedialog-class.md)
+    > [!NOTE]
+    >  You can construct a `CFindComboBox` object on the stack, because `ReplaceButton` copies the button object and maintains the copy.  
+  
+### <a name="adding-the-find-control-to-the-customize-dialog-box"></a>Adding the Find Control to the Customize Dialog Box  
+ In the customization handler `OnViewCustomize`, call [CMFCToolBarsCustomizeDialog::ReplaceButton](../mfc/reference/cmfctoolbarscustomizedialog-class.md#replacebutton) to replace the `Find` button (that is, the button with the command ID `ID_EDIT_FIND)` with a `CFindComboButton` object.  
+  
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../mfc/hierarchy-chart.md)   
+ [Classes](../mfc/reference/mfc-classes.md)   
+ [CMFCToolBar Class](../mfc/reference/cmfctoolbar-class.md)   
+ [CMFCToolBarButton Class](../mfc/reference/cmfctoolbarbutton-class.md)   
+ [CMFCToolBarComboBoxButton Class](../mfc/reference/cmfctoolbarcomboboxbutton-class.md)   
+ [CMFCToolBarsCustomizeDialog Class](../mfc/reference/cmfctoolbarscustomizedialog-class.md)
+

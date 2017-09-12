@@ -1,102 +1,120 @@
 ---
-title: "データ オブジェクトとデータ ソース : 操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クリップボード [C++], 判断 (使用できる形式を)"
-  - "クリップボード [C++], 渡す (書式情報を)"
-  - "データ オブジェクト [C++], 操作"
-  - "データ ソース [C++], データ操作"
-  - "データ ソース [C++], 判断 (使用できる形式を)"
-  - "データ ソース [C++], 挿入 (データを)"
-  - "遅延レンダリング [C++]"
-  - "OLE [C++], データ オブジェクト"
-  - "OLE [C++], データ ソース"
+title: 'Data Objects and Data Sources: Manipulation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- data objects [MFC], manipulating
+- data sources [MFC], data operations
+- data sources [MFC], inserting data
+- Clipboard [MFC], determining available formats
+- OLE [MFC], data objects
+- Clipboard [MFC], passing format information
+- data sources [MFC], determining available formats
+- delayed rendering [MFC]
+- OLE [MFC], data sources
 ms.assetid: f7f27e77-bb5d-4131-b819-d71bf929ebaf
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# データ オブジェクトとデータ ソース : 操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a05a745f1a023ce36ca7edc5b9a42890f94a121f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-データ オブジェクトまたはデータ ソースの後で作成された場合、挿入などのデータの一般的な操作を実行することができ、形式を列挙する削除、データなどです。  ここでは、最も一般的な操作を完了するために必要な手法について説明します。  ここでは、次の内容について説明します。  
+---
+# <a name="data-objects-and-data-sources-manipulation"></a>Data Objects and Data Sources: Manipulation
+After a data object or data source has been created, you can perform a number of common operations on the data, such as inserting and removing data, enumerating the formats the data is in, and more. This article describes the techniques necessary to complete the most common operations. Topics include:  
   
--   [データ ソースにデータを挿入できます。](#_core_inserting_data_into_a_data_source)  
+-   [Inserting data into a data source](#_core_inserting_data_into_a_data_source)  
   
--   [データ オブジェクトで使用できる形式を決定します。](#_core_determining_the_formats_available_in_a_data_object)  
+-   [Determining the formats available in a data object](#_core_determining_the_formats_available_in_a_data_object)  
   
--   [データ オブジェクトからのデータの取得](#_core_retrieving_data_from_a_data_object)  
+-   [Retrieving data from a data object](#_core_retrieving_data_from_a_data_object)  
   
-##  <a name="_core_inserting_data_into_a_data_source"></a> データ ソースにデータを挿入できます。  
- データがデータ ソースに挿入したりデータをすばやくまたはオンデマンドで指定されているかによって、およびメディアをで指定されているかどうかを指定します。  これは次のとおりです。  
+##  <a name="_core_inserting_data_into_a_data_source"></a> Inserting Data into a Data Source  
+ How data is inserted into a data source depends on whether the data is supplied immediately or on demand, and in which medium it is supplied. The possibilities are as follows.  
   
-### フィード データ、\(現在の描画\)  
+### <a name="supplying-data-immediately-immediate-rendering"></a>Supplying Data Immediately (Immediate Rendering)  
   
--   データを提供するすべてのクリップボード形式を `COleDataSource::CacheGlobalData` に繰り返し呼び出し。  メモリに格納すると、ハンドルを使用するクリップボード データ形式、およびオプションで、データを表す **FORMATETC** 構造体を渡します。  
+-   Call `COleDataSource::CacheGlobalData` repeatedly for every Clipboard format in which you are supplying data. Pass the Clipboard format to be used, a handle to the memory containing the data and, optionally, a **FORMATETC** structure describing the data.  
   
-     または  
+     -or-  
   
--   **STGMEDIUM** 構造体を直接使用する場合は、上記のオプションの `COleDataSource::CacheGlobalData` の代わりに `COleDataSource::CacheData` を呼び出します。  
+-   If you want to work directly with **STGMEDIUM** structures, you call `COleDataSource::CacheData` instead of `COleDataSource::CacheGlobalData` in the option above.  
   
-### フィード データに応じて \(遅延レンダリング\)  
- これは高度なトピックです。  
+### <a name="supplying-data-on-demand-delayed-rendering"></a>Supplying Data on Demand (Delayed Rendering)  
+ This is an advanced topic.  
   
--   データを提供するすべてのクリップボード形式を `COleDataSource::DelayRenderData` に繰り返し呼び出し。  使用するクリップボード形式、およびオプションで、データを表す **FORMATETC** 構造体を渡します。  データが要求されると、フレームワークは、オーバーライドする必要 `COleDataSource::OnRenderData`を呼び出します。  
+-   Call `COleDataSource::DelayRenderData` repeatedly for every Clipboard format in which you are supplying data. Pass the Clipboard format to be used and, optionally, a **FORMATETC** structure describing the data. When the data is requested, the framework will call `COleDataSource::OnRenderData`, which you must override.  
   
-     または  
+     -or-  
   
--   データを提供するために `CFile` オブジェクトを使用して前のオプションの `COleDataSource::DelayRenderData` の代わりに `COleDataSource::DelayRenderFileData` を呼び出します。  データが要求されると、フレームワークは、オーバーライドする必要 `COleDataSource::OnRenderFileData`を呼び出します。  
+-   If you use a `CFile` object to supply the data, call `COleDataSource::DelayRenderFileData` instead of `COleDataSource::DelayRenderData` in the previous option. When the data is requested, the framework will call `COleDataSource::OnRenderFileData`, which you must override.  
   
-##  <a name="_core_determining_the_formats_available_in_a_data_object"></a> データ オブジェクトで使用できる形式を決定します。  
- アプリケーションは、ユーザーにデータを貼り付けることを有効にする前に処理できるにクリップボード形式が存在するかどうかを確認する必要があります。  これを行うには、アプリケーションは次のようにする必要があります:  
+##  <a name="_core_determining_the_formats_available_in_a_data_object"></a> Determining the Formats Available in a Data Object  
+ Before an application allows the user to paste data into it, it needs to know if there are formats on the Clipboard that it can handle. To do this, your application should do the following:  
   
-1.  `COleDataObject` オブジェクトと **FORMATETC** 構造を作成します。  
+1.  Create a `COleDataObject` object and a **FORMATETC** structure.  
   
-2.  クリップボードのデータとデータ オブジェクトを関連付けるには、データ オブジェクトの `AttachClipboard` メンバー関数を呼び出します。  
+2.  Call the data object's `AttachClipboard` member function to associate the data object with the data on the Clipboard.  
   
-3.  以下のいずれかを実行します。  
+3.  Do one of the following:  
   
-    -   必要な形式が一つしかないデータ オブジェクトの `IsDataAvailable` メンバー関数を呼び出します。  これは時間クリップボードのデータがアプリケーションよりも多くの形式をサポートする格納します。  
+    -   Call the data object's `IsDataAvailable` member function if there are only one or two formats you need. This will save you time in cases where the data on the Clipboard supports significantly more formats than your application.  
   
-         または  
+         -or-  
   
-    -   クリップボードに使用できる形式を列挙できるようにデータ オブジェクトの `BeginEnumFormats` メンバー関数を呼び出します。  クリップボードは、アプリケーションがサポートする形式を返すか、これ以上の形式がなくなるまで `GetNextFormat` を呼び出します。  
+    -   Call the data object's `BeginEnumFormats` member function to start enumerating the formats available on the Clipboard. Then call `GetNextFormat` until the Clipboard returns a format your application supports or there are no more formats.  
   
- `ON_UPDATE_COMMAND_UI`を使用する場合、貼り付けを、編集メニューの特殊な項目を貼り付けることもできるようになります。  これを行うには、`CMenu::EnableMenuItem` または `CCmdUI::Enable`を呼び出します。  コンテナー アプリケーションがメニュー項目にする必要がある場合に機能の詳細については、[メニューとリソース: コンテナーの追加](../mfc/menus-and-resources-container-additions.md)を参照し。  
+ If you are using `ON_UPDATE_COMMAND_UI`, you can now enable the Paste and, possibly, Paste Special items on the Edit menu. To do this, call either `CMenu::EnableMenuItem` or `CCmdUI::Enable`. For more information about what container applications should do with menu items and when, see [Menus and Resources: Container Additions](../mfc/menus-and-resources-container-additions.md).  
   
-##  <a name="_core_retrieving_data_from_a_data_object"></a> データ オブジェクトからのデータの取得  
- データ形式を決定したら、後は、データ オブジェクトからデータを取得することです。  そのため、ユーザーはデータを配置する場所をとするアプリケーションは、関数を呼び出します。  データは次のメディアの 1 つがで使用する:  
+##  <a name="_core_retrieving_data_from_a_data_object"></a> Retrieving Data from a Data Object  
+ Once you have decided on a data format, all that remains is to retrieve the data from the data object. To do this, the user decides where to put the data, and the application calls the appropriate function. The data will be available in one of the following mediums:  
   
-|Medium|呼び出される関数|  
-|------------|--------------|  
-|グローバル メモリ \(`HGLOBAL`\)|`COleDataObject::GetGlobalData`|  
-|ファイル \(`CFile`\)|`COleDataObject::GetFileData`|  
-|**STGMEDIUM** 構造 体 \(`IStorage`\)|`COleDataObject::GetData`|  
+|Medium|Function to call|  
+|------------|----------------------|  
+|Global Memory (`HGLOBAL`)|`COleDataObject::GetGlobalData`|  
+|File (`CFile`)|`COleDataObject::GetFileData`|  
+|**STGMEDIUM** structure (`IStorage`)|`COleDataObject::GetData`|  
   
- 一般に、メディアはクリップボード形式とともに指定します。  たとえば、**CF\_EMBEDDEDSTRUCT** オブジェクトは **STGMEDIUM** 構造体を必要とする `IStorage` のメディアに必要です。  したがって **STGMEDIUM** 構造体を受け入れることができる、これらの関数の 1 であるため、`GetData` を使用します。  
+ Commonly, the medium will be specified along with its Clipboard format. For example, a **CF_EMBEDDEDSTRUCT** object is always in an `IStorage` medium that requires an **STGMEDIUM** structure. Therefore, you would use `GetData` because it is the only one of these functions that can accept an **STGMEDIUM** structure.  
   
- クリップボード形式が `IStream` または `HGLOBAL` の中にある場合は、フレームワークはデータを参照する `CFile` にポインターを提供できます。  アプリケーションは、ファイルからデータをインポートすることがありますと同様にデータを取得するために、読み取られるファイルを使用できます。  基本的に、データ ソースの `OnRenderData` と `OnRenderFileData` ルーチンにクライアント側インターフェイスです。  
+ For cases where the Clipboard format is in an `IStream` or `HGLOBAL` medium, the framework can provide a `CFile` pointer that references the data. The application can then use file read to get the data in much the same way as it might import data from a file. Essentially, this is the client-side interface to the `OnRenderData` and `OnRenderFileData` routines in the data source.  
   
- ユーザーは同じ形式で他のデータのなどのドキュメントには、データを単に挿入できます。  
+ The user can now insert data into the document just like for any other data in the same format.  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ドラッグ アンド ドロップする](../mfc/drag-and-drop-ole.md)  
+-   [Drag and drop](../mfc/drag-and-drop-ole.md)  
   
--   [クリップボード](../mfc/clipboard.md)  
+-   [Clipboard](../mfc/clipboard.md)  
   
-## 参照  
- [データ オブジェクトとデータ ソース \(OLE\)](../mfc/data-objects-and-data-sources-ole.md)   
- [COleDataObject クラス](../mfc/reference/coledataobject-class.md)   
- [COleDataSource クラス](../mfc/reference/coledatasource-class.md)
+## <a name="see-also"></a>See Also  
+ [Data Objects and Data Sources (OLE)](../mfc/data-objects-and-data-sources-ole.md)   
+ [COleDataObject Class](../mfc/reference/coledataobject-class.md)   
+ [COleDataSource Class](../mfc/reference/coledatasource-class.md)
+

@@ -1,44 +1,63 @@
 ---
-title: "ツール バー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド バー, MFC ツール バー"
-  - "ツール バー [C++]"
+title: Toolbars | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- toolbars [MFC]
+- command bars [MFC], MFC toolbars
 ms.assetid: c22ecc5b-a84c-4979-8d1a-8e3e71d5ce33
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツール バー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 645fe8448588aac0ad40192e9028cfe0002a4365
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-"ツール バーのファミリは MFC ツール バーを正規表現を作成および使用する方法について説明します。  
+---
+# <a name="toolbars"></a>Toolbars
+The toolbar family of articles describes MFC toolbars and how to create and use them.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [MFC ツール バーの実装](../mfc/mfc-toolbar-implementation.md)  
+-   [MFC toolbar implementation](../mfc/mfc-toolbar-implementation.md)  
   
--   [ツール バーに関する基本事項](../mfc/toolbar-fundamentals.md)  
+-   [Toolbar fundamentals](../mfc/toolbar-fundamentals.md)  
   
--   [ユーザー インターフェイス オブジェクトを更新する方法 \(ツール バー ボタンを有効または無効にします。](../mfc/how-to-update-user-interface-objects.md)  
+-   [How to Update User-Interface Objects (enable/disable toolbar buttons)](../mfc/how-to-update-user-interface-objects.md)  
   
--   [CToolBar](../mfc/reference/ctoolbar-class.md) クラスと [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) クラス  
+-   The [CToolBar](../mfc/reference/ctoolbar-class.md) and [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) classes  
   
--   [サンプル](../mfc/toolbar-sample-list.md)  
+-   [Sample](../mfc/toolbar-sample-list.md)  
   
- MFC のツール バーの詳細については、記事 Q232017 「HOWTO:参照します http:\/\/support.microsoft.com にある Microsoft サポート技術情報のツール バー ボタンにテキストを」、を追加します。  
+ For more information about MFC toolbars, see article Q232017, "HOWTO: Add Text to Toolbar Buttons," in the Microsoft Knowledge Base at http://support.microsoft.com.  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)   
+ [Toolbar Editor](../windows/toolbar-editor.md)
+
+

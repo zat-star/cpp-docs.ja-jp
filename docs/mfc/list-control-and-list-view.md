@@ -1,51 +1,70 @@
 ---
-title: "リスト コントロールとリスト ビュー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CListCtrl クラス, および CListView"
-  - "CListView クラス, および CListCtrl"
-  - "リスト コントロール, リスト ビュー"
-  - "リスト ビュー"
-  - "ビュー, リストとリスト コントロール"
+title: List Control and List View | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CListView class [MFC], and CListCtrl
+- views [MFC], list and list control
+- CListCtrl class [MFC], and CListView
+- list views [MFC]
+- list controls [MFC], List view
 ms.assetid: 7aee1c48-b158-4399-be0b-be366993665e
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# リスト コントロールとリスト ビュー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7a60bf5c088c3914f9ed73a34a1dfa40f58bb1a5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-便宜上、MFC は 2 とおりの方法でリスト コントロールをカプセル化します。  リスト コントロールを使用する場合:  
+---
+# <a name="list-control-and-list-view"></a>List Control and List View
+For convenience, MFC encapsulates the list control in two ways. You can use list controls:  
   
--   直接、ダイアログ クラスで [CListCtrl](../Topic/CListCtrl%20Class.md) オブジェクトを埋め込むことによって。  
+-   Directly, by embedding a [CListCtrl](../mfc/reference/clistctrl-class.md) object in a dialog class.  
   
--   間接的に、[CListView](../mfc/reference/clistview-class.md)クラスを使用します。  
+-   Indirectly, by using class [CListView](../mfc/reference/clistview-class.md).  
   
- `CListView` は [CEditView](../Topic/CEditView%20Class.md) がエディット コントロールにカプセル化するようにコントロールをカプセル化する MFC のドキュメント\/ビュー アーキテクチャを持つリスト コントロールの統合を簡単に多くします: コントロールは、MFC ビューの領域を塗りつぶします。\(ビューは、コントロール `CListView`へキャスト *です*\)。  
+ `CListView` makes it easy to integrate a list control with the MFC document/view architecture, encapsulating the control much as [CEditView](../mfc/reference/ceditview-class.md) encapsulates an edit control: the control fills the entire surface area of an MFC view. (The view *is* the control, cast to `CListView`.)  
   
- `CListView` オブジェクトは [CCtrlView](../mfc/reference/cctrlview-class.md) と基本クラスから継承し、基になるリストのコントロールを取得するためのメンバー関数を追加します。  ビューとしてビューを使用するためにビューのメンバーを使用します。  リスト コントロールのメンバー関数へのアクセスを取得するために [GetListCtrl](../Topic/CListView::GetListCtrl.md) メンバー関数を使用します。  これらのメンバーを使用する:  
+ A `CListView` object inherits from [CCtrlView](../mfc/reference/cctrlview-class.md) and its base classes and adds a member function to retrieve the underlying list control. Use view members to work with the view as a view. Use the [GetListCtrl](../mfc/reference/clistview-class.md#getlistctrl) member function to gain access to the list control's member functions. Use these members to:  
   
--   リストの「Item」を追加、削除、または処理します。  
+-   Add, delete, or manipulate "items" in the list.  
   
--   定数またはリスト コントロールの属性を取得します。  
+-   Set or get list control attributes.  
   
- `CListView`の下にある `CListCtrl` への参照を取得するには、リスト ビュー クラスの `GetListCtrl` を呼び出します。:  
+ To obtain a reference to the `CListCtrl` underlying a `CListView`, call `GetListCtrl` from your list view class:  
   
- [!CODE [NVC_MFCListView#4](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCListView#4)]  
+ [!code-cpp[NVC_MFCListView#4](../atl/reference/codesnippet/cpp/list-control-and-list-view_1.cpp)]  
   
- このトピックでは、リスト コントロールを使用する二つの方法について説明します。  
+ This topic describes both ways to use the list control.  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

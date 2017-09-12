@@ -1,48 +1,67 @@
 ---
-title: "コールバック項目とコールバック マスク | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コールバック アイテム (CListCtrl クラスの)"
-  - "CListCtrl クラス, コールバック アイテムとコールバック マスク"
+title: Callback Items and the Callback Mask | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- callback items in CListCtrl class [MFC]
+- CListCtrl class [MFC], callback item and callback mask
 ms.assetid: 67c1f76f-6144-453e-9376-6712f89430ae
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コールバック項目とコールバック マスク
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e943e5445620b25437a0f6d70a6703a927d5e636
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-項目ごとに、リスト ビュー コントロールは、項目のアイコンのラベル テキスト、イメージ リスト内のインデックス、一連の項目の状態のビット フラグを格納します。  アプリケーションが既に項目の情報の一部を保存して、コールバック項目と個々の項目を定義できます。  
+---
+# <a name="callback-items-and-the-callback-mask"></a>Callback Items and the Callback Mask
+For each of its items, a list view control typically stores the label text, the image list index of the item's icons, and a set of bit flags for the item's state. You can define individual items as callback items, which are useful if your application already stores some of the information for an item.  
   
- "コールバック項目と **LV\_ITEM** 構造体の `pszText` と `iImage` のメンバーに適切な値を指定することにより、項目を定義します。[CListCtrl::GetItem](../Topic/CListCtrl::GetItem.md)を参照してください。  アプリケーションが項目またはサブ項目のテキストを保持する場合は、`pszText` のメンバーに **LPSTR\_TEXTCALLBACK** 値を指定します。  アプリケーションが項目のアイコンを追跡している場合は、`iImage` のメンバーに **I\_IMAGECALLBACK** 値を指定します。  
+ You define an item as a callback item by specifying appropriate values for the `pszText` and `iImage` members of the **LV_ITEM** structure (see [CListCtrl::GetItem](../mfc/reference/clistctrl-class.md#getitem)). If the application maintains the item's or subitem's text, specify the **LPSTR_TEXTCALLBACK** value for the `pszText` member. If the application keeps track of the icon for the item, specify the **I_IMAGECALLBACK** value for the `iImage` member.  
   
- コールバック項目の定義に加えて、コントロールのコールバック マスクを変更できます。  このマスクはアプリケーション、コントロールではなく、ストア データ項目の現在の状態を指定する一連のビット フラグです。  コールバック マスクはコントロールのアイテムは、特定の項目に対して適用されるコールバック項目の指定とは異なり、適用されます。  コールバック マスクは、既定では、コントロールがすべての項目の状態を追跡することを意味しています。  この既定の動作を変更するには、次の値の組み合わせにマスクを初期化してください:  
+ In addition to defining callback items, you can also modify the control's callback mask. This mask is a set of bit flags that specify the item states for which the application, rather than the control, stores the current data. The callback mask applies to all of the control's items, unlike the callback item designation, which applies to a specific item. The callback mask is zero by default, meaning that the control tracks all item states. To change this default behavior, initialize the mask to any combination of the following values:  
   
--   `LVIS_CUT`は、切り取りと貼り付け操作の項目としてマークされます。  
+-   `LVIS_CUT` The item is marked for a cut-and-paste operation.  
   
--   `LVIS_DROPHILITED`はドラッグ アンド ドロップ ターゲット項目として強調表示されます。  
+-   `LVIS_DROPHILITED` The item is highlighted as a drag-and-drop target.  
   
--   `LVIS_FOCUSED`項目にフォーカスがあります。  
+-   `LVIS_FOCUSED` The item has the focus.  
   
--   `LVIS_SELECTED`項目が選択されます。  
+-   `LVIS_SELECTED` The item is selected.  
   
--   **LVIS\_OVERLAYMASK**アプリケーションは各項目の現在のオーバーレイ イメージのイメージ リストのインデックスが格納されます。  
+-   **LVIS_OVERLAYMASK** The application stores the image list index of the current overlay image for each item.  
   
--   **LVIS\_STATEIMAGEMASK**アプリケーションは各項目の現在の状態のイメージのイメージ リストのインデックスが格納されます。  
+-   **LVIS_STATEIMAGEMASK** The application stores the image list index of the current state image for each item.  
   
- このマスクを取得し、設定する方法の詳細については、「[CListCtrl::GetCallbackMask](../Topic/CListCtrl::GetCallbackMask.md) と [CListCtrl::SetCallbackMask](../Topic/CListCtrl::SetCallbackMask.md)」を参照してください。  
+ For further information on retrieving and setting this mask, see [CListCtrl::GetCallbackMask](../mfc/reference/clistctrl-class.md#getcallbackmask) and [CListCtrl::SetCallbackMask](../mfc/reference/clistctrl-class.md#setcallbackmask).  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

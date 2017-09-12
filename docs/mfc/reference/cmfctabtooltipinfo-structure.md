@@ -1,5 +1,5 @@
 ---
-title: "CMFCTabToolTipInfo 構造 |Microsoft ドキュメント"
+title: CMFCTabToolTipInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,89 +33,89 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: b9750cd9369313a3ed6ea9474d401cd0068a75fa
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3995d4ae7152a384dbf326fbc39dbf7c17bd3977
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfctabtooltipinfo-structure"></a>CMFCTabToolTipInfo 構造体
-この構造体は、上、ユーザーがマウスを置いた MDI タブに関する情報を提供します。  
+# <a name="cmfctabtooltipinfo-structure"></a>CMFCTabToolTipInfo Structure
+This structure provides information about the MDI tab that the user is hovering over.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CMFCTabToolTipInfo  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTabToolTipInfo::m_nTabIndex](#m_ntabindex)|タブ コントロールのインデックスを指定します。|  
-|[CMFCTabToolTipInfo::m_pTabWnd](#m_ptabwnd)|タブ コントロールへのポインター。|  
-|[CMFCTabToolTipInfo::m_strText](#m_strtext)|ツールヒントのテキスト。|  
+|[CMFCTabToolTipInfo::m_nTabIndex](#m_ntabindex)|Specifies the index of the tab control.|  
+|[CMFCTabToolTipInfo::m_pTabWnd](#m_ptabwnd)|A pointer to the tab control.|  
+|[CMFCTabToolTipInfo::m_strText](#m_strtext)|The tooltip text.|  
   
-## <a name="remarks"></a>コメント  
- ポインター、`CMFCTabToolTipInfo`のパラメーターとして構造体が渡される、`AFX_WM_ON_GET_TAB_TOOLTIP`メッセージです。 MDI タブが有効になっており、タブ コントロール上に置いたときに、このメッセージが生成されます。  
+## <a name="remarks"></a>Remarks  
+ A pointer to a `CMFCTabToolTipInfo` structure is passed as a parameter of the `AFX_WM_ON_GET_TAB_TOOLTIP` message. This message is generated when MDI tabs are enabled and the user hovers over a tab control.  
   
-## <a name="example"></a>例  
- 例を次にどのように`CMFCTabToolTipInfo`で使用される、 [MDITabsDemo サンプル: MFC タブ付き MDI アプリケーション](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example shows how `CMFCTabToolTipInfo` is used in the [MDITabsDemo Sample: MFC Tabbed MDI Application](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_MDITabsDemo&#2;](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
+ [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CMFCTabToolTipInfo](../../mfc/reference/cmfctabtooltipinfo-structure.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxbasetabctrl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxbasetabctrl.h  
   
-##  <a name="m_ntabindex"></a>CMFCTabToolTipInfo::m_nTabIndex  
- タブ コントロールのインデックスを指定します。  
+##  <a name="m_ntabindex"></a>  CMFCTabToolTipInfo::m_nTabIndex  
+ Specifies the index of the tab control.  
   
 ```  
 int m_nTabIndex;  
 ```  
   
-### <a name="remarks"></a>コメント  
- どのユーザーがマウスを置いたタブのインデックス。  
+### <a name="remarks"></a>Remarks  
+ Index of the tab over which the user is hovering.  
   
-### <a name="example"></a>例  
- 例を次にどのように`m_nTabIndex`で使用される、 [MDITabsDemo サンプル: MFC タブ付き MDI アプリケーション](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example shows how `m_nTabIndex` is used in the [MDITabsDemo Sample: MFC Tabbed MDI Application](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_MDITabsDemo&#2;](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
+ [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
   
-##  <a name="m_ptabwnd"></a>CMFCTabToolTipInfo::m_pTabWnd  
- タブ コントロールへのポインター。  
+##  <a name="m_ptabwnd"></a>  CMFCTabToolTipInfo::m_pTabWnd  
+ A pointer to the tab control.  
   
 ```  
 CMFCBaseTabCtrl* m_pTabWnd;  
 ```  
   
-### <a name="example"></a>例  
- 例を次にどのように`m_pTabWnd`で使用される、 [MDITabsDemo サンプル: MFC タブ付き MDI アプリケーション](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example shows how `m_pTabWnd` is used in the [MDITabsDemo Sample: MFC Tabbed MDI Application](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_MDITabsDemo&#2;](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
+ [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
   
-##  <a name="m_strtext"></a>CMFCTabToolTipInfo::m_strText  
- ツールヒントのテキスト。  
+##  <a name="m_strtext"></a>  CMFCTabToolTipInfo::m_strText  
+ The tooltip text.  
   
 ```  
 CString m_strText;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 文字列が空の場合、ツールヒントが表示されません。  
+### <a name="remarks"></a>Remarks  
+ If the string is empty, the tooltip is not displayed.  
   
-### <a name="example"></a>例  
- 例を次にどのように`m_strText`で使用される、 [MDITabsDemo サンプル: MFC タブ付き MDI アプリケーション](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example shows how `m_strText` is used in the [MDITabsDemo Sample: MFC Tabbed MDI Application](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_MDITabsDemo&#2;](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
+ [!code-cpp[NVC_MFC_MDITabsDemo#2](../../mfc/reference/codesnippet/cpp/cmfctabtooltipinfo-structure_1.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

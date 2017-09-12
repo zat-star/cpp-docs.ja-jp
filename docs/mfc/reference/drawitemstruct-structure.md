@@ -1,5 +1,5 @@
 ---
-title: "DRAWITEMSTRUCT 構造体 |Microsoft ドキュメント"
+title: DRAWITEMSTRUCT Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- DRAWITEMSTRUCT structure
+- DRAWITEMSTRUCT structure [MFC]
 ms.assetid: ba9ef1d4-aebb-45e9-b956-4b81a02e50f7
 caps.latest.revision: 11
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: bd47b12f6401cb6603855fa153fe268bfe68914c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 65319e8cf34302a37ba030705ec701698abd54bf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="drawitemstruct-structure"></a>DRAWITEMSTRUCT 構造体
-`DRAWITEMSTRUCT` 構造体は、オーナー ウィンドウでオーナー描画コントロールまたはメニュー項目の描画方法を決定する情報を提供します。  
+# <a name="drawitemstruct-structure"></a>DRAWITEMSTRUCT Structure
+The `DRAWITEMSTRUCT` structure provides information the owner window must have to determine how to paint an owner-drawn control or menu item.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct tagDRAWITEMSTRUCT {  
@@ -59,69 +59,69 @@ typedef struct tagDRAWITEMSTRUCT {
 } DRAWITEMSTRUCT;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CtlType`  
- コントロール型。 コントロール型の値は次のとおりです。  
+ The control type. The values for control types are as follows:  
   
-- **ODT_BUTTON** オーナー描画ボタン  
+- **ODT_BUTTON** Owner-drawn button  
   
-- **ODT_COMBOBOX** オーナー描画コンボ ボックス  
+- **ODT_COMBOBOX** Owner-drawn combo box  
   
-- **ODT_COMBOBOX** オーナー描画リスト ボックス  
+- **ODT_LISTBOX** Owner-drawn list box  
   
-- **ODT_MENU** オーナー描画メニュー  
+- **ODT_MENU** Owner-drawn menu  
   
-- **ODT_LISTVIEW** リスト ビュー コントロール  
+- **ODT_LISTVIEW** List view control  
   
-- **ODT_STATIC** オーナー描画スタティック コントロール  
+- **ODT_STATIC** Owner-drawn static control  
   
-- **ODT_TAB** タブ コントロール  
+- **ODT_TAB** Tab control  
   
  `CtlID`  
- コンボ ボックス、リスト ボックスまたはボタンのコントロール ID。 このメンバーは、メニューには使用されません。  
+ The control ID for a combo box, list box, or button. This member is not used for a menu.  
   
  `itemID`  
- メニューのメニュー項目 ID、あるいはリスト ボックスまたはコンボ ボックス内の項目のインデックス。 このメンバーは、空のリスト ボックスまたはコンボ ボックスの場合は負の値であり、アプリケーションは、コントロールに項目がない場合でも、 **rcItem** メンバーで指定されている座標のフォーカスを表す四角形のみを描画します。 したがって、ユーザーはリスト ボックスまたはコンボ ボックスに入力フォーカスがあるかどうかを判断できます。 **itemAction** メンバー内のビットの設定によって、リスト ボックスまたはコンボ ボックスに入力フォーカスがあるものとして四角形を描画するかどうかが決まります。  
+ The menu-item ID for a menu or the index of the item in a list box or combo box. For an empty list box or combo box, this member is a negative value, which allows the application to draw only the focus rectangle at the coordinates specified by the **rcItem** member even though there are no items in the control. The user can thus be shown whether the list box or combo box has the input focus. The setting of the bits in the **itemAction** member determines whether the rectangle is to be drawn as though the list box or combo box has input focus.  
   
  `itemAction`  
- 描画に必要なアクションを定義します。 これは次のビットの&1; つ以上になります。  
+ Defines the drawing action required. This will be one or more of the following bits:  
   
-- **ODA_DRAWENTIRE** コントロール全体を描画する必要がある場合に設定されます。  
+- **ODA_DRAWENTIRE** This bit is set when the entire control needs to be drawn.  
   
-- **ODA_FOCUS** コントロールが入力フォーカスを取得したとき、または失ったときに設定されます。 **ItemState** メンバーは、コントロールにフォーカスがあるかどうかを判断する場合にチェックします。  
+- **ODA_FOCUS** This bit is set when the control gains or loses input focus. The **itemState** member should be checked to determine whether the control has focus.  
   
-- **ODA_SELECT** 選択状態が変更された場合にのみ設定されます。 **itemState** メンバーは、選択状態が新しくなったかどうかを判断する場合にチェックします。  
+- **ODA_SELECT** This bit is set when only the selection status has changed. The **itemState** member should be checked to determine the new selection state.  
   
  *itemState*  
- 現在の描画アクションが実行された後の項目の表示状態を指定します。 つまり、メニュー項目が淡色表示されている場合、状態フラグ **ODS_GRAYED** が設定されます。 状態フラグは次のとおりです。  
+ Specifies the visual state of the item after the current drawing action takes place. That is, if a menu item is to be dimmed, the state flag **ODS_GRAYED** will be set. The state flags are as follows:  
   
-- **ODS_CHECKED** メニュー項目をチェックする場合に設定されます。 このビットは、メニューでのみ使用されます。  
+- **ODS_CHECKED** This bit is set if the menu item is to be checked. This bit is used only in a menu.  
   
-- **ODS_DISABLED** 項目の描画が無効になっている場合に設定されます。  
+- **ODS_DISABLED** This bit is set if the item is to be drawn as disabled.  
   
-- **ODS_FOCUS** 項目に入力フォーカスがある場合に設定されます。  
+- **ODS_FOCUS** This bit is set if the item has input focus.  
   
-- **ODS_GRAYED** 項目が淡色表示される場合に設定されます。 このビットは、メニューでのみ使用されます。  
+- **ODS_GRAYED** This bit is set if the item is to be dimmed. This bit is used only in a menu.  
   
-- **ODS_SELECTED** 項目の状態が選択されている場合に設定されます。  
+- **ODS_SELECTED** This bit is set if the item's status is selected.  
   
-- **ODS_COMBOBOXEDIT** オーナー描画のコンボ ボックスの選択項目 (エディット コントロール) で描画が実行されます。  
+- **ODS_COMBOBOXEDIT** The drawing takes place in the selection field (edit control) of an ownerdrawn combo box.  
   
-- **ODS_DEFAULT** 項目は既定の項目です。  
+- **ODS_DEFAULT** The item is the default item.  
   
  `hwndItem`  
- コンボ ボックス、リスト ボックス、およびボタンをコントロールするウィンドウ ハンドルを指定します。 メニュー項目を含むメニューのハンドルを指定します (`HMENU`)。  
+ Specifies the window handle of the control for combo boxes, list boxes, and buttons. Specifies the handle of the menu (`HMENU`) that contains the item for menus.  
   
  `hDC`  
- デバイス コンテキストを識別します。 このデバイス コンテキストは、コントロール上で描画操作を実行するときに使用する必要があります。  
+ Identifies a device context. This device context must be used when performing drawing operations on the control.  
   
  *rcItem*  
- コントロールの境界を定義する `hDC` メンバーによってデバイス コンテキストを指定すると、そこに四角形が描画されます。 Windows では、コンボ ボックス、リスト、ボックス、およびボタン用にデバイス コンテキストにオーナーが描画したものすべてが自動的にクリップされますが、メニュー項目はクリップされません。 メニュー項目を描画する場合、オーナーは **rcItem** メンバーで定義した四角形の境界外には描画できません。  
+ A rectangle in the device context specified by the `hDC` member that defines the boundaries of the control to be drawn. Windows automatically clips anything the owner draws in the device context for combo boxes, list boxes, and buttons, but it does not clip menu items. When drawing menu items, the owner must not draw outside the boundaries of the rectangle defined by the **rcItem** member.  
   
  `itemData`  
- コンボ ボックスまたはリスト ボックスでは、次のいずれかによってリスト ボックスに渡された値がメンバーに含まれています。  
+ For a combo box or list box, this member contains the value that was passed to the list box by one of the following:  
   
-- [Ccombobox::addstring](../../mfc/reference/ccombobox-class.md#addstring)  
+- [CComboBox::AddString](../../mfc/reference/ccombobox-class.md#addstring)  
   
 - [CComboBox::InsertString](../../mfc/reference/ccombobox-class.md#insertstring)  
   
@@ -129,7 +129,7 @@ typedef struct tagDRAWITEMSTRUCT {
   
 - [CListBox::InsertString](../../mfc/reference/clistbox-class.md#insertstring)  
   
- メニューでは、次のいずれかによってメニューに渡された値がメンバーに含まれています。  
+ For a menu, this member contains the value that was passed to the menu by one of the following:  
   
 - [CMenu::AppendMenu](../../mfc/reference/cmenu-class.md#appendmenu)  
   
@@ -137,14 +137,14 @@ typedef struct tagDRAWITEMSTRUCT {
   
 - [CMenu::ModifyMenu](../../mfc/reference/cmenu-class.md#modifymenu)  
   
-## <a name="remarks"></a>コメント  
- オーナー描画コントロールのオーナー ウィンドウまたはメニュー項目は、この構造体へのポインターを `lParam` メッセージの `WM_DRAWITEM` パラメーターとして受け取ります。  
+## <a name="remarks"></a>Remarks  
+ The owner window of the owner-drawn control or menu item receives a pointer to this structure as the `lParam` parameter of the `WM_DRAWITEM` message.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** winuser.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [体](../../mfc/reference/cwnd-class.md#ondrawitem)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CWnd::OnDrawItem](../../mfc/reference/cwnd-class.md#ondrawitem)
 
 

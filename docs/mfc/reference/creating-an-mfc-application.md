@@ -1,5 +1,5 @@
 ---
-title: "MFC アプリケーションの作成 |Microsoft Docs"
+title: Creating an MFC Application | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,7 +12,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - applications [MFC]
-- MFC [C++], creating applications
+- MFC, creating applications
 - MFC applications
 ms.assetid: b8b8aa08-9c49-404c-8078-b42079ac18f0
 caps.latest.revision: 12
@@ -34,52 +34,52 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 6d900cc7c81907fa755ab44b23af3e3ec5fab56b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bcd182ca4dd184bb8a7986b7b818117a24cc89da
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="creating-an-mfc-application"></a>MFC アプリケーションの作成
-MFC アプリケーションは、MFC (Microsoft Foundation Class) ライブラリに基づく Windows 対応の実行可能なアプリケーションです。 MFC アプリケーションを作成する最も簡単な方法は、MFC アプリケーション ウィザードを使用する方法です。  
+# <a name="creating-an-mfc-application"></a>Creating an MFC Application
+An MFC application is an executable application for Windows that is based on the Microsoft Foundation Class (MFC) Library. The easiest way to create an MFC application is to use the MFC Application Wizard.  
   
 > [!IMPORTANT]
->  MFC プロジェクトは、Visual Studio Express エディションではサポートされていません。  
+>  MFC projects are not supported in Visual Studio Express editions.  
   
- 通常、MFC の実行可能ファイルが 5 つの種類に分類されます。 標準の Windows アプリケーション、ダイアログ ボックス、フォーム ベースのアプリケーション、エクスプ ローラー スタイル アプリケーションと Web ブラウザー スタイルのアプリケーションです。 詳細については次を参照してください:  
+ MFC executables generally fall into five types: standard Windows applications, dialog boxes, forms-based applications, Explorer-style applications, and Web browser-style applications. For more information, see:  
   
--   [Windows アプリケーションを作成するクラスを使用します。](../../mfc/using-the-classes-to-write-applications-for-windows.md)  
+-   [Using the Classes to Write Windows Applications](../../mfc/using-the-classes-to-write-applications-for-windows.md)  
   
--   [ダイアログ ボックスの作成と表示](../../mfc/creating-and-displaying-dialog-boxes.md)  
+-   [Creating and Displaying Dialog Boxes](../../mfc/creating-and-displaying-dialog-boxes.md)  
   
--   [フォーム ベースの MFC アプリケーションの作成](../../mfc/reference/creating-a-forms-based-mfc-application.md)  
+-   [Creating a Forms-Based MFC Application](../../mfc/reference/creating-a-forms-based-mfc-application.md)  
   
--   [エクスプローラー形式の MFC アプリケーションの作成](../../mfc/reference/creating-a-file-explorer-style-mfc-application.md)  
+-   [Creating a File Explorer-Style MFC Application](../../mfc/reference/creating-a-file-explorer-style-mfc-application.md)  
   
--   [Web ブラウザー形式の MFC アプリケーションの作成](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)  
+-   [Creating a Web Browser-Style MFC Application](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)  
   
- MFC アプリケーション ウィザードでは、これらのアプリケーションのすべてに適したクラスやファイルが生成されます。作成されるクラスやファイルは、ウィザードで選択したオプションによって異なります。  
+ The MFC Application Wizard generates the appropriate classes and files for any of these types of applications, depending on the options you select in the wizard.  
   
-### <a name="to-create-an-mfc-application-using-the-mfc-application-wizard"></a>MFC アプリケーション ウィザードを使用して MFC アプリケーションを作成するには  
+### <a name="to-create-an-mfc-application-using-the-mfc-application-wizard"></a>To create an MFC application using the MFC Application Wizard  
   
-1.  ヘルプ トピックの指示に従って、 [Visual C のアプリケーション ウィザードでプロジェクトを作成する](../../ide/creating-desktop-projects-by-using-application-wizards.md)です。  
+1.  Follow the instructions in the help topic [Creating a Project with a Visual C++ Application Wizard](../../ide/creating-desktop-projects-by-using-application-wizards.md).  
   
-2.  **新しいプロジェクト**ダイアログ ボックスで、 **MFC アプリケーション**を開くには、ウィザードの [テンプレート] ペインでします。  
+2.  In the **New Project** dialog box, select **MFC Application** in the Templates pane to open the wizard.  
   
-3.  使用して、アプリケーションの設定を定義、 [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)です。  
+3.  Define your application settings using the [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md).  
   
     > [!NOTE]
-    >  ウィザードの既定の設定を使用する場合は、この手順を省略します。  
+    >  Skip this step to keep the wizard default settings.  
   
-4.  をクリックして**完了**ウィザードを終了し、開発環境で、新しいプロジェクトを開きます。  
+4.  Click **Finish** to close the wizard and open your new project in the development environment.  
   
- 作成されたファイルを表示するには、プロジェクトが作成されると、**ソリューション エクスプ ローラー**です。 ウィザードでプロジェクト用に作成されるファイルの詳細については、プロジェクトが生成する ReadMe.txt ファイルを参照してください。 ファイルの種類の詳細については、次を参照してください。 [Visual c プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)です。  
+ Once your project is created, you can view the files created in **Solution Explorer**. For more information about the files the wizard creates for your project, see the project-generated file ReadMe.txt. For more information about the file types, see [File Types Created for Visual C++ Projects](../../ide/file-types-created-for-visual-cpp-projects.md).  
   
-## <a name="see-also"></a>関連項目  
- [Visual C の Windows アプリケーションのデバッグの準備:](http://msdn.microsoft.com/en-us/a8bc54de-41a3-464d-9a12-db9bdcbc1ad5)   
- [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
- [プロパティ ページ](../../ide/property-pages-visual-cpp.md)   
- [アプリケーションを展開します。](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)
+## <a name="see-also"></a>See Also  
+ [Debugging Preparation: Visual C++ Windows Applications](http://msdn.microsoft.com/en-us/a8bc54de-41a3-464d-9a12-db9bdcbc1ad5)   
+ [Adding Functionality with Code Wizards](../../ide/adding-functionality-with-code-wizards-cpp.md)   
+ [Property Pages](../../ide/property-pages-visual-cpp.md)   
+ [Deploying Applications](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)
 
 

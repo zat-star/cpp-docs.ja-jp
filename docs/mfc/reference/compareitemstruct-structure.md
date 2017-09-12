@@ -1,5 +1,5 @@
 ---
-title: "COMPAREITEMSTRUCT 構造体 |Microsoft ドキュメント"
+title: COMPAREITEMSTRUCT Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- COMPAREITEMSTRUCT structure
+- COMPAREITEMSTRUCT structure [MFC]
 ms.assetid: 4b7131a5-5c7d-4e98-aac7-e85650262b52
 caps.latest.revision: 11
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 6c38c3e362f2e97cb51f5474aaa0bc05098b1ec2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3ca1c8370a64667578092bb3ad0046cdcc0d2cf1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="compareitemstruct-structure"></a>COMPAREITEMSTRUCT 構造体
-`COMPAREITEMSTRUCT`構造体は、識別子と、オーナー描画の並べ替えられたリスト ボックスまたはコンボ ボックスの&2; つの項目にアプリケーションによって提供されるデータを提供します。  
+# <a name="compareitemstruct-structure"></a>COMPAREITEMSTRUCT Structure
+The `COMPAREITEMSTRUCT` structure supplies the identifiers and application-supplied data for two items in a sorted, owner-drawn list box or combo box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct tagCOMPAREITEMSTRUCT {  
@@ -57,36 +57,36 @@ typedef struct tagCOMPAREITEMSTRUCT {
 } COMPAREITEMSTRUCT;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CtlType`  
- **ODT_LISTBOX** (オーナー描画のリスト ボックスを指定する) または**ODT_COMBOBOX** (オーナー描画コンボ ボックスを指定する)。  
+ **ODT_LISTBOX** (which specifies an owner-draw list box) or **ODT_COMBOBOX** (which specifies an owner-draw combo box).  
   
  `CtlID`  
- リスト ボックスまたはコンボ ボックスのコントロールの ID。  
+ The control ID for the list box or combo box.  
   
  `hwndItem`  
- コントロールのウィンドウ ハンドル。  
+ The window handle of the control.  
   
  *itemID1*  
- リスト ボックスまたはコンボ ボックスの比較対象となるは、最初の項目のインデックス。  
+ The index of the first item in the list box or combo box being compared.  
   
  *itemData1*  
- 比較対象となる最初の項目のアプリケーションによって提供されるデータ。 この値は、アイテムをコンボ ボックスまたはリスト ボックスに追加の呼び出しで渡されました。  
+ Application-supplied data for the first item being compared. This value was passed in the call that added the item to the combo or list box.  
   
  *itemID2*  
- リスト ボックスまたはコンボ ボックスの比較対象となる&2; 番目の項目のインデックス。  
+ Index of the second item in the list box or combo box being compared.  
   
  *itemData2*  
- 比較対象となる&2; 番目の項目のアプリケーションによって提供されるデータ。 この値は、アイテムをコンボ ボックスまたはリスト ボックスに追加の呼び出しで渡されました。  
+ Application-supplied data for the second item being compared. This value was passed in the call that added the item to the combo or list box.  
   
-## <a name="remarks"></a>コメント  
- ときに、アプリケーションでは、オーナー描画のリスト ボックスに新しい項目を追加またはコンボ ボックス、 **CBS_SORT**または**LBS_SORT**スタイル、Windows の送信、所有者、`WM_COMPAREITEM`メッセージです。 `lParam` 、メッセージのパラメーターにはへの long ポインターが含まれています、`COMPAREITEMSTRUCT`構造体。 メッセージを受け取るとは、所有者は、2 つの項目を比較し、どの項目がもう一方の前になることを示す値を返します。  
+## <a name="remarks"></a>Remarks  
+ Whenever an application adds a new item to an owner-drawn list box or combo box created with the **CBS_SORT** or **LBS_SORT** style, Windows sends the owner a `WM_COMPAREITEM` message. The `lParam` parameter of the message contains a long pointer to a `COMPAREITEMSTRUCT` structure. Upon receiving the message, the owner compares the two items and returns a value indicating which item sorts before the other.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** winuser.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CWnd::OnCompareItem](../../mfc/reference/cwnd-class.md#oncompareitem)
 
 

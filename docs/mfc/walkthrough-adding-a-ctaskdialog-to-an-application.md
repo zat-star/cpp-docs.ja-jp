@@ -1,193 +1,233 @@
 ---
-title: "チュートリアル: アプリケーションへの CTaskDialog の追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTaskDialog, 追加"
-  - "チュートリアル [C++], ダイアログ"
+title: 'Walkthrough: Adding a CTaskDialog to an Application | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CTaskDialog, adding
+- walkthroughs [MFC], dialogs
 ms.assetid: 3a62abb8-2d86-4bec-bdb8-5784d5f9a9f8
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 2
----
-# チュートリアル: アプリケーションへの CTaskDialog の追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f33e4f4d12d5c561de6c2a932586b856b015f739
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルでは、[CTaskDialog クラス](../mfc/reference/ctaskdialog-class.md)の概要と、そのクラスをアプリケーションに追加する方法について説明します。  
+---
+# <a name="walkthrough-adding-a-ctaskdialog-to-an-application"></a>Walkthrough: Adding a CTaskDialog to an Application
+This walkthrough introduces the [CTaskDialog Class](../mfc/reference/ctaskdialog-class.md) and shows you how to add one to your application.  
   
- `CTaskDialog` は、[!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] の Windows メッセージ ボックスに代わるタスク ダイアログ ボックスです。`CTaskDialog` は Windows メッセージ ボックスを改良したものであり、機能も追加されます。[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] では、Windows メッセージ ボックスも引き続きサポートされます。  
+ The `CTaskDialog` is a task dialog box that replaces the Windows message box in [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]. The `CTaskDialog` improves the original message box and adds functionality. The Windows message box is still supported in [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)].  
   
 > [!NOTE]
->  [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] より前のバージョンの Windows は、`CTaskDialog` をサポートしていません。 以前のバージョンの Windows でアプリケーションを実行するユーザーにもメッセージを表示するには、代替のダイアログ ボックス オプションをプログラミングしておく必要があります。 静的メソッドである [CTaskDialog::IsSupported](../Topic/CTaskDialog::IsSupported.md) を使用することで、ユーザーのコンピューターで `CTaskDialog` を表示できるかどうかを実行時に判断できます。 また、`CTaskDialog` を使用できるのは、アプリケーションが Unicode ライブラリを使用してビルドされている場合に限られます。  
+>  Versions of Windows earlier than [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] do not support the `CTaskDialog`. You must program an alternative dialog box option if you want to show a message to a user who runs your application on an earlier version of Windows. You can use the static method [CTaskDialog::IsSupported](../mfc/reference/ctaskdialog-class.md#issupported) to determine at run time whether a user's computer can display a `CTaskDialog`. In addition, the `CTaskDialog` is only available when your application is built with the Unicode library.  
   
- `CTaskDialog` では、情報を収集して表示するためのオプション要素がいくつかサポートされています。 たとえば、`CTaskDialog` では、コマンド リンク、カスタマイズされたボタン、カスタマイズされたアイコン、およびフッターを表示できます。 さらに、`CTaskDialog` には、タスク ダイアログ ボックスの状態を照会して、ユーザーが選択したオプション要素を確認するためのメソッドもいくつか用意されています。  
+ The `CTaskDialog` supports several optional elements to gather and display information. For example, a `CTaskDialog` can display command links, customized buttons, customized icons, and a footer. The `CTaskDialog` also has several methods that enable you to query the state of the task dialog box to determine what optional elements the user selected.  
   
-## 必須コンポーネント  
- このチュートリアルを実行するには、次のコンポーネントが必要です。  
+## <a name="prerequisites"></a>Prerequisites  
+ You need the following components to complete this walkthrough:  
   
--   [!INCLUDE[vs_dev10_long](../build/includes/vs_dev10_long_md.md)]  
+- [!INCLUDE[vs_dev10_long](../build/includes/vs_dev10_long_md.md)]  
   
--   [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+- [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]  
   
-## Windows メッセージ ボックスを CTaskDialog に置き換える  
- 次の手順では、`CTaskDialog` の最も基本的な使用法である、Windows メッセージ ボックスの置き換えについて説明します。 この例では、タスク ダイアログ ボックスに関連付けられているアイコンも変更します。 アイコンを変更することで、`CTaskDialog` の外観が Windows メッセージ ボックスと同じになります。  
+## <a name="replacing-a-windows-message-box-with-a-ctaskdialog"></a>Replacing a Windows Message Box with a CTaskDialog  
+ The following procedure demonstrates the most basic use of the `CTaskDialog`, which is to replace the Windows message box. This example also changes the icon associated with the task dialog box. Changing the icon makes the `CTaskDialog` appear identical to the Windows message box.  
   
-#### Windows メッセージ ボックスを CTaskDialog に置き換えるには  
+#### <a name="to-replace-a-windows-message-box-with-a-ctaskdialog"></a>To Replace a Windows Message Box with a CTaskDialog  
   
-1.  既定の設定で、新しい MFC アプリケーション プロジェクトを作成します。 このプロジェクトに `MyProject` という名前を付けます。  
+1.  Create a new MFC Application project with the default settings. Call it `MyProject`.  
   
-2.  **ソリューション エクスプローラー**を使用して、MyProject.cpp ファイルを開きます。  
+2.  Use the **Solution Explorer** to open the file MyProject.cpp.  
   
-3.  一連の include の末尾に、`#include "afxtaskdialog.h"` を追加します。  
+3.  Add `#include "afxtaskdialog.h"` after the list of includes.  
   
-4.  `CMyProjectApp::InitInstance` メソッドを探します。 次のコード行を `return TRUE;` ステートメントの前に挿入します。 このコードにより、Windows メッセージ ボックスまたは `CTaskDialog` で使用する文字列が作成されます。  
+4.  Find the method `CMyProjectApp::InitInstance`. Insert the following lines of code before the `return TRUE;` statement. This code creates the strings that we use in either the Windows message box or in the `CTaskDialog`.  
   
-    ```  
-    CString message("My message to the user");  
-    CString dialogTitle("My Task Dialog title");  
+ ```  
+    CString message("My message to the user");
+
+    CString dialogTitle("My Task Dialog title");
+
     CString emptyString;  
-    ```  
+ ```  
   
-5.  手順 4. のコードの後に、次のコードを追加します。 このコードによって、ユーザーのコンピューターで `CTaskDialog` がサポートされることが保証されます。 このダイアログがサポートされない場合は、代わりに Windows メッセージ ボックスが表示されます。  
+5.  Add the following code after the code from step 4. This code guarantees that the user's computer supports the `CTaskDialog`. If the dialog is not supported, the application displays a Windows message box instead.  
   
-    ```  
+ ```  
     if (CTaskDialog::IsSupported())  
-    {  
+ {  
+ 
+ }  
+    else 
+ {  
+    AfxMessageBox(message);
+
+ }  
+ ```  
   
-    }  
-    else  
-    {  
-       AfxMessageBox(message);  
-    }  
-    ```  
+6.  Insert the following code between the brackets after the `if` statement from step 5. This code creates the `CTaskDialog`.  
   
-6.  手順 5. の `if` ステートメントの後にあるかっこ内に、次のコードを挿入します。 このコードによって、`CTaskDialog` が作成されます。  
+ ```  
+    CTaskDialog taskDialog(message,
+    emptyString,
+    dialogTitle,
+    TDCBF_OK_BUTTON);
+
+ ```  
   
-    ```  
-    CTaskDialog taskDialog(message, emptyString, dialogTitle, TDCBF_OK_BUTTON);  
-    ```  
+7.  On the next line, add the following code. This code sets the warning icon.  
   
-7.  その次の行に、次のコードを追加します。 このコードによって、警告アイコンが設定されます。  
+ ```  
+    taskDialog.SetMainIcon(TD_WARNING_ICON);
+
+ ```  
   
-    ```  
-    taskDialog.SetMainIcon(TD_WARNING_ICON);  
-    ```  
+8.  On the next line, add the following code. This code displays the task dialog box.  
   
-8.  その次の行に、次のコードを追加します。 このコードによって、タスク ダイアログ ボックスが表示されます。  
+ ```  
+    taskDialog.DoModal();
+
+ ```  
   
-    ```  
-    taskDialog.DoModal();  
-    ```  
+ You can omit step 7 if you do not want the `CTaskDialog` to display the same icon as the Windows message box. If you omit that step, the `CTaskDialog` has no icon when the application displays it.  
   
- `CTaskDialog` で Windows メッセージ ボックスと同じアイコンを表示しない場合は、手順 7. を省略できます。 その手順を省略すると、`CTaskDialog` が表示されるときにアイコンは表示されません。  
+ Compile and run the application. The application displays the task dialog box after it starts.  
   
- アプリケーションをコンパイルして実行します。 アプリケーションの起動後、タスク ダイアログ ボックスが表示されます。  
+## <a name="adding-functionality-to-the-ctaskdialog"></a>Adding Functionality to the CTaskDialog  
+ The following procedure shows you how to add functionality to the `CTaskDialog` that you created in the previous procedure. The example code shows you how to execute specific instructions based on the user's selections.  
   
-## CTaskDialog に機能を追加する  
- 次の手順では、前の手順で作成した `CTaskDialog` に機能を追加する方法を説明します。 コード例は、ユーザーの選択に基づいて特定の指示を実行する方法を示しています。  
+#### <a name="to-add-functionality-to-the-ctaskdialog"></a>To Add Functionality to the CTaskDialog  
   
-#### CTaskDialog に機能を追加するには  
+1.  Navigate to the **Resource View**. If you cannot see the **Resource View**, you can open it from the **View** menu.  
   
-1.  **\[リソース ビュー\]** 移動します。**\[リソース ビュー\]** が表示されていない場合は、**\[表示\]** メニューから開くことができます。  
+2.  Expand the **Resource View** until you can select the **String Table** folder. Expand it and double-click the **String Table** entry.  
   
-2.  **\[リソース ビュー\]** を展開して、**\[ストリング テーブル\]** フォルダーを選択します。 そのフォルダーを展開し、**\[ストリング テーブル\]** エントリをダブルクリックします。  
+3.  Scroll to the bottom of the string table and add a new entry. Change the ID to `TEMP_LINE1`. Set the caption to **Command Line 1**.  
   
-3.  ストリング テーブルの一番下までスクロールし、新しいエントリを追加します。 ID を `TEMP_LINE1` に変更します。 キャプションを「**Command Line 1**」に設定します。  
+4.  Add another new entry. Change the ID to `TEMP_LINE2`. Set the caption to **Command Line 2**.  
   
-4.  新しいエントリをもう 1 つ追加します。 ID を `TEMP_LINE2` に変更します。 キャプションを「**Command Line 2**」に設定します。  
+5.  Navigate back to MyProject.cpp.  
   
-5.  MyProject.cpp に戻ります。  
+6.  After `CString emptyString;`, add the following code:  
   
-6.  `CString emptyString;` の後に、次のコードを追加します。  
+ ```  
+    CString expandedLabel("Hide extra information");
+
+    CString collapsedLabel("Show extra information");
+
+    CString expansionInfo("This is the additional information to the user,\nextended over two lines.");
+
+ ```  
   
-    ```  
-    CString expandedLabel("Hide extra information");  
-    CString collapsedLabel("Show extra information");  
-    CString expansionInfo("This is the additional information to the user,\nextended over two lines.");  
-    ```  
+7.  Find the `taskDialog.DoModal()` statement and replace that statement with the following code. This code updates the task dialog box and adds new controls:  
   
-7.  `taskDialog.DoModal()` ステートメントを探し、そのステートメントを次のコードに置き換えます。 このコードによってタスク ダイアログ ボックスが更新され、新しいコントロールが追加されます。  
+ ```  
+    taskDialog.SetMainInstruction(L"Warning");
+
+ taskDialog.SetCommonButtons(TDCBF_YES_BUTTON | TDCBF_NO_BUTTON | TDCBF_CANCEL_BUTTON);
+
+    taskDialog.LoadCommandControls(TEMP_LINE1,
+    TEMP_LINE2);
+
+    taskDialog.SetExpansionArea(expansionInfo,
+    collapsedLabel,
+    expandedLabel);
+
+    taskDialog.SetFooterText(L"This is the a small footnote to the user");
+
+    taskDialog.SetVerificationCheckboxText(L"Remember your selection");
+
+ ```  
   
-    ```  
-    taskDialog.SetMainInstruction(L"Warning");  
-    taskDialog.SetCommonButtons(TDCBF_YES_BUTTON | TDCBF_NO_BUTTON | TDCBF_CANCEL_BUTTON);  
-    taskDialog.LoadCommandControls(TEMP_LINE1, TEMP_LINE2);  
-    taskDialog.SetExpansionArea(expansionInfo, collapsedLabel, expandedLabel);  
-    taskDialog.SetFooterText(L"This is the a small footnote to the user");  
-    taskDialog.SetVerificationCheckboxText(L"Remember your selection");  
-    ```  
+8.  Add the following line of code that displays the task dialog box to the user and retrieves the user's selection:  
   
-8.  ユーザーにタスク ダイアログ ボックスを表示し、ユーザーの選択内容を取得する次のコード行を追加します。  
+ ```  
+    INT_PTR result = taskDialog.DoModal();
+
+ ```  
   
-    ```  
-    INT_PTR result = taskDialog.DoModal();  
-    ```  
+9. Insert the following code after the call to `taskDialog.DoModal()`. This section of code processes the user's input:  
   
-9. 次のコードを `taskDialog.DoModal()` の呼び出しの後に挿入します。 このコード セクションで、ユーザーの入力が処理されます。  
-  
-    ```  
-    if (taskDialog.GetVerificationCheckboxState() )  
-    {  
-       // PROCESS IF the user selects the verification checkbox   
-    }  
-  
+ ```  
+    if (taskDialog.GetVerificationCheckboxState())  
+ { *// PROCESS IF the user selects the verification checkbox   
+ }  
+ 
     switch (result)  
-    {  
-       case TEMP_LINE1:  
-          // PROCESS IF the first command line  
-          break;  
-       case TEMP_LINE2:  
-          // PROCESS IF the second command line  
-          break;  
-       case IDYES:  
-          // PROCESS IF the user clicks yes  
-          break;  
-       case IDNO:  
-          // PROCESS IF the user clicks no  
-          break;  
-       case IDCANCEL:  
-          // PROCESS IF the user clicks cancel  
-          break;  
-       default:  
-          // This case should not be hit because closing the dialog box results in IDCANCEL  
-          break;  
-    }  
-    ```  
+ {  
+    case TEMP_LINE1: *// PROCESS IF the first command line  
+    break; 
+    case TEMP_LINE2: *// PROCESS IF the second command line  
+    break; 
+    case IDYES: *// PROCESS IF the user clicks yes  
+    break; 
+    case IDNO: *// PROCESS IF the user clicks no  
+    break; 
+    case IDCANCEL: *// PROCESS IF the user clicks cancel  
+    break; 
+    default: *// This case should not be hit because closing the dialog box results in IDCANCEL  
+    break; 
+ }  
+ ```  
   
- 手順 9. のコード内で、PROCESS IF で始まるコメント行を、指定された条件で実行するコードに置き換えます。  
+ In the code in step 9, replace the comments that start with PROCESS IF with the code that you want to execute under the specified conditions.  
   
- アプリケーションをコンパイルして実行します。 新しいコントロールと追加した情報を使用するタスク ダイアログ ボックスが表示されます。  
+ Compile and run the application. The application displays the task dialog box that uses the new controls and additional information.  
   
-## CTaskDialog オブジェクトを作成せずに CTaskDialog を表示する  
- 次の手順では、最初に `CTaskDialog` オブジェクトを作成せずに `CTaskDialog` を表示する方法を説明します。 この例は、前述の手順の続きです。  
+## <a name="displaying-a-ctaskdialog-without-creating-a-ctaskdialog-object"></a>Displaying a CTaskDialog Without Creating a CTaskDialog Object  
+ The following procedure shows you how to display a `CTaskDialog` without first creating a `CTaskDialog` object. This example continues the previous procedures.  
   
-#### CTaskDialog オブジェクトを作成せずに CTaskDialog を表示するには  
+#### <a name="to-display-a-ctaskdialog-without-creating-a-ctaskdialog-object"></a>To Display a CTaskDialog Without Creating a CTaskDialog Object  
   
-1.  MyProject.cpp ファイルが開いていない場合は、そのファイルを開きます。  
+1.  Open the MyProject.cpp file if it is not already open.  
   
-2.  `if (CTaskDialog::IsSupported())` ステートメントの右角かっこにカーソルを移動します。  
+2.  Navigate to the closing bracket for the `if (CTaskDialog::IsSupported())` statement.  
   
-3.  `if` ステートメントの右角かっこの直前 \(`else` ブロックの前\) に、次のコードを挿入します。  
+3.  Insert the following code immediately before the closing bracket of the `if` statement (before the `else` block):  
   
-    ```  
-    HRESULT result2 = CTaskDialog::ShowDialog(L"My error message", L"Error", L"New Title", TEMP_LINE1, TEMP_LINE2);  
-    ```  
+ ```  
+    HRESULT result2 = CTaskDialog::ShowDialog(L"My error message",
+    L"Error",
+    L"New Title",
+    TEMP_LINE1,
+    TEMP_LINE2);
+
+ ```  
   
- アプリケーションをコンパイルして実行します。 2 つのタスク ダイアログ ボックスが表示されます。 最初のダイアログ ボックスは「CTaskDialog に機能を追加するには」の手順で作成したものです。今回の手順で作成したのは 2 番目のダイアログ ボックスです。  
+ Compile and run the application. The application displays two task dialog boxes. The first dialog box is from the To Add Functionality to the CTaskDialog procedure; the second dialog box is from the last procedure.  
   
- 上記の例では、`CTaskDialog` で使用できるオプションの一部しか紹介していませんが、開発を始めるうえで参考になるでしょう。 このクラスの詳細については、「[CTaskDialog クラス](../mfc/reference/ctaskdialog-class.md)」を参照してください。  
+ These examples do not demonstrate all the available options for a `CTaskDialog`, but should help you get started. See [CTaskDialog Class](../mfc/reference/ctaskdialog-class.md) for a full description of the class.  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [CTaskDialog クラス](../mfc/reference/ctaskdialog-class.md)   
- [CTaskDialog::CTaskDialog](../Topic/CTaskDialog::CTaskDialog.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [CTaskDialog Class](../mfc/reference/ctaskdialog-class.md)   
+ [CTaskDialog::CTaskDialog](../mfc/reference/ctaskdialog-class.md#ctaskdialog)
+
+

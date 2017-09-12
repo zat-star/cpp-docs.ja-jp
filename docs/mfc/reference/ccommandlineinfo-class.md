@@ -1,5 +1,5 @@
 ---
-title: "メンバー クラス |Microsoft ドキュメント"
+title: CCommandLineInfo Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,12 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CCommandLineInfo class
-- command line, parsing
-- parsing, command-line arguments
-- argv argument
-- startup code, parsing command-line arguments
-- application flags [C++]
+- CCommandLineInfo [MFC], CCommandLineInfo
+- CCommandLineInfo [MFC], ParseParam
+- CCommandLineInfo [MFC], m_bRunAutomated
+- CCommandLineInfo [MFC], m_bRunEmbedded
+- CCommandLineInfo [MFC], m_bShowSplash
+- CCommandLineInfo [MFC], m_nShellCommand
+- CCommandLineInfo [MFC], m_strDriverName
+- CCommandLineInfo [MFC], m_strFileName
+- CCommandLineInfo [MFC], m_strPortName
+- CCommandLineInfo [MFC], m_strPrinterName
+- CCommandLineInfo [MFC], m_strRestartIdentifier
 ms.assetid: 3e313ddb-0a82-4991-87ac-a27feff4668c
 caps.latest.revision: 21
 author: mikeblome
@@ -50,131 +55,131 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: f9e63f47a8df69b52a6a12688e84602981d20dae
-ms.openlocfilehash: a5b104e4ad0a0b9ce1933e7d8057f4d0fae46b77
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f54c7bf6e7c0c13028317237b46da41acb357bcd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/21/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="ccommandlineinfo-class"></a>メンバー クラス
-アプリケーション起動時のコマンド ライン解析を補助します。  
+# <a name="ccommandlineinfo-class"></a>CCommandLineInfo Class
+Aids in parsing the command line at application startup.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CCommandLineInfo : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CCommandLineInfo::CCommandLineInfo](#ccommandlineinfo)|既定値を構築`CCommandLineInfo`オブジェクトです。|  
+|[CCommandLineInfo::CCommandLineInfo](#ccommandlineinfo)|Constructs a default `CCommandLineInfo` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[その](#parseparam)|個別のパラメーターを解析するには、このコールバックをオーバーライドします。|  
+|[CCommandLineInfo::ParseParam](#parseparam)|Override this callback to parse individual parameters.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CCommandLineInfo::m_bRunAutomated](#m_brunautomated)|コマンドラインに示す`/Automation`オプションが見つかりました。|  
-|[CCommandLineInfo::m_bRunEmbedded](#m_brunembedded)|コマンドラインに示す`/Embedding`オプションが見つかりました。|  
-|[CCommandLineInfo::m_bShowSplash](#m_bshowsplash)|スプラッシュ スクリーンを表示するかどうかを示します。|  
-|[CCommandLineInfo::m_nShellCommand](#m_nshellcommand)|シェル コマンドを処理することを示します。|  
-|[CCommandLineInfo::m_strDriverName](#m_strdrivername)|ドライバーを示す名前を印刷するには、シェル コマンドの場合それ以外の場合は空です。|  
-|[CCommandLineInfo::m_strFileName](#m_strfilename)|開くファイルまたは印刷されるファイル名を示しますシェル コマンドは、新規または DDE 場合は空です。|  
-|[CCommandLineInfo::m_strPortName](#m_strportname)|ポートを示す名前を印刷するには、シェル コマンドの場合それ以外の場合は空です。|  
-|[CCommandLineInfo::m_strPrinterName](#m_strprintername)|プリンターを示す名前を印刷するには、シェル コマンドの場合それ以外の場合は空です。|  
-|[CCommandLineInfo::m_strRestartIdentifier](#m_strrestartidentifier)|再起動マネージャーには、アプリケーションが再起動された場合は、再起動マネージャーの一意の再起動の識別子を示します。|  
+|[CCommandLineInfo::m_bRunAutomated](#m_brunautomated)|Indicates the command-line `/Automation` option was found.|  
+|[CCommandLineInfo::m_bRunEmbedded](#m_brunembedded)|Indicates the command-line `/Embedding` option was found.|  
+|[CCommandLineInfo::m_bShowSplash](#m_bshowsplash)|Indicates if a splash screen should be shown.|  
+|[CCommandLineInfo::m_nShellCommand](#m_nshellcommand)|Indicates the shell command to be processed.|  
+|[CCommandLineInfo::m_strDriverName](#m_strdrivername)|Indicates the driver name if the shell command is Print To; otherwise empty.|  
+|[CCommandLineInfo::m_strFileName](#m_strfilename)|Indicates the file name to be opened or printed; empty if the shell command is New or DDE.|  
+|[CCommandLineInfo::m_strPortName](#m_strportname)|Indicates the port name if the shell command is Print To; otherwise empty.|  
+|[CCommandLineInfo::m_strPrinterName](#m_strprintername)|Indicates the printer name if the shell command is Print To; otherwise empty.|  
+|[CCommandLineInfo::m_strRestartIdentifier](#m_strrestartidentifier)|Indicates the unique restart identifier for the restart manager if the restart manager restarted the application.|  
   
-## <a name="remarks"></a>コメント  
- MFC アプリケーションが通常では、このクラスのローカル インスタンスを作成、 [InitInstance](../../mfc/reference/cwinapp-class.md#initinstance)アプリケーション オブジェクトの関数です。 このオブジェクトが渡される、 [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline)、これを繰り返し呼び出す[ParseParam](#parseparam)入力、`CCommandLineInfo`オブジェクトです。 `CCommandLineInfo`オブジェクトに渡されます[CWinApp::ProcessShellCommand](../../mfc/reference/cwinapp-class.md#processshellcommand)コマンドライン引数とフラグを処理します。  
+## <a name="remarks"></a>Remarks  
+ An MFC application will typically create a local instance of this class in the [InitInstance](../../mfc/reference/cwinapp-class.md#initinstance) function of its application object. This object is then passed to [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline), which repeatedly calls [ParseParam](#parseparam) to fill the `CCommandLineInfo` object. The `CCommandLineInfo` object is then passed to [CWinApp::ProcessShellCommand](../../mfc/reference/cwinapp-class.md#processshellcommand) to handle the command-line arguments and flags.  
   
- このオブジェクトを使用すると、次のコマンド ライン オプションとパラメーターをカプセル化します。  
+ You can use this object to encapsulate the following command-line options and parameters:  
   
-|コマンドライン引数|実行されたコマンド|  
+|Command-line argument|Command executed|  
 |----------------------------|----------------------|  
-|*app*|新しいファイル。|  
-|*アプリ*ファイル名|ファイルを開く.|  
-|*アプリ*`/p`ファイル名|既定のプリンターにファイルを印刷します。|  
-|*アプリ*`/pt`ファイル名のプリンター ドライバーのポート|指定したプリンターにファイルを印刷します。|  
-|*app*`/dde`|起動し、DDE コマンドを待機します。|  
-|*app*`/Automation`|OLE オートメーション サーバーとして起動します。|  
-|*app*`/Embedding`|OLE 埋め込みアイテムを編集するのを起動します。|  
-|*app*`/Register`<br /><br /> *app*`/Regserver`|登録タスクを実行するアプリケーションに通知します。|  
-|*app*`/Unregister`<br /><br /> *app*`/Unregserver`|登録解除タスクを実行するアプリケーションに通知します。|  
+|*app*|New file.|  
+|*app* filename|Open file.|  
+|*app* `/p` filename|Print file to default printer.|  
+|*app* `/pt` filename printer driver port|Print file to the specified printer.|  
+|*app* `/dde`|Start up and await DDE command.|  
+|*app* `/Automation`|Start up as an OLE automation server.|  
+|*app* `/Embedding`|Start up to edit an embedded OLE item.|  
+|*app* `/Register`<br /><br /> *app* `/Regserver`|Informs the application to perform any registration tasks.|  
+|*app* `/Unregister`<br /><br /> *app* `/Unregserver`|Informs the application to perform any un-registration tasks.|  
   
- 新しいクラスを派生`CCommandLineInfo`を他のフラグとパラメーター値を処理します。 オーバーライド[ParseParam](#parseparam)を新しいフラグを処理します。  
+ Derive a new class from `CCommandLineInfo` to handle other flags and parameter values. Override [ParseParam](#parseparam) to handle the new flags.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CCommandLineInfo`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="ccommandlineinfo"></a>CCommandLineInfo::CCommandLineInfo  
- このコンス トラクターを作成、`CCommandLineInfo`既定値を持つオブジェクト。  
+##  <a name="ccommandlineinfo"></a>  CCommandLineInfo::CCommandLineInfo  
+ This constructor creates a `CCommandLineInfo` object with default values.  
   
 ```  
 CCommandLineInfo();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定値は、スプラッシュ画面を表示するのには ( `m_bShowSplash=TRUE`) とコマンドを実行する、新しい [ファイル] メニュー ( `m_nShellCommand` **NewFile =**)。  
+### <a name="remarks"></a>Remarks  
+ The default is to show the splash screen ( `m_bShowSplash=TRUE`) and to execute the New command on the File menu ( `m_nShellCommand`**=NewFile**).  
   
- アプリケーション フレームワーク[ParseParam](#parseparam)にこのオブジェクトのデータ メンバーを設定します。  
+ The application framework calls [ParseParam](#parseparam) to fill data members of this object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&54;](../../mfc/codesnippet/cpp/ccommandlineinfo-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#54](../../mfc/codesnippet/cpp/ccommandlineinfo-class_1.cpp)]  
   
-##  <a name="m_brunautomated"></a>CCommandLineInfo::m_bRunAutomated  
- 示して、`/Automation`フラグは、コマンドラインで見つかりました。  
+##  <a name="m_brunautomated"></a>  CCommandLineInfo::m_bRunAutomated  
+ Indicates that the `/Automation` flag was found on the command line.  
   
 ```  
 BOOL m_bRunAutomated;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、つまり、OLE オートメーション サーバーとして起動します。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, this means start up as an OLE automation server.  
   
-##  <a name="m_brunembedded"></a>CCommandLineInfo::m_bRunEmbedded  
- 示して、`/Embedding`フラグは、コマンドラインで見つかりました。  
+##  <a name="m_brunembedded"></a>  CCommandLineInfo::m_bRunEmbedded  
+ Indicates that the `/Embedding` flag was found on the command line.  
   
 ```  
 BOOL m_bRunEmbedded;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、つまり OLE 埋め込みアイテムの編集開始します。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, this means start up for editing an embedded OLE item.  
   
-##  <a name="m_bshowsplash"></a>CCommandLineInfo::m_bShowSplash  
- スプラッシュ スクリーンを表示することを示します。  
+##  <a name="m_bshowsplash"></a>  CCommandLineInfo::m_bShowSplash  
+ Indicates that the splash screen should be displayed.  
   
 ```  
 BOOL m_bShowSplash;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、スプラッシュ スクリーンをつまり起動中にこのアプリケーションを表示する必要があります。 既定の実装[ParseParam](#parseparam)このデータ メンバーを設定`TRUE`場合[m_nShellCommand](#m_nshellcommand)に等しい`CCommandLineInfo::FileNew`します。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, this means the splash screen for this application should be displayed during startup. The default implementation of [ParseParam](#parseparam) sets this data member to `TRUE` if [m_nShellCommand](#m_nshellcommand) is equal to `CCommandLineInfo::FileNew`.  
   
-##  <a name="m_nshellcommand"></a>CCommandLineInfo::m_nShellCommand  
- アプリケーションのこのインスタンスのシェル コマンドを示します。  
+##  <a name="m_nshellcommand"></a>  CCommandLineInfo::m_nShellCommand  
+ Indicates the shell command for this instance of the application.  
   
 ```  
 m_nShellCommand;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このデータ メンバーの型は、次の列挙型で定義されている、`CCommandLineInfo`クラスです。  
+### <a name="remarks"></a>Remarks  
+ The type for this data member is the following enumerated type, which is defined in the `CCommandLineInfo` class.  
   
 ```  
 enum {  
@@ -190,83 +195,83 @@ enum {
     };  
 ```  
   
- これらの値の簡単な説明は、次の一覧を参照してください。  
+ For a brief description of these values, see the following list.  
   
-- `CCommandLineInfo::FileNew`コマンドラインにファイル名が見つかりませんだったことを示します。  
+- `CCommandLineInfo::FileNew` Indicates that no file name was found on the command line.  
   
-- `CCommandLineInfo::FileOpen`コマンドラインでファイル名が見つからなかったこと、次のフラグの値は、コマンドラインで見つかりませんでした。 示し: `/p`、 `/pt`、`/dde`です。  
+- `CCommandLineInfo::FileOpen` Indicates that a file name was found on the command line and that none of the following flags were found on the command line: `/p`, `/pt`, `/dde`.  
   
-- `CCommandLineInfo::FilePrint`示して、`/p`フラグは、コマンドラインで見つかりました。  
+- `CCommandLineInfo::FilePrint` Indicates that the `/p` flag was found on the command line.  
   
-- `CCommandLineInfo::FilePrintTo`示して、`/pt`フラグは、コマンドラインで見つかりました。  
+- `CCommandLineInfo::FilePrintTo` Indicates that the `/pt` flag was found on the command line.  
   
-- `CCommandLineInfo::FileDDE`示して、`/dde`フラグは、コマンドラインで見つかりました。  
+- `CCommandLineInfo::FileDDE` Indicates that the `/dde` flag was found on the command line.  
   
-- `CCommandLineInfo::AppRegister`示して、`/Register`または`/Regserver`フラグがコマンドラインで検出され、アプリケーションを登録するように要求されました。  
+- `CCommandLineInfo::AppRegister` Indicates that the `/Register` or `/Regserver` flag was found on the command line and the application was asked to register.  
   
-- `CCommandLineInfo::AppUnregister`示して、`/Unregister`または`/Unregserver`アプリケーションは、登録を解除するように要求されました。  
+- `CCommandLineInfo::AppUnregister` Indicates that the `/Unregister` or `/Unregserver` application was asked to unregister.  
   
-- `CCommandLineInfo::RestartByRestartManager`再起動マネージャーによって、アプリケーションが再起動されたことを示します。  
+- `CCommandLineInfo::RestartByRestartManager` Indicates that the application was restarted by the restart manager.  
   
-- `CCommandLineInfo::FileNothing`起動時に新しい MDI 子ウィンドウの表示を無効にします。 仕様では、アプリケーション ウィザードで生成された MDI アプリケーションは起動時に新しい子ウィンドウを表示します。 この機能を無効にするには、アプリケーションが使用できる`CCommandLineInfo::FileNothing`を呼び出すときに、シェル コマンドとして[によって](../../mfc/reference/cwinapp-class.md#processshellcommand)します。 `ProcessShellCommand`によって呼び出される、`InitInstance( )`すべて`CWinApp`クラスを派生します。  
+- `CCommandLineInfo::FileNothing` Turns off the display of a new MDI child window on startup. By design, Application Wizard-generated MDI applications display a new child window on startup. To turn off this feature, an application can use `CCommandLineInfo::FileNothing` as the shell command when it calls [ProcessShellCommand](../../mfc/reference/cwinapp-class.md#processshellcommand). `ProcessShellCommand` is called by the `InitInstance( )` of all `CWinApp` derived classes.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&55;](../../mfc/codesnippet/cpp/ccommandlineinfo-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#55](../../mfc/codesnippet/cpp/ccommandlineinfo-class_2.cpp)]  
   
-##  <a name="m_strdrivername"></a>CCommandLineInfo::m_strDriverName  
- コマンドラインでは、3 番目のフラグでないパラメーターの値を格納します。  
+##  <a name="m_strdrivername"></a>  CCommandLineInfo::m_strDriverName  
+ Stores the value of the third non-flag parameter on the command line.  
   
 ```  
 CString m_strDriverName;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このパラメーターは、通常、印刷シェル コマンドのプリンタ ドライバの名前です。 既定の実装[ParseParam](#parseparam)データ メンバー場合のみ、この設定、`/pt`フラグは、コマンドラインで見つかりました。  
+### <a name="remarks"></a>Remarks  
+ This parameter is typically the name of the printer driver for a Print To shell command. The default implementation of [ParseParam](#parseparam) sets this data member only if the `/pt` flag was found on the command line.  
   
-##  <a name="m_strfilename"></a>CCommandLineInfo::m_strFileName  
- コマンドラインでは、最初のフラグでないパラメーターの値を格納します。  
+##  <a name="m_strfilename"></a>  CCommandLineInfo::m_strFileName  
+ Stores the value of the first non-flag parameter on the command line.  
   
 ```  
 CString m_strFileName;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このパラメーターは、通常、開くファイルの名前です。  
+### <a name="remarks"></a>Remarks  
+ This parameter is typically the name of the file to open.  
   
-##  <a name="m_strportname"></a>CCommandLineInfo::m_strPortName  
- コマンドラインでは、4 番目のフラグでないパラメーターの値を格納します。  
+##  <a name="m_strportname"></a>  CCommandLineInfo::m_strPortName  
+ Stores the value of the fourth non-flag parameter on the command line.  
   
 ```  
 CString m_strPortName;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このパラメーターは、通常、印刷するシェル コマンドのプリンター ポートの名前です。 既定の実装[ParseParam](#parseparam)データ メンバー場合のみ、この設定、`/pt`フラグは、コマンドラインで見つかりました。  
+### <a name="remarks"></a>Remarks  
+ This parameter is typically the name of the printer port for a Print To shell command. The default implementation of [ParseParam](#parseparam) sets this data member only if the `/pt` flag was found on the command line.  
   
-##  <a name="m_strprintername"></a>CCommandLineInfo::m_strPrinterName  
- コマンドラインでは、2 番目のフラグでないパラメーターの値を格納します。  
+##  <a name="m_strprintername"></a>  CCommandLineInfo::m_strPrinterName  
+ Stores the value of the second non-flag parameter on the command line.  
   
 ```  
 CString m_strPrinterName;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このパラメーターは、通常、印刷するシェル コマンドのプリンターの名前です。 既定の実装[ParseParam](#parseparam)データ メンバー場合のみ、この設定、`/pt`フラグは、コマンドラインで見つかりました。  
+### <a name="remarks"></a>Remarks  
+ This parameter is typically the name of the printer for a Print To shell command. The default implementation of [ParseParam](#parseparam) sets this data member only if the `/pt` flag was found on the command line.  
   
-##  <a name="m_strrestartidentifier"></a>CCommandLineInfo::m_strRestartIdentifier  
- コマンド ライン上の識別子を一意に再起動します。  
+##  <a name="m_strrestartidentifier"></a>  CCommandLineInfo::m_strRestartIdentifier  
+ The unique restart identifier on the command line.  
   
 ```  
 CString m_strRestartIdentifier;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 再起動識別子は、アプリケーションの各インスタンスに一意です。  
+### <a name="remarks"></a>Remarks  
+ The restart identifier is unique for each instance of the application.  
   
- 再起動マネージャーは、アプリケーションを終了するし、再起動するように構成、再起動マネージャーは、省略可能なパラメーターとして再起動識別子を使用してコマンドラインからアプリケーションを実行します。 再起動マネージャーは、再起動の識別子を使用する場合、アプリケーションが開いていたドキュメントを再び開くしたり、自動保存されたファイルを回復します。  
+ If the restart manager exits the application and is configured to restart it, the restart manager executes the application from the command line with the restart identifier as an optional parameter. When the restart manager uses the restart identifier, the application can reopen the previously open documents and recover autosaved files.  
   
-##  <a name="parseparam"></a>その  
- フレームワークでは、コマンドラインからの個々 のパラメーターの解析/解釈には、この関数を呼び出します。 最初の&2; つ目のバージョンと一致しない Unicode プロジェクトでのみです。  
+##  <a name="parseparam"></a>  CCommandLineInfo::ParseParam  
+ The framework calls this function to parse/interpret individual parameters from the command line. The second version differs from the first only in Unicode projects.  
   
 ```  
 virtual void ParseParam(
@@ -281,44 +286,44 @@ virtual void ParseParam(
     BOOL bLast);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszParam`  
- パラメーターまたはフラグ。  
+ The parameter or flag.  
   
  *bFlag*  
- 示すかどうか`pszParam`パラメーターまたはフラグ。  
+ Indicates whether `pszParam` is a parameter or a flag.  
   
  `bLast`  
- これは最後のパラメーターまたはコマンドラインでフラグを示します。  
+ Indicates if this is the last parameter or flag on the command line.  
   
-### <a name="remarks"></a>コメント  
- [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline)呼び出し`ParseParam`1 回ごとのパラメーターまたはコマンドラインでフラグを使用して、引数を渡す`pszParam`します。 パラメーターの最初の文字がある場合、' **-**'または' **/**' が削除および*bFlag*に設定されている`TRUE`します。 最後のパラメーターを解析するときに`bLast`に設定されている`TRUE`します。  
+### <a name="remarks"></a>Remarks  
+ [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline) calls `ParseParam` once for each parameter or flag on the command line, passing the argument to `pszParam`. If the first character of the parameter is a ' **-**' or a ' **/**', then it is removed and *bFlag* is set to `TRUE`. When parsing the final parameter, `bLast` is set to `TRUE`.  
   
- この関数の既定の実装は、次のフラグを認識します。 `/p`、 `/pt`、 `/dde`、 `/Automation`、および`/Embedding`次の表に示すように。  
+ The default implementation of this function recognizes the following flags: `/p`, `/pt`, `/dde`, `/Automation`, and `/Embedding`, as shown in the following table:  
   
-|コマンドライン引数|実行されたコマンド|  
+|Command-line argument|Command executed|  
 |----------------------------|----------------------|  
-|*app*|新しいファイル。|  
-|*アプリ*ファイル名|ファイルを開く.|  
-|*アプリ*`/p`ファイル名|既定のプリンターにファイルを印刷します。|  
-|*アプリ*`/pt`ファイル名のプリンター ドライバーのポート|指定したプリンターにファイルを印刷します。|  
-|*app*`/dde`|起動し、DDE コマンドを待機します。|  
-|*app*`/Automation`|OLE オートメーション サーバーとして起動します。|  
-|*app*`/Embedding`|OLE 埋め込みアイテムを編集するのを起動します。|  
-|*app*`/Register`<br /><br /> *app*`/Regserver`|登録タスクを実行するアプリケーションに通知します。|  
-|*app*`/Unregister`<br /><br /> *app*`/Unregserver`|登録解除タスクを実行するアプリケーションに通知します。|  
+|*app*|New file.|  
+|*app* filename|Open file.|  
+|*app* `/p` filename|Print file to default printer.|  
+|*app* `/pt` filename printer driver port|Print file to the specified printer.|  
+|*app* `/dde`|Start up and await DDE command.|  
+|*app* `/Automation`|Start up as an OLE automation server.|  
+|*app* `/Embedding`|Start up to edit an embedded OLE item.|  
+|*app* `/Register`<br /><br /> *app* `/Regserver`|Informs the application to perform any registration tasks.|  
+|*app* `/Unregister`<br /><br /> *app* `/Unregserver`|Informs the application to perform any un-registration tasks.|  
   
- この情報が格納されている[m_bRunAutomated](#m_brunautomated)、 [m_bRunEmbedded](#m_brunembedded)、および[m_nShellCommand](#m_nshellcommand)します。 フラグでマークされたいずれかのスラッシュ ' **/**'またはハイフン' **-**' です。  
+ This information is stored in [m_bRunAutomated](#m_brunautomated), [m_bRunEmbedded](#m_brunembedded), and [m_nShellCommand](#m_nshellcommand). Flags are marked by either a forward-slash ' **/**' or hyphen ' **-**'.  
   
- 既定の実装で、最初のフラグでないパラメーターには、 [m_strFileName](#m_strfilename)します。 場合、`/pt`フラグは、既定の実装は、2 番目の場合に、3 番目と&4; 番目のフラグでないパラメーター [m_strPrinterName](#m_strprintername)、 [m_strDriverName](#m_strdrivername)、および[m_strPortName](#m_strportname)、それぞれします。  
+ The default implementation puts the first non-flag parameter into [m_strFileName](#m_strfilename). In the case of the `/pt` flag, the default implementation puts the second, third, and fourth non-flag parameters into [m_strPrinterName](#m_strprintername), [m_strDriverName](#m_strdrivername), and [m_strPortName](#m_strportname), respectively.  
   
- 既定の実装も設定[m_bShowSplash](#m_bshowsplash)に`TRUE`新しいファイルの場合にのみです。 新しいファイルの場合、ユーザーがアプリケーション自体に関連するアクションを取得します。 シェルを使用して既存のファイルを開くことを含め、他の場合は、ユーザーの操作は、ファイルを直接です。 スプラッシュ スクリーンは、ドキュメント中心の観点で、アプリケーションの起動を発表する必要はありません。  
+ The default implementation also sets [m_bShowSplash](#m_bshowsplash) to `TRUE` only in the case of a new file. In the case of a new file, the user has taken action involving the application itself. In any other case, including opening existing files using the shell, the user action involves the file directly. In a document-centric standpoint, the splash screen does not need to announce the application starting up.  
   
- その他のフラグとパラメーターの値を処理する派生クラスでオーバーライドします。  
+ Override this function in your derived class to handle other flag and parameter values.  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
  [CWinApp::ParseCommandLine](../../mfc/reference/cwinapp-class.md#parsecommandline)   
  [CWinApp::ProcessShellCommand](../../mfc/reference/cwinapp-class.md#processshellcommand)
 

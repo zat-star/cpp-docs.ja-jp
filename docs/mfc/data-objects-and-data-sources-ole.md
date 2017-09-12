@@ -1,51 +1,69 @@
 ---
-title: "データ オブジェクトとデータ ソース (OLE) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ オブジェクト [C++], 定義"
-  - "データ ソース [C++], 定義"
-  - "データ転送 [C++]"
-  - "データ転送 [C++], 定義"
-  - "OLE [C++], データ オブジェクト"
-  - "OLE [C++], データ ソース"
-  - "OLE [C++], データ転送"
+title: Data Objects and Data Sources (OLE) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- data objects [MFC], definition
+- data transfer [MFC]
+- OLE [MFC], data transfer
+- data sources [MFC], definition
+- data transfer [MFC], definition
+- OLE [MFC], data objects
+- OLE [MFC], data sources
 ms.assetid: 8f68eed8-0ce8-4489-a4cc-f95554f89090
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# データ オブジェクトとデータ ソース (OLE)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7bfc4f325461ed3689ab9ade8b6604291ddfacca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クリップボードを使用するか、ドラッグ アンド ドロップによるデータ転送を実行すると、データをソースとターゲットがあります。  1 種類のアプリケーションでコピーにデータを提供し、別のアプリケーションが Word などのコントロールを使用できます。  転送の同じデータのさまざまな操作が正常に完了するために実行する転送に必要な各端。  Microsoft Foundation Class \(MFC\) ライブラリはこの転送の両側を表すクラスを 2 つあります。:  
+---
+# <a name="data-objects-and-data-sources-ole"></a>Data Objects and Data Sources (OLE)
+When you perform a data transfer, either by using the Clipboard or drag and drop, the data has a source and a destination. One application provides the data for copying and another application accepts it for pasting. Each side of the transfer needs to perform different operations on the same data for the transfer to succeed. The Microsoft Foundation Class (MFC) Library provides two classes that represent each side of this transfer:  
   
--   \(`COleDataSource` オブジェクトによって実装される\) データ ソースは、データ転送のソース側を表します。  これらはソース アプリケーションでデータをクリップボードにコピーするか、またはデータがドラッグ アンド ドロップ操作によって提供されるときに作成されます。  
+-   Data sources (as implemented by `COleDataSource` objects) represent the source side of the data transfer. They are created by the source application when data is to be copied to the Clipboard, or when data is provided for a drag-and-drop operation.  
   
--   \(`COleDataObject` オブジェクトによって実装される\) データ オブジェクトは、データの転送先の辺を表します。  これらは先のアプリケーションにドロップするデータがある場合、クリップボードからの貼り付け操作を実行することを要求するときに作成されます。  
+-   Data objects (as implemented by `COleDataObject` objects) represent the destination side of the data transfer. They are created when the destination application has data dropped into it, or when it is asked to perform a paste operation from the Clipboard.  
   
- 次のトピックでは、アプリケーションでデータ オブジェクトとデータ ソースの使用方法について説明します。  この情報は、コンテナーとサーバーの両方にアプリケーション データをコピーして貼り付けるための両方になる場合があるため、適用されます。  
+ The following articles explain how to use data objects and data sources in your applications. This information applies to both container and server applications, because both may be called upon to copy and paste data.  
   
--   [データ オブジェクトとデータ ソース: 作成および破棄](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
+-   [Data Objects and Data Sources: Creation and Destruction](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
   
--   [データ オブジェクトとデータ ソース: 操作](../mfc/data-objects-and-data-sources-manipulation.md)  
+-   [Data Objects and Data Sources: Manipulation](../mfc/data-objects-and-data-sources-manipulation.md)  
   
-## このセクションの内容  
- [ドラッグ アンド ドロップ](../mfc/drag-and-drop-ole.md)  
+## <a name="in-this-section"></a>In This Section  
+ [Drag and Drop](../mfc/drag-and-drop-ole.md)  
   
- [クリップボード](../mfc/clipboard.md)  
+ [Clipboard](../mfc/clipboard.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [COleDataObject クラス](../mfc/reference/coledataobject-class.md)   
- [COleDataSource クラス](../mfc/reference/coledatasource-class.md)
+ [COleDataObject Class](../mfc/reference/coledataobject-class.md)   
+ [COleDataSource Class](../mfc/reference/coledatasource-class.md)
+

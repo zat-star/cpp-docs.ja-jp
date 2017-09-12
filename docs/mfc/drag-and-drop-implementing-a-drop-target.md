@@ -1,57 +1,75 @@
 ---
-title: "ドラッグ アンド ドロップ : ドロップ ターゲットの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドラッグ アンド ドロップ, ドロップ ターゲット"
-  - "OLE のドラッグ アンド ドロップ, ドロップ ターゲット"
-  - "OLE のドラッグ アンド ドロップ, 実装 (ドロップ ターゲットを)"
+title: 'Drag and Drop: Implementing a Drop Target | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE drag and drop [MFC], implementing drop targets
+- OLE drag and drop [MFC], drop target
+- drag and drop [MFC], drop target
 ms.assetid: 0689f1ec-5326-4008-b226-4b373c881358
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ドラッグ アンド ドロップ : ドロップ ターゲットの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f6d4fb84423e3d2b67ad6d5a91bf001be5098061
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-この記事のアウトライン アプリケーションにドロップ ターゲットを行う方法を示します。  ドロップ ターゲットを実装すると、受け取り、がドロップ ソースを実装しますが、より多くの作業を、比較的簡単です。  これらの手法は、非 OLE アプリケーションに適用されます。  
+---
+# <a name="drag-and-drop-implementing-a-drop-target"></a>Drag and Drop: Implementing a Drop Target
+This article outlines how to make your application a drop target. Implementing a drop target takes slightly more work than implementing a drop source, but it is still relatively simple. These techniques also apply to non-OLE applications.  
   
-#### ドロップ ターゲットを実装するには  
+#### <a name="to-implement-a-drop-target"></a>To implement a drop target  
   
-1.  ドロップ ターゲットで、対象となるアプリケーションの各ビューにメンバー変数を追加します。  このメンバー変数は、アセンブリから型 `COleDropTarget` または派生クラスである必要があります。  
+1.  Add a member variable to each view in the application that you want to be a drop target. This member variable must be of type `COleDropTarget` or a class derived from it.  
   
-2.  `WM_CREATE` メッセージ \(通常 `OnCreate`\) を処理するビュー クラスの関数から、新しいメンバー変数の `Register` メンバー関数を呼び出します。  `Revoke` は、をビューが破棄されるときに自動的に呼び出されます。  
+2.  From your view class's function that handles the `WM_CREATE` message (typically `OnCreate`), call the new member variable's `Register` member function. `Revoke` will be called automatically for you when your view is destroyed.  
   
-3.  次の関数をオーバーライドします。  アプリケーション全体の動作が必要な場合は、ビュー クラスの関数をオーバーライドします。  動作を複数の図における変更または`CView` の Windows 以外の低下を有効にする必要がある場合は、これらの関数の `COleDropTarget`\-派生クラスをオーバーライドします。  
+3.  Override the following functions. If you want the same behavior throughout your application, override these functions in your view class. If you want to modify behavior in isolated cases or want to enable dropping on non-`CView` windows, override these functions in your `COleDropTarget`-derived class.  
   
-    |オーバーライド|割り当てるには|  
-    |-------------|-------------|  
-    |`OnDragEnter`|ウィンドウで発生したドロップ操作。  カーソルが最初にウィンドウを入力するときに呼び出されます。|  
-    |`OnDragLeave`|ドラッグ操作が指定されたウィンドウの外に出ると、特別な動作。|  
-    |`OnDragOver`|ウィンドウで発生したドロップ操作。  カーソルがウィンドウにドラッグされたときに呼び出されます。|  
-    |`OnDrop`|指定されたウィンドウにドロップするデータの処理。|  
-    |`OnScrollBy`|スクロールがターゲット ウィンドウで必要なときに特別な動作の。|  
+    |Override|To allow|  
+    |--------------|--------------|  
+    |`OnDragEnter`|Drop operations to occur in the window. Called when the cursor first enters the window.|  
+    |`OnDragLeave`|Special behavior when the drag operation leaves the specified window.|  
+    |`OnDragOver`|Drop operations to occur in the window. Called when the cursor is being dragged across the window.|  
+    |`OnDrop`|Handling of data being dropped into the specified window.|  
+    |`OnScrollBy`|Special behavior for when scrolling is necessary in the target window.|  
   
- これらの関数は連携する方法の例については、" MFC サンプルの OLE [OCLIENT](../top/visual-cpp-samples.md) の一部である MAINVIEW.CPP ファイルを参照してください。  
+ See the MAINVIEW.CPP file that is part of the MFC OLE sample [OCLIENT](../visual-cpp-samples.md) for an example of how these functions work together.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [ドラッグ ソースの実装](../mfc/drag-and-drop-implementing-a-drop-source.md)  
+-   [Implementing a Drop Source](../mfc/drag-and-drop-implementing-a-drop-source.md)  
   
--   [作成と破棄の OLE データ オブジェクトとデータ ソース](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
+-   [Creating and Destroying OLE Data Objects and Data Sources](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
   
--   [処理の OLE データ オブジェクトとデータ ソース](../mfc/data-objects-and-data-sources-manipulation.md)  
+-   [Manipulating OLE Data Objects and Data Sources](../mfc/data-objects-and-data-sources-manipulation.md)  
   
-## 参照  
- [ドラッグ アンド ドロップ \(OLE\)](../mfc/drag-and-drop-ole.md)   
- [COleDropTarget クラス](../Topic/COleDropTarget%20Class.md)
+## <a name="see-also"></a>See Also  
+ [Drag and Drop (OLE)](../mfc/drag-and-drop-ole.md)   
+ [COleDropTarget Class](../mfc/reference/coledroptarget-class.md)
+

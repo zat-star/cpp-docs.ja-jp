@@ -1,33 +1,52 @@
 ---
-title: "MFC コモン コントロール ライブラリの分離 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, Common Controls ライブラリ"
+title: Isolation of the MFC Common Controls Library | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, Common Controls library
 ms.assetid: 7471e6f0-49b0-47f7-86e7-8d6bc3541694
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC コモン コントロール ライブラリの分離
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: beb727301a2dcc72127f4ecd61449ada2dfaf360
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コモン コントロール MFC ライブラリは内でマニフェストのバージョンを指定することにより、分離し、コモン コントロール ライブラリの別バージョンを使用するように、異なるモジュール \(ユーザー DLL など\) を表示します。  
+---
+# <a name="isolation-of-the-mfc-common-controls-library"></a>Isolation of the MFC Common Controls Library
+The Common Controls library is now isolated within MFC, allowing different modules (such as user DLLs) to use different versions of the Common Controls library by specifying the version in their manifests.  
   
- *FunctionName* が名前のコモン コントロール API です。で MFC アプリケーション \(または MFC によって呼び出されるユーザー コード `Afx`*FunctionName*というラッパー関数によってコモン コントロール ライブラリの API に\) を呼び出します。  これらのラッパー関数は afxcomctl32.h と afxcomctl32.inl で定義されます。  
+ An MFC application (or user code called by MFC) makes calls to Common Controls library APIs through wrapper functions named `Afx`*FunctionName*, where *FunctionName* is the name of a Common Controls API. Those wrapper functions are defined in afxcomctl32.h and afxcomctl32.inl.  
   
- [AFX\_COMCTL32\_IF\_EXISTS](../Topic/AFX_COMCTL32_IF_EXISTS.md) と [AFX\_COMCTL32\_IF\_EXISTS2](../Topic/AFX_COMCTL32_IF_EXISTS2.md) マクロをできます \(コモン コントロール ライブラリが [GetProcAddress](../build/getprocaddress.md)を呼び出す代わりに特定の API を実装するかどうかを判断するために使用 afxcomctl32.h\) を定義します。  
+ You can use the [AFX_COMCTL32_IF_EXISTS](reference/run-time-object-model-services.md#afx_comctl32_if_exists) and [AFX_COMCTL32_IF_EXISTS2](reference/run-time-object-model-services.md#afx_comctl32_if_exists2) macros (defined in afxcomctl32.h) to determine whether the Common Controls library implements a certain API instead of calling [GetProcAddress](../build/getprocaddress.md).  
   
- 厳密には、ラッパー クラスを通じてコモン コントロール ライブラリ API、`CComCtlWrapper` を呼び出します \(afxcomctl32.h\) で定義されます。  `CComCtlWrapper` は comctl32.dll の読み込みとアンロードにも使用されます。  MFC のモジュール状態は `CComCtlWrapper`のインスタンスへのポインターが格納されます。  `afxComCtlWrapper` マクロを使用して、ラッパー クラスにアクセスできます。  
+ Technically, you make calls to Common Controls Library APIs through a wrapper class, `CComCtlWrapper` (defined in afxcomctl32.h). `CComCtlWrapper` is also responsible for the loading and unloading of comctl32.dll. The MFC Module State contains a pointer to an instance of `CComCtlWrapper`. You can access the wrapper class using the `afxComCtlWrapper` macro.  
   
- MFC アプリケーションでコモン コントロール API を \(非 MFC ラッパー関数を使用して直接呼び出すことに注意してください。ユーザー DLL は、MFC のアプリケーションまたはユーザーの DLL がマニフェストに要求した\) コモン コントロール ライブラリにバインドされるため、ほとんどの場合です。  ただし、MFC コードが異なるコモン コントロール ライブラリ バージョンのユーザーの DLL から呼び出される可能性があるため、MFC コード自体はラッパーを使用する必要があります。
+ Note that calling Common Controls API directly (not using the MFC wrapper functions) from an MFC application or user DLL will work in most cases, because the MFC application or user DLL is bound to the Common Controls library it requested in its manifest). However, the MFC code itself has to use the wrappers, because MFC code might be called from user DLLs with different Common Controls library versions.
+
+

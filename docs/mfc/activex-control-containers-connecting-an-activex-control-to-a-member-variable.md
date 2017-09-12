@@ -1,52 +1,71 @@
 ---
-title: "ActiveX コントロール コンテナー : ActiveX コントロールとメンバー変数の関連付け | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール コンテナー [C++], アクセス (ActiveX コントロールに)"
-  - "ActiveX コントロール コンテナー [C++], ActiveX コントロール (メンバー変数)"
-  - "ActiveX コントロール [C++], アクセス"
-  - "ActiveX コントロール [C++], メンバー変数 (プロジェクトの)"
-  - "接続 (ActiveX コントロールとコンテナー メンバー変数を)"
-  - "メンバー変数 [C++], ActiveX コントロール (プロジェクトの)"
+title: 'ActiveX Control Containers: Connecting an ActiveX Control to a Member Variable | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX control containers [MFC], accessing ActiveX controls
+- ActiveX controls [MFC], member variables of project
+- connecting ActiveX controls to container member variables
+- ActiveX controls [MFC], accessing
+- member variables [MFC], ActiveX controls in project
+- ActiveX control containers [MFC], ActiveX controls as member variables
 ms.assetid: 7898a336-440d-4a60-be43-cb062b807aee
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ActiveX コントロール コンテナー : ActiveX コントロールとメンバー変数の関連付け
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7d79444d098c1946f6cd54d8d904a06c17923c3f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コントロール コンテナー アプリケーション内から ActiveX コントロールにアクセスする最も簡単な方法は、コントロールを含むダイアログ クラスのメンバー変数と ActiveX コントロールを関連付けます。  
+---
+# <a name="activex-control-containers-connecting-an-activex-control-to-a-member-variable"></a>ActiveX Control Containers: Connecting an ActiveX Control to a Member Variable
+The easiest way to access an ActiveX control from within its control container application is to associate the ActiveX control with a member variable of the dialog class that will contain the control.  
   
 > [!NOTE]
->  これは内部アクセスする唯一の方法は、コンテナー クラスから埋め込みコントロールではありませんが、ここではこれで十分です。  
+>  This is not the only way to access an embedded control from within a container class, but for the purposes of this article it is sufficient.  
   
-### ダイアログ クラスにメンバー変数を追加できます。  
+### <a name="adding-a-member-variable-to-the-dialog-class"></a>Adding a member variable to the dialog class  
   
-1.  クラス ビューから、ショートカット メニューを開き、メイン ダイアログ クラスを右クリックします。  たとえば、`CContainerDlg` のようにします。  
+1.  From Class View, right-click the main dialog class to open the shortcut menu. For example, `CContainerDlg`.  
   
-2.  このコマンドをショートカット メニューから、**追加** と **\[変数の追加\]** をクリックします。  
+2.  From the shortcut menu, click **Add** and then **Add Variable**.  
   
-3.  メンバー変数の追加ウィザードで、**コントロール変数\(O\)**をクリックします。  
+3.  In the Add Member Variable Wizard, click **Control variable**.  
   
-4.  **コントロール ID** のリスト ボックスで、埋め込まれたな ActiveX コントロールのコントロール ID を選択します。  たとえば、`IDC_CIRCCTRL1` のようにします。  
+4.  In the **Control ID** list box, select the control ID of the embedded ActiveX control. For example, `IDC_CIRCCTRL1`.  
   
-5.  **変数名** ボックスに名前を入力します。  
+5.  In the **Variable Name** box, enter a name.  
   
-     たとえば、`m_circctl` のようにします。  
+     For example, `m_circctl`.  
   
-6.  選択を受け入れ、メンバー変数の追加ウィザードを終了するに **完了** をクリックします。  
+6.  Click **Finish** to accept your choices and exit the Add Member Variable Wizard.  
   
-## 参照  
- [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
+## <a name="see-also"></a>See Also  
+ [ActiveX Control Containers](../mfc/activex-control-containers.md)
+
+

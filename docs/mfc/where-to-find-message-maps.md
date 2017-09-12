@@ -1,42 +1,61 @@
 ---
-title: "メッセージ マップの所在 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "検索 (メッセージ マップを)"
-  - "マクロ, メッセージ マップ"
-  - "メッセージ マップ, 検索"
-  - "メッセージ マップ マクロ"
+title: Where to Find Message Maps | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- macros, message map
+- locating message maps
+- message classes [MFC], finding
+- message-map macros
 ms.assetid: bf59fbc8-b222-42d3-b5d3-0a79aa3cb923
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# メッセージ マップの所在
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 405b0b58e4b8a5ff9b27aecc12562d94f6b31506
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アプリケーション ウィザードを使って新しいスケルトン アプリケーションを作成するときは、アプリケーション ウィザードでは、作成した各コマンドターゲット クラスにメッセージ マップを作成します。  これは、派生のアプリケーション、ドキュメント、ビュー、およびフレーム ウィンドウ クラスが含まれています。  これらのメッセージ マップの一部に既に特定のメッセージと定義されたコマンドのアプリケーション ウィザードで指定するエントリを持つ部分は、追加するハンドラーのプレースホルダーだけです。  
+---
+# <a name="where-to-find-message-maps"></a>Where to Find Message Maps
+When you create a new skeleton application with the Application Wizard, the Application Wizard writes a message map for each command-target class it creates for you. This includes your derived application, document, view, and frame-window classes. Some of these message maps already have the entries supplied by the Application Wizard for certain messages and predefined commands, and some are just placeholders for handlers that you will add.  
   
- クラスのメッセージ マップはクラスの .cpp ファイルにあります。  アプリケーション ウィザードで作成された基本的なメッセージ マップを使用してメッセージのエントリを追加するには、プロパティ ウィンドウを使用して、各クラスが処理するようにようにしました。  通常のメッセージ マップは次のようにエントリを追加するとなります。:  
+ A class's message map is located in the .CPP file for the class. Working with the basic message maps that the Application Wizard creates, you use the Properties window to add entries for the messages and commands that each class will handle. A typical message map might look like the following after you add some entries:  
   
- [!CODE [NVC_MFCMessageHandling#1](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCMessageHandling#1)]  
+ [!code-cpp[NVC_MFCMessageHandling#1](../mfc/codesnippet/cpp/where-to-find-message-maps_1.cpp)]  
   
- メッセージ マップは、マクロのコレクションで構成されます。  2 種類のマクロは、[BEGIN\_MESSAGE\_MAP](../Topic/BEGIN_MESSAGE_MAP.md) と [END\_MESSAGE\_MAP](../Topic/END_MESSAGE_MAP.md)は、メッセージ マップをかっこで囲んで指定します。  他のマクロは、`ON_COMMAND`など、メッセージ マップの内容を入力します。  
+ The message map consists of a collection of macros. Two macros, [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) and [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map), bracket the message map. Other macros, such as `ON_COMMAND`, fill in the message map's contents.  
   
 > [!NOTE]
->  メッセージ マップ マクロはセミコロンが続きます。  
+>  The message-map macros are not followed by semicolons.  
   
- 新しいクラスを作成するにクラス追加ウィザードを使用すると、クラスにメッセージ マップを提供します。  また、ソース・コード エディターを使用してメッセージ マップを手動で作成できます。  
+ When you use the Add Class wizard to create a new class, it provides a message map for the class. Alternatively, you can create a message map manually using the source code editor.  
   
-## 参照  
- [フレームワークのメッセージ マップ検索方法](../mfc/how-the-framework-searches-message-maps.md)
+## <a name="see-also"></a>See Also  
+ [How the Framework Searches Message Maps](../mfc/how-the-framework-searches-message-maps.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "CDaoIndexInfo 構造体 |Microsoft ドキュメント"
+title: CDaoIndexInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - DAO (Data Access Objects), Indexes collection
-- CDaoIndexInfo structure
+- CDaoIndexInfo structure [MFC]
 ms.assetid: 251d8285-78ce-4716-a0b3-ccc3395fc437
 caps.latest.revision: 13
 author: mikeblome
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 92206d8d8f9b2315fb859e2712a83d32a4c293ad
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ee0d6e1e47f1e171d625781f9c53125e832a915a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaoindexinfo-structure"></a>CDaoIndexInfo 構造体
-`CDaoIndexInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているインデックス オブジェクトに関する情報が含まれています。  
+# <a name="cdaoindexinfo-structure"></a>CDaoIndexInfo Structure
+The `CDaoIndexInfo` structure contains information about an index object defined for data access objects (DAO).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CDaoIndexInfo {  
@@ -64,74 +64,74 @@ struct CDaoIndexInfo {
 };   
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- Field オブジェクトの一意名します。 詳細については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ Uniquely names the field object. For details, see the topic "Name Property" in DAO Help.  
   
  `m_pFieldInfos`  
- 配列へのポインター [CDaoIndexFieldInfo](../../mfc/reference/cdaoindexfieldinfo-structure.md) tabledef またはレコード セット フィールドがインデックス内のキー フィールドを示すオブジェクト。 各オブジェクトは、インデックス内の&1; つのフィールドを識別します。 既定のインデックス順序は昇順です。 Index オブジェクトには、1 つ以上のフィールドがレコードごとにインデックス キーを表すことができます。 これらは、降順、または機能を組み合わせた、昇順ことができます。  
+ A pointer to an array of [CDaoIndexFieldInfo](../../mfc/reference/cdaoindexfieldinfo-structure.md) objects indicating which tabledef or recordset fields are key fields in an index. Each object identifies one field in the index. The default index ordering is ascending. An index object can have one or more fields representing index keys for each record. These can be ascending, descending, or a combination.  
   
  `m_nFields`  
- 格納されているフィールド数`m_pFieldInfos`します。  
+ The number of fields stored in `m_pFieldInfos`.  
   
  *m_bPrimary*  
- 主なプロパティがの場合**TRUE**、index オブジェクトは、プライマリ インデックスを表します。 プライマリ インデックスは、定義済みの順序で、テーブルのすべてのレコードを一意に識別する&1; つ以上のフィールドで構成されます。 インデックス オブジェクトの一意のプロパティに設定もインデックスのフィールドは一意でなければならないので**TRUE** DAO にします。 プライマリ インデックスは、複数のフィールドで構成され場合、は、各フィールドは、重複する値を含めることができますが、すべてのインデックス付きフィールドの値の組み合わせは一意である必要があります。 プライマリ インデックスは、テーブルのキーで構成され、通常、プライマリ キーと同じフィールドが含まれます。  
+ If the Primary property is **TRUE**, the index object represents a primary index. A primary index consists of one or more fields that uniquely identify all records in a table in a predefined order. Because the index field must be unique, the Unique property of the Index object is also set to **TRUE** in DAO. If the primary index consists of more than one field, each field can contain duplicate values, but each combination of values from all the indexed fields must be unique. A primary index consists of a key for the table and usually contains the same fields as the primary key.  
   
- テーブルの主キーを設定すると、テーブルの主インデックスとして主キーが自動的に定義します。 詳細については、"プライマリ Property"および「一意のプロパティ」DAO ヘルプ トピックを参照してください。  
+ When you set a primary key for a table, the primary key is automatically defined as the primary index for the table. For more information, see the topics "Primary Property" and "Unique Property" in DAO Help.  
   
 > [!NOTE]
->  あります、多くても、テーブルの&1; つのプライマリ インデックス。  
+>  There can be, at most, one primary index on a table.  
   
  *m_bUnique*  
- Index オブジェクトがテーブルの一意のインデックスを表すかどうかを示します。 場合は、このプロパティは**TRUE**、index オブジェクトは、一意のインデックスを表します。 一意のインデックスは一意で、定義済みの順序で、テーブルのすべてのレコードを論理的に整列する&1; つ以上のフィールドで構成されます。 インデックスは、1 つのフィールドで構成され、そのフィールドに値がテーブル全体に対して一意でする必要があります。 インデックスは、複数のフィールドで構成され場合、は、各フィールドは、重複する値を含めることができますが、すべてのインデックス付きフィールドの値の組み合わせは一意である必要があります。  
+ Indicates whether an index object represents a unique index for a table. If this property is **TRUE**, the index object represents an index that is unique. A unique index consists of one or more fields that logically arrange all records in a table in a unique, predefined order. If the index consists of one field, values in that field must be unique for the entire table. If the index consists of more than one field, each field can contain duplicate values, but each combination of values from all the indexed fields must be unique.  
   
- インデックス オブジェクトの Unique とプライマリの両方のプロパティが設定されている場合**TRUE**インデックスが一意でプライマリ: 定義済みの論理的な順序でテーブル内のすべてのレコードを一意に識別します。 主なプロパティ設定されている場合**FALSE**インデックスは、セカンダリ インデックス。 (キーと非キーの両方) のセカンダリ インデックスは、論理的にテーブル内のレコードの識別子としては機能せず、定義済みの順序でレコードを配置します。  
+ If both the Unique and Primary properties of an index object are set to **TRUE**, the index is unique and primary: It uniquely identifies all records in the table in a predefined, logical order. If the Primary property is set to **FALSE**, the index is a secondary index. Secondary indexes (both key and nonkey) logically arrange records in a predefined order without serving as an identifier for records in the table.  
   
- 詳細については、"プライマリ Property"および「一意のプロパティ」DAO ヘルプ トピックを参照してください。  
+ For more information, see the topics "Primary Property" and "Unique Property" in DAO Help.  
   
  *m_bClustered*  
- Index オブジェクトがテーブルのクラスター化インデックスを表すかどうかを示します。 このプロパティは、する場合**TRUE**、index オブジェクトは、クラスター化インデックスを表します。 それ以外の場合、そうでないです。 クラスター化インデックスから成る&1; つまたは複数の非キー フィールドで、まとめると、定義済みの順序で、テーブルのすべてのレコードを配置します。 クラスター化インデックス、テーブル内のデータは文字どおり、クラスター化インデックスで指定された順序で格納されています。 クラスター化インデックスは、テーブル内のレコードに効率的にアクセスを提供します。 詳細については、「クラスター化されたプロパティ」DAO ヘルプのトピックを参照してください。  
+ Indicates whether an index object represents a clustered index for a table. If this property is **TRUE**, the index object represents a clustered index; otherwise, it does not. A clustered index consists of one or more nonkey fields that, taken together, arrange all records in a table in a predefined order. With a clustered index, the data in the table is literally stored in the order specified by the clustered index. A clustered index provides efficient access to records in a table. For more information, see the topic "Clustered Property" in DAO Help.  
   
 > [!NOTE]
->  Clustered プロパティには、Jet データベース エンジンがクラスター化インデックスをサポートしていないために、Microsoft Jet データベース エンジンを使用するデータベースは無視されます。  
+>  The Clustered property is ignored for databases that use the Microsoft Jet database engine because the Jet database engine does not support clustered indexes.  
   
  *m_bIgnoreNulls*  
- インデックス フィールドに Null 値を持つレコードのインデックス エントリがあるかどうかを示します。 場合は、このプロパティは**TRUE**Null 値を持つフィールドには、インデックス エントリはありません。 フィールドを高速化を使用してレコードを検索するためには、フィールドのインデックスを定義できます。 インデックス付きフィールドが Null エントリを許可していて、Null であるエントリの多くと場合、は、インデックス オブジェクトの IgnoreNulls プロパティを設定できます**TRUE**インデックスによって使用されるストレージ領域の量を削減します。 IgnoreNulls プロパティの設定と、必要なプロパティの設定は、まとめて Null インデックス値を持つレコードが次の表に示すようにインデックス エントリを持つかどうかを決定します。  
+ Indicates whether there are index entries for records that have Null values in their index fields. If this property is **TRUE**, fields with Null values do not have an index entry. To make searching for records using a field faster, you can define an index for the field. If you allow Null entries in an indexed field and expect many of the entries to be Null, you can set the IgnoreNulls property for the index object to **TRUE** to reduce the amount of storage space that the index uses. The IgnoreNulls property setting and the Required property setting together determine whether a record with a Null index value has an index entry, as the following table shows.  
   
-|IgnoreNulls|必須|インデックスのフィールド内の null 値します。|  
+|IgnoreNulls|Required|Null in index field|  
 |-----------------|--------------|-------------------------|  
-|True|False|Null 値を許可します。インデックス エントリを追加します。|  
-|False|False|Null 値を許可します。インデックス エントリが追加されました。|  
-|True または False|True|Null 値が許可されていません。インデックス エントリを追加します。|  
+|True|False|Null value allowed; no index entry added.|  
+|False|False|Null value allowed; index entry added.|  
+|True or False|True|Null value not allowed; no index entry added.|  
   
- 詳細については、DAO ヘルプの「IgnoreNulls プロパティ」を参照してください。  
+ For more information, see the topic "IgnoreNulls Property" in DAO Help.  
   
  `m_bRequired`  
- DAO インデックス オブジェクトに Null 以外の値が必要かどうかを示します。 このプロパティは、する場合**TRUE**、index オブジェクトが Null 値を許可しません。 詳細については、DAO のヘルプ「プロパティのために必要な」を参照してください。  
+ Indicates whether a DAO index object requires a non-Null value. If this property is **TRUE**, the index object does not allow a Null value. For more information, see the topic "Required Property" in DAO Help.  
   
 > [!TIP]
->  DAO インデックス オブジェクトまたは field オブジェクト (テーブル、レコード セット、またはクエリ定義オブジェクトに含まれる) のいずれかに対してこのプロパティを設定すると、フィールド オブジェクトの設定します。 Field オブジェクトのプロパティの設定の有効性はそのインデックス オブジェクトの前にチェックされます。  
+>  When you can set this property for either a DAO index object or a field object (contained by a tabledef, recordset, or querydef object), set it for the field object. The validity of the property setting for a field object is checked before that of an index object.  
   
  *m_bForeign*  
- Index オブジェクトが、テーブルの外部キーを表すかどうかを示します。 このプロパティは、する場合**TRUE**インデックスは、テーブルの外部キーを表します。 外部キーは、主テーブル内の行を一意に識別する外部キー テーブルの&1; つまたは複数のフィールドで構成されます。 Microsoft Jet データベース エンジンでは、外部テーブルのインデックス オブジェクトを作成し、参照整合性を適用するリレーションシップを作成するときに、外部のプロパティを設定します。 詳細については、DAO ヘルプの「外部プロパティ」を参照してください。  
+ Indicates whether an index object represents a foreign key in a table. If this property is **TRUE**, the index represents a foreign key in a table. A foreign key consists of one or more fields in a foreign table that uniquely identify a row in a primary table. The Microsoft Jet database engine creates an index object for the foreign table and sets the Foreign property when you create a relationship that enforces referential integrity. For more information, see the topic "Foreign Property" in DAO Help.  
   
  *m_lDistinctCount*  
- 関連付けられているテーブルに含まれているインデックス オブジェクトの一意の値の数を示します。 一意の値や、インデックス内のキーの数を調べて、DistinctCount プロパティを確認します。 任意のキーは&1; 回だけカウントされる場合でも、インデックスが重複する値を許可している場合、その値を複数設定にすることがあります。 この情報は、インデックスの情報を評価することによってデータ アクセスを最適化しようとするアプリケーションで役立ちます。 一意の値の数は、インデックス オブジェクトの基数とも呼ばれます。 DistinctCount プロパティが、特定の時点でキーの実際の数を常に反映していないされます。 たとえば、トランザクションのロールバックによって発生する変更は反映されませんすぐに DistinctCount プロパティに。 詳細については、DAO ヘルプの「DistinctCount プロパティ」を参照してください。  
+ Indicates the number of unique values for the index object that are included in the associated table. Check the DistinctCount property to determine the number of unique values, or keys, in an index. Any key is counted only once, even though there may be multiple occurrences of that value if the index permits duplicate values. This information is useful in applications that attempt to optimize data access by evaluating index information. The number of unique values is also known as the cardinality of an index object. The DistinctCount property will not always reflect the actual number of keys at a particular time. For example, a change caused by a transaction rollback will not be reflected immediately in the DistinctCount property. For more information, see the topic "DistinctCount Property" in DAO Help.  
   
-## <a name="remarks"></a>コメント  
- プライマリ、セカンダリ データベースを上記のすべての参照がによって情報が返される方法を示す、`GetIndexInfo`クラスのメンバー関数[どちら](../../mfc/reference/cdaotabledef-class.md#getindexinfo)と[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md#getindexinfo)します。  
+## <a name="remarks"></a>Remarks  
+ The references to Primary, Secondary, and All above indicate how the information is returned by the `GetIndexInfo` member function in classes [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md#getindexinfo) and [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md#getindexinfo).  
   
- Index オブジェクトは、MFC クラスでは表されません。 DAO オブジェクト クラスの基になる MFC オブジェクトの代わりに、[どちら](../../mfc/reference/cdaotabledef-class.md)または[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)インデックス コレクションと呼ばれるインデックス オブジェクトのコレクションが含まれています。 これらのクラスを指定のインデックスについては、個々 の項目にアクセスするメンバー関数またはで一度にすべてにアクセスすることができます、`CDaoIndexInfo`オブジェクトを呼び出して、`GetIndexInfo`親オブジェクトのメンバー関数。  
+ Index objects are not represented by an MFC class. Instead, DAO objects underlying MFC objects of class [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) or [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) contain a collection of index objects, called the Indexes collection. These classes supply member functions to access individual items of index information, or you can access them all at once with a `CDaoIndexInfo` object by calling the `GetIndexInfo` member function of the containing object.  
   
- `CDaoIndexInfo`コンス トラクターとデストラクターが正しく割り当ておよび割り当て解除のインデックスのフィールド情報は、するために`m_pFieldInfos`します。  
+ `CDaoIndexInfo` has a constructor and a destructor in order to properly allocate and deallocate the index field information in `m_pFieldInfos`.  
   
- によって取得される情報、`GetIndexInfo`テーブル定義オブジェクトのメンバー関数は、`CDaoIndexInfo`構造体。 呼び出す、 `GetIndexInfo` index オブジェクトが格納されているコレクションのインデックスを持つ親テーブル定義オブジェクトのメンバー関数。 `CDaoIndexInfo`定義して、`Dump`デバッグでのメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoIndexInfo`オブジェクトです。  
+ Information retrieved by the `GetIndexInfo` member function of a tabledef object is stored in a `CDaoIndexInfo` structure. Call the `GetIndexInfo` member function of the containing tabledef object in whose Indexes collection the index object is stored. `CDaoIndexInfo` also defines a `Dump` member function in debug builds. You can use `Dump` to dump the contents of a `CDaoIndexInfo` object.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDaoTableDef::GetIndexInfo](../../mfc/reference/cdaotabledef-class.md#getindexinfo)
 
 

@@ -1,40 +1,59 @@
 ---
-title: "ツリー コントロールの親項目と子項目 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "子項目 (ツリー コントロールの)"
-  - "CTreeCtrl クラス, 親項目と子項目"
-  - "親項目 (CTreeCtrl の)"
-  - "ツリー コントロール, 親項目と子項目"
+title: Tree Control Parent and Child Items | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- parent items in CTreeCtrl [MFC]
+- child items in tree control [MFC]
+- CTreeCtrl class [MFC], parent and child items
+- tree controls [MFC], parent and child items
 ms.assetid: abcea1e4-fe9b-40d9-86dc-1db235f8f103
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツリー コントロールの親項目と子項目
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 823c7ce4bf946d8698b670f3c8b014d7dec1d7e9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) の項目である子項目という名前が関連付けられたサブ項目のリストができます。  一つ以上の子項目を含む項目は親項目と呼ばれます。  子項目が親項目の下に表示され、表示するインデントする親への依存関係があることを示しています。  親がない項目は階層構造の最上位にあり、ルート項目と呼ばれます。  
+---
+# <a name="tree-control-parent-and-child-items"></a>Tree Control Parent and Child Items
+Any item in a tree control ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) can have a list of subitems, which are called child items, associated with it. An item that has one or more child items is called a parent item. A child item is displayed below its parent item and is indented to indicate it is subordinate to the parent. An item that has no parent is at the top of the hierarchy and is called a root item.  
   
- 常に、親項目の子項目のリストの状態は、展開または折りたたむことができます。  状態を展開すると、子項目が親項目の下に表示されます。  これが折りたたまれると、子項目は表示されません。  リストが展開され、折りたたまれた状態のときに、ユーザーが親項目に関連付けられたボタンをクリックすると、親は **TVS\_HASBUTTONS** のスタイルが、ユーザーが親項目をダブルクリックしたときに切り替えを行いますが。  アプリケーションは [展開](../Topic/CTreeCtrl::Expand.md) メンバー関数を使用して、子項目を展開または折りたたむことができます。  
+ At any given time, the state of a parent item's list of child items can be either expanded or collapsed. When the state is expanded, the child items are displayed below the parent item. When it is collapsed, the child items are not displayed. The list automatically toggles between the expanded and collapsed states when the user double-clicks the parent item or, if the parent has the **TVS_HASBUTTONS** style, when the user clicks the button associated with the parent item. An application can expand or collapse the child items by using the [Expand](../mfc/reference/ctreectrl-class.md#expand) member function.  
   
- ツリー コントロールに [InsertItem](../Topic/CTreeCtrl::InsertItem.md) のメンバー関数を呼び出すことにより、項目の追加をクリックします。  この関数の戻り値は、その項目を識別する **HTREEITEM** 型のハンドル。  項目を追加すると、新しい項目の親項目ハンドルを指定する必要があります。  `hParent`[TVINSERTSTRUCT](http://msdn.microsoft.com/library/windows/desktop/bb773452) 構造体またはパラメーターに親項目ハンドルの代わりに **NULL** または **TVI\_ROOT** 値を指定した場合、その項目はルート項目として追加されます。  
+ You add an item to a tree control by calling the [InsertItem](../mfc/reference/ctreectrl-class.md#insertitem) member function. This function returns a handle of the **HTREEITEM** type, which uniquely identifies the item. When adding an item, you must specify the handle of the new item's parent item. If you specify **NULL** or the **TVI_ROOT** value instead of a parent item handle in the [TVINSERTSTRUCT](http://msdn.microsoft.com/library/windows/desktop/bb773452) structure or `hParent` parameter, the item is added as a root item.  
   
- ツリー コントロールは、親項目の子アイテムの一覧は表示されず、展開または折りたたまれると [TVN\_ITEMEXPANDING](http://msdn.microsoft.com/library/windows/desktop/bb773537) 通知メッセージを送信します。  通知は変更しないようにするか、または子項目のリストの状態に依存する親項目属性を設定することができます。  一覧の状態を変更すると、ツリー コントロールは [TVN\_ITEMEXPANDED](http://msdn.microsoft.com/library/windows/desktop/bb773533) 通知メッセージを送信します。  
+ A tree control sends a [TVN_ITEMEXPANDING](http://msdn.microsoft.com/library/windows/desktop/bb773537) notification message when a parent item's list of child items is about to be expanded or collapsed. The notification gives you the opportunity to prevent the change or to set any attributes of the parent item that depend on the state of the list of child items. After changing the state of the list, the tree control sends a [TVN_ITEMEXPANDED](http://msdn.microsoft.com/library/windows/desktop/bb773533) notification message.  
   
- 子項目のリストを展開すると、親項目を基準としてインデントを設定します。  [SetIndent](../Topic/CTreeCtrl::SetIndent.md) メンバー関数を使用してインデントの量を設定または [GetIndent](../Topic/CTreeCtrl::GetIndent.md) メンバー関数を使用して現在の値を取得できます。  
+ When a list of child items is expanded, it is indented relative to the parent item. You can set the amount of indentation by using the [SetIndent](../mfc/reference/ctreectrl-class.md#setindent) member function or retrieve the current amount by using the [GetIndent](../mfc/reference/ctreectrl-class.md#getindent) member function.  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

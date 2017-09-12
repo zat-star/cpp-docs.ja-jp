@@ -1,36 +1,55 @@
 ---
-title: "ツリー コントロールの項目の情報 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, 項目情報"
-  - "ツリー コントロール, 項目情報"
+title: Tree Control Item Information | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- tree controls [MFC], item information
+- CTreeCtrl class [MFC], item information
 ms.assetid: 8dcab855-27de-49e9-95d8-f78ba963ea71
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツリー コントロールの項目の情報
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 23e6483ee3e660a15c11767292e249f5fae07fb1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) にコントロール内の項目に関する情報を取得するいくつかのメンバー関数があります。  [GetItem](../Topic/CTreeCtrl::GetItem.md) のメンバー関数は、項目に関連付けられたデータの一部またはすべてを取得します。  このデータは、項目の子項目の状態、イメージ、テキスト、数値、およびアプリケーション定義の 32 ビット データ値を含めることができます。  その項目に関連付けられたデータの一部またはすべてを設定できる [SetItem](../Topic/CTreeCtrl::SetItem.md) の関数があります。  
+---
+# <a name="tree-control-item-information"></a>Tree Control Item Information
+Tree controls ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) have a number of member functions that retrieve information about items in the control. The [GetItem](../mfc/reference/ctreectrl-class.md#getitem) member function retrieves some or all of the data associated with an item. This data could include the item's text, state, images, count of child items, and an application-defined 32-bit data value. There is also a [SetItem](../mfc/reference/ctreectrl-class.md#setitem) function that can set some or all of the data associated with an item.  
   
- [GetItemState](../Topic/CTreeCtrl::GetItemState.md)、[GetItemText](../Topic/CTreeCtrl::GetItemText.md)、[GetItemData](../Topic/CTreeCtrl::GetItemData.md)と [GetItemImage](../Topic/CTreeCtrl::GetItemImage.md) のメンバー関数は、項目の属性を取得します。  これらの各関数に項目の属性を設定するための対応する Set 関数があります。  
+ The [GetItemState](../mfc/reference/ctreectrl-class.md#getitemstate), [GetItemText](../mfc/reference/ctreectrl-class.md#getitemtext), [GetItemData](../mfc/reference/ctreectrl-class.md#getitemdata), and [GetItemImage](../mfc/reference/ctreectrl-class.md#getitemimage) member functions retrieve individual attributes of an item. Each of these functions has a corresponding Set function for setting the attributes of an item.  
   
- [GetNextItem](../Topic/CTreeCtrl::GetNextItem.md) のメンバー関数は、現在の項目に指定された関係を持つツリー コントロール項目を取得します。  この関数でその項目の親、次または前の最初に表示されるアイテムの子アイテムを取得できます。  、ツリーを走査するメンバー関数が使用されています: [GetRootItem](../Topic/CTreeCtrl::GetRootItem.md)、[GetFirstVisibleItem](../Topic/CTreeCtrl::GetFirstVisibleItem.md)、[GetNextVisibleItem](../Topic/CTreeCtrl::GetNextVisibleItem.md)、[GetPrevVisibleItem](../Topic/CTreeCtrl::GetPrevVisibleItem.md)、[GetChildItem](../Topic/CTreeCtrl::GetChildItem.md)、[GetNextSiblingItem](../Topic/CTreeCtrl::GetNextSiblingItem.md)、[GetPrevSiblingItem](../Topic/CTreeCtrl::GetPrevSiblingItem.md)、[GetParentItem](../Topic/CTreeCtrl::GetParentItem.md)、[GetSelectedItem](../Topic/CTreeCtrl::GetSelectedItem.md)と [GetDropHilightItem](../Topic/CTreeCtrl::GetDropHilightItem.md)。  
+ The [GetNextItem](../mfc/reference/ctreectrl-class.md#getnextitem) member function retrieves the tree control item that bears the specified relationship to the current item. This function can retrieve an item's parent, the next or previous visible item, the first child item, and so on. There are also member functions to traverse the tree: [GetRootItem](../mfc/reference/ctreectrl-class.md#getrootitem), [GetFirstVisibleItem](../mfc/reference/ctreectrl-class.md#getfirstvisibleitem), [GetNextVisibleItem](../mfc/reference/ctreectrl-class.md#getnextvisibleitem), [GetPrevVisibleItem](../mfc/reference/ctreectrl-class.md#getprevvisibleitem), [GetChildItem](../mfc/reference/ctreectrl-class.md#getchilditem), [GetNextSiblingItem](../mfc/reference/ctreectrl-class.md#getnextsiblingitem), [GetPrevSiblingItem](../mfc/reference/ctreectrl-class.md#getprevsiblingitem), [GetParentItem](../mfc/reference/ctreectrl-class.md#getparentitem), [GetSelectedItem](../mfc/reference/ctreectrl-class.md#getselecteditem), and [GetDropHilightItem](../mfc/reference/ctreectrl-class.md#getdrophilightitem).  
   
- [GetItemRect](../Topic/CTreeCtrl::GetItemRect.md) のメンバー関数は、ツリー コントロール項目の外接する四角形を取得します。  [GetCount](../Topic/CTreeCtrl::GetCount.md) と [GetVisibleCount](../Topic/CTreeCtrl::GetVisibleCount.md) メンバー関数はツリー コントロール項目の数、およびツリー コントロール ウィンドウに現在表示されている項目の数を個別に取得します。  特定の項目が [EnsureVisible](../Topic/CTreeCtrl::EnsureVisible.md) のメンバー関数を呼び出して、表示されることを確認できます。  
+ The [GetItemRect](../mfc/reference/ctreectrl-class.md#getitemrect) member function retrieves the bounding rectangle for a tree control item. The [GetCount](../mfc/reference/ctreectrl-class.md#getcount) and [GetVisibleCount](../mfc/reference/ctreectrl-class.md#getvisiblecount) member functions retrieve a count of the items in a tree control and a count of the items that are currently visible in the tree control's window, respectively. You can ensure that a particular item is visible by calling the [EnsureVisible](../mfc/reference/ctreectrl-class.md#ensurevisible) member function.  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

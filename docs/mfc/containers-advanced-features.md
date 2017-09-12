@@ -1,83 +1,102 @@
 ---
-title: "コンテナー : 高度な機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コンテナー/サーバー アプリケーション [C++]"
-  - "コンテナー [C++], 高度な機能"
-  - "コンテナー [C++], コンテナー アプリケーション"
-  - "コンテナー [C++], リンク (OLE 埋め込みオブジェクトに)"
-  - "埋め込みオブジェクト [C++]"
-  - "リンク [C++], 埋め込み OLE オブジェクトへの"
-  - "OLE コンテナー, 高度な機能"
-  - "OLE コントロール, コンテナー"
-  - "サーバー/コンテナー アプリケーション"
+title: 'Containers: Advanced Features | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- links [MFC], to embedded OLE objects
+- containers [MFC], links to embedded OLE objects
+- containers [MFC], advanced features
+- container/server applications [MFC]
+- embedded objects [MFC]
+- OLE controls [MFC], containers
+- OLE containers [MFC], advanced features
+- server/container applications [MFC]
+- containers [MFC], container applications
 ms.assetid: 221fd99c-b138-40fa-ad6a-974e3b3ad1f8
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンテナー : 高度な機能
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c598d96f64dc309cbd80797879c3810bdd21d235
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、既存のコンテナー アプリケーションに省略可能な高度な機能を組み込むために必要な手順について説明します。  これらの機能は次のとおりです。:  
+---
+# <a name="containers-advanced-features"></a>Containers: Advanced Features
+This article describes the steps necessary to incorporate optional advanced features into existing container applications. These features are:  
   
--   [コンテナーとサーバーの両方のアプリケーション](#_core_creating_a_container.2f.server_application)  
+-   [An application that is both a container and a server](#_core_creating_a_container_server_application)  
   
--   [OLE 埋め込みオブジェクトへのリンク](#_core_links_to_embedded_objects)  
+-   [An OLE link to an embedded object](#_core_links_to_embedded_objects)  
   
-##  <a name="_core_creating_a_container.2f.server_application"></a> コンテナーとサーバー アプリケーションの作成  
- コンテナーとサーバー アプリケーションはコンテナーとサーバーの両方として機能するアプリケーションです。  Windows の Microsoft Word は、この一例です。  他のアプリケーションで Windows のドキュメントの単語を埋め込み、Windows のドキュメントの Word で項目を埋め込むことができます。  完全なコンテナーとサーバーの両方の組み合わせ \(コンテナー\/ミニサーバーのアプリケーションを作成することはできません\) となるコンテナー アプリケーションを変更する処理は、フル サーバーを作成するプロセスに似ています。  
+##  <a name="_core_creating_a_container_server_application"></a> Creating a Container/Server Application  
+ A container/server application is an application that acts as both a container and a server. Microsoft Word for Windows is an example of this. You can embed Word for Windows documents in other applications, and you can also embed items in Word for Windows documents. The process for modifying your container application to be both a container and a full server (you cannot create a combination container/miniserver application) is similar to the process for creating a full server.  
   
- 記事 [サーバー: サーバーの実装](../mfc/servers-implementing-a-server.md) はアプリケーション サーバーを実装するために必要な多数のタスクを一覧表示します。  コンテナーにコンテナー アプリケーションとサーバー アプリケーションを変換する場合は、同じタスクを実行する必要があり、コードをコンテナーに追加します。  次に考慮するために重要なことをリストします:  
+ The article [Servers: Implementing a Server](../mfc/servers-implementing-a-server.md) lists a number of tasks required to implement a server application. If you convert a container application to a container/server application, then you need to perform some of those same tasks, adding code to the container. The following lists the important things to consider:  
   
--   アプリケーション ウィザードで作成されるコンテナー コードは既に OLE サブシステムを初期化します。  このサポートのあらゆる変更または追加する必要はありません。  
+-   The container code created by the application wizard already initializes the OLE subsystem. You will not need to change or add anything for that support.  
   
--   常にドキュメント クラスの基本クラスが `COleServerDoc`に `COleDocument`、変更する基本クラスです。  
+-   Wherever the base class of a document class is `COleDocument`, change the base class to `COleServerDoc`.  
   
--   サーバー自体が編集に使用されているのに項目を編集できるように `COleClientItem::CanActivate` をオーバーライドします。  
+-   Override `COleClientItem::CanActivate` to avoid editing items in place while the server itself is being used to edit in place.  
   
-     たとえば、MFC のサンプル [OCLIENT](../top/visual-cpp-samples.md) は OLE コンテナーとサーバー アプリケーションで作成した項目が埋め込まれています。  OCLIENT アプリケーションを開き、埋め込み先アイテムをコンテナーとサーバー アプリケーションで作成した編集します。  アプリケーションで項目を編集している間は、MFC サンプルの OLE [HIERSVR](../top/visual-cpp-samples.md)によって作成される項目を埋め込むことを決定します。  これを行うには、埋め込み先編集の有効化を使用できません。  完全にこの項目をアクティブにするために HIERSVR を開く必要があります。  Microsoft Foundation Class ライブラリがこの OLE 機能をサポートしていないため、`COleClientItem::CanActivate` をオーバーライドすると、この状況がチェックされ、アプリケーションの可能なランタイム エラーの発生を防ぐことができます。  
+     For example, the MFC OLE sample [OCLIENT](../visual-cpp-samples.md) has embedded an item created by your container/server application. You open the OCLIENT application and in-place edit the item created by your container/server application. While editing your application's item, you decide you want to embed an item created by the MFC OLE sample [HIERSVR](../visual-cpp-samples.md). To do this, you cannot use in-place activation. You must fully open HIERSVR to activate this item. Because the Microsoft Foundation Class Library does not support this OLE feature, overriding `COleClientItem::CanActivate` allows you to check for this situation and prevent a possible run-time error in your application.  
   
- 新しいアプリケーションを作成して、コンテナーとサーバー アプリケーションとして機能する場合は、アプリケーション ウィザードやこのサポートの OLE オプション ダイアログ ボックスのオプションが自動的に作成されることを選択します。  詳細については、記事 [概要: ActiveX コントロール コンテナーの作成](../mfc/reference/creating-an-mfc-activex-control-container.md)を参照します。  MFC のサンプルについては、" MFC Samples "を参照してください。  
+ If you are creating a new application and want it to function as a container/server application, choose that option in the OLE Options dialog box in the application wizard and this support will be created automatically. For more information, see the article [Overview: Creating an ActiveX Control Container](../mfc/reference/creating-an-mfc-activex-control-container.md). For information about MFC samples, see MFC Samples.  
   
- それ自体に MDI アプリケーションを挿入できないことに注意してください。  コンテナーとサーバーのアプリケーションは、それ自体には、SDI アプリケーションである挿入できません。  
+ Note that you cannot insert an MDI application into itself. An application that is a container/server cannot be inserted into itself unless it is an SDI application.  
   
-##  <a name="_core_links_to_embedded_objects"></a> 埋め込みオブジェクトへのリンク  
- 埋め込みオブジェクトへのリンクは、コンテナー アプリケーション内の埋め込みオブジェクトに OLE リンクとドキュメントを作成するには、有効なユーザーを提供します。  たとえば、埋め込まれたなスプレッドシートを含むワード プロセッサでドキュメントを作成します。  アプリケーションのサポートに埋め込みオブジェクトにリンクする場合は、ワード プロセッサのドキュメントに含まれるスプレッドシートにリンクを貼り付けることができます。  この機能は、アプリケーションがワード プロセッサを最初に描画を取得した文字列でスプレッドシートに含まれる情報を使用できるようになります。  
+##  <a name="_core_links_to_embedded_objects"></a> Links to Embedded Objects  
+ The Links to Embedded Objects feature enables a user to create a document with an OLE link to an embedded object inside your container application. For example, create a document in a word processor containing an embedded spreadsheet. If your application supports links to embedded objects, it could paste a link to the spreadsheet contained in the word processor's document. This feature allows your application to use the information contained in the spreadsheet without knowing where the word processor originally got it.  
   
-#### アプリケーションの埋め込みオブジェクトにリンクするには  
+#### <a name="to-link-to-embedded-objects-in-your-application"></a>To link to embedded objects in your application  
   
-1.  `COleDocument`の代わりに `COleLinkingDoc` ドキュメントからクラスを派生してください。  
+1.  Derive your document class from `COleLinkingDoc` instead of `COleDocument`.  
   
-2.  OLE 開発ツールに含まれるクラス ID のジェネレーターを使用してアプリケーションの OLE クラス ID \(**CLSID**\) を作成します。  
+2.  Create an OLE class ID (**CLSID**) for your application by using the Class ID Generator included with the OLE Development Tools.  
   
-3.  OLE アプリケーションを登録します。  
+3.  Register the application with OLE.  
   
-4.  アプリケーション クラスのメンバーとして `COleTemplateServer` オブジェクトを作成します。  
+4.  Create a `COleTemplateServer` object as a member of your application class.  
   
-5.  アプリケーション クラスの `InitInstance` のメンバー関数では、次の手順を実行します。:  
+5.  In your application class's `InitInstance` member function, do the following:  
   
-    -   オブジェクトの `ConnectTemplate` のメンバー関数を呼び出すことによって、ドキュメント テンプレートへの `COleTemplateServer` オブジェクトを追加します。  
+    -   Connect your `COleTemplateServer` object to your document templates by calling the object's `ConnectTemplate` member function.  
   
-    -   OLE システムのすべてのクラス オブジェクトを登録するために **COleTemplateServer::RegisterAll** メンバー関数を呼び出します。  
+    -   Call the **COleTemplateServer::RegisterAll** member function to register all class objects with the OLE system.  
   
-    -   `COleTemplateServer::UpdateRegistry` を呼び出します。  `UpdateRegistry` の唯一のパラメーターは、アプリケーションが「\/Embedded」 `OAT_CONTAINER` スイッチで起動する必要があります。  これは、埋め込みオブジェクトにリンクするコンテナーとしてアプリケーションを登録します。  
+    -   Call `COleTemplateServer::UpdateRegistry`. The only parameter to `UpdateRegistry` should be `OAT_CONTAINER` if the application is not launched with the "/Embedded" switch. This registers the application as a container that can support links to embedded objects.  
   
-         アプリケーションを「\/Embedded」スイッチによって起動される場合、サーバー アプリケーションと同様のメイン ウィンドウを示す必要があります。  
+         If the application is launched with the "/Embedded" switch, it should not show its main window, similar to a server application.  
   
- MFC の OLE [OCLIENT](../top/visual-cpp-samples.md) サンプルでは、この機能を実装します。  例については、これがどのようにするか、このサンプル アプリケーションで OCLIENT.CPP ファイルの `InitInstance` 関数を参照してください。  
+ The MFC OLE sample [OCLIENT](../visual-cpp-samples.md) implements this feature. For an example of how this is done, see the `InitInstance` function in the OCLIENT.CPP file of this sample application.  
   
-## 参照  
- [コンテナー](../mfc/containers.md)   
- [サーバー](../mfc/servers.md)
+## <a name="see-also"></a>See Also  
+ [Containers](../mfc/containers.md)   
+ [Servers](../mfc/servers.md)
+
+

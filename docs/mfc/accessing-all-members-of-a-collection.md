@@ -1,86 +1,107 @@
 ---
-title: "コレクションの全メンバーへのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, コレクション"
-  - "列挙型 [MFC]"
-  - "列挙 (コレクションを)"
-  - "コレクション, アクセス"
-  - "コレクション クラス, アクセス (メンバーに)"
-  - "配列 [C++], 反復処理"
-  - "反復, コレクション"
-  - "メンバー アクセス, コレクション"
-  - "リスト コレクションの繰り返し"
-  - "MFC コレクション クラス, アクセス (メンバーに)"
-  - "コレクション, ループ"
-  - "ループ構造, ループ (複数のコレクションの間での)"
+title: Accessing All Members of a Collection | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, collections
+- enumerations [MFC]
+- enumerating collections [MFC]
+- collections [MFC], accessing
+- collection classes [MFC]
+- accessing members"
+- arrays [MFC], iterating
+- iteration [MFC], collections
+- member access [MFC], collections
+- list collection iteration [MFC]s
+- MFC collection classes [MFC], accessing members
+- collections [MFC], looping through
+- loop structures [MFC], looping through collections
 ms.assetid: 7bbae518-062e-4393-81f9-b22abd2e5f59
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コレクションの全メンバーへのアクセス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4fd4aa1189b62b6689795ef1ba4ac2585cfcb059
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC の配列コレクション クラスでは、テンプレート クラスでも非テンプレート クラスでも、インデックスを使って要素にアクセスします。 MFC のリスト コレクション クラスおよびマップ コレクション クラスでは、テンプレート クラスでも非テンプレート クラスでも、**POSITION** 型のインジケーターを使ってコレクション内の位置を指定します。 そのコレクションの 1 つ以上のメンバーにアクセスするには、まず、ポジション インジケーターを初期化し、次にそのポジションを繰り返しコレクションに渡して、次の要素の位置を問い合わせます。 コレクションは、反復の進行に関する状態情報を保持していません。 この情報は、ポジション インジケーターで保持されます。 ただし、特定のポジションについては、コレクションはそのポジションの次の要素を返します。  
+---
+# <a name="accessing-all-members-of-a-collection"></a>Accessing All Members of a Collection
+The MFC array collection classes — both template-based and not — use indexes to access their elements. The MFC list and map collection classes — both template-based and not — use an indicator of type **POSITION** to describe a given position within the collection. To access one or more members of these collections, you first initialize the position indicator and then repeatedly pass that position to the collection and ask it to return the next element. The collection is not responsible for maintaining state information about the progress of the iteration. That information is kept in the position indicator. But, given a particular position, the collection is responsible for returning the next element.  
   
- 次に、MFC が提供する代表的な 3 種類のコレクションに対する反復処理について説明します。  
+ The following procedures show how to iterate over the three main types of collections provided with MFC:  
   
--   [配列の反復処理](#_core_to_iterate_an_array)  
+-   [Iterating an array](#_core_to_iterate_an_array)  
   
--   [リストの反復処理](#_core_to_iterate_a_list)  
+-   [Iterating a list](#_core_to_iterate_a_list)  
   
--   [マップの反復処理](#_core_to_iterate_a_map)  
+-   [Iterating a map](#_core_to_iterate_a_map)  
   
-### 配列を反復処理するには  
+### <a name="_core_to_iterate_an_array"></a> To iterate an array  
   
-1.  連続したインデックス番号を使用して、`GetAt` メンバー関数を呼び出します。  
+1.  Use sequential index numbers with the `GetAt` member function:  
   
-     [!code-cpp[NVC_MFCCollections#12](../mfc/codesnippet/CPP/accessing-all-members-of-a-collection_1.cpp)]  
+     [!code-cpp[NVC_MFCCollections#12](../mfc/codesnippet/cpp/accessing-all-members-of-a-collection_1.cpp)]  
   
-     この例では、`CPerson` オブジェクトへのポインターを格納する型付きポインター配列を使っています。 この配列は、定義済みの非テンプレート クラスである `CObArray` クラスから派生しています。`GetAt` は `CPerson` オブジェクトへのポインターを返します。 型付きポインター コレクション クラスの場合は、配列でもリストでも、最初のパラメーターで基本クラスを指定し、2 番目のパラメーターで格納するデータの型を指定します。  
+     This example uses a typed pointer array that contains pointers to `CPerson` objects. The array is derived from class `CObArray`, one of the nontemplate predefined classes. `GetAt` returns a pointer to a `CPerson` object. For typed pointer collection classes — arrays or lists — the first parameter specifies the base class; the second parameter specifies the type to store.  
   
-     また、一般的な配列サブスクリプト構文を使用して配列の要素にアクセスできるように、`CTypedPtrArray` クラスでは、さらに **\[ \]** 演算子をオーバーロードします。 上記の `for` ループ本体のステートメントは、次のように書き換えることができます。  
+     The `CTypedPtrArray` class also overloads the **[ ]** operator so that you can use the customary array-subscript syntax to access elements of an array. An alternative to the statement in the body of the `for` loop above is  
   
-     [!code-cpp[NVC_MFCCollections#13](../mfc/codesnippet/CPP/accessing-all-members-of-a-collection_2.cpp)]  
+     [!code-cpp[NVC_MFCCollections#13](../mfc/codesnippet/cpp/accessing-all-members-of-a-collection_2.cpp)]  
   
-     この演算子は **const** バージョンと非 **const** バージョンがあります。**const** バージョンは、**const** の配列に対して呼び出され、代入ステートメントの右側にのみ表示されます。  
+     This operator exists in both **const** and non-**const** versions. The **const** version, which is invoked for **const** arrays, can appear only on the right side of an assignment statement.  
   
-### リストを反復処理するには  
+### <a name="_core_to_iterate_a_list"></a> To iterate a list  
   
-1.  リスト内の項目を順に処理するには、`GetHeadPosition` メンバー関数と `GetNext` メンバー関数を使用します。  
+1.  Use the member functions `GetHeadPosition` and `GetNext` to work your way through the list:  
   
-     [!code-cpp[NVC_MFCCollections#14](../mfc/codesnippet/CPP/accessing-all-members-of-a-collection_3.cpp)]  
+     [!code-cpp[NVC_MFCCollections#14](../mfc/codesnippet/cpp/accessing-all-members-of-a-collection_3.cpp)]  
   
-     この例では、型付きポインター リストを使用して、`CPerson` オブジェクトへのポインターを格納します。 リストの宣言は、「[配列を反復処理するには](#_core_to_iterate_an_array)」の配列に対する宣言に似ていますが、`CObList` クラスから派生しています。`GetNext` は `CPerson` オブジェクトへのポインターを返します。  
+     This example uses a typed pointer list to contain pointers to `CPerson` objects. The list declaration resembles the one for the array in the procedure [To iterate an array](#_core_to_iterate_an_array) but is derived from class `CObList`. `GetNext` returns a pointer to a `CPerson` object.  
   
-### マップを反復処理するには  
+### <a name="_core_to_iterate_a_map"></a> To iterate a map  
   
-1.  `GetStartPosition` を使用してマップの先頭位置に移動し、`GetNextAssoc` を使用して、次のキーと値をマップから順次取得します。次に例を示します。  
+1.  Use `GetStartPosition` to get to the beginning of the map and `GetNextAssoc` to repeatedly get the next key and value from the map, as shown by the following example:  
   
-     [!code-cpp[NVC_MFCCollections#15](../mfc/codesnippet/CPP/accessing-all-members-of-a-collection_4.cpp)]  
+     [!code-cpp[NVC_MFCCollections#15](../mfc/codesnippet/cpp/accessing-all-members-of-a-collection_4.cpp)]  
   
-     この例では、型付きポインター コレクションではなく、簡単なマップ テンプレートを使用しています。このテンプレートは、`CString` 型のキーを使用し、`CPerson` オブジェクトへのポインターを格納します。`GetNextAssoc` などのアクセス関数を使用すると、`CPerson` オブジェクトへのポインターが返されます。 非テンプレート マップ コレクションを使用すると、返された `CObject` ポインターを、`CPerson` へのポインターにキャストする必要があります。  
+     This example uses a simple map template (rather than a typed pointer collection) that uses `CString` keys and stores pointers to `CPerson` objects. When you use access functions such as `GetNextAssoc`, the class provides pointers to `CPerson` objects. If you use one of the nontemplate map collections instead, you must cast the returned `CObject` pointer to a pointer to a `CPerson`.  
   
     > [!NOTE]
-    >  非テンプレート マップの場合、コンパイラには、`GetNextAssoc` の最後のパラメーターとして `CObject` ポインターへの参照が必要です。 入力時には、ポインターをその型にキャストする必要があります。次に例を示します。  
+    >  For nontemplate maps, the compiler requires a reference to a `CObject` pointer in the last parameter to `GetNextAssoc`. On input, you must cast your pointers to that type, as shown in the next example.  
   
-     テンプレートを使用すると、よりシンプルなソリューションが実現し、タイプ セーフもさらに確実になります。 テンプレートを使用しないコードは、次のようにより複雑になります。  
+     The template solution is simpler and helps provide better type safety. The nontemplate code is more complicated, as you can see here:  
   
-     [!code-cpp[NVC_MFCCollections#16](../mfc/codesnippet/CPP/accessing-all-members-of-a-collection_5.cpp)]  
+     [!code-cpp[NVC_MFCCollections#16](../mfc/codesnippet/cpp/accessing-all-members-of-a-collection_5.cpp)]  
   
- 詳細については、「[CObject コレクションの全オブジェクトの削除](../Topic/Deleting%20All%20Objects%20in%20a%20CObject%20Collection.md)」を参照してください。  
+ For more information, see [Deleting All Objects in a CObject Collection](../mfc/deleting-all-objects-in-a-cobject-collection.md).  
   
-## 参照  
- [コレクション クラス](../mfc/collections.md)
+## <a name="see-also"></a>See Also  
+ [Collections](../mfc/collections.md)
+
+

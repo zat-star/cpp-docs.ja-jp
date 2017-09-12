@@ -1,66 +1,84 @@
 ---
-title: "テクニカル ノート 48: MFC データベース アプリケーション用の ODBC セットアップおよび管理プログラムの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.odbc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インストール (ODBC を)"
-  - "MFC, データベース アプリケーション"
-  - "ODBC, および MFC"
-  - "ODBC, インストール"
-  - "セットアップ, ODBC セットアップ プログラム"
-  - "TN048"
+title: 'TN048: Writing ODBC Setup and Administration Programs for MFC Database Applications | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.odbc
+dev_langs:
+- C++
+helpviewer_keywords:
+- installing ODBC
+- ODBC, installing
+- setup, ODBC setup programs
+- TN048
+- ODBC, and MFC
+- MFC, database applications
 ms.assetid: d456cdd4-0513-4a51-80c0-9132b66115ce
 caps.latest.revision: 9
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# テクニカル ノート 48: MFC データベース アプリケーション用の ODBC セットアップおよび管理プログラムの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0b7ccc6afffa028589ddc86e9f0a6124425aa0d8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn048-writing-odbc-setup-and-administration-programs-for-mfc-database-applications"></a>TN048: Writing ODBC Setup and Administration Programs for MFC Database Applications
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- MFC データベース クラスを使用するアプリケーションを、ODBC コンポーネントをインストールするセットアップ プログラムを必要とします。  また、既定ドライバーを指定し、データ ソースを設定するために使用できるドライバーについての情報を、取得する ODBC プログラムの管理が必要な場合があります。  ここでは、ODBC のインストーラー API の使用をこれらのプログラムの作成について説明します。  
+ Applications using MFC database classes will need a setup program that installs ODBC components. They may also need an ODBC Administration program that will retrieve information about the available drivers, to specify default drivers and to configure data sources. This note describes the use of the ODBC Installer API to write these programs.  
   
-##  <a name="_mfcnotes_writing_an_odbc_setup_program"></a> ODBC のセットアップ プログラムを作成できます。  
- MFC データベース アプリケーションは ODBC ドライバー マネージャー \(ODBC.DLL\) と ODBC ドライバーがデータ ソースにより要求します。  多くの ODBC ドライバーが追加およびネットワーク通信 DLL が必要です。  ほとんどの ODBC ドライバーは、ODBC の必須コンポーネントをインストールするセットアップ プログラムが付属しています。  MFC データベース クラスを使用してアプリケーションを開発する場合は、T:  
+##  <a name="_mfcnotes_writing_an_odbc_setup_program"></a> Writing an ODBC Setup Program  
+ An MFC database application requires the ODBC Driver Manager (ODBC.DLL) and ODBC drivers to be able to get to data sources. Many ODBC drivers also require additional network and communication DLLs. Most ODBC drivers ship with a setup program that will install the required ODBC components. Application developers using MFC database classes can:  
   
--   ODBC コンポーネントをインストールするためのドライバー固有のセットアップ プログラムを使用します。  これは、パート開発者のさらに作業を、ドライバーのセットアップ プログラムを再配布する必要はありません。  
+-   Rely on the driver-specific setup programs for installing ODBC components. This will require no further work on the developer's part — you can just redistribute the driver's setup program.  
   
--   また、ODBC ドライバー マネージャーとドライバーをインストールする独自のセットアップ プログラムを作成できます。  
+-   Alternatively, you can write your own setup program, which will install the driver manager and the driver.  
   
- ODBC インストーラー API でアプリケーション固有のセットアップ プログラムを作成するために使用できます。  インストーラー API 関数は、ODBC のインストーラー DLL — ODBCINST.DLL と Win32 の 16 ビットの Windows ODBCCP32.DLL によって実装されます。  アプリケーションは、ODBC ドライバー マネージャー、ODBC ドライバーと必要な変換をインストールするための **SQLInstallODBC** DLL を呼び出すことができます。  次に、ODBCINST.INI ファイル レコード \(または NT レジストリにインストールされているドライバーと変換を呼び出します。  **SQLInstallODBC** は、インストールされるドライバーの一覧が表示され、各ドライバーを構成するファイルを記述する ODBC.INF ファイルへの完全パスが必要です。  また、ドライバー マネージャー、および変換に関する同様の情報が含まれています。  ODBC.INF ファイルはドライバー開発者によって通常提供されます。  
+ The ODBC installer API can be used to write application-specific setup programs. The functions in the installer API are implemented by the ODBC installer DLL — ODBCINST.DLL on 16-bit Windows and ODBCCP32.DLL on Win32. An application can call **SQLInstallODBC** in the installer DLL, which will install the ODBC driver manager, ODBC drivers, and any required translators. It then records the installed drivers and translators in the ODBCINST.INI file (or the registry, on NT). **SQLInstallODBC** requires the full path to the ODBC.INF file, which contains the list of drivers to be installed and describes the files that comprise each driver. It also contains similar information about the driver manager and translators. ODBC.INF files are typically supplied by driver developers.  
   
- プログラムでは、個別の ODBC コンポーネントをインストールできます。  ドライバー マネージャーをクリックし、プログラムの最初の呼び出し **SQLInstallDriverManager** ドライバー マネージャーのターゲット ディレクトリを取得するインストーラー DLL にインストールします。  これは、通常、Windows DLL が格納されているディレクトリです。  プログラムは ODBC.INF ファイルの ODBC ドライバー マネージャー\[\]セクションで、セットアップ ディスクからこのディレクトリにドライバー マネージャーと関連ファイルをコピーするために情報を使用します。  個々のドライバーをプログラミングの最初の呼び出し **SQLInstallDriver** ODBCINST.INI ファイルまたは NT レジストリにドライバー固有\) を追加するには、インストーラー DLL にインストールします。  **SQLInstallDriver** は ドライバーのターゲット ディレクトリ— Windows DLL が存在する通常ディレクトリ\) を返します。  プログラムは、ドライバーの ODBC.INF ファイルのセクションで、セットアップ ディスクからこのディレクトリにドライバー DLL と関連ファイルをコピーするために情報を使用します。  
+ A program can also install individual ODBC components. To install the Driver Manager, a program first calls **SQLInstallDriverManager** in the installer DLL to get the target directory for the Driver Manager. This is usually the directory in which Windows DLLs reside. The program then uses the information in the [ODBC Driver Manager] section of the ODBC.INF file to copy the Driver Manager and related files from the installation disk to this directory. To install an individual driver, a program first calls **SQLInstallDriver** in the installer DLL to add the driver specification to the ODBCINST.INI file (or the registry, on NT). **SQLInstallDriver** returns the driver's target directory — usually the directory in which Windows DLLs reside. The program then uses the information in the driver's section of the ODBC.INF file to copy the driver DLL and related files from the installation disk to this directory.  
   
- ODBC.INF、ODBCINST.INI とインストーラー API を使用する詳細については、ODBC SDK *Programmer's Reference の* 19 番目の ODBC のソフトウェアをインストールする章を参照します。  
+ For more information on ODBC.INF, ODBCINST.INI and using the installer API, see ODBC SDK *Programmer's Reference,* Chapter 19, Installing ODBC Software.  
   
-##  <a name="_mfcnotes_writing_an_odbc_administrator"></a> ODBC データ ソース アドミニストレーターを記述できます。  
- MFC データベース アプリケーションに次の 2 とおりの方法の 1 種類の ODBC データ ソースをセットアップおよび構成する:  
+##  <a name="_mfcnotes_writing_an_odbc_administrator"></a> Writing an ODBC Administrator  
+ An MFC database application can set up and configure ODBC data sources in one of two ways, as follows:  
   
--   ODBC データ ソース アドミニストレーターを使用して \(プログラムまたはコントロール パネル項目として使用可能\)。  
+-   Use the ODBC Administrator (available as a program or as a Control Panel item).  
   
--   データ ソースを構成する独自のプログラムを作成します。  
+-   Create your own program to configure data sources.  
   
- データ ソースを構成するプログラムはインストーラーに DLL 関数を呼び出します。  インストーラー DLL はデータ ソースを構成するセットアップ DLL を呼び出します。  各ドライバーでは 1 種類のセットアップされた DLL があります。; これは、ドライバー DLL 自体または別の DLL である場合があります。  セットアップ DLL はドライバーがデータ ソースおよび既定の変換に接続する必要がある情報の入力を促しますサポートされる。  次に、ODBC.INI 呼び出し \(ファイルまたはレジストリ\) の情報を記録するには、インストーラーの DLL と Windows API を示します。  
+ A program that configures data sources makes function calls to the installer DLL. The installer DLL calls a setup DLL to configure a data source. There is one setup DLL for each driver; it may be the driver DLL itself, or a separate DLL. The setup DLL prompts the user for information that the driver needs to connect to the data source and the default translator, if supported. It then calls the installer DLL and Windows APIs to record this information in the ODBC.INI file (or registry).  
   
- ユーザーが追加できるダイアログ ボックスを表示するには、変更したデータ ソース、DLL のインストーラー プログラム **SQLManageDataSources** 呼び出しを削除します。  この関数は、インストーラー DLL がコントロール パネルから呼び出されたときに呼び出されます。  追加するには、変更したり、データ ソース、データ ソースに関連付けられているドライバーのセットアップ DLL の **SQLManageDataSources** の呼び出し **ConfigDSN** を削除します。  直接追加するには、変更したり、データ ソース、DLL のインストーラー プログラム **SQLConfigDataSource** 呼び出しを削除します。  プログラムでデータ ソースと実行するアクションを指定するオプションの名前を渡します。  **SQLConfigDataSource** は セットアップ DLL の **ConfigDSN** を呼び出し、それに **SQLConfigDataSource**から引数を渡します。  
+ To display a dialog box with which a user can add, modify, and delete data sources, a program calls **SQLManageDataSources** in the installer DLL. This function is invoked when the installer DLL is called from the Control Panel. To add, modify, or delete a data source, **SQLManageDataSources** calls **ConfigDSN** in the setup DLL for the driver associated with that data source. To directly add, modify, or delete data sources, a program calls **SQLConfigDataSource** in the installer DLL. The program passes the name of the data source and an option that specifies the action to take. **SQLConfigDataSource** calls **ConfigDSN** in the setup DLL and passes it the arguments from **SQLConfigDataSource**.  
   
- 詳細については、ODBC SDK *Programmer's Reference、* Chapter 23、セットアップ DLL 関数リファレンス、第 24 のインストーラー DLL 関数リファレンス章を参照します。  
+ For more information, see ODBC SDK *Programmer's Reference,* Chapter 23, Setup DLL Function Reference, and Chapter 24, Installer DLL Function Reference.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

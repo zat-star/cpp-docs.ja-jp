@@ -1,5 +1,5 @@
 ---
-title: "MFC で使用するコールバック関数 |Microsoft ドキュメント"
+title: Callback Functions Used by MFC | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,10 +13,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- callback functions, MFC
+- callback functions [MFC], MFC
 - MFC, callback functions
-- functions [C++], callback
-- callback functions
+- functions [MFC], callback
+- callback functions [MFC]
 ms.assetid: b2a6857c-fdd3-45ec-8fd8-2e71fac77582
 caps.latest.revision: 11
 author: mikeblome
@@ -36,29 +36,29 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d4b97ed874b145f9c6d9a9536476243bba0fd1c1
-ms.openlocfilehash: 08c6f547c95adb4c6794ec71259888d390e42e92
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d02fd24240aae6eba247052120d387e4e0219d11
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/06/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="callback-functions-used-by-mfc"></a>MFC で使われているコールバック関数
-次の&3; つのコールバック関数は、Microsoft Foundation Class ライブラリに表示されます。 これらのコールバック関数に渡す[cdc::enumobjects](../../mfc/reference/cdc-class.md#enumobjects)、 [cdc::graystring](../../mfc/reference/cdc-class.md#graystring)、および[cdc::setabortproc](../../mfc/reference/cdc-class.md#setabortproc)します。 すべてのコールバック関数がコールバックの境界を越えて例外がスローされることはできませんので、Windows に復帰する前に MFC の例外をトラップする必要があることに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)します。  
+# <a name="callback-functions-used-by-mfc"></a>Callback Functions Used by MFC
+Three callback functions appear in the Microsoft Foundation Class Library. These callback functions are passed to [CDC::EnumObjects](../../mfc/reference/cdc-class.md#enumobjects), [CDC::GrayString](../../mfc/reference/cdc-class.md#graystring), and [CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc). Note that all callback functions must trap MFC exceptions before returning to Windows, since exceptions cannot be thrown across callback boundaries. For more information about exceptions, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
 
-|名前||  
+|Name||  
 |----------|-----------------|  
-|[CDC::EnumObjects 用コールバック関数](#enum_objects)||  
-|[CDC::GrayString 用コールバック関数](#graystring)||
-|[CDC::SetAbortProc 用コールバック関数](#setabortproc)|| 
+|[Callback Function for CDC::EnumObjects](#enum_objects)||  
+|[Callback Function for CDC::GrayString](#graystring)||
+|[Callback Function for CDC::SetAbortProc](#setabortproc)|| 
 
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h 
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h 
 
-## <a name="enum_objects"></a>Cdc::enumobjects 用コールバック関数
-*ObjectFunc*名は、アプリケーションによって提供される関数名のプレース ホルダーです。  
+## <a name="enum_objects"></a> Callback Function for CDC::EnumObjects
+The *ObjectFunc* name is a placeholder for the application-supplied function name.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 int CALLBACK EXPORT ObjectFunc(
@@ -66,23 +66,23 @@ int CALLBACK EXPORT ObjectFunc(
     LPSTR* lpData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszLogObject*  
- 指す、 [LOGPEN](../../mfc/reference/logpen-structure.md)または[LOGBRUSH](../../mfc/reference/logbrush-structure.md)オブジェクトの論理属性に関する情報を格納するデータ構造です。  
+ Points to a [LOGPEN](../../mfc/reference/logpen-structure.md) or [LOGBRUSH](../../mfc/reference/logbrush-structure.md) data structure that contains information about the logical attributes of the object.  
   
  `lpData`  
- アプリケーションによって提供されるデータへのポインターが渡される、`EnumObjects`関数です。  
+ Points to the application-supplied data passed to the `EnumObjects` function.  
   
-### <a name="return-value"></a>戻り値  
- コールバック関数の結果、`int`です。 この戻り値の値は、ユーザー定義です。 コールバック関数は 0 を返した場合`EnumObjects`早期の列挙を停止します。  
+### <a name="return-value"></a>Return Value  
+ The callback function returns an `int`. The value of this return is user-defined. If the callback function returns 0, `EnumObjects` stops enumeration early.  
   
-### <a name="remarks"></a>コメント  
- 実際の名前をエクスポートする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The actual name must be exported.  
   
-## <a name="graystring"></a>Cdc::graystring 用コールバック関数
-*OutputFunc*アプリケーションによって提供されるコールバック関数名のプレース ホルダーです。  
+## <a name="graystring"></a>  Callback Function for CDC::GrayString
+*OutputFunc* is a placeholder for the application-supplied callback function name.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 BOOL CALLBACK EXPORT OutputFunc(
@@ -91,26 +91,26 @@ BOOL CALLBACK EXPORT OutputFunc(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- 少なくともビットマップ メモリ デバイス コンテキストを識別する幅と高さで指定された`nWidth`と`nHeight`に`GrayString`します。  
+ Identifies a memory device context with a bitmap of at least the width and height specified by `nWidth` and `nHeight` to `GrayString`.  
   
  `lpData`  
- 描画される文字列を指します。  
+ Points to the character string to be drawn.  
   
  `nCount`  
- 出力する文字数を指定します。  
+ Specifies the number of characters to output.  
   
-### <a name="return-value"></a>戻り値  
- コールバック関数の戻り値である必要があります**TRUE**成功した場合は以外の場合は**FALSE**します。  
+### <a name="return-value"></a>Return Value  
+ The callback function's return value must be **TRUE** to indicate success; otherwise it is **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- コールバック関数 (*OutputFunc*) 座標 (0,&0;) を基準としたイメージを描画する必要がなく (*x*、 *y*)。  
+### <a name="remarks"></a>Remarks  
+ The callback function (*OutputFunc*) must draw an image relative to the coordinates (0,0) rather than (*x*, *y*).  
 
-## <a name="setabortproc"></a>Cdc::setabortproc 用コールバック関数
-名前*AbortFunc*はアプリケーションによって提供される関数名のプレース ホルダーです。  
+## <a name="setabortproc"></a>  Callback Function for CDC::SetAbortProc
+The name *AbortFunc* is a placeholder for the application-supplied function name.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 BOOL CALLBACK EXPORT AbortFunc(
@@ -118,24 +118,21 @@ BOOL CALLBACK EXPORT AbortFunc(
     int code);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *hPr*  
- デバイス コンテキストを識別します。  
+ Identifies the device context.  
   
  `code`  
- エラーが発生したかどうかを指定します。 エラーが発生していない場合は 0 になります。 **させることでより**プリント マネージャーがディスク領域が不足が現在、多くのディスク領域は、アプリケーションが待機する場合は、使用可能になる場合。 場合`code`は**させることでより**アプリケーションは、印刷ジョブを中断する必要はありません。 そうでない場合に呼び出すことによって、印刷マネージャーを生成する必要があります、 **PeekMessage**または**GetMessage** Windows の機能です。  
+ Specifies whether an error has occurred. It is 0 if no error has occurred. It is **SP_OUTOFDISK** if the Print Manager is currently out of disk space and more disk space will become available if the application waits. If `code` is **SP_OUTOFDISK**, the application does not have to abort the print job. If it does not, it must yield to the Print Manager by calling the **PeekMessage** or **GetMessage** Windows function.  
   
-### <a name="return-value"></a>戻り値  
- 中止ハンドラー関数の戻り値は、印刷ジョブは、続行する場合は 0 以外および 0 が取り消された場合です。  
+### <a name="return-value"></a>Return Value  
+ The return value of the abort-handler function is nonzero if the print job is to continue, and 0 if it is canceled.  
   
-### <a name="remarks"></a>コメント  
- 」の「解説」セクションの説明に従って実際名前をエクスポートする必要があります[cdc::setabortproc](../../mfc/reference/cdc-class.md#setabortproc)します。  
+### <a name="remarks"></a>Remarks  
+ The actual name must be exported as described in the Remarks section of [CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc).  
  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](structures-styles-callbacks-and-message-maps.md)
- [cdc::enumobjects](../../mfc/reference/cdc-class.md#enumobjects)
- [cdc::setabortproc](../../mfc/reference/cdc-class.md#setabortproc)
- [cdc::graystring](../../mfc/reference/cdc-class.md#graystring)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](structures-styles-callbacks-and-message-maps.md) [CDC::EnumObjects](../../mfc/reference/cdc-class.md#enumobjects) [CDC::SetAbortProc](../../mfc/reference/cdc-class.md#setabortproc) [CDC::GrayString](../../mfc/reference/cdc-class.md#graystring)
 
 

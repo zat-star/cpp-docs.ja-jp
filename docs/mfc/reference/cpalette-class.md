@@ -1,5 +1,5 @@
 ---
-title: "CPalette クラス |Microsoft ドキュメント"
+title: CPalette Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,9 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CPalette class
-- HPALETTE
-- color palettes, MFC
+- CPalette [MFC], CPalette
+- CPalette [MFC], AnimatePalette
+- CPalette [MFC], CreateHalftonePalette
+- CPalette [MFC], CreatePalette
+- CPalette [MFC], FromHandle
+- CPalette [MFC], GetEntryCount
+- CPalette [MFC], GetNearestPaletteIndex
+- CPalette [MFC], GetPaletteEntries
+- CPalette [MFC], ResizePalette
+- CPalette [MFC], SetPaletteEntries
 ms.assetid: 8cd95498-53ed-4852-85e1-70e522541114
 caps.latest.revision: 23
 author: mikeblome
@@ -46,69 +53,69 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 6ccd389eaf765993c59311cc1041893f2cf9fbfa
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2408f0701ee3fc7b4eb702ab024fc261443a5b40
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cpalette-class"></a>CPalette クラス
-Windows のカラー パレットをカプセル化します。  
+# <a name="cpalette-class"></a>CPalette Class
+Encapsulates a Windows color palette.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CPalette : public CGdiObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPalette::CPalette](#cpalette)|構築、`CPalette`ない接続されている Windows のパレットを持つオブジェクト。 初期化する必要があります、`CPalette`を使用する前に、初期化のメンバー関数のいずれかを持つオブジェクト。|  
+|[CPalette::CPalette](#cpalette)|Constructs a `CPalette` object with no attached Windows palette. You must initialize the `CPalette` object with one of the initialization member functions before it can be used.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPalette::AnimatePalette](#animatepalette)|識別される論理パレット内のエントリを置き換える、`CPalette`オブジェクトです。 アプリケーションが、クライアント領域を更新する Windows システム パレットに新しいエントリをすぐにマップされるためです。|  
-|[CPalette::CreateHalftonePalette](#createhalftonepalette)|デバイス コンテキストのハーフトーン パレットを作成し、それにアタッチ、`CPalette`オブジェクトです。|  
-|[CPalette::CreatePalette](#createpalette)|Windows のカラー パレットを作成し、それをアタッチ、`CPalette`オブジェクトです。|  
-|[CPalette::FromHandle](#fromhandle)|ポインターを返す、 `CPalette` Windows パレット オブジェクトへのハンドルが指定されるとします。|  
-|[CPalette::GetEntryCount](#getentrycount)|論理パレットのパレット エントリの数を取得します。|  
-|[CPalette::GetNearestPaletteIndex](#getnearestpaletteindex)|論理パレットに色の値に最も近いエントリのインデックスを返します。|  
-|[CPalette::GetPaletteEntries](#getpaletteentries)|論理パレットのパレット エントリの範囲を取得します。|  
-|[CPalette::ResizePalette](#resizepalette)|指定された論理パレットのサイズを変更、`CPalette`エントリ数を指定するオブジェクト。|  
-|[CPalette::SetPaletteEntries](#setpaletteentries)|論理パレット内のエントリの範囲内には、RGB 色の値とフラグを設定します。|  
+|[CPalette::AnimatePalette](#animatepalette)|Replaces entries in the logical palette identified by the `CPalette` object. The application does not have to update its client area, because Windows maps the new entries into the system palette immediately.|  
+|[CPalette::CreateHalftonePalette](#createhalftonepalette)|Creates a halftone palette for the device context and attaches it to the `CPalette` object.|  
+|[CPalette::CreatePalette](#createpalette)|Creates a Windows color palette and attaches it to the `CPalette` object.|  
+|[CPalette::FromHandle](#fromhandle)|Returns a pointer to a `CPalette` object when given a handle to a Windows palette object.|  
+|[CPalette::GetEntryCount](#getentrycount)|Retrieves the number of palette entries in a logical palette.|  
+|[CPalette::GetNearestPaletteIndex](#getnearestpaletteindex)|Returns the index of the entry in the logical palette that most closely matches a color value.|  
+|[CPalette::GetPaletteEntries](#getpaletteentries)|Retrieves a range of palette entries in a logical palette.|  
+|[CPalette::ResizePalette](#resizepalette)|Changes the size of the logical palette specified by the `CPalette` object to the specified number of entries.|  
+|[CPalette::SetPaletteEntries](#setpaletteentries)|Sets RGB color values and flags in a range of entries in a logical palette.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPalette::operator HPALETTE](#operator_hpalette)|返します。、`HPALETTE`に接続されている、`CPalette`です。|  
+|[CPalette::operator HPALETTE](#operator_hpalette)|Returns the `HPALETTE` attached to the `CPalette`.|  
   
-## <a name="remarks"></a>コメント  
- パレットでは、アプリケーションと (ディスプレイ デバイス) などの色の出力デバイス間のインターフェイスを提供します。 インターフェイスは、活用するために、出力デバイスの色の機能の重大な障害は他のアプリケーションで表示される色を妨げることがなくアプリケーションを使用します。 Windows は、アプリケーションの論理パレット (必要な色のリスト) と (を使用可能な色を定義) システム パレットを使用して、使用する色を決定します。  
+## <a name="remarks"></a>Remarks  
+ A palette provides an interface between an application and a color output device (such as a display device). The interface allows the application to take full advantage of the color capabilities of the output device without severely interfering with the colors displayed by other applications. Windows uses the application's logical palette (a list of needed colors) and the system palette (which defines available colors) to determine the colors used.  
   
- A`CPalette`オブジェクトによって参照されるパレットを操作するために、オブジェクトがメンバー関数を提供します。 構築、`CPalette`オブジェクトを実際のパレットのグラフィックス デバイス インターフェイス (GDI) オブジェクトを作成し、そのエントリとその他のプロパティを操作するメンバー関数を使用しています。  
+ A `CPalette` object provides member functions for manipulating the palette referred to by the object. Construct a `CPalette` object and use its member functions to create the actual palette, a graphics device interface (GDI) object, and to manipulate its entries and other properties.  
   
- 使用する方法について`CPalette`を参照してください[グラフィック オブジェクト](../../mfc/graphic-objects.md)します。  
+ For more information on using `CPalette`, see [Graphic Objects](../../mfc/graphic-objects.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CGdiObject](../../mfc/reference/cgdiobject-class.md)  
   
  `CPalette`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="animatepalette"></a>CPalette::AnimatePalette  
- 接続されている論理パレット内のエントリを置き換える、`CPalette`オブジェクトです。  
+##  <a name="animatepalette"></a>  CPalette::AnimatePalette  
+ Replaces entries in the logical palette attached to the `CPalette` object.  
   
 ```  
 void AnimatePalette(
@@ -117,110 +124,110 @@ void AnimatePalette(
     LPPALETTEENTRY lpPaletteColors);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStartIndex`  
- アニメーション化するパレットの最初のエントリを指定します。  
+ Specifies the first entry in the palette to be animated.  
   
  `nNumEntries`  
- アニメーション化パレット内のエントリの数を指定します。  
+ Specifies the number of entries in the palette to be animated.  
   
  `lpPaletteColors`  
- 配列の最初のメンバーを指す[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd162769)構造体によって識別されるパレット エントリを置き換え`nStartIndex`と`nNumEntries`です。  
+ Points to the first member of an array of [PALETTEENTRY](http://msdn.microsoft.com/library/windows/desktop/dd162769) structures to replace the palette entries identified by `nStartIndex` and `nNumEntries`.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを呼び出すと`AnimatePalette`がない、クライアント領域を更新する Windows システム パレットに新しいエントリをすぐにマップされるためです。  
+### <a name="remarks"></a>Remarks  
+ When an application calls `AnimatePalette`, it does not have to update its client area, because Windows maps the new entries into the system palette immediately.  
   
- `AnimatePalette`関数を持つエントリを変更するのみ、 **PC_RESERVED**フラグに対応する設定**palPaletteEntry**のメンバー、[保持](http://msdn.microsoft.com/library/windows/desktop/dd145040)構造に関連付けられている、`CPalette`オブジェクトです。 参照してください**保持**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、この構造体。  
+ The `AnimatePalette` function will only change entries with the **PC_RESERVED** flag set in the corresponding **palPaletteEntry** member of the [LOGPALETTE](http://msdn.microsoft.com/library/windows/desktop/dd145040) structure that is attached to the `CPalette` object. See **LOGPALETTE** in the Windows SDK for more information about this structure.  
   
-##  <a name="cpalette"></a>CPalette::CPalette  
- `CPalette` オブジェクトを構築します。  
+##  <a name="cpalette"></a>  CPalette::CPalette  
+ Constructs a `CPalette` object.  
   
 ```  
 CPalette();
 ```  
   
-### <a name="remarks"></a>コメント  
- オブジェクトを含んでいない添付パレットが呼び出されるまで`CreatePalette`にいずれかにアタッチします。  
+### <a name="remarks"></a>Remarks  
+ The object has no attached palette until you call `CreatePalette` to attach one.  
   
-##  <a name="createhalftonepalette"></a>CPalette::CreateHalftonePalette  
- デバイス コンテキストのハーフトーン パレットを作成します。  
+##  <a name="createhalftonepalette"></a>  CPalette::CreateHalftonePalette  
+ Creates a halftone palette for the device context.  
   
 ```  
 BOOL CreateHalftonePalette(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- デバイス コンテキストを識別します。  
+ Identifies the device context.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーション デバイス コンテキストの伸縮モードが設定されている場合に、ハーフトーン パレットを作成する**ハーフトーン**します。 によって返される論理ハーフトーン パレット、 [CreateHalftonePalette](http://msdn.microsoft.com/library/windows/desktop/dd183503)メンバー関数が選択および前に、デバイス コンテキストに実現し、必要がありますできる、 [CDC::StretchBlt](../../mfc/reference/cdc-class.md#stretchblt)または[StretchDIBits](http://msdn.microsoft.com/library/windows/desktop/dd145121)関数が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ An application should create a halftone palette when the stretching mode of a device context is set to **HALFTONE**. The logical halftone palette returned by the [CreateHalftonePalette](http://msdn.microsoft.com/library/windows/desktop/dd183503) member function should then be selected and realized into the device context before the [CDC::StretchBlt](../../mfc/reference/cdc-class.md#stretchblt) or [StretchDIBits](http://msdn.microsoft.com/library/windows/desktop/dd145121) function is called.  
   
- 参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細については`CreateHalftonePalette`と**StretchDIBits**します。  
+ See the Windows SDK for more information about `CreateHalftonePalette` and **StretchDIBits**.  
   
-##  <a name="createpalette"></a>CPalette::CreatePalette  
- 初期化、`CPalette`によって Windows の論理のカラー パレットの作成と追加するオブジェクト、`CPalette`オブジェクトです。  
+##  <a name="createpalette"></a>  CPalette::CreatePalette  
+ Initializes a `CPalette` object by creating a Windows logical color palette and attaching it to the `CPalette` object.  
   
 ```  
 BOOL CreatePalette(LPLOGPALETTE lpLogPalette);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpLogPalette`  
- 指す、[保持](http://msdn.microsoft.com/library/windows/desktop/dd145040)論理パレットの色に関する情報を格納する構造体。  
+ Points to a [LOGPALETTE](http://msdn.microsoft.com/library/windows/desktop/dd145040) structure that contains information about the colors in the logical palette.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細については、**保持**構造体。  
+### <a name="remarks"></a>Remarks  
+ See the Windows SDK for more information about the **LOGPALETTE** structure.  
   
-##  <a name="fromhandle"></a>CPalette::FromHandle  
- ポインターを返す、 `CPalette` Windows パレット オブジェクトへのハンドルが指定されるとします。  
+##  <a name="fromhandle"></a>  CPalette::FromHandle  
+ Returns a pointer to a `CPalette` object when given a handle to a Windows palette object.  
   
 ```  
 static CPalette* PASCAL FromHandle(HPALETTE hPalette);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hPalette`  
- Windows GDI のカラー パレットへのハンドル。  
+ A handle to a Windows GDI color palette.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CPalette`成功以外の場合は、オブジェクト**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CPalette` object if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- 場合、`CPalette`オブジェクトが、Windows のパレットが一時的に既にアタッチされていない`CPalette`オブジェクトが作成され、接続されています。 この一時`CPalette`だけですべて一時的なグラフィックを時間があるオブジェクトは削除されるまで、次回、アプリケーションのアイドル時間のイベント ループで、オブジェクトが有効です。 つまり、一時オブジェクトは&1; つのウィンドウ メッセージを処理中にのみ有効です。  
+### <a name="remarks"></a>Remarks  
+ If a `CPalette` object is not already attached to the Windows palette, a temporary `CPalette` object is created and attached. This temporary `CPalette` object is valid only until the next time the application has idle time in its event loop, at which time all temporary graphic objects are deleted. In other words, the temporary object is valid only during the processing of one window message.  
   
-##  <a name="getentrycount"></a>CPalette::GetEntryCount  
- 指定した論理パレット内のエントリの数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getentrycount"></a>  CPalette::GetEntryCount  
+ Call this member function to retrieve the number of entries in a given logical palette.  
   
 ```  
 int GetEntryCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 論理パレット内のエントリの数です。  
+### <a name="return-value"></a>Return Value  
+ Number of entries in a logical palette.  
   
-##  <a name="getnearestpaletteindex"></a>CPalette::GetNearestPaletteIndex  
- 指定した色の値に最も近い論理のパレットのエントリのインデックスを返します。  
+##  <a name="getnearestpaletteindex"></a>  CPalette::GetNearestPaletteIndex  
+ Returns the index of the entry in the logical palette that most closely matches the specified color value.  
   
 ```  
 UINT GetNearestPaletteIndex(COLORREF crColor) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 照合する色を指定します。  
+ Specifies the color to be matched.  
   
-### <a name="return-value"></a>戻り値  
- 論理パレット内のエントリのインデックス。 エントリには、指定した色に最も近い色が含まれています。  
+### <a name="return-value"></a>Return Value  
+ The index of an entry in a logical palette. The entry contains the color that most nearly matches the specified color.  
   
-##  <a name="getpaletteentries"></a>CPalette::GetPaletteEntries  
- 論理パレットのパレット エントリの範囲を取得します。  
+##  <a name="getpaletteentries"></a>  CPalette::GetPaletteEntries  
+ Retrieves a range of palette entries in a logical palette.  
   
 ```  
 UINT GetPaletteEntries(
@@ -229,55 +236,55 @@ UINT GetPaletteEntries(
     LPPALETTEENTRY lpPaletteColors) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStartIndex`  
- 取得する論理パレットの最初のエントリを指定します。  
+ Specifies the first entry in the logical palette to be retrieved.  
   
  `nNumEntries`  
- 論理パレットを取得するには、エントリの数を指定します。  
+ Specifies the number of entries in the logical palette to be retrieved.  
   
  `lpPaletteColors`  
- 配列を指す[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd162769)パレット エントリを受信するデータ構造体。 配列で指定された数は、少なくともデータ構造を含める必要があります`nNumEntries`します。  
+ Points to an array of [PALETTEENTRY](http://msdn.microsoft.com/library/windows/desktop/dd162769) data structures to receive the palette entries. The array must contain at least as many data structures as specified by `nNumEntries`.  
   
-### <a name="return-value"></a>戻り値  
- 論理パレット; から取得されたエントリ数関数が失敗した場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ The number of entries retrieved from the logical palette; 0 if the function failed.  
   
-##  <a name="operator_hpalette"></a>CPalette::operator HPALETTE  
- この演算子の接続されている Windows GDI ハンドルの取得を使用して、`CPalette`オブジェクトです。  
+##  <a name="operator_hpalette"></a>  CPalette::operator HPALETTE  
+ Use this operator to get the attached Windows GDI handle of the `CPalette` object.  
   
 ```  
 operator HPALETTE() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- かどうかは成功すると、Windows GDI オブジェクトへのハンドルによって表される、`CPalette`オブジェクト。 それ以外の場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ If successful, a handle to the Windows GDI object represented by the `CPalette` object; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- この演算子はキャスト演算子の`HPALETTE`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ This operator is a casting operator, which supports direct use of an `HPALETTE` object.  
   
- グラフィック オブジェクトの使い方の詳細については、記事を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about using graphic objects, see the article [Graphic Objects](http://msdn.microsoft.com/library/windows/desktop/dd144962) in the Windows SDK.  
   
-##  <a name="resizepalette"></a>CPalette::ResizePalette  
- 接続されている論理パレットのサイズを変更、`CPalette`オブジェクトで指定されたエントリの数を`nNumEntries`します。  
+##  <a name="resizepalette"></a>  CPalette::ResizePalette  
+ Changes the size of the logical palette attached to the `CPalette` object to the number of entries specified by `nNumEntries`.  
   
 ```  
 BOOL ResizePalette(UINT nNumEntries);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nNumEntries`  
- サイズ変更された後、パレット内のエントリの数を指定します。  
+ Specifies the number of entries in the palette after it has been resized.  
   
-### <a name="return-value"></a>戻り値  
- パレットが正しくサイズ変更された場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the palette was successfully resized; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを呼び出す場合`ResizePalette`には、パレットのサイズを減らすためには、サイズが変更されたパレットに残っているエントリは変更されていません。 アプリケーションを呼び出す場合`ResizePalette`パレットを拡大する追加パレット エントリは黒 (赤、緑、青の値はすべて 0) に設定され、その他のすべてのエントリのフラグが 0 に設定されます。  
+### <a name="remarks"></a>Remarks  
+ If an application calls `ResizePalette` to reduce the size of the palette, the entries remaining in the resized palette are unchanged. If the application calls `ResizePalette` to enlarge the palette, the additional palette entries are set to black (the red, green, and blue values are all 0), and the flags for all additional entries are set to 0.  
   
- Windows API の詳細については`ResizePalette`を参照してください[ため](http://msdn.microsoft.com/library/windows/desktop/dd162928)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information on the Windows API `ResizePalette`, see [ResizePalette](http://msdn.microsoft.com/library/windows/desktop/dd162928) in the Windows SDK.  
   
-##  <a name="setpaletteentries"></a>CPalette::SetPaletteEntries  
- 論理パレット内のエントリの範囲内には、RGB 色の値とフラグを設定します。  
+##  <a name="setpaletteentries"></a>  CPalette::SetPaletteEntries  
+ Sets RGB color values and flags in a range of entries in a logical palette.  
   
 ```  
 UINT SetPaletteEntries(
@@ -286,28 +293,28 @@ UINT SetPaletteEntries(
     LPPALETTEENTRY lpPaletteColors);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStartIndex`  
- 設定する論理パレットの最初のエントリを指定します。  
+ Specifies the first entry in the logical palette to be set.  
   
  `nNumEntries`  
- 設定する論理パレット内のエントリの数を指定します。  
+ Specifies the number of entries in the logical palette to be set.  
   
  `lpPaletteColors`  
- 配列を指す[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd162769)パレット エントリを受信するデータ構造体。 配列で指定された数は、少なくともデータ構造を含める必要があります`nNumEntries`します。  
+ Points to an array of [PALETTEENTRY](http://msdn.microsoft.com/library/windows/desktop/dd162769) data structures to receive the palette entries. The array must contain at least as many data structures as specified by `nNumEntries`.  
   
-### <a name="return-value"></a>戻り値  
- 論理パレット内のエントリの数を設定関数が失敗した場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ The number of entries set in the logical palette; 0 if the function failed.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを呼び出すとき、デバイス コンテキストに論理パレットを選択するかどうかは`SetPaletteEntries`、変更は反映されません、アプリケーションが[:realizepalette](../../mfc/reference/cdc-class.md#realizepalette)します。  
+### <a name="remarks"></a>Remarks  
+ If the logical palette is selected into a device context when the application calls `SetPaletteEntries`, the changes will not take effect until the application calls [CDC::RealizePalette](../../mfc/reference/cdc-class.md#realizepalette).  
   
- 詳細については、Windows 構造**受け取る**を参照してください[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd162769)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information on the Windows structure **PALETTEENTRY**, see [PALETTEENTRY](http://msdn.microsoft.com/library/windows/desktop/dd162769) in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル DIBLOOK](../../visual-cpp-samples.md)   
- [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
+## <a name="see-also"></a>See Also  
+ [MFC Sample DIBLOOK](../../visual-cpp-samples.md)   
+ [CGdiObject Class](../../mfc/reference/cgdiobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
  [CPalette::GetPaletteEntries](#getpaletteentries)   
  [CPalette::SetPaletteEntries](#setpaletteentries)
 

@@ -1,58 +1,77 @@
 ---
-title: "OLE サーバー クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.ole"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COM コンポーネント, クラス"
-  - "コンポーネント クラス"
-  - "OLE サーバー アプリケーション, サーバー クラス"
-  - "OLE サーバー ドキュメント"
+title: OLE Server Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE server applications [MFC], server classes
+- OLE server documents
+- COM components, classes [MFC]
+- component classes [MFC]
 ms.assetid: 8e9b67a2-c0ff-479c-a8d6-19b36c5e6fc6
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# OLE サーバー クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c5aa81cf501b54004e2f46760f0af3caff1c38e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのクラスは、サーバー アプリケーションによって使用されます。  サーバー ドキュメントは **CDocument**からではなく、`COleServerDoc` から派生されます。  `COleServerDoc` が `COleLinkingDoc`から派生されるため、サーバー ドキュメントには、そのリンク コンテナーである場合があることに注意してください。  
+---
+# <a name="ole-server-classes"></a>OLE Server Classes
+These classes are used by server applications. Server documents are derived from `COleServerDoc` rather than from **CDocument**. Note that because `COleServerDoc` is derived from `COleLinkingDoc`, server documents can also be containers that support linking.  
   
- `COleServerItem` クラスは別のドキュメントに埋め込むか、リンクできるドキュメントのドキュメントまたは部分を表します。  
+ The `COleServerItem` class represents a document or portion of a document that can be embedded in another document or linked to.  
   
- ドキュメント\/ビュー `COleTemplateServer` サポートが作成され、ほかのアプリケーションからの OLE オブジェクトを組み合わせるオブジェクトがコンテナーに編集できますが、`COleIPFrameWnd` と `COleResizeBar` は埋め込み先での編集をサポートします。  
+ `COleIPFrameWnd` and `COleResizeBar` support in-place editing while the object is in a container, and `COleTemplateServer` supports creation of document/view pairs so OLE objects from other applications can be edited.  
   
- [COleServerDoc](../Topic/COleServerDoc%20Class.md)  
- サーバー アプリケーションのドキュメント クラスの基本クラスとして使用されます。  `COleServerDoc` オブジェクトは `COleServerItem` オブジェクトを選択して、サーバー サポートの概要を示します。  ビジュアル編集機能は、クラス ライブラリのドキュメント\/ビュー アーキテクチャを使用して指定されます。  
+ [COleServerDoc](../mfc/reference/coleserverdoc-class.md)  
+ Used as the base class for server-application document classes. `COleServerDoc` objects provide the bulk of server support through interactions with `COleServerItem` objects. Visual editing capability is provided using the class library's document/view architecture.  
   
  [CDocItem](../mfc/reference/cdocitem-class.md)  
- `COleClientItem` と `COleServerItem`の抽象基本クラスです。  `CDocItem` からの派生クラスのオブジェクトは、文書内の部分を表します。  
+ Abstract base class of `COleClientItem` and `COleServerItem`. Objects of classes derived from `CDocItem` represent parts of documents.  
   
  [COleServerItem](../mfc/reference/coleserveritem-class.md)  
- `COleServerDoc` 項目に OLE インターフェイスを表すために使用されます。  通常、埋め込まれたなドキュメントの一部を表す `COleServerDoc` の 1 種類のオブジェクトがあります。  ドキュメントの一部であるへのリンクは、それらがドキュメントの部分にリンクを表す、`COleServerItem` の多くのオブジェクトというサーバー。  
+ Used to represent the OLE interface to `COleServerDoc` items. There is usually one `COleServerDoc` object, which represents the embedded part of a document. In servers that support links to parts of documents, there can be many `COleServerItem` objects, each of which represents a link to a portion of the document.  
   
  [COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md)  
- サーバー ドキュメントが編集されているビューにフレーム ウィンドウを指定します。  
+ Provides the frame window for a view when a server document is being edited in place.  
   
  [COleResizeBar](../mfc/reference/coleresizebar-class.md)  
- 埋め込み先でのサイズ変更に標準のユーザー インターフェイスが用意されています。  このクラスのオブジェクトは `COleIPFrameWnd` オブジェクトとともに使用されます。  
+ Provides the standard user interface for in-place resizing. Objects of this class are always used in conjunction with `COleIPFrameWnd` objects.  
   
  [COleTemplateServer](../mfc/reference/coletemplateserver-class.md)  
- フレームワークが提供するドキュメント\/ビュー アーキテクチャを使用してドキュメントを作成するために使用します。  作業に最も `COleTemplateServer` のオブジェクト委譲 `CDocTemplate` 関連のオブジェクトになります。  
+ Used to create documents using the framework's document/view architecture. A `COleTemplateServer` object delegates most of its work to an associated `CDocTemplate` object.  
   
  [COleException](../mfc/reference/coleexception-class.md)  
- OLE の例外処理でエラーが発生します。  このクラスは、コンテナーとサーバーの両方で使用されます。  
+ An exception resulting from a failure in OLE processing. This class is used by both containers and servers.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

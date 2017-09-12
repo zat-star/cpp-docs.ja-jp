@@ -1,58 +1,77 @@
 ---
-title: "ビューのスクロールと拡大/縮小 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "メッセージ ハンドラー"
-  - "メッセージ処理, スクロール バー (ビュー クラスの)"
-  - "拡大/縮小 (ビューを)"
-  - "スクロール バー, メッセージ"
-  - "スクロール可能なビュー"
+title: Scrolling and Scaling Views | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- message handlers [MFC]
+- scaling views [MFC]
+- message handling [MFC], scroll bars in view class [MFC]
+- scroll bars [MFC], messages
+- scrolling views [MFC]
 ms.assetid: f98a3421-c336-407e-97ee-dbb2ffd76fbd
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ビューのスクロールと拡大/縮小
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3ba8ef3c6b1eaa228d136289323209d8bf220023
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC に表示するフレーム ウィンドウのサイズが自動的にスケーリングされるビュー、スクロール ビューをサポートします。  クラス `CScrollView` はどちらのビューをサポートしています。  
+---
+# <a name="scrolling-and-scaling-views"></a>Scrolling and Scaling Views
+MFC supports views that scroll and views that are automatically scaled to the size of the frame window that displays them. Class `CScrollView` supports both kinds of views.  
   
- スクロールやスケーリングに関する詳細については、" *MFC リファレンス"の*" [CScrollView](../mfc/reference/cscrollview-class.md) クラスを参照します。  スクロールの例については、[Scribble サンプル](../top/visual-cpp-samples.md)を参照してください。  
+ For more information about scrolling and scaling, see class [CScrollView](../mfc/reference/cscrollview-class.md) in the *MFC Reference*. For a scrolling example, see the [Scribble sample](../visual-cpp-samples.md).  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   ビューのスクロール  
+-   Scrolling a view  
   
--   ビューの拡大  
+-   Scaling a view  
   
--   [\<caps:sentence id\="tgt8" sentenceid\="f321fcf7c88bc6e3f892ae0fc9b2f0d8" class\="tgtSentence"\>ビュー座標\<\/caps:sentence\>](http://msdn.microsoft.com/library/windows/desktop/dd145205)  
+-   [View coordinates](http://msdn.microsoft.com/library/windows/desktop/dd145205)  
   
-##  <a name="_core_scrolling_a_view"></a> ビューのスクロール  
- 多くの場合、文書のサイズはサイズが大きく表示できるビューです。  これはドキュメント データを生成したり、ユーザーがビューを構築するウィンドウを縮小するときに発生する可能性があります。  このような場合、スクロールをサポートする必要があります。  
+##  <a name="_core_scrolling_a_view"></a> Scrolling a View  
+ Frequently the size of a document is greater than the size its view can display. This may occur because the document's data increases or the user shrinks the window that frames the view. In such cases, the view must support scrolling.  
   
- どのビューで `OnHScroll` と `OnVScroll` のメンバー関数のスクロール バー メッセージを処理できます。  これらの関数のスクロール バー メッセージの処理をすると、すべての作業を自分で実装するか、のスクロールを処理するために `CScrollView` クラスを使用できます。  
+ Any view can handle scroll-bar messages in its `OnHScroll` and `OnVScroll` member functions. You can either implement scroll-bar message handling in these functions, doing all the work yourself, or you can use the `CScrollView` class to handle scrolling for you.  
   
- `CScrollView` は、次の処理を行います。  
+ `CScrollView` does the following:  
   
--   ウィンドウ、およびビューポートのサイズとマップ モード管理します。  
+-   Manages window and viewport sizes and mapping modes  
   
--   自動的にスクロール バー メッセージへの応答  
+-   Scrolls automatically in response to scroll-bar messages  
   
- \(ユーザーがスクロール バーの矢印ボタンをクリックしたときに\) 」または「ページのスクロールする量指定し、\(ユーザーがスクロール バー シャフトでクリックしたときに「row」\)。  ビューの性質に合うようにこれらの値を計画します。  たとえば、グラフィックスのビューの 1 ピクセル単位でテキスト ドキュメントの行の高さに基づいてインクリメントにスクロールする場合があります。  
+ You can specify how much to scroll for a "page" (when the user clicks in a scroll-bar shaft) and a "line" (when the user clicks in a scroll arrow). Plan these values to suit the nature of your view. For example, you might want to scroll in 1-pixel increments for a graphics view but in increments based on the line height in text documents.  
   
-##  <a name="_core_scaling_a_view"></a> ビューの拡大  
- ビューに自動的にフレーム ウィンドウのサイズに合わせる必要とスクロールの代わりにスケーリングに `CScrollView` を使用できます。  論理ビューは、ウィンドウのクライアント領域に完全に収まるように拡張または縮小。  スケーリングされたスクロール バーはありません。  
+##  <a name="_core_scaling_a_view"></a> Scaling a View  
+ When you want the view to automatically fit the size of its frame window, you can use `CScrollView` for scaling instead of scrolling. The logical view is stretched or shrunk to fit the window's client area exactly. A scaled view has no scroll bars.  
   
-## 参照  
- [ビューの使い方](../mfc/using-views.md)
+## <a name="see-also"></a>See Also  
+ [Using Views](../mfc/using-views.md)
+
+

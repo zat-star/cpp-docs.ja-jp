@@ -1,48 +1,67 @@
 ---
-title: "スライダー コントロールの通知メッセージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CSliderCtrl クラス, 通知"
-  - "メッセージ, 通知"
-  - "通知, CSliderCtrl"
-  - "スライダー コントロール, 通知メッセージ"
+title: Slider Notification Messages | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CSliderCtrl class [MFC], notifications
+- slider controls [MFC], notification messages
+- messages, notification
+- notifications [MFC], CSliderCtrl
 ms.assetid: b9121104-3889-4a10-92bf-f3723f1af9d0
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# スライダー コントロールの通知メッセージ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2d6a14233d3db646a6536bd11f276dbcf1aea937
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-スライダー コントロールでスライダー コントロールの方向に応じて、親 `WM_HSCROLL` または `WM_VSCROLL` メッセージを送信することによってユーザー アクションの親ウィンドウに通知します。  これらのメッセージを処理するには、親ウィンドウへ `WM_HSCROLL` と `WM_VSCROLL` メッセージのハンドラーを追加します。  [OnHScroll](../Topic/CWnd::OnHScroll.md) と [OnVScroll](../Topic/CWnd::OnVScroll.md) のメンバー関数は [CSliderCtrl](../mfc/reference/csliderctrl-class.md) オブジェクトは、スライダーの通知コード、位置、およびポインターに渡されます。  `CSliderCtrl` オブジェクトを指すポインターの型が **CScrollBar \*** であることに注意してください。  スライダー コントロールを処理する必要がある場合は、このポインターを型キャストが必要になる場合があります。  
+---
+# <a name="slider-notification-messages"></a>Slider Notification Messages
+A slider control notifies its parent window of user actions by sending the parent `WM_HSCROLL` or `WM_VSCROLL` messages, depending on the orientation of the slider control. To handle these messages, add handlers for the `WM_HSCROLL` and `WM_VSCROLL` messages to the parent window. The [OnHScroll](../mfc/reference/cwnd-class.md#onhscroll) and [OnVScroll](../mfc/reference/cwnd-class.md#onvscroll) member functions will be passed a notification code, the position of the slider, and a pointer to the [CSliderCtrl](../mfc/reference/csliderctrl-class.md) object. Note that the pointer is of type **CScrollBar \*** even though it points to a `CSliderCtrl` object. You may need to typecast this pointer if you need to manipulate the slider control.  
   
- スクロール バーの通知コードを使用するのではなく、スライダー コントロールは通知コードのセットを送信します。  スライダー コントロールは、ユーザーがスライダー コントロールでキーボードを使用してやり取りする場合にのみ **TB\_BOTTOM**、**TB\_LINEDOWN**、**TB\_LINEUP**と **TB\_TOP** 通知コードを送信します。  **TB\_THUMBPOSITION** と **TB\_THUMBTRACK** 通知メッセージは、マウスを使用しているときにだけ送られます。  **TB\_ENDTRACK**、**TB\_PAGEDOWN**と **TB\_PAGEUP** 通知コードはどちらの場合も、送信されます。  
+ Rather than using the scroll bar notification codes, slider controls send a different set of notification codes. A slider control sends the **TB_BOTTOM**, **TB_LINEDOWN**, **TB_LINEUP**, and **TB_TOP** notification codes only when the user interacts with a slider control by using the keyboard. The **TB_THUMBPOSITION** and **TB_THUMBTRACK** notification messages are only sent when the user is using the mouse. The **TB_ENDTRACK**, **TB_PAGEDOWN**, and **TB_PAGEUP** notification codes are sent in both cases.  
   
- 次の表では、スライダー コントロールの通知メッセージとイベント \(仮想キー コードまたはマウス イベント\)、これに送信される通知の一覧です。\(標準の仮想キー コードの一覧については、" Winuser.h を参照してください\)。  
+ The following table lists the slider control notification messages and the events (virtual key codes or mouse events) that cause the notifications to be sent. (For a list of standard virtual key codes, see Winuser.h.)  
   
-|通知メッセージ|イベント通知を送信します。|  
-|-------------|-------------------|  
-|**TB\_BOTTOM**|**VK\_END**|  
-|**TB\_ENDTRACK**|`WM_KEYUP` \(ユーザーは対応する仮想キー コードを送信するキーを離したとき\)|  
-|**TB\_LINEDOWN**|**VK\_RIGHT** または **VK\_DOWN**|  
-|**TB\_LINEUP**|**VK\_LEFT** または **VK\_UP**|  
-|**TB\_PAGEDOWN**|**VK\_NEXT** \(ユーザーはスライダー上または下の右側にチャネルをクリックする\)|  
-|**TB\_PAGEUP**|**VK\_PRIOR** \(ユーザーはスライダー上または左側のチャネルをクリックする\)|  
-|**TB\_THUMBPOSITION**|**TB\_THUMBTRACK** 通知メッセージの後`WM_LBUTTONUP`|  
-|**TB\_THUMBTRACK**|スライダーを動かして \(ユーザーはスライダーをドラッグ\)|  
-|**TB\_TOP**|**VK\_HOME**|  
+|Notification message|Event causing notification to be sent|  
+|--------------------------|-------------------------------------------|  
+|**TB_BOTTOM**|**VK_END**|  
+|**TB_ENDTRACK**|`WM_KEYUP` (the user released a key that sent a relevant virtual key code)|  
+|**TB_LINEDOWN**|**VK_RIGHT** or **VK_DOWN**|  
+|**TB_LINEUP**|**VK_LEFT** or **VK_UP**|  
+|**TB_PAGEDOWN**|**VK_NEXT** (the user clicked the channel below or to the right of the slider)|  
+|**TB_PAGEUP**|**VK_PRIOR** (the user clicked the channel above or to the left of the slider)|  
+|**TB_THUMBPOSITION**|`WM_LBUTTONUP` following a **TB_THUMBTRACK** notification message|  
+|**TB_THUMBTRACK**|Slider movement (the user dragged the slider)|  
+|**TB_TOP**|**VK_HOME**|  
   
-## 参照  
- [CSliderCtrl の使い方](../mfc/using-csliderctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CSliderCtrl](../mfc/using-csliderctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

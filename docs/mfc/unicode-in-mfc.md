@@ -1,68 +1,87 @@
 ---
-title: "MFC における Unicode | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文字列 [C++], Unicode"
-  - "Unicode [C++], 有効化"
-  - "Unicode [C++], MFC"
-  - "ワイド文字, エンコーディング"
-  - "ワイド文字, Unicode"
+title: Unicode in MFC | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- wide characters, Unicode
+- Unicode [MFC], MFC
+- wide characters, encoding
+- strings [MFC], Unicode
+- Unicode [MFC], enabling
 ms.assetid: 1002004b-4113-4380-bf63-e1570934b793
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# MFC における Unicode
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 66452e96c7ca61e3acad1ce1107b6ba24c0750b3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC は、Windows NT、Windows 2000、Windows XP の各プラットフォームのワイド文字をエンコードするための Unicode 規格をサポートします。  Unicode アプリケーションは Windows 98 プラットフォームで実行できません。  
+---
+# <a name="unicode-in-mfc"></a>Unicode in MFC
+MFC supports the Unicode standard for encoding wide characters on Windows NT, Windows 2000, and Windows XP platforms. Unicode applications cannot run on Windows 98 platforms.  
   
- Unicode バージョンの MFC ライブラリについて説明します。:  
+ The Unicode versions of the MFC libraries are described below:  
   
-### スタティック リンク ライブラリ  
+### <a name="static-link-libraries"></a>Static Link Libraries  
   
-|リリース|デバッグ|説明|  
-|----------|----------|--------|  
-|UAFXCW.lib、.pdb|UAFXCWD.lib、.pdb|Unicode MFC のスタティック リンク ライブラリ|  
+|Release|Debug|Description|  
+|-------------|-----------|-----------------|  
+|UAFXCW.lib, .pdb|UAFXCWD.lib, .pdb|Unicode MFC static link library|  
   
-### ダイナミック リンク ライブラリ \(DLL\)  
+### <a name="dynamic-link-libraries"></a>Dynamic-Link Libraries  
   
-|リリース|デバッグ|説明|  
-|----------|----------|--------|  
-|MFC100U.lib、.dbg の def、.dll、.map、.pdb、.prf|MFC100UD.lib、.def、.dll、.map、.pdb|Unicode MFC インポート ライブラリ ファイル \(拡張子の詳細については、次の説明を参照してください\)。|  
-|MFCS100U.lib、.pdb|MFCS100UD.lib、.pdb|アプリケーションや DLL に静的にリンクする必要のある Unicode MFC インポートを含むライブラリ コード|  
+|Release|Debug|Description|  
+|-------------|-----------|-----------------|  
+|MFC100U.lib, .dbg, def, .dll, .map, .pdb, .prf|MFC100UD.lib, .def, .dll, .map, .pdb|Unicode MFC import library (see notes below for explanation of file extensions)|  
+|MFCS100U.lib, .pdb|MFCS100UD.lib, .pdb|Unicode MFC import library containing code that must be statically linked in an application or DLL|  
   
- **ファイルの種類**  
+ **File Types**  
   
--   インポート ライブラリ \(.lib\) ファイルに拡張できます。  
+-   Import library files have the extension (.lib).  
   
--   ダイナミック リンク ライブラリ \(.dll\) ファイルに拡張できます。  
+-   Dynamic-link library files have the extension (.dll).  
   
--   モジュール定義 \(.def\) ファイルは、.exe または .dll を定義するためのステートメントを含むテキスト ファイルです。  
+-   Module definition (.def) files are text files that contain statements for defining an .exe or .dll.  
   
--   マップ \(.map\) ファイルはリンカーが使用する情報を含むテキスト ファイルがプログラムをリンクするとき。  
+-   Map (.map) files are text files that contain information that the linker uses when linking a program.  
   
--   ライブラリ ファイル \(.lib\) は DLL バージョンの MFC とともに使用されます。  これらのファイルは、アプリケーションまたは DLL に静的にリンクするコードが含まれています。  
+-   Library (.lib) files are used in conjunction with the DLL versions of MFC. These files contain code that must be statically linked in the application or DLL.  
   
--   プログラム データベース \(.pdb\) ファイルがデバッグおよびプロジェクトの状態情報を格納します。  
+-   Program database (.pdb) files contain debugging and project state information.  
   
--   \(デバッグ\) .dbg ファイルは、Visual C\+\+ のデバッガーを使用する CodeView\) を COFF \(FPO\) が含まれます。  
+-   Debug (.dbg) files contain information (COFF FPO, and CodeView) that the Visual C++ Debugger uses.  
   
- 名前付け規則の詳細については、「[ライブラリの名前付け規則](../Topic/Library%20Naming%20Conventions.md)」を参照してください。  
+ For detailed information on naming conventions, see [Library Naming Conventions](../mfc/library-naming-conventions.md).  
   
- MFC の Unicode の使用の詳細については、「[文字列: Unicode とマルチバイト文字セット \(MBCS\) のサポート](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md)」を参照してください。  
+ For information on using Unicode with MFC, see [Strings: Unicode and Multibyte Character Set (MBCS) Support](../atl-mfc-shared/unicode-and-multibyte-character-set-mbcs-support.md).  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)   
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)   
+ [General MFC Topics](../mfc/general-mfc-topics.md)
+
+

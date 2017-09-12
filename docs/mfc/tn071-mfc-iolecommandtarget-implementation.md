@@ -1,172 +1,192 @@
 ---
-title: "テクニカル ノート 71: MFC IOleCommandTarget の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IOleCommandTarget"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IOleCommandTarget インターフェイス"
-  - "TN071"
+title: 'TN071: MFC IOleCommandTarget Implementation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IOleCommandTarget
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN071 [MFC]
+- IOleCommandTarget interface [MFC]
 ms.assetid: 3eef571e-6357-444d-adbb-6f734a0c3161
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# テクニカル ノート 71: MFC IOleCommandTarget の実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0927e3a41b1626a2c2c78b28a18e939240ffcd12
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn071-mfc-iolecommandtarget-implementation"></a>TN071: MFC IOleCommandTarget Implementation
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- `IOleCommandTarget` インターフェイスは、オブジェクトを使用して、ディスパッチへのコンテナーは互いを表示します。  たとえば、オブジェクトのツール バーは、**印刷\[印刷プレビュー\]**、**\[保存\]**、`New`と **\[ズーム\]** などのコマンドのボタンが含まれる場合があります。  そのようなオブジェクトが `IOleCommandTarget`をサポートするコンテナーに埋め込まれている場合は、オブジェクトはボタンを有効にし、ユーザーがクリックした方法を処理するためのコンテナーにコマンドを送信する可能性があります。  コンテナーに埋め込みオブジェクトに出力する場合は埋め込みオブジェクトの `IOleCommandTarget` インターフェイスを通じてコマンドを送信することで、この要求を作成できます。  
+ The `IOleCommandTarget` interface enables objects and their containers to dispatch commands to each other. For example, an object's toolbars may contain buttons for commands such as **Print**, **Print Preview**, **Save**, `New`, and **Zoom**. If such an object were embedded in a container that supports `IOleCommandTarget`, the object could enable its buttons and forward the commands to the container for processing when the user clicked them. If a container wanted the embedded object to print itself, it could make this request by sending a command through the `IOleCommandTarget` interface of the embedded object.  
   
- `IOleCommandTarget` は サーバーのメソッドを呼び出すことをクライアントが使用するオートメーションに似たインターフェイスです。  ただし、`IOleCommandTarget` を使用してプログラマが `IDispatch`の `Invoke` \(通常は高いメソッドを使用する必要がないため、オートメーション インターフェイスに、呼び出しの作成のオーバーヘッドを格納します。  
+ `IOleCommandTarget` is an Automation-like interface in that it is used by a client to invoke methods on a server. However, using `IOleCommandTarget` saves the overhead of making calls via Automation interfaces because programmers don't have to use the typically expensive `Invoke` method of `IDispatch`.  
   
- MFC ではアクティブ ドキュメント コンテナーがサーバーにコマンドをディスパッチするように、`IOleCommandTarget` インターフェイスは Active ドキュメント サーバーで使用されます。  Active ドキュメント サーバーの `CDocObjectServerItem`クラス、インターフェイスでは、MFC \([TN038: MFC\/OLE IUnknown の実装](../mfc/tn038-mfc-ole-iunknown-implementation.md)を参照してください `IOleCommandTarget` インターフェイスを実装する型にマップされます。  
+ In MFC, the `IOleCommandTarget` interface is used by Active document servers to allow Active document containers to dispatch commands to the server. The Active document server class, `CDocObjectServerItem`, uses MFC interface maps (see [TN038: MFC/OLE IUnknown Implementation](../mfc/tn038-mfc-ole-iunknown-implementation.md)) to implement the `IOleCommandTarget` interface.  
   
- `IOleCommandTarget` は、**COleFrameHook** クラスで実装されます。  **COleFrameHook** は 埋め込み先での編集のコンテナーのフレーム ウィンドウの機能を実装する非公開のな MFC クラスです。  **COleFrameHook** は、`IOleCommandTarget` インターフェイスを実装するために MFC インターフェイス マップを使用します。  `COleDocObjectItem`への順方向の `IOleCommandTarget` の OLE コマンド\-派生の Active ドキュメント コンテナーの**COleFrameHook** の実装。  ここでは、MFC の Active ドキュメント コンテナーが含まれる Active ドキュメント サーバーからメッセージを受け取ることができます。  
+ `IOleCommandTarget` is also implemented in the **COleFrameHook** class. **COleFrameHook** is an undocumented MFC class that implements the frame window functionality of in-place editing containers. **COleFrameHook** also uses MFC interface maps to implement the `IOleCommandTarget` interface. **COleFrameHook**'s implementation of `IOleCommandTarget` forwards OLE commands to `COleDocObjectItem`-derived Active document containers. This allows any MFC Active document container to receive messages from contained Active document servers.  
   
-## MFC OLE コマンド マップ  
- MFC の開発者は、MFC OLE コマンド マップを使用して `IOleCommandTarget` を利用できます。  OLE コマンド マップでは、メッセージ マップなどのコマンド マップを含むクラスのメンバー関数の OLE コマンドを割り当てるために使用する可能性があるためです。  コマンド マップの作業、場所のマクロ OLE コマンドとコマンド ID を処理したいコマンドの OLE コマンド グループを指定する OLE コマンドを受け取ったときに送信 [WM\_COMMAND](http://msdn.microsoft.com/library/windows/desktop/ms647591) メッセージを行う。  MFC は、標準 OLE コマンドに多数の定義済みのマクロを提供します。  Microsoft Office アプリケーションで使用するために設計された標準 OLE コマンドの一覧については、docobj.h で定義されている OLECMDID の列挙体を参照してください。  
+## <a name="mfc-ole-command-maps"></a>MFC OLE Command Maps  
+ MFC developers can take advantage of `IOleCommandTarget` by using MFC OLE command maps. OLE command maps are like message maps because they can be used to map OLE commands to member functions of the class that contains the command map. To make this work, place macros in the command map to specify the OLE command group of the command you want to handle, the OLE command, and the command ID of the [WM_COMMAND](http://msdn.microsoft.com/library/windows/desktop/ms647591) message that will be sent when the OLE command is received. MFC also provides a number of predefined macros for standard OLE commands. For a list of the standard OLE commands that were originally designed for use with Microsoft Office applications, see the OLECMDID enumeration, which is defined in docobj.h.  
   
- OLE コマンドが OLE コマンド マップを持つ MFC アプリケーションが受け取る場合、MFC はアプリケーションの OLE コマンド マップの要求されたコマンドのコマンド ID とコマンド グループが検索されます。  一致する場合、**WM\_COMMAND** メッセージが要求されたコマンドのコマンド ID を持つマップを含むアプリケーションにディスパッチされます。\(次 `ON_OLECMD` の説明を参照してください\)。これにより、アプリケーションにディスパッチされる OLE コマンドは、MFC で **WM\_COMMAND** メッセージになります。  **WM\_COMMAND** メッセージは標準 MFC [コマンド ルーティング](../mfc/command-routing.md) アーキテクチャを使用するアプリケーションのメッセージ マップを通じて、ルーティングされます。  
+ When an OLE command is received by an MFC application that contains an OLE command map, MFC tries to find the command ID and command group for the requested command in the OLE command map of the application. If a match is found, a **WM_COMMAND** message is dispatched to the application containing the command map with the ID of the requested command. (See the description of `ON_OLECMD` below.) In this way, OLE commands dispatched to an application are turned into **WM_COMMAND** messages by MFC. The **WM_COMMAND** messages are then routed through the application's message maps using the MFC standard [command routing](../mfc/command-routing.md) architecture.  
   
- メッセージ マップとは異なり、MFC OLE コマンド マップは ClassWizard ではサポートされていません。  MFC の開発者は、OLE コマンド マップ サポートと OLE コマンド マップ エントリを手動で追加する必要があります。  OLE コマンド マップは、起動時にアクティブ ドキュメントはコンテナーの埋め込み先編集が有効な **WM\_COMMAND** のメッセージ ルーティングのチェイン内の任意のクラスの MFC の Active ドキュメント サーバーに追加できます。  これらのクラスは、[CWinApp](../mfc/reference/cwinapp-class.md)[CView](../Topic/CView%20Class.md)、[CDocument](../Topic/CDocument%20Class.md)と [COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md)から派生されるアプリケーションのクラスが含まれています。  Active ドキュメント コンテナーで、OLE コマンド マップは [COleDocObjectItem](../Topic/COleDocObjectItem%20Class.md)\-派生クラスにのみ追加できます。  また、Active ドキュメント コンテナーで、**WM\_COMMAND** メッセージが `COleDocObjectItem`のメッセージ マップ\-派生クラスだけにディスパッチされます。  
+ Unlike message maps, MFC OLE command maps are not supported by ClassWizard. MFC developers must add OLE command map support and OLE command map entries by hand. OLE command maps can be added to MFC Active document servers in any class that is in the **WM_COMMAND** message-routing chain at the time the Active document is in-place active in a container. These classes include the application's classes derived from [CWinApp](../mfc/reference/cwinapp-class.md), [CView](../mfc/reference/cview-class.md), [CDocument](../mfc/reference/cdocument-class.md), and [COleIPFrameWnd](../mfc/reference/coleipframewnd-class.md). In Active document containers, OLE command maps can only be added to the [COleDocObjectItem](../mfc/reference/coledocobjectitem-class.md)-derived class. Also, in Active document containers, the **WM_COMMAND** messages will only be dispatched to the message map in the `COleDocObjectItem`-derived class.  
   
-## OLE コマンド マップ マクロ  
- コマンド クラスにマップの機能を追加するには、次のマクロを使用する:  
+## <a name="ole-command-map-macros"></a>OLE Command Map Macros  
+ Use the following macros to add command map functionality to your class:  
   
 ```  
-  
+ 
 DECLARE_OLECMD_MAP ()  
-  
+ 
 ```  
   
- このマクロは、コマンド マップを含むクラスのクラス宣言で \(通常はヘッダー ファイル\) になります。  
+ This macro goes in the class declaration (typically in the header file) of the class that contains the command map.  
   
 ```  
-  
-BEGIN_OLECMD_MAP(  
-theClass  
-,   
-baseClass  
-)  
-  
+ 
+BEGIN_OLECMD_MAP(
+theClass  ,   baseClass)  
+ 
 ```  
   
  `theClass`  
- コマンド マップを含むクラスの名前。  
+ Name of the class that contains the command map.  
   
  `baseClass`  
- コマンド マップを含むクラスの基本クラスの名前。  
+ Name of the base class of the class that contains the command map.  
   
- このマクロは、コマンド マップの開始位置を示します。  コマンド マップを含むクラスの実装ファイルにこのマクロを使用します。  
+ This macro marks the beginning of the command map. Use this macro in the implementation file for the class that contains the command map.  
   
 ```  
-  
+ 
 END_OLECMD_MAP()  
-  
+ 
 ```  
   
- このマクロは、コマンド マップの終了位置を示します。  コマンド マップを含むクラスの実装ファイルにこのマクロを使用します。  このマクロは **BEGIN\_OLECMD\_MAP** マクロに常に従う必要があります。  
+ This macro marks the end of the command map. Use this macro in the implementation file for the class that contains the command map. This macro must always follow the **BEGIN_OLECMD_MAP** macro.  
   
 ```  
-  
-ON_OLECMD(  
-pguid  
-,   
-olecmdid  
-,   
-id  
-)  
-  
+ 
+ON_OLECMD(
+pguid  ,   
+olecmdid  ,
+    id)  
+ 
 ```  
   
  `pguid`  
- OLE コマンドのコマンド グループの GUID へのポインター。  このパラメーターは、標準 OLE コマンド グループの **NULL** です。  
+ Pointer to the GUID of the OLE command's command group. This parameter is **NULL** for the standard OLE command group.  
   
  *olecmdid*  
- 起動するコマンドの OLE コマンド ID。  
+ OLE command ID of the command to be invoked.  
   
  `id`  
- この OLE コマンドが呼び出されたときのコマンド マップを含むアプリケーションに送信する **WM\_COMMAND** メッセージ ID。  
+ ID of the **WM_COMMAND** message to be sent to the application containing the command map when this OLE command is invoked.  
   
- 、処理したい OLE コマンドのエントリを追加するには、コマンドにマップ `ON_OLECMD` マクロを使用します。  OLE コマンドを受け取った場合、**WM\_COMMAND** されたメッセージに変換され、アプリケーションのメッセージ マップを通じて標準 MFC のコマンド ルーティング アーキテクチャを使用してルーティングされます。  
+ Use the `ON_OLECMD` macro in the command map to add entries for the OLE commands you want to handle. When the OLE commands are received, they will be converted to the specified **WM_COMMAND** message and routed through the application's message map using the standard MFC command-routing architecture.  
   
-## 使用例  
- 次の例に [OLECMDID\_PRINT](http://msdn.microsoft.com/library/windows/desktop/ms691264) OLE コマンドを処理するように MFC の Active ドキュメント サーバーに OLE コマンド処理機能を追加する方法を示します。  この例ではアクティブ ドキュメント サーバーである MFC アプリケーションを作成するために AppWizard を使用することを前提としています。  
+## <a name="example"></a>Example  
+ The following example shows how to add OLE command-handling capability to an MFC Active document server to handle the [OLECMDID_PRINT](http://msdn.microsoft.com/library/windows/desktop/ms691264) OLE command. This example assumes that you used AppWizard to generate an MFC application that is an Active document server.  
   
-1.  `CView`\-派生クラスのヘッダー ファイルはクラス宣言に、`DECLARE_OLECMD_MAP` マクロを追加します。  
+1.  In your `CView`-derived class's header file, add the `DECLARE_OLECMD_MAP` macro to the class declaration.  
   
     > [!NOTE]
-    >  `CView`\- **WM\_COMMAND** のメッセージ ルーティング チェーンにある Active ドキュメント サーバー クラスの 1 であるため、派生クラスを使用します。  
+    >  Use the `CView`-derived class because it is one of the classes in the Active document server that is in the **WM_COMMAND** message-routing chain.  
   
-    ```  
+ ```  
     class CMyServerView : public CView  
-    {  
+ {  
     protected: // create from serialization only  
-       CMyServerView();  
-       DECLARE_DYNCREATE(CMyServerView)  
-       DECLARE_OLECMD_MAP()  
-    . . .  
-    };  
-    ```  
+    CMyServerView();
+DECLARE_DYNCREATE(CMyServerView)  
+    DECLARE_OLECMD_MAP() 
+ . . .  
+ };  
+ ```  
   
-2.  `CView`の実装ファイル\-派生クラスは、`BEGIN_OLECMD_MAP` と `END_OLECMD_MAP` マクロを追加する:  
+2.  In the implementation file for the `CView`-derived class, add the `BEGIN_OLECMD_MAP` and `END_OLECMD_MAP` macros:  
   
-    ```  
+ ```  
     BEGIN_OLECMD_MAP(CMyServerView, CView)  
+ 
+    END_OLECMD_MAP() 
+ ```  
   
-    END_OLECMD_MAP()  
-    ```  
+3.  To handle the standard OLE print command, add an [ON_OLECMD](reference/message-map-macros-mfc.md#on_olecmd) macro to the command map specifying the OLE command ID for the standard print command and **ID_FILE_PRINT** for the **WM_COMMAND** ID. **ID_FILE_PRINT** is the standard print command ID used by AppWizard-generated MFC applications:  
   
-3.  標準 OLE 印刷コマンドを処理するには、標準の印刷コマンドで OLE コマンド ID と **WM\_COMMAND** ID に **ID\_FILE\_PRINT** を指定するコマンドにマップ [ON\_OLECMD](../Topic/ON_OLECMD.md) マクロを追加します。  **ID\_FILE\_PRINT** AppWizard は 生成された MFC アプリケーションで使用される標準印刷コマンド ID です:  
+ ```  
+    BEGIN_OLECMD_MAP(CMyServerView,
+    CView)  
+    ON_OLECMD(NULL,
+    OLECMDID_PRINT,
+    ID_FILE_PRINT) 
+    END_OLECMD_MAP() 
+ ```  
   
-    ```  
-    BEGIN_OLECMD_MAP(CMyServerView, CView)  
-       ON_OLECMD(NULL,OLECMDID_PRINT,ID_FILE_PRINT)  
-    END_OLECMD_MAP()  
-    ```  
+ Note that one of the standard OLE command macros, defined in afxdocob.h, could be used in place of the `ON_OLECMD` macro because **OLECMDID_PRINT** is a standard OLE command ID. The `ON_OLECMD_PRINT` macro will accomplish the same task as the `ON_OLECMD` macro shown above.  
   
- **OLECMDID\_PRINT** が標準 OLE コマンド ID であるため標準 OLE コマンド マクロの代わりに、afxdocob.h で定義されていることに注意してください `ON_OLECMD` マクロの代わりに使用できます。  `ON_OLECMD_PRINT` マクロは、上に示した `ON_OLECMD` マクロと同じタスクを実行します。  
-  
- コンテナー アプリケーションはサーバーの `IOleCommandTarget` インターフェイスを通じてこのサーバーに **OLECMDID\_PRINT** コマンドを送信する場合は、MFC の印刷のコマンド ハンドラーはアプリケーションを印刷し、サーバーによりも呼び出されます。  前の手順で追加した印刷コマンドを呼び出す Active ドキュメント コンテナーのコードは次のようになります。:  
+ When a container application sends this server an **OLECMDID_PRINT** command through the server's `IOleCommandTarget` interface, the MFC printing command handler will be invoked in the server, causing the server to print the application. The Active document container's code to invoke the print command added in the steps above would look something like this:  
   
 ```  
 void CContainerCntrItem::DoOleCmd()  
 {  
-   IOleCommandTarget *pCmd = NULL;  
-   HRESULT hr = E_FAIL;  
-   OLECMD ocm={OLECMDID_PRINT, 0};  
-  
-   hr = m_lpObject->QueryInterface(IID_IOleCommandTarget,reinterpret_cast<void**>(&pCmd));  
-   if(FAILED(hr))  
-      return;  
-  
-   hr = pCmd->QueryStatus(NULL, 1, &ocm, NULL);  
-   if(SUCCEEDED(hr) && (ocm.cmdf & OLECMDF_ENABLED))  
-   {  
-      //Command is available and enabled so call it  
-      COleVariant vIn;  
-      COleVariant vOut;  
-      hr = pCmd->Exec(NULL, OLECMDID_PRINT,  
- OLECMDEXECOPT_DODEFAULT, &vIn, &vOut);  
-      ASSERT(SUCCEEDED(hr));  
-   }  
-   pCmd->Release();  
-}  
+    IOleCommandTarget *pCmd = NULL;  
+    HRESULT hr = E_FAIL;  
+    OLECMD ocm={OLECMDID_PRINT, 0};  
+ 
+    hr = m_lpObject->QueryInterface(IID_IOleCommandTarget,reinterpret_cast<void**>(&pCmd));
+
+    if(FAILED(hr)) 
+    return; 
+ 
+    hr = pCmd->QueryStatus(NULL, 1, &ocm, NULL);
+
+    if(SUCCEEDED(hr)&& (ocm.cmdf& OLECMDF_ENABLED))  
+ { *//Command is available and enabled so call it  
+    COleVariant vIn;  
+    COleVariant vOut;  
+    hr = pCmd->Exec(NULL, OLECMDID_PRINT,  
+    OLECMDEXECOPT_DODEFAULT, &vIn, &vOut);
+
+    ASSERT(SUCCEEDED(hr));
+
+ }  
+    pCmd->Release();
+
+} 
 ```  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

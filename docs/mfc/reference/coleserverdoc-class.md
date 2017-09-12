@@ -1,5 +1,5 @@
 ---
-title: "COleServerDoc クラス |Microsoft ドキュメント"
+title: COleServerDoc Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -52,13 +52,44 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- servers, OLE
-- OLE server applications, managing server documents
-- container/server applications
-- OLE server documents
-- COleServerDoc class
-- server documents, OLE
-- OLE containers, server documents
+- COleServerDoc [MFC], COleServerDoc
+- COleServerDoc [MFC], ActivateDocObject
+- COleServerDoc [MFC], ActivateInPlace
+- COleServerDoc [MFC], DeactivateAndUndo
+- COleServerDoc [MFC], DiscardUndoState
+- COleServerDoc [MFC], GetClientSite
+- COleServerDoc [MFC], GetEmbeddedItem
+- COleServerDoc [MFC], GetItemClipRect
+- COleServerDoc [MFC], GetItemPosition
+- COleServerDoc [MFC], GetZoomFactor
+- COleServerDoc [MFC], IsDocObject
+- COleServerDoc [MFC], IsEmbedded
+- COleServerDoc [MFC], IsInPlaceActive
+- COleServerDoc [MFC], NotifyChanged
+- COleServerDoc [MFC], NotifyClosed
+- COleServerDoc [MFC], NotifyRename
+- COleServerDoc [MFC], NotifySaved
+- COleServerDoc [MFC], OnDeactivate
+- COleServerDoc [MFC], OnDeactivateUI
+- COleServerDoc [MFC], OnDocWindowActivate
+- COleServerDoc [MFC], OnResizeBorder
+- COleServerDoc [MFC], OnShowControlBars
+- COleServerDoc [MFC], OnUpdateDocument
+- COleServerDoc [MFC], RequestPositionChange
+- COleServerDoc [MFC], SaveEmbedding
+- COleServerDoc [MFC], ScrollContainerBy
+- COleServerDoc [MFC], UpdateAllItems
+- COleServerDoc [MFC], CreateInPlaceFrame
+- COleServerDoc [MFC], DestroyInPlaceFrame
+- COleServerDoc [MFC], GetDocObjectServer
+- COleServerDoc [MFC], OnClose
+- COleServerDoc [MFC], OnExecOleCmd
+- COleServerDoc [MFC], OnFrameWindowActivate
+- COleServerDoc [MFC], OnGetEmbeddedItem
+- COleServerDoc [MFC], OnReactivateAndUndo
+- COleServerDoc [MFC], OnSetHostNames
+- COleServerDoc [MFC], OnSetItemRects
+- COleServerDoc [MFC], OnShowDocument
 ms.assetid: a9cdd96a-e0ac-43bb-9203-2c29237e965c
 caps.latest.revision: 24
 author: mikeblome
@@ -78,93 +109,93 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: db50c2a5709fbc07d0e0db99a4cffc733c4b6ead
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dd5f9c7aec119a3e559b25742a378674ba403f48
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coleserverdoc-class"></a>COleServerDoc クラス
-OLE サーバー ドキュメントの基底クラスです。  
+# <a name="coleserverdoc-class"></a>COleServerDoc Class
+The base class for OLE server documents.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class AFX_NOVTABLE COleServerDoc : public COleLinkingDoc  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleServerDoc::COleServerDoc](#coleserverdoc)|`COleServerDoc` オブジェクトを構築します。|  
+|[COleServerDoc::COleServerDoc](#coleserverdoc)|Constructs a `COleServerDoc` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleServerDoc::ActivateDocObject](#activatedocobject)|関連付けられている DocObject ドキュメントをアクティブにします。|  
-|[COleServerDoc::ActivateInPlace](#activateinplace)|埋め込み先編集用にドキュメントをアクティブにします。|  
-|[COleServerDoc::DeactivateAndUndo](#deactivateandundo)|サーバーのユーザー インターフェイスを無効になります。|  
-|[COleServerDoc::DiscardUndoState](#discardundostate)|元に戻す状態情報を破棄します。|  
-|[COleServerDoc::GetClientSite](#getclientsite)|基になるポインターを取得`IOleClientSite`インターフェイスです。|  
-|[COleServerDoc::GetEmbeddedItem](#getembeddeditem)|ドキュメント全体を表す項目へのポインターを返します。|  
-|[COleServerDoc::GetItemClipRect](#getitemcliprect)|埋め込み先編集のための現在のクリッピング四角形を返します。|  
-|[COleServerDoc::GetItemPosition](#getitemposition)|埋め込み先編集のためのコンテナー アプリケーションのクライアント領域を基準と、現在の位置四角を返します。|  
-|[先](#getzoomfactor)|ズームの倍率をピクセル単位で返します。|  
-|[COleServerDoc::IsDocObject](#isdocobject)|ドキュメントが DocObject かを調べます。|  
-|[COleServerDoc::IsEmbedded](#isembedded)|ドキュメントをコンテナー ドキュメントに埋め込まれているか実行されているスタンドアロンにするかどうかを示します。|  
-|[COleServerDoc::IsInPlaceActive](#isinplaceactive)|返します。`TRUE`場合は、項目が現在の場所でアクティブ化します。|  
-|[COleServerDoc::NotifyChanged](#notifychanged)|ユーザーがドキュメントを変更したコンテナーに通知します。|  
-|[COleServerDoc::NotifyClosed](#notifyclosed)|ユーザーがドキュメントを閉じたことをコンテナーに通知します。|  
-|[COleServerDoc::NotifyRename](#notifyrename)|ユーザーがドキュメントの名前を変更が、コンテナーに通知します。|  
-|[COleServerDoc::NotifySaved](#notifysaved)|ユーザーがドキュメントを保存したことをコンテナーに通知します。|  
-|[COleServerDoc::OnDeactivate](#ondeactivate)|アクティブなアイテムを非アクティブにするときに、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnDeactivateUI](#ondeactivateui)|コントロールおよびインプレース アクティブ化用に作成されたその他のユーザー インターフェイス要素を破棄するためにフレームワークによって呼び出されます。|  
-|[COleServerDoc::OnDocWindowActivate](#ondocwindowactivate)|コンテナーのドキュメントのフレーム ウィンドウがアクティブ化または非アクティブ化されたときに、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnResizeBorder](#onresizeborder)|コンテナー アプリケーションのフレーム ウィンドウまたはドキュメント ウィンドウのサイズ変更時に、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnShowControlBars](#onshowcontrolbars)|または、埋め込み先編集用のコントロール バーを非表示にフレームワークによって呼び出されます。|  
-|[COleServerDoc::OnUpdateDocument](#onupdatedocument)|埋め込みアイテムをあるサーバーのドキュメントを保存すると、アイテムのコンテナーのコピーを更新するときに、フレームワークによって呼び出されます。|  
-|[から](#requestpositionchange)|埋め込み先編集フレームの位置を変更します。|  
-|[COleServerDoc::SaveEmbedding](#saveembedding)|ドキュメントの保存先コンテナー アプリケーションに通知します。|  
-|[COleServerDoc::ScrollContainerBy](#scrollcontainerby)|コンテナーのドキュメントをスクロールします。|  
-|[COleServerDoc::UpdateAllItems](#updateallitems)|ユーザーがドキュメントを変更したコンテナーに通知します。|  
+|[COleServerDoc::ActivateDocObject](#activatedocobject)|Activates the associated DocObject document.|  
+|[COleServerDoc::ActivateInPlace](#activateinplace)|Activates the document for in-place editing.|  
+|[COleServerDoc::DeactivateAndUndo](#deactivateandundo)|Deactivates the server's user interface.|  
+|[COleServerDoc::DiscardUndoState](#discardundostate)|Discards undo-state information.|  
+|[COleServerDoc::GetClientSite](#getclientsite)|Retrieves a pointer to the underlying `IOleClientSite` interface.|  
+|[COleServerDoc::GetEmbeddedItem](#getembeddeditem)|Returns a pointer to an item representing the entire document.|  
+|[COleServerDoc::GetItemClipRect](#getitemcliprect)|Returns the current clipping rectangle for in-place editing.|  
+|[COleServerDoc::GetItemPosition](#getitemposition)|Returns the current position rectangle, relative to the container application's client area, for in-place editing.|  
+|[COleServerDoc::GetZoomFactor](#getzoomfactor)|Returns the zoom factor in pixels.|  
+|[COleServerDoc::IsDocObject](#isdocobject)|Determines if the document is a DocObject.|  
+|[COleServerDoc::IsEmbedded](#isembedded)|Indicates whether the document is embedded in a container document or running stand-alone.|  
+|[COleServerDoc::IsInPlaceActive](#isinplaceactive)|Returns `TRUE` if the item is currently activated in place.|  
+|[COleServerDoc::NotifyChanged](#notifychanged)|Notifies containers that the user has changed the document.|  
+|[COleServerDoc::NotifyClosed](#notifyclosed)|Notifies containers that the user has closed the document.|  
+|[COleServerDoc::NotifyRename](#notifyrename)|Notifies containers that the user has renamed the document.|  
+|[COleServerDoc::NotifySaved](#notifysaved)|Notifies containers that the user has saved the document.|  
+|[COleServerDoc::OnDeactivate](#ondeactivate)|Called by the framework when the user deactivates an item that was activated in place.|  
+|[COleServerDoc::OnDeactivateUI](#ondeactivateui)|Called by the framework to destroy controls and other user-interface elements created for in-place activation.|  
+|[COleServerDoc::OnDocWindowActivate](#ondocwindowactivate)|Called by the framework when the container's document frame window is activated or deactivated.|  
+|[COleServerDoc::OnResizeBorder](#onresizeborder)|Called by the framework when the container application's frame window or document window is resized.|  
+|[COleServerDoc::OnShowControlBars](#onshowcontrolbars)|Called by the framework to show or hide control bars for in-place editing.|  
+|[COleServerDoc::OnUpdateDocument](#onupdatedocument)|Called by the framework when a server document that is an embedded item is saved, updating the container's copy of the item.|  
+|[COleServerDoc::RequestPositionChange](#requestpositionchange)|Changes the position of the in-place editing frame.|  
+|[COleServerDoc::SaveEmbedding](#saveembedding)|Tells the container application to save the document.|  
+|[COleServerDoc::ScrollContainerBy](#scrollcontainerby)|Scrolls the container document.|  
+|[COleServerDoc::UpdateAllItems](#updateallitems)|Notifies containers that the user has changed the document.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleServerDoc::CreateInPlaceFrame](#createinplaceframe)|埋め込み先編集のためのフレーム ウィンドウを作成するために、フレームワークによって呼び出されます。|  
-|[COleServerDoc::DestroyInPlaceFrame](#destroyinplaceframe)|埋め込み先編集のフレーム ウィンドウを破棄するためにフレームワークによって呼び出されます。|  
-|[COleServerDoc::GetDocObjectServer](#getdocobjectserver)|新しいを作成するには、この関数をオーバーライド`CDocObjectServer`オブジェクトし、このドキュメントが DocObject コンテナーであることを示します。|  
-|[COleServerDoc::OnClose](#onclose)|コンテナーは、ドキュメントを閉じるに要求したときに、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnExecOleCmd](#onexecolecmd)|指定のコマンドを実行するか、コマンドのヘルプを表示します。|  
-|[COleServerDoc::OnFrameWindowActivate](#onframewindowactivate)|コンテナーのフレーム ウィンドウがアクティブ化または非アクティブ化されたときに、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnGetEmbeddedItem](#ongetembeddeditem)|取得すると呼ばれる、`COleServerItem`ドキュメント全体を表します。 埋め込みアイテムを取得するために使用します。 必要な実装です。|  
-|[されて](#onreactivateandundo)|埋め込み先編集中に行われた変更を元に戻すために、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnSetHostNames](#onsethostnames)|コンテナーは、埋め込みオブジェクトのウィンドウのタイトルを設定すると、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnSetItemRects](#onsetitemrects)|コンテナー アプリケーションのウィンドウ内の埋め込み先編集フレーム ウィンドウの位置に、フレームワークによって呼び出されます。|  
-|[COleServerDoc::OnShowDocument](#onshowdocument)|または、ドキュメントを非表示にフレームワークによって呼び出されます。|  
+|[COleServerDoc::CreateInPlaceFrame](#createinplaceframe)|Called by the framework to create a frame window for in-place editing.|  
+|[COleServerDoc::DestroyInPlaceFrame](#destroyinplaceframe)|Called by the framework to destroy a frame window for in-place editing.|  
+|[COleServerDoc::GetDocObjectServer](#getdocobjectserver)|Override this function to create a new `CDocObjectServer` object and indicate that this document is a DocObject container.|  
+|[COleServerDoc::OnClose](#onclose)|Called by the framework when a container requests to close the document.|  
+|[COleServerDoc::OnExecOleCmd](#onexecolecmd)|Executes a specified command or displays help for the command.|  
+|[COleServerDoc::OnFrameWindowActivate](#onframewindowactivate)|Called by the framework when the container's frame window is activated or deactivated.|  
+|[COleServerDoc::OnGetEmbeddedItem](#ongetembeddeditem)|Called to get a `COleServerItem` that represents the entire document; used to get an embedded item. Implementation required.|  
+|[COleServerDoc::OnReactivateAndUndo](#onreactivateandundo)|Called by the framework to undo changes made during in-place editing.|  
+|[COleServerDoc::OnSetHostNames](#onsethostnames)|Called by the framework when a container sets the window title for an embedded object.|  
+|[COleServerDoc::OnSetItemRects](#onsetitemrects)|Called by the framework to position the in-place editing frame window within the container application's window.|  
+|[COleServerDoc::OnShowDocument](#onshowdocument)|Called by the framework to show or hide the document.|  
   
-## <a name="remarks"></a>コメント  
- サーバー ドキュメントを含めることができます[実際](../../mfc/reference/coleserveritem-class.md)埋め込みまたはリンクされた項目へのサーバー インターフェイスを表すオブジェクト。 埋め込みアイテムを編集するためのコンテナーが、サーバー アプリケーションを起動すると、アイテムが独自サーバー ドキュメントとして読み込まれます`COleServerDoc`オブジェクトには、1 つだけ含まれる`COleServerItem`ドキュメント全体で構成されるオブジェクト。 リンク アイテムを編集するためのコンテナーが、サーバー アプリケーションを起動すると、既存のドキュメントがディスクから読み込まれますリンクされた項目を示すために、ドキュメントの内容の一部が強調表示されます。  
+## <a name="remarks"></a>Remarks  
+ A server document can contain [COleServerItem](../../mfc/reference/coleserveritem-class.md) objects, which represent the server interface to embedded or linked items. When a server application is launched by a container to edit an embedded item, the item is loaded as its own server document; the `COleServerDoc` object contains just one `COleServerItem` object, consisting of the entire document. When a server application is launched by a container to edit a linked item, an existing document is loaded from disk; a portion of the document's contents is highlighted to indicate the linked item.  
   
- `COleServerDoc`オブジェクトの項目を含めることも、 [COleClientItem](../../mfc/reference/coleclientitem-class.md)クラスです。 これにより、コンテナー/サーバー アプリケーションを作成することができます。 フレームワークが正しく保存する機能を提供、`COleClientItem`項目を処理中に、`COleServerItem`オブジェクトです。  
+ `COleServerDoc` objects can also contain items of the [COleClientItem](../../mfc/reference/coleclientitem-class.md) class. This allows you to create container-server applications. The framework provides functions to properly store the `COleClientItem` items while servicing the `COleServerItem` objects.  
   
- サーバー アプリケーションがリンクをサポートしていない場合をサーバー ドキュメントには常にドキュメントとして全体の埋め込みオブジェクトを表す&1; つだけのサーバー アイテムが含まれます。 サーバー アプリケーションはリンクもサポートしている場合、選択範囲をクリップボードにコピーするたびにサーバー項目を作成する必要があります。  
+ If your server application does not support links, a server document will always contain only one server item, which represents the entire embedded object as a document. If your server application does support links, it must create a server item each time a selection is copied to the Clipboard.  
   
- 使用する`COleServerDoc`、クラスの派生、および実装、 [OnGetEmbeddedItem](#ongetembeddeditem)メンバー関数は、埋め込みアイテムをサポートするようサーバーを使用します。 クラスを派生`COleServerItem`、ドキュメントに項目を実装し、そのクラスからのオブジェクトを返す`OnGetEmbeddedItem`します。  
+ To use `COleServerDoc`, derive a class from it and implement the [OnGetEmbeddedItem](#ongetembeddeditem) member function, which allows your server to support embedded items. Derive a class from `COleServerItem` to implement the items in your documents, and return objects of that class from `OnGetEmbeddedItem`.  
   
- リンクされた項目をサポートするために`COleServerDoc`提供、 [OnGetLinkedItem](../../mfc/reference/colelinkingdoc-class.md#ongetlinkeditem)メンバー関数。 既定の実装を使用したり、ドキュメントの項目を管理する方法がある場合は、メソッドをオーバーライドすることができます。  
+ To support linked items, `COleServerDoc` provides the [OnGetLinkedItem](../../mfc/reference/colelinkingdoc-class.md#ongetlinkeditem) member function. You can use the default implementation or override it if you have your own way of managing document items.  
   
- 1 つ必要がある`COleServerDoc`-サーバーの各種類のドキュメント、アプリケーションがサポートするクラスを派生します。 などの場合は、サーバー アプリケーションでは、ワークシートとグラフをサポートする必要があります&2; `COleServerDoc`-クラスを派生します。  
+ You need one `COleServerDoc`-derived class for each type of server document your application supports. For example, if your server application supports worksheets and charts, you need two `COleServerDoc`-derived classes.  
   
- サーバーの詳細については、記事を参照してください。[サーバー: サーバーを実装する](../../mfc/servers-implementing-a-server.md)です。  
+ For more information on servers, see the article [Servers: Implementing a Server](../../mfc/servers-implementing-a-server.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -173,185 +204,185 @@ class AFX_NOVTABLE COleServerDoc : public COleLinkingDoc
   
  [COleDocument](../../mfc/reference/coledocument-class.md)  
   
- [直接](../../mfc/reference/colelinkingdoc-class.md)  
+ [COleLinkingDoc](../../mfc/reference/colelinkingdoc-class.md)  
   
  `COleServerDoc`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
   
-##  <a name="activatedocobject"></a>COleServerDoc::ActivateDocObject  
- 関連付けられている DocObject ドキュメントをアクティブにします。  
+##  <a name="activatedocobject"></a>  COleServerDoc::ActivateDocObject  
+ Activates the associated DocObject document.  
   
 ```  
 void ActivateDocObject();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定では、 `COleServerDoc` (DocObjects とも呼ばれる) アクティブなドキュメントをサポートしていません。 このサポートを有効にするには、「 [GetDocObjectServer](#getdocobjectserver)とクラス[関数](../../mfc/reference/cdocobjectserver-class.md)します。  
+### <a name="remarks"></a>Remarks  
+ By default, `COleServerDoc` does not support Active documents (also referred to as DocObjects). To enable this support, see [GetDocObjectServer](#getdocobjectserver) and class [CDocObjectServer](../../mfc/reference/cdocobjectserver-class.md).  
   
-##  <a name="activateinplace"></a>COleServerDoc::ActivateInPlace  
- 埋め込み先編集用に項目をアクティブにします。  
+##  <a name="activateinplace"></a>  COleServerDoc::ActivateInPlace  
+ Activates the item for in-place editing.  
   
 ```  
 BOOL ActivateInPlace();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合 0 の場合、つまり、アイテムが完全にオープンであります。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0, which indicates that the item is fully open.  
   
-### <a name="remarks"></a>コメント  
- この関数では、インプレース アクティブ化に必要なすべての操作を実行します。 で埋め込み先フレーム ウィンドウを作成が有効しアイテム サイズ、共通のメニューとその他のコントロールを設定、ビューにスクロールしておよびで埋め込み先フレーム ウィンドウにフォーカスを設定します。  
+### <a name="remarks"></a>Remarks  
+ This function performs all operations necessary for in-place activation. It creates an in-place frame window, activates it and sizes it to the item, sets up shared menus and other controls, scrolls the item into view, and sets the focus to the in-place frame window.  
   
- この関数の既定の実装によって[COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onshow)します。 アプリケーションは、埋め込み (再生) などの他の動詞をサポートしている場合は、この関数を呼び出します。  
+ This function is called by the default implementation of [COleServerItem::OnShow](../../mfc/reference/coleserveritem-class.md#onshow). Call this function if your application supports another verb for in-place activation (such as Play).  
   
-##  <a name="coleserverdoc"></a>COleServerDoc::COleServerDoc  
- 構築、 `COleServerDoc` OLE システム Dll に接続しなくてもオブジェクトです。  
+##  <a name="coleserverdoc"></a>  COleServerDoc::COleServerDoc  
+ Constructs a `COleServerDoc` object without connecting with the OLE system DLLs.  
   
 ```  
 COleServerDoc();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[COleLinkingDoc::Register](../../mfc/reference/colelinkingdoc-class.md#register) OLE に通信を開始します。 使用している場合[関数](../../mfc/reference/coletemplateserver-class.md)、アプリケーションで`COleLinkingDoc::Register`によって呼び出されます`COleLinkingDoc`の実装の`OnNewDocument`、 `OnOpenDocument`、および`OnSaveDocument`です。  
+### <a name="remarks"></a>Remarks  
+ You must call [COleLinkingDoc::Register](../../mfc/reference/colelinkingdoc-class.md#register) to open communications with OLE. If you are using [COleTemplateServer](../../mfc/reference/coletemplateserver-class.md) in your application, `COleLinkingDoc::Register` is called for you by `COleLinkingDoc`'s implementation of `OnNewDocument`, `OnOpenDocument`, and `OnSaveDocument`.  
   
-##  <a name="createinplaceframe"></a>COleServerDoc::CreateInPlaceFrame  
- フレームワークでは、埋め込み先編集のためのフレーム ウィンドウを作成するには、この関数を呼び出します。  
+##  <a name="createinplaceframe"></a>  COleServerDoc::CreateInPlaceFrame  
+ The framework calls this function to create a frame window for in-place editing.  
   
 ```  
 virtual COleIPFrameWnd* CreateInPlaceFrame(CWnd* pParentWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentWnd`  
- コンテナー アプリケーションの親ウィンドウへのポインター。  
+ Pointer to the container application's parent window.  
   
-### <a name="return-value"></a>戻り値  
- 埋め込み先フレーム ウィンドウへのポインターまたは**NULL**失敗した場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the in-place frame window, or **NULL** if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、ドキュメント テンプレートで指定した情報を使用して、フレームを作成します。 使用されるビューは、ドキュメント用に作成された最初のビューです。 このビューは一時的に元のフレームからデタッチされ、新しく作成されたフレームにアタッチされます。  
+### <a name="remarks"></a>Remarks  
+ The default implementation uses information specified in the document template to create the frame. The view used is the first view created for the document. This view is temporarily detached from the original frame and attached to the newly created frame.  
   
- これは、高度なオーバーライドします。  
+ This is an advanced overridable.  
   
-##  <a name="deactivateandundo"></a>COleServerDoc::DeactivateAndUndo  
- アプリケーション サポートを元に戻すし、ユーザーが項目をアクティブ化したら、編集する前に元に戻す場合は、この関数を呼び出します。  
+##  <a name="deactivateandundo"></a>  COleServerDoc::DeactivateAndUndo  
+ Call this function if your application supports Undo and the user chooses Undo after activating an item but before editing it.  
   
 ```  
 BOOL DeactivateAndUndo();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常に完了した場合はゼロ以外、それ以外の場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero on success; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- コンテナー アプリケーションを作成するには、Microsoft Foundation Class ライブラリを使用して、この関数の呼び出しを実行すると[COleClientItem::OnDeactivateAndUndo](../../mfc/reference/coleclientitem-class.md#ondeactivateandundo)に呼び出される非アクティブ化するサーバーのユーザー インターフェイスです。  
+### <a name="remarks"></a>Remarks  
+ If the container application is written using the Microsoft Foundation Class Library, calling this function causes [COleClientItem::OnDeactivateAndUndo](../../mfc/reference/coleclientitem-class.md#ondeactivateandundo) to be called, which deactivates the server's user interface.  
   
-##  <a name="destroyinplaceframe"></a>COleServerDoc::DestroyInPlaceFrame  
- フレームワークでは、埋め込み先フレーム ウィンドウを破棄し、サーバー アプリケーションのドキュメント ウィンドウをインプレースでアクティブ化する前に状態に戻すには、この関数を呼び出します。  
+##  <a name="destroyinplaceframe"></a>  COleServerDoc::DestroyInPlaceFrame  
+ The framework calls this function to destroy an in-place frame window and return the server application's document window to its state before in-place activation.  
   
 ```  
 virtual void DestroyInPlaceFrame(COleIPFrameWnd* pFrameWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFrameWnd`  
- 破棄される埋め込み先フレーム ウィンドウへのポインター。  
+ Pointer to the in-place frame window to be destroyed.  
   
-### <a name="remarks"></a>コメント  
- これは、高度なオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ This is an advanced overridable.  
   
-##  <a name="discardundostate"></a>COleServerDoc::DiscardUndoState  
- ユーザーは、元に戻すことができない編集操作を実行する場合は、その元に戻す状態情報を破棄するコンテナー アプリケーションを強制するには、この関数を呼び出します。  
+##  <a name="discardundostate"></a>  COleServerDoc::DiscardUndoState  
+ If the user performs an editing operation that cannot be undone, call this function to force the container application to discard its undo-state information.  
   
 ```  
 BOOL DiscardUndoState();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常に完了した場合はゼロ以外、それ以外の場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero on success; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、元に戻すをサポートしているサーバーでは、それ以外の場合は使用できません元に戻す状態情報で利用できるリソースを解放しているため、提供されます。  
+### <a name="remarks"></a>Remarks  
+ This function is provided so that servers that support Undo can free resources that would otherwise be consumed by undo-state information that cannot be used.  
   
-##  <a name="getclientsite"></a>COleServerDoc::GetClientSite  
- 基になるポインターを取得`IOleClientSite`インターフェイスです。  
+##  <a name="getclientsite"></a>  COleServerDoc::GetClientSite  
+ Retrieves a pointer to the underlying `IOleClientSite` interface.  
   
 ```  
 LPOLECLIENTSITE GetClientSite() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるポインターを取得[していること](http://msdn.microsoft.com/library/windows/desktop/ms693706)インターフェイスです。  
+### <a name="return-value"></a>Return Value  
+ Retrieves a pointer to the underlying [IOleClientSite](http://msdn.microsoft.com/library/windows/desktop/ms693706) interface.  
   
-##  <a name="getdocobjectserver"></a>COleServerDoc::GetDocObjectServer  
- 新しいを作成するには、この関数をオーバーライド`CDocObjectServer`項目し、ポインターを返します。  
+##  <a name="getdocobjectserver"></a>  COleServerDoc::GetDocObjectServer  
+ Override this function to create a new `CDocObjectServer` item and return a pointer to it.  
   
 ```  
 virtual CDocObjectServer* GetDocObjectServer(LPOLEDOCUMENTSITE pDocSite);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDocSite`  
- ポインター、`IOleDocumentSite`が、このドキュメントをサーバーに接続するインターフェイスです。  
+ Pointer to the `IOleDocumentSite` interface that will connect this document to the server.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CDocObjectServer`です。**NULL**場合は、操作に失敗しました。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CDocObjectServer`; **NULL** if the operation failed.  
   
-### <a name="remarks"></a>コメント  
- DocObject サーバーをアクティブにするタイミング、以外の戻り値**NULL**ポインターは、クライアントが DocObjects をサポートできることを示しています。 既定の実装**NULL**します。  
+### <a name="remarks"></a>Remarks  
+ When a DocObject server is activated, the return of a non- **NULL** pointer shows that the client can support DocObjects. The default implementation returns **NULL**.  
   
- DocObjects をサポートしているドキュメントの一般的な実装は単純に新しい割り当て`CDocObjectServer`オブジェクトし、呼び出し元に戻ります。 例:  
+ A typical implementation for a document that supports DocObjects will simply allocate a new `CDocObjectServer` object and return it to the caller. For example:  
   
- [!code-cpp[NVC_MFCOleServer&#3;](../../mfc/codesnippet/cpp/coleserverdoc-class_1.cpp)]  
+ [!code-cpp[NVC_MFCOleServer#3](../../mfc/codesnippet/cpp/coleserverdoc-class_1.cpp)]  
   
-##  <a name="getembeddeditem"></a>COleServerDoc::GetEmbeddedItem  
- この関数では、ドキュメント全体を表すアイテムへのポインターを取得します。  
+##  <a name="getembeddeditem"></a>  COleServerDoc::GetEmbeddedItem  
+ Call this function to get a pointer to an item representing the entire document.  
   
 ```  
 COleServerItem* GetEmbeddedItem();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ドキュメント全体を表す項目へのポインター**NULL**場合は、操作に失敗しました。  
+### <a name="return-value"></a>Return Value  
+ A pointer to an item representing the entire document; **NULL** if the operation failed.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す[COleServerDoc::OnGetEmbeddedItem](#ongetembeddeditem)実装のない既定の仮想関数。  
+### <a name="remarks"></a>Remarks  
+ It calls [COleServerDoc::OnGetEmbeddedItem](#ongetembeddeditem), a virtual function with no default implementation.  
   
-##  <a name="getitemcliprect"></a>COleServerDoc::GetItemClipRect  
- 呼び出す、`GetItemClipRect`インプレース編集されているアイテムのクリッピング四角形の座標を取得します。  
+##  <a name="getitemcliprect"></a>  COleServerDoc::GetItemClipRect  
+ Call the `GetItemClipRect` member function to get the clipping-rectangle coordinates of the item that is being edited in place.  
   
 ```  
 void GetItemClipRect(LPRECT lpClipRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpClipRect`  
- ポインター、`RECT`構造体、または`CRect`をアイテムのクリッピング四角形の座標を取得するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object to receive the clipping-rectangle coordinates of the item.  
   
-### <a name="remarks"></a>コメント  
- 座標は、コンテナー アプリケーション ウィンドウのクライアント領域を基準と (ピクセル単位)。  
+### <a name="remarks"></a>Remarks  
+ Coordinates are in pixels relative to the container application window's client area.  
   
- クリッピング四角形の外側描画は発生しません。 通常は、描画は、自動的に制限されています。 この関数を使用してドキュメントの表示部分の外部ユーザーがスクロールされたといったかどうかを判断するには呼び出しを使用して必要に応じて、必要な場合は、スクロール コンテナー ドキュメント[ScrollContainerBy](#scrollcontainerby)します。  
+ Drawing should not occur outside the clipping rectangle. Usually, drawing is automatically restricted. Use this function to determine whether the user has scrolled outside the visible portion of the document; if so, scroll the container document as needed by means of a call to [ScrollContainerBy](#scrollcontainerby).  
   
-##  <a name="getitemposition"></a>COleServerDoc::GetItemPosition  
- 呼び出す、`GetItemPosition`インプレース編集中の項目の座標を取得するメンバー関数。  
+##  <a name="getitemposition"></a>  COleServerDoc::GetItemPosition  
+ Call the `GetItemPosition` member function to get the coordinates of the item being edited in place.  
   
 ```  
 void GetItemPosition(LPRECT lpPosRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPosRect`  
- ポインター、`RECT`構造体、または`CRect`をアイテムの座標を取得するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object to receive the coordinates of the item.  
   
-### <a name="remarks"></a>コメント  
- 座標は、コンテナー アプリケーション ウィンドウのクライアント領域を基準と (ピクセル単位)。  
+### <a name="remarks"></a>Remarks  
+ Coordinates are in pixels relative to the container application window's client area.  
   
- 項目を (または非表示) の範囲を特定する現在のクリッピング四角形で比較できるアイテムの位置を画面にします。  
+ The item's position can be compared with the current clipping rectangle to determine the extent to which the item is visible (or not visible) on the screen.  
   
-##  <a name="getzoomfactor"></a>先  
- `GetZoomFactor`メンバー関数は、埋め込み先編集のアクティブ化されているアイテムの「倍率」を決定します。  
+##  <a name="getzoomfactor"></a>  COleServerDoc::GetZoomFactor  
+ The `GetZoomFactor` member function determines the "zoom factor" of an item that has been activated for in-place editing.  
   
 ```  
 BOOL GetZoomFactor(
@@ -360,174 +391,174 @@ BOOL GetZoomFactor(
     LPCRECT lpPosRect = NULL) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpSizeNum*  
- クラスのオブジェクトへのポインター`CSize`倍率の分子を保持します。 できる**NULL**します。  
+ Pointer to an object of class `CSize` that will hold the zoom factor's numerator. Can be **NULL**.  
   
  *lpSizeDenom*  
- クラスのオブジェクトへのポインター`CSize`倍率の分母を保持します。 できる**NULL**します。  
+ Pointer to an object of class `CSize` that will hold the zoom factor's denominator. Can be **NULL**.  
   
  `lpPosRect`  
- クラスのオブジェクトへのポインター`CRect`アイテムの新しい位置を記述します。 この引数は場合**NULL**関数は、項目の現在の位置を使用します。  
+ Pointer to an object of class `CRect` that describes the item's new position. If this argument is **NULL**, the function uses the item's current position.  
   
-### <a name="return-value"></a>戻り値  
- インプレースで、項目が起動された場合は 0 以外を編集し、その倍率が以外の 100% (1:1) です。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the item is activated for in-place editing and its zoom factor is other than 100% (1:1); otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ズームの倍率、(ピクセル単位) は、現在の大きさに対するアイテムのサイズの比率です。 コンテナー アプリケーションが、項目の範囲において、本来のエクステントを設定していない場合 (によって決定される[COleServerItem::OnGetExtent](../../mfc/reference/coleserveritem-class.md#ongetextent)) を使用します。  
+### <a name="remarks"></a>Remarks  
+ The zoom factor, in pixels, is the proportion of the item's size to its current extent. If the container application has not set the item's extent, its natural extent (as determined by [COleServerItem::OnGetExtent](../../mfc/reference/coleserveritem-class.md#ongetextent)) is used.  
   
- 関数は、分子と分母の項目の「ズームの倍率」に、最初の&2; つの引数を設定します。 アイテムがインプレース編集されていない場合、関数は、既定値は 100% (または 1 対 1) にこれらの引数を設定し、0 を返します。 詳細については、テクニカル ノート 40: を参照してください。 [MFC/OLE 埋め込み先サイズ変更とズーム](../../mfc/tn040-mfc-ole-in-place-resizing-and-zooming.md)します。  
+ The function sets its first two arguments to the numerator and denominator of the item's "zoom factor." If the item is not being edited in place, the function sets these arguments to a default value of 100% (or 1:1) and returns zero. For further information, see Technical Note 40, [MFC/OLE In-Place Resizing and Zooming](../../mfc/tn040-mfc-ole-in-place-resizing-and-zooming.md).  
   
-##  <a name="isdocobject"></a>COleServerDoc::IsDocObject  
- ドキュメントが DocObject かを調べます。  
+##  <a name="isdocobject"></a>  COleServerDoc::IsDocObject  
+ Determines if the document is a DocObject.  
   
 ```  
 BOOL IsDocObject() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**場合は、ドキュメントが DocObject; それ以外の場合**FALSE**します。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if the document is a DocObject; otherwise **FALSE**.  
   
-##  <a name="isembedded"></a>COleServerDoc::IsEmbedded  
- 呼び出す、`IsEmbedded`ドキュメントがコンテナー内に埋め込まれたオブジェクトを表すかどうかを調べます。  
+##  <a name="isembedded"></a>  COleServerDoc::IsEmbedded  
+ Call the `IsEmbedded` member function to determine whether the document represents an object embedded in a container.  
   
 ```  
 BOOL IsEmbedded() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の値、`COleServerDoc`オブジェクトがオブジェクトを表すドキュメントのコンテナーで埋め込み。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the `COleServerDoc` object is a document that represents an object embedded in a container; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- コンテナー アプリケーションのリンクによる操作することがありますが、ファイルから読み込まれたドキュメントが埋め込まれていません。 コンテナー ドキュメントに埋め込まれているドキュメントが埋め込まれていると見なされます。  
+### <a name="remarks"></a>Remarks  
+ A document loaded from a file is not embedded although it may be manipulated by a container application as a link. A document that is embedded in a container document is considered to be embedded.  
   
-##  <a name="isinplaceactive"></a>COleServerDoc::IsInPlaceActive  
- 呼び出す、`IsInPlaceActive`アイテムが現在インプレース アクティブ状態であるかどうかを調べます。  
+##  <a name="isinplaceactive"></a>  COleServerDoc::IsInPlaceActive  
+ Call the `IsInPlaceActive` member function to determine whether the item is currently in the in-place active state.  
   
 ```  
 BOOL IsInPlaceActive() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の値、`COleServerDoc`オブジェクトはインプレース アクティブ。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the `COleServerDoc` object is active in place; otherwise 0.  
   
-##  <a name="notifychanged"></a>COleServerDoc::NotifyChanged  
- この関数では、ドキュメントが変更されたドキュメントに接続されているすべてのリンクされた項目に通知します。  
+##  <a name="notifychanged"></a>  COleServerDoc::NotifyChanged  
+ Call this function to notify all linked items connected to the document that the document has changed.  
   
 ```  
 void NotifyChanged();
 ```  
   
-### <a name="remarks"></a>コメント  
- 通常、ユーザーがサーバー ドキュメントのサイズなどのグローバルな属性を変更した後、この関数を呼び出します。 OLE アイテムは、自動リンクを使用して、ドキュメントにリンクされて、変更を反映するように、項目が更新されます。 Microsoft Foundation Class ライブラリに記述されたコンテナー アプリケーションで、 [OnChange](../../mfc/reference/coleclientitem-class.md#onchange)のメンバー関数`COleClientItem`が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ Typically, you call this function after the user changes some global attribute such as the dimensions of the server document. If an OLE item is linked to the document with an automatic link, the item is updated to reflect the changes. In container applications written with the Microsoft Foundation Class Library, the [OnChange](../../mfc/reference/coleclientitem-class.md#onchange) member function of `COleClientItem` is called.  
   
 > [!NOTE]
->  この関数は、OLE 1 と互換性のために含まれています。 新しいアプリケーションを使用する必要があります[UpdateAllItems](#updateallitems)します。  
+>  This function is included for compatibility with OLE 1. New applications should use [UpdateAllItems](#updateallitems).  
   
-##  <a name="notifyclosed"></a>COleServerDoc::NotifyClosed  
- この関数では、ドキュメントが閉じられているコンテナーに通知します。  
+##  <a name="notifyclosed"></a>  COleServerDoc::NotifyClosed  
+ Call this function to notify the container(s) that the document has been closed.  
   
 ```  
 void NotifyClosed();
 ```  
   
-### <a name="remarks"></a>コメント  
- [ファイル] メニューから [閉じる] コマンドを選択すると`NotifyClosed`によって呼び出される`COleServerDoc`の実装、[通常](../../mfc/reference/cdocument-class.md#onclosedocument)メンバー関数。 Microsoft Foundation Class ライブラリに記述されたコンテナー アプリケーションで、 [OnChange](../../mfc/reference/coleclientitem-class.md#onchange)のメンバー関数`COleClientItem`が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ When the user chooses the Close command from the File menu, `NotifyClosed` is called by `COleServerDoc`'s implementation of the [OnCloseDocument](../../mfc/reference/cdocument-class.md#onclosedocument) member function. In container applications written with the Microsoft Foundation Class Library, the [OnChange](../../mfc/reference/coleclientitem-class.md#onchange) member function of `COleClientItem` is called.  
   
-##  <a name="notifyrename"></a>COleServerDoc::NotifyRename  
- ユーザーには、サーバーのドキュメントが名前を変更した後は、この関数を呼び出します。  
+##  <a name="notifyrename"></a>  COleServerDoc::NotifyRename  
+ Call this function after the user renames the server document.  
   
 ```  
 void NotifyRename(LPCTSTR lpszNewName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszNewName`  
- サーバー ドキュメントの新しい名前を指定する文字列へのポインターこれは、通常、完全修飾パスです。  
+ Pointer to a string specifying the new name of the server document; this is typically a fully qualified path.  
   
-### <a name="remarks"></a>コメント  
- [ファイル] メニューから名前を付けて保存コマンドを選択すると`NotifyRename`によって呼び出される`COleServerDoc`の実装、[呼び出す必要はありません](../../mfc/reference/cdocument-class.md#onsavedocument)メンバー関数。 この関数は、OLE システム Dll で、さらに、コンテナーへの通知を通知します。 Microsoft Foundation Class ライブラリに記述されたコンテナー アプリケーションで、 [OnChange](../../mfc/reference/coleclientitem-class.md#onchange)のメンバー関数`COleClientItem`が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ When the user chooses the Save As command from the File menu, `NotifyRename` is called by `COleServerDoc`'s implementation of the [OnSaveDocument](../../mfc/reference/cdocument-class.md#onsavedocument) member function. This function notifies the OLE system DLLs, which in turn notify the containers. In container applications written with the Microsoft Foundation Class Library, the [OnChange](../../mfc/reference/coleclientitem-class.md#onchange) member function of `COleClientItem` is called.  
   
-##  <a name="notifysaved"></a>COleServerDoc::NotifySaved  
- ユーザーがサーバーのドキュメントを保存した後は、この関数を呼び出します。  
+##  <a name="notifysaved"></a>  COleServerDoc::NotifySaved  
+ Call this function after the user saves the server document.  
   
 ```  
 void NotifySaved();
 ```  
   
-### <a name="remarks"></a>コメント  
- [ファイル] メニューから [保存] コマンドを選択すると`NotifySaved`によって呼び出されます`COleServerDoc`の実装の[呼び出す必要はありません](../../mfc/reference/cdocument-class.md#onsavedocument)します。 この関数は、OLE システム Dll で、さらに、コンテナーへの通知を通知します。 Microsoft Foundation Class ライブラリに記述されたコンテナー アプリケーションで、 [OnChange](../../mfc/reference/coleclientitem-class.md#onchange)のメンバー関数`COleClientItem`が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ When the user chooses the Save command from the File menu, `NotifySaved` is called for you by `COleServerDoc`'s implementation of [OnSaveDocument](../../mfc/reference/cdocument-class.md#onsavedocument). This function notifies the OLE system DLLs, which in turn notify the containers. In container applications written with the Microsoft Foundation Class Library, the [OnChange](../../mfc/reference/coleclientitem-class.md#onchange) member function of `COleClientItem` is called.  
   
-##  <a name="onclose"></a>COleServerDoc::OnClose  
- コンテナーは、サーバーのドキュメントを閉じることを要求するときに、フレームワークによって呼び出されます。  
+##  <a name="onclose"></a>  COleServerDoc::OnClose  
+ Called by the framework when a container requests that the server document be closed.  
   
 ```  
 virtual void OnClose(OLECLOSE dwCloseOption);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwCloseOption`  
- 列挙値`OLECLOSE`です。 このパラメーターには、次のいずれかの値を指定できます。  
+ A value from the enumeration `OLECLOSE`. This parameter can have one of the following values:  
   
-- `OLECLOSE_SAVEIFDIRTY`変更された場合は、ファイルが保存されます。  
+- `OLECLOSE_SAVEIFDIRTY` The file is saved if it has been modified.  
   
-- `OLECLOSE_NOSAVE`ファイルが保存されることがなく閉じられます。  
+- `OLECLOSE_NOSAVE` The file is closed without being saved.  
   
-- `OLECLOSE_PROMPTSAVE`ファイルが変更された場合は、保存することは求められます。  
+- `OLECLOSE_PROMPTSAVE` If the file has been modified, the user is prompted about saving it.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装`CDocument::OnCloseDocument`します。  
+### <a name="remarks"></a>Remarks  
+ The default implementation calls `CDocument::OnCloseDocument`.  
   
- 詳細およびその他の値は、「[子](http://msdn.microsoft.com/library/windows/desktop/ms680623)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information and additional values, see [OLECLOSE](http://msdn.microsoft.com/library/windows/desktop/ms680623) in the Windows SDK.  
   
-##  <a name="ondeactivate"></a>COleServerDoc::OnDeactivate  
- 現在の実行中である埋め込みまたはリンクされたアイテムを非アクティブにするときに、フレームワークによって呼び出されます。  
+##  <a name="ondeactivate"></a>  COleServerDoc::OnDeactivate  
+ Called by the framework when the user deactivates an embedded or linked item that is currently in-place active.  
   
 ```  
 virtual void OnDeactivate();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数は、コンテナー アプリケーションのユーザー インターフェイスを元の状態に復元し、メニューやインプレース アクティブ化用に作成されたその他のコントロールを破棄します。  
+### <a name="remarks"></a>Remarks  
+ This function restores the container application's user interface to its original state and destroys any menus and other controls that were created for in-place activation.  
   
- 元に戻す状態情報を無条件に解放するこの時点でします。  
+ The undo state information should be unconditionally released at this point.  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ For more information, see the article [Activation](../../mfc/activation-cpp.md)..  
   
-##  <a name="ondeactivateui"></a>COleServerDoc::OnDeactivateUI  
- アクティブなアイテムを非アクティブにすると呼び出されます。  
+##  <a name="ondeactivateui"></a>  COleServerDoc::OnDeactivateUI  
+ Called when the user deactivates an item that was activated in place.  
   
 ```  
 virtual void OnDeactivateUI(BOOL bUndoable);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bUndoable`  
- 編集が完了できるかどうかを指定します。  
+ Specifies whether the editing changes can be undone.  
   
-### <a name="remarks"></a>コメント  
- この関数は、コンテナー アプリケーションのユーザー インターフェイスを任意のメニューおよびインプレース アクティブ化用に作成されたその他のコントロールを非表示の元の状態に復元します。  
+### <a name="remarks"></a>Remarks  
+ This function restores the container application's user interface to its original state, hiding any menus and other controls that were created for in-place activation.  
   
- 常に、フレームワークを設定`bUndoable`に**FALSE**します。 サーバーは、元に戻すをサポートし、元に戻すことができる操作は場合に、基本クラス実装を呼び出す`bUndoable`に設定**TRUE**します。  
+ The framework always sets `bUndoable` to **FALSE**. If the server supports undo and there is an operation that can be undone, call the base-class implementation with `bUndoable` set to **TRUE**.  
   
-##  <a name="ondocwindowactivate"></a>COleServerDoc::OnDocWindowActivate  
- フレームワークでは、アクティブにするか、埋め込み先編集のドキュメント ウィンドウを非アクティブ化するには、この関数を呼び出します。  
+##  <a name="ondocwindowactivate"></a>  COleServerDoc::OnDocWindowActivate  
+ The framework calls this function to activate or deactivate a document window for in-place editing.  
   
 ```  
 virtual void OnDocWindowActivate(BOOL bActivate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bActivate`  
- ドキュメント ウィンドウをアクティブ化または非アクティブにするかどうかを指定します。  
+ Specifies whether the document window is to be activated or deactivated.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、削除か、適切なフレーム レベルのユーザー インターフェイス要素を追加します。 アイテムを持つドキュメントがアクティブまたは非アクティブになるときに、追加操作を実行する場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation removes or adds the frame-level user interface elements as appropriate. Override this function if you want to perform additional actions when the document containing your item is activated or deactivated.  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ For more information, see the article [Activation](../../mfc/activation-cpp.md)..  
   
-##  <a name="onexecolecmd"></a>COleServerDoc::OnExecOleCmd  
- フレームワークでは、指定したコマンドを実行またはコマンドのヘルプを表示するには、この関数を呼び出します。  
+##  <a name="onexecolecmd"></a>  COleServerDoc::OnExecOleCmd  
+ The framework calls this function to execute a specified command or display help for the command.  
   
 ```  
 virtual HRESULT OnExecOleCmd(
@@ -538,15 +569,15 @@ virtual HRESULT OnExecOleCmd(
     VARIANTARG* pvarargOut);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pguidCmdGroup`  
- コマンドのセットを識別する GUID へのポインター。 できる**NULL**を既定のコマンド グループを示します。  
+ A pointer to a GUID that identifies a set of commands. Can be **NULL** to indicate the default command group.  
   
  `nCmdID`  
- 実行するコマンド。 識別されるグループである必要があります`pguidCmdGroup`します。  
+ The command to execute. Must be in the group identified by `pguidCmdGroup`.  
   
  *nCmdExecOut*  
- 方法は、コマンド、1 つ以上の次の値をオブジェクトを実行する、**する**列挙体。  
+ The way the object should execute the command, one or more of the following values from the **OLECMDEXECOPT** enumeration:  
   
  **OLECMDEXECOPT_DODEFAULT**  
   
@@ -557,82 +588,82 @@ virtual HRESULT OnExecOleCmd(
  **OLECMDEXECOPT_SHOWHELP**  
   
  `pvarargIn`  
- ポインター、 **VARIANTARG**コマンドの入力引数を格納しています。 できる**NULL**します。  
+ Pointer to a **VARIANTARG** containing input arguments for the command. Can be **NULL**.  
   
  `pvarargOut`  
- ポインター、 **VARIANTARG**コマンドから出力される戻り値を受信します。 できる**NULL**します。  
+ Pointer to a **VARIANTARG** to receive the output return values from the command. Can be **NULL**.  
   
-### <a name="return-value"></a>戻り値  
- 返します。`S_OK`成功した場合は、次のエラー コードのいずれか。  
+### <a name="return-value"></a>Return Value  
+ Returns `S_OK` if successful; otherwise, one of the following error codes:  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|**E_UNEXPECTED**|予期しないエラーが発生しました|  
-|**E_FAIL**|エラーが発生しました|  
-|**E_NOTIMPL**|MFC を示す変換し、コマンドをディスパッチするべきで自体|  
-|**OLECMDERR_E_UNKNOWNGROUP**|`pguidCmdGroup`非**NULL**ですが認識されているコマンド グループが指定されていません|  
-|**OLECMDERR_E_NOTSUPPORTED**|`nCmdID`グループ内の有効なコマンドとして認識されません。`pguidCmdGroup`|  
-|**OLECMDERR_DISABLED**|指定されたコマンド`nCmdID`は無効になり、実行することはできません|  
-|**OLECMDERR_NOHELP**|呼び出し元がで指定されたコマンドのヘルプを要求しました`nCmdID`ヘルプは使用できませんが、|  
-|**OLECMDERR_CANCELED**|ユーザーは、実行をキャンセルしました。|  
+|**E_UNEXPECTED**|Unexpected error occurred|  
+|**E_FAIL**|Error occurred|  
+|**E_NOTIMPL**|Indicates MFC itself should attempt to translate and dispatch the command|  
+|**OLECMDERR_E_UNKNOWNGROUP**|`pguidCmdGroup` is non- **NULL** but does not specify a recognized command group|  
+|**OLECMDERR_E_NOTSUPPORTED**|`nCmdID` is not recognized as a valid command in the group `pguidCmdGroup`|  
+|**OLECMDERR_DISABLED**|The command identified by `nCmdID` is disabled and cannot be executed|  
+|**OLECMDERR_NOHELP**|Caller asked for help on the command identified by `nCmdID` but no help is available|  
+|**OLECMDERR_CANCELED**|User canceled the execution|  
   
-### <a name="remarks"></a>コメント  
- `COleCmdUI`有効にする、更新、および DocObject ユーザー インターフェイスのコマンドの他のプロパティを設定するために使用します。 コマンドが初期化された後でそれらを実行できる`OnExecOleCmd`です。  
+### <a name="remarks"></a>Remarks  
+ `COleCmdUI` can be used to enable, update, and set other properties of DocObject user interface commands. After the commands are initialized, you can execute them with `OnExecOleCmd`.  
   
- フレームワークは、変換および OLE ドキュメント コマンドをディスパッチする前に、関数を呼び出します。 OLE ドキュメントの標準のコマンドを処理するには、この関数をオーバーライドする必要はありませんが、独自のコマンドを処理またはパラメーターを受け入れるか、結果を返すコマンドを処理する場合は、この関数をオーバーライドを指定する必要があります。  
+ The framework calls the function before attempting to translate and dispatch an OLE document command. You don't need to override this function to handle standard OLE document commands, but you must supply an override to this function if you want to handle your own custom commands or handle commands that accept parameters or return results.  
   
- ほとんどのコマンドの引数を受け取るしたりしないで値を返します。 ほとんどのコマンドの呼び出し元を渡すことができます**NULL**の`pvarargIn`と`pvarargOut`です。 入力値を必要とするコマンドの呼び出し元は、宣言し、初期化を**VARIANTARG**変数内の変数にポインターを渡すと`pvarargIn`です。 コマンドについては、単一の値を必要とする、引数をで直接保存することができます、 **VARIANTARG**関数に渡されました。 内に複数の引数をパッケージ化する必要があります、 **VARIANTARG**サポートされる型のいずれかを使用して (よう`IDispatch`と**SAFEARRAY** )。  
+ Most of the commands do not take arguments or return values. For a majority of commands the caller can pass **NULL**s for `pvarargIn` and `pvarargOut`. For commands that expect input values, the caller can declare and initialize a **VARIANTARG** variable and pass a pointer to the variable in `pvarargIn`. For commands that require a single value, the argument can be stored directly in the **VARIANTARG** and passed to the function. Multiple arguments must be packaged within the **VARIANTARG** using one of the supported types (such as `IDispatch` and **SAFEARRAY** ).  
   
- 同様に、コマンドは、呼び出し元の引数を返す場合を想定して宣言、 **VARIANTARG**に初期化`VT_EMPTY`でそのアドレスを渡すと`pvarargOut`です。 コマンドが単一の値を返す場合、オブジェクトで直接その値を格納できます`pvarargOut`します。 複数の出力値に適した何らかの方法でパッケージ化する必要があります、 **VARIANTARG**します。  
+ Similarly, if a command returns arguments the caller is expected to declare a **VARIANTARG**, initialize it to `VT_EMPTY`, and pass its address in `pvarargOut`. If a command returns a single value, the object can store that value directly in `pvarargOut`. Multiple output values must be packaged in some way appropriate for the **VARIANTARG**.  
   
- この関数の基本クラスの実装では説明、**対応**コマンドの対象とする適切なハンドラーをコマンドに関連する構造体。 基本クラスの実装は、戻り値または引数を受け取るしないコマンドでのみ動作します。 引数または戻り値をコマンドを処理する必要がある場合は、この関数をオーバーライドして、動作確認する必要があります、`pvarargIn`と`pvarargOut`パラメーター自分でします。  
+ The base-class implementation of this function will walk the **OLE_COMMAND_MAP** structures associated with the command target and try to dispatch the command to an appropriate handler. The base-class implementation works only with commands that do not accept arguments or return values. If you need to handle commands that do accept arguments or return values, you must override this function and work with the `pvarargIn` and `pvarargOut` parameters yourself.  
   
-##  <a name="onframewindowactivate"></a>COleServerDoc::OnFrameWindowActivate  
- フレームワークは、コンテナー アプリケーションのフレーム ウィンドウがアクティブまたは非アクティブになるときに、この関数を呼び出します。  
+##  <a name="onframewindowactivate"></a>  COleServerDoc::OnFrameWindowActivate  
+ The framework calls this function when the container application's frame window is activated or deactivated.  
   
 ```  
 virtual void OnFrameWindowActivate(BOOL bActivate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bActivate`  
- フレーム ウィンドウをアクティブ化または非アクティブにするかどうかを指定します。  
+ Specifies whether the frame window is to be activated or deactivated.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、フレーム ウィンドウのヘルプ モードをキャンセルします。 フレーム ウィンドウがアクティブ化または非アクティブになる場合は、特別な処理を実行する場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation cancels any help modes the frame window might be in. Override this function if you want to perform special processing when the frame window is activated or deactivated.  
   
- 詳細については、記事を参照してください[アクティベーション](../../mfc/activation-cpp.md).。  
+ For more information, see the article [Activation](../../mfc/activation-cpp.md)..  
   
-##  <a name="ongetembeddeditem"></a>COleServerDoc::OnGetEmbeddedItem  
- コンテナー アプリケーションが作成または埋め込みアイテムを編集するサーバー アプリケーションを呼び出すときに、フレームワークによって呼び出されます。  
+##  <a name="ongetembeddeditem"></a>  COleServerDoc::OnGetEmbeddedItem  
+ Called by the framework when a container application calls the server application to create or edit an embedded item.  
   
 ```  
 virtual COleServerItem* OnGetEmbeddedItem() = 0;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ドキュメント全体を表す項目へのポインター**NULL**場合は、操作に失敗しました。  
+### <a name="return-value"></a>Return Value  
+ A pointer to an item representing the entire document; **NULL** if the operation failed.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装はありません。 ドキュメント全体を表す項目を返す関数をオーバーライドする必要があります。 この戻り値のオブジェクトをする必要があります、 `COleServerItem`-クラスを派生します。  
+### <a name="remarks"></a>Remarks  
+ There is no default implementation. You must override this function to return an item that represents the entire document. This return value should be an object of a `COleServerItem`-derived class.  
   
-##  <a name="onreactivateandundo"></a>されて  
- フレームワークは、インプレース アクティブ化、変更すると、および後で非アクティブ化された項目に加えられた変更を元に戻すを選択すると、この関数を呼び出します。  
+##  <a name="onreactivateandundo"></a>  COleServerDoc::OnReactivateAndUndo  
+ The framework calls this function when the user chooses to undo changes made to an item that has been activated in place, changed, and subsequently deactivated.  
   
 ```  
 virtual BOOL OnReactivateAndUndo();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、何も返す以外**FALSE**失敗を示すにします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation does nothing except return **FALSE** to indicate failure.  
   
- アプリケーションは、元に戻すをサポートしている場合は、この関数をオーバーライドします。 通常、元に戻す操作を実行しを呼び出して、項目をアクティブ化する`ActivateInPlace`です。 コンテナー アプリケーションが、Microsoft Foundation Class ライブラリに記述されている場合は、呼び出し`COleClientItem::ReactivateAndUndo`呼び出される場合は、この関数が発生します。  
+ Override this function if your application supports undo. Usually you would perform the undo operation, then activate the item by calling `ActivateInPlace`. If the container application is written with the Microsoft Foundation Class Library, calling `COleClientItem::ReactivateAndUndo` causes this function to be called.  
   
-##  <a name="onresizeborder"></a>COleServerDoc::OnResizeBorder  
- フレームワークは、コンテナー アプリケーションのフレーム ウィンドウのサイズを変更するときに、この関数を呼び出します。  
+##  <a name="onresizeborder"></a>  COleServerDoc::OnResizeBorder  
+ The framework calls this function when the container application's frame windows change size.  
   
 ```  
 virtual void OnResizeBorder(
@@ -641,25 +672,25 @@ virtual void OnResizeBorder(
     BOOL bFrame);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRectBorder`  
- ポインター、`RECT`構造体、または`CRect`罫線の座標を指定するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object that specifies the coordinates of the border.  
   
  `lpUIWindow`  
- クラスのオブジェクトへのポインター**埋め込み**現在の埋め込み先編集セッションを所有しています。  
+ Pointer to an object of class **IOleInPlaceUIWindow** that owns the current in-place editing session.  
   
- *b フレーム*  
- **TRUE**場合`lpUIWindow`コンテナー アプリケーションの最上位のフレーム ウィンドウで、指すまたは**FALSE**場合`lpUIWindow`コンテナー アプリケーションのドキュメント レベルのフレーム ウィンドウをポイントします。  
+ *bFrame*  
+ **TRUE** if `lpUIWindow` points to the container application's top-level frame window, or **FALSE** if `lpUIWindow` points to the container application's document-level frame window.  
   
-### <a name="remarks"></a>コメント  
- この関数は、サイズを変更し、ツールバーと新しいウィンドウのサイズに従ってその他のユーザー インターフェイス要素を調整します。  
+### <a name="remarks"></a>Remarks  
+ This function resizes and adjusts toolbars and other user-interface elements in accordance with the new window size.  
   
- 詳細については、次を参照してください。[埋め込み](http://msdn.microsoft.com/library/windows/desktop/ms680716)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IOleInPlaceUIWindow](http://msdn.microsoft.com/library/windows/desktop/ms680716) in the Windows SDK.  
   
- これは、高度なオーバーライドします。  
+ This is an advanced overridable.  
   
-##  <a name="onsethostnames"></a>COleServerDoc::OnSetHostNames  
- コンテナーを設定またはこのドキュメントのホスト名を変更するときに、フレームワークによって呼び出されます。  
+##  <a name="onsethostnames"></a>  COleServerDoc::OnSetHostNames  
+ Called by the framework when the container sets or changes the host names for this document.  
   
 ```  
 virtual void OnSetHostNames(
@@ -667,20 +698,20 @@ virtual void OnSetHostNames(
     LPCTSTR lpszHostObj);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszHost`  
- コンテナー アプリケーションの名前を指定する文字列へのポインター。  
+ Pointer to a string that specifies the name of the container application.  
   
  `lpszHostObj`  
- ドキュメントのコンテナーの名前を指定する文字列へのポインター。  
+ Pointer to a string that specifies the container's name for the document.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、このドキュメントを参照するすべてのビューにドキュメントのタイトルを変更します。  
+### <a name="remarks"></a>Remarks  
+ The default implementation changes the document title for all views referring to this document.  
   
- アプリケーションが、別のメカニズムを通じて、タイトルを設定する場合は、この関数をオーバーライドします。  
+ Override this function if your application sets the titles through a different mechanism.  
   
-##  <a name="onsetitemrects"></a>COleServerDoc::OnSetItemRects  
- フレームワークでは、コンテナー アプリケーションのフレーム ウィンドウ内で、埋め込み先編集フレーム ウィンドウを配置するには、この関数を呼び出します。  
+##  <a name="onsetitemrects"></a>  COleServerDoc::OnSetItemRects  
+ The framework calls this function to position the in-place editing frame window within the container application's frame window.  
   
 ```  
 virtual void OnSetItemRects(
@@ -688,20 +719,20 @@ virtual void OnSetItemRects(
     LPCRECT lpClipRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPosRect`  
- ポインター、`RECT`構造体、または`CRect`コンテナー アプリケーションのクライアント領域を基準との埋め込み先フレーム ウィンドウの位置を指定するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object that specifies the in-place frame window's position relative to the container application's client area.  
   
  `lpClipRect`  
- ポインター、`RECT`構造体、または`CRect`で埋め込み先フレーム ウィンドウのクリッピング長方形を指定するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object that specifies the in-place frame window's clipping rectangle relative to the container application's client area.  
   
-### <a name="remarks"></a>コメント  
- 必要な場合は、ビューのズームの倍率を更新するには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Override this function to update the view's zoom factor, if necessary.  
   
- 通常、この関数はへの応答で呼び出されます。、`RequestPositionChange`呼び出すには、は埋め込み先アイテムの位置の変更を要求するコンテナーによっていつでも呼び出すことができます。  
+ This function is usually called in response to a `RequestPositionChange` call, although it can be called at any time by the container to request a position change for the in-place item.  
   
-##  <a name="onshowcontrolbars"></a>COleServerDoc::OnShowControlBars  
- フレームワークで識別されるフレーム ウィンドウに関連付けられているサーバー アプリケーションのコントロール バーを非表示には、この関数を呼び出します`pFrameWnd`します。  
+##  <a name="onshowcontrolbars"></a>  COleServerDoc::OnShowControlBars  
+ The framework calls this function to show or hide the server application's control bars associated with the frame window identified by `pFrameWnd`.  
   
 ```  
 virtual void OnShowControlBars(
@@ -709,86 +740,86 @@ virtual void OnShowControlBars(
     BOOL bShow);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFrameWnd`  
- フレーム ウィンドウのコントロール バーを非表示または表示する必要がありますへのポインター。  
+ Pointer to the frame window whose control bars should be hidden or shown.  
   
  `bShow`  
- コントロール バーを表示または非表示かどうかを決定します。  
+ Determines whether control bars are shown or hidden.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装は、フレーム ウィンドウによって所有されているすべてのコントロール バーを列挙または非表示にし、それらを示しています。  
+### <a name="remarks"></a>Remarks  
+ The default implementation enumerates all control bars owned by that frame window and hides or shows them.  
   
-##  <a name="onshowdocument"></a>COleServerDoc::OnShowDocument  
- フレームワークによって、`OnShowDocument`関数の場合、サーバーのドキュメントを非表示または表示する必要があります。  
+##  <a name="onshowdocument"></a>  COleServerDoc::OnShowDocument  
+ The framework calls the `OnShowDocument` function when the server document must be hidden or shown.  
   
 ```  
 virtual void OnShowDocument(BOOL bShow);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bShow`  
- ドキュメントへのユーザー インターフェイスを表示するか非表示になっているかどうかを指定します。  
+ Specifies whether the user interface to the document is to be shown or hidden.  
   
-### <a name="remarks"></a>コメント  
- 場合`bShow`は**TRUE**既定の実装は、必要に応じて、サーバー アプリケーションをアクティブにし、コンテナー アプリケーションが、項目が表示されるように、そのウィンドウをスクロールします。 場合`bShow`は**FALSE**、既定の実装への呼び出しを使用して、アイテムを非アクティブに`OnDeactivate`を破棄または&1; つ目以外のドキュメント用に作成されたすべてのフレーム ウィンドウを非表示にします。 表示されているドキュメントが残っていない場合、既定の実装には、サーバー アプリケーションが非表示にします。  
+### <a name="remarks"></a>Remarks  
+ If `bShow` is **TRUE**, the default implementation activates the server application, if necessary, and causes the container application to scroll its window so that the item is visible. If `bShow` is **FALSE**, the default implementation deactivates the item through a call to `OnDeactivate`, then destroys or hides all frame windows that have been created for the document, except the first one. If no visible documents remain, the default implementation hides the server application.  
   
-##  <a name="onupdatedocument"></a>COleServerDoc::OnUpdateDocument  
- 複合ドキュメントに埋め込まれたアイテムは、文書を保存するときに、フレームワークによって呼び出されます。  
+##  <a name="onupdatedocument"></a>  COleServerDoc::OnUpdateDocument  
+ Called by the framework when saving a document that is an embedded item in a compound document.  
   
 ```  
 virtual BOOL OnUpdateDocument();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、ドキュメントが正常に更新されました。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the document was successfully updated; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装、 [COleServerDoc::NotifySaved](#notifysaved)と[COleServerDoc::SaveEmbedding](#saveembedding)メンバーが機能し、クリーンとしてマークします。 特別な埋め込みアイテムを更新するときの処理を実行する場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation calls the [COleServerDoc::NotifySaved](#notifysaved) and [COleServerDoc::SaveEmbedding](#saveembedding) member functions and then marks the document as clean. Override this function if you want to perform special processing when updating an embedded item.  
   
-##  <a name="requestpositionchange"></a>から  
- コンテナー アプリケーションにアイテムの位置を変更するには、このメンバー関数を呼び出します。  
+##  <a name="requestpositionchange"></a>  COleServerDoc::RequestPositionChange  
+ Call this member function to have the container application change the item's position.  
   
 ```  
 void RequestPositionChange(LPCRECT lpPosRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPosRect`  
- ポインター、`RECT`構造体、または`CRect`アイテムの新しい位置を格納するオブジェクト。  
+ Pointer to a `RECT` structure or a `CRect` object containing the item's new position.  
   
-### <a name="remarks"></a>コメント  
- 通常、この関数は呼び出されます (と共に`UpdateAllItems`)、インプレース アクティブな項目内のデータが変更されました。 この呼び出しでは、次のコンテナーがありますまたはを呼び出して、変更を実行しなかったり`OnSetItemRects`します。 返される位置は、要求されるとは異なる場合があります。  
+### <a name="remarks"></a>Remarks  
+ This function is usually called (in conjunction with `UpdateAllItems`) when the data in an in-place active item has changed. Following this call, the container might or might not perform the change by calling `OnSetItemRects`. The resulting position might be different from the one requested.  
   
-##  <a name="saveembedding"></a>COleServerDoc::SaveEmbedding  
- この関数では、埋め込みオブジェクトを保存するコンテナー アプリケーションに指示します。  
+##  <a name="saveembedding"></a>  COleServerDoc::SaveEmbedding  
+ Call this function to tell the container application to save the embedded object.  
   
 ```  
 void SaveEmbedding();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数はから自動的に呼び出されます。`OnUpdateDocument`します。 この関数がにより、アイテムをディスク上で更新されるので、通常、特定のユーザーの操作の結果としてのみと呼ばれるであることに注意してください。  
+### <a name="remarks"></a>Remarks  
+ This function is called automatically from `OnUpdateDocument`. Note that this function causes the item to be updated on disk, so it is usually called only as a result of a specific user action.  
   
-##  <a name="scrollcontainerby"></a>COleServerDoc::ScrollContainerBy  
- 呼び出す、`ScrollContainerBy`で示されます (ピクセル単位) の量でコンテナーのドキュメントをスクロールするメンバー関数を`sizeScroll`します。  
+##  <a name="scrollcontainerby"></a>  COleServerDoc::ScrollContainerBy  
+ Call the `ScrollContainerBy` member function to scroll the container document by the amount, in pixels, indicated by `sizeScroll`.  
   
 ```  
 BOOL ScrollContainerBy(CSize sizeScroll);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `sizeScroll`  
- スクロールするコンテナー ドキュメントは、距離を示します。  
+ Indicates how far the container document is to scroll.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 正の値が右にスクロール ダウンを示します負の値を示すを左にスクロールします。  
+### <a name="remarks"></a>Remarks  
+ Positive values indicate scrolling down and to the right; negative values indicate scrolling up and to the left.  
   
-##  <a name="updateallitems"></a>COleServerDoc::UpdateAllItems  
- この関数では、ドキュメントが変更されたドキュメントに接続されているすべてのリンクされた項目に通知します。  
+##  <a name="updateallitems"></a>  COleServerDoc::UpdateAllItems  
+ Call this function to notify all linked items connected to the document that the document has changed.  
   
 ```  
 void UpdateAllItems(
@@ -798,37 +829,37 @@ void UpdateAllItems(
     DVASPECT nDrawAspect = DVASPECT_CONTENT);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSender`  
- ドキュメントを変更する項目へのポインターまたは**NULL**場合、すべての項目を更新します。  
+ Pointer to the item that modified the document, or **NULL** if all items are to be updated.  
   
  `lHint`  
- 変更に関する情報が含まれています。  
+ Contains information about the modification.  
   
  `pHint`  
- 変更に関する情報を格納するオブジェクトへのポインター。  
+ Pointer to an object storing information about the modification.  
   
  `nDrawAspect`  
- アイテムの描画する方法を決定します。 これから値、`DVASPECT`列挙します。 このパラメーターには、次のいずれかの値を指定できます。  
+ Determines how the item is to be drawn. This is a value from the `DVASPECT` enumeration. This parameter can have one of the following values:  
   
-- `DVASPECT_CONTENT`項目は、そのコンテナー内の埋め込みオブジェクトとして表示できるように表されます。  
+- `DVASPECT_CONTENT` Item is represented in such a way that it can be displayed as an embedded object inside its container.  
   
-- `DVASPECT_THUMBNAIL`閲覧ツールで表示されることができるように、「縮小」表現ではアイテムが表示されます。  
+- `DVASPECT_THUMBNAIL` Item is rendered in a "thumbnail" representation so that it can be displayed in a browsing tool.  
   
-- `DVASPECT_ICON`項目がアイコンで表されます。  
+- `DVASPECT_ICON` Item is represented by an icon.  
   
-- `DVASPECT_DOCPRINT`[ファイル] メニューから [印刷] コマンドを使用して印刷した場合のように、項目が表されます。  
+- `DVASPECT_DOCPRINT` Item is represented as if it were printed using the Print command from the File menu.  
   
-### <a name="remarks"></a>コメント  
- 通常、ユーザーがサーバーのドキュメントを変更した後は、この関数を呼び出します。 OLE アイテムは、自動リンクを使用して、ドキュメントにリンクされて、変更を反映するように、項目が更新されます。 Microsoft Foundation Class ライブラリに記述されたコンテナー アプリケーションで、 [OnChange](../../mfc/reference/coleclientitem-class.md#onchange)のメンバー関数`COleClientItem`が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ You typically call this function after the user changes the server document. If an OLE item is linked to the document with an automatic link, the item is updated to reflect the changes. In container applications written with the Microsoft Foundation Class Library, the [OnChange](../../mfc/reference/coleclientitem-class.md#onchange) member function of `COleClientItem` is called.  
   
- この関数は、`OnUpdate`メンバー関数の各項目を渡す送信以外、ドキュメントの項目を`pHint`、 `lHint`、および`nDrawAspect`です。 ドキュメントに加えられた変更に関する項目に情報を渡すには、これらのパラメーターを使用します。 使用して情報をエンコードする`lHint`するかを定義、 `CObject`-派生したクラスを変更についての情報を格納および使用するこのクラスのオブジェクトを渡す`pHint`します。 オーバーライド、`OnUpdate`でメンバー関数、 `COleServerItem`-その表現が変更されたかどうかに応じて、各項目の更新を最適化するためにクラスを派生します。  
+ This function calls the `OnUpdate` member function for each of the document's items except the sending item, passing `pHint`, `lHint`, and `nDrawAspect`. Use these parameters to pass information to the items about the modifications made to the document. You can encode information using `lHint` or you can define a `CObject`-derived class to store information about the modifications and pass an object of that class using `pHint`. Override the `OnUpdate` member function in your `COleServerItem`-derived class to optimize the updating of each item depending on whether its presentation has changed.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
- [直接クラス](../../mfc/reference/colelinkingdoc-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [COleDocument クラス](../../mfc/reference/coledocument-class.md)   
- [直接クラス](../../mfc/reference/colelinkingdoc-class.md)   
- [関数のクラス](../../mfc/reference/coletemplateserver-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample HIERSVR](../../visual-cpp-samples.md)   
+ [COleLinkingDoc Class](../../mfc/reference/colelinkingdoc-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleDocument Class](../../mfc/reference/coledocument-class.md)   
+ [COleLinkingDoc Class](../../mfc/reference/colelinkingdoc-class.md)   
+ [COleTemplateServer Class](../../mfc/reference/coletemplateserver-class.md)
 

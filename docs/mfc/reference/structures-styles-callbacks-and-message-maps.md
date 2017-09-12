@@ -1,5 +1,5 @@
 ---
-title: "構造体、スタイル、コールバック、およびメッセージ マップ |Microsoft ドキュメント"
+title: Structures, Styles, Callbacks, and Message Maps | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,7 +15,7 @@ dev_langs:
 helpviewer_keywords:
 - callback functions, MFC
 - styles, MFC
-- message maps, MFC
+- message classes [MFC], MFC
 - structures, MFC
 ms.assetid: 27566602-7d84-4089-880c-8e90fb04fa56
 caps.latest.revision: 13
@@ -36,35 +36,35 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5c6fbfc8699d7d66c40b0458972d8b6ef0dcc705
-ms.openlocfilehash: 6d540c5b39d756701c527231a03c06e439d84f3c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 13e8abcb1e4bf952484a16a927b38efe4eb8f203
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="structures-styles-callbacks-and-message-maps"></a>構造体、スタイル、コールバック関数とメッセージ マップ
-ここでは、構造体、スタイル、および Microsoft Foundation Class ライブラリで使用されるコールバック関数を説明し、MFC メッセージ マップします。  
+# <a name="structures-styles-callbacks-and-message-maps"></a>Structures, Styles, Callbacks, and Message Maps
+This section documents the structures, styles, and callback functions used by the Microsoft Foundation Class Library and the MFC message maps.  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [MFC で使用する構造体](../../mfc/reference/structures-used-by-mfc.md)  
- さまざまなメンバー関数から呼び出される構造体へのリンクを提供します。  
+## <a name="in-this-section"></a>In This Section  
+ [Structures Used by MFC](../../mfc/reference/structures-used-by-mfc.md)  
+ Provides links to the structures called from various member functions.  
   
- [MFC で使用するスタイル](../../mfc/reference/styles-used-by-mfc.md)  
- MFC オブジェクトを作成するときに使用するスタイルへのリンクを提供します。  
+ [Styles Used by MFC](../../mfc/reference/styles-used-by-mfc.md)  
+ Provides links to the styles used when creating MFC objects.  
   
- [MFC で使用するコールバック関数](../../mfc/reference/callback-functions-used-by-mfc.md)  
- MFC ライブラリに表示されているコールバック関数へのリンクを提供します。  
+ [Callback Functions Used by MFC](../../mfc/reference/callback-functions-used-by-mfc.md)  
+ Provides links to the callback functions appearing in the MFC Library.  
   
- [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)  
- メッセージ割り当てマクロについて説明し、`CWnd`メッセージ マップ エントリです。  
+ [Message Maps](../../mfc/reference/message-maps-mfc.md)  
+ Describes the message mapping macros and `CWnd` message-map entries.  
   
-## <a name="related-sections"></a>関連項目  
- [クラス ライブラリの概要](../../mfc/class-library-overview.md)  
- MFC ライブラリのクラスをカテゴリ別に一覧表示します。  
+## <a name="related-sections"></a>Related Sections  
+ [Class Library Overview](../../mfc/class-library-overview.md)  
+ Lists the classes in the MFC Library according to category.  
   
- [MFC のサンプル](../../visual-cpp-samples.md)  
- MFC ライブラリの使用方法を示すサンプルへのリンクを提供します。
+ [MFC Samples](../../visual-cpp-samples.md)  
+ Provides links to samples that demonstrate using the MFC Library.
 
 
 

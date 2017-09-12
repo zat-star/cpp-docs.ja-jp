@@ -1,66 +1,85 @@
 ---
-title: "ドキュメントの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [MFC], ドキュメント"
-  - "データ [MFC], 読み取り"
-  - "ドキュメント/ビュー アーキテクチャ [C++], ドキュメント"
-  - "ドキュメント [C++]"
-  - "ドキュメント [C++], C++ アプリケーション"
-  - "ファイル [C++]"
-  - "ファイル [C++], 書き込み"
-  - "印刷 [MFC], ドキュメント"
-  - "読み取り (データを) [C++], ドキュメントとビュー"
-  - "ビュー [C++], C++ アプリケーション"
-  - "書き込み (ファイルへの) [C++]"
+title: Using Documents | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- documents [MFC], C++ applications
+- data [MFC], reading
+- documents [MFC]
+- files [MFC], writing to
+- data [MFC], documents
+- files [MFC]
+- views [MFC], C++ applications
+- document/view architecture [MFC], documents
+- reading data [MFC], documents and views
+- printing [MFC], documents
+- writing to files [MFC]
 ms.assetid: f390d6d8-d0e1-4497-9b6a-435f7ce0776c
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメントの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fc12ddaff980b92c5174b2de7a5f6a122e4f5a08
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-協力して、ドキュメントとビュー:  
+---
+# <a name="using-documents"></a>Using Documents
+Working together, documents and views:  
   
--   アプリケーション固有の [データ](../mfc/managing-data-with-document-data-variables.md)が含まれ、管理、および表示する。  
+-   Contain, manage, and display your application-specific [data](../mfc/managing-data-with-document-data-variables.md).  
   
--   [ドキュメント データの変数](../mfc/managing-data-with-document-data-variables.md) から成るデータを処理するためのインターフェイスを提供します。  
+-   Provide an interface consisting of [document data variables](../mfc/managing-data-with-document-data-variables.md) for manipulating the data.  
   
--   [読み取りおよび書き込みファイル](../mfc/serializing-data-to-and-from-files.md)に参加できます。  
+-   Participate in [writing and reading files](../mfc/serializing-data-to-and-from-files.md).  
   
--   [印刷中](../mfc/role-of-the-view-in-printing.md)に参加できます。  
+-   Participate in [printing](../mfc/role-of-the-view-in-printing.md).  
   
--   アプリケーションのコマンドとメッセージの最も[ハンドル](../mfc/handling-commands-in-the-document.md)。  
+-   [Handle](../mfc/handling-commands-in-the-document.md) most of your application's commands and messages.  
   
- ドキュメントは、マネージ データに特に関係します。  ドキュメント クラスのメンバー変数にデータは、通常、保存します。  ビューの表示と更新のデータにアクセスするために、これらの変数を使用します。  ドキュメントの既定のシリアル化機構は、ファイルに対する読み取りと書き込みデータを管理します。  ドキュメントは、コマンドできます \(**WM\_COMMAND**以外のない Windows メッセージを処理\)。  
+ The document is particularly involved in managing data. Store your data, normally, in document class member variables. The view uses these variables to access the data for display and update. The document's default serialization mechanism manages reading and writing the data to and from files. Documents can also handle commands (but not Windows messages other than **WM_COMMAND**).  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [CDocument からドキュメント クラスを派生すること](../mfc/deriving-a-document-class-from-cdocument.md)  
+-   [Deriving a document class from CDocument](../mfc/deriving-a-document-class-from-cdocument.md)  
   
--   [ドキュメント データ変数のデータ管理](../mfc/managing-data-with-document-data-variables.md)  
+-   [Managing data with document data variables](../mfc/managing-data-with-document-data-variables.md)  
   
--   [ファイルに対するデータのシリアル化](../mfc/serializing-data-to-and-from-files.md)  
+-   [Serializing data to and from files](../mfc/serializing-data-to-and-from-files.md)  
   
--   [シリアル化機構をバイパス](../mfc/bypassing-the-serialization-mechanism.md)  
+-   [Bypassing the serialization mechanism](../mfc/bypassing-the-serialization-mechanism.md)  
   
--   [ドキュメントの処理コマンド](../mfc/handling-commands-in-the-document.md)  
+-   [Handling commands in the document](../mfc/handling-commands-in-the-document.md)  
   
--   [OnNewDocument のメンバー関数](../Topic/CDocument::OnNewDocument.md)  
+-   [The OnNewDocument member function](../mfc/reference/cdocument-class.md#onnewdocument)  
   
--   [DeleteContents のメンバー関数](../Topic/CDocument::DeleteContents.md)  
+-   [The DeleteContents member function](../mfc/reference/cdocument-class.md#deletecontents)  
   
-## 参照  
- [ドキュメント\/ビュー アーキテクチャ](../Topic/Document-View%20Architecture.md)
+## <a name="see-also"></a>See Also  
+ [Document/View Architecture](../mfc/document-view-architecture.md)
+
+

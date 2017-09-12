@@ -1,45 +1,64 @@
 ---
-title: "MFC ActiveX コントロール : メソッドからのエラー コードのリターン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エラー [C++], ActiveX コントロール エラー コード"
-  - "FireError メソッド"
-  - "GetNotSupported メソッド"
-  - "MFC ActiveX コントロール, エラー コード"
-  - "SCODE, MFC ActiveX コントロール"
-  - "SetNotSupported メソッド, 使用"
-  - "ThrowError メソッド"
+title: 'MFC ActiveX Controls: Returning Error Codes From a Method | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], error codes
+- SetNotSupported method, using
+- errors [MFC], ActiveX control error codes
+- GetNotSupported method [MFC]
+- FireError method [MFC]
+- SCODE, MFC ActiveX controls
+- ThrowError method [MFC]
 ms.assetid: 771fb9c9-2413-4dcc-b386-7bc4c4adeafd
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : メソッドからのエラー コードのリターン
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d29c889dcc8bb86b024a4dd78954286d8ed6b33f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ActiveX コントロール メソッドからエラー コードを返す方法を説明します。  
+---
+# <a name="mfc-activex-controls-returning-error-codes-from-a-method"></a>MFC ActiveX Controls: Returning Error Codes From a Method
+This article describes how to return error codes from an ActiveX control method.  
   
- メソッド内でエラーが発生したことを示すには、パラメーターとして `SCODE` \(ステータス コード\) を受け取る [COleControl::ThrowError](../Topic/COleControl::ThrowError.md) メンバー関数を使用する必要があります。  定義済みのな `SCODE` を使用するか、独自の 1 を定義できます。  
+ To indicate that an error has occurred within a method, you should use the [COleControl::ThrowError](../mfc/reference/colecontrol-class.md#throwerror) member function, which takes an `SCODE` (status code) as a parameter. You can use a predefined `SCODE` or define one of your own.  
   
 > [!NOTE]
->  `ThrowError` Get または Set 関数またはオートメーション メソッド内部プロパティからエラーを返すための手段としてのみ使用されるようになっています。  これらは適切な例外ハンドラーがスタックにいる唯一の場合です。  
+>  `ThrowError` is meant to be used only as a means of returning an error from within a property's Get or Set function or an automation Method. These are the only times that the appropriate exception handler will be present on the stack.  
   
- ヘルパー関数は、[COleControl::SetNotSupported](../Topic/COleControl::SetNotSupported.md)[COleControl::GetNotSupported](../Topic/COleControl::GetNotSupported.md)と [COleControl::SetNotPermitted](../Topic/COleControl::SetNotPermitted.md)などの一般的な定義済みのな `SCODE`s 用にあります。  
+ Helper functions exist for the most common predefined `SCODE`s, such as [COleControl::SetNotSupported](../mfc/reference/colecontrol-class.md#setnotsupported), [COleControl::GetNotSupported](../mfc/reference/colecontrol-class.md#getnotsupported), and [COleControl::SetNotPermitted](../mfc/reference/colecontrol-class.md#setnotpermitted).  
   
- カスタム `SCODE`s の定義の定義済みのな `SCODE`s と説明の一覧については、ActiveX コントロールのセクションを参照してください [ActiveX コントロールの Handling Errors](../mfc/mfc-activex-controls-advanced-topics.md) : 高度なトピック。  
+ For a list of predefined `SCODE`s and instructions on defining custom `SCODE`s, see the section [Handling Errors in Your ActiveX Control](../mfc/mfc-activex-controls-advanced-topics.md) in ActiveX Controls: Advanced Topics.  
   
- コードの他の領域のレポートの例外の詳細については、ActiveX コントロールの [COleControl::FireError](../Topic/COleControl::FireError.md) とセクション [ActiveX コントロールの Handling Errors](../mfc/mfc-activex-controls-advanced-topics.md) を参照します: 高度なトピック。  
+ For more information on reporting exceptions in other areas of your code, see [COleControl::FireError](../mfc/reference/colecontrol-class.md#fireerror) and the section [Handling Errors in Your ActiveX Control](../mfc/mfc-activex-controls-advanced-topics.md) in ActiveX Controls: Advanced Topics.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

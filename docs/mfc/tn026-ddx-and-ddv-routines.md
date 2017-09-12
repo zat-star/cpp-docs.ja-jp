@@ -1,243 +1,286 @@
 ---
-title: "テクニカル ノート 26: DDX ルーチンおよび DDV ルーチン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DDX"
-  - "DDV"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DDV (ダイアログ データ バリデーション), プロシージャ"
-  - "DDX (ダイアログ データ エクスチェンジ), プロシージャ"
-  - "TN026"
+title: 'TN026: DDX and DDV Routines | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- DDX
+- DDV
+dev_langs:
+- C++
+helpviewer_keywords:
+- DDX (dialog data exchange), procedures
+- TN026
+- DDV (dialog data validation), procedures
 ms.assetid: c2eba87a-4b47-4083-b28b-e2fa77dfb4c4
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# テクニカル ノート 26: DDX ルーチンおよび DDV ルーチン
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3e12612a13fd24f4a19ba0c1950b651088896a72
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn026-ddx-and-ddv-routines"></a>TN026: DDX and DDV Routines
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、ダイアログをダイアログ データ エクスチェンジ \(DDX\) とダイアログ データ検証 \(DDV\) のアーキテクチャについて説明します。  また、DDX\_ または DDV\_ プロシージャを記述、ルーチンを使用するには、ClassWizard を拡張する方法について説明します。  
+ This note describes the dialog data exchange (DDX) and dialog data validation (DDV) architecture. It also describes how you write a DDX_ or DDV_ procedure and how you can extend ClassWizard to use your routines.  
   
-## ダイアログ データ エクスチェンジの概要  
- すべてのダイアログ データの関数は C\+\+ コードで実行されます。  特別なリソースまたは魔法マクロはありません。  機能の中心は、ダイアログ データ エクスチェンジ \(DDX\)、および検証を行う、ダイアログ クラスでオーバーライドされた仮想関数です。  これは、このフォームに必要です:  
+## <a name="overview-of-dialog-data-exchange"></a>Overview of Dialog Data Exchange  
+ All dialog data functions are done with C++ code. There are no special resources or magic macros. The heart of the mechanism is a virtual function that is overridden in every dialog class that does dialog data exchange and validation. It is always found in this form:  
   
 ```  
 void CMyDialog::DoDataExchange(CDataExchange* pDX)  
 {  
-    CDialog::DoDataExchange(pDX);    // call base class  
-  
-    //{{AFX_DATA_MAP(CMyDialog)  
-        <data_exchange_function_call>  
-        <data_validation_function_call>  
-    //}}AFX_DATA_MAP  
+    CDialog::DoDataExchange(pDX);
+*// call base class  
+ *//{{AFX_DATA_MAP(CMyDialog)  
+ <data_exchange_function_call>  
+ <data_validation_function_call> *//}}AFX_DATA_MAP  
 }  
 ```  
   
- 特殊な形式の AFX コメントは ClassWizard がこの関数内のコードを検索し、編集することができます。  コードは、特殊な形式のコメント外に ClassWizard と互換性のない配置する必要があります。  
+ The special format AFX comments allow ClassWizard to locate and edit the code within this function. Code that is not compatible with ClassWizard should be placed outside of the special format comments.  
   
- 上の例では、\<data\_exchange\_function\_call は\> フォームにです:  
-  
-```  
-DDX_Custom(pDX, nIDC, field);  
-```  
-  
- data\_validation\_function\_call と \<は\> 省略可能では、フォームに T:  
+ In the above example, <data_exchange_function_call> is in the form:  
   
 ```  
-DDV_Custom(pDX, field, ...);  
+DDX_Custom(pDX,
+    nIDC,
+    field);
 ```  
   
- 複数の DDX\_\/DDV\_のペアは `DoDataExchange` の各関数に含まれていることがあります。  
+ and <data_validation_function_call> is optional and is in the form:  
   
- MFC に用意されているすべてのルーチン ダイアログ データ エクスチェンジとダイアログ データ検証ルーチンの一覧については、「afxdd\_.h」を参照してください。  
+```  
+DDV_Custom(pDX,
+    field, ...);
+```  
   
- ダイアログ データは、そのです: **CMyDialog** クラスのメンバー データ。  そのような構造体そのものには格納されません。  
+ More than one DDX_/DDV_ pair may be included in each `DoDataExchange` function.  
   
-## メモ  
- 、この「ダイアログ データを呼び出しますが、すべての機能が `CWnd` から派生したクラスで使用でき、ダイアログに限定されません。  
+ See 'afxdd_.h' for a list of all the dialog data exchange routines and dialog data validation routines provided with MFC.  
   
- データの初期値は `//{{AFX_DATA_INIT` と `//}}AFX_DATA_INIT` のコメント ブロックの標準 C\+\+ のコンストラクターでは、一般に設定されます。  
+ Dialog data is just that: member data in the **CMyDialog** class. It is not stored in a struct or anything similar.  
   
- `CWnd::UpdateData` は `DoDataExchange`の呼び出しの初期化とエラー処理を行う操作です。  
+## <a name="notes"></a>Notes  
+ Although we call this "dialog data," all features are available in any class derived from `CWnd` and are not limited to just dialogs.  
   
- データ交換と検証を実行するに `CWnd::UpdateData` をいつでも呼び出すことができます。  既定で `UpdateData` \(true\) の既定の `CDialog::OnOK` ハンドラーと `UpdateData`で既定 `CDialog::OnInitDialog` \(FALSE\) が呼び出されます。  
+ Initial values of data are set in the standard C++ constructor, usually in a block with `//{{AFX_DATA_INIT` and `//}}AFX_DATA_INIT` comments.  
   
- DDV\_ ルーチンは、その *フィールド*の DDX\_ ルーチンに従う必要があります。  
+ `CWnd::UpdateData` is the operation that does the initialization and error handling around the call to `DoDataExchange`.  
   
-## そのですか。  
- ダイアログ データを使用するための次のコードを理解する必要はありません。  ただし、これが背後でどのように動作するかを理解すると、独自の交換または検証手順を書き込むことができます。  
+ You can call `CWnd::UpdateData` at any time to perform data exchange and validation. By default `UpdateData`(TRUE) is called in the default `CDialog::OnOK` handler and `UpdateData`(FALSE) is called in the default `CDialog::OnInitDialog`.  
   
- `DoDataExchange` のメンバー関数は `Serialize` のメンバー関数とよく似ています。クラスのメンバー データ from\/to 外部フォーム \(この場合はダイアログのコントロール\) に対するデータを取得または設定する必要があります。  `pDX` パラメーターはデータを交換するためのコンテキストでは、`CObject::Serialize`に `CArchive` パラメーターに似ています。  `pDX` \(`CDataExchange` オブジェクト\) に `CArchive` と同様に方向フラグの場合は方向フラグがあります:  
+ The DDV_ routine should immediately follow the DDX_ routine for that *field*.  
   
--   **\!m\_bSaveAndValidate**がコントロールに、状態データを読み込めば。  
+## <a name="how-does-it-work"></a>How Does It Work  
+ You do not need to understand the following in order to use dialog data. However, understanding how this works behind the scenes will help you write your own exchange or validation procedure.  
   
--   `m_bSaveAndValidate`が、コントロールの状態データを設定する。  
+ The `DoDataExchange` member function is much like the `Serialize` member function - it is responsible for getting or setting data to/from an external form (in this case controls in a dialog) from/to member data in the class. The `pDX` parameter is the context for doing data exchange and is similar to the `CArchive` parameter to `CObject::Serialize`. The `pDX` (a `CDataExchange` object) has a direction flag much like `CArchive` has a direction flag:  
   
- 検証は `m_bSaveAndValidate` が設定されたときにのみ発生します。  `m_bSaveAndValidate` の値は `CWnd::UpdateData`を Boolean パラメーターによって決まります。  
+-   If **!m_bSaveAndValidate**, then load the data state into the controls.  
   
- `CDataExchange` の 3 個の他の重要なメンバーがあります:  
+-   If `m_bSaveAndValidate`, then set the data state from the controls.  
   
--   `m_pDlgWnd`: コントロールを含むウィンドウ \(通常はダイアログ\)。  これは DDX\_ と DDV\_ のグローバル関数の呼び出し元は、DDX\/DDV ルーチンに" this "渡す必要があることを防ぐこと。  
+ Validation only occurs when `m_bSaveAndValidate` is set. The value of `m_bSaveAndValidate` is determined by the BOOL parameter to `CWnd::UpdateData`.  
   
--   `PrepareCtrl`と `PrepareEditCtrl`: データ交換にダイアログ コントロールを準備します。  検証が失敗した場合、フォーカスを設定するために、コントロールのハンドル。  `PrepareCtrl` は nonedit のコントロールに使用され、`PrepareEditCtrl`、エディット コントロールに使用されます。  
+ There are three other interesting `CDataExchange` members:  
   
--   **失敗**: 入力エラーをユーザーに通知するメッセージ ボックスが育てた後に呼び出されます。  このルーチンは、最後のコントロール \(`PrepareCtrl`\/`PrepareEditCtrl`への最後のオーダー\) にフォーカスを復元し、例外をスローします。  このメンバー関数は DDX\_ と DDV\_ 両方ルーチンから呼び出されることがあります。  
+- `m_pDlgWnd`: The window (usually a dialog) that contains the controls. This is to prevent callers of the DDX_ and DDV_ global functions from having to pass 'this' to every DDX/DDV routine.  
   
-## ユーザーの拡張  
- 既定 DDX\/DDV の機能を拡張する方法はいくつかあります。  次の操作を行うことができます。  
+- `PrepareCtrl`, and `PrepareEditCtrl`: Prepares a dialog control for data exchange. Stores that control's handle for setting the focus if a validation fails. `PrepareCtrl` is used for nonedit controls and `PrepareEditCtrl` is used for edit controls.  
   
--   新しいデータ型を追加します。  
+- **Fail**: Called after bringing up a message box alerting the user to the input error. This routine will restore the focus to the last control (the last call to `PrepareCtrl`/`PrepareEditCtrl`) and throw an exception. This member function may be called from both DDX_ and DDV_ routines.  
   
-    ```  
-    CTime  
-    ```  
+## <a name="user-extensions"></a>User Extensions  
+ There are several ways to extend the default DDX/DDV mechanism. You can:  
   
--   新しい交換手順 \(DDX\_ \= "と"または"\) を追加します。  
+-   Add new data types.  
   
-    ```  
-    void PASCAL DDX_Time(CDataExchange* pDX, int nIDC, CTime& tm);  
-    ```  
+ ```  
+    CTime 
+ ```  
   
--   新しい検証手順 \(DDV\_ \= "と"または"\) を追加します。  
+-   Add new exchange procedures (DDX_).  
   
-    ```  
-    void PASCAL DDV_TimeFuture(CDataExchange* pDX, CTime tm, BOOL bFuture);  
-    // make sure time is in the future or past  
-    ```  
+ ```  
+    void PASCAL DDX_Time(CDataExchange* pDX,
+    int nIDC,
+    CTime& tm);
+
+ ```  
   
--   検証手順に任意の式を渡します。  
+-   Add new validation procedures (DDV_).  
   
-    ```  
-    DDV_MinMax(pDX, age, 0, m_maxAge);  
-    ```  
+ ```  
+    void PASCAL DDV_TimeFuture(CDataExchange* pDX,
+    CTime tm,
+    BOOL bFuture);
+*// make sure time is in the future or past  
+ ```  
+  
+-   Pass arbitrary expressions to the validation procedures.  
+  
+ ```  
+    DDV_MinMax(pDX,
+    age,
+    0,
+    m_maxAge);
+
+ ```  
   
     > [!NOTE]
-    >  このような任意の式は ClassWizard で編集できない、特別な書式のコメントの外に移動する必要があります \(\/\/ {{AFX\_DATA\_MAP \(CMyClass\)\)。  
+    >  Such arbitrary expressions cannot be edited by ClassWizard and therefore should be moved outside of the special format comments (//{{AFX_DATA_MAP(CMyClass)).  
   
- **DoDialogExchange** メンバー関数を混合交換と検証関数を呼び出して条件またはそのほかの有効な C\+\+ のステートメントが格納されます。  
+ Have the **DoDialogExchange** member function include conditionals or any other valid C++ statements with intermixed exchange and validation function calls.  
   
 ```  
 //{{AFX_DATA_MAP(CMyClass)  
-DDX_Check(pDX, IDC_SEX, m_bFemale);  
-DDX_Text(pDX, IDC_EDIT1, m_age);  
+DDX_Check(pDX,
+    IDC_SEX,
+    m_bFemale);
+
+DDX_Text(pDX,
+    IDC_EDIT1,
+    m_age);
+
 //}}AFX_DATA_MAP  
 if (m_bFemale)  
-    DDV_MinMax(pDX, age, 0, m_maxFemaleAge);  
+    DDV_MinMax(pDX,
+    age,
+    0,
+    m_maxFemaleAge);
+
 else  
-    DDV_MinMax(pDX, age, 0, m_maxMaleAge);  
+    DDV_MinMax(pDX,
+    age,
+    0,
+    m_maxMaleAge);
 ```  
   
 > [!NOTE]
->  上記のように、このようなコードは ClassWizard で編集できない、特別な形式のコメント外でのみ使用してください。  
+>  As shown above, such code cannot be edited by ClassWizard and should be used only outside of the special format comments.  
   
-## ClassWizard サポート  
- ClassWizard は ClassWizard のユーザー インターフェイスに独自の DDX\_ と DDV\_ ルーチンを統合することによって DDX\/DDV のカスタマイズのサブセットをサポートします。  これを行うには、プロジェクトまたはさまざまなプロジェクトの DDX と DDV 特定のルーチンを再利用することを計画している場合にのみ、コストされます。  
+## <a name="classwizard-support"></a>ClassWizard Support  
+ ClassWizard supports a subset of DDX/DDV customizations by allowing you to integrate your own DDX_ and DDV_ routines into the ClassWizard user interface. Doing this is only cost beneficial if you plan to reuse particular DDX and DDV routines in a project or in many projects.  
   
- これを行うには、特別なエントリが DDX.CLW \(以前のバージョンの Visual C\+\+ では APSTUDIO.INI にこの情報を格納した\) またはプロジェクトの .CLW ファイルで行われます。  特別なエントリがプロジェクトの .CLW ファイルの\[\]の概要情報セクションまたは\\Program の Files\\Microsoft ビジュアル Studio\\Visual C\+\+\\bin ディレクトリの DDX.CLW ファイルの ExtraDDX \[\]セクションに入力できます。  存在しない場合 DDX.CLW ファイルを作成する必要があります。  特定のプロジェクトにのみカスタム DDX\_\/DDV\_ルーチンを使用する場合 .CLW プロジェクト ファイルの概要のヒント\[\]セクションにエントリを追加します。  多くのプロジェクトのルーチンを使用する場合 DDX.CLW の\[\] ExtraDDX セクションにエントリを追加します。  
+ To do this, special entries are made in DDX.CLW (previous versions of Visual C++ stored this information in APSTUDIO.INI) or in your project's .CLW file. The special entries can be entered either in the [General Info] section of your project's .CLW file or in the [ExtraDDX] section of the DDX.CLW file in the \Program Files\Microsoft Visual Studio\Visual C++\bin directory. You may need to create the DDX.CLW file if it doesn't already exist. If you plan to use the custom DDX_/DDV_ routines only in a certain project, add the entries to the [General Info] section of your project .CLW file instead. If you plan to use the routines on many projects, add the entries to the [ExtraDDX] section of DDX.CLW.  
   
- これらの特殊なエントリの一般的な書式は次のとおりです。:  
+ The general format of these special entries is:  
   
 ```  
 ExtraDDXCount=n  
 ```  
   
- 数値は、どこに n ExtraDDX ですか。続行する行  
+ where n is the number of ExtraDDX lines to follow  
   
 ```  
-ExtraDDX?=<keys>;<vb-keys>; <prompt>; <type>; <initValue>; <DDX_Proc>  
+ExtraDDX=<keys>;<vb-keys>; <prompt>; <type>; <initValue>; <DDX_Proc>  
 [;<DDV_Proc>; <prompt1>; <arg1>; [<prompt2>; <fmt2>]]  
 ```  
   
- か。1 番目の– n の DDX が定義されるリストに入力されるアクションです。  
+ where  is a number 1 - n indicating which DDX type in the list that is being defined.  
   
- 各フィールドは、「区切ります; 」文字。  フィールドと目的について、次に説明します。  
+ Each field is delimited by a ';' character. The fields and their purpose are described below.  
   
- \<キー\>  
- \= 示すダイアログ コントロールにはこの変数の型が許可される単一文字のリスト。  
+ \<keys>  
+ = list of single characters indicating for which dialog controls this variable type is allowed.  
   
- E \= 編集します  
+ E = edit  
   
- C \= 2 状態チェック ボックス  
+ C = two-state check box  
   
- c \= 状態チェック ボックス  
+ c = tri-state check box  
   
- R \= 最初にグループのオプション ボタン  
+ R = first radio button in a group  
   
- L \= nonsorted リスト ボックス  
+ L = nonsorted list box  
   
- l \= 並べ替えられたリスト ボックス  
+ l = sorted list box  
   
- M \= コンボ ボックス \(と項目の編集\)  
+ M = combo box (with edit item)  
   
- N nonsorted \= ドロップの一覧  
+ N = nonsorted drop list  
   
- n \= 並べ替えられたドロップの一覧  
+ n = sorted drop list  
   
- 1 つが \= 末尾に DDX の挿入がリスト \(既定\) 追加したヘッダーに追加されている場合は、これが「コントロール」プロパティを転送する DDX ルーチンに対して一般的に使用されます。  
+ 1 = if the DDX insert should be added to head of list (default is add to tail) This is generally used for DDX routines that transfer the 'Control' property.  
   
- \<vb キー\>  
- このフィールドは VBX のコントロールへの 16 ビットの製品のみで使用されます \(VBX コントロールは 32 ビットの製品ではサポートされていません\)  
+ \<vb-keys>  
+ This field is used only in the 16-bit product for VBX controls (VBX controls are not supported in the 32-bit product)  
   
- \<プロンプト\>  
- プロパティにコンボ ボックス \(引用符なし\) に配置する文字列  
+ \<prompt>  
+ String to place in the Property combo box (no quotes)  
   
- \<type\>  
- ヘッダー ファイルに表示されるため、型の識別子を Single。  たとえば、上の例では DDX\_Time と、CTime に設定されます。  
+ \<type>  
+ Single identifier for type to emit in the header file. In our example above with DDX_Time, this would be set to CTime.  
   
- \<vb キー\>  
- このバージョンでは使用しない場合は常に空です。  
+ \<vb-keys>  
+ Not used in this version and should always be empty  
   
- \<initValue\>  
- 初期値— 0 または空白。  これが NULL の場合、初期化の行は\/\/に書き込まれません{{実装ファイルの AFX\_DATA\_INIT セクション。  null のエントリが適切な初期化を保証するコンストラクターを持つ C\+\+ オブジェクトにする必要があります \(`CString`、`CTime`など\)。  
+ \<initValue>  
+ Initial value — 0 or blank. If it is blank, then no initialization line will be written in the //{{AFX_DATA_INIT section of the implementation file. A blank entry should be used for C++ objects (such as `CString`, `CTime`, and so on) that have constructors that guarantee correct initialization.  
   
- \<DDX\_Proc\>  
- DDX\_ プロシージャの単一の ID。  C\+\+ の関数名は、「DDX\_」で開始する必要があります DDX\_Proc の ID に「DDX\_ \<」は\> 含まれません。  上の例では、DDX\_Proc\>  \< 識別子は時間です。  したがって、ClassWizard が実装ファイルに関数呼び出しを記述するときに{{AFX\_DATA\_MAP セクション、DDX\_ にこの名前を付けされ、DDX\_Time まで進みます。  
+ <DDX_Proc>  
+ Single identifier for the DDX_ procedure. The C++ function name must start with "DDX_," but don't include "DDX_" in the <DDX_Proc> identifier. In the example above, the <DDX_Proc> identifier would be Time. When ClassWizard writes the function call to the implementation file in the {{AFX_DATA_MAP section, it appends this name to DDX_, thus arriving at DDX_Time.  
   
- \<コメント\>  
- この DDX の変数のダイアログに表示するコメント アウトします。  次に、Text を置き、通常 DDX\/DDV のペア実行されるアクションを記述する文字列を指定します。  
+ \<comment>  
+ Comment to show in dialog for variable with this DDX. Place any text you would like here, and usually provide something that describes the operation performed by the DDX/DDV pair.  
   
- \<DDV\_Proc\>  
- エントリの DDV の部分は省略可能です。  DDX すべてのルーチンに対応する DDV ルーチンがありません。  多くの場合、転送の整数部分として検証の結果を含むと便利です。  これは、頻繁に ClassWizard がパラメーターなしで DDV ルーチンをサポートしていないため、DDV ルーチンにパラメーターが必要になった場合です。  
+ <DDV_Proc>  
+ The DDV portion of the entry is optional. Not all DDX routines have corresponding DDV routines. Often, it is more convenient to include the validation phase as an integral part of the transfer. This is often the case when your DDV routine doesn't require any parameters, because ClassWizard does not support DDV routines without any parameters.  
   
- \<引数\>  
- DDV\_ プロシージャの単一の ID。  C\+\+ の関数名は、「DDV\_」で開始する必要が DDX\_Proc の ID に「DDX\_ \<」は\> 含まれません。  
+ \<arg>  
+ Single identifier for the DDV_ procedure. The C++ function name must start with "DDV_", but do not include "DDX_" in the <DDX_Proc> identifier.  
   
- 1 または 2 DDV の引数で指定する:  
+ followed by 1 or 2 DDV args:  
   
- \<promptX\>  
- 編集項目の場所に文字列 \(アクセラレータ用と &\)  
+ \<promptX>  
+ string to place above the edit item (with & for accelerator)  
   
- \<fmtX\>  
- 引数の型の書式指定文字、1 の  
+ \<fmtX>  
+ format character for the arg type, one of  
   
- d \= int  
+ d = int  
   
- u \= 符号なし  
+ u = unsigned  
   
- D \= long int \(つまり、Long\)  
+ D = long int (that is, long)  
   
- U \=、符号なし \(つまり、DWORD\)  
+ U = long unsigned (that is, DWORD)  
   
- f \= float  
+ f = float  
   
- F \= double  
+ F = double  
   
- s \= 文字列  
+ s = string  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

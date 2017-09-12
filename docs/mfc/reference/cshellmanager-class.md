@@ -1,5 +1,5 @@
 ---
-title: "CShellManager クラス |Microsoft ドキュメント"
+title: CShellManager Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,7 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CShellManager class
+- CShellManager [MFC], CShellManager
+- CShellManager [MFC], BrowseForFolder
+- CShellManager [MFC], ConcatenateItem
+- CShellManager [MFC], CopyItem
+- CShellManager [MFC], CreateItem
+- CShellManager [MFC], FreeItem
+- CShellManager [MFC], GetItemCount
+- CShellManager [MFC], GetItemSize
+- CShellManager [MFC], GetNextItem
+- CShellManager [MFC], GetParentItem
+- CShellManager [MFC], ItemFromPath
 ms.assetid: f15c4c1a-6fae-487d-9913-9b7369b33da0
 caps.latest.revision: 23
 author: mikeblome
@@ -45,60 +55,60 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 2bf6be5c0d106344024d32e90cc6cfb1e3299075
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b8ea86dd42a701d441c53effe51db9081ea0b48d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cshellmanager-class"></a>CShellManager クラス
-ID リストへのポインター (PIDL) を操作するためのさまざまなメソッドを実装します。  
+# <a name="cshellmanager-class"></a>CShellManager Class
+Implements several methods that enable you to work with pointers to identifier lists (PIDLs).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CShellManager : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CShellManager::CShellManager](#cshellmanager)|`CShellManager` オブジェクトを構築します。|  
+|[CShellManager::CShellManager](#cshellmanager)|Constructs a `CShellManager` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CShellManager::BrowseForFolder](#browseforfolder)|ユーザーがシェル フォルダーを選択できるダイアログ ボックスが表示されます。|  
-|[CShellManager::ConcatenateItem](#concatenateitem)|2 つの Pidl を連結します。|  
-|[CShellManager::CopyItem](#copyitem)|新しい PIDL を作成し、指定した PIDL をコピーします。|  
-|[CShellManager::CreateItem](#createitem)|指定したサイズの新しい PIDL を作成します。|  
-|[CShellManager::FreeItem](#freeitem)|指定した PIDL を削除します。|  
-|[CShellManager::GetItemCount](#getitemcount)|指定した PIDL で項目の数を返します。|  
-|[CShellManager::GetItemSize](#getitemsize)|指定した PIDL のサイズを返します。|  
-|[CShellManager::GetNextItem](#getnextitem)|PIDL から次の項目を返します。|  
-|[CShellManager::GetParentItem](#getparentitem)|指定された項目の親項目を取得します。|  
-|[CShellManager::ItemFromPath](#itemfrompath)|指定されたパスで識別される項目の PIDL を取得します。|  
+|[CShellManager::BrowseForFolder](#browseforfolder)|Displays a dialog box that enables the user to select a shell folder.|  
+|[CShellManager::ConcatenateItem](#concatenateitem)|Concatenates two PIDLs.|  
+|[CShellManager::CopyItem](#copyitem)|Creates a new PIDL and copies the supplied PIDL to it.|  
+|[CShellManager::CreateItem](#createitem)|Creates a new PIDL of the specified size.|  
+|[CShellManager::FreeItem](#freeitem)|Deletes the supplied PIDL.|  
+|[CShellManager::GetItemCount](#getitemcount)|Returns the number of items in the supplied PIDL.|  
+|[CShellManager::GetItemSize](#getitemsize)|Returns the size of the supplied PIDL.|  
+|[CShellManager::GetNextItem](#getnextitem)|Returns the next item from the PIDL.|  
+|[CShellManager::GetParentItem](#getparentitem)|Retrieves the parent item of the supplied item.|  
+|[CShellManager::ItemFromPath](#itemfrompath)|Retrieves the PIDL for the item identified by the supplied path.|  
   
-## <a name="remarks"></a>コメント  
- メソッド、`CShellManager`クラス Pidl をすべて処理します。 PIDL は、shell オブジェクトの一意の識別子です。  
+## <a name="remarks"></a>Remarks  
+ The methods of the `CShellManager` class all deal with PIDLs. A PIDL is a unique identifier for a shell object.  
   
- 作成しないで、`CShellManager`手動でのオブジェクトします。 アプリケーションのフレームワークによって自動的に作成されます。 ただし、呼び出す必要があります[CWinAppEx::InitShellManager](../../mfc/reference/cwinappex-class.md#initshellmanager)アプリケーションの初期化プロセス中にします。 アプリケーションのシェル マネージャーへのポインターを取得する[CWinAppEx::GetShellManager](../../mfc/reference/cwinappex-class.md#getshellmanager)します。  
+ You should not create a `CShellManager` object manually. It will be created automatically by the framework of your application. However, you should call [CWinAppEx::InitShellManager](../../mfc/reference/cwinappex-class.md#initshellmanager) during the initialization process of your application. To get a pointer to the shell manager for your application, call [CWinAppEx::GetShellManager](../../mfc/reference/cwinappex-class.md#getshellmanager).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CShellManager](../../mfc/reference/cshellmanager-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxshellmanager.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxshellmanager.h  
   
-##  <a name="browseforfolder"></a>CShellManager::BrowseForFolder  
- ユーザーがシェル フォルダーを選択できるダイアログ ボックスが表示されます。  
+##  <a name="browseforfolder"></a>  CShellManager::BrowseForFolder  
+ Displays a dialog box that enables the user to select a shell folder.  
   
 ```  
 BOOL BrowseForFolder(
@@ -110,38 +120,38 @@ BOOL BrowseForFolder(
     LPINT piFolderImage = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [出力] `strOutFolder`  
- 選択したフォルダーのパスを格納するメソッドによって使用される文字列。  
+### <a name="parameters"></a>Parameters  
+ [out] `strOutFolder`  
+ The string used by the method to store the path of the selected folder.  
   
- [入力] `pWndParent`  
- 親ウィンドウへのポインター。  
+ [in] `pWndParent`  
+ A pointer to the parent window.  
   
- [入力] `lplszInitialFolder`  
- ダイアログ ボックスが表示されたら、既定で選択されているフォルダーを含む文字列です。  
+ [in] `lplszInitialFolder`  
+ A string that contains the folder that is selected by default when the dialog box is displayed.  
   
- [入力] `lpszTitle`  
- ダイアログ ボックスのタイトル。  
+ [in] `lpszTitle`  
+ The title for the dialog box.  
   
- [入力] `ulFlags`  
- ダイアログ ボックスのオプションを指定するフラグ。 参照してください[BROWSEINFO](http://msdn.microsoft.com/library/windows/desktop/bb773205)の詳細な説明です。  
+ [in] `ulFlags`  
+ Flags specifying options for the dialog box. See [BROWSEINFO](http://msdn.microsoft.com/library/windows/desktop/bb773205) for the detailed description.  
   
- [出力] `piFolderImage`  
- メソッドが選択したフォルダーのイメージのインデックスを書き込む整数値へのポインター。  
+ [out] `piFolderImage`  
+ A pointer to the integer value where the method writes the image index of the selected folder.  
   
-### <a name="return-value"></a>戻り値  
- ユーザーがダイアログ ボックスからフォルダーを選択した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the user selects a folder from the dialog box; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを呼び出すし、アプリケーションが作成されてユーザーがフォルダーを選択できるダイアログ ボックスを表示します。 メソッドにフォルダーのパスを記述、`strOutFolder`パラメーター。  
+### <a name="remarks"></a>Remarks  
+ When you call this method, the application creates and shows a dialog box that enables the user to select a folder. The method will write the path of the folder into the `strOutFolder` parameter.  
   
-### <a name="example"></a>例  
- 次の例への参照を取得する方法、`CShellManager`オブジェクトを使用して、`CWinAppEx::GetShellManager`メソッドを使用する方法、`BrowseForFolder`メソッドです。 このコード スニペットの一部である、[エクスプ ローラーのサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to retrieve a reference to a `CShellManager` object by using the `CWinAppEx::GetShellManager` method and how to use the `BrowseForFolder` method. This code snippet is part of the [Explorer sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_Explorer&6;](../../mfc/reference/codesnippet/cpp/cshellmanager-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_Explorer#6](../../mfc/reference/codesnippet/cpp/cshellmanager-class_1.cpp)]  
   
-##  <a name="concatenateitem"></a>CShellManager::ConcatenateItem  
- 2 つの Pidl を含む新しいリストを作成します。  
+##  <a name="concatenateitem"></a>  CShellManager::ConcatenateItem  
+ Creates a new list containing two PIDLs.  
   
 ```  
 LPITEMIDLIST ConcatenateItem(
@@ -149,118 +159,118 @@ LPITEMIDLIST ConcatenateItem(
     LPCITEMIDLIST pidl2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidl1`  
- 最初の項目。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidl1`  
+ The first item.  
   
- [入力] `pidl2`  
- 2 番目の項目。  
+ [in] `pidl2`  
+ The second item.  
   
-### <a name="return-value"></a>戻り値  
- それ以外の場合、関数が成功した場合は、新しい項目リストへのポインター`NULL`します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the new item list if the function succeeds, otherwise `NULL`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドが、新たに作成[ITEMIDLIST](http://msdn.microsoft.com/library/windows/desktop/bb773321)両方を格納するのに十分な大きさ`pidl1`と`pidl2`です。 コピーし、`pidl1`と`pidl2`新しいリストにします。  
+### <a name="remarks"></a>Remarks  
+ This method creates a new [ITEMIDLIST](http://msdn.microsoft.com/library/windows/desktop/bb773321) large enough to contain both `pidl1` and `pidl2`. It then copies `pidl1` and `pidl2` to the new list.  
   
-##  <a name="copyitem"></a>CShellManager::CopyItem  
- 項目のリストをコピーします。  
+##  <a name="copyitem"></a>  CShellManager::CopyItem  
+ Copies an item list.  
   
 ```  
 LPITEMIDLIST CopyItem(LPCITEMIDLIST pidlSource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidlSource`  
- 元の項目のリスト。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidlSource`  
+ The original item list.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は、新しく作成された項目リストへのポインターそれ以外の場合`NULL`します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the newly created item list if successful; otherwise `NULL`.  
   
-### <a name="remarks"></a>コメント  
- 新しく作成された項目のリストには、元の項目リストと同じサイズがあります。  
+### <a name="remarks"></a>Remarks  
+ The newly created item list has the same size as the source item list.  
   
-##  <a name="createitem"></a>CShellManager::CreateItem  
- 新しい PIDL を作成します。  
+##  <a name="createitem"></a>  CShellManager::CreateItem  
+ Creates a new PIDL.  
   
 ```  
 LPITEMIDLIST CreateItem(UINT cbSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `cbSize`  
- 項目リストのサイズ。  
+### <a name="parameters"></a>Parameters  
+ [in] `cbSize`  
+ The size of the item list.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は、作成された項目リストへのポインターそれ以外の場合`NULL`します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the created item list if successful; otherwise `NULL`.  
   
-##  <a name="cshellmanager"></a>CShellManager::CShellManager  
- `CShellManager` オブジェクトを構築します。  
+##  <a name="cshellmanager"></a>  CShellManager::CShellManager  
+ Constructs a `CShellManager` object.  
   
 ```  
 CShellManager();
 ```  
   
-### <a name="remarks"></a>コメント  
- ほとんどの場合は作成する必要はありません、`CShellManager`直接します。 既定では、フレームワークは自動的に作成します。 ポインターを取得する、 `CShellManager`、呼び出す[CWinAppEx::GetShellManager](../../mfc/reference/cwinappex-class.md#getshellmanager)します。 作成する場合は、 `CShellManager` 、手動でメソッドを使用して初期化する必要があります[CWinAppEx::InitShellManager](../../mfc/reference/cwinappex-class.md#initshellmanager)します。  
+### <a name="remarks"></a>Remarks  
+ In most cases, you do not have to create a `CShellManager` directly. By default, the framework creates one for you. To get a pointer to the `CShellManager`, call [CWinAppEx::GetShellManager](../../mfc/reference/cwinappex-class.md#getshellmanager). If you do create a `CShellManager` manually, you must initialize it with the method [CWinAppEx::InitShellManager](../../mfc/reference/cwinappex-class.md#initshellmanager).  
   
-##  <a name="freeitem"></a>CShellManager::FreeItem  
- 項目のリストを削除します。  
+##  <a name="freeitem"></a>  CShellManager::FreeItem  
+ Deletes an item list.  
   
 ```  
 void FreeItem(LPITEMIDLIST pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidl`  
- 削除する項目の一覧です。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidl`  
+ An item list to delete.  
   
-##  <a name="getitemcount"></a>CShellManager::GetItemCount  
- 項目リスト内の項目の数を返します。  
+##  <a name="getitemcount"></a>  CShellManager::GetItemCount  
+ Returns the number of items in an item list.  
   
 ```  
 UINT GetItemCount(LPCITEMIDLIST pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidl`  
- 項目のリストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidl`  
+ A pointer to an item list.  
   
-### <a name="return-value"></a>戻り値  
- 項目の一覧で項目の数。  
+### <a name="return-value"></a>Return Value  
+ The number of items in the item list.  
   
-##  <a name="getitemsize"></a>CShellManager::GetItemSize  
- 項目リストのサイズを返します。  
+##  <a name="getitemsize"></a>  CShellManager::GetItemSize  
+ Returns the size of an item list.  
   
 ```  
 UINT GetItemSize(LPCITEMIDLIST pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidl`  
- 項目のリストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidl`  
+ A pointer to an item list.  
   
-### <a name="return-value"></a>戻り値  
- 項目リストのサイズ。  
+### <a name="return-value"></a>Return Value  
+ The size of the item list.  
   
-##  <a name="getnextitem"></a>CShellManager::GetNextItem  
- 項目識別子の一覧 (PIDL) ポインターからの次の項目を取得します。  
+##  <a name="getnextitem"></a>  CShellManager::GetNextItem  
+ Retrieves the next item from a pointer to an item identifier list (PIDL).  
   
 ```  
 LPITEMIDLIST GetNextItem(LPCITEMIDLIST pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pidl`  
- 反復処理する項目の一覧。  
+### <a name="parameters"></a>Parameters  
+ [in] `pidl`  
+ The list of items to iterate.  
   
-### <a name="return-value"></a>戻り値  
- 一覧の次の項目へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the next item in the list.  
   
-### <a name="remarks"></a>コメント  
- これ以上項目をかどうかは、一覧にある、このメソッドが戻る`NULL`します。  
+### <a name="remarks"></a>Remarks  
+ If there are no more items in the list, this method returns `NULL`.  
   
-##  <a name="getparentitem"></a>CShellManager::GetParentItem  
- 項目識別子の一覧 (PIDL) へのポインターの親を取得します。  
+##  <a name="getparentitem"></a>  CShellManager::GetParentItem  
+ Retrieves the parent of a pointer to an item identifier list (PIDL).  
   
 ```  
 int GetParentItem(
@@ -268,21 +278,21 @@ int GetParentItem(
     LPITEMIDLIST& lpidlParent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpidl`  
- 親を取得する PIDL します。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpidl`  
+ A PIDL whose parent will be retrieved.  
   
- [出力] `lpidlParent`  
- メソッドが、結果を保存する場所 PIDL への参照。  
+ [out] `lpidlParent`  
+ A reference to a PIDL where the method will store the result.  
   
-### <a name="return-value"></a>戻り値  
- 親 PIDL のレベル。  
+### <a name="return-value"></a>Return Value  
+ The level of the parent PIDL.  
   
-### <a name="remarks"></a>コメント  
- デスクトップに対する相対パス PIDL のレベルです。 デスクトップの PIDL は、レベルは 0 と見なされます。  
+### <a name="remarks"></a>Remarks  
+ The level of a PIDL is relative to the desktop. The desktop PIDL is considered to have a level of 0.  
   
-##  <a name="itemfrompath"></a>CShellManager::ItemFromPath  
- 項目識別子の一覧 (PIDL) を文字列パスで識別される項目から、ポインターを取得します。  
+##  <a name="itemfrompath"></a>  CShellManager::ItemFromPath  
+ Retrieves the pointer to an item identifier list (PIDL) from the item identified by a string path.  
   
 ```  
 HRESULT ItemFromPath(
@@ -290,17 +300,17 @@ HRESULT ItemFromPath(
     LPITEMIDLIST& pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszPath`  
- 項目のパスを指定する文字列。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszPath`  
+ A string that specifies the path for the item.  
   
- [出力] `pidl`  
- PIDL への参照。 メソッドでは、この PIDL は、その戻り値へのポインターを格納します。  
+ [out] `pidl`  
+ A reference to a PIDL. The method uses this PIDL to store the pointer to its return value.  
   
-### <a name="return-value"></a>戻り値  
- 返します。`NOERROR`成功した場合、エラーの OLE 定義値です。  
+### <a name="return-value"></a>Return Value  
+ Returns `NOERROR` if successful; an OLE-defined error value.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

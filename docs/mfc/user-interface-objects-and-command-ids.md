@@ -1,43 +1,62 @@
 ---
-title: "ユーザー インターフェイス オブジェクトとコマンド ID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド処理, ユーザー インターフェイス オブジェクト"
-  - "コマンド ID, ユーザー インターフェイス オブジェクト"
-  - "コマンド ルーティング, MFC"
-  - "ショートカット キー, 関連付け (ID への)"
-  - "メニュー項目, 関連付け (ID への)"
-  - "MFC, コマンド ルーティング"
-  - "ツール バー コントロール [MFC], コマンド ID"
-  - "ユーザー インターフェイス オブジェクト, 関連付け (ID への)"
+title: User-Interface Objects and Command IDs | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- keyboard shortcuts, associating with IDs
+- MFC, command routing
+- toolbar controls [MFC], command ID
+- menu items, associating with IDs
+- user interface objects [MFC], associating with IDs
+- command IDs, user interface objects
+- command routing [MFC], MFC
+- command handling [MFC], user-interface objects
 ms.assetid: 4ea19e9b-ed1e-452e-bd33-7f509107a45b
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ユーザー インターフェイス オブジェクトとコマンド ID
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3b3051afe12e290990d6248e4cfc1ad2994e617f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-メニュー項目やツール バー ボタンとアクセラレータ キーはコマンドを生成できる「ユーザー インターフェイス オブジェクト」です。  そのような各ユーザー インターフェイス オブジェクトには id を指定します。  コマンドとオブジェクトとコマンドに同じ ID を割り当てることにより、ユーザー インターフェイス オブジェクトを関連付けます。  [メッセージ](../mfc/messages.md)"で説明しているように、特別なメッセージとして実装されます。  図では、「表示でフレームワークでフレームワークがコマンドの管理方法」を参照してください。  ユーザー インターフェイス オブジェクトを作成すると、そのコマンドは、`ID_EDIT_CLEAR_ALL`など、アプリケーション オブジェクトの 1 つがコマンドを処理します、ドキュメント オブジェクトの `OnEditClearAll` 関数はドキュメントのメッセージ マップによって—下の図に…呼び出されます。  
+---
+# <a name="user-interface-objects-and-command-ids"></a>User-Interface Objects and Command IDs
+Menu items, toolbar buttons, and accelerator keys are "user-interface objects" capable of generating commands. Each such user-interface object has an ID. You associate a user-interface object with a command by assigning the same ID to the object and the command. As explained in [Messages](../mfc/messages.md), commands are implemented as special messages. The figure "Commands in the Framework" below shows how the framework manages commands. When a user-interface object generates a command, such as `ID_EDIT_CLEAR_ALL`, one of the objects in your application handles the command — in the figure below, the document object's `OnEditClearAll` function is called via the document's message map.  
   
- ![フレームワークにおけるコマンド](../mfc/media/vc385p1.gif "vc385P1")  
-フレームワーク内のコマンド  
+ ![Commands in the Framework](../mfc/media/vc385p1.gif "vc385p1")  
+Commands in the Framework  
   
- MFC は、メニュー項目とツール バー ボタンなどのユーザー インターフェイス オブジェクトをどのように更新するか図「表示でフレームワークの」更新するコマンド。  中のドロップダウン メニューの前、またはツール バー ボタンの場合はアイドル ループ、MFC は更新コマンドをルーティングします。  次の図は、ドキュメント オブジェクトは、ユーザー インターフェイス オブジェクトを有効または無効にするように更新コマンド ハンドラー、`OnUpdateEditClearAll`、照会します。  
+ The figure "Command Updating in the Framework" below shows how MFC updates user-interface objects such as menu items and toolbar buttons. Before a menu drops down, or during the idle loop in the case of toolbar buttons, MFC routes an update command. In the figure below, the document object calls its update command handler, `OnUpdateEditClearAll`, to enable or disable the user-interface object.  
   
- ![フレームワークでのコマンド更新](../Image/vc385P2.png "vc385P2")  
-フレームワーク内のコマンド更新  
+ ![Command updating in the Framework](../mfc/media/vc385p2.png "vc385p2")  
+Command Updating in the Framework  
   
-## 参照  
- [フレームワークのメッセージとコマンド](../mfc/messages-and-commands-in-the-framework.md)
+## <a name="see-also"></a>See Also  
+ [Messages and Commands in the Framework](../mfc/messages-and-commands-in-the-framework.md)
+
+

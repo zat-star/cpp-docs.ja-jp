@@ -1,5 +1,5 @@
 ---
-title: "レコード フィールド エクス チェンジ関数 |Microsoft ドキュメント"
+title: Record Field Exchange Functions | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -43,15 +43,15 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - DAO (Data Access Objects), record field exchange (DFX)
-- ODBC, bulk RFX data exchange functions
+- ODBC, bulk RFX data exchange functions [MFC]
 - RFX (record field exchange), ODBC classes
-- DFX (DAO record field exchange), data exchange functions
-- DFX functions
-- bulk RFX functions
+- DFX (DAO record field exchange), data exchange functions [MFC]
+- DFX functions [MFC]
+- bulk RFX functions [MFC]
 - DFX (DAO record field exchange)
 - RFX (record field exchange), DAO classes
 - ODBC, RFX
-- RFX (record field exchange), data exchange functions
+- RFX (record field exchange), data exchange functions [MFC]
 - RFX (record field exchange)
 ms.assetid: 6e4c5c1c-acb7-4c18-bf51-bf7959a696cd
 caps.latest.revision: 13
@@ -73,79 +73,79 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: acabc4e9469560b67c5fe10bcb845517e05c7854
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 163384a9fd160fea3db1976408c5c81d336a2ddb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="record-field-exchange-functions"></a>レコード フィールド エクスチェンジ (RFX) 関数
-このトピックには、レコード フィールド エクス チェンジ (RFX、バルク RFX と DFX) が一覧表示して、レコード セット オブジェクトとそのデータ ソース間のデータ転送を自動化し、データの他の操作を実行に使用される関数。  
+# <a name="record-field-exchange-functions"></a>Record Field Exchange Functions
+This topic lists the Record Field Exchange (RFX, Bulk RFX, and DFX) functions used to automate the transfer of data between a recordset object and its data source and to perform other operations on the data.  
   
- ODBC ベースのクラスを使用し、バルク行フェッチを実装している場合は、データ ソース列に対応する各データ メンバーに対してバルク RFX 関数を呼び出すことによって、 `DoBulkFieldExchange` の `CRecordset` メンバー関数を手動でオーバーライドする必要があります。  
+ If you are using the ODBC-based classes and you have implemented bulk row fetching, you must manually override the `DoBulkFieldExchange` member function of `CRecordset` by calling the Bulk RFX functions for each data member corresponding to a data source column.  
   
- ODBC ベースのクラスにバルク行フェッチを実装していない場合または DAO ベースのクラスを使用している場合は、ClassWizard で、レコードセットの各フィールド データ メンバーに対して RFX 関数 (ODBC クラスの場合) または DFX 関数 (DAO クラスの場合) を呼び出すことで、 `DoFieldExchange` または `CRecordset` の `CDaoRecordset` メンバー関数をオーバーライドします。  
+ If you have not implemented bulk row fetching in the ODBC-based classes, or if you are using the DAO-based classes, then ClassWizard will override the `DoFieldExchange` member function of `CRecordset` or `CDaoRecordset` by calling the RFX functions (for ODBC classes) or the DFX functions (for DAO classes) for each field data member in your recordset.  
   
- レコード フィールド エクスチェンジ関数は、フレームワークが `DoFieldExchange` または `DoBulkFieldExchange`を呼び出すたびにデータを転送します。 それぞれの関数が特定のデータ型を転送します。  
+ The record field exchange functions transfer data each time the framework calls `DoFieldExchange` or `DoBulkFieldExchange`. Each function transfers a specific data type.  
   
- これらの関数の使用方法の詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: しくみ RFX の動作 (ODBC)](../../data/odbc/record-field-exchange-how-rfx-works.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about how these functions are used, see the articles [Record Field Exchange: How RFX Works (ODBC)](../../data/odbc/record-field-exchange-how-rfx-works.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- 動的に連結するデータの列の場合は、rfx 関数または DFX 関数を手動で呼び出すこともできます[レコード セット: データ列を動的に結びつける (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)です。 さらに、独自カスタム rfx 関数または DFX ルーチンを記述する、テクニカル ノートで説明したよう[43](../../mfc/tn043-rfx-routines.md) (ODBC) 用およびテクニカル ノート[53](../../mfc/tn053-custom-dfx-routines-for-dao-database-classes.md) (DAO) 用です。  
+ For columns of data that you bind dynamically, you can also call the RFX or DFX functions yourself, as explained in the articles [Recordset: Dynamically Binding Data Columns (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md). Additionally, you can write your own custom RFX or DFX routines, as explained in Technical Note [43](../../mfc/tn043-rfx-routines.md) (for ODBC) and Technical Note [53](../../mfc/tn053-custom-dfx-routines-for-dao-database-classes.md) (for DAO).  
   
- 関数に示すようとバルク RFX の例については、`DoFieldExchange`と`DoBulkFieldExchange`関数を参照してください[RFX_Text](#rfx_text)と [RFX_Text_Bulk] #rfx_text_bulk)。 DFX 関数は RFX 関数によく似ています。  
+ For an example of RFX and Bulk RFX functions as they appear in the `DoFieldExchange` and `DoBulkFieldExchange` functions, see [RFX_Text](#rfx_text) and [RFX_Text_Bulk]#rfx_text_bulk). DFX functions are very similar to the RFX functions.  
   
-### <a name="rfx-functions-odbc"></a>RFX 関数 (ODBC)  
-  
-|||  
-|-|-|  
-|[RFX_Binary](#rfx_binary)|型のバイトの配列を転送[CByteArray](cbytearray-class.md)です。|  
-|[RFX_Bool](#rfx_bool)|ブール型のデータを転送します。|  
-|[RFX_Byte](#rfx_byte)|シングル バイトのデータを転送します。|  
-|[RFX_Date](#rfx_date)|時刻と日付のデータを使用して転送[CTime](../../atl-mfc-shared/reference/ctime-class.md)または**TIMESTAMP_STRUCT**です。|  
-|[RFX_Double](#rfx_double)|倍精度浮動小数点型のデータを転送します。|  
-|[RFX_Int](#rfx_int)|整数型のデータを転送します。|  
-|[RFX_Long](#rfx_long)|長整数型のデータを転送します。|  
-|[RFX_LongBinary](#rfx_longbinary)|バイナリ ラージ オブジェクト (BLOB) データのオブジェクトを転送、 [CLongBinary](clongbinary-class.md)クラスです。|  
-|[RFX_Single](#rfx_single)|浮動小数点型のデータを転送します。|  
-|[RFX_Text](#rfx_text)|文字列型のデータを転送します。|  
-  
-### <a name="bulk-rfx-functions-odbc"></a>バルク RFX 関数 (ODBC)  
+### <a name="rfx-functions-odbc"></a>RFX Functions (ODBC)  
   
 |||  
 |-|-|  
-|[RFX_Binary_Bulk](#rfx_binary_bulk)|バイト データの配列を転送します。|  
-|[RFX_Bool_Bulk](#rfx_bool_bulk)|ブール型のデータの配列を転送します。|  
-|[RFX_Byte_Bulk](#rfx_byte_bulk)|シングル バイトの配列を転送します。|  
-|[RFX_Date_Bulk](#rfx_date_bulk)|**TIMESTAMP_STRUCT**型のデータの配列を転送します。|  
-|[RFX_Double_Bulk](#rfx_double_bulk)|倍精度浮動小数点型のデータの配列を転送します。|  
-|[RFX_Int_Bulk](#rfx_int_bulk)|整数型のデータの配列を転送します。|  
-|[RFX_Long_Bulk](#rfx_long_bulk)|長整数型のデータの配列を転送します。|  
-|[RFX_Single_Bulk](#rfx_single_bulk)|浮動小数点型のデータの配列を転送します。|  
-|[RFX_Text_Bulk](#rfx_text_bulk)|**LPSTR**型のデータの配列を転送します。|  
+|[RFX_Binary](#rfx_binary)|Transfers arrays of bytes of type [CByteArray](cbytearray-class.md).|  
+|[RFX_Bool](#rfx_bool)|Transfers Boolean data.|  
+|[RFX_Byte](#rfx_byte)|Transfers a single byte of data.|  
+|[RFX_Date](#rfx_date)|Transfers time and date data using [CTime](../../atl-mfc-shared/reference/ctime-class.md) or **TIMESTAMP_STRUCT**.|  
+|[RFX_Double](#rfx_double)|Transfers double-precision float data.|  
+|[RFX_Int](#rfx_int)|Transfers integer data.|  
+|[RFX_Long](#rfx_long)|Transfers long integer data.|  
+|[RFX_LongBinary](#rfx_longbinary)|Transfers binary large object (BLOB) data with an object of the [CLongBinary](clongbinary-class.md) class.|  
+|[RFX_Single](#rfx_single)|Transfers float data.|  
+|[RFX_Text](#rfx_text)|Transfers string data.|  
   
-### <a name="dfx-functions-dao"></a>DFX 関数 (DAO)  
+### <a name="bulk-rfx-functions-odbc"></a>Bulk RFX Functions (ODBC)  
+  
+|||  
+|-|-|  
+|[RFX_Binary_Bulk](#rfx_binary_bulk)|Transfers arrays of byte data.|  
+|[RFX_Bool_Bulk](#rfx_bool_bulk)|Transfers arrays of Boolean data.|  
+|[RFX_Byte_Bulk](#rfx_byte_bulk)|Transfers arrays of single bytes.|  
+|[RFX_Date_Bulk](#rfx_date_bulk)|Transfers arrays of data of type **TIMESTAMP_STRUCT**.|  
+|[RFX_Double_Bulk](#rfx_double_bulk)|Transfers arrays of double-precision, floating-point data.|  
+|[RFX_Int_Bulk](#rfx_int_bulk)|Transfers arrays of integer data.|  
+|[RFX_Long_Bulk](#rfx_long_bulk)|Transfers arrays of long integer data.|  
+|[RFX_Single_Bulk](#rfx_single_bulk)|Transfers arrays of floating-point data.|  
+|[RFX_Text_Bulk](#rfx_text_bulk)|Transfers arrays of data of type **LPSTR**.|  
+  
+### <a name="dfx-functions-dao"></a>DFX Functions (DAO)  
   
 |||
 |-|-|  
-|[DFX_Binary](#dfx_binary)|型のバイトの配列を転送[CByteArray](cbytearray-class.md)です。|  
-|[DFX_Bool](#dfx_bool)|ブール型のデータを転送します。|  
-|[DFX_Byte](#dfx_byte)|シングル バイトのデータを転送します。|  
-|[DFX_Currency](#dfx_currency)|型の通貨データを転送[COleCurrency](colecurrency-class.md)です。|  
-|[DFX_DateTime](#dfx_datetime)|型の日付と時刻のデータ転送[COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)です。|  
-|[DFX_Double](#dfx_double)|倍精度浮動小数点型のデータを転送します。|  
-|[DFX_Long](#dfx_long)|長整数型のデータを転送します。|  
-|[DFX_LongBinary](#dfx_longbinary)|`CLongBinary` クラスのオブジェクトを使用して、バイナリ ラージ オブジェクト (BLOB) データを転送します。 DAO、勧め使用する[DFX_Binary](#dfx_binary)代わりにします。|  
-|[DFX_Short](#dfx_short)|短整数型のデータを転送します。|  
-|[DFX_Single](#dfx_single)|浮動小数点型のデータを転送します。|  
-|[DFX_Text](#dfx_text)|文字列型のデータを転送します。|  
+|[DFX_Binary](#dfx_binary)|Transfers arrays of bytes of type [CByteArray](cbytearray-class.md).|  
+|[DFX_Bool](#dfx_bool)|Transfers Boolean data.|  
+|[DFX_Byte](#dfx_byte)|Transfers a single byte of data.|  
+|[DFX_Currency](#dfx_currency)|Transfers currency data, of type [COleCurrency](colecurrency-class.md).|  
+|[DFX_DateTime](#dfx_datetime)|Transfers time and date data, of type [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md).|  
+|[DFX_Double](#dfx_double)|Transfers double-precision float data.|  
+|[DFX_Long](#dfx_long)|Transfers long integer data.|  
+|[DFX_LongBinary](#dfx_longbinary)|Transfers binary large object (BLOB) data with an object of the `CLongBinary` class. For DAO, it is recommended that you use [DFX_Binary](#dfx_binary) instead.|  
+|[DFX_Short](#dfx_short)|Transfers short integer data.|  
+|[DFX_Single](#dfx_single)|Transfers float data.|  
+|[DFX_Text](#dfx_text)|Transfers string data.|  
 
  =============================================
 
-## <a name="rfx_binary"></a>RFX_Binary
-フィールド データ メンバーの間のバイト配列を転送する`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**sql_binary 型**、 **SQL_VARBINARY**、または**SQL_LONGVARBINARY**です。  
+## <a name="rfx_binary"></a>  RFX_Binary
+Transfers arrays of bytes between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_BINARY**, **SQL_VARBINARY**, or **SQL_LONGVARBINARY**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Binary(  
@@ -155,32 +155,32 @@ void RFX_Binary(
    int nMaxLength = 255);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送[CByteArray](cbytearray-class.md)、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type [CByteArray](cbytearray-class.md), is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `nMaxLength`  
- 文字列または転送される配列の長さが最大です。 既定値の`nMaxLength`は 255 です。 有効な値は 1 ~`INT_MAX`します。 この領域の量は、フレームワークは、データを割り当てます。 最適なパフォーマンスを期待する最大のデータ項目に対応するのに十分な大きさの値を渡します。  
+ The maximum allowed length of the string or array being transferred. The default value of `nMaxLength` is 255. Legal values are 1 to `INT_MAX`. The framework allocates this amount of space for the data. For best performance, pass a value large enough to accommodate the largest data item you expect.  
   
-### <a name="remarks"></a>コメント  
- 型との間にこれらの型のデータ ソース内のデータがマップされている`CByteArray`レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data in the data source of these types is mapped to and from type `CByteArray` in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_bool"></a>RFX_Bool
-フィールド データ メンバーの間でのブール型のデータの転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_BIT**です。  
+## <a name="rfx_bool"></a>  RFX_Bool
+Transfers Boolean data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_BIT**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Bool(  
@@ -189,26 +189,26 @@ void RFX_Bool(
    BOOL& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**BOOL**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **BOOL**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_byte"></a>RFX_Byte
-1 つのフィールド データ メンバーの間のバイト数の転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_TINYINT**です。  
+## <a name="rfx_byte"></a>  RFX_Byte
+Transfers single bytes between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_TINYINT**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Byte(  
@@ -217,26 +217,26 @@ void RFX_Byte(
    BYTE& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**バイト**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **BYTE**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_date"></a>RFX_Date
-転送`CTime`または**TIMESTAMP_STRUCT**のフィールド データ メンバーの間のデータ、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_DATE**、 **SQL_TIME**、または**SQL_TIMESTAMP**です。  
+## <a name="rfx_date"></a>  RFX_Date
+Transfers `CTime` or **TIMESTAMP_STRUCT** data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_DATE**, **SQL_TIME**, or **SQL_TIMESTAMP**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Date(  
@@ -255,33 +255,33 @@ void RFX_Date(
    COleDateTime& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーであるに格納される値転送する値。 関数のさまざまなバージョンは、異なるデータ型の値を実行します。  
+ The value stored in the indicated data member; the value to be transferred. The various versions of the function take different data types for value:  
   
- 関数の最初のバージョンへの参照を受け取り、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクト。 レコード セットからデータ ソースへの転送では、この値は、指定されたデータ メンバーから取得します。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The first version of the function takes a reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object. For a transfer from recordset to data source, this value is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
- 関数の 2 番目のバージョンへの参照を受け取り、 **TIMESTAMP_STRUCT**構造体。 必要がありますこの構造体を自分で設定する呼び出しの前にします。 どちらのダイアログ データ エクス (チェンジ DDX) のサポートも、コード ウィザードのサポートはこのバージョンで使用できます。 関数の 3 番目のバージョンは最初のバージョンと同様に動作への参照を受け取る点を除いて、 [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)オブジェクト。  
+ The second version of the function takes a reference to a **TIMESTAMP_STRUCT** structure. You must set up this structure yourself before the call. Neither dialog data exchange (DDX) support nor code wizard support is available for this version. The third version of the function works similarly to the first version except that it takes a reference to a [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- `CTime`関数のバージョンは、いくつかの中間処理のオーバーヘッドあり、制限の範囲です。 これらの要因は限定的すぎるのいずれかの場合は、関数の 2 番目のバージョンを使用します。 コード ウィザードおよび DDX サポート構造を自分で設定する、要件のされていないことに注意してください。  
+### <a name="remarks"></a>Remarks  
+ The `CTime` version of the function imposes the overhead of some intermediate processing and has a somewhat limited range. If you find either of these factors too limiting, use the second version of the function. But note its lack of code wizard and DDX support and the requirement that you set up the structure yourself.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_double"></a>RFX_Double
-転送**倍精度浮動小数点**のフィールド データ メンバーの間のデータ、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_DOUBLE**です。  
+## <a name="rfx_double"></a>  RFX_Double
+Transfers **double float** data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_DOUBLE**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Double(  
@@ -290,26 +290,26 @@ void RFX_Double(
    double& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**二重**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **double**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_int"></a>RFX_Int
-フィールド データ メンバーの間で整数のデータ転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_SMALLINT**です。  
+## <a name="rfx_int"></a>  RFX_Int
+Transfers integer data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_SMALLINT**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Int(  
@@ -318,26 +318,26 @@ void RFX_Int(
    int& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送`int`、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type `int`, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_long"></a>RFX_Long
-フィールド データ メンバーの間での長整数のデータ転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_INTEGER**です。  
+## <a name="rfx_long"></a>  RFX_Long
+Transfers long integer data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_INTEGER**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Long(  
@@ -347,26 +347,26 @@ void RFX_Long(
 value );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**長い**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **long**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
-## <a name="rfx_longbinary"></a>RFX_LongBinary
-クラスを使用してバイナリ ラージ オブジェクト (BLOB) データを転送[CLongBinary](clongbinary-class.md)のフィールド データ メンバーの間、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_LONGVARBINARY**または**SQL_LONGVARCHAR**です。  
+## <a name="rfx_longbinary"></a>  RFX_LongBinary
+Transfers binary large object (BLOB) data using class [CLongBinary](clongbinary-class.md) between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_LONGVARBINARY** or **SQL_LONGVARCHAR**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_LongBinary(  
@@ -375,26 +375,26 @@ void RFX_LongBinary(
    CLongBinary& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送`CLongBinary`、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type `CLongBinary`, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_single"></a>RFX_Single
-フィールド データ メンバーの間で浮動小数点のデータ転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_REAL**です。  
+## <a name="rfx_single"></a>  RFX_Single
+Transfers floating-point data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_REAL**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Single(  
@@ -403,27 +403,27 @@ void RFX_Single(
    float& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**float**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **float**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
 
-## <a name="rfx_text"></a>RFX_Text
-転送`CString`のフィールド データ メンバーの間でデータを`CRecordset`オブジェクトと ODBC の種類のデータ ソースのレコードの列**SQL_LONGVARCHAR**、 **SQL_CHAR**、 **SQL_VARCHAR**、 **SQL_DECIMAL**、または**SQL_NUMERIC**です。  
+## <a name="rfx_text"></a>  RFX_Text
+Transfers `CString` data between the field data members of a `CRecordset` object and columns of a record on the data source of ODBC type **SQL_LONGVARCHAR**, **SQL_CHAR**, **SQL_VARCHAR**, **SQL_DECIMAL**, or **SQL_NUMERIC**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Text(  
@@ -435,30 +435,30 @@ void RFX_Text(
    short nScale = 0);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター`CFieldExchange`です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class `CFieldExchange`. This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送`CString`、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type `CString`, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `nMaxLength`  
- 文字列または転送される配列の長さが最大です。 既定値の`nMaxLength`は 255 です。 有効な値は 1 ~ `INT_MAX`)。 この領域の量は、フレームワークは、データを割り当てます。 最適なパフォーマンスを期待する最大のデータ項目に対応するのに十分な大きさの値を渡します。  
+ The maximum allowed length of the string or array being transferred. The default value of `nMaxLength` is 255. Legal values are 1 to `INT_MAX`). The framework allocates this amount of space for the data. For best performance, pass a value large enough to accommodate the largest data item you expect.  
   
  *nColumnType*  
- 主にパラメーターを使用します。 パラメーターのデータ型を示す整数。 種類は、フォームの ODBC データ型**SQL_XXX**です。  
+ Used mainly for parameters. An integer indicating the data type of the parameter. The type is an ODBC data type of the form **SQL_XXX**.  
   
  `nScale`  
- ODBC 型の値の小数点以下桁数を示す**SQL_DECIMAL**または**SQL_NUMERIC**です。 `nScale`パラメーターの値を設定するときに役立ちますのみです。 詳細についてを参照してください「の有効桁数、小数点以下桁数、長さ、および表示サイズ」の付録 D、 *ODBC SDK プログラマ リファレンス*です。  
+ Specifies the scale for values of ODBC type **SQL_DECIMAL** or **SQL_NUMERIC**. `nScale` is only useful when setting parameter values. For more information, see the topic "Precision, Scale, Length, and Display Size" in Appendix D of the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- これらの型のすべてのデータ ソースのデータはマップとの間`CString`レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data in the data source of all of these types is mapped to and from `CString` in the recordset.  
   
-### <a name="example"></a>例  
- この例を複数回呼び出します`RFX_Text`です。 2 つの呼び出しにも注意してください`CFieldExchange::SetFieldType`です。 パラメーターへの呼び出しを記述する必要があります`SetFieldType`と RFX 呼び出しです。 出力列の呼び出しとその関連する rfx 関数呼び出しは、通常、コード ウィザードで記述されます。  
+### <a name="example"></a>Example  
+ This example shows several calls to `RFX_Text`. Notice also the two calls to `CFieldExchange::SetFieldType`. For parameters you must write the call to `SetFieldType` and its RFX call. The output column call and its associated RFX calls are normally written by a code wizard.  
   
 ```cpp  
 void CCustomer::DoFieldExchange(CFieldExchange* pFX)
@@ -478,14 +478,14 @@ void CCustomer::DoFieldExchange(CFieldExchange* pFX)
 }
 ```
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
 
-## <a name="rfx_binary_bulk"></a>RFX_Binary_Bulk
-ODBC データ ソースの列からの対応する配列に複数行のバイトのデータを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_binary_bulk"></a>  RFX_Binary_Bulk
+Transfers multiple rows of byte data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Binary_Bulk(  
@@ -496,42 +496,42 @@ void RFX_Binary_Bulk(
    int nMaxLength);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgByteVals`  
- 配列へのポインター**バイト**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of **BYTE** values. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgByteVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgByteVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
  `nMaxLength`  
- 許容最大長が指す配列に格納されている値の`prgByteVals`します。 データは切り捨てられませんに期待する最大のデータ項目の対応するのに十分な大きさの値を渡します。  
+ The maximum allowed length of the values stored in the array pointed to by `prgByteVals`. To ensure that data will not be truncated, pass a value large enough to accommodate the largest data item you expect.  
   
-### <a name="remarks"></a>コメント  
- データ ソースの列は、ODBC 型を持つことができます**sql_binary 型**、 **SQL_VARBINARY**、または**SQL_LONGVARBINARY**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**バイト**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column can have an ODBC type of **SQL_BINARY**, **SQL_VARBINARY**, or **SQL_LONGVARBINARY**. The recordset must define a field data member of type pointer to **BYTE**.  
   
- 初期化する場合`prgByteVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgByteVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新できるようにするのには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. In order to make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_bool_bulk"></a>RFX_Bool_Bulk
-ODBC データ ソースの列からの対応する配列に複数行のブール型のデータを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_bool_bulk"></a>  RFX_Bool_Bulk
+Transfers multiple rows of Boolean data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Bool_Bulk(  
@@ -541,39 +541,39 @@ void RFX_Bool_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgBoolVals`  
- 配列へのポインター **BOOL**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of **BOOL** values. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgBoolVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgBoolVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソース列には、ODBC 型の必要があります**SQL_BIT**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**BOOL**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column must have an ODBC type of **SQL_BIT**. The recordset must define a field data member of type pointer to **BOOL**.  
   
- 初期化する場合`prgBoolVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgBoolVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_byte_bulk"></a>RFX_Byte_Bulk
-ODBC データ ソースの列からの対応する配列に単一バイトの複数の行を転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_byte_bulk"></a>  RFX_Byte_Bulk
+Transfers multiple rows of single bytes from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Byte_Bulk(  
@@ -583,39 +583,39 @@ void RFX_Byte_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgByteVals`  
- 配列へのポインター**バイト**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of **BYTE** values. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgByteVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgByteVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソース列には、ODBC 型の必要があります**SQL_TINYINT**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**バイト**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column must have an ODBC type of **SQL_TINYINT**. The recordset must define a field data member of type pointer to **BYTE**.  
   
- 初期化する場合`prgByteVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgByteVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
-## <a name="rfx_date_bulk"></a>RFX_Date_Bulk
-複数行の転送**TIMESTAMP_STRUCT** ODBC データ ソースの列のデータに対応する配列に、 `CRecordset`-派生オブジェクト。  
+## <a name="rfx_date_bulk"></a>  RFX_Date_Bulk
+Transfers multiple rows of **TIMESTAMP_STRUCT** data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Date_Bulk(  
@@ -625,39 +625,39 @@ void RFX_Date_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgTSVals`  
- 配列へのポインター **TIMESTAMP_STRUCT**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。 詳細については、 **TIMESTAMP_STRUCT**データ型を参照してください「C データ型」の付録 D、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of **TIMESTAMP_STRUCT** values. This array will store the data to be transferred from the data source to the recordset. For more information about the **TIMESTAMP_STRUCT** data type, see the topic "C Data Types" in Appendix D of the *ODBC SDK Programmer's Reference*.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgTSVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgTSVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソースの列は、ODBC 型を持つことができます**SQL_DATE**、 **SQL_TIME**、または**SQL_TIMESTAMP**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**TIMESTAMP_STRUCT**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column can have an ODBC type of **SQL_DATE**, **SQL_TIME**, or **SQL_TIMESTAMP**. The recordset must define a field data member of type pointer to **TIMESTAMP_STRUCT**.  
   
- 初期化する場合`prgTSVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgTSVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_double_bulk"></a>RFX_Double_Bulk
-ODBC データ ソースの列からの対応する配列に複数行の倍精度の浮動小数点のデータを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_double_bulk"></a>  RFX_Double_Bulk
+Transfers multiple rows of double-precision, floating-point data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Double_Bulk(  
@@ -667,39 +667,39 @@ void RFX_Double_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgDblVals`  
- 配列へのポインター**二重**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of **double** values. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgDblVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgDblVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソース列には、ODBC 型の必要があります**SQL_DOUBLE**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**二重**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column must have an ODBC type of **SQL_DOUBLE**. The recordset must define a field data member of type pointer to **double**.  
   
- 初期化する場合`prgDblVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgDblVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_int_bulk"></a>RFX_Int_Bulk
-フィールド データ メンバーの間で整数のデータ転送、`CRecordset`オブジェクトおよび ODBC の種類のデータ ソースのレコードの列**SQL_SMALLINT**です。  
+## <a name="rfx_int_bulk"></a>  RFX_Int_Bulk
+Transfers integer data between the field data members of a `CRecordset` object and the columns of a record on the data source of ODBC type **SQL_SMALLINT**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Int(  
@@ -708,26 +708,26 @@ void RFX_Int(
    int& value);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CFieldExchange](cfieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 操作の詳細については、 `CFieldExchange` 、記事を参照して、オブジェクトを指定できます[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to an object of class [CFieldExchange](cfieldexchange-class.md). This object contains information to define the context for each call of the function. For more information about the operations a `CFieldExchange` object can specify, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送`int`、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type `int`, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text](#rfx_text)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text](#rfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_long_bulk"></a>RFX_Long_Bulk
-ODBC データ ソースの列からの対応する配列に複数行の長整数のデータを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_long_bulk"></a>  RFX_Long_Bulk
+Transfers multiple rows of long integer data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Long_Bulk(  
@@ -737,39 +737,39 @@ void RFX_Long_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgLongVals`  
- 長整数の配列へのポインター。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of long integers. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgLongVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgLongVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソース列には、ODBC 型の必要があります**SQL_INTEGER**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**長い**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column must have an ODBC type of **SQL_INTEGER**. The recordset must define a field data member of type pointer to **long**.  
   
- 初期化する場合`prgLongVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgLongVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="rfx_single_bulk"></a>RFX_Single_Bulk
-ODBC データ ソースの列からの対応する配列に複数行の浮動小数点のデータを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_single_bulk"></a>  RFX_Single_Bulk
+Transfers multiple rows of floating-point data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Single_Bulk(  
@@ -779,40 +779,40 @@ void RFX_Single_Bulk(
    long** prgLengths);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgFltVals`  
- 配列へのポインター **float**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。  
+ A pointer to an array of **float** values. This array will store the data to be transferred from the data source to the recordset.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgFltVals`です。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgFltVals`. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
-### <a name="remarks"></a>コメント  
- データ ソース列には、ODBC 型の必要があります**SQL_REAL**です。 レコード セットへのポインター型のフィールド データ メンバーを定義する必要があります**float**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column must have an ODBC type of **SQL_REAL**. The recordset must define a field data member of type pointer to **float**.  
   
- 初期化する場合`prgFltVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgFltVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 参照してください[RFX_Text_Bulk](#rfx_text_bulk)です。  
+### <a name="example"></a>Example  
+ See [RFX_Text_Bulk](#rfx_text_bulk).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
 
-## <a name="rfx_text_bulk"></a>RFX_Text_Bulk
-ODBC データ ソースの列からの対応する配列に複数行の文字データを転送する`CRecordset`-派生オブジェクト。  
+## <a name="rfx_text_bulk"></a>  RFX_Text_Bulk
+Transfers multiple rows of character data from a column of an ODBC data source to a corresponding array in a `CRecordset`-derived object.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void RFX_Text_Bulk(  
@@ -823,34 +823,34 @@ void RFX_Text_Bulk(
    int nMaxLength);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](cfieldexchange-class.md)オブジェクト。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。 詳細については、記事を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
+ A pointer to a [CFieldExchange](cfieldexchange-class.md) object. This object contains information to define the context for each call of the function. For more information, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md).  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  `prgStrVals`  
- 配列へのポインター **LPSTR**値。 この配列では、データ ソースからレコード セットに転送するデータを格納します。 ODBC の現在のバージョンとなお、これらの値が Unicode にすることはできません。  
+ A pointer to an array of **LPSTR** values. This array will store the data to be transferred from the data source to the recordset. Note that with the current version of ODBC, these values cannot be Unicode.  
   
  `prgLengths`  
- 長整数の配列へのポインター。 この配列が指し示す配列内の各値のバイト単位の長さに保存`prgStrVals`です。 この長さは、null 終端文字を除外します。 なお、値**SQL_NULL_DATA**対応するデータ項目には、Null 値が含まれている場合に格納されます。 詳細については、ODBC API 関数を参照してください。 **SQLBindCol**で、 *ODBC SDK プログラマ リファレンス*です。  
+ A pointer to an array of long integers. This array will store the length in bytes of each value in the array pointed to by `prgStrVals`. This length excludes the null termination character. Note that the value **SQL_NULL_DATA** will be stored if the corresponding data item contains a Null value. For more details, see the ODBC API function **SQLBindCol** in the *ODBC SDK Programmer's Reference*.  
   
  `nMaxLength`  
- 許容最大長を指す配列に格納されている値の`prgStrVals`終端の null 文字を含むです。 データは切り捨てられませんに期待する最大のデータ項目の対応するのに十分な大きさの値を渡します。  
+ The maximum allowed length of the values stored in the array pointed to by `prgStrVals`, including the null termination character. To ensure that data will not be truncated, pass a value large enough to accommodate the largest data item you expect.  
   
-### <a name="remarks"></a>コメント  
- データ ソースの列は、ODBC 型を持つことができます**SQL_LONGVARCHAR**、 **SQL_CHAR**、 **SQL_VARCHAR**、 **SQL_DECIMAL**、または**SQL_NUMERIC**です。 レコード セットは、型のフィールド データ メンバーを定義する必要があります**LPSTR**です。  
+### <a name="remarks"></a>Remarks  
+ The data source column can have an ODBC type of **SQL_LONGVARCHAR**, **SQL_CHAR**, **SQL_VARCHAR**, **SQL_DECIMAL**, or **SQL_NUMERIC**. The recordset must define a field data member of type **LPSTR**.  
   
- 初期化する場合`prgStrVals`と`prgLengths`に**NULL**をポイントしている配列が行セット サイズと同じサイズで、自動的に割り当てし、します。  
+ If you initialize `prgStrVals` and `prgLengths` to **NULL**, then the arrays they point to will be allocated automatically, with sizes equal to the rowset size.  
   
 > [!NOTE]
->  バルク レコード フィールド エクス チェンジはのみ、レコード セット オブジェクトをデータ ソースからデータを転送します。 レコード セットを更新するためには、ODBC API 関数を使用する必要があります**SQLSetPos**です。  
+>  Bulk record field exchange only transfers data from the data source to the recordset object. To make your recordset updateable, you must use the ODBC API function **SQLSetPos**.  
   
- 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)と[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information, see the articles [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md) and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-### <a name="example"></a>例  
- 呼び出しを手動で記述する必要があります、`DoBulkFieldExchange`オーバーライドします。 この例への呼び出しを示しています。 `RFX_Text_Bulk`、への呼び出しだけでなく`RFX_Long_Bulk`、データの転送します。 呼び出しによってこれらの呼び出しの前に、[つ](CFieldExchange::SetFieldType.md)です。 パラメーターに対してバルク RFX 関数ではなく RFX 関数を呼び出す必要がありますに注意してください。  
+### <a name="example"></a>Example  
+ You must manually write calls in your `DoBulkFieldExchange` override. This example shows a call to `RFX_Text_Bulk`, as well as a call to `RFX_Long_Bulk`, for data transfer. These calls are preceded by a call to [CFieldExchange::SetFieldType](CFieldExchange::SetFieldType.md). Note that for parameters, you must call the RFX functions instead of the Bulk RFX functions.  
   
 ```cpp  
 void CMultiCustomer::DoBulkFieldExchange(CFieldExchange* pFX)
@@ -867,13 +867,13 @@ void CMultiCustomer::DoBulkFieldExchange(CFieldExchange* pFX)
 }
 ``` 
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
 
-## <a name="dfx_binary"></a>DFX_Binary
-フィールド データ メンバーの間のバイト配列を転送する[CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_binary"></a>  DFX_Binary
+Transfers arrays of bytes between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Binary(  
@@ -884,39 +884,39 @@ void AFXAPI DFX_Binary(
    DWORD dwBindOptions = 0);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送[CByteArray](cbytearray-class.md)、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type [CByteArray](cbytearray-class.md), is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `nPreAllocSize`  
- フレームワークでは、このメモリの量があらかじめ確保します。 データが大きい場合は、フレームワークは必要に応じて容量を割り当てられているされます。 パフォーマンス向上のためには、このサイズを再割り当てを防ぐために、十分大きな値に設定します。 既定のサイズは、AFXDAO で定義されます。H ファイルとして**AFX_DAO_BINARY_DEFAULT_SIZE**です。  
+ The framework preallocates this amount of memory. If your data is larger, the framework will allocated more space as needed. For better performance, set this size to a value large enough to prevent reallocations. The default size is defined in the AFXDAO.H file as **AFX_DAO_BINARY_DEFAULT_SIZE**.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、`AFX_DAO_DISABLE_FIELD_CACHE`いない使用ダブル バッファリングは、呼び出す必要があります[き](cdaorecordset-class.md#setfielddirty)と[な](cdaorecordset-class.md#setfieldnull)自分でします。 その他の考えられる値`AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用して、追加の作業フィールドをマークするいなくてもかまいませんダーティまたは Null。 パフォーマンスとメモリ上の理由から、この値を避けるため、バイナリ データが比較的少ない場合を除き、します。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_DISABLE_FIELD_CACHE`, does not use double buffering, and you must call [SetFieldDirty](cdaorecordset-class.md#setfielddirty) and [SetFieldNull](cdaorecordset-class.md#setfieldnull) yourself. The other possible value, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering, and you do not have to do extra work to mark fields dirty or Null. For performance and memory reasons, avoid this value unless your binary data is relatively small.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定ですべてのフィールドのバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered for all fields by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_BYTES** DAO」と入力[CByteArray](cbytearray-class.md)レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_BYTES** in DAO and type [CByteArray](cbytearray-class.md) in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
 
-## <a name="dfx_bool"></a>DFX_Bool
-フィールド データ メンバーの間でのブール型のデータの転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_bool"></a>  DFX_Bool
+Transfers Boolean data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Bool(  
@@ -926,35 +926,35 @@ void AFXAPI DFX_Bool(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**BOOL**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **BOOL**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_BOOL** DAO」と入力**BOOL**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_BOOL** in DAO and type **BOOL** in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_byte"></a>DFX_Byte
-1 つのフィールド データ メンバーの間のバイト数の転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_byte"></a>  DFX_Byte
+Transfers single bytes between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Byte(  
@@ -964,35 +964,35 @@ void AFXAPI DFX_Byte(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**バイト**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **BYTE**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_BYTES** DAO」と入力**バイト**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_BYTES** in DAO and type **BYTE** in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_currency"></a>DFX_Currency
-フィールド データ メンバーの間で通貨のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_currency"></a>  DFX_Currency
+Transfers currency data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Currency(  
@@ -1002,35 +1002,35 @@ void AFXAPI DFX_Currency(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースへの転送では、この値は型の指定されたデータ メンバーから取得[COleCurrency](colecurrency-class.md)です。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, this value is taken from the specified data member, of type [COleCurrency](colecurrency-class.md). For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_CURRENCY** DAO」と入力[COleCurrency](colecurrency-class.md)レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_CURRENCY** in DAO and type [COleCurrency](colecurrency-class.md) in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_datetime"></a>DFX_DateTime
-フィールド データ メンバーの間で日付と時刻のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_datetime"></a>  DFX_DateTime
+Transfers time and date data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_DateTime(  
@@ -1040,38 +1040,38 @@ void AFXAPI DFX_DateTime(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 関数が受け取るへの参照、 [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)オブジェクト。 レコード セットからデータ ソースへの転送では、この値は、指定されたデータ メンバーから取得します。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. The function takes a reference to a [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object. For a transfer from recordset to data source, this value is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_DATE** DAO」と入力[COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_DATE** in DAO and type [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) in the recordset.  
   
 > [!NOTE]
->  `COleDateTime`置換[CTime](../../atl-mfc-shared/reference/ctime-class.md)と**TIMESTAMP_STRUCT** DAO クラスでは、この目的のためです。 `CTime`および**TIMESTAMP_STRUCT**されて ODBC ベースのデータ アクセス クラスを使用します。  
+>  `COleDateTime` replaces [CTime](../../atl-mfc-shared/reference/ctime-class.md) and **TIMESTAMP_STRUCT** for this purpose in the DAO classes. `CTime` and **TIMESTAMP_STRUCT** are still used for the ODBC-based data access classes.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_double"></a>DFX_Double
-転送**倍精度浮動小数点**のフィールド データ メンバーの間のデータ、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_double"></a>  DFX_Double
+Transfers **double float** data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Double(  
@@ -1081,35 +1081,35 @@ void AFXAPI DFX_Double(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**二重**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **double**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_R8** DAO」と入力**倍精度浮動小数点**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_R8** in DAO and type **double float** in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_long"></a>DFX_Long
-フィールド データ メンバーの間での長整数のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_long"></a>  DFX_Long
+Transfers long integer data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Long(  
@@ -1119,36 +1119,36 @@ void AFXAPI DFX_Long(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**長い**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **long**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間でデータがマップされている**DAO_I4** DAO」と入力**長い**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_I4** in DAO and type **long** in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
 
-## <a name="dfx_longbinary"></a>DFX_LongBinary
-**重要な**を使用することをお勧め[DFX_Binary](#dfx_binary)この関数の代わりにします。  
+## <a name="dfx_longbinary"></a>  DFX_LongBinary
+**Important** It is recommended that you use [DFX_Binary](#dfx_binary) instead of this function.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_LongBinary(  
@@ -1159,38 +1159,38 @@ void AFXAPI DFX_LongBinary(
    DWORD dwBindOptions = 0);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送[CLongBinary](clongbinary-class.md)、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type [CLongBinary](clongbinary-class.md), is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  *dwPreAllocSize*  
- フレームワークでは、このメモリの量があらかじめ確保します。 データが大きい場合は、フレームワークは必要に応じて容量を割り当てられているされます。 パフォーマンス向上のためには、このサイズを再割り当てを防ぐために、十分大きな値に設定します。  
+ The framework preallocates this amount of memory. If your data is larger, the framework will allocated more space as needed. For better performance, set this size to a value large enough to prevent reallocations.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 **AFX_DISABLE_FIELD_CACHE**、ダブル バッファリングを使用しません。 その他の考えられる値は`AFX_DAO_ENABLE_FIELD_CACHE`します。 ダブル バッファリングを使用して、追加の作業フィールドをマークするいなくてもかまいませんダーティまたは Null。 パフォーマンスとメモリ上の理由から、この値を避けるため、バイナリ データが比較的少ない場合を除き、します。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, **AFX_DISABLE_FIELD_CACHE**, does not use double buffering. The other possible value is `AFX_DAO_ENABLE_FIELD_CACHE`. Uses double buffering, and you do not have to do extra work to mark fields dirty or Null. For performance and memory reasons, avoid this value unless your binary data is relatively small.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- `DFX_LongBinary`MFC ODBC クラスとの互換性を指定できます。 `DFX_LongBinary`関数転送バイナリ ラージ オブジェクト (BLOB) データ クラスを使用して`CLongBinary`のフィールド データ メンバーの間、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。 型の間のデータのマップ**DAO_BYTES** DAO」と入力[CLongBinary](clongbinary-class.md)レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ `DFX_LongBinary` is provided for compatibility with the MFC ODBC classes. The `DFX_LongBinary` function transfers binary large-object (BLOB) data using class `CLongBinary` between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source. Data is mapped between type **DAO_BYTES** in DAO and type [CLongBinary](clongbinary-class.md) in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_short"></a>DFX_Short
-転送の短い、フィールド データ メンバーの間で整数データ、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_short"></a>  DFX_Short
+Transfers short integer data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Short(  
@@ -1200,39 +1200,39 @@ void AFXAPI DFX_Short(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**短い**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **short**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_I2** DAO」と入力**短い**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_I2** in DAO and type **short** in the recordset.  
   
 > [!NOTE]
->  `DFX_Short`等価[RFX_Int](#rfx_int) ODBC ベースのクラスにします。  
+>  `DFX_Short` is equivalent to [RFX_Int](#rfx_int) for the ODBC-based classes.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
 
-## <a name="dfx_single"></a>DFX_Single
-フィールド データ メンバーの間で浮動小数点のデータ転送、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトおよびデータ ソースのレコードの列です。  
+## <a name="dfx_single"></a>  DFX_Single
+Transfers floating-point data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and the columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Single(  
@@ -1242,35 +1242,35 @@ void AFXAPI DFX_Single(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送**float**、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type **float**, is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間でデータがマップされている**DAO_R4** DAO」と入力**float**レコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_R4** in DAO and type **float** in the recordset.  
   
-### <a name="example"></a>例  
- 参照してください[DFX_Text](#dfx_text)です。  
+### <a name="example"></a>Example  
+ See [DFX_Text](#dfx_text).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
 
-## <a name="dfx_text"></a>DFX_Text
-転送`CString`のフィールド データ メンバーの間のデータ、 [CDaoRecordset](cdaorecordset-class.md)オブジェクトとデータ ソースのレコードの列です。  
+## <a name="dfx_text"></a>  DFX_Text
+Transfers `CString` data between the field data members of a [CDaoRecordset](cdaorecordset-class.md) object and columns of a record on the data source.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```
 void AFXAPI DFX_Text(  
@@ -1281,30 +1281,30 @@ void AFXAPI DFX_Text(
    DWORD dwBindOptions = AFX_DAO_ENABLE_FIELD_CACHE);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- クラスのオブジェクトへのポインター [CDaoFieldExchange](cdaofieldexchange-class.md)です。 このオブジェクトには、関数の各呼び出しのコンテキストを定義する情報が含まれています。  
+ A pointer to an object of class [CDaoFieldExchange](cdaofieldexchange-class.md). This object contains information to define the context for each call of the function.  
   
  `szName`  
- データ列の名前。  
+ The name of a data column.  
   
  *value*  
- 指定されたデータ メンバーに格納される値: 転送する値。 レコード セットからデータ ソースの種類の値への転送[CString](../../atl-mfc-shared/reference/cstringt-class.md)、指定したデータ メンバーから取得されます。 データ ソースからレコード セットへの転送では、値は、指定したデータ メンバーに格納されます。  
+ The value stored in the indicated data member — the value to be transferred. For a transfer from recordset to data source, the value, of type [CString](../../atl-mfc-shared/reference/cstringt-class.md), is taken from the specified data member. For a transfer from data source to recordset, the value is stored in the specified data member.  
   
  `nPreAllocSize`  
- フレームワークでは、このメモリの量があらかじめ確保します。 データが大きい場合は、フレームワークは必要に応じて容量を割り当てられているされます。 パフォーマンス向上のためには、このサイズを再割り当てを防ぐために、十分大きな値に設定します。  
+ The framework preallocates this amount of memory. If your data is larger, the framework will allocated more space as needed. For better performance, set this size to a value large enough to prevent reallocations.  
   
  `dwBindOptions`  
- 変更されたレコード セットのフィールドを検出するため、MFC のダブル バッファリングの機構を利用できるオプションです。 既定値、 `AFX_DAO_ENABLE_FIELD_CACHE`、ダブル バッファリングを使用します。 その他の考えられる値は`AFX_DAO_DISABLE_FIELD_CACHE`します。 この値を指定する場合は、MFC は行われませんこのフィールドを確認しています。 呼び出す必要があります[き](cdaorecordset-class.md#setfielddirty)と[な](cdaorecordset-class.md#setfieldnull)自分でします。  
+ An option that lets you take advantage of MFC's double buffering mechanism for detecting recordset fields that have changed. The default, `AFX_DAO_ENABLE_FIELD_CACHE`, uses double buffering. The other possible value is `AFX_DAO_DISABLE_FIELD_CACHE`. If you specify this value, MFC does no checking on this field. You must call [SetFieldDirty](cdaorecordset-class.md#setfielddirty) and [SetFieldNull](cdaorecordset-class.md#setfieldnull) yourself.  
   
 > [!NOTE]
->  かどうかのデータは double を設定して、既定でバッファリングを制御する[CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields)です。  
+>  You can control whether data is double buffered by default by setting [CDaoRecordset::m_bCheckCacheForDirtyFields](cdaorecordset-class.md#m_bcheckcachefordirtyfields).  
   
-### <a name="remarks"></a>コメント  
- 型の間のデータのマップ**DAO_CHAR** DAO での (またはの場合、シンボル**_UNICODE**が定義されて**DAO_WCHAR**) と型[CString](../../atl-mfc-shared/reference/cstringt-class.md)レコード セットのです。  n
+### <a name="remarks"></a>Remarks  
+ Data is mapped between type **DAO_CHAR** in DAO (or, if the symbol **_UNICODE** is defined, **DAO_WCHAR**) and type [CString](../../atl-mfc-shared/reference/cstringt-class.md) in the recordset.  n
   
-### <a name="example"></a>例  
- この例を複数回呼び出します`DFX_Text`です。 2 つの呼び出しにも注意してください[CDaoFieldExchange::SetFieldType](cdaofieldexchange-class.md#setfieldtype)です。 最初の呼び出しを記述する必要があります`SetFieldType`とその**DFX**呼び出します。 2 番目の呼び出しとそれに関連する**DFX**呼び出しは通常、クラスを生成するコード ウィザードによって書き込まれます。  
+### <a name="example"></a>Example  
+ This example shows several calls to `DFX_Text`. Notice also the two calls to [CDaoFieldExchange::SetFieldType](cdaofieldexchange-class.md#setfieldtype). You must write the first call to `SetFieldType` and its **DFX** call. The second call and its associated **DFX** calls are normally written by the code wizard that generated the class.  
   
 ```cpp  
 void CCustSet::DoFieldExchange(CDaoFieldExchange* pFX)
@@ -1322,11 +1322,11 @@ void CCustSet::DoFieldExchange(CDaoFieldExchange* pFX)
 }
 ```
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
  [CRecordset::DoFieldExchange](crecordset-class.md#dofieldexchange)   
  [CRecordset::DoBulkFieldExchange](crecordset-class.md#dobulkfieldexchange)   
  [CDaoRecordset::DoFieldExchange](cdaorecordset-class.md#dofieldexchange)

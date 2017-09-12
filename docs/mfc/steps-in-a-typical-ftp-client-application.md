@@ -1,56 +1,74 @@
 ---
-title: "典型的な FTP クライアント アプリケーションの作成手順 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "FTP (ファイル転送プロトコル)"
-  - "FTP (ファイル転送プロトコル), クライアント アプリケーション"
-  - "インターネット アプリケーション, FTP クライアント アプリケーション"
-  - "インターネット クライアント アプリケーション, FTP テーブル"
-  - "WinInet クラス, FTP"
+title: Steps in a Typical FTP Client Application | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Internet client applications [MFC], FTP table
+- FTP (File Transfer Protocol)
+- WinInet classes [MFC], FTP
+- FTP (File Transfer Protocol) [MFC], client applications
+- Internet applications [MFC], FTP client applications
 ms.assetid: 70bed7b5-6040-40d1-bc77-702e63a698f2
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 典型的な FTP クライアント アプリケーションの作成手順
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d1607e23d88400afb2a3f5c3d6e6c2f52382b2bb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-通常、FTP のクライアント アプリケーションは [CInternetSession](../Topic/CInternetSession%20Class.md) と ["](../mfc/reference/cftpconnection-class.md) オブジェクトを作成します。  これらの MFC WinInet クラスが実際にプロキシ型の設定を制御しないでください; IIS は。  
+---
+# <a name="steps-in-a-typical-ftp-client-application"></a>Steps in a Typical FTP Client Application
+A typical FTP client application creates a [CInternetSession](../mfc/reference/cinternetsession-class.md) and a [CFtpConnection](../mfc/reference/cftpconnection-class.md) object. Note that these MFC WinInet classes do not actually control the proxy type settings; IIS does.  
   
- また、これらのサポート技術情報の文書を参照してください。:  
+ Also, see these Knowledge Base articles:  
   
--   " HOWTO: WinInet API \(記事 ID を使用して CERN ベースのプロキシの FTP: Q166961\)  
+-   HOWTO: FTP with CERN-Based Proxy Using WinInet API (Article ID: Q166961)  
   
--   サンプル: CERN ベースのパスワード保護されたなプロキシ \(記事 ID の FTP: Q216214\)  
+-   SAMPLE: FTP with CERN-Based Password Protected Proxy (Article ID: Q216214)  
   
--   インターネット サービス マネージャーは、インストールされたプロキシ サービス \(記事 ID を表示できない: Q216802\)  
+-   Internet Services Manager Fails to Show Installed Proxy Services (Article ID: Q216802)  
   
- 次の表は、一般的な FTP のクライアント アプリケーションで実行する可能性のある手順を示します。  
+ The following table shows the steps you might perform in a typical FTP client application.  
   
-|対象|、アクション|効果|  
-|--------|------------|--------|  
-|FTP セッションを開始します。|[CInternetSession](../Topic/CInternetSession%20Class.md) オブジェクトを作成します。|WinInet を初期化し、サーバーに接続します。|  
-|FTP サーバーに接続します。|[CInternetSession::GetFtpConnection](../Topic/CInternetSession::GetFtpConnection.md)を使用します。|["](../mfc/reference/cftpconnection-class.md) オブジェクトを返します。|  
-|サーバーの新しい FTP ディレクトリに変更します。|[CFtpConnection::SetCurrentDirectory](../Topic/CFtpConnection::SetCurrentDirectory.md)を使用します。|サーバーに現在接続しているディレクトリを変更します。|  
-|FTP ディレクトリの最初のファイルを検索します。|[CFtpFileFind::FindFile](../Topic/CFtpFileFind::FindFile.md)を使用します。|最初のファイルを検索します。  ファイルが存在しない場合は false を返します。|  
-|FTP ディレクトリのファイルを検索します。|[CFtpFileFind::FindNextFile](../Topic/CFtpFileFind::FindNextFile.md)を使用します。|次のファイルを検索します。  ファイルが存在しない場合は false を返します。|  
-|読み取りまたは書き込みの **FindFile** または `FindNextFile` で見つかったファイルを開きます。|[FindFile](../Topic/CFtpFileFind::FindFile.md) または [FindNextFile](../Topic/CFtpFileFind::FindNextFile.md)で返すファイル名を使用して [CFtpConnection::OpenFile](../Topic/CFtpConnection::OpenFile.md)を使用します。|読み取りまたは書き込み用のサーバー上でファイルを開きます。  [CInternetFile](../mfc/reference/cinternetfile-class.md) オブジェクトを返します。|  
-|から読み取ったり、またはファイルに書き込みます。|[CInternetFile::Read](../Topic/CInternetFile::Read.md) または [CInternetFile::Write](../Topic/CInternetFile::Write.md)を使用します。|指定したバッファーを使用して、指定したバイト数を、読み取りまたは書き込みを行います。|  
-|例外を処理する|[CInternetException](../mfc/reference/cinternetexception-class.md) クラスを使用します。|すべての一般的なインターネットの種類の例外を処理します。|  
-|FTP セッションを終了します。|[CInternetSession](../Topic/CInternetSession%20Class.md) オブジェクトを破棄します。|自動的に開くファイル ハンドルと接続をクリーンアップします。|  
+|Your goal|Actions you take|Effects|  
+|---------------|----------------------|-------------|  
+|Begin an FTP session.|Create a [CInternetSession](../mfc/reference/cinternetsession-class.md) object.|Initializes WinInet and connects to server.|  
+|Connect to an FTP server.|Use [CInternetSession::GetFtpConnection](../mfc/reference/cinternetsession-class.md#getftpconnection).|Returns a [CFtpConnection](../mfc/reference/cftpconnection-class.md) object.|  
+|Change to a new FTP directory on the server.|Use [CFtpConnection::SetCurrentDirectory](../mfc/reference/cftpconnection-class.md#setcurrentdirectory).|Changes the directory you are currently connected to on the server.|  
+|Find the first file in the FTP directory.|Use [CFtpFileFind::FindFile](../mfc/reference/cftpfilefind-class.md#findfile).|Finds the first file. Returns FALSE if no files are found.|  
+|Find the next file in the FTP directory.|Use [CFtpFileFind::FindNextFile](../mfc/reference/cftpfilefind-class.md#findnextfile).|Finds the next file. Returns FALSE if the file is not found.|  
+|Open the file found by **FindFile** or `FindNextFile` for reading or writing.|Use [CFtpConnection::OpenFile](../mfc/reference/cftpconnection-class.md#openfile), using the file name returned by [FindFile](../mfc/reference/cftpfilefind-class.md#findfile) or [FindNextFile](../mfc/reference/cftpfilefind-class.md#findnextfile).|Opens the file on the server for reading or writing. Returns a [CInternetFile](../mfc/reference/cinternetfile-class.md) object.|  
+|Read from or write to the file.|Use [CInternetFile::Read](../mfc/reference/cinternetfile-class.md#read) or [CInternetFile::Write](../mfc/reference/cinternetfile-class.md#write).|Reads or writes the specified number of bytes, using a buffer you supply.|  
+|Handle exceptions.|Use the [CInternetException](../mfc/reference/cinternetexception-class.md) class.|Handles all common Internet exception types.|  
+|End the FTP session.|Dispose of the [CInternetSession](../mfc/reference/cinternetsession-class.md) object.|Automatically cleans up open file handles and connections.|  
   
-## 参照  
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)   
- [インターネット クライアント クラスの必要条件](../Topic/Prerequisites%20for%20Internet%20Client%20Classes.md)   
- [MFC WinInet クラスを使ってインターネット クライアント アプリケーションを作成する方法](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)
+## <a name="see-also"></a>See Also  
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)   
+ [Prerequisites for Internet Client Classes](../mfc/prerequisites-for-internet-client-classes.md)   
+ [Writing an Internet Client Application Using MFC WinInet Classes](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)
+

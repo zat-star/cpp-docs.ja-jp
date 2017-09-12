@@ -1,120 +1,139 @@
 ---
-title: "MFC ActiveX コントロール : カスタム プロパティ ページの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], プロパティ ページ"
-  - "カスタム プロパティ ページ"
-  - "MFC ActiveX コントロール [C++], プロパティ ページ"
-  - "プロパティ ページ [C++], MFC ActiveX コントロール"
+title: 'MFC ActiveX Controls: Adding Another Custom Property Page | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- property pages [MFC], MFC ActiveX controls
+- custom property pages [MFC]
+- ActiveX controls [MFC], property pages
+- MFC ActiveX controls [MFC], property pages
 ms.assetid: fcf7e119-9f29-41a9-908d-e9b1607e08af
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : カスタム プロパティ ページの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c05175fa0a10ed2679b40d4fb3780286224d9b5d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-と同様に、1 種類のプロパティ ページに適合するより、ActiveX コントロールのプロパティがあります。  この場合は、ActiveX コントロールにこれらのプロパティを表示するプロパティ ページを追加できます。  
+---
+# <a name="mfc-activex-controls-adding-another-custom-property-page"></a>MFC ActiveX Controls: Adding Another Custom Property Page
+Occasionally, an ActiveX control will have more properties than can reasonably fit on one property page. In this case, you can add property pages to the ActiveX control to display these properties.  
   
- ここでは、少なくとも 1 つがプロパティ ページを持つ ActiveX コントロールに新しいプロパティ ページを追加する方法について説明します。  ストック プロパティ ページ \(フォント、画像、色\) の追加の詳細については、記事 [MFC ActiveX コントロール: ストック プロパティ ページを使用します。](../mfc/mfc-activex-controls-using-stock-property-pages.md)を参照します。  
+ This article discusses adding new property pages to an ActiveX control that already has at least one property page. For more information on adding stock property pages (font, picture, or color), see the article [MFC ActiveX Controls: Using Stock Property Pages](../mfc/mfc-activex-controls-using-stock-property-pages.md).  
   
- 次の手順では、ActiveX コントロール ウィザードが作成したサンプル ActiveX コントロール フレームワークを使用します。  したがって、クラス名と識別子はこの例で一意です。  
+ The following procedures use a sample ActiveX control framework created by the ActiveX Control Wizard. Therefore, the class names and identifiers are unique to this example.  
   
- ActiveX コントロールのプロパティ ページを使用する詳細については、次のトピックを参照します:  
+ For more information on using property pages in an ActiveX control, see the following articles:  
   
--   [MFC ActiveX コントロール: プロパティ ページ](../mfc/mfc-activex-controls-property-pages.md)  
+-   [MFC ActiveX Controls: Property Pages](../mfc/mfc-activex-controls-property-pages.md)  
   
--   [MFC ActiveX コントロール: ストック プロパティ ページを使用します。](../mfc/mfc-activex-controls-using-stock-property-pages.md)  
+-   [MFC ActiveX Controls: Using Stock Property Pages](../mfc/mfc-activex-controls-using-stock-property-pages.md)  
   
     > [!NOTE]
-    >  新しいプロパティ ページが ActiveX コントロールのプロパティ ページのサイズの標準に準拠することを強くお勧めします。  標準的なピクチャおよびカラー プロパティ ページは 250x62 ダイアログ単位 \(DLU\) を測定します。  標準フォント プロパティ ページは 250x110 DLU です。  ActiveX コントロール ウィザードで作成する既定のプロパティ ページは 250x62 DLU Standard を使用します。  
+    >  It is strongly recommended that new property pages adhere to the size standard for ActiveX control property pages. The stock picture and color property pages measure 250x62 dialog units (DLU). The standard font property page is 250x110 DLUs. The default property page created by the ActiveX Control Wizard uses the 250x62 DLU standard.  
   
-### 新しいプロパティ ページ テンプレートをプロジェクトに追加するには  
+### <a name="to-insert-a-new-property-page-template-into-your-project"></a>To insert a new property page template into your project  
   
-1.  開くコントロール プロジェクトを開き、プロジェクト ワークスペースの開いているリソース ビュー。  
+1.  With your control project open, open Resource View in the project workspace.  
   
-2.  ショートカット メニューを開き、**\[リソースの追加\]** をクリックしますにリソース ビューを右クリックします。  
+2.  Right-click in Resource View to open the shortcut menu and click **Add Resource**.  
   
-3.  **ダイアログ** ノードを展開し、**IDD\_OLE\_PROPPAGE\_SMALL**を選択します。  
+3.  Expand the **Dialog** node, and select **IDD_OLE_PROPPAGE_SMALL**.  
   
-4.  プロジェクトにリソースを追加するに `New` をクリックします。  
+4.  Click `New` to add the resource to your project.  
   
-5.  プロパティ ウィンドウを更新する新しいプロパティ ページ テンプレートを選択します。  
+5.  Select the new property page template to refresh the Properties window.  
   
-6.  **ID** のプロパティの新しい値を入力します。  この例では **IDD\_PROPPAGE\_NEWPAGE**を使用します。  
+6.  Enter a new value for the **ID** property. This example uses **IDD_PROPPAGE_NEWPAGE**.  
   
-7.  ツール バーの **\[\<ファイル名\> の保存\]** をクリックします。  
+7.  Click **Save** on the toolbar.  
   
-### 新しいテンプレートをクラスに関連付けます。  
+### <a name="to-associate-the-new-template-with-a-class"></a>To associate the new template with a class  
   
-1.  クラス ビューを開きます。  
+1.  Open Class View.  
   
-2.  ショートカット メニューを開くには、クラス ビューで右クリックします。  
+2.  Right-click in Class View to open the shortcut menu.  
   
-3.  ショートカット メニューの \[追加\] をクリックし、さらに \[クラスの追加\] をクリックします。  
+3.  From the shortcut menu, click **Add** and then click **Add Class**.  
   
-     これは [クラスの追加](../ide/add-class-dialog-box.md) ダイアログ ボックスが表示されます。  
+     This opens the [Add Class](../ide/add-class-dialog-box.md) dialog box.  
   
-4.  **MFC クラス** のテンプレートをダブルクリックします。  
+4.  Double-click the **MFC Class** template.  
   
-5.  [MFC クラス ウィザード](../mfc/reference/mfc-add-class-wizard.md)の **\[クラス名\]** ダイアログ ボックスで、新しいクラスの名前を入力します。\(この例では `CAddtlPropPage`します\)。  
+5.  In the **Class Name** box in the [MFC Class Wizard](../mfc/reference/mfc-add-class-wizard.md), type a name for the new dialog class. (In this example, `CAddtlPropPage`.)  
   
-6.  ファイル名を変更するには、**変更**をクリックします。  実装およびヘッダー ファイル名を入力するか、既定の名前を受け入れます。  
+6.  If you want to change file names, click **Change**. Type in the names for your implementation and header files, or accept the default names.  
   
-7.  **基底クラス** ボックスで、`COlePropertyPage`を選択します。  
+7.  In the **Base Class** box, select `COlePropertyPage`.  
   
-8.  **ダイアログ ID** ボックスで、**IDD\_PROPPAGE\_NEWPAGE**を選択します。  
+8.  In the **Dialog ID** box, select **IDD_PROPPAGE_NEWPAGE**.  
   
-9. クラスをクリック **完了** 。  
+9. Click **Finish** to create the class.  
   
- 割り当てるにはコントロールのユーザーは、この新しいプロパティ ページで、必要なコントロールのプロパティ ページの ID マクロ セクションに次の変更もアクセスします \(コントロールの実装ファイルにある\) :  
+ To allow the control's users access to this new property page, make the following changes to the control's property page IDs macro section (located in the control implementation file):  
   
- [!code-cpp[NVC_MFC_AxUI#32](../mfc/codesnippet/CPP/mfc-activex-controls-adding-another-custom-property-page_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#32](../mfc/codesnippet/cpp/mfc-activex-controls-adding-another-custom-property-page_1.cpp)]  
   
- `BEGIN_PROPPAGEIDS` マクロ \(プロパティ ページ数\) の 2 番目のパラメーターを 1 ~ 2.の高めなければことに注意してください。  
+ Note that you must increase the second parameter of the `BEGIN_PROPPAGEIDS` macro (the property page count) from 1 to 2.  
   
- 、ヘッダーが格納されるようにコントロールの実装ファイル \(.cpp\) ファイルを変更する必要があります。H\) 新しいプロパティ ページ クラス ファイル。  
+ You must also modify the control implementation file (.CPP) file to include the header (.H) file of the new property page class.  
   
- 次の手順では、新しいプロパティ ページに型名とキャプションを提供する 2 種類の新しい文字列のリソースを作成することです。  
+ The next step involves creating two new string resources that will provide a type name and a caption for the new property page.  
   
-#### 新しい文字列リソースがプロパティ ページに追加するには  
+#### <a name="to-add-new-string-resources-to-a-property-page"></a>To add new string resources to a property page  
   
-1.  開くコントロール プロジェクトを開き開いているリソース ビュー。  
+1.  With your control project open, open Resource View.  
   
-2.  **ストリング テーブル** フォルダーをダブルクリックし、文字列を追加する既存のストリング テーブルのリソースをダブルクリックします。  
+2.  Double-click the **String Table** folder and then double-click the existing string table resource to which you want to add a string.  
   
-     これはウィンドウのストリング テーブルを開きます。  
+     This opens the string table in a window.  
   
-3.  空白行をストリング テーブルの最後に選択し、文字列のテキスト、またはキャプションを入力する: たとえば、「追加プロパティ ページ」。  
+3.  Select the blank line at the end of the string table and type the text, or caption, of the string: for example, "Additional Property Page."  
   
-     これは **キャプション** と **ID** ボックスを表示 **文字列プロパティ** ページが表示されます。  **キャプション** ボックスに入力した文字列が含まれます。  
+     This opens a **String Properties** page showing **Caption** and **ID** boxes. The **Caption** box contains the string you typed.  
   
-4.  **ID** ボックスで、文字列の ID を選択するか入力します。  キーは、Enter キーを押します。  
+4.  In the **ID** box, select or type an ID for the string. Press Enter when you finish.  
   
-     この例では、新しいプロパティ ページのタイプ名に **IDS\_SAMPLE\_ADDPAGE** を使用します。  
+     This example uses **IDS_SAMPLE_ADDPAGE** for the type name of the new property page.  
   
-5.  キャプションの ID と「追加プロパティ ページ」の **IDS\_SAMPLE\_ADDPPG\_CAPTION** を使用して手順 3 ~ 4 を繰り返します。  
+5.  Repeat steps 3 and 4 using **IDS_SAMPLE_ADDPPG_CAPTION** for the ID and "Additional Property Page" for the caption.  
   
-6.  新しいプロパティ ページ クラスの .cpp ファイルには IDS\_SAMPLE\_ADDPAGE が [AfxOleRegisterPropertyPageClass](../Topic/AfxOleRegisterPropertyPageClass.md)を渡せるように \(この例では `CAddtlPropPage`\) 次の例のように `CAddtlPropPage::CAddtlPropPageFactory::UpdateRegistry` を変更する:  
+6.  In the .CPP file of your new property page class (in this example, `CAddtlPropPage`) modify the `CAddtlPropPage::CAddtlPropPageFactory::UpdateRegistry` so that IDS_SAMPLE_ADDPAGE is passed by [AfxOleRegisterPropertyPageClass](../mfc/reference/registering-ole-controls.md#afxoleregisterpropertypageclass), as in the following example:  
   
-     [!code-cpp[NVC_MFC_AxUI#33](../mfc/codesnippet/CPP/mfc-activex-controls-adding-another-custom-property-page_2.cpp)]  
+     [!code-cpp[NVC_MFC_AxUI#33](../mfc/codesnippet/cpp/mfc-activex-controls-adding-another-custom-property-page_2.cpp)]  
   
-7.  **IDS\_SAMPLE\_ADDPPG\_CAPTION** が `COlePropertyPage` のコンストラクターに渡すことが `CAddtlPropPage` のコンストラクターを次のように変更する:  
+7.  Modify the constructor of `CAddtlPropPage` so that **IDS_SAMPLE_ADDPPG_CAPTION** is passed to the `COlePropertyPage` constructor, as follows:  
   
-     [!code-cpp[NVC_MFC_AxUI#34](../mfc/codesnippet/CPP/mfc-activex-controls-adding-another-custom-property-page_3.cpp)]  
+     [!code-cpp[NVC_MFC_AxUI#34](../mfc/codesnippet/cpp/mfc-activex-controls-adding-another-custom-property-page_3.cpp)]  
   
- 必要な変更のリビルドにし、プロジェクトを新しいプロパティ ページをテストするには、テスト コンテナーを使用した後。  テスト コンテナーへのアクセス方法については、「[テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md)」を参照してください。  
+ After you have made the necessary modifications rebuild your project and use Test Container to test the new property page. See [Testing Properties and Events with Test Container](../mfc/testing-properties-and-events-with-test-container.md) for information on how to access the test container.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

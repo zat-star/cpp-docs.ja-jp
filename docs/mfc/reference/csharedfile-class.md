@@ -1,5 +1,5 @@
 ---
-title: "多くの場合クラス |Microsoft ドキュメント"
+title: CSharedFile Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -17,9 +17,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- memory files
-- CSharedFile class
-- shared memory files
+- CSharedFile [MFC], CSharedFile
+- CSharedFile [MFC], Detach
+- CSharedFile [MFC], SetHandle
 ms.assetid: 5d000422-9ede-4318-a8c9-f7412b674f39
 caps.latest.revision: 21
 author: mikeblome
@@ -39,51 +39,51 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: f812b2c7b8e3b158068bf3fdab0a327460056251
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 996656224ab793ae0eacf7d5d3ce0b92ec403359
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="csharedfile-class"></a>クラスの多くの場合
-[CMemFile](../../mfc/reference/cmemfile-class.md)-をサポートする派生クラスは、メモリ上のファイルを共有します。  
+# <a name="csharedfile-class"></a>CSharedFile Class
+The [CMemFile](../../mfc/reference/cmemfile-class.md)-derived class that supports shared memory files.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CSharedFile : public CMemFile  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSharedFile::CSharedFile](#csharedfile)|`CSharedFile` オブジェクトを構築します。|  
+|[CSharedFile::CSharedFile](#csharedfile)|Constructs a `CSharedFile` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSharedFile::Detach](#detach)|共有メモリ ファイルを閉じ、そのメモリ ブロックのハンドルを返します。|  
-|[CSharedFile::SetHandle](#sethandle)|メモリ ブロックへの共有メモリ ファイルをアタッチします。|  
+|[CSharedFile::Detach](#detach)|Closes the shared memory file and returns the handle of its memory block.|  
+|[CSharedFile::SetHandle](#sethandle)|Attaches the shared memory file to a memory block.|  
   
-## <a name="remarks"></a>コメント  
- メモリ ファイルは、ファイルはディスクではなく RAM に保存する点を除いて、ディスク ファイルと同様に動作します。 メモリ ファイルは高速に一時的な記憶域または実際のバイト数を転送するために役立ちます。 または、独立したプロセス間でオブジェクトをシリアル化します。  
+## <a name="remarks"></a>Remarks  
+ Memory files behave like disk files except that the file is stored in RAM rather than on disk. A memory file is useful for fast temporary storage or for transferring raw bytes or serialized objects between independent processes.  
   
- 共有メモリ ファイルとは異なり他のメモリ上のファイルでそれらのメモリが割り当てられた、 [GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) Windows の機能です。 `CSharedFile`クラスは、グローバルに割り当てられたメモリ ブロックにデータを保存 (を使用して作成**GlobalAlloc**)、このメモリ ブロックを共有できる DDE、クリップボード、または、他の OLE と COM 汎用データ転送操作などを使用して使用して`IDataObject`です。  
+ Shared memory files differ from other memory files in that memory for them is allocated with the [GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) Windows function. The `CSharedFile` class stores data in a globally allocated memory block (created using **GlobalAlloc**), and this memory block can be shared using DDE, the Clipboard, or other OLE/COM uniform data transfer operations, for example, using `IDataObject`.  
   
- **GlobalAlloc**返します、`HGLOBAL`によって返されたポインターなどのメモリへのポインターではなく処理[malloc](../../c-runtime-library/reference/malloc.md)します。 `HGLOBAL`ハンドルは、特定のアプリケーションで必要です。 たとえば、データを保存、クリップボードする必要があります、`HGLOBAL`を処理します。  
+ **GlobalAlloc** returns an `HGLOBAL` handle rather than a pointer to memory, such as the pointer returned by [malloc](../../c-runtime-library/reference/malloc.md). The `HGLOBAL` handle is needed in certain applications. For example, to put data on the Clipboard you need an `HGLOBAL` handle.  
   
- なお、`CSharedFile`使用メモリ マップ ファイルではなくを行い、プロセス間でデータを直接共有することはできません。  
+ Please note that `CSharedFile` does not use memory-mapped files, and the data cannot be directly shared between processes.  
   
- `CSharedFile`オブジェクトは、独自のメモリを自動的に割り当てることができますか、独自のメモリ ブロックを割り当てることができます、`CSharedFile`を呼び出してオブジェクト[CSharedFile::SetHandle](#sethandle)します。 いずれの場合メモリ ファイルを自動的に拡張用のメモリが割り当てられている`nGrowBytes`-場合分ずつ`nGrowBytes`が&0; でないです。  
+ `CSharedFile` objects can automatically allocate their own memory or you can attach your own memory block to the `CSharedFile` object by calling [CSharedFile::SetHandle](#sethandle). In either case, memory for growing the memory file automatically is allocated in `nGrowBytes`-sized increments if `nGrowBytes` is not zero.  
   
- 詳細については、記事を参照してください。 [MFC のファイル](../../mfc/files-in-mfc.md)と[ファイル処理](../../c-runtime-library/file-handling.md)で、*ランタイム ライブラリ リファレンス*します。  
+ For more information, see the article [Files in MFC](../../mfc/files-in-mfc.md) and [File Handling](../../c-runtime-library/file-handling.md) in the *Run-Time Library Reference*.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CFile](../../mfc/reference/cfile-class.md)  
@@ -92,11 +92,11 @@ class CSharedFile : public CMemFile
   
  `CSharedFile`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxadv.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxadv.h  
   
-##  <a name="csharedfile"></a>CSharedFile::CSharedFile  
- 構築、`CSharedFile`オブジェクトし、メモリを割り当てます。  
+##  <a name="csharedfile"></a>  CSharedFile::CSharedFile  
+ Constructs a `CSharedFile` object and allocates memory for it.  
   
 ```  
 CSharedFile(
@@ -104,28 +104,28 @@ CSharedFile(
     UINT nGrowBytes = 4096);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nAllocFlags*  
- メモリの割り当て方法を示すフラグです。 参照してください[GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574)の有効なフラグ値の一覧です。  
+ Flags indicating how memory is to be allocated. See [GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) for a list of valid flag values.  
   
  `nGrowBytes`  
- バイト単位でメモリ割り当てインクリメントします。  
+ The memory allocation increment in bytes.  
   
-##  <a name="detach"></a>CSharedFile::Detach  
- この関数では、ファイルを閉じて、メモリ、メモリ ブロックからデタッチします。  
+##  <a name="detach"></a>  CSharedFile::Detach  
+ Call this function to close the memory file and detach it from the memory block.  
   
 ```  
 HGLOBAL Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- メモリ ファイルの内容を保持するメモリ ブロックのハンドル。  
+### <a name="return-value"></a>Return Value  
+ The handle of the memory block that contains the contents of the memory file.  
   
-### <a name="remarks"></a>コメント  
- 呼び出して開くことができます[SetHandle](#sethandle)、によって返されるハンドルを使用して**デタッチ**します。  
+### <a name="remarks"></a>Remarks  
+ You can reopen it by calling [SetHandle](#sethandle), using the handle returned by **Detach**.  
   
-##  <a name="sethandle"></a>CSharedFile::SetHandle  
- グローバル メモリ ブロックをアタッチするには、この関数を呼び出す、`CSharedFile`オブジェクトです。  
+##  <a name="sethandle"></a>  CSharedFile::SetHandle  
+ Call this function to attach a block of global memory to the `CSharedFile` object.  
   
 ```  
 void SetHandle(
@@ -133,18 +133,18 @@ void SetHandle(
     BOOL bAllowGrow = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *hGlobalMemory*  
- アタッチされているグローバル メモリへのハンドル、`CSharedFile`です。  
+ Handle to the global memory to be attached to the `CSharedFile`.  
   
  `bAllowGrow`  
- メモリ ブロックを拡張できるかどうかを指定します。  
+ Specifies whether the memory block is allowed to grow.  
   
-### <a name="remarks"></a>コメント  
- 場合`bAllowGrow`は&0; 以外の値、メモリ ブロックのサイズが増加、必要に応じてなどの場合は、試行が行われたファイルに書き込むバイト数、メモリ ブロックの割り当てられたよりもします。  
+### <a name="remarks"></a>Remarks  
+ If `bAllowGrow` is nonzero, the size of the memory block is increased as necessary, for example, if an attempt is made to write more bytes to the file than were allocated for the memory block.  
   
-## <a name="see-also"></a>関連項目  
- [CMemFile クラス](../../mfc/reference/cmemfile-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CMemFile クラス](../../mfc/reference/cmemfile-class.md)
+## <a name="see-also"></a>See Also  
+ [CMemFile Class](../../mfc/reference/cmemfile-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CMemFile Class](../../mfc/reference/cmemfile-class.md)
 

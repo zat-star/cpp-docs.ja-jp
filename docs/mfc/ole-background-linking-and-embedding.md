@@ -1,43 +1,62 @@
 ---
-title: "OLE 概要 : リンクと埋め込み | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "埋め込みオブジェクト [C++]"
-  - "項目の種類"
-  - "項目の種類, 定義"
-  - "リンク アイテム (OLE) [C++]"
-  - "OLE の埋め込まれたアイテム"
-  - "OLE 項目, 種類"
-  - "OLE, リンク アイテム"
+title: 'OLE Background: Linking and Embedding | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE embedded items [MFC]
+- item types [MFC], defined
+- item types [MFC]
+- OLE [MFC], linked items
+- linked items (OLE) [MFC]
+- embedded objects [MFC]
+- OLE items [MFC], types
 ms.assetid: 11107711-eb96-4099-8f5c-7910bb3ecb75
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# OLE 概要 : リンクと埋め込み
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ab76058d859758ac9c42e63839ad2fd683e58e08
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コンテナー アプリケーションの貼り付けコマンドを使用して埋め込まれたなコンポーネントまたは埋め込まれたアイテムを作成できます。  埋め込まれたアイテムのソース データは、それを含む OLE ドキュメントの一部として格納されます。  このように、ワード プロセッサのドキュメントのドキュメント ファイルはテキストを含み、データのビットマップ、グラフ、式、または他の型を含めることができます。  
+---
+# <a name="ole-background-linking-and-embedding"></a>OLE Background: Linking and Embedding
+Using the Paste command in a container application can create an embedded component, or embedded item. The source data for an embedded item is stored as part of the OLE document that contains it. In this way, a document file for a word processor document can contain text and also can contain bitmaps, graphs, formulas, or any other type of data.  
   
- OLE 別のアプリケーションからデータを組み込む別の方法があります。: リンクされたなコンポーネントを作成するか、またはリンク アイテム、またはリンク。  リンク アイテムを作成するための手順は埋め込まれたアイテムを作成する場合と似ていますが、貼り付けコマンドの代わりにリンク貼り付けコマンドを使用します。  埋め込まれたなコンポーネントとは異なり、リンクされたなコンポーネントは、別個のファイルに、頻繁に使用する元のデータへのパスを格納します。  
+ OLE provides another way to incorporate data from another application: creating a linked component, or linked item, or a link. The steps for creating a linked item are similar to those for creating an embedded item, except that you use the Paste Link command instead of the Paste command. Unlike an embedded component, a linked component stores a path to the original data, which is often in a separate file.  
   
- たとえば、ワード プロセッサのドキュメントで作業して、ワークシートのセルにリンク アイテムを作成し、リンクされた項目のデータは元のスプレッドシートのドキュメントに格納されます。  ワード プロセッサでドキュメントは、元のスプレッドシートのドキュメントへのリンクを含むまたはアイテムを検索できる場所を指定する情報が含まれています。  セルをダブルクリックすると、スプレッドシート アプリケーションが起動し、どこから格納済みまたは元のスプレッドシートのドキュメントが読み込まれます。  
+ For example, if you are working in a word processor document and create a linked item to some spreadsheet cells, the data for the linked item is stored in the original spreadsheet document. The word processor document contains only the information specifying where the item can be found, that is, it contains a link to the original spreadsheet document. When you double-click the cells, the spreadsheet application is launched and the original spreadsheet document is loaded from where it was stored.  
   
- すべての OLE アイテムに作成したアプリケーションに、かどうか埋め込まれたまたはリンクされた、関連付けられている型に基づいています。  たとえば、Microsoft ペイントブラシ項目には、項目の 1 種類であり、Microsoft Excel 項目は別の型です。  ただし、アプリケーションには複数の項目の種類を作成できます。  たとえば、Microsoft Excel ワークシート項目は、グラフ項目と macrosheet 項目を作成できます。  これらの項目のそれぞれが、クラス ID または **CLSID**を使用してシステムによって識別できます。  
+ Every OLE item, whether embedded or linked, has a type associated with it based on the application that created it. For example, a Microsoft Paintbrush item is one type of item, and a Microsoft Excel item is another type. Some applications, however, can create more than one item type. For example, Microsoft Excel can create worksheet items, chart items, and macrosheet items. Each of these items can be uniquely identified by the system using a Class Identifier or **CLSID**.  
   
-## 参照  
- [OLE の背景知識](../mfc/ole-background.md)   
- [OLE 概要 : コンテナーとサーバー](../mfc/ole-background-containers-and-servers.md)   
- [コンテナー : クライアント アイテム](../mfc/containers-client-items.md)   
- [サーバー : サーバー アイテム](../mfc/servers-server-items.md)
+## <a name="see-also"></a>See Also  
+ [OLE Background](../mfc/ole-background.md)   
+ [OLE Background: Containers and Servers](../mfc/ole-background-containers-and-servers.md)   
+ [Containers: Client Items](../mfc/containers-client-items.md)   
+ [Servers: Server Items](../mfc/servers-server-items.md)
+
+

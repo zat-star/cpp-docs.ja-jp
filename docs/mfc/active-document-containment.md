@@ -1,50 +1,69 @@
 ---
-title: "Active ドキュメント コンテインメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Active ドキュメント コンテナー [C++], Active ドキュメント コンテナーの概要"
-  - "アクティブ ドキュメント [C++], コンテナー"
-  - "コンテナー [C++], アクティブ ドキュメント"
-  - "MFC [C++], COM サポート"
-  - "MFC COM [C++], Active ドキュメント コンテインメント"
+title: Active Document Containment | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- active documents [MFC], containers
+- containers [MFC], active document
+- MFC, COM support
+- active document containers [MFC], about active document containers
+- MFC COM, active document containment
 ms.assetid: b8dfa74b-75ce-47df-b75e-fc87b7f7d687
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# Active ドキュメント コンテインメント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c35d1da52fab535036eb931f8ae0b3a916a7cc0c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Active ドキュメント コンテインメントは、各ドキュメントの種類に対する複数のフレームを作成し、使用する代わりに、ドキュメントを使用する一つのフレームを提供するテクノロジです。  これは基本的な OLE テクノロジととコンテンツの単一部分のみアクティブになる複合ドキュメント内の埋め込み OLE オブジェクトを使用できます。  アクティブ ドキュメントのサポートによって、一つのフレームで文書全体 \(つまり、アプリケーション全体、関連するメニュー、ツール バーなどによってなど\) がアクティブになります。  
+---
+# <a name="active-document-containment"></a>Active Document Containment
+Active document containment is a technology that provides a single frame in which to work with documents, instead of forcing you to create and use multiple application frames for each document type. It differs from basic OLE technology in that OLE works with embedded objects within a compound document in which only a single piece of content can be active. With active document containment, you activate an entire document (that is, an entire application, including associated menus, toolbars, and so on) within the context of a single frame.  
   
- Active ドキュメント コンテインメントのテクノロジが最初に Microsoft Office が Office バインダーを実装するために開発されました。  ただし、Office バインダー以外の Active ドキュメント コンテナーをサポートするには、"は非常に柔軟性があり、Office Office と互換性を持つアプリケーション以外のドキュメント サーバーをサポートできます。  
+ The active document containment technology was originally developed for Microsoft Office to implement Office Binder. However, the technology is flexible enough to support active document containers other than Office Binder and can support document servers other than Office and Office-compatible applications.  
   
- アクティブ ドキュメントをホストするアプリケーションは、[Active ドキュメント コンテナー](../mfc/active-document-containers.md)と呼ばれます。  このようなコンテナーの例は Microsoft Office バインダーや Microsoft Internet Explorer です。  
+ The application that hosts active documents is called an [active document container](../mfc/active-document-containers.md). Examples of such containers are the Microsoft Office Binder or Microsoft Internet Explorer.  
   
- Active ドキュメント コンテインメントは、一連の OLE ドキュメントへの拡張機能として、OLE 複合ドキュメント テクノロジ実装されます。  拡張は埋め込みできを有効にする追加のインターフェイス、埋め込まれたなコンテンツの単一部分ではなく文書全体を表す埋め込みオブジェクトです。  OLE ドキュメントと同様に、アクティブ ドキュメントのコンテインメントは、アクティブなドキュメント内で表示領域を提供でき、サーバーを使用してアクティブな文書のユーザー インターフェイスと操作機能自体をコンテナーを提供します。  
+ Active document containment is implemented as a set of extensions to OLE documents, the compound document technology of OLE. The extensions are additional interfaces that allow an embeddable, in-place object to represent an entire document instead of a single piece of embedded content. As with OLE documents, active document containment uses a container that provides the display space for active documents, and servers that provide the user interface and manipulation capabilities for the active documents themselves.  
   
- [Active ドキュメント サーバー](../mfc/active-document-servers.md) は各オブジェクト自体をオブジェクトが適切なコンテナーでアクティブ化できる機能拡張インターフェイスをサポートする場合は、そのアプリケーション \(Word、Excel、PowerPoint など\) をサポートする一つ以上の Active ドキュメント クラスです。  
+ An [active document server](../mfc/active-document-servers.md) is an application (such as Word, Excel, or PowerPoint) that supports one or more active document classes, where each object itself supports the extension interfaces that allow the object to be activated in a suitable container.  
   
- [アクティブ ドキュメント](../Topic/Active%20Documents.md) \(Word または Excel などの Active ドキュメント サーバーから提供されます\)、主に別の Active ドキュメント コンテナー内のオブジェクトとして埋め込まれている完全なスケール、従来のドキュメントです。  埋め込みオブジェクトとは異なり、Active ドキュメントはページを完全に制御できるため、アプリケーションの完全なインターフェイスが \(すべての基になるコマンドやツールと\)、編集してユーザーが使用できます。  
+ An [active document](../mfc/active-documents.md) (provided from an active document server such as Word or Excel) is essentially a full-scale, conventional document that is embedded as an object within another active document container. Unlike embedded objects, active documents have complete control over their pages, and the full interface of the application (with all its underlying commands and tools) is available to the user to edit them.  
   
- Active ドキュメントは標準 OLE 埋め込みオブジェクトと区別して理解するのが最適です。  OLE 規約の後に、埋め込みオブジェクトは、要素を所有する、ドキュメントは OLE コンテナーによって管理されるドキュメント ページ内に表示される 1 種類です。  コンテナーは、ドキュメントの別の埋め込みオブジェクト データを格納します。  ただし、埋め込みオブジェクトを作成するページを制御できないという制限があります。  
+ An active document is best understood by distinguishing it from a standard OLE embedded object. Following the OLE convention, an embedded object is one that is displayed within the page of the document that owns it, and the document is managed by an OLE container. The container stores the embedded object's data with the rest of the document. However, embedded objects are limited in that they do not control the page on which they appear.  
   
- Active ドキュメント コンテナー アプリケーションのユーザーは、お気に入りのアプリケーションを使用してアクティブな文書 \(Office バインダーのセクションという\) \(これらのアプリケーション有効な Active ドキュメントは提供されます\) 作成できますが、ユーザーとは、一意に指定できる単一のエンティティ、印刷する格納されてなど、プロジェクトを管理できます。  同様に、インターネット ブラウザーのユーザーは一つの場所からそのストレージのドキュメントを参照する機能と単一ドキュメントのストレージのエンティティとしてネットワーク全体、ローカル ファイル システムとして扱うことができます。  
+ Users of an active document container application can create active documents (called sections in Office Binder) using their favorite applications (provided these applications are active document enabled), yet the users can manage the resulting project as a single entity, which can be uniquely named, saved, printed, and so on. In the same way, a user of an Internet browser can treat the entire network, as well as local file systems, as a single document storage entity with the ability to browse the documents in that storage from a single location.  
   
-## サンプル プログラム  
+## <a name="sample-programs"></a>Sample Programs  
   
--   [MFCBIND](../top/visual-cpp-samples.md) のサンプルでは、Active ドキュメント コンテナー アプリケーションの実装を示しています。  
+-   The [MFCBIND](../visual-cpp-samples.md) sample illustrates the implementation of an active document container application.  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [MFC COM](../mfc/mfc-com.md)
+
+

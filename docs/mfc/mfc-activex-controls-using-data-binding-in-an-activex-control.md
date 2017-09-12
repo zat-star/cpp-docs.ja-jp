@@ -1,142 +1,160 @@
 ---
-title: "MFC ActiveX コントロール : ActiveX コントロールにおけるデータ連結の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "bindable"
-  - "requestedit"
-  - "defaultbind"
-  - "displaybind"
-  - "dispid"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バインド コントロール [C++], MFC ActiveX"
-  - "コントロール [MFC], データ バインド"
-  - "データ バインディング [C++], MFC ActiveX コントロール"
-  - "データ バインド コントロール [C++], MFC ActiveX コントロール"
-  - "MFC ActiveX コントロール, データ バインド"
+title: 'MFC ActiveX Controls: Using Data Binding in an ActiveX Control | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- bindable
+- requestedit
+- defaultbind
+- displaybind
+- dispid
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], data binding
+- data binding [MFC], MFC ActiveX controls
+- data-bound controls [MFC], MFC ActiveX controls
+- controls [MFC], data binding
+- bound controls [MFC], MFC ActiveX
 ms.assetid: 476b590a-bf2a-498a-81b7-dd476bd346f1
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : ActiveX コントロールにおけるデータ連結の使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 23904fa0438e9dff02365a4631d361644bf666b2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロールのより強力な使用の 1 つがコントロールのプロパティがデータベースのフィールドにバインドするようにレンダリング データ バインディングです。  ユーザーがこのプロパティのバインド データを変更すると、コントロールはデータベースに通知、レコード フィールドが更新されるように必要があります。  データベースは、成功のコントロールまたは要求のエラーを通知します。  
+---
+# <a name="mfc-activex-controls-using-data-binding-in-an-activex-control"></a>MFC ActiveX Controls: Using Data Binding in an ActiveX Control
+One of the more powerful uses of ActiveX controls is data binding, which allows a property of the control to bind with a specific field in a database. When a user modifies data in this bound property, the control notifies the database and requests that the record field be updated. The database then notifies the control of the success or failure of the request.  
   
- ここでは、タスクのコントロールの端について説明します。  データベースでデータ バインディングの対話を実装すると、コントロール コンテナーの役割です。  コンテナーのデータベースとの対話を管理方法です。ここでは詳しく説明しません。  どのように準備またはデータ バインディングのコントロールは、この記事の後半で説明します。  
+ This article covers the control side of your task. Implementing the data binding interactions with the database is the responsibility of the control container. How you manage the database interactions in your container is beyond the scope of this documentation. How you prepare the control for data binding is explained in the rest of this article.  
   
- ![データ連結コントロールの概念ダイアグラム](../mfc/media/vc374v1.gif "vc374V1")  
-データ バインド コントロールの概念図  
+ ![Conceptual diagram of a data&#45;bound control](../mfc/media/vc374v1.gif "vc374v1")  
+Conceptual Diagram of a Data-Bound Control  
   
- `COleControl` クラスを実装するためのデータ バインディングに簡単なプロセスを、2 種類のメンバー関数を提供します。  最初の関数は、[BoundPropertyRequestEdit](../Topic/COleControl::BoundPropertyRequestEdit.md)が、プロパティ値を変更するアクセス許可を要求するために使用されます。  プロパティ値が正常に変更された後で[BoundPropertyChanged](../Topic/COleControl::BoundPropertyChanged.md)の 2 番目の関数が呼び出されます。  
+ The `COleControl` class provides two member functions that make data binding an easy process to implement. The first function, [BoundPropertyRequestEdit](../mfc/reference/colecontrol-class.md#boundpropertyrequestedit), is used to request permission to change the property value. [BoundPropertyChanged](../mfc/reference/colecontrol-class.md#boundpropertychanged), the second function, is called after the property value has been successfully changed.  
   
- ここでは、次のトピックについて説明します。  
+ This article covers the following topics:  
   
--   [バインドできるなストック プロパティの作成](#vchowcreatingbindablestockproperty)  
+-   [Creating a Bindable Stock Property](#vchowcreatingbindablestockproperty)  
   
--   [バインドできるを作成して get および set メソッド](#vchowcreatingbindablegetsetmethod)  
+-   [Creating a Bindable Get/Set Method](#vchowcreatingbindablegetsetmethod)  
   
-##  <a name="vchowcreatingbindablestockproperty"></a> バインドできるなストック プロパティの作成  
- [バインドできる get および set メソッド](#vchowcreatingbindablegetsetmethod)が目的の方がより高いがデータ バインドのストック プロパティを作成することもできます。  
-  
-> [!NOTE]
->  ストック プロパティに **バインド可能\(B\)** と **要求編集\(Q\)** 属性が与えられています。  
-  
-#### バインドできるなストック プロパティの追加ウィザードのプロパティを追加するには  
-  
-1.  [MFC ActiveX コントロール ウィザード](../mfc/reference/mfc-activex-control-wizard.md)を使用してプロジェクトを開始します。  
-  
-2.  コントロールのインターフェイス ノードを右クリックします。  
-  
-     これはショートカット メニューが開きます。  
-  
-3.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
-  
-4.  **プロパティ 名前** のドロップダウン リストのエントリの 1 を選択します。  たとえば、**テキスト**を選択できます。  
-  
-     **テキスト** がストック プロパティであるため、**バインド可能\(B\)** と **要求編集\(Q\)** 属性が既にチェックされます。  
-  
-5.  **IDL 属性** タブで、次のチェック ボックスをオンにします: プロジェクトの .IDL プロパティ定義に属性を追加する **表示バインド\(P\)** と **既定のバインド\(E\)** はファイル。  これらの属性は、コントロールがユーザーに表示されるようにし、ストック プロパティに既定のバインド可能プロパティを表示します。  
-  
- この時点で、コントロールはデータ ソースのデータを表示するユーザーは、更新データ フィールドにできません。  またコントロールでデータを更新できるように、次のように表示するに `OnOcmCommand` [OnOcmCommand](../mfc/mfc-activex-controls-subclassing-a-windows-control.md) 関数を変更する:  
-  
- [!code-cpp[NVC_MFC_AxData#1](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_1.cpp)]  
-  
- これでコントロールを登録するプロジェクトをビルドできます。  ダイアログ ボックスにコントロールを挿入する場合、**データ フィールド** と **\[データ ソース\]** のプロパティを追加したり、コントロールに表示されるように、データ ソースおよびフィールドを選択できます。  
-  
-##  <a name="vchowcreatingbindablegetsetmethod"></a> バインドできるを作成して get および set メソッド  
- データ バインドに加えて、[バインドできるなストック プロパティ](#vchowcreatingbindablestockproperty)を作成して取得すると、SET メソッド。  
+##  <a name="vchowcreatingbindablestockproperty"></a> Creating a Bindable Stock Property  
+ It is possible to create a data-bound stock property, although it is more likely that you will want a [bindable get/set method](#vchowcreatingbindablegetsetmethod).  
   
 > [!NOTE]
->  この手順では、Windows フォーム コントロールをサブクラス化する ActiveX コントロール プロジェクトがあるとします。  
+>  Stock properties have the **bindable** and **requestedit** attributes by default.  
   
-#### バインドできるを追加するには追加のプロパティ ウィザードを使用して get および set メソッド  
+#### <a name="to-add-a-bindable-stock-property-using-the-add-property-wizard"></a>To add a bindable stock property using the Add Property Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Begin a project using the [MFC ActiveX Control Wizard](../mfc/reference/mfc-activex-control-wizard.md).  
   
-2.  **コントロールの設定** ページで、コントロールがサブクラス化するためにウィンドウ クラスを選択します。  たとえば、エディット コントロールをサブクラス化したい場合があります。  
+2.  Right-click the interface node for your control.  
   
-3.  コントロールのプロジェクトを読み込んでください。  
+     This opens the shortcut menu.  
   
-4.  コントロールのインターフェイス ノードを右クリックします。  
+3.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これはショートカット メニューが開きます。  
+4.  Select one of the entries from the **Property Name** drop-down list. For example, you can select **Text**.  
   
-5.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+     Because **Text** is a stock property, the **bindable** and **requestedit** attributes are already checked.  
   
-6.  **プロパティ名** ボックスのプロパティ名を入力します。  この例では、`MyProp` を使用します。  
+5.  Select the following check boxes from the **IDL Attributes** tab: **displaybind** and **defaultbind** to add the attributes to the property definition in the project's .IDL file. These attributes make the control visible to the user and make the stock property the default bindable property.  
   
-7.  **プロパティの種類** のドロップダウン リスト ボックスからデータ型を選択します。  この例では、**short** を使用します。  
+ At this point, your control can display data from a data source, but the user will not be able to update data fields. If you want your control to also be able to update data, change the `OnOcmCommand` [OnOcmCommand](../mfc/mfc-activex-controls-subclassing-a-windows-control.md) function to look as follows:  
   
-8.  **Implementation Type**の場合、クリック **Get\/Set メソッドの設定**。  
+ [!code-cpp[NVC_MFC_AxData#1](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_1.cpp)]  
   
-9. IDL 属性タブで、次のチェック ボックスをオンにします: **バインド可能\(B\)**、**要求編集\(Q\)**、プロジェクトの .IDL プロパティ定義に属性を追加する **表示バインド\(P\)**と **既定のバインド\(E\)** はファイル。  これらの属性は、コントロールがユーザーに表示されるようにし、ストック プロパティに既定のバインド可能プロパティを表示します。  
+ You can now build the project, which will register the control. When you insert the control in a dialog box, the **Data Field** and **Data Source** properties will have been added and you can now select a data source and field to display in the control.  
   
-10. \[完了\] をクリックします。  
+##  <a name="vchowcreatingbindablegetsetmethod"></a> Creating a Bindable Get/Set Method  
+ In addition to a data-bound get/set method, you can also create a [bindable stock property](#vchowcreatingbindablestockproperty).  
   
-11. 次のコードを含むように `SetMyProp` 関数の本体を変更する:  
+> [!NOTE]
+>  This procedure assumes you have an ActiveX control project that subclasses a Windows control.  
   
-     [!code-cpp[NVC_MFC_AxData#2](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_2.cpp)]  
+#### <a name="to-add-a-bindable-getset-method-using-the-add-property-wizard"></a>To add a bindable get/set method using the Add Property Wizard  
   
-12. `BoundPropertyChanged` と `BoundPropertyRequestEdit` 関数に渡されるパラメーターは .IDL ファイルのプロパティの ID \(\) 属性に渡されるパラメーターのプロパティの dispid です。  
+1.  Load your control's project.  
   
-13. [OnOcmCommand](../mfc/mfc-activex-controls-subclassing-a-windows-control.md) 関数を変更します。これは、次のコードが含まれています:  
+2.  On the **Control Settings** page, select a window class for the control to subclass. For example, you may want to subclass an EDIT control.  
   
-     [!code-cpp[NVC_MFC_AxData#1](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_1.cpp)]  
+3.  Load your control's project.  
   
-14. 次のコードを含むように `OnDraw` 関数を変更する:  
+4.  Right-click the interface node for your control.  
   
-     [!code-cpp[NVC_MFC_AxData#3](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_3.cpp)]  
+     This opens the shortcut menu.  
   
-15. ヘッダー ファイルのパブリック セクションにコントロール クラスのヘッダー ファイルは、メンバー変数の定義 \(\) コンストラクターを追加する:  
+5.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     [!code-cpp[NVC_MFC_AxData#4](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_4.h)]  
+6.  Type the property name in the **Property Name** box. Use `MyProp` for this example.  
   
-16. 次の行に `DoPropExchange` の最後の行を機能させる:  
+7.  Select a data type from the **Property Type** drop-down list box. Use **short** for this example.  
   
-     [!code-cpp[NVC_MFC_AxData#5](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_5.cpp)]  
+8.  For **Implementation Type**, click **Get/Set Methods**.  
   
-17. 次のコードを含むように `OnResetState` 関数を変更する:  
+9. Select the following check boxes from the IDL Attributes tab: **bindable**, **requestedit**, **displaybind**, and **defaultbind** to add the attributes to the property definition in the project's .IDL file. These attributes make the control visible to the user and make the stock property the default bindable property.  
   
-     [!code-cpp[NVC_MFC_AxData#6](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_6.cpp)]  
+10. Click **Finish**.  
   
-18. 次のコードを含むように `GetMyProp` 関数を変更する:  
+11. Modify the body of the `SetMyProp` function so that it contains the following code:  
   
-     [!code-cpp[NVC_MFC_AxData#7](../mfc/codesnippet/CPP/mfc-activex-controls-using-data-binding-in-an-activex-control_7.cpp)]  
+     [!code-cpp[NVC_MFC_AxData#2](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_2.cpp)]  
   
- これでコントロールを登録するプロジェクトをビルドできます。  ダイアログ ボックスにコントロールを挿入する場合、**データ フィールド** と **\[データ ソース\]** のプロパティを追加したり、コントロールに表示されるように、データ ソースおよびフィールドを選択できます。  
+12. The parameter passed to the `BoundPropertyChanged` and `BoundPropertyRequestEdit` functions is the dispid of the property, which is the parameter passed to the id() attribute for the property in the .IDL file.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [データ連結コントロール \(ADO および RDO\)](../Topic/Data-Bound%20Controls%20\(ADO%20and%20RDO\).md)
+13. Modify the [OnOcmCommand](../mfc/mfc-activex-controls-subclassing-a-windows-control.md) function so it contains the following code:  
+  
+     [!code-cpp[NVC_MFC_AxData#1](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_1.cpp)]  
+  
+14. Modify the `OnDraw` function so that it contains the following code:  
+  
+     [!code-cpp[NVC_MFC_AxData#3](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_3.cpp)]  
+  
+15. To the public section of the header file the header file for your control class, add the following definitions (constructors) for member variables:  
+  
+     [!code-cpp[NVC_MFC_AxData#4](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_4.h)]  
+  
+16. Make the following line the last line in the `DoPropExchange` function:  
+  
+     [!code-cpp[NVC_MFC_AxData#5](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_5.cpp)]  
+  
+17. Modify the `OnResetState` function so that it contains the following code:  
+  
+     [!code-cpp[NVC_MFC_AxData#6](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_6.cpp)]  
+  
+18. Modify the `GetMyProp` function so that it contains the following code:  
+  
+     [!code-cpp[NVC_MFC_AxData#7](../mfc/codesnippet/cpp/mfc-activex-controls-using-data-binding-in-an-activex-control_7.cpp)]  
+  
+ You can now build the project, which will register the control. When you insert the control in a dialog box, the **Data Field** and **Data Source** properties will have been added and you can now select a data source and field to display in the control.  
+  
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+
+

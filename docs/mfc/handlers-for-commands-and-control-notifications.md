@@ -1,48 +1,66 @@
 ---
-title: "コマンドとコントロール通知のハンドラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド, ハンドラー"
-  - "コントロール [MFC], 通知"
-  - "関数 [C++], ハンドラー"
-  - "ハンドラー"
-  - "ハンドラー, コマンド"
-  - "ハンドラー, コントロール通知"
-  - "通知, ハンドラー (コントロールの)"
+title: Handlers for Commands and Control Notifications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- commands [MFC], handlers for
+- functions [MFC], handler
+- handlers [MFC]
+- controls [MFC], notifications
+- handlers [MFC], control notification [MFC]
+- notifications [MFC], handlers for control
+- handlers [MFC]], command
 ms.assetid: 20f57f4a-f577-4c09-80a2-43faf32a1c2e
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コマンドとコントロール通知のハンドラー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 601f4cc9f7da5c7038443d3d5d73e6192e37187a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コマンドまたはコントロール通知メッセージの既定のハンドラーはありません。  したがって、メッセージのこれらのカテゴリのハンドラーに名前を付けることで規則でのみバインドされます。  ハンドラーにコマンドやコントロール通知をマップするときに、プロパティ ウィンドウにコマンド ID またはコントロール通知コードに基づいて名前を示します。  指定された名前を受け入れるか、変更、または置換できます。  
+---
+# <a name="handlers-for-commands-and-control-notifications"></a>Handlers for Commands and Control Notifications
+There are no default handlers for commands or control-notification messages. Therefore, you are bound only by convention in naming your handlers for these categories of messages. When you map the command or control notification to a handler, the Properties windows proposes a name based on the command ID or control-notification code. You can accept the proposed name, change it, or replace it.  
   
- 規則を表すユーザー インターフェイス オブジェクトの両方のカテゴリのハンドラーの名前を付けることをお勧めします。  したがって、編集メニューの切り取りのハンドラーは名前の場合があります。  
+ Convention suggests that you name handlers in both categories for the user-interface object they represent. Thus a handler for the Cut command on the Edit menu might be named  
   
- [!CODE [NVC_MFCMessageHandling#4](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCMessageHandling#4)]  
+ [!code-cpp[NVC_MFCMessageHandling#4](../mfc/codesnippet/cpp/handlers-for-commands-and-control-notifications_1.h)]  
   
- 切り取りコマンドがアプリケーションに、一般に実装されるので、フレームワークは **ID\_EDIT\_CUT**として切り取りコマンドのコマンド ID を定義します。  すべての定義済みのなコマンド ID の一覧については、ファイル AFXRES.H.を参照してください。  詳細については、「[標準のコマンド](../mfc/standard-commands.md)」を参照してください。  
+ Because the Cut command is so commonly implemented in applications, the framework predefines the command ID for the Cut command as **ID_EDIT_CUT**. For a list of all predefined command IDs, see the file AFXRES.H. For more information, see [Standard Commands](../mfc/standard-commands.md).  
   
- また、規則は「\<cf style\= " Button」というラベルのボタンの **BN\_CLICKED** 通知メッセージ ハンドラーが名前の可能性があることを示します。  
+ In addition, convention suggests a handler for the **BN_CLICKED** notification message from a button labeled "My Button" might be named  
   
- [!CODE [NVC_MFCMessageHandling#5](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCMessageHandling#5)]  
+ [!code-cpp[NVC_MFCMessageHandling#5](../mfc/codesnippet/cpp/handlers-for-commands-and-control-notifications_2.h)]  
   
- アプリケーション固有のユーザー インターフェイス オブジェクトと同じであるため、このコマンドに `IDC_MY_BUTTON` の ID を割り当てる場合があります。  
+ You might assign this command an ID of `IDC_MY_BUTTON` because it is equivalent to an application-specific user-interface object.  
   
- メッセージのカテゴリは、引数を受け取らず、値を返しません。  
+ Both categories of messages take no arguments and return no value.  
   
-## 参照  
- [メッセージ ハンドラー関数の宣言](../mfc/declaring-message-handler-functions.md)
+## <a name="see-also"></a>See Also  
+ [Declaring Message Handler Functions](../mfc/declaring-message-handler-functions.md)
+

@@ -1,39 +1,57 @@
 ---
-title: "ツール ヒント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ボタン [C++], ツール ヒント"
-  - "CFrameWnd クラス, ツール ヒント"
-  - "コントロール [MFC], ツール ヒント"
-  - "ヘルプ, ツール ヒント (コントロールの)"
-  - "ツール ヒント [C++], CFrameWnd"
+title: Tool Tips | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CFrameWnd class [MFC], tool tips
+- Help [MFC], tool tips for controls
+- tool tips [MFC], CFrameWnd
+- controls [MFC], tool tips
+- buttons [MFC], tool tips
 ms.assetid: 7f0bba86-7c55-4bf6-8455-687a4dcb2be8
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツール ヒント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0fa14af8d29cd790783b7f352d2d6502f5d138c5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プロシージャは、MFC クラス [CFrameWnd](../mfc/reference/cframewnd-class.md) から派生されるウィンドウに含まれるコントロールにツール ヒントを追加するには、ウィンドウが `CFrameWnd`から派生しませんでした。  
+---
+# <a name="tool-tips"></a>Tool Tips
+The procedures are distinct for adding tool tips to controls contained in windows derived from MFC class [CFrameWnd](../mfc/reference/cframewnd-class.md) and windows not derived from `CFrameWnd`.  
   
-## さらに詳しくは次のトピックをクリックしてください  
- 次のようなウィンドウ コントロールのツール ヒント:  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
+ Tool tips for controls in a window that is:  
   
--   [ツールバーのツールヒント \(CFrameWnd から派生される\)](../Topic/Toolbar%20Tool%20Tips.md)  
+-   [Toolbar Tooltips (derived from CFrameWnd)](../mfc/toolbar-tool-tips.md)  
   
--   [Windows のツールヒントは、CFrameWnd から派生しませんでした](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)  
+-   [Tooltips in Windows not derived from CFrameWnd](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)
+

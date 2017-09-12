@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: COleLinksDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -17,10 +17,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- Edit Links dialog box
-- COleLinksDialog class
-- dialog boxes, OLE
-- OLE Edit Links dialog box
+- COleLinksDialog [MFC], COleLinksDialog
+- COleLinksDialog [MFC], DoModal
+- COleLinksDialog [MFC], m_el
 ms.assetid: fb2eb638-2809-46db-ac74-392a732affc7
 caps.latest.revision: 22
 author: mikeblome
@@ -40,53 +39,53 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: ed256b3a4d3236863e3dcccb7614949f650f058b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fa51351bf888268c1bddf0f4b1247216de9e2e4d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="colelinksdialog-class"></a>関数のクラス
-OLE の [リンクの編集] ダイアログ ボックスに使用します。  
+# <a name="colelinksdialog-class"></a>COleLinksDialog Class
+Used for the OLE Edit Links dialog box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleLinksDialog : public COleDialog  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleLinksDialog::COleLinksDialog](#colelinksdialog)|`COleLinksDialog` オブジェクトを構築します。|  
+|[COleLinksDialog::COleLinksDialog](#colelinksdialog)|Constructs a `COleLinksDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleLinksDialog::DoModal](#domodal)|OLE の [リンクの編集] ダイアログ ボックスが表示されます。|  
+|[COleLinksDialog::DoModal](#domodal)|Displays the OLE Edit Links dialog box.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleLinksDialog::m_el](#m_el)|型の構造体**される** ダイアログ ボックスの動作を制御します。|  
+|[COleLinksDialog::m_el](#m_el)|A structure of type **OLEUIEDITLINKS** that controls the behavior of the dialog box.|  
   
-## <a name="remarks"></a>コメント  
- クラスのオブジェクトを作成`COleLinksDialog`このダイアログ ボックスを呼び出そうとするとします。 後に、`COleLinksDialog`使用すると、オブジェクトが構築された、[各](#m_el)値やダイアログ ボックスのコントロールの状態を初期化するためにします。 `m_el`型の構造は、**される**します。 このダイアログ ボックスの使い方の詳細については、次を参照してください。、 [DoModal](#domodal)メンバー関数。  
+## <a name="remarks"></a>Remarks  
+ Create an object of class `COleLinksDialog` when you want to call this dialog box. After a `COleLinksDialog` object has been constructed, you can use the [m_el](#m_el) structure to initialize the values or states of controls in the dialog box. The `m_el` structure is of type **OLEUIEDITLINKS**. For more information about using this dialog class, see the [DoModal](#domodal) member function.  
   
 > [!NOTE]
->  アプリケーション ウィザードで生成されたコンテナーのコードでは、このクラスを使用します。  
+>  Application Wizard-generated container code uses this class.  
   
- 詳細については、次を参照してください。、[される](http://msdn.microsoft.com/library/windows/desktop/ms678492)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [OLEUIEDITLINKS](http://msdn.microsoft.com/library/windows/desktop/ms678492) structure in the Windows SDK.  
   
- OLE 固有のダイアログ ボックスの詳細については、記事を参照してください。 [OLE のダイアログ ボックス](../../mfc/dialog-boxes-in-ole.md)します。  
+ For more information regarding OLE-specific dialog boxes, see the article [Dialog Boxes in OLE](../../mfc/dialog-boxes-in-ole.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -97,34 +96,34 @@ class COleLinksDialog : public COleDialog
   
  [CCommonDialog](../../mfc/reference/ccommondialog-class.md)  
   
- [関数](../../mfc/reference/coledialog-class.md)  
+ [COleDialog](../../mfc/reference/coledialog-class.md)  
   
  `COleLinksDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxodlgs.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxodlgs.h  
   
-##  <a name="domodal"></a>COleLinksDialog::DoModal  
- OLE の [リンクの編集] ダイアログ ボックスが表示されます。  
+##  <a name="domodal"></a>  COleLinksDialog::DoModal  
+ Displays the OLE Edit Links dialog box.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ダイアログ ボックスの終了ステータスです。 次のいずれかの値です。  
+### <a name="return-value"></a>Return Value  
+ Completion status for the dialog box. One of the following values:  
   
-- **IDOK**  ダイアログ ボックスが正常に表示された場合。  
+- **IDOK** if the dialog box was successfully displayed.  
   
-- **IDCANCEL**場合は、ユーザーがダイアログ ボックスをキャンセルします。  
+- **IDCANCEL** if the user canceled the dialog box.  
   
-- **IDABORT**場合はエラーが発生しました。 場合**IDABORT**は呼び出しが返される、`COleDialog::GetLastError`の詳細については、発生したエラーの種類を取得します。 考えられるエラーの一覧については、次を参照してください。、[される](http://msdn.microsoft.com/library/windows/desktop/ms679703)で機能、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+- **IDABORT** if an error occurred. If **IDABORT** is returned, call the `COleDialog::GetLastError` member function to get more information about the type of error that occurred. For a listing of possible errors, see the [OleUIEditLinks](http://msdn.microsoft.com/library/windows/desktop/ms679703) function in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- メンバーを設定して、さまざまなダイアログ ボックス コントロールを初期化する場合、[各](#m_el)構造体、行う必要があります、呼び出す前に`DoModal`はダイアログ オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ If you want to initialize the various dialog box controls by setting members of the [m_el](#m_el) structure, you should do it before calling `DoModal`, but after the dialog object is constructed.  
   
-##  <a name="colelinksdialog"></a>COleLinksDialog::COleLinksDialog  
- `COleLinksDialog` オブジェクトを構築します。  
+##  <a name="colelinksdialog"></a>  COleLinksDialog::COleLinksDialog  
+ Constructs a `COleLinksDialog` object.  
   
 ```  
 COleLinksDialog (
@@ -134,36 +133,36 @@ COleLinksDialog (
     CWnd* pParentWnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDoc`  
- 編集しようとするリンクを含む OLE ドキュメントへのポインター。  
+ Points to the OLE document that contains the links to be edited.  
   
  `pView`  
- 上の現在のビューを指す`pDoc`します。  
+ Points to the current view on `pDoc`.  
   
  `dwFlags`  
- 0 を含む作成フラグまたは**ELF_SHOWHELP**  ダイアログ ボックスが表示されたときに ヘルプ ボタンを表示するかどうかを指定します。  
+ Creation flag, which contains either 0 or **ELF_SHOWHELP** to specify whether the Help button will be displayed when the dialog box is displayed.  
   
  `pParentWnd`  
- 親またはオーナー ウィンドウのオブジェクトを指します (型の`CWnd`) ダイアログ オブジェクトが属しています。 ある場合**NULL**、ダイアログ ボックスの親ウィンドウがアプリケーションのメイン ウィンドウに設定します。  
+ Points to the parent or owner window object (of type `CWnd`) to which the dialog object belongs. If it is **NULL**, the parent window of the dialog box is set to the main application window.  
   
-### <a name="remarks"></a>コメント  
- この関数はのみ、`COleLinksDialog`オブジェクトです。 ダイアログ ボックスを表示するには[DoModal](#domodal)関数です。  
+### <a name="remarks"></a>Remarks  
+ This function constructs only a `COleLinksDialog` object. To display the dialog box, call the [DoModal](#domodal) function.  
   
-##  <a name="m_el"></a>COleLinksDialog::m_el  
- 型の構造体**される**リンクの編集 ダイアログ ボックスの動作を制御するために使用します。  
+##  <a name="m_el"></a>  COleLinksDialog::m_el  
+ Structure of type **OLEUIEDITLINKS** used to control the behavior of the Edit Links dialog box.  
   
 ```  
 OLEUIEDITLINKS m_el;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この構造体のメンバーは、直接またはメンバー関数のいずれかに変更できます。  
+### <a name="remarks"></a>Remarks  
+ Members of this structure can be modified either directly or through member functions.  
   
- 詳細については、次を参照してください。、[される](http://msdn.microsoft.com/library/windows/desktop/ms678492)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [OLEUIEDITLINKS](http://msdn.microsoft.com/library/windows/desktop/ms678492) structure in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [関数のクラス](../../mfc/reference/coledialog-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/coledialog-class.md)
+## <a name="see-also"></a>See Also  
+ [COleDialog Class](../../mfc/reference/coledialog-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleDialog Class](../../mfc/reference/coledialog-class.md)
 

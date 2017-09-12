@@ -1,34 +1,51 @@
 ---
-title: "リモート オートメーションの機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リモート オートメーション, DCOM"
+title: What Does Remote Automation Provide? | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remote Automation, DCOM
 ms.assetid: 269ad218-e164-40ef-9b87-25fcc8ba21de
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# リモート オートメーションの機能
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 48da6339cea7c8a39d93641fa5c5a59d0a63e207
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リモート オートメーションは、プログラムを別の 1 台のコンピューターで `IDispatch` の実装を呼び出すことができます。  また、オートメーション、特にコレクション サポートの **IEnumVARIANT** で必要なそのほかのインターフェイスをサポートしていません。  これは **IUnknown**を除き、他の COM が配布機能を提供します \(、\)、提供されず、定期的なオートメーションと同様に、オートメーションがサポートするデータ型に対してのみ、マーシャリングのサポートが含まれています。  
+---
+# <a name="what-does-remote-automation-provide"></a>What Does Remote Automation Provide?
+Remote Automation allows programs to invoke `IDispatch` implementations on one machine from another. It also supports other interfaces required by Automation, specifically **IEnumVARIANT** for collection support. It does not provide the ability to distribute any other COM interface (except **IUnknown**, of course) and, like regular Automation, it contains marshaling support only for those data types supported by Automation.  
   
- 機能のセットは、プログラムがオブジェクトのコレクションまたはアクセス可能なネットワークのノードで実行されるオブジェクトのオートメーション オブジェクトを簡単にするため、これらを使用するメソッドとプロパティにアクセスできます。  クライアント コンピューターが適切なソフトウェアを実行する場合、同じ機能を使用しないがオートメーション\) 機能を使用してクライアントにコールバックにサーバーの名前と、再度です。これは、32 ビットと 64 ビットのクライアントの場合にのみ機能し、イベントと概念的に類似しています。  
+ This set of facilities allows a program to access the methods and properties, including those that return collections or further automation objects, of an object running on an accessible network node. If the client machine is also running the appropriate software, it is possible for the server to call back to the client, again using Automation facilities (this works for 32-bit and 64-bit clients only, and is conceptually similar to events, although it does not use the same mechanism).  
   
- リモート オートメーション サーバーとして操作できるアプリケーションの実行可能ファイルとして実装されなければなりません \(つまり、「インプロセス サーバー」ではなく「ローカル サーバーとして」\)。  
+ For an application to be operable as a Remote Automation server, it must be implemented as an executable (that is, as a "local server" rather than as an "inproc server").  
   
-## 参照  
- [リモート オートメーションを使用する場合](../mfc/where-does-remote-automation-fit-in-q.md)   
- [DCOM の歴史](../mfc/history-of-dcom.md)
+## <a name="see-also"></a>See Also  
+ [Where Does Remote Automation Fit In](where-does-remote-automation-fit-in-q.md)   
+ [History of DCOM](../mfc/history-of-dcom.md)
+

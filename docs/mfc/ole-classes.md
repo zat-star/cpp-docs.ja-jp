@@ -1,63 +1,82 @@
 ---
-title: "OLE クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.ole"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX クラス [C++]"
-  - "クラス [C++], OLE"
-  - "OLE [C++], クラス"
-  - "OLE クラス [C++]"
+title: OLE Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX classes [MFC]
+- classes [MFC], OLE
+- OLE classes [MFC]
+- OLE [MFC], classes
 ms.assetid: 4c2b2bca-fafb-4d2d-8498-9ed1e04011d2
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# OLE クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eab656859bbba98ec2605c9cc95e26565494cbbb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-OLE クラスは、他のアプリケーション フレームワーク クラスをプログラムにより、ActiveX の機能を提供する簡単な ActiveX API への簡単なアクセスを提供します。  ActiveX コントロールを使用して、たとえば P:  
+---
+# <a name="ole-classes"></a>OLE Classes
+The OLE classes work with the other application framework classes to provide easy access to the ActiveX API, giving your programs an easy way to provide the power of ActiveX to your users. Using ActiveX, you can:  
   
--   ユーザーがデータのテキスト、グラフィックス、スプレッドシート、サウンド、または他の型を含む、複数のアプリケーションによって作成されたデータを含む文書を作成および編集できる複合ドキュメントを作成します。  
+-   Create compound documents, which allow users to create and edit documents containing data created by multiple applications, including text, graphics, spreadsheets, sound, or other types of data.  
   
--   複合ドキュメントに埋め込むことができる OLE オブジェクトを作成します。  
+-   Create OLE objects that can be embedded in compound documents.  
   
--   アプリケーション間でデータをコピーするには、OLE ドラッグ アンド ドロップを使用します。  
+-   Use OLE drag and drop to copy data between applications.  
   
--   別の 1 種類のプログラムを制御するためにオートメーションを使用します。  
+-   Use Automation to control one program with another.  
   
--   ActiveX コントロールおよび ActiveX コントロール コンテナーを作成します \(以前の OLE コントロールおよび ActiveX コントロール コンテナーと、それぞれ呼び出す\)。  
+-   Create ActiveX controls and ActiveX control containers (formerly called OLE controls and OLE control containers, respectively).  
   
- クラスの次のカテゴリは、ActiveX をサポートする:  
+ The following categories of classes support ActiveX:  
   
--   [OLE コンテナー クラス](../mfc/ole-container-classes.md)  
+-   [OLE Container Classes](../mfc/ole-container-classes.md)  
   
--   [OLE サーバー クラス](../mfc/ole-server-classes.md)  
+-   [OLE Server Classes](../mfc/ole-server-classes.md)  
   
--   [OLE ドラッグ アンド ドロップおよびデータ転送クラス](../mfc/ole-drag-and-drop-and-data-transfer-classes.md)  
+-   [OLE Drag-and-Drop and Data Transfer Classes](../mfc/ole-drag-and-drop-and-data-transfer-classes.md)  
   
--   [OLE コモン ダイアログ クラス](../mfc/ole-common-dialog-classes.md)  
+-   [OLE Common Dialog Classes](../mfc/ole-common-dialog-classes.md)  
   
--   [OLE オートメーション クラス](../Topic/OLE%20Automation%20Classes.md)  
+-   [OLE Automation Classes](../mfc/ole-automation-classes.md)  
   
--   [OLE コントロール クラス](../mfc/ole-control-classes.md)  
+-   [OLE Control Classes](../mfc/ole-control-classes.md)  
   
--   [アクティブ ドキュメント クラス](../mfc/active-document-classes.md)  
+-   [Active Document Classes](../mfc/active-document-classes.md)  
   
--   [OLE 関連クラス](../mfc/ole-related-classes.md)  
+-   [OLE-Related Classes](../mfc/ole-related-classes.md)  
   
- クラスの継承を参照するには、[クラス階層図](../mfc/hierarchy-chart.md)を使用します。  
+ To see the inheritance of a class, use the [Class Hierarchy Chart](../mfc/hierarchy-chart.md).  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

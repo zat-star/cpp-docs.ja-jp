@@ -1,5 +1,5 @@
 ---
-title: "CFile クラス |Microsoft ドキュメント"
+title: CFile Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -41,9 +41,33 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFile class
-- CArchive class, using with CFile
-- files [C++], classes for
+- CFile [MFC], CFile
+- CFile [MFC], Abort
+- CFile [MFC], Close
+- CFile [MFC], Duplicate
+- CFile [MFC], Flush
+- CFile [MFC], GetFileName
+- CFile [MFC], GetFilePath
+- CFile [MFC], GetFileTitle
+- CFile [MFC], GetLength
+- CFile [MFC], GetPosition
+- CFile [MFC], GetStatus
+- CFile [MFC], LockRange
+- CFile [MFC], Open
+- CFile [MFC], Read
+- CFile [MFC], Remove
+- CFile [MFC], Rename
+- CFile [MFC], Seek
+- CFile [MFC], SeekToBegin
+- CFile [MFC], SeekToEnd
+- CFile [MFC], SetFilePath
+- CFile [MFC], SetLength
+- CFile [MFC], SetStatus
+- CFile [MFC], UnlockRange
+- CFile [MFC], Write
+- CFile [MFC], hFileNull
+- CFile [MFC], m_hFile
+- CFile [MFC], m_pTM
 ms.assetid: b2eb5757-d499-4e67-b044-dd7d1abaa0f8
 caps.latest.revision: 22
 author: mikeblome
@@ -63,115 +87,115 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 8f79d96483e6826a58c49847c0a2bcd915b7b077
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a4768b9232dbb3a25f74362f228ced0b55505060
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfile-class"></a>CFile クラス
-ファイルに関する MFC の基底クラスです。  
+# <a name="cfile-class"></a>CFile Class
+The base class for Microsoft Foundation Class file classes.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFile : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[ほか](#cfile)|構築、`CFile`パスまたはファイルのハンドルからのオブジェクト。|  
+|[CFile::CFile](#cfile)|Constructs a `CFile` object from a path or file handle.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[解放](#abort)|すべての警告とエラーを無視するファイルを閉じます。|  
-|[データ](#close)|ファイルを終了し、オブジェクトを削除します。|  
-|[CFile::Duplicate](#duplicate)|このファイルに基づく重複するオブジェクトを構築します。|  
-|[CFile::Flush](#flush)|まだが書き込まれるようにデータをフラッシュします。|  
-|[CFile::GetFileName](#getfilename)|選択したファイルのファイル名を取得します。|  
-|[CFile::GetFilePath](#getfilepath)|選択したファイルの完全ファイル パスを取得します。|  
-|[CFile::GetFileTitle](#getfiletitle)|選択したファイルのタイトルを取得します。|  
-|[結び付けてその中](#getlength)|ファイルの長さを取得します。|  
-|[実行](#getposition)|現在のファイル ポインターを取得します。|  
-|[Cfile::getstatus](#getstatus)|または、静的バージョンで、開いているファイルの状態を取得、指定されたファイル (静的、仮想関数) の状態を取得します。|  
-|[CFile::LockRange](#lockrange)|ファイル内のバイトの範囲をロックします。|  
-|[CFile::Open](#open)|安全なエラー テスト オプションを使用してファイルを開きます。|  
-|[:Read](#read)|現在のファイル位置にあるファイルからの読み取り (バッファーなし) データ。|  
-|[CFile::Remove](#remove)|指定されたファイル (静的関数) を削除します。|  
-|[CFile::Rename](#rename)|指定されたファイル (静的関数) の名前を変更します。|  
-|[CFile::Seek](#seek)|現在のファイル ポインターを移動します。|  
-|[CFile::SeekToBegin](#seektobegin)|ファイルの先頭には、現在のファイル ポインターを移動します。|  
-|[CFile::SeekToEnd](#seektoend)|ファイルの最後に、現在のファイル ポインターを配置します。|  
-|[CFile::SetFilePath](#setfilepath)|選択したファイルの完全ファイル パスを設定します。|  
-|[CFile::SetLength](#setlength)|ファイルの長さを変更します。|  
-|[CFile::SetStatus](#setstatus)|指定されたファイル (静的、仮想関数) の状態を設定します。|  
-|[CFile::UnlockRange](#unlockrange)|ファイル内のバイトの範囲のロックを解除します。|  
-|[CFile::Write](#write)|現在の位置をファイルに (バッファーなし) のデータを書き込みます。|  
+|[CFile::Abort](#abort)|Closes a file ignoring all warnings and errors.|  
+|[CFile::Close](#close)|Closes a file and deletes the object.|  
+|[CFile::Duplicate](#duplicate)|Constructs a duplicate object based on this file.|  
+|[CFile::Flush](#flush)|Flushes any data yet to be written.|  
+|[CFile::GetFileName](#getfilename)|Retrieves the filename of the selected file.|  
+|[CFile::GetFilePath](#getfilepath)|Retrieves the full file path of the selected file.|  
+|[CFile::GetFileTitle](#getfiletitle)|Retrieves the title of the selected file.|  
+|[CFile::GetLength](#getlength)|Retrieves the length of the file.|  
+|[CFile::GetPosition](#getposition)|Retrieves the current file pointer.|  
+|[CFile::GetStatus](#getstatus)|Retrieves the status of the open file, or in the static version, retrieves the status of the specified file (static, virtual function).|  
+|[CFile::LockRange](#lockrange)|Locks a range of bytes in a file.|  
+|[CFile::Open](#open)|Safely opens a file with an error-testing option.|  
+|[CFile::Read](#read)|Reads (unbuffered) data from a file at the current file position.|  
+|[CFile::Remove](#remove)|Deletes the specified file (static function).|  
+|[CFile::Rename](#rename)|Renames the specified file (static function).|  
+|[CFile::Seek](#seek)|Positions the current file pointer.|  
+|[CFile::SeekToBegin](#seektobegin)|Positions the current file pointer at the beginning of the file.|  
+|[CFile::SeekToEnd](#seektoend)|Positions the current file pointer at the end of the file.|  
+|[CFile::SetFilePath](#setfilepath)|Sets the full file path of the selected file.|  
+|[CFile::SetLength](#setlength)|Changes the length of the file.|  
+|[CFile::SetStatus](#setstatus)|Sets the status of the specified file (static, virtual function).|  
+|[CFile::UnlockRange](#unlockrange)|Unlocks a range of bytes in a file.|  
+|[CFile::Write](#write)|Writes (unbuffered) data in a file to the current file position.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFile::operator ハンドル](#operator_handle)|ハンドル、`CFile`オブジェクト。|  
+|[CFile::operator HANDLE](#operator_handle)|A handle to a `CFile` object.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFile::hFileNull](#hfilenull)|かどうかを`CFile`オブジェクトが有効なハンドル。|  
-|[CFile::m_hFile](#m_hfile)|通常、オペレーティング システム ファイル ハンドルが含まれます。|  
+|[CFile::hFileNull](#hfilenull)|Determines if the `CFile` object has a valid handle.|  
+|[CFile::m_hFile](#m_hfile)|Usually contains the operating-system file handle.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFile::m_pTM](#m_ptm)|ポインター`CAtlTransactionManager`オブジェクト。|  
+|[CFile::m_pTM](#m_ptm)|Pointer to `CAtlTransactionManager` object.|  
   
-## <a name="remarks"></a>コメント  
- バッファリングされていない、バイナリのディスク入力/出力のサービスを直接提供も直接サポートしていないテキスト ファイルとその派生クラスを使用してメモリ ファイル。 `CFile`連携して、 `CArchive` Microsoft Foundation Class オブジェクトのシリアル化をサポートするクラス。  
+## <a name="remarks"></a>Remarks  
+ It directly provides unbuffered, binary disk input/output services, and it indirectly supports text files and memory files through its derived classes. `CFile` works in conjunction with the `CArchive` class to support serialization of Microsoft Foundation Class objects.  
   
- このクラスとその派生クラスの階層リレーションシップにより、プログラム、ポリモーフィックですべてのファイル オブジェクトを操作する`CFile`インターフェイスです。 メモリ ファイルは、たとえば、ディスク ファイルと同様に動作します。  
+ The hierarchical relationship between this class and its derived classes allows your program to operate on all file objects through the polymorphic `CFile` interface. A memory file, for example, behaves like a disk file.  
   
- 使用して`CFile`と汎用的なディスク I/O の派生クラス。 使用して`ofstream`またはディスク ファイルに送信される書式設定されたテキストの他の Microsoft iostream クラスです。  
+ Use `CFile` and its derived classes for general-purpose disk I/O. Use `ofstream` or other Microsoft iostream classes for formatted text sent to a disk file.  
   
- 通常、ディスク ファイルを開く時に自動的に`CFile`構築と破棄に終了します。 静的メンバー関数は、ファイルを開かずにファイルのステータスを調査することを許可します。  
+ Normally, a disk file is opened automatically on `CFile` construction and closed on destruction. Static member functions permit you to interrogate a file's status without opening the file.  
   
- 使用の詳細について`CFile`、記事を参照して[MFC のファイル](../../mfc/files-in-mfc.md)と[ファイル処理](../../c-runtime-library/file-handling.md)で、*ランタイム ライブラリ リファレンス*です。  
+ For more information on using `CFile`, see the articles [Files in MFC](../../mfc/files-in-mfc.md) and [File Handling](../../c-runtime-library/file-handling.md) in the *Run-Time Library Reference*.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CFile`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="abort"></a>解放  
- このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りや書き込みに対して使用できなくなります。  
+##  <a name="abort"></a>  CFile::Abort  
+ Closes the file associated with this object and makes the file unavailable for reading or writing.  
   
 ```  
 virtual void Abort();
 ```  
   
-### <a name="remarks"></a>コメント  
- オブジェクトを破棄する前に、ファイルを閉じていない場合、デストラクターがファイルを閉じます。  
+### <a name="remarks"></a>Remarks  
+ If you have not closed the file before destroying the object, the destructor closes it for you.  
   
- 例外を処理するときに`CFile::Abort`異なる`CFile::Close`2 つの重要な点でします。 最初に、**中止**関数が例外をスローしませんエラー発生時によってエラーが無視されるため**中止**です。 2 番目、**中止**されません**ASSERT**ファイルが開かれていない、またはが以前に閉じられました。  
+ When handling exceptions, `CFile::Abort` differs from `CFile::Close` in two important ways. First, the **Abort** function will not throw an exception on failures because failures are ignored by **Abort**. Second, **Abort** will not **ASSERT** if the file has not been opened or was closed previously.  
   
- 使用した場合**新しい**を割り当て、`CFile`ヒープのオブジェクトの後に、ファイルを閉じて後に削除する必要があります。 **Abort** sets `m_hFile` to `CFile::hFileNull`.  
+ If you used **new** to allocate the `CFile` object on the heap, then you must delete it after closing the file. **Abort** sets `m_hFile` to `CFile::hFileNull`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #5](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#5](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_1.cpp)]  
   
-##  <a name="cfile"></a>ほか  
- `CFile` オブジェクトを構築して初期化します。  
+##  <a name="cfile"></a>  CFile::CFile  
+ Constructs and initializes a `CFile` object.  
   
 ```  
 CFile();  
@@ -190,208 +214,207 @@ UINT nOpenFlags,
 CAtlTransactionManager* pTM);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hFile`  
- `CFile` オブジェクトにアタッチするためのファイル ハンドル。  
+ Handle of a file to attach to the `CFile` object.  
   
  `lpszFileName`  
- 
-          `CFile` オブジェクトにアタッチするための相対パスまたは完全パス。  
+ Relative or full path of a file to attach to the `CFile` object.  
   
  `nOpenFlags`  
- 指定されたファイルのファイル アクセス オプションのビットごとの組み合わせ (OR)。 使用できるオプションについては、「解説」を参照してください。  
+ Bitwise combination (OR) of file access options for the specified file. See the Remarks section for possible options.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="remarks"></a>コメント  
- 次の 5 つの表は、`nOpenFlags` パラメーターの、使用できるオプションを示しています。  
+### <a name="remarks"></a>Remarks  
+ The following five tables list the possible options for the `nOpenFlags` parameter.  
   
- 次のファイル アクセス モード オプションから 1 つのみ選択します。 既定のファイル アクセス モードは `CFile::modeRead` であり、これは読み取り専用です。  
+ Choose only one of the following file access mode options. The default file access mode is `CFile::modeRead`, which is read only.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::modeRead`|読み取りアクセスのみを要求します。|  
-|`CFile::modeWrite`|書き込みアクセスのみを要求します。|  
-|`CFile::modeReadWrite`|読み取りおよび書き込みアクセスを要求します。|  
+|`CFile::modeRead`|Requests read access only.|  
+|`CFile::modeWrite`|Requests write access only.|  
+|`CFile::modeReadWrite`|Requests read and write access.|  
   
- 次の文字モード オプションのいずれかを選択します。  
+ Choose one of the following character mode options.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::typeBinary`|バイナリ モードを設定します (派生クラスのみで使用されます)。|  
-|`CFile::typeText`|(派生クラスのみで使用される) キャリッジ リターンとライン フィードのペアに対する特別な処理を伴うテキスト モードを設定します。|  
-|`CFile::typeUnicode`|Unicode モードを設定します (派生クラスのみで使用されます)。 アプリケーションが Unicode 構成でビルドされた場合、テキストは Unicode 形式でファイルに書き込まれます。 BOM はファイルに書き込まれません。|  
+|`CFile::typeBinary`|Sets binary mode (used in derived classes only).|  
+|`CFile::typeText`|Sets text mode with special processing for carriage return-linefeed pairs (used in derived classes only).|  
+|`CFile::typeUnicode`|Sets Unicode mode (used in derived classes only). Text is written to the file in Unicode format when the application is built in a Unicode configuration. No BOM is written to the file.|  
   
- 次のファイル共有モード オプションから 1 つのみ選択します。 既定のファイル共有モードは `CFile::shareExclusive` であり、これは排他的です。  
+ Choose only one of the following file share mode options. The default file share mode is `CFile::shareExclusive`, which is exclusive.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::shareDenyNone`|共有の制限はありません。|  
-|`CFile::shareDenyRead`|他のすべての読み取りアクセスを拒否します。|  
-|`CFile::shareDenyWrite`|他のすべての書き込みアクセスを拒否します。|  
-|`CFile::shareExclusive`|他のすべての読み取りおよび書き込みアクセスを拒否します。|  
+|`CFile::shareDenyNone`|No sharing restrictions.|  
+|`CFile::shareDenyRead`|Denies read access to all others.|  
+|`CFile::shareDenyWrite`|Denies write access to all others.|  
+|`CFile::shareExclusive`|Denies read and write access to all others.|  
   
- 次のファイル作成モード オプションから最初のオプションまたは両方を選択します。 既定の作成モードは `CFile::modeNoTruncate` であり、これは既存を開くです。  
+ Choose the first, or both, of the following file creation mode options. The default creation mode is `CFile::modeNoTruncate`, which is open existing.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::modeCreate`|ファイルが存在しない場合は、新しいファイルを作成します。 です。ファイルが既に存在する場合[CFileException](../../mfc/reference/cfileexception-class.md)が発生します。|  
-|`CFile::modeNoTruncate`|ファイルが存在しない場合は新しいファイルを作成します。ファイルが既に存在する場合は、そのファイルが `CFile` オブジェクトにアタッチされます。|  
+|`CFile::modeCreate`|Creates a new file if no file exists.; If the file already exists, [CFileException](../../mfc/reference/cfileexception-class.md) is raised.|  
+|`CFile::modeNoTruncate`|Creates a new file if no file exists; otherwise, if the file already exists, it is attached to the `CFile` object.|  
   
- 説明に従って次のファイル キャッシュ オプションを選択します。 既定では、オプションとしては選択できない汎用のキャッシュ スキームが使用されます。  
+ Choose the following file caching options as described. By default, the system uses a general purpose caching scheme that is not available as an option.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::osNoBuffer`|ファイルの中間キャッシュは使用されません。 このオプションを選択すると、次の 2 つのオプションは取り消されます。|  
-|`CFile::osRandomAccess`|ファイル キャッシュはランダム アクセスに対して最適化されます。 このオプションと順次スキャン オプションを一緒に使用しないでください。|  
-|`CFile::osSequentialScan`|ファイル キャッシュは順次アクセスに対して最適化されます。 このオプションとランダム アクセス オプションを一緒に使用しないでください。|  
-|`CFile::osWriteThrough`|書き込み操作が遅延なしで実行されます。|  
+|`CFile::osNoBuffer`|The system does not use an intermediate cache for the file. This option cancels the following 2 options.|  
+|`CFile::osRandomAccess`|The file cache is optimized for random access. Do not use this option and the sequential scan option.|  
+|`CFile::osSequentialScan`|The file cache is optimized for sequential access. Do not use this option and the random access option.|  
+|`CFile::osWriteThrough`|Write operations are performed without delay.|  
   
- ファイル ハンドルが継承されないようにするために、次のセキュリティ オプションを選択します。 既定では、新しい子プロセスはファイル ハンドルを使用できます。  
+ Choose the following security option to prevent the file handle from being inherited. By default, any new child processes can use the file handle.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::modeNoInherit`|子プロセスがファイル ハンドルを使用できないようにします。|  
+|`CFile::modeNoInherit`|Prevents any child processes from using the file handle.|  
   
- 既定のコンストラクターでは、メンバーは初期化されますが、ファイルは `CFile` オブジェクトにアタッチされません。 このコンス トラクターを使用すると、使用、 [CFile::Open](#open)ファイルを開くし、添付する方法、`CFile`オブジェクト。  
+ The default constructor initializes members but does not attach a file to the `CFile` object. After using this constructor, use the [CFile::Open](#open) method to open a file and attach it to the `CFile` object.  
   
- 1 つのパラメーターを持つコンストラクターでは、メンバーは初期化され、既存のファイルが `CFile` オブジェクトにアタッチされます。  
+ The constructor with one parameter initializes members and attaches an existing file to the `CFile` object.  
   
- 2 つのパラメーターを持つコンストラクターでは、メンバーは初期化され、指定されたファイルを開くことが試行されます。 このコンストラクターによって、指定されたファイルが正常に開かれると、ファイルは `CFile` オブジェクトにアタッチされます。それ以外の場合は、このコンストラクターによって `CInvalidArgException` オブジェクトへのポインターがスローされます。 例外を処理する方法の詳細については、次を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ The constructor with two parameters initializes members and tries to open the specified file. If this constructor successfully opens the specified file, the file is attached to the `CFile` object; otherwise, this constructor throws a pointer to a `CInvalidArgException` object. For more information about how to handle exceptions, see [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
- `CFile` オブジェクトによって、指定されたファイルが正常に開かれた場合、このファイルは `CFile` オブジェクトが破棄されたときに自動的に閉じられます。それ以外の場合は、`CFile` オブジェクトにアタッチされなくなった後でファイルを明示的に閉じる必要があります。  
+ If a `CFile` object successfully opens a specified file, it will close this file automatically when the `CFile` object is destroyed; otherwise, you must explicitly close the file after it is no longer attached to the `CFile` object.  
   
-### <a name="example"></a>例  
- `CFile` の使用例を次のコードに示します。  
+### <a name="example"></a>Example  
+ The following code shows how to use a `CFile`.  
   
- [!code-cpp[NVC_MFCFiles 4](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_2.cpp)]  
+ [!code-cpp[NVC_MFCFiles#4](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_2.cpp)]  
   
-##  <a name="close"></a>データ  
- このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りや書き込みに対して使用できなくなります。  
+##  <a name="close"></a>  CFile::Close  
+ Closes the file associated with this object and makes the file unavailable for reading or writing.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- オブジェクトを破棄する前に、ファイルを閉じていない場合、デストラクターがファイルを閉じます。  
+### <a name="remarks"></a>Remarks  
+ If you have not closed the file before destroying the object, the destructor closes it for you.  
   
- 使用した場合**新しい**を割り当て、`CFile`ヒープのオブジェクトの後に、ファイルを閉じて後に削除する必要があります。 **Close** sets `m_hFile` to `CFile::hFileNull`.  
+ If you used **new** to allocate the `CFile` object on the heap, then you must delete it after closing the file. **Close** sets `m_hFile` to `CFile::hFileNull`.  
   
-### <a name="example"></a>例  
- 例を参照して[ほか](#cfile)です。  
+### <a name="example"></a>Example  
+ See the example for [CFile::CFile](#cfile).  
   
-##  <a name="duplicate"></a>CFile::Duplicate  
- 重複を構築`CFile`指定されたファイルのオブジェクト。  
+##  <a name="duplicate"></a>  CFile::Duplicate  
+ Constructs a duplicate `CFile` object for a given file.  
   
 ```  
 virtual CFile* Duplicate() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 重複するへのポインター`CFile`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a duplicate `CFile` object.  
   
-### <a name="remarks"></a>コメント  
- これは、C ランタイム関数に相当`_dup`です。  
+### <a name="remarks"></a>Remarks  
+ This is equivalent to the C run-time function `_dup`.  
   
-##  <a name="flush"></a>CFile::Flush  
- ファイルに書き込まれるファイル バッファーの残りの部分を強制します。  
+##  <a name="flush"></a>  CFile::Flush  
+ Forces any data remaining in the file buffer to be written to the file.  
   
 ```  
 virtual void Flush();
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用`Flush`のフラッシュも限りません`CArchive`バッファー。 アーカイブを使用している場合は、呼び出す[ときは](../../mfc/reference/carchive-class.md#flush)最初。  
+### <a name="remarks"></a>Remarks  
+ The use of `Flush` does not guarantee flushing of `CArchive` buffers. If you are using an archive, call [CArchive::Flush](../../mfc/reference/carchive-class.md#flush) first.  
   
-### <a name="example"></a>例  
- 例を参照して[CFile::SetFilePath](#setfilepath)です。  
+### <a name="example"></a>Example  
+ See the example for [CFile::SetFilePath](#setfilepath).  
   
-##  <a name="getfilename"></a>CFile::GetFileName  
- 指定されたファイルの名前を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfilename"></a>  CFile::GetFileName  
+ Call this member function to retrieve the name of a specified file.  
   
 ```  
 virtual CString GetFileName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルの名前です。  
+### <a name="return-value"></a>Return Value  
+ The name of the file.  
   
-### <a name="remarks"></a>コメント  
- たとえば、呼び出す`GetFileName`ファイルについてユーザーにメッセージを生成する`c:\windows\write\myfile.wri`、ファイル名、`myfile.wri`が返されます。  
+### <a name="remarks"></a>Remarks  
+ For example, when you call `GetFileName` to generate a message to the user about the file `c:\windows\write\myfile.wri`, the filename, `myfile.wri`, is returned.  
   
- 名前を含む、ファイルの完全パスを返す呼び出します[まで含めた](#getfilepath)です。 ファイルのタイトルを取得する ( `myfile`)、呼び出す[GetFileTitle](#getfiletitle)です。  
+ To return the entire path of the file, including the name, call [GetFilePath](#getfilepath). To return the title of the file ( `myfile`), call [GetFileTitle](#getfiletitle).  
   
-### <a name="example"></a>例  
- 次のコード片では、システムが開きます。WINDOWS ディレクトリに INI ファイルです。 見つかると、例を印刷し、パスと名前、タイトル出力で示すようにします。  
+### <a name="example"></a>Example  
+ This code fragment opens the SYSTEM.INI file in your WINDOWS directory. If found, the example will print out the name and path and title, as shown under Output:  
   
- [!code-cpp[NVC_MFCFiles #6](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_3.cpp)]  
+ [!code-cpp[NVC_MFCFiles#6](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_3.cpp)]  
   
-##  <a name="getfilepath"></a>CFile::GetFilePath  
- 指定されたファイルの完全なパスを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfilepath"></a>  CFile::GetFilePath  
+ Call this member function to retrieve the full path of a specified file.  
   
 ```  
 virtual CString GetFilePath() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 指定されたファイルの完全パス。  
+### <a name="return-value"></a>Return Value  
+ The full path of the specified file.  
   
-### <a name="remarks"></a>コメント  
- たとえば、呼び出す`GetFilePath`ファイルについてユーザーにメッセージを生成する`c:\windows\write\myfile.wri`、ファイル パスで`c:\windows\write\myfile.wri`が返されます。  
+### <a name="remarks"></a>Remarks  
+ For example, when you call `GetFilePath` to generate a message to the user about the file `c:\windows\write\myfile.wri`, the file path, `c:\windows\write\myfile.wri`, is returned.  
   
- ファイルの名前だけを返す ( `myfile.wri`)、呼び出す[GetFileName](#getfilename)です。 ファイルのタイトルを取得する ( `myfile`)、呼び出す[GetFileTitle](#getfiletitle)です。  
+ To return just the name of the file ( `myfile.wri`), call [GetFileName](#getfilename). To return the title of the file ( `myfile`), call [GetFileTitle](#getfiletitle).  
   
-### <a name="example"></a>例  
- 例を参照して[GetFileName](#getfilename)です。  
+### <a name="example"></a>Example  
+ See the example for [GetFileName](#getfilename).  
   
-##  <a name="getfiletitle"></a>CFile::GetFileTitle  
- ファイルのファイルのタイトル (表示名) を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfiletitle"></a>  CFile::GetFileTitle  
+ Call this member function to retrieve the file title (the display name) for the file.  
   
 ```  
 virtual CString GetFileTitle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるファイルのタイトル。  
+### <a name="return-value"></a>Return Value  
+ The title of the underlying file.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを呼び出す[GetFileTitle](http://msdn.microsoft.com/library/windows/desktop/ms646924)ファイルのタイトルを取得します。 成功した場合、メソッドは、ユーザーにファイル名を表示したり、システムを使用する文字列を返します。 それ以外の場合、メソッドを呼び出して[PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)を基になるファイルのファイル名 (ファイル拡張子を含む) を取得します。 そのため、返されるファイルのタイトルの文字列にファイルの拡張子が含まれません常にします。 詳細については、次を参照してください。 [GetFileTitle](http://msdn.microsoft.com/library/windows/desktop/ms646924)と[PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method calls [GetFileTitle](http://msdn.microsoft.com/library/windows/desktop/ms646924) to retrieve the title of the file. If successful, the method returns the string that the system would use to display the file name to the user. Otherwise, the method calls [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589) to retrieve the file name (including the file extension) of the underlying file. Therefore, the file extension will not always be included in the returned file title string. For more information, see [GetFileTitle](http://msdn.microsoft.com/library/windows/desktop/ms646924) and [PathFindFileName](http://msdn.microsoft.com/library/windows/desktop/bb773589) in the Windows SDK.  
   
- 名前を含む、ファイルの完全パスを返す呼び出します[まで含めた](#getfilepath)です。 ファイルの名前だけを返すを呼び出す[GetFileName](#getfilename)です。  
+ To return the entire path of the file, including the name, call [GetFilePath](#getfilepath). To return just the name of the file, call [GetFileName](#getfilename).  
   
-### <a name="example"></a>例  
- 例を参照して[GetFileName](#getfilename)です。  
+### <a name="example"></a>Example  
+ See the example for [GetFileName](#getfilename).  
   
-##  <a name="getlength"></a>結び付けてその中  
- 現在の論理ファイルのバイトの長さを取得します。  
+##  <a name="getlength"></a>  CFile::GetLength  
+ Obtains the current logical length of the file in bytes.  
   
 ```  
 virtual ULONGLONG GetLength() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルの長さ。  
+### <a name="return-value"></a>Return Value  
+ The length of the file.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #7](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#7](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_4.cpp)]  
   
-##  <a name="getposition"></a>実行  
- 後続の呼び出しで使用できるファイル ポインターの現在の値を取得`Seek`です。  
+##  <a name="getposition"></a>  CFile::GetPosition  
+ Obtains the current value of the file pointer, which can be used in subsequent calls to `Seek`.  
   
 ```  
 virtual ULONGLONG GetPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルのポインターです。  
+### <a name="return-value"></a>Return Value  
+ The file pointer.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #8](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#8](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_5.cpp)]  
   
-##  <a name="getstatus"></a>Cfile::getstatus  
- このメソッドに関連するステータス情報を取得する指定された`CFile`オブジェクト インスタンスまたは指定されたファイル パス。  
+##  <a name="getstatus"></a>  CFile::GetStatus  
+ This method retrieves status information related to a given `CFile` object instance or a given file path.  
   
 ```  
 BOOL GetStatus(CFileStatus& rStatus) const;  
@@ -402,35 +425,35 @@ static BOOL PASCAL GetStatus(
     CAtlTransactionManager* pTM = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rStatus`  
- ユーザーが指定したへの参照を**CFileStatus**ステータス情報を受け取る。 **CFileStatus**構造体には、次のフィールド。  
+ A reference to a user-supplied **CFileStatus** structure that will receive the status information. The **CFileStatus** structure has the following fields:  
   
-- **CTime m_ctime**ファイルが作成された日付と時刻。  
+- **CTime m_ctime** The date and time the file was created.  
   
-- **CTime m_mtime**ファイルが最後に変更された日時。  
+- **CTime m_mtime** The date and time the file was last modified.  
   
-- **CTime m_atime**を読み取り、ファイルの最終アクセス日時。  
+- **CTime m_atime** The date and time the file was last accessed for reading.  
   
-- **使い m_size** (バイト単位)、DIR コマンドによって報告されたファイルの論理サイズ。  
+- **ULONGLONG m_size** The logical size of the file in bytes, as reported by the DIR command.  
   
-- **バイト m_attribute**ファイルの属性のバイト。  
+- **BYTE m_attribute** The attribute byte of the file.  
   
-- **char m_szFullName [_MAX_PATH]** Windows 文字セット内の絶対ファイル名。  
+- **char m_szFullName[_MAX_PATH]** The absolute filename in the Windows character set.  
   
  `lpszFileName`  
- Windows の文字の文字列は、パスを設定、目的のファイル。 相対パスまたは絶対パスを指定できますか、ネットワーク パス名を含めることができます。  
+ A string in the Windows character set that is the path to the desired file. The path can be relative or absolute, or it can contain a network path name.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**指定されたファイルの状態情報が正常に取得した、それ以外の場合は**FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if the status information for the specified file is successfully obtained; otherwise, **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- 静的でないバージョンの**GetStatus**に関連付けられた開いているファイルのステータス情報を取得、指定された`CFile`オブジェクト。  静的バージョン**GetStatus**実際には、ファイルを開くことがなく、指定されたファイル パスからファイルの状態を取得します。 これは、ファイルの存在とアクセス権を調べるに役立ちます。  
+### <a name="remarks"></a>Remarks  
+ The non-static version of **GetStatus** retrieves status information of the open file associated with the given `CFile` object.  The static version of **GetStatus** obtains the file status from a given file path without actually opening the file. This is useful for testing the existence and access rights of a file.  
   
- **M_attribute**のメンバー、 **CFileStatus**構造体は、ファイル属性のセットを参照します。 `CFile`クラスを提供、**属性**列挙型のため、シンボル ファイルの属性を指定することができます。  
+ The **m_attribute** member of the **CFileStatus** structure refers to the file attribute set. The `CFile` class provides the **Attribute** enumeration type so file attributes can be specified symbolically:  
   
 ```  
 enum Attribute {
@@ -444,25 +467,25 @@ enum Attribute {
     };
 ```    
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #10](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#10](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_6.cpp)]  
   
-##  <a name="hfilenull"></a>CFile::hFileNull  
- 有効なファイル ハンドルの有無を判断、`CFile`オブジェクト。  
+##  <a name="hfilenull"></a>  CFile::hFileNull  
+ Determines the presence of a valid file handle for the `CFile` object.  
   
 ```  
 static AFX_DATA const HANDLE hFileNull;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この定数はかどうかを使用、`CFile`オブジェクトが有効なファイル ハンドル。  
+### <a name="remarks"></a>Remarks  
+ This constant is used to determine if the `CFile` object has a valid file handle.  
   
- 次の例では、この操作を示しています。  
+ The following example demonstrates this operation:  
   
- [!code-cpp[NVC_MFCFiles # 22](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_7.cpp)]  
+ [!code-cpp[NVC_MFCFiles#22](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_7.cpp)]  
   
-##  <a name="lockrange"></a>CFile::LockRange  
- 例外をスローして、ファイルが既にロックされている場合、開いているファイル内のバイトの範囲をロックします。  
+##  <a name="lockrange"></a>  CFile::LockRange  
+ Locks a range of bytes in an open file, throwing an exception if the file is already locked.  
   
 ```  
 virtual void LockRange(
@@ -470,47 +493,47 @@ virtual void LockRange(
     ULONGLONG dwCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwPos`  
- ロックするバイト範囲の先頭のバイト オフセット。  
+ The byte offset of the start of the byte range to lock.  
   
  `dwCount`  
- ロックする範囲のバイト数。  
+ The number of bytes in the range to lock.  
   
-### <a name="remarks"></a>コメント  
- ファイル内のバイトをロックすると、他のプロセスがそれらのバイトにアクセスできなくなります。 ファイルの 1 つ以上の領域をロックすることができますが、重なり合う領域は許可されていません。  
+### <a name="remarks"></a>Remarks  
+ Locking bytes in a file prevents access to those bytes by other processes. You can lock more than one region of a file, but no overlapping regions are allowed.  
   
- 使用して、領域のロックを解除するときに、`UnlockRange`メンバー関数は、バイト範囲は、以前にロックされている領域に正確に対応する必要があります。 `LockRange`関数は、隣接する領域をマージしません。 ロックされている 2 つの領域が隣接している場合は、する必要がありますロックを解除する各地域とは別にします。  
+ When you unlock the region, using the `UnlockRange` member function, the byte range must correspond exactly to the region that was previously locked. The `LockRange` function does not merge adjacent regions; if two locked regions are adjacent, you must unlock each region separately.  
   
 > [!NOTE]
->  この関数は、 `CMemFile`-クラスを派生します。  
+>  This function is not available for the `CMemFile`-derived class.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #12](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#12](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
   
-##  <a name="m_hfile"></a>CFile::m_hFile  
- 開いているファイルのオペレーティング システム ファイル ハンドルが含まれています。  
+##  <a name="m_hfile"></a>  CFile::m_hFile  
+ Contains the operating-system file handle for an open file.  
   
 ```  
 HANDLE m_hFile;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `m_hFile`型のパブリック変数**UINT**です。 含まれている`CFile::hFileNull`(空のファイルをオペレーティング システム独立インジケーター)、ハンドルが割り当てられていない場合。  
+### <a name="remarks"></a>Remarks  
+ `m_hFile` is a public variable of type **UINT**. It contains `CFile::hFileNull` (an operating-system-independent empty file indicator) if the handle has not been assigned.  
   
- 使用`m_hFile`メンバーの意味は、派生クラスに依存するためには推奨されません。 `m_hFile`クラスを非ポリモーフィックなサポートするうえで利便性のためのパブリック メンバーになります。  
+ Use of `m_hFile` is not recommended because the member's meaning depends on the derived class. `m_hFile` is made a public member for convenience in supporting nonpolymorphic use of the class.  
   
-##  <a name="m_ptm"></a>CFile::m_pTM  
- ポインター、`CAtlTransactionManager`オブジェクト。  
+##  <a name="m_ptm"></a>  CFile::m_pTM  
+ Pointer to a `CAtlTransactionManager` object.  
   
 ```  
 CAtlTransactionManager* m_pTM;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="open"></a>CFile::Open  
- オーバーロードされます。 **開いている**、既定で使用するために設計されていますが`CFile`コンス トラクターです。  
+##  <a name="open"></a>  CFile::Open  
+ Overloaded. **Open** is designed for use with the default `CFile` constructor.  
   
 ```  
 virtual BOOL Open(
@@ -526,50 +549,50 @@ virtual BOOL Open(
     CFileException* pError = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFileName`  
- 目的のファイルのパスを表す文字列。 このパスは相対パス、絶対パス、またはネットワーク名 (UNC) にできます。  
+ A string that is the path to the desired file. The path can be relative, absolute, or a network name (UNC).  
   
  `nOpenFlags`  
- A **UINT**ファイルの共有とアクセス モードを定義します。 ファイルを開くときに実行するアクションを指定します。 ビットごとの OR を使用してオプションを組み合わせることができます ( **|** ) 演算子。 1 つのアクセス許可と 1 つの共有のオプションが必要です。**modeCreate**と**modeNoInherit**モードは省略可能です。 参照してください、 [CFile](#cfile)モード オプションの一覧のコンス トラクターです。  
+ A **UINT** that defines the file's sharing and access mode. It specifies the action to take when opening the file. You can combine options by using the bitwise-OR ( **&#124;** ) operator. One access permission and one share option are required; the **modeCreate** and **modeNoInherit** modes are optional. See the [CFile](#cfile) constructor for a list of mode options.  
   
  `pError`  
- 失敗した操作のステータスを受信する既存のファイルの例外オブジェクトへのポインター。  
+ A pointer to an existing file-exception object that will receive the status of a failed operation.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="return-value"></a>戻り値  
- 開くが成功した場合は 0 以外。それ以外の場合 0 を返します。 `pError`パラメーターは 0 が返される場合にのみ意味を持ちます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the open was successful; otherwise 0. The `pError` parameter is meaningful only if 0 is returned.  
   
-### <a name="remarks"></a>コメント  
- 2 つの関数は、通常は失敗ファイルを開くための「安全な」メソッドを形成します。  
+### <a name="remarks"></a>Remarks  
+ The two functions form a "safe" method for opening a file where a failure is a normal, expected condition.  
   
- 中に、`CFile`コンス トラクターは、エラー状態で例外をスロー**開く**が返されます**FALSE**エラー条件。 **開いている**初期化できますが、 [CFileException](../../mfc/reference/cfileexception-class.md)ただし、エラーを記述するオブジェクト。 指定しない場合、`pError`パラメーター、またはを渡した場合**NULL**の`pError`、**開く**が返されます**FALSE**スローしないと、`CFileException`です。 既存のポインターを渡す場合`CFileException`、および**開く**エラー検出すると、関数がいっぱいに、そのエラーを説明する情報を使用します。 どちらのケースは**開く**例外をスローします。  
+ While the `CFile` constructor will throw an exception in an error condition, **Open** will return **FALSE** for error conditions. **Open** can still initialize a [CFileException](../../mfc/reference/cfileexception-class.md) object to describe the error, however. If you don't supply the `pError` parameter, or if you pass **NULL** for `pError`, **Open** will return **FALSE** and not throw a `CFileException`. If you pass a pointer to an existing `CFileException`, and **Open** encounters an error, the function will fill it with information describing that error. In neither case will **Open** throw an exception.  
   
- 次の表に、考えられる結果の**開く**です。  
+ The following table describes the possible results of **Open**.  
   
-|`pError`|エラーが発生しました|戻り値|CFileException コンテンツ|  
+|`pError`|Error encountered|Return value|CFileException content|  
 |--------------|------------------------|------------------|----------------------------|  
-|**NULL**|いいえ|**場合は TRUE。**|適用なし|  
-|ポインター`CFileException`|いいえ|**場合は TRUE。**|変更なし|  
-|**NULL**|はい|**FALSE**|適用なし|  
-|ポインター`CFileException`|はい|**FALSE**|エラーを記述する初期化|  
+|**NULL**|No|**TRUE**|n/a|  
+|ptr to `CFileException`|No|**TRUE**|unchanged|  
+|**NULL**|Yes|**FALSE**|n/a|  
+|ptr to `CFileException`|Yes|**FALSE**|initialized to describe error|  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #13](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#13](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_9.cpp)]  
   
- [!code-cpp[NVC_MFCFiles #14](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_10.cpp)]  
+ [!code-cpp[NVC_MFCFiles#14](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_10.cpp)]  
   
-##  <a name="operator_handle"></a>CFile::operator ハンドル  
- この演算子を識別するハンドルを使用して、`CFile`などの関数オブジェクト[ReadFileEx](http://msdn.microsoft.com/library/windows/desktop/aa365468)と[GetFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724320)を想定して、`HANDLE`です。  
+##  <a name="operator_handle"></a>  CFile::operator HANDLE  
+ Use this operator to pass a handle to a `CFile` object to functions such as [ReadFileEx](http://msdn.microsoft.com/library/windows/desktop/aa365468) and [GetFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724320) that expect a `HANDLE`.  
   
 ```  
 operator HANDLE() const;  
 ```  
   
-##  <a name="read"></a>:Read  
- 関連付けられているファイルからバッファーにデータを読み取り、`CFile`オブジェクト。  
+##  <a name="read"></a>  CFile::Read  
+ Reads data into a buffer from the file associated with the `CFile` object.  
   
 ```  
 virtual UINT Read(
@@ -577,23 +600,23 @@ virtual UINT Read(
     UINT nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpBuf`  
- ファイルから読み取られるデータを受信するユーザーが指定したバッファーへのポインター。  
+ Pointer to the user-supplied buffer that is to receive the data read from the file.  
   
  `nCount`  
- ファイルから読み取られるバイトの最大数。 テキスト モードのファイルには、キャリッジ リターンとライン フィードのペアは 1 つの文字としてカウントされます。  
+ The maximum number of bytes to be read from the file. For text-mode files, carriage return-linefeed pairs are counted as single characters.  
   
-### <a name="return-value"></a>戻り値  
- バッファーに転送するバイト数。 すべての`CFile`クラスを戻り値にすることがありますより小さい`nCount`ファイルの末尾に達した場合。  
+### <a name="return-value"></a>Return Value  
+ The number of bytes transferred to the buffer. Note that for all `CFile` classes, the return value may be less than `nCount` if the end of file was reached.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #15](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#15](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_11.cpp)]  
   
- 別の例を参照してください。 [CFile::Open](#open)です。  
+ For another example see [CFile::Open](#open).  
   
-##  <a name="remove"></a>CFile::Remove  
- この静的関数では、パスで指定されたファイルを削除します。  
+##  <a name="remove"></a>  CFile::Remove  
+ This static function deletes the file specified by the path.  
   
 ```  
 static void PASCAL Remove(
@@ -601,23 +624,23 @@ static void PASCAL Remove(
     CAtlTransactionManager* pTM = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFileName`  
- 目的のファイルのパスを表す文字列。 パスは相対パスまたは絶対とネットワーク名を含めることができます。  
+ A string that is the path to the desired file. The path can be relative or absolute, and can contain a network name.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="remarks"></a>コメント  
- ディレクトリは削除されません。  
+### <a name="remarks"></a>Remarks  
+ It will not remove a directory.  
   
- **削除**接続されているファイルが開いている場合、またはファイルを削除できない場合は、メンバー関数が例外をスローします。 これは、DEL コマンドに相当します。  
+ The **Remove** member function throws an exception if the connected file is open or if the file cannot be removed. This is equivalent to the DEL command.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles 17](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#17](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_12.cpp)]  
   
-##  <a name="rename"></a>CFile::Rename  
- この静的関数には、指定したファイルが名前を変更します。  
+##  <a name="rename"></a>  CFile::Rename  
+ This static function renames the specified file.  
   
 ```  
 static void PASCAL Rename(
@@ -626,24 +649,24 @@ static void PASCAL Rename(
     CAtlTransactionManager* pTM = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszOldName`  
- 古いパスです。  
+ The old path.  
   
  `lpszNewName`  
- 新しいパス。  
+ The new path.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="remarks"></a>コメント  
- ディレクトリの名前を変更することはできません。 これは、REN コマンドに相当します。  
+### <a name="remarks"></a>Remarks  
+ Directories cannot be renamed. This is equivalent to the REN command.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles # 18](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#18](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_13.cpp)]  
   
-##  <a name="seek"></a>CFile::Seek  
- 開いているファイルのファイル ポインターを移動します。  
+##  <a name="seek"></a>  CFile::Seek  
+ Repositions the file pointer in an open file.  
   
 ```  
 virtual ULONGLONG Seek(
@@ -651,103 +674,103 @@ LONGLONG lOff,
 UINT nFrom);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lOff`  
- ファイル ポインターを移動するバイト数。 正の値が、ファイルの末尾にかけてファイル ポインターを移動します。負の値は、ファイルの先頭に向かってファイル ポインターを移動します。  
+ Number of bytes to move the file pointer. Positive values move the file pointer towards the end of the file; negative values move the file pointer towards the start of the file.  
   
  `nFrom`  
- シークを開始する位置。 使用可能な値は、「解説」を参照してください。  
+ Position to seek from. See the Remarks section for possible values.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は、ファイル ポインターの位置それ以外の場合、戻り値は未定義とへのポインター、`CFileException`例外がスローされます。  
+### <a name="return-value"></a>Return Value  
+ The position of the file pointer if the method was successful; otherwise, the return value is undefined and a pointer to a `CFileException` exception is thrown.  
   
-### <a name="remarks"></a>コメント  
- 次の表に、可能な値、`nFrom`パラメーター。  
+### <a name="remarks"></a>Remarks  
+ The following table lists possible values for the `nFrom` parameter.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`CFile::begin`|ファイルの先頭からのシークします。|  
-|`CFile::current`|シーク ファイル ポインターの現在の場所からします。|  
-|`CFile::end`|ファイルの末尾からのシークします。|  
+|`CFile::begin`|Seek from the start of the file.|  
+|`CFile::current`|Seek from the current location of the file pointer.|  
+|`CFile::end`|Seek from the end of the file.|  
   
- ファイルが開かれたときに、ファイル ポインターは、0 の場合、ファイルの先頭に配置されます。  
+ When a file is opened, the file pointer is positioned at 0, the start of the file.  
   
- ファイル ポインターは、ファイルの末尾の次の位置を設定できます。 これを行う場合、ファイルのサイズは、ファイルに書き込むまで増加しません。  
+ You can set the file pointer to a position beyond the end of a file. If you do this, the size of the file does not increase until you write to the file.  
   
- このメソッドの例外ハンドラーは、例外が処理された後、例外オブジェクトを削除する必要があります。  
+ The exception handler for this method must delete the exception object after the exception is processed.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #9](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_14.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#9](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_14.cpp)]  
   
-##  <a name="seektobegin"></a>CFile::SeekToBegin  
- ファイルの先頭には、ファイル ポインターの値を設定します。  
+##  <a name="seektobegin"></a>  CFile::SeekToBegin  
+ Sets the value of the file pointer to the beginning of the file.  
   
 ```  
 void SeekToBegin();
 ```  
   
-### <a name="remarks"></a>コメント  
- `SeekToBegin()` は `Seek( 0L, CFile::begin )` と同じです。  
+### <a name="remarks"></a>Remarks  
+ `SeekToBegin()` is equivalent to `Seek( 0L, CFile::begin )`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #19](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#19](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
   
-##  <a name="seektoend"></a>CFile::SeekToEnd  
- 論理ファイルの末尾にファイル ポインターの値を設定します。  
+##  <a name="seektoend"></a>  CFile::SeekToEnd  
+ Sets the value of the file pointer to the logical end of the file.  
   
 ```  
 ULONGLONG SeekToEnd();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルの長さをバイト単位で返します。  
+### <a name="return-value"></a>Return Value  
+ The length of the file in bytes.  
   
-### <a name="remarks"></a>コメント  
- `SeekToEnd()` は `CFile::Seek( 0L, CFile::end )` と同じです。  
+### <a name="remarks"></a>Remarks  
+ `SeekToEnd()` is equivalent to `CFile::Seek( 0L, CFile::end )`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #19](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#19](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_15.cpp)]  
   
-##  <a name="setfilepath"></a>CFile::SetFilePath  
- ファイルのパスを指定するには、この関数を呼び出すたとえば、次の場合、ファイルのパスは使用できません、 [CFile](../../mfc/reference/cfile-class.md)オブジェクトを構築、呼び出す`SetFilePath`を指定します。  
+##  <a name="setfilepath"></a>  CFile::SetFilePath  
+ Call this function to specify the path of the file; for example, if the path of a file is not available when a [CFile](../../mfc/reference/cfile-class.md) object is constructed, call `SetFilePath` to provide it.  
   
 ```  
 virtual void SetFilePath(LPCTSTR lpszNewName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszNewName`  
- 新しいパスを指定する文字列へのポインター。  
+ Pointer to a string specifying the new path.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
-> `SetFilePath`いないファイルを開くか、ファイルを作成しませんこれを単に関連付ける、`CFile`オブジェクトを使用してパス名を使用します。  
+> `SetFilePath` does not open the file or create the file; it simply associates the `CFile` object with a path name, which can then be used.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #20](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_16.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#20](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_16.cpp)]  
   
-##  <a name="setlength"></a>CFile::SetLength  
- ファイルの長さを変更するには、この関数を呼び出します。  
+##  <a name="setlength"></a>  CFile::SetLength  
+ Call this function to change the length of the file.  
   
 ```  
 virtual void SetLength(ULONGLONG dwNewLen);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwNewLen`  
- 目的のファイルのバイトの長さです。 この値は、ファイルの現在の長さより大きくまたは小さくすることができます。 このファイルは拡張か、必要に応じて切り捨てられます。  
+ Desired length of the file in bytes. This value can be larger or smaller than the current length of the file. The file will be extended or truncated as appropriate.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  `CMemFile`、この関数は、`CMemoryException`オブジェクト。  
+>  With `CMemFile`, this function could throw a `CMemoryException` object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #11](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_17.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#11](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_17.cpp)]  
   
-##  <a name="setstatus"></a>CFile::SetStatus  
- このファイルの場所に関連付けられているファイルの状態を設定します。  
+##  <a name="setstatus"></a>  CFile::SetStatus  
+ Sets the status of the file associated with this file location.  
   
 ```  
 static void PASCAL SetStatus(
@@ -756,26 +779,26 @@ static void PASCAL SetStatus(
     CAtlTransactionManager* pTM = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFileName`  
- 目的のファイルのパスを表す文字列。 パスは相対パスまたは絶対とネットワーク名を含めることができます。  
+ A string that is the path to the desired file. The path can be relative or absolute, and can contain a network name.  
   
  *status*  
- 新しいステータス情報を保持するバッファー。 呼び出す、 **GetStatus** prefill するメンバー関数、 **CFileStatus**を現在の値を構造化し、必要に応じて変更します。 値が 0 の場合、対応する状態の項目は更新されません。 参照してください、 [GetStatus](#getstatus)メンバー関数の詳細については、 **CFileStatus**構造体。  
+ The buffer containing the new status information. Call the **GetStatus** member function to prefill the **CFileStatus** structure with current values, then make changes as required. If a value is 0, then the corresponding status item is not updated. See the [GetStatus](#getstatus) member function for a description of the **CFileStatus** structure.  
   
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="remarks"></a>コメント  
- 時間を設定するには、変更、 **m_mtime**フィールド*ステータス*です。  
+### <a name="remarks"></a>Remarks  
+ To set the time, modify the **m_mtime** field of *status*.  
   
- 呼び出しを行うとことに注意してください`SetStatus`、ファイルの属性のみを変更しようと**m_mtime**ファイルの状態の構造体のメンバーがゼロ以外、属性もがあります (スタンプでは、属性に副作用があります時刻を変更する)。 ファイルの属性だけを変更する場合は、まず設定、 **m_mtime** 、ファイルの状態構造体のメンバーがゼロにへの呼び出しを行う`SetStatus`です。  
+ Please note that when you make a call to `SetStatus` in an attempt to change only the attributes of the file, and the **m_mtime** member of the file status structure is nonzero, the attributes may also be affected (changing the time stamp may have side effects on the attributes). If you want to only change the attributes of the file, first set the **m_mtime** member of the file status structure to zero and then make a call to `SetStatus`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles # 21](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_18.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#21](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_18.cpp)]  
   
-##  <a name="unlockrange"></a>CFile::UnlockRange  
- 開いているファイル内のバイト範囲ロックを解除します。  
+##  <a name="unlockrange"></a>  CFile::UnlockRange  
+ Unlocks a range of bytes in an open file.  
   
 ```  
 virtual void UnlockRange(
@@ -783,24 +806,24 @@ virtual void UnlockRange(
     ULONGLONG dwCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwPos`  
- ロックを解除するバイトの範囲の先頭のバイト オフセット。  
+ The byte offset of the start of the byte range to unlock.  
   
  `dwCount`  
- ロックを解除する範囲のバイト数。  
+ The number of bytes in the range to unlock.  
   
-### <a name="remarks"></a>コメント  
- 説明を参照して、 [LockRange](#lockrange)詳細については、メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ See the description of the [LockRange](#lockrange) member function for details.  
   
 > [!NOTE]
->  この関数は、 `CMemFile`-クラスを派生します。  
+>  This function is not available for the `CMemFile`-derived class.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #12](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#12](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_8.cpp)]  
   
-##  <a name="write"></a>CFile::Write  
- バッファーからデータに関連付けられているファイルに書き込みます、`CFile`オブジェクト。  
+##  <a name="write"></a>  CFile::Write  
+ Writes data from a buffer to the file associated with the `CFile` object.  
   
 ```  
 virtual void Write(
@@ -808,25 +831,25 @@ virtual void Write(
     UINT nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpBuf`  
- ファイルに書き込まれるデータを格納しているユーザーが指定したバッファーへのポインター。  
+ A pointer to the user-supplied buffer that contains the data to be written to the file.  
   
  `nCount`  
- バッファーから転送されるバイト数。 テキスト モードのファイルには、キャリッジ リターンとライン フィードのペアは 1 つの文字としてカウントされます。  
+ The number of bytes to be transferred from the buffer. For text-mode files, carriage return-linefeed pairs are counted as single characters.  
   
-### <a name="remarks"></a>コメント  
- **書き込む**ディスクの空き容量の条件を含む、いくつかの条件への応答で例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ **Write** throws an exception in response to several conditions, including the disk-full condition.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #16](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_19.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#16](../../atl-mfc-shared/reference/codesnippet/cpp/cfile-class_19.cpp)]  
   
- さらに、例を参照[ほか](#cfile)と[CFile::Open](#open)です。  
+ In addition, see the examples for [CFile::CFile](#cfile) and [CFile::Open](#open).  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル DRAWCLI](../../visual-cpp-samples.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CStdioFile クラス](../../mfc/reference/cstdiofile-class.md)   
- [CMemFile クラス](../../mfc/reference/cmemfile-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample DRAWCLI](../../visual-cpp-samples.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CStdioFile Class](../../mfc/reference/cstdiofile-class.md)   
+ [CMemFile Class](../../mfc/reference/cmemfile-class.md)
 

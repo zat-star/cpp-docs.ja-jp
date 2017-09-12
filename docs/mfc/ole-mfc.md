@@ -1,47 +1,65 @@
 ---
-title: "OLE (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], ユーザー インターフェイス"
-  - "OLE [C++], ユーザー インターフェイスのトピック"
-  - "OLE アプリケーション [C++], ユーザー インターフェイス"
-  - "ユーザー インターフェイス, OLE"
+title: OLE (MFC) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE [MFC], user-interface topics
+- OLE applications [MFC], user interface
+- user interfaces, OLE
+- applications [OLE], user interface
 ms.assetid: 61cb5d3e-1108-4e9b-b301-a8d8fcc586cb
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# OLE (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 098e40f6027715e67b361b899bbf13459e7c4979
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プログラムの OLE 機能を実装するには、いくつかの方法で、ユーザー インターフェイスに影響します:  
+---
+# <a name="ole-mfc"></a>OLE (MFC)
+Implementing OLE functionality in your program affects your user interface in several ways:  
   
--   ビジュアル編集 \(埋め込み先編集の有効化\)、プログラムのウィンドウの別のプログラムのユーザー インターフェイスを表示し、ほかのプログラムからの項目を含むプログラムのメニューを変更します。  
+-   Visual editing (in-place activation) displays the user interface of another program in your program's windows and modifies your program's menus with items from the other program.  
   
--   ウィンドウ内およびコントロール間で、プログラムの間でオブジェクトをドラッグできるようにするためのユーザーをドラッグ アンド ドロップします。  
+-   Drag and drop allows users to drag objects within and between windows and even between programs.  
   
--   TRACKER はビジュアル編集時にオブジェクトの状態にビジュアル キューを提供し、ドラッグ アンド ドロップします。  
+-   Trackers provide visual cues to the state of objects during visual editing and drag and drop.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [OLE と MFC](../mfc/ole-in-mfc.md)  
+-   [OLE and MFC](../mfc/ole-in-mfc.md)  
   
--   [ビジュアル編集 \(アクティブ\)](../mfc/activation-cpp.md)  
+-   [Visual Editing (Activation)](../mfc/activation-cpp.md)  
   
--   [ドラッグ アンド ドロップ](../mfc/drag-and-drop-ole.md)  
+-   [Drag and Drop](../mfc/drag-and-drop-ole.md)  
   
--   [トラッカー](../mfc/trackers.md)  
+-   [Trackers](../mfc/trackers.md)  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)
+

@@ -1,93 +1,112 @@
 ---
-title: "フレーム ウィンドウ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CFrameWnd クラス, フレーム ウィンドウ"
-  - "ドキュメント フレーム ウィンドウ"
-  - "フレーム ウィンドウ [C++]"
-  - "フレーム ウィンドウ [C++], フレーム ウィンドウの概要"
-  - "MDI [C++], フレーム ウィンドウ"
-  - "MFC [C++], フレーム ウィンドウ"
-  - "シングル ドキュメント インターフェイス (SDI)"
-  - "シングル ドキュメント インターフェイス (SDI), フレーム ウィンドウ"
-  - "分割ウィンドウ, およびフレーム ウィンドウ"
-  - "ビュー [C++], およびフレーム ウィンドウ"
-  - "ウィンドウ クラス [C++], フレーム"
-  - "ウィンドウ [C++], MDI"
+title: Frame Windows | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- document frame windows [MFC]
+- windows [MFC], MDI
+- window classes [MFC], frame
+- single document interface (SDI) [MFC]
+- single document interface (SDI) [MFC], frame windows
+- views [MFC], and frame windows
+- CFrameWnd class [MFC], frame windows
+- frame windows [MFC]
+- frame windows [MFC], about frame widows
+- MFC, frame windows
+- MDI [MFC], frame windows
+- splitter windows [MFC], and frame windows
 ms.assetid: 40677339-8135-4f5e-aba6-3fced3078077
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# フレーム ウィンドウ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6e53a48c981fa6e470c33e54ef24bbb9bf500f09
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Windows の下でアプリケーションが実行されるフレーム ウィンドウに表示されるドキュメント、ユーザーと対話している場合。  ドキュメント フレーム ウィンドウは、2 種類の主要コンポーネントがあります: フレームと構築コンテンツ。  ドキュメント フレーム ウィンドウは [シングル ドキュメント インターフェイス](../mfc/sdi-and-mdi.md) \(SDI\) のフレーム ウィンドウまたは [マルチ ドキュメント インターフェイス](../mfc/sdi-and-mdi.md) \(MDI\) の子ウィンドウのいずれかです。  Windows は、フレーム ウィンドウに対するユーザーの操作のほとんどを管理する: ウィンドウを、移動、サイズ変更、および最小化すると最大化を閉じます。  フレーム内のコンテンツを管理します。  
+---
+# <a name="frame-windows"></a>Frame Windows
+When an application runs under Windows, the user interacts with documents displayed in frame windows. A document frame window has two major components: the frame and the contents that it frames. A document frame window can be a [single document interface](../mfc/sdi-and-mdi.md) (SDI) frame window or a [multiple document interface](../mfc/sdi-and-mdi.md) (MDI) child window. Windows manages most of the user's interaction with the frame window: moving and resizing the window, closing it, and minimizing and maximizing it. You manage the contents inside the frame.  
   
-## フレーム ウィンドウとビュー  
- MFC フレームワークはビューの格納にフレーム ウィンドウを使用します。  2 のコンポーネントは、MFC の 2 種類のクラスによって—フレームと内容—表され、管理されます。  フレーム ウィンドウ クラスでフレームを管理し、ビュー クラスはコンテンツを管理します。  ビュー ウィンドウがフレーム ウィンドウの子です。  ドキュメントに描画し、他のユーザーとの対話はビューのクライアント領域フレーム ウィンドウのクライアント領域ではなくで発生します。  フレーム ウィンドウがビューの周囲に表示されるフレームを提供し、コントロール メニューなど、キャプション バーと標準のコントロール、ボタンでウィンドウのサイズを変更するためのウィンドウやコントロールを最小化、最大化するために実行されます。  「コンテンツ」は子ウィンドウ \(ビューによって完全にするウィンドウのクライアント領域から構成されます。  次の図は、フレーム ウィンドウとビューの関係を示します。  
+## <a name="frame-windows-and-views"></a>Frame Windows and Views  
+ The MFC framework uses frame windows to contain views. The two components — frame and contents — are represented and managed by two different classes in MFC. A frame-window class manages the frame, and a view class manages the contents. The view window is a child of the frame window. Drawing and other user interaction with the document take place in the view's client area, not the frame window's client area. The frame window provides a visible frame around a view, complete with a caption bar and standard window controls such as a control menu, buttons to minimize and maximize the window, and controls for resizing the window. The "contents" consist of the window's client area, which is fully occupied by a child window — the view. The following figure shows the relationship between a frame window and a view.  
   
- ![フレーム ウィンドウ ビュー](../mfc/media/vc37fx1.gif "vc37FX1")  
-フレーム ウィンドウとビュー  
+ ![Frame window view](../mfc/media/vc37fx1.gif "vc37fx1")  
+Frame Window and View  
   
-## フレーム ウィンドウ、分割ウィンドウ  
- もう一つの一般的な配置は [分割ウィンドウ](../mfc/multiple-document-types-views-and-frame-windows.md)を使用して複数のビュー、通常は構築フレーム ウィンドウ用です。  分割ウィンドウで、フレーム ウィンドウのクライアント領域には、複数の子ウィンドウを持つビューのペインという分割ウィンドウ、占められます。  
+## <a name="frame-windows-and-splitter-windows"></a>Frame Windows and Splitter Windows  
+ Another common arrangement is for the frame window to frame multiple views, usually using a [splitter window](../mfc/multiple-document-types-views-and-frame-windows.md). In a splitter window, the frame window's client area is occupied by a splitter window, which in turn has multiple child windows, called panes, which are views.  
   
-### さらに詳しくは次のトピックをクリックしてください  
- **概要のフレーム ウィンドウに関するトピック**  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
+ **General Frame Window Topics**  
   
--   [ウィンドウ オブジェクト](../mfc/window-objects.md)  
+-   [Window objects](../mfc/window-objects.md)  
   
--   [フレーム ウィンドウ クラス](../mfc/frame-window-classes.md)  
+-   [Frame window classes](../mfc/frame-window-classes.md)  
   
--   [アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス](../mfc/frame-window-classes-created-by-the-application-wizard.md)  
+-   [The Frame-Window classes created by the Application Wizard](../mfc/frame-window-classes-created-by-the-application-wizard.md)  
   
--   [フレーム ウィンドウのスタイル](../Topic/Frame-Window%20Styles%20\(C++\).md)  
+-   [Frame window styles](../mfc/frame-window-styles-cpp.md)  
   
--   [どのフレーム ウィンドウです。](../mfc/what-frame-windows-do.md)  
+-   [What frame windows do](../mfc/what-frame-windows-do.md)  
   
- **フレーム ウィンドウのトピック**  
+ **Topics on Using Frame Windows**  
   
--   [フレーム ウィンドウを使用する](../Topic/Using%20Frame%20Windows.md)  
+-   [Using frame windows](../mfc/using-frame-windows.md)  
   
--   [ドキュメント フレーム ウィンドウの作成](../Topic/Creating%20Document%20Frame%20Windows.md)  
+-   [Creating document frame windows](../mfc/creating-document-frame-windows.md)  
   
--   [破棄のフレーム ウィンドウ](../mfc/destroying-frame-windows.md)  
+-   [Destroying frame windows](../mfc/destroying-frame-windows.md)  
   
--   [MDI 子ウィンドウの管理](../mfc/managing-mdi-child-windows.md)  
+-   [Managing MDI child windows](../mfc/managing-mdi-child-windows.md)  
   
--   複数のビューを含むフレーム ウィンドウの[現在のビューの管理](../mfc/managing-the-current-view.md)  
+-   [Managing the current view](../mfc/managing-the-current-view.md) in a frame window that contains more than one view  
   
--   [管理メニュー、コントロール バーとアクセラレータ \(フレーム ウィンドウのスペースを共有するそのほかのオブジェクト\)](../mfc/managing-menus-control-bars-and-accelerators.md)  
+-   [Managing menus, control bars, and accelerators (other objects that share the frame window's space)](../mfc/managing-menus-control-bars-and-accelerators.md)  
   
- **特別なフレーム ウィンドウの機能のトピック**  
+ **Topics on Special Frame Window Capabilities**  
   
--   フレーム ウィンドウへのファイル エクスプローラーまたはファイル マネージャーから[ドラッグ アンド ドロップ ファイル](../Topic/Dragging%20and%20Dropping%20Files%20in%20a%20Frame%20Window.md)  
+-   [Dragging and dropping files](../mfc/dragging-and-dropping-files-in-a-frame-window.md) from File Explorer or File Manager into a frame window  
   
--   [ダイナミック データ エクスチェンジ \(DDE\) への応答](../mfc/responding-to-dynamic-data-exchange-dde.md)  
+-   [Responding to dynamic data exchange (DDE)](../mfc/responding-to-dynamic-data-exchange-dde.md)  
   
--   [Semimodal の状態: 状況依存の Windows ヘルプ \(他のウィンドウ操作を調整するに編曲\)](../mfc/orchestrating-other-window-actions.md)  
+-   [Semimodal states: Context-sensitive Windows Help (Orchestrating other window actions)](../mfc/orchestrating-other-window-actions.md)  
   
--   [Semimodal の状態: 印刷と印刷プレビュー \(他のウィンドウ操作を調整するに編曲\)](../mfc/orchestrating-other-window-actions.md)  
+-   [Semimodal states: printing and print preview (Orchestrating other window actions)](../mfc/orchestrating-other-window-actions.md)  
   
- **他の種類の Windows のトピック**  
+ **Topics on Other Kinds of Windows**  
   
--   [ビューを使用する](../mfc/using-views.md)  
+-   [Using Views](../mfc/using-views.md)  
   
--   [ダイアログ ボックス](../mfc/dialog-boxes.md)  
+-   [Dialog boxes](../mfc/dialog-boxes.md)  
   
--   [コントロール](../mfc/controls-mfc.md)  
+-   [Controls](../mfc/controls-mfc.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [Windows](../mfc/windows.md)
+
+

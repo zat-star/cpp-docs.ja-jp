@@ -1,49 +1,67 @@
 ---
-title: "データベース アプリケーションの作成手順 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [MFC], データベース"
-  - "データベース アプリケーション [C++]"
-  - "データベース アプリケーション [C++], 作成"
-  - "MFC [C++], データベース アプリケーション"
+title: Sequence of Operations for Creating Database Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- applications [MFC], database
+- database applications [MFC]
+- database applications [MFC], creating
+- MFC, database applications
 ms.assetid: 9371da59-8536-43cd-8314-706ad320e2ec
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# データベース アプリケーションの作成手順
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fdb4f76b3dcd3f62af27c7cac37956aff74cb60c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-次の表は、書き込みのデータベース アプリケーションのロールおよびフレームワークの役割を示しています。  
+---
+# <a name="sequence-of-operations-for-creating-database-applications"></a>Sequence of Operations for Creating Database Applications
+The following table shows your role and the framework's role in writing database applications.  
   
 > [!NOTE]
->  Visual C\+\+ .NET では、Visual C\+\+ 開発環境およびウィザードでは DAO はサポートされなくなりました \(DAO クラスは含まれているので、このクラスを使うことはできます\)。  Microsoft では、新しい MFC プロジェクトに ODBC を使用することをお勧めします。  DAO は、既存のアプリケーションを保守するためだけに使用してください。  
+>  As of Visual C++ .NET, the Visual C++ environment and wizards no longer support DAO (although the DAO classes are included and you can still use them). Microsoft recommends that you use ODBC for new MFC projects. You should only use DAO in maintaining existing applications.  
   
-### データベース アプリケーションの作成  
+### <a name="creating-database-applications"></a>Creating Database Applications  
   
-|タスク|プログラマの作業|フレームワークの働き|  
-|---------|--------------|----------------|  
-|ODBC データベースまたは MFC DAO クラスを使用するかどうかを決定します。|新しい MFC のプロジェクトで ODBC を使用します。  既存のアプリケーションを保守するためだけに DAO を使用します。  [私は、DAO や ODBC を使用すればよいでしょうか。](../data/should-i-use-dao-or-odbc-q.md)を参照してください。  概要については、[データ アクセス プログラミング](../data/data-access-programming-mfc-atl.md)記事を参照してください。|フレームワークは、データベース アクセスをサポートするクラスが用意されています。|  
-|データベース オプションとスケルトン アプリケーションを作成します。|MFC アプリケーション ウィザードを実行します。  データベース サポート ページでオプションを選択します。  レコード ビューを作成するオプションを選択した場合は、指定する:<br /><br /> -   データ ソースとテーブル名または<br />-   クエリ名か。|MFC アプリケーション ウィザードでは、ファイルを作成し、必要な値を含むを指定します。  このファイルは、指定したオプションによってレコードセット クラスを含めることができます。|  
-|データベースのフォームをデザインします。|レコード ビュー クラスのダイアログ テンプレート リソースを基にコントロールを配置するには、Visual C\+\+ ダイアログ エディターを使用します。|MFC アプリケーション ウィザードが表示するための空のダイアログ テンプレート リソースを作成します。|  
-|必要に応じて、追加レコード ビューとレコードセット クラスを作成します。|クラスとダイアログ エディター ビューをデザイン時に作成するには、クラス ビューを使用してください。|クラス ビューでは、新しいクラスの追加ファイルを作成します。|  
-|コードで必要なレコードセット オブジェクトを作成します。  使用するレコードを操作するために各レコードセットを…|レコードセットは、ウィザードで [CRecordset](../Topic/CRecordset%20Class.md) から派生されるクラスに基づいています。|ODBC は、データベースとレコードセットのフィールド データ メンバー間でデータを交換するレコード フィールド エクスチェンジ \(RFX\) "を参照してください。  レコード ビュー、ダイアログのレコード ビューのコントロールとレコードセット間のダイアログ データ エクスチェンジ \(DDX\) データ交換を使用します。|  
-|…または開くデータベースごとのコード内で明示 [CDatabase](../mfc/reference/cdatabase-class.md) を作成します。|データベース オブジェクトにレコードセット オブジェクトを適用します。|データベース オブジェクトは、データ ソースへのインターフェイスを提供します。|  
-|レコードセットの動的にバインドされます。|ODBC では、バインディングを管理するために派生レコードセット クラスにコードを追加します。  [レコードセット: データ列を動的に結び付ける方法 \(ODBC\)](../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)記事を参照してください。||  
+|Task|You do|The framework does|  
+|----------|------------|------------------------|  
+|Decide whether to use the MFC ODBC or DAO classes.|Use ODBC for new MFC projects. Use DAO only to maintain existing applications. For general information, see the article [Data Access Programming](../data/data-access-programming-mfc-atl.md).|The framework supplies classes that support database access.|  
+|Create your skeleton application with database options.|Run the MFC Application Wizard. Select options on the Database Support page. If you choose an option that creates a record view, also specify:<br /><br /> -   Data source and table name or names<br />-   Query name or names.|The MFC Application Wizard creates files and specifies the necessary includes. Depending on the options you specify, the files can include a recordset class.|  
+|Design your database form or forms.|Use the Visual C++ dialog editor to place controls on the dialog template resources for your record view classes.|The MFC Application Wizard creates an empty dialog template resource for you to fill in.|  
+|Create additional record view and recordset classes as needed.|Use Class View to create the classes and the dialog editor to design the views.|Class View creates additional files for your new classes.|  
+|Create recordset objects as needed in your code. Use each recordset to manipulate records...|Your recordsets are based on the classes derived from [CRecordset](../mfc/reference/crecordset-class.md) with the wizards.|ODBC uses record field exchange (RFX) to exchange data between the database and your recordset's field data members. If you are using a record view, dialog data exchange (DDX) exchanges data between the recordset and the controls on the record view.|  
+|...or create an explicit [CDatabase](../mfc/reference/cdatabase-class.md) in your code for each database you want to open.|Base your recordset objects on the database objects.|The database object provides an interface to the data source.|  
+|Bind data columns to your recordset dynamically.|In ODBC, add code to your derived recordset class to manage the binding. See the article [Recordset: Dynamically Binding Data Columns (ODBC)](../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).||  
   
-## 参照  
- [フレームワークを使ったアプリケーションの作成](../mfc/building-on-the-framework.md)   
- [MFC アプリケーションの作成手順](../mfc/sequence-of-operations-for-building-mfc-applications.md)   
- [OLE アプリケーションの作成手順](../mfc/sequence-of-operations-for-creating-ole-applications.md)   
- [ActiveX コントロールの作成手順](../mfc/sequence-of-operations-for-creating-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [Building on the Framework](../mfc/building-on-the-framework.md)   
+ [Sequence of Operations for Building MFC Applications](../mfc/sequence-of-operations-for-building-mfc-applications.md)   
+ [Sequence of Operations for Creating OLE Applications](../mfc/sequence-of-operations-for-creating-ole-applications.md)   
+ [Sequence of Operations for Creating ActiveX Controls](../mfc/sequence-of-operations-for-creating-activex-controls.md)
+

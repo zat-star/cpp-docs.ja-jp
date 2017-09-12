@@ -1,57 +1,76 @@
 ---
-title: "MFC モジュールの状態データの管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ管理 [C++]"
-  - "データ管理 [C++], MFC モジュール"
-  - "エクスポートされたインターフェイスとグローバル状態 [C++]"
-  - "グローバル状態 [C++]"
-  - "MFC [C++], 管理 (状態データを)"
-  - "モジュールの状態の復元"
-  - "モジュールの状態, 保存と復元"
-  - "複数モジュール"
-  - "ウィンドウ プロシージャのエントリ ポイント [C++]"
+title: Managing the State Data of MFC Modules | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- global state [MFC]
+- data management [MFC], MFC modules
+- window procedure entry points [MFC]
+- exported interfaces and global state [MFC]
+- module states [MFC], saving and restoring
+- data management [MFC]
+- MFC, managing state data
+- multiple modules [MFC]
+- module state restored [MFC]
 ms.assetid: 81889c11-0101-4a66-ab3c-f81cf199e1bb
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# MFC モジュールの状態データの管理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 087c8e584d4d42f2bcdbfffdc594523d795308cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、実行すると実行のフロー \(コード パスは、アプリケーションから取得する\) モジュールに出入りしたとき、この状態をどのように更新されるまたは MFC モジュールの状態データについて説明します。  `AFX_MANAGE_STATE` と `METHOD_PROLOGUE` マクロのモジュール状態を切り替えると、説明します。  
+---
+# <a name="managing-the-state-data-of-mfc-modules"></a>Managing the State Data of MFC Modules
+This article discusses the state data of MFC modules and how this state is updated when the flow of execution (the path code takes through an application when executing) enters and leaves a module. Switching module states with the `AFX_MANAGE_STATE` and `METHOD_PROLOGUE` macros is also discussed.  
   
 > [!NOTE]
->  「module」という用語は、DLL \(または DLL の設定\)、ここに実行可能プログラムを、アプリケーションの残りの部分とは関係なく実行するのか、MFC DLL の共有コピーを使用します。  ActiveX コントロールは、モジュールの一般的な例です。  
+>  The term "module" here refers to an executable program, or to a DLL (or set of DLLs) that operate independently of the rest of the application, but uses a shared copy of the MFC DLL. An ActiveX control is a typical example of a module.  
   
- 次の図に示すように、MFC にアプリケーションで使用されるモジュールごとに状態データがあります。  このデータの例は、アプリケーションの `CWinThread` の現在の `CWinApp` とオブジェクトに Windows のインスタンス ハンドル \(リソースを読み込むために使用される\)、ポインター、OLE モジュールの参照カウントをと MFC オブジェクトのウィンドウ オブジェクトのハンドルと対応するインスタンスとの関連付けを維持するさまざまなマップが含まれます。  ただし、アプリケーションに複数のモジュールを使用する場合は、各モジュールの状態データは、アプリケーションではありません。  ただし、各は MFC モジュールの状態データの専用コピーを持ちます。  
+ As shown in the following figure, MFC has state data for each module used in an application. Examples of this data include Windows instance handles (used for loading resources), pointers to the current `CWinApp` and `CWinThread` objects of an application, OLE module reference counts, and a variety of maps that maintain the connections between Windows object handles and corresponding instances of MFC objects. However, when an application uses multiple modules, the state data of each module is not application wide. Rather, each module has its own private copy of the MFC's state data.  
   
- ![単一モジュール &#40;アプリケーション&#41; の状態データ](../Image/vc387N1.gif "vc387N1")  
-単一モジュール \(アプリケーション\) の状態データ  
+ ![State data of a single module &#40;application&#41;](../mfc/media/vc387n1.gif "vc387n1")  
+State Data of a Single Module (Application)  
   
- モジュールの状態データの構造は常に含まれ、この構造体へのポインターで使用できます。  実行のフローを次の図に示すように、特定のモジュールを入力すると、モジュールの状態は「現在」または「有効な」状態である必要があります。  したがって、各スレッド オブジェクトには、そのアプリケーションの有効な状態の構造体へのポインターがあります。  このポインターを常に更新しておくと、アプリケーションのグローバル状態を管理し、各モジュール状態の整合性を維持するために重要です。  グローバル状態の不適切な管理は予測不可能なアプリケーションの動作になります。  
+ A module's state data is contained in a structure and is always available via a pointer to that structure. When the flow of execution enters a particular module, as shown in the following figure, that module's state must be the "current" or "effective" state. Therefore, each thread object has a pointer to the effective state structure of that application. Keeping this pointer updated at all times is vital to managing the application's global state and maintaining the integrity of each module's state. Incorrect management of the global state can lead to unpredictable application behavior.  
   
- ![複数モジュールの状態データ](../mfc/media/vc387n2.gif "vc387N2")  
-複数モジュールの状態データ  
+ ![State data of multiple modules](../mfc/media/vc387n2.gif "vc387n2")  
+State Data of Multiple Modules  
   
- つまり、各モジュールが正しくエントリ ポイントのモジュール状態の間のすべての切り替えを行います。  「エントリ ポイント」は実行のフローがモジュールのコードを入力できる場所です。  エントリ ポイントは次のとおりです。:  
+ In other words, each module is responsible for correctly switching between module states at all of its entry points. An "entry point" is any place where the flow of execution can enter the module's code. Entry points include:  
   
--   [DLL のエクスポート関数](../mfc/exported-dll-function-entry-points.md)  
+-   [Exported functions in a DLL](../mfc/exported-dll-function-entry-points.md)  
   
--   [COM インターフェイスのメンバー関数](../mfc/com-interface-entry-points.md)  
+-   [Member functions of COM interfaces](../mfc/com-interface-entry-points.md)  
   
--   [ウィンドウ プロシージャ](../Topic/Window%20Procedure%20Entry%20Points.md)  
+-   [Window procedures](../mfc/window-procedure-entry-points.md)  
   
-## 参照  
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
+## <a name="see-also"></a>See Also  
+ [General MFC Topics](../mfc/general-mfc-topics.md)
+
+

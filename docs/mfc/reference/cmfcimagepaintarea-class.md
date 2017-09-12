@@ -1,5 +1,5 @@
 ---
-title: "CMFCImagePaintArea クラス |Microsoft ドキュメント"
+title: CMFCImagePaintArea Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,7 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCImagePaintArea class
+- CMFCImagePaintArea [MFC], CMFCImagePaintArea
+- CMFCImagePaintArea [MFC], GetMode
+- CMFCImagePaintArea [MFC], SetBitmap
+- CMFCImagePaintArea [MFC], SetColor
+- CMFCImagePaintArea [MFC], SetMode
 ms.assetid: c59eec22-f15a-4e58-8c4d-4a18a41f4452
 caps.latest.revision: 21
 author: mikeblome
@@ -39,53 +43,53 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: c16fd9605474e57f167646ddc9bc91d235d1cba5
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f0b8d7998a7756ab11cb69a9e9b7e159063bcd79
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcimagepaintarea-class"></a>CMFCImagePaintArea クラス
-イメージ エディター ダイアログ ボックスでイメージを変更するために使用するピクチャの領域を提供します。  
+# <a name="cmfcimagepaintarea-class"></a>CMFCImagePaintArea Class
+Provides the picture area that you use to modify an image in an image editor dialog box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCImagePaintArea : public CButton  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
-  
-|||  
-|-|-|  
-|名前|説明|  
-|[CMFCImagePaintArea::CMFCImagePaintArea](#cmfcimagepaintarea)|`CMFCImagePaintArea` オブジェクトを構築します。|  
-|`CMFCImagePaintArea::~CMFCImagePaintArea`|デストラクターです。|  
-  
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-constructors"></a>Public Constructors  
   
 |||  
 |-|-|  
-|名前|説明|  
-|[CMFCImagePaintArea::GetMode](#getmode)|現在の描画モードを取得します。|  
-|[CMFCImagePaintArea::SetBitmap](#setbitmap)|ピクチャの領域のビットマップ イメージを設定します。|  
-|[CMFCImagePaintArea::SetColor](#setcolor)|現在の描画の色を設定します。|  
-|[CMFCImagePaintArea::SetMode](#setmode)|現在の描画モードを設定します。|  
+|Name|Description|  
+|[CMFCImagePaintArea::CMFCImagePaintArea](#cmfcimagepaintarea)|Constructs a `CMFCImagePaintArea` object.|  
+|`CMFCImagePaintArea::~CMFCImagePaintArea`|Destructor.|  
   
-### <a name="remarks"></a>コメント  
- このクラスは、コードから直接使用するものではありません。  
+### <a name="public-methods"></a>Public Methods  
   
- フレームワークでは、このクラスを使用して、イメージ エディター ダイアログ ボックスにピクチャの領域を表示します。 イメージ エディター] ダイアログ ボックスの詳細については、次を参照してください。 [[CMFCImageEditorDialog クラス](../../mfc/reference/cmfcimageeditordialog-class.md)します。  
+|||  
+|-|-|  
+|Name|Description|  
+|[CMFCImagePaintArea::GetMode](#getmode)|Retrieves the current drawing mode.|  
+|[CMFCImagePaintArea::SetBitmap](#setbitmap)|Sets the bitmap image for the picture area.|  
+|[CMFCImagePaintArea::SetColor](#setcolor)|Sets the current drawing color.|  
+|[CMFCImagePaintArea::SetMode](#setmode)|Sets the current drawing mode.|  
   
-## <a name="example"></a>例  
- 次の例のオブジェクトを構築する方法、`CMFCImagePaintArea`クラス、現在の色を描画するには、現在の描画モードを設定し、ビットマップ画像画像領域の設定を設定します。  
+### <a name="remarks"></a>Remarks  
+ This class is not intended to be used directly from your code.  
   
- [!code-cpp[NVC_MFC_RibbonApp #&37;](../../mfc/reference/codesnippet/cpp/cmfcimagepaintarea-class_1.cpp)]  
+ The framework uses this class to display the picture area in an image editor dialog box. For more information about the image editor dialog box, see [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="example"></a>Example  
+ The following example demonstrates how to construct an object of the `CMFCImagePaintArea` class, set the current drawing color, set the current drawing mode, and set the bitmap image for the picture area.  
+  
+ [!code-cpp[NVC_MFC_RibbonApp#37](../../mfc/reference/codesnippet/cpp/cmfcimagepaintarea-class_1.cpp)]  
+  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -96,85 +100,85 @@ class CMFCImagePaintArea : public CButton
   
  [CMFCImagePaintArea](../../mfc/reference/cmfcimagepaintarea-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afximagepaintarea.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afximagepaintarea.h  
   
-##  <a name="cmfcimagepaintarea"></a>CMFCImagePaintArea::CMFCImagePaintArea  
- `CMFCImagePaintArea` オブジェクトを構築します。  
+##  <a name="cmfcimagepaintarea"></a>  CMFCImagePaintArea::CMFCImagePaintArea  
+ Constructs a `CMFCImagePaintArea` object.  
   
 ```  
 CMFCImagePaintArea(CMFCImageEditorDialog* pParentDlg);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|[入力] `pParentDlg`|イメージ エディターの親である ダイアログ ボックスへのポインター。|  
+|Parameter|Description|  
+|[in] `pParentDlg`|A pointer to the dialog box that is the parent of the image editor.|  
   
-##  <a name="getmode"></a>CMFCImagePaintArea::GetMode  
- 現在の描画モードを取得します。  
+##  <a name="getmode"></a>  CMFCImagePaintArea::GetMode  
+ Retrieves the current drawing mode.  
   
 ```  
 IMAGE_EDIT_MODE GetMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- [IMAGE_EDIT_MODE](cmfcimagepaintarea-image-edit-mode-enumeration.md)現在の描画モードを指定する値。  
+### <a name="return-value"></a>Return Value  
+ An [IMAGE_EDIT_MODE](cmfcimagepaintarea-image-edit-mode-enumeration.md) value that specifies the current drawing mode.  
   
-##  <a name="setbitmap"></a>CMFCImagePaintArea::SetBitmap  
- ピクチャの領域のビットマップ イメージを設定します。  
+##  <a name="setbitmap"></a>  CMFCImagePaintArea::SetBitmap  
+ Sets the bitmap image for the picture area.  
   
 ```  
 void SetBitmap(CBitmap* pBitmap);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|[入力] `pBitmap`|表示する新しいビットマップ イメージです。|  
+|Parameter|Description|  
+|[in] `pBitmap`|The new bitmap image to display.|  
   
-### <a name="remarks"></a>コメント  
- 場合`pBitmap`は`NULL`、このメソッドは、可変描画領域のサイズを&0; に設定します。 それ以外の場合、指定されたビットマップ イメージのサイズ変更可能な描画領域のサイズに設定します。  
+### <a name="remarks"></a>Remarks  
+ If `pBitmap` is `NULL`, this method sets the size of the modifiable paint area to zero. Otherwise, it sets the size of the modifiable paint area to the size of the provided bitmap image.  
   
-##  <a name="setcolor"></a>CMFCImagePaintArea::SetColor  
- 現在の描画の色を設定します。  
+##  <a name="setcolor"></a>  CMFCImagePaintArea::SetColor  
+ Sets the current drawing color.  
   
 ```  
 void SetColor(COLORREF color);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|[入力] `color`|新しい描画の色。|  
+|Parameter|Description|  
+|[in] `color`|The new drawing color.|  
   
-### <a name="remarks"></a>コメント  
- イメージ エディターのパレット バーから色を選択またはカラー ピッカー、フレームワークが現在の描画の色を更新するには、このメソッドを呼び出す場合。 初期の描画の色は黒 (、`COLORREF`値 0)。  
+### <a name="remarks"></a>Remarks  
+ When you select a color from the image editor palette bar or color picker, the framework calls this method to update the current drawing color. The initial drawing color is black (a `COLORREF` value of 0).  
   
- イメージ エディター ダイアログ ボックスで以外のすべての描画モードの描画の色が使用される`IMAGE_EDIT_MODE_COLOR`します。 描画モードの詳細については、次を参照してください。 [cmfcimagepaintarea::image_edit_mode 列挙体](cmfcimagepaintarea-image-edit-mode-enumeration.md)します。  
+ The drawing color is used by the image editor dialog box for all drawing modes except for `IMAGE_EDIT_MODE_COLOR`. For more information about drawing modes, see [CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration](cmfcimagepaintarea-image-edit-mode-enumeration.md).  
   
-##  <a name="setmode"></a>CMFCImagePaintArea::SetMode  
- 現在の描画モードを設定します。  
+##  <a name="setmode"></a>  CMFCImagePaintArea::SetMode  
+ Sets the current drawing mode.  
   
 ```  
 void SetMode(IMAGE_EDIT_MODE mode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|[入力] `mode`|[IMAGE_EDIT_MODE](cmfcimagepaintarea-image-edit-mode-enumeration.md)現在の描画モードを指定する値。|  
+|Parameter|Description|  
+|[in] `mode`|An [IMAGE_EDIT_MODE](cmfcimagepaintarea-image-edit-mode-enumeration.md) value that specifies the current drawing mode.|  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCImageEditorDialog クラス](../../mfc/reference/cmfcimageeditordialog-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md)
 

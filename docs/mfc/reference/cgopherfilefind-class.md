@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: CGopherFileFind Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,8 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CGopherFileFind class
-- file searches [C++]
+- CGopherFileFind [MFC], CGopherFileFind
+- CGopherFileFind [MFC], FindFile
+- CGopherFileFind [MFC], FindNextFile
+- CGopherFileFind [MFC], GetCreationTime
+- CGopherFileFind [MFC], GetLastAccessTime
+- CGopherFileFind [MFC], GetLastWriteTime
+- CGopherFileFind [MFC], GetLength
+- CGopherFileFind [MFC], GetLocator
+- CGopherFileFind [MFC], GetScreenName
+- CGopherFileFind [MFC], IsDots
 ms.assetid: 8465a979-6323-496d-ab4b-e81383fb999d
 caps.latest.revision: 21
 author: mikeblome
@@ -45,81 +53,81 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 93f30e83369ad1bff7222f26d0782eed11e73f66
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 174d689708a066afbc307a76ee415d9b4121f577
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cgopherfilefind-class"></a>関数のクラス
-gopher サーバーのインターネット ファイル検索を支援します。  
+# <a name="cgopherfilefind-class"></a>CGopherFileFind Class
+Aids in Internet file searches of gopher servers.  
   
 > [!NOTE]
->  クラスは、 `CGopherConnection`、 `CGopherFile`、 `CGopherFileFind`、`CGopherLocator`し、Windows XP のプラットフォームで機能しませんが、以前のプラットフォームで動作し続けますので、そのメンバーは廃止されました。  
+>  The classes `CGopherConnection`, `CGopherFile`, `CGopherFileFind`, `CGopherLocator` and their members have been deprecated because they do not work on the Windows XP platform, but they will continue to work on earlier platforms.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CGopherFileFind : public CFileFind  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CGopherFileFind::CGopherFileFind](#cgopherfilefind)|`CGopherFileFind` オブジェクトを構築します。|  
+|[CGopherFileFind::CGopherFileFind](#cgopherfilefind)|Constructs a `CGopherFileFind` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CGopherFileFind::FindFile](#findfile)|Gopher サーバー上のファイルを検索します。|  
-|[CGopherFileFind::FindNextFile](#findnextfile)|以前の呼び出しからファイル検索を続行[FindFile](#findfile)します。|  
-|[CGopherFileFind::GetCreationTime](#getcreationtime)|指定したファイルが作成された日時を取得します。|  
-|[CGopherFileFind::GetLastAccessTime](#getlastaccesstime)|指定したファイルの最終アクセス時刻を取得します。|  
-|[CGopherFileFind::GetLastWriteTime](#getlastwritetime)|指定したファイルに最後に書き込んだ時間を取得します。|  
-|[CGopherFileFind::GetLength](#getlength)|(バイト単位) を検索したファイルの長さを取得します。|  
-|[なった](#getlocator)|取得、`CGopherLocator`オブジェクトです。|  
-|[CGopherFileFind::GetScreenName](#getscreenname)|Gopher 画面の名前を取得します。|  
-|[CGopherFileFind::IsDots](#isdots)|ファイル反復処理中に現在のディレクトリとその親ディレクトリ マーカーをテストします。|  
+|[CGopherFileFind::FindFile](#findfile)|Finds a file on a gopher server.|  
+|[CGopherFileFind::FindNextFile](#findnextfile)|Continues a file search from a previous call to [FindFile](#findfile).|  
+|[CGopherFileFind::GetCreationTime](#getcreationtime)|Gets the time the specified file was created.|  
+|[CGopherFileFind::GetLastAccessTime](#getlastaccesstime)|Gets the time the specified file was last accessed.|  
+|[CGopherFileFind::GetLastWriteTime](#getlastwritetime)|Gets the time the specified file was last written to.|  
+|[CGopherFileFind::GetLength](#getlength)|Gets the length of the found file, in bytes.|  
+|[CGopherFileFind::GetLocator](#getlocator)|Get a `CGopherLocator` object.|  
+|[CGopherFileFind::GetScreenName](#getscreenname)|Gets the name of a gopher screen.|  
+|[CGopherFileFind::IsDots](#isdots)|Tests for the current directory and parent directory markers while iterating through files.|  
   
-## <a name="remarks"></a>コメント  
- `CGopherFileFind`検索を開始し、ファイルを検索し、ファイルの URL を返すメンバー関数が含まれます。  
+## <a name="remarks"></a>Remarks  
+ `CGopherFileFind` includes member functions that begin a search, locate a file, and return a file's URL.  
   
- インターネットとローカル ファイルの検索を含めるために設計されて他の MFC クラス[関数](../../mfc/reference/cftpfilefind-class.md)と[CFileFind](../../mfc/reference/cfilefind-class.md)します。 と共に`CGopherFileFind`、これらのクラスは、サーバー プロトコル、ファイルの種類または場所 (ローカル コンピューターまたはリモート サーバーのいずれかです) に関係なく、特定のファイルを検索するユーザーのシームレスなメカニズムを提供。HTTP は検索に必要なファイルを直接操作をサポートしていないために、HTTP サーバーで検索するための MFC クラスがないことに注意してください。  
+ Other MFC classes designed for Internet and local file searched include [CFtpFileFind](../../mfc/reference/cftpfilefind-class.md) and [CFileFind](../../mfc/reference/cfilefind-class.md). Together with `CGopherFileFind`, these classes provide a seamless mechanism for the user to find specific files, regardless of the server protocol, file type, or location (either a local machine or a remote server.) Note that there is no MFC class for searching on HTTP servers because HTTP does not support the direct file manipulation required by searches.  
   
 > [!NOTE]
-> `CGopherFileFind`その基本クラスの次のメンバー関数をサポートしていません[CFileFind](../../mfc/reference/cfilefind-class.md):  
+> `CGopherFileFind` does not support the following member functions of its base class [CFileFind](../../mfc/reference/cfilefind-class.md):  
   
 - [GetRoot](../../mfc/reference/cfilefind-class.md#getroot)  
   
 - [GetFileName](../../mfc/reference/cfilefind-class.md#getfilename)  
   
-- [まで含めた](../../mfc/reference/cfilefind-class.md#getfilepath)  
+- [GetFilePath](../../mfc/reference/cfilefind-class.md#getfilepath)  
   
 - [GetFileTitle](../../mfc/reference/cfilefind-class.md#getfiletitle)  
   
 - [GetFileURL](../../mfc/reference/cfilefind-class.md#getfileurl)  
   
- さらを使用すると`CGopherFileFind`、`CFileFind`メンバー関数[IsDots](../../mfc/reference/cfilefind-class.md#isdots)は常に**FALSE**します。  
+ In addition, when used with `CGopherFileFind`, the `CFileFind` member function [IsDots](../../mfc/reference/cfilefind-class.md#isdots) is always **FALSE**.  
   
- 使用する方法の詳細についての`CGopherFileFind`し、その他の WinInet クラスは、記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)します。  
+ For more information about how to use `CGopherFileFind` and the other WinInet classes, see the article [Internet Programming with WinInet](../../mfc/win32-internet-extensions-wininet.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CFileFind](../../mfc/reference/cfilefind-class.md)  
   
  `CGopherFileFind`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxinet.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxinet.h  
   
-##  <a name="cgopherfilefind"></a>CGopherFileFind::CGopherFileFind  
- このメンバー関数が作成すると呼ばれる、`CGopherFileFind`オブジェクトです。  
+##  <a name="cgopherfilefind"></a>  CGopherFileFind::CGopherFileFind  
+ This member function is called to construct a `CGopherFileFind` object.  
   
 ```  
 explicit CGopherFileFind(
@@ -127,18 +135,18 @@ explicit CGopherFileFind(
     DWORD_PTR dwContext = 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pConnection`  
- ポインター、[関数](../../mfc/reference/cgopherconnection-class.md)オブジェクトです。  
+ A pointer to a [CGopherConnection](../../mfc/reference/cgopherconnection-class.md) object.  
   
  `dwContext`  
- 操作のコンテキストの識別子です。 参照してください**解説**の詳細については`dwContext`です。  
+ The context identifier for the operation. See **Remarks** for more information about `dwContext`.  
   
-### <a name="remarks"></a>コメント  
- 既定値`dwContext`MFC から送信される、`CGopherFileFind`オブジェクトから、 [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトの作成、`CGopherFileFind`オブジェクトです。 構築する場合、`CGopherFileFind`オブジェクトのコンテキスト識別子を独自の値に設定する既定値をオーバーライドすることができます。 コンテキスト識別子が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)特定ために使用するオブジェクトの状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
+### <a name="remarks"></a>Remarks  
+ The default value for `dwContext` is sent by MFC to the `CGopherFileFind` object from the [CInternetSession](../../mfc/reference/cinternetsession-class.md) object that created the `CGopherFileFind` object. When you construct a `CGopherFileFind` object, you can override the default to set the context identifier to a value of your choosing. The context identifier is returned to [CInternetSession::OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) to provide status on the object with which it is identified. See the article [Internet First Steps: WinInet](../../mfc/wininet-basics.md) for more information about the context identifier.  
   
-##  <a name="findfile"></a>CGopherFileFind::FindFile  
- Gopher ファイルを検索するには、このメンバー関数を呼び出します。  
+##  <a name="findfile"></a>  CGopherFileFind::FindFile  
+ Call this member function to find a gopher file.  
   
 ```  
 virtual BOOL FindFile(
@@ -152,170 +160,170 @@ virtual BOOL FindFile(
     DWORD dwFlags = INTERNET_FLAG_RELOAD);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `refLocator`  
- 参照、[関数](../../mfc/reference/cgopherlocator-class.md)オブジェクトです。  
+ A reference to a [CGopherLocator](../../mfc/reference/cgopherlocator-class.md) object.  
   
  *pstrString*  
- ファイル名を含む文字列へのポインター。  
+ A pointer to a string containing the file name.  
   
  `dwFlags`  
- このセッションを処理する方法を示すフラグ。 有効なフラグは次のとおりです。  
+ The flags describing how to handle this session. The valid flags are:  
   
--   INTERNET_FLAG_RELOAD は、ローカルにキャッシュされている場合でも、リモート サーバーからデータを取得します。  
+-   INTERNET_FLAG_RELOAD   Get the data from the remote server even if it is locally cached.  
   
--   ローカルまたはすべてのゲートウェイのいずれか、データをキャッシュしません INTERNET_FLAG_DONT_CACHE しないでください。  
+-   INTERNET_FLAG_DONT_CACHE   Do not cache the data, either locally or in any gateways.  
   
--   Secure Sockets Layer または率とネットワーク上のセキュリティで保護されたトランザクションの INTERNET_FLAG_SECURE 要求 このフラグは、HTTP の要求のみに適用されます。  
+-   INTERNET_FLAG_SECURE   Request secure transactions on the wire with Secure Sockets Layer or PCT. This flag is applicable to HTTP requests only.  
   
--   INTERNET_FLAG_USE_EXISTING 可能な場合は、新しいサーバーに既存の接続を再利用**FindFile**要求ごとに新しいセッションを作成する代わりに要求します。  
+-   INTERNET_FLAG_USE_EXISTING   If possible, reuse the existing connections to the server for new **FindFile** requests, instead of creating a new session for each request.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. To get extended error information, call the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後**FindFile** gopher の最初のオブジェクトを取得するを呼び出すことができます[FindNextFile](#findnextfile)後続 gopher ファイルを取得します。  
+### <a name="remarks"></a>Remarks  
+ After calling **FindFile** to retrieve the first gopher object, you can call [FindNextFile](#findnextfile) to retrieve subsequent gopher files.  
   
-##  <a name="findnextfile"></a>CGopherFileFind::FindNextFile  
- 呼び出しで開始されたファイルの検索を続行するには、このメンバー関数を呼び出す[CGopherFileFind::FindFile](#findfile)します。  
+##  <a name="findnextfile"></a>  CGopherFileFind::FindNextFile  
+ Call this member function to continue a file search begun with a call to [CGopherFileFind::FindFile](#findfile).  
   
 ```  
 virtual BOOL FindNextFile();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 多くのファイルがある場合は&0; 以外。見つかったファイルがディレクトリに最後の&1; つである場合、またはエラーが発生した場合は&0; します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。 見つかったファイルがディレクトリに最後のファイルまたは一致するファイルが見つからないことができます、 `GetLastError` ERROR_NO_MORE_FILES を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if there are more files; zero if the file found is the last one in the directory or if an error occurred. To get extended error information, call the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360). If the file found is the last file in the directory, or if no matching files can be found, the `GetLastError` function returns ERROR_NO_MORE_FILES.  
   
-##  <a name="getcreationtime"></a>CGopherFileFind::GetCreationTime  
- 現在のファイルの作成時間を取得します。  
+##  <a name="getcreationtime"></a>  CGopherFileFind::GetCreationTime  
+ Gets the creation time for the current file.  
   
 ```  
 virtual BOOL GetCreationTime(FILETIME* pTimeStamp) const;  
 virtual BOOL GetCreationTime(CTime& refTime) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルが作成された日時を保持します。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was created.  
   
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetCreationTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CGopherFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetCreationTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CGopherFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetCreationTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetCreationTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operating systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-##  <a name="getlastaccesstime"></a>CGopherFileFind::GetLastAccessTime  
- 指定したファイルの最終アクセス時刻を取得します。  
+##  <a name="getlastaccesstime"></a>  CGopherFileFind::GetLastAccessTime  
+ Gets the time the specified file was last accessed.  
   
 ```  
 virtual BOOL GetLastAccessTime(CTime& refTime) const;  
 virtual BOOL GetLastAccessTime(FILETIME* pTimeStamp) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルの最終アクセス時刻が格納されています。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was last accessed.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetLastAccessTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CGopherFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetLastAccessTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CGopherFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetLastAccessTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetLastAccessTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operating systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-##  <a name="getlastwritetime"></a>CGopherFileFind::GetLastWriteTime  
- ファイルが変更された最終時刻を取得します。  
+##  <a name="getlastwritetime"></a>  CGopherFileFind::GetLastWriteTime  
+ Gets the last time the file was changed.  
   
 ```  
 virtual BOOL GetLastWriteTime(FILETIME* pTimeStamp) const;  
 virtual BOOL GetLastWriteTime(CTime& refTime) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルに最後に書き込んだ日時を保持します。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was last written to.  
   
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetLastWriteTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CGopherFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetLastWriteTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CGopherFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetLastWriteTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetLastWriteTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイムスタンプ関数によって返される同じ値を返す可能性があります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 一部のオペレーティング システムは、ファイルが存在するコンピューターにゾーンのローカル時刻では返される時刻です。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operating systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-##  <a name="getlength"></a>CGopherFileFind::GetLength  
- 検索したファイルのバイト単位の長さを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getlength"></a>  CGopherFileFind::GetLength  
+ Call this member function to get the length, in bytes, of the found file.  
   
 ```  
 virtual ULONGLONG GetLength() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 見つかったファイルの長さ、(バイト単位)。  
+### <a name="return-value"></a>Return Value  
+ The length, in bytes, of the found file.  
   
-### <a name="remarks"></a>コメント  
- `GetLength`Win32 構造を使用して[WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)バイト単位でのファイル サイズの値を取得します。  
+### <a name="remarks"></a>Remarks  
+ `GetLength` uses the Win32 structure [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) to get the value of the file size in bytes.  
   
 > [!NOTE]
->  MFC 7.0 以降`GetLength`64 ビット整数型をサポートしています。 ライブラリのこのより新しいバージョンで構築された既存のコードは、切り捨ての警告があります。  
+>  As of MFC 7.0, `GetLength` supports 64-bit integer types. Previously-existing code built with this newer version of the library may result in truncation warnings.  
   
-### <a name="example"></a>例  
-  例を参照してください[結び付けてその中](../../mfc/reference/cfile-class.md#getlength)(基本クラスの実装)。  
+### <a name="example"></a>Example  
+  See the example for [CFile::GetLength](../../mfc/reference/cfile-class.md#getlength) (the base class implementation).  
   
-##  <a name="getlocator"></a>なった  
- 取得するには、このメンバー関数を呼び出す、[関数](../../mfc/reference/cgopherlocator-class.md)オブジェクトを[FindFile](#findfile)を使用して、gopher ファイルを検索します。  
+##  <a name="getlocator"></a>  CGopherFileFind::GetLocator  
+ Call this member function to get the [CGopherLocator](../../mfc/reference/cgopherlocator-class.md) object that [FindFile](#findfile) uses to find the gopher file.  
   
 ```  
 CGopherLocator GetLocator() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `CGopherLocator` オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CGopherLocator` object.  
   
-##  <a name="getscreenname"></a>CGopherFileFind::GetScreenName  
- Gopher 画面の名前を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getscreenname"></a>  CGopherFileFind::GetScreenName  
+ Call this member function to get the name of the gopher screen.  
   
 ```  
 CString GetScreenName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- Gopher 画面の名前。  
+### <a name="return-value"></a>Return Value  
+ The name of the gopher screen.  
   
-##  <a name="isdots"></a>CGopherFileFind::IsDots  
- ファイル反復処理中に現在のディレクトリとその親ディレクトリ マーカーをテストします。  
+##  <a name="isdots"></a>  CGopherFileFind::IsDots  
+ Tests for the current directory and parent directory markers while iterating through files.  
   
 ```  
 virtual BOOL IsDots() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 検索したファイルに名前がある場合、0 以外の値"です。"または".."、見つかったファイルが実際にはディレクトリです。 それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the found file has the name "." or "..", which indicates that the found file is actually a directory. Otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsDots`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsDots`.  
   
-## <a name="see-also"></a>関連項目  
- [CFileFind クラス](../../mfc/reference/cfilefind-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/cftpfilefind-class.md)   
- [CFileFind クラス](../../mfc/reference/cfilefind-class.md)   
- [CInternetFile クラス](../../mfc/reference/cinternetfile-class.md)   
- [CGopherFile クラス](../../mfc/reference/cgopherfile-class.md)   
- [CHttpFile クラス](../../mfc/reference/chttpfile-class.md)
+## <a name="see-also"></a>See Also  
+ [CFileFind Class](../../mfc/reference/cfilefind-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CFtpFileFind Class](../../mfc/reference/cftpfilefind-class.md)   
+ [CFileFind Class](../../mfc/reference/cfilefind-class.md)   
+ [CInternetFile Class](../../mfc/reference/cinternetfile-class.md)   
+ [CGopherFile Class](../../mfc/reference/cgopherfile-class.md)   
+ [CHttpFile Class](../../mfc/reference/chttpfile-class.md)
 

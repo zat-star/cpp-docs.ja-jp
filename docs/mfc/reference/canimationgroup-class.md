@@ -1,5 +1,5 @@
 ---
-title: "CAnimationGroup クラス |Microsoft ドキュメント"
+title: CAnimationGroup Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,7 +34,26 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CAnimationGroup class
+- CAnimationGroup [MFC], CAnimationGroup
+- CAnimationGroup [MFC], Animate
+- CAnimationGroup [MFC], ApplyTransitions
+- CAnimationGroup [MFC], FindAnimationObject
+- CAnimationGroup [MFC], GetGroupID
+- CAnimationGroup [MFC], RemoveKeyframes
+- CAnimationGroup [MFC], RemoveTransitions
+- CAnimationGroup [MFC], Schedule
+- CAnimationGroup [MFC], SetAutodestroyTransitions
+- CAnimationGroup [MFC], AddKeyframes
+- CAnimationGroup [MFC], AddTransitions
+- CAnimationGroup [MFC], CreateTransitions
+- CAnimationGroup [MFC], m_bAutoclearTransitions
+- CAnimationGroup [MFC], m_bAutodestroyAnimationObjects
+- CAnimationGroup [MFC], m_bAutodestroyKeyframes
+- CAnimationGroup [MFC], m_lstAnimationObjects
+- CAnimationGroup [MFC], m_lstKeyFrames
+- CAnimationGroup [MFC], m_pStoryboard
+- CAnimationGroup [MFC], m_nGroupID
+- CAnimationGroup [MFC], m_pParentController
 ms.assetid: 8bc18ceb-33a2-41d0-9731-71811adacab7
 caps.latest.revision: 17
 author: mikeblome
@@ -54,102 +73,102 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: a59d8a86fde68510d48e4a3398b6590b2215cbea
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 61c1f626ce3ab4482ff2e3bd406d81962d7d0490
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="canimationgroup-class"></a>CAnimationGroup クラス
-アニメーション ストーリー ボード、アニメーション オブジェクト、およびアニメーションを定義する切り替え効果を組み合わせたアニメーション グループを実装します。  
+# <a name="canimationgroup-class"></a>CAnimationGroup Class
+Implements an animation group, which combines an animation storyboard, animation objects, and transitions to define an animation.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CAnimationGroup;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationGroup::CAnimationGroup](#canimationgroup)|アニメーション グループを作成します。|  
-|[CAnimationGroup:: ~ CAnimationGroup](#canimationgroup__~canimationgroup)|デストラクターです。 アニメーション グループが破棄されるときに呼び出されます。|  
+|[CAnimationGroup::CAnimationGroup](#canimationgroup)|Constructs an animation group.|  
+|[CAnimationGroup::~CAnimationGroup](#canimationgroup__~canimationgroup)|The destructor. Called when an animation group is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationGroup::Animate](#animate)|グループをアニメーション化します。|  
-|[CAnimationGroup::ApplyTransitions](#applytransitions)|アニメーション オブジェクトへの遷移を適用します。|  
-|[CAnimationGroup::FindAnimationObject](#findanimationobject)|指定したアニメーション変数を含むアニメーション オブジェクトを検索します。|  
-|[CAnimationGroup::GetGroupID](#getgroupid)|グループ Id を返します。|  
-|[CAnimationGroup::RemoveKeyframes](#removekeyframes)|削除し、必要に応じてアニメーション グループに属しているすべてのキーフレームを破棄します。|  
-|[CAnimationGroup::RemoveTransitions](#removetransitions)|アニメーション グループに属しているアニメーション オブジェクトからの遷移を削除します。|  
-|[CAnimationGroup::Schedule](#schedule)|指定された時間にアニメーションをスケジュールします。|  
-|[CAnimationGroup::SetAutodestroyTransitions](#setautodestroytransitions)|自動的にグループに属するすべてのアニメーション オブジェクトの遷移を破棄するように指示します。|  
+|[CAnimationGroup::Animate](#animate)|Animates a group.|  
+|[CAnimationGroup::ApplyTransitions](#applytransitions)|Applies transitions to animation objects.|  
+|[CAnimationGroup::FindAnimationObject](#findanimationobject)|Finds an animation object that contains the specified animation variable.|  
+|[CAnimationGroup::GetGroupID](#getgroupid)|Returns GroupID.|  
+|[CAnimationGroup::RemoveKeyframes](#removekeyframes)|Removes and optionally destroys all keyframes that belong to an animation group.|  
+|[CAnimationGroup::RemoveTransitions](#removetransitions)|Removes transitions from animation objects that belong to an animation group.|  
+|[CAnimationGroup::Schedule](#schedule)|Schedules an animation at the specified time.|  
+|[CAnimationGroup::SetAutodestroyTransitions](#setautodestroytransitions)|Directs all animation objects that belong to group automatically destroy transitions.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationGroup::AddKeyframes](#addkeyframes)|ストーリー ボードにキーフレームを追加するためのヘルパーです。|  
-|[CAnimationGroup::AddTransitions](#addtransitions)|ストーリー ボードに遷移を追加するためのヘルパーです。|  
-|[CAnimationGroup::CreateTransitions](#createtransitions)|遷移の COM オブジェクトを作成するためのヘルパーです。|  
+|[CAnimationGroup::AddKeyframes](#addkeyframes)|A helper that adds keyframes to a storyboard.|  
+|[CAnimationGroup::AddTransitions](#addtransitions)|A helper that adds transitions to a storyboard.|  
+|[CAnimationGroup::CreateTransitions](#createtransitions)|A helper that creates COM transition objects.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationGroup::m_bAutoclearTransitions](#m_bautocleartransitions)|グループに属しているアニメーション オブジェクトからの移行をオフにする方法を指定します。 このメンバーが TRUE の場合、アニメーションがスケジュールされているときに、遷移自動的に削除されます。 それ以外の場合は、遷移を手動で削除する必要があります。|  
-|[CAnimationGroup::m_bAutodestroyAnimationObjects](#m_bautodestroyanimationobjects)|アニメーション オブジェクトを破棄する方法を指定します。 このパラメーターが TRUE の場合、グループが破棄されるときに、アニメーション オブジェクトが自動的に破棄されます。 それ以外の場合のアニメーション オブジェクトを手動で破壊する必要があります。 既定値は FALSE です。 New 演算子をグループに属しているすべてのアニメーション オブジェクトが動的に割り当てられる場合にのみ、この値を TRUE に設定します。|  
-|[CAnimationGroup::m_bAutodestroyKeyframes](#m_bautodestroykeyframes)|キーフレームを破棄する方法を指定します。 すべてのキーフレームが削除され、破棄されます。 この値が TRUE の場合は、それ以外の場合のみが一覧から削除されます。 既定値は TRUE です。|  
-|[CAnimationGroup::m_lstAnimationObjects](#m_lstanimationobjects)|アニメーション オブジェクトの一覧が含まれています。|  
-|[CAnimationGroup::m_lstKeyFrames](#m_lstkeyframes)|キーフレームの一覧が含まれています。|  
-|[CAnimationGroup::m_pStoryboard](#m_pstoryboard)|アニメーション ストーリー ボードへのポインター。 このポインターは、アニメーションの呼び出し後にのみ有効です。|  
+|[CAnimationGroup::m_bAutoclearTransitions](#m_bautocleartransitions)|Specifies how to clear transitions from animation objects that belong to group. If this member is TRUE, transitions are removed automatically when an animation has been scheduled. Otherwise you need to remove transitions manually.|  
+|[CAnimationGroup::m_bAutodestroyAnimationObjects](#m_bautodestroyanimationobjects)|Specifies how to destroy animation objects. If this parameter is TRUE, animation objects will be destroyed automatically when the group is destroyed. Otherwise animation objects must be destroyed manually. The default value is FALSE. Set this value to TRUE only if all animation objects that belong to group are allocated dynamically with operator new.|  
+|[CAnimationGroup::m_bAutodestroyKeyframes](#m_bautodestroykeyframes)|Specifies how to destroy keyframes. If this value is TRUE, all keyframes are removed and destroyed; otherwise they are removed from the list only. The default value is TRUE.|  
+|[CAnimationGroup::m_lstAnimationObjects](#m_lstanimationobjects)|Contains a list of animation objects.|  
+|[CAnimationGroup::m_lstKeyFrames](#m_lstkeyframes)|Contains a list of keyframes.|  
+|[CAnimationGroup::m_pStoryboard](#m_pstoryboard)|Points to animation storyboard. This pointer is valid only after call on Animate.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationGroup::m_nGroupID](#m_ngroupid)|アニメーションのグループの一意の識別子。|  
-|[CAnimationGroup::m_pParentController](#m_pparentcontroller)|このグループに属しているアニメーション コント ローラーへのポインター。|  
+|[CAnimationGroup::m_nGroupID](#m_ngroupid)|A unique identifier of animation group.|  
+|[CAnimationGroup::m_pParentController](#m_pparentcontroller)|A pointer to animation controller this group belongs to.|  
   
-## <a name="remarks"></a>コメント  
- アニメーション グループは、CAnimationController::AddAnimationObject を使用して、アニメーション オブジェクトを追加する場合も、アニメーション コント ローラー (CAnimationController) によって自動的に作成されます。 アニメーション グループは、通常、アニメーションのグループを操作パラメーターとして取得された GroupID で識別されます。 GroupID は、新しいアニメーション グループに追加される最初のアニメーション オブジェクトから取得されます。 CAnimationController::AnimateGroup を呼び出すし、パブリック メンバー m_pStoryboard 経由でアクセスできる、カプセル化されたアニメーション ストーリー ボードが作成されます。  
+## <a name="remarks"></a>Remarks  
+ Animation groups are created automatically by animation controller (CAnimationController) when you add animation objects using CAnimationController::AddAnimationObject. An animation group is identified by GroupID, which is usually taken as a parameter to manipulate animation groups. The GroupID is taken from the first animation object being added to a new animation group. An encapsulated animation storyboard is created after you call CAnimationController::AnimateGroup and can be accessed via public member m_pStoryboard.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CAnimationGroup`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxanimationcontroller.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxanimationcontroller.h  
   
-##  <a name="_dtorcanimationgroup"></a>CAnimationGroup:: ~ CAnimationGroup  
- デストラクターです。 アニメーション グループが破棄されるときに呼び出されます。  
+##  <a name="_dtorcanimationgroup"></a>  CAnimationGroup::~CAnimationGroup  
+ The destructor. Called when an animation group is being destroyed.  
   
 ```  
 ~CAnimationGroup();
 ```  
   
-##  <a name="addkeyframes"></a>CAnimationGroup::AddKeyframes  
- ストーリー ボードにキーフレームを追加するためのヘルパーです。  
+##  <a name="addkeyframes"></a>  CAnimationGroup::AddKeyframes  
+ A helper that adds keyframes to a storyboard.  
   
 ```  
 void AddKeyframes(IUIAnimationStoryboard* pStoryboard, BOOL bAddDeep);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStoryboard`  
- ストーリー ボード COM オブジェクトへのポインター。  
+ A pointer to a storyboard COM object.  
   
  `bAddDeep`  
- このメソッドは、他のキーフレームに依存しているストーリー ボードのキーフレームに追加する必要があるかどうかを指定します。  
+ Specifies whether this method should add to the storyboard keyframes that depend on other keyframes.  
   
-##  <a name="addtransitions"></a>CAnimationGroup::AddTransitions  
- ストーリー ボードに遷移を追加するためのヘルパーです。  
+##  <a name="addtransitions"></a>  CAnimationGroup::AddTransitions  
+ A helper that adds transitions to a storyboard.  
   
 ```  
 void AddTransitions(
@@ -157,14 +176,14 @@ void AddTransitions(
     BOOL bDependOnKeyframes);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStoryboard`  
- ストーリー ボード COM オブジェクトへのポインター。  
+ A pointer to a storyboard COM object.  
   
  `bDependOnKeyframes`  
   
-##  <a name="animate"></a>CAnimationGroup::Animate  
- グループをアニメーション化します。  
+##  <a name="animate"></a>  CAnimationGroup::Animate  
+ Animates a group.  
   
 ```  
 BOOL Animate(
@@ -173,185 +192,185 @@ BOOL Animate(
     BOOL bScheduleNow);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pManager`  
  `pTimer`  
  `bScheduleNow`  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if the method succeeds; otherwise FALSE.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、内部のストーリー ボードを作成、作成し、遷移を適用したうえで、bScheduleNow が TRUE の場合、アニメーションのスケジュールを設定します。 BScheduleNow が FALSE の場合は、指定された時間にアニメーションを開始するようにスケジュールを呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ This method creates an internal storyboard, creates and applies transitions and schedules an animation if bScheduleNow is TRUE. If bScheduleNow is FALSE, you need to call Schedule to start animation at the specified time.  
   
-##  <a name="applytransitions"></a>CAnimationGroup::ApplyTransitions  
- アニメーション オブジェクトへの遷移を適用します。  
+##  <a name="applytransitions"></a>  CAnimationGroup::ApplyTransitions  
+ Applies transitions to animation objects.  
   
 ```  
 void ApplyTransitions();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、ストーリー ボードが作成されていないかどうかはデバッグ モードでアサートします。 最初に、すべての遷移を作成し、「静的」キーフレーム (オフセットに依存するキーフレーム) が追加、キーフレームに依存しない遷移を追加、遷移によってキーフレームとその他のキーフレームを追加およびキーフレームに依存する遷移が最後に追加します。  
+### <a name="remarks"></a>Remarks  
+ This method ASSERTS in debug mode if storyboard has not been created. It creates all transitions first, then adds "static" keyframes (keyframes that depend on offsets), adds transitions that do not depend on keyframes, adds keyframes depending on transitions and other keyframes, and at last adds transitions that depend on keyframes.  
   
-##  <a name="canimationgroup"></a>CAnimationGroup::CAnimationGroup  
- アニメーション グループを作成します。  
+##  <a name="canimationgroup"></a>  CAnimationGroup::CAnimationGroup  
+ Constructs an animation group.  
   
 ```  
 CAnimationGroup(CAnimationController* pParentController, UINT32 nGroupID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentController`  
- グループを作成するアニメーション コント ローラーへのポインター。  
+ A pointer to animation controller that creates a group.  
   
  `nGroupID`  
- グループ Id を指定します。  
+ Specifies GroupID.  
   
-##  <a name="createtransitions"></a>CAnimationGroup::CreateTransitions  
- 遷移の COM オブジェクトを作成するためのヘルパーです。  
+##  <a name="createtransitions"></a>  CAnimationGroup::CreateTransitions  
+ A helper that creates COM transition objects.  
   
 ```  
 BOOL CreateTransitions();
 ```  
   
-### <a name="return-value"></a>戻り値  
- TRUE では、メソッドが成功した場合は FALSE です。  
+### <a name="return-value"></a>Return Value  
+ TRUE is the method succeeds, otherwise FALSE.  
   
-##  <a name="findanimationobject"></a>CAnimationGroup::FindAnimationObject  
- 指定したアニメーション変数を含むアニメーション オブジェクトを検索します。  
+##  <a name="findanimationobject"></a>  CAnimationGroup::FindAnimationObject  
+ Finds an animation object that contains the specified animation variable.  
   
 ```  
 CAnimationBaseObject* FindAnimationObject(IUIAnimationVariable* pVariable);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pVariable`  
- アニメーション変数へのポインター。  
+ A pointer to animation variable.  
   
-### <a name="return-value"></a>戻り値  
- アニメーション オブジェクト、またはアニメーション オブジェクトが見つからない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to animation object, or NULL if animation object is not found.  
   
-##  <a name="getgroupid"></a>CAnimationGroup::GetGroupID  
- グループ Id を返します。  
+##  <a name="getgroupid"></a>  CAnimationGroup::GetGroupID  
+ Returns GroupID.  
   
 ```  
 UINT32 GetGroupID() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- グループの識別子です。  
+### <a name="return-value"></a>Return Value  
+ A group identifier.  
   
-##  <a name="m_bautocleartransitions"></a>CAnimationGroup::m_bAutoclearTransitions  
- グループに属しているアニメーション オブジェクトからの移行をオフにする方法を指定します。 このメンバーが TRUE の場合、アニメーションがスケジュールされているときに、遷移自動的に削除されます。 それ以外の場合は、遷移を手動で削除する必要があります。  
+##  <a name="m_bautocleartransitions"></a>  CAnimationGroup::m_bAutoclearTransitions  
+ Specifies how to clear transitions from animation objects that belong to group. If this member is TRUE, transitions are removed automatically when an animation has been scheduled. Otherwise you need to remove transitions manually.  
   
 ```  
 BOOL m_bAutoclearTransitions;  
 ```  
   
-##  <a name="m_bautodestroyanimationobjects"></a>CAnimationGroup::m_bAutodestroyAnimationObjects  
- アニメーション オブジェクトを破棄する方法を指定します。 このパラメーターが TRUE の場合、グループが破棄されるときに、アニメーション オブジェクトが自動的に破棄されます。 それ以外の場合のアニメーション オブジェクトを手動で破壊する必要があります。 既定値は FALSE です。 New 演算子をグループに属しているすべてのアニメーション オブジェクトが動的に割り当てられる場合にのみ、この値を TRUE に設定します。  
+##  <a name="m_bautodestroyanimationobjects"></a>  CAnimationGroup::m_bAutodestroyAnimationObjects  
+ Specifies how to destroy animation objects. If this parameter is TRUE, animation objects will be destroyed automatically when the group is destroyed. Otherwise animation objects must be destroyed manually. The default value is FALSE. Set this value to TRUE only if all animation objects that belong to group are allocated dynamically with operator new.  
   
 ```  
 BOOL m_bAutodestroyAnimationObjects;  
 ```  
   
-##  <a name="m_bautodestroykeyframes"></a>CAnimationGroup::m_bAutodestroyKeyframes  
- キーフレームを破棄する方法を指定します。 すべてのキーフレームが削除され、破棄されます。 この値が TRUE の場合は、それ以外の場合のみが一覧から削除されます。 既定値は TRUE です。  
+##  <a name="m_bautodestroykeyframes"></a>  CAnimationGroup::m_bAutodestroyKeyframes  
+ Specifies how to destroy keyframes. If this value is TRUE, all keyframes are removed and destroyed; otherwise they are removed from the list only. The default value is TRUE.  
   
 ```  
 BOOL m_bAutodestroyKeyframes;  
 ```  
   
-##  <a name="m_lstanimationobjects"></a>CAnimationGroup::m_lstAnimationObjects  
- アニメーション オブジェクトの一覧が含まれています。  
+##  <a name="m_lstanimationobjects"></a>  CAnimationGroup::m_lstAnimationObjects  
+ Contains a list of animation objects.  
   
 ```  
 CObList m_lstAnimationObjects;  
 ```  
   
-##  <a name="m_lstkeyframes"></a>CAnimationGroup::m_lstKeyFrames  
- キーフレームの一覧が含まれています。  
+##  <a name="m_lstkeyframes"></a>  CAnimationGroup::m_lstKeyFrames  
+ Contains a list of keyframes.  
   
 ```  
 CObList m_lstKeyFrames;  
 ```  
   
-##  <a name="m_ngroupid"></a>CAnimationGroup::m_nGroupID  
- アニメーションのグループの一意の識別子。  
+##  <a name="m_ngroupid"></a>  CAnimationGroup::m_nGroupID  
+ A unique identifier of animation group.  
   
 ```  
 UINT32 m_nGroupID;  
 ```  
   
-##  <a name="m_pparentcontroller"></a>CAnimationGroup::m_pParentController  
- このグループに属しているアニメーション コント ローラーへのポインター。  
+##  <a name="m_pparentcontroller"></a>  CAnimationGroup::m_pParentController  
+ A pointer to animation controller this group belongs to.  
   
 ```  
 CAnimationController* m_pParentController;  
 ```  
   
-##  <a name="m_pstoryboard"></a>CAnimationGroup::m_pStoryboard  
- アニメーション ストーリー ボードへのポインター。 このポインターは、アニメーションの呼び出し後にのみ有効です。  
+##  <a name="m_pstoryboard"></a>  CAnimationGroup::m_pStoryboard  
+ Points to animation storyboard. This pointer is valid only after call on Animate.  
   
 ```  
 ATL::CComPtr<IUIAnimationStoryboard> m_pStoryboard;  
 ```  
   
-##  <a name="removekeyframes"></a>CAnimationGroup::RemoveKeyframes  
- 削除し、必要に応じてアニメーション グループに属しているすべてのキーフレームを破棄します。  
+##  <a name="removekeyframes"></a>  CAnimationGroup::RemoveKeyframes  
+ Removes and optionally destroys all keyframes that belong to an animation group.  
   
 ```  
 void RemoveKeyframes();
 ```  
   
-### <a name="remarks"></a>コメント  
- M_bAutodestroyKeyframes メンバーが TRUE の場合のキーフレームが削除され、破棄されると、それ以外の場合、キーフレームをだけキーフレームの内部の一覧から削除します。  
+### <a name="remarks"></a>Remarks  
+ If m_bAutodestroyKeyframes member is TRUE then keyframes are removed and destroyed, otherwise keyframes are just removed from the internal list of keyframes.  
   
-##  <a name="removetransitions"></a>CAnimationGroup::RemoveTransitions  
- アニメーション グループに属しているアニメーション オブジェクトからの遷移を削除します。  
+##  <a name="removetransitions"></a>  CAnimationGroup::RemoveTransitions  
+ Removes transitions from animation objects that belong to an animation group.  
   
 ```  
 void RemoveTransitions();
 ```  
   
-### <a name="remarks"></a>コメント  
- M_bAutoclearTransitions フラグが TRUE に設定されている場合、このメソッドは、グループに属しているすべてのアニメーション オブジェクトをループ処理し、CAnimationObject::ClearTransitions(FALSE) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ If m_bAutoclearTransitions flag is set to TRUE, this method loops over all animation objects that belong to the group and calls CAnimationObject::ClearTransitions(FALSE).  
   
-##  <a name="schedule"></a>CAnimationGroup::Schedule  
- 指定された時間にアニメーションをスケジュールします。  
+##  <a name="schedule"></a>  CAnimationGroup::Schedule  
+ Schedules an animation at the specified time.  
   
 ```  
 BOOL Schedule(IUIAnimationTimer* pTimer, UI_ANIMATION_SECONDS time);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTimer`  
- アニメーション タイマーへのポインター。  
+ A pointer to animation timer.  
   
  `time`  
- アニメーションのスケジュールを設定する時刻を指定します。  
+ Specifies time to schedule the animation.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は TRUE。FALSE は、メソッドが失敗した場合、またはアニメーションの場合が呼び出されていないと bScheduleNow を FALSE に設定します。  
+### <a name="return-value"></a>Return Value  
+ TRUE if the method succeeds; FALSE if the method fails or if Animate has not been called with bScheduleNow set to FALSE.  
   
-### <a name="remarks"></a>コメント  
- 指定された時間にアニメーションのスケジュールを設定するには、この関数を呼び出します。 まずを FALSE に設定 bScheduleNow でアニメーションを呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ Call this function to schedule an animation at the specified time. You must call Animate with bScheduleNow set to FALSE first.  
   
-##  <a name="setautodestroytransitions"></a>CAnimationGroup::SetAutodestroyTransitions  
- 自動的にグループに属するすべてのアニメーション オブジェクトの遷移を破棄するように指示します。  
+##  <a name="setautodestroytransitions"></a>  CAnimationGroup::SetAutodestroyTransitions  
+ Directs all animation objects that belong to group automatically destroy transitions.  
   
 ```  
 void SetAutodestroyTransitions(BOOL bAutoDestroy = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bAutoDestroy`  
- 遷移を破棄する方法を指定します。  
+ Specifies how to destroy transitions.  
   
-### <a name="remarks"></a>コメント  
- この値をスタックに遷移を割り当てる場合にのみ FALSE に設定します。 既定値は TRUE、したがってことが推奨されます新しい演算子を使用して移行オブジェクトを割り当てます。  
+### <a name="remarks"></a>Remarks  
+ Set this value to FALSE only if you allocate transitions on the stack. The default value is TRUE, therefore it's highly recommended to allocate transition objects using operator new.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

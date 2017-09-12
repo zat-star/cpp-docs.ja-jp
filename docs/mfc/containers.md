@@ -1,46 +1,65 @@
 ---
-title: "コンテナー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション コンテナー [C++]"
-  - "コンテナー [C++]"
-  - "コンテナー [C++], コンテナー アプリケーション"
-  - "コンテナー [C++], OLE コンテナー アプリケーション"
-  - "OLE コンテナー"
+title: Containers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- containers [MFC]
+- OLE containers
+- application containers [MFC]
+- containers [MFC], OLE container applications
+- containers [MFC], container applications
 ms.assetid: b19d7c05-4d02-44bd-b76a-4a6c25994a62
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンテナー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c8d7fce817920b9e11d4c6cf95d952522aed0371
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コンテナー アプリケーションは独自のドキュメントに埋め込まれたまたはリンク アイテムを組み込むことができるアプリケーションです。  コンテナー アプリケーションによって管理されるドキュメントは、アプリケーション自体によって作成された OLE 複合ドキュメント コンポーネント、またはデータを格納し、表示される必要があります。  コンテナー アプリケーションは、ユーザーが新しい項目を挿入するか、既存の項目を編集できるようにする必要があります。  
+---
+# <a name="containers"></a>Containers
+A container application is an application that can incorporate embedded or linked items into its own documents. The documents managed by a container application must be able to store and display OLE compound document components as well as data created by the application itself. A container application must also allow users to insert new items or edit existing items.  
   
-## このセクションの内容  
- [コンテナーを実装してください。](../mfc/containers-implementing-a-container.md)  
+## <a name="in-this-section"></a>In This Section  
+ [Implement a Container](../mfc/containers-implementing-a-container.md)  
   
- [コンテナーのクライアント項目](../mfc/containers-client-items.md)  
+ [Container Client Items](../mfc/containers-client-items.md)  
   
- [複合ファイルを使用します。](../mfc/containers-compound-files.md)  
+ [Use Compound Files](../mfc/containers-compound-files.md)  
   
- [コンテナーのユーザー インターフェイスの問題](../mfc/containers-user-interface-issues.md)  
+ [Container User-Interface Issues](../mfc/containers-user-interface-issues.md)  
   
- [コンテナーの高度な機能](../mfc/containers-advanced-features.md)  
+ [Advanced Features of Containers](../mfc/containers-advanced-features.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [サーバー](../mfc/servers.md)   
- [アクティベーション](../mfc/activation-cpp.md)   
- [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md)
+ [Servers](../mfc/servers.md)   
+ [Activation](../mfc/activation-cpp.md)   
+ [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md)
+
+

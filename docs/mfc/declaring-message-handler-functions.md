@@ -1,36 +1,55 @@
 ---
-title: "メッセージ ハンドラー関数の宣言 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言 (関数を), メッセージ ハンドラー関数"
+title: Declaring Message Handler Functions | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- declaring functions, message handler functions [MFC]
 ms.assetid: f8d3dbc1-4500-4f1e-a18d-7371edf36386
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# メッセージ ハンドラー関数の宣言
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: de47aa00d6e0c10f3f161c7bd6d01f56c8f0d471
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-特定の規則や規則はメッセージ処理関数の名前を指定します。  これらは、次のトピックで説明するメッセージのカテゴリに依存します:  
+---
+# <a name="declaring-message-handler-functions"></a>Declaring Message Handler Functions
+Certain rules and conventions govern the names of your message-handler functions. These depend on the message category, as described in the following topics:  
   
--   [標準 Windows メッセージのハンドラー](../mfc/handlers-for-standard-windows-messages.md)  
+-   [Handlers for standard Windows messages](../mfc/handlers-for-standard-windows-messages.md)  
   
--   [コマンドとコントロール通知のハンドラー](../mfc/handlers-for-commands-and-control-notifications.md)  
+-   [Handlers for commands and control notifications](../mfc/handlers-for-commands-and-control-notifications.md)  
   
--   [メッセージの範囲のハンドラー](../mfc/handlers-for-message-map-ranges.md)  
+-   [Handlers for ranges of messages](../mfc/handlers-for-message-map-ranges.md)  
   
--   [リフレクション メッセージの処理](../mfc/handling-reflected-messages.md)  
+-   [Handling reflected messages](../mfc/handling-reflected-messages.md)  
   
-## 参照  
- [メッセージの処理とマップ](../mfc/message-handling-and-mapping.md)
+## <a name="see-also"></a>See Also  
+ [Message Handling and Mapping](../mfc/message-handling-and-mapping.md)
+
+

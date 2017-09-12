@@ -1,45 +1,64 @@
 ---
-title: "ActiveX コントロールの作成手順 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], 作成"
-  - "MFC ActiveX コントロール [C++], 作成"
-  - "OLE コントロール [C++], MFC"
-  - "手順 [C++]"
-  - "手順 [C++], ActiveX コントロールの作成の"
+title: Sequence of Operations for Creating ActiveX Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], creating
+- ActiveX controls [MFC], creating
+- sequence [MFC], for creating ActiveX controls
+- OLE controls [MFC], MFC
+- sequence [MFC]
 ms.assetid: 7d868c53-a0af-4ef6-a89c-e1c03c583a53
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ActiveX コントロールの作成手順
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4c293e5add988ef1b2dbe1ab976b2ac1c04d08d1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-次の表に示します。ActiveX コントロール \(以前の OLE コントロールと呼ばれる作成のロールおよびフレームワークの役割について説明します。  
+---
+# <a name="sequence-of-operations-for-creating-activex-controls"></a>Sequence of Operations for Creating ActiveX Controls
+The following table shows your role and the framework's role in creating ActiveX controls (formerly known as OLE controls).  
   
-### ActiveX コントロールの作成  
+### <a name="creating-activex-controls"></a>Creating ActiveX Controls  
   
-|タスク|プログラマの作業|フレームワークの働き|  
-|---------|--------------|----------------|  
-|ActiveX コントロールのフレームワークを作成します。|コントロールを作成するには、MFC ActiveX コントロール ウィザードを実行します。  オプション ページで必要なオプションを設定します。  オプションは、プロジェクトの検証、サブクラス化する、メソッド ボックスにコントロールの型と名前が含まれます。|MFC ActiveX コントロール ウィザードでは、アプリケーションのソース ファイルを含む基本機能を持つ ActiveX コントロールのファイルを、コントロールとプロパティ ページ、またはページ作成します; リソース ファイル; プロジェクト ファイル; そのほか、仕様に完全に調整。|  
-|コントロールおよび ActiveX コントロール ウィザードが独自の行またはコードを追加せずに何ができるかを参照してください。|ActiveX コントロールを作成して、Internet Explorer または [TSTCON サンプル](../top/visual-cpp-samples.md)でテストします。|実行中のなコントロールのサイズ変更や移動する機能があります。   \(選択されている\) に、呼び出すことができる **情報ボックス** のメソッドがあります。|  
-|コントロールのメソッドおよびプロパティを実装してください。|メンバー関数の制御データに公開されるインターフェイスを提供する追加してコントロール固有のメソッドとプロパティを実装してください。  結果とデータ構造体を保持し、イベントを発生させるためにイベント ハンドラーを使用するようにメンバー変数を追加します。|フレームワークは、既にを絞り込むようにするコントロールのイベント、プロパティ、およびメソッドをサポートするマップをプロパティおよびメソッドがどのように実装されるかを定義しています。  既定のプロパティ ページは、ボックス メソッドに関する既定が用意されています。|  
-|コントロールのプロパティ ページまたはページを作成します。|視覚的にコントロール プロパティ ページ インターフェイスを編集するときに、Visual C\+\+ リソース エディターを使用する:<br /><br /> -   追加のプロパティ ページを作成します。<br />-   ビットマップ、アイコン、カーソルを作成して編集します。<br /><br /> また、ダイアログ エディターのプロパティ ページをテストできます。|MFC アプリケーション ウィザードで作成した既定のリソース ファイルが、必要なリソースを多数提供します。  Visual C\+\+ では、既存のリソースの編集およびリソースの新規作成を簡単にビジュアル環境で行うことができます。|  
-|コントロール イベントでは、メソッドおよびプロパティをテストします。|ハンドラーが正常に動作することをテストするために使用するコントロールとテスト コンテナーをリビルドします。|コントロールのメソッドを呼び出し、プロパティ ページ インターフェイスまたはテスト コンテナーを通じてプロパティを処理できます。  また、コントロールのコンテナーが受け取るコントロールと通知から発生した追跡しへのテスト コンテナー。|  
+|Task|You do|The framework does|  
+|----------|------------|------------------------|  
+|Create an ActiveX control framework.|Run the MFC ActiveX Control Wizard to create your control. Specify the options you want in the options pages. Options include the type and name of the control in the project, licensing, subclassing, and an About Box method.|The MFC ActiveX Control Wizard creates the files for an ActiveX control with basic functionality, including source files for your application, control, and property page or pages; a resource file; a project file; and others, all tailored to your specifications.|  
+|See what the control and the ActiveX Control Wizard offer without adding a line of your own code.|Build the ActiveX control and test it with Internet Explorer or the [TSTCON sample](../visual-cpp-samples.md).|The running control has the ability to be resized and moved. It also has an **About Box** method (if chosen) that can be invoked.|  
+|Implement the control's methods and properties.|Implement your control-specific methods and properties by adding member functions to provide an exposed interface to the control's data. Add member variables to hold data structures and use event handlers to fire events when you determine.|The framework has already defined a map to support the control's events, properties, and methods, leaving you to focus on how the properties and methods are implemented. The default property page is viewable and a default About Box method is supplied.|  
+|Construct the control's property page or pages.|Use the Visual C++ resource editors to visually edit the control's property page interface:<br /><br /> -   Create additional property pages.<br />-   Create and edit bitmaps, icons, and cursors.<br /><br /> You can also test the property page(s) in the dialog editor.|The default resource file created by the MFC Application Wizard supplies many of the resources you need. Visual C++ lets you edit existing resources and add new resources easily and visually.|  
+|Test the control's events, methods, and properties.|Rebuild the control and use Test Container to test that your handlers work correctly.|You can invoke the control's methods and manipulate its properties through the property page interface or through Test Container. In addition, use Test Container to track events fired from the control and notifications received by the control's container.|  
   
-## 参照  
- [フレームワークを使ったアプリケーションの作成](../mfc/building-on-the-framework.md)   
- [MFC アプリケーションの作成手順](../mfc/sequence-of-operations-for-building-mfc-applications.md)   
- [OLE アプリケーションの作成手順](../mfc/sequence-of-operations-for-creating-ole-applications.md)   
- [データベース アプリケーションの作成手順](../mfc/sequence-of-operations-for-creating-database-applications.md)
+## <a name="see-also"></a>See Also  
+ [Building on the Framework](../mfc/building-on-the-framework.md)   
+ [Sequence of Operations for Building MFC Applications](../mfc/sequence-of-operations-for-building-mfc-applications.md)   
+ [Sequence of Operations for Creating OLE Applications](../mfc/sequence-of-operations-for-creating-ole-applications.md)   
+ [Sequence of Operations for Creating Database Applications](../mfc/sequence-of-operations-for-creating-database-applications.md)
+
+

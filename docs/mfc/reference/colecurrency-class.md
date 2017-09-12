@@ -1,5 +1,5 @@
 ---
-title: "COleCurrency クラス |Microsoft ドキュメント"
+title: COleCurrency Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,10 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- fixed-point numbers
-- numbers, fixed-point
-- CURRENCY
-- COleCurrency class
+- COleCurrency [MFC], COleCurrency
+- COleCurrency [MFC], Format
+- COleCurrency [MFC], GetStatus
+- COleCurrency [MFC], ParseCurrency
+- COleCurrency [MFC], SetCurrency
+- COleCurrency [MFC], SetStatus
+- COleCurrency [MFC], m_cur
+- COleCurrency [MFC], m_status
 ms.assetid: 3a36e345-303f-46fb-a57c-858274378a8d
 caps.latest.revision: 24
 author: mikeblome
@@ -45,76 +49,76 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 38dbd45818f53430db37bb5807c255494c4a9896
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 423cb540de41430d615c11fe0640a0273b095222
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="colecurrency-class"></a>COleCurrency クラス
-OLE オートメーションで使用される `CURRENCY` データ型をカプセル化します。  
+# <a name="colecurrency-class"></a>COleCurrency Class
+Encapsulates the `CURRENCY` data type of OLE automation.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleCurrency  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleCurrency::COleCurrency](#colecurrency)|`COleCurrency` オブジェクトを構築します。|  
+|[COleCurrency::COleCurrency](#colecurrency)|Constructs a `COleCurrency` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleCurrency::Format](#format)|書式設定された文字列表記を生成、`COleCurrency`オブジェクトです。|  
-|[COleCurrency::GetStatus](#getstatus)|この状態 (有効) を取得`COleCurrency`オブジェクトです。|  
-|[COleCurrency::ParseCurrency](#parsecurrency)|読み取り、**通貨**文字列から値の値を設定および`COleCurrency`です。|  
-|[COleCurrency::SetCurrency](#setcurrency)|この値を設定`COleCurrency`オブジェクトです。|  
-|[COleCurrency::SetStatus](#setstatus)|この状態 (有効) を設定`COleCurrency`オブジェクトです。|  
+|[COleCurrency::Format](#format)|Generates a formatted string representation of a `COleCurrency` object.|  
+|[COleCurrency::GetStatus](#getstatus)|Gets the status (validity) of this `COleCurrency` object.|  
+|[COleCurrency::ParseCurrency](#parsecurrency)|Reads a **CURRENCY** value from a string and sets the value of `COleCurrency`.|  
+|[COleCurrency::SetCurrency](#setcurrency)|Sets the value of this `COleCurrency` object.|  
+|[COleCurrency::SetStatus](#setstatus)|Sets the status (validity) for this `COleCurrency` object.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[演算子 =](#operator_eq)|コピー、`COleCurrency`値。|  
-|[演算子 +、-](#operator_plus_minus)|追加、減算、およびの符号が変わる`COleCurrency`値。|  
-|[演算子 + =、=](#operator_plus_minus_eq)|追加し、減算、`COleCurrency`これから値`COleCurrency`オブジェクトです。|  
-|[演算子 */](#operator_star)|スケール、`COleCurrency`の値を整数値。|  
-|[演算子 * =、/、=](#operator_star_div_eq)|この拡張`COleCurrency`の値を整数値。|  
-|[演算子](#operator_stream)|出力、`COleCurrency`値を`CArchive`または`CDumpContext`です。|  
-|[演算子 >>](#operator_stream)|入力、`COleCurrency`からオブジェクト`CArchive`します。|  
-|[演算子の通貨](#operator_currency)|変換、`COleCurrency`値を**通貨**します。|  
-|[演算子 = =、<,></,><=,></=,>](#colecurrency_relational_operators)|2 つを比較して`COleCurrency`値。|  
+|[operator =](#operator_eq)|Copies a `COleCurrency` value.|  
+|[operator +, -](#operator_plus_minus)|Adds, subtracts, and changes sign of `COleCurrency` values.|  
+|[operator +=, -=](#operator_plus_minus_eq)|Adds and subtracts a `COleCurrency` value from this `COleCurrency` object.|  
+|[operator */](#operator_star)|Scales a `COleCurrency` value by an integer value.|  
+|[operator *=, /=](#operator_star_div_eq)|Scales this `COleCurrency` value by an integer value.|  
+|[operator <<](#operator_stream)|Outputs a `COleCurrency` value to `CArchive` or `CDumpContext`.|  
+|[operator >>](#operator_stream)|Inputs a `COleCurrency` object from `CArchive`.|  
+|[operator CURRENCY](#operator_currency)|Converts a `COleCurrency` value into a **CURRENCY**.|  
+|[operator ==, <, <=, etc.](#colecurrency_relational_operators)|Compares two `COleCurrency` values.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleCurrency::m_cur](#m_cur)|基になるを含む**通貨**この`COleCurrency`オブジェクトです。|  
-|[COleCurrency::m_status](#m_status)|この状態を表す`COleCurrency`オブジェクトです。|  
+|[COleCurrency::m_cur](#m_cur)|Contains the underlying **CURRENCY** for this `COleCurrency` object.|  
+|[COleCurrency::m_status](#m_status)|Contains the status of this `COleCurrency` object.|  
   
-## <a name="remarks"></a>コメント  
- **COleCurrency**基本クラスではありません。  
+## <a name="remarks"></a>Remarks  
+ **COleCurrency** does not have a base class.  
   
- **通貨**は 8 バイト、2 の補数整数の値が 10,000 を掛けとして実装します。 これは、15 桁の整数部と 4 桁の小数部を持つ固定小数点数として表現されます。 **通貨**精度が重要となるデータ型は関連する計算、またはいずれかの固定小数点の計算に非常に便利です。 使用できる型のいずれか、 `VARIANT` OLE オートメーションのデータ型。  
+ **CURRENCY** is implemented as an 8-byte, two's-complement integer value scaled by 10,000. This gives a fixed-point number with 15 digits to the left of the decimal point and 4 digits to the right. The **CURRENCY** data type is extremely useful for calculations involving money, or for any fixed-point calculation where accuracy is important. It is one of the possible types for the `VARIANT` data type of OLE automation.  
   
- **COleCurrency**もいくつかの基本的な算術演算この固定小数点型を実装します。 サポートされる操作は、固定小数点の計算中に発生する丸め誤差を制御する選択されています。  
+ **COleCurrency** also implements some basic arithmetic operations for this fixed-point type. The supported operations have been selected to control the rounding errors which occur during fixed-point calculations.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `COleCurrency`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h  
   
-##  <a name="colecurrency"></a>COleCurrency::COleCurrency  
- 構築、 **COleCurrency**オブジェクトです。  
+##  <a name="colecurrency"></a>  COleCurrency::COleCurrency  
+ Constructs a **COleCurrency** object.  
   
 ```  
 COleCurrency();  
@@ -128,76 +132,76 @@ COleCurrency(
     long nFractionalUnits);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cySrc`  
- A**通貨**新しいにコピーされる値**COleCurrency**オブジェクトです。  
+ A **CURRENCY** value to be copied into the new **COleCurrency** object.  
   
  `curSrc`  
- 既存の**COleCurrency**新しいにコピーされるオブジェクト**COleCurrency**オブジェクトです。  
+ An existing **COleCurrency** object to be copied into the new **COleCurrency** object.  
   
  *varSrc*  
- 既存の**VARIANT**データ構造体 (可能性があります、`COleVariant`オブジェクト) 通貨の値に変換する ( `VT_CY`) し、新しいコピー **COleCurrency**オブジェクトです。  
+ An existing **VARIANT** data structure (possibly a `COleVariant` object) to be converted to a currency value ( `VT_CY`) and copied into the new **COleCurrency** object.  
   
  `nUnits`, `nFractionalUnits`  
- 新しいにコピーされる単位および小数部の部分 (1/10 で、000's) の値を示す**COleCurrency**オブジェクトです。  
+ Indicate the units and fractional part (in 1/10,000's) of the value to be copied into the new **COleCurrency** object.  
   
-### <a name="remarks"></a>コメント  
- これらのコンス トラクターのいずれも新しい作成**COleCurrency**オブジェクトの指定した値に初期化します。 これらのコンス トラクターのそれぞれの簡単な説明が続きます。 明記されない限り、新しい状態**COleCurrency**項目は、有効な設定です。  
+### <a name="remarks"></a>Remarks  
+ All of these constructors create new **COleCurrency** objects initialized to the specified value. A brief description of each of these constructors follows. Unless otherwise noted, the status of the new **COleCurrency** item is set to valid.  
   
-- COleCurrency() コンストラクト、 **COleCurrency** 0 (ゼロ) に初期化されるオブジェクト。  
+- COleCurrency() Constructs a **COleCurrency** object initialized to 0 (zero).  
   
-- COleCurrency (`cySrc`) を構築、 **COleCurrency**オブジェクトから、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)値。  
+- COleCurrency(`cySrc`) Constructs a **COleCurrency** object from a [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e) value.  
   
-- COleCurrency (`curSrc`) を構築、 **COleCurrency** 、既存のオブジェクト**COleCurrency**オブジェクトです。 新しいオブジェクトは、ソース オブジェクトと同じ状態を持ちます。  
+- COleCurrency(`curSrc`) Constructs a **COleCurrency** object from an existing **COleCurrency** object. The new object has the same status as the source object.  
   
-- COleCurrency (`varSrc`) を構築、 **COleCurrency**オブジェクトです。 変換しようと、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)構造または`COleVariant`通貨型のオブジェクト ( `VT_CY`) 値です。 この変換が成功すると、新しいに変換後の値がコピー **COleCurrency**オブジェクトです。 値ではない場合、 **COleCurrency**オブジェクトがゼロ (0) と無効な状態に設定します。  
+- COleCurrency(`varSrc`) Constructs a **COleCurrency** object. Attempts to convert a [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) structure or `COleVariant` object to a currency ( `VT_CY`) value. If this conversion is successful, the converted value is copied into the new **COleCurrency** object. If it is not, the value of the **COleCurrency** object is set to zero (0) and its status to invalid.  
   
-- `COleCurrency(`nUnits`, `nFractionalUnits') を構築、 **COleCurrency**指定した数値のコンポーネントからのオブジェクト。 小数部の絶対値が 10,000 を超える場合は、単位に、適切な調整が行われます。 部と小数部が符号付き long 値で指定されていることに注意してください。  
+- `COleCurrency(`nUnits`, `nFractionalUnits`) Constructs a **COleCurrency** object from the specified numerical components. If the absolute value of the fractional part is greater than 10,000, the appropriate adjustment is made to the units. Note that the units and fractional part are specified by signed long values.  
   
- 詳細については、次を参照してください。、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)と[VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e) and [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) entries in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次の例では、パラメーターの&0; と&2; つのパラメーターのコンス トラクターの影響を示します。  
+### <a name="example"></a>Example  
+ The following examples show the effects of the zero-parameter and two-parameter constructors:  
   
- [!code-cpp[NVC_MFCOleContainer&#10;](../../mfc/codesnippet/cpp/colecurrency-class_1.cpp)]  
+ [!code-cpp[NVC_MFCOleContainer#10](../../mfc/codesnippet/cpp/colecurrency-class_1.cpp)]  
   
-##  <a name="format"></a>COleCurrency::Format  
- 通貨値の書式設定された表現を作成するには、このメンバー関数を呼び出します。  
+##  <a name="format"></a>  COleCurrency::Format  
+ Call this member function to create a formatted representation of the currency value.  
   
 ```  
 CString Format(DWORD  dwFlags = 0, LCID  lcid = LANG_USER_DEFAULT) const; 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwFlags`  
- ロケールの設定に対応するフラグを示します。 次のフラグだけでは、通貨に関連します。  
+ Indicates flags for locale settings. Only the following flag is relevant to currency:  
   
-- **LOCALE_NOUSEROVERRIDE**カスタム ユーザー設定ではなく、システム既定ロケール設定を使用します。  
+- **LOCALE_NOUSEROVERRIDE** Use the system default locale settings, rather than custom user settings.  
   
  `lcid`  
- 変換に使用するロケール ID を示します。  
+ Indicates locale ID to use for the conversion.  
   
-### <a name="return-value"></a>戻り値  
- A`CString`通貨の書式の値を格納します。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the formatted currency value.  
   
-### <a name="remarks"></a>コメント  
- ローカルの言語仕様 (ロケール Id) を使用して値が書式設定されます。 通貨記号は、返される値は含まれません。 場合はこの状態**COleCurrency**オブジェクトが null、戻り値は空の文字列です。 戻り値の文字列が文字列リソースで指定された状態が有効である場合は、 **IDS_INVALID_CURRENCY**します。  
+### <a name="remarks"></a>Remarks  
+ It formats the value using the local language specifications (locale IDs). A currency symbol is not included in the value returned. If the status of this **COleCurrency** object is null, the return value is an empty string. If the status is invalid, the return string is specified by the string resource **IDS_INVALID_CURRENCY**.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#11;](../../mfc/codesnippet/cpp/colecurrency-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#11](../../mfc/codesnippet/cpp/colecurrency-class_2.cpp)]  
   
-##  <a name="getstatus"></a>COleCurrency::GetStatus  
- 状態 (有効) を取得するには、このメンバー関数を呼び出して、指定された**COleCurrency**オブジェクトです。  
+##  <a name="getstatus"></a>  COleCurrency::GetStatus  
+ Call this member function to get the status (validity) of a given **COleCurrency** object.  
   
 ```  
 CurrencyStatus GetStatus() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この状態が返されます**COleCurrency**値。  
+### <a name="return-value"></a>Return Value  
+ Returns the status of this **COleCurrency** value.  
   
-### <a name="remarks"></a>コメント  
- 戻り値は、`CurrencyStatus`列挙内で定義されている型、 **COleCurrency**クラスです。  
+### <a name="remarks"></a>Remarks  
+ The return value is defined by the `CurrencyStatus` enumerated type that is defined within the **COleCurrency** class.  
   
 ```  
 enum CurrencyStatus {
@@ -207,53 +211,53 @@ enum CurrencyStatus {
     };  
 ```  
   
- これらのステータス値の簡単な説明は、次の一覧を参照してください。  
+ For a brief description of these status values, see the following list:  
   
-- **COleCurrency::valid**ことを示しますがこの**COleCurrency**のオブジェクトが有効です。  
+- **COleCurrency::valid** Indicates that this **COleCurrency** object is valid.  
   
-- **COleCurrency::invalid**ことを示しますがこの**COleCurrency**オブジェクトは無効です。 つまり、その値誤りがあります。  
+- **COleCurrency::invalid** Indicates that this **COleCurrency** object is invalid; that is, its value may be incorrect.  
   
-- **COleCurrency::null**ことを示しますがこの**COleCurrency**オブジェクトが null では、このオブジェクトの値が指定されていないことです。 (これは、データベースの意味で「値を持たない、」C++ ではなく"null" **NULL**)。  
+- **COleCurrency::null** Indicates that this **COleCurrency** object is null, that is, that no value has been supplied for this object. (This is "null" in the database sense of "having no value," as opposed to the C++ **NULL**.)  
   
- 状態、 **COleCurrency**オブジェクトが無効で、次の場合。  
+ The status of a **COleCurrency** object is invalid in the following cases:  
   
--   値が設定されている場合、 **VARIANT**または`COleVariant`値を通貨値に変換できませんでした。  
+-   If its value is set from a **VARIANT** or `COleVariant` value that could not be converted to a currency value.  
   
--   このオブジェクトが、オーバーフローまたはアンダー フロー代入演算操作中、たとえば場合`+=`または** \* =**します。  
+-   If this object has experienced an overflow or underflow during an arithmetic assignment operation, for example `+=` or **\*=**.  
   
--   場合は、無効な値は、このオブジェクトに割り当てられました。  
+-   If an invalid value was assigned to this object.  
   
--   このオブジェクトの状態が明示的に設定に使用して無効な[SetStatus](#setstatus)します。  
+-   If the status of this object was explicitly set to invalid using [SetStatus](#setstatus).  
   
- 操作についての詳細は、無効です。 次のメンバー関数を参照してください状態を設定することがあります。  
+ For more information on operations that may set the status to invalid, see the following member functions:  
   
 - [COleCurrency](#colecurrency)  
   
-- [演算子 =](#operator_eq)  
+- [operator =](#operator_eq)  
   
-- [演算子 + -](#operator_plus_minus)  
+- [operator + -](#operator_plus_minus)  
   
-- [operator + =、=](#operator_plus_minus_eq)  
+- [operator += and -=](#operator_plus_minus_eq)  
   
-- [演算子 */](#operator_star)  
+- [operator * /](#operator_star)  
   
-- [演算子 * =、/=](#operator_star_div_eq)  
+- [operator *= and /=](#operator_star_div_eq)  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#12;](../../mfc/codesnippet/cpp/colecurrency-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#12](../../mfc/codesnippet/cpp/colecurrency-class_3.cpp)]  
   
-##  <a name="m_cur"></a>COleCurrency::m_cur  
- 基になる[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)この構造体**COleCurrency**オブジェクトです。  
+##  <a name="m_cur"></a>  COleCurrency::m_cur  
+ The underlying [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e) structure for this **COleCurrency** object.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!CAUTION]
->  値を変更、**通貨**構造体がこの関数によって返されるポインターではこの値を変更**COleCurrency**オブジェクトです。 このステータスは変更されません**COleCurrency**オブジェクトです。  
+>  Changing the value in the **CURRENCY** structure accessed by the pointer returned by this function will change the value of this **COleCurrency** object. It does not change the status of this **COleCurrency** object.  
   
- 詳細については、次を参照してください。、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e) entry in the Windows SDK.  
   
-##  <a name="m_status"></a>COleCurrency::m_status  
- このデータ メンバーの型は、列挙型`CurrencyStatus`、内で定義されている、 **COleCurrency**クラスです。  
+##  <a name="m_status"></a>  COleCurrency::m_status  
+ The type of this data member is the enumerated type `CurrencyStatus`, which is defined within the **COleCurrency** class.  
   
 ```  
 enum CurrencyStatus{  
@@ -263,44 +267,44 @@ enum CurrencyStatus{
 };  
 ```  
   
-### <a name="remarks"></a>コメント  
- これらのステータス値の簡単な説明は、次の一覧を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For a brief description of these status values, see the following list:  
   
-- **COleCurrency::valid**ことを示しますがこの**COleCurrency**のオブジェクトが有効です。  
+- **COleCurrency::valid** Indicates that this **COleCurrency** object is valid.  
   
-- **COleCurrency::invalid**ことを示しますがこの**COleCurrency**オブジェクトは無効です。 つまり、その値誤りがあります。  
+- **COleCurrency::invalid** Indicates that this **COleCurrency** object is invalid; that is, its value may be incorrect.  
   
-- **COleCurrency::null**ことを示しますがこの**COleCurrency**オブジェクトが null では、このオブジェクトの値が指定されていないことです。 (これは、データベースの意味で「値を持たない、」C++ ではなく"null" **NULL**)。  
+- **COleCurrency::null** Indicates that this **COleCurrency** object is null, that is, that no value has been supplied for this object. (This is "null" in the database sense of "having no value," as opposed to the C++ **NULL**.)  
   
- 状態、 **COleCurrency**オブジェクトが無効で、次の場合。  
+ The status of a **COleCurrency** object is invalid in the following cases:  
   
--   値が設定されている場合、 **VARIANT**または`COleVariant`値を通貨値に変換できませんでした。  
+-   If its value is set from a **VARIANT** or `COleVariant` value that could not be converted to a currency value.  
   
--   このオブジェクトが、オーバーフローまたはアンダー フロー代入演算操作中、たとえば場合`+=`または** \* =**します。  
+-   If this object has experienced an overflow or underflow during an arithmetic assignment operation, for example `+=` or **\*=**.  
   
--   場合は、無効な値は、このオブジェクトに割り当てられました。  
+-   If an invalid value was assigned to this object.  
   
--   このオブジェクトの状態が明示的に設定に使用して無効な[SetStatus](#setstatus)します。  
+-   If the status of this object was explicitly set to invalid using [SetStatus](#setstatus).  
   
- 操作についての詳細は、無効です。 次のメンバー関数を参照してください状態を設定することがあります。  
+ For more information on operations that may set the status to invalid, see the following member functions:  
   
 - [COleCurrency](#colecurrency)  
   
-- [演算子 =](#operator_eq)  
+- [operator =](#operator_eq)  
   
-- [演算子 +、-](#operator_plus_minus)  
+- [operator +, -](#operator_plus_minus)  
   
-- [演算子 + =、=](#operator_plus_minus_eq)  
+- [operator +=, -=](#operator_plus_minus_eq)  
   
-- [演算子 */](#operator_star)  
+- [operator */](#operator_star)  
   
-- [演算子 * =、/、=](#operator_star_div_eq)  
+- [operator *=, /=](#operator_star_div_eq)  
   
     > [!CAUTION]
-    >  このデータ メンバーは、高度なプログラミングに適しています。 インライン メンバー関数を使用する必要があります[GetStatus](#getstatus)と[SetStatus](#setstatus)します。 参照してください`SetStatus`このデータ メンバーを明示的に設定に関する注意事項についてさらには。  
+    >  This data member is for advanced programming situations. You should use the inline member functions [GetStatus](#getstatus) and [SetStatus](#setstatus). See `SetStatus` for further cautions regarding explicitly setting this data member.  
   
-##  <a name="operator_eq"></a>COleCurrency::operator =  
- これらのオーバー ロード代入演算子は、これを元の通貨値をコピー **COleCurrency**オブジェクトです。  
+##  <a name="operator_eq"></a>  COleCurrency::operator =  
+ These overloaded assignment operators copy the source currency value into this **COleCurrency** object.  
   
 ```  
 const COleCurrency& operator=(CURRENCY cySrc);  
@@ -308,22 +312,22 @@ const COleCurrency& operator=(const COleCurrency& curSrc);
   const COleCurrency& operator=(const VARIANT& varSrc);
 ```  
   
-### <a name="remarks"></a>コメント  
- 各演算子の簡単な説明に従います。  
+### <a name="remarks"></a>Remarks  
+ A brief description of each operator follows:  
   
-- **演算子 = (** `cySrc` **)** 、`CURRENCY`に値をコピー、 **COleCurrency**オブジェクトとその状態は、有効な設定されています。  
+- **operator =(** `cySrc` **)** The `CURRENCY` value is copied into the **COleCurrency** object and its status is set to valid.  
   
-- **演算子 = (** `curSrc` **)**値および状態の既存のオペランドの**COleCurrency**にこのオブジェクトがコピーされた**COleCurrency**オブジェクトです。  
+- **operator =(** `curSrc` **)** The value and status of the operand, an existing **COleCurrency** object are copied into this **COleCurrency** object.  
   
-- **演算子 = (** *varSrc* **)**場合の変換、`VARIANT`値 (または[COleVariant](../../mfc/reference/colevariant-class.md)オブジェクト) の通貨 ( `VT_CY`) が成功すると、変換された値がコピーに**COleCurrency**オブジェクトとその状態は、有効な設定は、です。 変換が成功すると、ない場合の値、 **COleCurrency**オブジェクトの値が 0、その状態は無効にします。  
+- **operator =(** *varSrc* **)** If the conversion of the `VARIANT` value (or [COleVariant](../../mfc/reference/colevariant-class.md) object) to a currency ( `VT_CY`) is successful, the converted value is copied into this **COleCurrency** object and its status is set to valid. If the conversion is not successful, the value of the **COleCurrency** object is set to 0 and its status to invalid.  
   
- 詳細については、次を参照してください。、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)と[VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e) and [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) entries in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#15;](../../mfc/codesnippet/cpp/colecurrency-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#15](../../mfc/codesnippet/cpp/colecurrency-class_4.cpp)]  
   
-##  <a name="operator_plus_minus"></a>COleCurrency::operator +、-  
- これらの演算子を使用して追加し、2 つ**COleCurrency**値やとの相互の符号を変更する、 **COleCurrency**値。  
+##  <a name="operator_plus_minus"></a>  COleCurrency::operator +, -  
+ These operators allow you to add and subtract two **COleCurrency** values to and from each other and to change the sign of a **COleCurrency** value.  
   
 ```  
 COleCurrency operator+(const COleCurrency& cur) const;  
@@ -331,80 +335,80 @@ COleCurrency operator-(const COleCurrency& cur) const;
 COleCurrency operator-() const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 結果の状態は null は、オペランドのいずれかのかどうかは**COleCurrency**値は null です。  
+### <a name="remarks"></a>Remarks  
+ If either of the operands is null, the status of the resulting **COleCurrency** value is null.  
   
- かどうか算術演算のオーバーフローすると、その結果、 **COleCurrency**値が無効です。  
+ If the arithmetic operation overflows, the resulting **COleCurrency** value is invalid.  
   
- オペランドが無効であり、もう一方の場合は、not null、結果のステータス**COleCurrency**値が無効です。  
+ If the operand is invalid and the other is not null, the status of the resulting **COleCurrency** value is invalid.  
   
- 有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数です。  
+ For more information on the valid, invalid, and null status values, see the [m_status](#m_status) member variable.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#16;](../../mfc/codesnippet/cpp/colecurrency-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#16](../../mfc/codesnippet/cpp/colecurrency-class_5.cpp)]  
   
-##  <a name="operator_plus_minus_eq"></a>COleCurrency::operator + =、=  
- 加算し、減算することは、 **COleCurrency**値との間この**COleCurrency**オブジェクトです。  
+##  <a name="operator_plus_minus_eq"></a>  COleCurrency::operator +=, -=  
+ Allow you to add and subtract a **COleCurrency** value to and from this **COleCurrency** object.  
   
 ```  
 const COleCurrency& operator+=(const COleCurrency& cur);  
 const COleCurrency& operator-=(const COleCurrency& cur);
 ```  
   
-### <a name="remarks"></a>コメント  
- この状態は null オペランドのいずれかの場合**COleCurrency**オブジェクトが設定を null にします。  
+### <a name="remarks"></a>Remarks  
+ If either of the operands is null, the status of this **COleCurrency** object is set to null.  
   
- かどうか、算術演算がオーバーフローした、このステータス**COleCurrency**オブジェクトが設定されている無効にします。  
+ If the arithmetic operation overflows, the status of this **COleCurrency** object is set to invalid.  
   
- オペランドのいずれかが無効で、もう一方が null でない場合のこの状態**COleCurrency**オブジェクトが設定されている無効にします。  
+ If either of the operands is invalid and the other is not null, the status of this **COleCurrency** object is set to invalid.  
   
- 有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数です。  
+ For more information on the valid, invalid, and null status values, see the [m_status](#m_status) member variable.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&17;](../../mfc/codesnippet/cpp/colecurrency-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#17](../../mfc/codesnippet/cpp/colecurrency-class_6.cpp)]  
   
-##  <a name="operator_star"></a>COleCurrency::operator *、/  
- 拡大縮小することは、 **COleCurrency**の値を整数値。  
+##  <a name="operator_star"></a>  COleCurrency::operator * and /  
+ Allow you to scale a **COleCurrency** value by an integral value.  
   
 ```  
 COleCurrency operator*(long nOperand) const;  
 COleCurrency operator/(long nOperand) const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合、 **COleCurrency**オペランドが null の場合、その結果のステータス**COleCurrency**値は null です。  
+### <a name="remarks"></a>Remarks  
+ If the **COleCurrency** operand is null, the status of the resulting **COleCurrency** value is null.  
   
- 算術演算がオーバーフローした場合、またはアンダー フロー、結果のステータス**COleCurrency**値が無効です。  
+ If the arithmetic operation overflows or underflows, the status of the resulting **COleCurrency** value is invalid.  
   
- 場合、 **COleCurrency**オペランドが有効で、その結果のステータス**COleCurrency**値が無効です。  
+ If the **COleCurrency** operand is invalid, the status of the resulting **COleCurrency** value is invalid.  
   
- 有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数です。  
+ For more information on the valid, invalid, and null status values, see the [m_status](#m_status) member variable.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#18;](../../mfc/codesnippet/cpp/colecurrency-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#18](../../mfc/codesnippet/cpp/colecurrency-class_7.cpp)]  
   
-##  <a name="operator_star_div_eq"></a>COleCurrency::operator * =、/、=  
- スケール アップするのには、 **COleCurrency**の値を整数値。  
+##  <a name="operator_star_div_eq"></a>  COleCurrency::operator *=, /=  
+ Allow you to scale this **COleCurrency** value by an integral value.  
   
 ```  
 const COleCurrency& operator*=(long nOperand);  
 const COleCurrency& operator/=(long nOperand);
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合、 **COleCurrency**オペランドが null の場合、このステータス**COleCurrency**オブジェクトが設定を null にします。  
+### <a name="remarks"></a>Remarks  
+ If the **COleCurrency** operand is null, the status of this **COleCurrency** object is set to null.  
   
- かどうか、算術演算がオーバーフローした、このステータス**COleCurrency**オブジェクトが設定されている無効にします。  
+ If the arithmetic operation overflows, the status of this **COleCurrency** object is set to invalid.  
   
- 場合、 **COleCurrency**オペランドが無効、この状態**COleCurrency**オブジェクトが設定されている無効にします。  
+ If the **COleCurrency** operand is invalid, the status of this **COleCurrency** object is set to invalid.  
   
- 有効、無効、および null 状態の値の詳細については、次を参照してください。、[ついて](#m_status)メンバー変数です。  
+ For more information on the valid, invalid, and null status values, see the [m_status](#m_status) member variable.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#19;](../../mfc/codesnippet/cpp/colecurrency-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#19](../../mfc/codesnippet/cpp/colecurrency-class_8.cpp)]  
   
-##  <a name="operator_stream"></a>COleCurrency::operator &lt; &lt;、&gt;&gt;  
- 診断をダンプし、アーカイブに格納することをサポートしています。  
+##  <a name="operator_stream"></a>  COleCurrency::operator &lt;&lt;, &gt;&gt;  
+ Supports diagnostic dumping and storing to an archive.  
   
 ```  
 friend CDumpContext& operator<<(
@@ -420,20 +424,20 @@ friend CArchive& operator>>(
     COleCurrency& curSrc);
 ```  
   
-### <a name="remarks"></a>コメント  
- 抽出 ( ** >> **) 演算子は、アーカイブからの読み込みをサポートしています。  
+### <a name="remarks"></a>Remarks  
+ The extraction ( **>>**) operator supports loading from an archive.  
   
-##  <a name="operator_currency"></a>COleCurrency::operator 通貨  
- 返します。、`CURRENCY`構造体の値がこれからコピー **COleCurrency**オブジェクトです。  
+##  <a name="operator_currency"></a>  COleCurrency::operator CURRENCY  
+ Returns a `CURRENCY` structure whose value is copied from this **COleCurrency** object.  
   
 ```  
 operator CURRENCY() const; 
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="parsecurrency"></a>COleCurrency::ParseCurrency  
- 通貨値を読み取るための文字列を解析するには、このメンバー関数を呼び出します。  
+##  <a name="parsecurrency"></a>  COleCurrency::ParseCurrency  
+ Call this member function to parse a string to read a currency value.  
   
 ```  
 BOOL ParseCurrency(
@@ -445,37 +449,37 @@ throw(CMemoryException*);
 throw(COleException*);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszCurrency*  
- 解析するには null で終わる文字列へのポインター。  
+ A pointer to the null-terminated string which is to be parsed.  
   
  `dwFlags`  
- ロケールの設定、フラグに対応するフラグを示します。  
+ Indicates flags for locale settings, possibly the following flag:  
   
-- **LOCALE_NOUSEROVERRIDE**カスタム ユーザー設定ではなく、システム既定ロケール設定を使用します。  
+- **LOCALE_NOUSEROVERRIDE** Use the system default locale settings, rather than custom user settings.  
   
  `lcid`  
- 変換に使用するロケール ID を示します。  
+ Indicates locale ID to use for the conversion.  
   
-### <a name="return-value"></a>戻り値  
- 文字列が通貨値であり、それ以外の場合 0 を正常に変換された場合は 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the string was successfully converted to a currency value, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 元の文字列内の数値以外の文字の意味のローカル言語仕様 (ロケール Id) を使用します。  
+### <a name="remarks"></a>Remarks  
+ It uses local language specifications (locale IDs) for the meaning of nonnumeric characters in the source string.  
   
- ロケール ID の値の詳細については、次を参照してください。[複数の言語をサポートする](http://msdn.microsoft.com/en-us/47dc5add-232c-4268-b977-43e12da81ede)です。  
+ For a discussion of locale ID values, see [Supporting Multiple Languages](http://msdn.microsoft.com/en-us/47dc5add-232c-4268-b977-43e12da81ede).  
   
- 文字列が通貨に正常に変換された場合の値、この値**COleCurrency**オブジェクトが有効な値とする状態に設定します。  
+ If the string was successfully converted to a currency value, the value of this **COleCurrency** object is set to that value and its status to valid.  
   
- 文字列を通貨値に変換されませんでしたか、数値オーバーフローのこの状態が発生した場合**COleCurrency**オブジェクトが無効です。  
+ If the string could not be converted to a currency value or if there was a numerical overflow, the status of this **COleCurrency** object is invalid.  
   
- この関数がスローするメモリ割り当てエラーのために文字列の変換が失敗した場合、[関数](../../mfc/reference/cmemoryexception-class.md)します。 この関数によってスローされる他のエラー状態、[関数](../../mfc/reference/coleexception-class.md)します。  
+ If the string conversion failed due to memory allocation errors, this function throws a [CMemoryException](../../mfc/reference/cmemoryexception-class.md). In any other error state, this function throws a [COleException](../../mfc/reference/coleexception-class.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#13;](../../mfc/codesnippet/cpp/colecurrency-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#13](../../mfc/codesnippet/cpp/colecurrency-class_9.cpp)]  
   
-##  <a name="colecurrency_relational_operators"></a>COleCurrency 関係演算子  
- 2 つの通貨値を比較し、条件が true である場合は 0 以外を返しますそれ以外の場合 0 を返します。  
+##  <a name="colecurrency_relational_operators"></a>  COleCurrency Relational Operators  
+ Compare two currency values and return nonzero if the condition is true; otherwise 0.  
   
 ```  
 BOOL operator==(const COleCurrency& cur) const;  
@@ -486,16 +490,16 @@ BOOL operator<=(const COleCurrency& cur) const;
 BOOL operator>=(const COleCurrency& cur) const;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  順序付けの操作の戻り値 ( ** < **、 ** \< = **、 ** > **、 ** >= **) は、オペランドのいずれかの状態が null または無効な場合、未定義です。 等値演算子 ( `==`、 `!=`) のオペランドの状態を検討してください。  
+>  The return value of the ordering operations ( **<**, **\<=**, **>**, **>=**) is undefined if the status of either operand is null or invalid. The equality operators ( `==`, `!=`) consider the status of the operands.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#20;](../../mfc/codesnippet/cpp/colecurrency-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#20](../../mfc/codesnippet/cpp/colecurrency-class_10.cpp)]  
   
-##  <a name="setcurrency"></a>COleCurrency::SetCurrency  
- 単位とこれの小数部を設定するには、このメンバー関数を呼び出す**COleCurrency**オブジェクトです。  
+##  <a name="setcurrency"></a>  COleCurrency::SetCurrency  
+ Call this member function to set the units and fractional part of this **COleCurrency** object.  
   
 ```  
 void SetCurrency(
@@ -503,31 +507,31 @@ void SetCurrency(
     long nFractionalUnits);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nUnits`, `nFractionalUnits`  
- これにコピーされる単位および小数部の部分 (1/10 で、000's) の値を示す**COleCurrency**オブジェクトです。  
+ Indicate the units and fractional part (in 1/10,000's) of the value to be copied into this **COleCurrency** object.  
   
-### <a name="remarks"></a>コメント  
- 小数部の絶対値が 10,000 より大きい場合は、3 番目の例を次に示すように、単位に、適切な調整が行われます。  
+### <a name="remarks"></a>Remarks  
+ If the absolute value of the fractional part is greater than 10,000, the appropriate adjustment is made to the units, as shown in the third of the following examples.  
   
- 部と小数部が符号付き long 値で指定されていることに注意してください。 4 番目の次の例では、パラメーターの符号が異なる場合の処理を表示します。  
+ Note that the units and fractional part are specified by signed long values. The fourth of the following examples shows what happens when the parameters have different signs.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#14;](../../mfc/codesnippet/cpp/colecurrency-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#14](../../mfc/codesnippet/cpp/colecurrency-class_11.cpp)]  
   
-##  <a name="setstatus"></a>COleCurrency::SetStatus  
- このステータス (有効) に設定するには、このメンバー関数を呼び出す**COleCurrency**オブジェクトです。  
+##  <a name="setstatus"></a>  COleCurrency::SetStatus  
+ Call this member function to set the status (validity) of this **COleCurrency** object.  
   
 ```  
 void SetStatus(CurrencyStatus  status  );
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *status*  
- この新しいステータス**COleCurrency**オブジェクトです。  
+ The new status for this **COleCurrency** object.  
   
-### <a name="remarks"></a>コメント  
- *ステータス*でパラメーターの値が定義されている、`CurrencyStatus`列挙型で、内で定義された、 **COleCurrency**クラスです。  
+### <a name="remarks"></a>Remarks  
+ The *status* parameter value is defined by the `CurrencyStatus` enumerated type, which is defined within the **COleCurrency** class.  
   
 ```  
 enum CurrencyStatus {
@@ -537,18 +541,18 @@ enum CurrencyStatus {
     };  
 ```  
   
- これらのステータス値の簡単な説明は、次の一覧を参照してください。  
+ For a brief description of these status values, see the following list:  
   
-- **COleCurrency::valid**ことを示しますがこの**COleCurrency**のオブジェクトが有効です。  
+- **COleCurrency::valid** Indicates that this **COleCurrency** object is valid.  
   
-- **COleCurrency::invalid**ことを示しますがこの**COleCurrency**オブジェクトは無効です。 つまり、その値誤りがあります。  
+- **COleCurrency::invalid** Indicates that this **COleCurrency** object is invalid; that is, its value may be incorrect.  
   
-- **COleCurrency::null**ことを示しますがこの**COleCurrency**オブジェクトが null では、このオブジェクトの値が指定されていないことです。 (これは、データベースの意味で「値を持たない、」C++ ではなく"null" **NULL**)。  
+- **COleCurrency::null** Indicates that this **COleCurrency** object is null, that is, that no value has been supplied for this object. (This is "null" in the database sense of "having no value," as opposed to the C++ **NULL**.)  
   
     > [!CAUTION]
-    >  この関数は、高度なプログラミングに適しています。 この関数では、このオブジェクトのデータは変更されません。 Null または無効な状態に設定する最も使用されます。 注意してください、代入演算子 ([演算子 =](#operator_eq)) と[SetCurrency](#setcurrency)ソース値に基づいて、オブジェクトの状態を設定します。  
+    >  This function is for advanced programming situations. This function does not alter the data in this object. It will most often be used to set the status to null or invalid. Note that the assignment operator ( [operator =](#operator_eq)) and [SetCurrency](#setcurrency) do set the status to of the object based on the source value(s).  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [COleVariant クラス](../../mfc/reference/colevariant-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleVariant Class](../../mfc/reference/colevariant-class.md)
 

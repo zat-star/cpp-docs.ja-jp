@@ -1,76 +1,95 @@
 ---
-title: "OLE の背景知識 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE, 概要 (OLE の)"
+title: OLE Background | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE, about OLE
 ms.assetid: 5f654eb5-66b1-40c9-9215-bb85356a67f8
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# OLE の背景知識
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 244f05988d52d980a94692c473767651a73a1904
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-OLE ユーザーを複数のアプリケーションで作成された項目または「オブジェクト」を含む文書を作成および編集できるようにする機能です。  
+---
+# <a name="ole-background"></a>OLE Background
+OLE is a mechanism that allows users to create and edit documents containing items or "objects" created by multiple applications.  
   
 > [!NOTE]
->  最初に、OLE オブジェクトのリンクと埋め込みの頭字語はいません。  ただし、OLE、と呼ばれます。  これで、リンクと埋め込みに関係しない OLE の一部は Active テクノロジの一部です。  
+>  OLE was originally an acronym for Object Linking and Embedding. However, it is now referred to as OLE. Parts of OLE not related to linking and embedding are now part of Active technology.  
   
- 歴史的に複合ドキュメントと呼ばれる OLE ドキュメントは、シームレスにデータ、またはコンポーネントのさまざまな型を統合します。  サウンド クリップ、スプレッドシート、およびビットマップは OLE ドキュメントにあるコンポーネントの一般的な例です。  アプリケーションで OLE サポートはユーザーが異なるアプリケーション間の切り替えを気に OLE ドキュメントを使用することにより; OLE、の切り替えを行います。  
+ OLE documents, historically called compound documents, seamlessly integrate various types of data, or components. Sound clips, spreadsheets, and bitmaps are typical examples of components found in OLE documents. Supporting OLE in your application allows your users to use OLE documents without worrying about switching between the different applications; OLE does the switching for you.  
   
- 複合ドキュメントとサーバー アプリケーションまたはコンポーネントは、アプリケーションを作成するコンテナー アプリケーションをコンテナー ドキュメント内の項目を作成しています。  作成したアプリケーションがコンテナー、サーバー、またはその両方を使用できます。  
+ You use a container application to create compound documents and a server application or component application to create the items within the container document. Any application you write can be a container, a server, or both.  
   
- OLE アプリケーション間のシームレスな相互作用の目的の方向にさまざまな概念をそのすべての作業組み込まれています。  これらの領域は、次のとおりです:  
+ OLE incorporates many different concepts that all work toward the goal of seamless interaction between applications. These areas include the following:  
   
- リンクと埋め込み  
- リンクと埋め込みは OLE ドキュメント内に作成された別のアプリケーションで作成された項目を格納するための 2 種類のメソッドです。  2 の違いの詳細については、"情報 [OLE 背景: リンクと埋め込み](../mfc/ole-background-linking-and-embedding.md)を参照してください。  詳細については、サポート技術情報 [コンテナー](../mfc/containers.md) と [サーバー](../mfc/servers.md)を参照してください。  
+ Linking and Embedding  
+ Linking and embedding are the two methods for storing items created inside an OLE document that were created in another application. For general information on the differences between the two, see the article [OLE Background: Linking and Embedding](../mfc/ole-background-linking-and-embedding.md). For more detailed information, see the articles [Containers](../mfc/containers.md) and [Servers](../mfc/servers.md).  
   
- 埋め込み先編集の有効化 \(ビジュアル編集\)  
- 埋め込まれたアイテムをコンテナー ドキュメントのコンテキストでアクティブにする埋め込み先編集の有効化またはビジュアル編集と呼ばれます。  コンテナー アプリケーションのインターフェイスは埋め込まれたアイテム構成を作成したアプリケーションの機能を組み込むに変更します。  リンクされたアイテムはリンクを含むアプリケーションのコンテキストから、項目の実際のデータを別のファイルに含まれているため、アクティブになりません。  埋め込み先編集の有効化の詳細については、記事 [アクティブ化](../mfc/activation-cpp.md)を参照します。  
-  
-> [!NOTE]
->  リンクと埋め込み、埋め込み先編集の有効化は OLE ビジュアル編集の主な機能を提供します。  
-  
- \[オートメーション\]  
- オートメーションは 1 アプリケーションが他のアプリケーションを実行できるようになります。  "アプリケーションは、オートメーション クライアントと呼ばれ、ドリブン アプリケーションは、オートメーション サーバーまたはオートメーション コンポーネントと呼ばれます。  オートメーション詳細については、記事 [Automation Clients](../mfc/automation-clients.md) と [オートメーション サーバー](../mfc/automation-servers.md)を参照します。  
+ In-Place Activation (Visual Editing)  
+ Activating an embedded item in the context of the container document is called in-place activation or visual editing. The container application's interface changes to incorporate the features of the component application that created the embedded item. Linked items are never activated in place because the actual data for the item is contained in a separate file, out of the context of the application containing the link. For more information on in-place activation, see the article [Activation](../mfc/activation-cpp.md).  
   
 > [!NOTE]
->  OLE オートメーションは、Active テクノロジのコンテキストで使用できます。  COM によってオブジェクトを自動化できます。  
+>  Linking and embedding and in-place activation provide the main features of OLE visual editing.  
   
- 複合ファイル  
- 複合ファイルは OLE アプリケーションの複合ドキュメントで構成された保存を簡略化するための標準的なファイル形式を提供します。  複合ファイル内では、ストレージにディレクトリの多くの機能があり、ストリームにファイルの機能が多数用意されています。  ここでは、構造化記憶と呼ばれます。  複合ファイルの詳細については、記事 [コンテナー: 複合ファイル](../mfc/containers-compound-files.md)を参照します。  
+ Automation  
+ Automation allows one application to drive another application. The driving application is known as an automation client, and the application being driven is known as an automation server or automation component. For more information on automation, see the articles [Automation Clients](../mfc/automation-clients.md) and [Automation Servers](../mfc/automation-servers.md).  
   
- 汎用データ転送  
- 汎用データ転送 \(UDT\) はデータを転送するために選択される実際のメソッドに関係なく、データが標準の方法で送信され、受け取るようにする一連のインターフェイスです。  UDT はドラッグ アンド ドロップによるデータ転送するための基礎となります。  UDT のコピーおよびダイナミック データ エクスチェンジ \(DDE\) などの既存のウィンドウのデータ転送の基礎として、実行されます。  UDT の詳細については、記事 [データ オブジェクトとデータ ソース \(OLE\)](../mfc/data-objects-and-data-sources-ole.md)を参照します。  
+> [!NOTE]
+>  Automation works in both OLE and Active technology contexts. You can automate any object based on COM.  
   
- ドラッグ アンド ドロップ  
- ドラッグ アンド ドロップは、アプリケーション間で、アプリケーション内のウィンドウ間で、またはアプリケーションの一つのウィンドウ内でデータを転送するための使いやすい、直接操作方法です。  転送されるデータは、目的の前になり、ドラッグされます。  ドラッグ アンド ドロップは汎用データ転送に基づいています。  ドラッグ アンド ドロップの詳細については、記事 [ドラッグ アンド ドロップ](../mfc/drag-and-drop-ole.md)を参照します。  
+ Compound Files  
+ Compound files provide a standard file format that simplifies structured storing of compound documents for OLE applications. Within a compound file, storages have many features of directories and streams have many features of files. This technology is also called structured storage. For more information on compound files, see the article [Containers: Compound Files](../mfc/containers-compound-files.md).  
   
- コンポーネント オブジェクト モデル  
- OLE オブジェクトを相互に通信すると Component Object Model \(COM\) を使用するインフラストラクチャを提供します。  MFC の OLE クラスはプログラマの COM を簡略化します。  COM は、COM オブジェクトが OLE と Active テクノロジの下にあるため、Active テクノロジの一部です。  COM に関する詳細については、[Active Template Library \(ATL\)](../atl/active-template-library-atl-concepts.md) "を参照します。  
+ Uniform Data Transfer  
+ Uniform Data Transfer (UDT) is a set of interfaces that allow data to be sent and received in a standard fashion, regardless of the actual method chosen to transfer the data. UDT forms the basis for data transfers by drag and drop. UDT now serves as the basis for existing Windows data transfer, such as the Clipboard and dynamic data exchange (DDE). For more information on UDT, see the article [Data Objects and Data Sources (OLE)](../mfc/data-objects-and-data-sources-ole.md).  
   
- より重要な OLE トピックには、次のトピックで説明されている:  
+ Drag and Drop  
+ Drag and drop is an easy-to-use, direct-manipulation technique to transfer data among applications, among windows within an application, or even within a single window in an application. The data to be transferred is selected and dragged to the desired destination. Drag and drop is based on uniform data transfer. For more information on drag and drop, see the article [Drag and Drop](../mfc/drag-and-drop-ole.md).  
   
--   [OLE 背景: リンクと埋め込み](../mfc/ole-background-linking-and-embedding.md)  
+ Component Object Model  
+ The Component Object Model (COM) provides the infrastructure used when OLE objects communicate with each other. The MFC OLE classes simplify COM for the programmer. COM is part of Active technology, because COM objects underlie both OLE and Active technology. For more information about COM, see the [Active Template Library (ATL)](../atl/active-template-library-atl-concepts.md) topics.  
   
--   [OLE 背景: コンテナーとサーバー](../mfc/ole-background-containers-and-servers.md)  
+ Some of the more important OLE topics are covered in the following articles:  
   
--   [OLE 背景: 実装方法](../mfc/ole-background-implementation-strategies.md)  
+-   [OLE Background: Linking and Embedding](../mfc/ole-background-linking-and-embedding.md)  
   
--   [OLE 背景: MFC の実装](../mfc/ole-background-mfc-implementation.md)  
+-   [OLE Background: Containers and Servers](../mfc/ole-background-containers-and-servers.md)  
   
- 上記の記事で見つからない" OLE の詳細については、MSDN の" OLE を検索します。  
+-   [OLE Background: Implementation Strategies](../mfc/ole-background-implementation-strategies.md)  
   
-## 参照  
+-   [OLE Background: MFC Implementation](../mfc/ole-background-mfc-implementation.md)  
+  
+ For general OLE information not found in the above articles, search for OLE in MSDN.  
+  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)
+
+

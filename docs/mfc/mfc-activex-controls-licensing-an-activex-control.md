@@ -1,127 +1,146 @@
 ---
-title: "MFC ActiveX コントロール : ActiveX コントロールのライセンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "COleObjectFactory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COleObjectFactory クラス, ライセンス (コントロールの)"
-  - "GetLicenseKey メソッド"
-  - "ライセンス (ActiveX コントロールの)"
-  - "MFC ActiveX コントロール, ライセンス"
-  - "VerifyLicenseKey メソッド"
-  - "VerifyUserLicense メソッド"
+title: 'MFC ActiveX Controls: Licensing an ActiveX Control | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- COleObjectFactory
+dev_langs:
+- C++
+helpviewer_keywords:
+- COleObjectFactory class [MFC], licensing controls
+- MFC ActiveX controls [MFC], licensing
+- VerifyLicenseKey method [MFC]
+- VerifyUserLicense method [MFC]
+- GetLicenseKey method [MFC]
+- licensing ActiveX controls
 ms.assetid: cacd9e45-701a-4a1f-8f1f-b0b39f6ac303
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : ActiveX コントロールのライセンス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 079c4d818e6241052076693fbdbff617a0eabc4c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ライセンス処理、ActiveX コントロール、およびオプションの機能がユーザー コントロールを使用するか、配れる方法を制御できます。\(ライセンスの問題についての追加的な説明については、[既存の ActiveX コントロールのアップグレード](../Topic/Upgrading%20an%20Existing%20ActiveX%20Control.md)ライセンスの問題を参照してください\)。  
+---
+# <a name="mfc-activex-controls-licensing-an-activex-control"></a>MFC ActiveX Controls: Licensing an ActiveX Control
+Licensing support, an optional feature of ActiveX controls, allows you to control who is able to use or distribute the control. (For additional discussion of licensing issues, see Licensing Issues in [Upgrading an Existing ActiveX Control](../mfc/upgrading-an-existing-activex-control.md).)  
   
- ここでは、次のトピックについて説明します。  
+ This article discusses the following topics:  
   
--   [ActiveX コントロールのライセンスの概要](#_core_overview_of_activex_control_licensing)  
+-   [Overview of ActiveX Control Licensing](#_core_overview_of_activex_control_licensing)  
   
--   [ライセンス コントロールの作成](#_core_creating_a_licensed_control)  
+-   [Creating a Licensed Control](#_core_creating_a_licensed_control)  
   
--   [ライセンス処理](#_core_licensing_support)  
+-   [Licensing Support](#_core_licensing_support)  
   
--   [ActiveX コントロールの検証のカスタマイズ](#_core_customizing_the_licensing_of_an_activex_control)  
+-   [Customizing the Licensing of an ActiveX Control](#_core_customizing_the_licensing_of_an_activex_control)  
   
- 他のユーザーが ActiveX コントロールをどのように使用するかを判断するには、コントロールの開発者は、検証の割り当てを実装する ActiveX コントロールです。  購入者がコントロールを配布コントロールを使用するアプリケーションのない .LIC ファイル、できます。協定とコントロールおよび .LIC ファイルをコントロールの購入者になります。  これは、コントロールを使用するために新しいアプリケーションから最初に、からコントロールを検証せずにそのアプリケーションのユーザーを防ぎます。  
+ ActiveX controls that implement licensing allow you, as the control developer, to determine how other people will use the ActiveX control. You provide the control purchaser with the control and .LIC file, with the agreement that the purchaser may distribute the control, but not the .LIC file, with an application that uses the control. This prevents users of that application from writing new applications that use the control, without first licensing the control from you.  
   
-##  <a name="_core_overview_of_activex_control_licensing"></a> ActiveX コントロールのライセンスの概要  
- ActiveX コントロールに検証をサポートするには、[COleObjectFactory](../mfc/reference/coleobjectfactory-class.md) クラスは **IClassFactory2** インターフェイスのいくつかの関数に実装を提供し、T: **IClassFactory2::RequestLicKey**、**IClassFactory2::GetLicInfo**と **IClassFactory2::CreateInstanceLic**。  コンテナー アプリケーションの開発者がコントロールのインスタンスを作成する要求を行うと、コントロール .LIC ファイルが存在することを確認するに `GetLicInfo` への呼び出しが行われました。  コントロールが検証されると、コントロールのインスタンスがそのコンテナーに作成し、配置できます。  開発者がコンテナー アプリケーションを構築することが完了したら、関数呼び出し、`RequestLicKey`への、ここで行われます。  このコンテナー アプリケーションに関数の戻り値はライセンス キー \(単純な文字列\)。  リターン キーはアプリケーション内に埋め込まれます。  
+##  <a name="_core_overview_of_activex_control_licensing"></a> Overview of ActiveX Control Licensing  
+ To provide licensing support for ActiveX controls, the [COleObjectFactory](../mfc/reference/coleobjectfactory-class.md) class provides an implementation for several functions in the **IClassFactory2** interface: **IClassFactory2::RequestLicKey**, **IClassFactory2::GetLicInfo**, and **IClassFactory2::CreateInstanceLic**. When the container application developer makes a request to create an instance of the control, a call to `GetLicInfo` is made to verify that the control .LIC file is present. If the control is licensed, an instance of the control can be created and placed in the container. After the developer has finished constructing the container application, another function call, this time to `RequestLicKey`, is made. This function returns a license key (a simple character string) to the container application. The returned key is then embedded in the application.  
   
- 下の図に、コンテナー アプリケーションの開発時に使用する ActiveX コントロールのライセンスの検証の例を示します。  前に述べたように、コンテナー アプリケーションの開発者は、コントロールのインスタンスを作成するには、開発用コンピューターにインストールされている適切な .LIC ファイルが必要です。  
+ The figure below demonstrates the license verification of an ActiveX control that will be used during the development of a container application. As mentioned previously, the container application developer must have the proper .LIC file installed on the development machine to create an instance of the control.  
   
- ![開発時で検証された、ライセンスされた ActiveX コントロール](../mfc/media/vc374d1.gif "vc374D1")  
-開発時の ActiveX コントロールのライセンス検査  
+ ![Licensed ActiveX control verified at development](../mfc/media/vc374d1.gif "vc374d1")  
+Verification of a Licensed ActiveX Control During Development  
   
- 次の図に示します。ここでは、エンド ユーザーがコンテナー アプリケーションを実行したときに発生します。  
+ The next process, shown in the following figure, occurs when the end user runs the container application.  
   
- アプリケーションの起動時には、作成される通常の各コントロールのインスタンス。  コンテナーは、パラメーターとして埋め込まれたなライセンス キーを渡す `CreateInstanceLic`を呼び出すことによってこれを実現します。  文字列比較はライセンス キーの埋め込まれたなライセンス キーとコントロールのコピー中に表示されます。  一致が成功した場合は、コントロールのインスタンスが作成され、アプリケーションは正常に実行されます。  .LIC ファイルをコントロールのユーザーのコンピューター上にある必要はないことに注意してください。  
+ When the application is started, an instance of the control usually needs to be created. The container accomplishes this by making a call to `CreateInstanceLic`, passing the embedded license key as a parameter. A string comparison is then made between the embedded license key and the control's own copy of the license key. If the match is successful, an instance of the control is created and the application continues to execute normally. Note that the .LIC file need not be present on the control user's machine.  
   
- ![実行時に検証された、ライセンスされた ActiveX コントロール](../mfc/media/vc374d2.gif "vc374D2")  
-実行時の ActiveX コントロールのライセンス検査  
+ ![Licensed ActiveX control verified at execution](../mfc/media/vc374d2.gif "vc374d2")  
+Verification of a Licensed ActiveX Control During Execution  
   
- コントロールの検証は 2 種類の基本的なコンポーネントで構成されます。: コントロールを実装する特定の DLL コードとライセンスはファイル。  コードは 2 か \(または 3 個\) 関数呼び出し、および参照する文字列に、著作権表記を含む「ライセンス文字列」構成されます。  これらの呼び出しとライセンスの文字列は、コントロールの実装 \(.cpp\) ファイルにあります。  ActiveX コントロール ウィザードにより生成されたライセンス ファイルは Copyright ステートメントを持つテキスト ファイルです。  これは .LIC 拡張機能、たとえば SAMPLE.LIC プロジェクト名を使用して指定されます。  ライセンスされたコントロールは、ライセンス ファイルとともに、デザイン時の使用が必要な場合伴われなければ必要があります。  
+ Control licensing consists of two basic components: specific code in the control implementation DLL and the license file. The code is composed of two (or possibly three) function calls and a character string, hereafter referred to as a "license string", containing a copyright notice. These calls and the license string are found in the control implementation (.CPP) file. The license file, generated by the ActiveX Control Wizard, is a text file with a copyright statement. It is named using the project name with an .LIC extension, for example SAMPLE.LIC. A licensed control must be accompanied by the license file if design-time use is needed.  
   
-##  <a name="_core_creating_a_licensed_control"></a> ライセンス コントロールの作成  
- コントロール フレームワークを作成するには、ActiveX コントロール ウィザードを使用すると、ライセンス処理を含む可能性もあります。  コントロールは、ランタイム ライセンスが必要であることを指定するときに ActiveX コントロール ウィザードはコントロール クラスに検証をサポートするコードを追加します。  コードは、関数から that Use ライセンスのキーとライセンス ファイルで構成されます。  これらの関数は、コントロールの検証をカスタマイズするために変更できます。  ライセンスのカスタマイズの詳細については、この記事の [ActiveX コントロールの検証のカスタマイズ](#_core_customizing_the_licensing_of_an_activex_control) を後で参照します。  
+##  <a name="_core_creating_a_licensed_control"></a> Creating a Licensed Control  
+ When you use the ActiveX Control Wizard to create the control framework, it is easy to include licensing support. When you specify that the control should have a run-time license, the ActiveX Control Wizard adds code to the control class to support licensing. The code consists of functions that use a key and license file for license verification. These functions also can be modified to customize the control licensing. For more information on license customization, see [Customizing the Licensing of an ActiveX Control](#_core_customizing_the_licensing_of_an_activex_control) later in this article.  
   
-#### コントロール プロジェクトを作成するときに ActiveX コントロール ウィザードでの検証のサポートを追加するには  
+#### <a name="to-add-support-for-licensing-with-the-activex-control-wizard-when-you-create-your-control-project"></a>To add support for licensing with the ActiveX Control Wizard when you create your control project  
   
-1.  [MFC ActiveX コントロールの作成](../mfc/reference/creating-an-mfc-activex-control.md)の手順を使用します。  ActiveX コントロール ウィザードの **\[アプリケーションの設定\]** ページはランタイム ライセンスとコントロールを作成するオプションが用意されています。  
+1.  Use the instructions in [Creating an MFC ActiveX Control](../mfc/reference/creating-an-mfc-activex-control.md). The **Application Settings** page of the ActiveX Control Wizard contains the option to create the control with the run-time license.  
   
- ActiveX コントロール ウィザードでは、基本的なライセンス処理を含む ActiveX コントロールのフレームワークを生成します。  検証コードの詳細については、次のトピックを参照してください。  
+ The ActiveX Control Wizard now generates an ActiveX control framework that includes basic licensing support. For a detailed explanation of the licensing code, see the next topic.  
   
-##  <a name="_core_licensing_support"></a> ライセンス処理  
- ActiveX コントロールのライセンス処理を追加するには、ActiveX コントロール ウィザードを使用すると ActiveX コントロール ウィザードは宣言する実装はコントロールのヘッダー ファイルと実装ファイルに検証機能を追加するコードを追加します。  このコードは [COleObjectFactory](../mfc/reference/coleobjectfactory-class.md) にある既定の実装をオーバーライドする `VerifyUserLicense` のメンバー関数と `GetLicenseKey` のメンバー関数で構成されます。  これらの関数は、コントロールのライセンスを取得し、検証します。  
-  
-> [!NOTE]
->  3 つ目のメンバー関数は、`VerifyLicenseKey` ActiveX コントロール ウィザードによって生成されていないか、ライセンス キーの検証の動作をカスタマイズするためにオーバーライドできます。  
-  
- このメンバー関数は、次の操作:  
-  
--   [VerifyUserLicense](../Topic/COleObjectFactory::VerifyUserLicense.md)  
-  
-     コントロールがコントロールのライセンス ファイルの存在がシステムをチェックすることにより、デザイン時に使用できるようにすることを確認します。  この関数は **IClassFactory2::GetLicInfo** と **IClassFactory::CreateInstanceLic**処理の一部として、フレームワークによって呼び出されます。  
-  
--   [GetLicenseKey](../Topic/COleObjectFactory::GetLicenseKey.md)  
-  
-     コントロール DLL から一意のキーを要求します。  コンテナー アプリケーションでこのキーが埋め込まれ、`VerifyLicenseKey`とともに、コントロールのインスタンスを作成するために後で使用します。  この関数は **IClassFactory2::RequestLicKey**処理の一部として、フレームワークによって呼び出されます。  
-  
--   [VerifyLicenseKey](../Topic/COleObjectFactory::VerifyLicenseKey.md)  
-  
-     埋め込まれたなキー、および一意キーが同じであることを確認します。  これは、コンテナーによって使用されるようにコントロールのインスタンスを作成できるようになります。  この関数は **IClassFactory2::CreateInstanceLic** 処理の一部としてフレームワークによって呼び出され、ライセンス キーのカスタマイズされた検証を提供するためにオーバーライドできます。  既定の実装では文字列比較を実行します。  詳細については、この記事の [ActiveX コントロールの検証のカスタマイズ](#_core_customizing_the_licensing_of_an_activex_control)を、後で参照します。  
-  
-###  <a name="_core_header_file_modifications"></a> ヘッダー ファイルの変更  
- ActiveX コントロール ウィザードはコントロールのヘッダー ファイルに次のコードを配置します。  この例では、`CSampleCtrl` オブジェクト `factory` 2 の二つのメンバー関数は、コントロール .LIC ファイルの存在を確認するとコントロールを含むアプリケーションで使用されるライセンス キーを取得する別の宣言されます: 1  
-  
- [!code-cpp[NVC_MFC_AxUI#39](../mfc/codesnippet/CPP/mfc-activex-controls-licensing-an-activex-control_1.h)]  
-  
-###  <a name="_core_implementation_file_modifications"></a> 実装ファイルの変更  
- ActiveX コントロール ウィザードは、コントロールの実装ファイルにライセンス ファイル名とライセンスの文字列を宣言するには、次の 2 種類のステートメントを配置する:  
-  
- [!code-cpp[NVC_MFC_AxUI#40](../mfc/codesnippet/CPP/mfc-activex-controls-licensing-an-activex-control_2.cpp)]  
+##  <a name="_core_licensing_support"></a> Licensing Support  
+ When you use the ActiveX Control Wizard to add licensing support to an ActiveX control, the ActiveX Control Wizard adds code that declares and implements the licensing capability is added to the control header and implementation files. This code is composed of a `VerifyUserLicense` member function and a `GetLicenseKey` member function, which override the default implementations found in [COleObjectFactory](../mfc/reference/coleobjectfactory-class.md) . These functions retrieve and verify the control license.  
   
 > [!NOTE]
->  何か **szLicString** を変更すると、コントロール .LIC ファイルの最初の行を変更して検証は正しく機能しません。  
+>  A third member function, `VerifyLicenseKey` is not generated by the ActiveX Control Wizard, but can be overridden to customize the license key verification behavior.  
   
- ActiveX コントロール ウィザードは、コントロールの実装ファイルにコントロール クラスの `VerifyUserLicense` と `GetLicenseKey` 関数を定義するために次のコードを配置する:  
+ These member functions are:  
   
- [!code-cpp[NVC_MFC_AxUI#41](../mfc/codesnippet/CPP/mfc-activex-controls-licensing-an-activex-control_3.cpp)]  
+-   [VerifyUserLicense](../mfc/reference/coleobjectfactory-class.md#verifyuserlicense)  
   
- 最後に、**ActiveX Control Wizard** はコントロール プロジェクト .IDL ファイルを変更します。  **ライセンスされています** キーワードは、次の例のようにコントロールのコクラスの宣言に追加します:  
+     Verifies that the control allows design-time usage by checking the system for the presence of the control license file. This function is called by the framework as part of processing **IClassFactory2::GetLicInfo** and **IClassFactory::CreateInstanceLic**.  
   
- [!code-cpp[NVC_MFC_AxUI#42](../mfc/codesnippet/CPP/mfc-activex-controls-licensing-an-activex-control_4.idl)]  
+-   [GetLicenseKey](../mfc/reference/coleobjectfactory-class.md#getlicensekey)  
   
-##  <a name="_core_customizing_the_licensing_of_an_activex_control"></a> ActiveX コントロールの検証のカスタマイズ  
- `VerifyUserLicense`、`GetLicenseKey`と `VerifyLicenseKey` がコントロールのクラス ファクトリの仮想メンバー関数として宣言されているため、コントロールの検証の動作をカスタマイズできます。  
+     Requests a unique key from the control DLL. This key is embedded in the container application and used later, in conjunction with `VerifyLicenseKey`, to create an instance of the control. This function is called by the framework as part of processing **IClassFactory2::RequestLicKey**.  
   
- たとえば、コントロールに `VerifyUserLicense` または `VerifyLicenseKey` メンバー関数をオーバーライドして、検証レベルを提供できます。  この関数の中でのプロパティまたはメソッドが見つかったライセンス レベルに応じてユーザーに公開する方法を調整できます。  
+-   [VerifyLicenseKey](../mfc/reference/coleobjectfactory-class.md#verifylicensekey)  
   
- ユーザーに通知するためにカスタマイズされたメソッドを提供する `VerifyLicenseKey` 関数にコードを追加して作成に失敗した制御できます。  たとえば、`VerifyLicenseKey` のメンバー関数でコントロールが初期化しなかった理由ことを示すメッセージ ボックスを表示できます。  
+     Verifies that the embedded key and the control's unique key are the same. This allows the container to create an instance of the control for its use. This function is called by the framework as part of processing **IClassFactory2::CreateInstanceLic** and can be overridden to provide customized verification of the license key. The default implementation performs a string comparison. For more information, see [Customizing the Licensing of an ActiveX Control](#_core_customizing_the_licensing_of_an_activex_control), later in this article.  
+  
+###  <a name="_core_header_file_modifications"></a> Header File Modifications  
+ The ActiveX Control Wizard places the following code in the control header file. In this example, two member functions of `CSampleCtrl`'s object `factory` are declared, one that verifies the presence of the control .LIC file and another that retrieves the license key to be used in the application containing the control:  
+  
+ [!code-cpp[NVC_MFC_AxUI#39](../mfc/codesnippet/cpp/mfc-activex-controls-licensing-an-activex-control_1.h)]  
+  
+###  <a name="_core_implementation_file_modifications"></a> Implementation File Modifications  
+ The ActiveX Control Wizard places the following two statements in the control implementation file to declare the license filename and license string:  
+  
+ [!code-cpp[NVC_MFC_AxUI#40](../mfc/codesnippet/cpp/mfc-activex-controls-licensing-an-activex-control_2.cpp)]  
   
 > [!NOTE]
->  ActiveX コントロールのライセンスの検証をカスタマイズするに `AfxVerifyLicFile`の代わりに特定のレジストリ キーが登録情報データベースを確認します。  既定の実装の例については、このトピックの [実装ファイルの変更](#_core_implementation_file_modifications) "を参照してください。  
+>  If you modify **szLicString** in any way, you must also modify the first line in the control .LIC file or licensing will not function properly.  
   
- ライセンスの追加の詳細については、[既存の ActiveX コントロールのアップグレード](../Topic/Upgrading%20an%20Existing%20ActiveX%20Control.md)ライセンスの問題を参照してください。  
+ The ActiveX Control Wizard places the following code in the control implementation file to define the control class' `VerifyUserLicense` and `GetLicenseKey` functions:  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール ウィザード](../mfc/reference/mfc-activex-control-wizard.md)
+ [!code-cpp[NVC_MFC_AxUI#41](../mfc/codesnippet/cpp/mfc-activex-controls-licensing-an-activex-control_3.cpp)]  
+  
+ Finally, the **ActiveX Control Wizard** modifies the control project .IDL file. The **licensed** keyword is added to the coclass declaration of the control, as in the following example:  
+  
+ [!code-cpp[NVC_MFC_AxUI#42](../mfc/codesnippet/cpp/mfc-activex-controls-licensing-an-activex-control_4.idl)]  
+  
+##  <a name="_core_customizing_the_licensing_of_an_activex_control"></a> Customizing the Licensing of an ActiveX Control  
+ Because `VerifyUserLicense`, `GetLicenseKey`, and `VerifyLicenseKey` are declared as virtual member functions of the control factory class, you can customize the control's licensing behavior.  
+  
+ For example, you can provide several levels of licensing for the control by overriding the `VerifyUserLicense` or `VerifyLicenseKey` member functions. Inside this function you could adjust which properties or methods are exposed to the user according to the license level you detected.  
+  
+ You can also add code to the `VerifyLicenseKey` function that provides a customized method for informing the user that control creation has failed. For instance, in your `VerifyLicenseKey` member function you could display a message box stating that the control failed to initialize and why.  
+  
+> [!NOTE]
+>  Another way to customize ActiveX control license verification is to check the registration database for a specific registry key, instead of calling `AfxVerifyLicFile`. For an example of the default implementation, see the [Implementation File Modifications](#_core_implementation_file_modifications) section of this article.  
+  
+ For additional discussion of licensing issues, see Licensing Issues in [Upgrading an Existing ActiveX Control](../mfc/upgrading-an-existing-activex-control.md).  
+  
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Control Wizard](../mfc/reference/mfc-activex-control-wizard.md)
+
+

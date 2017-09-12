@@ -1,5 +1,5 @@
 ---
-title: "ABC 構造体 |Microsoft ドキュメント"
+title: ABC Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ABC structure
+- ABC structure [MFC]
 ms.assetid: 32663839-c3b7-4f47-896c-b15329c96bc8
 caps.latest.revision: 11
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: c8b49cd8a94c5ff580393814be08b1819a1eca52
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 44d43c678a34cc375b9a2bb4834905d389713a58
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="abc-structure"></a>ABC 構造体
-**ABC**構造体には、TrueType フォントの文字の幅が含まれています。  
+# <a name="abc-structure"></a>ABC Structure
+The **ABC** structure contains the width of a character in a TrueType font.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct _ABC { /* abc */  
@@ -53,24 +53,24 @@ typedef struct _ABC { /* abc */
 } ABC;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *abcA*  
- 文字の A の間隔を指定します。 A の間隔は、文字のグリフを描画する前に、現在の位置に追加する距離です。  
+ Specifies the A spacing of the character. The A spacing is the distance to add to the current position before drawing the character glyph.  
   
  *abcB*  
- 文字の B の間隔を指定します。 B の間隔は、文字のグリフの描画の部分の幅です。  
+ Specifies the B spacing of the character. The B spacing is the width of the drawn portion of the character glyph.  
   
  *abcC*  
- 文字の C の間隔を指定します。 C の間隔は、文字のグリフの右側に空白文字を提供する現在の位置に追加する距離です。  
+ Specifies the C spacing of the character. The C spacing is the distance to add to the current position to provide white space to the right of the character glyph.  
   
-## <a name="remarks"></a>コメント  
- 文字の幅の合計は、A、B、および C のスペースの合計です。 A または C 領域のいずれかをスペーシングまたはオーバー ハングを示すマイナスになることです。  
+## <a name="remarks"></a>Remarks  
+ The total width of a character is the summation of the A, B, and C spaces. Either the A or the C space can be negative to indicate underhangs or overhangs.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** wingdi.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDC::GetCharABCWidths](../../mfc/reference/cdc-class.md#getcharabcwidths)
 
 

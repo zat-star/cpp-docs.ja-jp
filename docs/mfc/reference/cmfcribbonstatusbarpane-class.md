@@ -1,5 +1,5 @@
 ---
-title: "CMFCRibbonStatusBarPane クラス |Microsoft ドキュメント"
+title: CMFCRibbonStatusBarPane Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -27,7 +27,19 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCRibbonStatusBarPane class
+- CMFCRibbonStatusBarPane [MFC], CMFCRibbonStatusBarPane
+- CMFCRibbonStatusBarPane [MFC], GetAlmostLargeText
+- CMFCRibbonStatusBarPane [MFC], GetTextAlign
+- CMFCRibbonStatusBarPane [MFC], IsAnimation
+- CMFCRibbonStatusBarPane [MFC], IsExtended
+- CMFCRibbonStatusBarPane [MFC], OnDrawBorder
+- CMFCRibbonStatusBarPane [MFC], OnFillBackground
+- CMFCRibbonStatusBarPane [MFC], SetAlmostLargeText
+- CMFCRibbonStatusBarPane [MFC], SetAnimationList
+- CMFCRibbonStatusBarPane [MFC], SetTextAlign
+- CMFCRibbonStatusBarPane [MFC], StartAnimation
+- CMFCRibbonStatusBarPane [MFC], StopAnimation
+- CMFCRibbonStatusBarPane [MFC], OnFinishAnimation
 ms.assetid: 5d034c3c-ecca-4267-b88c-0f55a2884dd0
 caps.latest.revision: 31
 author: mikeblome
@@ -47,58 +59,58 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: a101e50f55efab44e4cb66d314b2426228dbc5c0
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7d56963a45e45085e1460ed801f56e190206df1c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcribbonstatusbarpane-class"></a>CMFCRibbonStatusBarPane クラス
-`CMFCRibbonStatusBarPane`クラスは、リボン ステータス バーに追加できるリボン要素を実装します。  
+# <a name="cmfcribbonstatusbarpane-class"></a>CMFCRibbonStatusBarPane Class
+The `CMFCRibbonStatusBarPane` class implements a ribbon element that you can add to a ribbon status bar.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCRibbonStatusBarPane : public CMFCRibbonButton  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCRibbonStatusBarPane::CMFCRibbonStatusBarPane](#cmfcribbonstatusbarpane)|`CMFCRibbonStatusBarPane` オブジェクトを構築して初期化します。|  
+|[CMFCRibbonStatusBarPane::CMFCRibbonStatusBarPane](#cmfcribbonstatusbarpane)|Constructs and initializes a `CMFCRibbonStatusBarPane` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCRibbonStatusBarPane::GetAlmostLargeText](#getalmostlargetext)|切り捨てることがなくペインに表示できる最大長の文字列を定義する文字列を返します。|  
-|[CMFCRibbonStatusBarPane::GetTextAlign](#gettextalign)|テキストの配置の現在の設定を返します。|  
-|[CMFCRibbonStatusBarPane::IsAnimation](#isanimation)|アニメーションが進行中かどうかを決定します。|  
-|[CMFCRibbonStatusBarPane::IsExtended](#isextended)|リボン ステータス バーの拡張領域内のウィンドウがあるかどうかを決定します。|  
-|[CMFCRibbonStatusBarPane::OnDrawBorder](#ondrawborder)|(上書き[CMFCRibbonButton::OnDrawBorder](../../mfc/reference/cmfcribbonbutton-class.md#ondrawborder))。|  
-|[CMFCRibbonStatusBarPane::OnFillBackground](#onfillbackground)|(上書き[CMFCRibbonButton::OnFillBackground](../../mfc/reference/cmfcribbonbutton-class.md#onfillbackground))。|  
-|[CMFCRibbonStatusBarPane::SetAlmostLargeText](#setalmostlargetext)|切り捨てることがなくペインに表示できる最大長の文字列を定義します。|  
-|[CMFCRibbonStatusBarPane::SetAnimationList](#setanimationlist)|ウィンドウに、アニメーションを使用できるイメージ リストを割り当てます。|  
-|[CMFCRibbonStatusBarPane::SetTextAlign](#settextalign)|テキストの配置を設定します。|  
-|[CMFCRibbonStatusBarPane::StartAnimation](#startanimation)|ウィンドウに割り当てられているアニメーションを開始します。|  
-|[CMFCRibbonStatusBarPane::StopAnimation](#stopanimation)|ウィンドウに割り当てられているアニメーションを停止します。 」を参照してください。|  
+|[CMFCRibbonStatusBarPane::GetAlmostLargeText](#getalmostlargetext)|Returns the string that defines the longest text string that can be displayed in the pane without truncation.|  
+|[CMFCRibbonStatusBarPane::GetTextAlign](#gettextalign)|Returns the current setting of the text alignment.|  
+|[CMFCRibbonStatusBarPane::IsAnimation](#isanimation)|Determines whether the animation is in progress.|  
+|[CMFCRibbonStatusBarPane::IsExtended](#isextended)|Determines whether the pane is located in the extended area of the ribbon status bar.|  
+|[CMFCRibbonStatusBarPane::OnDrawBorder](#ondrawborder)|(Overrides [CMFCRibbonButton::OnDrawBorder](../../mfc/reference/cmfcribbonbutton-class.md#ondrawborder).)|  
+|[CMFCRibbonStatusBarPane::OnFillBackground](#onfillbackground)|(Overrides [CMFCRibbonButton::OnFillBackground](../../mfc/reference/cmfcribbonbutton-class.md#onfillbackground).)|  
+|[CMFCRibbonStatusBarPane::SetAlmostLargeText](#setalmostlargetext)|Defines the longest text string that can be displayed in the pane without truncation.|  
+|[CMFCRibbonStatusBarPane::SetAnimationList](#setanimationlist)|Assigns to the pane an image list that can be used for animation.|  
+|[CMFCRibbonStatusBarPane::SetTextAlign](#settextalign)|Sets the text alignment.|  
+|[CMFCRibbonStatusBarPane::StartAnimation](#startanimation)|Starts the animation that is assigned to the pane.|  
+|[CMFCRibbonStatusBarPane::StopAnimation](#stopanimation)|Stops the animation that is assigned to the pane. .|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCRibbonStatusBarPane::OnFinishAnimation](#onfinishanimation)|ウィンドウに割り当てられているアニメーションが停止したときに、フレームワークによって呼び出されます。|  
+|[CMFCRibbonStatusBarPane::OnFinishAnimation](#onfinishanimation)|Called by the framework when the animation that is assigned to the pane stops.|  
   
-## <a name="example"></a>例  
- 次の例は、`CMFCRibbonStatusBarPane` クラスのさまざまなメソッドの使用方法を説明しています。 例では、作成する方法を示しています、`CMFCRibbonStatusBarPane`オブジェクト、ステータス バー ペインのラベルのテキストの配置設定、切り捨てることがなく、ステータス バー ペインに表示できる、ステータス バー ペインに、アニメーションを使用でき、アニメーションを開始するイメージ リストをアタッチする時間が最も長いテキストを定義します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to use the various methods in the `CMFCRibbonStatusBarPane` class. The example shows how to construct a `CMFCRibbonStatusBarPane` object, set the text alignment of the label of the status bar pane, define the longest text that can be displayed in the status bar pane without truncation, attach to the status bar pane an image list that can be used for animation, and start the animation.  
   
- [!code-cpp[NVC_MFC_RibbonApp&#2;](../../mfc/reference/codesnippet/cpp/cmfcribbonstatusbarpane-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_RibbonApp#2](../../mfc/reference/codesnippet/cpp/cmfcribbonstatusbarpane-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)  
@@ -107,11 +119,11 @@ class CMFCRibbonStatusBarPane : public CMFCRibbonButton
   
  [CMFCRibbonStatusBarPane](../../mfc/reference/cmfcribbonstatusbarpane-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxribbonstatusbarpane.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxribbonstatusbarpane.h  
   
-##  <a name="cmfcribbonstatusbarpane"></a>CMFCRibbonStatusBarPane::CMFCRibbonStatusBarPane  
- ステータス バー ペインのオブジェクトを構築します。  
+##  <a name="cmfcribbonstatusbarpane"></a>  CMFCRibbonStatusBarPane::CMFCRibbonStatusBarPane  
+ Construct a pane object in the status bar.  
   
 ```  
 CMFCRibbonStatusBarPane(
@@ -140,132 +152,132 @@ CMFCRibbonStatusBarPane(
     BOOL bIsStatic=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nCmdID`  
- ウィンドウのコマンド ID を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nCmdID`  
+ Specifies the command ID of the pane.  
   
- [入力] `lpszText`  
- ウィンドウに表示するテキスト文字列を指定します。  
+ [in] `lpszText`  
+ Specifies text string to be displayed on pane.  
   
- [入力] `bIsStatic`  
- 場合`TRUE`、ステータス ウィンドウの強調表示されているまたはをクリックして選択されていることはできません。  
+ [in] `bIsStatic`  
+ If `TRUE`, the status pane cannot be highlighted or selected by clicking it.  
   
- [入力] `hIcon`  
- ウィンドウに表示されるアイコンのハンドルを指定します。  
+ [in] `hIcon`  
+ Specifies a handle to an icon to be displayed on the pane.  
   
- [入力] `lpszAlmostLargeText`  
- ウィンドウが表示可能な最大長の文字列を指定します。  
+ [in] `lpszAlmostLargeText`  
+ Specifies the longest text string that can be displayed by the pane.  
   
- [入力] `hBmpAnimationList`  
- アニメーションで使用されるイメージ リストへのハンドルを指定します。  
+ [in] `hBmpAnimationList`  
+ Specifies a handle to an image list that is used for animation.  
   
- [入力] `cxAnimation`  
- アニメーションで使用されるイメージ リストのアイコンのピクセル単位の幅を指定します。  
+ [in] `cxAnimation`  
+ Specifies the width, in pixels, of the icon in the image list that is used for animation.  
   
- [入力] `clrTrnsp`  
- アニメーションで使用されるイメージ リストのイメージの透明色を指定します。  
+ [in] `clrTrnsp`  
+ Specifies the transparent color of images in the image list that are used for animation.  
   
- [入力] `uiAnimationListResID`  
- アニメーションで使用されるイメージ リストのリソース ID を指定します。  
+ [in] `uiAnimationListResID`  
+ Specifies a resource ID of an image list that is used for animation.  
   
-##  <a name="getalmostlargetext"></a>CMFCRibbonStatusBarPane::GetAlmostLargeText  
- ステータス バー ペインを表示できる最大長の文字列を取得します。  
+##  <a name="getalmostlargetext"></a>  CMFCRibbonStatusBarPane::GetAlmostLargeText  
+ Gets the longest text string that the status bar pane can display.  
   
 ```  
 LPCTSTR GetAlmostLargeText() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ステータス バー ペインに表示できる最も長いテキスト文字列。  
+### <a name="return-value"></a>Return Value  
+ The longest text string that the status bar pane can display.  
   
-##  <a name="gettextalign"></a>CMFCRibbonStatusBarPane::GetTextAlign  
- ステータス バー ペインのラベルのテキストの配置の現在の設定を取得します。  
+##  <a name="gettextalign"></a>  CMFCRibbonStatusBarPane::GetTextAlign  
+ Gets the current setting of the text alignment of the label of the status bar pane.  
   
 ```  
 int GetTextAlign() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 次のいずれかに現在のテキスト配置します。  
+### <a name="return-value"></a>Return Value  
+ The current text alignment which can be one of the following:  
   
 -   TA_LEFT  
   
 -   TA_CENTER  
   
--   TA_RIGHT します。  
+-   TA_RIGHT.  
   
-##  <a name="isanimation"></a>CMFCRibbonStatusBarPane::IsAnimation  
- アニメーションが進行中かどうかを決定します。  
+##  <a name="isanimation"></a>  CMFCRibbonStatusBarPane::IsAnimation  
+ Determines whether the animation is in progress.  
   
 ```  
 BOOL IsAnimation() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`アニメーションが実行中の場合`FALSE`それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if animation is in progress; `FALSE` otherwise.  
   
-##  <a name="isextended"></a>CMFCRibbonStatusBarPane::IsExtended  
- リボン ステータス バーの拡張領域内のウィンドウがあるかどうかを確認します。  
+##  <a name="isextended"></a>  CMFCRibbonStatusBarPane::IsExtended  
+ Determine whether the pane is located in the extended area of the ribbon status bar.  
   
 ```  
 BOOL IsExtended() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ウィンドウがステータス バーの拡張領域にある場合は。 それ以外の場合は `FALSE`。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if pane is on status bar extended area. `FALSE` otherwise.  
   
-##  <a name="ondrawborder"></a>CMFCRibbonStatusBarPane::OnDrawBorder  
+##  <a name="ondrawborder"></a>  CMFCRibbonStatusBarPane::OnDrawBorder  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
 virtual void OnDrawBorder(CDC*);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `CDC*`  
+### <a name="parameters"></a>Parameters  
+ [in] `CDC*`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfillbackground"></a>CMFCRibbonStatusBarPane::OnFillBackground  
+##  <a name="onfillbackground"></a>  CMFCRibbonStatusBarPane::OnFillBackground  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
 virtual COLORREF OnFillBackground(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfinishanimation"></a>CMFCRibbonStatusBarPane::OnFinishAnimation  
- フレームワークは、ウィンドウに割り当てられているアニメーションが終了すると、このメソッドを呼び出します。  
+##  <a name="onfinishanimation"></a>  CMFCRibbonStatusBarPane::OnFinishAnimation  
+ Framework calls this method when the animation that is assigned to the pane ends.  
   
 ```  
 virtual void OnFinishAnimation();
 ```  
   
-### <a name="remarks"></a>コメント  
- `StopAnimation`メソッドの呼び出し、`OnFinishAnimation`メソッドで、アニメーションが終了すると、データのクリーンアップを行うこともできます。  
+### <a name="remarks"></a>Remarks  
+ `StopAnimation` method calls the `OnFinishAnimation` method, which you can use to clean up data when the animation ends.  
   
-##  <a name="setalmostlargetext"></a>CMFCRibbonStatusBarPane::SetAlmostLargeText  
- 切り捨てることがなく、ステータス バー ペインに表示できる最も長いテキストを定義します。  
+##  <a name="setalmostlargetext"></a>  CMFCRibbonStatusBarPane::SetAlmostLargeText  
+ Define the longest text that can be displayed in the status bar pane without truncation.  
   
 ```  
 void SetAlmostLargeText(LPCTSTR lpszAlmostLargeText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszAlmostLargeText`  
- 切り捨てることがなく、ステータス バー ペインに表示できる最大長の文字列を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszAlmostLargeText`  
+ Specifies the longest string that can be displayed on the status bar pane without truncation.  
   
-### <a name="remarks"></a>コメント  
- ライブラリは、テキストのサイズを計算する`lpszAlmostLargeText`を指定し、それに応じて、ウィンドウのサイズを変更します。 ウィンドウにも適合しない場合は、テキストが切り捨てられます。  
+### <a name="remarks"></a>Remarks  
+ The library calculates the size of text that `lpszAlmostLargeText` specifies and resizes the pane accordingly. The text will be truncated if it still does not fit in the pane.  
   
-##  <a name="setanimationlist"></a>CMFCRibbonStatusBarPane::SetAnimationList  
- ステータス バー ペインに、アニメーションを使用できるイメージ リストをアタッチします。  
+##  <a name="setanimationlist"></a>  CMFCRibbonStatusBarPane::SetAnimationList  
+ Attaches to the status bar pane an image list that can be used for animation.  
   
 ```  
 void SetAnimationList(
@@ -279,44 +291,44 @@ BOOL SetAnimationList(
     COLORREF clrTransp=RGB(192, 192 1, 192) 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hBmpAnimationList`  
- イメージ リストへのハンドルを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `hBmpAnimationList`  
+ Specifies a handle to an image list.  
   
- [入力] `cxAnimation`  
- イメージ リスト内のフレームのピクセル単位の幅を指定します。  
+ [in] `cxAnimation`  
+ Specifies the width, in pixels, of the frame in the image list.  
   
- [入力] `clrTransp`  
- イメージ リストの透明色を指定します。  
+ [in] `clrTransp`  
+ Specifies the transparent color of the image list.  
   
- [入力] `uiAnimationListResID`  
- イメージ リストのリソース ID を指定します。  
+ [in] `uiAnimationListResID`  
+ Specifies the resource ID of the image list.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージ リストが、ステータス バー ペインに正常に接続されている場合`FALSE`それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the image list is successfully attached to the status bar pane; `FALSE` otherwise.  
   
-##  <a name="settextalign"></a>CMFCRibbonStatusBarPane::SetTextAlign  
- ステータス バー ペインのラベルのテキストの配置を設定します。  
+##  <a name="settextalign"></a>  CMFCRibbonStatusBarPane::SetTextAlign  
+ Sets the text alignment of the label of the status bar pane.  
   
 ```  
 void SetTextAlign(int nAlign);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nAlign`  
- テキストの配置を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nAlign`  
+ Specifies the text alignment.  
   
-### <a name="remarks"></a>コメント  
- `nAlign`次の値のいずれかを設定できます。  
+### <a name="remarks"></a>Remarks  
+ `nAlign` can have one of the following values:  
   
-- `TA_LEFT`: 左寄せ  
+- `TA_LEFT`: left alignment  
   
-- `TA_CENTER:`中央揃え  
+- `TA_CENTER:` center alignment  
   
-- `TA_RIGHT:`右揃え  
+- `TA_RIGHT:` right alignment  
   
-##  <a name="startanimation"></a>CMFCRibbonStatusBarPane::StartAnimation  
- ウィンドウに割り当てられるアニメーションを開始します。  
+##  <a name="startanimation"></a>  CMFCRibbonStatusBarPane::StartAnimation  
+ Starts the animation that you assign to the pane.  
   
 ```  
 void StartAnimation(
@@ -324,26 +336,26 @@ void StartAnimation(
     UINT nDuration=-1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nFrameDelay`  
- アニメーションのフレーム レートをミリ秒単位で指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nFrameDelay`  
+ Specifies the animation frame rate, in milliseconds.  
   
- [入力] `nDuration`  
- ミリ秒単位で、アニメーションを再生する期間を指定します。 無限ループに-1 を使用します。  
+ [in] `nDuration`  
+ Specifies how long to play the animation, in milliseconds. Use -1 for an infinite loop.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す前に、イメージ リストへのハンドルを指定する必要があります`StartAnimation`を使用して`SetAnimationList`します。  
+### <a name="remarks"></a>Remarks  
+ You must specify a handle to an image list before you call `StartAnimation` by using `SetAnimationList`.  
   
-##  <a name="stopanimation"></a>CMFCRibbonStatusBarPane::StopAnimation  
- ステータス バー ペインに割り当てられているアニメーションを停止します。  
+##  <a name="stopanimation"></a>  CMFCRibbonStatusBarPane::StopAnimation  
+ Stops the animation that you assigned to the status bar pane.  
   
 ```  
 void StopAnimation();
 ```  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCRibbonButton クラス](../../mfc/reference/cmfcribbonbutton-class.md)   
- [CMFCRibbonStatusBar クラス](../../mfc/reference/cmfcribbonstatusbar-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCRibbonButton Class](../../mfc/reference/cmfcribbonbutton-class.md)   
+ [CMFCRibbonStatusBar Class](../../mfc/reference/cmfcribbonstatusbar-class.md)
 

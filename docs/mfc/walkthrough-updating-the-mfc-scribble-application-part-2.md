@@ -1,339 +1,350 @@
 ---
-title: "チュートリアル: MFC Scribble アプリケーションの更新 (パート 2) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "チュートリアル [C++]"
+title: 'Walkthrough: Updating the MFC Scribble Application (Part 2) | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- walkthroughs [MFC]
 ms.assetid: 602df5c2-17d4-4cd9-8cf6-dff652c4cae5
 caps.latest.revision: 36
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 32
----
-# チュートリアル: MFC Scribble アプリケーションの更新 (パート 2)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 68a0cd9d36d869db9945b3921c7837b3d1410535
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルの[パート 1](../mfc/walkthrough-updating-the-mfc-scribble-application-part-1.md) では、Office Fluent リボンを従来の Scribble アプリケーションに追加する方法を説明しました。  ここでは、ユーザーがメニューやコマンドの代わりに使用できるリボン パネルやコントロールを追加する方法を説明します。  
+---
+# <a name="walkthrough-updating-the-mfc-scribble-application-part-2"></a>Walkthrough: Updating the MFC Scribble Application (Part 2)
+[Part 1](../mfc/walkthrough-updating-the-mfc-scribble-application-part-1.md) of this walkthrough showed how to add an Office Fluent Ribbon to the classic Scribble application. This part shows how to add ribbon panels and controls that users can use instead of menus and commands.  
   
-## 必須コンポーネント  
- [Visual C\+\+ のサンプル](../top/visual-cpp-samples.md)  
+## <a name="prerequisites"></a>Prerequisites  
+ [Visual C++ Samples](../visual-cpp-samples.md)  
   
-##  <a name="top"></a> セクション  
- このパートは、次のセクションで構成されています。  
+##  <a name="top"></a> Sections  
+ This part of the walkthrough has the following sections:  
   
--   [リボンへの新しいパネルの追加](#addNewPanel)  
+- [Adding New Panels to the Ribbon](#addnewpanel)  
   
--   [リボンへのヘルプ パネルの追加](#addHelpPanel)  
+- [Adding a Help Panel to the Ribbon](#addhelppanel)  
   
--   [リボンへのペン パネルの追加](#addPenPanel)  
+- [Adding a Pen Panel to the Ribbon](#addpenpanel)  
   
--   [リボンへのカラー ボタンの追加](#addColorButton)  
+- [Adding a Color Button to the Ribbon](#addcolorbutton)  
   
--   [ドキュメント クラスへのカラー メンバーの追加](#addColorMember)  
+- [Adding a Color Member to the Document Class](#addcolormember)  
   
--   [設定の初期化と保存](#initPenSave)  
+- [Initializing Pens and Saving Preferences](#initpensave)  
   
-##  <a name="addNewPanel"></a> リボンへの新しいパネルの追加  
- 次の手順では、ツール バーとステータス バーの表示\/非表示を制御する 2 つのチェック ボックスがある **\[ビュー\]** パネルの追加方法と、マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) の作成と配置を制御する垂直方向の分割ボタンがある **\[ウィンドウ\]** パネルの追加方法を説明します。  
+##  <a name="addnewpanel"></a> Adding New Panels to the Ribbon  
+ These steps show how to add a **View** panel that contains two check boxes that control the visibility of the toolbar and the status bar, and also a **Window** panel that contains a vertically oriented split button that controls the creation and arrangement of multiple-document interface (MDI) windows.  
   
-#### リボン バーに \[表示\] パネルと \[ウィンドウ\] パネルを追加するには  
+#### <a name="to-add-a-view-panel-and-window-panel-to-the-ribbon-bar"></a>To add a View panel and Window panel to the ribbon bar  
   
-1.  ステータス バーとツール バーを切り替える 2 つのチェック ボックスがある、「`表示`」という名前のパネルを作成します。  
+1.  Create a panel named `View`, which has two check boxes that toggle the status bar and toolbar.  
   
-    1.  **\[ツールボックス\]** から、パネルを **\[ホーム\]** カテゴリにドラッグします。  2 つのチェック ボックスをパネルにドラッグします。  
+    1.  From the **Toolbox**, drag a **Panel** to the **Home** category. Then drag two **Check Boxes** to the panel.  
   
-    2.  パネルをクリックして、そのプロパティを修正します。  **\[キャプション\]** を「`表示`」に変更します。  
+    2.  Click the panel to modify its properties. Change **Caption** to `View`.  
   
-    3.  1 つ目のチェック ボックスをクリックして、そのプロパティを修正します。  **\[ID\]** を「`ID_VIEW_TOOLBAR`」に変更し、**\[キャプション\]** を「`ツール バー`」に変更します。  
+    3.  Click the first check box to modify its properties. Change **ID** to `ID_VIEW_TOOLBAR` and **Caption** to `Toolbar`.  
   
-    4.  2 つ目のチェック ボックスをクリックして、そのプロパティを修正します。  **\[ID\]** を「`ID_VIEW_STATUS_BAR`」に変更し、**\[キャプション\]** を「`ステータス バー`」に変更します。  
+    4.  Click the second check box to modify its properties. Change **ID** to `ID_VIEW_STATUS_BAR` and **Caption** to `Status Bar`.  
   
-2.  分割ボタンのある「`ウィンドウ`」という名前のパネルを作成します。  ユーザーが分割ボタンをクリックすると、ショートカット メニューに \(Scribble アプリケーションで定義した\) 3 つのコマンドが表示されます。  
+2.  Create a panel named `Window` that has a split button. When a user clicks the split button, a shortcut menu displays three commands that are already defined in the Scribble application.  
   
-    1.  **\[ツールボックス\]** から、パネルを **\[ホーム\]** カテゴリにドラッグします。  ボタンをパネルにドラッグします。  
+    1.  From the **Toolbox**, drag a **Panel** to the **Home** category. Then drag a **Button** to the panel.  
   
-    2.  パネルをクリックして、そのプロパティを修正します。  **\[キャプション\]** を「`ウィンドウ`」に変更します。  
+    2.  Click the panel to modify its properties. Change **Caption** to `Window`.  
   
-    3.  ボタンをクリックします。  **\[キャプション\]**、**\[キー\]**、**\[Large Image Index\]**、**\[分割モード\]** を、それぞれ「`ウィンドウ`」、「`w`」、「`1`」、「`False`」に変更します。  次 **\[項目エディター\]** ダイアログ ボックスを開くに **\[メニュー アイテム\]** の横にある省略記号 \(**...**\) をクリックします。  
+    3.  Click the button. Change **Caption** to `Windows`, **Keys** to `w`, **Large Image Index** to `1`, and **Split Mode** to `False`. Then click the ellipsis (**...**) next to **Menu Items** to open the **Items Editor** dialog box.  
   
-    4.  **\[追加\]** を 3 回クリックして、ボタンを 3 つ追加します。  
+    4.  Click **Add** three times to add three buttons.  
   
-    5.  1 つ目のボタンをクリックし、**\[キャプション\]** を「`新しいウィンドウ`」に変更し、**\[ID\]** を「`ID_WINDOW_NEW`」に変更します。  
+    5.  Click the first button and then change **Caption** to `New Window`, and **ID** to `ID_WINDOW_NEW`.  
   
-    6.  2 つ目のボタンをクリックし、**\[キャプション\]** を「`重ねて表示`」に変更し、**\[ID\]** を「`ID_WINDOW_CASCADE`」に変更します。  
+    6.  Click the second button and then change **Caption** to `Cascade`, and **ID** to `ID_WINDOW_CASCADE`.  
   
-    7.  3 つ目のボタンをクリックし、**\[キャプション\]** を「`並べて表示`」に変更し、**\[ID\]** を「`ID_WINDOW_TILE_HORZ`」に変更します。  
+    7.  Click the third button and then change **Caption** to `Tile`, and **ID** to `ID_WINDOW_TILE_HORZ`.  
   
-3.  変更内容を保存し、アプリケーションをビルドして実行します。  **\[表示\]** パネルと **\[ウィンドウ\]** パネルが表示されます。  ボタンをクリックして、正しく機能することを確認します。  
+3.  Save the changes, and then build and run the application. The **View** and **Window** panels should be displayed. Click the buttons to confirm that they function correctly.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addHelpPanel"></a> リボンへのヘルプ パネルの追加  
- これで、Scribble アプリケーションで定義されている 2 つのメニュー項目を、**\[ヘルプのトピック\]** と **\[Scribble バージョン情報\]** という名前のリボン ボタンに割り当てることができます。  これらのボタンは、**\[ヘルプ\]** という名前の新しいパネルに追加されます。  
+##  <a name="addhelppanel"></a> Adding a Help Panel to the Ribbon  
+ Now, you can assign two menu items that are defined in the Scribble application to ribbon buttons that are named **Help Topics** and **About Scribble**. The buttons are added to a new panel named **Help**.  
   
-#### ヘルプ パネルを追加するには  
+#### <a name="to-add-a-help-panel"></a>To add a Help panel  
   
-1.  **\[ツールボックス\]** から、パネルを **\[ホーム\]** カテゴリにドラッグします。  2 つのボタンをパネルにドラッグします。  
+1.  From the **Toolbox**, drag a **Panel** to the **Home** category. Then drag two **Buttons** to the panel.  
   
-2.  パネルをクリックして、そのプロパティを修正します。  **\[キャプション\]** を「`ヘルプ`」に変更します。  
+2.  Click the panel to modify its properties. Change **Caption** to `Help`.  
   
-3.  1 つ目のボタンをクリックします。  **\[キャプション\]** を「`ヘルプのトピック`」に変更し、**\[ID\]** を「`ID_HELP_FINDER`」に変更します。  
+3.  Click the first button. Change **Caption** to `Help Topics`, and **ID** to `ID_HELP_FINDER`.  
   
-4.  2 つ目のボタンをクリックします。  **\[キャプション\]** を「`バージョン情報...`」に変更し、**\[ID\]** を「`ID_APP_ABOUT`」に変更します。  
+4.  Click the second button. Change **Caption** to `About Scribble...`, and **ID** to `ID_APP_ABOUT`.  
   
-5.  変更内容を保存し、アプリケーションをビルドして実行します。  2 つのリボン ボタンのある **\[ヘルプ\]** パネルが表示されます。  
+5.  Save the changes, and then build and run the application. A **Help** panel that contains two ribbon buttons should be displayed.  
   
     > [!IMPORTANT]
-    >  **\[ヘルプ トピック\]** ボタンをクリックすると、Scribble アプリケーションは、圧縮された HTML ヘルプ ファイル \(.chm\) によって指定された *your\_project\_name*.chm を開きます。  そのため、プロジェクトが名前付き Scribble でない場合は、ヘルプ ファイルの名前をプロジェクト名に変更する必要があります。  
+    >  When you click the **Help Topics** button, the Scribble application opens a compressed HTML (.chm) help file named *your_project_name*.chm. Consequently, if your project is not named Scribble, you must rename the help file to your project name.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addPenPanel"></a> リボンへのペン パネルの追加  
- ここでは、ペンの太さと色を制御するボタンを表示するパネルを追加します。  このパネルには、太いペンと細いペンを切り替えるチェック ボックスが含まれます。  この機能は、Scribble アプリケーションの **\[太い線\]** メニュー項目に似ています。  
+##  <a name="addpenpanel"></a> Adding a Pen Panel to the Ribbon  
+ Now, add a panel to display buttons that control the thickness and the color of the pen. This panel contains a check box that toggles between thick and thin pens. Its functionality resembles that of the **Thick Line** menu item in the Scribble application.  
   
- 元の Scribble アプリケーションでは、ユーザーは、メニューの **\[ペンの太さ\]** をクリックしたときに表示されるダイアログ ボックスでペンの太さを選択しました。  このリボン バーには新しいコントロールのための場所が十分にあるため、ダイアログ ボックスをリボン上の 2 つのコンボ ボックスで置き換えることができます。  1 つのコンボ ボックスは細いペンの太さを調整し、もう 1 つのコンボ ボックスでは太い線の太さを調整します。  
+ The original Scribble application lets the user select pen widths from a dialog box that appears when the user clicks **Pen Widths** on the menu. Because the ribbon bar has ample room for new controls, you can replace the dialog box by using two combo boxes on the ribbon. One combo box adjusts the width of the thin pen and the other combo box adjusts the width of the thick pen.  
   
-#### リボンにペン パネルとコンボ ボックスを追加するには  
+#### <a name="to-add-a-pen-panel-and-combo-boxes-to-the-ribbon"></a>To add a Pen panel and combo boxes to the ribbon  
   
-1.  **\[ツールボックス\]** から、パネルを **\[ホーム\]** カテゴリにドラッグします。  次に、チェック ボックスと 2 つのコンボ ボックスをパネルにドラッグします。  
+1.  From the **Toolbox**, drag a **Panel** to the **Home** category. Then drag a **Check Box** and two **Combo Boxes** to the panel.  
   
-2.  パネルをクリックして、そのプロパティを修正します。  **\[キャプション\]** を「`ペン`」に変更します。  
+2.  Click the panel to modify its properties. Change **Caption** to `Pen`.  
   
-3.  チェック ボックスをクリックします。  **\[キャプション\]** を「`太さ`」に変更し、**\[ID\]** を「`ID_PEN_THICK_OR_THIN`」に変更します。  
+3.  Click the check box. Change **Caption** to `Use Thick`, and **ID** to `ID_PEN_THICK_OR_THIN`.  
   
-4.  1 つ目のコンボ ボックスをクリックします。  **\[キャプション\]**、**\[ID\]**、**\[テキスト\]**、**\[種類\]**、**\[データ\]** を、それぞれ「`細いペン`」、「`ID_PEN_THIN_WIDTH`」、「`2`」、「`ドロップダウン リスト`」、「`1;2;3;4;5;6;7;8;9;`」に変更します。  
+4.  Click the first combo box. Change **Caption** to `Thin Pen`, **ID** to `ID_PEN_THIN_WIDTH`, **Text** to `2`, **Type** to `Drop List`, and **Data** to `1;2;3;4;5;6;7;8;9;`.  
   
-5.  2 つ目のコンボ ボックスをクリックします。  **\[キャプション\]**、**\[ID\]**、**\[テキスト\]**、**\[種類\]**、**\[データ\]** を、それぞれ「`太いペン`」、「`ID_PEN_THICK_WIDTH`」、「`5`」、「`ドロップダウン リスト`」、「`5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;`」に変更します。  
+5.  Click the second combo box. Change **Caption** to `Thick Pen`, **ID** to `ID_PEN_THICK_WIDTH`, **Text** to `5`, **Type** to `Drop List`, and **Data** to `5;6;7;8;9;10;11;12;13;14;15;16;17;18;19;20;`.  
   
-6.  新しいコンボ ボックスは既存のメニュー項目には対応していません。  したがって、それぞれのペン オプションに対するメニュー項目を作成する必要があります。  
+6.  The new combo boxes do not correspond to any existing menu items. Therefore, you must create a menu item for every pen option.  
   
-    1.  **\[リソース ビュー\]** ウィンドウで、IDR\_SCRIBBTYPE メニュー リソースを開きます。  
+    1.  In the **Resource View** window, open the IDR_SCRIBBTYPE menu resource.  
   
-    2.  **\[ペン\]** をクリックして **\[ペン\]** メニューを開きます。  次 `Thi&n のペン`を **\[ここへ入力\]** をクリックします入力します。  
+    2.  Click **Pen** to open the p**en** menu. Then click **Type Here** and type `Thi&n Pen`.  
   
-    3.  今入力した文字列を右クリックすると **\[プロパティ\]** ウィンドウが表示されます。ここで、ID プロパティを「`ID_PEN_THIN_WIDTH`」に変更します。  
+    3.  Right-click the text that you just typed to open the **Properties** window, and then change the ID property to `ID_PEN_THIN_WIDTH`.  
   
-    4.  また、ペン メニューの各項目に対するイベント ハンドラーを作成する必要もあります。  先ほど作成した文字列を右クリックし、**\[イベント ハンドラーの追加\]** をクリックします **\[Thi&n のペン\]** メニュー項目を示します。  イベント ハンドラー ウィザードが表示されます。  
+    4.  You must also create an event handler for every pen menu item. Right-click the **Thi&n Pen** menu item that you just created and then click **Add Event Handler**. The **Event Handler Wizard** is displayed.  
   
-    5.  このウィザードの **\[クラス リスト\]** ボックスで **\[CScribbleDoc\]** をクリックし、次に **\[追加と編集\]** ボタンをクリックします。  これで、`CScribbleDoc::OnPenThinWidth` という名前のイベント ハンドラーが作成されます。  
+    5.  In the **Class list** box in the wizard, select **CScribbleDoc** and then click **Add and Edit**. This creates an event handler named `CScribbleDoc::OnPenThinWidth`.  
   
-    6.  次のコードを `CScribbleDoc::OnPenThinWidth` に追加します。  
+    6.  Add the following code to `CScribbleDoc::OnPenThinWidth`.  
   
-        ```  
-        // Get a pointer to the ribbon bar  
-        CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar();  
-        ASSERT_VALID(pRibbon);  
-        // Get a pointer to the Thin Width combo box  
-        CMFCRibbonComboBox* pThinComboBox = DYNAMIC_DOWNCAST(  
-           CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THIN_WIDTH));  
-        //Get the selected value  
-        int nCurSel = pThinComboBox->GetCurSel();  
-        if (nCurSel >= 0)  
-        {  
-           m_nThinWidth = atoi(pThinComboBox->GetItem(nCurSel));  
-        }  
-        // Create a new pen using the selected width  
-        ReplacePen();    
-        ```  
+ ``` *// Get a pointer to the ribbon bar CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar(); ASSERT_VALID(pRibbon); *// Get a pointer to the Thin Width combo box CMFCRibbonComboBox* pThinComboBox = DYNAMIC_DOWNCAST( CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THIN_WIDTH)); *//Get the selected value  
+    int nCurSel = pThinComboBox->GetCurSel(); if (nCurSel>= 0)  
+{  
+m_nThinWidth = atoi(pThinComboBox->GetItem(nCurSel));
+
+ } *// Create a new pen using the selected width  
+    ReplacePen();
+
+ ```  
   
-7.  次に、太いペンのメニュー項目とイベント ハンドラーを作成します。  
+7.  Next, create a menu item and event handlers for the thick pen.  
   
-    1.  **\[リソース ビュー\]** ウィンドウで、IDR\_SCRIBBTYPE メニュー リソースを開きます。  
+    1.  In the **Resource View** window, open the IDR_SCRIBBTYPE menu resource.  
   
-    2.  **\[ペン\]** をクリックして \[ペン\] メニューを開きます。  次 `Thic&k のペン`を **\[ここへ入力\]** をクリックします入力します。  
+    2.  Click **Pen** to open the pen menu. Then click **Type Here** and type `Thic&k Pen`.  
   
-    3.  今入力したテキストを右クリックすると、**\[プロパティ\]** ウィンドウが表示されます。  ID プロパティを「`ID_PEN_THICK_WIDTH`」に変更します。  
+    3.  Right-click the text that you just typed to display the **Properties** window. Change the ID property to `ID_PEN_THICK_WIDTH`.  
   
-    4.  直前に作成した **\[太いペン\]** メニュー項目を右クリックし、**\[イベント ハンドラーの追加\]** をクリックします。  イベント ハンドラー ウィザードが表示されます。  
+    4.  Right-click the **Thick Pen** menu item that you just created and then click **Add Event Handler**. The **Event Handler Wizard** is displayed.  
   
-    5.  このウィザードの **\[クラス リスト\]** ボックスで **\[CScribbleDoc\]** をクリックし、次に **\[追加と編集\]** ボタンをクリックします。  これで、`CScribbleDoc::OnPenThickWidth` という名前のイベント ハンドラーが作成されます。  
+    5.  In the **Class list** box of the wizard, select **CScribbleDoc** and then click **Add and Edit**. This creates an event handler named `CScribbleDoc::OnPenThickWidth`.  
   
-    6.  次のコードを `CScribbleDoc::OnPenThickWidth` に追加します。  
+    6.  Add the following code to `CScribbleDoc::OnPenThickWidth`.  
   
-        ```  
-        // Get a pointer to the ribbon bar  
-        CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx *) AfxGetMainWnd())->GetRibbonBar();  
-        ASSERT_VALID(pRibbon);  
-        CMFCRibbonComboBox* pThickComboBox = DYNAMIC_DOWNCAST(  
-           CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THICK_WIDTH));  
-        // Get the selected value  
-        int nCurSel = pThickComboBox->GetCurSel();  
-        if (nCurSel >= 0)  
-        {  
-           m_nThickWidth = atoi(pThickComboBox->GetItem(nCurSel));  
-        }  
-        // Create a new pen using the selected width  
-        ReplacePen();  
-        ```  
+ ``` *// Get a pointer to the ribbon bar  
+    CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx *) AfxGetMainWnd())->GetRibbonBar();
+ASSERT_VALID(pRibbon);
+
+ CMFCRibbonComboBox* pThickComboBox = DYNAMIC_DOWNCAST(
+    CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THICK_WIDTH));
+*// Get the selected value  
+    int nCurSel = pThickComboBox->GetCurSel();
+if (nCurSel>= 0)  
+ {  
+    m_nThickWidth = atoi(pThickComboBox->GetItem(nCurSel));
+
+ } *// Create a new pen using the selected width  
+    ReplacePen();
+
+ ```  
   
-8.  変更内容を保存し、アプリケーションをビルドして実行します。  新しいボタンとコンボ ボックスが表示されます。  フリーハンドでさまざまな太さのペンを使用してみます。  
+8.  Save the changes, and then build and run the application. New buttons and combo boxes should be displayed. Try using different pen widths to scribble.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addColorButton"></a> ペン パネルへのカラー ボタンの追加  
- 次は、カラーでフリーハンド描画できる [CMFCRibbonColorButton](../mfc/reference/cmfcribboncolorbutton-class.md) オブジェクトを追加します。  
+##  <a name="addcolorbutton"></a> Adding a Color Button to the Pen Panel  
+ Next, add a [CMFCRibbonColorButton](../mfc/reference/cmfcribboncolorbutton-class.md) object that lets the user scribble in color.  
   
-#### ペン パネルにカラー ボタンを追加するには  
+#### <a name="to-add-a-color-button-to-the-pen-panel"></a>To add a color button to the Pen panel  
   
-1.  カラー ボタンを追加する前に、カラー ボタンのメニュー項目を作成します。  **\[リソース ビュー\]** ウィンドウで、IDR\_SCRIBBTYPE メニュー リソースを開きます。  **\[ペン\]** メニュー項目をクリックして \[ペン\] メニューを開きます。  次 `&Color`を **\[ここへ入力\]** をクリックします入力します。  今入力したテキストを右クリックすると、**\[プロパティ\]** ウィンドウが表示されます。  ID を「`ID_PEN_COLOR`」に変更します。  
+1.  Before you add the color button, create a menu item for it. In the **Resource View** window, open the IDR_SCRIBBTYPE menu resource. Click the **Pen** menu item to open the pen menu. Then click **Type Here** and type `&Color`. Right-click the text that you just typed to display the **Properties** window. Change the ID to `ID_PEN_COLOR`.  
   
-2.  ここで、カラー ボタンを追加します。  **\[ツールボックス\]** から、カラー ボタンを **\[ペン\]** パネルにドラッグします。  
+2.  Now add the color button. From the **Toolbox**, drag a **Color Button** to the **Pen** panel.  
   
-3.  カラー ボタンをクリックします。  **\[キャプション\]**、**\[ID\]**、**\[Simple Look\]**、**\[Large Image Index\]**、**\[分割モード\]** を、それぞれ「`カラー`」、「`ID_PEN_COLOR`」、「`True`」、「`1`」、「`False`」に変更します。  
+3.  Click the color button. Change **Caption** to `Color`, **ID** to `ID_PEN_COLOR`, **SimpleLook** to `True`, **Large Image Index** to `1`, and **Split Mode** to `False`.  
   
-4.  変更内容を保存し、アプリケーションをビルドして実行します。  新しいカラー ボタンが **\[ペン\]** パネルに表示されます。  ただし、イベント ハンドラーがないため、このボタンを使用できません。  次の手順では、カラー ボタンのイベント ハンドラーを追加する方法を説明します。  
+4.  Save the changes, and then build and run the application. The new color button should be displayed on the **Pen** panel. However, it cannot be used because it does not yet have an event handler. The next steps show how to add an event handler for the color button.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addColorMember"></a> ドキュメント クラスへのカラー メンバーの追加  
- 元の Scribble アプリケーションにはカラー ペンがないため、その実装を作成する必要があります。  ドキュメントのペン カラーを格納するには、新しいメンバーをドキュメント クラス `CscribbleDoc.` に追加します。  
+##  <a name="addcolormember"></a> Adding a Color Member to the Document Class  
+ Because the original Scribble application does not have color pens, you must write an implementation for them. To store the pen color of the document, add a new member to the document class, `CscribbleDoc.`  
   
-#### ドキュメント クラスにカラー メンバーを追加するには  
+#### <a name="to-add-a-color-member-to-the-document-class"></a>To add a color member to the document class  
   
-1.  scribdoc.h の `CScribbleDoc` クラスで `// Attributes` セクションを探します。  `m_nThickWidth` データ メンバーの定義の後に、次のコード行を追加します。  
+1.  In scribdoc.h, in the `CScribbleDoc` class, find the `// Attributes` section. Add the following lines of code after the definition of the `m_nThickWidth` data member.  
   
-    ```  
-    // Current pen color  
-    COLORREF   m_penColor;  
-    ```  
+ ``` *// Current pen color  
+    COLORREF m_penColor;  
+ ```  
   
-2.  各ドキュメントには、ユーザーが既に描画したストロークの一覧があります。  各ストロークは、`CStroke` オブジェクトによって定義されます。  `CStroke` クラスには、ペン カラーに関する情報は含まれません。  したがって、このクラスを修正する必要があります。  scribdoc.h の `CStroke` クラスで、`m_nPenWidth` データ メンバーの後に次のコード行を追加します。  
+2.  Every document contains a list of stokes that the user has already drawn. Every stroke is defined by a `CStroke` object. The `CStroke` class does not include information about pen color. Therefore, you must modify the class. In scribdoc.h, in the `CStroke` class, add the following lines of code after the definition of the `m_nPenWidth` data member.  
   
-    ```  
-    // Pen color for the stroke  
-    COLORREF   m_penColor;  
-    ```  
+ ``` *// Pen color for the stroke  
+    COLORREF m_penColor;  
+ ```  
   
-3.  scribdoc.h に、新しい `CStroke` コンストラクターを追加し、そのパラメーターで幅とカラーを指定します。  次のコード行を `CStroke(UINT nPenWidth);` ステートメントの後に追加します。  
+3.  In scribdoc.h, add a new `CStroke` constructor whose parameters specify a width and color. Add the following line of code after the `CStroke(UINT nPenWidth);` statement.  
   
-    ```  
-    CStroke(UINT nPenWidth, COLORREF penColor);  
-    ```  
+ ```  
+    CStroke(UINT nPenWidth, COLORREF penColor);
+
+ ```  
   
-4.  scribdoc.cpp に、新しい `CStroke` コンストラクターの実装を追加します。  `CStroke::CStroke(UINT nPenWidth)` コンストラクターの実装の後に、次のコードを追加します。  
+4.  In scribdoc.cpp, add the implementation of the new `CStroke` constructor. Add the following code after the implementation of the `CStroke::CStroke(UINT nPenWidth)` constructor.  
   
-    ```  
-    // Constructor that uses the document's current width and color  
+ ``` *// Constructor that uses the document's current width and color  
     CStroke::CStroke(UINT nPenWidth, COLORREF penColor)  
-    {  
-       m_nPenWidth = nPenWidth;  
-       m_penColor = penColor;  
-       m_rectBounding.SetRectEmpty();  
-    }  
-    ```  
+ {  
+    m_nPenWidth = nPenWidth;  
+    m_penColor = penColor;  
+    m_rectBounding.SetRectEmpty();
+
+ }  
+ ```  
   
-5.  `CStroke::DrawStroke` メソッドの 2 行目を次のように変更します。  
+5.  Change the second line of the `CStroke::DrawStroke` method as follows.  
   
-    ```  
+ ```  
     if (!penStroke.CreatePen(PS_SOLID, m_nPenWidth, m_penColor))  
-    ```  
+ ```  
   
-6.  ドキュメント クラスに対する既定のペン カラーを設定します。  scribdoc.cpp では、`m_nThickWidth = 5;` ステートメントの後に、次のコードを `CScribbleDoc::InitDocument` に追加します。  
+6.  Set the default pen color for the document class. In scribdoc.cpp, add the following lines to `CScribbleDoc::InitDocument`, after the `m_nThickWidth = 5;` statement.  
   
-    ```  
-    // default pen color is black  
-    m_penColor = RGB(0,0,0);   
-    ```  
+ ``` *// default pen color is black  
+    m_penColor = RGB(0,
+    0,
+    0);
+
+ ```  
   
-7.  scribdoc.cpp で、`CScribbleDoc::NewStroke` メソッドの最初の行を次のように変更します。  
+7.  In scribdoc.cpp, change the first line of the `CScribbleDoc::NewStroke` method to the following.  
   
-    ```  
-    CStroke* pStrokeItem = new CStroke(m_nPenWidth, m_penColor);  
-    ```  
+ ```  
+    CStroke* pStrokeItem = new CStroke(m_nPenWidth, m_penColor);
+
+ ```  
   
-8.  `CScribbleDoc::ReplacePen` メソッドの最終行を次のように変更します。  
+8.  Change the last line of the `CScribbleDoc::ReplacePen` method to the following.  
   
-    ```  
-    m_penCur.CreatePen(PS_SOLID, m_nPenWidth, m_penColor);  
-    ```  
+ ```  
+    m_penCur.CreatePen(PS_SOLID,
+    m_nPenWidth,
+    m_penColor);
+
+ ```  
   
-9. 前の手順では、`m_penColor` メンバーを追加しました。  次に、メンバーを設定するカラー ボタンのイベント ハンドラーを作成します。  
+9. You added the `m_penColor` member in a previous step. Now, create an event handler for the color button that sets the member.  
   
-    1.  **\[リソース ビュー\]** ウィンドウで、IDR\_SCRIBBTYPE メニュー リソースを開きます。  
+    1.  In the **Resource View** window, open the IDR_SCRIBBTYPE menu resource.  
   
-    2.  **\[カラー\]** メニュー項目を右クリックし、**\[イベント ハンドラーの追加\]** をクリックします。  **イベント ハンドラー ウィザード**が表示されます。  
+    2.  Right-click the **Color** menu item and click **Add Event Handler**. The **Event Handler Wizard** appears.  
   
-    3.  このウィザードの **\[クラス リスト\]** ボックスで **\[CScribbleDoc\]** をクリックし、次に **\[追加と編集\]** ボタンをクリックします。  この操作によって `CScribbleDoc::OnPenColor` イベント ハンドラー スタブが作成されます。  
+    3.  In the **Class list** box in the wizard, select **CScribbleDoc** and then click the **Add and Edit** button. This creates the `CScribbleDoc::OnPenColor` event handler stub.  
   
-10. `CScribbleDoc::OnPenColor` イベント ハンドラーのスタブを次のコードで置き換えます。  
+10. Replace the stub for the `CScribbleDoc::OnPenColor` event handler with the following code.  
   
-    ```  
+ ```  
     void CScribbleDoc::OnPenColor()  
-    {  
-    // Change pen color to reflect color button's current selection  
-    CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar();  
-    ASSERT_VALID(pRibbon);  
-    CMFCRibbonColorButton* pColorBtn = DYNAMIC_DOWNCAST(  
-       CMFCRibbonColorButton, pRibbon->FindByID(ID_PEN_COLOR));  
-    m_penColor = pColorBtn->GetColor();  
-    // Create new pen using the selected color  
-    ReplacePen();  
-    }  
-    ```  
+ { *// Change pen color to reflect color button's current selection  
+    CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar();
+ASSERT_VALID(pRibbon);
+
+ CMFCRibbonColorButton* pColorBtn = DYNAMIC_DOWNCAST(
+    CMFCRibbonColorButton, pRibbon->FindByID(ID_PEN_COLOR));
+
+    m_penColor = pColorBtn->GetColor();
+*// Create new pen using the selected color  
+    ReplacePen();
+
+ }  
+ ```  
   
-11. 変更を保存し、アプリケーションをビルドして実行します。  カラー ボタンを押して、ペンのカラーを変更できるようになります。  
+11. Save the changes and then build and run the application. You should be able to press the color button and change the pen's color.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="initPenSave"></a> 設定の初期化と保存  
- 次に、ペンのカラーと太さを初期化します。  最後に、カラー描画をファイルに保存し、ファイルから読み込みます。  
+##  <a name="initpensave"></a> Initializing Pens and Saving Preferences  
+ Next, initialize the color and width of the pens. Finally, save and load a color drawing from a file.  
   
-#### リボン バーのコントロールを初期化するには  
+#### <a name="to-initialize-controls-on-the-ribbon-bar"></a>To initialize controls on the ribbon bar  
   
-1.  リボン バーのペンを初期化します。  
+1.  Initialize the pens on the ribbon bar.  
   
-     scribdoc.cpp で、`CScribbleDoc::InitDocument` メソッドの `m_sizeDoc = CSize(200,200)` ステートメントの後に次のコードを追加します。  
+     Add the following code to scribdoc.cpp, in the `CScribbleDoc::InitDocument` method, after the `m_sizeDoc = CSize(200,200)` statement.  
   
-    ```  
-    // Reset the ribbon UI to its initial values  
-    CMFCRibbonBar* pRibbon =   
-       ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar();  
-    ASSERT_VALID(pRibbon);  
-    CMFCRibbonColorButton* pColorBtn = DYNAMIC_DOWNCAST(  
-       CMFCRibbonColorButton,   
-       pRibbon->FindByID(ID_PEN_COLOR));  
-    // Set ColorButton to black  
-    pColorBtn->SetColor(RGB(0,0,0));    
-    CMFCRibbonComboBox* pThinComboBox = DYNAMIC_DOWNCAST(  
-       CMFCRibbonComboBox,   
-       pRibbon->FindByID(ID_PEN_THIN_WIDTH));  
-    // Set Thin pen combobox to 2  
-    pThinComboBox->SelectItem(1);   
-    CMFCRibbonComboBox* pThickComboBox = DYNAMIC_DOWNCAST(  
-       CMFCRibbonComboBox,   
-       pRibbon->FindByID(ID_PEN_THICK_WIDTH));  
-    // Set Thick pen combobox to 5  
-    pThickComboBox->SelectItem(0);  
-    ```  
+ ``` *// Reset the ribbon UI to its initial values CMFCRibbonBar* pRibbon = ((CMDIFrameWndEx*) AfxGetMainWnd())->GetRibbonBar(); ASSERT_VALID(pRibbon);
+
+ CMFCRibbonColorButton* pColorBtn = DYNAMIC_DOWNCAST( CMFCRibbonColorButton, pRibbon->FindByID(ID_PEN_COLOR)); *// Set ColorButton to black  
+    pColorBtn->SetColor(RGB(0, 0, 0));
+
+ CMFCRibbonComboBox* pThinComboBox = DYNAMIC_DOWNCAST( CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THIN_WIDTH)); *// Set Thin pen combobox to 2  
+    pThinComboBox->SelectItem(1);
+
+ CMFCRibbonComboBox* pThickComboBox = DYNAMIC_DOWNCAST( CMFCRibbonComboBox, pRibbon->FindByID(ID_PEN_THICK_WIDTH)); *// Set Thick pen combobox to 5  
+    pThickComboBox->SelectItem(0);
+
+ ```  
   
-2.  ファイルにカラー描画を保存します。  scribdoc.cpp で、`CStroke::Serialize` メソッドの `ar << (WORD)m_nPenWidth;` ステートメントの後に、次のコードを追加します。  
+2.  Save a color drawing to a file. Add the following statement to scribdoc.cpp, in the `CStroke::Serialize` method, after the `ar << (WORD)m_nPenWidth;` statement.  
   
-    ```  
-    ar << (COLORREF)m_penColor;  
-    ```  
+ ```  
+    ar <<(COLORREF)m_penColor;  
+ ```  
   
-3.  最後に、ファイルからカラー描画を読み込みます。  `CStroke::Serialize` メソッドの `m_nPenWidth = w;` ステートメントの後に、次のコード行を追加します。  
+3.  Finally, load a color drawing from a file. Add the following line of code, in the `CStroke::Serialize` method, after the `m_nPenWidth = w;` statement.  
   
-    ```  
-    ar >> m_penColor;  
-    ```  
+ ```  
+    ar>> m_penColor;  
+ ```  
   
-4.  次に、カラーでフリーハンド描画し、それをファイルに保存します。  
+4.  Now scribble in color and save your drawing to a file.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-## 結論  
- ここでは、MFC Scribble アプリケーションの更新を行いました。  既存のアプリケーションを修正するときに、そのガイドとしてこのチュートリアルを使用してください。  
+## Conclusion  
+ You have updated the MFC Scribble application. Use this walkthrough as a guide when you modify your existing applications.  
   
-## 参照  
- [チュートリアル](../mfc/walkthroughs-mfc.md)   
- [チュートリアル: MFC Scribble アプリケーションの更新 \(パート 1\)](../mfc/walkthrough-updating-the-mfc-scribble-application-part-1.md)
+## See Also  
+ [Walkthroughs](../mfc/walkthroughs-mfc.md)   
+ [Walkthrough: Updating the MFC Scribble Application (Part 1)](../mfc/walkthrough-updating-the-mfc-scribble-application-part-1.md)
+
+

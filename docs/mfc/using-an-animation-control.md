@@ -1,43 +1,62 @@
 ---
-title: "アニメーション コントロールの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アニメーション コントロール [C++]"
-  - "CAnimateCtrl クラス, アニメーション コントロール"
-  - "コントロール [MFC], アニメーション"
+title: Using an Animation Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- controls [MFC], animation
+- CAnimateCtrl class [MFC], animation controls
+- animation controls [MFC]
 ms.assetid: a009a464-e12d-4112-bf52-04a09b28dd88
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# アニメーション コントロールの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e7555102fdfdb3cbe1405b23a1acde25178567bb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アニメーション コントロールの一般的な使用法がパターンに従います。:  
+---
+# <a name="using-an-animation-control"></a>Using an Animation Control
+Typical usage of an animation control follows the pattern below:  
   
--   コントロールが作成されます。  コントロールをダイアログ ボックス テンプレートで指定されている場合、作成はダイアログ ボックスの作成時に自動的に行われます。ダイアログ クラスの [CAnimateCtrl](../mfc/reference/canimatectrl-class.md) のメンバーがアニメーション コントロールに対応する必要があります。または、任意のウィンドウの子ウィンドウとしてコントロールを作成するために [作成](../Topic/CAnimateCtrl::Create.md) メンバー関数を使用できます。  
+-   The control is created. If the control is specified in a dialog box template, creation is automatic when the dialog box is created. (You should have a [CAnimateCtrl](../mfc/reference/canimatectrl-class.md) member in your dialog class that corresponds to the animation control.) Alternatively, you can use the [Create](../mfc/reference/canimatectrl-class.md#create) member function to create the control as a child window of any window.  
   
--   [開く](../Topic/CAnimateCtrl::Open.md) メンバー関数を呼び出してアニメーション コントロールに AVI クリップを読み込んでください。  アニメーション コントロールがダイアログ ボックス内にある場合、その適切な位置は、ダイアログ クラスの [OnInitDialog](../Topic/CDialog::OnInitDialog.md) 関数です。  
+-   Load an AVI clip into the animation control by calling the [Open](../mfc/reference/canimatectrl-class.md#open) member function. If your animation control is in a dialog box, a good place to do this is in the dialog class's [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog) function.  
   
--   [再生](../Topic/CAnimateCtrl::Play.md) のメンバー関数を呼び出すことによってクリップをします。  アニメーション コントロールがダイアログ ボックス内にある場合、その適切な位置は、ダイアログ クラスの **OnInitDialog** 関数です。  **再生** を呼び出すと、アニメーション コントロールに設定されている `ACS_AUTOPLAY` のスタイルがある場合は必要ではありません。  
+-   Play the clip by calling the [Play](../mfc/reference/canimatectrl-class.md#play) member function. If your animation control is in a dialog box, a good place to do this is in the dialog class's **OnInitDialog** function. Calling **Play** is not necessary if the animation control has the `ACS_AUTOPLAY` style set.  
   
--   クリップの一部を表示したり、フレームによりフレームする場合は、`Seek` メンバー関数を使用します。  再生中のクリップを停止するには、`Stop` メンバー関数を使用します。  
+-   If you want to display portions of the clip or play it frame by frame, use the `Seek` member function. To stop a clip that is playing, use the `Stop` member function.  
   
--   コントロールを直ちに破棄しようとして **閉じる** のメンバー関数を呼び出して、メモリからクリップを削除します。  
+-   If you are not going to destroy the control right away, remove the clip from memory by calling the **Close** member function.  
   
--   アニメーション コントロールがダイアログ ボックス内にある場合、`CAnimateCtrl` オブジェクトは自動的に破棄されます。  そうでない場合、確認する必要があります `CAnimateCtrl` コントロールおよびオブジェクトの両方が適切に破棄することができます。  コントロールを破棄すると、自動的に AVI クリップを閉じます。  
+-   If the animation control is in a dialog box, it and the `CAnimateCtrl` object will be destroyed automatically. If not, you need to ensure that both the control and the `CAnimateCtrl` object are properly destroyed. Destroying the control automatically closes the AVI clip.  
   
-## 参照  
- [CAnimateCtrl の使い方](../Topic/Using%20CAnimateCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CAnimateCtrl](../mfc/using-canimatectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

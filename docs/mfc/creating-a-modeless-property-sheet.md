@@ -1,42 +1,61 @@
 ---
-title: "モードレス プロパティ シートの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Create メソッド [C++], プロパティ シート"
-  - "モードレス プロパティ シート"
-  - "プロパティ シート, モードレス"
+title: Creating a Modeless Property Sheet | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- modeless property sheets
+- property sheets, modeless
+- Create method [MFC], property sheets
 ms.assetid: eafd8a92-cc67-4a69-a5fb-742c920d1ae8
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# モードレス プロパティ シートの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eb93a55b9da82f75a1bdaab5818e11ae0e075d5f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-通常、作成するプロパティ シートはモーダルです。  モーダル プロパティ シートを使用すると、ユーザーはアプリケーションのほかの部分を使用する前に、プロパティ シートを閉じる必要があります。  ここでは、プロパティ シートを作成するためのモードレス プロパティ シートを作成するために使用できるメソッドについて説明します。アプリケーションの他の部分を使用します。  
+---
+# <a name="creating-a-modeless-property-sheet"></a>Creating a Modeless Property Sheet
+Normally, the property sheets you create will be modal. When using a modal property sheet, the user must close the property sheet before using any other part of the application. This article describes methods you can use to create a modeless property sheet that allows the user to keep the property sheet open while using other parts of the application.  
   
- モーダル ダイアログ ボックスとしてではなく、モードレス ダイアログ ボックスとしてプロパティ シートを表示するには、[DoModal](../Topic/CPropertySheet::DoModal.md)の代わりに [CPropertySheet::Create](../Topic/CPropertySheet::Create.md) を呼び出します。  また、モードレス プロパティ シートをサポートする追加のタスクを実装しなければなりません。  
+ To display a property sheet as a modeless dialog box instead of as a modal dialog box, call [CPropertySheet::Create](../mfc/reference/cpropertysheet-class.md#create) instead of [DoModal](../mfc/reference/cpropertysheet-class.md#domodal). You must also implement some extra tasks to support a modeless property sheet.  
   
- 追加のタスクの 1 つがプロパティ シートが開くときに変更する外部オブジェクトとプロパティ シートとのデータ交換です。  これは、通常、標準モードレス ダイアログ ボックスのと同じタスクです。  このタスクの一部は、プロパティ設定を適用する外部オブジェクトとモードレス プロパティ シートの間の通信チャネルを実装しています。  この実装は、モードレス プロパティ シートの [CPropertySheet](../mfc/reference/cpropertysheet-class.md) からクラスを派生すればはるかに簡単です。  ここでは、そうしたとします。  
+ One of the additional tasks is exchanging data between the property sheet and the external object it is modifying when the property sheet is open. This is generally the same task as for standard modeless dialog boxes. Part of this task is implementing a channel of communication between the modeless property sheet and the external object to which the property settings apply. This implementation is far easier if you derive a class from [CPropertySheet](../mfc/reference/cpropertysheet-class.md) for your modeless property sheet. This article assumes you have done so.  
   
- モードレス プロパティ シートと外部オブジェクト \(ビューの現在の選択項目の間で通信するための 1 種類のメソッドは、たとえば\) プロパティ シートの外部オブジェクトへのポインターを定義することです。  `CPropertySheet`\- 1 個の外部オブジェクトから別の要素へのポインターをいつでもフォーカス変更変更した派生クラスの関数 \(`SetMyExternalObject`のようなものと呼ばれる\) を定義します。  `SetMyExternalObject` 関数は、最近選択した外部オブジェクトを反映するプロパティ ページの設定をリセットする必要があります。  これを行うには、`SetMyExternalObject` 関数は `CPropertySheet` クラスに属する [CPropertyPage](../mfc/reference/cpropertypage-class.md) オブジェクトにアクセスできる必要があります。  
+ One method for communicating between the modeless property sheet and the external object (the current selection in a view, for example) is to define a pointer from the property sheet to the external object. Define a function (called something like `SetMyExternalObject`) in the `CPropertySheet`-derived class to change the pointer whenever the focus changes from one external object to another. The `SetMyExternalObject` function needs to reset the settings for each property page to reflect the newly selected external object. To accomplish this, the `SetMyExternalObject` function must be able to access the [CPropertyPage](../mfc/reference/cpropertypage-class.md) objects belonging to the `CPropertySheet` class.  
   
- プロパティ シート内のプロパティ ページへのアクセスを提供する最も簡単な方法は、\-派生オブジェクトを `CPropertySheet`で `CPropertyPage` オブジェクト埋め込むことです。  `CPropertyPage` を埋め込みます `CPropertySheet`でオブジェクトを\-派生オブジェクトは、プロパティ シートの所有者が `CPropertyPage` オブジェクトを作成し、プロパティ シートに [CPropertySheet::AddPage](../Topic/CPropertySheet::AddPage.md)で渡すモーダル ダイアログ ボックスの一般的なデザインとは異なります。  
+ The most convenient way to provide access to property pages within a property sheet is to embed the `CPropertyPage` objects in the `CPropertySheet`-derived object. Embedding `CPropertyPage` objects in the `CPropertySheet`-derived object differs from the typical design for modal dialog boxes, where the owner of the property sheet creates the `CPropertyPage` objects and passes them to the property sheet via [CPropertySheet::AddPage](../mfc/reference/cpropertysheet-class.md#addpage).  
   
- モードレス プロパティ シートの設定は、外部オブジェクトに適用するかを決定するための各種のユーザー インターフェイスの方法があります。  1 種類の代わりに、たびにユーザーが変更された値は、現在のプロパティ ページの設定を適用することです。  別の方法としては、ユーザーが外部オブジェクトにコミットされる前にプロパティ ページを収集できるようにする適用ボタンを提供することです。  適用ボタンを処理する方法については、[適用ボタンの処理](../mfc/handling-the-apply-button.md)記事を参照してください。  
+ There are many user-interface alternatives for determining when the settings of the modeless property sheet should be applied to an external object. One alternative is to apply the settings of the current property page whenever the user changes any value. Another alternative is to provide an Apply button, which allows the user to accumulate changes in the property pages before committing them to the external object. For information on ways to handle the Apply button, see the article [Handling the Apply Button](../mfc/handling-the-apply-button.md).  
   
-## 参照  
- [プロパティ シート](../mfc/property-sheets-mfc.md)   
- [データの交換](../mfc/exchanging-data.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)
+## <a name="see-also"></a>See Also  
+ [Property Sheets](../mfc/property-sheets-mfc.md)   
+ [Exchanging Data](../mfc/exchanging-data.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)
+
+

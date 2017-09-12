@@ -1,5 +1,5 @@
 ---
-title: "CWordArray クラス |Microsoft ドキュメント"
+title: CWordArray Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -32,12 +32,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- INT
-- UINT
-- indexed arrays
-- arrays [C++], indexed
-- WORD data type
-- CWordArray class
+- CObArray [MFC], CObArray
+- CObArray [MFC], Add
+- CObArray [MFC], Append
+- CObArray [MFC], Copy
+- CObArray [MFC], ElementAt
+- CObArray [MFC], FreeExtra
+- CObArray [MFC], GetAt
+- CObArray [MFC], GetCount
+- CObArray [MFC], GetData
+- CObArray [MFC], GetSize
+- CObArray [MFC], GetUpperBound
+- CObArray [MFC], InsertAt
+- CObArray [MFC], IsEmpty
+- CObArray [MFC], RemoveAll
+- CObArray [MFC], RemoveAt
+- CObArray [MFC], SetAt
+- CObArray [MFC], SetAtGrow
+- CObArray [MFC], SetSize
 ms.assetid: 2ba2c194-2c6c-40ff-9db4-e9dbe57e1f57
 caps.latest.revision: 26
 author: mikeblome
@@ -57,99 +69,99 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
-ms.openlocfilehash: 16ab3abe3cff8695d5d44de24eb4d3c93f64cea4
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 14c889c1a43a179aa031c61705592e17a7a1b516
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cwordarray-class"></a>CWordArray クラス
-16 ビットのワードの配列をサポートします。  
+# <a name="cwordarray-class"></a>CWordArray Class
+Supports arrays of 16-bit words.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CWordArray : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
- メンバー関数は、`CWordArray`クラスのメンバー関数に似ています[CObArray](../../mfc/reference/cobarray-class.md)です。 メンバー関数については `CObArray` クラスの説明を参照してください。 任意の場所が表示、 [CObject](../../mfc/reference/cobject-class.md)ポインター関数パラメーターまたは戻り値は、置換、 **WORD**です。  
+## <a name="members"></a>Members  
+ The member functions of `CWordArray` are similar to the member functions of class [CObArray](../../mfc/reference/cobarray-class.md). Because of this similarity, you can use the `CObArray` reference documentation for member function specifics. Wherever you see a [CObject](../../mfc/reference/cobject-class.md) pointer as a function parameter or return value, substitute a **WORD**.  
   
  `CObject* CObArray::GetAt( int <nIndex> ) const;`  
   
- たとえば、次のように変換します。  
+ for example, translates to  
   
  `WORD CWordArray::GetAt( int <nIndex> ) const;`  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CObArray::CObArray](../../mfc/reference/cobarray-class.md#cobarray)|空の配列を生成します。|  
+|[CObArray::CObArray](../../mfc/reference/cobarray-class.md#cobarray)|Constructs an empty array.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CObArray::Add](../../mfc/reference/cobarray-class.md#add)|配列の末尾に要素を追加します。必要に応じて、配列を大きくします。|  
-|[CObArray::Append](../../mfc/reference/cobarray-class.md#append)|配列に別の配列を追加します。必要に応じて、配列を大きくします。|  
-|[CObArray::Copy](../../mfc/reference/cobarray-class.md#copy)|配列に別の配列をコピーします。必要に応じて、配列を大きくします。|  
-|[CObArray::ElementAt](../../mfc/reference/cobarray-class.md#elementat)|配列内の要素ポインターへの一時的な参照を返します。|  
-|[CObArray::FreeExtra](../../mfc/reference/cobarray-class.md#freeextra)|現在の上限を超えている未使用のメモリをすべて解放します。|  
-|[CObArray::GetAt](../../mfc/reference/cobarray-class.md#getat)|指定されたインデックス位置にある値を返します。|  
-|[CObArray::GetCount](../../mfc/reference/cobarray-class.md#getcount)|この配列内の要素の数を取得します。|  
-|[CObArray::GetData](../../mfc/reference/cobarray-class.md#getdata)|配列内の要素へのアクセスを許可します。 指定できます**NULL**です。|  
-|[CObArray::GetSize](../../mfc/reference/cobarray-class.md#getsize)|この配列内の要素の数を取得します。|  
-|[CObArray::GetUpperBound](../../mfc/reference/cobarray-class.md#getupperbound)|有効な最大のインデックスを返します。|  
-|[CObArray::InsertAt](../../mfc/reference/cobarray-class.md#insertat)|指定されたインデックス位置に要素 (または別の配列内のすべての要素) を挿入します。|  
-|[CObArray::IsEmpty](../../mfc/reference/cobarray-class.md#isempty)|配列が空かどうかを判別します。|  
-|[CObArray::RemoveAll](../../mfc/reference/cobarray-class.md#removeall)|この配列からすべての要素を削除します。|  
-|[CObArray::RemoveAt](../../mfc/reference/cobarray-class.md#removeat)|特定のインデックス位置にある要素を削除します。|  
-|[CObArray::SetAt](../../mfc/reference/cobarray-class.md#setat)|指定されたインデックスの値を設定します。配列は大きくできません。|  
-|[CObArray::SetAtGrow](../../mfc/reference/cobarray-class.md#setatgrow)|指定されたインデックスの値を設定します。必要に応じて、配列を大きくします。|  
-|[CObArray::SetSize](../../mfc/reference/cobarray-class.md#setsize)|この配列に含まれる要素の数を設定します。|  
+|[CObArray::Add](../../mfc/reference/cobarray-class.md#add)|Adds an element to the end of the array; grows the array if necessary.|  
+|[CObArray::Append](../../mfc/reference/cobarray-class.md#append)|Appends another array to the array; grows the array if necessary.|  
+|[CObArray::Copy](../../mfc/reference/cobarray-class.md#copy)|Copies another array to the array; grows the array if necessary.|  
+|[CObArray::ElementAt](../../mfc/reference/cobarray-class.md#elementat)|Returns a temporary reference to the element pointer within the array.|  
+|[CObArray::FreeExtra](../../mfc/reference/cobarray-class.md#freeextra)|Frees all unused memory above the current upper bound.|  
+|[CObArray::GetAt](../../mfc/reference/cobarray-class.md#getat)|Returns the value at a given index.|  
+|[CObArray::GetCount](../../mfc/reference/cobarray-class.md#getcount)|Gets the number of elements in this array.|  
+|[CObArray::GetData](../../mfc/reference/cobarray-class.md#getdata)|Allows access to elements in the array. Can be **NULL**.|  
+|[CObArray::GetSize](../../mfc/reference/cobarray-class.md#getsize)|Gets the number of elements in this array.|  
+|[CObArray::GetUpperBound](../../mfc/reference/cobarray-class.md#getupperbound)|Returns the largest valid index.|  
+|[CObArray::InsertAt](../../mfc/reference/cobarray-class.md#insertat)|Inserts an element (or all the elements in another array) at a specified index.|  
+|[CObArray::IsEmpty](../../mfc/reference/cobarray-class.md#isempty)|Determines if the array is empty.|  
+|[CObArray::RemoveAll](../../mfc/reference/cobarray-class.md#removeall)|Removes all the elements from this array.|  
+|[CObArray::RemoveAt](../../mfc/reference/cobarray-class.md#removeat)|Removes an element at a specific index.|  
+|[CObArray::SetAt](../../mfc/reference/cobarray-class.md#setat)|Sets the value for a given index; array not allowed to grow.|  
+|[CObArray::SetAtGrow](../../mfc/reference/cobarray-class.md#setatgrow)|Sets the value for a given index; grows the array if necessary.|  
+|[CObArray::SetSize](../../mfc/reference/cobarray-class.md#setsize)|Sets the number of elements to be contained in this array.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CObArray::operator](../../mfc/reference/cobarray-class.md#operator_at)|指定されたインデックス位置にある要素を設定または取得します。|  
+|[CObArray::operator &#91;&#93;](../../mfc/reference/cobarray-class.md#operator_at)|Sets or gets the element at the specified index.|  
   
-## <a name="remarks"></a>コメント  
- `CWordArray`組み込まれており、 [IMPLEMENT_SERIAL](run-time-object-model-services.md#implement_serial)マクロをシリアル化とその要素のダンプをサポートします。 単語の配列がアーカイブか、オーバー ロードされた挿入演算子のいずれかに格納されている場合、 [cobject::serialize](../../mfc/reference/cobject-class.md#serialize)メンバー関数は、各要素は、逆に、シリアル化します。  
+## <a name="remarks"></a>Remarks  
+ `CWordArray` incorporates the [IMPLEMENT_SERIAL](run-time-object-model-services.md#implement_serial) macro to support serialization and dumping of its elements. If an array of words is stored to an archive, either with an overloaded insertion operator or with the [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize) member function, each element is, in turn, serialized.  
   
 > [!NOTE]
->  配列を使用する前に、`SetSize` を使用してそのサイズを設定し、メモリを割り当てます。 `SetSize` を使用しない場合、配列に要素を追加すると、配列の再割り当てとコピーが頻繁に発生します。 頻繁な再割り当てとコピーは非効率であり、メモリが断片化される可能性があります。  
+>  Before using an array, use `SetSize` to establish its size and allocate memory for it. If you do not use `SetSize`, adding elements to your array causes it to be frequently reallocated and copied. Frequent reallocation and copying are inefficient and can fragment memory.  
   
- 配列内の個々 の要素のダンプを必要がある場合は、1 以上ダンプ コンテキストの深さを設定する必要があります。  
+ If you need a dump of individual elements in the array, you must set the depth of the dump context to 1 or greater.  
   
- 使用する方法についての`CWordArray`、記事を参照して[コレクション](../../mfc/collections.md)です。  
+ For more information on using `CWordArray`, see the article [Collections](../../mfc/collections.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CWordArray`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcoll.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcoll.h  
   
-##  <a name="icommandsource_interface"></a>関数のインターフェイス  
- ユーザー コントロールにコマンド ソース オブジェクトから送信されたコマンドを管理します。  
+##  <a name="icommandsource_interface"></a>  ICommandSource Interface  
+ Manages commands sent from a command source object to a user control.  
   
 ```  
 interface class ICommandSource  
 ```  
   
-### <a name="remarks"></a>コメント  
- MFC ビュー内のユーザー コントロールをホストしている場合[CWinFormsView クラス](../../mfc/reference/cwinformsview-class.md)ルート コマンドおよび更新コマンド UI メッセージをユーザー コントロールを MFC のコマンド (たとえば、フレームのメニュー項目やツールバーのボタン) を処理できるようにします。 実装すると、割り当てるユーザー コントロールへの参照、`ICommandSource`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ When you host a user control in an MFC View, [CWinFormsView Class](../../mfc/reference/cwinformsview-class.md) routes commands and update command UI messages to the user control to allow it to handle MFC commands (for example, frame menu items and toolbar buttons). By implementing  , you give the user control a reference to the `ICommandSource` object.  
   
- 参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)の使用方法の例については`ICommandTarget`します。  
+ See [How to: Add Command Routing to the Windows Forms Control](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) for an example of how to use `ICommandTarget`.  
   
- Windows フォームを使用する方法については、次を参照してください。 [MFC における Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)です。  
+ For more information on using Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
-##  <a name="addcommandhandler"></a>ICommandSource::AddCommandHandler  
- コマンド ソース オブジェクトに、コマンド ハンドラーを追加します。  
+##  <a name="addcommandhandler"></a>  ICommandSource::AddCommandHandler  
+ Adds a command handler to a command source object.  
   
 ```  
 void AddCommandHandler(
@@ -157,20 +169,20 @@ void AddCommandHandler(
     CommandHandler^ cmdHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdID`  
- コマンド ID。  
+ The command ID.  
   
  `cmdHandler`  
- コマンド ハンドラー メソッドへのハンドル。  
+ A handle to the command handler method.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、コマンド ハンドラーを追加`cmdHandler`コマンド ソース オブジェクトにし、そのハンドラーに`cmdID`です。  
+### <a name="remarks"></a>Remarks  
+ This method adds the command handler `cmdHandler` to the command source object and maps the handler to `cmdID`.  
   
- 参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)の使用方法の例については`AddCommandHandler`します。  
+ See [How to: Add Command Routing to the Windows Forms Control](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) for an example of how to use `AddCommandHandler`.  
   
-##  <a name="addcommandrangehandler"></a>ICommandSource::AddCommandRangeHandler  
- コマンド ソース オブジェクトを一連のコマンド ハンドラーを追加します。  
+##  <a name="addcommandrangehandler"></a>  ICommandSource::AddCommandRangeHandler  
+ Adds a group of command handlers to a command source object.  
   
 ```  
 void AddCommandRangeHandler(
@@ -179,21 +191,21 @@ void AddCommandRangeHandler(
     CommandHandler^ cmdHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdIDMin`  
- コマンド ID 範囲の開始インデックス。  
+ The beginning index of the command ID range.  
   
  `cmdIDMax`  
- コマンド ID 範囲の終了インデックスです。  
+ The ending index of the command ID range.  
   
  `cmdHandler`  
- コマンドがマップされているメッセージ ハンドラー メソッドへのハンドル。  
+ A handle to the message handler method to which the commands are mapped.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、コマンド Id の連続する範囲を 1 つのメッセージ ハンドラーにマップし、コマンド ソース オブジェクトに追加します。 これは、は、1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ This method maps a contiguous range of command IDs to a single message handler and adds it to the command source object. This is used for handling a group of related buttons with one method.  
   
-##  <a name="addcommandrangeuihandler"></a>ICommandSource::AddCommandRangeUIHandler  
- コマンド ソース オブジェクトを一連のユーザー インターフェイスのコマンドのメッセージ ハンドラーを追加します。  
+##  <a name="addcommandrangeuihandler"></a>  ICommandSource::AddCommandRangeUIHandler  
+ Adds a group of user interface command message handlers to a command source object.  
   
 ```  
 void AddCommandRangeUIHandler(
@@ -202,21 +214,21 @@ void AddCommandRangeUIHandler(
     CommandUIHandler^ cmdUIHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdIDMin`  
- コマンド ID 範囲の開始インデックス。  
+ The beginning index of the command ID range.  
   
  `cmdIDMax`  
- コマンド ID 範囲の終了インデックスです。  
+ The ending index of the command ID range.  
   
  `cmdHandler`  
- コマンドがマップされているメッセージ ハンドラー メソッドへのハンドル。  
+ A handle to the message handler method to which the commands are mapped.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、1 人のユーザー インターフェイスのコマンドのメッセージ ハンドラーに連続した範囲のコマンド Id をマップし、コマンド ソース オブジェクトに追加します。 これは、は、1 つのメソッドを使用して関連するボタンのグループを処理するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ This method maps a contiguous range of command IDs to a single user interface command message handler and adds it to the command source object. This is used for handling a group of related buttons with one method.  
   
-##  <a name="addcommanduihandler"></a>ICommandSource::AddCommandUIHandler  
- コマンド ソース オブジェクトには、ユーザー インターフェイスのコマンドのメッセージ ハンドラーを追加します。  
+##  <a name="addcommanduihandler"></a>  ICommandSource::AddCommandUIHandler  
+ Adds a user interface command message handler to a command source object.  
   
 ```  
 void AddCommandUIHandler(
@@ -224,65 +236,46 @@ void AddCommandUIHandler(
     CommandUIHandler^ cmdUIHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdID`  
- コマンド ID。  
+ The command ID.  
   
  `cmdUIHandler`  
- ユーザー インターフェイスのコマンドのメッセージ ハンドラー メソッドへのハンドル。  
+ A handle to the user interface command message handler method.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、ユーザー インターフェイスのコマンドのメッセージ ハンドラーを追加`cmdHandler`コマンド ソース オブジェクトにし、そのハンドラーに`cmdID`です。  
+### <a name="remarks"></a>Remarks  
+ This method adds the user interface command message handler `cmdHandler` to the command source object and maps the handler to `cmdID`.  
   
-##  <a name="postcommand"></a>ICommandSource::PostCommand  
- 処理されるまで待つことがなく、メッセージをポストします。  
+##  <a name="postcommand"></a>  ICommandSource::PostCommand  
+ Posts a message without waiting for it to be processed.  
   
 ```  
 void PostCommand(unsigned int command);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `command`  
- メッセージをポストのコマンド ID。  
+ The command ID of the message to be posted.  
   
-### <a name="remarks"></a>コメント  
- このメソッドで指定した ID にマップされているメッセージを非同期的にポスト`command`です。 呼び出す[CWnd::PostMessage](../../mfc/reference/cwnd-class.md#postmessage)ウィンドウのメッセージ キューと返しますに対応するウィンドウ メッセージを処理するを待たずメッセージを配置します。  
+### <a name="remarks"></a>Remarks  
+ This method asynchronously posts the message mapped to the ID specified by `command`. It calls [CWnd::PostMessage](../../mfc/reference/cwnd-class.md#postmessage) to place the message in the window's message queue and then returns without waiting for the corresponding window to process the message.  
   
-##  <a name="removecommandhandler"></a>ICommandSource::RemoveCommandHandler  
- コマンド ソース オブジェクトから、コマンド ハンドラーを削除します。  
+##  <a name="removecommandhandler"></a>  ICommandSource::RemoveCommandHandler  
+ Removes a command handler from a command source object.  
   
 ```  
 void RemoveCommandHandler(unsigned int cmdID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdID`  
- コマンド ID。  
+ The command ID.  
   
-### <a name="remarks"></a>コメント  
- このメソッドにマップされているコマンド ハンドラーを削除する`cmdID`コマンド ソース オブジェクトからです。  
+### <a name="remarks"></a>Remarks  
+ This method removes the command handler mapped to `cmdID` from the command source object.  
   
-##  <a name="removecommandrangehandler"></a>ICommandSource::RemoveCommandRangeHandler  
- コマンド ソース オブジェクトから一連のコマンド ハンドラーを削除します。  
-  
-```  
-void RemoveCommandRangeUIHandler(
-    unsigned int cmdIDMin,  
-    unsigned int cmdIDMax);
-```  
-  
-### <a name="parameters"></a>パラメーター  
- `cmdIDMin`  
- コマンド ID 範囲の開始インデックス。  
-  
- `cmdIDMax`  
- コマンド ID 範囲の終了インデックスです。  
-  
-### <a name="remarks"></a>コメント  
- このメソッドによって指定されたコマンド Id にマップされているメッセージ ハンドラーのグループを削除して`cmdIDMin`と`cmdIDMax`、コマンド ソース オブジェクトからです。  
-  
-##  <a name="removecommandrangeuihandler"></a>ICommandSource::RemoveCommandRangeUIHandler  
- コマンド ソース オブジェクトからのユーザー インターフェイスのコマンドのメッセージ ハンドラーのグループを削除します。  
+##  <a name="removecommandrangehandler"></a>  ICommandSource::RemoveCommandRangeHandler  
+ Removes a group of command handlers from a command source object.  
   
 ```  
 void RemoveCommandRangeUIHandler(
@@ -290,214 +283,233 @@ void RemoveCommandRangeUIHandler(
     unsigned int cmdIDMax);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdIDMin`  
- コマンド ID 範囲の開始インデックス。  
+ The beginning index of the command ID range.  
   
  `cmdIDMax`  
- コマンド ID 範囲の終了インデックスです。  
+ The ending index of the command ID range.  
   
-### <a name="remarks"></a>コメント  
- このメソッドによって指定されたコマンド Id にマップされている、ユーザー インターフェイス コマンド メッセージ ハンドラーのグループを削除して`cmdIDMin`と`cmdIDMax`、コマンド ソース オブジェクトからです。  
+### <a name="remarks"></a>Remarks  
+ This method removes a group of message handlers, mapped to the command IDs specifed by `cmdIDMin` and `cmdIDMax`, from the command source object.  
   
-##  <a name="removecommanduihandler"></a>ICommandSource::RemoveCommandUIHandler  
- コマンド ソース オブジェクトからのユーザー インターフェイスのコマンドのメッセージ ハンドラーを削除します。  
+##  <a name="removecommandrangeuihandler"></a>  ICommandSource::RemoveCommandRangeUIHandler  
+ Removes a group of user interface command message handlers from a command source object.  
+  
+```  
+void RemoveCommandRangeUIHandler(
+    unsigned int cmdIDMin,  
+    unsigned int cmdIDMax);
+```  
+  
+### <a name="parameters"></a>Parameters  
+ `cmdIDMin`  
+ The beginning index of the command ID range.  
+  
+ `cmdIDMax`  
+ The ending index of the command ID range.  
+  
+### <a name="remarks"></a>Remarks  
+ This method removes a group of user interface command message handlers, mapped to the command IDs specifed by `cmdIDMin` and `cmdIDMax`, from the command source object.  
+  
+##  <a name="removecommanduihandler"></a>  ICommandSource::RemoveCommandUIHandler  
+ Removes a user interface command message handler from a command source object.  
   
 ```  
 void RemoveCommandUIHandler(unsigned int cmdID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdID`  
- コマンド ID。  
+ The command ID.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、ユーザー インターフェイス コマンド メッセージ ハンドラーにマップを削除`cmdID`コマンド ソース オブジェクトからです。  
+### <a name="remarks"></a>Remarks  
+ This method removes the user interface command message handler mapped to `cmdID` from the command source object.  
   
-##  <a name="sendcommand"></a>ICommandSource::SendCommand  
- メッセージを送信し、返す前に処理されるまで待機します。  
+##  <a name="sendcommand"></a>  ICommandSource::SendCommand  
+ Sends a message and waits for it to be processed before returning.  
   
 ```  
 void SendCommand(unsigned int command);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `command`  
- 送信されるメッセージのコマンド ID。  
+ The command ID of the message to be sent.  
   
-### <a name="remarks"></a>コメント  
- このメソッドで指定した ID に割り当てられたメッセージを同期的に送信する`command`です。 呼び出す[CWnd::SendMessage](../../mfc/reference/cwnd-class.md#sendmessage)ウィンドウ プロシージャが返す前にメッセージを処理するまでに、ウィンドウのメッセージ キューと待機にメッセージを配置します。  
+### <a name="remarks"></a>Remarks  
+ This method synchronously sends the message mapped to the ID specified by `command`. It calls [CWnd::SendMessage](../../mfc/reference/cwnd-class.md#sendmessage) to place the message in the window's message queue and waits until that window procedure has processed the message before returning.  
   
-##  <a name="icommandtarget_interface"></a>ICommandTarget インターフェイス  
- コマンド ソース オブジェクトからのコマンドを受信するインターフェイスを使用するユーザー コントロールを提供します。  
+##  <a name="icommandtarget_interface"></a>  ICommandTarget Interface  
+ Provides a user control with an interface to receive commands from a command source object.  
   
 ```  
 interface class ICommandTarget  
 ```  
   
-### <a name="remarks"></a>コメント  
- MFC ビュー内のユーザー コントロールをホストしている場合[CWinFormsView](../../mfc/reference/cwinformsview-class.md)ルート コマンドおよび更新コマンド UI メッセージをユーザー コントロールを MFC のコマンド (たとえば、フレームのメニュー項目やツールバーのボタン) を処理できるようにします。 実装することによって`ICommandTarget`、ユーザー コントロールにオブジェクトへの参照を提供します。  
+### <a name="remarks"></a>Remarks  
+ When you host a user control in an MFC View, [CWinFormsView](../../mfc/reference/cwinformsview-class.md) routes commands and update command UI messages to the user control to allow it to handle MFC commands (for example, frame menu items and toolbar buttons). By implementing `ICommandTarget`, you give the user control a reference to the  object.  
   
- 参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)の使用方法の例については`ICommandTarget`します。  
+ See [How to: Add Command Routing to the Windows Forms Control](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) for an example of how to use `ICommandTarget`.  
   
- Windows フォームを使用する方法については、次を参照してください。 [MFC における Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)です。  
+ For more information on using Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
-##  <a name="initialize"></a>ICommandTarget::Initialize  
- コマンド ターゲット オブジェクトを初期化します。  
+##  <a name="initialize"></a>  ICommandTarget::Initialize  
+ Initializes the command target object.  
   
 ```  
 void Initialize(ICommandSource^ cmdSource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cmdSource`  
- コマンド ソース オブジェクトへのハンドル。  
+ A handle to the command source object.  
   
-### <a name="remarks"></a>コメント  
- MFC ビュー内のユーザー コントロールをホストしている場合[CWinFormsView](../../mfc/reference/cwinformsview-class.md)ルート コマンドおよび更新コマンド UI メッセージをユーザー コントロールを MFC のコマンドを処理できるようにします。  
+### <a name="remarks"></a>Remarks  
+ When you host a user control in an MFC View, [CWinFormsView](../../mfc/reference/cwinformsview-class.md) routes commands and update command UI messages to the user control to allow it to handle MFC commands.  
   
- このメソッドは、コマンド ターゲット オブジェクトを初期化し、指定したコマンドのソース オブジェクトに関連付けます`cmdSource`です。 ユーザー コントロール クラスの実装で呼び出す必要があります。 初期化で必要がありますに登録するコマンド ハンドラー コマンド ソース オブジェクトを呼び出して[ICommandSource::AddCommandHandler](../../mfc/reference/icommandsource-interface.md)で、`Initialize`実装します。 参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)の使用方法の例については`Initialize`これを行う。  
+ This method initializes the command target object and associates it with the specified command source object `cmdSource`. It should be called in the user control class implementation. At initialization, you should register command handlers with the command source object by calling [ICommandSource::AddCommandHandler](../../mfc/reference/icommandsource-interface.md) in the `Initialize` implementation. See [How to: Add Command Routing to the Windows Forms Control](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md) for an example of how to use `Initialize` to do this.  
   
-##  <a name="icommandui_interface"></a>ICommandUI インターフェイス  
- ユーザー インターフェイスのコマンドを管理します。  
+##  <a name="icommandui_interface"></a>  ICommandUI Interface  
+ Manages user interface commands.  
   
 ```  
 interface class ICommandUI  
 ```  
   
-### <a name="remarks"></a>コメント  
- このインターフェイスは、ユーザー インターフェイスのコマンドを管理するメソッドとプロパティを提供します。 `ICommandUI`ような[CCmdUI クラス](../../mfc/reference/ccmdui-class.md)する点を除いて、 `ICommandUI` .NET コンポーネントと相互運用可能な MFC アプリケーションのために使用します。  
+### <a name="remarks"></a>Remarks  
+ This interface provides methods and properties that manage user interface commands. `ICommandUI` is similar to [CCmdUI Class](../../mfc/reference/ccmdui-class.md), except that `ICommandUI` is used for MFC applications that interoperate with .NET components.  
   
- `ICommandUI`内で使用される、`ON_UPDATE_COMMAND_UI`ハンドラーの派生クラスでします。 有効になっている、各メニュー項目、メニューが表示されます (選択またはクリックする) アプリケーションのユーザーがアクティブにしたときまたは無効にします。 各メニュー コマンドのターゲットが実装することでこの情報を提供、`ON_UPDATE_COMMAND_UI`ハンドラー。 アプリケーション内のコマンドのユーザー インターフェイス オブジェクトごとに、[プロパティ] ウィンドウを使用して、メッセージ マップ エントリと各ハンドラーの関数プロトタイプを作成します。  
+ `ICommandUI` is used within an `ON_UPDATE_COMMAND_UI` handler in an  -derived class. When a user of an application activates (selects or clicks) a menu, each menu item is displayed as enabled or disabled. The target of each menu command provides this information by implementing an `ON_UPDATE_COMMAND_UI` handler. For each of the command user interface objects in your application, use the Properties window to create a message-map entry and function prototype for each handler.  
   
- 方法の詳細については`ICommandUI`コマンド ルーティングのインターフェイスを使用してを参照してください[する方法: Windows フォーム コントロールへのコマンド ルーティングの追加](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md)です。  
+ For more information on how the `ICommandUI` interface is used in command routing, see [How to: Add Command Routing to the Windows Forms Control](../../dotnet/how-to-add-command-routing-to-the-windows-forms-control.md).  
   
- Windows フォームを使用する方法については、次を参照してください。 [MFC における Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)です。  
+ For more information on using Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
- MFC でのユーザー インターフェイスのコマンドを管理する方法の詳細については、次を参照してください。 [CCmdUI クラス](../../mfc/reference/ccmdui-class.md)です。  
+ For more information on how user interface commands are managed in MFC, see [CCmdUI Class](../../mfc/reference/ccmdui-class.md).  
   
-##  <a name="check"></a>ICommandUI::Check  
- このコマンドのユーザー インターフェイスの項目は、適切なチェックの状態に設定します。  
+##  <a name="check"></a>  ICommandUI::Check  
+ Sets the user interface item for this command to the appropriate check state.  
   
 ```  
 property UICheckState Check;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、このコマンドのユーザー インターフェイス項目を適切なチェックの状態を設定します。 設定`Check`次の値にします。  
+### <a name="remarks"></a>Remarks  
+ This property sets the user interface item for this command to the appropriate check state. Set `Check` to the following values:  
   
-|用語|定義|  
+|Term|Definition|  
 |----------|----------------|  
-|0|選択しない|  
-|1|チェック|  
-|2|不確定な設定します。|  
+|0|Uncheck|  
+|1|Check|  
+|2|Set indeterminate|  
   
-##  <a name="continuerouting"></a>ICommandUI::ContinueRouting  
- コマンド ルーティング機構、一連のハンドラーを現在のメッセージのルーティングを続行するように指示します。  
+##  <a name="continuerouting"></a>  ICommandUI::ContinueRouting  
+ Tells the command routing mechanism to continue routing the current message down the chain of handlers.  
   
 ```  
 void ContinueRouting();
 ```  
   
-### <a name="remarks"></a>コメント  
- これは、高度なメンバー関数と組み合わせて使用する、 [ON_COMMAND_EX](message-map-macros-mfc.md#on_command_ex)返すハンドラー`FALSE`です。 詳細については、テクニカル ノートを参照してください。 [TN006: メッセージ マップ](../../mfc/tn006-message-maps.md)です。  
+### <a name="remarks"></a>Remarks  
+ This is an advanced member function that should be used in conjunction with an [ON_COMMAND_EX](message-map-macros-mfc.md#on_command_ex) handler that returns `FALSE`. For more information, see Technical Note [TN006: Message Maps](../../mfc/tn006-message-maps.md).  
   
-##  <a name="enabled"></a>ICommandUI::Enabled  
- 有効またはこのコマンドのユーザー インターフェイス項目を無効にします。  
+##  <a name="enabled"></a>  ICommandUI::Enabled  
+ Enables or disables the user interface item for this command.  
   
 ```  
 property bool Enabled;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、有効またはこのコマンドのユーザー インターフェイス項目を無効にします。 設定`Enabled`に`TRUE`アイテムを有効にする`FALSE`を無効にします。  
+### <a name="remarks"></a>Remarks  
+ This property enables or disables the user interface item for this command. Set `Enabled` to `TRUE` to enable the item, `FALSE` to disable it.  
   
-##  <a name="id"></a>ICommandUI::ID  
- によって表されるユーザー インターフェイス オブジェクトの ID を取得、`ICommandUI`オブジェクト。  
+##  <a name="id"></a>  ICommandUI::ID  
+ Gets the ID of the user interface object represented by the `ICommandUI` object.  
   
 ```  
 property unsigned int ID;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、ツール バー ボタン、メニュー項目の ID (ハンドル) を取得またはその他のユーザー インターフェイス オブジェクトで表されます、`ICommandUI`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This property gets the ID (a handle) of the menu item, toolbar button, or other user interface object represented by the `ICommandUI` object.  
   
-##  <a name="index"></a>ICommandUI::Index  
- によって表されるユーザー インターフェイス オブジェクトのインデックスを取得、`ICommandUI`オブジェクト。  
+##  <a name="index"></a>  ICommandUI::Index  
+ Gets the index of the user interface object represented by the `ICommandUI` object.  
   
 ```  
 property unsigned int Index;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、ツール バー ボタン、メニュー項目のインデックス (ハンドル) を取得またはその他のユーザー インターフェイス オブジェクトで表されます、`ICommandUI`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This property gets the index (a handle) of the menu item, toolbar button, or other user interface object represented by the `ICommandUI` object.  
   
-##  <a name="radio"></a>ICommandUI::Radio  
- このコマンドのユーザー インターフェイスの項目は、適切なチェックの状態に設定します。  
+##  <a name="radio"></a>  ICommandUI::Radio  
+ Sets the user interface item for this command to the appropriate check state.  
   
 ```  
 property bool Radio;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、このコマンドのユーザー インターフェイス項目を適切なチェックの状態を設定します。 設定`Radio`に`TRUE`; 項目を有効にするそれ以外の場合`FALSE`です。  
+### <a name="remarks"></a>Remarks  
+ This property sets the user interface item for this command to the appropriate check state. Set `Radio` to `TRUE` to enable the item; otherwise `FALSE`.  
   
-##  <a name="text"></a>ICommandUI::Text  
- このコマンドのユーザー インターフェイスの項目のテキストを設定します。  
+##  <a name="text"></a>  ICommandUI::Text  
+ Sets the text of the user interface item for this command.  
   
 ```  
 property String^ Text;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このプロパティは、このコマンドのユーザー インターフェイスのアイテムのテキストを設定します。 設定`Text`をテキスト文字列のハンドル。  
+### <a name="remarks"></a>Remarks  
+ This property sets the text of the user interface item for this command. Set `Text` to a text string handle.  
   
-##  <a name="iview_interface"></a>IView インターフェイス  
- いくつかのメソッドを実装している[CWinFormsView](../../mfc/reference/cwinformsview-class.md)マネージ コントロールへの通知の表示の送信に使用します。  
+##  <a name="iview_interface"></a>  IView Interface  
+ Implements several methods that [CWinFormsView](../../mfc/reference/cwinformsview-class.md) uses to send view notifications to a managed control.  
   
 ```  
 interface class IView  
 ```  
   
-### <a name="remarks"></a>コメント  
- `IView`いくつかのメソッドを実装している`CWinFormsView`使用してホストされるマネージ コントロールに共通の通知の表示を転送します。 これらは[フィルターと並べ替え順序](../../mfc/reference/iview-interface.md)、 [OnUpdate](../../mfc/reference/iview-interface.md)と[OnActivateView](../../mfc/reference/iview-interface.md)です。  
+### <a name="remarks"></a>Remarks  
+ `IView` implements several methods that `CWinFormsView` uses to forward common view notifications to a hosted managed control. These are [OnInitialUpdate](../../mfc/reference/iview-interface.md), [OnUpdate](../../mfc/reference/iview-interface.md) and [OnActivateView](../../mfc/reference/iview-interface.md).  
   
- `IView`ような[CView](../../mfc/reference/cview-class.md)が管理対象のビューおよびコントロールでのみ使用されます。  
+ `IView` is similar to [CView](../../mfc/reference/cview-class.md), but is used only with managed views and controls.  
   
- Windows フォームを使用する方法については、次を参照してください。 [MFC における Windows フォーム ユーザー コントロールを使用して](../../dotnet/using-a-windows-form-user-control-in-mfc.md)です。  
+ For more information on using Windows Forms, see [Using a Windows Form User Control in MFC](../../dotnet/using-a-windows-form-user-control-in-mfc.md).  
   
-##  <a name="onactivateview"></a>IView::OnActivateView  
- ビューがアクティブまたは非アクティブ化されたときに、MFC によって呼び出されます。  
+##  <a name="onactivateview"></a>  IView::OnActivateView  
+ Called by MFC when a view is activated or deactivated.  
   
 ```  
 void OnActivateView(bool activate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `activate`  
- 表示されているかどうかを示しますがアクティブまたは非アクティブ化します。  
+ Indicates whether the view is being activated or deactivated.  
   
-##  <a name="oninitialupdate"></a>IView::OnInitialUpdate  
- ビューが最初に表示される前に、ビューが最初に、ドキュメントにアタッチされている後に、フレームワークによって呼び出されます。  
+##  <a name="oninitialupdate"></a>  IView::OnInitialUpdate  
+ Called by the framework after the view is first attached to the document, but before the view is initially displayed.  
   
 ```  
 void OnInitialUpdate();
 ```  
   
-##  <a name="onupdate"></a>IView::OnUpdate  
- ビューのドキュメントが変更された後に、MFC によって呼び出されます。  
+##  <a name="onupdate"></a>  IView::OnUpdate  
+ Called by MFC after the view's document has been modified.  
   
 ```  
 void OnUpdate();
 ```  
   
-### <a name="remarks"></a>コメント  
- この機能は、変更を反映するには、その表示を更新するビューを使用します。  
+### <a name="remarks"></a>Remarks  
+ This function allows the view to update its display to reflect modifications.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプルの収集](../../visual-cpp-samples.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample COLLECT](../../visual-cpp-samples.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

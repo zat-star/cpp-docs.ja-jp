@@ -1,130 +1,152 @@
 ---
-title: "テクニカル ノート 30: 印刷と印刷プレビューのカスタマイズ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.print"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カスタマイズ (印刷と印刷プレビューを)"
-  - "印刷プレビュー, カスタマイズ"
-  - "印刷 [MFC], ビュー"
-  - "印刷 (ビューの)"
-  - "TN030"
+title: 'TN030: Customizing Printing and Print Preview | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.print
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN030
+- customizing printing and print preview
+- printing [MFC], views
+- printing views [MFC]
+- print preview [MFC], customizing
 ms.assetid: 32744697-c91c-41b6-9a12-b8ec01e0d438
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# テクニカル ノート 30: 印刷と印刷プレビューのカスタマイズ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 614925379b4a3b7399d4603082e01ba959c163fe
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn030-customizing-printing-and-print-preview"></a>TN030: Customizing Printing and Print Preview
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、印刷、印刷プレビューのカスタマイズするプロセスについて説明し、`CView` で使用されるコールバック ルーチンの目的と **CPreviewView**コールバック ルーチン、およびメンバー関数について説明します。  
+ This note describes the process of customizing printing and print preview and describes the purposes of the callback routines used in `CView` and the callback routines and member functions of **CPreviewView**.  
   
-## 問題  
- MFC は、ほとんどの印刷や印刷プレビューのニーズに完全なソリューションを提供します。  ほとんどの場合、小さいコードを追加し、印刷プレビューできます。できるビューを持つ必要があります。  ただし、印刷を最適化する開発者に向かっての多くの工数を必要とする、一部のアプリケーションでは、印刷プレビュー モードに固有のユーザー インターフェイス要素を追加する必要があります方法があります。  
+## <a name="the-problem"></a>The Problem  
+ MFC provides a complete solution for most printing and print preview needs. In most cases, little additional code is required to have a view able to print and preview. However, there are ways to optimize printing that require significant effort on the part of the developer, and some applications need to add specific user interface elements to the print preview mode.  
   
-## 効率的な印刷  
- MFC アプリケーションの標準的な方法を使用して印刷すると、Windows は、インメモリ メタファイルにすべてのグラフィカル デバイス インターフェイス \(GDI\) の出力呼び出しを転送します。  `EndPage` が呼び出されると、Windows は 1 ページを印刷できるようにプリンターが要求する物理的なバンドにつきメタファイルを一度します。  この描画中に、GDI は頻繁に従う必要があるかどうかを判断するためにアボート プロシージャを呼び出します。  通常、アボート プロシージャは、ユーザーが印刷ダイアログを使用して印刷ジョブを中止するようにメッセージが処理されるようにします。  
+## <a name="efficient-printing"></a>Efficient Printing  
+ When an MFC application prints using the standard methods, Windows directs all Graphical Device Interface (GDI) output calls to an in-memory metafile. When `EndPage` is called, Windows plays the metafile once for each physical band that the printer requires to print one page. During this rendering, GDI frequently queries the Abort Procedure to determine if it should continue. Typically the abort procedure allows messages to be processed so that the user may abort the print job using a printing dialog.  
   
- ただし、これは印刷プロセスが遅れる可能性があります。  標準的な技法を使用して実行することがあります。速くなければアプリケーションの出力が必要な場合は、手動バンド処理を実装しなければなりません。  
+ Unfortunately, this can slow the printing process. If the printing in your application must be faster than can be achieved using the standard technique, you must implement manual banding.  
   
-## 印刷バンド処理  
- `OnPrint` を複数回ページごとに呼び出されます。手動でバンドがしない、実装について印刷ループのようにする必要があります \(一度バンド単位\)。  印刷ループは viewprnt.cpp の **OnFilePrint** 関数で実装されます。  `CView`\-処理のメッセージ マップ エントリが印刷コマンド出力関数を呼び出すと、派生クラスは、この関数をオーバーロードします。  **OnFilePrint** ルーチンをコピーし、実装のバンド処理に印刷ループを変更します。  印刷するページのセクションにより、レンダリングを最適化するために、印刷、関数にバンド処理の四角形を渡す必要があります。  
+## <a name="print-banding"></a>Print Banding  
+ In order to manually band, you must re implement the print loop such that `OnPrint` is called multiple times per page (once per band). The print loop is implemented in the **OnFilePrint** function in viewprnt.cpp. In your `CView`-derived class, you overload this function so that the message map entry for handling the print command calls your print function. Copy the **OnFilePrint** routine and change the print loop to implement banding. You will probably also want to pass the banding rectangle to your printing functions so that you can optimize drawing based on the section of the page being printed.  
   
- 2 番目にバンドを描画するときに、`QueryAbort` を呼び出す必要があります。  それ以外の場合、アボート プロシージャは呼び出されず、ユーザーは印刷ジョブを取り消すことはできません。  
+ Second, you must frequently call `QueryAbort` while drawing the band. Otherwise, the Abort Procedure will not get called and the user will be unable to cancel the print job.  
   
-## 印刷プレビュー: ユーザー インターフェイスを持つ電子文書  
- 印刷プレビュー、主に、プリンターのエミュレーションに表示を回転します。  既定でが、メイン ウィンドウのクライアント領域 \(ウィンドウ内のファイル ページを完全に表示するために使用されます。  ユーザーがページの領域にズーム イン、の詳細を参照することもできます。  追加サポートにより、ユーザーがプレビュー モードでドキュメントを編集することができる場合があります。  
+## <a name="print-preview-electronic-paper-with-user-interface"></a>Print Preview: Electronic Paper with User Interface  
+ Print Preview, in essence, tries to turn the display into an emulation of a printer. By default, the client area of the main window is used to display one or two pages fully within the window. The user is able to zoom in on an area of the page to see it in more detail. With additional support, the user may even be allowed to edit the document in preview mode.  
   
-## 印刷プレビューのカスタマイズ  
- ここでは、変更の印刷プレビューの 1 種類の側面をのみ処理: プレビュー モードに UI を追加します。  ほかの変更は実行できますが、このような変更は、この説明の範囲外にあります。  
+## <a name="customizing-print-preview"></a>Customizing Print Preview  
+ This note only deals with one aspect of modifying print preview: Adding UI to preview mode. Other modifications are possible, but such changes are out of the scope of this discussion.  
   
-## UI をプレビュー モードに追加するには  
+## <a name="to-add-ui-to-the-preview-mode"></a>To add UI to the preview mode  
   
-1.  **CPreviewView**からビュー クラスを派生してください。  
+1.  Derive a view class from **CPreviewView**.  
   
-2.  必要な UI のためのコマンド ハンドラーを追加します。  
+2.  Add command handlers for the UI aspects you desire.  
   
-3.  表示するビジュアルな部分を追加した場合は、`OnDraw` をオーバーライドし、**CPreviewView::OnDraw.**を呼び出した後で描画を実行します。  
+3.  If you are adding visual aspects to the display, override `OnDraw` and perform your drawing after calling **CPreviewView::OnDraw.**  
   
-## OnFilePrintPreview  
- これは、印刷プレビューのコマンド ハンドラーです。  既定の実装では、次の操作:  
+## <a name="onfileprintpreview"></a>OnFilePrintPreview  
+ This is the command handler for print preview. Its default implementation is:  
   
 ```  
 void CView::OnFilePrintPreview()  
-{  
-    // In derived classes, implement special window handling here  
-    // Be sure to Unhook Frame Window close if hooked.  
-  
-    // must not create this on the frame. Must outlive this function  
+{ *// In derived classes,
+    implement special window handling here *// Be sure to Unhook Frame Window close if hooked.  
+ *// must not create this on the frame. Must outlive this function  
     CPrintPreviewState* pState = new CPrintPreviewState;  
-  
-    if (!DoPrintPreview(AFX_IDD_PREVIEW_TOOLBAR, this,  
-                RUNTIME_CLASS(CPreviewView), pState))  
-    {  
-        // In derived classes, reverse special window handling  
-        // here for Preview failure case  
-  
-        TRACE0("Error: DoPrintPreview failed");  
-        AfxMessageBox(AFX_IDP_COMMAND_FAILURE);  
-        delete pState;      // preview failed to initialize,   
-                    // delete State now  
-    }  
+ 
+    if (!DoPrintPreview(AFX_IDD_PREVIEW_TOOLBAR,
+    this,  
+    RUNTIME_CLASS(CPreviewView),
+    pState))  
+ { *// In derived classes,
+    reverse special window handling *// here for Preview failure case  
+ 
+    TRACE0("Error: DoPrintPreview failed");
+
+    AfxMessageBox(AFX_IDP_COMMAND_FAILURE);
+
+ delete pState;      // preview failed to initialize, *// delete State now  
+ }  
 }  
 ```  
   
- **DoPrintPreview** は アプリケーションのメイン ペインを非表示にします。  コントロール バー、ステータス バーのような pState\-の**dwStates** のメンバーでプロパティを指定することによって、\>保持できます \(これは、ビット マスクであり、個々のコントロール バーのビットは **AFX\_CONTROLBAR\_MASK** \(AFX\_IDW\_MYBAR\) によって定義されます。  ウィンドウの pState\-\>**nIDMainPane** が自動的に非表示 reshown ウィンドウです。  **DoPrintPreview** は、標準プレビュー UI のボタン バーを作成します。  他のウィンドウを表示または非表示にする必要があることを示すために特別なウィンドウの処理は必要などです **DoPrintPreview** が呼び出される前に、  
+ **DoPrintPreview** will hide the main pane of the application. Control Bars, such as the status bar, can be retained by specifying them in the pState->**dwStates** member (This is a bit mask and the bits for individual control bars are defined by **AFX_CONTROLBAR_MASK**( AFX_IDW_MYBAR)). The window pState->**nIDMainPane** is the window that will be automatically hidden and reshown. **DoPrintPreview** will then create a button bar for the standard Preview UI. If special window handling is needed, such as to hide or show other windows, that should be done before **DoPrintPreview** is called.  
   
- 印刷プレビューは、終了時に既定で、元の状態にコントロール バーと表示にメイン ペインを返します。  特別な処理が必要な場合は、**EndPrintPreview.**のオーバーライドということです。**DoPrintPreview** が失敗した場合、特別な処理を提供します。  
+ By default, when print preview finishes, it returns the control bars to their original states and the main pane to visible. If special handling is needed, it should be done in an override of **EndPrintPreview.** If **DoPrintPreview** fails, also provide special handling.  
   
- DoPrintPreview は次のように ICorProfilerCallback2:  
+ DoPrintPreview is called with:  
   
--   プレビュー バーのダイアログ テンプレートのリソース id。  
+-   The Resource ID of the dialog template for the preview toolbar.  
   
--   印刷プレビューの印刷を実行ビューへのポインター。  
+-   A pointer to the view to perform the printing for the print preview.  
   
--   プレビュー ビュー クラスのランタイム クラス。  これは DoPrintPreview で動的に作成されます。  
+-   The run-time class of the Preview View class. This will be dynamically created in DoPrintPreview.  
   
--   CPrintPreviewState のポインター。  アプリケーションが管理する詳細な状態が必要な場合は CPrintPreviewState 構造体 \(または派生構造体\) 作成できないことにフレームに注意してください。  DoPrintPreview はモードレスであり、EndPrintPreview が呼び出されるまで、この構造体には、保持する必要があります。  
+-   The CPrintPreviewState pointer. Note that the CPrintPreviewState structure (or the derived structure if the application needs more state preserved) must *not* be created on the frame. DoPrintPreview is modeless and this structure must survive until EndPrintPreview is called.  
   
     > [!NOTE]
-    >  別のビューまたはビュー クラスがサポートを印刷するために必要な場合、そのオブジェクトへのポインターが、2 番目のパラメーターとして渡す必要があります。  
+    >  If a separate view or view class is needed for printing support, a pointer to that object should be passed as the second parameter.  
   
-## EndPrintPreview  
- これが印刷プレビュー モードを終了します。  多くの場合、印刷プレビューの最後に表示されるドキュメントのページに移動することが望まれます。  **EndPrintPreview** は そのアプリケーションの可能性があります。  pInfo\-の`m_nCurPage` の\>メンバーが 2 ページが表示されたら、最後に \(左端\) 表示された、ポインターがに関してページでユーザーが必要なヒントにページです。  アプリケーションのビューの構造がフレームワークに不明なので、選択されたポイントに移動するコードを記述する必要があります。  
+## <a name="endprintpreview"></a>EndPrintPreview  
+ This is called to terminate the print preview mode. It is often desirable to move to the page in the document that was last displayed in print preview. **EndPrintPreview** is the application's chance to do that. The pInfo->`m_nCurPage` member is the page that was last displayed (leftmost if two pages were displayed), and the pointer is a hint as to where on the page the user was interested. Since the structure of the application's view is unknown to the framework, then you must provide the code to move to the chosen point.  
   
- **CView::EndPrintPreview**を呼び出す前に、ほとんどの操作を実行します。  この呼び出しは **DoPrintPreview** の効果を元に戻し、pView、pDC と pInfo を削除します。  
+ You should perform most actions before calling **CView::EndPrintPreview**. This call reverses the effects of **DoPrintPreview** and deletes pView, pDC, and pInfo.  
   
 ```  
 // Any further cleanup should be done here.  
-CView::EndPrintPreview(pDC, pInfo, point, pView);  
+CView::EndPrintPreview(pDC,
+    pInfo,
+    point,
+    pView);
 ```  
   
-## CWinApp::OnFilePrintSetup  
- これが印刷設定のメニュー項目に割り当てる必要があります。  ほとんどの場合、実装をオーバーライドする必要はありません。  
+## <a name="cwinapponfileprintsetup"></a>CWinApp::OnFilePrintSetup  
+ This must be mapped for the Print Setup menu item. In most cases, it is not necessary to override the implementation.  
   
-## ページの専用語  
- 別の問題は、ページ番号、および順序の場合です。  単純なワード プロセッサで型応用の場合、これは単純な問題です。  ほとんどの印刷プレビュー システムは各ページが印刷ドキュメントの 1 ページに対応すると仮定します。  
+## <a name="page-nomenclature"></a>Page Nomenclature  
+ Another issue is that of page numbering and order. For simple word processor type applications, this is a straightforward issue. Most print preview systems assume that each printed page corresponds to one page in the document.  
   
- 汎用ソリューションを提供することで考慮する必要があるいくつかの点があります。  CAD システムとします。  ユーザーが複数の E サイズのシートをカバーする描画があります。  E サイズ \(または小さいの、スケーリング\) プロッターで、ページ番号は単純な例のようになります。  ただし、シート 1 冊あたりのサイズ 16 のページを印刷するレーザのプリンターで印刷プレビューは、「ページ」として扱います。  
+ In trying to provide a generalized solution, there are several things to consider. Imagine a CAD system. The user has a drawing that covers several E-size sheets. On an E-size (or a smaller, scaled) plotter, page numbering would be as in the simple case. But on a laser printer, printing 16 A-size pages per sheet, what does print preview consider a "page"  
   
- 入門段落の状態は、印刷プレビューはプリンターのように動作します。  したがって、ユーザーが選択した特定のプリンターを終了処理を参照します。  これは、イメージの各ページが印刷されるかを決定するビューがあります。  
+ As the introductory paragraph states, Print Preview is acting like a printer. Therefore, the user will see what would come out of the particular printer that is selected. It is up to the view to determine what image is printed on each page.  
   
- `CPrintInfo` 構造体のページの説明文字列には、ユーザーがページごとに 1 回の数として表すことができるページ番号を表示する一つの方法を提供します \(「1 " "のようにしか」\)。この文字列は **CPreviewView::OnDisplayPageNumber**の既定の実装によって使用されます。  別の表示が必要な場合は、1 を指定すると、たとえば、Sheet1 のセクション「A "、" B」を提供するには、この仮想関数をオーバーライドすることもあります。  
+ The page description string in the `CPrintInfo` structure provides a means of displaying the page number to the user if it can be represented as one number per page (as in "Page 1" or "Pages 1-2"). This string is used by the default implementation of **CPreviewView::OnDisplayPageNumber**. If a different display is needed, one may override this virtual function to provide, for example, "Sheet1, Sections A, B".  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

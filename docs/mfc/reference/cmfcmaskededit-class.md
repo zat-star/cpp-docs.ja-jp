@@ -1,5 +1,5 @@
 ---
-title: "CMFCMaskedEdit クラス |Microsoft ドキュメント"
+title: CMFCMaskedEdit Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,8 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCMaskedEdit class
-- CMFCMaskedEdit constructor
+- CMFCMaskedEdit [MFC], DisableMask
+- CMFCMaskedEdit [MFC], EnableGetMaskedCharsOnly
+- CMFCMaskedEdit [MFC], EnableMask
+- CMFCMaskedEdit [MFC], EnableSelectByGroup
+- CMFCMaskedEdit [MFC], EnableSetMaskedCharsOnly
+- CMFCMaskedEdit [MFC], GetWindowText
+- CMFCMaskedEdit [MFC], SetValidChars
+- CMFCMaskedEdit [MFC], SetWindowText
+- CMFCMaskedEdit [MFC], IsMaskedChar
 ms.assetid: 13b1a645-2d5d-4c37-8599-16d5003f23a5
 caps.latest.revision: 30
 author: mikeblome
@@ -44,73 +51,73 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 174551ecd75df8691d2a6086cbc074516f6d2045
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: add2312a2abc8421bd844affc4a149424a55a980
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcmaskededit-class"></a>CMFCMaskedEdit クラス
-`CMFCMaskedEdit`クラスは、ユーザーの入力をマスクを検証し、テンプレートに従って検証結果を表示するマスク エディット コントロールをサポートしています。  
+# <a name="cmfcmaskededit-class"></a>CMFCMaskedEdit Class
+The `CMFCMaskedEdit` class supports a masked edit control, which validates user input against a mask and displays the validated results according to a template.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCMaskedEdit : public CEdit  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`CMFCMaskedEdit::CMFCMaskedEdit`|既定のコンストラクター|  
-|`CMFCMaskedEdit::~CMFCMaskedEdit`|デストラクターです。|  
+|`CMFCMaskedEdit::CMFCMaskedEdit`|Default constructor.|  
+|`CMFCMaskedEdit::~CMFCMaskedEdit`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCMaskedEdit::DisableMask](#disablemask)|ユーザー入力の検証を無効にします。|  
-|[CMFCMaskedEdit::EnableGetMaskedCharsOnly](#enablegetmaskedcharsonly)|指定するかどうか、`GetWindowText`メソッドは、マスクされた文字のみを取得します。|  
-|[CMFCMaskedEdit::EnableMask](#enablemask)|エディット コントロールのマスクを初期化します。|  
-|[CMFCMaskedEdit::EnableSelectByGroup](#enableselectbygroup)|マスク エディット コントロールがユーザー入力、またはすべてのユーザー入力の特定のグループを選択するかどうかを指定します。|  
-|[CMFCMaskedEdit::EnableSetMaskedCharsOnly](#enablesetmaskedcharsonly)|マスク全体またはテキストを検証しているだけで、文字をマスクするかどうかを指定します。|  
-|`CMFCMaskedEdit::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
-|[CMFCMaskedEdit::GetWindowText](#getwindowtext)|検証済みのマスク エディット コントロールからテキストを取得します。|  
-|[CMFCMaskedEdit::SetValidChars](#setvalidchars)|ユーザーが入力できる有効な文字の文字列を指定します。|  
-|[CMFCMaskedEdit::SetWindowText](#setwindowtext)|マスク エディット コントロールで、プロンプトを表示します。|  
+|[CMFCMaskedEdit::DisableMask](#disablemask)|Disables validating user input.|  
+|[CMFCMaskedEdit::EnableGetMaskedCharsOnly](#enablegetmaskedcharsonly)|Specifies whether the `GetWindowText` method retrieves only masked characters.|  
+|[CMFCMaskedEdit::EnableMask](#enablemask)|Initializes the masked edit control.|  
+|[CMFCMaskedEdit::EnableSelectByGroup](#enableselectbygroup)|Specifies whether the masked edit control selects particular groups of user input, or all user input.|  
+|[CMFCMaskedEdit::EnableSetMaskedCharsOnly](#enablesetmaskedcharsonly)|Specifies whether the text is validated against only masked characters, or against the whole mask.|  
+|`CMFCMaskedEdit::GetThisClass`|Used by the framework to obtain a pointer to the [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) object that is associated with this class type.|  
+|[CMFCMaskedEdit::GetWindowText](#getwindowtext)|Retrieves validated text from the masked edit control.|  
+|[CMFCMaskedEdit::SetValidChars](#setvalidchars)|Specifies a string of valid characters that the user can enter.|  
+|[CMFCMaskedEdit::SetWindowText](#setwindowtext)|Displays a prompt in the masked edit control.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCMaskedEdit::IsMaskedChar](#ismaskedchar)|対応するマスク文字に対して指定した文字を検証するためにフレームワークによって呼び出されます。|  
+|[CMFCMaskedEdit::IsMaskedChar](#ismaskedchar)|Called by the framework to validate the specified character against the corresponding mask character.|  
   
-## <a name="remarks"></a>コメント  
- 使用する次の手順を実行、`CMFCMaskedEdit`アプリケーションで制御します。  
+## <a name="remarks"></a>Remarks  
+ Perform the following steps to use the `CMFCMaskedEdit` control in your application:  
   
- 1. 埋め込む、`CMFCMaskedEdit`ウィンドウ クラスのオブジェクト。  
+ 1. Embed a `CMFCMaskedEdit` object into your window class.  
   
- 2. 呼び出す、 [CMFCMaskedEdit::EnableMask](#enablemask)マスクを指定します。  
+ 2. Call the [CMFCMaskedEdit::EnableMask](#enablemask) method to specify the mask.  
   
- 3. 呼び出す、 [CMFCMaskedEdit::SetValidChars](#setvalidchars)有効な文字の一覧を指定します。  
+ 3. Call the [CMFCMaskedEdit::SetValidChars](#setvalidchars) method to specify the list of valid characters.  
   
- 4. 呼び出す、 [CMFCMaskedEdit::SetWindowText](#setwindowtext)マスク エディット コントロールの既定のテキストを指定します。  
+ 4. Call the [CMFCMaskedEdit::SetWindowText](#setwindowtext) method to specify the default text for the masked edit control.  
   
- 5. 呼び出す、 [CMFCMaskedEdit::GetWindowText](#getwindowtext)検証済みのテキストを取得します。  
+ 5. Call the [CMFCMaskedEdit::GetWindowText](#getwindowtext) method to retrieve the validated text.  
   
- マスク、有効な文字、および既定のテキストを初期化するために&1; つ以上のメソッドが呼び出されない場合、標準のエディット コントロールの動作と同様、マスク エディット コントロールが動作します。  
+ If you do not call one or more methods to initialize the mask, valid characters, and default text, the masked edit control behaves just as the standard edit control behaves.  
   
-## <a name="example"></a>例  
- 次の例を使用してマスク (電話番号など) を設定する方法、`EnableMask`マスク エディット コントロールでのマスクを作成する方法、 `SetValidChars` 、入力できる有効な文字の文字列を指定する方法と`SetWindowText`マスクのプロンプトを表示する方法は、コントロールを編集します。 この例は、[新しいコントロールのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to set up a mask (for example a phone number) by using the `EnableMask` method to create the mask for the masked edit control, the `SetValidChars` method to specify a string of valid characters that the user can enter, and `SetWindowText` method to display a prompt in the masked edit control. This example is part of the [New Controls sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_NewControls&#11;](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_1.h)]  
-[!code-cpp[NVC_MFC_NewControls&#12;](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_NewControls#11](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_1.h)]  
+[!code-cpp[NVC_MFC_NewControls#12](../../mfc/reference/codesnippet/cpp/cmfcmaskededit-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -121,35 +128,35 @@ class CMFCMaskedEdit : public CEdit
   
  [CMFCMaskedEdit](../../mfc/reference/cmfcmaskededit-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxmaskededit.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxmaskededit.h  
   
-##  <a name="disablemask"></a>CMFCMaskedEdit::DisableMask  
- ユーザー入力の検証を無効にします。  
+##  <a name="disablemask"></a>  CMFCMaskedEdit::DisableMask  
+ Disables validating user input.  
   
 ```  
 void DisableMask();
 ```  
   
-### <a name="remarks"></a>コメント  
- ユーザー入力の検証が無効にマスク エディット コントロールでは、標準エディット コントロールと同様に動作します。  
+### <a name="remarks"></a>Remarks  
+ If user input validation is disabled, the masked edit control behaves like the standard edit control.  
   
-##  <a name="enablegetmaskedcharsonly"></a>CMFCMaskedEdit::EnableGetMaskedCharsOnly  
- 指定するかどうか、`GetWindowText`メソッドは、マスクされた文字のみを取得します。  
+##  <a name="enablegetmaskedcharsonly"></a>  CMFCMaskedEdit::EnableGetMaskedCharsOnly  
+ Specifies whether the `GetWindowText` method retrieves only masked characters.  
   
 ```  
 void EnableGetMaskedCharsOnly(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- `TRUE`指定する、 [CMFCMaskedEdit::GetWindowText](#getwindowtext)マスクされた文字のみをメソッドの取得`FALSE`メソッドがテキスト全体を取得することを指定します。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ `TRUE` to specify that the [CMFCMaskedEdit::GetWindowText](#getwindowtext) method retrieve only masked characters; `FALSE` to specify that the method retrieve the whole text. The default value is `TRUE`.  
   
-### <a name="remarks"></a>コメント  
- マスク文字の取得を有効にするのにには、このメソッドを使用します。 (425) 555-0187 などの電話番号に対応するマスク エディット コントロールを作成します。 呼び出した場合、`GetWindowText`メソッドは、「4255550187」返します。 マスク文字の取得を無効にした場合、`GetWindowText`メソッド「(425) 555-0187」などのエディット コントロールに表示されるテキストを返します。  
+### <a name="remarks"></a>Remarks  
+ Use this method to enable retrieving masked characters. Then create a masked edit control that corresponds to the telephone number, such as (425) 555-0187. If you call the `GetWindowText` method, it returns "4255550187". If you disable retrieving masked characters, the `GetWindowText` method returns the text that is displayed in the edit control, for example "(425) 555-0187".  
   
-##  <a name="enablemask"></a>CMFCMaskedEdit::EnableMask  
- エディット コントロールのマスクを初期化します。  
+##  <a name="enablemask"></a>  CMFCMaskedEdit::EnableMask  
+ Initializes the masked edit control.  
   
 ```  
 void EnableMask(
@@ -159,52 +166,52 @@ void EnableMask(
     LPCTSTR lpszValid=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszMask`  
- ユーザー入力のそれぞれの位置に表示できる文字の種類を指定するマスク文字列。 長さ、`lpszInputTemplate`と`lpszMask`パラメーター文字列は同じである必要があります。 マスク文字の詳細については「解説」セクションを参照してください。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszMask`  
+ A mask string that specifies the type of character that can appear at each position in the user input. The length of the `lpszInputTemplate` and `lpszMask` parameter strings must be the same. See the Remarks section for more detail about mask characters.  
   
- [入力] `lpszInputTemplate`  
- リテラル文字を指定するマスク テンプレート文字列は、ユーザー入力のそれぞれの位置に表示できます。 文字のプレース ホルダーとしてアンダー スコア文字 (_) を使用します。 長さ、`lpszInputTemplate`と`lpszMask`パラメーター文字列は同じである必要があります。  
+ [in] `lpszInputTemplate`  
+ A mask template string that specifies the literal characters that can appear at each position in the user input. Use the underscore character ('_') as a character placeholder. The length of the `lpszInputTemplate` and `lpszMask` parameter strings must be the same.  
   
- [入力] `chMaskInputTemplate`  
- 既定の文字で、フレームワーク、ユーザーの入力に無効な各文字の代わりに使用します。 このパラメーターの既定値は、アンダー スコア (_) です。  
+ [in] `chMaskInputTemplate`  
+ A default character that the framework substitutes for each invalid character in the user input. The default value of this parameter is underscore ('_').  
   
- [入力] `lpszValid`  
- 有効な文字のセットを含む文字列です。 `NULL`すべての文字が有効であることを示します。 このパラメーターの既定値は、`NULL` です。  
+ [in] `lpszValid`  
+ A string that contains a set of valid characters. `NULL` indicates that all characters are valid. The default value of this parameter is `NULL`.  
   
-### <a name="remarks"></a>コメント  
- マスク エディット コントロールのマスクを作成するのにには、このメソッドを使用します。 クラスを派生、`CMFCMaskedEdit`クラスさせ、 [CMFCMaskedEdit::IsMaskedChar](#ismaskedchar)カスタム マスクで処理するため、独自のコードを使用する方法です。  
+### <a name="remarks"></a>Remarks  
+ Use this method to create the mask for the masked edit control. Derive a class from the `CMFCMaskedEdit` class and override the [CMFCMaskedEdit::IsMaskedChar](#ismaskedchar) method to use your own code for custom mask processing.  
   
- 次の表は、既定のマスク文字を一覧表示します。  
+ The following table list the default mask characters:  
   
-|マスク文字|定義|  
+|Mask Character|Definition|  
 |--------------------|----------------|  
-|D|数字の文字。|  
-|日|数字または空白。|  
-|+|正符号 ('+ ')、負符号 ('-')、または容量。|  
-|C|アルファベット文字。|  
-|c|アルファベット文字またはスペース。|  
-|A|英数字文字です。|  
-|a|英数字文字またはスペース。|  
-|*|印刷可能な文字です。|  
+|D|Digit.|  
+|d|Digit or space.|  
+|+|Plus ('+'), minus ('-'), or space.|  
+|C|Alphabetic character.|  
+|c|Alphabetic character or space.|  
+|A|Alphanumeric character.|  
+|a|Alphanumeric character or space.|  
+|*|A printable character.|  
   
-##  <a name="enableselectbygroup"></a>CMFCMaskedEdit::EnableSelectByGroup  
- マスク エディット コントロールに特定のグループを選択の入力、またはすべての入力をユーザーができるかどうかを指定します。  
+##  <a name="enableselectbygroup"></a>  CMFCMaskedEdit::EnableSelectByGroup  
+ Specifies whether the masked edit control allows the user to select particular groups input, or all input.  
   
 ```  
 void EnableSelectByGroup(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- `TRUE`グループだけを選択するには`FALSE`全体のテキストを選択します。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ `TRUE` to select only groups; `FALSE` to select the whole text. The default value is `TRUE`.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用すると、マスク エディット コントロールに、ユーザー グループまたはテキスト全体が選択できるかどうかを指定できます。  
+### <a name="remarks"></a>Remarks  
+ Use this function to specify whether the masked edit control allows a user to select by group or the whole text.  
   
- 既定では、グループでの選択が有効にします。 この場合、ユーザーは、有効な文字の連続するグループのみを選択できます。  
+ By default, selection by group is enabled. In this case the user can select only continuous groups of valid characters.  
   
- たとえば、電話番号の検証を次のマスク エディット コントロールを使用する可能性があります。  
+ For example, you might use the following masked edit control to validate a telephone number:  
   
  `m_wndMaskEdit.EnableMask(`  
   
@@ -218,21 +225,21 @@ void EnableSelectByGroup(BOOL bEnable=TRUE);
   
  `m_wndMaskEdit.SetWindowText(_T("(425) 555-0187")); // Prompt`  
   
- グループでの選択が有効になっている場合、ユーザーはのみ「425」、「555」または「0187」文字列のグループを取得できます。 グループの選択が無効になっている場合、ユーザーが電話番号のテキスト全体を取得できます。"(425) 555-0187"です。  
+ If selection by group is enabled, the user can retrieve only the "425", "555", or "0187" string groups. If group selection is disabled the user can retrieve the whole text of the telephone number: "(425) 555-0187".  
   
-##  <a name="enablesetmaskedcharsonly"></a>CMFCMaskedEdit::EnableSetMaskedCharsOnly  
- 指定またはマスク文字のみに対してマスク全体にテキストを検証するかどうか。  
+##  <a name="enablesetmaskedcharsonly"></a>  CMFCMaskedEdit::EnableSetMaskedCharsOnly  
+ Specifies whether the text is validated against only the masked characters, or against the whole mask.  
   
 ```  
 void EnableSetMaskedCharsOnly(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- `TRUE`ユーザーを検証する入力に対してのみマスク文字です。`FALSE`マスク全体を検証します。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ `TRUE` to validate the user input against only masked characters; `FALSE` to validate against the whole mask. The default value is `TRUE`.  
   
-##  <a name="getwindowtext"></a>CMFCMaskedEdit::GetWindowText  
- 検証済みのマスク エディット コントロールからテキストを取得します。  
+##  <a name="getwindowtext"></a>  CMFCMaskedEdit::GetWindowText  
+ Retrieves validated text from the masked edit control.  
   
 ```  
 int GetWindowText(
@@ -242,26 +249,26 @@ int GetWindowText(
 void GetWindowText(CString& rstrString) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [出力] `lpszStringBuf`  
- エディット コントロールからテキストを受け取るバッファーへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [out] `lpszStringBuf`  
+ A pointer to a buffer that receives the text from the edit control.  
   
- [入力] `nMaxCount`  
- 受信する文字の最大数。  
+ [in] `nMaxCount`  
+ The maximum number of characters to receive.  
   
- [出力] `rstrString`  
- エディット コントロールからテキストを受け取る文字列オブジェクトへの参照。  
+ [out] `rstrString`  
+ A reference to the string object that receives the text from the edit control.  
   
-### <a name="return-value"></a>戻り値  
- 最初のメソッドのオーバー ロードがコピーされる文字列のバイト数を返す、`lpszStringBuf`パラメーター バッファー; マスク エディット コントロールにテキストがあるない場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ The first method overload returns the number of bytes of the string that is copied to the `lpszStringBuf` parameter buffer; 0 if the masked edit control has no text.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、マスク エディット コントロールからテキストをコピー、`lpszStringBuf`バッファーまたは`rstrString`文字列。  
+### <a name="remarks"></a>Remarks  
+ This method copies the text from the masked edit control to the `lpszStringBuf` buffer or the `rstrString` string.  
   
- このメソッドを再定義[CWnd::GetWindowText](../../mfc/reference/cwnd-class.md#getwindowtext)します。  
+ This method redefines [CWnd::GetWindowText](../../mfc/reference/cwnd-class.md#getwindowtext).  
   
-##  <a name="ismaskedchar"></a>CMFCMaskedEdit::IsMaskedChar  
- 対応するマスク文字に対して指定した文字を検証するためにフレームワークによって呼び出されます。  
+##  <a name="ismaskedchar"></a>  CMFCMaskedEdit::IsMaskedChar  
+ Called by the framework to validate the specified character against the corresponding mask character.  
   
 ```  
 virtual BOOL IsMaskedChar(
@@ -269,55 +276,55 @@ virtual BOOL IsMaskedChar(
     TCHAR chMaskChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `chChar`  
- 検証する文字。  
+### <a name="parameters"></a>Parameters  
+ [in] `chChar`  
+ The character to be validated.  
   
- [入力] `chMaskChar`  
- マスク文字列から対応する文字。  
+ [in] `chMaskChar`  
+ The corresponding character from the mask string.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合、`chChar`パラメーターで許可されている文字の型が、`chMaskChar`パラメーター。 そうしないと、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the `chChar` parameter is the type of character permitted by the `chMaskChar` parameter; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- 自分で入力文字を検証するのには、このメソッドをオーバーライドします。 マスク文字の詳細については、次を参照してください。、 [CMFCMaskedEdit::EnableMask](#enablemask)メソッドです。  
+### <a name="remarks"></a>Remarks  
+ Override this method to validate input characters on your own. For more information about mask characters, see the [CMFCMaskedEdit::EnableMask](#enablemask) method.  
   
-##  <a name="setvalidchars"></a>CMFCMaskedEdit::SetValidChars  
- ユーザーが入力できる有効な文字の文字列を指定します。  
+##  <a name="setvalidchars"></a>  CMFCMaskedEdit::SetValidChars  
+ Specifies a string of valid characters that the user can enter.  
   
 ```  
 void SetValidChars(LPCTSTR lpszValid=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszValid`  
- 有効な入力文字のセットを含む文字列。 `NULL`すべての文字が有効であることを意味します。 このパラメーターの既定値は、`NULL` です。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszValid`  
+ A string that contains the set of valid input characters. `NULL` means that all characters are valid. The default value of this parameter is `NULL`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを使用すると、有効な文字の一覧を定義します。 入力文字がこの一覧にない場合は、マスク エディット コントロールはそれを受け入れません。  
+### <a name="remarks"></a>Remarks  
+ Use this method to define a list of valid characters. If an input character is not in this list, masked edit control will not accept it.  
   
- 次のコード例では、16 進数のみを受け入れます。  
+ The following code example accepts only hexadecimal numbers.  
   
  `//Mask: 0xFFFFm_wndMaskEdit.EnableMask( _T(" AAAA"),                // The mask string. _T("0x____"),               // The literal template string. _T('_'));                   // The default character that replaces the backspace character.// Valid string charactersm_wndMaskEdit.SetValidChars(_T("1234567890ABCDEFabcdef"));m_wndMaskEdit.SetWindowText(_T("0x01AF"));`  
   
-##  <a name="setwindowtext"></a>CMFCMaskedEdit::SetWindowText  
- マスク エディット コントロールで、プロンプトを表示します。  
+##  <a name="setwindowtext"></a>  CMFCMaskedEdit::SetWindowText  
+ Displays a prompt in the masked edit control.  
   
 ```  
 void SetWindowText(LPCTSTR lpszString);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszString`  
- プロンプトとして使用される null で終わる文字列へのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszString`  
+ Points to a null-terminated string that will be used as a prompt.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、コントロールのテキストを設定します。  
+### <a name="remarks"></a>Remarks  
+ This method sets the control text.  
   
- このメソッドを再定義[とき](../../mfc/reference/cwnd-class.md#setwindowtext)します。  
+ This method redefines [CWnd::SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext).  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CEdit クラス](../../mfc/reference/cedit-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CEdit Class](../../mfc/reference/cedit-class.md)
 

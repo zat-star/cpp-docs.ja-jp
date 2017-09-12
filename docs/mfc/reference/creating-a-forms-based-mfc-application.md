@@ -1,5 +1,5 @@
 ---
-title: "フォーム ベースの MFC アプリケーションを作成する |Microsoft ドキュメント"
+title: Creating a Forms-Based MFC Application | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - applications [MFC], forms-based
-- forms-based applications
+- forms-based applications [MFC]
 ms.assetid: 048d2f7d-b60d-4386-ad8e-71d49af9c05e
 caps.latest.revision: 12
 author: mikeblome
@@ -34,59 +34,59 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b95d52f5ecf97f43bd21dd0f2a8c4fd478431ce3
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b23cd8d4c90f9d2e5dfc7cc63e622123b31305c4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="creating-a-forms-based-mfc-application"></a>フォーム ベースの MFC アプリケーションの作成
-フォームとは、ユーザーがデータのアクセスや変更に使用できる、コントロール付きのダイアログ ボックスです。 フォームをユーザーが選択できるアプリケーションを開発することもできます。 一般的には、フォーム ベースのアプリケーションにより、ユーザーのアクセス フォームのクリックによって**新規**から、**ファイル**メニュー。 ユーザーへのアクセスを許可しないはダイアログ ベースのアプリケーション、**新規**オプション、**ファイル**] メニューの [はフォーム ベースのアプリケーションもと見なされます。  
+# <a name="creating-a-forms-based-mfc-application"></a>Creating a Forms-Based MFC Application
+A form is a dialog box with controls that let a user access and possibly change data. You may want to develop an application in which the user selects from a selection of forms. Commonly, a forms-based application lets the user access forms by click **New** from the **File** menu. A dialog-based application, which does not give users access to a **New** option in the **File** menu, is also considered a forms-based application.  
   
- シングル ドキュメント インターフェイス (SDI: Single Document Interface) のフォーム ベースのアプリケーションでは、一度に実行できるフォームのインスタンスは&1; つだけです。 新しいフォームを選択して、SDI フォーム ベースのアプリケーションから同時にさまざまなフォームを実行することは、**新規**オプション、**ファイル**メニュー。  
+ A single document interface (SDI), forms-based application allows only one instance of a particular form to run at a time. It is possible to run different forms at the same time from an SDI forms-based application by selecting a new form from the **New** option in the **File** menu.  
   
- マルチ ドキュメント インターフェイス (MDI: Multiple Document Interface) のフォーム ベースのアプリケーションを作成すると、同一フォームの複数のインスタンスをアプリケーションでサポートできます。  
+ If you create a multiple document interface (MDI), forms-based application, the application will be able to support multiple instances of the same form.  
   
- マルチ トップレベル ドキュメントをサポートするアプリケーションを作成すると、デスクトップがそのドキュメントの暗黙の親となり、ドキュメントのフレームがアプリケーションのクライアント領域に限定されることはありません。 ドキュメントの複数のインスタンスを開くことができます。各インスタンスにはフレーム、メニュー、タスク バー アイコンが含まれます。 選択した場合は、ドキュメントのそれ以降のインスタンスを個別に閉じることができます、`Exit`オプションを**ファイル**初期のインスタンスでは、アプリケーションのメニューは、すべてのインスタンスを終了します。  
+ If you create an application with multiple top-level document support, the desktop is the implicit parent for the document and the document's frame is not restricted to the client area of the application. You can open multiple instances of the document, each with its own frame, menu, and task bar icon. You can close subsequent instances of documents individually, but if you select the `Exit` option from the **File** menu of the initial instance, the application closes all instances.  
   
- SDI、MDI、およびマルチ トップレベル ドキュメント アプリケーションはすべてフォーム ベースであり、ドキュメント/ビュー アーキテクチャを使用します。  
+ SDI, MDI, and multiple top-level document applications are all forms based and use the document/view architecture.  
   
- 定義上は、ダイアログ ベースのアプリケーションもすべてフォーム ベースになります。 ダイアログ ベースのアプリケーションでは、ドキュメント/ビュー アーキテクチャが使用されないため、独自の追加フォームの作成およびそのアクセス方法は自分で管理する必要があります。  
+ Any dialog-based application, by definition, is forms based. A dialog-based application does not use the document/view architecture, so you must manage the creation and access methods for your own additional forms.  
   
- フォーム ベースのアプリケーションの基本クラスは[CFormView](../../mfc/reference/cformview-class.md)します。 アプリケーションでデータベースをサポートする場合は、`CFormView` の任意の派生クラスも選択できます。 フォームとは、`CFormView` から派生するウィンドウ、または `CFormView` から継承されたクラスから派生するウィンドウです。  
+ The base class for form-based applications is [CFormView](../../mfc/reference/cformview-class.md). If your application has database support, then you can also select any class that derives from `CFormView`. A form is any window derived from `CFormView` or from any class that inherits from `CFormView`.  
   
- 基本クラスを使用する場合でも[CView](../../mfc/reference/cview-class.md)、行うことができます後で、アプリケーションでフォームに基づく[MFC クラスの追加](../../mfc/reference/adding-an-mfc-class.md)から派生した`CFormView`とチェック、**ドキュメント テンプレートの生成**のチェック ボックスを[MFC クラス ウィザード](../../mfc/reference/document-template-strings-mfc-add-class-wizard.md)します。  
+ Even if you use a base class such as [CView](../../mfc/reference/cview-class.md), you can later make your applications forms-based by [adding an MFC class](../../mfc/reference/adding-an-mfc-class.md) derived from `CFormView` and checking the **Generate DocTemplate resources** checkbox in the [MFC Class Wizard](../../mfc/reference/document-template-strings-mfc-add-class-wizard.md).  
   
- ウィザードを終了するとプロジェクトが開きます。基底クラスとして `CFormView` (または `CFormView` から継承されたクラス) を選択した場合、あるいはダイアログ ベースのアプリケーションを作成した場合は、Visual C++ によってダイアログ エディターが開かれます。 これで最初のフォームをデザインする準備が整いました。  
+ Once you finish with the wizard, your project opens, and if you selected `CFormView` (or a class that inherits from `CFormView`) as your base class or if you created a dialog-based application, Visual C++ opens the dialog editor. At this point, you are ready to design your first form.  
   
-### <a name="to-begin-creating-a-forms-based-mfc-executable"></a>フォーム ベースの MFC アプリケーションの作成を開始するには  
+### <a name="to-begin-creating-a-forms-based-mfc-executable"></a>To begin creating a forms-based MFC executable  
   
-1.  手順に従い[MFC アプリケーションの作成](../../mfc/reference/creating-an-mfc-application.md)します。  
+1.  Follow the directions in [Creating an MFC Application](../../mfc/reference/creating-an-mfc-application.md).  
   
-2.  MFC アプリケーション ウィザードで[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)] ページで、[、**ドキュメント/ビュー アーキテクチャ サポート**チェック ボックスをオンします。  
+2.  In the MFC Application Wizard [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md) page, select the **Document/view architecture support** check box.  
   
-3.  選択**1 つのドキュメント**、**複数のドキュメント**、または**複数のトップレベル ドキュメント**します。  
+3.  Select **Single document**, **Multiple documents**, or **Multiple top-level documents**.  
   
     > [!NOTE]
-    >  既定では、SDI、MDI、または複数のトップレベル ドキュメント インターフェイス アプリケーションを選択した場合`CView`でのアプリケーションのビューの基底クラスとして設定されている、[生成されたクラス](../../mfc/reference/generated-classes-mfc-application-wizard.md)ウィザードのページです。 フォーム ベースのアプリケーションを作成するには、アプリケーションのビューの基底クラスとして `CFormView` を選択する必要があります。 ウィザードは、フォーム ベースのアプリケーションの印刷はサポートしていません。  
+    >  If you chose a SDI, MDI, or multiple top-level document interface application, by default, `CView` is set as the base class for your application's view in the [Generated Classes](../../mfc/reference/generated-classes-mfc-application-wizard.md) page of the wizard. To create a forms-based application, you must select `CFormView` as the base class for the application's view. Note that the wizard provides no printing support for a forms-based application.  
   
-4.  ウィザードのその他のページで、必要なプロジェクト オプションを設定します。  
+4.  Set any other project options you want on the other pages of the wizard.  
   
-5.  をクリックして**完了**スケルトン アプリケーションを生成します。  
+5.  Click **Finish** to generate the skeleton application.  
   
- 詳細については次を参照してください:  
+ For more information, see:  
   
--   [派生ビュー クラス](../../mfc/derived-view-classes-available-in-mfc.md)  
+-   [Derived View Classes](../../mfc/derived-view-classes-available-in-mfc.md)  
   
--   [ドキュメント/ビュー アーキテクチャの代替手段](../../mfc/alternatives-to-the-document-view-architecture.md)  
+-   [Alternatives to the Document/View Architecture](../../mfc/alternatives-to-the-document-view-architecture.md)  
   
--   [アプリケーションの設計のオプション](../../mfc/application-design-choices.md)  
+-   [Application Design Choices](../../mfc/application-design-choices.md)  
   
-## <a name="see-also"></a>関連項目  
- [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)   
- [フォーム ビュー](../../mfc/form-views-mfc.md)   
- [ファイル エクスプ ローラー スタイルの MFC アプリケーションの作成](../../mfc/reference/creating-a-file-explorer-style-mfc-application.md)   
- [Web ブラウザー形式の MFC アプリケーションの作成](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)   
+ [Form Views](../../mfc/form-views-mfc.md)   
+ [Creating a File Explorer-Style MFC Application](../../mfc/reference/creating-a-file-explorer-style-mfc-application.md)   
+ [Creating a Web Browser-Style MFC Application](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)
 
 

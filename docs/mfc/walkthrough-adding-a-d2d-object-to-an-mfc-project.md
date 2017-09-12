@@ -1,143 +1,173 @@
 ---
-title: "チュートリアル: MFC プロジェクトへの D2D オブジェクトの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "D2D [MFC]"
-  - "MFC, D2D"
+title: 'Walkthrough: Adding a D2D Object to an MFC Project | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, D2D
+- D2D [MFC]
 ms.assetid: dda36c33-c231-4da6-a62f-72d69a12b6dd
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# チュートリアル: MFC プロジェクトへの D2D オブジェクトの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3bd7fde24dc39cba1d3fcce1b7aa7d1cb08a11df
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルでは、基本的な Direct2D \(D2D\) オブジェクトを Visual C\+\+ の Microsoft Foundation Class ライブラリ \(MFC\) プロジェクトに追加し、グラデーション背景に "Hello, world" と出力するアプリケーションに、このプロジェクトをビルドする方法について説明します。  
+---
+# <a name="walkthrough-adding-a-d2d-object-to-an-mfc-project"></a>Walkthrough: Adding a D2D Object to an MFC Project
+This walkthrough teaches how to add a basic Direct2D (D2D) object to a Visual C++, Microsoft Foundation Class Library (MFC) project, and then build the project into an application that prints "Hello, world" on a gradient background.  
   
- ここでは、次の作業の手順を示します。  
+ The walkthrough shows how to accomplish these tasks:  
   
--   MFC アプリケーションを作成する。  
+-   Create an MFC application.  
   
--   純色ブラシと線形グラデーション ブラシを作成する。  
+-   Create a solid-color brush and a linear-gradient brush.  
   
--   ウィンドウのサイズを変更したときに適切に変更されるようにグラデーション ブラシを変更する。  
+-   Modify the gradient brush so that it will change appropriately when the window is resized.  
   
--   D2D 描画ハンドラーを実装する。  
+-   Implement a D2D drawing handler.  
   
--   結果を確認する。  
+-   Verify the results.  
   
  [!INCLUDE[note_settings_general](../mfc/includes/note_settings_general_md.md)]  
   
-## 必須コンポーネント  
- このチュートリアルを完了するには、Visual Studio が必要です。  
+## <a name="prerequisites"></a>Prerequisites  
+ To complete this walkthrough, you must have Visual Studio.  
   
-### MFC アプリケーションを作成するには  
+### <a name="to-create-an-mfc-application"></a>To create an MFC application  
   
-1.  **\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。  
+1.  On the **File** menu, point to **New** and then click **Project**.  
   
-2.  **\[新しいプロジェクト\]** ダイアログ ボックスで、左ペインの **\[インストールされたテンプレート\]** の下にある **\[Visual C\+\+\]** を展開し、**\[MFC\]** をクリックします。  中央のペインで、**\[MFC アプリケーション\]** をクリックします。  **\[名前\]** ボックスに、「`MFCD2DWalkthrough`」と入力します。  \[OK\] をクリックします。  
+2.  In the **New Project** dialog box, in the left pane under **Installed Templates**, expand **Visual C++** and then select **MFC**. In the middle pane, select **MFC Application**. In the **Name** box, type `MFCD2DWalkthrough`. Click **OK**.  
   
-3.  **MFC アプリケーション ウィザード**で、どの設定も変更せずに **\[完了\]** をクリックします。  
+3.  In the **MFC Application Wizard**, click **Finish** without changing any settings.  
   
-### 純色ブラシと線形グラデーション ブラシを作成するには  
+### <a name="to-create-a-solid-color-brush-and-a-linear-gradient-brush"></a>To create a solid-color brush and a linear-gradient brush  
   
-1.  **ソリューション エクスプローラー**で、**\[MFCD2DWalkthrough\]** プロジェクトの **\[ヘッダー ファイル\]** フォルダーにある MFCD2DWalkthroughView.h を開きます。  `CMFCD2DWalkthroughView` クラスに次のコードを追加して、3 つのデータ変数を作成します。  
+1.  In **Solution Explorer**, in the **MFCD2DWalkthrough** project, in the **Header Files** folder, open MFCD2DWalkthroughView.h. Add the following code to the `CMFCD2DWalkthroughView` class to create three data variables.  
   
-    ```  
+ ```  
     CD2DTextFormat* m_pTextFormat;  
     CD2DSolidColorBrush* m_pBlackBrush;  
     CD2DLinearGradientBrush* m_pLinearGradientBrush;  
-    ```  
+ ```  
   
-     ファイルを保存して閉じます。  
+     Save the file and close it.  
   
-2.  **\[ソース ファイル\]** フォルダーの MFCD2DWalkthroughView.cpp を開きます。  `CMFCD2DWalkthroughView` クラスのコンストラクターに、次のコードを追加します。  
+2.  In the **Source Files** folder, open MFCD2DWalkthroughView.cpp. In the constructor for the `CMFCD2DWalkthroughView` class, add the following code.  
   
-    ```  
-    // Enable D2D support for this window:  
-    EnableD2DSupport();  
-  
-    // Initialize D2D resources:  
-    m_pBlackBrush = new CD2DSolidColorBrush(GetRenderTarget(), D2D1::ColorF(D2D1::ColorF::Black));  
-  
-    m_pTextFormat = new CD2DTextFormat(GetRenderTarget(), _T("Verdana"), 50);  
-    m_pTextFormat->Get()->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);  
-    m_pTextFormat->Get()->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);  
-  
+ ``` *// Enable D2D support for this window:  
+    EnableD2DSupport();
+
+ *// Initialize D2D resources:  
+    m_pBlackBrush = new CD2DSolidColorBrush(GetRenderTarget(), D2D1::ColorF(D2D1::ColorF::Black));
+
+ 
+    m_pTextFormat = new CD2DTextFormat(GetRenderTarget(), _T("Verdana"), 50);
+
+    m_pTextFormat->Get()->SetTextAlignment(DWRITE_TEXT_ALIGNMENT_CENTER);
+
+ m_pTextFormat->Get()->SetParagraphAlignment(DWRITE_PARAGRAPH_ALIGNMENT_CENTER);
+
+ 
     D2D1_GRADIENT_STOP gradientStops[2];  
-  
-    gradientStops[0].color = D2D1::ColorF(D2D1::ColorF::White);  
+ 
+    gradientStops[0].color = D2D1::ColorF(D2D1::ColorF::White);
+
     gradientStops[0].position = 0.f;  
-    gradientStops[1].color = D2D1::ColorF(D2D1::ColorF::Indigo);  
+    gradientStops[1].color = D2D1::ColorF(D2D1::ColorF::Indigo);
+
     gradientStops[1].position = 1.f;  
-  
+ 
     m_pLinearGradientBrush = new CD2DLinearGradientBrush(GetRenderTarget(),   
-        gradientStops, ARRAYSIZE(gradientStops),  
-        D2D1::LinearGradientBrushProperties(D2D1::Point2F(0, 0), D2D1::Point2F(0, 0)));  
-    ```  
+    gradientStops, ARRAYSIZE(gradientStops),  
+    D2D1::LinearGradientBrushProperties(D2D1::Point2F(0, 0), D2D1::Point2F(0, 0)));
+
+ ```  
   
-     ファイルを保存して閉じます。  
+     Save the file and close it.  
   
-### ウィンドウのサイズを変更したときに適切に変更されるようにグラデーション ブラシを変更するには  
+### To modify the gradient brush so that it will change appropriately when the window is resized  
   
-1.  **\[プロジェクト\]** メニューの **\[クラス ウィザード\]** をクリックします。  
+1.  On the **Project** menu, click **Class Wizard**.  
   
-2.  **MFC クラス ウィザード**で、**\[クラス名\]** の下の \[`CMFCD2DWalkthroughView`\] を選択します。  
+2.  In the **MFC Class Wizard**, under **Class name**, select `CMFCD2DWalkthroughView`.  
   
-3.  **\[メッセージ\]** タブで、**\[メッセージ\]** ボックスの \[`WM_SIZE`\] を選択し、**\[ハンドラーの追加\]** をクリックします。  この操作により、`OnSize` メッセージ ハンドラーが `CMFCD2DWalkthroughView` クラスに追加されます。  
+3.  On the **Messages** tab, in the **Messages** box, select `WM_SIZE` and then click **Add Handler**. This action adds the `OnSize` message handler to the `CMFCD2DWalkthroughView` class.  
   
-4.  **\[既存のハンドラー\]** ボックスの `OnSize` を選択します。  **\[コードの編集\]** をクリックして、`CMFCD2DWalkthroughView::OnSize` メソッドを表示します。  メソッドの末尾に次のコードを追加します。  
+4.  In the **Existing handlers** box, select `OnSize`. Click **Edit Code** to display the `CMFCD2DWalkthroughView::OnSize` method. At the end of the method, add the following code.  
   
-    ```  
-    m_pLinearGradientBrush->SetEndPoint(CPoint(cx, cy));  
-    ```  
+ ```  
+    m_pLinearGradientBrush->SetEndPoint(CPoint(cx, cy));
+
+ ```  
   
-     ファイルを保存して閉じます。  
+     Save the file and close it.  
   
-### D2D 描画ハンドラーを実装するには  
+### To implement a D2D drawing handler  
   
-1.  **\[プロジェクト\]** メニューの **\[クラス ウィザード\]** をクリックします。  
+1.  On the **Project** menu, click **Class Wizard**.  
   
-2.  **MFC クラス ウィザード**で、**\[クラス名\]** の下の \[`CMFCD2DWalkthroughView`\] を選択します。  
+2.  In the **MFC Class Wizard**, under **Class name**, select `CMFCD2DWalkthroughView`.  
   
-3.  **\[メッセージ\]** タブの **\[カスタム メッセージの追加\]** をクリックします。  
+3.  On the **Messages** tab, click **Add Custom Message**.  
   
-4.  **\[カスタム メッセージの追加\]** ダイアログ ボックスで、**\[カスタム Windows メッセージ\]** ボックスに「`AFX_WM_DRAW2D`」と入力します。  **\[メッセージ ハンドラー名\]** ボックスに、「`OnDraw2D`」と入力します。  **\[登録済みメッセージ\]** を選択し、**\[OK\]** をクリックします。  この操作により、`AFX_WM_DRAW2D` メッセージのメッセージ ハンドラーが `CMFCD2DWalkthroughView` クラスに追加されます。  
+4.  In the **Add Custom Message** dialog box, in the **Custom Windows Message** box, type `AFX_WM_DRAW2D`. In the **Message handler name** box, type `OnDraw2D`. Select the **Registered Message** option and then click **OK**. This action adds a message handler for the `AFX_WM_DRAW2D` message to the `CMFCD2DWalkthroughView` class.  
   
-5.  **\[既存のハンドラー\]** ボックスの `OnDraw2D` を選択します。  **\[コードの編集\]** をクリックして、`CMFCD2DWalkthroughView::OnDraw2D` メソッドを表示します。  `CMFCD2DWalkthroughView::OnDrawD2D` メソッドに次のコードを使用します。  
+5.  In the **Existing handlers** box, select `OnDraw2D`. Click **Edit Code** to display the `CMFCD2DWalkthroughView::OnDraw2D` method. Use the following code for the `CMFCD2DWalkthroughView::OnDrawD2D` method.  
   
-    ```  
+ ```  
     afx_msg LRESULT CMFCD2DWalkthroughView::OnDraw2D(WPARAM wParam, LPARAM lParam)  
     {  
-        CHwndRenderTarget* pRenderTarget = (CHwndRenderTarget*)lParam;  
-        ASSERT_VALID(pRenderTarget);  
+ CHwndRenderTarget* pRenderTarget = (CHwndRenderTarget*)lParam;  
+    ASSERT_VALID(pRenderTarget);
+
+ 
+    CRect rect;  
+    GetClientRect(rect);
+
+ 
+    pRenderTarget->FillRectangle(rect, m_pLinearGradientBrush);
+
+    pRenderTarget->DrawText(_T("Hello, World!"), rect, m_pBlackBrush, m_pTextFormat);
+
+ 
+    return TRUE;  
+ }  
+ ```  
   
-        CRect rect;  
-        GetClientRect(rect);  
+     Save the file and close it.  
   
-        pRenderTarget->FillRectangle(rect, m_pLinearGradientBrush);  
-        pRenderTarget->DrawText(_T("Hello, World!"), rect, m_pBlackBrush, m_pTextFormat);  
+### To verify the results  
   
-        return TRUE;  
-    }  
-    ```  
+1.  Build and run the application. It should have a gradient rectangle that changes when you resize the window. “Hello World!” should be displayed in the center of the rectangle.  
   
-     ファイルを保存して閉じます。  
-  
-### 結果を確認するには  
-  
-1.  アプリケーションをビルドして実行します。  ウィンドウのサイズを変更すると、グラデーションの四角形が変更されます。四角形の中央に "Hello World\!" と表示されます。  
-  
-## 参照  
- [チュートリアル](../mfc/walkthroughs-mfc.md)
+## See Also  
+ [Walkthroughs](../mfc/walkthroughs-mfc.md)
+
+

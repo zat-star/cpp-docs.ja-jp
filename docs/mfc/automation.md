@@ -1,103 +1,120 @@
 ---
-title: "オートメーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション サーバー, オートメーション サーバーの概要"
-  - "クライアント, オートメーション"
-  - "プログラム コントロール [C++]"
-  - "プロパティ [MFC], オートメーション"
-  - "MFC [C++], COM サポート"
-  - "OLE オートメーション"
-  - "オートメーション"
-  - "サーバー [C++], オートメーション"
-  - "オートメーション クライアント"
-  - "サンプル アプリケーション [MFC], オートメーション"
-  - "メソッド [MFC]"
-  - "渡す (パラメーターを), オートメーション"
-  - "Automation メソッド"
-  - "オートメーション, 渡す (パラメーターを)"
-  - "オートメーション プロパティ"
-  - "MFC COM, オートメーション"
-  - "メソッド [MFC], オートメーション"
+title: Automation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Automation servers, about Automation servers
+- clients, Automation
+- programmatic control [MFC]
+- properties [MFC], Automation
+- MFC, COM support
+- OLE Automation
+- Automation
+- servers [MFC], Automation
+- Automation clients
+- sample applications [MFC], Automation
+- methods [MFC]
+- passing parameters, Automation
+- Automation method [MFC]
+- Automation, passing parameters
+- Automation property [MFC]
+- MFC COM, Automation
+- methods [MFC], Automation
 ms.assetid: 329117f0-c1aa-4680-a901-bfb71277dfba
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# オートメーション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 790e80684099d8e94c954a22672a4978e37c1082
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-オートメーション \(以前の OLE オートメーション\) を使うと、アプリケーションから、他のアプリケーションに実装されているオブジェクトを操作したり、他のアプリケーションから操作できるように自分のオブジェクトを公開したりできます。  
+---
+# <a name="automation"></a>Automation
+Automation (formerly known as OLE Automation) makes it possible for one application to manipulate objects implemented in another application, or to expose objects so they can be manipulated.  
   
- [オートメーション サーバー](../mfc/automation-servers.md)は、COM インターフェイスを通して他のアプリケーション \([オートメーション クライアント](../mfc/automation-clients.md)\) に機能を公開するアプリケーション \(一種の COM サーバー\) です。 オートメーション クライアントは、この公開を通してオブジェクトに直接アクセスし、オブジェクトが提供するサービスを使用することで、特定の機能を自動化できます。  
+ An [Automation server](../mfc/automation-servers.md) is an application (a type of COM server) that exposes its functionality through COM interfaces to other applications, called [Automation clients](../mfc/automation-clients.md). The exposure enables Automation clients to automate certain functions by directly accessing objects and using the services they provide.  
   
- オートメーション サーバーとオートメーション クライアントは、COM インターフェイスを使用します。COM インターフェイスは、常に `IDispatch` から派生し、オートメーション型と呼ばれる一連のデータ型を受け取ったり返したりします。 他のアプリケーションからアクセス可能なメソッドやプロパティを提供し、オートメーション インターフェイスを公開するオブジェクトはすべて自動化できます。 OLE オブジェクトと COM オブジェクトは、どちらもオートメーションを利用できます。 オブジェクトの自動化は、ローカルでもリモートでも可能です。リモートとは、ネットワークでアクセス可能な別のコンピューターにあるという意味です。つまり、オートメーションには次の 2 つのカテゴリがあります。  
+ Automation servers and clients use COM interfaces that are always derived from `IDispatch` and take and return a specific set of data types called Automation types. You can automate any object that exposes an Automation interface, providing methods and properties that you can access from other applications. Automation is available for both OLE and COM objects. The automated object might be local or remote (on another machine accessible across a network); therefore there are two categories of automation:  
   
--   オートメーション \(ローカル\)。  
+-   Automation (local).  
   
--   [リモート オートメーション](../mfc/remote-automation.md) \(分散 COM \(DCOM\) を使用したネットワーク経由\)。  
+-   [Remote Automation](../mfc/remote-automation.md) (over a network, using Distributed COM, or DCOM).  
   
- アプリケーションが他のアプリケーションでも役に立つ機能を備えている場合は、オブジェクトを公開することは有益です。 たとえば、ActiveX コントロールは一種のオートメーション サーバーで、ActiveX コントロールをホストするアプリケーションは ActiveX コントロールのオートメーション クライアントです。  
+ Exposing objects is beneficial when applications provide functionality useful to other applications. For example, an ActiveX control is a type of Automation server; the application hosting the ActiveX control is the automation client of that control.  
   
- ワード プロセッサから他のプログラムに公開されているスペル チェック機能も、オブジェクト公開の例です。 オブジェクトを公開すると、他のアプリケーションの既製の機能を利用できるようになるので、そのアプリケーションの機能が向上します。 このように、オートメーションは、再利用性やカプセル化などのオブジェクト指向プログラミングの原理をアプリケーション自体のレベルで利用しています。  
+ As another example, a word processor might expose its spell-checking functionality to other programs. Exposure of objects enables vendors to improve their applications by using the ready-made functionality of other applications. In this way, Automation applies some of the principles of object-oriented programming, such as reusability and encapsulation, at the level of applications themselves.  
   
- さらに重要なのは、オートメーションがユーザーやソリューション プロバイダーに提供するサポートです。 標準的な仕様のインターフェイスを介してアプリケーションの機能を公開すると、さまざまなアプリケーション固有のマクロ言語ではなく、Microsoft Visual Basic などの単一の汎用プログラミング言語で広範なソリューションを構築できます。  
+ More important is the support Automation provides to users and solution providers. By exposing application functionality through a common, well-defined interface, Automation makes it possible to build comprehensive solutions in a single general programming language, such as Microsoft Visual Basic, instead of in diverse application-specific macro languages.  
   
- Microsoft Excel、Microsoft Visual C\+\+ など、多くの商用アプリケーションでは、その機能の大部分を自動化できます。 たとえば、Visual C\+\+ では、[VBScript](vtoriVBScript) のマクロを記述することで、ビルド、コード編集、デバッグ作業などを自動化できます。  
+ Many commercial applications, such as Microsoft Excel and Microsoft Visual C++, allow you to automate much of their functionality. For example, in Visual C++, you can write VBScript macros to automate builds, aspects of code editing, or debugging tasks.  
   
-##  <a name="_core_passing_parameters_in_automation"></a> オートメーションにおけるパラメーターの受け渡し  
- オートメーション メソッドの作成で問題になるのは、オートメーション サーバーとオートメーション クライアント間でデータを "安全" に受け渡すための統一したメカニズムを提供することです。 オートメーションは、**VARIANT** 型を使ってデータを渡します。**VARIANT** 型はタグ付きの共用体であり、 値を示すデータ メンバー \(C\+\+ の匿名共用体\) と、この共用体に格納されている情報の型を示すデータ メンバーを持ちます。**VARIANT** 型は、標準データ型の数、つまり 2 および 4 バイトの整数、4 および 8 バイトの浮動小数点数、文字列、およびブール値をサポートしています。 また、`HRESULT` \(OLE エラー コード\)、**CURRENCY** \(固定小数点数値型\)、**DATE** \(絶対日付と時刻\) の各型のほか、**IUnknown** インターフェイスと `IDispatch` インターフェイスへのポインターもサポートします。  
+##  <a name="_core_passing_parameters_in_automation"></a> Passing Parameters in Automation  
+ One difficulty in creating Automation methods is helping to provide a uniform "safe" mechanism to pass data between automation servers and clients. Automation uses the **VARIANT** type to pass data. The **VARIANT** type is a tagged union. It has a data member for the value (this is an anonymous C++ union) and a data member indicating the type of information stored in the union. The **VARIANT** type supports a number of standard data types: 2- and 4-byte integers, 4- and 8-byte floating-point numbers, strings, and Boolean values. In addition, it supports the `HRESULT` (OLE error codes), **CURRENCY** (a fixed-point numeric type), and **DATE** (absolute date and time) types, as well as pointers to **IUnknown** and `IDispatch` interfaces.  
   
- **VARIANT** 型は、[COleVariant](../mfc/reference/colevariant-class.md) クラスにカプセル化されています。 サポートしている **CURRENCY** クラスと **DATE** クラスは、[COleCurrency](../Topic/COleCurrency%20Class.md) クラスと [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md) クラスにカプセル化されています。  
+ The **VARIANT** type is encapsulated in the [COleVariant](../mfc/reference/colevariant-class.md) class. The supporting **CURRENCY** and **DATE** classes are encapsulated in the [COleCurrency](../mfc/reference/colecurrency-class.md) and [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md) classes.  
   
-## オートメーションのサンプル  
+## <a name="automation-samples"></a>Automation Samples  
   
--   [AUTOCLIK](../top/visual-cpp-samples.md) オートメーションの手法とリモート オートメーションの基礎を学習します。  
+-   [AUTOCLIK](../visual-cpp-samples.md) Use this sample to learn Automation techniques and as a foundation for learning Remote Automation.  
   
--   [ACDUAL](../top/visual-cpp-samples.md) オートメーション サーバー アプリケーションにデュアル インターフェイスを追加します。  
+-   [ACDUAL](../visual-cpp-samples.md) Adds dual interfaces to an Automation server application.  
   
--   [CALCDRIV](../top/visual-cpp-samples.md) MFCCALC を起動するオートメーション クライアント アプリケーションです。  
+-   [CALCDRIV](../visual-cpp-samples.md) Automation client application driving MFCCALC.  
   
--   [INPROC](../top/visual-cpp-samples.md) インプロセス オートメーション サーバー アプリケーションの例を示します。  
+-   [INPROC](../visual-cpp-samples.md) Demonstrates an In-Process Automation server application.  
   
--   [IPDRIVE](../top/visual-cpp-samples.md) INPROC を起動するオートメーション クライアント アプリケーションです。  
+-   [IPDRIVE](../visual-cpp-samples.md) Automation client application driving INPROC.  
   
--   [MFCCALC](../top/visual-cpp-samples.md) オートメーション クライアント アプリケーションの例を示します。  
+-   [MFCCALC](../visual-cpp-samples.md) Demonstrates an Automation client application.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [オートメーション クライアント](../mfc/automation-clients.md)  
+-   [Automation Clients](../mfc/automation-clients.md)  
   
--   [オートメーション サーバー](../mfc/automation-servers.md)  
+-   [Automation Servers](../mfc/automation-servers.md)  
   
--   [リモート オートメーション](../mfc/remote-automation.md)  
+-   [Remote Automation](../mfc/remote-automation.md)  
   
 -   [OLE](../mfc/ole-in-mfc.md)  
   
--   [Active テクノロジ](../mfc/mfc-com.md)  
+-   [Active Technology](../mfc/mfc-com.md)  
   
-## 実行する操作  
+## <a name="what-do-you-want-to-do"></a>What do you want to do  
   
--   [オートメーション クラスを追加する](../mfc/automation-servers.md)  
+-   [Add an Automation class](../mfc/automation-servers.md)  
   
--   [タイプ ライブラリを使用する](../Topic/Automation%20Clients:%20Using%20Type%20Libraries.md)  
+-   [Use type libraries](../mfc/automation-clients-using-type-libraries.md)  
+   
+-   [Access automation servers](../mfc/automation-servers.md)  
   
--   [オートメーションでパラメーターを渡す](#_core_automation_topics)  
+-   [Write automation clients in C++](../mfc/automation-clients.md)  
   
--   [オートメーション サーバーにアクセスする](../mfc/automation-servers.md)  
-  
--   [C\+\+ でオートメーション クライアントを記述する](../mfc/automation-clients.md)  
-  
-## 参照  
+## <a name="see-also"></a>See Also  
  [MFC COM](../mfc/mfc-com.md)
+

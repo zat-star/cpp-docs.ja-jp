@@ -1,62 +1,81 @@
 ---
-title: "ダイアログ ボックスの有効期間 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ダイアログ ボックス, 有効期間"
-  - "有効期間 (ダイアログ ボックスの)"
-  - "MFC ダイアログ ボックス, 有効期間"
-  - "モーダル ダイアログ ボックス, 有効期間"
-  - "モードレス ダイアログ ボックス, 有効期間"
+title: Life Cycle of a Dialog Box | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- dialog boxes [MFC], life cycle
+- modal dialog boxes [MFC], life cycle
+- modeless dialog boxes [MFC], life cycle
+- MFC dialog boxes [MFC], life cycle
+- life cycle of dialog boxes [MFC]
 ms.assetid: e16fd78e-238d-4f31-8c9d-8564f3953bd9
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ダイアログ ボックスの有効期間
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 244bc75dfdb4695184ca66b8810260d407507f54
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ダイアログ ボックスのライフ サイクル中に、ユーザーはダイアログ ボックスによってダイアログ オブジェクトを作成し、初期化するコマンド ハンドラー内のダイアログ ボックスは、通常、ユーザー対話します。呼び出し、ダイアログ ボックスが閉じます。  
+---
+# <a name="life-cycle-of-a-dialog-box"></a>Life Cycle of a Dialog Box
+During the life cycle of a dialog box, the user invokes the dialog box, typically inside a command handler that creates and initializes the dialog object, the user interacts with the dialog box, and the dialog box closes.  
   
- モーダル ダイアログ ボックスでは、ハンドラーがダイアログ ボックスを閉じた後、ユーザー データを収集します。  ダイアログ ウィンドウが閉じた後ダイアログ オブジェクトがないため、データを取得するには、ダイアログ クラスのメンバー変数を使用できます。  
+ For modal dialog boxes, your handler gathers any data the user entered once the dialog box closes. Since the dialog object exists after its dialog window has closed, you can simply use the member variables of your dialog class to extract the data.  
   
- モードレス ダイアログ ボックスでは、ダイアログ ボックスが表示されているときは、ダイアログ オブジェクトからデータを取得できます。  ある時点で、ダイアログ;オブジェクトは破棄されます。この場合、コードによって異なります。  
+ For modeless dialog boxes, you may often extract data from the dialog object while the dialog box is still visible. At some point, the dialog object is destroyed; when this happens depends on your code.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ダイアログ ボックスを作成し、表示します。](../mfc/creating-and-displaying-dialog-boxes.md)  
+-   [Creating and displaying dialog boxes](../mfc/creating-and-displaying-dialog-boxes.md)  
   
--   [モーダル ダイアログ ボックスの作成](../mfc/creating-modal-dialog-boxes.md)  
+-   [Creating modal dialog boxes](../mfc/creating-modal-dialog-boxes.md)  
   
--   [モードレス ダイアログ ボックスを作成します。](../mfc/creating-modeless-dialog-boxes.md)  
+-   [Creating modeless dialog boxes](../mfc/creating-modeless-dialog-boxes.md)  
   
--   [メモリ ダイアログ テンプレートを使用する](../mfc/using-a-dialog-template-in-memory.md)  
+-   [Using a dialog template in memory](../mfc/using-a-dialog-template-in-memory.md)  
   
--   [ダイアログ ボックスの背景色を設定する](../mfc/setting-the-dialog-box’s-background-color.md)  
+-   [Setting the dialog box's background color](../mfc/setting-the-dialog-boxs-background-color.md)  
   
--   [ダイアログ ボックスの初期化](../mfc/initializing-the-dialog-box.md)  
+-   [Initializing the dialog box](../mfc/initializing-the-dialog-box.md)  
   
--   [ダイアログ ボックスの Windows メッセージの処理](../mfc/handling-windows-messages-in-your-dialog-box.md)  
+-   [Handling Windows messages in your dialog box](../mfc/handling-windows-messages-in-your-dialog-box.md)  
   
--   [ダイアログ オブジェクトからのデータの取得](../Topic/Retrieving%20Data%20from%20the%20Dialog%20Object.md)  
+-   [Retrieving data from the dialog object](../mfc/retrieving-data-from-the-dialog-object.md)  
   
--   [ダイアログ ボックスを閉じます。](../mfc/closing-the-dialog-box.md)  
+-   [Closing the dialog box](../mfc/closing-the-dialog-box.md)  
   
--   [ダイアログ ボックスの無効化](../Topic/Destroying%20the%20Dialog%20Box.md)  
+-   [Destroying the dialog box](../mfc/destroying-the-dialog-box.md)  
   
--   [ダイアログ データ エクスチェンジとダイアログ データ バリデーション](../mfc/dialog-data-exchange-and-validation.md)  
+-   [Dialog data exchange (DDX) and validation (DDV)](../mfc/dialog-data-exchange-and-validation.md)  
   
--   [プロパティ シート ダイアログ ボックス](../mfc/property-sheets-and-property-pages-mfc.md)  
+-   [Property sheet dialog boxes](../mfc/property-sheets-and-property-pages-mfc.md)  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "子ウィンドウの通知メッセージ ハンドラー |Microsoft ドキュメント"
+title: Child Window Notification Message Handlers | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,11 +13,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- message handlers [C++]
-- message handling [C++], child window message handlers
-- notifications, child window messages
-- windows [C++], message handlers
-- child windows, messages
+- message handlers [MFC]
+- message handling [MFC], child window message handlers
+- notifications [MFC], child window messages
+- windows [MFC], message handlers
+- child windows [MFC], messages
 ms.assetid: fddfdd08-8ecf-4f84-8b45-5a84616aaa8d
 caps.latest.revision: 10
 author: mikeblome
@@ -37,25 +37,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8e45a13bf4a01671dad73099f0db9be511a8ba11
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4f3d61f74a010904bd21636f0d0781b231103925
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="child-window-notification-message-handlers"></a>子ウィンドウの通知メッセージ ハンドラー
-子ウィンドウの通知メッセージの&5; つのカテゴリがあります。  
+# <a name="child-window-notification-message-handlers"></a>Child Window Notification Message Handlers
+There are five categories of child window notification messages:  
   
-|カテゴリ|説明|  
+|Category|Description|  
 |--------------|-----------------|  
-|[汎用コントロール ハンドラー](../../mfc/reference/generic-control-handler.md)|汎用コントロール通知のコードのハンドラーです。|  
-|[ユーザー ボタン ハンドラー](../../mfc/reference/user-button-handlers.md)|ユーザー用のハンドラーは、通知コードをクリックします。|  
-|[コンボ ボックス ハンドラー](../../mfc/reference/combo-box-handlers.md)|コンボ ボックス通知コードのハンドラー:|  
-|[エディット コントロール ハンドラー](../../mfc/reference/edit-control-handlers.md)|ハンドラーは、コントロールの通知コードを編集します。|  
-|[リスト ボックス ハンドラー](../../mfc/reference/list-box-handlers.md)|リスト ボックス通知コード用のハンドラーです。|  
+|[Generic Control Handler](../../mfc/reference/generic-control-handler.md)|Handler for generic control notification codes.|  
+|[User Button Handlers](../../mfc/reference/user-button-handlers.md)|Handlers for user button notification codes.|  
+|[Combo Box Handlers](../../mfc/reference/combo-box-handlers.md)|Handlers for combo box notification codes.|  
+|[Edit Control Handlers](../../mfc/reference/edit-control-handlers.md)|Handlers for edit control notification codes.|  
+|[List Box Handlers](../../mfc/reference/list-box-handlers.md)|Handlers for list box notification codes.|  
   
-## <a name="see-also"></a>関連項目  
- [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Message Maps](../../mfc/reference/message-maps-mfc.md)
 
 

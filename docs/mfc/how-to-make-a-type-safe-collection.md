@@ -1,107 +1,126 @@
 ---
-title: "方法 : タイプ セーフなコレクションを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コレクション クラス, 派生 (非テンプレートから)"
-  - "コレクション クラス, テンプレート ベースの"
-  - "コレクション クラス, タイプ セーフ"
-  - "シリアル化 [C++], コレクション クラス"
-  - "SerializeElements 関数"
-  - "シリアル化 (コレクション クラスの要素を)"
-  - "タイプ セーフなコレクション"
+title: 'How to: Make a Type-Safe Collection | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- type-safe collections [MFC]
+- serializing collection-class elements [MFC]
+- collection classes [MFC], type safety
+- SerializeElements function [MFC]
+- collection classes [MFC], template-based
+- serialization [MFC], collection classes
+- collection classes [MFC], deriving from nontemplate
 ms.assetid: 7230b2db-4283-4083-b098-eb231bf5b89e
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 方法 : タイプ セーフなコレクションを作成する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2d36dc3511c083f64b6a37e79fc01fb1dbd99cab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、独自のデータ型のタイプ セーフなコレクションを設定する方法について説明します。  ここでは、次の内容について説明します。  
+---
+# <a name="how-to-make-a-type-safe-collection"></a>How to: Make a Type-Safe Collection
+This article explains how to make type-safe collections for your own data types. Topics include:  
   
--   [タイプ セーフのテンプレート ベースのクラスを使用します。](#_core_using_template.2d.based_classes_for_type_safety)  
+-   [Using template-based classes for type safety](#_core_using_template.2d.based_classes_for_type_safety)  
   
--   [ヘルパー関数の実装](#_core_implementing_helper_functions)  
+-   [Implementing helper functions](#_core_implementing_helper_functions)  
   
--   [非テンプレート コレクション クラスを使用する](#_core_using_nontemplate_collection_classes)  
+-   [Using nontemplate collection classes](#_core_using_nontemplate_collection_classes)  
   
- Microsoft Foundation Class ライブラリには、C\+\+ テンプレートに基づいて定義済みのなタイプ セーフなコレクションを提供します。  これらのテンプレートであるため、これらのクラスは、非テンプレート クラスをこの目的で使用する場合には型キャストなしでタイプ セーフと使いやすさなどの追加作業が増しました。  MFC のサンプル [収集する](../top/visual-cpp-samples.md) アプリケーションは、MFC のテンプレート ベースのコレクション クラスの使用方法を示します。  通常、新しいコレクション コードを記述して、これらのクラスを使用します。  
+ The Microsoft Foundation Class Library provides predefined type-safe collections based on C++ templates. Because they are templates, these classes help provide type safety and ease of use without the type-casting and other extra work involved in using a nontemplate class for this purpose. The MFC sample [COLLECT](../visual-cpp-samples.md) demonstrates the use of template-based collection classes in an MFC application. In general, use these classes any time you write new collections code.  
   
-##  <a name="_core_using_template.2d.based_classes_for_type_safety"></a> タイプ セーフのテンプレート ベースのクラスを使用します。  
+##  <a name="_core_using_template.2d.based_classes_for_type_safety"></a> Using Template-Based Classes for Type Safety  
   
-#### テンプレート ベースのクラスを使用するには  
+#### <a name="to-use-template-based-classes"></a>To use template-based classes  
   
-1.  コレクション クラスの型の変数を宣言します。  たとえば、次のようになります。  
+1.  Declare a variable of the collection class type. For example:  
   
-     [!code-cpp[NVC_MFCCollections#7](../mfc/codesnippet/CPP/how-to-make-a-type-safe-collection_1.cpp)]  
+     [!code-cpp[NVC_MFCCollections#7](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_1.cpp)]  
   
-2.  コレクション オブジェクトのメンバー関数を呼び出します。  たとえば、次のようになります。  
+2.  Call the member functions of the collection object. For example:  
   
-     [!code-cpp[NVC_MFCCollections#8](../mfc/codesnippet/CPP/how-to-make-a-type-safe-collection_2.cpp)]  
+     [!code-cpp[NVC_MFCCollections#8](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_2.cpp)]  
   
-3.  必要に応じて、[ヘルパー関数](../mfc/reference/collection-class-helpers.md) と [SerializeElements](../Topic/SerializeElements.md)を実装してください。  これらの関数の実装の詳細については、「[ヘルパー関数の実装](#_core_implementing_helper_functions)」を参照してください。  
+3.  If necessary, implement the [helper functions](../mfc/reference/collection-class-helpers.md) and [SerializeElements](../mfc/reference/collection-class-helpers.md#serializeelements). For information on implementing these functions, see [Implementing Helper Functions](#_core_implementing_helper_functions).  
   
- この例では、整数のリストの宣言を示しています。  手順 1 の最初のパラメーターは、リストの要素として格納されたデータの型です。  2 番目のパラメーターは、データをどのように渡され、**追加** と `GetAt`などのコレクション クラスのメンバー関数から返すかどうかを指定します。  
+ This example shows the declaration of a list of integers. The first parameter in step 1 is the type of data stored as elements of the list. The second parameter specifies how the data is to be passed to and returned from member functions of the collection class, such as **Add** and `GetAt`.  
   
-##  <a name="_core_implementing_helper_functions"></a> ヘルパー関数の実装  
- 、派生のコレクション クラスのために必要に応じてカスタマイズできるテンプレート ベースのコレクション クラス `CArray`、`CList`と `CMap` の使用 5 のグローバルなヘルパー関数。  これらのヘルパー関数については、*" MFC リファレンス"*の [コレクション クラスのヘルパー](../mfc/reference/collection-class-helpers.md) を参照してください。  シリアル化の関数の実装は、テンプレート ベースのコレクション クラスの主な用途に必要です。  
+##  <a name="_core_implementing_helper_functions"></a> Implementing Helper Functions  
+ The template-based collection classes `CArray`, `CList`, and `CMap` use five global helper functions that you can customize as needed for your derived collection class. For information on these helper functions, see [Collection Class Helpers](../mfc/reference/collection-class-helpers.md) in the *MFC Reference*. Implementation of the serialization function is necessary for most uses of the template-based collection classes.  
   
-###  <a name="_core_serializing_elements"></a> 要素のシリアル化  
- `CArray`、`CList`と `CMap` クラスはコレクション要素を保存するか、アーカイブからの読み取りに `SerializeElements` を呼び出します。  
+###  <a name="_core_serializing_elements"></a> Serializing Elements  
+ The `CArray`, `CList`, and `CMap` classes call `SerializeElements` to store collection elements to or read them from an archive.  
   
- `SerializeElements` ヘルパー関数の既定の実装は、オブジェクトのアーカイブからオブジェクトへの、読み取りをアーカイブにオブジェクトが格納されているか、アーカイブから取得されているかどうかビットごとのの書き込み、またはビットごとので描画します。  このアクションが適切でない場合 `SerializeElements` をオーバーライドします。  
+ The default implementation of the `SerializeElements` helper function does a bitwise write from the objects to the archive, or a bitwise read from the archive to the objects, depending on whether the objects are being stored in or retrieved from the archive. Override `SerializeElements` if this action is not appropriate.  
   
- `CObject` からコレクションのストア オブジェクトの派生と、コレクション要素クラスの実装で `IMPLEMENT_SERIAL` マクロを使用すると、`CArchive` と `CObject`に組み込まれているシリアル化機能を使用する場合:  
+ If your collection stores objects derived from `CObject` and you use the `IMPLEMENT_SERIAL` macro in the implementation of the collection element class, you can take advantage of the serialization functionality built into `CArchive` and `CObject`:  
   
- [!code-cpp[NVC_MFCCollections#9](../mfc/codesnippet/CPP/how-to-make-a-type-safe-collection_3.cpp)]  
+ [!code-cpp[NVC_MFCCollections#9](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_3.cpp)]  
   
- `CArchive` のオーバーロードされた出力ストリーム演算子は `CObject::Serialize` \(または **CPerson** のオブジェクトごとに、その関数のオーバーライドを呼び出します。  
+ The overloaded insertion operators for `CArchive` call `CObject::Serialize` (or an override of that function) for each **CPerson** object.  
   
-##  <a name="_core_using_nontemplate_collection_classes"></a> 非テンプレート コレクション クラスを使用する  
- MFC は、MFC Version 1.0 で導入されたコレクション クラスをサポートします。  これらのクラスは、テンプレートに基づいていません。  これらがサポートされている型 `CObject*`、**UINT**、`DWORD`と `CString`のデータを格納するために使用できます。   \(`CObList`など\) `CObject`から派生される任意のオブジェクトのコレクションを保持するには、これらの定義済みのなコレクションを使用できます。  MFC は、**UINT** と void なポインター \(`void`保持する他の定義済みのなコレクションを\*\) などのプリミティブ型が用意されています。  ただし、通常は、多くの場合、特定のクラスとその派生クラスのオブジェクトを保持するために独自のタイプ セーフなコレクションを定義すると便利です。  テンプレートに基づいてコレクション クラスを使用するには、テンプレート ベースのクラスを使用するよりも多くの作業があることに注意してください。  
+##  <a name="_core_using_nontemplate_collection_classes"></a> Using Nontemplate Collection Classes  
+ MFC also supports the collection classes introduced with MFC version 1.0. These classes are not based on templates. They can be used to contain data of the supported types `CObject*`, **UINT**, `DWORD`, and `CString`. You can use these predefined collections (such as `CObList`) to hold collections of any objects derived from `CObject`. MFC also provides other predefined collections to hold primitive types such as **UINT** and void pointers (`void`*). In general, however, it is often useful to define your own type-safe collections to hold objects of a more specific class and its derivatives. Note that doing so with the collection classes not based on templates is more work than using the template-based classes.  
   
- 非テンプレートのコレクションにタイプ セーフなコレクションを作成するには 2 とおりの方法があります。:  
+ There are two ways to create type-safe collections with the nontemplate collections:  
   
-1.  型キャストがある非テンプレートのコレクションを、必要な場合に使用します。  これは、より簡単な方法です。  
+1.  Use the nontemplate collections, with type casting if necessary. This is the easier approach.  
   
-2.  から派生し、非テンプレートのタイプ セーフなコレクションを拡張します。  
+2.  Derive from and extend a nontemplate type-safe collection.  
   
-#### 型キャストがある非テンプレートのコレクションを使用します。  
+#### <a name="to-use-the-nontemplate-collections-with-type-casting"></a>To use the nontemplate collections with type casting  
   
-1.  非テンプレート クラスの 1 を、`CWordArray`など、直接使用します。  
+1.  Use one of the nontemplate classes, such as `CWordArray`, directly.  
   
-     たとえば、`CWordArray` を作成し、32 ビット値を追加し、それを取得します。  この方法は何もありません。  一つ定義済みのな機能を使用します。  
+     For example, you can create a `CWordArray` and add any 32-bit values to it, then retrieve them. There is nothing more to do. You just use the predefined functionality.  
   
-     たとえば、オブジェクトを `CObject`から派生されて保持するために定義済みのなコレクションを、`CObList`などの同期プリミティブを使用できます。  `CObList` のコレクションは `CObject`へのポインターを保持するように定義されます。  一覧からオブジェクトを取得する場合、`CObList` 関数が `CObject`へのポインターを返すので、結果を適切な型にキャストしなければならない場合があります。  たとえば、`CObList` のコレクションで `CPerson` オブジェクトを保存すると、`CPerson` オブジェクトへのポインターである場合、取得する要素をキャストしなければなりません。  次の例では `CPerson` オブジェクトを保持するために `CObList` のコレクションを使用します:  
+     You can also use a predefined collection, such as `CObList`, to hold any objects derived from `CObject`. A `CObList` collection is defined to hold pointers to `CObject`. When you retrieve an object from the list, you may have to cast the result to the proper type since the `CObList` functions return pointers to `CObject`. For example, if you store `CPerson` objects in a `CObList` collection, you have to cast a retrieved element to be a pointer to a `CPerson` object. The following example uses a `CObList` collection to hold `CPerson` objects:  
   
-     [!code-cpp[NVC_MFCCollections#10](../mfc/codesnippet/CPP/how-to-make-a-type-safe-collection_4.cpp)]  
+     [!code-cpp[NVC_MFCCollections#10](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_4.cpp)]  
   
-     定義済みのなコレクション型を使用したり、必要としてキャストするこの方法はコレクションのニーズの多くには十分な場合があります。  そのほかの機能やそのほかのタイプ セーフが必要な場合は、テンプレート ベースのクラスを使用するか、次の手順に従います。  
+     This technique of using a predefined collection type and casting as necessary may be adequate for many of your collection needs. If you need further functionality or more type safety, use a template-based class, or follow the next procedure.  
   
-#### 非テンプレートのタイプ セーフなコレクションを拡張する派生し、  
+#### <a name="to-derive-and-extend-a-nontemplate-type-safe-collection"></a>To derive and extend a nontemplate type-safe collection  
   
-1.  定義済みのな非テンプレート クラスの 1 つがから独自のコレクション クラスを派生してください。  
+1.  Derive your own collection class from one of the predefined nontemplate classes.  
   
-     クラスを派生する場合は、既存の関数にタイプ セーフなインターフェイスを提供するタイプ セーフなラッパー関数を追加できます。  
+     When you derive your class, you can add type-safe wrapper functions to provide a type-safe interface to existing functions.  
   
-     たとえば、`CPerson` オブジェクトを保持するために `CObList` からリストを派生したら、次に示すように、ラッパー関数 `AddHeadPerson` と `GetHeadPerson`を追加する場合があります。  
+     For example, if you derived a list from `CObList` to hold `CPerson` objects, you might add the wrapper functions `AddHeadPerson` and `GetHeadPerson`, as shown below.  
   
-     [!code-cpp[NVC_MFCCollections#11](../mfc/codesnippet/CPP/how-to-make-a-type-safe-collection_5.h)]  
+     [!code-cpp[NVC_MFCCollections#11](../mfc/codesnippet/cpp/how-to-make-a-type-safe-collection_5.h)]  
   
-     これらのラッパー関数を追加するタイプ セーフな方法を提供し、`CPerson` オブジェクトを派生から取得するように指定します。  単にカプセル化している型キャストを `GetHeadPerson` の関数でも参照できます。  
+     These wrapper functions provide a type-safe way to add and retrieve `CPerson` objects from the derived list. You can see that for the `GetHeadPerson` function, you are simply encapsulating the type casting.  
   
-     また、拡張する新しい関数を定義することで、新しい機能を追加できるため、タイプ セーフなラッパーの既存の機能をラップしますではなく、コレクションの機能を紹介します。  たとえば、技術情報 [CObject のコレクション内のすべてのオブジェクトの削除](../Topic/Deleting%20All%20Objects%20in%20a%20CObject%20Collection.md)、リストのすべての含まれるオブジェクトを削除するための関数について説明します。  この関数は、メンバー関数として派生クラスに追加できます。  
+     You can also add new functionality by defining new functions that extend the capabilities of the collection rather than just wrapping existing functionality in type-safe wrappers. For example, the article [Deleting All Objects in a CObject Collection](../mfc/deleting-all-objects-in-a-cobject-collection.md) describes a function to delete all the objects contained in a list. This function could be added to the derived class as a member function.  
   
-## 参照  
- [コレクション クラス](../mfc/collections.md)
+## <a name="see-also"></a>See Also  
+ [Collections](../mfc/collections.md)
+
+

@@ -1,140 +1,159 @@
 ---
-title: "例外処理 (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "異常なプログラム実行 [C++]"
-  - "アーカイブの例外 [C++]"
-  - "アサーション [C++], 例外処理を使う場合"
-  - "オートメーション [C++], 例外"
-  - "C++ 例外処理, 有効化"
-  - "C++ 例外処理, MFC アプリケーション"
-  - "C++ 例外処理, 型"
-  - "クラス ライブラリ [C++], 例外処理のサポート"
-  - "DAO [C++], 例外"
-  - "データベースの例外 [C++]"
-  - "エラー処理 [C++], および例外"
-  - "エラー [C++], 検出 (アサーションによって)"
-  - "例外処理 [C++], MFC"
-  - "例外処理マクロ [C++]"
-  - "例外 [C++], MFC マクロと C++ キーワード"
-  - "関数呼び出し, 結果"
-  - "キーワード [C++], 例外処理"
-  - "マクロ [C++], 例外処理"
-  - "マクロ [C++], MFC 例外処理マクロ"
-  - "メモリ [C++], メモリ不足の例外"
-  - "MFC [C++], 例外"
-  - "ODBC 例外 [C++]"
-  - "OLE 例外 [C++], MFC の例外処理"
-  - "メモリ不足の例外 [C++]"
-  - "定義済み例外 [C++]"
-  - "要求 (サポートされていないサービスの)"
-  - "リソース割り当て例外"
-  - "リソース [C++], 割り当て"
-  - "シリアル化 [C++], 例外"
-  - "Windows [C++], リソース割り当て例外"
+title: Exception Handling in MFC | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DAO [MFC], exceptions
+- assertions [MFC], When to use exceptions
+- exception handling [MFC], MFC
+- resource allocation exception
+- resources [MFC], allocating
+- keywords [MFC], exception handling
+- errors [MFC], detected by assertions
+- ODBC exceptions [MFC]
+- serialization [MFC], exceptions
+- Automation [MFC], exceptions
+- exception macros [MFC]
+- predefined exceptions [MFC]
+- C++ exception handling [MFC], enabling
+- C++ exception handling [MFC], MFC applications
+- requests for unsupported services [MFC]
+- database exceptions [MFC]
+- archive exceptions [MFC]
+- MFC, exceptions
+- C++ exception handling [MFC], types of
+- macros [MFC], exception handling
+- abnormal program execution [MFC]
+- OLE exceptions [MFC], MFC exception handling
+- error handling [MFC], exceptions and
+- class libraries [MFC], exception support
+- exceptions [MFC], MFC macros vs. C++ keywords
+- memory [MFC], out-of-memory exceptions
+- Windows [MFC], resource allocation exceptions
+- macros [MFC], MFC exception macros
+- function calls [MFC], results
+- out-of-memory exceptions [MFC]
 ms.assetid: 0926627d-2ba7-44a6-babe-d851a4a2517c
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 例外処理 (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 52a4deadf4aae102256e8f44c3cf47bb5a123aa9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC の例外処理機構について説明します。  次の 2 つの機構があります。  
+---
+# <a name="exception-handling-in-mfc"></a>Exception Handling in MFC
+This article explains the exception-handling mechanisms available in MFC. Two mechanisms are available:  
   
--   MFC 3.0 以降で使用できる C\+\+ 例外処理機構  
+-   C++ exceptions, available in MFC version 3.0 and later  
   
--   MFC 1.0 以降で使用できるマクロ ベースの例外処理機構  
+-   The MFC exception macros, available in MFC versions 1.0 and later  
   
- MFC を使用するプログラムを新規作成する場合は、新しい C\+\+ 例外処理機構を使ってください。  既存のプログラムでマクロ ベースの例外処理機構が広範に使われている場合は、引き続きマクロ ベースの例外処理機構を使うことができます。  
+ If you're writing a new application using MFC, you should use the C++ mechanism. You can use the macro-based mechanism if your existing application already uses that mechanism extensively.  
   
- 既存のプログラムで使っているマクロ ベースの例外処理は、簡単に C\+\+ 例外処理に変換できます。  コードを変換した場合の利点と、変換のガイドラインについては、「[例外処理 : 古いコードの変換](../mfc/exceptions-converting-from-mfc-exception-macros.md)」を参照してください。  
+ You can readily convert existing code to use C++ exceptions instead of the MFC exception macros. Advantages of converting your code and guidelines for doing so are described in the article [Exceptions: Converting from MFC Exception Macros](../mfc/exceptions-converting-from-mfc-exception-macros.md).  
   
- また、既存のプログラムでこれらのマクロを使っている部分はそのまま利用し、新規に付け加えた部分で C\+\+ 例外処理を使うこともできます。  この場合のガイドラインについては、「[例外処理 : MFC 3.0 での変更点](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)」を参照してください。  
-  
-> [!NOTE]
->  プログラムで C\+\+ 例外処理機構を有効にするには、プロジェクトの \[[プロパティ ページ](../ide/property-pages-visual-cpp.md)\] ダイアログ ボックスの \[C\/C\+\+\] フォルダーで、\[コード生成\] ページの \[C\+\+ の例外を有効にする\] チェック ボックスをオンにします。または、\/GX コンパイラ オプションを使います。  既定は \/GX\- \(例外処理を無効にする\) です。  
-  
- ここでは、次のトピックについて説明します。  
-  
--   [例外処理を使う場合](#_core_when_to_use_exceptions)  
-  
--   [MFC の例外処理のサポート](#_core_mfc_exception_support)  
-  
--   [例外処理関連項目](#_core_further_reading_about_exceptions)  
-  
-##  <a name="_core_when_to_use_exceptions"></a> 例外処理を使う場合  
- プログラム実行中の関数の呼び出し結果には、正常実行、エラー実行、異常実行の 3 種類があります。  次に、それぞれの内容を示します。  
-  
--   正常実行  
-  
-     関数は正常に実行され、呼び出し元に戻ります。  関数の実行結果を示す結果コードが呼び出し側に返される場合もあります。  結果コードの値は関数ごとに厳密に定義されており、予測される実行結果に対応付けられています。  結果コードでは、成功または失敗を報告するばかりでなく、通常の予測範囲内で発生した一種の失敗を示すこともできます。  たとえば、ファイルの状態を示す関数で、ファイルが存在しないことを示す結果コードを返すことができます。  結果コードはいずれかの予測結果を示すものなので、"エラー コード" という用語は使用しません。  
-  
--   エラー実行  
-  
-     呼び出し側が関数に誤った引数を引き渡したとき、または関数を不適切なコンテキストで呼び出したときに、この実行結果が生じます。  この場合はエラーになるので、プログラムの開発中にアサーション チェックによって検出する必要があります。アサーションの詳細については、「[アサーション](../Topic/C-C++%20Assertions.md)」を参照してください。  
-  
--   異常実行  
-  
-     メモリ不足や入出力エラーなど、プログラムで制御できない条件が発生し、関数の実行結果に影響が及ぶ場合は、異常実行と判定されます。  この場合は、例外のスローとキャッチによって異常事態に対処する必要があります。  
-  
- 例外処理は、特に異常実行に向いた処理方式です。  
-  
-##  <a name="_core_mfc_exception_support"></a> MFC の例外処理のサポート  
- C\+\+ 例外処理機構を直接使用する場合も、MFC 例外処理マクロを使用する場合も、[CException クラス](../mfc/reference/cexception-class.md) クラスまたは `CException` クラスのオブジェクトを使います。これらのオブジェクトは、フレームワークまたはユーザー プログラムによってスローされます。  
-  
- MFC には、次の表にあるような定義済みの例外が用意されています。  
-  
-|例外クラス|説明|  
-|-----------|--------|  
-|[CMemoryException クラス](../mfc/reference/cmemoryexception-class.md)|メモリ不足例外|  
-|[CFileException クラス](../mfc/reference/cfileexception-class.md)|ファイル例外|  
-|[CArchiveException クラス](../mfc/reference/carchiveexception-class.md)|アーカイブ\/シリアル化例外|  
-|[CNotSupportedException クラス](../mfc/reference/cnotsupportedexception-class.md)|サポートされていないサービスを要求されたときの応答|  
-|[CResourceException クラス](../mfc/reference/cresourceexception-class.md)|Windows リソース割り当て例外|  
-|[CDaoException クラス](../mfc/reference/cdaoexception-class.md)|データベース例外 \(DAO クラス\)|  
-|[CDBException クラス](../mfc/reference/cdbexception-class.md)|データベース例外 \(ODBC クラス\)|  
-|[COleException クラス](../mfc/reference/coleexception-class.md)|OLE 例外|  
-|[COleDispatchException クラス](../Topic/COleDispatchException%20Class.md)|ディスパッチ \(オートメーション\) 例外|  
-|[CUserException クラス](../mfc/reference/cuserexception-class.md)|メッセージ ボックスでユーザーに警告を与えてから汎用 [CException クラス](../mfc/reference/cexception-class.md) をスローする例外|  
+ If you have already developed an application using the MFC exception macros, you can continue using these macros in your existing code, while using C++ exceptions in your new code. The article [Exceptions: Changes to Exception Macros in Version 3.0](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md) gives guidelines for doing so.  
   
 > [!NOTE]
->  MFC は、C\+\+ 例外処理と MFC 例外マクロをサポートしていますが、  Windows NT の構造化例外ハンドラー \(SEH: Structured Exception Handler\) は直接にはサポートしていません \(「[構造化例外処理](http://msdn.microsoft.com/library/windows/desktop/ms680657)」を参照\)。  
+>  To enable C++ exception handling in your code, select Enable C++ Exceptions on the Code Generation page in the C/C++ folder of the project's [Property Pages](../ide/property-pages-visual-cpp.md) dialog box, or use the /GX compiler option. The default is /GX-, which disables exception handling.  
   
-##  <a name="_core_further_reading_about_exceptions"></a> 例外処理関連項目  
- 以下の項では、MFC ライブラリの例外処理機構について説明しています。  
+ This article covers the following topics:  
   
--   [例外処理 : 例外のキャッチと削除](../mfc/exceptions-catching-and-deleting-exceptions.md)  
+-   [When to use exceptions](#_core_when_to_use_exceptions)  
   
--   [例外処理 : 例外の内容の調査](../mfc/exceptions-examining-exception-contents.md)  
+-   [MFC exception support](#_core_mfc_exception_support)  
   
--   [例外処理 : 例外処理でのオブジェクトの解放](../Topic/Exceptions:%20Freeing%20Objects%20in%20Exceptions.md)  
+-   [Further reading about exceptions](#_core_further_reading_about_exceptions)  
   
--   [例外処理 : 独自関数からの例外のスロー](../mfc/exceptions-throwing-exceptions-from-your-own-functions.md)  
+##  <a name="_core_when_to_use_exceptions"></a> When to Use Exceptions  
+ Three categories of outcomes can occur when a function is called during program execution: normal execution, erroneous execution, or abnormal execution. Each category is described below.  
   
--   [例外処理 : データベースの例外](../mfc/exceptions-database-exceptions.md)  
+-   Normal execution  
   
--   [例外処理 : OLE の例外](../Topic/Exceptions:%20OLE%20Exceptions.md)  
+     The function may execute normally and return. Some functions return a result code to the caller, which indicates the outcome of the function. The possible result codes are strictly defined for the function and represent the range of possible outcomes of the function. The result code can indicate success or failure or can even indicate a particular type of failure that is within the normal range of expectations. For example, a file-status function can return a code that indicates that the file does not exist. Note that the term "error code" is not used because a result code represents one of many expected outcomes.  
   
- 以下の項では、MFC 3.0 とそれ以前のバージョンの違いについて説明しています。新しい C\+\+ 例外を古いコードと共存させる方法についても説明しています。  
+-   Erroneous execution  
   
--   [例外処理 : MFC 3.0 での変更点](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)  
+     The caller makes some mistake in passing arguments to the function or calls the function in an inappropriate context. This situation causes an error, and it should be detected by an assertion during program development. (For more information on assertions, see [C/C++ Assertions](/visualstudio/debugger/c-cpp-assertions).)  
   
--   [例外処理 : 古いコードの変換](../mfc/exceptions-converting-from-mfc-exception-macros.md)  
+-   Abnormal execution  
   
--   [例外処理 : MFC マクロと C\+\+ 例外機構の使用](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md)  
+     Abnormal execution includes situations where conditions outside the program's control, such as low memory or I/O errors, are influencing the outcome of the function. Abnormal situations should be handled by catching and throwing exceptions.  
   
-## 参照  
- [C\+\+ 例外処理](../cpp/cpp-exception-handling.md)   
- [How Do I: Create my Own Custom Exception Classes? \(操作方法: 独自のカスタム例外クラスを作成する\)](http://go.microsoft.com/fwlink/?LinkId=128045)
+ Using exceptions is especially appropriate for abnormal execution.  
+  
+##  <a name="_core_mfc_exception_support"></a> MFC Exception Support  
+ Whether you use the C++ exceptions directly or use the MFC exception macros, you will use [CException Class](../mfc/reference/cexception-class.md) or `CException`-derived objects that may be thrown by the framework or by your application.  
+  
+ The following table shows the predefined exceptions provided by MFC.  
+  
+|Exception class|Meaning|  
+|---------------------|-------------|  
+|[CMemoryException Class](../mfc/reference/cmemoryexception-class.md)|Out-of-memory|  
+|[CFileException Class](../mfc/reference/cfileexception-class.md)|File exception|  
+|[CArchiveException Class](../mfc/reference/carchiveexception-class.md)|Archive/Serialization exception|  
+|[CNotSupportedException Class](../mfc/reference/cnotsupportedexception-class.md)|Response to request for unsupported service|  
+|[CResourceException Class](../mfc/reference/cresourceexception-class.md)|Windows resource allocation exception|  
+|[CDaoException Class](../mfc/reference/cdaoexception-class.md)|Database exceptions (DAO classes)|  
+|[CDBException Class](../mfc/reference/cdbexception-class.md)|Database exceptions (ODBC classes)|  
+|[COleException Class](../mfc/reference/coleexception-class.md)|OLE exceptions|  
+|[COleDispatchException Class](../mfc/reference/coledispatchexception-class.md)|Dispatch (automation) exceptions|  
+|[CUserException Class](../mfc/reference/cuserexception-class.md)|Exception that alerts the user with a message box, then throws a generic [CException Class](../mfc/reference/cexception-class.md)|  
+  
+> [!NOTE]
+>  MFC supports both C++ exceptions and the MFC exception macros. MFC does not directly support Windows NT structured exception handlers (SEH), as discussed in [Structured Exception Handling](http://msdn.microsoft.com/library/windows/desktop/ms680657).  
+  
+##  <a name="_core_further_reading_about_exceptions"></a> Further Reading About Exceptions  
+ The following articles explain using the MFC library for exception handing:  
+  
+-   [Exceptions: Catching and Deleting Exceptions](../mfc/exceptions-catching-and-deleting-exceptions.md)  
+  
+-   [Exceptions: Examining Exception Contents](../mfc/exceptions-examining-exception-contents.md)  
+  
+-   [Exceptions: Freeing Objects in Exceptions](../mfc/exceptions-freeing-objects-in-exceptions.md)  
+  
+-   [Exceptions: Throwing Exceptions from Your Own Functions](../mfc/exceptions-throwing-exceptions-from-your-own-functions.md)  
+  
+-   [Exceptions: Database Exceptions](../mfc/exceptions-database-exceptions.md)  
+  
+-   [Exceptions: OLE Exceptions](../mfc/exceptions-ole-exceptions.md)  
+  
+ The following articles compare the MFC exception macros with the C++ exception keywords and explain how you can adapt your code:  
+  
+-   [Exceptions: Changes to Exception Macros in Version 3.0](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)  
+  
+-   [Exceptions: Converting from MFC Exception Macros](../mfc/exceptions-converting-from-mfc-exception-macros.md)  
+  
+-   [Exceptions: Using MFC Macros and C++ Exceptions](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md)  
+  
+## <a name="see-also"></a>See Also  
+ [C++ Exception Handling](../cpp/cpp-exception-handling.md)   
+ [How Do I: Create my Own Custom Exception Classes](http://go.microsoft.com/fwlink/linkid=128045)
+
+

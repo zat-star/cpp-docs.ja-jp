@@ -1,5 +1,5 @@
 ---
-title: "CODBCFieldInfo 構造体 |Microsoft ドキュメント"
+title: CODBCFieldInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,8 +13,8 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ODBC, data source information
-- CODBCFieldInfo structure
+- ODBC [MFC], data source information
+- CODBCFieldInfo structure [MFC]
 ms.assetid: 92598b4f-facc-4108-b282-63a179ff79ab
 caps.latest.revision: 12
 author: mikeblome
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 1080eb323c599014d84acab94aee4622795fdb96
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 73fa2ac08d93fd9b9c9324cd1cb9ae57c4d62456
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="codbcfieldinfo-structure"></a>CODBCFieldInfo 構造体
-`CODBCFieldInfo`構造体には、ODBC データ ソース内のフィールドに関する情報が含まれています。  
+# <a name="codbcfieldinfo-structure"></a>CODBCFieldInfo Structure
+The `CODBCFieldInfo` structure contains information about the fields in an ODBC data source.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CODBCFieldInfo  
@@ -57,31 +57,31 @@ struct CODBCFieldInfo
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- フィールドの名前。  
+ The name of the field.  
   
  *m_nSQLType*  
- フィールドの SQL データ型です。 これには、ODBC SQL データ型またはドライバー固有の SQL データ型を指定できます。 有効な ODBC SQL データ型については、「SQL データ型」を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 ドライバー固有の SQL データ型については、ドライバーのドキュメントを参照してください。  
+ The SQL data type of the field. This can be an ODBC SQL data type or a driver-specific SQL data type. For a list of valid ODBC SQL data types, see "SQL Data Types" in the Windows SDK. For information about driver-specific SQL data types, see the driver's documentation.  
   
  *m_nPrecision*  
- フィールドの最大有効桁数です。 詳細についてを参照してください「精度、スケール、長さ、および表示サイズ」、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ The maximum precision of the field. For details, see "Precision, Scale, Length, and Display Size" in the Windows SDK.  
   
  *m_nScale*  
- フィールドの小数点以下桁数。 詳細についてを参照してください「精度、スケール、長さ、および表示サイズ」、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ The scale of the field. For details, see "Precision, Scale, Length, and Display Size" in the Windows SDK.  
   
  *m_nNullability*  
- かどうか、フィールドは、Null 値を受け入れます。 2 つの値のいずれか: **SQL_NULLABLE**フィールドが Null 値を受け入れる場合、または**SQL_NO_NULLS**フィールドが Null 値を受け付けない場合。  
+ Whether the field accepts a Null value. This can be one of two values: **SQL_NULLABLE** if the field accepts Null values, or **SQL_NO_NULLS** if the field does not accept Null values.  
   
-## <a name="remarks"></a>コメント  
- この情報を取得する[に](../../mfc/reference/crecordset-class.md#getodbcfieldinfo)します。  
+## <a name="remarks"></a>Remarks  
+ To retrieve this information, call [CRecordset::GetODBCFieldInfo](../../mfc/reference/crecordset-class.md#getodbcfieldinfo).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [に](../../mfc/reference/crecordset-class.md#getodbcfieldinfo)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CRecordset::GetODBCFieldInfo](../../mfc/reference/crecordset-class.md#getodbcfieldinfo)   
  [CRecordset::GetFieldValue](../../mfc/reference/crecordset-class.md#getfieldvalue)
 
 

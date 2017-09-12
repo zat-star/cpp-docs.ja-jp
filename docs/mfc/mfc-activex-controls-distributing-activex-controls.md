@@ -1,89 +1,105 @@
 ---
-title: "MFC ActiveX コントロール : ActiveX コントロールの配布 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetWindowsDirectory"
-  - "GetSystemDirectory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配布 (MFC ActiveX コントロールを)"
-  - "GetProcAddress メソッド, 登録 (ActiveX コントロールを)"
-  - "GetSystemDirectory メソッド"
-  - "GetWindowsDirectory メソッド"
-  - "インストール (ActiveX コントロールを)"
-  - "LoadLibrary メソッド, 登録 (ActiveX コントロールを)"
-  - "MFC ActiveX コントロール, ANSI または Unicode のバージョン"
-  - "MFC ActiveX コントロール, 配布"
-  - "MFC ActiveX コントロール, インストール"
-  - "MFC ActiveX コントロール, 登録"
-  - "MFC40.DLL"
-  - "MFC40U.DLL"
-  - "MSVCRT40.dll"
-  - "OLEPRO32.DLL"
-  - "再頒布可能なファイル, MFC ActiveX コントロール"
-  - "登録 (ActiveX コントロールを)"
-  - "登録 (コントロールを)"
-  - "レジストリ, 登録 (コントロールを)"
-  - "RegSvr32.exe"
+title: 'MFC ActiveX Controls: Distributing ActiveX Controls | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetWindowsDirectory
+- GetSystemDirectory
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], ANSI or Unicode versions
+- RegSvr32.exe
+- MFC ActiveX controls [MFC], distributing
+- distributing MFC ActiveX controls
+- redistributable files, MFC ActiveX controls
+- GetSystemDirectory method [MFC]
+- registering ActiveX controls
+- MSVCRT40.dll
+- registry [MFC], registering controls
+- LoadLibrary method, registering ActiveX controls
+- MFC40U.DLL
+- MFC40.DLL
+- GetWindowsDirectory method [MFC]
+- installing ActiveX controls
+- GetProcAddress method, registering ActiveX controls
+- MFC ActiveX controls [MFC], installing
+- MFC ActiveX controls [MFC], registering
+- registering controls
+- OLEPRO32.DLL
 ms.assetid: cd70ac9b-f613-4879-9e81-6381fdfda2a1
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC ActiveX コントロール : ActiveX コントロールの配布
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a531f3a004729f5f877ec46205c187b77a31697e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、問題を ActiveX コントロールの再配布に複数説明します。:  
+---
+# <a name="mfc-activex-controls-distributing-activex-controls"></a>MFC ActiveX Controls: Distributing ActiveX Controls
+This article discusses several issues related to redistributing ActiveX controls:  
   
--   [ANSI 形式または Unicode バージョンのコントロール](#_core_ansi_or_unicode_control_versions)  
+-   [ANSI or Unicode Control Versions](#_core_ansi_or_unicode_control_versions)  
   
--   [ActiveX コントロールと再頒布可能な DLL のインストール](#_core_installing_activex_controls_and_redistributable_dlls)  
+-   [Installing ActiveX Controls and Redistributable DLLs](#_core_installing_activex_controls_and_redistributable_dlls)  
   
--   [コントロールの登録](#_core_registering_controls)  
+-   [Registering Controls](#_core_registering_controls)  
   
-    > [!NOTE]
-    >  ActiveX コントロールの再配布の詳細については、「[コントロールの再頒布](../Topic/Redistributing%20Controls.md)」を参照してください。  
+##  <a name="_core_ansi_or_unicode_control_versions"></a> ANSI or Unicode Control Versions  
+ You must decide whether to ship an ANSI or Unicode version of the control, or both. This decision is based on portability factors inherent in ANSI and Unicode character sets.  
   
-##  <a name="_core_ansi_or_unicode_control_versions"></a> ANSI 形式または Unicode バージョンのコントロール  
- かどうかコントロールの Unicode または ANSI バージョン、またはその両方を提供するかを決定する必要があります。  この決定は ANSI 文字型と Unicode 文字セットでよく移植性の要因に基づいています。  
+ ANSI controls, which work on all Win32 operating systems, allow for maximum portability between the various Win32 operating systems. Unicode controls work on only Windows NT (version 3.51 or later), but not on Windows 95 or Windows 98. If portability is your primary concern, ship ANSI controls. If your controls will run only on Windows NT, you can ship Unicode controls. You could also choose to ship both and have your application install the version most appropriate for the user's operating system.  
   
- すべての Win32 オペレーティング システムで動作する ANSI のコントロール、さまざまな Win32 オペレーティング システム間の最大移植性を有効にします。  Unicode のコントロールは、Windows NT のみ \(バージョン 3.51 以降\) で、Windows 95 または Windows 98 で実行されます。  移植性が最大の注意点、ANSI のコントロールを提供します。  コントロールが Windows NT でのみ機能し、Unicode コントロールを提供できます。  この二つを提供し、アプリケーションがユーザーのオペレーティング システムでは、最も適切なバージョンをインストールすることもできます。  
-  
-##  <a name="_core_installing_activex_controls_and_redistributable_dlls"></a> ActiveX コントロールと再頒布可能な DLL のインストール  
- 、ActiveX コントロールを与えるセットアップ プログラムは、Windows ディレクトリの特別なサブディレクトリを作成し、コントロールの .OCX ファイルをインストールする必要があります。  
-  
-> [!NOTE]
->  Windows ディレクトリの名前を取得するには、セットアップ プログラムで Windows **GetWindowsDirectory** API を使用します。  企業や製品の名前からサブディレクトリの名前を派生したい場合があります。  
-  
- セットアップ プログラムは、Windows のシステム ディレクトリに必要で再頒布可能な DLL ファイルをインストールする必要があります。  DLL のいずれかはユーザーのコンピューターに存在する場合、セットアップ プログラムは、インストールされているバージョンとバージョンを比較します。  バージョン番号が既にインストールされているファイルを上回った場合のみファイルを再インストールします。  
-  
- ActiveX コントロールが OLE コンテナー アプリケーションでのみ使用でき、OLE コントロールで DLL の完全なセットを配布する必要はありません。  含まれているアプリケーション \(またはオペレーティング システム自体は\) 標準 OLE DLL がインストールされていると判断できます。  
-  
-##  <a name="_core_registering_controls"></a> コントロールの登録  
- コントロールが使用する前に適切なエントリは Windows 登録情報データベースでそれに対して作成する必要があります。  ActiveX コントロール コンテナーは、レジスタの新しいコントロールには、ユーザーがメニュー項目が用意されていますが、この機能はすべてのコンテナーで使用できないことがあります。  したがって、インストールすると、セットアップ プログラムにコントロールを登録する必要があります。  
-  
- 必要に応じて、代わりにコントロールを直接使用するセットアップ プログラムを作成できます。  
-  
- コントロール DLL を読み込むために **LoadLibrary** Windows API を使用します。  次に、「」DllRegisterServer 関数のアドレスの取得使用 **GetProcAddress** 。  最後に、`DllRegisterServer` 関数を呼び出します。  次のコード サンプルは `hLib` がコントロール ライブラリ ハンドルを格納し、`lpDllEntryPoint`ストア「」DllRegisterServer 関数のアドレスを 1 とおりのメソッド。  
-  
- [!code-cpp[NVC_MFC_AxCont#16](../mfc/codesnippet/CPP/mfc-activex-controls-distributing-activex-controls_1.cpp)]  
-  
- コントロールを登録する利点は直接インストール時を減らす別のプロセス \(つまり、REGSVR32\) 呼び出し、読み込む必要がないことです。  また、登録はインプロセスであるため、セットアップ プログラムは、外部プロセスがあります。エラー、予想外の状況に処理できます。  
+##  <a name="_core_installing_activex_controls_and_redistributable_dlls"></a> Installing ActiveX Controls and Redistributable DLLs  
+ The setup program you provide with your ActiveX controls should create a special subdirectory of the Windows directory and install the controls' .OCX files in it.  
   
 > [!NOTE]
->  セットアップ プログラムは、ActiveX コントロールをインストールする前に、**OleInitialize**を呼び出す必要があります。  セットアップ プログラムが終了すると、**OleUnitialize**を呼び出します。  これは、OLE システム DLL が ActiveX コントロールを登録するために適切な状態であることを確認します。  
+>  Use the Windows **GetWindowsDirectory** API in your setup program to obtain the name of the Windows directory. You may want to derive the subdirectory name from the name of your company or product.  
   
- MFCx0.DLL を登録します。  
+ The setup program must install the necessary redistributable DLL files in the Windows system directory. If any of the DLLs are already present on the user's machine, the setup program should compare their versions with the versions you are installing. Reinstall a file only if its version number is higher than the file already installed.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+ Because ActiveX controls can be used only in OLE container applications, there is no need to distribute the full set of OLE DLLs with your controls. You can assume that the containing application (or the operating system itself) has the standard OLE DLLs installed.  
+  
+##  <a name="_core_registering_controls"></a> Registering Controls  
+ Before a control can be used, appropriate entries must be created for it in the Windows registration database. Some ActiveX control containers provide a menu item for users to register new controls, but this feature may not be available in all containers. Therefore, you may want your setup program to register the controls when they are installed.  
+  
+ If you prefer, you can write your setup program to register the control directly instead.  
+  
+ Use the **LoadLibrary** Windows API to load the control DLL. Next, use **GetProcAddress** to obtain the address of the "DllRegisterServer" function. Finally, call the `DllRegisterServer` function. The following code sample demonstrates one possible method, where `hLib` stores the handle of the control library, and `lpDllEntryPoint` stores the address of the "DllRegisterServer" function.  
+  
+ [!code-cpp[NVC_MFC_AxCont#16](../mfc/codesnippet/cpp/mfc-activex-controls-distributing-activex-controls_1.cpp)]  
+  
+ The advantage of registering the control directly is that you do not need to invoke and load a separate process (namely, REGSVR32), reducing installation time. In addition, because registration is an internal process, the setup program can handle errors and unforeseen situations better than an external process can.  
+  
+> [!NOTE]
+>  Before your setup program installs an ActiveX control, it should call **OleInitialize**. When your setup program is finished, call **OleUnitialize**. This ensures that the OLE system DLLs are in the proper state for registering an ActiveX control.  
+  
+ You should register MFCx0.DLL.  
+  
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

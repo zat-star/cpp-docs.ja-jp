@@ -1,44 +1,63 @@
 ---
-title: "イメージ リストのイメージの描画 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CImageList クラス, 描画 (イメージを)"
-  - "描画, イメージ (イメージ リストの)"
-  - "イメージ リスト [C++], 描画 (イメージを)"
-  - "イメージ [C++], 描画"
+title: Drawing Images from an Image List | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CImageList class [MFC], drawing images from
+- drawing [MFC], images from image lists
+- image lists [MFC], drawing images from
+- images [MFC], drawing
 ms.assetid: 2f6063fb-1c28-45f8-a333-008c064db11c
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# イメージ リストのイメージの描画
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b0ffa8a402eb7a9c34d2496a39621f12310df12c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-イメージを描画するには、[CImageList::Draw](../Topic/CImageList::Draw.md) メンバー関数を使用します。  デバイス コンテキスト オブジェクトは、イメージのインデックスに描画するポインターをイメージを描画スタイルを示すために描画する、一連のフラグ デバイス コンテキストの場所を指定します。  
+---
+# <a name="drawing-images-from-an-image-list"></a>Drawing Images from an Image List
+To draw an image, use the [CImageList::Draw](../mfc/reference/cimagelist-class.md#draw) member function. You'll specify a pointer to a device context object, the index of the image to draw, the location in the device context at which to draw the image, and a set of flags to indicate the drawing style.  
   
- `ILD_TRANSPARENT` のスタイルを指定すると、**描画** はマスクされたイメージを描画するために、二つの手順から成るプロセスを使用します。  まず、イメージの、ビット マスクのビットごとの論理 AND 演算を実行します。  その後、最初の操作の結果と先のデバイス コンテキストの Background ビットの論理 XOR 演算を実行します。  このプロセスは、結果のイメージの透明な領域を作成します; つまり、マスクの白いビットは結果のイメージの対応するビットが透明になります。  
+ When you specify the `ILD_TRANSPARENT` style, **Draw** uses a two-step process to draw a masked image. First, it performs a logical-AND operation on the bits of the image and the bits of the mask. Then it performs a logical-XOR operation on the results of the first operation and the background bits of the destination device context. This process creates transparent areas in the resulting image; that is, each white bit in the mask causes the corresponding bit in the resulting image to be transparent.  
   
- 純色の背景のマスクされたイメージを描画する前に、配置先と同じ色にイメージ リストの背景色を設定するには [SetBkColor](../Topic/CImageList::SetBkColor.md) メンバー関数を使用する必要があります。  色を設定すると、イメージの透明な領域を作成する必要がなく、**描画** をパフォーマンスに大きな増加して、先のデバイス コンテキストにイメージをコピーできるようにします。  **描画**を呼び出すときにイメージを描画するには、`ILD_NORMAL` のスタイルを指定します。  
+ Before drawing a masked image on a solid color background, you should use the [SetBkColor](../mfc/reference/cimagelist-class.md#setbkcolor) member function to set the background color of the image list to the same color as the destination. Setting the color eliminates the need to create transparent areas in the image and enables **Draw** to simply copy the image to the destination device context, resulting in a significant increase in performance. To draw the image, specify the `ILD_NORMAL` style when you call **Draw**.  
   
- すべての背景に正しく描画機能がマスクされたイメージ リスト \([CImageList](../Topic/CImageList%20Class.md)\) の背景色は、いつでも設定できます。  `CLR_NONE` に背景色を設定するには、イメージを透過的に既定で描画します。  イメージ リストの背景色を取得するには、[GetBkColor](../Topic/CImageList::GetBkColor.md) メンバー関数を使用します。  
+ You can set the background color for a masked image list ([CImageList](../mfc/reference/cimagelist-class.md)) at any time so that it draws correctly on any solid background. Setting the background color to `CLR_NONE` causes images to be drawn transparently by default. To retrieve the background color of an image list, use the [GetBkColor](../mfc/reference/cimagelist-class.md#getbkcolor) member function.  
   
- `ILD_BLEND25` と `ILD_BLEND50` のスタイルのディザー システムの強調表示色イメージ。  これらのスタイルは、ユーザーが選択できるオブジェクトを表すためにマスクされたイメージを使用する場合に便利です。  たとえば、ユーザーが選択すると、イメージの描画に `ILD_BLEND50` のスタイルを使用できます。  
+ The `ILD_BLEND25` and `ILD_BLEND50` styles dither the image with the system highlight color. These styles are useful if you use a masked image to represent an object that the user can select. For example, you can use the `ILD_BLEND50` style to draw the image when the user selects it.  
   
- nonmasked イメージは **SRCCOPY** のラスター オペレーションを使用して先のデバイス コンテキストにコピーされます。  イメージの色は、デバイス コンテキストの背景色に関係なく同じように表示されます。  **描画** で指定された描画スタイルも nonmasked イメージの外観には影響しません。  
+ A nonmasked image is copied to the destination device context using the **SRCCOPY** raster operation. The colors in the image appear the same regardless of the background color of the device context. The drawing styles specified in **Draw** also have no effect on the appearance of a nonmasked image.  
   
- 描画のメンバー関数に加えて、もう一方は関数、[DrawIndirect](../Topic/CImageList::DrawIndirect.md)、イメージをレンダリングする機能を拡張します。  `DrawIndirect` は、パラメーターとして、[IMAGELISTDRAWPARAMS](http://msdn.microsoft.com/library/windows/desktop/bb761395) 構造体を取得します。  この構造体がラスター オペレーション \(ROP\) のコードの使用を含む、現在のイメージの描画をカスタマイズするために使用できます。  ROP コードの詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [ラスター オペレーション操作符号](http://msdn.microsoft.com/library/windows/desktop/dd162892) と [ブラシとしてビットマップ](http://msdn.microsoft.com/library/windows/desktop/dd183378) を参照します。  
+ In addition to the Draw member function, another function, [DrawIndirect](../mfc/reference/cimagelist-class.md#drawindirect), extends the ability to render an image. `DrawIndirect` takes, as a parameter, an [IMAGELISTDRAWPARAMS](http://msdn.microsoft.com/library/windows/desktop/bb761395) structure. This structure can be used to customize the rendering of the current image, including the use of raster operation (ROP) codes. For more information on ROP codes, see [Raster Operation Codes](http://msdn.microsoft.com/library/windows/desktop/dd162892) and [Bitmaps as Brushes](http://msdn.microsoft.com/library/windows/desktop/dd183378) in the Windows SDK.  
   
-## 参照  
- [CImageList の使い方](../mfc/using-cimagelist.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CImageList](../mfc/using-cimagelist.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

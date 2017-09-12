@@ -1,50 +1,69 @@
 ---
-title: "Windows ソケット : ソケット クラスからの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "派生クラス, ソケット クラスから"
-  - "ソケット [C++], 派生 (ソケット クラスから)"
-  - "Windows ソケット [C++], 派生 (ソケット クラスから)"
+title: 'Windows Sockets: Deriving from Socket Classes | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- derived classes [MFC], from socket classes
+- Windows Sockets [MFC], deriving from socket classes
+- sockets [MFC], deriving from socket classes
 ms.assetid: 3a26e67a-e323-433b-9b05-eca018799801
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# Windows ソケット : ソケット クラスからの派生
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 796e65a7e54f1b98ea57b3682a6ef94db3e95524
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ソケットの 1 つがクラスから独自のクラスを派生することによって取得できる機能について説明します。  
+---
+# <a name="windows-sockets-deriving-from-socket-classes"></a>Windows Sockets: Deriving from Socket Classes
+This article describes some of the functionality you can gain by deriving your own class from one of the socket classes.  
   
- [CAsyncSocket](../Topic/CAsyncSocket%20Class.md) または [CSocket](../mfc/reference/csocket-class.md) から独自の機能を追加する独自のソケット クラスを派生できます。  たとえば、次のようなクラスには、オーバーライドできる一連の仮想メンバー関数を提供します。  これらの関数は、[OnReceive](../Topic/CAsyncSocket::OnReceive.md)[OnSend](../Topic/CAsyncSocket::OnSend.md)、[OnAccept](../Topic/CAsyncSocket::OnAccept.md)、[OnConnect](../Topic/CAsyncSocket::OnConnect.md)と [OnClose](../Topic/CAsyncSocket::OnClose.md)が含まれます。  ネットワーク イベントが発生すると指定する通知を利用するために派生ソケット クラスの関数をオーバーライドできます。  フレームワークは、読み始めることができるデータの受信などの重要なソケット イベントを通知するために、これらの通知コールバック関数を呼び出します。  通知関数の詳細については、「[Windows ソケット: ソケットの通知](../Topic/Windows%20Sockets:%20Socket%20Notifications.md)」を参照してください。  
+ You can derive your own socket classes from either [CAsyncSocket](../mfc/reference/casyncsocket-class.md) or [CSocket](../mfc/reference/csocket-class.md) to add your own functionality. In particular, these classes supply a number of virtual member functions that you can override. These functions include [OnReceive](../mfc/reference/casyncsocket-class.md#onreceive), [OnSend](../mfc/reference/casyncsocket-class.md#onsend), [OnAccept](../mfc/reference/casyncsocket-class.md#onaccept), [OnConnect](../mfc/reference/casyncsocket-class.md#onconnect), and [OnClose](../mfc/reference/casyncsocket-class.md#onclose). You can override the functions in your derived socket class to take advantage of the notifications they provide when network events occur. The framework calls these notification callback functions to notify you of important socket events, such as the receipt of data that you can begin reading. For more information about notification functions, see [Windows Sockets: Socket Notifications](../mfc/windows-sockets-socket-notifications.md).  
   
- また、クラス `CSocket` は [OnMessagePending](../Topic/CSocket::OnMessagePending.md) のメンバー関数 \(高度なオーバーライドできる\) を指定します。  MFC は、Windows ソケット ベースのメッセージ ポンプを行っているときにこの関数を呼び出します。  Windows から特定のメッセージを検索し、それに応答する `OnMessagePending` をオーバーライドできます。  
+ Additionally, class `CSocket` supplies the [OnMessagePending](../mfc/reference/csocket-class.md#onmessagepending) member function (an advanced overridable). MFC calls this function while the socket is pumping Windows-based messages. You can override `OnMessagePending` to look for particular messages from Windows and respond to them.  
   
- `OnMessagePending` の既定のバージョンは `CSocket` が完了するブロッキング呼び出しを待機している間 `WM_PAINT` メッセージのメッセージ キューを調べるクラスで指定します。  これは、表示品質を向上させるために描画メッセージをディスパッチします。  有効な操作を行うこと以外に、これは自分で関数をオーバーライドできる 1 種類の方法について説明します。  別の例として、次のタスクの `OnMessagePending` を使用することを検討してください。  完了するためにネットワーク トランザクションを待っている間に、モードレス ダイアログ ボックスを表示するとします。  ダイアログ ボックスが非常に長い時間がかかるブロッキングのトランザクションを取り消すために使用できるキャンセル ボタンが含まれています。  `OnMessagePending` のオーバーライドがこのモードレス ダイアログ ボックスに関連するメッセージをポンプして場合があります。  
+ The default version of `OnMessagePending` supplied in class `CSocket` examines the message queue for `WM_PAINT` messages while waiting for a blocking call to complete. It dispatches paint messages to improve display quality. Aside from doing something useful, this illustrates one way you might override the function yourself. As another example, consider using `OnMessagePending` for the following task. Suppose you display a modeless dialog box while waiting for a network transaction to complete. The dialog box contains a Cancel button that the user can use to cancel blocking transactions that take too long. Your `OnMessagePending` override might pump messages related to this modeless dialog box.  
   
- `OnMessagePending` のオーバーライドでは、呼び出しから `OnMessagePending`の基本クラス バージョンに **TRUE**。値を返します。  、まだする作業を実行する場合は、基本クラスのバージョンを呼び出します。  
+ In your `OnMessagePending` override, return either **TRUE** or the return from a call to the base-class version of `OnMessagePending`. Call the base-class version if it performs work that you still want done.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [Windows ソケット: アーカイブ付きソケットの使用](../mfc/windows-sockets-using-sockets-with-archives.md)  
+-   [Windows Sockets: Using Sockets with Archives](../mfc/windows-sockets-using-sockets-with-archives.md)  
   
--   [Windows ソケット: CAsyncSocket クラスの使い方](../mfc/windows-sockets-using-class-casyncsocket.md)  
+-   [Windows Sockets: Using Class CAsyncSocket](../mfc/windows-sockets-using-class-casyncsocket.md)  
   
--   [Windows ソケット: ブロッキング](../Topic/Windows%20Sockets:%20Blocking.md)  
+-   [Windows Sockets: Blocking](../mfc/windows-sockets-blocking.md)  
   
--   [Windows ソケット: バイト順序](../mfc/windows-sockets-byte-ordering.md)  
+-   [Windows Sockets: Byte Ordering](../mfc/windows-sockets-byte-ordering.md)  
   
--   [Windows ソケット: 文字列からの変換](../mfc/windows-sockets-converting-strings.md)  
+-   [Windows Sockets: Converting Strings](../mfc/windows-sockets-converting-strings.md)  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)
+
+

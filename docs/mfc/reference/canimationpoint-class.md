@@ -1,5 +1,5 @@
 ---
-title: "CAnimationPoint クラス |Microsoft ドキュメント"
+title: CAnimationPoint Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,7 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CAnimationPoint class
+- CAnimationPoint [MFC], CAnimationPoint
+- CAnimationPoint [MFC], AddTransition
+- CAnimationPoint [MFC], GetDefaultValue
+- CAnimationPoint [MFC], GetValue
+- CAnimationPoint [MFC], GetX
+- CAnimationPoint [MFC], GetY
+- CAnimationPoint [MFC], SetDefaultValue
+- CAnimationPoint [MFC], GetAnimationVariableList
+- CAnimationPoint [MFC], m_xValue
+- CAnimationPoint [MFC], m_yValue
 ms.assetid: 5dc4d46f-e695-4681-b15c-544b78b3e317
 caps.latest.revision: 17
 author: mikeblome
@@ -44,76 +53,76 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: a6a59ad85928c199a8dd911b915076ffbd0b0e37
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 51d905bb1215fc9147286536303272ac3cc9396d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="canimationpoint-class"></a>CAnimationPoint クラス
-座標をアニメーション化できる点の機能を実装します。  
+# <a name="canimationpoint-class"></a>CAnimationPoint Class
+Implements the functionality of a point whose coordinates can be animated.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CAnimationPoint : public CAnimationBaseObject;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationPoint::CAnimationPoint](#canimationpoint)|オーバーロードされます。 CAnimationPoint オブジェクトを構築します。|  
+|[CAnimationPoint::CAnimationPoint](#canimationpoint)|Overloaded. Constructs CAnimationPoint object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationPoint::AddTransition](#addtransition)|X の遷移を追加し、Y 座標。|  
-|[CAnimationPoint::GetDefaultValue](#getdefaultvalue)|X の既定値を返す座標と Y 座標。|  
-|[CAnimationPoint::GetValue](#getvalue)|現在の値を返します。|  
-|[CAnimationPoint::GetX](#getx)|X 座標の CAnimationVariable へのアクセスを提供します。|  
-|[CAnimationPoint::GetY](#gety)|Y 座標の CAnimationVariable へのアクセスを提供します。|  
-|[CAnimationPoint::SetDefaultValue](#setdefaultvalue)|既定値を設定します。|  
+|[CAnimationPoint::AddTransition](#addtransition)|Adds transitions for X and Y coordinates.|  
+|[CAnimationPoint::GetDefaultValue](#getdefaultvalue)|Returns the default values for X and Y coordinates.|  
+|[CAnimationPoint::GetValue](#getvalue)|Returns current value.|  
+|[CAnimationPoint::GetX](#getx)|Provides access to CAnimationVariable for X coordinate.|  
+|[CAnimationPoint::GetY](#gety)|Provides access to CAnimationVariable for Y coordinate.|  
+|[CAnimationPoint::SetDefaultValue](#setdefaultvalue)|Sets default value.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationPoint::GetAnimationVariableList](#getanimationvariablelist)|一覧にカプセル化されたアニメーション変数を追加します。 (上書き[CAnimationBaseObject::GetAnimationVariableList](../../mfc/reference/canimationbaseobject-class.md#getanimationvariablelist))。|  
+|[CAnimationPoint::GetAnimationVariableList](#getanimationvariablelist)|Puts the encapsulated animation variables into a list. (Overrides [CAnimationBaseObject::GetAnimationVariableList](../../mfc/reference/canimationbaseobject-class.md#getanimationvariablelist).)|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationPoint::operator CPoint](#operator_cpoint)|CAnimationPoint を CPoint に変換します。|  
-|[CAnimationPoint::operator =](#operator_eq)|CAnimationPoint ptSrc に割り当てます。|  
+|[CAnimationPoint::operator CPoint](#operator_cpoint)|Converts a CAnimationPoint to a CPoint.|  
+|[CAnimationPoint::operator=](#operator_eq)|Assigns ptSrc to CAnimationPoint.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationPoint::m_xValue](#m_xvalue)|カプセル化されたアニメーション変数を表す X アニメーション ポイントの座標。|  
-|[CAnimationPoint::m_yValue](#m_yvalue)|アニメーション ポイントの Y 座標を表すアニメーションをカプセル化された変数です。|  
+|[CAnimationPoint::m_xValue](#m_xvalue)|The encapsulated animation variable that represents X coordinate of animation point.|  
+|[CAnimationPoint::m_yValue](#m_yvalue)|The encapsulated animation variable that represents Y coordinate of animation point.|  
   
-## <a name="remarks"></a>コメント  
- CAnimationPoint クラスは、CAnimationVariable の&2; つのオブジェクトをカプセル化して、ポイントをアプリケーションで表すことができます。 たとえば、(文字列、円、ポイントなど) など、画面上のオブジェクトの位置をアニメーション化するのにこのクラスを使用できます。 アプリケーションでこのクラスを使用するだけこのクラスのオブジェクトをインスタンス化、CAnimationController::AddAnimationObject を使用してアニメーション コント ローラーを追加および呼び出しに適用される各移行につき AddTransition X および Y 座標。  
+## <a name="remarks"></a>Remarks  
+ The CAnimationPoint class encapsulates two CAnimationVariable objects and can represent in applications a point. For example, you can use this class to animate a position of any object on the screen (like text string, circle, point etc). To use this class in application, just instantiate an object of this class, add it to animation controller using CAnimationController::AddAnimationObject and call AddTransition for each transition to be applied to X and/or Y coordinates.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CAnimationBaseObject](../../mfc/reference/canimationbaseobject-class.md)  
   
  `CAnimationPoint`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxanimationcontroller.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxanimationcontroller.h  
   
-##  <a name="addtransition"></a>CAnimationPoint::AddTransition  
- X の遷移を追加し、Y 座標。  
+##  <a name="addtransition"></a>  CAnimationPoint::AddTransition  
+ Adds transitions for X and Y coordinates.  
   
 ```  
 void AddTransition(
@@ -121,18 +130,18 @@ void AddTransition(
     CBaseTransition* pYTransition);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pXTransition`  
- X 座標の遷移をへのポインター。  
+ A pointer to transition for X coordinates.  
   
  `pYTransition`  
- Y の移行へのポインターを調整します。  
+ A pointer to transition for Y coordinate.  
   
-### <a name="remarks"></a>コメント  
- X のアニメーション変数に適用する遷移の内部リストに指定された遷移を追加するには、この関数を呼び出す座標と Y 座標。 切り替え効果を追加すると、いないすぐに適用されるとなり内部リストに格納されています。 遷移 (特定の値のストーリー ボードへの追加) 適用 CAnimationController::AnimateGroup を呼び出すとします。 座標のいずれかの遷移を適用する必要としない場合は、NULL を渡すことができます。  
+### <a name="remarks"></a>Remarks  
+ Call this function to add the specified transitions to the internal list of transitions to be applied to animation variables for X and Y coordinates. When you add transitions, they are not applied immediately and stored in an internal list. Transitions are applied (added to a storyboard for a particular value) when you call CAnimationController::AnimateGroup. If you don't need to apply a transition to one of coordinates, you can pass NULL.  
   
-##  <a name="canimationpoint"></a>CAnimationPoint::CAnimationPoint  
- CAnimationPoint オブジェクトを構築します。  
+##  <a name="canimationpoint"></a>  CAnimationPoint::CAnimationPoint  
+ Constructs CAnimationPoint object.  
   
 ```  
 CAnimationPoint();
@@ -145,144 +154,144 @@ CAnimationPoint(
     DWORD dwUserData = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptDefault`  
- 既定の位置座標を指定します。  
+ Specifies default point coordinates.  
   
  `nGroupID`  
- グループ ID を指定します  
+ Specifies Group ID.  
   
  `nObjectID`  
- オブジェクト ID を指定します  
+ Specifies Object ID.  
   
  `dwUserData`  
- ユーザー定義データを指定します。  
+ Specifies user-defined data.  
   
-### <a name="remarks"></a>コメント  
- 既定のプロパティを持つ CAnimationPoint のオブジェクトを作成します。 ポイント座標を既定値、グループ ID とオブジェクト ID が 0 に設定されます。  
+### <a name="remarks"></a>Remarks  
+ Constructs CAnimationPoint object with default properties: default point coordinates, Group ID and Object ID are set to 0.  
   
-##  <a name="getanimationvariablelist"></a>CAnimationPoint::GetAnimationVariableList  
- 一覧にカプセル化されたアニメーション変数を追加します。  
+##  <a name="getanimationvariablelist"></a>  CAnimationPoint::GetAnimationVariableList  
+ Puts the encapsulated animation variables into a list.  
   
 ```  
 virtual void GetAnimationVariableList(CList<CAnimationVariable*, CAnimationVariable*>& lst);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lst`  
- 関数から返されたときに、X と Y 座標を表す&2; つの CAnimationVariable オブジェクトへのポインターを格納します。  
+ When the function returns, it contains pointers to two CAnimationVariable objects representing the X and Y coordinates.  
   
-##  <a name="getdefaultvalue"></a>CAnimationPoint::GetDefaultValue  
- X の既定値を返す座標と Y 座標。  
+##  <a name="getdefaultvalue"></a>  CAnimationPoint::GetDefaultValue  
+ Returns the default values for X and Y coordinates.  
   
 ```  
 CPoint GetDefaultValue();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 既定値を含むポイント。  
+### <a name="return-value"></a>Return Value  
+ A point containing default value.  
   
-### <a name="remarks"></a>コメント  
- コンス トラクターまたは SetDefaultValue で以前に設定された既定値を取得するには、この関数を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ Call this function to retrieve default value, which was previously set by constructor or SetDefaultValue.  
   
-##  <a name="getvalue"></a>CAnimationPoint::GetValue  
- 現在の値を返します。  
+##  <a name="getvalue"></a>  CAnimationPoint::GetValue  
+ Returns current value.  
   
 ```  
 BOOL GetValue(CPoint& ptValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptValue`  
- 出力します。 このメソッドが戻るとき、現在の値が含まれます。  
+ Output. Contains the current value when this method returns.  
   
-### <a name="return-value"></a>戻り値  
- 現在の値の取得が成功した場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE, if the current value was successfully retrieved; otherwise FALSE.  
   
-### <a name="remarks"></a>コメント  
- アニメーション ポイントの現在の値を取得するには、この関数を呼び出します。 このメソッドが失敗したか、基になる COM オブジェクトの x、Y 座標が初期化されていない場合は、ptValue には、コンス トラクターまたは SetDefaultValue によって以前に設定された既定値が含まれています。  
+### <a name="remarks"></a>Remarks  
+ Call this function to retrieve the current value of animation point. If this method fails or underlying COM objects for X and Y coordinates have not been initialized, ptValue contains default value, which was previously set in constructor or by SetDefaultValue.  
   
-##  <a name="getx"></a>CAnimationPoint::GetX  
- X 座標の CAnimationVariable へのアクセスを提供します。  
+##  <a name="getx"></a>  CAnimationPoint::GetX  
+ Provides access to CAnimationVariable for X coordinate.  
   
 ```  
 CAnimationVariable& GetX();
 ```  
   
-### <a name="return-value"></a>戻り値  
- X を表すカプセル化された CAnimationVariable への参照を調整します。  
+### <a name="return-value"></a>Return Value  
+ A reference to encapsulated CAnimationVariable representing X coordinate.  
   
-### <a name="remarks"></a>コメント  
- X を表す、基になる CAnimationVariable への直接アクセスを取得するには、このメソッドを呼び出すことができますを調整します。  
+### <a name="remarks"></a>Remarks  
+ You can call this method to get direct access to underlying CAnimationVariable representing X coordinate.  
   
-##  <a name="gety"></a>CAnimationPoint::GetY  
- Y 座標の CAnimationVariable へのアクセスを提供します。  
+##  <a name="gety"></a>  CAnimationPoint::GetY  
+ Provides access to CAnimationVariable for Y coordinate.  
   
 ```  
 CAnimationVariable& GetY();
 ```  
   
-### <a name="return-value"></a>戻り値  
- Y 座標を表すカプセル化された CAnimationVariable への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to encapsulated CAnimationVariable representing Y coordinate.  
   
-### <a name="remarks"></a>コメント  
- Y 座標を表す、基になる CAnimationVariable への直接アクセスを取得するには、このメソッドを呼び出すことができます。  
+### <a name="remarks"></a>Remarks  
+ You can call this method to get direct access to underlying CAnimationVariable representing Y coordinate.  
   
-##  <a name="m_xvalue"></a>CAnimationPoint::m_xValue  
- カプセル化されたアニメーション変数を表す X アニメーション ポイントの座標。  
+##  <a name="m_xvalue"></a>  CAnimationPoint::m_xValue  
+ The encapsulated animation variable that represents X coordinate of animation point.  
   
 ```  
 CAnimationVariable m_xValue;  
 ```  
   
-##  <a name="m_yvalue"></a>CAnimationPoint::m_yValue  
- アニメーション ポイントの Y 座標を表すアニメーションをカプセル化された変数です。  
+##  <a name="m_yvalue"></a>  CAnimationPoint::m_yValue  
+ The encapsulated animation variable that represents Y coordinate of animation point.  
   
 ```  
 CAnimationVariable m_yValue;  
 ```  
   
-##  <a name="operator_cpoint"></a>CAnimationPoint::operator CPoint  
- CAnimationPoint を CPoint に変換します。  
+##  <a name="operator_cpoint"></a>  CAnimationPoint::operator CPoint  
+ Converts a CAnimationPoint to a CPoint.  
   
 ```  
 operator CPoint();
 ```   
   
-### <a name="return-value"></a>戻り値  
- CPoint として CAnimationPoint の現在の値。  
+### <a name="return-value"></a>Return Value  
+ Current value of CAnimationPoint as CPoint.  
   
-### <a name="remarks"></a>コメント  
- この関数は、GetValue を内部的に呼び出します。 返されるポイントが X の既定値を格納する GetValue 何らかの理由で失敗すると、座標と Y 座標。  
+### <a name="remarks"></a>Remarks  
+ This function internally calls GetValue. If GetValue for some reason fails, the returned point will contain default values for X and Y coordinates.  
   
-##  <a name="operator_eq"></a>CAnimationPoint::operator =  
- CAnimationPoint ptSrc に割り当てます。  
+##  <a name="operator_eq"></a>  CAnimationPoint::operator=  
+ Assigns ptSrc to CAnimationPoint.  
   
 ```  
 void operator=(const CPoint& ptSrc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptSrc`  
- CPoint またはポイントを表します。  
+ Refers to CPoint or POINT.  
   
-### <a name="remarks"></a>コメント  
- CAnimationPoint ptSrc に割り当てます。 いるアニメーションの開始前にこの演算子は SetDefaultValue を呼び出すため、基になる COM を再作成するオブジェクトの X 座標と Y 座標が作成された場合に行うことをお勧めします。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
+### <a name="remarks"></a>Remarks  
+ Assigns ptSrc to CAnimationPoint. It's recommended to do that before animation start, because this operator calls SetDefaultValue, which recreates the underlying COM objects for X and Y coordinates if they have been created. If you subscribed this animation object to events (ValueChanged or IntegerValueChanged), you need to re-enable these events.  
   
-##  <a name="setdefaultvalue"></a>CAnimationPoint::SetDefaultValue  
- 既定値を設定します。  
+##  <a name="setdefaultvalue"></a>  CAnimationPoint::SetDefaultValue  
+ Sets default value.  
   
 ```  
 void SetDefaultValue(const POINT& ptDefault);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptDefault`  
- ポイントの既定値を指定します。  
+ Specifies the default point value.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用すると、アニメーション オブジェクトを既定値を設定できます。 このメソッドは割り当て、既定値をアニメーション ポイントの座標 X と Y 座標。 作成された場合は、基になる COM オブジェクトも再作成します。 このアニメーション オブジェクト (ValueChanged または IntegerValueChanged) イベントをサブスクライブしている場合は、これらのイベントを再度有効にする必要があります。  
+### <a name="remarks"></a>Remarks  
+ Use this function to set a default value to animation object. This methods assigns default values to X and Y coordinates of animation point. It also recreates underlying COM objects if they have been created. If you subscribed this animation object to events (ValueChanged or IntegerValueChanged), you need to re-enable these events.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

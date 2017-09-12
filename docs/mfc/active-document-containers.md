@@ -1,73 +1,90 @@
 ---
-title: "Active ドキュメント コンテナー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Active ドキュメント コンテナー [C++]"
-  - "アクティブ ドキュメント [C++], コンテナー"
-  - "コンテナー [C++], アクティブ ドキュメント"
-  - "MFC COM [C++], Active ドキュメント コンテインメント"
+title: Active Document Containers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- active documents [MFC], containers
+- active document containers [MFC]
+- containers [MFC], active document
+- MFC COM, active document containment
 ms.assetid: ba20183a-8b4c-440f-9031-e5fcc41d391b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# Active ドキュメント コンテナー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9a6d09ae7dc4e81051c8ea78106f8327a1c7103b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Active ドキュメント コンテナーは、Microsoft Office バインダーまたは Internet Explorer など、一つのフレーム内の別のアプリケーションの種類のマルチ ドキュメントを使用できます。各ドキュメントの種類に対する複数のフレームを作成し、使用する代わりになります。  
+---
+# <a name="active-document-containers"></a>Active Document Containers
+An active document container, such as Microsoft Office Binder or Internet Explorer, allows you to work with several documents of different application types within a single frame (instead of forcing you to create and use multiple application frames for each document type).  
   
- MFC は `COleDocObjectItem` クラスの Active ドキュメント コンテナーに完全にサポートされています。  MFC アプリケーション ウィザードの **複合ドキュメント サポート** ページの **Active ドキュメント コンテナー\(D\)** のチェック ボックスをオンにして Active ドキュメント コンテナーを作成するには、MFC アプリケーション ウィザードを使用できます。  詳細については、「[Active ドキュメント コンテナー アプリケーションの作成](../mfc/creating-an-active-document-container-application.md)」を参照してください。  
+ MFC provides full support for active document containers in the `COleDocObjectItem` class. You can use the MFC Application Wizard to create an active document container by selecting the **Active document container** check box on the **Compound Document Support** page of the MFC Application Wizard. For more information, see [Creating an Active Document Container Application](../mfc/creating-an-active-document-container-application.md).  
   
- アクティブ ドキュメント コンテナーの詳細については、参照します:  
+ For more information about active document containers, see:  
   
--   [コンテナーの要件](#container_requirements)  
+-   [Container Requirements](#container_requirements)  
   
--   [ドキュメントのサイト オブジェクト](#document_site_objects)  
+-   [Document Site Objects](#document_site_objects)  
   
--   [ビューのサイト オブジェクト](#view_site_objects)  
+-   [View Site Objects](#view_site_objects)  
   
--   [オブジェクトの構築](#frame_object)  
+-   [Frame Object](#frame_object)  
   
--   [ヘルプ メニューのマージ](../Topic/Help%20Menu%20Merging.md)  
+-   [Help Menu Merging](../mfc/help-menu-merging.md)  
   
--   [プログラムによる印刷](../mfc/programmatic-printing.md)  
+-   [Programmatic Printing](../mfc/programmatic-printing.md)  
   
--   [コマンドの対象](../mfc/message-handling-and-command-targets.md)  
+-   [Command Targets](../mfc/message-handling-and-command-targets.md)  
   
-##  <a name="container_requirements"></a> コンテナーの要件  
- Active ドキュメント コンテナーのアクティブ ドキュメントのサポートは、インターフェイスの実装を意味します: また、あるオブジェクトのインターフェイスの使用に関する知識が必要です。  これは、アクティブ ドキュメント内の機能拡張インターフェイス自体を使用する方法をコンテナーもがあるアクティブ ドキュメントの拡張機能に適用します。  
+##  <a name="container_requirements"></a> Container Requirements  
+ Active document support in an active document container implies more than just interface implementations: it also requires knowledge of using the interfaces of a contained object. The same applies to active document extensions, where the container must also know how to use those extension interfaces on the active documents themselves.  
   
- アクティブ文書を統合する Active ドキュメント コンテナーがあります:  
+ An active document container that integrates active documents must:  
   
--   **IPersistStorage** インターフェイスを通じてオブジェクト ストレージの処理が有効になります。つまり、各アクティブ ドキュメントに `IStorage` のインスタンスを指定する必要があります。  
+-   Be capable of handling object storage through the **IPersistStorage** interface, that is, it must provide an `IStorage` instance to each active document.  
   
--   OLE ドキュメントの基本機能の埋め込みをサポートする「サイト」が小さくするドキュメントまたは埋め込み 1 レベルあたり 1\) が実装 **IOleClientSite** と **IAdviseSink**に表示します。  
+-   Support the basic embedding features of OLE documents, necessitating "site" objects (one per document or embedding) that implement **IOleClientSite** and **IAdviseSink**.  
   
--   埋め込みオブジェクトまたはアクティブ ドキュメントのサポート、埋め込み先編集の有効化。  コンテナーのサイト オブジェクトは `IOleInPlaceSite` を実装し、コンテナーのフレーム オブジェクトは **IOleInPlaceFrame**を提供する必要があります。  
+-   Support in-place activation of embedded objects or active documents. The container's site objects must implement `IOleInPlaceSite` and the container's frame object must provide **IOleInPlaceFrame**.  
   
--   `IOleDocumentSite` の機能を提供する実装にアクティブ ドキュメントの拡張をコンテナーがドキュメントと通信できるようにサポートします。  必要に応じて、コンテナーは印刷または保存などの単純なコマンドを受け取るようにアクティブ ドキュメント インターフェイス `IOleCommandTarget` と `IContinueCallback` を実装できます。  
+-   Support the active documents' extensions by implementing `IOleDocumentSite` to provide the mechanism for the container to talk to the document. Optionally, the container can implement the active document interfaces `IOleCommandTarget` and `IContinueCallback` to pick up simple commands such as printing or saving.  
   
- フレーム オブジェクト、ビュー オブジェクトとコンテナー オブジェクトには、オプションで [コマンドの対象](../mfc/message-handling-and-command-targets.md)"に説明されているように、特定のコマンドにディスパッチをサポートするように **IOleCommandTarget** を実装できます。  ビューとコンテナー オブジェクトもサポートするように `IPrint` と `IContinueCallback`を、[プログラムによる印刷](../mfc/programmatic-printing.md)"に説明されているように、プログラムによる印刷を実装できます。  
+ The frame object, the view objects, and the container object can optionally implement **IOleCommandTarget** to support the dispatch of certain commands, as discussed in [Command Targets](../mfc/message-handling-and-command-targets.md). View and container objects can also optionally implement `IPrint` and `IContinueCallback`, to support programmatic printing, as discussed in [Programmatic Printing](../mfc/programmatic-printing.md).  
   
- 次の図は、コンテナーとコンポーネントの間の概念的な関係 \(左\) と、アクティブ ドキュメントとビューを示します \(右側\)。  Active ドキュメントはストレージおよびデータを管理し、またはオプションでデータを表示します。  太字のインターフェイスは、アクティブ ドキュメントの参加に必要なアクティビティを; これらの太字と斜体は省略可能です。  他のインターフェイスは、すべてが必要です。  
+ The following figure shows the conceptual relationships between a container and its components (at left), and the active document and its views (at right). The active document manages storage and data, and the view displays or optionally prints that data. Interfaces in bold are those required for active document participation; those bold and italic are optional. All other interfaces are required.  
   
- ![アクティブ ドキュメント コンテナー インターフェイス](../mfc/media/vc37gj1.gif "vc37gj1")  
+ ![Active document container interfaces](../mfc/media/vc37gj1.gif "vc37gj1")  
   
- 一つのビューだけをサポートするドキュメントが単一の具象クラス ビューとドキュメントのコンポーネントの両方 \(つまり、対応するインターフェイス\) を実装できます。  また、1 種類のビューだけを一度にサポートするコンテナーのサイトは単一の具体的なサイト クラスにドキュメントのサイトとビューのサイトを結合できます。  ただし、コンテナーのフレーム オブジェクトは個別のままで、アーキテクチャの完全なピクチャを付けるためにコンテナーのドキュメントのコンポーネントは、ここでは説明しています; これは Active ドキュメント コンテインメントのアーキテクチャの影響を受けません。  
+ A document that supports only a single view can implement both the view and document components (that is, their corresponding interfaces) on a single concrete class. In addition, a container site that only supports one view at a time can combine the document site and the view site into a single concrete site class. The container's frame object, however, must remain distinct, and the container's document component is merely included here to give a complete picture of the architecture; it is not affected by the active document containment architecture.  
   
-##  <a name="document_site_objects"></a> ドキュメントのサイト オブジェクト  
- Active ドキュメント コンテインメントのアーキテクチャでは、ドキュメントのサイトは `IOleDocument` インターフェイスの追加を含む OLE ドキュメントのクライアント サイト オブジェクトと同じです:  
+##  <a name="document_site_objects"></a> Document Site Objects  
+ In the active document containment architecture, a document site is the same as a client site object in OLE Documents with the addition of the `IOleDocument` interface:  
   
  `interface IOleDocumentSite : IUnknown`  
   
@@ -77,17 +94,19 @@ Active ドキュメント コンテナーは、Microsoft Office バインダー�
   
  `}`  
   
- ドキュメントのサイトで概念的には一つ以上のビュー「サイト」オブジェクトのコンテナーです。  各ビューにサイト オブジェクトはドキュメントのサイトで管理されているドキュメントの個々のビュー オブジェクトが関連付けられます。  コンテナーがドキュメントのサイトごとに一つのビューだけをサポートする場合は、単一の具象クラスを使用してドキュメントのサイトやビューのサイトを実装できます。  
+ The document site is conceptually the container for one or more "view site" objects. Each view site object is associated with individual view objects of the document managed by the document site. If the container only supports a single view per document site, then it can implement the document site and the view site with a single concrete class.  
   
-##  <a name="view_site_objects"></a> ビューのサイト オブジェクト  
- コンテナーのサイト オブジェクトはドキュメントの特定のビューの表示領域を管理します。  `IOleInPlaceSite` 標準インターフェイスのサポートに加えて、ビューのサイトには、通常、プログラムによる印刷コントロールの `IContinueCallback` を実装します。`IContinueCallback`。これに対して、ビュー オブジェクトのクエリはどのオブジェクトにコンテナー実際に実装することで、\(メモになります\)。  
+##  <a name="view_site_objects"></a> View Site Objects  
+ A container's view site object manages the display space for a particular view of a document. In addition to supporting the standard `IOleInPlaceSite` interface, a view site also generally implements `IContinueCallback` for programmatic printing control. (Note that the view object never queries for `IContinueCallback` so it can actually be implemented on any object the container desires.)  
   
- 複数のビューをサポートするコンテナーでは、ドキュメントのサイト内の複数のビューをサイト オブジェクトを作成できることが必要です。  これは `IOleInPlaceSite`して別のアクティブ化および非アクティブ化サービスを各ビューにそのまま表示されます。  
+ A container that supports multiple views must be able to create multiple view site objects within the document site. This provides each view with separate activation and deactivation services as provided through `IOleInPlaceSite`.  
   
-##  <a name="frame_object"></a> オブジェクトの構築  
- コンテナーのフレーム オブジェクトは、ほとんどの場合、OLE ドキュメントで埋め込み先編集の有効化、メニュー、およびツール バー ネゴシエーションを処理する、つまり 1 で使用されているフレームです。  ビュー オブジェクトに **IOleInPlaceSite::GetWindowContext**でも \(コンテナー オブジェクトへのアクセスを表すペイン レベルのツール バー交渉、および含まれるオブジェクトの列挙体を処理できる提供する\) コンテナー ドキュメントこのフレーム オブジェクトにアクセスできます。  
+##  <a name="frame_object"></a> Frame Object  
+ The container's frame object is, for the most part, the same frame that is used for in-place activation in OLE Documents, that is, the one that handles menu and toolbar negotiation. A view object has access to this frame object through **IOleInPlaceSite::GetWindowContext**, which also provides access to the container object representing the container document (which can handle pane-level toolbar negotiation and contained object enumeration).  
   
- Active ドキュメント コンテナーは `IOleCommandTarget`を追加して、フレームを生成できます。  このインターフェイスは、コンテナーが同じコマンドを送信するようになる方がアクティブ ドキュメントのユーザー インターフェイスに同じ方法で作成されたコマンドを受け取るようになります。**File New**、**開く**、**\[名前を付けて保存\]**、**印刷**など\) ; **コピーの編集**、**貼り付け**、**元に戻す**、アクティブ ドキュメントへのなど\)。  詳細については、「[コマンドの対象](../mfc/message-handling-and-command-targets.md)」を参照してください。  
+ An active document container can augment the frame by adding `IOleCommandTarget`. This allows it to receive commands that originate in the active document's user interface in the same way that this interface can allow a container to send the same commands (such as **File New**, **Open**, **Save As**, **Print**; **Edit Copy**, **Paste**, **Undo**, and others) to an active document. For more information, see [Command Targets](../mfc/message-handling-and-command-targets.md).  
   
-## 参照  
- [Active ドキュメント コンテインメント](../mfc/active-document-containment.md)
+## <a name="see-also"></a>See Also  
+ [Active Document Containment](../mfc/active-document-containment.md)
+
+

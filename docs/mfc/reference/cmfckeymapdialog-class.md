@@ -1,5 +1,5 @@
 ---
-title: "CMFCKeyMapDialog クラス |Microsoft ドキュメント"
+title: CMFCKeyMapDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,7 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCKeyMapDialog class
+- CMFCKeyMapDialog [MFC], CMFCKeyMapDialog
+- CMFCKeyMapDialog [MFC], DoModal
+- CMFCKeyMapDialog [MFC], FormatItem
+- CMFCKeyMapDialog [MFC], GetCommandKeys
+- CMFCKeyMapDialog [MFC], OnInsertItem
+- CMFCKeyMapDialog [MFC], OnPrintHeader
+- CMFCKeyMapDialog [MFC], OnPrintItem
+- CMFCKeyMapDialog [MFC], OnSetColumns
+- CMFCKeyMapDialog [MFC], PrintKeyMap
+- CMFCKeyMapDialog [MFC], SetColumnsWidth
 ms.assetid: 5feb4942-d636-462d-a162-0104dd320f4e
 caps.latest.revision: 26
 author: mikeblome
@@ -44,55 +53,55 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 6599f5c3cda6eb407f4545d42528c1c68950b94c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 53142cc9536fdea778e9725378415e2c44be3042
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfckeymapdialog-class"></a>CMFCKeyMapDialog クラス
-`CMFCKeyMapDialog`クラスは、コマンド、キーボードのキーを割り当てるコントロールをサポートします。  
+# <a name="cmfckeymapdialog-class"></a>CMFCKeyMapDialog Class
+The `CMFCKeyMapDialog` class supports a control that maps commands to keys on the keyboard.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCKeyMapDialog : public CDialogEx  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCKeyMapDialog::CMFCKeyMapDialog](#cmfckeymapdialog)|`CMFCKeyMapDialog` オブジェクトを構築します。|  
+|[CMFCKeyMapDialog::CMFCKeyMapDialog](#cmfckeymapdialog)|Constructs a `CMFCKeyMapDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCKeyMapDialog::DoModal](#domodal)|キーボードのマップ ダイアログ ボックスが表示されます。|  
+|[CMFCKeyMapDialog::DoModal](#domodal)|Displays a keyboard mapping dialog box.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCKeyMapDialog::FormatItem](#formatitem)|キーのマッピングを表す文字列を構築するためにフレームワークによって呼び出されます。 既定では、文字列には、コマンド名、ショートカット キー、およびショートカット キーの説明が含まれています。|  
-|[CMFCKeyMapDialog::GetCommandKeys](#getcommandkeys)|指定されたコマンドに関連付けられているショートカット キーの一覧を含む文字列を取得します。|  
-|[CMFCKeyMapDialog::OnInsertItem](#oninsertitem)|キーボード マップ コントロールをサポートする内部リスト コントロールに新しい項目が挿入される前に、フレームワークによって呼び出されます。|  
-|[CMFCKeyMapDialog::OnPrintHeader](#onprintheader)|新しいページのキーボード マップのヘッダーを印刷するために、フレームワークによって呼び出されます。|  
-|[CMFCKeyMapDialog::OnPrintItem](#onprintitem)|キーボード マップ項目を印刷するためにフレームワークによって呼び出されます。|  
-|[CMFCKeyMapDialog::OnSetColumns](#onsetcolumns)|キーボード マップ コントロールをサポートする内部リスト コントロール内の列のキャプションを設定するためにフレームワークによって呼び出されます。|  
-|[CMFCKeyMapDialog::PrintKeyMap](#printkeymap)|ユーザーがクリックしたときに、フレームワークによって呼び出されます、**印刷** ボタンをクリックします。|  
-|[CMFCKeyMapDialog::SetColumnsWidth](#setcolumnswidth)|キーボード マップ コントロールをサポートする内部リスト コントロール内の列の幅を設定するためにフレームワークによって呼び出されます。|  
+|[CMFCKeyMapDialog::FormatItem](#formatitem)|Called by the framework to build a string that describes a key mapping. By default, the string contains the command name, the shortcut keys used, and the shortcut key description.|  
+|[CMFCKeyMapDialog::GetCommandKeys](#getcommandkeys)|Retrieves a string that contains a list of shortcut keys associated with the specified command.|  
+|[CMFCKeyMapDialog::OnInsertItem](#oninsertitem)|Called by the framework before a new item is inserted into the internal list control that supports the keyboard mapping control.|  
+|[CMFCKeyMapDialog::OnPrintHeader](#onprintheader)|Called by the framework to print the header for the keyboard map on a new page.|  
+|[CMFCKeyMapDialog::OnPrintItem](#onprintitem)|Called by the framework to print a keyboard mapping item.|  
+|[CMFCKeyMapDialog::OnSetColumns](#onsetcolumns)|Called by the framework to set captions for the columns in the internal list control that supports the keyboard mapping control.|  
+|[CMFCKeyMapDialog::PrintKeyMap](#printkeymap)|Called by the framework when a user clicks the **Print** button.|  
+|[CMFCKeyMapDialog::SetColumnsWidth](#setcolumnswidth)|Called by the framework to set the width of the columns in the internal list control that supports the keyboard mapping control.|  
   
-## <a name="remarks"></a>コメント  
- 使用して、`CMFCKeyMapDialog`サイズ変更可能なキーボード マップ ダイアログ ボックスを実装するクラス。 ダイアログ ボックスでは、キーボード ショートカットとそれに関連付けられているコマンドを表示するのにリスト ビュー コントロールを使用します。  
+## <a name="remarks"></a>Remarks  
+ Use the `CMFCKeyMapDialog` class to implement a resizable keyboard mapping dialog box. The dialog box uses a list view control to display keyboard shortcuts and their associated commands.  
   
- 使用する、`CMFCKeyMapDialog`クラスのアプリケーションで、ポインターを渡すメイン フレーム ウィンドウへのパラメーターとして、`CMFCKeyMapDialog`コンス トラクターです。 まず、`DoModal`モーダル ダイアログ ボックスを起動する方法です。  
+ To use the `CMFCKeyMapDialog` class in an application, pass in a pointer to the main frame window as a parameter to the `CMFCKeyMapDialog` constructor. Then call the `DoModal` method to start a modal dialog box.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -105,11 +114,11 @@ class CMFCKeyMapDialog : public CDialogEx
   
  [CMFCKeyMapDialog](../../mfc/reference/cmfckeymapdialog-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxkeymapdialog.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxkeymapdialog.h  
   
-##  <a name="cmfckeymapdialog"></a>CMFCKeyMapDialog::CMFCKeyMapDialog  
- `CMFCKeyMapDialog` オブジェクトを構築します。  
+##  <a name="cmfckeymapdialog"></a>  CMFCKeyMapDialog::CMFCKeyMapDialog  
+ Constructs a `CMFCKeyMapDialog` object.  
   
 ```  
 CMFCKeyMapDialog(
@@ -117,67 +126,67 @@ CMFCKeyMapDialog(
     BOOL bEnablePrint=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pWndParentFrame`  
- 親ウィンドウへのポインター、`CMFCKeyMapDialog`オブジェクトです。  
+### <a name="parameters"></a>Parameters  
+ [in] `pWndParentFrame`  
+ A pointer to the parent window of the `CMFCKeyMapDialog` object.  
   
- [入力] `bEnablePrint`  
- `TRUE`アクセラレータ キーの一覧を印刷する場合それ以外の場合、`FALSE`です。 既定値は、`FALSE` です。  
+ [in] `bEnablePrint`  
+ `TRUE` if the list of accelerator keys can be printed; otherwise, `FALSE`. The default is `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-### <a name="example"></a>例  
- 次の例のオブジェクトを構築する方法、`CMFCKeyMapDialog`クラスです。 この例は、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to construct an object of the `CMFCKeyMapDialog` class. This example is part of the [Visual Studio Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_VisualStudioDemo #&21;](../../mfc/codesnippet/cpp/cmfckeymapdialog-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_VisualStudioDemo#21](../../mfc/codesnippet/cpp/cmfckeymapdialog-class_1.cpp)]  
   
-##  <a name="domodal"></a>CMFCKeyMapDialog::DoModal  
- キーボードのマップ ダイアログ ボックスが表示されます。  
+##  <a name="domodal"></a>  CMFCKeyMapDialog::DoModal  
+ Displays a keyboard mapping dialog box.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 符号付き整数など`IDOK`または`IDCANCEL`、つまりに渡される、 [CDialog::EndDialog](../../mfc/reference/cdialog-class.md#enddialog)メソッドです。 メソッドは、さらに、ダイアログ ボックスを閉じます。 詳細については、次を参照してください。 [CDialog::DoModal](../../mfc/reference/cdialog-class.md#domodal)します。  
+### <a name="return-value"></a>Return Value  
+ A signed integer, such as `IDOK` or `IDCANCEL`, that is passed to the [CDialog::EndDialog](../../mfc/reference/cdialog-class.md#enddialog) method. The method, in turn, closes the dialog box. For more information, see [CDialog::DoModal](../../mfc/reference/cdialog-class.md#domodal).  
   
-### <a name="remarks"></a>コメント  
- キーボード マップ ダイアログ ボックスを選択し、コマンドのさまざまなカテゴリにアクセラレータ キーを設定できます。 さらに、選択したアクセラレータ キーとその説明をクリップボードにコピーすることができます。  
+### <a name="remarks"></a>Remarks  
+ The keyboard mapping dialog box enables you to select and assign accelerator keys to various categories of commands. In addition, you can copy the selected accelerator keys and their description to the clipboard.  
   
-##  <a name="formatitem"></a>CMFCKeyMapDialog::FormatItem  
- キーのマッピングを表す文字列を構築するためにフレームワークによって呼び出されます。 既定では、文字列には、コマンド名、ショートカット キー、およびショートカット キーの説明が含まれています。  
+##  <a name="formatitem"></a>  CMFCKeyMapDialog::FormatItem  
+ Called by the framework to build a string that describes a key mapping. By default, the string contains the command name, the shortcut keys used, and the shortcut key description.  
   
 ```  
 virtual CString FormatItem(int nItem) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nItem`  
- キー マップの内部リストに項目の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `nItem`  
+ The zero-based index of an item in the internal list of key mappings.  
   
-### <a name="return-value"></a>戻り値  
- A`CString`を書式設定された項目のテキストを含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object that contains the formatted item text.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcommandkeys"></a>CMFCKeyMapDialog::GetCommandKeys  
- 文字列値を取得します。 文字列には、指定されたコマンドに関連付けられているショートカット キーの一覧が含まれています。  
+##  <a name="getcommandkeys"></a>  CMFCKeyMapDialog::GetCommandKeys  
+ Retrieves a string value. The string contains a list of shortcut keys that are associated with a specified command.  
   
 ```  
 virtual CString GetCommandKeys(UINT uiCmdID) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiCmdID`  
- コマンド id。  
+### <a name="parameters"></a>Parameters  
+ [in] `uiCmdID`  
+ A command ID.  
   
-### <a name="return-value"></a>戻り値  
- セミコロンで区切られた、指定されたコマンドに関連付けられているショートカット キーの (';') の一覧です。  
+### <a name="return-value"></a>Return Value  
+ A semicolon-delimited (';') list of shortcut keys that is associated with the specified command.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="oninsertitem"></a>CMFCKeyMapDialog::OnInsertItem  
- キーボード マップ コントロールをサポートする内部リスト コントロールに新しい項目が挿入される前に、フレームワークによって呼び出されます。  
+##  <a name="oninsertitem"></a>  CMFCKeyMapDialog::OnInsertItem  
+ Called by the framework before a new item is inserted into an internal list control that supports the keyboard mapping control.  
   
 ```  
 virtual void OnInsertItem(
@@ -185,17 +194,17 @@ virtual void OnInsertItem(
     int nItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pButton`  
- キーボードのキーの組み合わせをコマンドの名前と説明にマップするために使用するツール バー ボタンへのポインター。 キー マップ項目は、内部リスト コントロールに格納されます。  
+### <a name="parameters"></a>Parameters  
+ [in] `pButton`  
+ A pointer to a toolbar button that is used to map a keyboard key combination to a command name and description. The key map item is stored in an internal list control.  
   
- [入力] `nItem`  
- 内部リスト コントロールに新しいキー マップ項目を挿入する場所を指定する&0; から始まるインデックス。  
+ [in] `nItem`  
+ A zero-based index that specifies where to insert the new key map item in the internal list control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onprintheader"></a>CMFCKeyMapDialog::OnPrintHeader  
- 新しいページのキーボード マップのヘッダーを印刷するために、フレームワークによって呼び出されます。  
+##  <a name="onprintheader"></a>  CMFCKeyMapDialog::OnPrintHeader  
+ Called by the framework to print the header for the keyboard map on a new page.  
   
 ```  
 virtual int OnPrintHeader(
@@ -204,24 +213,24 @@ virtual int OnPrintHeader(
     int cx) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `dc`  
- プリンター デバイス コンテキスト。  
+### <a name="parameters"></a>Parameters  
+ [in] `dc`  
+ The device context for the printer.  
   
- [入力] `nPage`  
- 印刷するページ番号です。  
+ [in] `nPage`  
+ The page number to print.  
   
- [入力] `cx`  
- ピクセル単位でヘッダーの横方向のオフセット。  
+ [in] `cx`  
+ The horizontal offset of the header, in pixels.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、印刷したテキストの高さ。 詳細については、の戻り値を参照してください[CDC::DrawText](../../mfc/reference/cdc-class.md#drawtext)します。  
+### <a name="return-value"></a>Return Value  
+ If successful, the height of the printed text. For more information, see the Return Value section of [CDC::DrawText](../../mfc/reference/cdc-class.md#drawtext).  
   
-### <a name="remarks"></a>コメント  
- フレームワークでは、このメソッドを使用して、キーボード マップを印刷します。 既定では、このメソッドは、ページ番号、アプリケーション名、およびダイアログ ボックスのタイトルを出力します。  
+### <a name="remarks"></a>Remarks  
+ The framework uses this method to print the keyboard map. By default, this method prints the page number, application name, and dialog box title.  
   
-##  <a name="onprintitem"></a>CMFCKeyMapDialog::OnPrintItem  
- キーボード マップ項目を印刷するためにフレームワークによって呼び出されます。  
+##  <a name="onprintitem"></a>  CMFCKeyMapDialog::OnPrintItem  
+ Called by the framework to print a keyboard mapping item.  
   
 ```  
 virtual int OnPrintItem(
@@ -232,60 +241,60 @@ virtual int OnPrintItem(
     BOOL bCalcHeight) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `dc`  
- プリンター デバイス コンテキスト。  
+### <a name="parameters"></a>Parameters  
+ [in] `dc`  
+ The device context of the printer.  
   
- [入力] `nItem`  
- 印刷する項目の&0; から始まるインデックス。  
+ [in] `nItem`  
+ The zero-based index of the item to print.  
   
- [入力] `y`  
- ページの上部と項目の位置の垂直オフセット。  
+ [in] `y`  
+ The vertical offset between the top of the page and the position of the item.  
   
- [入力] `cx`  
- ページの左側と項目の位置の水平方向のオフセット。  
+ [in] `cx`  
+ The horizontal offset between the left of the page and the position of the item.  
   
- [入力] `bCalcHeight`  
- `TRUE`最適な印刷項目の高さを計算するには`FALSE`を切り捨てます印刷既定の領域に収まるようにします。  
+ [in] `bCalcHeight`  
+ `TRUE` to calculate the best height for the print item; `FALSE` to truncate the print item so that it fits the default space.  
   
-### <a name="return-value"></a>戻り値  
- 印刷対象の項目の高さ。  
+### <a name="return-value"></a>Return Value  
+ The height of the printed item.  
   
-### <a name="remarks"></a>コメント  
- フレームワークでは、キー マップ ダイアログ ボックスの項目を印刷するには、このメソッドを呼び出します。 既定では、このメソッドは、項目のコマンド名、ショートカット キー、およびコマンドの説明を出力します。  
+### <a name="remarks"></a>Remarks  
+ The framework calls this method to print a key map dialog box item. By default, this method prints the item's command name, shortcut keys, and command description.  
   
-##  <a name="onsetcolumns"></a>CMFCKeyMapDialog::OnSetColumns  
- キーボード マップ コントロールをサポートする内部リスト コントロール内の列のキャプションを設定するためにフレームワークによって呼び出されます。  
+##  <a name="onsetcolumns"></a>  CMFCKeyMapDialog::OnSetColumns  
+ Called by the framework to set captions for the columns in the internal list control that supports the keyboard mapping control.  
   
 ```  
 virtual void OnSetColumns();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定では、このメソッドは、3 つのリソースから列のキャプションを取得します。 コマンドの列のキャプション IDS_AFXBARRES_COMMAND、IDS_AFXBARRES_KEYS からのキー列のキャプションは、説明列のキャプションは IDS_AFXBARRES_DESCRIPTION から。  
+### <a name="remarks"></a>Remarks  
+ By default, this method obtains the captions for the columns from three resources. The command column caption is from IDS_AFXBARRES_COMMAND, the key column caption is from IDS_AFXBARRES_KEYS, and the description column caption is from IDS_AFXBARRES_DESCRIPTION.  
   
-##  <a name="printkeymap"></a>CMFCKeyMapDialog::PrintKeyMap  
- ユーザーがクリックしたときに、フレームワークによって呼び出されます、**印刷** ボタンをクリックします。  
+##  <a name="printkeymap"></a>  CMFCKeyMapDialog::PrintKeyMap  
+ Called by the framework when a user clicks the **Print** button.  
   
 ```  
 virtual void PrintKeyMap();
 ```  
   
-### <a name="remarks"></a>コメント  
- `PrintKeyMap`メソッドは、キー マップに出力します。 新しい印刷ジョブを開始し、繰り返し呼び出し、 [CMFCKeyMapDialog::OnPrintHeader](#onprintheader)と[CMFCKeyMapDialog::OnPrintItem](#onprintitem)キーのすべてのマッピングが印刷されるまでの方法です。  
+### <a name="remarks"></a>Remarks  
+ The `PrintKeyMap` method prints the key map. It initiates a new print job and then repeatedly calls the [CMFCKeyMapDialog::OnPrintHeader](#onprintheader) and [CMFCKeyMapDialog::OnPrintItem](#onprintitem) methods until all the key mappings are printed.  
   
-##  <a name="setcolumnswidth"></a>CMFCKeyMapDialog::SetColumnsWidth  
- キーボード マップ コントロールをサポートする内部リスト コントロール内の列の幅を設定するためにフレームワークによって呼び出されます。  
+##  <a name="setcolumnswidth"></a>  CMFCKeyMapDialog::SetColumnsWidth  
+ Called by the framework to set the width of the columns in the internal list control that supports the keyboard mapping control.  
   
 ```  
 virtual void SetColumnsWidth();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、内部リスト コントロールの列を既定の幅に設定します。 最初に、ショートカット キー列の幅が計算されます。 Command 列に残りの幅の&3; 分の&1; が割り当てられているし、残りの&2;/3 は、[説明] 列に割り当てられます。  
+### <a name="remarks"></a>Remarks  
+ This method sets the internal list control's columns to default widths. First, the width of the shortcut keys column is calculated. Then one-third of the remaining width is allocated to the command column and the remaining two-thirds is allocated to the description column.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CKeyboardManager クラス](../../mfc/reference/ckeyboardmanager-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CKeyboardManager Class](../../mfc/reference/ckeyboardmanager-class.md)
 

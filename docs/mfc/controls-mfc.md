@@ -1,55 +1,73 @@
 ---
-title: "コントロール (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Windows コモン コントロール [C++]"
-  - "コモン コントロール [C++]"
-  - "コントロール [MFC]"
+title: Controls (MFC) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Windows common controls [MFC]
+- common controls [MFC]
+- controls [MFC]
 ms.assetid: b2842884-6435-4b8f-933b-21671bf8af95
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コントロール (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1a2fad4323b03cd302644561820fa436a3f4a6c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コントロールは、データを入力または操作するときにユーザーが取り扱うオブジェクトです。 通常は、ダイアログ ボックスまたはツール バー上に表示されます。 ここでは、主な 3 種類のコントロールについて説明します。  
+---
+# <a name="controls-mfc"></a>Controls (MFC)
+Controls are objects that users can interact with to enter or manipulate data. They commonly appear in dialog boxes or on toolbars. This topic family covers three main kinds of controls:  
   
--   オーナー描画コントロールなどの Windows コモン コントロール  
+-   Windows common controls, including owner-drawn controls  
   
--   ActiveX コントロール  
+-   ActiveX Controls  
   
--   MFC \(Microsoft Foundation Class\) ライブラリで提供される、その他のコントロール クラス  
+-   Other control classes supplied by the Microsoft Foundation Class Library (MFC)  
   
-## Windows コモン コントロール  
- Windows オペレーティング システムでは、多数の Windows コモン コントロールが提供されています。 これらのコントロール オブジェクトはコードから操作できます。また、Visual C\+\+ ダイアログ エディターを使用して、コントロール オブジェクトをダイアログ ボックスに追加できます。 MFC \(Microsoft Foundation Class\) ライブラリでは、表「[Windows コモン コントロールと MFC クラス](#_core_windows_common_controls_and_mfc_classes)」に記述されているように、各コントロールをカプセル化するためのクラスが提供されています。 \(表内の一部の項目は、詳細を説明するトピックに関連付けられています\)。 トピックに関連付けられていないコントロールについては、MFC クラスに関するドキュメントを参照してください。  
+## <a name="windows-common-controls"></a>Windows Common Controls  
+ The Windows operating system has always provided a number of Windows common controls. These control objects are programmable, and the Visual C++ dialog editor supports adding them to your dialog boxes. The Microsoft Foundation Class Library (MFC) supplies classes that encapsulate each of these controls, as shown in the table [Windows Common Controls and MFC Classes](#_core_windows_common_controls_and_mfc_classes). (Some items in the table have related topics that describe them further. For controls that lack topics, see the documentation for the MFC class.)  
   
- [CWnd](../Topic/CWnd%20Class.md) クラスは、コントロール クラスをすべて含む、すべてのウィンドウ クラスの基底クラスです。 Windows コモン コントロールは以下の環境でサポートされています。  
+ Class [CWnd](../mfc/reference/cwnd-class.md) is the base class of all window classes, including all of the control classes. The Windows common controls are supported in the following environments:  
   
--   Windows 95、Windows 98、および Windows 2000  
+-   Windows 95, Windows 98, and Windows 2000  
   
--   Windows NT Version 3.51 以降  
+-   Windows NT, version 3.51 and later  
   
--   Win32s Version 1.3 \(Visual C\+\+ Version 4.2 以降では Win32s をサポートしていません\)  
+-   Win32s, version 1.3 (Visual C++ versions 4.2 and later do not support Win32s)  
   
- Windows の旧バージョンでも、古いコモン コントロール \(チェック ボックス、コンボ ボックス、エディット ボックス、リスト ボックス、オプション ボタン、プッシュ ボタン、スクロール バー コントロール、スタティック コントロール\) が使用できます。  
+ The older common controls — check boxes, combo boxes, edit boxes, list boxes, option buttons, pushbuttons, scroll bar controls, and static controls — were available in earlier versions of Windows as well.  
   
-## ActiveX コントロール  
- ActiveX コントロールは、以前は OLE コントロールと呼ばれていたもので、Windows アプリケーション、または WWW \(World Wide Web\) の HTML ページで使用できます。 詳細については、「[MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)」を参照してください。  
+## <a name="activex-controls"></a>ActiveX Controls  
+ ActiveX controls, formerly known as OLE controls, can be used in dialog boxes in your applications for Windows, or in HTML pages on the World Wide Web. For more information, see [MFC ActiveX Controls](../mfc/mfc-activex-controls.md).  
   
-## その他の MFC コントロール クラス  
- すべての Windows コモン コントロールをカプセル化するクラスと、ユーザー独自の \(または他のアプリケーションにより提供された\) ActiveX コントロールのプログラミングをサポートするクラスに加えて、MFC では以下のコントロール クラスを独自に提供します。  
+## <a name="other-mfc-control-classes"></a>Other MFC Control Classes  
+ In addition to classes that encapsulate all of the Windows common controls and that support programming your own ActiveX controls (or using ActiveX controls supplied by others), MFC supplies the following control classes of its own:  
   
 -   [CBitmapButton](../mfc/reference/cbitmapbutton-class.md)  
   
@@ -57,66 +75,68 @@ caps.handback.revision: 7
   
 -   [CDragListBox](../mfc/reference/cdraglistbox-class.md)  
   
-##  <a name="_core_finding_information_about_windows_common_controls"></a> Windows コモン コントロールに関する情報  
- 次の表では、MFC ラッパー クラスを含む Windows コモン コントロールについて簡単に説明します。  
+##  <a name="_core_finding_information_about_windows_common_controls"></a> Finding Information About Windows Common Controls  
+ The table below briefly describes each of the Windows common controls, including the control's MFC wrapper class.  
   
-### Windows コモン コントロールと MFC クラス  
+### <a name="_core_windows_common_controls_and_mfc_classes"></a>  Windows Common Controls and MFC Classes  
   
-|コントロール|MFC クラス|説明|Windows 95 で追加された機能かどうか|  
-|------------|-------------|--------|-----------------------------|  
-|[アニメーション](../Topic/Using%20CAnimateCtrl.md)|[CAnimateCtrl](../mfc/reference/canimatectrl-class.md)|AVI ビデオ クリップのフレームを連続的に表示します。|はい|  
-|ボタン|[CButton](../mfc/reference/cbutton-class.md)|アクションを発生させるプッシュ ボタン。チェック ボックス、オプション ボタン、およびグループ ボックスにも使用します。|いいえ|  
-|コンボ ボックス|[CComboBox](../mfc/reference/ccombobox-class.md)|エディット ボックスとリスト ボックスを組み合わせたものです。|いいえ|  
-|[日時指定](../mfc/using-cdatetimectrl.md)|[CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)|ユーザーが特定の日付または時刻の値を選択できます。|はい|  
-|エディット ボックス|[CEdit](../Topic/CEdit%20Class.md)|テキスト入力用のボックスです。|いいえ|  
-|[拡張コンボ ボックス](../mfc/using-ccomboboxex.md)|[CComboBoxEx](../mfc/reference/ccomboboxex-class.md)|イメージを表示できるコンボ ボックス コントロールです。|はい|  
-|[ヘッダー](../mfc/using-cheaderctrl.md)|[CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md)|テキストの列の上に表示されるボタンで、テキストの表示幅を制御します。|はい|  
-|[ホット キー](../mfc/using-chotkeyctrl.md)|[CHotKeyCtrl](../mfc/reference/chotkeyctrl-class.md)|アクションをすばやく実行するための "ホット キー" を作成できるウィンドウです。|はい|  
-|[イメージ リスト。](../mfc/using-cimagelist.md)|[CImageList](../Topic/CImageList%20Class.md)|多数のアイコンまたはビットマップの管理に使用するイメージのコレクションです。イメージ リストは実際にはコントロールではなく、他のコントロールで使用されるリストをサポートします。|はい|  
-|[リスト](../Topic/Using%20CListCtrl.md)|[CListCtrl](../Topic/CListCtrl%20Class.md)|アイコンと共にテキストのリストを表示するウィンドウです。|はい|  
-|リスト ボックス|[CListBox](../Topic/CListBox%20Class.md)|文字列のリストを格納するボックスです。|いいえ|  
-|[月間予定表](../Topic/Using%20CMonthCalCtrl.md)|[CMonthCalCtrl](../mfc/reference/cmonthcalctrl-class.md)|日付情報を表示するコントロールです。|はい|  
-|[progress](../mfc/using-cprogressctrl.md)|[CProgressCtrl](../mfc/reference/cprogressctrl-class.md)|時間のかかる処理を実行する場合に、その進行状況を示すウィンドウです。|はい|  
-|[rebar](../Topic/Using%20CReBarCtrl.md)|[CRebarCtrl](../mfc/reference/crebarctrl-class.md)|子ウィンドウをコントロールとして追加できるツール バーです。|はい|  
-|[リッチ エディット](../mfc/using-cricheditctrl.md)|[CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)|ユーザーが文字書式および段落書式を設定して編集できるウィンドウです \(「[リッチ エディット コントロールに関連するクラス](../mfc/classes-related-to-rich-edit-controls.md)」を参照\)。|はい|  
-|スクロール バー|[CScrollBar](../mfc/reference/cscrollbar-class.md)|ウィンドウ上ではなくダイアログ ボックス内のコントロールとして使用されるスクロール バーです。|いいえ|  
-|[スライダー](../mfc/using-csliderctrl.md)|[CSliderCtrl](../mfc/reference/csliderctrl-class.md)|オプションで軸目盛りを表示できるスライダー コントロールが配置されたウィンドウです。|はい|  
-|[スピン ボタン](../mfc/using-cspinbuttonctrl.md)|[CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)|ユーザーが値の増減をクリック操作で指定できる矢印ボタンです。増加用と減少用がペアになっています。|はい|  
-|静的テキスト|[CStatic](../Topic/CStatic%20Class.md)|他のコントロールのラベルに使用するテキストです。|いいえ|  
-|[ステータス バー](../mfc/using-cstatusbarctrl.md)|[CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)|ステータス情報を表示するためのウィンドウです。MFC クラスの `CStatusBar` に似ています。|はい|  
-|[タブ](../mfc/using-ctabctrl.md)|[CTabCtrl](../Topic/CTabCtrl%20Class.md)|ノートの仕切りのような役割を果たします。"タブ ダイアログ ボックス" またはプロパティ シートで使用します。|はい|  
-|[ツール バー](../mfc/using-ctoolbarctrl.md)|[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)|コマンド生成ボタンを持つウィンドウです。MFC クラスの `CToolBar` に似ています。|はい|  
-|[ツール ヒント](../mfc/using-ctooltipctrl.md)|[CToolTipCtrl](../Topic/CToolTipCtrl%20Class.md)|ツール バー ボタンなどのツールの用途の説明を表示する小さなポップアップ ウィンドウです。|はい|  
-|[ツリー](../Topic/Using%20CTreeCtrl.md)|[CTreeCtrl](../mfc/reference/ctreectrl-class.md)|項目を階層化されたリストとして表示するウィンドウです。|はい|  
+|Control|MFC class|Description|New in Windows 95|  
+|-------------|---------------|-----------------|------------------------|  
+|[animation](../mfc/using-canimatectrl.md)|[CAnimateCtrl](../mfc/reference/canimatectrl-class.md)|Displays successive frames of an AVI video clip|Yes|  
+|button|[CButton](../mfc/reference/cbutton-class.md)|Pushbuttons that cause an action; also used for check boxes, radio buttons, and group boxes|No|  
+|combo box|[CComboBox](../mfc/reference/ccombobox-class.md)|Combination of an edit box and a list box|No|  
+|[date and time picker](../mfc/using-cdatetimectrl.md)|[CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)|Allows the user to choose a specific date or time value|Yes|  
+|edit box|[CEdit](../mfc/reference/cedit-class.md)|Boxes for entering text|No|  
+|[extended combo box](../mfc/using-ccomboboxex.md)|[CComboBoxEx](../mfc/reference/ccomboboxex-class.md)|A combo box control with the ability to display images|Yes|  
+|[header](../mfc/using-cheaderctrl.md)|[CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)|Button that appears above a column of text; controls width of text displayed|Yes|  
+|[hotkey](../mfc/using-chotkeyctrl.md)|[CHotKeyCtrl](../mfc/reference/chotkeyctrl-class.md)|Window that enables user to create a "hot key" to perform an action quickly|Yes|  
+|[image list](../mfc/using-cimagelist.md)|[CImageList](../mfc/reference/cimagelist-class.md)|Collection of images used to manage large sets of icons or bitmaps (image list isn't really a control; it supports lists used by other controls)|Yes|  
+|[list](../mfc/using-clistctrl.md)|[CListCtrl](../mfc/reference/clistctrl-class.md)|Window that displays a list of text with icons|Yes|  
+|list box|[CListBox](../mfc/reference/clistbox-class.md)|Box that contains a list of strings|No|  
+|[month calendar](../mfc/using-cmonthcalctrl.md)|[CMonthCalCtrl](../mfc/reference/cmonthcalctrl-class.md)|Control that displays date information|Yes|  
+|[progress](../mfc/using-cprogressctrl.md)|[CProgressCtrl](../mfc/reference/cprogressctrl-class.md)|Window that indicates progress of a long operation|Yes|  
+|[rebar](../mfc/using-crebarctrl.md)|[CRebarCtrl](../mfc/reference/crebarctrl-class.md)|Tool bar that can contain additional child windows in the form of controls|Yes|  
+|[rich edit](../mfc/using-cricheditctrl.md)|[CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)|Window in which user can edit with character and paragraph formatting (see [Classes Related to Rich Edit Controls](../mfc/classes-related-to-rich-edit-controls.md))|Yes|  
+|scroll bar|[CScrollBar](../mfc/reference/cscrollbar-class.md)|Scroll bar used as a control inside a dialog box (not on a window)|No|  
+|[slider](../mfc/using-csliderctrl.md)|[CSliderCtrl](../mfc/reference/csliderctrl-class.md)|Window containing a slider control with optional tick marks|Yes|  
+|[spin button](../mfc/using-cspinbuttonctrl.md)|[CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)|Pair of arrow buttons user can click to increment or decrement a value|Yes|  
+|static-text|[CStatic](../mfc/reference/cstatic-class.md)|Text for labeling other controls|No|  
+|[status bar](../mfc/using-cstatusbarctrl.md)|[CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)|Window for displaying status information, similar to MFC class `CStatusBar`|Yes|  
+|[tab](../mfc/using-ctabctrl.md)|[CTabCtrl](../mfc/reference/ctabctrl-class.md)|Analogous to the dividers in a notebook; used in "tab dialog boxes" or property sheets|Yes|  
+|[toolbar](../mfc/using-ctoolbarctrl.md)|[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)|Window with command-generating buttons, similar to MFC class `CToolBar`|Yes|  
+|[tool tip](../mfc/using-ctooltipctrl.md)|[CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md)|Small pop-up window that describes purpose of a toolbar button or other tool|Yes|  
+|[tree](../mfc/using-ctreectrl.md)|[CTreeCtrl](../mfc/reference/ctreectrl-class.md)|Window that displays a hierarchical list of items|Yes|  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   各コントロールへのリンクについては、上記の「[Windows コモン コントロールと MFC クラス](#_core_windows_common_controls_and_mfc_classes)」を参照してください。  
+-   An individual control: see the table [Windows Common Controls and MFC Classes](#_core_windows_common_controls_and_mfc_classes) in this topic for links to all controls  
   
--   [コントロールの作成方法と使い方](../mfc/making-and-using-controls.md)  
+-   [Making and using controls](../mfc/making-and-using-controls.md)  
   
--   [ダイアログ エディターを使用したコントロールの追加](../mfc/using-the-dialog-editor-to-add-controls.md)  
+-   [Using the dialog editor to add controls](../mfc/using-the-dialog-editor-to-add-controls.md)  
   
--   [手動でコントロールを追加する方法](../mfc/adding-controls-by-hand.md)  
+-   [Adding controls to a dialog box by hand](../mfc/adding-controls-by-hand.md)  
   
--   [MFC コントロール クラスからのコントロール クラスの派生](../mfc/deriving-controls-from-a-standard-control.md)  
+-   [Deriving control classes from the MFC control classes](../mfc/deriving-controls-from-a-standard-control.md)  
   
--   [子ウィンドウとしてのコモン コントロールの使い方](../mfc/using-a-common-control-as-a-child-window.md)  
+-   [Using common controls as child windows](../mfc/using-a-common-control-as-a-child-window.md)  
   
--   [コモン コントロールからの通知の受信](../Topic/Receiving%20Notification%20from%20Common%20Controls.md)  
+-   [Notifications from common controls](../mfc/receiving-notification-from-common-controls.md)  
   
--   ["Add common controls to a dialog box \(ダイアログ ボックスへのコントロールの追加\)"](../mfc/using-common-controls-in-a-dialog-box.md)。  
+-   [Add common controls to a dialog box](../mfc/using-common-controls-in-a-dialog-box.md).  
   
--   [Windows 標準コントロールからのコントロールの派生](../mfc/deriving-controls-from-a-standard-control.md)  
+-   [Derive a control from a standard Windows control](../mfc/deriving-controls-from-a-standard-control.md)  
   
--   [ダイアログ ボックスのコントロールへのタイプ セーフ アクセス](../Topic/Type-Safe%20Access%20to%20Controls%20in%20a%20Dialog%20Box.md)  
+-   [Access dialog-box controls with type safety](../mfc/type-safe-access-to-controls-in-a-dialog-box.md)  
   
--   [コモン コントロールからの通知の受信](../Topic/Receiving%20Notification%20from%20Common%20Controls.md)  
+-   [Receive notification messages from common controls](../mfc/receiving-notification-from-common-controls.md)  
   
--   [サンプル](../mfc/common-control-sample-list.md)  
+-   [Samples](../mfc/common-control-sample-list.md)  
   
- [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] の Windows コモン コントロールについては、「[Common Controls \(コモン コントロール\)](http://msdn.microsoft.com/library/windows/desktop/bb775493)」を参照してください。  
+ For information about Windows common controls in the Windows SDK, see [Common Controls](http://msdn.microsoft.com/library/windows/desktop/bb775493).  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)   
- [Dialog Editor](../mfc/dialog-editor.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)   
+ [Dialog Editor](../windows/dialog-editor.md)
+
+

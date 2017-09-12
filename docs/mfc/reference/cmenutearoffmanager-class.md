@@ -1,5 +1,5 @@
 ---
-title: "CMenuTearOffManager クラス |Microsoft ドキュメント"
+title: CMenuTearOffManager Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,7 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMenuTearOffManager class
+- CMenuTearOffManager [MFC], CMenuTearOffManager
+- CMenuTearOffManager [MFC], Build
+- CMenuTearOffManager [MFC], GetRegPath
+- CMenuTearOffManager [MFC], Initialize
+- CMenuTearOffManager [MFC], IsDynamicID
+- CMenuTearOffManager [MFC], Parse
+- CMenuTearOffManager [MFC], Reset
+- CMenuTearOffManager [MFC], SetInUse
+- CMenuTearOffManager [MFC], SetupTearOffMenus
 ms.assetid: ab7ca272-ce42-4678-95f7-6ad75038f5a0
 caps.latest.revision: 31
 author: mikeblome
@@ -43,62 +51,62 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 53677bbea54e428e5f080f5c1f73c576abcf99a5
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3f5dae0b41cd1b350c07afe01dd514187140527b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmenutearoffmanager-class"></a>CMenuTearOffManager クラス
-ティアオフ メニューを管理します。 ティアオフ メニューはメニュー バー上のメニューの一種です。 ユーザーは、ティアオフ メニューをメニュー バーから外して、フローティング メニューにすることができます。  
+# <a name="cmenutearoffmanager-class"></a>CMenuTearOffManager Class
+Manages tear-off menus. A tear-off menu is a menu on the menu bar. The user can remove a tear-off menu from the menu bar, causing the tear-off menu to float.  
   
    [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
    
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMenuTearOffManager : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMenuTearOffManager::CMenuTearOffManager](#cmenutearoffmanager)|`CMenuTearOffManager` オブジェクトを構築します。|  
+|[CMenuTearOffManager::CMenuTearOffManager](#cmenutearoffmanager)|Constructs a `CMenuTearOffManager` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
 |[CMenuTearOffManager::Build](#build)||  
 |[CMenuTearOffManager::GetRegPath](#getregpath)||  
-|[CMenuTearOffManager::Initialize](#initialize)|初期化、`CMenuTearOffManager`オブジェクトです。|  
+|[CMenuTearOffManager::Initialize](#initialize)|Initializes a `CMenuTearOffManager` object.|  
 |[CMenuTearOffManager::IsDynamicID](#isdynamicid)||  
 |[CMenuTearOffManager::Parse](#parse)||  
 |[CMenuTearOffManager::Reset](#reset)||  
 |[CMenuTearOffManager::SetInUse](#setinuse)||  
 |[CMenuTearOffManager::SetupTearOffMenus](#setuptearoffmenus)||  
   
-## <a name="remarks"></a>コメント  
- アプリケーションでティアオフ メニューを使用するのには必要な`CMenuTearOffManager`オブジェクトです。 ほとんどの場合に、作成または初期化するされません、`CMenuTearOffManager`オブジェクトに直接します。 これは、処理は、呼び出すときに、 [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus)関数です。  
+## <a name="remarks"></a>Remarks  
+ In order to use tear-off menus in your application, you must have a `CMenuTearOffManager` object. In most cases, you won't create or initialize a `CMenuTearOffManager` object directly. This is handled for you when you call the [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus) function.  
   
-## <a name="example"></a>例  
- 次の例では、構築して初期化する方法、`CMenuTearOffManager`オブジェクトを呼び出して、`CWinAppEX::EnableTearOffMenus`メソッドです。 このコード スニペットの一部である、 [Word パッド サンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to construct and initialize a `CMenuTearOffManager` object by calling the `CWinAppEX::EnableTearOffMenus` method. This code snippet is part of the [Word Pad sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_WordPad&#12;](../../mfc/reference/codesnippet/cpp/cmenutearoffmanager-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_WordPad#12](../../mfc/reference/codesnippet/cpp/cmenutearoffmanager-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CMenuTearOffManager`   
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxmenutearoffmanager.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxmenutearoffmanager.h  
   
-##  <a name="build"></a>CMenuTearOffManager::Build  
+##  <a name="build"></a>  CMenuTearOffManager::Build  
 
   
 ```  
@@ -107,35 +115,35 @@ void Build(
     CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiTearOffBarID`  
- [入力] `strText`  
+### <a name="parameters"></a>Parameters  
+ [in] `uiTearOffBarID`  
+ [in] `strText`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="cmenutearoffmanager"></a>CMenuTearOffManager::CMenuTearOffManager  
- 構築、 [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md)オブジェクトです。  
+##  <a name="cmenutearoffmanager"></a>  CMenuTearOffManager::CMenuTearOffManager  
+ Constructs a [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md) object.  
   
 ```  
 CMenuTearOffManager();
 ```  
   
-### <a name="remarks"></a>コメント  
- ほとんどの場合は作成しないで、`CMenuTearOffManager`手動でします。 アプリケーションのフレームワークを作成、`CMenuTearOffManager`オブジェクトを呼び出すと[CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus)します。  
+### <a name="remarks"></a>Remarks  
+ In most cases, you should not create a `CMenuTearOffManager` manually. The framework of your application creates the `CMenuTearOffManager` object when you call [CWinAppEx::EnableTearOffMenus](../../mfc/reference/cwinappex-class.md#enabletearoffmenus).  
   
-##  <a name="getregpath"></a>CMenuTearOffManager::GetRegPath  
+##  <a name="getregpath"></a>  CMenuTearOffManager::GetRegPath  
 
   
 ```  
 LPCTSTR GetRegPath() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="initialize"></a>CMenuTearOffManager::Initialize  
- 初期化、 [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md)オブジェクトです。  
+##  <a name="initialize"></a>  CMenuTearOffManager::Initialize  
+ Initializes a [CMenuTearOffManager](../../mfc/reference/cmenutearoffmanager-class.md) object.  
   
 ```  
 BOOL Initialize(
@@ -144,63 +152,63 @@ BOOL Initialize(
     UINT uiTearOffMenuLast);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszRegEntry`  
- レジストリ エントリのパスを含む文字列です。 アプリケーションでは、このレジストリ エントリでティアオフ バーの設定が格納されます。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszRegEntry`  
+ A string that contains the path of a registry entry. Your applications stores the settings for tear-off bars in this registry entry.  
   
- [入力] `uiTearOffMenuFirst`  
- ティアオフ メニューの最初のメニューの ID。  
+ [in] `uiTearOffMenuFirst`  
+ The first menu ID for a tear-off menu.  
   
- [入力] `uiTearOffMenuLast`  
- ティアオフ メニューの最後のメニューの ID。  
+ [in] `uiTearOffMenuLast`  
+ The last menu ID for a tear-off menu.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- メニュー Id の範囲`uiTearOffMenuFirst`に`uiTearOffMenuLast`に連続した間隔にする必要があります。 間隔は、アプリケーションで同時に表示される可能性がティアオフ メニューの数を定義します。  
+### <a name="remarks"></a>Remarks  
+ The range of menu IDs from `uiTearOffMenuFirst` to `uiTearOffMenuLast` must be a continuous interval. The interval defines the number of tear-off menus that can appear at the same time in the application.  
   
-##  <a name="isdynamicid"></a>CMenuTearOffManager::IsDynamicID  
+##  <a name="isdynamicid"></a>  CMenuTearOffManager::IsDynamicID  
 
   
 ```  
 BOOL IsDynamicID(UINT uiID) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiID`  
+### <a name="parameters"></a>Parameters  
+ [in] `uiID`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="parse"></a>CMenuTearOffManager::Parse  
+##  <a name="parse"></a>  CMenuTearOffManager::Parse  
 
   
 ```  
 UINT Parse(CString& str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `str`  
+### <a name="parameters"></a>Parameters  
+ [in] `str`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="reset"></a>CMenuTearOffManager::Reset  
+##  <a name="reset"></a>  CMenuTearOffManager::Reset  
 
   
 ```  
 void Reset(HMENU hmenu);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hmenu`  
+### <a name="parameters"></a>Parameters  
+ [in] `hmenu`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setinuse"></a>CMenuTearOffManager::SetInUse  
+##  <a name="setinuse"></a>  CMenuTearOffManager::SetInUse  
 
   
 ```  
@@ -209,26 +217,26 @@ void SetInUse(
     BOOL bUse = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiCmdId`  
- [入力] `bUse`  
+### <a name="parameters"></a>Parameters  
+ [in] `uiCmdId`  
+ [in] `bUse`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setuptearoffmenus"></a>CMenuTearOffManager::SetupTearOffMenus  
+##  <a name="setuptearoffmenus"></a>  CMenuTearOffManager::SetupTearOffMenus  
 
   
 ```  
 void SetupTearOffMenus(HMENU hMenu);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `hMenu`  
+### <a name="parameters"></a>Parameters  
+ [in] `hMenu`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CWinAppEx クラス](../../mfc/reference/cwinappex-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CWinAppEx Class](../../mfc/reference/cwinappex-class.md)
 

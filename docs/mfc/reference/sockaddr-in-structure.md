@@ -1,5 +1,5 @@
 ---
-title: "SOCKADDR_IN 構造体 |Microsoft ドキュメント"
+title: SOCKADDR_IN Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- SOCKADDR_IN structure
+- SOCKADDR_IN structure [MFC]
 ms.assetid: e8cd7c34-78bd-4e28-a990-eb3ca070b7a6
 caps.latest.revision: 13
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 77ed806bc6afc7ba02663a19a724541bbe0dae42
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 975352895ce166fb53f65f8e5669a5ff8dda21a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="sockaddrin-structure"></a>SOCKADDR_IN 構造体
-インターネット アドレス ファミリでは、ソケットを接続するローカルまたはリモート エンドポイント アドレスを指定するために、Windows ソケットによって `SOCKADDR_IN` の構造体が使用されます。  
+# <a name="sockaddrin-structure"></a>SOCKADDR_IN Structure
+In the Internet address family, the `SOCKADDR_IN` structure is used by Windows Sockets to specify a local or remote endpoint address to which to connect a socket.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct sockaddr_in{  
@@ -54,23 +54,23 @@ struct in_addr sin_addr;
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- *これは必須*  
- アドレス ファミリ (する必要があります**AF_INET**)。  
+#### <a name="parameters"></a>Parameters  
+ *sin_family*  
+ Address family (must be **AF_INET**).  
   
- *いった*  
- IP ポート。  
+ *sin_port*  
+ IP port.  
   
- *いった*  
- IP アドレス。  
+ *sin_addr*  
+ IP address.  
   
  *sin_zero*  
- `SOCKADDR` と同じサイズに構造体を変更する埋め込み。  
+ Padding to make structure the same size as `SOCKADDR`.  
   
-## <a name="remarks"></a>コメント  
- これはインターネット アドレス ファミリに特有の `SOCKADDR` 構造体の形態であり、`SOCKADDR` にキャストできます。  
+## <a name="remarks"></a>Remarks  
+ This is the form of the `SOCKADDR` structure specific to the Internet address family and can be cast to `SOCKADDR`.  
   
- この構造体の IP アドレスのコンポーネントのタイプは**IN_ADDR**します。 **IN_ADDR** WINSOCK Windows ソケットのヘッダー ファイルの構造を定義します。次のように H:  
+ The IP address component of this structure is of type **IN_ADDR**. The **IN_ADDR** structure is defined in Windows Sockets header file WINSOCK.H as follows:  
   
 ```  
 struct in_addr {
@@ -86,10 +86,10 @@ struct in_addr {
 };  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** winsock2.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winsock2.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [SOCKADDR 構造体](../../mfc/reference/sockaddr-structure.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [SOCKADDR Structure](../../mfc/reference/sockaddr-structure.md)
 

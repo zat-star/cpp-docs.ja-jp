@@ -1,78 +1,96 @@
 ---
-title: "ダイアログ ボックス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDialog クラス, MFC ダイアログ ボックス"
-  - "MFC ダイアログ ボックス"
-  - "MFC, ダイアログ ボックス"
-  - "モーダル ダイアログ ボックス, MFC ダイアログ ボックス"
-  - "モードレス ダイアログ ボックス, MFC ダイアログ ボックス"
+title: Dialog Boxes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- modeless dialog boxes [MFC], MFC dialog boxes
+- MFC, dialog boxes
+- modal dialog boxes [MFC], MFC dialog boxes
+- CDialog class [MFC], MFC dialog boxes
+- MFC dialog boxes
 ms.assetid: e4feea1a-8360-4ccb-9b84-507f1ccd9ef3
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# ダイアログ ボックス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: be78fe33a08b538da1574f5ccf9f1a042a7a374a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Windows 向けのアプリケーションでは、ダイアログ ボックスを通じてユーザーとの対話が頻繁に行われます。  [CDialog](../mfc/reference/cdialog-class.md) クラスには、ダイアログ ボックスを管理するためのインターフェイスがあります。Visual C\+\+ ダイアログ エディターでは、ダイアログ ボックスのデザインや、ダイアログ テンプレート リソースの作成が簡単にできます。コード ウィザードでは、ダイアログ ボックスのコントロールの初期化と妥当性チェックのプロセス、およびユーザーが入力した値の収集プロセスを簡略化します。  
+---
+# <a name="dialog-boxes"></a>Dialog Boxes
+Applications for Windows frequently communicate with the user through dialog boxes. Class [CDialog](../mfc/reference/cdialog-class.md) provides an interface for managing dialog boxes, the Visual C++ dialog editor makes it easy to design dialog boxes and create their dialog-template resources, and Code wizards simplify the process of initializing and validating the controls in a dialog box and of gathering the values entered by the user.  
   
- ダイアログ ボックスには、以下のコントロールが含まれます。  
+ Dialog boxes contain controls, including:  
   
--   Windows コモン コントロール \(エディット ボックス、プッシュ ボタン、リスト ボックス、コンボ ボックス、ツリー コントロール、リスト コントロール、プログレス インジケーターなど\)  
+-   Windows common controls such as edit boxes, pushbuttons, list boxes, combo boxes, tree controls, list controls, and progress indicators.  
   
--   ActiveX コントロール  
+-   ActiveX controls.  
   
--   オーナー描画コントロール \(ダイアログ ボックス内での描画に必要なコントロール\)  
+-   Owner-drawn controls: controls that you are responsible for drawing in the dialog box.  
   
- ほとんどのダイアログ ボックスはモーダルです。モーダル ダイアログ ボックスの場合は、プログラムのほかの部分を使用する前にダイアログ ボックスを閉じる必要があります。  ダイアログ ボックスは、モードレスとしても作成できます。モードレス ダイアログ ボックスの場合は、ダイアログ ボックスを開いたままでほかのウィンドウを使用できます。  MFC では、`CDialog` クラスによって両方のダイアログ ボックスがサポートされています。  コントロールは、[ダイアログ エディター](../mfc/dialog-editor.md)で作成されるダイアログ テンプレート リソースを使用して配置および管理します。  
+ Most dialog boxes are modal, which require the user to close the dialog box before using any other part of the program. But it is possible to create modeless dialog boxes, which let users work with other windows while the dialog box is open. MFC supports both kinds of dialog box with class `CDialog`. The controls are arranged and managed using a dialog-template resource, created with the [dialog editor](../windows/dialog-editor.md).  
   
- タブ ダイアログ ボックスとも呼ばれる[プロパティ シート](../mfc/property-sheets-mfc.md)は、ダイアログ ボックス コントロールを備えた複数の "ページ" を持つダイアログ ボックスです。  各ページには、上部にファイル フォルダーの "タブ" があります。  タブをクリックすると、そのページがダイアログ ボックスの最前面に表示されます。  
+ [Property sheets](../mfc/property-sheets-mfc.md), also known as tab dialog boxes, are dialog boxes that contain "pages" of distinct dialog-box controls. Each page has a file folder "tab" at the top. Clicking a tab brings that page to the front of the dialog box.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [例 : メニュー コマンドによるダイアログ ボックスの表示](../mfc/example-displaying-a-dialog-box-via-a-menu-command.md)  
+-   [Example: Displaying a Dialog Box via a Menu Command](../mfc/example-displaying-a-dialog-box-via-a-menu-command.md)  
   
--   [フレームワークのダイアログ ボックス コンポーネント](../mfc/dialog-box-components-in-the-framework.md)  
+-   [Dialog-box components in the framework](../mfc/dialog-box-components-in-the-framework.md)  
   
--   [モーダルとモードレスのダイアログ ボックス](../mfc/modal-and-modeless-dialog-boxes.md)  
+-   [Modal and modeless dialog boxes](../mfc/modal-and-modeless-dialog-boxes.md)  
   
--   [プロパティ シートとプロパティ ページ](../mfc/property-sheets-and-property-pages-mfc.md) \(ダイアログ ボックス内\)  
+-   [Property sheets and property pages](../mfc/property-sheets-and-property-pages-mfc.md) in a dialog box  
   
--   [ダイアログ リソースの作成](../Topic/Creating%20the%20Dialog%20Resource.md)  
+-   [Creating the dialog resource](../mfc/creating-the-dialog-resource.md)  
   
--   [コード ウィザードによるダイアログ クラスの作成](../mfc/creating-a-dialog-class-with-code-wizards.md)  
+-   [Creating a dialog class with Code Wizards](../mfc/creating-a-dialog-class-with-code-wizards.md)  
   
--   [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)  
+-   [Life cycle of a dialog box](../mfc/life-cycle-of-a-dialog-box.md)  
   
--   [ダイアログ データ エクスチェンジとダイアログ データ バリデーション](../mfc/dialog-data-exchange-and-validation.md)  
+-   [Dialog data exchange (DDX) and validation (DDV)](../mfc/dialog-data-exchange-and-validation.md)  
   
--   [ダイアログ ボックスのコントロールへのタイプ セーフ アクセス](../Topic/Type-Safe%20Access%20to%20Controls%20in%20a%20Dialog%20Box.md)  
+-   [Type-safe access to controls in a dialog box](../mfc/type-safe-access-to-controls-in-a-dialog-box.md)  
   
--   [ダイアログ クラスと Windows メッセージの対応](../mfc/mapping-windows-messages-to-your-class.md)  
+-   [Mapping Windows messages to your class](../mfc/mapping-windows-messages-to-your-class.md)  
   
--   [通常オーバーライドされるメンバー関数](../mfc/commonly-overridden-member-functions.md)  
+-   [Commonly Overridden Member Functions](../mfc/commonly-overridden-member-functions.md)  
   
--   [通常追加されるメンバー関数](../Topic/Commonly%20Added%20Member%20Functions.md)  
+-   [Commonly Added Member Functions](../mfc/commonly-added-member-functions.md)  
   
--   [コモン ダイアログ クラス](../mfc/common-dialog-classes.md)  
+-   [Common dialog classes](../mfc/common-dialog-classes.md)  
   
--   [OLE のダイアログ ボックス](../mfc/dialog-boxes-in-ole.md)  
+-   [Dialog boxes in OLE](../mfc/dialog-boxes-in-ole.md)  
   
--   ユーザー インターフェイスがダイアログ ボックスのアプリケーションを作成する: [CMNCTRL1](../top/visual-cpp-samples.md) または [CMNCTRL2](../top/visual-cpp-samples.md) のサンプル プログラムを参照してください。  このオプションは、アプリケーション ウィザードでも用意されています。  
+-   Create an application whose user interface is a dialog box: see the [CMNCTRL1](../visual-cpp-samples.md) or [CMNCTRL2](../visual-cpp-samples.md) sample programs. The Application Wizard provides this option as well.  
   
--   [サンプル](../mfc/dialog-sample-list.md)  
+-   [Samples](../mfc/dialog-sample-list.md)  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)
+

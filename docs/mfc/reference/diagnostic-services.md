@@ -1,5 +1,5 @@
 ---
-title: "診断サービス |Microsoft ドキュメント"
+title: Diagnostic Services | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,21 +13,21 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- diagnosis, diagnostic services
-- diagnostic macros, list of general MFC
-- services, diagnostic
+- diagnosi [MFC]s, diagnostic services
+- diagnostic macros [MFC], list of general MFC
+- services [MFC], diagnostic
 - MFC, diagnostic services
-- general diagnostic functions and variables
-- diagnostics, diagnostic functions and variables
-- diagnostics, list of general MFC
-- diagnosis, diagnostic functions and variables
-- diagnosis, list of general MFC
+- general diagnostic functions and variables [MFC]
+- diagnostics [MFC], diagnostic functions and variables
+- diagnostics [MFC], list of general MFC
+- diagnosis [MFC], diagnostic functions and variables
+- diagnosis [MFC], list of general MFC
 - general diagnostic macros in MFC
-- diagnostic macros
-- diagnostic services
+- diagnostic macros [MFC]
+- diagnostic services [MFC]
 - object diagnostic functions in MFC
-- diagnostics, diagnostic services
-- diagnostic functions and variables
+- diagnostics [MFC], diagnostic services
+- diagnostic functions and variables [MFC]
 ms.assetid: 8d78454f-9fae-49c2-88c9-d3fabd5393e8
 caps.latest.revision: 20
 author: mikeblome
@@ -48,87 +48,87 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
-ms.openlocfilehash: ceaf02cbe0eedec6e8bd4980d87c025d6aa23615
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f486a21308f376362fd236679858411b71dc01a5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="diagnostic-services"></a>診断サービス
-Microsoft Foundation Class Library は、プログラムのデバッグをより簡単にする多くの診断サービスを提供します。 これらの診断サービスには、プログラムのメモリー割り振りを追跡したり、実行時にオブジェクトの内容をダンプしたり、実行時にデバッグ メッセージを表示したりできるようにするマクロやグローバル関数が含まれます。 診断サービスのマクロとグローバル関数は、次のカテゴリに分類されます。  
+# <a name="diagnostic-services"></a>Diagnostic Services
+The Microsoft Foundation Class Library supplies many diagnostic services that make debugging your programs easier. These diagnostic services include macros and global functions that allow you to track your program's memory allocations, dump the contents of objects during run time, and print debugging messages during run time. The macros and global functions for diagnostic services are grouped into the following categories:  
   
--   汎用診断マクロ  
+-   General diagnostic macros  
   
--   汎用診断関数と変数  
+-   General diagnostic functions and variables  
   
--   オブジェクト診断関数  
+-   Object diagnostic functions  
   
- これらのマクロと関数が使用可能なすべてのクラスから派生した`CObject`MFC のデバッグとリリース バージョン。 ただしを除くすべて`DEBUG_NEW`と**を確認してください**リリース バージョンには影響しません。  
+ These macros and functions are available for all classes derived from `CObject` in the Debug and Release versions of MFC. However, all except `DEBUG_NEW` and **VERIFY** do nothing in the Release version.  
   
- デバッグ ライブラリ内の割り振られるすべてのメモリ ブロックは、一連の "ガード バイト" で囲まれます。 これらのバイトが間違ったメモリ書き込みによって乱される場合、診断ルーチンが問題を報告できます。 行:  
+ In the Debug library, all allocated memory blocks are bracketed with a series of "guard bytes." If these bytes are disturbed by an errant memory write, then the diagnostic routines can report a problem. If you include the line:  
   
- [!code-cpp[NVC_MFCCObjectSample #14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
+ [!code-cpp[NVC_MFCCObjectSample#14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
   
- 実装ファイルにすべての呼び出しに**新しい**メモリの割り当てが行われたファイル名と行の数を格納します。 関数は、 [cmemorystate::dumpallobjectssince](cmemorystate-structure.md#dumpallobjectssince)メモリ リークを識別することができます、この余分な情報が表示されます。 クラスにも参照してください。 [CDumpContext](../../mfc/reference/cdumpcontext-class.md)診断出力の詳細についてはします。  
+ in your implementation file, all calls to **new** will store the filename and line number where the memory allocation took place. The function [CMemoryState::DumpAllObjectsSince](cmemorystate-structure.md#dumpallobjectssince) will display this extra information, allowing you to identify memory leaks. Refer also to the class [CDumpContext](../../mfc/reference/cdumpcontext-class.md) for additional information on diagnostic output.  
   
- さらに、C ランタイム ライブラリは、アプリケーションのデバッグに使用できる診断関数のセットもサポートしています。 詳細については、次を参照してください。[デバッグ ルーチン](../../c-runtime-library/debug-routines.md)ランタイム ライブラリ リファレンスです。  
+ In addition, the C run-time library also supports a set of diagnostic functions you can use to debug your applications. For more information, see [Debug Routines](../../c-runtime-library/debug-routines.md) in the Run-Time Library Reference.  
   
-### <a name="mfc-general-diagnostic-macros"></a>MFC 汎用診断マクロ  
-  
-|||  
-|-|-|  
-|[アサート](#assert)|メッセージを表示し、指定された式が評価された場合、プログラムを中止し、 **FALSE**ライブラリのデバッグ バージョンです。|  
-|[ASSERT_KINDOF](#assert_kindof)|オブジェクトが、指定されたクラスのオブジェクト、または指定されたクラスから派生したクラスのオブジェクトであることをテストします。|  
-|[ASSERT_VALID](#assert_valid)|呼び出して、オブジェクトの内部の有効性をテスト、`AssertValid`メンバー関数は; 通常オーバーライドされてから`CObject`です。|
-|[DEBUG_NEW](#debug_new)|デバッグ モードのすべてのオブジェクト割り当てにファイル名と行番号を指定します。これは、メモリー リークを見つけるのに役立ちます。|  
-|[DEBUG_ONLY](#debug_only)|ような**ASSERT** ; 式の値をテストしませんが、デバッグ モードでのみ実行されるコードでに役立ちます。|  
-|[確認し、ENSURE_VALID](#ensure)|データの正確性の検証に使用します。|
-|[THIS_FILE](#this_file)|コンパイルされるファイルの名前に展開されます。|
-|[TRACE](#trace)|提供`printf`に類似したライブラリのデバッグ バージョンで機能します。|  
-|[確認してください。](#verify)|ような**ASSERT**が同様とデバッグ バージョンとライブラリのリリース バージョンで式が評価されます。|  
-  
-### <a name="mfc-general-diagnostic-variables-and-functions"></a>MFC 汎用診断関数と変数  
+### <a name="mfc-general-diagnostic-macros"></a>MFC General Diagnostic Macros  
   
 |||  
 |-|-|  
-|[afxDump](#afxdump)|送信するグローバル変数[CDumpContext](../../mfc/reference/cdumpcontext-class.md)情報デバッガー出力ウィンドウまたはデバッグ端末にします。|  
-|[afxMemDF](#afxmemdf)|デバッグ メモリ アロケーターの動作を制御するグローバル変数。|  
-|[AfxCheckError](#afxcheckerror)|渡されたをテストするためのグローバル変数**SCODE**かどうかにエラーが発生し、適切なエラーをスローします。|  
-|[AfxCheckMemory](#afxcheckmemory)|現在割り当てられているすべてのメモリの整合性を確認します。|  
-|[AfxDebugBreak](#afxdebugbreak)|実行で区切りが発生します。|
-|[AfxDump](#cdumpcontext_in_mfc)|デバッガーにある間に呼び出さると、デバッグ中にオブジェクトの状態をダンプします。|  
-|[AfxDump](#afxdump)|デバッグ中に、オブジェクトの状態をダンプする内部関数です。|
-|[AfxDumpStack](#afxdumpstack)|現在のスタックのイメージを生成します。 この関数は、常に、静的にリンクされます。|  
-|[AfxEnableMemoryLeakDump](#afxenablememoryleakdump)|メモリ リーク ダンプを有効にします。|  
-|[AfxEnableMemoryTracking](#afxenablememorytracking)|メモリのトラッキングをオンまたはオフにします。|  
-|[AfxIsMemoryBlock](#afxismemoryblock)|メモリ ブロックが正しく割り当てられていることを確認します。|  
-|[AfxIsValidAddress](#afxisvalidaddress)|メモリ アドレスの範囲がプログラムの境界内にあることを確認します。|  
-|[AfxIsValidString](#afxisvalidstring)|文字列へのポインターが有効かどうかを判断します。|  
-|[AfxSetAllocHook](#afxsetallochook)|各メモリ割り振りでの関数の呼び出しを有効にします。|  
+|[ASSERT](#assert)|Prints a message and then aborts the program if the specified expression evaluates to **FALSE** in the Debug version of the library.|  
+|[ASSERT_KINDOF](#assert_kindof)|Tests that an object is an object of the specified class or of a class derived from the specified class.|  
+|[ASSERT_VALID](#assert_valid)|Tests the internal validity of an object by calling its `AssertValid` member function; typically overridden from `CObject`.|
+|[DEBUG_NEW](#debug_new)|Supplies a filename and line number for all object allocations in Debug mode to help find memory leaks.|  
+|[DEBUG_ONLY](#debug_only)|Similar to **ASSERT** but does not test the value of the expression; useful for code that should execute only in Debug mode.|  
+|[ENSURE and ENSURE_VALID](#ensure)|Use to validate data correctness.|
+|[THIS_FILE](#this_file)|Expands to the name of the file that is being compiled.|
+|[TRACE](#trace)|Provides `printf`-like capability in the Debug version of the library.|  
+|[VERIFY](#verify)|Similar to **ASSERT** but evaluates the expression in the Release version of the library as well as in the Debug version.|  
   
-### <a name="mfc-object-diagnostic-functions"></a>MFC オブジェクト診断関数  
+### <a name="mfc-general-diagnostic-variables-and-functions"></a>MFC General Diagnostic Variables and Functions  
   
 |||  
 |-|-|  
-|[AfxDoForAllClasses](#afxdoforallclasses)|すべてで指定された関数を実行`CObject`-実行時型チェックをサポートするクラスを派生します。|  
-|[AfxDoForAllObjects](#afxdoforallobjects)|すべてで指定された関数を実行`CObject`-派生したオブジェクトに割り当てられた**新しい**です。|  
+|[afxDump](#afxdump)|Global variable that sends [CDumpContext](../../mfc/reference/cdumpcontext-class.md) information to the debugger output window or to the debug terminal.|  
+|[afxMemDF](#afxmemdf)|Global variable that controls the behavior of the debugging memory allocator.|  
+|[AfxCheckError](#afxcheckerror)|Global variable used to test the passed **SCODE** to see if it is an error and, if so, throws the appropriate error.|  
+|[AfxCheckMemory](#afxcheckmemory)|Checks the integrity of all currently allocated memory.|  
+|[AfxDebugBreak](#afxdebugbreak)|Causes a break in execution.|
+|[AfxDump](#cdumpcontext_in_mfc)|If called while in the debugger, dumps the state of an object while debugging.|  
+|[AfxDump](#afxdump)|Internal function that dumps the state of an object while debugging.|
+|[AfxDumpStack](#afxdumpstack)|Generate an image of the current stack. This function is always linked statically.|  
+|[AfxEnableMemoryLeakDump](#afxenablememoryleakdump)|Enables the memory leak dump.|  
+|[AfxEnableMemoryTracking](#afxenablememorytracking)|Turns memory tracking on and off.|  
+|[AfxIsMemoryBlock](#afxismemoryblock)|Verifies that a memory block has been properly allocated.|  
+|[AfxIsValidAddress](#afxisvalidaddress)|Verifies that a memory address range is within the program's bounds.|  
+|[AfxIsValidString](#afxisvalidstring)|Determines whether a pointer to a string is valid.|  
+|[AfxSetAllocHook](#afxsetallochook)|Enables the calling of a function on each memory allocation.|  
+  
+### <a name="mfc-object-diagnostic-functions"></a>MFC Object Diagnostic Functions  
+  
+|||  
+|-|-|  
+|[AfxDoForAllClasses](#afxdoforallclasses)|Performs a specified function on all `CObject`-derived classes that support run-time type checking.|  
+|[AfxDoForAllObjects](#afxdoforallobjects)|Performs a specified function on all `CObject`-derived objects that were allocated with **new**.|  
 
-### <a name="mfc-compilation-macros"></a>MFC コンパイル マクロ
+### <a name="mfc-compilation-macros"></a>MFC Compilation Macros
 |||
 |-|-|
-|[無効](#afx_secure_no_warnings)|使用されなくなった MFC 関数を使用するためのコンパイラの警告を抑制します。|  
+|[_AFX_SECURE_NO_WARNINGS](#afx_secure_no_warnings)|Suppresses compiler warnings for the use of deprecated MFC functions.|  
 
 
-## <a name="afx_secure_no_warnings"></a>無効
-使用されなくなった MFC 関数を使用するためのコンパイラの警告を抑制します。  
+## <a name="afx_secure_no_warnings"></a> _AFX_SECURE_NO_WARNINGS
+Suppresses compiler warnings for the use of deprecated MFC functions.  
    
-### <a name="syntax"></a>構文   
+### <a name="syntax"></a>Syntax   
 ```  
 _AFX_SECURE_NO_WARNINGS  
 ```     
-### <a name="example"></a>例  
- このコード サンプルと無効が定義されていない場合、コンパイラの警告が発生します。  
+### <a name="example"></a>Example  
+ This code sample would cause a compiler warning if _AFX_SECURE_NO_WARNINGS were not defined.  
   
  ```cpp
 // define this before including any afx files in stdafx.h
@@ -142,193 +142,193 @@ char sz[256];
 pRichEdit->GetSelText(sz);
 ```
 
-## <a name="afxdebugbreak"></a>AfxDebugBreak
-中断が発生するには、この関数を呼び出します (への呼び出しの位置に`AfxDebugBreak`)、MFC アプリケーションのデバッグ バージョンの実行にします。  
+## <a name="afxdebugbreak"></a> AfxDebugBreak
+Call this function to cause a break (at the location of the call to `AfxDebugBreak`) in the execution of the debug version of your MFC application.  
 
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 void AfxDebugBreak( );    
 ```  
    
-### <a name="remarks"></a>コメント  
- `AfxDebugBreak`リリース バージョンの MFC アプリケーションに影響を与えませんし、削除する必要があります。 この関数は、MFC アプリケーションでのみ使用する必要があります。 Win32 API のバージョンを使用して**DebugBreak**、非 MFC アプリケーションで中断が発生します。  
+### <a name="remarks"></a>Remarks  
+ `AfxDebugBreak` has no effect in release versions of an MFC application and should be removed. This function should only be used in MFC applications. Use the Win32 API version, **DebugBreak**, to cause a break in non-MFC applications.  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxver_.h   
+### <a name="requirements"></a>Requirements  
+ **Header:** afxver_.h   
 
-##  <a name="assert"></a>アサート
- その引数を評価します。  
+##  <a name="assert"></a>  ASSERT
+ Evaluates its argument.  
   
 ```   
 ASSERT(booleanExpression)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `booleanExpression`  
- (ポインター値を含む) または 0 以外に評価される式を指定します。  
+ Specifies an expression (including pointer values) that evaluates to nonzero or 0.  
   
-### <a name="remarks"></a>コメント  
- 結果が 0 の場合、マクロは診断メッセージを表示し、プログラムを中止します。 条件が 0 以外の場合は、何も行われません。  
+### <a name="remarks"></a>Remarks  
+ If the result is 0, the macro prints a diagnostic message and aborts the program. If the condition is nonzero, it does nothing.  
   
- 診断メッセージにフォームがあります  
+ The diagnostic message has the form  
   
  `assertion failed in file <name> in line <num>`  
   
- 場所*名*ソース ファイルの名前を指定および*num*ソース ファイル内に失敗したアサーションの行番号です。  
+ where *name* is the name of the source file, and *num* is the line number of the assertion that failed in the source file.  
   
- MFC では、リリース バージョンで**ASSERT**の式を評価しませんし、したがって、プログラムは中断しません。 環境に関係なく、式を評価する必要がありますを場合、使用して、**を確認してください**の代わりにマクロ**ASSERT**です。  
+ In the Release version of MFC, **ASSERT** does not evaluate the expression and thus will not interrupt the program. If the expression must be evaluated regardless of environment, use the **VERIFY** macro in place of **ASSERT**.  
   
 > [!NOTE]
->  この関数は MFC のデバッグ バージョンでのみ使用できます。  
+>  This function is available only in the Debug version of MFC.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities #44](../../mfc/codesnippet/cpp/diagnostic-services_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#44](../../mfc/codesnippet/cpp/diagnostic-services_2.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="assert_kindof"></a>ASSERT_KINDOF  
- このマクロは、指されるオブジェクトは、指定したクラスのオブジェクトには、指定したクラスから派生したクラスのオブジェクトをアサートします。  
+##  <a name="assert_kindof"></a>  ASSERT_KINDOF  
+ This macro asserts that the object pointed to is an object of the specified class, or is an object of a class derived from the specified class.  
   
 ```   
 ASSERT_KINDOF(classname, pobject)  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *クラス名*  
- 名前、 `CObject`-クラスを派生します。  
+### <a name="parameters"></a>Parameters  
+ *classname*  
+ The name of a `CObject`-derived class.  
   
  *pobject*  
- クラスのオブジェクトへのポインター。  
+ A pointer to a class object.  
   
-### <a name="remarks"></a>コメント  
- *Pobject*パラメーター オブジェクトへのポインターにする必要がありますでき、 **const**です。 指されるオブジェクトとクラスをサポートする必要があります`CObject`ランタイム クラス情報。 例として、ことを確認する`pDocument`のオブジェクトへのポインター、`CMyDoc`クラス、またはその派生クラスのいずれかをコーディングできます。  
+### <a name="remarks"></a>Remarks  
+ The *pobject* parameter should be a pointer to an object and can be **const**. The object pointed to and the class must support `CObject` run-time class information. As an example, to ensure that `pDocument` is a pointer to an object of the `CMyDoc` class, or any of its derivatives, you could code:  
   
- [!code-cpp[NVC_MFCDocView # 194](../../mfc/codesnippet/cpp/diagnostic-services_3.cpp)]  
+ [!code-cpp[NVC_MFCDocView#194](../../mfc/codesnippet/cpp/diagnostic-services_3.cpp)]  
   
- 使用して、`ASSERT_KINDOF`マクロは、コーディングと同じでは正確にします。  
+ Using the `ASSERT_KINDOF` macro is exactly the same as coding:  
   
- [!code-cpp[NVC_MFCDocView # 195](../../mfc/codesnippet/cpp/diagnostic-services_4.cpp)]  
+ [!code-cpp[NVC_MFCDocView#195](../../mfc/codesnippet/cpp/diagnostic-services_4.cpp)]  
   
- この機能で宣言されたクラスに対してのみ、[DECLARE_DYNAMIC] (実行の時間のオブジェクトのモデルの services.md #declare_dynamic または[DECLARE_SERIAL](run-time-object-model-services.md#declare_serial)マクロです。  
+ This function works only for classes declared with the [DECLARE_DYNAMIC](run-time-object-model-services.md#declare_dynamic or [DECLARE_SERIAL](run-time-object-model-services.md#declare_serial) macro.  
   
 > [!NOTE]
->  この関数は MFC のデバッグ バージョンでのみ使用できます。  
+>  This function is available only in the Debug version of MFC.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="assert_valid"></a>ASSERT_VALID  
- オブジェクトの内部状態の有効性に関する仮定をテストに使用します。  
+##  <a name="assert_valid"></a>  ASSERT_VALID  
+ Use to test your assumptions about the validity of an object's internal state.  
   
 ```   
 ASSERT_VALID(pObject)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pObject`  
- 派生したクラスのオブジェクトを指定`CObject`のオーバーライドのバージョンを持つ、`AssertValid`メンバー関数。  
+ Specifies an object of a class derived from `CObject` that has an overriding version of the `AssertValid` member function.  
   
-### <a name="remarks"></a>コメント  
- `ASSERT_VALID`呼び出し、`AssertValid`オブジェクトのメンバー関数は、その引数として渡されます。  
+### <a name="remarks"></a>Remarks  
+ `ASSERT_VALID` calls the `AssertValid` member function of the object passed as its argument.  
   
- MFC では、リリース バージョンで`ASSERT_VALID`何も行われません。 デバッグ バージョンでポインターを検証、に対してチェック**NULL**をオブジェクトの独自の呼び出しと`AssertValid`メンバー関数。 これらのテストが失敗した場合と同じ方法で警告メッセージが表示されます。 [ASSERT](#assert)です。  
+ In the Release version of MFC, `ASSERT_VALID` does nothing. In the Debug version, it validates the pointer, checks against **NULL**, and calls the object's own `AssertValid` member functions. If any of these tests fails, an alert message is displayed in the same manner as [ASSERT](#assert).  
   
 > [!NOTE]
->  この関数は MFC のデバッグ バージョンでのみ使用できます。  
+>  This function is available only in the Debug version of MFC.  
   
- 詳細と例については、次を参照してください。 [MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。  
+ For more information and examples, see [Debugging MFC Applications](/visualstudio/debugger/mfc-debugging-techniques).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCCObjectSample #19](../../mfc/codesnippet/cpp/diagnostic-services_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCCObjectSample#19](../../mfc/codesnippet/cpp/diagnostic-services_5.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="debug_new"></a>DEBUG_NEW  
- メモリ リークの検出を支援します。  
+##  <a name="debug_new"></a>  DEBUG_NEW  
+ Assists in finding memory leaks.  
   
 ```   
 #define  new DEBUG_NEW   
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用することができます`DEBUG_NEW`通常使用すると、プログラム内にあるすべての**新しい**ヒープ領域を割り当てる演算子。  
+### <a name="remarks"></a>Remarks  
+ You can use `DEBUG_NEW` everywhere in your program that you would ordinarily use the **new** operator to allocate heap storage.  
   
- デバッグ モードで (ときに、 **_DEBUG**シンボルが定義されている)、`DEBUG_NEW`のメモリを割り当てた各オブジェクトのファイル名と行の番号を追跡します。 次に、使用、 [cmemorystate::dumpallobjectssince](cmemorystate-structure.md#dumpallobjectssince)メンバー関数で割り当てられた各オブジェクト`DEBUG_NEW`が割り当てられているファイル名と行の数で表示します。  
+ In debug mode (when the **_DEBUG** symbol is defined), `DEBUG_NEW` keeps track of the filename and line number for each object that it allocates. Then, when you use the [CMemoryState::DumpAllObjectsSince](cmemorystate-structure.md#dumpallobjectssince) member function, each object allocated with `DEBUG_NEW` is shown with the filename and line number where it was allocated.  
   
- 使用する`DEBUG_NEW`、ソース ファイルに次のディレクティブを挿入します。  
+ To use `DEBUG_NEW`, insert the following directive into your source files:  
   
- [!code-cpp[NVC_MFCCObjectSample #14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
+ [!code-cpp[NVC_MFCCObjectSample#14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
   
- このディレクティブを挿入すると、プリプロセッサは挿入`DEBUG_NEW`任意の場所を使用する**新しい**MFC は、残りの部分とします。 プログラムのリリース バージョンをコンパイルするときに`DEBUG_NEW`は単に解決される**新しい**操作、および、ファイル名と行番号の情報は生成されません。  
+ Once you insert this directive, the preprocessor will insert `DEBUG_NEW` wherever you use **new**, and MFC does the rest. When you compile a release version of your program, `DEBUG_NEW` resolves to a simple **new** operation, and the filename and line number information are not generated.  
   
 > [!NOTE]
->  配置に必要な (4.1 およびそれ以前) の MFC の以前のバージョンで、`#define`と呼ばれるすべてのステートメントの後にステートメントの`IMPLEMENT_DYNCREATE`または`IMPLEMENT_SERIAL`マクロです。 これは必要なくなりました。  
+>  In previous versions of MFC (4.1 and earlier) you needed to put the `#define` statement after all statements that called the `IMPLEMENT_DYNCREATE` or `IMPLEMENT_SERIAL` macros. This is no longer necessary.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="debug_only"></a>DEBUG_ONLY  
- デバッグ モードで (ときに、 **_DEBUG**シンボルが定義されている)、`DEBUG_ONLY`引数を評価します。  
+##  <a name="debug_only"></a>  DEBUG_ONLY  
+ In debug mode (when the **_DEBUG** symbol is defined), `DEBUG_ONLY` evaluates its argument.  
   
 ```   
 DEBUG_ONLY(expression)   
 ```  
   
-### <a name="remarks"></a>コメント  
- リリース ビルドで**DEBUG_ONLY**の引数は評価されません。 これは、機能は、デバッグ ビルドでのみ実行されるコードがある場合に便利です。  
+### <a name="remarks"></a>Remarks  
+ In a release build, **DEBUG_ONLY** does not evaluate its argument. This is useful when you have code that should be executed only in debug builds.  
   
- `DEBUG_ONLY`マクロは、周囲に相当*式*で**#ifdef _DEBUG**と`#endif`です。  
+ The `DEBUG_ONLY` macro is equivalent to surrounding *expression* with **#ifdef _DEBUG** and `#endif`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 32](../../mfc/codesnippet/cpp/diagnostic-services_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#32](../../mfc/codesnippet/cpp/diagnostic-services_6.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
- ### <a name="ensure"></a>確認し、ENSURE_VALID
-データの正確性の検証に使用します。  
+ ### <a name="ensure"></a>  ENSURE and ENSURE_VALID
+Use to validate data correctness.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 ENSURE(  booleanExpression )  
 ENSURE_VALID( booleanExpression  )  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `booleanExpression`  
- テストするブール式を指定します。  
+ Specifies a boolean expression to be tested.  
    
-### <a name="remarks"></a>コメント  
- これらのマクロの目的は、パラメーターの検証を向上させるためにです。 マクロにより、コード内の正しくないパラメーターの処理を続行します。 異なり、 **ASSERT** 、マクロ、**を確認してください**マクロにアサーションを生成するだけでなく例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ The purpose of these macros is to improve the validation of parameters. The macros prevent further processing of incorrect parameters in your code. Unlike the **ASSERT** macros, the **ENSURE** macros throw an exception in addition to generating an assertion.  
   
- マクロは、プロジェクトの構成に従って、2 つの方法で動作します。 マクロ呼び出し**ASSERT**アサーションが失敗した場合、例外をスローします。 デバッグ構成でこのため、(つまり、 **_DEBUG**が定義されている) のマクロはアサーションとリリース構成の中に例外を生成、マクロは、例外は、例外を生成 (**ASSERT**リリース構成で式を評価しません)。  
+ The macros behave in two ways, according to the project configuration. The macros call **ASSERT** and then throw an exception if the assertion fails. Thus, in Debug configurations (that is, where **_DEBUG** is defined) the macros produce an assertion and exception while in Release configurations, the macros produce only the exception (**ASSERT** does not evaluate the expression in Release configurations).  
   
- マクロ**ENSURE_ARG**のように動作、**を確認してください**マクロです。  
+ The macro **ENSURE_ARG** acts like the **ENSURE** macro.  
   
- **ENSURE_VALID**呼び出し、`ASSERT_VALID`マクロ (をデバッグ ビルドでのみ、特殊効果を持つ)。 さらに、 **ENSURE_VALID**ポインターが NULL の場合は、例外をスローします。 NULL のテストは、デバッグとリリースの両方の構成で実行されます。  
+ **ENSURE_VALID** calls the `ASSERT_VALID` macro (which has an effect only in Debug builds). In addition, **ENSURE_VALID** throws an exception if the pointer is NULL. The NULL test is performed in both Debug and Release configurations.  
   
- これらのテストが失敗した場合と同じ方法で警告メッセージが表示されます。 **ASSERT**です。 マクロは、必要な場合は、無効な引数の例外をスローします。  
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+ If any of these tests fails, an alert message is displayed in the same manner as **ASSERT**. The macro throws an invalid argument exception if needed.  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
- [確認してください。](#verify)   
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
+ [VERIFY](#verify)   
  [ATLENSURE](#altensure)
 
-## <a name="this_file"></a>THIS_FILE
-コンパイルされるファイルの名前に展開されます。  
+## <a name="this_file"></a> THIS_FILE
+Expands to the name of the file that is being compiled.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 THIS_FILE    
 ```  
    
-### <a name="remarks"></a>コメント  
- 情報を使って、 **ASSERT**と**を確認してください**マクロです。 アプリケーション ウィザードとコードのウィザードでは、ソース コード ファイルを作成するにマクロを配置します。  
+### <a name="remarks"></a>Remarks  
+ The information is used by the **ASSERT** and **VERIFY** macros. The Application Wizard and code wizards place the macro in source code files they create.  
    
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp
 #ifdef _DEBUG
 #undef THIS_FILE
@@ -339,130 +339,130 @@ static char THIS_FILE[] = __FILE__;
 // compiler recognizes. 
 ```
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
- [アサート](#assert)   
- [確認してください。](#verify)
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
+ [ASSERT](#assert)   
+ [VERIFY](#verify)
 
 
-##  <a name="trace"></a>トレース  
- 指定した文字列を現在のアプリケーションのデバッガーに送信します。  
+##  <a name="trace"></a>  TRACE  
+ Sends the specified string to the debugger of the current application.  
   
 ```   
 TRACE(exp)  
 TRACE(DWORD  category,  UINT  level, LPCSTR lpszFormat, ...)   
 ```  
   
-### <a name="remarks"></a>コメント  
- 参照してください[ATLTRACE2](../../atl/reference/debugging-and-error-reporting-macros.md#atltrace2)の詳細については**トレース**です。 **トレース**と`ATLTRACE2`同じように動作します。  
+### <a name="remarks"></a>Remarks  
+ See [ATLTRACE2](../../atl/reference/debugging-and-error-reporting-macros.md#atltrace2) for a description of **TRACE**. **TRACE** and `ATLTRACE2` have the same behavior.  
   
- MFC のデバッグ バージョンでは、このマクロは、指定した文字列を現在のアプリケーションのデバッガーに送信します。 リリース ビルドでは、このマクロは、(コードが生成されないすべての) nothing にコンパイルします。  
+ In the debug version of MFC, this macro sends the specified string to the debugger of the current application. In a release build, this macro compiles to nothing (no code is generated at all).  
   
- 詳細については、次を参照してください。 [MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。  
+ For more information, see [Debugging MFC Applications](/visualstudio/debugger/mfc-debugging-techniques).  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="verify"></a>確認してください。  
- MFC のデバッグ バージョンでは、その引数を評価します。  
+##  <a name="verify"></a>  VERIFY  
+ In the Debug version of MFC, evaluates its argument.  
   
 ```   
 VERIFY(booleanExpression)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `booleanExpression`  
- (ポインター値を含む) または 0 以外に評価される式を指定します。  
+ Specifies an expression (including pointer values) that evaluates to nonzero or 0.  
   
-### <a name="remarks"></a>コメント  
- 結果が 0 の場合、マクロは診断メッセージを表示し、プログラムを停止します。 条件が 0 以外の場合は、何も行われません。  
+### <a name="remarks"></a>Remarks  
+ If the result is 0, the macro prints a diagnostic message and halts the program. If the condition is nonzero, it does nothing.  
   
- 診断メッセージにフォームがあります  
+ The diagnostic message has the form  
   
  `assertion failed in file <name> in line <num>`  
   
- ここで*名*ソース ファイルの名前を指定と*num*ソース ファイル内に失敗したアサーションの行番号です。  
+ where *name* is the name of the source file and *num* is the line number of the assertion that failed in the source file.  
   
- MFC では、リリース バージョンで**を確認してください**式の評価が印刷またはしません、プログラムを中断します。 たとえば、式が関数呼び出しの場合は、呼び出しになります。  
+ In the Release version of MFC, **VERIFY** evaluates the expression but does not print or interrupt the program. For example, if the expression is a function call, the call will be made.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 198](../../mfc/codesnippet/cpp/diagnostic-services_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#198](../../mfc/codesnippet/cpp/diagnostic-services_7.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="cdumpcontext_in_mfc"></a>afxDump (MFC の CDumpContext)  
- アプリケーションでのオブジェクト ダンプ基本的な機能を提供します。  
+##  <a name="cdumpcontext_in_mfc"></a>  afxDump (CDumpContext in MFC)  
+ Provides basic object-dumping capability in your application.  
   
 ```   
 CDumpContext  afxDump;   
 ```  
   
-### <a name="remarks"></a>コメント  
- `afxDump`定義済み[CDumpContext](../../mfc/reference/cdumpcontext-class.md)を送信できるようにするオブジェクト`CDumpContext`情報デバッガー出力ウィンドウまたはデバッグ端末にします。 通常、指定する必要が`afxDump`へのパラメーターとして`CObject::Dump`です。  
+### <a name="remarks"></a>Remarks  
+ `afxDump` is a predefined [CDumpContext](../../mfc/reference/cdumpcontext-class.md) object that allows you to send `CDumpContext` information to the debugger output window or to a debug terminal. Typically, you supply `afxDump` as a parameter to `CObject::Dump`.  
   
- Windows NT とすべてのバージョンの Windows で`afxDump`アプリケーションをデバッグするときに Visual C のデバッグ出力ウィンドウに出力を送信します。  
+ Under Windows NT and all versions of Windows, `afxDump` output is sent to the Output-Debug window of Visual C++ when you debug your application.  
   
- この変数は、MFC のデバッグ バージョンでのみ定義されます。 詳細については`afxDump`を参照してください[MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。  
+ This variable is defined only in the Debug version of MFC. For more information on `afxDump`, see [Debugging MFC Applications](/visualstudio/debugger/mfc-debugging-techniques).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 23](../../mfc/codesnippet/cpp/diagnostic-services_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#23](../../mfc/codesnippet/cpp/diagnostic-services_8.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
 
-## <a name="afxdump"></a>AfxDump (内部)
-デバッグ中に、オブジェクトの状態をダンプする MFC を使用する内部関数です。  
+## <a name="afxdump"></a> AfxDump (Internal)
+Internal function that MFC uses to dump the state of an object while debugging.  
 
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 void AfxDump(const CObject* pOb);   
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pOb`  
- 派生したクラスのオブジェクトへのポインター`CObject`です。  
+ A pointer to an object of a class derived from `CObject`.  
    
-### <a name="remarks"></a>コメント  
- **AfxDump**オブジェクトの呼び出し`Dump`メンバー関数を指定した場所に情報を送信、`afxDump`変数。 **AfxDump** MFC のデバッグ バージョンでのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ **AfxDump** calls an object's `Dump` member function and sends the information to the location specified by the `afxDump` variable. **AfxDump** is available only in the Debug version of MFC.  
   
- プログラミング コードで呼び出さないでください。 **AfxDump**、代わりに呼び出す必要がありますが、`Dump`適切なオブジェクトのメンバー関数。  
+ Your program code should not call **AfxDump**, but should instead call the `Dump` member function of the appropriate object.  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>See Also  
  [CObject::Dump](cobject-class.md#dump)   
 
 
 
-##  <a name="afxmemdf"></a>afxMemDF  
- この変数は、デバッガーや、プログラムからアクセスできる割り当ての診断を調整することができます。  
+##  <a name="afxmemdf"></a>  afxMemDF  
+ This variable is accessible from a debugger or your program and allows you to tune allocation diagnostics.  
   
 ```   
 int  afxMemDF;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `afxMemDF`列挙体によって指定される次の値を持つことができます`afxMemDF`:  
+### <a name="remarks"></a>Remarks  
+ `afxMemDF` can have the following values as specified by the enumeration `afxMemDF`:  
   
-- **allocMemDF**デバッグ アロケーター (デバッグ ライブラリの既定の設定) をオンにします。  
+- **allocMemDF** Turns on debugging allocator (default setting in Debug library).  
   
-- **delayFreeMemDF**メモリの解放を遅らせます。 プログラムがメモリ ブロックを解放中には、アロケーターは、基になるオペレーティング システムにそのメモリを返しません。 これは、プログラムに最大のメモリ負荷を配置します。  
+- **delayFreeMemDF** Delays freeing memory. While your program frees a memory block, the allocator does not return that memory to the underlying operating system. This will place maximum memory stress on your program.  
   
-- **checkAlwaysMemDF**呼び出し`AfxCheckMemory`たびにメモリを割り当てまたは解放します。 これは、メモリの割り当てと解放が大幅に低下します。  
+- **checkAlwaysMemDF** Calls `AfxCheckMemory` every time memory is allocated or freed. This will significantly slow memory allocations and deallocations.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 30](../../mfc/codesnippet/cpp/diagnostic-services_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#30](../../mfc/codesnippet/cpp/diagnostic-services_9.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="afxcheckerror"></a>AfxCheckError  
- この関数に渡された**SCODE**するかどうかは、エラーを参照してください。  
+##  <a name="afxcheckerror"></a>  AfxCheckError  
+ This function tests the passed **SCODE** to see if it is an error.  
   
 ```   
 void AFXAPI AfxCheckError(SCODE sc);
@@ -470,99 +470,99 @@ throw CMemoryException*
 throw COleException*  
 ```  
   
-### <a name="remarks"></a>コメント  
- エラーの場合、関数は例外をスローします。 場合、渡された`SCODE`は**E_OUTOFMEMORY**、関数、 [CMemoryException](../../mfc/reference/cmemoryexception-class.md)を呼び出して[AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception)です。 それ以外の場合、関数、 [COleException](../../mfc/reference/coleexception-class.md)呼び出すことによって[AfxThrowOleException](exception-processing.md#afxthrowoleexception)です。  
+### <a name="remarks"></a>Remarks  
+ If it is an error, the function throws an exception. If the passed `SCODE` is **E_OUTOFMEMORY**, the function throws a [CMemoryException](../../mfc/reference/cmemoryexception-class.md) by calling [AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception). Otherwise, the function throws a [COleException](../../mfc/reference/coleexception-class.md) by calling [AfxThrowOleException](exception-processing.md#afxthrowoleexception).  
   
- この関数は、アプリケーションで OLE 関数への呼び出しの戻り値を確認して使用できます。 アプリケーションでこの関数の戻り値をテストすることによって最小限のコードでエラー状態に対応できます。  
+ This function can be used to check the return values of calls to OLE functions in your application. By testing the return value with this function in your application, you can properly react to error conditions with a minimal amount of code.  
   
 > [!NOTE]
->  この関数では、同じ効果をデバッグし、非デバッグ ビルドします。  
+>  This function has the same effect in debug and non-debug builds.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer # 33](../../mfc/codesnippet/cpp/diagnostic-services_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#33](../../mfc/codesnippet/cpp/diagnostic-services_10.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h
 
-##  <a name="afxcheckmemory"></a>AfxCheckMemory  
- この関数は、空きメモリ プールを検証し、必要に応じてエラー メッセージを出力します。  
+##  <a name="afxcheckmemory"></a>  AfxCheckMemory  
+ This function validates the free memory pool and prints error messages as required.  
   
 ```   
 BOOL  AfxCheckMemory(); 
 ```  
   
-### <a name="return-value"></a>戻り値  
- メモリ エラーがない場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if no memory errors; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関数にメモリの破損が検出されない場合は、何も出力します。  
+### <a name="remarks"></a>Remarks  
+ If the function detects no memory corruption, it prints nothing.  
   
- によって割り当てられたものを含め、ヒープに現在割り当てられているすべてのメモリ ブロックがチェックされます**新しい**など、基になるメモリ アロケーターへの直接呼び出しによって割り当てられたものではありませんが、`malloc`関数または**GlobalAlloc** Windows の機能です。 任意のブロックが壊れている可能性がある場合、メッセージは、デバッガーの出力に出力されます。  
+ All memory blocks currently allocated on the heap are checked, including those allocated by **new** but not those allocated by direct calls to underlying memory allocators, such as the `malloc` function or the **GlobalAlloc** Windows function. If any block is found to be corrupted, a message is printed to the debugger output.  
   
- 行を追加する場合  
+ If you include the line  
   
- [!code-cpp[NVC_MFCCObjectSample #14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
+ [!code-cpp[NVC_MFCCObjectSample#14](../../mfc/codesnippet/cpp/diagnostic-services_1.cpp)]  
   
- プログラム モジュールの場合、その後に続くの呼び出しで`AfxCheckMemory`メモリが割り当てられたファイル名と行番号が表示されます。  
+ in a program module, then subsequent calls to `AfxCheckMemory` show the filename and line number where the memory was allocated.  
   
 > [!NOTE]
->  モジュールには、シリアル化可能なクラスの 1 つまたは複数の実装が含まれるかどうかは、配置する必要があります、`#define`後、最後の行`IMPLEMENT_SERIAL`マクロの呼び出しです。  
+>  If your module contains one or more implementations of serializable classes, then you must put the `#define` line after the last `IMPLEMENT_SERIAL` macro call.  
   
- この関数は、MFC のデバッグ バージョンでのみ動作します。  
+ This function works only in the Debug version of MFC.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCCObjectSample # 26](../../mfc/codesnippet/cpp/diagnostic-services_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCCObjectSample#26](../../mfc/codesnippet/cpp/diagnostic-services_11.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
  
-##  <a name="afxdump"></a>AfxDump (MFC)  
- デバッグ中に、オブジェクトの状態をダンプするデバッガーでこの関数を呼び出します。  
+##  <a name="afxdump"></a>  AfxDump (MFC)  
+ Call this function while in the debugger to dump the state of an object while debugging.  
   
 ```   
 void AfxDump(const CObject* pOb); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pOb`  
- 派生したクラスのオブジェクトへのポインター`CObject`です。  
+ A pointer to an object of a class derived from `CObject`.  
   
-### <a name="remarks"></a>コメント  
- **AfxDump**オブジェクトの呼び出し`Dump`メンバー関数を指定した場所に情報を送信、`afxDump`変数。 **AfxDump** MFC のデバッグ バージョンでのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ **AfxDump** calls an object's `Dump` member function and sends the information to the location specified by the `afxDump` variable. **AfxDump** is available only in the Debug version of MFC.  
   
- プログラミング コードで呼び出さないでください。 **AfxDump**、代わりに呼び出す必要がありますが、`Dump`適切なオブジェクトのメンバー関数。  
+ Your program code should not call **AfxDump**, but should instead call the `Dump` member function of the appropriate object.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
 
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>See Also  
  [CObject::Dump](cobject-class.md#dump)   
 
 
   
-##  <a name="afxdumpstack"></a>AfxDumpStack  
- 現在のスタックのイメージを生成する、このグローバル関数を使用できます。  
+##  <a name="afxdumpstack"></a>  AfxDumpStack  
+ This global function can be used to generate an image of the current stack.  
   
 ```   
 void AFXAPI AfxDumpStack(DWORD dwTarget = AFX_STACK_DUMP_TARGET_DEFAULT); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *dwTarget*  
- ダンプの出力のターゲットを示します。 可能な値は、ビットごとの OR を使用して結合できます ( **|**) 演算子は、次のようにします。  
+ Indicates the target of the dump output. Possible values, which can be combined using the bitwise-OR ( **&#124;**) operator, are as follows:  
   
-- **AFX_STACK_DUMP_TARGET_TRACE**の出力を送信、[トレース](#trace)マクロです。 **トレース**マクロでは、デバッグ ビルドのみで出力が生成されます。 リリース ビルドの出力生成なし。 また、**トレース**デバッガー以外のターゲットにリダイレクトすることができます。  
+- **AFX_STACK_DUMP_TARGET_TRACE** Sends output by means of the [TRACE](#trace) macro. The **TRACE** macro generates output in debug builds only; it generates no output in release builds. Also, **TRACE** can be redirected to other targets besides the debugger.  
   
-- **AFX_STACK_DUMP_TARGET_DEFAULT**送信は、既定のターゲットに出力をダンプします。 デバッグ ビルドの出力に移動、**トレース**マクロです。 リリース ビルドでは、出力は、クリップボードに移動します。  
+- **AFX_STACK_DUMP_TARGET_DEFAULT** Sends dump output to the default target. For a debug build, output goes to the **TRACE** macro. In a release build, output goes to the Clipboard.  
   
-- **AFX_STACK_DUMP_TARGET_CLIPBOARD**クリップボードのみに出力を送信します。 データがプレーン テキストを使用してとしてクリップボードに配置、**エディット**クリップボードの形式です。  
+- **AFX_STACK_DUMP_TARGET_CLIPBOARD** Sends output to the Clipboard only. The data is placed on the Clipboard as plain text using the **CF_TEXT** Clipboard format.  
   
-- **AFX_STACK_DUMP_TARGET_BOTH**出力クリップボードにされ、送信、**トレース**マクロ、同時にします。  
+- **AFX_STACK_DUMP_TARGET_BOTH** Sends output to the Clipboard and to the **TRACE** macro, simultaneously.  
   
-- **出力が**Win32 関数を使用して出力をデバッガーに直接送信**OutputDebugString()**です。 このオプションでは、両方のデバッグでデバッガーの出力を生成し、プロセスにデバッガーをアタッチするときに、リリース ビルドします。 **出力が**(アタッチされている場合にデバッガーを常に到達し、リダイレクトすることはできません。  
+- **AFX_STACK_DUMP_TARGET_ODS** Sends output directly to the debugger by means of the Win32 function **OutputDebugString()**. This option will generate debugger output in both debug and release builds when a debugger is attached to the process. **AFX_STACK_DUMP_TARGET_ODS** always reaches the debugger (if it is attached) and cannot be redirected.  
   
-### <a name="remarks"></a>コメント  
- 次の例は、呼び出し元から生成された出力の 1 つの行を反映`AfxDumpStack`MFC ダイアログ アプリケーション ボタン ハンドラーから。  
+### <a name="remarks"></a>Remarks  
+ The example below reflects a single line of the output generated from calling `AfxDumpStack` from a button handler in an MFC dialog application:  
   
  `=== begin AfxDumpStack output ===`  
   
@@ -608,82 +608,82 @@ void AFXAPI AfxDumpStack(DWORD dwTarget = AFX_STACK_DUMP_TARGET_DEFAULT);
   
  `=== end AfxDumpStack() output ===`  
   
- 上記の出力の各行には、最後の関数呼び出し、関数呼び出しと呼び出された関数プロトタイプを含むモジュールの完全なパス名のアドレスを示します。 関数の指定したアドレスで、スタック上で、関数呼び出しが発生しない場合、バイト単位のオフセットが表示されます。  
+ Each line in the output above indicates the address of the last function call, the full path name of the module that contains the function call, and the function prototype called. If the function call on the stack does not happen at the exact address of the function, an offset of bytes is shown.  
   
- たとえば、次の表では、上記の出力の最初の行について説明します。  
+ For example, the following table describes the first line of the above output:  
   
-|出力|説明|  
+|Output|Description|  
 |------------|-----------------|  
-|`00427D55:`|関数の最後の呼び出しの戻りアドレス。|  
-|`DUMP2\DEBUG\DUMP2.EXE!`|関数呼び出しを含むモジュールの完全なパス名。|  
-|`void AfxDumpStack(unsigned long)`|関数プロトタイプが呼び出されます。|  
-|`+ 181 bytes`|関数プロトタイプのアドレスからのバイト オフセット (この場合、 `void AfxDumpStack(unsigned long)`) リターン アドレスを (この場合、 `00427D55`)。|  
+|`00427D55:`|The return address of the last function call.|  
+|`DUMP2\DEBUG\DUMP2.EXE!`|The full path name of the module that contains the function call.|  
+|`void AfxDumpStack(unsigned long)`|The function prototype called.|  
+|`+ 181 bytes`|The offset in bytes from the address of the function prototype (in this case, `void AfxDumpStack(unsigned long)`) to the return address (in this case, `00427D55`).|  
   
- `AfxDumpStack`非デバッグのデバッグ バージョンと、MFC ライブラリで使用できます。ただし、実行可能ファイルの共有 DLL で MFC を使用している場合でもは、関数は静的にリンクされることは常にされます。 共有ライブラリの実装では、関数は mfcs42 します。LIB ライブラリ (とそのバリエーション)。  
+ `AfxDumpStack` is available in debug and nondebug versions of the MFC libraries; however, the function is always linked statically, even when your executable file uses MFC in a shared DLL. In shared-library implementations, the function is found in the MFCS42.LIB library (and its variants).  
   
- 正常にこの関数を使用します。  
+ To use this function successfully:  
   
--   IMAGEHLP ファイル。DLL がパスにする必要があります。 この DLL がない、関数により、エラー メッセージが表示されます。 参照してください[イメージ ヘルプ ライブラリ](http://msdn.microsoft.com/library/windows/desktop/ms680321)IMAGEHLP によって提供される関数のセットについてはします。  
+-   The file IMAGEHLP.DLL must be on your path. If you do not have this DLL, the function will display an error message. See [Image Help Library](http://msdn.microsoft.com/library/windows/desktop/ms680321) for information on the function set provided by IMAGEHLP.  
   
--   スタックにフレームを持つモジュールは、デバッグ情報を含める必要があります。 デバッグ情報を含んでいない、関数、スタック トレースによって生成されますが、トレースに含まれる小さい情報します。  
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+-   The modules that have frames on the stack must include debugging information. If they do not contain debugging information, the function will still generate a stack trace, but the trace will be less detailed.  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxenablememoryleakdump"></a>AfxEnableMemoryLeakDump  
- `AFX_DEBUG_STATE` デストラクター内のメモリ リーク ダンプを有効または無効にします。  
+##  <a name="afxenablememoryleakdump"></a>  AfxEnableMemoryLeakDump  
+ Enables and disables the memory leak dump in the `AFX_DEBUG_STATE` destructor.  
   
 ```  
 BOOL AFXAPI AfxEnableMemoryLeakDump(BOOL bDump);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bDump`  
- `TRUE` はメモリ リーク ダンプが有効なことを示し、`FALSE` はメモリ リーク ダンプが無効なことを示します。  
+### <a name="parameters"></a>Parameters  
+ [in] `bDump`  
+ `TRUE` indicates the memory leak dump is enabled; `FALSE` indicates the memory leak dump is disabled.  
   
-### <a name="return-value"></a>戻り値  
- このフラグの以前の値。  
+### <a name="return-value"></a>Return Value  
+ The previous value for this flag.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションが MFC ライブラリをアンロードしたときに、MFC ライブラリがメモリ リークを確認します。 を介してユーザーに、メモリ リークを報告するこの時点で、**デバッグ**のウィンドウ[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]します。  
+### <a name="remarks"></a>Remarks  
+ When an application unloads the MFC library, the MFC library checks for memory leaks. At this point, any memory leaks are reported to the user through the **Debug** window of [!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)].  
   
- アプリケーションが MFC ライブラリの前に別のライブラリを読み込んだ場合、そのライブラリ内の一部のメモリ割り当てが誤ってメモリ リークとして報告されます。 誤ったメモリ リークが原因で、MFC ライブラリがそれらを報告したときに、アプリケーションがゆっくりと終了する可能性があります。 このような場合、 `AfxEnableMemoryLeakDump` を使用してメモリ リーク ダンプを無効にします。  
+ If your application loads another library before the MFC library, some memory allocations in that library will be incorrectly reported as memory leaks. False memory leaks can cause your application to close slowly as the MFC library reports them. In this case, use `AfxEnableMemoryLeakDump` to disable the memory leak dump.  
   
 > [!NOTE]
->  この方法を使用してメモリ リーク ダンプをオフにすると、アプリケーションで有効なメモリ リークのレポートを受け取らなくなります。 この方法を使用するのは、メモリ リーク ダンプに誤ったメモリ リークが含まれているという確信がある場合のみにする必要があります。  
+>  If you use this method to turn off the memory leak dump, you will not receive reports of valid memory leaks in your application. You should only use this method if you are confident that the memory leak report contains false memory leaks.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxenablememorytracking"></a>AfxEnableMemoryTracking  
- 診断メモリ追跡が MFC のデバッグ バージョン通常有効です。  
+##  <a name="afxenablememorytracking"></a>  AfxEnableMemoryTracking  
+ Diagnostic memory tracking is normally enabled in the Debug version of MFC.  
   
 ```   
 BOOL AfxEnableMemoryTracking(BOOL bTrack); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *bTrack*  
- この値を設定**TRUE**メモリ追跡; がオン**FALSE**をオフにします。  
+ Setting this value to **TRUE** turns on memory tracking; **FALSE** turns it off.  
   
-### <a name="return-value"></a>戻り値  
- 追跡を有効にするフラグの以前の設定。  
+### <a name="return-value"></a>Return Value  
+ The previous setting of the tracking-enable flag.  
   
-### <a name="remarks"></a>コメント  
- ブロックの割り当ては正しくわかっているコードのセクションでの追跡を無効にするのにには、この関数を使用します。  
+### <a name="remarks"></a>Remarks  
+ Use this function to disable tracking on sections of your code that you know are allocating blocks correctly.  
   
- 詳細については`AfxEnableMemoryTracking`を参照してください[MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。  
+ For more information on `AfxEnableMemoryTracking`, see [Debugging MFC Applications](/visualstudio/debugger/mfc-debugging-techniques).  
   
 > [!NOTE]
->  この関数は、MFC のデバッグ バージョンでのみ動作します。  
+>  This function works only in the Debug version of MFC.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 24](../../mfc/codesnippet/cpp/diagnostic-services_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#24](../../mfc/codesnippet/cpp/diagnostic-services_12.cpp)]  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxismemoryblock"></a>AfxIsMemoryBlock  
- テストの診断のバージョンによって割り当てられた現在アクティブなメモリ ブロックを表すかどうかを確認するメモリ アドレス**新しい**です。  
+##  <a name="afxismemoryblock"></a>  AfxIsMemoryBlock  
+ Tests a memory address to make sure it represents a currently active memory block that was allocated by the diagnostic version of **new**.  
   
 ```   
 BOOL AfxIsMemoryBlock(
@@ -692,30 +692,30 @@ BOOL AfxIsMemoryBlock(
     LONG* plRequestNumber = NULL); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `p`  
- テストするメモリ ブロックへのポインター。  
+ Points to the block of memory to be tested.  
   
  `nBytes`  
- メモリ ブロックのバイトの長さが含まれています。  
+ Contains the length of the memory block in bytes.  
   
  `plRequestNumber`  
- 指す、**長い**メモリ ブロックの割り当てのシーケンス番号を使用して入力がまたは現在アクティブなメモリ ブロックを表していない場合は 0 を整数。  
+ Points to a **long** integer that will be filled in with the memory block's allocation sequence number, or zero if it does not represent a currently active memory block.  
   
-### <a name="return-value"></a>戻り値  
- メモリ ブロックが現在割り当てられているし、長さが正しい場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the memory block is currently allocated and the length is correct; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- また、元の割り当てられたサイズに対して指定したサイズを確認します。 割り当て順序番号が返される場合は、関数は、0 以外を返します、`plRequestNumber`です。 この番号は、ブロックが他のすべての基準が割り当てられる順序を表す**新しい**割り当てします。  
+### <a name="remarks"></a>Remarks  
+ It also checks the specified size against the original allocated size. If the function returns nonzero, the allocation sequence number is returned in `plRequestNumber`. This number represents the order in which the block was allocated relative to all other **new** allocations.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 27](../../mfc/codesnippet/cpp/diagnostic-services_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#27](../../mfc/codesnippet/cpp/diagnostic-services_13.cpp)]  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxisvalidaddress"></a>AfxIsValidAddress  
- プログラムのメモリ領域内に完全に収まっていることを確認する任意のメモリ アドレスをテストします。  
+##  <a name="afxisvalidaddress"></a>  AfxIsValidAddress  
+ Tests any memory address to ensure that it is contained entirely within the program's memory space.  
   
 ```   
 BOOL AfxIsValidAddress(
@@ -724,32 +724,32 @@ BOOL AfxIsValidAddress(
     BOOL bReadWrite = TRUE); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lp`  
- テストするメモリ アドレスへのポインター。  
+ Points to the memory address to be tested.  
   
  `nBytes`  
- テストするメモリのバイト数が含まれています。  
+ Contains the number of bytes of memory to be tested.  
   
  *bReadWrite*  
- メモリの読み取りと書き込みの両方であるかどうかを指定します ( **TRUE**) か、または読み込み ( **FALSE**)。  
+ Specifies whether the memory is both for reading and writing ( **TRUE**) or just reading ( **FALSE**).  
   
-### <a name="return-value"></a>戻り値  
- デバッグ ビルドで、指定されたメモリ ブロックの場合は 0 以外に含まれる完全プログラムのメモリ領域です。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ In debug builds, nonzero if the specified memory block is contained entirely within the program's memory space; otherwise 0.  
   
- 非デバッグ ビルドでは、0 以外の値`lp`は NULL。 それ以外の場合に 0 です。  
+ In non-debug builds, nonzero if `lp` is not NULL; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アドレスは割り当てられたブロックに制限されません**新しい**です。  
+### <a name="remarks"></a>Remarks  
+ The address is not restricted to blocks allocated by **new**.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 28](../../mfc/codesnippet/cpp/diagnostic-services_14.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#28](../../mfc/codesnippet/cpp/diagnostic-services_14.cpp)]  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxisvalidstring"></a>AfxIsValidString  
- この関数を使用して、文字列へのポインターが有効かどうかを判断します。  
+##  <a name="afxisvalidstring"></a>  AfxIsValidString  
+ Use this function to determine whether a pointer to a string is valid.  
   
 ```   
 BOOL  AfxIsValidString(
@@ -757,59 +757,59 @@ BOOL  AfxIsValidString(
     int nLength = -1); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpsz`  
- テストへのポインター。  
+ The pointer to test.  
   
  `nLength`  
- (バイト単位) をテストする文字列の長さを指定します。 -1 の値は、文字列が null で終了させることを示します。  
+ Specifies the length of the string to be tested, in bytes. A value of -1 indicates that the string will be null-terminated.  
   
-### <a name="return-value"></a>戻り値  
- デバッグ ビルドで、指定したサイズの文字列を指定したポインターが指している場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ In debug builds, nonzero if the specified pointer points to a string of the specified size; otherwise 0.  
   
- 非デバッグ ビルドでは、0 以外の値`lpsz`は NULL。 それ以外の場合に 0 です。  
+ In non-debug builds, nonzero if `lpsz` is not NULL; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 29](../../mfc/codesnippet/cpp/diagnostic-services_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#29](../../mfc/codesnippet/cpp/diagnostic-services_15.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxsetallochook"></a>AfxSetAllocHook  
- 各メモリ ブロックが割り当てられる前に、指定された関数の呼び出しをできるようにするフックを設定します。  
+##  <a name="afxsetallochook"></a>  AfxSetAllocHook  
+ Sets a hook that enables calling of the specified function before each memory block is allocated.  
   
 ```   
 AFX_ALLOC_HOOK AfxSetAllocHook(AFX_ALLOC_HOOK pfnAllocHook); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pfnAllocHook*  
- 呼び出す関数の名前を指定します。 割り当て関数のプロトタイプの「解説」を参照してください。  
+ Specifies the name of the function to call. See the Remarks for the prototype of an allocation function.  
   
-### <a name="return-value"></a>戻り値  
- 割り当てを許可する場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if you want to permit the allocation; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Microsoft Foundation Class ライブラリのデバッグ メモリ アロケーターは、メモリの割り当てを監視して、割り当てが許可されているかどうかを制御するユーザーを許可するユーザー定義フック関数を呼び出すことができます。 割り当てフック関数とおりプロトタイプ宣言されています。  
+### <a name="remarks"></a>Remarks  
+ The Microsoft Foundation Class Library debug-memory allocator can call a user-defined hook function to allow the user to monitor a memory allocation and to control whether the allocation is permitted. Allocation hook functions are prototyped as follows:  
   
  **BOOL AFXAPI AllocHook( size_t** `nSize`**, BOOL** `bObject`**, LONG** `lRequestNumber` **);**  
   
  `nSize`  
- 提案されたメモリの割り当てのサイズ。  
+ The size of the proposed memory allocation.  
   
  `bObject`  
- **TRUE**割り当てがある場合、 `CObject`-派生オブジェクト以外の場合**FALSE**です。  
+ **TRUE** if the allocation is for a `CObject`-derived object; otherwise **FALSE**.  
   
  `lRequestNumber`  
- メモリ割り当てのシーケンス番号。  
+ The memory allocation's sequence number.  
   
- 注意してください、 **AFXAPI**呼び出し規約は、呼び出し先がスタックからパラメーターを削除する必要がありますを意味します。  
+ Note that the **AFXAPI** calling convention implies that the callee must remove the parameters from the stack.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxdoforallclasses"></a>AfxDoForAllClasses  
- 指定されたイテレーション関数をすべてシリアル化可能な呼び出し`CObject`-アプリケーションのメモリ領域内のクラスを派生します。  
+##  <a name="afxdoforallclasses"></a>  AfxDoForAllClasses  
+ Calls the specified iteration function for all serializable `CObject`-derived classes in the application's memory space.  
   
 ```   
 void  
@@ -818,29 +818,29 @@ AFXAPI AfxDoForAllClasses(
     void* pContext); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pfn`  
- 各クラスに対して呼び出されるように反復関数へのポインター。 関数の引数がへのポインター、`CRuntimeClass`オブジェクトと呼び出し元が関数に提供する追加のデータへの void ポインターです。  
+ Points to an iteration function to be called for each class. The function arguments are a pointer to a `CRuntimeClass` object and a void pointer to extra data that the caller supplies to the function.  
   
  `pContext`  
- イテレーション関数を呼び出し元が供給できる省略可能なデータへのポインター。 このポインターは、 **NULL**です。  
+ Points to optional data that the caller can supply to the iteration function. This pointer can be **NULL**.  
   
-### <a name="remarks"></a>コメント  
- シリアル化可能な`CObject`-派生クラスを使用して派生したクラス、`DECLARE_SERIAL`マクロです。 渡されるポインター`AfxDoForAllClasses`で`pContext`が呼び出されるたびに、指定されたイテレーション関数に渡されます。  
+### <a name="remarks"></a>Remarks  
+ Serializable `CObject`-derived classes are classes derived using the `DECLARE_SERIAL` macro. The pointer that is passed to `AfxDoForAllClasses` in `pContext` is passed to the specified iteration function each time it is called.  
   
 > [!NOTE]
->  この関数は、MFC のデバッグ バージョンでのみ動作します。  
+>  This function works only in the Debug version of MFC.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCCollections # 113](../../mfc/codesnippet/cpp/diagnostic-services_16.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCCollections#113](../../mfc/codesnippet/cpp/diagnostic-services_16.cpp)]  
   
- [!code-cpp[NVC_MFCCollections # 114](../../mfc/codesnippet/cpp/diagnostic-services_17.cpp)]  
+ [!code-cpp[NVC_MFCCollections#114](../../mfc/codesnippet/cpp/diagnostic-services_17.cpp)]  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h 
 
-##  <a name="afxdoforallobjects"></a>AfxDoForAllObjects  
- 派生したすべてのオブジェクト用に指定されたイテレーション関数を実行`CObject`使って割り当てられた**新しい**です。  
+##  <a name="afxdoforallobjects"></a>  AfxDoForAllObjects  
+ Executes the specified iteration function for all objects derived from `CObject` that have been allocated with **new**.  
   
 ```   
 void AfxDoForAllObjects(
@@ -848,23 +848,23 @@ void AfxDoForAllObjects(
     void* pContext); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pfn`  
- 各オブジェクトに対して実行するイテレーション関数へのポインター。 関数の引数がへのポインター、`CObject`と呼び出し元が関数に提供する追加のデータへの void ポインターです。  
+ Points to an iteration function to execute for each object. The function arguments are a pointer to a `CObject` and a void pointer to extra data that the caller supplies to the function.  
   
  `pContext`  
- イテレーション関数を呼び出し元が供給できる省略可能なデータへのポインター。 このポインターは、 **NULL**です。  
+ Points to optional data that the caller can supply to the iteration function. This pointer can be **NULL**.  
   
-### <a name="remarks"></a>コメント  
- スタック、グローバル、または埋め込みオブジェクトは列挙されません。 渡されるポインター`AfxDoForAllObjects`で`pContext`が呼び出されるたびに、指定されたイテレーション関数に渡されます。  
+### <a name="remarks"></a>Remarks  
+ Stack, global, or embedded objects are not enumerated. The pointer passed to `AfxDoForAllObjects` in `pContext` is passed to the specified iteration function each time it is called.  
   
 > [!NOTE]
->  この関数は、MFC のデバッグ バージョンでのみ動作します。  
+>  This function works only in the Debug version of MFC.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCCollections # 115](../../mfc/codesnippet/cpp/diagnostic-services_18.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCCollections#115](../../mfc/codesnippet/cpp/diagnostic-services_18.cpp)]  
   
- [!code-cpp[NVC_MFCCollections # 116](../../mfc/codesnippet/cpp/diagnostic-services_19.cpp)]  
+ [!code-cpp[NVC_MFCCollections#116](../../mfc/codesnippet/cpp/diagnostic-services_19.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)

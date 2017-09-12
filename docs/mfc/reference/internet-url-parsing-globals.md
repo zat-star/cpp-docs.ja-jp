@@ -1,5 +1,5 @@
 ---
-title: "インターネット URL 解析用グローバル関数とヘルパー |Microsoft Docs"
+title: Internet URL Parsing Globals and Helpers | Microsoft Docs
 ms.custom: 
 ms.date: 04/03/2017
 ms.reviewer: 
@@ -34,31 +34,31 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: 947ef992d58895e4638d9ffe77fca973cea8eada
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 675b7cced508fbd03b36948004d2312e5525b908
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="internet-url-parsing-globals-and-helpers"></a>インターネット URL 解析用グローバル関数とヘルパー
-クライアントはインターネット サーバーにクエリを送信するときは、クライアントに関する情報を抽出するのに URL 解析用グローバルのいずれかを使用できます。 ヘルパー関数では、その他のインターネット機能を提供します。
+# <a name="internet-url-parsing-globals-and-helpers"></a>Internet URL Parsing Globals and Helpers
+When a client sends a query to the Internet server, you can use one of the URL parsing globals to extract information about the client. The helper functions provide other internet functionality.
   
-## <a name="internet-url-parsing-globals"></a>インターネット URL 解析用グローバル関数  
+## <a name="internet-url-parsing-globals"></a>Internet URL Parsing Globals  
   
 |||  
 |-|-|  
-|[AfxParseURL](#afxparseurl)|URL 文字列を解析し、サービスとそのコンポーネントの型を返します。|  
-|[AfxParseURLEx](#afxparseurlex)|URL 文字列を解析し、サービスとそのコンポーネントをできるだけでなく、ユーザー名とパスワードの種類を取得します。|  
+|[AfxParseURL](#afxparseurl)|Parses a URL string and returns the type of service and its components.|  
+|[AfxParseURLEx](#afxparseurlex)|Parses a URL string and returns the type of service and its components, as well as providing the user name and password.|  
 
-## <a name="other-internet-helpers"></a>その他のインターネット ヘルパー
+## <a name="other-internet-helpers"></a>Other Internet Helpers
 |||
 |-|-|
-|[AfxThrowInternetException](#afxthrowinternetexception)|インターネット接続に関連する例外をスローします。|
-|[AfxGetInternetHandleType](#afxgetinternethandletype)|インターネット ハンドルの種類を決定します。|
+|[AfxThrowInternetException](#afxthrowinternetexception)|Throws an exception related to the internet connection.|
+|[AfxGetInternetHandleType](#afxgetinternethandletype)|Determines the type of an Internet handle.|
   
-##  <a name="afxparseurl"></a>AfxParseURL  
- このグローバル[できます](../../mfc/reference/cinternetsession-class.md#openurl)です。  
+##  <a name="afxparseurl"></a>  AfxParseURL  
+ This global is used in [CInternetSession::OpenURL](../../mfc/reference/cinternetsession-class.md#openurl).  
   
 ```   
 BOOL AFXAPI AfxParseURL(
@@ -69,12 +69,12 @@ BOOL AFXAPI AfxParseURL(
     INTERNET_PORT& nPort); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pstrURL*  
- 解析する URL を含む文字列へのポインター。  
+ A pointer to a string containing the URL to be parsed.  
   
  `dwServiceType`  
- インターネット サービスの種類を示します。 次の値を指定できます。  
+ Indicates the type of Internet service. Possible values are as follows:  
   
 -   AFX_INET_SERVICE_FTP  
   
@@ -107,38 +107,38 @@ BOOL AFXAPI AfxParseURL(
 -   AFX_INET_SERVICE_UNK  
   
  `strServer`  
- 次のサービスの種類 URL の最初のセグメント。  
+ The first segment of the URL following the service type.  
   
  `strObject`  
- URL を表すオブジェクト (空でもかまいません)。  
+ An object that the URL refers to (may be empty).  
   
  `nPort`  
- いずれかが存在する場合に、URL のサーバーまたはオブジェクトのいずれかの部分から決定されます。  
+ Determined from either the Server or Object portions of the URL, if either exists.  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、URL は正常に解析されました。これが空か、既知のインターネット サービスの種類が含まれていない場合それ以外の場合、0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the URL was successfully parsed; otherwise, 0 if it is empty or does not contain a known Internet service type.  
   
-### <a name="remarks"></a>コメント  
- URL 文字列を解析し、サービスとそのコンポーネントの型を返します。  
+### <a name="remarks"></a>Remarks  
+ It parses a URL string and returns the type of service and its components.  
   
- たとえば、`AfxParseURL`フォームの Url を解析して**service://server/dir/dir/object.ext:port**し、次のように格納されているそのコンポーネントを返します。  
+ For example, `AfxParseURL` parses URLs of the form **service://server/dir/dir/object.ext:port** and returns its components stored as follows:  
   
- `strServer`"server"= =  
+ `strServer` == "server"  
   
- `strObject`= ="/dir/dir/object/object.ext"  
+ `strObject` == "/dir/dir/object/object.ext"  
   
- `nPort`#port を = =  
+ `nPort` == #port  
   
- `dwServiceType`#service を = =  
+ `dwServiceType` == #service  
   
 > [!NOTE]
->  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
+>  To call this function, your project must include AFXINET.H.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxinet.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxinet.h  
   
-##  <a name="afxparseurlex"></a>AfxParseURLEx  
- このグローバル関数は、拡張のバージョン[AfxParseURL](#afxparseurl)で使用されると[できます](../../mfc/reference/cinternetsession-class.md#openurl)です。  
+##  <a name="afxparseurlex"></a>  AfxParseURLEx  
+ This global function is the extended version of [AfxParseURL](#afxparseurl) and is used in [CInternetSession::OpenURL](../../mfc/reference/cinternetsession-class.md#openurl).  
   
 ```   
 BOOL AFXAPI AfxParseURLEx(
@@ -152,12 +152,12 @@ BOOL AFXAPI AfxParseURLEx(
     DWORD dwFlags = 0); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pstrURL*  
- 解析する URL を含む文字列へのポインター。  
+ A pointer to a string containing the URL to be parsed.  
   
  `dwServiceType`  
- インターネット サービスの種類を示します。 次の値を指定できます。  
+ Indicates the type of Internet service. Possible values are as follows:  
   
 -   AFX_INET_SERVICE_FTP  
   
@@ -190,64 +190,64 @@ BOOL AFXAPI AfxParseURLEx(
 -   AFX_INET_SERVICE_UNK  
   
  `strServer`  
- 次のサービスの種類 URL の最初のセグメント。  
+ The first segment of the URL following the service type.  
   
  `strObject`  
- URL を表すオブジェクト (空でもかまいません)。  
+ An object that the URL refers to (may be empty).  
   
  `nPort`  
- いずれかが存在する場合に、URL のサーバーまたはオブジェクトのいずれかの部分から決定されます。  
+ Determined from either the Server or Object portions of the URL, if either exists.  
   
  *strUsername*  
- 参照、`CString`ユーザーの名前を表すオブジェクト。  
+ A reference to a `CString` object containing the name of the user.  
   
  `strPassword`  
- 参照、`CString`ユーザーのパスワードを表すオブジェクト。  
+ A reference to a `CString` object containing the password of the user.  
   
  `dwFlags`  
- URL を解析する方法を制御するフラグ。 次の値の組み合わせが可能です。  
+ The flags controlling how to parse the URL. Can be a combination of the following values:  
   
-|値|説明|  
+|Value|Meaning|  
 |-----------|-------------|  
-|**ICU_DECODE**|%XX エスケープ シーケンスを文字に変換します。|  
-|**ICU_NO_ENCODE**|安全でない文字をエスケープ シーケンスに変換されません。|  
-|**ICU_NO_META**|(「\」などのメタ シーケンスを削除しないでください。 および「\..」)URL です。|  
-|**ICU_ENCODE_SPACES_ONLY**|スペースだけをエンコードします。|  
-|**ICU_BROWSER_MODE**|エンコードまたは '#' の後に文字をデコードまたは '後の末尾の空白文字を削除しない' です。 この値が指定されていない場合は、URL 全体をエンコードされ、後続の空白が削除されます。|  
+|**ICU_DECODE**|Convert %XX escape sequences to characters.|  
+|**ICU_NO_ENCODE**|Do not convert unsafe characters to escape sequence.|  
+|**ICU_NO_META**|Do not remove meta sequences (such as "\ ." and "\ ..") from the URL.|  
+|**ICU_ENCODE_SPACES_ONLY**|Encode spaces only.|  
+|**ICU_BROWSER_MODE**|Do not encode or decode characters after '#' or '', and do not remove trailing white space after ''. If this value is not specified, the entire URL is encoded and trailing white space is removed.|  
   
- 関数には、すべての認識できない文字とメタ シーケンスに変換しますフラグがない、MFC の既定を使用する場合 (など\\.、\..、および\\...) をエスケープ シーケンスです。  
+ If you use the MFC default, which is no flags, the function converts all unsafe characters and meta sequences (such as \\.,\ .., and \\...) to escape sequences.  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、URL は正常に解析されました。これが空か、既知のインターネット サービスの種類が含まれていない場合それ以外の場合、0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the URL was successfully parsed; otherwise, 0 if it is empty or does not contain a known Internet service type.  
   
-### <a name="remarks"></a>コメント  
- URL 文字列を解析し、サービスとそのコンポーネントだけでなく、ユーザーの名前とパスワードを入力の型を返します。 フラグがどのように安全でない文字を指定処理されます。  
+### <a name="remarks"></a>Remarks  
+ It parses a URL string and returns the type of service and its components, as well as providing the user's name and password. The flags indicate how unsafe characters are handled.  
   
 > [!NOTE]
->  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
+>  To call this function, your project must include AFXINET.H.  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxinet.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxinet.h  
     
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
  
-## <a name="afxgetinternethandletype"></a>AfxGetInternetHandleType
-インターネット ハンドルの種類を確認するのにには、この関数を使用します。  
+## <a name="afxgetinternethandletype"></a>  AfxGetInternetHandleType
+Use this global function to determine the type of an Internet handle.  
    
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   ```
 DWORD AFXAPI AfxGetInternetHandleType(  HINTERNET hQuery );  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hQuery`  
- インターネット クエリへのハンドル。  
+ A handle to an Internet query.  
    
-### <a name="return-value"></a>戻り値  
- WININET で定義されているインターネット サービスの種類のいずれか。H. これらのインターネット サービスの一覧については、「解説」セクションを参照してください。 ハンドルは、null または認識されない、AFX_INET_SERVICE_UNK を返します。  
+### <a name="return-value"></a>Return Value  
+ Any of the Internet service types defined by WININET.H. See the Remarks section for a list of these Internet services. If the handle is NULL or not recognized, the function returns AFX_INET_SERVICE_UNK.  
    
-### <a name="remarks"></a>コメント  
- 次の一覧には、によって返される使用可能なインターネット型が含まれています。`AfxGetInternetHandleType`です。  
+### <a name="remarks"></a>Remarks  
+ The following list includes possible Internet types returned by `AfxGetInternetHandleType`.  
   
 -   INTERNET_HANDLE_TYPE_INTERNET  
   
@@ -276,42 +276,42 @@ DWORD AFXAPI AfxGetInternetHandleType(  HINTERNET hQuery );
 -   INTERNET_HANDLE_TYPE_HTTP_REQUEST  
   
 > [!NOTE]
->  この関数を呼び出すために、プロジェクトは AFXINET を含める必要があります。H.  
+>  In order to call this function, your project must include AFXINET.H.  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxinet.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxinet.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
  [AfxParseURL](internet-url-parsing-globals.md#afxparseurl)
  
-## <a name="afxthrowinternetexception"></a>AfxThrowInternetException
-インターネットの例外をスローします。  
+## <a name="afxthrowinternetexception"></a>  AfxThrowInternetException
+Throws an Internet exception.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
    void AFXAPI AfxThrowInternetException(  DWORD dwContext,  DWORD dwError = 0 );  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwContext`  
- エラーの原因となった操作のコンテキストの識別子です。 既定値の`dwContext`で最初に指定された[CInternetSession](cinternetsession-class.md)に渡されると[関数](cinternetconnection-class.md)- と[CInternetFile](cinternetfile-class.md)-派生クラス。 既定のオーバーライド通常の接続またはファイルで実行される特定の操作に対して、`dwContext`独自のです。 この値に返されます、 [:onstatuscallback](cinternetsession-class.md#onstatuscallback)を特定の操作の状態を識別します。 
+ The context identifier for the operation that caused the error. The default value of `dwContext` is specified originally in [CInternetSession](cinternetsession-class.md) and is passed to [CInternetConnection](cinternetconnection-class.md)- and [CInternetFile](cinternetfile-class.md)-derived classes. For specific operations performed on a connection or a file, you usually override the default with a `dwContext` of your own. This value then is returned to [CInternetSession::OnStatusCallback](cinternetsession-class.md#onstatuscallback) to identify the specific operation's status. 
   
  `dwError`  
- 例外の原因となったエラー。  
+ The error that caused the exception.  
    
-### <a name="remarks"></a>コメント  
- オペレーティング システム エラー コードに基づく原因を特定するを担当しています。  
+### <a name="remarks"></a>Remarks  
+ You are responsible for determining the cause based on the operating-system error code.  
   
 > [!NOTE]
->  この関数を呼び出すには、プロジェクトは AFXINET を含める必要があります。H.  
+>  To call this function, your project must include AFXINET.H.  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxinet.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxinet.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
- [CInternetException クラス](cinternetexception-class.md)   
- [スローします。](#throw)
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
+ [CInternetException Class](cinternetexception-class.md)   
+ [THROW](#throw)
  
 
 

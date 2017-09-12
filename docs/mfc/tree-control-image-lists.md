@@ -1,41 +1,60 @@
 ---
-title: "ツリー コントロールのイメージ リスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, イメージ リスト"
-  - "イメージ [C++], 一覧 (ツリー コントロール内の)"
-  - "ツリー コントロール, イメージ リスト"
+title: Tree Control Image Lists | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- images [MFC], lists in tree controls
+- tree controls [MFC], image lists
+- CTreeCtrl class [MFC], image lists
 ms.assetid: f560c4f2-20d2-4d28-ac33-4017e65fb0a6
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ツリー コントロールのイメージ リスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bcc246de7a4a0d403129589a9af1495f6f9084cb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) の各項目には、関連付けられたビットマップ イメージのペアを持つことができます。  イメージが項目のラベルの左側に表示されます。  1 種類のイメージは項目が選択されていない場合、項目が選択され、もう一方が表示されるときに表示されます。  たとえば、項目が選択されていない場合、閉じるフォルダーを選択すると、開くフォルダーを表示することもできます。  
+---
+# <a name="tree-control-image-lists"></a>Tree Control Image Lists
+Each item in a tree control ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) can have a pair of bitmapped images associated with it. The images appear on the left side of an item's label. One image is displayed when the item is selected, and the other is displayed when the item is not selected. For example, an item might display an open folder when it is selected and a closed folder when it is not selected.  
   
- 項目のイメージを使用するには、[CImageList](../Topic/CImageList%20Class.md) オブジェクトを構築し、関連付けられたイメージ リストを作成するために [CImageList::Create](../Topic/CImageList::Create.md) 関数を使用して、イメージ リストを作成する必要があります。  その後、目的のビットマップをリストに追加して、ツリー コントロールで [SetImageList](../Topic/CTreeCtrl::SetImageList.md) メンバー関数を使用してリストを関連付けます。  既定では、すべての Itemspec と nonselected 状態のイメージ リストの最初のイメージが表示されます。  指定 nonselected とイメージのインデックスを指定して特定のアイテムの既定の動作を変更する項目を [InsertItem](../Topic/CTreeCtrl::InsertItem.md) メンバー関数を使用して、ツリー コントロールに追加します。  アイテムを追加した後 [SetItemImage](../Topic/CTreeCtrl::SetItemImage.md) メンバー関数を使用してインデックスを変更できます。  
+ To use item images, you must create an image list by constructing a [CImageList](../mfc/reference/cimagelist-class.md) object and using the [CImageList::Create](../mfc/reference/cimagelist-class.md#create) function to create the associated image list. Then add the desired bitmaps to the list, and associate the list with the tree control by using the [SetImageList](../mfc/reference/ctreectrl-class.md#setimagelist) member function. By default, all items display the first image in the image list for both the selected and nonselected states. You can change the default behavior for a particular item by specifying the indexes of the selected and nonselected images when adding the item to the tree control using the [InsertItem](../mfc/reference/ctreectrl-class.md#insertitem) member function. You can change the indexes after adding an item by using the [SetItemImage](../mfc/reference/ctreectrl-class.md#setitemimage) member function.  
   
- ツリー コントロールのイメージ リストは項目イメージに重なって表示されるように設計されたオーバーレイ イメージを含めることができます。  8 ビットからツリー コントロール項目の状態の 11 0 以外の値はオーバーレイ イメージのインデックス番号が 1 から始まるなインデックス \(0 はオーバーレイ イメージを参照\)。  4 ビットは、インデックス番号が 1 から始まるなインデックス使用されるため、オーバーレイ イメージは、イメージ リスト内の最初の 15 イメージの間にする必要があります。  ツリー ビュー コントロールのアイテムの状態に関する詳細については、このトピックの前半で [ツリー コントロール項目 States overview](../mfc/tree-control-item-states-overview.md) を参照します。  
+ A tree control's image lists can also contain overlay images, which are designed to be superimposed on item images. A nonzero value in bits 8 through 11 of a tree control item's state specifies the one-based index of an overlay image (0 indicates no overlay image). Because a 4-bit, one-based index is used, overlay images must be among the first 15 images in the image lists. For more information about tree control item states, see [Tree Control Item States Overview](../mfc/tree-control-item-states-overview.md) earlier in this topic.  
   
- 状態イメージ リストを指定すると、状態イメージの各項目のアイコンの左側にツリー コントロールの確保します。  アプリケーションは、定義済みの項目のステータスを示すステータス イメージをチェックされ、チェック ボックスをオフにするのも使用できます。  12 ~ 15 ビットの 0 以外の値は状態イメージのインデックス番号が 1 から始まるなインデックス \(0 は状態イメージを参照\)。  
+ If a state image list is specified, a tree control reserves space to the left of each item's icon for a state image. An application can use state images, such as checked and cleared check boxes, to indicate application-defined item states. A nonzero value in bits 12 through 15 specifies the one-based index of a state image (0 indicates no state image).  
   
- イメージのインデックスの代わりに **I\_IMAGECALLBACK** 値を指定して、項目が再描画される予定のまで指定または nonselected イメージを指定することもできます。  **I\_IMAGECALLBACK** は [TVN\_GETDISPINFO](http://msdn.microsoft.com/library/windows/desktop/bb773518) 通知メッセージを送信することによってインデックスのアプリケーションを照会するには、ツリー コントロールに指示します。  
+ By specifying the **I_IMAGECALLBACK** value instead of the index of an image, you can delay specifying the selected or nonselected image until the item is about to be redrawn. **I_IMAGECALLBACK** directs the tree control to query the application for the index by sending the [TVN_GETDISPINFO](http://msdn.microsoft.com/library/windows/desktop/bb773518) notification message.  
   
- [GetImageList](../Topic/CTreeCtrl::GetImageList.md) のメンバー関数では、ツリー コントロールのイメージ リストのハンドルを取得します。  この関数は、リストにイメージを追加する必要がある場合に便利です。  イメージ リストの詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の *" MFC リファレンス"*の [CImageList を使用する](../mfc/using-cimagelist.md)、[CImageList](../Topic/CImageList%20Class.md)、[イメージ リスト](http://msdn.microsoft.com/library/windows/desktop/bb761389) を参照します。  
+ The [GetImageList](../mfc/reference/ctreectrl-class.md#getimagelist) member function retrieves the handle of a tree control's image list. This function is useful if you need to add more images to the list. For more information about image lists, see [Using CImageList](../mfc/using-cimagelist.md), [CImageList](../mfc/reference/cimagelist-class.md) in the *MFC Reference*, and [Image Lists](http://msdn.microsoft.com/library/windows/desktop/bb761389) in the Windows SDK.  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

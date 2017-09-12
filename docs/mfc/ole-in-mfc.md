@@ -1,87 +1,106 @@
 ---
-title: "MFC の OLE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], 概要 (OLE の)"
-  - "MFC [C++], OLE および"
-  - "OLE [C++]"
-  - "OLE アプリケーション [C++], 概要 (OLE の)"
-  - "OLE コンポーネント オブジェクト モデル (COM)"
-  - "OLE コンテナー, 概要 (OLE の)"
-  - "OLE 項目"
+title: OLE in MFC | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, OLE and
+- OLE items
+- OLE applications [MFC], about OLE
+- OLE [MFC]
+- OLE containers [MFC], about OLE
+- applications [OLE], about OLE
+- OLE component object model (COM)
 ms.assetid: 5193479d-1239-4697-aea4-e82f92c707ab
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC の OLE
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3346c3f6d1c2fd02d8a3cd21230d66dd13e0b9be
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのトピックでは、MFC を使用して OLE プログラミングに関する基本事項について説明します。  MFC ライブラリには、OLE を使用するプログラムを作成する最も簡単な方法を提供し、T:  
+---
+# <a name="ole-in-mfc"></a>OLE in MFC
+These articles explain the fundamentals of OLE programming using MFC. MFC provides the easiest way to write programs that use OLE:  
   
--   OLE のビジュアル編集 \(埋め込み先編集の有効化\) を使用します。  
+-   To use OLE visual editing (in-place activation).  
   
--   OLE コンテナーまたはサーバーとして使用します。  
+-   To work as OLE containers or servers.  
   
--   ドラッグ アンド ドロップ機能を実装する。  
+-   To implement drag-and-drop functionality.  
   
--   日付と時刻のデータを使用します。  
+-   To work with date and time data.  
   
--   エクスポートされた DLL 関数のエントリ ポイント、OLE\/COM インターフェイス エントリ ポイントとウィンドウ プロシージャのエントリ ポイントを含む MFC モジュールの状態データの管理します。  
+-   To manage the state data of MFC modules, including exported DLL function entry points, OLE/COM interface entry points, and window procedure entry points.  
   
- また、プログラムから別のプログラムを操作するには、[オートメーション](../mfc/automation.md) または [リモート オートメーション](../mfc/remote-automation.md) を使用できます。  
+ You can also use [Automation](../mfc/automation.md) or [Remote Automation](../mfc/remote-automation.md) to operate another program from your program.  
   
 > [!NOTE]
->  OLE オブジェクトという用語は OLE コンテナー、OLE サーバー、OLE アイテム、埋め込み先編集の有効化 \(またはビジュアル編集\)、トラッカー、ドラッグ アンド ドロップと、メニューのマージなどリンクと埋め込みに関連付けられた文書が表示されます。  用語のアクティブは Component Object Model \(COM\) および ActiveX コントロールなどの COM ベースのオブジェクトに適用されます。  OLE オートメーションは、"と呼ばれます。  
+>  The term OLE denotes the technologies associated with linking and embedding, including OLE containers, OLE servers, OLE items, in-place activation (or visual editing), trackers, drag and drop, and menu merging. The term Active applies to the Component Object Model (COM) and COM-based objects such as ActiveX controls. OLE Automation is now called Automation.  
   
-## このセクションの内容  
- [OLE の背景](../mfc/ole-background.md)  
- どのように関する OLE について、概要を示します。  
+## <a name="in-this-section"></a>In This Section  
+ [OLE Background](../mfc/ole-background.md)  
+ Discusses OLE and provides conceptual information about how it works.  
   
- [アクティベーション](../mfc/activation-cpp.md)  
- OLE アイテムの編集をアクティブ化の役割について説明します。  
+ [Activation](../mfc/activation-cpp.md)  
+ Describes the role of activation in editing OLE items.  
   
- [コンテナー](../mfc/containers.md)  
- OLE でコンテナーを使用してリンクを提供します。  
+ [Containers](../mfc/containers.md)  
+ Provides links to using containers in OLE.  
   
- [データ オブジェクトとデータ ソース](../mfc/data-objects-and-data-sources-ole.md)  
- トピックへのリンクを `COleDataObject` と `COleDataSource` クラスを使用できます。  
+ [Data Objects and Data Sources](../mfc/data-objects-and-data-sources-ole.md)  
+ Provides links to topics discussing the use of the `COleDataObject` and `COleDataSource` classes.  
   
- [ドラッグ アンド ドロップ](../mfc/drag-and-drop-ole.md)  
- コピーと貼り付けを OLE で使用する方法について説明します。  
+ [Drag and Drop](../mfc/drag-and-drop-ole.md)  
+ Discusses using copying and pasting with OLE.  
   
- [OLE メニューとリソース](../mfc/menus-and-resources-ole.md)  
- MFC の OLE ドキュメントのアプリケーションのメニューとリソースの使用例です。  
+ [OLE Menus and Resources](../mfc/menus-and-resources-ole.md)  
+ Explains the use of menus and resources in MFC OLE document applications.  
   
- [登録](../mfc/registration.md)  
- サーバーのインストールと初期化について説明します。  
+ [Registration](../mfc/registration.md)  
+ Discusses server installation and initialization.  
   
- [&#91;サーバー&#93;](../mfc/servers.md)  
- コンテナー アプリケーションによって使用される OLE アイテム \(コンポーネント\) を作成する方法について説明します。  
+ [Servers](../mfc/servers.md)  
+ Describes how to create OLE items (or components) for use by container applications.  
   
- [トラッカー](../mfc/trackers.md)  
- Web ページに OLE クライアント項目と対話するためのグラフィカル インターフェイスを提供する `CRectTracker` クラスに関する情報を提供します。  
+ [Trackers](../mfc/trackers.md)  
+ Provides information about the `CRectTracker` class, which provides a graphical interface to enable users to interact with OLE client items.  
   
-## 関連項目  
- [コネクション ポイント](../mfc/connection-points.md)  
- MFC クラス `CCmdTarget` と `CConnectionPoint`を使用してコネクション ポイントを \(以前の OLE コネクション ポイントと呼ばれる\) を実装する方法について説明します。  
+## <a name="related-sections"></a>Related Sections  
+ [Connection Points](../mfc/connection-points.md)  
+ Explains how to implement connection points (formerly known as OLE connection points) using the MFC classes `CCmdTarget` and `CConnectionPoint`.  
   
- [コンテナーとサーバー COM コンポーネント](../mfc/containers-advanced-features.md)  
- 既存のコンテナー アプリケーションに省略可能な高度な機能を組み込むために必要な手順について説明します。  
+ [Container/Server COM Components](../mfc/containers-advanced-features.md)  
+ Describes the steps necessary to incorporate optional advanced features into existing container applications.  
   
- [コンポーネント オブジェクト モデル](http://msdn.microsoft.com/library/windows/desktop/ms694363)  
- MFC せずによる使用方法について説明します。  
+ [The Component Object Model](http://msdn.microsoft.com/library/windows/desktop/ms694363)  
+ Describes using OLE without MFC.  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)
+
+

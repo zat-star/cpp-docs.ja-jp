@@ -1,44 +1,62 @@
 ---
-title: "印刷および印刷プレビュー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プレビュー (印刷を)"
-  - "印刷プレビュー"
-  - "印刷 [C++]"
-  - "印刷 [C++], 印刷プレビュー"
-  - "印刷 [MFC]"
+title: Printing and Print Preview | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- printing [MFC]
+- previewing printing
+- printing [MFC]
+- print preview
+- printing [MFC], print preview
 ms.assetid: d15059cd-32de-4450-95f7-e73aece238f6
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 印刷および印刷プレビュー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fc0dd2a387ebdcfe43d68afdd894cf92fdd94827
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC は [CView](../Topic/CView%20Class.md)クラスによってプログラムのドキュメントの印刷や印刷プレビューをサポートします。  基本的な印刷と印刷プレビュー用に、常にする必要 [OnDraw](../Topic/CView::OnDraw.md) ビュー クラスのメンバー関数をオーバーライドします。  この機能は、画面の表示は、実際のプリンターのプリンター デバイス コンテキスト、または画面のプリンターをシミュレートするデバイス コンテキストに描画できます。  
+---
+# <a name="printing-and-print-preview"></a>Printing and Print Preview
+MFC supports printing and print preview for your program's documents via class [CView](../mfc/reference/cview-class.md). For basic printing and print preview, simply override your view class's [OnDraw](../mfc/reference/cview-class.md#ondraw) member function, which you must do anyway. That function can draw to the view on the screen, to a printer device context for an actual printer, or to a device context that simulates your printer on the screen.  
   
- または複数ページのドキュメントおよび印刷プレビューを管理し、印刷されたドキュメントにページを付け、ヘッダー、フッターを追加するコードを追加できます。  
+ You can also add code to manage multipage document printing and preview, to paginate your printed documents, and to add headers and footers to them.  
   
- ここでは印刷する Microsoft Foundation Class ライブラリ \(MFC\) と既にフレームワークに組み込まれている印刷アーキテクチャを利用する方法がどのように実装されるかについて説明します。  ここでは、MFC の印刷プレビュー機能の簡単な実装をサポートする方法と、その機能を使用するため、変更する方法について説明します。  
+ This family of articles explains how printing is implemented in the Microsoft Foundation Class Library (MFC) and how to take advantage of the printing architecture already built into the framework. The articles also explain how MFC supports easy implementation of print preview functionality and how you can use and modify that functionality.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [印刷](../mfc/printing.md)  
+-   [Printing](../mfc/printing.md)  
   
--   [印刷プレビュー アーキテクチャ](../mfc/print-preview-architecture.md)  
+-   [Print preview architecture](../mfc/print-preview-architecture.md)  
   
--   [サンプル](../top/visual-cpp-samples.md)  
+-   [Sample](../visual-cpp-samples.md)  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)
+

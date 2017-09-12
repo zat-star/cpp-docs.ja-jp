@@ -1,77 +1,96 @@
 ---
-title: "OLE コントロール クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.ole"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX クラス [C++]"
-  - "ActiveX コントロール クラス [C++]"
-  - "ActiveX コントロール [C++], OLE コントロール クラス"
-  - "カスタム コントロール [MFC], クラス"
-  - "OLE コントロール クラス [C++]"
-  - "OLE コントロール [C++], クラス"
-  - "再利用できるコンポーネント クラス"
+title: OLE Control Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX classes [MFC]
+- custom controls [MFC], classes
+- ActiveX controls [MFC], OLE control classes
+- ActiveX control classes [MFC]
+- OLE controls [MFC], classes
+- OLE control classes [MFC]
+- reusable component classes [MFC]
 ms.assetid: 96495ec3-319e-4163-b839-1af0428ed9dd
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# OLE コントロール クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a81de0a104d188f50c112d9f199ca04e315af920
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのロールは、使用する基本クラスです OLE コントロールを作成する場合。  OLE コントロール モジュールの `COleControlModule` クラスは、アプリケーションの [CWinApp](../mfc/reference/cwinapp-class.md) クラスに似ています。  各モジュールが、一つ以上の OLE コントロールを実装します; これらのコントロールは `COleControl` オブジェクトによって表されます。  これらのコントロールは `CConnectionPoint` オブジェクトを使用してコンテナーと通信します。  
+---
+# <a name="ole-control-classes"></a>OLE Control Classes
+These are the primary classes you use when writing OLE controls. The `COleControlModule` class in an OLE control module is like the [CWinApp](../mfc/reference/cwinapp-class.md) class in an application. Each module implements one or more OLE controls; these controls are represented by `COleControl` objects. These controls communicate with their containers using `CConnectionPoint` objects.  
   
- `CPictureHolder` と `CFontHolder` クラスは `COlePropertyPage` と `CPropExchange` クラスは、コントロール用のプロパティ ページとプロパティの永続性を実装するのに役立ちますが、画像やフォントの COM インターフェイスをカプセル化します。  
+ The `CPictureHolder` and `CFontHolder` classes encapsulate COM interfaces for pictures and fonts, while the `COlePropertyPage` and `CPropExchange` classes help you implement property pages and property persistence for your control.  
   
  [COleControlModule](../mfc/reference/colecontrolmodule-class.md)  
- OLE コントロール モジュールの `CWinApp` クラスを置き換えます。  OLE コントロール モジュール オブジェクトを開発するに `COleControlModule` クラスから派生してください。  これは OLE コントロール モジュールを初期化するためのメンバー関数を提供します。  
+ Replaces the `CWinApp` class for your OLE control module. Derive from the `COleControlModule` class to develop an OLE control module object. It provides member functions for initializing your OLE control's module.  
   
  [COleControl](../mfc/reference/colecontrol-class.md)  
- OLE コントロールを作成するに `COleControl` クラスから派生してください。  `CWnd`から派生されて、このクラスはイベントの発生と機能などの追加 OLE 固有の機能とウィンドウ オブジェクトのすべての機能を、メソッドとプロパティをサポートする継承します。  
+ Derive from the `COleControl` class to develop an OLE control. Derived from `CWnd`, this class inherits all the functionality of a Windows window object plus additional OLE-specific functionality, such as event firing and the ability to support methods and properties.  
   
- [CConnectionPoint](../Topic/CConnectionPoint%20Class.md)  
- `CConnectionPoint` クラスは他の OLE オブジェクトとの通信に使用されるコネクション ポイントと呼ばれる特別な型のインターフェイスを定義します。  コネクション ポイント イベントが発生すると変更通知などの他のオブジェクトの操作、開始アウトゴーイング インターフェイスを実装します。  
+ [CConnectionPoint](../mfc/reference/cconnectionpoint-class.md)  
+ The `CConnectionPoint` class defines a special type of interface used to communicate with other OLE objects, called a connection point. A connection point implements an outgoing interface that is able to initiate actions on other objects, such as firing events and change notifications.  
   
  [CPictureHolder](../mfc/reference/cpictureholder-class.md)  
- Windows の画像オブジェクトと `IPicture` COM インターフェイスの機能をカプセル化した; OLE コントロールのカスタム ピクチャ プロパティを実装するために使用します。  
+ Encapsulates the functionality of a Windows picture object and the `IPicture` COM interface; used to implement the custom Picture property of an OLE control.  
   
  [CFontHolder](../mfc/reference/cfontholder-class.md)  
- Windows のフォント オブジェクトと `IFont` COM インターフェイスの機能をカプセル化した; OLE コントロールのストック フォント プロパティを実装するために使用します。  
+ Encapsulates the functionality of a Windows font object and the `IFont` COM interface; used to implement the stock Font property of an OLE control.  
   
- [COlePropertyPage クラス](../mfc/reference/colepropertypage-class.md)  
- ダイアログ ボックスのようなグラフィカル インターフェイスの OLE コントロールのプロパティが表示されます。  
+ [COlePropertyPage](../mfc/reference/colepropertypage-class.md)  
+ Displays the properties of an OLE control in a graphical interface, similar to a dialog box.  
   
- [CPropExchange](../Topic/CPropExchange%20Class.md)  
- OLE コントロールのプロパティの永続性の実装をサポートします。  ダイアログ ボックスの [CDataExchange](../Topic/CDataExchange%20Class.md) と似ています。  
+ [CPropExchange](../mfc/reference/cpropexchange-class.md)  
+ Supports the implementation of property persistence for your OLE controls. Analogous to [CDataExchange](../mfc/reference/cdataexchange-class.md) for dialog boxes.  
   
- [CMonikerFile](../Topic/CMonikerFile%20Class.md)  
- モニカーを名前であるストリームにモニカーを、モニカーにすることができ、バインド同期的にオブジェクトの文字列形式。  
+ [CMonikerFile](../mfc/reference/cmonikerfile-class.md)  
+ Takes a moniker, or a string representation that it can make into a moniker, and binds it synchronously to the stream for which the moniker is a name.  
   
  [CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md)  
- 同様に、作業 `CMonikerFile`に; ただし、モニカーを名前であるストリームに非同期的にモニカーをバインドします。  
+ Works similarly to `CMonikerFile`; however, it binds the moniker asynchronously to the stream for which the moniker is a name.  
   
  [CDataPathProperty](../mfc/reference/cdatapathproperty-class.md)  
- 非同期で読み込める OLE コントロール プロパティを実装します。  
+ Implements an OLE control property that can be loaded asynchronously.  
   
  [CCachedDataPathProperty](../mfc/reference/ccacheddatapathproperty-class.md)  
- 非同期で転送し、メモリ ファイルにキャッシュする OLE コントロール プロパティを実装します。  
+ Implements an OLE control property transferred asynchronously and cached in a memory file.  
   
  [COleCmdUI](../mfc/reference/colecmdui-class.md)  
- アクティブ文書をコンテナーをアクティブ ドキュメントのユーザー インターフェイスで作成されたコマンドを受け取るコマンド コンテナーのユーザー インターフェイスに \(FileNew の、印刷などのなど\) を発生、割り当てを受け取るようにします。  
+ Allows an Active document to receive commands that originate in its container's user interface (such as FileNew, Open, Print, and so on), and allows a container to receive commands that originate in the Active document's user interface.  
   
  [COleSafeArray](../mfc/reference/colesafearray-class.md)  
- 任意の型および次元の配列を使用します。  
+ Works with arrays of arbitrary type and dimension.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

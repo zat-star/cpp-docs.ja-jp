@@ -1,5 +1,5 @@
 ---
-title: "行い構造 |Microsoft ドキュメント"
+title: CMemoryState Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,9 +13,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMemoryState structure
-- memory leaks, detecting
-- detecting memory leaks
+- CMemoryState structure [MFC]
+- memory leaks [MFC], detecting
+- detecting memory leaks [MFC]
 ms.assetid: 229d9de7-a6f3-4cc6-805b-5a9d9b1bfe1d
 caps.latest.revision: 19
 author: mikeblome
@@ -35,94 +35,94 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
-ms.openlocfilehash: 5485a3cf8107dd9b245cb2d3fff6982f31279abe
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e1d754a95cab9849bbca3ac625095d6d49160c72
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmemorystate-structure"></a>関数の構造体
-プログラムでのメモリ リークを検出する便利な手段を提供します。  
+# <a name="cmemorystate-structure"></a>CMemoryState Structure
+Provides a convenient way to detect memory leaks in your program.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CMemoryState  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMemoryState::CMemoryState](#cmemorystate)|メモリのチェックポイントを制御するクラスのような構造を構築します。|  
+|[CMemoryState::CMemoryState](#cmemorystate)|Constructs a class-like structure that controls memory checkpoints.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMemoryState::Checkpoint](#checkpoint)|現在のメモリ状態のスナップショット (チェックポイント) を取得します。|  
-|[CMemoryState::Difference](#difference)|型の 2 つのオブジェクト間の差を計算`CMemoryState`です。|  
-|[Cmemorystate::dumpallobjectssince](#dumpallobjectssince)|以前のチェックポイント以降には、現在割り当てられているすべてのオブジェクトの概要をダンプします。|  
-|[CMemoryState::DumpStatistics](#dumpstatistics)|メモリ割り当ての統計を出力、`CMemoryState`オブジェクト。|  
+|[CMemoryState::Checkpoint](#checkpoint)|Obtains a snapshot (checkpoint) of the current memory state.|  
+|[CMemoryState::Difference](#difference)|Computes the difference between two objects of type `CMemoryState`.|  
+|[CMemoryState::DumpAllObjectsSince](#dumpallobjectssince)|Dumps a summary of all currently allocated objects since a previous checkpoint.|  
+|[CMemoryState::DumpStatistics](#dumpstatistics)|Prints memory allocation statistics for a `CMemoryState` object.|  
   
-## <a name="remarks"></a>コメント  
- `CMemoryState`構造体は、基本クラスではありません。  
+## <a name="remarks"></a>Remarks  
+ `CMemoryState` is a structure and does not have a base class.  
   
- オブジェクトのメモリ ヒープに割り当てが必要でなくなったときに割り当てを解除されない場合に、「メモリ リーク」が発生します。 このようなメモリ リークは、メモリ不足のエラーを最終的に可能性があります。 割り当てるし、プログラムでメモリの割り当てを解除するためのいくつかの方法があります。  
+ A "memory leak" occurs when memory for an object is allocated on the heap but not deallocated when it is no longer required. Such memory leaks can eventually lead to out-of-memory errors. There are several ways to allocate and deallocate memory in your program:  
   
--   使用して、 `malloc` / **空き**ランタイム ライブラリからの関数のファミリです。  
+-   Using the `malloc`/ **free** family of functions from the run-time library.  
   
--   Windows API のメモリ管理関数を使用して**LocalAlloc**/ **LocalFree**と**GlobalAlloc**/ **GlobalFree**です。  
+-   Using the Windows API memory management functions, **LocalAlloc**/ **LocalFree** and **GlobalAlloc**/ **GlobalFree**.  
   
--   C++ を使用して**新しい**と**削除**演算子。  
+-   Using the C++ **new** and **delete** operators.  
   
- `CMemoryState`診断のみ簡単にメモリを検出リークを使用してメモリが割り当てられたときに発生、**新しい**演算子割り当ては解除されませんを使用して**削除**です。 メモリ管理関数の他の 2 つのグループは、C++ 以外のプログラム、およびこれらを混在させる**新しい**と**削除**同じプログラムではないことをお勧めします。 追加のマクロ`DEBUG_NEW`、置換することは、**新しい**演算子ファイルとのメモリ割り当ての行番号を追跡する必要がある場合。 `DEBUG_NEW`通常使用されるたびに使用されるが、**新しい**演算子。  
+ The `CMemoryState` diagnostics only help detect memory leaks caused when memory allocated using the **new** operator is not deallocated using **delete**. The other two groups of memory-management functions are for non-C++ programs, and mixing them with **new** and **delete** in the same program is not recommended. An additional macro, `DEBUG_NEW`, is provided to replace the **new** operator when you need file and line-number tracking of memory allocations. `DEBUG_NEW` is used whenever you would normally use the **new** operator.  
   
- その他の診断と同様、`CMemoryState`診断は、プログラムのデバッグ バージョンで利用できるのみです。 デバッグ バージョンである必要があります、 **_DEBUG**定数を定義します。  
+ As with other diagnostics, the `CMemoryState` diagnostics are only available in debug versions of your program. A debug version must have the **_DEBUG** constant defined.  
   
- 使用することができます、プログラムには、メモリ リークが疑われる場合、 `Checkpoint`、**違い**、および`DumpStatistics`プログラム実行中の 2 つのさまざまな時点でのメモリの状態 (割り当てられたオブジェクト) の違いを検出する機能。 この情報は、関数は、割り当てたすべてのオブジェクトをクリーンアップするかどうかの判定に役立ちます。  
+ If you suspect your program has a memory leak, you can use the `Checkpoint`, **Difference**, and `DumpStatistics` functions to discover the difference between the memory state (objects allocated) at two different points in program execution. This information can be useful in determining whether a function is cleaning up all the objects it allocates.  
   
- 単に把握割り当てと解放の不均衡が発生しても十分な情報が提供されない場合を使用できます、`DumpAllObjectsSince`を前の呼び出し以降に割り当てられたすべてのオブジェクトをダンプ関数`Checkpoint`です。 このダンプは、割り当て、ソース ファイルおよびオブジェクトが割り当てられた行の順序を示しています (を使用している場合`DEBUG_NEW`の割り当て)、オブジェクト、そのアドレス、およびサイズの派生です。 `DumpAllObjectsSince`オブジェクトごとにも呼び出します`Dump`関数は、現在の状態に関する情報を提供します。  
+ If simply knowing where the imbalance in allocation and deallocation occurs does not provide enough information, you can use the `DumpAllObjectsSince` function to dump all objects allocated since the previous call to `Checkpoint`. This dump shows the order of allocation, the source file and line where the object was allocated (if you are using `DEBUG_NEW` for allocation), and the derivation of the object, its address, and its size. `DumpAllObjectsSince` also calls each object's `Dump` function to provide information about its current state.  
   
- 使用する方法の詳細についてを`CMemoryState`し、その他の診断を参照してください[MFC アプリケーションのデバッグ](/visualstudio/debugger/mfc-debugging-techniques)です。  
+ For more information about how to use `CMemoryState` and other diagnostics, see [Debugging MFC Applications](/visualstudio/debugger/mfc-debugging-techniques).  
   
 > [!NOTE]
->  型のオブジェクトの宣言`CMemoryState`メンバー関数への呼び出しで囲まれた必要がありますと`#if defined(_DEBUG)/#endif`ディレクティブです。 これにより、メモリ診断は、プログラムのデバッグ ビルドにのみ含まれます。  
+>  Declarations of objects of type `CMemoryState` and calls to member functions should be bracketed by `#if defined(_DEBUG)/#endif` directives. This causes memory diagnostics to be included only in debugging builds of your program.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CMemoryState`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="checkpoint"></a>CMemoryState::Checkpoint  
- スナップショットのメモリの概要を取得し、この格納`CMemoryState`オブジェクト。  
+##  <a name="checkpoint"></a>  CMemoryState::Checkpoint  
+ Takes a snapshot summary of memory and stores it in this `CMemoryState` object.  
   
 ```  
 void Checkpoint();
 ```  
   
-### <a name="remarks"></a>コメント  
- `CMemoryState`メンバー関数[違い](#difference)と[DumpAllObjectsSince](#dumpallobjectssince)このスナップショット データを使用します。  
+### <a name="remarks"></a>Remarks  
+ The `CMemoryState` member functions [Difference](#difference) and [DumpAllObjectsSince](#dumpallobjectssince) use this snapshot data.  
   
-### <a name="example"></a>例  
-  例を参照して、[行い](#cmemorystate)コンス トラクターです。  
+### <a name="example"></a>Example  
+  See the example for the [CMemoryState](#cmemorystate) constructor.  
   
-##  <a name="cmemorystate"></a>CMemoryState::CMemoryState  
- 空の構築`CMemoryState`で入力する必要がありますオブジェクト、[チェックポイント](#checkpoint)または[違い](#difference)メンバー関数。  
+##  <a name="cmemorystate"></a>  CMemoryState::CMemoryState  
+ Constructs an empty `CMemoryState` object that must be filled in by the [Checkpoint](#checkpoint) or [Difference](#difference) member function.  
   
 ```  
 CMemoryState();
 ```  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 18](../../mfc/codesnippet/cpp/cmemorystate-structure_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#18](../../mfc/codesnippet/cpp/cmemorystate-structure_1.cpp)]  
   
-##  <a name="difference"></a>CMemoryState::Difference  
- 比較する 2 つ`CMemoryState`オブジェクト、し、この違いを格納`CMemoryState`オブジェクト。  
+##  <a name="difference"></a>  CMemoryState::Difference  
+ Compares two `CMemoryState` objects, then stores the difference into this `CMemoryState` object.  
   
 ```  
 BOOL Difference(
@@ -130,24 +130,24 @@ BOOL Difference(
     const CMemoryState& newState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *oldState*  
- 初期のメモリの状態で定義されている、`CMemoryState`チェックポイントです。  
+ The initial memory state as defined by a `CMemoryState` checkpoint.  
   
  *newState*  
- 定義されているメモリの新しい状態、`CMemoryState`チェックポイントです。  
+ The new memory state as defined by a `CMemoryState` checkpoint.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのメモリ状態が異なっている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the two memory states are different; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- [チェックポイント](#checkpoint)2 つのメモリ状態パラメーターごとに呼び出されます必要があります。  
+### <a name="remarks"></a>Remarks  
+ [Checkpoint](#checkpoint) must have been called for each of the two memory-state parameters.  
   
-### <a name="example"></a>例  
-  例を参照して、[行い](#cmemorystate)コンス トラクターです。  
+### <a name="example"></a>Example  
+  See the example for the [CMemoryState](#cmemorystate) constructor.  
   
-##  <a name="dumpallobjectssince"></a>Cmemorystate::dumpallobjectssince  
- 呼び出し、`Dump`クラスから派生した型のすべてのオブジェクトの関数`CObject`する割り当てられた (およびまだ割り当てられている)、最後に[チェックポイント](#checkpoint)この呼び出す`CMemoryState`オブジェクト。  
+##  <a name="dumpallobjectssince"></a>  CMemoryState::DumpAllObjectsSince  
+ Calls the `Dump` function for all objects of a type derived from class `CObject` that were allocated (and are still allocated) since the last [Checkpoint](#checkpoint) call for this `CMemoryState` object.  
   
 ```  
 void DumpAllObjectsSince() const;
@@ -155,14 +155,14 @@ void DumpAllObjectsSince() const;
  
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`DumpAllObjectsSince`、初期化されていないと`CMemoryState`オブジェクトが現在メモリ内のすべてのオブジェクトをダンプします。  
+### <a name="remarks"></a>Remarks  
+ Calling `DumpAllObjectsSince` with an uninitialized `CMemoryState` object will dump out all objects currently in memory.  
   
-### <a name="example"></a>例  
-  例を参照して、[行い](#cmemorystate)コンス トラクターです。  
+### <a name="example"></a>Example  
+  See the example for the [CMemoryState](#cmemorystate) constructor.  
   
-##  <a name="dumpstatistics"></a>CMemoryState::DumpStatistics  
- レポートを簡潔なメモリ統計情報を出力、`CMemoryState`で塗りつぶされているオブジェクト、[違い](#difference)メンバー関数。  
+##  <a name="dumpstatistics"></a>  CMemoryState::DumpStatistics  
+ Prints a concise memory statistics report from a `CMemoryState` object that is filled by the [Difference](#difference) member function.  
   
 ```  
 void DumpStatistics() const;
@@ -170,44 +170,44 @@ void DumpStatistics() const;
  
 ```  
   
-### <a name="remarks"></a>コメント  
- 印刷すると、レポート、 [afxDump](diagnostic-services.md#afxdump)デバイスを次に示します。  
+### <a name="remarks"></a>Remarks  
+ The report, which is printed on the [afxDump](diagnostic-services.md#afxdump) device, shows the following:  
   
- サンプル レポートは、数 (または金額) の情報を提供します。  
+ A sample report gives information on the number (or amount) of:  
   
--   空きブロック  
+-   free blocks  
   
--   通常のブロック  
+-   normal blocks  
   
--   CRT ブロック  
+-   CRT blocks  
   
--   ブロックを無視します。  
+-   ignore blocks  
   
--   クライアント ブロック  
+-   client blocks  
   
--   バイト単位で 1 ついつでも、プログラムによって使用された最大メモリ  
+-   maximum memory used by the program at any one time (in bytes)  
   
--   現在 (バイト) をプログラムによって使用される合計メモリ  
+-   total memory currently used by the program (in bytes)  
   
- 空きブロックが解放が遅れている場合はブロックの数は、`afxMemDF`に設定された**delayFreeMemDF**です。 詳細については、次を参照してください。 [afxMemDF](diagnostic-services.md#afxmemdf)、"MFC マクロとグローバル"セクションでします。 参照してください[デバッグ ヒープ上のブロックの型](http://msdn.microsoft.com/en-us/db2e7f62-0679-4b39-a23f-26f2c2f407c5)のこれらの詳細については、種類をブロックします。  
+ Free blocks are the number of blocks whose deallocation was delayed if `afxMemDF` was set to **delayFreeMemDF**. For more information, see [afxMemDF](diagnostic-services.md#afxmemdf), in the "MFC Macros and Globals" section. See [Types of Blocks on the Debug Heap](http://msdn.microsoft.com/en-us/db2e7f62-0679-4b39-a23f-26f2c2f407c5) for more information on these block types.  
   
-### <a name="example"></a>例  
-  次のコードを配置する必要があります*projname*App.cpp です。 次のグローバル変数を定義します。  
+### <a name="example"></a>Example  
+  The following code should be placed in *projname*App.cpp. Define the following global variables:  
   
- [!code-cpp[NVC_MFC_Utilities #40](../../mfc/codesnippet/cpp/cmemorystate-structure_2.cpp)]  
+ [!code-cpp[NVC_MFC_Utilities#40](../../mfc/codesnippet/cpp/cmemorystate-structure_2.cpp)]  
   
- `InitInstance`関数、行を追加します。  
+ In the `InitInstance` function, add the line:  
   
- [!code-cpp[NVC_MFC_Utilities #41](../../mfc/codesnippet/cpp/cmemorystate-structure_3.cpp)]  
+ [!code-cpp[NVC_MFC_Utilities#41](../../mfc/codesnippet/cpp/cmemorystate-structure_3.cpp)]  
   
- ハンドラーを追加、`ExitInstance`関数し、次のコードを使用します。  
+ Add a handler for the `ExitInstance` function and use the following code:  
   
- [!code-cpp[NVC_MFC_Utilities #42](../../mfc/codesnippet/cpp/cmemorystate-structure_4.cpp)]  
+ [!code-cpp[NVC_MFC_Utilities#42](../../mfc/codesnippet/cpp/cmemorystate-structure_4.cpp)]  
   
- 出力を表示するデバッグ モードでプログラムを今すぐ実行することができます、`DumpStatistics`関数。  
+ You can now run the program in Debug mode to see the output of the `DumpStatistics` function.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

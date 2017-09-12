@@ -1,5 +1,5 @@
 ---
-title: "CDaoWorkspace クラス |Microsoft ドキュメント"
+title: CDaoWorkspace Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -42,27 +42,34 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- DAO workspaces [C++]
-- transaction spaces [C++], DAO workspace
-- ODBC classes [C++], vs. DAO classes
-- default workspaces [C++], DAO
-- workspaces [C++], DAO
-- sessions [C++], DAO workspace
-- Workspace class
-- CDaoWorkspace class
-- workspaces [C++], interface to database engine
-- Workspaces collection
-- persistence [C++], DAO workspace
-- workspaces [C++], default
-- defaults [C++], workspaces
-- DAO workspaces [C++], CDaoWorkspace class
-- security [MFC], DAO workspaces
-- security [MFC]
-- database engine [C++], accessing via workspace
-- transaction spaces [C++]
-- DDLs [C++]
-- workspaces [C++], persistence
-- default workspaces [C++]
+- CDaoWorkspace [MFC], CDaoWorkspace
+- CDaoWorkspace [MFC], Append
+- CDaoWorkspace [MFC], BeginTrans
+- CDaoWorkspace [MFC], Close
+- CDaoWorkspace [MFC], CommitTrans
+- CDaoWorkspace [MFC], CompactDatabase
+- CDaoWorkspace [MFC], Create
+- CDaoWorkspace [MFC], GetDatabaseCount
+- CDaoWorkspace [MFC], GetDatabaseInfo
+- CDaoWorkspace [MFC], GetIniPath
+- CDaoWorkspace [MFC], GetIsolateODBCTrans
+- CDaoWorkspace [MFC], GetLoginTimeout
+- CDaoWorkspace [MFC], GetName
+- CDaoWorkspace [MFC], GetUserName
+- CDaoWorkspace [MFC], GetVersion
+- CDaoWorkspace [MFC], GetWorkspaceCount
+- CDaoWorkspace [MFC], GetWorkspaceInfo
+- CDaoWorkspace [MFC], Idle
+- CDaoWorkspace [MFC], IsOpen
+- CDaoWorkspace [MFC], Open
+- CDaoWorkspace [MFC], RepairDatabase
+- CDaoWorkspace [MFC], Rollback
+- CDaoWorkspace [MFC], SetDefaultPassword
+- CDaoWorkspace [MFC], SetDefaultUser
+- CDaoWorkspace [MFC], SetIniPath
+- CDaoWorkspace [MFC], SetIsolateODBCTrans
+- CDaoWorkspace [MFC], SetLoginTimeout
+- CDaoWorkspace [MFC], m_pDAOWorkspace
 ms.assetid: 64f60de6-4df1-4d4a-a65b-c489b5257d52
 caps.latest.revision: 24
 author: mikeblome
@@ -82,214 +89,214 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 72fcabd7db70050ba95f142bea92e69f441dd717
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a2de24a383161f791b9866f138aba1c5502ac2b4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaoworkspace-class"></a>CDaoWorkspace クラス
-シングル ユーザーによる名前付きの、パスワードで保護されたデータベース セッションのログインからログオフまでを管理します。  
+# <a name="cdaoworkspace-class"></a>CDaoWorkspace Class
+Manages a named, password-protected database session from login to logoff, by a single user.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDaoWorkspace : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoWorkspace::CDaoWorkspace](#cdaoworkspace)|ワークスペース オブジェクトを構築します。 その後、呼び出す**作成**または**開く**です。|  
+|[CDaoWorkspace::CDaoWorkspace](#cdaoworkspace)|Constructs a workspace object. Afterwards, call **Create** or **Open**.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoWorkspace::Append](#append)|データベース エンジンのワークスペースのコレクションを新しく作成したワークスペースを追加します。|  
-|[CDaoWorkspace::BeginTrans](#begintrans)|ワークスペースで開いているすべてのデータベースに適用される新しいトランザクションを開始します。|  
-|[CDaoWorkspace::Close](#close)|ワークスペースとが含まれているオブジェクトのすべてを閉じます。 保留中のトランザクションがロールバックされます。|  
-|[CDaoWorkspace::CommitTrans](#committrans)|現在のトランザクションを完了し、変更を保存します。|  
-|[CDaoWorkspace::CompactDatabase](#compactdatabase)|データベースを圧縮 (または複製) します。|  
-|[CDaoWorkspace::Create](#create)|新しい DAO ワークスペース オブジェクトを作成します。|  
-|[CDaoWorkspace::GetDatabaseCount](#getdatabasecount)|ワークスペースのデータベース コレクション内には、DAO データベース オブジェクトの数を返します。|  
-|[CDaoWorkspace::GetDatabaseInfo](#getdatabaseinfo)|ワークスペースのデータベース コレクションで定義されている、指定した DAO データベースに関する情報を返します。|  
-|[CDaoWorkspace::GetIniPath](#getinipath)|Microsoft Jet データベースの場所に、Windows レジストリにエンジンの初期化の設定を返します。|  
-|[CDaoWorkspace::GetIsolateODBCTrans](#getisolateodbctrans)|データ ソースへの接続を適用するかどうかを同じ ODBC データ ソースを含む複数のトランザクションを使用して分離を示す値を返します。|  
-|[CDaoWorkspace::GetLoginTimeout](#getlogintimeout)|ユーザーが ODBC データベースにログインしようとしたときにエラーが発生するまでの秒数を返します。|  
-|[CDaoWorkspace::GetName](#getname)|ワークスペース オブジェクトのユーザー定義名を返します。|  
-|[CDaoWorkspace::GetUserName](#getusername)|ワークスペースの作成時にユーザー名が指定されたを返します。 これは、ワークスペースの所有者の名前です。|  
-|[CDaoWorkspace::GetVersion](#getversion)|ワークスペースに関連付けられているデータベース エンジンのバージョンを表す文字列を返します。|  
-|[CDaoWorkspace::GetWorkspaceCount](#getworkspacecount)|データベース エンジンのワークスペースのコレクション内には、ワークスペースの DAO オブジェクトの数を返します。|  
-|[CDaoWorkspace::GetWorkspaceInfo](#getworkspaceinfo)|データベース エンジンのワークスペースのコレクションで定義されている指定された DAO ワークスペースについての情報を返します。|  
-|[CDaoWorkspace::Idle](#idle)|により、データベース エンジンはバック グラウンド タスクを実行します。|  
-|[CDaoWorkspace::IsOpen](#isopen)|ワークスペースがある場合は 0 以外を返しますが開きます。|  
-|[ので、使用できません。](#open)|DAO の既定のワークスペースに関連付けられているワークスペース オブジェクトを明示的に開きます。|  
-|[CDaoWorkspace::RepairDatabase](#repairdatabase)|破損したデータベースの修復を試みます。|  
-|[CDaoWorkspace::Rollback](#rollback)|現在のトランザクションを終了し、変更は保存されません。|  
-|[CDaoWorkspace::SetDefaultPassword](#setdefaultpassword)|パスワードを指定せずにワークスペースを作成するときに、データベース エンジンが使用するパスワードを設定します。|  
-|[CDaoWorkspace::SetDefaultUser](#setdefaultuser)|特定のユーザー名を指定せずにワークスペースを作成するときに、データベース エンジンが使用するユーザー名を設定します。|  
-|[CDaoWorkspace::SetIniPath](#setinipath)|Microsoft Jet データベースの場所に、Windows レジストリにエンジンの初期化の設定を設定します。|  
-|[CDaoWorkspace::SetIsolateODBCTrans](#setisolateodbctrans)|同じ ODBC データ ソースを含む複数のトランザクションは強制的に複数の接続、データ ソースを別に分離されているかどうかを指定します。|  
-|[CDaoWorkspace::SetLoginTimeout](#setlogintimeout)|ユーザーが ODBC データ ソースにログインしようとしたときにエラーが発生するまでの秒数を設定します。|  
+|[CDaoWorkspace::Append](#append)|Appends a newly created workspace to the database engine's Workspaces collection.|  
+|[CDaoWorkspace::BeginTrans](#begintrans)|Begins a new transaction, which applies to all databases open in the workspace.|  
+|[CDaoWorkspace::Close](#close)|Closes the workspace and all of the objects it contains. Pending transactions are rolled back.|  
+|[CDaoWorkspace::CommitTrans](#committrans)|Completes the current transaction and saves the changes.|  
+|[CDaoWorkspace::CompactDatabase](#compactdatabase)|Compacts (or duplicates) a database.|  
+|[CDaoWorkspace::Create](#create)|Creates a new DAO workspace object.|  
+|[CDaoWorkspace::GetDatabaseCount](#getdatabasecount)|Returns the number of DAO database objects in the workspace's Databases collection.|  
+|[CDaoWorkspace::GetDatabaseInfo](#getdatabaseinfo)|Returns information about a specified DAO database defined in the workspace's Databases collection.|  
+|[CDaoWorkspace::GetIniPath](#getinipath)|Returns the location of the Microsoft Jet database engine's initialization settings in the Windows registry.|  
+|[CDaoWorkspace::GetIsolateODBCTrans](#getisolateodbctrans)|Returns a value that indicates whether multiple transactions that involve the same ODBC data source are isolated via forced multiple connections to the data source.|  
+|[CDaoWorkspace::GetLoginTimeout](#getlogintimeout)|Returns the number of seconds before an error occurs when the user attempts to log in to an ODBC database.|  
+|[CDaoWorkspace::GetName](#getname)|Returns the user-defined name for the workspace object.|  
+|[CDaoWorkspace::GetUserName](#getusername)|Returns the user name specified when the workspace was created. This is the name of the workspace owner.|  
+|[CDaoWorkspace::GetVersion](#getversion)|Returns a string that contains the version of the database engine associated with the workspace.|  
+|[CDaoWorkspace::GetWorkspaceCount](#getworkspacecount)|Returns the number of DAO workspace objects in the database engine's Workspaces collection.|  
+|[CDaoWorkspace::GetWorkspaceInfo](#getworkspaceinfo)|Returns information about a specified DAO workspace defined in the database engine's Workspaces collection.|  
+|[CDaoWorkspace::Idle](#idle)|Allows the database engine to perform background tasks.|  
+|[CDaoWorkspace::IsOpen](#isopen)|Returns nonzero if the workspace is open.|  
+|[CDaoWorkspace::Open](#open)|Explicitly opens a workspace object associated with DAO's default workspace.|  
+|[CDaoWorkspace::RepairDatabase](#repairdatabase)|Attempts to repair a damaged database.|  
+|[CDaoWorkspace::Rollback](#rollback)|Ends the current transaction and does not save the changes.|  
+|[CDaoWorkspace::SetDefaultPassword](#setdefaultpassword)|Sets the password that the database engine uses when a workspace object is created without a specific password.|  
+|[CDaoWorkspace::SetDefaultUser](#setdefaultuser)|Sets the user name that the database engine uses when a workspace object is created without a specific user name.|  
+|[CDaoWorkspace::SetIniPath](#setinipath)|Sets the location of the Microsoft Jet database engine's initialization settings in the Windows registry.|  
+|[CDaoWorkspace::SetIsolateODBCTrans](#setisolateodbctrans)|Specifies whether multiple transactions that involve the same ODBC data source are isolated by forcing multiple connections to the data source.|  
+|[CDaoWorkspace::SetLoginTimeout](#setlogintimeout)|Sets the number of seconds before an error occurs when the user attempts to log in to an ODBC data source.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoWorkspace::m_pDAOWorkspace](#m_pdaoworkspace)|基になる DAO ワークスペース オブジェクトへのポインター。|  
+|[CDaoWorkspace::m_pDAOWorkspace](#m_pdaoworkspace)|Points to the underlying DAO workspace object.|  
   
-## <a name="remarks"></a>コメント  
- ほとんどの場合、複数のワークスペースにする必要はありません。 し、明示的にワークスペース オブジェクトを作成する必要はありません。データベース オブジェクトと recordset オブジェクトを開くと、DAO の既定のワークスペースを使用します。 ただし、必要な場合、別のワークスペース オブジェクトを作成することで複数のセッション同時に実行できます。 各ワークスペース オブジェクトは、独自のデータベース コレクション内の複数の開いているデータベース オブジェクトを含めることができます。 MFC では、ワークスペースとは、主に、トランザクション マネージャーは、すべて同じ「トランザクション空間」で開かれているデータベースのセットを指定します。  
+## <a name="remarks"></a>Remarks  
+ In most cases, you will not need multiple workspaces, and you will not need to create explicit workspace objects; when you open database and recordset objects, they use DAO's default workspace. However, if needed, you can run multiple sessions at a time by creating additional workspace objects. Each workspace object can contain multiple open database objects in its own Databases collection. In MFC, a workspace is primarily a transaction manager, specifying a set of open databases all in the same "transaction space."  
   
 > [!NOTE]
->  DAO データベース クラスは、MFC データベース クラス ODBC Open Database Connectivity () をベースとは異なります。 DAO データベース クラスの名前では、"CDao"プレフィックスがあります。 一般に、DAO に基づいて MFC クラスは、ODBC に基づいて MFC クラスよりもより高機能です。 DAO ベース クラスには、ODBC ドライバーを含む、Microsoft Jet データベース エンジンを通じてデータにアクセスします。 また、データベースの作成や、DAO を直接呼び出すことがなくテーブルと、クラスを使用してフィールドを追加するなどのデータ定義言語 (DDL) 操作をサポートします。  
+>  The DAO database classes are distinct from the MFC database classes based on Open Database Connectivity (ODBC). All DAO database class names have a "CDao" prefix. In general, the MFC classes based on DAO are more capable than the MFC classes based on ODBC. The DAO-based classes access data through the Microsoft Jet database engine, including ODBC drivers. They also support Data Definition Language (DDL) operations, such as creating databases and adding tables and fields via the classes, without having to call DAO directly.  
   
-## <a name="capabilities"></a>機能  
- クラス`CDaoWorkspace`次に示します。  
+## <a name="capabilities"></a>Capabilities  
+ Class `CDaoWorkspace` provides the following:  
   
--   明示的なアクセス権、データベース エンジンを初期化することによって作成された既定のワークスペースに、必要な場合です。 通常、使用する DAO の既定のワークスペースに暗黙的にデータベースとレコード セット オブジェクトを作成します。  
+-   Explicit access, if needed, to a default workspace, created by initializing the database engine. Usually you use DAO's default workspace implicitly by creating database and recordset objects.  
   
--   トランザクションがすべてのデータベースに適用されるトランザクション領域は、ワークスペースを開きます。 個別のトランザクションのスペースを管理するその他のワークスペースを作成することができます。  
+-   A transaction space in which transactions apply to all databases open in the workspace. You can create additional workspaces to manage separate transaction spaces.  
   
--   基になる Microsoft Jet データベース エンジンの多くのプロパティへのインターフェイス (静的メンバー関数を参照してください)。 開くまたは、ワークスペースを作成する前に、静的メンバー関数を呼び出すことは、オープン、作成またはデータベース エンジンを初期化します。  
+-   An interface to many properties of the underlying Microsoft Jet database engine (see the static member functions). Opening or creating a workspace, or calling a static member function before open or create, initializes the database engine.  
   
--   追加されたすべてのアクティブなワークスペースを格納するデータベース エンジンのワークスペースのコレクションにアクセスします。 作成し、コレクションに追加せず、ワークスペースを使用することもできます。  
+-   Access to the database engine's Workspaces collection, which stores all active workspaces that have been appended to it. You can also create and work with workspaces without appending them to the collection.  
   
-## <a name="security"></a>セキュリティ  
- MFC は、DAO では、セキュリティ制御に使用されるユーザーとグループのコレクションを実装しません。 DAO の側面を必要がある場合する必要がありますプログラムに自分で DAO インターフェイスを直接呼び出してです。 詳細については、次を参照してください。[テクニカル ノート 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md)です。  
+## <a name="security"></a>Security  
+ MFC does not implement the Users and Groups collections in DAO, which are used for security control. If you need those aspects of DAO, you must program them yourself via direct calls to DAO interfaces. For information, see [Technical Note 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).  
   
-## <a name="usage"></a>使用方法  
- クラスを使用して`CDaoWorkspace`に。  
+## <a name="usage"></a>Usage  
+ You can use class `CDaoWorkspace` to:  
   
--   明示的に既定のワークスペースを開きます。  
+-   Explicitly open the default workspace.  
   
-     既定のワークスペースの使用が暗黙の型は通常、新しいが開く[CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)または[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)オブジェクト。 明示的にアクセスする必要がありますが、-などを access データベース エンジンのプロパティまたはワークスペースのコレクション。 「既定のワークスペースの暗黙的な使用」を参照してください。  
+     Usually your use of the default workspace is implicit — when you open new [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) or [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) objects. But you might need to access it explicitly — for example, to access database engine properties or the Workspaces collection. See "Implicit Use of the Default Workspace" below.  
   
--   新しいワークスペースを作成します。 呼び出す[Append](#append)ワークスペースのコレクションに追加する場合。  
+-   Create new workspaces. Call [Append](#append) if you want to add them to the Workspaces collection.  
   
--   Workspaces コレクションでは、既存のワークスペースを開きます。  
+-   Open an existing workspace in the Workspaces collection.  
   
- 新しいワークスペースを作成する存在しないコレクションが下に記載されているワークスペースで、[作成](#create)メンバー関数。 を通してエンジン セッション間で任意の方法では、ワークスペースのオブジェクトは保持されません。 場合は、アプリケーションでは、MFC を静的にリンク、によっては、データベース エンジンが非初期化アプリケーションを終了します。 アプリケーションは、MFC と動的にリンクする場合、データベース エンジンは、MFC DLL を読み込むときと初期化できません。  
+ Creating a new workspace that does not already exist in the Workspaces collection is described under the [Create](#create) member function. Workspace objects do not persist in any way between datababase engine sessions. If your application links MFC statically, ending the application uninitializes the database engine. If your application links with MFC dynamically, the database engine is uninitialized when the MFC DLL is unloaded.  
   
- 下に説明が明示的に既定のワークスペースを開くか、Workspaces コレクションで既存のワークスペースを開いて、[開く](#open)メンバー関数。  
+ Explicitly opening the default workspace, or opening an existing workspace in the Workspaces collection, is described under the [Open](#open) member function.  
   
- セッションを終了するワークスペースのワークスペースを閉じることで、[閉じる](#close)メンバー関数。 **閉じる**閉じますすべてのデータベースが閉じられていない、コミットされていないトランザクションをロールバックしています。  
+ End a workspace session by closing the workspace with the [Close](#close) member function. **Close** closes any databases you have not closed previously, rolling back any uncommitted transactions.  
   
-## <a name="transactions"></a>トランザクション  
- DAO は、ワークスペース レベルでトランザクションを管理します。そのため、複数の開いているデータベース ワークスペースでのトランザクションは、すべてのデータベースに適用されます。 たとえば場合は、2 つのデータベースがコミットされていない更新プログラムを呼び出す[CommitTrans](#committrans)、すべての更新はコミットします。 単一のデータベースにトランザクションを制限する場合はその別のワークスペース オブジェクトする必要があります。  
+## <a name="transactions"></a>Transactions  
+ DAO manages transactions at the workspace level; hence, transactions on a workspace with multiple open databases apply to all of the databases. For example, if two databases have uncommitted updates and you call [CommitTrans](#committrans), all of the updates are committed. If you want to limit transactions to a single database, you need a separate workspace object for it.  
   
-## <a name="implicit-use-of-the-default-workspace"></a>既定のワークスペースの暗黙的な使用  
- MFC は、次の状況で暗黙的に DAO の既定のワークスペースを使用します。  
+## <a name="implicit-use-of-the-default-workspace"></a>Implicit Use of the Default Workspace  
+ MFC uses DAO's default workspace implicitly under the following circumstances:  
   
--   新規に作成する場合`CDaoDatabase`オブジェクトが、これを既存`CDaoWorkspace`オブジェクト、MFC オブジェクトを作成、一時ワークスペース、DAO の既定のワークスペースに対応します。 これを行う複数のデータベースの場合のすべてのデータベース オブジェクトに割り当てられた既定のワークスペース。 を介して、データベースのワークスペースにアクセスすることができます、`CDaoDatabase`データ メンバーです。  
+-   If you create a new `CDaoDatabase` object but do not do so through an existing `CDaoWorkspace` object, MFC creates a temporary workspace object for you, which corresponds to DAO's default workspace. If you do so for multiple databases, all of the database objects are associated with the default workspace. You can access a database's workspace through a `CDaoDatabase` data member.  
   
--   同様に、作成する場合、`CDaoRecordset`オブジェクトへのポインターを指定せず、`CDaoDatabase`オブジェクト、MFC は、一時的なデータベース オブジェクトを作成および拡張機能、一時ワークスペース オブジェクトでします。 レコード セットのデータベース、および間接的にそのワークスペースで、使用してアクセスできます、`CDaoRecordset`データ メンバーです。  
+-   Similarly, if you create a `CDaoRecordset` object without supplying a pointer to a `CDaoDatabase` object, MFC creates a temporary database object and, by extension, a temporary workspace object. You can access a recordset's database, and indirectly its workspace, through a `CDaoRecordset` data member.  
   
-## <a name="other-operations"></a>その他の操作  
- その他のデータベース操作も提供、データベースの破損を修復またはデータベースを圧縮することなどです。  
+## <a name="other-operations"></a>Other Operations  
+ Other database operations are also provided, such as repairing a corrupted database or compacting a database.  
   
- DAO の直接の呼び出しと DAO セキュリティについて、次を参照してください。[テクニカル ノート 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md)です。  
+ For information about calling DAO directly and about DAO security, see [Technical Note 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CDaoWorkspace`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-##  <a name="append"></a>CDaoWorkspace::Append  
- このメンバー関数を呼び出した後[作成](#create)です。  
+##  <a name="append"></a>  CDaoWorkspace::Append  
+ Call this member function after you call [Create](#create).  
   
 ```  
 virtual void Append();
 ```  
   
-### <a name="remarks"></a>コメント  
- **追加**新しく作成したワークスペース オブジェクトをデータベース エンジンのワークスペースのコレクションに追加します。 ワークスペースは、データベース エンジンのセッションの間は保持されません。ディスクではなく、メモリ内にのみ格納されます。 ワークスペースを追加する必要はありません。そうしないと場合、は、引き続き使用できます。  
+### <a name="remarks"></a>Remarks  
+ **Append** appends a newly created workspace object to the database engine's Workspaces collection. Workspaces do not persist between database engine sessions; they are stored only in memory, not on disk. You do not have to append a workspace; if you do not, you can still use it.  
   
- 追加されたワークスペースはワークスペースのコレクション、アクティブな内の開いている状態が呼び出されるまでその[閉じる](#close)メンバー関数。  
+ An appended workspace remains in the Workspaces collection, in an active, open state, until you call its [Close](#close) member function.  
   
- 関連情報については、「DAO ヘルプの「メソッドの追加」」を参照してください。  
+ For related information, see the topic "Append Method" in DAO Help.  
   
-##  <a name="begintrans"></a>CDaoWorkspace::BeginTrans  
- トランザクションを開始するには、このメンバー関数を呼び出します。  
+##  <a name="begintrans"></a>  CDaoWorkspace::BeginTrans  
+ Call this member function to initiate a transaction.  
   
 ```  
 void BeginTrans();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後**BeginTrans**トランザクションをコミットすると、データまたはデータベースの構造に行った更新が有効になります。 ワークスペースは、1 つのトランザクション領域を定義するため、トランザクションは、ワークスペース内のすべての開いているデータベースに適用されます。 これには、トランザクションを完了する 2 つの方法があります。  
+### <a name="remarks"></a>Remarks  
+ After you call **BeginTrans**, updates you make to your data or database structure take effect when you commit the transaction. Because the workspace defines a single transaction space, the transaction applies to all open databases in the workspace. There are two ways to complete the transaction:  
   
--   呼び出す、 [CommitTrans](#committrans)メンバー関数をトランザクションをコミットし、データ ソースに変更を保存します。  
+-   Call the [CommitTrans](#committrans) member function to commit the transaction and save changes to the data source.  
   
--   呼び出すか、[ロールバック](#rollback)トランザクションをキャンセルするメンバー関数。  
+-   Or call the [Rollback](#rollback) member function to cancel the transaction.  
   
- トランザクションが保留中に、ワークスペース オブジェクトまたはデータベース オブジェクトを閉じることは、保留中のすべてのトランザクションではロールバックします。  
+ Closing the workspace object or a database object while a transaction is pending rolls back all pending transactions.  
   
- 1 つの ODBC データ ソースから別の ODBC データ ソース上でのトランザクションを分離する必要がある場合は、次を参照してください。、 [SetIsolateODBCTrans](#setisolateodbctrans)メンバー関数。  
+ If you need to isolate transactions on one ODBC data source from those on another ODBC data source, see the [SetIsolateODBCTrans](#setisolateodbctrans) member function.  
   
-##  <a name="cdaoworkspace"></a>CDaoWorkspace::CDaoWorkspace  
- `CDaoWorkspace` オブジェクトを構築します。  
+##  <a name="cdaoworkspace"></a>  CDaoWorkspace::CDaoWorkspace  
+ Constructs a `CDaoWorkspace` object.  
   
 ```  
 CDaoWorkspace();
 ```  
   
-### <a name="remarks"></a>コメント  
- C++ オブジェクトを構築した後に、次の 2 つのオプションがあります。  
+### <a name="remarks"></a>Remarks  
+ After constructing the C++ object, you have two options:  
   
--   オブジェクトの[開く](#open)メンバー関数を既定のワークスペースを開くかを開くには、ワークスペースのコレクション内の既存のオブジェクト。  
+-   Call the object's [Open](#open) member function to open the default workspace or to open an existing object in the Workspaces collection.  
   
--   オブジェクトのまたは[作成](#create)新しい DAO ワークスペース オブジェクトを作成するメンバー関数。 これは、明示的に新しいワークスペースはセッションを開始を使用して参照することができる`CDaoWorkspace`オブジェクト。 呼び出した後**作成**、呼び出すことができます[Append](#append)ワークスペースをデータベース エンジンのワークスペースのコレクションに追加する場合。  
+-   Or call the object's [Create](#create) member function to create a new DAO workspace object. This explicitly starts a new workspace session, which you can refer to via the `CDaoWorkspace` object. After calling **Create**, you can call [Append](#append) if you want to add the workspace to the database engine's Workspaces collection.  
   
- クラスの概要を参照してください[CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)について明示的に作成する必要がある場合は、`CDaoWorkspace`オブジェクト。 開くときに暗黙的に作成したワークスペースを使用する通常、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)ワークスペースを指定せず、または開くときのオブジェクト、 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)せず、データベース オブジェクトを指定するオブジェクト。 この方法で作成された MFC DAO オブジェクトは、1 回作成され、再利用する DAO の既定のワークスペースを使用します。  
+ See the class overview for [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) for information about when you need to explicitly create a `CDaoWorkspace` object. Usually, you use workspaces created implicitly when you open a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object without specifying a workspace or when you open a [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) object without specifying a database object. MFC DAO objects created in this way use DAO's default workspace, which is created once and reused.  
   
- ワークスペースとそのコンテナー内のオブジェクトを解放する呼び出しワークスペース オブジェクトの[閉じる](#close)メンバー関数。  
+ To release a workspace and its contained objects, call the workspace object's [Close](#close) member function.  
   
-##  <a name="close"></a>CDaoWorkspace::Close  
- ワークスペース オブジェクトをクローズする場合は、このメンバー関数を呼び出します。  
+##  <a name="close"></a>  CDaoWorkspace::Close  
+ Call this member function to close the workspace object.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- ワークスペースを開くオブジェクトを閉じて基になる DAO オブジェクトを解放し、ワークスペース Workspaces コレクションのメンバーである場合は、コレクションから削除します。 呼び出す**閉じる**お勧めします。  
+### <a name="remarks"></a>Remarks  
+ Closing an open workspace object releases the underlying DAO object and, if the workspace is a member of the Workspaces collection, removes it from the collection. Calling **Close** is good programming practice.  
   
 > [!CAUTION]
->  ワークスペース オブジェクトを閉じると、ワークスペースに開かれているデータベースが実行されます。 これは、結果、同様に、閉じられているデータベースで、レコード セットを開くとすべての保留中の編集または更新がロールバックします。 関連情報については、次を参照してください。、 [CDaoDatabase::Close](../../mfc/reference/cdaodatabase-class.md#close)、 [CDaoRecordset::Close](../../mfc/reference/cdaorecordset-class.md#close)、 [CDaoTableDef::Close](../../mfc/reference/cdaotabledef-class.md#close)、および[CDaoQueryDef::Close](../../mfc/reference/cdaoquerydef-class.md#close)メンバー関数。  
+>  Closing a workspace object closes any open databases in the workspace. This results in any recordsets open in the databases being closed as well, and any pending edits or updates are rolled back. For related information, see the [CDaoDatabase::Close](../../mfc/reference/cdaodatabase-class.md#close), [CDaoRecordset::Close](../../mfc/reference/cdaorecordset-class.md#close), [CDaoTableDef::Close](../../mfc/reference/cdaotabledef-class.md#close), and [CDaoQueryDef::Close](../../mfc/reference/cdaoquerydef-class.md#close) member functions.  
   
- ワークスペースのオブジェクトは恒久的です。それらへの参照が存在している間にのみ存在します。 これは、データベース エンジンのセッションの終了時にワークスペースとそのデータベースのコレクションはありませんが永続化することを意味します。 必要があります再作成するには次のセッション ワークスペースとデータベースを再度開くことで。  
+ Workspace objects are not permanent; they only exist while references to them exist. This means that when the database engine session ends, the workspace and its Databases collection do not persist. You must re-create them for the next session by opening your workspace and database(s) again.  
   
- 関連情報については、「Close メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Close Method" in DAO Help.  
   
-##  <a name="committrans"></a>CDaoWorkspace::CommitTrans  
- トランザクションをコミットするには、このメンバー関数を呼び出す — ワークスペースで、1 つまたは複数のデータベースへの編集と更新プログラムのグループを保存します。  
+##  <a name="committrans"></a>  CDaoWorkspace::CommitTrans  
+ Call this member function to commit a transaction — save a group of edits and updates to one or more databases in the workspace.  
   
 ```  
 void CommitTrans();
 ```  
   
-### <a name="remarks"></a>コメント  
- トランザクションでは、一連のデータベース内のデータまたはデータへの呼び出しで始まる、構造体への変更の[BeginTrans](#begintrans)です。 いずれかのコミットまたはロールバック、トランザクションを完了したときに (変更をキャンセルで[ロールバック](#rollback)です。 既定では、トランザクションを使用しない更新プログラムのレコードをすぐにコミットされます。 呼び出す**BeginTrans**を呼び出すまで遅延更新プログラムのコミットメントをにより**CommitTrans**です。  
+### <a name="remarks"></a>Remarks  
+ A transaction consists of a series of changes to the database's data or its structure, beginning with a call to [BeginTrans](#begintrans). When you complete the transaction, either commit it or roll it back (cancel the changes) with [Rollback](#rollback). By default, without transactions, updates to records are committed immediately. Calling **BeginTrans** causes commitment of updates to be delayed until you call **CommitTrans**.  
   
 > [!CAUTION]
->  1 つのワークスペース内では、トランザクションは、ワークスペースにグローバルが常にされ、データベースまたはレコード セットの 1 つだけに限定されていません。 2 つ以上のデータベースまたはレコード セットのワークスペース トランザクション内で操作を実行する場合**CommitTrans**更新、保留中のすべてのコミットと**ロールバック**データベースとレコード セットのすべての操作を復元します。  
+>  Within one workspace, transactions are always global to the workspace and are not limited to only one database or recordset. If you perform operations on more than one database or recordset within a workspace transaction, **CommitTrans** commits all pending updates, and **Rollback** restores all operations on those databases and recordsets.  
   
- データベースまたは保留中のトランザクションでワークスペースを閉じると、トランザクションはすべてロールバックされます。  
+ When you close a database or workspace with pending transactions, the transactions are all rolled back.  
   
 > [!NOTE]
->  これは、2 フェーズ コミット メカニズムではありません。 1 つの更新はコミットに失敗した場合、他のユーザーもコミットされます。  
+>  This is not a two-phase commit mechanism. If one update fails to commit, others still will commit.  
   
-##  <a name="compactdatabase"></a>CDaoWorkspace::CompactDatabase  
- 指定した Microsoft Jet を最適化するには、このメンバー関数を呼び出します (です。MDB) データベース。  
+##  <a name="compactdatabase"></a>  CDaoWorkspace::CompactDatabase  
+ Call this member function to compact a specified Microsoft Jet (.MDB) database.  
   
 ```  
 static void PASCAL CompactDatabase(
@@ -307,82 +314,82 @@ static void PASCAL CompactDatabase(
     LPCTSTR lpszPassword);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszSrcName`  
- 既存の名前には、データベースが閉じられました。 だということの完全なパスとファイル名など、"c:\\\MYDB です。MDB"です。 ファイル名に拡張子がある場合を指定する必要があります。 ネットワークでは、統一された名前付け規則 (UNC) をサポートする場合、ことができますも指定するネットワーク パスなど"\\\\\\\MYSERVER\\\MYSHARE\\\MYDIR\\\MYDB です。MDB"です。 (ために、パス文字列に円記号が必要な"\\"は、C++ のエスケープ文字です)。  
+ The name of an existing, closed database. It can be a full path and filename, such as "C:\\\MYDB.MDB". If the filename has an extension, you must specify it. If your network supports the uniform naming convention (UNC), you can also specify a network path, such as "\\\\\\\MYSERVER\\\MYSHARE\\\MYDIR\\\MYDB.MDB". (Double backslashes are required in the path strings because "\\" is the C++ escape character.)  
   
  `lpszDestName`  
- 作成している最適化されたデータベースの完全パス。 としてネットワーク パスを指定することもできます。`lpszSrcName`です。 使用することはできません、`lpszDestName`と同じデータベース ファイルを指定する引数`lpszSrcName`です。  
+ The full path of the compacted database that you are creating. You can also specify a network path as with `lpszSrcName`. You cannot use the `lpszDestName` argument to specify the same database file as `lpszSrcName`.  
   
  `lpszPassword`  
- パスワードで保護されたデータベースを最適化するときに使用されるパスワードです。 バージョンを使用する場合は、`CompactDatabase`パスワードを取得する、すべてのパラメーターを指定する必要があります。 また、これは、接続パラメーターであるため、必要な特殊な書式設定、次のように: です。PWD= `lpszPassword`. 例: です。PWD =「満足」です。 (先頭のセミコロンが必要です)  
+ A password, used when you want to compact a password-protected database. Note that if you use the version of `CompactDatabase` that takes a password, you must supply all parameters. Also, because this is a connect parameter, it requires special formatting, as follows: ;PWD= `lpszPassword`. For example: ;PWD="Happy". (The leading semicolon is required.)  
   
  `lpszLocale`  
- 作成するための照合順序を指定する文字列式`lpszDestName`です。 既定値を受け入れることにより、この引数を省略したかどうかは**dbLangGeneral** (下記参照)、新しいデータベースのロケールとは、元のデータベースと同じです。 指定できる値は次のとおりです。  
+ A string expression used to specify collating order for creating `lpszDestName`. If you omit this argument by accepting the default value of **dbLangGeneral** (see below), the locale of the new database is the same as that of the old database. Possible values are:  
   
-- **dbLangGeneral**英語、ドイツ語、フランス語、ポルトガル語、イタリア語、および最新のスペイン語  
+- **dbLangGeneral** English, German, French, Portuguese, Italian, and Modern Spanish  
   
-- **dbLangArabic**アラビア語  
+- **dbLangArabic** Arabic  
   
-- **dbLangCyrillic**ロシア語  
+- **dbLangCyrillic** Russian  
   
-- **dbLangCzech**チェコ語  
+- **dbLangCzech** Czech  
   
-- **dbLangDutch**オランダ語  
+- **dbLangDutch** Dutch  
   
-- **dbLangGreek**ギリシャ語  
+- **dbLangGreek** Greek  
   
-- **dbLangHebrew**ヘブライ語  
+- **dbLangHebrew** Hebrew  
   
-- **dbLangHungarian**ハンガリー語  
+- **dbLangHungarian** Hungarian  
   
-- **dbLangIcelandic**アイスランド語  
+- **dbLangIcelandic** Icelandic  
   
-- **dbLangNordic**スカンジナビア語 (Microsoft Jet データベース エンジンのバージョン 1.0 のみ)  
+- **dbLangNordic** Nordic languages (Microsoft Jet database engine version 1.0 only)  
   
-- **dbLangNorwdan**ノルウェー語、デンマーク語  
+- **dbLangNorwdan** Norwegian and Danish  
   
-- **dbLangPolish**ポーランド語  
+- **dbLangPolish** Polish  
   
-- **dbLangSpanish**従来のスペイン語  
+- **dbLangSpanish** Traditional Spanish  
   
-- **dbLangSwedfin**スウェーデン語、フィンランド語  
+- **dbLangSwedfin** Swedish and Finnish  
   
-- **dbLangTurkish**トルコ語  
+- **dbLangTurkish** Turkish  
   
  `nOptions`  
- ターゲット データベースの 1 つまたは複数のオプションを示す`lpszDestName`です。 既定値はそのまま使用してこの引数を省略した場合、`lpszDestName`同じ暗号化と同じバージョンになります`lpszSrcName`です。 組み合わせることができます、 **dbEncrypt**または**dbDecrypt**ビットごとの OR 演算子を使用してバージョンのオプションのいずれかのオプションです。 データベース エンジン バージョンではなく、データベースの形式を指定できる値は次のとおりです。  
+ Indicates one or more options for the target database, `lpszDestName`. If you omit this argument by accepting the default value, the `lpszDestName` will have the same encryption and the same version as `lpszSrcName`. You can combine the **dbEncrypt** or **dbDecrypt** option with one of the version options using the bitwise-OR operator. Possible values, which specify a database format, not a database engine version, are:  
   
-- **dbEncrypt**最適化中にデータベースを暗号化します。  
+- **dbEncrypt** Encrypt the database while compacting.  
   
-- **dbDecrypt**最適化中に、データベースの暗号化を解除します。  
+- **dbDecrypt** Decrypt the database while compacting.  
   
-- **dbVersion10**最適化中に、Microsoft Jet データベース エンジンのバージョン 1.0 を使用するデータベースを作成します。  
+- **dbVersion10** Create a database that uses the Microsoft Jet database engine version 1.0 while compacting.  
   
-- **dbVersion11**最適化中に、Microsoft Jet データベース エンジンのバージョン 1.1 を使用するデータベースを作成します。  
+- **dbVersion11** Create a database that uses the Microsoft Jet database engine version 1.1 while compacting.  
   
-- **dbVersion20**最適化中に Microsoft Jet データベース エンジンのバージョン 2.0 を使用するデータベースを作成します。  
+- **dbVersion20** Create a database that uses the Microsoft Jet database engine version 2.0 while compacting.  
   
-- **dbVersion30**最適化中に Microsoft Jet データベース エンジンのバージョン 3.0 を使用するデータベースを作成します。  
+- **dbVersion30** Create a database that uses the Microsoft Jet database engine version 3.0 while compacting.  
   
- 使用することができます**dbEncrypt**または**dbDecrypt**オプションの引数に暗号化するかは圧縮され、それに応じてデータベースの暗号化を解除するかを指定します。 暗号化定数を省略した場合、または両方を指定する**dbDecrypt**と**dbEncrypt**、`lpszDestName`と同じ暗号化が`lpszSrcName`です。 バージョンのいずれかの操作は、最適化されたデータベースのデータ形式のバージョンを指定するのにオプションの引数で使用できます。 この定数のデータの形式のバージョンのみに影響を与える`lpszDestName`です。 バージョン定数は 1 つだけ指定できます。 バージョン定数を省略した場合`lpszDestName`と同じバージョンを持つ`lpszSrcName`します。 圧縮することもできます`lpszDestName`が同じバージョンにのみの場合よりも後で、または`lpszSrcName`です。  
-  
-> [!CAUTION]
->  データベースが暗号化されていない場合、可能な場合でもある直接ファイルを読み取るバイナリ ディスク、データベースを構成する、ユーザー/パスワードのセキュリティを実装します。  
-  
-### <a name="remarks"></a>コメント  
- データベース内のデータを変更すると、データベース ファイル断片化されて、必要に応じてより多くのディスク領域を使用します。 定期的に、データベース ファイルの断片化を解消するため、データベースを圧縮する必要があります。 最適化されたデータベースは、通常小さくなります。 コピーし、データベースを圧縮するには、照合順序、暗号化、またはデータ形式のバージョンを変更することもできます。  
+ You can use **dbEncrypt** or **dbDecrypt** in the options argument to specify whether to encrypt or to decrypt the database as it is compacted. If you omit an encryption constant or if you include both **dbDecrypt** and **dbEncrypt**, `lpszDestName` will have the same encryption as `lpszSrcName`. You can use one of the version constants in the options argument to specify the version of the data format for the compacted database. This constant affects only the version of the data format of `lpszDestName`. You can specify only one version constant. If you omit a version constant, `lpszDestName` will have the same version as `lpszSrcName`. You can compact `lpszDestName` only to a version that is the same or later than that of `lpszSrcName`.  
   
 > [!CAUTION]
->  `CompactDatabase`メンバー関数は正常に変換されません完全な Microsoft Access データベース 1 つのバージョンから別です。 データの形式のみが変換されます。 フォームやレポートなど、Microsoft アクセス定義オブジェクトは変換されません。 ただし、データが正しく変換します。  
+>  If a database is not encrypted, it is possible, even if you implement user/password security, to directly read the binary disk file that constitutes the database.  
+  
+### <a name="remarks"></a>Remarks  
+ As you change data in a database, the database file can become fragmented and use more disk space than necessary. Periodically, you should compact your database to defragment the database file. The compacted database is usually smaller. You can also choose to change the collating order, the encryption, or the version of the data format while you copy and compact the database.  
+  
+> [!CAUTION]
+>  The `CompactDatabase` member function will not correctly convert a complete Microsoft Access database from one version to another. Only the data format is converted. Microsoft Access-defined objects, such as forms and reports, are not converted. However, the data is correctly converted.  
   
 > [!TIP]
->  使用することも`CompactDatabase`データベース ファイルをコピーします。  
+>  You can also use `CompactDatabase` to copy a database file.  
   
- データベース圧縮の詳細については、DAO ヘルプの「CompactDatabase メソッド」を参照してください。  
+ For more information about compacting databases, see the topic "CompactDatabase Method" in DAO Help.  
   
-##  <a name="create"></a>CDaoWorkspace::Create  
- 新しい DAO ワークスペース オブジェクトを作成し、MFC に関連付けるには、このメンバー関数を呼び出す`CDaoWorkspace`オブジェクト。  
+##  <a name="create"></a>  CDaoWorkspace::Create  
+ Call this member function to create a new DAO workspace object and associate it with the MFC `CDaoWorkspace` object.  
   
 ```  
 virtual void Create(
@@ -391,42 +398,42 @@ virtual void Create(
     LPCTSTR lpszPassword);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- 新しいワークスペース オブジェクトの一意名を最大 14 文字の文字列。 名前を指定する必要があります。 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ A string with up to 14 characters that uniquely names the new workspace object. You must supply a name. For related information, see the topic "Name Property" in DAO Help.  
   
  *lpszUserName*  
- ワークスペースの所有者のユーザー名。 要件については、次を参照してください。、`lpszDefaultUser`パラメーターを、 [SetDefaultUser](#setdefaultuser)メンバー関数。 関連情報については、DAO ヘルプの「ユーザー名プロパティ」を参照してください。  
+ The user name of the workspace's owner. For requirements, see the `lpszDefaultUser` parameter to the [SetDefaultUser](#setdefaultuser) member function. For related information, see the topic "UserName Property" in DAO Help.  
   
  `lpszPassword`  
- 新しいワークスペース オブジェクトのパスワード。 パスワードは、長さは最大 14 文字し、ASCII 0 (null) を除く任意の文字を含めることができます。 パスワードは、大文字小文字が区別されます。 関連情報については、DAO ヘルプの「パスワード プロパティ」を参照してください。  
+ The password for the new workspace object. A password can be up to 14 characters long and can contain any character except ASCII 0 (null). Passwords are case-sensitive. For related information, see the topic "Password Property" in DAO Help.  
   
-### <a name="remarks"></a>コメント  
- 全体的な作成手順は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The overall creation process is:  
   
-1.  構築、 [CDaoWorkspace](#cdaoworkspace)オブジェクト。  
+1.  Construct a [CDaoWorkspace](#cdaoworkspace) object.  
   
-2.  オブジェクトの**作成**基になる DAO ワークスペースを作成するメンバー関数。 ワークスペース名を指定する必要があります。  
+2.  Call the object's **Create** member function to create the underlying DAO workspace. You must specify a workspace name.  
   
-3.  必要に応じて呼び出す[Append](#append)ワークスペースをデータベース エンジンのワークスペースのコレクションに追加する場合。 追加することがなく、ワークスペースを使用することができます。  
+3.  Optionally call [Append](#append) if you want to add the workspace to the database engine's Workspaces collection. You can work with the workspace without appending it.  
   
- 後に、**作成**呼び出し、ワークスペース オブジェクトは、開いている状態で、使用可能な状態にします。 呼び出すことはありません**開く**後**作成**です。 呼び出すことはありません**作成**場合は、ワークスペースは、ワークスペースのコレクションに既に存在します。 **作成**アプリケーションの既に初期化されていない場合は、データベース エンジンを初期化します。  
+ After the **Create** call, the workspace object is in an open state, ready for use. You do not call **Open** after **Create**. You do not call **Create** if the workspace already exists in the Workspaces collection. **Create** initializes the database engine if it has not already been initialized for your application.  
   
-##  <a name="getdatabasecount"></a>CDaoWorkspace::GetDatabaseCount  
- ワークスペースのデータベース コレクション内の DAO データベース オブジェクトの数を取得するには、このメンバー関数を呼び出す — ワークスペースで、開いているデータベースの数。  
+##  <a name="getdatabasecount"></a>  CDaoWorkspace::GetDatabaseCount  
+ Call this member function to retrieve the number of DAO database objects in the workspace's Databases collection — the number of open databases in the workspace.  
   
 ```  
 short GetDatabaseCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ワークスペースに開かれているデータベースの数。  
+### <a name="return-value"></a>Return Value  
+ The number of open databases in the workspace.  
   
-### <a name="remarks"></a>コメント  
- `GetDatabaseCount`ワークスペースのデータベース コレクションで定義されているすべてのデータベースをループする必要がある場合に役立ちます。 コレクション内の特定のデータベースに関する情報を取得するには、次を参照してください。 [GetDatabaseInfo](#getdatabaseinfo)です。 呼び出すには、一般的な使用`GetDatabaseCount`開かれているデータベースの数、し、その数をループ インデックスとしてを使用を繰り返し呼び出す`GetDatabaseInfo`です。  
+### <a name="remarks"></a>Remarks  
+ `GetDatabaseCount` is useful if you need to loop through all defined databases in the workspace's Databases collection. To obtain information about a given database in the collection, see [GetDatabaseInfo](#getdatabaseinfo). Typical usage is to call `GetDatabaseCount` for the number of open databases, then use that number as a loop index for repeated calls to `GetDatabaseInfo`.  
   
-##  <a name="getdatabaseinfo"></a>CDaoWorkspace::GetDatabaseInfo  
- さまざまな種類のデータベースを開く ワークスペースで、に関する情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getdatabaseinfo"></a>  CDaoWorkspace::GetDatabaseInfo  
+ Call this member function to obtain various kinds of information about a database open in the workspace.  
   
 ```  
 void GetDatabaseInfo(
@@ -441,139 +448,139 @@ void GetDatabaseInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- インデックスで検索する場合、ワークスペースのデータベース コレクション内のデータベース オブジェクトの 0 から始まるインデックス。  
+ The zero-based index of the database object in the workspace's Databases collection, for lookup by index.  
   
  `dbinfo`  
- 参照、 [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md)要求された情報を表すオブジェクト。  
+ A reference to a [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md) object that returns the information requested.  
   
  `dwInfoOptions`  
- 取得するデータベースに関する情報を指定するオプション。 使用可能なオプションを返す関数が何もここで表示されます。  
+ Options that specify which information about the database to retrieve. The available options are listed here along with what they cause the function to return:  
   
-- `AFX_DAO_PRIMARY_INFO`(既定値)更新可能な名前、トランザクション  
+- `AFX_DAO_PRIMARY_INFO` (Default) Name, Updatable, Transactions  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリ情報に加えて: バージョン、照合順序では、クエリのタイムアウト  
+- `AFX_DAO_SECONDARY_INFO` Primary information plus: Version, Collating Order, Query Timeout  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報に加えて: 接続  
+- `AFX_DAO_ALL_INFO` Primary and secondary information plus: Connect  
   
  `lpszName`  
- 名前で検索する場合、データベース オブジェクトの名前。 名前は、新しいワークスペース オブジェクトの一意名で 14 文字以内の文字列です。  
+ The name of the database object, for lookup by name. The name is a string with up to 14 characters that uniquely names the new workspace object.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、インデックスを使用してデータベースを検索することができます。 その他のバージョンでは、データベースを名前で検索できます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up a database by index. The other version lets you look up a database by name.  
   
- 返される情報の詳細については`dbinfo`を参照してください、 [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、同様に、以前のレベルの情報を取得します。  
+ For a description of the information returned in `dbinfo`, see the [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for any prior levels as well.  
   
-##  <a name="getinipath"></a>CDaoWorkspace::GetIniPath  
- Microsoft Jet データベースの場所に、Windows レジストリにエンジンの初期化の設定を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getinipath"></a>  CDaoWorkspace::GetIniPath  
+ Call this member function to obtain the location of the Microsoft Jet database engine's initialization settings in the Windows registry.  
   
 ```  
 static CString PASCAL GetIniPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)レジストリの場所を含むです。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) containing the registry location.  
   
-### <a name="remarks"></a>コメント  
- データベース エンジンの設定に関する情報を取得するのに場所を使用することができます。 返される情報は、実際にはレジストリのサブキーの名前です。  
+### <a name="remarks"></a>Remarks  
+ You can use the location to obtain information about settings for the database engine. The information returned is actually the name of a registry subkey.  
   
- 関連情報については、「IniPath プロパティ」と"をカスタマイズする Windows レジストリ設定のデータ アクセス"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "IniPath Property" and "Customizing Windows Registry Settings for Data Access" in DAO Help.  
   
-##  <a name="getisolateodbctrans"></a>CDaoWorkspace::GetIsolateODBCTrans  
- ワークスペースの DAO IsolateODBCTrans プロパティの現在の値を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getisolateodbctrans"></a>  CDaoWorkspace::GetIsolateODBCTrans  
+ Call this member function to get the current value of the DAO IsolateODBCTrans property for the workspace.  
   
 ```  
 BOOL GetIsolateODBCTrans();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ODBC トランザクションが分離されている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if ODBC transactions are isolated; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 一部の状況では、同じ ODBC データベースで保留中の複数の同時トランザクションに必要があります。 これを行うには、トランザクションごとに独立したワークスペースを開く必要があります。 各ワークスペースには、データベースへの独自の ODBC 接続できますが、この速度が低下するシステムのパフォーマンスに注意してください。 トランザクションの分離が通常必要ないために、同じユーザーによって開かれた複数のワークスペース オブジェクトから ODBC 接続は、既定で共有されます。  
+### <a name="remarks"></a>Remarks  
+ In some situations, you might need to have multiple simultaneous transactions pending on the same ODBC database. To do this, you need to open a separate workspace for each transaction. Keep in mind that although each workspace can have its own ODBC connection to the database, this slows system performance. Because transaction isolation is not normally required, ODBC connections from multiple workspace objects opened by the same user are shared by default.  
   
- Microsoft SQL Server など、一部の ODBC サーバーでは、単一の接続での同時トランザクションは許可されません。 時に、保留中のようなデータベースに対してトランザクションを 1 つ以上含める必要がある場合は、IsolateODBCTrans プロパティを設定**TRUE**を開くとすぐには、各ワークスペースにします。 これにより、各ワークスペースの別の ODBC 接続されます。  
+ Some ODBC servers, such as Microsoft SQL Server, do not allow simultaneous transactions on a single connection. If you need to have more than one transaction at a time pending against such a database, set the IsolateODBCTrans property to **TRUE** on each workspace as soon as you open it. This forces a separate ODBC connection for each workspace.  
   
- 関連情報については、DAO ヘルプの「IsolateODBCTrans プロパティ」を参照してください。  
+ For related information, see the topic "IsolateODBCTrans Property" in DAO Help.  
   
-##  <a name="getlogintimeout"></a>CDaoWorkspace::GetLoginTimeout  
- ワークスペースの DAO LoginTimeout プロパティの現在の値を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getlogintimeout"></a>  CDaoWorkspace::GetLoginTimeout  
+ Call this member function to get the current value of the DAO LoginTimeout property for the workspace.  
   
 ```  
 static short PASCAL GetLoginTimeout();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ODBC データベースにログインしようとするとエラーが発生するまでの秒数。  
+### <a name="return-value"></a>Return Value  
+ The number of seconds before an error occurs when you attempt to log in to an ODBC database.  
   
-### <a name="remarks"></a>コメント  
- この値は、ODBC データベースにログインしようとするとエラーが発生するまでの秒数を表します。 LoginTimeout 既定値は 20 秒です。 LoginTimeout が 0 に設定されている場合は、タイムアウトが発生せず、データ ソースとの通信が応答を停止する可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This value represents the number of seconds before an error occurs when you attempt to log in to an ODBC database. The default LoginTimeout setting is 20 seconds. When LoginTimeout is set to 0, no timeout occurs and the communication with the data source might stop responding.  
   
- ネットワーク エラーの結果として、接続が失敗する Microsoft SQL Server などの ODBC データベースにログインしようとしているときに、サーバーが実行されていないため、または。 を待機している既定値 20 秒間の接続にではなく、データベース エンジンがエラーを生成するまでに待機する時間を指定することができます。 サーバーへログインは、外部サーバーのデータベースに対するクエリの実行などのさまざまなイベントの数値の一部として暗黙的に実行されます。  
+ When you are attempting to log in to an ODBC database, such as Microsoft SQL Server, the connection may fail as a result of network errors or because the server is not running. Rather than waiting for the default 20 seconds to connect, you can specify how long the database engine waits before it produces an error. Logging in to the server happens implicitly as part of a number of different events, such as running a query on an external server database.  
   
- 関連情報については、DAO ヘルプの「LoginTimeout プロパティ」を参照してください。  
+ For related information, see the topic "LoginTimeout Property" in DAO Help.  
   
-##  <a name="getname"></a>CDaoWorkspace::GetName  
- このメンバー関数、ユーザー定義の名前を取得、DAO ワークスペース オブジェクトの基になる、`CDaoWorkspace`オブジェクト。  
+##  <a name="getname"></a>  CDaoWorkspace::GetName  
+ Call this member function to get the user-defined name of the DAO workspace object underlying the `CDaoWorkspace` object.  
   
 ```  
 CString GetName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md) DAO ワークスペース オブジェクトのユーザー定義名を格納します。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) containing the user-defined name of the DAO workspace object.  
   
-### <a name="remarks"></a>コメント  
- 名前は、名前によって、DAO ワークスペース コレクション内のオブジェクト、データベース エンジンのワークスペースにアクセスするために役立ちます。  
+### <a name="remarks"></a>Remarks  
+ The name is useful for accessing the DAO workspace object in the database engine's Workspaces collection by name.  
   
- 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ For related information, see the topic "Name Property" in DAO Help.  
   
-##  <a name="getusername"></a>CDaoWorkspace::GetUserName  
- ワークスペースの所有者の名前を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getusername"></a>  CDaoWorkspace::GetUserName  
+ Call this member function to obtain the name of the owner of the workspace.  
   
 ```  
 CString GetUserName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)ワークスペース オブジェクトの所有者を表すです。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) that represents the owner of the workspace object.  
   
-### <a name="remarks"></a>コメント  
- 取得またはワークスペースの所有者のアクセス許可を設定、Permissions プロパティの設定を確認するには、直接 DAO を呼び出すどのようなアクセス許可を指定するユーザーがします。 アクセス許可を使用するには、システムが必要です。MDA ファイルです。  
+### <a name="remarks"></a>Remarks  
+ To get or set the permissions for the workspace owner, call DAO directly to check the Permissions property setting; this determines what permissions that user has. To work with permissions, you need a SYSTEM.MDA file.  
   
- 呼び出し元の DAO に関する情報を参照してください、直接[テクニカル ノート 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md)です。 関連情報については、DAO ヘルプの「ユーザー名プロパティ」を参照してください。  
+ For information about calling DAO directly, see [Technical Note 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md). For related information, see the topic "UserName Property" in DAO Help.  
   
-##  <a name="getversion"></a>CDaoWorkspace::GetVersion  
- 使用中で、Microsoft Jet データベース エンジンのバージョンを確認するには、このメンバー関数を呼び出します。  
+##  <a name="getversion"></a>  CDaoWorkspace::GetVersion  
+ Call this member function to determine the version of the Microsoft Jet database engine in use.  
   
 ```  
 static CString PASCAL GetVersion();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクトに関連付けられているデータベース エンジンのバージョンを示すです。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) that indicates the version of the database engine associated with the object.  
   
-### <a name="remarks"></a>コメント  
- 返される値は、フォーム"<major.minor"; でバージョン番号を表しますたとえば、「3.0」です。 製品のバージョン番号 (たとえば、3.0) は、バージョン番号 (3)、ピリオド、およびリリース番号 (0) で構成されます。  
+### <a name="remarks"></a>Remarks  
+ The value returned represents the version number in the form "major.minor"; for example, "3.0". The product version number (for example, 3.0) consists of the version number (3), a period, and the release number (0).  
   
- 関連情報については、DAO ヘルプの「バージョン プロパティ」を参照してください。  
+ For related information, see the topic "Version Property" in DAO Help.  
   
-##  <a name="getworkspacecount"></a>CDaoWorkspace::GetWorkspaceCount  
- DAO データベース エンジンのワークスペースのコレクションのオブジェクトのワークスペースの数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getworkspacecount"></a>  CDaoWorkspace::GetWorkspaceCount  
+ Call this member function to retrieve the number of DAO workspace objects in the database engine's Workspaces collection.  
   
 ```  
 short GetWorkspaceCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- Workspaces コレクション内の開いているワークスペースの数。  
+### <a name="return-value"></a>Return Value  
+ The number of open workspaces in the Workspaces collection.  
   
-### <a name="remarks"></a>コメント  
- この数は、コレクションに追加されていないすべての開いているワークスペースには含まれません。 `GetWorkspaceCount`Workspaces コレクションで定義されているすべてのワークスペースをループする必要がある場合に便利ですが。 コレクション内の特定のワークスペースについての情報を取得するには、次を参照してください。 [GetWorkspaceInfo](#getworkspaceinfo)です。 呼び出すには、一般的な使用`GetWorkspaceCount`開いているワークスペースの数、し、その数をループ インデックスとしてを使用を繰り返し呼び出す`GetWorkspaceInfo`です。  
+### <a name="remarks"></a>Remarks  
+ This count does not include any open workspaces not appended to the collection. `GetWorkspaceCount` is useful if you need to loop through all defined workspaces in the Workspaces collection. To obtain information about a given workspace in the collection, see [GetWorkspaceInfo](#getworkspaceinfo). Typical usage is to call `GetWorkspaceCount` for the number of open workspaces, then use that number as a loop index for repeated calls to `GetWorkspaceInfo`.  
   
-##  <a name="getworkspaceinfo"></a>CDaoWorkspace::GetWorkspaceInfo  
- さまざまな種類のセッションで開かれているワークスペースに関する情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getworkspaceinfo"></a>  CDaoWorkspace::GetWorkspaceInfo  
+ Call this member function to obtain various kinds of information about a workspace open in the session.  
   
 ```  
 void GetWorkspaceInfo(
@@ -588,249 +595,249 @@ void GetWorkspaceInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- インデックスで検索する場合、ワークスペースのコレクション内のデータベース オブジェクトの 0 から始まるインデックス。  
+ The zero-based index of the database object in the Workspaces collection, for lookup by index.  
   
  `wkspcinfo`  
- 参照、 [CDaoWorkspaceInfo](../../mfc/reference/cdaoworkspaceinfo-structure.md)要求された情報を表すオブジェクト。  
+ A reference to a [CDaoWorkspaceInfo](../../mfc/reference/cdaoworkspaceinfo-structure.md) object that returns the information requested.  
   
  `dwInfoOptions`  
- 取得するワークスペースに関する情報を指定するオプション。 使用可能なオプションを返す関数が何もここで表示されます。  
+ Options that specify which information about the workspace to retrieve. The available options are listed here along with what they cause the function to return:  
   
-- `AFX_DAO_PRIMARY_INFO`(既定値)名  
+- `AFX_DAO_PRIMARY_INFO` (Default) Name  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリ情報に加えて: ユーザー名  
+- `AFX_DAO_SECONDARY_INFO` Primary information plus: User Name  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報に加えて: ODBCTrans の分離  
+- `AFX_DAO_ALL_INFO` Primary and secondary information plus: Isolate ODBCTrans  
   
  `lpszName`  
- 名前で検索する場合、ワークスペース オブジェクトの名前。 名前は、新しいワークスペース オブジェクトの一意名で 14 文字以内の文字列です。  
+ The name of the workspace object, for lookup by name. The name is a string with up to 14 characters that uniquely names the new workspace object.  
   
-### <a name="remarks"></a>コメント  
- 返される情報の詳細については`wkspcinfo`を参照してください、 [CDaoWorkspaceInfo](../../mfc/reference/cdaoworkspaceinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、以前のレベルもの情報を取得します。  
+### <a name="remarks"></a>Remarks  
+ For a description of the information returned in `wkspcinfo`, see the [CDaoWorkspaceInfo](../../mfc/reference/cdaoworkspaceinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for prior levels as well.  
   
-##  <a name="idle"></a>CDaoWorkspace::Idle  
- 呼び出す**Idle**しない可能性がある最新大量のデータ処理のためのバック グラウンド タスクを実行する機会に、データベース エンジンを提供します。  
+##  <a name="idle"></a>  CDaoWorkspace::Idle  
+ Call **Idle** to provide the database engine with the opportunity to perform background tasks that may not be up-to-date because of intense data processing.  
   
 ```  
 static void PASCAL Idle(int nAction = dbFreeLocks);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nAction`  
- アイドル状態の処理中に実行するアクション。 現在、唯一の有効なアクションは**dbFreeLocks**です。  
+ An action to take during the idle processing. Currently the only valid action is **dbFreeLocks**.  
   
-### <a name="remarks"></a>コメント  
- 多くの場合、これは、これがないが現在のレコード セット内のすべてのレコードを保持するための十分なバック グラウンド処理の時間、マルチ ユーザーのマルチタスク環境で当てはまります。  
+### <a name="remarks"></a>Remarks  
+ This is often true in multiuser, multitasking environments in which there is not enough background processing time to keep all records in a recordset current.  
   
 > [!NOTE]
->  呼び出す**Idle** Microsoft Jet データベース エンジンのバージョン 3.0 で作成されたデータベースでの必要はありません。 使用して**Idle**の以前のバージョンで作成されたデータベースだけです。  
+>  Calling **Idle** is not necessary with databases created with version 3.0 of the Microsoft Jet database engine. Use **Idle** only for databases created with earlier versions.  
   
- 通常、読み取りロックを解除し、データをローカル ダイナセットの種類のレコード セット オブジェクトでは、他のアクション (マウスの動きを含む) が実行されていない場合にのみ更新されます。 定期的に呼び出す場合は、 **Idle**時間の遅れを取り戻すにバック グラウンド タスクの解放を使用してデータベース エンジンが不要な読み取りロックを提供します。 指定する、 **dbFreeLocks**を引数として定数は、すべて読み取りロックが解放されるまで、処理を遅延します。  
+ Usually, read locks are removed and data in local dynaset-type recordset objects is updated only when no other actions (including mouse movements) are occurring. If you periodically call **Idle**, you provide the database engine with time to catch up on background processing tasks by releasing unneeded read locks. Specifying the **dbFreeLocks** constant as an argument delays processing until all read locks are released.  
   
- このメンバー関数は、アプリケーションの複数のインスタンスを実行している場合を除き、シングル ユーザー環境では必要ありません。 **Idle**メンバー関数は、データをディスクにフラッシュ、メモリのロックを解放する、データベース エンジンが強制されるため、マルチ ユーザー環境でパフォーマンスが向上します。 操作をトランザクションの一部にすることにより、読み取りロックをリリースすることもできます。  
+ This member function is not needed in single-user environments unless multiple instances of an application are running. The **Idle** member function may increase performance in a multiuser environment because it forces the database engine to flush data to disk, releasing locks on memory. You can also release read locks by making operations part of a transaction.  
   
- 関連情報については、"アイドル Method"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Idle Method" in DAO Help.  
   
-##  <a name="isopen"></a>CDaoWorkspace::IsOpen  
- 決定するには、このメンバー関数を呼び出すかどうか、`CDaoWorkspace`オブジェクトが開いている —、かどうか、MFC オブジェクトは初期化されてへの呼び出しによって[開く](#open)またはへの呼び出し[作成](#create)です。  
+##  <a name="isopen"></a>  CDaoWorkspace::IsOpen  
+ Call this member function to determine whether the `CDaoWorkspace` object is open — that is, whether the MFC object has been initialized by a call to [Open](#open) or a call to [Create](#create).  
   
 ```  
 BOOL IsOpen() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ワークスペースのオブジェクトが開いている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the workspace object is open; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関数を呼び出してできますメンバーのいずれかが開いている状態にあるワークスペースのです。  
+### <a name="remarks"></a>Remarks  
+ You can call any of the member functions of a workspace that is in an open state.  
   
-##  <a name="m_pdaoworkspace"></a>CDaoWorkspace::m_pDAOWorkspace  
- 基になる DAO ワークスペース オブジェクトへのポインター。  
+##  <a name="m_pdaoworkspace"></a>  CDaoWorkspace::m_pDAOWorkspace  
+ A pointer to the underlying DAO workspace object.  
   
-### <a name="remarks"></a>コメント  
- 基になる DAO オブジェクトへのアクセスを指示する必要がある場合は、このデータ メンバーを使用します。 このポインターを通じて DAO オブジェクトのインターフェイスを呼び出すことができます。  
+### <a name="remarks"></a>Remarks  
+ Use this data member if you need direct access to the underlying DAO object. You can call the DAO object's interfaces through this pointer.  
   
- DAO オブジェクトに直接アクセスする方法については、次を参照してください。[テクニカル ノート 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md)です。  
+ For information about accessing DAO objects directly, see [Technical Note 54](../../mfc/tn054-calling-dao-directly-while-using-mfc-dao-classes.md).  
   
-##  <a name="open"></a>ので、使用できません。  
- DAO の既定のワークスペースに関連付けられているワークスペース オブジェクトを明示的に開きます。  
+##  <a name="open"></a>  CDaoWorkspace::Open  
+ Explicitly opens a workspace object associated with DAO's default workspace.  
   
 ```  
 virtual void Open(LPCTSTR lpszName = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- オブジェクトの名前、DAO ワークスペースを開くには、ワークスペースの一意名で 14 文字以内の文字列。 既定値をそのまま**NULL**を明示的に既定のワークスペースを開きます。 名前付けに関する要件を参照してください、`lpszName`パラメーター[作成](#create)です。 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ The name of the DAO workspace object to open — a string with up to 14 characters that uniquely names the workspace. Accept the default value **NULL** to explicitly open the default workspace. For naming requirements, see the `lpszName` parameter for [Create](#create). For related information, see the topic "Name Property" in DAO Help.  
   
-### <a name="remarks"></a>コメント  
- 構築した後、`CDaoWorkspace`オブジェクトを次のいずれかを実行するには、このメンバー関数を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ After constructing a `CDaoWorkspace` object, call this member function to do one of the following:  
   
--   明示的に既定のワークスペースを開きます。 Pass **NULL** for `lpszName`.  
+-   Explicitly open the default workspace. Pass **NULL** for `lpszName`.  
   
--   既存の開く`CDaoWorkspace`オブジェクトの名前で、ワークスペースのコレクションのメンバーです。 ワークスペースの既存のオブジェクトの有効な名前を渡します。  
+-   Open an existing `CDaoWorkspace` object, a member of the Workspaces collection, by name. Pass a valid name for an existing workspace object.  
   
- **開く**によってワークスペース オブジェクト、開いている状態になり、アプリケーションの既に初期化されていない場合も、データベース エンジンを初期化します。  
+ **Open** puts the workspace object into an open state and also initializes the database engine if it has not already been initialized for your application.  
   
- ただし多く`CDaoWorkspace`メンバー関数は、ワークスペースを開いた後にのみ呼び出すことができます、運用データベース エンジンで、次のメンバー関数は使用可能な呼び出しの前に、C++ オブジェクトの構築後**開く**:  
+ Although many `CDaoWorkspace` member functions can only be called after the workspace has been opened, the following member functions, which operate on the database engine, are available after construction of the C++ object but before a call to **Open**:  
   
 ||||  
 |-|-|-|  
-|[作成します。](#create)|[GetVersion](#getversion)|[SetDefaultUser](#setdefaultuser)|  
-|[GetIniPath](#getinipath)|[アイドル状態します。](#idle)|[SetIniPath](#setinipath)|  
+|[Create](#create)|[GetVersion](#getversion)|[SetDefaultUser](#setdefaultuser)|  
+|[GetIniPath](#getinipath)|[Idle](#idle)|[SetIniPath](#setinipath)|  
 |[GetLoginTimeout](#getlogintimeout)|[SetDefaultPassword](#setdefaultpassword)|[SetLoginTimeout](#setlogintimeout)|  
   
-##  <a name="repairdatabase"></a>CDaoWorkspace::RepairDatabase  
- Microsoft Jet データベース エンジンにアクセスする破損したデータベースを修復しようとする必要がある場合は、このメンバー関数を呼び出します。  
+##  <a name="repairdatabase"></a>  CDaoWorkspace::RepairDatabase  
+ Call this member function if you need to attempt to repair a corrupted database that accesses the Microsoft Jet database engine.  
   
 ```  
 static void PASCAL RepairDatabase(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- パスとファイル名、既存の Microsoft Jet エンジンのデータベースのファイルを実行します。 パスを省略すると、現在のディレクトリのみが検索されます。 システムでは、統一された名前付け規則 (UNC) をサポートする場合、ことができますも指定するネットワーク パスなど:"\\\\\\\MYSERVER\\\MYSHARE\\\MYDIR\\\MYDB です。MDB"です。 (ために、パス文字列に円記号が必要な"\\"は、C++ のエスケープ文字です)。  
+ The path and filename for an existing Microsoft Jet engine database file. If you omit the path, only the current directory is searched. If your system supports the uniform naming convention (UNC), you can also specify a network path, such as: "\\\\\\\MYSERVER\\\MYSHARE\\\MYDIR\\\MYDB.MDB". (Double backslashes are required in the path string because "\\" is the C++ escape character.)  
   
-### <a name="remarks"></a>コメント  
- 指定されたデータベースを閉じる必要があります`lpszName`修復する前にします。 マルチ ユーザー環境の場合は、他のユーザーが持つことはできません`lpszName`これを修正するときにします。 場合`lpszName`が閉じられていないかが排他的に使用できる、エラーが発生します。  
+### <a name="remarks"></a>Remarks  
+ You must close the database specified by `lpszName` before you repair it. In a multiuser environment, other users cannot have `lpszName` open while you are repairing it. If `lpszName` is not closed or is not available for exclusive use, an error occurs.  
   
- このメンバー関数は、不完全な書き込み操作によって不正であるとマークされているデータベースを修復しようとします。 これは、電源の停止やコンピューター ハードウェアの問題のため Microsoft Jet データベース エンジンを使用するアプリケーションが予期せず閉じられた場合に発生することができます。 操作と呼び出しが完了した場合、[閉じる](../../mfc/reference/cdaodatabase-class.md#close)メンバー関数またはする通常の方法でアプリケーションを終了するには、データベースがないマーク不正であるとします。  
+ This member function attempts to repair a database that was marked as possibly corrupt by an incomplete write operation. This can occur if an application using the Microsoft Jet database engine is closed unexpectedly because of a power outage or computer hardware problem. If you complete the operation and call the [Close](../../mfc/reference/cdaodatabase-class.md#close) member function or you quit the application in a usual way, the database will not be marked as possibly corrupt.  
   
 > [!NOTE]
->  データベースを修復するには後もを使用して圧縮することをお勧め、 [CompactDatabase](#compactdatabase)メンバー関数は、ファイルの断片化を解消して、ディスクの空き領域を増やします。  
+>  After repairing a database, it is also a good idea to compact it using the [CompactDatabase](#compactdatabase) member function to defragment the file and to recover disk space.  
   
- データベースの修復の詳細については、DAO ヘルプの「RepairDatabase メソッド」を参照してください。  
+ For more information about repairing databases, see the topic "RepairDatabase Method" in DAO Help.  
   
-##  <a name="rollback"></a>CDaoWorkspace::Rollback  
- 現在のトランザクションを終了し、トランザクションが開始された前に、その条件に、ワークスペース内のすべてのデータベースを復元するには、このメンバー関数を呼び出します。  
+##  <a name="rollback"></a>  CDaoWorkspace::Rollback  
+ Call this member function to end the current transaction and restore all databases in the workspace to their condition before the transaction was begun.  
   
 ```  
 void Rollback();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!CAUTION]
->  1 つのワークスペース オブジェクト内では、トランザクションは、ワークスペースにグローバルが常にされ、データベースまたはレコード セットの 1 つだけに限定されていません。 1 つ以上のデータベースまたはレコード セットのワークスペース トランザクション内での操作を実行する場合**ロールバック**のすべてのデータベースとレコード セットのすべての操作を復元します。  
+>  Within one workspace object, transactions are always global to the workspace and are not limited to only one database or recordset. If you perform operations on more than one database or recordset within a workspace transaction, **Rollback** restores all operations on all of those databases and recordsets.  
   
- ワークスペースを閉じるには、保存したり、保留中のトランザクションをロールバックしたりせず、トランザクションは自動的にロールバックします。 呼び出す場合[CommitTrans](#committrans)または**ロールバック**最初呼び出さず[BeginTrans](#begintrans)エラーが発生します。  
+ If you close a workspace object without saving or rolling back any pending transactions, the transactions are automatically rolled back. If you call [CommitTrans](#committrans) or **Rollback** without first calling [BeginTrans](#begintrans), an error occurs.  
   
 > [!NOTE]
->  トランザクションを開始するときに、データベース エンジンは、ワークステーションに、TEMP 環境変数で指定されたディレクトリに置かれるファイルにその操作を記録します。 スローする MFC をデータベース エンジンに発生する場合は、トランザクション ログ ファイルには、一時ドライブに空き容量が不足、 `CDaoException` (DAO エラー 2004)。 この時点で呼び出す場合は、 **CommitTrans**、不特定の数の操作がコミットされますが、残りの未完了の操作は失われの操作を再起動する必要があります。 呼び出す**ロールバック**トランザクション ログを解放し、トランザクション内のすべての操作をロールバックします。  
+>  When you begin a transaction, the database engine records its operations in a file kept in the directory specified by the TEMP environment variable on the workstation. If the transaction log file exhausts the available storage on your TEMP drive, the database engine will cause MFC to throw a `CDaoException` (DAO error 2004). At this point, if you call **CommitTrans**, an indeterminate number of operations are committed but the remaining uncompleted operations are lost, and the operation has to be restarted. Calling **Rollback** releases the transaction log and rolls back all operations in the transaction.  
   
-##  <a name="setdefaultpassword"></a>CDaoWorkspace::SetDefaultPassword  
- パスワードを指定せずにワークスペースを作成するときに、データベース エンジンが使用する既定のパスワードを設定するには、このメンバー関数を呼び出します。  
+##  <a name="setdefaultpassword"></a>  CDaoWorkspace::SetDefaultPassword  
+ Call this member function to set the default password that the database engine uses when a workspace object is created without a specific password.  
   
 ```  
 static void PASCAL SetDefaultPassword(LPCTSTR lpszPassword);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszPassword`  
- 既定のパスワード。 パスワードは、長さは最大 14 文字し、ASCII 0 (null) を除く任意の文字を含めることができます。 パスワードは、大文字小文字が区別されます。  
+ The default password. A password can be up to 14 characters long and can contain any character except ASCII 0 (null). Passwords are case-sensitive.  
   
-### <a name="remarks"></a>コメント  
- 呼び出し後に作成した新しいワークスペースを設定する既定のパスワードが適用されます。 その後、ワークスペースを作成するときにパスワードを指定する必要はありません、[作成](#create)呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The default password that you set applies to new workspaces you create after the call. When you create subsequent workspaces, you do not need to specify a password in the [Create](#create) call.  
   
- このメンバー関数を使用します。  
+ To use this member function:  
   
-1.  構築、`CDaoWorkspace`オブジェクトが、呼び出すことはありません**作成**です。  
+1.  Construct a `CDaoWorkspace` object but do not call **Create**.  
   
-2.  呼び出す`SetDefaultPassword`し、必要に応じて、 [SetDefaultUser](#setdefaultuser)です。  
+2.  Call `SetDefaultPassword` and, if you like, [SetDefaultUser](#setdefaultuser).  
   
-3.  呼び出す**作成**このワークスペース オブジェクトまたは以降の場合、パスワードを指定せずします。  
+3.  Call **Create** for this workspace object or subsequent ones, without specifying a password.  
   
- 既定では、デフォルト プロパティが"admin"に設定されてし、DefaultPassword プロパティが空の文字列 ("") です。  
+ By default, the DefaultUser property is set to "admin" and the DefaultPassword property is set to an empty string ("").  
   
- セキュリティの詳細については、「アクセス許可プロパティ」DAO ヘルプのトピックを参照してください。 関連情報については、"DefaultPassword Property"および"デフォルト Property"DAO ヘルプのトピックを参照してください。  
+ For more about security, see the topic "Permissions Property" in DAO Help. For related information, see the topics "DefaultPassword Property" and "DefaultUser Property" in DAO Help.  
   
-##  <a name="setdefaultuser"></a>CDaoWorkspace::SetDefaultUser  
- 特定のユーザー名を指定せずにワークスペースを作成するときに、データベース エンジンが使用する既定のユーザー名を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setdefaultuser"></a>  CDaoWorkspace::SetDefaultUser  
+ Call this member function to set the default user name that the database engine uses when a workspace object is created without a specific user name.  
   
 ```  
 static void PASCAL SetDefaultUser(LPCTSTR lpszDefaultUser);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszDefaultUser`  
- 既定のユーザー名。 ユーザー名は 1 ~ 20 文字にして、アルファベット文字、アクセント記号付き文字、数字、スペース、および記号を含める:"(引用符)/(スラッシュ)、\ (円記号) \[ \] (かっこ): (コロン) |(パイプ)、 \< (小さい-不等号)、> (大きい-不等号)、+ (正符号) = (等しく記号) です。(セミコロン) を (コンマ区切り) (疑問符) * (アスタリスク)、先頭スペース、および制御文字 (ASCII 31 の ASCII 00)。 関連情報については、DAO ヘルプの「ユーザー名プロパティ」を参照してください。  
+ The default user name. A user name can be 1 - 20 characters long and include alphabetic characters, accented characters, numbers, spaces, and symbols except for: " (quotation marks), / (forward slash), \ (backslash), \[ \] (brackets), : (colon), &#124; (pipe), \< (less-than sign), > (greater-than sign), + (plus sign), = (equal sign), ; (semicolon), , ( comma),  (question mark), * (asterisk), leading spaces, and control characters (ASCII 00 to ASCII 31). For related information, see the topic "UserName Property" in DAO Help.  
   
-### <a name="remarks"></a>コメント  
- 呼び出し後に作成した新しいワークスペースを設定する既定のユーザー名が適用されます。 その後、ワークスペースを作成するときにユーザー名を指定する必要はありません、[作成](#create)呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The default user name that you set applies to new workspaces you create after the call. When you create subsequent workspaces, you do not need to specify a user name in the [Create](#create) call.  
   
- このメンバー関数を使用します。  
+ To use this member function:  
   
-1.  構築、`CDaoWorkspace`オブジェクトが、呼び出すことはありません**作成**です。  
+1.  Construct a `CDaoWorkspace` object but do not call **Create**.  
   
-2.  呼び出す`SetDefaultUser`し、必要に応じて、 [SetDefaultPassword](#setdefaultpassword)です。  
+2.  Call `SetDefaultUser` and, if you like, [SetDefaultPassword](#setdefaultpassword).  
   
-3.  呼び出す**作成**このワークスペース オブジェクトまたは以降の場合、ユーザー名を指定せずします。  
+3.  Call **Create** for this workspace object or subsequent ones, without specifying a user name.  
   
- 既定では、デフォルト プロパティが"admin"に設定されてし、DefaultPassword プロパティが空の文字列 ("") です。  
+ By default, the DefaultUser property is set to "admin" and the DefaultPassword property is set to an empty string ("").  
   
- 関連情報については、「デフォルト プロパティ」と"DefaultPassword Property"DAO ヘルプ トピックを参照してください。  
+ For related information, see the topics "DefaultUser Property" and "DefaultPassword Property" in DAO Help.  
   
-##  <a name="setinipath"></a>CDaoWorkspace::SetIniPath  
- Microsoft Jet データベース エンジンの Windows レジストリ設定の場所を指定するには、このメンバー関数を呼び出します。  
+##  <a name="setinipath"></a>  CDaoWorkspace::SetIniPath  
+ Call this member function to specify the location of Windows registry settings for the Microsoft Jet database engine.  
   
 ```  
 static void PASCAL SetIniPath(LPCTSTR lpszRegistrySubKey);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszRegistrySubkey*  
- Microsoft Jet データベース エンジンの設定やインストール可能な ISAM データベースに必要なパラメーターの位置を表す Windows レジストリのサブキーの名前を表す文字列。  
+ A string containing the name of a Windows registry subkey for the location of Microsoft Jet database engine settings or parameters needed for installable ISAM databases.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`SetIniPath`特別な設定を指定する必要がある場合のみです。 詳細については、DAO ヘルプの「IniPath プロパティ」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ Call `SetIniPath` only if you need to specify special settings. For more information, see the topic "IniPath Property" in DAO Help.  
   
 > [!NOTE]
->  呼び出す`SetIniPath`アプリケーションのインストール中にないときに、アプリケーションを実行します。 `SetIniPath`任意のワークスペース、データベース、またはレコード セット; を開く前に呼び出す必要があります。それ以外の場合、MFC は、例外をスローします。  
+>  Call `SetIniPath` during application installation, not when the application runs. `SetIniPath` must be called before you open any workspaces, databases, or recordsets; otherwise, MFC throws an exception.  
   
- このメカニズムを使用すると、データベース エンジンのユーザー指定のレジストリ設定を構成します。 この属性のスコープは、アプリケーションに制限され、アプリケーションを再起動しなくても変更することはできません。  
+ You can use this mechanism to configure the database engine with user-provided registry settings. The scope of this attribute is limited to your application and cannot be changed without restarting your application.  
   
-##  <a name="setisolateodbctrans"></a>CDaoWorkspace::SetIsolateODBCTrans  
- ワークスペースの DAO IsolateODBCTrans プロパティの値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setisolateodbctrans"></a>  CDaoWorkspace::SetIsolateODBCTrans  
+ Call this member function to set the value of the DAO IsolateODBCTrans property for the workspace.  
   
 ```  
 void SetIsolateODBCTrans(BOOL bIsolateODBCTrans);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *bIsolateODBCTrans*  
- 渡す**TRUE** ODBC トランザクションの分離を開始する場合。 渡す**FALSE** ODBC トランザクションの分離を停止する場合。  
+ Pass **TRUE** if you want to begin isolating ODBC transactions. Pass **FALSE** if you want to stop isolating ODBC transactions.  
   
-### <a name="remarks"></a>コメント  
- 一部の状況では、同じ ODBC データベースで保留中の複数の同時トランザクションに必要があります。 これを行うには、トランザクションごとに独立したワークスペースを開く必要があります。 各ワークスペースには、データベースへの独自の ODBC 接続できますが、このシステムのパフォーマンスが低下します。 トランザクションの分離が通常必要ないために、同じユーザーによって開かれた複数のワークスペース オブジェクトから ODBC 接続は、既定で共有されます。  
+### <a name="remarks"></a>Remarks  
+ In some situations, you might need to have multiple simultaneous transactions pending on the same ODBC database. To do this, you need to open a separate workspace for each transaction. Although each workspace can have its own ODBC connection to the database, this slows system performance. Because transaction isolation is not normally required, ODBC connections from multiple workspace objects opened by the same user are shared by default.  
   
- Microsoft SQL Server など、一部の ODBC サーバーでは、単一の接続での同時トランザクションは許可されません。 時に、保留中のようなデータベースに対してトランザクションを 1 つ以上含める必要がある場合は、IsolateODBCTrans プロパティを設定**TRUE**を開くとすぐには、各ワークスペースにします。 これにより、各ワークスペースの別の ODBC 接続されます。  
+ Some ODBC servers, such as Microsoft SQL Server, do not allow simultaneous transactions on a single connection. If you need to have more than one transaction at a time pending against such a database, set the IsolateODBCTrans property to **TRUE** on each workspace as soon as you open it. This forces a separate ODBC connection for each workspace.  
   
-##  <a name="setlogintimeout"></a>CDaoWorkspace::SetLoginTimeout  
- ワークスペースの DAO LoginTimeout プロパティの値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setlogintimeout"></a>  CDaoWorkspace::SetLoginTimeout  
+ Call this member function to set the value of the DAO LoginTimeout property for the workspace.  
   
 ```  
 static void PASCAL SetLoginTimeout(short nSeconds);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nSeconds`  
- ODBC データベースにログインしようとするとエラーが発生するまでの秒数。  
+ The number of seconds before an error occurs when you attempt to log in to an ODBC database.  
   
-### <a name="remarks"></a>コメント  
- この値は、ODBC データベースにログインしようとするとエラーが発生するまでの秒数を表します。 LoginTimeout 既定値は 20 秒です。 LoginTimeout が 0 に設定されている場合は、タイムアウトが発生せず、データ ソースとの通信が応答を停止する可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This value represents the number of seconds before an error occurs when you attempt to log in to an ODBC database. The default LoginTimeout setting is 20 seconds. When LoginTimeout is set to 0, no timeout occurs and the communication with the data source might stop responding.  
   
- ネットワーク エラーの結果として、接続が失敗する Microsoft SQL Server などの ODBC データベースにログインしようとしているときに、サーバーが実行されていないため、または。 を待機している既定値 20 秒間の接続にではなく、データベース エンジンがエラーを生成するまでに待機する時間を指定することができます。 外部サーバーのデータベースに対するクエリの実行などのさまざまなイベントの数値の一部として暗黙的に実行するサーバーにログオンしています。 タイムアウト値は、LoginTimeout プロパティの現在の設定によって決まります。  
+ When you are attempting to log in to an ODBC database, such as Microsoft SQL Server, the connection may fail as a result of network errors or because the server is not running. Rather than waiting for the default 20 seconds to connect, you can specify how long the database engine waits before it produces an error. Logging on to the server happens implicitly as part of a number of different events, such as running a query on an external server database. The timeout value is determined by the current setting of the LoginTimeout property.  
   
- 関連情報については、DAO ヘルプの「LoginTimeout プロパティ」を参照してください。  
+ For related information, see the topic "LoginTimeout Property" in DAO Help.  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   
- [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)   
- [どちらのクラス](../../mfc/reference/cdaotabledef-class.md)   
- [CDaoQueryDef クラス](../../mfc/reference/cdaoquerydef-class.md)   
- [CDaoException クラス](../../mfc/reference/cdaoexception-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)   
+ [CDaoRecordset Class](../../mfc/reference/cdaorecordset-class.md)   
+ [CDaoTableDef Class](../../mfc/reference/cdaotabledef-class.md)   
+ [CDaoQueryDef Class](../../mfc/reference/cdaoquerydef-class.md)   
+ [CDaoException Class](../../mfc/reference/cdaoexception-class.md)
 

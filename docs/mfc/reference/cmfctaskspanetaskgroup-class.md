@@ -1,5 +1,5 @@
 ---
-title: "CMFCTasksPaneTaskGroup クラス |Microsoft ドキュメント"
+title: CMFCTasksPaneTaskGroup Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,7 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCTasksPaneTaskGroup class
+- CMFCTasksPaneTaskGroup [MFC], CMFCTasksPaneTaskGroup
+- CMFCTasksPaneTaskGroup [MFC], SetACCData
+- CMFCTasksPaneTaskGroup [MFC], m_bIsBottom
+- CMFCTasksPaneTaskGroup [MFC], m_bIsCollapsed
+- CMFCTasksPaneTaskGroup [MFC], m_bIsSpecial
+- CMFCTasksPaneTaskGroup [MFC], m_lstTasks
+- CMFCTasksPaneTaskGroup [MFC], m_rect
+- CMFCTasksPaneTaskGroup [MFC], m_rectGroup
+- CMFCTasksPaneTaskGroup [MFC], m_strName
 ms.assetid: 2111640b-a46e-4b27-b033-29e88632b86a
 caps.latest.revision: 33
 author: mikeblome
@@ -43,76 +51,76 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 405a69a0c7d8c4179b36e1beec09fdfa7acd2d7b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a7c7503acf4deed60ab86eac6c91c64f746c8a09
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfctaskspanetaskgroup-class"></a>CMFCTasksPaneTaskGroup クラス
-`CMFCTasksPaneTaskGroup`クラスで使用されるヘルパー クラスであり、 [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md)コントロールです。 `CMFCTasksPaneTaskGroup` 型のオブジェクトは *タスク グループ*を表します。 タスク グループは、閉じるボタンがある独立したボックスにフレームワークによって表示される項目の一覧です。 このボックスには、オプションのキャプション (グループ名) があります。 グループが閉じると、タスクの一覧は表示されません。  
+# <a name="cmfctaskspanetaskgroup-class"></a>CMFCTasksPaneTaskGroup Class
+The `CMFCTasksPaneTaskGroup` class is a helper class used by the [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md) control. Objects of type `CMFCTasksPaneTaskGroup` represent a *task group*. The task group is a list of items that the framework displays in a separate box that has a collapse button. The box can have an optional caption (group name). If a group is collapsed, the list of tasks is not visible.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCTasksPaneTaskGroup : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup](#cmfctaskspanetaskgroup)|`CMFCTasksPaneTaskGroup` オブジェクトを構築します。|  
-|`CMFCTasksPaneTaskGroup::~CMFCTasksPaneTaskGroup`|デストラクターです。|  
+|[CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup](#cmfctaskspanetaskgroup)|Constructs a `CMFCTasksPaneTaskGroup` object.|  
+|`CMFCTasksPaneTaskGroup::~CMFCTasksPaneTaskGroup`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTaskGroup::SetACCData](#setaccdata)|現在のタスク グループのユーザー補助データを決定します。|  
+|[CMFCTasksPaneTaskGroup::SetACCData](#setaccdata)|Determines the accessibility data for the current task group.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTaskGroup::m_bIsBottom](#m_bisbottom)|タスク グループはタスク ペインのコントロールの下部に配置されているかどうかを決定します。|  
-|[CMFCTasksPaneTaskGroup::m_bIsCollapsed](#m_biscollapsed)|タスク グループが折りたたまれているかどうかを決定します。|  
-|[CMFCTasksPaneTaskGroup::m_bIsSpecial](#m_bisspecial)|タスク グループがあるかどうかを判断*特殊です。* フレームワークは、別の色で特別なキャプションを表示します。|  
-|[CMFCTasksPaneTaskGroup::m_lstTasks](#m_lsttasks)|タスクの内部の一覧が含まれています。|  
-|[CMFCTasksPaneTaskGroup::m_rect](#m_rect)|グループのキャプションの外接する四角形を指定します。|  
-|[CMFCTasksPaneTaskGroup::m_rectGroup](#m_rectgroup)|グループの外接する四角形を指定します。|  
-|[CMFCTasksPaneTaskGroup::m_strName](#m_strname)|グループの名前を指定します。|  
+|[CMFCTasksPaneTaskGroup::m_bIsBottom](#m_bisbottom)|Determines whether the task group is aligned to the bottom of the task pane control.|  
+|[CMFCTasksPaneTaskGroup::m_bIsCollapsed](#m_biscollapsed)|Determines whether the task group is collapsed.|  
+|[CMFCTasksPaneTaskGroup::m_bIsSpecial](#m_bisspecial)|Determines whether the task group is *special.* The framework displays special captions in a different color.|  
+|[CMFCTasksPaneTaskGroup::m_lstTasks](#m_lsttasks)|Contains the internal list of tasks.|  
+|[CMFCTasksPaneTaskGroup::m_rect](#m_rect)|Specifies the bounding rectangle of the group caption.|  
+|[CMFCTasksPaneTaskGroup::m_rectGroup](#m_rectgroup)|Specifies the bounding rectangle of the group.|  
+|[CMFCTasksPaneTaskGroup::m_strName](#m_strname)|Specifies the name of the group.|  
   
-## <a name="remarks"></a>コメント  
- 次の図は、展開されたタスク グループを示しています。  
+## <a name="remarks"></a>Remarks  
+ The following illustration shows an expanded task group:  
   
- ![展開されたタスク グループ](../../mfc/reference/media/nexttaskgrpexpand.png "nexttaskgrpexpand")  
+ ![Task group, expanded](../../mfc/reference/media/nexttaskgrpexpand.png "nexttaskgrpexpand")  
   
- 次の図は、折りたたまれたタスク グループを示しています。  
+ The following illustration shows a collapsed task group:  
   
- ![折りたたまれたタスク グループ](../../mfc/reference/media/nexttaskgrpcollapse.png "nexttaskgrpcollapse")  
+ ![Collapsed task group](../../mfc/reference/media/nexttaskgrpcollapse.png "nexttaskgrpcollapse")  
   
- 次の図は、キャプションのないタスク グループを示しています。  
+ The following illustration shows a task group without a caption:  
   
- ![キャプションのないタスク グループ](../../mfc/reference/media/nexttaskgrpnocapt.png "nexttaskgrpnocapt")  
+ ![Task group without a caption](../../mfc/reference/media/nexttaskgrpnocapt.png "nexttaskgrpnocapt")  
   
- 次の図は、2 つのタスク グループを示します。 最初のタスク グループは、特別な設定マーク、`m_bIsSpecial`フラグを`TRUE`、2 番目のタスク グループは特別ではありません。 最初のタスク グループのキャプションの&2; 番目のタスク グループよりも暗い方法に注意してください。  
+ The following illustration shows two task groups. The first task group is marked as special by setting the `m_bIsSpecial` flag to `TRUE`, while the second task group is not special. Note how the caption for the first task group is darker than the second task group:  
   
- ![特殊なタスク グループ](../../mfc/reference/media/nexttaskgrpspecial.png "nexttaskgrpspecial")  
+ ![Special task group](../../mfc/reference/media/nexttaskgrpspecial.png "nexttaskgrpspecial")  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxTasksPane.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxTasksPane.h  
   
-##  <a name="cmfctaskspanetaskgroup"></a>CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup  
- `CMFCTasksPaneTaskGroup` オブジェクトを構築します。  
+##  <a name="cmfctaskspanetaskgroup"></a>  CMFCTasksPaneTaskGroup::CMFCTasksPaneTaskGroup  
+ Constructs a `CMFCTasksPaneTaskGroup` object.  
   
 ```  
 CMFCTasksPaneTaskGroup(
@@ -124,99 +132,99 @@ CMFCTasksPaneTaskGroup(
     HICON hIcon=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- グループのキャプションでグループの名前を指定します。  
+ Specifies the name of the group in the group caption.  
   
  `bIsBottom`  
- グループはタスク ペインのコントロールの下部に配置されているかどうかを指定します。  
+ Specifies whether the group is aligned to the bottom of the task pane control.  
   
  `bIsSpecial`  
- グループとして指定されているかどうかを指定*特別な*異なる色でグループのキャプションが塗りつぶされたかどうかにこのようにとします。  
+ Specifies whether the group is designated as *special* and thus, whether the group caption is filled with a different color.  
   
  `bIsCollapsed`  
- グループが折りたたまれているかどうかを指定します。  
+ Specifies whether the group is collapsed.  
   
  `pPage`  
- このタスク グループに属している、プロパティ ページを指定します。  
+ Specifies the property page that this task group belongs to.  
   
  `hIcon`  
- グループのキャプションに表示するアイコンを指定します。  
+ Specifies the icon that displays in the group caption.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_bisbottom"></a>CMFCTasksPaneTaskGroup::m_bIsBottom  
- タスク グループはタスク ペインのコントロールの下部に配置されているかどうかを決定します。  
+##  <a name="m_bisbottom"></a>  CMFCTasksPaneTaskGroup::m_bIsBottom  
+ Determines whether the task group is aligned to the bottom of the task pane control.  
   
 ```  
 BOOL m_bIsBottom;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 1 つのグループは、作業ウィンドウ コントロールの下に配置できます。 このタスク グループは、最後に追加する必要があります。 詳細については、次を参照してください。 [CMFCTasksPane::AddGroup](../../mfc/reference/cmfctaskspane-class.md#addgroup)します。  
+### <a name="remarks"></a>Remarks  
+ Only one group can be aligned to the bottom of the task pane control. This task group must be added last. For more information, see [CMFCTasksPane::AddGroup](../../mfc/reference/cmfctaskspane-class.md#addgroup).  
   
-##  <a name="m_biscollapsed"></a>CMFCTasksPaneTaskGroup::m_bIsCollapsed  
- タスク グループが折りたたまれているかどうかを決定します。  
+##  <a name="m_biscollapsed"></a>  CMFCTasksPaneTaskGroup::m_bIsCollapsed  
+ Determines whether the task group is collapsed.  
   
 ```  
 BOOL m_bIsCollapsed;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 有効にするかを呼び出すことによって、タスク ウィンドウでグループを折りたたむ機能を無効にする[CMFCTasksPane::EnableGroupCollapse](../../mfc/reference/cmfctaskspane-class.md#enablegroupcollapse)します。  
+### <a name="remarks"></a>Remarks  
+ You can enable or disable the ability to collapse groups on the task pane by calling [CMFCTasksPane::EnableGroupCollapse](../../mfc/reference/cmfctaskspane-class.md#enablegroupcollapse).  
   
-##  <a name="m_bisspecial"></a>CMFCTasksPaneTaskGroup::m_bIsSpecial  
- タスク グループがあるかどうかを判断*特別な*異なる色で特殊なタスク グループのキャプションを指定するかどうか。  
+##  <a name="m_bisspecial"></a>  CMFCTasksPaneTaskGroup::m_bIsSpecial  
+ Determines whether the task group is *special* and whether the caption for a special task group should be identified by a different color.  
   
 ```  
 BOOL m_bIsSpecial;  
 ```  
   
-### <a name="remarks"></a>コメント  
- アプリケーションが Windows XP のテーマを使用していると`m_bIsSpecial`は`FALSE`、フレームワークによって`DrawThemeBackground`で、`EBP_NORMALGROUPBACKGROUND`フラグ。 場合`m_bIsSpecial`は`TRUE`、フレームワークによって`DrawThemeBackground`で、`EBP_SPECIALGROUPBACKGROUND`フラグ。  
+### <a name="remarks"></a>Remarks  
+ If your application is using the Windows XP visual theme and `m_bIsSpecial` is `FALSE`, the framework calls `DrawThemeBackground` with the `EBP_NORMALGROUPBACKGROUND` flag. If `m_bIsSpecial` is `TRUE`, the framework calls `DrawThemeBackground` with the `EBP_SPECIALGROUPBACKGROUND` flag.  
   
-##  <a name="m_lsttasks"></a>CMFCTasksPaneTaskGroup::m_lstTasks  
- タスクの内部の一覧が含まれています。  
+##  <a name="m_lsttasks"></a>  CMFCTasksPaneTaskGroup::m_lstTasks  
+ Contains the internal list of tasks.  
   
 ```  
 CObList m_lstTasks;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この一覧に、呼び出す[CMFCTasksPane::AddTask](../../mfc/reference/cmfctaskspane-class.md#addtask)します。  
+### <a name="remarks"></a>Remarks  
+ To fill this list, call [CMFCTasksPane::AddTask](../../mfc/reference/cmfctaskspane-class.md#addtask).  
   
-##  <a name="m_rect"></a>CMFCTasksPaneTaskGroup::m_rect  
- グループのキャプションの外接する四角形を指定します。  
+##  <a name="m_rect"></a>  CMFCTasksPaneTaskGroup::m_rect  
+ Specifies the bounding rectangle of the group caption.  
   
 ```  
 CRect m_rect;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この値は、フレームワークによって自動的に計算されます。  
+### <a name="remarks"></a>Remarks  
+ This value is automatically calculated by the framework.  
   
-##  <a name="m_rectgroup"></a>CMFCTasksPaneTaskGroup::m_rectGroup  
- グループの外接する四角形を指定します。  
+##  <a name="m_rectgroup"></a>  CMFCTasksPaneTaskGroup::m_rectGroup  
+ Specifies the bounding rectangle of the group.  
   
 ```  
 CRect m_rectGroup;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この値は、フレームワークによって自動的に計算されます。  
+### <a name="remarks"></a>Remarks  
+ This value is calculated automatically by the framework.  
   
-##  <a name="m_strname"></a>CMFCTasksPaneTaskGroup::m_strName  
- グループの名前を指定します。  
+##  <a name="m_strname"></a>  CMFCTasksPaneTaskGroup::m_strName  
+ Specifies the name of the group.  
   
 ```  
 CString m_strName;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この値が空の場合は、グループのキャプションは表示されず、グループを折りたたむことができません。  
+### <a name="remarks"></a>Remarks  
+ If this value is empty, the group caption is not displayed and the group cannot be collapsed.  
   
-##  <a name="setaccdata"></a>CMFCTasksPaneTaskGroup::SetACCData  
- 現在のタスク グループのユーザー補助データを決定します。  
+##  <a name="setaccdata"></a>  CMFCTasksPaneTaskGroup::SetACCData  
+ Determines the accessibility data for the current task group.  
   
 ```  
 virtual BOOL SetACCData(
@@ -224,21 +232,21 @@ virtual BOOL SetACCData(
     CAccessibilityData& data);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pParent`  
- 現在のタスク グループの親ウィンドウを表します。  
+### <a name="parameters"></a>Parameters  
+ [in] `pParent`  
+ Represents the parent window of the current task group.  
   
- [出力] `data`  
- 型のオブジェクト`CAccessibilityData`の現在のタスク グループのユーザー補助データが格納されています。  
+ [out] `data`  
+ An object of type `CAccessibilityData` that is populated with the accessibility data of the current task group.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合、`data`パラメーターが正常に現在のタスク グループのユーザー補助データに指定されているそれ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the `data` parameter was successfully populated with the accessibility data of the current task group; otherwise, `FALSE`.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCTasksPane クラス](../../mfc/reference/cmfctaskspane-class.md)   
- [CMFCTasksPaneTask クラス](../../mfc/reference/cmfctaskspanetask-class.md)   
- [あります。](../../mfc/reference/cmfcoutlookbar-class.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCTasksPane Class](../../mfc/reference/cmfctaskspane-class.md)   
+ [CMFCTasksPaneTask Class](../../mfc/reference/cmfctaskspanetask-class.md)   
+ [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)
 

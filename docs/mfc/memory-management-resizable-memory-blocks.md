@@ -1,36 +1,55 @@
 ---
-title: "メモリ管理 : サイズ変更可能なメモリ ブロック | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ブロック, メモリの割り当て"
-  - "メモリの割り当て, メモリ ブロック サイズ"
-  - "メモリ ブロック, 割り当て"
-  - "メモリ ブロック, サイズ変更可能"
-  - "メモリ, 破損"
-  - "サイズ変更可能なメモリ ブロック"
+title: 'Memory Management: Resizable Memory Blocks | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- memory blocks [MFC], resizable
+- memory [MFC], corruption
+- memory allocation [MFC], memory block size
+- memory blocks [MFC], allocating
+- blocks [MFC], memory allocation
+- resizable memory blocks [MFC]
 ms.assetid: f0efe6f4-a3ed-4541-9195-51ec1291967a
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# メモリ管理 : サイズ変更可能なメモリ ブロック
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6259834253e570befdfbac6cf97d8fbc7258edd9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-記事 [メモリ管理: 例](../mfc/memory-management-examples.md)で説明されている **new** と **delete** の演算子は、固定サイズのメモリ ブロックとオブジェクトを割り当ておよび解放するために便利です。  場合によっては、アプリケーションでサイズ変更可能なメモリ ブロックが必要な場合があります。  ヒープのサイズ変更可能メモリ ブロックを管理するために標準の C ランタイム ライブラリ関数 [malloc](../c-runtime-library/reference/malloc.md)、[realloc](../c-runtime-library/reference/realloc.md)と [free](../c-runtime-library/reference/free.md) を使用する必要があります。  
+---
+# <a name="memory-management-resizable-memory-blocks"></a>Memory Management: Resizable Memory Blocks
+The **new** and **delete** operators, described in the article [Memory Management: Examples](../mfc/memory-management-examples.md), are good for allocating and deallocating fixed-size memory blocks and objects. Occasionally, your application may need resizable memory blocks. You must use the standard C run-time library functions [malloc](../c-runtime-library/reference/malloc.md), [realloc](../c-runtime-library/reference/realloc.md), and [free](../c-runtime-library/reference/free.md) to manage resizable memory blocks on the heap.  
   
 > [!IMPORTANT]
->  メモリ ブロックのサイズ変更可能メモリ割り当て関数と **new** と **delete** の演算子を使用すると、MFC のデバッグ バージョンでメモリ破損が発生します。  **new**に割り当てられたメモリ ブロックの `realloc` を使用しないでください。  同様に、**new** の演算子を使用してメモリ ブロックを割り当て、**free**に削除する必要があります。または `malloc`に割り当てられたメモリ ブロックの **delete** の演算子を使用します。  
+>  Mixing the **new** and **delete** operators with the resizable memory-allocation functions on the same memory block will result in corrupted memory in the Debug version of MFC. You should not use `realloc` on a memory block allocated with **new**. Likewise, you should not allocate a memory block with the **new** operator and delete it with **free**, or use the **delete** operator on a block of memory allocated with `malloc`.  
   
-## 参照  
- [メモリ管理 : ヒープ割り当て](../mfc/memory-management-heap-allocation.md)
+## <a name="see-also"></a>See Also  
+ [Memory Management: Heap Allocation](../mfc/memory-management-heap-allocation.md)
+
+

@@ -1,48 +1,67 @@
 ---
-title: "ドキュメントおよびビューの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドキュメント/ビュー アーキテクチャ, 作成 (ドキュメント/ビューを)"
-  - "ドキュメント, 作成"
-  - "MFC, ドキュメント"
-  - "MFC, ビュー"
-  - "オブジェクトの作成内容"
-  - "テーブル [C++]"
-  - "テーブル [C++], オブジェクト (各 MFC オブジェクトが作成する)"
-  - "ビュー, およびフレーム ウィンドウ"
-  - "ビュー, 作成"
+title: Document-View Creation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- documents [MFC], creating
+- views [MFC], and frame windows
+- views [MFC], creating
+- tables [MFC]
+- MFC, views
+- document/view architecture [MFC], creating document/view
+- object creators
+- MFC, documents
+- tables [MFC], objects each MFC object creates
 ms.assetid: bda14f41-ed50-439d-af9e-591174e7dd64
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメントおよびビューの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2015a51280871e07614fb41e6fd3e1bae8398813
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-フレームワークは **ファイル** メニューの `New` と **開く** コマンドの実装 \(特に\) 指定します。  新規ドキュメントの作成、および関連付けられたフレーム ウィンドウとビュー アプリケーション オブジェクト、ドキュメント テンプレート、新しく作成されたドキュメントと新しく作成されたフレーム ウィンドウ内で協調工数です。  オブジェクトが作成される内容を次の表に示します。  
+---
+# <a name="documentview-creation"></a>Document/View Creation
+The framework supplies implementations of the `New` and **Open** commands (among others) on the **File** menu. Creation of a new document and its associated view and frame window is a cooperative effort among the application object, a document template, the newly created document, and the newly created frame window. The following table summarizes which objects create what.  
   
-### オブジェクトの作成者  
+### <a name="object-creators"></a>Object Creators  
   
-|Creator|作成します。|  
-|-------------|------------|  
-|Application オブジェクト|ドキュメント テンプレート|  
-|ドキュメント テンプレート|Document|  
-|ドキュメント テンプレート|フレーム ウィンドウ|  
-|フレーム ウィンドウ|ビュー|  
+|Creator|Creates|  
+|-------------|-------------|  
+|Application object|Document template|  
+|Document template|Document|  
+|Document template|Frame window|  
+|Frame window|View|  
   
-## 参照  
- [ドキュメント テンプレートとドキュメント\/ビューの作成手順](../mfc/document-templates-and-the-document-view-creation-process.md)   
- [ドキュメント テンプレートの作成](../Topic/Document%20Template%20Creation.md)   
- [各種 MFC オブジェクト間の関係](../mfc/relationships-among-mfc-objects.md)   
- [新しいドキュメント、ウィンドウ、ビューの作成](../Topic/Creating%20New%20Documents,%20Windows,%20and%20Views.md)
+## <a name="see-also"></a>See Also  
+ [Document Templates and the Document/View Creation Process](../mfc/document-templates-and-the-document-view-creation-process.md)   
+ [Document Template Creation](../mfc/document-template-creation.md)   
+ [Relationships Among MFC Objects](../mfc/relationships-among-mfc-objects.md)   
+ [Creating New Documents, Windows, and Views](../mfc/creating-new-documents-windows-and-views.md)
+
+

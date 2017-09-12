@@ -1,71 +1,90 @@
 ---
-title: "Typelib クラス追加ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.codewiz.class.typelib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Typelib クラス追加ウィザード [C++]"
-  - "COM インターフェイス, 追加 (クラスを)"
+title: Add Class from Typelib Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.codewiz.class.typelib
+dev_langs:
+- C++
+helpviewer_keywords:
+- Add Class from TypeLib Wizard [MFC]
+- COM interfaces, adding classes
 ms.assetid: 96152afd-9374-4649-a6ab-b0fa2a5592a3
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# Typelib クラス追加ウィザード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9622a818e6334caad172f31f717eddc7e1230965
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このウィザードを使用して、利用できるタイプ ライブラリから MFC クラスを追加します。  このウィザードでは、選択したタイプ ライブラリから追加する各インターフェイスに対してクラスを作成します。  
+---
+# <a name="add-class-from-typelib-wizard"></a>Add Class from Typelib Wizard
+Use this wizard to add an MFC class from an available type library. The wizard creates a class for each interface you add from the selected type library.  
   
- **クラスの追加元**  
- クラスを作成する元となるタイプ ライブラリの場所を指定します。  
+ **Add class from**  
+ Specifies the location of the type library, from which the class is created.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**\[レジストリ\]**|タイプ ライブラリはシステムに登録されています。  登録されたタイプ ライブラリは \[使用できるタイプ ライブラリ\] に一覧表示されます。|  
-|**File**|タイプ ライブラリは、システムに登録する必要はありませんが、ファイルに含まれています。  ファイルの場所を \[場所\] に指定する必要があります。|  
+|Option|Description|  
+|------------|-----------------|  
+|**Registry**|The type library is registered in the system. Registered type libraries are listed in **Available type libraries**.|  
+|**File**|The type library is not necessarily registered in the system but is contained in a file. You must provide the file location in **Location**.|  
   
- **\[使用できるタイプ ライブラリ\]**  
- 現在システムに登録されているタイプ ライブラリを一覧表示します。  インターフェイスを \[インターフェイス\] ボックスの一覧に表示するには、この一覧からタイプ ライブラリを選択します。  
+ **Available type libraries**  
+ Lists the type libraries currently registered in the system. Select a type library from this list to display its interfaces in the **Interfaces** list.  
   
- タイプ ライブラリの登録の詳細については、MSDN ライブラリの「Inside Distributed COM: Type Libraries and Language Integration」を参照してください。  
+ See "Inside Distributed COM: Type Libraries and Language Integration" in the MSDN library for more information about registering type libraries.  
   
- **場所**  
- タイプ ライブラリの場所を指定します。  **\[クラスの追加元\]** の \[ファイル\] をクリックすると、タイプ ライブラリが格納されているファイルの場所を指定できます。  ファイルの場所を参照するには、\[...\] ボタンをクリックします。  
+ **Location**  
+ Specifies the location of the type library. If you click **File** under **Add Class From**, you can provide the location of the file containing the type library. To browse to the location of the file, click the ellipsis button.  
   
- **インターフェイス**  
- \[使用できるタイプ ライブラリ\] ボックスの一覧で現在選択されているタイプ ライブラリのインターフェイスを一覧表示します。  
+ **Interfaces**  
+ Lists the interfaces in the type library currently selected in the **Available type libraries** list.  
   
-|転送ボタン|説明|  
-|-----------|--------|  
-|**\>**|\[インターフェイス\] ボックスの一覧で現在選択されているインターフェイスを追加します。  インターフェイスが選択されていない場合は淡色表示になります。|  
-|**\>\>**|\[使用できるタイプ ライブラリ\] ボックスの一覧で現在選択されているタイプ ライブラリのすべてのインターフェイスを追加します。|  
-|**\<**|\[生成されたクラス\] ボックスの一覧で現在選択されているクラスを削除します。  \[生成されたクラス\] ボックスの一覧で現在選択されているクラスがない場合は淡色表示になります。|  
-|**\<\<**|\[生成されたクラス\] ボックスの一覧に表示されているすべてのクラスを削除します。  \[生成されたクラス\] ボックスの一覧が空の場合は淡色表示になります。|  
+|Transfer button|Description|  
+|---------------------|-----------------|  
+|**>**|Adds the interface currently selected in the **Interfaces** list. Dimmed if no interface is selected.|  
+|**>>**|Adds all the interfaces in the type library currently selected in the **Available type libraries** list.|  
+|**<**|Removes the class currently selected in the **Generated classes** list. Dimmed if no class is currently selected in the **Generated classes** list.|  
+|**<\<**|Removes all the classes in the **Generated classes** list. Dimmed if the **Generated classes** list is empty.|  
   
- **生成されたクラス**  
- **\>** または **\>\>** ボタンを使用して、追加したインターフェイスから生成されるクラス名を指定します。  このボックスをクリックしてクラスを選択し、上下の方向キーで一覧全体をスクロールできます。\[クラス\] ボックスにはクラス名が表示され、\[ファイル\] ボックスにはファイル名が表示されます。これらは、ウィザードの \[完了\] をクリックしたときに生成される名前です。  このボックスで一度に選択できるのは 1 つのクラスだけです。  
+ **Generated classes**  
+ Specifies the class names to be generated from the interfaces added using the **>** or **>>** button. You can click this box to select a class, and then use the up or down keys to scroll through the list, viewing each class name in the `Class` box and file name in the **File** box that the wizard generates when you click **Finish**. You can select only one class at a time in this box.  
   
- この一覧の項目を選択し、**\<**をクリックし、クラスを削除できます。  すべてのクラスを削除するには、生成されたクラス ボックスでクラスを選択する必要はありません; **\<\<**をクリックすると、**生成されたクラス** ボックスのすべてのクラスを削除します。  
+ You can remove a class by selecting it in this list and clicking **<**. You do not need to select a class in the Generated classes box to remove all classes; by clicking **<<**, you remove all classes in the **Generated classes** box.  
   
  `Class`  
- \[生成されたクラス\] ボックスの一覧で選択されているクラスの名前を指定します。このクラス名は、\[完了\] をクリックしたときにウィザードによって追加されます。  \[クラス\] ボックスで名前を変更できます。  
+ Specifies the name of the class selected in the **Generated classes** box that the wizard adds when you click **Finish**. You can edit the name in the `Class` box.  
   
  **File**  
- 新しいクラスのヘッダー ファイル名を設定します。  既定では、\[生成されたクラス\] で指定した名前に基づいた名前になります。  \[...\] ボタンをクリックし、場所を選択してファイル名を保存するか、クラス宣言を既存のファイルに追加します。  既存のファイルを選択した場合は、ウィザードの \[完了\] をクリックするまで、選択した場所にファイルが保存されません。  
+ Sets the name of the header file for the new class. By default, this name is based on the name you provide in **Generated classes**. Click the ellipsis button to save the file name to the location of your choice, or to append the class declaration to an existing file. If you choose an existing file, the wizard will not save it to the selected location until you click **Finish** in the wizard.  
   
- ウィザードでは、ファイルは上書きされません。  既存のファイルの名前を選択した場合は、ウィザードの \[完了\] をクリックすると、ファイルの内容にクラス宣言を追加するかどうかをたずねるメッセージが表示されます。  **\[はい\]** をクリックしてファイルに追加するか、**\[いいえ\]** をクリックしてウィザードに戻り、他のファイル名を指定します。  
+ The wizard does not overwrite a file. If you select the name of an existing file, when you click **Finish**, the wizard prompts you to indicate whether the class declaration should be appended to the contents of the file. Click **Yes** to append the file; click **No** to return to the wizard and specify another file name.  
   
-## 参照  
- [タイプ ライブラリからの MFC クラス](../../mfc/reference/adding-an-mfc-class-from-a-type-library.md)   
- [オートメーション クライアント : タイプ ライブラリの使用](../Topic/Automation%20Clients:%20Using%20Type%20Libraries.md)
+## <a name="see-also"></a>See Also  
+ [MFC Class from a Type Library](../../mfc/reference/adding-an-mfc-class-from-a-type-library.md)   
+ [Automation Clients: Using Type Libraries](../../mfc/automation-clients-using-type-libraries.md)
+
+

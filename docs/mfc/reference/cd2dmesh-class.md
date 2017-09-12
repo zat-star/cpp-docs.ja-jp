@@ -1,5 +1,5 @@
 ---
-title: "CD2DMesh クラス |Microsoft ドキュメント"
+title: CD2DMesh Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,7 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DMesh class
+- CD2DMesh [MFC], CD2DMesh
+- CD2DMesh [MFC], Attach
+- CD2DMesh [MFC], Create
+- CD2DMesh [MFC], Destroy
+- CD2DMesh [MFC], Detach
+- CD2DMesh [MFC], Get
+- CD2DMesh [MFC], IsValid
+- CD2DMesh [MFC], Open
+- CD2DMesh [MFC], m_pMesh
 ms.assetid: 11a2c78a-1367-40e8-a34f-44aa0509a4c9
 caps.latest.revision: 17
 author: mikeblome
@@ -43,85 +51,85 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 78461adeaa0671b146ccb48f4e9145cbdceeb8cf
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 40667a78e282a6eb789357c916a5231be71c086c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dmesh-class"></a>CD2DMesh クラス
-ID2D1Mesh のラッパーです。  
+# <a name="cd2dmesh-class"></a>CD2DMesh Class
+A wrapper for ID2D1Mesh.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DMesh : public CD2DResource;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DMesh::CD2DMesh](#cd2dmesh)|CD2DMesh のオブジェクトを構築します。|  
-|[CD2DMesh:: ~ CD2DMesh](#_dtorcd2dmesh)|デストラクターです。 D2D メッシュ オブジェクトが破棄されるときに呼び出されます。|  
+|[CD2DMesh::CD2DMesh](#cd2dmesh)|Constructs a CD2DMesh object.|  
+|[CD2DMesh::~CD2DMesh](#_dtorcd2dmesh)|The destructor. Called when a D2D mesh object is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DMesh::Attach](#attach)|オブジェクトにリソース インタ フェースを既存の接続|  
-|[CD2DMesh::Create](#create)|CD2DMesh を作成します。 (上書き[CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create))。|  
-|[CD2DMesh::Destroy](#destroy)|CD2DMesh オブジェクトを破棄します。 (上書き[CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy))。|  
-|[CD2DMesh::Detach](#detach)|オブジェクトからリソース インタ フェースをデタッチします。|  
-|[CD2DMesh::Get](#get)|返します。 ID2D1Mesh インターフェイス|  
-|[CD2DMesh::IsValid](#isvalid)|リソースの有効性をチェックする (上書き[CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid))。|  
-|[CD2DMesh::Open](#open)|カタログの作成用のメッシュを開きます。|  
+|[CD2DMesh::Attach](#attach)|Attaches existing resource interface to the object|  
+|[CD2DMesh::Create](#create)|Creates a CD2DMesh. (Overrides [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|  
+|[CD2DMesh::Destroy](#destroy)|Destroys a CD2DMesh object. (Overrides [CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|  
+|[CD2DMesh::Detach](#detach)|Detaches resource interface from the object|  
+|[CD2DMesh::Get](#get)|Returns ID2D1Mesh interface|  
+|[CD2DMesh::IsValid](#isvalid)|Checks resource validity (Overrides [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|  
+|[CD2DMesh::Open](#open)|Opens the mesh for population.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DMesh::operator ID2D1Mesh *](#operator_id2d1mesh_star)|返します。 ID2D1Mesh インターフェイス|  
+|[CD2DMesh::operator ID2D1Mesh*](#operator_id2d1mesh_star)|Returns ID2D1Mesh interface|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DMesh::m_pMesh](#m_pmesh)|ID2D1Mesh へのポインター。|  
+|[CD2DMesh::m_pMesh](#m_pmesh)|A pointer to an ID2D1Mesh.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CD2DResource](../../mfc/reference/cd2dresource-class.md)  
   
  `CD2DMesh`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="_dtorcd2dmesh"></a>CD2DMesh:: ~ CD2DMesh  
- デストラクターです。 D2D メッシュ オブジェクトが破棄されるときに呼び出されます。  
+##  <a name="_dtorcd2dmesh"></a>  CD2DMesh::~CD2DMesh  
+ The destructor. Called when a D2D mesh object is being destroyed.  
   
 ```  
 virtual ~CD2DMesh();
 ```  
   
-##  <a name="attach"></a>CD2DMesh::Attach  
- オブジェクトにリソース インタ フェースを既存の接続  
+##  <a name="attach"></a>  CD2DMesh::Attach  
+ Attaches existing resource interface to the object  
   
 ```  
 void Attach(ID2D1Mesh* pResource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pResource`  
- 既存のリソースのインターフェイスです。 NULL にすることはできません。  
+ Existing resource interface. Cannot be NULL  
   
-##  <a name="cd2dmesh"></a>CD2DMesh::CD2DMesh  
- CD2DMesh のオブジェクトを構築します。  
+##  <a name="cd2dmesh"></a>  CD2DMesh::CD2DMesh  
+ Constructs a CD2DMesh object.  
   
 ```  
 CD2DMesh(
@@ -129,91 +137,91 @@ CD2DMesh(
     BOOL bAutoDestroy = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
  `bAutoDestroy`  
- 所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
+ Indicates that the object will be destroyed by owner (pParentTarget).  
   
-##  <a name="create"></a>CD2DMesh::Create  
- CD2DMesh を作成します。  
+##  <a name="create"></a>  CD2DMesh::Create  
+ Creates a CD2DMesh.  
   
 ```  
 virtual HRESULT Create(CRenderTarget* pRenderTarget);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRenderTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="destroy"></a>CD2DMesh::Destroy  
- CD2DMesh オブジェクトを破棄します。  
+##  <a name="destroy"></a>  CD2DMesh::Destroy  
+ Destroys a CD2DMesh object.  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="detach"></a>CD2DMesh::Detach  
- オブジェクトからリソース インタ フェースをデタッチします。  
+##  <a name="detach"></a>  CD2DMesh::Detach  
+ Detaches resource interface from the object  
   
 ```  
 ID2D1Mesh* Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- デタッチされたリソース インタ フェースへのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to detached resource interface.  
   
-##  <a name="get"></a>CD2DMesh::Get  
- 返します。 ID2D1Mesh インターフェイス  
+##  <a name="get"></a>  CD2DMesh::Get  
+ Returns ID2D1Mesh interface  
   
 ```  
 ID2D1Mesh* Get();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ID2D1Mesh インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1Mesh interface or NULL if object is not initialized yet.  
   
-##  <a name="isvalid"></a>CD2DMesh::IsValid  
- リソースの有効性のチェック  
+##  <a name="isvalid"></a>  CD2DMesh::IsValid  
+ Checks resource validity  
   
 ```  
 virtual BOOL IsValid() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if resource is valid; otherwise FALSE.  
   
-##  <a name="m_pmesh"></a>CD2DMesh::m_pMesh  
- ID2D1Mesh へのポインター。  
+##  <a name="m_pmesh"></a>  CD2DMesh::m_pMesh  
+ A pointer to an ID2D1Mesh.  
   
 ```  
 ID2D1Mesh* m_pMesh;  
 ```  
   
-##  <a name="open"></a>CD2DMesh::Open  
- カタログの作成用のメッシュを開きます。  
+##  <a name="open"></a>  CD2DMesh::Open  
+ Opens the mesh for population.  
   
 ```  
 ID2D1TessellationSink* Open();
 ```  
   
-### <a name="return-value"></a>戻り値  
- メッシュの作成に使用される ID2D1TessellationSink へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to an ID2D1TessellationSink that is used to populate the mesh.  
   
-##  <a name="operator_id2d1mesh_star"></a>CD2DMesh::operator ID2D1Mesh *  
- 返します。 ID2D1Mesh インターフェイス  
+##  <a name="operator_id2d1mesh_star"></a>  CD2DMesh::operator ID2D1Mesh*  
+ Returns ID2D1Mesh interface  
   
 ```  
 operator ID2D1Mesh*();
 ```   
   
-### <a name="return-value"></a>戻り値  
- ID2D1Mesh インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1Mesh interface or NULL if object is not initialized yet.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

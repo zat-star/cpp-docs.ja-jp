@@ -1,47 +1,66 @@
 ---
-title: "CDateTimeCtrl の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDateTimeCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DateTimePicker コントロール [MFC], CDateTimeCtrl クラス"
+title: Using CDateTimeCtrl | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDateTimeCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- DateTimePicker control [MFC], CDateTimeCtrl class
 ms.assetid: cb2a8720-43f1-4c33-a3a4-def9a1622e00
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CDateTimeCtrl の使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cb830cfa065546d07e49484b80dce084274d213c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-日時指定のコントロール \([CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)\) は、特定の日付を入力するか、または選択直観的に、認識可能なメソッドを実装します。  コントロールの主要なインターフェイスがコンボ ボックスに似ています。  ただし、ユーザーがコントロールを展開すると、月間予定表コントロール \(既定\) 表示され、特定の日付を指定することをユーザーに許可します。  日付をクリックすると、月間予定表コントロールは自動的にオフになります。  
+---
+# <a name="using-cdatetimectrl"></a>Using CDateTimeCtrl
+The date and time picker control ([CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)) implements an intuitive and recognizable method of entering or selecting a specific date. The main interface of the control is similar in functionality to a combo box. However, if the user expands the control, a month calendar control appears (by default), allowing the user to specify a particular date. When a date is chosen, the month calendar control automatically disappears.  
   
 > [!NOTE]
->  **CDateTimePicker** と `CMonthCalCtrl` の両方を使用すると、プロジェクトの STDAFX.H ファイルにプロジェクトで、通常、AFXDTCTL.H を含める必要があります。  
+>  To use both the **CDateTimePicker** and `CMonthCalCtrl` classes in your project, you must include AFXDTCTL.H, usually in your project's STDAFX.H file.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [日時指定のコントロールの作成](../mfc/creating-the-date-and-time-picker-control.md)  
+-   [Creating the Date and Time Picker Control](../mfc/creating-the-date-and-time-picker-control.md)  
   
--   [日時指定のコントロールの例](../mfc/date-and-time-picker-control-examples.md)  
+-   [Date and Time Picker Control Examples](../mfc/date-and-time-picker-control-examples.md)  
   
--   [埋め込まれたな月間予定表コントロールのアクセス](../mfc/accessing-the-embedded-month-calendar-control.md)  
+-   [Accessing the Embedded Month Calendar Control](../mfc/accessing-the-embedded-month-calendar-control.md)  
   
--   [日時指定のコントロールのカスタム書式指定文字列を使用します。](../mfc/using-custom-format-strings-in-a-date-and-time-picker-control.md)  
+-   [Using Custom Format Strings in a Date and Time Picker Control](../mfc/using-custom-format-strings-in-a-date-and-time-picker-control.md)  
   
--   [日時指定のコントロールのコールバック フィールドを使用します。](../mfc/using-callback-fields-in-a-date-and-time-picker-control.md)  
+-   [Using Callback Fields in a Date and Time Picker Control](../mfc/using-callback-fields-in-a-date-and-time-picker-control.md)  
   
--   [日時指定のコントロールからの通知メッセージの処理](../mfc/processing-notification-messages-in-date-and-time-picker-controls.md)  
+-   [Processing Notification Messages in Date and Time Picker Controls](../mfc/processing-notification-messages-in-date-and-time-picker-controls.md)  
   
-## 参照  
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Controls](../mfc/controls-mfc.md)
+
+

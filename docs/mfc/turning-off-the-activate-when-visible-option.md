@@ -1,37 +1,56 @@
 ---
-title: "[表示時にアクティブ] オプションのオフ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール [C++]、アクティブ化オプション"
-  - "[表示時にアクティブ] オプション"
+title: Turning off the Activate When Visible Option | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], activate options
+- Activate When Visible option [MFC]
 ms.assetid: 8f7ddc5a-a7a6-4da8-bcb9-1b569f0ecb48
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# [表示時にアクティブ] オプションのオフ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 09ad4e1e219e52033006c83dfd249ac7b51c0510
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-各コントロールには、アクティブおよび非アクティブという 2 つの基本的な状態があります。  従来、これらの状態は、コントロールがウィンドウを持つかどうかという形で判別されていました。  アクティブなコントロールはウィンドウを持ち、非アクティブなコントロールはウィンドウを持たないという分類でした。  ウィンドウなしのアクティブ状態が導入された結果、この区別はもう普遍的ではありませんが、今でも多くのコントロールに適用されます。  
+---
+# <a name="turning-off-the-activate-when-visible-option"></a>Turning off the Activate When Visible Option
+A control has two basic states: active and inactive. Traditionally, these states were distinguished by whether the control had a window. An active control had a window; an inactive control did not. With the introduction of windowless activation, this distinction is no longer universal, but still applies to many controls.  
   
- 通常、ActiveX コントロールが実行する他の初期化と比較してウィンドウの作成はラージ コストがかかる操作です。  理想的には、コントロールは特に必要までウィンドウを作成することをお勧めします。  
+ Compared with the rest of the initialization typically performed by an ActiveX control, the creation of a window is an extremely expensive operation. Ideally, a control would defer creating its window until absolutely necessary.  
   
- 多くのコントロールは、コンテナーに表示されると、アクティブである必要はありません。  多くの場合、コントロールはアクティブでない状態にユーザーが、アクティブにするために必要な操作を実行するまで維持できます \(たとえば、マウスをクリックするか、Tab キーを押して\)。  コントロールをコンテナーまでアクティブでなく残存する可能性はコントロールのそのほかのフラグから削除します **OLEMISC\_ACTIVATEWHENVISIBLE** フラグをアクティブにする必要があります:  
+ Many controls do not need to be active the entire time they are visible in a container. Often, a control can remain in the inactive state until the user performs an operation that requires it to become active (for example, clicking with the mouse or pressing the TAB key). To cause a control to remain inactive until the container needs to activate it, remove the **OLEMISC_ACTIVATEWHENVISIBLE** flag from the control's miscellaneous flags:  
   
- [!code-cpp[NVC_MFC_AxOpt#9](../mfc/codesnippet/CPP/turning-off-the-activate-when-visible-option_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#9](../mfc/codesnippet/cpp/turning-off-the-activate-when-visible-option_1.cpp)]  
   
- **OLEMISC\_ACTIVATEWHENVISIBLE** フラグが自動的にコントロールを作成する場合は、MFC ActiveX コントロール ウィザードの [コントロールの設定](../mfc/reference/control-settings-mfc-activex-control-wizard.md) ページの **Activate When Visible** オプションをオフにした場合は省略されます。  
+ The **OLEMISC_ACTIVATEWHENVISIBLE** flag is automatically omitted if you turn off the **Activate When Visible** option in the [Control Settings](../mfc/reference/control-settings-mfc-activex-control-wizard.md) page of the MFC ActiveX Control Wizard when you create your control.  
   
-## 参照  
- [MFC ActiveX コントロール : 最適化](../mfc/mfc-activex-controls-optimization.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls: Optimization](../mfc/mfc-activex-controls-optimization.md)
+
+

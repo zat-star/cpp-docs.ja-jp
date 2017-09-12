@@ -1,70 +1,89 @@
 ---
-title: "単純データ型クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.data"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ クラス [C++]"
-  - "スカラー クラス [C++]"
-  - "単純なデータ型クラス"
+title: Simple Data Type Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.data
+dev_langs:
+- C++
+helpviewer_keywords:
+- scalar classes [MFC]
+- data classes [MFC]
+- simple data type classes [MFC]
 ms.assetid: 0d591d68-0a33-49e9-8a6d-90c90de5c16a
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 単純データ型クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1a7ef67ee14f2dfc5971ac3a0dcdfa34f5ec2cb2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-次のクラスは、C\+\+ の構文を便利に使用できるように、描画座標、文字列、および時間と日付の情報をカプセル化します。  これらのオブジェクトはクラス ライブラリの Windows クラスのメンバー関数のパラメーターとして広く使われます。  `CPoint`、`CSize`、および `CRect` は、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] ではそれぞれ、**POINT**、**SIZE**、および `RECT` の各構造体に対応しているので、これらの C 言語の構造体を使用できる場所ならどこでもこれら C\+\+ クラスのオブジェクトを使用できます。  このクラスは、メンバー関数を介して役に立つインターフェイスを提供します。  `CStringT` は、非常に柔軟で動的な文字列を提供します。  `CTime`、`COleDateTime`、`CTimeSpan`、および **COleTimeSpan** は、時間と日付の値を表現します。  これらのクラスの詳細については、「[日付と時刻](../atl-mfc-shared/date-and-time.md)」を参照してください。  
+---
+# <a name="simple-data-type-classes"></a>Simple Data Type Classes
+The following classes encapsulate drawing coordinates, character strings, and time and date information, allowing convenient use of C++ syntax. These objects are used widely as parameters to the member functions of Windows classes in the class library. Because `CPoint`, `CSize`, and `CRect` correspond to the **POINT**, **SIZE**, and `RECT` structures, respectively, in the Windows SDK, you can use objects of these C++ classes wherever you can use these C-language structures. The classes provide useful interfaces through their member functions. `CStringT` provides very flexible dynamic character strings. `CTime`, `COleDateTime`, `CTimeSpan`, and **COleTimeSpan** represent time and date values. For more information about these classes, see the article [Date and Time](../atl-mfc-shared/date-and-time.md).  
   
- "**COle**" で始まるクラスは OLE で提供されるデータ型をカプセル化します。  これらのデータ型は別の OLE 機能が使われているかどうかにかかわらず Windows プログラムで使用できます。  
+ The classes that begin with "**COle**" are encapsulations of data types provided by OLE. These data types can be used in Windows programs regardless of whether other OLE features are used.  
   
- [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)  
- 文字列を保持します。  
+ [CStringT Class](../atl-mfc-shared/reference/cstringt-class.md)  
+ Holds character strings.  
   
- [CTime](../Topic/CTime%20Class.md)  
- 絶対的な時間と日付の値を保持します。  
+ [CTime](../atl-mfc-shared/reference/ctime-class.md)  
+ Holds absolute time and date values.  
   
  [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md)  
- OLE オートメーション型 **DATE** のラッパー。  日付と時間の値を表現します。  
+ Wrapper for the OLE automation type **DATE**. Represents date and time values.  
   
  [CTimeSpan](../atl-mfc-shared/reference/ctimespan-class.md)  
- 相対的な時間と日付の値を保持します。  
+ Holds relative time and date values.  
   
- [COleDateTimeSpan](../Topic/COleDateTimeSpan%20Class.md)  
- 2 つの `COleDateTime` 値の差などの相対的な `COleDateTime` 値を保持します。  
+ [COleDateTimeSpan](../atl-mfc-shared/reference/coledatetimespan-class.md)  
+ Holds relative `COleDateTime` values, such as the difference between two `COleDateTime` values.  
   
- [CPoint](../Topic/CPoint%20Class.md)  
- 座標 \(x, y\) のペアを保持します。  
+ [CPoint](../atl-mfc-shared/reference/cpoint-class.md)  
+ Holds coordinate (x, y) pairs.  
   
  [CSize](../atl-mfc-shared/reference/csize-class.md)  
- 距離、相対位置、または値のペアを保持します。  
+ Holds distance, relative positions, or paired values.  
   
  [CRect](../atl-mfc-shared/reference/crect-class.md)  
- 四角形領域の座標を保持します。  
+ Holds coordinates of rectangular areas.  
   
- [CImageList](../Topic/CImageList%20Class.md)  
- Windows イメージ リストの機能が用意されています。  イメージ リストはリスト コントロールやツリー コントロールで使われます。  また、同じサイズのビットマップの組の格納や保存にも使用できます。  
+ [CImageList](../mfc/reference/cimagelist-class.md)  
+ Provides the functionality of the Windows image list. Image lists are used with list controls and tree controls. They can also be used to store and archive a set of same-sized bitmaps.  
   
  [COleVariant](../mfc/reference/colevariant-class.md)  
- OLE オートメーション型 **VARIANT** のラッパー。  **VARIANT** のデータは、いろいろな形式で格納されます。  
+ Wrapper for the OLE automation type **VARIANT**. Data in **VARIANT**s can be stored in many formats.  
   
- [COleCurrency](../Topic/COleCurrency%20Class.md)  
- 整数部 15 桁、小数部 4 桁の固定小数点の数値型である OLE オートメーション型 **CURRENCY** のラッパー。  
+ [COleCurrency](../mfc/reference/colecurrency-class.md)  
+ Wrapper for the OLE automation type **CURRENCY**, a fixed-point arithmetic type, with 15 digits before the decimal point and 4 digits after.  
   
 > [!NOTE]
->  Visual C\+\+ .NET 以降では、`CRect`、`CSize`、および `CPoint` は、ATL アプリケーション、MFC アプリケーションのどちらにおいても使用できるように修正されています。  さらに、MFC から独立した `CString` のようなクラスを提供するために、`CStringT` が追加されています。  共有ユーティリティ クラスの詳細については、「[共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)」を参照してください。  
+>  Beginning with Visual C++ .NET, `CRect`, `CSize`, and `CPoint` have been modified to be usable in either ATL or MFC applications. In addition, `CStringT` has been added to provide an MFC-independent `CString`-like class. For more information on shared utility classes, see [Shared Classes](../atl-mfc-shared/atl-mfc-shared-classes.md).  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

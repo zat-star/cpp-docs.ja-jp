@@ -1,44 +1,63 @@
 ---
-title: "リッチ エディット コントロールからの通知メッセージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRichEditCtrl クラス, 通知"
-  - "メッセージ, 通知"
-  - "通知, CRichEditCtrl から"
-  - "リッチ エディット コントロール, 通知"
+title: Notifications from a Rich Edit Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- messages [MFC], notification [MFC]
+- CRichEditCtrl class [MFC], notifications
+- rich edit controls [MFC], notifications
+- notifications [MFC], from CRichEditCtrl
 ms.assetid: eb5304fe-f4f3-4557-9ebf-3095dea383c4
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# リッチ エディット コントロールからの通知メッセージ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cd56c62172b1d98cc5f95aceaa3fa45a7e642d23
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-通知メッセージはリッチ エディット コントロール \([CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)\) に影響するイベントを報告します。  これらは、リッチ エディット コントロール自体または親ウィンドウ、メッセージ リフレクションを使用して操作できます。  リッチ エディット コントロールは、エディット コントロール、および複数の追加の使用と通知メッセージをすべてサポートしています。  」かを通知メッセージをリッチ エディット コントロールが「イベント マスクの設定による親ウィンドウに送信するかを判断できます。  
+---
+# <a name="notifications-from-a-rich-edit-control"></a>Notifications from a Rich Edit Control
+Notification messages report events affecting a rich edit control ([CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)). They can be processed by the parent window or, using message reflection, by the rich edit control itself. Rich edit controls support all of the notification messages used with edit controls as well as several additional ones. You can determine which notification messages a rich edit control sends its parent window by setting its "event mask."  
   
- リッチ エディット コントロールのイベント マスクを設定するには、[SetEventMask](../Topic/CRichEditCtrl::SetEventMask.md) メンバー関数を使用します。  [GetEventMask](../Topic/CRichEditCtrl::GetEventMask.md) メンバー関数を使用してリッチ エディット コントロールの現在のイベント マスクを取得できます。  
+ To set the event mask for a rich edit control, use the [SetEventMask](../mfc/reference/cricheditctrl-class.md#seteventmask) member function. You can retrieve the current event mask for a rich edit control by using the [GetEventMask](../mfc/reference/cricheditctrl-class.md#geteventmask) member function.  
   
- 次の段落は、いくつかの特定の通知と使用されます。:  
+ The following paragraphs list several specific notifications and their uses:  
   
--   **EN\_MSGFILTER** の通知を処理する**EN\_MSGFILTER**はクラス、リッチ エディット コントロールを使用してまたは親ウィンドウ コントロールには、すべてのキーボード入力とマウス入力をフィルター処理します。  ハンドラーはメッセージを変更できるキーボードまたはマウス メッセージを防ぐこと、または指定 [MSGFILTER](http://msdn.microsoft.com/library/windows/desktop/bb787936) の構造を変更することで処理することができます。  
+-   **EN_MSGFILTER** Handling the **EN_MSGFILTER** notification lets a class, either the rich edit control or its parent window, filter all keyboard and mouse input to the control. The handler can prevent the keyboard or mouse message from being processed or can change the message by modifying the specified [MSGFILTER](http://msdn.microsoft.com/library/windows/desktop/bb787936) structure.  
   
--   **EN\_PROTECTED**ハンドルのユーザーが保護されたなテキストを変更しようとしたことを検出する **EN\_PROTECTED** 通知メッセージ。  protected とテキストの範囲を指定するには、保護されたな文字効果を設定できます。  詳細については、「[リッチ エディット コントロールの文字書式](../mfc/character-formatting-in-rich-edit-controls.md)」を参照してください。  
+-   **EN_PROTECTED** Handle the **EN_PROTECTED** notification message to detect when the user attempts to modify protected text. To mark a range of text as protected, you can set the protected character effect. For more information, see [Character Formatting in Rich Edit Controls](../mfc/character-formatting-in-rich-edit-controls.md).  
   
--   **EN\_DROPFILES** ユーザーが **EN\_DROPFILES** の通知メッセージを処理するリッチ エディット コントロールにファイルをドロップできるようにすることができます。  [ENDROPFILES](http://msdn.microsoft.com/library/windows/desktop/bb787895) の構造を指定するファイルに関する情報が含まれます。  
+-   **EN_DROPFILES** You can enable the user to drop files in a rich edit control by processing the **EN_DROPFILES** notification message. The specified [ENDROPFILES](http://msdn.microsoft.com/library/windows/desktop/bb787895) structure contains information about the files being dropped.  
   
--   **EN\_SELCHANGE**アプリケーションは、現在の選択範囲に **EN\_SELCHANGE** の通知メッセージを処理することにより、変更を検出できます。  通知メッセージは新しい選択の [SELCHANGE](http://msdn.microsoft.com/library/windows/desktop/bb787952) を含む構造体の情報を指定します。  
+-   **EN_SELCHANGE** An application can detect when the current selection changes by processing the **EN_SELCHANGE** notification message. The notification message specifies a [SELCHANGE](http://msdn.microsoft.com/library/windows/desktop/bb787952) structure containing information about the new selection.  
   
-## 参照  
- [CRichEditCtrl の使い方](../mfc/using-cricheditctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CRichEditCtrl](../mfc/using-cricheditctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

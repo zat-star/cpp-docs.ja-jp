@@ -1,111 +1,130 @@
 ---
-title: "テクニカル ノート 23: MFC の標準リソース | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.resources"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リソース [MFC]"
-  - "標準リソース"
-  - "TN023"
+title: 'TN023: Standard MFC Resources | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.resources
+dev_langs:
+- C++
+helpviewer_keywords:
+- resources [MFC]
+- TN023
+- standard resources
 ms.assetid: 60af8415-c576-4c2f-a711-ca5da0b9a1f2
 caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# テクニカル ノート 23: MFC の標準リソース
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7eb5865f96cb7308159a2035c051f470e8d8143c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC に用意されているライブラリに必要な標準リソースについて説明します。  
+---
+# <a name="tn023-standard-mfc-resources"></a>TN023: Standard MFC Resources
+This note describes the standard resources provided with and needed by the MFC library.  
   
-## 標準リソース  
- MFC には、アプリケーションで使用できる定義済みのなリソースの 2 種類があります。: クリップアートのリソースと標準フレームワーク リソース。  
+## <a name="standard-resources"></a>Standard Resources  
+ MFC offers two categories of predefined resources that you can use in your application: clip-art resources and standard framework resources.  
   
- クリップアートのリソースは、フレームワークに依存しない、アプリケーションのユーザー インターフェイスに追加する必要のあるそのほかの情報です。  次のクリップアートのリソースは、MFC の一般的なサンプル: [CLIPART](../top/visual-cpp-samples.md)に含まれています。  
+ Clip-art resources are additional resources that the framework does not depend on, but which you might want to add to your application's user interface. The following clip-art resources are contained in the MFC General sample [CLIPART](../visual-cpp-samples.md):  
   
--   Common.rc: 含まれているリソースの単一ファイル:  
+-   Common.rc: A single file of resources that contains:  
   
-    -   さまざまなビジネスおよびデータ処理タスクを表すアイコンの大規模なコレクション。  
+    -   A large collection of icons that represent a variety of business and data-processing tasks.  
   
-    -   複数の共通のカーソル \(Afxres.rc "も参照してください。  
+    -   Several common cursors (see also Afxres.rc).  
   
-    -   複数のツール バー ボタンを含むツール バー ビットマップ。  
+    -   A toolbar bitmap that contains several toolbar buttons.  
   
-    -   Commdlg.dll で使用されるアイコン リソースおよびビットマップ。  
+    -   The bitmap and icon resources that are used by Commdlg.dll.  
   
--   Indicate.rc: Caps ロックの「キャップ」などのステータス バーの状態キーのインジケーターの文字列リソースが含まれます。  
+-   Indicate.rc: Contains string resources for the status-bar key-state indicators, such as "CAP" for Caps Lock.  
   
--   Prompts.rc: それぞれの定義済みのなコマンドのメニュー プロンプトの文字列リソースを、など\) を作成します `ID_FILE_NEW`の新しい文書」を含んでいます。  
+-   Prompts.rc: Contains menu-prompt string resources for each predefined command, such as "Create a new document" for `ID_FILE_NEW`.  
   
--   Commdlg.rc: 標準 COMMDLG ダイアログ テンプレートを含む Visual C\+\+ 互換性のある .rc ファイル。  
+-   Commdlg.rc: A Visual C++ compatible .rc file that contains the standard COMMDLG dialog templates.  
   
- 標準フレームワーク リソースは、フレームワークで内部実装に依存している AFX 定義された ID のリソースです。  ほとんどの場合、これらの AFX 定義されたリソースを変更する必要はありません。  、このトピックの後半の手順に従う必要があります。  
+ Standard framework resources are resources with AFX-defined IDs that the framework depends on for internal implementations. You will rarely need to change these AFX-defined resources. If you do, you should follow the procedure outlined later in this topic.  
   
- 次のリソースは MFC\\INCLUDE のフレームワーク ディレクトリに含まれている T:  
+ The following framework resources are contained in the MFC\INCLUDE directory:  
   
--   Afxres.rc: フレームワークで使用される共通のリソース。  
+-   Afxres.rc: Common resources used by the framework.  
   
--   Afxprint.rc: 印刷が特定のリソース。  
+-   Afxprint.rc: Resources specific to printing.  
   
--   Afxolecl.rc: OLE クライアント アプリケーション固有のリソース。  
+-   Afxolecl.rc: Resources specific to OLE client applications.  
   
--   Afxolev.rc: 完全な OLE サーバー アプリケーション固有のリソース。  
+-   Afxolev.rc: Resources specific to full OLE server applications.  
   
-## クリップアートのリソースを使用する  
+## <a name="using-clip-art-resources"></a>Using Clip-Art Resources  
   
-#### クリップアート バイナリのリソースを使用するには  
+#### <a name="to-use-a-clip-art-binary-resource"></a>To use a clip-art binary resource  
   
-1.  Visual C\+\+ アプリケーションのリソース ファイルを開きます。  
+1.  Open your application's resource file in Visual C++.  
   
-2.  Common.rc を開きます。  このファイルは、すべてのクリップアート バイナリのリソースが含まれています。  これは Common.rc ファイルがコンパイルされるので、時間がかかることがあります。  
+2.  Open Common.rc. This file contains all the binary clip-art resources. This may take some time because the Common.rc file is compiled.  
   
-3.  ユーザーが Common.rc からアプリケーションのリソース ファイルに使用するリソースをドラッグすると、Ctrl キーを押しながらドラッグします。  
+3.  Hold down CTRL while you drag the resources that you want to use from Common.rc to your application's resource file.  
   
- 他のクリップアートのリソースを使用するには、同じ手順に従います。  唯一の違いは Common.rc の代わりに適切な .rc ファイルを開きます。  
+ To use other clip-art resources, follow the same steps. The only difference is that you will open the appropriate .rc file instead of Common.rc.  
   
 > [!NOTE]
->  Common.rc からリソースを完全に移動しないように意図せずに注意してください。  リソースをドラッグすると、Ctrl キーを押し、コピーを作成します。  ドラッグすると、Ctrl キーを押し続けると、リソースも移動します。  誤って Common.rc ファイルに変更を加える可能性ときは Common.rc への変更を保存するかどうかを確認するとき「いいえ」をクリックします。  
+>  Be careful not to unintentionally move resources out of Common.rc permanently. If you hold the CTRL key while you drag resources, you will create a copy. If you do not hold CTRL down while you drag, the resources will be moved. If you are concerned that you might have accidentally made changes to the Common.rc file, click "No" when you are asked whether to save the changes to Common.rc.  
   
 > [!NOTE]
->  リソースの .rc ファイルになるように標準 .rc ファイルの先頭に、保存を `TEXTINCLUDE` の特別なリソースがあります。  
+>  The .rc resource files have a special `TEXTINCLUDE` resource in them that will prevent you from accidentally saving on top of the standard .rc files.  
   
-### 標準フレームワーク リソースのカスタマイズ  
- 標準フレームワーク リソースは、通常、アプリケーションのリソース ファイルにある \#include コマンドを使用して格納されます。  AppWizard はリソース ファイルを生成します。  このファイルは、AppWizard オプションが適切な選択基準フレームワーク リソースが含まれています。  確認する、追加またはどのリソースがコンパイル時ディレクティブを変更に含まれているか削除できます。  これを行うには、**\[リソース\]** メニューを開き、**\[設定が含まれています。\]** を選択します。  「コンパイル時ディレクティブ」を編集して、項目を表示します。  たとえば、次のようになります。  
+### <a name="customizing-standard-framework-resources"></a>Customizing Standard Framework Resources  
+ Standard framework resources are usually included in an application by using the #include command in an application's resource file. AppWizard will generate a resource file. This file includes the appropriate standard framework resources, depending on which AppWizard options you select. You can review, add, or remove which resources are included by changing the compile-time directives. To do this, open the **Resource** menu and select **Set Includes**. Look at the "Compile-Time Directives" edit item. For example:  
   
 ```  
 #include "afxres.rc"  
 #include "afxprint.rc"  
 ```  
   
- 標準フレームワーク リソースをカスタマイズする最も一般的なケースは、追加している追加または削除は、印刷、OLE クライアントと OLE サーバー サポートを含みます。  
+ The most common case of customizing standard framework resources is adding or removing additional includes for printing, OLE Client, and OLE Server support.  
   
- まれに、ファイル全体を追加および削除するために、特定のアプリケーションの標準のフレームワーク リソースの内容のカスタマイズが必要になる場合があります。  支持者の手順は、リソースをどのように制限する方法について説明します。:  
+ In some rare cases you might want to customize the contents of the standard framework resources for your particular application, not just add and remove the entire file. The followings steps show how you can limit the resources that are included:  
   
-##### 標準リソースの内容をカスタマイズするには、ファイル。  
+##### <a name="to-customize-the-contents-of-a-standard-resource-file"></a>To customize the contents of a standard resource file  
   
-1.  Visual C\+\+ リソース ファイルを開きます。  
+1.  Open the resource file in Visual C++.  
   
-2.  リソース セットを使用してコマンドを削除してカスタマイズする標準 .rc ファイルの `#include` が含まれます。  たとえば、印刷プレビュー ツール バーをカスタマイズするには、`#include "afxprint.rc"` の行を削除します。  
+2.  Using the Resource Set Includes command, remove the `#include` for the standard .rc file that you want to customize. For example, to customize the print-preview toolbar, remove the `#include "afxprint.rc"` line.  
   
-3.  MFC\\INCLUDE の適切な標準リソース ファイルを開きます。  このトピックの例に従う前に、適切なファイルが MFC\\Include\\Aafxprint.rc です  
+3.  Open the appropriate standard resources files in MFC\INCLUDE. Following the example earlier in this topic, the appropriate file is MFC\Include\Aafxprint.rc  
   
-4.  標準 .rc ファイルからアプリケーションのリソース ファイルにすべてのリソースをコピーします。  
+4.  Copy all the resources from the standard .rc file to your application resource file.  
   
-5.  アプリケーションのリソース ファイルの標準リソースのコピーを変更します。  
+5.  Modify the copy of the standard resources in your application resource file.  
   
 > [!NOTE]
->  標準 .rc ファイル内のリソースを直接変更しないでください。  この操作では、現在操作しているのは、アプリケーションで、使用できるリソースを変更します。  
+>  Do not modify the resources directly in the standard .rc files. Doing so will modify the resources available in every application, not just in the one you are currently working on.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

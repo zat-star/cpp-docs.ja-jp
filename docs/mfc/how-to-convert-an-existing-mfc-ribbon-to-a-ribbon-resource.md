@@ -1,57 +1,78 @@
 ---
-title: "方法: 既存の MFC リボンをリボン リソースに変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC リボン, 変換 (リボン リソースに)"
-  - "リボン リソース, 変換 (MFC リボンから)"
+title: 'How to: Convert an Existing MFC Ribbon to a Ribbon Resource | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ribbon resource, converting from an MFC ribbon
+- MFC ribbon, converting to a ribbon resource
 ms.assetid: 324b7ff6-58f9-4691-96a9-9836a79d0fb6
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
----
-# 方法: 既存の MFC リボンをリボン リソースに変換する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 30ed9bd9483e00dc4845b4e318a66bfb21f4531f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リボン リソースは、手動でコード化されたリボンよりも、簡単に視覚化、変更、および管理できます。  ここでは、MFC プロジェクト内に手動でコード化されたリボンをリボン リソースに変換する方法について説明します。  
+---
+# <a name="how-to-convert-an-existing-mfc-ribbon-to-a-ribbon-resource"></a>How to: Convert an Existing MFC Ribbon to a Ribbon Resource
+Ribbon resources are easier to visualize, modify, and maintain than manually coded ribbons. This topic describes how to convert a manually coded ribbon in an MFC Project into a ribbon resource.  
   
- MFC リボン クラス \([CMFCRibbonBar クラス](../mfc/reference/cmfcribbonbar-class.md)など\) を使用するコードを含む既存の MFC プロジェクトが存在する必要があります。  
+ You must have an existing MFC project that has code that uses the MFC ribbon classes, for example, [CMFCRibbonBar Class](../mfc/reference/cmfcribbonbar-class.md).  
   
-### MFC リボンをリボン リソースに変換するには  
+### <a name="to-convert-an-mfc-ribbon-to-a-ribbon-resource"></a>To convert an MFC ribbon to a ribbon resource  
   
-1.  Visual Studio で、既存の MFC プロジェクトにおいて、CMFCRibbonBar オブジェクトが初期化されるソース ファイルを開きます。  通常、このファイルは mainfrm.cpp です。  リボンの初期化コードの後に次のコードを追加します。  
+1.  In Visual Studio, in an existing MFC project, open the source file where the CMFCRibbonBar object is initialized. Typically, the file is mainfrm.cpp. Add the following code after the initialization code for the ribbon.  
   
-    ```  
-    m_wndRibbonBar.SaveToXMLFile("RibbonOutput.xml");  
-    ```  
+ ```  
+    m_wndRibbonBar.SaveToXMLFile("RibbonOutput.xml");
+
+ ```  
   
-     ファイルを保存して閉じます。  
+     Save and close the file.  
   
-2.  MFC アプリケーションをビルドして実行した後、メモ帳で RibbonOutput.txt を開き、その内容をコピーします。  
+2.  Build and run the MFC application, and then in Notepad, open RibbonOutput.txt and copy its contents.  
   
-3.  Visual Studio で、**\[プロジェクト\]** メニューの **\[リソースの追加\]** をクリックします。  **\[リソースの追加\]** ダイアログ ボックスで、**\[Ribbon\]** を選択し、**\[新規作成\]** をクリックします。  
+3.  In Visual Studio, on the **Project** menu, click **Add Resource**. In the **Add Resource** dialog box, select **Ribbon** and then click **New**.  
   
-     Visual Studio でリボン リソースが作成され、デザイン ビューで開かれます。  リボン リソース ID は IDR\_RIBBON1 です。これはリソース ビューに表示されます。  リボンは ribbon1.mfcribbon\-ms XML ファイルの中に定義されます。  
+     Visual Studio creates a ribbon resource and opens it in design view. The ribbon resource ID is IDR_RIBBON1, which is displayed in **Resource View**. The ribbon is defined in the ribbon1.mfcribbon-ms XML file.  
   
-4.  Visual Studio で、ribbon1.mfcribbon\-ms を開き、その内容を削除します。次に、コピーしておいた  RibbonOutput.txt の内容を貼り付けます。  ribbon1.mfcribbon\-ms を保存して閉じます。  
+4.  In Visual Studio, open ribbon1.mfcribbon-ms, delete its contents, and then paste the contents of RibbonOutput.txt, which you copied earlier. Save and close ribbon1.mfcribbon-ms.  
   
-5.  CMFCRibbonBar オブジェクトが初期化されるソース ファイル \(通常は mainfrm.cpp\) を再度開き、既存のリボン コードをコメント アウトします。  コメント アウトしたコードの後に次のコードを追加します。  
+5.  Again open the source file where the CMFCRibbonBar object is initialized (typically, mainfrm.cpp) and comment out the existing ribbon code. Add the following code after the code that you commented out.  
   
-    ```  
-    m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);  
-    ```  
+ ```  
+    m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);
+
+ ```  
   
-6.  プロジェクトをビルドしてプログラムを実行します。  
+6.  Build the project and run the program.  
   
-## 参照  
- [リボン デザイナー \(MFC\)](../mfc/ribbon-designer-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)
+
+

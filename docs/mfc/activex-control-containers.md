@@ -1,61 +1,80 @@
 ---
-title: "ActiveX コントロール コンテナー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール コンテナー [C++]"
-  - "OLE コントロール [C++], コンテナー"
+title: ActiveX Control Containers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX control containers [MFC]
+- OLE controls [MFC], containers
 ms.assetid: 0eb1a713-e607-4c79-a0c7-67c5f1fd5fab
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ActiveX コントロール コンテナー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 928c59eaa4c3440f5c1ec3679a6c39631155b7e7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロール コンテナーは完全に ActiveX コントロールをサポートし、独自のウィンドウまたはダイアログに組み込むことができるコンテナーです。  ActiveX コントロールは、多くの開発プロジェクトで使用できる再利用可能なソフトウェア要素です。  コントロールは、アプリケーションのユーザーがデータベースにアクセスできるように、データを監視し、アプリケーション内のさまざまなオプションを選択します。  ActiveX コントロールの詳細については、記事 [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)を参照します。  
+---
+# <a name="activex-control-containers"></a>ActiveX Control Containers
+An ActiveX control container is a container that fully supports ActiveX controls and can incorporate them into its own windows or dialogs. An ActiveX control is a reusable software element that you can use in many development projects. Controls allow your application's user to access databases, monitor data, and make various selections within your applications. For more information on ActiveX controls, see the article [MFC ActiveX Controls](../mfc/mfc-activex-controls.md).  
   
- コントロール コンテナーは、通常、プロジェクトの 2 種類の形式になります。:  
+ Control containers typically take two forms in a project:  
   
--   ActiveX コントロールをダイアログ ボックスのどこかで使用されるフォーム ビューなど、ダイアログ、ダイアログ形式のウィンドウ。  
+-   Dialogs and dialog-like windows such as form views, where an ActiveX control is used somewhere in the dialog box.  
   
--   ActiveX コントロールがツール バーで使用したり、別の場所でユーザーの Windows アプリケーションのウィンドウ。  
+-   Windows in an application, where an ActiveX control is used in a toolbar, or other location in the user window.  
   
- ActiveX コントロール コンテナーは、公開された [メソッド](../mfc/mfc-activex-controls-methods.md) と [プロパティ](../mfc/mfc-activex-controls-properties.md)によってコントロールと対話します。  コントロール コンテナーによってアクセスおよび変更できるプロパティ ActiveX コントロール コンテナーのプロジェクトのラッパー クラスを使用して、これらのメソッドでアクセスされます。  埋め込まれたな ActiveX コントロールも発生 \(送信\) [イベント](../mfc/mfc-activex-controls-events.md) でコンテナーに操作が発生したことをコンテナーに通知するためにやり取りできます。  コントロール コンテナーはこれらの通知機能することも、または not できません。  
+ The ActiveX control container interacts with the control via exposed [methods](../mfc/mfc-activex-controls-methods.md) and [properties](../mfc/mfc-activex-controls-properties.md). These methods and properties, which can be accessed and modified by the control container, are accessed through a wrapper class in the ActiveX control container project. The embedded ActiveX control can also interact with the container by firing (sending) [events](../mfc/mfc-activex-controls-events.md) to notify the container that an action has occurred. The control container can choose to act upon these notifications or not.  
   
- 追加記事がビルドされた ActiveX コントロール コンテナーの基本実装の問題に Visual C\+\+ で ActiveX コントロール コンテナーのプロジェクトを作成することで、複数のトピックについて説明します。:  
+ Additional articles discuss several topics, from creating an ActiveX control container project to basic implementation issues related to ActiveX control containers built with Visual C++:  
   
--   [MFC ActiveX コントロール コンテナーの作成](../mfc/reference/creating-an-mfc-activex-control-container.md)  
+-   [Creating an MFC ActiveX Control Container](../mfc/reference/creating-an-mfc-activex-control-container.md)  
   
--   [ActiveX コントロールのコンテナー](../Topic/Containers%20for%20ActiveX%20Controls.md)  
+-   [Containers for ActiveX Controls](../mfc/containers-for-activex-controls.md)  
   
--   [ActiveX コントロール コンテナー: 手動で ActiveX コントロール コンテインメントを有効にできます。](../Topic/ActiveX%20Control%20Containers:%20Manually%20Enabling%20ActiveX%20Control%20Containment.md)  
+-   [ActiveX Control Containers: Manually Enabling ActiveX Control Containment](../mfc/activex-control-containers-manually-enabling-activex-control-containment.md)  
   
--   [ActiveX コントロール コンテナー: コントロール コンテナー アプリケーションにコントロールを挿入できます。](../mfc/inserting-a-control-into-a-control-container-application.md)  
+-   [ActiveX Control Containers: Inserting a Control into a Control Container Application](../mfc/inserting-a-control-into-a-control-container-application.md)  
   
--   [ActiveX コントロール コンテナー: メンバー変数に ActiveX コントロールを追加します。](../mfc/activex-control-containers-connecting-an-activex-control-to-a-member-variable.md)  
+-   [ActiveX Control Containers: Connecting an ActiveX Control to a Member Variable](../mfc/activex-control-containers-connecting-an-activex-control-to-a-member-variable.md)  
   
--   [ActiveX コントロール コンテナー: ActiveX コントロールからのイベント処理](../mfc/activex-control-containers-handling-events-from-an-activex-control.md)  
+-   [ActiveX Control Containers: Handling Events from an ActiveX control](../mfc/activex-control-containers-handling-events-from-an-activex-control.md)  
   
--   [ActiveX コントロール コンテナー: 表示の変更、コントロール プロパティ](../mfc/activex-control-containers-viewing-and-modifying-control-properties.md)  
+-   [ActiveX Control Containers: Viewing and Modifying Control Properties](../mfc/activex-control-containers-viewing-and-modifying-control-properties.md)  
   
--   [ActiveX コントロール コンテナー: ActiveX コントロール コンテナーでの ActiveX コントロールのプログラミング](../mfc/programming-activex-controls-in-a-activex-control-container.md)  
+-   [ActiveX Control Containers: Programming ActiveX Controls in an ActiveX Control Container](../mfc/programming-activex-controls-in-a-activex-control-container.md)  
   
--   [ActiveX コントロール コンテナー: 非ダイアログのコンテナー コントロールを使用する](../Topic/ActiveX%20Control%20Containers:%20Using%20Controls%20in%20a%20Non-Dialog%20Container.md)  
+-   [ActiveX Control Containers: Using Controls in a Non-Dialog Container](../mfc/activex-control-containers-using-controls-in-a-non-dialog-container.md)  
   
- ダイアログ ボックスに ActiveX コントロールを使用する方法の詳細については、[ダイアログ エディター](../mfc/dialog-editor.md) "を参照します。  
+ For more information about using ActiveX controls in a dialog box, see the [Dialog Editor](../windows/dialog-editor.md) topics.  
   
- Visual C\+\+ と MFC ActiveX コントロール クラスを使用して ActiveX コントロールを作成する方法の詳細を説明するトピックの一覧については、[MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)を参照してください。  ここでは、機能ごとにグループ化されます。  
+ For a list of articles that explain the details of developing ActiveX controls using Visual C++ and the MFC ActiveX control classes, see [MFC ActiveX controls](../mfc/mfc-activex-controls.md). The articles are grouped by functional categories.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

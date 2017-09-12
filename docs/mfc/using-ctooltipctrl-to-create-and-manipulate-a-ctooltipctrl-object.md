@@ -1,48 +1,67 @@
 ---
-title: "CToolTipCtrl を使用して CToolTipCtrl オブジェクトを作成および操作する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CToolTipCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolTipCtrl クラス, 使用"
-  - "ツール ヒント [C++], 作成"
+title: Using CToolTipCtrl to Create and Manipulate a CToolTipCtrl Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CToolTipCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- tool tips [MFC], creating
+- CToolTipCtrl class [MFC], using
 ms.assetid: 0a34583f-f66d-46a1-a239-31b80ea395ad
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# CToolTipCtrl を使用して CToolTipCtrl オブジェクトを作成および操作する方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cfc091afcfea3eae5cc877d0a1a177f4f7221ac3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CToolTipCtrl](../Topic/CToolTipCtrl%20Class.md) の使用例を次に示します。:  
+---
+# <a name="using-ctooltipctrl-to-create-and-manipulate-a-ctooltipctrl-object"></a>Using CToolTipCtrl to Create and Manipulate a CToolTipCtrl Object
+Here is an example of [CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md) usage:  
   
-### CToolTipCtrl を作成および処理します。  
+### <a name="to-create-and-manipulate-a-ctooltipctrl"></a>To create and manipulate a CToolTipCtrl  
   
-1.  `CToolTipCtrl` オブジェクトを構築します。  
+1.  Construct the `CToolTipCtrl` object.  
   
-2.  Windows のツール ヒントのコモン コントロールを作成し、`CToolTipCtrl` オブジェクトに接続するに [作成](../Topic/CToolTipCtrl::Create.md) を呼び出します。  
+2.  Call [Create](../mfc/reference/ctooltipctrl-class.md#create) to create the Windows tool tip common control and attach it to the `CToolTipCtrl` object.  
   
-3.  カーソルがツールには、ツール ヒントに格納されている情報が表示されるように、ツール ヒント コントロールを持つツールを登録するに [AddTool](../Topic/CToolTipCtrl::AddTool.md) を呼び出します。  
+3.  Call [AddTool](../mfc/reference/ctooltipctrl-class.md#addtool) to register a tool with the tool tip control, so that the information stored in the tool tip is displayed when the cursor is on the tool.  
   
-4.  ツール ヒントをツールを管理する情報を設定するには、[SetToolInfo](../Topic/CToolTipCtrl::SetToolInfo.md) を呼び出します。  
+4.  Call [SetToolInfo](../mfc/reference/ctooltipctrl-class.md#settoolinfo) to set the information that a tool tip maintains for a tool.  
   
-5.  ツールの外接する新しい四角形を設定するために [SetToolRect](../Topic/CToolTipCtrl::SetToolRect.md) を呼び出します。  
+5.  Call [SetToolRect](../mfc/reference/ctooltipctrl-class.md#settoolrect) to set a new bounding rectangle for a tool.  
   
-6.  ポイントを特定のツールの外接する四角形内にある呼び出し、そのとツールに関する情報を取得して、かどうかをテストするために [HitTest](../Topic/CToolTipCtrl::HitTest.md) を。  
+6.  Call [HitTest](../mfc/reference/ctooltipctrl-class.md#hittest) to test a point to determine whether it is within the bounding rectangle of the given tool and, if so, retrieve information about the tool.  
   
-7.  ツール ヒント コントロールに登録されているツールの数を取得するために [GetToolCount](../Topic/CToolTipCtrl::GetToolCount.md) を呼び出します。  
+7.  Call [GetToolCount](../mfc/reference/ctooltipctrl-class.md#gettoolcount) to retrieve a count of the tools registered with the tool tip control.  
   
-## 参照  
- [CToolTipCtrl の使い方](../mfc/using-ctooltipctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolTipCtrl](../mfc/using-ctooltipctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

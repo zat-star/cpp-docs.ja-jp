@@ -1,5 +1,5 @@
 ---
-title: "CMetaFileDC クラス |Microsoft ドキュメント"
+title: CMetaFileDC Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,9 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMetaFileDC class
-- Windows metafiles [C++]
-- metafiles, implementing
+- CMetaFileDC [MFC], CMetaFileDC
+- CMetaFileDC [MFC], Close
+- CMetaFileDC [MFC], CloseEnhanced
+- CMetaFileDC [MFC], Create
+- CMetaFileDC [MFC], CreateEnhanced
 ms.assetid: ffce60fa-4181-4d46-9832-25e46fad4db4
 caps.latest.revision: 23
 author: mikeblome
@@ -41,141 +43,141 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 4bff4d7601c4ffbc6fe5cbe73f5e057b79abf1e5
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 121824f832fdb134a289f292d59378a796864413
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmetafiledc-class"></a>CMetaFileDC クラス
-イメージやテキストを自由に作成するための一連のグラフィック デバイス インターフェイス (GDI) コマンドを含む Windows のメタファイルを実装します。  
+# <a name="cmetafiledc-class"></a>CMetaFileDC Class
+Implements a Windows metafile, which contains a sequence of graphics device interface (GDI) commands that you can replay to create a desired image or text.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMetaFileDC : public CDC  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMetaFileDC::CMetaFileDC](#cmetafiledc)|`CMetaFileDC` オブジェクトを構築します。|  
+|[CMetaFileDC::CMetaFileDC](#cmetafiledc)|Constructs a `CMetaFileDC` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMetaFileDC::Close](#close)|デバイス コンテキストを閉じ、メタファイル ハンドルを作成します。|  
-|[CMetaFileDC::CloseEnhanced](#closeenhanced)|拡張メタファイル デバイス コンテキストを終了し、拡張メタファイル ハンドルを作成します。|  
-|[CMetaFileDC::Create](#create)|Windows のメタファイル デバイス コンテキストを作成し、それにアタッチ、`CMetaFileDC`オブジェクトです。|  
-|[CMetaFileDC::CreateEnhanced](#createenhanced)|拡張形式メタファイルのメタファイル デバイス コンテキストを作成します。|  
+|[CMetaFileDC::Close](#close)|Closes the device context and creates a metafile handle.|  
+|[CMetaFileDC::CloseEnhanced](#closeenhanced)|Closes an enhanced-metafile device context and creates an enhanced-metafile handle.|  
+|[CMetaFileDC::Create](#create)|Creates the Windows metafile device context and attaches it to the `CMetaFileDC` object.|  
+|[CMetaFileDC::CreateEnhanced](#createenhanced)|Creates a metafile device context for an enhanced-format metafile.|  
   
-## <a name="remarks"></a>コメント  
- Windows のメタファイルを実装するには、最初に作成、`CMetaFileDC`オブジェクトです。 呼び出す、`CMetaFileDC`コンス トラクター、まず、[作成](#create)メンバー関数は、Windows のメタファイル デバイス コンテキストを作成し、それにアタッチ、`CMetaFileDC`オブジェクトです。  
+## <a name="remarks"></a>Remarks  
+ To implement a Windows metafile, first create a `CMetaFileDC` object. Invoke the `CMetaFileDC` constructor, then call the [Create](#create) member function, which creates a Windows metafile device context and attaches it to the `CMetaFileDC` object.  
   
- 次に、送信、`CMetaFileDC`オブジェクトのシーケンス`CDC`を再生するための対象となる GDI コマンドです。 出力を作成し GDI コマンドのみ`MoveTo`と`LineTo`、使用することができます。  
+ Next send the `CMetaFileDC` object the sequence of `CDC` GDI commands that you intend for it to replay. Only those GDI commands that create output, such as `MoveTo` and `LineTo`, can be used.  
   
- メタファイルに必要なコマンドを送信した後、**閉じる**がメタファイル デバイス コンテキストを閉じ、メタファイル ハンドルを返すメンバー関数。 破棄、`CMetaFileDC`オブジェクトです。  
+ After you have sent the desired commands to the metafile, call the **Close** member function, which closes the metafile device contexts and returns a metafile handle. Then dispose of the `CMetaFileDC` object.  
   
- [CDC::PlayMetaFile](../../mfc/reference/cdc-class.md#playmetafile)メタファイルを繰り返し再生するメタファイルのハンドルを使用し、ことができます。 メタファイルもによって操作できる Windows 関数など、 [CopyMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183480)メタファイルをディスクにコピーします。  
+ [CDC::PlayMetaFile](../../mfc/reference/cdc-class.md#playmetafile) can then use the metafile handle to play the metafile repeatedly. The metafile can also be manipulated by Windows functions such as [CopyMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183480), which copies a metafile to disk.  
   
- メタファイルを不要になったときにメモリから削除、 [DeleteMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183537) Windows の機能です。  
+ When the metafile is no longer needed, delete it from memory with the [DeleteMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183537) Windows function.  
   
- 実装することも、`CMetaFileDC`オブジェクトを処理できるようにの両方の呼び出しの出力し、GDI の呼び出しをなど属性`GetTextExtent`します。 このようなメタファイルはより柔軟しより簡単に再利用できます全般 GDI コードでは、多くの場合、さまざまな出力と属性の呼び出しで構成されます。 `CMetaFileDC`クラスは&2; つのデバイス コンテキストを継承`m_hDC`と`m_hAttribDC`から`CDC`します。 `m_hDC`デバイス コンテキストでは、すべてを処理[CDC](../../mfc/reference/cdc-class.md) GDI の呼び出しを出力して、`m_hAttribDC`デバイス コンテキストでは、すべてを処理`CDC`GDI 属性では。 通常、これらの&2; つのデバイス コンテキストでは、同じデバイスを参照してください。 場合に`CMetaFileDC`、DC の属性に設定されて**NULL**既定です。  
+ You can also implement the `CMetaFileDC` object so that it can handle both output calls and attribute GDI calls such as `GetTextExtent`. Such a metafile is more flexible and can more easily reuse general GDI code, which often consists of a mix of output and attribute calls. The `CMetaFileDC` class inherits two device contexts, `m_hDC` and `m_hAttribDC`, from `CDC`. The `m_hDC` device context handles all [CDC](../../mfc/reference/cdc-class.md) GDI output calls and the `m_hAttribDC` device context handles all `CDC` GDI attribute calls. Normally, these two device contexts refer to the same device. In the case of `CMetaFileDC`, the attribute DC is set to **NULL** by default.  
   
- 画面、プリンター、または、メタファイル以外のデバイスをポイントしを呼び出す&2; つ目のデバイス コンテキストを作成、`SetAttribDC`メンバー関数を使用して新しいデバイス コンテキストを結び付けるため`m_hAttribDC`です。 詳細については、GDI の呼び出しは、新規作成 をリダイレクトよう`m_hAttribDC`します。 出力 GDI 呼び出しを使用する代替`m_hDC`メタファイルを表します。  
+ Create a second device context that points to the screen, a printer, or device other than a metafile, then call the `SetAttribDC` member function to associate the new device context with `m_hAttribDC`. GDI calls for information will now be directed to the new `m_hAttribDC`. Output GDI calls will go to `m_hDC`, which represents the metafile.  
   
- 詳細については`CMetaFileDC`を参照してください[デバイス コンテキスト](../../mfc/device-contexts.md)します。  
+ For more information on `CMetaFileDC`, see [Device Contexts](../../mfc/device-contexts.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CDC](../../mfc/reference/cdc-class.md)  
   
  `CMetaFileDC`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxext.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxext.h  
   
-##  <a name="close"></a>CMetaFileDC::Close  
- メタファイル デバイス コンテキストを閉じを使用してメタファイルを再生するために使用する Windows のメタファイル ハンドルを作成、 [CDC::PlayMetaFile](../../mfc/reference/cdc-class.md#playmetafile)メンバー関数。  
+##  <a name="close"></a>  CMetaFileDC::Close  
+ Closes the metafile device context and creates a Windows metafile handle that can be used to play the metafile by using the [CDC::PlayMetaFile](../../mfc/reference/cdc-class.md#playmetafile) member function.  
   
 ```  
 HMETAFILE Close();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 有効な**終了した**関数が成功した場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A valid **HMETAFILE** if the function is successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- Windows のメタファイル ハンドルこともできますなどの Windows の関数でのメタファイルを操作する[CopyMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183480)します。  
+### <a name="remarks"></a>Remarks  
+ The Windows metafile handle can also be used to manipulate the metafile with Windows functions such as [CopyMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183480).  
   
- 使用後に、Windows を呼び出すことにより、メタファイルを削除[DeleteMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183537)関数です。  
+ Delete the metafile after use by calling the Windows [DeleteMetaFile](http://msdn.microsoft.com/library/windows/desktop/dd183537) function.  
   
-##  <a name="closeenhanced"></a>CMetaFileDC::CloseEnhanced  
- 拡張メタファイル デバイス コンテキストを終了し、拡張形式メタファイルを識別するハンドルを返します。  
+##  <a name="closeenhanced"></a>  CMetaFileDC::CloseEnhanced  
+ Closes an enhanced-metafile device context and returns a handle that identifies an enhanced-format metafile.  
   
 ```  
 HENHMETAFILE CloseEnhanced();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は、拡張メタファイルのハンドルそれ以外の場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A handle of an enhanced metafile, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションは、この関数によって返される拡張メタファイルのハンドルを使用して、次のタスクを実行できます。  
+### <a name="remarks"></a>Remarks  
+ An application can use the enhanced-metafile handle returned by this function to perform the following tasks:  
   
--   拡張メタファイルに格納されている画像を表示します。  
+-   Display a picture stored in an enhanced metafile  
   
--   拡張メタファイルのコピーを作成します。  
+-   Create copies of the enhanced metafile  
   
--   列挙、編集、または拡張メタファイル内の個々 のレコードのコピー  
+-   Enumerate, edit, or copy individual records in the enhanced metafile  
   
--   拡張メタファイルのヘッダーからメタファイルの内容の説明 (オプション) を取得します。  
+-   Retrieve an optional description of the metafile contents from the enhanced-metafile header  
   
--   拡張メタファイルのヘッダーのコピーを取得します。  
+-   Retrieve a copy of the enhanced-metafile header  
   
--   拡張メタファイルのバイナリのコピーを取得します。  
+-   Retrieve a binary copy of the enhanced metafile  
   
--   オプションのパレットで色を列挙します。  
+-   Enumerate the colors in the optional palette  
   
--   拡張形式メタファイルを Windows 形式メタファイルに変換します。  
+-   Convert an enhanced-format metafile into a Windows-format metafile  
   
- Win32 を呼び出すことによって、ハンドルを解除する必要があるアプリケーションで拡張メタファイルのハンドルが不要になった場合は、 **DeleteEnhMetaFile**関数です。  
+ When the application no longer needs the enhanced metafile handle, it should release the handle by calling the Win32 **DeleteEnhMetaFile** function.  
   
-##  <a name="cmetafiledc"></a>CMetaFileDC::CMetaFileDC  
- 構築、 `CMetaFileDC`&2; つのステップ内のオブジェクト。  
+##  <a name="cmetafiledc"></a>  CMetaFileDC::CMetaFileDC  
+ Construct a `CMetaFileDC` object in two steps.  
   
 ```  
 CMetaFileDC();
 ```  
   
-### <a name="remarks"></a>コメント  
- 最初に、呼び出す`CMetaFileDC`、物書き**作成**、Windows のメタファイル デバイス コンテキストを作成およびそれにアタッチする、`CMetaFileDC`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ First, call `CMetaFileDC`, then call **Create**, which creates the Windows metafile device context and attaches it to the `CMetaFileDC` object.  
   
-##  <a name="create"></a>CMetaFileDC::Create  
- 構築、 `CMetaFileDC`&2; つのステップ内のオブジェクト。  
+##  <a name="create"></a>  CMetaFileDC::Create  
+ Construct a `CMetaFileDC` object in two steps.  
   
 ```  
 BOOL Create(LPCTSTR lpszFilename = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *場合*  
- Null で終わる文字列へのポインター。 作成するメタファイルのファイル名を指定します。 場合*場合*は**NULL**、新しいメモリ内のメタファイルを作成します。  
+### <a name="parameters"></a>Parameters  
+ *lpszFilename*  
+ Points to a null-terminated character string. Specifies the filename of the metafile to create. If *lpszFilename* is **NULL**, a new in-memory metafile is created.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 最初に、コンス トラクターを呼び出す`CMetaFileDC`、物書き**作成**、Windows のメタファイル デバイス コンテキストを作成およびそれにアタッチする、`CMetaFileDC`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ First, call the constructor `CMetaFileDC`, then call **Create**, which creates the Windows metafile device context and attaches it to the `CMetaFileDC` object.  
   
-##  <a name="createenhanced"></a>CMetaFileDC::CreateEnhanced  
- 拡張形式メタファイルのデバイス コンテキストを作成します。  
+##  <a name="createenhanced"></a>  CMetaFileDC::CreateEnhanced  
+ Creates a device context for an enhanced-format metafile.  
   
 ```  
 BOOL CreateEnhanced(
@@ -185,42 +187,42 @@ BOOL CreateEnhanced(
     LPCTSTR lpszDescription);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDCRef`  
- 拡張メタファイルの参照のデバイスを識別します。  
+ Identifies a reference device for the enhanced metafile.  
   
  `lpszFileName`  
- Null で終わる文字列へのポインター。 作成する拡張メタファイルのファイル名を指定します。 このパラメーターがある場合**NULL**、拡張メタファイル メモリ ベースとその内容をオブジェクトが破棄されるとき、または失われるは、Win32 **DeleteEnhMetaFile**関数が呼び出されます。  
+ Points to a null-terminated character string. Specifies the filename for the enhanced metafile to be created. If this parameter is **NULL**, the enhanced metafile is memory based and its contents lost when the object is destroyed or when the Win32 **DeleteEnhMetaFile** function is called.  
   
  `lpBounds`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)データ構造体、または[CRect](../../atl-mfc-shared/reference/crect-class.md)内のディメンションを指定するオブジェクト**HIMETRIC**拡張メタファイルに格納されている画像の (.01 ミリメートル単位) の単位です。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) data structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object that specifies the dimensions in **HIMETRIC** units (in .01-millimeter increments) of the picture to be stored in the enhanced metafile.  
   
  `lpszDescription`  
- 画像と画像のタイトルを作成したアプリケーションの名前を指定する&0; で終わる文字列へのポインター。  
+ Points to a zero-terminated string that specifies the name of the application that created the picture, as well as the picture's title.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は、拡張メタファイルのデバイス コンテキストのハンドルそれ以外の場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A handle of the device context for the enhanced metafile, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このドメイン コント ローラーは、デバイスに依存しない画像を格納できます。  
+### <a name="remarks"></a>Remarks  
+ This DC can be used to store a device-independent picture.  
   
- Windows で識別される参照デバイスを使用して、`pDCRef`解像度や、デバイスを画像表示されていた元の単位を記録するパラメーターです。 場合、`pDCRef`パラメーターは**NULL**、基準として現在のディスプレイ デバイスを使用します。  
+ Windows uses the reference device identified by the `pDCRef` parameter to record the resolution and units of the device on which a picture originally appeared. If the `pDCRef` parameter is **NULL**, it uses the current display device for reference.  
   
- 左と上のメンバー、`RECT`がデータ構造が指す、`lpBounds`パラメーターより小さくなければなりません右側と下部にあるメンバーをそれぞれします。 図では、四角形の端点が含まれています。 場合`lpBounds`は**NULL**、グラフィック デバイス インターフェイス (GDI) は、アプリケーションによって描画される画像を囲む最小の四角形の寸法を計算します。 `lpBounds`可能であれば、パラメーターを指定する必要があります。  
+ The left and top members of the `RECT` data structure pointed to by the `lpBounds` parameter must be smaller than the right and bottom members, respectively. Points along the edges of the rectangle are included in the picture. If `lpBounds` is **NULL**, the graphics device interface (GDI) computes the dimensions of the smallest rectangle that can enclose the picture drawn by the application. The `lpBounds` parameter should be supplied where possible.  
   
- 指す文字列、`lpszDescription`パラメーターはアプリケーションの名前と画像の名前の間での null 文字を含める必要があり、2 つの null 文字で終了する必要があります: たとえば、"XYZ グラフィックス Editor\0Bald Eagle\0\0、"\0 が null 文字を表します。 場合`lpszDescription`は**NULL**、拡張メタファイルのヘッダーに対応するエントリはありません。  
+ The string pointed to by the `lpszDescription` parameter must contain a null character between the application name and the picture name and must terminate with two null characters —for example, "XYZ Graphics Editor\0Bald Eagle\0\0," where \0 represents the null character. If `lpszDescription` is **NULL**, there is no corresponding entry in the enhanced-metafile header.  
   
- アプリケーションでは、この関数によって作成されたドメイン コント ローラーを使用して拡張メタファイルにグラフィック画像を保存します。 このドメイン コント ローラーを識別するハンドルは、任意の GDI 関数に渡すことができます。  
+ Applications use the DC created by this function to store a graphics picture in an enhanced metafile. The handle identifying this DC can be passed to any GDI function.  
   
- アプリケーションは、拡張メタファイルに画像を保存した後、画像を表示できる任意の出力デバイスに呼び出すことによって、`CDC::PlayMetaFile`関数です。 Windows が指す長方形を使用して、画像を表示するときに、`lpBounds`パラメーターと位置し、スケール、図を参照するデバイスからの解像度のデータです。 この関数によって返されるデバイス コンテキストには、任意の新しい DC に関連付けられている同じ既定の属性が含まれています。  
+ After an application stores a picture in an enhanced metafile, it can display the picture on any output device by calling the `CDC::PlayMetaFile` function. When displaying the picture, Windows uses the rectangle pointed to by the `lpBounds` parameter and the resolution data from the reference device to position and scale the picture. The device context returned by this function contains the same default attributes associated with any new DC.  
   
- アプリケーションは、Win32 を使用する必要があります**GetWinMetaFileBits**拡張メタファイルを以前の Windows のメタファイル形式に変換する関数。  
+ Applications must use the Win32 **GetWinMetaFileBits** function to convert an enhanced metafile to the older Windows metafile format.  
   
- 拡張メタファイルのファイル名を使用する必要があります、します。EMF 拡張子です。  
+ The filename for the enhanced metafile should use the .EMF extension.  
   
-## <a name="see-also"></a>関連項目  
- [CDC クラス](../../mfc/reference/cdc-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CDC Class](../../mfc/reference/cdc-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

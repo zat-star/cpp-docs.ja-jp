@@ -1,60 +1,79 @@
 ---
-title: "コントロールの描画の最適化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, 最適化"
+title: Optimizing Control Drawing | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], optimizing
 ms.assetid: 29ff985d-9bf5-4678-b62d-aad12def75fb
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コントロールの描画の最適化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c7fe06fb28ec2274c5350aa372a1fbad0b33c269
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コンテナーが指定されたデバイス コンテキストに描画するようにコントロールに指示するとデバイス コンテキストには、GDI オブジェクト \(ペン、ブラシやフォントなど\) を選択し、描画操作の実行、および前の GDI オブジェクトを復元します。  コンテナーが描画に複数のコントロールを同じデバイス コンテキストが発生した場合は、各コントロールに必要な GDI オブジェクトを選択すると、時間をコントロールが、選択したオブジェクトを復元して保存できます。  すべてのコントロールは、描画、コンテナーは自動的に、元のオブジェクトを復元できます。  
+---
+# <a name="optimizing-control-drawing"></a>Optimizing Control Drawing
+When a control is instructed to draw itself into a container-supplied device context, it typically selects GDI objects (such as pens, brushes, and fonts) into the device context, performs its drawing operations, and restores the previous GDI objects. If the container has multiple controls that are to be drawn into the same device context, and each control selects the GDI objects it requires, time can be saved if the controls do not individually restore previously selected objects. After all the controls have been drawn, the container can automatically restore the original objects.  
   
- コンテナー サポートが、この方法は、コントロール [COleControl::IsOptimizedDraw](../Topic/COleControl::IsOptimizedDraw.md) のメンバー関数を呼び出すことができるかどうかを確認する。  この関数の戻り値 **TRUE**コントロールが、選択したオブジェクトを復元することで既定の手順を省略できます。  
+ To detect whether a container supports this technique, a control can call the [COleControl::IsOptimizedDraw](../mfc/reference/colecontrol-class.md#isoptimizeddraw) member function. If this function returns **TRUE**, the control can skip the normal step of restoring the previously selected objects.  
   
- `OnDraw` の次の \(特に\) 関数があるコントロールを検討する:  
+ Consider a control that has the following (unoptimized) `OnDraw` function:  
   
- [!code-cpp[NVC_MFC_AxOpt#15](../mfc/codesnippet/CPP/optimizing-control-drawing_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#15](../mfc/codesnippet/cpp/optimizing-control-drawing_1.cpp)]  
   
- この例のペンとブラシを意味するローカル変数 \(`OnDraw` 関数が終了すると、スコープの外に出たときにデストラクターを呼び出すことができます。  デストラクターは、対応する GDI オブジェクトを削除します。  ただし、これらを使用 `OnDraw`から戻るときにデバイス コンテキストに選択する場合は削除しないでください。  
+ The pen and brush in this example are local variables, meaning their destructors will be called when they go out of scope (when the `OnDraw` function ends). The destructors will attempt to delete the corresponding GDI objects. But they should not be deleted if you plan to leave them selected into the device context upon returning from `OnDraw`.  
   
- `OnDraw` が終了したら [CPen](../Topic/CPen%20Class.md) と [CBrush](../mfc/reference/cbrush-class.md) オブジェクトを格納し、ローカル変数ではなく、メンバー変数で破棄されるのを防ぐには、  コントロールのクラス宣言では、2 種類の新しいメンバー変数の宣言を追加する:  
+ To prevent the [CPen](../mfc/reference/cpen-class.md) and [CBrush](../mfc/reference/cbrush-class.md) objects from being destroyed when `OnDraw` finishes, store them in member variables instead of local variables. In the control's class declaration, add declarations for two new member variables:  
   
- [!code-cpp[NVC_MFC_AxOpt#16](../mfc/codesnippet/CPP/optimizing-control-drawing_2.h)]  
-[!code-cpp[NVC_MFC_AxOpt#17](../mfc/codesnippet/CPP/optimizing-control-drawing_3.h)]  
+ [!code-cpp[NVC_MFC_AxOpt#16](../mfc/codesnippet/cpp/optimizing-control-drawing_2.h)]  
+[!code-cpp[NVC_MFC_AxOpt#17](../mfc/codesnippet/cpp/optimizing-control-drawing_3.h)]  
   
- 次に、`OnDraw` 関数は次のように書き換えることができます。:  
+ Then, the `OnDraw` function can be rewritten as follows:  
   
- [!code-cpp[NVC_MFC_AxOpt#18](../mfc/codesnippet/CPP/optimizing-control-drawing_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#18](../mfc/codesnippet/cpp/optimizing-control-drawing_4.cpp)]  
   
- この方法は `OnDraw` が呼び出されたときにペンとブラシの作成を回避できます。  速度が向上は追加インスタンス データを保持する損なわれます。  
+ This approach avoids creation of the pen and brush every time `OnDraw` is called. The speed improvement comes at the cost of maintaining additional instance data.  
   
- 前景色または BackColor プロパティの変更、ペンまたはブラシを再作成する必要がある場合。  これを行うには、[OnForeColorChanged](../Topic/COleControl::OnForeColorChanged.md) と [OnBackColorChanged](../Topic/COleControl::OnBackColorChanged.md) のメンバー関数をオーバーライドする:  
+ If the ForeColor or BackColor property changes, the pen or brush needs to be created again. To do this, override the [OnForeColorChanged](../mfc/reference/colecontrol-class.md#onforecolorchanged) and [OnBackColorChanged](../mfc/reference/colecontrol-class.md#onbackcolorchanged) member functions:  
   
- [!code-cpp[NVC_MFC_AxOpt#19](../mfc/codesnippet/CPP/optimizing-control-drawing_5.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#19](../mfc/codesnippet/cpp/optimizing-control-drawing_5.cpp)]  
   
- 次のように、最後に `SelectObject` の不要な呼び出しを削除するには、`OnDraw` を変更する:  
+ Finally, to eliminate unnecessary `SelectObject` calls, modify `OnDraw` as follows:  
   
- [!code-cpp[NVC_MFC_AxOpt#20](../mfc/codesnippet/CPP/optimizing-control-drawing_6.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#20](../mfc/codesnippet/cpp/optimizing-control-drawing_6.cpp)]  
   
-## 参照  
- [MFC ActiveX コントロール : 最適化](../mfc/mfc-activex-controls-optimization.md)   
- [COleControl クラス](../mfc/reference/colecontrol-class.md)   
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール ウィザード](../mfc/reference/mfc-activex-control-wizard.md)   
- [MFC ActiveX コントロール : ActiveX コントロールの描画](../mfc/mfc-activex-controls-painting-an-activex-control.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls: Optimization](../mfc/mfc-activex-controls-optimization.md)   
+ [COleControl Class](../mfc/reference/colecontrol-class.md)   
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Control Wizard](../mfc/reference/mfc-activex-control-wizard.md)   
+ [MFC ActiveX Controls: Painting an ActiveX Control](../mfc/mfc-activex-controls-painting-an-activex-control.md)
+
+

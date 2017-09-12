@@ -1,45 +1,64 @@
 ---
-title: "クリップボード : クリップボード機構を使用するタイミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], クリップボードのトピック"
-  - "クリップボード [C++], 書式"
-  - "クリップボード [C++], 機構"
-  - "書式 [C++], クリップボード (OLE の)"
-  - "OLE クリップボード, 書式"
-  - "OLE クリップボード, ガイドライン"
+title: 'Clipboard: When to Use Each Clipboard Mechanism | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- applications [OLE], Clipboard
+- OLE Clipboard, guidelines
+- Clipboard [MFC], mechanisms
+- OLE Clipboard, formats
+- formats [MFC], Clipboard for OLE
+- Clipboard [MFC], formats
 ms.assetid: fd071996-ef8c-488b-81bd-89057095a201
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# クリップボード : クリップボード機構を使用するタイミング
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: af3b8582086255077892ee3c243bccde7b1130be
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クリップボードの次のガイドラインに従ってください。:  
+---
+# <a name="clipboard-when-to-use-each-clipboard-mechanism"></a>Clipboard: When to Use Each Clipboard Mechanism
+Follow these guidelines in using the Clipboard:  
   
--   新機能は、今後使用するために OLE クリップボード機能を利用します。  標準クリップボード API が保持されますが、OLE 機能は、データ転送の将来です。  
+-   Use the OLE Clipboard mechanism now to enable new capabilities in the future. While the standard Clipboard API will be maintained, the OLE mechanism is the future of data transfer.  
   
--   OLE アプリケーションを記述またはの OLE 機能するには、ドラッグ アンド ドロップなどの OLE クリップボード機能を使用します。  
+-   Use the OLE Clipboard mechanism if you are writing an OLE application or you want any of the OLE features, such as drag and drop.  
   
--   OLE の形式を指定する OLE クリップボード機能を使用します。  
+-   Use the OLE Clipboard mechanism if you are providing OLE formats.  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>What do you want to do  
   
--   [OLE クリップボード機能を使用します。](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)  
+-   [Use the OLE Clipboard mechanism](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)  
   
--   [Windows のクリップボード機能を使用します。](../mfc/clipboard-using-the-windows-clipboard.md)  
+-   [Use the Windows Clipboard mechanism](../mfc/clipboard-using-the-windows-clipboard.md)  
   
-## 参照  
- [クリップボードのトピック](../mfc/clipboard.md)
+## <a name="see-also"></a>See Also  
+ [Clipboard](../mfc/clipboard.md)
+
+

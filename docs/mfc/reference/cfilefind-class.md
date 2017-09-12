@@ -1,5 +1,5 @@
 ---
-title: "CFileFind クラス |Microsoft ドキュメント"
+title: CFileFind Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -39,12 +39,31 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- files [C++], finding
-- Internet files [C++], finding
-- CFileFind class
-- URLs [C++], searching for
-- local files
-- local files, searching for
+- CFileFind [MFC], CFileFind
+- CFileFind [MFC], Close
+- CFileFind [MFC], FindFile
+- CFileFind [MFC], FindNextFile
+- CFileFind [MFC], GetCreationTime
+- CFileFind [MFC], GetFileName
+- CFileFind [MFC], GetFilePath
+- CFileFind [MFC], GetFileTitle
+- CFileFind [MFC], GetFileURL
+- CFileFind [MFC], GetLastAccessTime
+- CFileFind [MFC], GetLastWriteTime
+- CFileFind [MFC], GetLength
+- CFileFind [MFC], GetRoot
+- CFileFind [MFC], IsArchived
+- CFileFind [MFC], IsCompressed
+- CFileFind [MFC], IsDirectory
+- CFileFind [MFC], IsDots
+- CFileFind [MFC], IsHidden
+- CFileFind [MFC], IsNormal
+- CFileFind [MFC], IsReadOnly
+- CFileFind [MFC], IsSystem
+- CFileFind [MFC], IsTemporary
+- CFileFind [MFC], MatchesMask
+- CFileFind [MFC], CloseContext
+- CFileFind [MFC], m_pTM
 ms.assetid: 9990068c-b023-4114-9580-a50182d15240
 caps.latest.revision: 22
 author: mikeblome
@@ -64,132 +83,132 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: d7e6500dfc0ff24f35dd021a54080eb7ba7f1655
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 278488f2049642b95ee48ae399fe00377b5a6272
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfilefind-class"></a>CFileFind クラス
-ローカル ファイルの検索を実行し、基本クラスは、[関数](../../mfc/reference/cgopherfilefind-class.md)と[関数](../../mfc/reference/cftpfilefind-class.md)、インターネット ファイル検索を実行します。  
+# <a name="cfilefind-class"></a>CFileFind Class
+Performs local file searches and is the base class for [CGopherFileFind](../../mfc/reference/cgopherfilefind-class.md) and [CFtpFileFind](../../mfc/reference/cftpfilefind-class.md), which perform Internet file searches.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFileFind : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileFind::CFileFind](#cfilefind)|`CFileFind` オブジェクトを構築します。|  
+|[CFileFind::CFileFind](#cfilefind)|Constructs a `CFileFind` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileFind::Close](#close)|検索要求を終了します。|  
-|[CFileFind::FindFile](#findfile)|指定したファイル名用のディレクトリを検索します。|  
-|[呼び出しておく](#findnextfile)|以前の呼び出しからファイル検索を続行[FindFile](#findfile)します。|  
-|[CFileFind::GetCreationTime](#getcreationtime)|ファイルが作成された日時を取得します。|  
-|[CFileFind::GetFileName](#getfilename)|検索したファイルの拡張子を含む名前を取得します。|  
-|[CFileFind::GetFilePath](#getfilepath)|検索したファイルの完全パスを取得します。|  
-|[CFileFind::GetFileTitle](#getfiletitle)|検索したファイルのタイトルを取得します。 タイトルでは、拡張機能は含まれません。|  
-|[CFileFind::GetFileURL](#getfileurl)|検索したファイルのファイル パスを含む URL を取得します。|  
-|[CFileFind::GetLastAccessTime](#getlastaccesstime)|ファイルの最終アクセス時刻を取得します。|  
-|[CFileFind::GetLastWriteTime](#getlastwritetime)|ファイルが最後に変更および保存時間を取得します。|  
-|[CFileFind::GetLength](#getlength)|(バイト単位) を検索したファイルの長さを取得します。|  
-|[CFileFind::GetRoot](#getroot)|検索したファイルのルート ディレクトリを取得します。|  
-|[CFileFind::IsArchived](#isarchived)|検索したファイルがアーカイブになっているかどうかを判断します。|  
-|[CFileFind::IsCompressed](#iscompressed)|検索したファイルが圧縮されているかを決定します。|  
-|[CFileFind::IsDirectory](#isdirectory)|検索したファイルがディレクトリであるかどうかを判断します。|  
-|[CFileFind::IsDots](#isdots)|かどうかを検索したファイルの名前、名前"です。"または".."、実際にはディレクトリであることを示します。|  
-|[CFileFind::IsHidden](#ishidden)|検索したファイルが非表示を決定します。|  
-|[CFileFind::IsNormal](#isnormal)|検索したファイルが正常かどうかを (つまり、属性を持っていないその他の)。|  
-|[CFileFind::IsReadOnly](#isreadonly)|検索したファイルが読み取り専用かどうかをします。|  
-|[CFileFind::IsSystem](#issystem)|検索したファイルがシステム ファイルであるかどうかを判断します。|  
-|[CFileFind::IsTemporary](#istemporary)|検索したファイルが一時的なかどうかを判断します。|  
-|[CFileFind::MatchesMask](#matchesmask)|検索するファイルの目的のファイル属性を示します。|  
+|[CFileFind::Close](#close)|Closes the search request.|  
+|[CFileFind::FindFile](#findfile)|Searches a directory for a specified file name.|  
+|[CFileFind::FindNextFile](#findnextfile)|Continues a file search from a previous call to [FindFile](#findfile).|  
+|[CFileFind::GetCreationTime](#getcreationtime)|Gets the time the file was created.|  
+|[CFileFind::GetFileName](#getfilename)|Gets the name, including the extension, of the found file|  
+|[CFileFind::GetFilePath](#getfilepath)|Gets the whole path of the found file.|  
+|[CFileFind::GetFileTitle](#getfiletitle)|Gets the title of the found file. The title does not include the extension.|  
+|[CFileFind::GetFileURL](#getfileurl)|Gets the URL, including the file path, of the found file.|  
+|[CFileFind::GetLastAccessTime](#getlastaccesstime)|Gets the time that the file was last accessed.|  
+|[CFileFind::GetLastWriteTime](#getlastwritetime)|Gets the time the file was last changed and saved.|  
+|[CFileFind::GetLength](#getlength)|Gets the length of the found file, in bytes.|  
+|[CFileFind::GetRoot](#getroot)|Gets the root directory of the found file.|  
+|[CFileFind::IsArchived](#isarchived)|Determines if the found file is archived.|  
+|[CFileFind::IsCompressed](#iscompressed)|Determines if the found file is compressed.|  
+|[CFileFind::IsDirectory](#isdirectory)|Determines if the found file is a directory.|  
+|[CFileFind::IsDots](#isdots)|Determines if the name of the found file has the name "." or "..", indicating that is actually a directory.|  
+|[CFileFind::IsHidden](#ishidden)|Determines if the found file is hidden.|  
+|[CFileFind::IsNormal](#isnormal)|Determines if the found file is normal (in other words, has no other attributes).|  
+|[CFileFind::IsReadOnly](#isreadonly)|Determines if the found file is read-only.|  
+|[CFileFind::IsSystem](#issystem)|Determines if the found file is a system file.|  
+|[CFileFind::IsTemporary](#istemporary)|Determines if the found file is temporary.|  
+|[CFileFind::MatchesMask](#matchesmask)|Indicates the desired file attributes of the file to be found.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileFind::CloseContext](#closecontext)|現在の検索ハンドルで指定されたファイルを閉じます。|  
+|[CFileFind::CloseContext](#closecontext)|Closes the file specified by the current search handle.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileFind::m_pTM](#m_ptm)|ポインター、`CAtlTransactionManager`オブジェクトです。|  
+|[CFileFind::m_pTM](#m_ptm)|Pointer to a `CAtlTransactionManager` object.|  
   
-## <a name="remarks"></a>コメント  
- `CFileFind`検索を開始し、ファイルを検索し、タイトル、名前、またはファイルのパスを返すメンバー関数が含まれます。 インターネット検索では、メンバー関数は、 [GetFileURL](#getfileurl)ファイルの URL を返します。  
+## <a name="remarks"></a>Remarks  
+ `CFileFind` includes member functions that begin a search, locate a file, and return the title, name, or path of the file. For Internet searches, the member function [GetFileURL](#getfileurl) returns the file's URL.  
   
- `CFileFind`他の&2; つの MFC クラスの基本クラスは、特定のサーバーの種類を検索するように設計: `CGopherFileFind` gopher サーバー固有の動作と`CFtpFileFind`具体的には FTP サーバーで動作します。 同時に、これら&3; つのクラスは、ローカル コンピューターまたはリモート サーバーのいずれかのサーバー プロトコル、ファイルの種類や場所に関係なくのファイルを検索するクライアントのシームレスなメカニズムを提供します。  
+ `CFileFind` is the base class for two other MFC classes designed to search particular server types: `CGopherFileFind` works specifically with gopher servers, and `CFtpFileFind` works specifically with FTP servers. Together, these three classes provide a seamless mechanism for the client to find files, regardless of the server protocol, the file type, or location, on either a local machine or a remote server.  
   
- 次のコードでは、各ファイルの名前を出力して、現在のディレクトリ内のすべてのファイルを列挙します。  
+ The following code will enumerate all the files in the current directory, printing the name of each file:  
   
- [!code-cpp[NVC_MFCFiles #&31;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_1.cpp)]  
+ [!code-cpp[NVC_MFCFiles#31](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_1.cpp)]  
   
- このコード例をシンプルにするには、C++ 標準ライブラリを使用して`cout`クラスです。 `cout`への呼び出しに行を置き換えることが`CListBox::AddString`、たとえば、グラフィカル ユーザー インターフェイスを備えたプログラムにします。  
+ To keep the example simple, this code uses the C++ Standard Library `cout` class. The `cout` line could be replaced with a call to `CListBox::AddString`, for example, in a program with a graphical user interface.  
   
- 使用する方法の詳細についての`CFileFind`し、その他の WinInet クラスは、記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)します。  
+ For more information about how to use `CFileFind` and the other WinInet classes, see the article [Internet Programming with WinInet](../../mfc/win32-internet-extensions-wininet.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CFileFind`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="cfilefind"></a>CFileFind::CFileFind  
- このメンバー関数が呼び出されます、`CFileFind`オブジェクトを構築します。  
+##  <a name="cfilefind"></a>  CFileFind::CFileFind  
+ This member function is called when a `CFileFind` object is constructed.  
   
 ```  
 CFileFind();  
 CFileFind(CAtlTransactionManager* pTM);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTM`  
- CAtlTransactionManager オブジェクトへのポインター。  
+ Pointer to CAtlTransactionManager object  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="close"></a>CFileFind::Close  
- このメンバー関数を呼び出して検索を終了し、コンテキストをリセットし、すべてのリソースを解放します。  
+##  <a name="close"></a>  CFileFind::Close  
+ Call this member function to end the search, reset the context, and release all resources.  
   
 ```  
 void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後**閉じる**、新しいを作成する必要はありません`CFileFind`呼び出す前にインスタンス[FindFile](#findfile)新しい検索を開始します。  
+### <a name="remarks"></a>Remarks  
+ After calling **Close**, you do not have to create a new `CFileFind` instance before calling [FindFile](#findfile) to begin a new search.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="closecontext"></a>CFileFind::CloseContext  
- 現在の検索ハンドルで指定されたファイルを閉じます。  
+##  <a name="closecontext"></a>  CFileFind::CloseContext  
+ Closes the file specified by the current search handle.  
   
 ```  
 virtual void CloseContext();
 ```  
   
-### <a name="remarks"></a>コメント  
- 検索ハンドルの現在の値で指定されたファイルを閉じます。 既定の動作を変更するには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Closes the file specified by the current value of the search handle. Override this function to change the default behavior.  
   
- 呼び出す必要があります、 [FindFile](#findfile)または[FindNextFile](#findnextfile)関数を&1; 回以上する有効な検索ハンドルを取得します。 **FindFile**と`FindNextFile`関数では、検索のハンドルを使用して、指定した名前に一致する名前を持つファイルを検索します。  
+ You must call the [FindFile](#findfile) or [FindNextFile](#findnextfile) functions at least once to retrieve a valid search handle. The **FindFile** and `FindNextFile` functions use the search handle to locate files with names that match a given name.  
   
-##  <a name="findfile"></a>CFileFind::FindFile  
- ファイル検索を開始するには、このメンバー関数を呼び出します。  
+##  <a name="findfile"></a>  CFileFind::FindFile  
+ Call this member function to open a file search.  
   
 ```  
 virtual BOOL FindFile(
@@ -197,18 +216,18 @@ virtual BOOL FindFile(
     DWORD dwUnused = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrName`  
- 検索するファイルの名前を含む文字列へのポインター。 渡した場合**NULL**の`pstrName`、 **FindFile**は、ワイルドカード (*.\*) 検索します。  
+ A pointer to a string containing the name of the file to find. If you pass **NULL** for `pstrName`, **FindFile** does a wildcard (*.\*) search.  
   
  *dwUnused*  
- 予約する**FindFile**派生クラスです。 0 でなければなりません。  
+ Reserved to make **FindFile** polymorphic with derived classes. Must be 0.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. To get extended error information, call the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後**FindFile**ファイル検索を開始する[FindNextFile](#findnextfile)を後続のファイルを取得します。 呼び出す必要があります`FindNextFile`を少なくとも&1; 回を呼び出す前に、次の属性のメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ After calling **FindFile** to begin the file search, call [FindNextFile](#findnextfile) to retrieve subsequent files. You must call `FindNextFile` at least once before calling any of the following attribute member functions:  
   
 - [GetCreationTime](#getcreationtime)  
   
@@ -216,7 +235,7 @@ virtual BOOL FindFile(
   
 - [GetFileTitle](#getfiletitle)  
   
-- [まで含めた](#getfilepath)  
+- [GetFilePath](#getfilepath)  
   
 - [GetFileURL](#getfileurl)  
   
@@ -246,23 +265,23 @@ virtual BOOL FindFile(
   
 - [IsTemporary](#istemporary)  
   
-- [は](#matchesmask)  
+- [MatchesMask](#matchesmask)  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::IsDirectory](#isdirectory).  
   
-##  <a name="findnextfile"></a>呼び出しておく  
- 以前の呼び出しからファイル検索を続行するには、このメンバー関数を呼び出す[FindFile](#findfile)します。  
+##  <a name="findnextfile"></a>  CFileFind::FindNextFile  
+ Call this member function to continue a file search from a previous call to [FindFile](#findfile).  
   
 ```  
 virtual BOOL FindNextFile();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 多くのファイルがある場合は&0; 以外。見つかったファイルがディレクトリに最後の&1; つである場合、またはエラーが発生した場合は&0; します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。 見つかったファイルがディレクトリに最後のファイルまたは一致するファイルが見つからないことができます、 `GetLastError` ERROR_NO_MORE_FILES を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if there are more files; zero if the file found is the last one in the directory or if an error occurred. To get extended error information, call the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360). If the file found is the last file in the directory, or if no matching files can be found, the `GetLastError` function returns ERROR_NO_MORE_FILES.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります`FindNextFile`を少なくとも&1; 回を呼び出す前に、次の属性のメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ You must call `FindNextFile` at least once before calling any of the following attribute member functions:  
   
 - [GetCreationTime](#getcreationtime)  
   
@@ -270,7 +289,7 @@ virtual BOOL FindNextFile();
   
 - [GetFileTitle](#getfiletitle)  
   
-- [まで含めた](#getfilepath)  
+- [GetFilePath](#getfilepath)  
   
 - [GetFileURL](#getfileurl)  
   
@@ -300,452 +319,452 @@ virtual BOOL FindNextFile();
   
 - [IsTemporary](#istemporary)  
   
-- [は](#matchesmask)  
+- [MatchesMask](#matchesmask)  
   
- `FindNextFile`Win32 関数をラップ[FindNextFile](http://msdn.microsoft.com/library/windows/desktop/aa364428)します。  
+ `FindNextFile` wraps the Win32 function [FindNextFile](http://msdn.microsoft.com/library/windows/desktop/aa364428).  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::IsDirectory](#isdirectory).  
   
-##  <a name="getcreationtime"></a>CFileFind::GetCreationTime  
- 指定したファイルが作成された時刻を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getcreationtime"></a>  CFileFind::GetCreationTime  
+ Call this member function to get the time the specified file was created.  
   
 ```  
 virtual BOOL GetCreationTime(FILETIME* pTimeStamp) const;  
 virtual BOOL GetCreationTime(CTime& refTime) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルが作成された日時を保持します。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was created.  
   
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetCreationTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetCreationTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetCreationTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetCreationTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイム スタンプ関数によって返される同じ値を返すことがあります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 返される時刻をいくつかのオペレーティング システムでは、ファイルが存在するコンピューターにゾーンのローカル時刻でです。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operation systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="getfilename"></a>CFileFind::GetFileName  
- このメンバー関数を呼び出して、検索されたファイルの名前を取得します。  
+##  <a name="getfilename"></a>  CFileFind::GetFileName  
+ Call this member function to get the name of the found file.  
   
 ```  
 virtual CString GetFileName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 最後に見つかったファイルの名前。  
+### <a name="return-value"></a>Return Value  
+ The name of the most-recently-found file.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile) GetFileName を呼び出す前に少なくとも&1; 回です。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling GetFileName.  
   
- `GetFileName`3 つの&1; つ`CFileFind`を何らかの形式のファイル名を返すメンバー関数。 次の一覧には、3 つと、その違いについて説明します。  
+ `GetFileName` is one of three `CFileFind` member functions that return some form of the file name. The following list describes the three and how they vary:  
   
-- `GetFileName`拡張子を含むファイル名を返します。 たとえばを呼び出す`GetFileName`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル名を返します`myfile.txt`します。  
+- `GetFileName` returns the file name, including the extension. For example, calling `GetFileName` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file name `myfile.txt`.  
   
-- [まで含めた](#getfilepath)ファイルの完全なパスを返します。 たとえばを呼び出す`GetFilePath`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル パスを返します`c:\myhtml\myfile.txt`します。  
+- [GetFilePath](#getfilepath) returns the entire path for the file. For example, calling `GetFilePath` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file path `c:\myhtml\myfile.txt`.  
   
-- [GetFileTitle](#getfiletitle)ファイル拡張子を除く、ファイル名を返します。 たとえばを呼び出す`GetFileTitle`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイルのタイトルを取得`myfile`します。  
+- [GetFileTitle](#getfiletitle) returns the file name, excluding the file extension. For example, calling `GetFileTitle` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file title `myfile`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles&#32;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#32](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_2.cpp)]  
   
-##  <a name="getfilepath"></a>CFileFind::GetFilePath  
- 指定されたファイルの完全なパスを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfilepath"></a>  CFileFind::GetFilePath  
+ Call this member function to get the full path of the specified file.  
   
 ```  
 virtual CString GetFilePath() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 指定されたファイルのパス。  
+### <a name="return-value"></a>Return Value  
+ The path of the specified file.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetFilePath`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetFilePath`.  
   
- `GetFilePath`3 つの&1; つ`CFileFind`を何らかの形式のファイル名を返すメンバー関数。 次の一覧には、3 つと、その違いについて説明します。  
+ `GetFilePath` is one of three `CFileFind` member functions that return some form of the file name. The following list describes the three and how they vary:  
   
-- [GetFileName](#getfilename)拡張子を含む、ファイル名を返します。 たとえばを呼び出す`GetFileName`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル名を返します`myfile.txt`します。  
+- [GetFileName](#getfilename) returns the file name, including the extension. For example, calling `GetFileName` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file name `myfile.txt`.  
   
-- `GetFilePath`ファイルの完全なパスを返します。 たとえばを呼び出す`GetFilePath`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル パスを返します`c:\myhtml\myfile.txt`します。  
+- `GetFilePath` returns the entire path for the file. For example, calling `GetFilePath` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file path `c:\myhtml\myfile.txt`.  
   
-- [GetFileTitle](#getfiletitle)ファイル拡張子を除く、ファイル名を返します。 たとえばを呼び出す`GetFileTitle`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイルのタイトルを取得`myfile`します。  
+- [GetFileTitle](#getfiletitle) returns the file name, excluding the file extension. For example, calling `GetFileTitle` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file title `myfile`.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="getfiletitle"></a>CFileFind::GetFileTitle  
- 検索したファイルのタイトルを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfiletitle"></a>  CFileFind::GetFileTitle  
+ Call this member function to get the title of the found file.  
   
 ```  
 virtual CString GetFileTitle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルのタイトルです。  
+### <a name="return-value"></a>Return Value  
+ The title of the file.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetFileTitle`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetFileTitle`.  
   
- `GetFileTitle`3 つの&1; つ`CFileFind`を何らかの形式のファイル名を返すメンバー関数。 次の一覧には、3 つと、その違いについて説明します。  
+ `GetFileTitle` is one of three `CFileFind` member functions that return some form of the file name. The following list describes the three and how they vary:  
   
-- [GetFileName](#getfilename)拡張子を含む、ファイル名を返します。 たとえばを呼び出す`GetFileName`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル名を返します`myfile.txt`します。  
+- [GetFileName](#getfilename) returns the file name, including the extension. For example, calling `GetFileName` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file name `myfile.txt`.  
   
-- [まで含めた](#getfilepath)ファイルの完全なパスを返します。 たとえばを呼び出す`GetFilePath`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイル パスを返します`c:\myhtml\myfile.txt`します。  
+- [GetFilePath](#getfilepath) returns the entire path for the file. For example, calling `GetFilePath` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file path `c:\myhtml\myfile.txt`.  
   
-- `GetFileTitle`ファイル拡張子を除く、ファイル名を返します。 たとえばを呼び出す`GetFileTitle`ファイルに関するユーザー メッセージを生成する`c:\myhtml\myfile.txt`ファイルのタイトルを取得`myfile`します。  
+- `GetFileTitle` returns the file name, excluding the file extension. For example, calling `GetFileTitle` to generate a user message about the file `c:\myhtml\myfile.txt` returns the file title `myfile`.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="getfileurl"></a>CFileFind::GetFileURL  
- 指定された URL を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfileurl"></a>  CFileFind::GetFileURL  
+ Call this member function to retrieve the specified URL.  
   
 ```  
 virtual CString GetFileURL() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 完全な URL。  
+### <a name="return-value"></a>Return Value  
+ The complete URL.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetFileURL`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetFileURL`.  
   
- `GetFileURL`メンバー関数のような[まで含めた](#getfilepath)形式で URL が返される点が、`file://path`です。 たとえばを呼び出す`GetFileURL`の完全な URL を取得する`myfile.txt`URL を返します`file://c:\myhtml\myfile.txt`します。  
+ `GetFileURL` is similar to the member function [GetFilePath](#getfilepath), except that it returns the URL in the form `file://path`. For example, calling `GetFileURL` to get the complete URL for `myfile.txt` returns the URL `file://c:\myhtml\myfile.txt`.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="getlastaccesstime"></a>CFileFind::GetLastAccessTime  
- 指定したファイルの最終アクセス時刻を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getlastaccesstime"></a>  CFileFind::GetLastAccessTime  
+ Call this member function to get the time that the specified file was last accessed.  
   
 ```  
 virtual BOOL GetLastAccessTime(CTime& refTime) const;  
 virtual BOOL GetLastAccessTime(FILETIME* pTimeStamp) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルの最終アクセス時刻が格納されています。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was last accessed.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetLastAccessTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetLastAccessTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetLastAccessTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetLastAccessTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイム スタンプ関数によって返される同じ値を返すことがあります。 参照してください、 [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 返される時刻をいくつかのオペレーティング システムでは、ファイルが存在するコンピューターにゾーンのローカル時刻でです。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operation systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="getlastwritetime"></a>CFileFind::GetLastWriteTime  
- 最後に、ファイルが変更された時刻を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getlastwritetime"></a>  CFileFind::GetLastWriteTime  
+ Call this member function to get the last time the file was changed.  
   
 ```  
 virtual BOOL GetLastWriteTime(FILETIME* pTimeStamp) const;  
 virtual BOOL GetLastWriteTime(CTime& refTime) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTimeStamp`  
- ポインター、 [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284)ファイルに最後に書き込んだ日時を保持します。  
+ A pointer to a [FILETIME](http://msdn.microsoft.com/library/windows/desktop/ms724284) structure containing the time the file was last written to.  
   
  `refTime`  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)オブジェクトです。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) object.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は 0 以外。それ以外の場合は 0 を返します。 `GetLastWriteTime`場合にのみ、0 を返します[FindNextFile](#findnextfile)は決してこので呼び出されて`CFileFind`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; 0 if unsuccessful. `GetLastWriteTime` returns 0 only if [FindNextFile](#findnextfile) has never been called on this `CFileFind` object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetLastWriteTime`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetLastWriteTime`.  
   
 > [!NOTE]
->  すべてのファイル システムでは、同じセマンティクスを使用して、この関数によって返される、タイムスタンプを実装します。 この関数は、基になるファイル システムまたはサーバーがサポートしない場合、時間属性を維持するその他のタイム スタンプ関数によって返される同じ値を返すことがあります。 参照してください、 [Win32_Find_Data](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造での時刻の書式に関する情報。 返される時刻をいくつかのオペレーティング システムでは、ファイルが存在するコンピューターにゾーンのローカル時刻でです。 Win32 を参照してください[詳細](http://msdn.microsoft.com/library/windows/desktop/ms724277)API の詳細。  
+>  Not all file systems use the same semantics to implement the time stamp returned by this function. This function may return the same value returned by other time stamp functions if the underlying file system or server does not support keeping the time attribute. See the [Win32_Find_Data](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure for information about time formats. On some operation systems, the returned time is in the time zone local to the machine were the file is located. See the Win32 [FileTimeToLocalFileTime](http://msdn.microsoft.com/library/windows/desktop/ms724277) API for more information.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="getlength"></a>CFileFind::GetLength  
- このメンバー関数を呼び出して、見つかったファイルのバイトの長さを取得します。  
+##  <a name="getlength"></a>  CFileFind::GetLength  
+ Call this member function to get the length of the found file, in bytes.  
   
 ```  
 ULONGLONG GetLength() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- (バイト単位) を検索したファイルの長さ。  
+### <a name="return-value"></a>Return Value  
+ The length of the found file, in bytes.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetLength`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetLength`.  
   
- `GetLength`Win32 構造を使用して[WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)を取得し、ファイル サイズの値を返します (バイト単位) にします。  
+ `GetLength` uses the Win32 structure [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) to get and return the value of the file size, in bytes.  
   
 > [!NOTE]
->  MFC 7.0 以降`GetLength`64 ビット整数型をサポートしています。 以前、ライブラリのこのより新しいバージョンで構築された既存のコードについては、切り捨ての警告があります。  
+>  As of MFC 7.0, `GetLength` supports 64-bit integer types. Previously existing code built with this newer version of the library may result in truncation warnings.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&33;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#33](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_3.cpp)]  
   
-##  <a name="getroot"></a>CFileFind::GetRoot  
- 検索したファイルのルートを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getroot"></a>  CFileFind::GetRoot  
+ Call this member function to get the root of the found file.  
   
 ```  
 virtual CString GetRoot() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- アクティブな検索のルートです。  
+### <a name="return-value"></a>Return Value  
+ The root of the active search.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`GetRoot`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `GetRoot`.  
   
- このメンバー関数は、ドライブ指定子と検索を開始するために使用するパス名を返します。 などを呼び出す[FindFile](#findfile)と`*.dat`結果`GetRoot`空の文字列を返すことです。 など、パスを渡して`c:\windows\system\*.dll`、 **FindFile**結果`GetRoot`返す`c:\windows\system\`します。  
+ This member function returns the drive specifier and path name used to start a search. For example, calling [FindFile](#findfile) with `*.dat` results in `GetRoot` returning an empty string. Passing a path, such as `c:\windows\system\*.dll`, to **FindFile** results `GetRoot` returning `c:\windows\system\`.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetFileName](#getfilename)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetFileName](#getfilename).  
   
-##  <a name="isarchived"></a>CFileFind::IsArchived  
- 検索したファイルがアーカイブになっているかどうかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="isarchived"></a>  CFileFind::IsArchived  
+ Call this member function to determine if the found file is archived.  
   
 ```  
 BOOL IsArchived() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションをマークするアーカイブ ファイルではバックアップまたは削除、FILE_ATTRIBUTE_ARCHIVE で識別されるファイル属性を[WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。  
+### <a name="remarks"></a>Remarks  
+ Applications mark an archive file, which is to be backed up or removed, with FILE_ATTRIBUTE_ARCHIVE, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsArchived`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsArchived`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="iscompressed"></a>CFileFind::IsCompressed  
- 検索したファイルが圧縮されているかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="iscompressed"></a>  CFileFind::IsCompressed  
+ Call this member function to determine if the found file is compressed.  
   
 ```  
 BOOL IsCompressed() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 圧縮されたファイルが FILE_ATTRIBUTE_COMPRESSED でマークされた、ファイル属性がで識別される、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 ファイルの場合は、この属性は、すべてのファイルにデータが圧縮されているを示します。 ディレクトリの場合は、この属性は、圧縮は、新しく作成されたファイルとサブディレクトリの既定値を示します。  
+### <a name="remarks"></a>Remarks  
+ A compressed file is marked with FILE_ATTRIBUTE_COMPRESSED, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. For a file, this attribute indicates that all of the data in the file is compressed. For a directory, this attribute indicates that compression is the default for newly created files and subdirectories.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsCompressed`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsCompressed`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="isdirectory"></a>CFileFind::IsDirectory  
- 検索したファイルがディレクトリであるかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="isdirectory"></a>  CFileFind::IsDirectory  
+ Call this member function to determine if the found file is a directory.  
   
 ```  
 BOOL IsDirectory() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ディレクトリのファイルが FILE_ATTRIBUTE_DIRECTORY で識別されるファイル属性でマークされた、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。  
+### <a name="remarks"></a>Remarks  
+ A file that is a directory is marked with FILE_ATTRIBUTE_DIRECTORY a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsDirectory`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsDirectory`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
- この小さなプログラムでは、再帰の回数が、C:\ ドライブのすべてのディレクトリをディレクトリの名前を出力します。  
+### <a name="example"></a>Example  
+ This small program recurses every directory on the C:\ drive and prints the name of the directory.  
   
- [!code-cpp[NVC_MFCFiles #&34;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_4.cpp)]  
+ [!code-cpp[NVC_MFCFiles#34](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_4.cpp)]  
   
-##  <a name="isdots"></a>CFileFind::IsDots  
- ファイル反復処理中に現在のディレクトリとその親ディレクトリのマーカーをテストするには、このメンバー関数を呼び出します。  
+##  <a name="isdots"></a>  CFileFind::IsDots  
+ Call this member function to test for the current directory and parent directory markers while iterating through files.  
   
 ```  
 virtual BOOL IsDots() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 検索したファイルに名前がある場合、0 以外の値"です。"または".."、見つかったファイルが実際にはディレクトリです。 それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the found file has the name "." or "..", which indicates that the found file is actually a directory. Otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsDots`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsDots`.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::IsDirectory](#isdirectory)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::IsDirectory](#isdirectory).  
   
-##  <a name="ishidden"></a>CFileFind::IsHidden  
- 検索したファイルが非表示を決定するには、このメンバー関数を呼び出します。  
+##  <a name="ishidden"></a>  CFileFind::IsHidden  
+ Call this member function to determine if the found file is hidden.  
   
 ```  
 BOOL IsHidden() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- FILE_ATTRIBUTE_HIDDEN でマークされた、非表示のファイルのファイル属性が識別される、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 隠しファイルは、通常のディレクトリ一覧には含まれません。  
+### <a name="remarks"></a>Remarks  
+ Hidden files, which are marked with FILE_ATTRIBUTE_HIDDEN, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. A hidden file is not included in an ordinary directory listing.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsHidden`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsHidden`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="isnormal"></a>CFileFind::IsNormal  
- 検索したファイルが通常のファイルであるかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="isnormal"></a>  CFileFind::IsNormal  
+ Call this member function to determine if the found file is a normal file.  
   
 ```  
 BOOL IsNormal() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- FILE_ATTRIBUTE_NORMAL でマークされたファイル、ファイル属性の識別、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 通常のファイルには、他の属性セットがありません。 その他のすべてのファイル属性は、この属性をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Files marked with FILE_ATTRIBUTE_NORMAL, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. A normal file has no other attributes set. All other file attributes override this attribute.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsNormal`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsNormal`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="isreadonly"></a>CFileFind::IsReadOnly  
- このメンバー関数を呼び出して、検索されたファイルが読み取り専用であるかどうか。  
+##  <a name="isreadonly"></a>  CFileFind::IsReadOnly  
+ Call this member function to determine if the found file is read-only.  
   
 ```  
 BOOL IsReadOnly() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 読み取り専用ファイルが FILE_ATTRIBUTE_READONLY でマークされた、ファイル属性がで識別される、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 アプリケーションは、この種類のファイルを読み取ることができますが、書き込むことやそれを削除できません。  
+### <a name="remarks"></a>Remarks  
+ A read-only file is marked with FILE_ATTRIBUTE_READONLY, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. Applications can read such a file, but they cannot write to it or delete it.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsReadOnly`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsReadOnly`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="issystem"></a>CFileFind::IsSystem  
- 検索したファイルがシステム ファイルであるかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="issystem"></a>  CFileFind::IsSystem  
+ Call this member function to determine if the found file is a system file.  
   
 ```  
 BOOL IsSystem() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- システム ファイルが、FILE_ATTRIBUTE_SYSTEM でマークされた、ファイル属性がで識別される、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 システム ファイルは、一部では、または排他的、オペレーティング システムによって使用されます。  
+### <a name="remarks"></a>Remarks  
+ A system file is marked with FILE_ATTRIBUTE_SYSTEM, , a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. A system file is part of, or is used exclusively by, the operating system.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsSystem`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsSystem`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="istemporary"></a>CFileFind::IsTemporary  
- 検索したファイルが一時ファイルを確認するには、このメンバー関数を呼び出します。  
+##  <a name="istemporary"></a>  CFileFind::IsTemporary  
+ Call this member function to determine if the found file is a temporary file.  
   
 ```  
 BOOL IsTemporary() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 一時ファイルが FILE_ATTRIBUTE_TEMPORARY でマークされた、ファイル属性がで識別される、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)構造体。 一時ファイルは、一時的な記憶域に使用されます。 アプリケーションは、絶対に必要な場合にのみ、ファイルに書き込む必要があります。 ファイルのデータの大部分は、ファイルがすぐに削除されるため、メディアに書き込まれずに、メモリに残ります。  
+### <a name="remarks"></a>Remarks  
+ A temporary file is marked with FILE_ATTRIBUTE_TEMPORARY, a file attribute identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure. A temporary file is used for temporary storage. Applications should write to the file only if absolutely necessary. Most of the file's data remains in memory without being flushed to the media because the file will soon be deleted.  
   
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`IsTemporary`します。  
+ You must call [FindNextFile](#findnextfile) at least once before calling `IsTemporary`.  
   
- メンバー関数を参照してください[は](#matchesmask)ファイル属性の完全な一覧についてです。  
+ See the member function [MatchesMask](#matchesmask) for a complete list of file attributes.  
   
-### <a name="example"></a>例  
-  例を参照してください[CFileFind::GetLength](#getlength)します。  
+### <a name="example"></a>Example  
+  See the example for [CFileFind::GetLength](#getlength).  
   
-##  <a name="m_ptm"></a>CFileFind::m_pTM  
- ポインター、`CAtlTransactionManager`オブジェクトです。  
+##  <a name="m_ptm"></a>  CFileFind::m_pTM  
+ Pointer to a `CAtlTransactionManager` object.  
   
 ```  
 CAtlTransactionManager* m_pTM;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="matchesmask"></a>CFileFind::MatchesMask  
- 検索したファイルのファイル属性をテストするには、このメンバー関数を呼び出します。  
+##  <a name="matchesmask"></a>  CFileFind::MatchesMask  
+ Call this member function to test the file attributes on the found file.  
   
 ```  
 virtual BOOL MatchesMask(DWORD dwMask) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwMask`  
- 識別される&1; つまたは複数のファイル属性を指定します、 [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740)検索したファイルの構造です。 複数の属性を検索するには、ビットごとの OR を使用して (|) 演算子。 次の属性の任意の組み合わせは許容されます。  
+ Specifies one or more file attributes, identified in the [WIN32_FIND_DATA](http://msdn.microsoft.com/library/windows/desktop/aa365740) structure, for the found file. To search for multiple attributes, use the bitwise OR (&#124;) operator. Any combination of the following attributes is acceptable:  
   
--   FILE_ATTRIBUTE_ARCHIVE ファイルは、アーカイブ ファイルです。 アプリケーションでは、この属性を使用して、ファイルをバックアップまたは削除をマークします。  
+-   FILE_ATTRIBUTE_ARCHIVE   The file is an archive file. Applications use this attribute to mark files for backup or removal.  
   
--   FILE_ATTRIBUTE_COMPRESSED ファイルまたはディレクトリが圧縮されます。 ファイルのすべてのファイルにデータが圧縮されていることを意味します。 ディレクトリで圧縮が新しく作成されたファイルとサブディレクトリの既定値であることを意味します。  
+-   FILE_ATTRIBUTE_COMPRESSED   The file or directory is compressed. For a file, this means that all of the data in the file is compressed. For a directory, this means that compression is the default for newly created files and subdirectories.  
   
--   FILE_ATTRIBUTE_DIRECTORY ファイルは、ディレクトリです。  
+-   FILE_ATTRIBUTE_DIRECTORY   The file is a directory.  
   
--   FILE_ATTRIBUTE_NORMAL ファイルには、他の属性セットがありません。 この属性は、単独で使用される場合にのみ有効です。 その他のすべてのファイル属性は、この属性をオーバーライドします。  
+-   FILE_ATTRIBUTE_NORMAL   The file has no other attributes set. This attribute is valid only if used alone. All other file attributes override this attribute.  
   
--   FILE_ATTRIBUTE_HIDDEN ファイルは表示されません。 通常のディレクトリ一覧に含めるには  
+-   FILE_ATTRIBUTE_HIDDEN   The file is hidden. It is not to be included in an ordinary directory listing.  
   
--   FILE_ATTRIBUTE_READONLY ファイルは読み取り専用です。 アプリケーションは、ファイルの読み取りことはできませんからの書き込みしたり削除できます。  
+-   FILE_ATTRIBUTE_READONLY   The file is read only. Applications can read the file but cannot write to it or delete it.  
   
--   FILE_ATTRIBUTE_SYSTEM ファイルの一部であるか、オペレーティング システムによって排他的に使用されます。  
+-   FILE_ATTRIBUTE_SYSTEM   The file is part of or is used exclusively by the operating system.  
   
--   一時的な記憶域 FILE_ATTRIBUTE_TEMPORARY ファイルを使用しています。 アプリケーションは、絶対に必要な場合にのみ、ファイルに書き込む必要があります。 ファイルのデータの大部分は、ファイルがすぐに削除されるため、メディアに書き込まれずに、メモリに残ります。  
+-   FILE_ATTRIBUTE_TEMPORARY   The file is being used for temporary storage. Applications should write to the file only if absolutely necessary. Most of the file's data remains in memory without being flushed to the media because the file will soon be deleted.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 拡張エラー情報を取得するには、Win32 関数を呼び出して[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. To get extended error information, call the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[FindNextFile](#findnextfile)呼び出す前に少なくとも&1; 回`MatchesMask`します。  
+### <a name="remarks"></a>Remarks  
+ You must call [FindNextFile](#findnextfile) at least once before calling `MatchesMask`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles&#35;](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#35](../../atl-mfc-shared/reference/codesnippet/cpp/cfilefind-class_5.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/cftpfilefind-class.md)   
- [関数のクラス](../../mfc/reference/cgopherfilefind-class.md)   
- [CInternetFile クラス](../../mfc/reference/cinternetfile-class.md)   
- [CGopherFile クラス](../../mfc/reference/cgopherfile-class.md)   
- [CHttpFile クラス](../../mfc/reference/chttpfile-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CFtpFileFind Class](../../mfc/reference/cftpfilefind-class.md)   
+ [CGopherFileFind Class](../../mfc/reference/cgopherfilefind-class.md)   
+ [CInternetFile Class](../../mfc/reference/cinternetfile-class.md)   
+ [CGopherFile Class](../../mfc/reference/cgopherfile-class.md)   
+ [CHttpFile Class](../../mfc/reference/chttpfile-class.md)
 

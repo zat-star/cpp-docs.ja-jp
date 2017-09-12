@@ -1,45 +1,64 @@
 ---
-title: "CStatusBarCtrl の設定値 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CStatusBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBarCtrl クラス, 設定"
-  - "ステータス バー コントロール, 設定"
+title: Settings for the CStatusBarCtrl | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CStatusBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- status bar controls [MFC], settings
+- CStatusBarCtrl class [MFC], settings
 ms.assetid: adeba0c3-17f3-435c-b140-a57845e9ce49
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CStatusBarCtrl の設定値
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d7a94d4f8943c35c3adfad13314bc7b44d05efeb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) のステータス ウィンドウの既定の場所は、親ウィンドウの下部に合わせて、アイテムが親ウィンドウのクライアント領域の上部に表示されるように `CCS_TOP` のスタイルを指定できます。  
+---
+# <a name="settings-for-the-cstatusbarctrl"></a>Settings for the CStatusBarCtrl
+The default position of a [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) status window is along the bottom of the parent window, but you can specify the `CCS_TOP` style to have it appear at the top of the parent window's client area.  
   
- `CStatusBarCtrl` のステータス ウィンドウの右端にサイズ変更グリップを含めるように **SBARS\_SIZEGRIP** のスタイルを指定できます。  サイズ変更グリップはサイズ変更境界に似ています; 親ウィンドウのサイズを変更するときにドラッグし、ユーザーがクリックできるのは四角形領域です。  
+ You can specify the **SBARS_SIZEGRIP** style to include a sizing grip at the right end of the `CStatusBarCtrl` status window. A sizing grip is similar to a sizing border; it is a rectangular area that the user can click and drag to resize the parent window.  
   
 > [!NOTE]
->  `CCS_TOP` と **SBARS\_SIZEGRIP** のスタイルを組み合わせると、結果サイズ変更グリップ、システムがステータス ウィンドウで描画が機能しません。  
+>  If you combine the `CCS_TOP` and **SBARS_SIZEGRIP** styles, the resulting sizing grip is not functional even though the system draws it in the status window.  
   
- ステータス ウィンドウのウィンドウ プロシージャは自動的にコントロール ウィンドウの初期のサイズと位置を設定します。  幅は、親ウィンドウのクライアント領域の型と同じになります。  高さはステータス ウィンドウのデバイス コンテキストにとウィンドウのリテイナーの幅で現在選択されているフォントの測度に基づいています。  
+ The window procedure for the status window automatically sets the initial size and position of the control window. The width is the same as that of the parent window's client area. The height is based on the metrics of the font that is currently selected into the status window's device context and on the width of the window's borders.  
   
- ウィンドウ プロシージャは自動的に `WM_SIZE` メッセージが受信されるたびにステータス ウィンドウのサイズを調整します。  通常、親ウィンドウのサイズを変更すると、ステータス `WM_SIZE` は親ウィンドウにメッセージを送信します。  
+ The window procedure automatically adjusts the size of the status window whenever it receives a `WM_SIZE` message. Typically, when the size of the parent window changes, the parent sends a `WM_SIZE` message to the status window.  
   
- [SetMinHeight](../Topic/CStatusBarCtrl::SetMinHeight.md)を呼び出して、最小限の高さをピクセル単位で指定するステータス ウィンドウの描画領域の最小の高さを設定できます。  描画領域は、Windows のリテイナーは含まれません。  
+ You can set the minimum height of a status window's drawing area by calling [SetMinHeight](../mfc/reference/cstatusbarctrl-class.md#setminheight), specifying the minimum height in pixels. The drawing area does not include the window's borders.  
   
- [GetBorders](../Topic/CStatusBarCtrl::GetBorders.md)を呼び出してステータス ウィンドウの境界の幅を取得します。  このメンバー関数は、四角形の水平の境界、垂直の境界と境界の幅を受け取る 3 要素のな配列へのポインターが含まれています。  
+ You retrieve the widths of the borders of a status window by calling [GetBorders](../mfc/reference/cstatusbarctrl-class.md#getborders). This member function includes the pointer to a three-element array that receives the width of the horizontal border, the vertical border, and the border between rectangles.  
   
-## 参照  
- [CStatusBarCtrl の使い方](../mfc/using-cstatusbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

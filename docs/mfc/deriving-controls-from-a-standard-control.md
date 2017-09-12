@@ -1,56 +1,75 @@
 ---
-title: "標準コントロールからのコントロールの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン コントロール [C++], 派生"
-  - "コントロール [MFC], 派生"
-  - "派生コントロール"
-  - "標準コントロール"
-  - "標準コントロール, 派生 (コントロールを)"
-  - "Windows コモン コントロール [C++], 派生"
+title: Deriving Controls from a Standard Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- standard controls [MFC], deriving controls from
+- common controls [MFC], deriving from
+- derived controls
+- controls [MFC], derived
+- Windows common controls [MFC], deriving from
+- standard controls
 ms.assetid: a6f84315-7007-4e0e-8576-78be81254802
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 標準コントロールからのコントロールの派生
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6bab0175dee887cbf16ea45827ddd2b0cf17b347
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CWnd](../Topic/CWnd%20Class.md)と同様に\-派生クラス、既存のコントロール クラスから新しいクラスを派生することによって、コントロールの動作を変更できます。  
+---
+# <a name="deriving-controls-from-a-standard-control"></a>Deriving Controls from a Standard Control
+As with any [CWnd](../mfc/reference/cwnd-class.md)-derived class, you can modify a control's behavior by deriving a new class from an existing control class.  
   
-### コントロールの派生クラスを作成するには  
+### <a name="to-create-a-derived-control-class"></a>To create a derived control class  
   
-1.  基本クラスの **作成** 関数に必要な引数を指定するようにクラスを既存のコントロール クラスから派生し、必要に応じて **作成** のメンバー関数をオーバーライドします。  
+1.  Derive your class from an existing control class and optionally override the **Create** member function so that it provides the necessary arguments to the base-class **Create** function.  
   
-2.  特定の Windows メッセージに応答してコントロールの動作を変更するには、メッセージ ハンドラー メンバー関数とメッセージ マップのエントリを提供します。  「[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)」を参照してください。  
+2.  Provide message-handler member functions and message-map entries to modify the control's behavior in response to specific Windows messages. See [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md).  
   
-3.  コントロールの機能を提供します \(省略可能な\) 拡張する新しいメンバー関数を示します。  
+3.  Provide new member functions to extend the functionality of the control (optional).  
   
- ダイアログ ボックスの派生コントロールを使用して追加の作業が必要です。  ダイアログ ボックスのコントロールの種類と位置はダイアログ テンプレート リソース \(通常は指定されます。  コントロールの派生クラスを作成すると、リソース コンパイラが派生クラスに関する知識がわからないため、ダイアログ テンプレートで指定できません。  
+ Using a derived control in a dialog box requires extra work. The types and positions of controls in a dialog box are normally specified in a dialog-template resource. If you create a derived control class, you cannot specify it in a dialog template since the resource compiler knows nothing about your derived class.  
   
-#### 派生コントロールをダイアログ ボックスに配置するには  
+#### <a name="to-place-your-derived-control-in-a-dialog-box"></a>To place your derived control in a dialog box  
   
-1.  派生ダイアログ クラスの宣言で派生コントロール クラスのオブジェクトを埋め込みます。  
+1.  Embed an object of the derived control class in the declaration of your derived dialog class.  
   
-2.  派生コントロールの `SubclassDlgItem` のメンバー関数を呼び出すに `OnInitDialog` ダイアログ クラスのメンバー関数をオーバーライドします。  
+2.  Override the `OnInitDialog` member function in your dialog class to call the `SubclassDlgItem` member function for the derived control.  
   
- `SubclassDlgItem` は 「動的に」ダイアログ テンプレートから作成されるコントロールをサブクラス化します。  コントロールが動的にサブクラス化されると、Windows に引っ掛かりましたり、独自のアプリケーション内のすべてのメッセージを処理し、Windows に残りのメッセージを渡します。  詳細については、" *MFC リファレンス"の*" `CWnd` クラスの [SubclassDlgItem](../Topic/CWnd::SubclassDlgItem.md) メンバー関数を参照します。  `SubclassDlgItem`を呼び出す方法に `OnInitDialog` のオーバーライドを書き込む方法を次の例に示します。:  
+ `SubclassDlgItem` "dynamically subclasses" a control created from a dialog template. When a control is dynamically subclassed, you hook into Windows, process some messages within your own application, then pass the remaining messages on to Windows. For more information, see the [SubclassDlgItem](../mfc/reference/cwnd-class.md#subclassdlgitem) member function of class `CWnd` in the *MFC Reference*. The following example shows how you might write an override of `OnInitDialog` to call `SubclassDlgItem`:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#3](../mfc/codesnippet/CPP/deriving-controls-from-a-standard-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#3](../mfc/codesnippet/cpp/deriving-controls-from-a-standard-control_1.cpp)]  
   
- 派生コントロールは、ダイアログ クラスに埋め込まれているため、ダイアログ ボックスが破棄されるときにダイアログ ボックスの作成と構成され、破棄されます。  [コントロールを手動で追加します。](../mfc/adding-controls-by-hand.md)の例でこのコードを比較します。  
+ Because the derived control is embedded in the dialog class, it will be constructed when the dialog box is constructed, and it will be destroyed when the dialog box is destroyed. Compare this code to the example in [Adding Controls By Hand](../mfc/adding-controls-by-hand.md).  
   
-## 参照  
- [コントロールの作成方法と使い方](../mfc/making-and-using-controls.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Making and Using Controls](../mfc/making-and-using-controls.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

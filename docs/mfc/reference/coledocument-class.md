@@ -1,5 +1,5 @@
 ---
-title: "COleDocument クラス |Microsoft ドキュメント"
+title: COleDocument Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -37,12 +37,29 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- COleDocument class
-- OLE documents, base class
-- OLE containers, client items
-- visual editing, OLE document base class
-- OLE documents
-- documents, OLE
+- COleDocument [MFC], COleDocument
+- COleDocument [MFC], AddItem
+- COleDocument [MFC], ApplyPrintDevice
+- COleDocument [MFC], EnableCompoundFile
+- COleDocument [MFC], GetInPlaceActiveItem
+- COleDocument [MFC], GetNextClientItem
+- COleDocument [MFC], GetNextItem
+- COleDocument [MFC], GetNextServerItem
+- COleDocument [MFC], GetPrimarySelectedItem
+- COleDocument [MFC], GetStartPosition
+- COleDocument [MFC], HasBlankItems
+- COleDocument [MFC], OnShowViews
+- COleDocument [MFC], RemoveItem
+- COleDocument [MFC], UpdateModifiedFlag
+- COleDocument [MFC], OnEditChangeIcon
+- COleDocument [MFC], OnEditConvert
+- COleDocument [MFC], OnEditLinks
+- COleDocument [MFC], OnFileSendMail
+- COleDocument [MFC], OnUpdateEditChangeIcon
+- COleDocument [MFC], OnUpdateEditLinksMenu
+- COleDocument [MFC], OnUpdateObjectVerbMenu
+- COleDocument [MFC], OnUpdatePasteLinkMenu
+- COleDocument [MFC], OnUpdatePasteMenu
 ms.assetid: dc2ecb99-03e1-44c7-bb69-48056dd1b672
 caps.latest.revision: 23
 author: mikeblome
@@ -62,74 +79,74 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 73bd1bc5c2c93e180b42a79cf23ab98360887c31
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7c999134c5362e03cd35d9dfa0215dcd3e8f23cc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coledocument-class"></a>COleDocument クラス
-ビジュアル編集をサポートする OLE ドキュメントの基底クラスです。  
+# <a name="coledocument-class"></a>COleDocument Class
+The base class for OLE documents that support visual editing.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleDocument : public CDocument  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDocument::COleDocument](#coledocument)|`COleDocument` オブジェクトを構築します。|  
+|[COleDocument::COleDocument](#coledocument)|Constructs a `COleDocument` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDocument::AddItem](#additem)|ドキュメントが管理しているアイテムの一覧に項目を追加します。|  
-|[COleDocument::ApplyPrintDevice](#applyprintdevice)|ドキュメント内のすべてのクライアント アイテムの出力先のデバイスを設定します。|  
-|[COleDocument::EnableCompoundFile](#enablecompoundfile)|OLE 構造化ストレージ ファイル形式で格納されるドキュメントをさせます。|  
-|[COleDocument::GetInPlaceActiveItem](#getinplaceactiveitem)|現在の実行中である OLE アイテムを返します。|  
-|[COleDocument::GetNextClientItem](#getnextclientitem)|反復処理するためには、クライアントの次の項目を取得します。|  
-|[COleDocument::GetNextItem](#getnextitem)|反復処理するためには、ドキュメントの次の項目を取得します。|  
-|[COleDocument::GetNextServerItem](#getnextserveritem)|反復処理するためには、サーバーの次の項目を取得します。|  
-|[COleDocument::GetPrimarySelectedItem](#getprimaryselecteditem)|ドキュメント内には、プライマリの選択した OLE アイテムを返します。|  
-|[COleDocument::GetStartPosition](#getstartposition)|初期のイテレーションを開始する位置を取得します。|  
-|[COleDocument::HasBlankItems](#hasblankitems)|ドキュメント内の空のアイテムを確認します。|  
-|[COleDocument::OnShowViews](#onshowviews)|表示と非表示のドキュメントはときに呼び出されます。|  
-|[COleDocument::RemoveItem](#removeitem)|ドキュメントが管理しているアイテムの一覧から項目を削除します。|  
-|[COleDocument::UpdateModifiedFlag](#updatemodifiedflag)|含まれている OLE アイテムのいずれかが変更された場合の変更としては、ドキュメントをマークします。|  
+|[COleDocument::AddItem](#additem)|Adds an item to the list of items maintained by the document.|  
+|[COleDocument::ApplyPrintDevice](#applyprintdevice)|Sets the print-target device for all client items in the document.|  
+|[COleDocument::EnableCompoundFile](#enablecompoundfile)|Causes documents to be stored using the OLE Structured Storage file format.|  
+|[COleDocument::GetInPlaceActiveItem](#getinplaceactiveitem)|Returns the OLE item that is currently in-place active.|  
+|[COleDocument::GetNextClientItem](#getnextclientitem)|Gets the next client item for iterating.|  
+|[COleDocument::GetNextItem](#getnextitem)|Gets the next document item for iterating.|  
+|[COleDocument::GetNextServerItem](#getnextserveritem)|Gets the next server item for iterating.|  
+|[COleDocument::GetPrimarySelectedItem](#getprimaryselecteditem)|Returns the primary selected OLE item in the document.|  
+|[COleDocument::GetStartPosition](#getstartposition)|Gets the initial position to begin iteration.|  
+|[COleDocument::HasBlankItems](#hasblankitems)|Checks for blank items in the document.|  
+|[COleDocument::OnShowViews](#onshowviews)|Called when the document becomes visible or invisible.|  
+|[COleDocument::RemoveItem](#removeitem)|Removes an item from the list of items maintained by the document.|  
+|[COleDocument::UpdateModifiedFlag](#updatemodifiedflag)|Marks the document as modified if any of the contained OLE items have been modified.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDocument::OnEditChangeIcon](#oneditchangeicon)|アイコンの変更 メニューのコマンドのイベントを処理します。|  
-|[COleDocument::OnEditConvert](#oneditconvert)|1 つの型から別の埋め込みまたはリンクされているオブジェクトの変換を処理します。|  
-|[COleDocument::OnEditLinks](#oneditlinks)|[編集] メニューのリンク コマンドのイベントを処理します。|  
-|[COleDocument::OnFileSendMail](#onfilesendmail)|ドキュメントを添付してメール メッセージを送信します。|  
-|[COleDocument::OnUpdateEditChangeIcon](#onupdateeditchangeicon)|アイコンの編集/変更メニュー オプションのコマンドの UI を更新するためにフレームワークによって呼び出されます。|  
-|[COleDocument::OnUpdateEditLinksMenu](#onupdateeditlinksmenu)|コマンド UI/リンクの編集 メニューのオプションを更新するためにフレームワークによって呼び出されます。|  
-|[COleDocument::OnUpdateObjectVerbMenu](#onupdateobjectverbmenu)|編集コマンド UI を更新するためにフレームワークによって呼び出される/ *ObjectName*メニュー オプションとからアクセスされる動詞サブメニュー/ *ObjectName*します。|  
-|[COleDocument::OnUpdatePasteLinkMenu](#onupdatepastelinkmenu)|メニュー オプションを選択して貼り付けのコマンドの UI を更新するためにフレームワークによって呼び出されます。|  
-|[COleDocument::OnUpdatePasteMenu](#onupdatepastemenu)|貼り付けのメニュー オプションのコマンドの UI を更新するためにフレームワークによって呼び出されます。|  
+|[COleDocument::OnEditChangeIcon](#oneditchangeicon)|Handles events in the Change Icon menu command.|  
+|[COleDocument::OnEditConvert](#oneditconvert)|Handles the conversion of an embedded or linked object from one type to another.|  
+|[COleDocument::OnEditLinks](#oneditlinks)|Handles events in the Links command on the Edit menu.|  
+|[COleDocument::OnFileSendMail](#onfilesendmail)|Sends a mail message with the document attached.|  
+|[COleDocument::OnUpdateEditChangeIcon](#onupdateeditchangeicon)|Called by the framework to update the command UI for the Edit/Change Icon menu option.|  
+|[COleDocument::OnUpdateEditLinksMenu](#onupdateeditlinksmenu)|Called by the framework to update the command UI for the Edit/Links menu option.|  
+|[COleDocument::OnUpdateObjectVerbMenu](#onupdateobjectverbmenu)|Called by the framework to update the command UI for the Edit/ *ObjectName* menu option and the Verb submenu accessed from Edit/ *ObjectName*.|  
+|[COleDocument::OnUpdatePasteLinkMenu](#onupdatepastelinkmenu)|Called by the framework to update the command UI for the Paste Special menu option.|  
+|[COleDocument::OnUpdatePasteMenu](#onupdatepastemenu)|Called by the framework to update the command UI for the Paste menu option.|  
   
-## <a name="remarks"></a>コメント  
- `COleDocument`派生した**CDocument**、これにより、OLE アプリケーションを Microsoft Foundation Class ライブラリによって提供されるドキュメント/ビュー アーキテクチャを使用します。  
+## <a name="remarks"></a>Remarks  
+ `COleDocument` is derived from **CDocument**, which allows your OLE applications to use the document/view architecture provided by the Microsoft Foundation Class Library.  
   
- `COleDocument`コレクションとして、ドキュメントを扱う[CDocItem](../../mfc/reference/cdocitem-class.md) OLE アイテムを処理するオブジェクト。 コンテナーとサーバーの両方のアプリケーションでは、自分のドキュメントは、OLE アイテムを保持できる必要がありますので、このようなアーキテクチャが必要です。 [実際](../../mfc/reference/coleserveritem-class.md)と[COleClientItem](../../mfc/reference/coleclientitem-class.md)から派生した両方のクラス`CDocItem`アプリケーションと OLE アイテム間の相互作用を管理します。  
+ `COleDocument` treats a document as a collection of [CDocItem](../../mfc/reference/cdocitem-class.md) objects to handle OLE items. Both container and server applications require such an architecture because their documents must be able to contain OLE items. The [COleServerItem](../../mfc/reference/coleserveritem-class.md) and [COleClientItem](../../mfc/reference/coleclientitem-class.md) classes, both derived from `CDocItem`, manage the interactions between applications and OLE items.  
   
- 単純なコンテナー アプリケーションを作成している場合からドキュメント クラスを派生させる`COleDocument`します。 ドキュメントが含まれている埋め込みアイテムへのリンクをサポートしているコンテナー アプリケーションを作成している場合からドキュメント クラスを派生させる[直接](../../mfc/reference/colelinkingdoc-class.md)します。 アプリケーションまたは組み合わせのコンテナー/サーバーのサーバーを作成する場合からドキュメント クラスを派生させる[COleServerDoc](../../mfc/reference/coleserverdoc-class.md)します。 `COleLinkingDoc``COleServerDoc`から派生した`COleDocument`ので、これらのクラスで使用できるすべてのサービスを継承する、`COleDocument`と**CDocument**します。  
+ If you are writing a simple container application, derive your document class from `COleDocument`. If you are writing a container application that supports linking to the embedded items contained by its documents, derive your document class from [COleLinkingDoc](../../mfc/reference/colelinkingdoc-class.md). If you are writing a server application or combination container/server, derive your document class from [COleServerDoc](../../mfc/reference/coleserverdoc-class.md). `COleLinkingDoc` and `COleServerDoc` are derived from `COleDocument`, so these classes inherit all the services available in `COleDocument` and **CDocument**.  
   
- 使用する`COleDocument`クラスの派生、およびアプリケーションの非 OLE データと埋め込みまたはリンクされた項目を管理する機能を追加します。 定義する場合`CDocItem`-をアプリケーションのネイティブのデータを格納するクラスを派生によって定義された既定の実装を使用する`COleDocument`OLE と非 OLE データの両方を格納します。 OLE アイテムとは切り離して、非 OLE データを格納するための独自のデータ構造を設計することもできます。 詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md).。  
+ To use `COleDocument`, derive a class from it and add functionality to manage the application's non-OLE data as well as embedded or linked items. If you define `CDocItem`-derived classes to store the application's native data, you can use the default implementation defined by `COleDocument` to store both your OLE and non-OLE data. You can also design your own data structures for storing your non-OLE data separately from the OLE items. For more information, see the article [Containers: Compound Files](../../mfc/containers-compound-files.md)..  
   
- **CDocument**メール サポート (MAPI) が存在する場合、メールを使用して、ドキュメントの送信をサポートします。 `COleDocument`更新が[OnFileSendMail](#onfilesendmail)複合ドキュメントを正しく処理します。 詳細については、記事を参照してください[MAPI](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md).。  
+ **CDocument** supports sending your document via mail if mail support (MAPI) is present. `COleDocument` has updated [OnFileSendMail](#onfilesendmail) to handle compound documents correctly. For more information, see the articles [MAPI](../../mfc/mapi.md) and [MAPI Support in MFC](../../mfc/mapi-support-in-mfc.md)..  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -138,351 +155,351 @@ class COleDocument : public CDocument
   
  `COleDocument`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
   
-##  <a name="additem"></a>COleDocument::AddItem  
- この関数では、ドキュメントに項目を追加します。  
+##  <a name="additem"></a>  COleDocument::AddItem  
+ Call this function to add an item to the document.  
   
 ```  
 virtual void AddItem(CDocItem* pItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pItem`  
- 追加されるドキュメントの項目へのポインター。  
+ Pointer to the document item being added.  
   
-### <a name="remarks"></a>コメント  
- 呼び出された場合に、この関数を明示的に呼び出す必要はありません、`COleClientItem`または`COleServerItem`ドキュメントへのポインターを受け取るコンス トラクターです。  
+### <a name="remarks"></a>Remarks  
+ You do not need to call this function explicitly when it is called by the `COleClientItem` or `COleServerItem` constructor that accepts a pointer to a document.  
   
-##  <a name="applyprintdevice"></a>COleDocument::ApplyPrintDevice  
- 埋め込まれているすべての出力先のデバイスを変更するには、この関数を呼び出す[COleClientItem](../../mfc/reference/coleclientitem-class.md)アプリケーションのコンテナー ドキュメント内の項目。  
+##  <a name="applyprintdevice"></a>  COleDocument::ApplyPrintDevice  
+ Call this function to change the print-target device for all embedded [COleClientItem](../../mfc/reference/coleclientitem-class.md) items in your application's container document.  
   
 ```  
 BOOL ApplyPrintDevice(const DVTARGETDEVICE* ptd);  
 BOOL ApplyPrintDevice(const PRINTDLG* ppd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptd`  
- ポインター、 **DVTARGETDEVICE**データ構造は、新しい出力先のデバイスに関する情報が含まれています。 できる**NULL**します。  
+ Pointer to a **DVTARGETDEVICE** data structure, which contains information about the new print-target device. Can be **NULL**.  
   
  `ppd`  
- ポインター、 **PRINTDLG**新しい出力先のデバイスに関する情報を含むデータ構造体。 できる**NULL**します。  
+ Pointer to a **PRINTDLG** data structure, which contains information about the new print-target device. Can be **NULL**.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、すべてのアイテムの出力先のデバイスの更新が、それらの項目のプレゼンテーション キャッシュは更新されません。 アイテムのプレゼンテーションのキャッシュを更新するには、呼び出す[COleClientItem::UpdateLink](../../mfc/reference/coleclientitem-class.md#updatelink)します。  
+### <a name="remarks"></a>Remarks  
+ This function updates the print-target device for all items but does not refresh the presentation cache for those items. To update the presentation cache for an item, call [COleClientItem::UpdateLink](../../mfc/reference/coleclientitem-class.md#updatelink).  
   
- この関数に対する引数には、ターゲット デバイスを識別するために使用して OLE 情報が含まれます。 [PRINTDLG](http://msdn.microsoft.com/library/windows/desktop/ms646843)構造体には、Windows に共通の印刷 ダイアログ ボックスを初期化するために使用する情報が含まれています。 ユーザーがダイアログ ボックスを閉じた後、Windows は、この構造体でユーザーの選択に関する情報を返します。 `m_pd`のメンバー、 [CPrintDialog](../../mfc/reference/cprintdialog-class.md)オブジェクトが、 **PRINTDLG**構造体。  
+ The arguments to this function contain information that OLE uses to identify the target device. The [PRINTDLG](http://msdn.microsoft.com/library/windows/desktop/ms646843) structure contains information that Windows uses to initialize the common Print dialog box. After the user closes the dialog box, Windows returns information about the user's selections in this structure. The `m_pd` member of a [CPrintDialog](../../mfc/reference/cprintdialog-class.md) object is a **PRINTDLG** structure.  
   
- 詳細については、次を参照してください。、 [PRINTDLG](http://msdn.microsoft.com/library/windows/desktop/ms646843)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [PRINTDLG](http://msdn.microsoft.com/library/windows/desktop/ms646843) structure in the Windows SDK.  
   
- 詳細については、次を参照してください。、 [DVTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/ms686613)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [DVTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/ms686613) structure in the Windows SDK.  
   
-##  <a name="coledocument"></a>COleDocument::COleDocument  
- `COleDocument` オブジェクトを構築します。  
+##  <a name="coledocument"></a>  COleDocument::COleDocument  
+ Constructs a `COleDocument` object.  
   
 ```  
 COleDocument();
 ```  
   
-##  <a name="enablecompoundfile"></a>COleDocument::EnableCompoundFile  
- 複合ファイル形式を使用してドキュメントを格納する場合は、この関数を呼び出します。  
+##  <a name="enablecompoundfile"></a>  COleDocument::EnableCompoundFile  
+ Call this function if you want to store the document using the compound-file format.  
   
 ```  
 void EnableCompoundFile(BOOL bEnable = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bEnable`  
- 複合ファイルのサポートを有効または無効になっているかどうかを指定します。  
+ Specifies whether compound file support is enabled or disabled.  
   
-### <a name="remarks"></a>コメント  
- これは構造化ストレージとも呼ばれます。 通常のコンス トラクターからこの関数を呼び出す、 `COleDocument`-クラスを派生します。 複合ドキュメントの詳細については、記事を参照してください[コンテナー: 複合ファイル](../../mfc/containers-compound-files.md).。  
+### <a name="remarks"></a>Remarks  
+ This is also called structured storage. You typically call this function from the constructor of your `COleDocument`-derived class. For more information about compound documents, see the article [Containers: Compound Files](../../mfc/containers-compound-files.md)..  
   
- このメンバー関数が呼び出されない場合は、構造化されていない (「フラット」) ファイル形式でドキュメントに格納されています。  
+ If you do not call this member function, documents will be stored in a nonstructured ("flat") file format.  
   
- 複合ファイルのサポートを有効になっているまたはドキュメントで無効にすると、ドキュメントの有効期間中に、設定を変更できません必要があります。  
+ After compound file support is enabled or disabled for a document, the setting should not be changed during the document's lifetime.  
   
-##  <a name="getinplaceactiveitem"></a>COleDocument::GetInPlaceActiveItem  
- 識別されるビューを含むフレーム ウィンドウ内の場所に項目を OLE を取得するには、この関数の呼び出しが現在アクティブ`pWnd`します。  
+##  <a name="getinplaceactiveitem"></a>  COleDocument::GetInPlaceActiveItem  
+ Call this function to get the OLE item that is currently activated in place in the frame window containing the view identified by `pWnd`.  
   
 ```  
 virtual COleClientItem* GetInPlaceActiveItem(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- コンテナーのドキュメントを表示するウィンドウへのポインター。  
+ Pointer to the window that displays the container document.  
   
-### <a name="return-value"></a>戻り値  
- 1 つ、インプレース アクティブ OLE アイテムへのポインター**NULL**かどうか項目がない OLE 現在「インプレース アクティブ」状態にします。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the single, in-place active OLE item; **NULL** if there is no OLE item currently in the "in-place active" state.  
   
-##  <a name="getnextclientitem"></a>COleDocument::GetNextClientItem  
- この関数へのアクセス、文書内のクライアント アイテムの各繰り返しを呼び出します。  
+##  <a name="getnextclientitem"></a>  COleDocument::GetNextClientItem  
+ Call this function repeatedly to access each of the client items in your document.  
   
 ```  
 COleClientItem* GetNextClientItem(POSITION& pos) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- 参照、**位置**値のセットを前回呼び出したときを`GetNextClientItem`; 初期値は、`GetStartPosition`メンバー関数。  
+ A reference to a **POSITION** value set by a previous call to `GetNextClientItem`; the initial value is returned by the `GetStartPosition` member function.  
   
-### <a name="return-value"></a>戻り値  
- ドキュメントでは、次のクライアント アイテムへのポインターまたは**NULL**クライアント項目がある場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the next client item in the document, or **NULL** if there are no more client items.  
   
-### <a name="remarks"></a>コメント  
- 値は、各呼び出しの後に`pos`したりクライアント アイテムとは限りませんが、ドキュメントの次の項目に設定します。  
+### <a name="remarks"></a>Remarks  
+ After each call, the value of `pos` is set for the next item in the document, which might or might not be a client item.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#1;](../../mfc/codesnippet/cpp/coledocument-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#1](../../mfc/codesnippet/cpp/coledocument-class_1.cpp)]  
   
-##  <a name="getnextitem"></a>COleDocument::GetNextItem  
- この関数では、各ドキュメント内のアイテムにアクセスするには、繰り返しです。  
+##  <a name="getnextitem"></a>  COleDocument::GetNextItem  
+ Call this function repeatedly to access each of the items in your document.  
   
 ```  
 virtual CDocItem* GetNextItem(POSITION& pos) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- 参照、**位置**値のセットを前回呼び出したときを`GetNextItem`; 初期値は、`GetStartPosition`メンバー関数。  
+ A reference to a **POSITION** value set by a previous call to `GetNextItem`; the initial value is returned by the `GetStartPosition` member function.  
   
-### <a name="return-value"></a>戻り値  
- 指定した位置にあるドキュメント項目へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the document item at the specified position.  
   
-### <a name="remarks"></a>コメント  
- 値は、各呼び出しの後に`pos`に設定されている、**位置**ドキュメントの次の項目の値。 取得した要素がドキュメントの新しい値の最後の要素である場合`pos`は**NULL**します。  
+### <a name="remarks"></a>Remarks  
+ After each call, the value of `pos` is set to the **POSITION** value of the next item in the document. If the retrieved element is the last element in the document, the new value of `pos` is **NULL**.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer&#2;](../../mfc/codesnippet/cpp/coledocument-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#2](../../mfc/codesnippet/cpp/coledocument-class_2.cpp)]  
   
-##  <a name="getnextserveritem"></a>COleDocument::GetNextServerItem  
- この関数へのアクセス サーバーのアイテム、ドキュメント内の各繰り返しを呼び出します。  
+##  <a name="getnextserveritem"></a>  COleDocument::GetNextServerItem  
+ Call this function repeatedly to access each of the server items in your document.  
   
 ```  
 COleServerItem* GetNextServerItem(POSITION& pos) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- 参照、**位置**値のセットを前回呼び出したときを`GetNextServerItem`; 初期値は、`GetStartPosition`メンバー関数。  
+ A reference to a **POSITION** value set by a previous call to `GetNextServerItem`; the initial value is returned by the `GetStartPosition` member function.  
   
-### <a name="return-value"></a>戻り値  
- このドキュメントでは、次のサーバー項目へのポインターまたは**NULL** server 項目がある場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the next server item in the document, or **NULL** if there are no more server items.  
   
-### <a name="remarks"></a>コメント  
- 値は、各呼び出しの後に`pos`がまたはサーバーのアイテムとは限りませんが、ドキュメントの次の項目に設定します。  
+### <a name="remarks"></a>Remarks  
+ After each call, the value of `pos` is set for the next item in the document, which might or might not be a server item.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleServer&#2;](../../mfc/codesnippet/cpp/coledocument-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleServer#2](../../mfc/codesnippet/cpp/coledocument-class_3.cpp)]  
   
-##  <a name="getprimaryselecteditem"></a>COleDocument::GetPrimarySelectedItem  
- 指定したビューで現在選択されている OLE アイテムを取り出すためにフレームワークによって呼び出されます。  
+##  <a name="getprimaryselecteditem"></a>  COleDocument::GetPrimarySelectedItem  
+ Called by the framework to retrieve the currently selected OLE item in the specified view.  
   
 ```  
 virtual COleClientItem* GetPrimarySelectedItem(CView* pView);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pView`  
- ドキュメントを表示するアクティブなビュー オブジェクトへのポインター。  
+ Pointer to the active view object displaying the document.  
   
-### <a name="return-value"></a>戻り値  
- 選択されている、1 つの OLE アイテムへのポインター**NULL** OLE アイテムが選択されていないまたは複数のいずれかを選択します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the single, selected OLE item; **NULL** if no OLE items are selected or if more than one is selected.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装では、保持されている OLE の一覧に&1; つ選択したアイテムのアイテムを検索し、ポインターを返します。 選択すると、項目がないかどうか、または複数の項目が選択されている、関数を返します**NULL**します。 オーバーライドする必要があります、`CView::IsSelected`この機能が動作するようにビュー クラスのメンバー関数。 OLE アイテムを格納する、独自のメソッドがある場合は、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation searches the list of contained OLE items for a single selected item and returns a pointer to it. If there is no item selected, or if there is more than one item selected, the function returns **NULL**. You must override the `CView::IsSelected` member function in your view class for this function to work. Override this function if you have your own method of storing contained OLE items.  
   
-##  <a name="getstartposition"></a>COleDocument::GetStartPosition  
- この関数では、ドキュメント内の最初の項目の位置を取得します。  
+##  <a name="getstartposition"></a>  COleDocument::GetStartPosition  
+ Call this function to get the position of the first item in the document.  
   
 ```  
 virtual POSITION GetStartPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A**位置**ドキュメントの項目を反復処理を開始するために使用される値**NULL**ドキュメントにアイテムがありません。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used to begin iterating through the document's items; **NULL** if the document has no items.  
   
-### <a name="remarks"></a>コメント  
- 返された値を渡す`GetNextItem`、 `GetNextClientItem`、または`GetNextServerItem`です。  
+### <a name="remarks"></a>Remarks  
+ Pass the value returned to `GetNextItem`, `GetNextClientItem`, or `GetNextServerItem`.  
   
-##  <a name="hasblankitems"></a>COleDocument::HasBlankItems  
- この関数では、ドキュメントにブランク アイテムが含まれるかどうかを判断します。  
+##  <a name="hasblankitems"></a>  COleDocument::HasBlankItems  
+ Call this function to determine whether the document contains any blank items.  
   
 ```  
 BOOL HasBlankItems() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ドキュメントには、ブランク アイテムが含まれている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the document contains any blank items; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 空のアイテムは、1 つの四角形は空です。  
+### <a name="remarks"></a>Remarks  
+ A blank item is one whose rectangle is empty.  
   
-##  <a name="oneditchangeicon"></a>COleDocument::OnEditChangeIcon  
- OLE の [アイコンの変更] ダイアログ ボックスを表示し、ダイアログ ボックスで、ユーザーが選択したアイコンに現在選択されている OLE アイテムを表すアイコンを変更します。  
+##  <a name="oneditchangeicon"></a>  COleDocument::OnEditChangeIcon  
+ Displays the OLE Change Icon dialog box and changes the icon representing the currently selected OLE item to the icon the user selects in the dialog box.  
   
 ```  
 afx_msg void OnEditChangeIcon();
 ```  
   
-### <a name="remarks"></a>コメント  
- `OnEditChangeIcon`作成し、起動、`COleChangeIconDialog`アイコンの変更 ダイアログ ボックス。  
+### <a name="remarks"></a>Remarks  
+ `OnEditChangeIcon` creates and launches a `COleChangeIconDialog` Change Icon dialog box.  
   
-##  <a name="oneditconvert"></a>COleDocument::OnEditConvert  
- OLE の 変換 ダイアログ ボックスが表示されますに変換したりに従ってユーザーの選択 ダイアログ ボックスで現在選択されている OLE アイテムをアクティブにできます。  
+##  <a name="oneditconvert"></a>  COleDocument::OnEditConvert  
+ Displays the OLE Convert dialog box and converts or activates the currently selected OLE item according to user selections in the dialog box.  
   
 ```  
 afx_msg void OnEditConvert();
 ```  
   
-### <a name="remarks"></a>コメント  
- `OnEditConvert`作成し、起動、`COleConvertDialog`変換 ダイアログ ボックス。  
+### <a name="remarks"></a>Remarks  
+ `OnEditConvert` creates and launches a `COleConvertDialog` Convert dialog box.  
   
- 変換の例では、ワードパッドのドキュメントに、Microsoft Word 文書を変換です。  
+ An example of conversion is converting a Microsoft Word document into a WordPad document.  
   
-##  <a name="oneditlinks"></a>COleDocument::OnEditLinks  
- [リンク] ダイアログ ボックスが表示されます。  
+##  <a name="oneditlinks"></a>  COleDocument::OnEditLinks  
+ Displays the OLE Edit/Links dialog box.  
   
 ```  
 afx_msg void OnEditLinks();
 ```  
   
-### <a name="remarks"></a>コメント  
- `OnEditLinks`作成し、起動、`COleLinksDialog`リンク ダイアログ ボックスをユーザーがリンクされたオブジェクトを変更できるようにします。  
+### <a name="remarks"></a>Remarks  
+ `OnEditLinks` creates and launches a `COleLinksDialog` Links dialog box that allows the user to change the linked objects.  
   
-##  <a name="onfilesendmail"></a>COleDocument::OnFileSendMail  
- 常駐しているメール ホストを介してメッセージ (存在する場合) に送信ドキュメントの添付ファイルとしてします。  
+##  <a name="onfilesendmail"></a>  COleDocument::OnFileSendMail  
+ Sends a message via the resident mail host (if any) with the document as an attachment.  
   
 ```  
 afx_msg void OnFileSendMail();
 ```  
   
-### <a name="remarks"></a>コメント  
- `OnFileSendMail`呼び出し`OnSaveDocument`(保存) は、電子メールで送信し、一時ファイルに新規または変更されたドキュメントをシリアル化します。 ドキュメントが変更されていない場合は、一時ファイルは必要ありません。オリジナルが送信されます。 `OnFileSendMail`MAPI32 を読み込みます。DLL が読み込まれていない場合。  
+### <a name="remarks"></a>Remarks  
+ `OnFileSendMail` calls `OnSaveDocument` to serialize (save) untitled and modified documents to a temporary file, which is then sent via electronic mail. If the document has not been modified, a temporary file is not needed; the original is sent. `OnFileSendMail` loads MAPI32.DLL if it has not already been loaded.  
   
- 実装とは異なり`OnFileSendMail`の**CDocument**、この関数は、複合ファイルを正しく処理されます。  
+ Unlike the implementation of `OnFileSendMail` for **CDocument**, this function handles compound files correctly.  
   
- 詳細については、次を参照してください、 [MAPI トピック](../../mfc/mapi.md)と[MFC での MAPI サポート](../../mfc/mapi-support-in-mfc.md)記事.。  
+ For more information, see the [MAPI Topics](../../mfc/mapi.md) and [MAPI Support in MFC](../../mfc/mapi-support-in-mfc.md) articles..  
   
-##  <a name="onshowviews"></a>COleDocument::OnShowViews  
- フレームワークは、状態の変更、ドキュメントの表示/非表示の後にこの関数を呼び出します。  
+##  <a name="onshowviews"></a>  COleDocument::OnShowViews  
+ The framework calls this function after the document's visibility state changes.  
   
 ```  
 virtual void OnShowViews(BOOL bVisible);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bVisible`  
- ドキュメントが表示または非表示になるかどうかを示します。  
+ Indicates whether the document has become visible or invisible.  
   
-### <a name="remarks"></a>コメント  
- この関数の既定のバージョンでは、何も行いません。 オーバーライド場合は、アプリケーションが、ドキュメントの表示/非表示が変更されたときに、特別な処理を実行する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The default version of this function does nothing. Override it if your application must perform any special processing when the document's visibility changes.  
   
-##  <a name="onupdateeditchangeicon"></a>COleDocument::OnUpdateEditChangeIcon  
- 編集 メニュー、アイコンの変更 コマンドを更新するためにフレームワークによって呼び出されます。  
+##  <a name="onupdateeditchangeicon"></a>  COleDocument::OnUpdateEditChangeIcon  
+ Called by the framework to update the Change Icon command on the Edit menu.  
   
 ```  
 afx_msg void OnUpdateEditChangeIcon(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、`CCmdUI`構造体を表す] メニューの [更新プログラムのコマンドを生成します。 更新ハンドラーは、**を有効にする**のメンバー関数、`CCmdUI`を構造化`pCmdUI`ユーザー インターフェイスを更新します。  
+ A pointer to a `CCmdUI` structure that represents the menu that generated the update command. The update handler calls the **Enable** member function of the `CCmdUI` structure through `pCmdUI` to update the user interface.  
   
-### <a name="remarks"></a>コメント  
- `OnUpdateEditChangeIcon`有効なアイコンが、ドキュメントに存在するかどうかによって、コマンドのユーザー インターフェイスを更新します。 動作を変更するには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ `OnUpdateEditChangeIcon` updates the command's user interface depending on whether or not a valid icon exists in the document. Override this function to change the behavior.  
   
-##  <a name="onupdateeditlinksmenu"></a>COleDocument::OnUpdateEditLinksMenu  
- [編集] メニューのリンクのコマンドを更新するため、フレームワークによって呼び出されます。  
+##  <a name="onupdateeditlinksmenu"></a>  COleDocument::OnUpdateEditLinksMenu  
+ Called by the framework to update the Links command on the Edit menu.  
   
 ```  
 afx_msg void OnUpdateEditLinksMenu(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、`CCmdUI`構造体を表す] メニューの [更新プログラムのコマンドを生成します。 更新ハンドラーは、**を有効にする**のメンバー関数、`CCmdUI`を構造化`pCmdUI`ユーザー インターフェイスを更新します。  
+ A pointer to a `CCmdUI` structure that represents the menu that generated the update command. The update handler calls the **Enable** member function of the `CCmdUI` structure through `pCmdUI` to update the user interface.  
   
-### <a name="remarks"></a>コメント  
- 以降で、ドキュメント内の最初の OLE アイテム`OnUpdateEditLinksMenu`各項目にアクセスする、項目は、リンクし、リンクである場合、リンクのコマンドを有効にするかどうかをテストします。 動作を変更するには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Starting with the first OLE item in the document, `OnUpdateEditLinksMenu` accesses each item, tests whether the item is a link, and, if it is a link, enables the Links command. Override this function to change the behavior.  
   
-##  <a name="onupdateobjectverbmenu"></a>COleDocument::OnUpdateObjectVerbMenu  
- 更新するためにフレームワークによって呼び出されます、 *ObjectName*コマンドを編集 メニューからアクセスされる動詞 サブメニューで、 *ObjectName*コマンド、場所*ObjectName* OLE オブジェクトの名前は、ドキュメントに埋め込まれます。  
+##  <a name="onupdateobjectverbmenu"></a>  COleDocument::OnUpdateObjectVerbMenu  
+ Called by the framework to update the *ObjectName* command on the Edit menu and the Verb submenu accessed from the *ObjectName* command, where *ObjectName* is the name of the OLE object embedded in the document.  
   
 ```  
 afx_msg void OnUpdateObjectVerbMenu(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、`CCmdUI`構造体を表す] メニューの [更新プログラムのコマンドを生成します。 更新ハンドラーは、**を有効にする**のメンバー関数、`CCmdUI`を構造化`pCmdUI`ユーザー インターフェイスを更新します。  
+ A pointer to a `CCmdUI` structure that represents the menu that generated the update command. The update handler calls the **Enable** member function of the `CCmdUI` structure through `pCmdUI` to update the user interface.  
   
-### <a name="remarks"></a>コメント  
- `OnUpdateObjectVerbMenu`更新プログラム、 *ObjectName*ドキュメントでは有効なオブジェクトが存在するかどうかによって、コマンドのユーザー インターフェイスです。 オブジェクトが存在する場合、 *ObjectName* [編集] メニューのコマンドが有効にします。 このメニュー コマンドが選択されている動詞のサブメニューが表示されます。 動詞サブメニューには、編集やプロパティなどなどのオブジェクトで使用できるすべての動詞コマンドが含まれています。 動作を変更するには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ `OnUpdateObjectVerbMenu` updates the *ObjectName* command's user interface depending on whether or not a valid object exists in the document. If an object exists, the *ObjectName* command on the Edit menu is enabled. When this menu command is selected, the Verb submenu is displayed. The Verb submenu contains all the verb commands available for the object, such as Edit, Properties, and so on. Override this function to change the behavior.  
   
-##  <a name="onupdatepastelinkmenu"></a>COleDocument::OnUpdatePasteLinkMenu  
- OLE のリンク アイテムをクリップボードから貼り付けできるかどうかを調べるためにフレームワークによって呼び出されます。  
+##  <a name="onupdatepastelinkmenu"></a>  COleDocument::OnUpdatePasteLinkMenu  
+ Called by the framework to determine whether a linked OLE item can be pasted from the Clipboard.  
   
 ```  
 afx_msg void OnUpdatePasteLinkMenu(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、`CCmdUI`構造体を表す] メニューの [更新プログラムのコマンドを生成します。 更新ハンドラーは、**を有効にする**のメンバー関数、`CCmdUI`を構造化`pCmdUI`ユーザー インターフェイスを更新します。  
+ A pointer to a `CCmdUI` structure that represents the menu that generated the update command. The update handler calls the **Enable** member function of the `CCmdUI` structure through `pCmdUI` to update the user interface.  
   
-### <a name="remarks"></a>コメント  
- 貼り付け コマンドが有効になっているか、アイテムがドキュメントに貼り付けできるかどうかによって無効になっています。  
+### <a name="remarks"></a>Remarks  
+ The Paste Special menu command is enabled or disabled depending on whether the item can be pasted into the document or not.  
   
-##  <a name="onupdatepastemenu"></a>COleDocument::OnUpdatePasteMenu  
- OLE 埋め込みアイテムをクリップボードから貼り付けできるかどうかを調べるためにフレームワークによって呼び出されます。  
+##  <a name="onupdatepastemenu"></a>  COleDocument::OnUpdatePasteMenu  
+ Called by the framework to determine whether an embedded OLE item can be pasted from the Clipboard.  
   
 ```  
 afx_msg void OnUpdatePasteMenu(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、`CCmdUI`構造体を表す] メニューの [更新プログラムのコマンドを生成します。 更新ハンドラーは、**を有効にする**のメンバー関数、`CCmdUI`を構造化`pCmdUI`ユーザー インターフェイスを更新します。  
+ A pointer to a `CCmdUI` structure that represents the menu that generated the update command. The update handler calls the **Enable** member function of the `CCmdUI` structure through `pCmdUI` to update the user interface.  
   
-### <a name="remarks"></a>コメント  
- [貼り付け] コマンドとボタンが有効になっているまたはアイテムがドキュメントに貼り付けできるかどうかによって無効になっています。  
+### <a name="remarks"></a>Remarks  
+ The Paste menu command and button are enabled or disabled depending on whether the item can be pasted into the document or not.  
   
-##  <a name="removeitem"></a>COleDocument::RemoveItem  
- ドキュメントから項目を削除するには、この関数を呼び出します。  
+##  <a name="removeitem"></a>  COleDocument::RemoveItem  
+ Call this function to remove an item from the document.  
   
 ```  
 virtual void RemoveItem(CDocItem* pItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pItem`  
- 削除するドキュメントの項目へのポインター。  
+ Pointer to the document item to be removed.  
   
-### <a name="remarks"></a>コメント  
- 通常必要はありませんこの関数を明示的に呼び出すデストラクターによって呼び出される`COleClientItem`と`COleServerItem`です。  
+### <a name="remarks"></a>Remarks  
+ You typically do not need to call this function explicitly; it is called by the destructors for `COleClientItem` and `COleServerItem`.  
   
-##  <a name="updatemodifiedflag"></a>COleDocument::UpdateModifiedFlag  
- 含まれている OLE アイテムのいずれかが変更された場合に変更されたドキュメントをマークするには、この関数を呼び出します。  
+##  <a name="updatemodifiedflag"></a>  COleDocument::UpdateModifiedFlag  
+ Call this function to mark the document as modified if any of the contained OLE items have been modified.  
   
 ```  
 virtual void UpdateModifiedFlag();
 ```  
   
-### <a name="remarks"></a>コメント  
- これにより、ドキュメントのネイティブのデータが変更されていない場合でもを閉じる前に、ドキュメントの保存先のユーザー入力を求めるフレームワークことができます。  
+### <a name="remarks"></a>Remarks  
+ This allows the framework to prompt the user to save the document before closing, even if the native data in the document has not been modified.  
   
-## <a name="see-also"></a>関連項目  
- [MFC のサンプルのコンテナー](../../visual-cpp-samples.md)   
- [MFC サンプル MFCBIND](../../visual-cpp-samples.md)   
- [CDocument クラス](../../mfc/reference/cdocument-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample CONTAINER](../../visual-cpp-samples.md)   
+ [MFC Sample MFCBIND](../../visual-cpp-samples.md)   
+ [CDocument Class](../../mfc/reference/cdocument-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

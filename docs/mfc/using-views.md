@@ -1,62 +1,81 @@
 ---
-title: "ビューの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CView クラス, ビュー アーキテクチャ"
-  - "描画, データ"
-  - "ユーザーとの対話とビュー クラスの役割"
-  - "MFC, ビュー"
-  - "描画 (データを)"
-  - "描画 (データを)"
-  - "ユーザー入力, 解釈 (ビュー クラスを通じた)"
-  - "ビュー クラス, 役割 (アプリケーション データの表示での)"
-  - "ビュー クラス, 役割 (ユーザーとの対話の管理での)"
-  - "ビュー, 使用"
+title: Using Views | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- interacting with users and role of view class [MFC]
+- drawing [MFC], data
+- rendering data
+- view classes [MFC], role in managing user interaction
+- CView class [MFC], view architecture
+- MFC, views
+- views [MFC], using
+- painting data
+- user input [MFC], interpreting through view class [MFC]
+- view classes [MFC], role in displaying application data
 ms.assetid: dc3de6ad-5c64-4317-8f10-8bdcc38cdbd5
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ビューの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c26798bd71270b37a25d2665c030b615c6bb032e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ビューの責任は、ドキュメント内のデータをユーザーにグラフィカルに表示され、文書のアクションとして、ユーザー入力を受け入れ、解釈します。  ビュー クラスを作成する場合のタスクが存在する:  
+---
+# <a name="using-views"></a>Using Views
+The view's responsibilities are to display the document's data graphically to the user and to accept and interpret user input as operations on the document. Your tasks in writing your view class are to:  
   
--   ドキュメントにデータを表示するビュー クラスの [OnDraw](../Topic/CView::OnDraw.md) メンバー関数を記述します。  
+-   Write your view class's [OnDraw](../mfc/reference/cview-class.md#ondraw) member function, which renders the document's data.  
   
--   ビュー クラスのメッセージ ハンドラー メンバー関数にメニュー項目の適切な Windows メッセージおよびユーザー インターフェイス オブジェクトを追加します。  
+-   Connect appropriate Windows messages and user-interface objects such as menu items to message-handler member functions in the view class.  
   
--   ユーザー入力を解釈するためにこれらのハンドラーを実装してください。  
+-   Implement those handlers to interpret user input.  
   
- また、派生ビュー クラスの `CView` の他のメンバー関数をオーバーライドする必要があります。  特にビューがそれ自体を再描画する直前に、必要な特別な処理をするビューと [OnUpdate](../Topic/CView::OnUpdate.md) の特別な初期化を実行する [OnInitialUpdate](../Topic/CView::OnInitialUpdate.md) をオーバーライドすることもできます。  複数ページのドキュメントでは、印刷するページの指定、および数などの情報を含む印刷ダイアログ ボックスを初期化するようにように [OnPreparePrinting](../Topic/CView::OnPreparePrinting.md) をオーバーライドする必要があります。  `CView` のメンバー関数をオーバーライドする詳細については、" *MFC リファレンス"の*" [CView](../Topic/CView%20Class.md) クラスを参照します。  
+ In addition, you may need to override other `CView` member functions in your derived view class. In particular, you may want to override [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate) to perform special initialization for the view and [OnUpdate](../mfc/reference/cview-class.md#onupdate) to do any special processing needed just before the view redraws itself. For multipage documents, you also must override [OnPreparePrinting](../mfc/reference/cview-class.md#onprepareprinting) to initialize the Print dialog box with the number of pages to print and other information. For more information on overriding `CView` member functions, see class [CView](../mfc/reference/cview-class.md) in the *MFC Reference*.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [MFC で使用できる派生ビュー クラス](../mfc/derived-view-classes-available-in-mfc.md)  
+-   [Derived view classes available in MFC](../mfc/derived-view-classes-available-in-mfc.md)  
   
--   [ビューで描画できます。](../mfc/drawing-in-a-view.md)  
+-   [Drawing in a view](../mfc/drawing-in-a-view.md)  
   
--   [ビューによるユーザー入力の解釈](../mfc/interpreting-user-input-through-a-view.md)  
+-   [Interpreting user input through a view](../mfc/interpreting-user-input-through-a-view.md)  
   
--   [印刷のビューのロール](../mfc/role-of-the-view-in-printing.md)  
+-   [The role of the view in printing](../mfc/role-of-the-view-in-printing.md)  
   
--   [ビューをスクロールし、スケーリングします。](../mfc/scrolling-and-scaling-views.md)  
+-   [Scrolling and scaling views](../mfc/scrolling-and-scaling-views.md)  
   
--   [ドキュメントやビューを初期化し、クリーンアップします](../mfc/initializing-and-cleaning-up-documents-and-views.md)  
+-   [Initializing and cleaning up documents and views](../mfc/initializing-and-cleaning-up-documents-and-views.md)  
   
-## 参照  
- [ドキュメント\/ビュー アーキテクチャ](../Topic/Document-View%20Architecture.md)   
- [CFormView クラス](../mfc/reference/cformview-class.md)   
- [レコード ビュー \(MFC データ アクセス\)](../data/record-views-mfc-data-access.md)   
- [シリアル化機構のバイパス](../mfc/bypassing-the-serialization-mechanism.md)
+## <a name="see-also"></a>See Also  
+ [Document/View Architecture](../mfc/document-view-architecture.md)   
+ [CFormView Class](../mfc/reference/cformview-class.md)   
+ [Record Views  (MFC Data Access)](../data/record-views-mfc-data-access.md)   
+ [Bypassing the Serialization Mechanism](../mfc/bypassing-the-serialization-mechanism.md)
+
+

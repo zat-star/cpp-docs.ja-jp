@@ -1,5 +1,5 @@
 ---
-title: "CString の書式指定とメッセージ ボックスの表示 |Microsoft ドキュメント"
+title: CString Formatting and Message-Box Display | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CString objects, formatting and message boxes
+- CString objects [MFC], formatting and message boxes
 ms.assetid: d1068cf4-9cc5-4952-b9e7-d612c53cbc28
 caps.latest.revision: 14
 author: mikeblome
@@ -33,32 +33,32 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: 356562dc61971aa7a74ce9e9be94fc34af58f6f9
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: abe0ce15f9fdf83c4cd15156916779e112ab72a8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cstring-formatting-and-message-box-display"></a>CString の書式指定とメッセージ ボックスの表示
-関数の数が書式設定および解析する指定された`CString`オブジェクト。 これらの関数を使用するには、操作する必要があるたびに`CString`オブジェクトではなくはメッセージ ボックスのテキストに表示される文字列を書式設定するために特に有用です。  
+# <a name="cstring-formatting-and-message-box-display"></a>CString Formatting and Message-Box Display
+A number of functions are provided to format and parse `CString` objects. You can use these functions whenever you have to manipulate `CString` objects, but they are particularly useful for formatting strings that will appear in message-box text.  
   
- この関数のグループには、メッセージ ボックスを表示するためのグローバル関数も含まれています。  
+ This group of functions also includes a global routine for displaying a message box.  
   
-### <a name="cstring-functions"></a>CString 関数  
+### <a name="cstring-functions"></a>CString Functions  
   
 |||  
 |-|-|  
-|[AfxExtractSubString](#afxextractsubstring)|指定された文字列から 1 つの文字で区切られた部分文字列を抽出します。|  
-|[AfxFormatString1](#afxformatstring1)|文字列テーブルに置換にはした文字列の書式指定文字"%1"の指定した文字列が含まれています。|  
-|[AfxFormatString2](#afxformatstring2)|形式の 2 つの代替文字列は、「1%」と"%2"、文字列内の文字列テーブルに格納されている文字します。|  
-|[AfxMessageBox](#afxmessagebox)|メッセージ ボックスを表示します。|  
+|[AfxExtractSubString](#afxextractsubstring)|Extracts substrings separated by a single character from a given source string.|  
+|[AfxFormatString1](#afxformatstring1)|Substitutes a given string for the format characters "%1" in a string contained in the string table.|  
+|[AfxFormatString2](#afxformatstring2)|Substitutes two strings for the format characters "%1" and "%2" in a string contained in the string table.|  
+|[AfxMessageBox](#afxmessagebox)|Displays a message box.|  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxwin.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxwin.h  
   
-##  <a name="afxextractsubstring"></a>AfxExtractSubString  
- 指定された文字列から部分文字列を抽出するため、このグローバル関数を使用できます。  
+##  <a name="afxextractsubstring"></a>  AfxExtractSubString  
+ This global function can be used to extract a substring from a given source string.  
   
 ```   
 BOOL AFXAPI AfxExtractSubString (
@@ -68,35 +68,35 @@ BOOL AFXAPI AfxExtractSubString (
     TCHAR chSep  = '\n'); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *rString*  
- -   参照、 [CString](../../atl-mfc-shared/using-cstring.md)個々 の部分文字列を受け取るオブジェクト。  
+ -   Reference to a [CString](../../atl-mfc-shared/using-cstring.md) object that will receive an individual substring.  
   
  *lpszFullString*  
- -   文字列から抽出するための完全なテキストを含む文字列です。  
+ -   String containing the full text of the string to extract from.  
   
  *iSubString*  
- -   抽出する部分文字列の 0 から始まるインデックス*lpszFullString*です。  
+ -   Zero-based index of the substring to extract from *lpszFullString*.  
   
  *chSep*  
- -   区切り文字が部分文字列を区切るために使用します。  
+ -   Separator character used to delimit substrings.  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**関数は、指定されたインデックスにある部分文字列を正常に展開する場合は、それ以外の場合、 **FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if the function successfully extracted the substring at the provided index; otherwise, **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- この関数は、既知の単一の文字は、各サブ文字列を区切るときに、ソース文字列から複数の部分文字列を抽出するために役立ちます。 この関数は検索の先頭から、`lpszFullString`パラメーターたびに呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This function is useful for extracting multiple substrings from a source string when a known single character separates each substring. This function searches from the beginning of the `lpszFullString` parameter each time it is called.  
   
- どちらの場合、この関数は FALSE を返しますが`lpszFullString`に設定されている**NULL**関数の末尾に到達または`lpszFullString`検索せず`iSubString`+1 出現する指定した区切り記号のです。 `rString`場合、パラメーターを元の値から変更されませんが`lpszFullString`に設定された**NULL**です。 それ以外の場合、`rString`パラメーターは、指定したインデックスの部分文字列を抽出できませんでした場合、空の文字列に設定されます。  
+ This function will return FALSE if either `lpszFullString` is set to **NULL** or the function reaches the end of `lpszFullString` without finding `iSubString`+1 occurrences of the specified separator character. The `rString` parameter will not be modified from its original value if `lpszFullString` was set to **NULL**; otherwise, the `rString` parameter is set to the empty string if the substring could not be extracted for the specified index.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 48](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#48](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_1.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxwin.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxwin.h  
   
-##  <a name="afxformatstring1"></a>AfxFormatString1  
- 指す文字列に置換されます`lpsz1`で識別されるテンプレート文字列リソースで文字"%1"のすべてのインスタンスの`nIDS`します。  
+##  <a name="afxformatstring1"></a>  AfxFormatString1  
+ Substitutes the string pointed to by `lpsz1` for any instances of the characters "%1" in the template string resource identified by `nIDS`.  
   
 ```  
 void  AfxFormatString1(
@@ -105,29 +105,29 @@ void  AfxFormatString1(
     LPCTSTR lpsz1); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rString`  
- 参照、`CString`置換が実行された後、結果の文字列を格納するオブジェクト。  
+ A reference to a `CString` object that will contain the resultant string after the substitution is performed.  
   
  `nIDS`  
- 置換を実行する、テンプレート文字列のリソース ID です。  
+ The resource ID of the template string on which the substitution will be performed.  
   
  `lpsz1`  
- 「1%」は、テンプレート文字列の文字形式で置換される文字列。  
+ A string that will replace the format characters "%1" in the template string.  
   
-### <a name="remarks"></a>コメント  
- 新しく生成された文字列が格納されている`rString`です。 たとえば、文字列テーブル内の文字列が「ファイル %1 は見つかりませんでした」と`lpsz1`と等しい"C:\MYFILE です。TXT"、し`rString`文字列"File C:\MYFILE には。TXT が見つかりません。"です。 この関数は、メッセージ ボックスおよびその他のウィンドウに送信される文字列を書式設定するために役立ちます。  
+### <a name="remarks"></a>Remarks  
+ The newly formed string is stored in `rString`. For example, if the string in the string table is "File %1 not found", and `lpsz1` is equal to "C:\MYFILE.TXT", then `rString` will contain the string "File C:\MYFILE.TXT not found". This function is useful for formatting strings sent to message boxes and other windows.  
   
- 書式指定文字"%1"は文字列で複数回表示される、複数の置き換えが行われます。  
+ If the format characters "%1" appear in the string more than once, multiple substitutions will be made.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities #25](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#25](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_2.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxwin.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxwin.h  
   
-##  <a name="afxformatstring2"></a>AfxFormatString2  
- 指す文字列に置換されます`lpsz1`、文字"%1"、およびが指す文字列のすべてのインスタンスの`lpsz2`で識別されるテンプレート文字列リソースの"%2"の文字のすべてのインスタンスの`nIDS`します。  
+##  <a name="afxformatstring2"></a>  AfxFormatString2  
+ Substitutes the string pointed to by `lpsz1` for any instances of the characters "%1", and the string pointed to by `lpsz2` for any instances of the characters "%2", in the template string resource identified by `nIDS`.  
   
 ```   
 void AfxFormatString2(
@@ -137,32 +137,32 @@ void AfxFormatString2(
     LPCTSTR lpsz2); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rString`  
- 参照、`CString`置換が実行された後、結果の文字列が含まれる。  
+ A reference to the `CString` that will contain the resultant string after the substitution is performed.  
   
  `nIDS`  
- 置換を実行する、テンプレート文字列の文字列テーブルの ID。  
+ The string table ID of the template string on which the substitution will be performed.  
   
  `lpsz1`  
- 「1%」は、テンプレート文字列の文字形式で置換される文字列。  
+ A string that will replace the format characters "%1" in the template string.  
   
  `lpsz2`  
- "%2"は、テンプレート文字列に文字形式で置換される文字列。  
+ A string that will replace the format characters "%2" in the template string.  
   
-### <a name="remarks"></a>コメント  
- 新しく生成された文字列が格納されている`rString`です。 たとえば、文字列テーブル内の文字列が「ファイル %1 がディレクトリ %2 に見つかりません」 `lpsz1` "MYFILE 指します。TXT"、および`lpsz2`"C:\MYDIR"が、指す`rString`文字列"File MYFILE には。TXT C:\MYDIR のディレクトリに見つかりませんでした"  
+### <a name="remarks"></a>Remarks  
+ The newly formed string is stored in `rString`. For example, if the string in the string table is "File %1 not found in directory %2", `lpsz1` points to "MYFILE.TXT", and `lpsz2` points to "C:\MYDIR", then `rString` will contain the string "File MYFILE.TXT not found in directory C:\MYDIR"  
   
- 文字"%1"の形式または"%2"は文字列で複数回表示される、複数の置き換えになります。 数値の順序ではありません。  
+ If the format characters "%1" or "%2" appear in the string more than once, multiple substitutions will be made. They do not have to be in numerical order.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities # 26](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#26](../../mfc/codesnippet/cpp/cstring-formatting-and-message-box-display_3.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxwin.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxwin.h  
   
-##  <a name="afxmessagebox"></a>AfxMessageBox  
- 画面にメッセージ ボックスを表示します。  
+##  <a name="afxmessagebox"></a>  AfxMessageBox  
+ Displays a message box on the screen.  
   
 ```  
 int AfxMessageBox(
@@ -176,49 +176,49 @@ int AFXAPI AfxMessageBox(
     UINT nIDHelp = (UINT) -1); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszText`  
- `CString` オブジェクト、またはメッセージ ボックスに表示されるメッセージを含む null で終了する文字列をポイントします。  
+ Points to a `CString` object or null-terminated string containing the message to be displayed in the message box.  
   
  `nType`  
- メッセージ ボックスのスタイル。 任意の適用、[メッセージ ボックス スタイル](../../mfc/reference/message-box-styles.md)をボックスにします。  
+ The style of the message box. Apply any of the [message-box styles](../../mfc/reference/styles-used-by-mfc.md#message-box-styles) to the box.  
   
  `nIDHelp`  
- メッセージのヘルプ コンテキスト ID。0 は、アプリケーションの既定のヘルプ コンテキストが使用されることを示します。  
+ The Help context ID for the message; 0 indicates the application's default Help context will be used.  
   
  `nIDPrompt`  
- 文字列テーブル内の文字列の参照に使用される一意の ID。  
+ A unique ID used to reference a string in the string table.  
   
-### <a name="return-value"></a>戻り値  
- メッセージ ボックスを表示する十分なメモリがない場合は 0。それ以外の場合、次のいずれかの値が返されます。  
+### <a name="return-value"></a>Return Value  
+ Zero if there is not enough memory to display the message box; otherwise, one of the following values is returned:  
   
-- **IDABORT** [中止] ボタンが選択されています。  
+- **IDABORT** The Abort button was selected.  
   
-- **IDCANCEL** キャンセル ボタンが選択されました。  
+- **IDCANCEL** The Cancel button was selected.  
   
-- **IDIGNORE**を無視するボタンが選択されました。  
+- **IDIGNORE** The Ignore button was selected.  
   
-- **IDNO**されませんボタンが選択されました。  
+- **IDNO** The No button was selected.  
   
-- **IDOK** [ok] ボタンが選択されました。  
+- **IDOK** The OK button was selected.  
   
-- **IDRETRY** [再試行] ボタンが選択されています。  
+- **IDRETRY** The Retry button was selected.  
   
-- **IDYES** [はい] ボタンが選択されました。  
+- **IDYES** The Yes button was selected.  
   
- メッセージ ボックスに、[キャンセル] ボタンがある場合、 **IDCANCEL** ESC キーが押されたか、[キャンセル] ボタンが選択されている場合は、値が返されます。 メッセージ ボックスに [キャンセル] ボタンがない場合、Esc キーを押しても効果はありません。  
+ If a message box has a Cancel button, the **IDCANCEL** value will be returned if either the ESC key is pressed or the Cancel button is selected. If the message box has no Cancel button, pressing the ESC key has no effect.  
   
- 関数は、 [AfxFormatString1](#afxformatstring1)と[AfxFormatString2](#afxformatstring2)メッセージ ボックスに表示されるテキストの書式設定に役に立ちます。  
+ The functions [AfxFormatString1](#afxformatstring1) and [AfxFormatString2](#afxformatstring2) can be useful in formatting text that appears in a message box.  
   
-### <a name="remarks"></a>コメント  
- このオーバーロード関数の最初の形式には、メッセージ ボックスの `lpszText` がポイントする文字列が表示され、`nIDHelp` を使用してヘルプ コンテキストが記述されます。 ヘルプ コンテキストは、ユーザーがヘルプ キー (通常は F1 キー) を押したときに関連するヘルプ トピックにジャンプするために使用されます。  
+### <a name="remarks"></a>Remarks  
+ The first form of this overloaded function displays a text string pointed to by `lpszText` in the message box and uses `nIDHelp` to describe a Help context. The Help context is used to jump to an associated Help topic when the user presses the Help key (typically F1).  
   
- 関数の 2 番目の形式では、ID `nIDPrompt` を持つ文字列リソースを使用してメッセージ ボックスにメッセージが表示されます。 関連するヘルプ ページは、`nIDHelp` の値を使用して検出されます。 場合の既定値`nIDHelp`使用 (-1)、文字列リソースの ID を`nIDPrompt`、ヘルプ コンテキストを使用します。 ヘルプ コンテキストの定義の詳細については、次を参照してください。[テクニカル ノート 28:](../../mfc/tn028-context-sensitive-help-support.md)です。  
+ The second form of the function uses the string resource with the ID `nIDPrompt` to display a message in the message box. The associated Help page is found through the value of `nIDHelp`. If the default value of `nIDHelp` is used (-1), the string resource ID, `nIDPrompt`, is used for the Help context. For more information about defining Help contexts, see [Technical Note 28](../../mfc/tn028-context-sensitive-help-support.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCWindowing #133](../../mfc/reference/codesnippet/cpp/cstring-formatting-and-message-box-display_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCWindowing#133](../../mfc/reference/codesnippet/cpp/cstring-formatting-and-message-box-display_4.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)   
- [CStringT クラス](../../atl-mfc-shared/reference/cstringt-class.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)   
+ [CStringT Class](../../atl-mfc-shared/reference/cstringt-class.md)
 

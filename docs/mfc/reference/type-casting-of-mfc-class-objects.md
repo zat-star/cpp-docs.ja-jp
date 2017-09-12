@@ -1,5 +1,5 @@
 ---
-title: "MFC クラス オブジェクトのキャストを入力 |Microsoft ドキュメント"
+title: Type Casting of MFC Class Objects | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,11 +13,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- macros, type casting
-- pointers, type casting
-- type casts
-- casting types
-- macros, casting pointers
+- macros [MFC], type casting
+- pointers [MFC], type casting
+- type casts [MFC]
+- casting types [MFC]
+- macros [MFC], casting pointers
 ms.assetid: e138465e-c35f-4e84-b788-bd200ccf2f0e
 caps.latest.revision: 15
 author: mikeblome
@@ -37,69 +37,69 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: f1ae094e7085017f03daab3f73323da13ab1be39
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ffd816499e0075a70c87552165867a97218122fa
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="type-casting-of-mfc-class-objects"></a>MFC クラス オブジェクトの型キャスト
-型キャスト マクロは、キャストが有効なことを確認せず、特定のクラスのオブジェクトを指すポインターに指定されたポインターにキャストする方法を提供します。  
+# <a name="type-casting-of-mfc-class-objects"></a>Type Casting of MFC Class Objects
+Type casting macros provide a way to cast a given pointer to a pointer that points to an object of specific class, with or without checking that the cast is legal.  
   
- 次の表は、MFC 型のキャスト マクロを一覧表示します。  
+ The following table lists the MFC type casting macros.  
   
-### <a name="macros-that-cast-pointers-to-mfc-class-objects"></a>MFC クラス オブジェクトへのポインターにキャストするマクロ  
+### <a name="macros-that-cast-pointers-to-mfc-class-objects"></a>Macros That Cast Pointers to MFC Class Objects  
   
 |||  
 |-|-|  
-|[DYNAMIC_DOWNCAST](#dynamic_downcast)|キャストが有効かどうかを確認中に、クラス オブジェクトへのポインターへのポインターをキャストします。|  
-|[STATIC_DOWNCAST](#static_downcast)|ポインターに関連する型の&1; つのクラスからオブジェクトへのポインターをキャストします。 デバッグ ビルドで、 **ASSERT**オブジェクトがない場合、ターゲットの種類"kind of""です。|  
+|[DYNAMIC_DOWNCAST](#dynamic_downcast)|Casts a pointer to a pointer to a class object while checking to see if the cast is legal.|  
+|[STATIC_DOWNCAST](#static_downcast)|Casts a pointer to an object from one class to a pointer of a related type. In a debug build, causes an **ASSERT** if the object is not a "kind of" the target type.|  
   
-##  <a name="dynamic_downcast"></a>DYNAMIC_DOWNCAST  
- キャストが有効かどうかを確認中に、クラスのオブジェクトへのポインターへのポインターをキャストする便利な方法を提供します。  
+##  <a name="dynamic_downcast"></a>  DYNAMIC_DOWNCAST  
+ Provides a handy way to cast a pointer to a pointer to a class object while checking to see if the cast is legal.  
   
 ```   
 DYNAMIC_DOWNCAST(class, pointer)  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `class`  
- クラスの名前。  
+ The name of a class.  
   
  `pointer`  
- 型のオブジェクトへのポインターにキャストするポインター`class`します。  
+ A pointer to be cast to a pointer to an object of type `class`.  
   
-### <a name="remarks"></a>コメント  
- マクロがキャスト、`pointer`パラメーターのオブジェクトへのポインターを`class`パラメーターの型。  
+### <a name="remarks"></a>Remarks  
+ The macro will cast the `pointer` parameter to a pointer to an object of the `class` parameter's type.  
   
- マウス ポインターによって参照されるオブジェクトがある場合、識別されたクラス"kind of""マクロは、適切なポインターを返します。 これがないかどうか、有効なキャスト、マクロを返します**NULL**します。  
+ If the object referenced by the pointer is a "kind of" the identified class, the macro returns the appropriate pointer. If it is not a legal cast, the macro returns **NULL**.  
   
-##  <a name="static_downcast"></a>STATIC_DOWNCAST  
- キャスト*pobject*へのポインターを*、それ以外*オブジェクトです。  
+##  <a name="static_downcast"></a>  STATIC_DOWNCAST  
+ Casts *pobject* to a pointer to a *class_name* object.  
   
 ```   
 STATIC_DOWNCAST(class_name, pobject)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *それ以外*  
- キャストされているクラスの名前。  
+### <a name="parameters"></a>Parameters  
+ *class_name*  
+ The name of the class being cast to.  
   
  *pobject*  
- ポインターにキャストへのポインター、 *、それ以外*オブジェクトです。  
+ The pointer to be cast to a pointer to a *class_name* object.  
   
-### <a name="remarks"></a>コメント  
- *pobject*配置するか、 **NULL**、オブジェクトを直接派生クラスのまたはから間接的に指すまたは*、それ以外*します。 使用してアプリケーションのビルドでは、 **_DEBUG**プリプロセッサ シンボルを定義すると、マクロは**ASSERT**場合*pobject*は**NULL**はないオブジェクトを指している場合、またはで指定されたクラス"kind of""、 *、それ以外*パラメーター (を参照してください[使うため](../../mfc/reference/cobject-class.md#iskindof))。 以外の**_DEBUG**ビルド マクロは、型チェックなしのキャストを実行します。  
+### <a name="remarks"></a>Remarks  
+ *pobject* must either be **NULL**, or point to an object of a class which is derived directly, or indirectly, from *class_name*. In builds of your application with the **_DEBUG** preprocessor symbol defined, the macro will **ASSERT** if *pobject* is not **NULL**, or if it points to an object that is not a "kind of" the class specified in the *class_name* parameter (see [CObject::IsKindOf](../../mfc/reference/cobject-class.md#iskindof)). In non- **_DEBUG** builds, the macro performs the cast without any type checking.  
   
- 指定されたクラス、 *、それ以外*からパラメーターを派生させる必要があります`CObject`を使用してください、`DECLARE_DYNAMIC`と`IMPLEMENT_DYNAMIC`、`DECLARE_DYNCREATE`と`IMPLEMENT_DYNCREATE`、または`DECLARE_SERIAL`と`IMPLEMENT_SERIAL`マクロの記事で説明したよう[CObject クラス: CObject からクラスを派生する](../../mfc/deriving-a-class-from-cobject.md)です。  
+ The class specified in the *class_name* parameter must be derived from `CObject` and must use the `DECLARE_DYNAMIC` and `IMPLEMENT_DYNAMIC`, the `DECLARE_DYNCREATE` and `IMPLEMENT_DYNCREATE`, or the `DECLARE_SERIAL` and `IMPLEMENT_SERIAL` macros as explained in the article [CObject Class: Deriving a Class from CObject](../../mfc/deriving-a-class-from-cobject.md).  
   
- ポインターをキャストするなど、`CMyDoc`という`pMyDoc`へのポインターに**CDocument**この式を使用します。  
+ For example, you might cast a pointer to `CMyDoc`, called `pMyDoc`, to a pointer to **CDocument** using this expression:  
   
- [!code-cpp[NVC_MFCDocView #&197;](../../mfc/codesnippet/cpp/type-casting-of-mfc-class-objects_1.cpp)]  
+ [!code-cpp[NVC_MFCDocView#197](../../mfc/codesnippet/cpp/type-casting-of-mfc-class-objects_1.cpp)]  
   
- 場合`pMyDoc`から直接または間接的に派生したオブジェクトを指していない**CDocument**、マクロは**ASSERT**します。  
+ If `pMyDoc` does not point to an object derived directly or indirectly from **CDocument**, the macro will **ASSERT**.  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

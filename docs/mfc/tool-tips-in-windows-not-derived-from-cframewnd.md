@@ -1,47 +1,66 @@
 ---
-title: "CFrameWnd から派生していないウィンドウのツール ヒント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コントロール [MFC], ツール ヒント"
-  - "有効化 (ツール ヒントを)"
-  - "ハンドラー関数, ツール ヒント"
-  - "ヘルプ, ツール ヒント (コントロールの)"
-  - "TOOLTIPTEXT 構造体"
-  - "TTN_NEEDTEXT メッセージ"
+title: Tool Tips in Windows Not Derived from CFrameWnd | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- enabling tool tips [MFC]
+- TOOLTIPTEXT structure [MFC]
+- Help [MFC], tool tips for controls
+- TTN_NEEDTEXT message [MFC]
+- controls [MFC], tool tips
+- handler functions [MFC], tool tips
 ms.assetid: cad5ef0f-02e3-4151-ad0d-3d42e6932b0e
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# CFrameWnd から派生していないウィンドウのツール ヒント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dd2adc442eaa9a37522a276cca097bb9feda8fb6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-この記事のファミリには [CFrameWnd](../mfc/reference/cframewnd-class.md)から派生されないウィンドウに含まれるコントロールのツールヒントを有効にする方法について説明します。  記事 [ツールバーのツール ヒント](../Topic/Toolbar%20Tool%20Tips.md) は `CFrameWnd`のコントロールにツール ヒントについて説明します。  
+---
+# <a name="tool-tips-in-windows-not-derived-from-cframewnd"></a>Tool Tips in Windows Not Derived from CFrameWnd
+This article family covers enabling tool tips for controls contained in a window that is not derived from [CFrameWnd](../mfc/reference/cframewnd-class.md). The article [Toolbars Tool Tips](../mfc/toolbar-tool-tips.md) provides information about tool tips for controls in a `CFrameWnd`.  
   
- この記事のファミリで説明するトピックは次のとおりです。:  
+ Topics covered in this article family include:  
   
--   [ツール ヒントを有効にする](../mfc/enabling-tool-tips.md)  
+-   [Enabling Tool Tips](../mfc/enabling-tool-tips.md)  
   
--   [ツール ヒントの処理 TTN\_NEEDTEXT 通知](../Topic/Handling%20TTN_NEEDTEXT%20Notification%20for%20Tool%20Tips.md)  
+-   [Handling TTN_NEEDTEXT Notification for Tool Tips](../mfc/handling-ttn-needtext-notification-for-tool-tips.md)  
   
--   [TOOLTIPTEXT 構造体](../mfc/tooltiptext-structure.md)  
+-   [The TOOLTIPTEXT Structure](../mfc/tooltiptext-structure.md)  
   
- ツール ヒントは `CFrameWnd`から派生される親ウィンドウに含まれるボタンなどのコントロールに自動的に表示されます。  これは `CFrameWnd` にコントロールに関連付けられているツール ヒント コントロールの **TTN\_NEEDTEXT** の通知を処理する [TTN\_GETDISPINFO](http://msdn.microsoft.com/library/windows/desktop/bb760269) 通知の既定のハンドラーがあるためです。  
+ Tool tips are automatically displayed for buttons and other controls contained in a parent window derived from `CFrameWnd`. This is because `CFrameWnd` has a default handler for the [TTN_GETDISPINFO](http://msdn.microsoft.com/library/windows/desktop/bb760269) notification, which handles **TTN_NEEDTEXT** notifications from tool tip controls associated with controls.  
   
- ただし、この既定のハンドラーは、**TTN\_NEEDTEXT** 通知を `CFrameWnd`でないダイアログ ボックスやフォーム ビューのコントロールなどのウィンドウのコントロールに関連付けられているツール ヒント コントロールから送られる呼び出されません。  したがって、子コントロールのツールヒントを表示するに **TTN\_NEEDTEXT** 通知メッセージのハンドラー関数を提供する必要があります。  
+ However, this default handler is not called when the **TTN_NEEDTEXT** notification is sent from a tool tip control associated with a control in a window that is not a `CFrameWnd`, such as a control on a dialog box or a form view. Therefore, it is necessary for you to provide a handler function for the **TTN_NEEDTEXT** notification message in order to display tool tips for child controls.  
   
- [CWnd::EnableToolTips](../Topic/CWnd::EnableToolTips.md) してウィンドウに用意されている既定のツール ヒントとそれに関連付けられたテキストはありません。  ツール ヒントのテキストを取得するには **TTN\_NEEDTEXT** の通知は、ツール ヒント コントロールの親ウィンドウに表示するには、ツール ヒント ウィンドウが表示される直前に送信されます。  **TOOLTIPTEXT** 構造体の **pszText** メンバーに値を割り当てるこのメッセージ ハンドラーがあるツール ヒントに表示されているテキストがありません。  
+ The default tool tips provided for your windows by [CWnd::EnableToolTips](../mfc/reference/cwnd-class.md#enabletooltips) do not have text associated with them. To retrieve text for the tool tip to display, the **TTN_NEEDTEXT** notification is sent to the tool tip control's parent window just before the tool tip window is displayed. If there is no handler for this message to assign some value to the **pszText** member of the **TOOLTIPTEXT** structure, there will be no text displayed for the tool tip.  
   
-## 参照  
- [ツール ヒント](../mfc/tool-tips.md)
+## <a name="see-also"></a>See Also  
+ [Tool Tips](../mfc/tool-tips.md)
+
+

@@ -1,11 +1,11 @@
 ---
-title: "CDaoRecordset クラス |Microsoft ドキュメント"
+title: CDaoRecordset Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -94,9 +94,86 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- recordsets, types
-- CDaoRecordset class
-- records, CDaoRecordSet
+- CDaoRecordset [MFC], CDaoRecordset
+- CDaoRecordset [MFC], AddNew
+- CDaoRecordset [MFC], CanAppend
+- CDaoRecordset [MFC], CanBookmark
+- CDaoRecordset [MFC], CancelUpdate
+- CDaoRecordset [MFC], CanRestart
+- CDaoRecordset [MFC], CanScroll
+- CDaoRecordset [MFC], CanTransact
+- CDaoRecordset [MFC], CanUpdate
+- CDaoRecordset [MFC], Close
+- CDaoRecordset [MFC], Delete
+- CDaoRecordset [MFC], DoFieldExchange
+- CDaoRecordset [MFC], Edit
+- CDaoRecordset [MFC], FillCache
+- CDaoRecordset [MFC], Find
+- CDaoRecordset [MFC], FindFirst
+- CDaoRecordset [MFC], FindLast
+- CDaoRecordset [MFC], FindNext
+- CDaoRecordset [MFC], FindPrev
+- CDaoRecordset [MFC], GetAbsolutePosition
+- CDaoRecordset [MFC], GetBookmark
+- CDaoRecordset [MFC], GetCacheSize
+- CDaoRecordset [MFC], GetCacheStart
+- CDaoRecordset [MFC], GetCurrentIndex
+- CDaoRecordset [MFC], GetDateCreated
+- CDaoRecordset [MFC], GetDateLastUpdated
+- CDaoRecordset [MFC], GetDefaultDBName
+- CDaoRecordset [MFC], GetDefaultSQL
+- CDaoRecordset [MFC], GetEditMode
+- CDaoRecordset [MFC], GetFieldCount
+- CDaoRecordset [MFC], GetFieldInfo
+- CDaoRecordset [MFC], GetFieldValue
+- CDaoRecordset [MFC], GetIndexCount
+- CDaoRecordset [MFC], GetIndexInfo
+- CDaoRecordset [MFC], GetLastModifiedBookmark
+- CDaoRecordset [MFC], GetLockingMode
+- CDaoRecordset [MFC], GetName
+- CDaoRecordset [MFC], GetParamValue
+- CDaoRecordset [MFC], GetPercentPosition
+- CDaoRecordset [MFC], GetRecordCount
+- CDaoRecordset [MFC], GetSQL
+- CDaoRecordset [MFC], GetType
+- CDaoRecordset [MFC], GetValidationRule
+- CDaoRecordset [MFC], GetValidationText
+- CDaoRecordset [MFC], IsBOF
+- CDaoRecordset [MFC], IsDeleted
+- CDaoRecordset [MFC], IsEOF
+- CDaoRecordset [MFC], IsFieldDirty
+- CDaoRecordset [MFC], IsFieldNull
+- CDaoRecordset [MFC], IsFieldNullable
+- CDaoRecordset [MFC], IsOpen
+- CDaoRecordset [MFC], Move
+- CDaoRecordset [MFC], MoveFirst
+- CDaoRecordset [MFC], MoveLast
+- CDaoRecordset [MFC], MoveNext
+- CDaoRecordset [MFC], MovePrev
+- CDaoRecordset [MFC], Open
+- CDaoRecordset [MFC], Requery
+- CDaoRecordset [MFC], Seek
+- CDaoRecordset [MFC], SetAbsolutePosition
+- CDaoRecordset [MFC], SetBookmark
+- CDaoRecordset [MFC], SetCacheSize
+- CDaoRecordset [MFC], SetCacheStart
+- CDaoRecordset [MFC], SetCurrentIndex
+- CDaoRecordset [MFC], SetFieldDirty
+- CDaoRecordset [MFC], SetFieldNull
+- CDaoRecordset [MFC], SetFieldValue
+- CDaoRecordset [MFC], SetFieldValueNull
+- CDaoRecordset [MFC], SetLockingMode
+- CDaoRecordset [MFC], SetParamValue
+- CDaoRecordset [MFC], SetParamValueNull
+- CDaoRecordset [MFC], SetPercentPosition
+- CDaoRecordset [MFC], Update
+- CDaoRecordset [MFC], m_bCheckCacheForDirtyFields
+- CDaoRecordset [MFC], m_nFields
+- CDaoRecordset [MFC], m_nParams
+- CDaoRecordset [MFC], m_pDAORecordset
+- CDaoRecordset [MFC], m_pDatabase
+- CDaoRecordset [MFC], m_strFilter
+- CDaoRecordset [MFC], m_strSort
 ms.assetid: 2322067f-1027-4662-a5d7-aa2fc7488630
 caps.latest.revision: 26
 author: mikeblome
@@ -116,425 +193,426 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: bd211f55e2a07ef2d0c61e039df526fc2cd654f4
-ms.lasthandoff: 04/01/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 089a9910e4950a2ecfbdc85355e8f5d4b0600f36
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaorecordset-class"></a>CDaoRecordset クラス
-データ ソースから選択された 1 組のレコードセットを表現します。  
+# <a name="cdaorecordset-class"></a>CDaoRecordset Class
+Represents a set of records selected from a data source.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDaoRecordset : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoRecordset::CDaoRecordset](#cdaorecordset)|`CDaoRecordset` オブジェクトを構築します。|  
+|[CDaoRecordset::CDaoRecordset](#cdaorecordset)|Constructs a `CDaoRecordset` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoRecordset::AddNew](#addnew)|新しいレコードを追加する準備をします。 呼び出す[更新](#update)追加を完了します。|  
-|[CDaoRecordset::CanAppend](#canappend)|使用して、レコード セットに新しいレコードを追加する場合は 0 以外を返します、 [AddNew](#addnew)メンバー関数。|  
-|[CDaoRecordset::CanBookmark](#canbookmark)|レコード セットは、ブックマークをサポートする場合は 0 以外を返します。|  
-|[CDaoRecordset::CancelUpdate](#cancelupdate)|キャンセルの理由のため、保留中の更新プログラム、[編集](#edit)または[AddNew](#addnew)操作します。|  
-|[CDaoRecordset::CanRestart](#canrestart)|場合は 0 以外を返します[Requery](#requery)レコード セットのクエリを再実行を呼び出すことができます。|  
-|[CDaoRecordset::CanScroll](#canscroll)|レコード間をスクロールできる場合は 0 以外を返します。|  
-|[CDaoRecordset::CanTransact](#cantransact)|データ ソースには、トランザクションがサポートしている場合は 0 以外を返します。|  
-|[CDaoRecordset::CanUpdate](#canupdate)|レコード セットを更新する場合は 0 以外を返します (することができますを追加、更新、またはレコードを削除) します。|  
-|[CDaoRecordset::Close](#close)|レコード セットを閉じます。|  
-|[CDaoRecordset::Delete](#delete)|レコード セットから現在のレコードを削除します。 削除された後は、別のレコードに明示的にスクロールする必要があります。|  
-|[CDaoRecordset::DoFieldExchange](#dofieldexchange)|レコード セットのフィールド データ メンバーと、データ ソースに対応するレコードの間で (双方向) のデータを交換するには、呼び出されます。 レコード フィールド エクス (チェンジ DFX) を実装 DAO です。|  
-|[CDaoRecordset::Edit](#edit)|現在のレコードへの変更を準備します。 呼び出す**更新**編集を完了します。|  
-|[CDaoRecordset::FillCache](#fillcache)|すべての塗りつぶしまたは ODBC データ ソースからデータを含むレコード セット オブジェクトのローカル キャッシュの一部です。|  
-|[CDaoRecordset::Find](#find)|最初に、[次へ] を検索し、特定の文字列を指定された条件と、そのレコードを現在のレコードを満たすダイナセット タイプのレコード セット内の前、または最後の位置。|  
-|[CDaoRecordset::FindFirst](#findfirst)|ダイナセット型またはレコードを指定された条件と、そのレコードを現在のレコードを満たす最初のレコードを検索します。|  
-|[CDaoRecordset::FindLast](#findlast)|ダイナセットの種類またはスナップショットの種類のレコード セット、指定された条件と、そのレコードを現在のレコード内の最後のレコードを検索します。|  
-|[CDaoRecordset::FindNext](#findnext)|ダイナセットの種類またはスナップショットの種類のレコード セット、指定された条件と、そのレコードを現在のレコード内の次のレコードを検索します。|  
-|[CDaoRecordset::FindPrev](#findprev)|ダイナセット型またはレコードを指定された条件と、そのレコードを現在のレコードを満たすには、前のレコードを検索します。|  
-|[CDaoRecordset::GetAbsolutePosition](#getabsoluteposition)|レコード セット オブジェクトの現在のレコードのレコード数を返します。|  
-|[CDaoRecordset::GetBookmark](#getbookmark)|レコードのブックマークを表す値を返します。|  
-|[CDaoRecordset::GetCacheSize](#getcachesize)|ODBC データ ソースからローカルにキャッシュされたデータを含むダイナセット タイプのレコード セット内のレコードの数を示す値を返します。|  
-|[CDaoRecordset::GetCacheStart](#getcachestart)|キャッシュするレコード セットの最初のレコード、ブックマークを示す値を返します。|  
-|[CDaoRecordset::GetCurrentIndex](#getcurrentindex)|返します、`CString`最近にインデックスの名前を含むインデックスが設定されたテーブル タイプで使用される`CDaoRecordset`です。|  
-|[CDaoRecordset::GetDateCreated](#getdatecreated)|基になるベース テーブルの日付と時刻を返します、`CDaoRecordset`オブジェクトが作成されました|  
-|[CDaoRecordset::GetDateLastUpdated](#getdatelastupdated)|基になるベース テーブルのデザインに加えられた最近の変更日時を返します、`CDaoRecordset`オブジェクト。|  
-|[CDaoRecordset::GetDefaultDBName](#getdefaultdbname)|既定のデータ ソースの名前を返します。|  
-|[CDaoRecordset::GetDefaultSQL](#getdefaultsql)|実行する既定の SQL 文字列を取得するには、呼び出されます。|  
-|[CDaoRecordset::GetEditMode](#geteditmode)|現在のレコードの編集状態を示す値を返します。|  
-|[CDaoRecordset::GetFieldCount](#getfieldcount)|レコード セット内のフィールドの数を表す値を返します。|  
-|[CDaoRecordset::GetFieldInfo](#getfieldinfo)|レコード セットの特定の種類のフィールドに関する情報を返します。|  
-|[CDaoRecordset::GetFieldValue](#getfieldvalue)|レコード セット内のフィールドの値を返します。|  
-|[CDaoRecordset::GetIndexCount](#getindexcount)|レコード セットを基になるテーブル内のインデックスの数を取得します。|  
-|[CDaoRecordset::GetIndexInfo](#getindexinfo)|さまざまな種類のインデックスについての情報を返します。|  
-|[CDaoRecordset::GetLastModifiedBookmark](#getlastmodifiedbookmark)|最後に追加またはレコードの更新を判断するために使用します。|  
-|[CDaoRecordset::GetLockingMode](#getlockingmode)|編集中に有効になっているロックの種類を示す値を返します。|  
-|[CDaoRecordset::GetName](#getname)|返します、`CString`レコード セットの名前を含むです。|  
-|[CDaoRecordset::GetParamValue](#getparamvalue)|基になる DAOParameter オブジェクトに格納されている指定されたパラメーターの現在の値を取得します。|  
-|[CDaoRecordset::GetPercentPosition](#getpercentposition)|現在のレコードのレコードの総数の割合としての位置を返します。|  
-|[CDaoRecordset::GetRecordCount](#getrecordcount)|レコード セット オブジェクトにアクセスするレコードの数を返します。|  
-|[CDaoRecordset::GetSQL](#getsql)|レコード セットのレコードを選択するために使用する SQL 文字列を取得します。|  
-|[CDaoRecordset::GetType](#gettype)|レコード セットの種類を決定するために呼び出さ: テーブルの種類、ダイナセット型、またはスナップショットの種類。|  
-|[CDaoRecordset::GetValidationRule](#getvalidationrule)|返します、`CString`フィールドに入力されたデータを検証する値を格納します。|  
-|[CDaoRecordset::GetValidationText](#getvalidationtext)|検証規則が満たされていない場合に表示されるテキストを取得します。|  
-|[CDaoRecordset::IsBOF](#isbof)|レコード セットは、最初のレコードの前に位置付けられている場合は 0 以外を返します。 現在のレコードがありません。|  
-|[CDaoRecordset::IsDeleted](#isdeleted)|レコード セットが削除されたレコードに配置されている場合は 0 以外を返します。|  
-|[CDaoRecordset::IsEOF](#iseof)|レコード セットは、後の最後のレコードに位置付けられている場合は 0 以外を返します。 現在のレコードがありません。|  
-|[CDaoRecordset::IsFieldDirty](#isfielddirty)|現在のレコードで指定されたフィールドが変更された場合は 0 以外を返します。|  
-|[CDaoRecordset::IsFieldNull](#isfieldnull)|現在のレコードで指定されたフィールドが Null (には、値がない) 場合は 0 以外を返します。|  
-|[CDaoRecordset::IsFieldNullable](#isfieldnullable)|現在のレコードで指定したフィールドを Null に設定する (値がない) 場合は 0 以外を返します。|  
-|[CDaoRecordset::IsOpen](#isopen)|場合は 0 以外を返します[開く](#open)既に呼び出されています。|  
-|[CDaoRecordset::Move](#move)|どちらの方向に現在のレコードから指定した数のレコードに、レコード セットを配置します。|  
-|[CDaoRecordset::MoveFirst](#movefirst)|レコード セットの最初のレコードの現在のレコードを配置します。|  
-|[CDaoRecordset::MoveLast](#movelast)|レコード セットの最後のレコードの現在のレコードを配置します。|  
-|[CDaoRecordset::MoveNext](#movenext)|レコード セットの次のレコードの現在のレコードを配置します。|  
-|[CDaoRecordset::MovePrev](#moveprev)|レコード セットの前のレコードの現在のレコードを配置します。|  
-|[Cdaorecordset::open](#open)|テーブル、ダイナセット、またはスナップショットから新しいレコード セットを作成します。|  
-|[CDaoRecordset::Requery](#requery)|選択したレコードを更新するには、もう一度、レコード セットのクエリを実行します。|  
-|[CDaoRecordset::Seek](#seek)|現在のインデックスと、そのレコードを現在のレコードの指定した条件を満たすインデックス付きのテーブル型のレコード セット オブジェクト内のレコードを検索します。|  
-|[CDaoRecordset::SetAbsolutePosition](#setabsoluteposition)|レコード セット オブジェクトの現在のレコードのレコード数を設定します。|  
-|[CDaoRecordset::SetBookmark](#setbookmark)|指定されたブックマークを含むレコードをレコード セットに配置します。|  
-|[CDaoRecordset::SetCacheSize](#setcachesize)|ODBC データ ソースからローカルにキャッシュされたデータを含むダイナセット タイプのレコード セット内のレコードの数を示す値を設定します。|  
-|[CDaoRecordset::SetCacheStart](#setcachestart)|キャッシュするレコード セット内の最初のレコード、ブックマークを示す値を設定します。|  
-|[CDaoRecordset::SetCurrentIndex](#setcurrentindex)|テーブル型のレコード セットのインデックスを設定すると呼ばれます。|  
-|[CDaoRecordset::SetFieldDirty](#setfielddirty)|変更されると、現在のレコードで指定したフィールドをマークします。|  
-|[CDaoRecordset::SetFieldNull](#setfieldnull)|Null (値を持たない) を現在のレコードで指定されたフィールドの値を設定します。|  
-|[たび](#setfieldvalue)|レコード セットのフィールドの値を設定します。|  
-|[CDaoRecordset::SetFieldValueNull](#setfieldvaluenull)|Null をレコード セット内のフィールドの値を設定します。 (値を持たない)。|  
-|[CDaoRecordset::SetLockingMode](#setlockingmode)|編集中に有効にするロックの種類を示す値を設定します。|  
-|[CDaoRecordset::SetParamValue](#setparamvalue)|基になる DAOParameter オブジェクトに格納されている指定されたパラメーターの現在の値を設定します。|  
-|[CDaoRecordset::SetParamValueNull](#setparamvaluenull)|Null (値を持たない) を指定されたパラメーターの現在の値を設定します。|  
-|[CDaoRecordset::SetPercentPosition](#setpercentposition)|レコード セット内のレコードの合計数の割合に対応する位置を現在のレコードの位置を設定します。|  
-|[CDaoRecordset::Update](#update)|完了、`AddNew`または**編集**データ ソースで新しいまたは更新されたデータを保存することによりします。|  
+|[CDaoRecordset::AddNew](#addnew)|Prepares for adding a new record. Call [Update](#update) to complete the addition.|  
+|[CDaoRecordset::CanAppend](#canappend)|Returns nonzero if new records can be added to the recordset via the [AddNew](#addnew) member function.|  
+|[CDaoRecordset::CanBookmark](#canbookmark)|Returns nonzero if the recordset supports bookmarks.|  
+|[CDaoRecordset::CancelUpdate](#cancelupdate)|Cancels any pending updates due to an [Edit](#edit) or [AddNew](#addnew) operation.|  
+|[CDaoRecordset::CanRestart](#canrestart)|Returns nonzero if [Requery](#requery) can be called to run the recordset's query again.|  
+|[CDaoRecordset::CanScroll](#canscroll)|Returns nonzero if you can scroll through the records.|  
+|[CDaoRecordset::CanTransact](#cantransact)|Returns nonzero if the data source supports transactions.|  
+|[CDaoRecordset::CanUpdate](#canupdate)|Returns nonzero if the recordset can be updated (you can add, update, or delete records).|  
+|[CDaoRecordset::Close](#close)|Closes the recordset.|  
+|[CDaoRecordset::Delete](#delete)|Deletes the current record from the recordset. You must explicitly scroll to another record after the deletion.|  
+|[CDaoRecordset::DoFieldExchange](#dofieldexchange)|Called to exchange data (in both directions) between the field data members of the recordset and the corresponding record on the data source. Implements DAO record field exchange (DFX).|  
+|[CDaoRecordset::Edit](#edit)|Prepares for changes to the current record. Call **Update** to complete the edit.|  
+|[CDaoRecordset::FillCache](#fillcache)|Fills all or a part of a local cache for a recordset object that contains data from an ODBC data source.|  
+|[CDaoRecordset::Find](#find)|Locates the first, next, previous, or last location of a particular string in a dynaset-type recordset that satisfies the specified criteria and makes that record the current record.|  
+|[CDaoRecordset::FindFirst](#findfirst)|Locates the first record in a dynaset-type or snapshot-type recordset that satisfies the specified criteria and makes that record the current record.|  
+|[CDaoRecordset::FindLast](#findlast)|Locates the last record in a dynaset-type or snapshot-type recordset that satisfies the specified criteria and makes that record the current record.|  
+|[CDaoRecordset::FindNext](#findnext)|Locates the next record in a dynaset-type or snapshot-type recordset that satisfies the specified criteria and makes that record the current record.|  
+|[CDaoRecordset::FindPrev](#findprev)|Locates the previous record in a dynaset-type or snapshot-type recordset that satisfies the specified criteria and makes that record the current record.|  
+|[CDaoRecordset::GetAbsolutePosition](#getabsoluteposition)|Returns the record number of a recordset object's current record.|  
+|[CDaoRecordset::GetBookmark](#getbookmark)|Returns a value that represents the bookmark on a record.|  
+|[CDaoRecordset::GetCacheSize](#getcachesize)|Returns a value that specifies the number of records in a dynaset-type recordset containing data to be locally cached from an ODBC data source.|  
+|[CDaoRecordset::GetCacheStart](#getcachestart)|Returns a value that specifies the bookmark of the first record in the recordset to be cached.|  
+|[CDaoRecordset::GetCurrentIndex](#getcurrentindex)|Returns a `CString` containing the name of the index most recently used on an indexed, table-type `CDaoRecordset`.|  
+|[CDaoRecordset::GetDateCreated](#getdatecreated)|Returns the date and time the base table underlying a `CDaoRecordset` object was created|  
+|[CDaoRecordset::GetDateLastUpdated](#getdatelastupdated)|Returns the date and time of the most recent change made to the design of a base table underlying a `CDaoRecordset` object.|  
+|[CDaoRecordset::GetDefaultDBName](#getdefaultdbname)|Returns the name of the default data source.|  
+|[CDaoRecordset::GetDefaultSQL](#getdefaultsql)|Called to get the default SQL string to execute.|  
+|[CDaoRecordset::GetEditMode](#geteditmode)|Returns a value that indicates the state of editing for the current record.|  
+|[CDaoRecordset::GetFieldCount](#getfieldcount)|Returns a value that represents the number of fields in a recordset.|  
+|[CDaoRecordset::GetFieldInfo](#getfieldinfo)|Returns specific kinds of information about the fields in the recordset.|  
+|[CDaoRecordset::GetFieldValue](#getfieldvalue)|Returns the value of a field in a recordset.|  
+|[CDaoRecordset::GetIndexCount](#getindexcount)|Retrieves the number of indexes in a table underlying a recordset.|  
+|[CDaoRecordset::GetIndexInfo](#getindexinfo)|Returns various kinds of information about an index.|  
+|[CDaoRecordset::GetLastModifiedBookmark](#getlastmodifiedbookmark)|Used to determine the most recently added or updated record.|  
+|[CDaoRecordset::GetLockingMode](#getlockingmode)|Returns a value that indicates the type of locking that is in effect during editing.|  
+|[CDaoRecordset::GetName](#getname)|Returns a `CString` containing the name of the recordset.|  
+|[CDaoRecordset::GetParamValue](#getparamvalue)|Retrieves the current value of the specified parameter stored in the underlying DAOParameter object.|  
+|[CDaoRecordset::GetPercentPosition](#getpercentposition)|Returns the position of the current record as a percentage of the total number of records.|  
+|[CDaoRecordset::GetRecordCount](#getrecordcount)|Returns the number of records accessed in a recordset object.|  
+|[CDaoRecordset::GetSQL](#getsql)|Gets the SQL string used to select records for the recordset.|  
+|[CDaoRecordset::GetType](#gettype)|Called to determine the type of a recordset: table-type, dynaset-type, or snapshot-type.|  
+|[CDaoRecordset::GetValidationRule](#getvalidationrule)|Returns a `CString` containing the value that validates data as it is entered into a field.|  
+|[CDaoRecordset::GetValidationText](#getvalidationtext)|Retrieves the text that is displayed when a validation rule is not satisfied.|  
+|[CDaoRecordset::IsBOF](#isbof)|Returns nonzero if the recordset has been positioned before the first record. There is no current record.|  
+|[CDaoRecordset::IsDeleted](#isdeleted)|Returns nonzero if the recordset is positioned on a deleted record.|  
+|[CDaoRecordset::IsEOF](#iseof)|Returns nonzero if the recordset has been positioned after the last record. There is no current record.|  
+|[CDaoRecordset::IsFieldDirty](#isfielddirty)|Returns nonzero if the specified field in the current record has been changed.|  
+|[CDaoRecordset::IsFieldNull](#isfieldnull)|Returns nonzero if the specified field in the current record is Null (having no value).|  
+|[CDaoRecordset::IsFieldNullable](#isfieldnullable)|Returns nonzero if the specified field in the current record can be set to Null (having no value).|  
+|[CDaoRecordset::IsOpen](#isopen)|Returns nonzero if [Open](#open) has been called previously.|  
+|[CDaoRecordset::Move](#move)|Positions the recordset to a specified number of records from the current record in either direction.|  
+|[CDaoRecordset::MoveFirst](#movefirst)|Positions the current record on the first record in the recordset.|  
+|[CDaoRecordset::MoveLast](#movelast)|Positions the current record on the last record in the recordset.|  
+|[CDaoRecordset::MoveNext](#movenext)|Positions the current record on the next record in the recordset .|  
+|[CDaoRecordset::MovePrev](#moveprev)|Positions the current record on the previous record in the recordset.|  
+|[CDaoRecordset::Open](#open)|Creates a new recordset from a table, dynaset, or snapshot.|  
+|[CDaoRecordset::Requery](#requery)|Runs the recordset's query again to refresh the selected records.|  
+|[CDaoRecordset::Seek](#seek)|Locates the record in an indexed table-type recordset object that satisfies the specified criteria for the current index and makes that record the current record.|  
+|[CDaoRecordset::SetAbsolutePosition](#setabsoluteposition)|Sets the record number of a recordset object's current record.|  
+|[CDaoRecordset::SetBookmark](#setbookmark)|Positions the recordset on a record containing the specified bookmark.|  
+|[CDaoRecordset::SetCacheSize](#setcachesize)|Sets a value that specifies the number of records in a dynaset-type recordset containing data to be locally cached from an ODBC data source.|  
+|[CDaoRecordset::SetCacheStart](#setcachestart)|Sets a value that specifies the bookmark of the first record in the recordset to be cached.|  
+|[CDaoRecordset::SetCurrentIndex](#setcurrentindex)|Called to set an index on a table-type recordset.|  
+|[CDaoRecordset::SetFieldDirty](#setfielddirty)|Marks the specified field in the current record as changed.|  
+|[CDaoRecordset::SetFieldNull](#setfieldnull)|Sets the value of the specified field in the current record to Null (having no value).|  
+|[CDaoRecordset::SetFieldValue](#setfieldvalue)|Sets the value of a field in a recordset.|  
+|[CDaoRecordset::SetFieldValueNull](#setfieldvaluenull)|Sets the value of a field in a recordset to Null. (having no value).|  
+|[CDaoRecordset::SetLockingMode](#setlockingmode)|Sets a value that indicates the type of locking to put into effect during editing.|  
+|[CDaoRecordset::SetParamValue](#setparamvalue)|Sets the current value of the specified parameter stored in the underlying DAOParameter object|  
+|[CDaoRecordset::SetParamValueNull](#setparamvaluenull)|Sets the current value of the specified parameter to Null (having no value).|  
+|[CDaoRecordset::SetPercentPosition](#setpercentposition)|Sets the position of the current record to a location corresponding to a percentage of the total number of records in a recordset.|  
+|[CDaoRecordset::Update](#update)|Completes an `AddNew` or **Edit** operation by saving the new or edited data on the data source.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoRecordset::m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)|フィールドの変更は自動的にマークするかどうかを示すフラグが含まれています。|  
-|[CDaoRecordset::m_nFields](#m_nfields)|レコード セット クラスのフィールド データ メンバーの数と、データ ソースからレコード セットが選択した列の数が含まれています。|  
-|[CDaoRecordset::m_nParams](#m_nparams)|レコード セット クラスのパラメーター データ メンバーの数が含まれています: レコード セットのクエリで渡されるパラメーターの数|  
-|[CDaoRecordset::m_pDAORecordset](#m_pdaorecordset)|レコード セット オブジェクトを基になる DAO インターフェイスへのポインター。|  
-|[CDaoRecordset::m_pDatabase](#m_pdatabase)|この結果セットのソース データベースです。 ポインターが含まれています、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)オブジェクト。|  
-|[CDaoRecordset::m_strFilter](#m_strfilter)|SQL を構築するために使用される文字列を含む**場所**ステートメントです。|  
-|[CDaoRecordset::m_strSort](#m_strsort)|SQL を構築するために使用される文字列を含む**ORDER BY**ステートメントです。|  
+|[CDaoRecordset::m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)|Contains a flag indicating whether fields are automatically marked as changed.|  
+|[CDaoRecordset::m_nFields](#m_nfields)|Contains the number of field data members in the recordset class and the number of columns selected by the recordset from the data source.|  
+|[CDaoRecordset::m_nParams](#m_nparams)|Contains the number of parameter data members in the recordset class — the number of parameters passed with the recordset's query|  
+|[CDaoRecordset::m_pDAORecordset](#m_pdaorecordset)|A pointer to the DAO interface underlying the recordset object.|  
+|[CDaoRecordset::m_pDatabase](#m_pdatabase)|Source database for this result set. Contains a pointer to a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object.|  
+|[CDaoRecordset::m_strFilter](#m_strfilter)|Contains a string used to construct a SQL **WHERE** statement.|  
+|[CDaoRecordset::m_strSort](#m_strsort)|Contains a string used to construct a SQL **ORDER BY** statement.|  
   
-## <a name="remarks"></a>コメント  
- 「レコード セット」と呼ばれる`CDaoRecordset`オブジェクトは、次の 3 つの形式で使用できます。  
+## <a name="remarks"></a>Remarks  
+ Known as "recordsets," `CDaoRecordset` objects are available in the following three forms:  
   
--   テーブル型のレコード セットは、ベース テーブルを調べる、追加、変更、または単一のデータベース テーブルからレコードを削除に使用できるを表します。  
+-   Table-type recordsets represent a base table that you can use to examine, add, change, or delete records from a single database table.  
   
--   ダイナセット タイプは、更新可能なレコードを持つことができるクエリの結果です。 これらのレコード セットは、調べる、追加、変更、または、基になるデータベース テーブルまたはテーブルからレコードを削除に使用できるレコードのセットです。 ダイナセット タイプは、データベース内の 1 つまたは複数のテーブルのフィールドを含めることができます。  
+-   Dynaset-type recordsets are the result of a query that can have updateable records. These recordsets are a set of records that you can use to examine, add, change, or delete records from an underlying database table or tables. Dynaset-type recordsets can contain fields from one or more tables in a database.  
   
--   スナップショットの種類のレコード セットは、一連のデータの検索や、レポートの生成に使用できるレコードの静的なコピーです。 これらのレコード セットは、データベース内の 1 つまたは複数のテーブルのフィールドを含めることができますが、更新することはできません。  
+-   Snapshot-type recordsets are a static copy of a set of records that you can use to find data or generate reports. These recordsets can contain fields from one or more tables in a database but cannot be updated.  
   
- レコード セットの各フォームは、レコード セットを開いた時点で固定されたレコードのセットを表します。 テーブル型のレコード セットまたはダイナセット タイプのレコード セット内のレコードをスクロールすると、レコード セットが開かれた後に、他のユーザーまたはアプリケーションで他のレコード セットのいずれかのレコードに加えられた変更を反映します。 (スナップショットの種類のレコード セットを更新できません。)使用することができます`CDaoRecordset`直接、アプリケーション固有のレコード セット クラスから派生または`CDaoRecordset`です。 ことができます。  
+ Each form of recordset represents a set of records fixed at the time the recordset is opened. When you scroll to a record in a table-type recordset or a dynaset-type recordset, it reflects changes made to the record after the recordset is opened, either by other users or by other recordsets in your application. (A snapshot-type recordset cannot be updated.) You can use `CDaoRecordset` directly or derive an application-specific recordset class from `CDaoRecordset`. You can then:  
   
--   レコード間をスクロールします。  
+-   Scroll through the records.  
   
--   インデックスを設定し、レコードを使用してすばやく探し[シーク](#seek)(テーブル型のレコード セットのみ)。  
+-   Set an index and quickly look for records using [Seek](#seek) (table-type recordsets only).  
   
--   文字列比較に基づいてレコードを検索します。"<",></",>\<="、"="、"> ="、または">"(ダイナセットの型とスナップショットの種類のレコード セット)。  
+-   Find records based on a string comparison: "<", "\<=", "=", ">=", or ">" (dynaset-type and snapshot-type recordsets).  
   
--   レコードを更新し、(スナップショットの種類のレコード セット) を除くロック モードを指定します。  
+-   Update the records and specify a locking mode (except snapshot-type recordsets).  
   
--   データ ソースで使用できるものからを選択するレコードを制限するレコード セットをフィルター処理します。  
+-   Filter the recordset to constrain which records it selects from those available on the data source.  
   
--   レコード セットを並べ替えます。  
+-   Sort the recordset.  
   
--   実行時まで不明情報で、選択範囲をカスタマイズするレコード セットをパラメーター化します。  
+-   Parameterize the recordset to customize its selection with information not known until run time.  
   
- クラス`CDaoRecordset`のクラスに似たインターフェイスを提供`CRecordset`です。 主な違いは、そのクラス`CDaoRecordset`OLE に基づくデータ アクセス オブジェクト (DAO) を介してデータにアクセスします。 クラス`CRecordset`DBMS のオープン データベース コネクティビティ (ODBC) と ODBC ドライバーを介して、DBMS にアクセスします。  
+ Class `CDaoRecordset` supplies an interface similar to that of class `CRecordset`. The main difference is that class `CDaoRecordset` accesses data through a Data Access Object (DAO) based on OLE. Class `CRecordset` accesses the DBMS through Open Database Connectivity (ODBC) and an ODBC driver for that DBMS.  
   
 > [!NOTE]
->  DAO データベース クラスは、MFC データベース クラス ODBC Open Database Connectivity () をベースとは異なります。 DAO データベース クラスの名前では、"CDao"プレフィックスがあります。 DAO クラス; で ODBC データ ソースのアクセスをできます。Microsoft Jet データベース エンジンに固有であるために、DAO クラスは通常、優れた機能を提供します。  
+>  The DAO database classes are distinct from the MFC database classes based on Open Database Connectivity (ODBC). All DAO database class names have the "CDao" prefix. You can still access ODBC data sources with the DAO classes; the DAO classes generally offer superior capabilities because they are specific to the Microsoft Jet database engine.  
   
- 使用するか`CDaoRecordset`直接からクラスを派生または`CDaoRecordset`です。 どちらの場合、レコード セット クラスを使用するデータベースを開くオブジェクトを構築、レコード セットへのポインターをコンス トラクターに渡して、`CDaoDatabase`オブジェクト。 構築することも、`CDaoRecordset`オブジェクトし、MFC、一時パスワードが作成できるように`CDaoDatabase`オブジェクト。 レコード セットを呼び出す[開く](#open)かを指定するかどうか、オブジェクト タイプのレコード、ダイナセット タイプのレコード セットでは、スナップショットの種類のレコード セットのメンバー関数。 呼び出す**開く**データベースからデータを選択し、最初のレコードを取得します。  
+ You can either use `CDaoRecordset` directly or derive a class from `CDaoRecordset`. To use a recordset class in either case, open a database and construct a recordset object, passing the constructor a pointer to your `CDaoDatabase` object. You can also construct a `CDaoRecordset` object and let MFC create a temporary `CDaoDatabase` object for you. Then call the recordset's [Open](#open) member function, specifying whether the object is a table-type recordset, a dynaset-type recordset, or a snapshot-type recordset. Calling **Open** selects data from the database and retrieves the first record.  
   
- レコード間をスクロールし、それらを操作するには、オブジェクトのメンバー関数とデータ メンバーを使用します。 使用できる操作は、オブジェクトは、テーブル型のレコード セット、ダイナセット タイプのレコード セット、または、スナップショットの種類のレコード セットかどうかと、更新可能または読み取り専用であるかどうかによって異なります。-これは、データベースまたはデータ ソースのオープン データベース コネクティビティ (ODBC) の機能に依存します。 されている変更されたか、後に追加するレコードを更新する、**開く**呼び出し、オブジェクトの[Requery](#requery)メンバー関数。 オブジェクトの**閉じる**メンバー関数を関連付けが完了したら、オブジェクトを破棄します。  
+ Use the object's member functions and data members to scroll through the records and operate on them. The operations available depend on whether the object is a table-type recordset, a dynaset-type recordset, or a snapshot-type recordset, and whether it is updateable or read-only — this depends on the capability of the database or Open Database Connectivity (ODBC) data source. To refresh records that may have been changed or added since the **Open** call, call the object's [Requery](#requery) member function. Call the object's **Close** member function and destroy the object when you finish with it.  
   
- `CDaoRecordset`タイプ セーフな C++ のメンバーの読み取りとレコード フィールドの更新をサポートするために DAO レコード フィールド エクス (チェンジ DFX) を使用して、`CDaoRecordset`または`CDaoRecordset`-クラスを派生します。 DFX のメカニズムを使用して、使用せず、データベース内の列の動的バインドを実装することも[GetFieldValue](#getfieldvalue)と[いる](#setfieldvalue)です。  
+ `CDaoRecordset` uses DAO record field exchange (DFX) to support reading and updating of record fields through type-safe C++ members of your `CDaoRecordset` or `CDaoRecordset`-derived class. You can also implement dynamic binding of columns in a database without using the DFX mechanism using [GetFieldValue](#getfieldvalue) and [SetFieldValue](#setfieldvalue).  
   
- 関連情報については、「Recordset オブジェクト」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Recordset Object" in DAO Help.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CDaoRecordset`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-##  <a name="addnew"></a>CDaoRecordset::AddNew  
- テーブル型またはダイナセット タイプのレコード セットに新しいレコードを追加するには、このメンバー関数を呼び出します。  
+##  <a name="addnew"></a>  CDaoRecordset::AddNew  
+ Call this member function to add a new record to a table-type or dynaset-type recordset.  
   
 ```  
 virtual void AddNew();
 ```  
   
-### <a name="remarks"></a>コメント  
- レコードのフィールドは、最初に null 値がします。 (データベース用語では、「値を持たない」手段を Null に設定と同じではありませんし**NULL** c++)。完了するには、操作を呼び出す必要があります、[更新](#update)メンバー関数。 **更新**データ ソースへの変更を保存します。  
+### <a name="remarks"></a>Remarks  
+ The record's fields are initially Null. (In database terminology, Null means "having no value" and is not the same as **NULL** in C++.) To complete the operation, you must call the [Update](#update) member function. **Update** saves your changes to the data source.  
   
 > [!CAUTION]
->  レコードを編集し、別のレコードを呼び出さずにスクロールし、かどうか**更新**、変更内容は警告なしに失われます。  
+>  If you edit a record and then scroll to another record without calling **Update**, your changes are lost without warning.  
   
- 呼び出して、ダイナセット タイプのレコード セットにレコードを追加するかどうかは[AddNew](#addnew)、レコードはレコード セットの可視性およびがあれば表示新規基になるテーブルに含まれている`CDaoRecordset`オブジェクト。  
+ If you add a record to a dynaset-type recordset by calling [AddNew](#addnew), the record is visible in the recordset and included in the underlying table where it becomes visible to any new `CDaoRecordset` objects.  
   
- 新しいレコードの位置は、レコード セットの種類によって異なります。  
+ The position of the new record depends on the type of recordset:  
   
--   ダイナセット タイプでは、新しいレコードが挿入されるレコード セットは保証されません。 この動作は、パフォーマンス、および同時実行のため Microsoft Jet 3.0 に変更します。 目標は、新しく追加されたレコードを現在のレコードには、最後に変更されたレコードのブックマークを取得し、そのブックマークに移動します。  
+-   In a dynaset-type recordset, where the new record is inserted is not guaranteed. This behavior changed with Microsoft Jet 3.0 for reasons of performance and concurrency. If your goal is to make the newly added record the current record, get the bookmark of the last modified record and move to that bookmark:  
   
- [!code-cpp[NVC_MFCDatabase #1](../../mfc/codesnippet/cpp/cdaorecordset-class_1.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#1](../../mfc/codesnippet/cpp/cdaorecordset-class_1.cpp)]  
   
--   インデックスが指定されているテーブル型レコード セットの並べ替え順序での適切な場所でレコードが返されます。 インデックスが指定されていない場合は、レコード セットの末尾に新しいレコードが返されます。  
+-   In a table-type recordset for which an index has been specified, records are returned in their proper place in the sort order. If no index has been specified, new records are returned at the end of the recordset.  
   
- レコードは、使用する前に現在`AddNew`のままです。 現在、新しいレコードを作成して、レコード セットは、ブックマーク、呼び出しをサポートしている場合[SetBookmark](#setbookmark) LastModified プロパティの設定によって、基になる DAO レコード セット オブジェクトの識別のブックマークにします。 これは、追加したレコード内のカウンター (自動インクリメント) フィールドの値を決定するために役立ちます。 詳細については、次を参照してください。 [GetLastModifiedBookmark](#getlastmodifiedbookmark)です。  
+ The record that was current before you used `AddNew` remains current. If you want to make the new record current and the recordset supports bookmarks, call [SetBookmark](#setbookmark) to the bookmark identified by the LastModified property setting of the underlying DAO recordset object. Doing so is useful for determining the value for counter (auto-increment) fields in an added record. For more information, see [GetLastModifiedBookmark](#getlastmodifiedbookmark).  
   
- データベースがトランザクションをサポートすることができます、`AddNew`呼び出し、トランザクションの一部です。 トランザクションの詳細については、クラスを参照してください。 [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)です。 呼び出す必要があります[CDaoWorkspace::BeginTrans](../../mfc/reference/cdaoworkspace-class.md#begintrans)呼び出す前に`AddNew`です。  
+ If the database supports transactions, you can make your `AddNew` call part of a transaction. For more information about transactions, see class [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md). Note that you should call [CDaoWorkspace::BeginTrans](../../mfc/reference/cdaoworkspace-class.md#begintrans) before calling `AddNew`.  
   
- 呼び出すことはできません`AddNew`レコード セットの持つ[開く](#open)メンバー関数が呼び出されていません。 A`CDaoException`を呼び出す場合にスローされる`AddNew`のレコード セットに追加することはできません。 呼び出すことによって、レコード セットは更新可能かどうかを判断できます[CanAppend](#canappend)です。  
+ It is illegal to call `AddNew` for a recordset whose [Open](#open) member function has not been called. A `CDaoException` is thrown if you call `AddNew` for a recordset that cannot be appended. You can determine whether the recordset is updateable by calling [CanAppend](#canappend).  
   
- フレームワークでは、DAO レコード フィールド エクス (チェンジ DFX) メカニズムによって、データ ソースのレコードに書き込まが確認するためのフィールド データ メンバーが変更されました。 フィールドの値を変更すると、通常、フィールド ダーティは自動的に設定を呼び出すことはほとんどありません必要がありますので[き](#setfielddirty)が自分で必要があります、列が明示的に更新またはフィールド データ メンバーには、どのような値に関係なく挿入を確認してください。 DFX 機構は、の使用も採用されています。**擬似 NULL**です。 詳細については、次を参照してください。 [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation)です。  
+ The framework marks changed field data members to ensure they will be written to the record on the data source by the DAO record field exchange (DFX) mechanism. Changing the value of a field generally sets the field dirty automatically, so you will seldom need to call [SetFieldDirty](#setfielddirty) yourself, but you might sometimes want to ensure that columns will be explicitly updated or inserted regardless of what value is in the field data member. The DFX mechanism also employs the use of **PSEUDO NULL**. For more information, see [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).  
   
- ダブル バッファリング機構が使用されていない場合、フィールドの値を変更して自動的に設定しませんフィールド ダーティとして。 この例では、ダーティ フィールドを明示的に設定する必要があります。 格納されているフラグ[m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)このフィールドの自動チェックを制御します。  
+ If the double-buffering mechanism is not being used, then changing the value of the field does not automatically set the field as dirty. In this case, it will be necessary to explicitly set the field dirty. The flag contained in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) controls this automatic field checking.  
   
 > [!NOTE]
->  レコードがダブル バッファリングされた場合 (つまり、フィールドの自動チェックが有効)、呼び出す`CancelUpdate`メンバー変数を前の値に復元されます`AddNew`または**編集**が呼び出されました。  
+>  If records are double-buffered (that is, automatic field checking is enabled), calling `CancelUpdate` will restore the member variables to the values they had before `AddNew` or **Edit** was called.  
   
- 関連情報については、"AddNew Method"、"ただし Method"、"LastModified Property"、および DAO ヘルプの「EditMode プロパティ」のトピックを参照してください。  
+ For related information, see the topics "AddNew Method", "CancelUpdate Method", "LastModified Property", and "EditMode Property" in DAO Help.  
   
-##  <a name="canappend"></a>CDaoRecordset::CanAppend  
- 以前に開いたレコード セットが呼び出すことによって新しいレコードを追加することができるかどうかを決定するには、このメンバー関数を呼び出す、 [AddNew](#addnew)メンバー関数。  
+##  <a name="canappend"></a>  CDaoRecordset::CanAppend  
+ Call this member function to determine whether the previously opened recordset allows you to add new records by calling the [AddNew](#addnew) member function.  
   
 ```  
 BOOL CanAppend() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、レコード セットは、新しいレコードを追加できます。それ以外の場合 0 を返します。 `CanAppend`読み取り専用とレコード セットを開いた場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset allows adding new records; otherwise 0. `CanAppend` will return 0 if you opened the recordset as read-only.  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、「DAO ヘルプの「メソッドの追加」」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see the topic "Append Method" in DAO Help.  
   
-##  <a name="canbookmark"></a>CDaoRecordset::CanBookmark  
- 以前に開いたレコード セットによりブックマークを使用してレコードを個別に指定するかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="canbookmark"></a>  CDaoRecordset::CanBookmark  
+ Call this member function to determine whether the previously opened recordset allows you to individually mark records using bookmarks.  
   
 ```  
 BOOL CanBookmark();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、レコード セットは、ブックマーク、それ以外の場合 0 をサポートしています。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset supports bookmarks, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Microsoft Jet データベース エンジンのテーブルで完全に基づくレコード セットを使用している場合は、順方向専用のスクロール レコード セットとしてフラグが設定されたスナップショットの種類のレコード セットで以外のブックマークが使用できます。 その他のデータベース製品 (外部の ODBC データ ソース) が、ブックマークをサポートしていません。  
+### <a name="remarks"></a>Remarks  
+ If you are using recordsets based entirely on Microsoft Jet database engine tables, bookmarks can be used except on snapshot-type recordsets flagged as forward-only scrolling recordsets. Other database products (external ODBC data sources) may not support bookmarks.  
   
- 関連情報については、DAO のヘルプで「ブックマークを設定プロパティ」を参照してください。  
+ For related information, see the topic "Bookmarkable Property" in DAO Help.  
   
-##  <a name="cancelupdate"></a>CDaoRecordset::CancelUpdate  
- `CancelUpdate`を取り消すために、保留中の更新プログラムのメンバー関数、[編集](#edit)または[AddNew](#addnew)操作します。  
+##  <a name="cancelupdate"></a>  CDaoRecordset::CancelUpdate  
+ The `CancelUpdate` member function cancels any pending updates due to an [Edit](#edit) or [AddNew](#addnew) operation.  
   
 ```  
 virtual void CancelUpdate();
 ```  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを呼び出す場合など、**編集**または`AddNew`メンバー関数は呼び出されません[更新](#update)、`CancelUpdate`後に加えられた変更を取り消します**編集**または`AddNew`呼び出されました。  
+### <a name="remarks"></a>Remarks  
+ For example, if an application calls the **Edit** or `AddNew` member function and has not called [Update](#update), `CancelUpdate` cancels any changes made after **Edit** or `AddNew` was called.  
   
 > [!NOTE]
->  レコードがダブル バッファリングされた場合 (つまり、フィールドの自動チェックが有効)、呼び出す`CancelUpdate`メンバー変数を前の値に復元されます`AddNew`または**編集**が呼び出されました。  
+>  If records are double-buffered (that is, automatic field checking is enabled), calling `CancelUpdate` will restore the member variables to the values they had before `AddNew` or **Edit** was called.  
   
- ある場合ありません**編集**または`AddNew`操作が保留中、 `CancelUpdate` MFC 例外をスローすると、します。 呼び出す、 [GetEditMode](#geteditmode)キャンセルできる保留中の操作があるかどうかを判断するメンバー関数。  
+ If there is no **Edit** or `AddNew` operation pending, `CancelUpdate` causes MFC to throw an exception. Call the [GetEditMode](#geteditmode) member function to determine if there is a pending operation that can be canceled.  
   
- 関連情報については、DAO ヘルプの「ただしメソッド」を参照してください。  
+ For related information, see the topic "CancelUpdate Method" in DAO Help.  
   
-##  <a name="canrestart"></a>CDaoRecordset::CanRestart  
- レコード セットでは、呼び出すことによって、クエリを (そのレコードの更新) を再起動できるかどうかを決定するには、このメンバー関数を呼び出す、 **Requery**メンバー関数。  
+##  <a name="canrestart"></a>  CDaoRecordset::CanRestart  
+ Call this member function to determine whether the recordset allows restarting its query (to refresh its records) by calling the **Requery** member function.  
   
 ```  
 BOOL CanRestart();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の値**Requery**レコード セットのクエリをもう一度、それ以外の場合 0 を実行すると呼ばれることができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if **Requery** can be called to run the recordset's query again, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- テーブル型のレコード セットをサポートしていない**Requery**です。  
+### <a name="remarks"></a>Remarks  
+ Table-type recordsets do not support **Requery**.  
   
- 場合**Requery**は呼び出しがサポートされていない[閉じる](#close)し[開く](#open)データを更新します。 呼び出すことができます**Requery**オブジェクトを更新するレコード セットの基になるパラメーター クエリ パラメーターの値が変更された後にします。  
+ If **Requery** is not supported, call [Close](#close) then [Open](#open) to refresh the data. You can call **Requery** to update a recordset object's underlying parameter query after the parameter values have been changed.  
   
- 関連情報については、DAO のヘルプで「再開可能なプロパティ」を参照してください。  
+ For related information, see the topic "Restartable Property" in DAO Help.  
   
-##  <a name="canscroll"></a>CDaoRecordset::CanScroll  
- レコード セットでは、スクロールできるかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="canscroll"></a>  CDaoRecordset::CanScroll  
+ Call this member function to determine whether the recordset allows scrolling.  
   
 ```  
 BOOL CanScroll() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は 0 それ以外の場合、レコードをスクロールすることができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if you can scroll through the records, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す場合[開く](#open)で**dbForwardOnly**、レコード セットは前方スクロールのみできます。  
+### <a name="remarks"></a>Remarks  
+ If you call [Open](#open) with **dbForwardOnly**, the recordset can only scroll forward.  
   
- 関連情報については、"配置、現在のレコード ポインターと DAO"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Positioning the Current Record Pointer with DAO" in DAO Help.  
   
-##  <a name="cantransact"></a>CDaoRecordset::CanTransact  
- レコード セットがトランザクションを許可するかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="cantransact"></a>  CDaoRecordset::CanTransact  
+ Call this member function to determine whether the recordset allows transactions.  
   
 ```  
 BOOL CanTransact();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるデータ ソースは 0 それ以外の場合、トランザクションをサポートする場合は 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the underlying data source supports transactions, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、DAO ヘルプの「トランザクション プロパティ」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see the topic "Transactions Property" in DAO Help.  
   
-##  <a name="canupdate"></a>CDaoRecordset::CanUpdate  
- レコード セットを更新できるかどうかを判断するには、このメンバー関数を呼び出します。  
+##  <a name="canupdate"></a>  CDaoRecordset::CanUpdate  
+ Call this member function to determine whether the recordset can be updated.  
   
 ```  
 BOOL CanUpdate() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットを更新する場合は 0 以外 (追加、更新、およびレコードの削除)、それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset can be updated (add, update, and delete records), otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 基になるデータ ソースが読み取り専用の場合、または指定した場合、レコード セットを読み取り専用可能性があります**dbReadOnly**の`nOptions`呼び出されたとき[開く](#open)レコード セットのです。  
+### <a name="remarks"></a>Remarks  
+ A recordset might be read-only if the underlying data source is read-only or if you specified **dbReadOnly** for `nOptions` when you called [Open](#open) for the recordset.  
   
- 関連情報については、"AddNew Method"、「メソッドの編集」、「メソッドの削除」、「更新メソッド」、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
+ For related information, see the topics "AddNew Method", "Edit Method", "Delete Method", "Update Method", and "Updatable Property" in DAO Help.  
   
-##  <a name="cdaorecordset"></a>CDaoRecordset::CDaoRecordset  
- `CDaoRecordset` オブジェクトを構築します。  
+##  <a name="cdaorecordset"></a>  CDaoRecordset::CDaoRecordset  
+ Constructs a `CDaoRecordset` object.  
   
 ```  
 CDaoRecordset(CDaoDatabase* pDatabase = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDatabase`  
- ポインターが含まれています、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)オブジェクトまたは値**NULL**です。 ない場合**NULL**と`CDaoDatabase`オブジェクトの**開く**データ ソースに接続するメンバー関数が呼び出されていない、レコード セットが、ファイルを開いて、それ自体の中にしようとしています。[開く](#open)呼び出します。 渡す場合**NULL**、`CDaoDatabase`オブジェクトが構築されからレコード セット クラスを派生するかどうかに指定したデータ ソースの情報を使用して接続されている`CDaoRecordset`です。  
+ Contains a pointer to a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object or the value **NULL**. If not **NULL** and the `CDaoDatabase` object's **Open** member function has not been called to connect it to the data source, the recordset attempts to open it for you during its own [Open](#open) call. If you pass **NULL**, a `CDaoDatabase` object is constructed and connected for you using the data source information you specified if you derived your recordset class from `CDaoRecordset`.  
   
-### <a name="remarks"></a>コメント  
- 使用するか`CDaoRecordset`直接からアプリケーションに固有のクラスを派生または`CDaoRecordset`です。 ClassWizard を使用するには、レコード セット クラスを派生します。  
+### <a name="remarks"></a>Remarks  
+ You can either use `CDaoRecordset` directly or derive an application-specific class from `CDaoRecordset`. You can use ClassWizard to derive your recordset classes.  
   
 > [!NOTE]
->  派生した場合、`CDaoRecordset`クラス、派生クラスは、独自のコンス トラクターを指定する必要があります。 派生クラスのコンス トラクターで、コンス トラクターを呼び出します`CDaoRecordset::CDaoRecordset`、に沿って、適切なパラメーターを渡します。  
+>  If you derive a `CDaoRecordset` class, your derived class must supply its own constructor. In the constructor of your derived class, call the constructor `CDaoRecordset::CDaoRecordset`, passing the appropriate parameters along to it.  
   
- 渡す**NULL**して、レコード セットのコンス トラクターに、`CDaoDatabase`オブジェクトが構築され、自動的に結合します。 これは便利なショートカットを構築し、接続を必要としない、`CDaoDatabase`レコード セットを構築する前にオブジェクト。 場合、`CDaoDatabase`オブジェクトが開いていない、 [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)オブジェクトは、既定のワークスペースを使用するのも作成されます。 詳細については、次を参照してください。 [CDaoDatabase::CDaoDatabase](../../mfc/reference/cdaodatabase-class.md#cdaodatabase)です。  
+ Pass **NULL** to your recordset constructor to have a `CDaoDatabase` object constructed and connected for you automatically. This is a useful shortcut that does not require you to construct and connect a `CDaoDatabase` object prior to constructing your recordset. If the `CDaoDatabase` object is not open, a [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md) object will also be created for you that uses the default workspace. For more information, see [CDaoDatabase::CDaoDatabase](../../mfc/reference/cdaodatabase-class.md#cdaodatabase).  
   
-##  <a name="close"></a>CDaoRecordset::Close  
- 閉じる、`CDaoRecordset`オブジェクトが関連付けられているデータベースで開いているレコード セットのコレクションから削除します。  
+##  <a name="close"></a>  CDaoRecordset::Close  
+ Closing a `CDaoRecordset` object removes it from the collection of open recordsets in the associated database.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- **閉じる**を破棄しません、`CDaoRecordset`オブジェクトを呼び出すことによって、オブジェクトを再利用できる**開く**同じデータ ソースまたは別のデータ ソースにします。  
+### <a name="remarks"></a>Remarks  
+ Because **Close** does not destroy the `CDaoRecordset` object, you can reuse the object by calling **Open** on the same data source or a different data source.  
   
- 保留中のすべて[AddNew](#addnew)または[編集](#edit)ステートメントはキャンセルされ、すべて保留中のトランザクションはロールバックされます。 保留中の追加や変更を保持する場合は、呼び出す[更新](#update)を呼び出す前に**閉じる**の各レコード セット。  
+ All pending [AddNew](#addnew) or [Edit](#edit) statements are canceled, and all pending transactions are rolled back. If you want to preserve pending additions or edits, call [Update](#update) before you call **Close** for each recordset.  
   
- 呼び出すことができます**開く**呼び出した後にもう一度**閉じる**です。 これにより、レコード セット オブジェクトを再利用できます。 呼び出すことがより優れた代替です[Requery](#requery)可能であれば、します。  
+ You can call **Open** again after calling **Close**. This lets you reuse the recordset object. A better alternative is to call [Requery](#requery), if possible.  
   
- 関連情報については、「Close メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Close Method" in DAO Help.  
   
-##  <a name="delete"></a>CDaoRecordset::Delete  
- 開いているダイナセット型またはテーブル型のレコード セット オブジェクトの現在のレコードを削除するには、このメンバー関数を呼び出します。  
+##  <a name="delete"></a>  CDaoRecordset::Delete  
+ Call this member function to delete the current record in an open dynaset-type or table-type recordset object.  
   
 ```  
 virtual void Delete();
 ```  
   
-### <a name="remarks"></a>コメント  
- 削除が成功した後、レコード セットのフィールド データ メンバーは、Null 値に設定され、レコード セットのナビゲーションのメンバー関数のいずれかを明示的に呼び出す必要があります ([移動](#move)、[シーク](#seek)、 [SetBookmark](#setbookmark)など)、削除したレコードから移動するためにします。 レコード セットからレコードを削除するときに必要があります、現在のレコード、レコード セット内を呼び出す前に**削除**以外の場合、例外がスローされます。  
+### <a name="remarks"></a>Remarks  
+ After a successful deletion, the recordset's field data members are set to a Null value, and you must explicitly call one of the recordset navigation member functions ( [Move](#move), [Seek](#seek), [SetBookmark](#setbookmark), and so on) in order to move off the deleted record. When you delete records from a recordset, there must be a current record in the recordset before you call **Delete**; otherwise, MFC throws an exception.  
   
- **削除**現在のレコードを削除し、アクセスできなくなります。 編集または削除されたレコードを使用することはできませんが、現在残っています。 別のレコードに移動するとすることはできません、削除したレコード現在もう一度です。  
+ **Delete** removes the current record and makes it inaccessible. Although you cannot edit or use the deleted record, it remains current. Once you move to another record, however, you cannot make the deleted record current again.  
   
 > [!CAUTION]
->  レコード セットは更新可能である必要があり、ありますの有効なレコードの現在のレコード セットを呼び出すとき**削除**です。 たとえば、レコードを削除してを呼び出す前に、新しいレコードをスクロールしません**削除**もう一度、**削除**スロー、 [CDaoException](../../mfc/reference/cdaoexception-class.md)です。  
+>  The recordset must be updatable and there must be a valid record current in the recordset when you call **Delete**. For example, if you delete a record but do not scroll to a new record before you call **Delete** again, **Delete** throws a [CDaoException](../../mfc/reference/cdaoexception-class.md).  
   
- トランザクションを使用してを呼び出す場合は、レコードを復元できます、 [CDaoWorkspace::Rollback](../../mfc/reference/cdaoworkspace-class.md#rollback)メンバー関数。 基底のテーブルがプライマリ場合は、連鎖的にリレーションシップを削除、現在のレコードを削除すると、外部テーブル内の 1 つまたは複数のレコードも削除可能性があります。 詳細については、DAO のヘルプで、定義「連鎖削除」を参照してください。  
+ You can undelete a record if you use transactions and you call the [CDaoWorkspace::Rollback](../../mfc/reference/cdaoworkspace-class.md#rollback) member function. If the base table is the primary table in a cascade delete relationship, deleting the current record may also delete one or more records in a foreign table. For more information, see the definition "cascade delete" in DAO Help.  
   
- 異なり`AddNew`と**編集**への呼び出し**削除**への呼び出しが続かない**更新**です。  
+ Unlike `AddNew` and **Edit**, a call to **Delete** is not followed by a call to **Update**.  
   
- 関連情報については、"AddNew Method"、「メソッドの編集」、「メソッドの削除」、「更新メソッド」、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
+ For related information, see the topics "AddNew Method", "Edit Method", "Delete Method", "Update Method", and "Updatable Property" in DAO Help.  
   
-##  <a name="dofieldexchange"></a>CDaoRecordset::DoFieldExchange  
- フレームワークは、レコード セット オブジェクトのフィールド データ メンバーと、データ ソースの現在のレコードの対応する列の間でデータを自動的に交換するには、このメンバー関数を呼び出します。  
+##  <a name="dofieldexchange"></a>  CDaoRecordset::DoFieldExchange  
+ The framework calls this member function to automatically exchange data between the field data members of your recordset object and the corresponding columns of the current record on the data source.  
   
 ```  
 virtual void DoFieldExchange(CDaoFieldExchange* pFX);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインターが含まれています、`CDaoFieldExchange`オブジェクト。 フレームワークは、フィールド交換操作のコンテキストを指定する、このオブジェクトは、既に設定しました。  
+ Contains a pointer to a `CDaoFieldExchange` object. The framework will already have set up this object to specify a context for the field exchange operation.  
   
-### <a name="remarks"></a>コメント  
- また、レコード セットの選択用の SQL ステートメント文字列内のパラメーターのプレース ホルダーに存在する場合、パラメーターのデータ メンバーをバインドします。 DAO レコード フィールド エクス チェンジ (DFX) と呼ばれる、フィールドのデータの交換の両方向の動作: データ ソースのレコードのフィールドにレコード セット オブジェクトのフィールド データ メンバーと、レコード セット オブジェクトにデータ ソースのレコードからです。 列を動的にバインドする場合は、実装する必要はありません`DoFieldExchange`です。  
+### <a name="remarks"></a>Remarks  
+ It also binds your parameter data members, if any, to parameter placeholders in the SQL statement string for the recordset's selection. The exchange of field data, called DAO record field exchange (DFX), works in both directions: from the recordset object's field data members to the fields of the record on the data source, and from the record on the data source to the recordset object. If you are binding columns dynamically, you are not required to implement `DoFieldExchange`.  
   
- 唯一の操作の実装を行う必要があります通常`DoFieldExchange`派生レコード セット用のクラスは ClassWizard で、クラスを作成し、フィールド データ メンバーの名前とデータ型を指定します。 ClassWizard が記述するパラメーターのデータ メンバーを指定するには、さらにコードを追加する可能性があります。 すべてのフィールドを動的にバインドされている場合は、この関数は非アクティブでパラメーター データ メンバーを指定していない限り。  
+ The only action you must normally take to implement `DoFieldExchange` for your derived recordset class is to create the class with ClassWizard and specify the names and data types of the field data members. You might also add code to what ClassWizard writes to specify parameter data members. If all fields are to be bound dynamically, this function will be inactive unless you specify parameter data members.  
   
- ClassWizard で派生したレコード セット クラスを宣言すると、ウィザードのオーバーライドを書き込みます`DoFieldExchange`次の例のようを。  
+ When you declare your derived recordset class with ClassWizard, the wizard writes an override of `DoFieldExchange` for you, which resembles the following example:  
   
- [!code-cpp[NVC_MFCDatabase #2](../../mfc/codesnippet/cpp/cdaorecordset-class_2.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#2](../../mfc/codesnippet/cpp/cdaorecordset-class_2.cpp)]  
   
-##  <a name="edit"></a>CDaoRecordset::Edit  
- 現在のレコードを変更できるようにするには、このメンバー関数を呼び出します。  
+##  <a name="edit"></a>  CDaoRecordset::Edit  
+ Call this member function to allow changes to the current record.  
   
 ```  
 virtual void Edit();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出すと、**編集**メンバー関数は、現在のレコードのフィールドに加えられた変更は、コピー バッファーにコピーされます。 レコードに必要な変更を加えた後呼び出す**更新**して変更を保存します。 **編集**レコード セットのデータ メンバーの値を保存します。 呼び出す場合**編集**、変更では、まず、**編集**元に 1 つ目の前に、レコードの値を復元する、もう一度**編集**呼び出します。  
+### <a name="remarks"></a>Remarks  
+ Once you call the **Edit** member function, changes made to the current record's fields are copied to the copy buffer. After you make the desired changes to the record, call **Update** to save your changes. **Edit** saves the values of the recordset's data members. If you call **Edit**, make changes, then call **Edit** again, the record's values are restored to what they were before the first **Edit** call.  
   
 > [!CAUTION]
->  レコードを編集して、最初の呼び出さずに別のレコードに移動する操作を実行して場合**更新**、変更内容は警告なしに失われます。 さらに、レコード セットまたは親データベースを閉じる場合は、警告なし、編集されたレコードが破棄されます。  
+>  If you edit a record and then perform any operation that moves to another record without first calling **Update**, your changes are lost without warning. In addition, if you close the recordset or the parent database, your edited record is discarded without warning.  
   
- 場合によっては、(データを含まない) を Null にすることで、列を更新することがあります。 これを行うには、呼び出す`SetFieldNull`のパラメーターを持つ**TRUE** Null です。 このフィールドをマークするこれもにより、更新する列。 場合は、フィールドの値が変更されていない場合でも、データ ソースに書き込まれ、呼び出しを`SetFieldDirty`のパラメーターを持つ**TRUE**です。 これは、フィールド値の Null であった場合でも機能します。  
+ In some cases, you may want to update a column by making it Null (containing no data). To do so, call `SetFieldNull` with a parameter of **TRUE** to mark the field Null; this also causes the column to be updated. If you want a field to be written to the data source even though its value has not changed, call `SetFieldDirty` with a parameter of **TRUE**. This works even if the field had the value Null.  
   
- フレームワークでは、DAO レコード フィールド エクス (チェンジ DFX) メカニズムによって、データ ソースのレコードに書き込まが確認するためのフィールド データ メンバーが変更されました。 フィールドの値を変更すると、通常、フィールド ダーティは自動的に設定を呼び出すことはほとんどありません必要がありますので[き](#setfielddirty)が自分で必要があります、列が明示的に更新またはフィールド データ メンバーには、どのような値に関係なく挿入を確認してください。 DFX 機構は、の使用も採用されています。**擬似 NULL**です。 詳細については、次を参照してください。 [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation)です。  
+ The framework marks changed field data members to ensure they will be written to the record on the data source by the DAO record field exchange (DFX) mechanism. Changing the value of a field generally sets the field dirty automatically, so you will seldom need to call [SetFieldDirty](#setfielddirty) yourself, but you might sometimes want to ensure that columns will be explicitly updated or inserted regardless of what value is in the field data member. The DFX mechanism also employs the use of **PSEUDO NULL**. For more information, see [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).  
   
- ダブル バッファリング機構が使用されていない場合、フィールドの値を変更して自動的に設定しませんフィールド ダーティとして。 この例では、ダーティ フィールドを明示的に設定する必要があります。 格納されているフラグ[m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)このフィールドの自動チェックを制御します。  
+ If the double-buffering mechanism is not being used, then changing the value of the field does not automatically set the field as dirty. In this case, it will be necessary to explicitly set the field dirty. The flag contained in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) controls this automatic field checking.  
   
- レコード セット オブジェクトがマルチ ユーザー環境で排他ロックされると、レコードにはロックが時間から**編集**更新が完了するまでに使用します。 レコード セットがやロックされている場合、レコードがロックされているし、データベースで更新される直前に、編集前のレコードと比較 呼び出されるため、レコードが変更された場合**編集**、**更新**操作は失敗し、MFC は、例外をスローします。 ロック モードを変更する`SetLockingMode`です。  
+ When the recordset object is pessimistically locked in a multiuser environment, the record remains locked from the time **Edit** is used until the updating is complete. If the recordset is optimistically locked, the record is locked and compared with the pre-edited record just before it is updated in the database. If the record has changed since you called **Edit**, the **Update** operation fails and MFC throws an exception. You can change the locking mode with `SetLockingMode`.  
   
 > [!NOTE]
->  常に、オプティミスティック ロックは ODBC やインストール可能な ISAM などの外部データベース形式で使用します。  
+>  Optimistic locking is always used on external database formats, such as ODBC and installable ISAM.  
   
- 現在のレコードを呼び出した後**編集**です。 呼び出す**編集**、現在のレコードである必要があります。 現在のレコードがない場合、またはレコード セットがオープン テーブル型またはダイナセット タイプのレコード セット オブジェクトを参照していない場合は、例外が発生します。 呼び出す**編集**により、`CDaoException`を次の条件下でスローします。  
+ The current record remains current after you call **Edit**. To call **Edit**, there must be a current record. If there is no current record or if the recordset does not refer to an open table-type or dynaset-type recordset object, an exception occurs. Calling **Edit** causes a `CDaoException` to be thrown under the following conditions:  
   
--   現在のレコードがありません。  
+-   There is no current record.  
   
--   データベースまたはレコード セットは読み取り専用です。  
+-   The database or recordset is read-only.  
   
--   レコードのフィールドは、更新可能ではありません。  
+-   No fields in the record are updatable.  
   
--   データベースまたはレコード セットは、別のユーザーによって排他的に開かれました。  
+-   The database or recordset was opened for exclusive use by another user.  
   
--   別のユーザーは、レコードを含むページをロックされています。  
+-   Another user has locked the page containing your record.  
   
- データ ソースは、トランザクションをサポートすることができます、**編集**呼び出し、トランザクションの一部です。 呼び出す必要があります`CDaoWorkspace::BeginTrans`呼び出す前に**編集**とレコード セットが開かれた後。 その呼び出し元にも注意してください`CDaoWorkspace::CommitTrans`呼び出しに代わるものではありません**更新**を完了する、**編集**操作します。 トランザクションの詳細については、クラスを参照してください。`CDaoWorkspace`です。  
+ If the data source supports transactions, you can make the **Edit** call part of a transaction. Note that you should call `CDaoWorkspace::BeginTrans` before calling **Edit** and after the recordset has been opened. Also note that calling `CDaoWorkspace::CommitTrans` is not a substitute for calling **Update** to complete the **Edit** operation. For more information about transactions, see class `CDaoWorkspace`.  
   
- 関連情報については、"AddNew Method"、「メソッドの編集」、「メソッドの削除」、「更新メソッド」、および DAO ヘルプの「更新可能なプロパティ」のトピックを参照してください。  
+ For related information, see the topics "AddNew Method", "Edit Method", "Delete Method", "Update Method", and "Updatable Property" in DAO Help.  
   
-##  <a name="fillcache"></a>CDaoRecordset::FillCache  
- 指定された数のレコード セットからレコードをキャッシュするには、このメンバー関数を呼び出します。  
+##  <a name="fillcache"></a>  CDaoRecordset::FillCache  
+ Call this member function to cache a specified number of records from the recordset.  
   
 ```  
 void FillCache(
@@ -542,28 +620,28 @@ void FillCache(
     COleVariant* pBookmark = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSize`  
- キャッシュを埋めるために行の数を指定します。 このパラメーターを省略した場合、値は、基になる DAO オブジェクトの CacheSize プロパティ設定によって決まります。  
+ Specifies the number of rows to fill in the cache. If you omit this parameter, the value is determined by the CacheSize property setting of the underlying DAO object.  
   
  `pBookmark`  
- A [COleVariant](../../mfc/reference/colevariant-class.md)ブックマークを指定します。 キャッシュはこのブックマークで示されたレコードから開始されます。 このパラメーターを省略した場合、キャッシュは、基になる DAO オブジェクトの CacheStart プロパティで示されたレコードから開始されます。  
+ A [COleVariant](../../mfc/reference/colevariant-class.md) specifying a bookmark. The cache is filled starting from the record indicated by this bookmark. If you omit this parameter, the cache is filled starting from the record indicated by the CacheStart property of the underlying DAO object.  
   
-### <a name="remarks"></a>コメント  
- キャッシュすると、取得、またはリモート サーバーからデータをフェッチします。 アプリケーションのパフォーマンスが向上します。 キャッシュは、前提としているデータは再度要求されるアプリケーションの実行中に最後にフェッチ、サーバーからデータを保持するローカル メモリの領域が。 データが要求されると、Microsoft Jet データベース エンジンのキャッシュ データをまずチェック時間がかかると、サーバーからのフェッチではなくです。 非 ODBC データ ソースにデータ キャッシュを使用しても何も起こりませんようにデータがキャッシュに保存されません。  
+### <a name="remarks"></a>Remarks  
+ Caching improves the performance of an application that retrieves, or fetches, data from a remote server. A cache is space in local memory that holds the data most recently fetched from the server on the assumption that the data will probably be requested again while the application is running. When data is requested, the Microsoft Jet database engine checks the cache for the data first rather than fetching it from the server, which takes more time. Using data caching on non-ODBC data sources has no effect as the data is not saved in the cache.  
   
- フェッチされるレコードを格納するキャッシュを待機しているのではなく入力することを明示的にキャッシュいつでも呼び出すことによって、`FillCache`メンバー関数。 これは、キャッシュの充てんために高速な方法`FillCache`同時ではなく 1 つずつの複数のレコードをフェッチします。 たとえば、画面にレコードが表示されているときにすることがアプリケーション呼び出しに`FillCache`[次へ] 画面にレコードをフェッチします。  
+ Rather than waiting for the cache to be filled with records as they are fetched, you can explicitly fill the cache at any time by calling the `FillCache` member function. This is a faster way to fill the cache because `FillCache` fetches several records at once instead of one at a time. For example, while each screenful of records is being displayed, you can have your application call `FillCache` to fetch the next screenful of records.  
   
- レコード セット オブジェクトでアクセスされる任意の ODBC データベースには、ローカル キャッシュを持つことができます。 キャッシュを作成するにリモート データ ソースからレコード セット オブジェクトを開くし、呼び出し、`SetCacheSize`と`SetCacheStart`レコード セットのメンバー関数。 場合`lSize`と*lBookmark*部分的または完全に指定した範囲外の範囲を作成する`SetCacheSize`と`SetCacheStart`、この範囲外のレコード セットの部分は無視され、キャッシュにアンロードします。 場合`FillCache`要求よりも多くのレコードが、リモート データ ソースに残ります、残りのレコードのみがフェッチされ例外はスローされません。  
+ Any ODBC database accessed with recordset objects can have a local cache. To create the cache, open a recordset object from the remote data source, and then call the `SetCacheSize` and `SetCacheStart` member functions of the recordset. If `lSize` and *lBookmark* create a range that is partly or wholly outside the range specified by `SetCacheSize` and `SetCacheStart`, the portion of the recordset outside this range is ignored and is not loaded into the cache. If `FillCache` requests more records than remain in the remote data source, only the remaining records are fetched, and no exception is thrown.  
   
- キャッシュからフェッチされたレコードでは、他のユーザーがデータ ソースに同時に行われた変更は反映されません。  
+ Records fetched from the cache do not reflect changes made concurrently to the source data by other users.  
   
- `FillCache`キャッシュされていないレコードだけをフェッチします。 すべてのキャッシュされたデータの更新を強制するを呼び出す、`SetCacheSize`メンバー関数が、`lSize`パラメーターを 0、呼び出し`SetCacheSize`を使用して、`lSize`パラメーターは、最初に要求して、呼び出し、キャッシュのサイズに等しい`FillCache`です。  
+ `FillCache` fetches only records not already cached. To force an update of all the cached data, call the `SetCacheSize` member function with an `lSize` parameter equal to 0, call `SetCacheSize` again with the `lSize` parameter equal to the size of the cache you originally requested, and then call `FillCache`.  
   
- 関連情報については、DAO ヘルプの「FillCache メソッド」を参照してください。  
+ For related information, see the topic "FillCache Method" in DAO Help.  
   
-##  <a name="find"></a>CDaoRecordset::Find  
- 比較演算子を使用してダイナセットまたはスナップショット タイプのレコード セット内で特定の文字列を検索するには、このメンバー関数を呼び出します。  
+##  <a name="find"></a>  CDaoRecordset::Find  
+ Call this member function to locate a particular string in a dynaset- or snapshot-type recordset using a comparison operator.  
   
 ```  
 virtual BOOL Find(
@@ -571,394 +649,394 @@ virtual BOOL Find(
     LPCTSTR lpszFilter);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lFindType*  
- 必要な検索操作の種類を示す値です。 次の値を指定できます。  
+ A value indicating the type of Find operation desired. The possible values are:  
   
-- **AFX_DAO_NEXT**一致する文字列の次の場所を検索します。  
+- **AFX_DAO_NEXT** Find the next location of a matching string.  
   
-- **AFX_DAO_PREV**一致する文字列の前の場所を検索します。  
+- **AFX_DAO_PREV** Find the previous location of a matching string.  
   
-- **AFX_DAO_FIRST**一致する文字列の最初の位置を検索します。  
+- **AFX_DAO_FIRST** Find the first location of a matching string.  
   
-- **AFX_DAO_LAST**一致する文字列の最後の場所を検索します。  
+- **AFX_DAO_LAST** Find the last location of a matching string.  
   
  `lpszFilter`  
- 文字列式 (と同様に、**場所**語を除く SQL ステートメントの句**場所**) レコードを検索するために使用します。 例:  
+ A string expression (like the **WHERE** clause in a SQL statement without the word **WHERE**) used to locate the record. For example:  
   
- [!code-cpp[NVC_MFCDatabase #3](../../mfc/codesnippet/cpp/cdaorecordset-class_3.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#3](../../mfc/codesnippet/cpp/cdaorecordset-class_3.cpp)]  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 最初に、次を検索する文字列の前、または最後のインスタンス。 **検索**は仮想関数の場合、このメソッドをオーバーライドし、独自の実装を追加することができます。 `FindFirst`、 `FindLast`、 `FindNext`、および`FindPrev`メンバー関数の呼び出し、**検索**メンバー関数を使用できるように**検索**すべての検索操作の動作を制御します。  
+### <a name="remarks"></a>Remarks  
+ You can find the first, next, previous, or last instance of the string. **Find** is a virtual function, so you can override it and add your own implementation. The `FindFirst`, `FindLast`, `FindNext`, and `FindPrev` member functions call the **Find** member function, so you can use **Find** to control the behavior of all Find operations.  
   
- テーブル型のレコード セット内のレコードを検索、呼び出し、[シーク](#seek)メンバー関数。  
+ To locate a record in a table-type recordset, call the [Seek](#seek) member function.  
   
 > [!TIP]
->  レコードがある場合より効果的な一連の小さな**検索**になります。 一般と、ODBC データで特に必要なレコードだけを取得する新しいクエリを作成することをお勧めします。  
+>  The smaller the set of records you have, the more effective **Find** will be. In general, and especially with ODBC data, it is better to create a new query that retrieves just the records you want.  
   
- 関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプ。  
+ For related information, see the topic "FindFirst, FindLast, FindNext, FindPrevious Methods" in DAO Help.  
   
-##  <a name="findfirst"></a>CDaoRecordset::FindFirst  
- 指定した条件に一致する最初のレコードを検索するには、このメンバー関数を呼び出します。  
+##  <a name="findfirst"></a>  CDaoRecordset::FindFirst  
+ Call this member function to find the first record that matches a specified condition.  
   
 ```  
 BOOL FindFirst(LPCTSTR lpszFilter);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFilter`  
- 文字列式 (と同様に、**場所**語を除く SQL ステートメントの句**場所**) レコードを検索するために使用します。  
+ A string expression (like the **WHERE** clause in a SQL statement without the word **WHERE**) used to locate the record.  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `FindFirst`メンバー関数は、レコード セットの先頭から検索し、レコード セットの末尾に検索を開始します。  
+### <a name="remarks"></a>Remarks  
+ The `FindFirst` member function begins its search from the beginning of the recordset and searches to the end of the recordset.  
   
- 含めるすべてのレコードを検索 (だけでなく、特定の条件を満たすもの) を使用して、移動操作のいずれかのレコードから移動する場合は。 テーブル型のレコード セット内のレコードを検索、呼び出し、`Seek`メンバー関数。  
+ If you want to include all the records in your search (not just those that meet a specific condition) use one of the Move operations to move from record to record. To locate a record in a table-type recordset, call the `Seek` member function.  
   
- 条件に一致するレコードが見つからない場合、現在のレコードのポインターが不明、および`FindFirst`は 0 を返します。 レコード セットに、条件を満たす 1 つ以上のレコードが含まれている場合`FindFirst`、最初に見つかった位置を検索し`FindNext`と次の出現箇所を検索します。  
+ If a record matching the criteria is not located, the current record pointer is undetermined, and `FindFirst` returns zero. If the recordset contains more than one record that satisfies the criteria, `FindFirst` locates the first occurrence, `FindNext` locates the next occurrence, and so on.  
   
 > [!CAUTION]
->  現在のレコードを編集する場合は必ず呼び出すことによって、変更を保存する、**更新**メンバー関数は、別のレコードに移動する前にします。 更新することがなく別のレコードに移動すると、変更内容が警告なしに失われます。  
+>  If you edit the current record, be sure to save the changes by calling the **Update** member function before you move to another record. If you move to another record without updating, your changes are lost without warning.  
   
- **検索**メンバー関数は、次の表で指定された、双方向での場所から検索します。  
+ The **Find** member functions search from the location and in the direction specified in the following table:  
   
-|検索操作|開始|検索の方向|  
+|Find operations|Begin|Search direction|  
 |---------------------|-----------|----------------------|  
-|`FindFirst`|レコード セットの先頭|レコード セットの末尾|  
-|`FindLast`|レコード セットの末尾|レコード セットの先頭|  
-|`FindNext`|現在のレコード|レコード セットの末尾|  
-|**FindPrevious**|現在のレコード|レコード セットの先頭|  
+|`FindFirst`|Beginning of recordset|End of recordset|  
+|`FindLast`|End of recordset|Beginning of recordset|  
+|`FindNext`|Current record|End of recordset|  
+|**FindPrevious**|Current record|Beginning of recordset|  
   
 > [!NOTE]
->  呼び出すと`FindLast`、Microsoft Jet データベース エンジンがこのが既に行われていない場合、検索を開始する前に、レコード セットが完全に設定します。 最初の検索は、以後の検索よりも長くかかる可能性があります。  
+>  When you call `FindLast`, the Microsoft Jet database engine fully populates your recordset before beginning the search, if this has not already been done. The first search may take longer than subsequent searches.  
   
- 検索操作のいずれかの方法が呼び出した場合と同じ**MoveFirst**または`MoveNext`、ただし、これだけで、先頭または [次へ] のレコード現在しなくても、条件を指定します。 移動操作で、検索操作を行うことができます。  
+ Using one of the Find operations is not the same as calling **MoveFirst** or `MoveNext`, however, which simply makes the first or next record current without specifying a condition. You can follow a Find operation with a Move operation.  
   
- 検索操作を使用する場合は、次に注意してください。  
+ Keep the following in mind when using the Find operations:  
   
--   場合**検索**、現在のレコードが定義されていない 0 以外を返します。 この例では、有効なレコードには、現在のレコード ポインターを配置する必要があります。  
+-   If **Find** returns nonzero, the current record is not defined. In this case, you must position the current record pointer back to a valid record.  
   
--   検索操作は、前方スクロール スナップショットの種類のレコード セットを使用できません。  
+-   You cannot use a Find operation with a forward-only scrolling snapshot-type recordset.  
   
--   米国の日付形式 (月-日-年) を使用する必要があります、Microsoft Jet データベース エンジンの; 米国バージョンを使用していない場合でも、日付を持つフィールドを検索するときそれ以外の場合、一致するレコードが見つからない可能性があります。  
+-   You should use the U.S. date format (month-day-year) when you search for fields containing dates, even if you are not using the U.S. version of the Microsoft Jet database engine; otherwise, matching records may not be found.  
   
--   ODBC データベースで大きなダイナセットを処理するとき、検索操作を使用する速度が遅く、大きなレコード セットを使用する場合に特にを検出可能性があります。 SQL クエリを使用してパフォーマンスを向上させることができますとカスタマイズ**ORDERBY**または**場所**句、パラメーター クエリまたは**CDaoQuerydef**インデックス付きの特定のレコードを取得するオブジェクト。  
+-   When working with ODBC databases and large dynasets, you may discover that using the Find operations is slow, especially when working with large recordsets. You can improve performance by using SQL queries with customized **ORDERBY** or **WHERE** clauses, parameter queries, or **CDaoQuerydef** objects that retrieve specific indexed records.  
   
- 関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプ。  
+ For related information, see the topic "FindFirst, FindLast, FindNext, FindPrevious Methods" in DAO Help.  
   
-##  <a name="findlast"></a>CDaoRecordset::FindLast  
- 指定した条件に一致する最後のレコードを検索するには、このメンバー関数を呼び出します。  
+##  <a name="findlast"></a>  CDaoRecordset::FindLast  
+ Call this member function to find the last record that matches a specified condition.  
   
 ```  
 BOOL FindLast(LPCTSTR lpszFilter);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFilter`  
- 文字列式 (と同様に、**場所**語を除く SQL ステートメントの句**場所**) レコードを検索するために使用します。  
+ A string expression (like the **WHERE** clause in a SQL statement without the word **WHERE**) used to locate the record.  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `FindLast`メンバー関数は、レコード セットの末尾に検索し、レコード セットの先頭に向かって後方へ検索を開始します。  
+### <a name="remarks"></a>Remarks  
+ The `FindLast` member function begins its search at the end of the recordset and searches backward towards the beginning of the recordset.  
   
- 含めるすべてのレコードを検索 (だけでなく、特定の条件を満たすもの) を使用して、移動操作のいずれかのレコードから移動する場合は。 テーブル型のレコード セット内のレコードを検索、呼び出し、`Seek`メンバー関数。  
+ If you want to include all the records in your search (not just those that meet a specific condition) use one of the Move operations to move from record to record. To locate a record in a table-type recordset, call the `Seek` member function.  
   
- 条件に一致するレコードが見つからない場合、現在のレコードのポインターが不明、および`FindLast`は 0 を返します。 レコード セットに、条件を満たす 1 つ以上のレコードが含まれている場合`FindFirst`、最初に見つかった位置を検索し`FindNext`と、最初に見つかった位置の後に次の出現箇所を検索します。  
+ If a record matching the criteria is not located, the current record pointer is undetermined, and `FindLast` returns zero. If the recordset contains more than one record that satisfies the criteria, `FindFirst` locates the first occurrence, `FindNext` locates the next occurrence after the first occurrence, and so on.  
   
 > [!CAUTION]
->  現在のレコードを編集する場合は必ず呼び出すことによって、変更を保存する、**更新**メンバー関数は、別のレコードに移動する前にします。 更新することがなく別のレコードに移動すると、変更内容が警告なしに失われます。  
+>  If you edit the current record, be sure you save the changes by calling the **Update** member function before you move to another record. If you move to another record without updating, your changes are lost without warning.  
   
- 検索操作のいずれかの方法が呼び出した場合と同じ**MoveFirst**または`MoveNext`、ただし、これだけで、先頭または [次へ] のレコード現在しなくても、条件を指定します。 移動操作で、検索操作を行うことができます。  
+ Using one of the Find operations is not the same as calling **MoveFirst** or `MoveNext`, however, which simply makes the first or next record current without specifying a condition. You can follow a Find operation with a Move operation.  
   
- 検索操作を使用する場合は、次に注意してください。  
+ Keep the following in mind when using the Find operations:  
   
--   場合**検索**、現在のレコードが定義されていない 0 以外を返します。 この例では、有効なレコードには、現在のレコード ポインターを配置する必要があります。  
+-   If **Find** returns nonzero, the current record is not defined. In this case, you must position the current record pointer back to a valid record.  
   
--   検索操作は、前方スクロール スナップショットの種類のレコード セットを使用できません。  
+-   You cannot use a Find operation with a forward-only scrolling snapshot-type recordset.  
   
--   米国の日付形式 (月-日-年) を使用する必要があります、Microsoft Jet データベース エンジンの; 米国バージョンを使用していない場合でも、日付を持つフィールドを検索するときそれ以外の場合、一致するレコードが見つからない可能性があります。  
+-   You should use the U.S. date format (month-day-year) when you search for fields containing dates, even if you are not using the U.S. version of the Microsoft Jet database engine; otherwise, matching records may not be found.  
   
--   ODBC データベースで大きなダイナセットを処理するとき、検索操作を使用する速度が遅く、大きなレコード セットを使用する場合に特にを検出可能性があります。 SQL クエリを使用してパフォーマンスを向上させることができますとカスタマイズ**ORDERBY**または**場所**句、パラメーター クエリまたは**CDaoQuerydef**インデックス付きの特定のレコードを取得するオブジェクト。  
+-   When working with ODBC databases and large dynasets, you may discover that using the Find operations is slow, especially when working with large recordsets. You can improve performance by using SQL queries with customized **ORDERBY** or **WHERE** clauses, parameter queries, or **CDaoQuerydef** objects that retrieve specific indexed records.  
   
- 関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプ。  
+ For related information, see the topic "FindFirst, FindLast, FindNext, FindPrevious Methods" in DAO Help.  
   
-##  <a name="findnext"></a>CDaoRecordset::FindNext  
- 指定した条件に一致する次のレコードを検索するには、このメンバー関数を呼び出します。  
+##  <a name="findnext"></a>  CDaoRecordset::FindNext  
+ Call this member function to find the next record that matches a specified condition.  
   
 ```  
 BOOL FindNext(LPCTSTR lpszFilter);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFilter`  
- 文字列式 (と同様に、**場所**語を除く SQL ステートメントの句**場所**) レコードを検索するために使用します。  
+ A string expression (like the **WHERE** clause in a SQL statement without the word **WHERE**) used to locate the record.  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `FindNext`メンバー関数は、現在のレコードには、その検索を開始し、レコード セットの末尾に検索します。  
+### <a name="remarks"></a>Remarks  
+ The `FindNext` member function begins its search at the current record and searches to the end of the recordset.  
   
- 含めるすべてのレコードを検索 (だけでなく、特定の条件を満たすもの) を使用して、移動操作のいずれかのレコードから移動する場合は。 テーブル型のレコード セット内のレコードを検索、呼び出し、`Seek`メンバー関数。  
+ If you want to include all the records in your search (not just those that meet a specific condition) use one of the Move operations to move from record to record. To locate a record in a table-type recordset, call the `Seek` member function.  
   
- 条件に一致するレコードが見つからない場合、現在のレコードのポインターが不明、および`FindNext`は 0 を返します。 レコード セットに、条件を満たす 1 つ以上のレコードが含まれている場合`FindFirst`、最初に見つかった位置を検索し`FindNext`と次の出現箇所を検索します。  
+ If a record matching the criteria is not located, the current record pointer is undetermined, and `FindNext` returns zero. If the recordset contains more than one record that satisfies the criteria, `FindFirst` locates the first occurrence, `FindNext` locates the next occurrence, and so on.  
   
 > [!CAUTION]
->  現在のレコードを編集する場合は必ず呼び出すことによって、変更を保存する、**更新**メンバー関数は、別のレコードに移動する前にします。 更新することがなく別のレコードに移動すると、変更内容が警告なしに失われます。  
+>  If you edit the current record, be sure you save the changes by calling the **Update** member function before you move to another record. If you move to another record without updating, your changes are lost without warning.  
   
- 検索操作のいずれかの方法が呼び出した場合と同じ**MoveFirst**または`MoveNext`、ただし、これだけで、先頭または [次へ] のレコード現在しなくても、条件を指定します。 移動操作で、検索操作を行うことができます。  
+ Using one of the Find operations is not the same as calling **MoveFirst** or `MoveNext`, however, which simply makes the first or next record current without specifying a condition. You can follow a Find operation with a Move operation.  
   
- 検索操作を使用する場合は、次に注意してください。  
+ Keep the following in mind when using the Find operations:  
   
--   場合**検索**、現在のレコードが定義されていない 0 以外を返します。 この例では、有効なレコードには、現在のレコード ポインターを配置する必要があります。  
+-   If **Find** returns nonzero, the current record is not defined. In this case, you must position the current record pointer back to a valid record.  
   
--   検索操作は、前方スクロール スナップショットの種類のレコード セットを使用できません。  
+-   You cannot use a Find operation with a forward-only scrolling snapshot-type recordset.  
   
--   米国の日付形式 (月-日-年) を使用する必要があります、Microsoft Jet データベース エンジンの; 米国バージョンを使用していない場合でも、日付を持つフィールドを検索するときそれ以外の場合、一致するレコードが見つからない可能性があります。  
+-   You should use the U.S. date format (month-day-year) when you search for fields containing dates, even if you are not using the U.S. version of the Microsoft Jet database engine; otherwise, matching records may not be found.  
   
--   ODBC データベースで大きなダイナセットを処理するとき、検索操作を使用する速度が遅く、大きなレコード セットを使用する場合に特にを検出可能性があります。 SQL クエリを使用してパフォーマンスを向上させることができますとカスタマイズ**ORDERBY**または**場所**句、パラメーター クエリまたは**CDaoQuerydef**インデックス付きの特定のレコードを取得するオブジェクト。  
+-   When working with ODBC databases and large dynasets, you may discover that using the Find operations is slow, especially when working with large recordsets. You can improve performance by using SQL queries with customized **ORDERBY** or **WHERE** clauses, parameter queries, or **CDaoQuerydef** objects that retrieve specific indexed records.  
   
- 関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプ。  
+ For related information, see the topic "FindFirst, FindLast, FindNext, FindPrevious Methods" in DAO Help.  
   
-##  <a name="findprev"></a>CDaoRecordset::FindPrev  
- 指定した条件に一致する前のレコードを検索するには、このメンバー関数を呼び出します。  
+##  <a name="findprev"></a>  CDaoRecordset::FindPrev  
+ Call this member function to find the previous record that matches a specified condition.  
   
 ```  
 BOOL FindPrev(LPCTSTR lpszFilter);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFilter`  
- 文字列式 (と同様に、**場所**語を除く SQL ステートメントの句**場所**) レコードを検索するために使用します。  
+ A string expression (like the **WHERE** clause in a SQL statement without the word **WHERE**) used to locate the record.  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `FindPrev`メンバー関数は、現在のレコードには、その検索を開始し、レコード セットの先頭に向かって逆方向に検索します。  
+### <a name="remarks"></a>Remarks  
+ The `FindPrev` member function begins its search at the current record and searches backward towards the beginning of the recordset.  
   
- 含めるすべてのレコードを検索 (だけでなく、特定の条件を満たすもの) を使用して、移動操作のいずれかのレコードから移動する場合は。 テーブル型のレコード セット内のレコードを検索、呼び出し、`Seek`メンバー関数。  
+ If you want to include all the records in your search (not just those that meet a specific condition) use one of the Move operations to move from record to record. To locate a record in a table-type recordset, call the `Seek` member function.  
   
- 条件に一致するレコードが見つからない場合、現在のレコードのポインターが不明、および`FindPrev`は 0 を返します。 レコード セットに、条件を満たす 1 つ以上のレコードが含まれている場合`FindFirst`、最初に見つかった位置を検索し`FindNext`と次の出現箇所を検索します。  
+ If a record matching the criteria is not located, the current record pointer is undetermined, and `FindPrev` returns zero. If the recordset contains more than one record that satisfies the criteria, `FindFirst` locates the first occurrence, `FindNext` locates the next occurrence, and so on.  
   
 > [!CAUTION]
->  現在のレコードを編集する場合は必ず呼び出すことによって、変更を保存する、**更新**メンバー関数は、別のレコードに移動する前にします。 更新することがなく別のレコードに移動すると、変更内容が警告なしに失われます。  
+>  If you edit the current record, be sure you save the changes by calling the **Update** member function before you move to another record. If you move to another record without updating, your changes are lost without warning.  
   
- 検索操作のいずれかの方法が呼び出した場合と同じ**MoveFirst**または`MoveNext`、ただし、これだけで、先頭または [次へ] のレコード現在しなくても、条件を指定します。 移動操作で、検索操作を行うことができます。  
+ Using one of the Find operations is not the same as calling **MoveFirst** or `MoveNext`, however, which simply makes the first or next record current without specifying a condition. You can follow a Find operation with a Move operation.  
   
- 検索操作を使用する場合は、次に注意してください。  
+ Keep the following in mind when using the Find operations:  
   
--   場合**検索**、現在のレコードが定義されていない 0 以外を返します。 この例では、有効なレコードには、現在のレコード ポインターを配置する必要があります。  
+-   If **Find** returns nonzero, the current record is not defined. In this case, you must position the current record pointer back to a valid record.  
   
--   検索操作は、前方スクロール スナップショットの種類のレコード セットを使用できません。  
+-   You cannot use a Find operation with a forward-only scrolling snapshot-type recordset.  
   
--   米国の日付形式 (月-日-年) を使用する必要があります、Microsoft Jet データベース エンジンの; 米国バージョンを使用していない場合でも、日付を持つフィールドを検索するときそれ以外の場合、一致するレコードが見つからない可能性があります。  
+-   You should use the U.S. date format (month-day-year) when you search for fields containing dates, even if you are not using the U.S. version of the Microsoft Jet database engine; otherwise, matching records may not be found.  
   
--   ODBC データベースで大きなダイナセットを処理するとき、検索操作を使用する速度が遅く、大きなレコード セットを使用する場合に特にを検出可能性があります。 SQL クエリを使用してパフォーマンスを向上させることができますとカスタマイズ**ORDERBY**または**場所**句、パラメーター クエリまたは**CDaoQuerydef**インデックス付きの特定のレコードを取得するオブジェクト。  
+-   When working with ODBC databases and large dynasets, you may discover that using the Find operations is slow, especially when working with large recordsets. You can improve performance by using SQL queries with customized **ORDERBY** or **WHERE** clauses, parameter queries, or **CDaoQuerydef** objects that retrieve specific indexed records.  
   
- 関連情報については、トピックを参照して、"FindFirst、FindLast、FindNext、FindPrevious メソッド"DAO のヘルプ。  
+ For related information, see the topic "FindFirst, FindLast, FindNext, FindPrevious Methods" in DAO Help.  
   
-##  <a name="getabsoluteposition"></a>CDaoRecordset::GetAbsolutePosition  
- レコード セット オブジェクトの現在のレコードのレコード数を返します。  
+##  <a name="getabsoluteposition"></a>  CDaoRecordset::GetAbsolutePosition  
+ Returns the record number of a recordset object's current record.  
   
 ```  
 long GetAbsolutePosition();
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セット内のレコードの数を 0 から整数。 レコード セット内の現在のレコードの序数位置に対応します。  
+### <a name="return-value"></a>Return Value  
+ An integer from 0 to the number of records in the recordset. Corresponds to the ordinal position of the current record in the recordset.  
   
-### <a name="remarks"></a>コメント  
- 基になる DAO オブジェクトの AbsolutePosition プロパティの値は 0 から始まります。0 に設定は、レコード セットの最初のレコードを参照します。 呼び出すことによって、レコード セット内のデータが設定されたレコードの数を指定できます[GetRecordCount](#getrecordcount)です。 呼び出す`GetRecordCount`数を確認して、すべてのレコードにアクセスする必要がありますので時間がかかる場合があります。  
+### <a name="remarks"></a>Remarks  
+ The AbsolutePosition property value of the underlying DAO object is zero-based; a setting of 0 refers to the first record in the recordset. You can determine the number of populated records in the recordset by calling [GetRecordCount](#getrecordcount). Calling `GetRecordCount` may take some time because it must access all records to determine the count.  
   
- 場合は、現在のレコードとして、レコード セット内のレコードがない場合 - 1 が返されます。 場合は、現在のレコードが削除されると、AbsolutePosition プロパティの値が定義されていないと、MFC は、参照されている場合に例外をスローします。 ダイナセットの種類のレコード セットに対して新しいレコードは、シーケンスの末尾に追加されます。  
-  
-> [!NOTE]
->  このプロパティは、レコード番号の代わりとして使用するものではありません。 ブックマークはいるデータを保持し、指定した位置に返すことをお勧めであり、すべての種類のレコード セット オブジェクトで、現在のレコードを配置する唯一の方法です。 具体的には、前のレコードが削除されたときに指定されたレコードの位置を変更します。 また場合は、レコード セットが再作成された SQL ステートメントを使用して、使用して作成された場合を除き、レコード セット内の各レコードの順序が保証されないために、特定のレコードが同じ絶対位置を持つことの保証はありません、 **ORDERBY**句。  
+ If there is no current record, as when there are no records in the recordset, - 1 is returned. If the current record is deleted, the AbsolutePosition property value is not defined, and MFC throws an exception if it is referenced. For dynaset-type recordsets, new records are added to the end of the sequence.  
   
 > [!NOTE]
->  このメンバー関数は、ダイナセット タイプとスナップショットの種類のレコード セットに対してのみ有効です。  
+>  This property is not intended to be used as a surrogate record number. Bookmarks are still the recommended way of retaining and returning to a given position and are the only way to position the current record across all types of recordset objects. In particular, the position of a given record changes when record(s) preceding it are deleted. There is also no assurance that a given record will have the same absolute position if the recordset is re-created again because the order of individual records within a recordset is not guaranteed unless it is created with a SQL statement using an **ORDERBY** clause.  
   
- 関連情報については、DAO ヘルプの「AbsolutePosition プロパティ」を参照してください。  
+> [!NOTE]
+>  This member function is valid only for dynaset-type and snapshot-type recordsets.  
   
-##  <a name="getbookmark"></a>CDaoRecordset::GetBookmark  
- 特定のレコードのブックマークの値を取得するには、このメンバー関数を呼び出します。  
+ For related information, see the topic "AbsolutePosition Property" in DAO Help.  
+  
+##  <a name="getbookmark"></a>  CDaoRecordset::GetBookmark  
+ Call this member function to obtain the bookmark value in a particular record.  
   
 ```  
 COleVariant GetBookmark();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のレコードにブックマークを表す値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a value representing the bookmark on the current record.  
   
-### <a name="remarks"></a>コメント  
- レコード セット オブジェクトを作成または開くときに各レコードは既に一意のブックマーク サポートしている場合。 呼び出す`CanBookmark`をレコード セットでブックマークをサポートするかどうかを判断します。  
+### <a name="remarks"></a>Remarks  
+ When a recordset object is created or opened, each of its records already has a unique bookmark if it supports them. Call `CanBookmark` to determine whether a recordset supports bookmarks.  
   
- 現在のレコードのブックマークを保存するには、ブックマークがの値を割り当てることによって、`COleVariant`オブジェクト。 戻るにはすぐにそのレコードにいつでも別のレコードに移動した後、呼び出す`SetBookmark`の値に対応するパラメーターを持つ`COleVariant`オブジェクト。  
+ You can save the bookmark for the current record by assigning the value of the bookmark to a `COleVariant` object. To quickly return to that record at any time after moving to a different record, call `SetBookmark` with a parameter corresponding to the value of that `COleVariant` object.  
   
 > [!NOTE]
->  呼び出す[Requery](#requery) DAO ブックマークを変更します。  
+>  Calling [Requery](#requery) changes DAO bookmarks.  
   
- 関連情報については、DAO のヘルプで「ブックマーク プロパティ」を参照してください。  
+ For related information, see the topic "Bookmark Property" in DAO Help.  
   
-##  <a name="getcachesize"></a>CDaoRecordset::GetCacheSize  
- キャッシュされたレコードの数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getcachesize"></a>  CDaoRecordset::GetCacheSize  
+ Call this member function to obtain the number of records cached.  
   
 ```  
 long GetCacheSize();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ODBC データ ソースからローカルにキャッシュされたデータを含むダイナセット タイプのレコード セット内のレコードの数を指定する値。  
+### <a name="return-value"></a>Return Value  
+ A value that specifies the number of records in a dynaset-type recordset containing data to be locally cached from an ODBC data source.  
   
-### <a name="remarks"></a>コメント  
- データ キャッシュには、ダイナセット タイプのレコード セット オブジェクト経由でリモート サーバーからデータを取得するアプリケーションのパフォーマンスが向上します。 キャッシュは、最後に取得したサーバーから、アプリケーションの実行中にデータを再要求は、データを保持するローカル メモリ内のスペースです。 データが要求されると、Microsoft Jet データベース エンジンのキャッシュ要求されたデータをまずチェック時間がかかると、サーバーから取得するのではなくです。 ODBC データ ソースから発生しないデータがキャッシュに保存されません。  
+### <a name="remarks"></a>Remarks  
+ Data caching improves the performance of an application that retrieves data from a remote server through dynaset-type recordset objects. A cache is a space in local memory that holds the data most recently retrieved from the server in the event that the data will be requested again while the application is running. When data is requested, the Microsoft Jet database engine checks the cache for the requested data first rather than retrieving it from the server, which takes more time. Data that does not come from an ODBC data source is not saved in the cache.  
   
- アタッチのテーブルなど、任意の ODBC データ ソースには、ローカル キャッシュを持つことができます。  
+ Any ODBC data source, such as an attached table, can have a local cache.  
   
- 関連情報については、DAO ヘルプのトピック「CacheSize、CacheStart プロパティ」を参照してください。  
+ For related information, see the topic "CacheSize, CacheStart Properties" in DAO Help.  
   
-##  <a name="getcachestart"></a>CDaoRecordset::GetCacheStart  
- 最初のレコードをキャッシュするレコード セット内のブックマークの値を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getcachestart"></a>  CDaoRecordset::GetCacheStart  
+ Call this member function to obtain the bookmark value of the first record in the recordset to be cached.  
   
 ```  
 COleVariant GetCacheStart();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`COleVariant`キャッシュに保存するレコード セットの最初のレコード、ブックマークを指定します。  
+### <a name="return-value"></a>Return Value  
+ A `COleVariant` that specifies the bookmark of the first record in the recordset to be cached.  
   
-### <a name="remarks"></a>コメント  
- Microsoft Jet データベース エンジンが、キャッシュからキャッシュの範囲内のレコードを要求し、サーバーからキャッシュ範囲外のレコードを要求します。  
+### <a name="remarks"></a>Remarks  
+ The Microsoft Jet database engine requests records within the cache range from the cache, and it requests records outside the cache range from the server.  
   
 > [!NOTE]
->  キャッシュから取得したレコードでは、他のユーザーがデータ ソースに同時に行われた変更は反映されません。  
+>  Records retrieved from the cache do not reflect changes made concurrently to the source data by other users.  
   
- 関連情報については、DAO ヘルプのトピック「CacheSize、CacheStart プロパティ」を参照してください。  
+ For related information, see the topic "CacheSize, CacheStart Properties" in DAO Help.  
   
-##  <a name="getcurrentindex"></a>CDaoRecordset::GetCurrentIndex  
- インデックス付きのテーブル型で使用されているインデックスを確認するには、このメンバー関数を呼び出す`CDaoRecordset`オブジェクト。  
+##  <a name="getcurrentindex"></a>  CDaoRecordset::GetCurrentIndex  
+ Call this member function to determine the index currently in use in an indexed table-type `CDaoRecordset` object.  
   
 ```  
 CString GetCurrentIndex();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`テーブル型のレコード セットで使用されているインデックスの名前を含むです。 インデックスが設定されていない場合は、空の文字列を返します。  
+### <a name="return-value"></a>Return Value  
+ A `CString` containing the name of the index currently in use with a table-type recordset. Returns an empty string if no index has been set.  
   
-### <a name="remarks"></a>コメント  
- このインデックスは、テーブル型のレコード セット内のレコードの順序の基準であり、によって使用される、[シーク](#seek)レコードを検索するメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ This index is the basis for ordering records in a table-type recordset, and is used by the [Seek](#seek) member function to locate records.  
   
- A`CDaoRecordset`オブジェクトは、1 つ以上のインデックスを持つことができますが、一度に 1 つだけのインデックスを使用することができます (ただし、[どちら](../../mfc/reference/cdaotabledef-class.md)オブジェクトに定義されているいくつかのインデックスがあります)。  
+ A `CDaoRecordset` object can have more than one index but can use only one index at a time (although a [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) object may have several indexes defined on it).  
   
- 関連情報については、トピック「インデックス オブジェクト」および DAO のヘルプでは、"現在のインデックス"の定義を参照してください。  
+ For related information, see the topic "Index Object" and the definition "current index" in DAO Help.  
   
-##  <a name="getdatecreated"></a>CDaoRecordset::GetDateCreated  
- ベース テーブルが作成された日時を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getdatecreated"></a>  CDaoRecordset::GetDateCreated  
+ Call this member function to retrieve the date and time a base table was created.  
   
 ```  
 COleDateTime GetDateCreated();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)ベース テーブルが作成された日時を含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object containing the date and time the base table was created.  
   
-### <a name="remarks"></a>コメント  
- 日付と時刻の設定は、ベース テーブルが作成されているコンピューターから派生します。  
+### <a name="remarks"></a>Remarks  
+ Date and time settings are derived from the computer on which the base table was created.  
   
- 関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
+ For related information, see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
-##  <a name="getdatelastupdated"></a>CDaoRecordset::GetDateLastUpdated  
- スキーマが最後に更新された日時を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getdatelastupdated"></a>  CDaoRecordset::GetDateLastUpdated  
+ Call this member function to retrieve the date and time the schema was last updated.  
   
 ```  
 COleDateTime GetDateLastUpdated();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)ベース テーブルの構造 (スキーマ) が最後に更新された日時を含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object containing the date and time the base table structure (schema) was last updated.  
   
-### <a name="remarks"></a>コメント  
- 日付と時刻の設定は、ベース テーブルの構造 (スキーマ) が最後に更新されたコンピューターから派生します。  
+### <a name="remarks"></a>Remarks  
+ Date and time settings are derived from the computer on which the base table structure (schema) was last updated.  
   
- 関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
+ For related information, see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
-##  <a name="getdefaultdbname"></a>CDaoRecordset::GetDefaultDBName  
- このレコード セットに対して、データベースの名前を特定するには、このメンバー関数を呼び出します。  
+##  <a name="getdefaultdbname"></a>  CDaoRecordset::GetDefaultDBName  
+ Call this member function to determine the name of the database for this recordset.  
   
 ```  
 virtual CString GetDefaultDBName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`このレコード セットの派生元のデータベースの名前とパスを格納しています。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the path and name of the database from which this recordset is derived.  
   
-### <a name="remarks"></a>コメント  
- レコード セットへのポインターなしで作成された場合、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)を開くには、既定のデータベースのレコード セットがこのパスが使用されます。 既定では、この関数は、空の文字列を返します。 ClassWizard がから新しいレコード セットを派生して`CDaoRecordset`のこの関数が作成されます。  
+### <a name="remarks"></a>Remarks  
+ If a recordset is created without a pointer to a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md), then this path is used by the recordset to open the default database. By default, this function returns an empty string. When ClassWizard derives a new recordset from `CDaoRecordset`, it will create this function for you.  
   
- 次の例では、二重の円記号の使用 (\\\\)、文字列としての必須では、文字列を正しく解釈されるためです。  
+ The following example illustrates the use of the double backslash (\\\\) in the string, as is required for the string to be interpreted correctly.  
   
- [!code-cpp[NVC_MFCDatabase 4](../../mfc/codesnippet/cpp/cdaorecordset-class_4.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#4](../../mfc/codesnippet/cpp/cdaorecordset-class_4.cpp)]  
   
-##  <a name="getdefaultsql"></a>CDaoRecordset::GetDefaultSQL  
- フレームワークは、レコード セットの基になる既定の SQL ステートメントを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getdefaultsql"></a>  CDaoRecordset::GetDefaultSQL  
+ The framework calls this member function to get the default SQL statement on which the recordset is based.  
   
 ```  
 virtual CString GetDefaultSQL();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`既定の SQL ステートメントを格納しています。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the default SQL statement.  
   
-### <a name="remarks"></a>コメント  
- これは、テーブル名または SQL**選択**ステートメントです。  
+### <a name="remarks"></a>Remarks  
+ This might be a table name or a SQL **SELECT** statement.  
   
- 直接定義していない既定の SQL ステートメントで ClassWizard、レコード セット クラスを宣言することによってと ClassWizard では、このタスクを実行します。  
+ You indirectly define the default SQL statement by declaring your recordset class with ClassWizard, and ClassWizard performs this task for you.  
   
- Null SQL 文字列を渡す場合[開く](#open)、この関数は、レコード セットのテーブル名または SQL に確認し、します。  
+ If you pass a null SQL string to [Open](#open), then this function is called to determine the table name or SQL for your recordset.  
   
-##  <a name="geteditmode"></a>CDaoRecordset::GetEditMode  
- このメンバー関数の編集、状態を調べるには、次の値の 1 つを呼び出します。  
+##  <a name="geteditmode"></a>  CDaoRecordset::GetEditMode  
+ Call this member function to determine the state of editing, which is one of the following values:  
   
 ```  
 short GetEditMode();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のレコードの編集状態を示す値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a value that indicates the state of editing for the current record.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|**dbEditNone**|進行中の編集操作がれていません。|  
-|**dbEditInProgress**|**編集**呼び出されました。|  
-|**dbEditAdd**|`AddNew`呼び出されました。|  
+|**dbEditNone**|No editing operation is in progress.|  
+|**dbEditInProgress**|**Edit** has been called.|  
+|**dbEditAdd**|`AddNew` has been called.|  
   
- 関連情報については、DAO ヘルプの「EditMode プロパティ」を参照してください。  
+ For related information, see the topic "EditMode Property" in DAO Help.  
   
-##  <a name="getfieldcount"></a>CDaoRecordset::GetFieldCount  
- レコード セットで定義されたフィールド (列) の数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfieldcount"></a>  CDaoRecordset::GetFieldCount  
+ Call this member function to retrieve the number of fields (columns) defined in the recordset.  
   
 ```  
 short GetFieldCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットのフィールドの数。  
+### <a name="return-value"></a>Return Value  
+ The number of fields in the recordset.  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、「Count プロパティ」DAO ヘルプのトピックを参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see the topic "Count Property" in DAO Help.  
   
-##  <a name="getfieldinfo"></a>CDaoRecordset::GetFieldInfo  
- レコード セット内のフィールドに関する情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfieldinfo"></a>  CDaoRecordset::GetFieldInfo  
+ Call this member function to obtain information about the fields in a recordset.  
   
 ```  
 void GetFieldInfo(
@@ -973,34 +1051,34 @@ void GetFieldInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- インデックスで検索する場合、レコード セットのフィールド コレクションで定義済みフィールドの 0 から始まるインデックス。  
+ The zero-based index of the predefined field in the recordset's Fields collection, for lookup by index.  
   
  `fieldinfo`  
- 参照、 [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md)構造体。  
+ A reference to a [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) structure.  
   
  `dwInfoOptions`  
- 取得するレコード セットに関する情報を指定するオプション。 使用可能なオプションは、それらの原因を返す関数もここに表示されます。 最適なパフォーマンスを必要な情報のレベルのみを取得します。  
+ Options that specify which information about the recordset to retrieve. The available options are listed here along with what they cause the function to return. For best performance, retrieve only the level of information you need:  
   
-- `AFX_DAO_PRIMARY_INFO`(既定値)名前、種類、サイズ、属性  
+- `AFX_DAO_PRIMARY_INFO` (Default) Name, Type, Size, Attributes  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリについては、プラス: 序数の位置、必要に応じて、0 長、照合順序、外部名、ソース フィールド、ソース テーブルを許可します。  
+- `AFX_DAO_SECONDARY_INFO` Primary information, plus: Ordinal Position, Required, Allow Zero Length, Collating Order, Foreign Name, Source Field, Source Table  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報と: 既定値、検証規則、検証テキスト  
+- `AFX_DAO_ALL_INFO` Primary and secondary information, plus: Default Value, Validation Rule, Validation Text  
   
  `lpszName`  
- フィールドの名前。  
+ The name of the field.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、インデックスを使用してフィールドを検索することができます。 その他のバージョンでは、名前、フィールドを検索することができます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up a field by index. The other version lets you look up a field by name.  
   
- 返される情報については、次を参照してください。、 [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、同様に、以前のレベルの情報を取得します。  
+ For a description of the information returned, see the [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for any prior levels as well.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getfieldvalue"></a>CDaoRecordset::GetFieldValue  
- レコード セット内のデータを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfieldvalue"></a>  CDaoRecordset::GetFieldValue  
+ Call this member function to retrieve data in a recordset.  
   
 ```  
 virtual void GetFieldValue(
@@ -1016,48 +1094,48 @@ virtual COleVariant GetFieldValue(LPCTSTR lpszName);
 virtual COleVariant GetFieldValue(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- フィールドの名前を表す文字列へのポインター。  
+ A pointer to a string that contains the name of a field.  
   
  `varValue`  
- 参照、`COleVariant`フィールドの値を格納するオブジェクト。  
+ A reference to a `COleVariant` object that will store the value of a field.  
   
  `nIndex`  
- インデックスで検索する場合、レコード セットのフィールド コレクション内のフィールドの 0 から始まるインデックス。  
+ A zero-based index of the field in the recordset's Fields collection, for lookup by index.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのバージョンの`GetFieldValue`値の戻り値を返す、 [COleVariant](../../mfc/reference/colevariant-class.md)フィールドの値を含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The two versions of `GetFieldValue` that return a value return a [COleVariant](../../mfc/reference/colevariant-class.md) object that contains the value of a field.  
   
-### <a name="remarks"></a>コメント  
- 名前または序数位置によって、フィールドを参照することができます。  
+### <a name="remarks"></a>Remarks  
+ You can look up a field by name or by ordinal position.  
   
 > [!NOTE]
->  呼び出しを取るメンバー関数のバージョンのいずれかをより効率的である、`COleVariant`オブジェクトを返すバージョンの呼び出しではなく、パラメーターとして参照、`COleVariant`オブジェクト。 この関数の以前のバージョンは、旧バージョンとの互換性のために保持されます。  
+>  It is more efficient to call one of the versions of this member function that takes a `COleVariant` object reference as a parameter, rather than calling a version that returns a `COleVariant` object. The latter versions of this function are kept for backward compatibility.  
   
- 使用して`GetFieldValue`と[いる](#setfieldvalue)実行時ではなく静的を使用してバインド列にフィールドに動的にバインドする、 [DoFieldExchange](#dofieldexchange)メカニズムです。  
+ Use `GetFieldValue` and [SetFieldValue](#setfieldvalue) to dynamically bind fields at run time rather than statically binding columns using the [DoFieldExchange](#dofieldexchange) mechanism.  
   
- `GetFieldValue`および`DoFieldExchange`メカニズムは、パフォーマンスを向上させるために結合できます。 たとえば、使用して`GetFieldValue`、要求時にのみ必要な値を取得し、その呼び出しをインターフェイスで [詳細情報] ボタンを割り当てます。  
+ `GetFieldValue` and the `DoFieldExchange` mechanism can be combined to improve performance. For example, use `GetFieldValue` to retrieve a value that you need only on demand, and assign that call to a "More Information" button in the interface.  
   
- 関連情報については、「フィールド オブジェクト」と「Value プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "Field Object" and "Value Property" in DAO Help.  
   
-##  <a name="getindexcount"></a>CDaoRecordset::GetIndexCount  
- テーブル型のレコード セットで使用できるインデックスの数を決定するには、このメンバー関数を呼び出します。  
+##  <a name="getindexcount"></a>  CDaoRecordset::GetIndexCount  
+ Call this member function to determine the number of indexes available on the table-type recordset.  
   
 ```  
 short GetIndexCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーブル型のレコード セット内のインデックスの数。  
+### <a name="return-value"></a>Return Value  
+ The number of indexes in the table-type recordset.  
   
-### <a name="remarks"></a>コメント  
- `GetIndexCount`レコード セット内のすべてのインデックスをループに役立ちます。 そのためを使用して`GetIndexCount`と共に[GetIndexInfo](#getindexinfo)です。 ダイナセットの種類またはスナップショットの種類のレコード セットでこのメンバー関数を呼び出すと、MFC は、例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ `GetIndexCount` is useful for looping through all indexes in the recordset. For that purpose, use `GetIndexCount` in conjunction with [GetIndexInfo](#getindexinfo). If you call this member function on dynaset-type or snapshot-type recordsets, MFC throws an exception.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getindexinfo"></a>CDaoRecordset::GetIndexInfo  
- さまざまな種類のレコード セットを基になるベース テーブルで定義されているインデックスについての情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getindexinfo"></a>  CDaoRecordset::GetIndexInfo  
+ Call this member function to obtain various kinds of information about an index defined in the base table underlying a recordset.  
   
 ```  
 void GetIndexInfo(
@@ -1072,612 +1150,612 @@ void GetIndexInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 数値の位置で検索する場合、テーブルのインデックス コレクション内の 0 から始まるインデックス。  
+ The zero-based index in the table's Indexes collection, for lookup by numerical position.  
   
  `indexinfo`  
- 参照、 [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md)構造体。  
+ A reference to a [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) structure.  
   
  `dwInfoOptions`  
- 取得するインデックスに関する情報を指定するオプション。 使用可能なオプションは、それらの原因を返す関数もここに表示されます。 最適なパフォーマンスを必要な情報のレベルのみを取得します。  
+ Options that specify which information about the index to retrieve. The available options are listed here along with what they cause the function to return. For best performance, retrieve only the level of information you need:  
   
-- `AFX_DAO_PRIMARY_INFO`(既定値)名前、フィールドの情報、フィールド  
+- `AFX_DAO_PRIMARY_INFO` (Default) Name, Field Info, Fields  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリについては、プラス: プライマリ、Unique、クラスター化された、IgnoreNulls、必要に応じて、異形式  
+- `AFX_DAO_SECONDARY_INFO` Primary information, plus: Primary, Unique, Clustered, IgnoreNulls, Required, Foreign  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報と: 個別のカウント  
+- `AFX_DAO_ALL_INFO` Primary and secondary information, plus: Distinct Count  
   
  `lpszName`  
- 名前で検索のインデックス オブジェクトの名前へのポインター。  
+ A pointer to the name of the index object, for lookup by name.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、コレクション内の位置でインデックスを検索することができます。 その他のバージョンでは、名前、インデックスを検索することができます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up a index by its position in the collection. The other version lets you look up an index by name.  
   
- 返される情報については、次を参照してください。、 [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、同様に、以前のレベルの情報を取得します。  
+ For a description of the information returned, see the [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for any prior levels as well.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getlastmodifiedbookmark"></a>CDaoRecordset::GetLastModifiedBookmark  
- 最も最近追加または更新されたレコードのブックマークを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getlastmodifiedbookmark"></a>  CDaoRecordset::GetLastModifiedBookmark  
+ Call this member function to retrieve the bookmark of the most recently added or updated record.  
   
 ```  
 COleVariant GetLastModifiedBookmark();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`COleVariant`最後を示すブックマークを含む、追加またはレコードを変更します。  
+### <a name="return-value"></a>Return Value  
+ A `COleVariant` containing a bookmark that indicates the most recently added or changed record.  
   
-### <a name="remarks"></a>コメント  
- レコード セット オブジェクトを作成または開くときに各レコードは既に一意のブックマーク サポートしている場合。 呼び出す[GetBookmark](#getbookmark)をレコード セットにブックマークがサポートしているかを判断します。 レコード セットは、ブックマークをサポートしていない場合、`CDaoException`がスローされます。  
+### <a name="remarks"></a>Remarks  
+ When a recordset object is created or opened, each of its records already has a unique bookmark if it supports them. Call [GetBookmark](#getbookmark) to determine if the recordset supports bookmarks. If the recordset does not support bookmarks, a `CDaoException` is thrown.  
   
- レコードを追加するときに、レコード セットの最後に表示され、現在のレコードではありません。 新しいレコードを現在させるには、呼び出す`GetLastModifiedBookmark`およびを呼び出す`SetBookmark`を新しく追加したレコードを返します。  
+ When you add a record, it appears at the end of the recordset, and is not the current record. To make the new record current, call `GetLastModifiedBookmark` and then call `SetBookmark` to return to the newly added record.  
   
- 関連情報については、DAO ヘルプの「LastModified プロパティ」を参照してください。  
+ For related information, see the topic "LastModified Property" in DAO Help.  
   
-##  <a name="getlockingmode"></a>CDaoRecordset::GetLockingMode  
- レコード セットに対して有効でロックの種類を確認するには、このメンバー関数を呼び出します。  
+##  <a name="getlockingmode"></a>  CDaoRecordset::GetLockingMode  
+ Call this member function to determine the type of locking in effect for the recordset.  
   
 ```  
 BOOL GetLockingMode();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ロックの種類は、ペシミスティック場合 0 以外。 ロックの場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the type of locking is pessimistic, otherwise 0 for optimistic record locking.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すと、すぐにロックされているときに排他ロックが有効で、編集しているレコードを含むデータ ページ、[編集](#edit)メンバー関数。 ページのロックが解除されてを呼び出すとき、[更新](#update)または[閉じる](#close)メンバー関数または移動または検索操作のいずれか。  
+### <a name="remarks"></a>Remarks  
+ When pessimistic locking is in effect, the data page containing the record you are editing is locked as soon as you call the [Edit](#edit) member function. The page is unlocked when you call the [Update](#update) or [Close](#close) member function or any of the Move or Find operations.  
   
- レコードの更新中にのみレコードを含むデータ ページがロックされているときに、オプティミスティック ロックが有効、**更新**メンバー関数。  
+ When optimistic locking is in effect, the data page containing the record is locked only while the record is being updated with the **Update** member function.  
   
- ODBC データ ソースを使用するときにロック モードはオプティミスティック常にします。  
+ When working with ODBC data sources, the locking mode is always optimistic.  
   
- 関連情報については、「LockEdits プロパティ」と"ロック動作マルチ ユーザー アプリケーションで"DAO ヘルプ トピックを参照してください。  
+ For related information, see the topics "LockEdits Property" and "Locking Behavior in Multiuser Applications" in DAO Help.  
   
-##  <a name="getname"></a>CDaoRecordset::GetName  
- レコード セットの名前を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getname"></a>  CDaoRecordset::GetName  
+ Call this member function to retrieve the name of the recordset.  
   
 ```  
 CString GetName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`レコード セットの名前を含むです。  
+### <a name="return-value"></a>Return Value  
+ A `CString` containing the name of the recordset.  
   
-### <a name="remarks"></a>コメント  
- レコード セットの名前は文字で始める必要があり、最大 40 文字を含めることができます。 数字を含めることができ、アンダー スコア文字ですが、区切り記号やスペースを含めることはできません。  
+### <a name="remarks"></a>Remarks  
+ The name of the recordset must start with a letter and can contain a maximum of 40 characters. It can include numbers and underscore characters but can't include punctuation or spaces.  
   
- 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ For related information, see the topic "Name Property" in DAO Help.  
   
-##  <a name="getparamvalue"></a>CDaoRecordset::GetParamValue  
- 基になる DAOParameter オブジェクトに格納されている指定されたパラメーターの現在の値を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getparamvalue"></a>  CDaoRecordset::GetParamValue  
+ Call this member function to retrieve the current value of the specified parameter stored in the underlying DAOParameter object.  
   
 ```  
 virtual COleVariant GetParamValue(int nIndex);  
 virtual COleVariant GetParamValue(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 基になる DAOParameter オブジェクトで、パラメーターの数値の位置。  
+ The numerical position of the parameter in the underlying DAOParameter object.  
   
  `lpszName`  
- 値を取得するパラメーターの名前。  
+ The name of the parameter whose value you want.  
   
-### <a name="return-value"></a>戻り値  
- クラスのオブジェクト[COleVariant](../../mfc/reference/colevariant-class.md)パラメーターの値を格納します。  
+### <a name="return-value"></a>Return Value  
+ An object of class [COleVariant](../../mfc/reference/colevariant-class.md) that contains the parameter's value.  
   
-### <a name="remarks"></a>コメント  
- パラメーターは、名前またはコレクション内の位置のいずれかにアクセスすることができます。  
+### <a name="remarks"></a>Remarks  
+ You can access the parameter either by name or by its numerical position in the collection.  
   
- 関連情報については、「パラメーター オブジェクトが」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Parameter Object" in DAO Help.  
   
-##  <a name="getpercentposition"></a>CDaoRecordset::GetPercentPosition  
- 呼び出すダイナセットの種類またはスナップショットの種類のレコード セットを使用しているときに`GetPercentPosition`移動量は、呼び出すことによって示されるアクセスできるレコードの数に対して、レコード セットを完全に設定するには、する前に[GetRecordCount](#getrecordcount)です。  
+##  <a name="getpercentposition"></a>  CDaoRecordset::GetPercentPosition  
+ When working with a dynaset-type or snapshot-type recordset, if you call `GetPercentPosition` before fully populating the recordset, the amount of movement is relative to the number of records accessed as indicated by calling [GetRecordCount](#getrecordcount).  
   
 ```  
 float GetPercentPosition();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 ~ 100 の数値では、レコード セット内のレコードの比率に基づいて、レコード セット オブジェクトの現在のレコードのおおよその場所を示します。  
+### <a name="return-value"></a>Return Value  
+ A number between 0 and 100 that indicates the approximate location of the current record in the recordset object based on a percentage of the records in the recordset.  
   
-### <a name="remarks"></a>コメント  
- 行うことができます、最後のレコードを呼び出して[MoveLast](#movelast)に完全なすべてのレコード セットが、これの母集団かかる場合がありますかなりの時間。  
+### <a name="remarks"></a>Remarks  
+ You can move to the last record by calling [MoveLast](#movelast) to complete the population of all recordsets, but this may take a significant amount of time.  
   
- 呼び出すことができます`GetPercentPosition`レコード セット オブジェクトの次の 3 つの種類でインデックスなしテーブルを含むです。 ただし、呼び出すことはできません`GetPercentPosition`スクロール順方向専用のスナップショット、または外部データベースに対してパススルー クエリから開かれたレコード セット。 現在のレコードがないか、彼は現在のレコードが削除された場合、`CDaoException`がスローされます。  
+ You can call `GetPercentPosition` on all three types of recordset objects, including tables without indexes. However, you cannot call `GetPercentPosition` on forward-only scrolling snapshots, or on a recordset opened from a pass-through query against an external database. If there is no current record, or he current record has been deleted, a `CDaoException` is thrown.  
   
- 関連情報については、DAO ヘルプの「PercentPosition プロパティ」を参照してください。  
+ For related information, see the topic "PercentPosition Property" in DAO Help.  
   
-##  <a name="getrecordcount"></a>CDaoRecordset::GetRecordCount  
- レコード セットのレコードの数がアクセスされていないを調べるには、このメンバー関数を呼び出します。  
+##  <a name="getrecordcount"></a>  CDaoRecordset::GetRecordCount  
+ Call this member function to find out how many records in a recordset have been accessed.  
   
 ```  
 long GetRecordCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セット オブジェクトにアクセスするレコードの数を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the number of records accessed in a recordset object.  
   
-### <a name="remarks"></a>コメント  
- `GetRecordCount`アクセスされていないすべてのレコードになるまで、レコードの数がダイナセット タイプまたはスナップショットの種類のレコード セットに含まれるは示しません。 このメンバー関数の呼び出しは、かなりの時間を完了にかかる場合があります。  
+### <a name="remarks"></a>Remarks  
+ `GetRecordCount` does not indicate how many records are contained in a dynaset-type or snapshot-type recordset until all records have been accessed. This member function call may take a significant amount of time to complete.  
   
- 最後のレコードがアクセスされた後、戻り値は、レコード セットで削除されていないレコードの合計数を示します。 最後のレコードにアクセスするのには、呼び出し、`MoveLast`または`FindLast`レコード セットのメンバー関数。 また、クエリが返すレコードのおおよその数を決定するのに SQL Count を使用することができます。  
+ Once the last record has been accessed, the return value indicates the total number of undeleted records in the recordset. To force the last record to be accessed, call the `MoveLast` or `FindLast` member function for the recordset. You can also use a SQL Count to determine the approximate number of records your query will return.  
   
- ダイナセット タイプ、レコード セットの戻り値のレコードの削除、アプリケーションと`GetRecordCount`減少します。 ただし、他のユーザーによって削除されたレコードはによって反映されません`GetRecordCount`まで、現在のレコードが削除されたレコードに位置付けられます。 レコードの数に影響するトランザクションを実行し、その後、トランザクションをロールバックして`GetRecordCount`残りのレコードの実際の数は反映されません。  
+ As your application deletes records in a dynaset-type recordset, the return value of `GetRecordCount` decreases. However, records deleted by other users are not reflected by `GetRecordCount` until the current record is positioned to a deleted record. If you execute a transaction that affects the record count and subsequently roll back the transaction, `GetRecordCount` will not reflect the actual number of remaining records.  
   
- 値`GetRecordCount`スナップショット タイプのレコード セットからは影響しません、基になるテーブルに変更します。  
+ The value of `GetRecordCount` from a snapshot-type recordset is not affected by changes in the underlying tables.  
   
- 値`GetRecordCount`テーブル型からレコード セットが、テーブルのレコードの概算数を反映し、テーブルのレコードが追加または削除されるとすぐに影響を受けるはします。  
+ The value of `GetRecordCount` from a table-type recordset reflects the approximate number of records in the table and is affected immediately as table records are added and deleted.  
   
- レコードのないレコード セットは、0 の値を返します。 アタッチされているテーブルまたは ODBC データベースを使用するときに`GetRecordCount`常に - 1 を返します。 呼び出す、 **Requery**のレコード セットのメンバー関数の値にリセット`GetRecordCount`クエリを再実行された場合と同様です。  
+ A recordset with no records returns a value of 0. When working with attached tables or ODBC databases, `GetRecordCount` always returns - 1. Calling the **Requery** member function on a recordset resets the value of `GetRecordCount` just as if the query were re-executed.  
   
- 関連情報については、DAO ヘルプの「RecordCount プロパティ」を参照してください。  
+ For related information, see the topic "RecordCount Property" in DAO Help.  
   
-##  <a name="getsql"></a>CDaoRecordset::GetSQL  
- 開かれたときに、レコード セットのレコードを選択するために使用された SQL ステートメントを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getsql"></a>  CDaoRecordset::GetSQL  
+ Call this member function to get the SQL statement that was used to select the recordset's records when it was opened.  
   
 ```  
 CString GetSQL() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A `CString` SQL ステートメントを含むです。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the SQL statement.  
   
-### <a name="remarks"></a>コメント  
- これは一般に、SQL になります**選択**ステートメントです。  
+### <a name="remarks"></a>Remarks  
+ This will generally be a SQL **SELECT** statement.  
   
- によって返される文字列`GetSQL`通常とは異なる任意の文字列でレコード セットに渡された可能性があります、`lpszSQL`パラメーターを[開く](#open)メンバー関数。 これは、レコード セットに渡される内容に基づく完全な SQL ステートメントを作成するため**開く**ClassWizard で指定した、およびどのような場合がありますで指定した、[か](#m_strfilter)と[レコード](#m_strsort)データ メンバーです。  
+ The string returned by `GetSQL` is typically different from any string you may have passed to the recordset in the `lpszSQL` parameter to the [Open](#open) member function. This is because the recordset constructs a full SQL statement based on what you passed to **Open**, what you specified with ClassWizard, and what you may have specified in the [m_strFilter](#m_strfilter) and [m_strSort](#m_strsort) data members.  
   
 > [!NOTE]
->  呼び出した後にのみ、このメンバー関数を呼び出す**開く**です。  
+>  Call this member function only after calling **Open**.  
   
- 関連情報については、DAO ヘルプの「SQL プロパティ」を参照してください。  
+ For related information, see the topic "SQL Property" in DAO Help.  
   
-##  <a name="gettype"></a>CDaoRecordset::GetType  
- レコード セット オブジェクトの種類を決定するレコード セットを開いた後に、このメンバー関数を呼び出します。  
+##  <a name="gettype"></a>  CDaoRecordset::GetType  
+ Call this member function after opening the recordset to determine the type of the recordset object.  
   
 ```  
 short GetType();
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットの種類を示す値は次のいずれかです。  
+### <a name="return-value"></a>Return Value  
+ One of the following values that indicates the type of a recordset:  
   
-- **dbOpenTable**テーブル型のレコード セット  
+- **dbOpenTable** Table-type recordset  
   
-- **dbOpenDynaset**ダイナセット タイプのレコード セット  
+- **dbOpenDynaset** Dynaset-type recordset  
   
-- **dbOpenSnapshot**スナップショット タイプのレコード セット  
+- **dbOpenSnapshot** Snapshot-type recordset  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、DAO ヘルプの「型プロパティ」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see the topic "Type Property" in DAO Help.  
   
-##  <a name="getvalidationrule"></a>CDaoRecordset::GetValidationRule  
- データの検証に使用されるルールを判断するには、このメンバー関数を呼び出します。  
+##  <a name="getvalidationrule"></a>  CDaoRecordset::GetValidationRule  
+ Call this member function to determine the rule used to validate data.  
   
 ```  
 CString GetValidationRule();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`が変更またはテーブルに追加すると、レコード内のデータを検証する値を含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object containing a value that validates the data in a record as it is changed or added to a table.  
   
-### <a name="remarks"></a>コメント  
- このルールは、テキスト ベースでは、し、基になるテーブルが変更されるたびに適用します。 データが有効でない場合、MFC は、例外をスローします。 返されたエラー メッセージは、指定した場合は基になるフィールド オブジェクトのプロパティのテキストまたは基になるフィールド オブジェクトのプロパティで指定された式のテキストです。 呼び出すことができます[GetValidationText](#getvalidationtext)エラー メッセージのテキストを取得します。  
+### <a name="remarks"></a>Remarks  
+ This rule is text-based, and is applied each time the underlying table is changed. If the data is not legal, MFC throws an exception. The returned error message is the text of the ValidationText property of the underlying field object, if specified, or the text of the expression specified by the ValidationRule property of the underlying field object. You can call [GetValidationText](#getvalidationtext) to obtain the text of the error message.  
   
- たとえば、月の日を必要とするレコードのフィールドがあります、検証規則など"DAY BETWEEN 1 から 31 です"。  
+ For example, a field in a record that requires the day of the month might have a validation rule such as "DAY BETWEEN 1 AND 31."  
   
- 関連情報については、"Validationrule"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "ValidationRule Property" in DAO Help.  
   
-##  <a name="getvalidationtext"></a>CDaoRecordset::GetValidationText  
- 基になるフィールド オブジェクトのプロパティのテキストを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getvalidationtext"></a>  CDaoRecordset::GetValidationText  
+ Call this member function to retrieve the text of the ValidationText property of the underlying field object.  
   
 ```  
 CString GetValidationText();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`フィールドの値が、基になるフィールド オブジェクトの検証規則を満たしていない場合に表示されるメッセージのテキストを含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object containing the text of the message that is displayed if the value of a field does not satisfy the validation rule of the underlying field object.  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see the topic "ValidationText Property" in DAO Help.  
   
-##  <a name="isbof"></a>CDaoRecordset::IsBOF  
- レコード セットの最初のレコードの前に位置しているかどうかを学習するレコードにレコードをスクロールする前に、このメンバー関数を呼び出します。  
+##  <a name="isbof"></a>  CDaoRecordset::IsBOF  
+ Call this member function before you scroll from record to record to learn whether you have gone before the first record of the recordset.  
   
 ```  
 BOOL IsBOF() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットにレコードが含まれていない場合、または最初のレコードの前にスクロールした場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset contains no records or if you have scrolled backward before the first record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すこともできます`IsBOF`と共に`IsEOF`レコード セットがすべてのレコードが含まれていますか空かどうかを確認します。 呼び出した後すぐに**開く**レコード セットに、レコードが含まれていない場合、 `IsBOF` 0 以外を返します。 最初のレコードが現在のレコードには、少なくとも 1 つのレコードがレコード セットを開いたときと`IsBOF`0 を返します。  
+### <a name="remarks"></a>Remarks  
+ You can also call `IsBOF` along with `IsEOF` to determine whether the recordset contains any records or is empty. Immediately after you call **Open**, if the recordset contains no records, `IsBOF` returns nonzero. When you open a recordset that has at least one record, the first record is the current record and `IsBOF` returns 0.  
   
- 最初のレコードは、現在のレコードとを呼び出す場合`MovePrev`、`IsBOF`後以外を返します。 場合`IsBOF`呼び出す 0 以外を返しますと`MovePrev`例外がスローされます。 場合`IsBOF`0 以外を返します、現在のレコードが定義されていないと、現在のレコードを必要とする任意のアクション、例外が発生します。  
+ If the first record is the current record and you call `MovePrev`, `IsBOF` will subsequently return nonzero. If `IsBOF` returns nonzero and you call `MovePrev`, an exception is thrown. If `IsBOF` returns nonzero, the current record is undefined, and any action that requires a current record will result in an exception.  
   
- 特定のメソッドの効果`IsBOF`と`IsEOF`設定。  
+ Effect of specific methods on `IsBOF` and `IsEOF` settings:  
   
--   呼び出す**開く**内部的には、最初のレコード、レコード セットの現在のレコードを呼び出して**MoveFirst**です。 そのため、**開く**レコード原因の空のセットで`IsBOF`と`IsEOF`に 0 以外を返します。 (失敗したときの動作については、次の表を参照してください**MoveFirst**または`MoveLast`呼び出します)。  
+-   Calling **Open** internally makes the first record in the recordset the current record by calling **MoveFirst**. Therefore, calling **Open** on an empty set of records causes `IsBOF` and `IsEOF` to return nonzero. (See the following table for the behavior of a failed **MoveFirst** or `MoveLast` call.)  
   
--   レコードを正常に配置したすべての移動操作が発生する両方`IsBOF`と`IsEOF`0 を返します。  
+-   All Move operations that successfully locate a record cause both `IsBOF` and `IsEOF` to return 0.  
   
--   `AddNew`呼び出しが続いて、**更新**呼び出しが正常に新しいレコードを挿入すると、`IsBOF`を返す場合に限り、0、`IsEOF`が既に 0 以外。 状態`IsEOF`は常に変更されません。 定義されている Microsoft Jet データベース エンジンは、現在のレコードの後に、新しいレコードが挿入されるため、空のレコード セットの現在のレコード ポインターは、ファイルの最後にします。  
+-   An `AddNew` call followed by an **Update** call that successfully inserts a new record will cause `IsBOF` to return 0, but only if `IsEOF` is already nonzero. The state of `IsEOF` will always remain unchanged. As defined by the Microsoft Jet database engine, the current record pointer of an empty recordset is at the end of a file, so any new record is inserted after the current record.  
   
--   どの**削除**の呼び出しで、レコードから残っている唯一のレコードを削除する場合でも、値を変更しないの`IsBOF`または`IsEOF`です。  
+-   Any **Delete** call, even if it removes the only remaining record from a recordset, will not change the value of `IsBOF` or `IsEOF`.  
   
- この表では、移動操作のさまざまな組み合わせで使用できる`IsBOF` / `IsEOF`です。  
+ This table shows which Move operations are allowed with different combinations of `IsBOF`/ `IsEOF`.  
   
-||MoveFirst、MoveLast|MovePrev、<br /><br /> 移動< 0></ 0>|0 を移動します。|MoveNext、<br /><br /> Move > 0|  
+||MoveFirst, MoveLast|MovePrev,<br /><br /> Move < 0|Move 0|MoveNext,<br /><br /> Move > 0|  
 |------|-------------------------|-----------------------------|------------|-----------------------------|  
-|`IsBOF`= 0 以外の場合<br /><br /> `IsEOF`=0|Allowed|例外|例外|Allowed|  
-|`IsBOF`=0,<br /><br /> `IsEOF`0 以外の値 =|Allowed|Allowed|例外|例外|  
-|0 以外の両方|例外|例外|例外|例外|  
-|どちらも 0|Allowed|Allowed|Allowed|Allowed|  
+|`IsBOF`=nonzero,<br /><br /> `IsEOF`=0|Allowed|Exception|Exception|Allowed|  
+|`IsBOF`=0,<br /><br /> `IsEOF`=nonzero|Allowed|Allowed|Exception|Exception|  
+|Both nonzero|Exception|Exception|Exception|Exception|  
+|Both 0|Allowed|Allowed|Allowed|Allowed|  
   
- 移動操作を許可してもの操作が正常にレコードを見つけるとは限りません。 だけでことを示します、指定した移動操作を実行しようとは許可されて例外は生成されません。 値、`IsBOF`と`IsEOF`動いておらず、実行しようとしたメンバー関数を変更することがあります。  
+ Allowing a Move operation does not mean that the operation will successfully locate a record. It merely indicates that an attempt to perform the specified Move operation is allowed and will not generate an exception. The value of the `IsBOF` and `IsEOF` member functions may change as a result of the attempted move.  
   
- 移動操作の値には、レコードを特定できない場合の効果`IsBOF`と`IsEOF`設定が次の表に示すようにします。  
+ The effect of Move operations that do not locate a record on the value of `IsBOF` and `IsEOF` settings is shown in the following table.  
   
 ||IsBOF|IsEOF|  
 |------|-----------|-----------|  
-|**MoveFirst**、`MoveLast`|0 以外の値|0 以外の値|  
-|**移動**0|変更はありません。|変更はありません。|  
-|`MovePrev`, **Move**< 0></ 0>|0 以外の値|変更はありません。|  
-|`MoveNext`, **Move** > 0|変更はありません。|0 以外の値|  
+|**MoveFirst**, `MoveLast`|Nonzero|Nonzero|  
+|**Move** 0|No change|No change|  
+|`MovePrev`, **Move** < 0|Nonzero|No change|  
+|`MoveNext`, **Move** > 0|No change|Nonzero|  
   
- 関連情報については、トピックを参照してください。"BOF, EOF プロパティ"DAO のヘルプ。  
+ For related information, see the topic "BOF, EOF Properties" in DAO Help.  
   
-##  <a name="isdeleted"></a>CDaoRecordset::IsDeleted  
- 現在のレコードが削除されたかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="isdeleted"></a>  CDaoRecordset::IsDeleted  
+ Call this member function to determine whether the current record has been deleted.  
   
 ```  
 BOOL IsDeleted() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットが削除されたレコードに配置されている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset is positioned on a deleted record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- レコードをスクロールする場合と`IsDeleted`返します**TRUE** (0 以外)、スクロールして別のレコードに他のレコード セットの操作を実行する前にします。  
+### <a name="remarks"></a>Remarks  
+ If you scroll to a record and `IsDeleted` returns **TRUE** (nonzero), then you must scroll to another record before you can perform any other recordset operations.  
   
 > [!NOTE]
->  スナップショット パブリケーションまたはテーブル型のレコード セット内のレコードの削除済みの状態を確認する必要はありません。 呼び出す必要はありませんレコードは、スナップショットから削除されることはできません、ため`IsDeleted`です。 テーブル型のレコード セットの削除されたレコードはレコード セットから実際に削除します。 レコードが削除されたして別のユーザーまたは別のレコード セット内のいずれかと、そのレコードにスクロールすることはできません。 したがってを呼び出す必要はありません`IsDeleted`です。  
+>  You don't need to check the deleted status for records in a snapshot or table-type recordset. Because records cannot be deleted from a snapshot, there is no need to call `IsDeleted`. For table-type recordsets, deleted records are actually removed from the recordset. Once a record has been deleted, either by you, another user, or in another recordset, you cannot scroll back to that record. Therefore, there is no need to call `IsDeleted`.  
   
- ダイナセットからレコードを削除して、レコード セットから削除されますそのレコードにスクロールすることはできません。 ただし場合内のレコード ダイナセットは削除別のユーザーによってまたは同じテーブルに基づく別のレコード セット内のいずれか`IsDeleted`戻ります**TRUE**そのレコードに後でスクロールしたとき。  
+ When you delete a record from a dynaset, it is removed from the recordset and you cannot scroll back to that record. However, if a record in a dynaset is deleted either by another user or in another recordset based on the same table, `IsDeleted` will return **TRUE** when you later scroll to that record.  
   
- 関連情報については、「メソッドの削除」、「LastModified プロパティ」と「EditMode プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "Delete Method", "LastModified Property", and "EditMode Property" in DAO Help.  
   
-##  <a name="iseof"></a>CDaoRecordset::IsEOF  
- レコードからレコード セットの最後のレコードを越えているかどうかを説明するレコードをスクロールするときに、このメンバー関数を呼び出します。  
+##  <a name="iseof"></a>  CDaoRecordset::IsEOF  
+ Call this member function as you scroll from record to record to learn whether you have gone beyond the last record of the recordset.  
   
 ```  
 BOOL IsEOF() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットにレコードが含まれていない場合、または最後のレコードより後にスクロールする場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset contains no records or if you have scrolled beyond the last record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すこともできます`IsEOF`レコード セットがすべてのレコードが含まれていますか空かどうかを確認します。 呼び出した後すぐに**開く**レコード セットに、レコードが含まれていない場合、 `IsEOF` 0 以外を返します。 最初のレコードが現在のレコードには、少なくとも 1 つのレコードがレコード セットを開いたときと`IsEOF`0 を返します。  
+### <a name="remarks"></a>Remarks  
+ You can also call `IsEOF` to determine whether the recordset contains any records or is empty. Immediately after you call **Open**, if the recordset contains no records, `IsEOF` returns nonzero. When you open a recordset that has at least one record, the first record is the current record and `IsEOF` returns 0.  
   
- 呼び出すときに、最後のレコードが現在のレコードがかどうか`MoveNext`、`IsEOF`後以外を返します。 場合`IsEOF`呼び出す 0 以外を返しますと`MoveNext`例外がスローされます。 場合`IsEOF`0 以外を返します、現在のレコードが定義されていないと、現在のレコードを必要とする任意のアクション、例外が発生します。  
+ If the last record is the current record when you call `MoveNext`, `IsEOF` will subsequently return nonzero. If `IsEOF` returns nonzero and you call `MoveNext`, an exception is thrown. If `IsEOF` returns nonzero, the current record is undefined, and any action that requires a current record will result in an exception.  
   
- 特定のメソッドの効果`IsBOF`と`IsEOF`設定。  
+ Effect of specific methods on `IsBOF` and `IsEOF` settings:  
   
--   呼び出す**開く**内部的には、最初のレコード、レコード セットの現在のレコードを呼び出して**MoveFirst**です。 そのため、**開く**レコード原因の空のセットで`IsBOF`と`IsEOF`に 0 以外を返します。 (失敗したときの動作については、次の表を参照してください**MoveFirst**呼び出します)。  
+-   Calling **Open** internally makes the first record in the recordset the current record by calling **MoveFirst**. Therefore, calling **Open** on an empty set of records causes `IsBOF` and `IsEOF` to return nonzero. (See the following table for the behavior of a failed **MoveFirst** call.)  
   
--   レコードを正常に配置したすべての移動操作が発生する両方`IsBOF`と`IsEOF`0 を返します。  
+-   All Move operations that successfully locate a record cause both `IsBOF` and `IsEOF` to return 0.  
   
--   `AddNew`呼び出しが続いて、**更新**呼び出しが正常に新しいレコードを挿入すると、`IsBOF`を返す場合に限り、0、`IsEOF`が既に 0 以外。 状態`IsEOF`は常に変更されません。 定義されている Microsoft Jet データベース エンジンは、現在のレコードの後に、新しいレコードが挿入されるため、空のレコード セットの現在のレコード ポインターは、ファイルの最後にします。  
+-   An `AddNew` call followed by an **Update** call that successfully inserts a new record will cause `IsBOF` to return 0, but only if `IsEOF` is already nonzero. The state of `IsEOF` will always remain unchanged. As defined by the Microsoft Jet database engine, the current record pointer of an empty recordset is at the end of a file, so any new record is inserted after the current record.  
   
--   どの**削除**の呼び出しで、レコードから残っている唯一のレコードを削除する場合でも、値を変更しないの`IsBOF`または`IsEOF`です。  
+-   Any **Delete** call, even if it removes the only remaining record from a recordset, will not change the value of `IsBOF` or `IsEOF`.  
   
- この表では、移動操作のさまざまな組み合わせで使用できる`IsBOF` / `IsEOF`です。  
+ This table shows which Move operations are allowed with different combinations of `IsBOF`/ `IsEOF`.  
   
-||MoveFirst、MoveLast|MovePrev、<br /><br /> 移動< 0></ 0>|0 を移動します。|MoveNext、<br /><br /> Move > 0|  
+||MoveFirst, MoveLast|MovePrev,<br /><br /> Move < 0|Move 0|MoveNext,<br /><br /> Move > 0|  
 |------|-------------------------|-----------------------------|------------|-----------------------------|  
-|`IsBOF`= 0 以外の場合<br /><br /> `IsEOF`=0|Allowed|例外|例外|Allowed|  
-|`IsBOF`=0,<br /><br /> `IsEOF`0 以外の値 =|Allowed|Allowed|例外|例外|  
-|0 以外の両方|例外|例外|例外|例外|  
-|どちらも 0|Allowed|Allowed|Allowed|Allowed|  
+|`IsBOF`=nonzero,<br /><br /> `IsEOF`=0|Allowed|Exception|Exception|Allowed|  
+|`IsBOF`=0,<br /><br /> `IsEOF`=nonzero|Allowed|Allowed|Exception|Exception|  
+|Both nonzero|Exception|Exception|Exception|Exception|  
+|Both 0|Allowed|Allowed|Allowed|Allowed|  
   
- 移動操作を許可してもの操作が正常にレコードを見つけるとは限りません。 だけでことを示します、指定した移動操作を実行しようとは許可されて例外は生成されません。 値、`IsBOF`と`IsEOF`動いておらず、実行しようとしたメンバー関数を変更することがあります。  
+ Allowing a Move operation does not mean that the operation will successfully locate a record. It merely indicates that an attempt to perform the specified Move operation is allowed and will not generate an exception. The value of the `IsBOF` and `IsEOF` member functions may change as a result of the attempted Move.  
   
- 移動操作の値には、レコードを特定できない場合の効果`IsBOF`と`IsEOF`設定が次の表に示すようにします。  
+ The effect of Move operations that do not locate a record on the value of `IsBOF` and `IsEOF` settings is shown in the following table.  
   
 ||IsBOF|IsEOF|  
 |------|-----------|-----------|  
-|**MoveFirst**、`MoveLast`|0 以外の値|0 以外の値|  
-|**移動**0|変更はありません。|変更はありません。|  
-|`MovePrev`, **Move**< 0></ 0>|0 以外の値|変更はありません。|  
-|`MoveNext`, **Move** > 0|変更はありません。|0 以外の値|  
+|**MoveFirst**, `MoveLast`|Nonzero|Nonzero|  
+|**Move** 0|No change|No change|  
+|`MovePrev`, **Move** < 0|Nonzero|No change|  
+|`MoveNext`, **Move** > 0|No change|Nonzero|  
   
- 関連情報については、トピックを参照してください。"BOF, EOF プロパティ"DAO のヘルプ。  
+ For related information, see the topic "BOF, EOF Properties" in DAO Help.  
   
-##  <a name="isfielddirty"></a>CDaoRecordset::IsFieldDirty  
- ダイナセットの指定したフィールド データ メンバーを「ダーティ」としてマークされているかどうかを決定する (変更)。 このメンバー関数を呼び出します。  
+##  <a name="isfielddirty"></a>  CDaoRecordset::IsFieldDirty  
+ Call this member function to determine whether the specified field data member of a dynaset has been flagged as "dirty" (changed).  
   
 ```  
 BOOL IsFieldDirty(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**をフィールドのいずれがダーティかどうかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields are dirty.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたフィールド データ メンバーがダーティ; としてフラグが設定された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified field data member is flagged as dirty; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- すべてのダーティ フィールド データ メンバー内のデータは上を転送レコード、データ ソースへの呼び出しによって、現在のレコードが更新されたときに、**更新**のメンバー関数`CDaoRecordset`(の呼び出しに続く**編集**または`AddNew`)。 このナレッジをさらに手順を実行できますなど、フラグ、フィールド データ メンバーをデータ ソースに書き込まれませんので、列をマークします。  
+### <a name="remarks"></a>Remarks  
+ The data in all dirty field data members will be transferred to the record on the data source when the current record is updated by a call to the **Update** member function of `CDaoRecordset` (following a call to **Edit** or `AddNew`). With this knowledge, you can take further steps, such as unflagging the field data member to mark the column so it will not be written to the data source.  
   
- `IsFieldDirty`によって実装され`DoFieldExchange`です。  
+ `IsFieldDirty` is implemented through `DoFieldExchange`.  
   
-##  <a name="isfieldnull"></a>CDaoRecordset::IsFieldNull  
- レコード セットの指定したフィールド データ メンバーを Null としてマークされているかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="isfieldnull"></a>  CDaoRecordset::IsFieldNull  
+ Call this member function to determine whether the specified field data member of a recordset has been flagged as Null.  
   
 ```  
 BOOL IsFieldNull(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**をフィールドのいずれかが Null であるかどうかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields are Null.  
   
-### <a name="return-value"></a>戻り値  
- 場合、指定されたフィールド データ メンバーは Null です。 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified field data member is flagged as Null; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- (データベース用語では、「値を持たない」手段を Null に設定と同じではありませんし**NULL** c++)。フィールド データ メンバーが Null としてフラグが設定した場合は、対象の値はありません、現在のレコードの列として解釈されます。  
-  
-> [!NOTE]
->  使用して、特定の状況で`IsFieldNull`できる効率的な場合は、次のコード例に示すようにします。  
-  
- [!code-cpp[NVC_MFCDatabase #5](../../mfc/codesnippet/cpp/cdaorecordset-class_5.cpp)]  
+### <a name="remarks"></a>Remarks  
+ (In database terminology, Null means "having no value" and is not the same as **NULL** in C++.) If a field data member is flagged as Null, it is interpreted as a column of the current record for which there is no value.  
   
 > [!NOTE]
->  派生することがなく動的レコード バインドを使用しているかどうかは`CDaoRecordset`を使用してください**VT_**の例で示すようにします。  
+>  In certain situations, using `IsFieldNull` can be inefficient, as the following code example illustrates:  
   
-##  <a name="isfieldnullable"></a>CDaoRecordset::IsFieldNullable  
- このメンバー関数を指定されたフィールド データ メンバーは"null 値を許容"するかどうかを判断 (できます。 Null 値に設定C++ **NULL** Null の場合、つまり、データベース用語と同じではありません「値を持たない」) です。  
+ [!code-cpp[NVC_MFCDatabase#5](../../mfc/codesnippet/cpp/cdaorecordset-class_5.cpp)]  
+  
+> [!NOTE]
+>  If you are using dynamic record binding, without deriving from `CDaoRecordset`, be sure to use **VT_NULL** as shown in the example.  
+  
+##  <a name="isfieldnullable"></a>  CDaoRecordset::IsFieldNullable  
+ Call this member function to determine whether the specified field data member is "nullable" (can be set to a Null value; C++ **NULL** is not the same as Null, which, in database terminology, means "having no value").  
   
 ```  
 BOOL IsFieldNullable(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**をフィールドのいずれかが Null であるかどうかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields are Null.  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合、指定されたフィールド データ メンバーにできる Null です。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified field data member can be made Null; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Null 値は、フィールド値が必要です。 このようなフィールドを追加またはレコードを更新する場合は Null に設定しようとすると、データ ソースは追加または更新プログラムを拒否し、**更新**例外がスローされます。 呼び出すときに例外が発生した**更新**を呼び出すときではなく、`SetFieldNull`です。  
+### <a name="remarks"></a>Remarks  
+ A field that cannot be Null must have a value. If you attempt to set such a field to Null when adding or updating a record, the data source rejects the addition or update, and **Update** will throw an exception. The exception occurs when you call **Update**, not when you call `SetFieldNull`.  
   
-##  <a name="isopen"></a>CDaoRecordset::IsOpen  
- レコード セットが開いているかどうかを決定するには、このメンバー関数を呼び出します。  
+##  <a name="isopen"></a>  CDaoRecordset::IsOpen  
+ Call this member function to determine if the recordset is open.  
   
 ```  
 BOOL IsOpen() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の場合、レコード セット オブジェクトの**開いている**または**Requery**メンバー関数が呼び出されていたため、レコード セットが閉じられましたできません; 0 それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset object's **Open** or **Requery** member function has previously been called and the recordset has not been closed; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_bcheckcachefordirtyfields"></a>CDaoRecordset::m_bCheckCacheForDirtyFields  
- かどうかキャッシュされているフィールドは自動的にマーク ダーティとして (変更) を示すフラグを格納および Null です。  
+##  <a name="m_bcheckcachefordirtyfields"></a>  CDaoRecordset::m_bCheckCacheForDirtyFields  
+ Contains a flag indicating whether cached fields are automatically marked as dirty (changed) and Null.  
   
-### <a name="remarks"></a>コメント  
- フラグの既定値**TRUE**です。 このデータ メンバーの設定は、全体のダブル バッファリングの機構を制御します。 フラグを設定する場合**TRUE**、DFX メカニズムを使用してフィールドの単位でキャッシュを無効にできます。 フラグを設定する場合**FALSE**、呼び出す必要があります`SetFieldDirty`と`SetFieldNull`自分でします。  
+### <a name="remarks"></a>Remarks  
+ The flag defaults to **TRUE**. The setting in this data member controls the entire double-buffering mechanism. If you set the flag to **TRUE**, you can turn off the caching on a field-by-field basis using the DFX mechanism. If you set the flag to **FALSE**, you must call `SetFieldDirty` and `SetFieldNull` yourself.  
   
- 呼び出しの前にこのデータ メンバーをセット**開く**です。 このメカニズムは、主に、使いやすさです。 パフォーマンスは、変更に合わせてフィールドのダブル バッファリングにより低下する可能性があります。  
+ Set this data member before calling **Open**. This mechanism is primarily for ease-of-use. Performance may be slower because of the double-buffering of fields as changes are made.  
   
-##  <a name="m_nfields"></a>CDaoRecordset::m_nFields  
- レコード セット クラスのフィールド データ メンバーの数と、データ ソースからレコード セットが選択した列の数が含まれています。  
+##  <a name="m_nfields"></a>  CDaoRecordset::m_nFields  
+ Contains the number of field data members in the recordset class and the number of columns selected by the recordset from the data source.  
   
-### <a name="remarks"></a>コメント  
- レコード セット クラスのコンス トラクターを初期化する必要があります`m_nFields`と静的にバインドされたフィールドの正しい数。 ClassWizard は、レコード セット クラスの宣言を使用するときに、この初期化を書き込みます。 手動で記述することもできます。  
+### <a name="remarks"></a>Remarks  
+ The constructor for the recordset class must initialize `m_nFields` with the correct number of statically bound fields. ClassWizard writes this initialization for you when you use it to declare your recordset class. You can also write it manually.  
   
- フレームワークは、フィールド データ メンバーと、データ ソースの現在のレコードの対応する列間の相互作用を管理するのに、この番号を使用します。  
-  
-> [!NOTE]
->  この数に登録されている出力列の数に対応する必要があります`DoFieldExchange`への呼び出し後`SetFieldType`パラメーターを使用して**CDaoFieldExchange::outputColumn**です。  
-  
- ようで動的に列をバインドする`CDaoRecordset::GetFieldValue`と`CDaoRecordset::SetFieldValue`です。 これを行う場合はでカウントをインクリメントする必要はありません`m_nFields`呼び出し DFX 関数の数を反映するように、`DoFieldExchange`メンバー関数。  
-  
-##  <a name="m_nparams"></a>CDaoRecordset::m_nParams  
- レコード セット クラスのパラメーター データ メンバーの数が含まれています: レコード セットのクエリで渡されるパラメーターの数。  
-  
-### <a name="remarks"></a>コメント  
- クラスのコンス トラクターを初期化する必要があります、レコード セット クラスにパラメーター データ メンバーがある場合は、`m_nParams`を正しい値にします。 値`m_nParams`既定値は 0 です。 パラメーター データ メンバーを追加する場合、手動で行うことができます — パラメーターの数を反映するように、クラス コンス トラクターで初期化を手動で追加する必要があります (の数とサイズ以上である必要がありますが ' 内のプレース ホルダー、**か**または`m_strSort`文字列)。  
-  
- フレームワークは、レコード セットのクエリをパラメーター化するときに、この番号を使用します。  
+ The framework uses this number to manage interaction between the field data members and the corresponding columns of the current record on the data source.  
   
 > [!NOTE]
->  この数は、「パラメーター」に登録されている数に対応する必要があります`DoFieldExchange`への呼び出し後`SetFieldType`パラメーターを使用して**CFieldExchange::param**です。  
+>  This number must correspond to the number of output columns registered in `DoFieldExchange` after a call to `SetFieldType` with the parameter **CDaoFieldExchange::outputColumn**.  
   
- 関連情報については、「パラメーター オブジェクトが」DAO ヘルプのトピックを参照してください。  
+ You can bind columns dynamically by way of `CDaoRecordset::GetFieldValue` and `CDaoRecordset::SetFieldValue`. If you do so, you do not need to increment the count in `m_nFields` to reflect the number of DFX function calls in your `DoFieldExchange` member function.  
   
-##  <a name="m_pdaorecordset"></a>CDaoRecordset::m_pDAORecordset  
- DAO レコード セット オブジェクト基になるの OLE インターフェイスへのポインターが含まれています、`CDaoRecordset`オブジェクト。  
+##  <a name="m_nparams"></a>  CDaoRecordset::m_nParams  
+ Contains the number of parameter data members in the recordset class — the number of parameters passed with the recordset's query.  
   
-### <a name="remarks"></a>コメント  
- DAO インターフェイスに直接アクセスする必要がある場合は、このポインターを使用します。  
+### <a name="remarks"></a>Remarks  
+ If your recordset class has any parameter data members, the constructor for the class must initialize `m_nParams` with the correct number. The value of `m_nParams` defaults to 0. If you add parameter data members — which you must do manually — you must also manually add an initialization in the class constructor to reflect the number of parameters (which must be at least as large as the number of '' placeholders in your **m_strFilter** or `m_strSort` string).  
   
- 関連情報については、「Recordset オブジェクト」DAO ヘルプのトピックを参照してください。  
+ The framework uses this number when it parameterizes the recordset's query.  
   
-##  <a name="m_pdatabase"></a>CDaoRecordset::m_pDatabase  
- ポインターが含まれています、`CDaoDatabase`データ ソースに使用されるレコード セットが接続されているオブジェクト。  
+> [!NOTE]
+>  This number must correspond to the number of "params" registered in `DoFieldExchange` after a call to `SetFieldType` with the parameter **CFieldExchange::param**.  
   
-### <a name="remarks"></a>コメント  
- この変数は、2 つの方法で設定されます。 通常、ポインターを渡して、既に開かれている`CDaoDatabase`オブジェクトのレコード セット オブジェクトを構築するときにします。 渡す場合**NULL**代わりに、 **CDaoRecordset**を作成、`CDaoDatabase`オブジェクトを開きます。 どちらの場合、`CDaoRecordset`この変数にポインターを格納します。  
+ For related information, see the topic "Parameter Object" in DAO Help.  
   
- 通常は直接不要に格納されているポインターを使用する**m_pDatabase**です。 独自の拡張機能を記述する場合`CDaoRecordset`、ただし、ポインターを使用する必要があります。 たとえば、する必要があります、ポインターをスローする場合、独自`CDaoException`(秒)。  
+##  <a name="m_pdaorecordset"></a>  CDaoRecordset::m_pDAORecordset  
+ Contains a pointer to the OLE interface for the DAO recordset object underlying the `CDaoRecordset` object.  
   
- 関連情報については、「データベースのオブジェクト」DAO ヘルプのトピックを参照してください。  
+### <a name="remarks"></a>Remarks  
+ Use this pointer if you need to access the DAO interface directly.  
   
-##  <a name="m_strfilter"></a>CDaoRecordset::m_strFilter  
- 構築するために使用する文字列を含む、**場所**SQL ステートメントの句。  
+ For related information, see the topic "Recordset Object" in DAO Help.  
   
-### <a name="remarks"></a>コメント  
- 予約語を含まない**場所**をレコード セットをフィルター処理します。 このデータ メンバーの使用は、テーブル型のレコード セットを適用できません。 使用**か**も何も起こりませんを使用して、レコード セットを開くときに、`CDaoQueryDef`ポインター。  
+##  <a name="m_pdatabase"></a>  CDaoRecordset::m_pDatabase  
+ Contains a pointer to the `CDaoDatabase` object through which the recordset is connected to a data source.  
   
- 米国の日付形式 (月-日-年) を使用して、Microsoft Jet データベース エンジンの; 米国バージョンを使用していない場合でも、日付を持つフィールドをフィルター処理する場合それ以外の場合、データは、期待どおりにいないフィルター可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This variable is set in two ways. Typically, you pass a pointer to an already open `CDaoDatabase` object when you construct the recordset object. If you pass **NULL** instead, **CDaoRecordset** creates a `CDaoDatabase` object for you and opens it. In either case, `CDaoRecordset` stores the pointer in this variable.  
   
- 関連情報については、DAO ヘルプの「フィルター プロパティ」を参照してください。  
+ Normally you will not directly need to use the pointer stored in **m_pDatabase**. If you write your own extensions to `CDaoRecordset`, however, you might need to use the pointer. For example, you might need the pointer if you throw your own `CDaoException`(s).  
   
-##  <a name="m_strsort"></a>CDaoRecordset::m_strSort  
- 含む文字列が含まれています、 **ORDERBY**予約語を含まない SQL ステートメントの句**ORDERBY**です。  
+ For related information, see the topic "Database Object" in DAO Help.  
   
-### <a name="remarks"></a>コメント  
- ダイナセットのスナップショットの種類のレコード セット オブジェクトを並べ替えることができます。  
+##  <a name="m_strfilter"></a>  CDaoRecordset::m_strFilter  
+ Contains a string that is used to construct the **WHERE** clause of a SQL statement.  
   
- テーブル型のレコード セット オブジェクトを並べ替えることはできません。 テーブル型のレコード セットの並べ替え順序を特定するのには、呼び出す[SetCurrentIndex](#setcurrentindex)です。  
+### <a name="remarks"></a>Remarks  
+ It does not include the reserved word **WHERE** to filter the recordset. The use of this data member is not applicable to table-type recordsets. The use of **m_strFilter** has no effect when opening a recordset using a `CDaoQueryDef` pointer.  
   
- 使用`m_strSort`も何も起こりませんを使用して、レコード セットを開くときに、`CDaoQueryDef`ポインター。  
+ Use the U.S. date format (month-day-year) when you filter fields containing dates, even if you are not using the U.S. version of the Microsoft Jet database engine; otherwise, the data may not be filtered as you expect.  
   
- 関連情報については、DAO ヘルプの「並べ替えプロパティ」を参照してください。  
+ For related information, see the topic "Filter Property" in DAO Help.  
   
-##  <a name="move"></a>CDaoRecordset::Move  
- レコード セットに移動するには、このメンバー関数を呼び出す`lRows`現在のレコードからのレコードです。  
+##  <a name="m_strsort"></a>  CDaoRecordset::m_strSort  
+ Contains a string containing the **ORDERBY** clause of a SQL statement without the reserved words **ORDERBY**.  
+  
+### <a name="remarks"></a>Remarks  
+ You can sort on dynaset- and snapshot-type recordset objects.  
+  
+ You cannot sort table-type recordset objects. To determine the sort order of a table-type recordset, call [SetCurrentIndex](#setcurrentindex).  
+  
+ The use of `m_strSort` has no effect when opening a recordset using a `CDaoQueryDef` pointer.  
+  
+ For related information, see the topic "Sort Property" in DAO Help.  
+  
+##  <a name="move"></a>  CDaoRecordset::Move  
+ Call this member function to position the recordset `lRows` records from the current record.  
   
 ```  
 virtual void Move(long lRows);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lRows`  
- 前方または後方に移動するレコードの数。 正の値は、レコード セットの末尾に向かって前方移動します。 負の値は、先頭に向かって後方移動します。  
+ The number of records to move forward or backward. Positive values move forward, toward the end of the recordset. Negative values move backward, toward the beginning.  
   
-### <a name="remarks"></a>コメント  
- 前方または後方に移動することができます。 `Move( 1 )`等価`MoveNext`、および`Move( -1 )`は等価`MovePrev`です。  
+### <a name="remarks"></a>Remarks  
+ You can move forward or backward. `Move( 1 )` is equivalent to `MoveNext`, and `Move( -1 )` is equivalent to `MovePrev`.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 一般に、両方を呼び出す`IsBOF`と`IsEOF`移動操作をいくつかのレコードをレコード セットが存在するかどうかを判断する前にします。 呼び出した後**開く**または**Requery**、いずれかを呼び出す`IsBOF`または`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. In general, call both `IsBOF` and `IsEOF` before a Move operation to determine whether the recordset has any records. After you call **Open** or **Requery**, call either `IsBOF` or `IsEOF`.  
   
 > [!NOTE]
->  先頭またはレコード セットの末尾を越えてスクロールした場合 (`IsBOF`または`IsEOF`0 以外を返します) への呼び出し**移動**スロー、`CDaoException`です。  
+>  If you have scrolled past the beginning or end of the recordset ( `IsBOF` or `IsEOF` returns nonzero), a call to **Move** throws a `CDaoException`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- 呼び出すと**移動**前方スクロールのスナップショットで、`lRows`パラメーターは正の整数を指定する必要がありますに移動できるように前方のみ、ブックマークは使用できません。  
+ When you call **Move** on a forward-only scrolling snapshot, the `lRows` parameter must be a positive integer and bookmarks are not allowed, so you can move forward only.  
   
- First、last、次に、以前レコードまたはレコード セットから、現在のレコードを呼び出し、 **MoveFirst**、 `MoveLast`、 `MoveNext`、または`MovePrev`メンバー関数。  
+ To make the first, last, next, or previous record in a recordset the current record, call the **MoveFirst**, `MoveLast`, `MoveNext`, or `MovePrev` member function.  
   
- 関連情報については、トピックを参照して、「Move メソッド」と"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
+ For related information, see the topics "Move Method" and "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in DAO Help.  
   
-##  <a name="movefirst"></a>CDaoRecordset::MoveFirst  
- (存在する場合)、レコード セットの最初のレコードを作成するには、このメンバー関数を呼び出して、現在のレコードです。  
+##  <a name="movefirst"></a>  CDaoRecordset::MoveFirst  
+ Call this member function to make the first record in the recordset (if any) the current record.  
   
 ```  
 void MoveFirst();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出していない**MoveFirst**レコード セットを開いた直後後。 その時点では、最初のレコード (存在する場合) と、現在のレコードでは自動的にします。  
+### <a name="remarks"></a>Remarks  
+ You do not have to call **MoveFirst** immediately after you open the recordset. At that time, the first record (if any) is automatically the current record.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 一般に、両方を呼び出す`IsBOF`と`IsEOF`移動操作をいくつかのレコードをレコード セットが存在するかどうかを判断する前にします。 呼び出した後**開く**または**Requery**、いずれかを呼び出す`IsBOF`または`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. In general, call both `IsBOF` and `IsEOF` before a Move operation to determine whether the recordset has any records. After you call **Open** or **Requery**, call either `IsBOF` or `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- 使用して、**移動**条件を適用することがなくレコード間を移動する関数。 ダイナセット タイプまたは特定の条件に適合するスナップショットの種類のレコード セット オブジェクト内でレコードを検索するのにには、検索操作を使用します。 テーブル型のレコード セット オブジェクトでレコードを検索、呼び出す`Seek`です。  
+ Use the **Move** functions to move from record to record without applying a condition. Use the Find operations to locate records in a dynaset-type or snapshot-type recordset object that satisfy a certain condition. To locate a record in a table-type recordset object, call `Seek`.  
   
- レコード セットは、テーブル型のレコード セットを参照している場合、移動は、テーブルの現在のインデックスをたどります。 現在のインデックスを設定するには、基になる DAO オブジェクトのインデックス プロパティを使用します。 場合は、現在のインデックスを設定しないと、返されたレコードの順序は定義されません。  
+ If the recordset refers to a table-type recordset, movement follows the table's current index. You can set the current index by using the Index property of the underlying DAO object. If you do not set the current index, the order of returned records is undefined.  
   
- 呼び出す場合`MoveLast`クエリを強制的に完了、SQL クエリまたはクエリ定義に基づき、レコード セット オブジェクトと recordset オブジェクトが完全に設定されます。  
+ If you call `MoveLast` on a recordset object based on a SQL query or querydef, the query is forced to completion and the recordset object is fully populated.  
   
- 呼び出すことはできません、 **MoveFirst**または`MovePrev`前方スクロール スナップショットを使用してメンバー関数。  
+ You cannot call the **MoveFirst** or `MovePrev` member function with a forward-only scrolling snapshot.  
   
- 特定の個のレコードを前方または後方記録レコード セット オブジェクトで、現在の位置を移動するには、呼び出す**移動**です。  
+ To move the position of the current record in a recordset object a specific number of records forward or backward, call **Move**.  
   
- 関連情報については、トピックを参照して、「Move メソッド」と"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
+ For related information, see the topics "Move Method" and "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in DAO Help.  
   
-##  <a name="movelast"></a>CDaoRecordset::MoveLast  
- 現在のレコードのレコード セットで (存在する場合) は、最後のレコードを作成するには、このメンバー関数を呼び出します。  
+##  <a name="movelast"></a>  CDaoRecordset::MoveLast  
+ Call this member function to make the last record (if any) in the recordset the current record.  
   
 ```  
 void MoveLast();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 一般に、両方を呼び出す`IsBOF`と`IsEOF`移動操作をいくつかのレコードをレコード セットが存在するかどうかを判断する前にします。 呼び出した後**開く**または**Requery**、いずれかを呼び出す`IsBOF`または`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. In general, call both `IsBOF` and `IsEOF` before a Move operation to determine whether the recordset has any records. After you call **Open** or **Requery**, call either `IsBOF` or `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- 使用して、**移動**条件を適用することがなくレコード間を移動する関数。 ダイナセット タイプまたは特定の条件に適合するスナップショットの種類のレコード セット オブジェクト内でレコードを検索するのにには、検索操作を使用します。 テーブル型のレコード セット オブジェクトでレコードを検索、呼び出す`Seek`です。  
+ Use the **Move** functions to move from record to record without applying a condition. Use the Find operations to locate records in a dynaset-type or snapshot-type recordset object that satisfy a certain condition. To locate a record in a table-type recordset object, call `Seek`.  
   
- レコード セットは、テーブル型のレコード セットを参照している場合、移動は、テーブルの現在のインデックスをたどります。 現在のインデックスを設定するには、基になる DAO オブジェクトのインデックス プロパティを使用します。 場合は、現在のインデックスを設定しないと、返されたレコードの順序は定義されません。  
+ If the recordset refers to a table-type recordset, movement follows the table's current index. You can set the current index by using the Index property of the underlying DAO object. If you do not set the current index, the order of returned records is undefined.  
   
- 呼び出す場合`MoveLast`クエリを強制的に完了、SQL クエリまたはクエリ定義に基づき、レコード セット オブジェクトと recordset オブジェクトが完全に設定されます。  
+ If you call `MoveLast` on a recordset object based on a SQL query or querydef, the query is forced to completion and the recordset object is fully populated.  
   
- 特定の個のレコードを前方または後方記録レコード セット オブジェクトで、現在の位置を移動するには、呼び出す**移動**です。  
+ To move the position of the current record in a recordset object a specific number of records forward or backward, call **Move**.  
   
- 関連情報については、トピックを参照して、「Move メソッド」と"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
+ For related information, see the topics "Move Method" and "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in DAO Help.  
   
-##  <a name="movenext"></a>CDaoRecordset::MoveNext  
- 現在のレコードのレコード セット内の次のレコードを作成するには、このメンバー関数を呼び出します。  
+##  <a name="movenext"></a>  CDaoRecordset::MoveNext  
+ Call this member function to make the next record in the recordset the current record.  
   
 ```  
 void MoveNext();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出すことをお勧め`IsBOF`前のレコードに移動しようとする前にします。 呼び出し`MovePrev`がスローされます、`CDaoException`場合`IsBOF`、既にスクロールした最初のレコードの前に、またはレコード セットによってレコードが選択されていないことを示す 0 以外を返します。  
+### <a name="remarks"></a>Remarks  
+ It is recommended that you call `IsBOF` before you attempt to move to the previous record. A call to `MovePrev` will throw a `CDaoException` if `IsBOF` returns nonzero, indicating either that you have already scrolled before the first record or that no records were selected by the recordset.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 一般に、両方を呼び出す`IsBOF`と`IsEOF`移動操作をいくつかのレコードをレコード セットが存在するかどうかを判断する前にします。 呼び出した後**開く**または**Requery**、いずれかを呼び出す`IsBOF`または`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. In general, call both `IsBOF` and `IsEOF` before a Move operation to determine whether the recordset has any records. After you call **Open** or **Requery**, call either `IsBOF` or `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- 使用して、**移動**条件を適用することがなくレコード間を移動する関数。 ダイナセット タイプまたは特定の条件に適合するスナップショットの種類のレコード セット オブジェクト内でレコードを検索するのにには、検索操作を使用します。 テーブル型のレコード セット オブジェクトでレコードを検索、呼び出す`Seek`です。  
+ Use the **Move** functions to move from record to record without applying a condition. Use the Find operations to locate records in a dynaset-type or snapshot-type recordset object that satisfy a certain condition. To locate a record in a table-type recordset object, call `Seek`.  
   
- レコード セットは、テーブル型のレコード セットを参照している場合、移動は、テーブルの現在のインデックスをたどります。 現在のインデックスを設定するには、基になる DAO オブジェクトのインデックス プロパティを使用します。 場合は、現在のインデックスを設定しないと、返されたレコードの順序は定義されません。  
+ If the recordset refers to a table-type recordset, movement follows the table's current index. You can set the current index by using the Index property of the underlying DAO object. If you do not set the current index, the order of returned records is undefined.  
   
- 特定の個のレコードを前方または後方記録レコード セット オブジェクトで、現在の位置を移動するには、呼び出す**移動**です。  
+ To move the position of the current record in a recordset object a specific number of records forward or backward, call **Move**.  
   
- 関連情報については、トピックを参照して、「Move メソッド」と"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
+ For related information, see the topics "Move Method" and "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in DAO Help.  
   
-##  <a name="moveprev"></a>CDaoRecordset::MovePrev  
- 現在のレコードのレコード セットの前のレコードを作成するには、このメンバー関数を呼び出します。  
+##  <a name="moveprev"></a>  CDaoRecordset::MovePrev  
+ Call this member function to make the previous record in the recordset the current record.  
   
 ```  
 void MovePrev();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出すことをお勧め`IsBOF`前のレコードに移動しようとする前にします。 呼び出し`MovePrev`がスローされます、`CDaoException`場合`IsBOF`、既にスクロールした最初のレコードの前に、またはレコード セットによってレコードが選択されていないことを示す 0 以外を返します。  
+### <a name="remarks"></a>Remarks  
+ It is recommended that you call `IsBOF` before you attempt to move to the previous record. A call to `MovePrev` will throw a `CDaoException` if `IsBOF` returns nonzero, indicating either that you have already scrolled before the first record or that no records were selected by the recordset.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 一般に、両方を呼び出す`IsBOF`と`IsEOF`移動操作をいくつかのレコードをレコード セットが存在するかどうかを判断する前にします。 呼び出した後**開く**または**Requery**、いずれかを呼び出す`IsBOF`または`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. In general, call both `IsBOF` and `IsEOF` before a Move operation to determine whether the recordset has any records. After you call **Open** or **Requery**, call either `IsBOF` or `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- 使用して、**移動**条件を適用することがなくレコード間を移動する関数。 ダイナセット タイプまたは特定の条件に適合するスナップショットの種類のレコード セット オブジェクト内でレコードを検索するのにには、検索操作を使用します。 テーブル型のレコード セット オブジェクトでレコードを検索、呼び出す`Seek`です。  
+ Use the **Move** functions to move from record to record without applying a condition. Use the Find operations to locate records in a dynaset-type or snapshot-type recordset object that satisfy a certain condition. To locate a record in a table-type recordset object, call `Seek`.  
   
- レコード セットは、テーブル型のレコード セットを参照している場合、移動は、テーブルの現在のインデックスをたどります。 現在のインデックスを設定するには、基になる DAO オブジェクトのインデックス プロパティを使用します。 場合は、現在のインデックスを設定しないと、返されたレコードの順序は定義されません。  
+ If the recordset refers to a table-type recordset, movement follows the table's current index. You can set the current index by using the Index property of the underlying DAO object. If you do not set the current index, the order of returned records is undefined.  
   
- 呼び出すことはできません、 **MoveFirst**または`MovePrev`前方スクロール スナップショットを使用してメンバー関数。  
+ You cannot call the **MoveFirst** or `MovePrev` member function with a forward-only scrolling snapshot.  
   
- 特定の個のレコードを前方または後方記録レコード セット オブジェクトで、現在の位置を移動するには、呼び出す**移動**です。  
+ To move the position of the current record in a recordset object a specific number of records forward or backward, call **Move**.  
   
- 関連情報については、トピックを参照して、「Move メソッド」と"MoveFirst、MoveLast、MoveNext、MovePrevious メソッド"DAO のヘルプ。  
+ For related information, see the topics "Move Method" and "MoveFirst, MoveLast, MoveNext, MovePrevious Methods" in DAO Help.  
   
-##  <a name="open"></a>Cdaorecordset::open  
- レコード セットのレコードを取得するには、このメンバー関数を呼び出す必要があります。  
+##  <a name="open"></a>  CDaoRecordset::Open  
+ You must call this member function to retrieve the records for the recordset.  
   
 ```  
 virtual void Open(
@@ -1698,136 +1776,136 @@ virtual void Open(
     int nOptions = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nOpenType`  
- 次のいずれかの値です。  
+ One of the following values:  
   
-- **dbOpenDynaset**双方向にスクロールできるダイナセット タイプのレコード セット。 既定値です。  
+- **dbOpenDynaset** A dynaset-type recordset with bidirectional scrolling. This is the default.  
   
-- **dbOpenTable**双方向にスクロールできるタイプのレコードです。  
+- **dbOpenTable** A table-type recordset with bidirectional scrolling.  
   
-- **dbOpenSnapshot**双方向にスクロールできるスナップショットの種類のレコード セット。  
+- **dbOpenSnapshot** A snapshot-type recordset with bidirectional scrolling.  
   
  `lpszSQL`  
- 次のいずれかを含む文字列ポインター:  
+ A string pointer containing one of the following:  
   
--   A **NULL**のポインター。  
+-   A **NULL** pointer.  
   
--   1 つまたは複数のテーブル定義および querydefs (コンマ区切り) の名前。  
+-   The name of one or more tabledefs and/or querydefs (comma-separated).  
   
--   SQL**選択**ステートメント (SQL オプションで**場所**または**ORDERBY**句)。  
+-   A SQL **SELECT** statement (optionally with a SQL **WHERE** or **ORDERBY** clause).  
   
--   パススルー クエリ。  
+-   A pass-through query.  
   
  `nOptions`  
- 1 つ以上の以下のオプションです。 既定値は 0 です。 次の値を指定できます。  
+ One or more of the options listed below. The default value is 0. Possible values are as follows:  
   
-- **dbAppendOnly**のみ (ダイナセット タイプのレコード セットのみ) の新しいレコードを追加することができます。 このオプションは、あるレコードのみ追加することにリテラルを意味します。 MFC ODBC データベース クラスには、レコードの取得し、追加可能追加専用オプションが用意されています。  
+- **dbAppendOnly** You can only append new records (dynaset-type recordset only). This option means literally that records may only be appended. The MFC ODBC database classes have an append-only option that allows records to be retrieved and appended.  
   
-- **dbForwardOnly**レコード セットは、順方向専用のスナップショットがスクロールします。  
+- **dbForwardOnly** The recordset is a forward-only scrolling snapshot.  
   
-- **dbSeeChanges**別のユーザーが編集してデータを変更する場合に例外を生成します。  
+- **dbSeeChanges** Generate an exception if another user is changing data you are editing.  
   
-- **dbDenyWrite**他のユーザーを変更またはレコードを追加できません。  
+- **dbDenyWrite** Other users cannot modify or add records.  
   
-- **dbDenyRead**他のユーザーがレコード (テーブル型のレコード セットのみ) を表示できません。  
+- **dbDenyRead** Other users cannot view records (table-type recordset only).  
   
-- **dbReadOnly**レコードのみを表示できます。 他のユーザーが変更できます。  
+- **dbReadOnly** You can only view records; other users can modify them.  
   
-- **組み合わせて**一貫性のない更新が許可される (ダイナセット タイプのレコード セットのみ)。  
+- **dbInconsistent** Inconsistent updates are allowed (dynaset-type recordset only).  
   
-- **指定できます**のみ一貫性のある更新プログラムが (ダイナセット タイプのレコード セットのみ) を使用できます。  
+- **dbConsistent** Only consistent updates are allowed (dynaset-type recordset only).  
   
 > [!NOTE]
->  定数**指定できます**と**組み合わせて**は相互に排他的です。 いずれかを使用するか、一方の特定のインスタンスの両方ではなく**開いている**です。  
+>  The constants **dbConsistent** and **dbInconsistent** are mutually exclusive. You can use one or the other, but not both in a given instance of **Open**.  
   
  *pTableDef*  
- ポインター、[どちら](../../mfc/reference/cdaotabledef-class.md)オブジェクト。 このバージョンは、テーブル型のレコード セットに対してのみ有効です。 このオプションを使用する場合、`CDaoDatabase`ポインターを構築するために使用、`CDaoRecordset`は使用されません。 代わりに、テーブル定義が存在するデータベースが使用されます。  
+ A pointer to a [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) object. This version is valid only for table-type recordsets. When using this option, the `CDaoDatabase` pointer used to construct the `CDaoRecordset` is not used; rather, the database in which the tabledef resides is used.  
   
  *pQueryDef*  
- ポインター、 [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md)オブジェクト。 このバージョンでは、ダイナセット タイプとスナップショットの種類のレコード セットに対してのみ有効です。 このオプションを使用する場合、`CDaoDatabase`ポインターを構築するために使用、`CDaoRecordset`は使用されません。 代わりに、クエリ定義が存在するデータベースが使用されます。  
+ A pointer to a [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md) object. This version is valid only for dynaset-type and snapshot-type recordsets. When using this option, the `CDaoDatabase` pointer used to construct the `CDaoRecordset` is not used; rather, the database in which the querydef resides is used.  
   
-### <a name="remarks"></a>コメント  
- 呼び出しの前に**開く**、レコード セット オブジェクトを構築する必要があります。 これにはいくつかの方法があります。  
+### <a name="remarks"></a>Remarks  
+ Before calling **Open**, you must construct the recordset object. There are several ways to do this:  
   
--   レコード セット オブジェクトを構築するときにへのポインターを渡す、`CDaoDatabase`既に開かれているオブジェクト。  
+-   When you construct the recordset object, pass a pointer to a `CDaoDatabase` object that is already open.  
   
--   レコード セット オブジェクトを構築するときにへのポインターを渡す、`CDaoDatabase`が開かれていないオブジェクトです。 レコード セットが開く、`CDaoDatabase`オブジェクトが、レコード セット オブジェクトを閉じるときに、その閉じられません。  
+-   When you construct the recordset object, pass a pointer to a `CDaoDatabase` object that is not open. The recordset opens a `CDaoDatabase` object, but will not close it when the recordset object closes.  
   
--   レコード セット オブジェクトを構築するときに渡す、 **NULL**ポインター。 レコード セット オブジェクトの呼び出し`GetDefaultDBName`Microsoft Access の名前を取得します。MDB ファイルを開きます。 レコード セットが、開く、`CDaoDatabase`レコード セットが開かれている限りを開くことが保持しておくオブジェクトです。 呼び出すと**閉じる**、レコード セットで、`CDaoDatabase`オブジェクトが閉じられてもいます。  
+-   When you construct the recordset object, pass a **NULL** pointer. The recordset object calls `GetDefaultDBName` to get the name of the Microsoft Access .MDB file to open. The recordset then opens a `CDaoDatabase` object and keeps it open as long as the recordset is open. When you call **Close** on the recordset, the `CDaoDatabase` object is also closed.  
   
     > [!NOTE]
-    >  レコード セットを開くと、`CDaoDatabase`オブジェクト、非排他アクセス権を持つデータ ソースを開きます。  
+    >  When the recordset opens the `CDaoDatabase` object, it opens the data source with nonexclusive access.  
   
- バージョンの**開く**を使用して、`lpszSQL`パラメーター、いくつかの方法のいずれかでレコードを取得するレコード セットが開く。 DFX 関数に 1 つ目は、`DoFieldExchange`です。 2 番目のオプションは、呼び出すことによって動的バインドを使用する、`GetFieldValue`メンバー関数。 これらのオプションは、個別にまたは組み合わせで実装できます。 それらが結合され、ならを渡す SQL ステートメントで自分自身への呼び出しで**開く**です。  
+ For the version of **Open** that uses the `lpszSQL` parameter, once the recordset is open you can retrieve records in one of several ways. The first option is to have DFX functions in your `DoFieldExchange`. The second option is to use dynamic binding by calling the `GetFieldValue` member function. These options can be implemented separately or in combination. If they are combined, you will have to pass in the SQL statement yourself on the call to **Open**.  
   
- 2 番目のバージョンを使用すると**開いている**に渡せば、`CDaoTableDef`オブジェクトを結果として得られる列を使用してバインドできるようになります`DoFieldExchange`と DFX メカニズムや経由で動的にバインド`GetFieldValue`です。  
-  
-> [!NOTE]
->  のみ呼び出せます**開く**を使用して、`CDaoTableDef`テーブル型のレコード セットのオブジェクト。  
-  
- 3 番目のバージョンを使用すると**開く**場所を渡す、`CDaoQueryDef`オブジェクト、クエリは実行され、結果として得られる列があるを使用してバインドするための使用可能な`DoFieldExchange`と DFX メカニズムや経由で動的にバインド`GetFieldValue`です。  
+ When you use the second version of **Open** where you pass in a `CDaoTableDef` object, the resulting columns will be available for you to bind via `DoFieldExchange` and the DFX mechanism, and/or bind dynamically via `GetFieldValue`.  
   
 > [!NOTE]
->  のみ呼び出せます**開く**を使用して、`CDaoQueryDef`ダイナセットの型とスナップショットの種類のレコード セット オブジェクトです。  
+>  You can only call **Open** using a `CDaoTableDef` object for table-type recordsets.  
   
- 最初のバージョンの**開く**を使用する、`lpszSQL`パラメーター、レコードは、次の表に示すようにに基づいて条件を選択します。  
+ When you use the third version of **Open** where you pass in a `CDaoQueryDef` object, that query will be executed, and the resulting columns will be available for you to bind via `DoFieldExchange` and the DFX mechanism, and/or bind dynamically via `GetFieldValue`.  
   
-|パラメーター `lpszSQL` の値。|レコードの選択基準|例|  
+> [!NOTE]
+>  You can only call **Open** using a `CDaoQueryDef` object for dynaset-type and snapshot-type recordsets.  
+  
+ For the first version of **Open** that uses the `lpszSQL` parameter, records are selected based on criteria shown in the following table.  
+  
+|Value of the `lpszSQL` parameter|Records selected are determined by|Example|  
 |--------------------------------------|----------------------------------------|-------------|  
-|**NULL**|`GetDefaultSQL` の返す文字列。||  
-|1 つまたは複数のテーブル定義やクエリ定義名のコンマ区切りの一覧です。|表されるすべての列、`DoFieldExchange`です。|`"Customer"`|  
-|**選択**列リスト**FROM**テーブル リスト|指定されたテーブルまたはクエリ定義から指定された列です。|`"SELECT CustId, CustName`<br /><br /> `FROM Customer"`|  
+|**NULL**|The string returned by `GetDefaultSQL`.||  
+|A comma-separated list of one or more tabledefs and/or querydef names.|All columns represented in the `DoFieldExchange`.|`"Customer"`|  
+|**SELECT** column-list **FROM** table-list|The specified columns from the specified tabledef(s) and/or querydef(s).|`"SELECT CustId, CustName`<br /><br /> `FROM Customer"`|  
   
- 通常のプロシージャでは**NULL**に**開く**以外の場合は、**開く**呼び出し`GetDefaultSQL`、ClassWizard が作成するときに生成するオーバーライド可能なメンバー関数、 `CDaoRecordset`-クラスを派生します。 この値は、ClassWizard で指定したテーブルまたはクエリ定義の名前を示します。 代わりに、その他の情報を `lpszSQL` パラメーターに指定できます。  
+ The usual procedure is to pass **NULL** to **Open**; in that case, **Open** calls `GetDefaultSQL`, an overridable member function that ClassWizard generates when creating a `CDaoRecordset`-derived class. This value gives the tabledef(s) and/or querydef name(s) you specified in ClassWizard. You can instead specify other information in the `lpszSQL` parameter.  
   
- ものを渡すと、**開く**クエリの最終的な SQL 文字列を構築 (SQL も**場所**と**ORDERBY**に句が追加されます、`lpszSQL`渡された文字列) し、そのクエリを実行します。 呼び出すことによって構築された文字列を調べることができます`GetSQL`呼び出した後**開く**です。  
+ Whatever you pass, **Open** constructs a final SQL string for the query (the string may have SQL **WHERE** and **ORDERBY** clauses appended to the `lpszSQL` string you passed) and then executes the query. You can examine the constructed string by calling `GetSQL` after calling **Open**.  
   
- レコードセット クラスのフィールド データ メンバーは、選択したデータの列に結び付けられています。 いくつかのレコードが返された場合、最初のレコードが現在のレコードになります。  
+ The field data members of your recordset class are bound to the columns of the data selected. If any records are returned, the first record becomes the current record.  
   
- レコード セットは、フィルターや並べ替えなどのオプションを設定する場合は、設定`m_strSort`または**か**を呼び出す前に、レコード セット オブジェクトを構築した後、**開く**です。 レコード セットは既に開いてレコード セット内のレコードを更新する場合は、呼び出す**Requery**です。  
+ If you want to set options for the recordset, such as a filter or sort, set `m_strSort` or **m_strFilter** after you construct the recordset object but before you call **Open**. If you want to refresh the records in the recordset after the recordset is already open, call **Requery**.  
   
- 呼び出す場合**開く**ダイナセット型またはスナップショットの種類のレコード セットにまたはデータ ソースは、SQL ステートメントまたはアタッチ テーブルを表すテーブル定義が参照されている場合は使用できません**dbOpenTable**型引数以外の場合は、MFC 例外をスローします。 テーブル定義オブジェクトが接続されているテーブルを表すかどうかを確認するのには、作成、[どちら](../../mfc/reference/cdaotabledef-class.md)オブジェクト呼び出しとその[GetConnect](../../mfc/reference/cdaotabledef-class.md#getconnect)メンバー関数。  
+ If you call **Open** on a dynaset-type or snapshot-type recordset, or if the data source refers to a SQL statement or a tabledef that represents an attached table, you cannot use **dbOpenTable** for the type argument; if you do, MFC throws an exception. To determine whether a tabledef object represents an attached table, create a [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md) object and call its [GetConnect](../../mfc/reference/cdaotabledef-class.md#getconnect) member function.  
   
- 使用して、 **dbSeeChanges**を編集または同じのレコードを削除するときに、別のユーザーまたはコンピューターに別のプログラムによって行われた変更をトラップする場合にフラグを設定します。 たとえば、2 人のユーザーが、同じレコードを呼び出して最初のユーザーの編集を開始、**更新**メンバー関数が成功しました。 ときに**更新**2 番目のユーザーによって呼び出される、`CDaoException`がスローされます。 同様に、2 番目のユーザーを呼び出すしようとすると**削除**、レコードおよびそれを削除するのには既にユーザーによって変更されて、最初、`CDaoException`に発生します。  
+ Use the **dbSeeChanges** flag if you wish to trap changes made by another user or another program on your machine when you are editing or deleting the same record. For example, if two users start editing the same record, the first user to call the **Update** member function succeeds. When **Update** is called by the second user, a `CDaoException` is thrown. Similarly, if the second user tries to call **Delete** to delete the record, and it has already been changed by the first user, a `CDaoException` occurs.  
   
- 通常、ユーザーがこの場合`CDaoException`の更新中に、コード必要があります、フィールドの内容を更新し、新しく変更された値を取得します。 削除する処理を行って、例外が発生した場合、コードは、データが最近変更されたことを示すメッセージをユーザーに、新しいレコードのデータを表示する可能性があります。 この時点では、コードでは、ユーザーがレコードを削除してもよいことの確認を要求できます。  
+ Typically, if the user gets this `CDaoException` while updating, your code should refresh the contents of the fields and retrieve the newly modified values. If the exception occurs in the process of deleting, your code could display the new record data to the user and a message indicating that the data has recently changed. At this point, your code can request a confirmation that the user still wants to delete the record.  
   
 > [!TIP]
->  順方向専用のスクロール オプションを使用して ( **dbForwardOnly**) アプリケーションが 1 回のレコード セット パススルーを行うときに、パフォーマンスを向上させるために、ODBC データ ソースから開きます。  
+>  Use the forward-only scrolling option ( **dbForwardOnly**) to improve performance when your application makes a single pass through a recordset opened from an ODBC data source.  
   
- 関連情報については、DAO ヘルプの「何らかメソッド」を参照してください。  
+ For related information, see the topic "OpenRecordset Method" in DAO Help.  
   
-##  <a name="requery"></a>CDaoRecordset::Requery  
- レコード セットを (更新) を再構築するには、このメンバー関数を呼び出します。  
+##  <a name="requery"></a>  CDaoRecordset::Requery  
+ Call this member function to rebuild (refresh) a recordset.  
   
 ```  
 virtual void Requery();
 ```  
   
-### <a name="remarks"></a>コメント  
- いくつかのレコードが返された場合、最初のレコードが現在のレコードになります。  
+### <a name="remarks"></a>Remarks  
+ If any records are returned, the first record becomes the current record.  
   
- レコード セットを反映して追加および削除するか、他のユーザーがデータ ソースに対して実行するためには、呼び出すことによってレコード セットをリビルドする必要があります**Requery**です。 レコード セットがダイナセットの場合は、または他のユーザーがその既存のレコード (ただし、追加機能ではない) を構成する更新プログラムを自動的に反映します。 レコード セットがスナップショットの場合は、呼び出す必要があります**Requery**編集内容を他のユーザーだけでなく追加および削除を反映するようにします。  
+ In order for the recordset to reflect the additions and deletions that you or other users are making to the data source, you must rebuild the recordset by calling **Requery**. If the recordset is a dynaset, it automatically reflects updates that you or other users make to its existing records (but not additions). If the recordset is a snapshot, you must call **Requery** to reflect edits by other users as well as additions and deletions.  
   
- ダイナセットまたはスナップショットのいずれかを呼び出す**Requery**パラメーター値を使用して、レコード セットを再構築する任意の時間。 設定して、新しいフィルターまたは並べ替えを設定[か](#m_strfilter)と[レコード](#m_strsort)呼び出す前に**Requery**です。 新しい値を呼び出す前にパラメーター データ メンバーに割り当てることによって新しいパラメーターの設定**Requery**です。  
+ For either a dynaset or a snapshot, call **Requery** any time you want to rebuild the recordset using parameter values. Set the new filter or sort by setting [m_strFilter](#m_strfilter) and [m_strSort](#m_strsort) before calling **Requery**. Set new parameters by assigning new values to parameter data members before calling **Requery**.  
   
- レコード セットを再構築する試行が失敗した場合、レコード セットは閉じられます。 呼び出す前に**Requery**、呼び出すことによって、レコード セットを表示できるかどうかを決定できます、 [CanRestart](#canrestart)メンバー関数。 `CanRestart`限りませんを**Requery**は成功します。  
+ If the attempt to rebuild the recordset fails, the recordset is closed. Before you call **Requery**, you can determine whether the recordset can be requeried by calling the [CanRestart](#canrestart) member function. `CanRestart` does not guarantee that **Requery** will succeed.  
   
 > [!CAUTION]
->  呼び出す**Requery**を呼び出した後にのみ**開く**です。  
+>  Call **Requery** only after you have called **Open**.  
   
 > [!NOTE]
->  呼び出す[Requery](#requery) DAO ブックマークを変更します。  
+>  Calling [Requery](#requery) changes DAO bookmarks.  
   
- 呼び出すことはできません**Requery**ダイナセット型またはスナップショットの種類のレコード セットを呼び出す場合に`CanRestart`0 を返しますまたすることも、テーブル型のレコードです。  
+ You can't call **Requery** on a dynaset-type or snapshot-type recordset if calling `CanRestart` returns 0, nor can you use it on a table-type recordset.  
   
- 両方`IsBOF`と`IsEOF`呼び出し後に 0 以外を返します**Requery**、いくつかのレコードと、レコード セットはデータを含まないクエリが返されませんでした。  
+ If both `IsBOF` and `IsEOF` return nonzero after you call **Requery**, the query didn't return any records and the recordset will contain no data.  
   
- 関連情報については、「Requery メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Requery Method" in DAO Help.  
   
-##  <a name="seek"></a>CDaoRecordset::Seek  
- 指定された条件を現在のインデックスを作成し、そのレコードを現在のレコードに適合するインデックス付きのテーブル型のレコード セット オブジェクト内でレコードを検索するには、このメンバー関数を呼び出します。  
+##  <a name="seek"></a>  CDaoRecordset::Seek  
+ Call this member function to locate the record in an indexed table-type recordset object that satisfies the specified criteria for the current index and make that record the current record.  
   
 ```  
 BOOL Seek(
@@ -1843,161 +1921,161 @@ BOOL Seek(
     WORD nKeys);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszComparison`  
- 次の文字列式のいずれかの:"<",></",>\<="、「=」、"> ="、または">"です。  
+ One of the following string expressions: "<", "\<=", "=", ">=", or ">".  
   
  `pKey1`  
- ポインター、 [COleVariant](../../mfc/reference/colevariant-class.md)値を持つが、インデックスの最初のフィールドに対応しています。 必須です。  
+ A pointer to a [COleVariant](../../mfc/reference/colevariant-class.md) whose value corresponds to the first field in the index. Required.  
   
  *pKey2*  
- ポインター、`COleVariant`存在する場合、インデックスで、2 番目のフィールドに値が対応しています。 既定値は**NULL**です。  
+ A pointer to a `COleVariant` whose value corresponds to the second field in the index, if any. Defaults to **NULL**.  
   
  *pKey3*  
- ポインター、`COleVariant`存在する場合、インデックスで、3 番目のフィールドに値が対応しています。 既定値は**NULL**です。  
+ A pointer to a `COleVariant` whose value corresponds to the third field in the index, if any. Defaults to **NULL**.  
   
  *pKeyArray*  
- バリアント型の配列へのポインター。 配列のサイズは、インデックス内のフィールドの数に対応します。  
+ A pointer to an array of variants. The array size corresponds to the number of fields in the index.  
   
  *nKeys*  
- これは、インデックス内のフィールドの数と、配列のサイズに対応する整数。  
+ An integer corresponding to the size of the array, which is the number of fields in the index.  
   
 > [!NOTE]
->  キーには、ワイルドカードを指定しません。 ワイルドカードがにより`Seek`から一致するレコードが返されない。  
+>  Do not specify wildcards in the keys. Wildcards will cause `Seek` to return no matching records.  
   
-### <a name="return-value"></a>戻り値  
- 一致するレコードが見つかった場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if matching records are found, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 2 つ目の (配列) の形式を使用して`Seek`以上の 4 つのフィールドのインデックスを処理します。  
+### <a name="remarks"></a>Remarks  
+ Use the second (array) version of `Seek` to handle indexes of four fields or more.  
   
- `Seek`高パフォーマンス インデックスをテーブル型のレコード セットで検索を有効にします。 呼び出して、現在のインデックスを設定する必要があります`SetCurrentIndex`呼び出す前に`Seek`です。 インデックスが一意のキー フィールドまたはフィールドを場合`Seek`条件を満たす最初のレコードを検索します。 インデックスを設定しないと、例外がスローされます。  
+ `Seek` enables high-performance index searching on table-type recordsets. You must set the current index by calling `SetCurrentIndex` before calling `Seek`. If the index identifies a nonunique key field or fields, `Seek` locates the first record that satisfies the criteria. If you do not set an index, an exception is thrown.  
   
- UNICODE のレコード セットを作成していない場合、`COleVariant`オブジェクト必要があります明示的に宣言する ANSI です。 これを使用して行うことができます、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`'éý' `VT_BSTRT` (ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**で`vtSrc`'éý'`VT_BSTRT`です。  
+ Note that if you are not creating a UNICODE recordset, the `COleVariant` objects must be explicitly declared ANSI. This can be done by using the [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or by using the **COleVariant** function [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc`**,** `vtSrc` **)** with `vtSrc` set to `VT_BSTRT`.  
   
- 呼び出すと`Seek`、渡す 1 つまたは複数のキー値と比較演算子 ("<",></",>\<="、「=」、"> ="、または">") です。 `Seek`指定されたキー フィールドを検索してで指定された条件を満たす最初のレコードを見つけます`lpszComparison`と`pKey1`です。 見つかったら、 `Seek` 、0 以外を返すし、そのレコードは現在、します。 場合`Seek`、一致の検索に失敗`Seek`0 が返されます、および現在のレコードが定義されていません。 DAO の直接を使用する場合は、NoMatch プロパティを明示的にチェックする必要があります。  
+ When you call `Seek`, you pass one or more key values and a comparison operator ("<", "\<=", "=", ">=", or ">"). `Seek` searches through the specified key fields and locates the first record that satisfies the criteria specified by `lpszComparison` and `pKey1`. Once found, `Seek` returns nonzero, and makes that record current. If `Seek` fails to locate a match, `Seek` returns zero, and the current record is undefined. When using DAO directly, you must explicitly check the NoMatch property.  
   
- 場合`lpszComparison`は「=」、"> ="、または">"、`Seek`インデックスの先頭から開始します。 場合`lpszComparison`は"<" or=""> </"> <=",> </=",> `Seek`インデックスの最後に起動し、最後に重複するインデックス エントリがある場合を除き、逆方向に検索します。 この場合、`Seek`インデックスの最後に重複するインデックス エントリの中で任意のエントリから開始します。  
+ If `lpszComparison` is "=", ">=", or ">", `Seek` starts at the beginning of the index. If `lpszComparison` is "<" or "<=", `Seek` starts at the end of the index and searches backward unless there are duplicate index entries at the end. In this case, `Seek` starts at an arbitrary entry among the duplicate index entries at the end of the index.  
   
- なくても使用すると、現在のレコードである`Seek`です。  
+ There does not have to be a current record when you use `Seek`.  
   
- ダイナセット タイプまたは特定の条件を満たすスナップショット タイプのレコード セットのレコードを検索するには、検索操作を使用します。 特定の条件を満たすものだけでなく、すべてのレコードを含めるには、レコード間を移動する移動操作を使用します。  
+ To locate a record in a dynaset-type or snapshot-type recordset that satisfies a specific condition, use the Find operations. To include all records, not just those that satisfy a specific condition, use the Move operations to move from record to record.  
   
- 呼び出すことはできません`Seek`アタッチ テーブルのいずれかでダイナセット タイプまたはスナップショットの種類のレコード セットとしてアタッチされているテーブルを開く必要があるために、入力します。 ただし、呼び出した場合`CDaoDatabase::Open`インストール可能な ISAM データベースを直接開くを呼び出すことができます`Seek`、そのデータベース内のテーブルにありますが、パフォーマンスが低下します。  
+ You cannot call `Seek` on an attached table of any type because attached tables must be opened as dynaset-type or snapshot-type recordsets. However, if you call `CDaoDatabase::Open` to directly open an installable ISAM database, you can call `Seek` on tables in that database, although the performance may be slow.  
   
- 関連情報については、「Seek メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Seek Method" in DAO Help.  
   
-##  <a name="setabsoluteposition"></a>CDaoRecordset::SetAbsolutePosition  
- レコード セット オブジェクトの現在のレコードの相対レコード数を設定します。  
+##  <a name="setabsoluteposition"></a>  CDaoRecordset::SetAbsolutePosition  
+ Sets the relative record number of a recordset object's current record.  
   
 ```  
 void SetAbsolutePosition(long lPosition);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lPosition*  
- レコード セット内の現在のレコードの序数位置に対応します。  
+ Corresponds to the ordinal position of the current record in the recordset.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`SetAbsolutePosition`ダイナセット タイプまたはスナップショットの種類のレコード セットの序数位置に基づいて特定のレコードを現在のレコード ポインターを配置することができます。 呼び出して、現在のレコード数を確認することも[GetAbsolutePosition](#getabsoluteposition)です。  
-  
-> [!NOTE]
->  このメンバー関数は、ダイナセット タイプとスナップショットの種類のレコード セットに対してのみ有効です。  
-  
- 基になる DAO オブジェクトの AbsolutePosition プロパティの値は 0 から始まります。0 に設定は、レコード セットの最初のレコードを参照します。 格納済みのレコードと、例外をスローする MFC の数より大きい値を設定します。 呼び出すことによって、レコード セット内のデータが設定されたレコードの数を指定できます、`GetRecordCount`メンバー関数。  
-  
- 場合は、現在のレコードが削除されると、AbsolutePosition プロパティの値が定義されていないと、MFC は、参照されている場合に例外をスローします。 新しいレコードは、シーケンスの末尾に追加されます。  
+### <a name="remarks"></a>Remarks  
+ Calling `SetAbsolutePosition` enables you to position the current record pointer to a specific record based on its ordinal position in a dynaset-type or snapshot-type recordset. You can also determine the current record number by calling [GetAbsolutePosition](#getabsoluteposition).  
   
 > [!NOTE]
->  このプロパティは、レコード番号の代わりとして使用するものではありません。 ブックマークはまだ保持して、指定された位置を返すための推奨される方法であり、ブックマークをサポートしているレコード セット オブジェクトのすべての型経由で現在のレコードを配置する唯一の方法です。 具体的には、前のレコードが削除されたときに指定されたレコードの位置を変更します。 また場合は、レコード セットが再作成された SQL ステートメントを使用して、使用して作成された場合を除き、レコード セット内の各レコードの順序が保証されないために、特定のレコードが同じ絶対位置を持つことの保証はありません、 **ORDERBY**句。  
+>  This member function is valid only for dynaset-type and snapshot-type recordsets.  
   
- 関連情報については、DAO ヘルプの「AbsolutePosition プロパティ」を参照してください。  
+ The AbsolutePosition property value of the underlying DAO object is zero-based; a setting of 0 refers to the first record in the recordset. Setting a value greater than the number of populated records causes MFC to throw an exception. You can determine the number of populated records in the recordset by calling the `GetRecordCount` member function.  
   
-##  <a name="setbookmark"></a>CDaoRecordset::SetBookmark  
- レコード セットを指定されたブックマークを含むレコードに移動するには、このメンバー関数を呼び出します。  
+ If the current record is deleted, the AbsolutePosition property value is not defined, and MFC throws an exception if it is referenced. New records are added to the end of the sequence.  
+  
+> [!NOTE]
+>  This property is not intended to be used as a surrogate record number. Bookmarks are still the recommended way of retaining and returning to a given position and are the only way to position the current record across all types of recordset objects that support bookmarks. In particular, the position of a given record changes when record(s) preceding it are deleted. There is also no assurance that a given record will have the same absolute position if the recordset is re-created again because the order of individual records within a recordset is not guaranteed unless it is created with a SQL statement using an **ORDERBY** clause.  
+  
+ For related information, see the topic "AbsolutePosition Property" in DAO Help.  
+  
+##  <a name="setbookmark"></a>  CDaoRecordset::SetBookmark  
+ Call this member function to position the recordset on the record containing the specified bookmark.  
   
 ```  
 void SetBookmark(COleVariant varBookmark);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `varBookmark`  
- A [COleVariant](../../mfc/reference/colevariant-class.md)特定のレコードのブックマークの値を含むオブジェクト。  
+ A [COleVariant](../../mfc/reference/colevariant-class.md) object containing the bookmark value for a specific record.  
   
-### <a name="remarks"></a>コメント  
- レコード セット オブジェクトを作成したり開いたりすると、各レコードは既に一意のブックマークを持っています。 呼び出して、現在のレコードのブックマークを取得する`GetBookmark`する値を保存し、`COleVariant`オブジェクト。 後で呼び出すことでそのレコードに戻すことができます`SetBookmark`保存されているブックマークの値を使用します。  
+### <a name="remarks"></a>Remarks  
+ When a recordset object is created or opened, each of its records already has a unique bookmark. You can retrieve the bookmark for the current record by calling `GetBookmark` and saving the value to a `COleVariant` object. You can later return to that record by calling `SetBookmark` using the saved bookmark value.  
   
 > [!NOTE]
->  呼び出す[Requery](#requery) DAO ブックマークを変更します。  
+>  Calling [Requery](#requery) changes DAO bookmarks.  
   
- UNICODE のレコード セットを作成していない場合、`COleVariant`オブジェクト必要があります明示的に宣言する ANSI です。 これを使用して行うことができます、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`'éý' `VT_BSTRT` (ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**で`vtSrc`'éý'`VT_BSTRT`です。  
+ Note that if you are not creating a UNICODE recordset, the `COleVariant` object must be explicitly declared ANSI. This can be done by using the [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or by using the **COleVariant** function [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc`**,** `vtSrc` **)** with `vtSrc` set to `VT_BSTRT`.  
   
- 関連情報については、トピックを参照して、「Bookmark プロパティ」とブックマークを設定のプロパティ"DAO のヘルプ。  
+ For related information, see the topics "Bookmark Property" and Bookmarkable Property" in DAO Help.  
   
-##  <a name="setcachesize"></a>CDaoRecordset::SetCacheSize  
- キャッシュするレコードの数を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setcachesize"></a>  CDaoRecordset::SetCacheSize  
+ Call this member function to set the number of records to be cached.  
   
 ```  
 void SetCacheSize(long lSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lSize`  
- レコードの数を指定します。 一般的な値は 100 です。 0 に設定は、キャッシュをオフにします。 この設定は、5 ~ 1200 レコード間でなければなりません。 キャッシュは、相当量のメモリを使用する可能性があります。  
+ Specifies the number of records. A typical value is 100. A setting of 0 turns off caching. The setting must be between 5 and 1200 records. The cache may use a considerable amount of memory.  
   
-### <a name="remarks"></a>コメント  
- キャッシュは、最後に取得したサーバーから、アプリケーションの実行中にデータを再要求は、データを保持するローカル メモリ内のスペースです。 データ キャッシュには、ダイナセット タイプのレコード セット オブジェクト経由でリモート サーバーからデータを取得するアプリケーションのパフォーマンスが向上します。 データが要求されると、Microsoft Jet データベース エンジンのキャッシュ要求されたデータをまずチェック時間がかかると、サーバーから取得するのではなくです。 ODBC データ ソースから発生しないデータがキャッシュに保存されません。  
+### <a name="remarks"></a>Remarks  
+ A cache is a space in local memory that holds the data most recently retrieved from the server in the event that the data will be requested again while the application is running. Data caching improves the performance of an application that retrieves data from a remote server through dynaset-type recordset objects. When data is requested, the Microsoft Jet database engine checks the cache for the requested data first rather than retrieving it from the server, which takes more time. Data that does not come from an ODBC data source is not saved in the cache.  
   
- アタッチのテーブルなど、任意の ODBC データ ソースには、ローカル キャッシュを持つことができます。 キャッシュを作成するには、リモート データ ソース、呼び出しから recordset オブジェクトを開く、`SetCacheSize`と`SetCacheStart`メンバー関数と、呼び出し、`FillCache`メンバー関数または移動操作のいずれかを使用して、レコード間のステップします。 `lSize`のパラメーター、`SetCacheSize`メンバー関数は、アプリケーションが同時に使用できるレコードの数に基づくことができます。 たとえば、レコード セットは、画面に表示されるデータのソースとして使用されている場合を渡せる、`SetCacheSize``lSize`パラメーターとして 20 ~ 20 のレコードを同時に表示します。  
+ Any ODBC data source, such as an attached table, can have a local cache. To create the cache, open a recordset object from the remote data source, call the `SetCacheSize` and `SetCacheStart` member functions, and then call the `FillCache` member function or step through the records by using one of the Move operations. The `lSize` parameter of the `SetCacheSize` member function can be based on the number of records your application can work with at one time. For example, if you are using a recordset as the source of the data to be displayed on screen, you could pass the `SetCacheSize` `lSize` parameter as 20 to display 20 records at one time.  
   
- 関連情報については、DAO ヘルプのトピック「CacheSize、CacheStart プロパティ」を参照してください。  
+ For related information, see the topic "CacheSize, CacheStart Properties" in DAO Help.  
   
-##  <a name="setcachestart"></a>CDaoRecordset::SetCacheStart  
- キャッシュするレコード セットの最初のレコード、ブックマークを指定するには、このメンバー関数を呼び出します。  
+##  <a name="setcachestart"></a>  CDaoRecordset::SetCacheStart  
+ Call this member function to specify the bookmark of the first record in the recordset to be cached.  
   
 ```  
 void SetCacheStart(COleVariant varBookmark);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `varBookmark`  
- A [COleVariant](../../mfc/reference/colevariant-class.md)キャッシュに保存するレコード セットの最初のレコード、ブックマークを指定します。  
+ A [COleVariant](../../mfc/reference/colevariant-class.md) that specifies the bookmark of the first record in the recordset to be cached.  
   
-### <a name="remarks"></a>コメント  
- 任意のレコードのブックマークの値を使用することができます、`varBookmark`のパラメーター、`SetCacheStart`メンバー関数。 現在のレコードにキャッシュを開始、そのレコードを使用するためのブックマークを確立するレコード[SetBookmark](#setbookmark)、ブックマーク値のパラメーターとして渡すと、`SetCacheStart`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ You can use the bookmark value of any record for the `varBookmark` parameter of the `SetCacheStart` member function. Make the record you want to start the cache with the current record, establish a bookmark for that record using [SetBookmark](#setbookmark), and pass the bookmark value as the parameter for the `SetCacheStart` member function.  
   
- Microsoft Jet データベース エンジンが、キャッシュからキャッシュの範囲内のレコードを要求し、サーバーからキャッシュ範囲外のレコードを要求します。  
+ The Microsoft Jet database engine requests records within the cache range from the cache, and it requests records outside the cache range from the server.  
   
- キャッシュから取得したレコードでは、他のユーザーがデータ ソースに同時に行われた変更は反映されません。  
+ Records retrieved from the cache do not reflect changes made concurrently to the source data by other users.  
   
- 強制的にすべてのキャッシュされたデータの更新を渡す、`lSize`のパラメーター `SetCacheSize` 0 として呼び出す`SetCacheSize`再度でキャッシュのサイズを最初に要求しを呼び出す、`FillCache`メンバー関数。  
+ To force an update of all the cached data, pass the `lSize` parameter of `SetCacheSize` as 0, call `SetCacheSize` again with the size of the cache you originally requested, and then call the `FillCache` member function.  
   
- UNICODE のレコード セットを作成していない場合、`COleVariant`オブジェクト必要があります明示的に宣言する ANSI です。 これを使用して行うことができます、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`'éý' `VT_BSTRT` (ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**で`vtSrc`'éý'`VT_BSTRT`です。  
+ Note that if you are not creating a UNICODE recordset, the `COleVariant` object must be explicitly declared ANSI. This can be done by using the [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or by using the **COleVariant** function [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc`**,** `vtSrc` **)** with `vtSrc` set to `VT_BSTRT`.  
   
- 関連情報については、トピックを参照して、CacheSize、CacheStart プロパティ"DAO のヘルプ。  
+ For related information, see the topic CacheSize, CacheStart Properties" in DAO Help.  
   
-##  <a name="setcurrentindex"></a>CDaoRecordset::SetCurrentIndex  
- テーブル型のレコード セットのインデックスを設定するには、このメンバー関数を呼び出します。  
+##  <a name="setcurrentindex"></a>  CDaoRecordset::SetCurrentIndex  
+ Call this member function to set an index on a table-type recordset.  
   
 ```  
 void SetCurrentIndex(LPCTSTR lpszIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszIndex`  
- 設定するインデックスの名前を含むポインター。  
+ A pointer containing the name of the index to be set.  
   
-### <a name="remarks"></a>コメント  
- ベース テーブルのレコードは、特定の順序では格納されません。 インデックスを設定すると、データベースから返されるレコードの順序変更には、レコードが格納される順序は影響しません。 指定されたインデックスは、既に定義されている必要があります。 存在しないインデックス オブジェクトを使用しようとする場合、または呼び出す場合は、インデックスが設定されていない場合[シーク](#seek)MFC は、例外をスローします。  
+### <a name="remarks"></a>Remarks  
+ Records in base tables are not stored in any particular order. Setting an index changes the order of records returned from the database, but it does not affect the order in which the records are stored. The specified index must already be defined. If you try to use an index object that does not exist, or if the index is not set when you call [Seek](#seek), MFC throws an exception.  
   
- テーブルの新しいインデックスを作成するには呼び出すことによって[CDaoTableDef::CreateIndex](../../mfc/reference/cdaotabledef-class.md#createindex)呼び出すことによって、基になるテーブルのインデックス コレクションに新しいインデックスを追加することと[CDaoTableDef::Append](../../mfc/reference/cdaotabledef-class.md#append)、レコード セットを閉じてから、します。  
+ You can create a new index for the table by calling [CDaoTableDef::CreateIndex](../../mfc/reference/cdaotabledef-class.md#createindex) and appending the new index to the Indexes collection of the underlying tabledef by calling [CDaoTableDef::Append](../../mfc/reference/cdaotabledef-class.md#append), and then reopening the recordset.  
   
- テーブル型のレコード セットから返されるレコードの順序には基になるテーブル定義に対して定義されているインデックスでのみを指定できます。 その他の順序でレコードを並べ替えるには、ダイナセット型または SQL を使用して、スナップショットの種類のレコード セットを開くことができます**ORDERBY**に格納されている句[CDaoRecordset::m_strSort](#m_strsort)です。  
+ Records returned from a table-type recordset can be ordered only by the indexes defined for the underlying tabledef. To sort records in some other order, you can open a dynaset-type or snapshot-type recordset using a SQL **ORDERBY** clause stored in [CDaoRecordset::m_strSort](#m_strsort).  
   
- 関連情報については、トピック「インデックス オブジェクト」および DAO のヘルプでは、"現在のインデックス"の定義を参照してください。  
+ For related information, see the topic "Index Object" and the definition "current index" in DAO Help.  
   
-##  <a name="setfielddirty"></a>CDaoRecordset::SetFieldDirty  
- このメンバー関数として、変更の有無、レコード セットのフィールド データ メンバーにフラグを設定します。  
+##  <a name="setfielddirty"></a>  CDaoRecordset::SetFieldDirty  
+ Call this member function to flag a field data member of the recordset as changed or as unchanged.  
   
 ```  
 void SetFieldDirty(
@@ -2005,39 +2083,39 @@ void SetFieldDirty(
     BOOL bDirty = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- レコード セットのフィールド データ メンバーのアドレスを格納または**NULL**です。 場合**NULL**、レコード セット内のすべてのフィールド データ メンバーのフラグが付けられます。 (C++ **NULL**は Null の場合と同じデータベース用語では、「値を持たない」を意味する)。  
+ Contains the address of a field data member in the recordset or **NULL**. If **NULL**, all field data members in the recordset are flagged. (C++ **NULL** is not the same as Null in database terminology, which means "having no value.")  
   
  `bDirty`  
- **TRUE**かどうか、フィールド データ メンバーは「ダーティ」(変更されている) としてマークされます。 それ以外の場合**FALSE**かどうか、フィールド データ メンバーは「クリーンアップ」(変更なし) としてフラグが付けられます。  
+ **TRUE** if the field data member is to be flagged as "dirty" (changed). Otherwise **FALSE** if the field data member is to be flagged as "clean" (unchanged).  
   
-### <a name="remarks"></a>コメント  
- フィールドを変更されないとしてマークすることにより、フィールドは更新されません。  
+### <a name="remarks"></a>Remarks  
+ Marking fields as unchanged ensures the field is not updated.  
   
- フレームワークでは、DAO レコード フィールド エクス (チェンジ DFX) メカニズムによって、データ ソースのレコードに書き込まが確認するためのフィールド データ メンバーが変更されました。 フィールドの値を変更すると、通常、フィールド ダーティは自動的に設定を呼び出すことはほとんどありません必要がありますので`SetFieldDirty`が自分で必要があります、列が明示的に更新またはフィールド データ メンバーには、どのような値に関係なく挿入を確認してください。 DFX 機構は、の使用も採用されています。 **PSEUDONULL**です。 詳細については、次を参照してください。 [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation)です。  
+ The framework marks changed field data members to ensure they will be written to the record on the data source by the DAO record field exchange (DFX) mechanism. Changing the value of a field generally sets the field dirty automatically, so you will seldom need to call `SetFieldDirty` yourself, but you might sometimes want to ensure that columns will be explicitly updated or inserted regardless of what value is in the field data member. The DFX mechanism also employs the use of **PSEUDONULL**. For more information, see [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).  
   
- ダブル バッファリング機構が使用されていない場合、フィールドの値を変更して自動的に設定しませんフィールド ダーティとして。 この場合、フィールドをダーティとして明示的に設定する必要があります。 格納されているフラグ[m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)このフィールドの自動チェックを制御します。  
+ If the double-buffering mechanism is not being used, then changing the value of the field does not automatically set the field as dirty. In this case, it will be necessary to explicitly set the field as dirty. The flag contained in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) controls this automatic field checking.  
   
 > [!NOTE]
->  このメンバー関数を呼び出した後にのみ[編集](#edit)または[AddNew](#addnew)です。  
+>  Call this member function only after you have called [Edit](#edit) or [AddNew](#addnew).  
   
- 使用して**NULL**すべてに、関数を適用する関数の最初の引数の**outputColumn**フィールドいない**param**フィールド`CDaoFieldExchange`です。 インスタンスの呼び出し  
+ Using **NULL** for the first argument of the function will apply the function to all **outputColumn** fields, not **param** fields in `CDaoFieldExchange`. For instance, the call  
   
- [!code-cpp[NVC_MFCDatabase #6](../../mfc/codesnippet/cpp/cdaorecordset-class_6.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#6](../../mfc/codesnippet/cpp/cdaorecordset-class_6.cpp)]  
   
- セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドには影響ありません。  
+ will set only **outputColumn** fields to **NULL**; **param** fields will be unaffected.  
   
- 動作する、 **param**、個々 の実際のアドレスを指定する必要があります**param**など、作業します。  
+ To work on a **param**, you must supply the actual address of the individual **param** you want to work on, such as:  
   
- [!code-cpp[NVC_MFCDatabase #7](../../mfc/codesnippet/cpp/cdaorecordset-class_7.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#7](../../mfc/codesnippet/cpp/cdaorecordset-class_7.cpp)]  
   
- つまり、すべて設定することはできません**param**フィールドを**NULL**と同様、 **outputColumn**フィールドです。  
+ This means you cannot set all **param** fields to **NULL**, as you can with **outputColumn** fields.  
   
- `SetFieldDirty`によって実装され`DoFieldExchange`です。  
+ `SetFieldDirty` is implemented through `DoFieldExchange`.  
   
-##  <a name="setfieldnull"></a>CDaoRecordset::SetFieldNull  
- レコード セット (具体的には値を持たない) Null または null 以外のフィールド データ メンバーにフラグを設定するには、このメンバー関数を呼び出します。  
+##  <a name="setfieldnull"></a>  CDaoRecordset::SetFieldNull  
+ Call this member function to flag a field data member of the recordset as Null (specifically having no value) or as non-Null.  
   
 ```  
 void SetFieldNull(
@@ -2045,35 +2123,35 @@ void SetFieldNull(
     BOOL bNull = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- レコード セットのフィールド データ メンバーのアドレスを格納または**NULL**です。 場合**NULL**、レコード セット内のすべてのフィールド データ メンバーのフラグが付けられます。 (C++ **NULL**は Null の場合と同じデータベース用語では、「値を持たない」を意味する)。  
+ Contains the address of a field data member in the recordset or **NULL**. If **NULL**, all field data members in the recordset are flagged. (C++ **NULL** is not the same as Null in database terminology, which means "having no value.")  
   
  `bNull`  
- 以外の場合は、フィールド データ メンバーが値 (Null) がないものとしてフラグが付けられます。 それ以外の場合は 0 場合は、フィールド データ メンバーは Null としてフラグが付けられます。  
+ Nonzero if the field data member is to be flagged as having no value (Null). Otherwise 0 if the field data member is to be flagged as non-Null.  
   
-### <a name="remarks"></a>コメント  
- `SetFieldNull`フィールドにバインドされているため、`DoFieldExchange`メカニズムです。  
+### <a name="remarks"></a>Remarks  
+ `SetFieldNull` is used for fields bound in the `DoFieldExchange` mechanism.  
   
- レコード セットに新しいレコードを追加するときにすべてのフィールド データ メンバーが最初に Null 値に設定され「ダーティ」(変更されている) フラグが付けられます。 データ ソースからレコードを取得するときにその列既に値があるかが Null です。 Null の場合、フィールドを設定が適切ではない場合、 [CDaoException](../../mfc/reference/cdaoexception-class.md)がスローされます。  
+ When you add a new record to a recordset, all field data members are initially set to a Null value and flagged as "dirty" (changed). When you retrieve a record from a data source, its columns either already have values or are Null. If it is not appropriate to make a field Null, a [CDaoException](../../mfc/reference/cdaoexception-class.md) is thrown.  
   
- たとえば、具体的には呼び出し、値を持っていないと、現在のレコードのフィールドを指定する場合、ダブル バッファリング メカニズムを使用する場合`SetFieldNull`で`bNull`に設定**TRUE**に Null としてフラグを設定します。 フィールドが以前に設定された場合 Null とするようになりましたする値を単にその新しい値を設定します。 Null フラグを削除する必要はありません`SetFieldNull`です。 フィールドが Null を指定できるかどうかを確認するのには、呼び出す[調べる](#isfieldnullable)です。  
+ If you are using the double-buffering mechanism, for example, if you specifically wish to designate a field of the current record as not having a value, call `SetFieldNull` with `bNull` set to **TRUE** to flag it as Null. If a field was previously marked Null and you now want to give it a value, simply set its new value. You do not have to remove the Null flag with `SetFieldNull`. To determine whether the field is allowed to be Null, call [IsFieldNullable](#isfieldnullable).  
   
- ダブル バッファリング機構を使用していない場合、フィールドの値を変更して自動的に設定しませんフィールドとしてダーティと Null 以外。 フィールドは、ダーティと Null 以外に明示的に設定する必要があります。 格納されているフラグ[m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields)このフィールドの自動チェックを制御します。  
+ If you are not using the double-buffering mechanism, then changing the value of the field does not automatically set the field as dirty and non-Null. You must specifically set the fields dirty and non-Null. The flag contained in [m_bCheckCacheForDirtyFields](#m_bcheckcachefordirtyfields) controls this automatic field checking.  
   
- DFX 機構の使用を採用する**PSEUDONULL**です。 詳細については、次を参照してください。 [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation)です。  
+ The DFX mechanism employs the use of **PSEUDONULL**. For more information, see [CDaoFieldExchange::m_nOperation](../../mfc/reference/cdaofieldexchange-class.md#m_noperation).  
   
 > [!NOTE]
->  このメンバー関数を呼び出した後にのみ[編集](#edit)または[AddNew](#addnew)です。  
+>  Call this member function only after you have called [Edit](#edit) or [AddNew](#addnew).  
   
- 使用して**NULL**の関数の最初の引数が関数にのみ適用されます**outputColumn**フィールドいない**param**フィールド`CDaoFieldExchange`です。 インスタンスの呼び出し  
+ Using **NULL** for the first argument of the function will apply the function only to **outputColumn** fields, not **param** fields in `CDaoFieldExchange`. For instance, the call  
   
- [!code-cpp[NVC_MFCDatabase #8](../../mfc/codesnippet/cpp/cdaorecordset-class_8.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#8](../../mfc/codesnippet/cpp/cdaorecordset-class_8.cpp)]  
   
- セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドには影響ありません。  
+ will set only **outputColumn** fields to **NULL**; **param** fields will be unaffected.  
   
-##  <a name="setfieldvalue"></a>たび  
- 序数位置によって、または文字列の値を変更することによって、フィールドの値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setfieldvalue"></a>  CDaoRecordset::SetFieldValue  
+ Call this member function to set the value of a field, either by ordinal position or by changing the value of the string.  
   
 ```  
 virtual void SetFieldValue(
@@ -2096,70 +2174,70 @@ void SetFieldValue(
     LPCTSTR lpszValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- フィールドの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of a field.  
   
  `varValue`  
- 参照、 [COleVariant](../../mfc/reference/colevariant-class.md)フィールドの内容の値を含むオブジェクト。  
+ A reference to a [COleVariant](../../mfc/reference/colevariant-class.md) object containing the value of the field's contents.  
   
  `nIndex`  
- レコード セットのフィールド コレクションの (0 から始まる) 内のフィールドの序数位置を表す整数。  
+ An integer that represents the ordinal position of the field in the recordset's Fields collection (zero-based).  
   
  `lpszValue`  
- フィールドの内容の値を含む文字列へのポインター。  
+ A pointer to a string containing the value of the field's contents.  
   
-### <a name="remarks"></a>コメント  
- 使用して`SetFieldValue`と[GetFieldValue](#getfieldvalue)実行時ではなく静的を使用してバインド列にフィールドに動的にバインドする、 [DoFieldExchange](#dofieldexchange)機構です。  
+### <a name="remarks"></a>Remarks  
+ Use `SetFieldValue` and [GetFieldValue](#getfieldvalue) to dynamically bind fields at run time rather than statically binding columns using the [DoFieldExchange](#dofieldexchange) mechanism.  
   
- UNICODE のレコード セットを作成するので、いずれかの形式を使用する必要がありますに注意してください`SetFieldValue`を含まない、`COleVariant`パラメーター、または`COleVariant`オブジェクト必要があります明示的に宣言する ANSI です。 これを使用して行うことができます、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`'éý' `VT_BSTRT` (ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**で`vtSrc`'éý'`VT_BSTRT`です。  
+ Note that if you are not creating a UNICODE recordset, you must either use a form of `SetFieldValue` that does not contain a `COleVariant` parameter, or the `COleVariant` object must be explicitly declared ANSI. This can be done by using the [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or by using the **COleVariant** function [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc`**,** `vtSrc` **)** with `vtSrc` set to `VT_BSTRT`.  
   
- 関連情報については、「フィールド オブジェクト」と「Value プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "Field Object" and "Value Property" in DAO Help.  
   
-##  <a name="setfieldvaluenull"></a>CDaoRecordset::SetFieldValueNull  
- フィールドを Null 値に設定するには、このメンバー関数を呼び出します。  
+##  <a name="setfieldvaluenull"></a>  CDaoRecordset::SetFieldValueNull  
+ Call this member function to set the field to a Null value.  
   
 ```  
 void SetFieldValueNull(int nIndex);  
 void SetFieldValueNull(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 0 から始まるインデックスで検索する場合、レコード セット内のフィールドのインデックス。  
+ The index of the field in the recordset, for lookup by zero-based index.  
   
  `lpszName`  
- 名前で検索する場合、レコード セット内のフィールドの名前。  
+ The name of the field in the recordset, for lookup by name.  
   
-### <a name="remarks"></a>コメント  
- C++ **NULL** Null の場合、つまり、データベース用語と同じではありません「値を持たない」。  
+### <a name="remarks"></a>Remarks  
+ C++ **NULL** is not the same as Null, which, in database terminology, means "having no value."  
   
- 関連情報については、「フィールド オブジェクト」と「Value プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "Field Object" and "Value Property" in DAO Help.  
   
-##  <a name="setlockingmode"></a>CDaoRecordset::SetLockingMode  
- レコード セットに対するロックの種類を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setlockingmode"></a>  CDaoRecordset::SetLockingMode  
+ Call this member function to set the type of locking for the recordset.  
   
 ```  
 void SetLockingMode(BOOL bPessimistic);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *bPessimistic*  
- ロックの種類を示すフラグです。  
+ A flag that indicates the type of locking.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すと、すぐにロックされているときに排他ロックが有効では、編集しているレコードを含む 2 K ページ、**編集**メンバー関数。 ページのロックが解除されてを呼び出すとき、**更新**または**閉じる**メンバー関数または移動または検索操作のいずれか。  
+### <a name="remarks"></a>Remarks  
+ When pessimistic locking is in effect, the 2K page containing the record you are editing is locked as soon as you call the **Edit** member function. The page is unlocked when you call the **Update** or **Close** member function or any of the Move or Find operations.  
   
- レコードの更新中にのみレコードを含む 2 K ページがロックされているときに、オプティミスティック ロックが有効、**更新**メンバー関数。  
+ When optimistic locking is in effect, the 2K page containing the record is locked only while the record is being updated with the **Update** member function.  
   
- ページがロックされている場合は、その他のユーザー レコードを編集できませんは同じページ上。 呼び出す場合`SetLockingMode`とは、0 以外の値を渡す、および別のユーザーには既にロックされているページを呼び出すときに、例外がスローされます**編集**です。 他のユーザーは、ロックされたページからデータを読み取ることができます。  
+ If a page is locked, no other user can edit records on the same page. If you call `SetLockingMode` and pass a nonzero value and another user already has the page locked, an exception is thrown when you call **Edit**. Other users can read data from locked pages.  
   
- 呼び出す場合`SetLockingMode`ゼロ値以降を呼び出す**更新**ページが別のユーザーによってロックされている間、例外が発生します。 別のユーザーによって、レコードに行われた変更を参照してください (し、変更内容が失われる) を呼び出します、`SetBookmark`ブックマーク値は、現在のレコードのメンバー関数。  
+ If you call `SetLockingMode` with a zero value and later call **Update** while the page is locked by another user, an exception occurs. To see the changes made to your record by another user (and lose your changes), call the `SetBookmark` member function with the bookmark value of the current record.  
   
- ODBC データ ソースを使用するときにロック モードはオプティミスティック常にします。  
+ When working with ODBC data sources, the locking mode is always optimistic.  
   
-##  <a name="setparamvalue"></a>CDaoRecordset::SetParamValue  
- 実行時に、レコード セット内のパラメーターの値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setparamvalue"></a>  CDaoRecordset::SetParamValue  
+ Call this member function to set the value of a parameter in the recordset at run time.  
   
 ```  
 virtual void SetParamValue(
@@ -2172,89 +2250,89 @@ virtual void SetParamValue(
     const COleVariant& varValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- クエリ定義のパラメーター コレクション内のパラメーターの数値の位置。  
+ The numerical position of the parameter in the querydef's Parameters collection.  
   
  `var`  
- に設定する値「解説」を参照してください。  
+ The value to set; see Remarks.  
   
  `lpszName`  
- 値を設定するパラメーターの名前。  
+ The name of the parameter whose value you want to set.  
   
-### <a name="remarks"></a>コメント  
- パラメーター既に、レコード セットの SQL 文字列の一部として設定されていなければなりません。 パラメーターは、名前またはコレクションのインデックス位置のいずれかにアクセスすることができます。  
+### <a name="remarks"></a>Remarks  
+ The parameter must already have been established as part of the recordset's SQL string. You can access the parameter either by name or by its index position in the collection.  
   
- として設定する値を指定して、`COleVariant`オブジェクト。 目的の値と型に設定については、`COleVariant`オブジェクト、クラスを参照して[COleVariant](../../mfc/reference/colevariant-class.md)です。 UNICODE のレコード セットを作成していない場合、`COleVariant`オブジェクト必要があります明示的に宣言する ANSI です。 これを使用して行うことができます、 [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`'éý' `VT_BSTRT` (ANSI) またはを使用して、 **COleVariant**関数[SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc` **、** `vtSrc` **)**で`vtSrc`'éý'`VT_BSTRT`です。  
+ Specify the value to set as a `COleVariant` object. For information about setting the desired value and type in your `COleVariant` object, see class [COleVariant](../../mfc/reference/colevariant-class.md). Note that if you are not creating a UNICODE recordset, the `COleVariant` object must be explicitly declared ANSI. This can be done by using the [COleVariant::COleVariant](../../mfc/reference/colevariant-class.md#colevariant)**(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or by using the **COleVariant** function [SetString](../../mfc/reference/colevariant-class.md#setstring)**(** `lpszSrc`**,** `vtSrc` **)** with `vtSrc` set to `VT_BSTRT`.  
   
-##  <a name="setparamvaluenull"></a>CDaoRecordset::SetParamValueNull  
- パラメーターに Null 値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setparamvaluenull"></a>  CDaoRecordset::SetParamValueNull  
+ Call this member function to set the parameter to a Null value.  
   
 ```  
 void SetParamValueNull(int nIndex);  
 void SetParamValueNull(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 0 から始まるインデックスで検索する場合、レコード セット内のフィールドのインデックス。  
+ The index of the field in the recordset, for lookup by zero-based index.  
   
  `lpszName`  
- 名前で検索する場合、レコード セット内のフィールドの名前。  
+ The name of the field in the recordset, for lookup by name.  
   
-### <a name="remarks"></a>コメント  
- C++ **NULL** Null の場合、つまり、データベース用語と同じではありません「値を持たない」。  
+### <a name="remarks"></a>Remarks  
+ C++ **NULL** is not the same as Null, which, in database terminology, means "having no value."  
   
-##  <a name="setpercentposition"></a>CDaoRecordset::SetPercentPosition  
- レコード セット内のレコードの比率に基づいて、レコード セット オブジェクトの現在のレコードのおおよその場所を変更する値を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setpercentposition"></a>  CDaoRecordset::SetPercentPosition  
+ Call this member function to set a value that changes the approximate location of the current record in the recordset object based on a percentage of the records in the recordset.  
   
 ```  
 void SetPercentPosition(float fPosition);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *fPosition*  
- 0 ～ 100 の値。  
+ A number between 0 and 100.  
   
-### <a name="remarks"></a>コメント  
- ダイナセットの種類またはスナップショットの種類のレコード セットを扱うときにまず recordset 移したら最後のレコードを呼び出す前に`SetPercentPosition`です。 呼び出す場合`SetPercentPosition`、アクセスされたレコード数の値によって示される相対移動量は、レコード セットを完全に設定するには、する前に[GetRecordCount](#getrecordcount)です。 行うことができます、最後のレコードを呼び出して`MoveLast`です。  
+### <a name="remarks"></a>Remarks  
+ When working with a dynaset-type or snapshot-type recordset, first populate the recordset by moving to the last record before you call `SetPercentPosition`. If you call `SetPercentPosition` before fully populating the recordset, the amount of movement is relative to the number of records accessed as indicated by the value of [GetRecordCount](#getrecordcount). You can move to the last record by calling `MoveLast`.  
   
- 呼び出す`SetPercentPosition`、その値に対応するおおよその位置にあるレコードが最新になった。  
+ Once you call `SetPercentPosition`, the record at the approximate position corresponding to that value becomes current.  
   
 > [!NOTE]
->  呼び出す`SetPercentPosition`を移動、レコード セット内の特定のレコードを現在のレコードはお勧めしません。 呼び出す、 [SetBookmark](#setbookmark)メンバー関数を使用します。  
+>  Calling `SetPercentPosition` to move the current record to a specific record in a recordset is not recommended. Call the [SetBookmark](#setbookmark) member function instead.  
   
- 関連情報については、DAO ヘルプの「PercentPosition プロパティ」を参照してください。  
+ For related information, see the topic "PercentPosition Property" in DAO Help.  
   
-##  <a name="update"></a>CDaoRecordset::Update  
- このメンバー関数を呼び出した後、`AddNew`または**編集**メンバー関数。  
+##  <a name="update"></a>  CDaoRecordset::Update  
+ Call this member function after a call to the `AddNew` or **Edit** member function.  
   
 ```  
 virtual void Update();
 ```  
   
-### <a name="remarks"></a>コメント  
- この呼び出しが完了に必要な`AddNew`または**編集**操作します。  
+### <a name="remarks"></a>Remarks  
+ This call is required to complete the `AddNew` or **Edit** operation.  
   
- 両方`AddNew`と**編集**データ ソースに保存するため、追加または編集されたデータが置かれている編集バッファーを準備します。 **更新**データを保存します。 マークまたは変更されたものとして検出されたフィールドのみ更新されます。  
+ Both `AddNew` and **Edit** prepare an edit buffer in which the added or edited data is placed for saving to the data source. **Update** saves the data. Only those fields marked or detected as changed are updated.  
   
- データ ソースは、トランザクションをサポートする場合は、**更新**呼び出し (とその対応する`AddNew`または**編集**呼び出し)、トランザクションの一部です。  
+ If the data source supports transactions, you can make the **Update** call (and its corresponding `AddNew` or **Edit** call) part of a transaction.  
   
 > [!CAUTION]
->  呼び出す場合**更新**最初に呼び出して、`AddNew`または**編集**、**更新**スロー、`CDaoException`です。 呼び出す場合`AddNew`または**編集**、呼び出す必要があります**更新**を呼び出す前に[MoveNext](#movenext)またはレコード セットまたはデータ ソース接続を終了します。 それ以外の場合、変更は、通知することがなく失われます。  
+>  If you call **Update** without first calling either `AddNew` or **Edit**, **Update** throws a `CDaoException`. If you call `AddNew` or **Edit**, you must call **Update** before you call [MoveNext](#movenext) or close either the recordset or the data source connection. Otherwise, your changes are lost without notification.  
   
- レコード セット オブジェクトがマルチ ユーザー環境で排他ロックされると、レコードにはロックが時間から**編集**更新が完了するまでに使用します。 レコード セットがやロックされている場合、レコードがロックされているし、データベースで更新される直前に、編集前のレコードと比較 呼び出されるため、レコードが変更された場合**編集**、**更新**操作は失敗し、MFC は、例外をスローします。 ロック モードを変更する`SetLockingMode`です。  
+ When the recordset object is pessimistically locked in a multiuser environment, the record remains locked from the time **Edit** is used until the updating is complete. If the recordset is optimistically locked, the record is locked and compared with the pre-edited record just before it is updated in the database. If the record has changed since you called **Edit**, the **Update** operation fails and MFC throws an exception. You can change the locking mode with `SetLockingMode`.  
   
 > [!NOTE]
->  常に、オプティミスティック ロックは ODBC やインストール可能な ISAM などの外部データベース形式で使用します。  
+>  Optimistic locking is always used on external database formats, such as ODBC and installable ISAM.  
   
- 関連情報については、"AddNew Method"、"ただし Method"、「メソッドの削除」、"LastModified Property"、「更新メソッド」、および「EditMode プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topics "AddNew Method", "CancelUpdate Method", "Delete Method", "LastModified Property", "Update Method", and "EditMode Property" in DAO Help.  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [どちらのクラス](../../mfc/reference/cdaotabledef-class.md)   
- [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   
- [CDaoQueryDef クラス](../../mfc/reference/cdaoquerydef-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDaoTableDef Class](../../mfc/reference/cdaotabledef-class.md)   
+ [CDaoWorkspace Class](../../mfc/reference/cdaoworkspace-class.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)   
+ [CDaoQueryDef Class](../../mfc/reference/cdaoquerydef-class.md)
 

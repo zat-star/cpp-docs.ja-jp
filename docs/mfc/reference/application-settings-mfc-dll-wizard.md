@@ -1,5 +1,5 @@
 ---
-title: "アプリケーションの設定、MFC DLL ウィザード |Microsoft ドキュメント"
+title: Application Settings, MFC DLL Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,41 +33,41 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: df1e3de3e1548fe4c4c340a30127d9916998ba64
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a4721fbb1f0abfdda66dfb70ad1f4e44cf848fd3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="application-settings-mfc-dll-wizard"></a>[アプリケーションの設定] (MFC DLL ウィザード)
-デザインし、の基本的な機能を MFC DLL プロジェクトを新規に追加するには、MFC DLL ウィザードのこのページを使用します。  
+# <a name="application-settings-mfc-dll-wizard"></a>Application Settings, MFC DLL Wizard
+Use this page of the MFC DLL wizard to design and add basic features to a new MFC DLL project.  
   
-## <a name="dll-type"></a>[DLL の種類]  
- 作成する DLL の種類を選択します。  
+## <a name="dll-type"></a>DLL type  
+ Select the type of DLL you want to create.  
   
- **共有の MFC DLL を使用するレギュラー DLL**  
- MFC ライブラリを共有 DLL としてプログラムにリンクするには、このオプションを選択します。 このオプションを使用すると、DLL と呼び出し元のアプリケーション間での MFC オブジェクトを共有できません。 プログラムでは、実行時に、MFC ライブラリへの呼び出しができます。 このオプションは、MFC ライブラリを使用する複数の実行ファイルで構成される場合に、プログラムのディスクとメモリの量を削減します。 Win32 と MFC の両方のプログラムは、DLL で関数を呼び出すことができます。 この種類のプロジェクトでは MFC DLL を再配布する必要があります。  
+ **Regular MFC DLL using shared MFC DLL**  
+ Select this option to link the MFC library to your program as a shared DLL. Using this option, you cannot share MFC objects between your DLL and the calling application. Your program makes calls to the MFC library at run time. This option reduces the disk and memory requirements of your program if it is composed of multiple execution files that use the MFC library. Both Win32 and MFC programs can call functions in your DLL. You must redistribute the MFC DLL with this type of project.  
   
- **MFC での通常の DLL が静的にリンク**  
- MFC ライブラリをビルド時に、プログラムを静的にリンクするには、このオプションを選択します。 Win32 と MFC の両方のプログラムは、DLL で関数を呼び出すことができます。 このオプションでは、プログラムのサイズが増えますが、中には、この種類のプロジェクトでは MFC DLL を再配布する必要はありません。 MFC オブジェクトは、DLL と呼び出し元のアプリケーション間で共有できません。  
+ **Regular MFC DLL with MFC statically linked**  
+ Select this option to link your program statically to the MFC library at build time. Both Win32 and MFC programs can call functions in your DLL. While this option increases the size of your program, you do not need to redistribute the MFC DLL with this type of project. You cannot share MFC objects between your DLL and the calling application.  
   
- **MFC 拡張 DLL**  
- 場合は、プログラム実行時に、MFC ライブラリへの呼び出しを作成して、DLL と呼び出し元のアプリケーション間での MFC オブジェクトを共有する場合は、このオプションを選択します。 このオプションは、MFC ライブラリを使用する複数の実行可能ファイルで構成される場合に、プログラムのディスクとメモリの量を削減します。 MFC プログラムだけでは、DLL で関数を呼び出すことができます。 この種類のプロジェクトでは MFC DLL を再配布する必要があります。  
+ **MFC extension DLL**  
+ Select this option if you want your program to make calls to the MFC library at run time, and if you want to share MFC objects between your DLL and the calling application. This option reduces the disk and memory requirements of your program, if it is composed of multiple executable files that all use the MFC library. Only MFC programs can call functions in your DLL. You must redistribute the MFC DLL with this type of project.  
   
-## <a name="additional-features"></a>その他の機能  
- Windows ソケットをサポートしているかどうかと、MFC DLL がオートメーションをサポートするかどうかを選択します。  
+## <a name="additional-features"></a>Additional features  
+ Select whether your MFC DLL should support automation and whether it should support Windows sockets.  
   
- **オートメーション**  
- 選択**オートメーション**別のプログラムに実装されているオブジェクトを操作するプログラムを許可するようにします。 選択すると**オートメーション**も他のオートメーション クライアントにプログラムを公開します。 参照してください[オートメーション](../../mfc/automation.md)の詳細。  
+ **Automation**  
+ Select **Automation** to allow your program to manipulate objects implemented in another program. Selecting **Automation** also exposes your program to other Automation clients. See [Automation](../../mfc/automation.md) for more information.  
   
- **Windows ソケット**  
- プログラムが Windows ソケットをサポートしていることを示すためには、このオプションを選択します。 Windows ソケットを使用すると、TCP/IP ネットワーク経由で通信するプログラムを作成できます。  
+ **Windows sockets**  
+ Select this option to indicate that your program supports Windows sockets. Windows sockets allow you to write programs that communicate over TCP/IP networks.  
   
- Windows で、MFC DLL のソケットのサポートが作成された、[場合は](../../mfc/reference/cwinapp-class.md#initinstance)ソケットの初期化をサポートし、MFC ヘッダー ファイル StdAfx.h AfxSock.h が含まれています。  
+ When your MFC DLL with Windows sockets support is created, [CWinApp::InitInstance](../../mfc/reference/cwinapp-class.md#initinstance) initializes support for sockets and the MFC header file StdAfx.h includes AfxSock.h.  
   
-## <a name="see-also"></a>関連項目  
- [MFC DLL ウィザード](../../mfc/reference/mfc-dll-wizard.md)   
- [MFC DLL プロジェクトの作成](../../mfc/reference/creating-an-mfc-dll-project.md)
+## <a name="see-also"></a>See Also  
+ [MFC DLL Wizard](../../mfc/reference/mfc-dll-wizard.md)   
+ [Creating an MFC DLL Project](../../mfc/reference/creating-an-mfc-dll-project.md)
 
 

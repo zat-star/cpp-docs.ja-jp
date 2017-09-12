@@ -1,5 +1,5 @@
 ---
-title: "CStringList クラス |Microsoft ドキュメント"
+title: CStringList Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -36,10 +36,28 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- strings [C++], lists
-- lists, string
-- CStringList class
-- strings [C++], collections
+- CObList [MFC], CObList
+- CObList [MFC], AddHead
+- CObList [MFC], AddTail
+- CObList [MFC], Find
+- CObList [MFC], FindIndex
+- CObList [MFC], GetAt
+- CObList [MFC], GetCount
+- CObList [MFC], GetHead
+- CObList [MFC], GetHeadPosition
+- CObList [MFC], GetNext
+- CObList [MFC], GetPrev
+- CObList [MFC], GetSize
+- CObList [MFC], GetTail
+- CObList [MFC], GetTailPosition
+- CObList [MFC], InsertAfter
+- CObList [MFC], InsertBefore
+- CObList [MFC], IsEmpty
+- CObList [MFC], RemoveAll
+- CObList [MFC], RemoveAt
+- CObList [MFC], RemoveHead
+- CObList [MFC], RemoveTail
+- CObList [MFC], SetAt
 ms.assetid: 310a7edb-263c-4bd2-ac43-0bfbfddc5a33
 caps.latest.revision: 25
 author: mikeblome
@@ -59,92 +77,92 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 0b67104e330890ffe8f67bac0dd3b129c7742a29
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e92526991a7f7554f868a36d655766cf7f1304f4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cstringlist-class"></a>CStringList クラス
-`CString` オブジェクトのリストをサポートします。  
+# <a name="cstringlist-class"></a>CStringList Class
+Supports lists of `CString` objects.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CStringList : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
- メンバー関数は、`CStringList`クラスのメンバー関数に似ています[CObList](../../mfc/reference/coblist-class.md)します。 メンバー関数については `CObList` クラスの説明を参照してください。 表示されたら、`CObject`ポインター、戻り値として次のように置き換えてください。、 `CString` (いない、`CString`ポインター)。 表示されたら、`CObject`ポインター、関数パラメーターとして次のように置き換えてください。、`LPCTSTR`です。  
+## <a name="members"></a>Members  
+ The member functions of `CStringList` are similar to the member functions of class [CObList](../../mfc/reference/coblist-class.md). Because of this similarity, you can use the `CObList` reference documentation for member function specifics. Wherever you see a `CObject` pointer as a return value, substitute a `CString` (not a `CString` pointer). Wherever you see a `CObject` pointer as a function parameter, substitute an `LPCTSTR`.  
   
  `CObject*& CObList::GetHead() const;`  
   
- たとえば、次のように変換します。  
+ for example, translates to  
   
  `CString& CStringList::GetHead() const;`  
   
- および  
+ and  
   
  `POSITION AddHead( CObject* <newElement> );`  
   
- 次のように変換します。  
+ translates to  
   
  `POSITION AddHead( LPCTSTR <newElement> );`  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[使われて](../../mfc/reference/coblist-class.md#coblist)|空のリストを構築します。|  
+|[CObList::CObList](../../mfc/reference/coblist-class.md#coblist)|Constructs an empty list.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CObList::AddHead](../../mfc/reference/coblist-class.md#addhead)|(新しいヘッドによって作成) リストの先頭に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CObList::AddTail](../../mfc/reference/coblist-class.md#addtail)|(新しい末尾によって作成) リストの末尾に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CObList::Find](../../mfc/reference/coblist-class.md#find)|ポインター値によって指定される要素の位置を取得します。|  
-|[CObList::FindIndex](../../mfc/reference/coblist-class.md#findindex)|0 から始まるインデックスで指定された要素の位置を取得します。|  
-|[CObList::GetAt](../../mfc/reference/coblist-class.md#getat)|指定された位置に要素を取得します。|  
-|[CObList::GetCount](../../mfc/reference/coblist-class.md#getcount)|この一覧には、要素の数を返します。|  
-|[CObList::GetHead](../../mfc/reference/coblist-class.md#gethead)|(空にすることはできません) の一覧の先頭の要素を返します。|  
-|[CObList::GetHeadPosition](../../mfc/reference/coblist-class.md#getheadposition)|リストの先頭の要素の位置を返します。|  
-|[CObList::GetNext](../../mfc/reference/coblist-class.md#getnext)|反復処理するためには、次の要素を取得します。|  
-|[CObList::GetPrev](../../mfc/reference/coblist-class.md#getprev)|反復処理するためには、直前の要素を取得します。|  
-|[CObList::GetSize](../../mfc/reference/coblist-class.md#getsize)|この一覧には、要素の数を返します。|  
-|[CObList::GetTail](../../mfc/reference/coblist-class.md#gettail)|(空にすることはできません)、リストの末尾の要素を返します。|  
-|[CObList::GetTailPosition](../../mfc/reference/coblist-class.md#gettailposition)|リストの末尾の要素の位置を返します。|  
-|[CObList::InsertAfter](../../mfc/reference/coblist-class.md#insertafter)|指定した位置の後に新しい要素を挿入します。|  
-|[CObList::InsertBefore](../../mfc/reference/coblist-class.md#insertbefore)|指定した位置の前に新しい要素を挿入します。|  
-|[CObList::IsEmpty](../../mfc/reference/coblist-class.md#isempty)|空のリストの状態 (要素がない) をテストします。|  
-|[CObList::RemoveAll](../../mfc/reference/coblist-class.md#removeall)|この一覧からすべての要素を削除します。|  
-|[CObList::RemoveAt](../../mfc/reference/coblist-class.md#removeat)|位置によって指定されたこのリストから要素を削除します。|  
-|[CObList::RemoveHead](../../mfc/reference/coblist-class.md#removehead)|リストの先頭から要素を削除します。|  
-|[CObList::RemoveTail](../../mfc/reference/coblist-class.md#removetail)|リストの末尾から要素を削除します。|  
-|[CObList::SetAt](../../mfc/reference/coblist-class.md#setat)|指定された位置に要素を設定します。|  
+|[CObList::AddHead](../../mfc/reference/coblist-class.md#addhead)|Adds an element (or all the elements in another list) to the head of the list (makes a new head).|  
+|[CObList::AddTail](../../mfc/reference/coblist-class.md#addtail)|Adds an element (or all the elements in another list) to the tail of the list (makes a new tail).|  
+|[CObList::Find](../../mfc/reference/coblist-class.md#find)|Gets the position of an element specified by pointer value.|  
+|[CObList::FindIndex](../../mfc/reference/coblist-class.md#findindex)|Gets the position of an element specified by a zero-based index.|  
+|[CObList::GetAt](../../mfc/reference/coblist-class.md#getat)|Gets the element at a given position.|  
+|[CObList::GetCount](../../mfc/reference/coblist-class.md#getcount)|Returns the number of elements in this list.|  
+|[CObList::GetHead](../../mfc/reference/coblist-class.md#gethead)|Returns the head element of the list (cannot be empty).|  
+|[CObList::GetHeadPosition](../../mfc/reference/coblist-class.md#getheadposition)|Returns the position of the head element of the list.|  
+|[CObList::GetNext](../../mfc/reference/coblist-class.md#getnext)|Gets the next element for iterating.|  
+|[CObList::GetPrev](../../mfc/reference/coblist-class.md#getprev)|Gets the previous element for iterating.|  
+|[CObList::GetSize](../../mfc/reference/coblist-class.md#getsize)|Returns the number of elements in this list.|  
+|[CObList::GetTail](../../mfc/reference/coblist-class.md#gettail)|Returns the tail element of the list (cannot be empty).|  
+|[CObList::GetTailPosition](../../mfc/reference/coblist-class.md#gettailposition)|Returns the position of the tail element of the list.|  
+|[CObList::InsertAfter](../../mfc/reference/coblist-class.md#insertafter)|Inserts a new element after a given position.|  
+|[CObList::InsertBefore](../../mfc/reference/coblist-class.md#insertbefore)|Inserts a new element before a given position.|  
+|[CObList::IsEmpty](../../mfc/reference/coblist-class.md#isempty)|Tests for the empty list condition (no elements).|  
+|[CObList::RemoveAll](../../mfc/reference/coblist-class.md#removeall)|Removes all the elements from this list.|  
+|[CObList::RemoveAt](../../mfc/reference/coblist-class.md#removeat)|Removes an element from this list, specified by position.|  
+|[CObList::RemoveHead](../../mfc/reference/coblist-class.md#removehead)|Removes the element from the head of the list.|  
+|[CObList::RemoveTail](../../mfc/reference/coblist-class.md#removetail)|Removes the element from the tail of the list.|  
+|[CObList::SetAt](../../mfc/reference/coblist-class.md#setat)|Sets the element at a given position.|  
   
-## <a name="remarks"></a>コメント  
- すべての比較は、値、つまり、文字列のアドレスではなく、文字列内の文字を比較することによって実行されます。  
+## <a name="remarks"></a>Remarks  
+ All comparisons are done by value, meaning that the characters in the string are compared instead of the addresses of the strings.  
   
- `CStringList` には、`IMPLEMENT_SERIAL` マクロが組み込まれており、その要素のシリアル化とダンプがサポートされます。 リストの場合`CString`オブジェクトがオーバー ロードされた挿入演算子またはでアーカイブに格納されている、`Serialize`のメンバー関数の各`CString`要素が順にシリアル化します。  
+ `CStringList` incorporates the `IMPLEMENT_SERIAL` macro to support serialization and dumping of its elements. If a list of `CString` objects is stored to an archive, either with an overloaded insertion operator or with the `Serialize` member function, each `CString` element is serialized in turn.  
   
- 個別にダンプする必要がある場合`CString`要素を 1 以上、ダンプ コンテキストの深さを設定する必要があります。  
+ If you need a dump of individual `CString` elements, you must set the depth of the dump context to 1 or greater.  
   
- 使用する方法について`CStringList`、記事を参照して[コレクション](../../mfc/collections.md)します。  
+ For more information on using `CStringList`, see the article [Collections](../../mfc/collections.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CStringList`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcoll.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcoll.h  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプルの収集](../../visual-cpp-samples.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample COLLECT](../../visual-cpp-samples.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

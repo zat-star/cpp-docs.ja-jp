@@ -1,5 +1,5 @@
 ---
-title: "CEdit クラス |Microsoft ドキュメント"
+title: CEdit Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -58,15 +58,50 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- separators, in multiline edit controls
-- text editors
-- controls [MFC], edit
-- text editors, CEdit class
-- edit controls, classes
-- multiline edit control
-- CEdit class
-- line separators in multiline edit controls
-- edit controls
+- CEdit [MFC], CEdit
+- CEdit [MFC], CanUndo
+- CEdit [MFC], CharFromPos
+- CEdit [MFC], Clear
+- CEdit [MFC], Copy
+- CEdit [MFC], Create
+- CEdit [MFC], Cut
+- CEdit [MFC], EmptyUndoBuffer
+- CEdit [MFC], FmtLines
+- CEdit [MFC], GetCueBanner
+- CEdit [MFC], GetFirstVisibleLine
+- CEdit [MFC], GetHandle
+- CEdit [MFC], GetHighlight
+- CEdit [MFC], GetLimitText
+- CEdit [MFC], GetLine
+- CEdit [MFC], GetLineCount
+- CEdit [MFC], GetMargins
+- CEdit [MFC], GetModify
+- CEdit [MFC], GetPasswordChar
+- CEdit [MFC], GetRect
+- CEdit [MFC], GetSel
+- CEdit [MFC], HideBalloonTip
+- CEdit [MFC], LimitText
+- CEdit [MFC], LineFromChar
+- CEdit [MFC], LineIndex
+- CEdit [MFC], LineLength
+- CEdit [MFC], LineScroll
+- CEdit [MFC], Paste
+- CEdit [MFC], PosFromChar
+- CEdit [MFC], ReplaceSel
+- CEdit [MFC], SetCueBanner
+- CEdit [MFC], SetHandle
+- CEdit [MFC], SetHighlight
+- CEdit [MFC], SetLimitText
+- CEdit [MFC], SetMargins
+- CEdit [MFC], SetModify
+- CEdit [MFC], SetPasswordChar
+- CEdit [MFC], SetReadOnly
+- CEdit [MFC], SetRect
+- CEdit [MFC], SetRectNP
+- CEdit [MFC], SetSel
+- CEdit [MFC], SetTabStops
+- CEdit [MFC], ShowBalloonTip
+- CEdit [MFC], Undo
 ms.assetid: b1533c30-7f10-4663-88d3-8b7f2c9f7024
 caps.latest.revision: 22
 author: mikeblome
@@ -86,132 +121,132 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: a65852bb89771d74f6ce840d9cba304aba94dc3b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f9532736d2352110446399fa07fafea91f3d2130
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
 # <a name="cedit-class"></a>CEdit Class
-Windows のエディット コントロールの機能が用意されています。  
+Provides the functionality of a Windows edit control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CEdit : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CEdit::CEdit](#cedit)|構築、`CEdit`コントロール オブジェクトです。|  
+|[CEdit::CEdit](#cedit)|Constructs a `CEdit` control object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CEdit::CanUndo](#canundo)|エディット コントロールの操作が完了できるかどうかを判断します。|  
-|[場合](#charfrompos)|指定した位置に最も近い文字の行や文字のインデックスを取得します。|  
-|[CEdit::Clear](#clear)|削除 (クリア) 編集の現在の選択 (存在する場合) を制御します。|  
-|[CEdit::Copy](#copy)|現在の選択 (もしあれば) エディット コントロールでクリップボードにコピーで**エディット**形式です。|  
-|[CEdit::Create](#create)|Windows のエディット コントロールを作成しにアタッチ、`CEdit`オブジェクト。|  
-|[CEdit::Cut](#cut)|削除 (切り取り) 編集の現在の選択 (存在する場合) を制御し、削除したテキストでクリップボードにコピー**エディット**形式。|  
-|[CEdit::EmptyUndoBuffer](#emptyundobuffer)|(クリア) 編集の取り消しのフラグのコントロールをリセットします。|  
-|[CEdit::FmtLines](#fmtlines)|複数行エディット コントロール内のソフト改行文字を含めること、オンまたはオフを設定します。|  
-|[CEdit::GetCueBanner](#getcuebanner)|ヒントのテキスト、またはコントロールが空で、フォーカスされていないときに、エディット コントロールでのヒントとして表示されるテキストを取得します。|  
-|[CEdit::GetFirstVisibleLine](#getfirstvisibleline)|エディット コントロールに表示されている最上位の行を決定します。|  
-|[CEdit::GetHandle](#gethandle)|複数行のエディット コントロールの現在割り当てられているメモリへのハンドルを取得します。|  
-|[CEdit::GetHighlight](#gethighlight)|開始と終了値、現在の編集コントロールで強調表示されているテキストの範囲内の文字のインデックスを取得します。|  
-|[CEdit::GetLimitText](#getlimittext)|このテキストの最大量を取得`CEdit`含めることができます。|  
-|[CEdit::GetLine](#getline)|エディット コントロールから行のテキストを取得します。|  
-|[CEdit::GetLineCount](#getlinecount)|複数行エディット コントロールで行の数を取得します。|  
-|[CEdit::GetMargins](#getmargins)|このため、左右の余白を取得`CEdit`です。|  
-|[CEdit::GetModify](#getmodify)|エディット コントロールの内容が変更されたかどうかを判断します。|  
-|[CEdit::GetPasswordChar](#getpasswordchar)|テキストを入力したときに、エディット コントロールに表示されるパスワード文字を取得します。|  
-|[CEdit::GetRect](#getrect)|エディット コントロールの書式設定、四角形を取得します。|  
-|[CEdit::GetSel](#getsel)|エディット コントロールで現在の選択範囲の最初と最後の文字位置を取得します。|  
-|[CEdit::HideBalloonTip](#hideballoontip)|現在の編集コントロールに関連付けられているバルーン ヒントを非表示にします。|  
-|[CEdit::LimitText](#limittext)|ユーザーがエディット コントロールに入力できるテキストの長さを制限します。|  
-|[CEdit::LineFromChar](#linefromchar)|指定した文字のインデックスを含む行の行番号を取得します。|  
-|[CEdit::LineIndex](#lineindex)|複数行のエディット コントロール内の行の文字インデックスを取得します。|  
-|[CEdit::LineLength](#linelength)|編集コントロール内の行の長さを取得します。|  
-|[CEdit::LineScroll](#linescroll)|複数行のエディット コントロールのテキストをスクロールします。|  
-|[CEdit::Paste](#paste)|エディット コントロールの現在のカーソル位置にクリップボードからデータを挿入します。 クリップボードのデータを格納する場合にのみ、データが挿入される**エディット**形式です。|  
-|[CEdit::PosFromChar](#posfromchar)|指定された文字のインデックスの左上隅の座標を取得します。|  
-|[CEdit::ReplaceSel](#replacesel)|エディット コントロールの現在の選択を指定したテキストに置き換えます。|  
-|[CEdit::SetCueBanner](#setcuebanner)|ヒントのテキスト、またはコントロールが空で、フォーカスされていないときに、エディット コントロールでのヒントとして表示されるテキストを設定します。|  
-|[CEdit::SetHandle](#sethandle)|複数行エディット コントロールで使用されるローカル メモリへのハンドルを設定します。|  
-|[CEdit::SetHighlight](#sethighlight)|強調表示に現在表示されているテキストの範囲は、コントロールを編集します。|  
-|[CEdit::SetLimitText](#setlimittext)|この文字列の最大時間を設定`CEdit`含めることができます。|  
-|[CEdit::SetMargins](#setmargins)|左と右の余白を設定してこの`CEdit`です。|  
-|[CEdit::SetModify](#setmodify)|設定または編集コントロールの変更のフラグをクリアします。|  
-|[CEdit::SetPasswordChar](#setpasswordchar)|設定またはテキストを入力したときに、エディット コントロールに表示されるパスワード文字を削除します。|  
-|[CEdit::SetReadOnly](#setreadonly)|エディット コントロールの読み取り専用の状態を設定します。|  
-|[CEdit::SetRect](#setrect)|複数行エディット コントロールの書式設定の四角形を設定し、コントロールを更新します。|  
-|[CEdit::SetRectNP](#setrectnp)|コントロール ウィンドウを再描画せず、複数行エディット コントロールの書式設定、四角形を設定します。|  
-|[CEdit::SetSel](#setsel)|エディット コントロールの文字の範囲を選択します。|  
-|[CEdit::SetTabStops](#settabstops)|エディット コントロールを複数行にタブを設定します。|  
-|[CEdit::ShowBalloonTip](#showballoontip)|現在の編集コントロールに関連付けられているバルーン ヒントを表示します。|  
-|[CEdit::Undo](#undo)|最後のエディット コントロールの操作を反転させます。|  
+|[CEdit::CanUndo](#canundo)|Determines whether an edit-control operation can be undone.|  
+|[CEdit::CharFromPos](#charfrompos)|Retrieves the line and character indexes for the character closest to a specified position.|  
+|[CEdit::Clear](#clear)|Deletes (clears) the current selection (if any) in the edit control.|  
+|[CEdit::Copy](#copy)|Copies the current selection (if any) in the edit control to the Clipboard in **CF_TEXT** format.|  
+|[CEdit::Create](#create)|Creates the Windows edit control and attaches it to the `CEdit` object.|  
+|[CEdit::Cut](#cut)|Deletes (cuts) the current selection (if any) in the edit control and copies the deleted text to the Clipboard in **CF_TEXT** format.|  
+|[CEdit::EmptyUndoBuffer](#emptyundobuffer)|Resets (clears) the undo flag of an edit control.|  
+|[CEdit::FmtLines](#fmtlines)|Sets the inclusion of soft line-break characters on or off within a multiple-line edit control.|  
+|[CEdit::GetCueBanner](#getcuebanner)|Retrieves the text that is displayed as the text cue, or tip, in an edit control when the control is empty and does not have focus.|  
+|[CEdit::GetFirstVisibleLine](#getfirstvisibleline)|Determines the topmost visible line in an edit control.|  
+|[CEdit::GetHandle](#gethandle)|Retrieves a handle to the memory that is currently allocated for a multiple-line edit control.|  
+|[CEdit::GetHighlight](#gethighlight)|Gets the indexes of the starting and ending characters in a range of text that is highlighted in the current edit control.|  
+|[CEdit::GetLimitText](#getlimittext)|Gets the maximum amount of text this `CEdit` can contain.|  
+|[CEdit::GetLine](#getline)|Retrieves a line of text from an edit control.|  
+|[CEdit::GetLineCount](#getlinecount)|Retrieves the number of lines in a multiple-line edit control.|  
+|[CEdit::GetMargins](#getmargins)|Gets the left and right margins for this `CEdit`.|  
+|[CEdit::GetModify](#getmodify)|Determines whether the contents of an edit control have been modified.|  
+|[CEdit::GetPasswordChar](#getpasswordchar)|Retrieves the password character displayed in an edit control when the user enters text.|  
+|[CEdit::GetRect](#getrect)|Gets the formatting rectangle of an edit control.|  
+|[CEdit::GetSel](#getsel)|Gets the first and last character positions of the current selection in an edit control.|  
+|[CEdit::HideBalloonTip](#hideballoontip)|Hides any balloon tip associated with the current edit control.|  
+|[CEdit::LimitText](#limittext)|Limits the length of the text that the user can enter into an edit control.|  
+|[CEdit::LineFromChar](#linefromchar)|Retrieves the line number of the line that contains the specified character index.|  
+|[CEdit::LineIndex](#lineindex)|Retrieves the character index of a line within a multiple-line edit control.|  
+|[CEdit::LineLength](#linelength)|Retrieves the length of a line in an edit control.|  
+|[CEdit::LineScroll](#linescroll)|Scrolls the text of a multiple-line edit control.|  
+|[CEdit::Paste](#paste)|Inserts the data from the Clipboard into the edit control at the current cursor position. Data is inserted only if the Clipboard contains data in **CF_TEXT** format.|  
+|[CEdit::PosFromChar](#posfromchar)|Retrieves the coordinates of the upper-left corner of a specified character index.|  
+|[CEdit::ReplaceSel](#replacesel)|Replaces the current selection in an edit control with the specified text.|  
+|[CEdit::SetCueBanner](#setcuebanner)|Sets the text that is displayed as the text cue, or tip, in an edit control when the control is empty and does not have focus.|  
+|[CEdit::SetHandle](#sethandle)|Sets the handle to the local memory that will be used by a multiple-line edit control.|  
+|[CEdit::SetHighlight](#sethighlight)|Highlights a range of text that is displayed in the current edit control.|  
+|[CEdit::SetLimitText](#setlimittext)|Sets the maximum amount of text this `CEdit` can contain.|  
+|[CEdit::SetMargins](#setmargins)|Sets the left and right margins for this `CEdit`.|  
+|[CEdit::SetModify](#setmodify)|Sets or clears the modification flag for an edit control.|  
+|[CEdit::SetPasswordChar](#setpasswordchar)|Sets or removes a password character displayed in an edit control when the user enters text.|  
+|[CEdit::SetReadOnly](#setreadonly)|Sets the read-only state of an edit control.|  
+|[CEdit::SetRect](#setrect)|Sets the formatting rectangle of a multiple-line edit control and updates the control.|  
+|[CEdit::SetRectNP](#setrectnp)|Sets the formatting rectangle of a multiple-line edit control without redrawing the control window.|  
+|[CEdit::SetSel](#setsel)|Selects a range of characters in an edit control.|  
+|[CEdit::SetTabStops](#settabstops)|Sets the tab stops in a multiple-line edit control.|  
+|[CEdit::ShowBalloonTip](#showballoontip)|Displays a balloon tip that is associated with the current edit control.|  
+|[CEdit::Undo](#undo)|Reverses the last edit-control operation.|  
   
-## <a name="remarks"></a>コメント  
- エディット コントロールは、ユーザーがテキストを入力できる長方形の子ウィンドウです。  
+## <a name="remarks"></a>Remarks  
+ An edit control is a rectangular child window in which the user can enter text.  
   
- ダイアログ テンプレートから、またはコードで直接編集コントロールを作成できます。 どちらの場合、コンス トラクターを呼び出して最初`CEdit`構築するために、`CEdit`オブジェクト、し、呼び出し、[作成](#create)、ウィンドウを作成するメンバー関数は、コントロールを編集し、添付、`CEdit`オブジェクト。  
+ You can create an edit control either from a dialog template or directly in your code. In both cases, first call the constructor `CEdit` to construct the `CEdit` object, then call the [Create](#create) member function to create the Windows edit control and attach it to the `CEdit` object.  
   
- 派生したクラスで、1 つプロセスは、構築`CEdit`です。 呼び出しと派生クラスのコンス トラクターを記述**作成**から、コンス トラクター内で。  
+ Construction can be a one-step process in a class derived from `CEdit`. Write a constructor for the derived class and call **Create** from within the constructor.  
   
- `CEdit`重要な機能からの継承`CWnd`です。 設定してからテキストを取得する、`CEdit`オブジェクトを使用して、`CWnd`メンバー関数[SetWindowText](cwnd-class.md#setwindowtext)と[GetWindowText](cwnd-class.md#getwindowtext)、場合でもは複数行のコントロールのエディット コントロールの内容全体を取得または設定します。 複数行のコントロールでテキスト行は、'\r\n' 文字のシーケンスで区切られます。 また、エディット コントロールが複数行の場合は、取得し、呼び出すことによって、コントロールのテキストの一部を設定、`CEdit`メンバー関数[GetLine](#getline)、 [SetSel](#setsel)、 [GetSel](#getsel)、および[ReplaceSel](#replacesel)です。  
+ `CEdit` inherits significant functionality from `CWnd`. To set and retrieve text from a `CEdit` object, use the `CWnd` member functions [SetWindowText](cwnd-class.md#setwindowtext) and [GetWindowText](cwnd-class.md#getwindowtext), which set or get the entire contents of an edit control, even if it is a multiline control. Text lines in a multiline control are separated by '\r\n' character sequences. Also, if an edit control is multiline, get and set part of the control's text by calling the `CEdit` member functions [GetLine](#getline), [SetSel](#setsel), [GetSel](#getsel), and [ReplaceSel](#replacesel).  
   
- Windows のエディット コントロールからその親に送信される通知メッセージを処理する場合 (通常から派生したクラス`CDialog`)、メッセージ マップ エントリとメッセージ ハンドラー メンバー関数を各メッセージの親クラスに追加します。  
+ If you want to handle Windows notification messages sent by an edit control to its parent (usually a class derived from `CDialog`), add a message-map entry and message-handler member function to the parent class for each message.  
   
- 各メッセージ マップ エントリは次の形式になります。  
+ Each message-map entry takes the following form:  
   
- **On _**通知**(** *id、memberFxn***)**  
+ **ON_**Notification **(** *id, memberFxn***)**  
   
- ここで`id`、通知を送信するエディット コントロールの子ウィンドウ ID を指定し、`memberFxn`通知の処理を記述した親メンバー関数の名前を指定します。  
+ where `id` specifies the child window ID of the edit control sending the notification, and `memberFxn` is the name of the parent member function you have written to handle the notification.  
   
- 親の関数プロトタイプは次のとおりです。  
+ The parent's function prototype is as follows:  
   
- **afx_msg** void memberFxn **();**  
+ **afx_msg** void memberFxn **( );**  
   
- 潜在的なメッセージ マップ エントリと親に送信する場合の説明の一覧を次に示します。  
+ Following is a list of potential message-map entries and a description of the cases in which they would be sent to the parent:  
   
-- **ON_EN_CHANGE**ユーザーがエディット コントロールでテキストを変更可能性があるアクションを取得します。 異なり、 **EN_UPDATE**通知メッセージを Windows の表示が更新後にこの通知メッセージが送信されます。  
+- **ON_EN_CHANGE** The user has taken an action that may have altered text in an edit control. Unlike the **EN_UPDATE** notification message, this notification message is sent after Windows updates the display.  
   
-- **ON_EN_ERRSPACE**エディット コントロールは、特定の要求を満たすのに十分なメモリを割り当てることができません。  
+- **ON_EN_ERRSPACE** The edit control cannot allocate enough memory to meet a specific request.  
   
-- **ON_EN_HSCROLL**エディット コントロールの水平スクロール バーをクリックします。 画面が更新される前に、親ウィンドウに通知されます。  
+- **ON_EN_HSCROLL** The user clicks an edit control's horizontal scroll bar. The parent window is notified before the screen is updated.  
   
-- **ON_EN_KILLFOCUS**エディット コントロールが入力フォーカスを失った。  
+- **ON_EN_KILLFOCUS** The edit control loses the input focus.  
   
-- **ON_EN_MAXTEXT**エディット コントロールの文字の指定した数を超えましたの現在の挿入およびが切り捨てられました。 編集コントロールがあるないときにも送信、 **ES_AUTOHSCROLL**がエディット コントロールの幅に収まりきらないスタイルおよび挿入する文字の数。 編集コントロールがあるないときにも送信、 **ES_AUTOVSCROLL**スタイルおよびテキストの挿入される行の合計数は、エディット コントロールの高さを超えてしまいます。  
+- **ON_EN_MAXTEXT** The current insertion has exceeded the specified number of characters for the edit control and has been truncated. Also sent when an edit control does not have the **ES_AUTOHSCROLL** style and the number of characters to be inserted would exceed the width of the edit control. Also sent when an edit control does not have the **ES_AUTOVSCROLL** style and the total number of lines resulting from a text insertion would exceed the height of the edit control.  
   
-- **ON_EN_SETFOCUS**エディット コントロールが入力フォーカスを受け取るときに送信します。  
+- **ON_EN_SETFOCUS** Sent when an edit control receives the input focus.  
   
-- **ON_EN_UPDATE**エディット コントロールが変更されたテキストを表示しようとしています。 コントロールがテキストを書式設定後、そのテキストを表示できるように、ウィンドウのサイズを変更することができます、必要に応じて前に送信されます。  
+- **ON_EN_UPDATE** The edit control is about to display altered text. Sent after the control has formatted the text but before it screens the text so that the window size can be altered, if necessary.  
   
-- **ON_EN_VSCROLL**エディット コントロールの垂直スクロール バーをクリックします。 画面が更新される前に、親ウィンドウに通知されます。  
+- **ON_EN_VSCROLL** The user clicks an edit control's vertical scroll bar. The parent window is notified before the screen is updated.  
   
- 作成する場合、`CEdit`ダイアログ ボックスでは、内のオブジェクト、 `CEdit`  ダイアログ ボックスを閉じたときに、オブジェクトが自動的に破棄されます。  
+ If you create a `CEdit` object within a dialog box, the `CEdit` object is automatically destroyed when the user closes the dialog box.  
   
- 作成する場合、`CEdit`ダイアログ エディターを使用して、ダイアログ リソースからのオブジェクト、 `CEdit`  ダイアログ ボックスを閉じたときに、オブジェクトが自動的に破棄されます。  
+ If you create a `CEdit` object from a dialog resource using the dialog editor, the `CEdit` object is automatically destroyed when the user closes the dialog box.  
   
- 作成する場合、`CEdit`ウィンドウ内でオブジェクトを破棄しても必要があります。 作成する場合、`CEdit`スタック上のオブジェクトは自動的に破棄します。 作成する場合、`CEdit`を使用して、ヒープ上のオブジェクト、**新しい**関数を呼び出す必要があります**削除**オブジェクトを破棄して、ユーザーが、Windows が終了するときにコントロールを編集します。 メモリを割り当てる場合、`CEdit`オブジェクト、オーバーライド、`CEdit`デストラクターが、割り当てを破棄します。  
+ If you create a `CEdit` object within a window, you may also need to destroy it. If you create the `CEdit` object on the stack, it is destroyed automatically. If you create the `CEdit` object on the heap by using the **new** function, you must call **delete** on the object to destroy it when the user terminates the Windows edit control. If you allocate any memory in the `CEdit` object, override the `CEdit` destructor to dispose of the allocations.  
   
- エディット コントロールでの特定のスタイルを変更する (など**ES_READONLY**) を使用する代わりに、コントロールに特定のメッセージを送信する必要があります[は](cwnd-class.md#modifystyle)します。 参照してください[コントロールのスタイルを編集](http://msdn.microsoft.com/library/windows/desktop/bb775464)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ To modify certain styles in an edit control (such as **ES_READONLY**) you must send specific messages to the control instead of using [ModifyStyle](cwnd-class.md#modifystyle). See [Edit Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb775464) in the Windows SDK.  
   
- `CEdit` の詳細については、次を参照してください。  
+ For more information on `CEdit`, see:  
   
-- [コントロール](../../mfc/controls-mfc.md)  
+- [Controls](../../mfc/controls-mfc.md)  
   
--   サポート技術情報の記事 Q259949: 情報: SetCaretPos() が適切ではない CEdit または CRichEditCtrl コントロール  
+-   Knowledge Base article Q259949 : INFO: SetCaretPos() Is Not Appropriate with CEdit or CRichEditCtrl Controls  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](cobject-class.md)  
   
  [CCmdTarget](ccmdtarget-class.md)  
@@ -220,94 +255,94 @@ class CEdit : public CWnd
   
  `CEdit`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="canundo"></a>CEdit::CanUndo  
- この関数では、最後の編集操作を元に戻すことができるかどうかを判断します。  
+##  <a name="canundo"></a>  CEdit::CanUndo  
+ Call this function to determine if the last edit operation can be undone.  
   
 ```  
 BOOL CanUndo() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 呼び出しによってに最後の編集操作を元に戻すことができる場合は 0 以外、**を元に戻す**メンバー関数は元に戻すことができない場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the last edit operation can be undone by a call to the **Undo** member function; 0 if it cannot be undone.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_CANUNDO](http://msdn.microsoft.com/library/windows/desktop/bb775468)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_CANUNDO](http://msdn.microsoft.com/library/windows/desktop/bb775468) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::Undo](#undo)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::Undo](#undo).  
   
-##  <a name="cedit"></a>CEdit::CEdit  
- `CEdit` オブジェクトを構築します。  
+##  <a name="cedit"></a>  CEdit::CEdit  
+ Constructs a `CEdit` object.  
   
 ```  
 CEdit();
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用して[作成](#create)構築するために、Windows のエディット コントロール。  
+### <a name="remarks"></a>Remarks  
+ Use [Create](#create) to construct the Windows edit control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #1](../../mfc/reference/codesnippet/cpp/cedit-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#1](../../mfc/reference/codesnippet/cpp/cedit-class_1.cpp)]  
   
-##  <a name="charfrompos"></a>場合  
- 0 から始まる行およびこれで、指定したポイントに最も近い文字の文字インデックスを取得するには、この関数を呼び出す`CEdit`コントロール  
+##  <a name="charfrompos"></a>  CEdit::CharFromPos  
+ Call this function to retrieve the zero-based line and character indices of the character nearest the specified point in this `CEdit` control  
   
 ```  
 int CharFromPos(CPoint pt) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pt`  
- これのクライアント領域内のポイントの座標`CEdit`オブジェクト。  
+ The coordinates of a point in the client area of this `CEdit` object.  
   
-### <a name="return-value"></a>戻り値  
- 低位の文字インデックス**WORD**、上位の行インデックス**WORD**です。  
+### <a name="return-value"></a>Return Value  
+ The character index in the low-order **WORD**, and the line index in the high-order **WORD**.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  このメンバー関数は、Windows 95 および Windows NT 4.0 から使用可能です。  
+>  This member function is available beginning with Windows 95 and Windows NT 4.0.  
   
- 詳細については、次を参照してください。 [EM_CHARFROMPOS](http://msdn.microsoft.com/library/windows/desktop/bb761566)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_CHARFROMPOS](http://msdn.microsoft.com/library/windows/desktop/bb761566) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #3](../../mfc/reference/codesnippet/cpp/cedit-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#3](../../mfc/reference/codesnippet/cpp/cedit-class_2.cpp)]  
   
-##  <a name="clear"></a>CEdit::Clear  
- 削除する (オフ) 現在の選択 (存在する場合)、編集コントロールでは、この関数を呼び出します。  
+##  <a name="clear"></a>  CEdit::Clear  
+ Call this function to delete (clear) the current selection (if any) in the edit control.  
   
 ```  
 void Clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- による削除**クリア**で元に戻すことができます、[を元に戻す](#undo)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The deletion performed by **Clear** can be undone by calling the [Undo](#undo) member function.  
   
- 現在の選択範囲を削除し、削除された内容に配置し、クリップボード、[切り取り](#cut)メンバー関数。  
+ To delete the current selection and place the deleted contents into the Clipboard, call the [Cut](#cut) member function.  
   
- 詳細については、次を参照してください。 [WM_CLEAR](http://msdn.microsoft.com/library/windows/desktop/ms649020)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_CLEAR](http://msdn.microsoft.com/library/windows/desktop/ms649020) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit 4](../../mfc/reference/codesnippet/cpp/cedit-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#4](../../mfc/reference/codesnippet/cpp/cedit-class_3.cpp)]  
   
-##  <a name="copy"></a>CEdit::Copy  
- 関数を呼び出してこのコピーを現在の選択 (存在する場合) でクリップボードにエディット コントロールで**エディット**形式です。  
+##  <a name="copy"></a>  CEdit::Copy  
+ Call this function to coy the current selection (if any) in the edit control to the Clipboard in **CF_TEXT** format.  
   
 ```  
 void Copy();
 ```  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [WM_COPY](http://msdn.microsoft.com/library/windows/desktop/ms649022)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [WM_COPY](http://msdn.microsoft.com/library/windows/desktop/ms649022) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #5](../../mfc/reference/codesnippet/cpp/cedit-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#5](../../mfc/reference/codesnippet/cpp/cedit-class_4.cpp)]  
   
-##  <a name="create"></a>CEdit::Create  
- Windows のエディット コントロールを作成しにアタッチ、`CEdit`オブジェクト。  
+##  <a name="create"></a>  CEdit::Create  
+ Creates the Windows edit control and attaches it to the `CEdit` object.  
   
 ```  
 virtual BOOL Create(
@@ -317,106 +352,106 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- エディット コントロールのスタイルを指定します。 任意の組み合わせを適用[エディット スタイル](edit-styles.md)コントロールにします。  
+ Specifies the edit control's style. Apply any combination of [edit styles](edit-styles.md) to the control.  
   
  `rect`  
- エディット コントロールのサイズと位置を指定します。 指定できます、`CRect`オブジェクトまたは`RECT`構造体。  
+ Specifies the edit control's size and position. Can be a `CRect` object or `RECT` structure.  
   
  `pParentWnd`  
- エディット コントロールの親ウィンドウを指定します (通常、 `CDialog`)。 なければなりません**NULL**です。  
+ Specifies the edit control's parent window (usually a `CDialog`). It must not be **NULL**.  
   
  `nID`  
- エディット コントロールの ID を指定します  
+ Specifies the edit control's ID.  
   
-### <a name="return-value"></a>戻り値  
- 初期化が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if initialization is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CEdit` 2 つのステップ内のオブジェクト。 まずを呼び出して、`CEdit`コンス トラクターと、呼び出し**作成**、Windows のエディット コントロールを作成しにアタッチする、`CEdit`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CEdit` object in two steps. First, call the `CEdit` constructor and then call **Create**, which creates the Windows edit control and attaches it to the `CEdit` object.  
   
- ときに**作成**を実行する Windows の送信、 [WM_NCCREATE](http://msdn.microsoft.com/library/windows/desktop/ms632635)、 [WM_NCCALCSIZE](http://msdn.microsoft.com/library/windows/desktop/ms632634)、 [WM_CREATE](http://msdn.microsoft.com/library/windows/desktop/ms632619)と[WM_GETMINMAXINFO](http://msdn.microsoft.com/library/windows/desktop/ms632626)エディット コントロールへのメッセージ。  
+ When **Create** executes, Windows sends the [WM_NCCREATE](http://msdn.microsoft.com/library/windows/desktop/ms632635), [WM_NCCALCSIZE](http://msdn.microsoft.com/library/windows/desktop/ms632634), [WM_CREATE](http://msdn.microsoft.com/library/windows/desktop/ms632619), and [WM_GETMINMAXINFO](http://msdn.microsoft.com/library/windows/desktop/ms632626) messages to the edit control.  
   
- 既定では、これらのメッセージが処理されます、 [OnNcCreate](cwnd-class.md#onnccreate)、 [OnNcCalcSize](cwnd-class.md#onnccalcsize)、 [OnCreate](cwnd-class.md#oncreate)、および[OnGetMinMaxInfo](cwnd-class.md#ongetminmaxinfo)メンバー関数、`CWnd`基本クラスです。 既定のメッセージ処理を拡張するには、派生クラスを`CEdit`メッセージ マップを新しいクラスに追加し、上記のメッセージ ハンドラー メンバー関数をオーバーライドします。 オーバーライド`OnCreate`など、新しいクラスに必要な初期化を実行します。  
+ These messages are handled by default by the [OnNcCreate](cwnd-class.md#onnccreate), [OnNcCalcSize](cwnd-class.md#onnccalcsize), [OnCreate](cwnd-class.md#oncreate), and [OnGetMinMaxInfo](cwnd-class.md#ongetminmaxinfo) member functions in the `CWnd` base class. To extend the default message handling, derive a class from `CEdit`, add a message map to the new class, and override the above message-handler member functions. Override `OnCreate`, for example, to perform needed initialization for the new class.  
   
- 次の適用[ウィンドウ スタイル](window-styles.md)エディット コントロールにします。  
+ Apply the following [window styles](window-styles.md) to an edit control.  
   
-- **WS_CHILD**常に  
+- **WS_CHILD** Always  
   
-- **WS_VISIBLE**通常  
+- **WS_VISIBLE** Usually  
   
-- **WS_DISABLED**ことはほとんどありません  
+- **WS_DISABLED** Rarely  
   
-- **WS_GROUP**コントロールをグループ化  
+- **WS_GROUP** To group controls  
   
-- **WS_TABSTOP**タブ移動順序に編集コントロールを含める  
+- **WS_TABSTOP** To include edit control in the tabbing order  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #2](../../mfc/reference/codesnippet/cpp/cedit-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#2](../../mfc/reference/codesnippet/cpp/cedit-class_5.cpp)]  
   
-##  <a name="cut"></a>CEdit::Cut  
- エディット コントロールで (存在する場合) は、現在の選択 (カット) を削除するには、この関数を呼び出すし、削除したテキストでクリップボードにコピー**エディット**形式です。  
+##  <a name="cut"></a>  CEdit::Cut  
+ Call this function to delete (cut) the current selection (if any) in the edit control and copy the deleted text to the Clipboard in **CF_TEXT** format.  
   
 ```  
 void Cut();
 ```  
   
-### <a name="remarks"></a>コメント  
- による削除**切り取り**で元に戻すことができます、[を元に戻す](#undo)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The deletion performed by **Cut** can be undone by calling the [Undo](#undo) member function.  
   
- 削除したテキストをクリップボードに配置することがなく、現在の選択範囲を削除する呼び出し、[クリア](#clear)メンバー関数。  
+ To delete the current selection without placing the deleted text into the Clipboard, call the [Clear](#clear) member function.  
   
- 詳細については、次を参照してください。 [WM_CUT](http://msdn.microsoft.com/library/windows/desktop/ms649023)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_CUT](http://msdn.microsoft.com/library/windows/desktop/ms649023) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #6](../../mfc/reference/codesnippet/cpp/cedit-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#6](../../mfc/reference/codesnippet/cpp/cedit-class_6.cpp)]  
   
-##  <a name="emptyundobuffer"></a>CEdit::EmptyUndoBuffer  
- エディット コントロールの取り消しのフラグをリセット (消去) するには、この関数を呼び出します。  
+##  <a name="emptyundobuffer"></a>  CEdit::EmptyUndoBuffer  
+ Call this function to reset (clear) the undo flag of an edit control.  
   
 ```  
 void EmptyUndoBuffer();
 ```  
   
-### <a name="remarks"></a>コメント  
- エディット コントロールようになりましたことはできません、最後の操作を取り消します。 エディット コントロール内の操作が取り消せるされるたびに、元に戻すフラグが設定されています。  
+### <a name="remarks"></a>Remarks  
+ The edit control will now be unable to undo the last operation. The undo flag is set whenever an operation within the edit control can be undone.  
   
- 取り消しのフラグが自動的に消去されるたびに、 [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext)または[SetHandle](#sethandle) `CWnd`メンバー関数が呼び出されます。  
+ The undo flag is automatically cleared whenever the [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext) or [SetHandle](#sethandle)`CWnd` member functions are called.  
   
- 詳細については、次を参照してください。 [EM_EMPTYUNDOBUFFER](http://msdn.microsoft.com/library/windows/desktop/bb761568)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EMPTYUNDOBUFFER](http://msdn.microsoft.com/library/windows/desktop/bb761568) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #7](../../mfc/reference/codesnippet/cpp/cedit-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#7](../../mfc/reference/codesnippet/cpp/cedit-class_7.cpp)]  
   
-##  <a name="fmtlines"></a>CEdit::FmtLines  
- この関数では、複数行エディット コントロール内でソフト改行文字を含めることをオンまたはオフに設定します。  
+##  <a name="fmtlines"></a>  CEdit::FmtLines  
+ Call this function to set the inclusion of soft line-break characters on or off within a multiple-line edit control.  
   
 ```  
 BOOL FmtLines(BOOL bAddEOL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *bAddEOL*  
- ソフト改行文字が挿入されるかどうかを指定します。 値**TRUE**文字は; を挿入します。 値の**FALSE**それらを削除します。  
+ Specifies whether soft line-break characters are to be inserted. A value of **TRUE** inserts the characters; a value of **FALSE** removes them.  
   
-### <a name="return-value"></a>戻り値  
- 存在する場合、0 以外の値の書式設定が発生します。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if any formatting occurs; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ソフト改行は、次の 2 つのキャリッジ リターンとテキストの折り返しにより分割された行の末尾に挿入ラインフィードで構成されます。 ハード改行は、1 つの復帰と改行で構成されます。 ハード改行が付いている行には影響ありません`FmtLines`です。  
+### <a name="remarks"></a>Remarks  
+ A soft line break consists of two carriage returns and a linefeed inserted at the end of a line that is broken because of word wrapping. A hard line break consists of one carriage return and a linefeed. Lines that end with a hard line break are not affected by `FmtLines`.  
   
- Windows は、場合にのみ応答、`CEdit`オブジェクトは、複数行エディット コントロール。  
+ Windows will only respond if the `CEdit` object is a multiple-line edit control.  
   
- `FmtLines`によって返されるバッファーにのみ影響[GetHandle](#gethandle)とによって返されるテキスト[WM_GETTEXT](http://msdn.microsoft.com/library/windows/desktop/ms632627)です。 エディット コントロール内のテキストの表示に影響を与えません。  
+ `FmtLines` only affects the buffer returned by [GetHandle](#gethandle) and the text returned by [WM_GETTEXT](http://msdn.microsoft.com/library/windows/desktop/ms632627). It has no impact on the display of the text within the edit control.  
   
- 詳細については、次を参照してください。 [EM_FMTLINES](http://msdn.microsoft.com/library/windows/desktop/bb761570)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_FMTLINES](http://msdn.microsoft.com/library/windows/desktop/bb761570) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #8](../../mfc/reference/codesnippet/cpp/cedit-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#8](../../mfc/reference/codesnippet/cpp/cedit-class_8.cpp)]  
   
-##  <a name="getcuebanner"></a>CEdit::GetCueBanner  
- ヒントのテキスト、またはコントロールが空の場合、エディット コントロールでのヒントとして表示されるテキストを取得します。  
+##  <a name="getcuebanner"></a>  CEdit::GetCueBanner  
+ Retrieves the text that is displayed as the text cue, or tip, in an edit control when the control is empty.  
   
 ```  
 BOOL GetCueBanner(
@@ -426,64 +461,64 @@ BOOL GetCueBanner(
 CString GetCueBanner() const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [出力] `lpszText`  
- ヒントのテキストを表す文字列へのポインター。  
+### <a name="parameters"></a>Parameters  
+ [out] `lpszText`  
+ A pointer to a string that contains the cue text.  
   
- [入力] `cchText`  
- 受信できる文字数。 この番号には、終端が含まれています。`NULL`文字です。  
+ [in] `cchText`  
+ The number of characters that can be received. This number includes the terminating `NULL` character.  
   
-### <a name="return-value"></a>戻り値  
- 最初のオーバー ロードの`true`メソッドが成功しなかった場合は場合`false`です。  
+### <a name="return-value"></a>Return Value  
+ For the first overload, `true` if the method is successful; otherwise `false`.  
   
- 2 番目のオーバー ロードのため、 [CString](../../atl-mfc-shared/using-cstring.md)メソッドが成功した、それ以外の場合は、ヒントのテキストを含む空の文字列 ("") です。  
+ For the second overload, a [CString](../../atl-mfc-shared/using-cstring.md) that contains the cue text if the method is successful; otherwise, the empty string ("").  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [EM_GETCUEBANNER](http://msdn.microsoft.com/library/windows/desktop/bb761572)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 詳細については、次を参照してください。、 [Edit_GetCueBannerText](http://msdn.microsoft.com/library/windows/desktop/bb761695)マクロです。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [EM_GETCUEBANNER](http://msdn.microsoft.com/library/windows/desktop/bb761572) message, which is described in the Windows SDK. For more information, see the [Edit_GetCueBannerText](http://msdn.microsoft.com/library/windows/desktop/bb761695) macro.  
   
-##  <a name="getfirstvisibleline"></a>CEdit::GetFirstVisibleLine  
- エディット コントロールに表示されている最上位の行を判断するには、この関数を呼び出します。  
+##  <a name="getfirstvisibleline"></a>  CEdit::GetFirstVisibleLine  
+ Call this function to determine the topmost visible line in an edit control.  
   
 ```  
 int GetFirstVisibleLine() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 最上位に表示されている行の 0 から始まるインデックス。 単一行エディット コントロールでは、戻り値は 0 です。  
+### <a name="return-value"></a>Return Value  
+ The zero-based index of the topmost visible line. For single-line edit controls, the return value is 0.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_GETFIRSTVISIBLELINE](http://msdn.microsoft.com/library/windows/desktop/bb761574)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_GETFIRSTVISIBLELINE](http://msdn.microsoft.com/library/windows/desktop/bb761574) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #9](../../mfc/reference/codesnippet/cpp/cedit-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#9](../../mfc/reference/codesnippet/cpp/cedit-class_9.cpp)]  
   
-##  <a name="gethandle"></a>CEdit::GetHandle  
- 現在、複数行エディット コントロールに割り当てられたメモリへのハンドルを取得するには、この関数を呼び出します。  
+##  <a name="gethandle"></a>  CEdit::GetHandle  
+ Call this function to retrieve a handle to the memory currently allocated for a multiple-line edit control.  
   
 ```  
 HLOCAL GetHandle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- エディット コントロールの内容を保持するバッファーを識別するローカル メモリのハンドル。 単一行エディット コントロールにメッセージを送信するなどのエラーが発生した場合、戻り値は 0 です。  
+### <a name="return-value"></a>Return Value  
+ A local memory handle that identifies the buffer holding the contents of the edit control. If an error occurs, such as sending the message to a single-line edit control, the return value is 0.  
   
-### <a name="remarks"></a>コメント  
- ハンドルは、ローカル メモリ ハンドルがありのいずれかで使用できる、**ローカル**をローカル メモリを受け取る Windows メモリ関数をパラメーターとして処理します。  
+### <a name="remarks"></a>Remarks  
+ The handle is a local memory handle and may be used by any of the **Local** Windows memory functions that take a local memory handle as a parameter.  
   
- **GetHandle**複数行のエディット コントロールでのみ処理します。  
+ **GetHandle** is processed only by multiple-line edit controls.  
   
- 呼び出す**GetHandle**  ダイアログ ボックスがで作成された場合にのみ、ダイアログ ボックス内の複数行のエディット コントロールの**DS_LOCALEDIT**スタイル フラグを設定します。 場合、 **DS_LOCALEDIT**スタイルが設定されていない、0 以外の戻り値が表示されますが、返される値を使用することはできません。  
+ Call **GetHandle** for a multiple-line edit control in a dialog box only if the dialog box was created with the **DS_LOCALEDIT** style flag set. If the **DS_LOCALEDIT** style is not set, you will still get a nonzero return value, but you will not be able to use the returned value.  
   
 > [!NOTE]
-> **GetHandle** Windows 95/98 では動作しません。 呼び出す場合**GetHandle** Windows 95/98 では返します**NULL**です。 **GetHandle**は、Windows NT version 3.51 以降で説明されているように動作します。  
+> **GetHandle** will not work with Windows 95/98. If you call **GetHandle** in Windows 95/98, it will return **NULL**. **GetHandle** will work as documented under Windows NT, versions 3.51 and later.  
   
- 詳細については、次を参照してください。 [EM_GETHANDLE](http://msdn.microsoft.com/library/windows/desktop/bb761576)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETHANDLE](http://msdn.microsoft.com/library/windows/desktop/bb761576) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #10](../../mfc/reference/codesnippet/cpp/cedit-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#10](../../mfc/reference/codesnippet/cpp/cedit-class_10.cpp)]  
   
-##  <a name="gethighlight"></a>CEdit::GetHighlight  
- 現在の編集コントロールで強調表示されているテキストの範囲内の最初と最後の文字のインデックスを取得します。  
+##  <a name="gethighlight"></a>  CEdit::GetHighlight  
+ Gets the indexes of the first and last characters in a range of text that is highlighted in the current edit control.  
   
 ```  
 BOOL GetHighlight(
@@ -491,42 +526,42 @@ BOOL GetHighlight(
     int* pichEnd) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[出力] `pichStart`|強調表示されているテキストの範囲の最初の文字の 0 から始まるインデックス。|  
-|[出力] `pichEnd`|強調表示されているテキストの範囲の最後の文字の 0 から始まるインデックス。|  
+|[out] `pichStart`|Zero-based index of the first character in the range of text that is highlighted.|  
+|[out] `pichEnd`|Zero-based index of the last character in the range of text that is highlighted.|  
   
-### <a name="return-value"></a>戻り値  
- `true`このメソッドが成功した場合それ以外の場合、`false`です。  
+### <a name="return-value"></a>Return Value  
+ `true` if this method is successful; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [EM_GETHILITE](http://msdn.microsoft.com/library/windows/desktop/bb761578)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [EM_GETHILITE](http://msdn.microsoft.com/library/windows/desktop/bb761578) message, which is described in the Windows SDK.  
   
-##  <a name="getlimittext"></a>CEdit::GetLimitText  
- このテキストの制限値を取得するには、このメンバー関数を呼び出す`CEdit`オブジェクト。  
+##  <a name="getlimittext"></a>  CEdit::GetLimitText  
+ Call this member function to get the text limit for this `CEdit` object.  
   
 ```  
 UINT GetLimitText() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のテキストの制限、(バイト単位) でこの`CEdit`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The current text limit, in bytes, for this `CEdit` object.  
   
-### <a name="remarks"></a>コメント  
- テキストの制限は、(バイト単位) がエディット コントロールが受け入れることができる、テキストの最大量です。  
+### <a name="remarks"></a>Remarks  
+ The text limit is the maximum amount of text, in bytes, that the edit control can accept.  
   
 > [!NOTE]
->  このメンバー関数は、Windows 95 および Windows NT 4.0 から使用可能です。  
+>  This member function is available beginning with Windows 95 and Windows NT 4.0.  
   
- 詳細については、次を参照してください。 [EM_GETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761582)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761582) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #11](../../mfc/reference/codesnippet/cpp/cedit-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#11](../../mfc/reference/codesnippet/cpp/cedit-class_11.cpp)]  
   
-##  <a name="getline"></a>CEdit::GetLine  
- エディット コントロールから行のテキストを取得するには、この関数を呼び出すし、配置で`lpszBuffer`です。  
+##  <a name="getline"></a>  CEdit::GetLine  
+ Call this function to retrieve a line of text from an edit control and places it in `lpszBuffer`.  
   
 ```  
 int GetLine(
@@ -539,125 +574,125 @@ int GetLine(
     int nMaxLength) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 編集コントロールの複数行から取得する行番号を指定します。 行番号は 0 から始まります。値 0 は、最初の行を指定します。 このパラメーターは、単一行エディット コントロールを無視します。  
+ Specifies the line number to retrieve from a multiple-line edit control. Line numbers are zero-based; a value of 0 specifies the first line. This parameter is ignored by a single-line edit control.  
   
  `lpszBuffer`  
- 行のコピーを受け取るバッファーへのポインター。 バッファーの最初の単語は、バッファーにコピーする文字の最大数を指定する必要があります。  
+ Points to the buffer that receives a copy of the line. The first word of the buffer must specify the maximum number of characters that can be copied to the buffer.  
   
  `nMaxLength`  
- バッファーにコピーするバイトの最大数を指定します。 `GetLine`最初の単語にこの値を配置`lpszBuffer`Windows への呼び出しを行う前にします。  
+ Specifies the maximum number of bytes that can be copied to the buffer. `GetLine` places this value in the first word of `lpszBuffer` before making the call to Windows.  
   
-### <a name="return-value"></a>戻り値  
- 実際にコピーされたバイト数。 行番号がで指定された場合、戻り値は 0`nIndex`エディット コントロール内の行の数よりも大きいです。  
+### <a name="return-value"></a>Return Value  
+ The number of bytes actually copied. The return value is 0 if the line number specified by `nIndex` is greater than the number of lines in the edit control.  
   
-### <a name="remarks"></a>コメント  
- コピーした行に null 終端文字が含まれていません。  
+### <a name="remarks"></a>Remarks  
+ The copied line does not contain a null-termination character.  
   
- 詳細については、次を参照してください。 [EM_GETLINE](http://msdn.microsoft.com/library/windows/desktop/bb761584)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETLINE](http://msdn.microsoft.com/library/windows/desktop/bb761584) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::GetLineCount](#getlinecount)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::GetLineCount](#getlinecount).  
   
-##  <a name="getlinecount"></a>CEdit::GetLineCount  
- 複数行エディット コントロールで行の数を取得するには、この関数を呼び出します。  
+##  <a name="getlinecount"></a>  CEdit::GetLineCount  
+ Call this function to retrieve the number of lines in a multiple-line edit control.  
   
 ```  
 int GetLineCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 複数行にある行の数を表す整数では、コントロールを編集します。 エディット コントロールにテキストが入力されていない場合、戻り値は 1 です。  
+### <a name="return-value"></a>Return Value  
+ An integer containing the number of lines in the multiple-line edit control. If no text has been entered into the edit control, the return value is 1.  
   
-### <a name="remarks"></a>コメント  
- `GetLineCount`複数行エディット コントロールでのみ処理されます。  
+### <a name="remarks"></a>Remarks  
+ `GetLineCount` is only processed by multiple-line edit controls.  
   
- 詳細については、次を参照してください。 [EM_GETLINECOUNT](http://msdn.microsoft.com/library/windows/desktop/bb761586)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETLINECOUNT](http://msdn.microsoft.com/library/windows/desktop/bb761586) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #12](../../mfc/reference/codesnippet/cpp/cedit-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#12](../../mfc/reference/codesnippet/cpp/cedit-class_12.cpp)]  
   
-##  <a name="getmargins"></a>CEdit::GetMargins  
- この編集コントロールの左と右余白を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getmargins"></a>  CEdit::GetMargins  
+ Call this member function to retrieve the left and right margins of this edit control.  
   
 ```  
 DWORD GetMargins() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 低位の左余白の幅**WORD**と高い順序で右余白の幅**WORD**です。  
+### <a name="return-value"></a>Return Value  
+ The width of the left margin in the low-order **WORD** and the width of the right margin in the high-order **WORD**.  
   
-### <a name="remarks"></a>コメント  
- 余白はピクセル単位で測定されます。  
+### <a name="remarks"></a>Remarks  
+ Margins are measured in pixels.  
   
 > [!NOTE]
->  このメンバー関数は、Windows 95 および Windows NT 4.0 から使用可能です。  
+>  This member function is available beginning with Windows 95 and Windows NT 4.0.  
   
- 詳細については、次を参照してください。 [EM_GETMARGINS](http://msdn.microsoft.com/library/windows/desktop/bb761590)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETMARGINS](http://msdn.microsoft.com/library/windows/desktop/bb761590) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEditView::GetEditCtrl](ceditview-class.md#geteditctrl)です。  
+### <a name="example"></a>Example  
+  See the example for [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).  
   
-##  <a name="getmodify"></a>CEdit::GetModify  
- エディット コントロールの内容が変更されたかどうかを判断するには、この関数を呼び出します。  
+##  <a name="getmodify"></a>  CEdit::GetModify  
+ Call this function to determine whether the contents of an edit control have been modified.  
   
 ```  
 BOOL GetModify() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 編集コントロールの内容が変更された場合は 0 以外。0 のままである場合は変更されません。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the edit-control contents have been modified; 0 if they have remained unchanged.  
   
-### <a name="remarks"></a>コメント  
- Windows では、エディット コントロールの内容が変更されているかどうかを示す内部フラグを保持します。 このフラグをクリアすると、編集コントロールが最初に作成を呼び出してもクリア可能性があります、 [SetModify](#setmodify)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ Windows maintains an internal flag indicating whether the contents of the edit control have been changed. This flag is cleared when the edit control is first created and may also be cleared by calling the [SetModify](#setmodify) member function.  
   
- 詳細については、次を参照してください。 [EM_GETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761592)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761592) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #13](../../mfc/reference/codesnippet/cpp/cedit-class_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#13](../../mfc/reference/codesnippet/cpp/cedit-class_13.cpp)]  
   
-##  <a name="getpasswordchar"></a>CEdit::GetPasswordChar  
- この関数では、テキストを入力したときに、エディット コントロールに表示されるパスワードの文字を取得します。  
+##  <a name="getpasswordchar"></a>  CEdit::GetPasswordChar  
+ Call this function to retrieve the password character that is displayed in an edit control when the user enters text.  
   
 ```  
 TCHAR GetPasswordChar() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ユーザーが入力した文字の代わりに表示する文字を指定します。 戻り値は`NULL`パスワード文字が存在しない場合。  
+### <a name="return-value"></a>Return Value  
+ Specifies the character to be displayed instead of the character that the user typed. The return value is `NULL` if no password character exists.  
   
-### <a name="remarks"></a>コメント  
- 編集コントロールを作成する場合、 **ES_PASSWORD**スタイル、コントロールをサポートする DLL は、既定のパスワードの文字を決定します。 マニフェストまたは[InitCommonControlsEx](http://msdn.microsoft.com/library/windows/desktop/bb775697)メソッド決定 DLL をサポートするエディット コントロール。 User32.dll エディット コントロールをサポートしている場合、既定のパスワード文字はアスタリスク ('* '、U +002)。 Comctl32.dll version 6 は、エディット コントロールをサポートする場合、既定の文字は、黒の丸 ('●' で、U +0 25CF)。 詳細については、DLL とバージョンがサポートするコモン コントロールを参照してください[シェルと共通のコントロール バージョン](http://msdn.microsoft.com/library/windows/desktop/bb776779)します。  
+### <a name="remarks"></a>Remarks  
+ If you create the edit control with the **ES_PASSWORD** style, the DLL that supports the control determines the default password character. The manifest or the [InitCommonControlsEx](http://msdn.microsoft.com/library/windows/desktop/bb775697) method determines which DLL supports the edit control. If user32.dll supports the edit control, the default password character is ASTERISK ('*', U+002A). If comctl32.dll version 6 supports the edit control, the default character is BLACK CIRCLE ('●', U+25CF). For more information about which DLL and version supports the common controls, see [Shell and Common Controls Versions](http://msdn.microsoft.com/library/windows/desktop/bb776779).  
   
- このメソッドは、送信、 [EM_GETPASSWORDCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761594)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ This method sends the [EM_GETPASSWORDCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761594) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #14](../../mfc/reference/codesnippet/cpp/cedit-class_14.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#14](../../mfc/reference/codesnippet/cpp/cedit-class_14.cpp)]  
   
-##  <a name="getrect"></a>CEdit::GetRect  
- エディット コントロールの書式設定、四角形を取得するには、この関数を呼び出します。  
+##  <a name="getrect"></a>  CEdit::GetRect  
+ Call this function to get the formatting rectangle of an edit control.  
   
 ```  
 void GetRect(LPRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`書式の四角形を受け取る構造体。  
+ Points to the `RECT` structure that receives the formatting rectangle.  
   
-### <a name="remarks"></a>コメント  
- 書式設定の四角形は、これは、エディット コントロール ウィンドウのサイズの独立したテキストの外接する四角形です。  
+### <a name="remarks"></a>Remarks  
+ The formatting rectangle is the limiting rectangle of the text, which is independent of the size of the edit-control window.  
   
- によって複数行エディット コントロールの書式設定、四角形を変更することができます、 [SetRect](#setrect)と[角形](#setrectnp)メンバー関数。  
+ The formatting rectangle of a multiple-line edit control can be modified by the [SetRect](#setrect) and [SetRectNP](#setrectnp) member functions.  
   
- 詳細については、次を参照してください。 [EM_GETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761596)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761596) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::LimitText](#limittext)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::LimitText](#limittext).  
   
-##  <a name="getsel"></a>CEdit::GetSel  
- 開始と終了値、戻り値またはパラメーターを使用して、編集コントロールの現在の選択 (存在する場合) の文字位置を取得するには、この関数を呼び出します。  
+##  <a name="getsel"></a>  CEdit::GetSel  
+ Call this function to get the starting and ending character positions of the current selection (if any) in an edit control, using either the return value or the parameters.  
   
 ```  
 DWORD GetSel() const;  
@@ -667,135 +702,135 @@ void GetSel(
     int& nEndChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStartChar`  
- 現在の選択範囲の最初の文字の位置を受信する整数への参照。  
+ Reference to an integer that will receive the position of the first character in the current selection.  
   
  `nEndChar`  
- 現在の選択範囲の末尾を越えたダブルワードの位置を受信する整数への参照。  
+ Reference to an integer that will receive the position of the first nonselected character past the end of the current selection.  
   
-### <a name="return-value"></a>戻り値  
- バージョンを返す、`DWORD`上位ワードに選択範囲の終了後に下位ワードの開始位置と最初に選択されていない文字の位置を表す値を返します。  
+### <a name="return-value"></a>Return Value  
+ The version that returns a `DWORD` returns a value that contains the starting position in the low-order word and the position of the first nonselected character after the end of the selection in the high-order word.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_GETSEL](http://msdn.microsoft.com/library/windows/desktop/bb761598)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_GETSEL](http://msdn.microsoft.com/library/windows/desktop/bb761598) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #15](../../mfc/reference/codesnippet/cpp/cedit-class_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#15](../../mfc/reference/codesnippet/cpp/cedit-class_15.cpp)]  
   
-##  <a name="hideballoontip"></a>CEdit::HideBalloonTip  
- 現在の編集コントロールに関連付けられているバルーン ヒントを非表示にします。  
+##  <a name="hideballoontip"></a>  CEdit::HideBalloonTip  
+ Hides any balloon tip associated with the current edit control.  
   
 ```  
 BOOL HideBalloonTip();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `true`このメソッドが成功した場合それ以外の場合、`false`です。  
+### <a name="return-value"></a>Return Value  
+ `true` if this method is successful; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、 [EM_HIDEBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb761604)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This function sends the [EM_HIDEBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb761604) message, which is described in the Windows SDK.  
   
-##  <a name="limittext"></a>CEdit::LimitText  
- ユーザーがエディット コントロールに入力するテキストの長さを制限するには、この関数を呼び出します。  
+##  <a name="limittext"></a>  CEdit::LimitText  
+ Call this function to limit the length of the text that the user may enter into an edit control.  
   
 ```  
 void LimitText(int nChars = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nChars`  
- ユーザーが入力できるテキストの長さ (単位: バイト) を指定します。 このパラメーターが 0 の場合は、テキストの長さに設定されている**UINT_MAX**バイトです。 これが既定の動作です。  
+ Specifies the length (in bytes) of the text that the user can enter. If this parameter is 0, the text length is set to **UINT_MAX** bytes. This is the default behavior.  
   
-### <a name="remarks"></a>コメント  
- テキストの制限を変更すると、ユーザーが入力できるテキストのみが制限されます。 影響を与えません任意のテキストで既に編集コントロールにも、によって、編集コントロールにコピーされたテキストの長さに影響は、 [SetWindowText](cwnd-class.md#setwindowtext)メンバー関数内`CWnd`です。 アプリケーションで使用する場合、`SetWindowText`関数への呼び出しで指定されているよりエディット コントロールにテキストを配置する`LimitText`ユーザーがエディット コントロール内のテキストのいずれかを削除します。 ただし、テキストの制限は、ユーザーが新しいテキストに、既存のテキストを置換できないように、現在の選択範囲を削除しない限り、により、テキストは、テキストの制限値未満になってしまいます。  
+### <a name="remarks"></a>Remarks  
+ Changing the text limit restricts only the text the user can enter. It has no effect on any text already in the edit control, nor does it affect the length of the text copied to the edit control by the [SetWindowText](cwnd-class.md#setwindowtext) member function in `CWnd`. If an application uses the `SetWindowText` function to place more text into an edit control than is specified in the call to `LimitText`, the user can delete any of the text within the edit control. However, the text limit will prevent the user from replacing the existing text with new text, unless deleting the current selection causes the text to fall below the text limit.  
   
 > [!NOTE]
->  Win32 (Windows NT と Windows 95/98)、 [SetLimitText](#setlimittext)この関数を置き換えます。  
+>  In Win32 (Windows NT and Windows 95/98), [SetLimitText](#setlimittext) replaces this function.  
   
- 詳細については、次を参照してください。 [EM_LIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761607)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761607) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit 17](../../mfc/reference/codesnippet/cpp/cedit-class_16.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#17](../../mfc/reference/codesnippet/cpp/cedit-class_16.cpp)]  
   
-##  <a name="linefromchar"></a>CEdit::LineFromChar  
- 指定した文字のインデックスを含む行の行番号を取得するには、この関数を呼び出します。  
+##  <a name="linefromchar"></a>  CEdit::LineFromChar  
+ Call this function to retrieve the line number of the line that contains the specified character index.  
   
 ```  
 int LineFromChar(int nIndex = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- エディット コントロールのテキストに必要な文字の 0 から始まるインデックス値が含まれるか、-1 を含んでいます。 場合`nIndex`-1 で、現在の行では、カーソルがある行を指定します。  
+ Contains the zero-based index value for the desired character in the text of the edit control, or contains -1. If `nIndex` is -1, it specifies the current line, that is, the line that contains the caret.  
   
-### <a name="return-value"></a>戻り値  
- 指定された文字のインデックスを含む行の 0 から始まる行番号`nIndex`です。 場合`nIndex`-1 で、選択範囲の最初の文字を含む行の数が返されます。 選択されていない場合は、現在の行番号が返されます。  
+### <a name="return-value"></a>Return Value  
+ The zero-based line number of the line containing the character index specified by `nIndex`. If `nIndex` is -1, the number of the line that contains the first character of the selection is returned. If there is no selection, the current line number is returned.  
   
-### <a name="remarks"></a>コメント  
- 文字のインデックスは、エディット コントロールの先頭からの文字の数です。  
+### <a name="remarks"></a>Remarks  
+ A character index is the number of characters from the beginning of the edit control.  
   
- このメンバー関数は、複数行エディット コントロールでのみ使用します。  
+ This member function is only used by multiple-line edit controls.  
   
- 詳細については、次を参照してください。 [EM_LINEFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761609)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINEFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761609) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit # 18](../../mfc/reference/codesnippet/cpp/cedit-class_17.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#18](../../mfc/reference/codesnippet/cpp/cedit-class_17.cpp)]  
   
-##  <a name="lineindex"></a>CEdit::LineIndex  
- この関数では、複数行エディット コントロール内の行の文字インデックスを取得します。  
+##  <a name="lineindex"></a>  CEdit::LineIndex  
+ Call this function to retrieve the character index of a line within a multiple-line edit control.  
   
 ```  
 int LineIndex(int nLine = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLine`  
- エディット コントロールのテキストで目的の行のインデックス値が含まれていますか、-1 を含んでいます。 場合`nLine`-1 で、現在の行では、カーソルがある行を指定します。  
+ Contains the index value for the desired line in the text of the edit control, or contains -1. If `nLine` is -1, it specifies the current line, that is, the line that contains the caret.  
   
-### <a name="return-value"></a>戻り値  
- 指定した行の文字インデックス`nLine`または指定した行番号がエディット コントロール内の行の数より大きい場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The character index of the line specified in `nLine` or -1 if the specified line number is greater than the number of lines in the edit control.  
   
-### <a name="remarks"></a>コメント  
- 文字インデックスは、指定した行エディット コントロールの先頭から文字の数です。  
+### <a name="remarks"></a>Remarks  
+ The character index is the number of characters from the beginning of the edit control to the specified line.  
   
- このメンバー関数は、複数行エディット コントロールでのみ処理されます。  
+ This member function is only processed by multiple-line edit controls.  
   
- 詳細については、次を参照してください。 [EM_LINEINDEX](http://msdn.microsoft.com/library/windows/desktop/bb761611)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINEINDEX](http://msdn.microsoft.com/library/windows/desktop/bb761611) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #19](../../mfc/reference/codesnippet/cpp/cedit-class_18.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#19](../../mfc/reference/codesnippet/cpp/cedit-class_18.cpp)]  
   
-##  <a name="linelength"></a>CEdit::LineLength  
- 編集コントロール内の行の長さを取得します。  
+##  <a name="linelength"></a>  CEdit::LineLength  
+ Retrieves the length of a line in an edit control.  
   
 ```  
 int LineLength(int nLine = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLine`  
- 長さを取得する行の文字の 0 から始まるインデックス。 既定値は -1 です。  
+ The zero-based index of a character in the line whose length is to be retrieved. The default value is -1.  
   
-### <a name="return-value"></a>戻り値  
- 単一行エディット コントロールで、戻り値は、長さ`TCHAR`s、エディット コントロール内のテキスト。  
+### <a name="return-value"></a>Return Value  
+ For single-line edit controls, the return value is the length, in `TCHAR`s, of the text in the edit control.  
   
- 複数行エディット コントロールで、戻り値は、長さ`TCHAR`で指定された行の s、`nLine`パラメーター。 [!INCLUDE[vcpransi](../../atl-mfc-shared/reference/includes/vcpransi_md.md)]テキスト、長さは行のバイト数の場合 Unicode テキスト、長さは行の文字の数。 長さには、行の最後にキャリッジ リターン文字は含まれません。  
+ For multiline edit controls, the return value is the length, in `TCHAR`s, of the line specified by the `nLine` parameter. For [!INCLUDE[vcpransi](../../atl-mfc-shared/reference/includes/vcpransi_md.md)] text, the length is the number of bytes in the line; for Unicode text, the length is the number of characters in the line. The length does not include the carriage-return character at the end of the line.  
   
- 場合、`nLine`パラメーターは、コントロール内の文字数よりも多い、戻り値は 0 です。  
+ If the `nLine` parameter is more than the number of characters in the control, the return value is zero.  
   
- 場合、`nLine`パラメーターが-1、戻り値が選択されている文字を含む行で選択されていない文字の数。 たとえば、次の行の末尾から 8 番目の文字を 1 つの行の 4 番目の文字から選択範囲の場合、戻り値は 10 です。 つまり、3 つは、最初の行で、次の 7 個の文字です。  
+ If the `nLine` parameter is -1, the return value is the number of unselected characters in the lines that contain selected characters. For example, if the selection extends from the fourth character of one line through the eighth character from the end of the next line, the return value is 10. That is, three characters on the first line and seven on the next.  
   
- 詳細については、`TCHAR`を入力しを参照してください、`TCHAR`テーブルの行に[Windows Data Types](http://msdn.microsoft.com/library/windows/desktop/aa383751)です。  
+ For more information about the `TCHAR` type, see the `TCHAR` row in the table in [Windows Data Types](http://msdn.microsoft.com/library/windows/desktop/aa383751).  
   
-### <a name="remarks"></a>コメント  
- このメソッドはサポートされて、 [EM_LINELENGTH](http://msdn.microsoft.com/library/windows/desktop/bb761613)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method is supported by the [EM_LINELENGTH](http://msdn.microsoft.com/library/windows/desktop/bb761613) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::LineIndex](#lineindex)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::LineIndex](#lineindex).  
   
-##  <a name="linescroll"></a>CEdit::LineScroll  
- 複数行エディット コントロールのテキストをスクロールするには、この関数を呼び出します。  
+##  <a name="linescroll"></a>  CEdit::LineScroll  
+ Call this function to scroll the text of a multiple-line edit control.  
   
 ```  
 void LineScroll(
@@ -803,91 +838,91 @@ void LineScroll(
     int nChars = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLines`  
- 垂直方向にスクロールする行数を指定します。  
+ Specifies the number of lines to scroll vertically.  
   
  `nChars`  
- 水平方向にスクロールする文字位置の数を指定します。 編集コントロールにいずれかがある場合、この値は無視されます、 **ES_RIGHT**または**ES_CENTER**スタイル。  
+ Specifies the number of character positions to scroll horizontally. This value is ignored if the edit control has either the **ES_RIGHT** or **ES_CENTER** style.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、複数行エディット コントロールでのみ処理されます。  
+### <a name="remarks"></a>Remarks  
+ This member function is processed only by multiple-line edit controls.  
   
- エディット コントロールは、過去のエディット コントロールでテキストの最後の行は垂直方向にスクロールされません。 場合は、現在の行で指定された行の数と`nLines`エディット コントロールで行の合計数を超える場合、値がエディット コントロールの最後の行がエディット コントロール ウィンドウの一番上にスクロールされる基準を調整します。  
+ The edit control does not scroll vertically past the last line of text in the edit control. If the current line plus the number of lines specified by `nLines` exceeds the total number of lines in the edit control, the value is adjusted so that the last line of the edit control is scrolled to the top of the edit-control window.  
   
- `LineScroll`過去の任意の行の最後の文字、水平方向にスクロールするために使用します。  
+ `LineScroll` can be used to scroll horizontally past the last character of any line.  
   
- 詳細については、次を参照してください。 [EM_LINESCROLL](http://msdn.microsoft.com/library/windows/desktop/bb761615)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINESCROLL](http://msdn.microsoft.com/library/windows/desktop/bb761615) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::GetFirstVisibleLine](#getfirstvisibleline)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::GetFirstVisibleLine](#getfirstvisibleline).  
   
-##  <a name="paste"></a>CEdit::Paste  
- クリップボードからデータを挿入するには、この関数を呼び出して、`CEdit`のカーソル位置にします。  
+##  <a name="paste"></a>  CEdit::Paste  
+ Call this function to insert the data from the Clipboard into the `CEdit` at the insertion point.  
   
 ```  
 void Paste();
 ```  
   
-### <a name="remarks"></a>コメント  
- クリップボードのデータを格納する場合にのみ、データが挿入される**エディット**形式です。  
+### <a name="remarks"></a>Remarks  
+ Data is inserted only if the Clipboard contains data in **CF_TEXT** format.  
   
- 詳細については、次を参照してください。 [WM_PASTE](http://msdn.microsoft.com/library/windows/desktop/ms649028)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_PASTE](http://msdn.microsoft.com/library/windows/desktop/ms649028) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #20](../../mfc/reference/codesnippet/cpp/cedit-class_19.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#20](../../mfc/reference/codesnippet/cpp/cedit-class_19.cpp)]  
   
-##  <a name="posfromchar"></a>CEdit::PosFromChar  
- 内で指定された文字の位置 (左上隅) を取得するには、この関数を呼び出す`CEdit`オブジェクト。  
+##  <a name="posfromchar"></a>  CEdit::PosFromChar  
+ Call this function to get the position (top-left corner) of a given character within this `CEdit` object.  
   
 ```  
 CPoint PosFromChar(UINT nChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nChar`  
- 指定した文字の 0 から始まるインデックス。  
+ The zero-based index of the specified character.  
   
-### <a name="return-value"></a>戻り値  
- 指定された文字の左上隅の座標`nChar`です。  
+### <a name="return-value"></a>Return Value  
+ The coordinates of the top-left corner of the character specified by `nChar`.  
   
-### <a name="remarks"></a>コメント  
- 文字を指定するには、0 から始まるインデックス値を提供します。 場合`nChar`がのこの最後の文字のインデックスよりも大きい`CEdit`オブジェクトの戻り値は、この最後の文字の直後の文字の位置の座標を指定`CEdit`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The character is specified by giving its zero-based index value. If `nChar` is greater than the index of the last character in this `CEdit` object, the return value specifies the coordinates of the character position just past the last character in this `CEdit` object.  
   
 > [!NOTE]
->  このメンバー関数は、Windows 95 および Windows NT 4.0 から使用可能です。  
+>  This member function is available beginning with Windows 95 and Windows NT 4.0.  
   
- 詳細については、次を参照してください。 [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::LineFromChar](#linefromchar)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::LineFromChar](#linefromchar).  
   
-##  <a name="replacesel"></a>CEdit::ReplaceSel  
- 指定されたテキスト編集コントロールの現在の選択を置き換えるには、この関数を呼び出す`lpszNewText`です。  
+##  <a name="replacesel"></a>  CEdit::ReplaceSel  
+ Call this function to replace the current selection in an edit control with the text specified by `lpszNewText`.  
   
 ```  
 void ReplaceSel(LPCTSTR lpszNewText, BOOL bCanUndo = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszNewText`  
- 置換テキストを含む null で終わる文字列へのポインター。  
+ Points to a null-terminated string containing the replacement text.  
   
  `bCanUndo`  
- この関数が完了できることを指定するには、このパラメーターの値を設定**TRUE**です。 既定値は**FALSE**です。  
+ To specify that this function can be undone, set the value of this parameter to **TRUE** . The default value is **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- エディット コントロール内のテキストの一部だけを置換します。 すべてのテキストを置換する場合は、使用、[とき](cwnd-class.md#setwindowtext)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ Replaces only a portion of the text in an edit control. If you want to replace all of the text, use the [CWnd::SetWindowText](cwnd-class.md#setwindowtext) member function.  
   
- 現在選択されていない、置換テキストは、現在のカーソル位置に挿入されます。  
+ If there is no current selection, the replacement text is inserted at the current cursor location.  
   
- 詳細については、次を参照してください。 [EM_REPLACESEL](http://msdn.microsoft.com/library/windows/desktop/bb761633)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_REPLACESEL](http://msdn.microsoft.com/library/windows/desktop/bb761633) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::LineIndex](#lineindex)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::LineIndex](#lineindex).  
   
-##  <a name="setcuebanner"></a>CEdit::SetCueBanner  
- ヒントのテキストとして表示されるか、ヒントは、エディット コントロールが空の場合を制御するテキストを設定します。  
+##  <a name="setcuebanner"></a>  CEdit::SetCueBanner  
+ Sets the text that is displayed as the text cue, or tip, in an edit control when the control is empty.  
   
 ```  
 BOOL SetCueBanner(LPCWSTR lpszText);
@@ -898,60 +933,60 @@ BOOL SetCueBanner(
     BOOL fDrawWhenFocused = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszText`  
- エディット コントロールに表示されるヒントを含む文字列へのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszText`  
+ Pointer to a string that contains the cue to display in the edit control.  
   
- [入力] `fDrawWhenFocused`  
- 場合`false`ユーザーがエディット コントロールでクリックするし、フォーカスを制御キュー バナーは描画されません。  
+ [in] `fDrawWhenFocused`  
+ If `false`, the cue banner is not drawn when the user clicks in the edit control and gives the control the focus.  
   
- 場合`true`コントロールにフォーカスがある場合でも、キュー バナーを描画します。 キュー バナーには、ユーザーがコントロールに入力を開始すると表示されなくなります。  
+ If `true`, the cue banner is drawn even when the control has focus. The cue banner disappears when the user starts to type in the control.  
   
- 既定値は `false` です。  
+ The default value is `false`.  
   
-### <a name="return-value"></a>戻り値  
- `true`メソッドが成功した場合それ以外の場合`false`です。  
+### <a name="return-value"></a>Return Value  
+ `true` if the method is successful; otherwise `false`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [EM_SETCUEBANNER](http://msdn.microsoft.com/library/windows/desktop/bb761639)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 詳細については、次を参照してください。、 [Edit_SetCueBannerTextFocused](http://msdn.microsoft.com/library/windows/desktop/bb761703)マクロです。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [EM_SETCUEBANNER](http://msdn.microsoft.com/library/windows/desktop/bb761639) message, which is described in the Windows SDK. For more information, see the [Edit_SetCueBannerTextFocused](http://msdn.microsoft.com/library/windows/desktop/bb761703) macro.  
   
-### <a name="example"></a>例  
- 次の例で、 [CEdit::SetCueBanner](#setcuebanner)メソッドです。  
+### <a name="example"></a>Example  
+ The following example demonstrates the [CEdit::SetCueBanner](#setcuebanner) method.  
   
- [!code-cpp[NVC_MFC_CEdit_s&#1;2](../../mfc/reference/codesnippet/cpp/cedit-class_20.cpp)]  
+ [!code-cpp[NVC_MFC_CEdit_s1#2](../../mfc/reference/codesnippet/cpp/cedit-class_20.cpp)]  
   
-##  <a name="sethandle"></a>CEdit::SetHandle  
- 複数行エディット コントロールで使用されるローカル メモリへのハンドルを設定するには、この関数を呼び出します。  
+##  <a name="sethandle"></a>  CEdit::SetHandle  
+ Call this function to set the handle to the local memory that will be used by a multiple-line edit control.  
   
 ```  
 void SetHandle(HLOCAL hBuffer);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *hBuffer*  
- ローカル メモリへのハンドルが含まれています。 このハンドルを前回呼び出したときに作成する必要があります、 [LocalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366723) Windows 関数を使用して、**あらかじめ**フラグ。 メモリは、null で終わる文字列を格納すると見なされます。 場合はそうでない場合は、割り当てられたメモリの最初のバイトが 0 に設定する必要があります。  
+ Contains a handle to the local memory. This handle must have been created by a previous call to the [LocalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366723) Windows function using the **LMEM_MOVEABLE** flag. The memory is assumed to contain a null-terminated string. If this is not the case, the first byte of the allocated memory should be set to 0.  
   
-### <a name="remarks"></a>コメント  
- 独自のバッファーを割り当てる代わりに現在表示されているテキストを格納するのに、このバッファーをエディット コントロールで使用されます。  
+### <a name="remarks"></a>Remarks  
+ The edit control will then use this buffer to store the currently displayed text instead of allocating its own buffer.  
   
- このメンバー関数は、複数行エディット コントロールでのみ処理されます。  
+ This member function is processed only by multiple-line edit controls.  
   
- 使用するアプリケーションでは、新しいメモリ ハンドルを設定、前に、 [GetHandle](#gethandle)を現在のメモリ バッファーへのハンドルを取得し、空きメモリを使用してそのメンバー関数、 **LocalFree** Windows の機能です。  
+ Before an application sets a new memory handle, it should use the [GetHandle](#gethandle) member function to get the handle to the current memory buffer and free that memory using the **LocalFree** Windows function.  
   
- `SetHandle`元に戻すバッファーをクリア (、 [CanUndo](#canundo)メンバー関数は、0 を返します) と内部変更フラグ (、[この](#getmodify)メンバー関数は、0 を返します)。 エディット コントロール ウィンドウが再描画されます。  
+ `SetHandle` clears the undo buffer (the [CanUndo](#canundo) member function then returns 0) and the internal modification flag (the [GetModify](#getmodify) member function then returns 0). The edit-control window is redrawn.  
   
- ダイアログ ボックスを作成する場合にのみ、ダイアログ ボックスで複数行エディット コントロールでは、このメンバー関数を使用することができます、 **DS_LOCALEDIT**スタイル フラグを設定します。  
+ You can use this member function in a multiple-line edit control in a dialog box only if you have created the dialog box with the **DS_LOCALEDIT** style flag set.  
   
 > [!NOTE]
-> **GetHandle** Windows 95/98 では動作しません。 呼び出す場合**GetHandle** Windows 95/98 では返します**NULL**です。 **GetHandle**は、Windows NT version 3.51 以降で説明されているように動作します。  
+> **GetHandle** will not work with Windows 95/98. If you call **GetHandle** in Windows 95/98, it will return **NULL**. **GetHandle** will work as documented under Windows NT, versions 3.51 and later.  
   
- 詳細については、次を参照してください。 [EM_SETHANDLE](http://msdn.microsoft.com/library/windows/desktop/bb761641)、 [LocalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366723)、および[LocalFree](http://msdn.microsoft.com/library/windows/desktop/aa366730)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETHANDLE](http://msdn.microsoft.com/library/windows/desktop/bb761641), [LocalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366723), and [LocalFree](http://msdn.microsoft.com/library/windows/desktop/aa366730) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit # 22](../../mfc/reference/codesnippet/cpp/cedit-class_21.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#22](../../mfc/reference/codesnippet/cpp/cedit-class_21.cpp)]  
   
-##  <a name="sethighlight"></a>CEdit::SetHighlight  
- 強調表示に現在表示されているテキストの範囲は、コントロールを編集します。  
+##  <a name="sethighlight"></a>  CEdit::SetHighlight  
+ Highlights a range of text that is displayed in the current edit control.  
   
 ```  
 void SetHighlight(
@@ -959,41 +994,41 @@ void SetHighlight(
     int ichEnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `ichStart`|強調表示するテキストの範囲の最初の文字の 0 から始まるインデックス。|  
-|[入力] `ichEnd`|強調表示するテキストの範囲の最後の文字の 0 から始まるインデックス。|  
+|[in] `ichStart`|Zero-based index of the first character in the range of text to highlight.|  
+|[in] `ichEnd`|Zero-based index of the last character in the range of text to highlight.|  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [EM_SETHILITE](http://msdn.microsoft.com/library/windows/desktop/bb761643)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [EM_SETHILITE](http://msdn.microsoft.com/library/windows/desktop/bb761643) message, which is described in the Windows SDK.  
   
-##  <a name="setlimittext"></a>CEdit::SetLimitText  
- このテキストの制限を設定するには、このメンバー関数を呼び出す`CEdit`オブジェクト。  
+##  <a name="setlimittext"></a>  CEdit::SetLimitText  
+ Call this member function to set the text limit for this `CEdit` object.  
   
 ```  
 void SetLimitText(UINT nMax);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMax`  
- 文字で、新しいテキスト制限。  
+ The new text limit, in characters.  
   
-### <a name="remarks"></a>コメント  
- テキストの制限は、エディット コントロールが受け入れることができる文字のテキストの最大量です。  
+### <a name="remarks"></a>Remarks  
+ The text limit is the maximum amount of text, in characters, that the edit control can accept.  
   
- テキストの制限を変更すると、ユーザーが入力できるテキストのみが制限されます。 影響を与えません任意のテキストで既に編集コントロールにも、によって、編集コントロールにコピーされたテキストの長さに影響は、 [SetWindowText](cwnd-class.md#setwindowtext)メンバー関数内`CWnd`です。 アプリケーションで使用する場合、`SetWindowText`関数への呼び出しで指定されているよりエディット コントロールにテキストを配置する`LimitText`ユーザーがエディット コントロール内のテキストのいずれかを削除します。 ただし、テキストの制限は、ユーザーが新しいテキストに、既存のテキストを置換できないように、現在の選択範囲を削除しない限り、により、テキストは、テキストの制限値未満になってしまいます。  
+ Changing the text limit restricts only the text the user can enter. It has no effect on any text already in the edit control, nor does it affect the length of the text copied to the edit control by the [SetWindowText](cwnd-class.md#setwindowtext) member function in `CWnd`. If an application uses the `SetWindowText` function to place more text into an edit control than is specified in the call to `LimitText`, the user can delete any of the text within the edit control. However, the text limit will prevent the user from replacing the existing text with new text, unless deleting the current selection causes the text to fall below the text limit.  
   
- この関数は[LimitText](#limittext) Win32 でします。  
+ This function replaces [LimitText](#limittext) in Win32.  
   
- 詳細については、次を参照してください。 [EM_SETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761647)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761647) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEditView::GetEditCtrl](ceditview-class.md#geteditctrl)です。  
+### <a name="example"></a>Example  
+  See the example for [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).  
   
-##  <a name="setmargins"></a>CEdit::SetMargins  
- この編集コントロールの左と右余白を設定するには、このメソッドを呼び出します。  
+##  <a name="setmargins"></a>  CEdit::SetMargins  
+ Call this method to set the left and right margins of this edit control.  
   
 ```  
 void SetMargins(
@@ -1001,143 +1036,143 @@ void SetMargins(
     UINT nRight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nLeft*  
- ピクセル単位で、新しいの左余白の幅。  
+ The width of the new left margin, in pixels.  
   
  *nRight*  
- ピクセル単位で、新しい右余白の幅。  
+ The width of the new right margin, in pixels.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  このメンバー関数は、Windows 95 および Windows NT 4.0 から使用可能です。  
+>  This member function is available beginning with Windows 95 and Windows NT 4.0.  
   
- 詳細については、次を参照してください。 [EM_SETMARGINS](http://msdn.microsoft.com/library/windows/desktop/bb761649)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETMARGINS](http://msdn.microsoft.com/library/windows/desktop/bb761649) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEditView::GetEditCtrl](ceditview-class.md#geteditctrl)です。  
+### <a name="example"></a>Example  
+  See the example for [CEditView::GetEditCtrl](ceditview-class.md#geteditctrl).  
   
-##  <a name="setmodify"></a>CEdit::SetModify  
- 設定または編集コントロールの変更されたフラグをオフにするには、この関数を呼び出します。  
+##  <a name="setmodify"></a>  CEdit::SetModify  
+ Call this function to set or clear the modified flag for an edit control.  
   
 ```  
 void SetModify(BOOL bModified = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bModified`  
- 値**TRUE**テキストが変更されたことを示す、値を**FALSE**修正されていないことを示します。 既定では、変更されたフラグは設定されます。  
+ A value of **TRUE** indicates that the text has been modified, and a value of **FALSE** indicates it is unmodified. By default, the modified flag is set.  
   
-### <a name="remarks"></a>コメント  
- 変更されたフラグは、エディット コントロール内のテキストが変更されたかどうかを示します。 ユーザーがテキストを変更するたびに自動的に設定されます。 その値を取得することがあります、[この](#getmodify)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The modified flag indicates whether or not the text within the edit control has been modified. It is automatically set whenever the user changes the text. Its value may be retrieved with the [GetModify](#getmodify) member function.  
   
- 詳細については、次を参照してください。 [EM_SETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761651)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761651) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::GetModify](#getmodify)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::GetModify](#getmodify).  
   
-##  <a name="setpasswordchar"></a>CEdit::SetPasswordChar  
- 設定するか、ユーザーがテキストを入力したときに、エディット コントロールに表示されるパスワード文字を削除するには、この関数を呼び出します。  
+##  <a name="setpasswordchar"></a>  CEdit::SetPasswordChar  
+ Call this function to set or remove a password character displayed in an edit control when the user types text.  
   
 ```  
 void SetPasswordChar(TCHAR ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *ch*  
- ユーザーが入力文字の代わりに表示する文字を指定します。 場合*ch*が 0 の場合、ユーザーによって入力された実際の文字が表示されます。  
+ Specifies the character to be displayed in place of the character typed by the user. If *ch* is 0, the actual characters typed by the user are displayed.  
   
-### <a name="remarks"></a>コメント  
- パスワードの文字を設定すると、各文字をユーザーの種類の文字が表示されます。  
+### <a name="remarks"></a>Remarks  
+ When a password character is set, that character is displayed for each character the user types.  
   
- このメンバー関数には、エディット コントロールの複数行に影響はありません。  
+ This member function has no effect on a multiple-line edit control.  
   
- ときに、`SetPasswordChar`メンバー関数が呼び出されると、`CEdit`で指定された文字を使用してすべて表示可能な文字を再描画*ch*です。  
+ When the `SetPasswordChar` member function is called, `CEdit` will redraw all visible characters using the character specified by *ch*.  
   
- 編集コントロールが作成された場合、 [ES_PASSWORD](edit-styles.md)スタイル、既定のパスワードの文字に設定には、アスタリスク ( **\***)。 このスタイルは`SetPasswordChar`で呼び出された*ch*を 0 に設定します。  
+ If the edit control is created with the [ES_PASSWORD](edit-styles.md) style, the default password character is set to an asterisk ( **\***). This style is removed if `SetPasswordChar` is called with *ch* set to 0.  
   
- 詳細については、次を参照してください。 [EM_SETPASSWORDCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761653)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETPASSWORDCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761653) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #16](../../mfc/reference/codesnippet/cpp/cedit-class_22.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#16](../../mfc/reference/codesnippet/cpp/cedit-class_22.cpp)]  
   
-##  <a name="setreadonly"></a>CEdit::SetReadOnly  
- エディット コントロールの読み取り専用の状態を設定するには、この関数を呼び出します。  
+##  <a name="setreadonly"></a>  CEdit::SetReadOnly  
+ Calls this function to set the read-only state of an edit control.  
   
 ```  
 BOOL SetReadOnly(BOOL bReadOnly = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bReadOnly`  
- 設定するか、編集コントロールの読み取り専用の状態を削除するかどうかを指定します。 値**TRUE**状態を設定する読み取り専用です。 値の**FALSE**を読み取り/書き込みの状態を設定します。  
+ Specifies whether to set or remove the read-only state of the edit control. A value of **TRUE** sets the state to read-only; a value of **FALSE** sets the state to read/write.  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、操作が成功、または 0 の場合、エラーが発生します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation is successful, or 0 if an error occurs.  
   
-### <a name="remarks"></a>コメント  
- テストすることによって、現在の設定が見つかりません、 [ES_READONLY](edit-styles.md)の戻り値のフラグ[状態](cwnd-class.md#getstyle)です。  
+### <a name="remarks"></a>Remarks  
+ The current setting can be found by testing the [ES_READONLY](edit-styles.md) flag in the return value of [CWnd::GetStyle](cwnd-class.md#getstyle).  
   
- 詳細については、次を参照してください。 [EM_SETREADONLY](http://msdn.microsoft.com/library/windows/desktop/bb761655)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETREADONLY](http://msdn.microsoft.com/library/windows/desktop/bb761655) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit # 23](../../mfc/reference/codesnippet/cpp/cedit-class_23.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#23](../../mfc/reference/codesnippet/cpp/cedit-class_23.cpp)]  
   
-##  <a name="setrect"></a>CEdit::SetRect  
- 指定された座標を使用して、四角形の寸法を設定するには、この関数を呼び出します。  
+##  <a name="setrect"></a>  CEdit::SetRect  
+ Call this function to set the dimensions of a rectangle using the specified coordinates.  
   
 ```  
 void SetRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造または`CRect`新しい書式設定の四角形の寸法を指定するオブジェクト。  
+ Points to the `RECT` structure or `CRect` object that specifies the new dimensions of the formatting rectangle.  
   
-### <a name="remarks"></a>コメント  
- このメンバーは、複数行エディット コントロールでのみ処理されます。  
+### <a name="remarks"></a>Remarks  
+ This member is processed only by multiple-line edit controls.  
   
- 使用して`SetRect`複数行の四角形は、書式を設定するコントロールを編集します。 書式設定の四角形は、これは、エディット コントロール ウィンドウのサイズの独立したテキストの外接する四角形です。 エディット コントロールが最初に作成されるときに書式設定の四角形は、エディット コントロール ウィンドウのクライアント領域と同じです。 使用して、`SetRect`メンバー関数は、アプリケーションと、書式の四角形エディット コントロール ウィンドウより大きいか小さいです。  
+ Use `SetRect` to set the formatting rectangle of a multiple-line edit control. The formatting rectangle is the limiting rectangle of the text, which is independent of the size of the edit-control window. When the edit control is first created, the formatting rectangle is the same as the client area of the edit-control window. By using the `SetRect` member function, an application can make the formatting rectangle larger or smaller than the edit-control window.  
   
- スクロール バーがエディット コントロールがない場合は、テキストは、クリップされます、ラップされません書式の四角形のウィンドウよりも大きいが行われた場合。 エディット コントロールに境界線が含まれている場合は、境界線のサイズによって書式設定の四角形が少なくなります。 によって返される四角形を調整する場合は、`GetRect`メンバー関数は、四角形に渡す前に境界線のサイズを削除する必要があります`SetRect`です。  
+ If the edit control has no scroll bar, text will be clipped, not wrapped, if the formatting rectangle is made larger than the window. If the edit control contains a border, the formatting rectangle is reduced by the size of the border. If you adjust the rectangle returned by the `GetRect` member function, you must remove the size of the border before you pass the rectangle to `SetRect`.  
   
- ときに`SetRect`が呼び出されると、エディット コントロールのテキストも再フォーマットし、再表示されます。  
+ When `SetRect` is called, the edit control's text is also reformatted and redisplayed.  
   
- 詳細については、次を参照してください。 [EM_SETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761657)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761657) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit # 24](../../mfc/reference/codesnippet/cpp/cedit-class_24.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#24](../../mfc/reference/codesnippet/cpp/cedit-class_24.cpp)]  
   
-##  <a name="setrectnp"></a>CEdit::SetRectNP  
- この関数では、複数行エディット コントロールの書式設定の四角形を設定します。  
+##  <a name="setrectnp"></a>  CEdit::SetRectNP  
+ Call this function to set the formatting rectangle of a multiple-line edit control.  
   
 ```  
 void SetRectNP(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造または`CRect`新しい四角形の寸法を指定するオブジェクト。  
+ Points to a `RECT` structure or `CRect` object that specifies the new dimensions of the rectangle.  
   
-### <a name="remarks"></a>コメント  
- 書式設定の四角形は、これは、エディット コントロール ウィンドウのサイズの独立したテキストの外接する四角形です。  
+### <a name="remarks"></a>Remarks  
+ The formatting rectangle is the limiting rectangle of the text, which is independent of the size of the edit-control window.  
   
- `SetRectNP`同じですが、`SetRect`のメンバー関数が、編集コントロールのウィンドウが再描画されません。  
+ `SetRectNP` is identical to the `SetRect` member function except that the edit-control window is not redrawn.  
   
- エディット コントロールが最初に作成されるときに書式設定の四角形は、エディット コントロール ウィンドウのクライアント領域と同じです。 呼び出して、`SetRectNP`メンバー関数は、アプリケーションと、書式の四角形エディット コントロール ウィンドウより大きいか小さいです。  
+ When the edit control is first created, the formatting rectangle is the same as the client area of the edit-control window. By calling the `SetRectNP` member function, an application can make the formatting rectangle larger or smaller than the edit-control window.  
   
- スクロール バーがエディット コントロールがない場合は、テキストは、クリップされます、ラップされません書式の四角形のウィンドウよりも大きいが行われた場合。  
+ If the edit control has no scroll bar, text will be clipped, not wrapped, if the formatting rectangle is made larger than the window.  
   
- このメンバーは、複数行エディット コントロールでのみ処理されます。  
+ This member is processed only by multiple-line edit controls.  
   
- 詳細については、次を参照してください。 [EM_SETRECTNP](http://msdn.microsoft.com/library/windows/desktop/bb761659)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETRECTNP](http://msdn.microsoft.com/library/windows/desktop/bb761659) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::SetRect](#setrect)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::SetRect](#setrect).  
   
-##  <a name="setsel"></a>CEdit::SetSel  
- エディット コントロール内の文字の範囲を選択するには、この関数を呼び出します。  
+##  <a name="setsel"></a>  CEdit::SetSel  
+ Call this function to select a range of characters in an edit control.  
   
 ```  
 void SetSel(
@@ -1151,27 +1186,27 @@ void SetSel(
     BOOL bNoScroll = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *dwSelection*  
- 下位ワード内の開始位置と高位の単語の終了位置を指定します。 下位ワードが 0 で、上位ワードが-1 の場合、エディット コントロール内のすべてのテキストが選択されます。 下位ワードが-1 の場合は、現在の選択項目が削除されます。  
+ Specifies the starting position in the low-order word and the ending position in the high-order word. If the low-order word is 0 and the high-order word is -1, all the text in the edit control is selected. If the low-order word is -1, any current selection is removed.  
   
  *bNoScroll*  
- カレットをスクロールして表示するかどうかを示します。 場合**FALSE**キャレットをスクロールして表示します。 場合**TRUE**カーソルがスクロール表示されません。  
+ Indicates whether the caret should be scrolled into view. If **FALSE**, the caret is scrolled into view. If **TRUE**, the caret is not scrolled into view.  
   
  `nStartChar`  
- 開始位置を指定します。 場合`nStartChar`は 0 と`nEndChar`-1 で、編集コントロール内のテキストが選択されています。 場合`nStartChar`-1 で、現在の選択項目を削除します。  
+ Specifies the starting position. If `nStartChar` is 0 and `nEndChar` is -1, all the text in the edit control is selected. If `nStartChar` is -1, any current selection is removed.  
   
  `nEndChar`  
- 終了位置を指定します。  
+ Specifies the ending position.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_SETSEL](http://msdn.microsoft.com/library/windows/desktop/bb761661)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_SETSEL](http://msdn.microsoft.com/library/windows/desktop/bb761661) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEdit::GetSel](#getsel)です。  
+### <a name="example"></a>Example  
+  See the example for [CEdit::GetSel](#getsel).  
   
-##  <a name="settabstops"></a>CEdit::SetTabStops  
- この関数では、複数行エディット コントロールでタブ位置を設定します。  
+##  <a name="settabstops"></a>  CEdit::SetTabStops  
+ Call this function to set the tab stops in a multiple-line edit control.  
   
 ```  
 void SetTabStops();  
@@ -1183,35 +1218,35 @@ BOOL SetTabStops(
     LPINT rgTabStops);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cxEachStop`  
- タブ ストップに設定することを指定すべて`cxEachStop`ダイアログ単位です。  
+ Specifies that tab stops are to be set at every `cxEachStop` dialog units.  
   
  `nTabStops`  
- 含まれているタブの数を指定`rgTabStops`です。 この番号は、1 より大きくなければなりません。  
+ Specifies the number of tab stops contained in `rgTabStops`. This number must be greater than 1.  
   
  `rgTabStops`  
- ダイアログ単位で、タブを指定する符号なし整数の配列へのポインターを停止します。 ダイアログ単位は、水平または垂直距離です。 1 つの水平方向のダイアログ単位は、現在のダイアログ ベースの幅の単位の 4 分の 1 に等しいと 1 の垂直方向のダイアログ単位は、現在のダイアログ ベースの高さユニットの 8 分の 1 に等しい。 ダイアログの基本単位は、現在のシステム フォントの幅と高さに基づいて計算されます。 **GetDialogBaseUnits** Windows の機能はピクセル単位で現在のダイアログ ボックスの基本単位を返します。  
+ Points to an array of unsigned integers specifying the tab stops in dialog units. A dialog unit is a horizontal or vertical distance. One horizontal dialog unit is equal to one-fourth of the current dialog base width unit, and 1 vertical dialog unit is equal to one-eighth of the current dialog base height unit. The dialog base units are computed based on the height and width of the current system font. The **GetDialogBaseUnits** Windows function returns the current dialog base units in pixels.  
   
-### <a name="return-value"></a>戻り値  
- タブが設定された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the tabs were set; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 複数行エディット コントロールにテキストをコピーしたら、テキスト内の任意のタブ文字を次のタブ ストップまで生成される領域となります。  
+### <a name="remarks"></a>Remarks  
+ When text is copied to a multiple-line edit control, any tab character in the text will cause space to be generated up to the next tab stop.  
   
- タブ ストップを 32 ダイアログ単位の既定のサイズに設定するには、このメンバー関数のパラメーターなしのバージョンを呼び出します。 タブ ストップを 32 以外のサイズを設定するとバージョンを呼び出す、`cxEachStop`パラメーター。 サイズの配列をタブ ストップを設定するには、2 つのパラメーターでバージョンを使用します。  
+ To set tab stops to the default size of 32 dialog units, call the parameterless version of this member function. To set tab stops to a size other than 32, call the version with the `cxEachStop` parameter. To set tab stops to an array of sizes, use the version with two parameters.  
   
- このメンバー関数は、複数行エディット コントロールでのみ処理されます。  
+ This member function is only processed by multiple-line edit controls.  
   
- `SetTabStops`自動的に再描画されない、編集ウィンドウです。 テキスト編集コントロールのタブ ストップを変更する場合を呼び出す[エディット](cwnd-class.md#invalidaterect)編集ウィンドウが再描画します。  
+ `SetTabStops` does not automatically redraw the edit window. If you change the tab stops for text already in the edit control, call [CWnd::InvalidateRect](cwnd-class.md#invalidaterect) to redraw the edit window.  
   
- 詳細については、次を参照してください。 [EM_SETTABSTOPS](http://msdn.microsoft.com/library/windows/desktop/bb761663)と[GetDialogBaseUnits](http://msdn.microsoft.com/library/windows/desktop/ms645475)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETTABSTOPS](http://msdn.microsoft.com/library/windows/desktop/bb761663) and [GetDialogBaseUnits](http://msdn.microsoft.com/library/windows/desktop/ms645475) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CEditView::SetTabStops](ceditview-class.md#settabstops)です。  
+### <a name="example"></a>Example  
+  See the example for [CEditView::SetTabStops](ceditview-class.md#settabstops).  
   
-##  <a name="showballoontip"></a>CEdit::ShowBalloonTip  
- 現在の編集コントロールに関連付けられているバルーン ヒントを表示します。  
+##  <a name="showballoontip"></a>  CEdit::ShowBalloonTip  
+ Displays a balloon tip that is associated with the current edit control.  
   
 ```  
 BOOL ShowBalloonTip(PEDITBALLOONTIP pEditBalloonTip);
@@ -1223,59 +1258,59 @@ BOOL ShowBalloonTip(
     INT ttiIcon = TTI_NONE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `pEditBalloonTip`|ポインター、 [EDITBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb775466)バルーン ヒントを記述する構造体。|  
-|[入力] `lpszTitle`|バルーン ヒントのタイトルを含む Unicode 文字列へのポインター。|  
-|[入力] `lpszText`|バルーン ヒントのテキストを含む Unicode 文字列へのポインター。|  
-|[入力] `ttiIcon`|`INT`バルーン ヒントに関連付けるアイコンの種類を指定します。 既定値は `TTI_NONE` です。 詳細については、次を参照してください。、`ttiIcon`のメンバー、 [EDITBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb775466)構造体。|  
+|[in] `pEditBalloonTip`|Pointer to an [EDITBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb775466) structure that describes the balloon tip.|  
+|[in] `lpszTitle`|Pointer to a Unicode string that contains the title of the balloon tip.|  
+|[in] `lpszText`|Pointer to a Unicode string that contains the balloon tip text.|  
+|[in] `ttiIcon`|An `INT` that specifies the type of icon to associate with the balloon tip. The default value is `TTI_NONE`. For more information, see the `ttiIcon` member of the [EDITBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb775466) structure.|  
   
-### <a name="return-value"></a>戻り値  
- `true`このメソッドが成功した場合それ以外の場合、`false`です。  
+### <a name="return-value"></a>Return Value  
+ `true` if this method is successful; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、 [EM_SHOWBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb761668)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 詳細については、次を参照してください。、 [Edit_ShowBalloonTip](http://msdn.microsoft.com/library/windows/desktop/bb761707)マクロです。  
+### <a name="remarks"></a>Remarks  
+ This function sends the [EM_SHOWBALLOONTIP](http://msdn.microsoft.com/library/windows/desktop/bb761668) message, which is described in the Windows SDK. For more information, see the [Edit_ShowBalloonTip](http://msdn.microsoft.com/library/windows/desktop/bb761707) macro.  
   
-### <a name="example"></a>例  
- 次のコード例の変数を定義`m_cedit`、つまり現在の編集コントロールにアクセスするために使用します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines a variable, `m_cedit`, that is used to access the current edit control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CEdit_s&#1;1](../../mfc/reference/codesnippet/cpp/cedit-class_25.h)]  
+ [!code-cpp[NVC_MFC_CEdit_s1#1](../../mfc/reference/codesnippet/cpp/cedit-class_25.h)]  
   
-### <a name="example"></a>例  
- 次のコード例では、エディット コントロールのバルーン ヒントを表示します。 [CEdit::ShowBalloonTip](#showballoontip)メソッドは、タイトルとバルーンのヒント テキストを指定します。  
+### <a name="example"></a>Example  
+ The following code example displays a balloon tip for an edit control. The [CEdit::ShowBalloonTip](#showballoontip) method specifies a title and balloon tip text.  
   
- [!code-cpp[NVC_MFC_CEdit_s&#1;3](../../mfc/reference/codesnippet/cpp/cedit-class_26.cpp)]  
+ [!code-cpp[NVC_MFC_CEdit_s1#3](../../mfc/reference/codesnippet/cpp/cedit-class_26.cpp)]  
   
-##  <a name="undo"></a>CEdit::Undo  
- 最後のエディット コントロールの操作を元に戻すには、この関数を呼び出します。  
+##  <a name="undo"></a>  CEdit::Undo  
+ Call this function to undo the last edit-control operation.  
   
 ```  
 BOOL Undo();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 単一行エディット コントロールでは、戻り値は 0 以外では常にします。 複数行エディット コントロールでは、戻り値は元に戻す操作が成功した場合は 0 以外、または元に戻す操作が失敗した場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ For a single-line edit control, the return value is always nonzero. For a multiple-line edit control, the return value is nonzero if the undo operation is successful, or 0 if the undo operation fails.  
   
-### <a name="remarks"></a>コメント  
- 元に戻す操作が元に戻すことができますもあります。 たとえば、最初の呼び出し、削除した文字列を戻すことができます**を元に戻す**です。 2 番目の呼び出しを使用してテキストを削除するには中間の編集操作がない限り、**を元に戻す**です。  
+### <a name="remarks"></a>Remarks  
+ An undo operation can also be undone. For example, you can restore deleted text with the first call to **Undo**. As long as there is no intervening edit operation, you can remove the text again with a second call to **Undo**.  
   
- 詳細については、次を参照してください。 [EM_UNDO](http://msdn.microsoft.com/library/windows/desktop/bb761670)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_UNDO](http://msdn.microsoft.com/library/windows/desktop/bb761670) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CEdit #25](../../mfc/reference/codesnippet/cpp/cedit-class_27.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CEdit#25](../../mfc/reference/codesnippet/cpp/cedit-class_27.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル CALCDRIV](../../visual-cpp-samples.md)   
- [MFC サンプル CMNCTRL2](../../visual-cpp-samples.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CWnd クラス](cwnd-class.md)   
- [CButton クラス](cbutton-class.md)   
- [CComboBox クラス](ccombobox-class.md)   
- [CListBox クラス](clistbox-class.md)   
- [関数クラス](cscrollbar-class.md)   
- [CStatic クラス](cstatic-class.md)   
- [CDialog クラス](cdialog-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample CALCDRIV](../../visual-cpp-samples.md)   
+ [MFC Sample CMNCTRL2](../../visual-cpp-samples.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CWnd Class](cwnd-class.md)   
+ [CButton Class](cbutton-class.md)   
+ [CComboBox Class](ccombobox-class.md)   
+ [CListBox Class](clistbox-class.md)   
+ [CScrollBar Class](cscrollbar-class.md)   
+ [CStatic Class](cstatic-class.md)   
+ [CDialog Class](cdialog-class.md)
 

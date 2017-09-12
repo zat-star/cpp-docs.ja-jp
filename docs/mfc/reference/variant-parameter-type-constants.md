@@ -1,5 +1,5 @@
 ---
-title: "Variant パラメーター型の定数 |Microsoft ドキュメント"
+title: Variant Parameter Type Constants | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,23 +26,23 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- VTS_XPOS_HIMETRIC constant
-- VTS_FONT constant
-- VTS_XPOS_PIXELS constant
-- VTS_COLOR constant
-- Variants
-- VTS_YPOS_PIXELS constant
-- VTS_YSIZE_HIMETRIC constant
-- VTS_YPOS_HIMETRIC constant
+- VTS_XPOS_HIMETRIC constant [MFC]
+- VTS_FONT constant [MFC]
+- VTS_XPOS_PIXELS constant [MFC]
+- VTS_COLOR constant [MFC]
+- Variants [MFC]
+- VTS_YPOS_PIXELS constant [MFC]
+- VTS_YSIZE_HIMETRIC constant [MFC]
+- VTS_YPOS_HIMETRIC constant [MFC]
 - Variants, parameter type constants
-- Variant data constants
-- VTS_PICTURE constant
-- VTS_TRISTATE constant
-- VTS_XSIZE_HIMETRIC constant
-- VTS_HANDLE constant
-- VTS_XSIZE_PIXELS constant
-- VTS_OPTEXCLUSIVE constant
-- VTS_YSIZE_PIXELS constant
+- Variant data constants [MFC]
+- VTS_PICTURE constant [MFC]
+- VTS_TRISTATE constant [MFC]
+- VTS_XSIZE_HIMETRIC constant [MFC]
+- VTS_HANDLE constant [MFC]
+- VTS_XSIZE_PIXELS constant [MFC]
+- VTS_OPTEXCLUSIVE constant [MFC]
+- VTS_YSIZE_PIXELS constant [MFC]
 ms.assetid: de99c7a9-7aae-4dc4-b723-40c6380543ab
 caps.latest.revision: 14
 author: mikeblome
@@ -62,54 +62,54 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3b09357859b8fc87252fba704de8f2a927981873
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 394a652f516012c5154bf978bb9a7ef4d7514b6b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="variant-parameter-type-constants"></a>Variant パラメーター型の定数
-このトピックでは、Microsoft Foundation Class ライブラリの OLE コントロール クラスで使用するために設計されたバリアント型パラメーターの種類を指定する新しい定数を示します。  
+# <a name="variant-parameter-type-constants"></a>Variant Parameter Type Constants
+This topic lists new constants that indicate variant parameter types designed for use with the OLE control classes of the Microsoft Foundation Class Library.  
   
- クラスの定数の一覧を次に示します。  
+ The following is a list of class constants:  
   
-##  <a name="_mfc_variant_data_constants"></a>Variant データ定数  
+##  <a name="_mfc_variant_data_constants"></a> Variant Data Constants  
   
--   **VTS_COLOR** RGB 色の値を表す 32 ビット整数。  
+-   **VTS_COLOR** A 32-bit integer used to represent a RGB color value.  
   
--   **VTS_FONT**へのポインター、**この**OLE フォント オブジェクトのインターフェイスです。  
+-   **VTS_FONT** A pointer to the                         **IFontDisp** interface of an OLE font object.  
   
--   **VTS_HANDLE** A Windows ハンドルの値。  
+-   **VTS_HANDLE** A Windows handle value.  
   
--   **VTS_PICTURE**へのポインター、 `IPictureDisp` OLE 画像オブジェクトのインターフェイスです。  
+-   **VTS_PICTURE** A pointer to the                         `IPictureDisp` interface of an OLE picture object.  
   
--   **VTS_OPTEXCLUSIVE** 16 ビット値のラジオ ボタンなどのコントロールのグループで使用するためのものでは、コントロールを使用します。 この型は、のいずれかを制御する場合、グループをコンテナーに指示、 **TRUE**値にする必要があります他のすべて**FALSE**します。  
+-   **VTS_OPTEXCLUSIVE** A 16-bit value used for a control that is intended to be used in a group of controls, such as radio buttons. This type tells the container that if one control in a group has a                         **TRUE** value, all others must be                         **FALSE**.  
   
--   **VTS_TRISTATE**チェック ボックスで使用できるプロパティ (選択されている、オフになって、利用不可)、3 つの値のいずれかなどの 16 ビット符号付き整数を使用します。  
+-   **VTS_TRISTATE** A 16-bit signed integer used for properties that can have one of three possible values (selected, cleared, unavailable), for example, a check box.  
   
--   **VTS_XPOS_HIMETRIC**で x 軸に沿った位置を表す 32 ビット符号なし整数**HIMETRIC**単位です。  
+-   **VTS_XPOS_HIMETRIC** A 32-bit unsigned integer used to represent a position along the x-axis in                         **HIMETRIC** units.  
   
--   **VTS_YPOS_HIMETRIC**で y 軸方向の位置を表すために使用する 32 ビット符号なし整数**HIMETRIC**単位です。  
+-   **VTS_YPOS_HIMETRIC** A 32-bit unsigned integer used to represent a position along the y-axis in                         **HIMETRIC** units.  
   
--   **VTS_XPOS_PIXELS** 32 ビット符号なし整数 (ピクセル単位)、x 軸に沿った位置を表すために使用します。  
+-   **VTS_XPOS_PIXELS** A 32-bit unsigned integer used to represent a position along the x-axis in pixels.  
   
--   **VTS_YPOS_PIXELS** 32 ビット符号なし整数 (ピクセル単位)、y 軸に沿った位置を表すために使用します。  
+-   **VTS_YPOS_PIXELS** A 32-bit unsigned integer used to represent a position along the y-axis in pixels.  
   
--   **VTS_XSIZE_PIXELS** 32 ビット符号なし整数 (ピクセル単位) 画面オブジェクトの幅を表すために使用します。  
+-   **VTS_XSIZE_PIXELS** A 32-bit unsigned integer used to represent the width of a screen object in pixels.  
   
--   **VTS_YSIZE_PIXELS** 32 ビット符号なし整数 (ピクセル単位) 画面オブジェクトの高さを表すために使用します。  
+-   **VTS_YSIZE_PIXELS** A 32-bit unsigned integer used to represent the height of a screen object in pixels.  
   
--   **VTS_XSIZE_HIMETRIC**で画面オブジェクトの幅を表すために使用する 32 ビット符号なし整数**HIMETRIC**単位です。  
+-   **VTS_XSIZE_HIMETRIC** A 32-bit unsigned integer used to represent the width of a screen object in                         **HIMETRIC** units.  
   
--   **VTS_YSIZE_HIMETRIC**で画面オブジェクトの高さを表すために使用する 32 ビット符号なし整数**HIMETRIC**単位です。  
+-   **VTS_YSIZE_HIMETRIC** A 32-bit unsigned integer used to represent the height of a screen object in                         **HIMETRIC** units.  
   
     > [!NOTE]
-    >  追加のバリアント定数は、例外として、すべてのバリアント型に対して定義されている**VTS_FONT**と**VTS_PICTURE**、variant データ定数へのポインターを提供します。 使用してこれらの定数がという名前の**付け**`constantname`規則です。 たとえば、 **VTS_PCOLOR**へのポインター、 **VTS_COLOR**定数です。  
+    >  Additional variant constants have been defined for all variant types, with the exception of                             **VTS_FONT** and                             **VTS_PICTURE**, that provide a pointer to the variant data constant. These constants are named using the                             **VTS_P**`constantname` convention. For example,                             **VTS_PCOLOR** is a pointer to a                             **VTS_COLOR** constant.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

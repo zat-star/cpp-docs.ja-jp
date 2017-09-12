@@ -1,42 +1,61 @@
 ---
-title: "シリアル化機構のバイパス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アーカイブ オブジェクト [C++]"
-  - "アーカイブ [C++]"
-  - "アーカイブ [C++], シリアル化"
-  - "シリアル化のバイパス"
-  - "シリアル化 [C++], バイパス"
-  - "シリアル化 [C++], オーバーライド"
-  - "シリアル化 [C++], 役割 (フレームワークの)"
+title: Bypassing the Serialization Mechanism | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- archive objects [MFC]
+- bypassing serialization
+- archives [MFC], serialization
+- serialization [MFC], bypassing
+- archives [MFC]
+- serialization [MFC], role of framework
+- serialization [MFC], overriding
 ms.assetid: 48d4a279-b51c-4ba5-81cd-ed043312b582
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# シリアル化機構のバイパス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 12efe0a246eba721834bab2a37513aeafc09a24c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-参照したので、フレームワークはファイルに対するデータの読み書きに使用する既定の方法を提供します。  アーカイブ オブジェクトにシリアル化は偉大なユーザーのニーズに多くのアプリケーションに適しています。  このようなアプリケーションは、ファイル全体を読み込み、ユーザーがファイルを更新するようにし、ディスクに更新バージョンを再度書き込みます。  
+---
+# <a name="bypassing-the-serialization-mechanism"></a>Bypassing the Serialization Mechanism
+As you have seen, the framework provides a default way to read and write data to and from files. Serializing through an archive object suits the needs of a great many applications. Such an application reads a file entirely into memory, lets the user update the file, and then writes the updated version to disk again.  
   
- ただし、アプリケーションによっては、データが大幅に異なる方法で機能し、これらのアプリケーションに対してアーカイブによるシリアル化が適しているとは言えません。  たとえば、データベース プログラム、テキストのみファイルを書き込み、およびプログラムで編集する大きなファイルの一部のみ、データ ファイルを共有するプログラムが含まれます。  
+ However, some applications operate on data very differently, and for these applications serialization through an archive is not suitable. Examples include database programs, programs that edit only parts of large files, programs that write text-only files, and programs that share data files.  
   
- このような場合、[CArchive](../mfc/reference/carchive-class.md) オブジェクトではなく、[CFile](../mfc/reference/cfile-class.md) オブジェクトを使用してファイルの動作を仲介するに [シリアル化する](../Topic/CObject::Serialize.md) 関数を別の方法でオーバーライドできます。  
+ In these cases, you can override the [Serialize](../mfc/reference/cobject-class.md#serialize) function in a different way to mediate file actions through a [CFile](../mfc/reference/cfile-class.md) object rather than a [CArchive](../mfc/reference/carchive-class.md) object.  
   
- **開く**、**読み取り**、**Write**、**閉じる**を使用して、ファイルを開く `CFile` クラスの `Seek` のメンバー関数は、ファイル ポインター \(シーク\) をファイル内の特定の位置に移動するには、選択したレコード \(バイト数\) を読み込んでいる場合、ユーザーがレコードを更新するようにし、同じポイントに再度検索し、ファイルまでレコードを書き込みます。  フレームワークによってファイルを開き、`CFile` オブジェクトへのポインターを取得するに `CArchive``GetFile` クラスのメンバー関数を使用できます。  さらに高度なと柔軟性を持った使用のために、クラス `CWinApp`の [OnOpenDocument](../Topic/CDocument::OnOpenDocument.md) と [OnSaveDocument](../Topic/CDocument::OnSaveDocument.md) のメンバー関数をオーバーライドします。  詳細については、" *MFC リファレンス"の*" [CFile](../mfc/reference/cfile-class.md) クラスを参照します。  
+ You can use the **Open**, **Read**, **Write**, **Close**, and `Seek` member functions of class `CFile` to open a file, move the file pointer (seek) to a specific point in the file, read a record (a specified number of bytes) at that point, let the user update the record, then seek to the same point again and write the record back to the file. The framework will open the file for you, and you can use the `GetFile` member function of class `CArchive` to obtain a pointer to the `CFile` object. For even more sophisticated and flexible use, you can override the [OnOpenDocument](../mfc/reference/cdocument-class.md#onopendocument) and [OnSaveDocument](../mfc/reference/cdocument-class.md#onsavedocument) member functions of class `CWinApp`. For more information, see class [CFile](../mfc/reference/cfile-class.md) in the *MFC Reference*.  
   
- このシナリオでは、`Serialize` のオーバーライドは Nothing、しません。たとえば、このファイルをドキュメントを閉じる最新の状態に維持するにヘッダー ファイルの読み取りと書き込みを選択する必要があります。  
+ In this scenario, your `Serialize` override does nothing, unless, for example, you want to have it read and write a file header to keep it up to date when the document closes.  
   
-## 参照  
- [ドキュメントの使い方](../mfc/using-documents.md)
+## <a name="see-also"></a>See Also  
+ [Using Documents](../mfc/using-documents.md)
+
+

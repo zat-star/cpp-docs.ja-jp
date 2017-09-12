@@ -1,38 +1,55 @@
 ---
-title: "インターネット クライアント アプリケーションの作成用の MFC クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス [C++], MFC"
-  - "インターネット アプリケーション, MFC"
-  - "インターネット クライアント アプリケーション, MFC"
-  - "MFC, WinInet クラス"
-  - "WinInet クラス, クラス"
+title: MFC Classes for Creating Internet Client Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, WinInet classes
+- WinInet classes [MFC], classes
+- classes [MFC], MFC
+- Internet client applications [MFC], MFC
+- Internet applications [MFC], MFC
 ms.assetid: 67d34117-9839-4f4b-8bb8-0e4a9471c606
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# インターネット クライアント アプリケーションの作成用の MFC クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4d1bf2c587c8a80547ee6793433f83a94945937e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC には、クライアント アプリケーションを作成するためのクラスとグローバル関数が用意されています。  インデントはクラスがその前の unindented クラスから派生されることを示します。  `CGopherFile` と `CHttpFile` は、たとえば `CInternetFile`から派生します。  これらのクラスとグローバル関数は AFX.H.で宣言された AFXINET.H で、`CFileFind`を除く宣言されています。  
+---
+# <a name="mfc-classes-for-creating-internet-client-applications"></a>MFC Classes for Creating Internet Client Applications
+MFC provides the following classes and global functions for writing Internet client applications. Indentation indicates a class is derived from the unindented class above it. `CGopherFile` and `CHttpFile` derive from `CInternetFile`, for example. These classes and global functions are declared in AFXINET.H, except `CFileFind`, which is declared in AFX.H.  
   
-## クラス  
+## <a name="classes"></a>Classes  
   
--   [CInternetSession](../Topic/CInternetSession%20Class.md)  
+-   [CInternetSession](../mfc/reference/cinternetsession-class.md)  
   
--   [CInternetConnection](../Topic/CInternetConnection%20Class.md)  
+-   [CInternetConnection](../mfc/reference/cinternetconnection-class.md)  
   
     -   [CFtpConnection](../mfc/reference/cftpconnection-class.md)  
   
@@ -44,27 +61,28 @@ MFC には、クライアント アプリケーションを作成するための
   
     -   [CGopherFile](../mfc/reference/cgopherfile-class.md)  
   
-    -   [CHttpFile](../Topic/CHttpFile%20Class.md)  
+    -   [CHttpFile](../mfc/reference/chttpfile-class.md)  
   
 -   [CFileFind](../mfc/reference/cfilefind-class.md)  
   
-    -   [CFtpFileFind](../Topic/CFtpFileFind%20Class.md)  
+    -   [CFtpFileFind](../mfc/reference/cftpfilefind-class.md)  
   
     -   [CGopherFileFind](../mfc/reference/cgopherfilefind-class.md)  
   
--   [CGopherLocator](../Topic/CGopherLocator%20Class.md)  
+-   [CGopherLocator](../mfc/reference/cgopherlocator-class.md)  
   
 -   [CInternetException](../mfc/reference/cinternetexception-class.md)  
   
-## グローバル関数  
+## <a name="global-functions"></a>Global Functions  
   
--   [AfxParseURL](../Topic/AfxParseURL.md)  
+-   [AfxParseURL](reference/internet-url-parsing-globals.md#afxparseurl)  
   
--   [AfxGetInternetHandleType](../Topic/AfxGetInternetHandleType.md)  
+-   [AfxGetInternetHandleType](reference/internet-url-parsing-globals.md#afxgetinternethandletype)  
   
--   [AfxThrowInternetException](../Topic/AfxThrowInternetException.md)  
+-   [AfxThrowInternetException](reference/internet-url-parsing-globals.md#afxthrowinternetexception)  
   
-## 参照  
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)   
- [インターネット クライアント クラスの必要条件](../Topic/Prerequisites%20for%20Internet%20Client%20Classes.md)   
- [MFC WinInet クラスを使ってインターネット クライアント アプリケーションを作成する方法](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)
+## <a name="see-also"></a>See Also  
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)   
+ [Prerequisites for Internet Client Classes](../mfc/prerequisites-for-internet-client-classes.md)   
+ [Writing an Internet Client Application Using MFC WinInet Classes](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)
+

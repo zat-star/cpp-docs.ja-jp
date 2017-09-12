@@ -1,37 +1,56 @@
 ---
-title: "インターネット アプリケーションのテスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デバッグ [MFC], Web アプリケーション"
-  - "デバッグ (Web アプリケーションを), テスト (アプリケーションを)"
-  - "インターネットのデバッグとテスト"
-  - "テスト, インターネット アプリケーション"
-  - "Web アプリケーション, テスト"
+title: Testing Internet Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Web applications [MFC], testing
+- debugging Web applications [MFC], testing applications
+- testing [MFC], Internet applications
+- debugging [MFC], Web applications
+- Internet debugging and testing
 ms.assetid: ac4c74e3-d4ad-4e19-8f6c-e270de067f01
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# インターネット アプリケーションのテスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1bdf3922311d334eecece5fefbd7573f6dffab26
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Web サーバーで実行されるアプリケーションのインターネットになる一意のテストの問題があります。  最初のテストはサーバーに接続するシングルユーザ クライアントを使用して生成されます。  これにより、コードをデバッグするときに便利です。  
+---
+# <a name="testing-internet-applications"></a>Testing Internet Applications
+There are some unique testing challenges on the Internet, especially for applications running on a Web server. Your initial testing will probably be done using a single-user client connecting to a test server. This will be useful for debugging your code.  
   
- また、実際の条件でテストする場合: モデム接続を含む高速接続、低速シリアル行に接続して複数のクライアントが。  実際の条件をシミュレートすることが困難な場合もありますが、使用可能なシナリオをデザインし、実行時により確実に価値があります。  可能であれば、容量を実行し、テストに重点を置くのツールを使用する必要があります。  バグの一部のクラスでは、タイミングのバグなど、見つけにくく、再生が困難です。  
+ You will also want to test under real conditions: with multiple clients connected over high-speed connections as well as low-speed serial lines, including modem connections. It can be difficult to simulate real conditions, but it is certainly worth spending time designing possible scenarios and executing them. If possible, you will also want to use tools to do capacity and stress testing. Certain classes of bugs, such as timing bugs, are difficult to find and to reproduce.  
   
- インターネット プログラミングの問題の 1 つが表示されます。  サイトへのアクセスは、サーバーが低下することがあります。  サーバーに適切に低下するだけです。  レジストリまたはクッキーに記述中にクライアントで記述中に\) アプリケーションが失敗すると、ユーザーのコンピューターに有害なできる何もしない場合 \(たとえば、データの破損が発生します。  
+ One of the challenges of Internet programming is its visibility. Many accesses to your site may slow down your server. You want your server to degrade gracefully. You want to prevent anything that could be destructive to a user's computer if your application fails (for example, corruption of data while writing to the registry or while writing cookies on the client).  
   
-## 参照  
- [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Tasks](../mfc/mfc-internet-programming-tasks.md)   
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)
+
+

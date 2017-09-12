@@ -1,71 +1,90 @@
 ---
-title: "サーバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フル サーバー"
-  - "ミニ サーバー"
-  - "OLE サーバー アプリケーション"
-  - "OLE サーバー アプリケーション, アクティベーション"
-  - "OLE サーバー アプリケーション, サーバーの種類"
-  - "サーバー アプリケーション"
-  - "サーバー"
+title: Servers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE server applications [MFC]
+- OLE server applications [MFC], activation
+- full-server
+- servers
+- mini-server
+- OLE server applications [MFC], server types
+- server applications [MFC]
 ms.assetid: e45172e8-eae3-400a-8139-0fa009a42fdc
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# サーバー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 47c6019418107070d1982c7cc55a1e303ff30536
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-サーバー アプリケーション \(または構成アプリケーション コンテナー アプリケーション\) によって使用される OLE アイテム \(コンポーネント\) を作成します。  ビジュアル編集サーバー アプリケーションは、ビジュアル編集または埋め込み先編集の有効化をサポートします。  OLE サーバーのもう一つのフォームには [オートメーション サーバー](../mfc/automation-servers.md)です。  あるサーバー アプリケーションは埋め込まれたアイテムの作成のみサポートします; 他に埋め込まれるリンク アイテムの作成をサポートします。  これがほとんどですが、リンクのみ。  すべてのサーバー アプリケーションは、コンテナー アプリケーションで、ユーザーが項目を編集する場合は、アクティベーションをサポートする必要があります。  アプリケーションがコンテナーとサーバーの両方を指定できます。  つまり、ドキュメントにデータを組み込むことで、そのほかのアプリケーションのドキュメントに項目として組み込むことができるデータを作成します。  
+---
+# <a name="servers"></a>Servers
+A server application (or component application) creates OLE items (or components) for use by container applications. A visual editing server application also supports visual editing or in-place activation. Another form of OLE server is an [automation server](../mfc/automation-servers.md). Some server applications support only the creation of embedded items; others support the creation of both embedded and linked items. Some support linking only, although this is rare. All server applications must support activation by container applications when the user wants to edit an item. An application can be both a container and a server. In other words, it can both incorporate data into its documents, and create data that can be incorporated as items into other applications' documents.  
   
- ミニサーバーは、コンテナーによってのみ起動できないサーバー アプリケーションの特殊な型です。  Microsoft のレンダリングと Microsoft グラフはミニサーバーの例です。  ミニサーバーはディスク上のファイルとしてドキュメントを保存しません。  代わりに、ドキュメントの読み書き、項目にコンテナーに属するドキュメントに書き込みます。  その結果、ミニサーバーは埋め込みをサポートし、リンクしません。  
+ A miniserver is a special type of server application that can only be launched by a container. Microsoft Draw and Microsoft Graph are examples of miniservers. A miniserver does not store documents as files on disk. Instead, it reads its documents from and writes them to items in documents belonging to containers. As a result, a miniserver supports embedding only, not linking.  
   
- フル サーバーはスタンドアロン アプリケーションとして実行します。または、コンテナー アプリケーションで起動できます。  フル サーバーはディスク上のファイルとしてドキュメントを保存できます。  これは、し、埋め込み、リンクや埋め込みをサポート、またはリンクするだけです。  コンテナー アプリケーションのユーザーは、サーバーでは、切り取りまたはコピー コマンドを使用して、埋め込まれたアイテムとコンテナーの貼り付けコマンドを作成できます。  リンクされたアイテムはサーバー上のコピー コマンドとコンテナーでリンク貼り付けコマンドを選択することで作成されます。  また、ユーザーはオブジェクトの挿入ダイアログ ボックスを使用して埋め込まれたのまたはリンク アイテムを作成できます。  
+ A full server can be run either as a stand-alone application or launched by a container application. A full server can store documents as files on disk. It can support embedding only, both embedding and linking, or linking only. The user of a container application can create an embedded item by choosing the Cut or Copy command in the server and the Paste command in the container. A linked item is created by choosing the Copy command in the server and the Paste Link command in the container. Alternatively, the user can create an embedded or linked item using the Insert Object dialog box.  
   
- 次の表に、サーバーの特性を示します。:  
+ The following table summarizes characteristics of different types of servers:  
   
-### サーバー特性  
+### <a name="server-characteristics"></a>Server Characteristics  
   
-|サーバーの種類|複数のインスタンスをサポートします。|ドキュメントごとの項目|インスタンスごとのドキュメント|  
-|-------------|------------------------|-----------------|---------------------|  
-|ミニサーバー|Yes|1|1|  
-|SDI フル サーバー|Yes|1 \(リンクがサポートされている場合は、1 またはより\)|1|  
-|MDI のフル サーバー|\(必須ではない\)|1 \(リンクがサポートされている場合は、1 またはより\)|0 以上|  
+|Type of server|Supports multiple instances|Items per document|Documents per instance|  
+|--------------------|---------------------------------|------------------------|----------------------------|  
+|Miniserver|Yes|1|1|  
+|SDI full server|Yes|1 (if linking is supported, 1 or more)|1|  
+|MDI full server|No (not required)|1 (if linking is supported, 1 or more)|0 or more|  
   
- サーバー アプリケーションが埋め込まれたのまたはリンク アイテムを編集するためにいくつかのコンテナーを使用する複数のコンテナーを同時にサポートする必要があります。  サーバーが SDI アプリケーション \(またはダイアログ ボックス インターフェイスでミニサーバー\) の場合、サーバーの複数のインスタンスは、同時に実行できる必要があります。  これは、アプリケーションの各インスタンスが各コンテナーの要求を処理するようにようにします。  
+ A server application should support multiple containers simultaneously, in the event that more than one container will be used to edit an embedded or linked item. If the server is an SDI application (or a miniserver with a dialog box interface), multiple instances of the server must be able to run simultaneously. This allows a separate instance of the application to handle each container request.  
   
- サーバーが MDI アプリケーションの場合、コンテナーは項目を編集する必要があるたびに新しい MDI 子ウィンドウを作成できます。  これにより、アプリケーションの一つのインスタンスを複数のコンテナーをサポートできます。  
+ If the server is an MDI application, it can create a new MDI child window each time a container needs to edit an item. In this way, a single instance of the application can support multiple containers.  
   
- サーバー アプリケーションが別のコンテナーがサービスを要求すると、サーバーのインスタンスが 1 つ既に実行されてする必要があるか、OLE システム DLL に何を告げなければ必要があります: つまり、サーバーの新しいインスタンスを起動するか、サーバー上の 1 種類のインスタンスにすべてのコンテナーに要求を送信するかどうか。  
+ Your server application must tell the OLE system DLLs what to do if one instance of the server is already running when another container requests its services: whether it should launch a new instance of the server or direct all containers' requests to one instance of the server.  
   
- 詳細についてはサーバーで、参照してください:  
+ For more details on servers, see:  
   
--   [サーバー : サーバーの実装](../mfc/servers-implementing-a-server.md)  
+-   [Servers: Implementing a Server](../mfc/servers-implementing-a-server.md)  
   
--   [サーバー: サーバー ドキュメントの実装](../mfc/servers-implementing-server-documents.md)  
+-   [Servers: Implementing Server Documents](../mfc/servers-implementing-server-documents.md)  
   
--   [サーバー: 埋め込み先フレーム ウィンドウの実装](../Topic/Servers:%20Implementing%20In-Place%20Frame%20Windows.md)  
+-   [Servers: Implementing In-Place Frame Windows](../mfc/servers-implementing-in-place-frame-windows.md)  
   
--   [サーバー: サーバー項目](../mfc/servers-server-items.md)  
+-   [Servers: Server Items](../mfc/servers-server-items.md)  
   
--   [サーバー: ユーザー インターフェイスの問題](../mfc/servers-user-interface-issues.md)  
+-   [Servers: User-Interface Issues](../mfc/servers-user-interface-issues.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [コンテナー](../mfc/containers.md)   
- [コンテナー : 高度な機能](../mfc/containers-advanced-features.md)   
- [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md)   
- [登録](../mfc/registration.md)   
- [オートメーション サーバー](../mfc/automation-servers.md)
+ [Containers](../mfc/containers.md)   
+ [Containers: Advanced Features](../mfc/containers-advanced-features.md)   
+ [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md)   
+ [Registration](../mfc/registration.md)   
+ [Automation Servers](../mfc/automation-servers.md)
+
+

@@ -1,100 +1,119 @@
 ---
-title: "MFC ActiveX コントロール : シリアル化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_wVerMinor"
-  - "DoPropExchange"
-  - "_wVerMajor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DoPropExchange メソッド"
-  - "ExchangeVersion メソッド"
-  - "GetVersion メソッド"
-  - "MFC ActiveX コントロール, シリアル化"
-  - "MFC ActiveX コントロール, バージョン サポート"
-  - "バージョン管理 (ActiveX コントロールの)"
-  - "wVerMajor グローバル定数"
-  - "wVerMinor グローバル定数"
+title: 'MFC ActiveX Controls: Serializing | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _wVerMinor
+- DoPropExchange
+- _wVerMajor
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], version support
+- wVerMinor global constant [MFC]
+- GetVersion method [MFC]
+- ExchangeVersion method [MFC]
+- MFC ActiveX controls [MFC], serializing
+- DoPropExchange method [MFC]
+- versioning ActiveX controls
+- wVerMajor global constant
 ms.assetid: 9d57c290-dd8c-4853-b552-6f17f15ebedd
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : シリアル化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4594131d8814122b93b0132dc2c5e121cae2e3ba
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ActiveX コントロールをシリアル化する方法について説明します。  シリアル化は、ディスク ファイルのような永続ストレージ メディアのへの読み取りおよび書き込みのプロセスです。  Microsoft Foundation Class \(MFC\) ライブラリはクラス `CObject`のシリアル化の組み込みサポートを提供します。  `COleControl` は 所持品の交換機構を使用して、ActiveX コントロールにこのサポートを拡張します。  
+---
+# <a name="mfc-activex-controls-serializing"></a>MFC ActiveX Controls: Serializing
+This article discusses how to serialize an ActiveX control. Serialization is the process of reading from or writing to a persistent storage medium, such as a disk file. The Microsoft Foundation Class (MFC) Library provides built-in support for serialization in class `CObject`. `COleControl` extends this support to ActiveX controls through the use of a property exchange mechanism.  
   
- ActiveX コントロールのシリアル化は、オーバーライドの [COleControl::DoPropExchange](../Topic/COleControl::DoPropExchange.md)によって実装されます。  Control オブジェクトの読み込みと保存の中に呼び出されたこの関数は変更通知のメンバー変数またはメンバー変数と実装されるすべてのプロパティを保存します。  
+ Serialization for ActiveX controls is implemented by overriding [COleControl::DoPropExchange](../mfc/reference/colecontrol-class.md#dopropexchange). This function, called during the loading and saving of the control object, stores all properties implemented with a member variable or a member variable with change notification.  
   
- 次のトピックでは、ActiveX コントロールのシリアル化の主要な問題について説明します。:  
+ The following topics cover the main issues related to serializing an ActiveX control:  
   
--   `DoPropExchange`関数のコントロール オブジェクトをシリアル化するために実装  
+-   Implementing `DoPropExchange` function to serialize your control object  
   
--   [シリアル化プロセスのカスタマイズ](#_core_customizing_the_default_behavior_of_dopropexchange)  
+-   [Customizing the Serialization Process](#_core_customizing_the_default_behavior_of_dopropexchange)  
   
--   [バージョン サポートの実装](#_core_implementing_version_support)  
+-   [Implementing Version Support](#_core_implementing_version_support)  
   
-##  <a name="_core_implementing_the_dopropexchange_function"></a> DoPropExchange 関数の実装  
- コントロール プロジェクトを生成するには、ActiveX コントロール ウィザードを使用すると、複数の既定のハンドラー関数は [COleControl::DoPropExchange](../Topic/COleControl::DoPropExchange.md)の既定の実装を含む、コントロール クラスに自動的に追加されます。  次の例では、ActiveX コントロール ウィザードで生成されたクラスに追加するコード例を次に示します。:  
+##  <a name="_core_implementing_the_dopropexchange_function"></a> Implementing the DoPropExchange Function  
+ When you use the ActiveX Control Wizard to generate the control project, several default handler functions are automatically added to the control class, including the default implementation of [COleControl::DoPropExchange](../mfc/reference/colecontrol-class.md#dopropexchange). The following example shows the code added to classes created with the ActiveX Control Wizard:  
   
- [!code-cpp[NVC_MFC_AxUI#43](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#43](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_1.cpp)]  
   
- プロパティを永続的にする場合は、所持品 swap 関数への呼び出しを追加して、`DoPropExchange` を変更します。  次の例では CircleShape のプロパティに **TRUE**の既定値がある CircleShape Boolean プロパティのカスタムのシリアル化を示します。、:  
+ If you want to make a property persistent, modify `DoPropExchange` by adding a call to the property exchange function. The following example demonstrates the serialization of a custom Boolean CircleShape property, where the CircleShape property has a default value of **TRUE**:  
   
- [!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_2.cpp)]  
-[!code-cpp[NVC_MFC_AxSer#2](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]  
+[!code-cpp[NVC_MFC_AxSer#2](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_3.cpp)]  
   
- 次の表は、コントロールのプロパティをシリアル化するために使用できる有効な所持品の swap 関数の一覧です:  
+ The following table lists the possible property exchange functions you can use to serialize the control's properties:  
   
-|所持品の swap 関数|目的|  
-|------------------|--------|  
-|**PX\_Blob \(\)**|型のバイナリ ラージ オブジェクト \(BLOB \(BLOB\) データ プロパティをシリアル化します。|  
-|**PX\_Bool \(\)**|型のブール型プロパティをシリアル化します。|  
-|**PX\_Color \(\)**|型のカラー プロパティをシリアル化します。|  
-|**PX\_Currency \(\)**|型の **CY** \(通貨\) のプロパティをシリアル化します。|  
-|**PX\_Double \(\)**|型の **double** のプロパティをシリアル化します。|  
-|**PX\_Font \(\)**|フォントの種類のプロパティをシリアル化します。|  
-|**PX\_Float \(\)**|型の **float** のプロパティをシリアル化します。|  
-|**PX\_IUnknown \(\)**|型の `LPUNKNOWN`プロパティをシリアル化します。|  
-|**PX\_Long \(\)**|型の **long** のプロパティをシリアル化します。|  
-|**PX\_Picture \(\)**|型のピクチャ プロパティをシリアル化します。|  
-|**PX\_Short \(\)**|型の **short** のプロパティをシリアル化します。|  
-|**PX\_String \(\)**|型の `CString` のプロパティをシリアル化します。|  
-|**PX\_ULong \(\)**|型の **ULONG** のプロパティをシリアル化します。|  
-|**PX\_UShort \(\)**|型の **USHORT** のプロパティをシリアル化します。|  
+|Property exchange functions|Purpose|  
+|---------------------------------|-------------|  
+|**PX_Blob( )**|Serializes a type Binary Large Object (BLOB) data property.|  
+|**PX_Bool( )**|Serializes a type Boolean property.|  
+|**PX_Color( )**|Serializes a type color property.|  
+|**PX_Currency( )**|Serializes a type **CY** (currency) property.|  
+|**PX_Double( )**|Serializes a type **double** property.|  
+|**PX_Font( )**|Serializes a Font type property.|  
+|**PX_Float( )**|Serializes a type **float** property.|  
+|**PX_IUnknown( )**|Serializes a property of type `LPUNKNOWN`.|  
+|**PX_Long( )**|Serializes a type **long** property.|  
+|**PX_Picture( )**|Serializes a type Picture property.|  
+|**PX_Short( )**|Serializes a type **short** property.|  
+|**PXstring( )**|Serializes a type `CString` property.|  
+|**PX_ULong( )**|Serializes a type **ULONG** property.|  
+|**PX_UShort( )**|Serializes a type **USHORT** property.|  
   
- これらの詳細については所持品の交換機能し、" *MFC リファレンス"の*" [OLE コントロールの永続化](../mfc/reference/persistence-of-ole-controls.md) を参照します。  
+ For more information on these property exchange functions, see [Persistence of OLE Controls](../mfc/reference/persistence-of-ole-controls.md) in the *MFC Reference*.  
   
-##  <a name="_core_customizing_the_default_behavior_of_dopropexchange"></a> DoPropExchange の既定の動作のカスタマイズ  
- **DoPropertyExchange** の既定の実装では、基本クラス `COleControl` \(前のトピックで説明されているように\) を呼び出します。  これは自動的に `COleControl`でサポートされる使用するプロパティのセットをシリアル化してコントロールのカスタム プロパティをシリアル化するよりも多少の記憶領域が。  この呼び出しを削除すると、オブジェクトが重要検討したプロパティのみシリアル化できるようになります。  明示的にこれらの **PX\_** の呼び出しを追加するコントロール オブジェクトを保存したり、読み込むときにコントロールがシリアル化されない実装したかを知るストック プロパティが表示されます。  
+##  <a name="_core_customizing_the_default_behavior_of_dopropexchange"></a> Customizing the Default Behavior of DoPropExchange  
+ The default implementation of **DoPropertyExchange** (as shown in the previous topic) makes a call to base class `COleControl`. This serializes the set of properties automatically supported by `COleControl`, which uses more storage space than serializing only the custom properties of the control. Removing this call allows your object to serialize only those properties you consider important. Any stock property states the control has implemented will not be serialized when saving or loading the control object unless you explicitly add **PX_** calls for them.  
   
-##  <a name="_core_implementing_version_support"></a> バージョン サポートの実装  
- バージョンのサポートは変更された ActiveX コントロールが新しく永続的なプロパティを追加できます。また、コントロールの旧バージョンで作成された永続的な状態を検出し、読み込めます。  コントロールのバージョンを永続データの一部として使用できるようにするには、コントロールの `DoPropExchange` 関数の [COleControl::ExchangeVersion](../Topic/COleControl::ExchangeVersion.md) を呼び出します。  この呼び出しが自動的に ActiveX コントロールが ActiveX コントロール ウィザードを使用して作成された挿入されます。  これは、バージョンのサポートが必要である削除できます。  ただし、コントロールのサイズのコストはバージョン サポートが提供する追加された柔軟性に非常に小さい \(4 バイト\)。  
+##  <a name="_core_implementing_version_support"></a> Implementing Version Support  
+ Version support enables a revised ActiveX control to add new persistent properties, and still be able to detect and load the persistent state created by an earlier version of the control. To make a control's version available as part of its persistent data, call [COleControl::ExchangeVersion](../mfc/reference/colecontrol-class.md#exchangeversion) in the control's `DoPropExchange` function. This call is automatically inserted if the ActiveX control was created using the ActiveX Control Wizard. It can be removed if version support is not needed. However, the cost in control size is very small (4 bytes) for the added flexibility that version support provides.  
   
- コントロールが ActiveX コントロール ウィザードで作成されていない場合、`DoPropExchange` 関数の先頭に次の行を挿入することで、`COleControl::ExchangeVersion` の呼び出しを追加します。`COleControl::DoPropExchange`の呼び出しの前に\) :  
+ If the control was not created with the ActiveX Control Wizard, add a call to `COleControl::ExchangeVersion` by inserting the following line at the beginning of your `DoPropExchange` function (before the call to `COleControl::DoPropExchange`):  
   
- [!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_2.cpp)]  
-[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxSer#1](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_2.cpp)]  
+[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]  
   
- バージョン番号として `DWORD` を使用できます。  既定として ActiveX コントロール ウィザードを使用 **\_wVerMinor** と **\_wVerMajor** で生成されたプロジェクト。  これらはプロジェクトの ActiveX コントロール クラスの実装ファイルで定義されているグローバル定数です。  `DoPropExchange` 関数の残りの中で、保存または取得しているバージョンを取得するに [CPropExchange::GetVersion](../Topic/CPropExchange::GetVersion.md) をいつでも呼び出すことができます。  
+ You can use any `DWORD` as the version number. Projects generated by the ActiveX Control Wizard use **_wVerMinor** and **_wVerMajor** as the default. These are global constants defined in the implementation file of the project's ActiveX control class. Within the remainder of your `DoPropExchange` function, you can call [CPropExchange::GetVersion](../mfc/reference/cpropexchange-class.md#getversion) at any time to retrieve the version you are saving or retrieving.  
   
- 次の例では、このサンプル コントロールのバージョン 1 に「ReleaseDate」プロパティだけです。  バージョン 2 「OriginalDate」プロパティを追加します。  コントロールが古いバージョンの永続的な状態を読み込むようにように指示する既定値に新しいプロパティのメンバー変数を初期化します。  
+ In the following example, version 1 of this sample control has only a "ReleaseDate" property. Version 2 adds an "OriginalDate" property. If the control is instructed to load the persistent state from the old version, it initializes the member variable for the new property to a default value.  
   
- [!code-cpp[NVC_MFC_AxSer#4](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_5.cpp)]  
-[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/CPP/mfc-activex-controls-serializing_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxSer#4](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_5.cpp)]  
+[!code-cpp[NVC_MFC_AxSer#3](../mfc/codesnippet/cpp/mfc-activex-controls-serializing_4.cpp)]  
   
- 既定では最新の形式は、古いデータ コントロールを「変換」します。  たとえば、コントロールのバージョン 2 バージョン 1 で格納されているデータを読み込めば、再度保存時バージョン 2 形式を記述します。  最後に、コントロールにデータを格納する場合は `ExchangeVersion`を呼び出す場合は、3 番目のパラメーターとして **FALSE** を渡します。  3 番目のパラメーターは省略可能に既定で **TRUE** です。  
+ By default, a control "converts" old data to the latest format. For example, if version 2 of a control loads data that was saved by version 1, it will write the version 2 format when it is saved again. If you want the control to save data in the format last read, pass **FALSE** as a third parameter when calling `ExchangeVersion`. This third parameter is optional and is **TRUE** by default.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

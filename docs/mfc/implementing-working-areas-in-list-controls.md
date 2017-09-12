@@ -1,50 +1,69 @@
 ---
-title: "リスト コントロールの作業領域の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リスト コントロール, 作業領域"
-  - "作業領域 (リスト コントロールの)"
+title: Implementing Working Areas in List Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- list controls [MFC], working areas
+- working areas in list control [MFC]
 ms.assetid: fbbb356b-3359-4348-8603-f1cb114cadde
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# リスト コントロールの作業領域の実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a6e1f2eea1f21dfef17389e5534107c0ba15c41e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-既定でリスト コントロールは、標準グリッド スキームのすべてのアイテムを配置します。  ただし、四角形のグループにリスト項目を配置する別のメソッドは、作業領域サポートされます。  作業領域を実装するリスト コントロールのイメージの場合、参照しまリスト ビュー コントロールを [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]で使用します。  
+---
+# <a name="implementing-working-areas-in-list-controls"></a>Implementing Working Areas in List Controls
+By default, a list control arranges all items in a standard grid fashion. However, another method is supported, working areas, that arranges the list items into rectangular groups. For an image of a list control that implements working areas, see Using List-View Controls in the Windows SDK.  
   
 > [!NOTE]
->  作業領域はリスト コントロールがアイコンまたは小さいアイコンのモードのときにのみ表示されます。  ただし、ビューがレポートまたはリスト モードに切り替えられれば、現在の作業領域が保持されます。  
+>  Working areas are visible only when the list control is in icon or small icon mode. However, any current working areas are maintained if the view is switched to the report or list mode.  
   
- 作業領域が空の境界を表示するために \(項目の左側に、上、または右\) 使用できますが、または 1 は通常、ときに水平スクロール バーが表示されます。  もう一つの一般的な用途は、項目を移動または削除することができる複数の作業領域を作成します。  このメソッドによって、一つのビューで意味が異なる領域を作成できます。  ユーザーが個別の領域に入れて項目にラベルを付けることができます。  次の例は、読み取り\/書き込みファイルの区分および読み取り専用ファイルの個別の領域のファイル システムのビューです。  ファイル項目が読み取り専用領域に移動されている場合、自動的に読み取り専用になります。  読み取り\/書き込み領域に読み取り専用領域からファイルを移動すると、読み取り\/書き込みファイルを作成します。  
+ Working areas can be used to display an empty border (on the left, top and/or right of the items), or cause a horizontal scroll bar to be displayed when there normally wouldn't be one. Another common usage is to create multiple working areas to which items can be moved or dropped. With this method, you could create areas in a single view that have different meanings. The user could then categorize the items by placing them in a different area. An example of this would be a view of a file system that has an area for read/write files and another area for read-only files. If a file item were moved into the read-only area, it would automatically become read-only. Moving a file from the read-only area into the read/write area would make the file read/write.  
   
- `CListCtrl` は リスト コントロールの作成と管理の作業領域に複数のメンバー関数を提供します。  [GetWorkAreas](../Topic/CListCtrl::GetWorkAreas.md) と [SetWorkAreas](../Topic/CListCtrl::SetWorkAreas.md) はリスト コントロールの現在実装された作業領域を格納する `RECT` 構造体\) 取得し、設定、または `CRect` オブジェクトの配列 \(。  また、[GetNumberOfWorkAreas](../Topic/CListCtrl::GetNumberOfWorkAreas.md) はリスト コントロール \(既定ではゼロ\) の作業領域の現在の数を取得します。  
+ `CListCtrl` provides several member functions for creating and managing working areas in your list control. [GetWorkAreas](../mfc/reference/clistctrl-class.md#getworkareas) and [SetWorkAreas](../mfc/reference/clistctrl-class.md#setworkareas) retrieve and set an array of `CRect` objects (or `RECT` structures), which store the currently implemented working areas for your list control. In addition, [GetNumberOfWorkAreas](../mfc/reference/clistctrl-class.md#getnumberofworkareas) retrieves the current number of working areas for your list control (by default, zero).  
   
-## 項目と作業領域  
- 作業領域が作成されると、作業領域内にある項目はそのメンバーになります。  同様に、項目が作業領域に移動すると、移動した作業領域のメンバーになります。  項目がどの作業領域内に存在しない場合は、自動的に最初の \(インデックス 0\) 作業領域のメンバーになります。  項目を作成し、特定の作業領域内に配置するか、項目を作成し、[SetItemPosition](../Topic/CListCtrl::SetItemPosition.md)と目的の作業領域に移動する必要があります。  2 番目の例では、この方法を示しています。  
+## <a name="items-and-working-areas"></a>Items and Working Areas  
+ When a working area is created, items that lie within the working area become members of it. Similarly, if an item is moved into a working area, it becomes a member of the working area to which it was moved. If an item does not lie within any working area, it automatically becomes a member of the first (index 0) working area. If you want to create an item and have it placed within a specific working area, you will need to create the item and then move it into the desired working area with a call to [SetItemPosition](../mfc/reference/clistctrl-class.md#setitemposition). The second example below demonstrates this technique.  
   
- 次の例では、リスト コントロール \(`m_WorkAreaListCtrl`\) の各作業領域の周囲に 4 個の作業領域 \(10 ピクセル全体の境界で同じサイズの`rcWorkAreas`\) を、実装します。  
+ The following example implements four working areas (`rcWorkAreas`), of equal size with a 10-pixel-wide border around each working area, in a list control (`m_WorkAreaListCtrl`).  
   
- [!code-cpp[NVC_MFCControlLadenDialog#20](../mfc/codesnippet/CPP/implementing-working-areas-in-list-controls_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#20](../mfc/codesnippet/cpp/implementing-working-areas-in-list-controls_1.cpp)]  
   
- [ApproximateViewRect](../Topic/CListCtrl::ApproximateViewRect.md) の呼び出しは 1 スペースのすべての項目を表示するために必要な全域の見積もりを取得できるようになりました。  この見積もりは 4 スペースと分割され、5 ピクセルの境界全体で埋められます。  
+ The call to [ApproximateViewRect](../mfc/reference/clistctrl-class.md#approximateviewrect) was made to get an estimate of the total area required to display all items in one region. This estimate is then divided into four regions and padded with a 5-pixel-wide border.  
   
- 次の例は、各グループ`rcWorkAreas` \(\) と更新に効果を完了するために既存のリスト項目のコントロール ビュー \(`m_``WorkAreaListCtrl`\) を割り当てます。  
+ The next example assigns the existing list items to each group (`rcWorkAreas`) and refreshes the control view (`m_WorkAreaListCtrl`) to complete the effect.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#21](../mfc/codesnippet/CPP/implementing-working-areas-in-list-controls_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#21](../mfc/codesnippet/cpp/implementing-working-areas-in-list-controls_2.cpp)]  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

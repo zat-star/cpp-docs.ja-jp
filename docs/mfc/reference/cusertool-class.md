@@ -1,5 +1,5 @@
 ---
-title: "CUserTool クラス |Microsoft ドキュメント"
+title: CUserTool Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,7 +26,18 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CUserTool class
+- CUserTool [MFC], CopyIconToClipboard
+- CUserTool [MFC], DrawToolIcon
+- CUserTool [MFC], GetCommand
+- CUserTool [MFC], GetCommandId
+- CUserTool [MFC], Invoke
+- CUserTool [MFC], Serialize
+- CUserTool [MFC], SetCommand
+- CUserTool [MFC], SetToolIcon
+- CUserTool [MFC], LoadDefaultIcon
+- CUserTool [MFC], m_strArguments
+- CUserTool [MFC], m_strInitialDirectory
+- CUserTool [MFC], m_strLabel
 ms.assetid: 7c287d3e-d012-488d-b4e1-aa0f83f294bb
 caps.latest.revision: 25
 author: mikeblome
@@ -46,80 +57,80 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 2e0b082be6aac7314d8251f89b42ed09e44e2f3d
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 80a4110cd3eda51f51aad444a3c6a5bb9e40ede7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cusertool-class"></a>CUserTool クラス
-ユーザー ツールは、外部アプリケーションを実行するメニュー項目です。 **ツール**のタブ、**カスタマイズ** ダイアログ ボックス ( [CMFCToolBarsCustomizeDialog クラス](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)) により、ユーザーはユーザー ツールを追加し、名前、コマンド、引数、および各ユーザー ツールの初期ディレクトリを指定します。  
+# <a name="cusertool-class"></a>CUserTool Class
+A user tool is a menu item that runs an external application. The **Tools** tab of the **Customize** dialog box ( [CMFCToolBarsCustomizeDialog Class](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)) enables the user to add user tools, and to specify the name, command, arguments, and initial directory for each user tool.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CUserTool : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
 |[CUserTool::CopyIconToClipboard](#copyicontoclipboard)||  
-|[CUserTool::DrawToolIcon](#drawtoolicon)|指定した四角形でユーザーの [ツール] アイコンを描画します。|  
-|[CUserTool::GetCommand](#getcommand)|ユーザー ツールに関連付けられているコマンドのテキストを含む文字列を返します。|  
-|[CUserTool::GetCommandId](#getcommandid)|ユーザー ツールのメニュー項目のコマンド ID を返します。|  
-|[Cusertool:](#invoke)|ユーザー ツールに関連付けられているコマンドを実行します。|  
-|[CUserTool::Serialize](#serialize)|アーカイブに対して、このオブジェクトの読み取りまたは書き込みを行います。 (上書き[指定](../../mfc/reference/cobject-class.md#serialize))。|  
-|[CUserTool::SetCommand](#setcommand)|ユーザー ツールに関連付けられているコマンドを設定します。|  
-|[CUserTool::SetToolIcon](#settoolicon)|このツールに関連付けられているアプリケーションからユーザー ツールのアイコンを読み込みます。|  
+|[CUserTool::DrawToolIcon](#drawtoolicon)|Draws the user tool icon in a specified rectangle.|  
+|[CUserTool::GetCommand](#getcommand)|Returns a string that contains the text of the command associated with the user tool.|  
+|[CUserTool::GetCommandId](#getcommandid)|Returns the command ID of the menu item of the user tool.|  
+|[CUserTool::Invoke](#invoke)|Executes the command associated with the user tool.|  
+|[CUserTool::Serialize](#serialize)|Reads or writes this object from or to an archive. (Overrides [CObject::Serialize](../../mfc/reference/cobject-class.md#serialize).)|  
+|[CUserTool::SetCommand](#setcommand)|Sets the command associated with the user tool.|  
+|[CUserTool::SetToolIcon](#settoolicon)|Loads the icon for the user tool from the application associated with the tool.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CUserTool::LoadDefaultIcon](#loaddefaulticon)|ユーザー ツールの既定のアイコンを読み込みます。|  
+|[CUserTool::LoadDefaultIcon](#loaddefaulticon)|Loads the default icon for a user tool.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CUserTool::m_strArguments](#m_strarguments)|ユーザー ツールのコマンドライン引数。|  
-|[CUserTool::m_strInitialDirectory](#m_strinitialdirectory)|ユーザー ツールの起動ディレクトリ。|  
-|[CUserTool::m_strLabel](#m_strlabel)|このツールのメニュー項目に表示されるツールの名前。|  
+|[CUserTool::m_strArguments](#m_strarguments)|The command-line arguments for the user tool.|  
+|[CUserTool::m_strInitialDirectory](#m_strinitialdirectory)|The initial directory for the user tool.|  
+|[CUserTool::m_strLabel](#m_strlabel)|The tool name that is displayed in the menu item for the tool.|  
   
-## <a name="remarks"></a>コメント  
- アプリケーションでユーザー ツールを有効にする方法の詳細については、次を参照してください。 [CUserToolsManager クラス](../../mfc/reference/cusertoolsmanager-class.md)します。  
+## <a name="remarks"></a>Remarks  
+ For more information about how to enable user tools in your application, see [CUserToolsManager Class](../../mfc/reference/cusertoolsmanager-class.md).  
   
-## <a name="example"></a>例  
- 次の例では、ツールの作成、`CUserToolsManager`オブジェクト、設定、`m_strLabel`メンバー変数とユーザー ツールを実行するアプリケーションを設定します。 このコード スニペットの一部である、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to create a tool from a `CUserToolsManager` object, set the `m_strLabel` member variable, and set the application that the user tool runs. This code snippet is part of the [Visual Studio Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_VisualStudioDemo&#35;](../../mfc/codesnippet/cpp/cusertool-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_VisualStudioDemo#35](../../mfc/codesnippet/cpp/cusertool-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CUserTool](../../mfc/reference/cusertool-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxusertool.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxusertool.h  
   
-##  <a name="copyicontoclipboard"></a>CUserTool::CopyIconToClipboard  
+##  <a name="copyicontoclipboard"></a>  CUserTool::CopyIconToClipboard  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
 BOOL CopyIconToClipboard();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="drawtoolicon"></a>CUserTool::DrawToolIcon  
- 指定した四角形の中心にユーザー ツールのアイコンを描画します。  
+##  <a name="drawtoolicon"></a>  CUserTool::DrawToolIcon  
+ Draws the user tool icon at the center of a specified rectangle.  
   
 ```  
 void DrawToolIcon(
@@ -127,130 +138,130 @@ void DrawToolIcon(
     const CRect& rectImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
- [入力] `rectImage`  
- アイコンを表示する領域の座標を指定します。  
+ [in] `rectImage`  
+ Specifies the coordinates of the area to display the icon.  
   
-##  <a name="getcommand"></a>CUserTool::GetCommand  
- ユーザー ツールに関連付けられているコマンドのテキストを含む文字列を返します。  
+##  <a name="getcommand"></a>  CUserTool::GetCommand  
+ Returns a string that contains the text of the command associated with the user tool.  
   
 ```  
 const CString& GetCommand() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 参照を`CString`ユーザー ツールに関連付けられているコマンドのテキストを含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A reference to `CString` object that contains the text of the command associated with the user tool.  
   
-##  <a name="getcommandid"></a>CUserTool::GetCommandId  
- ユーザー ツールのコマンド ID を返します。  
+##  <a name="getcommandid"></a>  CUserTool::GetCommandId  
+ Returns the command ID of the user tool.  
   
 ```  
 UINT GetCommandId() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- このユーザー ツールのコマンド ID。  
+### <a name="return-value"></a>Return Value  
+ The command ID of this user tool.  
   
-##  <a name="invoke"></a>Cusertool:  
- ユーザー ツールに関連付けられているコマンドを実行します。  
+##  <a name="invoke"></a>  CUserTool::Invoke  
+ Executes the command associated with the user tool.  
   
 ```  
 virtual BOOL Invoke();
 ```  
   
-### <a name="return-value"></a>戻り値  
- コマンドが正常に実行された場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the command was executed successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出し[ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153)ユーザー ツールに関連付けられているコマンドを実行します。 コマンドが空の場合、または場合に、関数が失敗した[ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153)は失敗します。  
+### <a name="remarks"></a>Remarks  
+ Calls [ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153) to execute a command associated with the user tool. The function fails if the command is empty or if [ShellExecute](http://msdn.microsoft.com/library/windows/desktop/bb762153) fails.  
   
-##  <a name="loaddefaulticon"></a>CUserTool::LoadDefaultIcon  
- ユーザー ツールの既定のアイコンを読み込みます。  
+##  <a name="loaddefaulticon"></a>  CUserTool::LoadDefaultIcon  
+ Loads the default icon for a user tool.  
   
 ```  
 virtual HICON LoadDefaultIcon();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 読み込まれたアイコンへのハンドル ( `HICON`)、または`NULL`場合は、既定のアイコンを読み込むことができません。  
+### <a name="return-value"></a>Return Value  
+ A handle to the loaded icon ( `HICON`), or `NULL` if the default icon cannot be loaded.  
   
-### <a name="remarks"></a>コメント  
- フレームワークは、ツールの実行可能ファイルからユーザー定義のツールのアイコンを読み込むことがない場合に、このメソッドを呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The framework calls this method when it is unable to load an icon for a user-defined tool from the executable file of the tool.  
   
- 独自の既定ツール アイコンを指定するには、このメソッドをオーバーライドします。  
+ Override this method to supply your own default tool icon.  
   
-##  <a name="m_strarguments"></a>CUserTool::m_strArguments  
- ユーザー ツールのコマンドライン引数。  
+##  <a name="m_strarguments"></a>  CUserTool::m_strArguments  
+ The command-line arguments for the user tool.  
   
 ```  
 CString m_strArguments;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出したときに、この文字列が、ツールに渡される[cusertool:](#invoke)またはユーザーがこのツールに関連付けられているコマンドをクリックしたとき。  
+### <a name="remarks"></a>Remarks  
+ This string is passed to the tool when you call [CUserTool::Invoke](#invoke) or when a user clicks the command associated with this tool.  
   
-##  <a name="m_strinitialdirectory"></a>CUserTool::m_strInitialDirectory  
- ユーザー ツールの初期ディレクトリを指定します。  
+##  <a name="m_strinitialdirectory"></a>  CUserTool::m_strInitialDirectory  
+ Specifies the initial directory for the user tool.  
   
 ```  
 CString m_strInitialDirectory;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この変数は、このツールを呼び出すときに実行される初期ディレクトリを指定します。 [cusertool:](#invoke)またはユーザーがこのツールに関連付けられているコマンドをクリックしたとき。  
+### <a name="remarks"></a>Remarks  
+ This variable specifies the initial directory that the tool executes in when you call [CUserTool::Invoke](#invoke) or when a user clicks the command associated with this tool.  
   
-##  <a name="m_strlabel"></a>CUserTool::m_strLabel  
- このツールのメニュー項目に表示されるラベルです。  
+##  <a name="m_strlabel"></a>  CUserTool::m_strLabel  
+ The label that is displayed in the menu item for the tool.  
   
 ```  
 CString m_strLabel;  
 ```  
   
-##  <a name="serialize"></a>CUserTool::Serialize  
+##  <a name="serialize"></a>  CUserTool::Serialize  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
 virtual void Serialize(CArchive& ar);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `ar`  
+### <a name="parameters"></a>Parameters  
+ [in] `ar`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcommand"></a>CUserTool::SetCommand  
- ユーザー ツールを実行するアプリケーションを設定します。  
+##  <a name="setcommand"></a>  CUserTool::SetCommand  
+ Sets the application that the user tool runs.  
   
 ```  
 void SetCommand(LPCTSTR lpszCmd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lpszCmd`  
- ユーザー ツールに関連する新しいアプリケーションを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `lpszCmd`  
+ Specifies the new application to be associated with the user tool.  
   
-### <a name="remarks"></a>コメント  
- ユーザー ツールを実行する新しいアプリケーションに設定するには、このメソッドを呼び出します。 このメソッドは、古いアイコンを破棄し、特定のアプリケーションからは新しいアイコンを読み込みます。 呼び出してユーザー ツールの既定のアイコンを読み込む場合は、アプリケーションからそのアイコンを読み込むことができません、 [CUserTool::LoadDefaultIcon](#loaddefaulticon)します。  
+### <a name="remarks"></a>Remarks  
+ Call this method to set a new application that the user tool runs. The method destroys the old icon and loads a new icon from the given application. If it cannot load an icon from the application, it loads the default icon for a user tool by calling [CUserTool::LoadDefaultIcon](#loaddefaulticon).  
   
-##  <a name="settoolicon"></a>CUserTool::SetToolIcon  
- このツールを使用するアプリケーションからユーザー ツールのアイコンを読み込みます。  
+##  <a name="settoolicon"></a>  CUserTool::SetToolIcon  
+ Loads the icon for the user tool from the application that the tool uses.  
   
 ```  
 virtual HICON SetToolIcon();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 読み込まれたアイコンへのハンドル。  
+### <a name="return-value"></a>Return Value  
+ A handle to the loaded icon.  
   
-### <a name="remarks"></a>コメント  
- メニュー項目に表示されるアイコンの読み込みには、このメソッドを呼び出します。 このメソッドは、このツールを使用する実行可能ファイルにあるアイコンを検索します。 アイコンがによって提供される場合は、既定のアイコンがない、 [CUserTool::LoadDefaultIcon](#loaddefaulticon)代わりに使用されます。  
+### <a name="remarks"></a>Remarks  
+ Call this method to load the icon to be displayed on the menu item. This method searches for the icon in the executable file that the tool uses. If it does not have a default icon, the icon provided by [CUserTool::LoadDefaultIcon](#loaddefaulticon) is used instead.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CWinAppEx クラス](../../mfc/reference/cwinappex-class.md)   
- [CUserToolsManager クラス](../../mfc/reference/cusertoolsmanager-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CWinAppEx Class](../../mfc/reference/cwinappex-class.md)   
+ [CUserToolsManager Class](../../mfc/reference/cusertoolsmanager-class.md)
 

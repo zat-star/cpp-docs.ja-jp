@@ -1,76 +1,95 @@
 ---
-title: "CObject からのクラスの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CObject"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CObject クラス, 派生"
-  - "CObject クラス, 派生 (シリアル化できるクラスを)"
-  - "DECLARE_DYNAMIC マクロ"
-  - "DECLARE_DYNCREATE マクロ"
-  - "DECLARE_SERIAL マクロ"
-  - "派生クラス, CObject から"
-  - "マクロ [C++], シリアル化"
-  - "シリアル化 [C++], マクロ"
+title: Deriving a Class from CObject | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CObject
+dev_langs:
+- C++
+helpviewer_keywords:
+- DECLARE_DYNCREATE macro [MFC]
+- DECLARE_SERIAL macro [MFC]
+- macros [MFC], serialization
+- serialization [MFC], macros
+- DECLARE_DYNAMIC macro [MFC]
+- derived classes [MFC], from CObject
+- CObject class [MFC], deriving serializable classes
+- CObject class [MFC], deriving from
 ms.assetid: 5ea4ea41-08b5-4bd8-b247-c5de8c152a27
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# CObject からのクラスの派生
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8e4313f4c84ede76206fb64ffb55cf5e9ba6e87f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは [CObject](../Topic/CObject%20Class.md)からクラスを派生するために必要な最小限の手順について説明します。  他の `CObject` クラスのトピックでは、シリアル化と診断デバッグ サポート `CObject` などの特定の機能を利用するために必要な手順について説明します。  
+---
+# <a name="deriving-a-class-from-cobject"></a>Deriving a Class from CObject
+This article describes the minimum steps necessary to derive a class from [CObject](../mfc/reference/cobject-class.md). Other `CObject` class articles describe the steps needed to take advantage of specific `CObject` features, such as serialization and diagnostic debugging support.  
   
- `CObject`の説明では、用語は「ファイル」インターフェイスを実装し、「file」がよく使用されます。  インターフェイス ファイル \(通常はヘッダー ファイルと、呼び出されます。H ファイル\) はクラスを使用するために必要なクラス宣言およびそのほかの情報が含まれています。  実装ファイル \(.cpp ファイル\) クラス定義を、クラスのメンバー関数を実装するコードが含まれています。  たとえば、A というクラスは `CPerson`という、通常 PERSON.H インターフェイスという名前のファイルを作成し、実装ファイルは PERSON.CPP という名前です。  ただし、アプリケーション間で共有する、小さなクラスには、単一の .cpp ファイルにインターフェイスと実装を組み合わせると、簡単です。  
+ In the discussions of `CObject`, the terms "interface file" and "implementation file" are used frequently. The interface file (often called the header file, or .H file) contains the class declaration and any other information needed to use the class. The implementation file (or .CPP file) contains the class definition as well as the code that implements the class member functions. For example, for a class named `CPerson`, you would typically create an interface file named PERSON.H and an implementation file named PERSON.CPP. However, for some small classes that will not be shared among applications, it is sometimes easier to combine the interface and implementation into a single .CPP file.  
   
- `CObject`からクラスを派生する場合は、関数の 4 レベルから選択できます:  
+ You can choose from four levels of functionality when deriving a class from `CObject`:  
   
--   基本機能: ランタイム クラス情報またはシリアル化のサポートは、診断メモリ管理は含まれません。  
+-   Basic functionality: No support for run-time class information or serialization but includes diagnostic memory management.  
   
--   ランタイム クラス情報をサポートする基本機能。  
+-   Basic functionality plus support for run-time class information.  
   
--   ランタイム クラス情報、および動的生成をサポートする基本機能。  
+-   Basic functionality plus support for run-time class information and dynamic creation.  
   
--   ランタイム クラス情報、動的生成およびシリアル化をサポートする基本機能。  
+-   Basic functionality plus support for run-time class information, dynamic creation, and serialization.  
   
- 基本クラスとして後で動作する再利用 \(、\) 用に設計されたクラスは、後続のシリアル化のニーズが予測される場合、ランタイム クラスのサポートとシリアル化のサポートを含める必要があります。  
+ Classes designed for reuse (those that will later serve as base classes) should at least include run-time class support and serialization support, if any future serialization need is anticipated.  
   
- ユーザーが `CObject`から派生するクラスの宣言と実装で特定の宣言と実装のマクロを使用することにより、機能のレベルを選択します。  
+ You choose the level of functionality by using specific declaration and implementation macros in the declaration and implementation of the classes you derive from `CObject`.  
   
- 次の表は、サポート シリアル化、およびランタイム クラス情報への使用されるマクロの関係を示しています。  
+ The following table shows the relationship among the macros used to support serialization and run-time information.  
   
-### シリアル化、およびランタイム情報に使用するマクロ  
+### <a name="macros-used-for-serialization-and-run-time-information"></a>Macros Used for Serialization and Run-Time Information  
   
-|使用されるマクロ|CObject::IsKindOf|CRuntimeClass::<br /><br /> CreateObject|CArchive::operator\>\><br /><br /> CArchive::operator\<\<|  
-|--------------|-----------------------|--------------------------------------|-------------------------------------------------------|  
-|`CObject` の基本的な機能|No|No|No|  
+|Macro used|CObject::IsKindOf|CRuntimeClass::<br /><br /> CreateObject|CArchive::operator>><br /><br /> CArchive::operator<<|  
+|----------------|-----------------------|--------------------------------------|-------------------------------------------------------|  
+|Basic `CObject` functionality|No|No|No|  
 |`DECLARE_DYNAMIC`|Yes|No|No|  
 |`DECLARE_DYNCREATE`|Yes|Yes|No|  
 |`DECLARE_SERIAL`|Yes|Yes|Yes|  
   
-#### CObject の基本的な機能を使用するには  
+#### <a name="to-use-basic-cobject-functionality"></a>To use basic CObject functionality  
   
-1.  `CObject` からクラスを派生するために標準 C\+\+ 構文を使用すると、`CObject`の派生クラスから\)。  
+1.  Use the normal C++ syntax to derive your class from `CObject` (or from a class derived from `CObject`).  
   
-     次の例では、最も単純な場合、`CObject`からクラスの派生クラスを示しています。:  
+     The following example shows the simplest case, the derivation of a class from `CObject`:  
   
-     [!code-cpp[NVC_MFCCObjectSample#1](../mfc/codesnippet/CPP/deriving-a-class-from-cobject_1.h)]  
+     [!code-cpp[NVC_MFCCObjectSample#1](../mfc/codesnippet/cpp/deriving-a-class-from-cobject_1.h)]  
   
- しかし、新しいクラスの詳細を処理するために `CObject` のメンバー関数の一部をオーバーライドすることもできます。  たとえば、通常はクラスのコンテンツにデバッグ出力を表示するに `CObject` の `Dump` 関数をオーバーライドする必要があります。  `Dump`をオーバーライドする方法の詳細については [診断: オブジェクトの内容をダンプ](http://msdn.microsoft.com/ja-jp/727855b1-5a83-44bd-9fe3-f1d535584b59)記事を参照してください。  また、クラス オブジェクトのデータ メンバーの整合性を検証するためにカスタマイズしたテストを提供するように `CObject` の `AssertValid` 関数をオーバーライドする必要があります。  `AssertValid`をオーバーライドする方法の詳細については [MFC ASSERT\_VALID および CObject::AssertValid](http://msdn.microsoft.com/ja-jp/7654fb75-9e9a-499a-8165-0a96faf2d5e6)を参照してください。  
+ Normally, however, you may want to override some of `CObject`'s member functions to handle the specifics of your new class. For example, you may usually want to override the `Dump` function of `CObject` to provide debugging output for the contents of your class. For details on how to override `Dump`, see the article [Diagnostics: Dumping Object Contents](http://msdn.microsoft.com/en-us/727855b1-5a83-44bd-9fe3-f1d535584b59). You may also want to override the `AssertValid` function of `CObject` to provide customized testing to validate the consistency of the data members of class objects. For a description of how to override `AssertValid`, see [MFC ASSERT_VALID and CObject::AssertValid](http://msdn.microsoft.com/en-us/7654fb75-9e9a-499a-8165-0a96faf2d5e6).  
   
- 記事 [機能の指定](../mfc/specifying-levels-of-functionality.md) はランタイム クラス情報、動的オブジェクトの作成とシリアル化機能などの他のレベルを指定する方法について説明します。  
+ The article [Specifying Levels of Functionality](../mfc/specifying-levels-of-functionality.md) describes how to specify other levels of functionality, including run-time class information, dynamic object creation, and serialization.  
   
-## 参照  
- [CObject の使い方](../mfc/using-cobject.md)
+## <a name="see-also"></a>See Also  
+ [Using CObject](../mfc/using-cobject.md)
+
+

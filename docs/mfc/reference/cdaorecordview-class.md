@@ -1,5 +1,5 @@
 ---
-title: "CDaoRecordView クラス |Microsoft ドキュメント"
+title: CDaoRecordView Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,12 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CDaoRecordView class
-- data-bound controls [C++], DAO controls
-- data binding [C++], DAO views
-- bound controls [C++], displaying database data
-- application wizards [C++], creating record views
-- controls [MFC], data binding
+- CDaoRecordView [MFC], CDaoRecordView
+- CDaoRecordView [MFC], IsOnFirstRecord
+- CDaoRecordView [MFC], IsOnLastRecord
+- CDaoRecordView [MFC], OnGetRecordset
+- CDaoRecordView [MFC], OnMove
 ms.assetid: 5aa7d0e2-bd05-413e-b216-80c404ce18ac
 caps.latest.revision: 23
 author: mikeblome
@@ -44,58 +43,58 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 11aa318e84e89835ceb710725590f3c3e6387fcd
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4d300082bf01394958c02a4cf8dd33305df1c4a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaorecordview-class"></a>CDaoRecordView クラス
-コントロール内にデータベース レコードを表示するビューです。  
+# <a name="cdaorecordview-class"></a>CDaoRecordView Class
+A view that displays database records in controls.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class AFX_NOVTABLE CDaoRecordView : public CFormView  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="protected-constructors"></a>プロテクト コンストラクター  
+### <a name="protected-constructors"></a>Protected Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[指定して](#cdaorecordview)|`CDaoRecordView` オブジェクトを構築します。|  
+|[CDaoRecordView::CDaoRecordView](#cdaorecordview)|Constructs a `CDaoRecordView` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoRecordView::IsOnFirstRecord](#isonfirstrecord)|現在のレコードが関連するレコード セットの最初のレコードの場合は&0; 以外を返します。|  
-|[CDaoRecordView::IsOnLastRecord](#isonlastrecord)|現在のレコードが関連するレコード セットの最後のレコードの場合は&0; 以外を返します。|  
-|[CDaoRecordView::OnGetRecordset](#ongetrecordset)|派生したクラスのオブジェクトへのポインターを返します`CDaoRecordset`します。 ClassWizard では、この関数を上書きし、必要な場合、レコード セットを作成します。|  
-|[CDaoRecordView::OnMove](#onmove)|現在のレコードを変更した場合、データ ソースで更新し、指定されたレコードに移動 (次、前に、最初のページまたは最後)。|  
+|[CDaoRecordView::IsOnFirstRecord](#isonfirstrecord)|Returns nonzero if the current record is the first record in the associated recordset.|  
+|[CDaoRecordView::IsOnLastRecord](#isonlastrecord)|Returns nonzero if the current record is the last record in the associated recordset.|  
+|[CDaoRecordView::OnGetRecordset](#ongetrecordset)|Returns a pointer to an object of a class derived from `CDaoRecordset`. ClassWizard overrides this function for you and creates the recordset if necessary.|  
+|[CDaoRecordView::OnMove](#onmove)|If the current record has changed, updates it on the data source, then moves to the specified record (next, previous, first, or last).|  
   
-## <a name="remarks"></a>コメント  
- ビューがフォーム ビューに直接接続、`CDaoRecordset`オブジェクトです。 ビューのダイアログ テンプレート リソースから作成され、のフィールドを表示、`CDaoRecordset`ダイアログ テンプレートのコントロール内のオブジェクト。 `CDaoRecordView`オブジェクト ダイアログ データ エクス (チェンジ DDX) および DAO レコード フィールド エクス (チェンジ DFX) を使用して、フォーム上のコントロールとレコード セットのフィールドの間のデータの移動を自動化します。 `CDaoRecordView`移動するための既定の実装を提供しても、最初次、前、または最後のレコードと現在の表示のレコードを更新するためのインターフェイスです。  
+## <a name="remarks"></a>Remarks  
+ The view is a form view directly connected to a `CDaoRecordset` object. The view is created from a dialog template resource and displays the fields of the `CDaoRecordset` object in the dialog template's controls. The `CDaoRecordView` object uses dialog data exchange (DDX) and DAO record field exchange (DFX) to automate the movement of data between the controls on the form and the fields of the recordset. `CDaoRecordView` also supplies a default implementation for moving to the first, next, previous, or last record and an interface for updating the record currently in view.  
   
 > [!NOTE]
->  DAO データベース クラスは、ODBC Open Database Connectivity () を基 MFC データベース クラスとは異なります。 DAO データベース クラスの名前では、"CDao"というプレフィックスが付いています。 DAO クラスで ODBC データ ソースにアクセスできます。Microsoft Jet データベース エンジンを使用するため、DAO クラスは一般に優れた機能を提供します。  
+>  The DAO database classes are distinct from the MFC database classes based on Open Database Connectivity (ODBC). All DAO database class names have the "CDao" prefix. You can still access ODBC data sources with the DAO classes; the DAO classes generally offer superior capabilities because they use the Microsoft Jet database engine.  
   
- レコード ビューを作成する最も一般的な方法は、アプリケーションのウィザードでです。 アプリケーション ウィザードでは、レコード ビュー クラスとスケルトンのスターター アプリケーションの一部として、関連するレコード セット クラスの両方を作成します。  
+ The most common way to create your record view is with the Application Wizard. The Application Wizard creates both the record view class and its associated recordset class as part of your skeleton starter application.  
   
- 1 つのフォームを単に必要がある場合は、アプリケーション ウィザードを使用が簡単です。 ClassWizard では、開発プロセスの後半で、レコード ビューを使用するかを判断することができます。 アプリケーション ウィザードを使用してレコード ビュー クラスを作成しない場合に、後で ClassWizard で作成できます。 レコード セット クラスの名前付けで詳細に制御が提供されるため、最も柔軟な方法は ClassWizard を使用してレコード ビューとレコード セットを個別に作成し、それらを接続するとします。H/です。CPP ファイルです。 この方法では、同じレコード セット クラスで複数のレコード ビューを持つこともできます。  
+ If you simply need a single form, the Application Wizard approach is easier. ClassWizard lets you decide to use a record view later in the development process. If you don't create the record view class with the Application Wizard, you can create it later with ClassWizard. Using ClassWizard to create a record view and a recordset separately and then connect them is the most flexible approach because it gives you more control in naming the recordset class and its .H/.CPP files. This approach also lets you have multiple record views on the same recordset class.  
   
- メニュー (および必要に応じてツールバー) を簡単に、レコード ビューにレコード間を移動するエンドユーザーのためにアプリケーション ウィザードで作成の移行に関するリソース、最初次、前、または最後のレコードです。 ClassWizard でユーザーがレコード ビュー クラスを作成する場合は、エディターを作成するこれらのリソース自分でメニューとビットマップを使用する必要があります。  
+ To make it easy for end-users to move from record to record in the record view, the Application Wizard creates menu (and optionally toolbar) resources for moving to the first, next, previous, or last record. If you create a record view class with ClassWizard, you need to create these resources yourself with the menu and bitmap editors.  
   
- レコード間を移動するための既定の実装については、次を参照してください。`IsOnFirstRecord`と`IsOnLastRecord`」および「[レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)、両方に適用されます`CRecordView`と`CDaoRecordView`です。  
+ For information about the default implementation for moving from record to record, see `IsOnFirstRecord` and `IsOnLastRecord` and the article [Using a Record View](../../data/using-a-record-view-mfc-data-access.md), which applies to both `CRecordView` and `CDaoRecordView`.  
   
- `CDaoRecordView`レコード ビューは、ユーザー インターフェイスを更新できるようにはのレコード セット内のユーザーの位置を追跡します。 ユーザーがレコード セットの先頭または末尾に移動、レコード ビュー、ユーザー インターフェイス オブジェクトを無効になります: メニュー項目やツール バー ボタンなど — を移動するため同じ方向にさらにします。  
+ `CDaoRecordView` keeps track of the user's position in the recordset so that the record view can update the user interface. When the user moves to either end of the recordset, the record view disables user interface objects — such as menu items or toolbar buttons — for moving further in the same direction.  
   
- 宣言と、レコード ビューとレコード セット クラスを使用する方法の詳細についてを参照してください「の作成、レコード ビューのデザインと」記事[レコード ビュー](../../data/record-views-mfc-data-access.md)します。 レコード ビューの動作とその使用方法の詳細については、記事を参照してください。[レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。 上記で説明したすべてのアーティクルが両方に適用`CRecordView`と`CDaoRecordView`です。  
+ For more information about declaring and using your record view and recordset classes, see "Designing and Creating a Record View" in the article [Record Views](../../data/record-views-mfc-data-access.md). For more information about how record views work and how to use them, see the article [Using a Record View](../../data/using-a-record-view-mfc-data-access.md). All the articles mentioned above apply to both `CRecordView` and `CDaoRecordView`.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -110,124 +109,124 @@ class AFX_NOVTABLE CDaoRecordView : public CFormView
   
  `CDaoRecordView`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-##  <a name="cdaorecordview"></a>指定して  
- 派生した型のオブジェクトを作成する場合`CDaoRecordView`、どちらの形式のビュー オブジェクトを初期化し、ビューの基になるダイアログ リソースの特定にコンス トラクターを呼び出します。  
+##  <a name="cdaorecordview"></a>  CDaoRecordView::CDaoRecordView  
+ When you create an object of a type derived from `CDaoRecordView`, call either form of the constructor to initialize the view object and identify the dialog resource on which the view is based.  
   
 ```  
 explicit CDaoRecordView(LPCTSTR lpszTemplateName);  
 explicit CDaoRecordView(UINT nIDTemplate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszTemplateName`  
- ダイアログ テンプレート リソースの名前を指定する null で終わる文字列が含まれています。  
+ Contains a null-terminated string that is the name of a dialog template resource.  
   
  `nIDTemplate`  
- ダイアログ テンプレート リソースの ID 番号が含まれています。  
+ Contains the ID number of a dialog template resource.  
   
-### <a name="remarks"></a>コメント  
- (コンス トラクターの引数として文字列を渡す) の名前または ID (符号なし整数の引数として渡します) か、リソースを識別できます。 リソースを使用して ID をお勧めします。  
-  
-> [!NOTE]
->  派生クラスでは、独自のコンス トラクターを指定する必要があります。 派生クラスのコンス トラクターで、コンス トラクターを呼び出します`CDaoRecordView::CDaoRecordView`リソース名または ID を引数として使用します。  
-  
- **CDaoRecordView::OnInitialUpdate**呼び出し`CWnd::UpdateData`、どの呼び出し`CWnd::DoDataExchange`します。 この最初の呼び出し`DoDataExchange`接続`CDaoRecordView`(間接的に) に制御`CDaoRecordset`ClassWizard で作成されたデータ メンバーのフィールドです。 これらのデータ メンバーは、基本クラスを呼び出した後まで使用できません**CFormView::OnInitialUpdate**メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ You can either identify the resource by name (pass a string as the argument to the constructor) or by its ID (pass an unsigned integer as the argument). Using a resource ID is recommended.  
   
 > [!NOTE]
->  ClassWizard を使用する場合、ウィザードで定義、`enum`値`CDaoRecordView::IDD`コンス トラクターの一覧でメンバーの初期化を使用してクラスの宣言です。  
+>  Your derived class must supply its own constructor. In the constructor of your derived class, call the constructor `CDaoRecordView::CDaoRecordView` with the resource name or ID as an argument.  
   
- [!code-cpp[NVC_MFCDatabase&#35;](../../mfc/codesnippet/cpp/cdaorecordview-class_1.cpp)]  
+ **CDaoRecordView::OnInitialUpdate** calls `CWnd::UpdateData`, which calls `CWnd::DoDataExchange`. This initial call to `DoDataExchange` connects `CDaoRecordView` controls (indirectly) to `CDaoRecordset` field data members created by ClassWizard. These data members cannot be used until after you call the base class **CFormView::OnInitialUpdate** member function.  
   
-##  <a name="isonfirstrecord"></a>CDaoRecordView::IsOnFirstRecord  
- このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクト内の最初のレコードであるかどうかを確認します。  
+> [!NOTE]
+>  If you use ClassWizard, the wizard defines an `enum` value `CDaoRecordView::IDD` in the class declaration and uses it in the member initialization list for the constructor.  
+  
+ [!code-cpp[NVC_MFCDatabase#35](../../mfc/codesnippet/cpp/cdaorecordview-class_1.cpp)]  
+  
+##  <a name="isonfirstrecord"></a>  CDaoRecordView::IsOnFirstRecord  
+ Call this member function to determine whether the current record is the first record in the recordset object associated with this record view.  
   
 ```  
 BOOL IsOnFirstRecord();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のレコードがレコード セットの最初のレコードの場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the current record is the first record in the recordset; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は ClassWizard で作成されたコマンド更新ハンドラーの既定の実装を記述するために便利です。  
+### <a name="remarks"></a>Remarks  
+ This function is useful for writing your own implementations of the default command update handlers written by ClassWizard.  
   
- ユーザーは、最初のレコードに移動、framework 無効になりますが、ユーザー インターフェイス オブジェクト (メニュー項目やツール バー ボタンなど) がある場合、最初のページと前のレコードに移動するためです。  
+ If the user moves to the first record, the framework disables any user interface objects (for example, menu items or toolbar buttons) you have for moving to the first or the previous record.  
   
-##  <a name="isonlastrecord"></a>CDaoRecordView::IsOnLastRecord  
- このメンバー関数を呼び出して現在のレコードがレコード ビューに関連付けられているレコード セット オブジェクトの最後のレコードであるかどうかを確認します。  
+##  <a name="isonlastrecord"></a>  CDaoRecordView::IsOnLastRecord  
+ Call this member function to determine whether the current record is the last record in the recordset object associated with this record view.  
   
 ```  
 BOOL IsOnLastRecord();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のレコードがレコード セットの最後のレコードの場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the current record is the last record in the recordset; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、既定の実装を ClassWizard がレコード間を移動するためのユーザー インターフェイスをサポートするために書き込むコマンド更新ハンドラーを記述するために便利です。  
+### <a name="remarks"></a>Remarks  
+ This function is useful for writing your own implementations of the default command update handlers that ClassWizard writes to support a user interface for moving from record to record.  
   
 > [!CAUTION]
->  この関数の結果は信頼性がする点を除いて、ビューがそれ以降、ユーザーに移動されるまで、レコード セットの末尾を検出できません。 ユーザーは、レコード ビューは次または最後のレコードに移動するためのユーザー インターフェイス オブジェクトを無効にする必要があることを確認する前に、最後のレコードを超える移動する必要があります。 最後のレコードの後ろに移動し、バックアップの最後に移動レコード (またはその前に)、レコード ビューは、レコード セット内のユーザーの位置を追跡し、ユーザー インターフェイス オブジェクトを正しく無効にできます。  
+>  The result of this function is reliable except that the view may not be able to detect the end of the recordset until the user has moved past it. The user might have to move beyond the last record before the record view can tell that it must disable any user interface objects for moving to the next or last record. If the user moves past the last record and then moves back to the last record (or before it), the record view can track the user's position in the recordset and disable user interface objects correctly.  
   
-##  <a name="ongetrecordset"></a>CDaoRecordView::OnGetRecordset  
- ポインターを返す、 `CDaoRecordset`-レコード ビューに関連付けられているオブジェクトを派生します。  
+##  <a name="ongetrecordset"></a>  CDaoRecordView::OnGetRecordset  
+ Returns a pointer to the `CDaoRecordset`-derived object associated with the record view.  
   
 ```  
 virtual CDaoRecordset* OnGetRecordset() = 0;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CDaoRecordset`-派生オブジェクトにオブジェクトが正常に作成された、それ以外の場合、 **NULL**ポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CDaoRecordset`-derived object if the object was successfully created; otherwise a **NULL** pointer.  
   
-### <a name="remarks"></a>コメント  
- 作成またはレコード セット オブジェクトを取得してにポインターを返すには、この関数をオーバーライドする必要があります。 ClassWizard 使用して、レコード ビュー クラスを宣言する場合の既定のオーバーライドが書き込まれます。 ClassWizard の既定の実装では、いずれかが存在する場合は、レコード ビューに格納されているレコード セットのポインターを返します。 ClassWizard でユーザーが指定されている場合は、型のレコード セット オブジェクトを作成、その**開く**メンバーは、テーブルを開くか、クエリを実行する関数し、オブジェクトへのポインターを返します。  
+### <a name="remarks"></a>Remarks  
+ You must override this member function to construct or obtain a recordset object and return a pointer to it. If you declare your record view class with ClassWizard, the wizard writes a default override for you. ClassWizard's default implementation returns the recordset pointer stored in the record view if one exists. If not, it constructs a recordset object of the type you specified with ClassWizard and calls its **Open** member function to open the table or run the query, and then returns a pointer to the object.  
   
- 詳細と例については、記事を参照して[レコード ビュー: レコード ビューを使用して](../../data/using-a-record-view-mfc-data-access.md)します。  
+ For more information and examples, see the article [Record Views: Using a Record View](../../data/using-a-record-view-mfc-data-access.md).  
   
-##  <a name="onmove"></a>CDaoRecordView::OnMove  
- このメンバー関数を呼び出して、レコード セット内の別のレコードに移動し、レコード ビューのコントロールにそのフィールドを表示します。  
+##  <a name="onmove"></a>  CDaoRecordView::OnMove  
+ Call this member function to move to a different record in the recordset and display its fields in the controls of the record view.  
   
 ```  
 virtual BOOL OnMove(UINT nIDMoveCommand);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIDMoveCommand`  
- 次の標準コマンド ID 値のいずれかです。  
+ One of the following standard command ID values:  
   
-- `ID_RECORD_FIRST`レコード セットの最初のレコードに移動します。  
+- `ID_RECORD_FIRST` Move to the first record in the recordset.  
   
-- `ID_RECORD_LAST`レコード セットの最後のレコードに移動します。  
+- `ID_RECORD_LAST` Move to the last record in the recordset.  
   
-- `ID_RECORD_NEXT`レコード セットの次のレコードに移動します。  
+- `ID_RECORD_NEXT` Move to the next record in the recordset.  
   
-- `ID_RECORD_PREV`レコード セットの前のレコードに移動します。  
+- `ID_RECORD_PREV` Move to the previous record in the recordset.  
   
-### <a name="return-value"></a>戻り値  
- 移動が成功した場合は 0 以外。移動要求が拒否された場合は、それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the move was successful; otherwise 0 if the move request was denied.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装の適切な移動メンバー関数の呼び出し、`CDaoRecordset`レコード ビューに関連付けられているオブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The default implementation calls the appropriate Move member function of the `CDaoRecordset` object associated with the record view.  
   
- 既定では、`OnMove`ユーザーを使用すると、レコード ビューに変更された場合は、データ ソースの現在のレコードを更新します。  
+ By default, `OnMove` updates the current record on the data source if the user has changed it in the record view.  
   
- アプリケーション ウィザードでは、最初のレコード、最後のレコード、次のレコード、および前のレコードのメニュー項目を含むメニュー リソースを作成します。 [ツールバー] オプションを選択した場合、アプリケーション ウィザードもこれらのコマンドに対応するボタンをツールバーを作成します。  
+ The Application Wizard creates a menu resource with First Record, Last Record, Next Record, and Previous Record menu items. If you select the Initial Toolbar option, the Application Wizard also creates a toolbar with buttons corresponding to these commands.  
   
- 過去のレコード セットの最後のレコードを移動する場合、レコード ビューは最後のレコードが表示されます。 最初のレコードを超えて後方移動した場合、レコード ビューは最初のレコードが表示されます。  
+ If you move past the last record in the recordset, the record view continues to display the last record. If you move backward past the first record, the record view continues to display the first record.  
   
 > [!CAUTION]
->  呼び出す`OnMove`レコード セットにレコードが存在しない場合は例外をスローします。 適切なユーザー インターフェイス更新ハンドラー関数を呼び出す: **OnUpdateRecordFirst**、 **OnUpdateRecordLast**、 **OnUpdateRecordNext**、または**OnUpdateRecordPrev** —、対応するすべてのレコードをレコード セットが存在するかどうかを判断する操作に移動します。  
+>  Calling `OnMove` throws an exception if the recordset has no records. Call the appropriate user interface update handler function — **OnUpdateRecordFirst**, **OnUpdateRecordLast**, **OnUpdateRecordNext**, or **OnUpdateRecordPrev** — before the corresponding move operation to determine whether the recordset has any records.  
   
-## <a name="see-also"></a>関連項目  
- [CFormView クラス](../../mfc/reference/cformview-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)   
- [どちらのクラス](../../mfc/reference/cdaotabledef-class.md)   
- [CDaoQueryDef クラス](../../mfc/reference/cdaoquerydef-class.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   
- [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)   
- [CFormView クラス](../../mfc/reference/cformview-class.md)
+## <a name="see-also"></a>See Also  
+ [CFormView Class](../../mfc/reference/cformview-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDaoRecordset Class](../../mfc/reference/cdaorecordset-class.md)   
+ [CDaoTableDef Class](../../mfc/reference/cdaotabledef-class.md)   
+ [CDaoQueryDef Class](../../mfc/reference/cdaoquerydef-class.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)   
+ [CDaoWorkspace Class](../../mfc/reference/cdaoworkspace-class.md)   
+ [CFormView Class](../../mfc/reference/cformview-class.md)
 

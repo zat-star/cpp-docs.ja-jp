@@ -1,5 +1,5 @@
 ---
-title: "リスト ボックス スタイル |Microsoft ドキュメント"
+title: List-Box Styles | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -28,22 +28,22 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- LBS_NOSEL constant
-- LBS_NOREDRAW constant
-- LBS_HASSTRINGS constant
-- LBS_OWNERDRAWFIXED constant
-- LBS_WANTKEYBOARDINPUT constant
-- LBS_STANDARD constant
-- LBS_MULTIPLESEL constant
-- LBS_OWNERDRAWVARIABLE constant
-- LBS_DISABLENOSCROLL constant
-- LBS_NODATA constant
-- list boxes, styles
-- LBS_EXTENDEDSEL constant
-- LBS_MULTICOLUMN constant
-- LBS_NOTIFY constant
-- LBS_USETABSTOPS constant
-- LBS_NOINTEGRALHEIGHT constant
+- LBS_NOSEL constant [MFC]
+- LBS_NOREDRAW constant [MFC]
+- LBS_HASSTRINGS constant [MFC]
+- LBS_OWNERDRAWFIXED constant [MFC]
+- LBS_WANTKEYBOARDINPUT constant [MFC]
+- LBS_STANDARD constant [MFC]
+- LBS_MULTIPLESEL constant [MFC]
+- LBS_OWNERDRAWVARIABLE constant [MFC]
+- LBS_DISABLENOSCROLL constant [MFC]
+- LBS_NODATA constant [MFC]
+- list boxes [MFC], styles
+- LBS_EXTENDEDSEL constant [MFC]
+- LBS_MULTICOLUMN constant [MFC]
+- LBS_NOTIFY constant [MFC]
+- LBS_USETABSTOPS constant [MFC]
+- LBS_NOINTEGRALHEIGHT constant [MFC]
 - LBS_SORT constant
 ms.assetid: 3f357b8d-9118-4f41-9e28-02ed92d1e88f
 caps.latest.revision: 12
@@ -64,51 +64,51 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 8e038e5cef50bd15df85c9d7f8b213b54ed03825
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cad7dce447e41b72116dc8317f7a05649cd34e76
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="list-box-styles"></a>リスト ボックス スタイル
--   **LBS_DISABLENOSCROLL**リスト ボックスが無効になっている、垂直スクロール バー、リスト ボックスにスクロールするには、十分な項目が含まれていない場合を示しています。 このスタイルが設定されていないと、項目が少なくてスクロールする必要がない場合、スクロール バーは表示されません。  
+# <a name="list-box-styles"></a>List-Box Styles
+-   **LBS_DISABLENOSCROLL** The list box shows a disabled vertical scroll bar when the list box does not contain enough items to scroll. Without this style, the scroll bar is hidden when the list box does not contain enough items.  
   
--   **LBS_EXTENDEDSEL**ユーザーは、SHIFT キーとマウス、または特殊なキーの組み合わせを使用して複数の項目を選択できます。  
+-   **LBS_EXTENDEDSEL** The user can select multiple items using the SHIFT key and the mouse or special key combinations.  
   
--   **LBS_HASSTRINGS**文字列で構成される項目を格納するボックスのオーナー描画を指定します。 アプリケーションで使用できるように、メモリと文字列のポインターをリスト ボックスが保持、`GetText`の特定のアイテムのテキストを取得します。  
+-   **LBS_HASSTRINGS** Specifies an owner-draw list box that contains items consisting of strings. The list box maintains the memory and pointers for the strings so the application can use the `GetText` member function to retrieve the text for a particular item.  
   
--   **LBS_MULTICOLUMN**が水平方向にスクロールされる基準を複数列のリスト ボックスを指定します。 `SetColumnWidth`メンバー関数は、列の幅を設定します。  
+-   **LBS_MULTICOLUMN** Specifies a multicolumn list box that is scrolled horizontally. The `SetColumnWidth` member function sets the width of the columns.  
   
--   **LBS_MULTIPLESEL**文字列の選択が切り替えられたたびに、ユーザーがクリックするか、文字列をダブルクリックします。 文字列の任意の数を選択することができます。  
+-   **LBS_MULTIPLESEL** String selection is toggled each time the user clicks or double-clicks the string. Any number of strings can be selected.  
   
--   **LBS_NODATA**データを持たないリスト ボックスを指定します。 リスト ボックス内の項目の数が&1;,000 を超える場合は、このスタイルを指定します。 データを持たない一覧ボックスが必要、 **LBS_OWNERDRAWFIXED**スタイルを設定するは必要ありません、 **LBS_SORT**または**LBS_HASSTRINGS**スタイル。  
+-   **LBS_NODATA** Specifies a no-data list box. Specify this style when the count of items in the list box will exceed one thousand. A no-data list box must also have the **LBS_OWNERDRAWFIXED** style, but must not have the **LBS_SORT** or **LBS_HASSTRINGS** style.  
   
-     データを持たないリスト ボックスではアイテムのデータを文字列またはビットマップが含まれていないする点を除いて、オーナー描画のリスト ボックスに似ています。 コマンドを追加するには、挿入、または項目を削除常にいずれかの指定した項目のデータを無視します。常に、リスト ボックス内の文字列を検索する要求が失敗します。 システムは、送信、`WM_DRAWITEM`項目を描画する必要があると、オーナー ウィンドウへのメッセージ。 ItemID メンバー、`DRAWITEMSTRUCT`で渡された構造体、`WM_DRAWITEM`メッセージが描画される項目の行番号を指定します。 データを持たないリスト ボックスを送信しません、`WM_DELETEITEM`メッセージです。  
+     A no-data list box resembles an owner-drawn list box except that it contains no string or bitmap data for an item. Commands to add, insert, or delete an item always ignore any given item data; requests to find a string within the list box always fail. The system sends the `WM_DRAWITEM` message to the owner window when an item must be drawn. The itemID member of the `DRAWITEMSTRUCT` structure passed with the `WM_DRAWITEM` message specifies the line number of the item to be drawn. A no-data list box does not send a `WM_DELETEITEM` message.  
   
--   **LBS_NOINTEGRALHEIGHT**リスト ボックスのサイズは、リスト ボックスが作成されたときに、アプリケーションで指定されたサイズと正確にします。 通常は、Windows は、リスト ボックスで一部の項目が表示されないように、リスト ボックスにサイズを変更します。  
+-   **LBS_NOINTEGRALHEIGHT** The size of the list box is exactly the size specified by the application when it created the list box. Usually, Windows sizes a list box so that the list box does not display partial items.  
   
--   **LBS_NOREDRAW**変更が加えられた場合、リスト ボックスの表示は更新されません。 このスタイルは、送信することによっていつでも変更できます、 **WM_SETREDRAW**メッセージです。  
+-   **LBS_NOREDRAW** List-box display is not updated when changes are made. This style can be changed at any time by sending a **WM_SETREDRAW** message.  
   
--   **LBS_NOSEL**リスト ボックスに表示することができますが、選択されていない項目が含まれているかを指定します。  
+-   **LBS_NOSEL** Specifies that the list box contains items that can be viewed but not selected.  
   
--   **LBS_NOTIFY**親ウィンドウが、ユーザーがクリックするか、文字列をダブルクリックしたときに、入力メッセージを受信します。  
+-   **LBS_NOTIFY** Parent window receives an input message whenever the user clicks or double-clicks a string.  
   
--   **LBS_OWNERDRAWFIXED**リスト ボックスの所有者がその内容を描画する必要はリスト ボックス内の項目を同じ高さ。  
+-   **LBS_OWNERDRAWFIXED** The owner of the list box is responsible for drawing its contents; the items in the list box are the same height.  
   
--   **LBS_OWNERDRAWVARIABLE**リスト ボックスの所有者がその内容を描画する必要はリスト ボックス内の項目の高さの変数です。  
+-   **LBS_OWNERDRAWVARIABLE** The owner of the list box is responsible for drawing its contents; the items in the list box are variable in height.  
   
--   **LBS_SORT**リスト ボックス内の文字列はアルファベット順に並べ替えられます。  
+-   **LBS_SORT** Strings in the list box are sorted alphabetically.  
   
--   **LBS_STANDARD**リスト ボックス内の文字列は、アルファベット順に並べ替えられ、親ウィンドウが、ユーザーがクリックするか、文字列をダブルクリックしたときに、入力メッセージを受信します。 リスト ボックスには、すべての側面に罫線が含まれています。  
+-   **LBS_STANDARD** Strings in the list box are sorted alphabetically, and the parent window receives an input message whenever the user clicks or double-clicks a string. The list box contains borders on all sides.  
   
--   **LBS_USETABSTOPS**を認識してその文字列を描画するときにタブ文字を展開するには、リスト ボックスを使用します。 既定のタブ位置は、32 ダイアログ単位です。 (ダイアログ単位は、水平または垂直距離です。 1 つの水平ダイアログ単位は、現在のダイアログ ベースの幅の単位の&4; 分の&1; と同じです。 ダイアログの基本単位は、高さ、および現在のシステム フォントの幅に基づいて計算されます。 **GetDialogBaseUnits** Windows の機能はピクセル単位で現在のダイアログ ボックスの基本単位を返します)。このスタイルを使用しないで**LBS_OWNERDRAWFIXED**します。  
+-   **LBS_USETABSTOPS** Allows a list box to recognize and expand tab characters when drawing its strings. The default tab positions are 32 dialog units. (A dialog unit is a horizontal or vertical distance. One horizontal dialog unit is equal to one-fourth of the current dialog base width unit. The dialog base units are computed based on the height and width of the current system font. The **GetDialogBaseUnits** Windows function returns the current dialog base units in pixels.) This style should not be used with **LBS_OWNERDRAWFIXED**.  
   
--   **LBS_WANTKEYBOARDINPUT**リスト ボックスの所有者を受け取る`WM_VKEYTOITEM`または`WM_CHARTOITEM`リスト ボックスに入力フォーカスがある状態でキーを押したときのメッセージします。 これにより、キーボード入力で特別な処理を実行するアプリケーションです。  
+-   **LBS_WANTKEYBOARDINPUT** The owner of the list box receives `WM_VKEYTOITEM` or `WM_CHARTOITEM` messages whenever the user presses a key while the list box has input focus. This allows an application to perform special processing on the keyboard input.  
   
-## <a name="see-also"></a>関連項目  
- [MFC で使用するスタイル](../../mfc/reference/styles-used-by-mfc.md)   
+## <a name="see-also"></a>See Also  
+ [Styles Used by MFC](../../mfc/reference/styles-used-by-mfc.md)   
  [CListBox::Create](../../mfc/reference/clistbox-class.md#create)   
- [リスト ボックス スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775149)
+ [List Box Styles](http://msdn.microsoft.com/library/windows/desktop/bb775149)
 
 

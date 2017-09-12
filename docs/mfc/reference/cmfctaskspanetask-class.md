@@ -1,5 +1,5 @@
 ---
-title: "CMFCTasksPaneTask クラス |Microsoft ドキュメント"
+title: CMFCTasksPaneTask Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,7 +26,18 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCTasksPaneTask class
+- CMFCTasksPaneTask [MFC], CMFCTasksPaneTask
+- CMFCTasksPaneTask [MFC], SetACCData
+- CMFCTasksPaneTask [MFC], m_bAutoDestroyWindow
+- CMFCTasksPaneTask [MFC], m_bIsBold
+- CMFCTasksPaneTask [MFC], m_dwUserData
+- CMFCTasksPaneTask [MFC], m_hwndTask
+- CMFCTasksPaneTask [MFC], m_nIcon
+- CMFCTasksPaneTask [MFC], m_nWindowHeight
+- CMFCTasksPaneTask [MFC], m_pGroup
+- CMFCTasksPaneTask [MFC], m_rect
+- CMFCTasksPaneTask [MFC], m_strName
+- CMFCTasksPaneTask [MFC], m_uiCommandID
 ms.assetid: c5a7513b-cd8f-4e2e-b16f-650e1fe30954
 caps.latest.revision: 27
 author: mikeblome
@@ -46,70 +57,70 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 20713b45c4b6aadc5cdfeaadb6ed269aaf7b337f
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 801e063709db70cfd700d5398f2d7a19f9d875ad
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfctaskspanetask-class"></a>CMFCTasksPaneTask クラス
-`CMFCTasksPaneTask`クラスは、タスク ペイン コントロール用のタスクを表すヘルパー クラス ( [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md))。 タスク オブジェクトは、タスク グループ内の項目を表します ( [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md))。 各タスクには、ユーザーがタスク名の左側に表示されるタスクやアイコンをクリックしたときにフレームワークが実行するコマンドを設定できます。  
+# <a name="cmfctaskspanetask-class"></a>CMFCTasksPaneTask Class
+The `CMFCTasksPaneTask` class is a helper class that represents tasks for the task pane control ( [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md)). The task object represents an item in the task group ( [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md)). Each task can have a command that the framework executes when a user clicks on the task and an icon that appears to the left of the task name.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCTasksPaneTask : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTask::CMFCTasksPaneTask](#cmfctaskspanetask)|作成して初期化、`CMFCTasksPaneTask`オブジェクトです。|  
-|`CMFCTasksPaneTask::~CMFCTasksPaneTask`|デストラクターです。|  
+|[CMFCTasksPaneTask::CMFCTasksPaneTask](#cmfctaskspanetask)|Creates and initializes a `CMFCTasksPaneTask` object.|  
+|`CMFCTasksPaneTask::~CMFCTasksPaneTask`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTask::SetACCData](#setaccdata)|現在のタスクのユーザー補助データを決定します。|  
+|[CMFCTasksPaneTask::SetACCData](#setaccdata)|Determines the accessibility data for the current task.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCTasksPaneTask::m_bAutoDestroyWindow](#m_bautodestroywindow)|タスク一覧 ウィンドウが自動的に破棄されるかどうかを決定します。|  
-|[CMFCTasksPaneTask::m_bIsBold](#m_bisbold)|フレームワークは太字でタスクのラベルを描画するかどうかを決定します。|  
-|[CMFCTasksPaneTask::m_dwUserData](#m_dwuserdata)|フレームワークのタスクが関連付けられるユーザー定義のデータが含まれています。 タスクに関連付けられているデータがあるない場合は、0 に設定します。|  
-|[CMFCTasksPaneTask::m_hwndTask](#m_hwndtask)|タスク一覧 ウィンドウへのハンドル。|  
-|[CMFCTasksPaneTask::m_nIcon](#m_nicon)|フレームワークは、タスクの横に表示されるイメージのイメージ リスト内のインデックス。|  
-|[CMFCTasksPaneTask::m_nWindowHeight](#m_nwindowheight)|タスク一覧 ウィンドウの高さ。 [タスク] ウィンドウのタスクがない場合は、この値は&0; です。|  
-|[CMFCTasksPaneTask::m_pGroup](#m_pgroup)|ポインター、`CMFCTasksPaneTaskGroup`がこのタスクが属しています。|  
-|[CMFCTasksPaneTask::m_rect](#m_rect)|タスクの外接する四角形を指定します。|  
-|[CMFCTasksPaneTask::m_strName](#m_strname)|タスクの名前。|  
-|[CMFCTasksPaneTask::m_uiCommandID](#m_uicommandid)|ユーザーがタスクをクリックしたときに、フレームワークが実行されるコマンドのコマンド ID を指定します。 この値が有効なコマンド ID でない場合は、タスクが単純なラベルとして扱われます。|  
+|[CMFCTasksPaneTask::m_bAutoDestroyWindow](#m_bautodestroywindow)|Determines whether the task window is automatically destroyed.|  
+|[CMFCTasksPaneTask::m_bIsBold](#m_bisbold)|Determines whether the framework draws a task label in bold text.|  
+|[CMFCTasksPaneTask::m_dwUserData](#m_dwuserdata)|Contains user-defined data that the framework associates with the task. Set to zero if the task has no associated data.|  
+|[CMFCTasksPaneTask::m_hwndTask](#m_hwndtask)|A handle to the task window.|  
+|[CMFCTasksPaneTask::m_nIcon](#m_nicon)|The index in the image list of the image that the framework displays next to the task.|  
+|[CMFCTasksPaneTask::m_nWindowHeight](#m_nwindowheight)|The height of the task window. If the task has no task window, this value is zero.|  
+|[CMFCTasksPaneTask::m_pGroup](#m_pgroup)|A pointer to the `CMFCTasksPaneTaskGroup` that this task belongs to.|  
+|[CMFCTasksPaneTask::m_rect](#m_rect)|Specifies the bounding rectangle of the task.|  
+|[CMFCTasksPaneTask::m_strName](#m_strname)|The name of the task.|  
+|[CMFCTasksPaneTask::m_uiCommandID](#m_uicommandid)|Specifies the command ID of the command that the framework executes when the user clicks the task. If this value is not a valid command ID, the task is treated as a simple label.|  
   
-## <a name="remarks"></a>コメント  
- 次の図は、次の&3; つのタスクが含まれるタスク グループを示しています。  
+## <a name="remarks"></a>Remarks  
+ The following illustration shows a task group that contains three tasks:  
   
- ![展開されたタスク グループ](../../mfc/reference/media/nexttaskgrpexpand.png "nexttaskgrpexpand")  
+ ![Task group, expanded](../../mfc/reference/media/nexttaskgrpexpand.png "nexttaskgrpexpand")  
   
 > [!NOTE]
->  タスクが有効なコマンド ID を持たない場合は、単純なラベルとして扱われます。  
+>  If a task does not have a valid command ID, it is treated as a simple label.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CMFCTasksPaneTask](../../mfc/reference/cmfctaskspanetask-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxTasksPane.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxTasksPane.h  
   
-##  <a name="cmfctaskspanetask"></a>CMFCTasksPaneTask::CMFCTasksPaneTask  
- 作成して初期化、`CMFCTasksPaneTask`オブジェクトです。  
+##  <a name="cmfctaskspanetask"></a>  CMFCTasksPaneTask::CMFCTasksPaneTask  
+ Creates and initializes a `CMFCTasksPaneTask` object.  
   
 ```  
 CMFCTasksPaneTask(
@@ -123,133 +134,133 @@ CMFCTasksPaneTask(
     int nWindowHeight = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pGroup`  
- 指定、 [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md)タスクが属しています。  
+ Specifies the [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md) to which the task belongs.  
   
  `lpszName`  
- タスクの名前を指定します。  
+ Specifies the name of the task.  
   
  `nIcon`  
- イメージ リストには、タスクのイメージのインデックスを指定します。  
+ Specifies the index of the task's image in the image list.  
   
  `uiCommandID`  
- タスクがクリックされたときに実行されるコマンドのコマンド ID を指定します。  
+ Specifies the command ID of the command that is executed when the task is clicked.  
   
  `dwUserData`  
- ユーザー定義データ。  
+ User-defined data.  
   
  `hwndTask`  
- タスク一覧 ウィンドウを識別するハンドルを指定します。  
+ Specifies the handle to the task window.  
   
  `bAutoDestroyWindow`  
- 場合`TRUE`、タスク一覧 ウィンドウが自動的に破棄されます。  
+ If `TRUE`, the task window will be destroyed automatically.  
   
  `nWindowHeight`  
- タスク一覧 ウィンドウの高さを指定します。  
+ Specifies the height of the task window.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_bautodestroywindow"></a>CMFCTasksPaneTask::m_bAutoDestroyWindow  
- タスク一覧 ウィンドウが自動的に破棄されるかどうかを決定します。  
+##  <a name="m_bautodestroywindow"></a>  CMFCTasksPaneTask::m_bAutoDestroyWindow  
+ Determines whether the task window is automatically destroyed.  
   
 ```  
 BOOL m_bAutoDestroyWindow;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 設定`TRUE`ことを指定するタスク一覧 ウィンドウ ( [CMFCTasksPaneTask::m_hwndTask](#m_hwndtask))、自動的に。 それ以外の場合、破棄する必要があります`FALSE`します。  
+### <a name="remarks"></a>Remarks  
+ Set to `TRUE` to specify that the task window ( [CMFCTasksPaneTask::m_hwndTask](#m_hwndtask)) should be destroyed automatically; otherwise, `FALSE`.  
   
-##  <a name="m_bisbold"></a>CMFCTasksPaneTask::m_bIsBold  
- タスクのラベルが太字で描画されるかどうかを決定します。  
+##  <a name="m_bisbold"></a>  CMFCTasksPaneTask::m_bIsBold  
+ Determines whether a task label is drawn in bold text.  
   
 ```  
 BOOL m_bIsBold;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバーを設定`TRUE`太字テキスト タスク ラベルを表示します。  
+### <a name="remarks"></a>Remarks  
+ Set this member to `TRUE` to display bold text for the task label.  
   
-##  <a name="m_dwuserdata"></a>CMFCTasksPaneTask::m_dwUserData  
- タスクに関連付けられているユーザー定義のデータが含まれています。 タスクに関連付けデータがない場合は、0 に設定します。  
+##  <a name="m_dwuserdata"></a>  CMFCTasksPaneTask::m_dwUserData  
+ Contains user-defined data that is associated with the task. Set to zero if no data is associated with the task.  
   
 ```  
 DWORD m_dwUserData;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_hwndtask"></a>CMFCTasksPaneTask::m_hwndTask  
- タスク一覧 ウィンドウへのハンドル。  
+##  <a name="m_hwndtask"></a>  CMFCTasksPaneTask::m_hwndTask  
+ A handle to the task window.  
   
 ```  
 HWND m_hwndTask;  
 ```  
   
-### <a name="remarks"></a>コメント  
- タスク ウィンドウを追加するには、呼び出す[CMFCTasksPane::AddWindow](../../mfc/reference/cmfctaskspane-class.md#addwindow)します。  
+### <a name="remarks"></a>Remarks  
+ To add a task window, call [CMFCTasksPane::AddWindow](../../mfc/reference/cmfctaskspane-class.md#addwindow).  
   
-##  <a name="m_nicon"></a>CMFCTasksPaneTask::m_nIcon  
- 指定したタスクの横に表示されるイメージを識別するイメージ リスト内のインデックス位置。  
+##  <a name="m_nicon"></a>  CMFCTasksPaneTask::m_nIcon  
+ The index position in an image list that identifies an image that is displayed next to the specified task.  
   
 ```  
 int m_nIcon;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 設定されているイメージ リスト[CMFCTasksPane::SetIconsList](../../mfc/reference/cmfctaskspane-class.md#seticonslist)します。  
+### <a name="remarks"></a>Remarks  
+ The image list is set by [CMFCTasksPane::SetIconsList](../../mfc/reference/cmfctaskspane-class.md#seticonslist).  
   
- 設定`m_nIcon`画像がない場合、タスクを表示する場合は-1 にします。  
+ Set `m_nIcon` to -1 if you want to display the task without an image.  
   
-##  <a name="m_nwindowheight"></a>CMFCTasksPaneTask::m_nWindowHeight  
- タスク一覧 ウィンドウの高さ。 [タスク] ウィンドウのタスクがない場合は、この値は&0; です。  
+##  <a name="m_nwindowheight"></a>  CMFCTasksPaneTask::m_nWindowHeight  
+ The height of the task window. If the task has no task window, this value is zero.  
   
 ```  
 int m_nWindowHeight;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_pgroup"></a>CMFCTasksPaneTask::m_pGroup  
- ポインター、 [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md)このタスクが属しています。  
+##  <a name="m_pgroup"></a>  CMFCTasksPaneTask::m_pGroup  
+ Pointer to the [CMFCTasksPaneTaskGroup](../../mfc/reference/cmfctaskspanetaskgroup-class.md) to which this task belongs.  
   
 ```  
 CMFCTasksPaneTaskGroup* m_pGroup;  
 ```  
   
-### <a name="remarks"></a>コメント  
- すべてのタスクは、親グループに必要です。 呼び出してタスク ペインにグループを追加する[CMFCTasksPane::AddGroup](../../mfc/reference/cmfctaskspane-class.md#addgroup)します。  
+### <a name="remarks"></a>Remarks  
+ Every task must have a parent group. You add groups to a task pane by calling [CMFCTasksPane::AddGroup](../../mfc/reference/cmfctaskspane-class.md#addgroup).  
   
-##  <a name="m_rect"></a>CMFCTasksPaneTask::m_rect  
- タスクの外接する四角形を指定します。  
+##  <a name="m_rect"></a>  CMFCTasksPaneTask::m_rect  
+ Specifies the bounding rectangle of the task.  
   
 ```  
 CRect m_rect;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この値は、タスクが描画されるときにフレームワークによって計算されます。  
+### <a name="remarks"></a>Remarks  
+ This value is calculated by the framework when the task is drawn.  
   
-##  <a name="m_strname"></a>CMFCTasksPaneTask::m_strName  
- タスクの名前。  
+##  <a name="m_strname"></a>  CMFCTasksPaneTask::m_strName  
+ The name of the task.  
   
 ```  
 CString m_strName;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_uicommandid"></a>CMFCTasksPaneTask::m_uiCommandID  
- ユーザーがタスクをクリックしたときに実行されるコマンドのコマンド ID を指定します。 この値が有効なコマンド ID でない場合は、タスクが単純なラベルとして扱われます。  
+##  <a name="m_uicommandid"></a>  CMFCTasksPaneTask::m_uiCommandID  
+ Specifies the command ID of the command that is executed when the user clicks the task. If this value is not a valid command ID, the task is treated as a simple label.  
   
 ```  
 UINT m_uiCommandID;  
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setaccdata"></a>CMFCTasksPaneTask::SetACCData  
- 現在のタスクのユーザー補助データを決定します。  
+##  <a name="setaccdata"></a>  CMFCTasksPaneTask::SetACCData  
+ Determines the accessibility data for the current task.  
   
 ```  
 virtual BOOL SetACCData(
@@ -257,18 +268,18 @@ virtual BOOL SetACCData(
     CAccessibilityData& data);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pParent`  
- 現在のタスクの親ウィンドウを表します。  
+### <a name="parameters"></a>Parameters  
+ [in] `pParent`  
+ Represents the parent window of the current task.  
   
- [出力] `data`  
- 型のオブジェクト`CAccessibilityData`現在のタスクのユーザー補助データが格納されています。  
+ [out] `data`  
+ An object of type `CAccessibilityData` that is populated with the accessibility data of the current task.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合、`data`パラメーターが正常に現在のタスクのユーザー補助データに指定されているそれ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the `data` parameter was successfully populated with the accessibility data of the current task; otherwise, `FALSE`.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CObject クラス](../../mfc/reference/cobject-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CObject Class](../../mfc/reference/cobject-class.md)
 

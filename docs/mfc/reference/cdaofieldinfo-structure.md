@@ -1,5 +1,5 @@
 ---
-title: "CDaoFieldInfo 構造体 |Microsoft ドキュメント"
+title: CDaoFieldInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - DAO (Data Access Objects), Fields collection
-- CDaoFieldInfo structure
+- CDaoFieldInfo structure [MFC]
 ms.assetid: 91b13e3f-bdb8-440c-86fc-ba4181ea0182
 caps.latest.revision: 13
 author: mikeblome
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 15db0c56480dfefb9fc8806c08596e37c7d38eb2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6cf86305c45f2356406cdce461724be3d2d1782c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaofieldinfo-structure"></a>CDaoFieldInfo 構造体
-`CDaoFieldInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているフィールド オブジェクトに関する情報が含まれています。  
+# <a name="cdaofieldinfo-structure"></a>CDaoFieldInfo Structure
+The `CDaoFieldInfo` structure contains information about a field object defined for data access objects (DAO).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CDaoFieldInfo  
@@ -66,119 +66,119 @@ struct CDaoFieldInfo
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- Field オブジェクトの一意名します。 詳細については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ Uniquely names the field object. For details, see the topic "Name Property" in DAO Help.  
   
  `m_nType`  
- フィールドのデータ型を示す値です。 詳細については、DAO ヘルプの「型プロパティ」を参照してください。 このプロパティの値は、次のいずれかになります。  
+ A value that indicates the data type of the field. For details, see the topic "Type Property" in DAO Help. The value of this property can be one of the following:  
   
-- **dbBoolean**はい/いいえと同じ**TRUE**/**FALSE**  
+- **dbBoolean** Yes/No, same as **TRUE**/**FALSE**  
   
-- **dbByte**バイト  
+- **dbByte** Byte  
   
-- **dbInteger**短い  
+- **dbInteger** Short  
   
-- **dbLong**長  
+- **dbLong** Long  
   
-- **dbCurrency**通貨; を参照してください MFC クラス[COleCurrency](../../mfc/reference/colecurrency-class.md)  
+- **dbCurrency** Currency; see MFC class [COleCurrency](../../mfc/reference/colecurrency-class.md)  
   
-- **dbSingle**単一  
+- **dbSingle** Single  
   
-- **dbDouble**二重  
+- **dbDouble** Double  
   
-- **dbDate**日付/時刻; を参照してください MFC クラス[時刻](../../atl-mfc-shared/reference/coledatetime-class.md)  
+- **dbDate** Date/Time; see MFC class [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)  
   
-- **dbText**テキスト MFC クラスを参照してください[CString。](../../atl-mfc-shared/reference/cstringt-class.md)  
+- **dbText** Text; see MFC class [CString](../../atl-mfc-shared/reference/cstringt-class.md)  
   
-- **dbLongBinary**長いバイナリ (OLE オブジェクト) です。 MFC クラスを使用することができます[CByteArray](../../mfc/reference/cbytearray-class.md)クラスではなく`CLongBinary`として`CByteArray`が豊富になり簡単に使用します。  
+- **dbLongBinary** Long Binary (OLE Object); you might want to use MFC class [CByteArray](../../mfc/reference/cbytearray-class.md) instead of class `CLongBinary` as `CByteArray` is richer and easier to use.  
   
-- **dbMemo**メモ; を参照してください MFC クラス`CString`  
+- **dbMemo** Memo; see MFC class `CString`  
   
-- **データと**グローバルに一意の識別子/ユニバーサル一意の識別子のリモート プロシージャ コールで使用されます。 詳細については、DAO ヘルプの「型プロパティ」を参照してください。  
+- **dbGUID** A Globally Unique Identifier/Universally Unique Identifier used with remote procedure calls. For more information, see the topic "Type Property" in DAO Help.  
   
 > [!NOTE]
->  バイナリ データの文字列データ型を使わないでください。 これにより、オーバーヘッドが増加し、予期しない変換時にその結果、UNICODE/ANSI 変換レイヤーを通過するデータ。  
+>  Do not use string data types for binary data. This causes your data to pass through the Unicode/ANSI translation layer, resulting in increased overhead and possibly unexpected translation.  
   
  *m_lSize*  
- DAO フィールド オブジェクトを含むテキストまたはテキストまたは数値の値を含むフィールド オブジェクトの固定サイズのバイト単位の最大サイズを示す値です。 詳細については、DAO ヘルプの「サイズ プロパティ」を参照してください。 サイズは、次の値のいずれかになります。  
+ A value that indicates the maximum size, in bytes, of a DAO field object that contains text or the fixed size of a field object that contains text or numeric values. For details, see the topic "Size Property" in DAO Help. Sizes can be one of the following values:  
   
-|型|サイズ (バイト)|説明|  
+|Type|Size (Bytes)|Description|  
 |----------|--------------------|-----------------|  
-|**dbBoolean**|1 バイト|はい/いいえ (True または False と同じ)|  
+|**dbBoolean**|1 byte|Yes/No (same as True/False)|  
 |**dbByte**|1|Byte|  
-|**dbInteger**|2|整数型|  
+|**dbInteger**|2|Integer|  
 |**dbLong**|4|Long|  
-|**dbCurrency**|9|通貨 ([COleCurrency](../../mfc/reference/colecurrency-class.md))|  
+|**dbCurrency**|8|Currency ([COleCurrency](../../mfc/reference/colecurrency-class.md))|  
 |**dbSingle**|4|Single|  
-|**dbDouble**|9|倍精度浮動小数点型|  
-|**dbDate**|9|日付/時刻 ([時刻](../../atl-mfc-shared/reference/coledatetime-class.md))|  
-|**dbText**|1 - 255|テキスト ([CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
-|**dbLongBinary**|0|長いバイナリ (OLE オブジェクトです。[CByteArray](../../mfc/reference/cbytearray-class.md); の代わりに使用`CLongBinary`)|  
-|**dbMemo**|0|メモ ([CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
-|**データと**|16|グローバルに一意の識別子/対象として汎用的一意の識別子のリモート プロシージャ コールで使用されます。|  
+|**dbDouble**|8|Double|  
+|**dbDate**|8|Date/Time ([COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md))|  
+|**dbText**|1 - 255|Text ([CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
+|**dbLongBinary**|0|Long Binary (OLE Object; [CByteArray](../../mfc/reference/cbytearray-class.md); use instead of `CLongBinary`)|  
+|**dbMemo**|0|Memo ([CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
+|**dbGUID**|16|A Globally Unique Identifier/Universally Unique Identifier used with remote procedure calls.|  
   
  `m_lAttributes`  
- テーブル定義、レコード セット、クエリ定義、またはインデックスのオブジェクトに含まれるフィールド オブジェクトの特性を指定します。 返される値がビットごとの OR、C++ で作成されたこれらの定数を加えた値を指定できます (**|**) 演算子。  
+ Specifies characteristics of a field object contained by a tabledef, recordset, querydef, or index object. The value returned can be a sum of these constants, created with the C++ bitwise-OR (**&#124;**) operator:  
   
-- **dbFixedField**フィールド サイズは固定 (数値フィールドの既定値)。  
+- **dbFixedField** The field size is fixed (default for Numeric fields).  
   
-- **dbVariableField**フィールド サイズは、変数 (テキスト フィールドのみ)。  
+- **dbVariableField** The field size is variable (Text fields only).  
   
-- **dbAutoIncrField**新しいレコードのフィールドの値が変更できない一意の long 整数を自動的に増分されます。 Microsoft Jet データベースのテーブルのみサポートされます。  
+- **dbAutoIncrField** The field value for new records is automatically incremented to a unique long integer that cannot be changed. Only supported for Microsoft Jet database tables.  
   
-- **dbUpdatableField**フィールドの値を変更できます。  
+- **dbUpdatableField** The field value can be changed.  
   
-- **dbDescending**フィールドが降順で並べ替えられます (Z、A または 100 0) (インデックス オブジェクトのフィールド コレクションでは MFC では、オブジェクトが自身テーブル定義オブジェクトに含まれているインデックスのフィールド オブジェクトにのみ適用) の順序。 この定数を省略した場合に昇順に並べ替えられます (A ~ Z、0 - 100) 順 (既定値)。  
+- **dbDescending** The field is sorted in descending (Z - A or 100 - 0) order (applies only to a field object in a Fields collection of an index object; in MFC, index objects are themselves contained in tabledef objects). If you omit this constant, the field is sorted in ascending (A - Z or 0 - 100) order (default).  
   
- このプロパティの設定を確認するときに C 使用すると、ビットごとのおよび演算子 (**&**) 特定の属性をテストします。 複数の属性を設定するときに一緒にビットごとの OR と適切な定数を組み合わせることによって (**|**) 演算子。 詳細については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ When checking the setting of this property, you can use the C++ bitwise-AND operator (**&**) to test for a specific attribute. When setting multiple attributes, you can combine them by combining the appropriate constants with the bitwise-OR (**&#124;**) operator. For details, see the topic "Attributes Property" in DAO Help.  
   
  *m_nOrdinalPosition*  
- その他のフィールドとして表示される DAO フィールド オブジェクトによって表されるフィールドを入力する数値の順序を指定する値。 このプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。 詳細については、DAO ヘルプの「OrdinalPosition プロパティ」を参照してください。  
+ A value that specifies the numeric order in which you want a field represented by a DAO field object to be displayed relative to other fields. You can set this property with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield). For details, see the topic "OrdinalPosition Property" in DAO Help.  
   
  `m_bRequired`  
- DAO field オブジェクトに Null 以外の値が必要かどうかを示します。 このプロパティは、する場合**TRUE**フィールドが Null 値を許可しません。 セット必要な場合は**FALSE**、AllowZeroLength および ValidationRule プロパティの設定で指定された条件を満たす値だけでなく、Null 値、フィールドを含めることができます。 詳細については、DAO のヘルプ「プロパティのために必要な」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ Indicates whether a DAO field object requires a non-Null value. If this property is **TRUE**, the field does not allow a Null value. If Required is set to **FALSE**, the field can contain Null values as well as values that meet the conditions specified by the AllowZeroLength and ValidationRule property settings. For details, see the topic "Required Property" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  *m_bAllowZeroLength*  
- 示すかどうか、空の文字列 ("") テキストまたはメモ型のデータ型を持つ DAO フィールド オブジェクトの有効な値です。 このプロパティは、する場合**TRUE**、空の文字列が有効な値です。 このプロパティを設定できます**FALSE**フィールドの値を設定する空の文字列を使用できないことを確認します。 詳細については、DAO ヘルプの「AllowZeroLength プロパティ」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ Indicates whether an empty string ("") is a valid value of a DAO field object with a Text or Memo data type. If this property is **TRUE**, an empty string is a valid value. You can set this property to **FALSE** to ensure that you cannot use an empty string to set the value of a field. For details, see the topic "AllowZeroLength Property" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  `m_lCollatingOrder`  
- 文字列の比較または並べ替え用のテキストでの並べ替え順序を指定します。 詳細については、「をカスタマイズする Windows レジストリ設定のデータ アクセス」DAO ヘルプのトピックを参照してください。 返される値の一覧は、次を参照してください。、**返さ**のメンバー、 [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md)構造体。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ Specifies the sequence of the sort order in text for string comparison or sorting. For details, see the topic "Customizing Windows Registry Settings for Data Access" in DAO Help. For a list of the possible values returned, see the **m_lCollatingOrder** member of the [CDaoDatabaseInfo](../../mfc/reference/cdaodatabaseinfo-structure.md) structure. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  `m_strForeignName`  
- リレーションで主テーブル内のフィールドに対応する外部キー テーブル内の DAO フィールド オブジェクトの名前を指定する値。 詳細については、DAO ヘルプの「ForeignName プロパティ」を参照してください。  
+ A value that, in a relation, specifies the name of the DAO field object in a foreign table that corresponds to a field in a primary table. For details, see the topic "ForeignName Property" in DAO Help.  
   
  *m_strSourceField*  
- テーブル定義、レコード セット、またはクエリ定義オブジェクトに含まれる DAO フィールド オブジェクトのデータの元のソースであるフィールドの名前を示します。 このプロパティは、field オブジェクトに関連付けられている元のフィールド名を示します。 たとえば、このプロパティを使用して、基になるテーブル内のフィールドの名前に関連するな名前を持つクエリ フィールド内のデータの元のソースを決定する可能性があります。 詳細については、DAO のヘルプ トピック「SourceField、SourceTable プロパティ」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ Indicates the name of the field that is the original source of the data for a DAO field object contained by a tabledef, recordset, or querydef object. This property indicates the original field name associated with a field object. For example, you could use this property to determine the original source of the data in a query field whose name is unrelated to the name of the field in the underlying table. For details, see the topic "SourceField, SourceTable Properties" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  *m_strSourceTable*  
- テーブル定義、レコード セット、またはクエリ定義オブジェクトに含まれる DAO フィールド オブジェクトのデータの元のソース テーブルの名前を示します。 このプロパティは、field オブジェクトに関連付けられている元のテーブル名を示します。 たとえば、このプロパティを使用して、基になるテーブル内のフィールドの名前に関連するな名前を持つクエリ フィールド内のデータの元のソースを決定する可能性があります。 詳細については、DAO のヘルプ トピック「SourceField、SourceTable プロパティ」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ Indicates the name of the table that is the original source of the data for a DAO field object contained by a tabledef, recordset, or querydef object. This property indicates the original table name associated with a field object. For example, you could use this property to determine the original source of the data in a query field whose name is unrelated to the name of the field in the underlying table. For details, see the topic "SourceField, SourceTable Properties" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  `m_strValidationRule`  
- フィールドのデータを検証する値が変更またはテーブルに追加します。 詳細については、DAO ヘルプの「ValidationRule プロパティ」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ A value that validates the data in a field as it is changed or added to a table. For details, see the topic "ValidationRule Property" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
- テーブル定義の関連情報については、次を参照してください。、 **m_strValidationRule**のメンバー、 [CDaoTableDefInfo](../../mfc/reference/cdaotabledefinfo-structure.md)構造体。  
+ For related information about tabledefs, see the **m_strValidationRule** member of the [CDaoTableDefInfo](../../mfc/reference/cdaotabledefinfo-structure.md) structure.  
   
  `m_strValidationText`  
- DAO フィールド オブジェクトの値が ValidationRule プロパティの設定で指定された検証規則を満たしていない場合、アプリケーションで表示されるメッセージのテキストを指定する値。 詳細については、「プロパティ」DAO ヘルプのトピックを参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ A value that specifies the text of the message that your application displays if the value of a DAO field object does not satisfy the validation rule specified by the ValidationRule property setting. For details, see the topic "ValidationText Property" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
  *m_strDefaultValue*  
- DAO フィールド オブジェクトの既定値。 新しいレコードが作成されると、DefaultValue プロパティの設定は自動的に入力値フィールドになります。 詳細については、DAO ヘルプの「DefaultValue プロパティ」を参照してください。 テーブル定義でのこのプロパティを設定することができます[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)します。  
+ The default value of a DAO field object. When a new record is created, the DefaultValue property setting is automatically entered as the value for the field. For details, see the topic "DefaultValue Property" in DAO Help. You can set this property for a tabledef with [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield).  
   
-## <a name="remarks"></a>コメント  
- プライマリ、セカンダリ データベースを上記のすべての参照がによって情報が返される方法を示す、`GetFieldInfo`クラスのメンバー関数[どちら](../../mfc/reference/cdaotabledef-class.md#getfieldinfo)、 [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md#getfieldinfo)、および[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md#getfieldinfo)します。  
+## <a name="remarks"></a>Remarks  
+ The references to Primary, Secondary, and All above indicate how the information is returned by the `GetFieldInfo` member function in classes [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md#getfieldinfo), [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md#getfieldinfo), and [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md#getfieldinfo).  
   
- Field オブジェクトは、MFC クラスでは表されません。 次のクラスの MFC オブジェクトを基になる DAO オブジェクトがフィールド オブジェクトのコレクションを格納する代わりに、:[どちら](../../mfc/reference/cdaotabledef-class.md)、 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)、および[CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md)します。 これらのクラスを指定のフィールドについては、各アイテムにアクセスするメンバー関数またはで一度にすべてにアクセスすることができます、`CDaoFieldInfo`オブジェクトを呼び出して、`GetFieldInfo`親オブジェクトのメンバー関数。  
+ Field objects are not represented by an MFC class. Instead, the DAO objects underlying MFC objects of the following classes contain collections of field objects: [CDaoTableDef](../../mfc/reference/cdaotabledef-class.md), [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md), and [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md). These classes supply member functions to access some individual items of field information, or you can access them all at once with a `CDaoFieldInfo` object by calling the `GetFieldInfo` member function of the containing object.  
   
- オブジェクトのプロパティを調べる際のほか、使用することも`CDaoFieldInfo`テーブル定義内の新しいフィールドを作成するための入力パラメーターを作成します。 簡単なオプションは、このタスクの使用をより細かく制御する場合は、バージョンを使用することが[CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield)を受け取り、`CDaoFieldInfo`パラメーター。  
+ Besides its use for examining object properties, you can also use `CDaoFieldInfo` to construct an input parameter for creating new fields in a tabledef. Simpler options are available for this task, but if you want finer control, you can use the version of [CDaoTableDef::CreateField](../../mfc/reference/cdaotabledef-class.md#createfield) that takes a `CDaoFieldInfo` parameter.  
   
- によって取得される情報、 `GetFieldInfo` (フィールドを格納するクラス) のメンバー関数は、`CDaoFieldInfo`構造体。 呼び出す、 `GetFieldInfo` Fields コレクションを持つ field オブジェクトが格納されている親オブジェクトのメンバー関数。 `CDaoFieldInfo`定義して、`Dump`デバッグでのメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoFieldInfo`オブジェクトです。  
+ Information retrieved by the `GetFieldInfo` member function (of the class that contains the field) is stored in a `CDaoFieldInfo` structure. Call the `GetFieldInfo` member function of the containing object in whose Fields collection the field object is stored. `CDaoFieldInfo` also defines a `Dump` member function in debug builds. You can use `Dump` to dump the contents of a `CDaoFieldInfo` object.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDaoTableDef::GetFieldInfo](../../mfc/reference/cdaotabledef-class.md#getfieldinfo)   
  [CDaoRecordset::GetFieldInfo](../../mfc/reference/cdaorecordset-class.md#getfieldinfo)   
  [CDaoQueryDef::GetFieldInfo](../../mfc/reference/cdaoquerydef-class.md#getfieldinfo)

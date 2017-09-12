@@ -1,115 +1,134 @@
 ---
-title: "テクニカル ノート 20: ID 名および番号に関する規約 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.id"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リソース識別子"
-  - "リソース識別子, 名前付けと番号付け"
-  - "TN020"
+title: 'TN020: ID Naming and Numbering Conventions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.id
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN020
+- resource identifiers, naming and numbering
+- resource identifiers
 ms.assetid: aecbd2cf-68b3-47f6-ae21-b1f507917245
 caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# テクニカル ノート 20: ID 名および番号に関する規約
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 87a4ee80b5ce116c792b17f0ba18f34693a5586b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC 2.0 で使うリソース、コマンド、文字列、コントロール、子ウィンドウに対する ID 名と ID 番号の規約について説明します。  
+---
+# <a name="tn020-id-naming-and-numbering-conventions"></a>TN020: ID Naming and Numbering Conventions
+This note describes the ID naming and numbering conventions that MFC 2.0 uses for resources, commands, strings, controls, and child windows.  
   
- MFC の ID 名や ID 番号に関する規約は、以下の条件を満たすようにできています。  
+ The MFC ID naming and numbering conventions are intended to meet the following requirements:  
   
--   Visual C\+\+ リソース エディターを使用して作成した MFC ライブラリと MFC アプリケーションを通じて ID 名の一貫性が保たれます。  プログラマからすれば、リソースの ID からリソースの型とソースを識別するのが容易になります。  
+-   Provide a consistent ID-naming standard used across the MFC library and MFC applications that are supported by the Visual C++ resource editor. This makes it easier for the programmer to interpret the type and origin of a resource from its ID.  
   
--   ID と型の一対一の対応が強調されます。  
+-   Emphasize the strong 1-to-1 relationship between certain types of IDs.  
   
--   Windows で標準的に使用されている ID 命名法に準拠しています。  
+-   Conform to already widely used standards for naming IDs in Windows.  
   
--   ID 番号空間を分割しています。  プログラマ、MFC、Windows、および Visual C\+\+ で編集されたリソースが ID 番号を割り当てることができます。  適切な分割によって、ID 番号の重複を防ぐことができます。  
+-   Partition the ID-numbering space. ID numbers can be assigned by the programmer, MFC, Windows, and Visual C++-edited resources. Appropriate partitioning will help avoid duplication of ID numbers.  
   
-## ID プレフィックスの名前付け規約  
- アプリケーションではさまざまなタイプの ID を使用できます。  MFC の ID 名前付け規約では、リソースのタイプによって異なるプレフィックスが使用されます。  
+## <a name="the-id-prefix-naming-convention"></a>The ID Prefix Naming Convention  
+ Several types of IDs can occur in an application. The MFC ID-naming convention defines different prefixes for different resource types.  
   
- MFC では、多重リソースの種類のリソース ID に対してプレフィックス "IDR\_" を使います。  たとえば、あるフレーム ウィンドウに対して、メニュー、アクセラレータ、文字列、アイコン リソースをまとめて表すために同一の "IDR\_" プレフィックスが使用されます。  各種のプレフィックスとそれぞれの使い方を以下の表にまとめます。  
+ MFC uses the prefix "IDR_" to indicate a resource ID that applies to multiple resource types. For example, for a given frame window, MFC uses the same "IDR_" prefix to indicate a menu, accelerator, string and icon resource. The following table shows the various prefixes and their usage:  
   
-|プレフィックス|使用方法|  
-|-------------|----------|  
-|IDR\_|多重リソースの種類 \(主にメニュー、アクセラレータ キー、およびリボン\)|  
-|IDD\_|ダイアログ テンプレート リソース \(IDD\_DIALOG1 など\)|  
-|IDC\_|カーソル リソース|  
-|IDI\_|アイコン リソース|  
-|IDB\_|ビットマップ リソース|  
-|IDS\_|文字列リソース|  
+|Prefix|Use|  
+|------------|---------|  
+|IDR_|For multiple resource types (primarily used for menus, accelerators, and ribbons).|  
+|IDD_|For dialog template resources (for example, IDD_DIALOG1).|  
+|IDC_|For cursor resources.|  
+|IDI_|For icon resources.|  
+|IDB_|For bitmap resources.|  
+|IDS_|For string resources.|  
   
- ダイアログ リソースに対しては次の規約が適用されます。  
+ Within a DIALOG resource, MFC follows these conventions:  
   
-|プレフィックスまたはラベル|使用方法|  
-|-------------------|----------|  
-|IDOK、IDCANCEL|標準プッシュ ボタン ID|  
-|IDC\_|その他のダイアログ コントロール|  
+|Prefix or label|Use|  
+|---------------------|---------|  
+|IDOK, IDCANCEL|For standard push button IDs.|  
+|IDC_|For other dialog controls.|  
   
- プレフィックス "IDC\_" はカーソルにも適用されますが、この重複は問題ありません。  通常、アプリケーションで使用されるカーソルの個数は限られており、ダイアログ コントロールの数は多いからです。  
+ The "IDC_" prefix is also used for cursors. This naming conflict is not usually a problem because a typical application will have few cursors and many dialog controls.  
   
- メニュー リソースに対しては次の規約が適用されます。  
+ Within a menu resource, MFC follows these conventions:  
   
-|プレフィックス|使用方法|  
-|-------------|----------|  
-|IDM\_|MFC コマンド アーキテクチャを使用しないメニュー コマンド|  
-|ID\_|MFC コマンド アーキテクチャを使用するメニュー コマンド|  
+|Prefix|Use|  
+|------------|---------|  
+|IDM_|For menu items that do not use the MFC command architecture.|  
+|ID_|For menu commands that use the MFC command architecture.|  
   
- MFC コマンド アーキテクチャを使用するメニュー コマンドは `ON_COMMAND` コマンド ハンドラーを必ず持ち、場合によっては `ON_UPDATE_COMMAND_UI` ハンドラーも持ちます。  これらのコマンド ハンドラーが MFC コマンド アーキテクチャに従っている場合、対応するメニュー コマンド、ツール バー ボタン、またはダイアログ バー ボタンの機能が正しく実行されます。  メッセージ バーに表示されるメニュー プロンプト文字列にも同じ "ID\_" プレフィックスが使われます。  アプリケーション中のほとんどのメニュー コマンドは、MFC コマンド規則に従う必要があります。  標準コマンド ID \(`ID_FILE_NEW` など\) はすべてこの規約に従っています。  
+ Commands that follow the MFC command architecture must have an `ON_COMMAND` command handler and can have an `ON_UPDATE_COMMAND_UI` handler. If these command handlers follow the MFC command architecture, they will function correctly whether they are bound to a menu command, a toolbar button, or a dialog bar button. The same "ID_" prefix is also used for a menu prompt string that is displayed on the program's message bar. Most of the menu items in your application should follow the MFC command conventions. All of the standard command IDs (for example, `ID_FILE_NEW`) follow this convention.  
   
- "IDP\_" は特殊な形式の文字列を表すために使用されます \(通常の文字列では "IDS\_" が使われます\)。  プレフィックス "IDP\_" を持つ文字列はプロンプト、つまりメッセージ ボックス中で使用される文字列です。"IDP\_" 文字列には、プログラムで決定される文字列のプレースホルダーとして、"%1" や "%2" を含めることができます。"IDP\_" 文字列には、通常、ヘルプ トピックが関連付けられますが、"IDS\_" 文字列には関連付けられません。"IDP\_" 文字列は常にローカライズされますが、"IDS\_" 文字列はローカライズされない場合もあります。  
+ MFC also uses "IDP_" as a specialized form of strings (instead of "IDS_"). Strings with the "IDP_" prefix are prompts, that is, strings used in message boxes. "IDP_" strings can contain "%1" and "%2" as placeholders of strings determined by the program. "IDP_" strings usually have help topics associated with them, and "IDS_" strings do not. "IDP_" strings are always localized, and "IDS_" strings might not be localized.  
   
- プレフィックス "IDW\_" は特殊な形式のコントロール ID として使用されます \(通常のコントロール ID は "IDC\_"\)。  "IDW\_" はフレームワーク クラスによって子ウィンドウ \(ビュー、分割ウィンドウなど\) に割り当てられます。  MFC が実装する ID にはプレフィックス "AFX\_" が付けられます。  
+ The MFC library also uses the "IDW_" prefix as a specialized form of control IDs (instead of "IDC_"). These IDs are assigned to child windows such as views and splitters by the framework classes. MFC implementation IDs are prefixed with "AFX_".  
   
-## ID 番号の規約  
- 各タイプのリソースに付けられる ID 番号の有効範囲を以下の表にまとめます。  値の範囲は実装上の制限によるものと、Widnows の定義済み ID や MFC の既定の ID と重複しないための規則によるものとに分かれます。  
+## <a name="the-id-numbering-convention"></a>The ID-Numbering Convention  
+ The following table lists the valid ranges for the IDs of the specific types. Some of the limits are technical implementation limits, and others are conventions that are designed to prevent your IDs from colliding with Windows predefined IDs or MFC default implementations.  
   
- 可能な限り、以下に示す範囲内の ID を使用してください。  範囲の下限は 1 です。0 は使用しません。  慣例どおり、最初の ID には 100 または 101 を使用することをお勧めします。  
+ We strongly recommend that you define all IDs inside the recommended ranges. The lower limit of these ranges is 1 because 0 is not used. We recommend that you use the common convention and use 100 or 101 as the first ID.  
   
-|プレフィックス|リソースの種類|有効範囲|  
-|-------------|-------------|----------|  
-|IDR\_|多重リソース|1 ～ 0x6FFF|  
-|IDD\_|ダイアログ テンプレート|1 ～ 0x6FFF|  
-|IDC\_、IDI\_、IDB\_|カーソル、アイコン、ビットマップ|1 ～ 0x6FFF|  
-|IDS\_、IDP\_|文字列|1 ～ 0x7FFF|  
-|ID\_|コマンド|0x8000 ～ 0xDFFF|  
-|IDC\_|コントロール|8 ～ 0xDFFF|  
+|Prefix|Resource type|Valid range|  
+|------------|-------------------|-----------------|  
+|IDR_|multiple|1 through 0x6FFF|  
+|IDD_|dialog templates|1 through 0x6FFF|  
+|IDC_,IDI_,IDB_|cursors, icons, bitmaps|1 through 0x6FFF|  
+|IDS_, IDP_|general strings|1 through 0x7FFF|  
+|ID_|commands|0x8000 through 0xDFFF|  
+|IDC_|controls|8 through 0xDFFF|  
   
- 値の有効範囲は次のような理由から決定されます。  
+ Reasons for these range limits:  
   
--   規約により、0 は ID として使用しません。  
+-   By convention, the ID value of 0 is not used.  
   
--   Windows の実装上の制約から、リソース ID 値は 0x7FFF 以下に制限されます。  
+-   Windows implementation limitations restrict true resource IDs to be less than or equal to 0x7FFF.  
   
--   MFC の内部フレームワークでは、これらの範囲が予約されています:  
+-   MFC's internal framework reserves these ranges:  
   
-    -   0x7000 ～ 0x7FFF \(afxres.h を参照\)  
+    -   0x7000 through 0x7FFF (see afxres.h)  
   
-    -   0xE000 ～ 0xEFFF \(afxres.h を参照\)  
+    -   0xE000 through 0xEFFF (see afxres.h)  
   
-    -   16000 ～ 18000 \(afxribbonres.h を参照\)  
+    -   16000 through 18000 (see afxribbonres.h)  
   
-     これらの範囲は、将来の MFC 実装で変更される可能性があります。  
+     These ranges may change in future MFC implementations.  
   
--   Windows システム コマンドの一部が 0xF000 ～ 0xFFFF を使用します。  
+-   Several Windows system commands use the range of 0xF000 through 0xFFFF.  
   
--   1 ～ 7 のコントロール ID は、IDOK や IDCANCEL などの標準コントロールのために予約されています。  
+-   Control IDs of 1 through 7 are reserved for standard controls such as IDOK and IDCANCEL.  
   
--   文字列 ID の 0x8000 ～ 0xFFFF はコマンドのメニュー プロンプトとして予約されています。  
+-   The range of 0x8000 through 0xFFFF for strings is reserved for menu prompts for commands.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

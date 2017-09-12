@@ -1,5 +1,5 @@
 ---
-title: "標準的なダイアログ データ バリデーション ルーチン |Microsoft Docs"
+title: Standard Dialog Data Validation Routines | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -31,43 +31,43 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: 5e71adfb0cda64e43239926b75a8fdc91b73fc29
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 80cb4c66e5190d76552982461066edea6a4b35be
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="standard-dialog-data-validation-routines"></a>標準的なダイアログ データ検証ルーチン
-このトピックでは、共通の MFC ダイアログ コントロールの使用される標準的なダイアログ データ バリデーション (DDV) ルーチンを示します。  
+# <a name="standard-dialog-data-validation-routines"></a>Standard Dialog Data Validation Routines
+This topic lists the standard dialog data validation (DDV) routines used for common MFC dialog controls.  
   
 > [!NOTE]
->  標準的なダイアログ データ エクス チェンジ ルーチンは、ヘッダー ファイル afxdd_.h で定義されます。 ただし、アプリケーションでは、afxwin.h を含める必要があります。  
+>  The standard dialog data exchange routines are defined in the header file afxdd_.h. However, applications should include afxwin.h.  
   
-### <a name="ddv-functions"></a>DDV 関数  
+### <a name="ddv-functions"></a>DDV Functions  
   
 |||  
 |-|-|  
-|[DDV_MaxChars](#ddv_maxchars)|特定の制御文字の数が指定された最大値を超えていないことを確認します。|  
-|[DDV_MinMaxByte](#ddv_minmaxbyte)|指定されたコントロールの値を超えていないことを確認、指定された**バイト**範囲です。|  
-|[DDV_MinMaxDateTime](#ddv_minmaxdatetime)|指定したコントロールの値が指定した時間範囲を超えていないことを確認します。|  
-|[DDV_MinMaxDouble](#ddv_minmaxdouble)|指定されたコントロールの値を超えていないことを確認、指定された**二重**範囲です。|  
-|[DDV_MinMaxDWord](#ddv_minmaxdword)|指定されたコントロールの値を超えていないことを確認、指定された**DWORD**範囲です。|  
-|[DDV_MinMaxFloat](#ddv_minmaxfloat)|指定されたコントロールの値を超えていないことを確認、指定された**float**範囲です。|  
-|[DDV_MinMaxInt](#ddv_minmaxint)|指定されたコントロールの値を超えていないことを確認、指定された**int**範囲です。|  
-|[DDV_MinMaxLong](#ddv_minmaxlong)|指定されたコントロールの値を超えていないことを確認、指定された**長い**範囲です。|  
-|[DDV_MinMaxLongLong](#ddv_minmaxlonglong)|指定されたコントロールの値を超えていないことを確認、指定された**LONGLONG**範囲です。|  
-|[DDV_MinMaxMonth](#ddv_minmaxmonth)|指定したコントロールの値が指定した日付範囲を超えていないことを確認します。|  
-|[DDV_MinMaxShort](#ddv_minmaxshort)|指定されたコントロールの値を超えていないことを確認、指定された**短い**範囲です。|  
-|[DDV_MinMaxSlider](#ddv_minmaxslider)|指定された範囲内に特定のスライダー コントロールの値を確認します。|  
-|[DDV_MinMaxUInt](#ddv_minmaxuint)|指定されたコントロールの値を超えていないことを確認、指定された**UINT**範囲です。|  
-|[DDV_MinMaxUnsigned](#ddv_minmaxuint)|指定したコントロールの値が 2 つの指定した値があることを確認します。| 
-|[DDV_MinMaxULongLong](#ddv_minmaxulonglong)|指定されたコントロールの値を超えていないことを確認、指定された**使い**範囲です。|  
+|[DDV_MaxChars](#ddv_maxchars)|Verifies the number of characters in a given control value does not exceed a given maximum.|  
+|[DDV_MinMaxByte](#ddv_minmaxbyte)|Verifies a given control value does not exceed a given **BYTE** range.|  
+|[DDV_MinMaxDateTime](#ddv_minmaxdatetime)|Verifies a given control value does not exceed a given time range.|  
+|[DDV_MinMaxDouble](#ddv_minmaxdouble)|Verifies a given control value does not exceed a given **double** range.|  
+|[DDV_MinMaxDWord](#ddv_minmaxdword)|Verifies a given control value does not exceed a given **DWORD** range.|  
+|[DDV_MinMaxFloat](#ddv_minmaxfloat)|Verifies a given control value does not exceed a given **float** range.|  
+|[DDV_MinMaxInt](#ddv_minmaxint)|Verifies a given control value does not exceed a given **int** range.|  
+|[DDV_MinMaxLong](#ddv_minmaxlong)|Verifies a given control value does not exceed a given **long** range.|  
+|[DDV_MinMaxLongLong](#ddv_minmaxlonglong)|Verifies a given control value does not exceed a given **LONGLONG** range.|  
+|[DDV_MinMaxMonth](#ddv_minmaxmonth)|Verifies a given control value does not exceed a given date range.|  
+|[DDV_MinMaxShort](#ddv_minmaxshort)|Verifies a given control value does not exceed a given **short** range.|  
+|[DDV_MinMaxSlider](#ddv_minmaxslider)|Verifies a given slider control value falls within the given range.|  
+|[DDV_MinMaxUInt](#ddv_minmaxuint)|Verifies a given control value does not exceed a given **UINT** range.|  
+|[DDV_MinMaxUnsigned](#ddv_minmaxuint)|Verifies a given control value falls between two specified values.| 
+|[DDV_MinMaxULongLong](#ddv_minmaxulonglong)|Verifies a given control value does not exceed a given **ULONGLONG** range.|  
   
 
   
-##  <a name="ddv_maxchars"></a>DDV_MaxChars  
- 呼び出す`DDV_MaxChars`コントロール内の文字の量に関連付けられていることを確認する*値*を超えない*文字数*です。  
+##  <a name="ddv_maxchars"></a>  DDV_MaxChars  
+ Call `DDV_MaxChars` to verify that the amount of characters in the control associated with *value* does not exceed *nChars*.  
   
 ```   
 void AFXAPI DDV_MaxChars(
@@ -76,24 +76,24 @@ void AFXAPI DDV_MaxChars(
     int nChars); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `nChars`  
- 使用できる文字の最大数。  
+ Maximum number of characters allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxbyte"></a>DDV_MinMaxByte  
- 呼び出す`DDV_MinMaxByte`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxbyte"></a>  DDV_MinMaxByte  
+ Call `DDV_MinMaxByte` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxByte(
@@ -103,27 +103,27 @@ void AFXAPI DDV_MinMaxByte(
     BYTE maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**バイト**) 許可します。  
+ Minimum value (of type **BYTE**) allowed.  
   
  `maxVal`  
- 最大値 (型の**バイト**) 許可します。  
+ Maximum value (of type **BYTE**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxdatetime"></a>DDV_MinMaxDateTime  
- 呼び出す`DDV_MinMaxDateTime`日付と時刻の選択で日付/時刻値を制御することを確認する ( [CDateTimeCtrl](../../mfc/reference/cdatetimectrl-class.md)) に関連付けられている*refValue*間`refMinRange`と`refMaxRange`です。  
+##  <a name="ddv_minmaxdatetime"></a>  DDV_MinMaxDateTime  
+ Call `DDV_MinMaxDateTime` to verify that the time/date value in the date and time picker control ( [CDateTimeCtrl](../../mfc/reference/cdatetimectrl-class.md)) associated with *refValue* falls between `refMinRange` and `refMaxRange`.  
   
 ```   
 void AFXAPI DDV_MinMaxDateTime(
@@ -139,27 +139,27 @@ void AFXAPI DDV_MinMaxDateTime(
     const COleDateTime* refMaxRange); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、 [CDataExchange](../../mfc/reference/cdataexchange-class.md)オブジェクト。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。 このオブジェクトを削除する必要はありません。  
+ A pointer to a [CDataExchange](../../mfc/reference/cdataexchange-class.md) object. The framework supplies this object to establish the context of the data exchange, including its direction. You don't need to delete this object.  
   
  *refValue*  
- 参照、 [CTime](../../atl-mfc-shared/reference/ctime-class.md)または[COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md)  ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数に関連付けられているオブジェクト。 このオブジェクトには、検証に使用するデータが含まれています。  
+ A reference to a [CTime](../../atl-mfc-shared/reference/ctime-class.md) or [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object associated with a member variable of the dialog box, form view, or control view object. This object contains the data to be validated.  
   
  `refMinRange`  
- 最小許容される値の日付/時刻です。  
+ Minimum date/time value allowed.  
   
  `refMaxRange`  
- 許容される最大の日付/時刻値。  
+ Maximum date/time value allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxdouble"></a>DDV_MinMaxDouble  
- 呼び出す`DDV_MinMaxDouble`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxdouble"></a>  DDV_MinMaxDouble  
+ Call `DDV_MinMaxDouble` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxDouble(
@@ -169,27 +169,27 @@ void AFXAPI DDV_MinMaxDouble(
     double maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**二重**) 許可します。  
+ Minimum value (of type **double**) allowed.  
   
  `maxVal`  
- 最大値 (型の**二重**) 許可します。  
+ Maximum value (of type **double**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxdword"></a>DDV_MinMaxDWord  
- 呼び出す`DDV_MinMaxDWord`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxdword"></a>  DDV_MinMaxDWord  
+ Call `DDV_MinMaxDWord` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxDWord(
@@ -199,27 +199,27 @@ void AFXAPI DDV_MinMaxDWord(
     DWORD maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の`DWORD`) 許可します。  
+ Minimum value (of type `DWORD`) allowed.  
   
  `maxVal`  
- 最大値 (型の`DWORD`) 許可します。  
+ Maximum value (of type `DWORD`) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxfloat"></a>DDV_MinMaxFloat  
- 呼び出す`DDV_MinMaxFloat`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxfloat"></a>  DDV_MinMaxFloat  
+ Call `DDV_MinMaxFloat` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxFloat(
@@ -229,27 +229,27 @@ void AFXAPI DDV_MinMaxFloat(
     float maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**float**) 許可します。  
+ Minimum value (of type **float**) allowed.  
   
  `maxVal`  
- 最大値 (型の**float**) 許可します。  
+ Maximum value (of type **float**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxint"></a>DDV_MinMaxInt  
- 呼び出す`DDV_MinMaxInt`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxint"></a>  DDV_MinMaxInt  
+ Call `DDV_MinMaxInt` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxInt(
@@ -259,27 +259,27 @@ void AFXAPI DDV_MinMaxInt(
     int maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の`int`) 許可します。  
+ Minimum value (of type `int`) allowed.  
   
  `maxVal`  
- 最大値 (型の`int`) 許可します。  
+ Maximum value (of type `int`) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxlong"></a>DDV_MinMaxLong  
- 呼び出す`DDV_MinMaxLong`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxlong"></a>  DDV_MinMaxLong  
+ Call `DDV_MinMaxLong` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxLong(
@@ -289,27 +289,27 @@ void AFXAPI DDV_MinMaxLong(
     long maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**長い**) 許可します。  
+ Minimum value (of type **long**) allowed.  
   
  `maxVal`  
- 最大値 (型の**長い**) 許可します。  
+ Maximum value (of type **long**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxlonglong"></a>DDV_MinMaxLongLong  
- 呼び出す`DDV_MinMaxLongLong`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxlonglong"></a>  DDV_MinMaxLongLong  
+ Call `DDV_MinMaxLongLong` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxLongLong(
@@ -319,27 +319,27 @@ void AFXAPI DDV_MinMaxLongLong(
     LONGLONG maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**LONGLONG**) 許可します。  
+ Minimum value (of type **LONGLONG**) allowed.  
   
  `maxVal`  
- 最大値 (型の**LONGLONG**) 許可します。  
+ Maximum value (of type **LONGLONG**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxmonth"></a>DDV_MinMaxMonth  
- 呼び出す`DDV_MinMaxMonth`月間予定表で日付/時刻値を制御することを確認する ( [CMonthCalCtrl](../../mfc/reference/cmonthcalctrl-class.md)) に関連付けられている*refValue*間`refMinRange`と`refMaxRange`です。  
+##  <a name="ddv_minmaxmonth"></a>  DDV_MinMaxMonth  
+ Call `DDV_MinMaxMonth` to verify that the time/date value in the month calendar control ( [CMonthCalCtrl](../../mfc/reference/cmonthcalctrl-class.md)) associated with *refValue* falls between `refMinRange` and `refMaxRange`.  
   
 ```   
 void AFXAPI DDV_MinMaxMonth(
@@ -355,27 +355,27 @@ void AFXAPI DDV_MinMaxMonth(
     const COleDateTime* refMaxRange); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、 [CDataExchange](../../mfc/reference/cdataexchange-class.md)オブジェクト。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a [CDataExchange](../../mfc/reference/cdataexchange-class.md) object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *refValue*  
- 型のオブジェクトへの参照を`CTime`または`COleDateTime` ダイアログ ボックスのメンバー変数に関連付けられている、フォーム ビュー、またはオブジェクトの表示を制御します。 このオブジェクトには、検証に使用するデータが含まれています。 この参照時に MFC パス`DDV_MinMaxMonth`と呼びます。  
+ A reference to an object of type `CTime` or `COleDateTime` associated with a member variable of the dialog box, form view, or control view object. This object contains the data to be validated. MFC passes this reference when `DDV_MinMaxMonth` is called.  
   
  `refMinRange`  
- 最小許容される値の日付/時刻です。  
+ Minimum date/time value allowed.  
   
  `refMaxRange`  
- 許容される最大の日付/時刻値。  
+ Maximum date/time value allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxshort"></a>DDV_MinMaxShort  
- 呼び出す`DDV_MinMaxShort`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxshort"></a>  DDV_MinMaxShort  
+ Call `DDV_MinMaxShort` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxShort(
@@ -385,27 +385,27 @@ void AFXAPI DDV_MinMaxShort(
     short maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**短い**) 許可します。  
+ Minimum value (of type **short**) allowed.  
   
  `maxVal`  
- 最大値 (型の**短い**) 許可します。  
+ Maximum value (of type **short**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxslider"></a>DDV_MinMaxSlider  
- 呼び出す`DDV_MinMaxSlider`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxslider"></a>  DDV_MinMaxSlider  
+ Call `DDV_MinMaxSlider` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxSlider(
@@ -415,27 +415,27 @@ void AFXAPI DDV_MinMaxSlider(
     DWORD maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、 [CDataExchange](../../mfc/reference/cdataexchange-class.md)オブジェクト。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a [CDataExchange](../../mfc/reference/cdataexchange-class.md) object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- 検証に使用する値への参照。 このパラメーターを保持またはスライダー コントロールのつまみの現在の位置を設定します。  
+ A reference to the value to be validated. This parameter holds or sets the slider control's current thumb position.  
   
  `minVal`  
- 許容される最小値。  
+ Minimum value allowed.  
   
  `maxVal`  
- 許容される最大値。  
+ Maximum value allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。 スライダー コントロールの概要については、次を参照してください。[を使用して CSliderCtrl](../../mfc/using-csliderctrl.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md). For information about slider controls, see [Using CSliderCtrl](../../mfc/using-csliderctrl.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxuint"></a>DDV_MinMaxUInt  
- 呼び出す`DDV_MinMaxUInt`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxuint"></a>  DDV_MinMaxUInt  
+ Call `DDV_MinMaxUInt` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxUInt(
@@ -445,27 +445,27 @@ void AFXAPI DDV_MinMaxUInt(
     UINT maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**UINT**) 許可します。  
+ Minimum value (of type **UINT**) allowed.  
   
  `maxVal`  
- 最大値 (型の**UINT**) 許可します。  
+ Maximum value (of type **UINT**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
   
-##  <a name="ddv_minmaxulonglong"></a>DDV_MinMaxULongLong  
- 呼び出す`DDV_MinMaxULongLong`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+##  <a name="ddv_minmaxulonglong"></a>  DDV_MinMaxULongLong  
+ Call `DDV_MinMaxULongLong` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
   
 ```   
 void AFXAPI DDV_MinMaxULongLong(
@@ -475,33 +475,33 @@ void AFXAPI DDV_MinMaxULongLong(
     ULONGLONG  maxVal); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**使い**) 許可します。  
+ Minimum value (of type **ULONGLONG**) allowed.  
   
  `maxVal`  
- 最大値 (型の**使い**) 許可します。  
+ Maximum value (of type **ULONGLONG**) allowed.  
   
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdd_.h  
     
-## <a name="see-also"></a>関連項目  
- [標準的なダイアログ データ エクス チェンジ ルーチン](../../mfc/reference/standard-dialog-data-exchange-routines.md)   
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Standard Dialog Data Exchange Routines](../../mfc/reference/standard-dialog-data-exchange-routines.md)   
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 
  ## <a name="ddvminmaxunsigned"></a>DDV_MinMaxUnsigned
-呼び出す`DDV_MinMaxUnsigned`コントロールの値に関連付けられていることを確認する*値*間`minVal`と`maxVal`です。  
+Call `DDV_MinMaxUnsigned` to verify that the value in the control associated with *value* falls between `minVal` and `maxVal`.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
    void AFXAPI DDV_MinMaxUnsigned(  
        CDataExchange* pDX,  
@@ -509,27 +509,27 @@ void AFXAPI DDV_MinMaxULongLong(
        unsigned minVal,  
        unsigned maxVal );  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  *value*  
- ダイアログ ボックス、フォーム ビュー、またはデータの検証をコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view, or control view object with which data is validated.  
   
  `minVal`  
- 最小値 (型の**符号なし**) 許可します。  
+ Minimum value (of type **unsigned** ) allowed.  
   
  `maxVal`  
- 最大値 (型の**符号なし**) 許可します。  
+ Maximum value (of type **unsigned** ) allowed.  
    
-### <a name="remarks"></a>コメント  
- DDV の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../dialog-data-exchange-and-validation.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDV, see [Dialog Data Exchange and Validation](../dialog-data-exchange-and-validation.md).  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdd_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdd_.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
  [DDX_Slider](#ddx_slider)   
  [DDX_FieldSlider](#ddx_fieldslider)
  

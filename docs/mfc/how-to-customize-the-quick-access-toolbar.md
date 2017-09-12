@@ -1,63 +1,82 @@
 ---
-title: "方法: クイック アクセス ツール バーをカスタマイズする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クイック アクセス ツール バー, カスタマイズ"
+title: 'How to: Customize the Quick Access Toolbar | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- quick access toolbar [MFC], customization
 ms.assetid: 2554099b-0c89-4605-9249-31bf9cbcefe0
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 方法: クイック アクセス ツール バーをカスタマイズする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1b26489b5f24649dabba5034ec8814ab9ea163ce
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クイック アクセス ツール バー \(QAT: Quick Access Toolbar\) は、アプリケーション ボタンの横またはカテゴリ タブの下に表示されるコマンド セットを含むカスタマイズ可能なツール バーです。  次の図は、標準的なクイック アクセス ツール バーを示しています。  
+---
+# <a name="how-to-customize-the-quick-access-toolbar"></a>How to: Customize the Quick Access Toolbar
+The Quick Access Toolbar (QAT) is a customizable toolbar that contains a set of commands that are either displayed next to the Application button or under the category tabs. The following illustration shows a typical Quick Access Toolbar.  
   
- ![MFC リボンのクイック アクセス ツール バー](../mfc/media/quick_access_toolbar.png "Quick\_Access\_Toolbar")  
+ ![MFC Ribbon Quick Access Toolbar](../mfc/media/quick_access_toolbar.png "quick_access_toolbar")  
   
- クイック アクセス ツール バーをカスタマイズするには、**プロパティ** ウィンドウでクイック アクセス ツール バーを開き、そのコマンドを変更して、リボン コントロールをプレビューします。  
+ To customize the Quick Access Toolbar, open it in the **Properties** window, modify its commands, and then preview the ribbon control.  
   
-### プロパティ ウィンドウでクイック アクセス ツール バーを開くには  
+### <a name="to-open-the-quick-access-toolbar-in-the-properties-window"></a>To open the Quick Access Toolbar in the Properties window  
   
-1.  Visual Studio で、**\[表示\]** メニューの **\[リソース ビュー\]** をクリックします。  
+1.  In Visual Studio, on the **View** menu, click **Resource View**.  
   
-2.  **\[リソース ビュー\]** でリボン リソースをダブルクリックして、デザイン サーフェイスに表示します。  
+2.  In **Resource View**, double-click the ribbon resource to display it on the design surface.  
   
-3.  デザイン サーフェイスで、\[クイック アクセス ツール バー\] メニューを右クリックし、**\[プロパティ\]** をクリックします。  
+3.  On design surface, right-click the Quick Access Toolbar menu and then click **Properties**.  
   
-## クイック アクセス ツール バーのプロパティ  
- クイック アクセス ツール バーのプロパティの定義を次の表に示します。  
+## <a name="quick-access-toolbar-properties"></a>Quick Access Toolbar Properties  
+ The following table defines the properties of the Quick Access Toolbar.  
   
-|プロパティ|定義|  
-|-----------|--------|  
-|\[QAT の位置\]|アプリケーションの開始時のクイック アクセス ツール バーの位置を指定します。  指定できる位置は、リボン コントロールの **\[上\]** または **\[下\]** です。|  
-|\[QAT 項目\]|クイック アクセス ツール バーで使用できるコマンドを指定します。|  
+|Property|Definition|  
+|--------------|----------------|  
+|QAT Position|Specifies the position of the Quick Access Toolbar when the application starts. The position can be either **Above** or **Below** the ribbon control.|  
+|QAT Items|Specifies the commands that are available for the Quick Access Toolbar.|  
   
-#### クイック アクセス ツール バーのコマンドを追加または削除するには  
+#### <a name="to-add-or-remove-commands-on-the-quick-access-toolbar"></a>To add or remove commands on the Quick Access Toolbar  
   
-1.  **プロパティ** ウィンドウで、**\[QAT 項目\]**をクリックし、省略記号ボタン **\(...\)** をクリックします。  
+1.  In the **Properties** window, click **QAT Items**, and then click the ellipsis button **(...)**.  
   
-2.  **\[QAT 項目エディター\]** ダイアログ ボックスで、**\[追加\]** ボタンと **\[削除\]** ボタンを使用して、クイック アクセス ツール バーのコマンドの一覧を変更します。  
+2.  In the **QAT Items Editor** dialog box, use the **Add** and **Remove** buttons to modify the list of commands on the Quick Access Toolbar.  
   
-3.  クイック アクセス ツール バーと \[クイック アクセス ツール バー\] メニューの両方にコマンドを表示するには、コマンドの横のボックスをオンにします。  メニューにのみコマンドを表示する場合は、ボックスをオフにします。  
+3.  If you want a command to appear on both the Quick Access Toolbar and the Quick Access Toolbar menu, select the box next to the command. If you want the command to appear only on the menu, clear the box.  
   
-## リボンのプレビュー  
- クイック アクセス ツール バーのコマンドは、デザイン サーフェイスには表示されません。  コマンドを表示するには、リボンをプレビューするか、アプリケーションを実行する必要があります。  
+## <a name="previewing-the-ribbon"></a>Previewing the Ribbon  
+ Quick Access Toolbar commands do not appear on the design surface. To view them, you must either preview the ribbon or run the application.  
   
-#### リボン コントロールをプレビューするには  
+#### <a name="to-preview-the-ribbon-control"></a>To preview the ribbon control  
   
--   **\[Ribbon エディター ツール バー\]** の **\[Ribbon のテスト\]** をクリックします。  
+-   On the **Ribbon Editor Toolbar**, click **Test Ribbon**.  
   
-## 参照  
- [リボン デザイナー \(MFC\)](../mfc/ribbon-designer-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)
+
+

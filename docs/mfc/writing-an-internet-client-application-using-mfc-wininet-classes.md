@@ -1,65 +1,83 @@
 ---
-title: "MFC WinInet クラスを使ってインターネット クライアント アプリケーションを作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インターネット アプリケーション, クライアント アプリケーション"
-  - "インターネット アプリケーション, WinInet"
-  - "インターネット クライアント アプリケーション"
-  - "インターネット クライアント アプリケーション, 書き込み"
-  - "MFC, インターネット アプリケーション"
-  - "WinInet クラス, プログラミング"
+title: Writing an Internet Client Application Using MFC WinInet Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Internet client applications [MFC]
+- WinInet classes [MFC], programming
+- Internet client applications [MFC], writing
+- Internet applications [MFC], WinInet
+- Internet applications [MFC], client applications
+- MFC, Internet applications
 ms.assetid: a2c4a40c-a94e-4b3e-9dbf-f8a8dc8e5428
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# MFC WinInet クラスを使ってインターネット クライアント アプリケーションを作成する方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ea6439a98b9c0db66058be10643e4a936cb6c7f9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-すべてのインターネット クライアント アプリケーションは、インターネット セッションです。  MFC クラスは [CInternetSession](../Topic/CInternetSession%20Class.md)オブジェクトとしてインターネット セッションを実装します。  このクラスを使用して、1 回の複数の同時インターネット セッションを作成できます。  
+---
+# <a name="writing-an-internet-client-application-using-mfc-wininet-classes"></a>Writing an Internet Client Application Using MFC WinInet Classes
+The basis of every Internet client application is the Internet session. MFC implements Internet sessions as objects of class [CInternetSession](../mfc/reference/cinternetsession-class.md). Using this class, you can create one Internet session or several simultaneous sessions.  
   
- サーバーと通信するには、[CInternetConnection](../Topic/CInternetConnection%20Class.md) オブジェクトを必要とし、`CInternetSession`。  [CInternetSession::GetFtpConnection](../Topic/CInternetSession::GetFtpConnection.md)、[CInternetSession::GetHttpConnection](../Topic/CInternetSession::GetHttpConnection.md)、または [CInternetSession::GetGopherConnection](../Topic/CInternetSession::GetGopherConnection.md)を使用して `CInternetConnection` を作成できます。  これらの呼び出しでは、プロトコル タイプに固有です。  この呼び出しによって、読み取りまたは書き込みのサーバー上でファイルが開かれます。  データの読み取りや書き込み場合は個々のステップとしてファイルを開く必要があります。  
+ To communicate with a server, you need a [CInternetConnection](../mfc/reference/cinternetconnection-class.md) object as well as a `CInternetSession`. You can create a `CInternetConnection` by using [CInternetSession::GetFtpConnection](../mfc/reference/cinternetsession-class.md#getftpconnection), [CInternetSession::GetHttpConnection](../mfc/reference/cinternetsession-class.md#gethttpconnection), or [CInternetSession::GetGopherConnection](../mfc/reference/cinternetsession-class.md#getgopherconnection). Each of these calls is specific to the protocol type. These calls do not open a file on the server for reading or writing. If you intend to read or write data, you must open the file as a separate step.  
   
- ほとんどのインターネット セッションの場合、`CInternetSession` のオブジェクトは必要な取得を行います [CInternetFile](../mfc/reference/cinternetfile-class.md) オブジェクトと:  
+ For most Internet sessions, the `CInternetSession` object works hand-in-hand with a [CInternetFile](../mfc/reference/cinternetfile-class.md) object:  
   
--   インターネット セッションで、[CInternetSession](../Topic/CInternetSession%20Class.md)のインスタンスを作成する必要があります。  
+-   For an Internet session, you must create an instance of [CInternetSession](../mfc/reference/cinternetsession-class.md).  
   
--   インターネット セッションでデータの読み取りまたは書き込み、`CInternetFile` のインスタンスが \(またはサブクラス、[CHttpFile](../Topic/CHttpFile%20Class.md) または [CGopherFile](../mfc/reference/cgopherfile-class.md)\) を作成します。  データを読み込む最も簡単な方法は、[CInternetSession::OpenURL](../Topic/CInternetSession::OpenURL.md)を呼び出します。  この関数は、提供する汎用 Resource Locator \(URL\) を解析して URL で指定されているサーバーに接続し、`CInternetFile` の読み取り専用オブジェクトを返します。  `CInternetSession::OpenURL` は 1 個のプロトコルの種類— FTP、HTTP、Gopher URL の同じ呼び出し作業に固有ではありません。  `CInternetSession::OpenURL` は ローカル ファイル \(`CInternetFile`の代わりに `CStdioFile` を返します\)。  
+-   If your Internet session reads or writes data, you must create an instance of `CInternetFile` (or its subclasses, [CHttpFile](../mfc/reference/chttpfile-class.md) or [CGopherFile](../mfc/reference/cgopherfile-class.md)). The easiest way to read data is to call [CInternetSession::OpenURL](../mfc/reference/cinternetsession-class.md#openurl). This function parses a Universal Resource Locator (URL) supplied by you, opens a connection to the server specified by the URL, and returns a read-only `CInternetFile` object. `CInternetSession::OpenURL` is not specific to one protocol type — the same call works for any FTP, HTTP, or gopher URL. `CInternetSession::OpenURL` even works with local files (returning a `CStdioFile` instead of a `CInternetFile`).  
   
--   インターネット セッションを読み取るか、記述するデータは、FTP ディレクトリに、ファイルの削除などのタスクを、`CInternetFile`のインスタンスを作成する必要がない場合もありますが、実行します。  
+-   If your Internet session does not read or write data, but performs other tasks, such as deleting a file in an FTP directory, you may not need to create an instance of `CInternetFile`.  
   
- `CInternetFile` オブジェクトを作成するには 2 とおりの方法があります。:  
+ There are two ways to create a `CInternetFile` object:  
   
--   サーバー接続を確立するために `CInternetSession::OpenURL` を使用して `OpenURL` の呼び出しは `CStdioFile`を返します。  
+-   If you use `CInternetSession::OpenURL` to establish your server connection, the call to `OpenURL` returns a `CStdioFile`.  
   
--   サーバー接続を確立するために使用 **CInternetSession::GetFtpConnection**、`GetGopherConnection`、または `GetHttpConnection` がそれぞれ `CFtpConnection::OpenFile`、`CGopherConnection::OpenFile`、または **CHttpConnection::OpenRequest,** を呼び出す必要がある `CInternetFile`、`CGopherFile`、または `CHttpFile`を返すために、各。  
+-   If use **CInternetSession::GetFtpConnection**, `GetGopherConnection`, or `GetHttpConnection` to establish your server connection, you must call `CFtpConnection::OpenFile`, `CGopherConnection::OpenFile`, or **CHttpConnection::OpenRequest,** respectively, to return a `CInternetFile`, `CGopherFile`, or `CHttpFile`, respectively.  
   
- インターネット クライアント アプリケーションの実装の手順は **OpenURL** に基づいて一般的なインターネット クライアントまたは **GetConnection** 関数の 1 種類を使用するプロトコル固有のクライアントを作成するかどうかによって異なります。  
+ The steps in implementing an Internet client application vary depending on whether you create a generic Internet client based on **OpenURL** or a protocol-specific client using one of the **GetConnection** functions.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [以前に FTP、HTTP、Gopher を包括的に使用するインターネット クライアント アプリケーションを作成できます。](../Topic/Steps%20in%20a%20Typical%20Internet%20Client%20Application.md)  
+-   [How do I write an Internet client application that works generically with FTP, HTTP, and gopher](../mfc/steps-in-a-typical-internet-client-application.md)  
   
--   [以前にファイルを開く FTP のクライアント アプリケーションを作成できます。](../mfc/steps-in-a-typical-ftp-client-application.md)  
+-   [How do I write an FTP client application that opens a file](../mfc/steps-in-a-typical-ftp-client-application.md)  
   
--   [以前にないファイルを開いて、書きましたりファイルの削除などの操作を実行する FTP ディレクトリのクライアント アプリケーションまたは。](../mfc/steps-in-a-typical-ftp-client-application-to-delete-a-file.md)  
+-   [How do I write an FTP client application that does not open a file but performs a directory operation, such as deleting a file](../mfc/steps-in-a-typical-ftp-client-application-to-delete-a-file.md)  
   
--   [以前に Gopher のクライアント アプリケーションを作成できます。](../mfc/steps-in-a-typical-gopher-client-application.md)  
+-   [How do I write a gopher client application](../mfc/steps-in-a-typical-gopher-client-application.md)  
   
--   [以前に HTTP クライアント アプリケーションを作成できます。](../mfc/steps-in-a-typical-http-client-application.md)  
+-   [How do I write an HTTP client application](../mfc/steps-in-a-typical-http-client-application.md)  
   
-## 参照  
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)   
- [インターネット クライアント アプリケーションの作成用の MFC クラス](../mfc/mfc-classes-for-creating-internet-client-applications.md)   
- [インターネット クライアント クラスの必要条件](../Topic/Prerequisites%20for%20Internet%20Client%20Classes.md)
+## <a name="see-also"></a>See Also  
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)   
+ [MFC Classes for Creating Internet Client Applications](../mfc/mfc-classes-for-creating-internet-client-applications.md)   
+ [Prerequisites for Internet Client Classes](../mfc/prerequisites-for-internet-client-classes.md)
+

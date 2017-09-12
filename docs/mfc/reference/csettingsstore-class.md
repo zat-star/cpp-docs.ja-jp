@@ -1,5 +1,5 @@
 ---
-title: "CSettingsStore クラス |Microsoft ドキュメント"
+title: CSettingsStore Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,7 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CSettingsStore class
+- CSettingsStore [MFC], CSettingsStore
+- CSettingsStore [MFC], Close
+- CSettingsStore [MFC], CreateKey
+- CSettingsStore [MFC], DeleteKey
+- CSettingsStore [MFC], DeleteValue
+- CSettingsStore [MFC], Open
+- CSettingsStore [MFC], Read
+- CSettingsStore [MFC], Write
 ms.assetid: 0ea181de-a13e-4b29-b560-7c43838223ff
 caps.latest.revision: 29
 author: mikeblome
@@ -42,88 +49,87 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0b07f6b12e178d8e324313ea3b0f6de9ae7420c9
-ms.openlocfilehash: 0918c8dd9b6284adecb61bc95ddfd41c22d16cb8
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6ecae74312bbdca97de8f636d54e1ddd441dd837
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
 # <a name="csettingsstore-class"></a>CSettingsStore Class
-Windows API 関数をラップし、レジストリへのアクセスに使用するオブジェクト指向インターフェイスを提供します。  
+Wraps Windows API functions, providing an object-oriented interface that you use to access the registry.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CSettingsStore : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSettingsStore::CSettingsStore](#csettingsstore)|`CSettingsStore` オブジェクトを構築します。|  
+|[CSettingsStore::CSettingsStore](#csettingsstore)|Constructs a `CSettingsStore` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSettingsStore::Close](#close)|開いているレジストリ キーを閉じます。|  
-|[CSettingsStore::CreateKey](#createkey)|指定したキーを開くか、存在しない場合は作成されます。|  
-|[CSettingsStore::DeleteKey](#deletekey)|指定したキーとそのすべての子を削除します。|  
-|[CSettingsStore::DeleteValue](#deletevalue)|開いているキーの指定した値を削除します。|  
-|[CSettingsStore::Open](#open)|指定したキーを開きます。|  
-|[CSettingsStore::Read](#read)|指定したキー値のデータを取得します。|  
-|[CSettingsStore::Write](#write)|開いているキーの下のレジストリに値を書き込みます。|  
+|[CSettingsStore::Close](#close)|Closes the open registry key.|  
+|[CSettingsStore::CreateKey](#createkey)|Opens the specified key or creates it if it does not exist.|  
+|[CSettingsStore::DeleteKey](#deletekey)|Deletes the specified key and all its children.|  
+|[CSettingsStore::DeleteValue](#deletevalue)|Deletes the specified value of the open key.|  
+|[CSettingsStore::Open](#open)|Opens the specified key.|  
+|[CSettingsStore::Read](#read)|Retrieves the data for a specified key value.|  
+|[CSettingsStore::Write](#write)|Writes a value to the registry under the open key.|  
   
-## <a name="remarks"></a>コメント  
- メンバー関数は、`CreateKey`と`Open`とよく似ています。 レジストリ キーが既に存在する場合`CreateKey`と`Open`同じように機能します。 ただし、レジストリ キーが存在しない場合、`CreateKey`一方が作成されます`Open`エラー値が返されます。  
+## <a name="remarks"></a>Remarks  
+ The member functions `CreateKey` and `Open` are very similar. If the registry key already exists, `CreateKey` and `Open` function in the same way. However, if the registry key does not exist, `CreateKey` will create it whereas `Open` will return an error value.  
   
-## <a name="example"></a>例  
- 次の例では、メソッドを開くと Read メソッドを使用して、`CSettingsStore`クラスです。 このコード スニペットの一部である、[ツール ヒントのデモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to use the Open and Read methods of the `CSettingsStore` class. This code snippet is part of the [Tool Tip Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_ToolTipDemo&#1;](../../mfc/reference/codesnippet/cpp/csettingsstore-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_ToolTipDemo#1](../../mfc/reference/codesnippet/cpp/csettingsstore-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CSettingsStore`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxsettingsstore.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxsettingsstore.h  
   
-##  <a name="close"></a>CSettingsStore::Close  
- 開いているレジストリ キーを閉じます。  
+##  <a name="close"></a>  CSettingsStore::Close  
+ Closes the open registry key.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定では、このメソッドは、デストラクターから、 [CSettingsStore クラス](../../mfc/reference/csettingsstore-class.md)します。  
+### <a name="remarks"></a>Remarks  
+ By default, this method is called from the destructor of the [CSettingsStore Class](../../mfc/reference/csettingsstore-class.md).  
   
-##  <a name="createkey"></a>CSettingsStore::CreateKey  
- レジストリ キーを開くか、存在しない場合は作成されます。  
+##  <a name="createkey"></a>  CSettingsStore::CreateKey  
+ Opens a registry key or creates it if it does not exist.  
   
 ```  
 virtual BOOL CreateKey(LPCTSTR pszPath);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszPath`  
- 作成したり開いたりキーの名前を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszPath`  
+ Specifies the name of a key to be created or opened.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は&0;それ以外の場合&0; 以外の値。  
+### <a name="return-value"></a>Return Value  
+ 0 if successful; otherwise a nonzero value.  
   
-### <a name="remarks"></a>コメント  
- `CreateKey`使用して`m_hKey`レジストリの照会のルートとして。 検索`pszPath`のサブキーとして`m_hKey`します。 キーが存在しない場合`CreateKey`によって作成されます。 それ以外の場合、キーを開きます。 `CreateKey`設定し、`m_hKey`作成または開いているキーにします。  
+### <a name="remarks"></a>Remarks  
+ `CreateKey` uses `m_hKey` as the root of registry inquiries. It searches for `pszPath` as a subkey of `m_hKey`. If the key does not exist, `CreateKey` creates it. Otherwise, it opens the key. `CreateKey` then sets `m_hKey` to the created or opened key.  
   
-##  <a name="csettingsstore"></a>CSettingsStore::CSettingsStore  
- 
-          `CSettngsStore` オブジェクトを作成します。  
+##  <a name="csettingsstore"></a>  CSettingsStore::CSettingsStore  
+ Creates a `CSettngsStore` object.  
   
 ```  
 CSettingsStore(
@@ -131,22 +137,22 @@ CSettingsStore(
     BOOL bReadOnly);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bAdmin`  
- 指定するブール値パラメーターかどうか、`CSettingsStore`オブジェクトが管理者モードで動作しています。  
+### <a name="parameters"></a>Parameters  
+ [in] `bAdmin`  
+ Boolean parameter that specifies whether the `CSettingsStore` object is acting in administrator mode.  
   
- [入力] `bReadOnly`  
- 指定するブール値パラメーターかどうか、`CSettingsStore`オブジェクトが読み取り専用モードに作成します。  
+ [in] `bReadOnly`  
+ Boolean parameter that specifies whether the `CSettingsStore` object is created in read-only mode.  
   
-### <a name="remarks"></a>コメント  
- 場合`bAdmin`に設定されている`false`、`m_hKey`にメンバー変数が設定されている`HKEY_LOCAL_MACHINE`します。 If you set `bAdmin` to `true`, `m_hKey` is set to `HKEY_CURRENT_USER`.  
+### <a name="remarks"></a>Remarks  
+ If `bAdmin` is set to `false`, the `m_hKey` member variable is set to `HKEY_LOCAL_MACHINE`. If you set `bAdmin` to `true`, `m_hKey` is set to `HKEY_CURRENT_USER`.  
   
- セキュリティのアクセス権によって異なります、`bReadOnly`パラメーター。 場合`bReadonly`は`false`、セキュリティのアクセスに設定されます`KEY_ALL_ACCESS`します。 場合`bReadyOnly`は`true`、セキュリティのアクセスは、の組み合わせに設定されます`KEY_QUERY_VALUE, KEY_NOTIFY`と`KEY_ENUMERATE_SUB_KEYS`です。 レジストリとセキュリティのアクセスの詳細については、次を参照してください。[レジストリ キーのセキュリティとアクセス権](http://msdn.microsoft.com/library/windows/desktop/ms724878)します。  
+ The security access depends on the `bReadOnly` parameter. If `bReadonly` is `false`, the security access will be set to `KEY_ALL_ACCESS`. If `bReadyOnly` is `true`, the security access will be set to a combination of `KEY_QUERY_VALUE, KEY_NOTIFY` and `KEY_ENUMERATE_SUB_KEYS`. For more information about security access together with the registry, see [Registry Key Security and Access Rights](http://msdn.microsoft.com/library/windows/desktop/ms724878).  
   
- デストラクターを`CSettingsStore`解放`m_hKey`自動的にします。  
+ The destructor for `CSettingsStore` releases `m_hKey` automatically.  
   
-##  <a name="deletekey"></a>CSettingsStore::DeleteKey  
- レジストリからキーとそのすべての子を削除します。  
+##  <a name="deletekey"></a>  CSettingsStore::DeleteKey  
+ Deletes a key and all its children from the registry.  
   
 ```  
 virtual BOOL DeleteKey(
@@ -154,54 +160,54 @@ virtual BOOL DeleteKey(
     BOOL bAdmin = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszPath`  
- 削除するキーの名前。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszPath`  
+ The name of the key to delete.  
   
- [入力] `bAdmin`  
- 削除するキーの場所を指定するスイッチです。  
+ [in] `bAdmin`  
+ Switch that specifies the location of the key to delete.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメソッドが失敗、`CSettingsStore`オブジェクトが読み取り専用モードにします。  
+### <a name="remarks"></a>Remarks  
+ This method will fail if the `CSettingsStore` object is in read-only mode.  
   
- 場合、パラメーター `bAdmin`&0; の場合は、`DeleteKey`の下で削除するキーの検索`HKEY_CURRENT_USER`します。 場合`bAdmin`がゼロ以外、`DeleteKey`の下で削除するキーの検索`HKEY_LOCAL_MACHINE`します。  
+ If the parameter `bAdmin` is zero, `DeleteKey` searches for the key to delete under `HKEY_CURRENT_USER`. If `bAdmin` is nonzero, `DeleteKey` searches for the key to delete under `HKEY_LOCAL_MACHINE`.  
   
-##  <a name="deletevalue"></a>CSettingsStore::DeleteValue  
- 値を削除`m_hKey`します。  
+##  <a name="deletevalue"></a>  CSettingsStore::DeleteValue  
+ Deletes a value from `m_hKey`.  
   
 ```  
 virtual BOOL DeleteValue(LPCTSTR pszValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszValue`  
- 削除する値のフィールドを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszValue`  
+ Specifies the value field to remove.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-##  <a name="open"></a>CSettingsStore::Open  
- レジストリ キーを開きます。  
+##  <a name="open"></a>  CSettingsStore::Open  
+ Opens a registry key.  
   
 ```  
 virtual BOOL Open(LPCTSTR pszPath);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszPath`  
- レジストリ キーの名前。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszPath`  
+ The name of a registry key.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 設定されているこのメソッドは、指定したキーを正常に開いたら、`m_hKey`をこのキーのハンドル。  
+### <a name="remarks"></a>Remarks  
+ After this method successfully opens the specified key, it sets `m_hKey` to the handle of this key.  
   
-##  <a name="read"></a>CSettingsStore::Read  
- レジストリのキーから値を読み取ります。  
+##  <a name="read"></a>  CSettingsStore::Read  
+ Reads a value from a key in the registry.  
   
 ```  
 virtual BOOL Read(
@@ -275,63 +281,63 @@ virtual BOOL Read(
     CObject*& pObj);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszKey`  
- レジストリから読み取る値の名前を表す null で終わる文字列へのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszKey`  
+ Pointer to a null-terminated string that contains the name of the value to read from the registry.  
   
- [出力] `iVal`  
- レジストリ キーから読み取った値を受け取る整数変数への参照。  
+ [out] `iVal`  
+ Reference to an integer variable that receives the value read from the registry key.  
   
- [出力] `dwVal`  
- レジストリ キーから読み取る値を受け取る 32 ビットのダブルワードの変数への参照。  
+ [out] `dwVal`  
+ Reference to a 32-bit double word variable that receives the value read from the registry key.  
   
- [出力] `sVal`  
- レジストリ キーから読み取った値を受け取る文字列変数への参照。  
+ [out] `sVal`  
+ Reference to a string variable that receives the value read from the registry key.  
   
- [出力] `scStringList`  
- レジストリ キーから読み取った値を受け取る文字列リストの変数への参照。  
+ [out] `scStringList`  
+ Reference to a string list variable that receives the value read from the registry key.  
   
- [出力] `scArray`  
- レジストリ キーから読み取った値を受け取る文字列配列の変数への参照。  
+ [out] `scArray`  
+ Reference to a string array variable that receives the value read from the registry key.  
   
- [出力] `dwcArray`  
- レジストリ キーから読み取る値を受け取る 32 ビットのダブルワードの配列変数への参照。  
+ [out] `dwcArray`  
+ Reference to a 32-bit double word array variable that receives the value read from the registry key.  
   
- [出力] `wcArray`  
- レジストリ キーから読み取った値を受け取る 16 ビット ワードの配列変数への参照。  
+ [out] `wcArray`  
+ Reference to a 16-bit word array variable that receives the value read from the registry key.  
   
- [出力] `bcArray`  
- レジストリ キーから読み取った値を受信するバイト配列の変数への参照。  
+ [out] `bcArray`  
+ Reference to a byte array variable that receives the value read from the registry key.  
   
- [出力] `lpPoint`  
- ポインターへの参照、`POINT`レジストリ キーの値を受け取る構造体を読み取る。  
+ [out] `lpPoint`  
+ Reference to a pointer to a `POINT` structure that receives the value read from the registry key.  
   
- [出力] `rect`  
- 参照、 [CRect](../../atl-mfc-shared/reference/crect-class.md)レジストリ キーから値を受け取る変数を読み取る。  
+ [out] `rect`  
+ Reference to a [CRect](../../atl-mfc-shared/reference/crect-class.md) variable that receives the value read from the registry key.  
   
- [出力] `ppData`  
- レジストリ キーから読み取る値を受け取るデータへのポインターへのポインター。  
+ [out] `ppData`  
+ Pointer to a pointer to data that receives the value read from the registry key.  
   
- [出力] `pBytes`  
- 符号なし整数型の変数へのポインター。 この変数には、バッファーのサイズを`ppData`をポイントします。  
+ [out] `pBytes`  
+ Pointer to an unsigned integer variable. This variable receives the size of the buffer that `ppData` points to.  
   
- [出力] `list`  
- 参照、 [CObList](../../mfc/reference/coblist-class.md)レジストリ キーから値を受け取る変数を読み取る。  
+ [out] `list`  
+ Reference to a [CObList](../../mfc/reference/coblist-class.md) variable that receives the value read from the registry key.  
   
- [出力] `obj`  
- 参照、 [CObject](../../mfc/reference/cobject-class.md)レジストリ キーから値を受け取る変数を読み取る。  
+ [out] `obj`  
+ Reference to a [CObject](../../mfc/reference/cobject-class.md) variable that receives the value read from the registry key.  
   
- [出力] `pObj`  
- ポインターへの参照、`CObject`レジストリ キーから値を受け取る変数を読み取る。  
+ [out] `pObj`  
+ Reference to a pointer to a `CObject` variable that receives the value read from the registry key.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `Read`チェック`pszKey`のサブキーとして`m_hKey`します。  
+### <a name="remarks"></a>Remarks  
+ `Read` checks for `pszKey` as a subkey of `m_hKey`.  
   
-##  <a name="write"></a>CSettingsStore::Write  
- 開いているキーの下のレジストリに値を書き込みます。  
+##  <a name="write"></a>  CSettingsStore::Write  
+ Writes a value to the registry under the open key.  
   
 ```  
 virtual BOOL Write(
@@ -405,63 +411,63 @@ virtual BOOL Write(
     CObject* pObj);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pszKey`  
- 設定する値の名前を含む文字列へのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pszKey`  
+ Pointer to a string that contains the name of the value to set.  
   
- [入力] `iVal`  
- 格納するデータを含む整数の変数への参照。  
+ [in] `iVal`  
+ Reference to an integer variable that contains the data to store.  
   
- [入力] `dwVal`  
- 格納するデータを含む 32 ビットのダブルワード変数への参照。  
+ [in] `dwVal`  
+ Reference to a 32-bit double word variable that contains the data to store.  
   
- [入力] `pszVal`  
- 格納するデータを含む null で終わる文字列変数へのポインター。  
+ [in] `pszVal`  
+ Pointer to a null-terminated string variable that contains the data to store.  
   
- [入力] `scStringList`  
- 参照、 [CStringList](../../mfc/reference/cstringlist-class.md)を格納するデータを含む変数。  
+ [in] `scStringList`  
+ Reference to a [CStringList](../../mfc/reference/cstringlist-class.md) variable that contains the data to store.  
   
- [入力] `bcArray`  
- 格納するデータを含むバイト配列の変数への参照。  
+ [in] `bcArray`  
+ Reference to a byte array variable that contains the data to store.  
   
- [入力] `scArray`  
- 格納するデータを含む文字列配列の変数への参照。  
+ [in] `scArray`  
+ Reference to a string array variable that contains the data to store.  
   
- [入力] `dwcArray`  
- 32 ビットのダブルワードの配列変数を格納するデータを含むへの参照。  
+ [in] `dwcArray`  
+ Reference to a 32-bit double word array variable that contains the data to store.  
   
- [入力] `wcArray`  
- 16 ビット ワードの配列変数を格納するデータを含むへの参照。  
+ [in] `wcArray`  
+ Reference to a 16-bit word array variable that contains the data to store.  
   
- [入力] `rect`  
- 参照、 [CRect](../../atl-mfc-shared/reference/crect-class.md)を格納するデータを含む変数。  
+ [in] `rect`  
+ Reference to a [CRect](../../atl-mfc-shared/reference/crect-class.md) variable that contains the data to store.  
   
- [入力] `lpPoint`  
- ポインターへの参照、`POINT`を格納するデータを含む変数。  
+ [in] `lpPoint`  
+ Reference to a pointer to a `POINT` variable that contains the data to store.  
   
- [入力] `pData`  
- 格納するデータを格納するバッファーへのポインター。  
+ [in] `pData`  
+ Pointer to a buffer that contains the data to store.  
   
- [入力] `nBytes`  
- サイズを指定しているデータのバイト数、`pData`パラメーター ポイントです。  
+ [in] `nBytes`  
+ Specifies the size, in bytes, of the data to which the `pData` parameter points.  
   
- [入力] `list`  
- 参照、 [CObList](../../mfc/reference/coblist-class.md)を格納するデータを含む変数。  
+ [in] `list`  
+ Reference to a [CObList](../../mfc/reference/coblist-class.md) variable that contains the data to store.  
   
- [入力] `obj`  
- 参照、 [CObject](../../mfc/reference/cobject-class.md)を格納するデータを含む変数。  
+ [in] `obj`  
+ Reference to a [CObject](../../mfc/reference/cobject-class.md) variable that contains the data to store.  
   
- [入力] `pObj`  
- ポインターへのポインター、`CObject`を格納するデータを含む変数。  
+ [in] `pObj`  
+ Pointer to a pointer to a `CObject` variable that contains the data to store.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は `TRUE`。それ以外の場合は `FALSE`。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if successful; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- レジストリへの書き込みをするように設定する必要があります`bReadOnly`0 以外の値を作成するときに、 [CSettingsStore](../../mfc/reference/csettingsstore-class.md)オブジェクトです。 詳細については、次を参照してください。 [CSettingsStore::CSettingsStore](#csettingsstore)します。  
+### <a name="remarks"></a>Remarks  
+ In order to write to the registry, you must set `bReadOnly` to a nonzero value when you create a [CSettingsStore](../../mfc/reference/csettingsstore-class.md) object. For more information, see [CSettingsStore::CSettingsStore](#csettingsstore).  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CWinAppEx クラス](../../mfc/reference/cwinappex-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CWinAppEx Class](../../mfc/reference/cwinappex-class.md)
 

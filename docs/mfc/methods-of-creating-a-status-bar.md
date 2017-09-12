@@ -1,44 +1,63 @@
 ---
-title: "ステータス バーの作成方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBar クラス, および CStatusBarCtrl"
-  - "CStatusBarCtrl クラス, 作成"
-  - "CStatusBarCtrl クラス, および CStatusBar"
-  - "メソッド [MFC]"
-  - "メソッド [MFC], 作成 (ステータス バーを)"
-  - "ステータス バー, 作成"
+title: Methods of Creating a Status Bar | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CStatusBar class [MFC], vs. CStatusBarCtrl
+- methods [MFC], creating status bars
+- CStatusBarCtrl class [MFC], vs. CStatusBar
+- CStatusBarCtrl class [MFC], creating
+- methods [MFC]
+- status bars [MFC], creating
 ms.assetid: 9aeaf290-7099-4762-a5ba-9c26705333c9
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ステータス バーの作成方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6a6e89b3082bd373ae7210f7a353543ed8525da4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC がステータス バーを作成するための 2 種類のクラスが用意されています。: [CStatusBar](../mfc/reference/cstatusbar-class.md) と [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) \(Windows コモン コントロール API をラップする\)。  `CStatusBar` がステータス バー コモン コントロールの機能がすべて用意されている、メニュー、およびツール バーによって自動的にやり取りし、の必須のコモン コントロールの設定と構造の多くを処理します; ただし、生成された実行可能ファイルには、通常 `CStatusBarCtrl`を使用して作成された、より大きい。  
+---
+# <a name="methods-of-creating-a-status-bar"></a>Methods of Creating a Status Bar
+MFC provides two classes to create status bars: [CStatusBar](../mfc/reference/cstatusbar-class.md) and [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) (which wraps the Windows common control API). `CStatusBar` provides all of the functionality of the status bar common control, it automatically interacts with menus and toolbars, and it handles many of the required common control settings and structures for you; however, your resulting executable usually will be larger than that created by using `CStatusBarCtrl`.  
   
- `CStatusBarCtrl` は 通常は、実行可能ファイルになり、MFC アーキテクチャにステータス バーを統合する場合を除き `CStatusBarCtrl` を使用した方がよい場合があります。  `CStatusBarCtrl` を使用し、MFC アーキテクチャにステータス バーを統合する場合は、MFC とステータス バー コントロールの操作を伝える追加注意を払う必要があります。  この通信は困難ではありません; ただし、`CStatusBar`を使用する場合は、追加の不要な作業です。  
+ `CStatusBarCtrl` usually results in a smaller executable, and you may prefer to use `CStatusBarCtrl` if you do not intend to integrate the status bar into the MFC architecture. If you plan to use `CStatusBarCtrl` and integrate the status bar into the MFC architecture, you must take additional care to communicate status bar control manipulations to MFC. This communication is not difficult; however, it is additional work that is unneeded when you use `CStatusBar`.  
   
- Visual C\+\+ では、ステータス バー コモン コントロールを使用する 2 とおりの方法を示します。  
+ Visual C++ provides two ways to take advantage of the status bar common control.  
   
--   ステータス バーを `CStatusBar`を使用して作成し、`CStatusBarCtrl` のメンバー関数へのアクセスを取得するに [CStatusBar::GetStatusBarCtrl](../Topic/CStatusBar::GetStatusBarCtrl.md) を呼び出します。  
+-   Create the status bar using `CStatusBar`, and then call [CStatusBar::GetStatusBarCtrl](../mfc/reference/cstatusbar-class.md#getstatusbarctrl) to get access to the `CStatusBarCtrl` member functions.  
   
--   [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md) のコンストラクターを使用して、ステータス バーを作成します。  
+-   Create the status bar using [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)'s constructor.  
   
- どちらのメソッドはステータス バー コントロールのメンバー関数へのアクセスを提供します。  `CStatusBar::GetStatusBarCtrl`を呼び出すと、`CStatusBarCtrl` オブジェクトへの参照を返すため、メンバー関数のいずれかを使用して設定できます。  `CStatusBar`を使用して、ステータス バーを構築し、作成する方法については、" [CStatusBar](../mfc/reference/cstatusbar-class.md) を参照してください。  
+ Either method will give you access to the member functions of the status bar control. When you call `CStatusBar::GetStatusBarCtrl`, it returns a reference to a `CStatusBarCtrl` object so you can use either set of member functions. See [CStatusBar](../mfc/reference/cstatusbar-class.md) for information on constructing and creating a status bar using `CStatusBar`.  
   
-## 参照  
- [CStatusBarCtrl の使い方](../mfc/using-cstatusbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

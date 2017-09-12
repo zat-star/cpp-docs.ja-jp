@@ -1,5 +1,5 @@
 ---
-title: "CDC クラス |Microsoft ドキュメント"
+title: CDC Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -212,13 +212,204 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- Windows [C++], device contexts
-- Windows 95 [C++], screen coordinates
-- device contexts [C++], CDC class
-- screen coordinates in device contexts
-- coordinates in Windows 95/98 [C++]
-- Windows 98 [C++], screen coordinates
-- CDC class
+- CDC [MFC], CDC
+- CDC [MFC], AbortDoc
+- CDC [MFC], AbortPath
+- CDC [MFC], AddMetaFileComment
+- CDC [MFC], AlphaBlend
+- CDC [MFC], AngleArc
+- CDC [MFC], Arc
+- CDC [MFC], ArcTo
+- CDC [MFC], Attach
+- CDC [MFC], BeginPath
+- CDC [MFC], BitBlt
+- CDC [MFC], Chord
+- CDC [MFC], CloseFigure
+- CDC [MFC], CreateCompatibleDC
+- CDC [MFC], CreateDC
+- CDC [MFC], CreateIC
+- CDC [MFC], DeleteDC
+- CDC [MFC], DeleteTempMap
+- CDC [MFC], Detach
+- CDC [MFC], DPtoHIMETRIC
+- CDC [MFC], DPtoLP
+- CDC [MFC], Draw3dRect
+- CDC [MFC], DrawDragRect
+- CDC [MFC], DrawEdge
+- CDC [MFC], DrawEscape
+- CDC [MFC], DrawFocusRect
+- CDC [MFC], DrawFrameControl
+- CDC [MFC], DrawIcon
+- CDC [MFC], DrawState
+- CDC [MFC], DrawText
+- CDC [MFC], DrawTextEx
+- CDC [MFC], Ellipse
+- CDC [MFC], EndDoc
+- CDC [MFC], EndPage
+- CDC [MFC], EndPath
+- CDC [MFC], EnumObjects
+- CDC [MFC], Escape
+- CDC [MFC], ExcludeClipRect
+- CDC [MFC], ExcludeUpdateRgn
+- CDC [MFC], ExtFloodFill
+- CDC [MFC], ExtTextOut
+- CDC [MFC], FillPath
+- CDC [MFC], FillRect
+- CDC [MFC], FillRgn
+- CDC [MFC], FillSolidRect
+- CDC [MFC], FlattenPath
+- CDC [MFC], FloodFill
+- CDC [MFC], FrameRect
+- CDC [MFC], FrameRgn
+- CDC [MFC], FromHandle
+- CDC [MFC], GetArcDirection
+- CDC [MFC], GetAspectRatioFilter
+- CDC [MFC], GetBkColor
+- CDC [MFC], GetBkMode
+- CDC [MFC], GetBoundsRect
+- CDC [MFC], GetBrushOrg
+- CDC [MFC], GetCharABCWidths
+- CDC [MFC], GetCharABCWidthsI
+- CDC [MFC], GetCharacterPlacement
+- CDC [MFC], GetCharWidth
+- CDC [MFC], GetCharWidthI
+- CDC [MFC], GetClipBox
+- CDC [MFC], GetColorAdjustment
+- CDC [MFC], GetCurrentBitmap
+- CDC [MFC], GetCurrentBrush
+- CDC [MFC], GetCurrentFont
+- CDC [MFC], GetCurrentPalette
+- CDC [MFC], GetCurrentPen
+- CDC [MFC], GetCurrentPosition
+- CDC [MFC], GetDCBrushColor
+- CDC [MFC], GetDCPenColor
+- CDC [MFC], GetDeviceCaps
+- CDC [MFC], GetFontData
+- CDC [MFC], GetFontLanguageInfo
+- CDC [MFC], GetGlyphOutline
+- CDC [MFC], GetGraphicsMode
+- CDC [MFC], GetHalftoneBrush
+- CDC [MFC], GetKerningPairs
+- CDC [MFC], GetLayout
+- CDC [MFC], GetMapMode
+- CDC [MFC], GetMiterLimit
+- CDC [MFC], GetNearestColor
+- CDC [MFC], GetOutlineTextMetrics
+- CDC [MFC], GetOutputCharWidth
+- CDC [MFC], GetOutputTabbedTextExtent
+- CDC [MFC], GetOutputTextExtent
+- CDC [MFC], GetOutputTextMetrics
+- CDC [MFC], GetPath
+- CDC [MFC], GetPixel
+- CDC [MFC], GetPolyFillMode
+- CDC [MFC], GetROP2
+- CDC [MFC], GetSafeHdc
+- CDC [MFC], GetStretchBltMode
+- CDC [MFC], GetTabbedTextExtent
+- CDC [MFC], GetTextAlign
+- CDC [MFC], GetTextCharacterExtra
+- CDC [MFC], GetTextColor
+- CDC [MFC], GetTextExtent
+- CDC [MFC], GetTextExtentExPointI
+- CDC [MFC], GetTextExtentPointI
+- CDC [MFC], GetTextFace
+- CDC [MFC], GetTextMetrics
+- CDC [MFC], GetViewportExt
+- CDC [MFC], GetViewportOrg
+- CDC [MFC], GetWindow
+- CDC [MFC], GetWindowExt
+- CDC [MFC], GetWindowOrg
+- CDC [MFC], GetWorldTransform
+- CDC [MFC], GradientFill
+- CDC [MFC], GrayString
+- CDC [MFC], HIMETRICtoDP
+- CDC [MFC], HIMETRICtoLP
+- CDC [MFC], IntersectClipRect
+- CDC [MFC], InvertRect
+- CDC [MFC], InvertRgn
+- CDC [MFC], IsPrinting
+- CDC [MFC], LineTo
+- CDC [MFC], LPtoDP
+- CDC [MFC], LPtoHIMETRIC
+- CDC [MFC], MaskBlt
+- CDC [MFC], ModifyWorldTransform
+- CDC [MFC], MoveTo
+- CDC [MFC], OffsetClipRgn
+- CDC [MFC], OffsetViewportOrg
+- CDC [MFC], OffsetWindowOrg
+- CDC [MFC], PaintRgn
+- CDC [MFC], PatBlt
+- CDC [MFC], Pie
+- CDC [MFC], PlayMetaFile
+- CDC [MFC], PlgBlt
+- CDC [MFC], PolyBezier
+- CDC [MFC], PolyBezierTo
+- CDC [MFC], PolyDraw
+- CDC [MFC], Polygon
+- CDC [MFC], Polyline
+- CDC [MFC], PolylineTo
+- CDC [MFC], PolyPolygon
+- CDC [MFC], PolyPolyline
+- CDC [MFC], PtVisible
+- CDC [MFC], RealizePalette
+- CDC [MFC], Rectangle
+- CDC [MFC], RectVisible
+- CDC [MFC], ReleaseAttribDC
+- CDC [MFC], ReleaseOutputDC
+- CDC [MFC], ResetDC
+- CDC [MFC], RestoreDC
+- CDC [MFC], RoundRect
+- CDC [MFC], SaveDC
+- CDC [MFC], ScaleViewportExt
+- CDC [MFC], ScaleWindowExt
+- CDC [MFC], ScrollDC
+- CDC [MFC], SelectClipPath
+- CDC [MFC], SelectClipRgn
+- CDC [MFC], SelectObject
+- CDC [MFC], SelectPalette
+- CDC [MFC], SelectStockObject
+- CDC [MFC], SetAbortProc
+- CDC [MFC], SetArcDirection
+- CDC [MFC], SetAttribDC
+- CDC [MFC], SetBkColor
+- CDC [MFC], SetBkMode
+- CDC [MFC], SetBoundsRect
+- CDC [MFC], SetBrushOrg
+- CDC [MFC], SetColorAdjustment
+- CDC [MFC], SetDCBrushColor
+- CDC [MFC], SetDCPenColor
+- CDC [MFC], SetGraphicsMode
+- CDC [MFC], SetLayout
+- CDC [MFC], SetMapMode
+- CDC [MFC], SetMapperFlags
+- CDC [MFC], SetMiterLimit
+- CDC [MFC], SetOutputDC
+- CDC [MFC], SetPixel
+- CDC [MFC], SetPixelV
+- CDC [MFC], SetPolyFillMode
+- CDC [MFC], SetROP2
+- CDC [MFC], SetStretchBltMode
+- CDC [MFC], SetTextAlign
+- CDC [MFC], SetTextCharacterExtra
+- CDC [MFC], SetTextColor
+- CDC [MFC], SetTextJustification
+- CDC [MFC], SetViewportExt
+- CDC [MFC], SetViewportOrg
+- CDC [MFC], SetWindowExt
+- CDC [MFC], SetWindowOrg
+- CDC [MFC], SetWorldTransform
+- CDC [MFC], StartDoc
+- CDC [MFC], StartPage
+- CDC [MFC], StretchBlt
+- CDC [MFC], StrokeAndFillPath
+- CDC [MFC], StrokePath
+- CDC [MFC], TabbedTextOut
+- CDC [MFC], TextOut
+- CDC [MFC], TransparentBlt
+- CDC [MFC], UpdateColors
+- CDC [MFC], WidenPath
+- CDC [MFC], m_hAttribDC
+- CDC [MFC], m_hDC
 ms.assetid: 715b3334-cb2b-4c9c-8067-02eb7c66c8b2
 caps.latest.revision: 21
 author: mikeblome
@@ -238,331 +429,331 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: edbb8c4b62fc6536971f275c8079a3a91caccaa2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3fdd44ca064270450640539ace6dd21d67409b85
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdc-class"></a>CDC クラス
-デバイス コンテキスト オブジェクトのクラスを定義します。  
+# <a name="cdc-class"></a>CDC Class
+Defines a class of device-context objects.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDC : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDC::CDC](#cdc)|`CDC` オブジェクトを構築します。|  
+|[CDC::CDC](#cdc)|Constructs a `CDC` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDC::AbortDoc](#abortdoc)|現在の印刷ジョブの最後に呼び出した後、アプリケーションがデバイスに書き込みがすべて消去を終了、`StartDoc`メンバー関数。|  
-|[CDC::AbortPath](#abortpath)|閉じ、デバイス コンテキストの任意のパスを破棄します。|  
-|[CDC::AddMetaFileComment](#addmetafilecomment)|バッファーから、指定された拡張メタファイルにコメントをコピーします。|  
-|[CDC::AlphaBlend](#alphablend)|透明または半透明ピクセルのビットマップを表示します。|  
-|[CDC::AngleArc](#anglearc)|線分と円弧を描画し、円弧の終点に現在の位置を移動します。|  
-|[除いて](#arc)|楕円の円弧を描画します。|  
-|[CDC::ArcTo](#arcto)|楕円の円弧を描画します。 この関数がに似ていますが`Arc`, 現在の位置が更新される点が異なります。|  
-|[CDC::Attach](#attach)|この Windows デバイス コンテキストにアタッチ`CDC`オブジェクト。|  
-|[Cdc::beginpath](#beginpath)|デバイス コンテキストでは、パスの角かっこを開きます。|  
-|[Cdc::bitblt](#bitblt)|指定したデバイス コンテキストからビットマップをコピーします。|  
-|[CDC::Chord](#chord)|弦 (楕円を描画し、線分の交差部分で区切られた閉じた図) を描画します。|  
-|[CDC::CloseFigure](#closefigure)|パス内の開いている図を閉じます。|  
-|[CDC::CreateCompatibleDC](#createcompatibledc)|別のデバイス コンテキストと互換性があるメモリ デバイス コンテキストを作成します。 メモリ内のイメージの準備に使用できます。|  
-|[CDC::CreateDC](#createdc)|特定のデバイスのデバイス コンテキストを作成します。|  
-|[CDC::CreateIC](#createic)|特定のデバイスの情報コンテキストを作成します。 これにより、高速なデバイス コンテキストを作成することがなく、デバイスに関する情報を取得します。|  
-|[デバイス コンテキストの破棄](#deletedc)|これに関連付けられている Windows デバイス コンテキストを削除`CDC`オブジェクト。|  
-|[CDC::DeleteTempMap](#deletetempmap)|によって呼び出される、`CWinApp`一時的なを削除するアイドル処理ハンドラー`CDC`によって作成されたオブジェクト`FromHandle`です。 また、デバイス コンテキストをデタッチします。|  
-|[CDC::Detach](#detach)|これから Windows デバイス コンテキストを切り離します`CDC`オブジェクト。|  
-|[CDC::DPtoHIMETRIC](#dptohimetric)|デバイス単位**HIMETRIC**単位です。|  
-|[CDC::DPtoLP](#dptolp)|デバイス単位を論理単位に変換します。|  
-|[CDC::Draw3dRect](#draw3drect)|3 次元の四角形を描画します。|  
-|[CDC::DrawDragRect](#drawdragrect)|消去し、ドラッグされると、四角形を再描画します。|  
-|[CDC::DrawEdge](#drawedge)|四角形のエッジに描画します。|  
-|[CDC::DrawEscape](#drawescape)|描画グラフィックス デバイス インターフェイス (GDI) を通じて直接使用されないビデオ ディスプレイの機能にアクセスします。|  
-|[CDC::DrawFocusRect](#drawfocusrect)|フォーカスを示すために使用されるスタイルの四角形を描画します。|  
-|[CDC::DrawFrameControl](#drawframecontrol)|フレーム コントロールを描画します。|  
-|[CDC::DrawIcon](#drawicon)|アイコンを描画します。|  
-|[CDC::DrawState](#drawstate)|イメージを表示し、状態を示すための視覚効果を適用します。|  
-|[CDC::DrawText](#drawtext)|書式設定された指定した四角形内のテキストを描画します。|  
-|[には](#drawtextex)|書式設定されたその他の形式を使用して指定された四角形内のテキストを描画します。|  
-|[CDC::Ellipse](#ellipse)|楕円を描きます。|  
-|[CDC::EndDoc](#enddoc)|によって開始された印刷ジョブを終了、`StartDoc`メンバー関数。|  
-|[CDC::EndPage](#endpage)|ページが終了したデバイス ドライバーに通知します。|  
-|[CDC::EndPath](#endpath)|パスの角かっこを終了し、デバイス コンテキストに、角かっこで定義されているパスを選択します。|  
-|[Cdc::enumobjects](#enumobjects)|ペンを列挙し、デバイス コンテキストで使用可能なブラシします。|  
-|[CDC::Escape](#escape)|アプリケーションでは GDI を介して特定のデバイスから直接使用できない機能にアクセスできます。 エスケープの Windows 関数にアクセスをできます。 アプリケーションによって行われたエスケープ呼び出しは変換され、デバイス ドライバーに送信します。|  
-|[CDC::ExcludeClipRect](#excludecliprect)|指定した四角形の負符号の既存のクリッピング領域で構成される新しいクリップ領域を作成します。|  
-|[CDC::ExcludeUpdateRgn](#excludeupdatergn)|クリップ領域から、ウィンドウで更新された領域を除外することで、ウィンドウの無効な領域内での描画を防止します。|  
-|[CDC::ExtFloodFill](#extfloodfill)|現在のブラシで領域を塗りつぶします。 も柔軟、 [CDC::FloodFill](#floodfill)メンバー関数。|  
-|[CDC::ExtTextOut](#exttextout)|現在選択されているフォントを使用して、四角形領域内で文字の文字列を書き込みます。|  
-|[CDC::FillPath](#fillpath)|現在のパス内の開いている図形を閉じ、現在のブラシおよび多角形の塗りつぶしモードを使用してパスの内部を塗りつぶします。|  
-|[CDC::FillRect](#fillrect)|特定のブラシを使用して、指定した四角形を格納します。|  
-|[CDC::FillRgn](#fillrgn)|指定されたブラシを使用して特定の領域を塗りつぶします。|  
-|[CDC::FillSolidRect](#fillsolidrect)|四角形を純色で塗りつぶします。|  
-|[CDC::FlattenPath](#flattenpath)|現在のデバイス コンテキストに選択したパス内の任意の曲線に変換し、行のシーケンスに、各曲線。|  
-|[CDC::FloodFill](#floodfill)|現在のブラシで領域を塗りつぶします。|  
-|[CDC::FrameRect](#framerect)|四角形の周囲に罫線を描画します。|  
-|[CDC::FrameRgn](#framergn)|ブラシを使用して特定の地域の周囲に境界線を描画します。|  
-|[CDC::FromHandle](#fromhandle)|ポインターを返します、`CDC`デバイス コンテキストへのハンドルが指定されるとします。 `CDC` オブジェクトがハンドルに関連付けられていない場合は、一時的な `CDC` オブジェクトが生成され、関連付けられます。|  
-|[CDC::GetArcDirection](#getarcdirection)|デバイス コンテキストの現在の円弧の方向を返します。|  
-|[CDC::GetAspectRatioFilter](#getaspectratiofilter)|現在の縦横比のフィルターの設定を取得します。|  
-|[CDC::GetBkColor](#getbkcolor)|現在の背景色を取得します。|  
-|[CDC::GetBkMode](#getbkmode)|バック グラウンド モードを取得します。|  
-|[CDC::GetBoundsRect](#getboundsrect)|指定したデバイス コンテキストに現在までの累積外接する四角を返します。|  
-|[CDC::GetBrushOrg](#getbrushorg)|現在のブラシの原点を取得します。|  
-|[CDC::GetCharABCWidths](#getcharabcwidths)|連続した文字の現在のフォントから特定の範囲内の論理単位の幅を取得します。|  
-|[CDC::GetCharABCWidthsI](#getcharabcwidthsi)|現在の TrueType フォントから指定された範囲内の連続したグリフ インデックスの論理単位の幅を取得します。|  
-|[CDC::GetCharacterPlacement](#getcharacterplacement)|文字列に関するさまざまな情報を取得します。|  
-|[CDC::GetCharWidth](#getcharwidth)|現在のフォントから特定の範囲内の連続する文字の小数部の幅を取得します。|  
-|[CDC::GetCharWidthI](#getcharwidthi)|現在のフォントから指定された範囲内の連続したグリフ インデックスの論理座標、幅を取得します。|  
-|[CDC::GetClipBox](#getclipbox)|現在のクリップ領域を囲む外接する最小の四角形の寸法を取得します。|  
-|[CDC::GetColorAdjustment](#getcoloradjustment)|デバイス コンテキストの色の調整値を取得します。|  
-|[CDC::GetCurrentBitmap](#getcurrentbitmap)|現在選択されているポインターを返します`CBitmap`オブジェクト。|  
-|[CDC::GetCurrentBrush](#getcurrentbrush)|現在選択されているポインターを返します`CBrush`オブジェクト。|  
-|[CDC::GetCurrentFont](#getcurrentfont)|現在選択されているポインターを返します`CFont`オブジェクト。|  
-|[CDC::GetCurrentPalette](#getcurrentpalette)|現在選択されているポインターを返します`CPalette`オブジェクト。|  
-|[CDC::GetCurrentPen](#getcurrentpen)|現在選択されているポインターを返します`CPen`オブジェクト。|  
-|[CDC::GetCurrentPosition](#getcurrentposition)|ペンの論理座標での現在の位置を取得します。|  
-|[CDC::GetDCBrushColor](#getdcbrushcolor)|現在のブラシの色を取得します。|  
-|[CDC::GetDCPenColor](#getdcpencolor)|現在のペンの色を取得します。|  
-|[について](#getdevicecaps)|指定した特定のディスプレイ デバイスの機能のデバイスに固有の情報の種類を取得します。|  
-|[CDC::GetFontData](#getfontdata)|スケーラブルなフォント ファイルからフォント メトリック情報を取得します。 取得する情報は、フォント ファイルと返される情報の長さにオフセットを指定することによって識別されます。|  
-|[CDC::GetFontLanguageInfo](#getfontlanguageinfo)|現在選択されているフォントを指定した表示のコンテキストに関する情報を返します。|  
-|[CDC::GetGlyphOutline](#getglyphoutline)|アウトライン曲線または現在のフォントのアウトライン文字のビットマップを取得します。|  
-|[CDC::GetGraphicsMode](#getgraphicsmode)|指定したデバイス コンテキストの現在のグラフィックス モードを取得します。|  
-|[CDC::GetHalftoneBrush](#gethalftonebrush)|ハーフトーン ブラシを取得します。|  
-|[CDC::GetKerningPairs](#getkerningpairs)|文字のペアの指定したデバイス コンテキストで現在選択されているフォントをカーニングを取得します。|  
-|[CDC::GetLayout](#getlayout)|デバイス コンテキスト (DC) のレイアウトを取得します。 レイアウトをするか、左から右 (既定値) または右から左に (ミラー)。|  
-|[CDC::GetMapMode](#getmapmode)|現在のマップ モードを取得します。|  
-|[CDC::GetMiterLimit](#getmiterlimit)|デバイス コンテキストの角を返します。|  
-|[CDC::GetNearestColor](#getnearestcolor)|特定のデバイスを表すことができる指定された論理色に最も近い論理色を取得します。|  
-|[CDC::GetOutlineTextMetrics](#getoutlinetextmetrics)|TrueType フォントのフォント メトリック情報を取得します。|  
-|[CDC::GetOutputCharWidth](#getoutputcharwidth)|出力デバイス コンテキストを使用して、現在のフォントから文字の隣接するグループ内の個々 の文字幅を取得します。|  
-|[CDC::GetOutputTabbedTextExtent](#getoutputtabbedtextextent)|幅と出力デバイス コンテキストでの文字列の高さを計算します。|  
-|[CDC::GetOutputTextExtent](#getoutputtextextent)|大きさを現在のフォントを使用して出力デバイス コンテキスト上のテキストの行の高さと幅を計算します。|  
-|[CDC::GetOutputTextMetrics](#getoutputtextmetrics)|出力デバイス コンテキストから現在のフォント メトリックを取得します。|  
-|[CDC::GetPath](#getpath)|行のエンドポイントとデバイス コンテキストに選択されているパスに含まれる曲線の制御点を定義する座標を取得します。|  
-|[CDC::GetPixel](#getpixel)|指定した位置にピクセルの RGB 色の値を取得します。|  
-|[CDC::GetPolyFillMode](#getpolyfillmode)|現在の多角形の塗りつぶしモードを取得します。|  
-|[CDC::GetROP2](#getrop2)|現在の描画モードを取得します。|  
-|[CDC::GetSafeHdc](#getsafehdc)|返します[CDC::m_hDC](#m_hdc)、出力デバイス コンテキスト。|  
-|[CDC::GetStretchBltMode](#getstretchbltmode)|現在のビットマップの伸縮モードを取得します。|  
-|[CDC::GetTabbedTextExtent](#gettabbedtextextent)|幅と高さの属性のデバイス コンテキストでの文字列を計算します。|  
-|[CDC::GetTextAlign](#gettextalign)|テキスト配置フラグを取得します。|  
-|[CDC::GetTextCharacterExtra](#gettextcharacterextra)|文字間隔の現在の設定を取得します。|  
-|[CDC::GetTextColor](#gettextcolor)|現在のテキストの色を取得します。|  
-|[CDC::GetTextExtent](#gettextextent)|幅と、現在のフォントを使用して、ディメンションを決定する属性のデバイス コンテキスト上のテキストの行の高さを計算します。|  
-|[CDC::GetTextExtentExPointI](#gettextextentexpointi)|指定された領域内に収まるし、それらの各文字のテキストのエクステントを配列に設定を指定した文字列の文字数を取得します。|  
-|[CDC::GetTextExtentPointI](#gettextextentpointi)|幅と高さの指定されたグリフ インデックスの配列を取得します。|  
-|[CDC::GetTextFace](#gettextface)|Null で終わる文字列として、バッファーに現在のフォントのフォント名をコピーします。|  
-|[CDC::GetTextMetrics](#gettextmetrics)|属性のデバイス コンテキストから現在のフォント メトリックを取得します。|  
-|[CDC::GetViewportExt](#getviewportext)|ビューポートの x 範囲と y 範囲を取得します。|  
-|[CDC::GetViewportOrg](#getviewportorg)|ビューポートの原点の x 座標と y 座標を取得します。|  
-|[CDC::GetWindow](#getwindow)|ディスプレイ デバイス コンテキストに関連付けられているウィンドウを返します。|  
-|[CDC::GetWindowExt](#getwindowext)|関連付けられたウィンドウの x 範囲と y 範囲を取得します。|  
-|[CDC::GetWindowOrg](#getwindoworg)|関連付けられたウィンドウの原点の x 座標と y 座標を取得します。|  
-|[CDC::GetWorldTransform](#getworldtransform)|ページ領域変換への現在のワールド空間を取得します。|  
-|[CDC::GradientFill](#gradientfill)|四角形、三角形の構造を gradating 色で塗りつぶします。|  
-|[Cdc::graystring](#graystring)|描画には、指定された場所に (灰色) のテキストが淡色表示されます。|  
-|[CDC::HIMETRICtoDP](#himetrictodp)|変換**HIMETRIC**デバイス単位の単位。|  
-|[CDC::HIMETRICtoLP](#himetrictolp)|変換**HIMETRIC**論理単位に単位です。|  
-|[CDC::IntersectClipRect](#intersectcliprect)|現在の地域と四角形の積集合を形成する、新しいクリップ領域を作成します。|  
-|[CDC::InvertRect](#invertrect)|四角形の内容を反転します。|  
-|[CDC::InvertRgn](#invertrgn)|領域内の色を反転します。|  
-|[CDC::IsPrinting](#isprinting)|印刷デバイス コンテキストは使用されているかどうかを判断します。|  
-|[CDC::LineTo](#lineto)|現在の位置が、ポイント、線を描画します。|  
-|[CDC::LPtoDP](#lptodp)|デバイス単位の論理ユニットに変換します。|  
-|[CDC::LPtoHIMETRIC](#lptohimetric)|論理ユニットに変換します**HIMETRIC**単位です。|  
-|[CDC::MaskBlt](#maskblt)|指定されたマスクとラスター オペレーションを使用する元とコピー先のビットマップの色のデータを結合します。|  
-|[CDC::ModifyWorldTransform](#modifyworldtransform)|指定されたモードを使用してデバイス コンテキストのワールド変換を変更します。|  
-|[CDC::MoveTo](#moveto)|現在の位置を移動します。|  
-|[CDC::OffsetClipRgn](#offsetcliprgn)|指定されたデバイスのクリッピング領域に移動します。|  
-|[CDC::OffsetViewportOrg](#offsetviewportorg)|現在のビューポートの原点の座標に対する相対ビューポートの原点を変更します。|  
-|[CDC::OffsetWindowOrg](#offsetwindoworg)|現在のウィンドウの原点の座標の基準としたウィンドウの原点を変更します。|  
-|[CDC::PaintRgn](#paintrgn)|選択されたブラシを使用して領域を塗りつぶします。|  
-|[Cdc::patblt](#patblt)|ビット パターンを作成します。|  
-|[CDC::Pie](#pie)|扇形を描画します。|  
-|[CDC::PlayMetaFile](#playmetafile)|特定のデバイスで指定されたメタファイルのコンテンツを再生します。 強化されたバージョンの`PlayMetaFile`指定された拡張メタファイルで保存された画像が表示されます。 メタファイルは、何度でも再生できます。|  
-|[CDC::PlgBlt](#plgblt)|指定されたデバイス コンテキストの指定した平行四辺形に元のデバイス コンテキストで指定した四角形から色データのビットのビット ブロック転送を実行します。|  
-|[CDC::PolyBezier](#polybezier)|1 つまたは複数のベジエ スプラインを描画します。 現在の位置が使用も、更新します。|  
-|[CDC::PolyBezierTo](#polybezierto)|1 つまたは複数のベジエ スプラインを描画し、最後のベジエ スプラインの終了ポイントに現在の位置を移動します。|  
-|[CDC::PolyDraw](#polydraw)|一連の線分とベジエ スプラインを描画します。 この関数は、現在の位置を更新します。|  
-|[CDC::Polygon](#polygon)|2 つ以上 (頂点) で結ばれた点の行から成る多角形を描画します。|  
-|[CDC::Polyline](#polyline)|一連の指定した点を結ぶ線分を描画します。|  
-|[CDC::PolylineTo](#polylineto)|1 つまたは複数の直線を描画し、現在の位置を最後の行の終了位置に移動します。|  
-|[CDC::PolyPolygon](#polypolygon)|現在の多角形の塗りつぶしモードの使用がいっぱいになる 2 つ以上の多角形を作成します。 多角形は、不整合である可能性があります。 または重なる可能性があります。|  
-|[CDC::PolyPolyline](#polypolyline)|接続されている直線セグメントの複数の系列を描画します。 現在の位置が使用も、この関数で更新します。|  
-|[CDC::PtVisible](#ptvisible)|指定したポイントがクリップ領域内にするかどうかを指定します。|  
-|[:Realizepalette](#realizepalette)|現在の論理パレットのパレット エントリをシステム パレットにマップします。|  
-|[CDC::Rectangle](#rectangle)|現在のペンを使用して四角形を描画し、現在のブラシを使用してそれを塗りつぶします。|  
-|[CDC::RectVisible](#rectvisible)|クリップ領域内に指定された四角形の任意の部分があるかどうかを判断します。|  
-|[CDC::ReleaseAttribDC](#releaseattribdc)|リリース`m_hAttribDC`属性のデバイス コンテキスト。|  
-|[CDC::ReleaseOutputDC](#releaseoutputdc)|リリース`m_hDC`、出力デバイス コンテキスト。|  
-|[CDC::ResetDC](#resetdc)|更新プログラム、`m_hAttribDC`デバイス コンテキスト。|  
-|[CDC::RestoreDC](#restoredc)|デバイス コンテキストをと共に保存される前の状態に復元`SaveDC`です。|  
-|[CDC::RoundRect](#roundrect)|現在のペンを使用して、現在のブラシを使用して角の丸い四角形を描画します。|  
-|[CDC::SaveDC](#savedc)|デバイス コンテキストの現在の状態を保存します。|  
-|[CDC::ScaleViewportExt](#scaleviewportext)|ビューポートの範囲を現在の値に対して相対的に変更します。|  
-|[CDC::ScaleWindowExt](#scalewindowext)|現在の値を基準としたウィンドウの範囲を変更します。|  
-|[CDC::ScrollDC](#scrolldc)|Bits の四角形は、水平方向および垂直方向にスクロールします。|  
-|[CDC::SelectClipPath](#selectclippath)|指定されたモードを使用して、既存のクリッピング領域を含む新しい領域を組み合わせて、デバイス コンテキストのクリッピング領域として、現在のパスを選択します。|  
-|[CDC::SelectClipRgn](#selectcliprgn)|指定されたモードを使用して現在のクリップ領域と指定された領域を結合します。|  
-|[Cdc::selectobject](#selectobject)|ペンなど GDI 描画オブジェクトを選択します。|  
-|[CDC::SelectPalette](#selectpalette)|論理パレットを選択します。|  
-|[CDC::SelectStockObject](#selectstockobject)|定義済みのストック ペン、ブラシ、または Windows によって提供されるフォントのいずれかを選択します。|  
-|[Cdc::setabortproc](#setabortproc)|Windows を呼び出す場合は、印刷ジョブを中断する必要がありますプログラマが指定したコールバック関数を設定します。|  
-|[CDC::SetArcDirection](#setarcdirection)|円弧および四角形の機能に使用する描画方向を設定します。|  
-|[CDC::SetAttribDC](#setattribdc)|セット`m_hAttribDC`属性のデバイス コンテキスト。|  
-|[CDC::SetBkColor](#setbkcolor)|現在の背景色を設定します。|  
-|[CDC::SetBkMode](#setbkmode)|バック グラウンド モードを設定します。|  
-|[CDC::SetBoundsRect](#setboundsrect)|指定したデバイス コンテキストの外接する四角情報の蓄積を制御します。|  
-|[CDC::SetBrushOrg](#setbrushorg)|デバイス コンテキストに選択されている次のブラシの原点を指定します。|  
-|[CDC::SetColorAdjustment](#setcoloradjustment)|指定した値を使用して、デバイス コンテキストの色の調整値を設定します。|  
-|[CDC::SetDCBrushColor](#setdcbrushcolor)|現在のブラシの色を設定します。|  
-|[CDC::SetDCPenColor](#setdcpencolor)|現在のペンの色を設定します。|  
-|[CDC::SetGraphicsMode](#setgraphicsmode)|指定したデバイス コンテキストの現在のグラフィックス モードを設定します。|  
-|[CDC::SetLayout](#setlayout)|デバイス コンテキスト (DC) のレイアウトを変更します。|  
-|[CDC::SetMapMode](#setmapmode)|現在のマップ モードを設定します。|  
-|[CDC::SetMapperFlags](#setmapperflags)|フォント マッパーが論理フォントを物理フォントに割り当てるときに使用するアルゴリズムを変更します。|  
-|[CDC::SetMiterLimit](#setmiterlimit)|デバイス コンテキストのマイター結合の長さの制限を設定します。|  
-|[CDC::SetOutputDC](#setoutputdc)|セット`m_hDC`、出力デバイス コンテキスト。|  
-|[CDC::SetPixel](#setpixel)|指定された色の最も近いものを指定した位置にピクセルに設定します。|  
-|[CDC::SetPixelV](#setpixelv)|指定された色の最も近いものを指定した座標にあるピクセルに設定します。 `SetPixelV`も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。|  
-|[CDC::SetPolyFillMode](#setpolyfillmode)|多角形の塗りつぶしモードを設定します。|  
-|[CDC::SetROP2](#setrop2)|現在の描画モードを設定します。|  
-|[CDC::SetStretchBltMode](#setstretchbltmode)|ビットマップの伸縮モードを設定します。|  
-|[CDC::SetTextAlign](#settextalign)|テキスト配置フラグを設定します。|  
-|[CDC::SetTextCharacterExtra](#settextcharacterextra)|文字間隔の量を設定します。|  
-|[CDC::SetTextColor](#settextcolor)|テキストの色を設定します。|  
-|[CDC::SetTextJustification](#settextjustification)|文字列の区切り文字にスペースを追加します。|  
-|[CDC::SetViewportExt](#setviewportext)|ビューポートの x 範囲と y 範囲を設定します。|  
-|[CDC::SetViewportOrg](#setviewportorg)|ビューポートの原点を設定します。|  
-|[CDC::SetWindowExt](#setwindowext)|関連付けられたウィンドウの x 範囲と y 範囲を設定します。|  
-|[CDC::SetWindowOrg](#setwindoworg)|デバイス コンテキストのウィンドウの原点を設定します。|  
-|[CDC::SetWorldTransform](#setworldtransform)|ページの変換を現在のワールド空間を設定します。|  
-|[CDC::StartDoc](#startdoc)|新しい印刷ジョブが開始されるデバイス ドライバーに通知します。|  
-|[CDC::StartPage](#startpage)|新しいページが開始されるデバイス ドライバーに通知します。|  
-|[CDC::StretchBlt](#stretchblt)|元の四角形とのデバイスからビットマップを先に四角形を拡大または移行先の四角形の寸法に合わせて必要な場合にビットマップを縮小してに移されます。|  
-|[CDC::StrokeAndFillPath](#strokeandfillpath)|パス内の任意の開いている図形を閉じ、現在のペンを使用して、パスのアウトラインを襲う、現在のブラシを使用して、その内部を塗りつぶします。|  
-|[CDC::StrokePath](#strokepath)|現在のペンを使用して、指定されたパスを表示します。|  
-|[CDC::TabbedTextOut](#tabbedtextout)|タブ ストップの位置の配列の指定した値にタブを展開する、指定位置にある文字の文字列を書き込みます。|  
-|[CDC::TextOut](#textout)|現在選択されているフォントを使用して、指定した場所にある文字の文字列を書き込みます。|  
-|[CDC::TransparentBlt](#transparentblt)|指定した発信元デバイス コンテキストから色データのビット ブロックを転送に透過的な指定された色の表示、コピー先デバイス コンテキストに転送されます。|  
-|[CDC::UpdateColors](#updatecolors)|クライアント領域のピクセルごとに、システム パレットで現在を照合することによって、デバイス コンテキストのクライアント領域を色分けする更新プログラム。|  
-|[CDC::WidenPath](#widenpath)|パスが、デバイス コンテキストに現在選択されているペンを使用して描画された場合に描画される領域として、現在のパスを再定義します。|  
+|[CDC::AbortDoc](#abortdoc)|Terminates the current print job, erasing everything the application has written to the device since the last call of the `StartDoc` member function.|  
+|[CDC::AbortPath](#abortpath)|Closes and discards any paths in the device context.|  
+|[CDC::AddMetaFileComment](#addmetafilecomment)|Copies the comment from a buffer into a specified enhanced-format metafile.|  
+|[CDC::AlphaBlend](#alphablend)|Displays bitmaps that have transparent or semitransparent pixels.|  
+|[CDC::AngleArc](#anglearc)|Draws a line segment and an arc, and moves the current position to the ending point of the arc.|  
+|[CDC::Arc](#arc)|Draws an elliptical arc.|  
+|[CDC::ArcTo](#arcto)|Draws an elliptical arc. This function is similar to `Arc`, except that the current position is updated.|  
+|[CDC::Attach](#attach)|Attaches a Windows device context to this `CDC` object.|  
+|[CDC::BeginPath](#beginpath)|Opens a path bracket in the device context.|  
+|[CDC::BitBlt](#bitblt)|Copies a bitmap from a specified device context.|  
+|[CDC::Chord](#chord)|Draws a chord (a closed figure bounded by the intersection of an ellipse and a line segment).|  
+|[CDC::CloseFigure](#closefigure)|Closes an open figure in a path.|  
+|[CDC::CreateCompatibleDC](#createcompatibledc)|Creates a memory-device context that is compatible with another device context. You can use it to prepare images in memory.|  
+|[CDC::CreateDC](#createdc)|Creates a device context for a specific device.|  
+|[CDC::CreateIC](#createic)|Creates an information context for a specific device. This provides a fast way to get information about the device without creating a device context.|  
+|[CDC::DeleteDC](#deletedc)|Deletes the Windows device context associated with this `CDC` object.|  
+|[CDC::DeleteTempMap](#deletetempmap)|Called by the `CWinApp` idle-time handler to delete any temporary `CDC` object created by `FromHandle`. Also detaches the device context.|  
+|[CDC::Detach](#detach)|Detaches the Windows device context from this `CDC` object.|  
+|[CDC::DPtoHIMETRIC](#dptohimetric)|Converts device units into **HIMETRIC** units.|  
+|[CDC::DPtoLP](#dptolp)|Converts device units into logical units.|  
+|[CDC::Draw3dRect](#draw3drect)|Draws a three-dimensional rectangle.|  
+|[CDC::DrawDragRect](#drawdragrect)|Erases and redraws a rectangle as it is dragged.|  
+|[CDC::DrawEdge](#drawedge)|Draws the edges of a rectangle.|  
+|[CDC::DrawEscape](#drawescape)|Accesses drawing capabilities of a video display that are not directly available through the graphics device interface (GDI).|  
+|[CDC::DrawFocusRect](#drawfocusrect)|Draws a rectangle in the style used to indicate focus.|  
+|[CDC::DrawFrameControl](#drawframecontrol)|Draw a frame control.|  
+|[CDC::DrawIcon](#drawicon)|Draws an icon.|  
+|[CDC::DrawState](#drawstate)|Displays an image and applies a visual effect to indicate a state.|  
+|[CDC::DrawText](#drawtext)|Draws formatted text in the specified rectangle.|  
+|[CDC::DrawTextEx](#drawtextex)|Draws formatted text in the specified rectangle using additional formats.|  
+|[CDC::Ellipse](#ellipse)|Draws an ellipse.|  
+|[CDC::EndDoc](#enddoc)|Ends a print job started by the `StartDoc` member function.|  
+|[CDC::EndPage](#endpage)|Informs the device driver that a page is ending.|  
+|[CDC::EndPath](#endpath)|Closes a path bracket and selects the path defined by the bracket into the device context.|  
+|[CDC::EnumObjects](#enumobjects)|Enumerates the pens and brushes available in a device context.|  
+|[CDC::Escape](#escape)|Allows applications to access facilities that are not directly available from a particular device through GDI. Also allows access to Windows escape functions. Escape calls made by an application are translated and sent to the device driver.|  
+|[CDC::ExcludeClipRect](#excludecliprect)|Creates a new clipping region that consists of the existing clipping region minus the specified rectangle.|  
+|[CDC::ExcludeUpdateRgn](#excludeupdatergn)|Prevents drawing within invalid areas of a window by excluding an updated region in the window from a clipping region.|  
+|[CDC::ExtFloodFill](#extfloodfill)|Fills an area with the current brush. Provides more flexibility than the [CDC::FloodFill](#floodfill) member function.|  
+|[CDC::ExtTextOut](#exttextout)|Writes a character string within a rectangular region using the currently selected font.|  
+|[CDC::FillPath](#fillpath)|Closes any open figures in the current path and fills the path's interior by using the current brush and polygon-filling mode.|  
+|[CDC::FillRect](#fillrect)|Fills a given rectangle by using a specific brush.|  
+|[CDC::FillRgn](#fillrgn)|Fills a specific region with the specified brush.|  
+|[CDC::FillSolidRect](#fillsolidrect)|Fills a rectangle with a solid color.|  
+|[CDC::FlattenPath](#flattenpath)|Transforms any curves in the path selected into the current device context, and turns each curve into a sequence of lines.|  
+|[CDC::FloodFill](#floodfill)|Fills an area with the current brush.|  
+|[CDC::FrameRect](#framerect)|Draws a border around a rectangle.|  
+|[CDC::FrameRgn](#framergn)|Draws a border around a specific region using a brush.|  
+|[CDC::FromHandle](#fromhandle)|Returns a pointer to a `CDC` object when given a handle to a device context. If a `CDC` object is not attached to the handle, a temporary `CDC` object is created and attached.|  
+|[CDC::GetArcDirection](#getarcdirection)|Returns the current arc direction for the device context.|  
+|[CDC::GetAspectRatioFilter](#getaspectratiofilter)|Retrieves the setting for the current aspect-ratio filter.|  
+|[CDC::GetBkColor](#getbkcolor)|Retrieves the current background color.|  
+|[CDC::GetBkMode](#getbkmode)|Retrieves the background mode.|  
+|[CDC::GetBoundsRect](#getboundsrect)|Returns the current accumulated bounding rectangle for the specified device context.|  
+|[CDC::GetBrushOrg](#getbrushorg)|Retrieves the origin of the current brush.|  
+|[CDC::GetCharABCWidths](#getcharabcwidths)|Retrieves the widths, in logical units, of consecutive characters in a given range from the current font.|  
+|[CDC::GetCharABCWidthsI](#getcharabcwidthsi)|Retrieves the widths, in logical units, of consecutive glyph indices in a specified range from the current TrueType font.|  
+|[CDC::GetCharacterPlacement](#getcharacterplacement)|Retrieves various types of information on a character string.|  
+|[CDC::GetCharWidth](#getcharwidth)|Retrieves the fractional widths of consecutive characters in a given range from the current font.|  
+|[CDC::GetCharWidthI](#getcharwidthi)|Retrieves the widths, in logical coordinates, of consecutive glyph indices in a specified range from the current font.|  
+|[CDC::GetClipBox](#getclipbox)|Retrieves the dimensions of the tightest bounding rectangle around the current clipping boundary.|  
+|[CDC::GetColorAdjustment](#getcoloradjustment)|Retrieves the color adjustment values for the device context.|  
+|[CDC::GetCurrentBitmap](#getcurrentbitmap)|Returns a pointer to the currently selected `CBitmap` object.|  
+|[CDC::GetCurrentBrush](#getcurrentbrush)|Returns a pointer to the currently selected `CBrush` object.|  
+|[CDC::GetCurrentFont](#getcurrentfont)|Returns a pointer to the currently selected `CFont` object.|  
+|[CDC::GetCurrentPalette](#getcurrentpalette)|Returns a pointer to the currently selected `CPalette` object.|  
+|[CDC::GetCurrentPen](#getcurrentpen)|Returns a pointer to the currently selected `CPen` object.|  
+|[CDC::GetCurrentPosition](#getcurrentposition)|Retrieves the current position of the pen (in logical coordinates).|  
+|[CDC::GetDCBrushColor](#getdcbrushcolor)|Retrieves the current brush color.|  
+|[CDC::GetDCPenColor](#getdcpencolor)|Retrieves the current pen color.|  
+|[CDC::GetDeviceCaps](#getdevicecaps)|Retrieves a specified kind of device-specific information about a given display device's capabilities.|  
+|[CDC::GetFontData](#getfontdata)|Retrieves font metric information from a scalable font file. The information to retrieve is identified by specifying an offset into the font file and the length of the information to return.|  
+|[CDC::GetFontLanguageInfo](#getfontlanguageinfo)|Returns information about the currently selected font for the specified display context.|  
+|[CDC::GetGlyphOutline](#getglyphoutline)|Retrieves the outline curve or bitmap for an outline character in the current font.|  
+|[CDC::GetGraphicsMode](#getgraphicsmode)|Retrieves the current graphics mode for the specified device context.|  
+|[CDC::GetHalftoneBrush](#gethalftonebrush)|Retrieves a halftone brush.|  
+|[CDC::GetKerningPairs](#getkerningpairs)|Retrieves the character kerning pairs for the font that is currently selected in the specified device context.|  
+|[CDC::GetLayout](#getlayout)|Retrieves the layout of a device context (DC). The layout can be either left to right (default) or right to left (mirrored).|  
+|[CDC::GetMapMode](#getmapmode)|Retrieves the current mapping mode.|  
+|[CDC::GetMiterLimit](#getmiterlimit)|Returns the miter limit for the device context.|  
+|[CDC::GetNearestColor](#getnearestcolor)|Retrieves the closest logical color to a specified logical color that the given device can represent.|  
+|[CDC::GetOutlineTextMetrics](#getoutlinetextmetrics)|Retrieves font metric information for TrueType fonts.|  
+|[CDC::GetOutputCharWidth](#getoutputcharwidth)|Retrieves the widths of individual characters in a consecutive group of characters from the current font using the output device context.|  
+|[CDC::GetOutputTabbedTextExtent](#getoutputtabbedtextextent)|Computes the width and height of a character string on the output device context.|  
+|[CDC::GetOutputTextExtent](#getoutputtextextent)|Computes the width and height of a line of text on the output device context using the current font to determine the dimensions.|  
+|[CDC::GetOutputTextMetrics](#getoutputtextmetrics)|Retrieves the metrics for the current font from the output device context.|  
+|[CDC::GetPath](#getpath)|Retrieves the coordinates defining the endpoints of lines and the control points of curves found in the path that is selected into the device context.|  
+|[CDC::GetPixel](#getpixel)|Retrieves the RGB color value of the pixel at the specified point.|  
+|[CDC::GetPolyFillMode](#getpolyfillmode)|Retrieves the current polygon-filling mode.|  
+|[CDC::GetROP2](#getrop2)|Retrieves the current drawing mode.|  
+|[CDC::GetSafeHdc](#getsafehdc)|Returns [CDC::m_hDC](#m_hdc), the output device context.|  
+|[CDC::GetStretchBltMode](#getstretchbltmode)|Retrieves the current bitmap-stretching mode.|  
+|[CDC::GetTabbedTextExtent](#gettabbedtextextent)|Computes the width and height of a character string on the attribute device context.|  
+|[CDC::GetTextAlign](#gettextalign)|Retrieves the text-alignment flags.|  
+|[CDC::GetTextCharacterExtra](#gettextcharacterextra)|Retrieves the current setting for the amount of intercharacter spacing.|  
+|[CDC::GetTextColor](#gettextcolor)|Retrieves the current text color.|  
+|[CDC::GetTextExtent](#gettextextent)|Computes the width and height of a line of text on the attribute device context using the current font to determine the dimensions.|  
+|[CDC::GetTextExtentExPointI](#gettextextentexpointi)|Retrieves the number of characters in a specified string that will fit within a specified space and fills an array with the text extent for each of those characters.|  
+|[CDC::GetTextExtentPointI](#gettextextentpointi)|Retrieves the width and height of the specified array of glyph indices.|  
+|[CDC::GetTextFace](#gettextface)|Copies the typeface name of the current font into a buffer as a null-terminated string.|  
+|[CDC::GetTextMetrics](#gettextmetrics)|Retrieves the metrics for the current font from the attribute device context.|  
+|[CDC::GetViewportExt](#getviewportext)|Retrieves the x- and y-extents of the viewport.|  
+|[CDC::GetViewportOrg](#getviewportorg)|Retrieves the x- and y-coordinates of the viewport origin.|  
+|[CDC::GetWindow](#getwindow)|Returns the window associated with the display device context.|  
+|[CDC::GetWindowExt](#getwindowext)|Retrieves the x- and y-extents of the associated window.|  
+|[CDC::GetWindowOrg](#getwindoworg)|Retrieves the x- and y-coordinates of the origin of the associated window.|  
+|[CDC::GetWorldTransform](#getworldtransform)|Retrieves the current world-space to page-space transformation.|  
+|[CDC::GradientFill](#gradientfill)|Fills rectangle and triangle structures with a gradating color.|  
+|[CDC::GrayString](#graystring)|Draws dimmed (grayed) text at the given location.|  
+|[CDC::HIMETRICtoDP](#himetrictodp)|Converts **HIMETRIC** units into device units.|  
+|[CDC::HIMETRICtoLP](#himetrictolp)|Converts **HIMETRIC** units into logical units.|  
+|[CDC::IntersectClipRect](#intersectcliprect)|Creates a new clipping region by forming the intersection of the current region and a rectangle.|  
+|[CDC::InvertRect](#invertrect)|Inverts the contents of a rectangle.|  
+|[CDC::InvertRgn](#invertrgn)|Inverts the colors in a region.|  
+|[CDC::IsPrinting](#isprinting)|Determines whether the device context is being used for printing.|  
+|[CDC::LineTo](#lineto)|Draws a line from the current position up to, but not including, a point.|  
+|[CDC::LPtoDP](#lptodp)|Converts logical units into device units.|  
+|[CDC::LPtoHIMETRIC](#lptohimetric)|Converts logical units into **HIMETRIC** units.|  
+|[CDC::MaskBlt](#maskblt)|Combines the color data for the source and destination bitmaps using the given mask and raster operation.|  
+|[CDC::ModifyWorldTransform](#modifyworldtransform)|Changes the world transformation for a device context using the specified mode.|  
+|[CDC::MoveTo](#moveto)|Moves the current position.|  
+|[CDC::OffsetClipRgn](#offsetcliprgn)|Moves the clipping region of the given device.|  
+|[CDC::OffsetViewportOrg](#offsetviewportorg)|Modifies the viewport origin relative to the coordinates of the current viewport origin.|  
+|[CDC::OffsetWindowOrg](#offsetwindoworg)|Modifies the window origin relative to the coordinates of the current window origin.|  
+|[CDC::PaintRgn](#paintrgn)|Fills a region with the selected brush.|  
+|[CDC::PatBlt](#patblt)|Creates a bit pattern.|  
+|[CDC::Pie](#pie)|Draws a pie-shaped wedge.|  
+|[CDC::PlayMetaFile](#playmetafile)|Plays the contents of the specified metafile on the given device. The enhanced version of `PlayMetaFile` displays the picture stored in the given enhanced-format metafile. The metafile can be played any number of times.|  
+|[CDC::PlgBlt](#plgblt)|Performs a bit-block transfer of the bits of color data from the specified rectangle in the source device context to the specified parallelogram in the given device context.|  
+|[CDC::PolyBezier](#polybezier)|Draws one or more Bzier splines. The current position is neither used nor updated.|  
+|[CDC::PolyBezierTo](#polybezierto)|Draws one or more Bzier splines, and moves the current position to the ending point of the last Bzier spline.|  
+|[CDC::PolyDraw](#polydraw)|Draws a set of line segments and Bzier splines. This function updates the current position.|  
+|[CDC::Polygon](#polygon)|Draws a polygon consisting of two or more points (vertices) connected by lines.|  
+|[CDC::Polyline](#polyline)|Draws a set of line segments connecting the specified points.|  
+|[CDC::PolylineTo](#polylineto)|Draws one or more straight lines and moves the current position to the ending point of the last line.|  
+|[CDC::PolyPolygon](#polypolygon)|Creates two or more polygons that are filled using the current polygon-filling mode. The polygons may be disjoint or they may overlap.|  
+|[CDC::PolyPolyline](#polypolyline)|Draws multiple series of connected line segments. The current position is neither used nor updated by this function.|  
+|[CDC::PtVisible](#ptvisible)|Specifies whether the given point is within the clipping region.|  
+|[CDC::RealizePalette](#realizepalette)|Maps palette entries in the current logical palette to the system palette.|  
+|[CDC::Rectangle](#rectangle)|Draws a rectangle using the current pen and fills it using the current brush.|  
+|[CDC::RectVisible](#rectvisible)|Determines whether any part of the given rectangle lies within the clipping region.|  
+|[CDC::ReleaseAttribDC](#releaseattribdc)|Releases `m_hAttribDC`, the attribute device context.|  
+|[CDC::ReleaseOutputDC](#releaseoutputdc)|Releases `m_hDC`, the output device context.|  
+|[CDC::ResetDC](#resetdc)|Updates the `m_hAttribDC` device context.|  
+|[CDC::RestoreDC](#restoredc)|Restores the device context to a previous state saved with `SaveDC`.|  
+|[CDC::RoundRect](#roundrect)|Draws a rectangle with rounded corners using the current pen and filled using the current brush.|  
+|[CDC::SaveDC](#savedc)|Saves the current state of the device context.|  
+|[CDC::ScaleViewportExt](#scaleviewportext)|Modifies the viewport extent relative to the current values.|  
+|[CDC::ScaleWindowExt](#scalewindowext)|Modifies the window extents relative to the current values.|  
+|[CDC::ScrollDC](#scrolldc)|Scrolls a rectangle of bits horizontally and vertically.|  
+|[CDC::SelectClipPath](#selectclippath)|Selects the current path as a clipping region for the device context, combining the new region with any existing clipping region by using the specified mode.|  
+|[CDC::SelectClipRgn](#selectcliprgn)|Combines the given region with the current clipping region by using the specified mode.|  
+|[CDC::SelectObject](#selectobject)|Selects a GDI drawing object such as a pen.|  
+|[CDC::SelectPalette](#selectpalette)|Selects the logical palette.|  
+|[CDC::SelectStockObject](#selectstockobject)|Selects one of the predefined stock pens, brushes, or fonts provided by Windows.|  
+|[CDC::SetAbortProc](#setabortproc)|Sets a programmer-supplied callback function that Windows calls if a print job must be aborted.|  
+|[CDC::SetArcDirection](#setarcdirection)|Sets the drawing direction to be used for arc and rectangle functions.|  
+|[CDC::SetAttribDC](#setattribdc)|Sets `m_hAttribDC`, the attribute device context.|  
+|[CDC::SetBkColor](#setbkcolor)|Sets the current background color.|  
+|[CDC::SetBkMode](#setbkmode)|Sets the background mode.|  
+|[CDC::SetBoundsRect](#setboundsrect)|Controls the accumulation of bounding-rectangle information for the specified device context.|  
+|[CDC::SetBrushOrg](#setbrushorg)|Specifies the origin for the next brush selected into a device context.|  
+|[CDC::SetColorAdjustment](#setcoloradjustment)|Sets the color adjustment values for the device context using the specified values.|  
+|[CDC::SetDCBrushColor](#setdcbrushcolor)|Sets the current brush color.|  
+|[CDC::SetDCPenColor](#setdcpencolor)|Sets the current pen color.|  
+|[CDC::SetGraphicsMode](#setgraphicsmode)|Sets the current graphics mode for the specified device context.|  
+|[CDC::SetLayout](#setlayout)|Changes the layout of a device context (DC).|  
+|[CDC::SetMapMode](#setmapmode)|Sets the current mapping mode.|  
+|[CDC::SetMapperFlags](#setmapperflags)|Alters the algorithm that the font mapper uses when it maps logical fonts to physical fonts.|  
+|[CDC::SetMiterLimit](#setmiterlimit)|Sets the limit for the length of miter joins for the device context.|  
+|[CDC::SetOutputDC](#setoutputdc)|Sets `m_hDC`, the output device context.|  
+|[CDC::SetPixel](#setpixel)|Sets the pixel at the specified point to the closest approximation of the specified color.|  
+|[CDC::SetPixelV](#setpixelv)|Sets the pixel at the specified coordinates to the closest approximation of the specified color. `SetPixelV` is faster than `SetPixel` because it does not need to return the color value of the point actually painted.|  
+|[CDC::SetPolyFillMode](#setpolyfillmode)|Sets the polygon-filling mode.|  
+|[CDC::SetROP2](#setrop2)|Sets the current drawing mode.|  
+|[CDC::SetStretchBltMode](#setstretchbltmode)|Sets the bitmap-stretching mode.|  
+|[CDC::SetTextAlign](#settextalign)|Sets the text-alignment flags.|  
+|[CDC::SetTextCharacterExtra](#settextcharacterextra)|Sets the amount of intercharacter spacing.|  
+|[CDC::SetTextColor](#settextcolor)|Sets the text color.|  
+|[CDC::SetTextJustification](#settextjustification)|Adds space to the break characters in a string.|  
+|[CDC::SetViewportExt](#setviewportext)|Sets the x- and y-extents of the viewport.|  
+|[CDC::SetViewportOrg](#setviewportorg)|Sets the viewport origin.|  
+|[CDC::SetWindowExt](#setwindowext)|Sets the x- and y-extents of the associated window.|  
+|[CDC::SetWindowOrg](#setwindoworg)|Sets the window origin of the device context.|  
+|[CDC::SetWorldTransform](#setworldtransform)|Sets the current world-space to page-space transformation.|  
+|[CDC::StartDoc](#startdoc)|Informs the device driver that a new print job is starting.|  
+|[CDC::StartPage](#startpage)|Informs the device driver that a new page is starting.|  
+|[CDC::StretchBlt](#stretchblt)|Moves a bitmap from a source rectangle and device into a destination rectangle, stretching or compressing the bitmap if necessary to fit the dimensions of the destination rectangle.|  
+|[CDC::StrokeAndFillPath](#strokeandfillpath)|Closes any open figures in a path, strikes the outline of the path by using the current pen, and fills its interior by using the current brush.|  
+|[CDC::StrokePath](#strokepath)|Renders the specified path by using the current pen.|  
+|[CDC::TabbedTextOut](#tabbedtextout)|Writes a character string at a specified location, expanding tabs to the values specified in an array of tab-stop positions.|  
+|[CDC::TextOut](#textout)|Writes a character string at a specified location using the currently selected font.|  
+|[CDC::TransparentBlt](#transparentblt)|Transfers a bit-block of color data from the specified source device context into a destination device context, rendering a specified color transparent in the transfer.|  
+|[CDC::UpdateColors](#updatecolors)|Updates the client area of the device context by matching the current colors in the client area to the system palette on a pixel-by-pixel basis.|  
+|[CDC::WidenPath](#widenpath)|Redefines the current path as the area that would be painted if the path were stroked using the pen currently selected into the device context.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDC::operator HDC](#operator_hdc)|デバイス コンテキストのハンドルを取得します。|  
+|[CDC::operator HDC](#operator_hdc)|Retrieves the handle of the device context.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDC::m_hAttribDC](#m_hattribdc)|これで使用される属性とデバイス コンテキスト`CDC`オブジェクト。|  
-|[CDC::m_hDC](#m_hdc)|これで使用される出力デバイス コンテキスト`CDC`オブジェクト。|  
+|[CDC::m_hAttribDC](#m_hattribdc)|The attribute-device context used by this `CDC` object.|  
+|[CDC::m_hDC](#m_hdc)|The output-device context used by this `CDC` object.|  
   
-## <a name="remarks"></a>コメント  
- `CDC`オブジェクトがウィンドウのクライアント領域に関連付けられているディスプレイ コンテキストを操作するためにディスプレイやプリンターだけでなく、メンバーなどのデバイス コンテキストを使用するためにメンバー関数を提供します。  
+## <a name="remarks"></a>Remarks  
+ The `CDC` object provides member functions for working with a device context, such as a display or printer, as well as members for working with a display context associated with the client area of a window.  
   
- 関数、メンバーをすべての描画を行う、`CDC`オブジェクト。 クラスは、メンバー関数を描画ツール、タイプ セーフなグラフィックス デバイス インターフェイス (GDI) オブジェクトの選択、色とパレットを使用すると、デバイス コンテキストの操作を提供します。 取得および設定描画属性、マッピング、操作、ビューポートの操作ウィンドウの範囲、座標、領域の操作のクリッピングの線を描くと単純な図形、省略記号、および多角形を描画変換、メンバー関数も提供します。 メンバー関数は、テキストの描画、フォントの操作、プリンターのエスケープを使用して、スクロール、およびメタファイルの再生も提供されます。  
+ Do all drawing through the member functions of a `CDC` object. The class provides member functions for device-context operations, working with drawing tools, type-safe graphics device interface (GDI) object selection, and working with colors and palettes. It also provides member functions for getting and setting drawing attributes, mapping, working with the viewport, working with the window extent, converting coordinates, working with regions, clipping, drawing lines, and drawing simple shapes, ellipses, and polygons. Member functions are also provided for drawing text, working with fonts, using printer escapes, scrolling, and playing metafiles.  
   
- 使用する、`CDC`オブジェクト、構築、および関数を呼び出して、そのメンバーをデバイス コンテキストを使用する Windows 関数を並行します。  
+ To use a `CDC` object, construct it, and then call its member functions that parallel Windows functions that use device contexts.  
   
 > [!NOTE]
->  Windows 95/98、下にあるすべての画面座標では、16 ビットに制限されます。 したがって、`int`に渡される、`CDC`メンバー関数は、-32768 ~ 32767 の範囲内である必要があります。  
+>  Under Windows 95/98, all screen coordinates are limited to 16 bits. Therefore, an `int` passed to a `CDC` member function must lie in the range -32768 to 32767.  
   
- Microsoft Foundation Class ライブラリがから派生したいくつかのクラスを提供する特定の用途、`CDC`です。 `CPaintDC`呼び出しをカプセル化`BeginPaint`と`EndPaint`です。 `CClientDC`ウィンドウのクライアント領域に関連付けられているディスプレイ コンテキストを管理します。 `CWindowDC`そのフレームやコントロールを含むウィンドウ全体に関連付けられているディスプレイ コンテキストを管理します。 `CMetaFileDC`メタファイル デバイス コンテキストに関連付けます。  
+ For specific uses, the Microsoft Foundation Class Library provides several classes derived from `CDC` . `CPaintDC` encapsulates calls to `BeginPaint` and `EndPaint`. `CClientDC` manages a display context associated with a window's client area. `CWindowDC` manages a display context associated with an entire window, including its frame and controls. `CMetaFileDC` associates a device context with a metafile.  
   
- `CDC`2 つのメンバー関数を提供[GetLayout](#getlayout)と[SetLayout](#setlayout)、ウィンドウからそのレイアウトを継承していないデバイス コンテキストのレイアウトを反転することにします。 このような右から左方向は、アラビア語やヘブライ語の文字のレイアウトが、ヨーロッパの標準ではありませんなどのカルチャ用に記述されたアプリケーションの必要があります。  
+ `CDC` provides two member functions, [GetLayout](#getlayout) and [SetLayout](#setlayout), for reversing the layout of a device context, which does not inherit its layout from a window. Such right-to-left orientation is necessary for applications written for cultures, such as Arabic or Hebrew, where the character layout is not the European standard.  
   
- `CDC`2 つのデバイス コンテキストを含む[m_hDC](#m_hdc)と[は](#m_hattribdc)、これはの作成時に、`CDC`オブジェクト、同じデバイスを参照してください。 `CDC`すべての出力 GDI の呼び出しを指示`m_hDC`ほとんど属性 GDI への呼び出しと`m_hAttribDC`です。 (属性呼び出しの例は、 `GetTextColor`、中に`SetTextColor`出力呼び出しです)。  
+ `CDC` contains two device contexts, [m_hDC](#m_hdc) and [m_hAttribDC](#m_hattribdc), which, on creation of a `CDC` object, refer to the same device. `CDC` directs all output GDI calls to `m_hDC` and most attribute GDI calls to `m_hAttribDC`. (An example of an attribute call is `GetTextColor`, while `SetTextColor` is an output call.)  
   
- フレームワークがこれらの 2 つのデバイス コンテキストを使用して実装するなど、`CMetaFileDC`メタファイルに物理デバイスから属性を読み取り中に出力を送信するオブジェクト。 印刷プレビューは、同様に、フレームワークに実装されます。 また、アプリケーション固有のコードで同様の方法で、2 つのデバイス コンテキストを使用することができます。  
+ For example, the framework uses these two device contexts to implement a `CMetaFileDC` object that will send output to a metafile while reading attributes from a physical device. Print preview is implemented in the framework in a similar fashion. You can also use the two device contexts in a similar way in your application-specific code.  
   
- 必要がある生じる場合が 2 つのテキスト メトリック情報がある、`m_hDC`と`m_hAttribDC`デバイス コンテキスト。 次の関数のペアは、この機能を提供します。  
+ There are times when you may need text-metric information from both the `m_hDC` and `m_hAttribDC` device contexts. The following pairs of functions provide this capability:  
   
-|使用します。|M_hDC を使用します。|  
+|Uses m_hAttribDC|Uses m_hDC|  
 |-----------------------|-----------------|  
-|[通常](#gettextextent)|[GetOutputTextExtent](#getoutputtextextent)|  
+|[GetTextExtent](#gettextextent)|[GetOutputTextExtent](#getoutputtextextent)|  
 |[GetTabbedTextExtent](#gettabbedtextextent)|[GetOutputTabbedTextExtent](#getoutputtabbedtextextent)|  
 |[GetTextMetrics](#gettextmetrics)|[GetOutputTextMetrics](#getoutputtextmetrics)|  
 |[GetCharWidth](#getcharwidth)|[GetOutputCharWidth](#getoutputcharwidth)|  
   
- 詳細については`CDC`を参照してください[デバイス コンテキスト](../../mfc/device-contexts.md)です。  
+ For more information on `CDC`, see [Device Contexts](../../mfc/device-contexts.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CDC`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="abortdoc"></a>CDC::AbortDoc  
- 現在の印刷ジョブを終了し、最後の呼び出し以降にアプリケーションがデバイスに書き込みがすべて消去、 [StartDoc](#startdoc)メンバー関数。  
+##  <a name="abortdoc"></a>  CDC::AbortDoc  
+ Terminates the current print job and erases everything the application has written to the device since the last call to the [StartDoc](#startdoc) member function.  
   
 ```  
 int AbortDoc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以上の値や負の値を使用している場合はエラーが発生しました。 一般的なエラー値とその意味を次に示します。  
+### <a name="return-value"></a>Return Value  
+ A value greater than or equal to 0 if successful, or a negative value if an error has occurred. The following list shows common error values and their meanings:  
   
-- **SP_ERROR**一般エラーです。  
+- **SP_ERROR** General error.  
   
-- **させることでより**のに十分なディスク領域が、スプールのために現在使用できると、空き領域がないを使用可能になる予定です。  
+- **SP_OUTOFDISK** Not enough disk space is currently available for spooling, and no more space will become available.  
   
-- **SP_OUTOFMEMORY**十分なメモリがスプールのために使用できます。  
+- **SP_OUTOFMEMORY** Not enough memory is available for spooling.  
   
-- **SP_USERABORT**ユーザーがプリント マネージャーを使ってジョブを終了します。  
+- **SP_USERABORT** User terminated the job through the Print Manager.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数、`ABORTDOC`プリンター エスケープします。  
+### <a name="remarks"></a>Remarks  
+ This member function replaces the `ABORTDOC` printer escape.  
   
- **AbortDoc**を次を終了するために使用する必要があります。  
+ **AbortDoc** should be used to terminate the following:  
   
--   Abort 関数を使用して、指定されていない印刷操作[SetAbortProc](#setabortproc)です。  
+-   Printing operations that do not specify an abort function using [SetAbortProc](#setabortproc).  
   
--   印刷操作の最初に到達していないを**NEWFRAME**または**NEXTBAND**呼び出しをエスケープします。  
+-   Printing operations that have not yet reached their first **NEWFRAME** or **NEXTBAND** escape call.  
   
- アプリケーションには、印刷エラーや印刷操作のキャンセルが発生すると、その読み取ろうとしないでくださいいずれかを使用して、操作を終了する、 [EndDoc](#enddoc)または**AbortDoc**クラスのメンバー関数`CDC`です。 GDI は、エラー値を返す前に、操作を自動的に終了します。  
+ If an application encounters a printing error or a canceled print operation, it must not attempt to terminate the operation by using either the [EndDoc](#enddoc) or **AbortDoc** member functions of class `CDC`. GDI automatically terminates the operation before returning the error value.  
   
- アプリケーションには、印刷操作をキャンセルするユーザーを許可する ダイアログ ボックスが表示される場合、呼び出す必要があります**AbortDoc**  ダイアログ ボックスを破棄する前にします。  
+ If the application displays a dialog box to allow the user to cancel the print operation, it must call **AbortDoc** before destroying the dialog box.  
   
- 印刷ジョブを開始するようにプリント マネージャーを使用していた場合は、呼び出す**AbortDoc**全体スプール ジョブが消去されます — プリンターが何を受信します。 プリント マネージャーが使用しない場合、印刷ジョブを開始する、データに送信された前に、プリンター **AbortDoc**が呼び出されました。 ここでは、プリンター ドライバーは (可能な場合)、プリンタをリセットし、印刷ジョブを終了します。  
+ If Print Manager was used to start the print job, calling **AbortDoc** erases the entire spool job — the printer receives nothing. If Print Manager was not used to start the print job, the data may have been sent to the printer before **AbortDoc** was called. In this case, the printer driver would have reset the printer (when possible) and closed the print job.  
   
-### <a name="example"></a>例  
-  例を参照して[CDC::StartDoc](#startdoc)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::StartDoc](#startdoc).  
   
-##  <a name="abortpath"></a>CDC::AbortPath  
- 閉じ、デバイス コンテキストの任意のパスを破棄します。  
+##  <a name="abortpath"></a>  CDC::AbortPath  
+ Closes and discards any paths in the device context.  
   
 ```  
 BOOL AbortPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストで、ファイルを開くパス角かっこがある場合は、パスの角かっこは閉じられ、パスは破棄されます。 デバイス コンテキストに閉じたパスがある場合、パスは破棄されます。  
+### <a name="remarks"></a>Remarks  
+ If there is an open path bracket in the device context, the path bracket is closed and the path is discarded. If there is a closed path in the device context, the path is discarded.  
   
-##  <a name="addmetafilecomment"></a>CDC::AddMetaFileComment  
- バッファーから、指定された拡張メタファイルにコメントをコピーします。  
+##  <a name="addmetafilecomment"></a>  CDC::AddMetaFileComment  
+ Copies the comment from a buffer into a specified enhanced-format metafile.  
   
 ```  
 BOOL AddMetaFileComment(
@@ -570,21 +761,21 @@ BOOL AddMetaFileComment(
     const BYTE* pCommentData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nDataSize*  
- コメント バッファーの長さをバイト単位で指定します。  
+ Specifies the length of the comment buffer, in bytes.  
   
  *pCommentData*  
- コメントが含まれているバッファーへのポインター。  
+ Points to the buffer that contains the comment.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- コメントは、プライベートな情報を含めることがあります: たとえば、ソース、画像と日付の作成します。 コメントは、続くデータ、アプリケーションの署名で開始する必要があります。 コメントは、位置指定のデータを含めることはできません。 位置に固有のデータは、レコードの場所を指定し、できないように含まれるため、1 つのメタファイル別メタファイル内に埋め込むことがあります。 この関数は、拡張メタファイルでのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ A comment may include any private information — for example, the source of the picture and the date it was created. A comment should begin with an application signature, followed by the data. Comments should not contain position-specific data. Position-specific data specifies the location of a record, and it should not be included because one metafile may be embedded within another metafile. This function can only be used with enhanced metafiles.  
   
-##  <a name="alphablend"></a>CDC::AlphaBlend  
- 透明または半透明ピクセルのビットマップを表示するには、このメンバー関数を呼び出します。  
+##  <a name="alphablend"></a>  CDC::AlphaBlend  
+ Call this member function to display bitmaps that have transparent or semitransparent pixels.  
   
 ```  
 BOOL AlphaBlend(
@@ -600,45 +791,45 @@ BOOL AlphaBlend(
     BLENDFUNCTION blend);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `xDest`  
- 論理単位で、移行先の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the upper-left corner of the destination rectangle.  
   
  `yDest`  
- 論理単位で、移行先の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the upper-left corner of the destination rectangle.  
   
  `nDestWidth`  
- 論理単位で、移行先の四角形の幅を指定します。  
+ Specifies the width, in logical units, of the destination rectangle.  
   
  `nDestHeight`  
- 論理単位で、移行先の四角形の高さを指定します。  
+ Specifies the height, in logical units, of the destination rectangle.  
   
  `pSrcDC`  
- 元のデバイス コンテキストへのポインター。  
+ A pointer to the source device context.  
   
  `xSrc`  
- 論理単位で、元の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the upper-left corner of the source rectangle.  
   
  `ySrc`  
- 論理単位で、元の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the upper-left corner of the source rectangle.  
   
  `nSrcWidth`  
- 論理単位で、元の四角形の幅を指定します。  
+ Specifies the width, in logical units, of the source rectangle.  
   
  `nSrcHeight`  
- 論理単位で、元の四角形の高さを指定します。  
+ Specifies the height, in logical units, of the source rectangle.  
   
  *blend*  
- 指定します、 [BLENDFUNCTION](http://msdn.microsoft.com/library/windows/desktop/dd183393)構造体。  
+ Specifies a [BLENDFUNCTION](http://msdn.microsoft.com/library/windows/desktop/dd183393) structure.  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**成功した場合は**FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if successful; otherwise **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- 参照してください[およびアルファブレンド](http://msdn.microsoft.com/library/windows/desktop/dd183351)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細についてはします。  
+### <a name="remarks"></a>Remarks  
+ See [AlphaBlend](http://msdn.microsoft.com/library/windows/desktop/dd183351) in the Windows SDK for more information.  
   
-##  <a name="anglearc"></a>CDC::AngleArc  
- 線分と円弧を描画します。  
+##  <a name="anglearc"></a>  CDC::AngleArc  
+ Draws a line segment and an arc.  
   
 ```  
 BOOL AngleArc(
@@ -649,34 +840,34 @@ BOOL AngleArc(
     float fSweepAngle);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 円の中心となる論理 x 座標を指定します。  
+ Specifies the logical x-coordinate of the center of the circle.  
   
  *y*  
- 円の中心となる論理 y 座標を指定します。  
+ Specifies the logical y-coordinate of the center of the circle.  
   
  *nRadius*  
- 論理ユニットで、円の半径を指定します。 この値は正の値である必要があります。  
+ Specifies the radius of the circle in logical units. This value must be positive.  
   
  *fStartAngle*  
- X 軸を基準とした角度の開始角度を指定します。  
+ Specifies the starting angle in degrees relative to the x-axis.  
   
  *fSweepAngle*  
- 掃引角度を指定します (相対開始角度を度単位)。  
+ Specifies the sweep angle in degrees relative to the starting angle.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 直線セグメントは、現在の位置から円弧の始点が描画されます。 円弧の中心と特定の半径の円の境界に沿って描画します。 円弧の長さは、指定された開始および掃引角度によって定義されます。  
+### <a name="remarks"></a>Remarks  
+ The line segment is drawn from the current position to the beginning of the arc. The arc is drawn along the perimeter of a circle with the given radius and center. The length of the arc is defined by the given start and sweep angles.  
   
- `AngleArc`円弧の終点に現在の位置を移動します。 この関数によって描画された円弧が現在の変換とマッピング モードによっては楕円に表示されます。 円弧を描画する前に、この関数は、現在の位置から円弧の始点に線分を描画します。 指定された中心点を指定した radius を使って仮想円を構築することによって円弧を描画します。 円弧の始点は、開始角度で度数で、円の x 軸から反時計回りに計測によって決定されます。 掃引角度に度の数によって、開始位置から反時計回りに計測して終了点が同様にあります。  
+ `AngleArc` moves the current position to the ending point of the arc. The arc drawn by this function may appear to be elliptical, depending on the current transformation and mapping mode. Before drawing the arc, this function draws the line segment from the current position to the beginning of the arc. The arc is drawn by constructing an imaginary circle with the specified radius around the specified center point. The starting point of the arc is determined by measuring counterclockwise from the x-axis of the circle by the number of degrees in the start angle. The ending point is similarly located by measuring counterclockwise from the starting point by the number of degrees in the sweep angle.  
   
- 掃引角度が 360 度より大きい場合、円弧は複数回です。 この関数は、現在のペンを使用して線を描画します。 この図は表示されません。  
+ If the sweep angle is greater than 360 degrees the arc is swept multiple times. This function draws lines by using the current pen. The figure is not filled.  
   
-##  <a name="arc"></a>除いて  
- 楕円の円弧を描画します。  
+##  <a name="arc"></a>  CDC::Arc  
+ Draws an elliptical arc.  
   
 ```  
 BOOL Arc(
@@ -696,53 +887,53 @@ BOOL Arc(
     POINT ptEnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- (論理単位で) に外接する四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `y1`  
- (論理単位で) に外接する四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `x2`  
- (論理単位で) に外接する四角形の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  `y2`  
- (論理単位で) に外接する四角形の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  *x3*  
- 円弧を定義する点の x 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `y3`  
- 円弧を定義する点の y 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `x4`  
- 円弧の終点 (論理単位) を定義する点の x 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the point that defines the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `y4`  
- 円弧の終点 (論理単位) を定義する点の y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the point that defines the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `lpRect`  
- (論理単位で) に外接する四角形を指定します。 いずれかを渡すことができます、`LPRECT`または[CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Specifies the bounding rectangle (in logical units). You can pass either an `LPRECT` or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  `ptStart`  
- 円弧を定義する点の x 座標と y 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc. You can pass either a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
  `ptEnd`  
- 円弧の終点 (論理単位) を定義する点の x 座標と y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the arc's ending point (in logical units). This point does not have to lie exactly on the arc. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関数を使用して描画された円弧は、指定された外接する四角形によって定義される楕円のセグメントです。  
+### <a name="remarks"></a>Remarks  
+ The arc drawn by using the function is a segment of the ellipse defined by the specified bounding rectangle.  
   
- 円弧の実際の開始点は、指定された開始位置を外接する四角形の中心から描画された射線するには、楕円と交差しているポイントです。 円弧の実際の終了点を指定した終了点を外接する四角形の中心から描画光線と交差楕円ポイントです。 円弧を反時計回りに描画します。 円弧が閉じた図ではないため、これは表示されません。 四角形の高さと幅は、2 つのユニットと 32,767 より小さい単位より大きくなければなりません。  
+ The actual starting point of the arc is the point at which a ray drawn from the center of the bounding rectangle through the specified starting point intersects the ellipse. The actual ending point of the arc is the point at which a ray drawn from the center of the bounding rectangle through the specified ending point intersects the ellipse. The arc is drawn in a counterclockwise direction. Since an arc is not a closed figure, it is not filled. Both the width and height of the rectangle must be greater than 2 units and less than 32,767 units.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 29](../../mfc/codesnippet/cpp/cdc-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#29](../../mfc/codesnippet/cpp/cdc-class_1.cpp)]  
   
-##  <a name="arcto"></a>CDC::ArcTo  
- 楕円の円弧を描画します。  
+##  <a name="arcto"></a>  CDC::ArcTo  
+ Draws an elliptical arc.  
   
 ```  
 BOOL ArcTo(
@@ -762,85 +953,85 @@ BOOL ArcTo(
     POINT ptEnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- (論理単位で) に外接する四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `y1`  
- (論理単位で) に外接する四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `x2`  
- (論理単位で) に外接する四角形の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  `y2`  
- (論理単位で) に外接する四角形の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  *x3*  
- 円弧を定義する点の x 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `y3`  
- 円弧を定義する点の y 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `x4`  
- 円弧の終点 (論理単位) を定義する点の x 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the point that defines the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `y4`  
- 円弧の終点 (論理単位) を定義する点の y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the point that defines the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `lpRect`  
- (論理単位で) に外接する四角形を指定します。 ポインターを渡すことができます、 [RECT](../../mfc/reference/rect-structure1.md)データ構造体、または[CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Specifies the bounding rectangle (in logical units). You can pass either a pointer to a [RECT](../../mfc/reference/rect-structure1.md) data structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  `ptStart`  
- 円弧を定義する点の x 座標と y 座標の始点 (論理単位) を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)データ構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the arc's starting point (in logical units). This point does not have to lie exactly on the arc. You can pass either a [POINT](../../mfc/reference/point-structure1.md) data structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
  `ptEnd`  
- 円弧の終点 (論理単位) を定義する点の x 座標と y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、**ポイント**データ構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the arc's ending point (in logical units). This point does not have to lie exactly on the arc. You can pass either a **POINT** data structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数がに似ていますが`CDC::Arc`, 現在の位置が更新される点が異なります。 点 ( `x1`、 `y1`) と ( `x2`、 `y2`) 外接する四角形を指定します。 指定された外接する四角形によって形成される楕円は、円弧の曲線を定義します。 円弧は拡張反時計回りに (既定の円弧の方向) に外接する四角形の中心から放射状の行が交差するポイントから ( *x3*、 `y3`)。 外接する四角形の中心から放射状の線が交差する円弧の終点点 ( `x4`、 `y4`)。 始点と終点が同じ場合は、完全な楕円が描画されます。  
+### <a name="remarks"></a>Remarks  
+ This function is similar to `CDC::Arc`, except that the current position is updated. The points ( `x1`, `y1`) and ( `x2`, `y2`) specify the bounding rectangle. An ellipse formed by the given bounding rectangle defines the curve of the arc. The arc extends counterclockwise (the default arc direction) from the point where it intersects the radial line from the center of the bounding rectangle to ( *x3*, `y3`). The arc ends where it intersects the radial line from the center of the bounding rectangle to ( `x4`, `y4`). If the starting point and ending point are the same, a complete ellipse is drawn.  
   
- 円弧の始点の現在位置から線が描画されます。 エラーが発生しなかった場合、現在の位置は、円弧の終点に設定されます。 現在のペンを使用して、円弧が描画されます。その操作は表示されません。  
+ A line is drawn from the current position to the starting point of the arc. If no error occurs, the current position is set to the ending point of the arc. The arc is drawn using the current pen; it is not filled.  
   
-##  <a name="attach"></a>CDC::Attach  
- このメンバー関数をアタッチを使用して、`hDC`を`CDC`オブジェクト。  
+##  <a name="attach"></a>  CDC::Attach  
+ Use this member function to attach an `hDC` to the `CDC` object.  
   
 ```  
 BOOL Attach(HDC hDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- Windows デバイス コンテキスト。  
+ A Windows device context.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `hDC`両方に格納されて`m_hDC`、出力デバイス コンテキスト `m_hAttribDC`属性のデバイス コンテキスト。  
+### <a name="remarks"></a>Remarks  
+ The `hDC` is stored in both `m_hDC`, the output device context, and in `m_hAttribDC`, the attribute device context.  
   
-##  <a name="beginpath"></a>Cdc::beginpath  
- デバイス コンテキストでは、パスの角かっこを開きます。  
+##  <a name="beginpath"></a>  CDC::BeginPath  
+ Opens a path bracket in the device context.  
   
 ```  
 BOOL BeginPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- パスの角かっこを開いた後、パスに存在する地点を定義する GDI 描画関数を呼び出すアプリケーションを開始できます。 アプリケーションが呼び出すことによって、ファイルを開くパス角かっこを閉じることができます、`EndPath`メンバー関数。 アプリケーションを呼び出すと`BeginPath`、前のパスは破棄されます。  
+### <a name="remarks"></a>Remarks  
+ After a path bracket is open, an application can begin calling GDI drawing functions to define the points that lie in the path. An application can close an open path bracket by calling the `EndPath` member function. When an application calls `BeginPath`, any previous paths are discarded.  
   
- 参照してください[アプリケーション](http://msdn.microsoft.com/library/windows/desktop/dd183363)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]パスのポイントを定義する描画の関数の一覧についてはします。  
+ See [BeginPath](http://msdn.microsoft.com/library/windows/desktop/dd183363) in the Windows SDK for a list of the drawing functions that define points in a path.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 30](../../mfc/codesnippet/cpp/cdc-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#30](../../mfc/codesnippet/cpp/cdc-class_2.cpp)]  
   
-##  <a name="bitblt"></a>Cdc::bitblt  
- コピー元デバイス コンテキストから現在のデバイス コンテキストにビットマップをコピーします。  
+##  <a name="bitblt"></a>  CDC::BitBlt  
+ Copies a bitmap from the source device context to this current device context.  
   
 ```  
 BOOL BitBlt(
@@ -854,61 +1045,61 @@ BOOL BitBlt(
     DWORD dwRop);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で先の四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the destination rectangle.  
   
  *y*  
- 論理で先の四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the destination rectangle.  
   
  `nWidth`  
- コピー先の四角形と元のビットマップの幅を (論理単位で) を指定します。  
+ Specifies the width (in logical units) of the destination rectangle and source bitmap.  
   
  `nHeight`  
- コピー先の四角形と元のビットマップの高さを (論理単位で) を指定します。  
+ Specifies the height (in logical units) of the destination rectangle and source bitmap.  
   
  `pSrcDC`  
- ポインター、`CDC`ビットマップのコピー元デバイス コンテキストを識別するオブジェクト。 必要があります**NULL**場合*dwRop*ソースが含まれていないラスター オペレーションを指定します。  
+ Pointer to a `CDC` object that identifies the device context from which the bitmap will be copied. It must be **NULL** if *dwRop* specifies a raster operation that does not include a source.  
   
  `xSrc`  
- 論理で元のビットマップの左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the source bitmap.  
   
  `ySrc`  
- 論理で元のビットマップの左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the source bitmap.  
   
  *dwRop*  
- 実行するラスター オペレーションを指定します。 ラスター オペレーション コードでは、GDI が出力に関連した操作、現在のブラシ、有効なコピー元ビットマップとコピー先ビットマップの色を結合する方法を定義します。 参照してください[BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]のラスター オペレーション コードの一覧については*dwRop*とその説明  
+ Specifies the raster operation to be performed. Raster-operation codes define how the GDI combines colors in output operations that involve a current brush, a possible source bitmap, and a destination bitmap. See [BitBlt](http://msdn.microsoft.com/library/windows/desktop/dd183370) in the Windows SDK for a list of the raster-operation codes for *dwRop* and their descriptions  
   
- ラスター オペレーション コードの一覧については、次を参照してください。[ラスター オペレーション コードに関する](http://msdn.microsoft.com/library/windows/desktop/dd162892)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a complete list of raster-operation codes, see [About Raster Operation Codes](http://msdn.microsoft.com/library/windows/desktop/dd162892) in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションは、windows またはことを確認するバイト境界上のクライアント領域を揃えることができます、`BitBlt`バイト境界の四角形で操作が行われます。 (設定、 **CS_BYTEALIGNWINDOW**または**により**ウィンドウ クラスを登録するときにフラグを設定します)。  
+### <a name="remarks"></a>Remarks  
+ The application can align the windows or client areas on byte boundaries to ensure that the `BitBlt` operations occur on byte-aligned rectangles. (Set the **CS_BYTEALIGNWINDOW** or **CS_BYTEALIGNCLIENT** flags when you register the window classes.)  
   
- `BitBlt`四角形のバイト境界で配置操作はよりも大幅に高速`BitBlt`バイト境界となる四角形で操作します。 ウィンドウ クラスを登録する必要が、独自のデバイス コンテキストのバイトのアラインメントなどのクラスのスタイルを指定する場合は、実行するために Microsoft Foundation classes ではなくです。 グローバル関数を使用して[AfxRegisterWndClass](../../mfc/reference/application-information-and-management.md#afxregisterwndclass)です。  
+ `BitBlt` operations on byte-aligned rectangles are considerably faster than `BitBlt` operations on rectangles that are not byte aligned. If you want to specify class styles such as byte-alignment for your own device context, you will have to register a window class rather than relying on the Microsoft Foundation classes to do it for you. Use the global function [AfxRegisterWndClass](../../mfc/reference/application-information-and-management.md#afxregisterwndclass).  
   
- Gdi`nWidth`と`nHeight`コピー先デバイス コンテキストを使用して、1 回、および元デバイス コンテキストを使用して、1 回です。 GDI が、Windows を使用して、結果として得られるエクステントが一致しない場合`StretchBlt`圧縮するか、必要に応じて、元のビットマップを拡大する関数。  
+ GDI transforms `nWidth` and `nHeight`, once by using the destination device context, and once by using the source device context. If the resulting extents do not match, GDI uses the Windows `StretchBlt` function to compress or stretch the source bitmap as necessary.  
   
- 変換先、ソース、およびパターン ビットマップは、同じ色の書式を持たない場合、`BitBlt`関数、ソースとパターンに合わせて変換先です。 コピー先のビットマップの前景色と背景色は、変換に使用されます。  
+ If destination, source, and pattern bitmaps do not have the same color format, the `BitBlt` function converts the source and pattern bitmaps to match the destination. The foreground and background colors of the destination bitmap are used in the conversion.  
   
- ときに、`BitBlt`関数は、カラーをモノクロ ビットマップに変換、白のビット (1) を背景色、前景の色を黒のビット (0) に設定します。 コピー先デバイス コンテキストの前景色と背景色が使用されます。 カラーをモノクロに変換する`BitBlt`を白に背景色と一致するピクセルに設定し、その他のすべてのピクセルを黒に設定します。 `BitBlt`デバイスのカラー コンテキストの前景色と背景色を使用して、カラーをモノクロに変換します。  
+ When the `BitBlt` function converts a monochrome bitmap to color, it sets white bits (1) to the background color and black bits (0) to the foreground color. The foreground and background colors of the destination device context are used. To convert color to monochrome, `BitBlt` sets pixels that match the background color to white and sets all other pixels to black. `BitBlt` uses the foreground and background colors of the color device context to convert from color to monochrome.  
   
- すべてのデバイス コンテキストをサポートする注`BitBlt`です。 指定されたデバイス コンテキストをサポートしているかどうかを確認する`BitBlt`を使用して、`GetDeviceCaps`メンバー関数し、指定、 **RASTERCAPS**インデックス。  
+ Note that not all device contexts support `BitBlt`. To check whether a given device context does support `BitBlt`, use the `GetDeviceCaps` member function and specify the **RASTERCAPS** index.  
   
-### <a name="example"></a>例  
-  例を参照して[CDC::CreateCompatibleDC](#createcompatibledc)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::CreateCompatibleDC](#createcompatibledc).  
   
-##  <a name="cdc"></a>CDC::CDC  
- `CDC` オブジェクトを構築します。  
+##  <a name="cdc"></a>  CDC::CDC  
+ Constructs a `CDC` object.  
   
 ```  
 CDC();
 ```  
   
-##  <a name="chord"></a>CDC::Chord  
- 弦 (楕円を描画し、線分の交差部分で区切られた閉じた図) を描画します。  
+##  <a name="chord"></a>  CDC::Chord  
+ Draws a chord (a closed figure bounded by the intersection of an ellipse and a line segment).  
   
 ```  
 BOOL Chord(
@@ -928,92 +1119,92 @@ BOOL Chord(
     POINT ptEnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- コードの左上隅の x 座標外接する四角形 (論理単位) を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the chord's bounding rectangle (in logical units).  
   
  `y1`  
- コードの左上隅の y 座標外接する四角形 (論理単位) を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the chord's bounding rectangle (in logical units).  
   
  `x2`  
- コードの右下隅の x 座標外接する四角形 (論理単位) を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the chord's bounding rectangle (in logical units).  
   
  `y2`  
- コードの右下隅の y 座標外接する四角形 (論理単位) を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the chord's bounding rectangle (in logical units).  
   
  *x3*  
- コードを定義する点の x 座標の始点 (論理単位) を指定します。  
+ Specifies the x-coordinate of the point that defines the chord's starting point (in logical units).  
   
  `y3`  
- コードを定義する点の y 座標の始点 (論理単位) を指定します。  
+ Specifies the y-coordinate of the point that defines the chord's starting point (in logical units).  
   
  `x4`  
- (論理単位で) 弦のエンドポイントを定義する点の x 座標を指定します。  
+ Specifies the x-coordinate of the point that defines the chord's endpoint (in logical units).  
   
  `y4`  
- (論理単位で) 弦のエンドポイントを定義する点の y 座標を指定します。  
+ Specifies the y-coordinate of the point that defines the chord's endpoint (in logical units).  
   
  `lpRect`  
- (論理単位で) に外接する四角形を指定します。 いずれかを渡すことができます、`LPRECT`または[CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Specifies the bounding rectangle (in logical units). You can pass either a `LPRECT` or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  `ptStart`  
- 弦ポイントの x 座標と y 座標の始点 (論理単位) を指定します。 このポイントは、弦上だけに存在する必要はありません。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the chord's starting point (in logical units). This point does not have to lie exactly on the chord. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
  `ptEnd`  
- (論理単位で) 弦の終了位置を定義する点の x 座標と y 座標を指定します。 このポイントは、弦上だけに存在する必要はありません。 いずれかを渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the point that defines the chord's ending point (in logical units). This point does not have to lie exactly on the chord. You can pass either a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ( `x1`、 `y1`) と ( `x2`、 `y2`) パラメーターを指定、左上隅および右下隅、それぞれ、コードの一部である省略記号ボタンを囲む四角形のです。 ( *X3*、 `y3`) と ( `x4`、 `y4`) パラメーターが省略記号ボタンを交差する行のエンドポイントを指定します。 弦が選択されているペンを使用して描画され、選択されたブラシを使用して入力します。  
+### <a name="remarks"></a>Remarks  
+ The ( `x1`, `y1`) and ( `x2`, `y2`) parameters specify the upper-left and lower-right corners, respectively, of a rectangle bounding the ellipse that is part of the chord. The ( *x3*, `y3`) and ( `x4`, `y4`) parameters specify the endpoints of a line that intersects the ellipse. The chord is drawn by using the selected pen and filled by using the selected brush.  
   
- 描画する図形、`Chord`関数は、まで拡張しますが、右下隅の座標には含まれません。 つまり、図の高さが`y2`  -  `y1` 、図の幅は`x2`  - `x1`です。  
+ The figure drawn by the `Chord` function extends up to, but does not include the right and bottom coordinates. This means that the height of the figure is `y2` - `y1` and the width of the figure is `x2` - `x1`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 31](../../mfc/codesnippet/cpp/cdc-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#31](../../mfc/codesnippet/cpp/cdc-class_3.cpp)]  
   
-##  <a name="closefigure"></a>CDC::CloseFigure  
- パス内の開いている図を閉じます。  
+##  <a name="closefigure"></a>  CDC::CloseFigure  
+ Closes an open figure in a path.  
   
 ```  
 BOOL CloseFigure();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関数は、図の最初のポイントに現在の位置から行を描画して、図を閉じます (通常は、最新の呼び出しで指定された点、`MoveTo`メンバー関数) し、直線の接合スタイルを使用して線を接続します。 使用して、図表が閉じている場合、`LineTo`メンバー関数の代わりに`CloseFigure`端点キャップを使用して、結合ではなく角を作成します。 `CloseFigure`デバイス コンテキストで、ファイルを開くパス角かっこがある場合にのみ呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ The function closes the figure by drawing a line from the current position to the first point of the figure (usually, the point specified by the most recent call to the `MoveTo` member function) and connects the lines by using the line join style. If a figure is closed by using the `LineTo` member function instead of `CloseFigure`, end caps are used to create the corner instead of a join. `CloseFigure` should only be called if there is an open path bracket in the device context.  
   
- パスの図は、この関数を使用して明示的に閉じられている場合を除き、開かれています。 (図開くことができる場合でも、現在のポイントと、図の開始点は同じです。)直線または曲線後のパスに追加された`CloseFigure`新しい図形を開始します。  
+ A figure in a path is open unless it is explicitly closed by using this function. (A figure can be open even if the current point and the starting point of the figure are the same.) Any line or curve added to the path after `CloseFigure` starts a new figure.  
   
-##  <a name="createcompatibledc"></a>CDC::CreateCompatibleDC  
- 指定されたデバイスと互換性があるメモリ デバイス コンテキストを作成`pDC`です。  
+##  <a name="createcompatibledc"></a>  CDC::CreateCompatibleDC  
+ Creates a memory device context that is compatible with the device specified by `pDC`.  
   
 ```  
 BOOL CreateCompatibleDC(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- デバイス コンテキストへのポインター。 場合`pDC`は**NULL**、この関数は、システムの表示と互換性があるメモリ デバイス コンテキストを作成します。  
+ A pointer to a device context. If `pDC` is **NULL**, the function creates a memory device context that is compatible with the system display.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- メモリ デバイス コンテキストは、表示画面を表すメモリのブロックです。 これは、互換性のあるデバイスの実際のデバイスの画面にコピーする前にメモリ内のイメージを準備するのに使用できます。  
+### <a name="remarks"></a>Remarks  
+ A memory device context is a block of memory that represents a display surface. It can be used to prepare images in memory before copying them to the actual device surface of the compatible device.  
   
- メモリ デバイス コンテキストが作成されると、GDI はその 1-1 によってモノクロのストック ビットマップを自動的に選択します。 GDI 出力関数は、ビットマップが作成され、そのコンテキストに選択されている場合にのみ、メモリ デバイス コンテキストで使用できます。  
+ When a memory device context is created, GDI automatically selects a 1-by-1 monochrome stock bitmap for it. GDI output functions can be used with a memory device context only if a bitmap has been created and selected into that context.  
   
- この関数は、ラスター オペレーションをサポートするデバイスの互換性のあるデバイス コンテキストを作成するのみ使用できます。 参照してください、 [cdc::bitblt](#bitblt)デバイス コンテキスト間でビット ブロック転送に関する情報のメンバー関数。 デバイス コンテキストがラスター オペレーションをサポートしているかどうかを確認するのを参照してください。、 **RC_BITBLT**ラスター機能は、メンバー関数で`CDC::GetDeviceCaps`です。  
+ This function can only be used to create compatible device contexts for devices that support raster operations. See the [CDC::BitBlt](#bitblt) member function for information regarding bit-block transfers between device contexts. To determine whether a device context supports raster operations, see the **RC_BITBLT** raster capability in the member function `CDC::GetDeviceCaps`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 32](../../mfc/codesnippet/cpp/cdc-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#32](../../mfc/codesnippet/cpp/cdc-class_4.cpp)]  
   
-##  <a name="createdc"></a>CDC::CreateDC  
- 指定したデバイスのデバイス コンテキストを作成します。  
+##  <a name="createdc"></a>  CDC::CreateDC  
+ Creates a device context for the specified device.  
   
 ```  
 BOOL CreateDC(
@@ -1023,29 +1214,29 @@ BOOL CreateDC(
     const void* lpInitData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszDriverName`  
- (拡張子なし)、デバイス ドライバー (たとえば、"EPSON") のファイル名を指定する null で終わる文字列へのポインター。 渡すことも、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the filename (without extension) of the device driver (for example, "EPSON"). You can also pass a `CString` object for this parameter.  
   
  `lpszDeviceName`  
- サポートされるために (たとえば、「EPSON FX 80」) の特定のデバイスの名前を指定する null で終わる文字列へのポインター。 `lpszDeviceName`パラメーターは、モジュールは、複数のデバイスをサポートしている場合に使用します。 渡すことも、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the name of the specific device to be supported (for example, "EPSON FX-80"). The `lpszDeviceName` parameter is used if the module supports more than one device. You can also pass a `CString` object for this parameter.  
   
  `lpszOutput`  
- 出力の物理メディア (ファイルまたは出力ポート) のファイルまたはデバイス名を指定する null で終わる文字列へのポインター。 渡すことも、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the file or device name for the physical output medium (file or output port). You can also pass a `CString` object for this parameter.  
   
  `lpInitData`  
- 指す、`DEVMODE`デバイス ドライバーのデバイス固有の初期化データを含む構造体。 Windows **DocumentProperties**関数は、特定のデバイスに入力します。 この構造体を取得します。 `lpInitData`パラメーターでなければなりません**NULL**デバイス ドライバーは、コントロール パネルからユーザーを指定して既定の初期化 (存在する場合) を使用するかどうか。  
+ Points to a `DEVMODE` structure containing device-specific initialization data for the device driver. The Windows **DocumentProperties** function retrieves this structure filled in for a given device. The `lpInitData` parameter must be **NULL** if the device driver is to use the default initialization (if any) specified by the user through the Control Panel.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 印刷します。H ヘッダー ファイルが必要、 [DEVMODE](http://msdn.microsoft.com/library/windows/desktop/dd183565)構造体を使用します。  
+### <a name="remarks"></a>Remarks  
+ The PRINT.H header file is required if the [DEVMODE](http://msdn.microsoft.com/library/windows/desktop/dd183565) structure is used.  
   
- デバイス名がこれらの規則に従います。 コロン (:) が推奨される、省略可能です。 Windows は、コロンで終わるデバイス名がコロンのない同じ名前と同じポートにマップされるように、終端のコロンを削除します。 ドライバおよびポートの名前では、先頭または末尾のスペースを含めることはできません。 GDI 出力関数は、情報のコンテキストには使用できません。  
+ Device names follow these conventions: an ending colon (:) is recommended, but optional. Windows strips the terminating colon so that a device name ending with a colon is mapped to the same port as the same name without a colon. The driver and port names must not contain leading or trailing spaces. GDI output functions cannot be used with information contexts.  
   
-##  <a name="createic"></a>CDC::CreateIC  
- 指定したデバイスの情報コンテキストを作成します。  
+##  <a name="createic"></a>  CDC::CreateIC  
+ Creates an information context for the specified device.  
   
 ```  
 BOOL CreateIC(
@@ -1055,82 +1246,82 @@ BOOL CreateIC(
     const void* lpInitData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszDriverName`  
- (拡張子なし)、デバイス ドライバー (たとえば、"EPSON") のファイル名を指定する null で終わる文字列へのポインター。 渡すことができます、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the filename (without extension) of the device driver (for example, "EPSON"). You can pass a `CString` object for this parameter.  
   
  `lpszDeviceName`  
- サポートされるために (たとえば、「EPSON FX 80」) の特定のデバイスの名前を指定する null で終わる文字列へのポインター。 `lpszDeviceName`パラメーターは、モジュールは、複数のデバイスをサポートしている場合に使用します。 渡すことができます、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the name of the specific device to be supported (for example, "EPSON FX-80"). The `lpszDeviceName` parameter is used if the module supports more than one device. You can pass a `CString` object for this parameter.  
   
  `lpszOutput`  
- (ファイルまたはポート) は、物理出力メディアのファイルまたはデバイス名を指定する null で終わる文字列へのポインター。 渡すことができます、`CString`このパラメーターのオブジェクト。  
+ Points to a null-terminated string that specifies the file or device name for the physical output medium (file or port). You can pass a `CString` object for this parameter.  
   
  `lpInitData`  
- デバイス ドライバのデバイス固有の初期化データへのポインター。 `lpInitData`パラメーターでなければなりません**NULL**デバイス ドライバーは、コントロール パネルからユーザーを指定して既定の初期化 (存在する場合) を使用するかどうか。 参照してください`CreateDC`デバイス固有の初期化のデータ形式にします。  
+ Points to device-specific initialization data for the device driver. The `lpInitData` parameter must be **NULL** if the device driver is to use the default initialization (if any) specified by the user through the Control Panel. See `CreateDC` for the data format for device-specific initialization.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 情報のコンテキストでは、高速なデバイス コンテキストを作成することがなく、デバイスに関する情報を取得する方法を提供します。  
+### <a name="remarks"></a>Remarks  
+ The information context provides a fast way to get information about the device without creating a device context.  
   
- デバイス名がこれらの規則に従います。 コロン (:) が推奨される、省略可能です。 Windows は、コロンで終わるデバイス名がコロンのない同じ名前と同じポートにマップされるように、終端のコロンを削除します。 ドライバおよびポートの名前では、先頭または末尾のスペースを含めることはできません。 GDI 出力関数は、情報のコンテキストには使用できません。  
+ Device names follow these conventions: an ending colon (:) is recommended, but optional. Windows strips the terminating colon so that a device name ending with a colon is mapped to the same port as the same name without a colon. The driver and port names must not contain leading or trailing spaces. GDI output functions cannot be used with information contexts.  
   
-##  <a name="deletedc"></a>デバイス コンテキストの破棄  
- 一般に、この関数を呼び出していませんデストラクターはそれを行います。  
+##  <a name="deletedc"></a>  CDC::DeleteDC  
+ In general, do not call this function; the destructor will do it for you.  
   
 ```  
 BOOL DeleteDC();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が正常に完了した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function completed successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `DeleteDC`メンバー関数は、削除、デバイス コンテキストに関連付けられている`m_hDC`現在`CDC`オブジェクト。 この場合`CDC`オブジェクトが特定のデバイスの最後のアクティブなデバイス コンテキストはデバイスに通知され、デバイスで使用するすべての記憶域とシステム リソースが解放されます。  
+### <a name="remarks"></a>Remarks  
+ The `DeleteDC` member function deletes the Windows device contexts that are associated with `m_hDC` in the current `CDC` object. If this `CDC` object is the last active device context for a given device, the device is notified and all storage and system resources used by the device are released.  
   
- アプリケーションを呼び出す必要がありますいない`DeleteDC`オブジェクトは、デバイス コンテキストに選択されている場合。 削除される前に、デバイス コンテキスト外のオブジェクトを選択最初必要があります。  
+ An application should not call `DeleteDC` if objects have been selected into the device context. Objects must first be selected out of the device context before it is deleted.  
   
- アプリケーションがハンドルを呼び出すことによって取得したデバイス コンテキストを削除する必要があります[cwnd::getdc](../../mfc/reference/cwnd-class.md#getdc)です。 代わりに、呼び出す必要があります[cwnd::releasedc](../../mfc/reference/cwnd-class.md#releasedc)をデバイス コンテキストを解放します。 [CClientDC](../../mfc/reference/cclientdc-class.md)と[CWindowDC](../../mfc/reference/cwindowdc-class.md)この機能をラップするクラスが用意されています。  
+ An application must not delete a device context whose handle was obtained by calling [CWnd::GetDC](../../mfc/reference/cwnd-class.md#getdc). Instead, it must call [CWnd::ReleaseDC](../../mfc/reference/cwnd-class.md#releasedc) to free the device context. The [CClientDC](../../mfc/reference/cclientdc-class.md) and [CWindowDC](../../mfc/reference/cwindowdc-class.md) classes are provided to wrap this functionality.  
   
- `DeleteDC`で作成されたデバイス コンテキストを削除する関数が使用される通常[フォーマット](#createdc)、 [CreateIC](#createic)、または[CreateCompatibleDC](#createcompatibledc)です。  
+ The `DeleteDC` function is generally used to delete device contexts created with [CreateDC](#createdc), [CreateIC](#createic), or [CreateCompatibleDC](#createcompatibledc).  
   
-### <a name="example"></a>例  
-  例を参照して[CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc)です。  
+### <a name="example"></a>Example  
+  See the example for [CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc).  
   
-##  <a name="deletetempmap"></a>CDC::DeleteTempMap  
- によって自動的に呼び出されます、`CWinApp`アイドル処理ハンドラー`DeleteTempMap`一時的な削除`CDC`によって作成されたオブジェクト`FromHandle`がデバイス コンテキスト ハンドルを破棄しません ( `hDC`s) に一時的に関連付けられている、`CDC`オブジェクト。  
+##  <a name="deletetempmap"></a>  CDC::DeleteTempMap  
+ Called automatically by the `CWinApp` idle-time handler, `DeleteTempMap` deletes any temporary `CDC` objects created by `FromHandle`, but does not destroy the device context handles ( `hDC`s) temporarily associated with the `CDC` objects.  
   
 ```  
 static void PASCAL DeleteTempMap();
 ```  
   
-##  <a name="detach"></a>CDC::Detach  
- デタッチするには、この関数を呼び出す`m_hDC`(出力デバイス コンテキスト) から、`CDC`オブジェクトし、両方を設定`m_hDC`と`m_hAttribDC`に**NULL**です。  
+##  <a name="detach"></a>  CDC::Detach  
+ Call this function to detach `m_hDC` (the output device context) from the `CDC` object and set both `m_hDC` and `m_hAttribDC` to **NULL**.  
   
 ```  
 HDC Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- Windows デバイス コンテキスト。  
+### <a name="return-value"></a>Return Value  
+ A Windows device context.  
   
-##  <a name="dptohimetric"></a>CDC::DPtoHIMETRIC  
- 付与すると、この関数を使用して**HIMETRIC**のサイズ (ピクセル) に変換する OLE を**HIMETRIC**です。  
+##  <a name="dptohimetric"></a>  CDC::DPtoHIMETRIC  
+ Use this function when you give **HIMETRIC** sizes to OLE, converting pixels to **HIMETRIC**.  
   
 ```  
 void DPtoHIMETRIC(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpSize`  
- 指す、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造または[CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+ Points to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure or [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- かどうか、デバイス コンテキスト オブジェクトのマッピング モードは`MM_LOENGLISH`、 `MM_HIENGLISH`、 `MM_LOMETRIC`、または`MM_HIMETRIC`変換は、物理インチのピクセルの数に基づいて、します。 マッピング モードは、他の非強制モードのいずれかのかどうか (例: `MM_TEXT`)、変換は、論理インチ ピクセルの数に基づいて、します。  
+### <a name="remarks"></a>Remarks  
+ If the mapping mode of the device context object is `MM_LOENGLISH`, `MM_HIENGLISH`, `MM_LOMETRIC`, or `MM_HIMETRIC`, then the conversion is based on the number of pixels in the physical inch. If the mapping mode is one of the other non-constrained modes (e.g., `MM_TEXT`), then the conversion is based on the number of pixels in the logical inch.  
   
-##  <a name="dptolp"></a>CDC::DPtoLP  
- デバイス単位を論理単位に変換します。  
+##  <a name="dptolp"></a>  CDC::DPtoLP  
+ Converts device units into logical units.  
   
 ```  
 void DPtoLP(
@@ -1141,24 +1332,24 @@ void DPtoLP(LPRECT lpRect) const;
 void DPtoLP(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)構造体または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)オブジェクト。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) structures or [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) objects.  
   
  `nCount`  
- 配列内の地点の数。  
+ The number of points in the array.  
   
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクト。 このパラメーターは論理点デバイス ポイントから 1 つの四角形に変換する簡単な例で使用されます。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object. This parameter is used for the simple case of converting one rectangle from device points to logical points.  
   
  `lpSize`  
- 指す、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造または[CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+ Points to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure or [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 関数は、各ポイントの座標や、デバイスの座標系から GDI の論理座標系に変換、サイズのディメンションにマップされます。 変換は、現在のマップ モードと、元のドメインと、デバイスのウィンドウおよびビューポートのエクステントの設定によって異なります。  
+### <a name="remarks"></a>Remarks  
+ The function maps the coordinates of each point, or dimension of a size, from the device coordinate system into GDI's logical coordinate system. The conversion depends on the current mapping mode and the settings of the origins and extents for the device's window and viewport.  
   
-##  <a name="draw3drect"></a>CDC::Draw3dRect  
- 3 次元の四角形を描画するには、このメンバー関数を呼び出します。  
+##  <a name="draw3drect"></a>  CDC::Draw3dRect  
+ Call this member function to draw a three-dimensional rectangle.  
   
 ```  
 void Draw3dRect(
@@ -1176,36 +1367,36 @@ void Draw3dRect(
     COLORREF clrBottomRight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- (論理単位で) に外接する四角形を指定します。 ポインターを渡すことができます、 [RECT](../../mfc/reference/rect-structure1.md)構造体、または[CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Specifies the bounding rectangle (in logical units). You can pass either a pointer to a [RECT](../../mfc/reference/rect-structure1.md) structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  *clrTopLeft*  
- 3 次元の四角形の上と左の辺の色を指定します。  
+ Specifies the color of the top and left sides of the three-dimensional rectangle.  
   
  `clrBottomRight`  
- 3 次元の四角形の左右の下部にある色を指定します。  
+ Specifies the color of the bottom and right sides of the three-dimensional rectangle.  
   
  *x*  
- 論理で 3 次元の四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the three-dimensional rectangle.  
   
  *y*  
- 論理で 3 次元の四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the three-dimensional rectangle.  
   
  cx  
- 3 次元の四角形の幅を指定します。  
+ Specifies the width of the three-dimensional rectangle.  
   
  cy  
- 3 次元の四角形の高さを指定します。  
+ Specifies the height of the three-dimensional rectangle.  
   
-### <a name="remarks"></a>コメント  
- によって指定された色の上と左方向に描画する四角形*clrTopLeft*と、下部と右辺で指定された色で`clrBottomRight`です。  
+### <a name="remarks"></a>Remarks  
+ The rectangle will be drawn with the top and left sides in the color specified by *clrTopLeft* and the bottom and right sides in the color specified by `clrBottomRight`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 33](../../mfc/codesnippet/cpp/cdc-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#33](../../mfc/codesnippet/cpp/cdc-class_5.cpp)]  
   
-##  <a name="drawdragrect"></a>CDC::DrawDragRect  
- このメンバー関数をドラッグ四角形を再描画するには、繰り返しを呼び出します。  
+##  <a name="drawdragrect"></a>  CDC::DrawDragRect  
+ Call this member function repeatedly to redraw a drag rectangle.  
   
 ```  
 void DrawDragRect(
@@ -1217,32 +1408,32 @@ void DrawDragRect(
     CBrush* pBrushLast = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)四角形の論理座標を指定するオブジェクト: この場合、再描画される四角形の末尾の位置。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object that specifies the logical coordinates of a rectangle — in this case, the end position of the rectangle being redrawn.  
   
  `size`  
- 外側の境界線の四角形の内側の境界線 (つまり、境界線の太さ) の左上隅を左上隅から変位を指定します。  
+ Specifies the displacement from the top-left corner of the outer border to the top-left corner of the inner border (that is, the thickness of the border) of a rectangle.  
   
  `lpRectLast`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)四角形の位置の論理座標を指定するオブジェクト: この場合、再描画される四角形の元の位置。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object that specifies the logical coordinates of the position of a rectangle — in this case, the original position of the rectangle being redrawn.  
   
  *sizeLast*  
- 外側の境界線の再描画される元の四角形の内側の境界線 (つまり、境界線の太さ) の左上隅を左上隅から変位を指定します。  
+ Specifies the displacement from the top-left corner of the outer border to the top-left corner of the inner border (that is, the thickness of the border) of the original rectangle being redrawn.  
   
  `pBrush`  
- ブラシ オブジェクトへのポインター。 設定**NULL**既定ハーフトーン ブラシを使用します。  
+ Pointer to a brush object. Set to **NULL** to use the default halftone brush.  
   
  *pBrushLast*  
- 最後に使用されるブラシ オブジェクトへのポインター。 設定**NULL**既定ハーフトーン ブラシを使用します。  
+ Pointer to the last brush object used. Set to **NULL** to use the default halftone brush.  
   
-### <a name="remarks"></a>コメント  
- 視覚的フィードバックを提供するためにマウスの位置をサンプリングしているため、ループ内で呼び出します。 呼び出すと`DrawDragRect`、前の四角形が消去され、新しいものを描画します。 たとえば、ユーザーとして、画面上で四角形をドラッグ`DrawDragRect`が元の四角形を消去され、新しい位置に新しいパスワードを再描画します。 既定では、`DrawDragRect`ちらつきを滑らかに移動する四角形の外観を作成するハーフトーン ブラシを使用して、四角形を描画します。  
+### <a name="remarks"></a>Remarks  
+ Call it in a loop as you sample mouse position, in order to give visual feedback. When you call `DrawDragRect`, the previous rectangle is erased and a new one is drawn. For example, as the user drags a rectangle across the screen, `DrawDragRect` will erase the original rectangle and redraw a new one in its new position. By default, `DrawDragRect` draws the rectangle by using a halftone brush to eliminate flicker and to create the appearance of a smoothly moving rectangle.  
   
- 初めて呼び出す`DrawDragRect`、`lpRectLast`パラメーターでなければなりません**NULL**です。  
+ The first time you call `DrawDragRect`, the `lpRectLast` parameter should be **NULL**.  
   
-##  <a name="drawedge"></a>CDC::DrawEdge  
- 指定された種類とスタイルの四角形のエッジに描画するには、このメンバー関数を呼び出します。  
+##  <a name="drawedge"></a>  CDC::DrawEdge  
+ Call this member function to draw the edges of a rectangle of the specified type and style.  
   
 ```  
 BOOL DrawEdge(
@@ -1251,21 +1442,21 @@ BOOL DrawEdge(
     UINT nFlags);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- ポインター、 **RECT**四角形の論理座標を格納する構造体。  
+ A pointer to a **RECT** structure that contains the logical coordinates of the rectangle.  
   
  *nEdge*  
- 描画する内側と外側のエッジの種類を指定します。 このパラメーターは、1 つの罫線の内側フラグと外側の境界線の 1 つのフラグの組み合わせを指定する必要があります。 参照してください[DrawEdge](http://msdn.microsoft.com/library/windows/desktop/dd162477)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]パラメーターの型のテーブルにします。  
+ Specifies the type of inner and outer edge to draw. This parameter must be a combination of one inner-border flag and one outer-border flag. See [DrawEdge](http://msdn.microsoft.com/library/windows/desktop/dd162477) in the Windows SDK for a table of the parameter's types.  
   
  `nFlags`  
- 描画する境界線の種類を指定するフラグ。 参照してください`DrawEdge`で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]パラメーターの値のテーブルにします。 対角線、 **BF_RECT**フラグは四角形のパラメーターで範囲指定したベクトルの終了点を指定します。  
+ The flags that specify the type of border to be drawn. See `DrawEdge` in the Windows SDK for a table of the parameter's values. For diagonal lines, the **BF_RECT** flags specify the end point of the vector bounded by the rectangle parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-##  <a name="drawescape"></a>CDC::DrawEscape  
- 描画グラフィックス デバイス インターフェイス (GDI) を通じて直接使用されないビデオ ディスプレイの機能にアクセスします。  
+##  <a name="drawescape"></a>  CDC::DrawEscape  
+ Accesses drawing capabilities of a video display that are not directly available through the graphics device interface (GDI).  
   
 ```  
 int DrawEscape(
@@ -1274,41 +1465,41 @@ int DrawEscape(
     LPCSTR lpszInputData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nEscape`  
- 実行するエスケープ関数を指定します。  
+ Specifies the escape function to be performed.  
   
  `nInputSize`  
- によって示されるデータのバイト数を指定します、`lpszInputData`パラメーター。  
+ Specifies the number of bytes of data pointed to by the `lpszInputData` parameter.  
   
  `lpszInputData`  
- 指定したエスケープに必要な入力構造へのポインター。  
+ Points to the input structure required for the specified escape.  
   
-### <a name="return-value"></a>戻り値  
- 関数の結果を指定します。 成功すると、以外の場合は 0 より大きい、**関数**描画エスケープされるチェックを実装のみの場合は 0、エスケープは実装されていません。 または、ゼロより小さい場合はエラーが発生しました。  
+### <a name="return-value"></a>Return Value  
+ Specifies the outcome of the function. Greater than zero if successful, except for the **QUERYESCSUPPORT** draw escape, which checks for implementation only; or zero if the escape is not implemented; or less than zero if an error occurred.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを呼び出すと`DrawEscape`で識別されるデータ`nInputSize`と`lpszInputData`指定ディスプレイ ドライバーに直接渡されます。  
+### <a name="remarks"></a>Remarks  
+ When an application calls `DrawEscape`, the data identified by `nInputSize` and `lpszInputData` is passed directly to the specified display driver.  
   
-##  <a name="drawfocusrect"></a>CDC::DrawFocusRect  
- 四角形にフォーカスがあることを示すために使用されるスタイルの四角形を描画します。  
+##  <a name="drawfocusrect"></a>  CDC::DrawFocusRect  
+ Draws a rectangle in the style used to indicate that the rectangle has the focus.  
   
 ```  
 void DrawFocusRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造体、または[CRect](../../atl-mfc-shared/reference/crect-class.md)描画する四角形の論理座標を指定するオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object that specifies the logical coordinates of the rectangle to be drawn.  
   
-### <a name="remarks"></a>コメント  
- これは、ブール型 XOR 関数であるために、同じ四角形をもう一度この関数を呼び出すと、四角形が表示から削除します。 この関数で描画する四角形をスクロールすることはできません。 この関数によって描画された四角形を含む領域をスクロールするには、まず`DrawFocusRect`四角形を表示から削除するをクリックし、領域にスクロールし、呼び出す`DrawFocusRect`新しい位置に四角形を描画するには、もう一度です。  
+### <a name="remarks"></a>Remarks  
+ Since this is a Boolean XOR function, calling this function a second time with the same rectangle removes the rectangle from the display. The rectangle drawn by this function cannot be scrolled. To scroll an area containing a rectangle drawn by this function, first call `DrawFocusRect` to remove the rectangle from the display, then scroll the area, and then call `DrawFocusRect` again to draw the rectangle in the new position.  
   
 > [!CAUTION]
-> `DrawFocusRect`のみ動作`MM_TEXT`モード。 他のモードでこの関数がフォーカスされた四角形を正しく描画しないが、エラー値を返すことはできません。  
+> `DrawFocusRect` works only in `MM_TEXT` mode. In other modes, this function does not draw the focus rectangle correctly, but it does not return error values.  
   
-##  <a name="drawframecontrol"></a>CDC::DrawFrameControl  
- 指定された種類とスタイルのフレーム コントロールを描画するには、このメンバー関数を呼び出します。  
+##  <a name="drawframecontrol"></a>  CDC::DrawFrameControl  
+ Call this member function to draw a frame control of the specified type and style.  
   
 ```  
 BOOL DrawFrameControl(
@@ -1317,77 +1508,77 @@ BOOL DrawFrameControl(
     UINT nState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- ポインター、 **RECT**四角形の論理座標を格納する構造体。  
+ A pointer to a **RECT** structure that contains the logical coordinates of the rectangle.  
   
  `nType`  
- 描画するフレーム コントロールの種類を指定します。 参照してください、 *uType*パラメーター [DrawFrameControl](http://msdn.microsoft.com/library/windows/desktop/dd162480)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]このパラメーターの使用可能な値の一覧についてはします。  
+ Specifies the type of frame control to draw. See the *uType* parameter in [DrawFrameControl](http://msdn.microsoft.com/library/windows/desktop/dd162480) in the Windows SDK for a list of this parameter's possible values.  
   
  `nState`  
- フレーム コントロールの初期状態を指定します。 指定された値の 1 つ以上にすることができます、 *uState*パラメーター`DrawFrameControl`で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 使用して、`nState`値**DFCS_ADJUSTRECT**プッシュ ボタンの周囲の端を除外する外接する四角形を調整します。  
+ Specifies the initial state of the frame control. Can be one or more of the values described for the *uState* parameter in `DrawFrameControl` in the Windows SDK. Use the `nState` value **DFCS_ADJUSTRECT** to adjust the bounding rectangle to exclude the surrounding edge of the push button.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- いくつかの場合、`nState`によって異なります、`nType`パラメーター。 次の一覧は、4 つの間のリレーションシップを示しています`nType`値および`nState`:。  
+### <a name="remarks"></a>Remarks  
+ In several cases, `nState` depends on the `nType` parameter. The following list shows the relationship between the four `nType` values and `nState`:  
   
 - **DFC_BUTTON**  
   
-    - **DFCS_BUTTON3STATE** 3 つの状態 ボタン  
+    - **DFCS_BUTTON3STATE** Three-state button  
   
-    - **DFCS_BUTTONCHECK**  チェック ボックス  
+    - **DFCS_BUTTONCHECK** Check box  
   
-    - **DFCS_BUTTONPUSH**プッシュ ボタン  
+    - **DFCS_BUTTONPUSH** Push button  
   
-    - **DFCS_BUTTONRADIO**ラジオ ボタン  
+    - **DFCS_BUTTONRADIO** Radio button  
   
-    - **DFCS_BUTTONRADIOIMAGE**ラジオ ボタンのイメージ (非正方形には、イメージが必要があります)  
+    - **DFCS_BUTTONRADIOIMAGE** Image for radio button (nonsquare needs image)  
   
-    - **DFCS_BUTTONRADIOMASK**ラジオ ボタンのマスク (非正方形には、マスクが必要があります)  
+    - **DFCS_BUTTONRADIOMASK** Mask for radio button (nonsquare needs mask)  
   
 - **DFC_CAPTION**  
   
-    - **DFCS_CAPTIONCLOSE** [閉じる] ボタン  
+    - **DFCS_CAPTIONCLOSE** Close button  
   
-    - **DFCS_CAPTIONHELP** [ヘルプ] ボタン  
+    - **DFCS_CAPTIONHELP** Help button  
   
-    - **DFCS_CAPTIONMAX**最大化ボタン  
+    - **DFCS_CAPTIONMAX** Maximize button  
   
-    - **DFCS_CAPTIONMIN**最小化ボタン  
+    - **DFCS_CAPTIONMIN** Minimize button  
   
-    - **DFCS_CAPTIONRESTORE** [復元] ボタン  
+    - **DFCS_CAPTIONRESTORE** Restore button  
   
 - **DFC_MENU**  
   
-    - **DFCS_MENUARROW**サブメニューの矢印  
+    - **DFCS_MENUARROW** Submenu arrow  
   
-    - **DFCS_MENUBULLET**行頭文字  
+    - **DFCS_MENUBULLET** Bullet  
   
-    - **DFCS_MENUCHECK**チェック マーク  
+    - **DFCS_MENUCHECK** Check mark  
   
 - **DFC_SCROLL**  
   
-    - **DFCS_SCROLLCOMBOBOX**コンボ ボックスのスクロール バー  
+    - **DFCS_SCROLLCOMBOBOX** Combo box scroll bar  
   
-    - **DFCS_SCROLLDOWN**下向きのスクロール バーの矢印  
+    - **DFCS_SCROLLDOWN** Down arrow of scroll bar  
   
-    - **DFCS_SCROLLLEFT**スクロール バーの左側の矢印  
+    - **DFCS_SCROLLLEFT** Left arrow of scroll bar  
   
-    - **DFCS_SCROLLRIGHT**スクロール バーの右矢印  
+    - **DFCS_SCROLLRIGHT** Right arrow of scroll bar  
   
-    - **DFCS_SCROLLSIZEGRIP**ウィンドウの右下隅にあるサイズ変更グリップ  
+    - **DFCS_SCROLLSIZEGRIP** Size grip in bottom-right corner of window  
   
-    - **DFCS_SCROLLUP**スクロール バーの上向きの矢印  
+    - **DFCS_SCROLLUP** Up arrow of scroll bar  
   
-### <a name="example"></a>例  
- このコードは、ウィンドウの右下隅にあるサイズ変更グリップを描画します。 適切である、`OnPaint`スタイルを持たず、通常、サイズ変更グリップを付けます可能性があります (ステータス バー) のようなその他のコントロールが含まれていない ダイアログ ボックスのハンドラー。  
+### <a name="example"></a>Example  
+ This code draws the size gripper in the bottom-right corner of your window. It's appropriate for the `OnPaint` handler of a dialog box, which has no styles and normally doesn't contain other controls (like a status bar) that may give it a size gripper.  
   
- [!code-cpp[NVC_MFCDocView #34](../../mfc/codesnippet/cpp/cdc-class_6.cpp)]  
+ [!code-cpp[NVC_MFCDocView#34](../../mfc/codesnippet/cpp/cdc-class_6.cpp)]  
   
-##  <a name="drawicon"></a>CDC::DrawIcon  
- 現在によって表されるデバイスのアイコンを描画`CDC`オブジェクト。  
+##  <a name="drawicon"></a>  CDC::DrawIcon  
+ Draws an icon on the device represented by the current `CDC` object.  
   
 ```  
 BOOL DrawIcon(
@@ -1401,35 +1592,35 @@ BOOL DrawIcon(
     HICON hIcon);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理でアイコンの左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the icon.  
   
  *y*  
- 論理でアイコンの左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the icon.  
   
  `hIcon`  
- 描画するアイコンのハンドルを識別します。  
+ Identifies the handle of the icon to be drawn.  
   
  `point`  
- アイコンの左上隅の論理 x 座標と y 座標を指定します。 渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the logical x- and y-coordinates of the upper-left corner of the icon. You can pass a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 関数が正常に完了した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function completed successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 関数で指定された場所にあるアイコンの左上隅に配置*x*と*y*です。 場所は、デバイス コンテキストの現在のマップ モードの対象になります。  
+### <a name="remarks"></a>Remarks  
+ The function places the icon's upper-left corner at the location specified by *x* and *y*. The location is subject to the current mapping mode of the device context.  
   
- アイコン リソース必要がありますが既に読み込まれている関数を使用して`CWinApp::LoadIcon`、 `CWinApp::LoadStandardIcon`、または`CWinApp::LoadOEMIcon`です。 `MM_TEXT`マッピング モードは、この関数を使用する前に選択する必要があります。  
+ The icon resource must have been previously loaded by using the functions `CWinApp::LoadIcon`, `CWinApp::LoadStandardIcon`, or `CWinApp::LoadOEMIcon`. The `MM_TEXT` mapping mode must be selected prior to using this function.  
   
-### <a name="example"></a>例  
-  例を参照して[CWnd::IsIconic](../../mfc/reference/cwnd-class.md#isiconic)です。  
+### <a name="example"></a>Example  
+  See the example for [CWnd::IsIconic](../../mfc/reference/cwnd-class.md#isiconic).  
   
-##  <a name="drawstate"></a>CDC::DrawState  
- イメージを表示し、無効ななどの状態または既定の状態を示す視覚効果を適用するには、このメンバー関数を呼び出します。  
+##  <a name="drawstate"></a>  CDC::DrawState  
+ Call this member function to display an image and apply a visual effect to indicate a state, such as a disabled or default state.  
   
 > [!NOTE]
->  すべての`nFlag`を除く状態**DSS_NORMAL**、視覚効果が適用される前に、イメージは白黒に変換されます。  
+>  For all `nFlag` states except **DSS_NORMAL**, the image is converted to monochrome before the visual effect is applied.  
   
 ```  
 BOOL DrawState(
@@ -1502,51 +1693,51 @@ BOOL DrawState(
     CBrush* pBrush = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pt`  
- イメージの場所を指定します。  
+ Specifies the location of the image.  
   
  `size`  
- イメージのサイズを指定します。  
+ Specifies the size of the image.  
   
  `hBitmap`  
- ビットマップへのハンドル。  
+ A handle to a bitmap.  
   
  `nFlags`  
- イメージの種類と状態を指定するフラグ。 参照してください[DrawState](http://msdn.microsoft.com/library/windows/desktop/dd162496)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] 、可能性がある`nFlags`の種類および状態です。  
+ Flags that specify the image type and state. See [DrawState](http://msdn.microsoft.com/library/windows/desktop/dd162496) in the Windows SDK for the possible `nFlags` types and states.  
   
  `hBrush`  
- ブラシへのハンドル。  
+ A handle to a brush.  
   
  `pBitmap`  
- CBitmap オブジェクトへのポインター。  
+ A pointer to a CBitmap object.  
   
  `pBrush`  
- CBrush オブジェクトへのポインター。  
+ A pointer to a CBrush object.  
   
  `hIcon`  
- アイコンへのハンドル。  
+ A handle to an icon.  
   
  `lpszText`  
- テキストへのポインター。  
+ A pointer to text.  
   
  *bPrefixText*  
- アクセラレータのアクセラレータ キーを含む可能性のあるテキスト。 `lData`パラメーターは、文字列のアドレスを指定し、`nTextLen`パラメーターは長さを指定します。 場合`nTextLen`が 0 の場合、文字列は null で終わると見なされます。  
+ Text that may contain an accelerator mnemonic. The `lData` parameter specifies the address of the string, and the `nTextLen` parameter specifies the length. If `nTextLen` is 0, the string is assumed to be null-terminated.  
   
  `nTextLen`  
- によって示されるテキスト文字列の長さ`lpszText`です。 場合`nTextLen`が 0 の場合、文字列は null で終わると見なされます。  
+ Length of the text string pointed to by `lpszText`. If `nTextLen` is 0, the string is assumed to be null-terminated.  
   
  *lpDrawProc*  
- イメージを表示するために使用するコールバック関数へのポインター。 イメージを入力する場合は、このパラメーターは必須`nFlags`は**DST_COMPLEX**です。 省略可能であり**NULL**画像の種類が場合**DST_TEXT**です。 他のすべての種類のイメージでは、このパラメーターは無視されます。 コールバック関数の詳細については、次を参照してください。、 [DrawStateProc](http://msdn.microsoft.com/library/windows/desktop/dd162497)で機能、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ A pointer to a callback function used to render an image. This parameter is required if the image type in `nFlags` is **DST_COMPLEX**. It is optional and can be **NULL** if the image type is **DST_TEXT**. For all other image types, this parameter is ignored. For more information about the callback function, see the [DrawStateProc](http://msdn.microsoft.com/library/windows/desktop/dd162497) function in the Windows SDK.  
   
  `lData`  
- イメージに関する情報を指定します。 このパラメーターの意味は、イメージの種類によって異なります。  
+ Specifies information about the image. The meaning of this parameter depends on the image type.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-##  <a name="drawtext"></a>CDC::DrawText  
- 指定した四角形内のテキストの書式を設定するには、このメンバー関数を呼び出します。 追加の書式設定オプションを指定する[には](#drawtextex)します。  
+##  <a name="drawtext"></a>  CDC::DrawText  
+ Call this member function to format text in the given rectangle. To specify additional formatting options, use [CDC::DrawTextEx](#drawtextex).  
   
 ```  
 virtual int DrawText(
@@ -1562,43 +1753,43 @@ int DrawText(
     UINT nFormat);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 描画する文字列へのポインター。 場合`nCount`-1 で、null で終わる文字列にする必要があります。  
+ Points to the string to be drawn. If `nCount` is -1, the string must be null-terminated.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`が-1、 `lpszString` null で終わる文字列への long ポインターであると見なされますと`DrawText`文字数を自動的に計算します。  
+ Specifies the number of chars in the string. If `nCount` is -1, then `lpszString` is assumed to be a long pointer to a null-terminated string and `DrawText` computes the character count automatically.  
   
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md) (論理座標) では、テキストの書式設定の四角形を格納しているオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object that contains the rectangle (in logical coordinates) in which the text is to be formatted.  
   
  `str`  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)を描画する指定された文字を含むオブジェクト。  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that contains the specified characters to be drawn.  
   
  `nFormat`  
- テキストの書式設定の方法を指定します。 指定された値の任意の組み合わせであることができます、`uFormat`パラメーター [DrawText](http://msdn.microsoft.com/library/windows/desktop/dd162498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 (結合のビットごとの OR 演算子を使用)。  
+ Specifies the method of formatting the text. It can be any combination of the values described for the `uFormat` parameter in [DrawText](http://msdn.microsoft.com/library/windows/desktop/dd162498) in the Windows SDK. (combine using the bitwise OR operator):  
   
 > [!NOTE]
->  いくつか`uFormat`フラグの組み合わせには、渡された文字列を変更する可能性があります。 使用して**DT_MODIFYSTRING**いずれかで**DT_END_ELLIPSIS**または**DT_PATH_ELLIPSIS**場合がありますを変更する文字列ではアサーションを原因と、`CString`をオーバーライドします。 値`DT_CALCRECT`、 `DT_EXTERNALLEADING`、 **DT_INTERNAL**、 `DT_NOCLIP`、および`DT_NOPREFIX`では使用できません、`DT_TABSTOP`値。  
+>  Some `uFormat` flag combinations can cause the passed string to be modified. Using **DT_MODIFYSTRING** with either **DT_END_ELLIPSIS** or **DT_PATH_ELLIPSIS** may cause the string to be modified, causing an assertion in the `CString` override. The values `DT_CALCRECT`, `DT_EXTERNALLEADING`, **DT_INTERNAL**, `DT_NOCLIP`, and `DT_NOPREFIX` cannot be used with the `DT_TABSTOP` value.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は、テキストの高さ。  
+### <a name="return-value"></a>Return Value  
+ The height of the text if the function is successful.  
   
-### <a name="remarks"></a>コメント  
- 左、右にテキストの配置に適切なスペース、または指定された四角形の中心にタブを展開し、テキストを指定した四角形内に収まる行に分割することによって、テキストを書式設定します。 書式の種類がで指定された`nFormat`です。  
+### <a name="remarks"></a>Remarks  
+ It formats text by expanding tabs into appropriate spaces, aligning text to the left, right, or center of the given rectangle, and breaking text into lines that fit within the given rectangle. The type of formatting is specified by `nFormat`.  
   
- このメンバー関数では、デバイス コンテキストの選択したフォント、テキストの色と背景色を使用して、テキストを描画します。 しない限り、`DT_NOCLIP`形式を使用すると、`DrawText`テキストが指定された四角形の外側に表示されないように、テキストにクリップします。 しない限り、複数の行があると見なされますすべての書式設定、`DT_SINGLELINE`形式を指定します。  
+ This member function uses the device context's selected font, text color, and background color to draw the text. Unless the `DT_NOCLIP` format is used, `DrawText` clips the text so that the text does not appear outside the given rectangle. All formatting is assumed to have multiple lines unless the `DT_SINGLELINE` format is given.  
   
- 指定した四角形には、選択したフォントが大きすぎる場合、`DrawText`小さいフォントの代わりにメンバー関数は行われません。  
+ If the selected font is too large for the specified rectangle, the `DrawText` member function does not attempt to substitute a smaller font.  
   
- 場合、`DT_CALCRECT`フラグを指定すると、によって指定された四角形`lpRect`幅とテキストを描画するために必要な高さを反映するように更新されます。  
+ If the `DT_CALCRECT` flag is specified, the rectangle specified by `lpRect` will be updated to reflect the width and height needed to draw the text.  
   
- 場合、**ため**テキスト配置フラグが設定されている (を参照してください[CDC::SetTextAlign](#settextalign))、`DrawText`四角形の左側ではなく、現在の位置で始まるテキストが表示されます。 `DrawText`テキストは折り返されませんときに、**ため**フラグが設定されている (つまり、`DT_WORDBREAK`フラグには影響はありません)。  
+ If the **TA_UPDATECP** text-alignment flag has been set (see [CDC::SetTextAlign](#settextalign)), `DrawText` will display text starting at the current position, rather than at the left of the given rectangle. `DrawText` will not wrap text when the **TA_UPDATECP** flag has been set (that is, the `DT_WORDBREAK` flag will have no effect).  
   
- テキストの色を設定することがあります[CDC::SetTextColor](#settextcolor)です。  
+ The text color may be set by [CDC::SetTextColor](#settextcolor).  
   
-##  <a name="drawtextex"></a>には  
- 指定した四角形内のテキストの書式を設定します。  
+##  <a name="drawtextex"></a>  CDC::DrawTextEx  
+ Formats text in the given rectangle.  
   
 ```  
 virtual int DrawTextEx(
@@ -1616,35 +1807,35 @@ int DrawTextEx(
     LPDRAWTEXTPARAMS lpDTParams);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 描画する文字列へのポインター。 場合`nCount`-1 で、文字列は null 終端である必要があります。  
+ Points to the string to be drawn. If `nCount` is -1, the string must be null terminated.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`が-1、 `lpszString` null で終わる文字列への long ポインターであると見なされますと`DrawText`文字数を自動的に計算します。  
+ Specifies the number of chars in the string. If `nCount` is -1, then `lpszString` is assumed to be a long pointer to a null-terminated string and `DrawText` computes the character count automatically.  
   
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md) (論理座標) では、テキストの書式設定の四角形を格納しているオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object that contains the rectangle (in logical coordinates) in which the text is to be formatted.  
   
  `str`  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)を描画する指定された文字を含むオブジェクト。  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that contains the specified characters to be drawn.  
   
  `nFormat`  
- テキストの書式設定の方法を指定します。 指定された値の任意の組み合わせであることができます、`uFormat`パラメーター [DrawText](http://msdn.microsoft.com/library/windows/desktop/dd162498)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 (結合演算を使用して`OR`演算子)。  
+ Specifies the method of formatting the text. It can be any combination of the values described for the `uFormat` parameter in [DrawText](http://msdn.microsoft.com/library/windows/desktop/dd162498) in the Windows SDK. (Combine using the bitwise `OR` operator):  
   
 > [!NOTE]
->  いくつか`uFormat`フラグの組み合わせには、渡された文字列を変更する可能性があります。 使用して**DT_MODIFYSTRING**いずれかで**DT_END_ELLIPSIS**または**DT_PATH_ELLIPSIS**場合がありますを変更する文字列ではアサーションを原因と、`CString`をオーバーライドします。 値`DT_CALCRECT`、 `DT_EXTERNALLEADING`、 **DT_INTERNAL**、 `DT_NOCLIP`、および`DT_NOPREFIX`では使用できません、`DT_TABSTOP`値。  
+>  Some `uFormat` flag combinations can cause the passed string to be modified. Using **DT_MODIFYSTRING** with either **DT_END_ELLIPSIS** or **DT_PATH_ELLIPSIS** may cause the string to be modified, causing an assertion in the `CString` override. The values `DT_CALCRECT`, `DT_EXTERNALLEADING`, **DT_INTERNAL**, `DT_NOCLIP`, and `DT_NOPREFIX` cannot be used with the `DT_TABSTOP` value.  
   
  `lpDTParams`  
- ポインター、 [DRAWTEXTPARAMS](http://msdn.microsoft.com/library/windows/desktop/dd162500)オプションの追加の書式設定を指定します。 このパラメーターを指定できます**NULL**です。  
+ Pointer to a [DRAWTEXTPARAMS](http://msdn.microsoft.com/library/windows/desktop/dd162500) structure that specifies additional formatting options. This parameter can be **NULL**.  
   
-### <a name="remarks"></a>コメント  
- 左、右にテキストの配置に適切なスペース、または指定された四角形の中心にタブを展開し、テキストを指定した四角形内に収まる行に分割することによって、テキストを書式設定します。 書式の種類がで指定された`nFormat`と`lpDTParams`です。 詳細については、次を参照してください。 [CDC::DrawText](#drawtext)と[DrawTextEx](http://msdn.microsoft.com/library/windows/desktop/dd162499)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ It formats text by expanding tabs into appropriate spaces, aligning text to the left, right, or center of the given rectangle, and breaking text into lines that fit within the given rectangle. The type of formatting is specified by `nFormat` and `lpDTParams`. For more information, see [CDC::DrawText](#drawtext) and [DrawTextEx](http://msdn.microsoft.com/library/windows/desktop/dd162499) in the Windows SDK.  
   
- テキストの色を設定することがあります[CDC::SetTextColor](#settextcolor)です。  
+ The text color may be set by [CDC::SetTextColor](#settextcolor).  
   
-##  <a name="ellipse"></a>CDC::Ellipse  
- 楕円を描きます。  
+##  <a name="ellipse"></a>  CDC::Ellipse  
+ Draws an ellipse.  
   
 ```  
 BOOL Ellipse(
@@ -1656,85 +1847,85 @@ BOOL Ellipse(
 BOOL Ellipse(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で楕円の外接する四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the ellipse's bounding rectangle.  
   
  `y1`  
- 論理で楕円の外接する四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the ellipse's bounding rectangle.  
   
  `x2`  
- 楕円の外接する四角形の右下隅の x の論理座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the ellipse's bounding rectangle.  
   
  `y2`  
- 楕円の外接する四角形の右下隅の y の論理座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the ellipse's bounding rectangle.  
   
  `lpRect`  
- 楕円の外接する四角形を指定します。 渡すことも、 [CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Specifies the ellipse's bounding rectangle. You can also pass a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 楕円の中心で指定された外接する四角形の中心`x1`、 `y1`、 `x2`、および`y2`、または`lpRect`です。 現在のペンを使用して省略記号ボタンが描画され、その内部は、現在のブラシで塗りつぶされます。  
+### <a name="remarks"></a>Remarks  
+ The center of the ellipse is the center of the bounding rectangle specified by `x1`, `y1`, `x2`, and `y2`, or `lpRect`. The ellipse is drawn with the current pen, and its interior is filled with the current brush.  
   
- この関数で描画する図形、まで拡張は含まれません、右下隅の座標。 つまり、図の高さが`y2`  -  `y1` 、図の幅は`x2`  - `x1`です。  
+ The figure drawn by this function extends up to, but does not include, the right and bottom coordinates. This means that the height of the figure is `y2` - `y1` and the width of the figure is `x2` - `x1`.  
   
- 幅または外接する四角形の高さのいずれかが 0 の場合、省略記号は描画されません。  
+ If either the width or the height of the bounding rectangle is 0, no ellipse is drawn.  
   
-##  <a name="enddoc"></a>CDC::EndDoc  
- 呼び出しによって開始された印刷ジョブの終了、 [StartDoc](#startdoc)メンバー関数。  
+##  <a name="enddoc"></a>  CDC::EndDoc  
+ Ends a print job started by a call to the [StartDoc](#startdoc) member function.  
   
 ```  
 int EndDoc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 大きいか等しい場合は、関数が成功すると、0 または負の値を使用している場合、エラーが発生しました。  
+### <a name="return-value"></a>Return Value  
+ Greater than or equal to 0 if the function is successful, or a negative value if an error occurred.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数、 **ENDDOC**プリンター エスケープし、印刷ジョブが正常に終了した直後に呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ This member function replaces the **ENDDOC** printer escape, and should be called immediately after finishing a successful print job.  
   
- いずれかを使用して、操作を終了する試みる必要がありますいないアプリケーションでは、印刷エラーや印刷操作のキャンセルが発生すると、`EndDoc`または[AbortDoc](#abortdoc)です。 GDI は、エラー値を返す前に、操作を自動的に終了します。  
+ If an application encounters a printing error or a canceled print operation, it must not attempt to terminate the operation by using either `EndDoc` or [AbortDoc](#abortdoc). GDI automatically terminates the operation before returning the error value.  
   
- この関数は、メタファイルの内部は使用できません。  
+ This function should not be used inside metafiles.  
   
-### <a name="example"></a>例  
-  例を参照して[CDC::StartDoc](#startdoc)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::StartDoc](#startdoc).  
   
-##  <a name="endpage"></a>CDC::EndPage  
- アプリケーションのページへの書き込みが完了したことをデバイスに通知します。  
+##  <a name="endpage"></a>  CDC::EndPage  
+ Informs the device that the application has finished writing to a page.  
   
 ```  
 int EndPage();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 大きいか等しい場合は、関数が成功すると、0 または負の値を使用している場合、エラーが発生しました。  
+### <a name="return-value"></a>Return Value  
+ Greater than or equal to 0 if the function is successful, or a negative value if an error occurred.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は通常、新しいページに進むにデバイス ドライバーを送信するため使用されます。  
+### <a name="remarks"></a>Remarks  
+ This member function is typically used to direct the device driver to advance to a new page.  
   
- このメンバー関数、 **NEWFRAME**プリンター エスケープします。 異なり**NEWFRAME**、この関数は、ページの印刷後に必ず呼び出されます。  
+ This member function replaces the **NEWFRAME** printer escape. Unlike **NEWFRAME**, this function is always called after printing a page.  
   
-### <a name="example"></a>例  
-  例を参照して[CDC::StartDoc](#startdoc)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::StartDoc](#startdoc).  
   
-##  <a name="endpath"></a>CDC::EndPath  
- パスの角かっこを終了し、デバイス コンテキストに、角かっこで定義されているパスを選択します。  
+##  <a name="endpath"></a>  CDC::EndPath  
+ Closes a path bracket and selects the path defined by the bracket into the device context.  
   
 ```  
 BOOL EndPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="example"></a>例  
-  例を参照して[cdc::beginpath](#beginpath)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::BeginPath](#beginpath).  
   
-##  <a name="enumobjects"></a>Cdc::enumobjects  
- ペンを列挙し、デバイス コンテキストで使用可能なブラシします。  
+##  <a name="enumobjects"></a>  CDC::EnumObjects  
+ Enumerates the pens and brushes available in a device context.  
   
 ```  
 int EnumObjects(
@@ -1745,39 +1936,39 @@ int EnumObjects(
     LPARAM lpData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nObjectType*  
- オブジェクトの種類を指定します。 値を持つことができます**OBJ_BRUSH**または**OBJ_PEN**です。  
+ Specifies the object type. It can have the values **OBJ_BRUSH** or **OBJ_PEN**.  
   
  `lpfn`  
- アプリケーションによって提供されるコールバック関数のプロシージャ インスタンスのアドレスです。 以下の「解説」セクションを参照してください。  
+ Is the procedure-instance address of the application-supplied callback function. See the "Remarks" section below.  
   
  `lpData`  
- アプリケーションによって提供されるデータへのポインター。 データは、オブジェクトの情報と共に、コールバック関数に渡されます。  
+ Points to the application-supplied data. The data is passed to the callback function along with the object information.  
   
-### <a name="return-value"></a>戻り値  
- によって返される最後の値を指定します、[コールバック関数](../../mfc/reference/callback-function-for-cdc-enumobjects.md)です。 その意味では、ユーザー定義されます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the last value returned by the [callback function](../../mfc/reference/callback-function-for-cdc-enumobjects.md). Its meaning is user-defined.  
   
-### <a name="remarks"></a>コメント  
- 各オブジェクトについて、指定された型の渡されたコールバック関数はそのオブジェクトの情報で呼び出されます。 オブジェクトがあるか、コールバック関数は 0 を返しますまで、システムは、コールバック関数を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ For each object of a given type, the callback function that you pass is called with the information for that object. The system calls the callback function until there are no more objects or the callback function returns 0.  
   
- Microsoft Visual C の新機能に渡される関数としては、通常の関数を使用することに注意してください`EnumObjects`です。 渡されたアドレス`EnumObjects`と共にエクスポートされる関数へのポインターは、**エクスポート**Pascal 呼び出し規則を使用しています。 保護モードのアプリケーションでは Windows MakeProcInstance 関数でこの関数を作成または FreeProcInstance Windows 関数を使用した後、関数を解放する必要はありません。  
+ Note that new features of Microsoft Visual C++ let you use an ordinary function as the function passed to `EnumObjects`. The address passed to `EnumObjects` is a pointer to a function exported with **EXPORT** and with the Pascal calling convention. In protect-mode applications, you do not have to create this function with the Windows                         MakeProcInstance function or free the function after use with the FreeProcInstance Windows function.  
   
- またがありません内の関数名をエクスポートする、**エクスポート**アプリケーションのモジュール定義ファイル内のステートメント。 代わりに使用することができます、**エクスポート**としての関数の修飾子  
+ You also do not have to export the function name in an **EXPORTS** statement in your application's module-definition file. You can instead use the **EXPORT** function modifier, as in  
   
- **コールバック エクスポート int**関数**(LPSTR**、 **LPSTR) です。**  
+ **int CALLBACK EXPORT** AFunction **(LPSTR**, **LPSTR);**  
   
- エイリアスの名前をエクスポートの適切なエクスポート レコードを生成するコンパイラは、します。 これは、ほとんどのニーズに対して機能します。 特殊な場合など、ordinal またはエイリアスをエクスポートして関数をエクスポートする必要がありますを使用する、**エクスポート**モジュール定義ファイル内のステートメント。  
+ to cause the compiler to emit the proper export record for export by name without aliasing. This works for most needs. For some special cases, such as exporting a function by ordinal or aliasing the export, you still need to use an **EXPORTS** statement in a module-definition file.  
   
- Microsoft Foundation プログラムをコンパイルするため、/GA と/GEs コンパイラ オプションは、通常使用されます。 /Gw コンパイラ オプションは、Microsoft Foundation classes では使用されません。 (Windows の機能を使用する場合**MakeProcInstance**から返された関数ポインターを明示的にキャストする必要があります**FARPROC**この API で必要な型にします)。コールバックの登録インターフェイスがタイプ セーフでは今すぐ (の特定のコールバック関数の正しい種類を示す関数ポインターに渡す必要があります)。  
+ For compiling Microsoft Foundation programs, you will normally use the /GA and /GEs compiler options. The /Gw compiler option is not used with the Microsoft Foundation classes. (If you do use the Windows function **MakeProcInstance**, you will need to explicitly cast the returned function pointer from **FARPROC** to the type needed in this API.) Callback registration interfaces are now type-safe (you must pass in a function pointer that points to the right kind of function for the specific callback).  
   
- また、すべてのコールバック関数がコールバックの境界を越えて例外をスローすることはできませんので、Windows に返す前に Microsoft Foundation 例外をトラップする必要がありますに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ Also note that all callback functions must trap Microsoft Foundation exceptions before returning to Windows, since exceptions cannot be thrown across callback boundaries. For more information about exceptions, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #35](../../mfc/codesnippet/cpp/cdc-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#35](../../mfc/codesnippet/cpp/cdc-class_7.cpp)]  
   
-##  <a name="escape"></a>CDC::Escape  
- このメンバー関数は、Win32 プログラミングのために残さです。  
+##  <a name="escape"></a>  CDC::Escape  
+ This member function is practically obsolete for Win32 programming.  
   
 ```  
 virtual int Escape(
@@ -1795,48 +1986,48 @@ int Escape(
     LPSTR lpszOutputData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nEscape`  
- 実行するエスケープ関数を指定します。  
+ Specifies the escape function to be performed.  
   
- エスケープ関数の一覧については、次を参照してください。[エスケープ](http://msdn.microsoft.com/library/windows/desktop/dd162701)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a complete list of escape functions, see [Escape](http://msdn.microsoft.com/library/windows/desktop/dd162701) in the Windows SDK.  
   
  `nCount`  
- によって示されるデータのバイト数を指定`lpszInData`です。  
+ Specifies the number of bytes of data pointed to by `lpszInData`.  
   
  `lpszInData`  
- このエスケープに必要な入力データ構造体を指します。  
+ Points to the input data structure required for this escape.  
   
  `lpOutData`  
- このエスケープから出力を受け取るには、構造体をポイントします。 `lpOutData`パラメーターは**NULL**データが返されない場合。  
+ Points to the structure that is to receive output from this escape. The `lpOutData` parameter is **NULL** if no data is returned.  
   
  `nInputSize`  
- によって示されるデータのバイト数を指定します、`lpszInputData`パラメーター。  
+ Specifies the number of bytes of data pointed to by the `lpszInputData` parameter.  
   
  `lpszInputData`  
- 指定したエスケープに必要な入力構造へのポインター。  
+ Points to the input structure required for the specified escape.  
   
  `nOutputSize`  
- によって示されるデータのバイト数を指定します、`lpszOutputData`パラメーター。  
+ Specifies the number of bytes of data pointed to by the `lpszOutputData` parameter.  
   
  `lpszOutputData`  
- このエスケープから出力を受け取る構造体を指します。 このパラメーターを指定する必要があります**NULL**データが返されない場合。  
+ Points to the structure that receives output from this escape. This parameter should be **NULL** if no data is returned.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功すると、以外の場合は正の値が返されます、**関数**実装をチェックのみエスケープします。 エスケープが実装されていない場合は、0 が返されます。 エラーが発生した場合は、負の値が返されます。 一般的なエラー値を次に示します。  
+### <a name="return-value"></a>Return Value  
+ A positive value is returned if the function is successful, except for the **QUERYESCSUPPORT** escape, which only checks for implementation. Zero is returned if the escape is not implemented. A negative value is returned if an error occurred. The following are common error values:  
   
-- **SP_ERROR**一般エラーです。  
+- **SP_ERROR** General error.  
   
-- **させることでより**のに十分なディスク領域が、スプールのために現在使用できると、空き領域がないを使用可能になる予定です。  
+- **SP_OUTOFDISK** Not enough disk space is currently available for spooling, and no more space will become available.  
   
-- **SP_OUTOFMEMORY**十分なメモリがスプールのために使用できます。  
+- **SP_OUTOFMEMORY** Not enough memory is available for spooling.  
   
-- **SP_USERABORT**ユーザーがプリント マネージャーを使ってジョブを終了します。  
+- **SP_USERABORT** User ended the job through the Print Manager.  
   
-### <a name="remarks"></a>コメント  
- 元プリンター エスケープ、のみの**関数**Win32 アプリケーションでサポートされています。 その他のすべてのプリンター エスケープは廃止され、16 ビット アプリケーションとの互換性についてのみサポートされます。  
+### <a name="remarks"></a>Remarks  
+ Of the original printer escapes, only **QUERYESCSUPPORT** is supported for Win32 applications. All other printer escapes are obsolete and are supported only for compatibility with 16-bit applications.  
   
- Win32 プログラミングで`CDC`今すぐを置き換えるアプリケーションの対応するプリンター エスケープ 6 つのメンバー関数を提供します。  
+ For Win32 programming, `CDC` now provides six member functions that supersede their corresponding printer escapes:  
   
 - [CDC::AbortDoc](#abortdoc)  
   
@@ -1844,20 +2035,20 @@ int Escape(
   
 - [CDC::EndPage](#endpage)  
   
-- [Cdc::setabortproc](#setabortproc)  
+- [CDC::SetAbortProc](#setabortproc)  
   
 - [CDC::StartDoc](#startdoc)  
   
 - [CDC::StartPage](#startpage)  
   
- さらに、[について](#getdevicecaps)は他のプリンターのエスケープを置き換える Win32 インデックスをサポートします。 参照してください[調べるため](http://msdn.microsoft.com/library/windows/desktop/dd144877)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細についてはします。  
+ In addition, [CDC::GetDeviceCaps](#getdevicecaps) supports Win32 indexes that supersede other printer escapes. See [GetDeviceCaps](http://msdn.microsoft.com/library/windows/desktop/dd144877) in the Windows SDK for more information.  
   
- このメンバー関数は、アプリケーションは GDI を介して直接利用できない特定のデバイスの機能にアクセスできます。  
+ This member function allows applications to access facilities of a particular device that are not directly available through GDI.  
   
- アプリケーションは、定義済みのエスケープ値を使用する場合は、最初のバージョンを使用します。 アプリケーションには独自のエスケープ値が定義されている場合は、2 番目のバージョンを使用します。 参照してください[ExtEscape](http://msdn.microsoft.com/library/windows/desktop/dd162708)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] 2 番目のバージョンの詳細についてはします。  
+ Use the first version if your application uses predefined escape values. Use the second version if your application defines private escape values. See [ExtEscape](http://msdn.microsoft.com/library/windows/desktop/dd162708) in the Windows SDK for more information about the second version.  
   
-##  <a name="excludecliprect"></a>CDC::ExcludeClipRect  
- 指定した四角形の負符号の既存のクリッピング領域で構成される新しいクリップ領域を作成します。  
+##  <a name="excludecliprect"></a>  CDC::ExcludeClipRect  
+ Creates a new clipping region that consists of the existing clipping region minus the specified rectangle.  
   
 ```  
 int ExcludeClipRect(
@@ -1869,60 +2060,60 @@ int ExcludeClipRect(
 int ExcludeClipRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the rectangle.  
   
  `y1`  
- 論理で四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the rectangle.  
   
  `x2`  
- 論理で四角形の右下隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the rectangle.  
   
  `y2`  
- 論理で四角形の右下隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the rectangle.  
   
  `lpRect`  
- 四角形を指定します。 こともできます、`CRect`オブジェクト。  
+ Specifies the rectangle. Can also be a `CRect` object.  
   
-### <a name="return-value"></a>戻り値  
- 新しいクリップ領域の種類を指定します。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the new clipping region's type. It can be any of the following values:  
   
-- **COMPLEXREGION**境界が重複領域には、します。  
+- **COMPLEXREGION** The region has overlapping borders.  
   
-- **エラー**領域は作成されませんでした。  
+- **ERROR** No region was created.  
   
-- **NULLREGION**領域が空です。  
+- **NULLREGION** The region is empty.  
   
-- **SIMPLEREGION**領域には、重複する境界がありません。  
+- **SIMPLEREGION** The region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 絶対値で指定された四角形の幅`x2`  -  `x1`、ユニット数が 32,767 を超えることはできません。 同様に、四角形の高さにこの制限が適用されます。  
+### <a name="remarks"></a>Remarks  
+ The width of the rectangle, specified by the absolute value of `x2` - `x1`, must not exceed 32,767 units. This limit applies to the height of the rectangle as well.  
   
-##  <a name="excludeupdatergn"></a>CDC::ExcludeUpdateRgn  
- 関連付けられているクリッピング領域から、ウィンドウで更新された領域を除外することで、ウィンドウの無効な領域内での描画を防止、`CDC`オブジェクト。  
+##  <a name="excludeupdatergn"></a>  CDC::ExcludeUpdateRgn  
+ Prevents drawing within invalid areas of a window by excluding an updated region in the window from the clipping region associated with the `CDC` object.  
   
 ```  
 int ExcludeUpdateRgn(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- 更新されるウィンドウを持つウィンドウ オブジェクトへのポインター。  
+ Points to the window object whose window is being updated.  
   
-### <a name="return-value"></a>戻り値  
- 除外されている領域の種類。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The type of excluded region. It can be any one of the following values:  
   
-- **COMPLEXREGION**境界が重複領域には、します。  
+- **COMPLEXREGION** The region has overlapping borders.  
   
-- **エラー**領域は作成されませんでした。  
+- **ERROR** No region was created.  
   
-- **NULLREGION**領域が空です。  
+- **NULLREGION** The region is empty.  
   
-- **SIMPLEREGION**領域には、重複する境界がありません。  
+- **SIMPLEREGION** The region has no overlapping borders.  
   
-##  <a name="extfloodfill"></a>CDC::ExtFloodFill  
- 現在のブラシを使用して、ディスプレイ画面の領域を塗りつぶします。  
+##  <a name="extfloodfill"></a>  CDC::ExtFloodFill  
+ Fills an area of the display surface with the current brush.  
   
 ```  
 BOOL ExtFloodFill(
@@ -1932,37 +2123,37 @@ BOOL ExtFloodFill(
     UINT nFillType);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で入力を開始する点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the point where filling begins.  
   
  *y*  
- 論理で入力を開始する点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the point where filling begins.  
   
  `crColor`  
- 境界または格納する領域の色を指定します。 解釈`crColor`の値に依存`nFillType`です。  
+ Specifies the color of the boundary or of the area to be filled. The interpretation of `crColor` depends on the value of `nFillType`.  
   
  `nFillType`  
- 実行する塗りつぶしの型を指定します。 次の値のいずれかを指定する必要があります。  
+ Specifies the type of flood fill to be performed. It must be either of the following values:  
   
-- **FLOODFILLBORDER**塗りつぶし領域に制限されますが、指定された色`crColor`です。 このスタイルは、読み込みによって実行されるのと同じ`FloodFill`です。  
+- **FLOODFILLBORDER** The fill area is bounded by the color specified by `crColor`. This style is identical to the filling performed by `FloodFill`.  
   
-- **返して**で指定された色の塗りつぶし領域が定義されている`crColor`です。 入力を続けます全方向に色が発生した場合に限りです。 このスタイルは、色付きの境界にデータ領域を読み込むに役立ちます。  
+- **FLOODFILLSURFACE** The fill area is defined by the color specified by `crColor`. Filling continues outward in all directions as long as the color is encountered. This style is useful for filling areas with multicolored boundaries.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。読み込みを完了できませんでした、指定したポイントに境界がある場合場合、は 0 で指定された色`crColor`(場合**FLOODFILLBORDER**が要求されました) によって指定された色が指定したポイントにない場合、 `crColor` (場合**返して**が要求されました)、ポイントがクリッピング領域の外側にある場合またはします。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0 if the filling could not be completed, if the given point has the boundary color specified by `crColor` (if **FLOODFILLBORDER** was requested), if the given point does not have the color specified by `crColor` (if **FLOODFILLSURFACE** was requested), or if the point is outside the clipping region.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数より高い柔軟性を提供しています`FloodFill`の塗りつぶしの種類を指定できるため`nFillType`です。  
+### <a name="remarks"></a>Remarks  
+ This member function offers more flexibility than `FloodFill` because you can specify a fill type in `nFillType`.  
   
- 場合`nFillType`に設定されている**FLOODFILLBORDER**にによって指定された色によって完全に制限する領域は`crColor`します。 関数によって指定された位置から始まります*x*と*y*の色の境界にすべての方向に入力します。  
+ If `nFillType` is set to **FLOODFILLBORDER**, the area is assumed to be completely bounded by the color specified by `crColor`. The function begins at the point specified by *x* and *y* and fills in all directions to the color boundary.  
   
- 場合`nFillType`に設定されている**返して**、関数によって指定された位置から始まります*x*と*y*されで指定された色を含むすべての隣接する領域を埋める、すべての方向に続行`crColor`です。  
+ If `nFillType` is set to **FLOODFILLSURFACE**, the function begins at the point specified by *x* and *y* and continues in all directions, filling all adjacent areas containing the color specified by `crColor`.  
   
- メモリ デバイス コンテキストとラスター表示テクノロジのサポートをサポートするデバイスだけ`ExtFloodFill`です。 詳細については、次を参照してください。、[調べるため](#getdevicecaps)メンバー関数。  
+ Only memory-device contexts and devices that support raster-display technology support `ExtFloodFill`. For more information, see the [GetDeviceCaps](#getdevicecaps) member function.  
   
-##  <a name="exttextout"></a>CDC::ExtTextOut  
- 現在選択されているフォントを使用して、四角形領域内で文字の文字列に書き込むには、このメンバー関数を呼び出します。  
+##  <a name="exttextout"></a>  CDC::ExtTextOut  
+ Call this member function to write a character string within a rectangular region using the currently selected font.  
   
 ```  
 virtual BOOL ExtTextOut(
@@ -1984,58 +2175,58 @@ BOOL ExtTextOut(
     LPINT lpDxWidths);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 指定された文字列の最初の文字を文字セルの論理の x 座標を指定します。  
+ Specifies the logical x-coordinate of the character cell for the first character in the specified string.  
   
  *y*  
- 指定した文字列で論理で最初の文字を文字セルの上端の y 座標を指定します。  
+ Specifies the logical y-coordinate of the top of the character cell for the first character in the specified string.  
   
  `nOptions`  
- 四角形の種類を指定します。 このパラメーターは、いずれか、両方、または、次の値のどちらも指定できます。  
+ Specifies the rectangle type. This parameter can be one, both, or neither of the following values:  
   
-- **ETO_CLIPPED**四角形にテキストがクリップされるように指定します。  
+- **ETO_CLIPPED** Specifies that text is clipped to the rectangle.  
   
-- **ETO_OPAQUE**四角形を現在の背景色で塗りつぶすことを指定します。 (を設定し、クエリでは、現在の背景色、 [SetBkColor](#setbkcolor)と[GetBkColor](#getbkcolor)メンバー関数です)。  
+- **ETO_OPAQUE** Specifies that the current background color fills the rectangle. (You can set and query the current background color with the [SetBkColor](#setbkcolor) and [GetBkColor](#getbkcolor) member functions.)  
   
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)四角形の寸法を決定する構造体。 このパラメーターを指定できます**NULL**です。 渡すことも、 [CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure that determines the dimensions of the rectangle. This parameter can be **NULL**. You can also pass a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  `lpszString`  
- 描画する指定された文字の文字列を指します。 渡すことも、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to the specified character string to be drawn. You can also pass a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。  
+ Specifies the number of characters in the string.  
   
  `lpDxWidths`  
- 文字が隣接するセルの元のドメイン間の距離を示す値の配列を指します。 たとえば、 `lpDxWidths`[*すれば*] 論理ユニットは文字セルのオリジンを区別する*すれば*と文字セル*すれば*+ 1 です。 場合`lpDxWidths`は**NULL**、`ExtTextOut`既定の文字間隔を使用します。  
+ Points to an array of values that indicate the distance between origins of adjacent character cells. For instance, `lpDxWidths`[ *i*] logical units will separate the origins of character cell *i* and character cell *i* + 1. If `lpDxWidths` is **NULL**, `ExtTextOut` uses the default spacing between characters.  
   
  `str`  
- A`CString`を描画する指定された文字を含むオブジェクト。  
+ A `CString` object that contains the specified characters to be drawn.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 四角形領域できる非透過 (現在の背景色で塗りつぶされます)、ありクリッピング領域があります。  
+### <a name="remarks"></a>Remarks  
+ The rectangular region can be opaque (filled with the current background color), and it can be a clipping region.  
   
- 場合`nOptions`は 0 と`lpRect`は**NULL**関数は、四角形の領域を使用せずにデバイス コンテキストにテキストを書き込みます。 既定では、関数は現在位置を使用することも、更新することもありません。 アプリケーションを呼び出したときに、現在の位置を更新する必要があるかどうか`ExtTextOut`、アプリケーションが呼び出すことができます、`CDC`メンバー関数は、[呼び出された](#settextalign)で`nFlags`'éý'**ため**です。 このフラグを設定すると、Windows は無視されます*x*と*y*後続の呼び出しで`ExtTextOut`し、現在の位置を代わりに使用します。 アプリケーションを使用する場合**ため**を現在の位置を更新する`ExtTextOut`テキストの前の行の末尾をかによって示される配列の最後の要素で指定した位置に、現在の位置を設定`lpDxWidths`、大きい方です。  
+ If `nOptions` is 0 and `lpRect` is **NULL**, the function writes text to the device context without using a rectangular region. By default, the current position is not used or updated by the function. If an application needs to update the current position when it calls `ExtTextOut`, the application can call the `CDC` member function [SetTextAlign](#settextalign) with `nFlags` set to **TA_UPDATECP**. When this flag is set, Windows ignores *x* and *y* on subsequent calls to `ExtTextOut` and uses the current position instead. When an application uses **TA_UPDATECP** to update the current position, `ExtTextOut` sets the current position either to the end of the previous line of text or to the position specified by the last element of the array pointed to by `lpDxWidths`, whichever is greater.  
   
-##  <a name="fillpath"></a>CDC::FillPath  
- 現在のパス内の開いている図形を閉じ、現在のブラシおよび多角形の塗りつぶしモードを使用してパスの内部を塗りつぶします。  
+##  <a name="fillpath"></a>  CDC::FillPath  
+ Closes any open figures in the current path and fills the path's interior by using the current brush and polygon-filling mode.  
   
 ```  
 BOOL FillPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 内部では、いっぱいになった後にデバイス コンテキストからのパスは破棄されます。  
+### <a name="remarks"></a>Remarks  
+ After its interior is filled, the path is discarded from the device context.  
   
-##  <a name="fillrect"></a>CDC::FillRect  
- このメンバー関数は、指定されたブラシを使用して、指定した四角形の塗りつぶしを呼び出します。  
+##  <a name="fillrect"></a>  CDC::FillRect  
+ Call this member function to fill a given rectangle using the specified brush.  
   
 ```  
 void FillRect(
@@ -2043,24 +2234,24 @@ void FillRect(
     CBrush* pBrush);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造を格納する四角形の論理座標が含まれています。 渡すことも、 [CRect](../../atl-mfc-shared/reference/crect-class.md)このパラメーターのオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure that contains the logical coordinates of the rectangle to be filled. You can also pass a [CRect](../../atl-mfc-shared/reference/crect-class.md) object for this parameter.  
   
  `pBrush`  
- 四角形の塗りつぶしに使用するブラシを識別します。  
+ Identifies the brush used to fill the rectangle.  
   
-### <a name="remarks"></a>コメント  
- 関数には、左と上の境界線を含む、完全な四角形が埋められますが、右、下罫線に満たない。  
+### <a name="remarks"></a>Remarks  
+ The function fills the complete rectangle, including the left and top borders, but it does not fill the right and bottom borders.  
   
- ブラシ必要があるいずれかを使用して作成する、 [CBrush](../../mfc/reference/cbrush-class.md)メンバー関数[CreateHatchBrush](../../mfc/reference/cbrush-class.md#createhatchbrush)、[とき](../../mfc/reference/cbrush-class.md#createpatternbrush)、および[CreateSolidBrush](../../mfc/reference/cbrush-class.md#createsolidbrush)、によって取得されたか、 `GetStockObject` Windows の機能です。  
+ The brush needs to either be created using the [CBrush](../../mfc/reference/cbrush-class.md) member functions [CreateHatchBrush](../../mfc/reference/cbrush-class.md#createhatchbrush), [CreatePatternBrush](../../mfc/reference/cbrush-class.md#createpatternbrush), and [CreateSolidBrush](../../mfc/reference/cbrush-class.md#createsolidbrush), or retrieved by the `GetStockObject` Windows function.  
   
- 指定した四角形の入力時に`FillRect`四角形の右および下の辺は含まれません。 GDI まで、四角形を塗りつぶしますは含まれません、右列と下の行を現在のマップ モードに関係なく。 `FillRect`値を比較、**上部**、**下部**、**左**、および**右**指定した四角形のメンバーです。 場合**下部**と等しいかそれよりも小さい**上部**、または**右**と等しいかそれよりも小さい**左**、四角形が描画されていません。  
+ When filling the specified rectangle, `FillRect` does not include the rectangle's right and bottom sides. GDI fills a rectangle up to, but does not include, the right column and bottom row, regardless of the current mapping mode. `FillRect` compares the values of the **top**, **bottom**, **left**, and **right** members of the specified rectangle. If **bottom** is less than or equal to **top**, or if **right** is less than or equal to **left**, the rectangle is not drawn.  
   
- `FillRect`ような[CDC::FillSolidRect](#fillsolidrect)。 ただし、`FillRect`ブラシを受け取り、したがって、純色、ディザリングされた色、ハッチ ブラシ、またはパターン塗りつぶす四角形を使用できます。 `FillSolidRect`純色のみを使用して (によって示される、 **COLORREF**パラメーター)。 `FillRect`通常よりも低い`FillSolidRect`です。  
+ `FillRect` is similar to [CDC::FillSolidRect](#fillsolidrect); however, `FillRect` takes a brush and therefore can be used to fill a rectangle with a solid color, a dithered color, hatched brushes, or a pattern. `FillSolidRect` uses only solid colors (indicated by a **COLORREF** parameter). `FillRect` usually is slower than `FillSolidRect`.  
   
-##  <a name="fillrgn"></a>CDC::FillRgn  
- 指定された領域を塗りつぶします`pRgn`で指定されたブラシを含む`pBrush`です。  
+##  <a name="fillrgn"></a>  CDC::FillRgn  
+ Fills the region specified by `pRgn` with the brush specified by `pBrush`.  
   
 ```  
 BOOL FillRgn(
@@ -2068,24 +2259,24 @@ BOOL FillRgn(
     CBrush* pBrush);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 塗りつぶす領域へのポインター。 指定された領域の座標は、論理単位で指定されます。  
+ A pointer to the region to be filled. The coordinates for the given region are specified in logical units.  
   
  `pBrush`  
- 領域を塗りつぶすに使用するブラシを識別します。  
+ Identifies the brush to be used to fill the region.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用して、ブラシを作成する必要がありますか、`CBrush`メンバー関数`CreateHatchBrush`、 `CreatePatternBrush`、 `CreateSolidBrush`、または取得する**GetStockObject**です。  
+### <a name="remarks"></a>Remarks  
+ The brush must either be created using the `CBrush` member functions `CreateHatchBrush`, `CreatePatternBrush`, `CreateSolidBrush`, or be retrieved by **GetStockObject**.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreateRoundRectRgn](../../mfc/reference/crgn-class.md#createroundrectrgn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreateRoundRectRgn](../../mfc/reference/crgn-class.md#createroundrectrgn).  
   
-##  <a name="fillsolidrect"></a>CDC::FillSolidRect  
- このメンバー関数は、指定した純色で指定された四角形の塗りつぶしを呼び出します。  
+##  <a name="fillsolidrect"></a>  CDC::FillSolidRect  
+ Call this member function to fill the given rectangle with the specified solid color.  
   
 ```  
 void FillSolidRect(
@@ -2101,42 +2292,42 @@ void FillSolidRect(
     COLORREF clr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- (論理単位で) に外接する四角形を指定します。 ポインターを渡すことができます、 [RECT](../../mfc/reference/rect-structure1.md)データ構造体、または`CRect`このパラメーターのオブジェクト。  
+ Specifies the bounding rectangle (in logical units). You can pass either a pointer to a [RECT](../../mfc/reference/rect-structure1.md) data structure or a `CRect` object for this parameter.  
   
- `clr`四角形の塗りつぶしに使用する色を指定します。  
+ `clr` Specifies the color to be used to fill the rectangle.  
   
  *x*  
- 論理で四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the rectangle.  
   
  *y*  
- 論理で先の四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the destination rectangle.  
   
  `cx`  
- 四角形の幅を指定します。  
+ Specifies the width of the rectangle.  
   
  `cy`  
- 四角形の高さを指定します。  
+ Specifies the height of the rectangle.  
   
-### <a name="remarks"></a>コメント  
- `FillSolidRect`よく似ています[CDC::FillRect](#fillrect)。 ただし、`FillSolidRect`純色のみを使用して (によって示される、 **COLORREF**パラメーター)、中に`FillRect`ブラシを受け取り、したがって、純色、ディザリングされた色、ハッチ ブラシ、またはパターン塗りつぶす四角形を使用できます。 `FillSolidRect`通常より高速`FillRect`です。  
+### <a name="remarks"></a>Remarks  
+ `FillSolidRect` is very similar to [CDC::FillRect](#fillrect); however, `FillSolidRect` uses only solid colors (indicated by the **COLORREF** parameter), while `FillRect` takes a brush and therefore can be used to fill a rectangle with a solid color, a dithered color, hatched brushes, or a pattern. `FillSolidRect` usually is faster than `FillRect`.  
   
 > [!NOTE]
->  呼び出すと`FillSolidRect`、背景色を使用して設定されている[SetBkColor](#setbkcolor)、によって示される色に設定されている`clr`です。  
+>  When you call `FillSolidRect`, the background color, which was previously set using [SetBkColor](#setbkcolor), is set to the color indicated by `clr`.  
   
-##  <a name="flattenpath"></a>CDC::FlattenPath  
- 現在のデバイス コンテキストに選択したパス内の任意の曲線に変換し、行のシーケンスに、各曲線。  
+##  <a name="flattenpath"></a>  CDC::FlattenPath  
+ Transforms any curves in the path selected into the current device context, and turns each curve into a sequence of lines.  
   
 ```  
 BOOL FlattenPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-##  <a name="floodfill"></a>CDC::FloodFill  
- 現在のブラシを使用して、ディスプレイ画面の領域を塗りつぶします。  
+##  <a name="floodfill"></a>  CDC::FloodFill  
+ Fills an area of the display surface with the current brush.  
   
 ```  
 BOOL FloodFill(
@@ -2145,28 +2336,28 @@ BOOL FloodFill(
     COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で入力を開始する点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the point where filling begins.  
   
  *y*  
- 論理で入力を開始する点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the point where filling begins.  
   
  `crColor`  
- 境界の色を指定します。  
+ Specifies the color of the boundary.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合 0 が返される特定のポイントがで指定された境界の色を持つ場合は、読み込みを完了できませんでした`crColor`、またはポイントがクリッピング領域の外側です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0 is returned if the filling could not be completed, the given point has the boundary color specified by `crColor`, or the point is outside the clipping region.  
   
-### <a name="remarks"></a>コメント  
- 領域としてを制限することによって指定された。`crColor`です。 `FloodFill`関数によって指定された位置から始まります*x*と*y*色境界にすべての方向が続行されます。  
+### <a name="remarks"></a>Remarks  
+ The area is assumed to be bounded as specified by `crColor`. The `FloodFill` function begins at the point specified by *x* and *y* and continues in all directions to the color boundary.  
   
- だけのメモリ デバイス コンテキストおよびラスター表示テクノロジのサポートをサポートするデバイス、`FloodFill`メンバー関数。 について**RC_BITBLT**機能を参照してください、`GetDeviceCaps`メンバー関数。  
+ Only memory-device contexts and devices that support raster-display technology support the `FloodFill` member function. For information about **RC_BITBLT** capability, see the `GetDeviceCaps` member function.  
   
- `ExtFloodFill`関数は柔軟性が、同様の機能を提供します。  
+ The `ExtFloodFill` function provides similar capability but greater flexibility.  
   
-##  <a name="framerect"></a>CDC::FrameRect  
- 指定された四角形の周囲の境界線を描画`lpRect`です。  
+##  <a name="framerect"></a>  CDC::FrameRect  
+ Draws a border around the rectangle specified by `lpRect`.  
   
 ```  
 void FrameRect(
@@ -2174,22 +2365,22 @@ void FrameRect(
     CBrush* pBrush);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)四角形の左上隅および右下コーナーの論理座標を格納しているオブジェクト。 渡すことも、`CRect`このパラメーターのオブジェクト。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object that contains the logical coordinates of the upper-left and lower-right corners of the rectangle. You can also pass a `CRect` object for this parameter.  
   
  `pBrush`  
- 四角形の境界線に使用するブラシを識別します。  
+ Identifies the brush to be used for framing the rectangle.  
   
-### <a name="remarks"></a>コメント  
- 関数では、指定されたブラシを使用して、境界線を描画します。 境界線の高さと幅は、常に 1 の論理単位です。  
+### <a name="remarks"></a>Remarks  
+ The function uses the given brush to draw the border. The width and height of the border is always 1 logical unit.  
   
- 場合、四角形の**下部**座標は、以下を**上部**、場合**右**と同じかそれよりも少ない**左**、四角形が描画されていません。  
+ If the rectangle's **bottom** coordinate is less than or equal to **top**, or if **right** is less than or equal to **left**, the rectangle is not drawn.  
   
- 描画される境界線`FrameRect`で描画される境界線と同じ位置では、**四角形**同じ座標を使用してメンバー関数 (場合**四角形**ワイド論理ユニットが 1 であるペンを使用)。 によって四角形の内部が未入力`FrameRect`です。  
+ The border drawn by `FrameRect` is in the same position as a border drawn by the **Rectangle** member function using the same coordinates (if **Rectangle** uses a pen that is 1 logical unit wide). The interior of the rectangle is not filled by `FrameRect`.  
   
-##  <a name="framergn"></a>CDC::FrameRgn  
- によって指定された領域の周囲に境界線を描画`pRgn`で指定されたブラシを使用して`pBrush`です。  
+##  <a name="framergn"></a>  CDC::FrameRgn  
+ Draws a border around the region specified by `pRgn` using the brush specified by `pBrush`.  
   
 ```  
 BOOL FrameRgn(
@@ -2199,105 +2390,105 @@ BOOL FrameRgn(
     int nHeight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 指す、`CRgn`罫線で囲む領域を識別するオブジェクト。 指定された領域の座標は、論理単位で指定されます。  
+ Points to the `CRgn` object that identifies the region to be enclosed in a border. The coordinates for the given region are specified in logical units.  
   
  `pBrush`  
- 指す、`CBrush`境界線の描画に使用するブラシを識別するオブジェクト。  
+ Points to the `CBrush` object that identifies the brush to be used to draw the border.  
   
  `nWidth`  
- デバイス単位の垂直方向のブラシの罫線の幅を指定します。  
+ Specifies the width of the border in vertical brush strokes in device units.  
   
  `nHeight`  
- デバイス単位の水平方向のブラシの境界線の高さを指定します。  
+ Specifies the height of the border in horizontal brush strokes in device units.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CombineRgn](../../mfc/reference/crgn-class.md#combinergn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CombineRgn](../../mfc/reference/crgn-class.md#combinergn).  
   
-##  <a name="fromhandle"></a>CDC::FromHandle  
- ポインターを返します、`CDC`デバイス コンテキストへのハンドルが指定されるとします。  
+##  <a name="fromhandle"></a>  CDC::FromHandle  
+ Returns a pointer to a `CDC` object when given a handle to a device context.  
   
 ```  
 static CDC* PASCAL FromHandle(HDC hDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- Windows デバイス コンテキストへのハンドルが含まれています。  
+ Contains a handle to a Windows device context.  
   
-### <a name="return-value"></a>戻り値  
- ポインターは、一時的な場合があり、すぐに使用する以外は格納されません。  
+### <a name="return-value"></a>Return Value  
+ The pointer may be temporary and should not be stored beyond immediate use.  
   
-### <a name="remarks"></a>コメント  
- `CDC` オブジェクトがハンドルに関連付けられていない場合は、一時的な `CDC` オブジェクトが生成され、関連付けられます。  
+### <a name="remarks"></a>Remarks  
+ If a `CDC` object is not attached to the handle, a temporary `CDC` object is created and attached.  
   
-### <a name="example"></a>例  
-  例を参照して[CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc)です。  
+### <a name="example"></a>Example  
+  See the example for [CPrintDialog::GetPrinterDC](../../mfc/reference/cprintdialog-class.md#getprinterdc).  
   
-##  <a name="getarcdirection"></a>CDC::GetArcDirection  
- デバイス コンテキストの現在の円弧の方向を返します。  
+##  <a name="getarcdirection"></a>  CDC::GetArcDirection  
+ Returns the current arc direction for the device context.  
   
 ```  
 int GetArcDirection() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は、現在の円弧の方向を指定します。 有効な戻り値を次に示します。  
+### <a name="return-value"></a>Return Value  
+ Specifies the current arc direction, if successful. Following are the valid return values:  
   
-- **AD_COUNTERCLOCKWISE**円弧や反時計回りに描画する四角形。  
+- **AD_COUNTERCLOCKWISE** Arcs and rectangles drawn counterclockwise.  
   
-- **AD_CLOCKWISE**円弧や四角形を時計回りに描画します。  
+- **AD_CLOCKWISE** Arcs and rectangles drawn clockwise.  
   
- エラーが発生する場合、戻り値は 0 です。  
+ If an error occurs, the return value is zero.  
   
-### <a name="remarks"></a>コメント  
- 円弧と四角形の関数は、円弧の方向を使用します。  
+### <a name="remarks"></a>Remarks  
+ Arc and rectangle functions use the arc direction.  
   
-##  <a name="getaspectratiofilter"></a>CDC::GetAspectRatioFilter  
- 現在の縦横比のフィルターの設定を取得します。  
+##  <a name="getaspectratiofilter"></a>  CDC::GetAspectRatioFilter  
+ Retrieves the setting for the current aspect-ratio filter.  
   
 ```  
 CSize GetAspectRatioFilter() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CSize`を現在の縦横比をフィルターで使用される縦横比を表すオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CSize` object representing the aspect ratio used by the current aspect ratio filter.  
   
-### <a name="remarks"></a>コメント  
- 縦横比は、デバイスのピクセル幅と高さによって形成される比率です。 デバイスの縦横比の情報は、作成、選択、およびフォントの表示に使用されます。 Windows には、特定の縦横比からすべての利用可能なフォントのフォントを選択する、縦横比のフィルター、特別なフィルターが用意されています。 フィルターで指定した縦横比を使用して、`SetMapperFlags`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The aspect ratio is the ratio formed by a device's pixel width and height. Information about a device's aspect ratio is used in the creation, selection, and display of fonts. Windows provides a special filter, the aspect-ratio filter, to select fonts designed for a particular aspect ratio from all of the available fonts. The filter uses the aspect ratio specified by the `SetMapperFlags` member function.  
   
-##  <a name="getbkcolor"></a>CDC::GetBkColor  
- 現在の背景色を返します。  
+##  <a name="getbkcolor"></a>  CDC::GetBkColor  
+ Returns the current background color.  
   
 ```  
 COLORREF GetBkColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 色の RGB 値。  
+### <a name="return-value"></a>Return Value  
+ An RGB color value.  
   
-### <a name="remarks"></a>コメント  
- バック グラウンド モードの場合**不透明**システムでは、背景色を使用して、スタイル設定された行のギャップ、ハッチ ブラシ、行と文字セルの背景の間のギャップを入力します。 ビットマップの色とモノクロ デバイス コンテキストの間で変換するときにも、背景色が使用されます。  
+### <a name="remarks"></a>Remarks  
+ If the background mode is **OPAQUE**, the system uses the background color to fill the gaps in styled lines, the gaps between hatched lines in brushes, and the background in character cells. The system also uses the background color when converting bitmaps between color and monochrome device contexts.  
   
-##  <a name="getbkmode"></a>CDC::GetBkMode  
- バック グラウンド モードを返します。  
+##  <a name="getbkmode"></a>  CDC::GetBkMode  
+ Returns the background mode.  
   
 ```  
 int GetBkMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のバック グラウンドのモードは、**不透明**または**透過**です。  
+### <a name="return-value"></a>Return Value  
+ The current background mode, which can be **OPAQUE** or **TRANSPARENT**.  
   
-### <a name="remarks"></a>コメント  
- バック グラウンド モードでは、テキストやハッチ ブラシ、ペン スタイルが実線を描画する前にシステムが描画サーフェイス上の既存の背景色を削除するかどうかを定義します。  
+### <a name="remarks"></a>Remarks  
+ The background mode defines whether the system removes existing background colors on the drawing surface before drawing text, hatched brushes, or any pen style that is not a solid line.  
   
-##  <a name="getboundsrect"></a>CDC::GetBoundsRect  
- 指定したデバイス コンテキストに現在までの累積外接する四角を返します。  
+##  <a name="getboundsrect"></a>  CDC::GetBoundsRect  
+ Returns the current accumulated bounding rectangle for the specified device context.  
   
 ```  
 UINT GetBoundsRect(
@@ -2305,43 +2496,43 @@ UINT GetBoundsRect(
     UINT flags);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRectBounds`  
- 現在の外接する四角形を受け取るバッファーへのポインター。 四角形は、論理座標で返されます。  
+ Points to a buffer that will receive the current bounding rectangle. The rectangle is returned in logical coordinates.  
   
  `flags`  
- 外接する四角形が返された後、クリアするかどうかを指定します。 このパラメーターは、0 にするか、または、次の値に設定する必要があります。  
+ Specifies whether the bounding rectangle is to be cleared after it is returned. This parameter should be  zero or set to the following value:  
   
-- **DCB_RESET**が返された後に消去する外接する四角形を強制します。  
+- **DCB_RESET** Forces the bounding rectangle to be cleared after it is returned.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は、外接する四角形の現在の状態を指定します。 次の値の組み合わせであることができます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the current state of the bounding rectangle if the function is successful. It can be a combination of the following values:  
   
-- **DCB_ACCUMULATE**外接する四角形が蓄積されるが発生しています。  
+- **DCB_ACCUMULATE** Bounding rectangle accumulation is occurring.  
   
-- **DCB_RESET**外接する四角形は空です。  
+- **DCB_RESET** Bounding rectangle is empty.  
   
-- **DCB_SET**外接する四角形は空ではありません。  
+- **DCB_SET** Bounding rectangle is not empty.  
   
-- **DCB_ENABLE**が蓄積される境界です。  
+- **DCB_ENABLE** Bounding accumulation is on.  
   
-- **DCB_DISABLE**累積の境界が無効になっています。  
+- **DCB_DISABLE** Bounding accumulation is off.  
   
-##  <a name="getbrushorg"></a>CDC::GetBrushOrg  
- デバイス コンテキストで現在選択されているブラシの原点を (デバイス単位) を取得します。  
+##  <a name="getbrushorg"></a>  CDC::GetBrushOrg  
+ Retrieves the origin (in device units) of the brush currently selected for the device context.  
   
 ```  
 CPoint GetBrushOrg() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のとして (デバイス単位) でブラシの原点を[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The current origin of the brush (in device units) as a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 初期のブラシの原点 (0, 0) には、クライアント領域のです。 戻り値は、デスクトップ ウィンドウの原点に対するデバイス単位でのこのポイントを指定します。  
+### <a name="remarks"></a>Remarks  
+ The initial brush origin is at (0,0) of the client area. The return value specifies this point in device units relative to the origin of the desktop window.  
   
-##  <a name="getcharacterplacement"></a>CDC::GetCharacterPlacement  
- 文字列に関するさまざまな情報を取得します。  
+##  <a name="getcharacterplacement"></a>  CDC::GetCharacterPlacement  
+ Retrieves various types of information on a character string.  
   
 ```  
 DWORD GetCharacterPlacement(
@@ -2358,35 +2549,35 @@ DWORD GetCharacterPlacement(
     DWORD dwFlags) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpString`  
- 処理する文字列へのポインター。  
+ A pointer to the character string to process.  
   
  `nCount`  
- 文字列の長さを指定します。 ANSI バージョンの場合は BYTE カウント、Unicode 関数の場合は WORD カウントです。 詳細については、次を参照してください。 [GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx)です。  
+ Specifies the length of the string. For the ANSI version, it is a BYTE count and for the Unicode function it is a WORD count. For more information, see [GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx).  
   
  `nMaxExtent`  
- 処理する文字列の最大エクステントを論理単位で指定します。 このエクステントを超えて処理された文字列は無視されます。 並べ替えやグリフの配列に必要な演算は、範囲に含まれている文字だけに適用されます。 このパラメーターは、`dwFlags` パラメーターに GCP_MAXEXTENT 値が指定されている場合にだけ使用します。 入力文字列を処理するときは、エクステントの合計が最大値を超えない限り、各文字と文字のエクステントが出力、エクステント、および他の配列に追加されます。 制限に達すると、処理は停止します。  
+ Specifies the maximum extent (in logical units) to which the string is processed. Characters that, if processed, would exceed this extent are ignored. Computations for any required ordering or glyph arrays apply only to the included characters. This parameter is used only if the GCP_MAXEXTENT value is specified in the `dwFlags` parameter. As the function processes the input string, each character and its extent is added to the output, extent, and other arrays only if the total extent has not yet exceeded the maximum. Once the limit is reached, processing will stop.  
   
  lpResults  
- ポインター、 [GCP_Results](http://msdn.microsoft.com/library/windows/desktop/dd144842\(v=vs.85\).aspx)関数の結果を受け取る。  
+ Pointer to a [GCP_Results](http://msdn.microsoft.com/library/windows/desktop/dd144842\(v=vs.85\).aspx) structure that receives the results of the function.  
   
  `dwFlags`  
- 必要な配列に挿入される文字列の処理方法を指定します。 このパラメーターは、いずれかを指定できますまたは以上の値に示されている、`dwFlags`のセクションで、 [GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx)トピックです。  
+ Specifies how to process the string into the required arrays. This parameter can be one or more of the values listed in the `dwFlags` section of the [GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx) topic.  
   
  `str`  
- ポインター、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクトを処理します。  
+ A pointer to a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object to process.  
   
-### <a name="return-value"></a>戻り値  
- 関数が正常に終了した場合は、文字列の幅と高さを論理単位で返します。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value is the width and height of the string in logical units.  
   
- 関数が失敗した場合は、0 を返します。  
+ If the function fails, the return value is zero.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetCharacterPlacement](http://msdn.microsoft.com/library/windows/desktop/dd144860\(v=vs.85\).aspx), as described in the Windows SDK.  
   
-##  <a name="getcharabcwidths"></a>CDC::GetCharABCWidths  
- 現在の TrueType フォントから指定された範囲内の連続する文字の幅を取得します。  
+##  <a name="getcharabcwidths"></a>  CDC::GetCharABCWidths  
+ Retrieves the widths of consecutive characters in a specified range from the current TrueType font.  
   
 ```  
 BOOL GetCharABCWidths(
@@ -2400,37 +2591,37 @@ BOOL GetCharABCWidths(
     LPABCFLOAT lpABCF) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFirstChar`  
- 文字幅を返す対象の現在のフォントの文字の範囲の最初の文字を指定します。  
+ Specifies the first character in the range of characters from the current font for which character widths are returned.  
   
  `nLastChar`  
- 文字幅を返す対象の現在のフォントの文字の範囲の最後の文字を指定します。  
+ Specifies the last character in the range of characters from the current font for which character widths are returned.  
   
  `lpabc`  
- 配列を指す[ABC](../../mfc/reference/abc-structure.md)関数が返す場合は、文字幅を受信する構造体。 この配列に含める必要がありますには、少なくともできるだけ**ABC**はによって指定された範囲の文字としての構造体、`nFirstChar`と`nLastChar`パラメーター。  
+ Points to an array of [ABC](../../mfc/reference/abc-structure.md) structures that receive the character widths when the function returns. This array must contain at least as many **ABC** structures as there are characters in the range specified by the `nFirstChar` and `nLastChar` parameters.  
   
  *lpABCF*  
- 配列で、アプリケーションによって提供されるバッファーを指す[ABCFLOAT](../../mfc/reference/abcfloat-structure.md)関数が返す場合は、文字幅を受信する構造体。 この関数によって返される幅は、IEEE 浮動小数点形式でです。  
+ Points to an application-supplied buffer with an array of [ABCFLOAT](../../mfc/reference/abcfloat-structure.md) structures to receive the character widths when the function returns. The widths returned by this function are in the IEEE floating-point format.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 論理ユニットでは、幅が返されます。 この関数は、TrueType フォントでのみ成功します。  
+### <a name="remarks"></a>Remarks  
+ The widths are returned in logical units. This function succeeds only with TrueType fonts.  
   
- TrueType ラスタライザーは、特定のポイント サイズを選択した後に、"ABC"の文字間隔を提供します。 "A"間隔は、グリフを配置する前に、現在の位置に追加される距離です。 "B"間隔は、グリフの黒の部分の幅です。 "C"間隔は、グリフの右側に空白文字のために現在の位置に追加されます。 文字幅の総計が A で指定された B + C.  
+ The TrueType rasterizer provides "ABC" character spacing after a specific point size has been selected. "A" spacing is the distance that is added to the current position before placing the glyph. "B" spacing is the width of the black part of the glyph. "C" spacing is added to the current position to account for the white space to the right of the glyph. The total advanced width is given by A + B + C.  
   
- ときに、`GetCharABCWidths`またはメンバー関数は、負の値"A"を取得します。"C"、文字、その文字の幅には、スペーシングやオーバーが含まれています。  
+ When the `GetCharABCWidths` member function retrieves negative "A" or "C" widths for a character, that character includes underhangs or overhangs.  
   
- ABC 幅をフォント デザイン単位に変換するアプリケーションがフォントを作成、高さが (で指定されたとおり、**する**のメンバー、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造) に格納されている値と等しく、 **ntmSizeEM**のメンバー、 [NEWTEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162741)構造体。 (の値、 **ntmSizeEM**メンバーを呼び出すことによって取得できます、 [EnumFontFamilies](http://msdn.microsoft.com/library/windows/desktop/dd162619) Windows の機能です)。  
+ To convert the ABC widths to font design units, an application should create a font whose height (as specified in the **lfHeight** member of the [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure) is equal to the value stored in the **ntmSizeEM** member of the [NEWTEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162741) structure. (The value of the **ntmSizeEM** member can be retrieved by calling the [EnumFontFamilies](http://msdn.microsoft.com/library/windows/desktop/dd162619) Windows function.)  
   
- 既定の文字の ABC 幅は、現在選択されているフォントの範囲外な文字が使用されます。  
+ The ABC widths of the default character are used for characters that are outside the range of the currently selected font.  
   
- 非 TrueType フォントの文字の幅を取得するアプリケーションを使用する必要があります、 [GetCharWidth](http://msdn.microsoft.com/library/windows/desktop/dd144861) Windows の機能です。  
+ To retrieve the widths of characters in non-TrueType fonts, applications should use the [GetCharWidth](http://msdn.microsoft.com/library/windows/desktop/dd144861) Windows function.  
   
-##  <a name="getcharabcwidthsi"></a>CDC::GetCharABCWidthsI  
- 現在の TrueType フォントから指定された範囲内の連続したグリフ インデックスの論理単位の幅を取得します。  
+##  <a name="getcharabcwidthsi"></a>  CDC::GetCharABCWidthsI  
+ Retrieves the widths, in logical units, of consecutive glyph indices in a specified range from the current TrueType font.  
   
 ```  
 BOOL GetCharABCWidthsI(
@@ -2440,27 +2631,27 @@ BOOL GetCharABCWidthsI(
     LPABC lpabc) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `giFirst`  
- 現在のフォントからの連続したグリフ インデックスのグループの最初のグリフ インデックスを指定します。 場合にのみ、このパラメーターが使用、`pgi`パラメーターは**NULL**です。  
+ Specifies the first glyph index in the group of consecutive glyph indices from the current font. This parameter is only used if the `pgi` parameter is **NULL**.  
   
  `cgi`  
- グリフ インデックスの数を指定します。  
+ Specifies the number of glyph indices.  
   
  `pgi`  
- グリフ インデックスを含む配列へのポインター。 値が場合**NULL**、`giFirst`パラメーターを代わりに使用します。 `cgi`パラメーターは、この配列内のグリフ インデックスの数を指定します。  
+ A pointer to an array containing glyph indices. If the value is **NULL**, the `giFirst` parameter is used instead. The `cgi` parameter specifies the number of glyph indices in this array.  
   
  `lpabc`  
- 配列を指すポインター [ABC](http://msdn.microsoft.com/library/windows/desktop/dd162454)構造体の文字幅を受信します。 この配列に含める必要がありますには、少なくともできるだけ**ABC**で指定されたグリフ インデックスがあるとしての構造体、`cgi`パラメーター。  
+ Pointer to an array of [ABC](http://msdn.microsoft.com/library/windows/desktop/dd162454) structures receiving the character widths. This array must contain at least as many **ABC** structures as there are glyph indices specified by the `cgi` parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetCharABCWidthsI](http://msdn.microsoft.com/library/windows/desktop/dd144859)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetCharABCWidthsI](http://msdn.microsoft.com/library/windows/desktop/dd144859), as described in the Windows SDK.  
   
-##  <a name="getcharwidth"></a>CDC::GetCharWidth  
- 現在のフォントからの連続した文字グループの個々 の文字幅を取得を使用して`m_hAttribDC`、入力デバイス コンテキスト。  
+##  <a name="getcharwidth"></a>  CDC::GetCharWidth  
+ Retrieves the widths of individual characters in a consecutive group of characters from the current font, using `m_hAttribDC`, the input device context.  
   
 ```  
 BOOL GetCharWidth(
@@ -2474,31 +2665,31 @@ BOOL GetCharWidth(
     float* lpFloatBuffer) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFirstChar`  
- 現在のフォントの文字の隣接するグループで、最初の文字を指定します。  
+ Specifies the first character in a consecutive group of characters in the current font.  
   
  `nLastChar`  
- 現在のフォントの文字の隣接するグループの最後の文字を指定します。  
+ Specifies the last character in a consecutive group of characters in the current font.  
   
  `lpBuffer`  
- 現在のフォントで連続した文字グループの幅の値を受け取るバッファーへのポインター。  
+ Points to a buffer that will receive the width values for a consecutive group of characters in the current font.  
   
  *lpFloatBuffer*  
- 文字幅を受け取るバッファーへのポインター。 返される幅は、32 ビット IEEE 浮動小数点形式でです。 (幅は、文字ベースの線に沿った計測されます)。  
+ Points to a buffer to receive the character widths. The returned widths are in the 32-bit IEEE floating-point format. (The widths are measured along the base line of the characters.)  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- たとえば場合、`nFirstChar`文字を識別 'a' と`nLastChar`'z'、関数を取得、文字を小文字のすべての文字の幅を識別します。  
+### <a name="remarks"></a>Remarks  
+ For example, if `nFirstChar` identifies the letter 'a' and `nLastChar` identifies the letter 'z', the function retrieves the widths of all lowercase characters.  
   
- 関数の値を指すバッファーに格納する`lpBuffer`です。 このバッファーは、すべての幅を保持するのに十分な大きさである必要があります。 つまり、必要がありますには、少なくとも 26 エントリ例では。  
+ The function stores the values in the buffer pointed to by `lpBuffer`. This buffer must be large enough to hold all of the widths. That is, there must be at least 26 entries in the example given.  
   
- 特定のフォントの文字の連続したグループ内の文字が存在しない場合は、既定の文字の幅の値が割り当てられます。  
+ If a character in the consecutive group of characters does not exist in a particular font, it will be assigned the width value of the default character.  
   
-##  <a name="getcharwidthi"></a>CDC::GetCharWidthI  
- 現在のフォントから指定された範囲内の連続したグリフ インデックスの論理座標、幅を取得します。  
+##  <a name="getcharwidthi"></a>  CDC::GetCharWidthI  
+ Retrieves the widths, in logical coordinates, of consecutive glyph indices in a specified range from the current font.  
   
 ```  
 BOOL GetCharWidthI(
@@ -2508,191 +2699,191 @@ BOOL GetCharWidthI(
     LPINT lpBuffer) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `giFirst`  
- 現在のフォントからの連続したグリフ インデックスのグループの最初のグリフ インデックスを指定します。 場合にのみ、このパラメーターが使用、`pgi`パラメーターは**NULL**です。  
+ Specifies the first glyph index in the group of consecutive glyph indices from the current font. This parameter is only used if the `pgi` parameter is **NULL**.  
   
  `cgi`  
- グリフ インデックスの数を指定します。  
+ Specifies the number of glyph indices.  
   
  `pgi`  
- グリフ インデックスを含む配列へのポインター。 値が場合**NULL**、`giFirst`パラメーターを代わりに使用します。 `cgi`パラメーターは、この配列内のグリフ インデックスの数を指定します。  
+ A pointer to an array containing glyph indices. If the value is **NULL**, the `giFirst` parameter is used instead. The `cgi` parameter specifies the number of glyph indices in this array.  
   
  `lpBuffer`  
- 幅を受け取るバッファーへのポインター。  
+ A pointer to a buffer that receives the widths.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetCharWidthI](http://msdn.microsoft.com/library/windows/desktop/dd144864)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetCharWidthI](http://msdn.microsoft.com/library/windows/desktop/dd144864), as described in the Windows SDK.  
   
-##  <a name="getclipbox"></a>CDC::GetClipBox  
- 現在のクリップ領域を囲む外接する最小の四角形の寸法を取得します。  
+##  <a name="getclipbox"></a>  CDC::GetClipBox  
+ Retrieves the dimensions of the tightest bounding rectangle around the current clipping boundary.  
   
 ```  
 virtual int GetClipBox(LPRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)を四角形の大きさを受け取るオブジェクト。  
+ Points to the [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object that is to receive the rectangle dimensions.  
   
-### <a name="return-value"></a>戻り値  
- クリッピング領域の種類。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The clipping region's type. It can be any of the following values:  
   
-- **COMPLEXREGION**クリッピング領域が重なり合う境界線です。  
+- **COMPLEXREGION** Clipping region has overlapping borders.  
   
-- **エラー**デバイス コンテキストが無効です。  
+- **ERROR** Device context is not valid.  
   
-- **NULLREGION**クリッピング領域が空です。  
+- **NULLREGION** Clipping region is empty.  
   
-- **SIMPLEREGION**クリッピング領域には、重複する境界はありません。  
+- **SIMPLEREGION** Clipping region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- ディメンションが指すバッファーにコピー`lpRect`です。  
+### <a name="remarks"></a>Remarks  
+ The dimensions are copied to the buffer pointed to by `lpRect`.  
   
-##  <a name="getcoloradjustment"></a>CDC::GetColorAdjustment  
- デバイス コンテキストの色の調整値を取得します。  
+##  <a name="getcoloradjustment"></a>  CDC::GetColorAdjustment  
+ Retrieves the color adjustment values for the device context.  
   
 ```  
 BOOL GetColorAdjustment(LPCOLORADJUSTMENT lpColorAdjust) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpColorAdjust`  
- 指す、 [COLORADJUSTMENT](../../mfc/reference/coloradjustment-structure.md)色の調整値を受信するデータ構造です。  
+ Points to a [COLORADJUSTMENT](../../mfc/reference/coloradjustment-structure.md) data structure to receive the color adjustment values.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-##  <a name="getcurrentbitmap"></a>CDC::GetCurrentBitmap  
- 現在選択されているポインターを返します`CBitmap`オブジェクト。  
+##  <a name="getcurrentbitmap"></a>  CDC::GetCurrentBitmap  
+ Returns a pointer to the currently selected `CBitmap` object.  
   
 ```  
 CBitmap* GetCurrentBitmap() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CBitmap` 、それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CBitmap` object, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、一時オブジェクトを返す可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This member function may return temporary objects.  
   
-##  <a name="getcurrentbrush"></a>CDC::GetCurrentBrush  
- 現在選択されているポインターを返します`CBrush`オブジェクト。  
+##  <a name="getcurrentbrush"></a>  CDC::GetCurrentBrush  
+ Returns a pointer to the currently selected `CBrush` object.  
   
 ```  
 CBrush* GetCurrentBrush() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CBrush` 、それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CBrush` object, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、一時オブジェクトを返す可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This member function may return temporary objects.  
   
-##  <a name="getcurrentfont"></a>CDC::GetCurrentFont  
- 現在選択されているポインターを返します`CFont`オブジェクト。  
+##  <a name="getcurrentfont"></a>  CDC::GetCurrentFont  
+ Returns a pointer to the currently selected `CFont` object.  
   
 ```  
 CFont* GetCurrentFont() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CFont` 、それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CFont` object, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、一時オブジェクトを返す可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This member function may return temporary objects.  
   
-##  <a name="getcurrentpalette"></a>CDC::GetCurrentPalette  
- 現在選択されているポインターを返します`CPalette`オブジェクト。  
+##  <a name="getcurrentpalette"></a>  CDC::GetCurrentPalette  
+ Returns a pointer to the currently selected `CPalette` object.  
   
 ```  
 CPalette* GetCurrentPalette() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CPalette` 、それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CPalette` object, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、一時オブジェクトを返す可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This member function may return temporary objects.  
   
-##  <a name="getcurrentpen"></a>CDC::GetCurrentPen  
- 現在選択されているポインターを返します`CPen`オブジェクト。  
+##  <a name="getcurrentpen"></a>  CDC::GetCurrentPen  
+ Returns a pointer to the currently selected `CPen` object.  
   
 ```  
 CPen* GetCurrentPen() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 `CPen` 、それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CPen` object, if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、一時オブジェクトを返す可能性があります。  
+### <a name="remarks"></a>Remarks  
+ This member function may return temporary objects.  
   
-##  <a name="getcurrentposition"></a>CDC::GetCurrentPosition  
- (論理座標) 内の現在位置を取得します。  
+##  <a name="getcurrentposition"></a>  CDC::GetCurrentPosition  
+ Retrieves the current position (in logical coordinates).  
   
 ```  
 CPoint GetCurrentPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の位置として、`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The current position as a `CPoint` object.  
   
-### <a name="remarks"></a>コメント  
- 現在の位置を設定できる、`MoveTo`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The current position can be set with the `MoveTo` member function.  
   
-##  <a name="getdcbrushcolor"></a>CDC::GetDCBrushColor  
- 現在のブラシの色を取得します。  
+##  <a name="getdcbrushcolor"></a>  CDC::GetDCBrushColor  
+ Retrieves the current brush color.  
   
 ```  
 COLORREF GetDCBrushColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合、戻り値は、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)現在のブラシの色の値。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value is the [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value for the current brush color.  
   
- 戻り値は、関数が失敗した場合、 **CLR_INVALID**です。  
+ If the function fails, the return value is **CLR_INVALID**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd144872)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd144872), as described in the Windows SDK.  
   
-##  <a name="getdcpencolor"></a>CDC::GetDCPenColor  
- 現在のペンの色を取得します。  
+##  <a name="getdcpencolor"></a>  CDC::GetDCPenColor  
+ Retrieves the current pen color.  
   
 ```  
 COLORREF GetDCPenColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合、戻り値は、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)現在のペンの色の値。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value is the [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value for the current pen color.  
   
- 戻り値は、関数が失敗した場合、 **CLR_INVALID**です。  
+ If the function fails, the return value is **CLR_INVALID**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数で、Win32 関数[GetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd144875)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function utilizes the Win32 function [GetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd144875), as described in the Windows SDK.  
   
-##  <a name="getdevicecaps"></a>について  
- ディスプレイ デバイスに関する情報をデバイスに固有の幅の広い範囲を取得します。  
+##  <a name="getdevicecaps"></a>  CDC::GetDeviceCaps  
+ Retrieves a wide range of device-specific information about the display device.  
   
 ```  
 int GetDeviceCaps(int nIndex) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 返される情報の種類を指定します。 参照してください[調べるため](http://msdn.microsoft.com/library/windows/desktop/dd144877)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の値の一覧です。  
+ Specifies the type of information to return. See [GetDeviceCaps](http://msdn.microsoft.com/library/windows/desktop/dd144877) in the Windows SDK for a list of values.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合、要求された機能の値です。  
+### <a name="return-value"></a>Return Value  
+ The value of the requested capability if the function is successful.  
   
-### <a name="example"></a>例  
-  例を参照して[CPrintDialog::GetDefaults](../../mfc/reference/cprintdialog-class.md#getdefaults)です。  
+### <a name="example"></a>Example  
+  See the example for [CPrintDialog::GetDefaults](../../mfc/reference/cprintdialog-class.md#getdefaults).  
   
-##  <a name="getfontdata"></a>CDC::GetFontData  
- スケーラブルなフォント ファイルからフォント メトリック情報を取得します。  
+##  <a name="getfontdata"></a>  CDC::GetFontData  
+ Retrieves font-metric information from a scalable font file.  
   
 ```  
 DWORD GetFontData(
@@ -2702,46 +2893,46 @@ DWORD GetFontData(
     DWORD cbData) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwTable`  
- 返されるメトリック テーブルの名前を指定します。 このパラメーターは、Microsoft Corporation によって公開されている TrueType フォント ファイルの仕様に記載されているメトリック テーブルのいずれかを指定できます。 このパラメーターが 0 の場合は、情報は、フォント ファイルの先頭から取得されます。  
+ Specifies the name of the metric table to be returned. This parameter can be one of the metric tables documented in the TrueType Font Files specification published by Microsoft Corporation. If this parameter is 0, the information is retrieved starting at the beginning of the font file.  
   
  `dwOffset`  
- 情報の取得を開始する位置を示すテーブルの先頭からのオフセットを指定します。 指定されたテーブルの先頭から情報を取得するこのパラメーターが 0 の場合、`dwTable`パラメーター。 この値がより大きいか、テーブルのサイズに等しい場合`GetFontData`0 を返します。  
+ Specifies the offset from the beginning of the table at which to begin retrieving information. If this parameter is 0, the information is retrieved starting at the beginning of the table specified by the `dwTable` parameter. If this value is greater than or equal to the size of the table, `GetFontData` returns 0.  
   
  `lpData`  
- フォントの情報を受け取るバッファーへのポインター。 この値が場合**NULL**で指定されたフォント データに必要なバッファーのサイズを返します、`dwTable`パラメーター。  
+ Points to a buffer that will receive the font information. If this value is **NULL**, the function returns the size of the buffer required for the font data specified in the `dwTable` parameter.  
   
  `cbData`  
- (バイト単位) を取得する情報の長さを指定します。 このパラメーターが 0 で`GetFontData`で指定されるデータのサイズを返します、`dwTable`パラメーター。  
+ Specifies the length, in bytes, of the information to be retrieved. If this parameter is 0, `GetFontData` returns the size of the data specified in the `dwTable` parameter.  
   
-### <a name="return-value"></a>戻り値  
- 指すバッファーに返されるバイト数を指定`lpData`関数が成功した場合は-1。  
+### <a name="return-value"></a>Return Value  
+ Specifies the number of bytes returned in the buffer pointed to by `lpData` if the function is successful; otherwise -1.  
   
-### <a name="remarks"></a>コメント  
- 取得する情報は、フォント ファイルと返される情報の長さにオフセットを指定することによって識別されます。  
+### <a name="remarks"></a>Remarks  
+ The information to retrieve is identified by specifying an offset into the font file and the length of the information to return.  
   
- アプリケーションで使用できる場合があります、 `GetFontData` TrueType フォントを保存するドキュメントを使用するメンバー関数。 これを行うには、アプリケーションかどうかをフォント埋め込み可能の場合は 0 を指定する、全体のフォント ファイルを取得、 `dwTable`、 `dwOffset`、および`cbData`パラメーター。  
+ An application can sometimes use the `GetFontData` member function to save a TrueType font with a document. To do this, the application determines whether the font can be embedded and then retrieves the entire font file, specifying 0 for the `dwTable`, `dwOffset`, and `cbData` parameters.  
   
- アプリケーションでは、チェックして、フォントを埋め込むことが可能かどうかを決定できます、 **otmfsType**のメンバー、 [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755)構造体。 場合のビット 1 **otmfsType**が設定されている、フォントの埋め込みは許可されていません。 1 のビットがオフの場合は、フォントを埋め込むことができます。 ビット 2 が設定されている場合、埋め込みは読み取り専用です。  
+ Applications can determine whether a font can be embedded by checking the **otmfsType** member of the [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755) structure. If bit 1 of **otmfsType** is set, embedding is not permitted for the font. If bit 1 is clear, the font can be embedded. If bit 2 is set, the embedding is read only.  
   
- アプリケーションが、この関数を使用して、非 TrueType フォントの情報を取得しようとしています。 場合、`GetFontData`メンバー関数は-1 を返します。  
+ If an application attempts to use this function to retrieve information for a non-TrueType font, the `GetFontData` member function returns -1.  
   
-##  <a name="getfontlanguageinfo"></a>CDC::GetFontLanguageInfo  
- 現在選択されているフォントを指定した表示のコンテキストに関する情報を返します。  
+##  <a name="getfontlanguageinfo"></a>  CDC::GetFontLanguageInfo  
+ Returns information about the currently selected font for the specified display context.  
   
 ```  
 DWORD GetFontLanguageInfo() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 戻り値は、現在選択されているフォントの特性を識別します。 使用可能な値の完全な一覧については、次を参照してください。 [GetFontLanguageInfo](http://msdn.microsoft.com/library/windows/desktop/dd144886)です。  
+### <a name="return-value"></a>Return Value  
+ The return value identifies characteristics of the currently selected font. For a complete listing of possible values, see [GetFontLanguageInfo](http://msdn.microsoft.com/library/windows/desktop/dd144886).  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetFontLanguageInfo](http://msdn.microsoft.com/library/windows/desktop/dd144886)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetFontLanguageInfo](http://msdn.microsoft.com/library/windows/desktop/dd144886), as described in the Windows SDK.  
   
-##  <a name="getglyphoutline"></a>CDC::GetGlyphOutline  
- アウトライン曲線または現在のフォントのアウトライン文字のビットマップを取得します。  
+##  <a name="getglyphoutline"></a>  CDC::GetGlyphOutline  
+ Retrieves the outline curve or bitmap for an outline character in the current font.  
   
 ```  
 DWORD GetGlyphOutline(
@@ -2753,74 +2944,74 @@ DWORD GetGlyphOutline(
     const MAT2* lpmat2) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nChar`  
- 情報が返される対象の文字を指定します。  
+ Specifies the character for which information is to be returned.  
   
  `nFormat`  
- 情報を返す関数の形式を指定します。 次の値のいずれか、または 0 を指定できます。  
+ Specifies the format in which the function is to return information. It can be one of the following values, or 0:  
   
-|値|説明|  
+|Value|Meaning|  
 |-----------|-------------|  
-|**GGO_BITMAP**|グリフのビットマップを返します。 ときに、関数からが指すバッファー`lpBuffer`ダブルワード境界に 1 ビット/ピクセルのビットマップが含まれています。|  
-|**GGO_NATIVE**|デバイス単位を使用して、ラスタライザーのネイティブ形式でデータ ポイント、曲線を返します。 すべての変換がで指定されたこの値を指定すると、`lpmat2`は無視されます。|  
+|**GGO_BITMAP**|Returns the glyph bitmap. When the function returns, the buffer pointed to by `lpBuffer` contains a 1-bit-per-pixel bitmap whose rows start on doubleword boundaries.|  
+|**GGO_NATIVE**|Returns the curve data points in the rasterizer's native format, using device units. When this value is specified, any transformation specified in `lpmat2` is ignored.|  
   
- ときに、値の`nFormat`が 0 の場合、関数を入力、 [GLYPHMETRICS](http://msdn.microsoft.com/library/windows/desktop/dd144955)構造体が、グリフのアウトライン データは返されません。  
+ When the value of `nFormat` is 0, the function fills in a [GLYPHMETRICS](http://msdn.microsoft.com/library/windows/desktop/dd144955) structure but does not return glyph-outline data.  
   
  *lpgm*  
- 指す、 **GLYPHMETRICS**文字セル内のグリフの配置を記述する構造体。  
+ Points to a **GLYPHMETRICS** structure that describes the placement of the glyph in the character cell.  
   
  `cbBuffer`  
- 関数がアウトライン文字に関する情報をコピーする先のバッファーのサイズを指定します。 この値が 0 の場合、`nFormat`パラメーターは、いずれか、 **GGO_BITMAP**または**GGO_NATIVE**値、関数が必要なバッファーのサイズを返します。  
+ Specifies the size of the buffer into which the function copies information about the outline character. If this value is 0 and the `nFormat` parameter is either the **GGO_BITMAP** or **GGO_NATIVE** values, the function returns the required size of the buffer.  
   
  `lpBuffer`  
- 関数は、アウトライン文字に関する情報をコピーするバッファーへのポインター。 場合`nFormat`指定、 **GGO_NATIVE**の形式で情報の値がコピーされる**TTPOLYGONHEADER**と**それに続く**構造体。 この値が場合**NULL**と`nFormat`いずれかです、 **GGO_BITMAP**または**GGO_NATIVE**値、関数が必要なバッファーのサイズを返します。  
+ Points to a buffer into which the function copies information about the outline character. If `nFormat` specifies the **GGO_NATIVE** value, the information is copied in the form of **TTPOLYGONHEADER** and **TTPOLYCURVE** structures. If this value is **NULL** and `nFormat` is either the **GGO_BITMAP** or **GGO_NATIVE** value, the function returns the required size of the buffer.  
   
  `lpmat2`  
- 指す、 [MAT2](http://msdn.microsoft.com/library/windows/desktop/dd145048)文字の変換行列を格納する構造体。 このパラメーターを指定できません**NULL**を場合でも、 **GGO_NATIVE**値が指定されて`nFormat`です。  
+ Points to a [MAT2](http://msdn.microsoft.com/library/windows/desktop/dd145048) structure that contains a transformation matrix for the character. This parameter cannot be **NULL**, even when the **GGO_NATIVE** value is specified for `nFormat`.  
   
-### <a name="return-value"></a>戻り値  
- サイズを取得した情報の場合に必要なバッファーのバイト単位で`cbBuffer`は、0 または`lpBuffer`は**NULL**です。 それ以外の場合は、正の値、関数が成功した場合、エラーがある場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The size, in bytes, of the buffer required for the retrieved information if `cbBuffer` is 0 or `lpBuffer` is **NULL**. Otherwise, it is a positive value if the function is successful, or -1 if there is an error.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションを指す構造体で 2-2 での変換行列を指定することで、ビットマップ形式で取得される文字数を回転できます`lpmat2`です。  
+### <a name="remarks"></a>Remarks  
+ An application can rotate characters retrieved in bitmap format by specifying a 2-by-2 transformation matrix in the structure pointed to by `lpmat2`.  
   
- グリフのアウトラインは、一連の輪郭として返されます。 各輪郭がによって定義された、 [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158)構造が続く多くとして**それに続く**それを記述するために必要なとしての構造体します。 すべてのポイントとして返されます[POINTFX](http://msdn.microsoft.com/library/windows/desktop/dd162806)構造体し、絶対位置、いない相対的な移動を表します。 によって指定された開始ポイント、 **pfxStart**のメンバー、 [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158)構造体は、輪郭のアウトラインを開始するポイント。 [それに続く](http://msdn.microsoft.com/library/windows/desktop/dd145157)後に続く構造体は、多角形のレコードまたはスプライン レコードのいずれかを指定できます。 折れ線レコードは、一連のポイントです。点の間の線では、文字の概要について説明します。 スプライン レコードは、TrueType (つまり、二次方程式 b スプライン) によって使用される、二次曲線を表します。  
+ A glyph outline is returned as a series of contours. Each contour is defined by a [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158) structure followed by as many **TTPOLYCURVE** structures as are required to describe it. All points are returned as [POINTFX](http://msdn.microsoft.com/library/windows/desktop/dd162806) structures and represent absolute positions, not relative moves. The starting point given by the **pfxStart** member of the [TTPOLYGONHEADER](http://msdn.microsoft.com/library/windows/desktop/dd145158) structure is the point at which the outline for a contour begins. The [TTPOLYCURVE](http://msdn.microsoft.com/library/windows/desktop/dd145157) structures that follow can be either polyline records or spline records. Polyline records are a series of points; lines drawn between the points describe the outline of the character. Spline records represent the quadratic curves used by TrueType (that is, quadratic b-splines).  
   
-##  <a name="getgraphicsmode"></a>CDC::GetGraphicsMode  
- 指定したデバイス コンテキストの現在のグラフィックス モードを取得します。  
+##  <a name="getgraphicsmode"></a>  CDC::GetGraphicsMode  
+ Retrieves the current graphics mode for the specified device context.  
   
 ```  
 int GetGraphicsMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合に、現在のグラフィックス モードを返します。 このメソッドが返すことができる値の一覧は、次を参照してください。[については](http://msdn.microsoft.com/library/windows/desktop/dd144892)します。  
+### <a name="return-value"></a>Return Value  
+ Returns the current graphics mode on success. For a list of the values that this method can return, see [GetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd144892).  
   
- 失敗した場合に 0 を返します。  
+ Returns 0 on failure.  
   
- 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメソッド[については](http://msdn.microsoft.com/library/windows/desktop/dd144892)します。  
+### <a name="remarks"></a>Remarks  
+ This method wraps the Windows GDI function [GetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd144892).  
   
-##  <a name="gethalftonebrush"></a>CDC::GetHalftoneBrush  
- ハーフトーン ブラシを取得するには、このメンバー関数を呼び出します。  
+##  <a name="gethalftonebrush"></a>  CDC::GetHalftoneBrush  
+ Call this member function to retrieve a halftone brush.  
   
 ```  
 static CBrush* PASCAL GetHalftoneBrush();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CBrush`それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CBrush` object if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- ハーフトーン ブラシをディザリングされたパターンを作成する前景色と背景色は、代わりにピクセルを示しています。 ハーフトーン ブラシによって作成されたディザリングされたパターンの例を次に示します。  
+### <a name="remarks"></a>Remarks  
+ A halftone brush shows pixels that are alternately foreground and background colors to create a dithered pattern. The following is an example of a dithered pattern created by a halftone brush.  
   
- ![ディザリングされたペンのストロークの詳細](../../mfc/reference/media/vc318s1.gif "vc318s1")  
+ ![Detail of a dithered pen stroke](../../mfc/reference/media/vc318s1.gif "vc318s1")  
   
-##  <a name="getkerningpairs"></a>CDC::GetKerningPairs  
- 文字のペアの指定したデバイス コンテキストで現在選択されているフォントをカーニングを取得します。  
+##  <a name="getkerningpairs"></a>  CDC::GetKerningPairs  
+ Retrieves the character kerning pairs for the font that is currently selected in the specified device context.  
   
 ```  
 int GetKerningPairs(
@@ -2828,77 +3019,77 @@ int GetKerningPairs(
     LPKERNINGPAIR lpkrnpair) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPairs`  
- 数を指定[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145024)構造体を指す`lpkrnpair`です。 関数はカーニング ペアで指定されたよりもコピーされません`nPairs`です。  
+ Specifies the number of [KERNINGPAIR](http://msdn.microsoft.com/library/windows/desktop/dd145024) structures pointed to by `lpkrnpair`. The function will not copy more kerning pairs than specified by `nPairs`.  
   
  `lpkrnpair`  
- 配列を指す**受け取る**カーニングを受信する構造体のペアを関数が戻るときにします。 この配列で指定された数は、少なくとも構造体を含める必要があります`nPairs`です。 このパラメーターが場合**NULL**、カーニング、フォントのペアの合計数を返します。  
+ Points to an array of **KERNINGPAIR** structures that receive the kerning pairs when the function returns. This array must contain at least as many structures as specified by `nPairs`. If this parameter is **NULL**, the function returns the total number of kerning pairs for the font.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は、取得したカーニング ペアの数またはカーニング、フォントのペアの合計数を指定します。 関数が失敗したかのフォント カーニングのペアがない場合は、0 が返されます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the number of kerning pairs retrieved or the total number of kerning pairs in the font, if the function is successful. Zero is returned if the function fails or there are no kerning pairs for the font.  
   
-##  <a name="getlayout"></a>CDC::GetLayout  
- テキストとグラフィックス プリンターまたはメタファイルなどのデバイス コンテキストのレイアウトを決定するには、このメンバー関数を呼び出します。  
+##  <a name="getlayout"></a>  CDC::GetLayout  
+ Call this member function to determine the layout of the text and graphics for a device context, such as a printer or a metafile.  
   
 ```  
 DWORD GetLayout() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、レイアウトは、現在のデバイス コンテキストのフラグします。 それ以外の場合、 **GDI_ERROR**です。 拡張されたエラーについては、呼び出す[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。 レイアウトのフラグの一覧は、次を参照してください。 [CDC::SetLayout](#setlayout)です。  
+### <a name="return-value"></a>Return Value  
+ If successful, the layout flags for the current device context. Otherwise, **GDI_ERROR**. For extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360). For a list of the layout flags, see [CDC::SetLayout](#setlayout).  
   
-### <a name="remarks"></a>コメント  
- 既定のレイアウトは左右からです。  
+### <a name="remarks"></a>Remarks  
+ The default layout is left to right.  
   
-##  <a name="getmapmode"></a>CDC::GetMapMode  
- 現在のマップ モードを取得します。  
+##  <a name="getmapmode"></a>  CDC::GetMapMode  
+ Retrieves the current mapping mode.  
   
 ```  
 int GetMapMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- マップ モード。  
+### <a name="return-value"></a>Return Value  
+ The mapping mode.  
   
-### <a name="remarks"></a>コメント  
- マップ モードの説明は、次を参照してください。、`SetMapMode`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ For a description of the mapping modes, see the `SetMapMode` member function.  
   
 > [!NOTE]
->  呼び出す場合[SetLayout](#setlayout) DC を右から左のレイアウトに変更する**SetLayout**へのマッピング モードは自動的に変更`MM_ISOTROPIC`です。 その結果、その後続の呼び出し`GetMapMode`戻ります`MM_ISOTROPIC`です。  
+>  If you call [SetLayout](#setlayout) to change the DC to right-to-left layout, **SetLayout** automatically changes the mapping mode to `MM_ISOTROPIC`. Consequently, any subsequent call to `GetMapMode` will return `MM_ISOTROPIC`.  
   
-##  <a name="getmiterlimit"></a>CDC::GetMiterLimit  
- デバイス コンテキストの角を返します。  
+##  <a name="getmiterlimit"></a>  CDC::GetMiterLimit  
+ Returns the miter limit for the device context.  
   
 ```  
 float GetMiterLimit() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- マイター結合を持つ幾何学的線を描画、マイターが使用されます。  
+### <a name="remarks"></a>Remarks  
+ The miter limit is used when drawing geometric lines that have miter joins.  
   
-##  <a name="getnearestcolor"></a>CDC::GetNearestColor  
- 指定した論理色に最も一致する純色を返します。  
+##  <a name="getnearestcolor"></a>  CDC::GetNearestColor  
+ Returns the solid color that best matches a specified logical color.  
   
 ```  
 COLORREF GetNearestColor(COLORREF crColor) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 一致する色を指定します。  
+ Specifies the color to be matched.  
   
-### <a name="return-value"></a>戻り値  
- 色の RGB (赤、緑、青) 値、純色を定義するに最も近い色、`crColor`デバイスを表すことができます。  
+### <a name="return-value"></a>Return Value  
+ An RGB (red, green, blue) color value that defines the solid color closest to the `crColor` value that the device can represent.  
   
-### <a name="remarks"></a>コメント  
- 特定のデバイスは、この色を表現できる必要があります。  
+### <a name="remarks"></a>Remarks  
+ The given device must be able to represent this color.  
   
-##  <a name="getoutlinetextmetrics"></a>CDC::GetOutlineTextMetrics  
- TrueType フォントのメトリック情報を取得します。  
+##  <a name="getoutlinetextmetrics"></a>  CDC::GetOutlineTextMetrics  
+ Retrieves metric information for TrueType fonts.  
   
 ```  
 UINT GetOutlineTextMetrics(
@@ -2906,24 +3097,24 @@ UINT GetOutlineTextMetrics(
     LPOUTLINETEXTMETRIC lpotm) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpotm`  
- 配列を指す[OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755)構造体。 このパラメーターが場合**NULL**、取得したメトリック データに必要なバッファーのサイズを返します。  
+ Points to an array of [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755) structures. If this parameter is **NULL**, the function returns the size of the buffer required for the retrieved metric data.  
   
  `cbData`  
- 情報が返されるバッファーのバイト単位で、サイズを指定します。  
+ Specifies the size, in bytes, of the buffer to which information is returned.  
   
  `lpotm`  
- 指す、 **OUTLINETEXTMETRIC**構造体。 このパラメーターは、する場合**NULL**、取得したメトリック情報に必要なバッファーのサイズを返します。  
+ Points to an **OUTLINETEXTMETRIC** structure. If this parameter is **NULL**, the function returns the size of the buffer required for the retrieved metric information.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755)構造体には、TrueType 形式に用意されているフォント メトリック情報の大部分が含まれています。 など、[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145132)構造体。 最後の 4 つのメンバー、 **OUTLINETEXTMETRIC**構造体は、文字列へのポインター。 アプリケーションは、これらの文字列の他のメンバーに必要な容量に加えて領域を割り当てる必要があります。 メモリを割り当てるための最も簡単な方法を指定することによって必要なサイズを取得するが、文字列のサイズにシステムの制限がないため、 **NULL**の`lpotm`最初の呼び出しで、`GetOutlineTextMetrics`関数。  
+### <a name="remarks"></a>Remarks  
+ The [OUTLINETEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd162755) structure contains most of the font metric information provided with the TrueType format, including a [TEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd145132) structure. The last four members of the **OUTLINETEXTMETRIC** structure are pointers to strings. Applications should allocate space for these strings in addition to the space required for the other members. Because there is no system-imposed limit to the size of the strings, the simplest method for allocating memory is to retrieve the required size by specifying **NULL** for `lpotm` in the first call to the `GetOutlineTextMetrics` function.  
   
-##  <a name="getoutputcharwidth"></a>CDC::GetOutputCharWidth  
- 出力デバイス コンテキストを使用して`m_hDC`、し、現在のフォントから文字の隣接するグループ内の個々 の文字幅を取得します。  
+##  <a name="getoutputcharwidth"></a>  CDC::GetOutputCharWidth  
+ Uses the output device context, `m_hDC`, and retrieves the widths of individual characters in a consecutive group of characters from the current font.  
   
 ```  
 BOOL GetOutputCharWidth(
@@ -2932,28 +3123,28 @@ BOOL GetOutputCharWidth(
     LPINT lpBuffer) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFirstChar`  
- 現在のフォントの文字の隣接するグループで、最初の文字を指定します。  
+ Specifies the first character in a consecutive group of characters in the current font.  
   
  `nLastChar`  
- 現在のフォントの文字の隣接するグループの最後の文字を指定します。  
+ Specifies the last character in a consecutive group of characters in the current font.  
   
  `lpBuffer`  
- 現在のフォントで連続した文字グループの幅の値を受け取るバッファーへのポインター。  
+ Points to a buffer that will receive the width values for a consecutive group of characters in the current font.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- たとえば場合、`nFirstChar`文字を識別 'a' と`nLastChar`'z'、関数を取得、文字を小文字のすべての文字の幅を識別します。  
+### <a name="remarks"></a>Remarks  
+ For example, if `nFirstChar` identifies the letter 'a' and `nLastChar` identifies the letter 'z', the function retrieves the widths of all lowercase characters.  
   
- 関数の値を指すバッファーに格納する`lpBuffer`です。 このバッファーは、すべての幅を保持するのに十分な大きさである必要があります。つまり、必要がありますには、少なくとも 26 エントリ例では。  
+ The function stores the values in the buffer pointed to by `lpBuffer`. This buffer must be large enough to hold all of the widths; that is, there must be at least 26 entries in the example given.  
   
- 特定のフォントの文字の連続したグループ内の文字が存在しない場合は、既定の文字の幅の値が割り当てられます。  
+ If a character in the consecutive group of characters does not exist in a particular font, it will be assigned the width value of the default character.  
   
-##  <a name="getoutputtabbedtextextent"></a>CDC::GetOutputTabbedTextExtent  
- 幅と高さを使用する文字の文字列を計算するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、出力デバイス コンテキスト。  
+##  <a name="getoutputtabbedtextextent"></a>  CDC::GetOutputTabbedTextExtent  
+ Call this member function to compute the width and height of a character string using [m_hDC](#m_hdc), the output device context.  
   
 ```  
 CSize GetOutputTabbedTextExtent(
@@ -2968,36 +3159,36 @@ CSize GetOutputTabbedTextExtent(
     LPINT lpnTabStopPositions) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 測定する文字の文字列を指します。 渡すことも、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to a character string to be measured. You can also pass a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`-1 で、長さが計算されます。  
+ Specifies the number of characters in the string. If `nCount` is -1, the length is calculated.  
   
  `nTabPositions`  
- タブ ストップの位置を指す配列内の数を指定`lpnTabStopPositions`です。  
+ Specifies the number of tab-stop positions in the array pointed to by `lpnTabStopPositions`.  
   
  `lpnTabStopPositions`  
- 論理ユニットのタブ ストップの位置を表す、整数の配列を指します。 タブ ストップは; 昇順に並べ替える必要があります。最小の x 値には、配列の最初の項目をする必要があります。 バック タブを指定することはできません。  
+ Points to an array of integers containing the tab-stop positions in logical units. The tab stops must be sorted in increasing order; the smallest x-value should be the first item in the array. Back tabs are not allowed.  
   
  `str`  
- A`CString`を測定する指定された文字を含むオブジェクト。  
+ A `CString` object that contains the specified characters to be measured.  
   
-### <a name="return-value"></a>戻り値  
- (論理単位で) の文字列のディメンション、 [CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The dimensions of the string (in logical units) in a [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 文字列に 1 つまたは複数のタブ文字が含まれている場合、文字列の幅に基づいてで指定されたタブ ストップ`lpnTabStopPositions`です。 関数では、現在選択されているフォントを使用して、文字列のサイズを計算します。  
+### <a name="remarks"></a>Remarks  
+ If the string contains one or more tab characters, the width of the string is based upon the tab stops specified by `lpnTabStopPositions`. The function uses the currently selected font to compute the dimensions of the string.  
   
- 現在のクリップ領域に、幅と高さがによって返されるがオフセット排出されません、`GetOutputTabbedTextExtent`関数。  
+ The current clipping region does not offset the width and height returned by the `GetOutputTabbedTextExtent` function.  
   
- 一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される、文字)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
+ Since some devices do not place characters in regular cell arrays (that is, they kern the characters), the sum of the extents of the characters in a string may not be equal to the extent of the string.  
   
- 場合`nTabPositions`は 0 と`lpnTabStopPositions`は**NULL**タブは、平均の文字幅を 8 に拡張されます。 場合`nTabPositions`1 の場合は、タブ ストップが先の配列の最初の値で指定された間隔で区切られる`lpnTabStopPositions`ポイント。 場合`lpnTabStopPositions`1 つの値を超えるポイント、タブ ストップで指定された数まで、配列内の各値の設定は`nTabPositions`します。  
+ If `nTabPositions` is 0 and `lpnTabStopPositions` is **NULL**, tabs are expanded to eight average character widths. If `nTabPositions` is 1, the tab stops will be separated by the distance specified by the first value in the array to which `lpnTabStopPositions` points. If `lpnTabStopPositions` points to more than a single value, a tab stop is set for each value in the array, up to the number specified by `nTabPositions`.  
   
-##  <a name="getoutputtextextent"></a>CDC::GetOutputTextExtent  
- 出力デバイス コンテキストを使用するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、現在のフォントを使用して、テキストの行の高さと幅を計算します。  
+##  <a name="getoutputtextextent"></a>  CDC::GetOutputTextExtent  
+ Call this member function to use the output device context, [m_hDC](#m_hdc), and compute the width and height of a line of text, using the current font.  
   
 ```  
 CSize GetOutputTextExtent(
@@ -3007,40 +3198,40 @@ CSize GetOutputTextExtent(
 CSize GetOutputTextExtent(const CString& str) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 文字の文字列を指します。 渡すことも、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to a string of characters. You can also pass a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`-1 で、長さが計算されます。  
+ Specifies the number of characters in the string. If `nCount` is -1, the length is calculated.  
   
  `str`  
- A`CString`を測定する指定された文字を含むオブジェクト。  
+ A `CString` object that contains the specified characters to be measured.  
   
-### <a name="return-value"></a>戻り値  
- 返されます (論理単位で) 文字列のサイズ、 [CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The dimensions of the string (in logical units) returned in a [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 現在のクリップ領域には影響しません、幅と高さがによって返される`GetOutputTextExtent`です。  
+### <a name="remarks"></a>Remarks  
+ The current clipping region does not affect the width and height returned by `GetOutputTextExtent`.  
   
- 一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
+ Since some devices do not place characters in regular cell arrays (that is, they carry out kerning), the sum of the extents of the characters in a string may not be equal to the extent of the string.  
   
-##  <a name="getoutputtextmetrics"></a>CDC::GetOutputTextMetrics  
- 現在のフォントを使用して、メトリックを取得`m_hDC`、出力デバイス コンテキスト。  
+##  <a name="getoutputtextmetrics"></a>  CDC::GetOutputTextMetrics  
+ Retrieves the metrics for the current font using `m_hDC`, the output device context.  
   
 ```  
 BOOL GetOutputTextMetrics(LPTEXTMETRIC lpMetrics) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpMetrics`  
- 指す、[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145132)メトリックを受け取る。  
+ Points to the [TEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd145132) structure that receives the metrics.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-##  <a name="getpath"></a>CDC::GetPath  
- 行のエンドポイントとデバイス コンテキストに選択されているパスに含まれる曲線の制御点を定義する座標を取得します。  
+##  <a name="getpath"></a>  CDC::GetPath  
+ Retrieves the coordinates defining the endpoints of lines and the control points of curves found in the path that is selected into the device context.  
   
 ```  
 int GetPath(
@@ -3049,39 +3240,39 @@ int GetPath(
     int nCount) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)データ構造体または`CPoint`線の端点と曲線コントロール ポイントのオブジェクトを配置しています。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) data structures or `CPoint` objects where the line endpoints and curve control points are placed.  
   
  `lpTypes`  
- 頂点の型が配置されているバイトの配列を指します。 値は、次のいずれかです。  
+ Points to an array of bytes where the vertex types are placed. Values are one of the following:  
   
-- **直前**でポイントを対応することを示します`lpPoints`不整合のある図形を開始します。  
+- **PT_MOVETO** Specifies that the corresponding point in `lpPoints` starts a disjoint figure.  
   
-- **PT_LINETO**前のポイントと、対応するポイントの指定`lpPoints`行のエンドポイントします。  
+- **PT_LINETO** Specifies that the previous point and the corresponding point in `lpPoints` are the endpoints of a line.  
   
-- **PT_BEZIERTO**でポイントを対応することを示します`lpPoints`ベジエ曲線の制御点または終了します。  
+- **PT_BEZIERTO** Specifies that the corresponding point in `lpPoints` is a control point or ending point for a Bzier curve.  
   
- **PT_BEZIERTO**に 3 つのセットの種類が常に実行します。 直前のパスのポイントでは、ベジエ曲線の開始点を定義します。 最初の 2 つ**PT_BEZIERTO**ポイントは、コントロール ポイント、および 3 番目**PT_BEZIERTO**ポイントは、エンド ポイント (場合、ハードコーディング)。  
+ **PT_BEZIERTO** types always occur in sets of three. The point in the path immediately preceding them defines the starting point for the Bzier curve. The first two **PT_BEZIERTO** points are the control points, and the third **PT_BEZIERTO** point is the end point (if hard-coded).  
   
-     A **PT_LINETO**または**PT_BEZIERTO**型は、次のフラグと組み合わせることができます (ビットごとの演算子を使用して`OR`) を示す対応するポイントが、図の最後の点であること、および、図を閉じる必要があります。  
+     A **PT_LINETO** or **PT_BEZIERTO** type may be combined with the following flag (by using the bitwise operator `OR`) to indicate that the corresponding point is the last point in a figure and that the figure should be closed:  
   
-- **PT_CLOSEFIGURE**の図は、対応する行の後に自動的に閉じられます。 または、曲線を描画するように指定します。 直線または曲線エンドポイントから対応する最後のポイントに線を描画することによって、図表が閉じて**直前**です。  
+- **PT_CLOSEFIGURE** Specifies that the figure is automatically closed after the corresponding line or curve is drawn. The figure is closed by drawing a line from the line or curve endpoint to the point corresponding to the last **PT_MOVETO**.  
   
  `nCount`  
- 合計数を示す[ポイント](../../mfc/reference/point-structure1.md)に格納できるデータ構造体、`lpPoints`配列。 この値に格納できるバイト数と同じである必要があります、`lpTypes`配列。  
+ Specifies the total number of [POINT](../../mfc/reference/point-structure1.md) data structures that may be placed in the `lpPoints` array. This value must be the same as the number of bytes that may be placed in the `lpTypes` array.  
   
-### <a name="return-value"></a>戻り値  
- 場合、`nCount`パラメーターが 0 でない列挙ポイントの数。 場合`nCount`が 0 の場合、パス内の地点の合計数 (および`GetPath`nothing をバッファーに書き込みます)。 場合`nCount`が 0 でないと、ポイントの数よりも小さいパスが、戻り値は-1。  
+### <a name="return-value"></a>Return Value  
+ If the `nCount` parameter is nonzero, the number of points enumerated. If `nCount` is 0, the total number of points in the path (and `GetPath` writes nothing to the buffers). If `nCount` is nonzero and is less than the number of points in the path, the return value is -1.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストでは、閉じているパスを含める必要があります。 論理座標では、パスのポイントが返されます。 ポイントが格納されているデバイス座標のパスのため`GetPath`現在の変換の逆関数を使用して、ポイントをデバイス座標から論理座標に変更します。 `FlattenPath`する前に、メンバー関数を呼び出すことができます`GetPath`パス内のすべての曲線を直線セグメントに変換します。  
+### <a name="remarks"></a>Remarks  
+ The device context must contain a closed path. The points of the path are returned in logical coordinates. Points are stored in the path in device coordinates, so `GetPath` changes the points from device coordinates to logical coordinates by using the inverse of the current transformation. The `FlattenPath` member function may be called before `GetPath`, to convert all curves in the path into line segments.  
   
-### <a name="example"></a>例  
-  例を参照して[cdc::beginpath](#beginpath)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::BeginPath](#beginpath).  
   
-##  <a name="getpixel"></a>CDC::GetPixel  
- 指定されたポイントのピクセルの RGB 色の値を取得*x*と*y*です。  
+##  <a name="getpixel"></a>  CDC::GetPixel  
+ Retrieves the RGB color value of the pixel at the point specified by *x* and *y*.  
   
 ```  
 COLORREF GetPixel(
@@ -3091,82 +3282,82 @@ COLORREF GetPixel(
 COLORREF GetPixel(POINT point) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で調査する点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the point to be examined.  
   
  *y*  
- 論理で調査する点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the point to be examined.  
   
  `point`  
- 調査するポイントの論理 x 座標と y 座標を指定します。  
+ Specifies the logical x- and y-coordinates of the point to be examined.  
   
-### <a name="return-value"></a>戻り値  
- 関数、指定された点の色の RGB 色の値のいずれかのバージョン。 クリッピング領域の座標が、ポイントを指定しない場合は-1 になります。  
+### <a name="return-value"></a>Return Value  
+ For either version of the function, an RGB color value for the color of the given point. It is -1 if the coordinates do not specify a point in the clipping region.  
   
-### <a name="remarks"></a>コメント  
- クリップ領域内のポイントがあります。 クリッピング領域に、ポイントがない場合は、関数は影響を与えませんし、-1 を返します。  
+### <a name="remarks"></a>Remarks  
+ The point must be in the clipping region. If the point is not in the clipping region, the function has no effect and returns -1.  
   
- すべてのデバイスのサポート、 **GetPixel**関数。 詳細については、次を参照してください。、 **RC_BITBLT** ラスター機能、[調べるため](#getdevicecaps)メンバー関数。  
+ Not all devices support the **GetPixel** function. For more information, see the **RC_BITBLT** raster capability under the [GetDeviceCaps](#getdevicecaps) member function.  
   
- **GetPixel**メンバー関数が 2 つの形式です。 最初の 2 つの座標値を取得します。2 つ目は、いずれか、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)オブジェクト。  
+ The **GetPixel** member function has two forms. The first takes two coordinate values; the second takes either a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object.  
   
-##  <a name="getpolyfillmode"></a>CDC::GetPolyFillMode  
- 現在の多角形の塗りつぶしモードを取得します。  
+##  <a name="getpolyfillmode"></a>  CDC::GetPolyFillMode  
+ Retrieves the current polygon-filling mode.  
   
 ```  
 int GetPolyFillMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在多角形の塗りつぶしモード**代替**または**ワインディング**関数が成功します。  
+### <a name="return-value"></a>Return Value  
+ The current polygon-filled mode, **ALTERNATE** or **WINDING**, if the function is successful.  
   
-### <a name="remarks"></a>コメント  
- 参照してください、`SetPolyFillMode`多角形の塗りつぶしモードの詳細については、メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ See the `SetPolyFillMode` member function for a description of the polygon-filling modes.  
   
-##  <a name="getrop2"></a>CDC::GetROP2  
- 現在の描画モードを取得します。  
+##  <a name="getrop2"></a>  CDC::GetROP2  
+ Retrieves the current drawing mode.  
   
 ```  
 int GetROP2() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 描画モード。 描画モードの値の一覧は、次を参照してください。、`SetROP2`メンバー関数。  
+### <a name="return-value"></a>Return Value  
+ The drawing mode. For a list of the drawing mode values, see the `SetROP2` member function.  
   
-### <a name="remarks"></a>コメント  
- 描画モードでは、画面の表面に色でペンの色とオブジェクトの内部を結合する方法を指定します。  
+### <a name="remarks"></a>Remarks  
+ The drawing mode specifies how the colors of the pen and the interior of filled objects are combined with the color already on the display surface.  
   
-##  <a name="getsafehdc"></a>CDC::GetSafeHdc  
- 取得するには、このメンバー関数を呼び出す[m_hDC](#m_hdc)、出力デバイス コンテキスト。  
+##  <a name="getsafehdc"></a>  CDC::GetSafeHdc  
+ Call this member function to get [m_hDC](#m_hdc), the output device context.  
   
 ```  
 HDC GetSafeHdc() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- デバイス コンテキスト ハンドル。  
+### <a name="return-value"></a>Return Value  
+ A device context handle.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、null ポインターの使用でも動作します。  
+### <a name="remarks"></a>Remarks  
+ This member function also works with null pointers.  
   
-##  <a name="getstretchbltmode"></a>CDC::GetStretchBltMode  
- 現在のビットマップの伸縮モードを取得します。  
+##  <a name="getstretchbltmode"></a>  CDC::GetStretchBltMode  
+ Retrieves the current bitmap-stretching mode.  
   
 ```  
 int GetStretchBltMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 戻り値が現在のビットマップの伸縮モードを指定します: **STRETCH_ANDSCANS**、 **STRETCH_DELETESCANS**、または**終了した**: 関数が成功した場合。  
+### <a name="return-value"></a>Return Value  
+ The return value specifies the current bitmap-stretching mode — **STRETCH_ANDSCANS**, **STRETCH_DELETESCANS**, or **STRETCH_ORSCANS** — if the function is successful.  
   
-### <a name="remarks"></a>コメント  
- ビットマップの伸縮モードでは、拡大またはでは、圧縮されているビットマップから情報を削除する方法を定義、`StretchBlt`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The bitmap-stretching mode defines how information is removed from bitmaps that are stretched or compressed by the `StretchBlt` member function.  
   
- **STRETCH_ANDSCANS**と**終了した**モードは、通常モノクロ ビットマップのピクセルをフォア グラウンドを保持するために使用します。 **STRETCH_DELETESCANS**モードは通常カラー ビットマップの色を保持するために使用します。  
+ The **STRETCH_ANDSCANS** and **STRETCH_ORSCANS** modes are typically used to preserve foreground pixels in monochrome bitmaps. The **STRETCH_DELETESCANS** mode is typically used to preserve color in color bitmaps.  
   
-##  <a name="gettabbedtextextent"></a>CDC::GetTabbedTextExtent  
- 幅と高さを使用する文字の文字列を計算するには、このメンバー関数を呼び出す[は](#m_hattribdc)属性のデバイス コンテキスト。  
+##  <a name="gettabbedtextextent"></a>  CDC::GetTabbedTextExtent  
+ Call this member function to compute the width and height of a character string using [m_hAttribDC](#m_hattribdc), the attribute device context.  
   
 ```  
 CSize GetTabbedTextExtent(
@@ -3181,105 +3372,105 @@ CSize GetTabbedTextExtent(
     LPINT lpnTabStopPositions) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 文字の文字列を指します。 渡すことも、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to a character string. You can also pass a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`-1 で、長さが計算されます。  
+ Specifies the number of characters in the string. If `nCount` is -1, the length is calculated.  
   
  `nTabPositions`  
- タブ ストップの位置を指す配列内の数を指定`lpnTabStopPositions`です。  
+ Specifies the number of tab-stop positions in the array pointed to by `lpnTabStopPositions`.  
   
  `lpnTabStopPositions`  
- 論理ユニットのタブ ストップの位置を表す、整数の配列を指します。 タブ ストップは; 昇順に並べ替える必要があります。最小の x 値には、配列の最初の項目をする必要があります。 バック タブを指定することはできません。  
+ Points to an array of integers containing the tab-stop positions in logical units. The tab stops must be sorted in increasing order; the smallest x-value should be the first item in the array. Back tabs are not allowed.  
   
  `str`  
- A`CString`を描画する指定された文字を含むオブジェクト。  
+ A `CString` object that contains the specified characters to be drawn.  
   
-### <a name="return-value"></a>戻り値  
- (論理単位で) の文字列のディメンション、 [CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The dimensions of the string (in logical units) in a [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 文字列に 1 つまたは複数のタブ文字が含まれている場合、文字列の幅に基づいてで指定されたタブ ストップ`lpnTabStopPositions`です。 関数では、現在選択されているフォントを使用して、文字列のサイズを計算します。  
+### <a name="remarks"></a>Remarks  
+ If the string contains one or more tab characters, the width of the string is based upon the tab stops specified by `lpnTabStopPositions`. The function uses the currently selected font to compute the dimensions of the string.  
   
- 現在のクリップ領域に、幅と高さがによって返されるがオフセット排出されません、`GetTabbedTextExtent`関数。  
+ The current clipping region does not offset the width and height returned by the `GetTabbedTextExtent` function.  
   
- 一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される、文字)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
+ Since some devices do not place characters in regular cell arrays (that is, they kern the characters), the sum of the extents of the characters in a string may not be equal to the extent of the string.  
   
- 場合`nTabPositions`は 0 と`lpnTabStopPositions`は**NULL**タブは、平均の文字幅の 8 倍に拡張されます。 場合`nTabPositions`1 の場合は、タブ ストップが先の配列の最初の値で指定された間隔で区切られる`lpnTabStopPositions`ポイント。 場合`lpnTabStopPositions`1 つの値を超えるポイント、タブ ストップで指定された数まで、配列内の各値の設定は`nTabPositions`します。  
+ If `nTabPositions` is 0 and `lpnTabStopPositions` is **NULL**, tabs are expanded to eight times the average character width. If `nTabPositions` is 1, the tab stops will be separated by the distance specified by the first value in the array to which `lpnTabStopPositions` points. If `lpnTabStopPositions` points to more than a single value, a tab stop is set for each value in the array, up to the number specified by `nTabPositions`.  
   
-##  <a name="gettextalign"></a>CDC::GetTextAlign  
- デバイス コンテキストのテキスト配置フラグの状態を取得します。  
+##  <a name="gettextalign"></a>  CDC::GetTextAlign  
+ Retrieves the status of the text-alignment flags for the device context.  
   
 ```  
 UINT GetTextAlign() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- テキスト配置フラグの状態。 戻り値は、次の値の 1 つ以上には。  
+### <a name="return-value"></a>Return Value  
+ The status of the text-alignment flags. The return value is one or more of the following values:  
   
-- **TA_BASELINE** x 軸方向の配置と外接する四角形内で選択したフォントの基準を指定します。  
+- **TA_BASELINE** Specifies alignment of the x-axis and the baseline of the chosen font within the bounding rectangle.  
   
-- **TA_BOTTOM** x 軸と外接する四角形の下部の配置を指定します。  
+- **TA_BOTTOM** Specifies alignment of the x-axis and the bottom of the bounding rectangle.  
   
-- **TA_CENTER**外接する四角形の中心と y 軸の配置を指定します。  
+- **TA_CENTER** Specifies alignment of the y-axis and the center of the bounding rectangle.  
   
-- **TA_LEFT** y 軸の外接する四角形の左側にある配置を指定します。  
+- **TA_LEFT** Specifies alignment of the y-axis and the left side of the bounding rectangle.  
   
-- **TA_NOUPDATECP**現在の位置が更新されないように指定します。  
+- **TA_NOUPDATECP** Specifies that the current position is not updated.  
   
-- **TA_RIGHT** y 軸の配置と外接する四角形の右側にあるを指定します。  
+- **TA_RIGHT** Specifies alignment of the y-axis and the right side of the bounding rectangle.  
   
-- **TA_TOP**外接する四角形の上端と x 軸方向の配置を指定します。  
+- **TA_TOP** Specifies alignment of the x-axis and the top of the bounding rectangle.  
   
-- **ため**現在の位置を更新することを指定します。  
+- **TA_UPDATECP** Specifies that the current position is updated.  
   
-### <a name="remarks"></a>コメント  
- テキスト配置フラグを決定する方法、`TextOut`と`ExtTextOut`メンバー関数は、文字列の開始位置に関連するテキストの文字列を揃えます。 テキスト配置フラグは、必ずしも単一のビット フラグではありませんし、0 に等しい場合があります。 フラグが設定されているかどうかをテストするには、アプリケーションは以下の手順を実行する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The text-alignment flags determine how the `TextOut` and `ExtTextOut` member functions align a string of text in relation to the string's starting point. The text-alignment flags are not necessarily single-bit flags and may be equal to 0. To test whether a flag is set, an application should follow these steps:  
   
-1.  フラグとその関連フラグの次のようにグループ化にビットごとの OR 演算子が適用されます。  
+1.  Apply the bitwise OR operator to the flag and its related flags, grouped as follows:  
   
-    - **TA_LEFT**、 **TA_CENTER**、および**TA_RIGHT**  
+    - **TA_LEFT**, **TA_CENTER**, and **TA_RIGHT**  
   
-    - **TA_BASELINE**、 **TA_BOTTOM**、および**TA_TOP**  
+    - **TA_BASELINE**, **TA_BOTTOM**, and **TA_TOP**  
   
-    - **TA_NOUPDATECP**と**のため**  
+    - **TA_NOUPDATECP** and **TA_UPDATECP**  
   
-2.  演算を適用、および演算子の結果との戻り値を`GetTextAlign`です。  
+2.  Apply the bitwise-AND operator to the result and the return value of `GetTextAlign`.  
   
-3.  この結果とフラグの等価性をテストします。  
+3.  Test for the equality of this result and the flag.  
   
-##  <a name="gettextcharacterextra"></a>CDC::GetTextCharacterExtra  
- 文字間隔の現在の設定を取得します。  
+##  <a name="gettextcharacterextra"></a>  CDC::GetTextCharacterExtra  
+ Retrieves the current setting for the amount of intercharacter spacing.  
   
 ```  
 int GetTextCharacterExtra() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字間隔の量。  
+### <a name="return-value"></a>Return Value  
+ The amount of the intercharacter spacing.  
   
-### <a name="remarks"></a>コメント  
- GDI は、この間隔をデバイス コンテキストに、行のテキストを書き込むときに、改行文字を含む、各文字を追加します。  
+### <a name="remarks"></a>Remarks  
+ GDI adds this spacing to each character, including break characters, when it writes a line of text to the device context.  
   
- 文字間隔の既定値は 0 です。  
+ The default value for the amount of intercharacter spacing is 0.  
   
-##  <a name="gettextcolor"></a>CDC::GetTextColor  
- 現在のテキストの色を取得します。  
+##  <a name="gettextcolor"></a>  CDC::GetTextColor  
+ Retrieves the current text color.  
   
 ```  
 COLORREF GetTextColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 色の RGB 値として現在のテキストの色。  
+### <a name="return-value"></a>Return Value  
+ The current text color as an RGB color value.  
   
-### <a name="remarks"></a>コメント  
- テキストの色は GDI テキスト出力のメンバー関数を使用して描画された文字の前景色[TextOut](#textout)、 [ExtTextOut](#exttextout)、および[TabbedTextOut](#tabbedtextout)です。  
+### <a name="remarks"></a>Remarks  
+ The text color is the foreground color of characters drawn by using the GDI text-output member functions [TextOut](#textout), [ExtTextOut](#exttextout), and [TabbedTextOut](#tabbedtextout).  
   
-##  <a name="gettextextent"></a>CDC::GetTextExtent  
- 幅の大きさを現在のフォントを使用してテキストの行の高さを計算するには、このメンバー関数を呼び出します。  
+##  <a name="gettextextent"></a>  CDC::GetTextExtent  
+ Call this member function to compute the width and height of a line of text using the current font to determine the dimensions.  
   
 ```  
 CSize GetTextExtent(
@@ -3289,30 +3480,30 @@ CSize GetTextExtent(
 CSize GetTextExtent(const CString& str) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszString`  
- 文字の文字列を指します。 渡すことも、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to a string of characters. You can also pass a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。  
+ Specifies the number of characters in the string.  
   
  `str`  
- A`CString`指定された文字を含むオブジェクトです。  
+ A `CString` object that contains the specified characters.  
   
-### <a name="return-value"></a>戻り値  
- (論理単位で) の文字列のディメンション、 [CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The dimensions of the string (in logical units) in a [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 情報を取得[は](#m_hattribdc)属性のデバイス コンテキスト。  
+### <a name="remarks"></a>Remarks  
+ The information is retrieved from [m_hAttribDC](#m_hattribdc), the attribute device context.  
   
- 既定では、`GetTextExtent`水平の線に沿ったディメンションを取得するテキストが設定されている前提としています (つまり、文字の送りは 0) です。 0 以外の傾斜を指定するフォントを作成する場合は、文字列の寸法を取得するには、明示的にテキストの角度を変換する必要があります。  
+ By default, `GetTextExtent` assumes the text for which it retrieves the dimension is set along a horizontal line (that is, the escapement is 0). If you create a font specifying a non-zero escapement, you must convert the angle of the text explicitly to get the dimensions of the string.  
   
- 現在のクリップ領域には影響しません、幅と高さがによって返される`GetTextExtent`です。  
+ The current clipping region does not affect the width and height returned by `GetTextExtent`.  
   
- 一部のデバイスは、通常のセル配列の文字を配置しないため (つまり、カーニングが実行される)、文字列の文字のエクステントの合計を文字列の範囲を等しいできない可能性があります。  
+ Since some devices do not place characters in regular cell arrays (that is, they carry out kerning), the sum of the extents of the characters in a string may not be equal to the extent of the string.  
   
-##  <a name="gettextextentexpointi"></a>CDC::GetTextExtentExPointI  
- 指定された領域内に収まるし、それらの各文字のテキストのエクステントを配列に設定を指定した文字列の文字数を取得します。  
+##  <a name="gettextextentexpointi"></a>  CDC::GetTextExtentExPointI  
+ Retrieves the number of characters in a specified string that will fit within a specified space and fills an array with the text extent for each of those characters.  
   
 ```  
 BOOL GetTextExtentExPointI(
@@ -3324,33 +3515,33 @@ BOOL GetTextExtentExPointI(
     LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pgiIn`  
- 取得する対象のエクステントは、グリフ インデックスの配列へのポインター。  
+ A pointer to an array of glyph indices for which extents are to be retrieved.  
   
  `cgi`  
- によって示される配列内のグリフの数を指定`pgiIn`です。  
+ Specifies the number of glyphs in the array pointed to by `pgiIn`.  
   
  `nMaxExtent`  
- 書式指定文字列の論理単位で、許容される最大の幅を指定します。  
+ Specifies the maximum allowable width, in logical units, of the formatted string.  
   
  `lpnFit`  
- 指定された領域に収まる文字の最大数のカウントを受け取る整数へのポインター`nMaxExtent`です。 ときに`lpnFit`は**NULL**、`nMaxExtent`は無視されます。  
+ A pointer to an integer that receives a count of the maximum number of characters that will fit in the space specified by `nMaxExtent`. When `lpnFit` is **NULL**, `nMaxExtent` is ignored.  
   
  *alpDx*  
- 一部のグリフのエクステントを受信する整数の配列へのポインター。 配列内の各要素は、論理ユニットは、グリフ インデックスの配列の先頭とグリフで指定された領域内に収まる範囲のいずれかの間の距離`nMaxExtent`です。 この配列は、グリフ インデックスで指定された数は、少なくとも要素を持つ必要がありますただし`cgi`、のみで指定された数だけのグリフ インデックスのエクステントを持つ配列を埋める`lpnFit`です。 場合*lpnDx*は**NULL**関数が文字列の一部の幅を計算できません。  
+ A pointer to an array of integers that receives partial glyph extents. Each element in the array gives the distance, in logical units, between the beginning of the glyph indices array and one of the glyphs that fits in the space specified by `nMaxExtent`. Although this array should have at least as many elements as glyph indices specified by `cgi`, the function fills the array with extents only for as many glyph indices as are specified by `lpnFit`. If *lpnDx* is **NULL**, the function does not compute partial string widths.  
   
  `lpSize`  
- ポインター、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)論理単位でのグリフ インデックスの配列のサイズを受け取る。 この値にすることはできません**NULL**です。  
+ Pointer to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure that receives the dimensions of the glyph indices array, in logical units. This value cannot be **NULL**.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetTextExtentExPointI](http://msdn.microsoft.com/library/windows/desktop/dd144936)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetTextExtentExPointI](http://msdn.microsoft.com/library/windows/desktop/dd144936), as described in the Windows SDK.  
   
-##  <a name="gettextextentpointi"></a>CDC::GetTextExtentPointI  
- 幅と高さの指定されたグリフ インデックスの配列を取得します。  
+##  <a name="gettextextentpointi"></a>  CDC::GetTextExtentPointI  
+ Retrieves the width and height of the specified array of glyph indices.  
   
 ```  
 BOOL GetTextExtentPointI(
@@ -3359,24 +3550,24 @@ BOOL GetTextExtentPointI(
     LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pgiIn`  
- 取得する対象のエクステントは、グリフ インデックスの配列へのポインター。  
+ A pointer to an array of glyph indices for which extents are to be retrieved.  
   
  `cgi`  
- によって示される配列内のグリフの数を指定`pgiIn`です。  
+ Specifies the number of glyphs in the array pointed to by `pgiIn`.  
   
  `lpSize`  
- ポインター、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)論理単位でのグリフ インデックスの配列のサイズを受け取る。 この値にすることはできません**NULL**です。  
+ Pointer to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure that receives the dimensions of the glyph indices array, in logical units. This value cannot be **NULL**.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、関数の機能をエミュレート[GetTextExtentPointI](http://msdn.microsoft.com/library/windows/desktop/dd144939)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the function [GetTextExtentPointI](http://msdn.microsoft.com/library/windows/desktop/dd144939), as described in the Windows SDK.  
   
-##  <a name="gettextface"></a>CDC::GetTextFace  
- 現在のフォントのフォント名をバッファーにコピーするには、このメンバー関数を呼び出します。  
+##  <a name="gettextface"></a>  CDC::GetTextFace  
+ Call this member function to copy the typeface name of the current font into a buffer.  
   
 ```  
 int GetTextFace(
@@ -3386,112 +3577,112 @@ int GetTextFace(
 int GetTextFace(CString& rString) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nCount`  
- バイト単位でバッファーのサイズを指定します。 フォント名がこのパラメーターで指定されたバイト数よりも長い場合は、名前は切り捨てられます。  
+ Specifies the size of the buffer (in bytes). If the typeface name is longer than the number of bytes specified by this parameter, the name is truncated.  
   
  *lpszFacename*  
- 書体名のバッファーへのポインター。  
+ Points to the buffer for the typeface name.  
   
  `rString`  
- 参照、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクト。  
+ A reference to a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object.  
   
-### <a name="return-value"></a>戻り値  
- 終端の null 文字を含まない、バッファーにコピーされたバイト数。 エラーが発生した場合は 0 になります。  
+### <a name="return-value"></a>Return Value  
+ The number of bytes copied to the buffer, not including the terminating null character. It is 0 if an error occurs.  
   
-### <a name="remarks"></a>コメント  
- フォント名は、null で終わる文字列としてコピーされます。  
+### <a name="remarks"></a>Remarks  
+ The typeface name is copied as a null-terminated string.  
   
-##  <a name="gettextmetrics"></a>CDC::GetTextMetrics  
- 属性のデバイス コンテキストを使用して、現在のフォントのメトリックを取得します。  
+##  <a name="gettextmetrics"></a>  CDC::GetTextMetrics  
+ Retrieves the metrics for the current font using the attribute device context.  
   
 ```  
 BOOL GetTextMetrics(LPTEXTMETRIC lpMetrics) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpMetrics`  
- 指す、[受け取る](http://msdn.microsoft.com/library/windows/desktop/dd145132)メトリックを受け取る。  
+ Points to the [TEXTMETRIC](http://msdn.microsoft.com/library/windows/desktop/dd145132) structure that receives the metrics.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-##  <a name="getviewportext"></a>CDC::GetViewportExt  
- デバイス コンテキストのビューポートの x 範囲と y 範囲を取得します。  
+##  <a name="getviewportext"></a>  CDC::GetViewportExt  
+ Retrieves the x- and y-extents of the device context's viewport.  
   
 ```  
 CSize GetViewportExt() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- X と y-範囲範囲 (デバイス単位) として、`CSize`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The x- and y-extents (in device units) as a `CSize` object.  
   
-##  <a name="getviewportorg"></a>CDC::GetViewportOrg  
- デバイス コンテキストに関連付けられているビューポートの原点の x 座標と y 座標を取得します。  
+##  <a name="getviewportorg"></a>  CDC::GetViewportOrg  
+ Retrieves the x- and y-coordinates of the origin of the viewport associated with the device context.  
   
 ```  
 CPoint GetViewportOrg() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ビューポート (デバイス座標) での原点を`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The origin of the viewport (in device coordinates) as a `CPoint` object.  
   
-##  <a name="getwindow"></a>CDC::GetWindow  
- ディスプレイ デバイス コンテキストに関連付けられているウィンドウを返します。  
+##  <a name="getwindow"></a>  CDC::GetWindow  
+ Returns the window associated with the display device context.  
   
 ```  
 CWnd* GetWindow() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CWnd`それ以外の成功した場合は、オブジェクト**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ Pointer to a `CWnd` object if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- これは、高度な機能です。 たとえば、このメンバー関数を印刷するとき、または印刷プレビューで [ビュー] ウィンドウを返さない可能性があります。 出力に関連付けられているウィンドウを常に返します。 指定されたドメイン コント ローラーを使用して出力関数は、このウィンドウに描画します。  
+### <a name="remarks"></a>Remarks  
+ This is an advanced function. For example, this member function may not return the view window when printing or in print preview. It always returns the window associated with output. Output functions that use the given DC draw into this window.  
   
-##  <a name="getwindowext"></a>CDC::GetWindowExt  
- デバイス コンテキストに関連付けられているウィンドウの x 範囲と y 範囲を取得します。  
+##  <a name="getwindowext"></a>  CDC::GetWindowExt  
+ Retrieves the x- and y-extents of the window associated with the device context.  
   
 ```  
 CSize GetWindowExt() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- X- と y のエクステント (論理単位で) として、`CSize`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The x- and y-extents (in logical units) as a `CSize` object.  
   
-##  <a name="getwindoworg"></a>CDC::GetWindowOrg  
- デバイス コンテキストに関連付けられているウィンドウの原点の x 座標と y 座標を取得します。  
+##  <a name="getwindoworg"></a>  CDC::GetWindowOrg  
+ Retrieves the x- and y-coordinates of the origin of the window associated with the device context.  
   
 ```  
 CPoint GetWindowOrg() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- として論理座標でウィンドウの原点を`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The origin of the window (in logical coordinates) as a `CPoint` object.  
   
-##  <a name="getworldtransform"></a>CDC::GetWorldTransform  
- ページ領域変換への現在のワールド空間を取得します。  
+##  <a name="getworldtransform"></a>  CDC::GetWorldTransform  
+ Retrieves the current world-space to page-space transformation.  
   
 ```  
 BOOL GetWorldTransform(XFORM& rXform) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rXform`  
- 参照、 [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228)ページ領域変換への現在のワールド空間を受け取る。  
+ Reference to an [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228) structure that receives the current world-space to page-space transformation.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合に、0 以外の値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a nonzero value on success.  
   
- 失敗した場合に 0 を返します。  
+ Returns 0 on failure.  
   
- 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメソッド[GetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd144953)です。  
+### <a name="remarks"></a>Remarks  
+ This method wraps the Windows GDI function [GetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd144953).  
   
-##  <a name="gradientfill"></a>CDC::GradientFill  
- 塗りつぶす四角形、三角形の構造体を他の 1 つの側からスムーズにフェードするには、このメンバー関数を呼び出します。  
+##  <a name="gradientfill"></a>  CDC::GradientFill  
+ Call this member function to fill rectangle and triangle structures with color that smoothly fades from one side to the other.  
   
 ```  
 BOOL GradientFill(
@@ -3502,30 +3693,30 @@ BOOL GradientFill(
     DWORD dwMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pVertices*  
- 配列を指すポインター [TRIVERTEX](http://msdn.microsoft.com/library/windows/desktop/dd145142)構造体の三角形の頂点を定義します。  
+ Pointer to an array of [TRIVERTEX](http://msdn.microsoft.com/library/windows/desktop/dd145142) structures that each define a triangle vertex.  
   
  *nVertices*  
- 頂点の数。  
+ The number of vertices.  
   
  `pMesh`  
- 配列[場合は](http://msdn.microsoft.com/library/windows/desktop/dd144959)三角形のモード、または配列の構造体[GRADIENT_RECT](http://msdn.microsoft.com/library/windows/desktop/dd144958)四角形のモードで構造体。  
+ Array of [GRADIENT_TRIANGLE](http://msdn.microsoft.com/library/windows/desktop/dd144959) structures in triangle mode, or an array of [GRADIENT_RECT](http://msdn.microsoft.com/library/windows/desktop/dd144958) structures in rectangle mode.  
   
  *nMeshElements*  
- 内の要素 (三角形、四角形) の数`pMesh`です。  
+ The number of elements (triangles or rectangles) in `pMesh`.  
   
  `dwMode`  
- グラデーション塗りつぶしモードを指定します。 使用可能な値の一覧は、次を参照してください。 [GradientFill](http://msdn.microsoft.com/library/windows/desktop/dd144957)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies gradient fill mode. For a list of possible values, see [GradientFill](http://msdn.microsoft.com/library/windows/desktop/dd144957) in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**成功した場合は**FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if successful; otherwise **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。`GradientFill`で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see `GradientFill` in the Windows SDK.  
   
-##  <a name="graystring"></a>Cdc::graystring  
- 描画には、メモリ ビットマップ内のテキストを書き込むし、ビットマップの暗転、ディスプレイにビットマップをコピーして指定された場所に (灰色) のテキストが淡色表示されます。  
+##  <a name="graystring"></a>  CDC::GrayString  
+ Draws dimmed (gray) text at the given location by writing the text in a memory bitmap, dimming the bitmap, and then copying the bitmap to the display.  
   
 ```  
 virtual BOOL GrayString(
@@ -3542,79 +3733,79 @@ virtual BOOL GrayString(
     int nHeight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pBrush`  
- 淡色 (灰色表示) を使用するブラシを識別します。  
+ Identifies the brush to be used for dimming (graying).  
   
  `lpfnOutput`  
- 文字列を描画するアプリケーションによって提供されるコールバック関数のプロシージャ インスタンスのアドレスを指定します。 詳細については、Windows の説明を参照してください。 **OutputFunc** [コールバック関数](../../mfc/reference/callback-function-for-cdc-graystring.md)です。 場合、このパラメーターは**NULL**、システムは、Windows を使用して`TextOut`、文字列を描画する関数と`lpData`出力する文字の文字列への long ポインターであると見なされます。  
+ Specifies the procedure-instance address of the application-supplied callback function that will draw the string. For more information, see the description of the Windows **OutputFunc** [callback function](../../mfc/reference/callback-function-for-cdc-graystring.md). If this parameter is **NULL**, the system uses the Windows `TextOut` function to draw the string, and `lpData` is assumed to be a long pointer to the character string to be output.  
   
  `lpData`  
- 出力関数に渡されるデータへの far ポインターを指定します。 場合`lpfnOutput`は**NULL**、`lpData`出力する文字列への long ポインターにする必要があります。  
+ Specifies a far pointer to data to be passed to the output function. If `lpfnOutput` is **NULL**, `lpData` must be a long pointer to the string to be output.  
   
  `nCount`  
- 出力する文字数を指定します。 このパラメーターが 0 で`GrayString`文字列の長さを計算 (想定される`lpData`文字列へのポインターです)。 場合`nCount`は-1、および、関数によって示される`lpfnOutput`返します 0 の場合、イメージが表示が淡色表示にします。  
+ Specifies the number of characters to be output. If this parameter is 0, `GrayString` calculates the length of the string (assuming that `lpData` is a pointer to the string). If `nCount` is -1 and the function pointed to by `lpfnOutput` returns 0, the image is shown but not dimmed.  
   
  *x*  
- 文字列を囲む四角形の開始位置の論理の x 座標を指定します。  
+ Specifies the logical x-coordinate of the starting position of the rectangle that encloses the string.  
   
  *y*  
- 文字列を囲む四角形の開始位置の論理 y 座標を指定します。  
+ Specifies the logical y-coordinate of the starting position of the rectangle that encloses the string.  
   
  `nWidth`  
- 文字列を囲む四角形の幅を (論理単位で) を指定します。 場合`nWidth`0 の場合は、`GrayString`領域の幅を計算すると仮定すると`lpData`文字列へのポインターです。  
+ Specifies the width (in logical units) of the rectangle that encloses the string. If `nWidth` is 0, `GrayString` calculates the width of the area, assuming `lpData` is a pointer to the string.  
   
  `nHeight`  
- 文字列を囲む四角形の高さを (論理単位で) を指定します。 場合`nHeight`0 の場合は、 `GrayString` 、領域の高さの計算と仮定すると`lpData`文字列へのポインターです。  
+ Specifies the height (in logical units) of the rectangle that encloses the string. If `nHeight` is 0, `GrayString` calculates the height of the area, assuming `lpData` is a pointer to the string.  
   
-### <a name="return-value"></a>戻り値  
- 文字列を描画する場合は 0 以外またはいずれかの場合は 0、`TextOut`関数または出力のアプリケーションによって提供される関数に 0 が返される灰色表示のメモリ ビットマップを作成するメモリ不足が発生した場合またはします。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the string is drawn, or 0 if either the `TextOut` function or the application-supplied output function returned 0, or if there was insufficient memory to create a memory bitmap for dimming.  
   
-### <a name="remarks"></a>コメント  
- 関数には、選択されたブラシと背景に関係なく、テキストが使用できなくなります。 `GrayString`メンバー関数は、現在選択されているフォントを使用します。 `MM_TEXT`マッピング モードは、この関数を使用する前に選択する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The function dims the text regardless of the selected brush and background. The `GrayString` member function uses the currently selected font. The `MM_TEXT` mapping mode must be selected before using this function.  
   
- 淡色表示 (灰色表示) の文字列を呼び出さずに純色の灰色をサポートするデバイスで描画する、`GrayString`メンバー関数。 システム カラー**で**無効なテキストの描画に使用する純色の灰色のシステム色であります。 アプリケーションが呼び出すことができます、 **GetSysColor**の色の値を取得する Windows 関数**で**です。 色が 0 (黒) 以外の場合、アプリケーションが呼び出すことができます、`SetTextColor`テキストの色を色の値に設定し、文字列を直接描画するメンバー関数。 取得した色が黒の場合は、アプリケーションを呼び出す必要があります`GrayString`淡色 (灰色) するテキスト。  
+ An application can draw dimmed (grayed) strings on devices that support a solid gray color without calling the `GrayString` member function. The system color **COLOR_GRAYTEXT** is the solid-gray system color used to draw disabled text. The application can call the **GetSysColor** Windows function to retrieve the color value of **COLOR_GRAYTEXT**. If the color is other than 0 (black), the application can call the `SetTextColor` member function to set the text color to the color value and then draw the string directly. If the retrieved color is black, the application must call `GrayString` to dim (gray) the text.  
   
- 場合`lpfnOutput`は**NULL**、GDI は、Windows を使用して[TextOut](http://msdn.microsoft.com/library/windows/desktop/dd145133)関数、および`lpData`出力する文字への far ポインターであると見なされます。 出力する文字を処理できないかどうか、`TextOut`メンバー関数 (たとえば、文字列が格納されているビットマップとして)、アプリケーションが独自の出力関数を指定する必要があります。  
+ If `lpfnOutput` is **NULL**, GDI uses the Windows [TextOut](http://msdn.microsoft.com/library/windows/desktop/dd145133) function, and `lpData` is assumed to be a far pointer to the character to be output. If the characters to be output cannot be handled by the `TextOut` member function (for example, the string is stored as a bitmap), the application must supply its own output function.  
   
- また、すべてのコールバック関数がコールバックの境界を越えて例外をスローすることはできませんので、Windows に返す前に Microsoft Foundation 例外をトラップする必要がありますに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ Also note that all callback functions must trap Microsoft Foundation exceptions before returning to Windows, since exceptions cannot be thrown across callback boundaries. For more information about exceptions, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
- 渡されるコールバック関数`GrayString`を使用する必要があります、`__stdcall`と共にエクスポートする必要があります、呼び出し規約および`__declspec`です。  
+ The callback function passed to `GrayString` must use the `__stdcall` calling convention and must be exported with `__declspec`.  
   
- プレビュー モードへの呼び出しでは、framework がときに、`GrayString`にメンバー関数が変換された、`TextOut`呼び出す、またはコールバック関数は呼び出されません。  
+ When the framework is in preview mode, a call to the `GrayString` member function is translated to a `TextOut` call, and the callback function is not called.  
   
-##  <a name="himetrictodp"></a>CDC::HIMETRICtoDP  
- 変換する場合は、この関数を使用して**HIMETRIC** OLE ピクセルのサイズ。  
+##  <a name="himetrictodp"></a>  CDC::HIMETRICtoDP  
+ Use this function when you convert **HIMETRIC** sizes from OLE to pixels.  
   
 ```  
 void HIMETRICtoDP(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpSize`  
- 指す、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造または[CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+ Points to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure or [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- かどうか、デバイス コンテキスト オブジェクトのマッピング モードは`MM_LOENGLISH`、 `MM_HIENGLISH`、`MM_LOMETRIC`または`MM_HIMETRIC`変換は、物理インチのピクセルの数に基づいて、します。 マッピング モードは、他の非強制モードのいずれかのかどうか (例: `MM_TEXT`)、変換は、論理インチ ピクセルの数に基づいて、します。  
+### <a name="remarks"></a>Remarks  
+ If the mapping mode of the device context object is `MM_LOENGLISH`, `MM_HIENGLISH`, `MM_LOMETRIC` or `MM_HIMETRIC`, then the conversion is based on the number of pixels in the physical inch. If the mapping mode is one of the other non-constrained modes (e.g., `MM_TEXT`), then the conversion is based on the number of pixels in the logical inch.  
   
-##  <a name="himetrictolp"></a>CDC::HIMETRICtoLP  
- 変換するには、この関数を呼び出す**HIMETRIC**論理単位に単位です。  
+##  <a name="himetrictolp"></a>  CDC::HIMETRICtoLP  
+ Call this function to convert **HIMETRIC** units into logical units.  
   
 ```  
 void HIMETRICtoLP(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpSize`  
- 指す、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造または[CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+ Points to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure or [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 取得する場合は、この関数を使用して**HIMETRIC**サイズ OLE であり、アプリケーションの自然な割り当てモードに変換するからです。  
+### <a name="remarks"></a>Remarks  
+ Use this function when you get **HIMETRIC** sizes from OLE and wish to convert them to your application's natural mapping mode.  
   
- 変換は最初に変換することで実現、 **HIMETRIC**単位 (ピクセル) とデバイス コンテキストの現在のマップの単位を使用して論理ユニットにこれらの単位を変換します。 デバイスのウィンドウとビューポートのエクステントが結果に影響することに注意してください。  
+ The conversion is accomplished by first converting the **HIMETRIC** units into pixels and then converting these units into logical units using the device context's current mapping units. Note that the extents of the device's window and viewport will affect the result.  
   
-##  <a name="intersectcliprect"></a>CDC::IntersectClipRect  
- 現在の地域とによって指定される四角形の積集合を形成する、新しいクリップ領域を作成`x1`、 `y1`、 `x2`、および`y2`です。  
+##  <a name="intersectcliprect"></a>  CDC::IntersectClipRect  
+ Creates a new clipping region by forming the intersection of the current region and the rectangle specified by `x1`, `y1`, `x2`, and `y2`.  
   
 ```  
 int IntersectClipRect(
@@ -3626,84 +3817,84 @@ int IntersectClipRect(
 int IntersectClipRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the rectangle.  
   
  `y1`  
- 論理で四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the rectangle.  
   
  `x2`  
- 論理で四角形の右下隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the rectangle.  
   
  `y2`  
- 論理で四角形の右下隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the rectangle.  
   
  `lpRect`  
- 四角形を指定します。 いずれかを渡すことができます、`CRect`オブジェクトまたはへのポインター、`RECT`このパラメーターの構造体。  
+ Specifies the rectangle. You can pass either a `CRect` object or a pointer to a `RECT` structure for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 新しいクリップ領域の種類。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The new clipping region's type. It can be any one of the following values:  
   
-- **COMPLEXREGION**新しいクリップ領域は、重なり合った境界線です。  
+- **COMPLEXREGION** New clipping region has overlapping borders.  
   
-- **エラー**デバイス コンテキストが無効です。  
+- **ERROR** Device context is not valid.  
   
-- **NULLREGION**新しいクリップ領域が空です。  
+- **NULLREGION** New clipping region is empty.  
   
-- **SIMPLEREGION**新しいクリップ領域には、重複する境界がありません。  
+- **SIMPLEREGION** New clipping region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- GDI は、新しい境界内に収まるようにすべての後続の出力をクリップします。 幅と高さは、32,767 を超えないです。  
+### <a name="remarks"></a>Remarks  
+ GDI clips all subsequent output to fit within the new boundary. The width and height must not exceed 32,767.  
   
-##  <a name="invertrect"></a>CDC::InvertRect  
- 指定した四角形の内容を反転します。  
+##  <a name="invertrect"></a>  CDC::InvertRect  
+ Inverts the contents of the given rectangle.  
   
 ```  
 void InvertRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`反転される四角形の論理座標を格納しています。 渡すことも、`CRect`このパラメーターのオブジェクト。  
+ Points to a `RECT` that contains the logical coordinates of the rectangle to be inverted. You can also pass a `CRect` object for this parameter.  
   
-### <a name="remarks"></a>コメント  
- 論理的に反転操作と各ピクセルのビットを反転できません。 モノクロ モニターでこの関数では白と黒の黒いピクセル白です。 カラー ディスプレイ上の反転は、表示の色を生成する方法に依存します。 呼び出す`InvertRect`同じ四角形を 2 回の色を前に、表示を復元します。  
+### <a name="remarks"></a>Remarks  
+ Inversion is a logical NOT operation and flips the bits of each pixel. On monochrome displays, the function makes white pixels black and black pixels white. On color displays, the inversion depends on how colors are generated for the display. Calling `InvertRect` twice with the same rectangle restores the display to its previous colors.  
   
- 四角形が空の場合は何も描画されます。  
+ If the rectangle is empty, nothing is drawn.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 36](../../mfc/codesnippet/cpp/cdc-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#36](../../mfc/codesnippet/cpp/cdc-class_8.cpp)]  
   
-##  <a name="invertrgn"></a>CDC::InvertRgn  
- によって指定された領域の色を反転`pRgn`です。  
+##  <a name="invertrgn"></a>  CDC::InvertRgn  
+ Inverts the colors in the region specified by `pRgn`.  
   
 ```  
 BOOL InvertRgn(CRgn* pRgn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 反転する領域を識別します。 領域の座標は、論理単位で指定されます。  
+ Identifies the region to be inverted. The coordinates for the region are specified in logical units.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- モノクロ モニターでこの関数では白と黒の黒いピクセル白です。 カラー ディスプレイ上の反転は、表示の色を生成する方法に依存します。  
+### <a name="remarks"></a>Remarks  
+ On monochrome displays, the function makes white pixels black and black pixels white. On color displays, the inversion depends on how the colors are generated for the display.  
   
-##  <a name="isprinting"></a>CDC::IsPrinting  
- 印刷デバイス コンテキストは使用されているかどうかを判断します。  
+##  <a name="isprinting"></a>  CDC::IsPrinting  
+ Determines whether the device context is being used for printing.  
   
 ```  
 BOOL IsPrinting() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の場合、`CDC`オブジェクトはプリンター DC 以外の場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the `CDC` object is a printer DC; otherwise 0.  
   
-##  <a name="lineto"></a>CDC::LineTo  
- 現在の位置が、指定された地点を描きます*x*と*y* (または`point`)。  
+##  <a name="lineto"></a>  CDC::LineTo  
+ Draws a line from the current position up to, but not including, the point specified by *x* and *y* (or `point`).  
   
 ```  
 BOOL LineTo(
@@ -3713,27 +3904,27 @@ BOOL LineTo(
 BOOL LineTo(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で線の終点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the endpoint for the line.  
   
  *y*  
- 論理で線の終点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the endpoint for the line.  
   
  `point`  
- 線の終点を指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the endpoint for the line. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 線が描画された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the line is drawn; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 行は、選択したペンを使用して描画されます。 現在の位置に設定されている*x*、 *y*または`point`です。  
+### <a name="remarks"></a>Remarks  
+ The line is drawn with the selected pen. The current position is set to *x*, *y* or to `point`.  
   
-### <a name="example"></a>例  
-  例を参照して[CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint)です。  
+### <a name="example"></a>Example  
+  See the example for [CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint).  
   
-##  <a name="lptodp"></a>CDC::LPtoDP  
- デバイス単位の論理ユニットに変換します。  
+##  <a name="lptodp"></a>  CDC::LPtoDP  
+ Converts logical units into device units.  
   
 ```  
 void LPtoDP(
@@ -3744,62 +3935,62 @@ void LPtoDP(LPRECT lpRect) const;
 void LPtoDP(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 点の配列を指します。 配列内の各ポイントは、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)オブジェクト。  
+ Points to an array of points. Each point in the array is a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object.  
   
  `nCount`  
- 配列内の地点の数。  
+ The number of points in the array.  
   
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造体、または[CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクト。 このパラメーターは、論理座標からデバイス単位に四角形のマッピングの一般的なケースで使用されます。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or a [CRect](../../atl-mfc-shared/reference/crect-class.md) object. This parameter is used for the common case of mapping a rectangle from logical to device units.  
   
  `lpSize`  
- 指す、[サイズ](http://msdn.microsoft.com/library/windows/desktop/dd145106)構造体、または[CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。  
+ Points to a [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure or a [CSize](../../atl-mfc-shared/reference/csize-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- 関数は、各ポイントの座標または GDI の論理座標系デバイス座標系に変換から、サイズの寸法をマップします。 変換は、現在のマップ モードと、元のドメインの設定とデバイスのウィンドウとビューポートから成るエクステントに依存します。  
+### <a name="remarks"></a>Remarks  
+ The function maps the coordinates of each point, or dimensions of a size, from GDI's logical coordinate system into a device coordinate system. The conversion depends on the current mapping mode and the settings of the origins and extents of the device's window and viewport.  
   
- ポイントの x 座標と y 座標は、-32,768 ~ 32,767 の範囲内で 2 バイト符号付き整数です。 場所のマッピング モードが、これらの制限を超える値になります。 の場合、システム値を設定-32,768 から 32,767、それぞれします。  
+ The x- and y-coordinates of points are 2-byte signed integers in the range -32,768 through 32,767. In cases where the mapping mode would result in values larger than these limits, the system sets the values to -32,768 and 32,767, respectively.  
   
-##  <a name="lptohimetric"></a>CDC::LPtoHIMETRIC  
- 論理ユニットに変換するには、この関数を呼び出す**HIMETRIC**単位です。  
+##  <a name="lptohimetric"></a>  CDC::LPtoHIMETRIC  
+ Call this function to convert logical units into **HIMETRIC** units.  
   
 ```  
 void LPtoHIMETRIC(LPSIZE lpSize) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpSize`  
- 指す、**サイズ**構造体、または`CSize`オブジェクト。  
+ Points to a **SIZE** structure or a `CSize` object.  
   
-### <a name="remarks"></a>コメント  
- 付与すると、この関数を使用して**HIMETRIC** OLE、アプリケーションの自然な割り当てモードから変換するサイズ。 デバイスのウィンドウとビューポートのエクステントが結果に影響することに注意してください。  
+### <a name="remarks"></a>Remarks  
+ Use this function when you give **HIMETRIC** sizes to OLE, converting from your application's natural mapping mode. Note that the extents of the device's window and viewport will affect the result.  
   
- デバイス コンテキストの現在のマップの単位を使用して、これらの単位に変換すること (ピクセル) に論理ユニットを変換して、変換は実現**HIMETRIC**単位です。  
+ The conversion is accomplished by first converting the logical units into pixels using the device context's current mapping units and then converting these units into **HIMETRIC** units.  
   
-##  <a name="m_hattribdc"></a>CDC::m_hAttribDC  
- この属性のデバイス コンテキスト`CDC`オブジェクト。  
+##  <a name="m_hattribdc"></a>  CDC::m_hAttribDC  
+ The attribute device context for this `CDC` object.  
   
 ```  
 HDC m_hAttribDC;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定では、このデバイス コンテキストと等しい`m_hDC`です。 一般に、`CDC`デバイス コンテキストから情報を要求する GDI 呼び出しが宛て`m_hAttribDC`です。 参照してください、 [CDC](../../mfc/reference/cdc-class.md)クラスのこれらの 2 つのデバイス コンテキストの使用について説明します。  
+### <a name="remarks"></a>Remarks  
+ By default, this device context is equal to `m_hDC`. In general, `CDC` GDI calls that request information from the device context are directed to `m_hAttribDC`. See the [CDC](../../mfc/reference/cdc-class.md) class description for more on the use of these two device contexts.  
   
-##  <a name="m_hdc"></a>CDC::m_hDC  
- この出力デバイス コンテキスト`CDC`オブジェクト。  
+##  <a name="m_hdc"></a>  CDC::m_hDC  
+ The output device context for this `CDC` object.  
   
 ```  
 HDC m_hDC;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 既定では、`m_hDC`と等しい`m_hAttribDC`、によってラップされたその他のデバイス コンテキスト`CDC`です。 一般に、`CDC`には、出力を作成する GDI 呼び出し、`m_hDC`デバイス コンテキスト。 初期化するには`m_hDC`と`m_hAttribDC`にさまざまなデバイス をポイントします。 参照してください、 [CDC](../../mfc/reference/cdc-class.md)クラスのこれらの 2 つのデバイス コンテキストの使用について説明します。  
+### <a name="remarks"></a>Remarks  
+ By default, `m_hDC` is equal to `m_hAttribDC`, the other device context wrapped by `CDC`. In general, `CDC` GDI calls that create output go to the `m_hDC` device context. You can initialize `m_hDC` and `m_hAttribDC` to point to different devices. See the [CDC](../../mfc/reference/cdc-class.md) class description for more on the use of these two device contexts.  
   
-##  <a name="maskblt"></a>CDC::MaskBlt  
- 指定されたマスクとラスター オペレーションを使用する元とコピー先のビットマップの色のデータを結合します。  
+##  <a name="maskblt"></a>  CDC::MaskBlt  
+ Combines the color data for the source and destination bitmaps using the given mask and raster operation.  
   
 ```  
 BOOL MaskBlt(
@@ -3816,52 +4007,52 @@ BOOL MaskBlt(
     DWORD dwRop);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で先の四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the destination rectangle.  
   
  *y*  
- 論理で先の四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the destination rectangle.  
   
  `nWidth`  
- 論理単位で、コピー先の四角形と元のビットマップの幅を指定します。  
+ Specifies the width, in logical units, of the destination rectangle and source bitmap.  
   
  `nHeight`  
- 論理単位で、コピー先の四角形と元のビットマップの高さを指定します。  
+ Specifies the height, in logical units, of the destination rectangle and source bitmap.  
   
  `pSrcDC`  
- ビットマップのコピー元デバイス コンテキストを識別します。 場合は 0 をする必要があります、 *dwRop*パラメーターは、ソースが含まれていないラスター オペレーションを指定します。  
+ Identifies the device context from which the bitmap is to be copied. It must be zero if the *dwRop* parameter specifies a raster operation that does not include a source.  
   
  `xSrc`  
- 論理で元のビットマップの左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the source bitmap.  
   
  `ySrc`  
- 論理で元のビットマップの左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the source bitmap.  
   
  `maskBitmap`  
- 元のデバイス コンテキストのカラー ビットマップと組み合わせるモノクロのマスク ビットマップを識別します。  
+ Identifies the monochrome mask bitmap combined with the color bitmap in the source device context.  
   
  `xMask`  
- 指定されたマスク ビットマップのピクセルの水平方向のオフセットを指定します、`maskBitmap`パラメーター。  
+ Specifies the horizontal pixel offset for the mask bitmap specified by the `maskBitmap` parameter.  
   
  `yMask`  
- 指定されたマスク ビットマップのピクセルの垂直オフセットを指定します、`maskBitmap`パラメーター。  
+ Specifies the vertical pixel offset for the mask bitmap specified by the `maskBitmap` parameter.  
   
  *dwRop*  
- 前景と背景三項ラスター オペレーション コード、ソースおよび変換先データの組み合わせを制御する関数を使用するを指定します。 バック グラウンド ラスター オペレーション コードがこの値の上位ワードの高バイトに格納されています。フォア グラウンド ラスター オペレーション コードがこの値の上位ワードの下位バイトに格納されています。この値の下位ワードは無視され、0 にする必要があります。 マクロ**MAKEROP4**前景色と背景のような組み合わせをラスター オペレーション コードを作成します。 フォア グラウンドとバック グラウンドでこの関数のコンテキストについては、「解説」セクションを参照してください。 参照してください、`BitBlt`共通ラスター オペレーション コードの一覧については、メンバー関数。  
+ Specifies both foreground and background ternary raster operation codes, which the function uses to control the combination of source and destination data. The background raster operation code is stored in the high byte of the high word of this value; the foreground raster operation code is stored in the low byte of the high word of this value; the low word of this value is ignored, and should be zero. The macro **MAKEROP4** creates such combinations of foreground and background raster operation codes. See the Remarks section for a discussion of foreground and background in the context of this function. See the `BitBlt` member function for a list of common raster operation codes.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 値 1 で指定されたマスクに`maskBitmap`によってフォア グラウンド ラスター オペレーション コードが指定されていることを示します*dwRop*その位置で適用する必要があります。 マスクで 0 の値は、によってバック グラウンド ラスター オペレーション コードが指定されていることを示します*dwRop*その位置で適用する必要があります。 ラスター オペレーションは、ソースを必要とする場合、マスク四角形は、元の四角形をカバーする必要があります。 そうでない場合、関数は失敗します。 ラスター オペレーション、ソースが必要でない場合、マスク四角形は先の四角形をカバーする必要があります。 そうでない場合、関数は失敗します。  
+### <a name="remarks"></a>Remarks  
+ A value of 1 in the mask specified by `maskBitmap` indicates that the foreground raster operation code specified by *dwRop* should be applied at that location. A value of 0 in the mask indicates that the background raster operation code specified by *dwRop* should be applied at that location. If the raster operations require a source, the mask rectangle must cover the source rectangle. If it does not, the function will fail. If the raster operations do not require a source, the mask rectangle must cover the destination rectangle. If it does not, the function will fail.  
   
- 回転または傾斜変換は、この関数が呼び出されたときに、元デバイス コンテキストを有効になっている場合は、エラーが発生します。 ただし、他の種類の変換は許可されます。  
+ If a rotation or shear transformation is in effect for the source device context when this function is called, an error occurs. However, other types of transformations are allowed.  
   
- ソース、パターン、およびコピー先ビットマップの色の形式が異なる場合、この関数には、変換先の形式に一致するように、パターンまたはソースの形式に変換します。 マスク ビットマップがモノクロ ビットマップでない場合は、エラーが発生します。 拡張メタファイルは記録されているときにエラーが発生した (および 0 を返します) 場合は、ソース デバイス コンテキスト拡張メタファイル デバイス コンテキストを識別します。 サポートしないデバイス`MaskBlt`です。 アプリケーションを呼び出す必要があります`GetDeviceCaps`をデバイスにこの関数がサポートしているかどうかを判断します。 この関数の動作と同様にマスク ビットマップを指定しない場合は`BitBlt`、フォア グラウンド ラスター オペレーション コードを使用します。 ピクセルのオフセットは、ポイント (0, 0) にマップするときのマスクのビットマップ ソース デバイス コンテキストのビットマップにします。 これは、マスク ビットマップにマスクの設定が含まれている場合に便利です。アプリケーション簡単に適用、いずれかのマスクの中のタスクにピクセル オフセットを調整することによってしに四角形のサイズが送信される`MaskBlt`です。  
+ If the color formats of the source, pattern, and destination bitmaps differ, this function converts the pattern or source format, or both, to match the destination format. If the mask bitmap is not a monochrome bitmap, an error occurs. When an enhanced metafile is being recorded, an error occurs (and the function returns 0) if the source device context identifies an enhanced-metafile device context. Not all devices support `MaskBlt`. An application should call `GetDeviceCaps` to determine whether a device supports this function. If no mask bitmap is supplied, this function behaves exactly like `BitBlt`, using the foreground raster operation code. The pixel offsets in the mask bitmap map to the point (0,0) in the source device context's bitmap. This is useful for cases in which a mask bitmap contains a set of masks; an application can easily apply any one of them to a mask-blitting task by adjusting the pixel offsets and rectangle sizes sent to `MaskBlt`.  
   
-##  <a name="modifyworldtransform"></a>CDC::ModifyWorldTransform  
- 指定されたモードを使用してデバイス コンテキストのワールド変換を変更します。  
+##  <a name="modifyworldtransform"></a>  CDC::ModifyWorldTransform  
+ Changes the world transformation for a device context using the specified mode.  
   
 ```  
 BOOL ModifyWorldTransform(
@@ -3869,25 +4060,25 @@ BOOL ModifyWorldTransform(
     DWORD iMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rXform`  
- 参照、 [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228)構造体の特定のデバイス コンテキストのワールド変換を変更するために使用します。  
+ Reference to an [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228) structure used to modify the world transformation for the given device context.  
   
  `iMode`  
- 変換のデータが現在のワールド変換を変更する方法を指定します。 このパラメーターを取る値の一覧は、次を参照してください。 [ModifyWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145060)です。  
+ Specifies how the transformation data modifies the current world transformation. For a list of the values that this parameter can take, see [ModifyWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145060).  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合に、0 以外の値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a nonzero value on success.  
   
- 失敗した場合に 0 を返します。  
+ Returns 0 on failure.  
   
- 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメソッド[ModifyWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145060)です。  
+### <a name="remarks"></a>Remarks  
+ This method wraps the Windows GDI function [ModifyWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145060).  
   
-##  <a name="moveto"></a>CDC::MoveTo  
- 指定された地点を現在の位置を移動*x*と*y* (または`point`)。  
+##  <a name="moveto"></a>  CDC::MoveTo  
+ Moves the current position to the point specified by *x* and *y* (or by `point`).  
   
 ```  
 CPoint MoveTo(
@@ -3897,24 +4088,24 @@ CPoint MoveTo(
 CPoint MoveTo(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 新しい位置の論理 x 座標を指定します。  
+ Specifies the logical x-coordinate of the new position.  
   
  *y*  
- 新しい位置の論理 y 座標を指定します。  
+ Specifies the logical y-coordinate of the new position.  
   
  `point`  
- 新しい位置を指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the new position. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- として前の位置の x 座標と y 座標、`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The x- and y-coordinates of the previous position as a `CPoint` object.  
   
-### <a name="example"></a>例  
-  例を参照して[CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint)です。  
+### <a name="example"></a>Example  
+  See the example for [CRect::CenterPoint](../../atl-mfc-shared/reference/crect-class.md#centerpoint).  
   
-##  <a name="offsetcliprgn"></a>CDC::OffsetClipRgn  
- 指定されたオフセットで、デバイス コンテキストのクリッピング領域に移動します。  
+##  <a name="offsetcliprgn"></a>  CDC::OffsetClipRgn  
+ Moves the clipping region of the device context by the specified offsets.  
   
 ```  
 int OffsetClipRgn(
@@ -3924,32 +4115,32 @@ int OffsetClipRgn(
 int OffsetClipRgn(SIZE size);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 左に移動する論理ユニットの数を指定します。  
+ Specifies the number of logical units to move left or right.  
   
  *y*  
- 上下に移動する論理ユニットの数を指定します。  
+ Specifies the number of logical units to move up or down.  
   
  `size`  
- オフセットの量を指定します。  
+ Specifies the amount to offset.  
   
-### <a name="return-value"></a>戻り値  
- 新しい領域の種類。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The new region's type. It can be any one of the following values:  
   
-- **COMPLEXREGION**クリッピング領域が重なり合う境界線です。  
+- **COMPLEXREGION** Clipping region has overlapping borders.  
   
-- **エラー**デバイス コンテキストが無効です。  
+- **ERROR** Device context is not valid.  
   
-- **NULLREGION**クリッピング領域が空です。  
+- **NULLREGION** Clipping region is empty.  
   
-- **SIMPLEREGION**クリッピング領域には、重複する境界がありません。  
+- **SIMPLEREGION** Clipping region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 関数は、領域を移動*x* x 軸に単位と*y* y 軸に沿って単位です。  
+### <a name="remarks"></a>Remarks  
+ The function moves the region *x* units along the x-axis and *y* units along the y-axis.  
   
-##  <a name="offsetviewportorg"></a>CDC::OffsetViewportOrg  
- 現在のビューポートの原点の座標に対する相対ビューポートの原点の座標を変更します。  
+##  <a name="offsetviewportorg"></a>  CDC::OffsetViewportOrg  
+ Modifies the coordinates of the viewport origin relative to the coordinates of the current viewport origin.  
   
 ```  
 virtual CPoint OffsetViewportOrg(
@@ -3957,18 +4148,18 @@ virtual CPoint OffsetViewportOrg(
     int nHeight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nWidth`  
- 現在の原点の x 座標を追加するデバイス単位の数を指定します。  
+ Specifies the number of device units to add to the current origin's x-coordinate.  
   
  `nHeight`  
- 現在の原点の y 座標を追加するデバイス単位の数を指定します。  
+ Specifies the number of device units to add to the current origin's y-coordinate.  
   
-### <a name="return-value"></a>戻り値  
- 以前のビューポートの原点が (デバイス座標) でとして、`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous viewport origin (in device coordinates) as a `CPoint` object.  
   
-##  <a name="offsetwindoworg"></a>CDC::OffsetWindowOrg  
- 現在のウィンドウの原点の座標の基準としたウィンドウの原点の座標を変更します。  
+##  <a name="offsetwindoworg"></a>  CDC::OffsetWindowOrg  
+ Modifies the coordinates of the window origin relative to the coordinates of the current window origin.  
   
 ```  
 CPoint OffsetWindowOrg(
@@ -3976,45 +4167,45 @@ CPoint OffsetWindowOrg(
     int nHeight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nWidth`  
- 現在の原点の x 座標を追加する論理ユニットの数を指定します。  
+ Specifies the number of logical units to add to the current origin's x-coordinate.  
   
  `nHeight`  
- 現在の原点の y 座標を追加する論理ユニットの数を指定します。  
+ Specifies the number of logical units to add to the current origin's y-coordinate.  
   
-### <a name="return-value"></a>戻り値  
- 前のウィンドウの原点が (論理座標で) として、`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous window origin (in logical coordinates) as a `CPoint` object.  
   
-##  <a name="operator_hdc"></a>CDC::operator HDC  
- デバイス コンテキスト ハンドルを取得するこの演算子を使用して、`CDC`オブジェクト。  
+##  <a name="operator_hdc"></a>  CDC::operator HDC  
+ Use this operator to retrieve the device context handle of the `CDC` object.  
   
 ```  
 operator HDC() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、デバイス コンテキスト オブジェクトのハンドルそれ以外の場合、 **NULL**です。  
+### <a name="return-value"></a>Return Value  
+ If successful, the handle of the device context object; otherwise, **NULL**.  
   
-### <a name="remarks"></a>コメント  
- Windows Api を直接呼び出すために、ハンドルを使用することができます。  
+### <a name="remarks"></a>Remarks  
+ You can use the handle to call Windows APIs directly.  
   
-##  <a name="paintrgn"></a>CDC::PaintRgn  
- 指定された領域を塗りつぶします`pRgn`現在のブラシを使用します。  
+##  <a name="paintrgn"></a>  CDC::PaintRgn  
+ Fills the region specified by `pRgn` using the current brush.  
   
 ```  
 BOOL PaintRgn(CRgn* pRgn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 塗りつぶす領域を識別します。 指定された領域の座標は、論理単位で指定されます。  
+ Identifies the region to be filled. The coordinates for the given region are specified in logical units.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-##  <a name="patblt"></a>Cdc::patblt  
- ビット パターンは、デバイス上に作成します。  
+##  <a name="patblt"></a>  CDC::PatBlt  
+ Creates a bit pattern on the device.  
   
 ```  
 BOOL PatBlt(
@@ -4025,42 +4216,42 @@ BOOL PatBlt(
     DWORD dwRop);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理でパターンを受信する四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the rectangle that is to receive the pattern.  
   
  *y*  
- 論理でパターンを受信する四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the rectangle that is to receive the pattern.  
   
  `nWidth`  
- パターンを受信する四角形の幅を (論理単位で) を指定します。  
+ Specifies the width (in logical units) of the rectangle that is to receive the pattern.  
   
  `nHeight`  
- パターンを受信する四角形の高さを (論理単位で) を指定します。  
+ Specifies the height (in logical units) of the rectangle that is to receive the pattern.  
   
  *dwRop*  
- ラスター オペレーション コードを指定します。 ラスター オペレーション コード (Rop) は、GDI が出力に関連した操作、現在のブラシ、有効なコピー元ビットマップとコピー先ビットマップの色を結合する方法を定義します。 このパラメーターには、次の値のいずれかを指定できます。  
+ Specifies the raster-operation code. Raster-operation codes (ROPs) define how GDI combines colors in output operations that involve a current brush, a possible source bitmap, and a destination bitmap. This parameter can be one of the following values:  
   
-- **PATCOPY**コピー先ビットマップにコピー パターン。  
+- **PATCOPY** Copies pattern to destination bitmap.  
   
-- **PATINVERT**ブール型 XOR 演算子を使用してパターンを持つコピー先ビットマップを組み合わせます。  
+- **PATINVERT** Combines destination bitmap with pattern using the Boolean XOR operator.  
   
-- **DSTINVERT**コピー先ビットマップを反転します。  
+- **DSTINVERT** Inverts the destination bitmap.  
   
-- **BLACKNESS**すべて出力を黒です。  
+- **BLACKNESS** Turns all output black.  
   
-- **WHITENESS**すべて出力を白です。  
+- **WHITENESS** Turns all output white.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- パターンは、選択されたブラシとデバイスに既にパターンの組み合わせです。 指定されたラスター オペレーション コード*dwRop*パターンを組み合わせる方法を定義します。 この関数の一覧表示するラスター オペレーションは 256 の三項ラスター オペレーション コード; の限定されたサブセットです。具体的には、ソースを参照するラスター オペレーション コードは使用できません。  
+### <a name="remarks"></a>Remarks  
+ The pattern is a combination of the selected brush and the pattern already on the device. The raster-operation code specified by *dwRop* defines how the patterns are to be combined. The raster operations listed for this function are a limited subset of the full 256 ternary raster-operation codes; in particular, a raster-operation code that refers to a source cannot be used.  
   
- すべてのデバイス コンテキストのサポート、`PatBlt`関数。 デバイス コンテキストをサポートしているかどうかを判断する`PatBlt`、呼び出し、`GetDeviceCaps`メンバー関数を**RASTERCAPS**インデックスを作成しの戻り値の確認、 **RC_BITBLT**フラグ。  
+ Not all device contexts support the `PatBlt` function. To determine whether a device context supports `PatBlt`, call the `GetDeviceCaps` member function with the **RASTERCAPS** index and check the return value for the **RC_BITBLT** flag.  
   
-##  <a name="pie"></a>CDC::Pie  
- 中心と 2 つのエンドポイントが線で結ばれて楕円の円弧を描画することによって作られる扇形を描画します。  
+##  <a name="pie"></a>  CDC::Pie  
+ Draws a pie-shaped wedge by drawing an elliptical arc whose center and two endpoints are joined by lines.  
   
 ```  
 BOOL Pie(
@@ -4080,55 +4271,55 @@ BOOL Pie(
     POINT ptEnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- (論理単位で) に外接する四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `y1`  
- (論理単位で) に外接する四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the bounding rectangle (in logical units).  
   
  `x2`  
- (論理単位で) に外接する四角形の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  `y2`  
- (論理単位で) に外接する四角形の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the bounding rectangle (in logical units).  
   
  *x3*  
- (論理単位で) の円弧の始点の x 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `y3`  
- (論理単位で) の円弧の始点の y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the arc's starting point (in logical units). This point does not have to lie exactly on the arc.  
   
  `x4`  
- (論理単位で) 円弧の終点の x 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the x-coordinate of the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `y4`  
- (論理単位で) 円弧の終点の y 座標を指定します。 このポイントは、円弧上正確にする必要はありません。  
+ Specifies the y-coordinate of the arc's endpoint (in logical units). This point does not have to lie exactly on the arc.  
   
  `lpRect`  
- 外接する四角形を指定します。 いずれかを渡すことができます、`CRect`オブジェクトまたはへのポインター、`RECT`このパラメーターの構造体。  
+ Specifies the bounding rectangle. You can pass either a `CRect` object or a pointer to a `RECT` structure for this parameter.  
   
  `ptStart`  
- 円弧の始点を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the starting point of the arc. This point does not have to lie exactly on the arc. You can pass either a [POINT](../../mfc/reference/point-structure1.md) structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
  `ptEnd`  
- 円弧の終点を指定します。 このポイントは、円弧上正確にする必要はありません。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the endpoint of the arc. This point does not have to lie exactly on the arc. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 円弧の中心で指定された外接する四角形の中心`x1`、 `y1`、 `x2`、および`y2`(または`lpRect`)。 開始と円弧の終点がで指定された*x3*、 `y3`、 `x4`、および`y4`(または`ptStart`と`ptEnd`)。  
+### <a name="remarks"></a>Remarks  
+ The center of the arc is the center of the bounding rectangle specified by `x1`, `y1`, `x2`, and `y2` (or by `lpRect`). The starting and ending points of the arc are specified by *x3*, `y3`, `x4`, and `y4` (or by `ptStart` and `ptEnd`).  
   
- 円弧を反時計回りに移動、選択したペンを使用して描画します。 次の 2 行は、各エンドポイントから円弧の中央に描画されます。 円グラフの形の領域には、現在のブラシが格納されます。 場合*x3* equals`x4`と`y3`equals `y4`、結果は、楕円の中心からポイントに 1 行で省略記号ボタン ( *x3*、 `y3`) または ( `x4`、 `y4`)。  
+ The arc is drawn with the selected pen, moving in a counterclockwise direction. Two additional lines are drawn from each endpoint to the arc's center. The pie-shaped area is filled with the current brush. If *x3* equals `x4` and `y3` equals `y4`, the result is an ellipse with a single line from the center of the ellipse to the point ( *x3*, `y3`) or ( `x4`, `y4`).  
   
- この関数で描画する図形はまで拡張しますが、右下隅の座標には含まれません。 つまり、図の高さが`y2`  -  `y1` 、図の幅は`x2`  - `x1`です。 外接する四角形の高さと幅の両方は、2 つのユニットと 32,767 より小さい単位より大きくなければなりません。  
+ The figure drawn by this function extends up to but does not include the right and bottom coordinates. This means that the height of the figure is `y2` - `y1` and the width of the figure is `x2` - `x1`. Both the width and the height of the bounding rectangle must be greater than 2 units and less than 32,767 units.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 37](../../mfc/codesnippet/cpp/cdc-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#37](../../mfc/codesnippet/cpp/cdc-class_9.cpp)]  
   
-##  <a name="playmetafile"></a>CDC::PlayMetaFile  
- デバイス コンテキストで指定されたメタファイルのコンテンツを再生します。  
+##  <a name="playmetafile"></a>  CDC::PlayMetaFile  
+ Plays the contents of the specified metafile on the device context.  
   
 ```  
 BOOL PlayMetaFile(HMETAFILE hMF);
@@ -4139,30 +4330,30 @@ BOOL PlayMetaFile(
     LPCRECT lpBounds);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *hMF*  
- 再生するメタファイルを識別します。  
+ Identifies the metafile to be played.  
   
  *hEnhMetaFile*  
- 拡張メタファイルを識別します。  
+ Identifies the enhanced metafile.  
   
  `lpBounds`  
- 指す、`RECT`構造体、または`CRect`画像を表示するために使用する外接する四角形の座標を格納しているオブジェクト。 座標は、論理単位で指定されます。  
+ Points to a `RECT` structure or a `CRect` object that contains the coordinates of the bounding rectangle used to display the picture. The coordinates are specified in logical units.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- メタファイルは、何度でも再生できます。  
+### <a name="remarks"></a>Remarks  
+ The metafile can be played any number of times.  
   
- 2 番目のバージョンの`PlayMetaFile`指定された拡張メタファイルで保存された画像が表示されます。 アプリケーションがの 2 番目のバージョンを呼び出す場合`PlayMetaFile`、Windows を使用して画像フレーム拡張メタファイルのヘッダーにマップによって指される四角形に画像、`lpBounds`パラメーター。 (この図の傾斜またはワールド変換を呼び出す前に、出力デバイスに設定して回転した可能性があります`PlayMetaFile`)。図では、四角形の端に沿ったポイントが含まれています。 拡張メタファイルを再生する前に、出力デバイスでクリッピング領域を定義することで、拡張メタファイル画像をクリップすることができます。  
+ The second version of `PlayMetaFile` displays the picture stored in the given enhanced-format metafile. When an application calls the second version of `PlayMetaFile`, Windows uses the picture frame in the enhanced-metafile header to map the picture onto the rectangle pointed to by the `lpBounds` parameter. (This picture may be sheared or rotated by setting the world transform in the output device before calling `PlayMetaFile`.) Points along the edges of the rectangle are included in the picture. An enhanced-metafile picture can be clipped by defining the clipping region in the output device before playing the enhanced metafile.  
   
- 拡張メタファイル オプションのパレットが含まれているアプリケーションは第 2 のバージョンを呼び出す前に、出力デバイスにカラー パレットを設定して色を統一を実現できます`PlayMetaFile`です。 オプションのパレットを取得するを使用して、**カラー** Windows の機能です。 拡張メタファイルを新しく作成された拡張メタファイルに埋め込みの 2 番目のバージョンを呼び出すことによって`PlayMetaFile`再生元の拡張メタファイル デバイス コンテキストに、新しい拡張メタファイルとします。  
+ If an enhanced metafile contains an optional palette, an application can achieve consistent colors by setting up a color palette on the output device before calling the second version of `PlayMetaFile`. To retrieve the optional palette, use the **GetEnhMetaFilePaletteEntries** Windows function. An enhanced metafile can be embedded in a newly created enhanced metafile by calling the second version of `PlayMetaFile` and playing the source enhanced metafile into the device context for the new enhanced metafile.  
   
- この関数では、出力デバイス コンテキストの状態が保持されます。 任意のオブジェクトが作成されますが、拡張メタファイルでは削除されませんが、この関数によって削除されます。 この関数を停止するアプリケーションを呼び出すことができます、 **CancelDC**操作を終了する別のスレッドからの Windows の機能です。 この場合、関数は、0 を返します。  
+ The states of the output device context are preserved by this function. Any object created but not deleted in the enhanced metafile is deleted by this function. To stop this function, an application can call the **CancelDC** Windows function from another thread to terminate the operation. In this case, the function returns zero.  
   
-##  <a name="plgblt"></a>CDC::PlgBlt  
- 指定されたデバイス コンテキストの指定した平行四辺形に元のデバイス コンテキストで指定した四角形から色データのビットのビット ブロック転送を実行します。  
+##  <a name="plgblt"></a>  CDC::PlgBlt  
+ Performs a bit-block transfer of the bits of color data from the specified rectangle in the source device context to the specified parallelogram in the given device context.  
   
 ```  
 BOOL PlgBlt(
@@ -4177,54 +4368,54 @@ BOOL PlgBlt(
     int yMask);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoint`  
- 平行四辺形の 3 つの角を識別する論理空間内の 3 つの点の配列を指します。 元の四角形の左上隅は、この配列、配列内の 2 番目のポイントを右上隅および 3 番目のポイントを左下隅の最初のポイントにマップされます。 元の四角形の右下隅は、暗黙的な 4 番目のポイント、平行四辺形内にマップされます。  
+ Points to an array of three points in logical space that identifies three corners of the destination parallelogram. The upper-left corner of the source rectangle is mapped to the first point in this array, the upper-right corner to the second point in this array, and the lower-left corner to the third point. The lower-right corner of the source rectangle is mapped to the implicit fourth point in the parallelogram.  
   
  `pSrcDC`  
- 元のデバイス コンテキストを識別します。  
+ Identifies the source device context.  
   
  `xSrc`  
- 論理単位で、元の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the upper-left corner of the source rectangle.  
   
  `ySrc`  
- 論理単位で、元の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the upper-left corner of the source rectangle.  
   
  `nWidth`  
- 論理単位で、元の四角形の幅を指定します。  
+ Specifies the width, in logical units, of the source rectangle.  
   
  `nHeight`  
- 論理単位で、元の四角形の高さを指定します。  
+ Specifies the height, in logical units, of the source rectangle.  
   
  `maskBitmap`  
- 元の四角形の色をマスクに使用されるオプションのモノクロ ビットマップを識別します。  
+ Identifies an optional monochrome bitmap that is used to mask the colors of the source rectangle.  
   
  `xMask`  
- モノクロのビットマップの左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the monochrome bitmap.  
   
  `yMask`  
- モノクロのビットマップの左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the monochrome bitmap.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 指定されたビットマスク ハンドルは、有効なモノクロ ビットマップを示している場合、関数は、元の四角形の色データのビットをマスクするこのビットマップを使用します。  
+### <a name="remarks"></a>Remarks  
+ If the given bitmask handle identifies a valid monochrome bitmap, the function uses this bitmap to mask the bits of color data from the source rectangle.  
   
- 平行四辺形 (D) の 4 番目の頂点が最初の 3 つを扱うことで定義されているベクターとコンピューティング D ポイント (A、B、および C) = B と C - A.  
+ The fourth vertex of the parallelogram (D) is defined by treating the first three points (A, B, and C) as vectors and computing D = B + C - A.  
   
- 対応するビットマスクが存在する場合は、マスク内の 1 の値は、ソース ピクセルの色を先にコピーすることを示します。 マスクで 0 の値は、移行先のピクセルの色が、変更できないことを示します。  
+ If the bitmask exists, a value of 1 in the mask indicates that the source pixel color should be copied to the destination. A value of 0 in the mask indicates that the destination pixel color is not to be changed.  
   
- マスク四角形が元とコピー先の四角形よりも小さい場合は、関数はマスク パターンをレプリケートします。  
+ If the mask rectangle is smaller than the source and destination rectangles, the function replicates the mask pattern.  
   
- ソース デバイス コンテキストにある拡大/縮小、平行移動、およびリフレクションの変換が許可されます。ただし、回転と傾斜変換ではします。 マスク ビットマップがモノクロ ビットマップでない場合は、エラーが発生します。 コピー先デバイス コンテキストの伸縮モードを使用して、必要がある場合は、拡大または (ピクセル単位) を圧縮する方法を決定します。 拡張メタファイルを記録中は、元のデバイス コンテキスト拡張メタファイル デバイス コンテキストを識別する場合に、エラーが発生します。  
+ Scaling, translation, and reflection transformations are allowed in the source device context; however, rotation and shear transformations are not. If the mask bitmap is not a monochrome bitmap, an error occurs. The stretching mode for the destination device context is used to determine how to stretch or compress the pixels, if that is necessary. When an enhanced metafile is being recorded, an error occurs if the source device context identifies an enhanced-metafile device context.  
   
- コピー先の座標は、コピー先デバイス コンテキストに従って変換されます。コピー元の座標は、コピー元デバイス コンテキストに従って変換されます。 ソースの変換には、回転または傾斜が、エラーが返されます。 送信先と送信元の四角形は、同じ色の書式を持たない場合`PlgBlt`先の四角形を一致するように元の四角形に変換します。 サポートしないデバイス`PlgBlt`です。 詳細については、の説明を参照して、 **RC_BITBLT**ラスター機能で、`CDC::GetDeviceCaps`メンバー関数。  
+ The destination coordinates are transformed according to the destination device context; the source coordinates are transformed according to the source device context. If the source transformation has a rotation or shear, an error is returned. If the destination and source rectangles do not have the same color format, `PlgBlt` converts the source rectangle to match the destination rectangle. Not all devices support `PlgBlt`. For more information, see the description of the **RC_BITBLT** raster capability in the `CDC::GetDeviceCaps` member function.  
   
- 元とコピー先デバイス コンテキストは、互換性のないデバイスを表している場合は`PlgBlt`はエラーを返します。  
+ If the source and destination device contexts represent incompatible devices, `PlgBlt` returns an error.  
   
-##  <a name="polybezier"></a>CDC::PolyBezier  
- 1 つまたは複数のベジエ スプラインを描画します。  
+##  <a name="polybezier"></a>  CDC::PolyBezier  
+ Draws one or more Bzier splines.  
   
 ```  
 BOOL PolyBezier(
@@ -4232,23 +4423,23 @@ BOOL PolyBezier(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)エンドポイントを含めるし、スプラインの端を制御するデータ構造です。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) data structures that contain the endpoints and control points of the spline(s).  
   
  `nCount`  
- 内の地点の数を指定、`lpPoints`配列。 この値はスプラインを描画するの 3 倍の数を 1 つにする必要があります、2 つの制御点と、エンドポイント、および初期スプライン各ベジエ スプラインが必要であるため、追加の開始ポイントが必要です。  
+ Specifies the number of points in the `lpPoints` array. This value must be one more than three times the number of splines to be drawn, because each Bzier spline requires two control points and an endpoint, and the initial spline requires an additional starting point.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数では、3 次ベジエ スプラインを描画エンドポイントとで指定されたコントロール ポイントを使用して、`lpPoints`パラメーター。 最初のスプラインは、制御点として、2 番目と 3 番目のポイントを使用して、最初のポイントまで、4 番目の点に描画されます。 シーケンス内の各後続スプラインに 3 つの点が必要があります: 以前スプラインの終点が開始点として使用される、シーケンス内の次の 2 つのポイントは、コントロール ポイント、および 3 はエンド ポイント。  
+### <a name="remarks"></a>Remarks  
+ This function draws cubic Bzier splines by using the endpoints and control points specified by the `lpPoints` parameter. The first spline is drawn from the first point to the fourth point by using the second and third points as control points. Each subsequent spline in the sequence needs exactly three more points: the end point of the previous spline is used as the starting point, the next two points in the sequence are control points, and the third is the end point.  
   
- 現在の位置が使用されるもによって更新、`PolyBezier`関数。 この図は表示されません。 この関数は、現在のペンを使用して線を描画します。  
+ The current position is neither used nor updated by the `PolyBezier` function. The figure is not filled. This function draws lines by using the current pen.  
   
-##  <a name="polybezierto"></a>CDC::PolyBezierTo  
- 1 つまたは複数のベジエ スプラインを描画します。  
+##  <a name="polybezierto"></a>  CDC::PolyBezierTo  
+ Draws one or more Bzier splines.  
   
 ```  
 BOOL PolyBezierTo(
@@ -4256,24 +4447,24 @@ BOOL PolyBezierTo(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)エンドポイントおよびコントロールを格納するデータ構造体をポイントします。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) data structures that contains the endpoints and control points.  
   
  `nCount`  
- 内の地点の数を指定、`lpPoints`配列。 この値は、各ベジエ スプラインには、次の 2 つの制御点と終了ポイントが必要とするため、スプラインを描画する数の 3 倍にすることがあります。  
+ Specifies the number of points in the `lpPoints` array. This value must be three times the number of splines to be drawn, because each Bzier spline requires two control points and an end point.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数では、3 次ベジエ スプラインを描画で指定されたコントロール ポイントを使用して、`lpPoints`パラメーター。 最初スプラインは、現在の位置からの制御点として、最初の 2 つのポイントを使用して 3 番目のポイントを描画します。 後続の各スプラインは、この関数は、3 つの点が必要し、開始点として、次の直前のスプラインの終了点を使用します。 `PolyBezierTo`現在の位置を最後のベジエ スプラインの終了位置に移動します。 この図は表示されません。 この関数は、現在のペンを使用して線を描画します。  
+### <a name="remarks"></a>Remarks  
+ This function draws cubic Bzier splines by using the control points specified by the `lpPoints` parameter. The first spline is drawn from the current position to the third point by using the first two points as control points. For each subsequent spline, the function needs exactly three more points, and uses the end point of the previous spline as the starting point for the next. `PolyBezierTo` moves the current position to the end point of the last Bzier spline. The figure is not filled. This function draws lines by using the current pen.  
   
-### <a name="example"></a>例  
-  例を参照して[cdc::beginpath](#beginpath)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::BeginPath](#beginpath).  
   
-##  <a name="polydraw"></a>CDC::PolyDraw  
- 一連の線分とベジエ スプラインを描画します。  
+##  <a name="polydraw"></a>  CDC::PolyDraw  
+ Draws a set of line segments and Bzier splines.  
   
 ```  
 BOOL PolyDraw(
@@ -4282,41 +4473,41 @@ BOOL PolyDraw(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)エンドポイントを含む各データ構造が線のセグメントと、エンドポイントと各ベジエ スプラインのポイントを制御します。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) data structures that contains the endpoints for each line segment and the endpoints and control points for each Bzier spline.  
   
  `lpTypes`  
- どのそれぞれ特定の時点を指定する配列を指す、`lpPoints`配列が使用されています。 値には、次のいずれかを指定できます。  
+ Points to an array that specifies how each point in the `lpPoints` array is used. Values can be one of the following:  
   
-- **直前**このポイントが不整合のある図を起動するように指定します。 この時点では、新しい現在位置になります。  
+- **PT_MOVETO** Specifies that this point starts a disjoint figure. This point becomes the new current position.  
   
-- **PT_LINETO**行が、現在の位置からこの段階では、新しい現在位置になりますに描画することを指定します。  
+- **PT_LINETO** Specifies that a line is to be drawn from the current position to this point, which then becomes the new current position.  
   
-- **PT_BEZIERTO**この点がベジエ スプラインの制御点または終了ことを指定します。  
+- **PT_BEZIERTO** Specifies that this point is a control point or ending point for a Bzier spline.  
   
- **PT_BEZIERTO**に 3 つのセットの種類が常に実行します。 現在の位置では、ベジエ スプラインの始点を定義します。 最初の 2 つ**PT_BEZIERTO**ポイントは、コントロール ポイント、および 3 番目**PT_BEZIERTO**ポイントとは、終了します。 終了の時点では、新しい現在位置になります。 ある 3 つの連続して並んでいない場合**PT_BEZIERTO**ポイント、エラーが発生します。  
+ **PT_BEZIERTO** types always occur in sets of three. The current position defines the starting point for the Bzier spline. The first two **PT_BEZIERTO** points are the control points, and the third **PT_BEZIERTO** point is the ending point. The ending point becomes the new current position. If there are not three consecutive **PT_BEZIERTO** points, an error results.  
   
-     A **PT_LINETO**または**PT_BEZIERTO**型は、ビットごとの演算子を使用して、次の定数と組み合わせることができますか、対応するポイントが、図と図の最後の点であることを示すが終了します。  
+     A **PT_LINETO** or **PT_BEZIERTO** type can be combined with the following constant by using the bitwise operator OR to indicate that the corresponding point is the last point in a figure and the figure is closed:  
   
-- **PT_CLOSEFIGURE**の図が自動的に閉じられるまで指定、 **PT_LINETO**または**PT_BEZIERTO**のこのポイントは実行を入力します。 行は、一番最近にここから描画**直前**または`MoveTo`ポイントします。  
+- **PT_CLOSEFIGURE** Specifies that the figure is automatically closed after the **PT_LINETO** or **PT_BEZIERTO** type for this point is done. A line is drawn from this point to the most recent **PT_MOVETO** or `MoveTo` point.  
   
-     このフラグは、 **PT_LINETO**型または行の場合、 **PT_BEZIERTO**のビットごとのベジエ スプラインを終点型`OR`演算子。 現在の位置は、閉じた直線の終点に設定されます。  
+     This flag is combined with the **PT_LINETO** type for a line, or with the **PT_BEZIERTO** type of ending point for a Bzier spline, by using the bitwise `OR` operator. The current position is set to the ending point of the closing line.  
   
  `nCount`  
- 内の地点の合計数を指定、`lpPoints`のバイト数と同じで、配列、`lpTypes`配列。  
+ Specifies the total number of points in the `lpPoints` array, the same as the number of bytes in the `lpTypes` array.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用してを連続して呼び出す代わりに、不整合のある図を描画すること`CDC::MoveTo`、 `CDC::LineTo`、および`CDC::PolyBezierTo`メンバー関数。 行およびスプラインは現在のペンを使用して描画し、数値が入力されていません。 呼び出しによって開始されたアクティブのパスがあるかどうか、`CDC::BeginPath`メンバー関数は、`PolyDraw`パスに追加します。 含まれているポイント、`lpPoints`配列し、`lpTypes`各ポイントの一部であるかどうかを示す、 `CDC::MoveTo`、 `CDC::LineTo`、または**CDC::BezierTo**操作します。 図形を閉じることもできます。 この関数は、現在の位置を更新します。  
+### <a name="remarks"></a>Remarks  
+ This function can be used to draw disjoint figures in place of consecutive calls to `CDC::MoveTo`, `CDC::LineTo`, and `CDC::PolyBezierTo` member functions. The lines and splines are drawn using the current pen, and figures are not filled. If there is an active path started by calling the `CDC::BeginPath` member function, `PolyDraw` adds to the path. The points contained in the `lpPoints` array and in `lpTypes` indicate whether each point is part of a `CDC::MoveTo`, a `CDC::LineTo`, or a **CDC::BezierTo** operation. It is also possible to close figures. This function updates the current position.  
   
-### <a name="example"></a>例  
-  例を参照して[cdc::beginpath](#beginpath)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::BeginPath](#beginpath).  
   
-##  <a name="polygon"></a>CDC::Polygon  
- 2 つ以上の点の (頂点) 現在のペンを使用して回線で接続で構成される多角形を描画します。  
+##  <a name="polygon"></a>  CDC::Polygon  
+ Draws a polygon consisting of two or more points (vertices) connected by lines, using the current pen.  
   
 ```  
 BOOL Polygon(
@@ -4324,26 +4515,26 @@ BOOL Polygon(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 多角形の頂点を指定する点の配列を指します。 配列内の各ポイントは、**ポイント**構造体、または`CPoint`オブジェクト。  
+ Points to an array of points that specifies the vertices of the polygon. Each point in the array is a **POINT** structure or a `CPoint` object.  
   
  `nCount`  
- 配列の頂点の数を指定します。  
+ Specifies the number of vertices in the array.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- システム多角形が自動的に終了、必要に応じて、最初最後の頂点から線が描画します。  
+### <a name="remarks"></a>Remarks  
+ The system closes the polygon automatically, if necessary, by drawing a line from the last vertex to the first.  
   
- 現在の多角形の塗りつぶしモードを取得または設定を使用して、`GetPolyFillMode`と`SetPolyFillMode`メンバー関数。  
+ The current polygon-filling mode can be retrieved or set by using the `GetPolyFillMode` and `SetPolyFillMode` member functions.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #38](../../mfc/codesnippet/cpp/cdc-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#38](../../mfc/codesnippet/cpp/cdc-class_10.cpp)]  
   
-##  <a name="polyline"></a>CDC::Polyline  
- 指定された点を結ぶ線分を描画`lpPoints`です。  
+##  <a name="polyline"></a>  CDC::Polyline  
+ Draws a set of line segments connecting the points specified by `lpPoints`.  
   
 ```  
 BOOL Polyline(
@@ -4351,23 +4542,23 @@ BOOL Polyline(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す**ポイント**構造体または`CPoint`を接続するオブジェクト。  
+ Points to an array of **POINT** structures or `CPoint` objects to be connected.  
   
  `nCount`  
- 配列内の地点の数を指定します。 この値は、少なくとも 2 を指定する必要があります。  
+ Specifies the number of points in the array. This value must be at least 2.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 現在のペンを使用して後続のポイントを介して最初の点から、線が描画されます。 異なり、`LineTo`メンバー関数の場合、`Polyline`関数で使用しても、現在の位置を更新します。  
+### <a name="remarks"></a>Remarks  
+ The lines are drawn from the first point through subsequent points using the current pen. Unlike the `LineTo` member function, the `Polyline` function neither uses nor updates the current position.  
   
- 詳細については、次を参照してください。[ポリライン](http://msdn.microsoft.com/library/windows/desktop/dd162815)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [PolyLine](http://msdn.microsoft.com/library/windows/desktop/dd162815) in the Windows SDK.  
   
-##  <a name="polylineto"></a>CDC::PolylineTo  
- 1 つまたは複数の直線を描画します。  
+##  <a name="polylineto"></a>  CDC::PolylineTo  
+ Draws one or more straight lines.  
   
 ```  
 BOOL PolylineTo(
@@ -4375,21 +4566,21 @@ BOOL PolylineTo(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す[ポイント](../../mfc/reference/point-structure1.md)行の頂点を格納するデータ構造です。  
+ Points to an array of [POINT](../../mfc/reference/point-structure1.md) data structures that contains the vertices of the line.  
   
  `nCount`  
- 配列内の地点の数を指定します。  
+ Specifies the number of points in the array.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 指定された最初のポイントに現在の位置から、直線を描画は、`lpPoints`現在のペンを使用してパラメーター。 以降の各行の関数から描画前の行の終了位置で指定された次の点に`lpPoints`です。 `PolylineTo`現在の位置を最後の行の終了位置に移動します。 この関数で描画される直線セグメントでは、閉じた図形をフォームの場合の図は表示されません。  
+### <a name="remarks"></a>Remarks  
+ A line is drawn from the current position to the first point specified by the `lpPoints` parameter by using the current pen. For each additional line, the function draws from the ending point of the previous line to the next point specified by `lpPoints`. `PolylineTo` moves the current position to the ending point of the last line. If the line segments drawn by this function form a closed figure, the figure is not filled.  
   
-##  <a name="polypolygon"></a>CDC::PolyPolygon  
- 現在の多角形の塗りつぶしモードの使用がいっぱいになる 2 つ以上の多角形を作成します。  
+##  <a name="polypolygon"></a>  CDC::PolyPolygon  
+ Creates two or more polygons that are filled using the current polygon-filling mode.  
   
 ```  
 BOOL PolyPolygon(
@@ -4398,30 +4589,30 @@ BOOL PolyPolygon(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す**ポイント**構造体または`CPoint`多角形の頂点を定義するオブジェクト。  
+ Points to an array of **POINT** structures or `CPoint` objects that define the vertices of the polygons.  
   
  `lpPolyCounts`  
- 整数の配列へのポインターをそれぞれ指定するポイントの数の多角形のいずれかで、`lpPoints`配列。  
+ Points to an array of integers, each of which specifies the number of points in one of the polygons in the `lpPoints` array.  
   
  `nCount`  
- 内のエントリの数、`lpPolyCounts`配列。 この番号は、描画する多角形の番号を指定します。 この値は、少なくとも 2 を指定する必要があります。  
+ The number of entries in the `lpPolyCounts` array. This number specifies the number of polygons to be drawn. This value must be at least 2.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 多角形は、不整合のあるまたはオーバー ラップする可能性があります。  
+### <a name="remarks"></a>Remarks  
+ The polygons may be disjoint or overlapping.  
   
- 呼び出しで指定された各多角形、`PolyPolygon`関数を閉じる必要があります。 によって作成された多角形とは異なり、**多角形**メンバー関数は、によって作成された多角形`PolyPolygon`自動的に閉じられていません。  
+ Each polygon specified in a call to the `PolyPolygon` function must be closed. Unlike polygons created by the **Polygon** member function, the polygons created by `PolyPolygon` are not closed automatically.  
   
- この関数は、次の 2 つ以上の多角形を作成します。 単一の多角形を作成するアプリケーションを使用する必要があります、**多角形**メンバー関数。  
+ The function creates two or more polygons. To create a single polygon, an application should use the **Polygon** member function.  
   
- 現在の多角形の塗りつぶしモードを取得または設定を使用して、`GetPolyFillMode`と`SetPolyFillMode`メンバー関数。  
+ The current polygon-filling mode can be retrieved or set by using the `GetPolyFillMode` and `SetPolyFillMode` member functions.  
   
-##  <a name="polypolyline"></a>CDC::PolyPolyline  
- 接続されている直線セグメントの複数の系列を描画します。  
+##  <a name="polypolyline"></a>  CDC::PolyPolyline  
+ Draws multiple series of connected line segments.  
   
 ```  
 BOOL PolyPolyline(
@@ -4430,24 +4621,24 @@ BOOL PolyPolyline(
     int nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 多角形の頂点を格納する構造体の配列を指します。 ポリラインを連続的に指定します。  
+ Points to an array of structures that contains the vertices of the polylines. The polylines are specified consecutively.  
   
  `lpPolyPoints`  
- 内の地点の数を指定する変数の配列を指す、`lpPoints`対応する多角形の配列。 各エントリは、2 以上にする必要があります。  
+ Points to an array of variables specifying the number of points in the `lpPoints` array for the corresponding polygon. Each entry must be greater than or equal to 2.  
   
  `nCount`  
- におけるカウントの合計数を指定、`lpPolyPoints`配列。  
+ Specifies the total number of counts in the `lpPolyPoints` array.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 直線セグメントは、現在のペンを使用して描画されます。 セグメントが形成する図形が入力されていません。 現在の位置が使用も、この関数で更新します。  
+### <a name="remarks"></a>Remarks  
+ The line segments are drawn by using the current pen. The figures formed by the segments are not filled. The current position is neither used nor updated by this function.  
   
-##  <a name="ptvisible"></a>CDC::PtVisible  
- 指定したポイントが、デバイス コンテキストのクリッピング領域内にあるかどうかを判断します。  
+##  <a name="ptvisible"></a>  CDC::PtVisible  
+ Determines whether the given point is within the clipping region of the device context.  
   
 ```  
 virtual BOOL PtVisible(
@@ -4457,48 +4648,48 @@ virtual BOOL PtVisible(
 BOOL PtVisible(POINT point) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 点の x の論理座標を指定します。  
+ Specifies the logical x-coordinate of the point.  
   
  *y*  
- 点の y の論理座標を指定します。  
+ Specifies the logical y-coordinate of the point.  
   
  `point`  
- 論理座標で確認するためのポイントを指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the point to check in logical coordinates. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- クリップ領域内で指定したポイントがある場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified point is within the clipping region; otherwise 0.  
   
-##  <a name="queryabort"></a>CDC::QueryAbort  
- によってインストールされているアボート関数を呼び出し、 [SetAbortProc](#setabortproc)印刷を終了する必要があるかどうかに、印刷アプリケーションおよびクエリのメンバー関数。  
+##  <a name="queryabort"></a>  CDC::QueryAbort  
+ Calls the abort function installed by the [SetAbortProc](#setabortproc) member function for a printing application and queries whether the printing should be terminated.  
   
 ```  
 BOOL QueryAbort() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 印刷を続行する場合、または中止プロシージャがない場合は 0 以外を返します。 印刷ジョブを終了する必要がある場合は 0 になります。 戻り値は、中止関数によって提供されます。  
+### <a name="return-value"></a>Return Value  
+ The return value is nonzero if printing should continue or if there is no abort procedure. It is 0 if the print job should be terminated. The return value is supplied by the abort function.  
   
-##  <a name="realizepalette"></a>:Realizepalette  
- マップのエントリは、現在の論理パレットから、システム パレット。  
+##  <a name="realizepalette"></a>  CDC::RealizePalette  
+ Maps entries from the current logical palette to the system palette.  
   
 ```  
 UINT RealizePalette();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 論理パレットのエントリの数が、システム パレット内の異なるエントリにマップされたことを示します。 これは、変化に合わせてシステム パレット論理パレットが最後に実現されたために、この関数が再マップするエントリの数を表します。  
+### <a name="return-value"></a>Return Value  
+ Indicates how many entries in the logical palette were mapped to different entries in the system palette. This represents the number of entries that this function remapped to accommodate changes in the system palette since the logical palette was last realized.  
   
-### <a name="remarks"></a>コメント  
- 論理カラー パレットは、他のウィンドウに表示される色と色を重視するアプリケーションとアプリケーションを独自に干渉することがなく、必要に応じて多くの色に色が表示されるように使用することにより、システムの間のバッファーとして機能します。  
+### <a name="remarks"></a>Remarks  
+ A logical color palette acts as a buffer between color-intensive applications and the system, allowing an application to use as many colors as needed without interfering with its own displayed colors or with colors displayed by other windows.  
   
- ときに、ウィンドウがあり、入力フォーカス呼び出し`RealizePalette`、Windows により、ウィンドウがすべて、要求された色、画面に同時に使用できる最大数に達するまでに表示されます。 Windows には、使用可能な色にそれらを照合することによって、ウィンドウのパレットに見つかりません色も表示されます。  
+ When a window has the input focus and calls `RealizePalette`, Windows ensures that the window will display all the requested colors, up to the maximum number simultaneously available on the screen. Windows also displays colors not found in the window's palette by matching them to available colors.  
   
- さらに、Windows では、非アクティブなウィンドウ関数を使用できる色に可能な限り呼び出すことによって要求された色と一致します。 これにより、非アクティブなウィンドウに表示される色の望ましくない変更が大幅に減少します。  
+ In addition, Windows matches the colors requested by inactive windows that call the function as closely as possible to the available colors. This significantly reduces undesirable changes in the colors displayed in inactive windows.  
   
-##  <a name="rectangle"></a>CDC::Rectangle  
- 現在のペンを使用して四角形を描画します。  
+##  <a name="rectangle"></a>  CDC::Rectangle  
+ Draws a rectangle using the current pen.  
   
 ```  
 BOOL Rectangle(
@@ -4510,111 +4701,111 @@ BOOL Rectangle(
 BOOL Rectangle(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- (論理単位で) の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the rectangle (in logical units).  
   
  `y1`  
- (論理単位で) の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the rectangle (in logical units).  
   
  `x2`  
- (論理単位で) の四角形の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the rectangle (in logical units).  
   
  `y2`  
- (論理単位で) の四角形の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the rectangle (in logical units).  
   
  `lpRect`  
- 論理ユニットの四角形を指定します。 いずれかを渡すことができます、`CRect`オブジェクトまたはへのポインター、`RECT`このパラメーターの構造体。  
+ Specifies the rectangle in logical units. You can pass either a `CRect` object or a pointer to a `RECT` structure for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 四角形の内部では、現在のブラシを塗りつぶされます。  
+### <a name="remarks"></a>Remarks  
+ The interior of the rectangle is filled using the current brush.  
   
- 四角形まで拡張は含まれません、右下隅の座標。 つまり、四角形の高さが`y2`  -  `y1` 、四角形の幅は`x2`  - `x1`です。 四角形の高さと幅の両方は、2 つのユニットと 32,767 より小さい単位より大きくなければなりません。  
+ The rectangle extends up to, but does not include, the right and bottom coordinates. This means that the height of the rectangle is `y2` - `y1` and the width of the rectangle is `x2` - `x1`. Both the width and the height of a rectangle must be greater than 2 units and less than 32,767 units.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #39](../../mfc/codesnippet/cpp/cdc-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#39](../../mfc/codesnippet/cpp/cdc-class_11.cpp)]  
   
-##  <a name="rectvisible"></a>CDC::RectVisible  
- ディスプレイ コンテキストのクリッピング領域内で指定された四角形の任意の部分があるかどうかを判断します。  
+##  <a name="rectvisible"></a>  CDC::RectVisible  
+ Determines whether any part of the given rectangle lies within the clipping region of the display context.  
   
 ```  
 virtual BOOL RectVisible(LPCRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造体、または`CRect`指定した四角形の論理座標を格納しているオブジェクト。  
+ Points to a `RECT` structure or a `CRect` object that contains the logical coordinates of the specified rectangle.  
   
-### <a name="return-value"></a>戻り値  
- クリップ領域内で指定された四角形の任意の部分が存在する場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if any portion of the given rectangle lies within the clipping region; otherwise 0.  
   
-##  <a name="releaseattribdc"></a>CDC::ReleaseAttribDC  
- 設定するには、このメンバー関数を呼び出す`m_hAttribDC`に**NULL**です。  
+##  <a name="releaseattribdc"></a>  CDC::ReleaseAttribDC  
+ Call this member function to set `m_hAttribDC` to **NULL**.  
   
 ```  
 virtual void ReleaseAttribDC();
 ```  
   
-### <a name="remarks"></a>コメント  
- これは発生しません、**デタッチ**を実行します。 出力デバイス コンテキストだけが接続されている、`CDC`オブジェクト、およびそののみをデタッチすることができます。  
+### <a name="remarks"></a>Remarks  
+ This does not cause a **Detach** to occur. Only the output device context is attached to the `CDC` object, and only it can be detached.  
   
-##  <a name="releaseoutputdc"></a>CDC::ReleaseOutputDC  
- 設定するには、このメンバー関数を呼び出す、`m_hDC`メンバー **NULL**です。  
+##  <a name="releaseoutputdc"></a>  CDC::ReleaseOutputDC  
+ Call this member function to set the `m_hDC` member to **NULL**.  
   
 ```  
 virtual void ReleaseOutputDC();
 ```  
   
-### <a name="remarks"></a>コメント  
- 出力デバイス コンテキストが関連付けられている場合、このメンバー関数を呼び出すことはできません、`CDC`オブジェクト。 使用して、**デタッチ**出力デバイス コンテキストをデタッチするメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ This member function cannot be called when the output device context is attached to the `CDC` object. Use the **Detach** member function to detach the output device context.  
   
-##  <a name="resetdc"></a>CDC::ResetDC  
- によってラップされたデバイス コンテキストを更新するには、このメンバー関数を呼び出して、`CDC`オブジェクト。  
+##  <a name="resetdc"></a>  CDC::ResetDC  
+ Call this member function to update the device context wrapped by the `CDC` object.  
   
 ```  
 BOOL ResetDC(const DEVMODE* lpDevMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpDevMode*  
- Windows へのポインター`DEVMODE`構造体。  
+ A pointer to a Windows `DEVMODE` structure.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストは、Windows の情報から更新`DEVMODE`構造体。 このメンバー関数は、属性のデバイス コンテキストのみをリセットします。  
+### <a name="remarks"></a>Remarks  
+ The device context is updated from the information specified in the Windows `DEVMODE` structure. This member function only resets the attribute device context.  
   
- 通常、アプリケーションは使用して、`ResetDC`ウィンドウを処理するときに、メンバー関数、`WM_DEVMODECHANGE`メッセージ。 このメンバー関数を使用して、ドキュメントの印刷中に、用紙の向きまたは用紙トレイを変更することができますも。  
+ An application will typically use the `ResetDC` member function when a window processes a `WM_DEVMODECHANGE` message. You can also use this member function to change the paper orientation or paper bins while printing a document.  
   
- このメンバー関数は、ドライバー名、デバイス名を変更または出力ポートを使用できません。 ユーザーには、ポートの接続やデバイス名が変更された、ときに、元のデバイス コンテキストを削除して、新しい情報で新しいデバイス コンテキストを作成する必要があります。  
+ You cannot use this member function to change the driver name, device name, or output port. When the user changes the port connection or device name, you must delete the original device context and create a new device context with the new information.  
   
- このメンバー関数を呼び出す前に、デバイス コンテキストに選択されている必要がある (ストック オブジェクト) 以外のすべてのオブジェクトが選択されていることを確認する必要があります。  
+ Before you call this member function, you must ensure that all objects (other than stock objects) that had been selected into the device context have been selected out.  
   
-##  <a name="restoredc"></a>CDC::RestoreDC  
- デバイス コンテキストをによって識別される前の状態に復元`nSavedDC`です。  
+##  <a name="restoredc"></a>  CDC::RestoreDC  
+ Restores the device context to the previous state identified by `nSavedDC`.  
   
 ```  
 virtual BOOL RestoreDC(int nSavedDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nSavedDC`  
- 復元するためにデバイス コンテキストを指定します。 以前から返される値を指定して`SaveDC`関数呼び出しです。 場合`nSavedDC`-1 で、最も最近保存したデバイス コンテキストを復元します。  
+ Specifies the device context to be restored. It can be a value returned by a previous `SaveDC` function call. If `nSavedDC` is -1, the most recently saved device context is restored.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたコンテキストが復元された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified context was restored; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `RestoreDC`状態情報を以前の呼び出しによって作成されたスタックからポップすることで、デバイス コンテキストに戻します、`SaveDC`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ `RestoreDC` restores the device context by popping state information off a stack created by earlier calls to the `SaveDC` member function.  
   
- スタックには、複数のデバイス コンテキストの状態情報を含めることができます。 によってコンテキストが指定されている場合`nSavedDC`、スタックの最上部ではない`RestoreDC`によって指定されたデバイス コンテキスト間のすべての状態情報を削除`nSavedDC`とスタックの上部とします。 削除済みの情報は失われます。  
+ The stack can contain the state information for several device contexts. If the context specified by `nSavedDC` is not at the top of the stack, `RestoreDC` deletes all state information between the device context specified by `nSavedDC` and the top of the stack. The deleted information is lost.  
   
-##  <a name="roundrect"></a>CDC::RoundRect  
- 現在のペンを使用して角の丸い四角形を描画します。  
+##  <a name="roundrect"></a>  CDC::RoundRect  
+ Draws a rectangle with rounded corners using the current pen.  
   
 ```  
 BOOL RoundRect(
@@ -4631,59 +4822,59 @@ BOOL RoundRect(
     POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- (論理単位で) の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the rectangle (in logical units).  
   
  `y1`  
- (論理単位で) の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the rectangle (in logical units).  
   
  `x2`  
- (論理単位で) の四角形の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the rectangle (in logical units).  
   
  `y2`  
- (論理単位で) の四角形の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the rectangle (in logical units).  
   
  *x3*  
- (論理単位で) の丸い角の描画に使用される楕円の幅を指定します。  
+ Specifies the width of the ellipse used to draw the rounded corners (in logical units).  
   
  `y3`  
- (論理単位で) の丸い角の描画に使用される楕円の高さを指定します。  
+ Specifies the height of the ellipse used to draw the rounded corners (in logical units).  
   
  `lpRect`  
- 論理ユニットの外接する四角形を指定します。 いずれかを渡すことができます、`CRect`オブジェクトまたはへのポインター、`RECT`このパラメーターの構造体。  
+ Specifies the bounding rectangle in logical units. You can pass either a `CRect` object or a pointer to a `RECT` structure for this parameter.  
   
  `point`  
- X 座標`point`(論理単位で) 丸い角の描画にある省略記号の幅を指定します。 Y 座標`point`(論理単位で) 丸い角の描画にある省略記号の高さを指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ The x-coordinate of `point` specifies the width of the ellipse to draw the rounded corners (in logical units). The y-coordinate of `point` specifies the height of the ellipse to draw the rounded corners (in logical units). You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 四角形の内部では、現在のブラシを塗りつぶされます。  
+### <a name="remarks"></a>Remarks  
+ The interior of the rectangle is filled using the current brush.  
   
- この関数は、描画の図は、まで拡張が、右下隅の座標には含まれません。 つまり、図の高さが`y2`  -  `y1` 、図の幅は`x2`  - `x1`です。 外接する四角形の幅と高さは共には、2 つのユニットと 32,767 より小さい単位より大きくなければなりません。  
+ The figure this function draws extends up to but does not include the right and bottom coordinates. This means that the height of the figure is `y2` - `y1` and the width of the figure is `x2` - `x1`. Both the height and the width of the bounding rectangle must be greater than 2 units and less than 32,767 units.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #40](../../mfc/codesnippet/cpp/cdc-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#40](../../mfc/codesnippet/cpp/cdc-class_12.cpp)]  
   
-##  <a name="savedc"></a>CDC::SaveDC  
- Windows で保持されているコンテキスト スタックに (クリッピング領域、選択したオブジェクトのマッピング モードなど) の状態情報をコピーして、デバイス コンテキストの現在の状態を保存します。  
+##  <a name="savedc"></a>  CDC::SaveDC  
+ Saves the current state of the device context by copying state information (such as clipping region, selected objects, and mapping mode) to a context stack maintained by Windows.  
   
 ```  
 virtual int SaveDC();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 保存されたデバイス コンテキストを識別する整数。 エラーが発生した場合は 0 になります。 これは、値を呼び出すことによって、デバイス コンテキストを復元するために使用できますが返される`RestoreDC`です。  
+### <a name="return-value"></a>Return Value  
+ An integer identifying the saved device context. It is 0 if an error occurs. This return value can be used to restore the device context by calling `RestoreDC`.  
   
-### <a name="remarks"></a>コメント  
- 保存されたデバイス コンテキストを使用して後で復元できます`RestoreDC`です。  
+### <a name="remarks"></a>Remarks  
+ The saved device context can later be restored by using `RestoreDC`.  
   
- `SaveDC`任意の数時間の任意の数のデバイス コンテキストの状態を保存するために使用します。  
+ `SaveDC` can be used any number of times to save any number of device-context states.  
   
-##  <a name="scaleviewportext"></a>CDC::ScaleViewportExt  
- 現在の値に対して相対的ビューポートの範囲を変更します。  
+##  <a name="scaleviewportext"></a>  CDC::ScaleViewportExt  
+ Modifies the viewport extents relative to the current values.  
   
 ```  
 virtual CSize ScaleViewportExt(
@@ -4693,33 +4884,33 @@ virtual CSize ScaleViewportExt(
     int yDenom);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `xNum`  
- 現在の x エクステントを乗算する量を指定します。  
+ Specifies the amount by which to multiply the current x-extent.  
   
  `xDenom`  
- 値によって現在 x エクステントを乗算した結果を除算する量を指定、`xNum`パラメーター。  
+ Specifies the amount by which to divide the result of multiplying the current x-extent by the value of the `xNum` parameter.  
   
  `yNum`  
- 現在の y 範囲を乗算する量を指定します。  
+ Specifies the amount by which to multiply the current y-extent.  
   
  `yDenom`  
- 値によって、現在の y 範囲を乗算した結果を除算する量を指定、`yNum`パラメーター。  
+ Specifies the amount by which to divide the result of multiplying the current y-extent by the value of the `yNum` parameter.  
   
-### <a name="return-value"></a>戻り値  
- 以前のビューポートの範囲が (デバイス単位) として、`CSize`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous viewport extents (in device units) as a `CSize` object.  
   
-### <a name="remarks"></a>コメント  
- 数式は次のように書き込まれます。  
+### <a name="remarks"></a>Remarks  
+ The formulas are written as follows:  
   
  `xNewVE = ( xOldVE * xNum ) / xDenom`  
   
  `yNewVE = ( yOldVE * yNum ) / yDenom`  
   
- 新しいビューポートの範囲は、現在の範囲に指定された分子を乗算して特定の分母で除算して計算されます。  
+ The new viewport extents are calculated by multiplying the current extents by the given numerator and then dividing by the given denominator.  
   
-##  <a name="scalewindowext"></a>CDC::ScaleWindowExt  
- 現在の値を基準としたウィンドウの範囲を変更します。  
+##  <a name="scalewindowext"></a>  CDC::ScaleWindowExt  
+ Modifies the window extents relative to the current values.  
   
 ```  
 virtual CSize ScaleWindowExt(
@@ -4729,33 +4920,33 @@ virtual CSize ScaleWindowExt(
     int yDenom);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `xNum`  
- 現在の x エクステントを乗算する量を指定します。  
+ Specifies the amount by which to multiply the current x-extent.  
   
  `xDenom`  
- 値によって現在 x エクステントを乗算した結果を除算する量を指定、`xNum`パラメーター。  
+ Specifies the amount by which to divide the result of multiplying the current x-extent by the value of the `xNum` parameter.  
   
  `yNum`  
- 現在の y 範囲を乗算する量を指定します。  
+ Specifies the amount by which to multiply the current y-extent.  
   
  `yDenom`  
- 値によって、現在の y 範囲を乗算した結果を除算する量を指定、`yNum`パラメーター。  
+ Specifies the amount by which to divide the result of multiplying the current y-extent by the value of the `yNum` parameter.  
   
-### <a name="return-value"></a>戻り値  
- 前のウィンドウの範囲が (論理単位で) として、`CSize`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous window extents (in logical units) as a `CSize` object.  
   
-### <a name="remarks"></a>コメント  
- 数式は次のように書き込まれます。  
+### <a name="remarks"></a>Remarks  
+ The formulas are written as follows:  
   
  `xNewWE = ( xOldWE * xNum ) / xDenom`  
   
  `yNewWE = ( yOldWE * yNum ) / yDenom`  
   
- 新しいウィンドウの範囲は、現在の範囲に指定された分子を乗算と指定された分母で割ることによって計算されます。  
+ The new window extents are calculated by multiplying the current extents by the given numerator and then dividing by the given denominator.  
   
-##  <a name="scrolldc"></a>CDC::ScrollDC  
- Bits の四角形は、水平方向および垂直方向にスクロールします。  
+##  <a name="scrolldc"></a>  CDC::ScrollDC  
+ Scrolls a rectangle of bits horizontally and vertically.  
   
 ```  
 BOOL ScrollDC(
@@ -4767,62 +4958,62 @@ BOOL ScrollDC(
     LPRECT lpRectUpdate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dx`  
- 水平スクロールの単位の数を指定します。  
+ Specifies the number of horizontal scroll units.  
   
  *dy*  
- 垂直スクロールの単位の数を指定します。  
+ Specifies the number of vertical scroll units.  
   
  `lpRectScroll`  
- 指す、`RECT`構造または`CRect`スクロールされる四角形の座標を格納しているオブジェクト。  
+ Points to the `RECT` structure or `CRect` object that contains the coordinates of the scrolling rectangle.  
   
  `lpRectClip`  
- 指す、`RECT`構造または`CRect`クリッピング四角形の座標を格納しているオブジェクト。 この四角形が 1 つが指す元よりも小さい場合`lpRectScroll`、スクロールの小さい四角形でだけ行われます。  
+ Points to the `RECT` structure or `CRect` object that contains the coordinates of the clipping rectangle. When this rectangle is smaller than the original one pointed to by `lpRectScroll`, scrolling occurs only in the smaller rectangle.  
   
  `pRgnUpdate`  
- スクロールのプロセスで検出された領域を識別します。 `ScrollDC`とは限りません四角形以外の関数は、この領域を定義します。  
+ Identifies the region uncovered by the scrolling process. The `ScrollDC` function defines this region; it is not necessarily a rectangle.  
   
  `lpRectUpdate`  
- 指す、`RECT`構造または`CRect`スクロール可能な更新領域に外接する四角形の座標を受け取るオブジェクト。 これは、再描画が必要な最も大きな四角形の領域です。 構造体または関数を返す場合のオブジェクトの値は、指定されたデバイス コンテキストのマッピング モードに関係なく、クライアント座標でです。  
+ Points to the `RECT` structure or `CRect` object that receives the coordinates of the rectangle that bounds the scrolling update region. This is the largest rectangular area that requires repainting. The values in the structure or object when the function returns are in client coordinates, regardless of the mapping mode for the given device context.  
   
-### <a name="return-value"></a>戻り値  
- スクロールが実行される場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if scrolling is executed; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 場合`lpRectUpdate`は**NULL**Windows では、更新プログラムの四角形は計算されません。 両方`pRgnUpdate`と`lpRectUpdate`は**NULL**Windows は更新領域が計算されません。 場合`pRgnUpdate`は**NULL**、スクロールのプロセスで検出された領域への有効なポインターが含まれていると見なされます (によって定義された、`ScrollDC`メンバー関数)。 返される更新領域`lpRectUpdate`に渡すことが`CWnd::InvalidateRgn`必要な場合です。  
+### <a name="remarks"></a>Remarks  
+ If `lpRectUpdate` is **NULL**, Windows does not compute the update rectangle. If both `pRgnUpdate` and `lpRectUpdate` are **NULL**, Windows does not compute the update region. If `pRgnUpdate` is not **NULL**, Windows assumes that it contains a valid pointer to the region uncovered by the scrolling process (defined by the `ScrollDC` member function). The update region returned in `lpRectUpdate` can be passed to `CWnd::InvalidateRgn` if required.  
   
- アプリケーションを使用する必要があります、`ScrollWindow`クラスのメンバー関数`CWnd`ウィンドウの全体のクライアント領域をスクロールする必要がある場合。 それ以外の場合、使用する`ScrollDC`です。  
+ An application should use the `ScrollWindow` member function of class `CWnd` when it is necessary to scroll the entire client area of a window. Otherwise, it should use `ScrollDC`.  
   
-##  <a name="selectclippath"></a>CDC::SelectClipPath  
- 指定されたモードを使用して、既存のクリッピング領域を含む新しい領域を組み合わせて、デバイス コンテキストのクリッピング領域として、現在のパスを選択します。  
+##  <a name="selectclippath"></a>  CDC::SelectClipPath  
+ Selects the current path as a clipping region for the device context, combining the new region with any existing clipping region by using the specified mode.  
   
 ```  
 BOOL SelectClipPath(int nMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMode`  
- パスを使用する方法を指定します。 次の値は使用できます。  
+ Specifies the way to use the path. The following values are allowed:  
   
-- **RGN_AND**新しいクリップ領域には、現在のクリップ領域と現在のパスの交差 (重なり合っている範囲) が含まれています。  
+- **RGN_AND** The new clipping region includes the intersection (overlapping areas) of the current clipping region and the current path.  
   
-- **RGN_COPY**新しいクリップ領域は、現在のパス。  
+- **RGN_COPY** The new clipping region is the current path.  
   
-- **RGN_DIFF**新しいクリップ領域には、現在のクリップ領域の領域が含まれています。 され、現在のパスの除外されます。  
+- **RGN_DIFF** The new clipping region includes the areas of the current clipping region, and those of the current path are excluded.  
   
-- **RGN_OR**新しいクリップ領域には、現在のクリップ領域と現在のパスの和集合 (合計の領域) が含まれています。  
+- **RGN_OR** The new clipping region includes the union (combined areas) of the current clipping region and the current path.  
   
-- **RGN_XOR**新しいクリップ領域には、重なり合う領域が、現在のクリップ領域と、現在のパスの和集合が含まれています。  
+- **RGN_XOR** The new clipping region includes the union of the current clipping region and the current path, but without the overlapping areas.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 識別されたデバイス コンテキストには、閉じているパスを含める必要があります。  
+### <a name="remarks"></a>Remarks  
+ The device context identified must contain a closed path.  
   
-##  <a name="selectcliprgn"></a>CDC::SelectClipRgn  
- デバイス コンテキストの現在のクリップ領域として指定された領域を選択します。  
+##  <a name="selectcliprgn"></a>  CDC::SelectClipRgn  
+ Selects the given region as the current clipping region for the device context.  
   
 ```  
 int SelectClipRgn(CRgn* pRgn);
@@ -4833,47 +5024,47 @@ int SelectClipRgn(
     int nMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 選択する地域を識別します。  
+ Identifies the region to be selected.  
   
--   この値がある場合、この関数の最初のバージョンの**NULL**、クライアント領域全体が選択されているし、出力は、ウィンドウにはクリップされます。  
+-   For the first version of this function, if this value is **NULL**, the entire client area is selected and output is still clipped to the window.  
   
--   この関数の 2 つ目のバージョンについては、このハンドルができる**NULL**される場合にのみ、 **RGN_COPY**モードを指定します。  
+-   For the second version of this function, this handle can be **NULL** only when the **RGN_COPY** mode is specified.  
   
  `nMode`  
- 実行する操作を指定します。 次の値のいずれかを指定する必要があります。  
+ Specifies the operation to be performed. It must be one of the following values:  
   
-- **RGN_AND**新しいクリップ領域は現在のクリップ領域とで識別される領域の重複する領域を結合`pRgn`です。  
+- **RGN_AND** The new clipping region combines the overlapping areas of the current clipping region and the region identified by `pRgn`.  
   
-- **RGN_COPY**で識別される領域のコピーである新しいクリップ領域`pRgn`です。 これは、機能は、最初のバージョンのと同じ`SelectClipRgn`です。 地域が識別される場合`pRgn`は**NULL**、新しいクリップ領域既定クリッピング領域 (null 領域) になります。  
+- **RGN_COPY** The new clipping region is a copy of the region identified by `pRgn`. This is functionality is identical to the first version of `SelectClipRgn`. If the region identified by `pRgn` is **NULL**, the new clipping region becomes the default clipping region (a null region).  
   
-- **RGN_DIFF**新しいクリップ領域は、現在のクリップ領域ので結合によって識別される領域から除外した領域`pRgn`です。  
+- **RGN_DIFF** The new clipping region combines the areas of the current clipping region with those areas excluded from the region identified by `pRgn`.  
   
-- **RGN_OR**新しいクリップ領域は、現在のクリップ領域とで識別される領域を結合`pRgn`です。  
+- **RGN_OR** The new clipping region combines the current clipping region and the region identified by `pRgn`.  
   
-- **RGN_XOR**新しいクリップ領域は、現在のクリップ領域とで識別される領域を結合`pRgn`重なり合う領域は除外されています。  
+- **RGN_XOR** The new clipping region combines the current clipping region and the region identified by `pRgn` but excludes any overlapping areas.  
   
-### <a name="return-value"></a>戻り値  
- 領域の型。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The region's type. It can be any of the following values:  
   
-- **COMPLEXREGION**新しいクリップ領域は、重なり合った境界線です。  
+- **COMPLEXREGION** New clipping region has overlapping borders.  
   
-- **エラー**デバイス コンテキストまたは地域が無効です。  
+- **ERROR** Device context or region is not valid.  
   
-- **NULLREGION**新しいクリップ領域が空です。  
+- **NULLREGION** New clipping region is empty.  
   
-- **SIMPLEREGION**新しいクリップ領域には、重複する境界がありません。  
+- **SIMPLEREGION** New clipping region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 選択した領域のコピーだけが使用されます。 領域自体は他のデバイス コンテキストの任意の数で選択できる、または削除することができます。  
+### <a name="remarks"></a>Remarks  
+ Only a copy of the selected region is used. The region itself can be selected for any number of other device contexts, or it can be deleted.  
   
- 関数は、デバイス単位で指定された領域の座標が指定されていると仮定します。 一部のプリンター デバイスは、テキスト メトリックを表現するために必要な精度を保持するために、グラフィックス出力より高い解像度のテキスト出力をサポートします。 これらのデバイスは、テキストの単位より高い解像度でデバイス単位を報告します。 これらのデバイスは、グラフィック ユニットが 1 つだけにデバイス単位のマップが報告されたいくつかのように、グラフィックスの座標をスケールします。 常に呼び出す必要があります、`SelectClipRgn`テキスト単位を使用して機能します。  
+ The function assumes that the coordinates for the given region are specified in device units. Some printer devices support text output at a higher resolution than graphics output in order to retain the precision needed to express text metrics. These devices report device units at the higher resolution, that is, in text units. These devices then scale coordinates for graphics so that several reported device units map to only 1 graphic unit. You should always call the `SelectClipRgn` function using text units.  
   
- GDI でグラフィック オブジェクトのスケーリングを行う必要のあるアプリケーションを使用できます、 **GETSCALINGFACTOR**スケール ファクターを決めるため。 このスケール ファクターでは、クリップに影響します。 グラフィックスをクリップ領域が使用する場合、GDI は、座標をスケール ファクターで除算します。 テキストをクリップ領域が使用する場合は、GDI にスケールの調整はありません。 スケール ファクターに 1 と 2 で除算する座標スケール ファクターは 2 と 4 で除算する座標などなど。  
+ Applications that must take the scaling of graphics objects in the GDI can use the **GETSCALINGFACTOR** printer escape to determine the scaling factor. This scaling factor affects clipping. If a region is used to clip graphics, GDI divides the coordinates by the scaling factor. If the region is used to clip text, GDI makes no scaling adjustment. A scaling factor of 1 causes the coordinates to be divided by 2; a scaling factor of 2 causes the coordinates to be divided by 4; and so on.  
   
-##  <a name="selectobject"></a>Cdc::selectobject  
- デバイス コンテキストにオブジェクトを選択します。  
+##  <a name="selectobject"></a>  CDC::SelectObject  
+ Selects an object into the device context.  
   
 ```  
 CPen* SelectObject(CPen* pPen);  
@@ -4884,47 +5075,47 @@ int SelectObject(CRgn* pRgn);
 CGdiObject* SelectObject(CGdiObject* pObject);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pPen*  
- ポインター、 [CPen](../../mfc/reference/cpen-class.md)を選択するオブジェクト。  
+ A pointer to a [CPen](../../mfc/reference/cpen-class.md) object to be selected.  
   
  `pBrush`  
- ポインター、 [CBrush](../../mfc/reference/cbrush-class.md)を選択するオブジェクト。  
+ A pointer to a [CBrush](../../mfc/reference/cbrush-class.md) object to be selected.  
   
  `pFont`  
- ポインター、 [CFont](../../mfc/reference/cfont-class.md)を選択するオブジェクト。  
+ A pointer to a [CFont](../../mfc/reference/cfont-class.md) object to be selected.  
   
  `pBitmap`  
- ポインター、 [CBitmap](../../mfc/reference/cbitmap-class.md)を選択するオブジェクト。  
+ A pointer to a [CBitmap](../../mfc/reference/cbitmap-class.md) object to be selected.  
   
  `pRgn`  
- ポインター、 [CRgn](../../mfc/reference/crgn-class.md)を選択するオブジェクト。  
+ A pointer to a [CRgn](../../mfc/reference/crgn-class.md) object to be selected.  
   
  `pObject`  
- ポインター、 [CGdiObject](../../mfc/reference/cgdiobject-class.md)を選択するオブジェクト。  
+ A pointer to a [CGdiObject](../../mfc/reference/cgdiobject-class.md) object to be selected.  
   
-### <a name="return-value"></a>戻り値  
- 置き換えられるオブジェクトへのポインター。 派生したクラスの 1 つのオブジェクトへのポインターは、この`CGdiObject`など`CPen`、使用される関数のバージョンによって異なります。 戻り値は**NULL**場合はエラーが発生します。 この関数は、一時オブジェクトにポインターを返す可能性があります。 この一時オブジェクトは 1 つの Windows メッセージを処理中にのみ有効です。 詳細については、「`CGdiObject::FromHandle`」を参照してください。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the object being replaced. This is a pointer to an object of one of the classes derived from `CGdiObject`, such as `CPen`, depending on which version of the function is used. The return value is **NULL** if there is an error. This function may return a pointer to a temporary object. This temporary object is only valid during the processing of one Windows message. For more information, see `CGdiObject::FromHandle`.  
   
- 地域のパラメーターを受け取るメンバー関数のバージョンと同じタスクを実行する、`SelectClipRgn`メンバー関数。 その戻り値には、次のいずれかを指定できます。  
+ The version of the member function that takes a region parameter performs the same task as the `SelectClipRgn` member function. Its return value can be any of the following:  
   
-- **COMPLEXREGION**新しいクリップ領域は、重なり合った境界線です。  
+- **COMPLEXREGION** New clipping region has overlapping borders.  
   
-- **エラー**デバイス コンテキストまたは地域が無効です。  
+- **ERROR** Device context or region is not valid.  
   
-- **NULLREGION**新しいクリップ領域が空です。  
+- **NULLREGION** New clipping region is empty.  
   
-- **SIMPLEREGION**新しいクリップ領域には、重複する境界がありません。  
+- **SIMPLEREGION** New clipping region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- クラス`CDC`GDI オブジェクト、ペン、ブラシ、フォント、ビットマップ、および地域などの特定の種類の 5 つのバージョンに特殊化を提供します。 新しく選択したオブジェクトには、同じ型の前のオブジェクトが置き換えられます。 たとえば場合、`pObject`の一般的なバージョンの`SelectObject`を指す、 [CPen](../../mfc/reference/cpen-class.md)オブジェクト、関数で指定されたペンを使用して現在のペンが置き換えられます`pObject`です。  
+### <a name="remarks"></a>Remarks  
+ Class `CDC` provides five versions specialized for particular kinds of GDI objects, including pens, brushes, fonts, bitmaps, and regions. The newly selected object replaces the previous object of the same type. For example, if `pObject` of the general version of `SelectObject` points to a [CPen](../../mfc/reference/cpen-class.md) object, the function replaces the current pen with the pen specified by `pObject`.  
   
- アプリケーションを選択できますビットマップ メモリ デバイス コンテキストにのみ、1 つだけのメモリ デバイス コンテキストに一度に。 モノクロまたはデバイス コンテキスト; と互換性のあるビットマップの形式でなければなりませんない場合は、`SelectObject`はエラーを返します。  
+ An application can select a bitmap into memory device contexts only and into only one memory device context at a time. The format of the bitmap must either be monochrome or compatible with the device context; if it is not, `SelectObject` returns an error.  
   
- Windows 3.1 用と、後で、`SelectObject`かメタファイルで使用されているかどうか、関数が同じ値を返します。 以前のバージョンの Windows で `SelectObject`メタファイルに使用されたときに 0 以外の値の場合は成功と失敗の場合は 0 が返されます。  
+ For Windows 3.1 and later, the `SelectObject` function returns the same value whether it is used in a metafile or not. Under previous versions of Windows, `SelectObject` returned a nonzero value for success and 0 for failure when it was used in a metafile.  
   
-##  <a name="selectpalette"></a>CDC::SelectPalette  
- 指定されている論理パレットを選択`pPalette`デバイス コンテキストのパレットを選択したオブジェクトとして。  
+##  <a name="selectpalette"></a>  CDC::SelectPalette  
+ Selects the logical palette that is specified by `pPalette` as the selected palette object of the device context.  
   
 ```  
 CPalette* SelectPalette(
@@ -4932,192 +5123,192 @@ CPalette* SelectPalette(
     BOOL bForceBackground);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPalette`  
- 選択する論理パレットを識別します。 このパレット必要がありますがで既に作成されて、`CPalette`メンバー関数は、 [CreatePalette](../../mfc/reference/cpalette-class.md#createpalette)です。  
+ Identifies the logical palette to be selected. This palette must already have been created with the `CPalette` member function [CreatePalette](../../mfc/reference/cpalette-class.md#createpalette).  
   
  `bForceBackground`  
- 論理パレットがパレットに強制するかどうかを指定します。 場合`bForceBackground`は 0 以外の場合、選択されたパレットは常に、ウィンドウが入力フォーカスを持っているかどうかに関係なく、パレット。 場合`bForceBackground`0 とデバイス コンテキストがウィンドウにアタッチは、ウィンドウに入力フォーカスがある場合、論理パレットがフォア グラウンド パレット。  
+ Specifies whether the logical palette is forced to be a background palette. If `bForceBackground` is nonzero, the selected palette is always a background palette, regardless of whether the window has the input focus. If `bForceBackground` is 0 and the device context is attached to a window, the logical palette is a foreground palette when the window has the input focus.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CPalette`オブジェクトで指定されたパレットに置き換え、論理パレットを識別する`pPalette`です。 **NULL**場合はエラーが発生します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CPalette` object identifying the logical palette replaced by the palette specified by `pPalette`. It is **NULL** if there is an error.  
   
-### <a name="remarks"></a>コメント  
- 新しいパレットは、GDI デバイス コンテキストにおいて表示色を管理するために使用するパレット オブジェクトになり、前のパレットを置き換えます。  
+### <a name="remarks"></a>Remarks  
+ The new palette becomes the palette object used by GDI to control colors displayed in the device context and replaces the previous palette.  
   
- アプリケーションは、1 つ以上のデバイス コンテキストに論理パレットを選択できます。 ただし、論理パレットへの変更が選択されているすべてのデバイス コンテキストに影響されます。 アプリケーションは、1 つ以上のデバイス コンテキストにパレットを選択した場合デバイス コンテキストはすべてに属する同じ物理デバイス。  
+ An application can select a logical palette into more than one device context. However, changes to a logical palette will affect all device contexts for which it is selected. If an application selects a palette into more than one device context, the device contexts must all belong to the same physical device.  
   
-##  <a name="selectstockobject"></a>CDC::SelectStockObject  
- 選択、 [CGdiObject](../../mfc/reference/cgdiobject-class.md)定義済みのストック ペン、ブラシ、フォントのいずれかに対応するオブジェクト。  
+##  <a name="selectstockobject"></a>  CDC::SelectStockObject  
+ Selects a [CGdiObject](../../mfc/reference/cgdiobject-class.md) object that corresponds to one of the predefined stock pens, brushes, or fonts.  
   
 ```  
 virtual CGdiObject* SelectStockObject(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 目的のストック オブジェクトの種類を指定します。 次の値のいずれかを指定できます。  
+ Specifies the kind of stock object desired. It can be one of the following values:  
   
-- **BLACK_BRUSH**黒のブラシ。  
+- **BLACK_BRUSH** Black brush.  
   
-- **DKGRAY_BRUSH**濃い灰色のブラシ。  
+- **DKGRAY_BRUSH** Dark gray brush.  
   
-- **GRAY_BRUSH**灰色のブラシ。  
+- **GRAY_BRUSH** Gray brush.  
   
-- **HOLLOW_BRUSH**中空きブラシ。  
+- **HOLLOW_BRUSH** Hollow brush.  
   
-- **LTGRAY_BRUSH**薄い灰色のブラシ。  
+- **LTGRAY_BRUSH** Light gray brush.  
   
-- **NULL_BRUSH**ブラシは Null です。  
+- **NULL_BRUSH** Null brush.  
   
-- **WHITE_BRUSH**白のブラシ。  
+- **WHITE_BRUSH** White brush.  
   
-- **BLACK_PEN**黒いペン。  
+- **BLACK_PEN** Black pen.  
   
-- **NULL_PEN** Null ペン。  
+- **NULL_PEN** Null pen.  
   
-- **WHITE_PEN**白いペン。  
+- **WHITE_PEN** White pen.  
   
-- **ANSI_FIXED_FONT** ANSI 固定システム フォントです。  
+- **ANSI_FIXED_FONT** ANSI fixed system font.  
   
-- **ANSI_VAR_FONT** ANSI 変数システム フォントです。  
+- **ANSI_VAR_FONT** ANSI variable system font.  
   
-- **DEVICE_DEFAULT_FONT**デバイスに依存するフォントです。  
+- **DEVICE_DEFAULT_FONT** Device-dependent font.  
   
-- **OEM_FIXED_FONT** OEM に依存するフォントを固定します。  
+- **OEM_FIXED_FONT** OEM-dependent fixed font.  
   
-- **SYSTEM_FONT**システム フォントです。 既定では、Windows は、メニューのダイアログ ボックス コントロールおよびその他のテキストを描画するのに、システム フォントを使用します。 ただし、ダイアログ、および windows で使用されるフォントを取得する SYSTEM_FONT に依存しないように、最適なです。 代わりに、使用、`SystemParametersInfo`現在のフォントを取得する SPI_GETNONCLIENTMETRICS パラメーターを持つ関数です。 `SystemParametersInfo`現在のテーマを考慮し、キャプション、メニューのおよびメッセージのダイアログのフォントの情報を提供します。  
+- **SYSTEM_FONT** The system font. By default, Windows uses the system font to draw menus, dialog-box controls, and other text. It is best, however, not to rely on SYSTEM_FONT to obtain the font used by dialogs and windows. Instead, use the `SystemParametersInfo` function with the SPI_GETNONCLIENTMETRICS parameter to retrieve the current font. `SystemParametersInfo` takes into account the current theme and provides font information for captions, menus, and message dialogs.  
   
-- **SYSTEM_FIXED_FONT**バージョン 3.0 より前の Windows で使用するシステムの固定幅フォントです。 このオブジェクトは、Windows の旧バージョンとの互換性のために使用できます。  
+- **SYSTEM_FIXED_FONT** The fixed-width system font used in Windows prior to version 3.0. This object is available for compatibility with earlier versions of Windows.  
   
-- **DEFAULT_PALETTE**既定の色パレット。 このパレットは、システム パレットの静的 20 色で構成されます。  
+- **DEFAULT_PALETTE** Default color palette. This palette consists of the 20 static colors in the system palette.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CGdiObject`関数が成功した場合、置き換えられたオブジェクト。 示される実際のオブジェクトが、 [CPen](../../mfc/reference/cpen-class.md)、 [CBrush](../../mfc/reference/cbrush-class.md)、または[CFont](../../mfc/reference/cfont-class.md)オブジェクト。 戻り値は、呼び出しが失敗した場合は、 **NULL**です。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the `CGdiObject` object that was replaced if the function is successful. The actual object pointed to is a [CPen](../../mfc/reference/cpen-class.md), [CBrush](../../mfc/reference/cbrush-class.md), or [CFont](../../mfc/reference/cfont-class.md) object. If the call is unsuccessful, the return value is **NULL**.  
   
-##  <a name="setabortproc"></a>Cdc::setabortproc  
- 印刷ジョブの中止のプロシージャをインストールします。  
+##  <a name="setabortproc"></a>  CDC::SetAbortProc  
+ Installs the abort procedure for the print job.  
   
 ```  
 int SetAbortProc(BOOL (CALLBACK* lpfn)(HDC, int));
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpfn`  
- 中止手順として、インストールを中止関数へのポインター。 コールバック関数の詳細についてを参照してください。 [cdc::setabortproc 用コールバック関数](../../mfc/reference/callback-function-for-cdc-setabortproc.md)です。  
+ A pointer to the abort function to install as the abort procedure. For more about the callback function, see [Callback Function for CDC::SetAbortProc](../../mfc/reference/callback-function-for-cdc-setabortproc.md).  
   
-### <a name="return-value"></a>戻り値  
- 結果を示す、`SetAbortProc`関数。 次の値の一部は、他のユーザーよりも該当する可能性がすべて可能です。  
+### <a name="return-value"></a>Return Value  
+ Specifies the outcome of the `SetAbortProc` function. Some of the following values are more probable than others, but all are possible.  
   
-- **SP_ERROR**一般エラーです。  
+- **SP_ERROR** General error.  
   
-- **させることでより**のに十分なディスク領域が、スプールのために現在使用できると、空き領域がないを使用可能になる予定です。  
+- **SP_OUTOFDISK** Not enough disk space is currently available for spooling, and no more space will become available.  
   
-- **SP_OUTOFMEMORY**十分なメモリがスプールのために使用できます。  
+- **SP_OUTOFMEMORY** Not enough memory is available for spooling.  
   
-- **SP_USERABORT**ユーザーがプリント マネージャーを使ってジョブを終了します。  
+- **SP_USERABORT** User ended the job through the Print Manager.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションがスプール中に取り消されるようにする印刷ジョブを許可する場合は、設定する必要がありますアボート関数と、印刷ジョブを開始する前に、 [StartDoc](#startdoc)メンバー関数。 プリント マネージャーは、スプール中に、印刷ジョブをキャンセルするか、ディスク領域不足状態を処理するアプリケーションを中止関数を呼び出します。 Abort 関数が設定されていない場合、スプールのための十分なディスク領域がない場合、印刷ジョブは失敗します。  
+### <a name="remarks"></a>Remarks  
+ If an application is to allow the print job to be canceled during spooling, it must set the abort function before the print job is started with the [StartDoc](#startdoc) member function. The Print Manager calls the abort function during spooling to allow the application to cancel the print job or to process out-of-disk-space conditions. If no abort function is set, the print job will fail if there is not enough disk space for spooling.  
   
- Microsoft Visual C の機能に渡されるコールバック関数の作成を簡略化ことに注意してください`SetAbortProc`です。 渡されるアドレス、`EnumObjects`メンバー関数を使用してエクスポート関数へのポインターは、**方式**を使用して、`__stdcall`呼び出し規約です。  
+ Note that the features of Microsoft Visual C++ simplify the creation of the callback function passed to `SetAbortProc`. The address passed to the `EnumObjects` member function is a pointer to a function exported with **__declspec(dllexport)** and with the `__stdcall` calling convention.  
   
- またがありません内の関数名をエクスポートする、**エクスポート**アプリケーションのモジュール定義ファイル内のステートメント。 代わりに使用することができます、**エクスポート**としての関数の修飾子  
+ You also do not have to export the function name in an **EXPORTS** statement in your application's module-definition file. You can instead use the **EXPORT** function modifier, as in  
   
- **BOOL コールバック エクスポート**関数 ( **HDC**、 `int` **) です。**  
+ **BOOL CALLBACK EXPORT** AFunction( **HDC**, `int`**);**  
   
- エイリアスの名前をエクスポートの適切なエクスポート レコードを生成するコンパイラは、します。 これは、ほとんどのニーズに対して機能します。 特殊な場合など、ordinal またはエイリアスをエクスポートして関数をエクスポートする必要がありますを使用する、**エクスポート**モジュール定義ファイル内のステートメント。  
+ to cause the compiler to emit the proper export record for export by name without aliasing. This works for most needs. For some special cases, such as exporting a function by ordinal or aliasing the export, you still need to use an **EXPORTS** statement in a module-definition file.  
   
- コールバックの登録インターフェイスがタイプ セーフでは今すぐ (の特定のコールバック関数の正しい種類を示す関数ポインターに渡す必要があります)。  
+ Callback registration interfaces are now type-safe (you must pass in a function pointer that points to the right kind of function for the specific callback).  
   
- また、すべてのコールバック関数がコールバックの境界を越えて例外をスローすることはできませんので、Windows に返す前に Microsoft Foundation 例外をトラップする必要がありますに注意してください。 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ Also note that all callback functions must trap Microsoft Foundation exceptions before returning to Windows, since exceptions cannot be thrown across callback boundaries. For more information about exceptions, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-##  <a name="setarcdirection"></a>CDC::SetArcDirection  
- 円弧および四角形の機能に使用する描画方向を設定します。  
+##  <a name="setarcdirection"></a>  CDC::SetArcDirection  
+ Sets the drawing direction to be used for arc and rectangle functions.  
   
 ```  
 int SetArcDirection(int nArcDirection);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nArcDirection*  
- 新しい円弧の方向を指定します。 このパラメーターは、次の値のいずれかを指定できます。  
+ Specifies the new arc direction. This parameter can be either of the following values:  
   
-- **AD_COUNTERCLOCKWISE**図形を反時計回りに描画します。  
+- **AD_COUNTERCLOCKWISE** Figures drawn counterclockwise.  
   
-- **AD_CLOCKWISE**図形を時計回りに描画します。  
+- **AD_CLOCKWISE** Figures drawn clockwise.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、古い円弧の方向を指定しますそれ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Specifies the old arc direction, if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 既定の方向が反時計回りに回転します。 `SetArcDirection`関数は、次の関数は描画する方向を指定します。  
+### <a name="remarks"></a>Remarks  
+ The default direction is counterclockwise. The `SetArcDirection` function specifies the direction in which the following functions draw:  
   
-|円弧|円グラフ|  
+|Arc|Pie|  
 |---------|---------|  
-|`ArcTo`|**四角形**|  
+|`ArcTo`|**Rectangle**|  
 |`Chord`|`RoundRect`|  
-|**楕円**||  
+|**Ellipse**||  
   
-##  <a name="setattribdc"></a>CDC::SetAttribDC  
- 属性デバイス コンテキストを設定するには、この関数を呼び出す`m_hAttribDC`です。  
+##  <a name="setattribdc"></a>  CDC::SetAttribDC  
+ Call this function to set the attribute device context, `m_hAttribDC`.  
   
 ```  
 virtual void SetAttribDC(HDC hDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- Windows デバイス コンテキスト。  
+ A Windows device context.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数に、デバイス コンテキストにアタッチできません、`CDC`オブジェクト。 出力デバイス コンテキストだけが接続されている、`CDC`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This member function does not attach the device context to the `CDC` object. Only the output device context is attached to a `CDC` object.  
   
-##  <a name="setbkcolor"></a>CDC::SetBkColor  
- 指定された色を現在の背景色を設定します。  
+##  <a name="setbkcolor"></a>  CDC::SetBkColor  
+ Sets the current background color to the specified color.  
   
 ```  
 virtual COLORREF SetBkColor(COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 新しい背景色を指定します。  
+ Specifies the new background color.  
   
-### <a name="return-value"></a>戻り値  
- 色の RGB 値として前の背景色です。 エラーが発生する場合、戻り値は 0x80000000 です。  
+### <a name="return-value"></a>Return Value  
+ The previous background color as an RGB color value. If an error occurs, the return value is 0x80000000.  
   
-### <a name="remarks"></a>コメント  
- バック グラウンド モードの場合**不透明**システムでは、背景色を使用して、スタイル設定された行のギャップ、ハッチ ブラシ、行と文字セルの背景の間のギャップを入力します。 ビットマップの色とモノクロ デバイス コンテキストの間で変換するときにも、背景色が使用されます。  
+### <a name="remarks"></a>Remarks  
+ If the background mode is **OPAQUE**, the system uses the background color to fill the gaps in styled lines, the gaps between hatched lines in brushes, and the background in character cells. The system also uses the background color when converting bitmaps between color and monochrome device contexts.  
   
- デバイスは、指定された色を表示できません、システムは最も近い物理色に背景色を設定します。  
+ If the device cannot display the specified color, the system sets the background color to the nearest physical color.  
   
-##  <a name="setbkmode"></a>CDC::SetBkMode  
- バック グラウンド モードを設定します。  
+##  <a name="setbkmode"></a>  CDC::SetBkMode  
+ Sets the background mode.  
   
 ```  
 int SetBkMode(int nBkMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nBkMode*  
- 設定するモードを指定します。 このパラメーターは、次の値のいずれかを指定できます。  
+ Specifies the mode to be set. This parameter can be either of the following values:  
   
-- **不透明な**背景は、ハッチ ブラシ、テキストの前に、現在の背景色で塗りつぶさまたはペンを描画します。 これは、既定のバック グラウンド モードです。  
+- **OPAQUE** Background is filled with the current background color before the text, hatched brush, or pen is drawn. This is the default background mode.  
   
-- **透過的な**背景は描画前に変更されません。  
+- **TRANSPARENT** Background is not changed before drawing.  
   
-### <a name="return-value"></a>戻り値  
- 前のバック グラウンド モード。  
+### <a name="return-value"></a>Return Value  
+ The previous background mode.  
   
-### <a name="remarks"></a>コメント  
- バック グラウンド モードでは、テキストやハッチ ブラシ、ペン スタイルが実線を描画する前に、システムが描画サーフェイス上の既存の背景色を削除するかどうかを定義します。  
+### <a name="remarks"></a>Remarks  
+ The background mode defines whether the system removes existing background colors on the drawing surface before drawing text, hatched brushes, or any pen style that is not a solid line.  
   
-### <a name="example"></a>例  
-  例を参照して[CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor)です。  
+### <a name="example"></a>Example  
+  See the example for [CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor).  
   
-##  <a name="setboundsrect"></a>CDC::SetBoundsRect  
- 指定したデバイス コンテキストの外接する四角情報の蓄積を制御します。  
+##  <a name="setboundsrect"></a>  CDC::SetBoundsRect  
+ Controls the accumulation of bounding-rectangle information for the specified device context.  
   
 ```  
 UINT SetBoundsRect(
@@ -5125,33 +5316,33 @@ UINT SetBoundsRect(
     UINT flags);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRectBounds`  
- 指す、`RECT`構造または`CRect`外接する四角形の設定に使用されるオブジェクト。 四角形の大きさは、論理座標で表されます。 このパラメーターを指定できます**NULL**です。  
+ Points to a `RECT` structure or `CRect` object that is used to set the bounding rectangle. Rectangle dimensions are given in logical coordinates. This parameter can be **NULL**.  
   
  `flags`  
- 四角形を累積の新しい四角形の結合方法を指定します。 このパラメーターは、次の値の組み合わせを指定できます。  
+ Specifies how the new rectangle will be combined with the accumulated rectangle. This parameter can be a combination of the following values:  
   
-- **DCB_ACCUMULATE**によって指定される四角形を追加`lpRectBounds`外接する四角形に、(四角形の和集合操作を使用)。  
+- **DCB_ACCUMULATE** Add the rectangle specified by `lpRectBounds` to the bounding rectangle (using a rectangle-union operation).  
   
-- **DCB_DISABLE**境界が蓄積されるをオフにします。  
+- **DCB_DISABLE** Turn off bounds accumulation.  
   
-- **DCB_ENABLE**境界が蓄積されるを有効にします。 (境界が蓄積される既定の設定は無効です。)  
+- **DCB_ENABLE** Turn on bounds accumulation. (The default setting for bounds accumulation is disabled.)  
   
-### <a name="return-value"></a>戻り値  
- 四角形領域、関数が成功した場合の現在の状態。 同様に`flags`、戻り値の組み合わせが可能です**DCB_**値。  
+### <a name="return-value"></a>Return Value  
+ The current state of the bounding rectangle, if the function is successful. Like `flags`, the return value can be a combination of **DCB_** values:  
   
-- **DCB_ACCUMULATE**外接する四角形は空ではありません。 この値を設定することが常になります。  
+- **DCB_ACCUMULATE** The bounding rectangle is not empty. This value will always be set.  
   
-- **DCB_DISABLE**境界が蓄積されるは無効になっています。  
+- **DCB_DISABLE** Bounds accumulation is off.  
   
-- **DCB_ENABLE**では、境界が蓄積されます。  
+- **DCB_ENABLE** Bounds accumulation is on.  
   
-### <a name="remarks"></a>コメント  
- Windows では、すべての描画操作の外接する四角形を維持できます。 この四角形のクエリを実行し、アプリケーションでリセットできます。 描画の境界は、ビットマップ キャッシュが無効になるに役立ちます。  
+### <a name="remarks"></a>Remarks  
+ Windows can maintain a bounding rectangle for all drawing operations. This rectangle can be queried and reset by the application. The drawing bounds are useful for invalidating bitmap caches.  
   
-##  <a name="setbrushorg"></a>CDC::SetBrushOrg  
- デバイス コンテキストに、アプリケーションを選択する次のブラシを GDI が割り当てる元を指定します。  
+##  <a name="setbrushorg"></a>  CDC::SetBrushOrg  
+ Specifies the origin that GDI will assign to the next brush that the application selects into the device context.  
   
 ```  
 CPoint SetBrushOrg(
@@ -5161,222 +5352,222 @@ CPoint SetBrushOrg(
 CPoint SetBrushOrg(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 新しい origin の (デバイス単位) での x 座標を指定します。 この値は、0 ~ 7 の範囲内でなければなりません。  
+ Specifies the x-coordinate (in device units) of the new origin. This value must be in the range 0-7.  
   
  *y*  
- 新しい origin の (デバイス単位) での y 座標を指定します。 この値は、0 ~ 7 の範囲内でなければなりません。  
+ Specifies the y-coordinate (in device units) of the new origin. This value must be in the range 0-7.  
   
  `point`  
- 新しい原点の x 座標と y 座標を指定します。 各値は、0 ~ 7 の範囲内でなければなりません。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the x- and y-coordinates of the new origin. Each value must be in the range 0-7. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 以前のデバイス単位でブラシの原点です。  
+### <a name="return-value"></a>Return Value  
+ The previous origin of the brush in device units.  
   
-### <a name="remarks"></a>コメント  
- 既定値は、ブラシの原点の座標は (0, 0) です。 ブラシの原点を変更するには、呼び出し、`UnrealizeObject`関数を`CBrush`オブジェクトを呼び出す`SetBrushOrg`を呼び出すと、`SelectObject`メンバー関数をデバイス コンテキストにブラシを選択します。  
+### <a name="remarks"></a>Remarks  
+ The default coordinates for the brush origin are (0, 0). To alter the origin of a brush, call the `UnrealizeObject` function for the `CBrush` object, call `SetBrushOrg`, and then call the `SelectObject` member function to select the brush into the device context.  
   
- 使用しないでください`SetBrushOrg`在庫と`CBrush`オブジェクト。  
+ Do not use `SetBrushOrg` with stock `CBrush` objects.  
   
-##  <a name="setcoloradjustment"></a>CDC::SetColorAdjustment  
- 指定した値を使用して、デバイス コンテキストの色の調整値を設定します。  
+##  <a name="setcoloradjustment"></a>  CDC::SetColorAdjustment  
+ Sets the color adjustment values for the device context using the specified values.  
   
 ```  
 BOOL SetColorAdjustment(const COLORADJUSTMENT* lpColorAdjust);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpColorAdjust`  
- 指す、 [COLORADJUSTMENT](../../mfc/reference/coloradjustment-structure.md)色の調整値を含むデータ構造です。  
+ Points to a [COLORADJUSTMENT](../../mfc/reference/coloradjustment-structure.md) data structure containing the color adjustment values.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- カラー調整値への呼び出しに元のビットマップの入力色の調整を使用して、`CDC::StretchBlt`メンバー関数は、ときに**ハーフトーン**モードを設定します。  
+### <a name="remarks"></a>Remarks  
+ The color adjustment values are used to adjust the input color of the source bitmap for calls to the `CDC::StretchBlt` member function when **HALFTONE** mode is set.  
   
-##  <a name="setdcbrushcolor"></a>CDC::SetDCBrushColor  
- 現在のデバイス コンテキスト (DC) ブラシの色を指定した色の値に設定します。  
+##  <a name="setdcbrushcolor"></a>  CDC::SetDCBrushColor  
+ Sets the current device context (DC) brush color to the specified color value.  
   
 ```  
 COLORREF SetDCBrushColor(COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 新しいブラシの色を指定します。  
+ Specifies the new brush color.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値として前の DC ブラシの色を指定、関数が成功した場合、`COLORREF`値。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value specifies the previous DC brush color as a `COLORREF` value.  
   
- 戻り値は、関数が失敗した場合、`CLR_INVALID`です。  
+ If the function fails, the return value is `CLR_INVALID`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、関数の機能をエミュレート[SetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd162969)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method emulates the functionality of the function [SetDCBrushColor](http://msdn.microsoft.com/library/windows/desktop/dd162969), as described in the Windows SDK.  
   
-##  <a name="setdcpencolor"></a>CDC::SetDCPenColor  
- 現在のデバイス コンテキスト (DC) のペンの色を指定した色の値に設定します。  
+##  <a name="setdcpencolor"></a>  CDC::SetDCPenColor  
+ Sets the current device context (DC) pen color to the specified color value.  
   
 ```  
 COLORREF SetDCPenColor(COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 新しいペンの色を指定します。  
+ Specifies the new pen color.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数で、Win32 関数[SetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd162970)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function utilizes the Win32 function [SetDCPenColor](http://msdn.microsoft.com/library/windows/desktop/dd162970), as described in the Windows SDK.  
   
-##  <a name="setgraphicsmode"></a>CDC::SetGraphicsMode  
- 指定したデバイス コンテキストのグラフィック モードを設定します。  
+##  <a name="setgraphicsmode"></a>  CDC::SetGraphicsMode  
+ Sets the graphics mode for the specified device context.  
   
 ```  
 int SetGraphicsMode(int iMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `iMode`  
- グラフィック モードを指定します。 このパラメーターを取る値の一覧は、次を参照してください。 [SetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd162977)です。  
+ Specifies the graphics mode. For a list of the values that this parameter can take, see [SetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd162977).  
   
-### <a name="return-value"></a>戻り値  
- 成功すると、古いグラフィック モードを返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the old graphics mode on success.  
   
- 失敗した場合に 0 を返します。 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ Returns 0 on failure. To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメソッド[SetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd162977)です。  
+### <a name="remarks"></a>Remarks  
+ This method wraps the Windows GDI function [SetGraphicsMode](http://msdn.microsoft.com/library/windows/desktop/dd162977).  
   
-##  <a name="setlayout"></a>CDC::SetLayout  
- 右から左、アラビア語やヘブライ語などのカルチャの標準のレイアウトにテキストとグラフィックス デバイス コンテキストのレイアウトを変更するには、このメンバー関数を呼び出します。  
+##  <a name="setlayout"></a>  CDC::SetLayout  
+ Call this member function to change the layout of the text and graphics for a device context to right to left, the standard layout for cultures such as Arabic and Hebrew.  
   
 ```  
 DWORD SetLayout(DWORD dwLayout);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwLayout`  
- デバイス コンテキストのレイアウトおよびビットマップは、フラグを制御します。 次の値の組み合わせとなります。  
+ Device context layout and bitmap control flags. It can be a combination of the following values.  
   
-|値|説明|  
+|Value|Meaning|  
 |-----------|-------------|  
-|まず|呼び出しのために、リフレクションを無効に[cdc::bitblt](#bitblt)と[CDC::StretchBlt](#stretchblt)です。|  
-|LAYOUT_RTL|右から左にある既定の水平レイアウトを設定します。|  
-|LAYOUT_LTR|左右からに既定のレイアウトを設定します。|  
+|LAYOUT_BITMAPORIENTATIONPRESERVED|Disables any reflection for calls to [CDC::BitBlt](#bitblt) and [CDC::StretchBlt](#stretchblt).|  
+|LAYOUT_RTL|Sets the default horizontal layout to be right to left.|  
+|LAYOUT_LTR|Sets the default layout to be left to right.|  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、デバイス コンテキストの以前のレイアウトです。  
+### <a name="return-value"></a>Return Value  
+ If successful, the previous layout of the device context.  
   
- 失敗した場合は、 **GDI_ERROR**です。 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ If unsuccessful, **GDI_ERROR**. To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- 通常ではないを呼び出します。 **SetLayout**ウィンドウです。 設定して、ウィンドウで右から左のレイアウトを制御する代わりに、[拡張ウィンドウ スタイル](../../mfc/reference/extended-window-styles.md)など**WS_EX_RTLREADING**です。 プリンター、またはメタファイルなどのデバイス コンテキストは、このレイアウトを継承しません。 右から左のレイアウトが呼び出すことによってでは、デバイス コンテキストを設定する唯一の方法**SetLayout**です。  
+### <a name="remarks"></a>Remarks  
+ Normally, you would not call **SetLayout** for a window. Rather, you control the right-to-left layout in a window by setting the [extended window styles](../../mfc/reference/styles-used-by-mfc.md#extended-window-styles) such as **WS_EX_RTLREADING**. A device context, such as a printer or a metafile, does not inherit this layout. The only way to set the device context for a right-to-left layout is by calling **SetLayout**.  
   
- 呼び出す場合**SetLayout (LAYOUT_RTL** )、 **SetLayout**へのマッピング モードは自動的に変更`MM_ISOTROPIC`です。 その結果、後続の呼び出しに[この](#getmapmode)戻ります**MM_ISOTROPIC**の代わりに`MM_TEXT`です。  
+ If you call **SetLayout(LAYOUT_RTL** ), **SetLayout** automatically changes the mapping mode to `MM_ISOTROPIC`. As a result, a subsequent call to [GetMapMode](#getmapmode) will return **MM_ISOTROPIC** instead of `MM_TEXT`.  
   
- 場合によってなど、多くのビットマップを可能性があると、左から右のレイアウトを維持します。 このような場合は、呼び出すことによって、イメージをレンダリング`BitBlt`または`StretchBlt`のビットマップ制御フラグを設定`dwLayout`に**まず**です。  
+ In some cases, such as with many bitmaps, you may want to preserve the left-to-right layout. In these cases, render the image by calling `BitBlt` or `StretchBlt`, then set the bitmap control flag for `dwLayout` to **LAYOUT_BITMAPORIENTATIONPRESERVED**.  
   
- レイアウトを変更すると、 **LAYOUT_RTL**フラグ、通常 右を指定するフラグを設定または左が取り消されます。 混乱を避けるためには、標準のフラグの代替名を定義することがあります。 推奨される代替フラグ名の一覧は、次を参照してください。 [SetLayout](http://msdn.microsoft.com/library/windows/desktop/dd162979)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Once you change the layout with the **LAYOUT_RTL** flag, the flags normally specifying right or left are reversed. To avoid confusion, you may want to define alternate names for the standard flags. For a list of suggested alternate flag names, see [SetLayout](http://msdn.microsoft.com/library/windows/desktop/dd162979) in the Windows SDK.  
   
-##  <a name="setmapmode"></a>CDC::SetMapMode  
- マップ モードを設定します。  
+##  <a name="setmapmode"></a>  CDC::SetMapMode  
+ Sets the mapping mode.  
   
 ```  
 virtual int SetMapMode(int nMapMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMapMode`  
- 新しいマップ モードを指定します。 次の値のいずれかを指定できます。  
+ Specifies the new mapping mode. It can be any one of the following values:  
   
-- `MM_ANISOTROPIC`論理ユニットは、任意にスケーリングされた軸を持つ任意の単位に変換されます。 マップ モードに設定`MM_ANISOTROPIC`現在のウィンドウまたはビューポートの設定は変更されません。 単位を変更するには、印刷の向き、およびスケーリングを呼び出す、[両](#setwindowext)と[される](#setviewportext)メンバー関数。  
+- `MM_ANISOTROPIC` Logical units are converted to arbitrary units with arbitrarily scaled axes. Setting the mapping mode to `MM_ANISOTROPIC` does not change the current window or viewport settings. To change the units, orientation, and scaling, call the [SetWindowExt](#setwindowext) and [SetViewportExt](#setviewportext) member functions.  
   
-- `MM_HIENGLISH`各論理ユニットは、0.001 インチに変換されます。 正の x が右側です。正の y です。  
+- `MM_HIENGLISH` Each logical unit is converted to 0.001 inch. Positive x is to the right; positive y is up.  
   
-- `MM_HIMETRIC`それぞれの論理単位は 0.01 ミリメートルに変換されます。 正の x が右側です。正の y です。  
+- `MM_HIMETRIC` Each logical unit is converted to 0.01 millimeter. Positive x is to the right; positive y is up.  
   
-- `MM_ISOTROPIC`論理ユニットが均等にスケーリングされた軸上で任意の単位に変換されます。つまり、x 軸方向の 1 単位は、y 軸方向の 1 単位です。 使用して、`SetWindowExt`と`SetViewportExt`メンバー関数は、目的の単位と軸の方向を指定します。 GDI 必要に応じて調整は、ことを確認する、x と y のユニットが同じサイズを保持します。  
+- `MM_ISOTROPIC` Logical units are converted to arbitrary units with equally scaled axes; that is, 1 unit along the x-axis is equal to 1 unit along the y-axis. Use the `SetWindowExt` and `SetViewportExt` member functions to specify the desired units and the orientation of the axes. GDI makes adjustments as necessary to ensure that the x and y units remain the same size.  
   
-- `MM_LOENGLISH`それぞれの論理単位は 0.01 インチに変換されます。 正の x が右側です。正の y です。  
+- `MM_LOENGLISH` Each logical unit is converted to 0.01 inch. Positive x is to the right; positive y is up.  
   
-- `MM_LOMETRIC`各論理ユニットは、0.1 ミリメートルに変換されます。 正の x が右側です。正の y です。  
+- `MM_LOMETRIC` Each logical unit is converted to 0.1 millimeter. Positive x is to the right; positive y is up.  
   
-- `MM_TEXT`各論理ユニットは、1 台のデバイス ピクセルに変換されます。 正の x が右側です。正の y がダウンしています。  
+- `MM_TEXT` Each logical unit is converted to 1 device pixel. Positive x is to the right; positive y is down.  
   
-- `MM_TWIPS`各論理ユニットは、1/20 ポイントに変換されます。 (ポイントは、1/72 インチであるため、twip は 1/1440 インチ) です。正の x が右側です。正の y です。  
+- `MM_TWIPS` Each logical unit is converted to 1/20 of a point. (Because a point is 1/72 inch, a twip is 1/1440 inch.) Positive x is to the right; positive y is up.  
   
-### <a name="return-value"></a>戻り値  
- 以前のマッピング モード。  
+### <a name="return-value"></a>Return Value  
+ The previous mapping mode.  
   
-### <a name="remarks"></a>コメント  
- マップ モード デバイス単位; を論理単位に変換するために使用するメジャーの単位を定義します。また、デバイスの x 軸および y 軸の方向を定義します。 GDI は、適切なデバイス座標論理座標に変換するのにマップ モードを使用します。 `MM_TEXT`モードは、1 単位は 1 ピクセルをデバイス ピクセル単位で動作するアプリケーションに使用します。 ピクセルの物理サイズでは、デバイスによって異なります。  
+### <a name="remarks"></a>Remarks  
+ The mapping mode defines the unit of measure used to convert logical units to device units; it also defines the orientation of the device's x- and y-axes. GDI uses the mapping mode to convert logical coordinates into the appropriate device coordinates. The `MM_TEXT` mode allows applications to work in device pixels, where 1 unit is equal to 1 pixel. The physical size of a pixel varies from device to device.  
   
- `MM_HIENGLISH`、 `MM_HIMETRIC`、 `MM_LOENGLISH`、 `MM_LOMETRIC`、および`MM_TWIPS`モードは、物理的に意味のある単位 (ミリメートルやインチ) などを描画する必要があるアプリケーションに役立ちます。 `MM_ISOTROPIC`モードでは、1 対 1 の縦横比では、これはイメージの正確な形を保持する必要がある場合に便利です。 `MM_ANISOTROPIC`モードでは個別に調整する x 座標と y 座標。  
+ The `MM_HIENGLISH`, `MM_HIMETRIC`, `MM_LOENGLISH`, `MM_LOMETRIC`, and `MM_TWIPS` modes are useful for applications that must draw in physically meaningful units (such as inches or millimeters). The `MM_ISOTROPIC` mode ensures a 1:1 aspect ratio, which is useful when it is important to preserve the exact shape of an image. The `MM_ANISOTROPIC` mode allows the x- and y-coordinates to be adjusted independently.  
   
 > [!NOTE]
->  呼び出す場合[SetLayout](#setlayout) DC (デバイス コンテキスト) を右から左のレイアウトに変更する**SetLayout**へのマッピング モードは自動的に変更`MM_ISOTROPIC`です。  
+>  If you call [SetLayout](#setlayout) to change the DC (device context) to right-to-left layout, **SetLayout** automatically changes the mapping mode to `MM_ISOTROPIC`.  
   
-### <a name="example"></a>例  
-  例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
+### <a name="example"></a>Example  
+  See the example for [CView::OnPrepareDC](../../mfc/reference/cview-class.md#onpreparedc).  
   
-##  <a name="setmapperflags"></a>CDC::SetMapperFlags  
- フォント マッパーの論理フォントを物理フォントに変換するときに使用する方法を変更します。  
+##  <a name="setmapperflags"></a>  CDC::SetMapperFlags  
+ Changes the method used by the font mapper when it converts a logical font to a physical font.  
   
 ```  
 DWORD SetMapperFlags(DWORD dwFlag);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwFlag`  
- フォント マッパーがフォントの高さの比率とデバイスに幅を一致させようとしたかどうかを指定します。 この値が**ASPECT_FILTERING**フォントだけが x 側面をマッパーは、選択、および y 縦横完全に一致する、指定されたデバイスのです。  
+ Specifies whether the font mapper attempts to match a font's aspect height and width to the device. When this value is **ASPECT_FILTERING**, the mapper selects only fonts whose x-aspect and y-aspect exactly match those of the specified device.  
   
-### <a name="return-value"></a>戻り値  
- フォント マッパー フラグの以前の値。  
+### <a name="return-value"></a>Return Value  
+ The previous value of the font-mapper flag.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションで使用できます`SetMapperFlags`指定されたデバイスの縦横比と一致する物理フォントのみを選択しようとするフォント マッパーが発生します。  
+### <a name="remarks"></a>Remarks  
+ An application can use `SetMapperFlags` to cause the font mapper to attempt to choose only a physical font that exactly matches the aspect ratio of the specified device.  
   
- ラスター フォントのみを使用するアプリケーションを使用できる、`SetMapperFlags`フォント マッパーで選択されているフォントが魅力と、指定されたデバイスで読み取り可能であることを確認します。 通常、拡張性の高い (TrueType) フォントを使用するアプリケーションは使用しないでください`SetMapperFlags`です。  
+ An application that uses only raster fonts can use the `SetMapperFlags` function to ensure that the font selected by the font mapper is attractive and readable on the specified device. Applications that use scalable (TrueType) fonts typically do not use `SetMapperFlags`.  
   
- 物理的なフォントの論理フォントの仕様に一致する縦横比がなければ、GDI が新しい縦横比を選択し、この新しい縦横比に一致するフォントを選択します。  
+ If no physical font has an aspect ratio that matches the specification in the logical font, GDI chooses a new aspect ratio and selects a font that matches this new aspect ratio.  
   
-##  <a name="setmiterlimit"></a>CDC::SetMiterLimit  
- デバイス コンテキストのマイター結合の長さの制限を設定します。  
+##  <a name="setmiterlimit"></a>  CDC::SetMiterLimit  
+ Sets the limit for the length of miter joins for the device context.  
   
 ```  
 BOOL SetMiterLimit(float fMiterLimit);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *fMiterLimit*  
- デバイス コンテキストの新しいマイター制限を指定します。  
+ Specifies the new miter limit for the device context.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- マイター長が外部結合の線の壁の積集合を結合の内側の線の壁の積集合からの距離として定義されます。 マイターは、線の幅にマイター長の最大許容比率です。 マイターが既定値は 10.0 です。  
+### <a name="remarks"></a>Remarks  
+ The miter length is defined as the distance from the intersection of the line walls on the inside of the join to the intersection of the line walls on the outside of the join. The miter limit is the maximum allowed ratio of the miter length to the line width. The default miter limit is 10.0.  
   
-##  <a name="setoutputdc"></a>CDC::SetOutputDC  
- 出力デバイス コンテキストを設定するには、このメンバー関数を呼び出す`m_hDC`です。  
+##  <a name="setoutputdc"></a>  CDC::SetOutputDC  
+ Call this member function to set the output device context, `m_hDC`.  
   
 ```  
 virtual void SetOutputDC(HDC hDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- Windows デバイス コンテキスト。  
+ A Windows device context.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、デバイス コンテキストにアタッチされていない場合にのみ呼び出すことができます、`CDC`オブジェクト。 このメンバー関数は、設定`m_hDC`デバイス コンテキストをアタッチできませんが、`CDC`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This member function can only be called when a device context has not been attached to the `CDC` object. This member function sets `m_hDC` but does not attach the device context to the `CDC` object.  
   
-##  <a name="setpixel"></a>CDC::SetPixel  
- 指定された色の最も近いものを指定した位置にあるピクセル設定`crColor`です。  
+##  <a name="setpixel"></a>  CDC::SetPixel  
+ Sets the pixel at the point specified to the closest approximation of the color specified by `crColor`.  
   
 ```  
 COLORREF SetPixel(
@@ -5390,29 +5581,29 @@ COLORREF SetPixel(
     COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理で設定する点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the point to be set.  
   
  *y*  
- 論理で設定する点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the point to be set.  
   
  `crColor`  
- A **COLORREF**ポイントの描画に使用する色を指定する RGB 値。 参照してください[COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]この値の詳細についてはします。  
+ A **COLORREF** RGB value that specifies the color used to paint the point. See [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) in the Windows SDK for a description of this value.  
   
  `point`  
- 設定する点の論理 x 座標と y 座標を指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the logical x- and y-coordinates of the point to be set. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- ポイントが実際に描画する色の RGB 値。 この値によって指定されていると異なる場合`crColor`その色の概数を使用する場合。 関数には、(ポイントがクリッピング領域の外側にある場合) が失敗した場合、戻り値は-1 です。  
+### <a name="return-value"></a>Return Value  
+ An RGB value for the color that the point is actually painted. This value can be different from that specified by `crColor` if an approximation of that color is used. If the function fails (if the point is outside the clipping region), the return value is -1.  
   
-### <a name="remarks"></a>コメント  
- クリップ領域内のポイントがあります。 クリッピング領域に、ポイントがない場合は、関数は何も行いません。  
+### <a name="remarks"></a>Remarks  
+ The point must be in the clipping region. If the point is not in the clipping region, the function does nothing.  
   
- 一部のデバイスでは、`SetPixel` 関数がサポートされていません。 デバイスをサポートしているかどうかを判断する`SetPixel`、呼び出し、`GetDeviceCaps`メンバー関数が、 **RASTERCAPS**インデックスを作成しの戻り値を確認して、 **RC_BITBLT**フラグ。  
+ Not all devices support the `SetPixel` function. To determine whether a device supports `SetPixel`, call the `GetDeviceCaps` member function with the **RASTERCAPS** index and check the return value for the **RC_BITBLT** flag.  
   
-##  <a name="setpixelv"></a>CDC::SetPixelV  
- 指定された色の最も近いものを指定した座標にあるピクセルに設定します。  
+##  <a name="setpixelv"></a>  CDC::SetPixelV  
+ Sets the pixel at the specified coordinates to the closest approximation of the specified color.  
   
 ```  
 BOOL SetPixelV(
@@ -5426,210 +5617,210 @@ BOOL SetPixelV(
     COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理単位で設定する点の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the point to be set.  
   
  *y*  
- 論理単位で設定する点の y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the point to be set.  
   
  `crColor`  
- ポイントの描画に使用する色を指定します。  
+ Specifies the color to be used to paint the point.  
   
  `point`  
- 設定する点の論理 x 座標と y 座標を指定します。 いずれかを渡すことができます、[ポイント](../../mfc/reference/point-structure1.md)データ構造体、または[CPoint](../../atl-mfc-shared/reference/cpoint-class.md)このパラメーターのオブジェクト。  
+ Specifies the logical x- and y-coordinates of the point to be set. You can pass either a [POINT](../../mfc/reference/point-structure1.md) data structure or a [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- クリップ領域と、デバイス画面の表示部分の両方で、ポイントがあります。 すべてのデバイスは、メンバー関数をサポートします。 詳細については、次を参照してください。、 **RC_BITBLT**で機能、`CDC::GetDeviceCaps`メンバー関数。 `SetPixelV`も高速`SetPixel`のためを実際に描画するポイントの色の値を返す必要はありません。  
+### <a name="remarks"></a>Remarks  
+ The point must be in both the clipping region and the visible part of the device surface. Not all devices support the member function. For more information, see the **RC_BITBLT** capability in the `CDC::GetDeviceCaps` member function. `SetPixelV` is faster than `SetPixel` because it does not need to return the color value of the point actually painted.  
   
-##  <a name="setpolyfillmode"></a>CDC::SetPolyFillMode  
- 多角形の塗りつぶしモードを設定します。  
+##  <a name="setpolyfillmode"></a>  CDC::SetPolyFillMode  
+ Sets the polygon-filling mode.  
   
 ```  
 int SetPolyFillMode(int nPolyFillMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPolyFillMode`  
- 新しい塗りつぶしモードを指定します。 この値は、いずれかの**代替**または**ワインディング**です。 Windows で設定する既定のモードは**代替**です。  
+ Specifies the new filling mode. This value may be either **ALTERNATE** or **WINDING**. The default mode set in Windows is **ALTERNATE**.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は前の塗りつぶしモードそれ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ The previous filling mode, if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 多角形の塗りつぶしモードのときは**代替**システムが各スキャン ラインに奇数し、偶数の多角形の辺の間の領域を塗りつぶします。 つまり、システムは、最初と 2 番目の側の間で、3 番目と 4 番目の側との間の領域を塗りつぶします。 このモードでは、既定値です。  
+### <a name="remarks"></a>Remarks  
+ When the polygon-filling mode is **ALTERNATE**, the system fills the area between odd-numbered and even-numbered polygon sides on each scan line. That is, the system fills the area between the first and second side, between the third and fourth side, and so on. This mode is the default.  
   
- 多角形の塗りつぶしモードのときは**ワインディング**システムは、図が描いた領域を入力するかどうかを決定する方向を使用します。 多角形の場合は、各直線セグメントは、時計回りまたは反時計回りに描画されます。 囲まれた領域から、図の外側に描画虚数部の行が時計回りに直線セグメントを通過するたびに、カウントが増加します。 行は、反時計回りの線分を通過、ときに、カウントがデクリメントします。 行が、図の外側に達すると、カウントが 0 でない場合、領域を塗りつぶします。  
+ When the polygon-filling mode is **WINDING**, the system uses the direction in which a figure was drawn to determine whether to fill an area. Each line segment in a polygon is drawn in either a clockwise or a counterclockwise direction. Whenever an imaginary line drawn from an enclosed area to the outside of a figure passes through a clockwise line segment, a count is incremented. When the line passes through a counterclockwise line segment, the count is decremented. The area is filled if the count is nonzero when the line reaches the outside of the figure.  
   
-##  <a name="setrop2"></a>CDC::SetROP2  
- 現在の描画モードを設定します。  
+##  <a name="setrop2"></a>  CDC::SetROP2  
+ Sets the current drawing mode.  
   
 ```  
 int SetROP2(int nDrawMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nDrawMode`  
- 新しいの描画モードを指定します。 次の値のいずれかを指定できます。  
+ Specifies the new drawing mode. It can be any of the following values:  
   
-- **R2_BLACK**ピクセルは黒、常にします。  
+- **R2_BLACK** Pixel is always black.  
   
-- **R2_WHITE**ピクセルの色は白常にします。  
+- **R2_WHITE** Pixel is always white.  
   
-- **R2_NOP**ピクセルは変更されません。  
+- **R2_NOP** Pixel remains unchanged.  
   
-- **R2_NOT**ピクセルは画面の色の反転します。  
+- **R2_NOT** Pixel is the inverse of the screen color.  
   
-- **R2_COPYPEN**ピクセルがペンの色。  
+- **R2_COPYPEN** Pixel is the pen color.  
   
-- **R2_NOTCOPYPEN**ピクセルがペンの色の反転します。  
+- **R2_NOTCOPYPEN** Pixel is the inverse of the pen color.  
   
-- **R2_MERGEPENNOT**ピクセルがペンの色の組み合わせと画面の色の反転 (最終ピクセル (NOT 画面のピクセル) を = = またはペン)。  
+- **R2_MERGEPENNOT** Pixel is a combination of the pen color and the inverse of the screen color (final pixel = (NOT screen pixel) OR pen).  
   
-- **R2_MASKPENNOT**ピクセルがペンの両方に共通する色の組み合わせと、画面の反転 (最終ピクセル (NOT 画面のピクセル) を = し、ペン)。  
+- **R2_MASKPENNOT** Pixel is a combination of the colors common to both the pen and the inverse of the screen (final pixel = (NOT screen pixel) AND pen).  
   
-- **R2_MERGENOTPEN**ピクセルは画面の色の組み合わせとペンの色の反転 (最終ピクセル (ペンではない) を = = または画面のピクセル)。  
+- **R2_MERGENOTPEN** Pixel is a combination of the screen color and the inverse of the pen color (final pixel = (NOT pen) OR screen pixel).  
   
-- **R2_MASKNOTPEN**ピクセルは画面の両方に共通する色の組み合わせとペンの反転 (最終ピクセル (ペンではない) を = し、画面のピクセル)。  
+- **R2_MASKNOTPEN** Pixel is a combination of the colors common to both the screen and the inverse of the pen (final pixel = (NOT pen) AND screen pixel).  
   
-- **R2_MERGEPEN**ピクセルがペンの色、画面の色の組み合わせ (最終ピクセル = ペンまたは画面のピクセル)。  
+- **R2_MERGEPEN** Pixel is a combination of the pen color and the screen color (final pixel = pen OR screen pixel).  
   
-- **R2_NOTMERGEPEN**ピクセルの逆、 **R2_MERGEPEN**色 (最終ピクセル = なし (ペンまたは画面のピクセル))。  
+- **R2_NOTMERGEPEN** Pixel is the inverse of the **R2_MERGEPEN** color (final pixel = NOT(pen OR screen pixel)).  
   
-- **R2_MASKPEN**ピクセルはペンと画面の両方に共通する色の組み合わせ (最終ピクセル = ペンと画面のピクセル)。  
+- **R2_MASKPEN** Pixel is a combination of the colors common to both the pen and the screen (final pixel = pen AND screen pixel).  
   
-- **R2_NOTMASKPEN**ピクセルの逆、 **R2_MASKPEN**色 (最終ピクセル = なし (ペンと画面のピクセル))。  
+- **R2_NOTMASKPEN** Pixel is the inverse of the **R2_MASKPEN** color (final pixel = NOT(pen AND screen pixel)).  
   
-- **R2_XORPEN**ピクセルが画面で、または両方ではなく、ペンでは、色の組み合わせ (最終ピクセル = ペン XOR 画面のピクセル)。  
+- **R2_XORPEN** Pixel is a combination of the colors that are in the pen or in the screen, but not in both (final pixel = pen XOR screen pixel).  
   
-- **R2_NOTXORPEN**ピクセルの逆、 **R2_XORPEN**色 (最終ピクセル = なし (ペン XOR の画面のピクセル))。  
+- **R2_NOTXORPEN** Pixel is the inverse of the **R2_XORPEN** color (final pixel = NOT(pen XOR screen pixel)).  
   
-### <a name="return-value"></a>戻り値  
- 前の描画モード。  
+### <a name="return-value"></a>Return Value  
+ The previous drawing mode.  
   
- 指定された値のいずれかのことができます、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ It can be any of the values given in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- 描画モードでは、デザイン画面に既に色でペンの色とオブジェクトの内部を結合する方法を指定します。  
+### <a name="remarks"></a>Remarks  
+ The drawing mode specifies how the colors of the pen and the interior of filled objects are combined with the color already on the display surface.  
   
- 描画モードはラスター デバイスのみです。ベクターのデバイスには適用されません。 描画モードは、2 つの変数、AND、OR、および XOR (排他的 OR)、バイナリ演算子と単項演算を使用していないすべてのブール組み合わせを表すバイナリ ラスター オペレーション コードです。  
+ The drawing mode is for raster devices only; it does not apply to vector devices. Drawing modes are binary raster-operation codes representing all possible Boolean combinations of two variables, using the binary operators AND, OR, and XOR (exclusive OR), and the unary operation NOT.  
   
-##  <a name="setstretchbltmode"></a>CDC::SetStretchBltMode  
- ビットマップの伸縮モードを設定、`StretchBlt`メンバー関数。  
+##  <a name="setstretchbltmode"></a>  CDC::SetStretchBltMode  
+ Sets the bitmap-stretching mode for the `StretchBlt` member function.  
   
 ```  
 int SetStretchBltMode(int nStretchMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nStretchMode*  
- ストレッチ モードを指定します。 次の値のいずれかを指定できます。  
+ Specifies the stretching mode. It can be any of the following values:  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|**BLACKONWHITE**|排除し、既存のピクセルの色の値を使用して、論理 AND 演算を実行します。 モノクロ ビットマップは、このモードは、白いピクセルを犠牲にしてピクセルを黒を保持します。|  
-|**COLORONCOLOR**|ピクセルを削除します。 このモードでは、情報を保存しようとしないでピクセルの削除されたすべての行を削除します。|  
-|**ハーフトーン**|元の四角形からピクセルを先の四角形のピクセルのブロックにマップします。 対象ブロックのピクセルの平均的な色は、元のピクセルの色を概算します。|  
-||設定した後、**ハーフトーン**ストレッチ モード、アプリケーションは、Win32 関数を呼び出す必要があります[SetBrushOrgEx](http://msdn.microsoft.com/library/windows/desktop/dd162967)ブラシの原点を設定します。 これを行う場合は、ブラシのずれが発生します。|  
-|**STRETCH_ANDSCANS**|**Windows 95/98**: と同じ**BLACKONWHITE**|  
-|**STRETCH_DELETESCANS**|**Windows 95/98**: と同じ**COLORONCOLOR**|  
-|**STRETCH_HALFTONE**|**Windows 95/98**: と同じ**ハーフトーン**です。|  
-|**終了しました。**|**Windows 95/98**: と同じ**WHITEONBLACK**|  
-|**WHITEONBLACK**|排除し、既存のピクセルの色の値を使用して、論理 OR 演算を実行します。 ビットマップがモノクロ ビットマップの場合は、このモードには、黒のピクセルを犠牲にして白いピクセルが保持されます。|  
+|**BLACKONWHITE**|Performs a Boolean AND operation using the color values for the eliminated and existing pixels. If the bitmap is a monochrome bitmap, this mode preserves black pixels at the expense of white pixels.|  
+|**COLORONCOLOR**|Deletes the pixels. This mode deletes all eliminated lines of pixels without trying to preserve their information.|  
+|**HALFTONE**|Maps pixels from the source rectangle into blocks of pixels in the destination rectangle. The average color over the destination block of pixels approximates the color of the source pixels.|  
+||After setting the **HALFTONE** stretching mode, an application must call the Win32 function [SetBrushOrgEx](http://msdn.microsoft.com/library/windows/desktop/dd162967) to set the brush origin. If it fails to do so, brush misalignment occurs.|  
+|**STRETCH_ANDSCANS**|**Windows 95/98**: Same as **BLACKONWHITE**|  
+|**STRETCH_DELETESCANS**|**Windows 95/98**: Same as **COLORONCOLOR**|  
+|**STRETCH_HALFTONE**|**Windows 95/98**: Same as **HALFTONE**.|  
+|**STRETCH_ORSCANS**|**Windows 95/98**: Same as **WHITEONBLACK**|  
+|**WHITEONBLACK**|Performs a Boolean OR operation using the color values for the eliminated and existing pixels. If the bitmap is a monochrome bitmap, this mode preserves white pixels at the expense of black pixels.|  
   
-### <a name="return-value"></a>戻り値  
- 前の伸縮モード。 できます**STRETCH_ANDSCANS**、 **STRETCH_DELETESCANS**、または**終了した**です。  
+### <a name="return-value"></a>Return Value  
+ The previous stretching mode. It can be **STRETCH_ANDSCANS**, **STRETCH_DELETESCANS**, or **STRETCH_ORSCANS**.  
   
-### <a name="remarks"></a>コメント  
- ビットマップの伸縮モードでは、関数を使用して圧縮されるビットマップから情報を削除する方法を定義します。  
+### <a name="remarks"></a>Remarks  
+ The bitmap-stretching mode defines how information is removed from bitmaps that are compressed by using the function.  
   
- **BLACKONWHITE** ( **STRETCH_ANDSCANS**) および**WHITEONBLACK** (**終了した**) モードは、通常モノクロ ビットマップのピクセルをフォア グラウンドを保持するために使用します。 **COLORONCOLOR** ( **STRETCH_DELETESCANS**) モードは通常カラー ビットマップの色を保持するために使用します。  
+ The **BLACKONWHITE** ( **STRETCH_ANDSCANS**) and **WHITEONBLACK** ( **STRETCH_ORSCANS**) modes are typically used to preserve foreground pixels in monochrome bitmaps. The **COLORONCOLOR** ( **STRETCH_DELETESCANS**) mode is typically used to preserve color in color bitmaps.  
   
- **ハーフトーン**モードには、ソース イメージの他の 3 つのモードよりも多くの処理が必要があります以外の場合は、他のよりも遅くなりますが、高品質のイメージを生成します。 なお**SetBrushOrgEx**設定後に呼び出す必要があります、**ハーフトーン**ブラシ不整合によるが起こらないようにします。  
+ The **HALFTONE** mode requires more processing of the source image than the other three modes; it is slower than the others, but produces higher quality images. Also note that **SetBrushOrgEx** must be called after setting the **HALFTONE** mode to avoid brush misalignment.  
   
- ほかの伸縮モードも、デバイス ドライバーの機能によって使用できる場合があります。  
+ Additional stretching modes might also be available depending on the capabilities of the device driver.  
   
-##  <a name="settextalign"></a>CDC::SetTextAlign  
- テキスト配置フラグを設定します。  
+##  <a name="settextalign"></a>  CDC::SetTextAlign  
+ Sets the text-alignment flags.  
   
 ```  
 UINT SetTextAlign(UINT nFlags);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFlags`  
- テキスト配置フラグを指定します。 フラグをポイントし、テキストを外接する四角形の間のリレーションシップを指定します。 ポイントは、現在の位置またはテキスト出力関数によって指定された座標のいずれかを指定できます。 テキストを外接する四角形は、テキスト文字列の文字が隣接するセルによって定義されます。 `nFlags`パラメーターは、次の 3 つのカテゴリの 1 つまたは複数のフラグを指定できます。 各カテゴリの 1 つのみのフラグを選択します。 最初のカテゴリには、x 軸方向のテキストの配置に影響します。  
+ Specifies text-alignment flags. The flags specify the relationship between a point and a rectangle that bounds the text. The point can be either the current position or coordinates specified by a text-output function. The rectangle that bounds the text is defined by the adjacent character cells in the text string. The `nFlags` parameter can be one or more flags from the following three categories. Choose only one flag from each category. The first category affects text alignment in the x-direction:  
   
-- **TA_CENTER**外接する四角形の水平方向の中心点を揃えて配置します。  
+- **TA_CENTER** Aligns the point with the horizontal center of the bounding rectangle.  
   
-- **TA_LEFT**点と外接する四角形の左側に揃えて配置します。 これは、既定の設定です。  
+- **TA_LEFT** Aligns the point with the left side of the bounding rectangle. This is the default setting.  
   
-- **TA_RIGHT**点と外接する四角形の右側に揃えて配置します。  
+- **TA_RIGHT** Aligns the point with the right side of the bounding rectangle.  
   
- 2 番目のカテゴリには、y 軸方向のテキストの配置に影響します。  
+ The second category affects text alignment in the y-direction:  
   
-- **TA_BASELINE**点と、選択したフォントのベース ラインを揃えて配置します。  
+- **TA_BASELINE** Aligns the point with the base line of the chosen font.  
   
-- **TA_BOTTOM**外接する四角形の下部でポイントを配置します。  
+- **TA_BOTTOM** Aligns the point with the bottom of the bounding rectangle.  
   
-- **TA_TOP**外接する四角形の上部に位置を揃えて配置します。 これは、既定の設定です。  
+- **TA_TOP** Aligns the point with the top of the bounding rectangle. This is the default setting.  
   
- 3 番目のカテゴリでは、テキストが書き込まれたときに、現在の位置を更新するかどうかを決定します。  
+ The third category determines whether the current position is updated when text is written:  
   
-- **TA_NOUPDATECP**テキスト出力関数を呼び出すたび、現在の位置を更新できません。 これは、既定の設定です。  
+- **TA_NOUPDATECP** Does not update the current position after each call to a text-output function. This is the default setting.  
   
-- **ため**テキスト出力関数に対する各呼び出しの後に現在の x 位置を更新します。 テキストの外接する四角形の右側にある、新しい位置。 このフラグ設定されている場合への呼び出しで指定された座標、`TextOut`メンバー関数は無視されます。  
+- **TA_UPDATECP** Updates the current x-position after each call to a text-output function. The new position is at the right side of the bounding rectangle for the text. When this flag is set, the coordinates specified in calls to the `TextOut` member function are ignored.  
   
-### <a name="return-value"></a>戻り値  
- 以前のテキスト配置設定、成功した場合です。 下位バイトが水平方向の設定を格納し、高位バイトには、垂直方向の設定が含まれています。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ The previous text-alignment setting, if successful. The low-order byte contains the horizontal setting and the high-order byte contains the vertical setting; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `TextOut`と`ExtTextOut`メンバー関数は、表示またはデバイス上のテキストの文字列の配置時にこれらのフラグを使用します。 フラグは、特定の時点と、テキストを外接する四角形のリレーションシップを指定します。 このポイントの座標がパラメーターとして渡される、`TextOut`メンバー関数。 テキストを外接する四角形は、テキスト文字列の文字が隣接するセルによって形成されます。  
+### <a name="remarks"></a>Remarks  
+ The `TextOut` and `ExtTextOut` member functions use these flags when positioning a string of text on a display or device. The flags specify the relationship between a specific point and a rectangle that bounds the text. The coordinates of this point are passed as parameters to the `TextOut` member function. The rectangle that bounds the text is formed by the adjacent character cells in the text string.  
   
-##  <a name="settextcharacterextra"></a>CDC::SetTextCharacterExtra  
- 文字間隔の量を設定します。  
+##  <a name="settextcharacterextra"></a>  CDC::SetTextCharacterExtra  
+ Sets the amount of intercharacter spacing.  
   
 ```  
 int SetTextCharacterExtra(int nCharExtra);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nCharExtra`  
- 各文字に追加するには、(論理ユニット数) で余分なスペースの量を指定します。 現在のマップ モードがない場合`MM_TEXT`、`nCharExtra`は変換され、最も近いピクセルに丸められます。  
+ Specifies the amount of extra space (in logical units) to be added to each character. If the current mapping mode is not `MM_TEXT`, `nCharExtra` is transformed and rounded to the nearest pixel.  
   
-### <a name="return-value"></a>戻り値  
- 前の文字間スペースの量。  
+### <a name="return-value"></a>Return Value  
+ The amount of the previous intercharacter spacing.  
   
-### <a name="remarks"></a>コメント  
- GDI は、この間隔をデバイス コンテキストに、行のテキストを書き込むときに、改行文字を含む、各文字を追加します。 文字間隔の既定値は 0 です。  
+### <a name="remarks"></a>Remarks  
+ GDI adds this spacing to each character, including break characters, when it writes a line of text to the device context. The default value for the amount of intercharacter spacing is 0.  
   
-##  <a name="settextcolor"></a>CDC::SetTextColor  
- テキストの色を指定した色に設定します。  
+##  <a name="settextcolor"></a>  CDC::SetTextColor  
+ Sets the text color to the specified color.  
   
 ```  
 virtual COLORREF SetTextColor(COLORREF crColor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `crColor`  
- 色の RGB 値として、テキストの色を指定します。  
+ Specifies the color of the text as an RGB color value.  
   
-### <a name="return-value"></a>戻り値  
- 以前のテキストの色の RGB 値。  
+### <a name="return-value"></a>Return Value  
+ An RGB value for the previous text color.  
   
-### <a name="remarks"></a>コメント  
- このデバイス コンテキスト間で変換する際にビットマップの色の場合とモノクロ デバイス コンテキストにテキストを書き込むときにこのテキストの色が使用されます。  
+### <a name="remarks"></a>Remarks  
+ The system will use this text color when writing text to this device context and also when converting bitmaps between color and monochrome device contexts.  
   
- デバイスは、指定された色を表すことはできません、システムは最も近い物理色にテキストの色を設定します。 文字の背景色がで指定された、`SetBkColor`と`SetBkMode`メンバー関数。  
+ If the device cannot represent the specified color, the system sets the text color to the nearest physical color. The background color for a character is specified by the `SetBkColor` and `SetBkMode` member functions.  
   
-### <a name="example"></a>例  
-  例を参照して[CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor)です。  
+### <a name="example"></a>Example  
+  See the example for [CWnd::OnCtlColor](../../mfc/reference/cwnd-class.md#onctlcolor).  
   
-##  <a name="settextjustification"></a>CDC::SetTextJustification  
- 文字列の区切り文字にスペースを追加します。  
+##  <a name="settextjustification"></a>  CDC::SetTextJustification  
+ Adds space to the break characters in a string.  
   
 ```  
 int SetTextJustification(
@@ -5637,31 +5828,31 @@ int SetTextJustification(
     int nBreakCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nBreakExtra`  
- (論理単位で) テキストの行に追加する余分な領域の合計を指定します。 現在のマップ モードがない場合`MM_TEXT`、このパラメーターによって指定された値が現在のマップ モードに変換され、最も近いデバイス単位に丸められます。  
+ Specifies the total extra space to be added to the line of text (in logical units). If the current mapping mode is not `MM_TEXT`, the value given by this parameter is converted to the current mapping mode and rounded to the nearest device unit.  
   
  *nBreakCount*  
- 行に改行文字の数を指定します。  
+ Specifies the number of break characters in the line.  
   
-### <a name="return-value"></a>戻り値  
- 1 の場合は、関数は成功です。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ One if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションで使用できます、`GetTextMetrics`フォントを取得するメンバー関数は、文字を中断します。  
+### <a name="remarks"></a>Remarks  
+ An application can use the `GetTextMetrics` member functions to retrieve a font's break character.  
   
- 後に、`SetTextJustification`メンバー関数が呼び出されると、テキスト出力関数の呼び出し (など`TextOut`) 改行文字の指定した数の間で均等に指定された余分なスペースを配布します。 改行文字は、空白文字 (ASCII 32) では通常が、その他の文字としてフォントによって定義されている可能性があります。  
+ After the `SetTextJustification` member function is called, a call to a text-output function (such as `TextOut`) distributes the specified extra space evenly among the specified number of break characters. The break character is usually the space character (ASCII 32), but may be defined by a font as some other character.  
   
- このメンバー関数は`GetTextExtent`は通常使用`SetTextJustification`です。 `GetTextExtent`配置する前に指定された行の幅を計算します。 アプリケーションがで指定する領域の量を判断できます、`nBreakExtra`パラメーターによって返される値を減算して`GetTextExtent`配置後に続く文字列の幅から。  
+ The member function `GetTextExtent` is typically used with `SetTextJustification`. `GetTextExtent` computes the width of a given line before alignment. An application can determine how much space to specify in the `nBreakExtra` parameter by subtracting the value returned by `GetTextExtent` from the width of the string after alignment.  
   
- `SetTextJustification`フォントの種類で複数の実行を含む行を整列する関数を使用できます。 この場合、行を段階的な部分に作成を整列し、それぞれの実行を個別に記述する必要があります。  
+ The `SetTextJustification` function can be used to align a line that contains multiple runs in different fonts. In this case, the line must be created piecemeal by aligning and writing each run separately.  
   
- 丸めエラーは、配置中に発生することができます、ため、システムは、現在のエラーを定義する実行中のエラー用語を保持します。 複数の実行を含む行を揃える場合`GetTextExtent`自動的に、次の実行の程度を計算するときにこのエラーの用語を使用します。 これにより、新しい実行に、エラーを blend にテキスト出力関数です。  
+ Because rounding errors can occur during alignment, the system keeps a running error term that defines the current error. When aligning a line that contains multiple runs, `GetTextExtent` automatically uses this error term when it computes the extent of the next run. This allows the text-output function to blend the error into the new run.  
   
- 各行が配置された後、次の行に持ち込まれるようにするこのエラーの用語をクリアする必要があります。 呼び出してという用語をクリアできます`SetTextJustification`で`nBreakExtra`を 0 に設定します。  
+ After each line has been aligned, this error term must be cleared to prevent it from being incorporated into the next line. The term can be cleared by calling `SetTextJustification` with `nBreakExtra` set to 0.  
   
-##  <a name="setviewportext"></a>CDC::SetViewportExt  
- デバイス コンテキストのビューポートの x 範囲と y 範囲を設定します。  
+##  <a name="setviewportext"></a>  CDC::SetViewportExt  
+ Sets the x- and y-extents of the viewport of the device context.  
   
 ```  
 virtual CSize SetViewportExt(
@@ -5671,36 +5862,36 @@ virtual CSize SetViewportExt(
 CSize SetViewportExt(SIZE size);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cx`  
- (デバイス単位で)、ビューポートの x 範囲を指定します。  
+ Specifies the x-extent of the viewport (in device units).  
   
  `cy`  
- (デバイス単位で)、ビューポートの y 範囲を指定します。  
+ Specifies the y-extent of the viewport (in device units).  
   
  `size`  
- (デバイス単位で)、ビューポートの x 範囲と y 範囲を指定します。  
+ Specifies the x- and y-extents of the viewport (in device units).  
   
-### <a name="return-value"></a>戻り値  
- ビューポートの以前のエクステント、 [CSize](../../atl-mfc-shared/reference/csize-class.md)オブジェクト。 エラーが発生すると、返されたの x 座標と y 座標`CSize`オブジェクトの両方が 0 に設定します。  
+### <a name="return-value"></a>Return Value  
+ The previous extents of the viewport as a [CSize](../../atl-mfc-shared/reference/csize-class.md) object. When an error occurs, the x- and y-coordinates of the returned `CSize` object are both set to 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストのウィンドウと共に、ビューポートのでは、GDI が実際のデバイスの座標系の点に論理座標系の点をマップする方法を定義します。 つまり、GDI 論理座標デバイス座標に変換する方法を定義します。  
+### <a name="remarks"></a>Remarks  
+ The viewport, along with the device-context window, defines how GDI maps points in the logical coordinate system to points in the coordinate system of the actual device. In other words, they define how GDI converts logical coordinates into device coordinates.  
   
- 次のマッピング モードが設定されている呼び出し`SetWindowExt`と`SetViewportExt`は無視されます。  
+ When the following mapping modes are set, calls to `SetWindowExt` and `SetViewportExt` are ignored:  
   
 |MM_HIENGLISH|MM_LOMETRIC|  
 |-------------------|------------------|  
 |`MM_HIMETRIC`|`MM_TEXT`|  
 |`MM_LOENGLISH`|`MM_TWIPS`|  
   
- ときに`MM_ISOTROPIC`モードが設定されており、アプリケーションを呼び出す必要があります、`SetWindowExt`メンバー関数を呼び出す前に`SetViewportExt`です。  
+ When `MM_ISOTROPIC` mode is set, an application must call the `SetWindowExt` member function before it calls `SetViewportExt`.  
   
-### <a name="example"></a>例  
-  例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
+### <a name="example"></a>Example  
+  See the example for [CView::OnPrepareDC](../../mfc/reference/cview-class.md#onpreparedc).  
   
-##  <a name="setviewportorg"></a>CDC::SetViewportOrg  
- デバイス コンテキストのビューポートの原点を設定します。  
+##  <a name="setviewportorg"></a>  CDC::SetViewportOrg  
+ Sets the viewport origin of the device context.  
   
 ```  
 virtual CPoint SetViewportOrg(
@@ -5710,29 +5901,29 @@ virtual CPoint SetViewportOrg(
 CPoint SetViewportOrg(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- ビューポートの原点の (デバイス単位) での x 座標を指定します。 値は、デバイスの座標システムの範囲でなければなりません。  
+ Specifies the x-coordinate (in device units) of the origin of the viewport. The value must be within the range of the device coordinate system.  
   
  *y*  
- ビューポートの原点の (デバイス単位) での y 座標を指定します。 値は、デバイスの座標システムの範囲でなければなりません。  
+ Specifies the y-coordinate (in device units) of the origin of the viewport. The value must be within the range of the device coordinate system.  
   
  `point`  
- ビューポートの原点を指定します。 値は、デバイスの座標システムの範囲でなければなりません。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the origin of the viewport. The values must be within the range of the device coordinate system. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- ビューポート (デバイス座標) での直前の原点を`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous origin of the viewport (in device coordinates) as a `CPoint` object.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストのウィンドウと共に、ビューポートのでは、GDI が実際のデバイスの座標系の点に論理座標系の点をマップする方法を定義します。 つまり、GDI 論理座標デバイス座標に変換する方法を定義します。  
+### <a name="remarks"></a>Remarks  
+ The viewport, along with the device-context window, defines how GDI maps points in the logical coordinate system to points in the coordinate system of the actual device. In other words, they define how GDI converts logical coordinates into device coordinates.  
   
- ビューポート原点は、GDI がウィンドウの原点を特定の時点で指定された論理座標系に割り当てられているデバイスの座標システムで、ポイント、**変換する**メンバー関数。 GDI は、ビューポートの原点をウィンドウの原点をマップするために必要なプロセスと同じで、他のすべてのポイントをマップします。 たとえば、ウィンドウの原点の位置を円のすべてのポイントは、ビューポートの原点の位置を円になります。 同様に、ウィンドウの原点を通過する行のすべてのポイントは、ビューポートの原点を通過するための行になります。  
+ The viewport origin marks the point in the device coordinate system to which GDI maps the window origin, a point in the logical coordinate system specified by the **SetWindowOrg** member function. GDI maps all other points by following the same process required to map the window origin to the viewport origin. For example, all points in a circle around the point at the window origin will be in a circle around the point at the viewport origin. Similarly, all points in a line that passes through the window origin will be in a line that passes through the viewport origin.  
   
-### <a name="example"></a>例  
-  例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
+### <a name="example"></a>Example  
+  See the example for [CView::OnPrepareDC](../../mfc/reference/cview-class.md#onpreparedc).  
   
-##  <a name="setwindowext"></a>CDC::SetWindowExt  
- デバイス コンテキストに関連付けられているウィンドウの x 範囲と y 範囲を設定します。  
+##  <a name="setwindowext"></a>  CDC::SetWindowExt  
+ Sets the x- and y-extents of the window associated with the device context.  
   
 ```  
 virtual CSize SetWindowExt(
@@ -5742,23 +5933,23 @@ virtual CSize SetWindowExt(
 CSize SetWindowExt(SIZE size);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cx`  
- ウィンドウの (論理単位で) x の範囲を指定します。  
+ Specifies the x-extent (in logical units) of the window.  
   
  `cy`  
- Y 範囲 (論理単位で) のウィンドウを指定します。  
+ Specifies the y-extent (in logical units) of the window.  
   
  `size`  
- X- と y のエクステント (論理単位で) ウィンドウを指定します。  
+ Specifies the x- and y-extents (in logical units) of the window.  
   
-### <a name="return-value"></a>戻り値  
- ウィンドウの (論理単位) として前のエクステント、`CSize`オブジェクト。 エラーがあった場合、返された x 座標と y 座標`CSize`オブジェクトの両方が 0 に設定します。  
+### <a name="return-value"></a>Return Value  
+ The previous extents of the window (in logical units) as a `CSize` object. If an error occurs, the x- and y-coordinates of the returned `CSize` object are both set to 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストのビューポートと共に、ウィンドウは、GDI がデバイス座標系の点に論理座標系の点をマップする方法を定義します。  
+### <a name="remarks"></a>Remarks  
+ The window, along with the device-context viewport, defines how GDI maps points in the logical coordinate system to points in the device coordinate system.  
   
- 次のマッピング モードが設定されている呼び出し`SetWindowExt`と`SetViewportExt`関数は無視されます。  
+ When the following mapping modes are set, calls to `SetWindowExt` and `SetViewportExt` functions are ignored:  
   
 - `MM_HIENGLISH`  
   
@@ -5772,13 +5963,13 @@ CSize SetWindowExt(SIZE size);
   
 - `MM_TWIPS`  
   
- ときに`MM_ISOTROPIC`モードが設定されており、アプリケーションを呼び出す必要があります、`SetWindowExt`メンバー関数は呼び出しの前に`SetViewportExt`です。  
+ When `MM_ISOTROPIC` mode is set, an application must call the `SetWindowExt` member function before calling `SetViewportExt`.  
   
-### <a name="example"></a>例  
-  例を参照して[付け](../../mfc/reference/cview-class.md#onpreparedc)です。  
+### <a name="example"></a>Example  
+  See the example for [CView::OnPrepareDC](../../mfc/reference/cview-class.md#onpreparedc).  
   
-##  <a name="setwindoworg"></a>CDC::SetWindowOrg  
- デバイス コンテキストのウィンドウの原点を設定します。  
+##  <a name="setwindoworg"></a>  CDC::SetWindowOrg  
+ Sets the window origin of the device context.  
   
 ```  
 CPoint SetWindowOrg(
@@ -5788,99 +5979,99 @@ CPoint SetWindowOrg(
 CPoint SetWindowOrg(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- ウィンドウの新しい origin の論理の x 座標を指定します。  
+ Specifies the logical x-coordinate of the new origin of the window.  
   
  *y*  
- ウィンドウの新しい origin の論理 y 座標を指定します。  
+ Specifies the logical y-coordinate of the new origin of the window.  
   
  `point`  
- ウィンドウの新しい origin の論理座標を指定します。 いずれかを渡すことができます、**ポイント**構造体、または`CPoint`このパラメーターのオブジェクト。  
+ Specifies the logical coordinates of the new origin of the window. You can pass either a **POINT** structure or a `CPoint` object for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 前のウィンドウの原点を`CPoint`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous origin of the window as a `CPoint` object.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストのビューポートと共に、ウィンドウは、GDI がデバイス座標系の点に論理座標系の点をマップする方法を定義します。  
+### <a name="remarks"></a>Remarks  
+ The window, along with the device-context viewport, defines how GDI maps points in the logical coordinate system to points in the device coordinate system.  
   
- ウィンドウの原点が GDI、ビューポートの原点をで指定されたデバイス座標システムでのマップ元となる論理座標システムでの位置をマーク、**変換する**関数。 GDI は、ビューポートの原点をウィンドウの原点をマップするために必要なプロセスと同じで、他のすべてのポイントをマップします。 たとえば、ウィンドウの原点の位置を円のすべてのポイントは、ビューポートの原点の位置を円になります。 同様に、ウィンドウの原点を通過する行のすべてのポイントは、ビューポートの原点を通過するための行になります。  
+ The window origin marks the point in the logical coordinate system from which GDI maps the viewport origin, a point in the device coordinate system specified by the **SetWindowOrg** function. GDI maps all other points by following the same process required to map the window origin to the viewport origin. For example, all points in a circle around the point at the window origin will be in a circle around the point at the viewport origin. Similarly, all points in a line that passes through the window origin will be in a line that passes through the viewport origin.  
   
-##  <a name="setworldtransform"></a>CDC::SetWorldTransform  
- ワールド空間と、指定したデバイス コンテキストのページの領域の 2 次元の線形変換を設定します。 この変換は、スケール、回転、傾斜、またはグラフィックス出力を使用できます。  
+##  <a name="setworldtransform"></a>  CDC::SetWorldTransform  
+ Sets a two-dimensional linear transformation between world space and page space for the specified device context. This transformation can be used to scale, rotate, shear, or translate graphics output.  
   
 ```  
 BOOL SetWorldTransform(const XFORM& rXform);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rXform`  
- 参照、 [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228)変換データを格納する構造体。  
+ Reference to an [XFORM](http://msdn.microsoft.com/library/windows/desktop/dd145228) structure that contains the transformation data.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合に、0 以外の値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a nonzero value on success.  
   
- 失敗した場合に 0 を返します。  
+ Returns 0 on failure.  
   
- 拡張エラー情報を取得する呼び出し[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+ To get extended error information, call [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメソッド[SetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145104)です。  
+### <a name="remarks"></a>Remarks  
+ This method wraps the Windows GDI function [SetWorldTransform](http://msdn.microsoft.com/library/windows/desktop/dd145104).  
   
-##  <a name="startdoc"></a>CDC::StartDoc  
- 新しい印刷ジョブが開始されるデバイス ドライバーに通知し、後続のすべての`StartPage`と`EndPage`まで同じジョブでの呼び出しをスプールする必要があります、`EndDoc`の呼び出しが行わします。  
+##  <a name="startdoc"></a>  CDC::StartDoc  
+ Informs the device driver that a new print job is starting and that all subsequent `StartPage` and `EndPage` calls should be spooled under the same job until an `EndDoc` call occurs.  
   
 ```  
 int StartDoc(LPDOCINFO lpDocInfo);  
 int StartDoc(LPCTSTR lpszDocName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpDocInfo*  
- 指す、[持つ](http://msdn.microsoft.com/library/windows/desktop/dd183574)ドキュメント ファイルの名前と、出力ファイルの名前を含む構造体。  
+ Points to a [DOCINFO](http://msdn.microsoft.com/library/windows/desktop/dd183574) structure containing the name of the document file and the name of the output file.  
   
  *lpszDocName*  
- ドキュメント ファイルの名前を含む文字列へのポインター。  
+ Pointer to a string containing the name of the document file.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合、戻り値は 0 より大きい値です。 この値は、ドキュメントの印刷ジョブ識別子です。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds, the return value is greater than zero. This value is the print job identifier for the document.  
   
- 関数が失敗した場合、戻り値は 0 に等しいまたはそれよりも小さいです。  
+ If the function fails, the return value is less than or equal to zero.  
   
-### <a name="remarks"></a>コメント  
- これにより、ドキュメントが複数ページが他のジョブが混在していないされます。  
+### <a name="remarks"></a>Remarks  
+ This ensures that documents longer than one page will not be interspersed with other jobs.  
   
- Windows バージョン 3.1 以降では、この関数が置き換えられます、 **STARTDOC**プリンター エスケープします。 この関数を使用して他の印刷ジョブに複数のページを含むドキュメントが混在しないことを確認します。  
+ For Windows versions 3.1 and later, this function replaces the **STARTDOC** printer escape. Using this function ensures that documents containing more than one page are not interspersed with other print jobs.  
   
- `StartDoc`メタファイルの内部は使用できません。  
+ `StartDoc` should not be used inside metafiles.  
   
-### <a name="example"></a>例  
- 次のコード片の既定のプリンターを取得、印刷ジョブを開き、および「こんにちは, World!」の 1 ページにスプール 。 このコードで印刷されるテキストは、プリンターの論理ユニットにスケーリングされていない、ため出力テキスト可能性がありますに文字を小さくしてこのような結果が読み取ることができないことです。 など、関数のスケーリング CDC `SetMapMode`、 `SetViewportOrg`、および`SetWindowExt`、スケーリングを修正するために使用できます。  
+### <a name="example"></a>Example  
+ This code fragment gets the default printer, opens a print job, and spools one page with "Hello, World!" on it. Because the text printed by this code isn't scaled to the printer's logical units, the output text may be in such small letters that the result is unreadable. The CDC scaling functions, such as `SetMapMode`, `SetViewportOrg`, and `SetWindowExt`, can be used to fix the scaling.  
   
- [!code-cpp[NVC_MFCDocView #41](../../mfc/codesnippet/cpp/cdc-class_13.cpp)]  
+ [!code-cpp[NVC_MFCDocView#41](../../mfc/codesnippet/cpp/cdc-class_13.cpp)]  
   
-##  <a name="startpage"></a>CDC::StartPage  
- データを受信するプリンタ ドライバを準備するには、このメンバー関数を呼び出します。  
+##  <a name="startpage"></a>  CDC::StartPage  
+ Call this member function to prepare the printer driver to receive data.  
   
 ```  
 int StartPage();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 大きいか等しい場合は、関数が成功すると、0 または負の値を使用している場合、エラーが発生しました。  
+### <a name="return-value"></a>Return Value  
+ Greater than or equal to 0 if the function is successful, or a negative value if an error occurred.  
   
-### <a name="remarks"></a>コメント  
- `StartPage`置き換えるソフトウェア更新プログラム、 **NEWFRAME**と**BANDINFO**をエスケープします。  
+### <a name="remarks"></a>Remarks  
+ `StartPage` supersedes the **NEWFRAME** and **BANDINFO** escapes.  
   
- 印刷の呼び出しのシーケンスの詳細については、次を参照してください。、 [StartDoc](#startdoc)メンバー関数。  
+ For an overview of the sequence of printing calls, see the [StartDoc](#startdoc) member function.  
   
- システムが無効になります、`ResetDC`メンバー関数は呼び出しの間`StartPage`と`EndPage`です。  
+ The system disables the `ResetDC` member function between calls to `StartPage` and `EndPage`.  
   
-### <a name="example"></a>例  
-  例を参照して[CDC::StartDoc](#startdoc)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::StartDoc](#startdoc).  
   
-##  <a name="stretchblt"></a>CDC::StretchBlt  
- コピー元の四角形から、必要に応じてコピー先の四角形に合うようにビットマップを拡大または縮小してコピーします。  
+##  <a name="stretchblt"></a>  CDC::StretchBlt  
+ Copies a bitmap from a source rectangle into a destination rectangle, stretching or compressing the bitmap if necessary to fit the dimensions of the destination rectangle.  
   
 ```  
 BOOL StretchBlt(
@@ -5896,113 +6087,113 @@ BOOL StretchBlt(
     DWORD dwRop);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- コピー先の四角形の左上隅を示す X 座標を (論理単位で) 指定します。  
+ Specifies the x-coordinate (in logical units) of the upper-left corner of the destination rectangle.  
   
  *y*  
- コピー先の四角形の左上隅を示す Y 座標を (論理単位で) 指定します。  
+ Specifies the y-coordinate (in logical units) of the upper-left corner of the destination rectangle.  
   
  `nWidth`  
- コピー先の四角形の幅を (論理単位で) 指定します。  
+ Specifies the width (in logical units) of the destination rectangle.  
   
  `nHeight`  
- コピー先の四角形の高さを (論理単位で) 指定します。  
+ Specifies the height (in logical units) of the destination rectangle.  
   
  `pSrcDC`  
- コピー元のデバイス コンテキストを指定します。  
+ Specifies the source device context.  
   
  `xSrc`  
- コピー元の四角形の左上隅を示す X 座標を (論理単位で) 指定します。  
+ Specifies the x-coordinate (in logical units) of the upper-left corner of the source rectangle.  
   
  `ySrc`  
- コピー元の四角形の左上隅を示す Y 座標を (論理単位で) 指定します。  
+ Specifies the y-coordinate (in logical units) of the upper-left corner of the source rectangle.  
   
  `nSrcWidth`  
- コピー元の四角形の幅を (論理単位で) 指定します。  
+ Specifies the width (in logical units) of the source rectangle.  
   
  `nSrcHeight`  
- コピー元の四角形の高さを (論理単位で) 指定します。  
+ Specifies the height (in logical units) of the source rectangle.  
   
  *dwRop*  
- 実行するラスター オペレーションを指定します。 ラスター オペレーション コードにより、現在のブラシ、有効なコピー元のビットマップ、およびコピー先のビットマップが関連する出力操作における、GDI による色の組み合わせが定義されます。 このパラメーターには、次のいずれかの値を指定できます。  
+ Specifies the raster operation to be performed. Raster operation codes define how GDI combines colors in output operations that involve a current brush, a possible source bitmap, and a destination bitmap. This parameter may be one of the following values:  
   
-- **BLACKNESS**すべて出力を黒です。  
+- **BLACKNESS** Turns all output black.  
   
-- **DSTINVERT**コピー先ビットマップを反転します。  
+- **DSTINVERT** Inverts the destination bitmap.  
   
-- **MERGECOPY**パターンとブール型 AND 演算子を使用して元のビットマップを結合します。  
+- **MERGECOPY** Combines the pattern and the source bitmap using the Boolean AND operator.  
   
-- **MERGEPAINT**反転されたコピー元ビットマップをブール型 OR 演算子を使用して、コピー先ビットマップと組み合わせます。  
+- **MERGEPAINT** Combines the inverted source bitmap with the destination bitmap using the Boolean OR operator.  
   
-- **NOTSRCCOPY**反転されたコピー元ビットマップ、コピー先にコピーします。  
+- **NOTSRCCOPY** Copies the inverted source bitmap to the destination.  
   
-- **NOTSRCERASE**ブール型 OR 演算子を使用する送信先と送信元のビットマップを組み合わせた結果を反転します。  
+- **NOTSRCERASE** Inverts the result of combining the destination and source bitmaps using the Boolean OR operator.  
   
-- **PATCOPY**パターンをコピー先ビットマップにコピーします。  
+- **PATCOPY** Copies the pattern to the destination bitmap.  
   
-- **PATINVERT**とパターンを論理 XOR 演算子を使用して、コピー先ビットマップを組み合わせます。  
+- **PATINVERT** Combines the destination bitmap with the pattern using the Boolean XOR operator.  
   
-- **PATPAINT**とパターンを論理 OR 演算子を使用して、反転されたコピー元ビットマップを組み合わせます。 さらに、ブール型 OR 演算子を使用して、この演算の結果とコピー先ビットマップを組み合わせます。  
+- **PATPAINT** Combines the inverted source bitmap with the pattern using the Boolean OR operator. Combines the result of this operation with the destination bitmap using the Boolean OR operator.  
   
-- **SRCAND**ブール型 AND 演算子を使用する送信先と送信元のビットマップのピクセルを組み合わせます。  
+- **SRCAND** Combines pixels of the destination and source bitmaps using the Boolean AND operator.  
   
-- **SRCCOPY**元のビットマップをコピー先ビットマップにコピーします。  
+- **SRCCOPY** Copies the source bitmap to the destination bitmap.  
   
-- **SRCERASE**コピー先ビットマップを反転し、結果をブール型 AND 演算子を使用して元のビットマップと組み合わせます。  
+- **SRCERASE** Inverts the destination bitmap and combines the result with the source bitmap using the Boolean AND operator.  
   
-- **SRCINVERT**ブール型 XOR 演算子を使用して送信先と送信元のビットマップのピクセルを組み合わせます。  
+- **SRCINVERT** Combines pixels of the destination and source bitmaps using the Boolean XOR operator.  
   
-- **SRCPAINT**ブール型 OR 演算子を使用する送信先と送信元のビットマップのピクセルを組み合わせます。  
+- **SRCPAINT** Combines pixels of the destination and source bitmaps using the Boolean OR operator.  
   
-- **WHITENESS**すべて出力を白です。  
+- **WHITENESS** Turns all output white.  
   
-### <a name="return-value"></a>戻り値  
- ビットマップが描画された場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the bitmap is drawn; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、コピー先デバイス コンテキストの伸縮モード (`SetStretchBltMode` で設定) を使用して、ビットマップを拡大または縮小する方法を決定します。  
+### <a name="remarks"></a>Remarks  
+ The function uses the stretching mode of the destination device context (set by `SetStretchBltMode`) to determine how to stretch or compress the bitmap.  
   
- `StretchBlt` 関数は、ビットマップを、`pSrcDC` によって指定された移動元デバイスから、メンバー関数の呼び出し元デバイス コンテキスト オブジェクトで表される移動先デバイスに移動します。 `xSrc`、`ySrc`、`nSrcWidth`、および `nSrcHeight` の各パラメーターは、移動元の四角形の左上隅および次元を定義します。 *X*、 *y*、 `nWidth`、および`nHeight`パラメーターは、左上隅と先の四角形の寸法を指定します。 指定されたラスター オペレーション*dwRop*元のビットマップと、宛先デバイス上のビットを結合する方法を定義します。  
+ The `StretchBlt` function moves the bitmap from the source device given by `pSrcDC` to the destination device represented by the device-context object whose member function is being called. The `xSrc`, `ySrc`, `nSrcWidth`, and `nSrcHeight` parameters define the upper-left corner and dimensions of the source rectangle. The *x*, *y*, `nWidth`, and `nHeight` parameters give the upper-left corner and dimensions of the destination rectangle. The raster operation specified by *dwRop* defines how the source bitmap and the bits already on the destination device are combined.  
   
- `StretchBlt` 関数は、`nSrcWidth` と `nWidth`、または `nSrcHeight` と `nHeight` のそれぞれのパラメーターの符号が異なる場合に、ビットマップのミラー イメージを作成します。 `nSrcWidth` の符号と `nWidth` の符号が異なる場合、この関数は、ビットマップのミラー イメージを X 軸に沿って作成します。 `nSrcHeight` の符号と `nHeight` の符号が異なる場合、この関数は、ビットマップのミラー イメージを Y 軸に沿って作成します。  
+ The `StretchBlt` function creates a mirror image of a bitmap if the signs of the `nSrcWidth` and `nWidth` or `nSrcHeight` and `nHeight` parameters differ. If `nSrcWidth` and `nWidth` have different signs, the function creates a mirror image of the bitmap along the x-axis. If `nSrcHeight` and `nHeight` have different signs, the function creates a mirror image of the bitmap along the y-axis.  
   
- `StretchBlt` 関数は、メモリ内のコピー元ビットマップを拡大または縮小し、その結果をコピー先にコピーします。 パターンを結果とマージする場合、そのパターンは、拡大されたコピー元ビットマップがコピー先にコピーされるまでマージされません。 ブラシを使用する場合、そのブラシは、コピー先デバイス コンテキストで選択されたブラシです。 コピー先の座標は、コピー先デバイス コンテキストに従って変換されます。コピー元の座標は、コピー元デバイス コンテキストに従って変換されます。  
+ The `StretchBlt` function stretches or compresses the source bitmap in memory and then copies the result to the destination. If a pattern is to be merged with the result, it is not merged until the stretched source bitmap is copied to the destination. If a brush is used, it is the selected brush in the destination device context. The destination coordinates are transformed according to the destination device context; the source coordinates are transformed according to the source device context.  
   
- コピー先ビットマップ、コピー元ビットマップ、およびパターン ビットマップの色の形式が異なる場合は、`StretchBlt` によって、コピー元ビットマップとパターン ビットマップが、コピー先ビットマップに合わせて変換されます。 変換では、コピー先デバイス コンテキストの前景色と背景色が使用されます。  
+ If the destination, source, and pattern bitmaps do not have the same color format, `StretchBlt` converts the source and pattern bitmaps to match the destination bitmaps. The foreground and background colors of the destination device context are used in the conversion.  
   
- モノクロ ビットマップをカラーに変換する必要がある場合、`StretchBlt` は白のビット (1) を背景色に、黒のビット (0) を前景色に設定します。 カラーをモノクロに変換するには、背景色に一致するピクセルを白 (1) に設定し、その他のすべてのピクセルを黒 (0) に設定します。 カラーのデバイス コンテキストの前景色と背景色は使用されます。  
+ If `StretchBlt` must convert a monochrome bitmap to color, it sets white bits (1) to the background color and black bits (0) to the foreground color. To convert color to monochrome, it sets pixels that match the background color to white (1) and sets all other pixels to black (0). The foreground and background colors of the device context with color are used.  
   
- 一部のデバイスでは、`StretchBlt` 関数がサポートされていません。 デバイスをサポートしているかどうかを判断する`StretchBlt`、呼び出し、`GetDeviceCaps`メンバー関数が、 **RASTERCAPS**インデックスを作成しの戻り値を確認して、 **RC_STRETCHBLT**フラグ。  
+ Not all devices support the `StretchBlt` function. To determine whether a device supports `StretchBlt`, call the `GetDeviceCaps` member function with the **RASTERCAPS** index and check the return value for the **RC_STRETCHBLT** flag.  
   
-##  <a name="strokeandfillpath"></a>CDC::StrokeAndFillPath  
- パス内の任意の開いている図形を閉じ、現在のペンを使用して、パスの外枠を描画および現在のブラシを使用して、その内部を塗りつぶします。  
+##  <a name="strokeandfillpath"></a>  CDC::StrokeAndFillPath  
+ Closes any open figures in a path, strokes the outline of the path by using the current pen, and fills its interior by using the current brush.  
   
 ```  
 BOOL StrokeAndFillPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストでは、閉じているパスを含める必要があります。 `StrokeAndFillPath`メンバー関数は、パス内のすべての開いている図形を閉じると同じ効果があり、ペンの幅が線の描画と塗りつぶされた領域がいなくても、ストロークの領域に重ならないする点を除いて、個別にパスを入力します。  
+### <a name="remarks"></a>Remarks  
+ The device context must contain a closed path. The `StrokeAndFillPath` member function has the same effect as closing all the open figures in the path, and stroking and filling the path separately, except that the filled region will not overlap the stroked region even if the pen is wide.  
   
-##  <a name="strokepath"></a>CDC::StrokePath  
- 現在のペンを使用して、指定されたパスを表示します。  
+##  <a name="strokepath"></a>  CDC::StrokePath  
+ Renders the specified path by using the current pen.  
   
 ```  
 BOOL StrokePath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストでは、閉じているパスを含める必要があります。  
+### <a name="remarks"></a>Remarks  
+ The device context must contain a closed path.  
   
-##  <a name="tabbedtextout"></a>CDC::TabbedTextOut  
- タブ ストップの位置の配列で指定した値にタブを展開する、指定した位置に文字の文字列に書き込むには、このメンバー関数を呼び出します。  
+##  <a name="tabbedtextout"></a>  CDC::TabbedTextOut  
+ Call this member function to write a character string at the specified location, expanding tabs to the values specified in the array of tab-stop positions.  
   
 ```  
 virtual CSize TabbedTextOut(
@@ -6024,43 +6215,43 @@ CSize TabbedTextOut(
     int nTabOrigin);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 文字列の開始位置の論理の x 座標を指定します。  
+ Specifies the logical x-coordinate of the starting point of the string.  
   
  *y*  
- 文字列の開始位置の論理 y 座標を指定します。  
+ Specifies the logical y-coordinate of the starting point of the string.  
   
  `lpszString`  
- 描画する文字列へのポインター。 文字の配列をいずれかにポインターを渡すことができます、または[CString](../../atl-mfc-shared/reference/cstringt-class.md)このパラメーターのオブジェクト。  
+ Points to the character string to draw. You can pass either a pointer to an array of characters or a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object for this parameter.  
   
  `nCount`  
- 文字列の文字数を指定します。 場合`nCount`-1 で、長さが計算されます。  
+ Specifies the number of characters in the string. If `nCount` is -1, the length is calculated.  
   
  `nTabPositions`  
- タブ ストップの位置の配列内の値の数を指定します。  
+ Specifies the number of values in the array of tab-stop positions.  
   
  `lpnTabStopPositions`  
- (論理単位で) タブ ストップの位置を格納する配列を指します。 タブ ストップは; 昇順に並べ替える必要があります。最小の x 値には、配列の最初の項目をする必要があります。  
+ Points to an array containing the tab-stop positions (in logical units). The tab stops must be sorted in increasing order; the smallest x-value should be the first item in the array.  
   
  `nTabOrigin`  
- (論理単位) で元のタブが展開されている開始位置の x 座標を指定します。  
+ Specifies the x-coordinate of the starting position from which tabs are expanded (in logical units).  
   
  `str`  
- A`CString`指定された文字を含むオブジェクトです。  
+ A `CString` object that contains the specified characters.  
   
-### <a name="return-value"></a>戻り値  
- (論理単位で) として文字列のディメンション、`CSize`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The dimensions of the string (in logical units) as a `CSize` object.  
   
-### <a name="remarks"></a>コメント  
- 現在選択されているフォントには、テキストが書き込まれます。 場合`nTabPositions`は 0 と`lpnTabStopPositions`は**NULL**タブは、平均の文字幅の 8 倍に拡張されます。  
+### <a name="remarks"></a>Remarks  
+ Text is written in the currently selected font. If `nTabPositions` is 0 and `lpnTabStopPositions` is **NULL**, tabs are expanded to eight times the average character width.  
   
- 場合`nTabPositions`1、停止の最初の値で指定された距離で区切られます タブには、`lpnTabStopPositions`配列。 場合、`lpnTabStopPositions`配列には、複数の値が含まれています、タブ ストップがで指定された数まで、配列の各値に設定されている`nTabPositions`です。 `nTabOrigin`パラメーターを使用して、アプリケーションを呼び出す、 `TabbedTextOut` 1 行に複数回関数。 かどうか、アプリケーションが、関数を複数回呼び出した、 `nTabOrigin` 、関数は、相対的な位置で指定されたすべてのタブを展開するたびに同じ値に設定、`nTabOrigin`です。  
+ If `nTabPositions` is 1, the tab stops are separated by the distance specified by the first value in the `lpnTabStopPositions` array. If the `lpnTabStopPositions` array contains more than one value, a tab stop is set for each value in the array, up to the number specified by `nTabPositions`. The `nTabOrigin` parameter allows an application to call the `TabbedTextOut` function several times for a single line. If the application calls the function more than once with the `nTabOrigin` set to the same value each time, the function expands all tabs relative to the position specified by `nTabOrigin`.  
   
- 既定では、関数は現在位置を使用することも、更新することもありません。 アプリケーションは、関数を呼び出すときに、現在の位置を更新する必要があるを場合、アプリケーションが呼び出すことができます、[呼び出された](#settextalign)メンバー関数が`nFlags`'éý'**ため**です。 このフラグを設定すると、Windows は無視されます、 *x*と*y*後続の呼び出しでパラメーター `TabbedTextOut`、代わりに、現在の位置を使用します。  
+ By default, the current position is not used or updated by the function. If an application needs to update the current position when it calls the function, the application can call the [SetTextAlign](#settextalign) member function with `nFlags` set to **TA_UPDATECP**. When this flag is set, Windows ignores the *x* and *y* parameters on subsequent calls to `TabbedTextOut`, using the current position instead.  
   
-##  <a name="textout"></a>CDC::TextOut  
- 現在選択されているフォントを使用して、文字列を指定位置から書き込みます。  
+##  <a name="textout"></a>  CDC::TextOut  
+ Writes a character string at the specified location using the currently selected font.  
   
 ```  
 virtual BOOL TextOut(
@@ -6076,35 +6267,35 @@ BOOL TextOut(
     const CString& str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- テキストの始点の論理的な X 座標を指定します。  
+ Specifies the logical x-coordinate of the starting point of the text.  
   
  *y*  
- テキストの始点の論理的な Y 座標を指定します。  
+ Specifies the logical y-coordinate of the starting point of the text.  
   
  `lpszString`  
- 描画される文字列を指します。  
+ Points to the character string to be drawn.  
   
  `nCount`  
- 文字列の文字数を指定します。  
+ Specifies the number of characters in the string.  
   
  `str`  
- 描画される文字が含まれる `CString` オブジェクト。  
+ A `CString` object that contains the characters to be drawn.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 文字の起点は文字セルの左上隅です。 既定では、関数は現在位置を使用することも、更新することもありません。  
+### <a name="remarks"></a>Remarks  
+ Character origins are at the upper-left corner of the character cell. By default, the current position is not used or updated by the function.  
   
- アプリケーションを呼び出したときに、現在の位置を更新する必要があるかどうか`TextOut`、アプリケーションが呼び出すことができます、`SetTextAlign`メンバー関数が`nFlags`'éý'**ため**です。 このフラグを設定すると、Windows は無視されます、 *x*と*y*後続の呼び出しでパラメーター `TextOut`、代わりに、現在の位置を使用します。  
+ If an application needs to update the current position when it calls `TextOut`, the application can call the `SetTextAlign` member function with `nFlags` set to **TA_UPDATECP**. When this flag is set, Windows ignores the *x* and *y* parameters on subsequent calls to `TextOut`, using the current position instead.  
   
-### <a name="example"></a>例  
-  例を参照して[cdc::beginpath](#beginpath)です。  
+### <a name="example"></a>Example  
+  See the example for [CDC::BeginPath](#beginpath).  
   
-##  <a name="transparentblt"></a>CDC::TransparentBlt  
- コピー先デバイス コンテキストに指定されたソース デバイス コンテキストからピクセルの四角形に対応する色データのビット ブロックを転送するには、このメンバー関数を呼び出します。  
+##  <a name="transparentblt"></a>  CDC::TransparentBlt  
+ Call this member function to transfer a bit-block of the color data, which corresponds to a rectangle of pixels from the specified source device context, into a destination device context.  
   
 ```  
 BOOL TransparentBlt(
@@ -6120,77 +6311,77 @@ BOOL TransparentBlt(
     UINT clrTransparent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `xDest`  
- 論理単位で、移行先の四角形の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the upper-left corner of the destination rectangle.  
   
  `yDest`  
- 論理単位で、移行先の四角形の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the upper-left corner of the destination rectangle.  
   
  `nDestWidth`  
- 論理単位で、移行先の四角形の幅を指定します。  
+ Specifies the width, in logical units, of the destination rectangle.  
   
  `nDestHeight`  
- 論理単位で、移行先の四角形の高さを指定します。  
+ Specifies the height, in logical units, of the destination rectangle.  
   
  `pSrcDC`  
- 元のデバイス コンテキストへのポインター。  
+ Pointer to the source device context.  
   
  `xSrc`  
- 論理単位で、元の四角形の x 座標を指定します。  
+ Specifies the x-coordinate, in logical units, of the source rectangle.  
   
  `ySrc`  
- 元の四角形の論理単位で、y 座標を指定します。  
+ Specifies the y-coordinate, in logical units, of the source rectangle.  
   
  `nSrcWidth`  
- 論理単位で、元の四角形の幅を指定します。  
+ Specifies the width, in logical units, of the source rectangle.  
   
  `nSrcHeight`  
- 論理単位で、元の四角形の高さを指定します。  
+ Specifies the height, in logical units, of the source rectangle.  
   
  `clrTransparent`  
- コピー元のビットマップが透明として扱うで RGB 色です。  
+ The RGB color in the source bitmap to treat as transparent.  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**成功した場合は**FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if successful; otherwise **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- `TransparentBlt`透過性では、します。は、RGB 色が示される`clrTransparent`転送で、透過的なレンダリングします。  
+### <a name="remarks"></a>Remarks  
+ `TransparentBlt` allows for transparency; that is, the RGB color indicated by `clrTransparent` is rendered transparent for the transfer.  
   
- 詳細については、次を参照してください。 [TransparentBlt](http://msdn.microsoft.com/library/windows/desktop/dd145141)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [TransparentBlt](http://msdn.microsoft.com/library/windows/desktop/dd145141) in the Windows SDK.  
   
-##  <a name="updatecolors"></a>CDC::UpdateColors  
- クライアント領域のピクセルごとに、システム パレットで現在を照合することによって、デバイス コンテキストのクライアント領域を色分けする更新プログラム。  
+##  <a name="updatecolors"></a>  CDC::UpdateColors  
+ Updates the client area of the device context by matching the current colors in the client area to the system palette on a pixel-by-pixel basis.  
   
 ```  
 void UpdateColors();
 ```  
   
-### <a name="remarks"></a>コメント  
- 実現論理パレットを持つ非アクティブなウィンドウを呼び出すことが`UpdateColors`システム パレットが変更されたときに、クライアント領域を再描画する代わりにします。  
+### <a name="remarks"></a>Remarks  
+ An inactive window with a realized logical palette may call `UpdateColors` as an alternative to redrawing its client area when the system palette changes.  
   
- カラー パレットの使用に関する詳細については、次を参照してください。[この](http://msdn.microsoft.com/library/windows/desktop/dd145166)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about using color palettes, see [UpdateColors](http://msdn.microsoft.com/library/windows/desktop/dd145166) in the Windows SDK.  
   
- `UpdateColors`メンバー関数は、通常、更新、クライアント区分、領域を再描画よりも高速です。 ただし、関数は、システム パレットを変更する前に、各ピクセルの色に基づいた色の変換を実行するため、この関数に対する各呼び出しは、色の正確さが失われる結果します。  
+ The `UpdateColors` member function typically updates a client area faster than redrawing the area. However, because the function performs the color translation based on the color of each pixel before the system palette changed, each call to this function results in the loss of some color accuracy.  
   
-##  <a name="widenpath"></a>CDC::WidenPath  
- パスが、デバイス コンテキストに現在選択されているペンを使用して描画された場合に描画される領域として、現在のパスを再定義します。  
+##  <a name="widenpath"></a>  CDC::WidenPath  
+ Redefines the current path as the area that would be painted if the path were stroked using the pen currently selected into the device context.  
   
 ```  
 BOOL WidenPath();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は現在のペンが幾何学的ペンの 2 つ目のバージョンで作成された場合にのみ成功`CreatePen`メンバー関数は、ペンが最初のバージョンで作成された場合または`CreatePen`デバイス単位、1 以上で、幅をします。 デバイス コンテキストでは、閉じているパスを含める必要があります。 任意のベジエ曲線のパスでは、直線のおおよその拡張の曲線のシーケンスに変換されます。 そのためのベジエ曲線が残っていない後のパスで`WidenPath`と呼びます。  
+### <a name="remarks"></a>Remarks  
+ This function is successful only if the current pen is a geometric pen created by the second version of `CreatePen` member function, or if the pen is created with the first version of `CreatePen` and has a width, in device units, of greater than 1. The device context must contain a closed path. Any Bzier curves in the path are converted to sequences of straight lines approximating the widened curves. As such, no Bzier curves remain in the path after `WidenPath` is called.  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CPaintDC クラス](../../mfc/reference/cpaintdc-class.md)   
- [CWindowDC クラス](../../mfc/reference/cwindowdc-class.md)   
- [CClientDC クラス](../../mfc/reference/cclientdc-class.md)   
- [CMetaFileDC クラス](../../mfc/reference/cmetafiledc-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CPaintDC Class](../../mfc/reference/cpaintdc-class.md)   
+ [CWindowDC Class](../../mfc/reference/cwindowdc-class.md)   
+ [CClientDC Class](../../mfc/reference/cclientdc-class.md)   
+ [CMetaFileDC Class](../../mfc/reference/cmetafiledc-class.md)
 

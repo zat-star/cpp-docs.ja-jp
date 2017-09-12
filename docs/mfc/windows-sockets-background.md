@@ -1,109 +1,128 @@
 ---
-title: "Windows ソケット : 予備知識 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "通信 [C++], ドメイン"
-  - "データ型 [C++], ソケット"
-  - "データグラム ソケット [C++]"
-  - "電子メール [C++]"
-  - "電子メール [C++], プログラミング"
-  - "インターネット プロトコル スイート"
-  - "メール [C++]"
-  - "メール [C++], プログラミング"
-  - "レコード単位のデータ [C++]"
-  - "連続したデータ フロー"
-  - "SOCKET ハンドル"
-  - "ソケット [C++], ストリーム ソケット"
-  - "ストリーム ソケット [C++]"
-  - "Windows ソケット [C++], ストリーム ソケット"
-  - "X Window サーバー"
+title: 'Windows Sockets: Background | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- record-oriented data [MFC]
+- e-mail [MFC]
+- Internet Protocol Suite
+- mail [MFC]
+- communications [MFC], domain
+- Windows Sockets [MFC], stream sockets
+- mail [MFC], programming for
+- sockets [MFC], stream sockets
+- datagram sockets [MFC]
+- SOCKET handle
+- data types [MFC], socket
+- e-mail [MFC], programming for
+- X Window servers
+- sequenced data flow
+- stream sockets [MFC]
 ms.assetid: f60d4ed2-bf23-4a0e-98d2-fee77e8473dd
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# Windows ソケット : 予備知識
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 46508947915847d1ac921d10431f96441a972722
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-この記事では、Windows ソケットの特性と目的について説明します。  以下の内容についても説明します。  
+---
+# <a name="windows-sockets-background"></a>Windows Sockets: Background
+This article explains the nature and purpose of Windows Sockets. The article also:  
   
--   [用語 "ソケット" の定義](#_core_definition_of_a_socket)。  
+-   [Defines the term "socket"](#_core_definition_of_a_socket).  
   
--   [ハンドルのデータ型 SOCKET について](#_core_the_socket_data_type)。  
+-   [Describes the SOCKET handle data type](#_core_the_socket_data_type).  
   
--   [ソケットの使用について](#_core_uses_for_sockets)。  
+-   [Describes uses for sockets](#_core_uses_for_sockets).  
   
- Windows ソケット仕様は、Microsoft Windows 向けのバイナリ互換性のあるネットワーク プログラミング インターフェイスを定義します。  Windows ソケットは、カリフォルニア大学バークレー校で開発された Berkeley Software Distribution \(BSD、リリース 4.3\) の UNIX ソケットの実装に基づいています。  仕様には、BSD スタイルのソケット ルーチンと Windows 固有の拡張機能の両方が含まれています。  Windows ソケットを使用すると、アプリケーションが Windows ソケット API に準拠するネットワークを経由して通信できます。  Win32 では、Windows ソケットによってスレッド セーフが提供されます。  
+ The Windows Sockets specification defines a binary-compatible network programming interface for Microsoft Windows. Windows Sockets are based on the UNIX sockets implementation in the Berkeley Software Distribution (BSD, release 4.3) from the University of California at Berkeley. The specification includes both BSD-style socket routines and extensions specific to Windows. Using Windows Sockets permits your application to communicate across any network that conforms to the Windows Sockets API. On Win32, Windows Sockets provide for thread safety.  
   
- 多くのネットワーク ソフトウェア ベンダーは、伝送制御プロトコル\/インターネット プロトコル \(TCP\/IP\)、Xerox ネットワーク システム \(XNS\)、Digital Equipment 社の DECNet プロトコル、Novell 社のインターネット パケット交換\/順次編成パック交換 \(IPX\/SPX\) などのネットワーク プロトコルの下で Windows ソケットをサポートしています。  現在の Windows ソケット仕様では TCP\/IP 向けにソケットの抽象化が定義されていますが、どのネットワーク プロトコルでも、Windows ソケットを実装する独自バージョンのダイナミック リンク ライブラリ \(DLL\) を用意することで Windows ソケットに準拠できます。  Windows ソケットを使用して作成された商用アプリケーションの例として、X Windows サーバー、端末エミュレーター、電子メール システムがあります。  
-  
-> [!NOTE]
->  Windows ソケットの目的は、基になるネットワークを抽象化して、そのネットワークについて詳しく知らなくても、ソケットをサポートするネットワークでアプリケーションを実行できるようにすることです。  そのため、このドキュメントではネットワーク プロトコルの詳細については説明しません。  
-  
- Microsoft Foundation Class ライブラリ \(MFC\) は、Windows ソケット API を使用するプログラムをサポートするために、2 つのクラスを提供しています。  1 つは `CSocket` です。このクラスは、高レベルの抽象化を提供してネットワーク通信プログラミングを簡略化します。  
-  
- Windows ソケット仕様では、Windows ソケットは Microsoft Windows でのネットワーク コンピューティング向けのオープン インターフェイスであり、現在のバージョンは 1.1 です。Windows ソケットは、TCP\/IP コミュニティに属する個人と会社の大規模なグループによってオープン ネットワーキング標準として開発されたものであり、自由に利用できます。  現在、ソケット プログラミング モデルは、インターネット プロトコル スイートを使用して 1 つの "通信ドメイン" をサポートします。  仕様は [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] で入手できます。  
-  
-> [!TIP]
->  ソケットはインターネット プロトコル スイートを使用するため、"情報ハイウェイ" でのインターネット通信をサポートするアプリケーションにとって最適な手段です。  
-  
-##  <a name="_core_definition_of_a_socket"></a> ソケットの定義  
- ソケットは通信のエンドポイントです。つまり、Windows ソケット アプリケーションがネットワーク経由でデータ パケットを送受信するために使用するオブジェクトです。  ソケットには型があり、実行中のプロセスと関連付けられます。名前を持つ場合もあります。  現在、ソケットは同一の "通信ドメイン" 内にあり、インターネット プロトコル スイートを使用する他のソケットとのみデータを交換するのが普通です。  
-  
- 2 種類のソケットはどちらも双方向で、両方向に同時に通信できるデータ フローです \(全二重\)。  
-  
- 次の 2 種類のソケットを使用できます。  
-  
--   ストリーム ソケット  
-  
-     ストリーム ソケットは、レコード境界のないデータ フロー、つまりバイト ストリーム用です。  ストリームは必ず配信され、正しく順序付けられて重複しません。  
-  
--   データグラム ソケット  
-  
-     データグラム ソケットは、レコード指向のデータ フローをサポートします。このデータ フローは配信されるとは限らず、送信順になっていないことや重複していることがあります。  
-  
- "順序付けられた" とは、パケットが送信順に配信されることです。"重複しない" とは、特定のパケットが一度だけ配信されることです。  
+ Many network software vendors support Windows Sockets under network protocols including Transmission Control Protocol/Internet Protocol (TCP/IP), Xerox Network System (XNS), Digital Equipment Corporation's DECNet protocol, Novell Corporation's Internet Packet Exchange/Sequenced Packed Exchange (IPX/SPX), and others. Although the present Windows Sockets specification defines the sockets abstraction for TCP/IP, any network protocol can comply with Windows Sockets by supplying its own version of the dynamic-link library (DLL) that implements Windows Sockets. Examples of commercial applications written with Windows Sockets include X Windows servers, terminal emulators, and electronic mail systems.  
   
 > [!NOTE]
->  XNS などの一部のネットワーク プロトコルでは、ストリームをバイトのストリームではなく、レコードのストリームにできます。  ただし、もっと一般的な TCP\/IP プロトコルでは、ストリームはバイト ストリームです。  Windows ソケットは、基になるプロトコルに依存しない抽象化レベルを提供します。  
+>  The purpose of Windows Sockets is to abstract away the underlying network so that you do not have to be knowledgeable about that network and so your application can run on any network that supports sockets. Consequently, this documentation does not discuss the details of network protocols.  
   
- これらの種類、および状況に応じたソケットの使い分けについては、「[Windows ソケット: ストリーム ソケット](../mfc/windows-sockets-stream-sockets.md)」と「[Windows ソケット: データグラム ソケット](../mfc/windows-sockets-datagram-sockets.md)」を参照してください。  
+ The Microsoft Foundation Class Library (MFC) supports programming with the Windows Sockets API by supplying two classes. One of these classes, `CSocket`, provides a high level of abstraction to simplify your network communications programming.  
   
-##  <a name="_core_the_socket_data_type"></a> SOCKET データ型  
- 各 MFC ソケット オブジェクトは、Windows ソケット オブジェクトへのハンドルをカプセル化します。  このハンドルのデータ型は **SOCKET** です。  **SOCKET** ハンドルは、ウィンドウの `HWND` に似ています。  MFC ソケット クラスは、カプセル化されたハンドルでの操作を提供します。  
-  
- **SOCKET** データ型については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] で詳しく説明されています。  「Windows Sockets \(Windows ソケット\)」の「Socket Data Type and Error Values \(ソケット データ型とエラー値\)」を参照してください。  
-  
-##  <a name="_core_uses_for_sockets"></a> ソケットの使用  
- ソケットは、少なくとも次の 3 つの通信コンテキストで非常に有用です。  
-  
--   クライアント\/サーバー モデル。  
-  
--   ピアツーピア シナリオ \(メッセージング アプリケーションなど\)。  
-  
--   リモート プロシージャ コール \(RPC\)。受信側アプリケーションにメッセージを関数呼び出しとして解釈させます。  
+ The Windows Sockets specification, Windows Sockets: An Open Interface for Network Computing Under Microsoft Windows, now at version 1.1, was developed as an open networking standard by a large group of individuals and corporations in the TCP/IP community and is freely available for use. The sockets programming model supports one "communication domain" currently, using the Internet Protocol Suite. The specification is available in the Windows SDK.  
   
 > [!TIP]
->  MFC ソケットの理想的な使用状況は、通信の両端を自分で作成し、両端で MFC を使用する場合です。  非 MFC アプリケーションとの通信時の管理方法など、このトピックの詳細については、「[Windows ソケット: バイトの順序付け](../mfc/windows-sockets-byte-ordering.md)」を参照してください。  
+>  Because sockets use the Internet Protocol Suite, they are the preferred route for applications that support Internet communications on the "information highway."  
   
- 詳細については、Windows ソケット仕様の **ntohs**、**ntohl**、**htons**、**htonl** を参照してください。  次のトピックも参照してください。  
+##  <a name="_core_definition_of_a_socket"></a> Definition of a Socket  
+ A socket is a communication endpoint — an object through which a Windows Sockets application sends or receives packets of data across a network. A socket has a type and is associated with a running process, and it may have a name. Currently, sockets generally exchange data only with other sockets in the same "communication domain," which uses the Internet Protocol Suite.  
   
--   [Windows ソケット: アーカイブ付きソケットの使用](../mfc/windows-sockets-using-sockets-with-archives.md)  
+ Both kinds of sockets are bidirectional; they are data flows that can be communicated in both directions simultaneously (full-duplex).  
   
--   [Windows ソケット: アーカイブを使用するソケットの例](../mfc/windows-sockets-example-of-sockets-using-archives.md)  
+ Two socket types are available:  
   
--   [Windows ソケット: CAsyncSocket クラスの使い方](../mfc/windows-sockets-using-class-casyncsocket.md)  
+-   Stream sockets  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
+     Stream sockets provide for a data flow without record boundaries: a stream of bytes. Streams are guaranteed to be delivered and to be correctly sequenced and unduplicated.  
+  
+-   Datagram sockets  
+  
+     Datagram sockets support a record-oriented data flow that is not guaranteed to be delivered and may not be sequenced as sent or unduplicated.  
+  
+ "Sequenced" means that packets are delivered in the order sent. "Unduplicated" means that you get a particular packet only once.  
+  
+> [!NOTE]
+>  Under some network protocols, such as XNS, streams can be record oriented, as streams of records rather than streams of bytes. Under the more common TCP/IP protocol, however, streams are byte streams. Windows Sockets provides a level of abstraction independent of the underlying protocol.  
+  
+ For information about these types and which kind of socket to use in which situations, see [Windows Sockets: Stream Sockets](../mfc/windows-sockets-stream-sockets.md) and [Windows Sockets: Datagram Sockets](../mfc/windows-sockets-datagram-sockets.md).  
+  
+##  <a name="_core_the_socket_data_type"></a> The SOCKET Data Type  
+ Each MFC socket object encapsulates a handle to a Windows Sockets object. The data type of this handle is **SOCKET**. A **SOCKET** handle is analogous to the `HWND` for a window. MFC socket classes provide operations on the encapsulated handle.  
+  
+ The **SOCKET** data type is described in detail in the Windows SDK. See "Socket Data Type and Error Values" under Windows Sockets.  
+  
+##  <a name="_core_uses_for_sockets"></a> Uses for Sockets  
+ Sockets are highly useful in at least three communications contexts:  
+  
+-   Client/server models.  
+  
+-   Peer-to-peer scenarios, such as messaging applications.  
+  
+-   Making remote procedure calls (RPC) by having the receiving application interpret a message as a function call.  
+  
+> [!TIP]
+>  The ideal case for using MFC sockets is when you are writing both ends of the communication: using MFC at both ends. For more information on this topic, including how to manage the case when you're communicating with non-MFC applications, see [Windows Sockets: Byte Ordering](../mfc/windows-sockets-byte-ordering.md).  
+  
+ For more information, see Windows Sockets Specification: **ntohs**, **ntohl**, **htons**, **htonl**. Also, see the following topics:  
+  
+-   [Windows Sockets: Using Sockets with Archives](../mfc/windows-sockets-using-sockets-with-archives.md)  
+  
+-   [Windows Sockets: Example of Sockets Using Archives](../mfc/windows-sockets-example-of-sockets-using-archives.md)  
+  
+-   [Windows Sockets: Using Class CAsyncSocket](../mfc/windows-sockets-using-class-casyncsocket.md)  
+  
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)
+
+

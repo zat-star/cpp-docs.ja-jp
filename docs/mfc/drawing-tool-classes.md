@@ -1,53 +1,72 @@
 ---
-title: "描画ツール クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.drawing"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "描画, ツール クラス"
-  - "出力クラス"
-  - "画面出力クラス"
+title: Drawing Tool Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.drawing
+dev_langs:
+- C++
+helpviewer_keywords:
+- drawing [MFC], tool classes
+- screen output classes [MFC]
+- output classes [MFC]
 ms.assetid: e907bd89-38b5-47c9-b76a-95e0bf3bb41d
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 描画ツール クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1d7b9378bacf343d02d204a679afc7295792c6d8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのクラスは、デバイス コンテキストの描画に使用される描画ツールをカプセル化します。  
+---
+# <a name="drawing-tool-classes"></a>Drawing Tool Classes
+These classes encapsulate drawing tools that are used to draw on a device context.  
   
  [CGdiObject](../mfc/reference/cgdiobject-class.md)  
- GDI 描画ツールの基本クラスです。  
+ The base class for GDI drawing tools.  
   
  [CBrush](../mfc/reference/cbrush-class.md)  
- デバイス コンテキストの現在のブラシとして選択できる GDI のブラシをカプセル化します。  ブラシで描画オブジェクトの内部を塗りつぶすために使用されます。  
+ Encapsulates a GDI brush that can be selected as the current brush in a device context. Brushes are used for filling interiors of objects being drawn.  
   
- [CPen](../Topic/CPen%20Class.md)  
- デバイス コンテキストの現在のペンとして選択できる GDI のペンをカプセル化します。  ペンはオブジェクトの境界線を描画するために使用されます。  
+ [CPen](../mfc/reference/cpen-class.md)  
+ Encapsulates a GDI pen that can be selected as the current pen in a device context. Pens are used for drawing the border lines of objects.  
   
  [CFont](../mfc/reference/cfont-class.md)  
- デバイス コンテキストの現在のフォントとして選択できる GDI フォントをカプセル化します。  
+ Encapsulates a GDI font that can be selected as the current font in a device context.  
   
  [CBitmap](../mfc/reference/cbitmap-class.md)  
- 処理のビットマップのインターフェイスを提供する GDI のビットマップをカプセル化します。  
+ Encapsulates a GDI bitmap, providing an interface for manipulating bitmaps.  
   
  [CPalette](../mfc/reference/cpalette-class.md)  
- 表示など、アプリケーションと色の出力デバイス間のインターフェイスとして使用するために、GDI のカラー パレットをカプセル化します。  
+ Encapsulates a GDI color palette for use as an interface between the application and a color output device such as a display.  
   
  [CRectTracker](../mfc/reference/crecttracker-class.md)  
- 表示と Handles 四角形オブジェクトのサイズを変更し、移動するユーザー インターフェイス。  
+ Displays and handles the user interface for resizing and moving rectangular objects.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

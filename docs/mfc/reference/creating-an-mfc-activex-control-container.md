@@ -1,47 +1,66 @@
 ---
-title: "MFC ActiveX コントロール コンテナーの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.activex.container"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール コンテナー [C++], 作成"
-  - "コンテナー [C++], 作成"
-  - "MFC ActiveX コントロール [C++], コンテナー"
-  - "OLE コントロール [C++], コンテナー"
+title: Creating an MFC ActiveX Control Container | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.appwiz.activex.container
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], containers
+- ActiveX control containers [MFC], creating
+- containers [MFC], creating
+- OLE controls [MFC], containers
 ms.assetid: ec70e137-7c14-4940-bd0e-fd4edcc63ea5
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# MFC ActiveX コントロール コンテナーの作成
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9bfc976963c759b540fc104fbddceebcc8747375
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロール コンテナーは、ActiveX \(以前の OLE\) コントロールが動作する環境を提供する親プログラムです。  ActiveX コントロールを含むアプリケーションは MFC を使用しなくても作成できますが、MFC を使用した方が簡単です。  
+---
+# <a name="creating-an-mfc-activex-control-container"></a>Creating an MFC ActiveX Control Container
+An ActiveX control container is a parent program that supplies the environment for an ActiveX (formerly OLE) control to run. You can create an application capable of containing ActiveX controls with or without MFC, but it is much easier to do with MFC.  
   
- [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)を使用して MFC コンテナー プログラムを作成すると、MFC と ActiveX のクラスによって実装された ActiveX コントロールとオートメーションの多数の機能にアクセスできます。  これらの機能には、ビジュアル編集、オートメーション、複合ファイルの作成、コントロールのサポートなどがあります。  親プログラムがサポートする MFC アプリケーション ウィザードのビジュアル編集オプションには、コンテナー、ミニ サーバー、フル サーバー、コンテナーとサーバーの両方を兼ねるプログラムの作成などがあります。  
+ Creating an MFC container program using the [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md) allows you to access the many features of ActiveX controls and Automation that are implemented by the MFC and ActiveX classes. These features include visual editing, Automation, creating compound files, and support for controls. The MFC Application Wizard visual editing options that your parent program will support include creating a container, a mini-server, a full-server, and a program that is both a container and a server.  
   
--   新しい MFC アプリケーション。  オートメーション、ビジュアル編集、複合ファイル、またはコントロール サポートを含む MFC プログラムを新規作成するには、MFC アプリケーション ウィザードを使用して、適切なオートメーション オプションを選択します。  
+-   **New MFC Application**. To create a new MFC program that includes Automation, visual editing, compound files, or control support, use the MFC Application Wizard and choose the appropriate Automation options.  
   
--   既存の MFC アプリケーション。  既存の MFC アプリケーションにコントロール コンテインメントを追加する場合は、「[ActiveX コントロール コンテナー : ActiveX コントロール サポートの手動による有効化](../Topic/ActiveX%20Control%20Containers:%20Manually%20Enabling%20ActiveX%20Control%20Containment.md)」を参照してください。  
+-   **Existing MFC Application**. If you are adding control containment to an existing MFC application, see [OLE Control Containers: Manually Enabling OLE Control Containment](../../mfc/activex-control-containers-manually-enabling-activex-control-containment.md).  
   
-### ActiveX コンテナーは、以下のアプリケーションに対して作成できます。  
+### <a name="to-create-an-activex-container-for-any-of-the-following-types-of-applications"></a>To create an ActiveX container for any of the following types of applications  
   
-1.  [コンテナー](../../mfc/containers.md)  
+1.  [Containers](../../mfc/containers.md)  
   
-2.  [ビジュアル編集](../../mfc/ole-mfc.md)  
+2.  [Visual editing](../../mfc/ole-mfc.md)  
   
-3.  [MFC ActiveX コントロール](../../mfc/mfc-activex-controls.md)  
+3.  [MFC ActiveX controls](../../mfc/mfc-activex-controls.md)  
   
-## 参照  
- [Visual C\+\+ プロジェクトの種類](../../ide/visual-cpp-project-types.md)
+## <a name="see-also"></a>See Also  
+ [Visual C++ Project Types](../../ide/visual-cpp-project-types.md)
+
+

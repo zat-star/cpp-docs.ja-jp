@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: COccManager Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,10 +26,18 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- custom controls [MFC], sites
-- COccManager class
-- CNoTrackObject class
-- ActiveX control containers [C++], control site
+- COccManager [MFC], CreateContainer
+- COccManager [MFC], CreateDlgControls
+- COccManager [MFC], CreateSite
+- COccManager [MFC], GetDefBtnCode
+- COccManager [MFC], IsDialogMessage
+- COccManager [MFC], IsLabelControl
+- COccManager [MFC], IsMatchingMnemonic
+- COccManager [MFC], OnEvent
+- COccManager [MFC], PostCreateDialog
+- COccManager [MFC], PreCreateDialog
+- COccManager [MFC], SetDefaultButton
+- COccManager [MFC], SplitDialogTemplate
 ms.assetid: 7d47aeed-d1ab-48e3-b4cf-d429718e370a
 caps.latest.revision: 20
 author: mikeblome
@@ -49,72 +57,71 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 14a75c491a7061d921d6c0c250c6224f4e7d2f04
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bdb6d322e821527fb41ed3e6777dcdac240e5e74
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coccmanager-class"></a>関数のクラス
-`COleControlContainer` オブジェクトと `COleControlSite` オブジェクトによって実装されるさまざまなカスタム コントロール サイトを管理します。  
+# <a name="coccmanager-class"></a>COccManager Class
+Manages various custom control sites; implemented by `COleControlContainer` and `COleControlSite` objects.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COccManager : public CNoTrackObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COccManager::CreateContainer](#createcontainer)|作成、 **COleContainer**オブジェクトです。|  
-|[COccManager::CreateDlgControls](#createdlgcontrols)|関連付けられたによってホストされている ActiveX コントロールを作成`COleContainer`オブジェクトです。|  
-|[COccManager::CreateSite](#createsite)|
-          `COleClientSite` オブジェクトを作成します。|  
-|[COccManager::GetDefBtnCode](#getdefbtncode)|既定のボタンのコードを取得します。|  
-|[COccManager::IsDialogMessage](#isdialogmessage)|ダイアログ メッセージの対象を決定します。|  
-|[COccManager::IsLabelControl](#islabelcontrol)|指定したコントロールがラベル コントロールであるかどうかを判断します。|  
-|[COccManager::IsMatchingMnemonic](#ismatchingmnemonic)|現在のニーモニックに指定されたコントロールのニーモニックと一致するかどうかを判断します。|  
-|[COccManager::OnEvent](#onevent)|指定したイベントを処理しようとします。|  
-|[COccManager::PostCreateDialog](#postcreatedialog)|ダイアログの作成時に割り当てられているリソースを解放します。|  
-|[COccManager::PreCreateDialog](#precreatedialog)|ActiveX コントロールのダイアログ テンプレートを処理します。|  
-|[COccManager::SetDefaultButton](#setdefaultbutton)|指定したコントロールの既定の状態を切り替えます。|  
-|[COccManager::SplitDialogTemplate](#splitdialogtemplate)|指定したダイアログ テンプレートでコモン コントロールから、既存の ActiveX コントロールを分離します。|  
+|[COccManager::CreateContainer](#createcontainer)|Creates a **COleContainer** object.|  
+|[COccManager::CreateDlgControls](#createdlgcontrols)|Creates ActiveX controls, hosted by the associated `COleContainer` object.|  
+|[COccManager::CreateSite](#createsite)|Creates a `COleClientSite` object.|  
+|[COccManager::GetDefBtnCode](#getdefbtncode)|Retrieves the code of the default button.|  
+|[COccManager::IsDialogMessage](#isdialogmessage)|Determines the target of a dialog message.|  
+|[COccManager::IsLabelControl](#islabelcontrol)|Determines if the specified control is a label control.|  
+|[COccManager::IsMatchingMnemonic](#ismatchingmnemonic)|Determines if the current mnemonic matches the mnemonic of the specified control.|  
+|[COccManager::OnEvent](#onevent)|Attempts to handle the specified event.|  
+|[COccManager::PostCreateDialog](#postcreatedialog)|Frees resources allocated during dialog creation.|  
+|[COccManager::PreCreateDialog](#precreatedialog)|Processes a dialog template for ActiveX controls.|  
+|[COccManager::SetDefaultButton](#setdefaultbutton)|Toggles the default state of the specified control.|  
+|[COccManager::SplitDialogTemplate](#splitdialogtemplate)|Separates any existing ActiveX controls from common controls in the specified dialog template.|  
   
-## <a name="remarks"></a>コメント  
- 基本クラス**ラップ**、文書化されていない基本クラス (AFXTLS にあります。H)。 MFC フレームワークによっては、使用するために設計されたから派生したクラス、**ラップ**クラスは、メモリ リークの検出から除外されます。 直接派生させることはお勧めできません**ラップ**します。  
+## <a name="remarks"></a>Remarks  
+ The base class, **CNoTrackObject**, is an undocumented base class (located in AFXTLS.H). Designed for use by the MFC framework, classes derived from the **CNoTrackObject** class are exempt from memory leak detection. It is not recommended that you derive directly from **CNoTrackObject**.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CNoTrackObject`  
   
  `COccManager`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxocc.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxocc.h  
   
-##  <a name="createcontainer"></a>COccManager::CreateContainer  
- コントロールのコンテナーを作成するために、フレームワークによって呼び出されます。  
+##  <a name="createcontainer"></a>  COccManager::CreateContainer  
+ Called by the framework to create a control container.  
   
 ```  
 virtual COleControlContainer* CreateContainer(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カスタムのサイト コンテナーに関連付けられたウィンドウ オブジェクトへのポインター。  
+ A pointer to the window object associated with the custom site container.  
   
-### <a name="return-value"></a>戻り値  
- 新しく作成したコンテナーへのポインターそれ以外の場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the newly created container; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- カスタムのサイトの作成の詳細については、次を参照してください。 [COleControlContainer::AttachControlSite](../../mfc/reference/colecontrolcontainer-class.md#attachcontrolsite)します。  
+### <a name="remarks"></a>Remarks  
+ For more information on creating custom sites, see [COleControlContainer::AttachControlSite](../../mfc/reference/colecontrolcontainer-class.md#attachcontrolsite).  
   
-##  <a name="createdlgcontrols"></a>COccManager::CreateDlgControls  
- 指定された ActiveX コントロールを作成するには、この関数を呼び出して、`pOccDialogInfo`パラメーター。  
+##  <a name="createdlgcontrols"></a>  COccManager::CreateDlgControls  
+ Call this function to create ActiveX controls specified by the `pOccDialogInfo` parameter.  
   
 ```  
 virtual BOOL CreateDlgControls(
@@ -129,63 +136,63 @@ virtual BOOL CreateDlgControls(
     _AFX_OCC_DIALOG_INFO* pOccDialogInfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pWndParent*  
- ダイアログ オブジェクトの親へのポインター。  
+ A pointer to the parent of the dialog object.  
   
  `lpszResourceName`  
- 作成されるリソースの名前。  
+ The name of the resource being created.  
   
  `pOccDialogInfo`  
- ダイアログ オブジェクトの作成に使用するダイアログ テンプレートへのポインター。  
+ A pointer to the dialog template used to create the dialog object.  
   
  `lpResource`  
- リソースへのポインター。  
+ A pointer to a resource.  
   
-### <a name="return-value"></a>戻り値  
- コントロールが正常に作成された場合は&0; 以外それ以外の場合&0; を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control was created successfully; otherwise zero.  
   
-##  <a name="createsite"></a>COccManager::CreateSite  
- コントロール サイトを指すコンテナーにホストを作成するためのフレームワークと呼ばれる`pCtrlCont`です。  
+##  <a name="createsite"></a>  COccManager::CreateSite  
+ Called by the framework to create a control site, hosted by the container pointed to by `pCtrlCont`.  
   
 ```  
 virtual COleControlSite* CreateSite(COleControlContainer* pCtrlCont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCtrlCont`  
- 新しいコントロール サイトをホストするコントロールのコンテナーへのポインター。  
+ A pointer to the control container hosting the new control site.  
   
-### <a name="return-value"></a>戻り値  
- 新しく作成されたコントロール サイトへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the newly created control site.  
   
-### <a name="remarks"></a>コメント  
- カスタム コントロールを作成するには、この関数をオーバーライドして、サイト、[メンバー](../../mfc/reference/colecontrolsite-class.md)-クラスを派生します。  
+### <a name="remarks"></a>Remarks  
+ Override this function to create a custom control site, using your [COleControlSite](../../mfc/reference/colecontrolsite-class.md)-derived class.  
   
- 各コントロールのコンテナーには、複数のサイトをホストできます。 複数の呼び出しで追加のサイトを作成`CreateSite`します。  
+ Each control container can host multiple sites. Create additional sites with multiple calls to `CreateSite`.  
   
-##  <a name="getdefbtncode"></a>COccManager::GetDefBtnCode  
- この関数では、コントロールが既定のプッシュ ボタンかどうかを決定します。  
+##  <a name="getdefbtncode"></a>  COccManager::GetDefBtnCode  
+ Call this function to determine if the control is a default push button.  
   
 ```  
 static DWORD AFX_CDECL GetDefBtnCode(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- ボタン コントロールを含むウィンドウのオブジェクト。  
+ The window object containing the button control.  
   
-### <a name="return-value"></a>戻り値  
- 次のいずれかの値です。  
+### <a name="return-value"></a>Return Value  
+ One of the following values:  
   
-- **DLGC_DEFPUSHBUTTON**コントロールがダイアログ ボックスの既定のボタンです。  
+- **DLGC_DEFPUSHBUTTON** Control is the default button in the dialog.  
   
-- **DLGC_UNDEFPUSHBUTTON**コントロールがダイアログ ボックスの既定のボタンではありません。  
+- **DLGC_UNDEFPUSHBUTTON** Control is not the default button in the dialog.  
   
-- **0**コントロールがボタンではありません。  
+- **0** Control is not a button.  
   
-##  <a name="isdialogmessage"></a>COccManager::IsDialogMessage  
- メッセージが、指定のダイアログ ボックスにしてである場合は、メッセージを処理するかどうかを調べるためにフレームワークによって呼び出されます。  
+##  <a name="isdialogmessage"></a>  COccManager::IsDialogMessage  
+ Called by the framework to determine whether a message is intended for the specified dialog box and, if it is, processes the message.  
   
 ```  
 virtual BOOL IsDialogMessage(
@@ -193,41 +200,41 @@ virtual BOOL IsDialogMessage(
     LPMSG lpMsg);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pWndDlg*  
- メッセージの対象となるダイアログへのポインター。  
+ A pointer to the intended target dialog of the message.  
   
  `lpMsg`  
- ポインター、`MSG`確認するメッセージを格納する構造体。  
+ A pointer to an `MSG` structure that contains the message to be checked.  
   
-### <a name="return-value"></a>戻り値  
- メッセージが処理された場合は&0; 以外。それ以外の場合&0; を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the message is processed; otherwise zero.  
   
-### <a name="remarks"></a>コメント  
- 既定の動作`IsDialogMessage`キーボード メッセージを確認し、対応するダイアログ ボックスの選択内容に変換します。 たとえば、TAB キーを押すと、次のコントロールまたはコントロールのグループを選択します。  
+### <a name="remarks"></a>Remarks  
+ The default behavior of `IsDialogMessage` is to check for keyboard messages and convert them into selections for the corresponding dialog box. For example, the TAB key, when pressed, selects the next control or group of controls.  
   
- 指定したダイアログ ボックスに送信されるメッセージのカスタム動作を提供するには、この関数をオーバーライドします。  
+ Override this function to provide custom behavior for messages sent to the specified dialog.  
   
-##  <a name="islabelcontrol"></a>COccManager::IsLabelControl  
- この関数では、指定したコントロールがラベル コントロールかどうかを決定します。  
+##  <a name="islabelcontrol"></a>  COccManager::IsLabelControl  
+ Call this function to determine if the specified control is a label control.  
   
 ```  
 static BOOL AFX_CDECL IsLabelControl(CWnd* pWnd);  
 static BOOL AFX_CDECL IsLabelControl(COleControlSiteOrWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- コントロールを含むウィンドウへのポインター。  
+ A pointer to the window containing the control.  
   
-### <a name="return-value"></a>戻り値  
- コントロールがラベルである場合は&0; 以外。それ以外の場合&0;  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control is a label; otherwise zero  
   
-### <a name="remarks"></a>コメント  
- ラベル コントロールは、任意のコントロールは、順序の次のラベルのように機能する&1; つです。  
+### <a name="remarks"></a>Remarks  
+ A label control is one that acts like a label for whatever control is next in the ordering.  
   
-##  <a name="ismatchingmnemonic"></a>COccManager::IsMatchingMnemonic  
- 現在のニーモニックがコントロールによって表されると一致するかどうかを判断するには、この関数を呼び出します。  
+##  <a name="ismatchingmnemonic"></a>  COccManager::IsMatchingMnemonic  
+ Call this function to determine if the current mnemonic matches that represented by the control.  
   
 ```  
 static BOOL AFX_CDECL IsMatchingMnemonic(
@@ -240,20 +247,20 @@ static BOOL AFX_CDECL IsMatchingMnemonic(
     LPMSG lpMsg);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- コントロールを含むウィンドウへのポインター。  
+ A pointer to the window containing the control.  
   
  `lpMsg`  
- 一致するようにニーモニックを含むメッセージへのポインター。  
+ A pointer to the message containing the mnemonic to match.  
   
-### <a name="return-value"></a>戻り値  
- ニーモニック コントロールに一致する場合は&0; 以外。それ以外の場合&0;  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the mnemonic matches the control; otherwise zero  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onevent"></a>COccManager::OnEvent  
- 指定したイベントを処理するためにフレームワークによって呼び出されます。  
+##  <a name="onevent"></a>  COccManager::OnEvent  
+ Called by the framework to handle the specified event.  
   
 ```  
 virtual BOOL OnEvent(
@@ -263,27 +270,27 @@ virtual BOOL OnEvent(
     AFX_CMDHANDLERINFO* pHandlerInfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pCmdTarget*  
- ポインター、`CCmdTarget`オブジェクト、イベントを処理しようとしています。  
+ A pointer to the `CCmdTarget` object attempting to handle the event  
   
  `idCtrl`  
- コントロールのリソース ID です。  
+ The resource ID of the control.  
   
  `pEvent`  
- 処理されるイベントです。  
+ The event being handled.  
   
  `pHandlerInfo`  
- かどうか**NULL**、`OnEvent`を入力、 **pTarget**と**pmf**のメンバー、 **AFX_CMDHANDLERINFO**ディスパッチ コマンドではなく構造体。 通常、このパラメーターに指定する必要があります**NULL**します。  
+ If not **NULL**, `OnEvent` fills in the **pTarget** and **pmf** members of the **AFX_CMDHANDLERINFO** structure instead of dispatching the command. Typically, this parameter should be **NULL**.  
   
-### <a name="return-value"></a>戻り値  
- イベントが処理された場合、それ以外の場合&0;&0; 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the event was handled, otherwise zero.  
   
-### <a name="remarks"></a>コメント  
- イベント処理の既定のプロセスをカスタマイズするには、この関数をオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ Override this function to customize the default event-handling process.  
   
-##  <a name="precreatedialog"></a>COccManager::PreCreateDialog  
- 実際のダイアログ ボックスを作成する前に ActiveX コントロールのダイアログ テンプレートを処理するためにフレームワークによって呼び出されます。  
+##  <a name="precreatedialog"></a>  COccManager::PreCreateDialog  
+ Called by the framework to process a dialog template for ActiveX controls before creating the actual dialog box.  
   
 ```  
 virtual const DLGTEMPLATE* PreCreateDialog(
@@ -291,39 +298,39 @@ virtual const DLGTEMPLATE* PreCreateDialog(
     const DLGTEMPLATE* pOrigTemplate);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pOccDialogInfo`  
- **_AFX_OCC_DIALOG_INFO**ダイアログ テンプレートと、ダイアログによってホストされているすべての ActiveX コントロールに関する情報を含む構造体。  
+ An **_AFX_OCC_DIALOG_INFO** structure containing information on the dialog template and any ActiveX controls hosted by the dialog.  
   
  *pOrigTemplate*  
- ダイアログ ボックスの作成に使用するダイアログ テンプレートへのポインター。  
+ A pointer to the dialog template to be used in creating the dialog box.  
   
-### <a name="return-value"></a>戻り値  
- ダイアログ ボックスを作成するために使用するダイアログ テンプレート構造体へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a dialog template structure used to create the dialog box.  
   
-### <a name="remarks"></a>コメント  
- 既定の動作への呼び出しは、 `SplitDialogTemplate`ActiveX がある場合は、存在制御の決定、および表示されるダイアログ テンプレートを返します。  
+### <a name="remarks"></a>Remarks  
+ The default behavior makes a call to `SplitDialogTemplate`, determining if there are any ActiveX controls present and then returns the resultant dialog template.  
   
- ActiveX コントロールのホスト ダイアログ ボックスを作成するプロセスをカスタマイズするには、この関数をオーバーライドします。  
+ Override this function to customize the process of creating a dialog box hosting ActiveX controls.  
   
-##  <a name="postcreatedialog"></a>COccManager::PostCreateDialog  
- ダイアログ テンプレートに割り当てられたメモリを解放するためにフレームワークによって呼び出されます。  
+##  <a name="postcreatedialog"></a>  COccManager::PostCreateDialog  
+ Called by the framework to free memory allocated for the dialog template.  
   
 ```  
 virtual void PostCreateDialog(_AFX_OCC_DIALOG_INFO* pOccDialogInfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pOccDialogInfo`  
- **_AFX_OCC_DIALOG_INFO**ダイアログ テンプレートと、ダイアログによってホストされているすべての ActiveX コントロールに関する情報を含む構造体。  
+ An **_AFX_OCC_DIALOG_INFO** structure containing information on the dialog template and any ActiveX controls hosted by the dialog.  
   
-### <a name="remarks"></a>コメント  
- このメモリの割り当てへの呼び出しによって`SplitDialogTemplate`、ダイアログ ボックスで、ホストされる ActiveX コントロールに使用されたとします。  
+### <a name="remarks"></a>Remarks  
+ This memory was allocated by a call to `SplitDialogTemplate`, and was used for any hosted ActiveX controls in the dialog box.  
   
- ダイアログ ボックスのオブジェクトで使用されたリソースのクリーンアップのプロセスをカスタマイズするには、この関数をオーバーライドします。  
+ Override this function to customize the process of cleaning up any resources used by the dialog box object.  
   
-##  <a name="setdefaultbutton"></a>COccManager::SetDefaultButton  
- この関数では、既定のボタンとして設定します。  
+##  <a name="setdefaultbutton"></a>  COccManager::SetDefaultButton  
+ Call this function to set the control as the default button.  
   
 ```  
 static void AFX_CDECL SetDefaultButton(
@@ -331,23 +338,23 @@ static void AFX_CDECL SetDefaultButton(
     BOOL bDefault);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- コントロールを含むウィンドウへのポインター。  
+ A pointer to the window containing the control.  
   
  `bDefault`  
- 以外の場合は、コントロールが既定のボタンになる必要があります。それ以外の場合&0; を返します。  
+ Nonzero if the control should become the default button; otherwise zero.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合は&0; 以外を返します。それ以外の場合は&0; を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise zero.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  コントロールが必要、 **OLEMISC_ACTSLIKEBUTTON**ステータス ビットが設定されます。 詳細については**入ります**フラグを参照してください、[入ります](http://msdn.microsoft.com/library/windows/desktop/ms678497)のトピック、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+>  The control must have the **OLEMISC_ACTSLIKEBUTTON** status bit set. For more information on **OLEMISC** flags, see the [OLEMISC](http://msdn.microsoft.com/library/windows/desktop/ms678497) topic in the Windows SDK.  
   
-##  <a name="splitdialogtemplate"></a>COccManager::SplitDialogTemplate  
- コモン ダイアログ コントロールから ActiveX コントロールを分割するためにフレームワークによって呼び出されます。  
+##  <a name="splitdialogtemplate"></a>  COccManager::SplitDialogTemplate  
+ Called by the framework to split the ActiveX controls from common dialog controls.  
   
 ```  
 virtual DLGTEMPLATE* SplitDialogTemplate(
@@ -355,28 +362,28 @@ virtual DLGTEMPLATE* SplitDialogTemplate(
     DLGITEMTEMPLATE** ppOleDlgItems);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTemplate`  
- 確認するダイアログ テンプレートへのポインター。  
+ A pointer to the dialog template to be examined.  
   
  `ppOleDlgItems`  
- ActiveX コントロールでは、ダイアログ ボックスの項目へのポインターのリスト。  
+ A list of pointers to dialog box items that are ActiveX controls.  
   
-### <a name="return-value"></a>戻り値  
- 非 ActiveX コントロールだけを含むダイアログ テンプレートの構造体へのポインター。 ActiveX コントロールも存在しない場合、 **NULL**が返されます。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a dialog template structure containing only non-ActiveX controls. If no ActiveX controls are present, **NULL** is returned.  
   
-### <a name="remarks"></a>コメント  
- すべての ActiveX コントロールが見つかった場合は、テンプレートが分析され、非 ActiveX コントロールだけを含む、新しいテンプレートを作成します。 このプロセス中に見つかったすべての ActiveX コントロールに追加`ppOleDlgItems`します。  
+### <a name="remarks"></a>Remarks  
+ If any ActiveX controls are found, the template is analyzed and a new template, containing only non-ActiveX controls, is created. Any ActiveX controls found during this process are added to `ppOleDlgItems`.  
   
- テンプレートでは、ActiveX コントロールがない場合**NULL**が返される*です。*  
+ If there are no ActiveX controls in the template, **NULL** is returned *.*  
   
 > [!NOTE]
->  新しいテンプレートを解放に割り当てられるメモリ、`PostCreateDialog`関数です。  
+>  Memory allocated for the new template is freed in the `PostCreateDialog` function.  
   
- このプロセスをカスタマイズするには、この関数をオーバーライドします。  
+ Override this function to customize this process.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [メンバー クラス](../../mfc/reference/colecontrolsite-class.md)   
- [メンバー クラス](../../mfc/reference/colecontrolcontainer-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleControlSite Class](../../mfc/reference/colecontrolsite-class.md)   
+ [COleControlContainer Class](../../mfc/reference/colecontrolcontainer-class.md)
 

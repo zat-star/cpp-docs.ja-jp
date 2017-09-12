@@ -1,120 +1,139 @@
 ---
-title: "テクニカル ノート 42: ODBC ドライバーの開発に関する推奨事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.odbc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データベース [C++], ODBC"
-  - "ODBC ドライバー [C++], 書き込み"
-  - "TN042"
+title: 'TN042: ODBC Driver Developer Recommendations | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.odbc
+dev_langs:
+- C++
+helpviewer_keywords:
+- ODBC drivers [MFC], writing
+- databases [MFC], ODBC
+- TN042
 ms.assetid: ecc6b5d9-f480-4582-9e22-8309fe561dad
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# テクニカル ノート 42: ODBC ドライバーの開発に関する推奨事項
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ca7b19b5f6e9c82ebf680f3c1728c21925bf6f34
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn042-odbc-driver-developer-recommendations"></a>TN042: ODBC Driver Developer Recommendations
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、ODBC ドライバー ライターのガイドラインを示します。  このサンプルは、MFC データベース クラスを変更して、さまざまな予期される意味詳細ついて説明します。ODBC の機能の一般的な要件と仮定します。  `CRecordset` の 3 種類のオープン モード \(**forwardOnly**、**スナップショット** と **ダイナセット**\) をサポートする必須ドライバーの機能について説明します。  
+ This note describes guidelines for ODBC driver writers. It outlines general requirements and assumptions of ODBC functionality that the MFC Database classes make, and various expected semantic details. Required driver functionality to support the three `CRecordset` Open modes (**forwardOnly**, **snapshot** and **dynaset**) are described.  
   
-## ODBC カーソル ライブラリ  
- MFC データベース クラスには、多くの場合、ほとんどのレベル 1 の ODBC ドライバーによって提供される機能以外に、ユーザーによる操作を示します。  しかし、ODBC カーソル ライブラリは、データベース クラスとドライバーの間にレイヤーに、自動的にこの追加の多くの機能を提供します。  
+## <a name="odbcs-cursor-library"></a>ODBC's Cursor Library  
+ The MFC Database classes present functionality to the user that in many cases surpasses the functionality provided by most level 1 ODBC drivers. Fortunately, ODBC's Cursor Library will layer itself between the database classes and the driver, and will automatically provide much of this additional functionality.  
   
- たとえば、ほとんどは 1.0 ドライバーへのスクロールをサポートしていません。  カーソル ライブラリはこれを調べ、ドライバーの行をキャッシュし、**SQLExtendedFetch**の FETCH\_PREV の呼び出しで要求されるようにします。  
+ For instance, most 1.0 drivers do not support backward scrolling. The Cursor Library can detect this, and will cache rows from the driver and present them as requested on FETCH_PREV calls in **SQLExtendedFetch**.  
   
- カーソル ライブラリの依存のもう一つの重要な例は位置指定更新です。  ほとんども 1.0 ドライバー位置指定更新はありませんが、カーソル ライブラリは現在のキャッシュされたデータ値に基づいてデータ ソースの対象の行を識別する、またはキャッシュ タイムスタンプ値を生成して UPDATE ステートメント。  
+ Another important example of cursor library dependence is positioned updates. Most 1.0 drivers also do not have positioned updates, but the cursor library will generate update statements which identify a target row on the data source based upon its current cached data values, or a cached timestamp value.  
   
- クラス ライブラリには、複数の行セットを使用しません。  したがって、行セットの 1 を整列するために、**SQLSetPos** のステートメントが常に適用されます。  
+ The class library never makes use of multiple rowsets. Therefore, the few **SQLSetPos** statements are always applied to row 1 of the rowset.  
   
-## CDatabases  
- 各 `CDatabase` は単一の **HDBC**を割り当てます。`CDatabase``ExecuteSQL` 関数を使用すると、**HSTMT** は一時的に割り当てられます。\) したがって、複数の entity\_CODECDatabase が必要な場合は、**HENV** ごとに複数の **HDBC**s をサポートする必要があります。  
+## <a name="cdatabases"></a>CDatabases  
+ Each `CDatabase` allocates a single **HDBC**. (If `CDatabase`'s `ExecuteSQL` function is used, an **HSTMT** is temporarily allocated.) So if multiple `CDatabase`'s are required, multiple **HDBC**s per **HENV** must be supported.  
   
- データベース クラスは、カーソル ライブラリを読み込む必要があります。  これは **SQLSetConnections** の呼び出し **SQL\_ODBC\_CURSORS**、**SQL\_CUR\_USE\_ODBC**に反映されます。  
+ The database classes require the cursor library. This is reflected in a **SQLSetConnections** call **SQL_ODBC_CURSORS**, **SQL_CUR_USE_ODBC**.  
   
- `CDatabase::Open` で**SQLDriverConnect**、**SQL\_DRIVER\_COMPLETE** がデータ ソースへの接続を確立するために使用されます。  
+ **SQLDriverConnect**, **SQL_DRIVER_COMPLETE** is used by `CDatabase::Open` to establish the connection to the data source.  
   
- ドライバーは **SQLGetInfo SQL\_ODBC\_API\_CONFORMANCE** \>\= **SQL\_OAC\_LEVEL1**、**SQLGetInfo SQL\_ODBC\_SQL\_CONFORMANCE** \>\= **SQL\_OSC\_MINIMUM**をサポートする必要があります。  
+ The driver must support **SQLGetInfo SQL_ODBC_API_CONFORMANCE** >= **SQL_OAC_LEVEL1**, **SQLGetInfo SQL_ODBC_SQL_CONFORMANCE** >= **SQL_OSC_MINIMUM**.  
   
- `CDatabase` と依存するレコードセットでサポートされるトランザクションに **SQLGetInfo SQL\_CURSOR\_COMMIT\_BEHAVIOR** と **SQL\_CURSOR\_ROLLBACK\_BEHAVIOR** は **SQL\_CR\_PRESERVE**が必要です。  それ以外の場合は、トランザクションのコントロールを実行すると、無視されます。  
+ In order for transactions to be supported for the `CDatabase` and its dependent recordsets, **SQLGetInfo SQL_CURSOR_COMMIT_BEHAVIOR** and **SQL_CURSOR_ROLLBACK_BEHAVIOR** must have **SQL_CR_PRESERVE**. Otherwise, attempts to perform transaction control will be ignored.  
   
- **SQLGetInfo SQL\_DATA\_SOURCE\_READ\_ONLY** をサポートする必要があります。  これは「Y」が返された場合、更新操作がデータ ソースで実行されません。  
+ **SQLGetInfo SQL_DATA_SOURCE_READ_ONLY** must be supported. If it returns "Y", no update operations will be performed on the data source.  
   
- 開いている `CDatabase` が読み取り専用の場合は、データ ソースをそれぞれ設定しようとすると、**SQLSetConnectOption SQL\_ACCESS\_MODE**、**SQL\_MODE\_READ\_ONLY**でのみ行います。  
+ If the `CDatabase` is opened ReadOnly, an attempt to set the data source read only will be made with **SQLSetConnectOption SQL_ACCESS_MODE**, **SQL_MODE_READ_ONLY**.  
   
- 識別子が引用符を必要とする場合は、この情報は **SQLGetInfo SQL\_IDENTIFIER\_QUOTE\_CHAR** を呼び出してドライバーから返されます。  
+ If identifiers require quoting, this information should be returned from the driver with an **SQLGetInfo SQL_IDENTIFIER_QUOTE_CHAR** call.  
   
- デバッグのために、**SQLGetInfo SQL\_DBMS\_VER** と **SQL\_DBMS\_NAME** はドライバーから取得されます。  
+ For debugging purposes, **SQLGetInfo SQL_DBMS_VER** and **SQL_DBMS_NAME** are retrieved from the driver.  
   
- **SQLSetStmtOption SQL\_QUERY\_TIMEOUT** と **SQL\_ASYNC\_ENABLE** は `CDatabase`**HDBC**なる場合があります。  
+ **SQLSetStmtOption SQL_QUERY_TIMEOUT** and **SQL_ASYNC_ENABLE** may be called on a `CDatabase`'s **HDBC**.  
   
- **SQLError** は 一部またはすべての引数の空白と呼ばれることもあります。  
+ **SQLError** may be called with any or all arguments NULL.  
   
- もちろん、**SQLAllocEnv**、**SQLAllocConnect**、**SQLDisconnect** と **SQLFreeConnect** をサポートする必要があります。  
+ Of course, **SQLAllocEnv**, **SQLAllocConnect**, **SQLDisconnect** and **SQLFreeConnect** must be supported.  
   
-## ExecuteSQL  
- 一時 **HSTMT**を割り当ておよび解放するだけでなく、`ExecuteSQL` は **SQLExecDirect**、**SQLFetch**、**SQLNumResultCol** と `SQLMoreResults`を呼び出します。  **SQLCancel** は **HSTMT**なる場合があります。  
+## <a name="executesql"></a>ExecuteSQL  
+ In addition to allocating and freeing a temporary **HSTMT**, `ExecuteSQL` calls **SQLExecDirect**, **SQLFetch**, **SQLNumResultCol** and `SQLMoreResults`. **SQLCancel** may be called on the **HSTMT**.  
   
-## GetDatabaseName  
- **SQLGetInfo SQL\_DATABASE\_NAME** が呼び出されます。  
+## <a name="getdatabasename"></a>GetDatabaseName  
+ **SQLGetInfo SQL_DATABASE_NAME** will be called.  
   
-## BeginTrans、CommitTrans のロールバック  
- トランザクションの要求が行われた場合**SQLSetConnectOption SQL\_AUTOCOMMIT** と **SQLTransact SQL\_COMMIT**、**SQL\_ROLLBACK** と **SQL\_AUTOCOMMIT** が呼び出されます。  
+## <a name="begintrans-committrans-rollback"></a>BeginTrans, CommitTrans, Rollback  
+ **SQLSetConnectOption SQL_AUTOCOMMIT** and **SQLTransact SQL_COMMIT**, **SQL_ROLLBACK** and **SQL_AUTOCOMMIT** will be called if transaction requests are made.  
   
-## CRecordsets  
- **SQLAllocStmt**、**SQLPrepare**、**SQLExecute** \(**開く** と **再クエリ**の場合\)、**SQLExecDirect** \(更新操作のために、**SQLFreeStmt**\) をサポートする必要があります。  **SQLNumResultCols** と **SQLDescribeCol** は結果セットを複数回呼び出されます。  
+## <a name="crecordsets"></a>CRecordsets  
+ **SQLAllocStmt**, **SQLPrepare**, **SQLExecute** (For **Open** and **Requery**), **SQLExecDirect** (for update operations), **SQLFreeStmt** must be supported. **SQLNumResultCols** and **SQLDescribeCol** will be called on the results set at various times.  
   
- **SQLSetParam** は バインディング パラメーター データと **DATA\_AT\_EXEC** メカニズムで広く使用されています。  
+ **SQLSetParam** is used extensively for binding parameter data and **DATA_AT_EXEC** functionality.  
   
- **SQLBindCol** が ODBC の出力列のデータ ストレージの場所を登録するために広く使用されています。  
+ **SQLBindCol** is used extensively to register output Column data storage locations with ODBC.  
   
- **SQLGetData** の 2 回の呼び出しが **SQL\_LONG\_VARCHAR** と **SQL\_LONG\_VARBINARY** データを取得するために使用されます。  0 の cbMaxValue で、有効な pcbValue で **SQLGetData** を呼び出して、列の値の合計を検索し、最初の呼び出しを試みます。  pcbValue が **SQL\_NO\_TOTAL**を保持すると、例外がスローされます。  それ以外の場合は `HGLOBAL` が割り当てられ、全体的な結果を取得するに **SQLGetData** の他の呼び出しが行われました。  
+ Two **SQLGetData** calls are used to retrieve **SQL_LONG_VARCHAR** and **SQL_LONG_VARBINARY** data. The first call attempts to find the total length of the column value by calling **SQLGetData** with cbMaxValue of 0, but with a valid pcbValue. If pcbValue holds **SQL_NO_TOTAL**, an exception is thrown. Otherwise, an `HGLOBAL` is allocated, and another **SQLGetData** call made to retrieve the entire result.  
   
-## 更新  
- 排他的なロックが要求された場合、**SQLGetInfo SQL\_LOCK\_TYPES** が呼び出されます。  **SQL\_LCK\_EXCLUSIVE** がサポートされていない場合、例外がスローされます。  
+## <a name="updating"></a>Updating  
+ If pessimistic locking is requested, **SQLGetInfo SQL_LOCK_TYPES** will be queried. If **SQL_LCK_EXCLUSIVE** is not supported, an exception will be thrown.  
   
- `CRecordset` を更新すると、**スナップショット** または **ダイナセット** \(秒\) **HSTMT** を割り当てます。  2 番目の **HSTMT**をサポートしないドライバーの場合は、カーソル ライブラリはこの機能をシミュレートします。  ただし、これは、完了まで **HSTMT** の 2 番目の要求を処理する前に、最初の **HSTMT** の現在のクエリを強制する可能性もあります。  
+ Attempts to update a `CRecordset` (**snapshot** or **dynaset**) will cause a second **HSTMT** to be allocated. For drivers that do not support second **HSTMT**, the cursor library will simulate this functionality. Unfortunately, this may sometimes mean forcing the current query on the first **HSTMT** to completion before processing the second **HSTMT**'s request.  
   
- **SQLFreeStmt SQL\_CLOSE** と **SQL\_RESET\_PARAMS** と **SQLGetCursorName** は更新操作時に呼び出されます。  
+ **SQLFreeStmt SQL_CLOSE** and **SQL_RESET_PARAMS** and **SQLGetCursorName** will be called during update operations.  
   
- **outputColumns**に **CLongBinarys** がある場合は、ODBC の **DATA\_AT\_EXEC** の機能をサポートする必要があります。  これは、**SQLExecDirectSQLParamData** と **SQLPutData**から返される **SQL\_NEED\_DATA** が含まれます。  
+ If there are **CLongBinarys** in the **outputColumns**, ODBC's **DATA_AT_EXEC** functionality must be supported. This includes returning **SQL_NEED_DATA** from **SQLExecDirect**, **SQLParamData** and **SQLPutData**.  
   
- **SQLRowCount** は 1 レコードのみ **SQLExecDirect**によって更新されたことを確認する実行の後に呼び出されます。  
+ **SQLRowCount** is called after executing to verify that only 1 record was updated by the **SQLExecDirect**.  
   
-## ForwardOnly のカーソル  
- **SQLFetch** のみ **移動** 操作できます。  **forwardOnly** のカーソルが更新をサポートしないことに注意してください。  
+## <a name="forwardonly-cursors"></a>ForwardOnly Cursors  
+ Only **SQLFetch** is required for the **Move** operations. Note that **forwardOnly** cursors do not support updates.  
   
-## スナップショット カーソル  
- スナップショット機能は **SQLExtendedFetch** サポートが必要です。  上で説明したように、ODBC カーソル ライブラリはドライバーが **SQLExtendedFetch**をいつサポートしない検出し、必要なサポート自体を提供します。  
+## <a name="snapshot-cursors"></a>Snapshot Cursors  
+ Snapshot functionality requires **SQLExtendedFetch** support. As noted above, the ODBC cursor library will detect when a driver does not support **SQLExtendedFetch**, and provide the necessary support itself.  
   
- **SQLGetInfo**、**SQL\_SCROLL\_OPTIONS** は **SQL\_SO\_STATIC**をサポートする必要があります。  
+ **SQLGetInfo**, **SQL_SCROLL_OPTIONS** must support **SQL_SO_STATIC**.  
   
-## ダイナセットのカーソル  
- ダイナセットを開くために必要な最小サポート:を次に示します。  
+## <a name="dynaset-cursors"></a>Dynaset Cursors  
+ Below is the minimum support required to open a dynaset:  
   
- **SQLGetInfo**、**SQL\_ODBC\_VER** は「 \> 01 "を返します。  
+ **SQLGetInfo**, **SQL_ODBC_VER** must return > "01".  
   
- **SQLGetInfo**、**SQL\_SCROLL\_OPTIONS** は **SQL\_SO\_KEYSET\_DRIVEN**をサポートする必要があります。  
+ **SQLGetInfo**, **SQL_SCROLL_OPTIONS** must support **SQL_SO_KEYSET_DRIVEN**.  
   
- **SQLGetInfo**、**SQL\_ROW\_UPDATES** は「Y」を返す必要があります。  
+ **SQLGetInfo**, **SQL_ROW_UPDATES** must return "Y".  
   
- **SQLGetInfo**、**SQL\_POSITIONED\_UPDATES** は **SQL\_PS\_POSITIONED\_DELETE** と **SQL\_PS\_POSITIONED\_UPDATE**をサポートする必要があります。  
+ **SQLGetInfo**, **SQL_POSITIONED_UPDATES** must support **SQL_PS_POSITIONED_DELETE** and **SQL_PS_POSITIONED_UPDATE**.  
   
- また、排他的なロックを要求された場合は false irow 1、および fRefresh 群 **SQL\_LCK\_EXCLUSIVE** で **SQLSetPos** への呼び出しが行われました。  
+ In addition, if pessimistic locking is requested, a call to **SQLSetPos** with irow 1, fRefresh FALSE and fLock **SQL_LCK_EXCLUSIVE** will be made.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

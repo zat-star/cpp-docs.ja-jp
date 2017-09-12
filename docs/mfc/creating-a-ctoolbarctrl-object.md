@@ -1,46 +1,65 @@
 ---
-title: "CToolBarCtrl オブジェクトの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CToolBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolBarCtrl クラス, 作成 (ツール バーを)"
-  - "ツール バー コントロール [MFC], 作成"
+title: Creating a CToolBarCtrl Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CToolBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- toolbar controls [MFC], creating
+- CToolBarCtrl class [MFC], creating toolbars
 ms.assetid: a4f6bf0c-0195-4dbf-a09e-aee503e19dc3
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# CToolBarCtrl オブジェクトの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5041670f733d353220f16d32fa5c56f66ba64904
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) オブジェクト を複数の内部のデータ構造—リスト、および `TBBUTTON` 構造体のボタンのラベルの文字列のボタン イメージのビットマップのリスト—をその関連ボタンの位置、スタイル、状態とコマンド ID を持つイメージや文字列が含まれます。  これらのデータ構造体の各要素は 0 から始まるインデックスで参照されます。  `CToolBarCtrl` オブジェクトを使用する前に、これらのデータ構造を設定する必要があります。  データ構造の一覧については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [ツールバー コントロール](https://msdn.microsoft.com/en-us/library/47xcww9x.aspx) を参照してください。  文字列の一覧にボタンのラベルにのみ使用できません; ツールバーから文字列を取得できません。  
+---
+# <a name="creating-a-ctoolbarctrl-object"></a>Creating a CToolBarCtrl Object
+[CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) objects contain several internal data structures — a list of button image bitmaps, a list of button label strings, and a list of `TBBUTTON` structures — that associate an image and/or string with the position, style, state, and command ID of the button. Each of the elements of these data structures is referred to by a zero-based index. Before you can use a `CToolBarCtrl` object, you must set up these data structures. For a list of the data structures, see [Toolbar Controls](https://msdn.microsoft.com/library/47xcww9x.aspx) in the Windows SDK. The list of strings can only be used for button labels; you cannot retrieve strings from the toolbar.  
   
- `CToolBarCtrl` オブジェクトを使用するには、通常、これらの手順を実行します。:  
+ To use a `CToolBarCtrl` object, you will typically follow these steps:  
   
-### CToolBarCtrl オブジェクトを使用するには  
+### <a name="to-use-a-ctoolbarctrl-object"></a>To use a CToolBarCtrl object  
   
-1.  [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) オブジェクトを構築します。  
+1.  Construct the [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) object.  
   
-2.  Windows ツール バー コモン コントロールを作成し、`CToolBarCtrl` オブジェクトに接続するに [作成](../Topic/CToolBarCtrl::Create.md) を呼び出します。  ボタンのビットマップ イメージが必要な場合は、[AddBitmap](../Topic/CToolBarCtrl::AddBitmap.md)を呼び出して、ツール バーのボタンのビットマップを追加します。  ボタンの文字列ラベルが必要な場合は、[AddString](../Topic/CToolBarCtrl::AddString.md) と [AddStrings](../Topic/CToolBarCtrl::AddStrings.md)を呼び出して、ツール バーに文字列を追加します。  `AddString` と `AddStrings`を呼び出した後、表示する文字列を取得するに [自動サイズ調整](../Topic/CToolBarCtrl::AutoSize.md) を呼び出す必要があります。  
+2.  Call [Create](../mfc/reference/ctoolbarctrl-class.md#create) to create the Windows toolbar common control and attach it to the `CToolBarCtrl` object. If you want bitmap images for buttons, add the button bitmaps to the toolbar by calling [AddBitmap](../mfc/reference/ctoolbarctrl-class.md#addbitmap). If you want string labels for buttons, add the strings to the toolbar by calling [AddString](../mfc/reference/ctoolbarctrl-class.md#addstring) and/or [AddStrings](../mfc/reference/ctoolbarctrl-class.md#addstrings). After calling `AddString` and/or `AddStrings`, you should call [AutoSize](../mfc/reference/ctoolbarctrl-class.md#autosize) in order to get the string or strings to appear.  
   
-3.  [AddButtons](../Topic/CToolBarCtrl::AddButtons.md)を呼び出して、ツール バー ボタンに構造を追加します。  
+3.  Add button structures to the toolbar by calling [AddButtons](../mfc/reference/ctoolbarctrl-class.md#addbuttons).  
   
-4.  ツール ヒントが必要な場合は、[処理のツール ヒントの通知](../mfc/handling-tool-tip-notifications.md)"に説明されているように、ツール バーのオーナー ウィンドウの **TTN\_NEEDTEXT** メッセージを処理してください。  
+4.  If you want tool tips, handle **TTN_NEEDTEXT** messages in the toolbar's owner window as described in [Handling Tool Tip Notifications](../mfc/handling-tool-tip-notifications.md).  
   
-5.  ユーザーがツール バーをカスタマイズできるよう [通知処理のカスタマイズ](../Topic/Handling%20Customization%20Notifications.md)"に説明されているように、オーナー ウィンドウのカスタマイズの通知メッセージを処理してください。  
+5.  If you want your user to be able to customize the toolbar, handle customization notification messages in the owner window as described in [Handling Customization Notifications](../mfc/handling-customization-notifications.md).  
   
-## 参照  
- [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolBarCtrl](../mfc/using-ctoolbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

@@ -1,43 +1,62 @@
 ---
-title: "CStatusBarCtrl オブジェクトのモードの設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CStatusBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBarCtrl クラス, 簡易モードと標準モード"
-  - "IsSimple メソッド, 使用"
-  - "非簡易モード コントロールとステータス バー コントロール"
-  - "SetSimple メソッド"
-  - "簡易モードとステータス バー コントロール"
-  - "ステータス バー コントロール, 簡易モードと標準モード"
+title: Setting the Mode of a CStatusBarCtrl Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CStatusBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- simple mode and status bar controls
+- IsSimple method, using
+- SetSimple method [MFC]
+- status bar controls [MFC], simple and nonsimple modes
+- non-simple mode and status bar controls
+- CStatusBarCtrl class [MFC], simple and nonsimple modes
 ms.assetid: ca6076e5-1501-4e33-8d35-9308941e46c0
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CStatusBarCtrl オブジェクトのモードの設定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: de773e6298a5bb33de9b3b07faa33f57fdbd7132
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CStatusBarCtrl` オブジェクトの 2 の二つのモードがあります。:、nonsimple。  ほとんどの場合には、ステータス バー コントロールにテキストとアイコン、またはアイコンとともに一つ以上の部分があります。  これは nonsimple モードと呼ばれます。  このモードで詳細については、「[CStatusBarCtrl オブジェクトの一部の初期化](../mfc/initializing-the-parts-of-a-cstatusbarctrl-object.md)」を参照してください。  
+---
+# <a name="setting-the-mode-of-a-cstatusbarctrl-object"></a>Setting the Mode of a CStatusBarCtrl Object
+There are two modes for a `CStatusBarCtrl` object: simple and nonsimple. In the majority of cases, your status bar control will have one or more parts, along with text and perhaps an icon or icons. This is called the nonsimple mode. For more information on this mode, see [Initializing the Parts of a CStatusBarCtrl Object](../mfc/initializing-the-parts-of-a-cstatusbarctrl-object.md).  
   
- ただし、ApplicationScopedSettingAttribute、単一行のテキストを表示する必要がある場合もあります。  この場合、簡易モードは必要で十分です。  簡単に `CStatusBarCtrl` オブジェクトのモードを変更するには、[SetSimple](../Topic/CStatusBarCtrl::SetSimple.md) のメンバー関数の呼び出しを作成します。  ステータス バー コントロールは簡易モードの場合、**nPane** パラメーターの値として 255 を渡す **SetText** のメンバー関数を呼び出すことによって、テキストを設定します。  
+ However, there are cases where you only need to display a single line of text. In this case, the simple mode is sufficient for your needs. To change the mode of the `CStatusBarCtrl` object to simple, make a call to the [SetSimple](../mfc/reference/cstatusbarctrl-class.md#setsimple) member function. Once the status bar control is in simple mode, set the text by calling the **SetText** member function, passing 255 as the value for the **nPane** parameter.  
   
- どのモードに `CStatusBarCtrl` オブジェクトがあるかを判断するために [IsSimple](../Topic/CStatusBarCtrl::IsSimple.md) 関数を使用できます。  
+ You can use the [IsSimple](../mfc/reference/cstatusbarctrl-class.md#issimple) function to determine what mode the `CStatusBarCtrl` object is in.  
   
 > [!NOTE]
->  ステータス バー オブジェクトが nonsimple から簡単に、またはその逆に変更すると、ウィンドウは直ちに再描画され、\(該当する場合は、定義した部分が自動的に復元されます。  
+>  If the status bar object is being changed from nonsimple to simple, or vice versa, the window is immediately redrawn and, if applicable, any defined parts are automatically restored.  
   
-## 参照  
- [CStatusBarCtrl の使い方](../mfc/using-cstatusbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

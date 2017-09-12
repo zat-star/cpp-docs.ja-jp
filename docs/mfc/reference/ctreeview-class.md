@@ -1,5 +1,5 @@
 ---
-title: "CTreeView クラス |Microsoft ドキュメント"
+title: CTreeView Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,11 +16,8 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- directory lists
-- tree view controls
-- file lists [C++]
-- CTreeView class, common controls
-- CTreeView class
+- CTreeView [MFC], CTreeView
+- CTreeView [MFC], GetTreeCtrl
 ms.assetid: 5df583a6-d69f-42ca-9d8d-57e04558afff
 caps.latest.revision: 22
 author: mikeblome
@@ -40,40 +37,40 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: c317d91a07b5cb45b58ec4c4af2e9ee0f3b24e28
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d3fa6fe544d012ce15797ecc79f0034eea1bbdd9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="ctreeview-class"></a>CTreeView クラス
-ツリー コントロールとの使用を簡略化[CTreeCtrl](../../mfc/reference/ctreectrl-class.md)MFC のドキュメント/ビュー アーキテクチャのツリー コントロールの機能をカプセル化するクラス。  
+# <a name="ctreeview-class"></a>CTreeView Class
+Simplifies use of the tree control and of [CTreeCtrl](../../mfc/reference/ctreectrl-class.md), the class that encapsulates tree-control functionality, with MFC's document-view architecture.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CTreeView : public CCtrlView  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CTreeView::CTreeView](#ctreeview)|`CTreeView` オブジェクトを構築します。|  
+|[CTreeView::CTreeView](#ctreeview)|Constructs a `CTreeView` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CTreeView::GetTreeCtrl](#gettreectrl)|ビューに関連付けられているツリー コントロールを返します。|  
+|[CTreeView::GetTreeCtrl](#gettreectrl)|Returns the tree control associated with the view.|  
   
-## <a name="remarks"></a>コメント  
- このアーキテクチャの詳細については、の概要を参照してください、 [CView](../../mfc/reference/cview-class.md)クラスとクロス リファレンスがあります。  
+## <a name="remarks"></a>Remarks  
+ For more information on this architecture, see the overview for the [CView](../../mfc/reference/cview-class.md) class and the cross-references cited there.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -86,27 +83,27 @@ class CTreeView : public CCtrlView
   
  `CTreeView`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcview.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcview.h  
   
-##  <a name="ctreeview"></a>CTreeView::CTreeView  
- `CTreeView` オブジェクトを構築します。  
+##  <a name="ctreeview"></a>  CTreeView::CTreeView  
+ Constructs a `CTreeView` object.  
   
 ```  
 CTreeView();
 ```  
   
-##  <a name="gettreectrl"></a>CTreeView::GetTreeCtrl  
- ビューに関連付けられているツリー コントロールへの参照を返します。  
+##  <a name="gettreectrl"></a>  CTreeView::GetTreeCtrl  
+ Returns a reference to the tree control associated with the view.  
   
 ```  
 CTreeCtrl& GetTreeCtrl() const;  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CView クラス](../../mfc/reference/cview-class.md)   
- [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)   
- [CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)
+## <a name="see-also"></a>See Also  
+ [CCtrlView Class](../../mfc/reference/cctrlview-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CView Class](../../mfc/reference/cview-class.md)   
+ [CCtrlView Class](../../mfc/reference/cctrlview-class.md)   
+ [CTreeCtrl Class](../../mfc/reference/ctreectrl-class.md)
 

@@ -1,54 +1,74 @@
 ---
-title: "Windows ソケット : ストリーム ソケット | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ソケット [C++], ストリーム ソケット"
-  - "ストリーム ソケット [C++]"
-  - "Windows ソケット [C++], ストリーム ソケット"
+title: 'Windows Sockets: Stream Sockets | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Windows Sockets [MFC], stream sockets
+- sockets [MFC], stream sockets
+- stream sockets [MFC]
 ms.assetid: 31faaa34-a995-493f-a30b-b8115293d619
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# Windows ソケット : ストリーム ソケット
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 380b2922e253fcbeea84557e8bb15f9c2912e3c3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ストリーム ソケット、使用できる 2 種類の Windows ソケット タイプの 1 について説明します。そのほかの型は [データグラム ソケット](../mfc/windows-sockets-datagram-sockets.md)です\)。  
+---
+# <a name="windows-sockets-stream-sockets"></a>Windows Sockets: Stream Sockets
+This article describes stream sockets, one of the two Windows Socket types available. (The other type is the [datagram socket](../mfc/windows-sockets-datagram-sockets.md).)  
   
- ストリーム ソケットはレコード境界線のないデータ フローを提供し、T: 双方向の場合は、バイトのストリーム \(アプリケーション全二重です: これは、ソケットを通じて送受信できます\)。  連続するストリームは、unduplicated データを提供するために使用できます。パケットの送信順序で渡されること \(「配置する」ことを意味します。「一度だけ特定パケットを Unduplicated」を意味します。メッセージの受信ストリームが保証され、ストリームが大量のデータの処理に適しています。  
+ Stream sockets provide for a data flow without record boundaries: a stream of bytes that can be bidirectional (the application is full duplex: it can both transmit and receive through the socket). Streams can be relied upon to deliver sequenced, unduplicated data. ("Sequenced" means that packets are delivered in the order sent. "Unduplicated" means that you get a particular packet only once.) Receipt of stream messages is guaranteed, and streams are well suited to handling large amounts of data.  
   
- ネットワーク トランスポート層は、適切なサイズでパケットにまたはグループ データ分割する場合があります。  `CSocket` クラスによってパッキングと展開を処理します。  
+ The network transport layer may break up or group data into packets of reasonable size. The `CSocket` class will handle the packing and unpacking for you.  
   
- ストリームは、接続に基づいています: ソケット A によってソケット B への接続を要求します; ソケット接続 B は要求を承認または拒否します。  
+ Streams are based on explicit connections: socket A requests a connection to socket B; socket B accepts or rejects the connection request.  
   
- 電話、ストリームに優れた対比を提供します。  通常の状況で、受取側はそれを知らせると順序で複製を失わずに、理解してリッスンします。  ストリーム ソケットは任意のサイズの ASCII またはバイナリ ファイルを転送しやすくするファイル転送プロトコル \(FTP\) などの実装に適したなどです。  
+ A telephone call provides a good analogy for a stream. Under normal circumstances, the receiving party hears what you say in the order that you say it, without duplication or loss. Stream sockets are appropriate, for example, for implementations such as the File Transfer Protocol (FTP), which facilitates transferring ASCII or binary files of arbitrary size.  
   
- ストリーム ソケットはデータが到着することを保証する必要がある場合、データ サイズが大きい場合にデータグラム ソケットをお勧めします。  ストリーム ソケットに関する詳細については、Windows ソケットの仕様を参照します。  仕様は [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] で入手できます。  
+ Stream sockets are preferable to datagram sockets when the data must be guaranteed to arrive and when data size is large. For more information about stream sockets, see the Windows Sockets specification. The specification is available in the Windows SDK.  
   
- ストリーム ソケットを使用してネットワークのすべての受信によってソケットにブロードキャストにデータグラム ソケットを使用するようにはデザインされているアプリケーションより優れた方法です。  
+ Using stream sockets can be superior to applications designed to use a datagram socket for broadcasting to all receiving sockets on the network because  
   
--   ブロードキャスト モデルはネットワーク洪水 \(「嵐」\) の問題があります。  
+-   The broadcast model is subject to network flood (or "storm") problems.  
   
--   後で導入されたクライアントサーバのモデルの方が効率的です。  
+-   The client-server model adopted subsequently is more efficient.  
   
--   ストリーム モデルはデータグラム モデルが信頼できるデータ転送を提供します。  
+-   The stream model supplies reliable data transfer, where the datagram model does not.  
   
--   最終的なモデルは Unicode の間で通信する機能を利用して、CSocket を分類するために行を分類する ANSI のソケット アプリケーションはたいへん役立ちます。  
+-   The final model takes advantage of the ability to communicate between Unicode and ANSI socket applications that class CArchive lends to class CSocket.  
   
     > [!NOTE]
-    >  `CSocket`クラスを使用すると、ストリームを使用する必要があります。  MFC アサーションは **SOCK\_DGRAM**としてソケット タイプを指定すると失敗します。  
+    >  If you use class `CSocket`, you must use a stream. An MFC assertion fails if you specify the socket type as **SOCK_DGRAM**.  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)   
- [Windows ソケット : 予備知識](../mfc/windows-sockets-background.md)
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)   
+ [Windows Sockets: Background](../mfc/windows-sockets-background.md)
+
+

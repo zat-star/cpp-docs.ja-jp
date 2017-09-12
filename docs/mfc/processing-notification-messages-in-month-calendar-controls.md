@@ -1,43 +1,62 @@
 ---
-title: "月間予定表コントロールでの通知メッセージの処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CMonthCalCtrl クラス, 日付状態"
-  - "CMonthCalCtrl クラス, 通知"
-  - "月間予定表コントロール, 通知メッセージ"
-  - "通知, CMonthCalCtrl の"
-  - "通知, 月間予定表コントロール"
+title: Processing Notification Messages in Month Calendar Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CMonthCalCtrl class [MFC], notifications
+- CMonthCalCtrl class [MFC], day states
+- month calendar controls [MFC], notification messages
+- notifications [MFC], for CMonthCalCtrl
+- notifications [MFC], month calendar control
 ms.assetid: 607c3e90-0756-493b-9503-ce835a50c7ab
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 月間予定表コントロールでの通知メッセージの処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d672052ebd3b98c82d997c0b100e36bcd93731a3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ユーザーが月間予定表コントロールで \(日付を選択し、別の月を表示\) を操作しているときに、コントロール \(`CMonthCalCtrl`\) が親ウィンドウ \(通常はビューまたはダイアログ オブジェクトに通知メッセージを送信します。  応答の操作を実行する場合は、このメッセージを処理してください。  たとえば、ユーザーが別の月を表示するために選択したときに表示される一連の日付を提供できます。  
+---
+# <a name="processing-notification-messages-in-month-calendar-controls"></a>Processing Notification Messages in Month Calendar Controls
+As users interact with the month calendar control (selecting dates and/or viewing a different month), the control (`CMonthCalCtrl`) sends notification messages to its parent window, usually a view or dialog object. Handle these messages if you want to do something in response. For example, when the user selects a new month to view, you could provide a set of dates that should be emphasized.  
   
- これを実装したいメッセージの親クラスに通知ハンドラーを追加するには、プロパティ ウィンドウを使用します。  
+ Use the Properties window to add notification handlers to the parent class for those messages you want to implement.  
   
- 次の一覧は月間予定表コントロールから送信された各種通知について説明します。  
+ The following list describes the various notifications sent by the month calendar control.  
   
--   **MCN\_GETDAYSTATE**は、日付を太字で表示する必要がある情報を要求します。  この通知の処理の詳細については、「[月間予定表コントロールの日の状態の設定](../mfc/setting-the-day-state-of-a-month-calendar-control.md)」を参照してください。  
+-   **MCN_GETDAYSTATE** Requests information about which days should be displayed in bold. For information on handling this notification, see [Setting the Day State of a Month Calendar Control](../mfc/setting-the-day-state-of-a-month-calendar-control.md).  
   
--   **MCN\_SELCHANGE**は特定の日付または日付の範囲が変更されたことを親に通知します。  
+-   **MCN_SELCHANGE** Notifies the parent that the selected date or range of the date has changed.  
   
--   **MCN\_SELECT**は明示日付選択が行われたことを親に通知します。  
+-   **MCN_SELECT** Notifies the parent that an explicit date selection has been made.  
   
-## 参照  
- [CMonthCalCtrl の使い方](../Topic/Using%20CMonthCalCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CMonthCalCtrl](../mfc/using-cmonthcalctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "CAnimationManagerEventHandler クラス |Microsoft ドキュメント"
+title: CAnimationManagerEventHandler Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -18,7 +18,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CAnimationManagerEventHandler class
+- CAnimationManagerEventHandler [MFC], CAnimationManagerEventHandler
+- CAnimationManagerEventHandler [MFC], CreateInstance
+- CAnimationManagerEventHandler [MFC], OnManagerStatusChanged
+- CAnimationManagerEventHandler [MFC], SetAnimationController
 ms.assetid: 6089ec07-e661-4805-b227-823b4652aade
 caps.latest.revision: 18
 author: mikeblome
@@ -38,64 +41,64 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: e62d676c073998718b4df47223d1679b1187d66e
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0d30450abc72a4557a84ac9394fdea413c7175af
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="canimationmanagereventhandler-class"></a>CAnimationManagerEventHandler クラス
-アニメーション マネージャーのステータスの変更時に Animation API によって呼び出されるコールバックを実装します。  
+# <a name="canimationmanagereventhandler-class"></a>CAnimationManagerEventHandler Class
+Implements a callback, which is called by the Animation API when a status of an animation manager is changed.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CAnimationManagerEventHandler : public CUIAnimationManagerEventHandlerBase<CAnimationManagerEventHandler>;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationManagerEventHandler::CAnimationManagerEventHandler](#canimationmanagereventhandler)|`CAnimationManagerEventHandler` オブジェクトを構築します。|  
+|[CAnimationManagerEventHandler::CAnimationManagerEventHandler](#canimationmanagereventhandler)|Constructs a `CAnimationManagerEventHandler` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationManagerEventHandler::CreateInstance](#createinstance)|インスタンスを作成`CAnimationManagerEventHandler`オブジェクトです。|  
-|[CAnimationManagerEventHandler::OnManagerStatusChanged](#onmanagerstatuschanged)|アニメーション マネージャーの状態が変更されたときに呼び出されます。 (`CUIAnimationManagerEventHandlerBase::OnManagerStatusChanged` をオーバーライドします)。|  
-|[CAnimationManagerEventHandler::SetAnimationController](#setanimationcontroller)|イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。|  
+|[CAnimationManagerEventHandler::CreateInstance](#createinstance)|Creates an instance of `CAnimationManagerEventHandler` object.|  
+|[CAnimationManagerEventHandler::OnManagerStatusChanged](#onmanagerstatuschanged)|Called when a status of animation manager has changed. (Overrides `CUIAnimationManagerEventHandlerBase::OnManagerStatusChanged`.)|  
+|[CAnimationManagerEventHandler::SetAnimationController](#setanimationcontroller)|Stores a pointer to animation controller to route events.|  
   
-## <a name="remarks"></a>コメント  
- このイベント ハンドラーが作成され、CAnimationController::EnableAnimationManagerEvent を呼び出すときに、IUIAnimationManager::SetManagerEventHandler メソッドに渡されます。  
+## <a name="remarks"></a>Remarks  
+ This event handler is created and passed to IUIAnimationManager::SetManagerEventHandler method, when you call CAnimationController::EnableAnimationManagerEvent.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CUIAnimationCallbackBase`  
   
  `CUIAnimationManagerEventHandlerBase`  
   
  `CAnimationManagerEventHandler`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxanimationcontroller.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxanimationcontroller.h  
   
-##  <a name="canimationmanagereventhandler"></a>CAnimationManagerEventHandler::CAnimationManagerEventHandler  
+##  <a name="canimationmanagereventhandler"></a>  CAnimationManagerEventHandler::CAnimationManagerEventHandler  
  [!INCLUDE[dev10_sp1required](../../mfc/reference/includes/dev10_sp1required_md.md)]  
   
- CAnimationManagerEventHandler のオブジェクトを構築します。  
+ Constructs a CAnimationManagerEventHandler object.  
   
 ```  
 CAnimationManagerEventHandler();
 ```  
   
-##  <a name="createinstance"></a>CAnimationManagerEventHandler::CreateInstance  
+##  <a name="createinstance"></a>  CAnimationManagerEventHandler::CreateInstance  
  [!INCLUDE[dev10_sp1required](../../mfc/reference/includes/dev10_sp1required_md.md)]  
   
- CAnimationManagerEventHandler のオブジェクトのインスタンスを作成します。  
+ Creates an instance of CAnimationManagerEventHandler object.  
   
 ```  
 static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
@@ -103,20 +106,20 @@ static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
     IUIAnimationManagerEventHandler** ppManagerEventHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pAnimationController`  
- イベントを受信するアニメーション コント ローラーへのポインター。  
+ A pointer to animation controller, which will receive events.  
   
  `ppManagerEventHandler`  
- 出力します。 メソッドが成功した場合に、アニメーション マネージャーにステータスの更新を処理する COM オブジェクトへのポインターが含まれています。  
+ Output. If the method succeeds it contains a pointer to COM object that will handle status updates to an animation manager.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="onmanagerstatuschanged"></a>CAnimationManagerEventHandler::OnManagerStatusChanged  
+##  <a name="onmanagerstatuschanged"></a>  CAnimationManagerEventHandler::OnManagerStatusChanged  
  [!INCLUDE[dev10_sp1required](../../mfc/reference/includes/dev10_sp1required_md.md)]  
   
- アニメーション マネージャーの状態が変更されたときに呼び出されます。  
+ Called when a status of animation manager has changed.  
   
 ```  
 IFACEMETHOD(OnManagerStatusChanged)(
@@ -124,29 +127,29 @@ IFACEMETHOD(OnManagerStatusChanged)(
   UI_ANIMATION_MANAGER_STATUS previousStatus);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `newStatus`  
- 新しい状態です。  
+ New status.  
   
  `previousStatus`  
- 前の状態です。  
+ Previous status.  
   
-### <a name="return-value"></a>戻り値  
- 現在の実装は常に S_OK を返します。  
+### <a name="return-value"></a>Return Value  
+ Current implementation always returns S_OK;  
   
-##  <a name="setanimationcontroller"></a>CAnimationManagerEventHandler::SetAnimationController  
+##  <a name="setanimationcontroller"></a>  CAnimationManagerEventHandler::SetAnimationController  
  [!INCLUDE[dev10_sp1required](../../mfc/reference/includes/dev10_sp1required_md.md)]  
   
- イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。  
+ Stores a pointer to animation controller to route events.  
   
 ```  
 void SetAnimationController(CAnimationController* pAnimationController);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pAnimationController`  
- イベントを受信するアニメーション コント ローラーへのポインター。  
+ A pointer to animation controller, which will receive events.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

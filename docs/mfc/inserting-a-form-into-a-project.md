@@ -1,52 +1,71 @@
 ---
-title: "プロジェクトへのフォームの挿入 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フォーム, 追加 (プロジェクトに)"
-  - "[新しい項目を挿入] ダイアログ ボックス"
-  - "挿入 (フォームを)"
+title: Inserting a Form into a Project | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- inserting forms [MFC]
+- Insert New dialog box [MFC]
+- forms, adding to projects
 ms.assetid: f3bd2998-3ce2-496d-ac5c-57ca70eec7cb
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# プロジェクトへのフォームの挿入
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 801c5ce15e213479738551e843d9a4be96ef74a5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-フォームはコントロールに便利なコンテナーを提供します。  アプリケーションに限り、アプリケーションがサポートする MFC ライブラリ簡単に MFC ベースのフォームを挿入できます。  
+---
+# <a name="inserting-a-form-into-a-project"></a>Inserting a Form into a Project
+Forms provide a convenient container for controls. You can easily insert an MFC-based form into your application as long as the application supports the MFC libraries.  
   
-### フォームをプロジェクトに追加するには  
+### <a name="to-insert-a-form-into-your-project"></a>To insert a form into your project  
   
-1.  クラス ビューから、フォームを追加するグループを選択し、マウスの右ボタンをクリックして、プロジェクトを。  
+1.  From Class View, select the project to which you want to add the form, and click the right mouse button.  
   
-2.  ショートカット メニューの \[追加\] をクリックし、さらに \[クラスの追加\] をクリックします。  
+2.  From the shortcut menu, click **Add** and then click **Add Class**.  
   
-     **新しいフォーム** コマンドが使用できない場合、プロジェクトは Active Template Library \(ATL\) に基づいている場合があります。  最初にプロジェクトを作成するときの ATL プロジェクトにフォームを追加するには、[特定の設定を指定します。](../Topic/Application%20Settings,%20ATL%20Project%20Wizard.md) です。  
+     If the **New Form** command is not available, your project may be based on the Active Template Library (ATL). To add a form to an ATL project, you must [specify certain settings](../atl/reference/application-settings-atl-project-wizard.md) when first creating the project.  
   
-3.  **MFC\(M\)** フォルダーで、クリック **MFC クラス**。  
+3.  From the **MFC** folder, click **MFC Class**.  
   
-4.  MFC クラス ウィザードを使用して、新しいクラスを [CFormView](../mfc/reference/cformview-class.md)から派生させます。  
+4.  Using the MFC Class Wizard, make the new class derive from [CFormView](../mfc/reference/cformview-class.md).  
   
- Visual C\+\+ では、ダイアログ エディター内で開くアプリケーションにコントロールを追加し、全体的な設計を操作するためのフォームを追加します。  
+ Visual C++ adds the form to your application, opening it inside the Dialog editor so that you can begin adding controls and working on its overall design.  
   
- 次の追加の手順が必要になる場合があります \(ダイアログ ベースのアプリケーションには適用できない\) 実行:  
+ You may want to perform the following additional steps (not applicable for dialog-based applications):  
   
-1.  `OnUpdate` のメンバー関数をオーバーライドします。  
+1.  Override the `OnUpdate` member function.  
   
-2.  ビューからドキュメントにデータを移動するためのメンバー関数を実装してください。  
+2.  Implement a member function to move data from your view to your document.  
   
-3.  `OnPrint` メンバー関数を作成します。  
+3.  Create an `OnPrint` member function.  
   
-## 参照  
- [フォーム ビュー](../Topic/Form%20Views%20\(MFC\).md)
+## <a name="see-also"></a>See Also  
+ [Form Views](../mfc/form-views-mfc.md)
+
+

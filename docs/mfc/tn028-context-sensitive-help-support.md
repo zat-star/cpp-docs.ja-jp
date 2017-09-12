@@ -1,178 +1,203 @@
 ---
-title: "テクニカル ノート 28: 状況依存のヘルプのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.help"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "状況依存のヘルプ, MFC アプリケーション"
-  - "リソース識別子, 状況依存のヘルプ"
-  - "TN028"
+title: 'TN028: Context-Sensitive Help Support | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.help
+dev_langs:
+- C++
+helpviewer_keywords:
+- context-sensitive Help [MFC], MFC applications
+- TN028
+- resource identifiers, context-sensitive Help
 ms.assetid: 884f1c55-fa27-4d4c-984f-30907d477484
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# テクニカル ノート 28: 状況依存のヘルプのサポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 75fcbe5b4acd96c5881a9edba940928f3c8b2d7a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC のヘルプ コンテキスト ID などを割り当てるための規則をヘルプ問題について説明します。  状況依存のヘルプ サポートは Visual C\+\+ で使用できるヘルプ コンパイラが必要です。  
+---
+# <a name="tn028-context-sensitive-help-support"></a>TN028: Context-Sensitive Help Support
+This note describes the rules for assigning Help contexts IDs and other help issues in MFC. Context-sensitive help support requires the help compiler that is available in Visual C++.  
   
 > [!NOTE]
->  WinHelp を使用して状況依存のヘルプの実装に加えて、HTML を使用しても、MFC サポートが役立ちます。  このサポートの詳細についてと HTML ヘルプを使用したプログラミングは、[HTML ヘルプ: プログラムの状況依存のヘルプ](../mfc/html-help-context-sensitive-help-for-your-programs.md)を参照します。  
+>  In addition to implementing context-sensitive help using WinHelp, MFC also supports using HTML Help. For more information on this support and programming with HTML Help, see [HTML Help: Context-Sensitive Help for Your Programs](../mfc/html-help-context-sensitive-help-for-your-programs.md).  
   
-## サポートされるヘルプの種類  
- Windows アプリケーションで実装される状況依存のヘルプの 2 種類があります。  1 番目は、現在アクティブなオブジェクトに基づいて適切なコンテキストと、「F1 ヘルプ」として参照される WinHelp を起動する必要があります。  2 番目の単語は「Shift\+ F1」モードです。  このモードでは、オブジェクトをオンにすると、マウス カーソルがヘルプ カーソルとユーザーの順序に変更します。  この時点で、WinHelp は、ユーザーがクリックしたオブジェクトのヘルプを与えるために起動します。  
+## <a name="types-of-help-supported"></a>Types of Help Supported  
+ There are two types of context-sensitive help implemented in Windows applications. The first, referred to as "F1 Help" involves launching WinHelp with the appropriate context based on the currently active object. The second is "Shift+ F1" mode. In this mode, the mouse cursor changes to the help cursor, and the user proceeds to click on an object. At that point, WinHelp is launched to give help for the object that the user clicked on.  
   
- Microsoft Foundation Class は、ヘルプの両方のフォームを実装します。  また、フレームワークは、2 種類の単純なヘルプ コマンド、ヘルプ索引ヘルプ サポートを使用します。  
+ The Microsoft Foundation Classes implement both of these forms of help. In addition, the framework supports two simple help commands, Help Index and Using Help.  
   
-## ヘルプ ファイル  
- Microsoft Foundation Class は単一のヘルプ ファイルが使用されます。  ヘルプ ファイルは、アプリケーションと同じ名前およびパスが必要です。  たとえば、実行可能ファイルが C:\\MyApplication\\MyHelp.exe のヘルプ ファイルは C:\\MyApplication\\MyHelp.hlp.である必要があります。  [CWinApp クラス](../mfc/reference/cwinapp-class.md)の `m_pszHelpFilePath` のメンバー変数でパスを設定します。  
+## <a name="help-files"></a>Help Files  
+ The Microsoft Foundation classes assume a single Help file. That Help file must have the same name and path as the application. For example, if the executable is C:\MyApplication\MyHelp.exe the help file must be C:\MyApplication\MyHelp.hlp. You set the path through the `m_pszHelpFilePath` member variable of the [CWinApp Class](../mfc/reference/cwinapp-class.md).  
   
-## ヘルプ コンテキストのスコープ  
- MFC の既定の実装は、プログラムがヘルプ コンテキスト ID の割り当てに関する規則に従う必要があります。  これらの規則は、特定のコントロールに割り当てられた ID の範囲です。  さまざまなヘルプ関連のメンバー関数の異なる実装を提供することにより、これらの規則をオーバーライドできます。  
+## <a name="help-context-ranges"></a>Help Context Ranges  
+ The default implementation of MFC requires a program to follow some rules about the assignment of Help context IDs. These rules are a range of IDs allocated to specific controls. You can override these rules by providing different implementations of the various Help-related member functions.  
   
 ```  
 0x00000000 - 0x0000FFFF : user defined  
 0x00010000 - 0x0001FFFF : commands (menus/command buttons)  
-   0x00010000 + ID_  
-   (note: 0x18000-> 0x1FFFF is the practical range since command IDs are >=0x8000)  
+0x00010000 + ID_  
+(note: 0x18000-> 0x1FFFF is the practical range since command IDs are>=0x8000)  
 0x00020000 - 0x0002FFFF : windows and dialogs  
-   0x00020000 + IDR_  
-   (note: 0x20000-> 0x27FFF is the practical range since IDRs are <= 0x7FFF)  
+0x00020000 + IDR_  
+(note: 0x20000-> 0x27FFF is the practical range since IDRs are <= 0x7FFF)  
 0x00030000 - 0x0003FFFF : error messages (based on error string ID)  
-   0x00030000 + IDP_  
+0x00030000 + IDP_  
 0x00040000 - 0x0004FFFF : special purpose (non-client areas)  
-   0x00040000 + HitTest area  
+0x00040000 + HitTest area  
 0x00050000 - 0x0005FFFF : controls (those that are not commands)  
-   0x00040000 + IDW_  
+0x00040000 + IDW_  
 ```  
   
-## 単純な「ヘルプ」コマンド  
- Microsoft Foundation Class によって実装される 2 種類の単純な help コマンドがあります:  
+## <a name="simple-help-commands"></a>Simple "Help" Commands  
+ There are two simple Help commands that are implemented by the Microsoft Foundation Classes:  
   
--   [CWinApp::OnHelpIndex](../Topic/CWinApp::OnHelpIndex.md)によって実装される ID\_HELP\_INDEX  
+-   ID_HELP_INDEX which is implemented by [CWinApp::OnHelpIndex](../mfc/reference/cwinapp-class.md#onhelpindex)  
   
--   [CWinApp::OnHelpUsing](../Topic/CWinApp::OnHelpUsing.md)によって実装される ID\_HELP\_USING  
+-   ID_HELP_USING which is implemented by [CWinApp::OnHelpUsing](../mfc/reference/cwinapp-class.md#onhelpusing)  
   
- 最初のコマンドは、アプリケーションのヘルプ索引を示しています。  2 番目の WinHelp プログラムのユーザー ヘルプを示します。  
+ The first command shows the Help index for the application. The second shows the user help on using the WinHelp program.  
   
-## コンテキスト ヘルプ \(F1 ヘルプ\)  
- F1 キーは通常、メイン ウィンドウのアクセラレータ テーブルに配置して `ID_HELP` アクセラレータの ID とコマンドに変換されます。  `ID_HELP` コマンドは、メイン ウィンドウまたはダイアログ ボックスに `ID_HELP` の ID を持つボタンが生成されることがあります。  
+## <a name="context-sensitive-help-f1-help"></a>Context-Sensitive Help (F1 Help)  
+ The F1 key is usually translated to a command with an ID of `ID_HELP` by an accelerator placed into the main window's accelerator table. The `ID_HELP` command may also be generated by a button with an ID of `ID_HELP` on the main window or dialog box.  
   
- `ID_HELP` コマンドはどのように関係なくコマンド ハンドラーが見つかるまで、生成されるか、正常なコマンドとしてルーティングされます。  MFC のコマンド ルーティング アーキテクチャの詳細については、[テクニカル ノート 21](../mfc/tn021-command-and-message-routing.md)を示します。  アプリケーションに有効なヘルプがある場合 `ID_HELP` コマンドは [CWinApp::OnHelp](../Topic/CWinApp::OnHelp.md)によって処理されます。  Application オブジェクトは、ヘルプ メッセージを受け取り、コマンドを適切にルーティングします。  これは、既定のコマンドのルーティングが特定のコンテキストを確認するには十分ではないためです。  
+ Regardless of how the `ID_HELP` command is generated, it is routed as a normal command until it reaches a command handler. For more information about the MFC command-routing architecture, refer to [Technical Note 21](../mfc/tn021-command-and-message-routing.md). If the application has Help enabled, the `ID_HELP` command will be handled by [CWinApp::OnHelp](../mfc/reference/cwinapp-class.md#onhelp). The application object receives the help message and then routes the command appropriately. This is necessary since the default command routing is not adequate for determining the most specific context.  
   
- `CWinApp::OnHelp` は 次の順序で WinHelp を起動しようとしています:  
+ `CWinApp::OnHelp` attempts to launch WinHelp in the following order:  
   
-1.  実行中の `AfxMessageBox` のチェックは、ヘルプ ID を呼び出します  メッセージ ボックスで現在アクティブである場合、WinHelp は、メッセージ ボックスに適切なコンテキストに起動されます。  
+1.  Checks for an active `AfxMessageBox` call with a Help ID. If a message box is currently active, WinHelp is launched with the context appropriate to that message box.  
   
-2.  アクティブ ウィンドウに WM\_COMMANDHELP メッセージを送信します。  そのウィンドウに WinHelp を起動して、応答メッセージは、そのウィンドウの先祖にメッセージが処理される場合、または現在のウィンドウがトップレベル ウィンドウになるまで送信されます。  
+2.  Sends a WM_COMMANDHELP message to the active window. If that window does not respond by launching WinHelp, the same message is then sent to the ancestors of that window until the message is processed or the current window is a top-level window.  
   
-3.  メイン ウィンドウに ID\_DEFAULT\_HELP コマンドを送信します。  これは既定のヘルプを起動します。  このコマンドは `CWinApp::OnHelpIndex`に一般にマップされます。  
+3.  Sends a ID_DEFAULT_HELP command to the main window. This invokes the default Help. This command is generally mapped to `CWinApp::OnHelpIndex`.  
   
- 全体的に既定の基準値 ID \(ダイアログなどのリソースがコマンドの例 0x10000 と 0x20000\) をオーバーライドする場合、アプリケーションは [CWinApp::WinHelp](../Topic/CWinApp::WinHelp.md)をオーバーライドする必要があります。  
+ To globally override the default ID base values (e.g. 0x10000 for commands and 0x20000 for resources such as dialogs), the application should override [CWinApp::WinHelp](../mfc/reference/cwinapp-class.md#winhelp).  
   
- この機能は、およびヘルプ コンテキストが決定できる方法をオーバーライドするには、WM\_COMMANDHELP メッセージを処理する必要があります。  現在の MDI 子ウィンドウだけ深さので、フレームワークが提供するよりも多くの特定のルーティングを提供することもできます。  そのオブジェクトの現在の内部状態またはダイアログ内のアクティブなコントロールの特定のヘルプを特定のウィンドウまたはダイアログ ボックスに基づいて、提供する必要があります。  
+ To override this functionality and the way that a Help context is determined, you should handle the WM_COMMANDHELP message. You may wish to provide more specific Help routing than the framework provides, as it only goes as deep as the current MDI child window. You may also want to provide more specific help for a particular window or dialog, perhaps based on the current internal state of that object or the active control within the dialog.  
   
-## WM\_COMMANDHELP  
+## <a name="wmcommandhelp"></a>WM_COMMANDHELP  
   
 ```  
-  
+ 
 afx_msg LRESULT CWnd::OnCommandHelp(WPARAM wParam, LPARAM lParam)  
+ 
 ```  
   
- WM\_COMMANDHELP はヘルプが要求されるとアクティブ ウィンドウで受信プライベートな MFC Windows メッセージです。  ウィンドウには、このメッセージを受け取ると、ウィンドウの内部状態に一致するコンテキストの `CWinApp::WinHelp` を呼び出す可能性があります。  
+ WM_COMMANDHELP is a private Windows MFC message that is received by the active window when Help is requested. When the window receives this message, it may call `CWinApp::WinHelp` with context that matches the window's internal state.  
   
  `lParam`  
- 現在使用できるヘルプ コンテキストが含まれています。  `lParam` は ヘルプ コンテキストが定められなかったらゼロです。  `OnCommandHelp` の実装は `lParam` で異なるコンテキストを確認するには、コンテキスト ID を使用することも、`CWinApp::WinHelp`だけに渡すことができます。  
+ Contains the currently available Help context. `lParam` is zero if no Help context has been determined. An implementation of `OnCommandHelp` can use the context ID in `lParam` to determine a different context or can just pass it to `CWinApp::WinHelp`.  
   
  `wParam`  
- ゼロ使用されず、です。  
+ Is not used and will be zero.  
   
- `OnCommandHelp` 関数呼び出し `CWinApp::WinHelp`では、`TRUE`を返します。  `TRUE` を返すと、他のクラスと他のウィンドウに、このコマンドのルーティングを停止します。  
+ If the `OnCommandHelp` function calls `CWinApp::WinHelp`, it should return `TRUE`. Returning `TRUE` stops the routing of this command to other classes and to other windows.  
   
-## ヘルプ モード \(Shift\+F1 ヘルプ\)  
- これは状況依存のヘルプの 2 番目のフォームです。  通常、このモードは Shift \+ F1 キーを押すか、またはメニューおよびツール バーで Enter キーを押します。  これは、コマンド**ID\_CONTEXT\_HELP** \(\) として実装されます。  モーダル ダイアログ ボックスまたはメニューがアクティブな間、メッセージ フィルター フックでこのコマンドを変換するために使用されるので、アプリケーションのメイン メッセージ ポンプ \(`CWinApp::Run`\) を実行しているときにこのコマンドをユーザーにのみ使用できます。  
+## <a name="help-mode-shiftf1-help"></a>Help Mode (Shift+F1 Help)  
+ This is the second form of context-sensitive Help. Generally, this mode is entered by pressing SHIFT+F1 or via the menu/toolbar. It is implemented as a command (**ID_CONTEXT_HELP**). The message filter hook is not used to translate this command while a modal dialog box or menu is active, therefore this command is only available to the user when the application is executing the main message pump (`CWinApp::Run`).  
   
- このモードになった後、ヘルプ マウス カーソルがアプリケーションのあらゆる領域に関連するアプリケーションは、通常、その区分用のカーソルが表示されても、表示されます \(ウィンドウの周囲のサイズ変更境界など\)。  ユーザーがコマンドを選択するには、マウスまたはキーボードを使用できます。  コマンドを実行する代わりに、そのコマンドのヘルプが表示されます。  また、ユーザーがツール バーのボタンなど、画面に表示されているオブジェクトをクリックし、ヘルプは、そのオブジェクトに表示されます。  ヘルプのこのモードは `CWinApp::OnContextHelp`によって提供されます。  
+ After entering this mode, the Help mouse cursor is displayed over all areas of the application, even if the application would normally display its own cursor for that area (such as the sizing border around the window). The user is able to use the mouse or keyboard to select a command. Instead of executing the command, Help on that command is displayed. Also, the user can click a visible object on the screen, such as a button on the toolbar, and Help will be displayed for that object. This mode of Help is provided by `CWinApp::OnContextHelp`.  
   
- このループの実行中に、すべてのキーボード入力をメニューにアクセスするキーを除くアクティブでないです。  または、コマンド変換は、`PreTranslateMessage` でユーザーがアクセラレータ キーを押して、そのコマンドのヘルプを表示できるようにします。  
+ During the execution of this loop, all keyboard input is inactive, except for keys that access the menu. Also, command translation is still performed via `PreTranslateMessage` to allow the user to press an accelerator key and receive help on that command.  
   
- 特定の変換が必要な場合、または \+ F1 ヘルプ モードで行う必要な `PreTranslateMessage` で発生するアクションを使用すると、それらのアクションを実行する前に `CWinApp` の `m_bHelpMode` のメンバーを確認する必要があります。  `PreTranslateMessage` の `CDialog` の実装は `IsDialogMessage`を呼び出す前に、たとえばチェックします。  これは \+ F1 モードでモードレス ダイアログの「ダイアログ ナビゲーション」キーを無効にします。  また、`CWinApp::OnIdle` は、ループの間に呼び出されます。  
+ If there are particular translations or actions taking place in the `PreTranslateMessage` function that shouldn't take place during SHIFT+F1 Help mode, you should check the `m_bHelpMode` member of `CWinApp` before performing those operations. The `CDialog` implementation of `PreTranslateMessage` checks this before calling `IsDialogMessage`, for example. This disables "dialog navigation" keys on modeless dialogs during SHIFT+F1 mode. In addition, `CWinApp::OnIdle` is still called during this loop.  
   
- ユーザーがメニュー コマンドを選択すると、そのコマンドのヘルプとして処理されます \(**WM\_COMMANDHELP**によって、参照してください。  ユーザーがアプリケーション ウィンドウの表示領域をクリックし、判断が非クライアントのクリックやクライアント クリックかについて呼び出されます。  クライアント への非クライアントのクリック`OnContextHelp` ハンドルのマップは自動的にクリックします。  クリック クライアントの場合は、クリックされたウィンドウに、**WM\_HELPHITTEST** を送信します。  そのウィンドウが 0 以外の値を返した場合、その値はヘルプにコンテキストとして使用されます。  これがゼロを返す場合、`OnContextHelp` が親ウィンドウと \(とその親の失敗する場合など\)。  ヘルプ コンテキストを特定できない場合、既定では `CWinApp::OnHelpIndex` \(通常は\) にマップされるメイン ウィンドウへ **ID\_DEFAULT\_HELP** コマンドを送ります。  
+ If the user chooses a command from the menu, it is handled as help on that command (through **WM_COMMANDHELP**, see below). If the user clicks a visible area of the applications window, a determination is made as to whether it is a nonclient click or a client click. `OnContextHelp` handles mapping of nonclient clicks to client clicks automatically. If it is a client click, it then sends a **WM_HELPHITTEST** to the window that was clicked. If that window returns a nonzero value, that value is used as the context for help. If it returns zero, `OnContextHelp` tries the parent window (and failing that, its parent, and so on). If a Help context cannot be determined, the default is to send a **ID_DEFAULT_HELP** command to the main window, which is then (usually) mapped to `CWinApp::OnHelpIndex`.  
   
-## WM\_HELPHITTEST  
+## <a name="wmhelphittest"></a>WM_HELPHITTEST  
   
 ```  
-  
-afx_msg LRESULT CWnd::OnHelpHitTest(  
+ 
+afx_msg LRESULT CWnd::OnHelpHitTest(
 WPARAM, LPARAM lParam)  
 ```  
   
- **WM\_HELPHITTEST** は \+ F1 ヘルプ モードでクリックされたアクティブ ウィンドウで受信 MFC のプライベートなウィンドウ メッセージです。  ウィンドウには、このメッセージを受け取ると、WinHelp で使用する DWORD のヘルプ ID を返します。  
+ **WM_HELPHITTEST** is an MFC private windows message that is received by the active window clicked during SHIFT+F1 Help mode. When the Window receives this message, it returns a DWORD Help ID for use by WinHelp.  
   
- LOWORD \(lParam\)  
- マウスがウィンドウのクライアント領域に対するクリックされた X 軸のデバイス座標が含まれます。  
+ LOWORD(lParam)  
+ contains the X-axis device coordinate where the mouse was clicked relative to the client area of the window.  
   
- HIWORD \(lParam\)  
- Y 軸の座標が含まれます。  
+ HIWORD(lParam)  
+ contains the Y-axis coordinate.  
   
  `wParam`  
- ゼロ使用されず、です。  戻り値が 0 以外のの場合、WinHelp はそのコンテキストと呼ばれます。  戻り値がゼロの場合、親ウィンドウがヘルプに呼び出されます。  
+ is not used and will be zero. If the return value is nonzero, WinHelp is called with that context. If the return value is zero, the parent window is queried for help.  
   
- 多くの場合、ユーザーが既に持っている可能性のあるヒット テスト コードを利用できます。  **WM\_HELPHITTEST** メッセージを処理する例については、" **CToolBar::OnHelpHitTest** の実装を参照してください \(コードは `CControlBar`でボタンやツールヒントで使用されるテスト コードを利用します\)。  
+ In many cases, you can leverage hit-testing code you may already have. See the implementation of **CToolBar::OnHelpHitTest** for an example of handling the **WM_HELPHITTEST** message (the code leverages the hit-test code used on buttons and tooltips in `CControlBar`).  
   
-## MFC アプリケーション ウィザードのサポート、および MAKEHM  
- MFC アプリケーション ウィザードには、ヘルプ ファイルをビルドするために必要なファイルが作成されます \(.cnt および .hpj ファイル\)。  また、Microsoft ヘルプ コンパイラが受け取る一部のプレビルド .rtf ファイルが含まれています。  トピックの多くは完了しますが、一部は特定のアプリケーションに合わせて変更する必要があります。  
+## <a name="mfc-application-wizard-support-and-makehm"></a>MFC Application Wizard Support and MAKEHM  
+ The MFC Application Wizard creates the necessary files to build a Help file (.cnt and .hpj files). It also includes a number of prebuilt .rtf files that are accepted by the Microsoft Help Compiler. Many of the topics are complete, but some may need to be modified for your specific application.  
   
- 「ヘルプ マッピング」ファイルの自動作成は MAKEHM というユーティリティでサポートされます。  MAKEHM ユーティリティは、ヘルプのマッピング ファイルにアプリケーションの RESOURCE.H ファイルを変換できます。  たとえば、次のようになります。  
+ Automatic creation of a "help mapping" file is supported by a utility called MAKEHM. The MAKEHM utility can translate an application's RESOURCE.H file to a Help mapping file. For example:  
   
 ```  
 #define IDD_MY_DIALOG   2000  
 #define ID_MY_COMMAND   150  
 ```  
   
- に変換されます:  
+ will be translated into:  
   
 ```  
 HIDD_MY_DIALOG    0x207d0  
 HID_MY_COMMAND    0x10096  
 ```  
   
- この形式はトピック名 \(左側のシンボル\) を持つコンテキストの ID \(右側の数\) をマップするヘルプ コンパイラの機能と互換性があります。  
+ This format is compatible with the Help compiler's facility, which maps context IDs (the numbers on the right side) with topic names (the symbols on the left side).  
   
- MAKEHM のソース・コードは MFC プログラミング ユーティリティ [MAKEHM](../top/visual-cpp-samples.md)サンプルで使用できます。  
+ The source code for MAKEHM is available in the MFC Programming Utilities sample [MAKEHM](../visual-cpp-samples.md).  
   
-## ヘルプ サポートを MFC アプリケーション ウィザードを実行した後で追加します。  
- アプリケーションにヘルプを追加する最良の方法は、アプリケーションを作成する前に、MFC アプリケーション ウィザードの高度な機能ページでコンテキスト ヘルプ「」オプションを選択します。  この方法は `CWinApp`MFC アプリケーション ウィザードによって必要なメッセージ マップ エントリ\-サポート サービスへの派生クラスを追加します。  
+## <a name="adding-help-support-after-running-the-mfc-application-wizard"></a>Adding Help Support After Running the MFC Application Wizard  
+ The best way to add Help to your application is to check the "Context-sensitive Help" option on the Advanced Features page of the MFC Application Wizard before creating your application. That way the MFC Application Wizard automatically adds the necessary message map entries to your `CWinApp`-derived class to support Help.  
   
-## メッセージ ボックスのヘルプ  
- メッセージ ボックスでは、警告 \(とも呼ばれます\) `AfxMessageBox` 関数、`MessageBox` Windows API のラッパーでサポートされます。  
+## <a name="help-on-message-boxes"></a>Help on Message Boxes  
+ Help on Message Boxes (sometimes called alerts) is supported through the `AfxMessageBox` function, a wrapper for the `MessageBox` Windows API.  
   
- ドキュメントテンプレート文字列 ID 文字列で使用するための `AfxMessageBox`、1 およびポインターで使用するために別の 2 種類のバージョンがあります \(`LPCSTR`\) :  
+ There are two versions of `AfxMessageBox`, one for use with a string ID and another for use with a pointer to string (`LPCSTR`):  
   
 ```  
-int AFXAPI AfxMessageBox(LPCSTR lpszText, UINT nType, UINT nIDHelp);  
-int AFXAPI AfxMessageBox(UINT nIDPrompt, UINT nType, UINT nIDHelp);  
+int AFXAPI AfxMessageBox(LPCSTR lpszText,
+    UINT nType,
+    UINT nIDHelp);
+
+int AFXAPI AfxMessageBox(UINT nIDPrompt,
+    UINT nType,
+    UINT nIDHelp);
 ```  
   
- いずれの場合も、省略可能なヘルプ ID があります。  
+ In both cases, there is an optional Help ID.  
   
- nIDHelp の最初の場合、既定では、このメッセージ ボックスのヘルプを表示する 0 です。  ユーザーがメッセージ ボックスなど、F1 キーを押すと、アクティブの場合、ユーザーはヘルプを受け取りません \(アプリケーションがサポートするヘルプ\)。  これは好ましくなければ、ヘルプ ID は nIDHelp に指定する必要があります。  
+ In the first case, the default for nIDHelp is 0, which indicates no Help for this message box. If the user presses F1 while such as message box is active, the user will not receive Help (even if the application supports Help). If this is not desirable, a Help ID should be provided for nIDHelp.  
   
- nIDHelp の第 2 レベルでは、既定値はヘルプ ID は nIDPrompt と同じであることを示す \-1 です。  ヘルプは、ヘルプ アプリケーションが有効な場合にのみ、です\)。  メッセージ ボックスは、ヘルプがサポートされていないことを望めば nIDHelp に 0 を指定してください。  あるメッセージに有効なヘルプの場合は nIDPrompt 以外のヘルプを ID は、nIDPrompt の別の nIDHelp に正の値を提供します。  
+ In the second case, the default value for nIDHelp is -1, which indicates the Help ID is the same as nIDPrompt. Help will work only if the application is Help-enabled, of course). You should provide 0 for nIDHelp if you wish that the message box have no help support. Should you want the message to be Help enabled, but desire a different help ID than nIDPrompt, simply provide a positive value for nIDHelp different from that of nIDPrompt.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

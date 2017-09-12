@@ -1,56 +1,76 @@
 ---
-title: "コマンドの振り分け (ルーティング) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, コマンド ルーティング"
-  - "コマンド処理, ルーティング (コマンドを)"
-  - "ハンドラー"
-  - "ハンドラー, コマンド"
-  - "コマンド ルーティング"
+title: Command Routing | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, command routing
+- command handling [MFC], routing commands
+- handlers [MFC]
+- handlers, command [MFC]
+- command routing
 ms.assetid: 9393a956-bdd4-47c5-9013-dbd680433f93
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コマンドの振り分け (ルーティング)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9b8b2c0deef88405b15d1b04dcd02fa09960bc1d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コマンドを使用するには、\[プロパティ\] ウィンドウを使って、コマンドとハンドラー関数を対応付けるメッセージ マップを作成する必要があります。 また、コマンド ハンドラーのほとんどを作成する必要もあります。  
+---
+# <a name="command-routing"></a>Command Routing
+Your responsibility in working with commands is limited to making message-map connections between commands and their handler functions, a task for which you use the Properties window. You must also write most command handlers.  
   
- 通常、Windows メッセージはメイン フレーム ウィンドウに送信されますが、コマンド メッセージはさらに他のオブジェクトにルーティングされます。 フレームワークは、コマンド ターゲット オブジェクトの標準シーケンスに従って、コマンドのハンドラーが存在すると思われるオブジェクトの 1 つにコマンドをルーティングします。 各コマンド ターゲット オブジェクトは、受信したメッセージを処理できるかどうかをメッセージ マップで確認します。  
+ Windows messages are usually sent to the main frame window, but command messages are then routed to other objects. The framework routes commands through a standard sequence of command-target objects, one of which is expected to have a handler for the command. Each command-target object checks its message map to see if it can handle the incoming message.  
   
- メッセージ マップを確認するタイミングは、コマンド ターゲット クラスによって異なります。 通常、クラスは、コマンドを最初に特定の他のオブジェクトにルーティングして、そのオブジェクトでコマンドを処理しようとします。 どのオブジェクトもコマンドを処理できない場合、元のクラスは独自のメッセージ マップをチェックします。 その後、元のクラスがハンドラー自体を提供できない場合は、そのコマンドをさらに他のコマンド ターゲットにルーティングします。 以下の「[標準のコマンド ルート](#_core_standard_command_route)」の表は、各クラスのチェック シーケンスを示しています。 コマンド ターゲットがコマンドをルーティングする一般的な順序は、次のとおりです。  
+ Different command-target classes check their own message maps at different times. Typically, a class routes the command to certain other objects to give them first chance at the command. If none of those objects handles the command, the original class checks its own message map. Then, if it can't supply a handler itself, it may route the command to yet more command targets. The table [Standard Command Route](#_core_standard_command_route) below shows how each of the classes structures this sequence. The general order in which a command target routes a command is:  
   
-1.  現在アクティブな子コマンド ターゲット オブジェクト  
+1.  To its currently active child command-target object.  
   
-2.  コマンド ターゲット自身  
+2.  To itself.  
   
-3.  その他のコマンド ターゲット  
+3.  To other command targets.  
   
- このルーティング メカニズムは、 コマンドに応答するハンドラーの処理に比べると、それほど負担になりません。 フレームワークでコマンドが生成されるのは、ユーザーがユーザー インターフェイス オブジェクトを操作したときだけです。  
+ How expensive is this routing mechanism Compared to what your handler does in response to a command, the cost of the routing is low. Bear in mind that the framework generates commands only when the user interacts with a user-interface object.  
   
-### 標準のコマンド ルート  
+### <a name="_core_standard_command_route"></a> Standard Command Route  
   
-|コマンドを受信したオブジェクトの種類 」を参照してください。 」を参照してください。|コマンドを処理する機会が与えられるコマンド ターゲット オブジェクトとその順序|  
-|------------------------------------------------|---------------------------------------------|  
-|MDI フレーム ウィンドウ \(`CMDIFrameWnd`\)|1.  アクティブな `CMDIChildWnd`<br />2.  このフレーム ウィンドウ<br />3.  アプリケーション \(`CWinApp` オブジェクト\)|  
-|ドキュメント フレーム ウィンドウ \(`CFrameWnd`､`CMDIChildWnd`\)|1.  アクティブ ビュー<br />2.  このフレーム ウィンドウ<br />3.  アプリケーション \(`CWinApp` オブジェクト\)|  
-|表示|1.  このビュー<br />2.  ビューにアタッチされたドキュメント|  
-|ドキュメント|1.  このドキュメント<br />2.  ドキュメントにアタッチされたドキュメント テンプレート|  
-|ダイアログ ボックス|1.  このダイアログ ボックス<br />2.  ダイアログ ボックスを所有するウィンドウ<br />3.  アプリケーション \(`CWinApp` オブジェクト\)|  
+|When an object of this type receives a command . . .|It gives itself and other command-target objects a chance to handle the command in this order:|  
+|----------------------------------------------------------|-----------------------------------------------------------------------------------------------------|  
+|MDI frame window  (`CMDIFrameWnd`)|1.  Active `CMDIChildWnd`<br />2.  This frame window<br />3.  Application (`CWinApp` object)|  
+|Document frame window  (`CFrameWnd`, `CMDIChildWnd`)|1.  Active view<br />2.  This frame window<br />3.  Application (`CWinApp` object)|  
+|View|1.  This view<br />2.  Document attached to the view|  
+|Document|1.  This document<br />2.  Document template attached to the document|  
+|Dialog box|1.  This dialog box<br />2.  Window that owns the dialog box<br />3.  Application (`CWinApp` object)|  
   
- 前の表の右側の列に他のオブジェクト \(ドキュメントなど\) が示されている場合は、左側の列の対応する項目を確認してください。 たとえば、右側の列を見ると、ビューがコマンドをドキュメントに転送していることがわかるので、左側の列の「ドキュメント」のルーティングも参照してください。  
+ Where numbered entries in the second column of the preceding table mention other objects, such as a document, see the corresponding item in the first column. For instance, when you read in the second column that the view forwards a command to its document, see the "Document" entry in the first column to follow the routing further.  
   
-## 参照  
- [フレームワークがハンドラーを呼び出す方法](../mfc/how-the-framework-calls-a-handler.md)
+## <a name="see-also"></a>See Also  
+ [How the Framework Calls a Handler](../mfc/how-the-framework-calls-a-handler.md)
+
+

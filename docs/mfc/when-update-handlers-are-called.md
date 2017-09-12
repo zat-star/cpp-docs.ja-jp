@@ -1,48 +1,67 @@
 ---
-title: "更新ハンドラーが呼び出されるタイミング | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド ルーティング, 更新コマンド"
-  - "コマンド ルーティング, 更新ハンドラー"
-  - "無効化 (メニュー項目を)"
-  - "無効化 (ツール バー ボタンを)"
-  - "メニュー項目, 有効化"
-  - "メニュー [C++], 初期化"
-  - "メニュー [C++], 更新 (コンテキスト変更に応じて)"
-  - "ツール バー ボタン [C++], 有効化"
-  - "ツール バー コントロール [MFC], 更新 (OnIdle メソッドで)"
-  - "ツール バー [C++], 更新"
-  - "更新ハンドラー"
-  - "更新ハンドラー, 呼び出し"
-  - "更新 (ユーザー インターフェイス オブジェクトを)"
+title: When Update Handlers Are Called | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- updating user interface objects [MFC]
+- command routing [MFC], update commands
+- toolbar buttons [MFC], enabling
+- disabling toolbar buttons
+- menus [MFC], initializing
+- update handlers [MFC]
+- disabling menu items
+- toolbars [MFC], updating
+- menus [MFC], updating as context changes
+- toolbar controls [MFC], updated during OnIdle method [MFC]
+- menu items, enabling
+- command routing [MFC], update handlers
+- update handlers, calling
 ms.assetid: 7359f6b1-4669-477d-bd99-690affed08d9
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 更新ハンドラーが呼び出されるタイミング
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f49d34db80d94236e2c435f786a338b73d4dca99
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ユーザーのクリックを `WM_INITMENUPOPUP` メッセージを生成するファイル メニューのマウスとします。  フレームワークの更新機能は、まとめてドロップダウン メニュー、ユーザーがそれを参照するには、ファイル メニューのすべての項目を更新します。  
+---
+# <a name="when-update-handlers-are-called"></a>When Update Handlers Are Called
+Suppose the user clicks the mouse in the File menu, which generates a `WM_INITMENUPOPUP` message. The framework's update mechanism collectively updates all items on the File menu before the menu drops down so the user can see it.  
   
- これを行うには、標準のコマンド経路上のポップアップ メニューのメニュー項目の更新コマンドをルーティングします。  ルーティングのコマンド ターゲットに更新コマンド \(フォーム `ON_UPDATE_COMMAND_UI`\) の適切なメッセージ マップのエントリに一致させようと「更新ハンドラー」関数を呼び出すことによって、メニュー項目を更新することができます。  したがって、6 個のメニュー項目を持つメニューの場合、6 回の更新コマンドが送信されます。  更新ハンドラーはメニュー項目のコマンド ID が存在する場合は、更新を呼び出します。  それ以外の場合、フレームワークは、コマンド ID と有効のハンドラーの存在をチェックするか、必要に応じてメニュー項目を無効にします。  
+ To do this, the framework routes update commands for all menu items in the pop-up menu along the standard command routing. Command targets on the routing have an opportunity to update any menu items by matching the update command with an appropriate message-map entry (of the form `ON_UPDATE_COMMAND_UI`) and calling an "update handler" function. Thus, for a menu with six menu items, six update commands are sent out. If an update handler exists for the command ID of the menu item, it is called to do the updating. If not, the framework checks for the existence of a handler for that command ID and enables or disables the menu item as appropriate.  
   
- フレームワークがコマンド ルーティング中に `ON_UPDATE_COMMAND_UI` エントリが見つからなかった場合は、別の場所に `ON_COMMAND` エントリが同じコマンド ID には自動的にユーザー インターフェイス オブジェクトを有効にします。  それ以外の場合は、ユーザー インターフェイス オブジェクトを無効にします。  したがって、ユーザー インターフェイス オブジェクトが有効であることを確認するために、オブジェクトが生成する指定します。または、それに対する更新ハンドラーを指定します。コマンドのハンドラーです。  トピック [ユーザー インターフェイス オブジェクトとコマンド ID](../mfc/user-interface-objects-and-command-ids.md)の図を参照してください。  
+ If the framework does not find an `ON_UPDATE_COMMAND_UI` entry during command routing, it automatically enables the user-interface object if there is an `ON_COMMAND` entry somewhere with the same command ID. Otherwise, it disables the user-interface object. Therefore, to ensure that a user-interface object is enabled, supply a handler for the command the object generates or supply an update handler for it. See the figure in the topic [User-Interface Objects and Command IDs](../mfc/user-interface-objects-and-command-ids.md).  
   
- ユーザー インターフェイス オブジェクトの既定の無効にを無効にする可能性があります。  詳細については、" *MFC リファレンス"の*" `CFrameWnd` クラスの [m\_bAutoMenuEnable](../Topic/CFrameWnd::m_bAutoMenuEnable.md) のメンバーを参照してください。  
+ It is possible to disable the default disabling of user-interface objects. For more information, see the [m_bAutoMenuEnable](../mfc/reference/cframewnd-class.md#m_bautomenuenable) member of class `CFrameWnd` in the *MFC Reference*.  
   
- メニューは、アプリケーションの初期化 `WM_INITMENUPOPUP` メッセージを受信したときに発生するフレームワークで自動的に行われます。  アイドル ループでは、フレームワークはボタンの更新ハンドラーをメニューに対すると同様にコマンド ルーティングを検索します。  
+ Menu initialization is automatic in the framework, occurring when the application receives a `WM_INITMENUPOPUP` message. During the idle loop, the framework searches the command routing for button update handlers in much the same way as it does for menus.  
   
-## 参照  
- [ユーザー インターフェイス オブジェクトの更新方法](../mfc/how-to-update-user-interface-objects.md)
+## <a name="see-also"></a>See Also  
+ [How to: Update User-Interface Objects](../mfc/how-to-update-user-interface-objects.md)
+
+

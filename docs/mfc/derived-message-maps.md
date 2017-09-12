@@ -1,48 +1,67 @@
 ---
-title: "メッセージ マップの派生 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "派生メッセージ マップ"
-  - "メッセージ処理, 派生メッセージ ハンドラー"
-  - "メッセージ マップ, 派生"
-  - "メッセージ, ルーティング"
+title: Derived Message Maps | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- message handling [MFC], derived message handlers
+- messages, routing
+- message maps [MFC]], derived
+- derived message maps
 ms.assetid: 21829556-6e64-40c3-8279-fed85d99de77
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# メッセージ マップの派生
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 76817ca4892bbdba9d67434d4c95741b690c3be3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-メッセージの処理中に、クラスの独自のメッセージ マップをチェックすると、メッセージ マップのストーリーの末尾ではありません。  クラス `CMyView` \(`CView`から派生される\) メッセージに一致するエントリがない場合はどうなりますか。  
+---
+# <a name="derived-message-maps"></a>Derived Message Maps
+During message handling, checking a class's own message map is not the end of the message-map story. What happens if class `CMyView` (derived from `CView`) has no matching entry for a message  
   
- その `CView`の `CMyView`の基本クラス、順番に派生されます `CWnd`から注意してください。  したがって `CMyView`は  `CView`*で、*`CWnd`*です*。  これらの各クラスには、独自のメッセージ マップがあります。  図では、「階層」クラスの階層リレーションシップを示しますが、`CMyView` オブジェクトが 3 つすべてのクラスの特性を持つ単一オブジェクトであることに注意してください。  
+ Keep in mind that `CView`, the base class of `CMyView`, is derived in turn from `CWnd`. Thus `CMyView` *is* a `CView` and *is* a `CWnd`. Each of those classes has its own message map. The figure "A View Hierarchy" below shows the hierarchical relationship of the classes, but keep in mind that a `CMyView` object is a single object that has the characteristics of all three classes.  
   
- ![ビュー階層](../mfc/media/vc38621.gif "vc38621")  
-階層  
+ ![Hierarchy of a view](../mfc/media/vc38621.gif "vc38621")  
+A View Hierarchy  
   
- したがって、メッセージがクラスの `CMyView` のメッセージ マップに一致する場合、フレームワークは、直接の基本クラスのメッセージ マップを検索します。  メッセージ マップの開始時に `BEGIN_MESSAGE_MAP` マクロは引数として 2 個のクラス名を指定する:  
+ So if a message can't be matched in class `CMyView`'s message map, the framework also searches the message map of its immediate base class. The `BEGIN_MESSAGE_MAP` macro at the start of the message map specifies two class names as its arguments:  
   
- [!CODE [NVC_MFCMessageHandling#2](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCMessageHandling#2)]  
+ [!code-cpp[NVC_MFCMessageHandling#2](../mfc/codesnippet/cpp/derived-message-maps_1.cpp)]  
   
- 最初の引数名メッセージ マップが属するクラス。  2 番目の引数は次の直接の基本クラス— `CView` を使用して、接続を—備えています。フレームワークがメッセージ マップを検索できます。  
+ The first argument names the class to which the message map belongs. The second argument provides a connection with the immediate base class — `CView` here — so the framework can search its message map, too.  
   
- 基本クラスで提供されるメッセージ ハンドラーでは、派生クラスでそれによって継承されます。  これはすべてのハンドラー メンバー関数は仮想関数にせずに正常な仮想メンバー関数とよく似ています。  
+ The message handlers provided in a base class are thus inherited by the derived class. This is very similar to normal virtual member functions without needing to make all handler member functions virtual.  
   
- ハンドラーが基本クラスのメッセージ マップにない場合は、メッセージの既定の処理が実行されます。  メッセージがコマンドの場合、フレームワークは次のコマンド ターゲットにルーティングします。  これは標準 Windows メッセージの場合、メッセージは適切な既定のウィンドウ プロシージャに渡されます。  
+ If no handler is found in any of the base-class message maps, default processing of the message is performed. If the message is a command, the framework routes it to the next command target. If it is a standard Windows message, the message is passed to the appropriate default window procedure.  
   
- 一致するメッセージを簡単にするために、フレームワークは同じメッセージを再び表示する確率の最新の一致をキャッシュします。  次の 1 種類の結果は、フレームワークが処理されていないメッセージをより効率的に処理されます。  メッセージ マップでは、仮想関数を使用して、実装より効率的です。  
+ To speed message-map matching, the framework caches recent matches on the likelihood that it will receive the same message again. One consequence of this is that the framework processes unhandled messages quite efficiently. Message maps are also more space-efficient than implementations that use virtual functions.  
   
-## 参照  
- [フレームワークのメッセージ マップ検索方法](../mfc/how-the-framework-searches-message-maps.md)
+## <a name="see-also"></a>See Also  
+ [How the Framework Searches Message Maps](../mfc/how-the-framework-searches-message-maps.md)
+
+

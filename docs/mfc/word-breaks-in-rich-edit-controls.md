@@ -1,32 +1,51 @@
 ---
-title: "リッチ エディット コントロールでのワード区切り | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "区切り文字 (CRichEditCtrl のワードの)"
-  - "CRichEditCtrl クラス, ワード区切り"
-  - "リッチ エディット コントロール, ワード区切り"
-  - "単語の分割"
+title: Word Breaks in Rich Edit Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CRichEditCtrl class [MFC], word breaks in
+- word breaks
+- breaking words in CRichEditCtrl
+- rich edit controls [MFC], word breaks in
 ms.assetid: 641dcf9e-7b40-4dc0-85f7-575a8c142f73
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# リッチ エディット コントロールでのワード区切り
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 38b59346ad7fbb135c019b10635d109c6255fb34
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リッチ エディット コントロール \([CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)\) は中断手順」という単語と関数呼び出しの間の中断を見つけ、改行のどこにあるかを確認します。  コントロールはワードラップ操作と CTRL\+LEFT と→キーの組み合わせを処理するときに実行するときに、この情報を使用します。  アプリケーションはリッチ エディット コントロールに既定の単語中断プロシージャを置き換え、Word 中断情報を取得し、必要な行で指定された文字があるかを判断するためにメッセージを送信できます。  
+---
+# <a name="word-breaks-in-rich-edit-controls"></a>Word Breaks in Rich Edit Controls
+A rich edit control ([CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)) calls a function called a "word break procedure" to find breaks between words and to determine where it can break lines. The control uses this information when performing word-wrap operations and when processing the CTRL+LEFT and CTRL+RIGHT key combinations. An application can send messages to a rich edit control to replace the default word-break procedure, to retrieve word-break information, and to determine what line a given character falls on.  
   
-## 参照  
- [CRichEditCtrl の使い方](../mfc/using-cricheditctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CRichEditCtrl](../mfc/using-cricheditctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

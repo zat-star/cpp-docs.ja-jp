@@ -1,87 +1,106 @@
 ---
-title: "継承機能のレベルの指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CObject クラス, 追加 (派生クラスに機能を)"
-  - "動的生成機能のサポート"
-  - "レベル [C++]"
-  - "レベル [C++], 機能 (CObject の)"
-  - "ランタイム [C++], クラス情報"
-  - "ランタイム クラス, 情報サポート"
-  - "シリアル化 [C++], CObject"
+title: Specifying Levels of Functionality | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CObject class [MFC], adding functionality to derived classes
+- runtime [MFC], class information
+- serialization [MFC], Cobject
+- dynamic creation support
+- levels [MFC], functionality in CObject
+- run-time class [MFC], information support
+- levels [MFC]
 ms.assetid: 562669ba-c858-4f66-b5f1-b3beeea4f486
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 継承機能のレベルの指定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3caa6b3fb3ae939c11646d54282edeb25a8740ac
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは [CObject](../Topic/CObject%20Class.md)機能に追加する方法を\-派生クラスの次のレベルについて説明します。:  
+---
+# <a name="specifying-levels-of-functionality"></a>Specifying Levels of Functionality
+This article describes how to add the following levels of functionality to your [CObject](../mfc/reference/cobject-class.md)-derived class:  
   
--   [ランタイム クラス情報](#_core_to_add_run.2d.time_class_information)  
+-   [Run-time class information](#_core_to_add_run.2d.time_class_information)  
   
--   [動的生成サポート](#_core_to_add_dynamic_creation_support)  
+-   [Dynamic creation support](#_core_to_add_dynamic_creation_support)  
   
--   [シリアル化のサポート](#_core_to_add_serialization_support)  
+-   [Serialization support](#_core_to_add_serialization_support)  
   
- `CObject` の機能に関する一般的な説明については、"情報 [CObject からクラスを派生すること](../mfc/deriving-a-class-from-cobject.md)を参照してください。  
+ For a general description of `CObject` functionality, see the article [Deriving a Class from CObject](../mfc/deriving-a-class-from-cobject.md).  
   
-#### ランタイム クラス情報を追加します。  
+-   [Run-time class information](#_core_to_add_run.2d.time_class_information)  
+#### <a name="_core_to_add_run.2d.time_class_information"></a> To add run-time class information  
   
-1.  [CObject からクラスを派生すること](../mfc/deriving-a-class-from-cobject.md) の記事"に説明されているように、`CObject`からクラスを派生してください。  
+1.  Derive your class from `CObject`, as described in the [Deriving a Class from CObject](../mfc/deriving-a-class-from-cobject.md) article.  
   
-2.  次に示すように、クラス宣言で `DECLARE_DYNAMIC` マクロを使用する:  
+2.  Use the `DECLARE_DYNAMIC` macro in your class declaration, as shown here:  
   
-     [!code-cpp[NVC_MFCCObjectSample#2](../mfc/codesnippet/CPP/specifying-levels-of-functionality_1.h)]  
+     [!code-cpp[NVC_MFCCObjectSample#2](../mfc/codesnippet/cpp/specifying-levels-of-functionality_1.h)]  
   
-3.  クラスの実装ファイル \(.cpp\) で `IMPLEMENT_DYNAMIC` マクロを使用します。  このマクロは、引数として、次のように、クラスが、基本クラスの名前を受け取って:  
+3.  Use the `IMPLEMENT_DYNAMIC` macro in the implementation file (.CPP) of your class. This macro takes as arguments the name of the class and its base class, as follows:  
   
-     [!code-cpp[NVC_MFCCObjectSample#3](../mfc/codesnippet/CPP/specifying-levels-of-functionality_2.cpp)]  
+     [!code-cpp[NVC_MFCCObjectSample#3](../mfc/codesnippet/cpp/specifying-levels-of-functionality_2.cpp)]  
   
 > [!NOTE]
->  クラスの実装ファイル \(.cpp\) に `IMPLEMENT_DYNAMIC` を常に配置します。  したがって `IMPLEMENT_DYNAMIC` マクロは、コンパイル中に一度だけ評価され、インターフェイス ファイルには使用しないでください。複数のファイルに含めることができる H\)。  
+>  Always put `IMPLEMENT_DYNAMIC` in the implementation file (.CPP) for your class. The `IMPLEMENT_DYNAMIC` macro should be evaluated only once during a compilation and therefore should not be used in an interface file (.H) that could potentially be included in more than one file.  
   
-#### 動的生成サポートを追加するには  
+#### <a name="_core_to_add_dynamic_creation_support"></a> To add dynamic creation support  
   
-1.  `CObject`からクラスを派生してください。  
+1.  Derive your class from `CObject`.  
   
-2.  クラス宣言で `DECLARE_DYNCREATE` マクロを使用します。  
+2.  Use the `DECLARE_DYNCREATE` macro in the class declaration.  
   
-3.  既定のコンストラクター \(引数を持たないコンストラクター\) を定義します。  
+3.  Define a constructor with no arguments (a default constructor).  
   
-4.  クラスの実装ファイルに `IMPLEMENT_DYNCREATE` マクロを使用します。  
+4.  Use the `IMPLEMENT_DYNCREATE` macro in the class implementation file.  
   
-#### シリアル化のサポートを追加するには  
+#### <a name="_core_to_add_serialization_support"></a> To add serialization support  
   
-1.  `CObject`からクラスを派生してください。  
+1.  Derive your class from `CObject`.  
   
-2.  `Serialize` のメンバー関数をオーバーライドします。  
+2.  Override the `Serialize` member function.  
   
     > [!NOTE]
-    >  つまり、`Serialize` を直接呼び出す場合は省略して手順 3.から 5 をポリモーフィック ポインターを通じてオブジェクトをシリアル化するかどうか。  
+    >  If you call `Serialize` directly, that is, you do not want to serialize the object through a polymorphic pointer, omit steps 3 through 5.  
   
-3.  クラス宣言で `DECLARE_SERIAL` マクロを使用します。  
+3.  Use the `DECLARE_SERIAL` macro in the class declaration.  
   
-4.  既定のコンストラクター \(引数を持たないコンストラクター\) を定義します。  
+4.  Define a constructor with no arguments (a default constructor).  
   
-5.  クラスの実装ファイルに `IMPLEMENT_SERIAL` マクロを使用します。  
+5.  Use the `IMPLEMENT_SERIAL` macro in the class implementation file.  
   
 > [!NOTE]
->  「ポインター」はポリモーフィック クラス \(呼び出す A からオブジェクトを派生クラスのオブジェクトを示す\) または指し示して \(B\) 通知します。  ポリモーフィック ポインターからシリアル化するには、フレームワークが基本クラス \(A\) から派生したクラスのオブジェクトである可能性があるため、\(b\) をシリアル化するオブジェクトのランタイム クラスを決定する必要があります。  
+>  A "polymorphic pointer" points to an object of a class (call it A) or to an object of any class derived from A (say, B). To serialize through a polymorphic pointer, the framework must determine the run-time class of the object it is serializing (B), since it might be an object of any class derived from some base class (A).  
   
- `CObject`からクラスを派生するしくみについてはシリアル化を有効にすることで、技術情報 [MFC のファイル](../mfc/files-in-mfc.md) と [シリアル化](../Topic/Serialization%20in%20MFC.md)を参照してください。  
+ For more details on how to enable serialization when you derive your class from `CObject`, see the articles [Files in MFC](../mfc/files-in-mfc.md) and [Serialization](../mfc/serialization-in-mfc.md).  
   
-## 参照  
- [CObject からのクラスの派生](../mfc/deriving-a-class-from-cobject.md)
+## <a name="see-also"></a>See Also  
+ [Deriving a Class from CObject](../mfc/deriving-a-class-from-cobject.md)
+

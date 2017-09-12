@@ -1,5 +1,5 @@
 ---
-title: "CHwndRenderTarget クラス |Microsoft ドキュメント"
+title: CHwndRenderTarget Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,7 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CHwndRenderTarget class
+- CHwndRenderTarget [MFC], CHwndRenderTarget
+- CHwndRenderTarget [MFC], Attach
+- CHwndRenderTarget [MFC], CheckWindowState
+- CHwndRenderTarget [MFC], Create
+- CHwndRenderTarget [MFC], Detach
+- CHwndRenderTarget [MFC], GetHwnd
+- CHwndRenderTarget [MFC], GetHwndRenderTarget
+- CHwndRenderTarget [MFC], ReCreate
+- CHwndRenderTarget [MFC], Resize
+- CHwndRenderTarget [MFC], m_pHwndRenderTarget
 ms.assetid: aa65b69f-7202-46ea-af81-ef325da0b840
 caps.latest.revision: 17
 author: mikeblome
@@ -44,186 +53,186 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 1af6795e89c995ba6b5a7b094f06b0aea776f561
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7758d32bbf6fb0ba7d1402cd0890d7eb8cf3d741
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="chwndrendertarget-class"></a>CHwndRenderTarget クラス
-ID2D1HwndRenderTarget のラッパーです。  
+# <a name="chwndrendertarget-class"></a>CHwndRenderTarget Class
+A wrapper for ID2D1HwndRenderTarget.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CHwndRenderTarget : public CRenderTarget;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CHwndRenderTarget::CHwndRenderTarget](#chwndrendertarget)|Hwnd の分離 CHwndRenderTarget オブジェクトを構築します。|  
+|[CHwndRenderTarget::CHwndRenderTarget](#chwndrendertarget)|Constructs a CHwndRenderTarget object from HWND.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CHwndRenderTarget::Attach](#attach)|既存の接続は、ターゲット オブジェクトのインターフェイスを表示します。|  
-|[CHwndRenderTarget::CheckWindowState](#checkwindowstate)|このレンダー ターゲットに関連付けられている HWND が遮蔽かどうかを示します。|  
-|[CHwndRenderTarget::Create](#create)|ウィンドウに関連付けられているレンダー ターゲットを作成します。|  
-|[CHwndRenderTarget::Detach](#detach)|レンダー ターゲットのインターフェイス、オブジェクトからのデタッチします。|  
-|[CHwndRenderTarget::GetHwnd](#gethwnd)|これに関連付けられている HWND を返します。 は、ターゲットをレンダリングします。|  
-|[CHwndRenderTarget::GetHwndRenderTarget](#gethwndrendertarget)|ID2D1HwndRenderTarget インターフェイスを返します。|  
-|[CHwndRenderTarget::ReCreate](#recreate)|ウィンドウに関連付けられているレンダー ターゲットを再作成します。|  
-|[CHwndRenderTarget::Resize](#resize)|指定したピクセル サイズにレンダー ターゲットのサイズを変更します。|  
+|[CHwndRenderTarget::Attach](#attach)|Attaches existing render target interface to the object|  
+|[CHwndRenderTarget::CheckWindowState](#checkwindowstate)|Indicates whether the HWND associated with this render target is occluded.|  
+|[CHwndRenderTarget::Create](#create)|Creates a render target associated with the window|  
+|[CHwndRenderTarget::Detach](#detach)|Detaches render target interface from the object|  
+|[CHwndRenderTarget::GetHwnd](#gethwnd)|Returns the HWND associated with this render target.|  
+|[CHwndRenderTarget::GetHwndRenderTarget](#gethwndrendertarget)|Returns ID2D1HwndRenderTarget interface.|  
+|[CHwndRenderTarget::ReCreate](#recreate)|Re-creates a render target associated with the window|  
+|[CHwndRenderTarget::Resize](#resize)|Changes the size of the render target to the specified pixel size|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CHwndRenderTarget::operator ID2D1HwndRenderTarget *](#operator_id2d1hwndrendertarget_star)|ID2D1HwndRenderTarget インターフェイスを返します。|  
+|[CHwndRenderTarget::operator ID2D1HwndRenderTarget*](#operator_id2d1hwndrendertarget_star)|Returns ID2D1HwndRenderTarget interface.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CHwndRenderTarget::m_pHwndRenderTarget](#m_phwndrendertarget)|ID2D1HwndRenderTarget オブジェクトへのポインター。|  
+|[CHwndRenderTarget::m_pHwndRenderTarget](#m_phwndrendertarget)|A pointer to an ID2D1HwndRenderTarget object.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CRenderTarget](../../mfc/reference/crendertarget-class.md)  
   
  [CHwndRenderTarget](../../mfc/reference/chwndrendertarget-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="attach"></a>CHwndRenderTarget::Attach  
- 既存の接続は、ターゲット オブジェクトのインターフェイスを表示します。  
+##  <a name="attach"></a>  CHwndRenderTarget::Attach  
+ Attaches existing render target interface to the object  
   
 ```  
 void Attach(ID2D1HwndRenderTarget* pTarget);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pTarget`  
- 既存のレンダー ターゲットのインターフェイスです。 NULL にすることはできません。  
+ Existing render target interface. Cannot be NULL  
   
-##  <a name="checkwindowstate"></a>CHwndRenderTarget::CheckWindowState  
- このレンダー ターゲットに関連付けられている HWND が遮蔽かどうかを示します。  
+##  <a name="checkwindowstate"></a>  CHwndRenderTarget::CheckWindowState  
+ Indicates whether the HWND associated with this render target is occluded.  
   
 ```  
 D2D1_WINDOW_STATE CheckWindowState() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- これに関連付けられている HWND がターゲットをレンダリングするかどうかを示す値が遮蔽されます。  
+### <a name="return-value"></a>Return Value  
+ A value that indicates whether the HWND associated with this render target is occluded.  
   
-##  <a name="chwndrendertarget"></a>CHwndRenderTarget::CHwndRenderTarget  
- Hwnd の分離 CHwndRenderTarget オブジェクトを構築します。  
+##  <a name="chwndrendertarget"></a>  CHwndRenderTarget::CHwndRenderTarget  
+ Constructs a CHwndRenderTarget object from HWND.  
   
 ```  
 CHwndRenderTarget(HWND hwnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hwnd`  
- これに関連付けられている HWND レンダリング ターゲット  
+ The HWND associated with this render target  
   
-##  <a name="create"></a>CHwndRenderTarget::Create  
- ウィンドウに関連付けられているレンダー ターゲットを作成します。  
+##  <a name="create"></a>  CHwndRenderTarget::Create  
+ Creates a render target associated with the window  
   
 ```  
 BOOL Create(HWND hWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hWnd`  
- これに関連付けられている HWND レンダリング ターゲット  
+ The HWND associated with this render target  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合は FALSE を返します  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE  
   
-##  <a name="detach"></a>CHwndRenderTarget::Detach  
- レンダー ターゲットのインターフェイス、オブジェクトからのデタッチします。  
+##  <a name="detach"></a>  CHwndRenderTarget::Detach  
+ Detaches render target interface from the object  
   
 ```  
 ID2D1HwndRenderTarget* Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- デタッチされたへのポインターは、対象のインターフェイスをレンダリングします。  
+### <a name="return-value"></a>Return Value  
+ Pointer to detached render target interface.  
   
-##  <a name="gethwnd"></a>CHwndRenderTarget::GetHwnd  
- これに関連付けられている HWND を返します。 は、ターゲットをレンダリングします。  
+##  <a name="gethwnd"></a>  CHwndRenderTarget::GetHwnd  
+ Returns the HWND associated with this render target.  
   
 ```  
 HWND GetHwnd() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- これに関連付けられている HWND では、ターゲットをレンダリングします。  
+### <a name="return-value"></a>Return Value  
+ The HWND associated with this render target.  
   
-##  <a name="gethwndrendertarget"></a>CHwndRenderTarget::GetHwndRenderTarget  
- ID2D1HwndRenderTarget インターフェイスを返します。  
+##  <a name="gethwndrendertarget"></a>  CHwndRenderTarget::GetHwndRenderTarget  
+ Returns ID2D1HwndRenderTarget interface.  
   
 ```  
 ID2D1HwndRenderTarget* GetHwndRenderTarget();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ID2D1HwndRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1HwndRenderTarget interface or NULL if object is not initialized yet.  
   
-##  <a name="m_phwndrendertarget"></a>CHwndRenderTarget::m_pHwndRenderTarget  
- ID2D1HwndRenderTarget オブジェクトへのポインター。  
+##  <a name="m_phwndrendertarget"></a>  CHwndRenderTarget::m_pHwndRenderTarget  
+ A pointer to an ID2D1HwndRenderTarget object.  
   
 ```  
 ID2D1HwndRenderTarget* m_pHwndRenderTarget;  
 ```  
   
-##  <a name="operator_id2d1hwndrendertarget_star"></a>CHwndRenderTarget::operator ID2D1HwndRenderTarget *  
- ID2D1HwndRenderTarget インターフェイスを返します。  
+##  <a name="operator_id2d1hwndrendertarget_star"></a>  CHwndRenderTarget::operator ID2D1HwndRenderTarget*  
+ Returns ID2D1HwndRenderTarget interface.  
   
 ```  
 operator ID2D1HwndRenderTarget*();
 ```   
   
-### <a name="return-value"></a>戻り値  
- ID2D1HwndRenderTarget インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1HwndRenderTarget interface or NULL if object is not initialized yet.  
   
-##  <a name="recreate"></a>CHwndRenderTarget::ReCreate  
- ウィンドウに関連付けられているレンダー ターゲットを再作成します。  
+##  <a name="recreate"></a>  CHwndRenderTarget::ReCreate  
+ Re-creates a render target associated with the window  
   
 ```  
 BOOL ReCreate(HWND hWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hWnd`  
- これに関連付けられている HWND レンダリング ターゲット  
+ The HWND associated with this render target  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="resize"></a>CHwndRenderTarget::Resize  
- 指定したピクセル サイズにレンダー ターゲットのサイズを変更します。  
+##  <a name="resize"></a>  CHwndRenderTarget::Resize  
+ Changes the size of the render target to the specified pixel size  
   
 ```  
 BOOL Resize(const CD2DSizeU& size);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `size`  
- デバイス ピクセル単位で、レンダー ターゲットの新しいサイズ  
+ The new size of the render target in device pixels  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

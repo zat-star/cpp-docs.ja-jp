@@ -1,5 +1,5 @@
 ---
-title: "MFC クラス |Microsoft ドキュメント"
+title: MFC Classes | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,7 +12,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - MFC, classes
-- classes [C++], MFC
+- classes [MFC], MFC
 ms.assetid: 7b6db805-a572-43fd-9046-0fa6e3663e63
 caps.latest.revision: 33
 author: mikeblome
@@ -33,1304 +33,1304 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 4e63a2eed54968087fd32e1cb8d7754e99ad033c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 02f6466bbe3e9f18a29153abf7316f3feee1d6c4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="mfc-classes"></a>MFC クラス
-Microsoft Foundation Class (MFC) ライブラリには、次の一覧に示すクラスが含まれています。  
+# <a name="mfc-classes"></a>MFC Classes
+The classes in the following list are included in the Microsoft Foundation Class (MFC) Library.  
   
 > [!TIP]
->  については[CStringT](../../atl-mfc-shared/reference/cstringt-class.md) MFC および ATL の両方のプログラミングに共通するその他のクラスを参照してくださいと[MFC および ATL で共有されるクラス](../../atl-mfc-shared/reference/classes-shared-by-mfc-and-atl.md)します。  
+>  For information about [CStringT](../../atl-mfc-shared/reference/cstringt-class.md) and other classes that are common to both MFC and ATL programming, see [Classes Shared by MFC and ATL](../../atl-mfc-shared/reference/classes-shared-by-mfc-and-atl.md).  
   
 > [!IMPORTANT]
->  MFC クラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  The MFC classes and their members cannot be used in applications that execute in the Windows Runtime.  
   
-## <a name="in-this-section"></a>このセクションの内容  
- [CAccelerateDecelerateTransition クラス](../../mfc/reference/cacceleratedeceleratetransition-class1.md)  
- 加速減速遷移を実装します。  
+## <a name="in-this-section"></a>In This Section  
+ [CAccelerateDecelerateTransition Class](../../mfc/reference/cacceleratedeceleratetransition-class1.md)  
+ Implements an accelerate-decelerate transition.  
   
- [CAnimateCtrl クラス](../../mfc/reference/canimatectrl-class.md)  
- Windows コモン アニメーション コントロールの機能が用意されています。  
+ [CAnimateCtrl Class](../../mfc/reference/canimatectrl-class.md)  
+ Provides the functionality of the Windows common animation control.  
   
- [CAnimationBaseObject クラス](../../mfc/reference/canimationbaseobject-class.md)  
- すべてのアニメーション オブジェクトの基底クラスです。  
+ [CAnimationBaseObject Class](../../mfc/reference/canimationbaseobject-class.md)  
+ The base class for all animation objects.  
   
- [CAnimationColor クラス](../../mfc/reference/canimationcolor-class.md)  
- 赤、緑、および青の各色要素をアニメーション化できる機能を実装します。  
+ [CAnimationColor Class](../../mfc/reference/canimationcolor-class.md)  
+ Implements the functionality of a color whose red, green, and blue components can be animated.  
   
- [CAnimationController クラス](../../mfc/reference/canimationcontroller-class.md)  
- アニメーションを作成および管理するための中心的なインターフェイスを提供する、アニメーション コントローラーを実装します。  
+ [CAnimationController Class](../../mfc/reference/canimationcontroller-class.md)  
+ Implements the animation controller, which provides a central interface for creating and managing animations.  
   
- [CAnimationGroup クラス](../../mfc/reference/canimationgroup-class.md)  
- アニメーションを作成および管理するための中心的なインターフェイスを提供する、アニメーション コントローラーを実装します。  
+ [CAnimationGroup Class](../../mfc/reference/canimationgroup-class.md)  
+ Implements the animation controller, which provides a central interface for creating and managing animations.  
   
- [CAnimationManagerEventHandler クラス](../../mfc/reference/canimationmanagereventhandler-class.md)  
- アニメーション マネージャーのステータスの変更時に Animation API によって呼び出されるコールバックを実装します。  
+ [CAnimationManagerEventHandler Class](../../mfc/reference/canimationmanagereventhandler-class.md)  
+ Implements a callback, which is called by the Animation API when a status of an animation manager is changed.  
   
- [CAnimationPoint クラス](../../mfc/reference/canimationpoint-class.md)  
- 座標をアニメーション化できる点の機能を実装します。  
+ [CAnimationPoint Class](../../mfc/reference/canimationpoint-class.md)  
+ Implements the functionality of a point whose coordinates can be animated.  
   
- [CAnimationRect クラス](../../mfc/reference/canimationrect-class.md)  
- 四角形の&4; 辺をアニメーション化できる機能を実装します。  
+ [CAnimationRect Class](../../mfc/reference/canimationrect-class.md)  
+ Implements the functionality of a rectangle whose sides can be animated.  
   
- [CAnimationSize クラス](../../mfc/reference/canimationsize-class.md)  
- サイズをアニメーション化できるサイズ オブジェクトの機能を実装します。  
+ [CAnimationSize Class](../../mfc/reference/canimationsize-class.md)  
+ Implements the functionality of a size object whose dimensions can be animated.  
   
- [CAnimationStoryboardEventHandler クラス](../../mfc/reference/canimationstoryboardeventhandler-class.md)  
- ストーリーボードのステータスの変更時またはストーリーボードの更新時に Animation API によって呼び出されるコールバックを実装します。  
+ [CAnimationStoryboardEventHandler Class](../../mfc/reference/canimationstoryboardeventhandler-class.md)  
+ Implements a callback, which is called by the Animation API when the status of a storyboard is changed or a storyboard is updated.  
   
- [CAnimationTimerEventHandler クラス](../../mfc/reference/canimationtimereventhandler-class.md)  
- タイミング イベントの発生時に Animation API によって呼び出されるコールバックを実装します。  
+ [CAnimationTimerEventHandler Class](../../mfc/reference/canimationtimereventhandler-class.md)  
+ Implements a callback, which is called by the Animation API when timing events occur.  
   
- [CAnimationValue クラス](../../mfc/reference/canimationvalue-class.md)  
- 1 つの値を持つアニメーション オブジェクトの機能を実装します。  
+ [CAnimationValue Class](../../mfc/reference/canimationvalue-class.md)  
+ Implements the functionality of animation object that has one value.  
   
- [CAnimationVariable クラス](../../mfc/reference/canimationvariable-class.md)  
- アニメーション変数を表します。  
+ [CAnimationVariable Class](../../mfc/reference/canimationvariable-class.md)  
+ Represents an animation variable.  
   
- [CAnimationVariableChangeHandler クラス](../../mfc/reference/canimationvariablechangehandler-class.md)  
- アニメーション変数の値が変化したときに Animation API によって呼び出されるコールバックを実装します。  
+ [CAnimationVariableChangeHandler Class](../../mfc/reference/canimationvariablechangehandler-class.md)  
+ Implements a callback, which is called by the Animation API when the value of an animation variable changes.  
   
- [CAnimationVariableIntegerChangeHandler クラス](../../mfc/reference/canimationvariableintegerchangehandler-class.md)  
- アニメーション変数の値が変化したときに Animation API によって呼び出されるコールバックを実装します。  
+ [CAnimationVariableIntegerChangeHandler Class](../../mfc/reference/canimationvariableintegerchangehandler-class.md)  
+ Implements a callback, which is called by the Animation API when the value of an animation variable changes.  
   
- [CArchive クラス](../../mfc/reference/carchive-class.md)  
- オブジェクトの複雑なネットワークを永続的なバイナリ形式 (通常はディスク ストレージ) に保存し、オブジェクトを削除した後も保持できます。  
+ [CArchive Class](../../mfc/reference/carchive-class.md)  
+ Lets you save a complex network of objects in a permanent binary form (usually disk storage) that persists after those objects are deleted.  
   
- [CArchiveException クラス](../../mfc/reference/carchiveexception-class.md)  
- シリアル化の例外の条件を表します。  
+ [CArchiveException Class](../../mfc/reference/carchiveexception-class.md)  
+ Represents a serialization exception condition.  
   
- [CArray クラス](../../mfc/reference/carray-class.md)  
- C 言語の配列に似ていますが、必要に応じて動的に配列の縮小や拡張ができます。  
+ [CArray Class](../../mfc/reference/carray-class.md)  
+ Supports arrays that resemble C arrays, but can dynamically reduce and grow as necessary.  
   
- [CAsyncMonikerFile クラス](../../mfc/reference/casyncmonikerfile-class.md)  
- ActiveX コントロール (以前の OLE コントロール) で非同期モニカーを使用するための機能が用意されています。  
+ [CAsyncMonikerFile Class](../../mfc/reference/casyncmonikerfile-class.md)  
+ Provides functionality for the use of asynchronous monikers in ActiveX controls (formerly OLE controls).  
   
- [CAsyncSocket クラス](../../mfc/reference/casyncsocket-class.md)  
- Windows ソケットを表します。ソケットは、ネットワーク通信のエンドポイントです。  
+ [CAsyncSocket Class](../../mfc/reference/casyncsocket-class.md)  
+ Represents a Windows Socket, which is an endpoint of network communication.  
   
- [CAutoHideDockSite クラス](../../mfc/reference/cautohidedocksite-class.md)  
- 拡張、 [CDockSite クラス](../../mfc/reference/cdocksite-class.md)自動非表示のドッキング ペインを実装します。  
+ [CAutoHideDockSite Class](../../mfc/reference/cautohidedocksite-class.md)  
+ Extends the [CDockSite Class](../../mfc/reference/cdocksite-class.md) to implement auto-hide dock panes.  
   
- [CBaseKeyFrame クラス](../../mfc/reference/cbasekeyframe-class.md)  
- キーフレームの基本機能を実装します。  
+ [CBaseKeyFrame Class](../../mfc/reference/cbasekeyframe-class.md)  
+ Implements the basic functionality of a keyframe.  
   
- [CBasePane クラス](../../mfc/reference/cbasepane-class.md)  
- すべてのペインの基底クラスです。  
+ [CBasePane Class](../../mfc/reference/cbasepane-class.md)  
+ Base class for all panes.  
   
- [CBaseTabbedPane クラス](../../mfc/reference/cbasetabbedpane-class.md)  
- 機能を拡張、 [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)タブ付きウィンドウの作成をサポートします。  
+ [CBaseTabbedPane Class](../../mfc/reference/cbasetabbedpane-class.md)  
+ Extends the functionality of the [CDockablePane Class](../../mfc/reference/cdockablepane-class.md) to support the creation of tabbed windows.  
   
- [CBaseTransition クラス](../../mfc/reference/cbasetransition-class.md)  
- 基本遷移を表します。  
+ [CBaseTransition Class](../../mfc/reference/cbasetransition-class.md)  
+ Represents a basic transition.  
   
- [CBitmap クラス](../../mfc/reference/cbitmap-class.md)  
- Windows のグラフィック デバイス インターフェイス (GDI: Graphics Device Interface) のビットマップをカプセル化したもので、ビットマップを操作するためのメンバー関数を提供します。  
+ [CBitmap Class](../../mfc/reference/cbitmap-class.md)  
+ Encapsulates a Windows graphics device interface (GDI) bitmap and provides member functions to manipulate the bitmap.  
   
- [CBitmapButton クラス](../../mfc/reference/cbitmapbutton-class.md)  
- ラベルがテキストではなくビットマップ イメージのプッシュ ボタン コントロールを作成します。  
+ [CBitmapButton Class](../../mfc/reference/cbitmapbutton-class.md)  
+ Creates pushbutton controls labeled with bitmapped images instead of text.  
   
- [CBitmapRenderTarget クラス](../../mfc/reference/cbitmaprendertarget-class.md)  
- `ID2D1BitmapRenderTarget`のラッパー。  
+ [CBitmapRenderTarget Class](../../mfc/reference/cbitmaprendertarget-class.md)  
+ A wrapper for `ID2D1BitmapRenderTarget`.  
   
- [CBrush クラス](../../mfc/reference/cbrush-class.md)  
- Windows のグラフィック デバイス インターフェイス (GDI) のブラシをカプセル化します。  
+ [CBrush Class](../../mfc/reference/cbrush-class.md)  
+ Encapsulates a Windows graphics device interface (GDI) brush.  
   
- [CButton クラス](../../mfc/reference/cbutton-class.md)  
- Windows のボタン コントロールの機能が用意されています。  
+ [CButton Class](../../mfc/reference/cbutton-class.md)  
+ Provides the functionality of Windows button controls.  
   
- [CByteArray クラス](../../mfc/reference/cbytearray-class.md)  
- バイトの動的配列をサポートします。  
+ [CByteArray Class](../../mfc/reference/cbytearray-class.md)  
+ Supports dynamic arrays of bytes.  
   
- [プロパティ クラス](../../mfc/reference/ccacheddatapathproperty-class.md)  
- 非同期で転送し、メモリ ファイルにキャッシュする OLE コントロール プロパティを実装します。  
+ [CCachedDataPathProperty Class](../../mfc/reference/ccacheddatapathproperty-class.md)  
+ Implements an OLE control property transferred asynchronously and cached in a memory file.  
   
- [CCheckListBox クラス](../../mfc/reference/cchecklistbox-class.md)  
- Windows のチェックリスト ボックスの機能を提供します。  
+ [CCheckListBox Class](../../mfc/reference/cchecklistbox-class.md)  
+ Provides the functionality of a Windows checklist box.  
   
- [CClientDC クラス](../../mfc/reference/cclientdc-class.md)  
- 構築時の Windows 関数 [GetDC](http://msdn.microsoft.com/library/windows/desktop/dd144871) の呼び出しと、破棄時の [ReleaseDC](http://msdn.microsoft.com/library/windows/desktop/dd162920) の呼び出しを処理します。  
+ [CClientDC Class](../../mfc/reference/cclientdc-class.md)  
+ Handles the calling of the Windows functions [GetDC](http://msdn.microsoft.com/library/windows/desktop/dd144871) at construction time and [ReleaseDC](http://msdn.microsoft.com/library/windows/desktop/dd162920) at destruction time.  
   
- [CCmdTarget クラス](../../mfc/reference/ccmdtarget-class.md)  
- Microsoft Foundation Class ライブラリのメッセージ マップ アーキテクチャに関する基底クラスです。  
+ [CCmdTarget Class](../../mfc/reference/ccmdtarget-class.md)  
+ Base class for the Microsoft Foundation Class Library message-map architecture.  
   
- [CCmdUI クラス](../../mfc/reference/ccmdui-class.md)  
- `ON_UPDATE_COMMAND_UI` の派生クラスの `CCmdTarget`ハンドラー内でのみ使用されます。  
+ [CCmdUI Class](../../mfc/reference/ccmdui-class.md)  
+ Used only within an `ON_UPDATE_COMMAND_UI` handler in a `CCmdTarget`-derived class.  
   
- [CColorDialog クラス](../../mfc/reference/ccolordialog-class.md)  
- 色の選択ダイアログ ボックスをアプリケーションに組み込むことができます。  
+ [CColorDialog Class](../../mfc/reference/ccolordialog-class.md)  
+ Lets you incorporate a color-selection dialog box into your application.  
   
- [CComboBox クラス](../../mfc/reference/ccombobox-class.md)  
- Windows のコンボ ボックスの機能が用意されています。  
+ [CComboBox Class](../../mfc/reference/ccombobox-class.md)  
+ Provides the functionality of a Windows combo box.  
   
- [CComboBoxEx クラス](../../mfc/reference/ccomboboxex-class.md)  
- イメージ リストをサポートすることにより、コンボ ボックス コントロールを拡張します。  
+ [CComboBoxEx Class](../../mfc/reference/ccomboboxex-class.md)  
+ Extends the combo box control by providing support for image lists.  
   
- [メンバー クラス](../../mfc/reference/ccommandlineinfo-class.md)  
- アプリケーション起動時のコマンド ライン解析を補助します。  
+ [CCommandLineInfo Class](../../mfc/reference/ccommandlineinfo-class.md)  
+ Aids in parsing the command line at application startup.  
   
- [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)  
- Windows コモン ダイアログの機能をカプセル化したクラスの基底クラスです。  
+ [CCommonDialog Class](../../mfc/reference/ccommondialog-class.md)  
+ The base class for classes that encapsulate functionality of the Windows common dialogs.  
   
- [関数のクラス](../../mfc/reference/cconnectionpoint-class.md)  
- 他の OLE オブジェクトと通信するために使われる "コネクション ポイント" と呼ばれる特別な型のインターフェイスを定義します。  
+ [CConnectionPoint Class](../../mfc/reference/cconnectionpoint-class.md)  
+ Defines a special type of interface used to communicate with other OLE objects, called a "connection point."  
   
- [CConstantTransition クラス](../../mfc/reference/cconstanttransition-class.md)  
- 連続的遷移をカプセル化します。  
+ [CConstantTransition Class](../../mfc/reference/cconstanttransition-class.md)  
+ Encapsulates a constant transition.  
   
- [CContextMenuManager クラス](../../mfc/reference/ccontextmenumanager-class.md)  
- ショートカット メニューを管理します。ショートカット メニューは、コンテキスト メニューとも呼ばれます。  
+ [CContextMenuManager Class](../../mfc/reference/ccontextmenumanager-class.md)  
+ Manages shortcut menus, also known as context menus.  
   
- [CControlBar クラス](../../mfc/reference/ccontrolbar-class.md)  
- コントロール バー クラスの基本クラス[CStatusBar クラス](../../mfc/reference/cstatusbar-class.md)、 [CToolBar クラス](../../mfc/reference/ctoolbar-class.md)、 [CDialogBar クラス](../../mfc/reference/cdialogbar-class.md)、 [CReBar クラス](../../mfc/reference/crebar-class.md)、および[COleResizeBar クラス](../../mfc/reference/coleresizebar-class.md)します。  
+ [CControlBar Class](../../mfc/reference/ccontrolbar-class.md)  
+ Base class for the control-bar classes [CStatusBar Class](../../mfc/reference/cstatusbar-class.md), [CToolBar Class](../../mfc/reference/ctoolbar-class.md), [CDialogBar Class](../../mfc/reference/cdialogbar-class.md), [CReBar Class](../../mfc/reference/crebar-class.md), and [COleResizeBar Class](../../mfc/reference/coleresizebar-class.md).  
   
- [CCriticalSection クラス](../../mfc/reference/ccriticalsection-class.md)  
- "クリティカル セクション" を表します。これは、一度に&1; つのスレッドだけがリソースまたはコード セクションにアクセスできるようにする同期オブジェクトです。  
+ [CCriticalSection Class](../../mfc/reference/ccriticalsection-class.md)  
+ Represents a "critical section", which is a synchronization object that enables one thread at a time to access a resource or section of code.  
   
- [CCtrlView クラス](../../mfc/reference/cctrlview-class.md)  
- Windows 98 および Windows NT Version 3.51 以降がサポートするコモン コントロールにドキュメント/ビュー アーキテクチャを適合させます。  
+ [CCtrlView Class](../../mfc/reference/cctrlview-class.md)  
+ Adapts the document-view architecture to the common controls supported by Windows 98 and Windows NT versions 3.51 and later.  
   
- [CCubicTransition クラス](../../mfc/reference/ccubictransition-class.md)  
- 3 次遷移をカプセル化します。  
+ [CCubicTransition Class](../../mfc/reference/ccubictransition-class.md)  
+ Encapsulates a cubic transition.  
   
- [CCustomInterpolator クラス](../../mfc/reference/ccustominterpolator-class.md)  
- 基本のインターポレータを実装します。  
+ [CCustomInterpolator Class](../../mfc/reference/ccustominterpolator-class.md)  
+ Implements a basic interpolator.  
   
- [CCustomTransition クラス](../../mfc/reference/ccustomtransition-class.md)  
- カスタム遷移を実装します。  
+ [CCustomTransition Class](../../mfc/reference/ccustomtransition-class.md)  
+ Implements a custom transition.  
   
- [CD2DBitmap クラス](../../mfc/reference/cd2dbitmap-class.md)  
- `ID2D1Bitmap`のラッパー。  
+ [CD2DBitmap Class](../../mfc/reference/cd2dbitmap-class.md)  
+ A wrapper for `ID2D1Bitmap`.  
   
- [CD2DBitmapBrush クラス](../../mfc/reference/cd2dbitmapbrush-class.md)  
- `ID2D1BitmapBrush`のラッパー。  
+ [CD2DBitmapBrush Class](../../mfc/reference/cd2dbitmapbrush-class.md)  
+ A wrapper for `ID2D1BitmapBrush`.  
   
- [CD2DBrush クラス](../../mfc/reference/cd2dbrush-class.md)  
- `ID2D1Brush`のラッパー。  
+ [CD2DBrush Class](../../mfc/reference/cd2dbrush-class.md)  
+ A wrapper for `ID2D1Brush`.  
   
- [CD2DBrushProperties クラス](../../mfc/reference/cd2dbrushproperties-class.md)  
- `D2D1_BRUSH_PROPERTIES`のラッパー。  
+ [CD2DBrushProperties Class](../../mfc/reference/cd2dbrushproperties-class.md)  
+ A wrapper for `D2D1_BRUSH_PROPERTIES`.  
   
- [CD2DEllipse クラス](../../mfc/reference/cd2dellipse-class.md)  
- `D2D1_BRUSH_PROPERTIES`のラッパー。  
+ [CD2DEllipse Class](../../mfc/reference/cd2dellipse-class.md)  
+ A wrapper for `D2D1_BRUSH_PROPERTIES`.  
   
- [CD2DGeometry クラス](../../mfc/reference/cd2dgeometry-class.md)  
- `ID2D1Geometry`のラッパー。  
+ [CD2DGeometry Class](../../mfc/reference/cd2dgeometry-class.md)  
+ A wrapper for `ID2D1Geometry`.  
   
- [CD2DGeometrySink クラス](../../mfc/reference/cd2dgeometrysink-class.md)  
- `ID2D1GeometrySink`のラッパー。  
+ [CD2DGeometrySink Class](../../mfc/reference/cd2dgeometrysink-class.md)  
+ A wrapper for `ID2D1GeometrySink`.  
   
- [CD2DGradientBrush クラス](../../mfc/reference/cd2dgradientbrush-class.md)  
- `CD2DLinearGradientBrush` クラスおよび `CD2DRadialGradientBrush` クラスの基底クラス。  
+ [CD2DGradientBrush Class](../../mfc/reference/cd2dgradientbrush-class.md)  
+ The base class of the `CD2DLinearGradientBrush` and the `CD2DRadialGradientBrush` classes.  
   
- [CD2DLayer クラス](../../mfc/reference/cd2dlayer-class.md)  
- `ID2D1Layer`のラッパー。  
+ [CD2DLayer Class](../../mfc/reference/cd2dlayer-class.md)  
+ A wrapper for `ID2D1Layer`.  
   
- [CD2DLinearGradientBrush クラス](../../mfc/reference/cd2dlineargradientbrush-class.md)  
- `ID2D1LinearGradientBrush`のラッパー。  
+ [CD2DLinearGradientBrush Class](../../mfc/reference/cd2dlineargradientbrush-class.md)  
+ A wrapper for `ID2D1LinearGradientBrush`.  
   
- [CD2DMesh クラス](../../mfc/reference/cd2dmesh-class.md)  
- `ID2D1Mesh`のラッパー。  
+ [CD2DMesh Class](../../mfc/reference/cd2dmesh-class.md)  
+ A wrapper for `ID2D1Mesh`.  
   
- [CD2DPathGeometry クラス](../../mfc/reference/cd2dpathgeometry-class.md)  
- `ID2D1PathGeometry`のラッパー。  
+ [CD2DPathGeometry Class](../../mfc/reference/cd2dpathgeometry-class.md)  
+ A wrapper for `ID2D1PathGeometry`.  
   
- [CD2DPointF クラス](../../mfc/reference/cd2dpointf-class.md)  
- `D2D1_POINT_2F`のラッパー。  
+ [CD2DPointF Class](../../mfc/reference/cd2dpointf-class.md)  
+ A wrapper for `D2D1_POINT_2F`.  
   
- [CD2DPointU クラス](../../mfc/reference/cd2dpointu-class.md)  
- `D2D1_POINT_2U`のラッパー。  
+ [CD2DPointU Class](../../mfc/reference/cd2dpointu-class.md)  
+ A wrapper for `D2D1_POINT_2U`.  
   
- [CD2DRadialGradientBrush クラス](../../mfc/reference/cd2dradialgradientbrush-class.md)  
- `ID2D1RadialGradientBrush`のラッパー。  
+ [CD2DRadialGradientBrush Class](../../mfc/reference/cd2dradialgradientbrush-class.md)  
+ A wrapper for `ID2D1RadialGradientBrush`.  
   
- [CD2DRectF クラス](../../mfc/reference/cd2drectf-class.md)  
- `D2D1_RECT_F`のラッパー。  
+ [CD2DRectF Class](../../mfc/reference/cd2drectf-class.md)  
+ A wrapper for `D2D1_RECT_F`.  
   
- [CD2DRectU クラス](../../mfc/reference/cd2drectu-class.md)  
- `D2D1_RECT_U`のラッパー。  
+ [CD2DRectU Class](../../mfc/reference/cd2drectu-class.md)  
+ A wrapper for `D2D1_RECT_U`.  
   
- [CD2DResource クラス](../../mfc/reference/cd2dresource-class.md)  
- ブラシ、レイヤー、テキストなどの `D2D` リソースを作成および管理するためのインターフェイスを提供する抽象クラス。  
+ [CD2DResource Class](../../mfc/reference/cd2dresource-class.md)  
+ An abstract class that provides a interface for creating and managing `D2D` resources such as brushes, layers, and texts.  
   
- [CD2DRoundedRect クラス](../../mfc/reference/cd2droundedrect-class.md)  
- `D2D1_ROUNDED_RECT`のラッパー。  
+ [CD2DRoundedRect Class](../../mfc/reference/cd2droundedrect-class.md)  
+ A wrapper for `D2D1_ROUNDED_RECT`.  
   
- [CD2DSizeF クラス](../../mfc/reference/cd2dsizef-class.md)  
- `D2D1_SIZE_F`のラッパー。  
+ [CD2DSizeF Class](../../mfc/reference/cd2dsizef-class.md)  
+ A wrapper for `D2D1_SIZE_F`.  
   
- [CD2DSizeU クラス](../../mfc/reference/cd2dsizeu-class.md)  
- `D2D1_SIZE_U`のラッパー。  
+ [CD2DSizeU Class](../../mfc/reference/cd2dsizeu-class.md)  
+ A wrapper for `D2D1_SIZE_U`.  
   
- [CD2DSolidColorBrush クラス](../../mfc/reference/cd2dsolidcolorbrush-class.md)  
- `ID2D1SolidColorBrush`のラッパー。  
+ [CD2DSolidColorBrush Class](../../mfc/reference/cd2dsolidcolorbrush-class.md)  
+ A wrapper for `ID2D1SolidColorBrush`.  
   
- [CD2DTextFormat クラス](../../mfc/reference/cd2dtextformat-class.md)  
- `IDWriteTextFormat`のラッパー。  
+ [CD2DTextFormat Class](../../mfc/reference/cd2dtextformat-class.md)  
+ A wrapper for `IDWriteTextFormat`.  
   
- [CD2DTextLayout クラス](../../mfc/reference/cd2dtextlayout-class.md)  
- `IDWriteTextLayout`のラッパー。  
+ [CD2DTextLayout Class](../../mfc/reference/cd2dtextlayout-class.md)  
+ A wrapper for `IDWriteTextLayout`.  
   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)  
- それを通じてデータを操作することのできるデータベースへの接続を表します。  
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)  
+ Represents a connection to a database through which you can operate on the data.  
   
- [CDaoException クラス](../../mfc/reference/cdaoexception-class.md)  
- データ アクセス オブジェクト (DAO: Data Accsess Object) を基にした MFC データベース クラスから発生する例外条件を表します。  
+ [CDaoException Class](../../mfc/reference/cdaoexception-class.md)  
+ Represents an exception condition arising from the MFC database classes based on data access objects (DAO).  
   
- [CDaoFieldExchange クラス](../../mfc/reference/cdaofieldexchange-class.md)  
- DAO データベース クラスで使われる DAO レコード フィールド エクスチェンジ (DFX: DAO Record Field eXchange) ルーチンをサポートします。  
+ [CDaoFieldExchange Class](../../mfc/reference/cdaofieldexchange-class.md)  
+ Supports the DAO record field exchange (DFX) routines used by the DAO database classes.  
   
- [CDaoQueryDef クラス](../../mfc/reference/cdaoquerydef-class.md)  
- クエリ定義、つまり "querydef" を表し、通常はデータベースに保存されています。  
+ [CDaoQueryDef Class](../../mfc/reference/cdaoquerydef-class.md)  
+ Represents a query definition, or "querydef," usually one saved in a database.  
   
- [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)  
- データ ソースから選択された&1; 組のレコードセットを表現します。  
+ [CDaoRecordset Class](../../mfc/reference/cdaorecordset-class.md)  
+ Represents a set of records selected from a data source.  
   
- [CDaoRecordView クラス](../../mfc/reference/cdaorecordview-class.md)  
- コントロール内にデータベース レコードを表示するビューです。  
+ [CDaoRecordView Class](../../mfc/reference/cdaorecordview-class.md)  
+ A view that displays database records in controls.  
   
- [どちらのクラス](../../mfc/reference/cdaotabledef-class.md)  
- ベース テーブル、またはアタッチ テーブルの格納された定義を表現します。  
+ [CDaoTableDef Class](../../mfc/reference/cdaotabledef-class.md)  
+ Represents the stored definition of a base table or an attached table.  
   
- [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)  
- シングル ユーザーによる名前付きの、パスワードで保護されたデータベース セッションのログインからログオフまでを管理します。  
+ [CDaoWorkspace Class](../../mfc/reference/cdaoworkspace-class.md)  
+ Manages a named, password-protected database session from login to logoff, by a single user.  
   
- [CDatabase クラス](../../mfc/reference/cdatabase-class.md)  
- データ ソースへの接続を表します。これを通じてデータ ソース上で操作を行うことができます。  
+ [CDatabase Class](../../mfc/reference/cdatabase-class.md)  
+ Represents a connection to a data source, through which you can operate on the data source.  
   
- [CDataExchange クラス](../../mfc/reference/cdataexchange-class.md)  
- MFC で使われているダイアログ データ エクスチェンジ (DDX) およびダイアログ データ検証 (DDV) の両ルーチンをサポートします。  
+ [CDataExchange Class](../../mfc/reference/cdataexchange-class.md)  
+ Supports the dialog data exchange (DDX) and dialog data validation (DDV) routines used by the Microsoft Foundation classes.  
   
- [関数のクラス](../../mfc/reference/cdatapathproperty-class.md)  
- 非同期で読み込める OLE コントロール プロパティを実装します。  
+ [CDataPathProperty Class](../../mfc/reference/cdatapathproperty-class.md)  
+ Implements an OLE control property that can be loaded asynchronously.  
   
- [CDataRecoveryHandler クラス](../../mfc/reference/cdatarecoveryhandler-class.md)  
- アプリケーションが予期せずに終了した場合にドキュメントを自動保存し、復元します。  
+ [CDataRecoveryHandler Class](../../mfc/reference/cdatarecoveryhandler-class.md)  
+ Autosaves documents and restores them if an application unexpectedly exits.  
   
- [CDateTimeCtrl クラス](../../mfc/reference/cdatetimectrl-class.md)  
- 日時指定コントロールの機能がカプセル化されています。  
+ [CDateTimeCtrl Class](../../mfc/reference/cdatetimectrl-class.md)  
+ Encapsulates the functionality of a date and time picker control.  
   
- [CDBException クラス](../../mfc/reference/cdbexception-class.md)  
- データベース クラスから発生する例外状態を表現します。  
+ [CDBException Class](../../mfc/reference/cdbexception-class.md)  
+ Represents an exception condition arising from the database classes.  
   
- [CDBVariant クラス](../../mfc/reference/cdbvariant-class.md)  
- MFC ODBC クラスのバリアント型を表します。  
+ [CDBVariant Class](../../mfc/reference/cdbvariant-class.md)  
+ Represents a variant data type for the MFC ODBC classes.  
   
- [CDC クラス](../../mfc/reference/cdc-class.md)  
- デバイス コンテキスト オブジェクトのクラスを定義します。  
+ [CDC Class](../../mfc/reference/cdc-class.md)  
+ Defines a class of device-context objects.  
   
- [CDCRenderTarget クラス](../../mfc/reference/cdcrendertarget-class.md)  
- `ID2D1DCRenderTarget`のラッパー。  
+ [CDCRenderTarget Class](../../mfc/reference/cdcrendertarget-class.md)  
+ A wrapper for `ID2D1DCRenderTarget`.  
   
- [CDHtmlDialog クラス](../../mfc/reference/cdhtmldialog-class.md)  
- ダイアログ リソースではなく、HTML によってユーザー インターフェイスを実装するダイアログ ボックスを作成するために使用します。  
+ [CDHtmlDialog Class](../../mfc/reference/cdhtmldialog-class.md)  
+ Used to create dialog boxes that use HTML rather than dialog resources to implement their user interface.  
   
- [CDialog クラス](../../mfc/reference/cdialog-class.md)  
- 画面上にダイアログ ボックスを表示するために使用される基底クラスです。  
+ [CDialog Class](../../mfc/reference/cdialog-class.md)  
+ Base class used for displaying dialog boxes on the screen.  
   
- [CDialogBar クラス](../../mfc/reference/cdialogbar-class.md)  
- コントロール バー内の Windows のモードレス ダイアログ ボックスの機能を提供します。  
+ [CDialogBar Class](../../mfc/reference/cdialogbar-class.md)  
+ Provides the functionality of a Windows modeless dialog box in a control bar.  
   
- [CDialogEx クラス](../../mfc/reference/cdialogex-class.md)  
- ダイアログ ボックスの背景色と背景イメージを指定します。  
+ [CDialogEx Class](../../mfc/reference/cdialogex-class.md)  
+ Specifies the background color and background image of a dialog box.  
   
- [CDiscreteTransition クラス](../../mfc/reference/cdiscretetransition-class.md)  
- 不連続遷移をカプセル化します。  
+ [CDiscreteTransition Class](../../mfc/reference/cdiscretetransition-class.md)  
+ Encapsulates a discrete transition.  
   
- [CDocItem クラス](../../mfc/reference/cdocitem-class.md)  
- ドキュメント アイテムの基底クラスであり、ドキュメント データのコンポーネントです。  
+ [CDocItem Class](../../mfc/reference/cdocitem-class.md)  
+ The base class for document items, which are components of a document's data.  
   
- [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)  
- ドッキング サイトにドッキングできる、またはタブ付きペインに含めることができるペインを実装します。  
+ [CDockablePane Class](../../mfc/reference/cdockablepane-class.md)  
+ Implements a pane that can either be docked in a dock site or included in a tabbed pane.  
   
- [CDockablePaneAdapter クラス](../../mfc/reference/cdockablepaneadapter-class.md)  
- `CWnd`の派生ペインのドッキングをサポートします。  
+ [CDockablePaneAdapter Class](../../mfc/reference/cdockablepaneadapter-class.md)  
+ Provides docking support for `CWnd`-derived panes.  
   
- [CDockingManager クラス](../../mfc/reference/cdockingmanager-class.md)  
- メイン フレーム ウィンドウのドッキング レイアウトを制御するコア機能を実装します。  
+ [CDockingManager Class](../../mfc/reference/cdockingmanager-class.md)  
+ Implements the core functionality that controls docking layout in a main frame window.  
   
- [CDockingPanesRow クラス](../../mfc/reference/cdockingpanesrow-class.md)  
- ドッキング サイトの同じ水平または垂直の行 (列) に配置されるペインの一覧を管理します。  
+ [CDockingPanesRow Class](../../mfc/reference/cdockingpanesrow-class.md)  
+ Manages a list of panes that are located in the same horizontal or vertical row (column) of a dock site.  
   
- [CDockSite クラス](../../mfc/reference/cdocksite-class.md)  
- 派生したペインを配置するための機能を提供、 [CPane クラス](../../mfc/reference/cpane-class.md)一連の行にします。  
+ [CDockSite Class](../../mfc/reference/cdocksite-class.md)  
+ Provides functionality for arranging panes that are derived from the [CPane Class](../../mfc/reference/cpane-class.md) into sets of rows.  
   
- [クラスの変更](../../mfc/reference/cdockstate-class.md)  
- いくつかのドッキング コントロール バーの状態を&2; 次メモリ (ファイル) で読み込み、アンロード、またはクリアするシリアル化された `CObject` クラスです。  
+ [CDockState Class](../../mfc/reference/cdockstate-class.md)  
+ A serialized `CObject` class that loads, unloads, or clears the state of one or more docking control bars in persistent memory (a file).  
   
- [関数のクラス](../../mfc/reference/cdocobjectserver-class.md)  
- 標準の `COleDocument` サーバーを完全な DocObject サーバーにするために必要な、 `IOleDocument`、 `IOleDocumentView`、 `IOleCommandTarget`、 `IPrint`などの追加 OLE インターフェイスを実装します。  
+ [CDocObjectServer Class](../../mfc/reference/cdocobjectserver-class.md)  
+ Implements the additional OLE interfaces needed to make a normal `COleDocument` server into a full DocObject server: `IOleDocument`, `IOleDocumentView`, `IOleCommandTarget`, and `IPrint`.  
   
- [CDocObjectServerItem クラス](../../mfc/reference/cdocobjectserveritem-class.md)  
- OLE サーバー動詞を DocObject サーバー用に実装します。  
+ [CDocObjectServerItem Class](../../mfc/reference/cdocobjectserveritem-class.md)  
+ Implements OLE server verbs specifically for DocObject servers.  
   
- [CDocTemplate クラス](../../mfc/reference/cdoctemplate-class.md)  
- ドキュメント テンプレートの基本的な機能を定義する抽象基底クラスです。  
+ [CDocTemplate Class](../../mfc/reference/cdoctemplate-class.md)  
+ An abstract base class that defines the basic functionality for document templates.  
   
- [CDocument クラス](../../mfc/reference/cdocument-class.md)  
- ユーザーが定義するドキュメント クラスの基本機能が用意されています。  
+ [CDocument Class](../../mfc/reference/cdocument-class.md)  
+ Provides the basic functionality for user-defined document classes.  
   
- [関数のクラス](../../mfc/reference/cdraglistbox-class.md)  
- `CDragListBox` クラスは、Windows のリスト ボックスの機能に加えて、リスト ボックス内のファイル名などの項目をユーザーが移動できるようにします。  
+ [CDragListBox Class](../../mfc/reference/cdraglistbox-class.md)  
+ In addition to providing the functionality of a Windows list box, the `CDragListBox` class lets the user move list box items, such as filenames, within the list box.  
   
- [CDrawingManager クラス](../../mfc/reference/cdrawingmanager-class.md)  
- 複雑な描画アルゴリズムを実装します。  
+ [CDrawingManager Class](../../mfc/reference/cdrawingmanager-class.md)  
+ Implements complex drawing algorithms.  
   
- [CDumpContext クラス](../../mfc/reference/cdumpcontext-class.md)  
- 人が読み取ることができる形式でテキストを出力するために、ストリームに依存した診断出力をサポートします。  
+ [CDumpContext Class](../../mfc/reference/cdumpcontext-class.md)  
+ Supports stream-oriented diagnostic output in the form of human-readable text.  
   
- [CDWordArray クラス](../../mfc/reference/cdwordarray-class.md)  
- 32 ビットのダブルワードの配列をサポートします。  
+ [CDWordArray Class](../../mfc/reference/cdwordarray-class.md)  
+ Supports arrays of 32-bit doublewords.  
   
- [CEdit クラス](../../mfc/reference/cedit-class.md)  
- Windows のエディット コントロールの機能が用意されています。  
+ [CEdit Class](../../mfc/reference/cedit-class.md)  
+ Provides the functionality of a Windows edit control.  
   
- [CEditView クラス](../../mfc/reference/ceditview-class.md)  
- Windows のエディット コントロールの機能を提供するビュー クラスの一種であり、シンプルなテキスト編集エディターを実装できます。  
+ [CEditView Class](../../mfc/reference/ceditview-class.md)  
+ A type of view class that provides the functionality of a Windows edit control and can be used to implement simple text-editor functionality.  
   
- [CEvent クラス](../../mfc/reference/cevent-class.md)  
- "イベント" を表します。これは、イベントが発生したことを、あるスレッドが別のスレッドに通知できるようにする同期オブジェクトです。  
+ [CEvent Class](../../mfc/reference/cevent-class.md)  
+ Represents an "event", which is a synchronization object that enables one thread to notify another that an event has occurred.  
   
- [CException クラス](../../mfc/reference/cexception-class.md)  
- MFC (Microsoft Foundation Class) ライブラリ内のすべての例外に関する基底クラスです。  
+ [CException Class](../../mfc/reference/cexception-class.md)  
+ The base class for all exceptions in the Microsoft Foundation Class Library.  
   
- [CFieldExchange クラス](../../mfc/reference/cfieldexchange-class.md)  
- データベース クラスで使うレコード フィールド エクスチェンジ (RFX) ルーチンとバルク レコード フィールド エクスチェンジ (Bulk RFX) ルーチンをサポートします。  
+ [CFieldExchange Class](../../mfc/reference/cfieldexchange-class.md)  
+ Supports the record field exchange (RFX) and bulk record field exchange (Bulk RFX) routines used by the database classes.  
   
- [CFile クラス](../../mfc/reference/cfile-class.md)  
- ファイルに関する MFC の基底クラスです。  
+ [CFile Class](../../mfc/reference/cfile-class.md)  
+ The base class for Microsoft Foundation Class file classes.  
   
- [CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)  
- ファイル操作用の Windows のコモン ダイアログ ボックスをカプセル化します。  
+ [CFileDialog Class](../../mfc/reference/cfiledialog-class.md)  
+ Encapsulates the common file dialog box for Windows.  
   
- [未定義のままクラス](../../mfc/reference/cfileexception-class.md)  
- ファイルに関連した例外状態を表します。  
+ [CFileException Class](../../mfc/reference/cfileexception-class.md)  
+ Represents a file-related exception condition.  
   
- [CFileFind クラス](../../mfc/reference/cfilefind-class.md)  
- ローカル ファイルの検索を実行し、基本クラスは、[関数クラス](../../mfc/reference/cgopherfilefind-class.md)と[関数クラス](../../mfc/reference/cftpfilefind-class.md)、インターネット ファイル検索を実行します。  
+ [CFileFind Class](../../mfc/reference/cfilefind-class.md)  
+ Performs local file searches and is the base class for [CGopherFileFind Class](../../mfc/reference/cgopherfilefind-class.md) and [CFtpFileFind Class](../../mfc/reference/cftpfilefind-class.md), which perform Internet file searches.  
   
- [CFindReplaceDialog クラス](../../mfc/reference/cfindreplacedialog-class.md)  
- 文字列の検索と置換を行う標準のダイアログ ボックスをアプリケーションに実装できます。  
+ [CFindReplaceDialog Class](../../mfc/reference/cfindreplacedialog-class.md)  
+ Lets you implement standard string Find/Replace dialog boxes in your application.  
   
- [CFolderPickerDialog クラス](../../mfc/reference/cfolderpickerdialog-class.md)  
- フォルダー ピッカー モードの CFileDialog を実装します。  
+ [CFolderPickerDialog Class](../../mfc/reference/cfolderpickerdialog-class.md)  
+ Implements CFileDialog in the folder picker mode.  
   
- [CFont クラス](../../mfc/reference/cfont-class.md)  
- Windows のグラフィック デバイス インターフェイス (GDI) のフォントをカプセル化したもので、フォントを操作するメンバー関数を提供します。  
+ [CFont Class](../../mfc/reference/cfont-class.md)  
+ Encapsulates a Windows graphics device interface (GDI) font and provides member functions for manipulating the font.  
   
- [CFontDialog クラス](../../mfc/reference/cfontdialog-class.md)  
- フォントの選択ダイアログ ボックスをアプリケーションに組み込むことができます。  
+ [CFontDialog Class](../../mfc/reference/cfontdialog-class.md)  
+ Lets you incorporate a font-selection dialog box into your application.  
   
- [CFontHolder クラス](../../mfc/reference/cfontholder-class.md)  
- ストック フォント プロパティを実装し、Windows のフォント オブジェクトと `IFont` インターフェイスの機能をカプセル化します。  
+ [CFontHolder Class](../../mfc/reference/cfontholder-class.md)  
+ Implements the stock Font property and encapsulates the functionality of a Windows font object and the `IFont` interface.  
   
- [CFormView クラス](../../mfc/reference/cformview-class.md)  
- フォーム ビューの基底クラスです。  
+ [CFormView Class](../../mfc/reference/cformview-class.md)  
+ The base class used for form views.  
   
- [CFrameWnd クラス](../../mfc/reference/cframewnd-class.md)  
- ウィンドウを管理するメンバーと共に、Windows のシングル ドキュメント インターフェイス (SDI: Single Document Interface) のオーバーラップ フレーム ウィンドウまたはポップアップ フレーム ウィンドウの機能を提供します。  
+ [CFrameWnd Class](../../mfc/reference/cframewnd-class.md)  
+ Provides the functionality of a Windows single document interface (SDI) overlapped or pop-up frame window, along with members for managing the window.  
   
- [CFrameWndEx クラス](../../mfc/reference/cframewndex-class.md)  
- Windows のシングル ドキュメント インターフェイス (SDI: Single Document Interface) のオーバーラップ フレーム ウィンドウまたはポップアップ フレーム ウィンドウの機能を実装し、ウィンドウを管理するメンバーを提供します。 拡張して、 [CFrameWnd クラス](../../mfc/reference/cframewnd-class.md)クラスです。  
+ [CFrameWndEx Class](../../mfc/reference/cframewndex-class.md)  
+ Implements the functionality of a Windows single document interface (SDI) overlapped or popup frame window, and provides members for managing the window. It extends the [CFrameWnd Class](../../mfc/reference/cframewnd-class.md) class.  
   
- [クラスの詳細](../../mfc/reference/cftpconnection-class.md)  
- インターネット サーバーへの FTP 接続を管理します。さらに、そのサーバー上のフォルダーとファイルを直接操作できます。  
+ [CFtpConnection Class](../../mfc/reference/cftpconnection-class.md)  
+ Manages your FTP connection to an Internet server and enables direct manipulation of directories and files on that server.  
   
- [関数のクラス](../../mfc/reference/cftpfilefind-class.md)  
- FTP サーバーのインターネット ファイル検索を支援します。  
+ [CFtpFileFind Class](../../mfc/reference/cftpfilefind-class.md)  
+ Aids in Internet file searches of FTP servers.  
   
- [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)  
- ビットマップ、領域、ブラシ、ペン、パレット、フォントなどの Windows のさまざまな種類のグラフィックス デバイス インターフェイス (GDI) の基底クラスを提供します。  
+ [CGdiObject Class](../../mfc/reference/cgdiobject-class.md)  
+ Provides a base class for various kinds of Windows graphics device interface (GDI) objects such as bitmaps, regions, brushes, pens, palettes, and fonts.  
   
- [関数のクラス](../../mfc/reference/cgopherconnection-class.md)  
- gopher インターネット サーバーへの接続を管理します。  
+ [CGopherConnection Class](../../mfc/reference/cgopherconnection-class.md)  
+ Manages your connection to a gopher Internet server.  
   
- [CGopherFile クラス](../../mfc/reference/cgopherfile-class.md)  
- gopher サーバー上のファイルを検索し、読み込む機能が用意されています。  
+ [CGopherFile Class](../../mfc/reference/cgopherfile-class.md)  
+ Provides the functionality to find and read files on a gopher server.  
   
- [関数のクラス](../../mfc/reference/cgopherfilefind-class.md)  
- gopher サーバーのインターネット ファイル検索を支援します。  
+ [CGopherFileFind Class](../../mfc/reference/cgopherfilefind-class.md)  
+ Aids in Internet file searches of gopher servers.  
   
- [関数のクラス](../../mfc/reference/cgopherlocator-class.md)  
- Gopher サーバーから、gopher「ロケーター」を取得、ロケーターの種類を決定およびロケーターを使用できるように[関数クラス](../../mfc/reference/cgopherfilefind-class.md)します。  
+ [CGopherLocator Class](../../mfc/reference/cgopherlocator-class.md)  
+ Gets a gopher "locator" from a gopher server, determines the locator's type, and makes the locator available to [CGopherFileFind Class](../../mfc/reference/cgopherfilefind-class.md).  
   
- [CHeaderCtrl クラス](../../mfc/reference/cheaderctrl-class.md)  
- Windows コモン ヘッダー コントロールの機能が用意されています。  
+ [CHeaderCtrl Class](../../mfc/reference/cheaderctrl-class.md)  
+ Provides the functionality of the Windows common header control.  
   
- [CHotKeyCtrl クラス](../../mfc/reference/chotkeyctrl-class.md)  
- Windows コモン ホット キー コントロールの機能が用意されています。  
+ [CHotKeyCtrl Class](../../mfc/reference/chotkeyctrl-class.md)  
+ Provides the functionality of the Windows common hot key control.  
   
- [関数のクラス](../../mfc/reference/chtmleditctrl-class.md)  
- MFC ウィンドウ内の WebBrowser ActiveX コントロールの機能が用意されています。  
+ [CHtmlEditCtrl Class](../../mfc/reference/chtmleditctrl-class.md)  
+ Provides the functionality of the WebBrowser ActiveX control in an MFC window.  
   
- [CHtmlEditCtrlBase クラス](../../mfc/reference/chtmleditctrlbase-class.md)  
- HTML 編集コンポーネントを表します。  
+ [CHtmlEditCtrlBase Class](../../mfc/reference/chtmleditctrlbase-class.md)  
+ Represents an HTML editing component.  
   
- [関数のクラス](../../mfc/reference/chtmleditdoc-class.md)  
- [関数クラス](../../mfc/reference/chtmleditview-class.md)、MFC ドキュメント/ビュー アーキテクチャのコンテキストで WebBrowser 編集プラットフォームの機能を提供します。  
+ [CHtmlEditDoc Class](../../mfc/reference/chtmleditdoc-class.md)  
+ With [CHtmlEditView Class](../../mfc/reference/chtmleditview-class.md), provides the functionality of the WebBrowser editing platform within the context of the MFC document-view architecture.  
   
- [関数のクラス](../../mfc/reference/chtmleditview-class.md)  
- MFC のドキュメント/ビュー アーキテクチャのコンテキストで WebBrowser 編集プラットフォームの機能を提供します。  
+ [CHtmlEditView Class](../../mfc/reference/chtmleditview-class.md)  
+ Provides the functionality of the WebBrowser editing platform within the context of MFC's document/view architecture.  
   
- [CHtmlView クラス](../../mfc/reference/chtmlview-class.md)  
- MFC のドキュメント/ビュー アーキテクチャのコンテキストで WebBrowser コントロールの機能を提供します。  
+ [CHtmlView Class](../../mfc/reference/chtmlview-class.md)  
+ Provides the functionality of the WebBrowser control within the context of MFC's document/view architecture.  
   
- [関数のクラス](../../mfc/reference/chttpconnection-class.md)  
- HTTP サーバーへの接続を管理します。  
+ [CHttpConnection Class](../../mfc/reference/chttpconnection-class.md)  
+ Manages your connection to an HTTP server.  
   
- [CHttpFile クラス](../../mfc/reference/chttpfile-class.md)  
- HTTP サーバー上のファイルを要求し、読み込む機能が用意されています。  
+ [CHttpFile Class](../../mfc/reference/chttpfile-class.md)  
+ Provides the functionality to request and read files on an HTTP server.  
   
- [CHwndRenderTarget クラス](../../mfc/reference/chwndrendertarget-class.md)  
- `ID2D1HwndRenderTarget`のラッパー。  
+ [CHwndRenderTarget Class](../../mfc/reference/chwndrendertarget-class.md)  
+ A wrapper for `ID2D1HwndRenderTarget`.  
   
- [CImageList クラス](../../mfc/reference/cimagelist-class.md)  
- Windows コモン イメージ リスト コントロールの機能が用意されています。  
+ [CImageList Class](../../mfc/reference/cimagelist-class.md)  
+ Provides the functionality of the Windows common image list control.  
   
- [CInstantaneousTransition クラス](../../mfc/reference/cinstantaneoustransition-class.md)  
- 即時遷移をカプセル化します。  
+ [CInstantaneousTransition Class](../../mfc/reference/cinstantaneoustransition-class.md)  
+ Encapsulates an instantaneous transition.  
   
- [関数のクラス](../../mfc/reference/cinternetconnection-class.md)  
- インターネット サーバーへの接続を管理します。  
+ [CInternetConnection Class](../../mfc/reference/cinternetconnection-class.md)  
+ Manages your connection to an Internet server.  
   
- [表すクラス](../../mfc/reference/cinternetexception-class.md)  
- インターネット操作に関する例外条件を表します。  
+ [CInternetException Class](../../mfc/reference/cinternetexception-class.md)  
+ Represents an exception condition related to an Internet operation.  
   
- [CInternetFile クラス](../../mfc/reference/cinternetfile-class.md)  
- インターネット プロトコルを使用するリモート システム上のファイルへのアクセスを可能にします。  
+ [CInternetFile Class](../../mfc/reference/cinternetfile-class.md)  
+ Enables access to files on remote systems that use Internet protocols.  
   
- [CInternetSession クラス](../../mfc/reference/cinternetsession-class.md)  
- 単一のインターネット セッションまたは複数の同時インターネット セッションを作成し、初期化します。必要な場合は、プロキシ サーバーへの接続も記述します。  
+ [CInternetSession Class](../../mfc/reference/cinternetsession-class.md)  
+ Creates and initializes a single or several simultaneous Internet sessions and, if necessary, describes your connection to a proxy server.  
   
- [CInterpolatorBase クラス](../../mfc/reference/cinterpolatorbase-class.md)  
- アニメーション変数の新しい値を計算する必要があるときに、Animation API によって呼び出されるコールバックを実装します。  
+ [CInterpolatorBase Class](../../mfc/reference/cinterpolatorbase-class.md)  
+ Implements a callback, which is called by the Animation API when it has to calculate a new value of an animation variable.  
   
- [CInvalidArgException クラス](../../mfc/reference/cinvalidargexception-class.md)  
- このクラスは、無効な引数の例外状態を表します。  
+ [CInvalidArgException Class](../../mfc/reference/cinvalidargexception-class.md)  
+ This class represents an invalid argument exception condition.  
   
- [関数のクラス](../../mfc/reference/cipaddressctrl-class.md)  
- Windows コモン IP アドレス コントロールの機能が用意されています。  
+ [CIPAddressCtrl Class](../../mfc/reference/cipaddressctrl-class.md)  
+ Provides the functionality of the Windows common IP Address control.  
   
- [CJumpList クラス](../../mfc/reference/cjumplist-class.md)  
- タスク バーのアイコンを右クリックしたときに表示されるショートカットの一覧。  
+ [CJumpList Class](../../mfc/reference/cjumplist-class.md)  
+ The list of shortcuts revealed when you right click on an icon in the task bar.  
   
- [CKeyboardManager クラス](../../mfc/reference/ckeyboardmanager-class.md)  
- メイン フレーム ウィンドウおよび子フレーム ウィンドウのショートカット キーのテーブルを管理します。  
+ [CKeyboardManager Class](../../mfc/reference/ckeyboardmanager-class.md)  
+ Manages shortcut key tables for the main frame window and child frame windows.  
   
- [CKeyFrame クラス](../../mfc/reference/ckeyframe-class.md)  
- アニメーションのキーフレームを表します。  
+ [CKeyFrame Class](../../mfc/reference/ckeyframe-class.md)  
+ Represents an animation keyframe.  
   
- [CLinearTransition クラス](../../mfc/reference/clineartransition-class.md)  
- 線形遷移をカプセル化します。  
+ [CLinearTransition Class](../../mfc/reference/clineartransition-class.md)  
+ Encapsulates a linear transition.  
   
- [CLinearTransitionFromSpeed クラス](../../mfc/reference/clineartransitionfromspeed-class.md)  
- 直線速度遷移をカプセル化します。  
+ [CLinearTransitionFromSpeed Class](../../mfc/reference/clineartransitionfromspeed-class.md)  
+ Encapsulates a linear-speed transition.  
   
- [CLinkCtrl クラス](../../mfc/reference/clinkctrl-class.md)  
- Windows コモン SysLink コントロールの機能が用意されています。  
+ [CLinkCtrl Class](../../mfc/reference/clinkctrl-class.md)  
+ Provides the functionality of the Windows common SysLink control.  
   
- [CList クラス](../../mfc/reference/clist-class.md)  
- オブジェクト (重複あり) を順に並べたリストをサポートします。このリストには、シーケンシャル アクセスまたは値指定によるアクセスを行うことができます。  
+ [CList Class](../../mfc/reference/clist-class.md)  
+ Supports ordered lists of nonunique objects accessible sequentially or by value.  
   
- [CListBox クラス](../../mfc/reference/clistbox-class.md)  
- Windows のリスト ボックスの機能を提供します。  
+ [CListBox Class](../../mfc/reference/clistbox-class.md)  
+ Provides the functionality of a Windows list box.  
   
- [CListCtrl クラス](../../mfc/reference/clistctrl-class.md)  
- "リスト ビュー コントロール" の機能をカプセル化します。このコントロールには項目のコレクションを表示され、各項目はイメージ リストのアイコンとラベルで構成されます。  
+ [CListCtrl Class](../../mfc/reference/clistctrl-class.md)  
+ Encapsulates the functionality of a "list view control," which displays a collection of items each consisting of an icon (from an image list) and a label.  
   
- [CListView クラス](../../mfc/reference/clistview-class.md)  
- リスト コントロールとの使用を簡略化[CListCtrl クラス](../../mfc/reference/clistctrl-class.md)MFC のドキュメント/ビュー アーキテクチャのリスト コントロールの機能をカプセル化するクラス。  
+ [CListView Class](../../mfc/reference/clistview-class.md)  
+ Simplifies use of the list control and of [CListCtrl Class](../../mfc/reference/clistctrl-class.md), the class that encapsulates list-control functionality, with MFC's document-view architecture.  
   
- [CLongBinary クラス](../../mfc/reference/clongbinary-class.md)  
- データベース上の大きなバイナリ データ オブジェクト (BLOB または "バイナリ ラージ オブジェクト" と呼びます) を使った作業を単純にします。  
+ [CLongBinary Class](../../mfc/reference/clongbinary-class.md)  
+ Simplifies working with very large binary data objects (often called BLOBs, or "binary large objects") in a database.  
   
- [メンバー クラス](../../mfc/reference/cmap-class.md)  
- 一意なキーを値に割り当てる辞書コレクション クラスです。  
+ [CMap Class](../../mfc/reference/cmap-class.md)  
+ A dictionary collection class that maps unique keys to values.  
   
- [CMapPtrToPtr クラス](../../mfc/reference/cmapptrtoptr-class.md)  
- void ポインターをキーとした void ポインターのマップをサポートします。  
+ [CMapPtrToPtr Class](../../mfc/reference/cmapptrtoptr-class.md)  
+ Supports maps of void pointers keyed by void pointers.  
   
- [CMapPtrToWord クラス](../../mfc/reference/cmapptrtoword-class.md)  
- void ポインターをキーとした 16 ビット ワードのマップをサポートします。  
+ [CMapPtrToWord Class](../../mfc/reference/cmapptrtoword-class.md)  
+ Supports maps of 16-bit words keyed by void pointers.  
   
- [関数のクラス](../../mfc/reference/cmapstringtoob-class.md)  
- 一意の `CString` オブジェクトを `CObject` へのポインターに割り当てる辞書コレクション クラスです。  
+ [CMapStringToOb Class](../../mfc/reference/cmapstringtoob-class.md)  
+ A dictionary collection class that maps unique `CString` objects to `CObject` pointers.  
   
- [CMapStringToPtr クラス](../../mfc/reference/cmapstringtoptr-class.md)  
- `CString` オブジェクトをキーとした void ポインターのマップをサポートします。  
+ [CMapStringToPtr Class](../../mfc/reference/cmapstringtoptr-class.md)  
+ Supports maps of void pointers keyed by `CString` objects.  
   
- [メンバー クラス](../../mfc/reference/cmapstringtostring-class.md)  
- `CString` オブジェクトをキーとした `CString` オブジェクトのマップをサポートします。  
+ [CMapStringToString Class](../../mfc/reference/cmapstringtostring-class.md)  
+ Supports maps of `CString` objects keyed by `CString` objects.  
   
- [CMapWordToOb クラス](../../mfc/reference/cmapwordtoob-class.md)  
- 16 ビット ワードをキーとした `CObject` ポインターのマップをサポートします。  
+ [CMapWordToOb Class](../../mfc/reference/cmapwordtoob-class.md)  
+ Supports maps of `CObject` pointers keyed by 16-bit words.  
   
- [CMapWordToPtr クラス](../../mfc/reference/cmapwordtoptr-class.md)  
- 16 ビット ワードをキーとした void ポインターのマップをサポートします。  
+ [CMapWordToPtr Class](../../mfc/reference/cmapwordtoptr-class.md)  
+ Supports maps of void pointers keyed by 16-bit words.  
   
- [CMDIChildWnd クラス](../../mfc/reference/cmdichildwnd-class.md)  
- ウィンドウ管理用のメンバーも含めて、Windows のマルチ ドキュメント インターフェイス (MDI: multiple document interface) の子ウィンドウの機能が用意されています。  
+ [CMDIChildWnd Class](../../mfc/reference/cmdichildwnd-class.md)  
+ Provides the functionality of a Windows multiple document interface (MDI) child window, along with members for managing the window.  
   
- [CMDIChildWndEx クラス](../../mfc/reference/cmdichildwndex-class.md)  
- Windows のマルチ ドキュメント インターフェイス (MDI) の子ウィンドウの機能を提供します。 機能を拡張[CMDIChildWnd クラス](../../mfc/reference/cmdichildwnd-class.md)します。 ある特定の MFC クラスを MDI アプリケーションで使用するときは、フレームワークにこのクラスが必要です。  
+ [CMDIChildWndEx Class](../../mfc/reference/cmdichildwndex-class.md)  
+ Provides the functionality of a Windows multiple document interface (MDI) child window. It extends the functionality of [CMDIChildWnd Class](../../mfc/reference/cmdichildwnd-class.md). The framework requires this class when an MDI application uses certain MFC classes.  
   
- [CMDIFrameWnd クラス](../../mfc/reference/cmdiframewnd-class.md)  
- Windows のマルチ ドキュメント インターフェイス (MDI: Multiple Document Interface) のフレーム ウィンドウの機能が用意されています。さらに、ウィンドウを管理するメンバーも用意されています。  
+ [CMDIFrameWnd Class](../../mfc/reference/cmdiframewnd-class.md)  
+ Provides the functionality of a Windows multiple document interface (MDI) frame window, along with members for managing the window.  
   
- [CMDIFrameWndEx クラス](../../mfc/reference/cmdiframewndex-class.md)  
- 機能を拡張[CFrameWnd クラス](../../mfc/reference/cframewnd-class.md)Windows のマルチ ドキュメント インターフェイス (MDI) のフレーム ウィンドウです。  
+ [CMDIFrameWndEx Class](../../mfc/reference/cmdiframewndex-class.md)  
+ Extends the functionality of [CFrameWnd Class](../../mfc/reference/cframewnd-class.md), a Windows Multiple Document Interface (MDI) frame window.  
   
- [CMDITabInfo クラス](../../mfc/reference/cmditabinfo-class.md)  
- パラメーターを渡すために使用[CMDIFrameWndEx::EnableMDITabbedGroups](../../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups)メソッドです。 MDI タブ付きグループの動作を制御するために、このクラスのメンバーを設定します。  
+ [CMDITabInfo Class](../../mfc/reference/cmditabinfo-class.md)  
+ Used to pass parameters to [CMDIFrameWndEx::EnableMDITabbedGroups](../../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups) method. Set members of this class to control the behavior of MDI tabbed groups.  
   
- [CMemFile クラス](../../mfc/reference/cmemfile-class.md)  
- [CFile クラス](../../mfc/reference/cfile-class.md)-をメモリ上のファイルをサポートするクラスを派生します。  
+ [CMemFile Class](../../mfc/reference/cmemfile-class.md)  
+ The [CFile Class](../../mfc/reference/cfile-class.md)-derived class that supports memory files.  
   
- [関数のクラス](../../mfc/reference/cmemoryexception-class.md)  
- メモリ不足例外条件を表します。  
+ [CMemoryException Class](../../mfc/reference/cmemoryexception-class.md)  
+ Represents an out-of-memory exception condition.  
   
- [CMenu クラス](../../mfc/reference/cmenu-class.md)  
- Windows の `HMENU`をカプセル化したものです。  
+ [CMenu Class](../../mfc/reference/cmenu-class.md)  
+ An encapsulation of the Windows `HMENU`.  
   
- [CMenuTearOffManager クラス](../../mfc/reference/cmenutearoffmanager-class.md)  
- ティアオフ メニューを管理します。 ティアオフ メニューはメニュー バー上のメニューの一種です。 ユーザーは、ティアオフ メニューをメニュー バーから外して、フローティング メニューにすることができます。  
+ [CMenuTearOffManager Class](../../mfc/reference/cmenutearoffmanager-class.md)  
+ Manages tear-off menus. A tear-off menu is a menu on the menu bar. The user can remove a tear-off menu from the menu bar, causing the tear-off menu to float.  
   
- [CMetaFileDC クラス](../../mfc/reference/cmetafiledc-class.md)  
- イメージやテキストを自由に作成するための一連のグラフィック デバイス インターフェイス (GDI) コマンドを含む Windows のメタファイルを実装します。  
+ [CMetaFileDC Class](../../mfc/reference/cmetafiledc-class.md)  
+ Implements a Windows metafile, which contains a sequence of graphics device interface (GDI) commands that you can replay to create a desired image or text.  
   
- [CMFCAcceleratorKey クラス](../../mfc/reference/cmfcacceleratorkey-class.md)  
- 仮想キーのマッピングおよび書式設定を実装するヘルパー クラスです。  
+ [CMFCAcceleratorKey Class](../../mfc/reference/cmfcacceleratorkey-class.md)  
+ Helper class that implements virtual key mapping and formatting.  
   
- [CMFCAcceleratorKeyAssignCtrl クラス](../../mfc/reference/cmfcacceleratorkeyassignctrl-class.md)  
- 拡張、 [CEdit クラス](../../mfc/reference/cedit-class.md)alt キーを押し、コントロール、および SHIFT などの追加のシステム ボタンをサポートするためにします。  
+ [CMFCAcceleratorKeyAssignCtrl Class](../../mfc/reference/cmfcacceleratorkeyassignctrl-class.md)  
+ Extends the [CEdit Class](../../mfc/reference/cedit-class.md) to support extra system buttons such as ALT, CONTROL, and SHIFT.  
   
- [CMFCAutoHideButton クラス](../../mfc/reference/cmfcautohidebutton-class.md)  
- ボタンを表示または非表示、 [CDockablePane クラス](../../mfc/reference/cdockablepane-class.md)を非表示に構成されています。  
+ [CMFCAutoHideButton Class](../../mfc/reference/cmfcautohidebutton-class.md)  
+ A button that displays or hides a [CDockablePane Class](../../mfc/reference/cdockablepane-class.md) that is configured to hide.  
   
- [CMFCBaseTabCtrl クラス](../../mfc/reference/cmfcbasetabctrl-class.md)  
- タブ付きウィンドウの基本的な機能を実装します。  
+ [CMFCBaseTabCtrl Class](../../mfc/reference/cmfcbasetabctrl-class.md)  
+ Implements the base functionality for tabbed windows.  
   
- [CMFCButton クラス](../../mfc/reference/cmfcbutton-class.md)  
- 機能を追加、 [CButton クラス](../../mfc/reference/cbutton-class.md)ボタン テキストの配置、ボタンのテキストとイメージの組み合わせ、カーソルの選択、およびツールヒントの指定などのクラスです。  
+ [CMFCButton Class](../../mfc/reference/cmfcbutton-class.md)  
+ Adds functionality to the [CButton Class](../../mfc/reference/cbutton-class.md) class such as aligning button text, combining button text and an image, selecting a cursor, and specifying a tool tip.  
   
- [CMFCCaptionBar クラス](../../mfc/reference/cmfccaptionbar-class.md)  
- ボタン、テキスト ラベル、ビットマップという&3; つの要素を表示できるコントロール バーです。 表示できる各要素の数は&1; つずつです。 各要素は、コントロールの左端、右端、または中央に揃えて配置できます。 また、キャプション バーの上部または下部の境界線にフラット スタイルまたは 3D スタイルを適用することもできます。  
+ [CMFCCaptionBar Class](../../mfc/reference/cmfccaptionbar-class.md)  
+ Control bar that can display three elements: a button, a text label, and a bitmap. It can only display one element of each type at a time. You can align each element to the left or right edges of the control or to the center. You can also apply a flat or 3D style to the top and bottom borders of the caption bar.  
   
- [CMFCCaptionButton クラス](../../mfc/reference/cmfccaptionbutton-class.md)  
- ドッキング ペインまたはミニフレーム ウィンドウのキャプション バーに表示されるボタンを実装します。 通常は、フレームワークがキャプション ボタンを自動的に作成します。  
+ [CMFCCaptionButton Class](../../mfc/reference/cmfccaptionbutton-class.md)  
+ Implements a button that is displayed on the caption bar for a docking pane or a mini-frame window. Typically, the framework creates caption buttons automatically.  
   
- [CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)  
- ドキュメントまたはアプリケーションで色を選択できるドッキング コントロール バーを表します。  
+ [CMFCColorBar Class](../../mfc/reference/cmfccolorbar-class.md)  
+ Represents a docking control bar that can select colors in a document or application.  
   
- [CMFCColorButton クラス](../../mfc/reference/cmfccolorbutton-class.md)  
- `CMFCColorButton`と[CMFCColorBar クラス](../../mfc/reference/cmfccolorbar-class.md)クラスは、カラー ピッカー コントロールを実装する一緒に使用されます。  
+ [CMFCColorButton Class](../../mfc/reference/cmfccolorbutton-class.md)  
+ The `CMFCColorButton` and [CMFCColorBar Class](../../mfc/reference/cmfccolorbar-class.md) classes are used together to implement a color picker control.  
   
- [CMFCColorDialog クラス](../../mfc/reference/cmfccolordialog-class.md)  
- 色を選択するダイアログ ボックスを表します。  
+ [CMFCColorDialog Class](../../mfc/reference/cmfccolordialog-class.md)  
+ Represents a color selection dialog box.  
   
- [CMFCColorMenuButton クラス](../../mfc/reference/cmfccolormenubutton-class.md)  
- カラー ピッカー ダイアログ ボックスを起動するメニュー コマンドまたはツール バー ボタンをサポートします。  
+ [CMFCColorMenuButton Class](../../mfc/reference/cmfccolormenubutton-class.md)  
+ Supports a menu command or a toolbar button that starts a color picker dialog box.  
   
- [CMFCColorPickerCtrl クラス](../../mfc/reference/cmfccolorpickerctrl-class.md)  
- 色の選択に使用するコントロールの機能を提供します。  
+ [CMFCColorPickerCtrl Class](../../mfc/reference/cmfccolorpickerctrl-class.md)  
+ Provides functionality for a control that is used to select colors.  
   
- [CMFCDesktopAlertDialog クラス](../../mfc/reference/cmfcdesktopalertdialog-class.md)  
- 併用、 [CMFCDesktopAlertWnd クラス](../../mfc/reference/cmfcdesktopalertwnd-class.md)ポップアップ ウィンドウにカスタム ダイアログを表示します。  
+ [CMFCDesktopAlertDialog Class](../../mfc/reference/cmfcdesktopalertdialog-class.md)  
+ Used together with the [CMFCDesktopAlertWnd Class](../../mfc/reference/cmfcdesktopalertwnd-class.md) to display a custom dialog in a popup window.  
   
- [CMFCDesktopAlertWnd クラス](../../mfc/reference/cmfcdesktopalertwnd-class.md)  
- ユーザーにイベントを通知するために画面に表示されるモードレス ダイアログ ボックスの機能を実装します。  
+ [CMFCDesktopAlertWnd Class](../../mfc/reference/cmfcdesktopalertwnd-class.md)  
+ Implements the functionality of a modeless dialog box which appears on the screen to inform the user about an event.  
   
- [CMFCDesktopAlertWndInfo クラス](../../mfc/reference/cmfcdesktopalertwndinfo-class.md)  
- 使用される、 [CMFCDesktopAlertWnd クラス](../../mfc/reference/cmfcdesktopalertwnd-class.md)します。 デスクトップ通知ウィンドウがポップアップする場合に表示されるコントロールを指定します。  
+ [CMFCDesktopAlertWndInfo Class](../../mfc/reference/cmfcdesktopalertwndinfo-class.md)  
+ Used with the [CMFCDesktopAlertWnd Class](../../mfc/reference/cmfcdesktopalertwnd-class.md). It specifies the controls that are displayed if the desktop alert window pops up.  
   
- [CMFCDragFrameImpl クラス](../../mfc/reference/cmfcdragframeimpl-class.md)  
- 標準ドッキング モードでユーザーがペインをドラッグするときに表示されるドラッグ四角形を描画します。  
+ [CMFCDragFrameImpl Class](../../mfc/reference/cmfcdragframeimpl-class.md)  
+ Draws the drag rectangle that appears when the user drags a pane in the standard dock mode.  
   
- [CMFCDropDownToolBar クラス](../../mfc/reference/cmfcdropdowntoolbar-class.md)  
- ユーザーがトップレベルのツール バー ボタンを押し続けたときに表示されるツール バーです。  
+ [CMFCDropDownToolBar Class](../../mfc/reference/cmfcdropdowntoolbar-class.md)  
+ A toolbar that appears when the user presses and holds a top-level toolbar button.  
   
- [CMFCDropDownToolbarButton クラス](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)  
- ツール バー ボタンの一種で、クリックされたときは標準ボタンと同じように動作します。 ただし、ドロップダウン ツールバーを開きます ([CMFCDropDownToolBar クラス](../../mfc/reference/cmfcdropdowntoolbar-class.md)押すし、ツール バー ボタンを押したかどうか。  
+ [CMFCDropDownToolbarButton Class](../../mfc/reference/cmfcdropdowntoolbarbutton-class.md)  
+ A type of toolbar button that behaves like a regular button when it is clicked. However, it opens a drop-down toolbar ([CMFCDropDownToolBar Class](../../mfc/reference/cmfcdropdowntoolbar-class.md) if the user presses and holds the toolbar button down.  
   
- [CMFCDynamicLayout クラス](../../mfc/reference/cmfcdynamiclayout-class.md)  
- ユーザーによるウィンドウ サイズの変更時に、ウィンドウのコントロールをどのように移動して、サイズを変更するかを指定します。  
+ [CMFCDynamicLayout Class](../../mfc/reference/cmfcdynamiclayout-class.md)  
+ Specifies how controls in a window are moved and resized as the user resizes the window.  
   
- [CMFCEditBrowseCtrl クラス](../../mfc/reference/cmfceditbrowsectrl-class.md)  
- 参照機能付きコントロールをサポートします。これは、オプションで参照ボタンを含めることができる編集可能なテキスト ボックスです。 ユーザーが参照ボタンをクリックすると、このコントロールはカスタム動作を実行するか、ファイル参照またはフォルダー参照を含む標準ダイアログ ボックスを表示します。  
+ [CMFCEditBrowseCtrl Class](../../mfc/reference/cmfceditbrowsectrl-class.md)  
+ Supports the edit browse control, which is an editable text box that optionally contains a browse button. When the user clicks the browse button, the control performs a custom action or displays a standard dialog box that contains a file browser or a folder browser.  
   
- [CMFCFilterChunkValueImpl クラス](../../mfc/reference/cmfcfilterchunkvalueimpl-class.md)  
- チャンクとプロパティ値のペアのロジックを単純化します。  
+ [CMFCFilterChunkValueImpl Class](../../mfc/reference/cmfcfilterchunkvalueimpl-class.md)  
+ Simplifies both chunk and property value pair logic.  
   
- [CMFCFontComboBox クラス](../../mfc/reference/cmfcfontcombobox-class.md)  
- フォントの一覧を含むコンボ ボックス コントロールを作成します。  
+ [CMFCFontComboBox Class](../../mfc/reference/cmfcfontcombobox-class.md)  
+ Creates a combo box control that contains a list of fonts.  
   
- [CMFCFontInfo クラス](../../mfc/reference/cmfcfontinfo-class.md)  
- フォントの名前とその他の属性を記述します。  
+ [CMFCFontInfo Class](../../mfc/reference/cmfcfontinfo-class.md)  
+ Describes the name and other attributes of a font.  
   
- [CMFCHeaderCtrl クラス](../../mfc/reference/cmfcheaderctrl-class.md)  
- ヘッダー コントロールの複数の列の並べ替えをサポートします。  
+ [CMFCHeaderCtrl Class](../../mfc/reference/cmfcheaderctrl-class.md)  
+ Supports sorting multiple columns in a header control.  
   
- [CMFCImageEditorDialog クラス](../../mfc/reference/cmfcimageeditordialog-class.md)  
- イメージ エディター ダイアログ ボックスをサポートします。  
+ [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md)  
+ Supports an image editor dialog box.  
   
- [CMFCKeyMapDialog クラス](../../mfc/reference/cmfckeymapdialog-class.md)  
- キーボードのキーにコマンドを割り当てるコントロールをサポートします。  
+ [CMFCKeyMapDialog Class](../../mfc/reference/cmfckeymapdialog-class.md)  
+ Supports a control that maps commands to keys on the keyboard.  
   
- [CMFCLinkCtrl クラス](../../mfc/reference/cmfclinkctrl-class.md)  
- ボタンをハイパーリンクとして表示し、ボタンがクリックされたときにリンク先を呼び出します。  
+ [CMFCLinkCtrl Class](../../mfc/reference/cmfclinkctrl-class.md)  
+ Displays a button as a hyperlink and invokes the link's target when the button is clicked.  
   
- [CMFCListCtrl クラス](../../mfc/reference/cmfclistctrl-class.md)  
- 機能を拡張[CListCtrl クラス](../../mfc/reference/clistctrl-class.md)クラスの高度なヘッダー コントロールの機能をサポートすることによって、 [CMFCHeaderCtrl クラス](../../mfc/reference/cmfcheaderctrl-class.md)します。  
+ [CMFCListCtrl Class](../../mfc/reference/cmfclistctrl-class.md)  
+ Extends the functionality of [CListCtrl Class](../../mfc/reference/clistctrl-class.md) class by supporting the advanced header control functionality of the [CMFCHeaderCtrl Class](../../mfc/reference/cmfcheaderctrl-class.md).  
   
- [CMFCMaskedEdit クラス](../../mfc/reference/cmfcmaskededit-class.md)  
- マスク エディット コントロールをサポートします。これは、ユーザーの入力をマスクと検証し、テンプレートに従って検証結果を表示します。  
+ [CMFCMaskedEdit Class](../../mfc/reference/cmfcmaskededit-class.md)  
+ Supports a masked edit control, which validates user input against a mask and displays the validated results according to a template.  
   
- [CMFCMenuBar クラス](../../mfc/reference/cmfcmenubar-class.md)  
- ドッキングを実装するメニュー バーです。  
+ [CMFCMenuBar Class](../../mfc/reference/cmfcmenubar-class.md)  
+ A menu bar that implements docking.  
   
- [CMFCMenuButton クラス](../../mfc/reference/cmfcmenubutton-class.md)  
- ポップアップ メニューを表示してユーザーのメニュー選択を報告するボタンです。  
+ [CMFCMenuButton Class](../../mfc/reference/cmfcmenubutton-class.md)  
+ A button that displays a pop-up menu and reports on the user's menu selections.  
   
- [あります。](../../mfc/reference/cmfcoutlookbar-class.md)  
- Microsoft Outlook 2000 または Outlook 2003 の **ナビゲーション ウィンドウ** と同じ外観を持つタブ付きペインです。 `CMFCOutlookBar`オブジェクトを含む、 [CMFCOutlookBarTabCtrl クラス](../../mfc/reference/cmfcoutlookbartabctrl-class.md)オブジェクトと一連のタブです。 タブには、いずれかを指定できます[CMFCOutlookBarPane クラス](../../mfc/reference/cmfcoutlookbarpane-class.md)のオブジェクトまたは`CWnd`の派生クラスのオブジェクト。 ユーザーに対しては、Outlook バーは一連のボタンおよび表示領域として表示されます。 ユーザーがボタンをクリックすると、対応するコントロールまたはボタン ペインが表示されます。  
+ [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md)  
+ A tabbed pane with the visual appearance of the **Navigation Pane** in Microsoft Outlook 2000 or Outlook 2003. The `CMFCOutlookBar` object contains a [CMFCOutlookBarTabCtrl Class](../../mfc/reference/cmfcoutlookbartabctrl-class.md) object and a series of tabs. The tabs can be either [CMFCOutlookBarPane Class](../../mfc/reference/cmfcoutlookbarpane-class.md) objects or `CWnd`-derived objects. To the user, the Outlook bar appears as a series of buttons and a display area. When the user clicks a button, the corresponding control or button pane is displayed.  
   
- [CMFCOutlookBarPane クラス](../../mfc/reference/cmfcoutlookbarpane-class.md)  
- 派生したコントロール[CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)を Outlook バーに挿入できる ([があります](../../mfc/reference/cmfcoutlookbar-class.md))。 Outlook バー ペインには、大きいボタンの列があります。 ボタンのリストがペインより長い場合、ユーザーはリストを上下にスクロールできます。 ユーザーが Outlook バー ペインを Outlook バーから切り離すと、そのペインをフローティング状態にするかメイン フレーム ウィンドウにドッキングできます。  
+ [CMFCOutlookBarPane Class](../../mfc/reference/cmfcoutlookbarpane-class.md)  
+ A control derived from [CMFCToolBar Class](../../mfc/reference/cmfctoolbar-class.md) that can be inserted into an Outlook bar ([CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md)). The Outlook bar pane contains a column of large buttons. The user can scroll up and down the list of buttons if it is larger than the pane. When the user detaches an Outlook bar pane from the Outlook bar, it can float or dock in the main frame window.  
   
- [CMFCOutlookBarTabCtrl クラス](../../mfc/reference/cmfcoutlookbartabctrl-class.md)  
- Microsoft Outlook の **ナビゲーション ウィンドウ** と同じ外観を持つタブ コントロールです。  
+ [CMFCOutlookBarTabCtrl Class](../../mfc/reference/cmfcoutlookbartabctrl-class.md)  
+ A tab control that has the visual appearance of the **Navigation Pane** in Microsoft Outlook.  
   
- [CMFCPopupMenu クラス](../../mfc/reference/cmfcpopupmenu-class.md)  
- Windows のポップアップ メニュー機能を実装し、ティアオフ メニューやツールヒントなどの機能を追加することでそれを拡張します。  
+ [CMFCPopupMenu Class](../../mfc/reference/cmfcpopupmenu-class.md)  
+ Implements Windows pop-up menu functionality and extends it by adding features such as tear-off menus and tooltips.  
   
- [CMFCPopupMenuBar クラス](../../mfc/reference/cmfcpopupmenubar-class.md)  
- ポップアップ メニューに埋め込まれたメニュー バーです。  
+ [CMFCPopupMenuBar Class](../../mfc/reference/cmfcpopupmenubar-class.md)  
+ A menu bar embedded into a pop-up menu.  
   
- [CMFCPreviewCtrlImpl クラス](../../mfc/reference/cmfcpreviewctrlimpl-class.md)  
- リッチ プレビュー用に、シェルが用意するホスト ウィンドウに配置されるウィンドウを実装します。  
+ [CMFCPreviewCtrlImpl Class](../../mfc/reference/cmfcpreviewctrlimpl-class.md)  
+ Implements a window that is placed on a host window provided by the Shell for Rich Preview.  
   
- [CMFCPropertyGridColorProperty クラス](../../mfc/reference/cmfcpropertygridcolorproperty-class.md)  
- 色を選択するダイアログ ボックスを開くプロパティ リスト コントロール項目をサポートします。  
+ [CMFCPropertyGridColorProperty Class](../../mfc/reference/cmfcpropertygridcolorproperty-class.md)  
+ Supports a property list control item that opens a color selection dialog box.  
   
- [CMFCPropertyGridCtrl クラス](../../mfc/reference/cmfcpropertygridctrl-class.md)  
- プロパティをアルファベット順または階層順に表示できる、編集可能なプロパティ グリッド コントロールをサポートします。  
+ [CMFCPropertyGridCtrl Class](../../mfc/reference/cmfcpropertygridctrl-class.md)  
+ Supports an editable property grid control that can display properties in alphabetical or hierarchical order.  
   
- [CMFCPropertyGridFileProperty クラス](../../mfc/reference/cmfcpropertygridfileproperty-class.md)  
- ファイルを選択するダイアログ ボックスを開くプロパティ リスト コントロール項目をサポートします。  
+ [CMFCPropertyGridFileProperty Class](../../mfc/reference/cmfcpropertygridfileproperty-class.md)  
+ Supports a property list control item that opens a file selection dialog box.  
   
- [CMFCPropertyGridFontProperty クラス](../../mfc/reference/cmfcpropertygridfontproperty-class.md)  
- フォントを選択するダイアログ ボックスを開くプロパティ リスト コントロール項目をサポートします。  
+ [CMFCPropertyGridFontProperty Class](../../mfc/reference/cmfcpropertygridfontproperty-class.md)  
+ Supports a property list control item that opens a font selection dialog box.  
   
- [CMFCPropertyGridProperty クラス](../../mfc/reference/cmfcpropertygridproperty-class.md)  
- プロパティ リスト コントロールのリスト項目を表します。  
+ [CMFCPropertyGridProperty Class](../../mfc/reference/cmfcpropertygridproperty-class.md)  
+ Represents a list item in a property list control.  
   
- [CMFCPropertyPage クラス](../../mfc/reference/cmfcpropertypage-class.md)  
- プロパティ ページでのポップアップ メニューの表示をサポートします。  
+ [CMFCPropertyPage Class](../../mfc/reference/cmfcpropertypage-class.md)  
+ Supports the display of pop-up menus on a property page.  
   
- [CMFCPropertySheet クラス](../../mfc/reference/cmfcpropertysheet-class.md)  
- 各プロパティ ページがページ タブ、ツール バー ボタン、ツリー コントロールのノード、またはリスト項目で示されるプロパティ シートをサポートします。  
+ [CMFCPropertySheet Class](../../mfc/reference/cmfcpropertysheet-class.md)  
+ Supports a property sheet where each property page is denoted by a page tab, a toolbar button, a tree control node, or a list item.  
   
- [CMFCReBar クラス](../../mfc/reference/cmfcrebar-class.md)  
- Rebar コントロールのレイアウト、永続性、および状態に関する情報を提供するコントロール バーです。  
+ [CMFCReBar Class](../../mfc/reference/cmfcrebar-class.md)  
+ Control bar that provides layout, persistence, and state information for rebar controls.  
   
- [CMFCRibbonApplicationButton クラス](../../mfc/reference/cmfcribbonapplicationbutton-class.md)  
- アプリケーション ウィンドウの左上隅に表示される特殊なボタンを実装します。 このボタンがクリックされると、通常は、一般的な **[ファイル]** メニューのコマンド ( **[開く]**、 **[上書き保存]**、 **[終了]**など) を含むメニューが開かれます。  
+ [CMFCRibbonApplicationButton Class](../../mfc/reference/cmfcribbonapplicationbutton-class.md)  
+ Implements a special button located in the top-left corner of the application window. When clicked, the button opens a menu that usually contains common **File** commands like **Open**, **Save**, and **Exit**.  
   
- [CMFCRibbonBaseElement クラス](../../mfc/reference/cmfcribbonbaseelement-class.md)  
- 基本クラスに追加できるすべての要素を[CMFCRibbonBar クラス](../../mfc/reference/cmfcribbonbar-class.md)します。 リボン要素とは、リボン ボタン、リボン チェック ボックス、リボン コンボ ボックスなどです。  
+ [CMFCRibbonBaseElement Class](../../mfc/reference/cmfcribbonbaseelement-class.md)  
+ Base class for all elements that you can add to a [CMFCRibbonBar Class](../../mfc/reference/cmfcribbonbar-class.md). Examples of ribbon elements are ribbon buttons, ribbon check boxes, and ribbon combo boxes.  
   
- [CMFCRibbonButton クラス](../../mfc/reference/cmfcribbonbutton-class.md)  
- パネル、クイック アクセス ツール バー、ポップアップ メニューなど、リボン バー要素に配置できるボタンを実装します。  
+ [CMFCRibbonButton Class](../../mfc/reference/cmfcribbonbutton-class.md)  
+ Implements buttons that you can position on ribbon bar elements such as panels, Quick Access Toolbars, and pop-up menus.  
   
- [CMFCRibbonButtonsGroup クラス](../../mfc/reference/cmfcribbonbuttonsgroup-class.md)  
- 複数のリボン ボタンを&1; つのグループに編成できます。 グループ内のすべてのボタンは互いに隣接して水平に並べられ、1 つの枠で囲まれます。  
+ [CMFCRibbonButtonsGroup Class](../../mfc/reference/cmfcribbonbuttonsgroup-class.md)  
+ Lets you organize a set of ribbon buttons into a group. All buttons in the group are directly adjacent to each other horizontally and enclosed in a border.  
   
- [CMFCRibbonCategory クラス](../../mfc/reference/cmfcribboncategory-class.md)  
- グループを含むリボン タブを実装する[CMFCRibbonPanel クラス](../../mfc/reference/cmfcribbonpanel-class.md)します。  
+ [CMFCRibbonCategory Class](../../mfc/reference/cmfcribboncategory-class.md)  
+ Implements a ribbon tab that contains a group of [CMFCRibbonPanel Class](../../mfc/reference/cmfcribbonpanel-class.md).  
   
- [CMFCRibbonCheckBox クラス](../../mfc/reference/cmfcribboncheckbox-class.md)  
- リボン パネル、クイック アクセス ツール バー、またはポップアップ メニューに追加できるチェック ボックスを実装します。  
+ [CMFCRibbonCheckBox Class](../../mfc/reference/cmfcribboncheckbox-class.md)  
+ Implements a check box that you can add to a ribbon panel, Quick Access Toolbar, or popup menu.  
   
- [CMFCRibbonColorButton クラス](../../mfc/reference/cmfcribboncolorbutton-class.md)  
- リボン バーに追加できるカラー ボタンを実装します。 リボンのカラー ボタンは、1 つまたは複数のカラー パレットを含むドロップダウン メニューを表示します。  
+ [CMFCRibbonColorButton Class](../../mfc/reference/cmfcribboncolorbutton-class.md)  
+ Implements a color button that you can add to a ribbon bar. The ribbon color button displays a drop-down menu that contains one or more color palettes.  
   
- [CMFCRibbonComboBox クラス](../../mfc/reference/cmfcribboncombobox-class.md)  
- リボン バー、リボン パネル、またはリボン ポップアップ メニューに追加できるコンボ ボックス コントロールを実装します。  
+ [CMFCRibbonComboBox Class](../../mfc/reference/cmfcribboncombobox-class.md)  
+ Implements a combo box control that you can add to a ribbon bar, a ribbon panel, or a ribbon popup menu.  
   
- [CMFCRibbonContextCaption クラス](../../mfc/reference/cmfcribboncontextcaption-class.md)  
- リボン カテゴリまたはコンテキスト カテゴリの最上位に表示される色付きのキャプションを実装します。  
+ [CMFCRibbonContextCaption Class](../../mfc/reference/cmfcribboncontextcaption-class.md)  
+ Implements a colored caption that appears at the top of a ribbon category or a context category.  
   
- [CMFCRibbonEdit クラス](../../mfc/reference/cmfcribbonedit-class.md)  
- リボンに配置されるエディット コントロールを実装します。  
+ [CMFCRibbonEdit Class](../../mfc/reference/cmfcribbonedit-class.md)  
+ Implements an edit control that is positioned on a ribbon.  
   
- [CMFCRibbonFontComboBox クラス](../../mfc/reference/cmfcribbonfontcombobox-class.md)  
- フォントの一覧を含むコンボ ボックスを実装します。 このコンボ ボックスをリボン パネルに配置できます。  
+ [CMFCRibbonFontComboBox Class](../../mfc/reference/cmfcribbonfontcombobox-class.md)  
+ Implements a combo box that contains a list of fonts. You place the combo box on a ribbon panel.  
   
- [CMFCRibbonGallery クラス](../../mfc/reference/cmfcribbongallery-class.md)  
- Office 2007 スタイルのリボン ギャラリーを実装します。  
+ [CMFCRibbonGallery Class](../../mfc/reference/cmfcribbongallery-class.md)  
+ Implements Office 2007-style ribbon galleries.  
   
- [CMFCRibbonGalleryMenuButton クラス](../../mfc/reference/cmfcribbongallerymenubutton-class.md)  
- リボン ギャラリーを含むリボン メニュー ボタンを実装します。  
+ [CMFCRibbonGalleryMenuButton Class](../../mfc/reference/cmfcribbongallerymenubutton-class.md)  
+ Implements a ribbon menu button that contains ribbon galleries.  
   
- [CMFCRibbonLabel クラス](../../mfc/reference/cmfcribbonlabel-class.md)  
- リボンのクリックできないテキスト ラベルを実装します。  
+ [CMFCRibbonLabel Class](../../mfc/reference/cmfcribbonlabel-class.md)  
+ Implements a non-clickable text label for a ribbon.  
   
- [CMFCRibbonLinkCtrl クラス](../../mfc/reference/cmfcribbonlinkctrl-class.md)  
- リボン上に配置するハイパーリンクを実装します。 ハイパーリンクをクリックすると、Web ページが表示されます。  
+ [CMFCRibbonLinkCtrl Class](../../mfc/reference/cmfcribbonlinkctrl-class.md)  
+ Implements a hyperlink that is positioned on a ribbon. The hyperlink opens a Web page when you click it.  
   
- [CMFCRibbonMainPanel クラス](../../mfc/reference/cmfcribbonmainpanel-class.md)  
- クリックしたときに表示されるリボン パネルを実装して、 [CMFCRibbonApplicationButton クラス](../../mfc/reference/cmfcribbonapplicationbutton-class.md)します。  
+ [CMFCRibbonMainPanel Class](../../mfc/reference/cmfcribbonmainpanel-class.md)  
+ Implements a ribbon panel that displays when you click the [CMFCRibbonApplicationButton Class](../../mfc/reference/cmfcribbonapplicationbutton-class.md).  
   
- [CMFCRibbonMiniToolBar クラス](../../mfc/reference/cmfcribbonminitoolbar-class.md)  
- コンテキスト ポップアップ ツール バーを実装します。  
+ [CMFCRibbonMiniToolBar Class](../../mfc/reference/cmfcribbonminitoolbar-class.md)  
+ Implements a contextual popup toolbar.  
   
- [CMFCRibbonPanel クラス](../../mfc/reference/cmfcribbonpanel-class.md)  
- 一連のリボン要素を含むパネルを実装します。 このパネルが描画されると、そのパネルに指定されたサイズに対して可能な限り多くの要素が表示されます。  
+ [CMFCRibbonPanel Class](../../mfc/reference/cmfcribbonpanel-class.md)  
+ Implements a panel that contains a set of ribbon elements. When the panel is drawn, it displays as many elements as possible, given the size of the panel.  
   
- [CMFCRibbonProgressBar クラス](../../mfc/reference/cmfcribbonprogressbar-class.md)  
- 時間のかかる操作の進行状況を視覚的に示すコントロールを実装します。  
+ [CMFCRibbonProgressBar Class](../../mfc/reference/cmfcribbonprogressbar-class.md)  
+ Implements a control that visually indicates the progress of a lengthy operation.  
   
- [CMFCRibbonSlider クラス](../../mfc/reference/cmfcribbonslider-class.md)  
- リボン バーまたはリボン ステータス バーに追加できるスライダー コントロールを実装します。 リボン スライダー コントロールは、Office 2007 アプリケーションに表示されるズーム スライダーに似ています。  
+ [CMFCRibbonSlider Class](../../mfc/reference/cmfcribbonslider-class.md)  
+ Implements a slider control that you can add to a ribbon bar or ribbon status bar. The ribbon slider control resembles the zoom sliders that appear in Office 2007 applications.  
   
- [CMFCRibbonStatusBar クラス](../../mfc/reference/cmfcribbonstatusbar-class.md)  
- リボン要素を表示できるステータス バー コントロールを実装します。  
+ [CMFCRibbonStatusBar Class](../../mfc/reference/cmfcribbonstatusbar-class.md)  
+ Implements a status bar control that can display ribbon elements.  
   
- [CMFCRibbonStatusBarPane クラス](../../mfc/reference/cmfcribbonstatusbarpane-class.md)  
- リボン ステータス バーに追加できるリボン要素を実装します。  
+ [CMFCRibbonStatusBarPane Class](../../mfc/reference/cmfcribbonstatusbarpane-class.md)  
+ Implements a ribbon element that you can add to a ribbon status bar.  
   
- [CMFCRibbonUndoButton クラス](../../mfc/reference/cmfcribbonundobutton-class.md)  
- 分割ボタンを実装します。これは、メイン ボタンの右端に下向きの三角形が表示される小型のボタンです。 ユーザーがその三角形をクリックすると、最近実行したアクションのドロップダウン リストが表示されます。 そのドロップダウン リストから&1; つまたは複数のアクションを選択できます。 ただし、ユーザーがボタンをクリックした場合は、ドロップダウン リストの最後の (最近追加された) アクションだけが元に戻されます。 ユーザーがアクションを実行したら、そのアクションを一覧に追加していく必要があります。  
+ [CMFCRibbonUndoButton Class](../../mfc/reference/cmfcribbonundobutton-class.md)  
+ Implements a split button, a small button with a downward pointing triangle on the rightmost part of the main button. Users can click the triangle to display a drop-down list of their most recently performed actions. Users can then select one or more actions from the drop-down list. However, if the user clicks the button, only the last (the most recently added) action on the drop-down list is undone. You should populate the list with actions as the user performs them.  
   
- [CMFCShellListCtrl クラス](../../mfc/reference/cmfcshelllistctrl-class.md)  
- Windows のリスト コントロールの機能を提供し、シェル項目の一覧を表示できるように拡張します。  
+ [CMFCShellListCtrl Class](../../mfc/reference/cmfcshelllistctrl-class.md)  
+ Provides Windows list control functionality and expands it by including the ability to display a list of shell items.  
   
- [CMFCShellTreeCtrl クラス](../../mfc/reference/cmfcshelltreectrl-class.md)  
- 拡張[CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)シェル項目の階層を表示することによって機能します。  
+ [CMFCShellTreeCtrl Class](../../mfc/reference/cmfcshelltreectrl-class.md)  
+ Extends [CTreeCtrl Class](../../mfc/reference/ctreectrl-class.md) functionality by displaying a hierarchy of Shell items.  
   
- [CMFCSpinButtonCtrl クラス](../../mfc/reference/cmfcspinbuttonctrl-class.md)  
- スピン ボタン コントロールを描画するビジュアル マネージャーをサポートします。  
+ [CMFCSpinButtonCtrl Class](../../mfc/reference/cmfcspinbuttonctrl-class.md)  
+ Supports a visual manager that draws a spin button control.  
   
- [CMFCStatusBar クラス](../../mfc/reference/cmfcstatusbar-class.md)  
- `CStatusBar` クラスに似たステータス バーを実装します。 ただし、 `CMFCStatusBar` クラスには、イメージ、アニメーション、およびプログレス バーを表示する機能や、マウスのダブルクリックに応答する機能など、 `CStatusBar` クラスでは提供されない機能が含まれています。  
+ [CMFCStatusBar Class](../../mfc/reference/cmfcstatusbar-class.md)  
+ Implements a status bar similar to the `CStatusBar` class. However, the `CMFCStatusBar` class has features not offered by the `CStatusBar` class, such as the ability to display images, animations, and progress bars; and the ability to respond to mouse double-clicks.  
   
- [CMFCTabCtrl クラス](../../mfc/reference/cmfctabctrl-class.md)  
- タブ コントロールの機能を提供します。 タブ コントロールは、上または下にフラットまたは&3;D のタブを持つ、ドッキング可能なウィンドウを表示します。 タブにはテキストとイメージを表示でき、アクティブな状態のときに色を変更することもできます。  
+ [CMFCTabCtrl Class](../../mfc/reference/cmfctabctrl-class.md)  
+ Provides functionality for a tab control. The tab control displays a dockable window with flat or three-dimensional tabs at its top or bottom. The tabs can display text and an image and can change color when active.  
   
- [CMFCTabToolTipInfo 構造体](../../mfc/reference/cmfctabtooltipinfo-structure.md)  
- ユーザーがマウス ポインターを置いた MDI タブの情報を提供します。  
+ [CMFCTabToolTipInfo Structure](../../mfc/reference/cmfctabtooltipinfo-structure.md)  
+ Provides information about the MDI tab that the user is hovering over.  
   
- [CMFCTasksPane クラス](../../mfc/reference/cmfctaskspane-class.md)  
- クリック可能な項目 (タスク) のリストを実装します。  
+ [CMFCTasksPane Class](../../mfc/reference/cmfctaskspane-class.md)  
+ Implements a list of clickable items (tasks).  
   
- [CMFCTasksPaneTask クラス](../../mfc/reference/cmfctaskspanetask-class.md)  
- タスク ペイン コントロール用のタスクを表すヘルパー クラス ([CMFCTasksPane クラス](../../mfc/reference/cmfctaskspane-class.md))。 タスク オブジェクトは、タスク グループ内の項目を表します ([CMFCTasksPaneTaskGroup クラス](../../mfc/reference/cmfctaskspanetaskgroup-class.md))。 各タスクには、ユーザーがタスク名の左側に表示されるタスクやアイコンをクリックしたときにフレームワークが実行するコマンドを設定できます。  
+ [CMFCTasksPaneTask Class](../../mfc/reference/cmfctaskspanetask-class.md)  
+ Helper class that represents tasks for the task pane control ([CMFCTasksPane Class](../../mfc/reference/cmfctaskspane-class.md)). The task object represents an item in the task group ([CMFCTasksPaneTaskGroup Class](../../mfc/reference/cmfctaskspanetaskgroup-class.md)). Each task can have a command that the framework executes when a user clicks on the task and an icon that appears to the left of the task name.  
   
- [CMFCTasksPaneTaskGroup クラス](../../mfc/reference/cmfctaskspanetaskgroup-class.md)  
- によって使用されるヘルパー クラス、 [CMFCTasksPane クラス](../../mfc/reference/cmfctaskspane-class.md)コントロールです。 `CMFCTasksPaneTaskGroup` 型のオブジェクトは *タスク グループ*を表します。 タスク グループは、閉じるボタンがある独立したボックスにフレームワークによって表示される項目の一覧です。 このボックスには、オプションのキャプション (グループ名) があります。 グループが閉じると、タスクの一覧は表示されません。  
+ [CMFCTasksPaneTaskGroup Class](../../mfc/reference/cmfctaskspanetaskgroup-class.md)  
+ Helper class used by the [CMFCTasksPane Class](../../mfc/reference/cmfctaskspane-class.md) control. Objects of type `CMFCTasksPaneTaskGroup` represent a *task group*. The task group is a list of items that the framework displays in a separate box that has a collapse button. The box can have an optional caption (group name). If a group is collapsed, the list of tasks is not visible.  
   
- [CMFCToolBar クラス](../../mfc/reference/cmfctoolbar-class.md)  
- ようになります[CToolBar クラス](../../mfc/reference/ctoolbar-class.md)がユーザー インターフェイスの機能をその他のサポートを提供します。 フラット ツール バー、ホット イメージのツール バー、大きいアイコン、ページャー ボタン、ロックされたツール バー、rebar コントロール、イメージの下のテキスト、背景イメージ、およびタブ付きのツール バーなどがサポートされます。 `CMFCToolBar` クラスには、ツール バーおよびメニューに対するユーザーのカスタマイズ、ツール バーとメニューの間のドラッグ アンド ドロップ、コンボ ボックス ボタン、エディット ボックス ボタン、カラー ピッカー、およびロールアップ ボタンのサポートも組み込まれています。  
+ [CMFCToolBar Class](../../mfc/reference/cmfctoolbar-class.md)  
+ Resembles [CToolBar Class](../../mfc/reference/ctoolbar-class.md), but provides additional support for user interface features. These include flat toolbars, toolbars with hot images, large icons, pager buttons, locked toolbars, rebar controls, text under images, background images, and tabbed toolbars. The `CMFCToolBar` class also contains built-in support for user customization of toolbars and menus, drag-and-drop between toolbars and menus, combo box buttons, edit box buttons, color pickers, and roll-up buttons.  
   
- [CMFCToolBarImages クラス](../../mfc/reference/cmfctoolbarimages-class.md)  
- アプリケーション リソースまたはファイルから読み込んだツール バー イメージを管理します。  
+ [CMFCToolBarImages Class](../../mfc/reference/cmfctoolbarimages-class.md)  
+ Manages toolbar images loaded from application resources or from files.  
   
- [CMFCToolBarInfo クラス](../../mfc/reference/cmfctoolbarinfo-class.md)  
- さまざまな状態のツール バー イメージのリソース ID を含みます。 `CMFCToolBarInfo`パラメーターとして使用されるヘルパー クラスであり、 [CMFCToolBar::LoadToolBarEx](../../mfc/reference/cmfctoolbar-class.md#loadtoolbarex)メソッドです。  
+ [CMFCToolBarInfo Class](../../mfc/reference/cmfctoolbarinfo-class.md)  
+ Contains the resource IDs of toolbar images in various states. `CMFCToolBarInfo` is a helper class that is used as a parameter of the [CMFCToolBar::LoadToolBarEx](../../mfc/reference/cmfctoolbar-class.md#loadtoolbarex) method.  
   
- [CMFCToolBarMenuButton クラス](../../mfc/reference/cmfctoolbarmenubutton-class.md)  
- ポップアップ メニューを含むツール バー ボタンです。  
+ [CMFCToolBarMenuButton Class](../../mfc/reference/cmfctoolbarmenubutton-class.md)  
+ A toolbar button that contains a pop-up menu.  
   
- [CMFCToolBarsCustomizeDialog クラス](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)  
- モードレス タブ ダイアログ ボックス ([CPropertySheet クラス](../../mfc/reference/cpropertysheet-class.md)) ユーザーがツールバー、メニューのショートカット キー、ユーザー定義のツールおよびアプリケーションで visual スタイルをカスタマイズできるようにします。 通常、このダイアログ ボックスを表示するには、 **[ツール]** メニューの **[ユーザー設定]** をクリックします。  
+ [CMFCToolBarsCustomizeDialog Class](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)  
+ A modeless tab dialog box ([CPropertySheet Class](../../mfc/reference/cpropertysheet-class.md)) that enables the user to customize the toolbars, menus, keyboard shortcuts, user-defined tools, and visual style in an application. Typically, the user accesses this dialog box by selecting **Customize** from the **Tools** menu.  
   
- [CMFCToolTipCtrl クラス](../../mfc/reference/cmfctooltipctrl-class.md)  
- 拡張ツールヒントの実装に基づいて、 [CToolTipCtrl クラス](../../mfc/reference/ctooltipctrl-class.md)します。 `CMFCToolTipCtrl` クラスに基づいたツールヒントは、アイコン、ラベル、および説明を表示できます。 グラデーション塗りつぶし、カスタム テキストと境界線の色、太字、角を丸く表示、またはバルーン形式を使用して、外観をカスタマイズできます。  
+ [CMFCToolTipCtrl Class](../../mfc/reference/cmfctooltipctrl-class.md)  
+ An extended tooltip implementation based on the [CToolTipCtrl Class](../../mfc/reference/ctooltipctrl-class.md). A tooltip based on the `CMFCToolTipCtrl` class can display an icon, a label, and a description. You can customize its visual appearance by using a gradient fill, custom text and border colors, bold text, rounded corners, or a balloon style.  
   
- [CMFCToolTipInfo クラス](../../mfc/reference/cmfctooltipinfo-class.md)  
- ツールヒントの外観に関する情報を格納します。  
+ [CMFCToolTipInfo Class](../../mfc/reference/cmfctooltipinfo-class.md)  
+ Stores information about the visual appearance of tooltips.  
   
- [CMFCVisualManager クラス](../../mfc/reference/cmfcvisualmanager-class.md)  
- グローバル レベルでアプリケーションの外観変更のサポートを提供します。 `CMFCVisualManager` クラスは、一貫したスタイルを使用してアプリケーションの GUI コントロールを描画する機能を提供するクラスと連携します。 これらの連携するクラスはビジュアル マネージャーと呼ばれ、 `CMFCBaseVisualManager`から継承されます。  
+ [CMFCVisualManager Class](../../mfc/reference/cmfcvisualmanager-class.md)  
+ Provides support for changing the appearance of your application at a global level. The `CMFCVisualManager` class works together with a class that provides instructions to draw the GUI controls of your application using a consistent style. These other classes are referred to as visual managers and they inherit from `CMFCBaseVisualManager`.  
   
- [CMFCVisualManagerOffice2003 クラス](../../mfc/reference/cmfcvisualmanageroffice2003-class.md)  
- アプリケーションに Microsoft Office 2003 の外観を与えます。  
+ [CMFCVisualManagerOffice2003 Class](../../mfc/reference/cmfcvisualmanageroffice2003-class.md)  
+ Gives an application a Microsoft Office 2003 appearance.  
   
- [CMFCVisualManagerOffice2007 クラス](../../mfc/reference/cmfcvisualmanageroffice2007-class.md)  
- アプリケーションに Microsoft Office 2007 の外観を与えます。  
+ [CMFCVisualManagerOffice2007 Class](../../mfc/reference/cmfcvisualmanageroffice2007-class.md)  
+ Gives an application a Microsoft Office 2007 appearance.  
   
- [CMFCVisualManagerVS2005 クラス](../../mfc/reference/cmfcvisualmanagervs2005-class.md)  
- アプリケーションに Microsoft Visual Studio 2005 の外観を与えます。  
+ [CMFCVisualManagerVS2005 Class](../../mfc/reference/cmfcvisualmanagervs2005-class.md)  
+ Gives an application a Microsoft Visual Studio 2005 appearance.  
   
- [CMFCVisualManagerWindows クラス](../../mfc/reference/cmfcvisualmanagerwindows-class.md)  
- ユーザーが Microsoft Windows XP または Microsoft Vista のテーマを選択したときに、Windows XP または Vista と同様の外観を表示します。  
+ [CMFCVisualManagerWindows Class](../../mfc/reference/cmfcvisualmanagerwindows-class.md)  
+ Mimics the appearance of Microsoft Windows XP or Microsoft Vista when the user selects a Windows XP or Vista theme.  
   
- [CMFCVisualManagerWindows7 クラス](../../mfc/reference/cmfcvisualmanagerwindows7-class.md)  
- アプリケーションを [!INCLUDE[win7](../../build/includes/win7_md.md)] アプリケーションの外観にします。  
+ [CMFCVisualManagerWindows7 Class](../../mfc/reference/cmfcvisualmanagerwindows7-class.md)  
+ Gives an application the appearance of a [!INCLUDE[win7](../../build/includes/win7_md.md)] application.  
   
- [CMFCWindowsManagerDialog クラス](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)  
- MDI アプリケーションで、ユーザーが MDI 子ウィンドウを管理できるようにします。  
+ [CMFCWindowsManagerDialog Class](../../mfc/reference/cmfcwindowsmanagerdialog-class.md)  
+ Enables a user to manage MDI child windows in a MDI application.  
   
- [CMiniFrameWnd クラス](../../mfc/reference/cminiframewnd-class.md)  
- フローティング ツール バーの周りなどで使用される、半分の高さのフレーム ウィンドウを表します。  
+ [CMiniFrameWnd Class](../../mfc/reference/cminiframewnd-class.md)  
+ Represents a half-height frame window typically seen around floating toolbars.  
   
- [CMonikerFile クラス](../../mfc/reference/cmonikerfile-class.md)  
- [IMoniker](http://msdn.microsoft.com/library/windows/desktop/aa380034)で名前が付けられたデータのストリーム ( [IStream](http://msdn.microsoft.com/library/windows/desktop/ms679705)) を表します。  
+ [CMonikerFile Class](../../mfc/reference/cmonikerfile-class.md)  
+ Represents a stream of data ([IStream](http://msdn.microsoft.com/library/windows/desktop/aa380034)) named by an [IMoniker](http://msdn.microsoft.com/library/windows/desktop/ms679705).  
   
- [CMonthCalCtrl クラス](../../mfc/reference/cmonthcalctrl-class.md)  
- 月間予定表コントロールの機能がカプセル化されています。  
+ [CMonthCalCtrl Class](../../mfc/reference/cmonthcalctrl-class.md)  
+ Encapsulates the functionality of a month calendar control.  
   
- [CMouseManager クラス](../../mfc/reference/cmousemanager-class.md)  
- 特定にさまざまなコマンドを関連付けられるように[CView クラス](../../mfc/reference/cview-class.md)がビューの内側に、ユーザーがダブルクリックしたときのオブジェクトします。  
+ [CMouseManager Class](../../mfc/reference/cmousemanager-class.md)  
+ Lets a user associate different commands with a particular [CView Class](../../mfc/reference/cview-class.md) object when the user double-clicks inside that view.  
   
- [CMultiDocTemplate クラス](../../mfc/reference/cmultidoctemplate-class.md)  
- MDI (マルチ ドキュメント インターフェイス) を実装するドキュメント テンプレートを定義します。  
+ [CMultiDocTemplate Class](../../mfc/reference/cmultidoctemplate-class.md)  
+ Defines a document template that implements the multiple document interface (MDI).  
   
- [CMultiLock クラス](../../mfc/reference/cmultilock-class.md)  
- マルチスレッド プログラムで複数のリソースのアクセス制御に使うアクセス コントロール機構を表します。  
+ [CMultiLock Class](../../mfc/reference/cmultilock-class.md)  
+ Represents the access-control mechanism used in controlling access to resources in a multithreaded program.  
   
- [関数のクラス](../../mfc/reference/cmultipagedhtmldialog-class.md)  
- マルチページ ダイアログは、複数の HTML ページを順番に表示し、各ページのイベントを処理します。  
+ [CMultiPageDHtmlDialog Class](../../mfc/reference/cmultipagedhtmldialog-class.md)  
+ A multipage dialog displays multiple HTML pages sequentially and handles the events from each page.  
   
- [CMultiPaneFrameWnd クラス](../../mfc/reference/cmultipaneframewnd-class.md)  
- 拡張[CPaneFrameWnd クラス](../../mfc/reference/cpaneframewnd-class.md)します。 複数のペインをサポートします。 コントロール バーに埋め込まれたハンドルは&1; つではなく`CMultiPaneFrameWnd`を含む、 [CPaneContainerManager クラス](../../mfc/reference/cpanecontainermanager-class.md)いずれかをドッキングするのには、ユーザーを有効にするオブジェクト`CMultiPaneFrameWnd`別に、動的に複数のフローティング、タブ付きウィンドウを作成します。  
+ [CMultiPaneFrameWnd Class](../../mfc/reference/cmultipaneframewnd-class.md)  
+ Extends [CPaneFrameWnd Class](../../mfc/reference/cpaneframewnd-class.md). It can support multiple panes. Instead of a single embedded handle to a control bar, `CMultiPaneFrameWnd` contains a [CPaneContainerManager Class](../../mfc/reference/cpanecontainermanager-class.md) object that enables the user to dock one `CMultiPaneFrameWnd` to another and dynamically create multiple floating, tabbed windows.  
   
- [CMutex クラス](../../mfc/reference/cmutex-class.md)  
- ミューテックスを表します。これは、1 つのスレッドがリソースに排他アクセスできるようにする同期オブジェクトです。  
+ [CMutex Class](../../mfc/reference/cmutex-class.md)  
+ Represents a mutex, which is a synchronization object that allows one thread mutually exclusive access to a resource.  
   
- [CNetAddressCtrl クラス](../../mfc/reference/cnetaddressctrl-class.md)  
- `CNetAddressCtrl` クラスは、ネットワーク アドレス コントロールを表します。このコントロールを使用すると、IPv4 アドレス、IPv6 アドレス、および名前付き DNS アドレスの形式を入力して検証できます。  
+ [CNetAddressCtrl Class](../../mfc/reference/cnetaddressctrl-class.md)  
+ The `CNetAddressCtrl` class represents the network address control, which you can use to input and validate the format of IPv4, IPv6, and named DNS addresses.  
   
- [行わないクラス](../../mfc/reference/cnotsupportedexception-class.md)  
- サポートされていない機能を要求した結果として起こる例外を表します。  
+ [CNotSupportedException Class](../../mfc/reference/cnotsupportedexception-class.md)  
+ Represents an exception that is the result of a request for an unsupported feature.  
   
- [CObArray クラス](../../mfc/reference/cobarray-class.md)  
- `CObject` ポインターの配列をサポートします。  
+ [CObArray Class](../../mfc/reference/cobarray-class.md)  
+ Supports arrays of `CObject` pointers.  
   
- [CObject クラス](../../mfc/reference/cobject-class.md)  
- MFC ライブラリの重要な基底クラスです。  
+ [CObject Class](../../mfc/reference/cobject-class.md)  
+ The principal base class for the Microsoft Foundation Class Library.  
   
- [CObList クラス](../../mfc/reference/coblist-class.md)  
- 一意でない `CObject` ポインターの順序付きリストをサポートします。このリストには、順番にアクセスすることも、ポインター値を使ってアクセスすることもできます。  
+ [CObList Class](../../mfc/reference/coblist-class.md)  
+ Supports ordered lists of non-unique `CObject` pointers accessible sequentially or by pointer value.  
   
- [関数のクラス](../../mfc/reference/coccmanager-class.md)  
- `COleControlContainer` オブジェクトと `COleControlSite` オブジェクトによって実装されるさまざまなカスタム コントロール サイトを管理します。  
+ [COccManager Class](../../mfc/reference/coccmanager-class.md)  
+ Manages various custom control sites; implemented by `COleControlContainer` and `COleControlSite` objects.  
   
- [COleBusyDialog クラス](../../mfc/reference/colebusydialog-class.md)  
- OLE の [サーバーが応答しません] ダイアログ ボックスまたは [サーバーを使用できません] ダイアログ ボックスに使用されます。  
+ [COleBusyDialog Class](../../mfc/reference/colebusydialog-class.md)  
+ Used for the OLE Server Not Responding or Server Busy dialog boxes.  
   
- [メンバー クラス](../../mfc/reference/colechangeicondialog-class.md)  
- OLE の [アイコンの変更] ダイアログ ボックスに使用します。  
+ [COleChangeIconDialog Class](../../mfc/reference/colechangeicondialog-class.md)  
+ Used for the OLE Change Icon dialog box.  
   
- [メンバー クラス](../../mfc/reference/colechangesourcedialog-class.md)  
- OLE の [ソースの変更] ダイアログ ボックスに使用します。  
+ [COleChangeSourceDialog Class](../../mfc/reference/colechangesourcedialog-class.md)  
+ Used for the OLE Change Source dialog box.  
   
- [COleClientItem クラス](../../mfc/reference/coleclientitem-class.md)  
- OLE アイテムへのコンテナー インターフェイスを定義します。  
+ [COleClientItem Class](../../mfc/reference/coleclientitem-class.md)  
+ Defines the container interface to OLE items.  
   
- [COleCmdUI クラス](../../mfc/reference/colecmdui-class.md)  
- アプリケーションの `IOleCommandTarget`ドリブンの機能に関連するユーザー インターフェイス オブジェクトの状態を更新するメソッドを MFC に提供します。  
+ [COleCmdUI Class](../../mfc/reference/colecmdui-class.md)  
+ Implements a method for MFC to update the state of user-interface objects related to the `IOleCommandTarget`-driven features of your application.  
   
- [COleControl クラス](../../mfc/reference/colecontrol-class.md)  
- OLE コントロールを開発するための強力な基底クラスです。  
+ [COleControl Class](../../mfc/reference/colecontrol-class.md)  
+ A powerful base class for developing OLE controls.  
   
- [メンバー クラス](../../mfc/reference/colecontrolcontainer-class.md)  
- ActiveX コントロールのコントロール コンテナーとして機能します。  
+ [COleControlContainer Class](../../mfc/reference/colecontrolcontainer-class.md)  
+ Acts as a control container for ActiveX controls.  
   
- [COleControlModule クラス](../../mfc/reference/colecontrolmodule-class.md)  
- OLE コントロール モジュール オブジェクトを派生するための基底クラスです。  
+ [COleControlModule Class](../../mfc/reference/colecontrolmodule-class.md)  
+ The base class from which you derive an OLE control module object.  
   
- [メンバー クラス](../../mfc/reference/colecontrolsite-class.md)  
- クライアント側のカスタム コントロール インターフェイスをサポートします。  
+ [COleControlSite Class](../../mfc/reference/colecontrolsite-class.md)  
+ Provides support for custom client-side control interfaces.  
   
- [メンバー クラス](../../mfc/reference/coleconvertdialog-class.md)  
- 詳細については、次を参照してください。、[使わ](http://msdn.microsoft.com/library/windows/desktop/ms686657)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ [COleConvertDialog Class](../../mfc/reference/coleconvertdialog-class.md)  
+ For more information, see the [OLEUICONVERT](http://msdn.microsoft.com/library/windows/desktop/ms686657) structure in the Windows SDK.  
   
- [COleCurrency クラス](../../mfc/reference/colecurrency-class.md)  
- OLE オートメーションで使用される `CURRENCY` データ型をカプセル化します。  
+ [COleCurrency Class](../../mfc/reference/colecurrency-class.md)  
+ Encapsulates the `CURRENCY` data type of OLE automation.  
   
- [されます。](../../mfc/reference/coledataobject-class.md)  
- クリップボードや OLE 埋め込みアイテムからさまざまなフォーマットのデータを取得するときのデータ転送に使用します。クリップボードからデータを取得するときは、ドラッグ アンド ドロップを使用します。  
+ [COleDataObject Class](../../mfc/reference/coledataobject-class.md)  
+ Used in data transfers for retrieving data in various formats from the Clipboard, through drag and drop, or from an embedded OLE item.  
   
- [COleDataSource クラス](../../mfc/reference/coledatasource-class.md)  
- OLE アプリケーションが、クリップボード操作やドラッグ アンド ドロップ操作のようなデータ転送操作中に用意するデータを置くキャッシュの役目をします。  
+ [COleDataSource Class](../../mfc/reference/coledatasource-class.md)  
+ Acts as a cache into which an application places the data that it will offer during data transfer operations, such as Clipboard or drag-and-drop operations.  
   
- [COleDBRecordView クラス](../../mfc/reference/coledbrecordview-class.md)  
- コントロール内にデータベース レコードを表示するビューです。  
+ [COleDBRecordView Class](../../mfc/reference/coledbrecordview-class.md)  
+ A view that displays database records in controls.  
   
- [関数のクラス](../../mfc/reference/coledialog-class.md)  
- OLE のダイアログ ボックスに共通の機能が用意されています。  
+ [COleDialog Class](../../mfc/reference/coledialog-class.md)  
+ Provides functionality common to dialog boxes for OLE.  
   
- [ディスパッチ クラス](../../mfc/reference/coledispatchdriver-class.md)  
- OLE オートメーションのクライアント側を実装します。  
+ [COleDispatchDriver Class](../../mfc/reference/coledispatchdriver-class.md)  
+ Implements the client side of OLE automation.  
   
- [メンバー クラス](../../mfc/reference/coledispatchexception-class.md)  
- OLE オートメーションの主要部分である OLE `IDispatch` インターフェイス固有の例外を処理します。  
+ [COleDispatchException Class](../../mfc/reference/coledispatchexception-class.md)  
+ Handles exceptions specific to the OLE `IDispatch` interface, which is a key part of OLE automation.  
   
- [関数のクラス](../../mfc/reference/coledocobjectitem-class.md)  
- Active ドキュメント コンテインメントを実装します。  
+ [COleDocObjectItem Class](../../mfc/reference/coledocobjectitem-class.md)  
+ Implements Active document containment.  
   
- [COleDocument クラス](../../mfc/reference/coledocument-class.md)  
- ビジュアル編集をサポートする OLE ドキュメントの基底クラスです。  
+ [COleDocument Class](../../mfc/reference/coledocument-class.md)  
+ The base class for OLE documents that support visual editing.  
   
- [COleDropSource クラス](../../mfc/reference/coledropsource-class.md)  
- データをドロップ ターゲットにドラッグできるようにします。  
+ [COleDropSource Class](../../mfc/reference/coledropsource-class.md)  
+ Enables data to be dragged to a drop target.  
   
- [関数のクラス](../../mfc/reference/coledroptarget-class.md)  
- ウィンドウと OLE ライブラリの間の通信機構を提供します。  
+ [COleDropTarget Class](../../mfc/reference/coledroptarget-class.md)  
+ Provides the communication mechanism between a window and the OLE libraries.  
   
- [関数のクラス](../../mfc/reference/coleexception-class.md)  
- OLE 操作に関する例外条件を表します。  
+ [COleException Class](../../mfc/reference/coleexception-class.md)  
+ Represents an exception condition related to an OLE operation.  
   
- [メンバー クラス](../../mfc/reference/coleinsertdialog-class.md)  
- OLE の [オブジェクトの挿入] ダイアログ ボックスで使用されます。  
+ [COleInsertDialog Class](../../mfc/reference/coleinsertdialog-class.md)  
+ Used for the OLE Insert Object dialog box.  
   
- [COleIPFrameWnd クラス](../../mfc/reference/coleipframewnd-class.md)  
- アプリケーションの埋め込み先編集ウィンドウの基底クラスです。  
+ [COleIPFrameWnd Class](../../mfc/reference/coleipframewnd-class.md)  
+ The base for your application's in-place editing window.  
   
- [COleIPFrameWndEx クラス](../../mfc/reference/coleipframewndex-class.md)  
- MFC をサポートする OLE コンテナーを実装します。 自分のアプリケーションで埋め込み先フレーム ウィンドウ クラスを派生させる必要があります、`COleIPFrameWndEx`クラスから派生することではなく、 [COleIPFrameWnd](../../mfc/reference/coleipframewnd-class.md)クラスです。  
+ [COleIPFrameWndEx Class](../../mfc/reference/coleipframewndex-class.md)  
+ Implements an OLE container that supports MFC. You must derive the in-place frame window class for your application from the `COleIPFrameWndEx` class, instead of deriving it from the [COleIPFrameWnd](../../mfc/reference/coleipframewnd-class.md) class.  
   
- [直接クラス](../../mfc/reference/colelinkingdoc-class.md)  
- OLE コンテナー ドキュメントの基底クラスです。OLE コンテナー ドキュメントは、ドキュメントが保持する埋め込みアイテムへのリンクをサポートします。  
+ [COleLinkingDoc Class](../../mfc/reference/colelinkingdoc-class.md)  
+ The base class for OLE container documents that support linking to the embedded items they contain.  
   
- [関数のクラス](../../mfc/reference/colelinksdialog-class.md)  
- OLE の [リンクの編集] ダイアログ ボックスに使用します。  
+ [COleLinksDialog Class](../../mfc/reference/colelinksdialog-class.md)  
+ Used for the OLE Edit Links dialog box.  
   
- [関数のクラス](../../mfc/reference/colemessagefilter-class.md)  
- OLE アプリケーション間の相互の要求を同時に管理します。  
+ [COleMessageFilter Class](../../mfc/reference/colemessagefilter-class.md)  
+ Manages the concurrency required by the interaction of OLE applications.  
   
- [COleObjectFactory クラス](../../mfc/reference/coleobjectfactory-class.md)  
- OLE クラスのファクトリを実装しています。このクラスによって、サーバー、オートメーション オブジェクト、ドキュメントなどの OLE オブジェクトを作成できます。  
+ [COleObjectFactory Class](../../mfc/reference/coleobjectfactory-class.md)  
+ Implements the OLE class factory, which creates OLE objects such as servers, automation objects, and documents.  
   
- [関数のクラス](../../mfc/reference/colepastespecialdialog-class.md)  
- OLE の [形式を選択して貼り付け] ダイアログ ボックス用に使用されます。  
+ [COlePasteSpecialDialog Class](../../mfc/reference/colepastespecialdialog-class.md)  
+ Used for the OLE Paste Special dialog box.  
   
- [メンバー クラス](../../mfc/reference/colepropertiesdialog-class.md)  
- Windows に共通の [OLE プロジェクト プロパティ] ダイアログ ボックスをカプセル化します。  
+ [COlePropertiesDialog Class](../../mfc/reference/colepropertiesdialog-class.md)  
+ Encapsulates the Windows common OLE Object Properties dialog box.  
   
- [関数のクラス](../../mfc/reference/colepropertypage-class.md)  
- ダイアログ ボックスのようなグラフィカルなインターフェイスでカスタム コントロールのプロパティを表示します。  
+ [COlePropertyPage Class](../../mfc/reference/colepropertypage-class.md)  
+ Used to display the properties of a custom control in a graphical interface, similar to a dialog box.  
   
- [COleResizeBar クラス](../../mfc/reference/coleresizebar-class.md)  
- OLE の埋め込み先アイテムのサイズ変更をサポートするコントロール バーの一種です。  
+ [COleResizeBar Class](../../mfc/reference/coleresizebar-class.md)  
+ A type of control bar that supports resizing of in-place OLE items.  
   
- [使用してクラス](../../mfc/reference/colesafearray-class.md)  
- 任意の型および次元の配列を扱うクラスです。  
+ [COleSafeArray Class](../../mfc/reference/colesafearray-class.md)  
+ A class for working with arrays of arbitrary type and dimension.  
   
- [COleServerDoc クラス](../../mfc/reference/coleserverdoc-class.md)  
- OLE サーバー ドキュメントの基底クラスです。  
+ [COleServerDoc Class](../../mfc/reference/coleserverdoc-class.md)  
+ The base class for OLE server documents.  
   
- [実際のクラス](../../mfc/reference/coleserveritem-class.md)  
- OLE アイテムへのサーバー インターフェイスが用意されています。  
+ [COleServerItem Class](../../mfc/reference/coleserveritem-class.md)  
+ Provides the server interface to OLE items.  
   
- [関数のクラス](../../mfc/reference/colestreamfile-class.md)  
- OLE の構造化記憶の一部として、複合ファイルのデータ ストリーム (`IStream`) を表します。  
+ [COleStreamFile Class](../../mfc/reference/colestreamfile-class.md)  
+ Represents a stream of data (`IStream`) in a compound file as part of OLE Structured Storage.  
   
- [関数のクラス](../../mfc/reference/coletemplateserver-class.md)  
- OLE のビジュアル編集サーバー、オートメーション サーバー、およびリンク コンテナー (埋め込みアイテムへのリンクをサポートするアプリケーションのことです) で使います。  
+ [COleTemplateServer Class](../../mfc/reference/coletemplateserver-class.md)  
+ Used for OLE visual editing servers, automation servers, and link containers (applications that support links to embeddings).  
   
- [関数のクラス](../../mfc/reference/coleupdatedialog-class.md)  
- OLE の [リンクの編集] ダイアログ ボックスを使って、ドキュメント内の既存のリンク オブジェクトや埋め込みオブジェクトの更新のみを行います。これは、OLE の [リンクの編集] ダイアログ ボックスの特別な使い方です。  
+ [COleUpdateDialog Class](../../mfc/reference/coleupdatedialog-class.md)  
+ Used for a special case of the OLE Edit Links dialog box, which should be used when you need to update only existing linked or embedded objects in a document.  
   
- [COleVariant クラス](../../mfc/reference/colevariant-class.md)  
- カプセル化、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)データ型。  
+ [COleVariant Class](../../mfc/reference/colevariant-class.md)  
+ Encapsulates the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) data type.  
   
- [CPagerCtrl クラス](../../mfc/reference/cpagerctrl-class.md)  
- `CPagerCtrl` クラスは、Windows のページャー コントロールをラップします。ページャー コントロールには、外側のウィンドウに収まらない内側のウィンドウをスクロールによって表示する機能があります。  
+ [CPagerCtrl Class](../../mfc/reference/cpagerctrl-class.md)  
+ The `CPagerCtrl` class wraps the Windows pager control, which can scroll into view a contained window that does not fit the containing window.  
   
- [メンバー クラス](../../mfc/reference/cpagesetupdialog-class.md)  
- 印刷マージンの設定や変更の追加サポートと共に [OLE ページの設定] ダイアログ ボックスにより提供されるサービスをカプセル化します。  
+ [CPageSetupDialog Class](../../mfc/reference/cpagesetupdialog-class.md)  
+ Encapsulates the services provided by the Windows common OLE Page Setup dialog box with additional support for setting and modifying print margins.  
   
- [CPaintDC クラス](../../mfc/reference/cpaintdc-class.md)  
- デバイス コンテキスト クラスから派生[CDC クラス](../../mfc/reference/cdc-class.md)します。  
+ [CPaintDC Class](../../mfc/reference/cpaintdc-class.md)  
+ A device-context class derived from [CDC Class](../../mfc/reference/cdc-class.md).  
   
- [CPalette クラス](../../mfc/reference/cpalette-class.md)  
- Windows のカラー パレットをカプセル化します。  
+ [CPalette Class](../../mfc/reference/cpalette-class.md)  
+ Encapsulates a Windows color palette.  
   
- [CPane クラス](../../mfc/reference/cpane-class.md)  
- 機能強化、 [CControlBar クラス](../../mfc/reference/ccontrolbar-class.md)します。 既存の MFC プロジェクトをアップグレードしている場合は、 `CControlBar` の出現箇所をすべて `CPane`に置き換える必要があります。  
+ [CPane Class](../../mfc/reference/cpane-class.md)  
+ Enhancement of the [CControlBar Class](../../mfc/reference/ccontrolbar-class.md). If you are upgrading an existing MFC project, you need to replace all occurrences of `CControlBar` with `CPane`.  
   
- [CPaneContainer クラス](../../mfc/reference/cpanecontainer-class.md)  
- MFC によって実装されるドッキング モデルの基本コンポーネントです。 このクラスのオブジェクトは、2 つのドッキング ペイン、または `CPaneContainer.` の&2; つのインスタンスへのポインターを格納します。また、ペイン (またはコンテナー) を分割している区分線へのポインターも格納します。 コンテナー内にコンテナーを入れ子にすると、フレームワークは複雑なドッキング レイアウトを表すバイナリ ツリーを構築します。 バイナリ ツリーのルートに格納されている、 [CPaneContainerManager クラス](../../mfc/reference/cpanecontainermanager-class.md)オブジェクトです。  
+ [CPaneContainer Class](../../mfc/reference/cpanecontainer-class.md)  
+ Basic component of the docking model implemented by MFC. An object of this class stores pointers to two docking panes or to two instances of `CPaneContainer.` It also stores a pointer to the divider that separates the panes (or the containers). By nesting containers inside containers, the framework can build a binary tree that represents complex docking layouts. The root of the binary tree is stored in a [CPaneContainerManager Class](../../mfc/reference/cpanecontainermanager-class.md) object.  
   
- [CPaneContainerManager クラス](../../mfc/reference/cpanecontainermanager-class.md)  
- 現在のドッキング レイアウトの格納と表示を管理します。  
+ [CPaneContainerManager Class](../../mfc/reference/cpanecontainermanager-class.md)  
+ Manages the storage and display of the current docking layout.  
   
- [CPaneDialog クラス](../../mfc/reference/cpanedialog-class.md)  
- モードレスでドッキング可能なダイアログ ボックスをサポートします。  
+ [CPaneDialog Class](../../mfc/reference/cpanedialog-class.md)  
+ Supports a modeless, dockable dialog box.  
   
- [CPaneDivider クラス](../../mfc/reference/cpanedivider-class.md)  
- メイン フレーム ウィンドウのクライアント領域から、2 つのペインを分割するか、ペインの&2; つのグループを分割するか、または&1; つのグループのペインを分離します。  
+ [CPaneDivider Class](../../mfc/reference/cpanedivider-class.md)  
+ Divides two panes, divides two groups of panes, or separates a group of panes from the client area of the main frame window.  
   
- [CPaneFrameWnd クラス](../../mfc/reference/cpaneframewnd-class.md)  
- 1 つのペインを含むミニフレーム ウィンドウを実装します。 そのペインは、ウィンドウのクライアント領域になります。  
+ [CPaneFrameWnd Class](../../mfc/reference/cpaneframewnd-class.md)  
+ Implements a mini-frame window that contains one pane. The pane fills the client area of the window.  
   
- [CParabolicTransitionFromAcceleration クラス](../../mfc/reference/cparabolictransitionfromacceleration-class.md)  
- 放物線加速遷移をカプセル化します。  
+ [CParabolicTransitionFromAcceleration Class](../../mfc/reference/cparabolictransitionfromacceleration-class.md)  
+ Encapsulates a parabolic-acceleration transition.  
   
- [CPen クラス](../../mfc/reference/cpen-class.md)  
- Windows のグラフィック デバイス インターフェイス (GDI) のペンをカプセル化したものです。  
+ [CPen Class](../../mfc/reference/cpen-class.md)  
+ Encapsulates a Windows graphics device interface (GDI) pen.  
   
- [使ってクラス](../../mfc/reference/cpictureholder-class.md)  
- Picture プロパティを実装します。このプロパティによって、ユーザーがコントロールにピクチャを表示できるようになります。  
+ [CPictureHolder Class](../../mfc/reference/cpictureholder-class.md)  
+ Implements a Picture property, which lets the user display a picture in your control.  
   
- [CPoint クラス](../../atl-mfc-shared/reference/cpoint-class.md)  
- Windows の `POINT` 構造体と同様のものです。  
+ [CPoint Class](../../atl-mfc-shared/reference/cpoint-class.md)  
+ Similar to the Windows `POINT` structure.  
   
- [CPrintDialog クラス](../../mfc/reference/cprintdialog-class.md)  
- Windows のコモン ダイアログ ボックスである [印刷] ダイアログで提供されるサービスをカプセル化したものです。  
+ [CPrintDialog Class](../../mfc/reference/cprintdialog-class.md)  
+ Encapsulates the services provided by the Windows common dialog box for printing.  
   
- [メンバー クラス](../../mfc/reference/cprintdialogex-class.md)  
- Windows 2000 の [印刷] プロパティ シートに提供されるサービスをカプセル化します。  
+ [CPrintDialogEx Class](../../mfc/reference/cprintdialogex-class.md)  
+ Encapsulates the services provided by the Windows 2000 Print property sheet.  
   
- [CProgressCtrl クラス](../../mfc/reference/cprogressctrl-class.md)  
- Windows コモン プログレス バー コントロールの機能が用意されています。  
+ [CProgressCtrl Class](../../mfc/reference/cprogressctrl-class.md)  
+ Provides the functionality of the Windows common progress bar control.  
   
- [CPropertyPage クラス](../../mfc/reference/cpropertypage-class.md)  
- タブ ダイアログ ボックスとして知られているプロパティ シートの各ページを表します。  
+ [CPropertyPage Class](../../mfc/reference/cpropertypage-class.md)  
+ Represents individual pages of a property sheet, otherwise known as a tab dialog box.  
   
- [CPropertySheet クラス](../../mfc/reference/cpropertysheet-class.md)  
- タブ ダイアログ ボックスとしても知られるプロパティ シートを表します。  
+ [CPropertySheet Class](../../mfc/reference/cpropertysheet-class.md)  
+ Represents property sheets, also known as tab dialog boxes.  
   
- [CPropExchange クラス](../../mfc/reference/cpropexchange-class.md)  
- OLE コントロールの永続性の実装をサポートします。  
+ [CPropExchange Class](../../mfc/reference/cpropexchange-class.md)  
+ Supports the implementation of persistence for your OLE controls.  
   
- [CPtrArray クラス](../../mfc/reference/cptrarray-class.md)  
- void ポインターの配列をサポートします。  
+ [CPtrArray Class](../../mfc/reference/cptrarray-class.md)  
+ Supports arrays of void pointers.  
   
- [CPtrList クラス](../../mfc/reference/cptrlist-class.md)  
- void ポインターのリストをサポートします。  
+ [CPtrList Class](../../mfc/reference/cptrlist-class.md)  
+ Supports lists of void pointers.  
   
- [CReBar クラス](../../mfc/reference/crebar-class.md)  
- Rebar コントロールのレイアウト、永続性、および状態に関する情報を提供するコントロール バーです。  
+ [CReBar Class](../../mfc/reference/crebar-class.md)  
+ A control bar that provides layout, persistence, and state information for rebar controls.  
   
- [CReBarCtrl クラス](../../mfc/reference/crebarctrl-class.md)  
- Rebar コントロールの機能がカプセル化されています。Rebar コントロールは、子ウィンドウを含むコンテナーです。  
+ [CReBarCtrl Class](../../mfc/reference/crebarctrl-class.md)  
+ Encapsulates the functionality of a rebar control, which is a container for a child window.  
   
- [CRecentDockSiteInfo クラス](../../mfc/reference/crecentdocksiteinfo-class.md)  
- 向けの最新の状態情報を格納するヘルパー クラス、 [CPane クラス](../../mfc/reference/cpane-class.md)します。  
+ [CRecentDockSiteInfo Class](../../mfc/reference/crecentdocksiteinfo-class.md)  
+ Helper class that stores recent state information for the [CPane Class](../../mfc/reference/cpane-class.md).  
   
- [関数のクラス](../../mfc/reference/crecentfilelist-class.md)  
- MRU ファイル リストのコントロールをサポートします。  
+ [CRecentFileList Class](../../mfc/reference/crecentfilelist-class.md)  
+ Supports control of the most recently used (MRU) file list.  
   
- [CRecordset クラス](../../mfc/reference/crecordset-class.md)  
- データ ソースから選択された&1; 組のレコードセットを表現します。  
+ [CRecordset Class](../../mfc/reference/crecordset-class.md)  
+ Represents a set of records selected from a data source.  
   
- [CRecordView クラス](../../mfc/reference/crecordview-class.md)  
- コントロール内にデータベース レコードを表示するビューです。  
+ [CRecordView Class](../../mfc/reference/crecordview-class.md)  
+ A view that displays database records in controls.  
   
- [CRect クラス](../../atl-mfc-shared/reference/crect-class.md)  
- Windows のような[RECT 構造体](https://www.microsoftonedoc.com/#/organizations/e6f6a65cf14f462597b64ac058dbe1d0/projects/3fedad16-eaf1-41a6-8f96-0c1949c68f32/containers/a3daf831-1c5f-4bbe-964d-503870caf874/tocpaths/18113766-3975-4369-bc07-92e34cba712e/locales/en-us)します。  
+ [CRect Class](../../atl-mfc-shared/reference/crect-class.md)  
+ Similar to a Windows [RECT structure](https://www.microsoftonedoc.com/#/organizations/e6f6a65cf14f462597b64ac058dbe1d0/projects/3fedad16-eaf1-41a6-8f96-0c1949c68f32/containers/a3daf831-1c5f-4bbe-964d-503870caf874/tocpaths/18113766-3975-4369-bc07-92e34cba712e/locales/en-us).  
   
- [CRectTracker クラス](../../mfc/reference/crecttracker-class.md)  
- アイテムを異なる方法で表示、移動、サイズ変更できるようにします。  
+ [CRectTracker Class](../../mfc/reference/crecttracker-class.md)  
+ Enables an item to be displayed, moved, and resized in different fashions.  
   
- [CRenderTarget クラス](../../mfc/reference/crendertarget-class.md)  
- `ID2D1RenderTarget`のラッパー。  
+ [CRenderTarget Class](../../mfc/reference/crendertarget-class.md)  
+ A wrapper for `ID2D1RenderTarget`.  
   
- [関数のクラス](../../mfc/reference/cresourceexception-class.md)  
- Windows が要求されたリソースを見つけられないか、割り当てられないときに生成されます。  
+ [CResourceException Class](../../mfc/reference/cresourceexception-class.md)  
+ Generated when Windows cannot find or allocate a requested resource.  
   
- [CReversalTransition クラス](../../mfc/reference/creversaltransition-class.md)  
- 逆遷移をカプセル化します。  
+ [CReversalTransition Class](../../mfc/reference/creversaltransition-class.md)  
+ Encapsulates a reversal transition.  
   
- [CRgn クラス](../../mfc/reference/crgn-class.md)  
- Windows のグラフィック デバイス インターフェイス (GDI) の領域をカプセル化したものです。  
+ [CRgn Class](../../mfc/reference/crgn-class.md)  
+ Encapsulates a Windows graphics device interface (GDI) region.  
   
- [関数のクラス](../../mfc/reference/cricheditcntritem-class.md)  
- [CRichEditView クラス](../../mfc/reference/cricheditview-class.md)と[CRichEditDoc クラス](../../mfc/reference/cricheditdoc-class.md)MFC のドキュメント ビュー アーキテクチャのコンテキスト内でのリッチ エディット コントロールの機能を提供します。  
+ [CRichEditCntrItem Class](../../mfc/reference/cricheditcntritem-class.md)  
+ With [CRichEditView Class](../../mfc/reference/cricheditview-class.md) and [CRichEditDoc Class](../../mfc/reference/cricheditdoc-class.md), provides the functionality of the rich edit control within the context of MFC's document view architecture.  
   
- [CRichEditCtrl クラス](../../mfc/reference/cricheditctrl-class.md)  
- リッチ エディット コントロールの機能を提供します。  
+ [CRichEditCtrl Class](../../mfc/reference/cricheditctrl-class.md)  
+ Provides the functionality of the rich edit control.  
   
- [CRichEditDoc クラス](../../mfc/reference/cricheditdoc-class.md)  
- [CRichEditView クラス](../../mfc/reference/cricheditview-class.md)と[関数クラス](../../mfc/reference/cricheditcntritem-class.md)MFC のドキュメント ビュー アーキテクチャのコンテキスト内でのリッチ エディット コントロールの機能を提供します。  
+ [CRichEditDoc Class](../../mfc/reference/cricheditdoc-class.md)  
+ With [CRichEditView Class](../../mfc/reference/cricheditview-class.md) and [CRichEditCntrItem Class](../../mfc/reference/cricheditcntritem-class.md), provides the functionality of the rich edit control within the context of MFC's document view architecture.  
   
- [CRichEditView クラス](../../mfc/reference/cricheditview-class.md)  
- [CRichEditDoc クラス](../../mfc/reference/cricheditdoc-class.md)と[関数クラス](../../mfc/reference/cricheditcntritem-class.md)MFC のドキュメント ビュー アーキテクチャのコンテキスト内でのリッチ エディット コントロールの機能を提供します。  
+ [CRichEditView Class](../../mfc/reference/cricheditview-class.md)  
+ With [CRichEditDoc Class](../../mfc/reference/cricheditdoc-class.md) and [CRichEditCntrItem Class](../../mfc/reference/cricheditcntritem-class.md), provides the functionality of the rich edit control within the context of MFC's document view architecture.  
   
- [CScrollBar クラス](../../mfc/reference/cscrollbar-class.md)  
- Windows のスクロール バー コントロールの機能を提供します。  
+ [CScrollBar Class](../../mfc/reference/cscrollbar-class.md)  
+ Provides the functionality of a Windows scroll-bar control.  
   
- [CScrollView クラス](../../mfc/reference/cscrollview-class.md)  
- A [CView クラス](../../mfc/reference/cview-class.md)スクロール機能を持つ。  
+ [CScrollView Class](../../mfc/reference/cscrollview-class.md)  
+ A [CView Class](../../mfc/reference/cview-class.md) with scrolling capabilities.  
   
- [CSemaphore クラス](../../mfc/reference/csemaphore-class.md)  
- "セマフォ" を表します。これは、1 つ以上のプロセスの限られた数のスレッドだけがリソースにアクセスできるようにする同期オブジェクトで、特定のリソースに現在アクセスしているスレッド数のカウントを管理します。  
+ [CSemaphore Class](../../mfc/reference/csemaphore-class.md)  
+ Represents a "semaphore", which is a synchronization object that allows a limited number of threads in one or more processes to access aMaintains a count of the number of threads currently accessing a specified resource.  
   
- [CSettingsStore クラス](../../mfc/reference/csettingsstore-class.md)  
- Windows API 関数をラップし、レジストリへのアクセスに使用するオブジェクト指向インターフェイスを提供します。  
+ [CSettingsStore Class](../../mfc/reference/csettingsstore-class.md)  
+ Wraps Windows API functions, providing an object-oriented interface that you use to access the registry.  
   
- [CSettingsStoreSP クラス](../../mfc/reference/csettingsstoresp-class.md)  
- インスタンスの作成に使用できるヘルパー クラス、 [CSettingsStore クラス](../../mfc/reference/csettingsstore-class.md)します。  
+ [CSettingsStoreSP Class](../../mfc/reference/csettingsstoresp-class.md)  
+ Helper class that you can use to create instances of the [CSettingsStore Class](../../mfc/reference/csettingsstore-class.md).  
   
- [クラスの多くの場合](../../mfc/reference/csharedfile-class.md)  
- [CMemFile クラス](../../mfc/reference/cmemfile-class.md)-をサポートする派生クラスは、メモリ上のファイルを共有します。  
+ [CSharedFile Class](../../mfc/reference/csharedfile-class.md)  
+ The [CMemFile Class](../../mfc/reference/cmemfile-class.md)-derived class that supports shared memory files.  
   
- [CShellManager クラス](../../mfc/reference/cshellmanager-class.md)  
- ID リストへのポインター (PIDL) を操作するためのさまざまなメソッドを実装します。  
+ [CShellManager Class](../../mfc/reference/cshellmanager-class.md)  
+ Implements several methods that enable you to work with pointers to identifier lists (PIDLs).  
   
- [CSimpleException クラス](../../mfc/reference/csimpleexception-class.md)  
- このクラスは、リソース クリティカルな MFC 例外の基底クラスです。  
+ [CSimpleException Class](../../mfc/reference/csimpleexception-class.md)  
+ This class is a base class for resource-critical MFC exceptions.  
   
- [関数のクラス](../../mfc/reference/csingledoctemplate-class.md)  
- SDI (シングル ドキュメント インターフェイス) を実装するドキュメント テンプレートを定義します。  
+ [CSingleDocTemplate Class](../../mfc/reference/csingledoctemplate-class.md)  
+ Defines a document template that implements the single document interface (SDI).  
   
- [CSingleLock クラス](../../mfc/reference/csinglelock-class.md)  
- マルチスレッド プログラムで&1; つのリソースのアクセス制御に使うアクセス コントロール機構を表します。  
+ [CSingleLock Class](../../mfc/reference/csinglelock-class.md)  
+ Represents the access-control mechanism used in controlling access to a resource in a multithreaded program.  
   
- [CSinusoidalTransitionFromRange クラス](../../mfc/reference/csinusoidaltransitionfromrange-class.md)  
- 振幅が指定の範囲である正弦波範囲遷移をカプセル化します。  
+ [CSinusoidalTransitionFromRange Class](../../mfc/reference/csinusoidaltransitionfromrange-class.md)  
+ Encapsulates a sinusoidal-range transition that has a given range of oscillation.  
   
- [CSinusoidalTransitionFromVelocity クラス](../../mfc/reference/csinusoidaltransitionfromvelocity-class.md)  
- アニメーション変数の初期ベロシティによって振幅が決まる正弦波ベロシティ遷移をカプセル化します。  
+ [CSinusoidalTransitionFromVelocity Class](../../mfc/reference/csinusoidaltransitionfromvelocity-class.md)  
+ Encapsulates a sinusoidal-velocity transition that has an amplitude that is determined by the initial velocity of the animation variable.  
   
- [CSize クラス](../../atl-mfc-shared/reference/csize-class.md)  
- Windows の [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) 構造体と同様に、相対座標や位置を実装します。  
+ [CSize Class](../../atl-mfc-shared/reference/csize-class.md)  
+ Similar to the Windows [SIZE](http://msdn.microsoft.com/library/windows/desktop/dd145106) structure, which implements a relative coordinate or position.  
   
- [CSliderCtrl クラス](../../mfc/reference/csliderctrl-class.md)  
- Windows コモン スライダー コントロールの機能を提供します。  
+ [CSliderCtrl Class](../../mfc/reference/csliderctrl-class.md)  
+ Provides the functionality of the Windows common slider control.  
   
- [CSmartDockingInfo クラス](../../mfc/reference/csmartdockinginfo-class.md)  
- スマート ドッキング マーカーの外観を定義します。  
+ [CSmartDockingInfo Class](../../mfc/reference/csmartdockinginfo-class.md)  
+ Defines the appearance of smart docking markers.  
   
- [CSmoothStopTransition クラス](../../mfc/reference/csmoothstoptransition-class.md)  
- スムーズ停止遷移をカプセル化します。  
+ [CSmoothStopTransition Class](../../mfc/reference/csmoothstoptransition-class.md)  
+ Encapsulates a smooth-stop transition.  
   
- [CSocket クラス](../../mfc/reference/csocket-class.md)  
- `CAsyncSocket`から派生し、高いレベルの Windows ソケット API の抽象化を表します。  
+ [CSocket Class](../../mfc/reference/csocket-class.md)  
+ Derives from `CAsyncSocket`, and represents a higher level of abstraction of the Windows Sockets API.  
   
- [CSocketFile クラス](../../mfc/reference/csocketfile-class.md)  
- Windows ソケットを使ったネットワーク間でのデータの送受信に使われる `CFile` オブジェクトです。  
+ [CSocketFile Class](../../mfc/reference/csocketfile-class.md)  
+ A `CFile` object used for sending and receiving data across a network via Windows Sockets.  
   
- [CSpinButtonCtrl クラス](../../mfc/reference/cspinbuttonctrl-class.md)  
- Windows コモン スピン ボタン コントロールの機能が用意されています。  
+ [CSpinButtonCtrl Class](../../mfc/reference/cspinbuttonctrl-class.md)  
+ Provides the functionality of the Windows common spin button control.  
   
- [CSplitButton クラス](../../mfc/reference/csplitbutton-class.md)  
- 分割ボタン コントロールを表します。 分割ボタン コントロールは、ユーザーがボタンのメイン領域をクリックすると既定の動作を実行し、ユーザーがボタンのドロップダウン矢印をクリックするとドロップダウン メニューを表示します。  
+ [CSplitButton Class](../../mfc/reference/csplitbutton-class.md)  
+ Represents a split button control. The split button control performs a default behavior when a user clicks the main part of the button, and displays a drop-down menu when a user clicks the drop-down arrow of the button.  
   
- [CSplitterWnd クラス](../../mfc/reference/csplitterwnd-class.md)  
- 分割ウィンドウの機能が用意されています。分割ウィンドウとは複数のペインを持つウィンドウです。  
+ [CSplitterWnd Class](../../mfc/reference/csplitterwnd-class.md)  
+ Provides the functionality of a splitter window, which is a window that contains multiple panes.  
   
- [CSplitterWndEx クラス](csplitterwndex-class.md)  
- カスタマイズされた分割ウィンドウを表します。  
+ [CSplitterWndEx Class](csplitterwndex-class.md)  
+ Represents a customized splitter window.  
   
- [CStatic クラス](../../mfc/reference/cstatic-class.md)  
- Windows のスタティック コントロールの機能が用意されています。  
+ [CStatic Class](../../mfc/reference/cstatic-class.md)  
+ Provides the functionality of a Windows static control.  
   
- [CStatusBar クラス](../../mfc/reference/cstatusbar-class.md)  
- テキスト出力用のペインまたは "インジケーター" の行を持つコントロール バーです。  
+ [CStatusBar Class](../../mfc/reference/cstatusbar-class.md)  
+ A control bar with a row of text output panes, or "indicators."  
   
- [CStatusBarCtrl クラス](../../mfc/reference/cstatusbarctrl-class.md)  
- Windows コモン ステータス バー コントロール の機能が用意されています。  
+ [CStatusBarCtrl Class](../../mfc/reference/cstatusbarctrl-class.md)  
+ Provides the functionality of the Windows common status bar control.  
   
- [CStdioFile クラス](../../mfc/reference/cstdiofile-class.md)  
- ランタイム関数で開かれた C ランタイム ストリーム ファイルを表す[fopen、_wfopen](../../c-runtime-library/reference/fopen-wfopen.md)します。  
+ [CStdioFile Class](../../mfc/reference/cstdiofile-class.md)  
+ Represents a C run-time stream file as opened by the run-time function [fopen, _wfopen](../../c-runtime-library/reference/fopen-wfopen.md).  
   
- [CStringArray クラス](../../mfc/reference/cstringarray-class.md)  
- `CString` オブジェクトの配列をサポートします。  
+ [CStringArray Class](../../mfc/reference/cstringarray-class.md)  
+ Supports arrays of `CString` objects.  
   
- [CStringList クラス](../../mfc/reference/cstringlist-class.md)  
- `CString` オブジェクトのリストをサポートします。  
+ [CStringList Class](../../mfc/reference/cstringlist-class.md)  
+ Supports lists of `CString` objects.  
   
- [関数のクラス](../../mfc/reference/csyncobject-class.md)  
- Win32 の同期オブジェクトに共通の機能を提供する純粋仮想クラスです。  
+ [CSyncObject Class](../../mfc/reference/csyncobject-class.md)  
+ A pure virtual class that provides functionality common to the synchronization objects in Win32.  
   
- [派生クラス](../../mfc/reference/ctabbedpane-class.md)  
- 切り離し可能なタブを持つペインの機能を実装します。  
+ [CTabbedPane Class](../../mfc/reference/ctabbedpane-class.md)  
+ Implements the functionality of a pane with detachable tabs.  
   
- [CTabCtrl クラス](../../mfc/reference/ctabctrl-class.md)  
- Windows のコモン タブ コントロールの機能が用意されています。  
+ [CTabCtrl Class](../../mfc/reference/ctabctrl-class.md)  
+ Provides the functionality of the Windows common tab control.  
   
- [CTabView クラス](../../mfc/reference/ctabview-class.md)  
- タブ コントロール クラスの使用を簡略化 ([CTabView クラス](../../mfc/reference/ctabview-class.md)) MFC のドキュメント/ビュー アーキテクチャを使用するアプリケーションにします。  
+ [CTabView Class](../../mfc/reference/ctabview-class.md)  
+ Simplifies the use of the tab control class ([CTabView Class](../../mfc/reference/ctabview-class.md)) in applications that use MFC's document/view architecture.  
   
- [CTaskDialog クラス](../../mfc/reference/ctaskdialog-class.md)  
- メッセージ ボックスのような機能を持つだけでなく、ユーザーに対する追加情報も表示できる、ポップアップ ダイアログ ボックスです。 `CTaskDialog` には、ユーザーから情報を収集するための機能も用意されています。  
+ [CTaskDialog Class](../../mfc/reference/ctaskdialog-class.md)  
+ A pop-up dialog box that functions like a message box but can display additional information to the user. The `CTaskDialog` also includes functionality for gathering information from the user.  
   
- [CToolBar クラス](../../mfc/reference/ctoolbar-class.md)  
- 一連のビットマップ ボタンおよびオプションの区切り記号を含むコントロール バーです。  
+ [CToolBar Class](../../mfc/reference/ctoolbar-class.md)  
+ Control bars that have a row of bitmapped buttons and optional separators.  
   
- [CToolBarCtrl クラス](../../mfc/reference/ctoolbarctrl-class.md)  
- Windows ツール バー コモン コントロールの機能が用意されています。  
+ [CToolBarCtrl Class](../../mfc/reference/ctoolbarctrl-class.md)  
+ Provides the functionality of the Windows toolbar common control.  
   
- [CToolTipCtrl クラス](../../mfc/reference/ctooltipctrl-class.md)  
- "ツールヒント コントロール" の機能をカプセル化しています。このコンロトールは、アプリケーションでツールの目的を説明する&1; 行のテキストを表示する小さなポップアップ ウィンドウです。  
+ [CToolTipCtrl Class](../../mfc/reference/ctooltipctrl-class.md)  
+ Encapsulates the functionality of a "tool tip control," a small pop-up window that displays a single line of text describing the purpose of a tool in an application.  
   
- [CTooltipManager クラス](../../mfc/reference/ctooltipmanager-class.md)  
- ツールヒントに関するランタイム情報を保持します。 `CTooltipManager` クラスのインスタンスは、アプリケーションごとに&1; 回作成されます。  
+ [CTooltipManager Class](../../mfc/reference/ctooltipmanager-class.md)  
+ Maintains runtime information about tooltips. The `CTooltipManager` class is instantiated one time per application.  
   
- [CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)  
- Windows コモン ツリー ビュー コントロールの機能が用意されています。  
+ [CTreeCtrl Class](../../mfc/reference/ctreectrl-class.md)  
+ Provides the functionality of the Windows common tree view control.  
   
- [CTreeView クラス](../../mfc/reference/ctreeview-class.md)  
- ツリー コントロールとの使用を簡略化[CTreeCtrl クラス](../../mfc/reference/ctreectrl-class.md)MFC のドキュメント/ビュー アーキテクチャのツリー コントロールの機能をカプセル化するクラス。  
+ [CTreeView Class](../../mfc/reference/ctreeview-class.md)  
+ Simplifies use of the tree control and of [CTreeCtrl Class](../../mfc/reference/ctreectrl-class.md), the class that encapsulates tree-control functionality, with MFC's document-view architecture.  
   
- [CTypedPtrArray クラス](../../mfc/reference/ctypedptrarray-class.md)  
- `CPtrArray` クラスまたは `CObArray`クラスのオブジェクトに対してタイプセーフな "ラッパー" を提供します。  
+ [CTypedPtrArray Class](../../mfc/reference/ctypedptrarray-class.md)  
+ Provides a type-safe "wrapper" for objects of class `CPtrArray` or `CObArray`.  
   
- [CTypedPtrList クラス](../../mfc/reference/ctypedptrlist-class.md)  
- `CPtrList`クラスのオブジェクトに対してタイプ セーフな "ラップ" が用意されています。  
+ [CTypedPtrList Class](../../mfc/reference/ctypedptrlist-class.md)  
+ Provides a type-safe "wrapper" for objects of class `CPtrList`.  
   
- [CTypedPtrMap クラス](../../mfc/reference/ctypedptrmap-class.md)  
- ポインター マップ クラス `CMapPtrToPtr`、 `CMapPtrToWord`、 `CMapWordToPtr`、および `CMapStringToPtr`のオブジェクトに対してタイプ セーフな "ラップ" が用意されています。  
+ [CTypedPtrMap Class](../../mfc/reference/ctypedptrmap-class.md)  
+ Provides a type-safe "wrapper" for objects of the pointer-map classes `CMapPtrToPtr`, `CMapPtrToWord`, `CMapWordToPtr`, and `CMapStringToPtr`.  
   
- [CUIntArray クラス](../../mfc/reference/cuintarray-class.md)  
- 符号なし整数の配列をサポートします。  
+ [CUIntArray Class](../../mfc/reference/cuintarray-class.md)  
+ Supports arrays of unsigned integers.  
   
- [チェック クラス](../../mfc/reference/cuserexception-class.md)  
- エンド ユーザーの操作を中止するためにスローします。  
+ [CUserException Class](../../mfc/reference/cuserexception-class.md)  
+ Thrown to stop an end-user operation.  
   
- [CUserTool クラス](../../mfc/reference/cusertool-class.md)  
- 外部アプリケーションを実行するメニュー項目です。 **ツール**のタブ、**カスタマイズ** ダイアログ ボックス ([CMFCToolBarsCustomizeDialog クラス](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)) により、ユーザーはユーザー ツールを追加し、名前、コマンド、引数、および各ユーザー ツールの初期ディレクトリを指定します。  
+ [CUserTool Class](../../mfc/reference/cusertool-class.md)  
+ Menu item that runs an external application. The **Tools** tab of the **Customize** dialog box ([CMFCToolBarsCustomizeDialog Class](../../mfc/reference/cmfctoolbarscustomizedialog-class.md)) enables the user to add user tools, and to specify the name, command, arguments, and initial directory for each user tool.  
   
- [CUserToolsManager クラス](../../mfc/reference/cusertoolsmanager-class.md)  
- コレクションを保持[CUserTool クラス](../../mfc/reference/cusertool-class.md)アプリケーション内のオブジェクト。 ユーザー ツールは、外部アプリケーションを実行するメニュー項目です。 `CUserToolsManager` オブジェクトは、ユーザーまたは開発者がアプリケーションに新しいユーザー ツールを追加できるようにします。 ユーザー ツールに関連するコマンドの実行をサポートし、Windows レジストリにユーザー ツールに関する情報を保存します。  
+ [CUserToolsManager Class](../../mfc/reference/cusertoolsmanager-class.md)  
+ Maintains the collection of [CUserTool Class](../../mfc/reference/cusertool-class.md) objects in an application. A user tool is a menu item that runs an external application. The `CUserToolsManager` object enables the user or developer to add new user tools to the application. It supports the execution of the commands associated with user tools, and it also saves information about user tools in the Windows registry.  
   
- [CView クラス](../../mfc/reference/cview-class.md)  
- ユーザーが定義するビュークラスの基本機能が用意されています。  
+ [CView Class](../../mfc/reference/cview-class.md)  
+ Provides the basic functionality for user-defined view classes.  
   
- [CVSListBox クラス](../../mfc/reference/cvslistbox-class.md)  
- 編集可能なリスト コントロールをサポートします。  
+ [CVSListBox Class](../../mfc/reference/cvslistbox-class.md)  
+ Supports an editable list control.  
   
- [CWaitCursor クラス](../../mfc/reference/cwaitcursor-class.md)  
- 時間がかかる処理を実行している最中に、通常は砂時計として表示される待機カーソルを表示する&1; つの方法を提供します。  
+ [CWaitCursor Class](../../mfc/reference/cwaitcursor-class.md)  
+ Provides a one-line way to show a wait cursor, which is usually displayed as an hourglass, while you're doing a lengthy operation.  
   
- [CWinApp クラス](../../mfc/reference/cwinapp-class.md)  
- Windows のアプリケーション オブジェクトを派生させるための基底クラスです。  
+ [CWinApp Class](../../mfc/reference/cwinapp-class.md)  
+ The base class from which you derive a Windows application object.  
   
- [CWinAppEx クラス](../../mfc/reference/cwinappex-class.md)  
- アプリケーション状態の処理、レジストリへの状態の保存、レジストリからの状態の読み込み、アプリケーション マネージャーの初期化、および同じアプリケーション マネージャーへのリンクの提供を行います。  
+ [CWinAppEx Class](../../mfc/reference/cwinappex-class.md)  
+ Handles the application state, saves the state to the registry, loads the state from the registry, initializes application managers, and provides links to those same application managers.  
   
- [CWindowDC クラス](../../mfc/reference/cwindowdc-class.md)  
- `CDC`の派生クラスです。  
+ [CWindowDC Class](../../mfc/reference/cwindowdc-class.md)  
+ Derived from `CDC`.  
   
- [関数のクラス](../../mfc/reference/cwinformscontrol-class.md)  
- Windows フォーム コントロールのホスティング用の基本機能を提供します。  
+ [CWinFormsControl Class](../../mfc/reference/cwinformscontrol-class.md)  
+ Provides the basic functionality for hosting of a Windows Forms control.  
   
- [CWinFormsDialog クラス](../../mfc/reference/cwinformsdialog-class.md)  
- Windows フォーム ユーザー コントロールをホストする MFC ダイアログ クラスのラッパーです。  
+ [CWinFormsDialog Class](../../mfc/reference/cwinformsdialog-class.md)  
+ A wrapper for an MFC dialog class that hosts a Windows Forms user control.  
   
- [CWinFormsView クラス](../../mfc/reference/cwinformsview-class.md)  
- Windows フォーム コントロールのホスティング用の汎用機能を MFC ビューとして提供します。  
+ [CWinFormsView Class](../../mfc/reference/cwinformsview-class.md)  
+ Provides generic functionality for hosting of a Windows Forms control as an MFC view.  
   
- [CWinThread クラス](../../mfc/reference/cwinthread-class.md)  
- アプリケーション内の実行中のスレッドを表します。  
+ [CWinThread Class](../../mfc/reference/cwinthread-class.md)  
+ Represents a thread of execution within an application.  
   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)  
- Microsoft Foundation Class ライブラリにあるすべてのウィンドウ クラスの基本機能が用意されています。  
+ [CWnd Class](../../mfc/reference/cwnd-class.md)  
+ Provides the base functionality of all window classes in the Microsoft Foundation Class Library.  
   
- [CWordArray クラス](../../mfc/reference/cwordarray-class.md)  
- 16 ビットのワードの配列をサポートします。  
+ [CWordArray Class](../../mfc/reference/cwordarray-class.md)  
+ Supports arrays of 16-bit words.  
   
-## <a name="related-sections"></a>関連項目  
- [MFC デスクトップ アプリケーション](../../mfc/mfc-desktop-applications.md)  
- MFC ライブラリを構成するクラス、グローバル関数、グローバル変数、およびマクロに関するトピックへのリンクを含みます。
+## <a name="related-sections"></a>Related Sections  
+ [MFC Desktop Applications](../../mfc/mfc-desktop-applications.md)  
+ Contains links to topics about the classes, global functions, global variables, and macros that make up the MFC Library.
 
 
 

@@ -1,11 +1,11 @@
 ---
-title: "CFileDialog クラス |Microsoft ドキュメント"
+title: CFileDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -77,9 +77,69 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFileDialog class
-- common file dialog boxes
-- dialog boxes, common
+- CFileDialog [MFC], CFileDialog
+- CFileDialog [MFC], AddCheckButton
+- CFileDialog [MFC], AddComboBox
+- CFileDialog [MFC], AddControlItem
+- CFileDialog [MFC], AddEditBox
+- CFileDialog [MFC], AddMenu
+- CFileDialog [MFC], AddPlace
+- CFileDialog [MFC], AddPushButton
+- CFileDialog [MFC], AddRadioButtonList
+- CFileDialog [MFC], AddSeparator
+- CFileDialog [MFC], AddText
+- CFileDialog [MFC], ApplyOFNToShellDialog
+- CFileDialog [MFC], DoModal
+- CFileDialog [MFC], EnableOpenDropDown
+- CFileDialog [MFC], EndVisualGroup
+- CFileDialog [MFC], GetCheckButtonState
+- CFileDialog [MFC], GetControlItemState
+- CFileDialog [MFC], GetControlState
+- CFileDialog [MFC], GetEditBoxText
+- CFileDialog [MFC], GetFileExt
+- CFileDialog [MFC], GetFileName
+- CFileDialog [MFC], GetFileTitle
+- CFileDialog [MFC], GetFolderPath
+- CFileDialog [MFC], GetIFileDialogCustomize
+- CFileDialog [MFC], GetIFileOpenDialog
+- CFileDialog [MFC], GetIFileSaveDialog
+- CFileDialog [MFC], GetNextPathName
+- CFileDialog [MFC], GetOFN
+- CFileDialog [MFC], GetPathName
+- CFileDialog [MFC], GetReadOnlyPref
+- CFileDialog [MFC], GetResult
+- CFileDialog [MFC], GetResults
+- CFileDialog [MFC], GetSelectedControlItem
+- CFileDialog [MFC], GetStartPosition
+- CFileDialog [MFC], HideControl
+- CFileDialog [MFC], IsPickFoldersMode
+- CFileDialog [MFC], MakeProminent
+- CFileDialog [MFC], RemoveControlItem
+- CFileDialog [MFC], SetCheckButtonState
+- CFileDialog [MFC], SetControlItemState
+- CFileDialog [MFC], SetControlItemText
+- CFileDialog [MFC], SetControlLabel
+- CFileDialog [MFC], SetControlState
+- CFileDialog [MFC], SetControlText
+- CFileDialog [MFC], SetDefExt
+- CFileDialog [MFC], SetEditBoxText
+- CFileDialog [MFC], SetProperties
+- CFileDialog [MFC], SetSelectedControlItem
+- CFileDialog [MFC], SetTemplate
+- CFileDialog [MFC], StartVisualGroup
+- CFileDialog [MFC], UpdateOFNFromShellDialog
+- CFileDialog [MFC], OnButtonClicked
+- CFileDialog [MFC], OnCheckButtonToggled
+- CFileDialog [MFC], OnControlActivating
+- CFileDialog [MFC], OnFileNameChange
+- CFileDialog [MFC], OnFileNameOK
+- CFileDialog [MFC], OnFolderChange
+- CFileDialog [MFC], OnInitDone
+- CFileDialog [MFC], OnItemSelected
+- CFileDialog [MFC], OnLBSelChangedNotify
+- CFileDialog [MFC], OnShareViolation
+- CFileDialog [MFC], OnTypeChange
+- CFileDialog [MFC], m_ofn
 ms.assetid: fda4fd3c-08b8-4ce0-8e9d-7bab23f8c6c0
 caps.latest.revision: 47
 author: mikeblome
@@ -99,156 +159,157 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 18d03659e877bfb8f8000622b7438dea9a890575
-ms.lasthandoff: 03/31/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 488683dcc8a10e9eac8e1da5b2b419394efdee4d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfiledialog-class"></a>CFileDialog クラス
-ファイルを開く操作または保存に使用される、コモン ダイアログ ボックスをカプセル化します。  
+# <a name="cfiledialog-class"></a>CFileDialog Class
+Encapsulates the common dialog box that is used for file open or file save operations.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFileDialog : public CCommonDialog  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileDialog::CFileDialog](#cfiledialog)|`CFileDialog` オブジェクトを構築します。|  
+|[CFileDialog::CFileDialog](#cfiledialog)|Constructs a `CFileDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileDialog::AddCheckButton](#addcheckbutton)|ダイアログ ボックスにチェック マーク ボタンを追加します。|  
-|[CFileDialog::AddComboBox](#addcombobox)|ダイアログ ボックスに、コンボ ボックスを追加します。|  
-|[CFileDialog::AddControlItem](#addcontrolitem)|ダイアログ ボックス内のコンテナー コントロールに項目を追加します。|  
-|[CFileDialog::AddEditBox](#addeditbox)|ダイアログ ボックスに、エディット ボックスを追加します。|  
-|[CFileDialog::AddMenu](#addmenu)|ダイアログ ボックスに、メニューを追加します。|  
-|[CFileDialog::AddPlace](#addplace)|オーバーロードされます。 一覧にフォルダーがユーザーが開くか、項目を保存するために使用できる場所を追加します。|  
-|[CFileDialog::AddPushButton](#addpushbutton)|ダイアログ ボックスにボタンを追加します。|  
-|[CFileDialog::AddRadioButtonList](#addradiobuttonlist)|ダイアログ ボックスにオプション ボタンとも呼ばれます) グループを追加します。|  
-|[CFileDialog::AddSeparator](#addseparator)|ダイアログ ボックスに、区切り記号を追加します。|  
-|[CFileDialog::AddText](#addtext)|ダイアログ ボックスにテキスト コンテンツを追加します。|  
-|[CFileDialog::ApplyOFNToShellDialog](#applyofntoshelldialog)|状態を更新、`CFileDialog`パラメーターとに格納されているフラグに一致するように、`m_ofn`メンバー変数。|  
-|[CFileDialog::DoModal](#domodal)|ダイアログ ボックスが表示され、選択を行うことができます。|  
-|[CFileDialog::EnableOpenDropDown](#enableopendropdown)|ドロップダウン リストを有効にします、**開いている**または**保存** ダイアログ ボックスのボタンをクリックします。|  
-|[CFileDialog::EndVisualGroup](#endvisualgroup)|ダイアログ ボックスでビジュアルのグループに対する要素の追加を停止します。|  
-|[CFileDialog::GetCheckButtonState](#getcheckbuttonstate)|ダイアログ ボックスで、チェック ボタン (チェック ボックス) の現在の状態を取得します。|  
-|[CFileDialog::GetControlItemState](#getcontrolitemstate)|ダイアログ ボックスで見つかったコンテナー コントロール内のアイテムの現在の状態を取得します。|  
-|[CFileDialog::GetControlState](#getcontrolstate)|現在の可視性を取得し、指定されたコントロールの状態を有効にします。|  
-|[CFileDialog::GetEditBoxText](#geteditboxtext)|編集ボックス コントロールで現在のテキストを取得します。|  
-|[CFileDialog::GetFileExt](#getfileext)|選択したファイルの拡張子を返します。|  
-|[CFileDialog::GetFileName](#getfilename)|選択したファイルのファイル名を返します。|  
-|[CFileDialog::GetFileTitle](#getfiletitle)|選択したファイルのタイトルを返します。|  
-|[CFileDialog::GetFolderPath](#getfolderpath)|エクスプ ローラー スタイルの現在開いているフォルダーまたはディレクトリのパスを取得**開く**または**名前を付けて保存**コモン ダイアログ ボックス。|  
-|[CFileDialog::GetIFileDialogCustomize](#getifiledialogcustomize)|カスタマイズされた内部 COM オブジェクトを取得`CFileDialog`オブジェクト。|  
-|[CFileDialog::GetIFileOpenDialog](#getifileopendialog)|内部の COM オブジェクトを取得、`CFileDialog`として使用される、**開く**ファイル ダイアログ ボックス。|  
-|[CFileDialog::GetIFileSaveDialog](#getifilesavedialog)|内部の COM オブジェクトを取得、`CFileDialog`として使用される、**保存**ファイル ダイアログ ボックス。|  
-|[CFileDialog::GetNextPathName](#getnextpathname)|次の選択したファイルの完全なパスを返します。|  
-|[CFileDialog::GetOFN](#getofn)|取得、`OPENFILENAME`の構造、`CFileDialog`オブジェクト。|  
-|[CFileDialog::GetPathName](#getpathname)|選択したファイルの完全なパスを返します。|  
-|[CFileDialog::GetReadOnlyPref](#getreadonlypref)|選択したファイルの読み取り専用の状態を返します。|  
-|[CFileDialog::GetResult](#getresult)|ユーザーがダイアログ ボックスで行った選択を取得します。|  
-|[CFileDialog::GetResults](#getresults)|複数選択が可能なダイアログで、ユーザーの選択肢を取得します。|  
-|[CFileDialog::GetSelectedControlItem](#getselectedcontrolitem)|ダイアログ ボックスで指定されたコンテナー コントロールからの特定のアイテムを取得します。|  
-|[CFileDialog::GetStartPosition](#getstartposition)|ファイル名の一覧の最初の要素の位置を返します。|  
-|[CFileDialog::HideControl](#hidecontrol)|エクスプ ローラー スタイルで指定したコントロールの表示と非**開く**または**名前を付けて保存**コモン ダイアログ ボックス。|  
-|[CFileDialog::IsPickFoldersMode](#ispickfoldersmode)|かどうかをフォルダー ピッカー モードで現在のダイアログ ボックス。|  
-|[CFileDialog::MakeProminent](#makeprominent)|ダイアログ ボックスでコントロール目立つようにに比べて配置追加した他のコントロールにします。|  
-|[CFileDialog::RemoveControlItem](#removecontrolitem)|ダイアログ ボックス内のコンテナー コントロールから項目を削除します。|  
-|[CFileDialog::SetCheckButtonState](#setcheckbuttonstate)|ダイアログ ボックスで、チェック ボタン (チェック ボックス) の現在の状態を設定します。|  
-|[CFileDialog::SetControlItemState](#setcontrolitemstate)|ダイアログ ボックスで見つかったコンテナー コントロールの項目の現在の状態を設定します。|  
-|[CFileDialog::SetControlItemText](#setcontrolitemtext)|コントロールのアイテムのテキストを設定します。 たとえば、オプション ボタンまたはメニュー内の項目に付随するテキストです。|  
-|[CFileDialog::SetControlLabel](#setcontrollabel)|ボタンのテキストまたはエディット ボックスのラベルなどのコントロールに関連付けられているテキストを設定します。|  
-|[CFileDialog::SetControlState](#setcontrolstate)|現在の可視性を設定し、指定されたコントロールの状態を有効にします。|  
-|[CFileDialog::SetControlText](#setcontroltext)|エクスプ ローラー スタイルの指定したコントロールのテキストを設定**開く**または**名前を付けて保存**コモン ダイアログ ボックス。|  
-|[CFileDialog::SetDefExt](#setdefext)|エクスプ ローラー スタイルの既定のファイル名拡張子を設定**開く**または**名前を付けて保存**コモン ダイアログ ボックス。|  
-|[CFileDialog::SetEditBoxText](#seteditboxtext)|編集ボックス コントロールで現在のテキストを設定します。|  
-|[CFileDialog::SetProperties](#setproperties)|保存される項目に対して使用される既定値を定義するプロパティ ストアを提供します。|  
-|[CFileDialog::SetSelectedControlItem](#setselectedcontrolitem)|オプション ボタン グループ、またはダイアログ ボックスで、コンボ ボックス内の特定のアイテムの選択状態を設定します。|  
-|[CFileDialog::SetTemplate](#settemplate)|ダイアログ ボックスのテンプレートを設定、`CFileDialog`オブジェクト。|  
-|[CFileDialog::StartVisualGroup](#startvisualgroup)|ダイアログ ボックスでグループを宣言します。 "Add"メソッドを後続の呼び出しは、このグループにそれらの要素を追加します。|  
-|[CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog)|格納されたデータを更新、`m_ofn`ファイル ダイアログ ボックスの現在の状態と一致するメンバー変数。|  
+|[CFileDialog::AddCheckButton](#addcheckbutton)|Adds a check button to the dialog.|  
+|[CFileDialog::AddComboBox](#addcombobox)|Adds a combo box to the dialog.|  
+|[CFileDialog::AddControlItem](#addcontrolitem)|Adds an item to a container control in the dialog.|  
+|[CFileDialog::AddEditBox](#addeditbox)|Adds an edit box to the dialog.|  
+|[CFileDialog::AddMenu](#addmenu)|Adds a menu to the dialog.|  
+|[CFileDialog::AddPlace](#addplace)|Overloaded. Adds a folder to the list of places available for the user to open or save items.|  
+|[CFileDialog::AddPushButton](#addpushbutton)|Adds a button to the dialog.|  
+|[CFileDialog::AddRadioButtonList](#addradiobuttonlist)|Adds an option button (also known as radio button) group to the dialog.|  
+|[CFileDialog::AddSeparator](#addseparator)|Adds a separator to the dialog.|  
+|[CFileDialog::AddText](#addtext)|Adds text content to the dialog.|  
+|[CFileDialog::ApplyOFNToShellDialog](#applyofntoshelldialog)|Updates the state of the `CFileDialog` to match the parameters and flags stored in the `m_ofn` member variable.|  
+|[CFileDialog::DoModal](#domodal)|Displays the dialog box and enables the user to make a selection.|  
+|[CFileDialog::EnableOpenDropDown](#enableopendropdown)|Enables a drop-down list on the **Open** or **Save** button in the dialog.|  
+|[CFileDialog::EndVisualGroup](#endvisualgroup)|Stops the addition of elements to a visual group in the dialog.|  
+|[CFileDialog::GetCheckButtonState](#getcheckbuttonstate)|Gets the current state of a check button (check box) in the dialog.|  
+|[CFileDialog::GetControlItemState](#getcontrolitemstate)|Gets the current state of an item in a container control found in the dialog.|  
+|[CFileDialog::GetControlState](#getcontrolstate)|Gets the current visibility and enabled states of a given control.|  
+|[CFileDialog::GetEditBoxText](#geteditboxtext)|Gets the current text in an edit box control.|  
+|[CFileDialog::GetFileExt](#getfileext)|Returns the extension of the selected file.|  
+|[CFileDialog::GetFileName](#getfilename)|Returns the file name of the selected file.|  
+|[CFileDialog::GetFileTitle](#getfiletitle)|Returns the title of the selected file.|  
+|[CFileDialog::GetFolderPath](#getfolderpath)|Retrieves the path of the currently open folder or directory for an Explorer-style **Open** or **Save As** common dialog box.|  
+|[CFileDialog::GetIFileDialogCustomize](#getifiledialogcustomize)|Retrieves the internal COM object for a customized `CFileDialog` object.|  
+|[CFileDialog::GetIFileOpenDialog](#getifileopendialog)|Retrieves the internal COM object for a `CFileDialog` that is used as an **Open** file dialog box.|  
+|[CFileDialog::GetIFileSaveDialog](#getifilesavedialog)|Retrieves the internal COM object for a `CFileDialog` that is used as a **Save** file dialog box.|  
+|[CFileDialog::GetNextPathName](#getnextpathname)|Returns the full path of the next selected file.|  
+|[CFileDialog::GetOFN](#getofn)|Retrieves the `OPENFILENAME` structure of the `CFileDialog` object.|  
+|[CFileDialog::GetPathName](#getpathname)|Returns the full path of the selected file.|  
+|[CFileDialog::GetReadOnlyPref](#getreadonlypref)|Returns the read-only status of the selected file.|  
+|[CFileDialog::GetResult](#getresult)|Gets the choice that the user made in the dialog.|  
+|[CFileDialog::GetResults](#getresults)|Gets the user's choices in a dialog that allows multiple selection.|  
+|[CFileDialog::GetSelectedControlItem](#getselectedcontrolitem)|Gets a particular item from specified container controls in the dialog.|  
+|[CFileDialog::GetStartPosition](#getstartposition)|Returns the position of the first element of the file name list.|  
+|[CFileDialog::HideControl](#hidecontrol)|Hides the specified control in an Explorer-style **Open** or **Save As** common dialog box.|  
+|[CFileDialog::IsPickFoldersMode](#ispickfoldersmode)|Determines if the current dialog in folder picker mode.|  
+|[CFileDialog::MakeProminent](#makeprominent)|Places a control in the dialog so that it stands out compared to other added controls.|  
+|[CFileDialog::RemoveControlItem](#removecontrolitem)|Removes an item from a container control in the dialog.|  
+|[CFileDialog::SetCheckButtonState](#setcheckbuttonstate)|Sets the current state of a check button (check box) in the dialog.|  
+|[CFileDialog::SetControlItemState](#setcontrolitemstate)|Sets the current state of an item in a container control found in the dialog.|  
+|[CFileDialog::SetControlItemText](#setcontrolitemtext)|Sets the text of a control item. For example, the text that accompanies a radio button or an item in a menu.|  
+|[CFileDialog::SetControlLabel](#setcontrollabel)|Sets the text associated with a control, such as button text or an edit box label.|  
+|[CFileDialog::SetControlState](#setcontrolstate)|Sets the current visibility and enabled states of a given control.|  
+|[CFileDialog::SetControlText](#setcontroltext)|Sets the text for the specified control in an Explorer-style **Open** or **Save As** common dialog box.|  
+|[CFileDialog::SetDefExt](#setdefext)|Sets the default file name extension for an Explorer-style **Open** or **Save As** common dialog box.|  
+|[CFileDialog::SetEditBoxText](#seteditboxtext)|Sets the current text in an edit box control.|  
+|[CFileDialog::SetProperties](#setproperties)|Provides a property store that defines the default values to be used for the item being saved.|  
+|[CFileDialog::SetSelectedControlItem](#setselectedcontrolitem)|Sets the selected state of a particular item in an option button group or a combo box found in the dialog.|  
+|[CFileDialog::SetTemplate](#settemplate)|Sets the dialog box template for the `CFileDialog` object.|  
+|[CFileDialog::StartVisualGroup](#startvisualgroup)|Declares a visual group in the dialog. Subsequent calls to any "add" method add those elements to this group.|  
+|[CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog)|Updates the data stored in the `m_ofn` member variable to match the current state of the file dialog box.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileDialog::OnButtonClicked](#onbuttonclicked)|ボタンがクリックされたときに呼び出されます。|  
-|[CFileDialog::OnCheckButtonToggled](#oncheckbuttontoggled)|このチェック ボックスをオン/オフときに呼び出されます。|  
-|[CFileDialog::OnControlActivating](#oncontrolactivating)|コントロールがアクティブになるときに呼び出されます。|  
-|[CFileDialog::OnFileNameChange](#onfilenamechange)|処理、`WM_NOTIFY CDN_SELCHANGE`メッセージ。|  
-|[CFileDialog::OnFileNameOK](#onfilenameok)|ダイアログ ボックスに入力したファイル名を検証します。|  
-|[CFileDialog::OnFolderChange](#onfolderchange)|処理、`WM_NOTIFY CDN_FOLDERCHANGE`メッセージ。|  
-|[CFileDialog::OnInitDone](#oninitdone)|処理、`WM_NOTIFY CDN_INITDONE`メッセージ。|  
-|[CFileDialog::OnItemSelected](#onitemselected)|コンテナー アイテムが選択されているときに呼び出されます。|  
-|[CFileDialog::OnLBSelChangedNotify](#onlbselchangednotify)|ファイルの選択が変更されたときに、カスタム アクションを実行できます。|  
-|[CFileDialog::OnShareViolation](#onshareviolation)|共有違反を処理します。|  
-|[CFileDialog::OnTypeChange](#ontypechange)|処理、`WM_NOTIFY CDN_TYPECHANGE`メッセージ。|  
+|[CFileDialog::OnButtonClicked](#onbuttonclicked)|Called when the button is clicked.|  
+|[CFileDialog::OnCheckButtonToggled](#oncheckbuttontoggled)|Called when the check box is checked/unchecked.|  
+|[CFileDialog::OnControlActivating](#oncontrolactivating)|Called when the control is being active.|  
+|[CFileDialog::OnFileNameChange](#onfilenamechange)|Handles the `WM_NOTIFY CDN_SELCHANGE` message.|  
+|[CFileDialog::OnFileNameOK](#onfilenameok)|Validates the file name entered in the dialog box.|  
+|[CFileDialog::OnFolderChange](#onfolderchange)|Handles the `WM_NOTIFY CDN_FOLDERCHANGE` message.|  
+|[CFileDialog::OnInitDone](#oninitdone)|Handles the `WM_NOTIFY CDN_INITDONE` message.|  
+|[CFileDialog::OnItemSelected](#onitemselected)|Called when the container item is being selected.|  
+|[CFileDialog::OnLBSelChangedNotify](#onlbselchangednotify)|Allows you to perform custom actions when the file selection changes.|  
+|[CFileDialog::OnShareViolation](#onshareviolation)|Handles share violations.|  
+|[CFileDialog::OnTypeChange](#ontypechange)|Handles the `WM_NOTIFY CDN_TYPECHANGE` message.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[:M_ofn](#m_ofn)|Windows`OPENFILENAME`構造体。 基本的なファイル ダイアログ ボックスのパラメーターへのアクセスを提供します。|  
+|[CFileDialog::m_ofn](#m_ofn)|The Windows `OPENFILENAME` structure. Provides access to basic file dialog box parameters.|  
   
-## <a name="remarks"></a>コメント  
- コモン ファイル ダイアログ ボックスを使用するファイルの選択 ダイアログ ボックス、たとえばを実装できます**ファイルを開く**と**名前を付けて保存**Windows の標準と一貫性のある方法でします。  
+## <a name="remarks"></a>Remarks  
+ Common file dialog boxes let you implement file-selection dialog boxes, for example, **Open File** and **Save As**, in a manner that is consistent with Windows standards.  
   
- 使用することができます`CFileDialog`として指定すると、コンス トラクターを持つかから、独自のダイアログ ボックス クラスを派生させることができます`CFileDialog`し、ニーズに合わせてコンス トラクターを記述します。 どちらの場合、これらのダイアログ ボックスと同様に標準の MFC ダイアログ ボックスから派生しているため、 [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)です。 `CFileDialog`COMMDLG に依存します。Windows に含まれている DLL ファイルです。  
+ You can use `CFileDialog` as is with the constructor provided, or you can derive your own dialog box class from `CFileDialog` and write a constructor to suit your needs. In either case, these dialog boxes will behave like standard MFC dialog boxes because they are derived from the [CCommonDialog Class](../../mfc/reference/ccommondialog-class.md). `CFileDialog` relies on the COMMDLG.DLL file that is included in Windows.  
   
- 外観と機能の両方、`CFileDialog`で[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]Windows の以前のバージョンとは異なります。 既定値`CFileDialog`で自動的には、新しい[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]せず、プログラムがコンパイルされている場合、コード変更とでの実行のスタイル[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 使用して、`bVistaStyle`この自動更新を手動でオーバーライドするコンス トラクターのパラメーターです。 自動更新の例外では、カスタマイズされたダイアログ ボックスです。 これらは、新しいスタイルに変換できません。 コンス トラクターの詳細については、次を参照してください。 [CFileDialog::CFileDialog](#cfiledialog)です。  
+ Both the appearance and the functionality of the `CFileDialog` with [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] differ from the earlier versions of Windows. The default `CFileDialog` automatically uses the new [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style without code changes if a program is compiled and run under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. Use the `bVistaStyle` parameter in the constructor to manually override this automatic update. The exception to the automatic update is customized dialog boxes. They will not be converted to the new style. For more information about the constructor, see [CFileDialog::CFileDialog](#cfiledialog).  
   
 > [!NOTE]
->  異なる点は、コントロールの ID システム[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]の以前のバージョンの Windows を使用するときに、`CFileDialog`です。 すべての参照を更新する必要があります`CFileDialog`Windows の以前のバージョンからプロジェクトを移植する前に、コード内のコントロールです。  
+>  The control ID system differs in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] from earlier versions of Windows when you use a `CFileDialog`. You must update all references to `CFileDialog` controls in code before you can port your project from an earlier version of Windows.  
   
- いくつか`CFileDialog`下にあるメソッドはサポートされていません[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 メソッドはサポートされているかどうかに関する情報の各メソッドのトピックを確認してください。 さらに、次の継承された関数はサポートされていません[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]:  
+ Some `CFileDialog` methods are not supported under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. Check the individual method topic for information about whether the method is supported. In addition, the following inherited functions are not supported under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]:  
   
 - [CDialog::OnInitDialog](../../mfc/reference/cdialog-class.md#oninitdialog)  
   
 - [CDialog::OnSetFont](../../mfc/reference/cdialog-class.md#onsetfont)  
   
- Windows メッセージ、`CFileDialog`クラスは、使用しているオペレーティング システムによって異なります。 たとえば、Windows XP はサポートされません[CDialog::OnCancel](../../mfc/reference/cdialog-class.md#oncancel)と[CDialog::OnOK](../../mfc/reference/cdialog-class.md#onok)の`CFileDialog`クラスです。 ただし、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]はそれらをサポートします。 生成されるさまざまなメッセージおよび受信される順序に関する詳細については、次を参照してください。 [CFileDialog サンプル: ログ イベントの順序](../../visual-cpp-samples.md)です。  
+ The windows messages for the `CFileDialog` class vary based on what operating system you are using. For example, Windows XP does not support [CDialog::OnCancel](../../mfc/reference/cdialog-class.md#oncancel) and [CDialog::OnOK](../../mfc/reference/cdialog-class.md#onok) for the `CFileDialog` class. However, [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] does support them. For more information about the different messages that are generated and the order in which they are received, see [CFileDialog Sample: Logging Event Order](../../visual-cpp-samples.md).  
   
- 使用する、`CFileDialog`オブジェクト、まずを使用して、オブジェクトを作成、`CFileDialog`コンス トラクターです。 設定または任意の値を変更できます ダイアログ ボックスが構築された後、 [::m_ofn](#m_ofn)値やダイアログ ボックスのコントロールの状態を初期化するためにします。 `m_ofn`構造体は型`OPENFILENAME`です。 詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ To use a `CFileDialog` object, first create the object by using the `CFileDialog` constructor. After the dialog box has been constructed, you can set or modify any values in the [CFileDialog::m_ofn](#m_ofn) structure to initialize the values or states of the dialog box controls. The `m_ofn` structure is of type `OPENFILENAME`. For more information, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure in the Windows SDK.  
   
- ダイアログ ボックスのコントロールを初期化した後の呼び出し、 [CFileDialog::DoModal](#domodal)ダイアログを表示するメソッドのボックス、ユーザーが、パスとファイル名を入力できるようにします。 `DoModal`ユーザーには、[ok] (IDOK) またはキャンセル (IDCANCEL) ボタンがクリックしたかどうかを返します。 場合`DoModal`IDOK を返しますのいずれかを使用することができます、`CFileDialog`情報を取得するパブリック メンバー関数は、ユーザーに配置します。  
+ After you initialize the dialog box controls, call the [CFileDialog::DoModal](#domodal) method to display the dialog box so that the user can type the path and file name. `DoModal` returns whether the user clicked the OK (IDOK) or the Cancel (IDCANCEL) button. If `DoModal` returns IDOK, you can use one of the `CFileDialog` public member functions to retrieve the information put in by the user.  
   
 > [!NOTE]
->  [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]、複数回呼び出す[IFileDialog::SetFileTypes](http://msdn.microsoft.com/library/windows/desktop/bb775980)エラーが発生します。 2 番目の呼び出し`SetFileTypes`のすべてのインスタンス、`CFileDialog`戻ります`E_UNEXPECTED`で[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 いくつか`CFileDialog`メソッド呼び出しの機能`SetFileTypes`します。 たとえば、2 回の呼び出しを`CFileDialog::DoModal`の同じインスタンスに対して、`CFileDialog`が生成されます[ASSERT](diagnostic-services.md#assert)です。  
+>  Under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], multiple calls to [IFileDialog::SetFileTypes](http://msdn.microsoft.com/library/windows/desktop/bb775980) causes an error. The second call to `SetFileTypes` for any instance of a `CFileDialog` will return `E_UNEXPECTED` in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. Some `CFileDialog` method functions call `SetFileTypes`. For example, two calls to `CFileDialog::DoModal` for the same instance of a `CFileDialog` generates [ASSERT](diagnostic-services.md#assert).  
   
- `CFileDialog`共有違反、ファイル名の検証、およびリスト ボックスの変更通知のカスタム処理を実行できるいくつかのプロテクト メンバーが含まれます。 これらのプロテクト メンバーは、ほとんどのアプリケーションは、既定の処理が自動的に実行されるために使用する必要はありませんするコールバック関数です。 標準の仮想関数であるために、これらの関数のメッセージ マップ エントリは必要ありません。  
+ `CFileDialog` includes several protected members that let you do custom handling of share violations, file name validation, and list-box change notification. These protected members are callback functions that most applications do not have to use because default handling is performed automatically. Message-map entries for these functions are not required because they are standard virtual functions.  
   
- Windows を使用する[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)関数およびエラーに関する詳細については、ダイアログ ボックスの初期化中にエラーが発生するかどうかを決定します。  
+ You can use the Windows [CommDlgExtendedError](http://msdn.microsoft.com/library/windows/desktop/ms646916) function to determine whether an error occurred during initialization of the dialog box and to learn more about the error.  
   
- 破壊`CFileDialog`オブジェクトが自動的に処理されます。 呼び出していない[CDialog::EndDialog](../../mfc/reference/cdialog-class.md#enddialog)です。  
+ The destruction of `CFileDialog` objects is handled automatically. You do not have to call [CDialog::EndDialog](../../mfc/reference/cdialog-class.md#enddialog).  
   
- ユーザーが複数のファイルを選択できるように、設定、`OFN_ALLOWMULTISELECT`フラグを呼び出す前に`DoModal`です。 返される複数のファイル名の一覧に合わせて独自ファイル名のバッファーを指定してください。 これには、置換`m_ofn.lpstrFile`バッファーへのポインターが割り当てられていれば、構築した後、`CFileDialog`を呼び出す前に、`DoModal`です。  
+ To let the user select multiple files, set the `OFN_ALLOWMULTISELECT` flag before you call `DoModal`. You must supply your own file name buffer to accommodate the returned list of multiple file names. Do this by replacing `m_ofn.lpstrFile` with a pointer to a buffer you have allocated, after you construct the `CFileDialog`, but before you call `DoModal`.  
   
- さらに、設定する必要があります`m_ofn.nMaxFile`が指すバッファー内の文字数を使用して、`m_ofn.lpstrFile`です。 選択するファイルの最大数を設定した場合`n`、必要なバッファー サイズは`n * (_MAX_PATH + 1) + 1`します。 バッファーに返される最初の項目は、ファイルが選択されたフォルダーへのパスです。 [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイル] ダイアログ ボックスでは、ディレクトリとファイル名の文字列は、最後のファイル名の後に余分な null 文字で、null で終わる。 この形式は、スペースを含む長いファイル名を返すエクスプ ローラー スタイルのダイアログ ボックスを使用できます。 旧式のダイアログ ボックスのディレクトリとファイル名の文字列はスペースで区切らし、関数がスペースを含むファイル名の短いファイル名を使用します。  
+ Additionally, you must set `m_ofn.nMaxFile` by using the number of characters in the buffer pointed to by `m_ofn.lpstrFile`. If you set the maximum number of files to be selected to `n`, the required buffer size is `n * (_MAX_PATH + 1) + 1`. The first item returned in the buffer is the path to the folder where the files were selected. For [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]-style dialog boxes, the directory and file name strings are null-terminated, with an extra null character after the last file name. This format enables the Explorer-style dialog boxes to return long file names that include spaces. For old-style dialog boxes, the directory and file name strings are separated by spaces and the function uses short file names for file names with spaces.  
   
- 次の例では、バッファーを使用して取得し、複数のファイル名を一覧表示する方法を示します。  
+ The following example demonstrates how to use a buffer to retrieve and list multiple file names.  
   
- [!code-cpp[NVC_MFCFiles # 23](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_1.cpp)]  
+ [!code-cpp[NVC_MFCFiles#23](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_1.cpp)]  
   
- 複数のファイル名を選択すると、ユーザーへの応答バッファー サイズを変更するから新しいクラスを派生する必要があります`CFileDialog`をオーバーライドし、 [CFileDialog::OnFileNameChange](#onfilenamechange)メソッドです。  
+ To change the buffer size in response to the user selecting multiple file names, you must derive a new class from `CFileDialog` and override the [CFileDialog::OnFileNameChange](#onfilenamechange) method.  
   
- 新しいクラスを派生する場合`CFileDialog`、すべてのメッセージを処理するメッセージ マップを使用することができます。 既定のメッセージ処理を拡張するには、派生クラスを`CFileDialog`メッセージ マップを新しいクラスに追加し、新しいメッセージのメンバー関数を提供します。 ダイアログ ボックスをカスタマイズするフック関数を提供する必要はありません。  
+ If you derive a new class from `CFileDialog`, you can use a message map to handle any messages. To extend the default message handling, derive a class from `CFileDialog`, add a message map to the new class, and provide member functions for the new messages. You do not have to provide a hook function to customize the dialog box.  
   
- ダイアログ ボックスをカスタマイズするからクラスを派生`CFileDialog`カスタム ダイアログ ボックス テンプレートを作成、および拡張されたコントロールから通知メッセージを処理するメッセージ マップを追加します。 基本クラスに処理されないメッセージを渡します。 フック関数をカスタマイズする必要はありません。  
+ To customize the dialog box, derive a class from `CFileDialog`, provide a custom dialog box template, and add a message map to process the notification messages from the extended controls. Pass any unprocessed messages to the base class. You do not have to customize the hook function.  
   
- 使用する場合、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイル、 `CFileDialog`、メッセージ マップとダイアログ ボックスのテンプレートを使用することはできません。 代わりに、同様の機能を COM インターフェイスを使用する必要があります。  
+ When you are using the [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style of the `CFileDialog`, you cannot use message maps and dialog box templates. Instead, you must use the COM interfaces for similar functionality.  
   
- 使用する方法の詳細についての`CFileDialog`を参照してください[コモン ダイアログ クラス](../../mfc/common-dialog-classes.md)です。  
+ For more information about how to use `CFileDialog`, see [Common Dialog Classes](../../mfc/common-dialog-classes.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -261,11 +322,11 @@ class CFileDialog : public CCommonDialog
   
  `CFileDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdlgs.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdlgs.h  
   
-##  <a name="addcheckbutton"></a>CFileDialog::AddCheckButton  
- ダイアログ ボックスにチェック マーク ボタンを追加します。  
+##  <a name="addcheckbutton"></a>  CFileDialog::AddCheckButton  
+ Adds a check button to the dialog.  
   
 ```  
 HRESULT AddCheckButton(
@@ -274,33 +335,33 @@ HRESULT AddCheckButton(
     BOOL bChecked);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するは、チェック ボタンの ID。  
+ The ID of the check button to add.  
   
  `strLabel`  
- チェック ボタンの名前。  
+ The check button name.  
   
  `bChecked`  
- チェック マーク ボタンの現在の状態を示すブール値。 `TRUE`チェックされている場合`FALSE`それ以外の場合  
+ A Boolean indicating the current state of the check button. `TRUE` if checked; `FALSE` otherwise  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addcombobox"></a>CFileDialog::AddComboBox  
- ダイアログ ボックスに、コンボ ボックスを追加します。  
+##  <a name="addcombobox"></a>  CFileDialog::AddComboBox  
+ Adds a combo box to the dialog.  
   
 ```  
 HRESULT AddComboBox(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するコンボ ボックスの ID。  
+ The ID of the combo box to add.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addcontrolitem"></a>CFileDialog::AddControlItem  
- ダイアログ ボックス内のコンテナー コントロールに項目を追加します。  
+##  <a name="addcontrolitem"></a>  CFileDialog::AddControlItem  
+ Adds an item to a container control in the dialog.  
   
 ```  
 HRESULT AddControlItem(
@@ -309,20 +370,20 @@ HRESULT AddControlItem(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 項目を追加するコンテナー コントロールの ID。  
+ The ID of the container control to add the item to.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
  `strLabel`  
- 項目のテキスト。  
+ Item's text.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addeditbox"></a>CFileDialog::AddEditBox  
- ダイアログ ボックスに、エディット ボックスを追加します。  
+##  <a name="addeditbox"></a>  CFileDialog::AddEditBox  
+ Adds an edit box to the dialog.  
   
 ```  
 HRESULT AddEditBox(
@@ -330,17 +391,17 @@ HRESULT AddEditBox(
     const CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するエディット ボックスの ID。  
+ The ID of the edit box to add.  
   
  `strText`  
- 編集ボックスの名前。  
+ The edit box name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addmenu"></a>CFileDialog::AddMenu  
- ダイアログ ボックスに、メニューを追加します。  
+##  <a name="addmenu"></a>  CFileDialog::AddMenu  
+ Adds a menu to the dialog.  
   
 ```  
 HRESULT AddMenu(
@@ -348,17 +409,17 @@ HRESULT AddMenu(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するメニューの ID。  
+ The ID of the menu to add.  
   
  `strLabel`  
- メニュー名。  
+ The menu name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addplace"></a>CFileDialog::AddPlace  
- 一覧にフォルダーがユーザーが開くか、項目を保存するために使用できる場所を追加します。  
+##  <a name="addplace"></a>  CFileDialog::AddPlace  
+ Adds a folder to the list of places available for the user to open or save items.  
   
 ```  
 void AddPlace(
@@ -371,20 +432,20 @@ void AddPlace(
     FDAP fdap = FDAP_TOP) throw();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszFolder`  
- ユーザーに利用可能にするフォルダーへのパス。 フォルダーのみ指定できます。  
+ A path to the folder to be made available to the user. This can only be a folder.  
   
  `fdap`  
- リスト内でフォルダーを配置する場所を指定します。  
+ Specifies where the folder is placed within the list.  
   
  `psi`  
- 利用可能になるユーザーにフォルダーを表す IShellItem へのポインター。 フォルダーのみ指定できます。  
+ A pointer to an IShellItem that represents the folder to be made available to the user. This can only be a folder.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addpushbutton"></a>CFileDialog::AddPushButton  
- ダイアログ ボックスにボタンを追加します。  
+##  <a name="addpushbutton"></a>  CFileDialog::AddPushButton  
+ Adds a button to the dialog.  
   
 ```  
 HRESULT AddPushButton(
@@ -392,43 +453,43 @@ HRESULT AddPushButton(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するボタンの ID。  
+ The ID of the button to add.  
   
  `strLabel`  
- ボタンの名前。  
+ The button name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addradiobuttonlist"></a>CFileDialog::AddRadioButtonList  
- ダイアログ ボックスにオプション ボタンとも呼ばれます) グループを追加します。  
+##  <a name="addradiobuttonlist"></a>  CFileDialog::AddRadioButtonList  
+ Adds an option button (also known as radio button) group to the dialog.  
   
 ```  
 HRESULT AddRadioButtonList(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するオプション ボタン グループの ID。  
+ The ID of the option button group to add.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addseparator"></a>CFileDialog::AddSeparator  
- ダイアログ ボックスに、区切り記号を追加します。  
+##  <a name="addseparator"></a>  CFileDialog::AddSeparator  
+ Adds a separator to the dialog.  
   
 ```  
 HRESULT AddSeparator(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 区切り記号の ID を追加します。  
+ The ID of the separator add.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="addtext"></a>CFileDialog::AddText  
- ダイアログ ボックスにテキストを追加します。  
+##  <a name="addtext"></a>  CFileDialog::AddText  
+ Adds text to the dialog.  
   
 ```  
 HRESULT AddText(
@@ -436,34 +497,34 @@ HRESULT AddText(
     const CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 追加するテキストの ID。  
+ The ID of the text to add.  
   
  `strText`  
- テキストの名前。  
+ The text name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="applyofntoshelldialog"></a>CFileDialog::ApplyOFNToShellDialog  
- 現在の状態を更新、 [CFileDialog](../../mfc/reference/cfiledialog-class.md)に格納されている値に基づいて、`m_ofn`データ構造体。  
+##  <a name="applyofntoshelldialog"></a>  CFileDialog::ApplyOFNToShellDialog  
+ Updates the current state of the [CFileDialog](../../mfc/reference/cfiledialog-class.md) based on the values stored in the `m_ofn` data structure.  
   
 ```  
 void ApplyOFNToShellDialog();
 ```  
   
-### <a name="remarks"></a>コメント  
- 前に Windows のバージョンで[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]、メンバー [OPENFILENAME](https://msdn.microsoft.com/library/ms911906.aspx)データ構造がの状態と同期が継続的に、`CFileDialog`です。 変更、 [m_ofn](#m_ofn)メンバー変数が、ダイアログ ボックスの状態にすぐに反映されます。 また、ダイアログ ボックスの状態への変更に更新されました、`m_ofn`メンバー変数。  
+### <a name="remarks"></a>Remarks  
+ In versions of Windows before [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], the member [OPENFILENAME](https://msdn.microsoft.com/library/ms911906.aspx) data structure was continuously synchronized with the state of the `CFileDialog`. Any changes to the [m_ofn](#m_ofn) member variable were immediately reflected in the state of the dialog box. Also, any changes to the state of the dialog box immediately update the `m_ofn` member variable.  
   
- [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]、内の値、`m_ofn`メンバー変数との状態、`CFileDialog`を同期できる保証はありません。 この関数の状態の強制、`CFileDialog`一致するように更新する、`m_ofn`構造体。 Windows は時に自動的にこの関数を呼び出します[CFileDialog::DoModal](#domodal)です。  
+ In [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], the values in the `m_ofn` member variable and state of the `CFileDialog` are not guaranteed to be synchronized. This function forces the state of the `CFileDialog` to be updated to match the `m_ofn` structure. Windows calls this function automatically during [CFileDialog::DoModal](#domodal).  
   
- 使用する方法についての詳細、`CFileDialog`クラスの下にある[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+ For more information about how to use the `CFileDialog` class under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-### <a name="example"></a>例  
-  例を参照して[CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog)です。  
+### <a name="example"></a>Example  
+  See the example for [CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog).  
   
-##  <a name="cfiledialog"></a>CFileDialog::CFileDialog  
- Windows の標準ファイル ダイアログ ボックスを作成するには、この関数を呼び出します。  
+##  <a name="cfiledialog"></a>  CFileDialog::CFileDialog  
+ Call this function to construct a standard Windows file dialog box.  
   
 ```  
 explicit CFileDialog(
@@ -477,110 +538,110 @@ explicit CFileDialog(
     BOOL bVistaStyle = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bOpenFileDialog`  
- 作成する ダイアログ ボックスの種類を指定するパラメーター。 設定`TRUE`構築するために、**ファイルを開く** ダイアログ ボックス。 設定`FALSE`構築するために、**ファイル名を付けて** ダイアログ ボックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `bOpenFileDialog`  
+ The parameter that specifies what type of dialog box to create. Set it to `TRUE` to construct a **File Open** dialog box. Set it to `FALSE` to construct a **File Save As** dialog box.  
   
- [入力] `lpszDefExt`  
- 既定のファイル名の拡張子です。 拡張機能が指定された場合は、ユーザーがファイル名 ボックスに、既知の拡張子 (ユーザーのコンピューターに関連している) を含めない、`lpszDefExt`ファイル名に自動的に追加されます。 このパラメーターが場合`NULL`、拡張機能は追加されません。  
+ [in] `lpszDefExt`  
+ The default file name extension. If the user does not include a known extension (one that has an association on the user’s computer) in the Filename box, the extension specified by `lpszDefExt` is automatically appended to the file name. If this parameter is `NULL`, no extension is appended.  
   
- [入力] `lpszFileName`  
- ファイル名 ボックスに表示される初期ファイル名。 場合`NULL`、初期ファイル名は表示されません。  
+ [in] `lpszFileName`  
+ The initial file name that appears in the Filename box. If `NULL`, no initial file name appears.  
   
- [入力] `dwFlags`  
- カスタマイズ ダイアログ ボックスを使用できる 1 つまたは複数のフラグの組み合わせ。 これらのフラグの説明は、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 変更する場合、`m_ofn.Flags`構造体メンバー、既定の動作を維持する、変更内容でビットごとの OR 演算子を使用します。  
+ [in] `dwFlags`  
+ A combination of one or more flags that you can use to customize the dialog box. For a description of these flags, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure in the Windows SDK. If you modify the `m_ofn.Flags` structure member, use a bitwise-OR operator in your changes to keep the default behavior intact.  
   
- [入力] `lpszFilter`  
- 一連のフィルターを指定する文字列のペアをファイルに適用できます。 ファイルのフィルターを指定する場合は、フィルター条件に一致するファイルのみがファイルの一覧に表示されます。 ファイルのフィルターを操作する方法に関する詳細については、「解説」を参照してください。  
+ [in] `lpszFilter`  
+ A series of string pairs that specify filters you can apply to the file. If you specify file filters, only files that match filter criteria will appear in the Files list. See the Remarks section for more information about how to work with file filters.  
   
- [入力] `pParentWnd`  
- ファイル ダイアログ ボックスの親またはオーナー ウィンドウへのポインター。  
+ [in] `pParentWnd`  
+ A pointer to the parent or owner window of the file dialog box.  
   
- [入力] `dwSize`  
- サイズ、`OPENFILENAME`構造体。 この値は、オペレーティング システムのバージョンによって異なります。 MFC を作成する ダイアログ ボックスの適切な種類は、このパラメーターを使用する (たとえば、新しい[!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)]NT4 ダイアログ ボックスではなくダイアログ ボックス)。 0 の場合、MFC コードは、適切なダイアログ ボックスのサイズを決定する既定のサイズは、プログラムを実行するオペレーティング システムのバージョンに基づいています。  
+ [in] `dwSize`  
+ The size of the `OPENFILENAME` structure. This value depends on the operating system version. MFC used this parameter to determine the appropriate kind of dialog box to create (for example, new [!INCLUDE[Win2kFamily](../../c-runtime-library/includes/win2kfamily_md.md)] dialog boxes instead of NT4 dialog boxes). The default size of 0 means that the MFC code will determine the correct dialog box size to use based on the operating system version on which the program is run.  
   
- [入力] `bVistaStyle`  
- **注**このパラメーターは、利用可能で、Visual Studio 2008 以降が原因で実行している場合にのみ使用される新しいスタイル ダイアログ[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]またはそれ以降。  
+ [in] `bVistaStyle`  
+ **Note** This parameter is available in Visual Studio 2008 and later and is will cause the new-style dialog to be used only if you are running in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] or later.  
   
- ファイル ダイアログ ボックスのスタイルを指定するパラメーター。 設定`TRUE`新しい Vista スタイル ファイル ダイアログを使用します。 それ以外の場合、古い形式のダイアログ ボックスが使用されます。 Vista で実行されているに関する詳細については「解説」セクションをを表示します。  
+ The parameter that specifies the style of the file dialog. Set it to `TRUE` to use the new Vista style file dialogs. Otherwise, the old style of dialog boxes will be used. See the Remarks section for more information about running under Vista.  
   
-### <a name="remarks"></a>コメント  
- いずれか、**ファイルを開く**または**ファイル名を付けて**の値に応じて、ダイアログ ボックスが構築`bOpenFileDialog`です。  
+### <a name="remarks"></a>Remarks  
+ Either a **File Open** or **File Save As** dialog box is constructed, depending on the value of `bOpenFileDialog`.  
   
- 既定の拡張機能を使用して、指定する`lpszDefExt`になっているため頻度の低い予測可能な拡張機能について、ユーザーのコンピューター上のファイルの関連付けのある、予測される動作をもたらさないことがあります。 既定の拡張機能の追加より詳細に制御する場合は、独自のクラスから派生できます`CFileDialog`をオーバーライドし、`CFileDialog::OnFileNameOK`独自の拡張機能の処理を実行するメソッド。  
+ Specifying a default extension using `lpszDefExt` may not produce the behavior that you expect, because it is seldom predictable what extensions have file associations on the user’s computer. If you need more control over the appending of a default extension, you can derive your own class from `CFileDialog`, and override the `CFileDialog::OnFileNameOK` method to perform your own extension handling.  
   
- ユーザーが複数のファイルの選択を有効にする設定、`OFN_ALLOWMULTISELECT`フラグを呼び出す前に[DoModal](#domodal)です。 返される複数のファイル名の一覧を格納する、独自ファイル名のバッファーを指定する必要があります。 これには、置換`m_ofn.lpstrFile`バッファーへのポインターが割り当てられていれば、構築した後、 [CFileDialog](../../mfc/reference/cfiledialog-class.md)を呼び出す前に、`DoModal`です。 さらに、設定する必要があります`m_ofn.nMaxFile`によって示されるバッファー内の文字の数と`m_ofn.lpstrFile`です。 選択するファイルの最大数を設定した場合`n`、必要なバッファー サイズは`n`*(_MAX_PATH + 1) + 1 です。 例:  
+ To enable the user to select multiple files, set the `OFN_ALLOWMULTISELECT` flag before you call [DoModal](#domodal). You must supply your own file name buffer to store the returned list of multiple file names. Do this by replacing `m_ofn.lpstrFile` with a pointer to a buffer you have allocated, after you construct the [CFileDialog](../../mfc/reference/cfiledialog-class.md), but before you call `DoModal`. Additionally, you must set `m_ofn.nMaxFile` with the number of characters in the buffer pointed to by `m_ofn.lpstrFile`. If you set the maximum number of files to be selected to `n`, the necessary buffer size is `n`*(_MAX_PATH + 1) + 1. For example:  
   
- [!code-cpp[NVC_MFCFiles # 23](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_1.cpp)]  
+ [!code-cpp[NVC_MFCFiles#23](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_1.cpp)]  
   
- マウスまたはキーボードを使用して、[エクスプ ローラー スタイル] ダイアログ ボックスのサイズを変更するユーザーを有効にするには設定、`OFN_ENABLESIZING`フラグ。 このフラグを設定することは、フック プロシージャまたはカスタム テンプレートを指定する場合にのみ必要です。 このフラグはエクスプ ローラー スタイル ダイアログ ボックスでは; でのみ機能します。古い形式のダイアログ ボックスのサイズを変更できません。  
+ To enable the user to resize an Explorer-style dialog box by using either the mouse or keyboard, set the `OFN_ENABLESIZING` flag. Setting this flag is necessary only if you provide a hook procedure or custom template. The flag works only with an Explorer-style dialog box; old-style dialog boxes cannot be resized.  
   
- `lpszFilter`ファイル名、ファイルの一覧に表示される必要のあるファイルの種類を決定するパラメーターを使用します。 文字列のペアの最初の文字列には、フィルターがについて説明します2 番目の文字列では、使用するファイル名拡張子を示します。 複数の拡張機能は、区切り記号としてセミコロン (';' 文字) を使用して指定できます。 文字列の末尾に 2 つの ' |' 文字が続く、`NULL`文字です。 使用することも、 [CString](../../atl-mfc-shared/using-cstring.md)このパラメーターのオブジェクト。  
+ The `lpszFilter` parameter is used to determine the type of file name a file must have to be displayed in the file list. The first string in the string pair describes the filter; the second string indicates the file name extension to use. Multiple extensions may be specified by using a semicolon (the ';' character) as the delimiter. The string ends with two '&#124;' characters, followed by a `NULL` character. You can also use a [CString](../../atl-mfc-shared/using-cstring.md) object for this parameter.  
   
- たとえば、[!INCLUDE[ofprexcel](../../mfc/reference/includes/ofprexcel_md.md)]他拡張 .xlc (グラフの場合) または .xls (ワークシート) を持つファイルを開くことができます。 Excel 用のフィルターとしてを記述できます。  
+ For example, [!INCLUDE[ofprexcel](../../mfc/reference/includes/ofprexcel_md.md)] allows users to open files that have extensions .xlc (chart) or .xls (worksheet), among others. The filter for Excel could be written as:  
   
- [!code-cpp[NVC_MFCFiles # 24](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_2.cpp)]  
+ [!code-cpp[NVC_MFCFiles#24](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_2.cpp)]  
   
- ただし、この文字列を直接使用する場合は更新、`OPENFILENAME`構造体、null 文字、垂直バーではなく ' \0'、文字列を区切る必要があります ('| ')。  
+ However, if you plan to use this string to directly update the `OPENFILENAME` structure, you should delimit your strings with the null character, '\0', instead of the vertical bars ('&#124;').  
   
- `bVistaStyle`パラメーターで実行されている場合にのみ適用[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 以前のバージョンの Windows では、このパラメーターは無視されます。 場合`bVistaStyle`に設定されている`TRUE`プログラムをコンパイルするときに、[!INCLUDE[vs_orcas_long](../../atl/reference/includes/vs_orcas_long_md.md)]またはそれ以降、新しい Vista スタイル**ファイル ダイアログ**使用されます。 それ以外の場合、以前の MFC スタイル**ファイル ダイアログ**使用されます。  
+ The `bVistaStyle` parameter is applicable only when running under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. Under earlier versions of Windows, this parameter is ignored. If `bVistaStyle` is set to `TRUE`, when you compile a program with Visual Studio 2008 or later, the new Vista style **File Dialog** will be used. Otherwise, the previous MFC style **File Dialog** will be used.  
   
- 基づくダイアログでダイアログ テンプレートはサポートされていません`bVistaStyle`  
+ Dialog templates are not supported on dialogs based on `bVistaStyle`  
   
-### <a name="example"></a>例  
-  例を参照して[CFileDialog::DoModal](#domodal)です。  
+### <a name="example"></a>Example  
+  See the example for [CFileDialog::DoModal](#domodal).  
   
-##  <a name="domodal"></a>CFileDialog::DoModal  
- Windows コモン ファイル ダイアログ ボックスを表示し、ユーザーがファイルとディレクトリを参照し、ファイル名を入力できるようにするには、この関数を呼び出します。  
+##  <a name="domodal"></a>  CFileDialog::DoModal  
+ Call this function to display the Windows common file dialog box and allow the user to browse files and directories and enter a filename.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- **IDOK**または**IDCANCEL**です。 場合**IDCANCEL**は、Windows を呼び出し、返される[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)エラーが発生したかどうかを判断する関数。  
+### <a name="return-value"></a>Return Value  
+ **IDOK** or **IDCANCEL**. If **IDCANCEL** is returned, call the Windows [CommDlgExtendedError](http://msdn.microsoft.com/library/windows/desktop/ms646916) function to determine whether an error occurred.  
   
- **IDOK**と**IDCANCEL**ユーザーが、[ok] または [キャンセル] ボタンを選択するかどうかを示す定数です。  
+ **IDOK** and **IDCANCEL** are constants that indicate whether the user selected the OK or Cancel button.  
   
-### <a name="remarks"></a>コメント  
- メンバーを設定して、さまざまなファイル ダイアログ ボックスのオプションを初期化する場合、 **m_ofn**構造体、呼び出す前にこれを行う必要があります`DoModal`はダイアログ オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ If you want to initialize the various file dialog-box options by setting members of the **m_ofn** structure, you should do this before calling `DoModal`, but after the dialog object is constructed.  
   
- たとえば、ユーザーが複数のファイルを選択できるようにする場合は、設定、`OFN_ALLOWMULTISELECT`フラグを呼び出す前に`DoModal`のこのトピックのコード例に示すようにします。  
+ For example, if you want to allow the user to select multiple files, set the `OFN_ALLOWMULTISELECT` flag before calling `DoModal`, as shown in the code example in this topic.  
   
- ダイアログ ボックスの ok または キャンセル ボタンを選択したりする、閉じるオプション ダイアログ ボックスをクリックするコントロール、メニュー、コントロールがアプリケーションに返されます。 呼び出すことができますし、設定や情報を取得するには、他のメンバー関数ユーザー入力 ダイアログ ボックスにします。  
+ When the user clicks the dialog box's OK or Cancel buttons, or selects the Close option from the dialog box's control menu, control is returned to your application. You can then call other member functions to retrieve the settings or information the user inputs into the dialog box.  
   
- `DoModal`クラスのオーバーライドされた仮想関数は、`CDialog`です。  
+ `DoModal` is a virtual function overridden from class `CDialog`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #25](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#25](../../atl-mfc-shared/reference/codesnippet/cpp/cfiledialog-class_3.cpp)]  
   
-##  <a name="enableopendropdown"></a>CFileDialog::EnableOpenDropDown  
- [開く] ボタンまたは [保存] ダイアログ ボックスのドロップダウン リストを有効にします。  
+##  <a name="enableopendropdown"></a>  CFileDialog::EnableOpenDropDown  
+ Enables a drop-down list on the Open or Save button in the dialog.  
   
 ```  
 HRESULT EnableOpenDropDown(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- ドロップダウン リストの ID。  
+ The ID of the drop-down list.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="endvisualgroup"></a>CFileDialog::EndVisualGroup  
- ダイアログ ボックスでビジュアルのグループに対する要素の追加を停止します。  
+##  <a name="endvisualgroup"></a>  CFileDialog::EndVisualGroup  
+ Stops the addition of elements to a visual group in the dialog.  
   
 ```  
 HRESULT EndVisualGroup();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OK を返します。それ以外の場合エラー値。  
+### <a name="return-value"></a>Return Value  
+ Returns S_OK if successful; an error value otherwise.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcheckbuttonstate"></a>CFileDialog::GetCheckButtonState  
- ダイアログ ボックスで、チェック ボタン (チェック ボックス) の現在の状態を取得します。  
+##  <a name="getcheckbuttonstate"></a>  CFileDialog::GetCheckButtonState  
+ Retrieves the current state of a check button (check box) in the dialog.  
   
 ```  
 HRESULT GetCheckButtonState(
@@ -588,17 +649,17 @@ HRESULT GetCheckButtonState(
     BOOL& bChecked);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- チェック ボックスの ID です。  
+ The ID of the check box.  
   
  `bChecked`  
- チェック ボックスの状態。 `TRUE`checked; ことを示します`FALSE`オンになっていないことを示します。  
+ The state of the check box. `TRUE` indicates checked; `FALSE` indicates unchecked.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcontrolitemstate"></a>CFileDialog::GetControlItemState  
- ダイアログ ボックスで見つかったコンテナー コントロール内のアイテムの現在の状態を取得します。  
+##  <a name="getcontrolitemstate"></a>  CFileDialog::GetControlItemState  
+ Retrieves the current state of an item in a container control found in the dialog.  
   
 ```  
 HRESULT GetControlItemState(
@@ -607,20 +668,20 @@ HRESULT GetControlItemState(
     CDCONTROLSTATEF& dwState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
  `dwState`  
- コントロールの現在の状態を示す CDCONTROLSTATE 列挙体からより多くの値のいずれかを受け取る変数への参照。  
+ A reference to a variable that receives one of more values from the CDCONTROLSTATE enumeration that indicates the current state of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcontrolstate"></a>CFileDialog::GetControlState  
- 現在の可視性を取得し、指定されたコントロールの状態を有効にします。  
+##  <a name="getcontrolstate"></a>  CFileDialog::GetControlState  
+ Retrieves the current visibility and enabled states of a given control.  
   
 ```  
 HRESULT GetControlState(
@@ -628,17 +689,17 @@ HRESULT GetControlState(
     CDCONTROLSTATEF& dwState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コントロールの ID。  
+ The ID of the control.  
   
  `dwState`  
- コントロールの現在の状態を示す CDCONTROLSTATE 列挙体から 1 つまたは複数の値を受け取る変数への参照。  
+ A reference to a variable that receives one or more values from the CDCONTROLSTATE enumeration that indicates the current state of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="geteditboxtext"></a>CFileDialog::GetEditBoxText  
- 編集ボックス コントロールで現在のテキストを取得します。  
+##  <a name="geteditboxtext"></a>  CFileDialog::GetEditBoxText  
+ Retrieves the current text in an edit box control.  
   
 ```  
 HRESULT GetEditBoxText(
@@ -646,159 +707,159 @@ HRESULT GetEditBoxText(
     CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 編集ボックスの ID です。  
+ The ID of the edit box.  
   
  `strText`  
- テキスト値。  
+ The text value.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getfileext"></a>CFileDialog::GetFileExt  
- この関数では、ダイアログ ボックスに入力されたファイル名の拡張子を取得します。  
+##  <a name="getfileext"></a>  CFileDialog::GetFileExt  
+ Call this function to retrieve the extension of the filename entered into the dialog box.  
   
 ```  
 CString GetFileExt() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイル名の拡張子。  
+### <a name="return-value"></a>Return Value  
+ The extension of the filename.  
   
-### <a name="remarks"></a>コメント  
- たとえば、次のように入力されたファイルの名前がデータの場合です。TXT、 `GetFileExt` "TXT"を返します。  
+### <a name="remarks"></a>Remarks  
+ For example, if the name of the file entered is DATA.TXT, `GetFileExt` returns "TXT".  
   
- 場合`m_ofn.Flags`が、`OFN_ALLOWMULTISELECT`フラグを設定、この文字列には、最初の文字列を選択すると、ファイル グループのディレクトリ パスの中で、null で終わる文字列のシーケンスが含まれています。 ユーザーが選択されているすべてのファイル名の後にします。 ファイルのパス名を取得するを使用して、[中](#getstartposition)と[に](#getnextpathname)メンバー関数。  
+ If `m_ofn.Flags` has the `OFN_ALLOWMULTISELECT` flag set, this string contains a sequence of null-terminated strings, with the first string being the directory path of the file group selected, followed by the names of all files selected by the user. To retrieve file pathnames, use the [GetStartPosition](#getstartposition) and [GetNextPathName](#getnextpathname) member functions.  
   
-##  <a name="getfilename"></a>CFileDialog::GetFileName  
- ダイアログ ボックスに入力したファイル名の名前を取得するには、この関数を呼び出します。  
+##  <a name="getfilename"></a>  CFileDialog::GetFileName  
+ Call this function to retrieve the name of the filename entered in the dialog box.  
   
 ```  
 CString GetFileName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルの名前です。  
+### <a name="return-value"></a>Return Value  
+ The name of the file.  
   
-### <a name="remarks"></a>コメント  
- ファイルの名前には、プレフィックスと拡張機能の両方が含まれています。 たとえば、 `GetFileName` "テキストを返すです。DAT"C:\FILES\TEXT.DAT ファイル。  
+### <a name="remarks"></a>Remarks  
+ The name of the file includes both the prefix and the extension. For example, `GetFileName` will return "TEXT.DAT" for the file C:\FILES\TEXT.DAT.  
   
- 場合`m_ofn.Flags`が、`OFN_ALLOWMULTISELECT`フラグ設定、呼び出す必要があります[中](#getstartposition)と[に](#getnextpathname)ファイルのパス名を取得します。  
+ If `m_ofn.Flags` has the `OFN_ALLOWMULTISELECT` flag set, you should call [GetStartPosition](#getstartposition) and [GetNextPathName](#getnextpathname) to retrieve a file pathname.  
   
-##  <a name="getfiletitle"></a>CFileDialog::GetFileTitle  
- ダイアログ ボックスで入力ファイルのタイトルを取得するには、この関数を呼び出します。  
+##  <a name="getfiletitle"></a>  CFileDialog::GetFileTitle  
+ Call this function to retrieve the title of the file entered in the dialog box.  
   
 ```  
 CString GetFileTitle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルのタイトル。  
+### <a name="return-value"></a>Return Value  
+ The title of the file.  
   
-### <a name="remarks"></a>コメント  
- ファイルのタイトルには、パスおよび拡張子を含まない、プレフィックスのみが含まれています。 たとえば、 `GetFileTitle` C:\FILES\TEXT.DAT ファイルに対して"TEXT"が返されます。  
+### <a name="remarks"></a>Remarks  
+ The title of the file includes only its prefix, without the path or the extension. For example, `GetFileTitle` will return "TEXT" for the file C:\FILES\TEXT.DAT.  
   
- 場合`m_ofn.Flags`が、`OFN_ALLOWMULTISELECT`フラグを設定、この文字列には、最初の文字列を選択すると、ファイル グループのディレクトリ パスの中で、null で終わる文字列のシーケンスが含まれています。 ユーザーが選択されているすべてのファイル名の後にします。 このため、使用して、[中](#getstartposition)と[に](#getnextpathname)一覧で、次のファイル名を取得するメンバー関数。  
+ If `m_ofn.Flags` has the `OFN_ALLOWMULTISELECT` flag set, this string contains a sequence of null-terminated strings, with the first string being the directory path of the file group selected, followed by the names of all files selected by the user. For this reason, use the [GetStartPosition](#getstartposition) and [GetNextPathName](#getnextpathname) member functions to retrieve the next file name in the list.  
   
-### <a name="example"></a>例  
-  例を参照して[CFileDialog::DoModal](#domodal)です。  
+### <a name="example"></a>Example  
+  See the example for [CFileDialog::DoModal](#domodal).  
   
-##  <a name="getfolderpath"></a>CFileDialog::GetFolderPath  
- 現在開いているフォルダーまたはエクスプ ローラー スタイル Open または名前を付けて保存の共通のダイアログ ボックスのディレクトリのパスを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfolderpath"></a>  CFileDialog::GetFolderPath  
+ Call this member function to retrieve the path of the currently open folder or directory for an Explorer-style Open or Save As common dialog box.  
   
 ```  
 CString GetFolderPath() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)現在開いているフォルダーまたはディレクトリを含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) object containing the currently open folder or directory.  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスが作成されている必要があります、 **OFN_EXPLORER**スタイルです。 それ以外の場合、メソッドは、アサーションに失敗します。  
+### <a name="remarks"></a>Remarks  
+ The dialog box must have been created with the **OFN_EXPLORER** style; otherwise, the method will fail with an assertion.  
   
- ダイアログ ボックスが表示されているときにのみ、このメソッドを呼び出すことができます。 ダイアログ ボックスが閉じられた後は、この関数は動作しなくとメソッドは、アサーションに失敗します。  
+ You can call this method only while the dialog box is being displayed. After the dialog box has been closed, this function will no longer work, and the method will fail with an assertion.  
   
-##  <a name="getifiledialogcustomize"></a>CFileDialog::GetIFileDialogCustomize  
- 内部の COM オブジェクトへのポインターを取得する指定された[CFileDialog](../../mfc/reference/cfiledialog-class.md)です。  
+##  <a name="getifiledialogcustomize"></a>  CFileDialog::GetIFileDialogCustomize  
+ Retrieves a pointer to the internal COM object for a given [CFileDialog](../../mfc/reference/cfiledialog-class.md).  
   
 ```  
 IFileDialogCustomize* GetIFileDialogCustomize();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 内部の COM オブジェクトへのポインター、`CFileDialog`です。 このポインターを適切に解放する必要があります。  
+### <a name="return-value"></a>Return Value  
+ The pointer to the internal COM object for the `CFileDialog`. It is your responsibility to release this pointer appropriately.  
   
-### <a name="remarks"></a>コメント  
- 下にのみ、この関数を使用して[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を持つオブジェクトで`bVistaStyle`'éý'`true`です。 この関数を使用する場合と`bVistaStyle`は`false`が返されます`NULL`リリース モードとデバッグ モードではアサーションをスローします。  
+### <a name="remarks"></a>Remarks  
+ Use this function only under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] with an object that has `bVistaStyle` set to `true`. If you use this function when `bVistaStyle` is `false`, it will return `NULL` in release mode and throw an assertion in debug mode.  
   
- 詳細については、`IFileDialogCustomize`インターフェイスを参照してください[IFileDialogCustomize](http://msdn.microsoft.com/library/windows/desktop/bb775912)です。  
+ For more information about the `IFileDialogCustomize` interface,  see [IFileDialogCustomize](http://msdn.microsoft.com/library/windows/desktop/bb775912).  
   
-### <a name="example"></a>例  
- この例では、内部の COM オブジェクトを取得します。 このコード例を実行する必要がありますをコンパイルする下[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。  
+### <a name="example"></a>Example  
+ This example retrieves the internal COM object. To run this code example, you must compile it under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)].  
   
- [!code-cpp[NVC_MFC_CFileDialog 4](../../mfc/reference/codesnippet/cpp/cfiledialog-class_4.cpp)]  
+ [!code-cpp[NVC_MFC_CFileDialog#4](../../mfc/reference/codesnippet/cpp/cfiledialog-class_4.cpp)]  
   
-##  <a name="getifileopendialog"></a>CFileDialog::GetIFileOpenDialog  
- 内部の COM オブジェクトへのポインターを取得する指定された`CFileDialog`です。  
+##  <a name="getifileopendialog"></a>  CFileDialog::GetIFileOpenDialog  
+ Retrieves a pointer to the internal COM object for a given `CFileDialog`.  
   
 ```  
 IFileOpenDialog* GetIFileOpenDialog();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 内部の COM オブジェクトへのポインター、`CFileDialog`です。 このポインターを適切に解放する必要があります。  
+### <a name="return-value"></a>Return Value  
+ The pointer to the internal COM object for the `CFileDialog`. It is your responsibility to release this pointer appropriately.  
   
-### <a name="remarks"></a>コメント  
- 下にのみ、この関数を使用して[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を持つオブジェクトで`bVistaStyle`'éý'`true`です。 この関数を返します`NULL`場合、`CFileDialog`はありません、**開く** ダイアログ ボックスまたは`bVistaStyle`に設定されている`false`です。 後者の場合、関数だけを返します`NULL`リリース モードでデバッグ モードはアサーションをスローします。  
+### <a name="remarks"></a>Remarks  
+ Use this function only under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] with an object that has `bVistaStyle` set to `true`. This function returns `NULL` if the `CFileDialog` is not an **Open** dialog box or if `bVistaStyle` is set to `false`. In this final case, the function only returns `NULL` in release mode - in debug mode it will throw an assertion.  
   
- 詳細については、`IFileOpenDialog`インターフェイスを参照してください[IFileOpenDialog](http://msdn.microsoft.com/library/windows/desktop/bb775834)です。  
+ For more information about the `IFileOpenDialog` interface, see [IFileOpenDialog](http://msdn.microsoft.com/library/windows/desktop/bb775834).  
   
-### <a name="example"></a>例  
- この例では、内部の COM オブジェクトを取得します。 このコードを実行するには、下でコンパイルする必要があります[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。  
+### <a name="example"></a>Example  
+ This example retrieves the internal COM object. To run this code, you must compile it under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)].  
   
- [!code-cpp[NVC_MFC_CFileDialog #2](../../mfc/reference/codesnippet/cpp/cfiledialog-class_5.cpp)]  
+ [!code-cpp[NVC_MFC_CFileDialog#2](../../mfc/reference/codesnippet/cpp/cfiledialog-class_5.cpp)]  
   
-##  <a name="getifilesavedialog"></a>CFileDialog::GetIFileSaveDialog  
- 内部の COM オブジェクトへのポインターを取得する指定された`CFileDialog`です。  
+##  <a name="getifilesavedialog"></a>  CFileDialog::GetIFileSaveDialog  
+ Retrieves a pointer to the internal COM object for a given `CFileDialog`.  
   
 ```  
 IFileSaveDialog* GetIFileSaveDialog();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 内部の COM オブジェクトへのポインター、`CFileDialog`です。 このポインターを適切に解放する必要があります。  
+### <a name="return-value"></a>Return Value  
+ The pointer to the internal COM object for the `CFileDialog`. It is your responsibility to release this pointer appropriately.  
   
-### <a name="remarks"></a>コメント  
- 下にのみ、この関数を使用して[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を持つオブジェクトで`bVistaStyle`'éý'`true`です。 この関数は`NULL`場合、`CFileDialog`はありません、**保存** ダイアログ ボックスまたは`bVistaStyle`に設定されている`false`です。 後者の場合、関数だけを返します`NULL`リリース モードでデバッグ モードはアサーションをスローします。  
+### <a name="remarks"></a>Remarks  
+ Use this function only under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] with an object that has `bVistaStyle` set to `true`. This function will return `NULL` if the `CFileDialog` is not a **Save** dialog box or if `bVistaStyle` is set to `false`. In this final case, the function only returns `NULL` in release mode - in debug mode it will throw an assertion.  
   
- 詳細については、`IFileSaveDialog`インターフェイスを参照してください[IFileSaveDialog](http://msdn.microsoft.com/library/windows/desktop/bb775688)です。  
+ For more information about the `IFileSaveDialog` interface, see [IFileSaveDialog](http://msdn.microsoft.com/library/windows/desktop/bb775688).  
   
-### <a name="example"></a>例  
- この例では、内部の COM オブジェクトを取得します。 このコード例を実行する必要がありますをコンパイルする下[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。  
+### <a name="example"></a>Example  
+ This example retrieves the internal COM object. To run this code example, you must compile it under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)].  
   
- [!code-cpp[NVC_MFC_CFileDialog #3](../../mfc/reference/codesnippet/cpp/cfiledialog-class_6.cpp)]  
+ [!code-cpp[NVC_MFC_CFileDialog#3](../../mfc/reference/codesnippet/cpp/cfiledialog-class_6.cpp)]  
   
-##  <a name="getnextpathname"></a>CFileDialog::GetNextPathName  
- ダイアログ ボックスで選択したグループから次のファイル名を取得するには、この関数を呼び出します。  
+##  <a name="getnextpathname"></a>  CFileDialog::GetNextPathName  
+ Call this function to retrieve the next filename from the group selected in the dialog box.  
   
 ```  
 CString GetNextPathName(POSITION& pos) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- 参照、**位置**によって以前返される値`GetNextPathName`または`GetStartPosition`関数呼び出しです。 **NULL**リストの末尾に達している場合。  
+ A reference to a **POSITION** value returned by a previous `GetNextPathName` or `GetStartPosition` function call. **NULL** if the end of the list has been reached.  
   
-### <a name="return-value"></a>戻り値  
- ファイルの完全パス名を返します。  
+### <a name="return-value"></a>Return Value  
+ The full path of the file.  
   
-### <a name="remarks"></a>コメント  
- ファイル名のパスには、ファイルのタイトルとディレクトリの完全パスが含まれています。 たとえば、 `GetNextPathName` "C:\FILES\TEXT を返します。DAT"C:\FILES\TEXT.DAT ファイル。 使用することができます`GetNextPathName`への呼び出しに最初の位置を確立する場合は、順方向の反復ループで`GetStartPosition`です。  
+### <a name="remarks"></a>Remarks  
+ The path of the filename includes the file's title plus the entire directory path. For example, `GetNextPathName` will return "C:\FILES\TEXT.DAT" for the file C:\FILES\TEXT.DAT. You can use `GetNextPathName` in a forward iteration loop if you establish the initial position with a call to `GetStartPosition`.  
   
- 選択範囲は、1 つのファイルで構成され、そのファイル名が返されます。  
+ If the selection consists of only one file, that file name will be returned.  
   
-##  <a name="getofn"></a>CFileDialog::GetOFN  
- 関連付けられた取得**OPENFILENAME**構造体。  
+##  <a name="getofn"></a>  CFileDialog::GetOFN  
+ Retrieves the associated **OPENFILENAME** structure.  
   
 ```  
 const OPENFILENAME& GetOFN() const;  
@@ -806,72 +867,72 @@ const OPENFILENAME& GetOFN() const;
 OPENFILENAME& GetOFN();
 ```  
   
-### <a name="return-value"></a>戻り値  
- [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造体。  
+### <a name="return-value"></a>Return Value  
+ An [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure.  
   
-### <a name="remarks"></a>コメント  
- 外観を初期化するためにこの関数の 2 番目のバージョンを使用して、**ファイルを開く**または**ファイル名を付けて** ダイアログ ボックスに表示されるまでは、構築された後、`DoModal`メンバー関数。 たとえば、設定することができます、**キャプションを表示**のメンバー **m_ofn**ダイアログ ボックスには、キャプションにします。  
+### <a name="remarks"></a>Remarks  
+ Use the second version of this function to initialize the appearance of a **File Open** or **File Save As** dialog box after it is constructed but before it is displayed with the `DoModal` member function. For example, you can set the **lpstrTitle** member of **m_ofn** to the caption you want the dialog box to have.  
   
-##  <a name="getpathname"></a>CFileDialog::GetPathName  
- ダイアログ ボックスで入力ファイルの完全パスを取得するには、この関数を呼び出します。  
+##  <a name="getpathname"></a>  CFileDialog::GetPathName  
+ Call this function to retrieve the full path of the file entered in the dialog box.  
   
 ```  
 CString GetPathName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイルの完全パス名を返します。  
+### <a name="return-value"></a>Return Value  
+ The full path of the file.  
   
-### <a name="remarks"></a>コメント  
- ファイル名のパスには、ファイルのタイトルとディレクトリの完全パスが含まれています。 たとえば、 `GetPathName` "C:\FILES\TEXT を返します。DAT"C:\FILES\TEXT.DAT ファイル。  
+### <a name="remarks"></a>Remarks  
+ The path of the filename includes the file's title plus the entire directory path. For example, `GetPathName` will return "C:\FILES\TEXT.DAT" for the file C:\FILES\TEXT.DAT.  
   
- 場合`m_ofn.Flags`が、`OFN_ALLOWMULTISELECT`フラグを設定、この文字列には、シーケンスが含まれています。 null で終わるの文字列は、選択すると、ファイル グループのディレクトリ パスをされている最初の文字列で続けて、ユーザーが選択したすべてのファイルの名前。 このため、使用して、[中](#getstartposition)と[に](#getnextpathname)一覧で、次のファイル名を取得するメンバー関数。  
+ If `m_ofn.Flags` has the `OFN_ALLOWMULTISELECT` flag set, this string contains a sequence of null-teminated strings, with the first string being the directory path of the file group selected, followed by the names of all files selected by the user. For this reason, use the [GetStartPosition](#getstartposition) and [GetNextPathName](#getnextpathname) member functions to retrieve the next file name in the list.  
   
-### <a name="example"></a>例  
-  例を参照して[CFileDialog::DoModal](#domodal)です。  
+### <a name="example"></a>Example  
+  See the example for [CFileDialog::DoModal](#domodal).  
   
-##  <a name="getreadonlypref"></a>CFileDialog::GetReadOnlyPref  
- Windows 標準ファイルを開くと、ファイル名前を付けて保存 ダイアログ ボックスで、読み取り専用 チェック ボックスが選択されているかどうかを判断するには、この関数を呼び出します。  
+##  <a name="getreadonlypref"></a>  CFileDialog::GetReadOnlyPref  
+ Call this function to determine whether the Read Only check box has been selected in the Windows standard File Open and File Save As dialog boxes.  
   
 ```  
 BOOL GetReadOnlyPref() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の値 ダイアログ ボックスでの読み取り専用チェック ボックスがオンの場合それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Non-zero if the Read Only check box in the dialog box is selected; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 読み取り専用 チェック ボックスを非表示を設定してできます、`OFN_HIDEREADONLY`のスタイルを設定、`CFileDialog`コンス トラクター。  
+### <a name="remarks"></a>Remarks  
+ You can hide the Read Only check box by setting the `OFN_HIDEREADONLY` style in the `CFileDialog` constructor.  
   
 > [!NOTE]
-> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイル`CFileDialog`オブジェクトはこの関数をサポートしていません。 に対してこの関数を使用しようとすると、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイル`CFileDialog`がスローされます[行わない](../../mfc/reference/cnotsupportedexception-class.md)です。   
+> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style `CFileDialog` objects do not support this function. Attempting to use this function on a [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style `CFileDialog` will throw [CNotSupportedException](../../mfc/reference/cnotsupportedexception-class.md).   
   
-##  <a name="getresult"></a>CFileDialog::GetResult  
- ユーザーがダイアログ ボックスで行った選択を取得します。  
+##  <a name="getresult"></a>  CFileDialog::GetResult  
+ Retrieves the choice that the user made in the dialog.  
   
 ```  
 IShellItem* GetResult() throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ユーザーの選択項目を表す IShellItem へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to an IShellItem that represents the user's choice.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getresults"></a>CFileDialog::GetResults  
- 複数選択が可能なダイアログで、ユーザーの選択肢を取得します。  
+##  <a name="getresults"></a>  CFileDialog::GetResults  
+ Retrieves the user's choices in a dialog that allows multiple selection.  
   
 ```  
 IShellItemArray* GetResults() throw();
 ```  
   
-### <a name="return-value"></a>戻り値  
- アクセスすることができます、ダイアログ ボックスで選択した項目に使用する、IShellItemArray へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to an IShellItemArray through which the items selected in the dialog can be accessed.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getselectedcontrolitem"></a>CFileDialog::GetSelectedControlItem  
- ダイアログ ボックスで指定されたコンテナー コントロールからの特定のアイテムを取得します。  
+##  <a name="getselectedcontrolitem"></a>  CFileDialog::GetSelectedControlItem  
+ Retrieves a particular item from the specified container control in the dialog.  
   
 ```  
 HRESULT GetSelectedControlItem(
@@ -879,62 +940,62 @@ HRESULT GetSelectedControlItem(
     DWORD& dwIDItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- ユーザーがコントロールで選択した項目の ID。  
+ The ID of the item that the user selected in the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getstartposition"></a>CFileDialog::GetStartPosition  
- 場合、一覧内の最初のファイルのパス名の位置を取得するには、このメンバー関数を呼び出す`m_ofn.Flags`は、`OFN_ALLOWMULTISELECT`フラグが設定されます。  
+##  <a name="getstartposition"></a>  CFileDialog::GetStartPosition  
+ Call this member function to retrieve the position of the first file pathname in the list, if `m_ofn.Flags` has the `OFN_ALLOWMULTISELECT` flag set.  
   
 ```  
 POSITION GetStartPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A**位置**反復処理に使用できる値**NULL**リストが空の場合。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration; **NULL** if the list is empty.  
   
-##  <a name="hidecontrol"></a>CFileDialog::HideControl  
- エクスプ ローラー スタイル Open または名前を付けて保存の共通のダイアログ ボックスで指定されたコントロールを非表示にするには、このメンバー関数を呼び出します。  
+##  <a name="hidecontrol"></a>  CFileDialog::HideControl  
+ Call this member function to hide the specified control in an Explorer-style Open or Save As common dialog box.  
   
 ```  
 void HideControl(int nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- 非表示にするコントロールの ID です。  
+ The ID of the control to hide.  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスが作成されている必要があります、 **OFN_EXPLORER**スタイルです。 それ以外の場合、関数はアサーションと失敗します。  
+### <a name="remarks"></a>Remarks  
+ The dialog box must have been created with the **OFN_EXPLORER** style; otherwise, the function will fail with an assertion.  
   
-##  <a name="ispickfoldersmode"></a>CFileDialog::IsPickFoldersMode  
- 現在のダイアログ ボックスがフォルダー ピッカー モードのかどうかを判断します。  
+##  <a name="ispickfoldersmode"></a>  CFileDialog::IsPickFoldersMode  
+ Determines if the current dialog is in folder picker mode.  
   
 ```  
 BOOL IsPickFoldersMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`フォルダー ピッカー モードである場合は、ダイアログ ボックスそれ以外の場合`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the dialog is in folder picker mode; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_ofn"></a>:M_ofn  
- `m_ofn`型の構造体は、`OPENFILENAME`です。 この構造内のデータの現在の状態を表す、`CFileDialog`です。  
+##  <a name="m_ofn"></a>  CFileDialog::m_ofn  
+ `m_ofn` is a structure of type `OPENFILENAME`. The data in this structure represents the current state of the `CFileDialog`.  
   
-### <a name="remarks"></a>コメント  
- 外観を初期化するためにこの構造体を使用して、**ファイルを開く**または**ファイル名を付けて** ダイアログ ボックスで表示する前に、構築した後、 [DoModal](#domodal)メソッドです。 たとえば、設定することができます、`lpstrTitle`のメンバー`m_ofn`ダイアログ ボックスには、キャプションにします。  
+### <a name="remarks"></a>Remarks  
+ Use this structure to initialize the appearance of a **File Open** or **File Save As** dialog box after you construct it but before you display it with the [DoModal](#domodal) method. For example, you can set the `lpstrTitle` member of `m_ofn` to the caption you want the dialog box to have.  
   
- [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイル[CFileDialog](../../mfc/reference/cfiledialog-class.md)、 `m_ofn`  ダイアログ ボックスの状態を常に一致する保証はありません。 以前のバージョンの Windows で、ダイアログ ボックスと同期されます。 参照してください[CFileDialog::ApplyOFNToShellDialog](#applyofntoshelldialog)と[CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog)同期の詳細については、`m_ofn`構造および`CFileDialog`下にある状態[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。  
+ With the [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style of [CFileDialog](../../mfc/reference/cfiledialog-class.md), `m_ofn` is not guaranteed to always match the state of the dialog box. It is synchronized with the dialog box in earlier versions of Windows. See [CFileDialog::ApplyOFNToShellDialog](#applyofntoshelldialog) and [CFileDialog::UpdateOFNFromShellDialog](#updateofnfromshelldialog) for more information about synchronizing the `m_ofn` structure and the `CFileDialog` state under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)].  
   
- [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイルのファイル ダイアログでは、特定のメンバーとのフラグがサポートされません、`CFileDialog`です。 その結果、この効果はありません。  
+ [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style file dialogs do not support certain members and flags of the `CFileDialog`. As a result, these will have no effect.  
   
- サポートされていないメンバーの一覧を次に示します[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]:  
+ The following is a list of the members that are not supported by [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]:  
   
 - `lpstrCustomFilter`  
   
@@ -946,7 +1007,7 @@ BOOL IsPickFoldersMode() const;
   
 - `lpTemplateName`  
   
- 次のフラグはサポートされていませんので影響を与えませんを使用するときに、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]のスタイル`CFileDialog`:  
+ The following flags are not supported and therefore have no effect when you use the [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style of `CFileDialog`:  
   
 -   OFN_ENABLEHOOK  
   
@@ -962,46 +1023,46 @@ BOOL IsPickFoldersMode() const;
   
 -   OFN_HIDEREADONLY  
   
--   OFN_LONGNAMES - 常に効果的に上で[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+-   OFN_LONGNAMES - effectively always on in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
   
--   OFN_NOLONGNAMES - で効果的に常にオフします。[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+-   OFN_NOLONGNAMES - effectively always off in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
   
--   OFN_NONETWORKBUTTON - 常に効果的に上で[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
+-   OFN_NONETWORKBUTTON - effectively always on in [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]  
   
 -   OFN_READONLY  
   
 -   OFN_SHOWHELP  
   
- この構造体の詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about this structure, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure in the Windows SDK.  
   
-##  <a name="makeprominent"></a>CFileDialog::MakeProminent  
- ダイアログ ボックスでコントロール目立つようにに比べて配置他のコントロールにします。  
+##  <a name="makeprominent"></a>  CFileDialog::MakeProminent  
+ Places a control in the dialog so that it stands out compared to other controls.  
   
 ```  
 HRESULT MakeProminent(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コントロールの ID。  
+ The ID of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onbuttonclicked"></a>CFileDialog::OnButtonClicked  
- ボタンがクリックされたときに呼び出されます。  
+##  <a name="onbuttonclicked"></a>  CFileDialog::OnButtonClicked  
+ Called when the button is clicked.  
   
 ```  
 virtual void OnButtonClicked(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- ボタンの ID です。  
+ The ID of the button.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="oncheckbuttontoggled"></a>CFileDialog::OnCheckButtonToggled  
- チェック ボックスがオンまたはオフのときに呼び出されます。  
+##  <a name="oncheckbuttontoggled"></a>  CFileDialog::OnCheckButtonToggled  
+ Called when the check box is checked or unchecked.  
   
 ```  
 virtual void OnCheckButtonToggled(
@@ -1009,84 +1070,84 @@ virtual void OnCheckButtonToggled(
     BOOL bChecked);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- チェック ボックスの ID です。  
+ The ID of the check box.  
   
  `bChecked`  
- 選択または選択解除します。  
+ Checked or unchecked.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="oncontrolactivating"></a>CFileDialog::OnControlActivating  
- コントロールがアクティブになったときに呼び出されます。  
+##  <a name="oncontrolactivating"></a>  CFileDialog::OnControlActivating  
+ Called when the control is activated.  
   
 ```  
 virtual void OnControlActivating(DWORD dwIDCtl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コントロールの ID。  
+ The ID of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfilenamechange"></a>CFileDialog::OnFileNameChange  
- このメソッドをオーバーライドして、処理する場合、`WM_NOTIFY``CDN_SELCHANGE`メッセージ。  
+##  <a name="onfilenamechange"></a>  CFileDialog::OnFileNY` `Change  
+ Override this method if you want to handle the `WM_NOTIFY` `CDN_SELCHANGE` message.  
   
 ```  
 virtual void OnFileNameChange();
 ```  
   
-### <a name="remarks"></a>コメント  
- システムは、送信、`CDN_SELCHANGE`ユーザー ファイルの一覧で、新しいファイルまたはフォルダーを選択すると、メッセージ、**開く**または**名前を付けて保存** ダイアログ ボックス。 このメッセージに応答アクションを実行する場合は、このメソッドをオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ The system sends the `CDN_SELCHANGE` message when the user selects a new file or folder in the file list of the **Open** or **Save As** dialog box. Override this method if you want to perform any actions in response to this message.  
   
- システムは、OFN_EXPLORER フラグをオンになっていると、ダイアログ ボックスが作成された場合にのみ、このメッセージを送信します。 通知の詳細については、次を参照してください。 [CDN_SELCHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646865)です。 OFN_EXPLORER フラグについては、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造と[開くおよびダイアログ ボックスとして保存](http://msdn.microsoft.com/library/windows/desktop/ms646960)です。  
+ The system sends this message only if the dialog box was created with the OFN_EXPLORER flag turned on. For more information about the notification, see [CDN_SELCHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646865). For information about the OFN_EXPLORER flag, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure and [Open and Save As Dialog Boxes](http://msdn.microsoft.com/library/windows/desktop/ms646960).  
   
-##  <a name="onfilenameok"></a>CFileDialog::OnFileNameOK  
- コモン ファイル ダイアログ ボックスに入力されたファイル名のカスタム検証を提供する場合にのみ、この関数をオーバーライドします。  
+##  <a name="onfilenameok"></a>  CFileDialog::OnFileNameOK  
+ Override this function only if you want to provide custom validation of filenames that are entered into a common file dialog box.  
   
 ```  
 virtual BOOL OnFileNameOK();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ファイル名が有効なファイル名ではない場合は 1それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ 1 if the filename is not a valid filename; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数では、アプリケーション固有の何らかの理由で、ファイル名を拒否することができます。 通常、フレームワークは、ファイル名の既定の検証を提供し、無効なファイル名が入力された場合は、メッセージ ボックスを表示するために、この関数を使用する必要はありません。  
+### <a name="remarks"></a>Remarks  
+ This function allows you to reject a filename for any application-specific reason. Normally, you do not need to use this function because the framework provides default validation of filenames and displays a message box if an invalid filename is entered.  
   
- 1 が返される場合は、ダイアログ ボックスが別のファイル名を入力するユーザーに対して表示されません。 ダイアログの手順は、戻り値が 0 の場合、ダイアログ ボックスを破棄します。 他の 0 以外を返します値は現在予約されているとは使用できません。  
+ If 1 is returned, the dialog box will remain displayed for the user to enter another filename. The dialog procedure dismisses the dialog if the return is 0. Other nonzero return values are currently reserved and should not be used.  
   
-##  <a name="onfolderchange"></a>CFileDialog::OnFolderChange  
- 処理するには、この関数をオーバーライドして、 **WM_NOTIFYCDN_FOLDERCHANGE**メッセージ。  
+##  <a name="onfolderchange"></a>  CFileDialog::OnFolderChange  
+ Override this function to handle the **WM_NOTIFYCDN_FOLDERCHANGE** message.  
   
 ```  
 virtual void OnFolderChange();
 ```  
   
-### <a name="remarks"></a>コメント  
- Open または名前を付けて保存 ダイアログ ボックスで、新しいフォルダーを開いたときに通知メッセージが送信されます。  
+### <a name="remarks"></a>Remarks  
+ The notification message is sent when a new folder is opened in the Open or Save As dialog box.  
   
- ダイアログ ボックスが OFN_EXPLORER スタイルで作成された場合にのみ、通知が送信されます。 通知の詳細については、次を参照してください。 [CDN_FOLDERCHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646859)です。 OFN_EXPLORER スタイルの詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造と[開くおよびダイアログ ボックスとして保存](http://msdn.microsoft.com/library/windows/desktop/ms646960)です。  
+ Notification is sent only if the dialog box was created with the OFN_EXPLORER style. For more information about the notification, see [CDN_FOLDERCHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646859). For information about the OFN_EXPLORER style, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure and [Open and Save As Dialog Boxes](http://msdn.microsoft.com/library/windows/desktop/ms646960).  
   
-##  <a name="oninitdone"></a>CFileDialog::OnInitDone  
- 処理するには、この関数をオーバーライドして、`WM_NOTIFY``CDN_INITDONE`メッセージ。  
+##  <a name="oninitdone"></a>  CFileDialog::OnInitDone  
+ Override this function to handle the `WM_NOTIFY` `CDN_INITDONE` message.  
   
 ```  
 virtual void OnInitDone();
 ```  
   
-### <a name="remarks"></a>コメント  
- システムのコントロールでの配置が完了すると、システムはこの通知メッセージを送信、**開く**または**名前を付けて保存** ダイアログ ボックス、子 ダイアログ ボックスのコントロールの確保するためにします。  
+### <a name="remarks"></a>Remarks  
+ The system sends this notification message when the system has finished arranging controls in the **Open** or **Save As** dialog box to make room for the controls of the child dialog box.  
   
- システムはこのダイアログ ボックスが OFN_EXPLORER スタイルで作成された場合にのみ送信します。 通知の詳細については、次を参照してください。 [CDN_INITDONE](http://msdn.microsoft.com/library/windows/desktop/ms646863)です。 OFN_EXPLORER スタイルの詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造と[開くおよびダイアログ ボックスとして保存](http://msdn.microsoft.com/library/windows/desktop/ms646960)です。  
+ The system sends this only if the dialog box was created with the OFN_EXPLORER style. For more information about the notification, see [CDN_INITDONE](http://msdn.microsoft.com/library/windows/desktop/ms646863). For information about the OFN_EXPLORER style, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure and [Open and Save As Dialog Boxes](http://msdn.microsoft.com/library/windows/desktop/ms646960).  
   
 > [!NOTE]
-> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイルのファイル ダイアログでは、この関数をサポートしていません。 に対してこの関数を使用しようとすると、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイル ファイル ダイアログがスローされます[行わない](../../mfc/reference/cnotsupportedexception-class.md)です。 
+> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style file dialogs do not support this function. Attempting to use this function on a [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style file dialog will throw [CNotSupportedException](../../mfc/reference/cnotsupportedexception-class.md). 
   
-##  <a name="onitemselected"></a>CFileDialog::OnItemSelected  
- コンテナー アイテムが選択されているときに呼び出されます。  
+##  <a name="onitemselected"></a>  CFileDialog::OnItemSelected  
+ Called when the container item is selected.  
   
 ```  
 virtual void OnItemSelected(
@@ -1094,17 +1155,17 @@ virtual void OnItemSelected(
     DWORD dwIDItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onlbselchangednotify"></a>CFileDialog::OnLBSelChangedNotify  
- この関数は、リスト ボックスの現在の選択を変更するときに呼び出されます。  
+##  <a name="onlbselchangednotify"></a>  CFileDialog::OnLBSelChangedNotify  
+ This function is called whenever the current selection in a list box is about to change.  
   
 ```  
 virtual void OnLBSelChangedNotify(
@@ -1113,66 +1174,66 @@ virtual void OnLBSelChangedNotify(
     UINT nCode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nIDBox*  
- リスト ボックスまたはコンボ ボックスの選択範囲が発生したの ID。  
+ The ID of the list box or combo box in which the selection occurred.  
   
  `iCurSel`  
- 現在の選択範囲のインデックス。  
+ The index of the current selection.  
   
  `nCode`  
- コントロール通知コード。 このパラメーターは、次の値のいずれかが必要です。  
+ The control notification code. This parameter must have one of the following values:  
   
-- **CD_LBSELCHANGE**指定`iCurSel`単一選択のリスト ボックスで選択された項目。  
+- **CD_LBSELCHANGE** Specifies `iCurSel` is the selected item in a single-selection list box.  
   
-- **CD_LBSELSUB**ことを指定`iCurSel`複数選択のリスト ボックスで選択を解除します。  
+- **CD_LBSELSUB** Specifies that `iCurSel` is no longer selected in a multiselection list box.  
   
-- **CD_LBSELADD**ことを指定`iCurSel`複数選択のリスト ボックスで選択されています。  
+- **CD_LBSELADD** Specifies that `iCurSel` is selected in a multiselection list box.  
   
-- **CD_LBSELNOITEMS**複数選択のリスト ボックス内の選択が存在しないことを指定します。  
+- **CD_LBSELNOITEMS** Specifies that no selection exists in a multiselection list box.  
   
-### <a name="remarks"></a>コメント  
- リスト ボックスで選択範囲の変更のカスタム処理を指定するには、この関数をオーバーライドします。 この関数を使用するにはアクセス権を表示するなど、日付、前回変更された各ファイルのユーザーを選択します。  
+### <a name="remarks"></a>Remarks  
+ Override this function to provide custom handling of selection changes in the list box. For example, you can use this function to display the access rights or date-last-modified of each file the user selects.  
   
-##  <a name="onshareviolation"></a>CFileDialog::OnShareViolation  
- 共有違反のカスタム処理を指定するには、この関数をオーバーライドします。  
+##  <a name="onshareviolation"></a>  CFileDialog::OnShareViolation  
+ Override this function to provide custom handling of share violations.  
   
 ```  
 virtual UINT OnShareViolation(LPCTSTR lpszPathName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszPathName`  
- 共有違反が発生したファイルのパス。  
+ The path of the file on which the share violation occurred.  
   
-### <a name="return-value"></a>戻り値  
- 次のいずれかの値です。  
+### <a name="return-value"></a>Return Value  
+ One of the following values:  
   
-- **OFN_SHAREFALLTHROUGH**  ダイアログ ボックスからファイル名が返されます。  
+- **OFN_SHAREFALLTHROUGH** The filename is returned from the dialog box.  
   
-- **OFN_SHARENOWARN**これ以上の操作を実行する必要はありません。  
+- **OFN_SHARENOWARN** No further action needs to be taken.  
   
-- **OFN_SHAREWARN**このエラーの標準的な警告メッセージが表示されます。  
+- **OFN_SHAREWARN** The user receives the standard warning message for this error.  
   
-### <a name="remarks"></a>コメント  
- 通常、フレームワークは、既定の共有違反のチェックを提供し、共有違反が発生した場合は、メッセージ ボックスを表示するために、この関数を使用する必要はありません。  
+### <a name="remarks"></a>Remarks  
+ Normally, you do not need to use this function because the framework provides default checking of share violations and displays a message box if a share violation occurs.  
   
- 共有違反チェックを無効にする場合は、ビットごとの OR 演算子を使用して、フラグを結合する**OFN_SHAREAWARE**で`m_ofn.Flags`です。  
+ If you want to disable share violation checking, use the bitwise OR operator to combine the flag **OFN_SHAREAWARE** with `m_ofn.Flags`.  
   
-##  <a name="ontypechange"></a>CFileDialog::OnTypeChange  
- 処理するには、この関数をオーバーライドして、 **WM_NOTIFYCDN_TYPECHANGE**メッセージ。  
+##  <a name="ontypechange"></a>  CFileDialog::OnTypeChange  
+ Override this function to handle the **WM_NOTIFYCDN_TYPECHANGE** message.  
   
 ```  
 virtual void OnTypeChange();
 ```  
   
-### <a name="remarks"></a>コメント  
- ユーザーは、新しいファイルの種類の一覧から、開いているファイルの種類のまたは名前を付けて保存 ダイアログ ボックスを選択すると、通知メッセージが送信されます。  
+### <a name="remarks"></a>Remarks  
+ The notification message is sent when the user selects a new file type from the list of file types in the Open or Save As dialog box.  
   
- ダイアログ ボックスが OFN_EXPLORER スタイルで作成された場合にのみ、通知が送信されます。 通知の詳細については、次を参照してください。 [CDN_TYPECHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646868)です。 OFN_EXPLORER スタイルの詳細については、次を参照してください。、 [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839)構造と[開くおよびダイアログ ボックスとして保存](http://msdn.microsoft.com/library/windows/desktop/ms646960)です。  
+ Notification is sent only if the dialog box was created with the OFN_EXPLORER style. For more information about the notification, see [CDN_TYPECHANGE](http://msdn.microsoft.com/library/windows/desktop/ms646868). For information about the OFN_EXPLORER style, see the [OPENFILENAME](http://msdn.microsoft.com/library/windows/desktop/ms646839) structure and [Open and Save As Dialog Boxes](http://msdn.microsoft.com/library/windows/desktop/ms646960).  
   
-##  <a name="removecontrolitem"></a>CFileDialog::RemoveControlItem  
- ダイアログ ボックス内のコンテナー コントロールから項目を削除します。  
+##  <a name="removecontrolitem"></a>  CFileDialog::RemoveControlItem  
+ Removes an item from a container control in the dialog.  
   
 ```  
 HRESULT RemoveControlItem(
@@ -1180,17 +1241,17 @@ HRESULT RemoveControlItem(
     DWORD dwIDItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 項目を削除するコンテナー コントロールの ID。  
+ The ID of the container control to remove the item from.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcheckbuttonstate"></a>CFileDialog::SetCheckButtonState  
- ダイアログ ボックスで、チェック ボタン (チェック ボックス) の現在の状態を設定します。  
+##  <a name="setcheckbuttonstate"></a>  CFileDialog::SetCheckButtonState  
+ Sets the current state of a check button (check box) in the dialog.  
   
 ```  
 HRESULT SetCheckButtonState(
@@ -1198,17 +1259,17 @@ HRESULT SetCheckButtonState(
     BOOL bChecked);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- チェック ボックスの ID です。  
+ The ID of the check box.  
   
  `bChecked`  
- チェック ボックスの状態。 `TRUE`checked; ことを示します`FALSE`オフにした場合を示します。  
+ The state of the check box. `TRUE` indicates checked; `FALSE` indicates Unchecked.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcontrolitemstate"></a>CFileDialog::SetControlItemState  
- ダイアログ ボックスで見つかったコンテナー コントロールの項目の現在の状態を設定します。  
+##  <a name="setcontrolitemstate"></a>  CFileDialog::SetControlItemState  
+ Sets the current state of an item in a container control found in the dialog.  
   
 ```  
 HRESULT SetControlItemState(
@@ -1217,20 +1278,20 @@ HRESULT SetControlItemState(
     CDCONTROLSTATEF dwState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
  `dwState`  
- 1 つまたは複数の値 CDCONTROLSTATE 列挙体からコントロールの新しい状態を示すです。  
+ One or more values from the CDCONTROLSTATE enumeration that indicate the new state of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcontrolitemtext"></a>CFileDialog::SetControlItemText  
- コントロールのアイテムのテキストを設定します。 たとえば、オプション ボタンまたはメニュー内の項目に付随するテキストです。  
+##  <a name="setcontrolitemtext"></a>  CFileDialog::SetControlItemText  
+ Sets the text of a control item. For example, the text that accompanies a radio button or an item in a menu.  
   
 ```  
 HRESULT SetControlItemText(
@@ -1239,20 +1300,20 @@ HRESULT SetControlItemText(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- 項目の ID です。  
+ The ID of the item.  
   
  `strLabel`  
- 項目のテキスト。  
+ Item's text.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcontrollabel"></a>CFileDialog::SetControlLabel  
- ボタンのテキストまたはエディット ボックスのラベルなどのコントロールに関連付けられているテキストを設定します。  
+##  <a name="setcontrollabel"></a>  CFileDialog::SetControlLabel  
+ Sets the text associated with a control, such as button text or an edit box label.  
   
 ```  
 HRESULT SetControlLabel(
@@ -1260,17 +1321,17 @@ HRESULT SetControlLabel(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コントロールの ID。  
+ The ID of the control.  
   
  `strLabel`  
- コントロールの名前。  
+ The control name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcontrolstate"></a>CFileDialog::SetControlState  
- 現在の可視性を設定し、指定されたコントロールの状態を有効にします。  
+##  <a name="setcontrolstate"></a>  CFileDialog::SetControlState  
+ Sets the current visibility and enabled states of a given control.  
   
 ```  
 HRESULT SetControlState(
@@ -1278,17 +1339,17 @@ HRESULT SetControlState(
     CDCONTROLSTATEF dwState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コントロールの ID。  
+ The ID of the control.  
   
  `dwState`  
- 1 つまたは複数の値 CDCONTROLSTATE 列挙体からコントロールの現在の状態を示すです。  
+ One or more values from the CDCONTROLSTATE enumeration that indicate the current state of the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setcontroltext"></a>CFileDialog::SetControlText  
- エクスプ ローラー スタイルで指定したコントロールのテキストを設定するには、このメソッドを呼び出す**開く**または**名前を付けて保存** ダイアログ ボックス。  
+##  <a name="setcontroltext"></a>  CFileDialog::SetControlText  
+ Call this method to set the text for the specified control in an Explorer-style **Open** or **Save As** dialog box.  
   
 ```  
 void SetControlText(
@@ -1301,34 +1362,34 @@ void SetControlText(
     const wchar_t *lpsz);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nID`  
- テキストを設定する対象のコントロールの ID。  
+### <a name="parameters"></a>Parameters  
+ [in] `nID`  
+ The ID of the control for which to set the text.  
   
- [入力] `lpsz`  
- コントロールに設定するテキストを格納する文字列へのポインター。  
+ [in] `lpsz`  
+ A pointer to the string that contains the text to set for the control.  
   
-### <a name="remarks"></a>コメント  
- この関数の両方のバージョンは、Unicode を使用するアプリケーションに対して有効です。 ただし、のみが付いているバージョン、LPCSTR 型を使用するアプリケーションの有効な[!INCLUDE[vcpransi](../../atl-mfc-shared/reference/includes/vcpransi_md.md)]します。  
+### <a name="remarks"></a>Remarks  
+ Both versions of this function are valid for applications that use Unicode. However, only the version with the LPCSTR type is valid for applications that use [!INCLUDE[vcpransi](../../atl-mfc-shared/reference/includes/vcpransi_md.md)].  
   
- このメソッドを使用するのには、OFN_EXPLORER スタイルでダイアログ ボックスを作成する必要があります。 それ以外の場合、アサーションと、関数は失敗します。  
+ To use this method, you must create the dialog box with the OFN_EXPLORER style. Otherwise, the function will fail with an assertion.  
   
-##  <a name="setdefext"></a>CFileDialog::SetDefExt  
- エクスプ ローラー スタイル Open または名前を付けて保存の共通のダイアログ ボックスの既定のファイル名拡張子を設定するには、この関数を呼び出します。  
+##  <a name="setdefext"></a>  CFileDialog::SetDefExt  
+ Call this function to set the default file name extension for an Explorer-style Open or Save As common dialog box.  
   
 ```  
 void SetDefExt(LPCSTR lpsz);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpsz`  
- ダイアログ ボックスのオブジェクトを使用する既定の拡張子を含む文字列へのポインター。 この文字列は、ピリオド (.) を含めることはできません。  
+ A pointer to a string containing the default extension to use for the dialog box object. This string must not contain a period (.).  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスが作成されている必要があります、 **OFN_EXPLORER**スタイルです。 それ以外の場合、関数はアサーションと失敗します。  
+### <a name="remarks"></a>Remarks  
+ The dialog box must have been created with the **OFN_EXPLORER** style; otherwise, the function will fail with an assertion.  
   
-##  <a name="seteditboxtext"></a>CFileDialog::SetEditBoxText  
- 編集ボックス コントロールで現在のテキストを設定します。  
+##  <a name="seteditboxtext"></a>  CFileDialog::SetEditBoxText  
+ Sets the current text in an edit box control.  
   
 ```  
 HRESULT SetEditBoxText(
@@ -1336,30 +1397,30 @@ HRESULT SetEditBoxText(
     const CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- 編集ボックスの ID です。  
+ The ID of the edit box.  
   
  `strText`  
- テキスト値。  
+ The text value.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setproperties"></a>CFileDialog::SetProperties  
- 保存される項目に対して使用される既定値を定義するプロパティ ストアを提供します。  
+##  <a name="setproperties"></a>  CFileDialog::SetProperties  
+ Provides a property store that defines the default values to be used for the item being saved.  
   
 ```  
 BOOL SetProperties(LPCWSTR lpszPropList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszPropList`  
- ";" で区切られた定義済みプロパティのリスト。 フラグの一覧は、次を参照してください。、`Flags`のセクション[OPENFILENAME](http://msdn.microsoft.com/en-us/8cecfd45-f7c1-4f8d-81a0-4e7fecc3b104)です。  
+ A list of predefined properties separated by ";". For a list of the flags, see the `Flags` section of [OPENFILENAME](http://msdn.microsoft.com/en-us/8cecfd45-f7c1-4f8d-81a0-4e7fecc3b104).  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setselectedcontrolitem"></a>CFileDialog::SetSelectedControlItem  
- オプション ボタン グループ、またはダイアログ ボックスで、コンボ ボックス内の特定のアイテムの選択状態を設定します。  
+##  <a name="setselectedcontrolitem"></a>  CFileDialog::SetSelectedControlItem  
+ Sets the selected state of a particular item in an option button group or a combo box found in the dialog.  
   
 ```  
 HRESULT SetSelectedControlItem(
@@ -1367,17 +1428,17 @@ HRESULT SetSelectedControlItem(
     DWORD dwIDItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- コンテナー コントロールの ID。  
+ The ID of the container control.  
   
  `dwIDItem`  
- ユーザーがコントロールで選択した項目の ID。  
+ The ID of the item that the user selected in the control.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="settemplate"></a>CFileDialog::SetTemplate  
- ダイアログ ボックスのテンプレートを設定、 [CFileDialog](../../mfc/reference/cfiledialog-class.md)オブジェクト。  
+##  <a name="settemplate"></a>  CFileDialog::SetTemplate  
+ Sets the dialog box template for the [CFileDialog](../../mfc/reference/cfiledialog-class.md) object.  
   
 ```  
 void SetTemplate(
@@ -1390,27 +1451,27 @@ void SetTemplate(
     LPCTSTR lpWin4ID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nWin3ID`  
- 非エクスプ ローラーのテンプレート リソースの ID 番号を含む`CFileDialog`オブジェクト。 このテンプレートは Windows NT 3.51、または OFN_EXPLORER スタイルが存在しない場合にのみ使用します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nWin3ID`  
+ Contains the ID number of the template resource for the non-Explorer `CFileDialog` object. This template is only used on Windows NT 3.51 or when the OFN_EXPLORER style is not present.  
   
- [入力] `nWin4ID`  
- エクスプ ローラーのテンプレート リソースの ID 番号を含む`CFileDialog`オブジェクト。 このテンプレートはでのみ使用[!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)]以降のバージョン、Windows 95 およびそれ以降のバージョンのと OFN_EXPLORER スタイルが存在する場合またはします。  
+ [in] `nWin4ID`  
+ Contains the ID number of the template resource for the Explorer `CFileDialog` object. This template is used only on [!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)] and later versions, Windows 95 and later versions, or when the OFN_EXPLORER style is present.  
   
- [入力] `lpWin3ID`  
- 非エクスプ ローラーのテンプレート リソースの名前を含む`CFileDialog`オブジェクト。 このテンプレートは Windows NT 3.51、または OFN_EXPLORER スタイルが存在しない場合にのみ使用します。  
+ [in] `lpWin3ID`  
+ Contains the name of the template resource for the non-Explorer `CFileDialog` object. This template is only used on Windows NT 3.51 or when the OFN_EXPLORER style is not present.  
   
- [入力] `lpWin4ID`  
- エクスプ ローラーのテンプレート リソースの名前を含む`CFileDialog`オブジェクト。 このテンプレートはでのみ使用[!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)]以降のバージョン、Windows 95 およびそれ以降のバージョンのと OFN_EXPLORER スタイルが存在する場合またはします。  
+ [in] `lpWin4ID`  
+ Contains the name of the template resource of the Explorer `CFileDialog` object. This template is used only on [!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)] and later versions, Windows 95 and later versions, or when the OFN_EXPLORER style is present.  
   
-### <a name="remarks"></a>コメント  
- 指定されたテンプレートの 1 つだけが使用されます。 システムでは、OFN_EXPLORER スタイルとで、アプリケーションが実行されているオペレーティング システムの有無に基づいて、使用するテンプレートを決定します。 エクスプ ローラーではないとエクスプ ローラー スタイル テンプレートの両方を指定するは、簡単にサポート Windows NT 3.51[!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)]と以降のバージョンで Windows 95 およびそれ以降のバージョン。  
+### <a name="remarks"></a>Remarks  
+ The system will use only one of the specified templates. The system determines which template to use based on the presence of the OFN_EXPLORER style and the operating system that the application is running on. By specifying both a non-Explorer and Explorer-style template, it is easy to support Windows NT 3.51, [!INCLUDE[WinNt4Family](../../mfc/reference/includes/winnt4family_md.md)] and later versions, and Windows 95 and later versions.  
   
 > [!NOTE]
-> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]ファイル ダイアログ ボックスのスタイルは、この関数をサポートしていません。 に対してこの関数を使用しようとすると、[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]スタイル ファイル ダイアログ ボックスがスローされます[行わない](../../mfc/reference/cnotsupportedexception-class.md)です。 代わりにでは、カスタマイズされたダイアログを使用します。 カスタムの使用の詳細については`CFileDialog`を参照してください[IFileDialogCustomize](http://msdn.microsoft.com/library/windows/desktop/bb775912)です。  
+> [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style file dialog boxes do not support this function. Attempting to use this function on a [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] style file dialog box will throw [CNotSupportedException](../../mfc/reference/cnotsupportedexception-class.md). An alternative is to use a customized dialog. For more information about using a custom `CFileDialog`, see [IFileDialogCustomize](http://msdn.microsoft.com/library/windows/desktop/bb775912).  
   
-##  <a name="startvisualgroup"></a>CFileDialog::StartVisualGroup  
- ダイアログ ボックスでグループを宣言します。 "Add"メソッドを後続の呼び出しは、このグループにそれらの要素を追加します。  
+##  <a name="startvisualgroup"></a>  CFileDialog::StartVisualGroup  
+ Declares a visual group in the dialog. Subsequent calls to any "add" method add those elements to this group.  
   
 ```  
 HRESULT StartVisualGroup(
@@ -1418,36 +1479,36 @@ HRESULT StartVisualGroup(
     const CString& strLabel);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwIDCtl`  
- ビジュアルのグループの ID。  
+ The ID of the visual group.  
   
  `strLabel`  
- グループの名前。  
+ The group name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="updateofnfromshelldialog"></a>CFileDialog::UpdateOFNFromShellDialog  
- 更新プログラム、`m_ofn`のデータ構造、 [CFileDialog](../../mfc/reference/cfiledialog-class.md)内部オブジェクトの現在の状態に基づいて。  
+##  <a name="updateofnfromshelldialog"></a>  CFileDialog::UpdateOFNFromShellDialog  
+ Updates the `m_ofn` data structure of the [CFileDialog](../../mfc/reference/cfiledialog-class.md) based on the current state of the internal object.  
   
 ```  
 void UpdateOFNFromShellDialog();
 ```  
   
-### <a name="remarks"></a>コメント  
- 前に Windows のバージョンで[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]、メンバー [OPENFILENAME](https://msdn.microsoft.com/library/ms911906.aspx)データ構造がの状態と同期が継続的に、`CFileDialog`です。 変更、 [m_ofn](#m_ofn)メンバー変数 ダイアログ ボックスの状態に直接影響します。 ダイアログの状態への変更はすぐに m_ofn メンバー変数を更新します。  
+### <a name="remarks"></a>Remarks  
+ In versions of Windows before [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], the member [OPENFILENAME](https://msdn.microsoft.com/library/ms911906.aspx) data structure was continuously synchronized with the state of the `CFileDialog`. Any changes to the [m_ofn](#m_ofn) member variable directly affected the state of the dialog box. Also, any changes to the state of the dialog immediately updated the m_ofn member variable.  
   
- [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]、`m_ofn`データ構造が自動的に更新されません。 内のデータの精度を保証するために、`m_ofn`メンバー変数を呼び出す必要があります、`UpdateOFNFromShellDialog`データにアクセスする前に関数。 Windows はこの関数に自動的の処理中に[IFileDialog::OnFileOK](http://msdn.microsoft.com/library/windows/desktop/bb775879)です。  
+ In [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], the `m_ofn` data structure is not automatically updated. To guarantee the accuracy of the data in the `m_ofn` member variable, you should call the `UpdateOFNFromShellDialog` function before accessing the data. Windows calls this function automatically during the processing of [IFileDialog::OnFileOK](http://msdn.microsoft.com/library/windows/desktop/bb775879).  
   
- 使用する方法についての詳細、`CFileDialog`クラスの下にある[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+ For more information about how to use the `CFileDialog` class under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)], see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-### <a name="example"></a>例  
- この例では更新、`CFileDialog`表示する前にします。 更新する前に、`m_ofn`メンバー変数 ダイアログ ボックスの現在の状態を同期する必要があります。  
+### <a name="example"></a>Example  
+ This example updates the `CFileDialog` before displaying it. Before updating the `m_ofn` member variable, we need to synchronize it to the current state of the dialog box.  
   
- [!code-cpp[NVC_MFC_CFileDialog #1](../../mfc/reference/codesnippet/cpp/cfiledialog-class_7.cpp)]  
+ [!code-cpp[NVC_MFC_CFileDialog#1](../../mfc/reference/codesnippet/cpp/cfiledialog-class_7.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CCommonDialog Class](../../mfc/reference/ccommondialog-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 

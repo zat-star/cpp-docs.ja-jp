@@ -1,5 +1,5 @@
 ---
-title: "CDaoDatabaseInfo 構造体 |Microsoft ドキュメント"
+title: CDaoDatabaseInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CDaoDatabaseInfo structure
+- CDaoDatabaseInfo structure [MFC]
 - DAO (Data Access Objects), Databases collection
 ms.assetid: 68e9e0da-8382-4fc6-8115-1b1519392ddb
 caps.latest.revision: 14
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: ed7eb8612099daf59cb7e722434102095122f3d1
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4403b7ac9d37f55763ecadbac3f8bd912860ea74
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaodatabaseinfo-structure"></a>CDaoDatabaseInfo 構造体
-`CDaoDatabaseInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているデータベース オブジェクトに関する情報が含まれています。  
+# <a name="cdaodatabaseinfo-structure"></a>CDaoDatabaseInfo Structure
+The `CDaoDatabaseInfo` structure contains information about a database object defined for data access objects (DAO).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CDaoDatabaseInfo  
@@ -59,76 +59,76 @@ struct CDaoDatabaseInfo
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- データベース オブジェクトの一意名します。 このプロパティを直接取得する呼び出し[CDaoDatabase::GetName](../../mfc/reference/cdaodatabase-class.md#getname)します。 詳細については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ Uniquely names the database object. To directly retrieve this property, call [CDaoDatabase::GetName](../../mfc/reference/cdaodatabase-class.md#getname). For details, see the topic "Name Property" in DAO Help.  
   
  `m_bUpdatable`  
- 変更をデータベースにできるかどうかを示します。 このプロパティを直接取得する呼び出し[CDaoDatabase::CanUpdate](../../mfc/reference/cdaodatabase-class.md#canupdate)します。 詳細については、DAO ヘルプの「更新可能なプロパティ」を参照してください。  
+ Indicates whether changes can be made to the database. To directly retrieve this property, call [CDaoDatabase::CanUpdate](../../mfc/reference/cdaodatabase-class.md#canupdate). For details, see the topic "Updatable Property" in DAO Help.  
   
  *m_bTransactions*  
- データ ソースがトランザクションをサポートするかどうかを示す、一連のロールバックできます。 後で変更の記録 (キャンセル) またはコミット (保存) します。 データベースが Jet データベース エンジンに基づいている場合は、トランザクションのプロパティは&0; 以外とトランザクションを使用することができます。 他のデータベース エンジンはトランザクションをサポートしていません。 このプロパティを直接取得する呼び出し[CDaoDatabase::CanTransact](../../mfc/reference/cdaodatabase-class.md#cantransact)します。 詳細については、DAO ヘルプの「トランザクション プロパティ」を参照してください。  
+ Indicates whether a data source supports transactions — the recording of a series of changes that can later be rolled back (canceled) or committed (saved). If a database is based on the Microsoft Jet database engine, the Transactions property is nonzero and you can use transactions. Other database engines may not support transactions. To directly retrieve this property, call [CDaoDatabase::CanTransact](../../mfc/reference/cdaodatabase-class.md#cantransact). For details, see the topic "Transactions Property" in DAO Help.  
   
  *m_strVersion*  
- Microsoft Jet データベース エンジンのバージョンを示します。 このプロパティの値を直接取得するには、データベース オブジェクトを呼び出す[GetVersion](../../mfc/reference/cdaodatabase-class.md#getversion)メンバー関数。 詳細については、DAO ヘルプの「バージョン プロパティ」を参照してください。  
+ Indicates the version of the Microsoft Jet database engine. To retrieve the value of this property directly, call the database object's [GetVersion](../../mfc/reference/cdaodatabase-class.md#getversion) member function. For details, see the topic "Version Property" in DAO Help.  
   
  `m_lCollatingOrder`  
- 文字列の比較または並べ替え用のテキストでの並べ替え順序を指定します。 次の値を使用できます。  
+ Specifies the sequence of the sort order in text for string comparison or sorting. Possible values include:  
   
-- **dbSortGeneral**全般 (英語、フランス語、ドイツ語、ポルトガル語、イタリア語、および最新のスペイン語) の並べ替え順序を使用します。  
+- **dbSortGeneral** Use the General (English, French, German, Portuguese, Italian, and Modern Spanish) sort order.  
   
-- **dbSortArabic**アラビア語の並べ替え順序を使用します。  
+- **dbSortArabic** Use the Arabic sort order.  
   
-- **dbSortCyrillic**ロシア語の並べ替え順序を使用します。  
+- **dbSortCyrillic** Use the Russian sort order.  
   
-- **dbSortCzech**チェコ語の並べ替え順序を使用します。  
+- **dbSortCzech** Use the Czech sort order.  
   
-- **dbSortDutch**オランダ語の並べ替え順序を使用します。  
+- **dbSortDutch** Use the Dutch sort order.  
   
-- **dbSortGreek**ギリシャ語の並べ替え順序を使用します。  
+- **dbSortGreek** Use the Greek sort order.  
   
-- **dbSortHebrew**ヘブライ語の並べ替え順序を使用します。  
+- **dbSortHebrew** Use the Hebrew sort order.  
   
-- **dbSortHungarian**ハンガリー語の並べ替え順序を使用します。  
+- **dbSortHungarian** Use the Hungarian sort order.  
   
-- **dbSortIcelandic**アイスランド語の並べ替え順序を使用します。  
+- **dbSortIcelandic** Use the Icelandic sort order.  
   
-- **dbSortNorwdan**かノルウェー語、デンマーク語の並べ替え順序を使用します。  
+- **dbSortNorwdan** Use the Norwegian or Danish sort order.  
   
-- **dbSortPDXIntl** Paradox International 並べ替え順序を使用します。  
+- **dbSortPDXIntl** Use the Paradox International sort order.  
   
-- **dbSortPDXNor** Paradox ノルウェー語、デンマーク語の並べ替え順序を使用します。  
+- **dbSortPDXNor** Use the Paradox Norwegian or Danish sort order.  
   
-- **dbSortPDXSwe** Paradox スウェーデン語、フィンランド語の並べ替え順序を使用します。  
+- **dbSortPDXSwe** Use the Paradox Swedish or Finnish sort order.  
   
-- **dbSortPolish**ポーランド語の並べ替え順序を使用します。  
+- **dbSortPolish** Use the Polish sort order.  
   
-- **dbSortSpanish**スペイン語の並べ替え順序を使用します。  
+- **dbSortSpanish** Use the Spanish sort order.  
   
-- **dbSortSwedFin**かフィンランド語、スウェーデン語の並べ替え順序を使用します。  
+- **dbSortSwedFin** Use the Swedish or Finnish sort order.  
   
-- **dbSortTurkish**トルコ語の並べ替え順序を使用します。  
+- **dbSortTurkish** Use the Turkish sort order.  
   
-- **dbSortUndefined**並べ替え順序が未定義または不明です。  
+- **dbSortUndefined** The sort order is undefined or unknown.  
   
- 詳細については、「をカスタマイズする Windows レジストリ設定のデータ アクセス」DAO ヘルプのトピックを参照してください。  
+ For more information, see the topic "Customizing Windows Registry Settings for Data Access" in DAO Help.  
   
  *m_nQueryTimeout*  
- Microsoft Jet データベース エンジンがタイムアウト エラーの前に待機する秒数は、ODBC データベース クエリの実行時に発生します。 既定のタイムアウト値は、60 秒です。 QueryTimeout が 0 に設定されている場合は、タイムアウトは発生しません。これには、プログラムの応答を停止する可能性があります。 このプロパティの値を直接取得するには、データベース オブジェクトを呼び出す[GetQueryTimeout](../../mfc/reference/cdaodatabase-class.md#getquerytimeout)メンバー関数。 詳細については、DAO ヘルプの「QueryTimeout プロパティ」を参照してください。  
+ The number of seconds the Microsoft Jet database engine waits before a timeout error occurs when a query is run on an ODBC database. The default timeout value is 60 seconds. When QueryTimeout is set to 0, no timeout occurs; this can cause the program to stop responding. To retrieve the value of this property directly, call the database object's [GetQueryTimeout](../../mfc/reference/cdaodatabase-class.md#getquerytimeout) member function. For details, see the topic "QueryTimeout Property" in DAO Help.  
   
  `m_strConnect`  
- 開いているデータベースのソースに関する情報を提供します。 については、文字列を接続し、このプロパティの値を直接取得する方法の詳細については、次を参照してください。、 [CDaoDatabase::GetConnect](../../mfc/reference/cdaodatabase-class.md#getconnect)メンバー関数。 詳細については、DAO のヘルプ「プロパティの接続」を参照してください。  
+ Provides information about the source of an open database. For information about connect strings, and for information about retrieving the value of this property directly, see the [CDaoDatabase::GetConnect](../../mfc/reference/cdaodatabase-class.md#getconnect) member function. For more information, see the topic "Connect Property" in DAO Help.  
   
-## <a name="remarks"></a>コメント  
- データベースがクラスの MFC オブジェクトの基になる DAO オブジェクト[CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)します。 プライマリ、セカンダリ データベースを上記のすべての参照がによって情報が返される方法を示す、 [CDaoWorkspace::GetDatabaseInfo](../../mfc/reference/cdaoworkspace-class.md#getdatabaseinfo)メンバー関数。  
+## <a name="remarks"></a>Remarks  
+ The database is a DAO object underlying an MFC object of class [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md). The references to Primary, Secondary, and All above indicate how the information is returned by the [CDaoWorkspace::GetDatabaseInfo](../../mfc/reference/cdaoworkspace-class.md#getdatabaseinfo) member function.  
   
- によって取得される情報、 [CDaoWorkspace::GetDatabaseInfo](../../mfc/reference/cdaoworkspace-class.md#getdatabaseinfo)メンバー関数は、`CDaoDatabaseInfo`構造体。 呼び出す`GetDatabaseInfo`の`CDaoWorkspace`をデータベース コレクション内でデータベース オブジェクトが格納されているオブジェクト。 `CDaoDatabaseInfo`定義して、`Dump`デバッグでのメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoDatabaseInfo`オブジェクトです。  
+ Information retrieved by the [CDaoWorkspace::GetDatabaseInfo](../../mfc/reference/cdaoworkspace-class.md#getdatabaseinfo) member function is stored in a `CDaoDatabaseInfo` structure. Call `GetDatabaseInfo` for the `CDaoWorkspace` object in whose Databases collection the database object is stored. `CDaoDatabaseInfo` also defines a `Dump` member function in debug builds. You can use `Dump` to dump the contents of a `CDaoDatabaseInfo` object.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CDaoWorkspace Class](../../mfc/reference/cdaoworkspace-class.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)
 

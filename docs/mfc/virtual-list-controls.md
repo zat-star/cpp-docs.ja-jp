@@ -1,74 +1,93 @@
 ---
-title: "仮想リスト コントロール | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "キャッシュ, 仮想リスト コントロール項目のデータ"
-  - "リスト コントロール, リスト ビュー"
-  - "リスト コントロール, virtual"
-  - "仮想リスト コントロール"
+title: Virtual List Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- cache, virtual list control item data
+- list controls [MFC], virtual
+- list controls [MFC], List view
+- virtual list controls
 ms.assetid: 319f841f-e426-423a-8276-d93f965b0b45
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 仮想リスト コントロール
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4c16450ee3a8529513badb118400a32a705bd0d6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-仮想リスト コントロールは **LVS\_OWNERDATA** のスタイルがあるリスト ビュー コントロールです。  このスタイルは、コントロールが `DWORD` まで項目数をサポートすることができます \(既定の項目の数が `int`のみ Extends\)。  ただし、このスタイルによって提供される最も大きな利点はメモリのデータ項目のサブセットを一度に処理できるだけ機能です。  これは仮想一覧表示のコントロールがデータにアクセスする特定のメソッドが既に設定された情報の大きなデータベースで使用するために Loan ようにします。  
+---
+# <a name="virtual-list-controls"></a>Virtual List Controls
+A virtual list control is a list view control that has the **LVS_OWNERDATA** style. This style enables the control to support an item count up to a `DWORD` (the default item count only extends to an `int`). However, the biggest advantage provided by this style is the ability to only have a subset of data items in memory at any one time. This allows the virtual list view control to lend itself for use with large databases of information, where specific methods of accessing data are already in place.  
   
 > [!NOTE]
->  `CListCtrl`の仮想一覧の機能に加えて、MFC は、[CListView](../mfc/reference/clistview-class.md) クラスと同じ機能を提供します。  
+>  In addition to providing virtual list functionality in `CListCtrl`, MFC also provides the same functionality in the [CListView](../mfc/reference/clistview-class.md) class.  
   
- 、注意が必要である互換性の問題があります仮想リスト コントロールを開発するとき。  詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]のリスト ビュー コントロールの互換性の問題セクションを参照します。  
+ There are some compatibility issues you should be aware of when developing virtual list controls. For more information, see the Compatibility Issues section of the List-View Controls topic in the Windows SDK.  
   
-## LVN\_GETDISPINFO 通知の処理  
- 仮想リスト コントロールは若干項目情報を保持します。  選択項目とフォーカス情報を除き、すべての項目情報はコントロールのオーナーによって管理されます。  情報は **LVN\_GETDISPINFO** 通知メッセージによってフレームワークで要求されます。  要求された情報を提供するには、仮想リスト コントロールのオーナー \(またはコントロール自体\) この通知を処理しなければなりません。  これはプロパティ ウィンドウを使用して簡単に行うことができます。[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)を参照してください。  生成されるコード \(`CMyDialog` が仮想リスト コントロール オブジェクトを所有し、ダイアログで通知を処理している場合に\) は、次の例のようになります。:  
+## <a name="handling-the-lvngetdispinfo-notification"></a>Handling the LVN_GETDISPINFO Notification  
+ Virtual list controls maintain very little item information. Except for the item selection and focus information, all item information is managed by the owner of the control. Information is requested by the framework via a **LVN_GETDISPINFO** notification message. To provide the requested information, the owner of the virtual list control (or the control itself) must handle this notification. This can easily be done using the Properties window (see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md)). The resultant code should look something like the following example (where `CMyDialog` owns the virtual list control object and the dialog is handling the notification):  
   
- [!code-cpp[NVC_MFCControlLadenDialog#23](../mfc/codesnippet/CPP/virtual-list-controls_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#23](../mfc/codesnippet/cpp/virtual-list-controls_1.cpp)]  
   
- **LVN\_GETDISPINFO** 通知メッセージに対するハンドラーでどのような情報が要求されているか確認する必要があります。  次の値を指定できます。  
+ In the handler for the **LVN_GETDISPINFO** notification message, you must check to see what type of information is being requested. The possible values are:  
   
--   `LVIF_TEXT`は  `pszText` のメンバー入力する必要があります。  
+-   `LVIF_TEXT` The `pszText` member must be filled in.  
   
--   `LVIF_IMAGE`は  `iImage` のメンバー入力する必要があります。  
+-   `LVIF_IMAGE` The `iImage` member must be filled in.  
   
--   **LVIF\_INDENT**は  *iIndent* メンバー入力する必要があります。  
+-   **LVIF_INDENT** The *iIndent* member must be filled in.  
   
--   `LVIF_PARAM`は  *lParam* メンバーに入力する必要があります。\(サブ項目の存在しない\)。  
+-   `LVIF_PARAM` The *lParam* member must be filled in. (Not present for sub-items.)  
   
--   `LVIF_STATE`メンバーは *、*入力する必要があります。  
+-   `LVIF_STATE` The *state* member must be filled in.  
   
- その後、どの情報をフレームワークが要求されるも提供する必要があります。  
+ You should then supply whatever information is requested back to the framework.  
   
- 次の例では、リスト コントロール オブジェクトの通知ハンドラーの本体から取得した\) 項目のテキスト バッファーとイメージの情報を指定して、1 とおりのメソッドを示しています。:  
+ The following example (taken from the body of the notification handler for the list control object) demonstrates one possible method by supplying information for the text buffers and image of an item:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#24](../mfc/codesnippet/CPP/virtual-list-controls_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#24](../mfc/codesnippet/cpp/virtual-list-controls_2.cpp)]  
   
-## キャッシュと仮想リスト コントロール  
- リスト コントロールでこの型は大きなデータ セットを目的としているため、検索のパフォーマンスを向上するために要求した項目データをキャッシュすることをお勧めします。  フレームワークは、キャッシュの最適化に役立つ **LVN\_ODCACHEHINT** 通知メッセージを送信することによってキャッシュ ヒント機構を提供します。  
+## <a name="caching-and-virtual-list-controls"></a>Caching and Virtual List Controls  
+ Because this type of list control is intended for large data sets, it is recommended that you cache requested item data to improve retrieval performance. The framework provides a cache-hinting mechanism to assist in optimizing the cache by sending an **LVN_ODCACHEHINT** notification message.  
   
- 次の例では、ハンドラー関数に渡される範囲を持つキャッシュを更新します。  
+ The following example updates the cache with the range passed to the handler function.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#25](../mfc/codesnippet/CPP/virtual-list-controls_3.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#25](../mfc/codesnippet/cpp/virtual-list-controls_3.cpp)]  
   
- キャッシュを準備し、維持する詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]のリスト ビュー コントロールのトピックのキャッシュ管理セクションを参照します。  
+ For more information on preparing and maintaining a cache, see the Cache Management section of the List-View Controls topic in the Windows SDK.  
   
-## 特定の項目を検索できます。  
- **LVN\_ODFINDITEM** 通知メッセージが仮想リスト コントロールで特定のリスト コントロール項目が存在する必要がある場合に送信されます。  通知メッセージは、リスト ビュー コントロールが高速なアクセス権を付与または **LVM\_FINDITEM** メッセージを受け取ったときに送信されます。  検索情報は **NMLVFINDITEM** の構造体のメンバーです **LVFINDINFO** 構造体の形式に渡されます。  リスト コントロール内のオブジェクトの `OnChildNotify` 関数をオーバーライドして、このメッセージを処理すれば内部は **LVN\_ODFINDITEM** メッセージがハンドラーの本体、検証します。  見つかった場合、適切なアクションを実行します。  
+## <a name="finding-specific-items"></a>Finding Specific Items  
+ The **LVN_ODFINDITEM** notification message is sent by the virtual list control when a particular list control item needs to be found. The notification message is sent when the list view control receives quick key access or when it receives an **LVM_FINDITEM** message. Search information is sent in the form of an **LVFINDINFO** structure, which is a member of the **NMLVFINDITEM** structure. Handle this message by overriding the `OnChildNotify` function of your list control object and inside the body of the handler, check for the **LVN_ODFINDITEM** message. If found, perform the appropriate action.  
   
- リスト ビュー コントロールによって提供される情報に一致する項目を検索するように準備する必要があります。  一致する項目がない場合、または \-1 を成功した項目のインデックスを返す必要があります。  
+ You should be prepared to search for an item that matches the information given by the list view control. You should return the index of the item if successful, or -1 if no matching item is found.  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

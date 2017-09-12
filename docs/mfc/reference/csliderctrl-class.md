@@ -1,5 +1,5 @@
 ---
-title: "CSliderCtrl クラス |Microsoft ドキュメント"
+title: CSliderCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -48,10 +48,40 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- Windows common controls [C++], CSliderCtrl
-- slider controls, CSliderCtrl class
-- CSliderCtrl class, common controls
-- CSliderCtrl class
+- CSliderCtrl [MFC], CSliderCtrl
+- CSliderCtrl [MFC], ClearSel
+- CSliderCtrl [MFC], ClearTics
+- CSliderCtrl [MFC], Create
+- CSliderCtrl [MFC], CreateEx
+- CSliderCtrl [MFC], GetBuddy
+- CSliderCtrl [MFC], GetChannelRect
+- CSliderCtrl [MFC], GetLineSize
+- CSliderCtrl [MFC], GetNumTics
+- CSliderCtrl [MFC], GetPageSize
+- CSliderCtrl [MFC], GetPos
+- CSliderCtrl [MFC], GetRange
+- CSliderCtrl [MFC], GetRangeMax
+- CSliderCtrl [MFC], GetRangeMin
+- CSliderCtrl [MFC], GetSelection
+- CSliderCtrl [MFC], GetThumbLength
+- CSliderCtrl [MFC], GetThumbRect
+- CSliderCtrl [MFC], GetTic
+- CSliderCtrl [MFC], GetTicArray
+- CSliderCtrl [MFC], GetTicPos
+- CSliderCtrl [MFC], GetToolTips
+- CSliderCtrl [MFC], SetBuddy
+- CSliderCtrl [MFC], SetLineSize
+- CSliderCtrl [MFC], SetPageSize
+- CSliderCtrl [MFC], SetPos
+- CSliderCtrl [MFC], SetRange
+- CSliderCtrl [MFC], SetRangeMax
+- CSliderCtrl [MFC], SetRangeMin
+- CSliderCtrl [MFC], SetSelection
+- CSliderCtrl [MFC], SetThumbLength
+- CSliderCtrl [MFC], SetTic
+- CSliderCtrl [MFC], SetTicFreq
+- CSliderCtrl [MFC], SetTipSide
+- CSliderCtrl [MFC], SetToolTips
 ms.assetid: dd12b084-4eda-4550-a810-8f3cfb06b871
 caps.latest.revision: 22
 author: mikeblome
@@ -71,82 +101,82 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 745dc253ac0837ffc62f47db2038e6302b83b558
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ae609da71c2f805c75e3d8c0bca0011b5b84651a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="csliderctrl-class"></a>CSliderCtrl クラス
-Windows コモン スライダー コントロールの機能を提供します。  
+# <a name="csliderctrl-class"></a>CSliderCtrl Class
+Provides the functionality of the Windows common slider control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CSliderCtrl : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSliderCtrl::CSliderCtrl](#csliderctrl)|`CSliderCtrl` オブジェクトを構築します。|  
+|[CSliderCtrl::CSliderCtrl](#csliderctrl)|Constructs a `CSliderCtrl` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSliderCtrl::ClearSel](#clearsel)|スライダー コントロールの現在の選択をクリアします。|  
-|[CSliderCtrl::ClearTics](#cleartics)|スライダー コントロールから現在の目盛りを削除します。|  
-|[CSliderCtrl::Create](#create)|スライダー コントロールを作成し、それにアタッチ、`CSliderCtrl`オブジェクト。|  
-|[CSliderCtrl::CreateEx](#createex)|指定された Windows 拡張スタイルでスライダー コントロールを作成しにアタッチ、`CSliderCtrl`オブジェクト。|  
-|[CSliderCtrl::GetBuddy](#getbuddy)|特定の場所のスライダー コントロールの連動ウィンドウへのハンドルを取得します。|  
-|[CSliderCtrl::GetChannelRect](#getchannelrect)|スライダー コントロールのチャネルのサイズを取得します。|  
-|[CSliderCtrl::GetLineSize](#getlinesize)|スライダー コントロールの行サイズを取得します。|  
-|[CSliderCtrl::GetNumTics](#getnumtics)|スライダー コントロールの目盛りの数を取得します。|  
-|[CSliderCtrl::GetPageSize](#getpagesize)|スライダー コントロールのページ サイズを取得します。|  
-|[CSliderCtrl::GetPos](#getpos)|スライダーの現在の位置を取得します。|  
-|[CSliderCtrl::GetRange](#getrange)|スライダーの最小値と最大位置を取得します。|  
-|[CSliderCtrl::GetRangeMax](#getrangemax)|スライダーの最大の位置を取得します。|  
-|[CSliderCtrl::GetRangeMin](#getrangemin)|スライダーの最小の位置を取得します。|  
-|[CSliderCtrl::GetSelection](#getselection)|現在の選択範囲を取得します。|  
-|[CSliderCtrl::GetThumbLength](#getthumblength)|現在の trackbar コントロールのスライダーの長さを取得します。|  
-|[CSliderCtrl::GetThumbRect](#getthumbrect)|スライダー コントロールのつまみのサイズを取得します。|  
-|[CSliderCtrl::GetTic](#gettic)|指定された目盛りの位置を取得します。|  
-|[CSliderCtrl::GetTicArray](#getticarray)|スライダー コントロールの目盛りの位置の配列を取得します。|  
-|[CSliderCtrl::GetTicPos](#getticpos)|クライアント座標で指定された目盛りの位置を取得します。|  
-|[CSliderCtrl::GetToolTips](#gettooltips)|存在する場合は、スライダー コントロールに割り当てられているツールヒント コントロールへのハンドルを取得します。|  
-|[CSliderCtrl::SetBuddy](#setbuddy)|スライダー コントロールの連動ウィンドウとして、ウィンドウを割り当てます。|  
-|[CSliderCtrl::SetLineSize](#setlinesize)|スライダー コントロールの行サイズを設定します。|  
-|[CSliderCtrl::SetPageSize](#setpagesize)|スライダー コントロールのページ サイズを設定します。|  
-|[CSliderCtrl::SetPos](#setpos)|スライダーの現在の位置を設定します。|  
-|[CSliderCtrl::SetRange](#setrange)|スライダーの最小値と最大位置を設定します。|  
-|[CSliderCtrl::SetRangeMax](#setrangemax)|スライダーの最大の位置を設定します。|  
-|[CSliderCtrl::SetRangeMin](#setrangemin)|スライダーの最小の位置を設定します。|  
-|[CSliderCtrl::SetSelection](#setselection)|現在の選択範囲を設定します。|  
-|[CSliderCtrl::SetThumbLength](#setthumblength)|現在の trackbar コントロールのスライダーの長さを設定します。|  
-|[CSliderCtrl::SetTic](#settic)|指定された目盛りの位置を設定します。|  
-|[CSliderCtrl::SetTicFreq](#setticfreq)|スライダー コントロールの増分ごとに目盛りの間隔を設定します。|  
-|[CSliderCtrl::SetTipSide](#settipside)|Trackbar コントロールで使用するツール ヒント コントロールを位置。|  
-|[CSliderCtrl::SetToolTips](#settooltips)|スライダー コントロールにツールヒント コントロールを割り当てます。|  
+|[CSliderCtrl::ClearSel](#clearsel)|Clears the current selection in a slider control.|  
+|[CSliderCtrl::ClearTics](#cleartics)|Removes the current tick marks from a slider control.|  
+|[CSliderCtrl::Create](#create)|Creates a slider control and attaches it to a `CSliderCtrl` object.|  
+|[CSliderCtrl::CreateEx](#createex)|Creates a slider control with the specified Windows extended styles and attaches it to a `CSliderCtrl` object.|  
+|[CSliderCtrl::GetBuddy](#getbuddy)|Retrieves the handle to a slider control buddy window at a given location.|  
+|[CSliderCtrl::GetChannelRect](#getchannelrect)|Retrieves the size of the slider control's channel.|  
+|[CSliderCtrl::GetLineSize](#getlinesize)|Retrieves the line size of a slider control.|  
+|[CSliderCtrl::GetNumTics](#getnumtics)|Retrieves the number of tick marks in a slider control.|  
+|[CSliderCtrl::GetPageSize](#getpagesize)|Retrieves the page size of a slider control.|  
+|[CSliderCtrl::GetPos](#getpos)|Retrieves the current position of the slider.|  
+|[CSliderCtrl::GetRange](#getrange)|Retrieves the minimum and maximum positions for a slider.|  
+|[CSliderCtrl::GetRangeMax](#getrangemax)|Retrieves the maximum position for a slider.|  
+|[CSliderCtrl::GetRangeMin](#getrangemin)|Retrieves the minimum position for a slider.|  
+|[CSliderCtrl::GetSelection](#getselection)|Retrieves the range of the current selection.|  
+|[CSliderCtrl::GetThumbLength](#getthumblength)|Retrieves the length of the slider in the current trackbar control.|  
+|[CSliderCtrl::GetThumbRect](#getthumbrect)|Retrieves the size of the slider control's thumb.|  
+|[CSliderCtrl::GetTic](#gettic)|Retrieves the position of the specified tick mark.|  
+|[CSliderCtrl::GetTicArray](#getticarray)|Retrieves the array of tick mark positions for a slider control.|  
+|[CSliderCtrl::GetTicPos](#getticpos)|Retrieves the position of the specified tick mark, in client coordinates.|  
+|[CSliderCtrl::GetToolTips](#gettooltips)|Retrieves the handle to the tooltip control assigned to the slider control, if any.|  
+|[CSliderCtrl::SetBuddy](#setbuddy)|Assigns a window as the buddy window for a slider control.|  
+|[CSliderCtrl::SetLineSize](#setlinesize)|Sets the line size of a slider control.|  
+|[CSliderCtrl::SetPageSize](#setpagesize)|Sets the page size of a slider control.|  
+|[CSliderCtrl::SetPos](#setpos)|Sets the current position of the slider.|  
+|[CSliderCtrl::SetRange](#setrange)|Sets the minimum and maximum positions for a slider.|  
+|[CSliderCtrl::SetRangeMax](#setrangemax)|Sets the maximum position for a slider.|  
+|[CSliderCtrl::SetRangeMin](#setrangemin)|Sets the minimum position for a slider.|  
+|[CSliderCtrl::SetSelection](#setselection)|Sets the range of the current selection.|  
+|[CSliderCtrl::SetThumbLength](#setthumblength)|Sets the length of the slider in the current trackbar control.|  
+|[CSliderCtrl::SetTic](#settic)|Sets the position of the specified tick mark.|  
+|[CSliderCtrl::SetTicFreq](#setticfreq)|Sets the frequency of tick marks per slider control increment.|  
+|[CSliderCtrl::SetTipSide](#settipside)|Positions a tooltip control used by a trackbar control.|  
+|[CSliderCtrl::SetToolTips](#settooltips)|Assigns a tooltip control to a slider control.|  
   
-## <a name="remarks"></a>コメント  
- 「スライダー コントロール」(trackbar とも呼ばれます) は、スライダーと省略可能な目盛りを含むウィンドウ。 ユーザーは、スライダーを移動し、マウスまたは方向キーを使用して、コントロールは、変更を示す通知メッセージを送信します。  
+## <a name="remarks"></a>Remarks  
+ A "slider control" (also known as a trackbar) is a window containing a slider and optional tick marks. When the user moves the slider, using either the mouse or the direction keys, the control sends notification messages to indicate the change.  
   
- スライダー コントロールは、ユーザーを範囲に、不連続値または一連の連続する値を選択する場合に便利です。 たとえば、特定の目盛りをスライダーを移動して、キーボードのリピート間隔を設定するのにユーザーを許可するのにスライダー コントロールを使用する可能性があります。  
+ Slider controls are useful when you want the user to select a discrete value or a set of consecutive values in a range. For example, you might use a slider control to allow the user to set the repeat rate of the keyboard by moving the slider to a given tick mark.  
   
- このコントロール (したがって、`CSliderCtrl`クラス) は、Windows 95/98 および Windows NT 3.51 の下で実行されているプログラムにのみ使用可能な以降。  
+ This control (and therefore the `CSliderCtrl` class) is available only to programs running under Windows 95/98 and Windows NT version 3.51 and later.  
   
- 作成するときに指定する単位で、スライダーが移動します。 たとえば、スライダーが 5 の範囲を指定する場合、スライダー 6 つの位置: スライダー コントロールと、範囲内でインクリメントごとに 1 つの位置の左側に位置します。 通常、これらの各位置が、目盛りによって識別されます。  
+ The slider moves in increments that you specify when you create it. For example, if you specify that the slider should have a range of five, the slider can only occupy six positions: a position at the left side of the slider control and one position for each increment in the range. Typically, each of these positions is identified by a tick mark.  
   
- コンス トラクターを使用して、スライダーを作成して、**作成**のメンバー関数`CSliderCtrl`です。 スライダー コントロールを作成した後にメンバー関数を使用することができます`CSliderCtrl`多くのプロパティを変更します。 変更を行うことができますなどのスライダーの最小値と最大位置を設定する目盛りを描画、選択範囲の設定、スライダーの位置を変更します。  
+ You create a slider by using the constructor and the **Create** member function of `CSliderCtrl`. Once you have created a slider control, you can use member functions in `CSliderCtrl` to change many of its properties. Changes that you can make include setting the minimum and maximum positions for the slider, drawing tick marks, setting a selection range, and repositioning the slider.  
   
- 使用する方法について`CSliderCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CSliderCtrl](../../mfc/using-csliderctrl.md)です。  
+ For more information on using `CSliderCtrl`, see [Controls](../../mfc/controls-mfc.md) and [Using CSliderCtrl](../../mfc/using-csliderctrl.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -155,33 +185,33 @@ class CSliderCtrl : public CWnd
   
  `CSliderCtrl`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcmn.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcmn.h  
   
-##  <a name="clearsel"></a>CSliderCtrl::ClearSel  
- スライダー コントロールの現在の選択をクリアします。  
+##  <a name="clearsel"></a>  CSliderCtrl::ClearSel  
+ Clears the current selection in a slider control.  
   
 ```  
 void ClearSel(BOOL bRedraw = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bRedraw`  
- フラグを再描画します。 このパラメーターは場合**TRUE**スライダーが、選択が解除された後に再描画されます。 それ以外の場合、スライダーが再描画されません。  
+ Redraw flag. If this parameter is **TRUE**, the slider is redrawn after the selection is cleared; otherwise the slider is not redrawn.  
   
-##  <a name="cleartics"></a>CSliderCtrl::ClearTics  
- スライダー コントロールから現在の目盛りを削除します。  
+##  <a name="cleartics"></a>  CSliderCtrl::ClearTics  
+ Removes the current tick marks from a slider control.  
   
 ```  
 void ClearTics(BOOL bRedraw = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bRedraw`  
- フラグを再描画します。 このパラメーターが場合**TRUE**スライダーが目盛りがクリアされた後に再描画されます。 それ以外の場合、スライダーが再描画されません。  
+ Redraw flag. If this parameter is **TRUE**, the slider is redrawn after the tick marks are cleared; otherwise the slider is not redrawn.  
   
-##  <a name="create"></a>CSliderCtrl::Create  
- スライダー コントロールを作成し、それにアタッチ、`CSliderCtrl`オブジェクト。  
+##  <a name="create"></a>  CSliderCtrl::Create  
+ Creates a slider control and attaches it to a `CSliderCtrl` object.  
   
 ```  
 virtual BOOL Create(
@@ -191,31 +221,31 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- スライダー コントロールのスタイルを指定します。 任意の組み合わせを適用[スライダー コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)に記述されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]コントロールにします。  
+ Specifies the slider control's style. Apply any combination of [slider control styles](http://msdn.microsoft.com/library/windows/desktop/bb760147), described in the Windows SDK, to the control.  
   
  `rect`  
- スライダー コントロールのサイズと位置を指定します。 いずれかになります、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体。  
+ Specifies the slider control's size and position. It can be either a [CRect](../../atl-mfc-shared/reference/crect-class.md) object or a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure.  
   
  `pParentWnd`  
- 通常、スライダー コントロールの親ウィンドウを指定します、`CDialog`です。 なければなりません**NULL**です。  
+ Specifies the slider control's parent window, usually a `CDialog`. It must not be **NULL**.  
   
  `nID`  
- スライダー コントロールの ID を指定します  
+ Specifies the slider control's ID.  
   
-### <a name="return-value"></a>戻り値  
- 初期化が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if initialization was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CSliderCtrl` 2 つの手順でします。 最初に、コンス トラクターを呼び出しておよびを呼び出す**作成**、スライダー コントロールを作成しにアタッチする、`CSliderCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CSliderCtrl` in two steps. First, call the constructor, and then call **Create**, which creates the slider control and attaches it to the `CSliderCtrl` object.  
   
- 設定値は、によって`dwStyle`、スライダー コントロールは垂直または水平方向の方向を持つことができます。 いずれかの側では、目盛りが持てる側、またはどちらもします。 連続値の範囲を指定するも使用できます。  
+ Depending on the values set for `dwStyle`, the slider control can have either a vertical or horizontal orientation. It can have tick marks on either side, both sides, or neither. It can also be used to specify a range of consecutive values.  
   
- スライダー コントロールに拡張ウィンドウ スタイルを適用するには、呼び出す[CreateEx](#createex)の代わりに**作成**です。  
+ To apply extended window styles to the slider control, call [CreateEx](#createex) instead of **Create**.  
   
-##  <a name="createex"></a>CSliderCtrl::CreateEx  
- コントロール (子ウィンドウ) を作成しに関連付けます、`CSliderCtrl`オブジェクト。  
+##  <a name="createex"></a>  CSliderCtrl::CreateEx  
+ Creates a control (a child window) and associates it with the `CSliderCtrl` object.  
   
 ```  
 virtual BOOL CreateEx(
@@ -226,118 +256,118 @@ virtual BOOL CreateEx(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the extended style of the control being created. For a list of extended Windows styles, see the `dwExStyle` parameter for [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680) in the Windows SDK.  
   
  `dwStyle`  
- スライダー コントロールのスタイルを指定します。 任意の組み合わせを適用[スライダー コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)に記述されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]コントロールにします。  
+ Specifies the slider control's style. Apply any combination of [slider control styles](http://msdn.microsoft.com/library/windows/desktop/bb760147), described in the Windows SDK, to the control.  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)のクライアント座標で、作成するウィンドウの位置とサイズを記述する構造体`pParentWnd`です。  
+ A reference to a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure describing the size and position of the window to be created, in client coordinates of `pParentWnd`.  
   
  `pParentWnd`  
- コントロールの親であるウィンドウへのポインター。  
+ A pointer to the window that is the control's parent.  
   
  `nID`  
- コントロールの子ウィンドウ ID  
+ The control's child-window ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用して`CreateEx`の代わりに[作成](#create)Windows 拡張スタイル「はじめに」で指定された Windows の拡張スタイルを適用する**ws_ex**です。  
+### <a name="remarks"></a>Remarks  
+ Use `CreateEx` instead of [Create](#create) to apply extended Windows styles, specified by the Windows extended style preface **WS_EX_**.  
   
-##  <a name="csliderctrl"></a>CSliderCtrl::CSliderCtrl  
- `CSliderCtrl` オブジェクトを構築します。  
+##  <a name="csliderctrl"></a>  CSliderCtrl::CSliderCtrl  
+ Constructs a `CSliderCtrl` object.  
   
 ```  
 CSliderCtrl();
 ```  
   
-##  <a name="getbuddy"></a>CSliderCtrl::GetBuddy  
- 特定の場所のスライダー コントロールの連動ウィンドウへのハンドルを取得します。  
+##  <a name="getbuddy"></a>  CSliderCtrl::GetBuddy  
+ Retrieves the handle to a slider control buddy window at a given location.  
   
 ```  
 CWnd* GetBuddy(BOOL fLocation = TRUE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fLocation`  
- 2 つの関連ウィンドウ ハンドルを取得するを示すブール値。 次のいずれかの値になります。  
+ A Boolean value that indicates which of two buddy window handles to retrieve. Can be one of the following values:  
   
-- **TRUE**つまみの左側にある関連ウィンドウ ハンドルを取得します。 スライダー コントロールで使用する場合、`TBS_VERT`スタイル、スライダーの上にある関連メッセージを取得します。  
+- **TRUE** Retrieves the handle to the buddy to the left of the slider. If the slider control uses the `TBS_VERT` style, the message will retrieve the buddy above the slider.  
   
-- **FALSE**つまみの右側にある関連ウィンドウ ハンドルを取得します。 スライダー コントロールで使用する場合、`TBS_VERT`スタイル、スライダーを下にある関連メッセージを取得します。  
+- **FALSE** Retrieves the handle to the buddy to the right of the slider. If the slider control uses the `TBS_VERT` style, the message will retrieve the buddy below the slider.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CWnd](../../mfc/reference/cwnd-class.md)が連動ウィンドウによって指定された位置であるオブジェクトを`fLocation`、または**NULL**関連ウィンドウがその場所に存在しない場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CWnd](../../mfc/reference/cwnd-class.md) object that is the buddy window at the location specified by `fLocation`, or **NULL** if no buddy window exists at that location.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[TBM_GETBUDDY](http://msdn.microsoft.com/library/windows/desktop/bb760178)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 スライダー コントロールのスタイルの説明は、次を参照してください。 [Trackbar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the behavior of the Win32 message [TBM_GETBUDDY](http://msdn.microsoft.com/library/windows/desktop/bb760178), as described in the Windows SDK. For a description of the slider control styles, see [Trackbar Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760147) in the Windows SDK.  
   
-##  <a name="getchannelrect"></a>CSliderCtrl::GetChannelRect  
- スライダー コントロールのチャネルの外接する四角形の位置とサイズを取得します。  
+##  <a name="getchannelrect"></a>  CSliderCtrl::GetChannelRect  
+ Retrieves the size and position of the bounding rectangle for a slider control's channel.  
   
 ```  
 void GetChannelRect(LPRECT lprc) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lprc`  
- ポインター、 [CRect](../../atl-mfc-shared/reference/crect-class.md)チャネルの位置とサイズを格納しているオブジェクトの外接する四角形、関数が戻るときにします。  
+ A pointer to a [CRect](../../atl-mfc-shared/reference/crect-class.md) object that contains the size and position of the channel's bounding rectangle when the function returns.  
   
-### <a name="remarks"></a>コメント  
- チャネルは、スライダーが移動すると、範囲を選択すると強調表示を含む領域です。  
+### <a name="remarks"></a>Remarks  
+ The channel is the area over which the slider moves and which contains the highlight when a range is selected.  
   
-##  <a name="getlinesize"></a>CSliderCtrl::GetLineSize  
- スライダー コントロールの行のサイズを取得します。  
+##  <a name="getlinesize"></a>  CSliderCtrl::GetLineSize  
+ Retrieves the size of the line for a slider control.  
   
 ```  
 int GetLineSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- スライダー コントロールの行のサイズ。  
+### <a name="return-value"></a>Return Value  
+ The size of a line for the slider control.  
   
-### <a name="remarks"></a>コメント  
- 行サイズに影響をどの程度スライダーが移動、 **TB_LINEUP**と**TB_LINEDOWN**通知します。 行サイズの既定の設定は 1 です。  
+### <a name="remarks"></a>Remarks  
+ The line size affects how much the slider moves for the **TB_LINEUP** and **TB_LINEDOWN** notifications. The default setting for the line size is 1.  
   
-##  <a name="getnumtics"></a>CSliderCtrl::GetNumTics  
- スライダー コントロールの目盛りの数を取得します。  
+##  <a name="getnumtics"></a>  CSliderCtrl::GetNumTics  
+ Retrieves the number of tick marks in a slider control.  
   
 ```  
 UINT GetNumTics() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- スライダー コントロールでの目盛りの数。  
+### <a name="return-value"></a>Return Value  
+ The number of tick marks in the slider control.  
   
-##  <a name="getpagesize"></a>CSliderCtrl::GetPageSize  
- スライダー コントロールのページのサイズを取得します。  
+##  <a name="getpagesize"></a>  CSliderCtrl::GetPageSize  
+ Retrieves the size of the page for a slider control.  
   
 ```  
 int GetPageSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- スライダー コントロールのページのサイズ。  
+### <a name="return-value"></a>Return Value  
+ The size of a page for the slider control.  
   
-### <a name="remarks"></a>コメント  
- ページ サイズに影響をどの程度スライダーが移動、 **TB_PAGEUP**と**TB_PAGEDOWN**通知します。  
+### <a name="remarks"></a>Remarks  
+ The page size affects how much the slider moves for the **TB_PAGEUP** and **TB_PAGEDOWN** notifications.  
   
-##  <a name="getpos"></a>CSliderCtrl::GetPos  
- スライダー コントロールのスライダーの現在位置を取得します。  
+##  <a name="getpos"></a>  CSliderCtrl::GetPos  
+ Retrieves the current position of the slider in a slider control.  
   
 ```  
 int GetPos() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在位置を返します。  
+### <a name="return-value"></a>Return Value  
+ The current position.  
   
-##  <a name="getrange"></a>CSliderCtrl::GetRange  
- スライダー コントロールのスライダーの最大と最小の位置を取得します。  
+##  <a name="getrange"></a>  CSliderCtrl::GetRange  
+ Retrieves the maximum and minimum positions for the slider in a slider control.  
   
 ```  
 void GetRange(
@@ -345,38 +375,38 @@ void GetRange(
     int& nMax) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMin`  
- 最小の位置を受け取る整数への参照。  
+ Reference to an integer that receives the minimum position.  
   
  `nMax`  
- 最大の位置を受け取る整数への参照。  
+ Reference to an integer that receives the maximum position.  
   
-### <a name="remarks"></a>コメント  
- この関数によって参照される整数に値をコピーする`nMin`と`nMax`です。  
+### <a name="remarks"></a>Remarks  
+ This function copies the values into the integers referenced by `nMin` and `nMax`.  
   
-##  <a name="getrangemax"></a>CSliderCtrl::GetRangeMax  
- スライダー コントロールのスライダーの最大の位置を取得します。  
+##  <a name="getrangemax"></a>  CSliderCtrl::GetRangeMax  
+ Retrieves the maximum position for the slider in a slider control.  
   
 ```  
 int GetRangeMax() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- コントロールの最大の位置。  
+### <a name="return-value"></a>Return Value  
+ The control's maximum position.  
   
-##  <a name="getrangemin"></a>CSliderCtrl::GetRangeMin  
- スライダー コントロールのスライダーの最小位置を取得します。  
+##  <a name="getrangemin"></a>  CSliderCtrl::GetRangeMin  
+ Retrieves the minimum position for the slider in a slider control.  
   
 ```  
 int GetRangeMin() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- コントロールの最小位置。  
+### <a name="return-value"></a>Return Value  
+ The control's minimum position.  
   
-##  <a name="getselection"></a>CSliderCtrl::GetSelection  
- スライダー コントロールの現在の選択範囲の開始と終了位置を取得します。  
+##  <a name="getselection"></a>  CSliderCtrl::GetSelection  
+ Retrieves the starting and ending positions of the current selection in a slider control.  
   
 ```  
 void GetSelection(
@@ -384,92 +414,92 @@ void GetSelection(
     int& nMax) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMin`  
- 現在の選択範囲の開始位置を受け取る整数への参照。  
+ Reference to an integer that receives the starting position of the current selection.  
   
  `nMax`  
- 現在の選択範囲の終了位置を受け取る整数への参照。  
+ Reference to an integer that receives the ending position of the current selection.  
   
-##  <a name="getthumblength"></a>CSliderCtrl::GetThumbLength  
- 現在の trackbar コントロールのスライダーの長さを取得します。  
+##  <a name="getthumblength"></a>  CSliderCtrl::GetThumbLength  
+ Retrieves the length of the slider in the current trackbar control.  
   
 ```  
 int GetThumbLength() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ピクセル単位で、スライダーの長さ。  
+### <a name="return-value"></a>Return Value  
+ The length of the slider, in pixels.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [TBM_GETTHUMBLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760201)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [TBM_GETTHUMBLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760201) message, which is described in the Windows SDK.  
   
-##  <a name="getthumbrect"></a>CSliderCtrl::GetThumbRect  
- スライダー コントロールのスライダー (つまみ) に外接する四角形の位置とサイズを取得します。  
+##  <a name="getthumbrect"></a>  CSliderCtrl::GetThumbRect  
+ Retrieves the size and position of the bounding rectangle for the slider (thumb) in a slider control.  
   
 ```  
 void GetThumbRect(LPRECT lprc) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lprc`  
- ポインター、`CRect`関数が返す場合、スライダーの外接する四角形を格納しているオブジェクト。  
+ A pointer to a `CRect` object that contains the bounding rectangle for the slider when the function returns.  
   
-##  <a name="gettic"></a>CSliderCtrl::GetTic  
- スライダー コントロールの目盛りの位置を取得します。  
+##  <a name="gettic"></a>  CSliderCtrl::GetTic  
+ Retrieves the position of a tick mark in a slider control.  
   
 ```  
 int GetTic(int nTic) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nTic`  
- 目盛りを識別する 0 から始まるインデックス。  
+ Zero-based index identifying a tick mark.  
   
-### <a name="return-value"></a>戻り値  
- 指定された目盛りまたは場合は、1 の位置`nTic`有効なインデックスが指定されていません。  
+### <a name="return-value"></a>Return Value  
+ The position of the specified tick mark or - 1 if `nTic` does not specify a valid index.  
   
-##  <a name="getticarray"></a>CSliderCtrl::GetTicArray  
- スライダー コントロールの目盛りの位置を格納する配列のアドレスを取得します。  
+##  <a name="getticarray"></a>  CSliderCtrl::GetTicArray  
+ Retrieves the address of the array containing the positions of tick marks for a slider control.  
   
 ```  
 DWORD* GetTicArray() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- スライダー コントロールの目盛りの位置を格納する配列のアドレス。  
+### <a name="return-value"></a>Return Value  
+ The address of the array containing tick mark positions for the slider control.  
   
-##  <a name="getticpos"></a>CSliderCtrl::GetTicPos  
- ティックのスライダー コントロール内の物理の現在位置を取得します。  
+##  <a name="getticpos"></a>  CSliderCtrl::GetTicPos  
+ Retrieves the current physical position of a tick mark in a slider control.  
   
 ```  
 int GetTicPos(int nTic) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nTic`  
- 目盛りを識別する 0 から始まるインデックス。  
+ Zero-based index identifying a tick mark.  
   
-### <a name="return-value"></a>戻り値  
- 指定された目盛りまたは場合は、1 のクライアント座標で物理的な位置。`nTic`有効なインデックスが指定されていません。  
+### <a name="return-value"></a>Return Value  
+ The physical position, in client coordinates, of the specified tick mark or - 1 if `nTic` does not specify a valid index.  
   
-##  <a name="gettooltips"></a>CSliderCtrl::GetToolTips  
- 存在する場合は、スライダー コントロールに割り当てられているツールヒント コントロールへのハンドルを取得します。  
+##  <a name="gettooltips"></a>  CSliderCtrl::GetToolTips  
+ Retrieves the handle to the tooltip control assigned to the slider control, if any.  
   
 ```  
 CToolTipCtrl* GetToolTips() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md)オブジェクト、または**NULL**ツール ヒントが使用されていない場合。 スライダー コントロールを使用しない場合、 **TBS_TOOLTIPS**スタイル、戻り値は**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) object, or **NULL** if tooltips are not in use. If the slider control does not use the **TBS_TOOLTIPS** style, the return value is **NULL**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装[TBM_GETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb760209)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このメンバー関数によって返される注、`CToolTipCtrl`コントロールへのハンドルではなくオブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the behavior of the Win32 message [TBM_GETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb760209), as described in the Windows SDK. Note that this member function returns a `CToolTipCtrl` object instead of a handle to a control.  
   
- スライダー コントロールのスタイルの説明は、次を参照してください。 [Trackbar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a description of the slider control styles, see [Trackbar Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760147) in the Windows SDK.  
   
-##  <a name="setbuddy"></a>CSliderCtrl::SetBuddy  
- スライダー コントロールの連動ウィンドウとして、ウィンドウを割り当てます。  
+##  <a name="setbuddy"></a>  CSliderCtrl::SetBuddy  
+ Assigns a window as the buddy window for a slider control.  
   
 ```  
 CWnd* SetBuddy(
@@ -477,72 +507,72 @@ CWnd* SetBuddy(
     BOOL fLocation = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWndBuddy`  
- ポインター、`CWnd`スライダー コントロールのメンバーとして設定されるオブジェクト。  
+ A pointer to a `CWnd` object that will be set as the slider control's buddy.  
   
  `fLocation`  
- 関連ウィンドウを表示する場所を指定する値。 この値は、次のいずれかになります。  
+ Value specifying the location at which to display the buddy window. This value can be one of the following:  
   
-- **TRUE** trackbar コントロールで使用する場合、つまみの左側に表示されます、`TBS_HORZ`スタイル。 トラック バーで使用する場合、`TBS_VERT`スタイルを trackbar コントロールの上に表示されます。  
+- **TRUE** The buddy will appear to the left of the trackbar if the trackbar control uses the `TBS_HORZ` style. If the trackbar uses the `TBS_VERT` style, the buddy appears above the trackbar control.  
   
-- **FALSE** trackbar コントロールで使用する場合、つまみの右側に表示されます、`TBS_HORZ`スタイル。 トラック バーで使用する場合、`TBS_VERT`スタイルを trackbar コントロールの下に表示されます。  
+- **FALSE** The buddy will appear to the right of the trackbar if the trackbar control uses the `TBS_HORZ` style. If the trackbar uses the `TBS_VERT` style, the buddy appears below the trackbar control.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CWnd](../../mfc/reference/cwnd-class.md)その場所にあるスライダー コントロールに割り当てられていたオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CWnd](../../mfc/reference/cwnd-class.md) object that was previously assigned to the slider control at that location.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[TBM_SETBUDDY](http://msdn.microsoft.com/library/windows/desktop/bb760213)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 このメンバー関数へのポインターを使用して`CWnd`戻り値とパラメーターの両方のウィンドウ ハンドルではなく、オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the behavior of the Win32 message [TBM_SETBUDDY](http://msdn.microsoft.com/library/windows/desktop/bb760213), as described in the Windows SDK. Note that this member function uses pointers to `CWnd` objects, rather than window handles for both its return value and parameter.  
   
- スライダー コントロールのスタイルの説明は、次を参照してください。 [Trackbar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a description of the slider control styles, see [Trackbar Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760147) in the Windows SDK.  
   
-##  <a name="setlinesize"></a>CSliderCtrl::SetLineSize  
- スライダー コントロールの行のサイズを設定します。  
+##  <a name="setlinesize"></a>  CSliderCtrl::SetLineSize  
+ Sets the size of the line for a slider control.  
   
 ```  
 int SetLineSize(int nSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nSize`  
- スライダー コントロールの新しい行のサイズ。  
+ The new line size of the slider control.  
   
-### <a name="return-value"></a>戻り値  
- 前の行サイズ。  
+### <a name="return-value"></a>Return Value  
+ The previous line size.  
   
-### <a name="remarks"></a>コメント  
- 行サイズに影響をどの程度スライダーが移動、 **TB_LINEUP**と**TB_LINEDOWN**通知します。  
+### <a name="remarks"></a>Remarks  
+ The line size affects how much the slider moves for the **TB_LINEUP** and **TB_LINEDOWN** notifications.  
   
-##  <a name="setpagesize"></a>CSliderCtrl::SetPageSize  
- スライダー コントロールのページのサイズを設定します。  
+##  <a name="setpagesize"></a>  CSliderCtrl::SetPageSize  
+ Sets the size of the page for a slider control.  
   
 ```  
 int SetPageSize(int nSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nSize`  
- スライダー コントロールの新しいページ サイズです。  
+ The new page size of the slider control.  
   
-### <a name="return-value"></a>戻り値  
- 前のページ サイズ。  
+### <a name="return-value"></a>Return Value  
+ The previous page size.  
   
-### <a name="remarks"></a>コメント  
- ページ サイズに影響をどの程度スライダーが移動、 **TB_PAGEUP**と**TB_PAGEDOWN**通知します。  
+### <a name="remarks"></a>Remarks  
+ The page size affects how much the slider moves for the **TB_PAGEUP** and **TB_PAGEDOWN** notifications.  
   
-##  <a name="setpos"></a>CSliderCtrl::SetPos  
- スライダー コントロールのスライダーの現在の位置を設定します。  
+##  <a name="setpos"></a>  CSliderCtrl::SetPos  
+ Sets the current position of the slider in a slider control.  
   
 ```  
 void SetPos(int nPos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPos`  
- 新しいスライダー位置を指定します。  
+ Specifies the new slider position.  
   
-##  <a name="setrange"></a>CSliderCtrl::SetRange  
- スライダー コントロールのスライダーの範囲 (最小値と最大位置) を設定します。  
+##  <a name="setrange"></a>  CSliderCtrl::SetRange  
+ Sets the range (minimum and maximum positions) for the slider in a slider control.  
   
 ```  
 void SetRange(
@@ -551,18 +581,18 @@ void SetRange(
     BOOL bRedraw = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMin`  
- 最小のスライダーの位置。  
+ Minimum position for the slider.  
   
  `nMax`  
- スライダーの最大の位置。  
+ Maximum position for the slider.  
   
  `bRedraw`  
- 再描画フラグ。 このパラメーターが場合**TRUE**スライダーが再描画される範囲を設定した後です。 それ以外の場合、スライダーが再描画されません。  
+ The redraw flag. If this parameter is **TRUE**, the slider is redrawn after the range is set; otherwise the slider is not redrawn.  
   
-##  <a name="setrangemax"></a>CSliderCtrl::SetRangeMax  
- スライダー コントロールのスライダーの最大範囲を設定します。  
+##  <a name="setrangemax"></a>  CSliderCtrl::SetRangeMax  
+ Sets the maximum range for the slider in a slider control.  
   
 ```  
 void SetRangeMax(
@@ -570,15 +600,15 @@ void SetRangeMax(
     BOOL bRedraw = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMax`  
- スライダーの最大の位置。  
+ Maximum position for the slider.  
   
  `bRedraw`  
- 再描画フラグ。 このパラメーターが場合**TRUE**スライダーが再描画される範囲を設定した後です。 それ以外の場合、スライダーが再描画されません。  
+ The redraw flag. If this parameter is **TRUE**, the slider is redrawn after the range is set; otherwise the slider is not redrawn.  
   
-##  <a name="setrangemin"></a>CSliderCtrl::SetRangeMin  
- スライダー コントロールのスライダーの最小の範囲を設定します。  
+##  <a name="setrangemin"></a>  CSliderCtrl::SetRangeMin  
+ Sets the minimum range for the slider in a slider control.  
   
 ```  
 void SetRangeMin(
@@ -586,15 +616,15 @@ void SetRangeMin(
     BOOL bRedraw = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMin`  
- 最小のスライダーの位置。  
+ Minimum position for the slider.  
   
  `bRedraw`  
- 再描画フラグ。 このパラメーターが場合**TRUE**スライダーが再描画される範囲を設定した後です。 それ以外の場合、スライダーが再描画されません。  
+ The redraw flag. If this parameter is **TRUE**, the slider is redrawn after the range is set; otherwise the slider is not redrawn.  
   
-##  <a name="setselection"></a>CSliderCtrl::SetSelection  
- スライダー コントロールの現在の選択範囲の開始と終了位置を設定します。  
+##  <a name="setselection"></a>  CSliderCtrl::SetSelection  
+ Sets the starting and ending positions for the current selection in a slider control.  
   
 ```  
 void SetSelection(
@@ -602,105 +632,105 @@ void SetSelection(
     int nMax);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMin`  
- スライダーの位置を開始しています。  
+ Starting position for the slider.  
   
  `nMax`  
- スライダーの位置を終了しています。  
+ Ending position for the slider.  
   
-##  <a name="setthumblength"></a>CSliderCtrl::SetThumbLength  
- 現在の trackbar コントロールのスライダーの長さを設定します。  
+##  <a name="setthumblength"></a>  CSliderCtrl::SetThumbLength  
+ Sets the length of the slider in the current trackbar control.  
   
 ```  
 void SetThumbLength(int nLength);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `nLength`|ピクセル単位で、スライダーの長さです。|  
+|[in] `nLength`|Length of the slider, in pixels.|  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、trackbar コントロールに設定されている必要があります[TBS_FIXEDLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760147)スタイル。  
+### <a name="remarks"></a>Remarks  
+ This method requires that the trackbar control be set to [TBS_FIXEDLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760147) style.  
   
- このメソッドは、送信、 [TBM_SETTHUMBLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760234)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ This method sends the [TBM_SETTHUMBLENGTH](http://msdn.microsoft.com/library/windows/desktop/bb760234) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例は、変数を定義`m_sliderCtrl`、つまり現在 trackbar コントロールにアクセスするために使用します。 また、変数が定義されています`thumbLength`、つまり trackbar コントロールのつまみのコンポーネントの既定の長さを格納するために使用します。 これらの変数は、次の例で使用されます。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_sliderCtrl`, that is used to access the current trackbar control. The example also defines a variable, `thumbLength`, that is used to store the default length of the trackbar control's thumb component. These variables are used in the next example.  
   
- [!code-cpp[NVC_MFC_CSliderCtrl_s&#1;1](../../mfc/reference/codesnippet/cpp/csliderctrl-class_1.h)]  
+ [!code-cpp[NVC_MFC_CSliderCtrl_s1#1](../../mfc/reference/codesnippet/cpp/csliderctrl-class_1.h)]  
   
-### <a name="example"></a>例  
- 次のコード例は、trackbar コントロールのつまみのコンポーネントを既定の長さ 2 倍に設定します。  
+### <a name="example"></a>Example  
+ The following code example sets the trackbar control's thumb component to twice its default length.  
   
- [!code-cpp[NVC_MFC_CSliderCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/csliderctrl-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_CSliderCtrl_s1#2](../../mfc/reference/codesnippet/cpp/csliderctrl-class_2.cpp)]  
   
-##  <a name="settic"></a>CSliderCtrl::SetTic  
- スライダー コントロールの目盛りの位置を設定します。  
+##  <a name="settic"></a>  CSliderCtrl::SetTic  
+ Sets the position of a tick mark in a slider control.  
   
 ```  
 BOOL SetTic(int nTic);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nTic`  
- 目盛りの位置。 このパラメーターは、正の値を指定する必要があります。  
+ Position of the tick mark. This parameter must specify a positive value.  
   
-### <a name="return-value"></a>戻り値  
- 目盛りが設定されている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the tick mark is set; otherwise 0.  
   
-##  <a name="setticfreq"></a>CSliderCtrl::SetTicFreq  
- スライダーの目盛りでマークの表示頻度を設定します。  
+##  <a name="setticfreq"></a>  CSliderCtrl::SetTicFreq  
+ Sets the frequency with which tick marks are displayed in a slider.  
   
 ```  
 void SetTicFreq(int nFreq);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nFreq*  
- 目盛りの頻度です。  
+ Frequency of the tick marks.  
   
-### <a name="remarks"></a>コメント  
- たとえば、頻度が 2 に設定されている場合、スライダーの範囲内の他のすべての増分の目盛りが表示されます。 頻度が 1 の既定の設定 (つまり、範囲のすべての増分値に関連付けられてティック)。  
+### <a name="remarks"></a>Remarks  
+ For example, if the frequency is set to 2, a tick mark is displayed for every other increment in the slider's range. The default setting for the frequency is 1 (that is, every increment in the range is associated with a tick mark).  
   
- コントロールを作成する必要があります、`TBS_AUTOTICKS`この関数を使用するスタイルです。 詳細については、次を参照してください。 [CSliderCtrl::Create](#create)です。  
+ You must create the control with the `TBS_AUTOTICKS` style to use this function. For more information, see [CSliderCtrl::Create](#create).  
   
-##  <a name="settipside"></a>CSliderCtrl::SetTipSide  
- Trackbar コントロールで使用するツール ヒント コントロールを位置。  
+##  <a name="settipside"></a>  CSliderCtrl::SetTipSide  
+ Positions a tooltip control used by a trackbar control.  
   
 ```  
 int SetTipSide(int nLocation);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLocation`  
- ツール ヒント コントロールを表示する位置を表す値。 使用可能な値の一覧は、Win32 メッセージを参照してください。 [TBM_SETTIPSIDE](http://msdn.microsoft.com/library/windows/desktop/bb760240)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Value representing the location at which to display the tooltip control. For a list of possible values, see the Win32 message [TBM_SETTIPSIDE](http://msdn.microsoft.com/library/windows/desktop/bb760240), as described in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- ツール ヒント コントロールの以前の場所を表す値。 戻り値では、可能な値のいずれかと等しい`nLocation`です。  
+### <a name="return-value"></a>Return Value  
+ A value that represents the tooltip control's previous location. The return value equals one of the possible values for `nLocation`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して**TBM_SETTIPSIDE**で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 スライダー コントロールを使用する、 **TBS_TOOLTIPS**ツールヒントの表示スタイルを設定します。 スライダー コントロールのスタイルの説明は、次を参照してください。 [Trackbar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)で、[!INCLUDE[winsdkshort](../../atl-mfc-shared/reference/includes/winsdkshort_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the behavior of the Win32 message **TBM_SETTIPSIDE**, as described in the Windows SDK. Slider controls that use the **TBS_TOOLTIPS** style display tooltips. For a description of the slider control styles, see [Trackbar Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760147) in the Windows SDK.  
   
-##  <a name="settooltips"></a>CSliderCtrl::SetToolTips  
- スライダー コントロールにツールヒント コントロールを割り当てます。  
+##  <a name="settooltips"></a>  CSliderCtrl::SetToolTips  
+ Assigns a tooltip control to a slider control.  
   
 ```  
 void SetToolTips(CToolTipCtrl* pWndTip);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWndTip`  
- ポインター、 [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md)スライダー コントロールで使用するツール ヒントを含むオブジェクト。  
+ A pointer to a [CToolTipCtrl](../../mfc/reference/ctooltipctrl-class.md) object containing the tooltips to use with the slider control.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、Win32 メッセージの動作を実装して[TBM_SETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb760242)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 スライダー コントロールを作成すると、 **TBS_TOOLTIPS**スタイル、スライダーの現在の位置を表示する、スライダーの横に表示される既定のツールヒント コントロールを作成します。 スライダー コントロールのスタイルの説明は、次を参照してください。 [Trackbar コントロールのスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760147)で、[!INCLUDE[winsdkshort](../../atl-mfc-shared/reference/includes/winsdkshort_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the behavior of the Win32 message [TBM_SETTOOLTIPS](http://msdn.microsoft.com/library/windows/desktop/bb760242), as described in the Windows SDK. When a slider control is created with the **TBS_TOOLTIPS** style, it creates a default tooltip control that appears next to the slider, displaying the slider's current position. For a description of the slider control styles, see [Trackbar Control Styles](http://msdn.microsoft.com/library/windows/desktop/bb760147) in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル CMNCTRL2](../../visual-cpp-samples.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CProgressCtrl クラス](../../mfc/reference/cprogressctrl-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample CMNCTRL2](../../visual-cpp-samples.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CProgressCtrl Class](../../mfc/reference/cprogressctrl-class.md)
 

@@ -1,48 +1,65 @@
 ---
-title: "方法 : テンプレート クラスのメッセージ マップを作成する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "メッセージ マップ, テンプレート クラス"
-  - "テンプレート クラス, 作成 (メッセージ マップを)"
+title: 'How to: Create a Message Map for a Template Class | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- template classes [MFC], creating message maps
+- message maps [MFC]], template classes
 ms.assetid: 4e7e24f8-06df-4b46-82aa-7435c8650de3
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 方法 : テンプレート クラスのメッセージ マップを作成する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2bbd27405bb31e07a006a6285b47cda335649f21
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC メッセージ マップは適切な C\+\+ オブジェクト インスタンスに Windows メッセージを指示するための効率的な方法を提供します。  MFC メッセージ マップ対象の例はアプリケーション クラス、ドキュメント、ビュー クラスのコントロール クラスが、などがあります。  
+---
+# <a name="how-to-create-a-message-map-for-a-template-class"></a>How to: Create a Message Map for a Template Class
+Message mapping in MFC provides an efficient way to direct Windows messages to an appropriate C++ object instance. Examples of MFC message map targets include application classes, document and view classes, control classes, and so on.  
   
- 従来の MFC メッセージ マップでは [BEGIN\_MESSAGE\_MAP](../Topic/BEGIN_MESSAGE_MAP.md) マクロを使用してメッセージ マップの開始要素、各メッセージ処理クラス メソッドのマクロ エントリ、最後に [END\_MESSAGE\_MAP](../Topic/END_MESSAGE_MAP.md) マクロを宣言するとメッセージ マップの終了位置を宣言することを宣言します。  
+ Traditional MFC message maps are declared using the [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) macro to declare the start of the message map, a macro entry for each message-handler class method, and finally the [END_MESSAGE_MAP](reference/message-map-macros-mfc.md#end_message_map) macro to declare the end of the message map.  
   
- [BEGIN\_MESSAGE\_MAP](../Topic/BEGIN_MESSAGE_MAP.md) マクロの 1 種類の制約を含むクラス テンプレート引数とともに使用された場合に発生します。  テンプレート クラスを使用すると、このマクロは、マクロの展開時にそのテンプレート パラメーターによってコンパイル時のエラーが発生します。  [BEGIN\_TEMPLATE\_MESSAGE\_MAP](../Topic/BEGIN_TEMPLATE_MESSAGE_MAP.md) マクロは独自のメッセージ マップを宣言するための単一のテンプレート引数を含むクラスを使用できるように設計されています。  
+ One limitation with the [BEGIN_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_message_map) macro occurs when it is used in conjunction with a class containing template arguments. When used with a template class, this macro will cause a compile-time error due to the missing template parameters during macro expansion. The [BEGIN_TEMPLATE_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_template_message_map) macro was designed to allow classes containing a single template argument to declare their own message maps.  
   
-## 例  
- 外部データ ソースの同期を実現するため [CListBox](../Topic/CListBox%20Class.md) MFC クラスを拡張する例を示します。  **CSyncListBox** Dinner Now クラスは次のように宣言されます。:  
+## <a name="example"></a>Example  
+ Consider an example where the MFC [CListBox](../mfc/reference/clistbox-class.md) class is extended to provide synchronization with an external data source. The fictitious **CSyncListBox** class is declared as follows:  
   
- [!code-cpp[NVC_MFC_CListBox#42](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_1.h)]  
+ [!code-cpp[NVC_MFC_CListBox#42](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_1.h)]  
   
- **CSyncListBox** クラスと同期するデータ ソースを表す単一の型に template 宣言されたです。  また、クラスのメッセージ マップに参加する 3 種類のメソッドを宣言します: **OnPaint**、**OnDestroy**と **OnSynchronize**。  **OnSynchronize** のメソッドは次のように実装されます:  
+ The **CSyncListBox** class is templated on a single type that describes the data source it will synchronize with. It also declares three methods that will participate in the message map of the class: **OnPaint**, **OnDestroy**, and **OnSynchronize**. The **OnSynchronize** method is implemented as follows:  
   
- [!code-cpp[NVC_MFC_CListBox#43](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#43](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_2.cpp)]  
   
- 上記の実装は **CSyncListBox** クラスが **GetCount** のメソッドを、**CArray**など、**CList**実装する、**CMap**、任意のクラス型に特化されるようにします。  **StringizeElement** 関数は次によってとテンプレート関数です:  
+ The above implementation allows the **CSyncListBox** class to be specialized on any class type that implements the **GetCount** method, such as **CArray**, **CList**, and **CMap**. The **StringizeElement** function is a template function prototyped by the following:  
   
- [!code-cpp[NVC_MFC_CListBox#44](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_3.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#44](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_3.cpp)]  
   
- 通常、このクラスのメッセージ マップは次のように定義されています:  
+ Normally, the message map for this class would be defined as:  
   
  `BEGIN_MESSAGE_MAP(CSyncListBox, CListBox)`  
   
@@ -54,22 +71,24 @@ MFC メッセージ マップは適切な C\+\+ オブジェクト インスタ�
   
  `END_MESSAGE_MAP()`  
   
- **LBN\_SYNCHRONIZE** がアプリケーションで定義したカスタム ユーザー定義メッセージです。など:  
+ where **LBN_SYNCHRONIZE** is a custom user message defined by the application, such as:  
   
- [!code-cpp[NVC_MFC_CListBox#45](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_4.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#45](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_4.cpp)]  
   
- 上のマップ マクロは、**CSyncListBox** クラスのテンプレートの仕様は、マクロの展開時に指定されていることが原因でコンパイルされません。  **BEGIN\_TEMPLATE\_MESSAGE\_MAP** マクロは展開されたマクロ マップに指定されたテンプレート パラメーターを組み込むことによって、これを解決します。  このクラスのメッセージ マップがあります:  
+ The above macro map will not compile, due to the fact that the template specification for the **CSyncListBox** class will be missing during macro expansion. The **BEGIN_TEMPLATE_MESSAGE_MAP** macro solves this by incorporating the specified template parameter into the expanded macro map. The message map for this class becomes:  
   
- [!code-cpp[NVC_MFC_CListBox#46](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_5.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#46](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_5.cpp)]  
   
- 次に **CStringList** オブジェクトを使用して **CSyncListBox** クラスのサンプル:使用されています。  
+ The following demonstrates sample usage of the **CSyncListBox** class using a **CStringList** object:  
   
- [!code-cpp[NVC_MFC_CListBox#47](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_6.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#47](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_6.cpp)]  
   
- テストを実行するには、**StringizeElement** 関数は **CStringList** クラスを使用するように特化する必要があります:  
+ To complete the test, the **StringizeElement** function must be specialized to work with the **CStringList** class:  
   
- [!code-cpp[NVC_MFC_CListBox#48](../mfc/codesnippet/CPP/how-to-create-a-message-map-for-a-template-class_7.cpp)]  
+ [!code-cpp[NVC_MFC_CListBox#48](../mfc/codesnippet/cpp/how-to-create-a-message-map-for-a-template-class_7.cpp)]  
   
-## 参照  
- [BEGIN\_TEMPLATE\_MESSAGE\_MAP](../Topic/BEGIN_TEMPLATE_MESSAGE_MAP.md)   
- [メッセージの処理とマップ](../mfc/message-handling-and-mapping.md)
+## <a name="see-also"></a>See Also  
+ [BEGIN_TEMPLATE_MESSAGE_MAP](reference/message-map-macros-mfc.md#begin_template_message_map)   
+ [Message Handling and Mapping](../mfc/message-handling-and-mapping.md)
+
+

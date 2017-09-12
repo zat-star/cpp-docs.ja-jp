@@ -1,104 +1,122 @@
 ---
-title: "MFC クラス ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.wizards.classwizard"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC クラス ウィザード"
-  - "ウィザード (MFC)"
+title: MFC Class Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.wizards.classwizard
+dev_langs:
+- C++
+helpviewer_keywords:
+- wizards (MFC)
+- MFC Class Wizard
 ms.assetid: 8b0dd867-5d07-4214-99be-2a1c1995e6d9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# MFC クラス ウィザード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1d163ea30b71096e457595804bad01a6004e609f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プロジェクト内のクラスにメッセージおよびメッセージ ハンドラーを追加できます。  他のウィザードを起動したり、プロジェクトにクラスを追加したりすることもできます。  
+---
+# <a name="mfc-class-wizard"></a>MFC Class Wizard
+Lets you add messages and message handlers to classes in your project. You can also start other wizards or add a class to your project.  
   
- **MFC クラス ウィザード**を開くには、**\[プロジェクト\]** メニューの **\[クラス ウィザード\]** をクリックします。  キーボード ショートカットでこのウィザードを開く場合は、Ctrl キーと Shift キーを押しながら X キーを押します。  
+ To open the **MFC Class Wizard**, on the **Project** menu, click **Class Wizard**. To open the wizard with a keyboard shortcut, type CTRL+SHIFT+X.  
   
-## UIElement の一覧  
+## <a name="uielement-list"></a>UIElement List  
  **Project**  
- ソリューション内のプロジェクトの名前。  
+ The name of a project in your solution.  
   
- ドロップダウン リスト ボックスで、ソリューションの他のプロジェクトを選択できます。  
+ You can select other projects in your solution from the drop-down list box.  
   
- **\[クラス名\]**  
- プロジェクト内のクラスの名前。  
+ **Class name**  
+ The name of a class in your project.  
   
- **\[クラス名\]** ボックスの一覧でクラスを選択すると、**MFC クラス ウィザード**のコントロールにそのクラスのデータが設定されます。  コントロールの値を変更すると、選択したクラスのデータに変更が反映されます。  
+ When you select a class in the **Class name** list, data from the class populates the controls in the **MFC Class Wizard**. When you change the value of a control, data in the selected class is affected.  
   
- **\[クラスの追加\]**  
- いくつかのソースの 1 つからクラスを追加できます。  
+ **Add Class**  
+ Lets you add a class from one of several sources.  
   
- 選択内容に応じて、**MFC クラス追加ウィザード**、**Typelib クラス追加ウィザード**、**ActiveX コントロール クラス追加ウィザード**、または **MFC ODBC コンシューマー ウィザード**が起動します。  
+ Depending on your selection, the **MFC Add Class Wizard**, **Add Class From Typelib Wizard**, **Add Class From ActiveX Control Wizard**, or **MFC ODBC Consumer Wizard** is started.  
   
- **\[基底クラス\]**  
- **\[クラス名\]** に表示されているクラスの基底クラス。  
+ **Base class**  
+ The base class of the class that is displayed in **Class name**.  
   
- **\[クラスの宣言\]**  
- **\[クラス名\]** のクラスが宣言されているクラス。  
+ **Class declaration**  
+ The class in which the **Class name** class is declared.  
   
- **\[クラスの宣言\]** ボックスは、**\[クラスの実装\]** の名前と異なる場合にだけ表示されます。  
+ The **Class declaration** box is displayed only if the name in it differs from the name in **Class implementation**.  
   
- **リソース**  
- **\[クラス名\]** のリソースの ID \(リソースがある場合\)。  それ以外の場合、**\[リソース\]** ボックスは空になります。  
+ **Resource**  
+ The ID of the resource in **Class name**, if any. Otherwise, the **Resource** box is empty.  
   
- **\[クラスの実装\]**  
- **\[クラス名\]** のクラスの実装が含まれているファイルの名前。  
+ **Class implementation**  
+ The name of the file that contains the implementation of the class in **Class name**.  
   
- 矢印をクリックすることで、別の実装ファイルを選択できます。  利用可能なオプションの一覧を次の表に示します。  
+ You can select a different implementation file by clicking the arrow. The following table lists the available options.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**\[ファイルを開く\]**|クラス ウィザードを終了し、現在のクラスの実装ファイルを開きます。|  
-|**\[含んでいるフォルダーを開く\]**|現在のクラス実装ファイルのあるフォルダーを開きます。|  
-|**\[クリップボードに完全パスをコピー\]**|現在の実装ファイルのパスをクリップボードにコピーします。|  
+|Option|Description|  
+|------------|-----------------|  
+|**Open File**|Exits the class wizard and opens the current class implementation file.|  
+|**Open Containing Folder**|Opens the folder that contains the current class implementation file.|  
+|**Copy Full Path to Clipboard**|Copies the path of the current implementation file to the Clipboard.|  
   
- **コマンド**  
- コマンドとそのメッセージ ハンドラーを追加、削除、編集、または検索できます。  
+ **Commands**  
+ Lets you add, delete, edit, or search for a command and its message handler.  
   
- ハンドラーを追加するには、**\[ハンドラーの追加\]** をクリックするか、**\[オブジェクト ID\]** ボックスまたは **\[メッセージ\]** ボックスの一覧で項目をダブルクリックします。  結果の関数名、ID、およびメッセージが、**\[メンバー関数\]** ボックスの一覧に表示されます。  
+ To add a handler, click **Add Handler**, or double-click an item in the **Object IDs** list or **Messages** list. The resulting function name, ID, and message are displayed in the **Member functions** list.  
   
- ハンドラーを削除するには、**\[メンバー関数\]** ボックスの一覧の項目を選択し、**\[ハンドラーの削除\]** をクリックします。  
+ To delete a handler, select an item in the **Member functions** list and then click **Delete Handler**.  
   
- ハンドラーを変更するには、**\[メンバー関数\]** ボックスの一覧で対応する項目をダブルクリックします。  または、リスト ボックスで項目をクリックして、**\[コードの編集\]** をクリックします。  
+ To modify a handler, double-click the corresponding item in the **Member functions** list. Or, select an item in the list box and then click **Edit Code**.  
   
- **メッセージ**  
- メッセージとそのメッセージ ハンドラーを追加、削除、編集、または検索できます。  
+ **Messages**  
+ Lets you add, delete, edit, or search for a message and its message handler.  
   
- ハンドラーを追加するには、**\[ハンドラーの追加\]** をクリックするか、**\[メッセージ\]** ボックスの一覧で項目をダブルクリックします。  
+ To add a handler, click **Add Handler**, or double-click an item in the **Messages** list.  
   
- カスタム メッセージを追加するには、**\[カスタム メッセージの追加\]** をクリックするか Enter キーを押して、**\[カスタム メッセージの追加\]** ダイアログ ボックスで値を指定します。  このダイアログ ボックスでは、オペレーティング システム全体を通じて重複しないことを保証されたウィンドウ メッセージを処理するために **\[登録済みメッセージ\]** を選択することもできます。  
+ To add a custom message, click **Add Custom Message** or press the Enter key, and then specify values in the **Add Custom Message** dialog box. In that dialog box, you can also select **Registered Message** to handle a window message that is guaranteed to be unique throughout the operating system.  
   
- **\[仮想関数\]**  
- 仮想関数またはオーバーライドされた仮想関数を追加、削除、編集、または検索できます。  
+ **Virtual Functions**  
+ Lets you add, delete, edit, or search for a virtual function, or an overridden virtual function.  
   
- **\[メンバー変数\]**  
- メンバー変数を追加、削除、編集、または検索できます。  
+ **Member Variables**  
+ Lets you add, delete, edit, or search for a member variable.  
   
- **メソッド**  
- メソッドを追加、削除、または検索したり、メソッドの定義または宣言に移動したりできます。  
+ **Methods**  
+ Lets you add, delete, or search for a method, and also go to the definition or declaration of a method.  
   
- メソッドを追加するには、**\[メソッドの追加\]** をクリックし、**\[メソッドの追加\]** ダイアログ ボックスで値を指定します。  
+ To add a method, click **Add Method**, and then specify values in the **Add Method** dialog box.  
   
- メソッドを削除するには、**\[メソッド\]** ボックスの一覧の項目を選択し、**\[メソッドの削除\]** をクリックします。  
+ To delete a method, select an item in the **Methods** list and then click **Delete Method**.  
   
- 宣言を表示するには、**\[メソッド\]** ボックスの一覧の項目を選択し、**\[宣言へ移動\]** をクリックします。  
+ To display a declaration, select an item in the **Methods** list and then click **Go to Declaration.**  
   
- 定義を表示するには、**\[メソッド\]** ボックスの一覧の項目をダブルクリックします。  または、**\[メソッド\]** ボックスの一覧の項目を選択し、**\[定義へ移動\]** ボタンをクリックします。  
+ To display a definition, double-click an item in the **Methods** list. Or, select an item in the **Methods** list and then click the **Go to Definition** button.  
   
-## 参照  
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)
+## <a name="see-also"></a>See Also  
+ [Adding a Class](../../ide/adding-a-class-visual-cpp.md)
+

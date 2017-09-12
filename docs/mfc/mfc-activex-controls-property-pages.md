@@ -1,124 +1,142 @@
 ---
-title: "MFC ActiveX コントロール : プロパティ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CPropertyPageDialog クラス"
-  - "DDP_ 関数"
-  - "DoDataExchange メソッド"
-  - "MFC ActiveX コントロール, プロパティ"
-  - "MFC ActiveX コントロール, プロパティ ページ"
-  - "OLEIVERB_PROPERTIES"
-  - "プロパティ ページ, MFC ActiveX コントロール"
+title: 'MFC ActiveX Controls: Property Pages | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DDP_ functions [MFC]
+- MFC ActiveX controls [MFC], properties
+- property pages [MFC], MFC ActiveX controls
+- DoDataExchange method [MFC]
+- OLEIVERB_PROPERTIES
+- CPropertyPageDialog class [MFC]
+- MFC ActiveX controls [MFC], property pages
 ms.assetid: 1506f87a-9fd6-4505-8380-0dbc9636230e
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC ActiveX コントロール : プロパティ ページ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b61c93f269b38bf4cca26c4cd27c64f8136e6954
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロールのユーザーは、プロパティ ページを使って、ActiveX コントロールのプロパティの表示や変更を行うことができます。  プロパティにアクセスするには、コントロールのプロパティ ダイアログ ボックスを開きます。このダイアログ ボックスには、カスタマイズされたグラフィカル インターフェイスを持つ 1 つ以上のプロパティ ページがあり、コントロール プロパティの表示や編集に使用されます。  
+---
+# <a name="mfc-activex-controls-property-pages"></a>MFC ActiveX Controls: Property Pages
+Property pages allow an ActiveX control user to view and change ActiveX control properties. These properties are accessed by invoking a control properties dialog box, which contains one or more property pages that provide a customized, graphical interface for viewing and editing the control properties.  
   
- ActiveX コントロール プロパティ ページは、2 とおりの方法で表示する:  
+ ActiveX control property pages are displayed in two ways:  
   
--   コントロールのプロパティ**OLEIVERB\_PROPERTIES**動詞 \(\) が呼び出されると、コントロールはコントロールのプロパティ ページを含むモーダルのプロパティ ダイアログ ボックスを開きます。  
+-   When the control's Properties verb (**OLEIVERB_PROPERTIES**) is invoked, the control opens a modal property dialog box that contains the control's property pages.  
   
--   コンテナーは、選択したコントロールのプロパティ ページを表示する独自のモードレス ダイアログ ボックスを表示できます。  
+-   The container can display its own modeless dialog box that shows the property pages of the selected control.  
   
- プロパティ ダイアログ ボックス \(次の図に示す\) のプロパティ ページの切り替えの現在のプロパティ ページ、タブ、およびプロパティ ページのダイアログ ボックスを閉じるなどの一般的なタスクを実行する変更をキャンセルします。または、ActiveX コントロールに変更を適用するボタンのコレクションを表示するための領域で構成されます。  
+ The properties dialog box (illustrated in the following figure) consists of an area for displaying the current property page, tabs for switching between property pages, and a collection of buttons that perform common tasks such as closing the property page dialog, canceling any changes made, or immediately applying any changes to the ActiveX control.  
   
- ![Circ3 のプロパティ ダイアログ ボックス](../mfc/media/vc373i1.gif "vc373I1")  
-Dialog Box プロパティ  
+ ![Properties dialog box for Circ3](../mfc/media/vc373i1.gif "vc373i1")  
+Properties Dialog Box  
   
- ここでは、ActiveX コントロールのプロパティ ページを使用することに関するトピックについて説明します。  次にその例を示します。  
+ This article covers topics related to using property pages in an ActiveX control. These include:  
   
--   [ActiveX コントロールの既定のプロパティ ページの実装](#_core_implementing_the_default_property_page)  
+-   [Implementing the default property page for an ActiveX control](#_core_implementing_the_default_property_page)  
   
--   [プロパティ ページにコントロールを追加できます。](#_core_adding_controls_to_a_property_page)  
+-   [Adding controls to a property page](#_core_adding_controls_to_a_property_page)  
   
--   [DoDataExchange 関数のカスタマイズ](#_core_customizing_the_dodataexchange_function)  
+-   [Customizing the DoDataExchange function](#_core_customizing_the_dodataexchange_function)  
   
- ActiveX コントロールのプロパティ ページを使用する詳細については、次のトピックを参照します:  
+ For more information on using property pages in an ActiveX control, see the following articles:  
   
--   [MFC ActiveX コントロール : カスタム プロパティ ページの追加](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)  
+-   [MFC ActiveX Controls: Adding Another Custom Property Page](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)  
   
--   [MFC ActiveX コントロール : ストック プロパティ ページの使用](../mfc/mfc-activex-controls-using-stock-property-pages.md)  
+-   [MFC ActiveX Controls: Using Stock Property Pages](../mfc/mfc-activex-controls-using-stock-property-pages.md)  
   
- ActiveX コントロール以外の MFC アプリケーションのプロパティ シートを使用する方法については、[プロパティ シート](../mfc/property-sheets-mfc.md)を参照してください。  
+ For information on using property sheets in an MFC application other than an ActiveX control, see [Property Sheets](../mfc/property-sheets-mfc.md).  
   
-##  <a name="_core_implementing_the_default_property_page"></a> 既定のプロパティ ページの実装  
- コントロール プロジェクトを作成するときに ActiveX コントロール ウィザードを使用して ActiveX コントロール ウィザードは [COlePropertyPage クラス](../mfc/reference/colepropertypage-class.md)から派生されるコントロールに既定のプロパティ ページ クラスが用意されています。  まず、このプロパティ ページは空白ですが、コントロール ダイアログ ボックス コントロールまたは設定を追加できます。  ActiveX コントロール ウィザードに 1 番目のプロパティ ページ クラスは既定で作成されるため、追加のプロパティ ページ クラスは、クラス ビューを使用して \(または `COlePropertyPage`から派生しました\) を作成する必要があります。  この手順の詳細については、「[MFC ActiveX コントロール : カスタム プロパティ ページの追加](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)」を参照してください。  
+##  <a name="_core_implementing_the_default_property_page"></a> Implementing the Default Property Page  
+ If you use the ActiveX Control Wizard to create your control project, the ActiveX Control Wizard provides a default property page class for the control derived from [COlePropertyPage Class](../mfc/reference/colepropertypage-class.md). Initially, this property page is blank, but you can add any dialog box control or set of controls to it. Because the ActiveX Control Wizard creates only one property page class by default, additional property page classes (also derived from `COlePropertyPage`) must be created using Class View. For more information on this procedure, see [MFC ActiveX Controls: Adding Another Custom Property Page](../mfc/mfc-activex-controls-adding-another-custom-property-page.md).  
   
- プロパティ ページを実装する場合 \(この場合の既定\) スリー ステップで行います。:  
+ Implementing a property page (in this case, the default) is a three-step process:  
   
-#### プロパティ ページを実装するには  
+#### <a name="to-implement-a-property-page"></a>To implement a property page  
   
-1.  `COlePropertyPage`\-コントロール プロジェクトへの派生クラス\) を追加します。  プロジェクトが ActiveX コントロール ウィザードを使用して作成されている場合 \(この場合は、既定のプロパティ ページ クラスは既に存在します。  
+1.  Add a `COlePropertyPage`-derived class to the control project. If the project was created using the ActiveX Control Wizard (as in this case), the default property page class already exists.  
   
-2.  プロパティ ページのテンプレートにコントロールを追加するには、ダイアログ エディターを使用します。  
+2.  Use the dialog editor to add any controls to the property page template.  
   
-3.  `COlePropertyPage`の `DoDataExchange` 関数\-プロパティ ページ コントロールと ActiveX コントロール間のやり取り価値に派生クラスをカスタマイズします。  
+3.  Customize the `DoDataExchange` function of the `COlePropertyPage`-derived class to exchange values between the property page control and the ActiveX control.  
   
- 例として、次の手順では、単純なコントロール \(「Sample」とも呼ばれます\)。  サンプルでは、MFC ActiveX コントロール ウィザードを使用して作成し、ストック Caption プロパティが含まれています。  
+ For example purposes, the following procedures use a simple control (named "Sample"). Sample was created using the ActiveX Control Wizard and contains only the stock Caption property.  
   
-##  <a name="_core_adding_controls_to_a_property_page"></a> プロパティ ページにコントロールを追加できます。  
+##  <a name="_core_adding_controls_to_a_property_page"></a> Adding Controls to a Property Page  
   
-#### コントロールのプロパティ ページを追加するには  
+#### <a name="to-add-controls-to-a-property-page"></a>To add controls to a property page  
   
-1.  開くコントロール プロジェクトを開き開いているリソース ビュー。  
+1.  With your control project open, open Resource View.  
   
-2.  **ダイアログ** のディレクトリ アイコンをダブルクリックします。  
+2.  Double-click the **Dialog** directory icon.  
   
-3.  **IDD\_PROPPAGE\_SAMPLE** ダイアログ ボックスを開きます。  
+3.  Open the **IDD_PROPPAGE_SAMPLE** dialog box.  
   
-     ActiveX コントロール ウィザードは、ダイアログ ID の最後にプロジェクトの名前を、この場合、サンプル付けます。  
+     The ActiveX Control Wizard appends the name of the project to the end of the dialog ID, in this case, Sample.  
   
-4.  ダイアログ ボックスの領域にツールボックスから選択したコントロールをドラッグ アンド ドロップします。  
+4.  Drag and drop the selected control from the Toolbox onto the dialog box area.  
   
-5.  この例では、テキスト ラベルのキャプション: 「コントロール」 **IDC\_CAPTION** の識別子を持つエディット ボックスのコントロールで十分です。  
+5.  For this example, a text label control "Caption :" and an edit box control with an **IDC_CAPTION** identifier are sufficient.  
   
-6.  変更を保存するには、ツール バーの **\[保存\]** をクリックします。  
+6.  Click **Save** on the Toolbar to save your changes.  
   
- ユーザー インターフェイスが変更されたため、キャプション プロパティとエディット ボックスをリンクする必要があります。  これは、以降のセクションで `CSamplePropPage::DoDataExchange` 関数を編集してされます。  
+ Now that the user interface has been modified, you need to link the edit box with the Caption property. This is done in the following section by editing the `CSamplePropPage::DoDataExchange` function.  
   
-##  <a name="_core_customizing_the_dodataexchange_function"></a> DoDataExchange 関数のカスタマイズ  
- プロパティ ページの [CWnd::DoDataExchange](../Topic/CWnd::DoDataExchange.md) 関数は、コントロールのプロパティの実際の値とプロパティ ページ値をリンクすることができます。  リンクを作成するには、それぞれのコントロールのプロパティに適切なプロパティ ページ フィールドをマップする必要があります。  
+##  <a name="_core_customizing_the_dodataexchange_function"></a> Customizing the DoDataExchange Function  
+ Your property page [CWnd::DoDataExchange](../mfc/reference/cwnd-class.md#dodataexchange) function allows you to link property page values with the actual values of properties in the control. To establish links, you must map the appropriate property page fields to their respective control properties.  
   
- これらの割り当ては、プロパティ ページの **DDP\_** 関数を使用して実装されます。  **DDP\_** 関数は 1 点を除き、標準 MFC ダイアログで使用される **DDX\_** の関数と同様に動作します。  メンバー変数への参照に加えて、**DDP\_** 関数は、コントロール プロパティの名前を指定します。  次は、プロパティ ページの `DoDataExchange` 関数の一般的なエントリです。  
+ These mappings are implemented using the property page **DDP_** functions. The **DDP_** functions work like the **DDX_** functions used in standard MFC dialogs, with one exception. In addition to the reference to a member variable, **DDP_** functions take the name of the control property. The following is a typical entry in the `DoDataExchange` function for a property page.  
   
- [!code-cpp[NVC_MFC_AxUI#31](../mfc/codesnippet/CPP/mfc-activex-controls-property-pages_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#31](../mfc/codesnippet/cpp/mfc-activex-controls-property-pages_1.cpp)]  
   
- この関数は `DDP_TEXT` 関数を使用してキャプションとプロパティ ページの `m_caption` のメンバー変数を関連付けます。  
+ This function associates the property page's `m_caption` member variable with the Caption, using the `DDP_TEXT` function.  
   
- プロパティ ページ コントロールを挿入してもらった後 **DDP\_Text** 関数を使用してプロパティ ページ、`IDC_CAPTION`と実際のコントロール プロパティ、キャプションの間のリンクは、上記のように設定する必要があります。  
+ After you have the property page control inserted, you need to establish a link between the property page control, `IDC_CAPTION`, and the actual control property, Caption, using the **DDP_Text** function as described above.  
   
- [プロパティ ページ](../mfc/reference/property-pages-mfc.md) は チェック ボックス、オプション ボタン、リスト ボックスなどの他のダイアログ コントロール型で使用できます。  次の表は、プロパティ ページ **DDP\_** セット全体で機能し、:  
+ [Property Pages](../mfc/reference/property-pages-mfc.md) are available for other dialog control types, such as check boxes, radio buttons, and list boxes. The table below lists the entire set of property page **DDP_** functions and their purposes:  
   
-### プロパティ ページの関数  
+### <a name="property-page-functions"></a>Property Page Functions  
   
-|関数名|リンクするために使用します。|  
-|---------|--------------------|  
-|`DDP_CBIndex`|コントロール プロパティを使用して、コンボ ボックスで選択された文字列のインデックス。|  
-|`DDP_CBString`|コントロール プロパティを使用して、コンボ ボックスで選択された文字列。  選択された文字列はプロパティの値と同じ文字から始まっている必要がありますが、すべてが一致していなくてもかまいません。|  
-|`DDP_CBStringExact`|コントロール プロパティを使用して、コンボ ボックスで選択された文字列。  選択された文字列とプロパティの文字列値が完全に一致している必要があります。|  
-|`DDP_Check`|コントロール プロパティを持つチェック ボックス。|  
-|`DDP_LBIndex`|コントロールのプロパティを含むリスト ボックスで選択された文字列のインデックス。|  
-|`DDP_LBString`|コントロールのプロパティを含むリスト ボックスで選択された文字列。  選択された文字列はプロパティの値と同じ文字から始まっている必要がありますが、すべてが一致していなくてもかまいません。|  
-|`DDP_LBStringExact`|コントロールのプロパティを含むリスト ボックスで選択された文字列。  選択された文字列とプロパティの文字列値が完全に一致している必要があります。|  
-|`DDP_Radio`|コントロール プロパティを持つオプション ボタン。|  
-|**DDP\_Text**|コントロールのプロパティを含むテキスト。|  
+|Function name|Use this function to link|  
+|-------------------|-------------------------------|  
+|`DDP_CBIndex`|The selected string's index in a combo box with a control property.|  
+|`DDP_CBString`|The selected string in a combo box with a control property. The selected string can begin with the same letters as the property's value but need not match it fully.|  
+|`DDP_CBStringExact`|The selected string in a combo box with a control property. The selected string and the property's string value must match exactly.|  
+|`DDP_Check`|A check box with a control property.|  
+|`DDP_LBIndex`|The selected string's index in a list box with a control property.|  
+|`DDP_LBString`|The selected string in a list box with a control property. The selected string can begin with the same letters as the property's value but need not match it fully.|  
+|`DDP_LBStringExact`|The selected string in a list box with a control property. The selected string and the property's string value must match exactly.|  
+|`DDP_Radio`|A radio button with a control property.|  
+|**DDP_Text**|Text with a control property.|  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [COlePropertyPage クラス](../mfc/reference/colepropertypage-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [COlePropertyPage Class](../mfc/reference/colepropertypage-class.md)
+

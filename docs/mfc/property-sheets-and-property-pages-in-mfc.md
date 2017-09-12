@@ -1,40 +1,59 @@
 ---
-title: "MFC のプロパティ シートとプロパティ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コントロール [MFC], プロパティ シート"
-  - "プロパティ ページ, MFC"
-  - "プロパティ シート, MFC"
-  - "タブ ダイアログ ボックス"
+title: Property Sheets and Property Pages in MFC | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- property pages [MFC], MFC
+- controls [MFC], property sheets
+- property sheets, MFC
+- tab dialog boxes
 ms.assetid: e1bede2b-0285-4b88-a052-0f8a372807a2
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# MFC のプロパティ シートとプロパティ ページ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bd2a171b535dcf83b88958e784129e2cbd0b16f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-タブ ダイアログ ボックスとも呼ばれるプロパティ シートは、プロパティ ページを持つダイアログ ボックスです。  各プロパティ ページはダイアログ テンプレート リソースに基づき、コントロールが含まれています。  これは上部タブのページで囲まれます。  タブの名前は、ページの目的を説明します。  ユーザーは、一連のコントロールを選択するには、プロパティ シートのタブをクリックします。  
+---
+# <a name="property-sheets-and-property-pages-in-mfc"></a>Property Sheets and Property Pages in MFC
+A property sheet, also known as a tab dialog box, is a dialog box that contains property pages. Each property page is based on a dialog template resource and contains controls. It is enclosed on a page with a tab on top. The tab names the page and indicates its purpose. Users click a tab in the property sheet to select a set of controls.  
   
- 意味のある設定、プロパティ シートのコントロールをグループ化するためにページを使用します。  含まれているプロパティ シートに、独自の複数のコントロールがあります。  これらすべてのページに適用されます。  
+ Use pages to group the controls in the property sheet into meaningful sets. The contained property sheet typically has several controls of its own. These apply to all pages.  
   
- プロパティ シートは [CPropertySheet](../mfc/reference/cpropertysheet-class.md)クラスに基づいています。  プロパティ ページは [CPropertyPage](../mfc/reference/cpropertypage-class.md)クラスに基づいています。  
+ Property sheets are based on class [CPropertySheet](../mfc/reference/cpropertysheet-class.md). Property pages are based on class [CPropertyPage](../mfc/reference/cpropertypage-class.md).  
   
- プロパティ シートは、外部オブジェクトの属性を変更するためによく使用されるビューの現在の選択などのダイアログ ボックスを特別な型です。  プロパティ シートに 3 個の本体部分があります: 含むダイアログ ボックスは、そのページを選択するようにユーザーがクリックする各ページの上部にあるタブおよび一つずつ表示される一つ以上のプロパティ ページが表示されます。  プロパティ シートは、変更の設定またはオプションの同様のグループがある場合に便利です。  プロパティ シートは、わかりやすい方法で情報をグループ化します。  
+ A property sheet is a special kind of dialog box that is generally used to modify the attributes of some external object, such as the current selection in a view. The property sheet has three main parts: the containing dialog box, one or more property pages shown one at a time, and a tab at the top of each page that the user clicks to select that page. Property sheets are useful for situations where you have several similar groups of settings or options to change. A property sheet groups information in an easily understood manner.  
   
 > [!NOTE]
->  `CPropertySheet::DoModal`を使用してプロパティ シートを表示したりする場合に、システムは、初回例外を生成する可能性があります。  この例外は、オブジェクトが作成される前にオブジェクトの [ウィンドウ スタイル](../Topic/Window%20Styles.md) を変更しようとしているためです。  この例外の詳細については、それを回避または処理する方法を [CPropertySheet::DoModal](../Topic/CPropertySheet::DoModal.md)を参照し。  
+>  When you are trying to show a property sheet by using `CPropertySheet::DoModal`, the system might generate a first-chance exception. This exception occurs because the system is trying to change the [Window Styles](../mfc/reference/styles-used-by-mfc.md#window-styles) of the object before the object has been created. For more information about this exception, and also how to avoid it or handle it, see [CPropertySheet::DoModal](../mfc/reference/cpropertysheet-class.md#domodal).  
   
-## 参照  
- [プロパティ シート](../mfc/property-sheets-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Property Sheets](../mfc/property-sheets-mfc.md)
+
+

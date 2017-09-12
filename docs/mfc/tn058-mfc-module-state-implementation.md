@@ -1,177 +1,201 @@
 ---
-title: "テクニカル ノート 58: MFC のモジュール状態の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.implementation"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], モジュールの状態"
-  - "MFC [C++], 管理 (状態データを)"
-  - "モジュールの状態 [C++], 管理 (状態データを)"
-  - "モジュールの状態 [C++], 切り替え"
-  - "プロセス状態 [C++]"
-  - "スレッド状態 [C++]"
-  - "TN058"
+title: 'TN058: MFC Module State Implementation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.implementation
+dev_langs:
+- C++
+helpviewer_keywords:
+- thread state [MFC]
+- module states [MFC], managing state data
+- TN058
+- MFC, managing state data
+- module states [MFC], switching
+- DLLs [MFC], module states
+- process state [MFC]
 ms.assetid: 72f5b36f-b3da-4009-a144-24258dcd2b2f
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# テクニカル ノート 58: MFC のモジュール状態の実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9da6f59763f67397a8cf008f9016a561df1d94b8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn058-mfc-module-state-implementation"></a>TN058: MFC Module State Implementation
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- このテクニカル ノートは「MFC のモジュール状態の実装」の構造について説明します。  モジュール状態実装について理解している DLL です \(または OLE インプロセス サーバー\) から共有 MFC DLL を使用する場合に重要です。  
+ This technical note describes the implementation of MFC "module state" constructs. An understanding of the module state implementation is critical for using the MFC shared DLLs from a DLL (or OLE in-process server).  
   
- この説明を読む前に、「 [Creating New ドキュメント、ウィンドウとビュー](../Topic/Creating%20New%20Documents,%20Windows,%20and%20Views.md)の MFC モジュールの状態データの管理」を参照してください。  ここでは、このトピックの重要な使用法についての概要情報が含まれます。  
+ Before reading this note, refer to "Managing the State Data of MFC Modules" in [Creating New Documents, Windows, and Views](../mfc/creating-new-documents-windows-and-views.md). This article contains important usage information and overview information on this subject.  
   
-## 概要  
- 3 種類の MFC ステータス情報があります: モジュール状態、プロセス状態とスレッド状態。  、これらの状態の型を組み合わせることができます。  たとえば、MFC のハンドルのマップはモジュールの両方のローカル ファイルおよびスレッド ローカルです。  これは、2 種類のモジュールがスレッドのバリアント マップを持たせることができます。  
+## <a name="overview"></a>Overview  
+ There are three kinds of MFC state information: Module State, Process State, and Thread State. Sometimes these state types can be combined. For example, MFC's handle maps are both module local and thread local. This allows two different modules to have different maps in each of their threads.  
   
- プロセス状態とスレッド状態は似ています。  これらのデータ項目は、グローバル変数が、適切な Win32s サポートまたは適切なマルチスレッド サポートの特定のプロセスまたはスレッドに固有であることが必要です。  カテゴリに指定されたデータ項目が適合するかは、プロセスとスレッドの境界に関連する項目とその目的のセマンティクスによって異なります。  
+ Process State and Thread State are similar. These data items are things that have traditionally been global variables, but have need to be specific to a given process or thread for proper Win32s support or for proper multithreading support. Which category a given data item fits in depends on that item and its desired semantics with regard to process and thread boundaries.  
   
- モジュール状態は、ローカル ユーザーがプロセスまたはスレッド ローカルのグローバル状態を実際に含めるか、提供できます。一意です。  また、すぐに切り替えることができます。  
+ Module State is unique in that it can contain either truly global state or state that is process local or thread local. In addition, it can be switched quickly.  
   
-## モジュール状態の切り替え  
- 各スレッドは、「および」または「実行中」のモジュール状態へのポインターが格納されます \(予想どおり、ポインターは MFC スレッド ローカルの状態の一部です。  このポインターは、アプリケーションへのコールバック OLE コントロールまたは DLL、または OLE コントロールを呼び出すアプリケーションなど、実行中のスレッドがモジュール境界を渡すときに変更されます。  
+## <a name="module-state-switching"></a>Module State Switching  
+ Each thread contains a pointer to the "current" or "active" module state (not surprisingly, the pointer is part of MFC's thread local state). This pointer is changed when the thread of execution passes a module boundary, such as an application calling into an OLE Control or DLL, or an OLE Control calling back into an application.  
   
- 現在のモジュール状態を **AfxSetModuleState**を呼び出してで切り替え。  ほとんどの場合、API を直接取扱いません。  MFC は、多くの場合、ユーザーには呼び出します。WinMain、OLE エントリ ポイント、**AfxWndProc**など\)。これは、特別な **WndProc**へのモジュール状態が現在かわかっている静的にリンクして作成するすべてのコンポーネントで、特別な `WinMain` されます \(または `DllMain`\)。  MFC\\SRC ディレクトリの DLLMODUL.CPP または APPMODUL.CPP を参照して、このコードを参照できます。  
+ The current module state is switched by calling **AfxSetModuleState**. For the most part, you will never deal directly with the API. MFC, in many cases, will call it for you (at WinMain, OLE entry-points, **AfxWndProc**, etc.). This is done in any component you write by statically linking in a special **WndProc**, and a special `WinMain` (or `DllMain`) that knows which module state should be current. You can see this code by looking at DLLMODUL.CPP or APPMODUL.CPP in the MFC\SRC directory.  
   
- これはモジュール状態を設定し、次に設定することです。  ほとんどの場合、独自のモジュール状態を「Enter キーを現在のスケジューラとして」場合の後、元のコンテキストの戻る「ポップ鳴らしてを付けます。  これは、マクロ [AFX\_MANAGE\_STATE](../Topic/AFX_MANAGE_STATE.md) および特別なクラス **AFX\_MAINTAIN\_STATE**で行われます。  
+ It is rare that you want to set the module state and then not set it back. Most of the time you want to "push" your own module state as the current one and then, after you are done, "pop" the original context back. This is done by the macro [AFX_MANAGE_STATE](reference/extension-dll-macros.md#afx_manage_state) and the special class **AFX_MAINTAIN_STATE**.  
   
- `CCmdTarget` を サポートするモジュール状態の切り替えのための特別な機能があります。  特に、`CCmdTarget` は OLE オートメーション、OLE COM のエントリ ポイントに使用するルート クラスです。  システムに公開されるそのほかのエントリ ポイントのようにこれらのエントリ ポイントは正しいモジュール状態を設定する必要があります。  特定の `CCmdTarget` はどのように「正しい」モジュール状態が必要であることがわかっているか。  答えが後で呼び出されたときに呼び出すことができる」値は、現在のモジュール状態を設定するには、「現在の」モジュール状態は、ユーザー定義の作成時に何を「記録」することです。  その結果、`CCmdTarget` の特定のオブジェクトが関連付けられているモジュール状態は、オブジェクトが作成された場合には、現在のモジュール状態です。  インプロセス サーバーを読み込み、オブジェクトを作成し、そのメソッドを呼び出す簡単な例を示します。  
+ `CCmdTarget` has special features for supporting module state switching. In particular, a `CCmdTarget` is the root class used for OLE automation and OLE COM entry points. Like any other entry point exposed to the system, these entry points must set the correct module state. How does a given `CCmdTarget` know what the "correct" module state should be The answer is that it "remembers" what the "current" module state is when it is constructed, such that it can set the current module state to that "remembered" value when it is later called. As a result, the module state that a given `CCmdTarget` object is associated with is the module state that was current when the object was constructed. Take a simple example of loading an INPROC server, creating an object, and calling its methods.  
   
-1.  DLL は **LoadLibrary**を使用して OLE で読み込まれます。  
+1.  The DLL is loaded by OLE using **LoadLibrary**.  
   
-2.  **RawDllMain** は 最初に呼び出されます。  これは、DLL の既知の静的なモジュール状態にモジュール状態を設定します。  したがって **RawDllMain** は DLL に静的にリンクされます。  
+2. **RawDllMain** is called first. It sets the module state to the known static module state for the DLL. For this reason **RawDllMain** is statically linked to the DLL.  
   
-3.  このオブジェクトに関連付けられたクラス ファクトリのコンストラクターが呼び出されます。  `COleObjectFactory` は `CCmdTarget` から派生され、そのモジュール状態にインスタンス化されたまたはその結果、保存されています。  これは重要です。オブジェクトを作成するためのクラス ファクトリを求められたら、現在のモジュール状態を行うか、習得できます。  
+3.  The constructor for the class factory associated with our object is called. `COleObjectFactory` is derived from `CCmdTarget` and as a result, it remembers in which module state it was instantiated. This is important — when the class factory is asked to create objects, it knows now what module state to make current.  
   
-4.  `DllGetClassObject` は クラス ファクトリを取得します。  MFC はこのモジュールを返します。に関連付けられたクラス ファクトリの一覧で検索します。  
+4. `DllGetClassObject` is called to obtain the class factory. MFC searches the class factory list associated with this module and returns it.  
   
-5.  **COleObjectFactory::XClassFactory2::CreateInstance** が 呼び出されます。  オブジェクトを作成し、手順 3 `COleObjectFactory` \(がインスタンス化されたとき\) 1 で行われた現在のモジュール状態を、この関数によってモジュール状態に戻すこと。  これは [METHOD\_PROLOGUE](../Topic/METHOD_PROLOGUE.md)内に表示されます。  
+5. **COleObjectFactory::XClassFactory2::CreateInstance** is called. Before creating the object and returning it, this function sets the module state to the module state that was current in step 3 (the one that was current when the `COleObjectFactory` was instantiated). This is done inside of [METHOD_PROLOGUE](com-interface-entry-points.md).  
   
-6.  オブジェクトが作成されると、`CCmdTarget` クラスから派生したものであり、同じように保持するモジュール状態がアクティブだった `COleObjectFactory` は、この新しいオブジェクトを作成します。  次に、オブジェクトが呼び出されるたびにに切り替えるかのモジュール状態習得できます。  
+6.  When the object is created, it too is a `CCmdTarget` derivative and in the same way `COleObjectFactory` remembered which module state was active, so does this new object. Now the object knows which module state to switch to whenever it is called.  
   
-7.  クライアントの呼び出し `CoCreateInstance` の呼び出しから受け取った OLE COM オブジェクトの関数。  オブジェクトが呼び出されると、`COleObjectFactory` ようにモジュール状態を切り替えるには `METHOD_PROLOGUE` を使用します。  
+7.  The client calls a function on the OLE COM object it received from its `CoCreateInstance` call. When the object is called it uses `METHOD_PROLOGUE` to switch the module state just like `COleObjectFactory` does.  
   
- 参照できるようにモジュール状態はオブジェクトからオブジェクトに対するこれらの作成時に反映されます。  これが重要モジュール状態に適切に設定されることになります。  これが設定されていない場合、または COM DLL を呼び出している、または所有されたリソースが見つからないことがあります。そのほかの悲惨な形で失敗することがありますオブジェクトを MFC アプリケーションと不完全にやり取りする可能性がある。  
+ As you can see, the module state is propagated from object to object as they are created. It is important to have the module state set appropriately. If it is not set, your DLL or COM object may interact poorly with an MFC application that is calling it, or may be unable to find its own resources, or may fail in other miserable ways.  
   
- 特定の種類の DLL が、特に「の」MFC 拡張 DLL **RawDllMain** モジュール状態の切り替えことに注意してください。実際には、通常 **RawDllMain**できません\)。  これは」実際に使用するアプリケーションの場合と同様に、ユーザーが「実行するためです。  これらは、実行されている場合は、そのアプリケーションのグローバル状態を変更することが目的です。アプリケーションの一部です。  
+ Note that certain kinds of DLLs, specifically "MFC Extension" DLLs do not switch the module state in their **RawDllMain** (actually, they usually don't even have a **RawDllMain**). This is because they are intended to behave "as if" they were actually present in the application that uses them. They are very much a part of the application that is running and it is their intention to modify that application's global state.  
   
- OLE コントロールやそのほかの DLL は大きく異なります。  これらは、呼び出し元のアプリケーションの状態を変更しない; これらの呼び出し元のアプリケーションは、MFC アプリケーションでなく、ため、変更する状態ではないそうでない場合があります。  これはモジュール状態の切り替えが利用された理由です。  
+ OLE Controls and other DLLs are very different. They do not want to modify the calling application's state; the application that is calling them may not even be an MFC application and so there may be no state to modify. This is the reason that module state switching was invented.  
   
- DLL のダイアログ ボックスを起動する 1 種類のような DLL からエクスポートされた関数の場合、関数の先頭に次のコードを追加する必要があります:  
+ For exported functions from a DLL, such as one that launches a dialog box in your DLL, you need to add the following code to the beginning of the function:  
   
 ```  
-AFX_MANAGE_STATE(AfxGetStaticModuleState( ))  
+AFX_MANAGE_STATE(AfxGetStaticModuleState())  
 ```  
   
- これは、現在のスコープを閉じるまでの [AfxGetStaticModuleState](../Topic/AfxGetStaticModuleState.md) から返される状態を使用して、現在のモジュール状態を交換します。  
+ This swaps the current module state with the state returned from [AfxGetStaticModuleState](reference/extension-dll-macros.md#afxgetstaticmodulestate) until the end of the current scope.  
   
- DLL のリソースに問題が `AFX_MODULE_STATE` マクロが使用されていない場合に発生します。  既定で、MFC はリソース テンプレートを読み込むメイン アプリケーションのリソース ハンドルを使用します。  このテンプレートは、DLL に実際に格納されます。  根本原因は、MFC のモジュール状態情報を `AFX_MODULE_STATE` マクロで切替えられなかったことです。  リソース ハンドルは、MFC のモジュール状態を復元します。  モジュール状態の切り替えと、誤ったリソース ハンドルを使用します。  
+ Problems with resources in DLLs will occur if the `AFX_MODULE_STATE` macro is not used. By default, MFC uses the resource handle of the main application to load the resource template. This template is actually stored in the DLL. The root cause is that MFC's module state information has not been switched by the `AFX_MODULE_STATE` macro. The resource handle is recovered from MFC's module state. Not switching the module state causes the wrong resource handle to be used.  
   
- `AFX_MODULE_STATE` は DLL 内の関数に配置する必要はありません。  たとえば、`InitInstance` は `AFX_MODULE_STATE` せずにアプリケーションの MFC コードで MFC が `InitInstance` の前に自動的にモジュール状態にし、`InitInstance` が戻った後に切り替えるように呼び出すことができます。  これはすべてのメッセージ マップ ハンドラーにも当てはまります。  レギュラー DLL にメッセージをルーティングする前に自動的にモジュール状態を切り替える特別なマスターのウィンドウ プロシージャがあります。  
+ `AFX_MODULE_STATE` does not need to be put in every function in the DLL. For example, `InitInstance` can be called by the MFC code in the application without `AFX_MODULE_STATE` because MFC automatically shifts the module state before `InitInstance` and then switches it back after `InitInstance` returns. The same is true for all message map handlers. Regular MFC DLLs actually have a special master window procedure that automatically switches the module state before routing any message.  
   
-## ローカル データ プロセス  
- プロセス ローカル データは Win32s DLL モデルの問題がなければ、そのような重要なものではありません。  Win32s で複数のアプリケーションが読み込まれても、DLL のすべてのグローバル共有データ。  これは、DLL が DLL に接続する各プロセスのデータ領域のコピーを取得する「real」Win32 DLL データ モデルと大差います。  複雑さに追加するには、Win32s DLL のヒープに割り当てられたデータ \(少なくとも所有権がない限り\) で実際プロセス固有です。  次のコードやデータを検討する:  
+## <a name="process-local-data"></a>Process Local Data  
+ Process local data would not be of such great concern had it not been for the difficulty of the Win32s DLL model. In Win32s all DLLs share their global data, even when loaded by multiple applications. This is very different from the "real" Win32 DLL data model, where each DLL gets a separate copy of its data space in each process that attaches to the DLL. To add to the complexity, data allocated on the heap in a Win32s DLL is in fact process specific (at least as far as ownership goes). Consider the following data and code:  
   
 ```  
 static CString strGlobal; // at file scope  
-  
+ 
 __declspec(dllexport)   
 void SetGlobalString(LPCTSTR lpsz)  
 {  
-   strGlobal = lpsz;  
+    strGlobal = lpsz;  
 }  
-  
+ 
 __declspec(dllexport)  
-void GetGlobalString(LPCTSTR lpsz, size_t cb)  
+void GetGlobalString(LPCTSTR lpsz,
+    size_t cb)  
 {  
-   StringCbCopy(lpsz, cb, strGlobal);  
+    StringCbCopy(lpsz,
+    cb,
+    strGlobal);
+
 }  
 ```  
   
- 上のコードは DLL であり、この DLL にある場合の動作が検討は 2 個のプロセス A および B \(これは、実際には同じアプリケーションの 2 種類のインスタンスであることができます\) によって読み込まれます。  呼び出し `SetGlobalString("Hello from A")`。  そのため、メモリはプロセス A.のコンテキストで `CString` データに割り当てられます。  `CString` 自体はグローバルで、A および B.の両方から参照できることに注意してください。  ここでは `GetGlobalString(sz, sizeof(sz))`B を呼び出します。  B が設定されているデータを参照できます。  これは、Win32 のように Win32s がプロセス間に保護されていないためです。  これは、最初に問題が; 多くの場合、アプリケーションによって所有されると見なされる 1 アプリケーションの影響のグローバル データを持つことはお勧めしません。  
+ Consider what happens if the above code is in located in a DLL and that DLL is loaded by two processes A and B (it could, in fact, be two instances of the same application). A calls `SetGlobalString("Hello from A")`. As a result, memory is allocated for the `CString` data in the context of process A. Keep in mind that the `CString` itself is global and is visible to both A and B. Now B calls `GetGlobalString(sz, sizeof(sz))`. B will be able to see the data that A set. This is because Win32s offers no protection between processes like Win32 does. That is the first problem; in many cases it is not desirable to have one application affect global data that is considered to be owned by a different application.  
   
- 同様に、追加の問題があります。  A が存在することを前提としています。  A が表示されたら、'`strGlobal`' の文字列によって使用されるメモリはシステムで使用できるようになります。つまり、プロセス A によってすべてに割り当てられたメモリ オペレーティング システムによって自動的によって解放。  これは `CString` のデストラクターが呼び出されるため放されません; これはまだ呼び出されていません。  これが割り当てたアプリケーションはシーンを離れたためだけによって解放。  これで、B が `GetGlobalString(sz, sizeof(sz))`を呼び出す場合は、有効なデータを受け付けない場合があります。  他のアプリケーションでは、そのほかの要因について、そのメモリを消費する場合があります。  
+ There are additional problems as well. Let's say that A now exits. When A exits, the memory used by the '`strGlobal`' string is made available for the system — that is, all memory allocated by process A is freed automatically by the operating system. It is not freed because the `CString` destructor is being called; it hasn't been called yet. It is freed simply because the application which allocated it has left the scene. Now if B called `GetGlobalString(sz, sizeof(sz))`, it may not get valid data. Some other application may have used that memory for something else.  
   
- 明確に問題があります。  MFC Version 3.x はスレッド ローカル ストレージ \(TLS\) という手法を使用します。  呼び出されませんが、MFC Version 3.x プロセスはローカル ストレージのインデックスとして Win32s で実際に機能する TLS のインデックスを割り当てます。は次に基づいて、すべてのデータを TLS のインデックス"を参照してください。  これは、Win32 でスレッド ローカル データを格納するために使用した TLS のインデックスに似ています \(このトピックの詳細については、次を参照してください。  これにより、MFC DLL がプロセスごとの 2 個以上の TLS のインデックスを使用します。  多くの読み込みを OLE コントロール DLL \(OCXs\) 説明すると、すぐに TLS のインデックスを使い果たします \(使用できる 64 のみが含まれます。  また、MFC は単一の構造の 1 か所でこのデータをすべて配置する必要があります。  これは非常に拡張可能で、TLS のインデックスの使用に関しては適切ではありません。  
+ Clearly a problem exists. MFC 3.x used a technique called thread-local storage (TLS). MFC 3.x would allocate a TLS index that under Win32s really acts as a process-local storage index, even though it is not called that and then would reference all data based on that TLS index. This is similar to the TLS index that was used to store thread-local data on Win32 (see below for more information on that subject). This caused every MFC DLL to utilize at least two TLS indices per process. When you account for loading many OLE Control DLLs (OCXs), you quickly run out of TLS indices (there are only 64 available). In addition, MFC had to place all this data in one place, in a single structure. It was not very extensible and was not ideal with regard to its use of TLS indices.  
   
- MFC 4.x は、プロセス ローカル必要のあるデータの「ラップする」ことができる一連のクラス テンプレートを指定します。  たとえば、上記の問題は記述して変更する:  
+ MFC 4.x addresses this with a set of class templates you can "wrap" around the data that should be process local. For example, the problem mentioned above could be fixed by writing:  
   
 ```  
 struct CMyGlobalData : public CNoTrackObject  
 {  
-   CString strGlobal;  
+    CString strGlobal;  
 };  
 CProcessLocal<CMyGlobalData> globalData;  
-  
+ 
 __declspec(dllexport)   
 void SetGlobalString(LPCTSTR lpsz)  
 {  
-   globalData->strGlobal = lpsz;  
+    globalData->strGlobal = lpsz;  
 }  
-  
+ 
 __declspec(dllexport)  
 void GetGlobalString(LPCTSTR lpsz, size_t cb)  
 {  
-   StringCbCopy(lpsz, cb, globalData->strGlobal);  
+    StringCbCopy(lpsz, cb, globalData->strGlobal);
+
 }  
 ```  
   
- MFC は手順 2 でこれを実装します。  まず、多くの DLL がある場合でも、プロセスごとに 2 回の TLS のインデックスだけを使用する **Tls\*** Win32 API \(**TlsAlloc**、**TlsSetValue**、**TlsGetValue**など\) の先頭にレイヤーがあります。  第 2 に、`CProcessLocal` のテンプレートはこのデータにアクセスするために使用されます。  これは、"\> 上で参照する直感的な構文を有効にするには、オペレータをオーバーライドします。  `CProcessLocal` によってラップされるすべてのオブジェクトは `CNoTrackObject`から派生されなければなりません。  `CNoTrackObject` は、プロセスが終了すると、MFC が自動的にローカル プロセス オブジェクトを破棄できる低レベルのアロケーター \(**LocalAlloc**\/**LocalFree**\) と仮想デストラクターを受け取るように提供します。  このようなオブジェクトは追加クリーンアップが必要な場合、カスタム デストラクターを持つことができます。  上の例では `CString` の埋め込まれたなオブジェクトを破棄するために、コンパイラは既定のデストラクターを生成するので、1 を必要としません。  
+ MFC implements this in two steps. First, there is a layer on top of the Win32 **Tls\*** APIs (**TlsAlloc**, **TlsSetValue**, **TlsGetValue**, etc.) which use only two TLS indexes per process, no matter how many DLLs you have. Second, the `CProcessLocal` template is provided to access this data. It overrides operator-> which is what allows the intuitive syntax you see above. All objects that are wrapped by `CProcessLocal` must be derived from `CNoTrackObject`. `CNoTrackObject` provides a lower-level allocator (**LocalAlloc**/**LocalFree**) and a virtual destructor such that MFC can automatically destroy the process local objects when the process is terminated. Such objects can have a custom destructor if additional cleanup is required. The above example doesn't require one, since the compiler will generate a default destructor to destroy the embedded `CString` object.  
   
- この方法に他の興味深い利点があります。  だけでなく、`CProcessLocal` のすべてのオブジェクトは必要になるまで、組み立てられません自動的に破棄されます。  `CProcessLocal::operator->` が 呼び出されると、すぐにインスタンス化し、最初に関連するオブジェクトを示します。  上の例では、'`strGlobal`' の文字列が **SetGlobalString** まで最初に構築または **GetGlobalString** が呼び出されます。そのを意味します。  これにより、DLL の起動時間を短縮することができます。  
+ There are other interesting advantages to this approach. Not only are all `CProcessLocal` objects destroyed automatically, they are not constructed until they are needed. `CProcessLocal::operator->` will instantiate the associated object the first time it is called, and no sooner. In the example above, that means that the '`strGlobal`' string will not be constructed until the first time **SetGlobalString** or **GetGlobalString** is called. In some instances, this can help decrease DLL startup time.  
   
-## Thread Local データ  
- データが特定のスレッドに固有であるローカル データとプロセス、スレッド ローカル データと同様に使用されます。  つまり、データ アクセスを各スレッドのデータの個別のインスタンスが必要です。  これは豊富な同期機構の代わりに何度も使用できます。  データが複数のスレッドで共有する必要がない場合は、このような機能は、高、不要になります。  これは `CString` オブジェクトを持っていることを前提とします \(上の例のようになります。  これは `CThreadLocal` のテンプレートをラップすることによってスレッド ローカルにしています:  
+## <a name="thread-local-data"></a>Thread Local Data  
+ Similar to process local data, thread local data is used when the data must be local to a given thread. That is, you need a separate instance of the data for each thread that accesses that data. This can many times be used in lieu of extensive synchronization mechanisms. If the data does not need to be shared by multiple threads, such mechanisms can be expensive and unnecessary. Suppose we had a `CString` object (much like the sample above). We can make it thread local by wrapping it with a `CThreadLocal` template:  
   
 ```  
 struct CMyThreadData : public CNoTrackObject  
 {  
-   CString strThread;  
+    CString strThread;  
 };  
 CThreadLocal<CMyThreadData> threadData;  
-  
+ 
 void MakeRandomString()  
-{  
-   // a kind of card shuffle (not a great one)  
-   CString& str = threadData->strThread;  
-   str.Empty();  
-   while (str.GetLength() != 52)  
-   {  
-      unsigned int randomNumber;  
-      errno_t randErr;  
-      randErr = rand_s( &randomNumber );  
-      if ( randErr == 0 )  
-      {  
-         TCHAR ch = randomNumber % 52 + 1;  
-         if (str.Find(ch) < 0)  
-            str += ch; // not found, add it  
-      }  
-   }  
+{ *// a kind of card shuffle (not a great one)  
+    CString& str = threadData->strThread;  
+    str.Empty();
+while (str.GetLength() != 52)  
+ {  
+    unsigned int randomNumber;  
+    errno_t randErr;  
+    randErr = rand_s(&randomNumber);
+
+    if (randErr == 0)  
+ {  
+    TCHAR ch = randomNumber % 52 + 1;  
+    if (str.Find(ch) <0)  
+    str += ch; // not found, add it  
+ }  
+ }  
 }  
 ```  
   
- `MakeRandomString` が 2 種類のスレッドから呼び出された場合、それぞれが他に影響を与えずに、さまざまな方法で文字列「混ぜます」。  これは、スレッドごとに `strThread` のインスタンスは、1 種類のグローバル インスタンスではなく、実際にあるためです。  
+ If `MakeRandomString` was called from two different threads, each would "shuffle" the string in different ways without interfering with the other. This is because there is actually a `strThread` instance per thread instead of just one global instance.  
   
- ループの反復ごとの代わりに `CString` アドレスを一度に取得するために参照が一度がどのように使用されるかに注目してください。  ループのコードは、'`str`' どこでも使用されます `threadData->strThread` 書き込まれた可能性がある、コードは実行に非常に時間がかかります。  このような参照はループで実行されるデータへの参照をキャッシュします。  
+ Note how a reference is used to capture the `CString` address once instead of once per loop iteration. The loop code could have been written with `threadData->strThread` everywhere '`str`' is used, but the code would be much slower in execution. It is best to cache a reference to the data when such references occur in loops.  
   
- `CThreadLocal` クラス テンプレートは `CProcessLocal` を実装して、同じ手法を使用してと同じ機能。  
+ The `CThreadLocal` class template uses the same mechanisms that `CProcessLocal` does and the same implementation techniques.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

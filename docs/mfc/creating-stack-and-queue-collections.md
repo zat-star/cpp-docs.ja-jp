@@ -1,59 +1,78 @@
 ---
-title: "スタック コレクションとキュー コレクションの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コレクション クラス, 作成"
-  - "コレクション, キュー"
-  - "コレクション, スタック"
-  - "MFC コレクション クラス, キューのコレクション"
-  - "MFC コレクション クラス, スタック コレクション"
-  - "キューのコレクション"
-  - "スタック"
-  - "スタック コレクション"
+title: Creating Stack and Queue Collections | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC collection classes [MFC], stack collections
+- collections, stack
+- stack
+- collection classes [MFC], creating
+- queue collections
+- MFC collection classes [MFC], queue collections
+- stack collections
+- collections, queue
 ms.assetid: 3c7bc198-35f0-4fc3-aaed-6005a0f22638
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# スタック コレクションとキュー コレクションの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 26e7012530dc05cc413fd04a8ababc756cf29c8a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、別のデータ構造体は、MFC のリスト クラスから [スタック](#_core_stacks) と [キュー](#_core_queues)など\) を作成する方法について説明します。  例では `CList`から派生されるクラスを使用して機能を追加する必要がある `CList` を直接使用できます。  
+---
+# <a name="creating-stack-and-queue-collections"></a>Creating Stack and Queue Collections
+This article explains how to create other data structures, such as [stacks](#_core_stacks) and [queues](#_core_queues), from MFC list classes. The examples use classes derived from `CList`, but you can use `CList` directly unless you need to add functionality.  
   
-##  <a name="_core_stacks"></a> スタック  
- 標準リスト コレクションにヘッダーと末尾の両方を持つため、後入れ先出し \(LIFO\) スタックの動作を模倣する派生リストのコレクションを作成する方が簡単です。  スタックはカフェテリアのトレイにスタックに似ています。  トレイがスタックに追加される場合、スタックの一番上をクリックします。  追加された最後のトレイは削除する 1 番目のチュートリアルです。  リスト コレクションのメンバー関数 `AddHead` と `RemoveHead` がリストの先頭にある要素を追加および削除するために使用できます。; したがって、最後に追加する要素は、1 番目の排除されます。  
+##  <a name="_core_stacks"></a> Stacks  
+ Because the standard list collection has both a head and a tail, it is easy to create a derived list collection that mimics the behavior of a last-in-first-out stack. A stack is like a stack of trays in a cafeteria. As trays are added to the stack, they go on top of the stack. The last tray added is the first to be removed. The list collection member functions `AddHead` and `RemoveHead` can be used to add and remove elements specifically from the head of the list; thus, the most recently added element is the first to be removed.  
   
-#### スタック コレクションを作成するには  
+#### <a name="to-create-a-stack-collection"></a>To create a stack collection  
   
-1.  新しいリスト クラスを既存の MFC リスト クラスの 1 つがから派生し、スタック操作機能をサポートするためのメンバー関数を追加します。  
+1.  Derive a new list class from one of the existing MFC list classes and add more member functions to support the functionality of stack operations.  
   
-     次の例では、メンバー関数をプッシュ要素にスタックに追加し、スタックの最上位の要素を表示します。表示、スタックの最上位の要素をポップする方法を示しています。:  
+     The following example shows how to add member functions to push elements on to the stack, peek at the top element of the stack, and pop the top element from the stack:  
   
-     [!code-cpp[NVC_MFCCollections#20](../mfc/codesnippet/CPP/creating-stack-and-queue-collections_1.h)]  
+     [!code-cpp[NVC_MFCCollections#20](../mfc/codesnippet/cpp/creating-stack-and-queue-collections_1.h)]  
   
- この方法は `CObList` の基本クラスを公開していることに注意してください。  ユーザーはの意味をスタック適切かどうか `CObList` のメンバー関数を呼び出すことができます。  
+ Note that this approach exposes the underlying `CObList` class. The user can call any `CObList` member function, whether it makes sense for a stack or not.  
   
-##  <a name="_core_queues"></a> キュー  
- 標準リスト コレクションにヘッダーと末尾の両方を持つため、先入れ先出しキューの動作を模倣する派生リストのコレクションを作成することも簡単です。  キューがカフェテリアの個人の行に表示されます。  行の最初の人が実行される 1 番目のチュートリアルです。  より多くのユーザーを受け取るように回転を待機することを、行の末尾に移動します。  リスト コレクションのメンバー関数 `AddTail` と `RemoveHead` がリストの先頭または末尾の要素を追加および削除するために使用できます。; したがって、最近追加された要素が削除されている場合は、最後に常になります。  
+##  <a name="_core_queues"></a> Queues  
+ Because the standard list collection has both a head and a tail, it is also easy to create a derived list collection that mimics the behavior of a first-in-first-out queue. A queue is like a line of people in a cafeteria. The first person in line is the first to be served. As more people come, they go to the end of the line to wait their turn. The list collection member functions `AddTail` and `RemoveHead` can be used to add and remove elements specifically from the head or tail of the list; thus, the most recently added element is always the last to be removed.  
   
-#### キューのコレクションを作成するには  
+#### <a name="to-create-a-queue-collection"></a>To create a queue collection  
   
-1.  新しいリスト クラスを Microsoft Foundation Class ライブラリに用意されている定義済みのなリスト クラスの 1 つがから派生し、キュー操作のセマンティクスをサポートするためのメンバー関数を追加します。  
+1.  Derive a new list class from one of the predefined list classes provided with the Microsoft Foundation Class Library and add more member functions to support the semantics of queue operations.  
   
-     要素をキューの末尾に追加し、キューの頭から要素を取得するようにメンバー関数を追加する方法を次の例に示します。  
+     The following example shows how you can append member functions to add an element to the end of the queue and get the element from the front of the queue.  
   
-     [!code-cpp[NVC_MFCCollections#21](../mfc/codesnippet/CPP/creating-stack-and-queue-collections_2.h)]  
+     [!code-cpp[NVC_MFCCollections#21](../mfc/codesnippet/cpp/creating-stack-and-queue-collections_2.h)]  
   
-## 参照  
- [コレクション クラス](../mfc/collections.md)
+## <a name="see-also"></a>See Also  
+ [Collections](../mfc/collections.md)
+
+

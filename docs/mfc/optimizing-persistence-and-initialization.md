@@ -1,57 +1,76 @@
 ---
-title: "永続化と初期化の最適化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, 最適化"
-  - "最適化, ActiveX コントロール"
-  - "最適化 (パフォーマンスの), ActiveX コントロール"
-  - "パフォーマンス, ActiveX コントロール"
+title: Optimizing Persistence and Initialization | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], optimizing
+- performance, ActiveX controls
+- optimization, ActiveX controls
+- optimizing performance, ActiveX controls
 ms.assetid: e821e19e-b9eb-49ab-b719-0743420ba80b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 永続化と初期化の最適化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5f6d40a2fb9619e182562333c9548aca1e7cf4ca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コントロールの既定で、永続性、および初期化は `DoPropExchange` のメンバー関数によって処理されます。  一般的なコントロールでは、この関数は **PX\_** のいくつかの関数 \(`PX_Color`、`PX_Font`など\) の呼び出しは、各プロパティの 1 が含まれます。  
+---
+# <a name="optimizing-persistence-and-initialization"></a>Optimizing Persistence and Initialization
+By default, persistence and initialization in a control are handled by the `DoPropExchange` member function. In a typical control, this function contains calls to several **PX_** functions (`PX_Color`, `PX_Font`, and so on), one for each property.  
   
- `DoPropExchange` の単一の実装を持つコンテナーで使用されるいわゆる「プロパティ バッグ」形式で初期化、永続化、永続化にバイナリ形式で使用できるこのにメリットがあります。  この 1 種類の関数が 1 の便利な場所のプロパティと既定値に関するすべての情報を提供します。  
+ This approach has the advantage that a single `DoPropExchange` implementation can be used for initialization, for persistence in binary format, and for persistence in the so-called "property-bag" format used by some containers. This one function provides all information about the properties and their default values in one convenient place.  
   
- ただし、この一般性が効率を犠牲にしています。  **PX\_** 関数柔軟性を直接より大きい本来より効率的であり、あまり柔軟な方法で取得、多階層の実装。  また、コントロールが **PX\_** 関数に既定値を渡すと、その既定値は状況に既定値は必ずしも使用されない場合は、必ず指定する必要があります。  既定値を生成できることが重要なタスク値をアンビエント プロパティから取得した場合 \(たとえば、\) の場合、既定値が使用されていない場合は、追加の不要な処理が実行されます。  
+ However, this generality comes at the expense of efficiency. The **PX_** functions get their flexibility through multilayered implementations that are inherently less efficient than more direct, but less flexible, approaches. Furthermore, if a control passes a default value to a **PX_** function, that default value must be provided every time, even in situations when the default value may not necessarily be used. If generating the default value is a nontrivial task (for example, when the value is obtained from an ambient property), then extra, unnecessary work is done in cases where the default value is not used.  
   
- コントロールの `Serialize` 関数をオーバーライドすることにより、コントロールのバイナリ永続性パフォーマンスが向上します。  このメンバー関数の既定の実装は `DoPropExchange` 関数を呼び出します。  これをオーバーライドして、バイナリ永続性に直接実装を提供できます。  たとえば、`DoPropExchange` でこの関数を検討する:  
+ You can improve your control's binary persistence performance by overriding your control's `Serialize` function. The default implementation of this member function makes a call to your `DoPropExchange` function. By overriding it, you can provide a more direct implementation for binary persistence. For example, consider this `DoPropExchange` function:  
   
- [!code-cpp[NVC_MFC_AxOpt#1](../mfc/codesnippet/CPP/optimizing-persistence-and-initialization_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#1](../mfc/codesnippet/cpp/optimizing-persistence-and-initialization_1.cpp)]  
   
- 次のようにこのコントロールのバイナリ永続性のパフォーマンスを向上させるには、`Serialize` の関数をオーバーライドするには:  
+ To improve the performance of this control's binary persistence, you can override the `Serialize` function as follows:  
   
- [!code-cpp[NVC_MFC_AxOpt#2](../mfc/codesnippet/CPP/optimizing-persistence-and-initialization_2.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#2](../mfc/codesnippet/cpp/optimizing-persistence-and-initialization_2.cpp)]  
   
- `dwVersion` のローカル変数が読み込まれるまたは格納済みのコントロールの永続的な状態のバージョンを検出するために使用できます。  [CPropExchange::GetVersion](../Topic/CPropExchange::GetVersion.md)を呼び出す代わりに、変数を使用できます。  
+ The `dwVersion` local variable can be used to detect the version of the control's persistent state being loaded or saved. You can use this variable instead of calling [CPropExchange::GetVersion](../mfc/reference/cpropexchange-class.md#getversion).  
   
- 次のよう **BOOL** のプロパティの永続的な形式の小さい領域を節約するためには、それを `PX_Bool`で生成された形式との互換性を保つため\)、**BYTE**としてプロパティを格納し、:  
+ To save a little space in the persistent format for a **BOOL** property (and to keep it compatible with the format produced by `PX_Bool`), you can store the property as a **BYTE**, as follows:  
   
- [!code-cpp[NVC_MFC_AxOpt#3](../mfc/codesnippet/CPP/optimizing-persistence-and-initialization_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#3](../mfc/codesnippet/cpp/optimizing-persistence-and-initialization_3.cpp)]  
   
- ロードの場合で、テンポラリ変数に使用され、表示される値は **BYTE** の参照に割り当てられ `m_boolProp` ではなくをキャストします。  キャスト手法は残りのバイトを初期化前の状態に戻されてと `m_boolProp` を変更する 1 バイトだけで発生します。  
+ Note that in the load case, a temporary variable is used and then its value is assigned, rather than casting `m_boolProp` to a **BYTE** reference. The casting technique would result in only one byte of `m_boolProp` being modified, leaving the remaining bytes uninitialized.  
   
- 同じコントロールでは、次のようにオーバーライドの [COleControl::OnResetState](../Topic/COleControl::OnResetState.md) でコントロールの初期化を最適化するには:  
+ For the same control, you can optimize the control's initialization by overriding [COleControl::OnResetState](../mfc/reference/colecontrol-class.md#onresetstate) as follows:  
   
- [!code-cpp[NVC_MFC_AxOpt#4](../mfc/codesnippet/CPP/optimizing-persistence-and-initialization_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#4](../mfc/codesnippet/cpp/optimizing-persistence-and-initialization_4.cpp)]  
   
- `Serialize` と `OnResetState` がオーバーライドされ、`DoPropExchange` 関数が、プロパティ バッグの形式で永続化に使用されるため、そのまま保持する必要があります。  これらの関数のコントロールが永続性機構に関係なくコンテナーを使用するプロパティを一貫して管理するように 3 つすべてを維持することが重要です。  
+ Although `Serialize` and `OnResetState` have been overridden, the `DoPropExchange` function should be kept intact because it is still used for persistence in the property-bag format. It is important to maintain all three of these functions to ensure that the control manages its properties consistently, regardless of which persistence mechanism the container uses.  
   
-## 参照  
- [MFC ActiveX コントロール : 最適化](../mfc/mfc-activex-controls-optimization.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls: Optimization](../mfc/mfc-activex-controls-optimization.md)
+
+

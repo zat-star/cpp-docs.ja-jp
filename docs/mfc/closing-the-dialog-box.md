@@ -1,31 +1,50 @@
 ---
-title: "ダイアログ ボックスのクローズ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ダイアログ ボックス, 閉じる"
-  - "MFC ダイアログ ボックス, 閉じる"
+title: Closing the Dialog Box | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC dialog boxes [MFC], closing
+- dialog boxes [MFC], closing
 ms.assetid: 946f5675-c482-46a4-a5dd-34fe138ffae5
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ダイアログ ボックスのクローズ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 689ef21296daafdd865787ac995c9f2872ebfd76
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-モーダル ダイアログ ボックスでは、ボタン、通常、OK ボタンとキャンセル ボタンの 1 つがを選択すると閉じます。  OK またはキャンセルをクリックすると、Windows は **IDOK** または **IDCANCEL**ダイアログ オブジェクトにボタンの ID を持つ **BN\_CLICKED** コントロール通知メッセージを送信します。  `CDialog` で これらのメッセージの既定のハンドラー関数を提供し、T: `OnOK` と `OnCancel`。  既定のハンドラーは、ダイアログ ウィンドウを閉じるに `EndDialog` メンバー関数を呼び出します。  また、独自のコードから `EndDialog` を呼び出すことができます。  詳細については、" *MFC リファレンス"の*" `CDialog` クラスの [EndDialog](../Topic/CDialog::EndDialog.md) メンバー関数を参照します。  
+---
+# <a name="closing-the-dialog-box"></a>Closing the Dialog Box
+A modal dialog box closes when the user chooses one of its buttons, typically the OK button or the Cancel button. Choosing the OK or Cancel button causes Windows to send the dialog object a **BN_CLICKED** control-notification message with the button's ID, either **IDOK** or **IDCANCEL**. `CDialog` provides default handler functions for these messages: `OnOK` and `OnCancel`. The default handlers call the `EndDialog` member function to close the dialog window. You can also call `EndDialog` from your own code. For more information, see the [EndDialog](../mfc/reference/cdialog-class.md#enddialog) member function of class `CDialog` in the *MFC Reference*.  
   
- モードレス ダイアログ ボックスは、オーバーライド `PostNcDestroy` を閉じ、削除を準備し、**this** ポインターの **delete** の演算子を呼び出す。  [Dialog Box の無効化](../Topic/Destroying%20the%20Dialog%20Box.md) は 次に何が起こるかを示しています。  
+ To arrange for closing and deleting a modeless dialog box, override `PostNcDestroy` and invoke the **delete** operator on the **this** pointer. [Destroying the Dialog Box](../mfc/destroying-the-dialog-box.md) explains what happens next.  
   
-## 参照  
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)
+## <a name="see-also"></a>See Also  
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)
+
+

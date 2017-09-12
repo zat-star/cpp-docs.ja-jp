@@ -1,50 +1,68 @@
 ---
-title: "InitInstance メンバー関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "InitInstance"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [MFC], 初期化"
-  - "初期化 (MFC アプリケーションを)"
-  - "InitInstance メソッド"
-  - "MFC [C++], 初期化"
+title: InitInstance Member Function | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- InitInstance
+dev_langs:
+- C++
+helpviewer_keywords:
+- InitInstance method [MFC]
+- applications [MFC], initializing
+- MFC, initializing
+- initializing MFC applications
 ms.assetid: 4ef09267-ff7f-4c39-91a0-57454a264f83
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# InitInstance メンバー関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 79983bf7027ee121f5843427262caac6174fde83
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Windows オペレーティング システムの同じアプリケーション内の複数のコピー、または「」、インスタンスを実行できます。  `WinMain`、アプリケーションの新しいインスタンスを起動するたびに [InitInstance](../Topic/CWinApp::InitInstance.md) を呼び出します。  
+---
+# <a name="initinstance-member-function"></a>InitInstance Member Function
+The Windows operating system allows you to run more than one copy, or "instance," of the same application. `WinMain` calls [InitInstance](../mfc/reference/cwinapp-class.md#initinstance) every time a new instance of the application starts.  
   
- MFC アプリケーション ウィザードで作成される標準の `InitInstance` の実装は、次のタスクを実行する:  
+ The standard `InitInstance` implementation created by the MFC Application Wizard performs the following tasks:  
   
--   中心機能として、ドキュメント、ビュー、およびフレーム ウィンドウを作成するドキュメント テンプレートを作成します。  このプロセスの詳細については、「[ドキュメント テンプレートの作成](../Topic/Document%20Template%20Creation.md)」を参照してください。  
+-   As its central action, creates the document templates that in turn create documents, views, and frame windows. For a description of this process, see [Document Template Creation](../mfc/document-template-creation.md).  
   
--   最近使用したファイルの名前を含む .ini ファイルまたは Windows レジストリからの読み込み標準ファイル オプション。  
+-   Loads standard file options from an .ini file or the Windows registry, including the names of the most recently used files.  
   
--   一つまたは複数のドキュメント テンプレートを登録します。  
+-   Registers one or more document templates.  
   
--   MDI アプリケーションでは、メイン フレーム ウィンドウを作成します。  
+-   For an MDI application, creates a main frame window.  
   
--   コマンド ラインをコマンド ラインで指定した文書を開くか、新しい空のドキュメントを開くために処理します。  
+-   Processes the command line to open a document specified on the command line or to open a new, empty document.  
   
- 、初期化コードを追加するか、ウィザードが作成したコードを変更できます。  
+ You can add your own initialization code or modify the code written by the wizard.  
   
 > [!NOTE]
->  MFC アプリケーションは、シングルスレッド アパートメント \(STA\) として初期化する必要があります。  [CoInitializeEx](http://msdn.microsoft.com/library/windows/desktop/ms695279) を `InitInstance` オーバーライド内で呼び出す場合は、`COINIT_APARTMENTTHREADED` を指定します \( `COINIT_MULTITHREADED` を指定しません\)。  詳細については、For more information, see PRB: MFC Application Stops Responding When You Initialize the Application as a Multithreaded Apartment \(828643\) at [http:\/\/support.microsoft.com\/default.aspx?scid\=kb;en\-us;828643](http://support.microsoft.com/default.aspx?scid=kb;en-us;828643) にある "PRB: MFC Application Stops Responding When You Initialize the Application as a Multithreaded Apartment \(828643\) \(PRB: アプリケーションをマルチスレッド アパートメントとして初期化したときに、MFC アプリケーションが応答を停止する \(828643\)\)" を参照してください。  
+>  MFC applications must be initialized as single threaded apartment (STA). If you call [CoInitializeEx](http://msdn.microsoft.com/library/windows/desktop/ms695279) in your `InitInstance` override, specify `COINIT_APARTMENTTHREADED` (rather than `COINIT_MULTITHREADED`). For more information, see PRB: MFC Application Stops Responding When You Initialize the Application as a Multithreaded Apartment (828643) at [http://support.microsoft.com/default.aspxscid=kb;en-us;828643](http://support.microsoft.com/default.aspxscid=kb;en-us;828643).  
   
-## 参照  
- [CWinApp : アプリケーション クラス](../Topic/CWinApp:%20The%20Application%20Class.md)
+## <a name="see-also"></a>See Also  
+ [CWinApp: The Application Class](../mfc/cwinapp-the-application-class.md)
+

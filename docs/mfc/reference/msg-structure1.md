@@ -1,66 +1,84 @@
 ---
-title: "MSG Structure1 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MSG"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MSG 構造体"
+title: MSG Structure1 | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- MSG
+dev_langs:
+- C++
+helpviewer_keywords:
+- MSG structure [MFC]
 ms.assetid: dc166d27-9423-41f1-9599-5ba76d2f0138
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# MSG 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2c07f74157d8bcccb9c5b23727ce0a9107bfb51b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`MSG` 構造体はスレッドのメッセージ キューからメッセージ情報が含まれます。  
+---
+# <a name="msg-structure1"></a>MSG Structure1
+The `MSG` structure contains message information from a thread's message queue.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
-  
-      typedef struct tagMSG {     // msg    
-   HWND hwnd;  
-   UINT message;  
-   WPARAM wParam;  
-   LPARAM lParam;  
-   DWORD time;  
-   POINT pt;  
+typedef struct tagMSG {     // msg    
+    HWND hwnd;  
+    UINT message;  
+    WPARAM wParam;  
+    LPARAM lParam;  
+    DWORD time;  
+    POINT pt;  
 } MSG;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>Parameters  
  *hwnd*  
- ウィンドウ プロシージャでメッセージを受け取るウィンドウを指定します。  
+ Identifies the window whose window procedure receives the message.  
   
  `message`  
- メッセージの番号を指定します。  
+ Specifies the message number.  
   
  `wParam`  
- メッセージについての追加情報を指定します。  厳密な意味は **メッセージ** のメンバーの値によって異なります。  
+ Specifies additional information about the message. The exact meaning depends on the value of the **message** member.  
   
  `lParam`  
- メッセージについての追加情報を指定します。  厳密な意味は **メッセージ** のメンバーの値によって異なります。  
+ Specifies additional information about the message. The exact meaning depends on the value of the **message** member.  
   
  `time`  
- メッセージがポストされた時間を指定します。  
+ Specifies the time at which the message was posted.  
   
  `pt`  
- メッセージがポストされたときに、カーソル位置を画面座標で指定します。  
+ Specifies the cursor position, in screen coordinates, when the message was posted.  
   
-## 必要条件  
- **ヘッダー:** winuser.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winuser.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
+
+

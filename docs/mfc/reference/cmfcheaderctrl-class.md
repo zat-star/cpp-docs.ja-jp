@@ -1,5 +1,5 @@
 ---
-title: "CMFCHeaderCtrl クラス |Microsoft ドキュメント"
+title: CMFCHeaderCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,7 +26,18 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCHeaderCtrl class
+- CMFCHeaderCtrl [MFC], CMFCHeaderCtrl
+- CMFCHeaderCtrl [MFC], EnableMultipleSort
+- CMFCHeaderCtrl [MFC], GetColumnState
+- CMFCHeaderCtrl [MFC], GetSortColumn
+- CMFCHeaderCtrl [MFC], IsAscending
+- CMFCHeaderCtrl [MFC], IsDialogControl
+- CMFCHeaderCtrl [MFC], IsMultipleSort
+- CMFCHeaderCtrl [MFC], RemoveSortColumn
+- CMFCHeaderCtrl [MFC], SetSortColumn
+- CMFCHeaderCtrl [MFC], OnDrawItem
+- CMFCHeaderCtrl [MFC], OnDrawSortArrow
+- CMFCHeaderCtrl [MFC], OnFillBackground
 ms.assetid: 2f5fbf7b-5c75-42db-9216-640b1628f777
 caps.latest.revision: 29
 author: mikeblome
@@ -46,62 +57,62 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: c49ee61b6441e79a0c3c4c1aa133b4bce1578103
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 294d624d9b95bc927a419268e71953a04a27182d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
 # <a name="cmfcheaderctrl-class"></a>CMFCHeaderCtrl Class
-`CMFCHeaderCtrl`クラスは、ヘッダー コントロールの複数の列の並べ替えをサポートしています。  
+The `CMFCHeaderCtrl` class supports sorting multiple columns in a header control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCHeaderCtrl : public CHeaderCtrl  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCHeaderCtrl::CMFCHeaderCtrl](#cmfcheaderctrl)|`CMFCHeaderCtrl` オブジェクトを構築します。|  
-|`CMFCHeaderCtrl::~CMFCHeaderCtrl`|デストラクターです。|  
+|[CMFCHeaderCtrl::CMFCHeaderCtrl](#cmfcheaderctrl)|Constructs a `CMFCHeaderCtrl` object.|  
+|`CMFCHeaderCtrl::~CMFCHeaderCtrl`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort)|有効または無効に*複数列の並べ替え*の現在のヘッダー コントロールのモードです。|  
-|[CMFCHeaderCtrl::GetColumnState](#getcolumnstate)|列が並べ替えられていないかを昇順または降順で並べ替えるかどうかを示します。|  
-|[CMFCHeaderCtrl::GetSortColumn](#getsortcolumn)|ヘッダー コントロールの最初の並べ替えられた列の&0; から始まるインデックスを取得します。|  
-|`CMFCHeaderCtrl::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
-|[CMFCHeaderCtrl::IsAscending](#isascending)|ヘッダー コントロールの任意の列を昇順で並べ替えるかどうかを示します。|  
-|[CMFCHeaderCtrl::IsDialogControl](#isdialogcontrol)|現在のヘッダー コントロールの親ウィンドウがダイアログ ボックスであるかどうかを示します。|  
-|[CMFCHeaderCtrl::IsMultipleSort](#ismultiplesort)|現在のヘッダー コントロールがあるかどうかを示す*複数列の並べ替え*モードです。|  
-|[CMFCHeaderCtrl::RemoveSortColumn](#removesortcolumn)|並べ替え列のリストから指定された列を削除します。|  
-|[CMFCHeaderCtrl::SetSortColumn](#setsortcolumn)|ヘッダー コントロールの指定された列の並べ替え順序を設定します。|  
+|[CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort)|Enables or disables *multiple column sort* mode for the current header control.|  
+|[CMFCHeaderCtrl::GetColumnState](#getcolumnstate)|Indicates whether a column is not sorted, or is sorted in ascending or descending order.|  
+|[CMFCHeaderCtrl::GetSortColumn](#getsortcolumn)|Retrieves the zero-based index of the first sorted column in the header control.|  
+|`CMFCHeaderCtrl::GetThisClass`|Used by the framework to obtain a pointer to the [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) object that is associated with this class type.|  
+|[CMFCHeaderCtrl::IsAscending](#isascending)|Indicates whether any column in the header control is sorted in ascending order.|  
+|[CMFCHeaderCtrl::IsDialogControl](#isdialogcontrol)|Indicates whether the parent window of the current header control is a dialog box.|  
+|[CMFCHeaderCtrl::IsMultipleSort](#ismultiplesort)|Indicates whether the current header control is in *multiple column sort* mode.|  
+|[CMFCHeaderCtrl::RemoveSortColumn](#removesortcolumn)|Removes the specified column from the list of sort columns.|  
+|[CMFCHeaderCtrl::SetSortColumn](#setsortcolumn)|Sets the sort order of a specified column in a header control.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCHeaderCtrl::OnDrawItem](#ondrawitem)|ヘッダー コントロールの列を描画するためにフレームワークによって呼び出されます。|  
-|[CMFCHeaderCtrl::OnDrawSortArrow](#ondrawsortarrow)|並べ替えの矢印を描画するためにフレームワークによって呼び出されます。|  
-|[CMFCHeaderCtrl::OnFillBackground](#onfillbackground)|ヘッダー コントロールの列の背景を塗りつぶすために、フレームワークによって呼び出されます。|  
+|[CMFCHeaderCtrl::OnDrawItem](#ondrawitem)|Called by the framework to draw a header control column.|  
+|[CMFCHeaderCtrl::OnDrawSortArrow](#ondrawsortarrow)|Called by the framework to draw the sort arrow.|  
+|[CMFCHeaderCtrl::OnFillBackground](#onfillbackground)|Called by the framework to fill the background of a header control column.|  
   
-## <a name="example"></a>例  
- 次の例のオブジェクトを構築する方法、`CMFCHeaderCtrl`クラス、および有効にする方法*複数列の並べ替え*の現在のヘッダー コントロールのモードです。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to construct an object of the `CMFCHeaderCtrl` class, and how to enable *multiple column sort* mode for the current header control.  
   
- [!code-cpp[NVC_MFC_RibbonApp #&24;](../../mfc/reference/codesnippet/cpp/cmfcheaderctrl-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_RibbonApp#24](../../mfc/reference/codesnippet/cpp/cmfcheaderctrl-class_1.cpp)]  
   
-## <a name="remarks"></a>コメント  
- `CMFCHeaderCtrl`クラスは、列を並べ替えることを示すためにヘッダー コントロールの列の並べ替えの矢印を描画します。 使用*複数列の並べ替え*モードの場合は、親のリスト コントロール内の列のセット ( [CMFCListCtrl クラス](../../mfc/reference/cmfclistctrl-class.md))、同時に並べ替えることができます。  
+## <a name="remarks"></a>Remarks  
+ The `CMFCHeaderCtrl` class draws a sort arrow on a header control column to indicate that the column is sorted. Use *multiple column sort* mode if a set of columns in the parent list control ( [CMFCListCtrl Class](../../mfc/reference/cmfclistctrl-class.md)) can be sorted at the same time.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -112,20 +123,20 @@ class CMFCHeaderCtrl : public CHeaderCtrl
   
  [CMFCHeaderCtrl](../../mfc/reference/cmfcheaderctrl-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxheaderctrl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxheaderctrl.h  
   
-##  <a name="cmfcheaderctrl"></a>CMFCHeaderCtrl::CMFCHeaderCtrl  
- `CMFCHeaderCtrl` オブジェクトを構築します。  
+##  <a name="cmfcheaderctrl"></a>  CMFCHeaderCtrl::CMFCHeaderCtrl  
+ Constructs a `CMFCHeaderCtrl` object.  
   
 ```  
 CMFCHeaderCtrl::CMFCHeaderCtrl()  
 ```  
   
-### <a name="remarks"></a>コメント  
- このコンス トラクターは、指定した値には、次のメンバー変数を初期化します。  
+### <a name="remarks"></a>Remarks  
+ This constructor initializes the following member variables to the specified values:  
   
-|メンバー変数|値|  
+|Member variable|Value|  
 |---------------------|-----------|  
 |`m_bIsMousePressed`|`FALSE`|  
 |`m_bMultipleSort`|`FALSE`|  
@@ -135,93 +146,93 @@ CMFCHeaderCtrl::CMFCHeaderCtrl()
 |`m_bIsDlgControl`|`FALSE`|  
 |`m_hFont`|`NULL`|  
   
-##  <a name="enablemultiplesort"></a>CMFCHeaderCtrl::EnableMultipleSort  
- 有効または無効に*複数列の並べ替え*の現在のヘッダー コントロールのモードです。  
+##  <a name="enablemultiplesort"></a>  CMFCHeaderCtrl::EnableMultipleSort  
+ Enables or disables *multiple column sort* mode for the current header control.  
   
 ```  
 void EnableMultipleSort(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- `TRUE`複数列の並べ替えモードを有効にするには`FALSE`を複数の列の並べ替えモードを無効にして、並べ替えられた列の一覧から列を削除します。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ `TRUE` to enable multiple column sort mode; `FALSE` to disable multiple column sort mode and to remove any columns from the list of sorted columns. The default value is `TRUE`.  
   
-### <a name="remarks"></a>コメント  
- 有効にするか、複数の列の並べ替えモードを無効にするには、このメソッドを使用します。 ヘッダー コントロールが複数の列の並べ替えモードの場合、2 つ以上の列は、並べ替えに参加できます。  
+### <a name="remarks"></a>Remarks  
+ Use this method to enable or disable multiple column sort mode. Two or more columns can participate in a sort if the header control is in multiple column sort mode.  
   
-##  <a name="getcolumnstate"></a>CMFCHeaderCtrl::GetColumnState  
- 列が並べ替えではありませんかを昇順または降順で並べ替えるかどうかを示します。  
+##  <a name="getcolumnstate"></a>  CMFCHeaderCtrl::GetColumnState  
+ Indicates whether a column is unsorted, or is sorted in ascending or descending order.  
   
 ```  
 int GetColumnState(int iColumn) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- 列の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The zero-based index of a column.  
   
-### <a name="return-value"></a>戻り値  
- 指定された列の並べ替えの状態を示す値。 次の表では、指定できる値を示します。  
+### <a name="return-value"></a>Return Value  
+ A value that indicate the sort status of the specified column. The following table lists the possible values:  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|-1|降順に並べ替えられます。|  
-|0|並べ替えられていません。|  
-|1|昇順に並べ替えられます。|  
+|-1|Sorted in descending order.|  
+|0|Not sorted.|  
+|1|Sorted in ascending order.|  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getsortcolumn"></a>CMFCHeaderCtrl::GetSortColumn  
- ヘッダー コントロールの最初の並べ替えられた列の&0; から始まるインデックスを取得します。  
+##  <a name="getsortcolumn"></a>  CMFCHeaderCtrl::GetSortColumn  
+ Retrieves the zero-based index of the first sorted column in the header control.  
   
 ```  
 int GetSortColumn() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 並べ替える列または並べ替えられた列が存在しない場合は-1 のインデックス。  
+### <a name="return-value"></a>Return Value  
+ The index of a sorted column, or -1 if no sorted column is found.  
   
-### <a name="remarks"></a>コメント  
- ヘッダー コントロールが場合*複数列の並べ替え*モードと、このメソッドは、アサートしを使用するように勧めるデバッグ モードでアプリケーションをコンパイル、 [CMFCHeaderCtrl::GetColumnState](#getcolumnstate)メソッド代わりにします。 ヘッダー コントロールが複数の列の並べ替えモードになって、リテール モードでアプリケーションをコンパイルした場合は、このメソッドは-1 を返します。  
+### <a name="remarks"></a>Remarks  
+ If the header control is in *multiple column sort* mode and you compiled the application in debug mode, this method asserts and advises you to use the [CMFCHeaderCtrl::GetColumnState](#getcolumnstate) method instead. If the header control is in multiple column sort mode and you compiled the application in retail mode, this method returns -1.  
   
-##  <a name="isascending"></a>CMFCHeaderCtrl::IsAscending  
- ヘッダー コントロールの任意の列を昇順で並べ替えるかどうかを示します。  
+##  <a name="isascending"></a>  CMFCHeaderCtrl::IsAscending  
+ Indicates whether any column in the header control is sorted in ascending order.  
   
 ```  
 BOOL IsAscending() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ヘッダー コントロールの任意の列が昇順に並べ替えられている場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if any column in the header control is sorted in ascending order; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドから返される値は、ヘッダー コントロールの項目に適切な並べ替えの矢印を表示するために使用します。 使用して、 [CMFCHeaderCtrl::SetSortColumn](#setsortcolumn)並べ替え順序を設定します。  
+### <a name="remarks"></a>Remarks  
+ The value that this method returns is used to display the appropriate sort arrow on the header control item. Use the [CMFCHeaderCtrl::SetSortColumn](#setsortcolumn) method to set the sort order.  
   
-##  <a name="isdialogcontrol"></a>CMFCHeaderCtrl::IsDialogControl  
- 現在のヘッダー コントロールの親ウィンドウがダイアログ ボックスであるかどうかを示します。  
+##  <a name="isdialogcontrol"></a>  CMFCHeaderCtrl::IsDialogControl  
+ Indicates whether the parent window of the current header control is a dialog box.  
   
 ```  
 BOOL IsDialogControl() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`現在のヘッダー コントロールの親ウィンドウが、ダイアログ ボックスである場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the parent window of the current header control is a dialog box; otherwise, `FALSE`.  
   
-##  <a name="ismultiplesort"></a>CMFCHeaderCtrl::IsMultipleSort  
- 現在のヘッダー コントロールがあるかどうかを示す*複数列の並べ替え*モードです。  
+##  <a name="ismultiplesort"></a>  CMFCHeaderCtrl::IsMultipleSort  
+ Indicates whether the current header control is in *multiple column sort* mode.  
   
 ```  
 BOOL IsMultipleSort() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`複数列の並べ替えモードが有効にします。それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if multiple column sort mode is enabled; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- 使用して、 [CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort)メソッドを有効または複数の列の並べ替えモードを無効にします。 ヘッダー コントロールが複数の列の並べ替えモードの場合、2 つ以上の列は、並べ替えに参加できます。  
+### <a name="remarks"></a>Remarks  
+ Use the [CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort) method to enable or disable multiple column sort mode. Two or more columns can participate in a sort if the header control is in multiple column sort mode.  
   
-##  <a name="ondrawitem"></a>CMFCHeaderCtrl::OnDrawItem  
- ヘッダー コントロールの列を描画するためにフレームワークによって呼び出されます。  
+##  <a name="ondrawitem"></a>  CMFCHeaderCtrl::OnDrawItem  
+ Called by the framework to draw a header control column.  
   
 ```  
 virtual void OnDrawItem(
@@ -232,24 +243,24 @@ virtual void OnDrawItem(
     BOOL bIsHighlighted);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
- [入力] `iItem`  
- 描画する項目の&0; から始まるインデックス。  
+ [in] `iItem`  
+ The zero-based index of the item to draw.  
   
- [入力] `rect`  
- 描画する項目の外接する四角形。  
+ [in] `rect`  
+ The bounding rectangle of the item to draw.  
   
- [入力] `bIsPressed`  
- `TRUE`押された状態で、項目を描画するにはそれ以外の場合、`FALSE`です。  
+ [in] `bIsPressed`  
+ `TRUE` to draw the item in pressed state; otherwise, `FALSE`.  
   
- [入力] `bIsHighlighted`  
- `TRUE`強調表示された状態で、項目を描画するにはそれ以外の場合、`FALSE`です。  
+ [in] `bIsHighlighted`  
+ `TRUE` to draw the item in highlighted state; otherwise, `FALSE`.  
   
-##  <a name="ondrawsortarrow"></a>CMFCHeaderCtrl::OnDrawSortArrow  
- 並べ替えの矢印を描画するためにフレームワークによって呼び出されます。  
+##  <a name="ondrawsortarrow"></a>  CMFCHeaderCtrl::OnDrawSortArrow  
+ Called by the framework to draw the sort arrow.  
   
 ```  
 virtual void OnDrawSortArrow(
@@ -257,39 +268,39 @@ virtual void OnDrawSortArrow(
     CRect rectArrow);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
- [入力] `rectArrow`  
- 並べ替え矢印の外接する四角形。  
+ [in] `rectArrow`  
+ The bounding rectangle of the sort arrow.  
   
-##  <a name="onfillbackground"></a>CMFCHeaderCtrl::OnFillBackground  
- ヘッダー コントロールの列の背景を塗りつぶすために、フレームワークによって呼び出されます。  
+##  <a name="onfillbackground"></a>  CMFCHeaderCtrl::OnFillBackground  
+ Called by the framework to fill the background of a header control column.  
   
 ```  
 virtual void OnFillBackground(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="removesortcolumn"></a>CMFCHeaderCtrl::RemoveSortColumn  
- 並べ替え列のリストから指定された列を削除します。  
+##  <a name="removesortcolumn"></a>  CMFCHeaderCtrl::RemoveSortColumn  
+ Removes the specified column from the list of sort columns.  
   
 ```  
 void RemoveSortColumn(int iColumn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- 削除する列の&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The zero-based index of the column to remove.  
   
-##  <a name="setsortcolumn"></a>CMFCHeaderCtrl::SetSortColumn  
- ヘッダー コントロールの指定された列の並べ替え順序を設定します。  
+##  <a name="setsortcolumn"></a>  CMFCHeaderCtrl::SetSortColumn  
+ Sets the sort order of a specified column in a header control.  
   
 ```  
 void SetSortColumn(
@@ -298,27 +309,27 @@ void SetSortColumn(
     BOOL bAdd=FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- ヘッダー コントロールの列の&0; から始まるインデックス。 このパラメーターが&0; より小さい場合、このメソッドは、並べ替え列のリストからすべての列を削除します。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The zero-based index of a header control column. If this parameter is less than zero, this method removes all columns from the list of sort columns.  
   
- [入力] `bAscending`  
- 列の並べ替え順序を指定する、`iColumn`パラメーターを指定します。 `TRUE`昇順。 を設定するには`FALSE`を降順に並べ替えを設定します。 既定値は `TRUE` です。  
+ [in] `bAscending`  
+ Specifies the sort order of the column that the `iColumn` parameter specifies. `TRUE` to set ascending order; `FALSE` to set descending order. The default value is `TRUE`.  
   
- [入力] `bAdd`  
- `TRUE`列の並べ替え順序の設定、`iColumn`パラメーターを指定します。  
+ [in] `bAdd`  
+ `TRUE` to set the sort order of the column that the `iColumn` parameter specifies.  
   
- 現在のヘッダー コントロールが場合*複数列の並べ替え*モードでは、このメソッドは、並べ替え列のリストに指定された列を追加します。 使用[CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort)を複数の列の並べ替えモードを設定します。  
+ If the current header control is in *multiple column sort* mode, this method adds the specified column to the list of sort columns. Use [CMFCHeaderCtrl::EnableMultipleSort](#enablemultiplesort) to set multiple column sort mode.  
   
- かどうかは、複数の列の並べ替えモードが設定されていないと、このメソッドは、デバッグ モードでコンパイルされている、このメソッドはアサートします。 複数列の並べ替えモードが設定されていない、このメソッドは、製品版モードでコンパイルされている場合は、このメソッドは最初並べ替え列の一覧からすべての列を削除し、一覧に指定された列を追加します。  
+ If multiple column sort mode is not set and this method is compiled in debug mode, this method asserts. If multiple column sort mode is not set and this method is compiled in retail mode, this method first removes all columns from the list of sort columns, and then adds the specified column to the list.  
   
- `FALSE`最初に並べ替え列の一覧からすべての列を削除し、一覧に指定された列を追加します。 既定値は `FALSE` です。  
+ `FALSE` to first remove all columns from the list of sort columns, and then add the specified column to the list. The default value is `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを使用すると、列の並べ替え順序を設定できます。 必要に応じて、このメソッドは、列を並べ替え列のリストに追加します。 ヘッダー コントロールでは、並べ替え順序を使用して、上向きまたは下向きの矢印を描画します。  
+### <a name="remarks"></a>Remarks  
+ Use this method to set the sort order of a column. If necessary, this method adds the column to the list of sort columns. The header control uses the sort order to draw a sort arrow that points up or down.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCListCtrl クラス](../../mfc/reference/cmfclistctrl-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCListCtrl Class](../../mfc/reference/cmfclistctrl-class.md)
 

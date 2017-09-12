@@ -1,58 +1,77 @@
 ---
-title: "MFC アプリケーションの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/16/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション ウィザード [C++], インターネット アプリケーション"
-  - "インターネット アプリケーション [C++], MFC"
-  - "MFC [C++], アプリケーション開発"
-  - "MFC [C++], インターネット アプリケーション"
+title: Writing MFC Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/16/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Internet applications [MFC], MFC
+- MFC, Internet applications
+- application wizards [MFC], Internet applications
+- MFC, application development
 ms.assetid: 6a8d8a03-abfa-4976-86c2-c5773a4b7179
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC アプリケーションの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 63072af612adf75290cbdab69867b37e9cbe1bc5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、アプリケーションを開発するために選択した最初の手順について説明します。  最初に、どのようなアプリケーションを作成するかを決定する必要があります。  選択のいくつかは [アプリケーションのデザインの選択](../mfc/application-design-choices.md)で説明されています。  アプリケーションは、次の操作:  
+---
+# <a name="writing-mfc-applications"></a>Writing MFC Applications
+This article explains the initial steps you take to develop your application. First, you must decide what kind of application you are writing. Several of the choices were discussed in [Application Design Choices](../mfc/application-design-choices.md). Will your application be:  
   
--   インターネット ゾーンまたはイントラネットの実行か。  
+-   Running on the Internet or an intranet  
   
--   クライアントまたはサーバーで実行します。  
+-   Running on a client or on a server  
   
--   ブラウザーまたはスタンドアロン アプリケーションとして実行します。  
+-   Running in a browser or as a stand-alone application  
   
--   COM または Active テクノロジを使用するか。  
+-   Using COM or Active technology  
   
--   WinInet または非同期モニカーを使用してダウンロード データか。  
+-   Downloading data using WinInet or asynchronous monikers  
   
- この決定は、どのクラスがアプリケーションに適しているかを判断します。  これは、アプリケーション ウィザードを実行するか、アプリケーションを構築するように、選択した内容を確認できます。  
+ Your decisions determine which classes are appropriate for your application. Your answers also help determine the selections you make when you run the Application Wizard to begin constructing your application.  
   
- インターネット アプリケーションの最初のデザインの決定を行った後で、起動にアプリケーション ウィザードを使用できます。  スケルトン アプリケーションを作成し、次のトピックで説明されているようにコードを変更するには、アプリケーション ウィザードの使用:  
+ After you've made your initial design decisions about your Internet application, you can use the Application Wizard to get started. Use the Application Wizard to create a skeleton application and modify the code as described in the following articles:  
   
--   ActiveX コントロールの場合、[インターネット上の ActiveX コントロール](../mfc/activex-controls-on-the-internet.md)を参照してください。  
+-   For an ActiveX control, see [ActiveX Controls on the Internet](../mfc/activex-controls-on-the-internet.md).  
   
--   アクティブ ドキュメントについては、[インターネット上の Active ドキュメント](../Topic/Active%20Documents%20on%20the%20Internet.md)を参照してください。  
+-   For an Active document, see [Active Documents on the Internet](../mfc/active-documents-on-the-internet.md).  
   
- 次のトピックでは、詳細な手順を開始してプログラミング タスクを提供し、T:  
+ The following articles also provide instructions to help you start your programming tasks:  
   
--   [アプリケーションのデザイン上の検討事項](../mfc/application-design-choices.md)  
+-   [Application Design Choices](../mfc/application-design-choices.md)  
   
--   [インターネット上の非同期モニカー](../mfc/asynchronous-monikers-on-the-internet.md)  
+-   [Asynchronous Monikers on the Internet](../mfc/asynchronous-monikers-on-the-internet.md)  
   
--   [WinInet の基礎](../mfc/wininet-basics.md)  
+-   [WinInet Basics](../mfc/wininet-basics.md)  
   
-## 参照  
- [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Tasks](../mfc/mfc-internet-programming-tasks.md)   
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)
+
+

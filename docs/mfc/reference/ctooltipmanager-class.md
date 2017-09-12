@@ -1,5 +1,5 @@
 ---
-title: "CTooltipManager クラス |Microsoft ドキュメント"
+title: CTooltipManager Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,7 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CTooltipManager class
+- CTooltipManager [MFC], CreateToolTip
+- CTooltipManager [MFC], DeleteToolTip
+- CTooltipManager [MFC], SetTooltipParams
+- CTooltipManager [MFC], SetTooltipText
+- CTooltipManager [MFC], UpdateTooltips
 ms.assetid: c71779d7-8b6e-47ef-8500-d4552731fe86
 caps.latest.revision: 22
 author: mikeblome
@@ -39,47 +43,47 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 3bbf191aacdd318f2afb0bd1a126c3eff290fad6
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 662248d9fd7535a339b2da2ade73ad69b2f7f3b2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="ctooltipmanager-class"></a>CTooltipManager クラス
-ツールヒントに関するランタイム情報を保持します。 `CTooltipManager` クラスのインスタンスは、アプリケーションごとに&1; 回作成されます。  
+# <a name="ctooltipmanager-class"></a>CTooltipManager Class
+Maintains runtime information about tooltips. The `CTooltipManager` class is instantiated one time per application.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CTooltipManager : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CTooltipManager::CreateToolTip](#createtooltip)|指定された Windows コントロールの種類のツールヒント コントロールを作成します。|  
-|[CTooltipManager::DeleteToolTip](#deletetooltip)|ツールヒント コントロールを削除します。|  
-|[CTooltipManager::SetTooltipParams](#settooltipparams)|指定された Windows コントロールの種類のツールヒント コントロールの外観をカスタマイズします。|  
-|[CTooltipManager::SetTooltipText](#settooltiptext)|ツールヒント コントロールのテキストと説明を設定します。|  
+|[CTooltipManager::CreateToolTip](#createtooltip)|Creates a tooltip control for the specified Windows control type(s).|  
+|[CTooltipManager::DeleteToolTip](#deletetooltip)|Deletes a tooltip control.|  
+|[CTooltipManager::SetTooltipParams](#settooltipparams)|Customizes the visual appearance of the tooltip control for the specified Windows control type(s).|  
+|[CTooltipManager::SetTooltipText](#settooltiptext)|Sets the text and description for a tooltip control.|  
 |[CTooltipManager::UpdateTooltips](#updatetooltips)||  
   
-## <a name="remarks"></a>コメント  
- 使用[CMFCToolTipCtrl クラス](../../mfc/reference/cmfctooltipctrl-class.md)、 `CMFCToolTipInfo`、および`CTooltipManager`アプリケーションでカスタマイズしたツール ヒントを実装するためにします。 これらのツール ヒント クラスを使用する方法の例は、次を参照してください。、 [CMFCToolTipCtrl クラス](../../mfc/reference/cmfctooltipctrl-class.md)トピックです。  
+## <a name="remarks"></a>Remarks  
+ Use [CMFCToolTipCtrl Class](../../mfc/reference/cmfctooltipctrl-class.md), `CMFCToolTipInfo`, and `CTooltipManager` together to implement customized tooltips in your application. For an example of how to use these tooltip classes, see the [CMFCToolTipCtrl Class](../../mfc/reference/cmfctooltipctrl-class.md) topic.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CTooltipManager](../../mfc/reference/ctooltipmanager-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxtooltipmanager.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxtooltipmanager.h  
   
-##  <a name="createtooltip"></a>CTooltipManager::CreateToolTip  
- Tooltip コントロールを作成します。  
+##  <a name="createtooltip"></a>  CTooltipManager::CreateToolTip  
+ Creates a tooltip control.  
   
 ```  
 static BOOL CreateToolTip(
@@ -88,56 +92,56 @@ static BOOL CreateToolTip(
     UINT nType);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [出力] `pToolTip`  
- ツールヒントのポインターへの参照。 関数が返す場合は、新しく作成されたツールヒントをポイントに設定されます。  
+### <a name="parameters"></a>Parameters  
+ [out] `pToolTip`  
+ A reference to a tooltip pointer. It is set to point to the newly created tooltip when the function returns.  
   
- [入力] `pWndParent`  
- ツールヒントの親です。  
+ [in] `pWndParent`  
+ Parent of the tooltip.  
   
- [入力] `nType`  
- ツール ヒントの種類です。  
+ [in] `nType`  
+ Type of the tooltip.  
   
-### <a name="return-value"></a>戻り値  
- ツール ヒントが正常に作成された場合は&0; 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if a tooltip has been created successfully.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[CTooltipManager::DeleteToolTip](#deletetooltip)で戻されたツールヒント コントロールを削除する`pToolTip`です。  
+### <a name="remarks"></a>Remarks  
+ You must call [CTooltipManager::DeleteToolTip](#deletetooltip) to delete the tooltip control that is passed back in `pToolTip`.  
   
- [CTooltipManager](../../mfc/reference/ctooltipmanager-class.md)を作成する各ツールヒントの視覚的な表示パラメーターは、ツールヒントに基づくセットの種類を`nType`を指定します。 1 つまたは複数のツールヒント型のパラメーターを変更するには、呼び出す[CTooltipManager::SetTooltipParams](#settooltipparams)します。  
+ The [CTooltipManager](../../mfc/reference/ctooltipmanager-class.md) sets the visual display parameters of each tooltip it creates based on the tooltip type that `nType` specifies. To change the parameters for one or more tooltip types, call [CTooltipManager::SetTooltipParams](#settooltipparams).  
   
- 有効なツールヒントの種類は、次の表のとおりです。  
+ Valid tooltip types are listed in the following table:  
   
-|ツールヒントの種類|コントロールの分類|型の例|  
+|Tooltip type|Control category|Example types|  
 |------------------|----------------------|-------------------|  
-|AFX_TOOLTIP_TYPE_BUTTON|ボタンをクリックします。|CMFCButton|  
-|AFX_TOOLTIP_TYPE_CAPTIONBAR|キャプション バー。|CMFCCaptionBar|  
-|AFX_TOOLTIP_TYPE_DEFAULT|別のカテゴリに一致しないコントロール。|なし。|  
-|AFX_TOOLTIP_TYPE_DOCKBAR|ドッキング可能ペインです。|CDockablePane|  
-|AFX_TOOLTIP_TYPE_EDIT|テキスト ボックスです。|なし。|  
-|AFX_TOOLTIP_TYPE_MINIFRAME|ミニフレームします。|CPaneFrameWnd|  
-|AFX_TOOLTIP_TYPE_PLANNER|プランナー|なし。|  
-|AFX_TOOLTIP_TYPE_RIBBON|リボン バーです。|CMFCRibbonBar CMFCRibbonPanelMenuBar|  
-|AFX_TOOLTIP_TYPE_TAB|タブ コントロールです。|CMFCTabCtrl|  
-|AFX_TOOLTIP_TYPE_TOOLBAR|ツールバーです。|CMFCToolBar CMFCPopupMenuBar|  
-|AFX_TOOLTIP_TYPE_TOOLBOX|ツールボックスです。|なし。|  
+|AFX_TOOLTIP_TYPE_BUTTON|A button.|CMFCButton|  
+|AFX_TOOLTIP_TYPE_CAPTIONBAR|A caption bar.|CMFCCaptionBar|  
+|AFX_TOOLTIP_TYPE_DEFAULT|Any control that does not fit another category.|None.|  
+|AFX_TOOLTIP_TYPE_DOCKBAR|A dockable pane.|CDockablePane|  
+|AFX_TOOLTIP_TYPE_EDIT|A text box.|None.|  
+|AFX_TOOLTIP_TYPE_MINIFRAME|A miniframe.|CPaneFrameWnd|  
+|AFX_TOOLTIP_TYPE_PLANNER|A planner.|None.|  
+|AFX_TOOLTIP_TYPE_RIBBON|A ribbon bar.|CMFCRibbonBar, CMFCRibbonPanelMenuBar|  
+|AFX_TOOLTIP_TYPE_TAB|A tab control.|CMFCTabCtrl|  
+|AFX_TOOLTIP_TYPE_TOOLBAR|A toolbar.|CMFCToolBar, CMFCPopupMenuBar|  
+|AFX_TOOLTIP_TYPE_TOOLBOX|A toolbox.|None.|  
   
-##  <a name="deletetooltip"></a>CTooltipManager::DeleteToolTip  
- ツールヒント コントロールを削除します。  
+##  <a name="deletetooltip"></a>  CTooltipManager::DeleteToolTip  
+ Deletes a tooltip control.  
   
 ```  
 static void DeleteToolTip(CToolTipCtrl*& pToolTip);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力、出力] `pToolTip`  
- 破棄するツールヒントへのポインターへの参照。  
+### <a name="parameters"></a>Parameters  
+ [in, out] `pToolTip`  
+ A reference to a pointer to a tooltip to be destroyed.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを呼び出すごとに[CToolTipCtrl クラス](../../mfc/reference/ctooltipctrl-class.md)によって作成された[CTooltipManager::CreateToolTip](#createtooltip)します。 親コントロールからこのメソッドを呼び出す必要があります、`OnDestroy`ハンドラー。 これが正しく、framework からヒントを削除する必要です。 このメソッドは、設定`pToolTip`に`NULL`を返す前にします。  
+### <a name="remarks"></a>Remarks  
+ Call this method for each [CToolTipCtrl Class](../../mfc/reference/ctooltipctrl-class.md) that was created by [CTooltipManager::CreateToolTip](#createtooltip). The parent control should call this method from its `OnDestroy` handler. This is required to correctly remove the tooltip from the framework. This method sets `pToolTip` to `NULL` before it returns.  
   
-##  <a name="settooltipparams"></a>CTooltipManager::SetTooltipParams  
- 指定した Windows コントロールの種類のツール ヒント コントロールの外観をカスタマイズします。  
+##  <a name="settooltipparams"></a>  CTooltipManager::SetTooltipParams  
+ Customizes the appearance of the tooltip control for the specified Windows control types.  
   
 ```  
 void SetTooltipParams(
@@ -146,30 +150,30 @@ void SetTooltipParams(
     CMFCToolTipInfo* pParams=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nTypes`  
- コントロールの種類を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nTypes`  
+ Specifies control types.  
   
- [入力] `pRTC`  
- カスタム ツールヒントのランタイム クラスです。  
+ [in] `pRTC`  
+ Runtime class of custom tooltip.  
   
- [入力] `pParams`  
- ツール ヒントのパラメーターです。  
+ [in] `pParams`  
+ Tooltip parameters.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを設定、ランタイム クラスと初期パラメーターを[CToolTipManager](../../mfc/reference/ctooltipmanager-class.md)ツールヒントを作成するときに使用します。 コントロールを呼び出すと[CTooltipManager::CreateToolTip](#createtooltip)がツールヒントにパスとなる型で示された種類のいずれかと`nTypes`、ツールヒント マネージャーで指定されたランタイム クラスのインスタンスであるツールヒント コントロールを作成する`pRTC`で指定されたパラメーターを渡す`pParams`新しいツールヒントにします。  
+### <a name="remarks"></a>Remarks  
+ This method sets the runtime class and initial parameters that the [CToolTipManager](../../mfc/reference/ctooltipmanager-class.md) uses when it creates tooltips. When a control calls [CTooltipManager::CreateToolTip](#createtooltip) and passes in a tooltip type that is one of the types indicated by `nTypes`, the tooltip manager creates a tooltip control that is an instance of the runtime class specified by `pRTC` and passes the parameters specified by `pParams` to the new tooltip.  
   
- このメソッドを呼び出すと、既存のすべてのツールヒント所有者 AFX_WM_UPDATETOOLTIPS メッセージが表示されツールヒントを使用して再作成する必要があります[CTooltipManager::CreateToolTip](#createtooltip)します。  
+ When you call this method, all existing tooltip owners receive the AFX_WM_UPDATETOOLTIPS message and they must re-create their tooltips by using [CTooltipManager::CreateToolTip](#createtooltip).  
   
- `nTypes`有効なツールヒントの任意の組み合わせの種類は、 [CTooltipManager::CreateToolTip](#createtooltip)で使用することもできます AFX_TOOLTIP_TYPE_ALL します。 AFX_TOOLTIP_TYPE_ALL を渡すと、すべてのツール ヒントの種類に影響します。  
+ `nTypes` can be any combination of the valid tooltip types that [CTooltipManager::CreateToolTip](#createtooltip) uses, or it can be AFX_TOOLTIP_TYPE_ALL. If you pass AFX_TOOLTIP_TYPE_ALL, all tooltip types are affected.  
   
-### <a name="example"></a>例  
- 次の例では、使用して、`SetTooltipParams`のメソッド、`CTooltipManager`クラスです。 このコード スニペットの一部である、[クライアントの描画のサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to use the `SetTooltipParams` method of the `CTooltipManager` class. This code snippet is part of the [Draw Client sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_DrawClient&#11;](../../mfc/reference/codesnippet/cpp/ctooltipmanager-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_DrawClient#11](../../mfc/reference/codesnippet/cpp/ctooltipmanager-class_1.cpp)]  
   
-##  <a name="settooltiptext"></a>CTooltipManager::SetTooltipText  
- テキストとツールヒントの説明を設定します。  
+##  <a name="settooltiptext"></a>  CTooltipManager::SetTooltipText  
+ Sets the text and description for a tooltip.  
   
 ```  
 static void SetTooltipText(
@@ -180,37 +184,37 @@ static void SetTooltipText(
     LPCTSTR lpszDescr=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pTI`  
- TOOLINFO オブジェクトへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pTI`  
+ A pointer to a TOOLINFO object.  
   
- [入力、出力] `pToolTip`  
- テキストと説明を設定するツール ヒント コントロールへのポインター。  
+ [in, out] `pToolTip`  
+ A pointer to the tooltip control for which to set the text and description.  
   
- [入力] `nType`  
- このツール ヒントが関連付けられているコントロールの種類を指定します。  
+ [in] `nType`  
+ Specifies the type of control with which this tooltip is associated.  
   
- [入力] `strText`  
- ツールヒントのテキストとして設定するテキストです。  
+ [in] `strText`  
+ The text to set as the tooltip text.  
   
- [入力] `lpszDescr`  
- Tooltip の説明へのポインター。 できる`NULL`です。  
+ [in] `lpszDescr`  
+ A pointer to the tooltip description. Can be `NULL`.  
   
-### <a name="remarks"></a>コメント  
- 値`nType`と同じ値にする必要があります、`nType`のパラメーター [CTooltipManager::CreateToolTip](#createtooltip)ツールヒントを作成したときにします。  
+### <a name="remarks"></a>Remarks  
+ The value of `nType` must be the same value as the `nType` parameter of [CTooltipManager::CreateToolTip](#createtooltip) when you created the tooltip.  
   
-##  <a name="updatetooltips"></a>CTooltipManager::UpdateTooltips  
+##  <a name="updatetooltips"></a>  CTooltipManager::UpdateTooltips  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
 ```  
 void UpdateTooltips();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCToolTipCtrl クラス](../../mfc/reference/cmfctooltipctrl-class.md)   
- [CMFCToolTipInfo クラス](../../mfc/reference/cmfctooltipinfo-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCToolTipCtrl Class](../../mfc/reference/cmfctooltipctrl-class.md)   
+ [CMFCToolTipInfo Class](../../mfc/reference/cmfctooltipinfo-class.md)
 

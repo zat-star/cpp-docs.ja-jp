@@ -1,5 +1,5 @@
 ---
-title: "クラスの詳細 |Microsoft ドキュメント"
+title: CFtpConnection Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -26,10 +26,18 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFtpConnection class
-- FTP (File Transfer Protocol), establishing connections
-- Internet connections, FTP
-- Internet services, FTP
+- CFtpConnection [MFC], CFtpConnection
+- CFtpConnection [MFC], Command
+- CFtpConnection [MFC], CreateDirectory
+- CFtpConnection [MFC], GetCurrentDirectory
+- CFtpConnection [MFC], GetCurrentDirectoryAsURL
+- CFtpConnection [MFC], GetFile
+- CFtpConnection [MFC], OpenFile
+- CFtpConnection [MFC], PutFile
+- CFtpConnection [MFC], Remove
+- CFtpConnection [MFC], RemoveDirectory
+- CFtpConnection [MFC], Rename
+- CFtpConnection [MFC], SetCurrentDirectory
 ms.assetid: 5e3a0501-8893-49cf-a3d5-0628d8d6b936
 caps.latest.revision: 23
 author: mikeblome
@@ -49,68 +57,68 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: ebfe4078bf70d0afc2d36a222b61c11dbaf7c64d
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 44c80b1d09ae0fcb8547e8979405aab9f3467470
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cftpconnection-class"></a>クラスの詳細
-インターネット サーバーへの FTP 接続を管理でき、そのサーバー上のディレクトリおよびファイルを直接操作できます。  
+# <a name="cftpconnection-class"></a>CFtpConnection Class
+Manages your FTP connection to an Internet server and allows direct manipulation of directories and files on that server.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFtpConnection : public CInternetConnection  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFtpConnection::CFtpConnection](#cftpconnection)|`CFtpConnection` オブジェクトを構築します。|  
+|[CFtpConnection::CFtpConnection](#cftpconnection)|Constructs a `CFtpConnection` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFtpConnection::Command](#command)|FTP サーバーに直接コマンドを送信します。|  
-|[CFtpConnection::CreateDirectory](#createdirectory)|サーバー上のディレクトリを作成します。|  
-|[CFtpConnection::GetCurrentDirectory](#getcurrentdirectory)|この接続の現在のディレクトリを取得します。|  
-|[CFtpConnection::GetCurrentDirectoryAsURL](#getcurrentdirectoryasurl)|この接続を URL としての現在のディレクトリを取得します。|  
-|[CFtpConnection::GetFile](#getfile)|接続先のサーバーからファイルを取得します。|  
-|[CFtpConnection::OpenFile](#openfile)|接続されているサーバー上のファイルを開きます。|  
-|[CFtpConnection::PutFile](#putfile)|サーバー上のファイルを配置します。|  
-|[CFtpConnection::Remove](#remove)|サーバーからファイルを削除します。|  
-|[CFtpConnection::RemoveDirectory](#removedirectory)|サーバーから、指定したディレクトリを削除します。|  
-|[CFtpConnection::Rename](#rename)|サーバー上のファイルの名前を変更します。|  
-|[CFtpConnection::SetCurrentDirectory](#setcurrentdirectory)|現在の FTP ディレクトリを設定します。|  
+|[CFtpConnection::Command](#command)|Sends a command directly to an FTP server.|  
+|[CFtpConnection::CreateDirectory](#createdirectory)|Creates a directory on the server.|  
+|[CFtpConnection::GetCurrentDirectory](#getcurrentdirectory)|Gets the current directory for this connection.|  
+|[CFtpConnection::GetCurrentDirectoryAsURL](#getcurrentdirectoryasurl)|Gets the current directory for this connection as a URL.|  
+|[CFtpConnection::GetFile](#getfile)|Gets a file from the connected server|  
+|[CFtpConnection::OpenFile](#openfile)|Opens a file on the connected server.|  
+|[CFtpConnection::PutFile](#putfile)|Places a file on the server.|  
+|[CFtpConnection::Remove](#remove)|Removes a file from the server.|  
+|[CFtpConnection::RemoveDirectory](#removedirectory)|Removes the specified directory from the server.|  
+|[CFtpConnection::Rename](#rename)|Renames a file on the server.|  
+|[CFtpConnection::SetCurrentDirectory](#setcurrentdirectory)|Sets the current FTP directory.|  
   
-## <a name="remarks"></a>コメント  
- FTP では、MFC WinInet クラスによって認識される&3; つのインターネット サービスの&1; つです。  
+## <a name="remarks"></a>Remarks  
+ FTP is one of the three Internet services recognized by the MFC WinInet classes.  
   
- Ftp サーバーと通信するためのインスタンスを最初に作成する必要があります[CInternetSession](../../mfc/reference/cinternetsession-class.md)、し、作成、`CFtpConnection`オブジェクトです。 作成しないで、`CFtpConnection`オブジェクトに直接を呼び出す[CInternetSession::GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection)、作成、`CFtpConnection`オブジェクトし、ポインターを返します。  
+ To communicate with an FTP Internet server, you must first create an instance of [CInternetSession](../../mfc/reference/cinternetsession-class.md), and then create a `CFtpConnection` object. You never create a `CFtpConnection` object directly; rather, call [CInternetSession::GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection), which creates the `CFtpConnection` object and returns a pointer to it.  
   
- 方法について説明する`CFtpConnection`他のインターネットの MFC クラスと動作は、記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)します。 サービス、HTTP および gopher は、クラスを参照してください。 サポートされている他の&2; つとの通信の詳細については[関数](../../mfc/reference/chttpconnection-class.md)と[関数](../../mfc/reference/cgopherconnection-class.md)します。  
+ To learn more about how `CFtpConnection` works with the other MFC Internet classes, see the article [Internet Programming with WinInet](../../mfc/win32-internet-extensions-wininet.md). For more information about communicating with the other two supported services, HTTP and gopher, see the classes [CHttpConnection](../../mfc/reference/chttpconnection-class.md) and [CGopherConnection](../../mfc/reference/cgopherconnection-class.md).  
   
-## <a name="example"></a>例  
-  例を参照して、[関数](../../mfc/reference/cftpfilefind-class.md)クラスの概要です。  
+## <a name="example"></a>Example  
+  See the example in the [CFtpFileFind](../../mfc/reference/cftpfilefind-class.md) class overview.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
- [関数](../../mfc/reference/cinternetconnection-class.md)  
+ [CInternetConnection](../../mfc/reference/cinternetconnection-class.md)  
   
  `CFtpConnection`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxinet.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxinet.h  
   
-##  <a name="cftpconnection"></a>CFtpConnection::CFtpConnection  
- このメンバー関数が作成すると呼ばれる、`CFtpConnection`オブジェクトです。  
+##  <a name="cftpconnection"></a>  CFtpConnection::CFtpConnection  
+ This member function is called to construct a `CFtpConnection` object.  
   
 ```  
 CFtpConnection(
@@ -130,43 +138,43 @@ CFtpConnection(
     BOOL bPassive = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pSession`  
- 関連するへのポインター [CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。  
+ A pointer to the related [CInternetSession](../../mfc/reference/cinternetsession-class.md) object.  
   
  `hConnected`  
- 現在のインターネット セッションの Windows ハンドル。  
+ The Windows handle of the current Internet session.  
   
  `pstrServer`  
- FTP サーバーの名前を含む文字列へのポインター。  
+ A pointer to a string containing the FTP server name.  
   
  `dwContext`  
- 操作のコンテキストの識別子です。 `dwContext`によって返される操作のステータス情報を識別する[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)します。 既定値を 1 に設定します。ただし、操作の特定のコンテキスト ID を明示的に割り当てることができます。 オブジェクトとその動作はそのコンテキスト ID に関連付けられる  
+ The context identifier for the operation. `dwContext` identifies the operation's status information returned by [CInternetSession::OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback). The default is set to 1; however, you can explicitly assign a specific context ID for the operation. The object and any work it does will be associated with that context ID.  
   
  `pstrUserName`  
- ログインするユーザーの名前を指定する null で終わる文字列へのポインター。 場合**NULL**、既定値は匿名です。  
+ Pointer to a null-terminated string that specifies the name of the user to log in. If **NULL**, the default is anonymous.  
   
  `pstrPassword`  
- ログインに使用するパスワードを指定する null で終わる文字列へのポインター。 両方`pstrPassword`と`pstrUserName`は**NULL**、匿名の既定のパスワードは、ユーザーの電子メール名。 場合`pstrPassword`は**NULL** (または空の文字列) が、`pstrUserName`は**NULL**、空白のパスワードを使用します。 次の表の&4; 種類の設定では、動作`pstrUserName`と`pstrPassword`:  
+ A pointer to a null-terminated string that specifies the password to use to log in. If both `pstrPassword` and `pstrUserName` are **NULL**, the default anonymous password is the user's email name. If `pstrPassword` is **NULL** (or an empty string) but `pstrUserName` is not **NULL**, a blank password is used. The following table describes the behavior for the four possible settings of `pstrUserName` and `pstrPassword`:  
   
-|`pstrUserName`|`pstrPassword`|FTP サーバーに送信されるユーザー名|FTP サーバーに送信されるパスワード|  
+|`pstrUserName`|`pstrPassword`|Username sent to FTP server|Password sent to FTP server|  
 |--------------------|--------------------|---------------------------------|---------------------------------|  
-|**NULL**または""|**NULL**または""|「匿名」|ユーザーの電子メール名|  
-|非- **NULL**文字列|**NULL**または""|`pstrUserName`|" "|  
-|**NULL**以外**NULL**文字列|**エラー**|**エラー**||  
-|非- **NULL**文字列|非- **NULL**文字列|`pstrUserName`|`pstrPassword`|  
+|**NULL** or " "|**NULL** or " "|"anonymous"|User's email name|  
+|Non- **NULL** String|**NULL** or " "|`pstrUserName`|" "|  
+|**NULL** Non- **NULL** String|**ERROR**|**ERROR**||  
+|Non- **NULL** String|Non- **NULL** String|`pstrUserName`|`pstrPassword`|  
   
  `nPort`  
- サーバーで使用する TCP/IP ポートを識別する番号。  
+ A number that identifies the TCP/IP port to use on the server.  
   
  `bPassive`  
- この FTP セッションのパッシブまたはアクティブ モードを指定します。 場合に設定**TRUE**、Win32 API を設定して`dwFlag`に**INTERNET_FLAG_PASSIVE**します。  
+ Specifies passive or active mode for this FTP session. If set to **TRUE**, it sets the Win32 API `dwFlag` to **INTERNET_FLAG_PASSIVE**.  
   
-### <a name="remarks"></a>コメント  
- 作成しないで、`CFtpConnection`オブジェクトに直接します。 代わりに、 [CInternetSession::GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection)、作成、 **CFptConnection**オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ You never create a `CFtpConnection` object directly. Instead, call [CInternetSession::GetFtpConnection](../../mfc/reference/cinternetsession-class.md#getftpconnection), which creates the **CFptConnection** object.  
   
-##  <a name="command"></a>CFtpConnection::Command  
- FTP サーバーに直接コマンドを送信します。  
+##  <a name="command"></a>  CFtpConnection::Command  
+ Sends a command directly to an FTP server.  
   
 ```  
 CInternetFile* Command(
@@ -176,52 +184,52 @@ CInternetFile* Command(
     DWORD_PTR dwContext = 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszCommand`  
- 送信されるコマンドが含まれている文字列へのポインター。  
+ A pointer to a string containing the command to be sent.  
   
  *eResponse*  
- FTP サーバーからの応答が予期されているかどうかを判断します。 次のいずれかの値になります。  
+ Determines whether a response is expected from the FTP server. Can be one of the following values:  
   
-- **CmdRespNone**応答は発生しません。  
+- **CmdRespNone** No response is expected.  
   
-- **CmdRespRead**応答が必要です。  
+- **CmdRespRead** A response is expected.  
   
  `dwFlags`  
- この関数を制御するフラグが含まれている値。 完全な一覧については、次を参照してください。 [FTPCommand](http://msdn.microsoft.com/library/windows/desktop/aa384133)します。  
+ A value containing the flags that control this function. For a complete list, see [FTPCommand](http://msdn.microsoft.com/library/windows/desktop/aa384133).  
   
  `dwContext`  
- コールバックでアプリケーションのコンテキストを識別するために使用されるアプリケーション定義の値が含まれている値へのポインター。  
+ A pointer to a value containing an application-defined value used to identify the application context in callbacks.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数の機能をエミュレートする、 [FTPCommand](http://msdn.microsoft.com/library/windows/desktop/aa384133)関数」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the [FTPCommand](http://msdn.microsoft.com/library/windows/desktop/aa384133) function, as described in the Windows SDK.  
   
- エラーが発生する場合、MFC は型の例外をスロー[表す](../../mfc/reference/cinternetexception-class.md)します。  
+ If an error occurs, MFC throws an exception of type [CInternetException](../../mfc/reference/cinternetexception-class.md).  
   
-##  <a name="createdirectory"></a>CFtpConnection::CreateDirectory  
- 接続されたサーバーのディレクトリを作成するには、このメンバー関数を呼び出します。  
+##  <a name="createdirectory"></a>  CFtpConnection::CreateDirectory  
+ Call this member function to create a directory on the connected server.  
   
 ```  
 BOOL CreateDirectory(LPCTSTR pstrDirName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrDirName`  
- 作成するディレクトリの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the directory to create.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Windows の関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Windows function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- 使用`GetCurrentDirectory`をこのサーバーへの接続の現在の作業ディレクトリを判断します。 リモート システムが接続されていることをルート ディレクトリとは限りません。  
+### <a name="remarks"></a>Remarks  
+ Use `GetCurrentDirectory` to determine the current working directory for this connection to the server. Do not assume that the remote system has connected you to the root directory.  
   
- `pstrDirName`パラメーターには、いずれかを指定できます、部分的にまたは現在のディレクトリに対して相対的な完全修飾ファイル名。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `CreateDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+ The `pstrDirName` parameter can be either a partially or a fully qualified filename relative to the current directory. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `CreateDirectory` translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="getcurrentdirectory"></a>CFtpConnection::GetCurrentDirectory  
- このメンバー関数を呼び出して、現在のディレクトリの名前を取得します。  
+##  <a name="getcurrentdirectory"></a>  CFtpConnection::GetCurrentDirectory  
+ Call this member function to get the name of the current directory.  
   
 ```  
 BOOL GetCurrentDirectory(CString& strDirName) const;  
@@ -231,31 +239,31 @@ BOOL GetCurrentDirectory(
     LPDWORD lpdwLen) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `strDirName`  
- ディレクトリの名前を受け取る文字列への参照。  
+ A reference to a string that will receive the name of the directory.  
   
  `pstrDirName`  
- ディレクトリの名前を受け取る文字列へのポインター。  
+ A pointer to a string that will receive the name of the directory.  
   
  `lpdwLen`  
- 次の情報を含む DWORD へのポインター。  
+ A pointer to a DWORD that contains the following information:  
   
 |||  
 |-|-|  
-|エントリ|によって参照されるバッファーのサイズ`pstrDirName`します。|  
-|返された場合|格納されている文字数`pstrDirName`します。 メンバー関数が失敗したかどうか、および、ERROR_INSUFFICIENT_BUFFER が返されます`lpdwLen`文字列を取得するためにアプリケーションを割り当てる必要がありますバイト数が含まれています。|  
+|On entry|The size of the buffer referenced by `pstrDirName`.|  
+|On return|The number of characters stored to `pstrDirName`. If the member function fails and ERROR_INSUFFICIENT_BUFFER is returned, then `lpdwLen` contains the number of bytes that the application must allocate in order to receive the string.|  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- URL として代わりに、ディレクトリ名を取得する[GetCurrentDirectoryAsURL](#getcurrentdirectoryasurl)します。  
+### <a name="remarks"></a>Remarks  
+ To get the directory name as a URL instead, call [GetCurrentDirectoryAsURL](#getcurrentdirectoryasurl).  
   
- パラメーター`pstrDirName`または`strDirName`または完全な現在のディレクトリに対して相対的いずれかの部分修飾ファイル名であることができます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `GetCurrentDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+ The parameters `pstrDirName` or `strDirName` can be either partially qualified filenames relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `GetCurrentDirectory` translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="getcurrentdirectoryasurl"></a>CFtpConnection::GetCurrentDirectoryAsURL  
- 現在のディレクトリの名前を URL としてを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getcurrentdirectoryasurl"></a>  CFtpConnection::GetCurrentDirectoryAsURL  
+ Call this member function to get the current directory's name as a URL.  
   
 ```  
 BOOL GetCurrentDirectoryAsURL(CString& strDirName) const;  
@@ -265,31 +273,31 @@ BOOL GetCurrentDirectoryAsURL(
     LPDWORD lpdwLen) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `strDirName`  
- ディレクトリの名前を受け取る文字列への参照。  
+ A reference to a string that will receive the name of the directory.  
   
  `pstrDirName`  
- ディレクトリの名前を受け取る文字列へのポインター。  
+ A pointer to a string that will receive the name of the directory.  
   
  `lpdwLen`  
- 次の情報を含む DWORD へのポインター。  
+ A pointer to a DWORD that contains the following information:  
   
 |||  
 |-|-|  
-|エントリ|によって参照されるバッファーのサイズ`pstrDirName`します。|  
-|返された場合|格納されている文字数`pstrDirName`します。 メンバー関数が失敗したかどうか、および、ERROR_INSUFFICIENT_BUFFER が返されます`lpdwLen`文字列を取得するためにアプリケーションを割り当てる必要がありますバイト数が含まれています。|  
+|On entry|The size of the buffer referenced by `pstrDirName`.|  
+|On return|The number of characters stored to `pstrDirName`. If the member function fails and ERROR_INSUFFICIENT_BUFFER is returned, then `lpdwLen` contains the number of bytes that the application must allocate in order to receive the string.|  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `GetCurrentDirectoryAsURL`同じように動作[GetCurrentDirectory](#getcurrentdirectory)  
+### <a name="remarks"></a>Remarks  
+ `GetCurrentDirectoryAsURL` behaves the same as [GetCurrentDirectory](#getcurrentdirectory)  
   
- パラメーター`strDirName`または完全な現在のディレクトリに対して相対的いずれかの部分修飾ファイル名であることができます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `GetCurrentDirectoryAsURL`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+ The parameter `strDirName` can be either partially qualified filenames relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `GetCurrentDirectoryAsURL` translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="getfile"></a>CFtpConnection::GetFile  
- このメンバー関数を呼び出して、FTP サーバーからファイルを取得して、ローカル コンピューターに保存しています。  
+##  <a name="getfile"></a>  CFtpConnection::GetFile  
+ Call this member function to get a file from an FTP server and store it on the local machine.  
   
 ```  
 BOOL GetFile(
@@ -301,55 +309,55 @@ BOOL GetFile(
     DWORD_PTR dwContext = 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrRemoteFile`  
- FTP サーバーから取得するファイルの名前を表す null で終わる文字列へのポインター。  
+ A pointer to a null-terminated string containing the name of a file to retrieve from the FTP server.  
   
  `pstrLocalFile`  
- ローカル システムで作成するファイルの名前を表す null で終わる文字列へのポインター。  
+ A pointer to a null-terminated string containing the name of the file to create on the local system.  
   
  *bFailIfExists*  
- ファイル名が既存のファイルで使用できます既にかどうかを示します。 ローカル ファイルの名前が既に存在するかどうかは、このパラメーターが**TRUE**、`GetFile`は失敗します。 それ以外の場合、`GetFile`ファイルの既存のコピーが消去されます。  
+ Indicates whether the file name may already be used by an existing file. If the local file name already exists, and this parameter is **TRUE**, `GetFile` fails. Otherwise, `GetFile` will erase the existing copy of the file.  
   
  `dwAttributes`  
- ファイルの属性を示します。 次の FILE_ATTRIBUTE_ * フラグの任意の組み合わせを入力できます。  
+ Indicates the attributes of the file. This can be any combination of the following FILE_ATTRIBUTE_* flags.  
   
--   FILE_ATTRIBUTE_ARCHIVE ファイルは、アーカイブ ファイルです。 アプリケーションでは、この属性を使用して、ファイルをバックアップまたは削除をマークします。  
+-   FILE_ATTRIBUTE_ARCHIVE   The file is an archive file. Applications use this attribute to mark files for backup or removal.  
   
--   FILE_ATTRIBUTE_COMPRESSED ファイルまたはディレクトリが圧縮されます。 ファイルの場合は、圧縮は、すべてのファイルにデータが圧縮されているを意味します。 ディレクトリの場合は、圧縮は、新しく作成されたファイルとサブディレクトリの既定値です。  
+-   FILE_ATTRIBUTE_COMPRESSED   The file or directory is compressed. For a file, compression means that all of the data in the file is compressed. For a directory, compression is the default for newly created files and subdirectories.  
   
--   FILE_ATTRIBUTE_DIRECTORY ファイルは、ディレクトリです。  
+-   FILE_ATTRIBUTE_DIRECTORY   The file is a directory.  
   
--   FILE_ATTRIBUTE_NORMAL ファイルには、他の属性セットがありません。 この属性は、単独で使用される場合にのみ有効です。 その他のすべてのファイル属性は、FILE_ATTRIBUTE_NORMAL をオーバーライドします。  
+-   FILE_ATTRIBUTE_NORMAL   The file has no other attributes set. This attribute is valid only if used alone. All other file attributes override FILE_ATTRIBUTE_NORMAL:  
   
--   FILE_ATTRIBUTE_HIDDEN ファイルは表示されません。 通常のディレクトリ一覧に含めるには  
+-   FILE_ATTRIBUTE_HIDDEN   The file is hidden. It is not to be included in an ordinary directory listing.  
   
--   FILE_ATTRIBUTE_READONLY ファイルは読み取り専用です。 アプリケーションは、ファイルの読み取りことはできませんからの書き込みしたり削除できます。  
+-   FILE_ATTRIBUTE_READONLY   The file is read only. Applications can read the file but cannot write to it or delete it.  
   
--   FILE_ATTRIBUTE_SYSTEM ファイルの一部であるか、オペレーティング システムによって排他的に使用されます。  
+-   FILE_ATTRIBUTE_SYSTEM   The file is part of or is used exclusively by the operating system.  
   
--   一時的な記憶域 FILE_ATTRIBUTE_TEMPORARY ファイルを使用しています。 アプリケーションは、絶対に必要な場合にのみ、ファイルに書き込む必要があります。 ファイルのデータの大部分は、ファイルがすぐに削除されるため、メディアに書き込まれずに、メモリに残ります。  
+-   FILE_ATTRIBUTE_TEMPORARY   The file is being used for temporary storage. Applications should write to the file only if absolutely necessary. Most of the file's data remains in memory without being flushed to the media because the file will soon be deleted.  
   
  `dwFlags`  
- 転送が発生する条件を指定します。 このパラメーターには、いずれかを指定できます、`dwFlags`値」に記載[FtpGetFile](http://msdn.microsoft.com/library/windows/desktop/aa384157)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the conditions under which the transfer occurs. This parameter can be any of the `dwFlags` values described in [FtpGetFile](http://msdn.microsoft.com/library/windows/desktop/aa384157) in the Windows SDK.  
   
  `dwContext`  
- ファイルを取得するためのコンテキストの識別子です。 参照してください**解説**の詳細については`dwContext`です。  
+ The context identifier for the file retrieval. See **Remarks** for more information about `dwContext`.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `GetFile`FTP サーバーからファイルの読み取りをローカルに格納することに関連するオーバーヘッドのすべてを処理する高レベルのルーチンです。 ファイル データを取得するのみまたはファイル転送を閉じる制御を必要とするアプリケーションを使用する必要があります`OpenFile`と[細かい](../../mfc/reference/cinternetfile-class.md#read)代わりにします。  
+### <a name="remarks"></a>Remarks  
+ `GetFile` is a high-level routine that handles all of the overhead associated with reading a file from an FTP server and storing it locally. Applications that only retrieve file data, or that require close control over the file transfer, should use `OpenFile` and [CInternetFile::Read](../../mfc/reference/cinternetfile-class.md#read) instead.  
   
- 場合`dwFlags`FILE_TRANSFER_TYPE_ASCII、ファイル データの変換も変換コントロール、および Windows の対応する文字の書式を設定します。 既定の転送は、場所、ファイルは同じ形式でサーバーに格納されているバイナリ モードは、です。  
+ If `dwFlags` is FILE_TRANSFER_TYPE_ASCII, translation of file data also converts control and formatting characters to Windows equivalents. The default transfer is binary mode, where the file is downloaded in the same format as it is stored on the server.  
   
- 両方とも`pstrRemoteFile`と`pstrLocalFile`または完全な現在のディレクトリに対して相対的いずれかの部分修飾ファイル名であることができます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `GetFile`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+ Both `pstrRemoteFile` and `pstrLocalFile` can be either partially qualified filenames relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `GetFile` translates the directory name separators to the appropriate characters before they are used.  
   
- `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
+ Override the `dwContext` default to set the context identifier to a value of your choosing. The context identifier is associated with this specific operation of the `CFtpConnection` object created by its [CInternetSession](../../mfc/reference/cinternetsession-class.md) object. The value is returned to [CInternetSession::OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) to provide status on the operation with which it is identified. See the article [Internet First Steps: WinInet](../../mfc/wininet-basics.md) for more information about the context identifier.  
   
-##  <a name="openfile"></a>CFtpConnection::OpenFile  
- 読み取りまたは書き込み用に FTP サーバー上にあるファイルを開くには、このメンバー関数を呼び出します。  
+##  <a name="openfile"></a>  CFtpConnection::OpenFile  
+ Call this member function to open a file located on an FTP server for reading or writing.  
   
 ```  
 CInternetFile* OpenFile(
@@ -359,43 +367,43 @@ CInternetFile* OpenFile(
     DWORD_PTR dwContext = 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrFileName`  
- 開かれるファイルの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the file to be opened.  
   
  *dwAccess*  
- ファイルのアクセス方法を決定します。 GENERIC_READ または GENERIC_WRITE のいずれかができます。  
+ Determines how the file will be accessed. Can be either GENERIC_READ or GENERIC_WRITE, but not both.  
   
  `dwFlags`  
- その後の転送が発生する状況を指定します。 次の FTP_TRANSFER_ * 定数のいずれかになります。  
+ Specifies the conditions under which subsequent transfers occur. This can be any of the following FTP_TRANSFER_* constants:  
   
--   FTP_TRANSFER_TYPE_ASCII ファイルは、FTP ASCII (型 A) の転送方法を使用して転送されます。 変換コントロールと書式設定情報を対応するローカルです。  
+-   FTP_TRANSFER_TYPE_ASCII   The file transfers using FTP ASCII (Type A) transfer method. Converts control and formatting information to local equivalents.  
   
--   FTP_TRANSFER_TYPE_BINARY ファイルは、(タイプ I) FTP's イメージの転送方法を使用してデータを転送します。 これとまったく同じデータを転送するファイルは、変更せずに存在します。 これは、既定の転送方法です。  
+-   FTP_TRANSFER_TYPE_BINARY   The file transfers data using FTP's Image (Type I) transfer method. The file transfers data exactly as it exists, with no changes. This is the default transfer method.  
   
  `dwContext`  
- ファイルを開くためのコンテキストの識別子です。 参照してください**解説**の詳細については`dwContext`です。  
+ The context identifier for opening the file. See **Remarks** for more information about `dwContext`.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CInternetFile](../../mfc/reference/cinternetfile-class.md)オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CInternetFile](../../mfc/reference/cinternetfile-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- `OpenFile`次のような状況で使用する必要があります。  
+### <a name="remarks"></a>Remarks  
+ `OpenFile` should be used in the following situations:  
   
--   アプリケーション データを持っているデータがローカル ファイルでないものを送信し、FTP サーバー上のファイルとして作成する必要があります。 1 回`OpenFile`、アプリケーションはファイルを開き[CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write) FTP ファイル データをサーバーに送信します。  
+-   An application has data that needs to be sent and created as a file on the FTP server, but that data is not in a local file. Once `OpenFile` opens a file, the application uses [CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write) to send the FTP file data to the server.  
   
--   アプリケーションは、サーバーからファイルを取得し、アプリケーション制御のメモリ、ディスクに書き込む代わりに配置する必要があります。 アプリケーションを使用して[細かい](../../mfc/reference/cinternetfile-class.md#read)を使用した後`OpenFile`ファイルを開きます。  
+-   An application must retrieve a file from the server and place it into application-controlled memory, instead of writing it to disk. The application uses [CInternetFile::Read](../../mfc/reference/cinternetfile-class.md#read) after using `OpenFile` to open the file.  
   
--   アプリケーションでは、きめ細かいファイル転送の制御レベルが必要です。 たとえば、アプリケーションが、進行状況を表示できます。 コントロールは、ファイルのダウンロード中にファイル転送の状態の進行状況を示します。  
+-   An application needs a fine level of control over a file transfer. For example, the application may want to display a progress control indicate the progress of the file transfer status while downloading a file.  
   
- 呼び出した後`OpenFile`通話まで**CInternetConnection::Close**、アプリケーションを呼び出して、のみ[細かい](../../mfc/reference/cinternetfile-class.md#read)、 [CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write)、 **CInternetConnection::Close**、または[CFtpFileFind::FindFile](../../mfc/reference/cftpfilefind-class.md#findfile)します。 同じ FTP セッションの他の FTP 関数の呼び出しは失敗し、エラー コードを FTP_ETRANSFER_IN_PROGRESS に設定します。  
+ After calling `OpenFile` and until calling **CInternetConnection::Close**, the application can only call [CInternetFile::Read](../../mfc/reference/cinternetfile-class.md#read), [CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write), **CInternetConnection::Close**, or [CFtpFileFind::FindFile](../../mfc/reference/cftpfilefind-class.md#findfile). Calls to other FTP functions for the same FTP session will fail and set the error code to FTP_ETRANSFER_IN_PROGRESS.  
   
- `pstrFileName`パラメーターは、いずれか、部分的に修飾ファイル名、現在のディレクトリに相対パスまたは完全修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `OpenFile`適切な文字にディレクトリ名の区切り記号を使用する前に変換します。  
+ The `pstrFileName` parameter can be either a partially qualified filename relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `OpenFile` translates the directory name separators to the appropriate characters before using it.  
   
- `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
+ Override the `dwContext` default to set the context identifier to a value of your choosing. The context identifier is associated with this specific operation of the `CFtpConnection` object created by its [CInternetSession](../../mfc/reference/cinternetsession-class.md) object. The value is returned to [CInternetSession::OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) to provide status on the operation with which it is identified. See the article [Internet First Steps: WinInet](../../mfc/wininet-basics.md) for more information about the context identifier.  
   
-##  <a name="putfile"></a>CFtpConnection::PutFile  
- FTP サーバー上のファイルを保存するには、このメンバー関数を呼び出します。  
+##  <a name="putfile"></a>  CFtpConnection::PutFile  
+ Call this member function to store a file on an FTP server.  
   
 ```  
 BOOL PutFile(
@@ -405,65 +413,65 @@ BOOL PutFile(
     DWORD_PTR dwContext = 1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrLocalFile`  
- ローカル システムから送信するファイルの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the file to send from the local system.  
   
  `pstrRemoteFile`  
- FTP サーバー上に作成するファイルの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the file to create on the FTP server.  
   
  `dwFlags`  
- ファイルの転送が発生する条件を指定します。 示す FTP_TRANSFER_ * 定数のいずれかを指定できる[OpenFile](#openfile)します。  
+ Specifies the conditions under which the transfer of the file occurs. Can be any of the FTP_TRANSFER_* constants described in [OpenFile](#openfile).  
   
  `dwContext`  
- ファイルを配置するためのコンテキストの識別子です。 参照してください**解説**の詳細については`dwContext`です。  
+ The context identifier for placing the file. See **Remarks** for more information about `dwContext`.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `PutFile`すべての FTP サーバー上のファイルを格納することに関連する操作を処理する高度なルーチン。 のみにデータを送信するか、ファイル転送に近い制御を必要とするアプリケーションを使用する必要があります[OpenFile](#openfile)と[CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write)します。  
+### <a name="remarks"></a>Remarks  
+ `PutFile` is a high-level routine that handles all of the operations associated with storing a file on an FTP server. Applications that only send data, or that require closer control over the file transfer, should use [OpenFile](#openfile) and [CInternetFile::Write](../../mfc/reference/cinternetfile-class.md#write).  
   
- `dwContext` の既定値をオーバーライドして、コンテキスト識別子を独自の値に設定します。 コンテキスト識別子がこの特定の操作に関連付けられている、`CFtpConnection`によって作成されたオブジェクトの[CInternetSession](../../mfc/reference/cinternetsession-class.md)オブジェクトです。 値が返される[:onstatuscallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback)識別は操作の状態をします。 記事を参照して[インターネットの最初の手順: WinInet](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
+ Override the `dwContext` default to set the context identifier to a value of your choosing. The context identifier is associated with this specific operation of the `CFtpConnection` object created by its [CInternetSession](../../mfc/reference/cinternetsession-class.md) object. The value is returned to [CInternetSession::OnStatusCallback](../../mfc/reference/cinternetsession-class.md#onstatuscallback) to provide status on the operation with which it is identified. See the article [Internet First Steps: WinInet](../../mfc/wininet-basics.md) for more information about the context identifier.  
   
-##  <a name="remove"></a>CFtpConnection::Remove  
- 接続先のサーバーから、指定したファイルを削除するには、このメンバー関数を呼び出します。  
+##  <a name="remove"></a>  CFtpConnection::Remove  
+ Call this member function to delete the specified file from the connected server.  
   
 ```  
 BOOL Remove(LPCTSTR pstrFileName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrFileName`  
- 削除するファイル名を含む文字列へのポインター。  
+ A pointer to a string containing the file name to remove.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `pstrFileName`パラメーターは、いずれか、部分的に修飾ファイル名、現在のディレクトリに相対パスまたは完全修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 **削除**関数が使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+### <a name="remarks"></a>Remarks  
+ The `pstrFileName` parameter can be either a partially qualified filename relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. The **Remove** function translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="removedirectory"></a>CFtpConnection::RemoveDirectory  
- 接続先のサーバーから、指定したディレクトリを削除するには、このメンバー関数を呼び出します。  
+##  <a name="removedirectory"></a>  CFtpConnection::RemoveDirectory  
+ Call this member function to remove the specified directory from the connected server.  
   
 ```  
 BOOL RemoveDirectory(LPCTSTR pstrDirName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrDirName`  
- 削除するディレクトリを含む文字列へのポインター。  
+ A pointer to a string containing the directory to be removed.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- 使用[GetCurrentDirectory](#getcurrentdirectory)をサーバーの現在の作業ディレクトリを判断します。 リモート システムが接続されていることをルート ディレクトリとは限りません。  
+### <a name="remarks"></a>Remarks  
+ Use [GetCurrentDirectory](#getcurrentdirectory) to determine the server's current working directory. Do not assume that the remote system has connected you to the root directory.  
   
- `pstrDirName`パラメーターは、現在のディレクトリに対して相対的 filename が部分的または完全に修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `RemoveDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+ The `pstrDirName` parameter can be either a partially or fully qualified filename relative to the current directory. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `RemoveDirectory` translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="rename"></a>CFtpConnection::Rename  
- 接続されているサーバー上の指定のファイルの名前を変更するには、このメンバー関数を呼び出します。  
+##  <a name="rename"></a>  CFtpConnection::Rename  
+ Call this member function to rename the specified file on the connected server.  
   
 ```  
 BOOL Rename(
@@ -471,41 +479,41 @@ BOOL Rename(
     LPCTSTR pstrNew);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrExisting`  
- 名前を変更するファイルの現在の名前を含む文字列へのポインター。  
+ A pointer to a string containing the current name of the file to be renamed.  
   
  `pstrNew`  
- ファイルの新しい名前を含む文字列へのポインター。  
+ A pointer to a string containing the file's new name.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `pstrExisting`と`pstrNew`パラメーターは、いずれか、部分的に修飾ファイル名、現在のディレクトリに相対パスまたは完全修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 **名前を変更**使用されるように、ディレクトリ名の区切り記号を適切な文字に変換します。  
+### <a name="remarks"></a>Remarks  
+ The `pstrExisting` and `pstrNew` parameters can be either a partially qualified filename relative to the current directory or fully qualified. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. **Rename** translates the directory name separators to the appropriate characters before they are used.  
   
-##  <a name="setcurrentdirectory"></a>CFtpConnection::SetCurrentDirectory  
- FTP サーバー上の別のディレクトリに変更するには、このメンバー関数を呼び出します。  
+##  <a name="setcurrentdirectory"></a>  CFtpConnection::SetCurrentDirectory  
+ Call this member function to change to a different directory on the FTP server.  
   
 ```  
 BOOL SetCurrentDirectory(LPCTSTR pstrDirName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstrDirName`  
- ディレクトリの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the directory.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- `pstrDirName`パラメーターは、現在のディレクトリに対して相対的 filename が部分的または完全に修飾を指定できます。 円記号 (\\) またはいずれかの名前のディレクトリ区切り記号としてスラッシュ (/) を使用できます。 `SetCurrentDirectory`使用されるように、適切な文字にディレクトリ名の区切り記号を変換します。  
+### <a name="remarks"></a>Remarks  
+ The `pstrDirName` parameter can be either a partially or fully qualified filename relative to the current directory. A backslash (\\) or forward slash (/) can be used as the directory separator for either name. `SetCurrentDirectory` translates the directory name separators to the appropriate characters before they are used.  
   
- 使用[GetCurrentDirectory](#getcurrentdirectory)を FTP サーバーの現在の作業ディレクトリを判断します。 リモート システムが接続されていることをルート ディレクトリとは限りません。  
+ Use [GetCurrentDirectory](#getcurrentdirectory) to determine an FTP server's current working directory. Do not assume that the remote system has connected you to the root directory.  
   
-## <a name="see-also"></a>関連項目  
- [関数のクラス](../../mfc/reference/cinternetconnection-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/cinternetconnection-class.md)   
- [CInternetSession クラス](../../mfc/reference/cinternetsession-class.md)
+## <a name="see-also"></a>See Also  
+ [CInternetConnection Class](../../mfc/reference/cinternetconnection-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CInternetConnection Class](../../mfc/reference/cinternetconnection-class.md)   
+ [CInternetSession Class](../../mfc/reference/cinternetsession-class.md)
 

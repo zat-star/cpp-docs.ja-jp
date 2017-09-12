@@ -1,70 +1,89 @@
 ---
-title: "インターフェイス要素 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アーキテクチャ [C++], MFC Feature Pack"
-  - "MFC Feature Pack, アーキテクチャ"
+title: Interface Elements | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- architecture [MFC], MFC Feature Pack
+- MFC Feature Pack, architecture
 ms.assetid: eead6827-9602-40a3-8038-8986e8207385
 caps.latest.revision: 28
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 24
----
-# インターフェイス要素
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 19599bd4aa299b60034a2bffa9cd0dafaaeb3107
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このドキュメントでは、[!INCLUDE[vs_orcas_long](../atl/reference/includes/vs_orcas_long_md.md)] SP1 で導入されたインターフェイス要素について説明します。また、旧バージョンのライブラリとの違いについても説明します。  
+---
+# <a name="interface-elements"></a>Interface Elements
+This document describes interface elements that were introduced in [!INCLUDE[vs_orcas_long](../atl/reference/includes/vs_orcas_long_md.md)] SP1, and also describes differences with the earlier version of the library.  
   
- 次の図は、新しいインターフェイス要素を使用して構築されたアプリケーションを示しています。  
+ The following illustration shows an application that was built by using the new interface elements.  
   
- ![MFC Feature Pack のアプリケーション例](../mfc/media/mfc_featurepack.png "MFC\_FeaturePack")  
+ ![MFC Feature Pack example application](../mfc/media/mfc_featurepack.png "mfc_featurepack")  
   
-## ウィンドウのドッキング  
- ウィンドウのドッキング機能は、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] のグラフィカル ユーザー インターフェイスが使用するドッキング機能に似ています。  
+## <a name="window-docking"></a>Window Docking  
+ Window docking functionality resembles the window docking that the [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] graphical user interface uses.  
   
-## コントロール バーからペインへの変更  
- 現在、コントロール バーはペインと呼ばれ、[CBasePane クラス](../mfc/reference/cbasepane-class.md)から派生します。  以前のバージョンの MFC では、コントロール バーの基本クラスは `CControlBar` でした。  
+## <a name="control-bars-are-now-panes"></a>Control Bars are Now Panes  
+ Control bars are now known as panes and are derived from [CBasePane Class](../mfc/reference/cbasepane-class.md). In earlier versions of MFC, the base class of control bars was `CControlBar`.  
   
- アプリケーションのメイン フレーム ウィンドウは、通常 [CFrameWndEx クラス](../mfc/reference/cframewndex-class.md)または [CMDIFrameWndEx クラス](../Topic/CMDIFrameWndEx%20Class.md)によって表されます。  メイン フレームは*ドッキング サイト*と呼ばれます。  ペインは、3 種類の親 \(ドッキング サイト、ドッキング バー、またはミニフレーム ウィンドウ\) のいずれかを持つことができます。  
+ The application main frame window is usually represented by the [CFrameWndEx Class](../mfc/reference/cframewndex-class.md) or the [CMDIFrameWndEx Class](../mfc/reference/cmdiframewndex-class.md). The main frame is called the *dock site*. Panes can have one of three types of parents: a dock site, a dock bar, or a mini-frame window.  
   
- ペインには、サイズ変更できないペインとサイズ変更できるペインの 2 種類があります。  サイズ変更できるペイン \(ステータス バーやツール バーなど\) は、分割線またはスライダーを使ってサイズ変更できます。  サイズ変更可能なペインはコンテナーを形成できます \(分割線を使って、ペインを別のペインにドッキングできます\)。  ただし、サイズ変更可能ペインはドッキング バーにはアタッチ \(ドッキング\) できません。  
+ There are two types of panes: non-resizable and resizable. Resizable panes, such as status bars and toolbars, can be resized by using splitters or sliders. Resizable panes can form containers (one pane can be docked to another pane, creating a splitter between them). However, resizable panes cannot be attached (docked) to dock bars.  
   
- アプリケーションでサイズ変更できないペインを使用する場合、[CPane クラス](../mfc/reference/cpane-class.md)から派生させます。アプリケーションでサイズ変更可能なペインを使用する場合、[CDockablePane クラス](../Topic/CDockablePane%20Class.md)から派生させます。  
+ If your application uses non-resizable panes, derive them from [CPane Class](../mfc/reference/cpane-class.md).  If your application uses resizable panes, derive them from [CDockablePane Class](../mfc/reference/cdockablepane-class.md)  
   
-## ドッキング サイト  
- ドッキング サイト \(またはメイン フレーム ウィンドウ\) は、アプリケーション内のすべてのペインとミニフレーム ウィンドウを所有します。  ドッキング サイトには [CDockingManager](../mfc/reference/cdockingmanager-class.md) メンバーが含まれます。  このメンバーは、ドッキング サイトに属するすべてのペインのリストを管理します。  このペイン リストの順序は、ドッキング サイトの外側に作成されたペインが最初になります。  フレームワークがドッキング サイトを再描画すると、このリスト上でループが行われ、ドッキング サイトの現在の外接する四角形を含むように各ペインのレイアウトが調整されます。  ドッキング レイアウトを調整する必要がある場合には `AdjustDockingLayout` または `RecalcLayout` を呼び出すことができます。フレームワークはこの呼び出しをドッキング マネージャーにリダイレクトします。  
+## <a name="dock-site"></a>Dock Site  
+ The dock site (or main frame window) owns all panes and mini-frame windows in an application. The dock site contains a [CDockingManager](../mfc/reference/cdockingmanager-class.md) member. This member maintains a list of all panes that belong to the dock site. The list is ordered so that the panes created at the outer edges of the dock site are positioned at the start of the list. When the framework redraws the dock site, it loops over this list and adjusts the layout of each pane to include the current bounding rectangle of the dock site. You can call `AdjustDockingLayout` or `RecalcLayout` when you have to adjust the docking layout, and the framework redirects this call to the docking manager.  
   
-## ドッキング バー  
- 各メイン フレーム ウィンドウは、その境界に沿って*ドッキング バー*を配置できます。  ドッキング バーは、[CDockSite クラス](../mfc/reference/cdocksite-class.md)に所属するペインです。  ドッキング バーは、ツール バーなどの [CPane](../mfc/reference/cpane-class.md) から派生するオブジェクトを受け取ることができます。  メイン フレーム ウィンドウが初期化されるときにドッキング バーを作成するには、`EnableDocking` を呼び出します。  自動非表示バーを有効にするには、`EnableAutoHideBars` を呼び出します。  `EnableAutoHideBars` は [CAutoHideDockSite](../mfc/reference/cautohidedocksite-class.md) オブジェクトを作成し、各ドッキング バーの横に配置します。  
+## <a name="dock-bars"></a>Dock Bars  
+ Each main frame window can position *dock bars* along its borders. A dock bar is a pane that belongs to a [CDockSite Class](../mfc/reference/cdocksite-class.md). Dock bars can accept objects derived from [CPane](../mfc/reference/cpane-class.md), such as toolbars. To create dock bars when the main frame window is initialized, call `EnableDocking`. To enable auto hide bars, call `EnableAutoHideBars`. `EnableAutoHideBars` creates [CAutoHideDockSite](../mfc/reference/cautohidedocksite-class.md) objects, and positions them next to each dock bar.  
   
- 各ドッキング バーはドッキング行に分かれています。  ドッキング行は [CDockingPanesRow クラス](../mfc/reference/cdockingpanesrow-class.md)によって表されます。  各ドッキング行には、ツール バーのリストが含まれます。  ユーザーがツール バーをドッキングしたり、同じドッキング バー内部で行から行へツール バーを移動した場合、フレームワークは新しい行を作成し、それに応じてドッキング バーのサイズを調整するか、既存の行上にツール バーを配置します。  
+ Each dock bar is divided into dock rows. Dock rows are represented by the [CDockingPanesRow Class](../mfc/reference/cdockingpanesrow-class.md). Each dock row contains a list of toolbars. If a user docks a toolbar or moves the toolbar from one row to another within the same dock bar, the framework either creates a new row and resizes the dock bar accordingly, or it positions the toolbar on an existing row.  
   
-## ミニフレーム ウィンドウ  
- フローティング ペインはミニフレーム ウィンドウ内に置かれます。  ミニフレーム ウィンドウは、[CMDITabInfo クラス](../Topic/CMDITabInfo%20Class.md) \(1 つのペインのみ格納\) と [CMultiPaneFrameWnd クラス](../mfc/reference/cmultipaneframewnd-class.md) \(複数のペインを格納\) の 2 つのクラスによって表されます。  コードでペインをフローティングにするには、[CBasePane::FloatPane](../Topic/CBasePane::FloatPane.md) を呼び出します。  ペインがフローティング状態になった後、フレームワークは、自動的にミニフレーム ウィンドウを作成し、ミニフレーム ウィンドウはフローティング ペインの親になります。  フローティング ペインがドッキングすると、フレームワークはその親をリセットし、フローティング ペインはドッキング バー \(ツール バーの場合\) またはドッキング サイト \(サイズ変更可能ペインの場合\) になります。  
+## <a name="mini-frame-windows"></a>Mini-frame Windows  
+ A floating pane resides in a mini-frame window. Mini-frame windows are represented by two classes: [CMDITabInfo Class](../mfc/reference/cmditabinfo-class.md) (which can contain only one pane) and [CMultiPaneFrameWnd Class](../mfc/reference/cmultipaneframewnd-class.md) (which can contain several panes). To float a pane in your code, call [CBasePane::FloatPane](../mfc/reference/cbasepane-class.md#floatpane). After a pane floats, the framework automatically creates a mini-frame window and that mini-frame window becomes the floating pane's parent. When the floating pane docks, the framework resets its parent, and the floating pane becomes a dock bar (for toolbars) or a dock site (for resizable panes).  
   
-## ペイン区分線  
- ペイン区分線 \(スライダーまたは分割線\) は [CPaneDivider クラス](../mfc/reference/cpanedivider-class.md)によって表されます。  ユーザーがペインをドッキングすると、そのペインがドッキング サイトにドッキングされたか、別のペインにドッキングされたかには関係なく、フレームワークはペイン区分線を作成します。  ペインがドッキング サイトにドッキングされた場合のペイン区分線は、*既定のペイン区分線*と呼ばれます。  既定のペイン区分線は、ドッキング サイト内のすべてのドッキング ペインのレイアウトの基準となります。  ドッキング マネージャーは、既定のペイン区分線のリストとペイン リストを保持します。  ドッキング マネージャーは、すべてのドッキング ペインのレイアウトを管理します。  
+## <a name="pane-dividers"></a>Pane Dividers  
+ Pane dividers (also named sliders or splitters) are represented by the [CPaneDivider Class](../mfc/reference/cpanedivider-class.md). When a user docks a pane, the framework creates pane dividers, regardless of whether the pane is docked at the dock site or at another pane. When a pane docks to the dock site, the pane divider is called the *default pane divider*. The default pane divider is responsible for the layout of all the docking panes in the dock site. The dock manager maintains a list of default pane dividers, and a list of panes. Dock managers are responsible for the layout of all the docking panes.  
   
-## コンテナー  
- サイズ変更可能なペインはすべて、ドッキングされた場合、コンテナー内に格納されます。  コンテナーは [CPaneContainer クラス](../mfc/reference/cpanecontainer-class.md)によって表されます。  各コンテナーは、左のペイン、右のペイン、左のサブコンテナー、右のサブコンテナー、および左右を分ける分割線へのポインターを持ちます。ここで言う*左*と*右*は、物理的な右側、左側を表すのではなく、ツリー構造の分岐を指しています。このように、ペインと分割線のツリーを構築することにより、全体的にサイズ変更できる複雑なペインのレイアウトを構成することができます。  `CPaneContainer` クラスにはツリー コンテナーが含まれ、このツリーに存在するペインと分割線の 2 つのリストも保持されます。  ペイン コンテナー マネージャーは通常、既定のスライダーと、複数のペインを格納するミニフレーム ウィンドウ内に埋め込まれます。  
+## <a name="containers"></a>Containers  
+ All resizable panes, when docked to each other, are maintained in containers. Containers are represented by the [CPaneContainer Class](../mfc/reference/cpanecontainer-class.md). Each container has pointers to its left pane, right pane, left sub-container, right sub-container, and the splitter between the left and right parts. (*Left* and *right* do not refer to physical sides but rather identify the branches of a tree structure.) In this manner we can build a tree of panes and splitters and therefore achieve complex layouts of panes that can be resized together. The `CPaneContainer` class maintains the tree of containers; it also maintains two lists of panes and sliders that reside in this tree. Pane container managers are usually embedded into default sliders and mini-frame windows that carry multiple panes.  
   
-## 自動非表示のコントロール バー  
- 既定では、`CDockablePane` は自動非表示機能をサポートします。  ユーザーが `CDockablePane` のキャプション上のピン ボタンをクリックすると、フレームワークはペインを自動非表示モードに切り替えます。  クリックを処理するのに、フレームワークは `CMFCAutoHideBar` オブジェクトと関連付ける [CMFCAutoHideBar クラス](../Topic/CMFCAutoHideBar%20Class.md)および [CMFCAutoHideButton クラス](../mfc/reference/cmfcautohidebutton-class.md)を作成します。  フレームワークは、新しい `CMFCAutoHideBar` を [CAutoHideDockSite](../mfc/reference/cautohidedocksite-class.md) 上に配置します。  また、フレームワークは、`CMFCAutoHideButton` をツール バーにアタッチします。  [CDockingManager クラス](../mfc/reference/cdockingmanager-class.md)は `CDockablePane` を管理します。  
+## <a name="auto-hide-control-bars"></a>Auto-hide Control Bars  
+ By default, each `CDockablePane` supports the auto-hide feature. When a user clicks the pin button on the caption of the `CDockablePane`, the framework switches the pane to auto-hide mode. To handle the click, the framework creates a [CMFCAutoHideBar Class](../mfc/reference/cmfcautohidebar-class.md) and a [CMFCAutoHideButton Class](../mfc/reference/cmfcautohidebutton-class.md) associated with the `CMFCAutoHideBar` object. The framework puts the new `CMFCAutoHideBar` on the [CAutoHideDockSite](../mfc/reference/cautohidedocksite-class.md). The framework also attaches the `CMFCAutoHideButton` to the toolbar. The [CDockingManager Class](../mfc/reference/cdockingmanager-class.md) maintains the `CDockablePane`.  
   
-## タブ付きコントロール バーと Outlook バー  
- [CMFCBaseTabCtrl クラス](../mfc/reference/cmfcbasetabctrl-class.md)は、切り離し可能なタブを持つタブ付きウィンドウの基本的な機能を実装します。  `CMFCBaseTabCtrl` オブジェクトを使用するには、アプリケーションで [CBaseTabbedPane クラス](../mfc/reference/cbasetabbedpane-class.md) を初期化します。  `CBaseTabbedPane` は、`CDockablePane` から派生し、`CMFCBaseTabCtrl` オブジェクトへのポインターを保持します。  `CBaseTabbedPane` により、タブ付きコントロール バーのドッキングとサイズ変更が可能になります。  タブ付きのドッキング コントロール バーを動的に作成するには、[CDockablePane::AttachToTabWnd](../Topic/CDockablePane::AttachToTabWnd.md) を使用します。  
+## <a name="tabbed-control-bars-and-outlook-bars"></a>Tabbed Control Bars and Outlook Bars  
+ The [CMFCBaseTabCtrl Class](../mfc/reference/cmfcbasetabctrl-class.md) implements the base functionality of a tabbed window with detachable tabs. To use a `CMFCBaseTabCtrl` object, initialize a [CBaseTabbedPane Class](../mfc/reference/cbasetabbedpane-class.md) in your application. `CBaseTabbedPane` is derived from `CDockablePane` and maintains a pointer to a `CMFCBaseTabCtrl` object. The `CBaseTabbedPane` enables users to dock and resize tabbed control bars. Use [CDockablePane::AttachToTabWnd](../mfc/reference/cdockablepane-class.md#attachtotabwnd) to dynamically create control bars that are docked and tabbed.  
   
- Outlook バー コントロールもタブ付きバーに基づきます。  [CMFCOutlookBar クラス](../mfc/reference/cmfcoutlookbar-class.md)は、`CBaseTabbedPane` から派生します。  Outlook バーを使用する方法の詳細については、[CMFCOutlookBar クラス](../mfc/reference/cmfcoutlookbar-class.md)を参照してください。  
+ The Outlook bar control is also based on tabbed bars. The [CMFCOutlookBar Class](../mfc/reference/cmfcoutlookbar-class.md) is derived from `CBaseTabbedPane`. For more information about how to use Outlook bar, see [CMFCOutlookBar Class](../mfc/reference/cmfcoutlookbar-class.md).  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)
+
+

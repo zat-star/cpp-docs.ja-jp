@@ -1,43 +1,62 @@
 ---
-title: "プロパティ シートとプロパティ ページ (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CPropertyPage クラス, プロパティ シートとページ"
-  - "CPropertySheet クラス, プロパティ シートとページ"
-  - "MFC ダイアログ ボックス, タブ"
-  - "プロパティ ページ, プロパティ シート"
-  - "プロパティ シート, プロパティ ページ"
+title: Property Sheets and Property Pages (MFC) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC dialog boxes [MFC], tabs
+- property pages [MFC], property sheets
+- CPropertyPage class [MFC], property sheets and pages
+- CPropertySheet class [MFC], property sheets and pages
+- property sheets, propert pages
 ms.assetid: de8fea12-6c35-4cef-8625-b8073a379446
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# プロパティ シートとプロパティ ページ (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d8cb91f7a222fd78e5ccb53ce118b42f6938e420
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC [ダイアログ ボックス](../mfc/dialog-boxes.md) は「タブ ダイアログ ボックス」でプロパティ シートとプロパティ ページを組み込むことによって実行できます。  MFC の Microsoft Word、Excel の多数のダイアログ ボックスと同じように、この種類の「プロパティ シート」をダイアログ ボックスをサポートするための先頭から参照されるファイル フォルダーのスタックと同じように記録されたシートのスタックまたは連鎖"ようにするペインのグループを含む Visual C\+\+ は、などです。  詳細タブのコントロールが増えます; ラベル付きのタブがバックエンド タブに表示されます。  プロパティ シートは複数のグループに伴ってきれいにドロップした設定または多数のプロパティを管理する場合に特に便利です。  通常、1 種類のプロパティ シートは、複数の異なるダイアログ ボックスで置換することでユーザー インターフェイスを簡略化できます。  
+---
+# <a name="property-sheets-and-property-pages-mfc"></a>Property Sheets and Property Pages (MFC)
+An MFC [dialog box](../mfc/dialog-boxes.md) can take on a "tab dialog" look by incorporating property sheets and property pages. Called a "property sheet" in MFC, this kind of dialog box, similar to many dialog boxes in Microsoft Word, Excel, and Visual C++, appears to contain a stack of tabbed sheets, much like a stack of file folders seen from front to back, or a group of cascaded windows. Controls on the front tab are visible; only the labeled tab is visible on the rear tabs. Property sheets are particularly useful for managing large numbers of properties or settings that fall fairly neatly into several groups. Typically, one property sheet can simplify a user interface by replacing several separate dialog boxes.  
   
- MFC 4.0 以降では、プロパティ シートとプロパティ ページは、Windows 95 および Windows NT 3.51 以降であるコモン コントロールを使用して実装されます。  
+ As of MFC version 4.0, property sheets and property pages are implemented using the common controls that come with Windows 95 and Windows NT version 3.51 and later.  
   
- プロパティ シートは、クラス [CPropertySheet](../mfc/reference/cpropertysheet-class.md) と [CPropertyPage](../mfc/reference/cpropertypage-class.md) と実装されます \(*MFC の*"で説明されている\)。  `CPropertySheet` は `CPropertyPage`に基づいて複数の「ページ」を含めることができる全体的なダイアログ ボックスを定義します。  
+ Property sheets are implemented with classes [CPropertySheet](../mfc/reference/cpropertysheet-class.md) and [CPropertyPage](../mfc/reference/cpropertypage-class.md) (described in the *MFC Reference*). `CPropertySheet` defines the overall dialog box, which can contain multiple "pages" based on `CPropertyPage`.  
   
- プロパティ シートの作成と使用の詳細については、" [プロパティ シート](../mfc/property-sheets-mfc.md)を参照してください。  
+ For information on creating and working with property sheets, see the topic [Property Sheets](../mfc/property-sheets-mfc.md).  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)   
- [MFC のプロパティ シートとプロパティ ページ](../mfc/property-sheets-and-property-pages-in-mfc.md)   
- [データの交換](../mfc/exchanging-data.md)   
- [モードレス プロパティ シートの作成](../mfc/creating-a-modeless-property-sheet.md)   
- [\[適用\] ボタンの処理](../Topic/Handling%20the%20Apply%20Button.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)   
+ [Property Sheets and Property Pages in MFC](../mfc/property-sheets-and-property-pages-in-mfc.md)   
+ [Exchanging Data](../mfc/exchanging-data.md)   
+ [Creating a Modeless Property Sheet](../mfc/creating-a-modeless-property-sheet.md)   
+ [Handling the Apply Button](../mfc/handling-the-apply-button.md)
+
+

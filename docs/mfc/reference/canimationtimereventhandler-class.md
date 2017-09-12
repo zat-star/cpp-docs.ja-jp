@@ -1,5 +1,5 @@
 ---
-title: "CAnimationTimerEventHandler クラス |Microsoft ドキュメント"
+title: CAnimationTimerEventHandler Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,7 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CAnimationTimerEventHandler class
+- CAnimationTimerEventHandler [MFC], CreateInstance
+- CAnimationTimerEventHandler [MFC], OnPostUpdate
+- CAnimationTimerEventHandler [MFC], OnPreUpdate
+- CAnimationTimerEventHandler [MFC], OnRenderingTooSlow
+- CAnimationTimerEventHandler [MFC], SetAnimationController
 ms.assetid: 188dea3b-4b5e-4f6b-8df9-09d993a21619
 caps.latest.revision: 18
 author: mikeblome
@@ -39,49 +43,49 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 5412c215caf85440e923e8a083ed310f8960849a
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d224da2d20d3a321c89e5db1f61895ca19507704
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="canimationtimereventhandler-class"></a>CAnimationTimerEventHandler クラス
-タイミング イベントの発生時に Animation API によって呼び出されるコールバックを実装します。  
+# <a name="canimationtimereventhandler-class"></a>CAnimationTimerEventHandler Class
+Implements a callback, which is called by the Animation API when timing events occur.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CAnimationTimerEventHandler : public CUIAnimationTimerEventHandlerBase<CAnimationTimerEventHandler>;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CAnimationTimerEventHandler::CreateInstance](#createinstance)|インスタンスを作成`CAnimationTimerEventHandler`コールバックします。|  
-|[CAnimationTimerEventHandler::OnPostUpdate](#onpostupdate)|アニメーション更新が完了した後に発生するイベントを処理します。 (`CUIAnimationTimerEventHandlerBase::OnPostUpdate` をオーバーライドします)。|  
-|[CAnimationTimerEventHandler::OnPreUpdate](#onpreupdate)|アニメーションの更新が始まる前に発生するイベントを処理します。 (`CUIAnimationTimerEventHandlerBase::OnPreUpdate` をオーバーライドします)。|  
-|[CAnimationTimerEventHandler::OnRenderingTooSlow](#onrenderingtooslow)|アニメーションのレンダリングのフレーム レートが最小の望ましいフレーム レートを下回った場合に発生するイベントを処理します。 (`CUIAnimationTimerEventHandlerBase::OnRenderingTooSlow` をオーバーライドします)。|  
-|[CAnimationTimerEventHandler::SetAnimationController](#setanimationcontroller)|イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。|  
+|[CAnimationTimerEventHandler::CreateInstance](#createinstance)|Creates an instance of `CAnimationTimerEventHandler` callback.|  
+|[CAnimationTimerEventHandler::OnPostUpdate](#onpostupdate)|Handles events that occur after an animation update is finished. (Overrides `CUIAnimationTimerEventHandlerBase::OnPostUpdate`.)|  
+|[CAnimationTimerEventHandler::OnPreUpdate](#onpreupdate)|Handles events that occur before an animation update begins. (Overrides `CUIAnimationTimerEventHandlerBase::OnPreUpdate`.)|  
+|[CAnimationTimerEventHandler::OnRenderingTooSlow](#onrenderingtooslow)|Handles events that occur when the rendering frame rate for an animation falls below the minimum desirable frame rate. (Overrides `CUIAnimationTimerEventHandlerBase::OnRenderingTooSlow`.)|  
+|[CAnimationTimerEventHandler::SetAnimationController](#setanimationcontroller)|Stores a pointer to animation controller to route events.|  
   
-## <a name="remarks"></a>コメント  
- このイベント ハンドラーが作成され、CAnimationController::EnableAnimationTimerEventHandler を呼び出すときに、IUIAnimationTimer::SetTimerEventHandler に渡されます。  
+## <a name="remarks"></a>Remarks  
+ This event handler is created and passed to IUIAnimationTimer::SetTimerEventHandler when you call CAnimationController::EnableAnimationTimerEventHandler.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CUIAnimationCallbackBase`  
   
  `CUIAnimationTimerEventHandlerBase`  
   
  `CAnimationTimerEventHandler`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxanimationcontroller.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxanimationcontroller.h  
   
-##  <a name="createinstance"></a>CAnimationTimerEventHandler::CreateInstance  
- CAnimationTimerEventHandler コールバックのインスタンスを作成します。  
+##  <a name="createinstance"></a>  CAnimationTimerEventHandler::CreateInstance  
+ Creates an instance of CAnimationTimerEventHandler callback.  
   
 ```  
 static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
@@ -89,59 +93,59 @@ static COM_DECLSPEC_NOTHROW HRESULT CreateInstance(
     IUIAnimationTimerEventHandler** ppTimerEventHandler);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pAnimationController`  
- イベントを受信するアニメーション コント ローラーへのポインター。  
+ A pointer to animation controller, which will receive events.  
   
  `ppTimerEventHandler`  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="onpostupdate"></a>CAnimationTimerEventHandler::OnPostUpdate  
- アニメーション更新が完了した後に発生するイベントを処理します。  
+##  <a name="onpostupdate"></a>  CAnimationTimerEventHandler::OnPostUpdate  
+ Handles events that occur after an animation update is finished.  
   
 ```  
 IFACEMETHOD(OnPostUpdate)();
 ```  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OKそれ以外の場合 E_FAIL します。  
+### <a name="return-value"></a>Return Value  
+ S_OK if the method succeeds; otherwise E_FAIL.  
   
-##  <a name="onpreupdate"></a>CAnimationTimerEventHandler::OnPreUpdate  
- アニメーションの更新が始まる前に発生するイベントを処理します。  
+##  <a name="onpreupdate"></a>  CAnimationTimerEventHandler::OnPreUpdate  
+ Handles events that occur before an animation update begins.  
   
 ```  
 IFACEMETHOD(OnPreUpdate)();
 ```  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OKそれ以外の場合 E_FAIL します。  
+### <a name="return-value"></a>Return Value  
+ S_OK if the method succeeds; otherwise E_FAIL.  
   
-##  <a name="onrenderingtooslow"></a>CAnimationTimerEventHandler::OnRenderingTooSlow  
- アニメーションのレンダリングのフレーム レートが最小の望ましいフレーム レートを下回った場合に発生するイベントを処理します。  
+##  <a name="onrenderingtooslow"></a>  CAnimationTimerEventHandler::OnRenderingTooSlow  
+ Handles events that occur when the rendering frame rate for an animation falls below the minimum desirable frame rate.  
   
 ```  
 IFACEMETHOD(OnRenderingTooSlow)(UINT32 fps);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fps`  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OKそれ以外の場合 E_FAIL します。  
+### <a name="return-value"></a>Return Value  
+ S_OK if the method succeeds; otherwise E_FAIL.  
   
-##  <a name="setanimationcontroller"></a>CAnimationTimerEventHandler::SetAnimationController  
- イベントをルーティングするアニメーション コント ローラーへのポインターを格納します。  
+##  <a name="setanimationcontroller"></a>  CAnimationTimerEventHandler::SetAnimationController  
+ Stores a pointer to animation controller to route events.  
   
 ```  
 void SetAnimationController(CAnimationController* pAnimationController);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pAnimationController`  
- イベントを受信するアニメーション コント ローラーへのポインター。  
+ A pointer to animation controller, which will receive events.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

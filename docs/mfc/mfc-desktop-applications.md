@@ -1,99 +1,117 @@
 ---
-title: "MFC デスクトップ アプリケーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MFC"
-  - "mfc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス ライブラリ, MFC"
-  - "ライブラリ, MFC"
-  - "MFC, 概要 (MFC の)"
+title: MFC Desktop Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- MFC
+- mfc
+dev_langs:
+- C++
+helpviewer_keywords:
+- libraries, MFC
+- class libraries, MFC
+- MFC, about MFC
 ms.assetid: 7101cb18-a681-495c-8f2b-069ad20c72f7
 caps.latest.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# MFC デスクトップ アプリケーション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b299c2ce56449f7ce66d17f9a3fde342ec221bca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Microsoft Foundation Class \(MFC\) ライブラリは、Win32 お呼びCOM API の多くにオブジェクト指向のラッパーを提供します。  かなりシンプルなデスクトップ アプリケーションの作成にも使用できますが、複数のコントロールを使用する複雑なユーザー インターフェイスを開発する必要がある場合に最も役立ちます。  MFC を使用すると、Office スタイルのユーザー インターフェイスを持つアプリケーションを作成できます。  
+---
+# <a name="mfc-desktop-applications"></a>MFC Desktop Applications
+The Microsoft Foundation Class (MFC) Library provides an object-oriented wrapper over much of the Win32 and COM APIs. Although it can be used to create very simple desktop applications, it is most useful when you need to develop more complex user interfaces with multiple controls. You can use MFC to create applications with Office-style user interfaces.  
   
- 『MFC リファレンス』では、Microsoft Foundation Class ライブラリ を構成するクラス、グローバル関数、グローバル変数、マクロについて説明しています。  
+ The MFC Reference covers the classes, global functions, global variables, and macros that make up the Microsoft Foundation Class Library.  
   
- 各クラスの説明に含まれる階層図の一部は、基底クラスの位置を知るのに便利です。  『MFC リファレンス』では、継承されたメンバー関数、継承された演算子の説明はしていません。  これらの関数については、階層図の基底クラスの説明を参照してください。  
+ The individual hierarchy charts included with each class are useful for locating base classes. The MFC Reference usually does not describe inherited member functions or inherited operators. For information on these functions, refer to the base classes depicted in the hierarchy diagrams.  
   
- 各クラスのトピックは、クラス概要、カテゴリ別のメンバー要約、メンバー関数、オーバーロードされた演算子、およびデータ メンバーについて説明しています。  
+ The documentation for each class includes a class overview, a member summary by category, and topics for the member functions, overloaded operators, and data members.  
   
- パブリック クラス メンバーおよびプロテクト クラス メンバーは、アプリケーション プログラムや派生クラスでよく使われるものだけを取り上げています。  全クラス メンバーの一覧は、クラスのヘッダー ファイルを参照してください。  
+ Public and protected class members are documented only when they are normally used in application programs or derived classes. See the class header files for a complete listing of class members.  
   
 > [!IMPORTANT]
->  MFC クラスとそのメンバーは、[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  The MFC classes and their members cannot be used in applications that execute in the Windows Runtime environment.  
 >   
->  マルチバイト文字エンコード \(MBCS\) の MFC ライブラリ \(DLL\) は、Visual Studio に含まれなくなりましたが、Visual Studio アドオンとして使用できます。  詳細については、「[MFC MBCS DLL アドオン](../mfc/mfc-mbcs-dll-add-on.md)」を参照してください。  
+>  MFC libraries (DLLs) for multibyte character encoding (MBCS) are no longer included in Visual Studio, but are available as a Visual Studio add-on. For more information, see [MFC MBCS DLL Add-on](mfc-mbcs-dll-add-on.md).  
   
-## このセクションの内容  
- [概念](../mfc/mfc-concepts.md)  
- MFC のトピックの概念に関する記事です。  
+## <a name="in-this-section"></a>In This Section  
+ [Concepts](mfc-concepts.md)  
+ Conceptual articles on MFC topics.  
   
- [階層図](../mfc/hierarchy-chart.md)  
- クラス ライブラリのクラスの関係がわかりやすく図で示されています。  
+ [Hierarchy Chart](hierarchy-chart.md)  
+ Visually details the class relationships in the class library.  
   
- [クラスの概要](../mfc/class-library-overview.md)  
- MFC ライブラリのクラスをカテゴリ別に一覧表示します。  
+ [Class Overview](class-library-overview.md)  
+ Lists the classes in the MFC Library according to category.  
   
- [チュートリアル](../mfc/walkthroughs-mfc.md)  
- MFC ライブラリ機能に関連するさまざまなタスクを解説している記事を紹介します。  
+ [Walkthroughs](walkthroughs-mfc.md)  
+ Contains articles that walk you through various tasks associated with MFC library features.  
   
- [テクニカル ノート](../mfc/mfc-technical-notes.md)  
- MFC 開発チームの執筆によるクラス ライブラリに関する技術情報へのリンクを提供します。  
+ [Technical Notes](mfc-technical-notes.md)  
+ Provides links to specialized topics, written by the MFC development team, on the class library.  
   
- [MFC のカスタマイズ](../mfc/customization-for-mfc.md)  
- MFC アプリケーションをカスタマイズするためのヒントを示します。  
+ [Customization for MFC](customization-for-mfc.md)  
+ Provides some tips for customizing your MFC application.  
   
- [クラス](../Topic/MFC%20Classes.md)  
- MFC クラスへのリンクおよび MFC クラスのヘッダー ファイル情報が用意されています。  
+ [Classes](reference/mfc-classes.md)  
+ Provides links to and header file information for the MFC classes.  
   
- [内部クラス](../mfc/reference/internal-classes.md)  
- MFC での内部使用。  完全を期すために、このセクションではこれらの内部クラスについて説明しますが、コードで直接使用するためのものではありません。  
+ [Internal Classes](reference/internal-classes.md)  
+ Used internally in MFC. For completeness, this section describes these internal classes, but they are not intended to be used directly in your code.  
   
- [マクロとグローバル](../mfc/reference/mfc-macros-and-globals.md)  
- MFC ライブラリのマクロおよびグローバル関数へのリンクを提供します。  
+ [Macros and Globals](reference/mfc-macros-and-globals.md)  
+ Provides links to the macros and global functions in the MFC Library.  
   
- [構造体、スタイル、コールバック関数とメッセージ マップ](../mfc/reference/structures-styles-callbacks-and-message-maps.md)  
- MFC ライブラリで使用する構造体、スタイル、コールバック関数、およびメッセージ マップへのリンクを提供します。  
+ [Structures, Styles, Callbacks, and Message Maps](reference/structures-styles-callbacks-and-message-maps.md)  
+ Provides links to the structures, styles, callbacks, and message maps used by the MFC Library.  
   
- [MFC ウィザードとダイアログ ボックス](../mfc/reference/mfc-wizards-and-dialog-boxes.md)  
- Visual Studio の MFC アプリケーションを作成するための機能のガイドです。  
+ [MFC Wizards and Dialog Boxes](reference/mfc-wizards-and-dialog-boxes.md)  
+ A guide to the features in Visual Studio for creating MFC applications.  
   
- [Working with Resource Files](../mfc/working-with-resource-files.md)  
- リソース ファイルを使用して、UI の文字列やダイアログ ボックスのレイアウトなどの静的ユーザー インターフェイスのデータを管理する方法。  
+ [Working with Resource Files](../windows/working-with-resource-files.md)  
+ How to use resource files to manage static user interface data such as UI strings and dialog box layout.  
   
-## 関連項目  
- [階層図カテゴリ](../Topic/Hierarchy%20Chart%20Categories.md)  
- カテゴリ別の MFC 階層図を示します。  
+## <a name="related-sections"></a>Related Sections  
+ [Hierarchy Chart Categories](hierarchy-chart-categories.md)  
+ Describes the MFC hierarchy chart by category.  
   
- [ATL\/MFC の共有クラス](../atl-mfc-shared/atl-mfc-shared-classes.md)  
- MFC と ATL で共有されるクラスへのリンクを提供します。  
+ [ATL/MFC Shared Classes](../atl-mfc-shared/atl-mfc-shared-classes.md)  
+ Provides links to classes that are shared between MFC and ATL.  
   
- [MFC のサンプル](../top/visual-cpp-samples.md)  
- MFC の使い方を示すサンプルへのリンクを提供します。  
+ [MFC Samples](../visual-cpp-samples.md)  
+ Provides links to samples that demonstrate how to use MFC.  
   
- [Visual C\+\+ Libraries Reference](http://msdn.microsoft.com/ja-jp/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
- Visual C\+\+ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および標準 C\+\+ ライブラリが含まれます。  
+ [Visual C++ Libraries Reference](../standard-library/cpp-standard-library-reference.md)  
+ Provides links to the various libraries provided with Visual C++, including ATL, MFC, OLE DB Templates, the C run-time library, and the C++ Standard Library.  
   
- [Visual Studio でのデバッグ](../Topic/Debugging%20in%20Visual%20Studio.md)  
- Visual Studio デバッガーを使用してアプリケーションやストアド プロシージャの論理エラーを修正する方法を説明するトピックへのリンクがあります。  
+ [Debugging in Visual Studio](/visualstudio/debugger/debugging-in-visual-studio.md)  
+ Provides links to using the Visual Studio debugger to correct logic errors in your application or stored procedures.  
   
-## 参照  
- [MFC と ATL](../mfc/mfc-and-atl.md)
+## <a name="see-also"></a>See Also  
+ [MFC and ATL](mfc-and-atl.md)
+

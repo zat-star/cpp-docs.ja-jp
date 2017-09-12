@@ -1,46 +1,65 @@
 ---
-title: "CWinApp および MFC アプリケーション ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CWinApp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション ウィザード [C++], および CWinApp"
-  - "CWinApp クラス, および MFC アプリケーション ウィザード"
-  - "MFC [C++], ウィザード"
+title: CWinApp and the MFC Application Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CWinApp
+dev_langs:
+- C++
+helpviewer_keywords:
+- application wizards [MFC], and CWinApp
+- CWinApp class [MFC], and MFC Application Wizard
+- MFC, wizards
 ms.assetid: f8ac0491-3302-4e46-981d-0790624eb8a2
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# CWinApp および MFC アプリケーション ウィザード
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1f58774c6a7d3ed608847b72e22e042bb9bf61e8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これは、スケルトン アプリケーションを作成するときに、MFC アプリケーション ウィザードは [CWinApp](../mfc/reference/cwinapp-class.md)から派生されるアプリケーション クラスを宣言します。  MFC アプリケーション ウィザードでは、次の項目を含む実装ファイルを生成する:  
+---
+# <a name="cwinapp-and-the-mfc-application-wizard"></a>CWinApp and the MFC Application Wizard
+When it creates a skeleton application, the MFC Application Wizard declares an application class derived from [CWinApp](../mfc/reference/cwinapp-class.md). The MFC Application Wizard also generates an implementation file that contains the following items:  
   
--   アプリケーション クラスのメッセージ マップ。  
+-   A message map for the application class.  
   
--   空のクラス コンストラクター。  
+-   An empty class constructor.  
   
--   クラスの一つのオブジェクトを宣言する変数。  
+-   A variable that declares the one and only object of the class.  
   
--   `InitInstance` のメンバー関数の標準の実装。  
+-   A standard implementation of your `InitInstance` member function.  
   
- アプリケーション クラスがプロジェクト ヘッダーおよびメインのソース ファイルに格納されます。  作成するための MFC アプリケーション ウィザードで指定したプロジェクト名にクラスとファイルの名前に基づいています。  これらのクラスのコードを表示する最も簡単な方法は、[クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)です。  
+ The application class is placed in the project header and main source files. The names of the class and files created are based on the project name you supply in the MFC Application Wizard. The easiest way to view the code for these classes is through [Class View](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925).  
   
- 指定された標準実装とメッセージ マップでは、さまざまな用途に十分ですが、必要に応じて変更できます。  これらの実装で最も重要なの `InitInstance` のメンバー関数です。  通常、`InitInstance`のスケルトン実装にコードを追加します。  
+ The standard implementations and message map supplied are adequate for many purposes, but you can modify them as needed. The most interesting of these implementations is the `InitInstance` member function. Typically, you will add code to the skeletal implementation of `InitInstance`.  
   
-## 参照  
- [CWinApp : アプリケーション クラス](../Topic/CWinApp:%20The%20Application%20Class.md)   
- [オーバーライド可能な CWinApp のメンバー関数](../mfc/overridable-cwinapp-member-functions.md)   
- [CWinApp のその他のサービス](../mfc/special-cwinapp-services.md)
+## <a name="see-also"></a>See Also  
+ [CWinApp: The Application Class](../mfc/cwinapp-the-application-class.md)   
+ [Overridable CWinApp Member Functions](../mfc/overridable-cwinapp-member-functions.md)   
+ [Special CWinApp Services](../mfc/special-cwinapp-services.md)
+
+

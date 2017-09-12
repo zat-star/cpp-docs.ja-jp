@@ -1,5 +1,5 @@
 ---
-title: "CDaoWorkspaceInfo 構造体 |Microsoft ドキュメント"
+title: CDaoWorkspaceInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CDaoWorkspaceInfo structure
+- CDaoWorkspaceInfo structure [MFC]
 - DAO (Data Access Objects), Workspaces collection
 ms.assetid: a1f4b25e-f9c6-4196-b075-d1df99c54124
 caps.latest.revision: 13
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 44c1ce365a1eecdb2a500998c082c6a9245dffb2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f868a92ea05d7d747db892c57b456c0eb202ec07
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaoworkspaceinfo-structure"></a>CDaoWorkspaceInfo 構造体
-`CDaoWorkspaceInfo`構造体には、データ アクセス オブジェクト (DAO) のデータベース アクセスに対して定義されているワークスペースについての情報が含まれています。  
+# <a name="cdaoworkspaceinfo-structure"></a>CDaoWorkspaceInfo Structure
+The `CDaoWorkspaceInfo` structure contains information about a workspace defined for data access objects (DAO) database access.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CDaoWorkspaceInfo  
@@ -55,25 +55,25 @@ struct CDaoWorkspaceInfo
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- Workspace オブジェクトの一意名します。 このプロパティの値を直接取得するには、クエリ定義オブジェクトを呼び出す[GetName](../../mfc/reference/cdaoquerydef-class.md#getname)メンバー関数。 詳細については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ Uniquely names the workspace object. To retrieve the value of this property directly, call the querydef object's [GetName](../../mfc/reference/cdaoquerydef-class.md#getname) member function. For more information, see the topic "Name Property" in DAO Help.  
   
  *m_strUserName*  
- Workspace オブジェクトの所有者を表す値。 関連情報については、DAO ヘルプの「ユーザー名プロパティ」を参照してください。  
+ A value that represents the owner of a workspace object. For related information, see the topic "UserName Property" in DAO Help.  
   
  *m_bIsolateODBCTrans*  
- 同じ ODBC データベースが関係する複数のトランザクションが分離されたかどうかを示す値です。 詳細については、次を参照してください。 [CDaoWorkspace::SetIsolateODBCTrans](../../mfc/reference/cdaoworkspace-class.md#setisolateodbctrans)します。 関連情報については、DAO ヘルプの「IsolateODBCTrans プロパティ」を参照してください。  
+ A value that indicates whether multiple transactions that involve the same ODBC database are isolated. For more information, see [CDaoWorkspace::SetIsolateODBCTrans](../../mfc/reference/cdaoworkspace-class.md#setisolateodbctrans). For related information, see the topic "IsolateODBCTrans Property" in DAO Help.  
   
-## <a name="remarks"></a>コメント  
- ワークスペースは、クラスのオブジェクトを[CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md)します。 プライマリ、セカンダリ データベースを上記のすべての参照がによって情報が返される方法を示す、 [GetWorkspaceInfo](../../mfc/reference/cdaoworkspace-class.md#getworkspaceinfo)クラスのメンバー関数`CDaoWorkspace`します。  
+## <a name="remarks"></a>Remarks  
+ The workspace is an object of class [CDaoWorkspace](../../mfc/reference/cdaoworkspace-class.md). The references to Primary, Secondary, and All above indicate how the information is returned by the [GetWorkspaceInfo](../../mfc/reference/cdaoworkspace-class.md#getworkspaceinfo) member function in class `CDaoWorkspace`.  
   
- によって取得される情報、 [CDaoWorkspace::GetWorkspaceInfo](../../mfc/reference/cdaoworkspace-class.md#getworkspaceinfo)メンバー関数は、`CDaoWorkspaceInfo`構造体。 `CDaoWorkspaceInfo`定義して、`Dump`デバッグでのメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoWorkspaceInfo`オブジェクトです。  
+ Information retrieved by the [CDaoWorkspace::GetWorkspaceInfo](../../mfc/reference/cdaoworkspace-class.md#getworkspaceinfo) member function is stored in a `CDaoWorkspaceInfo` structure. `CDaoWorkspaceInfo` also defines a `Dump` member function in debug builds. You can use `Dump` to dump the contents of a `CDaoWorkspaceInfo` object.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CDaoWorkspace クラス](../../mfc/reference/cdaoworkspace-class.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CDaoWorkspace Class](../../mfc/reference/cdaoworkspace-class.md)
 

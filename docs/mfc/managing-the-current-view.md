@@ -1,39 +1,58 @@
 ---
-title: "現在のビューの管理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "現在のビュー (フレーム ウィンドウ内の)"
-  - "非アクティブ (ビューを)"
-  - "フレーム ウィンドウ, 現在のビュー"
-  - "OnActivateView メソッド"
-  - "ビュー, アクティブ"
-  - "ビュー, および OnActivateView メソッド"
-  - "ビュー, 現在の"
-  - "ビュー, 非アクティブ"
+title: Managing the Current View | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- views [MFC], and OnActivateView method [MFC]
+- views [MFC], deactivating
+- views [MFC], activating
+- frame windows [MFC], current view
+- OnActivateView method [MFC]
+- views [MFC], current
+- deactivating views [MFC]
+- current view in frame window [MFC]
 ms.assetid: 0a1cc22d-d646-4536-9ad2-3cb6d7092e4a
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 現在のビューの管理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fbdd5ed9ba0935fd224f2b62796ea005593b77b9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-フレーム ウィンドウの既定の実装の一部として、フレーム ウィンドウには、現在アクティブなビューを追跡します。  フレーム ウィンドウが複数のビューが含まれている場合、たとえば分割ウィンドウに、現在のビューが使用中の最新のビューです。  アクティブなビューが Windows または現在の入力フォーカスのアクティブ ウィンドウに依存しません。  
+---
+# <a name="managing-the-current-view"></a>Managing the Current View
+As part of the default implementation of frame windows, a frame window keeps track of a currently active view. If the frame window contains more than one view, as for example in a splitter window, the current view is the most recent view in use. The active view is independent of the active window in Windows or the current input focus.  
   
- アクティブなビューが変更されると、フレームワークは [OnActivateView](../Topic/CView::OnActivateView.md) のメンバー関数を呼び出すと、現在のビューに通知します。  ビューが `OnActivateView``bActivate` パラメーターを調べることによってアクティブまたは非アクティブになっているかを判断できます。  既定で、`OnActivateView` はアクティブ化の現在のビューにフォーカスを設定します。  ビューを非アクティブまたは再度アクティブにする特別な処理を実行するに `OnActivateView` をオーバーライドできます。  たとえば、アクティブでないビューを他のユーザーとアクティブなビューを区別するための特殊なビジュアル キューを提供する場合があります。  
+ When the active view changes, the framework notifies the current view by calling its [OnActivateView](../mfc/reference/cview-class.md#onactivateview) member function. You can tell whether the view is being activated or deactivated by examining `OnActivateView`'s `bActivate` parameter. By default, `OnActivateView` sets the focus to the current view on activation. You can override `OnActivateView` to perform any special processing when the view is deactivated or reactivated. For example, you might want to provide special visual cues to distinguish the active view from other, inactive views.  
   
- フレーム ウィンドウが現在の \(アクティブ\) ビューに標準コマンド ルーティングの一部として、[Command Routing](../mfc/command-routing.md)"に説明されているように、順方向に表示します。  
+ A frame window forwards commands to its current (active) view, as described in [Command Routing](../mfc/command-routing.md), as part of the standard command routing.  
   
-## 参照  
- [フレーム ウィンドウの使用](../Topic/Using%20Frame%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Using Frame Windows](../mfc/using-frame-windows.md)
+
+

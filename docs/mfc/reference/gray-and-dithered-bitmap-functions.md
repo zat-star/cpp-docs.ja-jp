@@ -1,5 +1,5 @@
 ---
-title: "灰色とディザリングされたビットマップ関数 |Microsoft ドキュメント"
+title: Gray and Dithered Bitmap Functions | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,7 +16,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- gray and dithered bitmap functions
+- gray and dithered bitmap functions [MFC]
 ms.assetid: cb139a77-b85e-4504-9d93-24156ad77a41
 caps.latest.revision: 13
 author: mikeblome
@@ -36,38 +36,38 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
-ms.openlocfilehash: b8b6f43917dfe211f477b3dde0c94323015d18b2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8263f93b440be22916dd3597c4093005255455a1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="gray-and-dithered-bitmap-functions"></a>淡色表示 (灰色) ビットマップ関数とディザリングされたビットマップ関数
-**灰色のビットマップ関数**  
+# <a name="gray-and-dithered-bitmap-functions"></a>Gray and Dithered Bitmap Functions
+**Gray Bitmap Functions**  
   
- MFC には、ビットマップのコントロールが無効になっていることを示すための&2; つの関数が用意されています。  
+ MFC provides two functions for giving a bitmap the appearance of a disabled control.  
   
- ![灰色と元のアイコンの比較](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
-  
-|||  
-|-|-|  
-|[AfxDrawGrayBitmap](#afxdrawgraybitmap)|灰色のバージョンのビットマップを描画します。|  
-|[AfxGetGrayBitmap](#afxgetgraybitmap)|灰色のバージョンのビットマップをコピーします。|  
-  
- **ディザリングされたビットマップ関数**  
-  
- MFC には、ビットマップの背景をディザリングされたパターンに置き換える&2; つの関数も用意されています。  
-  
- ![ディザリングされたと元のアイコンの比較](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
+ ![Comparison of gray and original icon versions](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
   
 |||  
 |-|-|  
-|[AfxDrawDitheredBitmap](#afxdrawditheredbitmap)|背景がディザリングされたビットマップを描画します。|  
-|[AfxGetDitheredBitmap](#afxgetditheredbitmap)|背景がディザリングされたビットマップをコピーします。|  
+|[AfxDrawGrayBitmap](#afxdrawgraybitmap)|Draws a gray version of a bitmap.|  
+|[AfxGetGrayBitmap](#afxgetgraybitmap)|Copies a gray version of a bitmap.|  
   
-##  <a name="afxdrawgraybitmap"></a>AfxDrawGrayBitmap  
- 灰色のバージョンのビットマップを描画します。  
+ **Dithered Bitmap Functions**  
+  
+ MFC also provides two functions for replacing a bitmap's background with a dithered pattern.  
+  
+ ![Comparison of dithered and original icon versions](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
+  
+|||  
+|-|-|  
+|[AfxDrawDitheredBitmap](#afxdrawditheredbitmap)|Draws a bitmap with a dithered background.|  
+|[AfxGetDitheredBitmap](#afxgetditheredbitmap)|Copies a bitmap with a dithered background.|  
+  
+##  <a name="afxdrawgraybitmap"></a>  AfxDrawGrayBitmap  
+ Draws a gray version of a bitmap.  
   
 ```   
 void AFXAPI AfxDrawGrayBitmap(
@@ -78,35 +78,35 @@ void AFXAPI AfxDrawGrayBitmap(
     COLORREF crBackground); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- 宛先 DC を示します。  
+ Points to the destination DC.  
   
  *x*  
- 宛先の x 座標。  
+ The destination x-coordinate.  
   
  *y*  
- 宛先の y 座標。  
+ The destination y-coordinate.  
   
  `rSrc`  
- 元のビットマップ。  
+ The source bitmap.  
   
  `crBackground`  
- 新しい背景色 (通常は COLOR_MENU などの灰色)。  
+ The new background color (typically gray, such as COLOR_MENU).  
   
-### <a name="remarks"></a>コメント  
- `AfxDrawGrayBitmap` で描画されるビットマップの外観は、無効なコントロールになります。  
+### <a name="remarks"></a>Remarks  
+ A bitmap drawn with `AfxDrawGrayBitmap` will have the appearance of a disabled control.  
   
- ![灰色と元のアイコンの比較](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
+ ![Comparison of gray and original icon versions](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&191;](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#191](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_1.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
 
-##  <a name="afxgetgraybitmap"></a>AfxGetGrayBitmap  
- 灰色のバージョンのビットマップをコピーします。  
+##  <a name="afxgetgraybitmap"></a>  AfxGetGrayBitmap  
+ Copies a gray version of a bitmap.  
   
 ```   
 void AFXAPI AfxGetGrayBitmap(
@@ -115,29 +115,29 @@ void AFXAPI AfxGetGrayBitmap(
     COLORREF crBackground); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rSrc`  
- 元のビットマップ。  
+ The source bitmap.  
   
  `pDest`  
- コピー先のビットマップ。  
+ The destination bitmap.  
   
  `crBackground`  
- 新しい背景色 (通常は COLOR_MENU などの灰色)。  
+ The new background color (typically gray, such as COLOR_MENU).  
   
-### <a name="remarks"></a>コメント  
- `AfxGetGrayBitmap` でコピーされるビットマップの外観は、無効なコントロールのようになります。  
+### <a name="remarks"></a>Remarks  
+ A bitmap copied with `AfxGetGrayBitmap` will have the appearance of a disabled control.  
   
- ![灰色と元のアイコンの比較](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
+ ![Comparison of gray and original icon versions](../../mfc/reference/media/vcgraybitmap.gif "vcgraybitmap")  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&193;](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#193](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_2.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="afxdrawditheredbitmap"></a>AfxDrawDitheredBitmap  
- ディザリングされた (checker) パターンで背景を置き換えます、ビットマップを描画します。  
+##  <a name="afxdrawditheredbitmap"></a>  AfxDrawDitheredBitmap  
+ Draws a bitmap, replacing its background with a dithered (checker) pattern.  
   
 ```   
 void AFXAPI AfxDrawDitheredBitmap(
@@ -149,39 +149,39 @@ void AFXAPI AfxDrawDitheredBitmap(
     COLORREF cr2); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- 宛先 DC を示します。  
+ Points to the destination DC.  
   
  *x*  
- 宛先の x 座標。  
+ The destination x-coordinate.  
   
  *y*  
- 宛先の y 座標。  
+ The destination y-coordinate.  
   
  `rSrc`  
- 元のビットマップ。  
+ The source bitmap.  
   
  `cr1`  
- 2 つのディザー カラーの&1; つは通常白です。  
+ One of the two dither colors, typically white.  
   
  `cr2`  
- その他のディザー色、通常の明るい灰色 (COLOR_MENU)。  
+ The other dither color, typically light gray (COLOR_MENU).  
   
-### <a name="remarks"></a>コメント  
- 2 色でレプリケート先 DC 上に元のビットマップを描画 (`cr1`と`cr2`) チェッカー パターン ビットマップの背景。 元のビットマップの背景は、その白いピクセルとビットマップの左上隅にあるピクセルの色と一致するすべてのピクセルとして定義されます。  
+### <a name="remarks"></a>Remarks  
+ The source bitmap is drawn on the destination DC with a two-color ( `cr1` and `cr2`) checkered pattern replacing the bitmap's background. The background of the source bitmap is defined as its white pixels and all pixels matching the color of the pixel in the upper-left corner of the bitmap.  
   
- ![ディザリングされたと元のアイコンの比較](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
+ ![Comparison of dithered and original icon versions](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&190;](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#190](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_3.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
 
 
-##  <a name="afxgetditheredbitmap"></a>AfxGetDitheredBitmap  
- ディザリングされた (checker) パターンで背景を置き換えます、ビットマップをコピーします。  
+##  <a name="afxgetditheredbitmap"></a>  AfxGetDitheredBitmap  
+ Copies a bitmap, replacing its background with a dithered (checker) pattern.  
   
 ```   
 void AFXAPI AfxGetDitheredBitmap(
@@ -191,30 +191,30 @@ void AFXAPI AfxGetDitheredBitmap(
     COLORREF cr2); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rSrc`  
- 元のビットマップ。  
+ The source bitmap.  
   
  `pDest`  
- コピー先のビットマップ。  
+ The destination bitmap.  
   
  `cr1`  
- 2 つのディザー カラーの&1; つは通常白です。  
+ One of the two dither colors, typically white.  
   
  `cr2`  
- その他のディザー色、通常の明るい灰色 (COLOR_MENU)。  
+ The other dither color, typically light gray (COLOR_MENU).  
   
-### <a name="remarks"></a>コメント  
- 2 色でコピー先ビットマップにコピー元ビットマップ (`cr1`と`cr2`) 元のビットマップの背景を置き換えるチェッカー パターンです。 元のビットマップの背景は、その白いピクセルとビットマップの左上隅にあるピクセルの色と一致するすべてのピクセルとして定義されます。  
+### <a name="remarks"></a>Remarks  
+ The source bitmap is copied to the destination bitmap with a two-color ( `cr1` and `cr2`) checkered pattern replacing the source bitmap's background. The background of the source bitmap is defined as its white pixels and all pixels matching the color of the pixel in the upper-left corner of the bitmap.  
   
- ![ディザリングされたと元のアイコンの比較](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
+ ![Comparison of dithered and original icon versions](../../mfc/reference/media/vcditheredbitmap.gif "vcditheredbitmap")  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&192;](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#192](../../mfc/codesnippet/cpp/gray-and-dithered-bitmap-functions_4.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

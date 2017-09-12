@@ -1,50 +1,69 @@
 ---
-title: "コード ウィザードによるダイアログ クラスの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コード ウィザード"
-  - "ダイアログ ボックス, 作成"
-  - "ダイアログ クラス, 作成"
-  - "MFC ダイアログ ボックス, 作成"
+title: Creating a Dialog Class with Code Wizards | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- dialog boxes [MFC], creating
+- MFC dialog boxes, creating
+- code wizards
+- dialog classes [MFC], creating
 ms.assetid: a7157b9d-f1a8-4381-a4cf-180cd2c7f1b2
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コード ウィザードによるダイアログ クラスの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eebbf99c5379bac838071c36258b48e73ed99247
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-次の表は、ウィザードの管理に役立つコーディングするダイアログに関連するタスクの一覧です。  
+---
+# <a name="creating-a-dialog-class-with-code-wizards"></a>Creating a Dialog Class with Code Wizards
+The following table lists dialog-related tasks that Code Wizards help you manage.  
   
-### ダイアログに関連するタスク  
+### <a name="dialog-related-tasks"></a>Dialog-Related Tasks  
   
-|タスク|に適用します。..|  
-|---------|---------------|  
-|ダイアログ ボックスを管理する[新しい CDialog 派生されたクラスを作成します。](../Topic/Creating%20Your%20Dialog%20Class.md)。|各ダイアログ ボックス。|  
-|ダイアログ クラスへの[マップの Windows メッセージ](../mfc/handling-windows-messages-in-your-dialog-box.md)。|ユーザーが処理されてする各メッセージ。|  
-|ダイアログ ボックスのコントロールを表すクラスとメンバー変数を宣言します。|テキストまたは数値を導入する各コントロール プログラムからアクセスする必要があります。|  
-|コントロールとメンバー変数との [データがどのようにやり取りするか](../mfc/dialog-data-exchange-and-validation.md) を指定します。|、プログラムからアクセスする各コントロール。|  
-|メンバー変数に [検証規則](../mfc/dialog-data-exchange-and-validation.md) を指定します。|テキストまたは数値を導入する各コントロール \(必要な場合\)。|  
+|Task|Apply to . . .|  
+|----------|--------------------|  
+|[Create a new CDialog-derived class](../mfc/creating-your-dialog-class.md) to manage your dialog box.|Each dialog box.|  
+|[Map Windows messages](../mfc/handling-windows-messages-in-your-dialog-box.md) to your dialog class.|Each message you want handled.|  
+|Declare class member variables to represent the controls in the dialog box.|Each control that yields a text or numeric value you want to access from your program.|  
+|Specify [how data is to be exchanged](../mfc/dialog-data-exchange-and-validation.md) between the controls and the member variables.|Each control you want to access from your program.|  
+|Specify [validation rules](../mfc/dialog-data-exchange-and-validation.md) for the member variables.|Each control that yields a text or numeric value, if desired.|  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ダイアログ クラスの作成](../Topic/Creating%20Your%20Dialog%20Class.md)  
+-   [Creating your dialog class](../mfc/creating-your-dialog-class.md)  
   
--   [ダイアログ ボックスの Windows メッセージの処理](../mfc/handling-windows-messages-in-your-dialog-box.md)  
+-   [Handling Windows messages in your dialog box](../mfc/handling-windows-messages-in-your-dialog-box.md)  
   
--   [ダイアログ データ エクスチェンジ \(DDX\) と検証](../mfc/dialog-data-exchange-and-validation.md)  
+-   [Dialog data exchange and validation](../mfc/dialog-data-exchange-and-validation.md)  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)
+
+

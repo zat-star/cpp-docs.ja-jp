@@ -1,5 +1,5 @@
 ---
-title: "MINMAXINFO 構造体 |Microsoft ドキュメント"
+title: MINMAXINFO Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- MINMAXINFO structure
+- MINMAXINFO structure [MFC]
 ms.assetid: be6fb578-f98a-4581-9ada-be9df308ed2f
 caps.latest.revision: 10
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 772416bdac3c72f55644fa31aef23ba76a14e606
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c47c470afa26a0db326f9403d5adcfc557caceea
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="minmaxinfo-structure"></a>MINMAXINFO 構造体
-`MINMAXINFO`構造体には、ウィンドウの最大サイズと位置、および追跡の最小値と最大サイズに関する情報が含まれています。  
+# <a name="minmaxinfo-structure"></a>MINMAXINFO Structure
+The `MINMAXINFO` structure contains information about a window's maximized size and position and its minimum and maximum tracking size.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct tagMINMAXINFO {  
@@ -55,27 +55,27 @@ typedef struct tagMINMAXINFO {
 } MINMAXINFO;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *ptReserved*  
- 内部使用のために予約されています。  
+ Reserved for internal use.  
   
  *ptMaxSize*  
- 最大の幅 (point.x) と、ウィンドウの最大の高さ (point.y) を指定します。  
+ Specifies the maximized width (point.x) and the maximized height (point.y) of the window.  
   
  `ptMaxPosition`  
- (Point.x) の最大化ウィンドウの左側の位置と (point.y) の最大化ウィンドウの上端の位置を指定します。  
+ Specifies the position of the left side of the maximized window (point.x) and the position of the top of the maximized window (point.y).  
   
  *ptMinTrackSize*  
- 最小のトラッキングの幅 (point.x) と、最小のトラッキング ウィンドウの高さ (point.y) を指定します。  
+ Specifies the minimum tracking width (point.x) and the minimum tracking height (point.y) of the window.  
   
  *ptMaxTrackSize*  
- トラッキングの幅 (point.x) の最大値、およびウィンドウの高さ (point.y) を追跡する最大値を指定します。  
+ Specifies the maximum tracking width (point.x) and the maximum tracking height (point.y) of the window.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** winuser.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winuser.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CWnd::OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo)
 
 

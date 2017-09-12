@@ -1,5 +1,5 @@
 ---
-title: "CStatic クラス |Microsoft ドキュメント"
+title: CStatic Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,14 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- enhanced metafiles
-- cursors, displaying
-- static controls
-- controls [MFC], static
-- icons, displaying
-- CStatic class
-- enhanced metafiles, displaying
-- bitmaps, displaying
+- CStatic [MFC], CStatic
+- CStatic [MFC], Create
+- CStatic [MFC], DrawItem
+- CStatic [MFC], GetBitmap
+- CStatic [MFC], GetCursor
+- CStatic [MFC], GetEnhMetaFile
+- CStatic [MFC], GetIcon
+- CStatic [MFC], SetBitmap
+- CStatic [MFC], SetCursor
+- CStatic [MFC], SetEnhMetaFile
+- CStatic [MFC], SetIcon
 ms.assetid: e7c94cd9-5ebd-428a-aa30-b3e51f8efb95
 caps.latest.revision: 21
 author: mikeblome
@@ -52,55 +55,55 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 0209fad1b84b782cdec7927cb5a04e9bb3083d64
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ea9d17a55035a02fba744bd6829fd6c0187378be
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cstatic-class"></a>CStatic クラス
-Windows のスタティック コントロールの機能が用意されています。  
+# <a name="cstatic-class"></a>CStatic Class
+Provides the functionality of a Windows static control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CStatic : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CStatic::CStatic](#cstatic)|`CStatic` オブジェクトを構築します。|  
+|[CStatic::CStatic](#cstatic)|Constructs a `CStatic` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CStatic::Create](#create)|Windows のスタティック コントロールを作成し、それをアタッチ、`CStatic`オブジェクトです。|  
-|[CStatic::DrawItem](#drawitem)|オーナー描画のスタティック コントロールを描画するためにオーバーライドします。|  
-|[CStatic::GetBitmap](#getbitmap)|以前、ビットマップのハンドルを取得[SetBitmap](#setbitmap)します。|  
-|[CStatic::GetCursor](#getcursor)|カーソルのイメージのハンドルが以前に設定と取得[以前](#setcursor)します。|  
-|[CStatic::GetEnhMetaFile](#getenhmetafile)|以前の拡張メタファイルのハンドルを取得[SetEnhMetaFile](#setenhmetafile)します。|  
-|[CStatic::GetIcon](#geticon)|既に設定アイコンのハンドルを取得[SetIcon](#seticon)します。|  
-|[CStatic::SetBitmap](#setbitmap)|静的コントロールに表示されるビットマップを指定します。|  
-|[CStatic::SetCursor](#setcursor)|静的コントロールに表示されるカーソルのイメージを指定します。|  
-|[CStatic::SetEnhMetaFile](#setenhmetafile)|静的コントロールに表示される拡張メタファイルを指定します。|  
-|[CStatic::SetIcon](#seticon)|静的コントロールに表示されるアイコンを指定します。|  
+|[CStatic::Create](#create)|Creates the Windows static control and attaches it to the `CStatic` object.|  
+|[CStatic::DrawItem](#drawitem)|Override to draw an owner-drawn static control.|  
+|[CStatic::GetBitmap](#getbitmap)|Retrieves the handle of the bitmap previously set with [SetBitmap](#setbitmap).|  
+|[CStatic::GetCursor](#getcursor)|Retrieves the handle of the cursor image previously set with [SetCursor](#setcursor).|  
+|[CStatic::GetEnhMetaFile](#getenhmetafile)|Retrieves the handle of the enhanced metafile previously set with [SetEnhMetaFile](#setenhmetafile).|  
+|[CStatic::GetIcon](#geticon)|Retrieves the handle of the icon previously set with [SetIcon](#seticon).|  
+|[CStatic::SetBitmap](#setbitmap)|Specifies a bitmap to be displayed in the static control.|  
+|[CStatic::SetCursor](#setcursor)|Specifies a cursor image to be displayed in the static control.|  
+|[CStatic::SetEnhMetaFile](#setenhmetafile)|Specifies an enhanced metafile to be displayed in the static control.|  
+|[CStatic::SetIcon](#seticon)|Specifies an icon to be displayed in the static control.|  
   
-## <a name="remarks"></a>コメント  
- 静的コントロールでは、テキスト文字列、ボックス、四角形、アイコン、カーソル、ビットマップ、または拡張メタファイルを表示します。 これは、ラベル付け、ボックス、またはその他のコントロールを個別に使用できます。 静的コントロールは通常の入力を受け取らないし、用意されていません。使用して作成された場合に、マウス クリックの親に通知、ただし、 **SS_NOTIFY**スタイル。  
+## <a name="remarks"></a>Remarks  
+ A static control displays a text string, box, rectangle, icon, cursor, bitmap, or enhanced metafile. It can be used to label, box, or separate other controls. A static control normally takes no input and provides no output; however, it can notify its parent of mouse clicks if it's created with **SS_NOTIFY** style.  
   
- 2 つの手順では、スタティック コントロールを作成します。 最初に、構築するコンス トラクターを呼び出し、`CStatic`オブジェクトを呼び出し、[作成](#create)静的コントロールを作成し、アタッチして、メンバー関数、`CStatic`オブジェクトです。  
+ Create a static control in two steps. First, call the constructor to construct the `CStatic` object, then call the [Create](#create) member function to create the static control and attach it to the `CStatic` object.  
   
- 作成する場合、 `CStatic` (ダイアログ リソースの場合) を使ってダイアログ ボックス内のオブジェクト、`CStatic`ダイアログ ボックスを閉じたときに、オブジェクトが自動的に破棄されます。  
+ If you create a `CStatic` object within a dialog box (through a dialog resource), the `CStatic` object is automatically destroyed when the user closes the dialog box.  
   
- 作成する場合、`CStatic`ウィンドウ内でオブジェクトを破棄しても必要があります。 A`CStatic`ウィンドウ内のスタック上に作成されたオブジェクトが自動的に破棄されます。 作成する場合、`CStatic`を使用して、ヒープ上のオブジェクト、**新しい**関数を呼び出す必要があります**削除**オブジェクトを破棄しての操作が終了します。  
+ If you create a `CStatic` object within a window, you may also need to destroy it. A `CStatic` object created on the stack within a window is automatically destroyed. If you create the `CStatic` object on the heap by using the **new** function, you must call **delete** on the object to destroy it when you are done with it.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -109,11 +112,11 @@ class CStatic : public CWnd
   
  `CStatic`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="create"></a>CStatic::Create  
- Windows のスタティック コントロールを作成し、それをアタッチ、`CStatic`オブジェクトです。  
+##  <a name="create"></a>  CStatic::Create  
+ Creates the Windows static control and attaches it to the `CStatic` object.  
   
 ```  
 virtual BOOL Create(
@@ -124,248 +127,248 @@ virtual BOOL Create(
     UINT nID = 0xffff);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszText`  
- コントロール内に配置するテキストを指定します。 場合**NULL**テキストは表示されません。  
+ Specifies the text to place in the control. If **NULL**, no text will be visible.  
   
  `dwStyle`  
- 静的コントロールのウィンドウ スタイルを指定します。 任意の組み合わせを適用[静的コントロール スタイル](../../mfc/reference/static-styles.md)コントロールにします。  
+ Specifies the static control's window style. Apply any combination of [static control styles](../../mfc/reference/styles-used-by-mfc.md#static-styles) to the control.  
   
  `rect`  
- スタティック コントロールのサイズと位置を指定します。 いずれかになります、`RECT`構造体、または`CRect`オブジェクトです。  
+ Specifies the position and size of the static control. It can be either a `RECT` structure or a `CRect` object.  
   
  `pParentWnd`  
- 指定、`CStatic`親ウィンドウを通常、`CDialog`オブジェクトです。 ことはできません**NULL**します。  
+ Specifies the `CStatic` parent window, usually a `CDialog` object. It must not be **NULL**.  
   
  `nID`  
- 静的コントロールのコントロール ID を指定します  
+ Specifies the static control's control ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 構築、 `CStatic`&2; つのステップ内のオブジェクト。 最初に、コンス トラクターを呼び出す`CStatic`、し、呼び出す**作成**、Windows のスタティック コントロールを作成およびそれにアタッチする、`CStatic`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ Construct a `CStatic` object in two steps. First, call the constructor `CStatic`, and then call **Create**, which creates the Windows static control and attaches it to the `CStatic` object.  
   
- 次の適用[ウィンドウ スタイル](../../mfc/reference/window-styles.md)静的コントロールにします。  
+ Apply the following [window styles](../../mfc/reference/styles-used-by-mfc.md#window-styles) to a static control:  
   
-- **WS_CHILD**常に  
+- **WS_CHILD** Always  
   
-- **WS_VISIBLE**通常  
+- **WS_VISIBLE** Usually  
   
-- **WS_DISABLED**ことはほとんどありません  
+- **WS_DISABLED** Rarely  
   
- 静的コントロールで、ビットマップ、カーソル、アイコン、またはメタファイルを表示する場合は、次のいずれかを適用する必要があります[静的コントロール スタイル](../../mfc/reference/static-styles.md):  
+ If you're going to display a bitmap, cursor, icon, or metafile in the static control, you'll need to apply one of the following [static styles](../../mfc/reference/styles-used-by-mfc.md#static-styles):  
   
-- **SS_BITMAP**ビットマップにこのスタイルを使用します。  
+- **SS_BITMAP** Use this style for bitmaps.  
   
-- **SS_ICON**カーソルおよびアイコンのスタイルを使用します。  
+- **SS_ICON** Use this style for cursors and icons.  
   
-- **SS_ENHMETAFILE**拡張メタファイルにこのスタイルを使用します。  
+- **SS_ENHMETAFILE** Use this style for enhanced metafiles.  
   
- カーソル、ビットマップ、アイコンのも、次のスタイルを使用する可能性があります。  
+ For cursors, bitmaps, or icons, you may also want to use the following style:  
   
-- **SS_CENTERIMAGE**静的コントロールにイメージを中央に使用します。  
+- **SS_CENTERIMAGE** Use to center the image in the static control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#1;](../../mfc/reference/codesnippet/cpp/cstatic-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#1](../../mfc/reference/codesnippet/cpp/cstatic-class_1.cpp)]  
   
-##  <a name="cstatic"></a>CStatic::CStatic  
- `CStatic` オブジェクトを構築します。  
+##  <a name="cstatic"></a>  CStatic::CStatic  
+ Constructs a `CStatic` object.  
   
 ```  
 CStatic();
 ```  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#2;](../../mfc/reference/codesnippet/cpp/cstatic-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#2](../../mfc/reference/codesnippet/cpp/cstatic-class_2.cpp)]  
   
-##  <a name="drawitem"></a>CStatic::DrawItem  
- オーナー描画のスタティック コントロールを描画するためにフレームワークによって呼び出されます。  
+##  <a name="drawitem"></a>  CStatic::DrawItem  
+ Called by the framework to draw an owner-drawn static control.  
   
 ```  
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpDrawItemStruct`  
- ポインター、 [DRAWITEMSTRUCT](../../mfc/reference/drawitemstruct-structure.md)構造体。 構造体には、描画される項目と必要な図面の種類に関する情報が含まれています。  
+ A pointer to a [DRAWITEMSTRUCT](../../mfc/reference/drawitemstruct-structure.md) structure. The structure contains information about the item to be drawn and the type of drawing required.  
   
-### <a name="remarks"></a>コメント  
- オーナー描画の描画を実装するには、この関数をオーバーライド**CStatic**オブジェクト (コントロールにスタイルがある**SS_OWNERDRAW**)。  
+### <a name="remarks"></a>Remarks  
+ Override this function to implement drawing for an owner-drawn **CStatic** object (the control has the style **SS_OWNERDRAW**).  
   
-##  <a name="getbitmap"></a>CStatic::GetBitmap  
- 以前、ビットマップのハンドルを取得[SetBitmap](#setbitmap)、つまりに関連付けられている`CStatic`します。  
+##  <a name="getbitmap"></a>  CStatic::GetBitmap  
+ Gets the handle of the bitmap, previously set with [SetBitmap](#setbitmap), that is associated with `CStatic`.  
   
 ```  
 HBITMAP GetBitmap() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のビットマップを識別するハンドルまたは**NULL**ビットマップが設定されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A handle to the current bitmap, or **NULL** if no bitmap has been set.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#3;](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#3](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
   
-##  <a name="getcursor"></a>CStatic::GetCursor  
- 以前、カーソルのハンドルを取得[以前](#setcursor)、つまりに関連付けられている`CStatic`します。  
+##  <a name="getcursor"></a>  CStatic::GetCursor  
+ Gets the handle of the cursor, previously set with [SetCursor](#setcursor), that is associated with `CStatic`.  
   
 ```  
 HCURSOR GetCursor();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のカーソルのハンドルまたは**NULL**カーソルが設定されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A handle to the current cursor, or **NULL** if no cursor has been set.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&4;](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#4](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
   
-##  <a name="getenhmetafile"></a>CStatic::GetEnhMetaFile  
- 以前は、拡張メタファイルのハンドルを取得[SetEnhMetafile](#setenhmetafile)、つまりに関連付けられている`CStatic`します。  
+##  <a name="getenhmetafile"></a>  CStatic::GetEnhMetaFile  
+ Gets the handle of the enhanced metafile, previously set with [SetEnhMetafile](#setenhmetafile), that is associated with `CStatic`.  
   
 ```  
 HENHMETAFILE GetEnhMetaFile() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の拡張メタファイルを識別するハンドルまたは**NULL**拡張メタファイルが設定されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A handle to the current enhanced metafile, or **NULL** if no enhanced metafile has been set.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#5;](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#5](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
   
-##  <a name="geticon"></a>CStatic::GetIcon  
- 以前のアイコンのハンドルを取得[SetIcon](#seticon)、つまりに関連付けられている`CStatic`します。  
+##  <a name="geticon"></a>  CStatic::GetIcon  
+ Gets the handle of the icon, previously set with [SetIcon](#seticon), that is associated with `CStatic`.  
   
 ```  
 HICON GetIcon() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のアイコンを識別するハンドルまたは**NULL**アイコンが設定されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A handle to the current icon, or **NULL** if no icon has been set.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&6;](../../mfc/reference/codesnippet/cpp/cstatic-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#6](../../mfc/reference/codesnippet/cpp/cstatic-class_6.cpp)]  
   
-##  <a name="setbitmap"></a>CStatic::SetBitmap  
- 静的コントロールには、新しいビットマップを関連付けます。  
+##  <a name="setbitmap"></a>  CStatic::SetBitmap  
+ Associates a new bitmap with the static control.  
   
 ```  
 HBITMAP SetBitmap(HBITMAP hBitmap);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hBitmap`  
- 静的コントロールに描画されるビットマップのハンドル。  
+ Handle of the bitmap to be drawn in the static control.  
   
-### <a name="return-value"></a>戻り値  
- 静的コントロールに既に関連付けられているビットマップのハンドルまたは`NULL`静的コントロールに関連付けられたビットマップがない場合。  
+### <a name="return-value"></a>Return Value  
+ The handle of the bitmap that was previously associated with the static control, or `NULL` if no bitmap was associated with the static control.  
   
-### <a name="remarks"></a>コメント  
- ビットマップは、静的コントロールに自動的に描画されます。 既定では、左上隅に描画され、スタティック コントロールは、ビットマップのサイズを変更する場合は。  
+### <a name="remarks"></a>Remarks  
+ The bitmap will be automatically drawn in the static control. By default, it will be drawn in the upper-left corner and the static control will be resized to the size of the bitmap.  
   
- さまざまなウィンドウや静的コントロール スタイルを次のように使用できます。  
+ You can use various window and static control styles, including these:  
   
--   SS_BITMAP は、ビットマップを常にこのスタイルを使用します。  
+-   SS_BITMAP   Use this style always for bitmaps.  
   
--   静的コントロールにイメージを中央に SS_CENTERIMAGE に使用します。 静的コントロールよりも大きい場合は、イメージはクリップされます。 静的コントロールより小さい場合は、ビットマップの左上隅にあるピクセルの色によってイメージの周囲の空白領域が入力されます。  
+-   SS_CENTERIMAGE   Use to center the image in the static control. If the image is larger than the static control, it will be clipped. If it is smaller than the static control, the empty space around the image will be filled by the color of the pixel in the upper left corner of the bitmap.  
   
--   MFC クラスを提供する`CBitmap`はより、Win32 呼び出しよりも、ビットマップ イメージに機能する必要があるときに使用できる`LoadBitmap`です。 `CBitmap`、協力を得てでよく使用されて、GDI オブジェクトの&1; つの種類が含まれています`CStatic`、これは、`CWnd`スタティック コントロールとしてグラフィック オブジェクトを表示するために使用されるクラスです。  
+-   MFC provides the class `CBitmap`, which you can use when you have to do more with a bitmap image than just call the Win32 function `LoadBitmap`. `CBitmap`, which contains one kind of GDI object, is often used in cooperation with `CStatic`, which is a `CWnd` class that is used for displaying a graphic object as a static control.  
   
- `CImage`デバイス独立ビットマップ (DIB) を簡単に処理することができます、ATL と MFC クラス。 詳細については、次を参照してください。 [CImage クラス](../../atl-mfc-shared/reference/cimage-class.md)します。  
+ `CImage` is an ATL/MFC class that lets you more easily work with device independent bitmaps (DIB). For more information, see [CImage Class](../../atl-mfc-shared/reference/cimage-class.md).  
   
--   一般的な使用量を提供する`CStatic::SetBitmap`の HBITMAP 演算子によって返される GDI オブジェクト、`CBitmap`または`CImage`オブジェクトです。 これを行うコードでは、次の行に似ています。  
+-   Typical usage is to give `CStatic::SetBitmap` a GDI object that is returned by the HBITMAP operator of a `CBitmap` or `CImage` object. The code to do this resembles the following line.  
   
 ```  
 MyStaticControl.SetBitmap(HBITMAP(MyBitmap));
 ```  
-次の例では、2 つ作成されます`CStatic`ヒープのオブジェクト。 使用してシステム ビットマップに&1; つを次に、`CBitmap::LoadOEMBitmap`とを使用してファイルから、その他の`CImage::Load`です。  
+The following example creates two `CStatic` objects on the heap. It then loads one with a system bitmap using `CBitmap::LoadOEMBitmap` and the other from a file using `CImage::Load`.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#3;](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#3](../../mfc/reference/codesnippet/cpp/cstatic-class_3.cpp)]  
   
-##  <a name="setcursor"></a>CStatic::SetCursor  
- 静的のコントロールに新しいカーソル イメージを関連付けます。  
+##  <a name="setcursor"></a>  CStatic::SetCursor  
+ Associates a new cursor image with the static control.  
   
 ```  
 HCURSOR SetCursor(HCURSOR hCursor);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hCursor`  
- 静的コントロールに描画されるカーソルのハンドル。  
+ Handle of the cursor to be drawn in the static control.  
   
-### <a name="return-value"></a>戻り値  
- 関連付けられたカーソルのハンドルまたは**NULL**静的コントロールに関連付けられたカーソルがない場合。  
+### <a name="return-value"></a>Return Value  
+ The handle of the cursor previously associated with the static control, or **NULL** if no cursor was associated with the static control.  
   
-### <a name="remarks"></a>コメント  
- カーソルは静的コントロールに自動的に描画されます。 既定では、左上隅に描画され、スタティック コントロールは、カーソルのサイズを変更する場合は。  
+### <a name="remarks"></a>Remarks  
+ The cursor will be automatically drawn in the static control. By default, it will be drawn in the upper-left corner and the static control will be resized to the size of the cursor.  
   
- さまざまなウィンドウや静的コントロール スタイルを以下を使用することができます。  
+ You can use various window and static control styles, including the following:  
   
-- **SS_ICON**カーソル、アイコン、常にこのスタイルを使用します。  
+- **SS_ICON** Use this style always for cursors and icons.  
   
-- **SS_CENTERIMAGE**スタティック コントロールの中央に使用します。 静的コントロールよりも大きい場合は、イメージはクリップされます。 静的コントロールより小さい場合は、スタティック コントロールの背景色とイメージの周囲の空白領域が入力されます。  
+- **SS_CENTERIMAGE** Use to center in the static control. If the image is larger than the static control, it will be clipped. If it is smaller than the static control, the empty space around the image will be filled with the background color of the static control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&4;](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#4](../../mfc/reference/codesnippet/cpp/cstatic-class_4.cpp)]  
   
-##  <a name="setenhmetafile"></a>CStatic::SetEnhMetaFile  
- 新しい拡張メタファイル イメージを静的コントロールに関連付けます。  
+##  <a name="setenhmetafile"></a>  CStatic::SetEnhMetaFile  
+ Associates a new enhanced metafile image with the static control.  
   
 ```  
 HENHMETAFILE SetEnhMetaFile(HENHMETAFILE hMetaFile);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hMetaFile`  
- 静的コントロールに描画するメタファイルのハンドル。  
+ Handle of the enhanced metafile to be drawn in the static control.  
   
-### <a name="return-value"></a>戻り値  
- 関連付けられた拡張メタファイルのハンドルまたは**NULL**静的コントロールに関連付けられた拡張メタファイルがない場合。  
+### <a name="return-value"></a>Return Value  
+ The handle of the enhanced metafile previously associated with the static control, or **NULL** if no enhanced metafile was associated with the static control.  
   
-### <a name="remarks"></a>コメント  
- 拡張メタファイルは静的コントロールに自動的に描画されます。 拡張メタファイルは静的コントロールのサイズに合わせてスケーリングされます。  
+### <a name="remarks"></a>Remarks  
+ The enhanced metafile will be automatically drawn in the static control. The enhanced metafile is scaled to fit the size of the static control.  
   
- さまざまなウィンドウや静的コントロール スタイルを以下を使用することができます。  
+ You can use various window and static control styles, including the following:  
   
-- **SS_ENHMETAFILE**拡張メタファイルで常にこのスタイルを使用します。  
+- **SS_ENHMETAFILE** Use this style always for enhanced metafiles.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&#5;](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#5](../../mfc/reference/codesnippet/cpp/cstatic-class_5.cpp)]  
   
-##  <a name="seticon"></a>CStatic::SetIcon  
- 静的のコントロールに新しいアイコン イメージを関連付けます。  
+##  <a name="seticon"></a>  CStatic::SetIcon  
+ Associates a new icon image with the static control.  
   
 ```  
 HICON SetIcon(HICON hIcon);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hIcon`  
- 静的コントロールに描画されるアイコンのハンドル。  
+ Handle of the icon to be drawn in the static control.  
   
-### <a name="return-value"></a>戻り値  
- 関連付けられたアイコンのハンドルまたは**NULL**静的コントロールに関連付けられたアイコンがない場合。  
+### <a name="return-value"></a>Return Value  
+ The handle of the icon previously associated with the static control, or **NULL** if no icon was associated with the static control.  
   
-### <a name="remarks"></a>コメント  
- アイコンは、静的コントロールに自動的に描画されます。 既定では、左上隅に描画され、スタティック コントロールは、アイコンのサイズを変更する場合は。  
+### <a name="remarks"></a>Remarks  
+ The icon will be automatically drawn in the static control. By default, it will be drawn in the upper-left corner and the static control will be resized to the size of the icon.  
   
- さまざまなウィンドウや静的コントロール スタイルを以下を使用することができます。  
+ You can use various window and static control styles, including the following:  
   
-- **SS_ICON**カーソル、アイコン、常にこのスタイルを使用します。  
+- **SS_ICON** Use this style always for cursors and icons.  
   
-- **SS_CENTERIMAGE**スタティック コントロールの中央に使用します。 静的コントロールよりも大きい場合は、イメージはクリップされます。 静的コントロールより小さい場合は、スタティック コントロールの背景色とイメージの周囲の空白領域が入力されます。  
+- **SS_CENTERIMAGE** Use to center in the static control. If the image is larger than the static control, it will be clipped. If it is smaller than the static control, the empty space around the image will be filled with the background color of the static control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CStatic&6;](../../mfc/reference/codesnippet/cpp/cstatic-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CStatic#6](../../mfc/reference/codesnippet/cpp/cstatic-class_6.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [CButton クラス](../../mfc/reference/cbutton-class.md)   
- [CComboBox クラス](../../mfc/reference/ccombobox-class.md)   
- [CEdit クラス](../../mfc/reference/cedit-class.md)   
- [CListBox クラス](../../mfc/reference/clistbox-class.md)   
- [CScrollBar クラス](../../mfc/reference/cscrollbar-class.md)   
- [CDialog クラス](../../mfc/reference/cdialog-class.md)
+## <a name="see-also"></a>See Also  
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [CButton Class](../../mfc/reference/cbutton-class.md)   
+ [CComboBox Class](../../mfc/reference/ccombobox-class.md)   
+ [CEdit Class](../../mfc/reference/cedit-class.md)   
+ [CListBox Class](../../mfc/reference/clistbox-class.md)   
+ [CScrollBar Class](../../mfc/reference/cscrollbar-class.md)   
+ [CDialog Class](../../mfc/reference/cdialog-class.md)
 

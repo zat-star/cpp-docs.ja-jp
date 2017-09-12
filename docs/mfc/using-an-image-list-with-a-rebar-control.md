@@ -1,48 +1,67 @@
 ---
-title: "Rebar コントロールでのイメージ リストの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イメージ リスト [C++], rebar コントロール"
-  - "rebar コントロール, イメージ リスト"
+title: Using an Image List with a Rebar Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- image lists [MFC], rebar controls
+- rebar controls [MFC], image lists
 ms.assetid: 1a5836ac-019a-46aa-8741-b35c3376b839
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# Rebar コントロールでのイメージ リストの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f2f705dcbc58eae33688197066e5e59874ddb761
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-各 rebar バンドは、特に、関連するイメージ リストからイメージを含めることができます。  次の手順では、rebar バンドのイメージを表示するために必要な手順を詳しく説明します。  
+---
+# <a name="using-an-image-list-with-a-rebar-control"></a>Using an Image List with a Rebar Control
+Each rebar band can contain, among other things, an image from an associated image list. The following procedure details the necessary steps for displaying an image in a rebar band.  
   
-### rebar バンドにイメージを表示するには  
+### <a name="to-display-images-in-a-rebar-band"></a>To display images in a rebar band  
   
-1.  呼び出すことによって、既存のイメージ リストへのポインターを渡す [SetImageList](../Topic/CReBarCtrl::SetImageList.md)への Rebar コントロール オブジェクトには、イメージ リストを接続します。  
+1.  Attach an image list to your rebar control object by making a call to [SetImageList](../mfc/reference/crebarctrl-class.md#setimagelist), passing a pointer to an existing image list.  
   
-2.  rebar バンドにイメージを割り当てるに **REBARBANDINFO** の構造を変更する:  
+2.  Modify the **REBARBANDINFO** structure to assign an image to a rebar band:  
   
-    -   必要に応じて追加のフラグが含まれるようにビットごとの OR 演算子を使用して **RBBIM\_IMAGE**に **fMask** のメンバーを設定します。  
+    -   Set the **fMask** member to **RBBIM_IMAGE**, using the bitwise OR operator to include additional flags as necessary.  
   
-    -   表示するイメージのイメージ リスト内のインデックスに `iImage` のメンバーを設定します。  
+    -   Set the `iImage` member to the image list index of the image to be displayed.  
   
-3.  必要な情報に含まれる子ウィンドウのサイズ、テキストやハンドルなどの残りのデータ メンバーを、初期化してください。  
+3.  Initialize any remaining data members, such as the size, text, and handle of the contained child window, with the necessary information.  
   
-4.  **REBARBANDINFO** 構造体を渡す [CReBarCtrl::InsertBand](../Topic/CReBarCtrl::InsertBand.md)を呼び出して新しいバンド \(イメージ\) を挿入します。  
+4.  Insert the new band (with the image) with a call to [CReBarCtrl::InsertBand](../mfc/reference/crebarctrl-class.md#insertband), passing the **REBARBANDINFO** structure.  
   
- 次の例は、Rebar コントロール オブジェクト \(`m_wndReBar`\) への 2 回のイメージの既存のイメージ リスト オブジェクトに接続されていることを前提としています。  最初のイメージを含む新しい rebar バンド \(`rbi`で定義される\) `InsertBand`と追加されます:  
+ The following example assumes that an existing image list object with two images was attached to the rebar control object (`m_wndReBar`). A new rebar band (defined by `rbi`), containing the first image, is added with a call to `InsertBand`:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#28](../mfc/codesnippet/CPP/using-an-image-list-with-a-rebar-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#28](../mfc/codesnippet/cpp/using-an-image-list-with-a-rebar-control_1.cpp)]  
   
-## 参照  
- [CReBarCtrl の使い方](../Topic/Using%20CReBarCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CReBarCtrl](../mfc/using-crebarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

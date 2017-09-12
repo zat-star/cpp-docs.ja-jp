@@ -1,5 +1,5 @@
 ---
-title: "CMFCOutlookBarTabCtrl クラス |Microsoft ドキュメント"
+title: CMFCOutlookBarTabCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,7 +33,25 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCOutlookBarTabCtrl class
+- CMFCOutlookBarTabCtrl [MFC], AddControl
+- CMFCOutlookBarTabCtrl [MFC], CanShowFewerPageButtons
+- CMFCOutlookBarTabCtrl [MFC], CanShowMorePageButtons
+- CMFCOutlookBarTabCtrl [MFC], Create
+- CMFCOutlookBarTabCtrl [MFC], EnableAnimation
+- CMFCOutlookBarTabCtrl [MFC], EnableInPlaceEdit
+- CMFCOutlookBarTabCtrl [MFC], EnableScrollButtons
+- CMFCOutlookBarTabCtrl [MFC], GetBorderSize
+- CMFCOutlookBarTabCtrl [MFC], GetVisiblePageButtons
+- CMFCOutlookBarTabCtrl [MFC], IsAnimation
+- CMFCOutlookBarTabCtrl [MFC], IsMode2003
+- CMFCOutlookBarTabCtrl [MFC], OnShowFewerPageButtons
+- CMFCOutlookBarTabCtrl [MFC], OnShowMorePageButtons
+- CMFCOutlookBarTabCtrl [MFC], OnShowOptions
+- CMFCOutlookBarTabCtrl [MFC], SetActiveTab
+- CMFCOutlookBarTabCtrl [MFC], SetBorderSize
+- CMFCOutlookBarTabCtrl [MFC], SetPageButtonTextAlign
+- CMFCOutlookBarTabCtrl [MFC], SetToolbarImageList
+- CMFCOutlookBarTabCtrl [MFC], SetVisiblePageButtons
 ms.assetid: b1f2b3f7-cc59-49a3-99d8-7ff9b37c044b
 caps.latest.revision: 26
 author: mikeblome
@@ -53,74 +71,74 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 16de4287a2b3a6352fb4fc560b9c8eec2ba766d1
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8070d43e6f2f21b1e02f9a7a9a0d6807a9b80f87
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
 # <a name="cmfcoutlookbartabctrl-class"></a>CMFCOutlookBarTabCtrl Class
-Microsoft Outlook の **ナビゲーション ウィンドウ** と同じ外観を持つタブ コントロールです。  
+A tab control that has the visual appearance of the **Navigation Pane** in Microsoft Outlook.  
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]    
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCOutlookBarTabCtrl : public CMFCBaseTabCtrl  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`CMFCOutlookBarTabCtrl::CMFCOutlookBarTabCtrl`|既定のコンストラクター|  
-|`CMFCOutlookBarTabCtrl::~CMFCOutlookBarTabCtrl`|デストラクターです。|  
+|`CMFCOutlookBarTabCtrl::CMFCOutlookBarTabCtrl`|Default constructor.|  
+|`CMFCOutlookBarTabCtrl::~CMFCOutlookBarTabCtrl`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCOutlookBarTabCtrl::AddControl](#addcontrol)|Outlook バーに新しいタブとしては、Windows コントロールを追加します。|  
-|`CMFCOutlookBarTabCtrl::CalcRectEdit`|フレームワークによって呼び出されますときユーザーに表示されるボックスのサイズを調べるために名前を変更、タブをクリックします。 (`CMFCBaseTabCtrl::CalcRectEdit` をオーバーライドします)。|  
-|[CMFCOutlookBarTabCtrl::CanShowFewerPageButtons](#canshowfewerpagebuttons)|現在表示されているよりも少ない Outlook バー タブ ページのボタンを表示できる場合を判断するのにサイズ変更操作時にフレームワークによって呼び出されます。|  
-|[CMFCOutlookBarTabCtrl::CanShowMorePageButtons](#canshowmorepagebuttons)|現在表示されているよりもさらに Outlook バー タブ ページ ボタンを表示できる場合を判断するのにサイズ変更操作時にフレームワークによって呼び出されます。|  
-|[CMFCOutlookBarTabCtrl::Create](#create)|Outlook バー タブ コントロールを作成します。|  
-|`CMFCOutlookBarTabCtrl::CreateObject`|このクラス型の動的インスタンスを作成するために、フレームワークで使用されます。|  
-|[CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation)|アクティブなタブの切り替え中に発生するアニメーションが有効になっているかどうかを指定します。|  
-|[CMFCOutlookBarTabCtrl::EnableInPlaceEdit](#enableinplaceedit)|ユーザーが Outlook バーのタブのボタンにテキスト ラベルを変更できるかどうかを指定します。 (上書き[CMFCBaseTabCtrl::EnableInPlaceEdit](../../mfc/reference/cmfcbasetabctrl-class.md#enableinplaceedit))。|  
-|[CMFCOutlookBarTabCtrl::EnableScrollButtons](#enablescrollbuttons)|ユーザーが Outlook バー ペイン上のボタン間をスクロールできるボタンを有効にするために、フレームワークによって呼び出されます。|  
-|`CMFCOutlookBarTabCtrl::FindTargetWnd`|指定したポイントを含むウィンドウを識別します。 (上書き[CMFCBaseTabCtrl::FindTargetWnd](../../mfc/reference/cmfcbasetabctrl-class.md#findtargetwnd))。|  
-|[CMFCOutlookBarTabCtrl::GetBorderSize](#getbordersize)|Outlook タブ コントロールの境界線のサイズを返します。|  
-|`CMFCOutlookBarTabCtrl::GetTabArea`|タブ コントロールのタブ領域の位置とサイズを取得します。 (上書き[CMFCBaseTabCtrl::GetTabArea](../../mfc/reference/cmfcbasetabctrl-class.md#gettabarea))。|  
-|`CMFCOutlookBarTabCtrl::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
+|[CMFCOutlookBarTabCtrl::AddControl](#addcontrol)|Adds a Windows control as a new tab in the Outlook bar.|  
+|`CMFCOutlookBarTabCtrl::CalcRectEdit`|Called by the framework to determine the dimensions of the edit box that appears when a user renames a tab. (Overrides `CMFCBaseTabCtrl::CalcRectEdit`.)|  
+|[CMFCOutlookBarTabCtrl::CanShowFewerPageButtons](#canshowfewerpagebuttons)|Called by the framework during resizing operations to determine if fewer Outlook bar tab page buttons can be displayed than are currently visible.|  
+|[CMFCOutlookBarTabCtrl::CanShowMorePageButtons](#canshowmorepagebuttons)|Called by the framework during resizing operations to determine if more Outlook bar tab page buttons can be displayed than are currently visible.|  
+|[CMFCOutlookBarTabCtrl::Create](#create)|Creates the Outlook bar tab control.|  
+|`CMFCOutlookBarTabCtrl::CreateObject`|Used by the framework to create a dynamic instance of this class type.|  
+|[CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation)|Specifies whether the animation that occurs during the switch between active tabs is enabled.|  
+|[CMFCOutlookBarTabCtrl::EnableInPlaceEdit](#enableinplaceedit)|Specifies whether a user can modify the text labels on the tab buttons of the Outlook bar. (Overrides [CMFCBaseTabCtrl::EnableInPlaceEdit](../../mfc/reference/cmfcbasetabctrl-class.md#enableinplaceedit).)|  
+|[CMFCOutlookBarTabCtrl::EnableScrollButtons](#enablescrollbuttons)|Called by the framework to enable buttons that allow the user to scroll through buttons on the Outlook bar pane.|  
+|`CMFCOutlookBarTabCtrl::FindTargetWnd`|Identifies the pane that contains a specified point. (Overrides [CMFCBaseTabCtrl::FindTargetWnd](../../mfc/reference/cmfcbasetabctrl-class.md#findtargetwnd).)|  
+|[CMFCOutlookBarTabCtrl::GetBorderSize](#getbordersize)|Returns the border size of the Outlook tab control.|  
+|`CMFCOutlookBarTabCtrl::GetTabArea`|Retrieves the size and position of the tab area of the tab control. (Overrides [CMFCBaseTabCtrl::GetTabArea](../../mfc/reference/cmfcbasetabctrl-class.md#gettabarea).)|  
+|`CMFCOutlookBarTabCtrl::GetThisClass`|Used by the framework to obtain a pointer to the [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) object that is associated with this class type.|  
 |[CMFCOutlookBarTabCtrl::GetVisiblePageButtons](#getvisiblepagebuttons)||  
-|[CMFCOutlookBarTabCtrl::IsAnimation](#isanimation)|アクティブなタブの切り替え中に発生するアニメーションが有効になっているかどうかを決定します。|  
-|[CMFCOutlookBarTabCtrl::IsMode2003](#ismode2003)|Outlook バー タブ コントロールが Microsoft Outlook 2003 のエミュレーション モードのかどうかを判断します。|  
-|`CMFCOutlookBarTabCtrl::IsPtInTabArea`|かどうか、ポイントは、タブ領域の内部を決定します。 (上書き[CMFCBaseTabCtrl::IsPtInTabArea](../../mfc/reference/cmfcbasetabctrl-class.md#isptintabarea))。|  
-|`CMFCOutlookBarTabCtrl::IsTabDetachable`|タブが取り外し可能かどうかを決定します。 (上書き[CMFCBaseTabCtrl::IsTabDetachable](../../mfc/reference/cmfcbasetabctrl-class.md#istabdetachable))。|  
-|`CMFCOutlookBarTabCtrl::OnChangeTabs`|タブが挿入または削除されたときに、フレームワークによって呼び出されます。 (`CMFCBaseTabCtrl::OnChangeTabs` をオーバーライドします)。|  
-|[CMFCOutlookBarTabCtrl::OnShowFewerPageButtons](#onshowfewerpagebuttons)|表示されているタブ ページのボタンの数を削減するためにフレームワークによって呼び出されます。|  
-|[CMFCOutlookBarTabCtrl::OnShowMorePageButtons](#onshowmorepagebuttons)|表示されているタブ ページのボタンの数を増やすために、フレームワークによって呼び出されます。|  
-|[CMFCOutlookBarTabCtrl::OnShowOptions](#onshowoptions)|表示、**ナビゲーション ウィンドウ オプション**ダイアログ。|  
-|`CMFCOutlookBarTabCtrl::RecalcLayout`|タブ コントロールの内部のレイアウトを再計算します。 (上書き[CMFCBaseTabCtrl::RecalcLayout](../../mfc/reference/cmfcbasetabctrl-class.md#recalclayout))。|  
-|[CMFCOutlookBarTabCtrl::SetActiveTab](#setactivetab)|アクティブなタブを設定します。 (上書き[CMFCBaseTabCtrl::SetActiveTab](../../mfc/reference/cmfcbasetabctrl-class.md#setactivetab))。|  
-|[CMFCOutlookBarTabCtrl::SetBorderSize](#setbordersize)|Outlook タブ コントロールの境界線のサイズを設定します。|  
-|[CMFCOutlookBarTabCtrl::SetPageButtonTextAlign](#setpagebuttontextalign)|Outlook バーのタブのボタンのテキスト ラベルの配置を設定します。|  
-|[CMFCOutlookBarTabCtrl::SetToolbarImageList](#settoolbarimagelist)|Outlook 2003 モードで Outlook バーの下に表示されるアイコンを含むビットマップを設定 (表示[があります](../../mfc/reference/cmfcoutlookbar-class.md))。|  
+|[CMFCOutlookBarTabCtrl::IsAnimation](#isanimation)|Determines whether the animation that occurs during the switch between active tabs is enabled.|  
+|[CMFCOutlookBarTabCtrl::IsMode2003](#ismode2003)|Determines if the Outlook bar tab control is in a mode that emulates Microsoft Outlook 2003.|  
+|`CMFCOutlookBarTabCtrl::IsPtInTabArea`|Determines if a point is inside the tab area. (Overrides [CMFCBaseTabCtrl::IsPtInTabArea](../../mfc/reference/cmfcbasetabctrl-class.md#isptintabarea).)|  
+|`CMFCOutlookBarTabCtrl::IsTabDetachable`|Determines whether a tab is detachable. (Overrides [CMFCBaseTabCtrl::IsTabDetachable](../../mfc/reference/cmfcbasetabctrl-class.md#istabdetachable).)|  
+|`CMFCOutlookBarTabCtrl::OnChangeTabs`|Called by the framework when a tab is inserted or removed. (Overrides `CMFCBaseTabCtrl::OnChangeTabs`.)|  
+|[CMFCOutlookBarTabCtrl::OnShowFewerPageButtons](#onshowfewerpagebuttons)|Called by the framework to decrease the number of tab page buttons that are visible.|  
+|[CMFCOutlookBarTabCtrl::OnShowMorePageButtons](#onshowmorepagebuttons)|Called by the framework to increase the number of tab page buttons that are visible.|  
+|[CMFCOutlookBarTabCtrl::OnShowOptions](#onshowoptions)|Displays the **Navigation Pane Options** dialog.|  
+|`CMFCOutlookBarTabCtrl::RecalcLayout`|Recalculates the internal layout of the tab control. (Overrides [CMFCBaseTabCtrl::RecalcLayout](../../mfc/reference/cmfcbasetabctrl-class.md#recalclayout).)|  
+|[CMFCOutlookBarTabCtrl::SetActiveTab](#setactivetab)|Sets the active tab. (Overrides [CMFCBaseTabCtrl::SetActiveTab](../../mfc/reference/cmfcbasetabctrl-class.md#setactivetab).)|  
+|[CMFCOutlookBarTabCtrl::SetBorderSize](#setbordersize)|Sets the border size of the Outlook tab control.|  
+|[CMFCOutlookBarTabCtrl::SetPageButtonTextAlign](#setpagebuttontextalign)|Sets the alignment of the text labels on the tab buttons of the Outlook bar.|  
+|[CMFCOutlookBarTabCtrl::SetToolbarImageList](#settoolbarimagelist)|Sets the bitmap that contains the icons that are displayed on the bottom of the Outlook bar in Outlook 2003 mode (see [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md)).|  
 |[CMFCOutlookBarTabCtrl::SetVisiblePageButtons](#setvisiblepagebuttons)||  
   
-## <a name="remarks"></a>コメント  
- ドッキングのサポートのある Outlook バーを作成するには、使用、 `CMFCOutlookBar` Outlook バー タブ コントロールをホストするオブジェクト。 詳細については、次を参照してください。[があります](../../mfc/reference/cmfcoutlookbar-class.md)します。  
+## <a name="remarks"></a>Remarks  
+ To create an Outlook bar that has docking support, use a `CMFCOutlookBar` object to host the Outlook bar tab control. For more information, see [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md).  
   
-## <a name="example"></a>例  
- 次の例では、初期化、`CMFCOutlookBarTabCtrl`オブジェクトを多様なメソッドを使用して、`CMFCOutlookBarTabCtrl`クラスです。 この例では、Outlook バーのタブ ページのボタンにテキスト ラベルを一括編集の有効化、アニメーションを有効にする、ユーザーが Outlook バー ペインの各ボタンをスクロールし、Outlook のタブ コントロールの境界線のサイズを設定し、Outlook バーのタブのボタンのテキスト ラベルの配置を設定できるようにスクロール ハンドルを有効にする方法を示します。 このコード スニペットの一部である、 [Outlook のデモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to initialize a `CMFCOutlookBarTabCtrl` object and use various methods in the `CMFCOutlookBarTabCtrl` class. The example shows how to enable the in-place editing of the text label on the tab page buttons of the Outlook bar, enable the animation, enable scroll handles that enable the user to scroll through buttons on the Outlook bar pane, set the border size of the Outlook tab control, and set the alignment of the text labels on the tab buttons of the Outlook bar. This code snippet is part of the [Outlook Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_OutlookDemo&#1;](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_1.cpp)]  
-[!code-cpp[NVC_MFC_OutlookDemo&#2;](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_OutlookDemo#1](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_1.cpp)]  
+[!code-cpp[NVC_MFC_OutlookDemo#2](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -131,11 +149,11 @@ class CMFCOutlookBarTabCtrl : public CMFCBaseTabCtrl
   
  [CMFCOutlookBarTabCtrl](../../mfc/reference/cmfcoutlookbartabctrl-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxoutlookbartabctrl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxoutlookbartabctrl.h  
   
-##  <a name="addcontrol"></a>CMFCOutlookBarTabCtrl::AddControl  
- Outlook バーに新しいタブとしては、Windows コントロールを追加します。  
+##  <a name="addcontrol"></a>  CMFCOutlookBarTabCtrl::AddControl  
+ Adds a Windows control as a new tab in the Outlook bar.  
   
 ```  
 void AddControl(
@@ -146,62 +164,62 @@ void AddControl(
     DWORD dwControlBarStyle=AFX_CBRS_FLOAT |  AFX_CBRS_CLOSE | AFX_CBRS_RESIZE |  CBRS_AFX_AUTOHIDE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pWndCtrl`  
- 追加するためのコントロールへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pWndCtrl`  
+ A pointer to a control to add.  
   
- [入力] `lpszName`  
- タブの名前を指定します。  
+ [in] `lpszName`  
+ Specifies the name of tab.  
   
- [入力] `bDetachable`  
- 場合`TRUE`ページは、取り外し可能として作成されます。  
+ [in] `bDetachable`  
+ If `TRUE`, the page will be created as detachable.  
   
- [入力] `nImageID`  
- 新しいタブに表示されるイメージの内部のイメージ リストのイメージのインデックス。  
+ [in] `nImageID`  
+ Image index in the internal image list for the image to be displayed in the new tab.  
   
- [入力] `dwControlBarStyle`  
- 指定、afx _ `CBRS_`* ラップされたドッキング ペインのスタイル。  
+ [in] `dwControlBarStyle`  
+ Specifies the AFX_ `CBRS_`* style for wrapped docking panes.  
   
-### <a name="remarks"></a>コメント  
- Outlook バーの新しいページにコントロールを追加するのにには、この関数を使用します。  
+### <a name="remarks"></a>Remarks  
+ Use this function to add a control as a new page of an outlook bar.  
   
- この関数で内部的に呼び出す[CMFCBaseTabCtrl::AddTab](../../mfc/reference/cmfcbasetabctrl-class.md#addtab)します。  
+ This function internally calls on [CMFCBaseTabCtrl::AddTab](../../mfc/reference/cmfcbasetabctrl-class.md#addtab).  
   
- 設定した場合`bDetachable`に`TRUE`、`AddControl`内部的に作成、`CDockablePaneAdapter`オブジェクトを追加したコントロールをラップします。 ランタイム クラスにタブ付きウィンドウのランタイム クラスが自動的に設定して`CMFCOutlookBar`とフローティング フレームのランタイム クラス`CMultiPaneFrameWnd`します。  
+ If you set `bDetachable` to `TRUE`, `AddControl` internally creates a `CDockablePaneAdapter` object and wraps the added control. It automatically sets the runtime class of the tabbed window to the runtime class of `CMFCOutlookBar` and the runtime class of the floating frame to `CMultiPaneFrameWnd`.  
   
-### <a name="example"></a>例  
- 次の例では、使用して、`AddControl`メソッドで、`CMFCOutlookBarTabCtrl`クラスです。 このコード スニペットの一部である、 [Outlook のデモのサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to use the `AddControl` method in the `CMFCOutlookBarTabCtrl` class. This code snippet is part of the [Outlook Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_OutlookDemo&#3;](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_3.cpp)]  
+ [!code-cpp[NVC_MFC_OutlookDemo#3](../../mfc/reference/codesnippet/cpp/cmfcoutlookbartabctrl-class_3.cpp)]  
   
-##  <a name="canshowfewerpagebuttons"></a>CMFCOutlookBarTabCtrl::CanShowFewerPageButtons  
- 現在表示されているよりも少ない Outlook バー タブ ページのボタンを表示できるかどうかを決定する操作をサイズ変更時にフレームワークによって呼び出されます。  
+##  <a name="canshowfewerpagebuttons"></a>  CMFCOutlookBarTabCtrl::CanShowFewerPageButtons  
+ Called by the framework during resizing operations to determine whether fewer Outlook bar tab page buttons can be displayed than are currently visible.  
   
 ```  
 virtual BOOL CanShowFewerPageButtons() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`1 つ以上のボタンがある場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if there is more than one button; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- Outlook バー タブ コントロールは、動的に追加またはタブによって、どのくらいの領域が利用可能な表示から削除します。 このメソッドは、そのプロセスを支援するために、フレームワークによって使用されます。  
+### <a name="remarks"></a>Remarks  
+ The Outlook bar tab control dynamically adds or removes tabs from the display depending on how much room is available. This method is used by the framework to assist in that process.  
   
-##  <a name="canshowmorepagebuttons"></a>CMFCOutlookBarTabCtrl::CanShowMorePageButtons  
- 現在表示されているよりもさらに Outlook バー タブ ページ ボタンを表示するかどうかを判断する操作をサイズ変更時にフレームワークによって呼び出されます。  
+##  <a name="canshowmorepagebuttons"></a>  CMFCOutlookBarTabCtrl::CanShowMorePageButtons  
+ Called by the framework during resizing operations to determine whether more Outlook bar tab page buttons can be displayed than are currently visible.  
   
 ```  
 virtual BOOL CanShowMorePageButtons() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`。 現在表示されていないボタンがある場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if there are buttons that are not currently visible; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- Outlook バー タブ コントロールは動的に追加またはタブによって、どのくらいの領域が利用可能な表示から削除します。 このメソッドは、そのプロセスを支援するために、フレームワークによって使用されます。  
+### <a name="remarks"></a>Remarks  
+ The Outlook bar tab control dynamically adds or removes tabs from the display, depending on how much room is available. This method is used by the framework to assist in that process.  
   
-##  <a name="create"></a>CMFCOutlookBarTabCtrl::Create  
- Outlook バー タブ コントロールを作成します。  
+##  <a name="create"></a>  CMFCOutlookBarTabCtrl::Create  
+ Creates the Outlook bar tab control.  
   
 ```  
 virtual BOOL Create(
@@ -210,54 +228,54 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `rect`  
- 初期サイズと位置をピクセル単位で指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `rect`  
+ Specifies the initial size and position, in pixels.  
   
- [入力] `pParentWnd`  
- 親ウィンドウへのポインター。 `NULL` にすることはできません。  
+ [in] `pParentWnd`  
+ Points to the parent window. Must not be `NULL`.  
   
- [入力] `nID`  
- コントロールの id。  
+ [in] `nID`  
+ The control ID.  
   
-### <a name="return-value"></a>戻り値  
- コントロールが正常に作成されている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control has been created successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 通常、outlook バー タブのコントロールが作成[があります](../../mfc/reference/cmfcoutlookbar-class.md)コントロール、`WM_CREATE`プロセスのメッセージ。  
+### <a name="remarks"></a>Remarks  
+ Usually, outlook bar tab controls are created when [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md) controls the `WM_CREATE` message of the process.  
   
-##  <a name="enableanimation"></a>CMFCOutlookBarTabCtrl::EnableAnimation  
- アクティブなタブの切り替え中に発生するアニメーションが有効になっているかどうかを指定します。  
+##  <a name="enableanimation"></a>  CMFCOutlookBarTabCtrl::EnableAnimation  
+ Specifies whether the animation that occurs during the switch between active tabs is enabled.  
   
 ```  
 static void EnableAnimation(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- アニメーションを有効または無効にするかどうかを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ Specifies whether the animation should be enabled or disabled.  
   
-### <a name="remarks"></a>コメント  
- アニメーションを無効にするには、この関数を呼び出します。 タブ ページを開くと、ページのキャプションはアニメーションが有効な場合に単位の上下をスライドします。 すぐにアニメーションを無効にした場合に、ページがアクティブです。  
+### <a name="remarks"></a>Remarks  
+ Call this function to enable and disable animation. When the user opens a tab page, the page's caption slides up or down if animation is enabled. If animation is disabled, the page becomes active immediately.  
   
- 既定では、アニメーションは有効です。  
+ By the default, the animation is enabled.  
   
-##  <a name="enableinplaceedit"></a>CMFCOutlookBarTabCtrl::EnableInPlaceEdit  
- ユーザーが Outlook バーのタブ ページのボタンのテキスト ラベルを変更できるかどうかを指定します。  
+##  <a name="enableinplaceedit"></a>  CMFCOutlookBarTabCtrl::EnableInPlaceEdit  
+ Specifies whether a user can modify the text labels on the tab page buttons of the Outlook bar.  
   
 ```  
 virtual void EnableInPlaceEdit(BOOL bEnable);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bEnable`  
- 場合`TRUE`、テキスト ラベルの一括編集を有効にします。 場合`FALSE`、埋め込み先編集を無効にします。  
+ If `TRUE`, enable the in-place editing of the text label. If `FALSE`, disable the in-place editing.  
   
-### <a name="remarks"></a>コメント  
- この関数では、有効またはインプレースでのタブ ページのボタンにテキスト ラベルの編集を無効にします。 既定では、インプレース編集が無効になります。  
+### <a name="remarks"></a>Remarks  
+ Call this function to enable or disable in-place editing of text  labels on tab page buttons. By default the in-place editing is disabled.  
   
-##  <a name="enablescrollbuttons"></a>CMFCOutlookBarTabCtrl::EnableScrollButtons  
- ユーザーが Outlook バー ペインの各ボタンをスクロールできるようにスクロール ハンドルを有効にするために、フレームワークによって呼び出されます。  
+##  <a name="enablescrollbuttons"></a>  CMFCOutlookBarTabCtrl::EnableScrollButtons  
+ Called by the framework to enable scroll handles that allow the user to scroll through buttons on the Outlook bar pane.  
   
 ```  
 void EnableScrollButtons(
@@ -266,131 +284,131 @@ void EnableScrollButtons(
     BOOL bIsDown = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- スクロール ボタンを表示するかどうかを決定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ Determines whether the scroll buttons are displayed.  
   
- [入力] `bIsUp`  
- 上部のスクロール バーが表示されるかどうかを決定します。  
+ [in] `bIsUp`  
+ Determines whether the top scrollbar is displayed.  
   
- [入力] `bIsDown`  
- 下部のスクロール バーが表示されるかどうかを決定します。  
+ [in] `bIsDown`  
+ Determines whether the bottom scrollbar is displayed.  
   
-### <a name="remarks"></a>コメント  
- スクロール ボタンの表示を有効にします。 スクロール ボタンを復元するアクティブなタブが変更されたときに、このメソッドは、フレームワークによって呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ Enables the display of the scroll buttons. This method is called by the framework when the active tab changes to restore the scroll buttons.  
   
-##  <a name="getbordersize"></a>CMFCOutlookBarTabCtrl::GetBorderSize  
- Outlook タブ コントロールの境界線のサイズを返します。  
+##  <a name="getbordersize"></a>  CMFCOutlookBarTabCtrl::GetBorderSize  
+ Returns the border size of the Outlook tab control.  
   
 ```  
 int GetBorderSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 境界線のサイズ (ピクセル)。  
+### <a name="return-value"></a>Return Value  
+ The border size, in pixels.  
   
-##  <a name="getvisiblepagebuttons"></a>CMFCOutlookBarTabCtrl::GetVisiblePageButtons  
+##  <a name="getvisiblepagebuttons"></a>  CMFCOutlookBarTabCtrl::GetVisiblePageButtons  
 
   
 ```  
 int GetVisiblePageButtons() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isanimation"></a>CMFCOutlookBarTabCtrl::IsAnimation  
- アクティブなタブの切り替え中に発生するアニメーションが有効になっているかどうかを指定します。  
+##  <a name="isanimation"></a>  CMFCOutlookBarTabCtrl::IsAnimation  
+ Specifies whether the animation that occurs during the switch between active tabs is enabled.  
   
 ```  
 static BOOL IsAnimation();
 ```  
   
-### <a name="return-value"></a>戻り値  
- アニメーションが有効な場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the animation is enabled; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す、 [CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation)を有効にする、またはアニメーションを無効にします。  
+### <a name="remarks"></a>Remarks  
+ Call the [CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation) function to enable or disable animation.  
   
-##  <a name="ismode2003"></a>CMFCOutlookBarTabCtrl::IsMode2003  
- Outlook バー タブ コントロールが Microsoft Outlook 2003 のエミュレーション モードであるかどうかを判断します。  
+##  <a name="ismode2003"></a>  CMFCOutlookBarTabCtrl::IsMode2003  
+ Determines whether the Outlook bar tab control is in a mode that emulates Microsoft Outlook 2003.  
   
 ```  
 BOOL IsMode2003() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`Outlook バー タブ コントロールが Outlook 2003 モードである場合それ以外の場合`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the Outlook bar tab control is in Outlook 2003 mode; otherwise `FALSE`;  
   
-### <a name="remarks"></a>コメント  
- この値によって設定されます[CMFCOutlookBar::SetMode2003](../../mfc/reference/cmfcoutlookbar-class.md#setmode2003)します。  
+### <a name="remarks"></a>Remarks  
+ This value is set by [CMFCOutlookBar::SetMode2003](../../mfc/reference/cmfcoutlookbar-class.md#setmode2003).  
   
-##  <a name="onshowfewerpagebuttons"></a>CMFCOutlookBarTabCtrl::OnShowFewerPageButtons  
- 表示されているタブ ページのボタンの数を削減するためにフレームワークによって呼び出されます。  
+##  <a name="onshowfewerpagebuttons"></a>  CMFCOutlookBarTabCtrl::OnShowFewerPageButtons  
+ Called by the framework to decrease the number of tab page buttons that are visible.  
   
 ```  
 virtual void OnShowFewerPageButtons();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、コントロールがサイズ変更時に表示されるページ タブのボタンの数を調整します。  
+### <a name="remarks"></a>Remarks  
+ This method adjusts the number of visible page tab buttons when the control is resized.  
   
-##  <a name="onshowmorepagebuttons"></a>CMFCOutlookBarTabCtrl::OnShowMorePageButtons  
- 表示されているタブ ページのボタンの数を増やすために、フレームワークによって呼び出されます。  
+##  <a name="onshowmorepagebuttons"></a>  CMFCOutlookBarTabCtrl::OnShowMorePageButtons  
+ Called by the framework to increase the number of tab page buttons that are visible.  
   
 ```  
 virtual void OnShowMorePageButtons();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、コントロールがサイズ変更時に表示されているタブ ページのボタンの数を調整します。  
+### <a name="remarks"></a>Remarks  
+ This method adjust the number of tab page buttons that are visible when the control is resized.  
   
-##  <a name="onshowoptions"></a>CMFCOutlookBarTabCtrl::OnShowOptions  
- 表示、**ナビゲーション ウィンドウ オプション** ダイアログ ボックス。  
+##  <a name="onshowoptions"></a>  CMFCOutlookBarTabCtrl::OnShowOptions  
+ Displays the **Navigation Pane Options** dialog box.  
   
 ```  
 virtual void OnShowOptions();
 ```  
   
-### <a name="remarks"></a>コメント  
- **ナビゲーション ウィンドウ オプション** ダイアログ ボックスを使ってタブ ページのボタンが、表示するかを選択し、順序が表示されます。  
+### <a name="remarks"></a>Remarks  
+ The **Navigation Pane Options** dialog box allows the user to select which tab page buttons are to be displayed, and the order in which they are displayed.  
   
- ユーザーを選択すると、フレームワークによって呼び出されます、**ナビゲーション ウィンドウ オプション**コントロールのカスタマイズ メニューのメニュー項目です。  
+ This method is called by the framework when the user selects the **Navigation Pane Options** menu item from the control's customization menu.  
   
-##  <a name="setactivetab"></a>CMFCOutlookBarTabCtrl::SetActiveTab  
- アクティブなタブを設定します。 アクティブなタブは、そのコンテンツが表示されると、開かれている&1; つです。  
+##  <a name="setactivetab"></a>  CMFCOutlookBarTabCtrl::SetActiveTab  
+ Sets the active tab. The active tab is the one that is open, with its contents visible.  
   
 ```  
 virtual BOOL SetActiveTab(int iTab);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iTab`  
- 開く タブの&0; から始まるインデックス。  
+### <a name="parameters"></a>Parameters  
+ [in] `iTab`  
+ The zero-based index of a tab to be opened.  
   
-### <a name="return-value"></a>戻り値  
- 指定したタブが正常に開かれている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified tab has been opened successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アクティブなタブの設定の視覚的効果は、アニメーションが有効にするかどうかによって異なります。 詳細については、次を参照してください。 [CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation)します。  
+### <a name="remarks"></a>Remarks  
+ The visual effect of setting the active tab depends on whether you have enabled animation. For more information, see [CMFCOutlookBarTabCtrl::EnableAnimation](#enableanimation).  
   
-##  <a name="setbordersize"></a>CMFCOutlookBarTabCtrl::SetBorderSize  
- Outlook タブ コントロールの境界線のサイズを設定します。  
+##  <a name="setbordersize"></a>  CMFCOutlookBarTabCtrl::SetBorderSize  
+ Sets the border size of the Outlook tab control.  
   
 ```  
 void SetBorderSize(int nBorderSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nBorderSize`  
- 新しい境界線のサイズをピクセル単位で指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `nBorderSize`  
+ Specifies the new border size in pixels.  
   
-### <a name="remarks"></a>コメント  
- 新しい境界線のサイズを設定し、outlook のウィンドウ レイアウトを再計算します。  
+### <a name="remarks"></a>Remarks  
+ Sets the new border size and recalculates the outlook window layout.  
   
-##  <a name="setpagebuttontextalign"></a>CMFCOutlookBarTabCtrl::SetPageButtonTextAlign  
- Outlook バーのタブのボタンのテキスト ラベルの配置を設定します。  
+##  <a name="setpagebuttontextalign"></a>  CMFCOutlookBarTabCtrl::SetPageButtonTextAlign  
+ Sets the alignment of the text labels on the tab buttons of the Outlook bar.  
   
 ```  
 void SetPageButtonTextAlign(
@@ -398,28 +416,28 @@ void SetPageButtonTextAlign(
     BOOL bRedraw=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiAlign`  
- テキストの配置を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `uiAlign`  
+ Specifies the text alignment.  
   
- [入力] `bRedraw`  
- 場合`TRUE`outlook のウィンドウが再描画されます。  
+ [in] `bRedraw`  
+ If `TRUE`, the outlook window will be redrawn.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用すると、ページのボタンのテキストの配置を変更できます。  
+### <a name="remarks"></a>Remarks  
+ Use this function to change text alignment for page buttons.  
   
- `uiAlign`次の値のいずれかを指定できます。  
+ `uiAlign` can be one of the following values:  
   
-|定数|説明|  
+|Constant|Meaning|  
 |--------------|-------------|  
-|TA_LEFT|左揃え|  
-|TA_CENTER|中央揃え|  
-|TA_RIGHT|右揃え|  
+|TA_LEFT|Left alignment|  
+|TA_CENTER|Center alignment|  
+|TA_RIGHT|Right alignment|  
   
- 既定値は、TA_CENTER です。  
+ The default value is TA_CENTER.  
   
-##  <a name="settoolbarimagelist"></a>CMFCOutlookBarTabCtrl::SetToolbarImageList  
- Outlook 2003 モードで Outlook バーの下に表示されるアイコンを含むビットマップを設定します。  
+##  <a name="settoolbarimagelist"></a>  CMFCOutlookBarTabCtrl::SetToolbarImageList  
+ Sets the bitmap that contains the icons that are displayed on the bottom of the Outlook bar in Outlook 2003 mode.  
   
 ```  
 BOOL SetToolbarImageList(
@@ -428,40 +446,40 @@ BOOL SetToolbarImageList(
     COLORREF clrTransp=RGB(255, 0, 255));
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `uiID`  
- 読み込むイメージのリソース ID を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `uiID`  
+ Specifies the resource ID of the image to load.  
   
- [入力] `cx`  
- イメージ リストには、ピクセル単位でイメージの幅を指定します。  
+ [in] `cx`  
+ Specifies the width of an image in the image list, in pixels.  
   
- [入力] `clrTransp`  
- 透明色を指定する RGB 値。  
+ [in] `clrTransp`  
+ An RGB value that specifies the transparent color.  
   
-### <a name="return-value"></a>戻り値  
- 返します`TRUE`成功した場合、それ以外の場合を返します`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ Returns `TRUE` if successful; otherwise returns `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- この関数を使用すると、Microsoft Office 2003 モードでのツール バー ボタンに表示されるイメージがイメージ リストをアタッチできます。 イメージ インデックス ページのインデックスに対応します。  
+### <a name="remarks"></a>Remarks  
+ Use this function to attach an image list whose images will be displayed on toolbar buttons in Microsoft Office 2003 mode. Image indexes should correspond to page indexes.  
   
- このメソッドは、Microsoft Office 2003 モードではない場合は呼び出されません必要があります。 詳細については、次を参照してください。[があります](../../mfc/reference/cmfcoutlookbar-class.md)します。  
+ This method should not be called if not in Microsoft Office 2003 mode. For more information, see [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md).  
   
-##  <a name="setvisiblepagebuttons"></a>CMFCOutlookBarTabCtrl::SetVisiblePageButtons  
+##  <a name="setvisiblepagebuttons"></a>  CMFCOutlookBarTabCtrl::SetVisiblePageButtons  
 
   
 ```  
 void SetVisiblePageButtons(int nVisiblePageButtons);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nVisiblePageButtons`  
+### <a name="parameters"></a>Parameters  
+ [in] `nVisiblePageButtons`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCBaseTabCtrl クラス](../../mfc/reference/cmfcbasetabctrl-class.md)   
- [あります。](../../mfc/reference/cmfcoutlookbar-class.md)   
- [CMFCOutlookBarPane クラス](../../mfc/reference/cmfcoutlookbarpane-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCBaseTabCtrl Class](../../mfc/reference/cmfcbasetabctrl-class.md)   
+ [CMFCOutlookBar Class](../../mfc/reference/cmfcoutlookbar-class.md)   
+ [CMFCOutlookBarPane Class](../../mfc/reference/cmfcoutlookbarpane-class.md)
 

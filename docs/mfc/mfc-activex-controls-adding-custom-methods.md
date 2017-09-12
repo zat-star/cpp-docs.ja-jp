@@ -1,85 +1,104 @@
 ---
-title: "MFC ActiveX コントロール : カスタム メソッドの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, メソッド"
-  - "PtInCircle カスタム メソッド"
+title: 'MFC ActiveX Controls: Adding Custom Methods | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], methods
+- PtInCircle custom method [MFC]
 ms.assetid: 8f8dc344-44a0-4021-8db5-4cdd3d700e18
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC ActiveX コントロール : カスタム メソッドの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8ca25680f3da358fb1e7dda710bd65dfb39ee6c7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-カスタム メソッドはストック メソッドと `COleControl`で既に実装されないことです。  データをコントロールに追加した各カスタム メソッドの実装を提供する必要があります。  
+---
+# <a name="mfc-activex-controls-adding-custom-methods"></a>MFC ActiveX Controls: Adding Custom Methods
+Custom methods differ from stock methods in that they are not already implemented by `COleControl`. You must supply the implementation for each custom method you add to your control.  
   
- ActiveX コントロールのユーザーは、コントロール固有のアクションを実行するカスタム メソッドをいつでも呼び出すことができます。  カスタム メソッドのディスパッチ マップ エントリがフォーム `DISP_FUNCTION`です。  
+ An ActiveX control user can call a custom method at any time to perform control-specific actions. The dispatch map entry for custom methods is of the form `DISP_FUNCTION`.  
   
-##  <a name="_core_adding_a_custom_method_with_classwizard"></a> 追加のメソッドと、ウィザードでカスタム メソッドの追加  
- 次の手順では、ActiveX コントロールのスケルトン コードへのカスタム PtInCircle メソッドを追加することです。  PtInCircle はコントロールに渡す座標が範囲外にあるかどうかの中によって決まります。  これと同じプロシージャが他のカスタム メソッドを追加することもできます。  PtInCircle メソッド名、およびパラメーターをカスタム メソッドの名前とパラメーターに置き換えてください。  
+##  <a name="_core_adding_a_custom_method_with_classwizard"></a> Adding a Custom Method With the Add Method Wizard  
+ The following procedure demonstrates adding the custom method PtInCircle to an ActiveX control's skeleton code. PtInCircle determines whether the coordinates passed to the control are inside or outside the circle. This same procedure can also be used to add other custom methods. Substitute your custom method name and its parameters for the PtInCircle method name and parameters.  
   
 > [!NOTE]
->  この例では、"イベントの `InCircle` 関数を使用します。  この関数の詳細については、記事 [MFC ActiveX コントロール: ActiveX コントロールにカスタム イベントを追加できます。](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Custom%20Events.md)を参照します。  
+>  This example uses the `InCircle` function from the article Events. For more information on this function, see the article [MFC ActiveX Controls: Adding Custom Events to an ActiveX Control](../mfc/mfc-activex-controls-adding-custom-events.md).  
   
-#### PtInCircle カスタム メソッドを追加ウィザードのメソッドを追加するには  
+#### <a name="to-add-the-ptincircle-custom-method-using-the-add-method-wizard"></a>To add the PtInCircle custom method using the Add Method Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load the control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューの **追加** をクリックし、**メソッドの追加**をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Method**.  
   
-     これは、メソッドの追加ウィザードが表示されます。  
+     This opens the Add Method Wizard.  
   
-5.  **メソッド名** ボックスで、`PtInCircle`を入力します。  
+5.  In the **Method Name** box, type `PtInCircle`.  
   
-6.  **内部名** ボックスで、メソッドの内部関数の名前を入力するか、既定値 \(この場合は `PtInCircle`\) を使用します。  
+6.  In the **Internal Name** box, type the name of the method's internal function or use the default value (in this case, `PtInCircle`).  
   
-7.  **戻り値の型** ボックスで、メソッドの戻り値の型の **VARIANT\_BOOL** をクリックします。  
+7.  In the **Return Type** box, click **VARIANT_BOOL** for the method's return type.  
   
-8.  **パラメータの種類** と **パラメータ名** のコントロールを使用して、`xCoord` \(型 **OLE\_XPOS\_PIXELS**\) というパラメーターを追加します。  
+8.  Using the **Parameter Type** and **Parameter Name** controls, add a parameter called `xCoord` (type **OLE_XPOS_PIXELS**).  
   
-9. **パラメータの種類** と **パラメータ名** のコントロールを使用して、`yCoord` \(型 **OLE\_YPOS\_PIXELS**\) というパラメーターを追加します。  
+9. Using the **Parameter Type** and **Parameter Name** controls, add a parameter called `yCoord` (type **OLE_YPOS_PIXELS**).  
   
-10. \[完了\] をクリックします。  
+10. Click **Finish**.  
   
-##  <a name="_core_classwizard_changes_for_custom_methods"></a> カスタム メソッドのメソッド ウィザードの変更を追加します。  
- カスタム メソッドを追加すると、追加のメソッド ウィザードはコントロール クラスのヘッダーを変更します。H\) と実装 \(.cpp\) ファイル。  次の行では、コントロール クラスのヘッダーのディスパッチ マップの宣言に追加されます。H\) ファイル:  
+##  <a name="_core_classwizard_changes_for_custom_methods"></a> Add Method Wizard Changes for Custom Methods  
+ When you add a custom method, the Add Method Wizard makes some changes to the control class header (.H) and implementation (.CPP) files. The following line is added to the dispatch map declaration in the control class header (.H) file:  
   
- [!code-cpp[NVC_MFC_AxUI#18](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-methods_1.h)]  
+ [!code-cpp[NVC_MFC_AxUI#18](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_1.h)]  
   
- このコードは、Dispatch メソッド ハンドラーによって呼び出されます `PtInCircle`を宣言します。  この関数は、外部名 PtInCircle を使用するコントロールのユーザーから呼び出すことができます。  
+ This code declares a dispatch method handler called `PtInCircle`. This function can be called by the control user using the external name PtInCircle.  
   
- 以下は、コントロールの .IDL ファイルに追加します:  
+ The following line is added to the control's .IDL file:  
   
- [!code-cpp[NVC_MFC_AxUI#19](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-methods_2.idl)]  
+ [!code-cpp[NVC_MFC_AxUI#19](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_2.idl)]  
   
- この行は特定の ID 番号、メソッドの追加ウィザードのメソッドのメソッドの位置 PtInCircle のメソッドに割り当て、プロパティを選択します。  カスタム メソッドを追加するには、追加のメソッド ウィザードが使用されているため、のエントリがプロジェクトの .IDL ファイルに自動的に追加されます。  
+ This line assigns the PtInCircle method a specific ID number, the method's position in the Add Method Wizard methods and properties list. Because the Add Method Wizard was used to add the custom method, the entry for it was added automatically to the project's .IDL file.  
   
- また、コントロール クラスの実装 \(.cpp\) ファイル内の次の行はコントロールのディスパッチ マップに追加します:  
+ In addition, the following line, located in the implementation (.CPP) file of the control class, is added to the control's dispatch map:  
   
- [!code-cpp[NVC_MFC_AxUI#20](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-methods_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#20](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_3.cpp)]  
   
- `DISP_FUNCTION` マクロはコントロールのハンドラー関数に PtInCircle メソッド、`PtInCircle`をマップし、**VARIANT\_BOOL**であると戻り値の型を宣言し `PtInCircle`に渡される型 **VTS\_XPOS\_PIXELS** と **VTS\_YPOSPIXELS** の 2 個のパラメーターを宣言します。  
+ The `DISP_FUNCTION` macro maps the method PtInCircle to the control's handler function, `PtInCircle`, declares the return type to be **VARIANT_BOOL**, and declares two parameters of type **VTS_XPOS_PIXELS** and **VTS_YPOSPIXELS** to be passed to `PtInCircle`.  
   
- 最後に、追加のメソッドはウィザード コントロールの実装 \(.cpp\) ファイルの下にスタブ関数 `CSampleCtrl::PtInCircle` を追加します。  既に説明したように機能する `PtInCircle` に次のように変更する必要があります:  
+ Finally, the Add Method Wizard adds the stub function `CSampleCtrl::PtInCircle` to the bottom of the control's implementation (.CPP) file. For `PtInCircle` to function as stated previously, it must be modified as follows:  
   
- [!code-cpp[NVC_MFC_AxUI#21](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-methods_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#21](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-methods_4.cpp)]  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [\[クラス ビュー\] ウィンドウとオブジェクト ブラウザーのアイコン](../Topic/Class%20View%20and%20Object%20Browser%20Icons.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [Class View and Object Browser Icons](/visualstudio/ide/class-view-and-object-browser-icons)
+
+

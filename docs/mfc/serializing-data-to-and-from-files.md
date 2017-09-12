@@ -1,56 +1,75 @@
 ---
-title: "データのファイルへのシリアル化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [MFC]"
-  - "データ [MFC], シリアル化"
-  - "逆シリアル化 [C++]"
-  - "ドキュメント データ [C++]"
-  - "ドキュメント [C++], 保存"
-  - "ドキュメント [C++], シリアル化"
-  - "保存 (ドキュメントを)"
-  - "シリアル化 [C++], 役割 (データの)"
-  - "シリアル化 [C++], 役割 (ドキュメントの)"
+title: Serializing Data to and from Files | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- documents [MFC], serialization
+- documents [MFC], saving
+- saving documents
+- deserialization [MFC]
+- serialization [MFC], role of document
+- serialization [MFC], role of data
+- data [MFC]
+- data [MFC], serializing
+- document data [MFC]
 ms.assetid: b42a0c68-4bc4-4012-9938-5433a26d2c24
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# データのファイルへのシリアル化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 94f8f6b569b47bf54f0707c5e782b8d4e892bf7b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-永続化の基本的な知識はオブジェクトのメンバー変数の値で指定された現在の状態を書き込む必要があるという永続ストレージに。  その後、オブジェクトは読み取りまたは「逆シリアル化して」永続ストレージからのオブジェクトの状態を再作成できます。  ここで重要な点は、オブジェクト自体が自身の状態を読み書きする必要があります。  したがって、永続的なクラスの場合、基本的なシリアル化操作を実装しなければなりません。  
+---
+# <a name="serializing-data-to-and-from-files"></a>Serializing Data to and from Files
+The basic idea of persistence is that an object should be able to write its current state, indicated by the values of its member variables, to persistent storage. Later, the object can be re-created by reading, or "deserializing," the object's state from persistent storage. A key point here is that the object itself is responsible for reading and writing its own state. Thus, for a class to be persistent, it must implement the basic serialization operations.  
   
- フレームワークが Open コマンドに応答して保存するドキュメントにディスク ファイルのドキュメントを読み込むには、ファイル メニューの名前を付けて保存コマンドと保存に応じてディスク ファイルの既定の実装を提供します。  ほとんどの作業を使用すると、ファイルとの間でデータの読み書きドキュメント機能を実装できます。  行う必要がある重要なことは、ドキュメントの [シリアル化する](../Topic/CObject::Serialize.md) クラスのメンバー関数をオーバーライドします。  
+ The framework provides a default implementation for saving documents to disk files in response to the Save and Save As commands on the File menu and for loading documents from disk files in response to the Open command. With very little work, you can implement a document's ability to write and read its data to and from a file. The main thing you must do is override the [Serialize](../mfc/reference/cobject-class.md#serialize) member function in your document class.  
   
- MFC アプリケーション ウィザードでは、作成するドキュメント クラスの **CDocument** のメンバー関数 `Serialize` のスケルトンをオーバーライドします。  アプリケーションのメンバー変数を実装した後、ファイルに接続される「」アーカイブ オブジェクトにデータを送信するコードで `Serialize` のオーバーライドを記述できます。  [CArchive](../mfc/reference/carchive-class.md) オブジェクトは C\+\+ の iostream ライブラリから `cin` と `cout` 入出力オブジェクトに似ています。  ただし、`CArchive` はバイナリ形式で書式設定されたテキストではなくを読み書きします。  
+ The MFC Application Wizard places a skeletal override of the **CDocument** member function `Serialize` in the document class it creates for you. After you have implemented your application's member variables, you can fill in your `Serialize` override with code that sends the data to an "archive object" connected to a file. A [CArchive](../mfc/reference/carchive-class.md) object is similar to the `cin` and `cout` input/output objects from the C++ iostream library. However, `CArchive` writes and reads binary format, not formatted text.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [シリアル化](../Topic/Serialization%20in%20MFC.md)  
+-   [Serialization](../mfc/serialization-in-mfc.md)  
   
--   [シリアル化のドキュメント ロール](#_core_the_document.92.s_role_in_serialization)  
+-   [The document's role in serialization](#_core_the_document.92.s_role_in_serialization)  
   
--   [シリアル化のデータのロール](#_core_the_data.92.s_role_in_serialization)  
+-   [The data's role in serialization](#_core_the_data.92.s_role_in_serialization)  
   
--   [シリアル化機構をバイパス](../mfc/bypassing-the-serialization-mechanism.md)  
+-   [Bypassing the serialization mechanism](../mfc/bypassing-the-serialization-mechanism.md)  
   
-##  <a name="_core_the_document.92.s_role_in_serialization"></a> シリアル化のドキュメント ロール  
- フレームワークは、ドキュメントの `Serialize` のメンバー関数を呼び出して、コマンドとして格納および保存する実装されればファイルを開くメニュー自動的に応答します。  `ID_FILE_OPEN` コマンドは、Application オブジェクトのハンドラー関数を呼び出します。  このプロセスでは、ユーザーがファイルを開くダイアログ ボックスに参照し、答え、フレームワークは、ユーザーが選択するファイル名を取得します。  フレームワークは、ドキュメントのデータの読み込みの `CArchive` オブジェクト セットアップ プロジェクトを作成し、`Serialize`にアーカイブを渡します。  フレームワークは、既にファイルが開いています。  ドキュメントの `Serialize` のメンバー関数のコードは、必要に応じてデータ オブジェクトを再構築するアーカイブを通じてデータを読取ります。  シリアル化の詳細については、記事 [シリアル化](../Topic/Serialization%20in%20MFC.md)を参照します。  
+##  <a name="_core_the_document.92.s_role_in_serialization"></a> The Document's Role in Serialization  
+ The framework responds automatically to the File menu's Open, Save, and Save As commands by calling the document's `Serialize` member function if it is implemented. An `ID_FILE_OPEN` command, for example, calls a handler function in the application object. During this process, the user sees and responds to the File Open dialog box and the framework obtains the filename the user chooses. The framework creates a `CArchive` object set up for loading data into the document and passes the archive to `Serialize`. The framework has already opened the file. The code in your document's `Serialize` member function reads the data in through the archive, reconstructing data objects as needed. For more information about serialization, see the article [Serialization](../mfc/serialization-in-mfc.md).  
   
-##  <a name="_core_the_data.92.s_role_in_serialization"></a> シリアル化のデータのロール  
- 一般に、クラス型データがそれ自体をシリアル化する必要があります。  つまり、アーカイブにおよびアーカイブからに書き込む方法をアーカイブにオブジェクトを渡すと、オブジェクトは読み取る方法を理解する必要があります。  MFC はこのクラスをシリアル化できるようにするためのサポートを提供します。  データ型を定義するクラスを作成し、その型のデータをシリアル化する場合は、シリアル化のために設計します。  
+##  <a name="_core_the_data.92.s_role_in_serialization"></a> The Data's Role in Serialization  
+ In general, class-type data should be able to serialize itself. That is, when you pass an object to an archive, the object should know how to write itself to the archive and how to read itself from the archive. MFC provides support for making classes serializable in this way. If you design a class to define a data type and you intend to serialize data of that type, design for serialization.  
   
-## 参照  
- [ドキュメントの使い方](../mfc/using-documents.md)
+## <a name="see-also"></a>See Also  
+ [Using Documents](../mfc/using-documents.md)
+
+

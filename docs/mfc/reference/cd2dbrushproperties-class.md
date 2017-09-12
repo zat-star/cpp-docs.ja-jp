@@ -1,5 +1,5 @@
 ---
-title: "CD2DBrushProperties クラス |Microsoft ドキュメント"
+title: CD2DBrushProperties Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,7 +16,8 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DBrushProperties class
+- CD2DBrushProperties [MFC], CD2DBrushProperties
+- CD2DBrushProperties [MFC], CommonInit
 ms.assetid: c77d717f-0a16-4d74-b2ce-0ae1766ed6f9
 caps.latest.revision: 18
 author: mikeblome
@@ -36,46 +37,46 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 9f1a166950acda1f8341b58b82288d6f5cf9aeef
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2245ea67dee7e292a2bff4a279ded14d11e90cfc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dbrushproperties-class"></a>CD2DBrushProperties クラス
-`D2D1_BRUSH_PROPERTIES`のラッパー。  
+# <a name="cd2dbrushproperties-class"></a>CD2DBrushProperties Class
+A wrapper for `D2D1_BRUSH_PROPERTIES`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DBrushProperties : public D2D1_BRUSH_PROPERTIES;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBrushProperties::CD2DBrushProperties](#cd2dbrushproperties)|オーバーロードされます。 作成、`CD2D_BRUSH_PROPERTIES`構造体|  
+|[CD2DBrushProperties::CD2DBrushProperties](#cd2dbrushproperties)|Overloaded. Creates a `CD2D_BRUSH_PROPERTIES` structure|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBrushProperties::CommonInit](#commoninit)|オブジェクトを初期化します|  
+|[CD2DBrushProperties::CommonInit](#commoninit)|Initializes the object|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `D2D1_BRUSH_PROPERTIES`  
   
  `CD2DBrushProperties`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="cd2dbrushproperties"></a>CD2DBrushProperties::CD2DBrushProperties  
- CD2D_BRUSH_PROPERTIES 構造を作成します  
+##  <a name="cd2dbrushproperties"></a>  CD2DBrushProperties::CD2DBrushProperties  
+ Creates a CD2D_BRUSH_PROPERTIES structure  
   
 ```  
 CD2DBrushProperties();  
@@ -87,20 +88,20 @@ CD2DBrushProperties(
     FLOAT _opacity = 1.);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_opacity`  
- ブラシの基本の不透明度。 既定値は 1.0 です。  
+ The base opacity of the brush. The default value is 1.0.  
   
  `_transform`  
- ブラシに適用される変換  
+ The transformation to apply to the brush  
   
-##  <a name="commoninit"></a>CD2DBrushProperties::CommonInit  
- オブジェクトを初期化します  
+##  <a name="commoninit"></a>  CD2DBrushProperties::CommonInit  
+ Initializes the object  
   
 ```  
 void CommonInit();
 ```  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

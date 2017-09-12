@@ -1,74 +1,93 @@
 ---
-title: "ランタイム クラス情報へのアクセス方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス [C++], ランタイム クラス情報"
-  - "CObject クラス, アクセス (ランタイム クラス情報に)"
-  - "CObject クラス, および RTTI"
-  - "CObject クラス, 使用 (IsKindOf メソッドを)"
-  - "CObject クラス, 使用 (RUNTIME_CLASS マクロを)"
-  - "IsKindOf メソッド"
-  - "RTTI コンパイラ オプション"
-  - "実行時に"
-  - "実行時に, クラス情報"
-  - "ランタイム クラス"
-  - "ランタイム クラス, アクセス (情報に)"
-  - "RUNTIME_CLASS マクロ"
-  - "RUNTIME_CLASS マクロ, 使用"
+title: Accessing Run-Time Class Information | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CObject class [MFC], and RTTI
+- CObject class [MFC], using IsKindOf method [MFC]
+- run time [MFC], class information
+- RUNTIME_CLASS macro [MFC]
+- CObject class [MFC], using RUNTIME_CLASS macro [MFC]
+- RTTI compiler option [MFC]
+- CObject class [MFC], accessing run-time class information
+- run time [MFC]
+- IsKindOf method method [MFC]
+- run-time class [MFC], accessing information
+- classes [MFC], run-time class information
+- run-time class [MFC]
+- RUNTIME_CLASS macro, using
 ms.assetid: 3445a9af-0bd6-4496-95c3-aa59b964570b
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ランタイム クラス情報へのアクセス方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fc720b2d47767acc4ef8ffcb91d2ef214bfe609a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは実行時にオブジェクトのクラスについての情報にアクセスする方法について説明します。  
+---
+# <a name="accessing-run-time-class-information"></a>Accessing Run-Time Class Information
+This article explains how to access information about the class of an object at run time.  
   
 > [!NOTE]
->  MFC は、Visual C\+\+ 4.0 で行った [ランタイム型情報](../Topic/Run-Time%20Type%20Information.md) \(RTTI\) サポートを使用しません。  
+>  MFC does not use the [Run-Time Type Information](../cpp/run-time-type-information.md) (RTTI) support introduced in Visual C++ 4.0.  
   
- [CObject](../Topic/CObject%20Class.md) からクラスを派生し、技術情報 [CObject からクラスを派生すること](../mfc/deriving-a-class-from-cobject.md)で **DECLARE**bind \(**DYNAMIC** と `IMPLEMENT_DYNAMIC`、`DECLARE_DYNCREATE` と `IMPLEMENT_DYNCREATE`、または説明する `DECLARE_SERIAL` と `IMPLEMENT_SERIAL` マクロを使用している場合は、`CObject` クラスに実行時にオブジェクトの正確なクラスを決定する機能があります。  
+ If you have derived your class from [CObject](../mfc/reference/cobject-class.md) and used the **DECLARE**_**DYNAMIC** and `IMPLEMENT_DYNAMIC`, the `DECLARE_DYNCREATE` and `IMPLEMENT_DYNCREATE`, or the `DECLARE_SERIAL` and `IMPLEMENT_SERIAL` macros explained in the article [Deriving a Class from CObject](../mfc/deriving-a-class-from-cobject.md), the `CObject` class has the ability to determine the exact class of an object at run time.  
   
- この機能は、関数の引数の特別な型チェックが必要なときや、オブジェクトのクラスによって、コードを記述する場合に便利です。  ただし、この手法は通常、仮想関数の機能を複製するため、推奨されません。  
+ This ability is most useful when extra type checking of function arguments is needed and when you must write special-purpose code based on the class of an object. However, this practice is not usually recommended because it duplicates the functionality of virtual functions.  
   
- `CObject` のメンバー関数 `IsKindOf` が使用できる特定のオブジェクトが特定のクラスに属するかどうかを判断するためにクラスから派生されれば。  `IsKindOf` への引数は、クラス名の `RUNTIME_CLASS` マクロを使用して取得できます。`CRuntimeClass` オブジェクトです。  
+ The `CObject` member function `IsKindOf` can be used to determine if a particular object belongs to a specified class or if it is derived from a specific class. The argument to `IsKindOf` is a `CRuntimeClass` object, which you can get using the `RUNTIME_CLASS` macro with the name of the class.  
   
-### RUNTIME\_CLASS マクロを使用します。  
+### <a name="to-use-the-runtimeclass-macro"></a>To use the RUNTIME_CLASS macro  
   
-1.  クラス `CObject`には次に示すように、クラス名の `RUNTIME_CLASS` を使用する:  
+1.  Use `RUNTIME_CLASS` with the name of the class, as shown here for the class `CObject`:  
   
-     [!code-cpp[NVC_MFCCObjectSample#4](../mfc/codesnippet/CPP/accessing-run-time-class-information_1.cpp)]  
+     [!code-cpp[NVC_MFCCObjectSample#4](../mfc/codesnippet/cpp/accessing-run-time-class-information_1.cpp)]  
   
- ほとんどのランタイム クラスのオブジェクトに直接アクセスする必要はありません。  一般的な用途は、次の手順に示すように `IsKindOf` 関数へのランタイム クラス オブジェクトを渡すことです。  特定のクラスに属する場合 `IsKindOf` 関数参照するテストするオブジェクト。  
+ You will rarely need to access the run-time class object directly. A more common use is to pass the run-time class object to the `IsKindOf` function, as shown in the next procedure. The `IsKindOf` function tests an object to see if it belongs to a particular class.  
   
-#### IsKindOf 関数を使用します。  
+#### <a name="to-use-the-iskindof-function"></a>To use the IsKindOf function  
   
-1.  クラスのランタイム クラスがサポートされていることを確認します。  つまり、クラスは `CObject` から直接的または間接的に派生されたいる必要があり、技術情報 [CObject からクラスを派生すること](../mfc/deriving-a-class-from-cobject.md)で **DECLARE**bind \(**DYNAMIC** と `IMPLEMENT_DYNAMIC`、`DECLARE_DYNCREATE` と `IMPLEMENT_DYNCREATE`、または説明する `DECLARE_SERIAL` と `IMPLEMENT_SERIAL` のマクロを使用します。  
+1.  Make sure the class has run-time class support. That is, the class must have been derived directly or indirectly from `CObject` and used the **DECLARE**_**DYNAMIC** and `IMPLEMENT_DYNAMIC`, the `DECLARE_DYNCREATE` and `IMPLEMENT_DYNCREATE`, or the `DECLARE_SERIAL` and `IMPLEMENT_SERIAL` macros explained in the article [Deriving a Class from CObject](../mfc/deriving-a-class-from-cobject.md).  
   
-2.  次に示すように `CRuntimeClass` の引数を生成するために `RUNTIME_CLASS` マクロを使用してクラスのオブジェクトの `IsKindOf` のメンバー関数を呼び出します。:  
+2.  Call the `IsKindOf` member function for objects of that class, using the `RUNTIME_CLASS` macro to generate the `CRuntimeClass` argument, as shown here:  
   
-     [!code-cpp[NVC_MFCCObjectSample#2](../mfc/codesnippet/CPP/accessing-run-time-class-information_2.h)]  
+     [!code-cpp[NVC_MFCCObjectSample#2](../mfc/codesnippet/cpp/accessing-run-time-class-information_2.h)]  
   
-     [!code-cpp[NVC_MFCCObjectSample#5](../mfc/codesnippet/CPP/accessing-run-time-class-information_3.cpp)]  
+     [!code-cpp[NVC_MFCCObjectSample#5](../mfc/codesnippet/cpp/accessing-run-time-class-information_3.cpp)]  
   
     > [!NOTE]
-    >  IsKindOf はオブジェクトが指定されたクラス、またはそのクラスから派生したクラスのメンバーである場合 **TRUE** を返します。  `IsKindOf` は 派生の Microsoft Foundation Class に多重継承を必要に応じて使用できますが、多重継承または仮想基本クラスをサポートしません。  
+    >  IsKindOf returns **TRUE** if the object is a member of the specified class or of a class derived from the specified class. `IsKindOf` does not support multiple inheritance or virtual base classes, although you can use multiple inheritance for your derived Microsoft Foundation classes if necessary.  
   
- ランタイム クラス情報を 1 回使用はオブジェクトの動的生成にあります。  このプロセスは、記事 [動的オブジェクトの作成](../Topic/Dynamic%20Object%20Creation.md)で説明します。  
+ One use of run-time class information is in the dynamic creation of objects. This process is discussed in the article [Dynamic Object Creation](../mfc/dynamic-object-creation.md).  
   
- シリアル化、およびランタイム クラス情報の詳細については、"情報 [MFC のファイル](../mfc/files-in-mfc.md) と [シリアル化](../Topic/Serialization%20in%20MFC.md)を参照してください。  
+ For more detailed information on serialization and run-time class information, see the articles [Files in MFC](../mfc/files-in-mfc.md) and [Serialization](../mfc/serialization-in-mfc.md).  
   
-## 参照  
- [CObject の使い方](../mfc/using-cobject.md)
+## <a name="see-also"></a>See Also  
+ [Using CObject](../mfc/using-cobject.md)
+
+

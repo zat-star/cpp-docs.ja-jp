@@ -1,58 +1,76 @@
 ---
-title: "アクティベーション (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクティブ (オブジェクトを)"
-  - "アクティベーション [C++]"
-  - "アクティベーション [C++], 埋め込み OLE アイテム"
-  - "ドキュメント, OLE"
-  - "埋め込みオブジェクト"
-  - "埋め込み先編集の有効化"
-  - "埋め込み先編集の有効化, 埋め込みアイテムとリンク アイテム"
-  - "OLE [C++], アクティベーション"
-  - "OLE [C++], 編集"
-  - "OLE [C++], 埋め込み先編集の有効化"
-  - "OLE アクティベーション"
-  - "OLE 項目, ビジュアル編集"
-  - "OLE サーバー アプリケーション, アクティベーション"
-  - "ビジュアル編集"
-  - "ビジュアル編集, アクティベーション"
+title: Activation (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE server applications [MFC], activation
+- OLE items [MFC], visual editing
+- activation [MFC]
+- OLE [MFC], in-place activation
+- OLE [MFC], activation
+- in-place activation, embedded and linked items
+- activating objects
+- visual editing, activation
+- visual editing
+- documents [MFC], OLE
+- embedded objects [MFC]
+- OLE [MFC], editing
+- in-place activation
+- activation [MFC], embedded OLE items
+- OLE activation [MFC]
 ms.assetid: ed8357d9-e487-4aaa-aa6b-2edc4de25dfa
 caps.latest.revision: 9
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# アクティベーション (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b0c5d9a92de6d15b4034d44bf4a07a9526eeb3fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、OLE アイテムのビジュアル編集のアクティブ化の役割について説明します。  ユーザーが OLE コンテナー ドキュメントで項目が埋め込まれていると、使用する必要があります。  これを行うには、ユーザーが項目をアクティブにする項目をダブルクリックします。  アクティベーションの頻繁なアクティビティを編集します。  多くの現在の OLE アイテムにより、現在のフレーム ウィンドウで、編集用にアクティブになったときに項目を作成したサーバー アプリケーションに属するフォントを反映するように、メニュー、およびツール バーが変更されます。  埋め込み先編集の有効化と呼ばれるこの動作は、ユーザーがコンテナー ドキュメント ウィンドウを離れることなく複合ドキュメントの埋め込まれたアイテムを編集できるようになります。  
+---
+# <a name="activation-c"></a>Activation (C++)
+This article explains the role of activation in the visual editing of OLE items. After a user has embedded an OLE item in a container document, it may need to be used. To do this, the user double-clicks the item, which activates that item. The most frequent activity for activation is editing. Many current OLE items, when activated for editing, cause the menus and toolbars in the current frame window to change to reflect those belonging to the server application that created the item. This behavior, known as in-place activation, allows the user to edit any embedded item in a compound document without leaving the container document's window.  
   
- 別のウィンドウに埋め込まれたな OLE アイテムを編集することもできます。  これはコンテナーまたはサーバー アプリケーションの埋め込み先編集の有効化をサポートしていない場合に発生します。  この場合、ユーザーが埋め込まれたアイテムをダブルクリックすると、サーバー アプリケーションが別のウィンドウで起動し、埋め込まれたアイテムは独自のドキュメントとして表示されます。  ユーザーは、このウィンドウの項目の編集をクリックします。  編集が完了すると、ユーザーはコンテナー アプリケーションへのサーバー アプリケーションと戻りを閉じます。  
+ It is also possible to edit embedded OLE items in a separate window. This will happen if either the container or server application does not support in-place activation. In this case, when the user double-clicks an embedded item, the server application is launched in a separate window and the embedded item appears as its own document. The user edits the item in this window. When editing is complete, the user closes the server application and returns to the container application.  
   
- また、ユーザーは **編集** メニューの **\<object\> Open** コマンドで開く「編集」を選択できます。  これは、別のウィンドウを開きます。  
+ As an alternative, the user can choose "open editing" with the **\<object> Open** command on the **Edit** menu. This opens the object in a separate window.  
   
 > [!NOTE]
->  別のウィンドウに埋め込まれたアイテムの編集は OLE の Version 1 の標準動作であり、OLE アプリケーションは編集をこのスタイルだけをサポートすることができます。  
+>  Editing embedded items in a separate window was standard behavior in version 1 of OLE, and some OLE applications may support only this style of editing.  
   
- 埋め込み先編集の有効化は文書を作成するドキュメント中心的なアプローチを促進します。  ユーザーがアプリケーションを切り替えることなく、作業する単一のエンティティとして複合ドキュメントを扱うことができます。  ただし、埋め込み先編集の有効化は埋め込まれたアイテムでのみ、リンク アイテムに対して使用されます。: これらは別のウィンドウで編集する必要があります。  これは、リンク アイテムが別の場所に実際に格納されるためです。  リンク アイテムの編集はデータの実際のコンテキスト内でデータを格納する場所、つまりです。  別のウィンドウのリンク アイテムを編集することで、データを別のドキュメントにユーザーに属していることを示します。  
+ In-place activation promotes a document-centric approach to document creation. The user can treat a compound document as a single entity, working on it without switching between applications. However, in-place activation is used only for embedded items, not for linked items: they must be edited in a separate window. This is because a linked item is actually stored in a different place. The editing of a linked item takes place within the actual context of the data, that is, where the data is stored. Editing a linked item in a separate window reminds the user that the data belongs to another document.  
   
- MFC は、入れ子になった埋め込み先編集の有効化をサポートしません。  コンテナーとサーバー アプリケーションを作成し、そのコンテナーとサーバーが別のコンテナーとサイトのアクティブ化に埋め込まれている場合、埋め込み先編集を有効にしませんでしたコントロール内に埋め込まれているオブジェクトができません。  
+ MFC does not support nested in-place activation. If you build a container/server application, and that container/server is embedded in another container and in-place activated, it cannot in-place activate objects embedded inside it.  
   
- ユーザーのダブルクリックが項目に対して定義されている動詞によって決まる時の動作が埋め込まれたアイテムに。  詳細については、「[アクティブ化: 動詞](../mfc/activation-verbs.md)」を参照してください。  
+ What happens to an embedded item when the user double-clicks it depends on the verbs defined for the item. For information, see [Activation: Verbs](../mfc/activation-verbs.md).  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [コンテナー](../mfc/containers.md)   
- [サーバー](../mfc/servers.md)
+ [Containers](../mfc/containers.md)   
+ [Servers](../mfc/servers.md)
+
+

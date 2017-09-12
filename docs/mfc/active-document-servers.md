@@ -1,42 +1,61 @@
 ---
-title: "Active ドキュメント サーバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Active ドキュメント サーバー [C++]"
-  - "アクティブ ドキュメント [C++], サーバー"
-  - "サーバー [C++], アクティブ ドキュメント"
+title: Active Document Servers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- active documents [MFC], servers
+- servers [MFC], active document
+- active document servers [MFC]
 ms.assetid: 131fec1e-02a0-4305-a7ab-903b911232a7
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# Active ドキュメント サーバー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1dc80f4c1a84b17248df1e25dbcef7c85806c1f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-他のアプリケーションの種類の Word、Excel、PowerPoint のホストのような Active ドキュメント サーバーはドキュメント アクティブ ドキュメントと呼ばれます。   \(別のドキュメント ページ内に表示される\) とは異なり、埋め込みオブジェクト、Active ドキュメントは完全なインターフェイスを提供し、それらを作成するサーバー アプリケーションのネイティブ機能を完了します。  ユーザーはこれらの任意のアプリケーションの完全なパワーを使用して \(有効なアクティブ ドキュメントの場合\) を作成することはできません。また、単一のエンティティとして作成されたプロジェクトを処理できます。  
+---
+# <a name="active-document-servers"></a>Active Document Servers
+Active document servers such as Word, Excel, or PowerPoint host documents of other application types called active documents. Unlike OLE embedded objects (which are simply displayed within the page of another document), Active documents provide the full interface and complete native functionality of the server application that creates them. Users can create documents using the full power of their favorite applications (if they are active document enabled), yet can treat the resulting project as a single entity.  
   
- Active ドキュメントは、複数のページがあり、常にでき、埋め込み先編集です。  コンテナーの **ファイル** と **ヘルプ** メニューとメニューをマージするユーザー インターフェイスのアクティブ ドキュメントのコントロールの部分。  これらはコンテナーの編集領域を占有し、プリンターのページ \(余白、フッターなど\) のビューとレイアウトを制御します。  
+ Active documents can have more than one page and are always in-place active. Active documents control part of the user interface, merging their menus with the **File** and **Help** menus of the container. They occupy the entire editing area of the container and control the views and the layout of the printer page (margins, footers, and so on).  
   
- MFC はドキュメント\/ビュー インターフェイス、コマンド ディスパッチ マップ、印刷、メニュー コントロールやレジストリ管理を持つアクティブ ドキュメント サーバーを実装します。  固有のプログラミングの要件は [アクティブ ドキュメント](../Topic/Active%20Documents.md)で説明します。  
+ MFC implements active document servers with document/view interfaces, command dispatch maps, printing, menu management, and registry management. Specific programming requirements are discussed in [active documents](../mfc/active-documents.md).  
   
- MFC は [CCmdTarget](../Topic/CCmdTarget%20Class.md)から [CDocObjectServer](../mfc/reference/cdocobjectserver-class.md)、派生クラス、および [CDocObjectServerItem](../mfc/reference/cdocobjectserveritem-class.md)の [COleServerItem](../mfc/reference/coleserveritem-class.md)からの派生にアクティブ ドキュメントをサポートします。  MFC は [COleDocObjectItem](../Topic/COleDocObjectItem%20Class.md) クラス、[COleClientItem](../mfc/reference/coleclientitem-class.md)から派生を持つアクティブ ドキュメント コンテナーをサポートします。  
+ MFC supports active documents with the [CDocObjectServer](../mfc/reference/cdocobjectserver-class.md) class, derived from [CCmdTarget](../mfc/reference/ccmdtarget-class.md), and [CDocObjectServerItem](../mfc/reference/cdocobjectserveritem-class.md), derived from [COleServerItem](../mfc/reference/coleserveritem-class.md). MFC supports active document containers with the [COleDocObjectItem](../mfc/reference/coledocobjectitem-class.md) class, derived from [COleClientItem](../mfc/reference/coleclientitem-class.md).  
   
- `CDocObjectServer` は アクティブ ドキュメント インターフェイスをマップし、アクティブ文書を初期化し、アクティブにします。  MFC は、アクティブ ドキュメントのハンドルのコマンド ルーティングにマクロが用意されています。  アプリケーションでアクティブ ドキュメントを使用するには、StdAfx.h ファイルに AfxDocOb.h を含めます。  
+ `CDocObjectServer` maps the active document interfaces and initializes and activates an active document. MFC also provides macros to handle command routing in ACTIVE documents. To use active documents in your application, include AfxDocOb.h in your StdAfx.h file.  
   
- 標準 MFC サーバーは独自の `COleServerItem`\-派生クラスの先頭にフックします。  MFC アプリケーション ウィザードは、アプリケーション サーバーの複合ドキュメント サポートを提供するために **Mini\-server** または **フル サーバー** のチェック ボックスをオンのこのクラスが生成されます。  また **Active ドキュメント サーバー\(A\)** のチェック ボックスをオンにすると、MFC アプリケーション ウィザードは `CDocObjectServerItem` から派生したクラスを生成します。  
+ A regular MFC server hooks up its own `COleServerItem`-derived class. The MFC Application Wizard generates this class for you if you select the **Mini-server** or **Full-server** check box to give your application server compound document support. If you also select the **Active document server** check box, the MFC Application Wizard generates a class derived from `CDocObjectServerItem` instead.  
   
- `COleDocObjectItem` クラスは OLE コンテナーがアクティブ ドキュメント コンテナーになるようにします。  MFC アプリケーション ウィザードの複合ドキュメント サポート ページで **Active ドキュメント コンテナー\(D\)** のチェック ボックスをオンにして、Active ドキュメント コンテナーを作成するには、MFC アプリケーション ウィザードを使用できます。  詳細については、「[Active ドキュメント コンテナー アプリケーションの作成](../mfc/creating-an-active-document-container-application.md)」を参照してください。  
+ The `COleDocObjectItem` class allows an OLE container to become an active document container. You can use the MFC Application Wizard to create an active document container by selecting the **Active document container** checkbox in the Compound Document Support page of the MFC Application Wizard. For more information, see [Creating an Active Document Container Application](../mfc/creating-an-active-document-container-application.md).  
   
-## 参照  
- [Active ドキュメント コンテインメント](../mfc/active-document-containment.md)
+## <a name="see-also"></a>See Also  
+ [Active Document Containment](../mfc/active-document-containment.md)
+
+

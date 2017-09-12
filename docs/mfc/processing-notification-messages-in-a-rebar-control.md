@@ -1,54 +1,73 @@
 ---
-title: "Rebar コントロールでの通知メッセージの処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CReBarCtrl クラス, 通知メッセージ (送信される)"
-  - "通知, CReBarCtrl"
-  - "RBN_ 通知メッセージ"
-  - "RBN_ 通知メッセージ, 記述"
+title: Processing Notification Messages in a Rebar Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- RBN_ notification messages, description of
+- CReBarCtrl class [MFC], notification messages sent by
+- RBN_ notification messages [MFC]
+- notifications [MFC], CReBarCtrl
 ms.assetid: 40f43a60-0c18-4d8d-8fab-213a095624f9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# Rebar コントロールでの通知メッセージの処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a9f6dd828b8864763d46592d270db38927198a0e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-rebar のコントロールの親クラスで処理したいすべての rebar コントロール \(`CReBarCtrl`\) の通知メッセージの switch ステートメントと `OnChildNotify` のハンドラー関数を作成します。  通知が親ウィンドウにユーザーが rebar のコントロールから rebar コントロールの上にオブジェクトを変更して、rebar バンドのレイアウトを削除するバンドなどをドラッグしたときに送信されます。  
+---
+# <a name="processing-notification-messages-in-a-rebar-control"></a>Processing Notification Messages in a Rebar Control
+In the parent class of the rebar control, create an `OnChildNotify` handler function with a switch statement for any rebar-control (`CReBarCtrl`) notification messages you want to handle. Notifications are sent to the parent window when the user drags objects over the rebar control, changes the layout of the rebar bands, deletes bands from the rebar control, and so on.  
   
- 以下の通知メッセージは、Rebar コントロール オブジェクトによって送信できます:  
+ The following notification messages can be sent by the rebar control object:  
   
--   **RBN\_AUTOSIZE**は rebar コントロールのして rebar が自動的にそれ自身のサイズを変更するとされる \(**RBS\_AUTOSIZE** のスタイルと作成\)。  
+-   **RBN_AUTOSIZE** Sent by a rebar control (created with the **RBS_AUTOSIZE** style) when the rebar automatically resizes itself.  
   
--   **RBN\_BEGINDRAG**は rebar のコントロールでユーザーがバンドのドラッグを開始すると、される。  
+-   **RBN_BEGINDRAG** Sent by a rebar control when the user begins dragging a band.  
   
--   **RBN\_CHILDSIZE**は rebar のコントロールによってバンドの子ウィンドウのサイズが変更されたときにされる。  
+-   **RBN_CHILDSIZE** Sent by a rebar control when a band's child window is resized.  
   
--   **RBN\_DELETEDBAND**は rebar のコントロールによってバンドが削除されたされる。  
+-   **RBN_DELETEDBAND** Sent by a rebar control after a band has been deleted.  
   
--   **RBN\_DELETINGBAND**は rebar のコントロールによって、バンドが削除されるとされる。  
+-   **RBN_DELETINGBAND** Sent by a rebar control when a band is about to be deleted.  
   
--   **RBN\_ENDDRAG**は rebar のコントロールでユーザーがバンドのドラッグを停止すると、される。  
+-   **RBN_ENDDRAG** Sent by a rebar control when the user stops dragging a band.  
   
--   **RBN\_GETOBJECT**は rebar のコントロールにオブジェクトのコントロールのバンドにドラッグすると、される \(**RBS\_REGISTERDROP** のスタイルと作成\)。  
+-   **RBN_GETOBJECT** Sent by a rebar control (created with the **RBS_REGISTERDROP** style) when an object is dragged over a band in the control.  
   
--   **RBN\_HEIGHTCHANGE**は rebar のコントロールで高さが変更されたされる。  
+-   **RBN_HEIGHTCHANGE** Sent by a rebar control when its height has changed.  
   
--   **RBN\_LAYOUTCHANGED**は rebar コントロールの変更によって、ユーザーがコントロールのバンドのレイアウトされる。  
+-   **RBN_LAYOUTCHANGED** Sent by a rebar control when the user changes the layout of the control's bands.  
   
- これらの通知の詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [Rebar のコントロールの参照](http://msdn.microsoft.com/library/windows/desktop/bb774375) を参照します。  
+ For more information on these notifications, see [Rebar Control Reference](http://msdn.microsoft.com/library/windows/desktop/bb774375) in the Windows SDK.  
   
-## 参照  
- [CReBarCtrl の使い方](../Topic/Using%20CReBarCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CReBarCtrl](../mfc/using-crebarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+
