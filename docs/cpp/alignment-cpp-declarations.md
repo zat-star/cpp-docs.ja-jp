@@ -1,40 +1,56 @@
 ---
-title: "アラインメント (C++ の宣言) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: Alignment (C++ Declarations) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: a986d510-ccb8-41f8-b905-433df9183485
 caps.latest.revision: 4
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# アラインメント (C++ の宣言)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: ed5f2b959eb6f437b7ed9a9432df22f87e455e42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-C\+\+ の低レベルの機能の 1 つは、特定のハードウェア アーキテクチャを最大活用するために、メモリ内のオブジェクトの正確な配置を指定できる機能です。  既定では、コンパイラはクラスと構造体のメンバーのサイズの値を揃えて配置します。bool と char は 1 バイト境界に配置され、short は 2 バイト、int は 4 バイト、long long、double、long double は 8 バイトに配置されます。  ほとんどのシナリオで、既定の配置は既に最適なので、配置を気にすることはありません。  ただし、場合によっては、大幅なパフォーマンスの向上、またはメモリの節約を、データ構造にカスタム配置を指定することで達成できます。  Visual Studio 2015 の前は、既定値を超える配列を指定するのに、Microsoft 固有キーワード \_\_alignof と declspec\(alignas\) を使用できました。  Visual Studio 2015 以降、C\+\+11 の標準キーワードの [alignof と alignas](../cpp/alignof-and-alignas-cpp.md) を使用して、コードの移植性を最大にする必要があります。  新しいキーワードは、内部で Microsoft 固有の拡張機能として同じ方法で動作し、拡張機能のためのドキュメントが、新しいキーワードにも適用されます。  詳細については、「[\_\_alignof 演算子](../cpp/alignof-operator.md)」と「[align](../cpp/align-cpp.md)」を参照してください。  C\+\+ 標準は、ターゲット プラットフォームに対するコンパイラの規定値よりも小さい境界の配置では、パッキング動作を指定しないため、その場合は Microsoft \#pragma [pack](../preprocessor/pack.md) を引き続き使用する必要があります。  
+---
+# <a name="alignment-c-declarations"></a>Alignment (C++ Declarations)
+One of the low-level features of C++ is the ability to specify the precise alignment of objects in memory to take maximum advantage of a specific hardware architecture. By default, the compiler aligns class and struct members on their size value: bool and char are aligned one one byte boundaries, short on two byte, int on four bytes, long long, double and long double on eight bytes. In most scenarios you never have to be concerned with alignment because the default alignment is already optimal. In some cases however, you can achieve significant performance improvements, or memory savings, by specifying a custom alignment for your data structures. Prior to Visual Studio 2015 you could use the Microsoft-specific keywords __alignof and declspec(alignas) to specify an alignment greater than the default. Starting in Visual Studio 2015 you should use the C++11 standard keywords [alignof and alignas](../cpp/alignof-and-alignas-cpp.md) for maximum code portability. The new keywords behave in the same way under the hood as the Microsoft-specific extensions, and the documentation for those extensions also applies to the new keywords. See [__alignof Operator](../cpp/alignof-operator.md) and [align](../cpp/align-cpp.md) for more information. The C++ standard does not specify packing behavior for aligning on boundaries smaller than the compiler default for the target platform, so you still need to use the Microsoft #pragma [pack](../preprocessor/pack.md) in that case.  
   
- C\+\+ の標準ライブラリでは、カスタム配置を伴うデータ構造にメモリを割り当てるために [aligned\_storage クラス](../standard-library/aligned-storage-class.md)を提供しています。また、非単純コンストラクトまたはデコンストラクトを伴うユニオンの配置を指定するために [aligned\_union クラス](../Topic/aligned_union%20Class.md)を提供しています。  
+ The C++ standard library provides the [aligned_storage Class](../standard-library/aligned-storage-class.md) for allocating memory for data structures with custom alignments, and the [aligned_union Class](../standard-library/aligned-union-class.md) for specifying alignment for unions with non-trivial constructors or destructors.  
   
-## 配置について  
- 配置は、2 の累乗の数値のアドレスの剰余として表現される、メモリ アドレスのプロパティです。  たとえば、0x0001103F のアドレスを 4 で割ると 3 になり、アドレスが 4n\+3 に配置されたということができます。ここで、4 は選択した 2 の累乗です。  アドレスの配置は、2 の選択した値の累乗に依存します。  同じアドレスの 8 の剰余は 7 です。  配置が Xn\+0 の場合、アドレスが X に配置されると言われます。  
+## <a name="about-alignment"></a>About Alignment  
+ Alignment is a property of a memory address, expressed as the numeric address modulo a power of 2. For example, the address 0x0001103F modulo 4 is 3; that address is said to be aligned to 4n+3, where 4 indicates the chosen power of 2. The alignment of an address depends on the chosen power of two. The same address modulo 8 is 7. An address is said to be aligned to X if its alignment is Xn+0.  
   
- CPU はメモリに格納されているデータを操作するインストラクターを実行し、データはメモリ内のアドレスによって特定されます。  アドレスに加えて、単一データはサイズも持っています。  アドレスがサイズに合わせて自然に配置されている場合は、データが自然に配置されるよう呼び出され、そうでない場合は適切に配置されません。  たとえば、識別のために使用されるアドレスが 8 に配置されている場合、8 バイト浮動小数点のデータが自然に配置されます。  
+ CPUs execute instructions that operate on data stored in memory, and the data are identified by their addresses in memory. In addition to its address, a single datum also has a size. A datum is called naturally aligned if its address is aligned to its size, and misaligned otherwise. For example, an 8-byte floating-point datum is naturally aligned if the address used to identify it is aligned to 8.  
   
- データ alignmentDevice コンパイラのコンパイラ処理は、データの不整合を避ける方法でデータを割り当てようとします。  
+ Compiler handling of data alignmentDevice compilers attempt to allocate data in a way that prevents data misalignment.  
   
- 単純なデータ型の場合、コンパイラは、データ型のバイト単位のサイズの倍数であるアドレスを割り当てます。  そのため、コンパイラは、4 の倍数である long 型の変数にアドレスを割り当てて、アドレスの下の 2 つのビットをゼロに設定します。  
+ For simple data types, the compiler assigns addresses that are multiples of the size in bytes of the data type. Thus, the compiler assigns addresses to variables of type long that are multiples of four, setting the bottom two bits of the address to zero.  
   
- さらに、コンパイラは構造の各要素が自然配置になるように、構造を埋めます。  次のコード例の構造体 struct x\_ について考えてみます。  
+ In addition, the compiler pads structures in a way that naturally aligns each element of the structure. Consider the structure struct x_ in the following code example:  
   
 ```  
 struct x_  
@@ -47,9 +63,9 @@ struct x_
   
 ```  
   
- コンパイラは自然な配置を強制するようにこの構造体を埋めます。  
+ The compiler pads this structure to enforce alignment naturally.  
   
- 次のコード例は、コンパイラが memory:Copy に埋め込みの構造を配置する方法を示しています。  
+ The following code example shows how the compiler places the padded structure in memory:Copy  
   
 ```  
 // Shows the actual memory layout  
@@ -65,17 +81,17 @@ struct x_
   
 ```  
   
-1.  両方の宣言は、sizeof\(struct x\_\) を 12 バイトとして返します。  
+1.  Both declarations return sizeof(struct x_) as 12 bytes.  
   
-2.  2 番目の宣言には、埋め込みの 2 つの要素が含まれています。  
+2.  The second declaration includes two padding elements:  
   
-3.  char \_pad0\[3\] は、int b メンバーを 4 バイト境界  
+3.  char _pad0[3] to align the int b member on a four-byte boundary  
   
-4.  char \_pad1\[1\] に配置して、構造体 struct \_x bar\[3\] の配列要素を配置します。  
+4.  char _pad1[1] to align the array elements of the structure struct _x bar[3];  
   
-5.  埋め込みは自然なアクセスを可能にする方法で bar\[3\] の要素を配置します。  
+5.  The padding aligns the elements of bar[3] in a way that allows natural access.  
   
- bar\[3\] 配列のレイアウトを次のコード サンプルに示します。  
+ The following code example shows the bar[3] array layout:  
   
 ```  
 adr offset   element  
@@ -103,5 +119,5 @@ adr offset   element
   
 ```  
   
-## 参照  
- [データ構造体の配置](http://en.wikipedia.org/wiki/Data_structure_alignment)
+## <a name="see-also"></a>See Also  
+ [Data Structure Alignment](http://en.wikipedia.org/wiki/Data_structure_alignment)

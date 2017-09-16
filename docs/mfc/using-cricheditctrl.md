@@ -1,57 +1,76 @@
 ---
-title: "CRichEditCtrl の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRichEditCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRichEditCtrl クラス, 使用"
-  - "リッチ エディット コントロール, 使用"
+title: Using CRichEditCtrl | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CRichEditCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- rich edit controls [MFC], using
+- CRichEditCtrl class [MFC], using
 ms.assetid: e400c6ed-563e-4d4c-ab3b-a3f0aa20273b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CRichEditCtrl の使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ccf20f2b621e2b000ca28b380339ff479dac0ace
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リッチ エディット コントロールは、ユーザーがテキストを入力して編集できるウィンドウです。  テキストは、文字や段落書式を割り当て埋め込まれたな OLE オブジェクトを含めることができます。  リッチ エディット コントロールは [CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md) クラスで MFC で表されます。  
+---
+# <a name="using-cricheditctrl"></a>Using CRichEditCtrl
+A rich edit control is a window in which the user can enter and edit text. The text can be assigned character and paragraph formatting, and can include embedded OLE objects. The rich edit control is represented in MFC by the [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md) class.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [リッチ エディット コントロールの概要](../mfc/overview-of-the-rich-edit-control.md)  
+-   [Overview of the Rich Edit Control](../mfc/overview-of-the-rich-edit-control.md)  
   
--   [リッチ エディット コントロールと関連するクラス](../mfc/classes-related-to-rich-edit-controls.md)  
+-   [Classes Related to Rich Edit Controls](../mfc/classes-related-to-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールの例](../Topic/Rich%20Edit%20Control%20Examples.md)  
+-   [Rich Edit Control Examples](../mfc/rich-edit-control-examples.md)  
   
--   [リッチ エディット コントロールの文字書式](../mfc/character-formatting-in-rich-edit-controls.md)  
+-   [Character Formatting in Rich Edit Controls](../mfc/character-formatting-in-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールの段落書式](../Topic/Paragraph%20Formatting%20in%20Rich%20Edit%20Controls.md)  
+-   [Paragraph Formatting in Rich Edit Controls](../mfc/paragraph-formatting-in-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールの現在の選択](../mfc/current-selection-in-a-rich-edit-control.md)  
+-   [Current Selection in a Rich Edit Control](../mfc/current-selection-in-a-rich-edit-control.md)  
   
--   [リッチ エディット コントロールのワード中断](../mfc/word-breaks-in-rich-edit-controls.md)  
+-   [Word Breaks in a Rich Edit Control](../mfc/word-breaks-in-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールのクリップボード操作](../mfc/clipboard-operations-in-rich-edit-controls.md)  
+-   [Clipboard Operations in Rich Edit Controls](../mfc/clipboard-operations-in-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールのストリーム操作](../mfc/stream-operations-in-rich-edit-controls.md)  
+-   [Stream Operations in Rich Edit Controls](../mfc/stream-operations-in-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールの印刷](../mfc/printing-in-rich-edit-controls.md)  
+-   [Printing in Rich Edit Controls](../mfc/printing-in-rich-edit-controls.md)  
   
--   [ボトムレス リッチ エディット コントロール](../mfc/bottomless-rich-edit-controls.md)  
+-   [Bottomless Rich Edit Controls](../mfc/bottomless-rich-edit-controls.md)  
   
--   [リッチ エディット コントロールからの通知](../mfc/notifications-from-a-rich-edit-control.md)  
+-   [Notifications from a Rich Edit Control](../mfc/notifications-from-a-rich-edit-control.md)  
   
-## 参照  
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Controls](../mfc/controls-mfc.md)
+
+

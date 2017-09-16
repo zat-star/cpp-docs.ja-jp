@@ -1,73 +1,92 @@
 ---
-title: "MFC ActiveX コントロール ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.mfc.ctl.overview"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], MFC"
-  - "MFC ActiveX コントロール ウィザード"
-  - "MFC ActiveX コントロール [C++], ウィザード"
-  - "OLE コントロール [C++]"
-  - "OLE コントロール [C++], 作成"
+title: MFC ActiveX Control Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.appwiz.mfc.ctl.overview
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX controls [MFC], MFC
+- MFC ActiveX controls [MFC], wizards
+- OLE controls [MFC], creating
+- MFC ActiveX Control Wizard
+- OLE controls [MFC]
 ms.assetid: f19d698c-bdc3-4c74-af97-3d6ccb441b75
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# MFC ActiveX コントロール ウィザード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d911f96791e4bb7880c86a0571bfbbabf8a7eafb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロールとは特殊な[オートメーション サーバー](../../mfc/automation-servers.md)であり、再利用できるコンポーネントです。  ActiveX コントロールをホストするアプリケーションは、そのコントロールの[オートメーション クライアント](../../mfc/automation-clients.md)です。  ActiveX コントロールなどの再利用できるコンポーネントを作成する場合は、このウィザードを使用してコントロールを作成します。  詳細については、「[MFC ActiveX コントロール](../../mfc/mfc-activex-controls.md)」を参照してください。  
+---
+# <a name="mfc-activex-control-wizard"></a>MFC ActiveX Control Wizard
+An ActiveX control is a specific type of [automation server](../../mfc/automation-servers.md); it is a reusable component. The application hosting the ActiveX control is the [automation client](../../mfc/automation-clients.md) of that control. If your goal is to create such a reusable component, then use this wizard to create your control. See [MFC ActiveX Controls](../../mfc/mfc-activex-controls.md) for more information.  
   
- また、[MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)を使用して、オートメーション サーバー MFC アプリケーションを作成できます。  
+ Alternately, you can create an automation server MFC application using the [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md).  
   
- このウィザードで作成した ActiveX コントロールではユーザー インターフェイスを使用できます。また、コントロールが表示されないように設定することもできます。  コントロールが表示されないように指定するオプションは、ウィザードの [&#91;コントロールの設定&#93;](../../mfc/reference/control-settings-mfc-activex-control-wizard.md) ページにあります。  表示が不要な ActiveX コントロールの例として、タイマー コントロールなどがあります。  
+ An ActiveX control created with this wizard can have a user interface, or it can be invisible. You can indicate this option in the [Control Settings](../../mfc/reference/control-settings-mfc-activex-control-wizard.md) page in the wizard. A timer control is an example of an ActiveX control that you would want to be invisible.  
   
- ActiveX コントロールでは複雑なユーザー インターフェイスを使用できます。  カプセル化された複数のフォームを持つコントロールもあります。つまり、1 つのコントロールに多数のフィールドが含まれており、それぞれが Windows コントロールとして独立している場合があります。  たとえば、単一の MFC ActiveX コントロールとして実装された自動車部品オブジェクトをフォーム形式のユーザー インターフェイスとして表示できます。ユーザーは、このインターフェイスを通じて部品番号や部品名などの情報を読んだり編集したりできます。  詳細については、「[MFC ActiveX コントロール](../../mfc/mfc-activex-controls.md)」を参照してください。  
+ ActiveX controls can have a complex user interface. Some controls might be like encapsulated forms: a single control containing many fields, each a Windows control in its own right. For example, an auto parts object implemented as an MFC ActiveX control might present a form-like user interface through which users could read and edit the part number, part name, and other information. See [MFC ActiveX Controls](../../mfc/mfc-activex-controls.md) for more information.  
   
- ActiveX オブジェクトのコンテナーを作成する必要がある場合は、「[MFC ActiveX コントロール コンテナーの作成](../../mfc/reference/creating-an-mfc-activex-control-container.md)」を参照してください。  
+ If you need to create a container for your ActiveX objects, see [Create an ActiveX Control Container](../../mfc/reference/creating-an-mfc-activex-control-container.md).  
   
- MFC の初期プログラムには、C\+\+ ソース \(.cpp\) ファイル、リソース \(.rc\) ファイル、およびプロジェクト \(.vcxproj\) ファイルが含まれます。  これらの初期ファイルで生成されたコードは、MFC に基づいています。  
+ The MFC starter program includes C++ source (.cpp) files, resource (.rc) files, and a project (.vcxproj) file. The code generated in these starter files is based on MFC.  
   
- 以下のトピックでは、ActiveX コントロールのタスクおよび拡張機能について説明しています。  
+ The following sample list shows tasks and types of enhancements for your ActiveX control:  
   
--   [MFC ActiveX コントロール : 最適化](../../mfc/mfc-activex-controls-optimization.md)  
+-   [Optimizing an ActiveX Control](../../mfc/mfc-activex-controls-optimization.md)  
   
--   [MFC ActiveX コントロール : ActiveX コントロールへのストック イベントの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Events%20to%20an%20ActiveX%20Control.md)  
+-   [Adding Stock Events to an ActiveX Control](../../mfc/mfc-activex-controls-adding-stock-events-to-an-activex-control.md)  
   
--   [MFC ActiveX コントロール : カスタム イベントの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Custom%20Events.md)  
+-   [Adding Custom Events](../../mfc/mfc-activex-controls-adding-custom-events.md)  
   
--   [MFC ActiveX コントロール : ストック メソッドの追加](../../mfc/mfc-activex-controls-adding-stock-methods.md)  
+-   [Adding Stock Methods](../../mfc/mfc-activex-controls-adding-stock-methods.md)  
   
--   [MFC ActiveX コントロール : カスタム メソッドの追加](../../mfc/mfc-activex-controls-adding-custom-methods.md)  
+-   [Adding Custom Methods](../../mfc/mfc-activex-controls-adding-custom-methods.md)  
   
--   [MFC ActiveX コントロール : ストック プロパティの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Properties.md)  
+-   [Adding Stock Properties](../../mfc/mfc-activex-controls-adding-stock-properties.md)  
   
--   [MFC ActiveX コントロール : カスタム プロパティの追加](../../mfc/mfc-activex-controls-adding-custom-properties.md)  
+-   [Adding Custom Properties](../../mfc/mfc-activex-controls-adding-custom-properties.md)  
   
--   [ActiveX コントロール コンテナー : ActiveX コントロール コンテナーでの ActiveX コントロールのプログラミング](../../mfc/programming-activex-controls-in-a-activex-control-container.md)  
+-   [Programming ActiveX Controls in an ActiveX Control Container](../../mfc/programming-activex-controls-in-a-activex-control-container.md)  
   
-## 概要  
- ウィザードのこのページでは、作成する MFC ActiveX コントロール プロジェクトの現在のアプリケーション設定が示されます。  既定では、このウィザードでは、次のようなウィザード プロジェクトが作成されます。  
+## <a name="overview"></a>Overview  
+ This wizard page describes the current application settings for the MFC ActiveX control project you are creating. By default, the wizard creates a project as follows:  
   
--   既定のプロジェクトでは、ランタイム ライセンスもヘルプ ファイルも生成されません。  これらの既定の設定は、[&#91;アプリケーションの設定&#93;](../../mfc/reference/application-settings-mfc-activex-control-wizard.md) ページで変更できます。  ActiveX コントロール ウィザードのこのページで選択した内容だけが、\[概要\] ページに反映されます。  
+-   The default project generates no run-time license or help files. You can change these default settings on the [Application Settings](../../mfc/reference/application-settings-mfc-activex-control-wizard.md) page. Only the selections you make on this page of the ActiveX Control Wizard are reflected on the **Overview** page.  
   
--   プロジェクトには、プロジェクト名に基づくコントロール クラスとプロパティ ページ クラスが含まれます。  プロジェクト名とファイル名は、[&#91;コントロール名&#93;](../../mfc/reference/control-names-mfc-activex-control-wizard.md) ページで編集できます。  
+-   The project includes a control class and a property page class, based on the name of the project. You can edit the names of your project and file names on the [Control Names](../../mfc/reference/control-names-mfc-activex-control-wizard.md) page.  
   
--   コントロールは既存のどの Windows コントロールにも基づいていません。このコントロールは画面に表示されるとアクティブになり、ユーザー インターフェイスを使用し、**\[バージョン情報\]** ダイアログ ボックスを含みます。  これらの既定の設定は、[&#91;コントロールの設定&#93;](../../mfc/reference/control-settings-mfc-activex-control-wizard.md) ページで変更できます。  
+-   The control is based on no existing Windows control, activates when it becomes visible, has a user interface, and includes an **About** dialog box. You can change these default settings on the [Control Settings](../../mfc/reference/control-settings-mfc-activex-control-wizard.md) page.  
   
-## 参照  
- [Visual C\+\+ プロジェクトの作成および管理](../../ide/creating-and-managing-visual-cpp-projects.md)   
- [Visual C\+\+ プロジェクトの種類](../../ide/visual-cpp-project-types.md)   
- [概念](../../atl/active-template-library-atl-concepts.md)
+## <a name="see-also"></a>See Also  
+ [Creating and Managing Visual C++ Projects](../../ide/creating-and-managing-visual-cpp-projects.md)   
+ [Visual C++ Project Types](../../ide/visual-cpp-project-types.md)   
+ [Concepts](../../atl/active-template-library-atl-concepts.md)
+
+

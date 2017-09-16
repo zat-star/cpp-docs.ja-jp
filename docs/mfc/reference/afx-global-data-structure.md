@@ -1,5 +1,5 @@
 ---
-title: "AFX_GLOBAL_DATA 構造体 |Microsoft ドキュメント"
+title: AFX_GLOBAL_DATA Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,11 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- GLOBAL_DATA
+- AFX_GLOBAL_DATA
 dev_langs:
 - C++
 helpviewer_keywords:
-- AFX_GLOBAL_DATA structure
+- AFX_GLOBAL_DATA structure [MFC]
 - AFX_GLOBAL_DATA constructor
 ms.assetid: c7abf2fb-ad5e-4336-a01d-260c29ed53a2
 caps.latest.revision: 30
@@ -35,127 +35,127 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: c490b3d744aa691331500f491444435dfe583d13
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 772cb67930d12a30f136b6075f833b079cebe320
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="afxglobaldata-structure"></a>AFX_GLOBAL_DATA 構造体
-`AFX_GLOBAL_DATA` 構造体は、フレームワークを管理するため、またはアプリケーションの外観および動作をカスタマイズするために使用されるフィールドおよびメソッドを格納します。  
+# <a name="afxglobaldata-structure"></a>AFX_GLOBAL_DATA Structure
+The `AFX_GLOBAL_DATA` structure contains fields and methods that are used to manage the framework or customize the appearance and behavior of your application.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct AFX_GLOBAL_DATA  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`|`AFX_GLOBAL_DATA` 構造体を構築します。|  
-|`AFX_GLOBAL_DATA::~AFX_GLOBAL_DATA`|デストラクターです。|  
+|`AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`|Constructs a `AFX_GLOBAL_DATA` structure.|  
+|`AFX_GLOBAL_DATA::~AFX_GLOBAL_DATA`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[AFX_GLOBAL_DATA::CleanUp](#cleanup)|ブラシ、フォント、DLL など、フレームワークにより割り当てられたリソースを解放します。|  
-|[AFX_GLOBAL_DATA::D2D1MakeRotateMatrix](#d2d1makerotatematrix)|指定した点を中心に指定した角度ずつ回転する回転変換を作成します。|  
-|[AFX_GLOBAL_DATA::DrawParentBackground](#drawparentbackground)|指定領域にコントロールの親の背景を描画します。|  
-|[AFX_GLOBAL_DATA::DrawTextOnGlass](#drawtextonglass)|指定されたテーマの視覚スタイルで、指定されたテキストを描画します。|  
-|[AFX_GLOBAL_DATA::ExcludeTag](#excludetag)|指定された XML タグ ペアを、指定されたバッファーから削除します。|  
-|[AFX_GLOBAL_DATA::GetColor](#getcolor)|指定されたユーザー インターフェイス要素の現在の色を取得します。|  
-|[AFX_GLOBAL_DATA::GetDirect2dFactory](#getdirect2dfactory)|グローバル データに格納されている `ID2D1Factory` インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。|  
-|[AFX_GLOBAL_DATA::GetHandCursor](#gethandcursor)|手の形をした組み込みカーソル (識別子は `IDC_HAND`) を取得します。|  
-|[AFX_GLOBAL_DATA::GetITaskbarList](#getitaskbarlist)|ITaskBarList インターフェイスへのポインターを作成し、グローバル データに格納します。|  
-|[AFX_GLOBAL_DATA::GetITaskbarList3](#getitaskbarlist3)|ITaskBarList3 インターフェイスへのポインターを作成し、グローバル データに格納します。|  
-|[AFX_GLOBAL_DATA::GetNonClientMetrics](#getnonclientmetrics)|最小化されていないウィンドウの非クライアント領域に関連付けられたメトリックを取得します。|  
-|[AFX_GLOBAL_DATA::GetShellAutohideBars](#getshellautohidebars)|シェルの自動非表示バーの位置を決定します。|  
-|[AFX_GLOBAL_DATA::GetTextHeight](#gettextheight)|現在のフォントのテキスト文字の高さを取得します。|  
-|[AFX_GLOBAL_DATA::GetWICFactory](#getwicfactory)|グローバル データに格納されている `IWICImagingFactory` インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。|  
-|[AFX_GLOBAL_DATA::GetWriteFactory](#getwritefactory)|グローバル データに格納されている `IDWriteFactory` インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。|  
-|[AFX_GLOBAL_DATA::IsD2DInitialized](#isd2dinitialized)|`D2D`、 `DirectWrite`、および `WIC` の各ファクトリを初期化します。 このメソッドは、メイン ウィンドウが初期化される前に呼び出します。|  
-|[AFX_GLOBAL_DATA::Is32BitIcons](#is32biticons)|定義済みの 32 ビット アイコンがサポートされているかどうかを示します。|  
-|[AFX_GLOBAL_DATA::IsD2DInitialized](#isd2dinitialized)|`D2D` が初期化されているかどうかを調べます。|  
-|[AFX_GLOBAL_DATA::IsDwmCompositionEnabled](#isdwmcompositionenabled)|Windows の [DwmIsCompositionEnabled](http://msdn.microsoft.com/library/windows/desktop/aa969518) のメソッドを簡単な方法で呼び出すことができます。|  
-|[AFX_GLOBAL_DATA::IsHighContrastMode](#ishighcontrastmode)|イメージが現在、ハイ コントラストで表示されているかどうかを判定します。|  
-|[AFX_GLOBAL_DATA::OnSettingChange](#onsettingchange)|デスクトップのメニュー アニメーションとタスクバーの自動非表示機能の現在の状態を検出します。|  
-|[AFX_GLOBAL_DATA::RegisterWindowClass](#registerwindowclass)|指定された MFC ウィンドウ クラスを登録します。|  
-|[AFX_GLOBAL_DATA::ReleaseTaskBarRefs](#releasetaskbarrefs)|GetITaskbarList メソッドおよび GetITaskbarList3 メソッドを通じて取得されたインターフェイスを解放します。|  
-|[AFX_GLOBAL_DATA::Resume](#resume)|Windows の [テーマと視覚スタイル](https://msdn.microsoft.com/library/windows/desktop/hh270423.aspx)をサポートするメソッドにアクセスする内部関数ポインターを再初期化します。|  
-|[AFX_GLOBAL_DATA::SetLayeredAttrib](#setlayeredattrib)|Windows の [SetLayeredWindowAttributes](http://msdn.microsoft.com/library/windows/desktop/ms633540) メソッドを簡単な方法で呼び出すことができます。|  
-|[AFX_GLOBAL_DATA::SetMenuFont](#setmenufont)|指定された論理フォントを作成します。|  
-|[AFX_GLOBAL_DATA::ShellCreateItemFromParsingName](#shellcreateitemfromparsingname)|解析名からシェル項目オブジェクトを作成して初期化します。|  
-|[AFX_GLOBAL_DATA::UpdateFonts](#updatefonts)|フレームワークにより使用される論理フォントを再初期化します。|  
-|[AFX_GLOBAL_DATA::UpdateSysColors](#updatesyscolors)|フレームワークで使用される色、色深度、ブラシ、ペン、およびイメージを初期化します。|  
+|[AFX_GLOBAL_DATA::CleanUp](#cleanup)|Releases resources that are allocated by the framework, such as brushes, fonts, and DLLs.|  
+|[AFX_GLOBAL_DATA::D2D1MakeRotateMatrix](#d2d1makerotatematrix)|Creates a rotation transformation that rotates by a specified angle around a specified point.|  
+|[AFX_GLOBAL_DATA::DrawParentBackground](#drawparentbackground)|Draws the background of a control's parent in the specified area.|  
+|[AFX_GLOBAL_DATA::DrawTextOnGlass](#drawtextonglass)|Draws the specified text in the visual style of the specified theme.|  
+|[AFX_GLOBAL_DATA::ExcludeTag](#excludetag)|Removes the specified XML tag pair from a specified buffer.|  
+|[AFX_GLOBAL_DATA::GetColor](#getcolor)|Retrieves the current color of the specified user interface element.|  
+|[AFX_GLOBAL_DATA::GetDirect2dFactory](#getdirect2dfactory)|Returns a pointer to the `ID2D1Factory` interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.|  
+|[AFX_GLOBAL_DATA::GetHandCursor](#gethandcursor)|Retrieves the predefined cursor that resembles a hand and whose identifier is `IDC_HAND`.|  
+|[AFX_GLOBAL_DATA::GetITaskbarList](#getitaskbarlist)|Creates and stores in the global data a pointer to ITaskBarList interface.|  
+|[AFX_GLOBAL_DATA::GetITaskbarList3](#getitaskbarlist3)|Creates and stores in the global data a pointer to ITaskBarList3 interface.|  
+|[AFX_GLOBAL_DATA::GetNonClientMetrics](#getnonclientmetrics)|Retrieves the metrics associated with the nonclient area of nonminimized windows.|  
+|[AFX_GLOBAL_DATA::GetShellAutohideBars](#getshellautohidebars)|Determines positions of Shell auto hide bars.|  
+|[AFX_GLOBAL_DATA::GetTextHeight](#gettextheight)|Retrieves the height of text characters in the current font.|  
+|[AFX_GLOBAL_DATA::GetWICFactory](#getwicfactory)|Returns a pointer to the `IWICImagingFactory` interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.|  
+|[AFX_GLOBAL_DATA::GetWriteFactory](#getwritefactory)|Returns a pointer to the `IDWriteFactory` interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.|  
+|[AFX_GLOBAL_DATA::IsD2DInitialized](#isd2dinitialized)|Initializes `D2D`, `DirectWrite`, and `WIC` factories. Call this method before the main window is initialized.|  
+|[AFX_GLOBAL_DATA::Is32BitIcons](#is32biticons)|Indicates whether predefined 32-bit icons are supported.|  
+|[AFX_GLOBAL_DATA::IsD2DInitialized](#isd2dinitialized)|Determines whether the `D2D` was initialized.|  
+|[AFX_GLOBAL_DATA::IsDwmCompositionEnabled](#isdwmcompositionenabled)|Provides a simple way to call the Windows [DwmIsCompositionEnabled](http://msdn.microsoft.com/library/windows/desktop/aa969518) method.|  
+|[AFX_GLOBAL_DATA::IsHighContrastMode](#ishighcontrastmode)|Indicates whether images are currently displayed in high contrast.|  
+|[AFX_GLOBAL_DATA::OnSettingChange](#onsettingchange)|Detects the current state of the desktop's menu animation and taskbar autohide features.|  
+|[AFX_GLOBAL_DATA::RegisterWindowClass](#registerwindowclass)|Registers the specified MFC window class.|  
+|[AFX_GLOBAL_DATA::ReleaseTaskBarRefs](#releasetaskbarrefs)|Releases interfaces obtained through GetITaskbarList and GetITaskbarList3 methods.|  
+|[AFX_GLOBAL_DATA::Resume](#resume)|Reinitializes internal function pointers that access methods that support Windows [themes and visual styles](https://msdn.microsoft.com/library/windows/desktop/hh270423.aspx).|  
+|[AFX_GLOBAL_DATA::SetLayeredAttrib](#setlayeredattrib)|Provides a simple way to call the Windows [SetLayeredWindowAttributes](http://msdn.microsoft.com/library/windows/desktop/ms633540) method.|  
+|[AFX_GLOBAL_DATA::SetMenuFont](#setmenufont)|Creates the specified logical font.|  
+|[AFX_GLOBAL_DATA::ShellCreateItemFromParsingName](#shellcreateitemfromparsingname)|Creates and initializes a Shell item object from a parsing name.|  
+|[AFX_GLOBAL_DATA::UpdateFonts](#updatefonts)|Reintializes the logical fonts that are used by the framework.|  
+|[AFX_GLOBAL_DATA::UpdateSysColors](#updatesyscolors)|Initializes the colors, color depth, brushes, pens, and images that are used by the framework.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[AFX_GLOBAL_DATA::EnableAccessibilitySupport](#enableaccessibilitysupport)|Microsoft Active Accessibility のサポートを有効または無効にします。 Active Accessibility は、ユーザー インターフェイス要素に関する情報を公開するための信頼できる方法を提供します。|  
-|[AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport)|Microsoft Active Accessibility のサポートが有効かどうかを示します。|  
-|[AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable](#iswindowslayersupportavailable)|オペレーティング システムがレイヤード ウィンドウをサポートするかどうかを示します。|  
+|[AFX_GLOBAL_DATA::EnableAccessibilitySupport](#enableaccessibilitysupport)|Enables or disables Microsoft Active Accessibility support. Active Accessibility provides reliable methods for exposing information about user interface elements.|  
+|[AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport)|Indicates whether Microsoft Active Accessibility support is enabled.|  
+|[AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable](#iswindowslayersupportavailable)|Indicates whether the operating system supports layered windows.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[AFX_GLOBAL_DATA::bIsOSAlphaBlendingSupport](#bisosalphablendingsupport)|現在のオペレーティング システムがアルファ ブレンドをサポートするかどうかを示します。|  
-|[AFX_GLOBAL_DATA::bIsWindows7](#biswindows7)|アプリケーションが Windows 7 OS 以上で実行されているかどうかを示します。|  
-|[AFX_GLOBAL_DATA::clrActiveCaptionGradient](#clractivecaptiongradient)|アクティブなキャプションのグラデーションの色を指定します。 通常、ドッキング ペインで使用されます。|  
-|[AFX_GLOBAL_DATA::clrInactiveCaptionGradient](#clrinactivecaptiongradient)|アクティブでないキャプションのグラデーションの色を指定します。 通常、ドッキング ペインで使用されます。|  
-|[AFX_GLOBAL_DATA::m_bUseBuiltIn32BitIcons](#m_busebuiltin32biticons)|事前定義された 32 ビット カラー アイコンと低解像度のアイコンのどちらをフレームワークで使用するかを指定します。|  
-|[AFX_GLOBAL_DATA::m_bUseSystemFont](#m_busesystemfont)|メニュー、ツール バー、およびリボンに対してシステム フォントが使用されるかどうかを示します。|  
-|[AFX_GLOBAL_DATA::m_hcurHand](#m_hcurhand)|手の形のカーソルのハンドルを格納します。|  
-|[AFX_GLOBAL_DATA::m_hcurStretch](#m_hcurstretch)|水平方向の伸縮カーソルのハンドルを格納します。|  
-|[AFX_GLOBAL_DATA::m_hcurStretchVert](#m_hcurstretchvert)|垂直方向の伸縮カーソルのハンドルを格納します。|  
-|[AFX_GLOBAL_DATA::m_hiconTool](#m_hicontool)|ツール アイコンのハンドルを格納します。|  
-|[AFX_GLOBAL_DATA::m_nAutoHideToolBarMargin](#m_nautohidetoolbarmargin)|左端の自動的に隠すツール バーからドッキング バーの左側までのオフセットを指定します。|  
-|[AFX_GLOBAL_DATA::m_nAutoHideToolBarSpacing](#m_nautohidetoolbarspacing)|自動的に隠すツール バーの間の間隔を指定します。|  
-|[AFX_GLOBAL_DATA::m_nDragFrameThicknessDock](#m_ndragframethicknessdock)|ドッキング状態を知らせるのに使用するドラッグ フレームの幅を指定します。|  
-|[AFX_GLOBAL_DATA::m_nDragFrameThicknessFloat](#m_ndragframethicknessfloat)|フローティング状態を知らせるのに使用するドラッグ フレームの幅を指定します。|  
+|[AFX_GLOBAL_DATA::bIsOSAlphaBlendingSupport](#bisosalphablendingsupport)|Indicates whether the current operating system supports alpha blending.|  
+|[AFX_GLOBAL_DATA::bIsWindows7](#biswindows7)|Indicates whether the application is being executed under Windows 7 OS or higher|  
+|[AFX_GLOBAL_DATA::clrActiveCaptionGradient](#clractivecaptiongradient)|Specifies gradient color of active caption. Generally used for docking panes.|  
+|[AFX_GLOBAL_DATA::clrInactiveCaptionGradient](#clrinactivecaptiongradient)|Specifies gradient color of inactive active caption. Generally used for docking panes.|  
+|[AFX_GLOBAL_DATA::m_bUseBuiltIn32BitIcons](#m_busebuiltin32biticons)|Indicates whether the framework uses predefined 32-bit color icons or icons of a lower resolution.|  
+|[AFX_GLOBAL_DATA::m_bUseSystemFont](#m_busesystemfont)|Indicates whether a system font is used for menus, toolbars, and ribbons.|  
+|[AFX_GLOBAL_DATA::m_hcurHand](#m_hcurhand)|Stores the handle for the hand cursor.|  
+|[AFX_GLOBAL_DATA::m_hcurStretch](#m_hcurstretch)|Stores the handle for the horizontal stretch cursor.|  
+|[AFX_GLOBAL_DATA::m_hcurStretchVert](#m_hcurstretchvert)|Stores the handle for the vertical stretch cursor.|  
+|[AFX_GLOBAL_DATA::m_hiconTool](#m_hicontool)|Stores the handle for the tool icon.|  
+|[AFX_GLOBAL_DATA::m_nAutoHideToolBarMargin](#m_nautohidetoolbarmargin)|Specifies the offset from the leftmost autohide toolbar to the left side of the docking bar.|  
+|[AFX_GLOBAL_DATA::m_nAutoHideToolBarSpacing](#m_nautohidetoolbarspacing)|Specifies the gap between autohide toolbars.|  
+|[AFX_GLOBAL_DATA::m_nDragFrameThicknessDock](#m_ndragframethicknessdock)|Specifies the thickness of the drag frame that is used to communicate the docked state.|  
+|[AFX_GLOBAL_DATA::m_nDragFrameThicknessFloat](#m_ndragframethicknessfloat)|Specifies the thickness of the drag frame that is used to communicate the floating state.|  
   
-### <a name="remarks"></a>コメント  
- `AFX_GLOBAL_DATA` 構造体内のデータのほとんどは、アプリケーションの起動時に初期化されます。  
+### <a name="remarks"></a>Remarks  
+ Most of the data in the `AFX_GLOBAL_DATA` structure is initialized when your application starts.  
   
-### <a name="inheritance-hierarchy"></a>継承階層  
+### <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `AFX_GLOBAL_DATA`   
   
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxglobals.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxglobals.h  
   
-### <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
+### <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)
 
 
-## <a name="bisosalphablendingsupport"></a>AFX_GLOBAL_DATA::bIsOSAlphaBlendingSupport
-オペレーティング システムがアルファ ブレンドをサポートしているかどうかを示します。  
+## <a name="bisosalphablendingsupport"></a> AFX_GLOBAL_DATA::bIsOSAlphaBlendingSupport
+Indicates whether the operating system supports alpha blending.  
   
   
 ```  
 BOOL  bIsOSAlphaBlendingSupport;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `TRUE`アルファ ブレンドはサポートされていることを示します。それ以外の場合、`FALSE`です。  
+### <a name="remarks"></a>Remarks  
+ `TRUE` indicates alpha blending is supported; otherwise, `FALSE`.  
   
 
-## <a name="cleanup"></a>AFX_GLOBAL_DATA::CleanUp
-ブラシ、フォント、DLL など、フレームワークにより割り当てられたリソースを解放します。  
+## <a name="cleanup"></a> AFX_GLOBAL_DATA::CleanUp
+Releases resources that are allocated by the framework, such as brushes, fonts, and DLLs.  
   
   
 ```  
 void CleanUp();
 ```  
-## <a name="d2d1makerotatematrix"></a>AFX_GLOBAL_DATA::D2D1MakeRotateMatrix
-指定した点を中心に指定した角度ずつ回転する回転変換を作成します。  
+## <a name="d2d1makerotatematrix"></a> AFX_GLOBAL_DATA::D2D1MakeRotateMatrix
+Creates a rotation transformation that rotates by a specified angle around a specified point.  
   
   
 ```  
@@ -165,21 +165,21 @@ HRESULT D2D1MakeRotateMatrix(
     D2D1_MATRIX_3X2_F *matrix);
 ```  
   
-### <a name="parameters"></a>パラメーター   
+### <a name="parameters"></a>Parameters   
  `angle`  
- 時計回りの回転角度 (度単位)。  
+ The clockwise rotation angle, in degrees.  
   
  `center`  
- 回転の中心点。  
+ The point about which to rotate.  
   
  `matrix`  
- このメソッドが戻るとき、新しい回転変換を格納します。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains the new rotation transformation. You must allocate storage for this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合、またはエラー値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns S_OK if successful, or an error value otherwise.  
   
-## <a name="drawparentbackground"></a>AFX_GLOBAL_DATA::DrawParentBackground
-指定領域にコントロールの親の背景を描画します。  
+## <a name="drawparentbackground"></a> AFX_GLOBAL_DATA::DrawParentBackground
+Draws the background of a control's parent in the specified area.  
   
   
 ```  
@@ -189,21 +189,21 @@ BOOL DrawParentBackground(
     LPRECT lpRect = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `pWnd`  
- コントロールのウィンドウへのポインター。  
+### <a name="parameters"></a>Parameters   
+ [in] `pWnd`  
+ Pointer to a control's window.  
   
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+ [in] `pDC`  
+ Pointer to a device context.  
   
- [入力] `lpRect`  
- 描画する領域に外接する四角形を指すポインター。 既定値は `NULL` です。  
+ [in] `lpRect`  
+ Pointer to a rectangle that bounds the area to draw. The default value is `NULL`.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method is successful; otherwise, `FALSE`.  
   
-## <a name="drawtextonglass"></a>AFX_GLOBAL_DATA::DrawTextOnGlass
-指定されたテーマの視覚スタイルで、指定されたテキストを描画します。  
+## <a name="drawtextonglass"></a> AFX_GLOBAL_DATA::DrawTextOnGlass
+Draws the specified text in the visual style of the specified theme.  
   
   
 ```  
@@ -219,77 +219,77 @@ BOOL DrawTextOnGlass(
     COLORREF clrText = (COLORREF)-1);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `hTheme`  
- ウィンドウのテーマ データのハンドル、または `NULL`。 このパラメーターが `NULL` ではなく、テーマがサポートされている場合、フレームワークは、指定されたテーマを使用してテキストを描画します。 それ以外の場合、フレームワークは、テーマを使用せずにテキストを描画します。  
+### <a name="parameters"></a>Parameters   
+ [in] `hTheme`  
+ Handle to the theme data of a window, or `NULL`. The framework uses the specified theme to draw the text if this parameter is not `NULL` and themes are supported. Otherwise, the framework does not use a theme to draw the text.  
   
- [OpenThemeData](http://msdn.microsoft.com/library/windows/desktop/bb759821) メソッドを使用して `HTHEME`を作成します。  
+ Use the [OpenThemeData](http://msdn.microsoft.com/library/windows/desktop/bb759821) method to create an `HTHEME`.  
   
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+ [in] `pDC`  
+ Pointer to a device context.  
   
- [入力] `iPartId`  
- 目的のテキストの外観を備えたコントロールのパーツ。 詳細については、「 [Parts and States (パーツと状態)](http://msdn.microsoft.com/library/windows/desktop/bb773210)」の表の「Parts (パーツ)」列を参照してください。 この値が 0 の場合、テキストは既定のフォント、またはデバイス コンテキストに選択されているフォントで描画されます。  
+ [in] `iPartId`  
+ The control part that has the desired text appearance. For more information, see the Parts column of the table in [Parts and States](http://msdn.microsoft.com/library/windows/desktop/bb773210). If this value is 0, the text is drawn in the default font, or a font selected into the device context.  
   
- [入力] `iStateId`  
- 目的のテキストの外観を備えたコントロールの状態。 詳細については、「 [Parts and States (パーツと状態)](http://msdn.microsoft.com/library/windows/desktop/bb773210)」の表の「States (状態)」列を参照してください。  
+ [in] `iStateId`  
+ The control state that has the desired text appearance. For more information, see the States column of the table in [Parts and States](http://msdn.microsoft.com/library/windows/desktop/bb773210).  
   
- [入力] `strText`  
- 描画するテキスト。  
+ [in] `strText`  
+ The text to draw.  
   
- [入力] `rect`  
- 指定されたテキストが描画される領域の境界。  
+ [in] `rect`  
+ The boundary of the area in which the specified text is drawn.  
   
- [入力] `dwFlags`  
- 指定されたテキストの描画方法を指定するフラグのビットごとの組み合わせ (OR)。  
+ [in] `dwFlags`  
+ A bitwise combination (OR) of flags that specify how the specified text is drawn.  
   
- 場合、`hTheme`パラメーターは`NULL`テーマがサポートされているし、有効になっていない場合や、`nFormat`のパラメーター、 [CDC::DrawText](../../mfc/reference/cdc-class.md#drawtext)メソッドが有効なフラグについて説明します。 テーマがサポートされている場合は、 `dwFlags` DrawThemeTextEx [メソッドの](http://msdn.microsoft.com/library/windows/desktop/bb773317) パラメーターで有効なフラグを記述します。  
+ If the `hTheme` parameter is `NULL` or if themes are not supported and enabled, the `nFormat` parameter of the [CDC::DrawText](../../mfc/reference/cdc-class.md#drawtext) method describes the valid flags. If themes are supported, the `dwFlags` parameter of the [DrawThemeTextEx](http://msdn.microsoft.com/library/windows/desktop/bb773317) method describes the valid flags.  
   
- [入力] `nGlowSize`  
- 指定されたテキストを描画する前に背景に描画される光彩効果のサイズ。 既定値は 0 です。  
+ [in] `nGlowSize`  
+ The size of a glow effect that is drawn on the background before drawing the specified text. The default value is 0.  
   
- [入力] `clrText`  
- 指定されたテキストの描画に使用される色。 既定値は既定の色です。  
+ [in] `clrText`  
+ The color in which the specified text is drawn. The default value is the default color.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`指定したテキストの描画にテーマを使用する場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if a theme is used to draw the specified text; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- テーマは、アプリケーションの視覚スタイルを定義します。 `hTheme` パラメーターが `NULL`の場合、 [DrawThemeTextEx](http://msdn.microsoft.com/library/windows/desktop/bb773317) メソッドがサポートされていない場合、または [デスクトップ ウィンドウ マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa969540) (DWM) の構成が無効になっている場合は、テキストの描画にテーマが使用されません。  
+### <a name="remarks"></a>Remarks  
+ A theme defines the visual style of an application. A theme is not used to draw the text if the `hTheme` parameter is `NULL`, or if the [DrawThemeTextEx](http://msdn.microsoft.com/library/windows/desktop/bb773317) method is not supported, or if [Desktop Window Manager](http://msdn.microsoft.com/library/windows/desktop/aa969540) (DWM) composition is disabled.  
   
-### <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
+### <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
  [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)   
  [Parts and States](http://msdn.microsoft.com/library/windows/desktop/bb773210)   
  [CDC::DrawText](../../mfc/reference/cdc-class.md#drawtext)   
  [DrawThemeTextEx](http://msdn.microsoft.com/library/windows/desktop/bb773317)   
- [デスクトップ ウィンドウ マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa969540)   
- [有効化と制御 DWM の構成](http://msdn.microsoft.com/library/windows/desktop/aa969538)
+ [Desktop Window Manager](http://msdn.microsoft.com/library/windows/desktop/aa969540)   
+ [Enable and Control DWM Composition](http://msdn.microsoft.com/library/windows/desktop/aa969538)
 
-## <a name="enableaccessibilitysupport"></a>AFX_GLOBAL_DATA::EnableAccessibilitySupport
-Microsoft Active Accessibility のサポートを有効または無効にします。  
+## <a name="enableaccessibilitysupport"></a> AFX_GLOBAL_DATA::EnableAccessibilitySupport
+Enables or disables Microsoft Active Accessibility support.  
   
   
 ```  
 void EnableAccessibilitySupport(BOOL bEnable=TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `bEnable`  
- `TRUE`ユーザー補助のサポートを有効にするには`FALSE` accessibility のサポートを無効にします。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters   
+ [in] `bEnable`  
+ `TRUE` to enable accessibility support; `FALSE` to disable accessibility support. The default value is `TRUE`.  
   
-### <a name="remarks"></a>コメント  
- Active Accessibility は、により、プログラムと Windows オペレーティング システムが支援技術製品と共に使用を改善する COM ベース テクノロジです。 これは、ユーザー インターフェイス要素に関する情報を公開するための信頼性の高いメソッドを提供します。 ただし、Microsoft UI オートメーションと呼ばれる新しいユーザー補助モデルでは、使用できるようになりました。 2 つのテクノロジの比較を参照してください。 [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)です。  
+### <a name="remarks"></a>Remarks  
+ Active Accessibility is a COM-based technology that improves the way programs and the Windows operating system work together with assistive technology products. It provides reliable methods for exposing information about user interface elements. However, a newer accessibility model called Microsoft UI Automation is now available. For a comparison of the two technologies, see [UI Automation and Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility).  
   
- 使用して、 [AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport) Microsoft Active Accessibility のサポートが有効になっているかどうかを調べます。  
+ Use the [AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport) method to determine whether Microsoft Active Accessibility support is enabled.  
   
  
-### <a name="see-also"></a>関連項目  
- [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)   
+### <a name="see-also"></a>See Also  
+ [UI Automation and Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)   
  [AFX_GLOBAL_DATA::IsAccessibilitySupport](#isaccessibilitysupport)
 
-## <a name="excludetag"></a>AFX_GLOBAL_DATA::ExcludeTag
-指定された XML タグ ペアを、指定されたバッファーから削除します。  
+## <a name="excludetag"></a> AFX_GLOBAL_DATA::ExcludeTag
+Removes the specified XML tag pair from a specified buffer.  
   
   
 ```  
@@ -300,28 +300,28 @@ BOOL ExcludeTag(
     BOOL bIsCharsList = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `strBuffer`  
- テキストのバッファー。  
+### <a name="parameters"></a>Parameters   
+ [in] `strBuffer`  
+ A buffer of text.  
   
- [入力] `lpszTag`  
- タグと終了 XML タグのペアの名前。  
+ [in] `lpszTag`  
+ The name of a pair of opening and closing XML tags.  
   
- [出力] `strTag`  
- このメソッドが戻るとき、`strTag`パラメーターには間にある開始タグと終了 XML タグによってというテキストが含まれています、`lpszTag`パラメーター。 先頭または末尾の空白は結果から除去します。  
+ [out] `strTag`  
+ When this method returns, the `strTag` parameter contains the text that is between the opening and closing XML tags that are named by the `lpszTag` parameter. Any leading or trailing whitespace is trimmed from the result.  
   
- [入力] `bIsCharsList`  
- `TRUE`記号のエスケープ文字を変換する、`strTag`パラメーターに実際のエスケープ文字です。`FALSE`変換を実行しないことです。既定値は`FALSE`します。 詳細については、「解説」を参照してください。  
+ [in] `bIsCharsList`  
+ `TRUE` to convert symbols for escape characters in the `strTag` parameter into actual escape characters; `FALSE` not to perform the conversion.The default value is `FALSE`. For more information, see Remarks.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method is successful; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- XML タグ ペアから成るタグと終了を開始と指定したバッファー内のテキストの実行の終了を示すタグをという名前です。 `strBuffer`パラメーターは、バッファーを指定し、`lpszTag`パラメーターが XML タグの名前を指定します。  
+### <a name="remarks"></a>Remarks  
+ An XML tag pair consists of named opening and closing tags that indicate the start and end of a run of text in the specified buffer. The `strBuffer` parameter specifies the buffer, and the `lpszTag` parameter specifies the name of the XML tags.  
   
- 次の表に、記号を使用して、指定したバッファー内のエスケープ文字のセットをエンコードします。 指定`TRUE`の`bIsCharsList`内のシンボルを変換するパラメーター、`strTag`実際のエスケープ文字のパラメーターです。 次の表には、 [_T()](../../c-runtime-library/data-type-mappings.md)シンボルを指定して、文字の文字列をエスケープするマクロです。  
+ Use the symbols in the following table to encode a set of escape characters in the specified buffer. Specify `TRUE` for the `bIsCharsList` parameter to convert the symbols in the `strTag` parameter into actual escape characters. The following table uses the [_T()](../../c-runtime-library/data-type-mappings.md) macro to specify the symbol and escape character strings.  
   
-|シンボル|エスケープ文字|  
+|Symbol|Escape character|  
 |------------|----------------------|  
 |_T("\\\t")|_T("\t")|  
 |_T("\\\n")|_T("\n")|  
@@ -331,110 +331,110 @@ BOOL ExcludeTag(
 |_T("GT")|_T(">")|  
 |_T("AMP")|_T("&")|  
   
-## <a name="getcolor"></a>AFX_GLOBAL_DATA::GetColor
-指定されたユーザー インターフェイス要素の現在の色を取得します。  
+## <a name="getcolor"></a> AFX_GLOBAL_DATA::GetColor
+Retrieves the current color of the specified user interface element.  
   
   
 ```  
 COLORREF GetColor(int nColor);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `nColor`  
- 色を取得するユーザー インターフェイス要素を指定する値。 有効な値の一覧は、次を参照してください。、`nIndex`のパラメーター、 [GetSysColor](http://msdn.microsoft.com/library/windows/desktop/ms724371)メソッドです。  
+### <a name="parameters"></a>Parameters   
+ [in] `nColor`  
+ A value that specifies a user interface element whose color is retrieved. For a list of valid values, see the `nIndex` parameter of the [GetSysColor](http://msdn.microsoft.com/library/windows/desktop/ms724371) method.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたユーザー インターフェイス要素の RGB 色の値。 詳細については、「解説」を参照してください。  
+### <a name="return-value"></a>Return Value  
+ The RGB color value of the specified user interface element. For more information, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- 場合、`nColor`パラメーターが範囲外には、戻り値は 0 です。 0 も有効な RGB 値であるために、システム カラーが現在のオペレーティング システムでサポートされているかどうかを決定するのにこのメソッドを使用することはできません。 代わりに、使用、 [GetSysColorBrush](http://msdn.microsoft.com/library/windows/desktop/dd144927)返すメソッドを`NULL`色がサポートされていない場合。  
+### <a name="remarks"></a>Remarks  
+ If the `nColor` parameter is out of range, the return value is zero. Because zero is also a valid RGB value, you cannot use this method to determine whether a system color is supported by the current operating system. Instead, use the [GetSysColorBrush](http://msdn.microsoft.com/library/windows/desktop/dd144927) method, which returns `NULL` if the color is not supported.  
   
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>See Also  
 
- [GetSysColor 関数](http://msdn.microsoft.com/library/windows/desktop/ms724371)   
+ [GetSysColor Function](http://msdn.microsoft.com/library/windows/desktop/ms724371)   
  [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)   
  [GetSysColorBrush](http://msdn.microsoft.com/library/windows/desktop/dd144927)
 
-## <a name="getdirect2dfactory"></a>AFX_GLOBAL_DATA::GetDirect2dFactory
- グローバル データに格納されている ID2D1Factory インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。  
+## <a name="getdirect2dfactory"></a> AFX_GLOBAL_DATA::GetDirect2dFactory
+ Returns a pointer to the ID2D1Factory interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.  
   
   
 ```  
 ID2D1Factory* GetDirect2dFactory();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ID2D1Factory インターフェイスの場合は、ファクトリの作成が成功すると、または作成が失敗した場合は NULL または現在のオペレーティング システムへのポインター D2D のサポートはありません。  
+### <a name="return-value"></a>Return Value  
+ A pointer to ID2D1Factory interface if creation of a factory succeeds, or NULL if creation fails or current Operation System don't have D2D support.  
   
-## <a name="gethandcursor"></a>AFX_GLOBAL_DATA::GetHandCursor
-手の形をした組み込みカーソル (識別子は `IDC_HAND`) を取得します。  
+## <a name="gethandcursor"></a>  AFX_GLOBAL_DATA::GetHandCursor
+Retrieves the predefined cursor that resembles a hand and whose identifier is `IDC_HAND`.  
   
   
 ```  
 HCURSOR GetHandCursor();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 手形カーソルのハンドル。  
+### <a name="return-value"></a>Return Value  
+ The handle of the hand cursor.  
 
-## <a name="getnonclientmetrics"></a>AFX_GLOBAL_DATA::GetNonClientMetrics
-最小化されていないウィンドウの非クライアント領域に関連付けられたメトリックを取得します。  
+## <a name="getnonclientmetrics"></a> AFX_GLOBAL_DATA::GetNonClientMetrics
+Retrieves the metrics associated with the nonclient area of nonminimized windows.  
   
   
 ```  
 BOOL GetNonClientMetrics(NONCLIENTMETRICS& info);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力、出力] `info`  
- A [NONCLIENTMETRICS](http://msdn.microsoft.com/library/windows/desktop/ff729175)構造を最小化されていないウィンドウの非クライアント領域に関連付けられている拡張可能なメトリックが含まれます。  
+### <a name="parameters"></a>Parameters   
+ [in, out] `info`  
+ A [NONCLIENTMETRICS](http://msdn.microsoft.com/library/windows/desktop/ff729175) structure that contains the scalable metrics associated with the nonclient area of a nonminimized window.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method succeeds; otherwise, `FALSE`.  
  
   
-### <a name="see-also"></a>関連項目   
- [NONCLIENTMETRICS 構造体](http://msdn.microsoft.com/library/windows/desktop/ff729175)
+### <a name="see-also"></a>See Also   
+ [NONCLIENTMETRICS Structure](http://msdn.microsoft.com/library/windows/desktop/ff729175)
 
-## <a name="gettextheight"></a>AFX_GLOBAL_DATA::GetTextHeight
- 現在のフォントのテキスト文字の高さを取得します。  
+## <a name="gettextheight"></a> AFX_GLOBAL_DATA::GetTextHeight
+ Retrieves the height of text characters in the current font.  
   
   
 ```  
 int GetTextHeight(BOOL bHorz = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `bHorz`  
- `TRUE`テキストを水平方向に実行すると、文字の高さを取得するには`FALSE`にテキストを垂直方向に実行すると、文字の高さを取得します。 既定値は `TRUE` です。  
+### <a name="parameters"></a>Parameters   
+ [in] `bHorz`  
+ `TRUE` to retrieve the height of characters when text runs horizontally; `FALSE` to retrieve the height of characters when text runs vertically. The default value is `TRUE`.  
   
-### <a name="return-value"></a>戻り値  
- そのベースラインから測定は、現在のフォントの高さ。  
+### <a name="return-value"></a>Return Value  
+ The height of the current font, which is measured from its ascender to its descender.  
   
-## <a name="getwicfactory"></a>AFX_GLOBAL_DATA::GetWICFactory
-グローバル データに格納されている IWICImagingFactory インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。  
+## <a name="getwicfactory"></a> AFX_GLOBAL_DATA::GetWICFactory
+Returns a pointer to the IWICImagingFactory interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.  
   
   
 ```  
 IWICImagingFactory* GetWICFactory();
 ```  
   
-### <a name="return-value"></a>戻り値  
- IWICImagingFactory インターフェイスの場合は、ファクトリの作成が成功すると、または作成が失敗した場合は NULL または現在のオペレーティング システムへのポインター WIC サポートはありません。  
+### <a name="return-value"></a>Return Value  
+ A pointer to IWICImagingFactory interface if creation of a factory succeeds, or NULL if creation fails or current Operation System don't have WIC support.  
   
-## <a name="getwritefactory"></a>AFX_GLOBAL_DATA::GetWriteFactory
-グローバル データに格納されている IDWriteFactory インターフェイスへのポインターを返します。 インターフェイスが初期化されていない場合は、既定のパラメーターでインターフェイスが作成されます。  
+## <a name="getwritefactory"></a> AFX_GLOBAL_DATA::GetWriteFactory
+Returns a pointer to the IDWriteFactory interface that is stored in the global data. If the interface is not initialized, it is created and has the default parameters.  
   
   
 ```  
 IDWriteFactory* GetWriteFactory();
 ```  
   
-### <a name="return-value"></a>戻り値  
- DirectWrite サポート IDWriteFactory インターフェイスの場合は、ファクトリの作成が成功すると、または作成が失敗した場合は NULL または現在のオペレーティング システムへのポインターがありません。  
+### <a name="return-value"></a>Return Value  
+ A pointer to IDWriteFactory interface if creation of a factory succeeds, or NULL if creation fails or current Operation System don't have DirectWrite support.  
  
-## <a name="initd2d"></a>AFX_GLOBAL_DATA::InitD2D
-D2D、DirectWrite、および WIC ファクトリを初期化します。 このメソッドは、メイン ウィンドウが初期化される前に呼び出します。  
+## <a name="initd2d"></a> AFX_GLOBAL_DATA::InitD2D
+Initializes D2D, DirectWrite, and WIC factories. Call this method before the main window is initialized.  
   
   
 ```  
@@ -443,18 +443,18 @@ BOOL InitD2D(
     DWRITE_FACTORY_TYPE writeFactoryType = DWRITE_FACTORY_TYPE_SHARED);
 ```  
   
-### <a name="parameters"></a>パラメーター   
+### <a name="parameters"></a>Parameters   
  `d2dFactoryType`  
- D2D ファクトリとリソースのスレッド モデルが作成されます。  
+ The threading model of the D2D factory and the resources it creates.  
   
  `writeFactoryType`  
- 書き込みのファクトリ オブジェクトが共有または分離されたかどうかを指定する値  
+ A value that specifies whether the write factory object will be shared or isolated  
   
-### <a name="return-value"></a>戻り値  
- ファクトリが存在したかどうか intilalizrd、FALSE、それ以外の場合は TRUE を返します  
+### <a name="return-value"></a>Return Value  
+ Returns TRUE if the factories were intilalizrd, FALSE - otherwise  
   
-## <a name="is32biticons"></a>AFX_GLOBAL_DATA::Is32BitIcons
-定義済みの 32 ビット アイコンがサポートされているかどうかを示します。  
+## <a name="is32biticons"></a> AFX_GLOBAL_DATA::Is32BitIcons
+Indicates whether predefined 32-bit icons are supported.  
   
   
 ```  
@@ -463,235 +463,235 @@ BOOL Is32BitIcons() const;
  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`定義済みの 32 ビット アイコンがサポートされています。 場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if predefined 32-bit icons are supported; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドが戻る`TRUE`フレームワークには、32 ビットの組み込みアイコンがサポートされている場合、オペレーティング システムは、16 ビット/ピクセル以上をサポートしている場合と画像がハイ コントラストで表示されていない場合。  
+### <a name="remarks"></a>Remarks  
+ This method returns `TRUE` if the framework supports 32-bit built-in icons, and if the operating system supports 16 bits per pixel or more, and if images are not displayed in high contrast.  
   
-## <a name="isaccessibilitysupport"></a>AFX_GLOBAL_DATA::IsAccessibilitySupport
-Microsoft Active Accessibility のサポートが有効かどうかを示します。  
+## <a name="isaccessibilitysupport"></a> AFX_GLOBAL_DATA::IsAccessibilitySupport
+Indicates whether Microsoft Active Accessibility support is enabled.  
   
   
 ```  
 BOOL IsAccessibilitySupport() const; 
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`ユーザー補助のサポートが有効である場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if accessibility support is enabled; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- Microsoft Active Accessibility は、アプリケーションにアクセスできるように、以前のソリューションをでした。 Microsoft UI オートメーションは Microsoft Windows の新しいユーザー補助モデルおよび支援技術製品のニーズに対応するためのものでは、自動テスト ツール   
+### <a name="remarks"></a>Remarks  
+ Microsoft Active Accessibility was the earlier solution for making applications accessible. Microsoft UI Automation is the new accessibility model for Microsoft Windows and is intended to address the needs of assistive technology products and automated testing tools.   
   
- 使用して、 [AFX_GLOBAL_DATA::EnableAccessibilitySupport](#enableaccessibilitysupport)メソッドを有効にするにまたは Active Accessibility のサポートを無効にします。  
+ Use the [AFX_GLOBAL_DATA::EnableAccessibilitySupport](#enableaccessibilitysupport) method to enable or disable Active Accessibility support.  
   
 
-### <a name="see-also"></a>関連項目  
- [UI オートメーションと Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)
+### <a name="see-also"></a>See Also  
+ [UI Automation and Microsoft Active Accessibility](/dotnet/framework/ui-automation/ui-automation-and-microsoft-active-accessibility)
 
-## <a name="isd2dinitialized"></a>AFX_GLOBAL_DATA::IsD2DInitialized
- D2D が初期化されたかどうかを決定します。  
+## <a name="isd2dinitialized"></a> AFX_GLOBAL_DATA::IsD2DInitialized
+ Determines whether the D2D was initialized  
   
   
 ```  
 BOOL IsD2DInitialized() const; 
 ```  
   
-### <a name="return-value"></a>戻り値  
- D2D の初期化された場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if D2D was initialized; otherwise FALSE.  
   
-## <a name="isdwmcompositionenabled"></a>AFX_GLOBAL_DATA::IsDwmCompositionEnabled
-Windows の [DwmIsCompositionEnabled](http://msdn.microsoft.com/library/windows/desktop/aa969518) のメソッドを簡単な方法で呼び出すことができます。  
+## <a name="isdwmcompositionenabled"></a> AFX_GLOBAL_DATA::IsDwmCompositionEnabled
+Provides a simple way to call the Windows [DwmIsCompositionEnabled](http://msdn.microsoft.com/library/windows/desktop/aa969518) method.  
   
   
 ```  
 BOOL IsDwmCompositionEnabled();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`場合[デスクトップ ウィンドウ マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa969540) (DWM) コンポジションが有効である、それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if [Desktop Window Manager](http://msdn.microsoft.com/library/windows/desktop/aa969540) (DWM) composition is enabled; otherwise, `FALSE`.  
   
-### <a name="see-also"></a>関連項目    
- [デスクトップ ウィンドウ マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa969540)   
- [有効化と制御 DWM の構成](http://msdn.microsoft.com/library/windows/desktop/aa969538)
+### <a name="see-also"></a>See Also    
+ [Desktop Window Manager](http://msdn.microsoft.com/library/windows/desktop/aa969540)   
+ [Enable and Control DWM Composition](http://msdn.microsoft.com/library/windows/desktop/aa969538)
 
-## <a name="ishighcontrastmode"></a>AFX_GLOBAL_DATA::IsHighContrastMode
- イメージが現在、ハイ コントラストで表示されているかどうかを判定します。    
+## <a name="ishighcontrastmode"></a> AFX_GLOBAL_DATA::IsHighContrastMode
+ Indicates whether images are currently displayed in high contrast.    
 ```  
 BOOL IsHighContrastMode() const; 
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`イメージが黒と白のハイ コントラスト モードで現在表示されている場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if images are currently displayed in black or white high contrast mode; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- 黒のハイ コントラスト モードでは、周縁が光源が白、背景が黒にします。 白いハイ コントラスト モード周縁が光源が黒、バック グラウンドは白です。  
+### <a name="remarks"></a>Remarks  
+ In black high contrast mode, edges facing the light are white and the background is black. In white high contrast mode, edges facing the light are black and the background is white.  
   
-## <a name="iswindowslayersupportavailable"></a>AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable
-オペレーティング システムがレイヤード ウィンドウをサポートするかどうかを示します。  
+## <a name="iswindowslayersupportavailable"></a> AFX_GLOBAL_DATA::IsWindowsLayerSupportAvailable
+Indicates whether the operating system supports layered windows.  
   
   
 ```  
 BOOL IsWindowsLayerSupportAvailable() const; 
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`レイヤード ウィンドウがサポートされています。 場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if layered windows are supported; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- レイヤード ウィンドウはサポートされている場合*スマート ドッキング*マーカーがレイヤード ウィンドウを使用します。  
+### <a name="remarks"></a>Remarks  
+ If layered windows are supported, *smart docking* markers use layered windows.  
   
-## <a name="m_busebuiltin32biticons"></a>AFX_GLOBAL_DATA::m_bUseBuiltIn32BitIcons
-事前定義された 32 ビット カラー アイコンと低解像度のアイコンのどちらをフレームワークで使用するかを指定します。  
+## <a name="m_busebuiltin32biticons"></a> AFX_GLOBAL_DATA::m_bUseBuiltIn32BitIcons
+Indicates whether the framework uses predefined 32-bit color icons or icons of a lower resolution.  
   
   
 ```  
 BOOL  m_bUseBuiltIn32BitIcons;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `TRUE`フレームワークが 32 ビット カラー アイコン; を使用することを指定します`FALSE`低解像度アイコンを指定します。 `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターにこのメンバーは初期化`TRUE`です。  
+### <a name="remarks"></a>Remarks  
+ `TRUE` specifies that the framework use 32-bit color icons; `FALSE` specifies lower resolution icons. The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to `TRUE`.  
   
- このメンバーは、アプリケーションの起動時に設定する必要があります。  
+ This member must be set at application startup.  
   
-## <a name="m_busesystemfont"></a>AFX_GLOBAL_DATA::m_bUseSystemFont
-メニュー、ツール バー、およびリボンに対してシステム フォントが使用されるかどうかを示します。  
+## <a name="m_busesystemfont"></a> AFX_GLOBAL_DATA::m_bUseSystemFont
+Indicates whether a system font is used for menus, toolbars, and ribbons.  
   
   
 ```  
 BOOL m_bUseSystemFont;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `TRUE`システム フォント; を使用することを指定します。それ以外の場合、`FALSE`です。 `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターにこのメンバーは初期化`FALSE`です。  
+### <a name="remarks"></a>Remarks  
+ `TRUE` specifies to use a system font; otherwise, `FALSE`. The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to `FALSE`.  
   
- このメンバーのテストは、使用するフォントを特定するために、フレームワークの唯一の方法ではありません。 `AFX_GLOBAL_DATA::UpdateFonts`メソッドは、メニューのツールバー、およびリボンに適用される使用できるどの visual スタイルを決定するのには、既定と代替手段のフォントもテストします。  
+ Testing this member is not the only way for the framework to determine the font to use. The `AFX_GLOBAL_DATA::UpdateFonts` method also tests default and alternative fonts to determine what visual styles are available to be applied to menus, toolbars, and ribbons.  
   
-## <a name="m_hcurhand"></a>AFX_GLOBAL_DATA::m_hcurHand
-手の形のカーソルのハンドルを格納します。  
+## <a name="m_hcurhand"></a> AFX_GLOBAL_DATA::m_hcurHand
+Stores the handle for the hand cursor.  
   
   
 ```  
 HCURSOR m_hcurHand;  
 ```  
   
-## <a name="m_hcurstretch"></a>AFX_GLOBAL_DATA::m_hcurStretch
-水平方向の伸縮カーソルのハンドルを格納します。  
+## <a name="m_hcurstretch"></a> AFX_GLOBAL_DATA::m_hcurStretch
+Stores the handle for the horizontal stretch cursor.  
   
   
 ```  
 HCURSOR m_hcurStretch;  
 ```  
 
-## <a name="m_hcurstretchvert"></a>AFX_GLOBAL_DATA::m_hcurStretchVert
-垂直方向の伸縮カーソルのハンドルを格納します。  
+## <a name="m_hcurstretchvert"></a> AFX_GLOBAL_DATA::m_hcurStretchVert
+Stores the handle for the vertical stretch cursor.  
   
   
 ```  
 HCURSOR m_hcurStretchVert;  
 ```  
   
-## <a name="m_hicontool"></a>AFX_GLOBAL_DATA::m_hiconTool
-ツール アイコンのハンドルを格納します。  
+## <a name="m_hicontool"></a> AFX_GLOBAL_DATA::m_hiconTool
+Stores the handle for the tool icon.  
   
   
 ```  
 HICON m_hiconTool;  
 ```  
-## <a name="m_nautohidetoolbarmargin"></a>AFX_GLOBAL_DATA::m_nAutoHideToolBarMargin
-左端自動的に隠すツールバーからドッキング バーの左側までのオフセットを指定します。  
+## <a name="m_nautohidetoolbarmargin"></a> AFX_GLOBAL_DATA::m_nAutoHideToolBarMargin
+Specifies the offset from the leftmost autohide toolbar to the left side of the dock bar.  
   
   
 ```  
 int  m_nAutoHideToolBarMargin;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターは、4 ピクセルにこのメンバーを初期化します。  
+### <a name="remarks"></a>Remarks  
+ The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to 4 pixels.  
   
-## <a name="m_nautohidetoolbarspacing"></a>AFX_GLOBAL_DATA::m_nAutoHideToolBarSpacing
-自動的に隠すツール バーの間の間隔を指定します。  
+## <a name="m_nautohidetoolbarspacing"></a> AFX_GLOBAL_DATA::m_nAutoHideToolBarSpacing
+Specifies the gap between autohide toolbars.  
   
   
 ```  
 int   m_nAutoHideToolBarSpacing;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターは、14 ピクセルにこのメンバーを初期化します。  
+### <a name="remarks"></a>Remarks  
+ The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to 14 pixels.  
   
-## <a name="m_ndragframethicknessdock"></a>AFX_GLOBAL_DATA::m_nDragFrameThicknessDock
+## <a name="m_ndragframethicknessdock"></a> AFX_GLOBAL_DATA::m_nDragFrameThicknessDock
 
-ドッキングされた状態を示すために使用するドラッグ フレームの太さを指定します。  
+Specifies the thickness of the drag frame that is used to indicate the docked state.  
   
   
 ```  
 int  m_nDragFrameThicknessDock;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターは、このメンバーを 3 ピクセルを初期化します。  
+### <a name="remarks"></a>Remarks  
+ The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to 3 pixels.  
   
-## <a name="m_ndragframethicknessfloat"></a>AFX_GLOBAL_DATA::m_nDragFrameThicknessFloat
-浮動小数点状態を示すために使用するドラッグ フレームの太さを指定します。  
+## <a name="m_ndragframethicknessfloat"></a> AFX_GLOBAL_DATA::m_nDragFrameThicknessFloat
+Specifies the thickness of the drag frame that is used to indicate the floating state.  
   
   
 ```  
 int  m_nDragFrameThicknessFloat;  
 ```  
   
-### <a name="remarks"></a>コメント  
- `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA`コンス トラクターは、4 ピクセルにこのメンバーを初期化します。  
+### <a name="remarks"></a>Remarks  
+ The `AFX_GLOBAL_DATA::AFX_GLOBAL_DATA` constructor initializes this member to 4 pixels.  
   
-## <a name="onsettingchange"></a>AFX_GLOBAL_DATA::OnSettingChange
-デスクトップのメニュー アニメーションとタスクバーの自動非表示機能の現在の状態を検出します。  
+## <a name="onsettingchange"></a> AFX_GLOBAL_DATA::OnSettingChange
+Detects the current state of the desktop's menu animation and taskbar autohide features.  
   
   
 ```  
 void OnSettingChange();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、ユーザーのデスクトップの特定の属性の状態をフレームワーク変数を設定します。 このメソッドは、メニューのアニメーション、メニューのフェード、およびタスク バーの自動非表示機能の現在の状態を検出します。  
+### <a name="remarks"></a>Remarks  
+ This method sets framework variables to the state of certain attributes of the user's desktop. This method detects the current state of the menu animation, menu fade, and task bar autohide features.  
   
-## <a name="registerwindowclass"></a>AFX_GLOBAL_DATA::RegisterWindowClass
-指定された MFC ウィンドウ クラスを登録します。  
+## <a name="registerwindowclass"></a> AFX_GLOBAL_DATA::RegisterWindowClass
+Registers the specified MFC window class.  
   
   
 ```  
 CString RegisterWindowClass(LPCTSTR lpszClassNamePrefix);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `lpszClassNamePrefix`  
- 登録ウィンドウ クラスの名前。  
+### <a name="parameters"></a>Parameters   
+ [in] `lpszClassNamePrefix`  
+ The name of the window class to register.  
   
-### <a name="return-value"></a>戻り値  
- このメソッドが成功した場合は、登録されているクラスの修飾名それ以外の場合、[リソース例外](http://msdn.microsoft.com/library/ddd99292-819b-4fa4-8371-b1954ed5856d)です。  
+### <a name="return-value"></a>Return Value  
+ The qualified name of the registered class if this method succeeds; otherwise, a [resource exception](http://msdn.microsoft.com/library/ddd99292-819b-4fa4-8371-b1954ed5856d).  
   
-### <a name="remarks"></a>コメント  
- 戻り値は、コロン区切りの一覧、`lpszClassNamePrefix`パラメーター文字列、および現在のアプリケーション インスタンスのハンドルを表す 16 進数文字列の識別子は IDC_ARROW; と背景のブラシの矢印カーソルであるアプリケーション カーソル。 MFC ウィンドウ クラスの登録の詳細については、次を参照してください。 [AfxRegisterClass](../../mfc/reference/application-information-and-management.md#afxregisterclass)です。  
+### <a name="remarks"></a>Remarks  
+ The return value is a colon-delimited list of the `lpszClassNamePrefix` parameter string, and the hexadecimal text representations of the handles of the current application instance; the application cursor, which is the arrow cursor whose identifier is IDC_ARROW; and the background brush. For more information about registering MFC window classes, see [AfxRegisterClass](../../mfc/reference/application-information-and-management.md#afxregisterclass).  
   
-### <a name="see-also"></a>関連項目    
+### <a name="see-also"></a>See Also    
  [AfxRegisterClass](../../mfc/reference/application-information-and-management.md#afxregisterclass)   
  [AfxThrowResourceException](../../mfc/reference/exception-processing.md#afxthrowresourceexception)
 
-## <a name="resume"></a>AFX_GLOBAL_DATA::Resume
- Windows テーマと視覚スタイルをサポートするメソッドにアクセスする内部関数ポインターを再初期化します。 
+## <a name="resume"></a> AFX_GLOBAL_DATA::Resume
+ Reinitializes internal function pointers that access methods that support Windows themes and visual styles. 
   
   
 ```  
 BOOL Resume();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。 デバッグ モードでは、このメソッドは、このメソッドが成功していないかどうかをアサートします。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method succeeds; otherwise, `FALSE`. In debug mode, this method asserts if this method is unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、フレームワークが受信すると、 [WM_POWERBROADCAST](http://msdn.microsoft.com/library/windows/desktop/aa373247)メッセージ。  
+### <a name="remarks"></a>Remarks  
+ This method is called when the framework receives the [WM_POWERBROADCAST](http://msdn.microsoft.com/library/windows/desktop/aa373247) message.  
   
-## <a name="setlayeredattrib"></a>AFX_GLOBAL_DATA::SetLayeredAttrib
-Windows の [SetLayeredWindowAttributes](http://msdn.microsoft.com/library/windows/desktop/ms633540) メソッドを簡単な方法で呼び出すことができます。  
+## <a name="setlayeredattrib"></a> AFX_GLOBAL_DATA::SetLayeredAttrib
+Provides a simple way to call the Windows [SetLayeredWindowAttributes](http://msdn.microsoft.com/library/windows/desktop/ms633540) method.  
   
   
 ```  
@@ -702,28 +702,28 @@ BOOL SetLayeredAttrib(
     DWORD dwFlags);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `hwnd`  
- レイヤード ウィンドウへのハンドルします。  
+### <a name="parameters"></a>Parameters   
+ [in] `hwnd`  
+ Handle to the layered window.  
   
- [入力] `crKey`  
- 透過色キーを[デスクトップ ウィンドウ マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa969540)レイヤード ウィンドウの作成に使用します。  
+ [in] `crKey`  
+ The transparency color key that the [Desktop Window Manager](http://msdn.microsoft.com/library/windows/desktop/aa969540) uses to compose the layered window.  
   
- [入力] `bAlpha`  
- レイヤード ウィンドウの不透明度を表すために使用するアルファ値。  
+ [in] `bAlpha`  
+ The alpha value that is used to describe the opacity of the layered window.  
   
- [入力] `dwFlags`  
- 使用するには、どのメソッド パラメーターを指定するフラグのビットごとの組み合わせ (OR)。 使用する LWA_COLORKEY の指定、`crKey`透過色としてパラメーター。 使用する LWA_ALPHA の指定、`bAlpha`レイヤード ウィンドウの不透明度を決定するパラメーターです。  
+ [in] `dwFlags`  
+ A bitwise combination (OR) of flags that specify which method parameters to use. Specify LWA_COLORKEY to use the `crKey` parameter as the transparency color. Specify LWA_ALPHA to use the `bAlpha` parameter to determine the opacity of the layered window.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。   
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method succeeds; otherwise, `FALSE`.   
  
-### <a name="see-also"></a>関連項目   
+### <a name="see-also"></a>See Also   
  [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)   
  [SetLayeredWindowAttributes](http://msdn.microsoft.com/library/windows/desktop/ms633540)
 
-## <a name="setmenufont"></a>AFX_GLOBAL_DATA::SetMenuFont
-指定された論理フォントを作成します。  
+## <a name="setmenufont"></a> AFX_GLOBAL_DATA::SetMenuFont
+Creates the specified logical font.  
   
   
 ```  
@@ -732,105 +732,105 @@ BOOL SetMenuFont(
     BOOL bHorz);
 ```  
   
-### <a name="parameters"></a>パラメーター   
- [入力] `lpLogFont`  
- フォントの属性を格納する構造体へのポインター。  
+### <a name="parameters"></a>Parameters   
+ [in] `lpLogFont`  
+ Pointer to a structure that contains the attributes of a font.  
   
- [入力] `bHorz`  
- `TRUE`テキストを水平方向に実行するよう指定するには`FALSE`にテキストを垂直方向に実行するよう指定します。  
+ [in] `bHorz`  
+ `TRUE` to specify that the text runs horizontally; `FALSE` to specify that the text runs vertically.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`このメソッドが成功した場合それ以外の場合、`FALSE`です。 デバッグ モードでは、このメソッドは、このメソッドが成功していないかどうかをアサートします。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if this method succeeds; otherwise, `FALSE`. In debug mode, this method asserts if this method is unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、水平通常フォントを下線の付いたフォントを作成し、既定のメニュー項目に使用される、太字のフォント。 このメソッドは、必要に応じて正規縦書きフォントを作成します。 論理フォントの詳細については、次を参照してください。 [CFont::CreateFontIndirect](../../mfc/reference/cfont-class.md#createfontindirect)です。  
+### <a name="remarks"></a>Remarks  
+ This method creates a horizontal regular font, an underlined font, and a bold font that is used in default menu items. This method optionally creates a regular vertical font. For more information about logical fonts, see [CFont::CreateFontIndirect](../../mfc/reference/cfont-class.md#createfontindirect).  
   
-## <a name="updatefonts"></a>AFX_GLOBAL_DATA::UpdateFonts
-フレームワークにより使用される論理フォントを再初期化します。  
+## <a name="updatefonts"></a> AFX_GLOBAL_DATA::UpdateFonts
+Reintializes the logical fonts that are used by the framework.  
   
   
 ```  
 void UpdateFonts();
 ```  
   
-### <a name="remarks"></a>コメント  
- 論理フォントの詳細については、次を参照してください。`CFont::CreateFontIndirect`です。  
+### <a name="remarks"></a>Remarks  
+ For more information about logical fonts, see `CFont::CreateFontIndirect`.  
   
-## <a name="updatesyscolors"></a>AFX_GLOBAL_DATA::UpdateSysColors
-フレームワークで使用される色、色深度、ブラシ、ペン、およびイメージを初期化します。  
+## <a name="updatesyscolors"></a> AFX_GLOBAL_DATA::UpdateSysColors
+Initializes the colors, color depth, brushes, pens, and images that are used by the framework.  
   
   
 ```  
 void UpdateSysColors();
 ```  
   
-## <a name="biswindows7"></a>AFX_GLOBAL_DATA::bIsWindows7
-Windows 7 またはそれ以降、アプリケーションが実行されているかどうかを示します。  
+## <a name="biswindows7"></a> AFX_GLOBAL_DATA::bIsWindows7
+Indicates whether the application is being executed under Windows 7 or higher.  
   
   
 ```  
 BOOL bIsWindows7;  
 ```  
   
-## <a name="clractivecaptiongradient"></a>AFX_GLOBAL_DATA::clrActiveCaptionGradient
-アクティブなキャプションのグラデーションの色を指定します。 通常、ドッキング ペインで使用されます。  
+## <a name="clractivecaptiongradient"></a> AFX_GLOBAL_DATA::clrActiveCaptionGradient
+Specifies the gradient color of the active caption. Generally used for docking panes.  
   
   
 ```  
 COLORREF clrActiveCaptionGradient;  
 ```  
   
-## <a name="clrinactivecaptiongradient"></a>AFX_GLOBAL_DATA::clrInactiveCaptionGradient
-非アクティブなキャプションのグラデーションの色を指定します。 通常、ドッキング ペインで使用されます。  
+## <a name="clrinactivecaptiongradient"></a> AFX_GLOBAL_DATA::clrInactiveCaptionGradient
+Specifies the gradient color of the inactive caption. Generally used for docking panes.  
   
   
 ```  
 COLORREF clrInactiveCaptionGradient;  
 ```  
   
-## <a name="getitaskbarlist"></a>AFX_GLOBAL_DATA::GetITaskbarList
-作成し、グローバル データにへのポインターを格納、`ITaskBarList`インターフェイスです。  
+## <a name="getitaskbarlist"></a> AFX_GLOBAL_DATA::GetITaskbarList
+Creates and stores in the global data a pointer to the `ITaskBarList` interface.  
   
   
 ```  
 ITaskbarList *GetITaskbarList();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`ITaskbarList`インターフェイスのタスク バーのリスト オブジェクトの作成が成功した場合`NULL`作成が失敗した場合、または現在のオペレーティング システムが Windows 7 より小さい場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the `ITaskbarList` interface if creation of a task bar list object succeeds; `NULL` if creation fails or if the current Operation System is less than Windows 7.  
   
-## <a name="getitaskbarlist3"></a>AFX_GLOBAL_DATA::GetITaskbarList3
-作成し、グローバル データにへのポインターを格納、`ITaskBarList3`インターフェイスです。  
+## <a name="getitaskbarlist3"></a> AFX_GLOBAL_DATA::GetITaskbarList3
+Creates and stores in the global data a pointer to the `ITaskBarList3` interface.  
   
   
 ```  
 ITaskbarList3 *GetITaskbarList3();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`ITaskbarList3`インターフェイスのタスク バーのリスト オブジェクトの作成が成功した場合`NULL`作成が失敗した場合、または現在のオペレーティング システムが Windows 7 より小さい場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the `ITaskbarList3` interface if creation of a task bar list object succeeds; `NULL` if creation fails or if the current Operation System is less than Windows 7.  
   
-## <a name="getshellautohidebars"></a>AFX_GLOBAL_DATA::GetShellAutohideBars
-シェルの自動非表示バーの位置を決定します。  
+## <a name="getshellautohidebars"></a> AFX_GLOBAL_DATA::GetShellAutohideBars
+Determines positions of Shell auto hide bars.  
   
   
 ```  
 int GetShellAutohideBars();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 自動の位置を指定するエンコードのフラグを表す整数値には、バーが非表示にします。 次の値を組み合わせることができます: AFX_AUTOHIDE_BOTTOM、AFX_AUTOHIDE_TOP、AFX_AUTOHIDE_LEFT、AFX_AUTOHIDE_RIGHT です。  
+### <a name="return-value"></a>Return Value  
+ An integer value with encoded flags that specify positions of auto hide bars. It may combine the following values: AFX_AUTOHIDE_BOTTOM, AFX_AUTOHIDE_TOP, AFX_AUTOHIDE_LEFT, AFX_AUTOHIDE_RIGHT.  
   
-## <a name="releasetaskbarrefs"></a>AFX_GLOBAL_DATA::ReleaseTaskBarRefs
-を通じて取得されたインターフェイスを解放、`GetITaskbarList`と`GetITaskbarList3`メソッドです。  
+## <a name="releasetaskbarrefs"></a> AFX_GLOBAL_DATA::ReleaseTaskBarRefs
+Releases interfaces obtained through the `GetITaskbarList` and `GetITaskbarList3` methods.  
   
   
 ```  
 void ReleaseTaskBarRefs();
 ```  
   
-## <a name="shellcreateitemfromparsingname"></a>AFX_GLOBAL_DATA::ShellCreateItemFromParsingName
-解析名からシェル項目オブジェクトを作成して初期化します。  
+## <a name="shellcreateitemfromparsingname"></a> AFX_GLOBAL_DATA::ShellCreateItemFromParsingName
+Creates and initializes a Shell item object from a parsing name.  
   
   
 ```  
@@ -841,20 +841,20 @@ HRESULT ShellCreateItemFromParsingName(
     void **ppv);
 ```  
   
-### <a name="parameters"></a>パラメーター   
+### <a name="parameters"></a>Parameters   
  `pszPath`  
- [in]表示名へのポインター。  
+ [in] A pointer to a display name.  
   
  `pbc`  
- 解析操作を制御するためのバインド コンテキストへのポインター。  
+ A pointer to a bind context that controls the parsing operation.  
   
  `riid`  
- インターフェイス ID への参照  
+ A reference to an interface ID.  
   
  `ppv`  
- [out]この関数から制御が戻るときに要求されたインターフェイス ポインターが含まれています。`riid`です。 これは一般に`IShellItem`または`IShellItem2`です。  
+ [out] When this function returns, contains the interface pointer requested in `riid`. This will typically be `IShellItem` or `IShellItem2`.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OK を返します。それ以外の場合エラー値。  
+### <a name="return-value"></a>Return Value  
+ Returns S_OK if successful; an error value otherwise.  
 
 

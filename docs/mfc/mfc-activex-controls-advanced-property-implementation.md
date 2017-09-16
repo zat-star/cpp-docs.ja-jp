@@ -1,82 +1,100 @@
 ---
-title: "MFC ActiveX コントロール : 高度なプロパティの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, エラー コード"
-  - "MFC ActiveX コントロール, プロパティ"
-  - "プロパティ [MFC], ActiveX コントロール"
+title: 'MFC ActiveX Controls: Advanced Property Implementation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], error codes
+- properties [MFC], ActiveX controls
+- MFC ActiveX controls [MFC], properties
 ms.assetid: ec2e6759-5a8e-41d8-a275-99af8ff6f32e
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# MFC ActiveX コントロール : 高度なプロパティの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7b23dd1b02a9a8e7e7584574429439c8334151fa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ActiveX コントロールの詳細プロパティの実装に関するトピックについて説明します。:  
+---
+# <a name="mfc-activex-controls-advanced-property-implementation"></a>MFC ActiveX Controls: Advanced Property Implementation
+This article describes topics related to implementing advanced properties in an ActiveX control:  
   
--   [読み取り専用および書き込み専用プロパティ](#_core_read2donly_and_write2donly_properties)  
+-   [Read-only and write-only properties](#_core_read2donly_and_write2donly_properties)  
   
--   [プロパティから返されるエラー コード](#_core_returning_error_codes_from_a_property)  
+-   [Returning error codes from a property](#_core_returning_error_codes_from_a_property)  
   
-##  <a name="_core_read2donly_and_write2donly_properties"></a> 読み取り専用および書き込み専用プロパティ  
- プロパティの追加ウィザードは、高速で簡単なメソッドをコントロールの読み取り専用または書き込み専用のプロパティを実装することです。  
+##  <a name="_core_read2donly_and_write2donly_properties"></a> Read-Only and Write-Only Properties  
+ The Add Property Wizard provides a quick and easy method to implement read-only or write-only properties for the control.  
   
-#### 読み取り専用または書き込み専用のプロパティを実装するには  
+#### <a name="to-implement-a-read-only-or-write-only-property"></a>To implement a read-only or write-only property  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これは [プロパティ 追加ウィザード](../ide/names-add-property-wizard.md)を開きます。  
+     This opens the [Add Property Wizard](../ide/names-add-property-wizard.md).  
   
-5.  **プロパティ名** ボックスで、プロパティの名前を入力します。  
+5.  In the **Property Name** box, type the name of your property.  
   
-6.  **Implementation Type**の場合、クリック **Get\/Set メソッドの設定**。  
+6.  For **Implementation Type**, click **Get/Set Methods**.  
   
-7.  **プロパティの種類** ボックスで、プロパティに適切な値を選択します。  
+7.  In the **Property Type** box, select the proper type for the property.  
   
-8.  読み取り専用プロパティが必要な場合は、Set 関数の名前をオフにします。  書き込み専用のプロパティを使用する場合は、Get 関数名をオフにします。  
+8.  If you want a read-only property, clear the Set function name. If you want a write-only property, clear the Get function name.  
   
-9. \[完了\] をクリックします。  
+9. Click **Finish**.  
   
- この場合、プロパティの追加ウィザードは、標準設定の代わりにディスパッチ マップ エントリで関数 `SetNotSupported` または `GetNotSupported` を挿入または関数を取得します。  
+ When you do this, the Add Property Wizard inserts the function `SetNotSupported` or `GetNotSupported` in the dispatch map entry in place of a normal Set or Get function.  
   
- 読み取り専用または書き込み専用として既存のプロパティを変更する場合は、ディスパッチ マップを手動で編集し、不要なセットを削除したり、コントロール クラスから関数を取得できます。  
+ If you want to change an existing property to be read-only or write-only, you can edit the dispatch map manually and remove the unnecessary Set or Get function from the control class.  
   
- プロパティ \(たとえば、\) 条件付きで読み取り専用または書き込み専用にする場合は、コントロールが特定のモードで実行されている場合のみ、セットを提供するか、標準の方法で取得できます。関数が必要な場合には `SetNotSupported` または `GetNotSupported` 関数を呼び出します。  たとえば、次のようになります。  
+ If you want a property to be conditionally read-only or write-only (for example, only when your control is operating in a particular mode), you can provide the Set or Get function, as normal, and call the `SetNotSupported` or `GetNotSupported` function where appropriate. For example:  
   
- [!code-cpp[NVC_MFC_AxUI#29](../mfc/codesnippet/CPP/mfc-activex-controls-advanced-property-implementation_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#29](../mfc/codesnippet/cpp/mfc-activex-controls-advanced-property-implementation_1.cpp)]  
   
- このコード サンプルでは `m_bReadOnlyMode` のデータ メンバーが **TRUE**場合 `SetNotSupported` を呼び出します。  **FALSE**が新しい値に、プロパティが設定されます。  
+ This code sample calls `SetNotSupported` if the `m_bReadOnlyMode` data member is **TRUE**. If **FALSE**, then the property is set to the new value.  
   
-##  <a name="_core_returning_error_codes_from_a_property"></a> プロパティから返されるエラー コード  
- 使用するロックを取得しようとしている間またはプロパティを設定するには、パラメーターとして `SCODE` \(ステータス コード\) を受け取る `COleControl::ThrowError` 関数をエラーが発生することを示しています。  定義済みのな `SCODE` を使用するか、独自の 1 を定義できます。  カスタム `SCODE`s を定義するための定義済みのな `SCODE`s と説明の一覧については、" MFC ActiveX コントロール: [ActiveX コントロールの Handling Errors](../mfc/mfc-activex-controls-advanced-topics.md) を参照してください。高度なトピック。  
+##  <a name="_core_returning_error_codes_from_a_property"></a> Returning Error Codes From a Property  
+ To indicate that an error has occurred while attempting to get or set a property, use the `COleControl::ThrowError` function, which takes an `SCODE` (status code) as a parameter. You can use a predefined `SCODE` or define one of your own. For a list of predefined `SCODE`s and instructions for defining custom `SCODE`s, see [Handling Errors in Your ActiveX Control](../mfc/mfc-activex-controls-advanced-topics.md) in the article ActiveX controls: Advanced Topics.  
   
- ヘルパー関数は、[COleControl::SetNotSupported](../Topic/COleControl::SetNotSupported.md)[COleControl::GetNotSupported](../Topic/COleControl::GetNotSupported.md)と [COleControl::SetNotPermitted](../Topic/COleControl::SetNotPermitted.md)などの一般的な定義済みのな `SCODE`s 用にあります。  
+ Helper functions exist for the most common predefined `SCODE`s, such as [COleControl::SetNotSupported](../mfc/reference/colecontrol-class.md#setnotsupported), [COleControl::GetNotSupported](../mfc/reference/colecontrol-class.md#getnotsupported), and [COleControl::SetNotPermitted](../mfc/reference/colecontrol-class.md#setnotpermitted).  
   
 > [!NOTE]
->  `ThrowError` Get または Set 関数またはオートメーション メソッド内部プロパティからエラーを返すための手段としてのみ使用されるようになっています。  これらは適切な例外ハンドラーがスタックにいる唯一の場合です。  
+>  `ThrowError` is meant to be used only as a means of returning an error from within a property's Get or Set function or an automation method. These are the only times that the appropriate exception handler will be present on the stack.  
   
- コードの他の領域のレポートの例外の詳細については、" MFC ActiveX コントロールの [COleControl::FireError](../Topic/COleControl::FireError.md) とセクション [ActiveX コントロールの Handling Errors](../mfc/mfc-activex-controls-advanced-topics.md) を参照します: 高度なトピック。  
+ For more information on reporting exceptions in other areas of the code, see [COleControl::FireError](../mfc/reference/colecontrol-class.md#fireerror) and the section [Handling Errors in Your ActiveX Control](../mfc/mfc-activex-controls-advanced-topics.md) in the article ActiveX Controls: Advanced Topics.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール : プロパティ](../mfc/mfc-activex-controls-properties.md)   
- [MFC ActiveX コントロール : メソッド](../mfc/mfc-activex-controls-methods.md)   
- [COleControl クラス](../mfc/reference/colecontrol-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Controls: Properties](../mfc/mfc-activex-controls-properties.md)   
+ [MFC ActiveX Controls: Methods](../mfc/mfc-activex-controls-methods.md)   
+ [COleControl Class](../mfc/reference/colecontrol-class.md)
+

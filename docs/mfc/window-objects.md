@@ -1,68 +1,87 @@
 ---
-title: "ウィンドウ オブジェクト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フレーム ウィンドウ [C++], C++ ウィンドウ オブジェクト"
-  - "HWND"
-  - "HWND, ウィンドウ オブジェクト"
-  - "メッセージ [C++], Windows"
-  - "MFC [C++], ウィンドウ"
-  - "オブジェクト [C++], ウィンドウ"
-  - "Visual C++, ウィンドウ オブジェクト"
-  - "ウィンドウ メッセージ [C++]"
-  - "ウィンドウ オブジェクト [C++]"
-  - "ウィンドウ [C++], C++ ウィンドウ オブジェクト"
-  - "Windows のウィンドウ [C++]"
+title: Window Objects | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- objects [MFC], window
+- Windows window [MFC]
+- MFC, windows
+- frame windows [MFC], C++ window objects
+- window objects [MFC]
+- windows [MFC], C++ window objects
+- window messages [MFC]
+- HWND
+- messages [MFC], Windows
+- Visual C++, window objects [MFC]
+- HWND, window objects [MFC]
 ms.assetid: 28b33ce2-af05-4617-9d03-1cb9a02be687
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ウィンドウ オブジェクト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f8cfcd860a2bd271a213dc14aa1ad01aa59375f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC は、ウィンドウの `HWND` ハンドルをカプセル化するクラス [CWnd](../Topic/CWnd%20Class.md) を指定します。  `CWnd` オブジェクトは `HWND` から別のウィンドウを、それを含むことを表す C \+\+.ウィンドウ オブジェクトです。  独自の子ウィンドウ クラスを派生するために `CWnd` を使用するか、`CWnd`から派生される多くの MFC クラスの 1 を使用します。  クラス `CWnd` はツール バーなど、フレーム ウィンドウ、ダイアログ ボックス、子ウィンドウ、コントロールとコントロール バーを含むすべてのウィンドウの基本クラスです。  [C \+\+.ウィンドウ HWND オブジェクトとの関係](../Topic/Relationship%20Between%20a%20C++%20Window%20Object%20and%20an%20HWND.md) に精通している場合は、MFC で有効なプログラミングにとって重要です。  
+---
+# <a name="window-objects"></a>Window Objects
+MFC supplies class [CWnd](../mfc/reference/cwnd-class.md) to encapsulate the `HWND` handle of a window. The `CWnd` object is a C++ window object, distinct from the `HWND` that represents a Windows window but containing it. Use `CWnd` to derive your own child window classes, or use one of the many MFC classes derived from `CWnd`. Class `CWnd` is the base class for all windows, including frame windows, dialog boxes, child windows, controls, and control bars such as toolbars. A good understanding of [the relationship between a C++ window object and an HWND](../mfc/relationship-between-a-cpp-window-object-and-an-hwnd.md) is crucial for effective programming with MFC.  
   
- MFC は、ウィンドウの既定の機能と管理を提供します `CWnd` から独自のクラスを派生し、提供された機能をカスタマイズするには、メンバー関数を使用できます。  `CWnd` オブジェクトを構築し、[作成](../Topic/CWnd::Create.md) のメンバー関数を呼び出して、子ウィンドウを作成し、`CWnd` メンバー関数を使用して子ウィンドウをカスタマイズします。  フレーム ウィンドウに [CView](../Topic/CView%20Class.md)から、フォーム ビューまたはツリー ビューなどの派生されるオブジェクトを埋め込むことができます。  と分割ペインの [CSplitterWnd](../mfc/reference/csplitterwnd-class.md)クラスによって提供されるドキュメントの複数のビューをサポートできます。  
+ MFC provides some default functionality and management of windows, but you can derive your own class from `CWnd` and use its member functions to customize the provided functionality. You can create child windows by constructing a `CWnd` object and calling its [Create](../mfc/reference/cwnd-class.md#create) member function, then customize the child windows using `CWnd` member functions. You can embed objects derived from [CView](../mfc/reference/cview-class.md), such as form views or tree views, in a frame window. And you can support multiple views of your documents via splitter panes, supplied by class [CSplitterWnd](../mfc/reference/csplitterwnd-class.md).  
   
- クラス `CWnd` の各オブジェクトの派生には、独自のハンドラーに Windows メッセージまたはコマンド ID をマップできるメッセージ マップが含まれます。  
+ Each object derived from class `CWnd` contains a message map, through which you can map Windows messages or command IDs to your own handlers.  
   
- Windows のプログラミングの一般的な文献で、習得に適したリソース `HWND` API をカプセル化する `CWnd` メンバー関数を使用する方法を示します。  
+ The general literature on programming for Windows is a good resource for learning how to use the `CWnd` member functions, which encapsulate the `HWND` APIs.  
   
-## CWnd のアクティブ化の関数  
- `CWnd` と [派生クラスのウィンドウ](../Topic/Derived%20Window%20Classes.md) コンストラクターは、オブジェクトを初期化するために、デストラクターとメンバー関数を使用する基になる Windows 構造体を作成し、カプセル化された `HWND`にアクセスします。  `CWnd` は メッセージをカプセル化するメンバー関数を提供し、ウィンドウの状態にアクセスして送信するための Windows API は、座標を変換し、更新し、スクロールし、クリップボードなどのさまざまなタスクにアクセスします。  `HWND` 引数を受け取るほとんどの Windows のウィンドウ管理 API は `CWnd`のメンバー関数としてカプセル化されます。  関数やパラメーターの名前は `CWnd` のメンバー関数に保持されます。  `CWnd`でカプセル化されている Windows API については [CWnd](../Topic/CWnd%20Class.md)クラスを参照してください。  
+## <a name="functions-for-operating-on-a-cwnd"></a>Functions for Operating On a CWnd  
+ `CWnd` and its [derived window classes](../mfc/derived-window-classes.md) provide constructors, destructors, and member functions to initialize the object, create the underlying Windows structures, and access the encapsulated `HWND`. `CWnd` also provides member functions that encapsulate Windows APIs for sending messages, accessing the window's state, converting coordinates, updating, scrolling, accessing the Clipboard, and many other tasks. Most Windows window-management APIs that take an `HWND` argument are encapsulated as member functions of `CWnd`. The names of the functions and their parameters are preserved in the `CWnd` member function. For details about the Windows APIs encapsulated by `CWnd`, see class [CWnd](../mfc/reference/cwnd-class.md).  
   
-## CWnd および Windows メッセージ  
- `CWnd` の主な目的の 1 つが `WM_PAINT` または `WM_MOUSEMOVE`など、Windows メッセージを処理するためのインターフェイスを提供します。  `CWnd` のメンバー関数の多くは、標準のメッセージ **afx\_msg** — Identity と `OnPaint` と **OnMouseMove**などのプレフィックスにはこれらのハンドラー「」、になっています。  詳細 について[メッセージの処理とマップ](../mfc/message-handling-and-mapping.md) のおよびメッセージ処理。  多くの情報は、特殊な目的のために自分で作成したウィンドウおよびフレームワークのウィンドウにも同じように適用されます。  
+## <a name="cwnd-and-windows-messages"></a>CWnd and Windows Messages  
+ One of the primary purposes of `CWnd` is to provide an interface for handling Windows messages, such as `WM_PAINT` or `WM_MOUSEMOVE`. Many of the member functions of `CWnd` are handlers for standard messages — those beginning with the identifier **afx_msg** and the prefix "On," such as `OnPaint` and **OnMouseMove**. [Message Handling and Mapping](../mfc/message-handling-and-mapping.md) covers messages and message handling in detail. The information there applies equally to the framework's windows and those that you create yourself for special purposes.  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [C \+\+.ウィンドウ HWND オブジェクトとの関係](../Topic/Relationship%20Between%20a%20C++%20Window%20Object%20and%20an%20HWND.md)  
+-   [The relationship between a C++ window object and an HWND](../mfc/relationship-between-a-cpp-window-object-and-an-hwnd.md)  
   
--   [派生クラスのウィンドウ](../Topic/Derived%20Window%20Classes.md)  
+-   [Derived window classes](../mfc/derived-window-classes.md)  
   
--   [ウィンドウの作成](../Topic/Creating%20Windows.md)  
+-   [Creating windows](../mfc/creating-windows.md)  
   
--   [分割ウィンドウ オブジェクト](../mfc/destroying-window-objects.md)  
+-   [Destroying window objects](../mfc/destroying-window-objects.md)  
   
--   [HWND から CWnd をデタッチする](../Topic/Detaching%20a%20CWnd%20from%20Its%20HWND.md)  
+-   [Detaching a CWnd from Its HWND](../mfc/detaching-a-cwnd-from-its-hwnd.md)  
   
--   [ウィンドウ オブジェクトの使用](../Topic/Working%20with%20Window%20Objects.md)  
+-   [Working with window objects](../mfc/working-with-window-objects.md)  
   
--   [デバイス コンテキスト](../Topic/Device%20Contexts.md): Windows の描画をデバイス非依存オブジェクトの作成  
+-   [Device contexts](../mfc/device-contexts.md): objects that make Windows drawing device independent  
   
--   [グラフィック オブジェクト](../mfc/graphic-objects.md): ペン、ブラシ、フォント、ビットマップ、パレット、領域  
+-   [Graphic objects](../mfc/graphic-objects.md): pens, brushes, fonts, bitmaps, palettes, regions  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [Windows](../mfc/windows.md)
+
+

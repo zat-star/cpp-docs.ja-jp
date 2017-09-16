@@ -1,232 +1,254 @@
 ---
-title: "テクニカル ノート 31: コントロール バー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.controls.bars"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コントロール バー, スタイル"
-  - "CStatusBar クラス, テクニカル ノート 31 の使用"
-  - "CControlBar クラス, テクニカル ノート 31 の使用"
-  - "CControlBar クラス, 派生"
-  - "コントロール バー, クラス"
-  - "CDialogBar クラス, テクニカル ノート 31 の使用"
-  - "CToolBar クラス, テクニカル ノート 31 の使用"
-  - "TN031"
-  - "スタイル, コントロール バー"
+title: 'TN031: Control Bars | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.controls.bars
+dev_langs:
+- C++
+helpviewer_keywords:
+- control bars [MFC], styles
+- CStatusBar class [MFC], Tech Note 31 usage
+- CControlBar class [MFC], Tech Note 31 usage
+- CControlBar class [MFC], deriving from
+- control bars [MFC], classes [MFC]
+- CDialogBar class [MFC], Tech Note 31 usage
+- CToolBar class [MFC], Tech Note 31 usage
+- TN031
+- styles [MFC], control bars
 ms.assetid: 8cb895c0-40ea-40ef-90ee-1dd29f34cfd1
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# テクニカル ノート 31: コントロール バー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 96602bc469bb7aab112833a68c999d69e39df36c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn031-control-bars"></a>TN031: Control Bars
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。 結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。 最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、MFC のコントロール バー クラスとして標準的な [CControlBar](#_mfcnotes_ccontrolbar)、[CStatusBar](#_mfcnotes_cstatusbar)、[CToolBar](#_mfcnotes_ctoolbar)、[CDialogBar](#_mfcnotes_cdialogbar)、**CDockBar** について説明します。  
+ This note describes the control bar classes in MFC: the general [CControlBar](#_mfcnotes_ccontrolbar), [CStatusBar](#_mfcnotes_cstatusbar), [CToolBar](#_mfcnotes_ctoolbar), [CDialogBar](#_mfcnotes_cdialogbar), and **CDockBar**.  
   
- `CControlBar`  
+## <a name="_mfcnotes_ccontrolbar"></a> CControlBar 
   
- **ControlBar** は `CWnd` の派生クラスであり、次のような特徴があります。  
+ A **ControlBar** is a `CWnd`-derived class that:  
   
--   フレーム ウィンドウの上部または下部に配置されます。  
+-   Is aligned to the top or bottom of a frame window.  
   
--   子項目として、HWND ベースのコントロール \(`CDialogBar` など\) または `HWND` ベースではない項目 \(`CToolBar`、`CStatusBar` など\) のいずれかを含むことができます。  
+-   May contain child items that are either HWND-based controls (for example, `CDialogBar`) or non-`HWND` based items (for example, `CToolBar`, `CStatusBar`).  
   
- コントロール バーでは、次の追加スタイルがサポートされています。  
+ Control bars support the additional styles:  
   
--   `CBRS_TOP`: \(既定値\) コントロール バーを上部に固定します。  
+- `CBRS_TOP` (The default) pin the control bar to the top.  
   
--   `CBRS_BOTTOM`: コントロール バーを下部に固定します。  
+- `CBRS_BOTTOM` Pin the control bar to the bottom.  
   
--   `CBRS_NOALIGN`: 親のサイズ変更時にコントロール バーの位置を変更しません。  
+- `CBRS_NOALIGN` Do not reposition the control bar when the parent resizes.  
   
- `CControlBar` からの派生クラスには、次のような、さらに興味深い実装が用意されています。  
+ Classes derived from `CControlBar` provide more interesting implementations:  
   
--   `CStatusBar`: ステータス バー。項目はテキストを含むステータス バー ペインです。  
+- `CStatusBar` A status bar, items are status bar panes containing text.  
   
--   `CToolBar`: ツール バー。項目は 1 列に配置されたビットマップ ボタンです。  
+- `CToolBar` A toolbar, items are bitmap buttons aligned in a row.  
   
--   `CDialogBar`: 標準ウィンドウ コントロールを含む、ツール バーに似たフレーム \(ダイアログ テンプレート リソースから作成できます\)。  
+- `CDialogBar` A toolbar-like frame containing standard windows controls (created from a dialog template resource).  
   
--   **CDockBar**: その他の `CControlBar` の派生オブジェクト用の汎用ドッキング領域です。 このクラスで利用できる特定のメンバー関数および変数は、今後のリリースで変更される可能性があります。  
+- **CDockBar** A generalized docking area for other `CControlBar` derived objects. The specific member functions and variables available in this class are likely to change in future releases.  
   
- すべてのコントロール バー オブジェクト\/ウィンドウが、一部の親フレーム ウィンドウの子ウィンドウになります。 これらは通常、フレームのクライアント領域 \(たとえば、MDI クライアントまたはビュー\) に兄弟として追加されます。 コントロール バーの子ウィンドウ ID は重要な ID です。 コントロール バーの既定のレイアウトは、ID が **AFX\_IDW\_CONTROLBAR\_FIRST** ～ **AFX\_IDW\_CONTROLBAR\_LAST** の範囲内にあるコントロール バーに対してのみ有効です。 コントロール バー ID の範囲が 256 まである場合でも、最初の 32 までは特殊なコントロール バー ID です \(印刷プレビューのアーキテクチャによって直接サポートされるため\)。  
+ All control bar objects/windows will be child windows of some parent frame window. They are usually added as a sibling to the client area of the frame (for example, an MDI Client or view). The child window ID of a control bar is important. The default layout of control bar only works for control bars with IDs in the range of **AFX_IDW_CONTROLBAR_FIRST** to **AFX_IDW_CONTROLBAR_LAST**. Note that even though there is a range of 256 control bar IDs, the first 32 of these control bar IDs are special since they are directly supported by the print preview architecture.  
   
- `CControlBar` クラスには、次の目的に利用できる標準実装が用意されています。  
+ The `CControlBar` class gives standard implementation for:  
   
--   コントロール バーをフレームの上部、下部、左側、または右側に配置する。  
+-   Aligning the control bar to the top, bottom, or either side of the frame.  
   
--   コントロール項目の配列を割り当てる。  
+-   Allocating control item arrays.  
   
--   派生クラスの実装をサポートする。  
+-   Supporting the implementation of derived classes.  
   
- 通常、C\+\+ コントロール バー オブジェクトは `CFrameWnd` 派生クラスのメンバーとして埋め込まれ、親の `HWND` とオブジェクトが破棄された場合にはクリーンアップされます。 ヒープ上にコントロール バー オブジェクトを割り当てる必要がある場合は、`HWND` が破棄されたときにコントロール バーが "**delete this**" を実行するように、**m\_bAutoDestruct** メンバーを **TRUE** に設定します。  
+ C++ control bar objects will usually be embedded as members of a `CFrameWnd` derived class, and will be cleaned up when the parent `HWND` and object are destroyed. If you need to allocate a control bar object on the heap, you can simply set the **m_bAutoDestruct** member to **TRUE** to make the control bar "**delete this**" when the `HWND` is destroyed.  
   
 > [!NOTE]
->  MFC のいずれかの派生クラス \(`CStatusBar`、`CToolBar`、`CDialogBar` など\) を使用するのではなく、独自の `CControlBar` 派生クラスを作成する場合は、`m_dwStyle` データ メンバーを設定する必要があります。 これは、次のように **Create** のオーバーライドで設定できます。  
+>  If you create your own `CControlBar`-derived class, rather than using one of MFC's derived classes, such as `CStatusBar`, `CToolBar`, or `CDialogBar`, you will need to set the `m_dwStyle` data member. This can be done in the override of **Create**:  
   
 ```  
 // CMyControlBar is derived from CControlBar  
-BOOL CMyControlBar::Create( CWnd* pParentWnd, DWORD dwStyle, UINT nID )  
+BOOL CMyControlBar::Create(CWnd* pParentWnd,
+    DWORD dwStyle,
+    UINT nID)  
 {  
-   m_dwStyle = dwStyle;  
-  
-   .  
-   .  
-   .  
+    m_dwStyle = dwStyle;  
+ 
+ .  
+ .  
+ .  
 }  
 ```  
   
- **コントロール バー レイアウトのアルゴリズム**  
+ **Control Bar Layout Algorithm**  
   
- コントロール バー レイアウトのアルゴリズムは非常に単純です。 フレーム ウィンドウは、メッセージ **WM\_SIZEPARENT** をコントロール バーの範囲内にあるすべての子に送信します。 このメッセージと共に、親のクライアント領域の四角形を指すポインターが渡されます。 このメッセージは、Z オーダーで子に送信されます。 コントロール バーの子は、この情報を使用して自身を配置し、親のクライアント領域のサイズを縮小します。 通常のクライアント領域用に残された最後の四角形 \(コントロール バー以外の領域\) は、メイン クライアント ウィンドウ \(通常は MDI クライアント、ビュー、または分割ウィンドウ\) を配置するために使用されます。  
+ The control bar layout algorithm is very simple. The frame window sends a message **WM_SIZEPARENT** to all children in the control bar range. Along with this message, a pointer to the parent's client rectangle is passed. This message is sent to children in Z-order. The control-bar children use this information to position themselves and to decrease the size of the parent's client area. The final rectangle that is left for the normal client area (less control bars) is used to position the main client window (usually an MDI client, view or splitter window).  
   
- 詳細については、「`CWnd::RepositionBars`」と「`CFrameWnd::RecalcLayout`」を参照してください。  
+ See `CWnd::RepositionBars` and `CFrameWnd::RecalcLayout` for more details.  
   
- **WM\_SIZEPARENT** を含む MFC プライベート Windows メッセージについての説明は、[テクニカル ノート 24](../mfc/tn024-mfc-defined-messages-and-resources.md) に記載されています。  
+ MFC private Windows messages, including **WM_SIZEPARENT**, are documented in [Technical Note 24](../mfc/tn024-mfc-defined-messages-and-resources.md).  
   
- `CStatusBar`  
+## <a name="_mfcnotes_cstatusbar"></a>  CStatusBar  
   
- ステータス バーとは、テキスト出力ペインの行を持つコントロール バーです。 テキスト出力ペインの使用方法としては、次の 2 つの方法が一般的です。  
+ A status bar is a control bar that has a row of text output panes. There are two common ways to use text output panes:  
   
--   メッセージ行として使用する方法  
+-   As a message line  
   
-     \(たとえば、標準メニューのヘルプ メッセージ行\)。 通常、これらのメッセージ行には 0 から始まるインデックスによってアクセスします。  
+     (for example, the standard menu help message line). These are usually accessed by a 0-based indexed  
   
--   ステータス インジケーターとして使用する方法  
+-   As status indicators  
   
-     \(たとえば、CAP、NUM、および SCRL インジケーター\)。 通常、これらのインジケーターには文字列\/コマンド ID によってアクセスします。  
+     (for example, the CAP, NUM and SCRL indicators). These are usually accessed by string/command ID.  
   
- ステータス バーのフォントは 10 ポイント MS P ゴシックです \(Windows インターフェイス アプリケーション デザイン ガイド、またはフォント マッパーにより 10 ポイント Swiss プロポーショナル フォントに最適なフォントとして指定\)。 日本語版など、特定のバージョンの Windows では、選択されるフォントが異なります。  
+ The font for the status bar is 10-point MS Sans Serif (dictated by the Windows Interface Application Design Guide or the font mappers best match of a 10-point Swiss proportional font). On certain versions of Windows, such as the Japanese edition, the fonts selected are different.  
   
- ステータス バーで使用される色は、Windows インターフェイス アプリケーション デザイン ガイドの推奨事項にも適合しています。 これらの色はハード コーディングされていないため、コントロール パネルでのユーザーによるカスタマイズに応じて動的に変化します。  
+ The colors used in the status bar are also consistent with the recommendation of the Windows Interface Application Design Guide. These colors are not hard coded and are changed dynamically in response to user customization in Control Panel.  
   
-|アイテム|Windows COLOR 値|既定の RGB|  
-|----------|---------------------|-------------|  
-|ステータス バーの背景|**COLOR\_BTNFACE**|RGB \(192, 192, 192\)|  
-|ステータス バーのテキスト|**COLOR\_BTNTEXT**|RGB \(000, 000, 000\)|  
-|ステータス バーの上端\/左端|**COLOR\_BTNHIGHLIGHT**|RGB \(255, 255, 255\)|  
-|ステータス バーの下端\/右端|**COLOR\_BTNSHADOW**|RGB \(128, 128, 128\)|  
+|Item|Windows COLOR value|Default RGB|  
+|----------|-------------------------|-----------------|  
+|Status bar background|**COLOR_BTNFACE**|RGB(192, 192, 192)|  
+|Status bar text|**COLOR_BTNTEXT**|RGB(000, 000, 000)|  
+|Status bar top/left edges|**COLOR_BTNHIGHLIGHT**|RGB(255, 255, 255)|  
+|Status bar bot/right edges|**COLOR_BTNSHADOW**|RGB(128, 128, 128)|  
   
- **CStatusBar 用の CCmdUI のサポート**  
+ **CCmdUI Support for CStatusBar**  
   
- 通常、インジケーターは `ON_UPDATE_COMMAND_UI` のメカニズムを利用した方法で更新されます。 アイドル時、ステータス バーはインジケーター ペインの文字列 ID を使用して `ON_UPDATE_COMMAND_UI` ハンドラーを呼び出します。  
+ The way indicators are usually updated is through the `ON_UPDATE_COMMAND_UI` mechanism. On idle time, the status bar will call the `ON_UPDATE_COMMAND_UI` handler with the string ID of the indicator pane.  
   
- `ON_UPDATE_COMMAND_UI` ハンドラーは以下を呼び出すことができます。  
+ The `ON_UPDATE_COMMAND_UI` handler can call:  
   
--   **Enable**: ペインを有効または無効にします。 無効なペインの見た目は有効なペインとまったく同じですが、テキストが非表示になります \(つまり、テキスト インジケーターが無効になります\)。  
+- **Enable**: To enable or disable the pane. A disabled pane looks exactly like an enabled pane but the text is invisible (that is, turns off the text indicator).  
   
--   **SetText**: テキストを変更します。 これを使用する場合は、ペインのサイズが自動的に変更されない点に注意してください。  
+- **SetText**: To change the text. Be careful if you use this because the pane will not automatically resize.  
   
- `CStatusBar` の作成およびカスタマイズ API の詳細については、*クラス ライブラリ リファレンス*の [CStatusBar](../mfc/reference/cstatusbar-class.md) クラスを参照してください。 ステータス バーのカスタマイズの大部分は、ステータス バーの初回表示前に行う必要があります。  
+ Refer to class [CStatusBar](../mfc/reference/cstatusbar-class.md) in the *Class Library Reference* for details about `CStatusBar` creation and customization APIs. Most customization of status bars should be done before the status bar is initially made visible.  
   
- ステータス バーでは、可変幅ペインが 1 つだけサポートされており、通常は最初のペインがこれにあたります。 このペインのサイズは、実際には最小サイズです。 ステータス バーがすべてのペインの最小サイズより大きい場合、余分な幅は可変幅ペインに与えられます。 ステータス バーを持つ既定のアプリケーションは、最初のペインが可変幅であるため、CAP、NUM、および SCRL 用のインジケーターが右揃えになります。  
+ The status bar supports only one stretchy pane, usually the first pane. The size of that pane is really a minimum size. If the status bar is bigger than the minimum size of all the panes, any extra width will be given to the stretchy pane. The default application with a status bar has right-aligned indicators for CAP, NUM and SCRL since the first pane is stretchy.  
   
- `CToolBar`  
+## <a name="_mfcnotes_ctoolbar"></a>  CToolBar  
   
- ツール バーとは、ビットマップ ボタンの行を持つコントロール バーであり、区分線を含むことができます。 プッシュ ボタンとチェック ボックス ボタンという 2 つのスタイルがサポートされます。 チェック ボックス ボタンと `ON_UPDATE_COMMAND_UI` を使用して、オプション グループ機能を構築することができます。  
+ A toolbar is a control bar with a row of bitmap buttons that may include separators. Two styles of buttons are supported: pushbuttons and check box buttons. Radio group functionality can be built with check box buttons and `ON_UPDATE_COMMAND_UI`.  
   
- ツール バー内のすべてのビットマップ ボタンは、1 つのビットマップから取得します。 このビットマップには、ボタンごとに 1 つの画像またはグリフが含まれている必要があります。 通常、ビットマップ内の画像\/グリフの順序は、画面に描画される順序と同じです \(この順序はカスタマイズ API を使用して変更できます\)。  
+ All the bitmap buttons in the toolbar are taken from one bitmap. This bitmap must contain one image or glyph for each button. Typically the order of the images/glyphs in the bitmap is the same order they will be drawn on the screen. (This can be changed using the customization APIs.)  
   
- 各ボタンは同じサイズにする必要があります。 既定値は標準の 24 x 22 ピクセルです。 各画像\/グリフは同じサイズにする必要があり、ビットマップ内で横並びに配置する必要があります。 既定の画像\/グリフのサイズは 16 x 15 ピクセルです。 そのため、10 個のボタンを持つツール バー \(標準サイズを使用\) には、幅 160 ピクセル、高さ 15 ピクセルのビットマップが必要です。  
+ Each button must be the same size. The default is the standard 24x22 pixels. Each image/glyph must be the same size and must be side-by-side in the bitmap. The default image/glyph size is 16x15 pixels. Therefore, for a toolbar with 10 buttons (using standard sizes), you need a bitmap that is 160 pixels wide and 15 pixels high.  
   
- 各ボタンは、画像\/グリフを 1 つだけ持ちます。 ボタンのさまざまな状態とスタイル \(押されている状態、アップ状態、ダウン状態、無効な状態、無効なダウン状態、不確定状態など\) は、その 1 つの画像\/グリフからアルゴリズムによって生成されます。 理論上は、どのような色のビットマップや DIB でも使用できます。 ボタンのさまざまな状態を生成するためのアルゴリズムは、元の画像がグレースケールの場合に最も効果的に機能します。 参考例については、MFC 標準サンプルの [CLIPART](../top/visual-cpp-samples.md) で提供されている標準ツール バー ボタンとツール バー ボタン クリップアートを参照してください。  
+ Each button has one and only one image/glyph. The different button states and styles (for example, pressed, up, down, disabled, disabled down, indeterminate) are algorithmically generated from that one image/glyph. Any color bitmap or DIB can be used in theory. The algorithm for generating the different button states works best if the original image is shades of gray. Look at the standard toolbar buttons and the toolbar button clipart provided in MFC General sample [CLIPART](../visual-cpp-samples.md) for examples.  
   
- ツール バーで使用される色は、Windows インターフェイス アプリケーション デザイン ガイドの推奨事項にも適合しています。 これらの色はハード コーディングされていないため、コントロール パネルでのユーザーによるカスタマイズに応じて動的に変化します。  
+ The colors used in the toolbar are also consistent with the recommendation of the Windows Interface Application Design Guide. These colors are not hard coded and are changed dynamically in response to user customization in Control Panel.  
   
-|アイテム|Windows COLOR 値|既定の RGB|  
-|----------|---------------------|-------------|  
-|ツール バーの背景|**COLOR\_BTNFACE**|RGB \(192, 192, 192\)|  
-|ツール バー ボタンの上端\/左端|**COLOR\_BTNHIGHLIGHT**|RGB \(255, 255, 255\)|  
-|ツール バー ボタンの下端\/右端|**COLOR\_BTNSHADOW**|RGB \(128, 128, 128\)|  
+|Item|Windows COLOR value|Default RGB|  
+|----------|-------------------------|-----------------|  
+|ToolBar background|**COLOR_BTNFACE**|RGB(192,192,192)|  
+|ToolBar buttons top/left edges|**COLOR_BTNHIGHLIGHT**|RGB(255,255,255)|  
+|ToolBar buttons bot/right edges|**COLOR_BTNSHADOW**|RGB(128,128,128)|  
   
- また、ツール バーのビットマップ ボタンの色は、それが標準 Windows ボタン コントロールであるかのように塗り直されます。 この色の変更は、ビットマップがリソースから読み込まれたときに発生するほか、コントロール パネルでのユーザーによるカスタマイズに応じてシステム カラーの変更が行われた場合にも発生します。 ツール バーのビットマップに次の色が含まれている場合、その色は自動的に変更されるため、注意して使用する必要があります。 ビットマップの色が部分的に変更されることが好ましくない場合は、マップされた RGB 値に近い色を使用してください。 マッピングは正確な RGB 値に基づいて行われます。  
+ In addition, the toolbar bitmap buttons are recolored as though they were standard Windows button controls. This recoloring occurs when the bitmap is loaded from the resource and in response to a change in system colors in response to user customization in Control Panel. The following colors in a toolbar bitmap will be recolored automatically so they should be used with caution. If you do not wish to have a portion of your bitmap recolored, then use a color that closely approximates one of the mapped RGB values. The mapping is done based on exact RGB values.  
   
-|RGB 値|動的にマップされた COLOR 値|  
-|-----------|-----------------------|  
-|RGB \(000, 000, 000\)|COLOR\_BTNTEXT|  
-|RGB \(128, 128, 128\)|COLOR\_BTNSHADOW|  
-|RGB \(192, 192, 192\)|COLOR\_BTNFACE|  
-|RGB \(255, 255, 255\)|COLOR\_BTNHIGHLIGHT|  
+|RGB value|Dynamically mapped COLOR value|  
+|---------------|------------------------------------|  
+|RGB(000, 000, 000)|COLOR_BTNTEXT|  
+|RGB(128, 128, 128)|COLOR_BTNSHADOW|  
+|RGB(192, 192, 192)|COLOR_BTNFACE|  
+|RGB(255, 255, 255)|COLOR_BTNHIGHLIGHT|  
   
- `CToolBar` の作成およびカスタマイズ API の詳細については、*クラス ライブラリ リファレンス*の [CToolBar](../mfc/reference/ctoolbar-class.md) クラスを参照してください。 ツール バーのカスタマイズの大部分は、ツール バーの初回表示前に行う必要があります。  
+ Refer to class [CToolBar](../mfc/reference/ctoolbar-class.md) the *Class Library Reference* for details about the `CToolBar` creation and customization APIs. Most customization of toolbars should be done before the toolbar is initially made visible.  
   
- カスタマイズ API を使用すると、ボタン ID、スタイル、スペーサー幅のほか、どのボタンに対してどの画像\/グリフを使用するかを調整できます。 既定では、これらの API を使用する必要はありません。  
+ The customization APIs can be used to adjust the button IDs, styles, spacer width and which image/glyph is used for what button. By default you do not need to use these APIs.  
   
-## CToolBar 用の CCmdUI のサポート  
- ツール バーのボタンは、常に `ON_UPDATE_COMMAND_UI` のメカニズムを利用した方法で更新されます。 アイドル時、ツール バーはそのボタンのコマンド ID を使用して `ON_UPDATE_COMMAND_UI` ハンドラーを呼び出します。`ON_UPDATE_COMMAND_UI` は、区分線に対しては呼び出されませんが、プッシュ ボタンとチェック ボックス ボタンに対しては呼び出されます。  
+## <a name="ccmdui-support-for-ctoolbar"></a>CCmdUI Support for CToolBar  
+ The way toolbar buttons are always updated is through the `ON_UPDATE_COMMAND_UI` mechanism. On idle time, the toolbar will call the `ON_UPDATE_COMMAND_UI` handler with the command ID of that button. `ON_UPDATE_COMMAND_UI` is not called for separators, but it is called for pushbuttons and check box buttons.  
   
- `ON_UPDATE_COMMAND_UI` ハンドラーは以下を呼び出すことができます。  
+ The `ON_UPDATE_COMMAND_UI` handler can call:  
   
--   **Enable**: ボタンを有効または無効にします。 これはプッシュ ボタンでもチェック ボックス ボタンでも同様に機能します。  
+- **Enable**: To enable or disable the button. This works equally for pushbuttons and check box buttons.  
   
--   `SetCheck`: ボタンのチェック状態を設定します。 これをツール バーのボタンに対して呼び出すと、そのボタンがチェック ボックス ボタンに変わります。`SetCheck` には、パラメーターとして 0 \(オフ\)、1 \(オン\)、または 2 \(不確定\) を指定できます。  
+- `SetCheck`: To set the check state of a button. Calling this for a toolbar button will turn it into a check box button. `SetCheck` takes a parameter which can be 0 (not checked), 1 (checked) or 2 (indeterminate)  
   
--   `SetRadio`: `SetCheck` の短縮形です。  
+- `SetRadio`: Shorthand for `SetCheck`.  
   
- チェック ボックス ボタンは "AUTO" チェック ボックス ボタンです。つまり、ユーザーがそのボタンを押すと、すぐにボタンの状態が変化します。 オン状態は、ダウン状態または押されている状態です。 組み込みのユーザー インターフェイスには、ボタンを "不確定" 状態に変更する方法はありません。この操作はコードを通じて実行する必要があります。  
+ Check box buttons are "AUTO" check box buttons; that is, when the user presses them they will immediately change state. Checked is the down or depressed state. There is no built-in user interface way to change a button into the "indeterminate" state; that must be done through code.  
   
- カスタマイズ API によって任意のツール バー ボタンの状態を変更できるため、ツール バー ボタンが表すコマンドの `ON_UPDATE_COMMAND_UI` ハンドラー内でこれらの状態を変更することをお勧めします。 アイドル処理により、`ON_UPDATE_COMMAND_UI` ハンドラーを使用してツール バー ボタンの状態が変更されるため、SetButtonStyle によってこれらの状態を変更した場合、その変更は次のアイドル時に失われる可能性があります。  
+ The customization APIs will permit you to change the state of a given toolbar button, preferably you should change these states in the `ON_UPDATE_COMMAND_UI` handler for the command the toolbar button represents. Remember, the idle processing will change the state of toolbar buttons with the `ON_UPDATE_COMMAND_UI` handler, so any changes to these states made through SetButtonStyle may get lost after the next idle.  
   
- ツール バーのボタンは、通常のボタンまたはメニュー項目と同じように **WM\_COMMAND** メッセージを送信し、通常は `ON_UPDATE_COMMAND_UI` ハンドラーが提供されるクラスと同じクラスの `ON_COMMAND` ハンドラーによって処理されます。  
+ Toolbar buttons will send **WM_COMMAND** messages like normal buttons or menu items and are normally handled by an `ON_COMMAND` handler in the same class that provides the `ON_UPDATE_COMMAND_UI` handler.  
   
- ツール バーのボタンには 4 つのスタイル \(TBBS\_ 値\) があり、次の状態を表示するために使用されます。  
+ There are four Toolbar button styles (TBBS_ values) used for display states:  
   
--   TBBS\_CHECKED: チェック ボックスは現在、オン \(ダウン\) になっています。  
+-   TBBS_CHECKED:   Check box is currently checked (down).  
   
--   TBBS\_INDETERMINATE: チェック ボックスは現在、不確定状態になっています。  
+-   TBBS_INDETERMINATE:   Check box is currently indeterminate.  
   
--   TBBS\_DISABLED: ボタンは現在、無効になっています。  
+-   TBBS_DISABLED:   Button is currently disabled.  
   
--   TBBS\_PRESSED: ボタンは現在、押されています。  
+-   TBBS_PRESSED:   Button is currently pressed.  
   
- 公式の Windows インターフェイス アプリケーション デザイン ガイドによる 6 種類のボタン スタイルは、次の TBBS 値で表されます。  
+ The six official Windows Interface Application Design Guide button styles are represented by the following TBBS values:  
   
--   Up \= 0  
+-   Up = 0  
   
--   Mouse Down \(マウス ダウン\) \= TBBS\_PRESSED \(&#124; その他のスタイル\)  
+-   Mouse Down = TBBS_PRESSED (&#124; any other style)  
   
--   Disabled \(無効\) \= TBBS\_DISABLED  
+-   Disabled = TBBS_DISABLED  
   
--   Down \(ダウン\) \= TBBS\_CHECKED  
+-   Down = TBBS_CHECKED  
   
--   Down Disabled \(ダウン、無効\) \= TBBS\_CHECKED &#124; TBBS\_DISABLED  
+-   Down Disabled = TBBS_CHECKED &#124; TBBS_DISABLED  
   
--   Indeterminate \(不確定\) \= TBBS\_INDETERMINATE  
+-   Indeterminate = TBBS_INDETERMINATE  
   
 ##  <a name="_mfcnotes_cdialogbar"></a> CDialogBar  
- ダイアログ バーとは、標準の Windows コントロールが含まれるコントロール バーです。 ダイアログと同様にコントロールが含まれ、コントロール間でのタブ移動をサポートします。 また、バーを表すためにダイアログ テンプレートを使用する点もダイアログと同様です。  
+ A dialog bar is a control bar that contains standard Windows controls. It acts like a dialog in that it contains the controls and supports tabbing between them. It also acts like a dialog in that it uses a dialog template to represent the bar.  
   
- `CDialogBar` は、標準のプッシュ ボタン コントロールを含む印刷プレビュー ツール バーに使用されています。  
+ A `CDialogBar` is used for the print-preview toolbar, which contains standard pushbutton controls.  
   
- `CDialogBar` は、`CFormView` と同じような方法で使用します。 ダイアログ バー用にダイアログ テンプレートを定義し、**WS\_CHILD** を除くすべてのスタイルを削除する必要があります。 ダイアログは表示することができない点に注意してください。  
+ Using a `CDialogBar` is like using a `CFormView`. You must define a dialog template for the dialog bar and remove all the styles except **WS_CHILD**. Note that the dialog must not be visible.  
   
- `CDialogBar` のコントロール通知はコントロール バーの親に送信されます \(ツール バーのボタンと同様\)。  
+ The control notifications for a `CDialogBar` will be sent to the parent of the control bar (just like toolbar buttons).  
   
-## CDialogBar 用の CCmdUI のサポート  
- ダイアログ バーのボタンは `ON_UPDATE_COMMAND_UI` ハンドラーのメカニズムを利用して更新する必要があります。 アイドル時、ダイアログ バーは 0x8000 以上の ID \(つまり、コマンド ID の範囲内\) を持つすべてのボタンのコマンド ID を使用して `ON_UPDATE_COMMAND_UI` ハンドラーを呼び出します。  
+## <a name="ccmdui-support-for-cdialogbar"></a>CCmdUI Support for CDialogBar  
+ Dialog bar buttons should be updated through the `ON_UPDATE_COMMAND_UI` handler mechanism. At idle time, the dialog bar will call the `ON_UPDATE_COMMAND_UI` handler with the command ID of all the buttons that have a ID >= 0x8000 (that is, in the range of command IDs).  
   
- `ON_UPDATE_COMMAND_UI` ハンドラーは以下を呼び出すことができます。  
+ The `ON_UPDATE_COMMAND_UI` handler can call:  
   
--   Enable: ボタンを有効または無効にします。  
+-   Enable: to enable or disable the button.  
   
--   SetText: ボタンのテキストを変更します。  
+-   SetText: to change the text of the button.  
   
- カスタマイズは、標準ウィンドウ マネージャー API を使用して行うことができます。  
+ Customization can be done through standard window manager APIs.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "ボタン スタイル |Microsoft ドキュメント"
+title: Button Styles | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -38,33 +38,33 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- BS_NOTIFY constant
-- BS_RIGHTBUTTON constant
-- styles, button objects
-- BS_USERBUTTON constant
-- BS_VCENTER constant
-- BS_PUSHLIKE constant
-- BS_RADIOBUTTON constant
-- BS_PUSHBUTTON constant
-- BS_DEFPUSHBUTTON constant
-- BS_LEFTTEXT constant
+- BS_NOTIFY constant [MFC]
+- BS_RIGHTBUTTON constant [MFC]
+- styles [MFC], button objects
+- BS_USERBUTTON constant [MFC]
+- BS_VCENTER constant [MFC]
+- BS_PUSHLIKE constant [MFC]
+- BS_RADIOBUTTON constant [MFC]
+- BS_PUSHBUTTON constant [MFC]
+- BS_DEFPUSHBUTTON constant [MFC]
+- BS_LEFTTEXT constant [MFC]
 - button objects (CButton), button styles
-- BS_AUTO3STATE constant
-- BS_3STATE constant
-- BS_OWNERDRAW constant
-- BS_AUTORADIOBUTTON constant
-- BS_GROUPBOX constant
-- BS_BITMAP constant
-- BS_CENTER constant
-- BS_MULTILINE constant
-- BS_BOTTOM constant
-- BS_FLAT constant
-- BS_AUTOCHECKBOX constant
-- BS_RIGHT constant
-- BS_CHECKBOX constant
-- BS_LEFT constant
-- BS_ICON constant
-- BS_TOP constant
+- BS_AUTO3STATE constant [MFC]
+- BS_3STATE constant [MFC]
+- BS_OWNERDRAW constant [MFC]
+- BS_AUTORADIOBUTTON constant [MFC]
+- BS_GROUPBOX constant [MFC]
+- BS_BITMAP constant [MFC]
+- BS_CENTER constant [MFC]
+- BS_MULTILINE constant [MFC]
+- BS_BOTTOM constant [MFC]
+- BS_FLAT constant [MFC]
+- BS_AUTOCHECKBOX constant [MFC]
+- BS_RIGHT constant [MFC]
+- BS_CHECKBOX constant [MFC]
+- BS_LEFT constant [MFC]
+- BS_ICON constant [MFC]
+- BS_TOP constant [MFC]
 - BS_TEXT constant
 ms.assetid: 41206f72-2b92-4250-ae32-31184046402f
 caps.latest.revision: 20
@@ -85,80 +85,79 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: cdd577cd6915a1f3c1e05fae68f7fed47cc79236
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f3056c9686359e1cc12c583bbf86217cba4055d6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="button-styles"></a>ボタン スタイル
-ここでは、ボタンの種類とスタイルについて説明します。  
+# <a name="button-styles"></a>Button Styles
+This topic describes button types and styles.  
   
-## <a name="button-types"></a>ボタンの種類  
- 次の表は、ボタンの種類の一覧です。 次のいずれかを必要に応じて選択できます。 ボタンの種類を指定しない場合、既定値は`BS_PUSHBUTTON`です。  
+## <a name="button-types"></a>Button Types  
+ The following table lists button types. You can optionally choose one of the following. If you do not specify a button type, the default is `BS_PUSHBUTTON`.  
   
-|型|説明|  
+|Type|Description|  
 |----------|-----------------|  
-|`BS_3STATE`|次の&3; つの状態を持つチェック ボックス ボタンを作成します。 `BST_CHECKED`、 `BST_INDETERMINATE`、および`BST_UNCHECKED`です。 このボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信されますが、ボタンの状態は変更されません。 既定では、関連付けられたテキストはチェック ボックスの右側に表示されます。 チェック ボックスの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_AUTO3STATE`|次の&3; つの状態を持つチェック ボックス ボタンを作成します。 `BST_CHECKED`、 `BST_INDETERMINATE`、および`BST_UNCHECKED`です。 このボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信され、ボタンの状態が変更されます。 ボタンの状態は、`BST_CHECKED`、`BST_INDETERMINATE`、`BST_UNCHECKED` の順序で循環します。 既定では、関連付けられたテキストはチェック ボックスの右側に表示されます。 チェック ボックスの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_AUTOCHECKBOX`|2 つの状態を持つチェック ボックス ボタンを作成します。このボタンには、`BST_CHECKED` と `BST_UNCHECKED` の状態があります。 このボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信され、ボタンの状態が変更されます。 既定では、関連付けられたテキストはチェック ボックスの右側に表示されます。 チェック ボックスの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_AUTORADIOBUTTON`|2 つの状態を持つオプション ボタンを作成します。このボタンには、`BST_CHECKED` と `BST_UNCHECKED` の状態があります。 通常、オプション ボタンはグループで使用します。各グループで一度に選択できるオプションは&1; つだけです。 このボタンをクリックすると、`BN_CLICKED` 通知がオーナー ウィンドウに送信され、クリックしたオプション ボタンの状態が `BST_CHECKED` に設定されて、そのボタン グループに含まれる他のすべてのオプション ボタンの状態が `BST_UNCHECKED` に設定されます。 既定では、関連付けられたテキストはオプション ボタンの右側に表示されます。 オプション ボタンの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_CHECKBOX`|2 つの状態を持つチェック ボックス ボタンを作成します。このボタンには、`BST_CHECKED` と `BST_UNCHECKED` の状態があります。 このボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信されますが、ボタンの状態は変更されません。 既定では、関連付けられたテキストはチェック ボックスの右側に表示されます。 チェック ボックスの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_COMMANDLINK`|コマンド リンク ボタンを作成します。 コマンド リンク ボタンは [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] に固有のコマンド ボタンで、メイン テキストの左側に緑の矢印が表示され、メイン テキストの下に注釈が表示されます。 メモ テキストを使用して、設定する[CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote)します。|  
-|`BS_DEFCOMMANDLINK`|コマンド リンク ボタンを作成します。 コマンド リンク ボタンは [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] に固有のコマンド ボタンで、メイン テキストの左側に緑の矢印が表示され、メイン テキストの下に注釈が表示されます。 メモ テキストを使用して、設定する[CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote)します。 このボタンがダイアログ ボックス内にある場合、ボタンに入力フォーカスがなくても、Enter キーを押すとダイアログ ボックスに `BN_CLICKED` 通知が送信されます。|  
-|`BS_DEFPUSHBUTTON`|境界線が黒くて太いコマンド ボタンを作成します。 このボタンがダイアログ ボックス内にある場合、ボタンに入力フォーカスがなくても、Enter キーを押すとダイアログ ボックスに `BN_CLICKED` 通知が送信されます。|  
-|`BS_DEFSPLITBUTTON`|分割ボタンを作成します。 分割ボタンは [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] に固有のコマンド ボタンで、ボタンとドロップダウン矢印が並んで表示されます。 ボタンをクリックすると、既定のコマンドが実行されます。 ドロップダウン矢印をクリックすると、追加のコマンドのメニューが表示されます。 この分割ボタンがダイアログ ボックス内にある場合、ボタンに入力フォーカスがなくても、Enter キーを押すとダイアログ ボックスに `BN_CLICKED` 通知が送信されます。|  
-|`BS_GROUPBOX`|他のボタンをグループ化する四角形を作成します。 このスタイルに関連付けられたテキストは、この四角形の左上隅に表示されます。|  
-|`BS_OWNERDRAW`|オーナー描画ボタンを作成します。 ボタンの外観が変更されると、フレームワークは `DrawItem` メソッドを呼び出します。 `CBitmapButton` クラスを使用するときは、このスタイルを設定する必要があります。|  
-|`BS_PUSHBUTTON`|コマンド ボタンを作成します。ユーザーがボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信されます。|  
-|`BS_RADIOBUTTON`|2 つの状態を持つオプション ボタンを作成します。このボタンには、`BST_CHECKED` と `BST_UNCHECKED` の状態があります。 通常、オプション ボタンはグループで使用します。各グループで一度に選択できるオプションは&1; つだけです。 このボタンをクリックすると、オーナー ウィンドウに `BN_CLICKED` 通知が送信されますが、グループ内のどのボタンの状態も自動的には変更されません。 既定では、関連付けられたテキストはオプション ボタンの右側に表示されます。 オプション ボタンの左側にテキストを表示するには、`BS_LEFTTEXT` スタイルまたは `BS_RIGHTBUTTON` スタイルを使用します。|  
-|`BS_SPLITBUTTON`|分割ボタンを作成します。 分割ボタンは [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] に固有のコマンド ボタンで、ボタンとドロップダウン矢印が並んで表示されます。 ボタンをクリックすると、既定のコマンドが実行されます。 ドロップダウン矢印をクリックすると、追加のコマンドのメニューが表示されます。|  
-|`BS_USERBUTTON`|現在では使用されていないスタイルですが、16 ビット バージョンの Windows との下位互換性のために残されています。 Win32 ベースのアプリケーションでは、このスタイルではなく `BS_OWNERDRAW` を使用してください。|  
+|`BS_3STATE`|Creates a check box button with three states: `BST_CHECKED`, `BST_INDETERMINATE`, and `BST_UNCHECKED`. Clicking on the button sends a `BN_CLICKED` notification to the owner window but does not change the state of the button. By default, associated text is displayed to the right of the check box. To display text to the left of the check box, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_AUTO3STATE`|Creates a check box button with three states: `BST_CHECKED`, `BST_INDETERMINATE`, and `BST_UNCHECKED`. Clicking on the button sends a `BN_CLICKED` notification to the owner window and changes the state of the button. The button states cycle in the order of `BST_CHECKED`, `BST_INDETERMINATE`, and `BST_UNCHECKED`. By default, associated text is displayed to the right of the check box. To display text to the left of the check box, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_AUTOCHECKBOX`|Creates a check box button with two states: `BST_CHECKED` and `BST_UNCHECKED`. Clicking on the button sends a `BN_CLICKED` notification to the owner window and changes the state of the button. By default, associated text is displayed to the right of the check box. To display text to the left of the check box, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_AUTORADIOBUTTON`|Creates a radio button with two states: `BST_CHECKED` and `BST_UNCHECKED`. Radio buttons are usually used in groups, with each group having a maximum of one checked option at a time. Clicking on the button sends a `BN_CLICKED` notification to the owner window, sets the state of the clicked radio button to `BST_CHECKED`, and sets the states of all other radio buttons in the button group to `BST_UNCHECKED`. By default, associated text is displayed to the right of the radio button. To display text to the left of the radio button, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_CHECKBOX`|Creates a check box button with two states: `BST_CHECKED` and `BST_UNCHECKED`. Clicking on the button sends a `BN_CLICKED` notification to the owner window but does not change the state of the button. By default, associated text is displayed to the right of the check box. To display text to the left of the check box, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_COMMANDLINK`|Creates a command link button. A command link button is a command button specific to [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] that displays a green arrow to the left of the main text and a note below the main text. You can set the note text using [CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote).|  
+|`BS_DEFCOMMANDLINK`|Creates a command link button. A command link button is a command button specific to [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] that displays a green arrow to the left of the main text and a note below the main text. You can set the note text using [CButton::SetNote](../../mfc/reference/cbutton-class.md#setnote). If the button is in a dialog box, pressing the ENTER key sends a `BN_CLICKED` notification to the dialog box even when the button does not have the input focus.|  
+|`BS_DEFPUSHBUTTON`|Creates a command button that has a heavy black border. If the button is in a dialog box, pressing the ENTER key sends a `BN_CLICKED` notification to the dialog box even when the button does not have the input focus.|  
+|`BS_DEFSPLITBUTTON`|Creates a split button. A split button is a command button specific to [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] that contains a button adjacent to a drop-down arrow. When you click the button, the default command is executed. When you click the drop-down arrow, a menu of additional commands appears. If the split button is in a dialog box, pressing the ENTER key sends a `BN_CLICKED` notification to the dialog box even when the button does not have the input focus|  
+|`BS_GROUPBOX`|Creates a rectangle in which other buttons can be grouped. Text associated with this style is displayed in the rectangle's upper-left corner.|  
+|`BS_OWNERDRAW`|Creates an owner-drawn button. The framework calls the `DrawItem` method when a visual aspect of the button has changed. This style must be set when you use the `CBitmapButton` class.|  
+|`BS_PUSHBUTTON`|Creates a command button that sends a `BN_CLICKED` notification to the owner window when the user clicks the button.|  
+|`BS_RADIOBUTTON`|Creates a radio button with two states: `BST_CHECKED` and `BST_UNCHECKED`. Radio buttons are usually used in groups, with each group having a maximum of one checked option at a time. Clicking on the button sends a `BN_CLICKED` notification to the owner window but does not automatically change the state of any button in the group. By default, associated text is displayed to the right of the radio button. To display text to the left of the radio button, use the `BS_LEFTTEXT` or `BS_RIGHTBUTTON` style.|  
+|`BS_SPLITBUTTON`|Creates a split button. A split button is a command button specific to [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)] that contains a button adjacent to a drop-down arrow. When you click the button, the default command is executed. When you click the drop-down arrow, a menu of additional commands appears.|  
+|`BS_USERBUTTON`|Obsolete, but provided for compatibility with 16-bit versions of Windows. Win32-based applications should use `BS_OWNERDRAW` instead.|  
   
-## <a name="radio-button-and-check-box-styles"></a>オプション ボタンおよびチェック ボックスのスタイル  
- 次の表は、オプション ボタンとチェック ボックスに固有のスタイルの一覧です。 これらのスタイルは、オプション ボタンおよびチェック ボックス以外のボタンの種類では無視されます。 次の中から&1; つ以上を必要に応じて選択できます。  
+## <a name="radio-button-and-check-box-styles"></a>Radio Button and Check Box Styles  
+ The following table lists styles that are specific to radio buttons and check boxes. These styles are ignored in all other button types. You can optionally choose one or more of the following.  
   
-|スタイル|説明|  
+|Style|Description|  
 |-----------|-----------------|  
-|`BS_LEFTTEXT`|オプション ボタンまたはチェック ボックスのスタイルと組み合わせて指定すると、オプション ボタンまたはチェック ボックスの左側にテキストが表示されます。|  
-|`BS_RIGHTBUTTON`|オプション ボタンまたはチェック ボックスのスタイルと組み合わせて指定すると、オプション ボタンまたはチェック ボックスの左側にテキストが表示されます。 このスタイルは `BS_LEFTTEXT` スタイルと同じです。|  
-|`BS_PUSHLIKE`|チェック ボックスまたはオプション ボタンの外観と動作をコマンド ボタンのようにします。 ボタンは、ボタンの状態が `BST_CHECKED` の場合は押された状態で表示され、ボタンの状態が `BST_INDETERMINATE` の場合は押された状態で淡色表示され、ボタンの状態が `BST_UNCHECKED` の場合は押されていない状態で表示されます。|  
+|`BS_LEFTTEXT`|When combined with a radio button or check-box style, the text appears on the left side of the radio button or check box.|  
+|`BS_RIGHTBUTTON`|When combined with a radio button or check-box style, the text appears on the left side of the radio button or check box. This style is identical to the `BS_LEFTTEXT` style.|  
+|`BS_PUSHLIKE`|Makes a check box or radio button look and behave like a command button. The button appears pressed when its state is `BST_CHECKED`, pressed and dimmed when its state is `BST_INDETERMINATE`, and released when its state is `BST_UNCHECKED`.|  
   
-## <a name="text-alignment-styles"></a>テキストの配置スタイル  
- 次の表は、水平方向と垂直方向のテキストの配置オプションの一覧です。 次のいずれかを必要に応じて選択できます。  
+## <a name="text-alignment-styles"></a>Text Alignment Styles  
+ The following table lists horizontal and vertical text alignment options. You can optionally choose one of the following.  
   
-|スタイル|説明|  
+|Style|Description|  
 |-----------|-----------------|  
-|`BS_LEFT`|ボタンの四角形の内部にテキストを左寄せで配置します。 ただし、`BS_RIGHTBUTTON` スタイルが適用されていないチェック ボックスまたはオプション ボタンの場合、テキストはそのチェック ボックスまたはオプション ボタンの右側に、左寄せで配置されます。|  
-|`BS_RIGHT`|ボタンの四角形の内部にテキストを右寄せで配置します。 ただし、`BS_RIGHTBUTTON` スタイルが適用されていないチェック ボックスまたはオプション ボタンの場合、テキストはそのチェック ボックスまたはオプション ボタンの右側に、右寄せで配置されます。|  
-|`BS_CENTER`|ボタンの四角形内でテキストを水平方向に中央揃えで配置します。|  
-|`BS_TOP`|ボタンの四角形の上部にテキストを配置します。|  
-|`BS_BOTTOM`|ボタンの四角形の下部にテキストを配置します。|  
-|`BS_VCENTER`|ボタンの四角形内でテキストを垂直方向に中央揃えで配置します。|  
+|`BS_LEFT`|Left aligns the text in the button rectangle. However, if the button is a check box or radio button that does not have the `BS_RIGHTBUTTON` style, the text is left aligned on the right side of the check box or radio button.|  
+|`BS_RIGHT`|Right aligns the text in the button rectangle. However, if the button is a check box or radio button that does not have the `BS_RIGHTBUTTON` style, the text is right aligned on the right side of the check box or radio button.|  
+|`BS_CENTER`|Centers text horizontally in the button rectangle.|  
+|`BS_TOP`|Places text at the top of the button rectangle.|  
+|`BS_BOTTOM`|Places text at the bottom of the button rectangle.|  
+|`BS_VCENTER`|Centers text vertically in the button rectangle.|  
   
-## <a name="button-content-options"></a>ボタンの内容に関するオプション  
- 次の表は、ボタンに表示する内容を指定するオプションの一覧です。 テキストしか表示されないボタンの種類では、これらのスタイルは無視されます。 次のいずれかを必要に応じて選択できます。  
+## <a name="button-content-options"></a>Button Content Options  
+ The following table lists options that indicate what is displayed in the button. Button types that only display text ignore these styles. You can optionally choose one of the following.  
   
-|スタイル|説明|  
+|Style|Description|  
 |-----------|-----------------|  
-|`BS_BITMAP`|ボタンにビットマップを表示することを指定します。|  
-|`BS_ICON`|ボタンにアイコンを表示することを指定します。|  
-|`BS_TEXT`|ボタンにテキストを表示することを指定します。|  
+|`BS_BITMAP`|Specifies that the button displays a bitmap.|  
+|`BS_ICON`|Specifies that the button displays an icon.|  
+|`BS_TEXT`|Specifies that the button displays text.|  
   
-## <a name="other-options"></a>その他のオプション  
- 次の表は、任意のボタンの種類で使用できるその他のオプションの一覧です。 次の中から&1; つ以上を必要に応じて選択できます。  
+## <a name="other-options"></a>Other Options  
+ The following table lists additional options that you can use with any button type. You can optionally choose one or more of the following.  
   
-|スタイル|説明|  
+|Style|Description|  
 |-----------|-----------------|  
-|`BS_FLAT`|ボタンが&2; 次元であり、3 次元イメージを作成するための既定の網かけは描画しないように指定します。|  
-|`BS_MULTILINE`|文字列が長すぎてボタンの四角形の内部に&1; 行で収まらない場合は、ボタン テキストを複数行に折り返します。|  
-|`BS_NOTIFY`|ボタンが `BN_DBLCLK`、`BN_KILLFOCUS`、`BN_SETFOCUS` の各通知メッセージを親ウィンドウに送信できるようになります。 ボタンは、このスタイルが指定されているかどうかに関係なく、`BN_CLICKED` 通知を送信します。|  
+|`BS_FLAT`|Specifies that the button is two-dimensional and is not drawn with default shading to create a three-dimensional image.|  
+|`BS_MULTILINE`|Wraps the button text to multiple lines if the text string is too long to fit on a single line in the button rectangle.|  
+|`BS_NOTIFY`|Enables a button to send `BN_DBLCLK`, `BN_KILLFOCUS`, and `BN_SETFOCUS` notification messages to its parent window. Note that buttons send the `BN_CLICKED` notification regardless of whether this style is specified.|  
   
-## <a name="see-also"></a>関連項目  
- [MFC で使用するスタイル](../../mfc/reference/styles-used-by-mfc.md)   
- [CButton::Create](../../mfc/reference/cbutton-class.md#create)
- [ボタン スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775951)   
+## <a name="see-also"></a>See Also  
+ [Styles Used by MFC](../../mfc/reference/styles-used-by-mfc.md)   
+ [CButton::Create](../../mfc/reference/cbutton-class.md#create) [Button Styles](http://msdn.microsoft.com/library/windows/desktop/bb775951)   
 
 
 

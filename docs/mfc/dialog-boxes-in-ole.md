@@ -1,54 +1,73 @@
 ---
-title: "OLE のダイアログ ボックス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ダイアログ ボックス"
-  - "ダイアログ ボックス, ダイアログ ボックスの概要"
-  - "ダイアログ ボックス, OLE"
-  - "挿入 (オブジェクトを)"
-  - "MFC ダイアログ ボックス, OLE ダイアログ ボックス"
-  - "OLE ダイアログ ボックス"
-  - "OLE ダイアログ ボックス, OLE ダイアログ ボックスの概要"
+title: Dialog Boxes in OLE | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC dialog boxes [MFC], OLE dialog boxes
+- OLE dialog boxes
+- dialog boxes
+- OLE dialog boxes [MFC], about OLE dialog boxes
+- dialog boxes [MFC], about dialog boxes
+- dialog boxes [MFC], OLE
+- Insert object
 ms.assetid: 73c41eb8-738a-4d02-9212-d3395bb09a3a
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# OLE のダイアログ ボックス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0b84789d2141e86884adb5bd9fe79c0af39edd18
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ユーザーが OLE 対応アプリケーションを実行しているときに、アクションを実行するためのアプリケーションは、ユーザーの情報が必要な場合があります。  MFC の OLE クラスは、必要な情報を収集するための、いくつかのダイアログ ボックスを表示します。  ここでは、これらのダイアログ ボックスを表示するために必要な OLE ダイアログ ボックスとクラスが処理されるタスクを一覧表示します。  OLE の動作をカスタマイズするために使用されるダイアログ ボックスおよび構造体の詳細については [MFC の参照](../mfc/mfc-desktop-applications.md)を参照してください。  
+---
+# <a name="dialog-boxes-in-ole"></a>Dialog Boxes in OLE
+While a user runs an OLE-enabled application, there are times when the application needs information from the user in order to carry out the operation. The MFC OLE classes provide a number of dialog boxes to gather the required information. This topic lists the tasks handled by the OLE dialog boxes and the classes needed to display those dialog boxes. For details on OLE dialog boxes and the structures used to customize their behavior, see [MFC Reference](../mfc/mfc-desktop-applications.md).  
   
- *オブジェクトの挿入*  
- このダイアログ ボックスは、ユーザーが複合ドキュメントに新しく作成または既存のオブジェクトを挿入できるようにします。  また、項目ようにアイコンを表示することもできます。また、変更アイコンのコマンド ボタンを有効にする。  ユーザーが編集メニューから挿入オブジェクトを選択すると、このダイアログ ボックスを表示します。  このダイアログ ボックスを表示するには [COleInsertDialog](../mfc/reference/coleinsertdialog-class.md) クラスを使用します。  それ自体に MDI アプリケーションを挿入できないことに注意してください。  コンテナーとサーバーのアプリケーションは、それ自体には、SDI アプリケーションである挿入できません。  
+ *Insert Object*  
+ This dialog box allows the user to insert newly created or existing objects into the compound document. It also allows the user to choose to display the item as an icon and enables the Change Icon command button. Display this dialog box when the user chooses Insert Object from the Edit menu. Use the [COleInsertDialog](../mfc/reference/coleinsertdialog-class.md) class to display this dialog box. Note that you cannot insert an MDI application into itself. An application that is a container/server cannot be inserted into itself unless it is an SDI application.  
   
- *形式を選択して貼り付け*  
- このダイアログ ボックスは、データを複合ドキュメントに貼り付けるときに使用する書式を制御できるようになります。  ユーザーは、アイコンとして表示するかどうかをデータ形式が、かどうかデータを埋め込みまたはリンクして選択できます。  ユーザーが編集メニューの貼り付けをクリックすると、このダイアログ ボックスを表示します。  このダイアログ ボックスを表示するには [COlePasteSpecialDialog](../mfc/reference/colepastespecialdialog-class.md) クラスを使用します。  
+ *Paste Special*  
+ This dialog box allows the user to control the format used when pasting data into a compound document. The user can choose the format of the data, whether to embed or link the data, and whether to display it as an icon. Display this dialog box when the user chooses Paste Special from the Edit menu. Use the [COlePasteSpecialDialog](../mfc/reference/colepastespecialdialog-class.md) class to display this dialog box.  
   
- *アイコンを変更します。*  
- このダイアログ ボックスは、ユーザーがリンクされたを埋め込まれたアイテムを表すために、アイコンを表示するかを選択できるようにします。  ユーザーが編集メニューから変更アイコンをクリックするか、特別な貼り付けのアイコンをクリックすると、表示するダイアログ ボックスを変換すると、このダイアログ ボックスを示しています。  ユーザーがオブジェクトの挿入ダイアログ ボックスを開き、アイコンとして表示をクリックすると、タスクを表示します。  このダイアログ ボックスを表示するには [COleChangeIconDialog](../mfc/reference/colechangeicondialog-class.md) クラスを使用します。  
+ *Change Icon*  
+ This dialog box allows the user to select which icon is displayed to represent the linked or embedded item. Display this dialog box when the user chooses Change Icon from the Edit menu or chooses the Change Icon button in either the Paste Special or Convert dialog boxes. Also display it when the user opens the Insert Object dialog box and chooses Display as Icon. Use the [COleChangeIconDialog](../mfc/reference/colechangeicondialog-class.md) class to display this dialog box.  
   
- *変換*  
- このダイアログ ボックスは、ユーザーが埋め込まれたのまたはリンク アイテムの種類を変更することができます。  たとえば、埋め込まれたなメタファイルを変更するために複合ドキュメントでメタファイルを埋め込み、後で他のアプリケーションを使用する場合は、変換のダイアログ ボックスを使用します。  次に、このダイアログ ボックスは、普通、編集メニューの *項目の型の* オブジェクトを、変換をクリックするカスケード メニューをクリックして、表示されます。  このダイアログ ボックスを表示するには [COleConvertDialog](../mfc/reference/coleconvertdialog-class.md) クラスを使用します。  例については、MFC サンプルの OLE [OCLIENT](../top/visual-cpp-samples.md)を実行します。  
+ *Convert*  
+ This dialog box allows the user to change the type of an embedded or linked item. For example, if you have embedded a metafile in a compound document and later want to use another application to modify the embedded metafile, you can use the Convert dialog box. This dialog box is usually displayed by clicking *item type* Object on the Edit menu and then, on the cascading menu, clicking Convert. Use the [COleConvertDialog](../mfc/reference/coleconvertdialog-class.md) class to display this dialog box. For an example, run the MFC OLE sample [OCLIENT](../visual-cpp-samples.md).  
   
- *リンクを編集するか、またはリンクを更新してください。*  
- 編集はリンク オブジェクトのソースの情報を変更するためのダイアログ ボックスを使用してユーザーをリンクします。  更新リンク ダイアログ ボックスに現在のダイアログ ボックスのすべてのリンク アイテムのソースを確認し、編集リンク ダイアログ ボックスを必要に応じて表示されます。  ユーザーが編集メニューのリンクをクリックすると、Edit リンク ダイアログ ボックスを表示します。  更新リンク ダイアログ ボックスは、普通、複合ドキュメントを最初に開いたときに表示されます。  ダイアログ ボックスを表示する [COleUpdateDialog](../Topic/COleUpdateDialog%20Class.md) クラス [COleLinksDialog](../mfc/reference/colelinksdialog-class.md) を使用してください。  
+ *Edit Links or Update Links*  
+ The Edit Links dialog box allows the user to change information about the source of a linked object. The Update Links dialog box verifies the sources of all the linked items in the current dialog box and displays the Edit Links dialog box if necessary. Display the Edit Links dialog box when the user chooses Links from the Edit menu. The Update Links dialog box is usually displayed when a compound document is first opened. Use either the [COleLinksDialog](../mfc/reference/colelinksdialog-class.md) or the [COleUpdateDialog](../mfc/reference/coleupdatedialog-class.md) class, depending on which dialog box you want to display.  
   
- *使用するサーバー応答しない*  
- サーバーが使用中のダイアログ ボックスは、サーバーが別のユーザーまたはタスクで使用されているため、項目をアクティブにする場合は、サーバーが要求を処理して現在存在しない場合、通常、表示されます。  サーバー応答ダイアログ ボックスは、サーバーがアクティベーション要求に応答も表示されます。  これらのダイアログ ボックスは、OLE **IMessageFilter**インターフェイスの実装に基づいて `COleMessageFilter`で表示され、アクティベーション要求を再度行うにはかどうかを決定できます。  このダイアログ ボックスを表示するには [COleBusyDialog](../mfc/reference/colebusydialog-class.md) クラスを使用します。  
+ *Server Busy or Server Not Responding*  
+ The Server Busy dialog box is displayed when the user attempts to activate an item and the server is currently unable to handle the request, usually because the server is in use by another user or task. The Server Not Responding dialog box is displayed if the server does not respond to the activation request at all. These dialog boxes are displayed via `COleMessageFilter`, based on an implementation of the OLE interface **IMessageFilter**, and the user can decide whether to attempt the activation request again. Use the [COleBusyDialog](../mfc/reference/colebusydialog-class.md) class to display this dialog box.  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)   
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)   
  [OLE](../mfc/ole-in-mfc.md)
+
+

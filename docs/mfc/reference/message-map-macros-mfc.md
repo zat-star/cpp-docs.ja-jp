@@ -1,5 +1,5 @@
 ---
-title: "メッセージ マップ マクロ (MFC) |Microsoft ドキュメント"
+title: Message Map Macros (MFC) | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -29,10 +29,10 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - message map macros
-- Windows messages [C++], declaration
+- Windows messages [MFC], declaration
 - demarcating Windows messages
-- message maps [C++], macros
-- message maps [C++], declaration and demarcation
+- message maps [MFC], macros
+- message maps [MFC], declaration and demarcation
 - message mapping macros
 - ranges, message map
 - message map ranges
@@ -55,124 +55,124 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
-ms.openlocfilehash: ca7c5b1e5042ab134ad72a80986435448f5bec20
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d6b6322989db936f67c0d248b5b6a6e781e263ac
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="message-map-macros-mfc"></a>メッセージ マップ マクロ (MFC)
-メッセージ マップをサポートするためには、MFC は、以下のマクロを指定します。  
+# <a name="message-map-macros-mfc"></a>Message Map Macros (MFC)
+To support message maps, MFC supplies the following macros:  
   
-### <a name="message-map-declaration-and-demarcation-macros"></a>メッセージ マップの宣言と定義用マクロ  
-  
-|||  
-|-|-|  
-|[DECLARE_MESSAGE_MAP](#declare_message_map)|メッセージ マップがクラスでメッセージを関数にマップ (クラス宣言で使用する必要があります) 使用されることを宣言します。|  
-|[BEGIN_MESSAGE_MAP](#begin_message_map)|メッセージ マップ (クラスの実装で使用する必要があります) の定義を開始します。|  
-|[同じよう](#begin_template_interface_map)|1 つのテンプレート引数を持つクラス型のメッセージ マップの定義を開始します。 |
-|[END_MESSAGE_MAP](#end_message_map)|メッセージ マップ (クラスの実装で使用する必要があります) の定義を終了します。|  
-  
-### <a name="message-mapping-macros"></a>メッセージ割り当てマクロ  
+### <a name="message-map-declaration-and-demarcation-macros"></a>Message-Map Declaration and Demarcation Macros  
   
 |||  
 |-|-|  
-|[ON_COMMAND](#on_command)|指定したコマンド メッセージを処理する関数を示します。|  
-|[ON_COMMAND_EX](#on_command_ex)|指定したコマンド メッセージを処理する関数を示します。|  
-|[ON_CONTROL](#on_control)|指定されたコントロール通知メッセージを処理する関数を示します。|  
-|[ON_MESSAGE](#on_message)|ユーザー定義メッセージを処理する関数を示します。|  
-|[ON_OLECMD](#on_olecmd)|DocObject またはそのコンテナーからのメニュー コマンドを処理する関数を示します。|  
-|[ON_REGISTERED_MESSAGE](#on_registered_message)|登録済みのユーザー定義メッセージを処理する関数を示します。|  
-|[ON_REGISTERED_THREAD_MESSAGE](#on_registered_thread_message)|ある場合、どの関数が登録されているユーザー定義メッセージを処理することを示します、`CWinThread`クラスです。|  
-|[ON_THREAD_MESSAGE](#on_thread_message)|ある場合、関数は、ユーザー定義メッセージを処理することを示します、`CWinThread`クラスです。|  
-|[ON_UPDATE_COMMAND_UI](#on_update_command_ui)|指定されたユーザー インターフェイス更新コマンド メッセージを処理する関数を示します。|  
+|[DECLARE_MESSAGE_MAP](#declare_message_map)|Declares that a message map will be used in a class to map messages to functions (must be used in the class declaration).|  
+|[BEGIN_MESSAGE_MAP](#begin_message_map)|Begins the definition of a message map (must be used in the class implementation).|  
+|[BEGIN_TEMPLATE_MESSAGE_MAP](#begin_template_interface_map)|Begins the definition of a message map on a class type containing a single template argument. |
+|[END_MESSAGE_MAP](#end_message_map)|Ends the definition of a message map (must be used in the class implementation).|  
   
-### <a name="message-map-range-macros"></a>範囲指定のメッセージ マップ マクロ  
+### <a name="message-mapping-macros"></a>Message-Mapping Macros  
   
 |||  
 |-|-|  
-|[ON_COMMAND_RANGE](#on_command_range)|マクロに最初の 2 つのパラメーターで指定されたコマンド Id の範囲を処理する関数を示します。|  
-|[ON_UPDATE_COMMAND_UI_RANGE](#on_update_command_ui_range)|更新ハンドラーは、最初の 2 つの pa で指定されたコマンド Id の範囲を処理することを示します] rameters マクロにします。|  
-|[ON_CONTROL_RANGE](#on_control_range)|コントロールのマクロに 2 番目と 3 番目のパラメーターで指定した Id の範囲からの通知を処理する関数を示します。 最初のパラメーターは、コントロール通知メッセージがなど**BN_CLICKED**です。|  
+|[ON_COMMAND](#on_command)|Indicates which function will handle a specified command message.|  
+|[ON_COMMAND_EX](#on_command_ex)|Indicates which function will handle a specified command message.|  
+|[ON_CONTROL](#on_control)|Indicates which function will handle a specified control-notification message.|  
+|[ON_MESSAGE](#on_message)|Indicates which function will handle a user-defined message.|  
+|[ON_OLECMD](#on_olecmd)|Indicates which function will handle a menu command from a DocObject or its container.|  
+|[ON_REGISTERED_MESSAGE](#on_registered_message)|Indicates which function will handle a registered user-defined message.|  
+|[ON_REGISTERED_THREAD_MESSAGE](#on_registered_thread_message)|Indicates which function will handle a registered user-defined message when you have a `CWinThread` class.|  
+|[ON_THREAD_MESSAGE](#on_thread_message)|Indicates which function will handle a user-defined message when you have a `CWinThread` class.|  
+|[ON_UPDATE_COMMAND_UI](#on_update_command_ui)|Indicates which function will handle a specified user-interface update command message.|  
   
- メッセージ マップ、メッセージ マップの宣言と定義用マクロ、およびメッセージ マップ マクロの詳細については、次を参照してください。[メッセージ マップ](../../mfc/reference/message-maps-mfc.md)と[メッセージの処理とのマッピングに関するトピック](../../mfc/message-handling-and-mapping.md)です。 メッセージ マップの範囲の詳細については、次を参照してください。[メッセージ マップの範囲内のハンドラー](../../mfc/handlers-for-message-map-ranges.md)です。  
+### <a name="message-map-range-macros"></a>Message-Map Range Macros  
+  
+|||  
+|-|-|  
+|[ON_COMMAND_RANGE](#on_command_range)|Indicates which function will handle the range of command IDs specified in the first two parameters to the macro.|  
+|[ON_UPDATE_COMMAND_UI_RANGE](#on_update_command_ui_range)|Indicates which update handler will handle the range of command IDs specified in the first two pa]rameters to the macro.|  
+|[ON_CONTROL_RANGE](#on_control_range)|Indicates which function will handle notifications from the range of control IDs specified in the second and third parameters to the macro. The first parameter is a control-notification message, such as **BN_CLICKED**.|  
+  
+ For more information on message maps, the message-map declaration and demarcation macros, and the message-mapping macros, see [Message Maps](../../mfc/reference/message-maps-mfc.md) and [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md). For more information about message-map ranges, see [Handlers for Message-Map Ranges](../../mfc/handlers-for-message-map-ranges.md).  
 
 
-## <a name="begin_message_map"></a>BEGIN_MESSAGE_MAP
-メッセージ マップの定義を開始します。  
+## <a name="begin_message_map"></a> BEGIN_MESSAGE_MAP
+Begins the definition of your message map.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 BEGIN_MESSAGE_MAP( theClass, baseClass )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- マップを持つメッセージ クラスの名前を指定します。  
+ Specifies the name of the class whose message map this is.  
   
  `baseClass`  
- 基本クラスの名前を指定`theClass`です。  
+ Specifies the name of the base class of `theClass`.  
   
-### <a name="remarks"></a>コメント  
- クラスのメンバー関数を定義する実装 (.cpp) ファイル、起動するとメッセージ マップ、`BEGIN_MESSAGE_MAP`マクロ、メッセージ ハンドラー関数の各マクロ エントリを追加、メッセージ マップを完了、`END_MESSAGE_MAP`マクロです。  
+### <a name="remarks"></a>Remarks  
+ In the implementation (.cpp) file that defines the member functions for your class, start the message map with the `BEGIN_MESSAGE_MAP` macro, then add macro entries for each of your message-handler functions, and complete the message map with the `END_MESSAGE_MAP` macro.  
   
- メッセージ マップの詳細については、次を参照してください[メッセージ マップ。](message-maps-mfc.md)  
+ For more information about message maps, see [Message Maps](message-maps-mfc.md)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 BEGIN_MESSAGE_MAP(CMainFrame, CMDIFrameWnd)
    ON_WM_CREATE()
 END_MESSAGE_MAP()
 ```
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h 
 
-##  <a name="begin_template_message_map"></a>同じよう
-1 つのテンプレート引数を持つクラス型のメッセージ マップの定義を開始します。  
+##  <a name="begin_template_message_map"></a>BEGIN_TEMPLATE_MESSAGE_MAP
+Begins the definition of a message map on a class type containing a single template argument.  
    
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   ```
 BEGIN_TEMPLATE_MESSAGE_MAP( theClass, type_name, baseClass )  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- マップを持つメッセージ クラスの名前を指定します。    
+ Specifies the name of the class whose message map this is.    
  `type_name`  
- クラスの指定されたテンプレート パラメーターの名前。    
+ The name of the template parameter specified for the class.    
  `baseClass`  
- 基本クラスの名前を指定`theClass`です。  
+ Specifies the name of the base class of `theClass`.  
    
-### <a name="remarks"></a>コメント  
- このマクロがに似ていますが、 [BEGIN_MESSAGE_MAP](message-map-macros-mfc.md#begin_message_map)マクロです。 ただし、このマクロは、1 つのテンプレート引数を含むクラスです。  
+### <a name="remarks"></a>Remarks  
+ This macro is similar to the [BEGIN_MESSAGE_MAP](message-map-macros-mfc.md#begin_message_map) macro; however, this macro is intended for classes containing a single template argument.  
   
- クラスのメソッドの実装のセクション、起動するとメッセージ マップ、**同じよう**マクロ; 標準のメッセージ マップの場合と同様に、メッセージ ハンドラー メソッドの各マクロ エントリを追加します。 同様、 **BEGIN_MESSAGE_MAP**マクロ、テンプレート メッセージ マップを完了します[END_MESSAGE_MAP](message-map-macros-mfc.md#end_message_map)マクロです。  
+ In the method implementation section of your class, start the message map with the **BEGIN_TEMPLATE_MESSAGE_MAP** macro; then add macro entries for each of your message-handler methods as you would for a standard message map. As with the **BEGIN_MESSAGE_MAP** macro, complete the template message map with the [END_MESSAGE_MAP](message-map-macros-mfc.md#end_message_map) macro.  
   
- テンプレート クラスのメッセージ マップを実装する方法についてを参照してください[する方法: テンプレート クラスのメッセージ マップを作成](../how-to-create-a-message-map-for-a-template-class.md)です。  
+ For more information on implementing message maps for template classes, refer to [How to: Create a Message Map for a Template Class](../how-to-create-a-message-map-for-a-template-class.md).  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
  
-## <a name="declare_message_map"></a>DECLARE_MESSAGE_MAP
- クラスがメッセージ マップを定義することを宣言します。 各`CCmdTarget`-プログラム内の派生クラスがメッセージを処理するメッセージ マップを用意する必要があります。  
+## <a name="declare_message_map"></a>  DECLARE_MESSAGE_MAP
+ Declares that the class defines a message map. Each `CCmdTarget`-derived class in your program must provide a message map to handle messages.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```    
 DECLARE_MESSAGE_MAP( )  
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用して、`DECLARE_MESSAGE_MAP`クラスの宣言の最後にマクロです。 クラスのメンバー関数を定義する .cpp ファイルを使用して、`BEGIN_MESSAGE_MAP`マクロ、メッセージ ハンドラー関数の各マクロ エントリと`END_MESSAGE_MAP`マクロです。  
+### <a name="remarks"></a>Remarks  
+ Use the `DECLARE_MESSAGE_MAP` macro at the end of your class declaration. Then, in the .cpp file that defines the member functions for the class, use the `BEGIN_MESSAGE_MAP` macro, macro entries for each of your message-handler functions, and the `END_MESSAGE_MAP` macro.  
   
 > [!NOTE]
->  後の任意のメンバーを宣言する場合`DECLARE_MESSAGE_MAP`を新しいアクセスの種類を指定する必要があります (**パブリック**を`private`をまたは`protected`) にします。  
+>  If you declare any member after `DECLARE_MESSAGE_MAP`, you must specify a new access type (**public**, `private`, or `protected`) for them.  
   
- メッセージの詳細については、マップ、および`DECLARE_MESSAGE_MAP`マクロを参照してください[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+ For more information on message maps and the `DECLARE_MESSAGE_MAP` macro, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 class CMainFrame : public CMDIFrameWnd
 {
@@ -181,159 +181,159 @@ class CMainFrame : public CMDIFrameWnd
    // Remainder of class declaration omitted.
 ``` 
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
 
 
-## <a name="end_message_map"></a>END_MESSAGE_MAP
-メッセージ マップの定義を終了します。  
+## <a name="end_message_map"></a>  END_MESSAGE_MAP
+Ends the definition of your message map.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```   
 END_MESSAGE_MAP( )  
 ```  
   
-### <a name="remarks"></a>コメント  
- メッセージの詳細については、マップ、および`END_MESSAGE_MAP`マクロを参照してください[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information on message maps and the `END_MESSAGE_MAP` macro, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
 
-## <a name="on_command"></a>ON_COMMAND
-このマクロは、コマンドのメッセージをメンバー関数にマップされます。  
+## <a name="on_command"></a>  ON_COMMAND
+This macro maps a command message to a member function.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_COMMAND( id, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id`  
- コマンド ID。  
+ The command ID.  
   
  `memberFxn`  
- コマンドがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the command is mapped.  
   
-### <a name="remarks"></a>コメント  
- メニュー項目またはツール バー ボタンなどのコマンドのユーザー インターフェイス オブジェクトからのコマンド メッセージを処理する関数を示します。  
+### <a name="remarks"></a>Remarks  
+ It indicates which function will handle a command message from a command user-interface object such as a menu item or toolbar button.  
   
- コマンド ターゲット オブジェクトが、Windows を受信すると**WM_COMMAND**指定の ID を持つメッセージ`ON_COMMAND`メンバー関数を呼び出す`memberFxn`メッセージを処理します。  
+ When a command-target object receives a Windows **WM_COMMAND** message with the specified ID, `ON_COMMAND` will call the member function `memberFxn` to handle the message.  
   
- 使用して`ON_COMMAND`に 1 つのコマンドをメンバー関数にマップします。 使用して[ON_COMMAND_RANGE](#on_command_range)コマンド id の範囲を 1 つのメンバー関数にマップします。 1 つのメッセージ マップ エントリは、指定されたコマンド id と一致できます。 つまり、1 つ以上のハンドラーにコマンドを割り当てることはできません。 詳細と例については、次を参照してください。[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+ Use `ON_COMMAND` to map a single command to a member function. Use [ON_COMMAND_RANGE](#on_command_range) to map a range of command ids to one member function. Only one message-map entry can match a given command id. That is, you can't map a command to more than one handler. For more information and examples, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 BEGIN_MESSAGE_MAP(CMFCListViewDoc, CDocument)
    ON_COMMAND(ID_MYCOMMAND, &CMFCListViewDoc::OnMycommand)
 END_MESSAGE_MAP()
 ``` 
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
 
- ## <a name="on_command_ex"></a>ON_COMMAND_EX
-コマンド ハンドラー メンバー関数を拡張します。  
+ ## <a name="on_command_ex"></a>  ON_COMMAND_EX
+Extended command-handler member function.  
    
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   ```  
 ON_COMMAND_EX(id, memberFxn);  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id`  
- コマンド ID。  
+ The command ID.  
   
  `memberFxn`  
- コマンドがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the  message-handler  function to which the  command is mapped.  
    
-### <a name="remarks"></a>コメント 
-コマンド メッセージ ハンドラーの拡張のフォームは、高度な用途で使用します。 `ON_COMMAND_EX`マクロは、このようなメッセージ ハンドラーを使用し、[ON_COMMAND] (#on_command) 機能のスーパー セットが用意されています。  拡張のコマンド ハンドラー メンバー関数は、単一のパラメーターを受け取る、 **UINT**コマンド ID を格納していると、返すを**BOOL**です。 戻り値が TRUE にする必要があります。 
+### <a name="remarks"></a>Remarks 
+An extended form of  command message  handlers is available  for advanced uses. The  `ON_COMMAND_EX` macro  is used for such  message handlers, and  it provides a superset  of the [ON_COMMAND] (#on_command)  functionality.  Extended  command-handler member  functions take a single  parameter, a **UINT**  containing the command  ID, and return a  **BOOL**. The return  value should be TRUE to 
 
-このマクロは、拡張コマンド ハンドラー メンバー関数にコマンドのメッセージをマップします。  
+This macro maps a command message to an extended command-handler member function.  
    
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
 ```  
 ON_COMMAND_EX(id,  memberFxn);  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id`  
- コマンド ID。  
+ The command ID.  
   
  `memberFxn`  
- コマンドがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the command is mapped.  
    
-### <a name="remarks"></a>コメント  
- コマンド メッセージ ハンドラーの拡張のフォームは、高度な用途で使用します。 `ON_COMMAND_EX`マクロは、このようなメッセージ ハンドラーを使用してのスーパー セットが用意されています、 [ON_COMMAND](message-map-macros-mfc.md#on_command)機能します。 拡張のコマンド ハンドラー メンバー関数は、単一のパラメーターを受け取る、 **UINT**コマンド ID を格納していると、返す、 **BOOL**です。 戻り値は、コマンドが処理されたことを示すために TRUE をする必要があります。それ以外の場合、ルーティングは、他のコマンド ターゲット オブジェクトに続行されます。  
-詳細については、テクニカル ノートを参照してください。 [TN006: メッセージ マップ] tm006 メッセージ-maps.md)。  
+### <a name="remarks"></a>Remarks  
+ An extended form of command message handlers is available for advanced uses. The `ON_COMMAND_EX` macro is used for such message handlers, and it provides a superset of the [ON_COMMAND](message-map-macros-mfc.md#on_command) functionality. Extended command-handler member functions take a single parameter, a **UINT** containing the command ID, and return a **BOOL**. The return value should be TRUE to indicate that the command has been handled; otherwise routing will continue to other command target objects.  
+For more information, see Technical Note [TN006: Message Maps]tm006-message-maps.md).  
    
-### <a name="requirements"></a>要件  
- ヘッダー ファイル: afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ Header file: afxmsg_.h  
    
-### <a name="see-also"></a>関連項目  
+### <a name="see-also"></a>See Also  
  [ON_COMMAND](message-map-macros-mfc.md#on_command)   
- [TN006: メッセージ マップ] tm006 メッセージ-maps.md)
+ [TN006: Message Maps]tm006-message-maps.md)
 
   
-## <a name="on_control"></a>ON_CONTROL
-カスタム コントロールの通知メッセージを処理する関数を示します。  
+## <a name="on_control"></a>  ON_CONTROL
+Indicates which function will handle a custom-control notification message.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_CONTROL( wNotifyCode, id, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wNotifyCode`  
- コントロールの通知コード。  
+ The notification code of the control.  
   
  `id`  
- コマンド ID。  
+ The command ID.  
   
  `memberFxn`  
- コマンドがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the command is mapped.  
   
-### <a name="remarks"></a>コメント  
- コントロールの通知メッセージは、親ウィンドウにコントロールから送信されたものです。  
+### <a name="remarks"></a>Remarks  
+ Control notification messages are those sent from a control to its parent window.  
   
- 正確に 1 つあります`ON_CONTROL`メッセージ ハンドラー関数にマップする必要がありますすべてのコントロール通知メッセージのメッセージ マップにマクロ ステートメントです。  
+ There should be exactly one `ON_CONTROL` macro statement in your message map for every control notification message that must be mapped to a message-handler function.  
   
- 詳細と例については、次を参照してください。[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+ For more information and examples, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
   
 
-## <a name="on_message"></a>ON_MESSAGE  
-ユーザー定義メッセージを処理する関数を示します。  
+## <a name="on_message"></a>  ON_MESSAGE  
+Indicates which function will handle a user-defined message.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_MESSAGE( message, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `message`  
- メッセージ ID。  
+ The message ID.  
   
  `memberFxn`  
- メッセージをマップするメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the message is mapped.  
   
- 関数の型でなければなりません`afx_msg LRESULT (CWnd::*)(WPARAM, LPARAM)`です。  
+ The type of the function must be `afx_msg LRESULT (CWnd::*)(WPARAM, LPARAM)`.  
   
-### <a name="remarks"></a>コメント  
- ユーザー定義メッセージは、標準の Windows ではない任意のメッセージ`WM_MESSAGE`メッセージ。 メッセージ ID を選択するときの範囲内の値を使用する必要があります`WM_USER`(0x0400) 0x7FFF にまたは`WM_APP`(0x8000) 0xBFFF にします。 メッセージ Id の詳細については、次を参照してください。 [WM_APP](http://msdn.microsoft.com/library/windows/desktop/ms644930)です。  
+### <a name="remarks"></a>Remarks  
+ User-defined messages are any messages that are not standard Windows `WM_MESSAGE` messages. When selecting a message ID, you must use values within the range of `WM_USER` (0x0400) to 0x7FFF or `WM_APP` (0x8000) to 0xBFFF. For more information regarding message IDs, see [WM_APP](http://msdn.microsoft.com/library/windows/desktop/ms644930).  
   
- 正確に 1 つあります`ON_MESSAGE`メッセージ ハンドラー関数にマップする必要がありますすべてのユーザー定義メッセージのメッセージ マップにマクロ ステートメントです。  
+ There should be exactly one `ON_MESSAGE` macro statement in your message map for every user-defined message that must be mapped to a message-handler function.  
   
 > [!NOTE]
->  ユーザー定義メッセージだけでなく`ON_MESSAGE`一般的ではない Windows メッセージを処理します。 詳細については、サポート技術情報の記事を参照してください。 [99848: 情報: マップより一般的なメッセージを ON_MESSAGE() マクロを使用する](http://go.microsoft.com/fwlink/?linkId=192022)です。  
+>  In addition to user-defined messages, `ON_MESSAGE` handles less common Windows messages. For more information, see Knowledge Base article [99848: INFO: Use ON_MESSAGE() Macro to Map Less-Common Messages](http://go.microsoft.com/fwlink/?linkId=192022).  
   
- 詳細と例については、次を参照してください[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)と[ユーザー定義のハンドラー。](user-defined-handlers.md)  
+ For more information and examples, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md) and [User-Defined Handlers](user-defined-handlers.md)  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 #define WM_MYMESSAGE (WM_USER + 100)
 
@@ -355,160 +355,160 @@ END_MESSAGE_MAP()
 }
 ```   
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
 
-## <a name="on_olecmd"></a>ON_OLECMD    
-コマンドをコマンドのディスパッチ インターフェイスを介してルーティング`IOleCommandTarget`です。  
+## <a name="on_olecmd"></a>  ON_OLECMD  
+Routes commands through the command dispatch interface `IOleCommandTarget`.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_OLECMD( pguid, olecmdid, id )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pguid`  
- コマンドが所属するコマンド グループの識別子。 使用して**NULL**標準グループ。  
+ Identifier of the command group to which the command belongs. Use **NULL** for the standard group.  
   
  *olecmdid*  
- OLE コマンドの識別子。  
+ The identifier of the OLE command.  
   
  `id`  
- メニュー ID、ツールバー ID、ボタン ID、またはその他の ID のリソースまたはオブジェクトのコマンドを実行します。  
+ The menu ID, toolbar ID, button ID, or other ID of the resource or object issuing the command.  
   
-### <a name="remarks"></a>コメント  
- `IOleCommandTarget`DocObject のユーザー インターフェイスで送られたコマンドを受信するためのコンテナーにでき、同じコマンドを送信するコンテナー (新規、開く、名前を付けて保存、および [ファイル] メニュー; 印刷など、コピー、貼り付け、元に戻す、[編集] メニュー) DocObject にします。  
+### <a name="remarks"></a>Remarks  
+ `IOleCommandTarget` allows a container to receive commands that originate in a DocObject's user interface, and allows the container to send the same commands (such as New, Open, SaveAs, and Print on the File menu; and Copy, Paste, Undo, and so forth on the Edit menu) to a DocObject.  
   
- `IOleCommandTarget`OLE オートメーションのよりも簡単です`IDispatch`です。 `IOleCommandTarget`コマンドの標準セットに完全に依存していることはほとんどありません引数を持ち、および種類の情報は必要ありません (タイプ セーフはコマンドの引数も低下)。 引数を指定してコマンドをディスパッチする必要がある場合を使用して[COleServerDoc::OnExecOleCmd](coleserverdoc-class.md#onexecolecmd)です。  
+ `IOleCommandTarget` is simpler than OLE Automation's `IDispatch`. `IOleCommandTarget` relies entirely on a standard set of commands that rarely have arguments, and no type information is involved (type safety is diminished for command arguments as well). If you do need to dispatch commands with arguments, use [COleServerDoc::OnExecOleCmd](coleserverdoc-class.md#onexecolecmd).  
   
- `IOleCommandTarget`標準のメニュー コマンドは、次のマクロに MFC によって実装されています。  
+ The `IOleCommandTarget` standard menu commands have been implemented by MFC in the following macros:  
   
- **ON_OLECMD_CLEARSELECTION に関するページ)**  
+ **ON_OLECMD_CLEARSELECTION( )**  
   
- Clear 編集コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Clear command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_CLEARSELECTION, ID_EDIT_CLEAR)`  
   
- **ON_OLECMD_COPY に関するページ)**  
+ **ON_OLECMD_COPY( )**  
   
- コピーの編集コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Copy command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_COPY, ID_EDIT_COPY)`  
   
- **ON_OLECMD_CUT に関するページ)**  
+ **ON_OLECMD_CUT( )**  
   
- 編集 [切り取り] コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Cut command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_CUT, ID_EDIT_CUT)`  
   
- **ON_OLECMD_NEW に関するページ)**  
+ **ON_OLECMD_NEW( )**  
   
- ファイルの新規作成 コマンドをディスパッチします。 として実装します。  
+ Dispatches the File New command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_NEW, ID_FILE_NEW)`  
   
- **ON_OLECMD_OPEN に関するページ)**  
+ **ON_OLECMD_OPEN( )**  
   
- ファイルを開くコマンドをディスパッチします。 として実装します。  
+ Dispatches the File Open command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_OPEN, ID_FILE_OPEN)`  
   
- **ON_OLECMD_PAGESETUP に関するページ)**  
+ **ON_OLECMD_PAGESETUP( )**  
   
- ファイルのページ設定 コマンドをディスパッチします。 として実装します。  
+ Dispatches the File Page Setup command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_PAGESETUP, ID_FILE_PAGE_SETUP)`  
   
- **ON_OLECMD_PASTE に関するページ)**  
+ **ON_OLECMD_PASTE( )**  
   
- 編集の貼り付け コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Paste command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_PASTE, ID_EDIT_PASTE)`  
   
- **ON_OLECMD_PASTESPECIAL に関するページ)**  
+ **ON_OLECMD_PASTESPECIAL( )**  
   
- 編集貼り付け コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Paste Special command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_PASTESPECIAL, ID_EDIT_PASTE_SPECIAL)`  
   
- **ON_OLECMD_PRINT に関するページ)**  
+ **ON_OLECMD_PRINT( )**  
   
- ファイルの印刷 コマンドをディスパッチします。 として実装します。  
+ Dispatches the File Print command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_PRINT, ID_FILE_PRINT)`  
   
- **ON_OLECMD_PRINTPREVIEW に関するページ)**  
+ **ON_OLECMD_PRINTPREVIEW( )**  
   
- ファイルの印刷プレビュー コマンドをディスパッチします。 として実装します。  
+ Dispatches the File Print Preview command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_PRINTPREVIEW, ID_FILE_PRINT_PREVIEW)`  
   
- **ON_OLECMD_REDO に関するページ)**  
+ **ON_OLECMD_REDO( )**  
   
- やり直しコマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Redo command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_REDO, ID_EDIT_REDO)`  
   
- **ON_OLECMD_SAVE に関するページ)**  
+ **ON_OLECMD_SAVE( )**  
   
- ファイルの保存のコマンドをディスパッチします。 として実装します。  
+ Dispatches the File Save command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_SAVE, ID_FILE_SAVE)`  
   
- **ON_OLECMD_SAVE_AS に関するページ)**  
+ **ON_OLECMD_SAVE_AS( )**  
   
- ファイル名を付けて保存 をディスパッチします。 として実装します。  
+ Dispatches the File Save As command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_SAVEAS, ID_FILE_SAVE_AS)`  
   
- **ON_OLECMD_SAVE_COPY_AS に関するページ)**  
+ **ON_OLECMD_SAVE_COPY_AS( )**  
   
- ファイルのコピーを付けて保存 をディスパッチします。 として実装します。  
+ Dispatches the File Save Copy As command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_SAVECOPYAS, ID_FILE_SAVE_COPY_AS)`  
   
- **ON_OLECMD_SELECTALL に関するページ)**  
+ **ON_OLECMD_SELECTALL( )**  
   
- すべての編集コマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Select All command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_SELECTALL, ID_EDIT_SELECT_ALL)`  
   
- **ON_OLECMD_UNDO に関するページ)**  
+ **ON_OLECMD_UNDO( )**  
   
- 編集を元に戻すコマンドをディスパッチします。 として実装します。  
+ Dispatches the Edit Undo command. Implemented as:  
   
  `ON_OLECMD(NULL, OLECMDID_UNDO, ID_EDIT_UNDO)`  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxdocob.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdocob.h  
   
-### <a name="see-also"></a>関連項目  
- [COleCmdUI クラス](colecmdui-class.md)   
+### <a name="see-also"></a>See Also  
+ [COleCmdUI Class](colecmdui-class.md)   
  [COleServerDoc::OnExecOleCmd](coleserverdoc-class.md#onexecolecmd)
 
-## <a name="on_registered_message"></a>ON_REGISTERED_MESSAGE
-Windows**を通じて**関数を使用して、システム全体で一意であることが保証されている新しいウィンドウ メッセージを定義します。  
+## <a name="on_registered_message"></a>  ON_REGISTERED_MESSAGE
+The Windows **RegisterWindowMessage** function is used to define a new window message that is guaranteed to be unique throughout the system.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_REGISTERED_MESSAGE( nMessageVariable, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMessageVariable`  
- 登録されたウィンドウ メッセージ ID 変数です。  
+ The registered window-message ID variable.  
   
  `memberFxn`  
- メッセージをマップするメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the message is mapped.  
   
-### <a name="remarks"></a>コメント  
- このマクロは、登録済みのメッセージを処理する関数を示します。  
+### <a name="remarks"></a>Remarks  
+ This macro indicates which function will handle the registered message.  
   
- 詳細と例については、次を参照してください。[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+ For more information and examples, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 static UINT NEAR WM_FIND = RegisterWindowMessage(_T("COMMDLG_FIND"));
 
@@ -518,111 +518,111 @@ BEGIN_MESSAGE_MAP(CMyWnd3, CWnd)
 END_MESSAGE_MAP()
 ```  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
   
-### <a name="see-also"></a>関連項目  
- [を通じて](http://msdn.microsoft.com/library/windows/desktop/ms644947)   
- [ユーザー定義によるハンドラー](user-defined-handlers.md)
+### <a name="see-also"></a>See Also  
+ [RegisterWindowMessage](http://msdn.microsoft.com/library/windows/desktop/ms644947)   
+ [User-Defined Handlers](user-defined-handlers.md)
 
-## <a name="on_registered_thread_message"></a>ON_REGISTERED_THREAD_MESSAGE    
-Windows を通じて関数によって登録されたメッセージを処理する関数を示します。  
+## <a name="on_registered_thread_message"></a>  ON_REGISTERED_THREAD_MESSAGE    
+Indicates which function will handle the message registered by the Windows RegisterWindowMessage function.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_REGISTERED_THREAD_MESSAGE(nMessageVariable, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMessageVariable`  
- 登録されたウィンドウ メッセージ ID 変数です。  
+ The registered window-message ID variable.  
   
  `memberFxn`  
- メッセージをマップする CWinThread メッセージ ハンドラー関数の名前。  
+ The name of the CWinThread-message-handler function to which the message is mapped.  
   
-### <a name="remarks"></a>コメント  
- を通じてを使用して、システム全体で一意であることが保証されている新しいウィンドウ メッセージを定義します。 CWinThread クラスがある場合は、ON_REGISTERED_MESSAGE 代わり ON_REGISTERED_THREAD_MESSAGE を使用する必要があります。 
+### <a name="remarks"></a>Remarks  
+ RegisterWindowMessage is used to define a new window message that is guaranteed to be unique throughout the system. ON_REGISTERED_THREAD_MESSAGE must be used instead of ON_REGISTERED_MESSAGE when you have a CWinThread class. 
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
 
-## <a name="on_thread_message"></a>ON_THREAD_MESSAGE    
-ユーザー定義メッセージを処理する関数を示します。  
+## <a name="on_thread_message"></a>  ON_THREAD_MESSAGE  
+Indicates which function will handle a user-defined message.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_THREAD_MESSAGE( message, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `message`  
- メッセージ ID。  
+ The message ID.  
   
  `memberFxn`  
- 名前、 `CWinThread`-メッセージのメッセージがマップされているハンドラー関数。  
+ The name of the `CWinThread`-message-handler function to which the message is mapped.  
   
-### <a name="remarks"></a>コメント  
- `ON_THREAD_MESSAGE`代わりに使用する必要があります`ON_MESSAGE`がある場合、`CWinThread`クラスです。 ユーザー定義メッセージは、標準の Windows ではない任意のメッセージ**WM_MESSAGE**メッセージ。 正確に 1 つあります`ON_THREAD_MESSAGE`メッセージ ハンドラー関数にマップする必要がありますすべてのユーザー定義メッセージのメッセージ マップにマクロ ステートメントです。  
+### <a name="remarks"></a>Remarks  
+ `ON_THREAD_MESSAGE` must be used instead of `ON_MESSAGE` when you have a `CWinThread` class. User-defined messages are any messages that are not standard Windows **WM_MESSAGE** messages. There should be exactly one `ON_THREAD_MESSAGE` macro statement in your message map for every user-defined message that must be mapped to a message-handler function.  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
 
-## <a name="on_update_command_ui"></a>ON_UPDATE_COMMAND_UI    
-このマクロは、ユーザー インターフェイス更新コマンド メッセージを処理する関数を示します。  
+## <a name="on_update_command_ui"></a>  ON_UPDATE_COMMAND_UI    
+This macro indicates which function will handle a user-interface update command message.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_UPDATE_COMMAND_UI( id, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id`  
- メッセージ ID。  
+ The message ID.  
   
  `memberFxn`  
- メッセージをマップするメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the message is mapped.  
   
-### <a name="remarks"></a>コメント  
- 正確に 1 つあります`ON_UPDATE_COMMAND_UI`メッセージ ハンドラー関数にマップする必要がありますすべてのユーザー インターフェイス更新コマンドに対して、メッセージ マップにマクロ ステートメントです。  
+### <a name="remarks"></a>Remarks  
+ There should be exactly one `ON_UPDATE_COMMAND_UI` macro statement in your message map for every user-interface update command that must be mapped to a message-handler function.  
   
- 詳細と例については、次を参照してください。[メッセージの処理とマップ」](../../mfc/message-handling-and-mapping.md)です。  
+ For more information and examples, see [Message Handling and Mapping Topics](../../mfc/message-handling-and-mapping.md).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
   
-### <a name="see-also"></a>関連項目  
- [CCmdUI クラス](ccmdui-class.md)
+### <a name="see-also"></a>See Also  
+ [CCmdUI Class](ccmdui-class.md)
 
-## <a name="on_command_range"></a>ON_COMMAND_RANGE  
-コマンド Id の連続する範囲を 1 つのメッセージ ハンドラー関数にマップするのにには、このマクロを使用します。  
+## <a name="on_command_range"></a>  ON_COMMAND_RANGE  
+Use this macro to map a contiguous range of command IDs to a single message handler function.  
   
-### <a name="syntax"></a>構文
+### <a name="syntax"></a>Syntax
   
 ```  
 ON_COMMAND_RANGE( id1, id2, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id1`  
- コマンド Id の連続した範囲の先頭のコマンド ID。  
+ Command ID at the beginning of a contiguous range of command IDs.  
   
  `id2`  
- コマンド Id の連続した範囲の最後のコマンド ID。  
+ Command ID at the end of a contiguous range of command IDs.  
   
  `memberFxn`  
- コマンドがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the commands are mapped.  
   
-### <a name="remarks"></a>コメント  
- Id の範囲の始まり`id1`で終わります`id2`です。  
+### <a name="remarks"></a>Remarks  
+ The range of IDs starts with `id1` and ends with `id2`.  
   
- 使用して`ON_COMMAND_RANGE`コマンド Id の範囲を 1 つのメンバー関数にマップします。 使用して[ON_COMMAND](#on_command)に 1 つのコマンドをメンバー関数にマップします。 1 つのメッセージ マップ エントリが指定されたコマンド ID と一致できます。 つまり、1 つ以上のハンドラーにコマンドを割り当てることはできません。 メッセージの範囲のマッピングの詳細については、次を参照してください。[メッセージ マップの範囲内のハンドラー](../../mfc/handlers-for-message-map-ranges.md)です。  
+ Use `ON_COMMAND_RANGE` to map a range of command IDs to one member function. Use [ON_COMMAND](#on_command) to map a single command to a member function. Only one message-map entry can match a given command ID. That is, you can't map a command to more than one handler. For more information on mapping message ranges, see [Handlers for Message-Map Ranges](../../mfc/handlers-for-message-map-ranges.md).  
   
- メッセージ マップの範囲の自動サポートがないため、自分でマクロを配置する必要があります。  
+ There is no automatic support for message map ranges, so you must place the macro yourself.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp  
 // The code fragment below shows how to use ON_COMMAND_RANGE macro 
 // to map a contiguous range of command IDs to a single message  
@@ -643,67 +643,67 @@ void CChildFrame::OnRangeCmds(UINT nID)
 }
 ```
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
 
-## <a name="on_update_command_ui_range"></a>ON_UPDATE_COMMAND_UI_RANGE    
-コマンド Id の連続する範囲を 1 つの更新メッセージ ハンドラー関数にマップします。  
+## <a name="on_update_command_ui_range"></a>  ON_UPDATE_COMMAND_UI_RANGE    
+Maps a contiguous range of command IDs to a single update message handler function.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_UPDATE_COMMAND_UI_RANGE( id1, id2, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `id1`  
- コマンド Id の連続した範囲の先頭のコマンド ID。  
+ Command ID at the beginning of a contiguous range of command IDs.  
   
  `id2`  
- コマンド Id の連続した範囲の最後のコマンド ID。  
+ Command ID at the end of a contiguous range of command IDs.  
   
  `memberFxn`  
- コマンドがマップされている更新メッセージ ハンドラー関数の名前。  
+ The name of the update message-handler function to which the commands are mapped.  
   
-### <a name="remarks"></a>コメント  
- 更新メッセージ ハンドラーは、メニュー項目と、コマンドに関連付けられたツール バー ボタンの状態を更新します。 Id の範囲の始まり`id1`で終わります`id2`です。  
+### <a name="remarks"></a>Remarks  
+ Update message handlers update the state of menu items and toolbar buttons associated with the command. The range of IDs starts with `id1` and ends with `id2`.  
   
- メッセージ マップの範囲の自動サポートがないため、自分でマクロを配置する必要があります。  
+ There is no automatic support for message map ranges, so you must place the macro yourself.  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
 
-## <a name="on_control_range"></a>ON_CONTROL_RANGE     
-このマクロを使用してなどコントロール Id の連続した範囲を指定した Windows 通知メッセージは、1 つのメッセージ ハンドラー関数にマップ**BN_CLICKED**です。  
+## <a name="on_control_range"></a>  ON_CONTROL_RANGE     
+Use this macro to map a contiguous range of control IDs to a single message handler function for a specified Windows notification message, such as **BN_CLICKED**.  
   
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   
 ```  
 ON_CONTROL_RANGE( wNotifyCode, id1, id2, memberFxn )  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wNotifyCode`  
- ハンドラーが応答する通知コード。  
+ The notification code to which your handler is responding.  
   
  `id1`  
- コントロール Id の連続した範囲の先頭のコマンド ID。  
+ Command ID at the beginning of a contiguous range of control IDs.  
   
  `id2`  
- コントロール Id の連続した範囲の最後のコマンド ID。  
+ Command ID at the end of a contiguous range of control IDs.  
   
  `memberFxn`  
- コントロールがマップされているメッセージ ハンドラー関数の名前。  
+ The name of the message-handler function to which the controls are mapped.  
   
-### <a name="remarks"></a>コメント  
- Id の範囲の始まり`id1`で終わります`id2`です。 マップ コントロールのいずれかから指定された通知のハンドラーが呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ The range of IDs starts with `id1` and ends with `id2`. The handler is called for the specified notification coming from any of the mapped controls.  
   
- メッセージ マップの範囲の自動サポートがないため、自分でマクロを配置する必要があります。  
+ There is no automatic support for message map ranges, so you must place the macro yourself.  
   
- コントロール Id の範囲に対するハンドラー関数を実装する方法についてを参照してください[メッセージ マップの範囲内のハンドラー](../../mfc/handlers-for-message-map-ranges.md)です。  
+ For more information on implementing handler functions for a range of control IDs, refer to [Handlers for Message-Map Ranges](../../mfc/handlers-for-message-map-ranges.md).  
   
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxmsg_.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxmsg_.h  
   
 
 

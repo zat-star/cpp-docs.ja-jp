@@ -1,31 +1,48 @@
 ---
-title: "TOOLTIPTEXT 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "TOOLTIPTEXT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ツール ヒント [C++], 通知"
-  - "TOOLTIPTEXT 構造体"
+title: TOOLTIPTEXT Structure | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- TOOLTIPTEXT
+dev_langs:
+- C++
+helpviewer_keywords:
+- TOOLTIPTEXT structure [MFC]
+- tool tips [MFC], notifications
 ms.assetid: 547591bf-80f5-400e-a2a7-0708cfffbb5d
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# TOOLTIPTEXT 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e7d5ad1e3607d21d2d8243455e479e78d87897c0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[ツール ヒントの通知ハンドラー](../Topic/Handling%20TTN_NEEDTEXT%20Notification%20for%20Tool%20Tips.md)を作成すると、`TOOLTIPTEXT` 構造体を使用する必要があります。  `TOOLTIPTEXT`構造体のメンバーは、次の操作:  
+---
+# <a name="tooltiptext-structure"></a>TOOLTIPTEXT Structure
+In writing your [tool tip notification handler](../mfc/handling-ttn-needtext-notification-for-tool-tips.md), you need to use the `TOOLTIPTEXT` structure. The members of the `TOOLTIPTEXT` structure are:  
   
  `typedef struct {`  
   
@@ -46,24 +63,26 @@ caps.handback.revision: 9
  `} TOOLTIPTEXT, FAR *LPTOOLTIPTEXT;`  
   
  `hdr`  
- テキストを必要とするツールを指定します。  必要となるこの構造体のメンバーは、コントロールの ID です。  コントロールの ID は、構文 `hdr.idFrom`とアクセスされた `NMHDR` 構造体の `idFrom` のメンバーです。  `NMHDR` 構造体のメンバーの説明の [NMHDR](http://msdn.microsoft.com/library/windows/desktop/bb775514) を参照してください。  
+ Identifies the tool that needs text. The only member of this structure you might need is the control's command ID. The control's command ID will be in the `idFrom` member of the `NMHDR` structure, accessed with the syntax `hdr.idFrom`. See [NMHDR](http://msdn.microsoft.com/library/windows/desktop/bb775514) for a discussion of members of the `NMHDR` structure.  
   
  `lpszText`  
- ツールのテキストを受け取る文字列のアドレス。  
+ Address of a string to receive the text for a tool.  
   
  `szText`  
- バッファリングします。ツールヒント テキストを受け取る。  アプリケーションは文字列のアドレス指定にこのバッファーにテキストを代替コピーできます。  
+ Buffer that receives the tool tip text. An application can copy the text to this buffer as an alternative to specifying a string address.  
   
  `hinst`  
- ツールヒント テキストとして使用される文字列を含むインスタンスのハンドル。  `lpszText` がツールヒント テキストのアドレスは、このメンバーは null です。  
+ Handle of the instance that contains a string to be used as the tool tip text. If `lpszText` is the address of the tool tip text, this member is NULL.  
   
- `TTN_NEEDTEXT` の通知メッセージを処理するときは、次の方法で 1 つに表示する文字列を指定する:  
+ When you handle the `TTN_NEEDTEXT` notification message, specify the string to be displayed in one of the following ways:  
   
--   `szText` のメンバーで指定されたバッファーにテキストをコピーします。  
+-   Copy the text to the buffer specified by the `szText` member.  
   
--   `lpszText` のメンバーにテキストを含むバッファーのアドレスをコピーします。  
+-   Copy the address of the buffer that contains the text to the `lpszText` member.  
   
--   文字列リソースの識別子を `lpszText` のメンバーにコピーし、`hinst` のメンバーにリソースを含むインスタンス ハンドルをコピーします。  
+-   Copy the identifier of a string resource to the `lpszText` member, and copy the handle of the instance that contains the resource to the `hinst` member.  
   
-## 参照  
- [CFrameWnd から派生していないウィンドウのツール ヒント](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)
+## <a name="see-also"></a>See Also  
+ [Tool Tips in Windows Not Derived from CFrameWnd](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)
+
+

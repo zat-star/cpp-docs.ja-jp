@@ -1,44 +1,63 @@
 ---
-title: "ツール バーの作成方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolBar クラス, 作成 (ツール バーを)"
-  - "CToolBarCtrl クラス, および CToolBar クラス"
-  - "CToolBarCtrl クラス, 作成 (ツール バーを)"
-  - "MFC ツール バー"
-  - "ツール バー コントロール [MFC]"
-  - "ツール バー コントロール [MFC], 作成"
+title: Methods of Creating a Toolbar | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CToolBarCtrl class [MFC], and CToolBar class [MFC]
+- CToolBar class [MFC], creating toolbars
+- MFC toolbars
+- toolbar controls [MFC]
+- toolbar controls [MFC], creating
+- CToolBarCtrl class [MFC], creating toolbars
 ms.assetid: f19d8d65-d49f-445c-abe8-d47d3e4101c8
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツール バーの作成方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fabdce772443dc433233b74683956f1091118290
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC では、ツール バーを作成するための 2 種類のクラスが用意されています。: [CToolBar](../mfc/reference/ctoolbar-class.md) と [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) \(Windows コモン コントロール API をラップする\)。  `CToolBar` は バー コモン コントロールの機能を提供し、の必須のコモン コントロールの設定と構造の多くを処理します; ただし、生成された実行可能ファイルには、通常 `CToolBarCtrl`を使用して作成された、より大きい。  
+---
+# <a name="methods-of-creating-a-toolbar"></a>Methods of Creating a Toolbar
+MFC provides two classes to create toolbars: [CToolBar](../mfc/reference/ctoolbar-class.md) and [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) (which wraps the Windows common control API). `CToolBar` provides all of the functionality of the toolbar common control, and it handles many of the required common control settings and structures for you; however, your resulting executable usually will be larger than that created by using `CToolBarCtrl`.  
   
- `CToolBarCtrl` は 通常は、実行可能ファイルになり、MFC アーキテクチャにツール バーを統合する場合を除き `CToolBarCtrl` を使用した方がよい場合があります。  `CToolBarCtrl` を使用し、MFC アーキテクチャをツール バーに統合する場合は、MFC とツール バー コントロールの操作を伝える追加注意を払う必要があります。  この通信は困難ではありません; ただし、`CToolBar`を使用する場合は、追加の不要な作業です。  
+ `CToolBarCtrl` usually results in a smaller executable, and you may prefer to use `CToolBarCtrl` if you do not intend to integrate the toolbar into the MFC architecture. If you plan to use `CToolBarCtrl` and integrate the toolbar into the MFC architecture, you must take additional care to communicate toolbar control manipulations to MFC. This communication is not difficult; however, it is additional work that is unneeded when you use `CToolBar`.  
   
- Visual C\+\+ では、バー コモン コントロールを使用する 2 とおりの方法を示します。  
+ Visual C++ provides two ways to take advantage of the toolbar common control.  
   
--   ツール バーを `CToolBar`を使用して作成し、`CToolBarCtrl` のメンバー関数へのアクセスを取得するに [CToolBar::GetToolBarCtrl](../Topic/CToolBar::GetToolBarCtrl.md) を呼び出します。  
+-   Create the toolbar using `CToolBar`, and then call [CToolBar::GetToolBarCtrl](../mfc/reference/ctoolbar-class.md#gettoolbarctrl) to get access to the `CToolBarCtrl` member functions.  
   
--   [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) のコンストラクターを使用してツール バーを作成します。  
+-   Create the toolbar using [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)'s constructor.  
   
- どちらのメソッドは、ツール バー コントロールのメンバー関数にアクセスできます。  `CToolBar::GetToolBarCtrl`を呼び出すと、`CToolBarCtrl` オブジェクトへの参照を返すため、メンバー関数のいずれかを使用して設定できます。  `CToolBar`を使用してツール バーを作成し、それを作成する方法については、" [CToolBar](../mfc/reference/ctoolbar-class.md) を参照してください。  
+ Either method will give you access to the member functions of the toolbar control. When you call `CToolBar::GetToolBarCtrl`, it returns a reference to a `CToolBarCtrl` object so you can use either set of member functions. See [CToolBar](../mfc/reference/ctoolbar-class.md) for information on constructing and creating a toolbar using `CToolBar`.  
   
-## 参照  
- [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolBarCtrl](../mfc/using-ctoolbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

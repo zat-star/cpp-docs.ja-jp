@@ -1,39 +1,58 @@
 ---
-title: "リッチ エディット コントロールでの文字書式の設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRichEditCtrl クラス, 文字書式"
-  - "書式指定 [C++], 文字"
-  - "リッチ エディット コントロール, 文字書式"
+title: Character Formatting in Rich Edit Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- formatting [MFC], characters
+- rich edit controls [MFC], character formatting in
+- CRichEditCtrl class [MFC], character formatting in
 ms.assetid: c80f4305-75ad-45f9-8d17-d83d0fe79be5
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# リッチ エディット コントロールでの文字書式の設定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e2da6052721125835517a2b93341a6800c75205e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-書式指定文字にリッチ エディット コントロール \([CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)\) のメンバー関数を使用して、書式設定情報を取得できます。  文字に対し、斜体、Protected 太字などのタイプフェイス指定し、効果のサイズを設定し、色、できます。  
+---
+# <a name="character-formatting-in-rich-edit-controls"></a>Character Formatting in Rich Edit Controls
+You can use member functions of the rich edit control ([CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)) to format characters and to retrieve formatting information. For characters, you can specify typeface, size, color, and effects such as bold, italic, and protected.  
   
- [SetSelectionCharFormat](../Topic/CRichEditCtrl::SetSelectionCharFormat.md) と [SetWordCharFormat](../Topic/CRichEditCtrl::SetWordCharFormat.md) メンバー関数を使用して文字書式を適用できます。  選択したテキストの現在の文字書式を確認するには、[GetSelectionCharFormat](../Topic/CRichEditCtrl::GetSelectionCharFormat.md) メンバー関数を使用します。  これらのメンバー関数と [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) 構造体が文字属性を指定するために使用されます。  **CHARFORMAT** の重要なメンバーの 1 つが **dwMask**です。  `SetSelectionCharFormat` と `SetWordCharFormat`で、**dwMask** はどの文字属性がこの関数呼び出しで設定されるかを指定します。  `GetSelectionCharFormat` を選択範囲の最初の文字の属性を報告します; **dwMask** は選択で一貫している属性を指定します。  
+ You can apply character formatting by using the [SetSelectionCharFormat](../mfc/reference/cricheditctrl-class.md#setselectioncharformat) and [SetWordCharFormat](../mfc/reference/cricheditctrl-class.md#setwordcharformat) member functions. To determine the current character formatting for the selected text, use the [GetSelectionCharFormat](../mfc/reference/cricheditctrl-class.md#getselectioncharformat) member function. The [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure is used with these member functions to specify character attributes. One of the important members of **CHARFORMAT** is **dwMask**. In `SetSelectionCharFormat` and `SetWordCharFormat`, **dwMask** specifies which character attributes will be set by this function call. `GetSelectionCharFormat` reports the attributes of the first character in the selection; **dwMask** specifies the attributes that are consistent throughout the selection.  
   
- 「既定の文字書式を取得および設定する」の後に挿入された文字に適用される書式です。  たとえば、アプリケーションが太字に書式設定する既定の文字を設定し、ユーザーが文字を入力した場合、その文字は、太字で表示されます。  既定の文字の書式設定を取得および設定するには、[GetDefaultCharFormat](../Topic/CRichEditCtrl::GetDefaultCharFormat.md) と [SetDefaultCharFormat](../Topic/CRichEditCtrl::SetDefaultCharFormat.md) メンバー関数を使用します。  
+ You can also get and set the "default character formatting," which is the formatting applied to any subsequently inserted characters. For example, if an application sets the default character formatting to bold and the user then types a character, that character is bold. To get and set default character formatting, use the [GetDefaultCharFormat](../mfc/reference/cricheditctrl-class.md#getdefaultcharformat) and [SetDefaultCharFormat](../mfc/reference/cricheditctrl-class.md#setdefaultcharformat) member functions.  
   
- 「属性がテキストの外観が変更されない文字を保護します。  保護されたなテキストを変更するユーザーの操作がリッチ エディット コントロールの親ウィンドウに **EN\_PROTECTED** 通知メッセージを送信する場合は、変更を許可するか、親ウィンドウを行えるようにします。  この通知メッセージを受け取るために、[SetEventMask](../Topic/CRichEditCtrl::SetEventMask.md) メンバー関数を使用してこの機能を有効にする必要があります。  イベント マスクに関する詳細については、このトピックの [リッチ エディット コントロールからの通知](../mfc/notifications-from-a-rich-edit-control.md)を、後で参照します。  
+ The "protected" character attribute does not change the appearance of text. If the user attempts to modify protected text, a rich edit control sends its parent window an **EN_PROTECTED** notification message, allowing the parent window to allow or prevent the change. To receive this notification message, you must enable it by using the [SetEventMask](../mfc/reference/cricheditctrl-class.md#seteventmask) member function. For more information about the event mask, see [Notifications from a Rich Edit Control](../mfc/notifications-from-a-rich-edit-control.md), later in this topic.  
   
- 前景色は文字属性が、背景色がリッチ エディット コントロールのプロパティです。  背景色を設定するには、[SetBackgroundColor](../Topic/CRichEditCtrl::SetBackgroundColor.md) メンバー関数を使用します。  
+ Foreground color is a character attribute, but background color is a property of the rich edit control. To set the background color, use the [SetBackgroundColor](../mfc/reference/cricheditctrl-class.md#setbackgroundcolor) member function.  
   
-## 参照  
- [CRichEditCtrl の使い方](../mfc/using-cricheditctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CRichEditCtrl](../mfc/using-cricheditctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

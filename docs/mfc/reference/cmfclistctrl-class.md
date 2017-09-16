@@ -1,5 +1,5 @@
 ---
-title: "CMFCListCtrl クラス |Microsoft ドキュメント"
+title: CMFCListCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,7 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCListCtrl class
+- CMFCListCtrl [MFC], EnableMarkSortedColumn
+- CMFCListCtrl [MFC], EnableMultipleSort
+- CMFCListCtrl [MFC], GetHeaderCtrl
+- CMFCListCtrl [MFC], IsMultipleSort
+- CMFCListCtrl [MFC], OnCompareItems
+- CMFCListCtrl [MFC], OnGetCellBkColor
+- CMFCListCtrl [MFC], OnGetCellFont
+- CMFCListCtrl [MFC], OnGetCellTextColor
+- CMFCListCtrl [MFC], RemoveSortColumn
+- CMFCListCtrl [MFC], SetSortColumn
+- CMFCListCtrl [MFC], Sort
 ms.assetid: 50d16aee-138c-4f34-8690-cb75d544ef2e
 caps.latest.revision: 29
 author: mikeblome
@@ -45,50 +55,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 3a4c67b2d7ea2a5356f7c053403edf414319a928
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6270fa413b67b3237ee923d10217b168f0ddc33e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfclistctrl-class"></a>CMFCListCtrl クラス
-`CMFCListCtrl`クラスの機能を拡張する[CListCtrl クラス](../../mfc/reference/clistctrl-class.md)クラスの高度なヘッダー コントロールの機能をサポートすることによって、 [CMFCHeaderCtrl クラス](../../mfc/reference/cmfcheaderctrl-class.md)します。  
+# <a name="cmfclistctrl-class"></a>CMFCListCtrl Class
+The `CMFCListCtrl` class extends the functionality of [CListCtrl Class](../../mfc/reference/clistctrl-class.md) class by supporting the advanced header control functionality of the [CMFCHeaderCtrl Class](../../mfc/reference/cmfcheaderctrl-class.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCListCtrl : public CListCtrl  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCListCtrl::EnableMarkSortedColumn](#enablemarksortedcolumn)|別の背景色で並べ替えられた列をマークすることを有効にします。|  
-|[CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)|複数の並べ替えモードを有効にします。|  
-|[CMFCListCtrl::GetHeaderCtrl](#getheaderctrl)|下線が引かれたヘッダー コントロールへの参照を返します。|  
-|[CMFCListCtrl::IsMultipleSort](#ismultiplesort)|かどうか、リスト コントロールが複数の並べ替えモードを確認します。|  
-|[CMFCListCtrl::OnCompareItems](#oncompareitems)|2 つのリスト コントロール項目を比較する必要があるときに、フレームワークによって呼び出されます。|  
-|[CMFCListCtrl::OnGetCellBkColor](#ongetcellbkcolor)|個々 のセルの背景色を確認する必要があるときに、フレームワークによって呼び出されます。|  
-|[CMFCListCtrl::OnGetCellFont](#ongetcellfont)|描画されるセルのフォントを取得する必要があるときに、フレームワークによって呼び出されます。|  
-|[CMFCListCtrl::OnGetCellTextColor](#ongetcelltextcolor)|個々 のセルのテキストの色を確認する必要があるときに、フレームワークによって呼び出されます。|  
-|[CMFCListCtrl::RemoveSortColumn](#removesortcolumn)|並べ替えられた列の一覧から並べ替え列を削除します。|  
-|[CMFCListCtrl::SetSortColumn](#setsortcolumn)|現在の並べ替え列と並べ替え順序を設定します。|  
-|[CMFCListCtrl::Sort](#sort)|リスト コントロールを並べ替えます。|  
+|[CMFCListCtrl::EnableMarkSortedColumn](#enablemarksortedcolumn)|Enables the ability to mark a sorted column with a different background color.|  
+|[CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)|Enables multiple sort mode.|  
+|[CMFCListCtrl::GetHeaderCtrl](#getheaderctrl)|Returns a reference to the underlined header control.|  
+|[CMFCListCtrl::IsMultipleSort](#ismultiplesort)|Checks if the list control is in multiple sort mode.|  
+|[CMFCListCtrl::OnCompareItems](#oncompareitems)|Called by the framework when it must compare two list control items.|  
+|[CMFCListCtrl::OnGetCellBkColor](#ongetcellbkcolor)|Called by the framework when it must determine the background color of an individual cell.|  
+|[CMFCListCtrl::OnGetCellFont](#ongetcellfont)|Called by the framework when it must obtain the font for the cell being drawn.|  
+|[CMFCListCtrl::OnGetCellTextColor](#ongetcelltextcolor)|Called by the framework when it must determine the text color of an individual cell.|  
+|[CMFCListCtrl::RemoveSortColumn](#removesortcolumn)|Removes a sort column from the list of sorted columns.|  
+|[CMFCListCtrl::SetSortColumn](#setsortcolumn)|Sets the current sorted column and the sort order.|  
+|[CMFCListCtrl::Sort](#sort)|Sorts the list control.|  
   
-## <a name="remarks"></a>コメント  
- `CMFCListCtrl`2 つの拡張は、 [CListCtrl クラス](../../mfc/reference/clistctrl-class.md)クラスです。 最初に、自動的にヘッダーの並べ替えの矢印を描画することによって利用可能なオプションでは列の並べ替えことを示します。 次に、データの同時に複数の列で並べ替えをサポートします。  
+## <a name="remarks"></a>Remarks  
+ `CMFCListCtrl` offers two enhancements to [CListCtrl Class](../../mfc/reference/clistctrl-class.md) class. First, it indicates that column sorting is an available option by automatically drawing a sort arrow on the header. Second, it supports data sorting on multiple columns at the same time.  
   
-## <a name="example"></a>例  
- 次の例では、さまざまなメソッドを使用する方法、`CMFCListCtrl`クラスです。 この例では、リスト コントロールを作成、列を挿入する、項目を挿入、アイテムのテキストを設定およびリスト コントロールのフォントを設定する方法を示します。 このコード スニペットの一部である、 [Visual Studio のデモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to use various methods in the `CMFCListCtrl` class. The example shows how to create a list control, insert columns, insert items, set the text of an item, and set the font of the list control. This code snippet is part of the [Visual Studio Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_VisualStudioDemo&#25;](../../mfc/codesnippet/cpp/cmfclistctrl-class_1.h)]  
-[!code-cpp[NVC_MFC_VisualStudioDemo #&26;](../../mfc/codesnippet/cpp/cmfclistctrl-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_VisualStudioDemo#25](../../mfc/codesnippet/cpp/cmfclistctrl-class_1.h)]  
+[!code-cpp[NVC_MFC_VisualStudioDemo#26](../../mfc/codesnippet/cpp/cmfclistctrl-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -99,11 +109,11 @@ class CMFCListCtrl : public CListCtrl
   
  [CMFCListCtrl](../../mfc/reference/cmfclistctrl-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxlistctrl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxlistctrl.h  
   
-##  <a name="enablemarksortedcolumn"></a>CMFCListCtrl::EnableMarkSortedColumn  
- 別の背景色で並べ替えられた列をマークします。  
+##  <a name="enablemarksortedcolumn"></a>  CMFCListCtrl::EnableMarkSortedColumn  
+ Marks the sorted columns with a different background color.  
   
 ```  
 void EnableMarkSortedColumn(
@@ -111,58 +121,58 @@ void EnableMarkSortedColumn(
     BOOL bRedraw = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bMark`  
- 別の背景色を有効にするかどうかを決定するブール値パラメーター。  
+### <a name="parameters"></a>Parameters  
+ [in] `bMark`  
+ A Boolean parameter that determines whether to enable a different background color.  
   
- [入力] `bRedraw`  
- コントロールをすぐに再描画するかどうかを決定するブール値パラメーター。  
+ [in] `bRedraw`  
+ A Boolean parameter that determines whether to redraw the control immediately.  
   
-### <a name="remarks"></a>コメント  
- `EnableMarkSortedColumn`メソッドを使用して`CDrawingManager::PixelAlpha`に使用する色を計算する列を並べ替えます。 選択される色は、標準の背景色に基づいています。  
+### <a name="remarks"></a>Remarks  
+ `EnableMarkSortedColumn` uses the method `CDrawingManager::PixelAlpha` to calculate what color to use for sorted columns. The color picked is based upon the regular background color.  
   
-##  <a name="enablemultiplesort"></a>CMFCListCtrl::EnableMultipleSort  
- 複数の列でリスト コントロール内のデータの行の並べ替えを有効にします。  
+##  <a name="enablemultiplesort"></a>  CMFCListCtrl::EnableMultipleSort  
+ Enables sorting the rows of data in the list control by multiple columns.  
   
 ```  
 void EnableMultipleSort(BOOL bEnable = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bEnable`  
- 複数の列の並べ替えモードを有効にするかどうかを指定するブール値。  
+### <a name="parameters"></a>Parameters  
+ [in] `bEnable`  
+ A Boolean that specifies whether to enable multiple column sort mode.  
   
-### <a name="remarks"></a>コメント  
- 複数の列に基づく並べ替えを有効にすると、列は、階層がある操作を行います。 データの行は、まずプライマリ列によって並べ替えられます。 対応する値は、優先順位に基づく後続の各列で並べ替えられます。  
+### <a name="remarks"></a>Remarks  
+ When you enable sorting based on multiple columns, the columns do have a hierarchy. The rows of data will first be sorted by the primary column. Any equivalent values are then sorted by each subsequent column based on priority.  
   
-##  <a name="getheaderctrl"></a>CMFCListCtrl::GetHeaderCtrl  
- ヘッダー コントロールへの参照を返します。  
+##  <a name="getheaderctrl"></a>  CMFCListCtrl::GetHeaderCtrl  
+ Returns a reference to the header control.  
   
 ```  
 virtual CMFCHeaderCtrl& GetHeaderCtrl();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるへの参照を[CMFCHeaderCtrl](../../mfc/reference/cmfcheaderctrl-class.md)オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ A reference to the underlying [CMFCHeaderCtrl](../../mfc/reference/cmfcheaderctrl-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- リスト コントロールのヘッダー コントロールは、列のタイトルを含むウィンドウです。 これは通常、列のすぐ上にあります。  
+### <a name="remarks"></a>Remarks  
+ The header control for a list control is the window that contains the titles for the columns. It is usually positioned directly above the columns.  
   
-##  <a name="ismultiplesort"></a>CMFCListCtrl::IsMultipleSort  
- リスト コントロール現在がサポートするか複数の列で並べ替えを確認します。  
+##  <a name="ismultiplesort"></a>  CMFCListCtrl::IsMultipleSort  
+ Checks whether the list control currently supports sorting on multiple columns.  
   
 ```  
 BOOL IsMultipleSort() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`リスト コントロールには、複数の並べ替えがサポートされている場合`FALSE`それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the list control supports multiple sort; `FALSE` otherwise.  
   
-### <a name="remarks"></a>コメント  
- ときに、 [CMFCListCtrl クラス](../../mfc/reference/cmfclistctrl-class.md)が複数の並べ替えをサポート、ユーザーは、複数の列でリスト コントロール内のデータを並べ替えることができます。 複数の並べ替えを有効にする[CMFCListCtrl::EnableMultipleSort](#enablemultiplesort)します。  
+### <a name="remarks"></a>Remarks  
+ When a [CMFCListCtrl Class](../../mfc/reference/cmfclistctrl-class.md) supports multiple sorting, the user can sort the data in the list control by multiple columns. To enable multiple sorting, call [CMFCListCtrl::EnableMultipleSort](#enablemultiplesort).  
   
-##  <a name="oncompareitems"></a>CMFCListCtrl::OnCompareItems  
- フレームワークは、2 つの項目を比較するときに、このメソッドを呼び出します。  
+##  <a name="oncompareitems"></a>  CMFCListCtrl::OnCompareItems  
+ The framework calls this method when it compares two items.  
   
 ```  
 virtual int OnCompareItems(
@@ -171,24 +181,24 @@ virtual int OnCompareItems(
     int iColumn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `lParam1`  
- 比較する最初の項目です。  
+### <a name="parameters"></a>Parameters  
+ [in] `lParam1`  
+ The first item to compare.  
   
- [入力] `lParam2`  
- 比較する&2; 番目の項目です。  
+ [in] `lParam2`  
+ The second item to compare.  
   
- [入力] `iColumn`  
- このメソッドを並べ替え列のインデックス。  
+ [in] `iColumn`  
+ The index of the column that this method is sorting.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのアイテムの相対位置を示す整数。 負の値を最初の項目が&2; つ目の前に付けてくださいで示して正の値を示している最初の項目が、2 番目に従う必要があり、0 は、2 つの項目が同等であることを意味します。  
+### <a name="return-value"></a>Return Value  
+ An integer that indicates the relative position of the two items. A negative value indicates that the first item should precede the second, positive value indicates that the first item should follow the second, and zero means that the two items are equivalent.  
   
-### <a name="remarks"></a>コメント  
- 常に既定の実装では、0 を返します。 並べ替えアルゴリズムを指定するには、この関数をオーバーライドする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The default implementation always returns 0. You must override this function to provide a sorting algorithm.  
   
-##  <a name="ongetcellbkcolor"></a>CMFCListCtrl::OnGetCellBkColor  
- フレームワークは、個々 のセルの背景色を確認する必要があるときに、このメソッドを呼び出します。  
+##  <a name="ongetcellbkcolor"></a>  CMFCListCtrl::OnGetCellBkColor  
+ The framework calls this method when it must determine the background color of an individual cell.  
   
 ```  
 virtual COLORREF OnGetCellBkColor(
@@ -196,21 +206,21 @@ virtual COLORREF OnGetCellBkColor(
     int nColumn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nRow`  
- 対象のセルの行。  
+### <a name="parameters"></a>Parameters  
+ [in] `nRow`  
+ The row of the cell in question.  
   
- [入力] `nColumn`  
- 対象のセルの列。  
+ [in] `nColumn`  
+ The column of the cell in question.  
   
-### <a name="return-value"></a>戻り値  
- A`COLOREF`セルの背景色を指定する値。  
+### <a name="return-value"></a>Return Value  
+ A `COLOREF` value that specifies the background color of the cell.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装`OnGetCellBkColor`指定された入力パラメーターは使用されないため、代わりを呼び出すだけ`GetBkColor`します。 そのため、既定では、リスト コントロール全体は、同一の背景色があります。 オーバーライドできます`OnGetCellBkColor`を別の背景色で個々 のセルをマークする派生クラスでします。  
+### <a name="remarks"></a>Remarks  
+ The default implementation of `OnGetCellBkColor` does not use the supplied input parameters and instead simply calls `GetBkColor`. Therefore, by default, the whole list control will have the same background color. You can override `OnGetCellBkColor` in a derived class to mark individual cells with a separate background color.  
   
-##  <a name="ongetcellfont"></a>CMFCListCtrl::OnGetCellFont  
- フレームワークは、個々 のセルのフォントを取得する場合に、このメソッドを呼び出します。  
+##  <a name="ongetcellfont"></a>  CMFCListCtrl::OnGetCellFont  
+ The framework calls this method when it obtains the font for an individual cell.  
   
 ```  
 virtual HFONT OnGetCellFont(
@@ -219,24 +229,24 @@ virtual HFONT OnGetCellFont(
     DWORD dwData = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nRow`  
- 対象のセルの行。  
+### <a name="parameters"></a>Parameters  
+ [in] `nRow`  
+ The row of the cell in question.  
   
- [入力] `nColumn`  
- 対象のセルの列。  
+ [in] `nColumn`  
+ The column of the cell in question.  
   
- [入力] `dwData`  
- ユーザー定義データ。 既定の実装では、このパラメーターを使用しません。  
+ [in] `dwData`  
+ User-defined data. The default implementation does not use this parameter.  
   
-### <a name="return-value"></a>戻り値  
- 現在のセルで使用されているフォントへのハンドル。  
+### <a name="return-value"></a>Return Value  
+ A handle to the font that is used for the current cell.  
   
-### <a name="remarks"></a>コメント  
- 既定では、このメソッドが戻る`NULL`します。 リスト コントロール内のセルのすべてで同じフォントがあります。 各セルでさまざまなフォントを提供するために、このメソッドをオーバーライドします。  
+### <a name="remarks"></a>Remarks  
+ By default, this method returns `NULL`. All of the cells in a list control have the same font. Override this method in order to provide different fonts for different cells.  
   
-##  <a name="ongetcelltextcolor"></a>CMFCListCtrl::OnGetCellTextColor  
- フレームワークは、個々 のセルのテキストの色を確認する必要がありますがある場合、このメソッドを呼び出します。  
+##  <a name="ongetcelltextcolor"></a>  CMFCListCtrl::OnGetCellTextColor  
+ The framework calls this method when it must determine the text color of an individual cell.  
   
 ```  
 virtual COLORREF OnGetCellTextColor(
@@ -244,35 +254,35 @@ virtual COLORREF OnGetCellTextColor(
     int nColumn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nRow`  
- 対象のセルの行。  
+### <a name="parameters"></a>Parameters  
+ [in] `nRow`  
+ The row of the cell in question.  
   
- [入力] `nColumn`  
- 対象のセルの列。  
+ [in] `nColumn`  
+ The column of the cell in question.  
   
-### <a name="return-value"></a>戻り値  
- A`COLOREF`セルのテキストの色を指定する値。  
+### <a name="return-value"></a>Return Value  
+ A `COLOREF` value that specifies the text color of the cell.  
   
-### <a name="remarks"></a>コメント  
- 既定では、このメソッドを呼び出す`GetTextColor`入力パラメーターに関係なく。 リスト コントロール全体は、同じテキストの色があります。 オーバーライドできます`OnGetCellTextColor`を別のテキストの色で個々 のセルをマークする派生クラスでします。  
+### <a name="remarks"></a>Remarks  
+ By default, this method calls `GetTextColor` regardless of input parameters. The whole list control will have the same text color. You can override `OnGetCellTextColor` in a derived class to mark individual cells with a separate text color.  
   
-##  <a name="removesortcolumn"></a>CMFCListCtrl::RemoveSortColumn  
- 並べ替えられた列の一覧から並べ替え列を削除します。  
+##  <a name="removesortcolumn"></a>  CMFCListCtrl::RemoveSortColumn  
+ Removes a sort column from the list of sorted columns.  
   
 ```  
 void RemoveSortColumn(int iColumn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- 削除する列。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The column to remove.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、ヘッダー コントロールから並べ替え列を削除します。 呼び出す[CMFCHeaderCtrl::RemoveSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#removesortcolumn)します。  
+### <a name="remarks"></a>Remarks  
+ This method removes a sort column from the header control. It calls [CMFCHeaderCtrl::RemoveSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#removesortcolumn).  
   
-##  <a name="setsortcolumn"></a>CMFCListCtrl::SetSortColumn  
- 現在の並べ替え列と並べ替え順序を設定します。  
+##  <a name="setsortcolumn"></a>  CMFCListCtrl::SetSortColumn  
+ Sets the current sorted column and the sort order.  
   
 ```  
 void SetSortColumn(
@@ -281,21 +291,21 @@ void SetSortColumn(
     BOOL bAdd = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- 並べ替える列。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The column to sort.  
   
- [入力] `bAscending`  
- 並べ替え順序を指定するブール値。  
+ [in] `bAscending`  
+ A Boolean that specifies the sort order.  
   
- [入力] `bAdd`  
- メソッドがによって示される列を追加するかどうかを指定するブール値`iColumn`並べ替え列の一覧にします。  
+ [in] `bAdd`  
+ A Boolean that specifies whether the method adds the column indicated by `iColumn` to the list of sort columns.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、メソッドを使用してヘッダー コントロールへの入力パラメーターを渡します[CMFCHeaderCtrl::SetSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#setsortcolumn)します。  
+### <a name="remarks"></a>Remarks  
+ This method passes the input parameters to the header control by using the method [CMFCHeaderCtrl::SetSortColumn](../../mfc/reference/cmfcheaderctrl-class.md#setsortcolumn).  
   
-##  <a name="sort"></a>CMFCListCtrl::Sort  
- リスト コントロールを並べ替えます。  
+##  <a name="sort"></a>  CMFCListCtrl::Sort  
+ Sorts the list control.  
   
 ```  
 virtual void Sort(
@@ -304,18 +314,18 @@ virtual void Sort(
     BOOL bAdd = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `iColumn`  
- 並べ替える列。  
+### <a name="parameters"></a>Parameters  
+ [in] `iColumn`  
+ The column to sort.  
   
- [入力] `bAscending`  
- 並べ替え順序を指定するブール値。  
+ [in] `bAscending`  
+ A Boolean that specifies the sort order.  
   
- [入力] `bAdd`  
- このメソッドがによって示される列を追加するかどうかを指定するブール値`iColumn`並べ替え列の一覧にします。  
+ [in] `bAdd`  
+ A Boolean that specifies whether this method adds the column indicated by `iColumn` to the list of sort columns.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CListCtrl クラス](../../mfc/reference/clistctrl-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CListCtrl Class](../../mfc/reference/clistctrl-class.md)
 

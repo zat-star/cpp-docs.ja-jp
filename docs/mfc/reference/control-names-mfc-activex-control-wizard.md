@@ -1,5 +1,5 @@
 ---
-title: "コントロール名、MFC ActiveX コントロール ウィザード |Microsoft ドキュメント"
+title: Control Names, MFC ActiveX Control Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,73 +33,73 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 28ef331cb66ee184c4bc104fedddf69e9296367c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c027e7a3f24c33e4fa15ec666bdc2b7838502f76
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="control-names-mfc-activex-control-wizard"></a>[コントロール名] (MFC ActiveX コントロール ウィザード)
-コントロール クラスとプロパティ ページ クラス、型名の名前を指定し、コントロールの識別子を入力します。 例外を除いて**短い名前**、他のすべてのフィールドが個別に編集していないことができます。 テキストを変更する場合**短い名前**、このページの他のすべてのフィールドの名前に、変更が反映されます。 この名前付けの動作は、コントロールを開発する際に簡単に識別できるように、すべての名前に設計されています。  
+# <a name="control-names-mfc-activex-control-wizard"></a>Control Names, MFC ActiveX Control Wizard
+Specify the names for the control class and property page class, the type names, and type identifiers for your control. With the exception of **Short name**, all other fields can be edited independently. If you change the text for **Short name**, the change is reflected in the names of all other fields in this page. This naming behavior is designed to make all the names easily identifiable for you as you develop your control.  
   
- **短い名前**  
- コントロールの省略名を指定します。 既定では、この名前は、プロジェクト名に基づいてで指定した、**新しいプロジェクト** ダイアログ ボックス。 指定した名前は、それらのフィールドを個別に変更していない限り、クラス名、型名および型識別子を決定します。  
+ **Short name**  
+ Provide an abbreviated name for the control. By default, this name is based on the project name you provided in the **New Project** dialog box. The name you provide determines the class names, the type names, and the type identifiers, unless you change those fields individually.  
   
- **コントロール クラス名**  
- 既定では、コントロールのクラス名は、短い形式の名前に基づく`C`をプレフィックスとしてと`Ctrl`をサフィックスとして。 たとえば、コントロールの短い名前は`Price`、コントロールのクラス名は`CPriceCtrl`します。  
+ **Control class name**  
+ By default, the name of the control class is based on the short name, with `C` as a prefix and `Ctrl` as a suffix. For example, if your control's short name is `Price`, the control class name is `CPriceCtrl`.  
   
- **コントロールの .h ファイル**  
- 既定では、ヘッダー ファイルの名前は、短い形式の名前に基づく`Ctrl`をサフィックスとして、`.h`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、ヘッダー ファイル名が`PriceCtrl.h`です。 このフィールドの名前は、コントロールのクラス名に一致する必要があります。  
+ **Control .h file**  
+ By default, the name of the header file is based on the short name, with `Ctrl` as a suffix and `.h` as the file extension. For example, if your control's short name is `Price`, the header file name is `PriceCtrl.h`. The name in this field should match the control class name.  
   
- **コントロールの .cpp ファイル**  
- 既定では、ヘッダー ファイルの名前は、短い形式の名前に基づく`Ctrl`をサフィックスとして、`.cpp`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、ヘッダー ファイル名が`PriceCtrl.cpp`です。 このフィールドの名前は、ヘッダー名と一致する必要があります。  
+ **Control .cpp file**  
+ By default, the name of the header file is based on the short name, with `Ctrl` as a suffix and `.cpp` as the file extension. For example, if your control's short name is `Price`, the header file name is `PriceCtrl.cpp`. The name in this field should match the header name.  
   
- **コントロールの種類名**  
- 既定では、コントロールの種類の名前は、短い名に基づいて、続けて`Control`です。 たとえば、コントロールの短い名前は`Price`、コントロールのクラス型の名前が`Price Control`です。 このフィールドの値を変更する場合は、名前は、継承を示すを確認します。  
+ **Control type name**  
+ By default, the name of the control type is based on the short name, followed by `Control`. For example, if your control's short name is `Price`, the control class type name is `Price Control`. If you change the value in this field, make sure the name indicates an inheritance.  
   
- **コントロールの種類 ID**  
- コントロール クラスのコントロール型の ID を設定します。 コントロールは、プロジェクトに追加されたときにこの文字列をレジストリに書き込みます。 コンテナー アプリケーションでは、この文字列を使用して、コントロールのインスタンスを作成します。  
+ **Control type ID**  
+ Sets the control type ID of the control class. The control writes this string to the registry when it is added to a project. Container applications use this string to create an instance of the control.  
   
- 既定では、コントロールの種類 ID は、プロジェクト名に基づいてで示される、**新しいプロジェクト** ダイアログ ボックス、および短い名前。 この名前は、型名に一致する必要があります。  
+ By default, the control type ID is based on the project name, which you indicated in the **New Project** dialog box, and the short name. This name should match the type name.  
   
- 既定では、コントロールの種類 ID は次のとおりです。  
+ By default, the control type ID appears as follows:  
   
  *ProjectName.ShortName*Ctrl.1  
   
- このダイアログ ボックスで短い名前を変更する場合、コントロール型の ID が表示されます。  
+ If you change the short name in this dialog box, the control type ID appears as follows:  
   
  *ProjectName.NewShortName*Ctrl.1  
   
- **プロパティ ページ クラス名**  
- 既定では、プロパティ ページ クラスの名前は、短い形式の名前に基づく`C`をプレフィックスとしてと`PropPage`をサフィックスとして。 たとえば、コントロールの短い名前は`Price`、プロパティ ページ クラス名は`CPricePropPage`します。 この名前は、末尾コントロール クラス名と一致する必要があります`PropPage`です。  
+ **PropPage class name**  
+ By default, the name of the property page class is based on the short name, with `C` as a prefix and `PropPage` as a suffix. For example, if your control's short name is `Price`, the property page class name is `CPricePropPage`. This name should match the control class name, appended with `PropPage`.  
   
- **PropPage .h ファイル**  
- 既定では、プロパティ ページのヘッダー ファイルの名前は、短い名に基づいてでとして、`PropPage`をサフィックスとして、`.h`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、プロパティ ページのヘッダー ファイル名が`PricePropPage.h`です。 この名前は、クラス名に一致する必要があります。  
+ **PropPage .h file**  
+ By default, the name of the property page header file is based on the short name, with as a `PropPage` as a suffix and `.h` as the file extension. For example, if your control's short name is `Price`, the property page header file name is `PricePropPage.h`. This name should match the class name.  
   
- **PropPage .cpp ファイル**  
- 既定では、プロパティ ページの実装ファイルの名前は、短い名に基づいてでとして、`PropPage`をサフィックスとして、`.cpp`ファイルの拡張子として。 たとえば、コントロールの短い名前は`Price`、プロパティ ページのヘッダー ファイル名が`PricePropPage.cpp`です。 この名前は、ヘッダー ファイルの名前に一致する必要があります。  
+ **PropPage .cpp file**  
+ By default, the name of the property page implementation file is based on the short name, with as a `PropPage` as a suffix and `.cpp` as the file extension. For example, if your control's short name is `Price`, the property page header file name is `PricePropPage.cpp`. This name should match the header file name.  
   
- **プロパティ ページの種類名**  
- 既定では、プロパティ ページの種類名は、短い名に基づいて、続けて`Property Page`です。 たとえば、コントロールの短い名前は`Price`、プロパティ ページの種類名は`Price Property Page`します。 このフィールドの値を変更する場合は、名前は、コントロール クラスを示しますを確認します。  
+ **PropPage type name**  
+ By default, the property page type name is based on the short name, followed by `Property Page`. For example, if your control's short name is `Price`, the property page type name is `Price Property Page`. If you change the value in this field, make sure the name indicates the control class.  
   
- **ページのタイプ ID**  
- プロパティ ページ クラスの ID を設定します。 コントロールは、プロジェクトに適用されたときに、レジストリにこの文字列を書き込みます。 コンテナー アプリケーションでは、この文字列を使用して、コントロールのプロパティ ページのインスタンスを作成します。  
+ **PropPage type ID**  
+ Sets the ID of the property page class. The control writes this string in the registry when it is applied to a project. A container application uses this string to create an instance of the control's property page.  
   
- 既定では、プロパティ ページの種類 ID は、プロジェクト名に基づいてに示される、**新しいプロジェクト** ダイアログ ボックス、および短い名前。 この名前は、型名に一致する必要があります。  
+ By default, the property page type ID is based on the project name, which you indicated in the **New Project** dialog box, and the short name. This name should match the type name.  
   
- 既定では、プロパティ ページの種類 ID は次のとおりです。  
+ By default, the property page type ID appears as follows:  
   
  *ProjectName.ShortName*PropPage.1  
   
- このダイアログ ボックスで短い名前を変更する場合の種類のプロパティ ページ ID が表示されます。  
+ If you change the short name in this dialog box, the property page type ID appears as follows:  
   
  *ProjectName.NewShortName*PropPage.1  
   
-## <a name="see-also"></a>関連項目  
- [MFC ActiveX コントロール ウィザード](../../mfc/reference/mfc-activex-control-wizard.md)   
- [アプリケーションの設定、MFC ActiveX コントロール ウィザード](../../mfc/reference/application-settings-mfc-activex-control-wizard.md)   
- [コントロールの設定、MFC ActiveX コントロール ウィザード](../../mfc/reference/control-settings-mfc-activex-control-wizard.md)   
- [Visual C++ プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Control Wizard](../../mfc/reference/mfc-activex-control-wizard.md)   
+ [Application Settings, MFC ActiveX Control Wizard](../../mfc/reference/application-settings-mfc-activex-control-wizard.md)   
+ [Control Settings, MFC ActiveX Control Wizard](../../mfc/reference/control-settings-mfc-activex-control-wizard.md)   
+ [File Types Created for Visual C++ Projects](../../ide/file-types-created-for-visual-cpp-projects.md)
 
 

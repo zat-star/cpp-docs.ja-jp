@@ -1,92 +1,111 @@
 ---
-title: "ユーザー インターフェイス要素 (MFC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, ユーザー インターフェイス"
-  - "ユーザー インターフェイス"
-  - "ユーザー インターフェイス, 作成"
+title: User Interface Elements (MFC) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, user interface
+- user interfaces, creating
+- user interfaces
 ms.assetid: f5daf2c1-bc08-4b71-9b03-da2c0aab5764
 caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# ユーザー インターフェイス要素 (MFC)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 957f5a89d015dbc023cd5dd464ae1fb9176166fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC \(Microsoft Foundation Class\) ライブラリを使ったアプリケーションのユーザー インターフェイスの作成方法については、以下のトピックを参照してください。  
+---
+# <a name="user-interface-elements-mfc"></a>User Interface Elements (MFC)
+For information about how to create the user interface for your application by using the Microsoft Foundation Class (MFC) Library, see the following topics.  
   
-## このセクションの内容  
- [ActiveX コントロール](../Topic/ActiveX%20Controls.md)  
- コンポーネント オブジェクト モデル \(COM: Component Object Model\) に基づく再利用可能なソフトウェア コンポーネントの使用方法について説明します。ActiveX コントロールは、多岐にわたる OLE の機能をサポートしており、さまざまなソフトウェアの要件に合わせてカスタマイズできます。  
+## <a name="in-this-section"></a>In This Section  
+ [ActiveX Controls](../mfc/activex-controls.md)  
+ Describes how to use reusable software component based on the Component Object Model (COM), which supports a wide variety of OLE functionality and can be customized to fit many software needs  
   
- [クリップボードのトピック](../mfc/clipboard.md)  
- MFC アプリケーションで Windows クリップボードのサポートを実装する方法について説明します。  
+ [Clipboard](../mfc/clipboard.md)  
+ Describes how to implement support for the Windows Clipboard in MFC applications.  
   
- [コントロール](../mfc/controls-mfc.md)  
- オーナー描画コントロールを含む Windows コモン コントロール、ActiveX コントロール、および MFC ライブラリに用意されているその他のコントロール クラスについて説明します。  
+ [Controls](../mfc/controls-mfc.md)  
+ Describes Windows common controls, including owner-drawn controls, ActiveX controls, and other control classes supplied by the MFC Library.  
   
- [コントロール バー](../Topic/Control%20Bars.md)  
- ツール バー、ステータス バー、およびダイアログ バーの機能について説明します。  
+ [Control Bars](../mfc/control-bars.md)  
+ Describes functionality of toolbars, status bars, and dialog bars.  
   
- [ダイアログ バー](../mfc/dialog-bars.md)  
- あらゆる種類のコントロールを持つことができるコントロール バーについて説明します。  
+ [Dialog Bars](../mfc/dialog-bars.md)  
+ Describes a kind of control bar that can contain any kind of control.  
   
- [ダイアログ ボックス](../mfc/dialog-boxes.md)  
- エディターやコード ウィザードを使用したダイアログ ボックスの作成方法について説明します。  
+ [Dialog Boxes](../mfc/dialog-boxes.md)  
+ Describes how to create dialog boxes by using the editors and code wizards.  
   
- [ドキュメント\/ビュー アーキテクチャ](../Topic/Document-View%20Architecture.md)  
- MFC でのデータ管理について説明します。  
+ [Document/View Architecture](../mfc/document-view-architecture.md)  
+ Describes data management in MFC.  
   
- [フォーム ビュー](../Topic/Form%20Views%20\(MFC\).md)  
- フォームのサポートをアプリケーションに追加する方法を説明します。  
+ [Form Views](../mfc/form-views-mfc.md)  
+ Describes how to add forms support to your application.  
   
- [HTML ヘルプ : プログラムの状況依存のヘルプ](../mfc/html-help-context-sensitive-help-for-your-programs.md)  
- HTML ヘルプを使用してアプリケーションに状況依存のヘルプを追加する方法を説明します。  
+ [HTML Help: Context-Sensitive Help for Your Programs](../mfc/html-help-context-sensitive-help-for-your-programs.md)  
+ Describes how to add context-sensitive help to your applications by using HTML Help.  
   
- [MDI タブ付きグループ](../mfc/mdi-tabbed-groups.md)  
- マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) アプリケーションで、1 つ以上のタブ付きウィンドウ \(または、MDI クライアント領域の*タブ付きグループ*と呼ばれるタブ付きウィンドウのグループ\) を表示できるようにします。  
+ [MDI Tabbed Groups](../mfc/mdi-tabbed-groups.md)  
+ Enables multiple document interface (MDI) applications to display one or more tabbed windows (or groups of tabbed windows, which are known as *tabbed groups*) in the MDI client area.  
   
- [メニュー](../mfc/menus-mfc.md)  
- ユーザー インターフェイスにメニューを追加する方法について説明します。  
+ [Menus](../mfc/menus-mfc.md)  
+ Describes how to add menus to your user interface.  
   
  [OLE](../mfc/ole-mfc.md)  
- オブジェクトのリンクと埋め込みに関するトピックへのリンクを提供します。  
+ Provides links to topics that discuss object linking and embedding.  
   
- [印刷および印刷プレビュー](../mfc/printing-and-print-preview.md)  
- MFC がサポートするアプリケーションでの印刷や印刷プレビューについて説明します。  
+ [Printing and Print Preview](../mfc/printing-and-print-preview.md)  
+ Describes MFC support for printing and print preview from your applications.  
   
- [プロパティ シート](../mfc/property-sheets-mfc.md)  
- プロパティ シートを使ってダイアログ ボックスの多数のコントロールを管理する方法を説明します。  
+ [Property Sheets](../mfc/property-sheets-mfc.md)  
+ Describes how to use property sheets to manage large numbers of control in a dialog box.  
   
- [リボン デザイナー \(MFC\)](../mfc/ribbon-designer-mfc.md)  
- 作成および変更のリボン UI リソースのサポートについて説明します。  
+ [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)  
+ Describes MFC support for creating and modifying ribbon UI resources.  
   
- [ステータス バー](../mfc/status-bars.md)  
- アプリケーションのステータス バーの使い方について説明します。  
+ [Status Bars](../mfc/status-bars.md)  
+ Describes how to use status bars in your applications.  
   
- [ツール ヒント](../mfc/tool-tips.md)  
- アプリケーションを使用する場合に役立つツール ヒントの実装方法を説明します。  
+ [Tool Tips](../mfc/tool-tips.md)  
+ Describes how to implement tool tips to assist users in using your applications.  
   
- [ツール バー](../mfc/toolbars.md)  
- MFC でのツール バーの使用に関する基本事項について説明します。  
+ [Toolbars](../mfc/toolbars.md)  
+ Describes the fundamentals about how to use toolbars in MFC.  
   
- [ビジュアル マネージャー](../mfc/visualization-manager.md)  
- アプリケーションのすべての描画コードを配置できる単一のクラスとして動作します。  
+ [Visualization Manager](../mfc/visualization-manager.md)  
+ Acts as one class where you can put all the drawing code for your application.  
   
  [Windows](../mfc/windows.md)  
- MFC でのウィンドウの使用に関する基本事項について説明します。  
+ Describes the fundamentals about how to use windows in MFC.  
   
-## 関連項目  
- [MFC デスクトップ アプリケーション](../mfc/mfc-desktop-applications.md)  
- MFC ライブラリ用のリファレンス資料を提供します。  MFC は、Windows API 用に記述されたアプリケーションのフレームワークであるアプリケーション フレームワークを構成するクラスのセットです。
+## <a name="related-sections"></a>Related Sections  
+ [MFC Desktop Applications](../mfc/mfc-desktop-applications.md)  
+ Provides reference material for the MFC Library. MFC is a set of classes that constitute an application framework, which is the framework of an application written for the Windows API.
+
+

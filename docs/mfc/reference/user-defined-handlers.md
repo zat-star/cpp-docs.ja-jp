@@ -1,5 +1,5 @@
 ---
-title: "ユーザー定義のハンドラー |Microsoft ドキュメント"
+title: User-Defined Handlers | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,9 +13,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- ON_REGISTERED_MESSAGE macro
-- ON_MESSAGE macro
-- user-defined handlers
+- ON_REGISTERED_MESSAGE macro [MFC]
+- ON_MESSAGE macro [MFC]
+- user-defined handlers [MFC]
 ms.assetid: 99478294-bef0-4ba7-a369-25a6abdcdb62
 caps.latest.revision: 10
 author: mikeblome
@@ -35,25 +35,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f0fc367bc19f0db23efddfc69fdeac519185ff0c
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f55f9fa4b13b0e7b0dcebb34e968e2cdb8cecd3a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="user-defined-handlers"></a>ユーザー定義のハンドラー
-関数プロトタイプに対応するマップ エントリを次に示します。  
+# <a name="user-defined-handlers"></a>User-Defined Handlers
+The following map entries correspond to the function prototypes.  
   
-|マップ エントリ|関数プロトタイプ|  
+|Map entry|Function prototype|  
 |---------------|------------------------|  
-|ON_MESSAGE (\<メッセージ >、 \<memberFxn >)|afx_msg LRESULT memberFxn (WPARAM、LPARAM) です。|  
-|ON_REGISTERED_MESSAGE ( \<nMessageVariable >、 \<memberFxn >)|afx_msg LRESULT memberFxn (WPARAM、LPARAM) です。|  
-|ON_THREAD_MESSAGE (\<メッセージ >、 \<memberFxn >)|afx_msg void memberFxn (WPARAM、LPARAM) です。|  
-|ON_REGISTERED_THREAD_MESSAGE ( \<nMessageVariable >、 \<memberFxn >)|afx_msg void memberFxn (WPARAM、LPARAM) です。|  
+|ON_MESSAGE( \<message>, \<memberFxn> )|afx_msg LRESULT memberFxn( WPARAM, LPARAM );|  
+|ON_REGISTERED_MESSAGE( \<nMessageVariable>, \<memberFxn> )|afx_msg LRESULT memberFxn( WPARAM, LPARAM );|  
+|ON_THREAD_MESSAGE( \<message>, \<memberFxn> )|afx_msg void memberFxn( WPARAM, LPARAM );|  
+|ON_REGISTERED_THREAD_MESSAGE( \<nMessageVariable>, \<memberFxn> )|afx_msg void memberFxn( WPARAM, LPARAM );|  
   
-## <a name="see-also"></a>関連項目  
- [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)   
- [Wm _ で始まるメッセージのハンドラー](../../mfc/reference/handlers-for-wm-messages.md)
+## <a name="see-also"></a>See Also  
+ [Message Maps](../../mfc/reference/message-maps-mfc.md)   
+ [Handlers for WM_ Messages](../../mfc/reference/handlers-for-wm-messages.md)
 
 

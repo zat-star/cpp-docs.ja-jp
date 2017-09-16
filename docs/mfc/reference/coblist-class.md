@@ -1,5 +1,5 @@
 ---
-title: "CObList クラス |Microsoft ドキュメント"
+title: CObList Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -36,9 +36,28 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- objects [C++], lists of
-- CObList class
-- lists, object
+- CObList [MFC], CObList
+- CObList [MFC], AddHead
+- CObList [MFC], AddTail
+- CObList [MFC], Find
+- CObList [MFC], FindIndex
+- CObList [MFC], GetAt
+- CObList [MFC], GetCount
+- CObList [MFC], GetHead
+- CObList [MFC], GetHeadPosition
+- CObList [MFC], GetNext
+- CObList [MFC], GetPrev
+- CObList [MFC], GetSize
+- CObList [MFC], GetTail
+- CObList [MFC], GetTailPosition
+- CObList [MFC], InsertAfter
+- CObList [MFC], InsertBefore
+- CObList [MFC], IsEmpty
+- CObList [MFC], RemoveAll
+- CObList [MFC], RemoveAt
+- CObList [MFC], RemoveHead
+- CObList [MFC], RemoveTail
+- CObList [MFC], SetAt
 ms.assetid: 80699c93-33d8-4f8b-b8cf-7b58aeab64ca
 caps.latest.revision: 20
 author: mikeblome
@@ -58,118 +77,118 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: dc95f76be56f00f4779724facaf668a72b3d5ed6
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c20435e9e3bae1faae8d372a4e00f35e1f80a1b5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coblist-class"></a>CObList クラス
-一意でない場合の順序付きリスト fSupports`CObject`ポインターにアクセス可能な順番にも、ポインター値です。  
+# <a name="coblist-class"></a>CObList Class
+fSupports ordered lists of nonunique `CObject` pointers accessible sequentially or by pointer value.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CObList : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[使われて](#coblist)|空のリストを構築`CObject`ポインター。|  
+|[CObList::CObList](#coblist)|Constructs an empty list for `CObject` pointers.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CObList::AddHead](#addhead)|(新しいヘッドによって作成) リストの先頭に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CObList::AddTail](#addtail)|(新しい末尾によって作成) リストの末尾に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CObList::Find](#find)|ポインター値によって指定される要素の位置を取得します。|  
-|[CObList::FindIndex](#findindex)|0 から始まるインデックスで指定された要素の位置を取得します。|  
-|[CObList::GetAt](#getat)|指定された位置に要素を取得します。|  
-|[CObList::GetCount](#getcount)|この一覧には、要素の数を返します。|  
-|[CObList::GetHead](#gethead)|(空にすることはできません) の一覧の先頭の要素を返します。|  
-|[CObList::GetHeadPosition](#getheadposition)|リストの先頭の要素の位置を返します。|  
-|[CObList::GetNext](#getnext)|反復処理するためには、次の要素を取得します。|  
-|[CObList::GetPrev](#getprev)|反復処理するためには、直前の要素を取得します。|  
-|[CObList::GetSize](#getsize)|この一覧には、要素の数を返します。|  
-|[CObList::GetTail](#gettail)|(空にすることはできません)、リストの末尾の要素を返します。|  
-|[CObList::GetTailPosition](#gettailposition)|リストの末尾の要素の位置を返します。|  
-|[CObList::InsertAfter](#insertafter)|指定した位置の後に新しい要素を挿入します。|  
-|[CObList::InsertBefore](#insertbefore)|指定した位置の前に新しい要素を挿入します。|  
-|[CObList::IsEmpty](#isempty)|空のリストの状態 (要素がない) をテストします。|  
-|[CObList::RemoveAll](#removeall)|この一覧からすべての要素を削除します。|  
-|[CObList::RemoveAt](#removeat)|位置によって指定されたこのリストから要素を削除します。|  
-|[CObList::RemoveHead](#removehead)|リストの先頭から要素を削除します。|  
-|[CObList::RemoveTail](#removetail)|リストの末尾から要素を削除します。|  
-|[CObList::SetAt](#setat)|指定された位置に要素を設定します。|  
+|[CObList::AddHead](#addhead)|Adds an element (or all the elements in another list) to the head of the list (makes a new head).|  
+|[CObList::AddTail](#addtail)|Adds an element (or all the elements in another list) to the tail of the list (makes a new tail).|  
+|[CObList::Find](#find)|Gets the position of an element specified by pointer value.|  
+|[CObList::FindIndex](#findindex)|Gets the position of an element specified by a zero-based index.|  
+|[CObList::GetAt](#getat)|Gets the element at a given position.|  
+|[CObList::GetCount](#getcount)|Returns the number of elements in this list.|  
+|[CObList::GetHead](#gethead)|Returns the head element of the list (cannot be empty).|  
+|[CObList::GetHeadPosition](#getheadposition)|Returns the position of the head element of the list.|  
+|[CObList::GetNext](#getnext)|Gets the next element for iterating.|  
+|[CObList::GetPrev](#getprev)|Gets the previous element for iterating.|  
+|[CObList::GetSize](#getsize)|Returns the number of elements in this list.|  
+|[CObList::GetTail](#gettail)|Returns the tail element of the list (cannot be empty).|  
+|[CObList::GetTailPosition](#gettailposition)|Returns the position of the tail element of the list.|  
+|[CObList::InsertAfter](#insertafter)|Inserts a new element after a given position.|  
+|[CObList::InsertBefore](#insertbefore)|Inserts a new element before a given position.|  
+|[CObList::IsEmpty](#isempty)|Tests for the empty list condition (no elements).|  
+|[CObList::RemoveAll](#removeall)|Removes all the elements from this list.|  
+|[CObList::RemoveAt](#removeat)|Removes an element from this list, specified by position.|  
+|[CObList::RemoveHead](#removehead)|Removes the element from the head of the list.|  
+|[CObList::RemoveTail](#removetail)|Removes the element from the tail of the list.|  
+|[CObList::SetAt](#setat)|Sets the element at a given position.|  
   
-## <a name="remarks"></a>コメント  
- `CObList`リストは、二重リンク リストのように動作します。  
+## <a name="remarks"></a>Remarks  
+ `CObList` lists behave like doubly-linked lists.  
   
- 型の変数**位置**リストのキーです。 使用することができます、**位置**順番に、リストを走査する反復子、および位置を保持するためのブックマークとして変数です。 位置は、インデックスと同じしかしです。  
+ A variable of type **POSITION** is a key for the list. You can use a **POSITION** variable both as an iterator to traverse a list sequentially and as a bookmark to hold a place. A position is not the same as an index, however.  
   
- 要素の挿入は非常に高速リストの先頭、末尾、および既知**位置**します。 順次検索は、値またはインデックスで要素を検索する必要があります。 この検索は、リストが長い場合は低速にすることはできます。  
+ Element insertion is very fast at the list head, at the tail, and at a known **POSITION**. A sequential search is necessary to look up an element by value or index. This search can be slow if the list is long.  
   
- `CObList` には、`IMPLEMENT_SERIAL` マクロが組み込まれており、その要素のシリアル化とダンプがサポートされます。 リストの場合`CObject`ポインターがオーバー ロードされた挿入演算子またはでアーカイブに格納されている、`Serialize`のメンバー関数の各`CObject`要素が順にシリアル化します。  
+ `CObList` incorporates the `IMPLEMENT_SERIAL` macro to support serialization and dumping of its elements. If a list of `CObject` pointers is stored to an archive, either with an overloaded insertion operator or with the `Serialize` member function, each `CObject` element is serialized in turn.  
   
- 個別にダンプする必要がある場合`CObject`リスト内の要素を 1 以上、ダンプ コンテキストの深さを設定する必要があります。  
+ If you need a dump of individual `CObject` elements in the list, you must set the depth of the dump context to 1 or greater.  
   
- ときに、`CObList`オブジェクトを削除すると、またはその要素が削除されたとき、のみ、`CObject`ポインターを削除すると、オブジェクトではなくを参照します。  
+ When a `CObList` object is deleted, or when its elements are removed, only the `CObject` pointers are removed, not the objects they reference.  
   
- 独自のクラスを派生する`CObList`です。 派生したオブジェクトへのポインターを保持するために設計された新しいリスト クラス`CObject`、新しいデータ メンバーと新しいメンバー関数を追加します。 いずれかの挿入を許容するために、結果のリストは厳密にタイプ セーフである、注意してください`CObject`ポインター。  
+ You can derive your own classes from `CObList`. Your new list class, designed to hold pointers to objects derived from `CObject`, adds new data members and new member functions. Note that the resulting list is not strictly type safe, because it allows insertion of any `CObject` pointer.  
   
 > [!NOTE]
->  使用する必要があります、 [IMPLEMENT_SERIAL](run-time-object-model-services.md#implement_serial)一覧をシリアル化する場合は、派生クラスの実装ではマクロです。  
+>  You must use the [IMPLEMENT_SERIAL](run-time-object-model-services.md#implement_serial) macro in the implementation of your derived class if you intend to serialize the list.  
   
- 使用する方法について`CObList`、記事を参照して[コレクション](../../mfc/collections.md)します。  
+ For more information on using `CObList`, see the article [Collections](../../mfc/collections.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CObList`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcoll.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcoll.h  
   
-##  <a name="addhead"></a>CObList::AddHead  
- このリストの先頭に新しい要素または要素のリストを追加します。  
+##  <a name="addhead"></a>  CObList::AddHead  
+ Adds a new element or list of elements to the head of this list.  
   
 ```  
 POSITION AddHead(CObject* newElement);  
 void AddHead(CObList* pNewList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `newElement`  
- `CObject`この一覧に追加するへのポインター。  
+ The `CObject` pointer to be added to this list.  
   
  `pNewList`  
- 別のポインター `CObList`  ボックスの一覧です。 内の要素`pNewList`この一覧に追加されます。  
+ A pointer to another `CObList` list. The elements in `pNewList` will be added to this list.  
   
-### <a name="return-value"></a>戻り値  
- 最初のバージョンの取得、**位置**新しく挿入される要素の値。  
+### <a name="return-value"></a>Return Value  
+ The first version returns the **POSITION** value of the newly inserted element.  
   
- 次の表はその他のメンバー関数に類似する`CObList::AddHead`です。  
+ The following table shows other member functions that are similar to `CObList::AddHead`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置 AddHead (void\* ** `newElement` **) です。**<br /><br /> **AddHead を無効にする (CPtrList\* ** `pNewList` **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置 AddHead (const CString >/documents/report1.rdl」の** `newElement` **) です。**<br /><br /> **位置 AddHead (LPCTSTR** `newElement` **) です。**<br /><br /> **AddHead を無効にする (CStringList\* ** `pNewList` **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION AddHead( void\*** `newElement` **);**<br /><br /> **void AddHead( CPtrList\*** `pNewList` **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION AddHead(const CString&** `newElement` **);**<br /><br /> **POSITION AddHead(LPCTSTR** `newElement` **);**<br /><br /> **void AddHead(CStringList\*** `pNewList` **);**|  
   
-### <a name="remarks"></a>コメント  
- 一覧は、操作の前に空にすることができます。  
+### <a name="remarks"></a>Remarks  
+ The list can be empty before the operation.  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&89;](../../mfc/codesnippet/cpp/coblist-class_1.cpp)]  
+ [!code-cpp[NVC_MFCCollections#89](../../mfc/codesnippet/cpp/coblist-class_1.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `AddHead example: A CObList with 2 elements`  
   
@@ -177,40 +196,40 @@ void AddHead(CObList* pNewList);
   
  `a CAge at $442A 21`  
   
-##  <a name="addtail"></a>CObList::AddTail  
- このリストの末尾に新しい要素または要素のリストを追加します。  
+##  <a name="addtail"></a>  CObList::AddTail  
+ Adds a new element or list of elements to the tail of this list.  
   
 ```  
 POSITION AddTail(CObject* newElement);  
 void AddTail(CObList* pNewList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `newElement`  
- `CObject`この一覧に追加するへのポインター。  
+ The `CObject` pointer to be added to this list.  
   
  `pNewList`  
- 別のポインター `CObList`  ボックスの一覧です。 内の要素`pNewList`この一覧に追加されます。  
+ A pointer to another `CObList` list. The elements in `pNewList` will be added to this list.  
   
-### <a name="return-value"></a>戻り値  
- 最初のバージョンの取得、**位置**新しく挿入される要素の値。  
+### <a name="return-value"></a>Return Value  
+ The first version returns the **POSITION** value of the newly inserted element.  
   
-### <a name="remarks"></a>コメント  
- 一覧は、操作の前に空にすることができます。  
+### <a name="remarks"></a>Remarks  
+ The list can be empty before the operation.  
   
- 次の表はその他のメンバー関数に類似する`CObList::AddTail`です。  
+ The following table shows other member functions that are similar to `CObList::AddTail`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置 AddTail (void\* ** `newElement` **) です。**<br /><br /> **AddTail を無効にする (CPtrList\* ** `pNewList` **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置 AddTail (const CString >/documents/report1.rdl」の** `newElement` **) です。**<br /><br /> **位置 AddTail (LPCTSTR** `newElement` **) です。**<br /><br /> **AddTail を無効にする (CStringList\* ** `pNewList` **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION AddTail( void\*** `newElement` **);**<br /><br /> **void AddTail( CPtrList\*** `pNewList` **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION AddTail( const CString&** `newElement` **);**<br /><br /> **POSITION AddTail( LPCTSTR** `newElement` **);**<br /><br /> **void AddTail( CStringList\*** `pNewList` **);**|  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&90;](../../mfc/codesnippet/cpp/coblist-class_2.cpp)]  
+ [!code-cpp[NVC_MFCCollections#90](../../mfc/codesnippet/cpp/coblist-class_2.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `AddTail example: A CObList with 2 elements`  
   
@@ -218,38 +237,38 @@ void AddTail(CObList* pNewList);
   
  `a CAge at $4526 40`  
   
-##  <a name="coblist"></a>使われて  
- 空の構築`CObject`ポインターのリスト。  
+##  <a name="coblist"></a>  CObList::CObList  
+ Constructs an empty `CObject` pointer list.  
   
 ```  
 CObList(INT_PTR nBlockSize = 10);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nBlockSize`  
- リストを拡張するメモリ割り当ての粒度。  
+ The memory-allocation granularity for extending the list.  
   
-### <a name="remarks"></a>コメント  
- 単位でメモリが割り当てられている一覧するにつれて、`nBlockSize`エントリです。 メモリの割り当てに失敗した場合、`CMemoryException`がスローされます。  
+### <a name="remarks"></a>Remarks  
+ As the list grows, memory is allocated in units of `nBlockSize` entries. If a memory allocation fails, a `CMemoryException` is thrown.  
   
- 次の表はその他のメンバー関数に類似する`CObList::CObList`です。  
+ The following table shows other member functions that are similar to `CObList::CObList`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**CPtrList (INT_PTR** `nBlockSize` **= 10)。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**CStringList (INT_PTR** `nBlockSize` **= 10)。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**CPtrList( INT_PTR** `nBlockSize` **= 10 );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**CStringList( INT_PTR** `nBlockSize` **= 10 );**|  
   
-### <a name="example"></a>例  
-  以下の一覧を示します、 `CObject`-派生クラス`CAge`コレクションのすべての例で使用します。  
+### <a name="example"></a>Example  
+  Below is a listing of the `CObject`-derived class `CAge` used in all the collection examples:  
   
- [!code-cpp[NVC_MFCCollections #&91;](../../mfc/codesnippet/cpp/coblist-class_3.h)]  
+ [!code-cpp[NVC_MFCCollections#91](../../mfc/codesnippet/cpp/coblist-class_3.h)]  
   
- 以下の例は、`CObList`コンス トラクターの使用状況。  
+ Below is an example of `CObList` constructor usage:  
   
- [!code-cpp[NVC_MFCCollections #&92;](../../mfc/codesnippet/cpp/coblist-class_4.cpp)]  
+ [!code-cpp[NVC_MFCCollections#92](../../mfc/codesnippet/cpp/coblist-class_4.cpp)]  
   
-##  <a name="find"></a>CObList::Find  
- 最初に順番にリストを検索`CObject`ポインター、指定した照合`CObject`ポインター。  
+##  <a name="find"></a>  CObList::Find  
+ Searches the list sequentially to find the first `CObject` pointer matching the specified `CObject` pointer.  
   
 ```  
 POSITION Find(
@@ -257,327 +276,327 @@ POSITION Find(
     POSITION startAfter = NULL) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `searchValue`  
- この一覧で検索するオブジェクトのポインター。  
+ The object pointer to be found in this list.  
   
  `startAfter`  
- 検索の開始位置。  
+ The start position for the search.  
   
-### <a name="return-value"></a>戻り値  
- A**位置**イテレーションまたはオブジェクト ポインターの取得のために使用する値**NULL**オブジェクトが見つからない場合。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration or object pointer retrieval; **NULL** if the object is not found.  
   
-### <a name="remarks"></a>コメント  
- ポインター値を比較することに注意してください、オブジェクトの内容ではありません。  
+### <a name="remarks"></a>Remarks  
+ Note that the pointer values are compared, not the contents of the objects.  
   
- 次の表はその他のメンバー関数に類似する`CObList::Find`です。  
+ The following table shows other member functions that are similar to `CObList::Find`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置検索 (void\* ** `searchValue` **、位置** `startAfter` **= NULL) const です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置検索 (LPCTSTR** `searchValue` **、位置** `startAfter` **= NULL) const です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION Find( void\*** `searchValue` **, POSITION** `startAfter` **= NULL ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION Find( LPCTSTR** `searchValue` **, POSITION** `startAfter` **= NULL ) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&93;](../../mfc/codesnippet/cpp/coblist-class_5.cpp)]  
+ [!code-cpp[NVC_MFCCollections#93](../../mfc/codesnippet/cpp/coblist-class_5.cpp)]  
   
-##  <a name="findindex"></a>CObList::FindIndex  
- 値を使用して`nIndex`としてリストのインデックス。  
+##  <a name="findindex"></a>  CObList::FindIndex  
+ Uses the value of `nIndex` as an index into the list.  
   
 ```  
 POSITION FindIndex(INT_PTR nIndex) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 検索するリストの要素の&0; から始まるインデックス。  
+ The zero-based index of the list element to be found.  
   
-### <a name="return-value"></a>戻り値  
- A**位置**イテレーションまたはオブジェクト ポインターの取得のために使用する値**NULL**場合`nIndex`が大きすぎます。 (フレームワーク場合にアサーションを生成する`nIndex`が負の値です)。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration or object pointer retrieval; **NULL** if `nIndex` is too large. (The framework generates an assertion if `nIndex` is negative.)  
   
-### <a name="remarks"></a>コメント  
- 上の停止して、リストの先頭からのシーケンシャルなスキャンを開始、 *n*番目の要素。  
+### <a name="remarks"></a>Remarks  
+ It starts a sequential scan from the head of the list, stopping on the *n*th element.  
   
- 次の表はその他のメンバー関数に類似する`CObList::FindIndex`です。  
+ The following table shows other member functions that are similar to `CObList::FindIndex`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置 FindIndex (INT_PTR** `nIndex` **) const です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置 FindIndex (INT_PTR** `nIndex` **) const です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION FindIndex( INT_PTR** `nIndex` **) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION FindIndex( INT_PTR** `nIndex` **) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&94;](../../mfc/codesnippet/cpp/coblist-class_6.cpp)]  
+ [!code-cpp[NVC_MFCCollections#94](../../mfc/codesnippet/cpp/coblist-class_6.cpp)]  
   
-##  <a name="getat"></a>CObList::GetAt  
- 型の変数**位置**リストのキーです。  
+##  <a name="getat"></a>  CObList::GetAt  
+ A variable of type **POSITION** is a key for the list.  
   
 ```  
 CObject*& GetAt(POSITION position);  
 const CObject*& GetAt(POSITION position) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *位置*  
- A**位置**以前から返される値`GetHeadPosition`または**検索**メンバー関数の呼び出しです。  
+### <a name="parameters"></a>Parameters  
+ *position*  
+ A **POSITION** value returned by a previous `GetHeadPosition` or **Find** member function call.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値の説明を参照して[gethead 関数](#gethead)します。  
+### <a name="return-value"></a>Return Value  
+ See the return value description for [GetHead](#gethead).  
   
-### <a name="remarks"></a>コメント  
- 操作できません。 したり、インデックスと同じには、**位置**自分の値。 `GetAt`取得、`CObject`指定した位置に関連付けられたポインター。  
+### <a name="remarks"></a>Remarks  
+ It is not the same as an index, and you cannot operate on a **POSITION** value yourself. `GetAt` retrieves the `CObject` pointer associated with a given position.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetAt`です。  
+ The following table shows other member functions that are similar to `CObList::GetAt`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*>/documents/report1.rdl」の GetAt (位置***位置* **) const です。**<br /><br /> **void\*>/documents/report1.rdl」の GetAt (位置***位置* **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**const の CString >/documents/report1.rdl」の GetAt (位置***位置* **) const です。**<br /><br /> **CString >/documents/report1.rdl」の GetAt (位置***位置* **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*& GetAt( POSITION** *position* **) const;**<br /><br /> **void\*& GetAt( POSITION** *position* **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**const CString& GetAt( POSITION** *position* **) const;**<br /><br /> **CString& GetAt( POSITION** *position* **);**|  
   
-### <a name="example"></a>例  
-  例を参照してください[FindIndex](#findindex)します。  
+### <a name="example"></a>Example  
+  See the example for [FindIndex](#findindex).  
   
-##  <a name="getcount"></a>CObList::GetCount  
- この一覧内の要素の数を取得します。  
+##  <a name="getcount"></a>  CObList::GetCount  
+ Gets the number of elements in this list.  
   
 ```  
 INT_PTR GetCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 要素の数を含む整数値。  
+### <a name="return-value"></a>Return Value  
+ An integer value containing the element count.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetCount`です。  
+ The following table shows other member functions that are similar to `CObList::GetCount`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**Const; INT_PTR GetCount)**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**Const; INT_PTR GetCount)**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**INT_PTR GetCount( ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**INT_PTR GetCount( ) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&95;](../../mfc/codesnippet/cpp/coblist-class_7.cpp)]  
+ [!code-cpp[NVC_MFCCollections#95](../../mfc/codesnippet/cpp/coblist-class_7.cpp)]  
   
-##  <a name="gethead"></a>CObList::GetHead  
- 取得、`CObject`ポインターがこの一覧の先頭の要素を表します。  
+##  <a name="gethead"></a>  CObList::GetHead  
+ Gets the `CObject` pointer that represents the head element of this list.  
   
 ```  
 CObject*& GetHead();  
 const CObject*& GetHead() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CObList**、し、`GetHead`返します、`CObject`ポインター。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CObList**, then `GetHead` returns a `CObject` pointer. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CObList`、し、`GetHead`への参照を返す、`CObject`ポインター。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CObList`, then `GetHead` returns a reference to a `CObject` pointer. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`GetHead`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `GetHead`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](#isempty) to verify that the list contains elements.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetHead`です。  
+ The following table shows other member functions that are similar to `CObList::GetHead`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*>/documents/report1.rdl」の gethead 関数 () const; void\*>/documents/report1.rdl」の gethead 関数 ();**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**const; const の CString >/documents/report1.rdl」の gethead 関数)CString >/documents/report1.rdl」の gethead 関数 ();**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*& GetHead( ) const; void\*& GetHead( );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**const CString& GetHead( ) const; CString& GetHead( );**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- 次の例では、使用する`GetHead`代入ステートメントの左側にあります。  
+ The following example illustrates the use of `GetHead` on the left side of an assignment statement.  
   
- [!code-cpp[NVC_MFCCollections #&96;](../../mfc/codesnippet/cpp/coblist-class_8.cpp)]  
+ [!code-cpp[NVC_MFCCollections#96](../../mfc/codesnippet/cpp/coblist-class_8.cpp)]  
   
-##  <a name="getheadposition"></a>CObList::GetHeadPosition  
- この一覧の先頭の要素の位置を取得します。  
+##  <a name="getheadposition"></a>  CObList::GetHeadPosition  
+ Gets the position of the head element of this list.  
   
 ```  
 POSITION GetHeadPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A**位置**イテレーションまたはオブジェクト ポインターの取得のために使用する値**NULL**リストが空の場合。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration or object pointer retrieval; **NULL** if the list is empty.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetHeadPosition`です。  
+ The following table shows other member functions that are similar to `CObList::GetHeadPosition`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**Const; 位置順)**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**Const; 位置順)**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION GetHeadPosition( ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION GetHeadPosition( ) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&97;](../../mfc/codesnippet/cpp/coblist-class_9.cpp)]  
+ [!code-cpp[NVC_MFCCollections#97](../../mfc/codesnippet/cpp/coblist-class_9.cpp)]  
   
-##  <a name="getnext"></a>CObList::GetNext  
- 識別される要素を取得`rPosition`、設定し、`rPosition`に、`POSITION`一覧の次のエントリの値。  
+##  <a name="getnext"></a>  CObList::GetNext  
+ Gets the list element identified by `rPosition`, then sets `rPosition` to the `POSITION` value of the next entry in the list.  
   
 ```  
 CObject*& GetNext(POSITION& rPosition);  
 const CObject* GetNext(POSITION& rPosition) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rPosition`  
- 参照、`POSITION`以前から返される値`GetNext`、 `GetHeadPosition`、またはその他のメンバー関数の呼び出しです。  
+ A reference to a `POSITION` value returned by a previous `GetNext`, `GetHeadPosition`, or other member function call.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値の説明を参照して[gethead 関数](#gethead)します。  
+### <a name="return-value"></a>Return Value  
+ See the return value description for [GetHead](#gethead).  
   
-### <a name="remarks"></a>コメント  
- 使用する`GetNext`への呼び出しでは、最初の位置を確立する場合は、順方向の反復ループで`GetHeadPosition`または`Find`です。  
+### <a name="remarks"></a>Remarks  
+ You can use `GetNext` in a forward iteration loop if you establish the initial position with a call to `GetHeadPosition` or `Find`.  
   
- 確認する必要があります、`POSITION`値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your `POSITION` value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 取得した要素が値の場合、リスト内の最後の新しいの`rPosition`に設定されている`NULL`します。  
+ If the retrieved element is the last in the list, then the new value of `rPosition` is set to `NULL`.  
   
- 反復処理中に要素を削除することができます。 例を参照してください[RemoveAt](#removeat)します。  
+ It is possible to remove an element during an iteration. See the example for [RemoveAt](#removeat).  
   
 > [!NOTE]
->  返すこのメソッドの const バージョンが変更された MFC 8.0 の時点で`const CObject*`の代わりに`const CObject*&`します。  標準の C++ への適合性をコンパイラをさせるために変更されました。  
+>  As of MFC 8.0 the const version of this method has changed to return `const CObject*` instead of `const CObject*&`.  This change was made to bring the compiler into conformance with the C++ standard.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetNext`です。  
+ The following table shows other member functions that are similar to `CObList::GetNext`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
 |[CPtrList](../../mfc/reference/cptrlist-class.md)|`void*& GetNext( POSITION&` `rPosition` `);`<br /><br /> `const void* GetNext( POSITION&` `rPosition` `) const;`|  
 |[CStringList](../../mfc/reference/cstringlist-class.md)|`CString& GetNext( POSITION&` `rPosition` `);`<br /><br /> `const CString& GetNext( POSITION&` `rPosition` `) const;`|  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&98;](../../mfc/codesnippet/cpp/coblist-class_10.cpp)]  
+ [!code-cpp[NVC_MFCCollections#98](../../mfc/codesnippet/cpp/coblist-class_10.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `a CAge at $479C 40`  
   
  `a CAge at $46C0 21`  
   
-##  <a name="getprev"></a>CObList::GetPrev  
- 識別される要素を取得`rPosition`を設定し、`rPosition`に、`POSITION`一覧の前のエントリの値。  
+##  <a name="getprev"></a>  CObList::GetPrev  
+ Gets the list element identified by `rPosition`, then sets `rPosition` to the `POSITION` value of the previous entry in the list.  
   
 ```  
 CObject*& GetPrev(POSITION& rPosition);  
 const CObject* GetPrev(POSITION& rPosition) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rPosition`  
- 参照、`POSITION`以前から返される値`GetPrev`またはその他のメンバー関数の呼び出しです。  
+ A reference to a `POSITION` value returned by a previous `GetPrev` or other member function call.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値の説明を参照して[gethead 関数](#gethead)します。  
+### <a name="return-value"></a>Return Value  
+ See the return value description for [GetHead](#gethead).  
   
-### <a name="remarks"></a>コメント  
- 使用する`GetPrev`への呼び出しでは、最初の位置を確立する場合に、逆順イテレーション ループで`GetTailPosition`または`Find`です。  
+### <a name="remarks"></a>Remarks  
+ You can use `GetPrev` in a reverse iteration loop if you establish the initial position with a call to `GetTailPosition` or `Find`.  
   
- 確認する必要があります、`POSITION`値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your `POSITION` value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 要素を取得した一覧で、最初からの新しい値場合`rPosition`に設定されている`NULL`します。  
+ If the retrieved element is the first in the list, then the new value of `rPosition` is set to `NULL`.  
   
 > [!NOTE]
->  返すこのメソッドの const バージョンが変更された MFC 8.0 の時点で`const CObject*`の代わりに`const CObject*&`します。  標準の C++ への適合性をコンパイラをさせるために変更されました。  
+>  As of MFC 8.0 the const version of this method has changed to return `const CObject*` instead of `const CObject*&`.  This change was made to bring the compiler into conformance with the C++ standard.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetPrev`です。  
+ The following table shows other member functions that are similar to `CObList::GetPrev`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
 |[CPtrList](../../mfc/reference/cptrlist-class.md)|`void*& GetPrev( POSITION&` `rPosition` `);`<br /><br /> `const void* GetPrev( POSITION&` `rPosition` `) const;`|  
 |[CStringList](../../mfc/reference/cstringlist-class.md)|`CString& GetPrev( POSITION&` `rPosition` `);`<br /><br /> `const CString& GetPrev( POSITION&` `rPosition` `) const;`|  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections&#99;](../../mfc/codesnippet/cpp/coblist-class_11.cpp)]  
+ [!code-cpp[NVC_MFCCollections#99](../../mfc/codesnippet/cpp/coblist-class_11.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `a CAge at $421C 21`  
   
  `a CAge at $421C 40`  
   
-##  <a name="getsize"></a>CObList::GetSize  
- リストの要素数を返します。  
+##  <a name="getsize"></a>  CObList::GetSize  
+ Returns the number of list elements.  
   
 ```  
 INT_PTR GetSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- リストの項目数。  
+### <a name="return-value"></a>Return Value  
+ The number of items in the list.  
   
-### <a name="remarks"></a>コメント  
- リスト内の要素の数を取得するには、このメソッドを呼び出します。  
+### <a name="remarks"></a>Remarks  
+ Call this method to retrieve the number of elements in the list.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetSize`です。  
+ The following table shows other member functions that are similar to `CObList::GetSize`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**Const; INT_PTR GetSize)**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**Const; INT_PTR GetSize)**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**INT_PTR GetSize( ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**INT_PTR GetSize( ) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections&#100;](../../mfc/codesnippet/cpp/coblist-class_12.cpp)]  
+ [!code-cpp[NVC_MFCCollections#100](../../mfc/codesnippet/cpp/coblist-class_12.cpp)]  
   
-##  <a name="gettail"></a>CObList::GetTail  
- 取得、`CObject`ポインターがこのリストの末尾の要素を表します。  
+##  <a name="gettail"></a>  CObList::GetTail  
+ Gets the `CObject` pointer that represents the tail element of this list.  
   
 ```  
 CObject*& GetTail();  
 const CObject*& GetTail() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 戻り値の説明を参照して[gethead 関数](#gethead)します。  
+### <a name="return-value"></a>Return Value  
+ See the return value description for [GetHead](#gethead).  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`GetTail`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `GetTail`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](#isempty) to verify that the list contains elements.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetTail`です。  
+ The following table shows other member functions that are similar to `CObList::GetTail`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*>/documents/report1.rdl」の GetTail () const; void\*>/documents/report1.rdl」の GetTail ();**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**const; const の CString >/documents/report1.rdl」の GetTail)CString >/documents/report1.rdl」の GetTail ();**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**const void\*& GetTail( ) const; void\*& GetTail( );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**const CString& GetTail( ) const; CString& GetTail( );**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&101;](../../mfc/codesnippet/cpp/coblist-class_13.cpp)]  
+ [!code-cpp[NVC_MFCCollections#101](../../mfc/codesnippet/cpp/coblist-class_13.cpp)]  
   
-##  <a name="gettailposition"></a>CObList::GetTailPosition  
- このリストの末尾の要素の位置を取得します。**NULL**リストが空の場合。  
+##  <a name="gettailposition"></a>  CObList::GetTailPosition  
+ Gets the position of the tail element of this list; **NULL** if the list is empty.  
   
 ```  
 POSITION GetTailPosition() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A**位置**イテレーションまたはオブジェクト ポインターの取得のために使用する値**NULL**リストが空の場合。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration or object pointer retrieval; **NULL** if the list is empty.  
   
- 次の表はその他のメンバー関数に類似する`CObList::GetTailPosition`です。  
+ The following table shows other member functions that are similar to `CObList::GetTailPosition`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**Const; 位置 GetTailPosition)**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**Const; 位置 GetTailPosition)**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION GetTailPosition( ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION GetTailPosition( ) const;**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&102;](../../mfc/codesnippet/cpp/coblist-class_14.cpp)]  
+ [!code-cpp[NVC_MFCCollections#102](../../mfc/codesnippet/cpp/coblist-class_14.cpp)]  
   
-##  <a name="insertafter"></a>CObList::InsertAfter  
- 指定位置にある要素の後にこのリストに要素を追加します。  
+##  <a name="insertafter"></a>  CObList::InsertAfter  
+ Adds an element to this list after the element at the specified position.  
   
 ```  
 POSITION InsertAfter(
@@ -585,29 +604,29 @@ POSITION InsertAfter(
     CObject* newElement);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *位置*  
- 前の **、** 、または `GetNext`Find `GetPrev`メンバー関数呼び出しにより返される **POSITION** 値。  
+### <a name="parameters"></a>Parameters  
+ *position*  
+ A **POSITION** value returned by a previous `GetNext`, `GetPrev`, or **Find** member function call.  
   
  `newElement`  
- この一覧に追加するオブジェクトのポインター。  
+ The object pointer to be added to this list.  
   
- 次の表はその他のメンバー関数に類似する`CObList::InsertAfter`です。  
+ The following table shows other member functions that are similar to `CObList::InsertAfter`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置 InsertAfter (位置***位置* **, void\* ** `newElement` **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置 InsertAfter (位置***位置* **、const CString >/documents/report1.rdl」の** `newElement` **) です。**<br /><br /> **位置 InsertAfter (位置***位置* **、LPCTSTR** `newElement` **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION InsertAfter( POSITION** *position* **, void\*** `newElement` **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION InsertAfter( POSITION** *position* **, const CString&** `newElement` **);**<br /><br /> **POSITION InsertAfter( POSITION** *position* **, LPCTSTR** `newElement` **);**|  
   
-### <a name="return-value"></a>戻り値  
- A**位置**は同じ値として、*位置*パラメーター。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value which is the same as the *position* parameter.  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&103;](../../mfc/codesnippet/cpp/coblist-class_15.cpp)]  
+ [!code-cpp[NVC_MFCCollections#103](../../mfc/codesnippet/cpp/coblist-class_15.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `InsertAfter example: A CObList with 3 elements`  
   
@@ -617,8 +636,8 @@ POSITION InsertAfter(
   
  `a CAge at $4968 21`  
   
-##  <a name="insertbefore"></a>CObList::InsertBefore  
- 一覧の指定した位置にある要素の前に要素を追加します。  
+##  <a name="insertbefore"></a>  CObList::InsertBefore  
+ Adds an element to this list before the element at the specified position.  
   
 ```  
 POSITION InsertBefore(
@@ -626,29 +645,29 @@ POSITION InsertBefore(
     CObject* newElement);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *位置*  
- 前の **、** 、または `GetNext`Find `GetPrev`メンバー関数呼び出しにより返される **POSITION** 値。  
+### <a name="parameters"></a>Parameters  
+ *position*  
+ A **POSITION** value returned by a previous `GetNext`, `GetPrev`, or **Find** member function call.  
   
  `newElement`  
- この一覧に追加するオブジェクトのポインター。  
+ The object pointer to be added to this list.  
   
-### <a name="return-value"></a>戻り値  
- A**位置**イテレーションまたはオブジェクト ポインターの取得のために使用する値**NULL**リストが空の場合。  
+### <a name="return-value"></a>Return Value  
+ A **POSITION** value that can be used for iteration or object pointer retrieval; **NULL** if the list is empty.  
   
- 次の表はその他のメンバー関数に類似する`CObList::InsertBefore`です。  
+ The following table shows other member functions that are similar to `CObList::InsertBefore`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**位置 InsertBefore (位置***位置* **, void\* ** `newElement` **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**位置 InsertBefore (位置***位置* **、const CString >/documents/report1.rdl」の** `newElement` **) です。**<br /><br /> **位置 InsertBefore (位置***位置* **、LPCTSTR** `newElement` **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**POSITION InsertBefore( POSITION** *position* **, void\*** `newElement` **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**POSITION InsertBefore( POSITION** *position* **, const CString&** `newElement` **);**<br /><br /> **POSITION InsertBefore( POSITION** *position* **, LPCTSTR** `newElement` **);**|  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&104;](../../mfc/codesnippet/cpp/coblist-class_16.cpp)]  
+ [!code-cpp[NVC_MFCCollections#104](../../mfc/codesnippet/cpp/coblist-class_16.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `InsertBefore example: A CObList with 3 elements`  
   
@@ -658,81 +677,81 @@ POSITION InsertBefore(
   
  `a CAge at $49E6 21`  
   
-##  <a name="isempty"></a>CObList::IsEmpty  
- このリストに要素が含まれないかどうかを示します。  
+##  <a name="isempty"></a>  CObList::IsEmpty  
+ Indicates whether this list contains no elements.  
   
 ```  
 BOOL IsEmpty() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この場合は 0 以外のリストは空です。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if this list is empty; otherwise 0.  
   
- 次の表はその他のメンバー関数に類似する`CObList::IsEmpty`です。  
+ The following table shows other member functions that are similar to `CObList::IsEmpty`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**Const; BOOL IsEmpty)**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**Const; BOOL IsEmpty)**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**BOOL IsEmpty( ) const;**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**BOOL IsEmpty( ) const;**|  
   
-### <a name="example"></a>例  
-  例を参照してください[RemoveAll](#removeall)します。  
+### <a name="example"></a>Example  
+  See the example for [RemoveAll](#removeall).  
   
-##  <a name="removeall"></a>CObList::RemoveAll  
- このリストからすべての要素を削除し、関連付けられた解放`CObList`メモリです。  
+##  <a name="removeall"></a>  CObList::RemoveAll  
+ Removes all the elements from this list and frees the associated `CObList` memory.  
   
 ```  
 void RemoveAll();
 ```  
   
-### <a name="remarks"></a>コメント  
- リストが既に空の場合、エラーは発生しません。  
+### <a name="remarks"></a>Remarks  
+ No error is generated if the list is already empty.  
   
- 要素を削除するときに、 `CObList`、一覧からオブジェクトのポインターを削除します。 ユーザーの責任において、オブジェクト自体を削除することをお勧めします。  
+ When you remove elements from a `CObList`, you remove the object pointers from the list. It is your responsibility to delete the objects themselves.  
   
- 次の表はその他のメンバー関数に類似する`CObList::RemoveAll`です。  
+ The following table shows other member functions that are similar to `CObList::RemoveAll`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**RemoveAll (); を無効にします。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**RemoveAll (); を無効にします。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void RemoveAll( );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**void RemoveAll( );**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&105;](../../mfc/codesnippet/cpp/coblist-class_17.cpp)]  
+ [!code-cpp[NVC_MFCCollections#105](../../mfc/codesnippet/cpp/coblist-class_17.cpp)]  
   
-##  <a name="removeat"></a>CObList::RemoveAt  
- この一覧から、指定した要素を削除します。  
+##  <a name="removeat"></a>  CObList::RemoveAt  
+ Removes the specified element from this list.  
   
 ```  
 void RemoveAt(POSITION position);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *位置*  
- 一覧から削除する要素の位置。  
+### <a name="parameters"></a>Parameters  
+ *position*  
+ The position of the element to be removed from the list.  
   
-### <a name="remarks"></a>コメント  
- 要素を削除すると、 `CObList`、一覧からオブジェクトへのポインターを削除します。 ユーザーの責任において、オブジェクト自体を削除することをお勧めします。  
+### <a name="remarks"></a>Remarks  
+ When you remove an element from a `CObList`, you remove the object pointer from the list. It is your responsibility to delete the objects themselves.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 次の表はその他のメンバー関数に類似する`CObList::RemoveAt`です。  
+ The following table shows other member functions that are similar to `CObList::RemoveAt`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**RemoveAt を無効にする (位置***位置* **) です。**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**RemoveAt を無効にする (位置***位置* **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void RemoveAt( POSITION** *position* **);**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**void RemoveAt( POSITION** *position* **);**|  
   
-### <a name="example"></a>例  
-  リストの反復処理中に要素を削除する際に注意してください。 次の例では、有効なことを保証する削除手法**位置**の場合は値[GetNext](#getnext)します。  
+### <a name="example"></a>Example  
+  Be careful when removing an element during a list iteration. The following example shows a removal technique that guarantees a valid **POSITION** value for [GetNext](#getnext).  
   
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&106;](../../mfc/codesnippet/cpp/coblist-class_18.cpp)]  
+ [!code-cpp[NVC_MFCCollections#106](../../mfc/codesnippet/cpp/coblist-class_18.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `RemoveAt example: A CObList with 2 elements`  
   
@@ -740,58 +759,58 @@ void RemoveAt(POSITION position);
   
  `a CAge at $4B22 21`  
   
-##  <a name="removehead"></a>CObList::RemoveHead  
- リストの先頭から要素を削除し、ポインターを返します。  
+##  <a name="removehead"></a>  CObList::RemoveHead  
+ Removes the element from the head of the list and returns a pointer to it.  
   
 ```  
 CObject* RemoveHead();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `CObject`リストの先頭にあったポインター。  
+### <a name="return-value"></a>Return Value  
+ The `CObject` pointer previously at the head of the list.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`RemoveHead`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `RemoveHead`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](#isempty) to verify that the list contains elements.  
   
- 次の表はその他のメンバー関数に類似する`CObList::RemoveHead`です。  
+ The following table shows other member functions that are similar to `CObList::RemoveHead`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void\* RemoveHead ();**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**CString RemoveHead ();**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void\* RemoveHead( );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**CString RemoveHead( );**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&107;](../../mfc/codesnippet/cpp/coblist-class_19.cpp)]  
+ [!code-cpp[NVC_MFCCollections#107](../../mfc/codesnippet/cpp/coblist-class_19.cpp)]  
   
-##  <a name="removetail"></a>CObList::RemoveTail  
- リストの末尾から要素を削除し、ポインターを返します。  
+##  <a name="removetail"></a>  CObList::RemoveTail  
+ Removes the element from the tail of the list and returns a pointer to it.  
   
 ```  
 CObject* RemoveTail();
 ```  
   
-### <a name="return-value"></a>戻り値  
- リストの後部にあったオブジェクトへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the object that was at the tail of the list.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`RemoveTail`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `RemoveTail`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](#isempty) to verify that the list contains elements.  
   
- 次の表はその他のメンバー関数に類似する`CObList::RemoveTail`です。  
+ The following table shows other member functions that are similar to `CObList::RemoveTail`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void\* RemoveTail ();**|  
-|[CStringList](../../mfc/reference/cstringlist-class.md)|**CString RemoveTail ();**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void\* RemoveTail( );**|  
+|[CStringList](../../mfc/reference/cstringlist-class.md)|**CString RemoveTail( );**|  
   
-### <a name="example"></a>例  
- 参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+ See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&108;](../../mfc/codesnippet/cpp/coblist-class_20.cpp)]  
+ [!code-cpp[NVC_MFCCollections#108](../../mfc/codesnippet/cpp/coblist-class_20.cpp)]  
   
-##  <a name="setat"></a>CObList::SetAt  
- 指定された位置に要素を設定します。  
+##  <a name="setat"></a>  CObList::SetAt  
+ Sets the element at a given position.  
   
 ```  
 void SetAt(
@@ -799,31 +818,31 @@ void SetAt(
     CObject* newElement);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- **位置**を設定する要素のです。  
+ The **POSITION** of the element to be set.  
   
  `newElement`  
- `CObject`リストに書き込まれるへのポインター。  
+ The `CObject` pointer to be written to the list.  
   
-### <a name="remarks"></a>コメント  
- 型の変数**位置**リストのキーです。 操作できません。 したり、インデックスと同じには、**位置**自分の値。 `SetAt`書き込み、`CObject`リストの指定位置へのポインター。  
+### <a name="remarks"></a>Remarks  
+ A variable of type **POSITION** is a key for the list. It is not the same as an index, and you cannot operate on a **POSITION** value yourself. `SetAt` writes the `CObject` pointer to the specified position in the list.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 次の表はその他のメンバー関数に類似する`CObList::SetAt`です。  
+ The following table shows other member functions that are similar to `CObList::SetAt`.  
   
-|クラス|メンバー関数|  
+|Class|Member Function|  
 |-----------|---------------------|  
-|[CPtrList](../../mfc/reference/cptrlist-class.md)|**SetAt を無効にする (位置** `pos` **、const CString >/documents/report1.rdl」の** `newElement` **) です。**|  
+|[CPtrList](../../mfc/reference/cptrlist-class.md)|**void SetAt( POSITION** `pos` **, const CString&** `newElement` **);**|  
 |[CStringList](../../mfc/reference/cstringlist-class.md)|**void SetAt( POSITION** `pos` **, LPCTSTR** `newElement` **);**|  
   
-### <a name="example"></a>例  
-  参照してください[使われて](#coblist)の一覧については、`CAge`クラスです。  
+### <a name="example"></a>Example  
+  See [CObList::CObList](#coblist) for a listing of the `CAge` class.  
   
- [!code-cpp[NVC_MFCCollections #&109;](../../mfc/codesnippet/cpp/coblist-class_21.cpp)]  
+ [!code-cpp[NVC_MFCCollections#109](../../mfc/codesnippet/cpp/coblist-class_21.cpp)]  
   
- このプログラムからの結果は次のとおりです。  
+ The results from this program are as follows:  
   
  `SetAt example: A CObList with 2 elements`  
   
@@ -831,9 +850,9 @@ void SetAt(
   
  `a CAge at $4DB8 65`  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CStringList クラス](../../mfc/reference/cstringlist-class.md)   
- [CPtrList クラス](../../mfc/reference/cptrlist-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CStringList Class](../../mfc/reference/cstringlist-class.md)   
+ [CPtrList Class](../../mfc/reference/cptrlist-class.md)
 

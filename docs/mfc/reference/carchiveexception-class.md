@@ -1,5 +1,5 @@
 ---
-title: "CArchiveException クラス |Microsoft ドキュメント"
+title: CArchiveException Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -17,11 +17,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- exceptions [C++], serialization
-- serialization [C++], exceptions
-- CArchiveException class
-- exceptions [C++], archive
-- archive exceptions [C++]
+- CArchiveException [MFC], CArchiveException
+- CArchiveException [MFC], m_cause
+- CArchiveException [MFC], m_strFileName
 ms.assetid: da31a127-e86c-41d1-b0b6-bed0865b1b49
 caps.latest.revision: 21
 author: mikeblome
@@ -41,54 +39,54 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: e927bea5b8d9e6dbaafb191f6c3bdcf0f0d076cc
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1c1652037db836819e471ef18c448e4c22ea5e40
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="carchiveexception-class"></a>CArchiveException クラス
-シリアル化の例外条件を表します  
+# <a name="carchiveexception-class"></a>CArchiveException Class
+Represents a serialization exception condition  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CArchiveException : public CException  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CArchiveException::CArchiveException](#carchiveexception)|`CArchiveException` オブジェクトを構築します。|  
+|[CArchiveException::CArchiveException](#carchiveexception)|Constructs a `CArchiveException` object.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CArchiveException::m_cause](#m_cause)|例外の原因を示します。|  
-|[CArchiveException::m_strFileName](#m_strfilename)|この例外の状態のファイルの名前を指定します。|  
+|[CArchiveException::m_cause](#m_cause)|Indicates the exception cause.|  
+|[CArchiveException::m_strFileName](#m_strfilename)|Specifies the name of the file for this exception condition.|  
   
-## <a name="remarks"></a>コメント  
- `CArchiveException`クラスには、例外の原因を示すパブリック データ メンバーが含まれています。  
+## <a name="remarks"></a>Remarks  
+ The `CArchiveException` class includes a public data member that indicates the cause of the exception.  
   
- `CArchiveException`オブジェクトが構築され、内でスロー [CArchive](../../mfc/reference/carchive-class.md)メンバー関数。 これらのオブジェクトのスコープ内にアクセスすることができます、**キャッチ**式です。 原因コードは、オペレーティング システムから独立します。 例外の処理の詳細については、次を参照してください。[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
+ `CArchiveException` objects are constructed and thrown inside [CArchive](../../mfc/reference/carchive-class.md) member functions. You can access these objects within the scope of a **CATCH** expression. The cause code is independent of the operating system. For more information about exception processing, see [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
   
  `CArchiveException`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="carchiveexception"></a>CArchiveException::CArchiveException  
- 構築、`CArchiveException`の値を格納するオブジェクト`cause`オブジェクトです。  
+##  <a name="carchiveexception"></a>  CArchiveException::CArchiveException  
+ Constructs a `CArchiveException` object, storing the value of `cause` in the object.  
   
 ```  
 CArchiveException(
@@ -96,62 +94,62 @@ CArchiveException(
     LPCTSTR lpszArchiveName = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cause`  
- 例外の原因を示す列挙型の変数。 列挙子の一覧は、次を参照してください。、[は](#m_cause)データ メンバーです。  
+ An enumerated type variable that indicates the reason for the exception. For a list of the enumerators, see the [m_cause](#m_cause) data member.  
   
  `lpszArchiveName`  
- 名前を含む文字列を指す、`CArchive`オブジェクトの例外が発生します。  
+ Points to a string containing the name of the `CArchive` object causing the exception.  
   
-### <a name="remarks"></a>コメント  
- 作成することができます、`CArchiveException`グローバル関数のヒープ上のオブジェクトし自分でスローさせたり[AfxThrowArchiveException](../../mfc/reference/exception-processing.md#afxthrowarchiveexception)処理を行います。  
+### <a name="remarks"></a>Remarks  
+ You can create a `CArchiveException` object on the heap and throw it yourself or let the global function [AfxThrowArchiveException](../../mfc/reference/exception-processing.md#afxthrowarchiveexception) handle it for you.  
   
- このコンス トラクターを直接使用しないでください。代わりに、グローバル関数を呼び出す`AfxThrowArchiveException`します。  
+ Do not use this constructor directly; instead, call the global function `AfxThrowArchiveException`.  
   
-##  <a name="m_cause"></a>CArchiveException::m_cause  
- 例外の原因を指定します。  
+##  <a name="m_cause"></a>  CArchiveException::m_cause  
+ Specifies the cause of the exception.  
   
 ```  
 int m_cause;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このデータ メンバーは `int` 型のパブリック変数です。 その値は、`CArchiveException`列挙型。 列挙子とその意味は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ This data member is a public variable of type `int`. Its values are defined by a `CArchiveException` enumerated type. The enumerators and their meanings are as follows:  
   
-- **CArchiveException::none**エラーが発生していません。  
+- **CArchiveException::none** No error occurred.  
   
-- **CArchiveException::genericException**特定できないエラーです。  
+- **CArchiveException::genericException** Unspecified error.  
   
-- **CArchiveException::readOnly**の読み込みの開かれたアーカイブに書き込もうとしました。  
+- **CArchiveException::readOnly** Tried to write into an archive opened for loading.  
   
-- **CArchiveException::endOfFile**オブジェクトを読み取り中に最後のファイルに達しました。  
+- **CArchiveException::endOfFile** Reached end of file while reading an object.  
   
-- **CArchiveException::writeOnly**を格納するために開かれたアーカイブから読み取ろうとしました。  
+- **CArchiveException::writeOnly** Tried to read from an archive opened for storing.  
   
-- **CArchiveException::badIndex**ファイル形式が無効です。  
+- **CArchiveException::badIndex** Invalid file format.  
   
-- **CArchiveException::badClass**は無効な型のオブジェクトにオブジェクトを読み取ろうとしました。  
+- **CArchiveException::badClass** Tried to read an object into an object of the wrong type.  
   
-- **CArchiveException::badSchema**クラスの異なるバージョンのオブジェクトを読み込もうとしました。  
-  
-    > [!NOTE]
-    >  これらの `CArchiveException` 原因列挙子は、`CFileException` 原因列挙子とは異なります。  
+- **CArchiveException::badSchema** Tried to read an object with a different version of the class.  
   
     > [!NOTE]
-    > **CArchiveException::generic**は使用されなくなりました。 使用**代わり**代わりにします。 場合**汎用**アプリケーションで使用され、ビルドは/clr ではエラーが発生する構文は、簡単に解読できません。  
+    >  These `CArchiveException` cause enumerators are distinct from the `CFileException` cause enumerators.  
   
-##  <a name="m_strfilename"></a>CArchiveException::m_strFileName  
- この例外の状態のファイルの名前を指定します。  
+    > [!NOTE]
+    > **CArchiveException::generic** is deprecated. Use **genericException** instead. If **generic** is used in an application and built with /clr, there will be syntax errors that are not easy to decipher.  
+  
+##  <a name="m_strfilename"></a>  CArchiveException::m_strFileName  
+ Specifies the name of the file for this exception condition.  
   
 ```  
 CString m_strFileName;  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [CException クラス](../../mfc/reference/cexception-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CArchive クラス](../../mfc/reference/carchive-class.md)   
+## <a name="see-also"></a>See Also  
+ [CException Class](../../mfc/reference/cexception-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CArchive Class](../../mfc/reference/carchive-class.md)   
  [AfxThrowArchiveException](../../mfc/reference/exception-processing.md#afxthrowarchiveexception)   
- [例外の処理](../../mfc/reference/exception-processing.md)
+ [Exception Processing](../../mfc/reference/exception-processing.md)
 
 

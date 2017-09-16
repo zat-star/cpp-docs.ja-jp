@@ -1,73 +1,92 @@
 ---
-title: "メニューとリソース (OLE) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], メニューとリソース"
-  - "コンテナー [C++], OLE コンテナー アプリケーション"
-  - "埋め込み先編集の有効化, OLE のメニューとリソース"
-  - "メニュー [C++], OLE ドキュメント アプリケーション"
-  - "OLE アプリケーション [C++], メニューとリソース"
-  - "OLE コンテナー, メニューとリソース"
-  - "OLE のメニューとリソース"
-  - "OLE サーバー アプリケーション, メニューとリソース"
-  - "OLE ビジュアル編集サーバー"
-  - "サーバー アプリケーション, OLE のメニューとリソース"
-  - "ステータス バー, OLE ドキュメント アプリケーション"
-  - "文字列編集, ビジュアル編集アプリケーション"
-  - "ストリング テーブル, ビジュアル編集アプリケーション"
-  - "ツール バー [C++], OLE ドキュメント アプリケーション"
-  - "ビジュアル編集, アプリケーションのメニューとリソース"
+title: Menus and Resources (OLE) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE visual editing servers [MFC]
+- status bars [MFC], OLE document applications
+- visual editing [MFC], application menus and resources
+- string tables [MFC], visual editing applications
+- OLE containers [MFC], menus and resources
+- OLE applications [MFC], menus and resources
+- OLE server applications [MFC], menus and resources
+- toolbars [MFC], OLE document applications
+- string editing [MFC], visual editing applications
+- server applications [MFC], OLE menus and resources
+- applications [OLE], menus and resources
+- menus [MFC], OLE document applications
+- in-place activation [MFC], OLE menus and resources
+- containers [MFC], OLE container applications
+- OLE menus and resources [MFC]
 ms.assetid: 52bfa086-7d3d-466f-94c7-c7061f3bdb3a
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# メニューとリソース (OLE)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ca4f6b95f418e59610131a4b6fbf2f684074630e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-記事のグループは、MFC の OLE ドキュメントのアプリケーションのメニューとリソースの使用例です。  
+---
+# <a name="menus-and-resources-ole"></a>Menus and Resources (OLE)
+This group of articles explains the use of menus and resources in MFC OLE document applications.  
   
- コンテナーとサーバーの両方 \(コンポーネント\) アプリケーションが起動し、選択できる一連のモードがあるため、メニューの OLE ビジュアル編集の場所の追加要件と OLE ドキュメントのアプリケーションに用意されている他のリソース。  たとえば、フル サーバー アプリケーションでは、この 3 種類のモードのいずれかで実行する:  
+ OLE visual editing places additional requirements on the menu and other resources provided by OLE document applications because there are a number of modes in which both container and server (component) applications can be started and used. For example, a full-server application can run in any of these three modes:  
   
--   スタンドアロンの。  
+-   Stand alone.  
   
--   コンテナーでは、項目を編集できるようにします。  
+-   In place, for editing an item within the context of a container.  
   
--   別のウィンドウ コンテナーのコンテキスト外の項目を、編集用に開きます。  
+-   Open, for editing an item outside the context of its container, often in a separate window.  
   
- これは、3 種類のレイアウト メニュー、アプリケーションでの有効なモードの 1 が必要です。  アクセラレータ テーブルには新しいモードでも必要です。  コンテナー アプリケーションは、埋め込み先編集の有効化をサポートしない可能性があります。そうでない場合があります。; 新規作成メニュー構造および関連するアクセラレータ テーブルが必要です。  
+ This requires three separate menu layouts, one for each possible mode of the application. Accelerator tables are also necessary for each new mode. A container application may or may not support in-place activation; if it does, it needs a new menu structure and associated accelerator tables.  
   
- 埋め込み先編集の有効化、コンテナーとサーバー アプリケーションのメニュー、ツール バーとステータス バーの領域に調整する必要があります。  すべてのリソースがこれをそこでデザインする必要があります。  記事 [メニューとリソース: メニューのマージ](../mfc/menus-and-resources-menu-merging.md) はこのトピックを詳しく説明します。  
+ In-place activation requires that the container and server applications must negotiate for menu, toolbar, and status bar space. All resources must be designed with this in mind. The article [Menus and Resources: Menu Merging](../mfc/menus-and-resources-menu-merging.md) covers this topic in detail.  
   
- これらの問題については、アプリケーション ウィザードで作成した OLE ドキュメントのアプリケーションは 4 つまでのメニュー、アクセラレータ テーブル リソースを持つことができます。  これらは次の理由で使用されています:  
+ Because of these issues, OLE document applications created with the application wizard can have up to four separate menus and accelerator table resources. These are used for the following reasons:  
   
-|リソース名|使用方法|  
-|-----------|----------|  
-|**IDR\_MAINFRAME**|ファイルが開かれていない場合は、開いているファイルに関係なく、MDI アプリケーションで、SDI アプリケーションで使用されます。  これは、OLE アプリケーションで使用される標準メニューです。|  
-|**IDR\_projectTYPE\<\>**|ファイルが開かれている MDI アプリケーションで使用されます。  アプリケーションがスタンドアロン実行である場合に使用します。  これは、OLE アプリケーションで使用される標準メニューです。|  
-|**\<\>IDR\_projectTYPE\_SRVR\_IP**|オブジェクトは、設定されているときにサーバーまたはコンテナーによって使用されます。|  
-|**\<\>IDR\_projectTYPE\_SRVR\_EMB**|オブジェクトが埋め込み先編集の有効化を使用しないでそのサーバー アプリケーションによって使用されます。|  
+|Resource name|Use|  
+|-------------------|---------|  
+|**IDR_MAINFRAME**|Used in an MDI application if no file is open, or in an SDI application regardless of open files. This is the standard menu used in non-OLE applications.|  
+|**IDR_\<project>TYPE**|Used in an MDI application if files are open. Used when an application is running stand-alone. This is the standard menu used in non-OLE applications.|  
+|**IDR_\<project>TYPE_SRVR_IP**|Used by the server or container when an object is open in place.|  
+|**IDR_\<project>TYPE_SRVR_EMB**|Used by a server application if an object is opened without using in-place activation.|  
   
- これらのリソース名にはそれぞれ、メニューと、通常、アクセラレータ テーブルを表します。  同様のスキームは、アプリケーション ウィザードで作成される MFC アプリケーションで使用する必要があります。  
+ Each of these resource names represents a menu and, usually, an accelerator table. A similar scheme should be used in MFC applications that are not created with the application wizard.  
   
- 次のトピックでは、コンテナー、サーバーと埋め込み先編集の有効化を実装するために必要なメニューのマージに関するトピックについて説明します。:  
+ The following articles discuss topics related to containers, servers, and the menu merging necessary to implement in-place activation:  
   
--   [メニューとリソース: コンテナーの追加](../mfc/menus-and-resources-container-additions.md)  
+-   [Menus and Resources: Container Additions](../mfc/menus-and-resources-container-additions.md)  
   
--   [メニューとリソース: サーバーの追加](../mfc/menus-and-resources-server-additions.md)  
+-   [Menus and Resources: Server Additions](../mfc/menus-and-resources-server-additions.md)  
   
--   [メニューとリソース: メニューのマージ](../mfc/menus-and-resources-menu-merging.md)  
+-   [Menus and Resources: Menu Merging](../mfc/menus-and-resources-menu-merging.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)
+
+

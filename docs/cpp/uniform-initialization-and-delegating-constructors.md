@@ -1,29 +1,47 @@
 ---
-title: "均一な初期化とコンストラクターのデリゲート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: Uniform Initialization and Delegating Constructors | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: aa4daa64-eaec-4a3c-ade4-d9325e31e9d4
 caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
----
-# 均一な初期化とコンストラクターのデリゲート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: ac08f1df693edd6fe2245146b2bc1717415e1d73
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-最新 C\+\+ では、等号を使用せずに、任意の型に対して "かっこ初期化" を使用できます。  また、同様の作業を実行するコンストラクターが複数あるときに、デリゲート コンストラクターを使用してコードを簡単にすることもできます。  
+---
+# <a name="uniform-initialization-and-delegating-constructors"></a>Uniform Initialization and Delegating Constructors
+In modern C++, you can use *brace initialization* for any type, without the equals sign. Also, you can use delegating constructors to simplify your code when you have multiple constructors that perform similar work.  
   
-## かっこ初期化  
- 任意のクラス、構造体、または共用体にかっこ初期化を使用できます。  型に既定のコンストラクターがあり、暗黙的または明示的に宣言されている場合、\(空のかっこで\) 既定のかっこ初期化を使用できます。  たとえば、次のクラスは、既定のかっこ初期化と既定以外のかっこ初期化を使用して初期化できます。  
+## <a name="brace-initialization"></a>Brace Initialization  
+ You can use brace initialization for any class, struct, or union. If a type has a default constructor, either implicitly or explicitly declared, you can use default brace initialization (with empty braces). For example, the following class may be initialized by using both default and non-default brace initialization:  
   
 ```cpp  
 #include <string>  
@@ -53,7 +71,7 @@ int main()
   
 ```  
   
- クラスに既定以外のコンストラクターがある場合、クラス メンバーがかっこ初期化に表示される順序は、対応するパラメーターがコンストラクターに表示される順序になります。メンバーが宣言される順序ではありません \(前の例の `class_a` と同様\)。  それ以外の場合、宣言されたコンストラクターが型にないときは、メンバーがかっこ初期化に表示される順序とメンバーが宣言される順序は同じです。この場合、必要な数だけパブリック メンバーを初期化できますが、メンバーをスキップすることはできません。  次の例は、宣言されたコンストラクターがないときに、かっこ初期化で使用される順序を示しています。  
+ If a class has non-default constructors, the order in which class members appear in the brace initializer is the order in which the corresponding parameters appear in the constructor, not the order in which the members are declared (as with `class_a` in the previous example). Otherwise, if the type has no declared constructor, the order in which the members appear in the brace initializer is the same as the order in which they are declared; in this case, you can initialize as many of the public members as you wish, but you cannot skip any member. The following example shows the order that's used in brace initialization when there is no declared constructor:  
   
 ```cpp  
 class class_d {  
@@ -75,7 +93,7 @@ int main()
 }   
 ```  
   
- 既定のコンストラクターが明示的に宣言されていても、削除対象としてマークされている場合は、既定のかっこ初期化は使用できません。  
+ If the default constructor is explicitly declared but marked as deleted, default brace initialization cannot be used:  
   
 ```cpp  
 class class_f {  
@@ -91,7 +109,7 @@ int main()
 }  
 ```  
   
- かっこ初期化は、通常の初期化と同じように任意の場所で使用できます。たとえば、関数パラメーターや戻り値として、または `new` キーワードと共に使用できます。  
+ You can use brace initialization anywhere you would typically do initialization—for example, as a function parameter or a return value, or with the `new` keyword:  
   
 ```cpp  
 class_d* cf = new class_d{4.5};  
@@ -100,17 +118,17 @@ return { 4.5 };
   
 ```  
   
-## initializer\_list Constructors  
- [initializer\_list Class](../standard-library/initializer-list-class.md) は、他のコンテキストで、コンストラクターで使用できる指定した型のオブジェクトの一覧を表します。  かっこ初期化を使用して、initializer\_list を構築できます。  
+## <a name="initializerlist-constructors"></a>initializer_list Constructors  
+ The [initializer_list Class](../standard-library/initializer-list-class.md) represents a list of objects of a specified type that can be used in a constructor, and in other contexts. You can construct an initializer_list by using brace initialization:  
   
 ```cpp  
 initializer_list<int> int_list{5, 6, 7};  
 ```  
   
 > [!IMPORTANT]
->  このクラスを使用するには、[\<initializer\_list\>](../standard-library/initializer-list.md) ヘッダーを追加する必要があります。  
+>  To use this class, you must include the [<initializer_list>](../standard-library/initializer-list.md) header.  
   
- `initializer_list` をコピーできます。  この場合、新しいリストのメンバーは、元のリストのメンバーを参照します。  
+ An `initializer_list` can be copied. In this case, the members of the new list are references to the members of the original list:  
   
 ```cpp  
 initializer_list<int> ilist1{ 5, 6, 7 };  
@@ -120,7 +138,7 @@ if (ilist1.begin() == ilist2.begin())
   
 ```  
   
- 標準ライブラリのコンテナー クラスと、`string`、`wstring`、および `regex` にも `initializer_list` コンストラクターが含まれます。  次の例は、これらのコンストラクターでかっこ初期化を行う方法を示しています。  
+ The standard library container classes, and also `string`, `wstring`, and `regex`, have `initializer_list` constructors. The following examples show how to do brace initialization with these constructors:  
   
 ```cpp  
 vector<int> v1{ 9, 10, 11 };   
@@ -129,8 +147,8 @@ string s{ 'a', 'b', 'c' };
 regex rgx{'x', 'y', 'z'};   
 ```  
   
-## デリゲート コンストラクター  
- 多くのクラスに、パラメーターの検証など、同じような処理を実行するコンストラクターが複数含まれます。  
+## <a name="delegating-constructors"></a>Delegating Constructors  
+ Many classes have multiple constructors that do similar things—for example, validate parameters:  
   
 ```cpp  
 class class_c {  
@@ -155,7 +173,7 @@ public:
 };  
 ```  
   
- 繰り返し出現するコードを減らすには、すべての検証を行う関数を追加します。ただし、`class_c` のコードについては、1 つのコンストラクターが作業の一部を他にデリゲートできる方が、理解や保守が簡単になります。  デリゲート コンストラクターを追加するには、`constructor (. . .) : constructor (. . .)` 構文を使用します。  
+ You could reduce the repetitive code by adding a function that does all of the validation, but the code for `class_c` would be easier to understand and maintain if one constructor could delegate some of the work to another one. To add delegating constructors, use the `constructor (. . .) : constructor (. . .)` syntax:  
   
 ```cpp  
 class class_c {  
@@ -181,9 +199,9 @@ int main() {
   
 ```  
   
- 前の例では、`class_c(int, int, int)` コンストラクターが最初に `class_c(int, int)` コンストラクターを呼び出し、その後、この呼び出されたコンストラクターが `class_c(int)` を呼び出していることに注意してください。  各コンストラクターが、他のコンストラクターで実行されていない作業のみを行います。  
+ As you step through the previous example, notice that the constructor `class_c(int, int, int)` first calls the constructor `class_c(int, int)`, which in turn calls `class_c(int)`. Each of the constructors performs only the work that is not performed by the other constructors.  
   
- オブジェクトは、呼び出された最初のコンストラクターによって初期化されるため、そのメンバーすべてがこの時点で初期化されます。  ここで示すように、他のコンストラクターにデリゲートされたコンストラクターでは、メンバーの初期化を実行できません。  
+ The first constructor that's called initializes the object so that all of its members are initialized at that point. You can’t do member initialization in a constructor that delegates to another constructor, as shown here:  
   
 ```cpp  
 class class_a {  
@@ -204,7 +222,7 @@ public:
   
 ```  
   
- 次の例は、静的でないデータ メンバー初期化子の使用例を示しています。  コンストラクターも特定のデータ メンバーを初期化する場合は、メンバーの初期化子がオーバーライドされることに注意してください。  
+ The next example shows the use of non-static data-member initializers. Notice that if a constructor also initializes a given data member, the member initializer is overridden:  
   
 ```cpp  
 class class_a {  
@@ -222,7 +240,7 @@ int main() {
 }  
 ```  
   
- コンストラクター デリゲート構文では、コンストラクターの再帰 \(Constructor1 が、Constructor1 を呼び出す Constructor2 を呼び出すなど\) が誤って作成されるのを防ぐことができず、さらに、スタック オーバーフローが発生するまでエラーがスローされません。  このサイクルを回避する必要があります。  
+ The constructor delegation syntax doesn't prevent the accidental creation of constructor recursion—Constructor1 calls Constructor2 which calls Constructor1—and no errors are thrown until there is a stack overflow. It's your responsibility to avoid cycles.  
   
 ```cpp  
 class class_f{  

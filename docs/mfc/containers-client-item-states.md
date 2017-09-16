@@ -1,33 +1,50 @@
 ---
-title: "コンテナー : クライアント アイテムの状態 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クライアント アイテムと OLE コンテナー"
-  - "有効期間, 有効期間の状態と OLE コンテナーのクライアント アイテム"
-  - "OLE コンテナー, クライアント アイテムの状態"
-  - "状態, OLE コンテナー クライアント アイテム"
+title: 'Containers: Client-Item States | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE containers [MFC], client-item states
+- states, OLE container client-item
+- lifetime, lifetime states and OLE container client items
+- client items and OLE containers
 ms.assetid: e7021caa-bd07-4adb-976e-f5f3d025bc53
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンテナー : クライアント アイテムの状態
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ba2e8fc0ad0f57ec6c964d592442033a63ebb67f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、その有効期間中にさまざまな状態をクライアント項目のパスについて説明します。  
+---
+# <a name="containers-client-item-states"></a>Containers: Client-Item States
+This article explains the different states a client item passes through in its lifetime.  
   
- クライアント項目は複数の状態を作成し、アクティブ化、変更、および保存するときに適用されます。  項目の状態が変更されるたびに、フレームワークは `OLE_CHANGED_STATE` 通知の [COleClientItem::OnChange](../Topic/COleClientItem::OnChange.md) を呼び出します。  2 番目のパラメーターは **COleClientItem::ItemState** の列挙体の値です。  これは、次のいずれかの:  
+ A client item passes through several states as it is created, activated, modified, and saved. Each time the item's state changes, the framework calls [COleClientItem::OnChange](../mfc/reference/coleclientitem-class.md#onchange) with the `OLE_CHANGED_STATE` notification. The second parameter is a value from the **COleClientItem::ItemState** enumeration. It can be one of the following:  
   
 -   **COleClientItem::emptyState**  
   
@@ -39,17 +56,18 @@ caps.handback.revision: 5
   
 -   **COleClientItem::activeUIState**  
   
- 空の状態で、クライアント項目も完全に項目ではありません。  メモリに対してに割り当てられたが、OLE アイテムのデータがまだ初期化されていません。  これは **new** への呼び出しで作成されたが、ある、一般的な、ステップを作成する 2 番目の手順が発生しない場合にクライアント項目は状態です。  
+ In the empty state, a client item is not yet completely an item. Memory has been allocated for it, but it has not yet been initialized with the OLE item's data. This is the state a client item is in when it has been created through a call to **new** but has not yet undergone the second step of the typical two-step creation.  
   
- `COleClientItem::CreateFromFile` または **CreateFrom**別の*その* 関数の呼び出しによって実行される 2 番目の手順では、項目は完全に作成されます。  OLE データは `COleClientItem`\-派生オブジェクト \(クリップボードなどのファイルやそのほかのソースから、\) に関連付けられています。  項目は読み込み済み状態に次にあります。  
+ In the second step, performed through a call to `COleClientItem::CreateFromFile` or another **CreateFrom***xxxx* function, the item is completely created. The OLE data (from a file or some other source, such as the Clipboard) has been associated with the `COleClientItem`-derived object. Now the item is in the loaded state.  
   
- 項目はコンテナーのドキュメントを開くのではなく、サーバーのウィンドウで開いた場合は、開いている \(または完全に開きます\) 状態になります。  この状態で項目が他の場所でアクティブであることを示すために、あや表示陰影は通常、コンテナー ウィンドウの項目の表現に描画されます。  
+ When an item has been opened in the server's window rather than opened in place in the container's document, it is in the open (or fully open) state. In this state, a cross-hatch usually is drawn over the representation of the item in the container's window to indicate that the item is active elsewhere.  
   
- 項目はアクティブ化された場合、アクティブ状態は、通常、簡単にのみ適用されます。  その後、サーバーがコンテナーのものとメニューやツール バーなどのユーザー インターフェイス コンポーネントをマージした UI アクティブ状態になります。  これらのユーザー インターフェイス コンポーネントの有無はアクティブ状態と UI のアクティブ状態を区別します。  それ以外の場合は、アクティブ状態は、UI の状態がアクティブになります。  読み込まれるか、開いている状態に達するまで OLE アイテムの元の状態情報を保持するためにサーバー サポートに戻す、サーバーが必要な場合。  
+ When an item has been activated in place, it passes, usually only briefly, through the active state. It then enters the UI active state, in which the server has merged its menus, toolbars, and other user-interface components with those of the container. The presence of these user-interface components distinguishes the UI active state from the active state. Otherwise, the active state resembles the UI active state. If the server supports Undo, the server is required to retain the OLE item's undo-state information until it reaches the loaded or open state.  
   
-## 参照  
- [コンテナー](../mfc/containers.md)   
- [アクティベーション](../mfc/activation-cpp.md)   
- [コンテナー : クライアント アイテムへの通知](../mfc/containers-client-item-notifications.md)   
- [トラッカー](../mfc/trackers.md)   
- [CRectTracker クラス](../mfc/reference/crecttracker-class.md)
+## <a name="see-also"></a>See Also  
+ [Containers](../mfc/containers.md)   
+ [Activation](../mfc/activation-cpp.md)   
+ [Containers: Client-Item Notifications](../mfc/containers-client-item-notifications.md)   
+ [Trackers](../mfc/trackers.md)   
+ [CRectTracker Class](../mfc/reference/crecttracker-class.md)
+

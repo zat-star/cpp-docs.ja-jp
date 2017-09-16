@@ -1,37 +1,56 @@
 ---
-title: "リモート オートメーション接続マネージャー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション クライアント, 構成 (リモート オートメーション用に)"
-  - "オートメーション サーバー, 構成 (リモート オートメーション用に)"
-  - "RAC マネージャー ツール"
-  - "レジストリ, リモート オートメーション"
-  - "リモート オートメーション接続マネージャー"
-  - "リモート オートメーション, 構成 (クライアント コンピューターとサーバー コンピューターを)"
+title: Remote Automation Connection Manager | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Automation clients [MFC], configuring for Remote Automation
+- registry [MFC], remote Automation
+- Automation servers [MFC], configuring for Remote Automation
+- Remote Automation Connection Manager [MFC]
+- Remote Automation [MFC], configuring client and server machines
+- RAC Manager tool [MFC]
 ms.assetid: 562eb7bc-f95c-46ad-ac97-f0dfa98362af
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# リモート オートメーション接続マネージャー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c7c4d783aabc56bf33ce334b037a0489ef38220c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クライアントとサーバー コンピューターの両方を構成するには、レジストリの変更を加える必要があります。  これを手動でするのではなく、リモート オートメーションの Connectivity \(RAC\) マネージャー ツールを使用する方がより簡単です。  このツールは、RACMGR32.EXE、RACREG32.DLL とともに、選択したディレクトリにコピーする必要があります。  パス内に配置することにより、実行を使用してタスク バーから実行できます。  さらに、ショートカットを作成したり、スタート メニュー、その参照を配置できます。  
+---
+# <a name="remote-automation-connection-manager"></a>Remote Automation Connection Manager
+To configure both client and server machines, you need to make registry changes. Rather than doing this by hand, it is far easier to use the Remote Automation Connection (RAC) Manager tool. This tool, RACMGR32.EXE, along with RACREG32.DLL, needs to be copied to any directory you choose. By putting it in the PATH, it can be executed from the taskbar using Run. Alternatively, you can create a shortcut to it or place a reference to it on the Start menu.  
   
- したがって RACMGR32 は Visual Basic で記述され、Visual Basic サポート DLL が必要です。  これらのファイルは CD\-ROM に RACMGR32.EXE と同じディレクトリに配置されます。  Visual C\+\+ Enterprise Edition のセットアップによってインストールされたこれらのファイルのバージョンは、Visual Basic 5.0 Enterprise Edition に付属するバージョンより新しいまたは同等です。  Visual C\+\+ は、Visual Basic の新しいバージョンがシステム ディレクトリにコピーするファイルを作成します。  Windows 9x では、このディレクトリは、C:\\Windows\\System.です  Windows NT と Windows 2000 では、これは通常、C:\\WINNT\\system32.です  に登録するオペレーティング システムを使用してこれらのファイルを設定します。  Visual Basic のインストールから削除できます。  
+ RACMGR32 is written in Visual Basic and therefore needs some Visual Basic support DLLs. These files are placed in the same directory as RACMGR32.EXE on the CD-ROM. The versions of these files that are installed by the Setup for Visual C++ Enterprise Edition are equivalent or more recent than those that shipped with Visual Basic Enterprise Edition 5.0. The Visual C++ Setup copies the new versions of the Visual Basic files to your system directory. For Windows 9x, this directory is typically C:\Windows\System. For Windows NT and Windows 2000, it is typically C:\WINNT\system32. Setup also registers these files with the operating system. You may remove them from your Visual Basic installation.  
   
-## 参照  
- [オートメーション マネージャー \(MFC\)](../mfc/automation-manager-mfc.md)   
- [リモート オートメーションのユーザー コンポーネント](../mfc/remote-automation-user-components.md)   
- [リモート オートメーションのインストール](../Topic/Remote%20Automation%20Installation.md)
+## <a name="see-also"></a>See Also  
+ [Automation Manager (MFC)](../mfc/automation-manager-mfc.md)   
+ [Remote Automation User Components](../mfc/remote-automation-user-components.md)   
+ [Remote Automation Installation](../mfc/remote-automation-installation.md)
+
+

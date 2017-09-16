@@ -1,5 +1,5 @@
 ---
-title: "CProgressCtrl クラス |Microsoft ドキュメント"
+title: CProgressCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -32,9 +32,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CProgressCtrl class
-- progress controls [C++], CProgressCtrl class
-- Internet Explorer 4.0 common controls
+- CProgressCtrl [MFC], CProgressCtrl
+- CProgressCtrl [MFC], Create
+- CProgressCtrl [MFC], CreateEx
+- CProgressCtrl [MFC], GetBarColor
+- CProgressCtrl [MFC], GetBkColor
+- CProgressCtrl [MFC], GetPos
+- CProgressCtrl [MFC], GetRange
+- CProgressCtrl [MFC], GetState
+- CProgressCtrl [MFC], GetStep
+- CProgressCtrl [MFC], OffsetPos
+- CProgressCtrl [MFC], SetBarColor
+- CProgressCtrl [MFC], SetBkColor
+- CProgressCtrl [MFC], SetMarquee
+- CProgressCtrl [MFC], SetPos
+- CProgressCtrl [MFC], SetRange
+- CProgressCtrl [MFC], SetState
+- CProgressCtrl [MFC], SetStep
+- CProgressCtrl [MFC], StepIt
 ms.assetid: 222630f4-1598-4026-8198-51649b1192ab
 caps.latest.revision: 25
 author: mikeblome
@@ -54,60 +69,60 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3d045736f9a54d344c67e3f7408198e65a0bc95f
-ms.openlocfilehash: a5c006087cb4ca5482ed8c14750686389ddeef68
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a4f80991b6eb527b7aacaf97fbdb871a0c05f05c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cprogressctrl-class"></a>CProgressCtrl クラス
-Windows コモン プログレス バー コントロールの機能が用意されています。  
+# <a name="cprogressctrl-class"></a>CProgressCtrl Class
+Provides the functionality of the Windows common progress bar control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CProgressCtrl : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CProgressCtrl::CProgressCtrl](#cprogressctrl)|`CProgressCtrl` オブジェクトを構築します。|  
+|[CProgressCtrl::CProgressCtrl](#cprogressctrl)|Constructs a `CProgressCtrl` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CProgressCtrl::Create](#create)|進行状況バー コントロールを作成し、それにアタッチ、`CProgressCtrl`オブジェクト。|  
-|[CProgressCtrl::CreateEx](#createex)|指定した Windows 拡張スタイルを使用して進行状況コントロールを作成しにアタッチ、`CProgressCtrl`オブジェクト。|  
-|[CProgressCtrl::GetBarColor](#getbarcolor)|現在の進行状況バー コントロールの進行状況インジケーターのバーの色を取得します。|  
-|[CProgressCtrl::GetBkColor](#getbkcolor)|現在の進行状況バーの背景色を取得します。|  
-|[CProgressCtrl::GetPos](#getpos)|進行状況バーの現在の位置を取得します。|  
-|[CProgressCtrl::GetRange](#getrange)|進行状況バー コントロールの範囲の下限と上限の制限を取得します。|  
-|[Cprogressctrl::getstate](#getstate)|現在の進行状況バー コントロールの状態を取得します。|  
-|[CProgressCtrl::GetStep](#getstep)|現在の進行状況バー コントロールの進行状況バーのステップの増分値を取得します。|  
-|[CProgressCtrl::OffsetPos](#offsetpos)|指定された増分での進行状況バー コントロールの現在位置を進めます、新しい位置を反映するバーを再描画します。|  
-|[CProgressCtrl::SetBarColor](#setbarcolor)|現在の進行状況バー コントロールの進行状況インジケーターのバーの色を設定します。|  
-|[CProgressCtrl::SetBkColor](#setbkcolor)|進行状況バーの背景色を設定します。|  
-|[CProgressCtrl::SetMarquee](#setmarquee)|現在の進行状況バー コントロールのスクロール文字モード オンまたはオフをオンにします。|  
-|[CProgressCtrl::SetPos](#setpos)|進行状況バー コントロールの現在位置を設定し、新しい位置を反映するバーを再描画します。|  
-|[CProgressCtrl::SetRange](#setrange)|進行状況バー コントロールの最小値と最大の範囲を設定し、新しい範囲を反映するためにバーを再描画します。|  
-|[CProgressCtrl::SetState](#setstate)|現在の進行状況バー コントロールの状態を設定します。|  
-|[増分](#setstep)|進行状況バー コントロールのステップの増分値を指定します。|  
-|[CProgressCtrl::StepIt](#stepit)|進行状況バー コントロールの現在位置を進めますステップの増分 (を参照してください[SetStep](#setstep)) し、新しい位置を反映するためにバーを再描画します。|  
+|[CProgressCtrl::Create](#create)|Creates a progress bar control and attaches it to a `CProgressCtrl` object.|  
+|[CProgressCtrl::CreateEx](#createex)|Creates a progress control with the specified Windows extended styles and attaches it to a `CProgressCtrl` object.|  
+|[CProgressCtrl::GetBarColor](#getbarcolor)|Gets the color of the progress indicator bar for the current progress bar control.|  
+|[CProgressCtrl::GetBkColor](#getbkcolor)|Gets the background color of the current progress bar.|  
+|[CProgressCtrl::GetPos](#getpos)|Gets the current position of the progress bar.|  
+|[CProgressCtrl::GetRange](#getrange)|Gets the lower and upper limits of the range of the progress bar control.|  
+|[CProgressCtrl::GetState](#getstate)|Gets the state of the current progress bar control.|  
+|[CProgressCtrl::GetStep](#getstep)|Retrieves the step increment for the progress bar of the current progress bar control.|  
+|[CProgressCtrl::OffsetPos](#offsetpos)|Advances the current position of a progress bar control by a specified increment and redraws the bar to reflect the new position.|  
+|[CProgressCtrl::SetBarColor](#setbarcolor)|Sets the color of the progress indicator bar in the current progress bar control.|  
+|[CProgressCtrl::SetBkColor](#setbkcolor)|Sets the background color for the progress bar.|  
+|[CProgressCtrl::SetMarquee](#setmarquee)|Turns marquee mode on or off for the current progress bar control.|  
+|[CProgressCtrl::SetPos](#setpos)|Sets the current position for a progress bar control and redraws the bar to reflect the new position.|  
+|[CProgressCtrl::SetRange](#setrange)|Sets the minimum and maximum ranges for a progress bar control and redraws the bar to reflect the new ranges.|  
+|[CProgressCtrl::SetState](#setstate)|Sets the state of the current progress bar control.|  
+|[CProgressCtrl::SetStep](#setstep)|Specifies the step increment for a progress bar control.|  
+|[CProgressCtrl::StepIt](#stepit)|Advances the current position for a progress bar control by the step increment (see [SetStep](#setstep)) and redraws the bar to reflect the new position.|  
   
-## <a name="remarks"></a>コメント  
- 進行状況バー コントロールは、アプリケーションは、時間のかかる操作の進行状況を示すために使用できるウィンドウです。 塗りつぶされて、左から右、システムで強調表示色として処理の進行状況に四角形で構成されます。  
+## <a name="remarks"></a>Remarks  
+ A progress bar control is a window that an application can use to indicate the progress of a lengthy operation. It consists of a rectangle that is gradually filled, from left to right, with the system highlight color as an operation progresses.  
   
- 進行状況バー コントロールは、範囲と、現在の位置がします。 範囲は、操作の総実行時間を表し、現在の位置が、アプリケーションが行った操作の完了に向けた進行状況を表します。 ウィンドウ プロシージャは、範囲と現在の位置を使用して、強調表示色で塗りつぶすに進行状況バーの割合を決定します。 範囲と現在の位置の値が符号付き整数として表されるので、可能な範囲の現在位置の値は-2,147, 483,648 から 2,147, 483,647 包括的です。  
+ A progress bar control has a range and a current position. The range represents the total duration of the operation, and the current position represents the progress the application has made toward completing the operation. The window procedure uses the range and the current position to determine the percentage of the progress bar to fill with the highlight color. Because the range and current position values are expressed as signed integers, the possible range of current position values is from -2,147,483,648 to 2,147,483,647 inclusive.  
   
- 使用する方法について`CProgressCtrl`を参照してください[コントロール](../../mfc/controls-mfc.md)と[を使用して CProgressCtrl](../../mfc/using-cprogressctrl.md)です。  
+ For more information on using `CProgressCtrl`, see [Controls](../../mfc/controls-mfc.md) and [Using CProgressCtrl](../../mfc/using-cprogressctrl.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -116,24 +131,24 @@ class CProgressCtrl : public CWnd
   
  `CProgressCtrl`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcmn.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcmn.h  
   
-##  <a name="cprogressctrl"></a>CProgressCtrl::CProgressCtrl  
- `CProgressCtrl` オブジェクトを構築します。  
+##  <a name="cprogressctrl"></a>  CProgressCtrl::CProgressCtrl  
+ Constructs a `CProgressCtrl` object.  
   
 ```  
 CProgressCtrl();
 ```  
   
-### <a name="remarks"></a>コメント  
- 構築した後、`CProgressCtrl`オブジェクトを呼び出す`CProgressCtrl::Create`進行状況バー コントロールを作成します。  
+### <a name="remarks"></a>Remarks  
+ After constructing the `CProgressCtrl` object, call `CProgressCtrl::Create` to create the progress bar control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #1](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#1](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_1.cpp)]  
   
-##  <a name="create"></a>CProgressCtrl::Create  
- 進行状況バー コントロールを作成し、それにアタッチ、`CProgressCtrl`オブジェクト。  
+##  <a name="create"></a>  CProgressCtrl::Create  
+ Creates a progress bar control and attaches it to a `CProgressCtrl` object.  
   
 ```  
 virtual BOOL Create(
@@ -143,34 +158,34 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- 進行状況バー コントロールのスタイルを指定します。 ウィンドウ stylesdescribed 内の任意の組み合わせを適用[CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679)で、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]、に加えて、次の進行状況バー コントロールのスタイルをコントロールに。  
+ Specifies the progress bar control's style. Apply any combination of window stylesdescribed in [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679) in the Windows SDK, in addition to the following progress bar control styles, to the control:  
   
-- `PBS_VERTICAL`表示は、進行状況を垂直方向に、上下からです。 このフラグを設定しない進行状況バー コントロールは水平方向に、左を右側に表示します。  
+- `PBS_VERTICAL` Displays progress information vertically, top to bottom. Without this flag, the progress bar control displays horizontally, left to right.  
   
-- `PBS_SMOOTH`段階的な smooth、進行状況バー コントロールに入力を表示します。 このフラグを設定しないコントロールでブロックで埋められます。  
+- `PBS_SMOOTH` Displays gradual, smooth filling in the progress bar control. Without this flag, the control will fill with blocks.  
   
  `rect`  
- 進行状況バー コントロールのサイズと位置を指定します。 いずれかになります、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体。 指定された座標のクライアント領域に対する相対パス、コントロールは、子ウィンドウを指定する必要があります、ため、`pParentWnd`です。  
+ Specifies the progress bar control's size and position. It can be either a [CRect](../../atl-mfc-shared/reference/crect-class.md) object or a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure. Because the control must be a child window, the specified coordinates are relative to the client area of the `pParentWnd`.  
   
  `pParentWnd`  
- 通常、進行状況バー コントロールの親ウィンドウを指定します、`CDialog`です。 なければなりません**NULL です。**  
+ Specifies the progress bar control's parent window, usually a `CDialog`. It must not be **NULL.**  
   
  `nID`  
- 進行状況バー コントロールの ID を指定します  
+ Specifies the progress bar control's ID.  
   
-### <a name="return-value"></a>戻り値  
- **TRUE**場合、`CProgressCtrl`オブジェクトが正常に作成されたそれ以外の**FALSE**です。  
+### <a name="return-value"></a>Return Value  
+ **TRUE** if the `CProgressCtrl` object is successfully created; otherwise **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CProgressCtrl` 2 つのステップ内のオブジェクト。 最初に、作成コンス トラクターを呼び出し、`CProgressCtrl`オブジェクト、およびを呼び出す**作成**、進行状況バー コントロールを作成します。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CProgressCtrl` object in two steps. First, call the constructor, which creates the `CProgressCtrl` object, and then call **Create**, which creates the progress bar control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #2](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#2](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_2.cpp)]  
   
-##  <a name="createex"></a>CProgressCtrl::CreateEx  
- コントロール (子ウィンドウ) を作成しに関連付けます、`CProgressCtrl`オブジェクト。  
+##  <a name="createex"></a>  CProgressCtrl::CreateEx  
+ Creates a control (a child window) and associates it with the `CProgressCtrl` object.  
   
 ```  
 virtual BOOL CreateEx(
@@ -181,72 +196,72 @@ virtual BOOL CreateEx(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the extended style of the control being created. For a list of extended Windows styles, see the `dwExStyle` parameter for [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680) in the Windows SDK.  
   
  `dwStyle`  
- 進行状況バー コントロールのスタイルを指定します。 説明されているウィンドウ スタイルの任意の組み合わせを適用[CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the progress bar control's style. Apply any combination of window styles described in [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679) in the Windows SDK.  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)のクライアント座標で、作成するウィンドウの位置とサイズを記述する構造体`pParentWnd`です。  
+ A reference to a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure describing the size and position of the window to be created, in client coordinates of `pParentWnd`.  
   
  `pParentWnd`  
- コントロールの親であるウィンドウへのポインター。  
+ A pointer to the window that is the control's parent.  
   
  `nID`  
- コントロールの子ウィンドウ ID  
+ The control's child-window ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用する`CreateEx`の代わりに[作成](#create)Windows 拡張スタイル「はじめに」で指定された Windows の拡張スタイルを適用する**ws_ex**です。  
+### <a name="remarks"></a>Remarks  
+ Use `CreateEx` instead of [Create](#create) to apply extended Windows styles, specified by the Windows extended style preface **WS_EX_**.  
   
-##  <a name="getbarcolor"></a>CProgressCtrl::GetBarColor  
- 現在の進行状況バー コントロールの進行状況インジケーターのバーの色を取得します。  
+##  <a name="getbarcolor"></a>  CProgressCtrl::GetBarColor  
+ Gets the color of the progress indicator bar for the current progress bar control.  
   
 ```  
 COLORREF GetBarColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- として表される、現在の進行状況バーの色、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値、または`CLR_DEFAULT`進行状況インジケーターのバーの色が既定の色である場合。  
+### <a name="return-value"></a>Return Value  
+ The color of the current progress bar, represented as a [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value, or `CLR_DEFAULT` if the progress indicator bar color is the default color.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [PBM_GETBARCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760826)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [PBM_GETBARCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760826) message, which is described in the Windows SDK.  
   
-##  <a name="getbkcolor"></a>CProgressCtrl::GetBkColor  
- 現在の進行状況バーの背景色を取得します。  
+##  <a name="getbkcolor"></a>  CProgressCtrl::GetBkColor  
+ Gets the background color of the current progress bar.  
   
 ```  
 COLORREF GetBkColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- として表される、現在の進行状況バーの背景色、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値。  
+### <a name="return-value"></a>Return Value  
+ The background color of the current progress bar, represented as a [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [PBM_GETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760828)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [PBM_GETBKCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760828) message, which is described in the Windows SDK.  
   
-##  <a name="getpos"></a>CProgressCtrl::GetPos  
- 進行状況バーの現在の位置を取得します。  
+##  <a name="getpos"></a>  CProgressCtrl::GetPos  
+ Retrieves the current position of the progress bar.  
   
 ```  
 int GetPos();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 進行状況バー コントロールの位置。  
+### <a name="return-value"></a>Return Value  
+ The position of the progress bar control.  
   
-### <a name="remarks"></a>コメント  
- 進行状況バー コントロールの位置が、画面上の物理的な場所ではありませんではなく、上部と下部の範囲に示されている[SetRange](#setrange)です。  
+### <a name="remarks"></a>Remarks  
+ The position of the progress bar control is not the physical location on the screen, but rather is between the upper and lower range indicated in [SetRange](#setrange).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #3](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#3](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_3.cpp)]  
   
-##  <a name="getrange"></a>CProgressCtrl::GetRange  
- 現在の下限と上限の制限または進行状況バー コントロールの範囲を取得します。  
+##  <a name="getrange"></a>  CProgressCtrl::GetRange  
+ Gets the current lower and upper limits, or range, of the progress bar control.  
   
 ```  
 void GetRange(
@@ -254,140 +269,140 @@ void GetRange(
     int& nUpper);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLower`  
- 進行状況バー コントロールの最小値を受け取る整数への参照。  
+ A reference to an integer receiving the lower limit of the progress bar control.  
   
  `nUpper`  
- 進行状況バー コントロールの数の上限を受け取る整数への参照。  
+ A reference to an integer receiving the upper limit of the progress bar control.  
   
-### <a name="remarks"></a>コメント  
- この関数によって参照される整数への下限および上限の値をコピーする`nLower`と`nUpper`、それぞれします。  
+### <a name="remarks"></a>Remarks  
+ This function copies the values of the lower and upper limits to the integers referenced by `nLower` and `nUpper`, respectively.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl 4](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#4](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_4.cpp)]  
   
-##  <a name="getstate"></a>Cprogressctrl::getstate  
- 現在の進行状況バー コントロールの状態を取得します。  
+##  <a name="getstate"></a>  CProgressCtrl::GetState  
+ Gets the state of the current progress bar control.  
   
 ```  
 int GetState() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- これは、次の値のいずれか、現在の進行状況バー コントロールの状態。  
+### <a name="return-value"></a>Return Value  
+ The state of the current progress bar control, which is one of the following values:  
   
-|値|状態|  
+|Value|State|  
 |-----------|-----------|  
-|`PBST_NORMAL`|処理中|  
+|`PBST_NORMAL`|In progress|  
 |`PBST_ERROR`|Error|  
 |`PBST_PAUSED`|Paused|  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [PBM_GETSTATE](http://msdn.microsoft.com/library/windows/desktop/bb760834)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [PBM_GETSTATE](http://msdn.microsoft.com/library/windows/desktop/bb760834) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例では、進行状況バー コントロールにプログラムでアクセスするために使用される `m_progressCtrl` 変数を定義します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_progressCtrl`, that is used to programmatically access the progress bar control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
   
-### <a name="example"></a>例  
- 次のコード例では、現在の進行状況バー コントロールの状態を取得します。  
+### <a name="example"></a>Example  
+ The following code example retrieves the state of the current progress bar control.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;5](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_6.cpp)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#5](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_6.cpp)]  
   
-##  <a name="getstep"></a>CProgressCtrl::GetStep  
- 現在の進行状況バー コントロールの進行状況バーのステップの増分値を取得します。  
+##  <a name="getstep"></a>  CProgressCtrl::GetStep  
+ Retrieves the step increment for the progress bar of the current progress bar control.  
   
 ```  
 int GetStep() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 進行状況バーの増分値です。  
+### <a name="return-value"></a>Return Value  
+ The step increment of the progress bar.  
   
-### <a name="remarks"></a>コメント  
- ステップの増分値は、大量の呼び出し[CProgressCtrl::StepIt](#stepit)進行状況バーの現在の位置が増加します。  
+### <a name="remarks"></a>Remarks  
+ The step increment is the amount by which a call to [CProgressCtrl::StepIt](#stepit) increases the current position of the progress bar.  
   
- このメソッドは、送信、 [PBM_GETSTEP](http://msdn.microsoft.com/library/windows/desktop/bb760836)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ This method sends the [PBM_GETSTEP](http://msdn.microsoft.com/library/windows/desktop/bb760836) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例では、進行状況バー コントロールにプログラムでアクセスするために使用される `m_progressCtrl` 変数を定義します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_progressCtrl`, that is used to programmatically access the progress bar control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
   
-### <a name="example"></a>例  
- 次のコード例では、現在の進行状況バー コントロールの増分値を取得します。  
+### <a name="example"></a>Example  
+ The following code example retrieves the step increment of the current progress bar control.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;3](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_7.cpp)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#3](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_7.cpp)]  
   
-##  <a name="offsetpos"></a>CProgressCtrl::OffsetPos  
- 指定された増分値で、進行状況バー コントロールの現在位置を進めます`nPos`し、新しい位置を反映するためにバーを再描画します。  
+##  <a name="offsetpos"></a>  CProgressCtrl::OffsetPos  
+ Advances the progress bar control's current position by the increment specified by `nPos` and redraws the bar to reflect the new position.  
   
 ```  
 int OffsetPos(int nPos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPos`  
- 位置を進めます量。  
+ Amount to advance the position.  
   
-### <a name="return-value"></a>戻り値  
- 進行状況バー コントロールの直前の位置。  
+### <a name="return-value"></a>Return Value  
+ The previous position of the progress bar control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #5](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#5](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_8.cpp)]  
   
-##  <a name="setbarcolor"></a>CProgressCtrl::SetBarColor  
- 現在の進行状況バー コントロールの進行状況インジケーターのバーの色を設定します。  
+##  <a name="setbarcolor"></a>  CProgressCtrl::SetBarColor  
+ Sets the color of the progress indicator bar in the current progress bar control.  
   
 ```  
 COLORREF SetBarColor(COLORREF clrBar);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `clrBar`|A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)新しい進行状況インジケーターのバーの色を指定する値。 指定`CLR_DEFAULT`既定の色を使用する進行状況バーが発生します。|  
+|[in] `clrBar`|A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value that specifies the new color of the progress indicator bar. Specify `CLR_DEFAULT` to cause the progress bar to use its default color.|  
   
-### <a name="return-value"></a>戻り値  
- として表される、進行状況インジケーターのバーの前のカラー、 [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値、または`CLR_DEFAULT`バーの色、進行状況インジケーターが既定の色である場合。  
+### <a name="return-value"></a>Return Value  
+ The previous color of the progress indicator bar, represented as a [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value, or `CLR_DEFAULT` if the color of the progress indicator bar is the default color.  
   
-### <a name="remarks"></a>コメント  
- `SetBarColor`メソッドは、進行状況バーの場合にのみ、色を設定、 [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)][テーマ](https://msdn.microsoft.com/library/windows/desktop/hh270423.aspx)は無効です。  
+### <a name="remarks"></a>Remarks  
+ The `SetBarColor` method sets the progress bar color only if a [!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)][theme](https://msdn.microsoft.com/library/windows/desktop/hh270423.aspx) is not in effect.  
   
- このメソッドは、送信、 [PBM_SETBARCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760838)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ This method sends the [PBM_SETBARCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb760838) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例では、進行状況バー コントロールにプログラムでアクセスするために使用される `m_progressCtrl` 変数を定義します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_progressCtrl`, that is used to programmatically access the progress bar control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
   
-### <a name="example"></a>例  
- 次のコード例では、赤、緑、青、または既定値を進行状況バーの色を変更します。  
+### <a name="example"></a>Example  
+ The following code example changes the color of the progress bar to red, green, blue, or the default.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;1](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_9.cpp)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#1](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_9.cpp)]  
   
-##  <a name="setbkcolor"></a>CProgressCtrl::SetBkColor  
- 進行状況バーの背景色を設定します。  
+##  <a name="setbkcolor"></a>  CProgressCtrl::SetBkColor  
+ Sets the background color for the progress bar.  
   
 ```  
 COLORREF SetBkColor(COLORREF clrNew);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clrNew`  
- A **COLORREF**新しい背景色を指定する値。 指定して、`CLR_DEFAULT`進行状況バーの既定の背景色を使用する値。  
+ A **COLORREF** value that specifies the new background color. Specify the `CLR_DEFAULT` value to use the default background color for the progress bar.  
   
-### <a name="return-value"></a>戻り値  
- [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)前の背景色を示す値または**とき**場合は、既定の色の背景色はします。  
+### <a name="return-value"></a>Return Value  
+ The [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value indicating the previous background color, or **CLR_DEFAULT** if the background color is the default color.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #6](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#6](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_10.cpp)]  
   
-##  <a name="setmarquee"></a>CProgressCtrl::SetMarquee  
- 現在の進行状況バー コントロールのスクロール文字モード オンまたはオフをオンにします。  
+##  <a name="setmarquee"></a>  CProgressCtrl::SetMarquee  
+ Turns marquee mode on or off for the current progress bar control.  
   
 ```  
 BOOL SetMarquee(
@@ -395,53 +410,53 @@ BOOL SetMarquee(
     int nInterval);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `fMarqueeMode`|`true`マーキー モードをオンにするか、`false`マーキー モードをオフにします。|  
-|[入力] `nInterval`|Marquee アニメーションの更新間隔 (ミリ秒) の時間です。|  
+|[in] `fMarqueeMode`|`true` to turn marquee mode on, or `false` to turn marquee mode off.|  
+|[in] `nInterval`|Time in milliseconds between updates of the marquee animation.|  
   
-### <a name="return-value"></a>戻り値  
- このメソッドは常に `true` を返します。  
+### <a name="return-value"></a>Return Value  
+ This method always returns `true`.  
   
-### <a name="remarks"></a>コメント  
- マーキーのモードがオンになっていると、進行状況バーがアニメーション化、ようにスクロール シアター marquee にサインインします。  
+### <a name="remarks"></a>Remarks  
+ When marquee mode is turned on, the progress bar is animated and scrolls like a sign on a theater marquee.  
   
- このメソッドは、送信、 [PBM_SETMARQUEE](http://msdn.microsoft.com/library/windows/desktop/bb760842)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ This method sends the [PBM_SETMARQUEE](http://msdn.microsoft.com/library/windows/desktop/bb760842) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例では、進行状況バー コントロールにプログラムでアクセスするために使用される `m_progressCtrl` 変数を定義します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_progressCtrl`, that is used to programmatically access the progress bar control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
   
-### <a name="example"></a>例  
- 次のコード例では、開始時およびマーキー スクロール アニメーションを停止します。  
+### <a name="example"></a>Example  
+ The following code example starts and stops the marquee scrolling animation.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;2](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_11.cpp)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#2](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_11.cpp)]  
   
-##  <a name="setpos"></a>CProgressCtrl::SetPos  
- バーのコントロールの現在位置で指定された進行状況を設定する`nPos`新しい位置を反映するバーを再描画します。  
+##  <a name="setpos"></a>  CProgressCtrl::SetPos  
+ Sets the progress bar control's current position as specified by `nPos` and redraws the bar to reflect the new position.  
   
 ```  
 int SetPos(int nPos);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPos`  
- 進行状況バー コントロールの新しい位置。  
+ New position of the progress bar control.  
   
-### <a name="return-value"></a>戻り値  
- 進行状況バー コントロールの直前の位置。  
+### <a name="return-value"></a>Return Value  
+ The previous position of the progress bar control.  
   
-### <a name="remarks"></a>コメント  
- 進行状況バー コントロールの位置が、画面上の物理的な場所ではありませんではなく、上部と下部の範囲に示されている[SetRange](#setrange)です。  
+### <a name="remarks"></a>Remarks  
+ The position of the progress bar control is not the physical location on the screen, but rather is between the upper and lower range indicated in [SetRange](#setrange).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #7](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#7](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_12.cpp)]  
   
-##  <a name="setrange"></a>CProgressCtrl::SetRange  
- 進行状況バー コントロールの範囲の上限と下限を設定し、新しい範囲を反映するためにバーを再描画します。  
+##  <a name="setrange"></a>  CProgressCtrl::SetRange  
+ Sets the upper and lower limits of the progress bar control's range and redraws the bar to reflect the new ranges.  
   
 ```  
 void SetRange(
@@ -454,90 +469,90 @@ void SetRange32(
     int nUpper);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLower`  
- 範囲の下限を指定します (既定値は 0) です。  
+ Specifies the lower limit of the range (default is zero).  
   
  `nUpper`  
- 範囲の数の上限を指定します (既定値は 100)。  
+ Specifies the upper limit of the range (default is 100).  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は`SetRange32`プログレス コントロールの 32 ビット範囲を設定します。  
+### <a name="remarks"></a>Remarks  
+ The member function `SetRange32` sets the 32-bit range for the progress control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #8](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#8](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_13.cpp)]  
   
-##  <a name="setstate"></a>CProgressCtrl::SetState  
- 現在の進行状況バー コントロールの状態を設定します。  
+##  <a name="setstate"></a>  CProgressCtrl::SetState  
+ Sets the state of the current progress bar control.  
   
 ```  
 int SetState(int iState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|[入力] `iState`|進行状況バーに設定する状態。 次のいずれかの値を使用します。<br /><br /> - `PBST_NORMAL`進行状況の<br />- `PBST_ERROR`-エラー<br />- `PBST_PAUSED`-一時停止|  
+|[in] `iState`|The state to set the progress bar. Use one of the following values:<br /><br /> - `PBST_NORMAL` - In progress<br />- `PBST_ERROR` - Error<br />- `PBST_PAUSED` - Paused|  
   
-### <a name="return-value"></a>戻り値  
- 現在の進行状況バー コントロールの直前の状態。  
+### <a name="return-value"></a>Return Value  
+ The previous state of the current progress bar control.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、送信、 [PBM_SETSTATE](http://msdn.microsoft.com/library/windows/desktop/bb760850)で説明するメッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This method sends the [PBM_SETSTATE](http://msdn.microsoft.com/library/windows/desktop/bb760850) message, which is described in the Windows SDK.  
   
-### <a name="example"></a>例  
- 次のコード例では、進行状況バー コントロールにプログラムでアクセスするために使用される `m_progressCtrl` 変数を定義します。 この変数は次の例で使用されています。  
+### <a name="example"></a>Example  
+ The following code example defines the variable, `m_progressCtrl`, that is used to programmatically access the progress bar control. This variable is used in the next example.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s&#1;9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_5.h)]  
   
-### <a name="example"></a>例  
- 次のコード例は、現在の進行状況バー コントロールの状態を一時停止または処理中に設定します。  
+### <a name="example"></a>Example  
+ The following code example sets the state of the current progress bar control to Paused or In Progress.  
   
- [!code-cpp[NVC_MFC_CProgressCtrl_s1 4](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_14.cpp)]  
+ [!code-cpp[NVC_MFC_CProgressCtrl_s1#4](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_14.cpp)]  
   
-##  <a name="setstep"></a>増分  
- 進行状況バー コントロールのステップの増分値を指定します。  
+##  <a name="setstep"></a>  CProgressCtrl::SetStep  
+ Specifies the step increment for a progress bar control.  
   
 ```  
 int SetStep(int nStep);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nStep*  
- 新しいステップの増分します。  
+ New step increment.  
   
-### <a name="return-value"></a>戻り値  
- 前のステップの増分します。  
+### <a name="return-value"></a>Return Value  
+ The previous step increment.  
   
-### <a name="remarks"></a>コメント  
- ステップの増分値は、量への呼び出し`CProgressCtrl::StepIt`増加進行状況バーの現在の位置。  
+### <a name="remarks"></a>Remarks  
+ The step increment is the amount by which a call to `CProgressCtrl::StepIt` increases the progress bar's current position.  
   
- 既定の増分は 10 です。  
+ The default step increment is 10.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#9](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_15.cpp)]  
   
-##  <a name="stepit"></a>CProgressCtrl::StepIt  
- ステップの増分での進行状況バー コントロールの現在位置を進めます、新しい位置を反映するバーを再描画します。  
+##  <a name="stepit"></a>  CProgressCtrl::StepIt  
+ Advances the current position for a progress bar control by the step increment and redraws the bar to reflect the new position.  
   
 ```  
 int StepIt();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 進行状況バー コントロールの直前の位置。  
+### <a name="return-value"></a>Return Value  
+ The previous position of the progress bar control.  
   
-### <a name="remarks"></a>コメント  
- によってステップの増分値を設定、`CProgressCtrl::SetStep`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The step increment is set by the `CProgressCtrl::SetStep` member function.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CProgressCtrl #10](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_16.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CProgressCtrl#10](../../mfc/reference/codesnippet/cpp/cprogressctrl-class_16.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル CMNCTRL2](../../visual-cpp-samples.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample CMNCTRL2](../../visual-cpp-samples.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

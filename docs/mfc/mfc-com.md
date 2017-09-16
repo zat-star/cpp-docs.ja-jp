@@ -1,76 +1,95 @@
 ---
-title: "MFC COM | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MFC COM (MFC)"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Active テクノロジ [C++]"
-  - "ActiveX コントロール [C++], COM オブジェクト モデル"
-  - "COM [C++], MFC サポート"
-  - "MFC [C++], COM サポート"
-  - "MFC ActiveX コントロール [C++], COM サポート (MFC で)"
-  - "MFC COM [C++]"
+title: MFC COM | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- MFC COM (MFC)
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, COM support
+- MFC ActiveX controls [MFC], COM support in MFC
+- MFC COM [MFC]
+- ActiveX controls [MFC], COM object model
+- Active technology [MFC]
+- COM [MFC], MFC support
 ms.assetid: 7646bdcb-3a06-4ed5-9386-9b00f3979dcb
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# MFC COM
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eabce4d97201628c406f10ad474089540de91e5a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC のサブセットは COM をサポートするようにデザインされており、ATL \(Active Template Library\) の大部分は COM プログラミング用にデザインされています。  ここでは、MFC による COM のサポートについて説明します。  
+---
+# <a name="mfc-com"></a>MFC COM
+A subset of MFC is designed to support COM, while most of the Active Template Library (ATL) is designed for COM programming. This section of topics describes MFC's support for COM.  
   
- Active テクノロジー \(ActiveX コントロール、Active ドキュメント コンテインメント、OLE など\) は、ソフトウェア コンポーネントの開発言語に関係なく、コンポーネント オブジェクト モデル \(COM: Component Object Model\) を使ってネットワーク環境でのコンポーネント間通信を可能にする技術です。  Active テクノロジーで作成したアプリケーションは、デスクトップとインターネットの両方で実行できます。  詳細については、「[COM の概要](../atl/introduction-to-com.md)」または「[The Component Object Model](http://msdn.microsoft.com/library/windows/desktop/ms694363)」を参照してください。  
+ Active technologies (such as ActiveX controls, Active document containment, OLE, and so on) use the Component Object Model (COM) to enable software components to interact with one another in a networked environment, regardless of the language with which they were created. Active technologies can be used to create applications that run on the desktop or the Internet. For more information see [Introduction to COM](../atl/introduction-to-com.md) or [The Component Object Model](http://msdn.microsoft.com/library/windows/desktop/ms694363).  
   
- Active テクノロジーは、クライアント機能とサーバー機能の両方を備えています。次は、その機能の一例です。  
+ Active technologies include both client and server technologies, including the following:  
   
--   [Active ドキュメント コンテインメント](../mfc/active-document-containment.md)は、MFC 4.2 以降でサポートされています。この技術を利用すると、[Active ドキュメント](../Topic/Active%20Documents.md) \(Microsoft Excel や Word ファイルなど\) を表示したり、ドキュメントのネイティブ アプリケーションのインターフェイス全体を [Active ドキュメント コンテナー](../mfc/active-document-containers.md) \(Microsoft Office バインダーや Microsoft Internet Explorer など\) のクライアント領域全体に表示したりできます。  [Active ドキュメント サーバー](../mfc/active-document-servers.md)がドキュメントを提供しているとき、コンテナーはクライアントとして動作します。  インターネット アプリケーションで Active ドキュメントを使用する方法の詳細については、「[インターネット上の Active ドキュメント](../Topic/Active%20Documents%20on%20the%20Internet.md)」を参照してください。  
+-   [Active document containment](../mfc/active-document-containment.md), supported in MFC versions 4.2 and later, allows users to view [active documents](../mfc/active-documents.md) (such as Microsoft Excel or Word files) and activate the entire interface of the document's native application in the entire client area of an [active document container](../mfc/active-document-containers.md) such as the Microsoft Office Binder or Microsoft Internet Explorer. The containers act as clients, while the documents are provided by [active document servers](../mfc/active-document-servers.md). For more information on using active documents in Internet applications, see: [Active Documents on the Internet](../mfc/active-documents-on-the-internet.md).  
   
--   ActiveX コントロールは、Web サイトなどのコンテナーで使用できるインタラクティブなオブジェクトです。  ActiveX コントロールの詳細については、以下のトピックを参照してください。  
+-   ActiveX controls are interactive objects that can be used in containers such as a Web site. For more information on ActiveX controls, see:  
   
-    -   [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)  
+    -   [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)  
   
-    -   [インターネット上の ActiveX コントロール](../mfc/activex-controls-on-the-internet.md)  
+    -   [ActiveX Controls on the Internet](../mfc/activex-controls-on-the-internet.md)  
   
-    -   [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)  
+    -   [Overview: Internet](../mfc/mfc-internet-programming-basics.md)  
   
-    -   [既存の ActiveX コントロールのアップグレード](../Topic/Upgrading%20an%20Existing%20ActiveX%20Control.md)  
+    -   [Upgrade an Existing ActiveX Control to be Used on the Internet](../mfc/upgrading-an-existing-activex-control.md)  
   
-    -   [ActiveX コントロールのデバッグ](../Topic/How%20to:%20Debug%20an%20ActiveX%20Control.md)  
+    -   [Debugging an ActiveX Control](/visualstudio/debugger/how-to-debug-an-activex-control)  
   
--   Active スクリプトは、ActiveX コントロールの全体的な動作をブラウザーやサーバーから制御します。  Active スクリプトの詳細については、「[インターネット上の Active テクノロジ](../mfc/active-technology-on-the-internet.md)」を参照してください。  
+-   Active scripting controls the integrated behavior of one or more ActiveX controls from a browser or server. For more information on active scripting, see [Active Technology on the Internet](../mfc/active-technology-on-the-internet.md).  
   
--   [オートメーション](../mfc/automation.md) \(旧 OLE オートメーション\) を利用するアプリケーションは、ほかのアプリケーションで実装されているオブジェクトを操作できます。または、ほかのアプリケーションから操作できるように、オブジェクトを "公開" できます。  
+-   [Automation](../mfc/automation.md) (formerly known as OLE Automation) makes it possible for one application to manipulate objects implemented in another application, or to "expose" objects so they can be manipulated.  
   
-     オートメーション オブジェクトはローカル オブジェクト、またはネットワークを経由して別のコンピューターからアクセス可能な[リモート オブジェクト](../mfc/remote-automation.md)のどちらかです。  OLE オブジェクトと COM オブジェクトは、どちらもオートメーションを利用できます。  
+     The automated object might be local or [remote](../mfc/remote-automation.md) (on another machine accessible across a network). Automation is available for both OLE and COM objects.  
   
--   ここでは、MFC を使って COM コンポーネントを作成する方法についても説明します。「[コネクション ポイント](../mfc/connection-points.md)」を参照してください。  
+-   This section also provides information on how to write COM components using MFC, for example, in [Connection Points](../mfc/connection-points.md).  
   
- 従来の OLE と新しく導入された Active テクノロジーの違いについては、[OLE](../mfc/ole-in-mfc.md) についてのトピックを参照してください。  
+ For a discussion of what is still called OLE versus what is now called active technology, see the topics on [OLE](../mfc/ole-in-mfc.md).  
   
- また、サポート技術情報の「\[VC\] COM を使用した処理に長時間を要するとき \[サーバー使用中\] ダイアログ ボックスが表示されないようにする方法 \(JP248019 \)」も参照してください。  
+ Also, see Knowledge Base article Q248019 : HOWTO: Prevent Server Busy Dialog Box From Appearing During a Lengthy COM Operation.  
   
-## このセクションの内容  
- [Active ドキュメント コンテインメント](../mfc/active-document-containment.md)  
+## <a name="in-this-section"></a>In This Section  
+ [Active Document Containment](../mfc/active-document-containment.md)  
   
- [&#91;オートメーション&#93;](../mfc/automation.md)  
+ [Automation](../mfc/automation.md)  
   
- [リモート オートメーション](../mfc/remote-automation.md)  
+ [Remote Automation](../mfc/remote-automation.md)  
   
- [コネクション ポイント](../mfc/connection-points.md)  
+ [Connection Points](../mfc/connection-points.md)  
   
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)
+
+

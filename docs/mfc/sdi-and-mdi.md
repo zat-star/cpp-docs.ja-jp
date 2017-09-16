@@ -1,39 +1,57 @@
 ---
-title: "SDI と MDI | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フレーム ウィンドウ, MDI アプリケーション"
-  - "フレーム ウィンドウ, SDI アプリケーション"
-  - "MDI, および SDI"
-  - "MFC, ウィンドウ"
-  - "シングル ドキュメント インターフェイス (SDI), アプリケーション"
+title: SDI and MDI | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- frame windows [MFC], SDI applications
+- frame windows [MFC], MDI applications
+- MFC, windows
+- single document interface (SDI) [MFC], applications
+- MDI [MFC], vs. SDI
 ms.assetid: bb7239d9-4759-4f63-bfff-44a04b48c067
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# SDI と MDI
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 974b31893158d532397441f37403028e39aa60de
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC はシングル ドキュメント インターフェイス \(SDI\) および Multiple\-Document Interface \(MDI\) アプリケーションの両方を使用するのは簡単です。  
+---
+# <a name="sdi-and-mdi"></a>SDI and MDI
+MFC makes it easy to work with both single-document interface (SDI) and multiple-document interface (MDI) applications.  
   
- SDI アプリケーションは 1 個の開いているドキュメント フレーム ウィンドウを一度に割り当てます。  MDI アプリケーションでは、複数のドキュメント フレーム ウィンドウがアプリケーションの同じインスタンスで開くことができます。  MDI アプリケーションにフレーム ウィンドウ自体である複数の MDI 子ウィンドウを開くことができるウィンドウが別のドキュメントを含む各です。  アプリケーションによっては、子ウィンドウはチャート ウィンドウやスプレッドシート ウィンドウなどの別の型にすることもできます。  その場合は、メニュー バーは、異なる種類の MDI 子ウィンドウがアクティブになったときに変更できます。  
+ SDI applications allow only one open document frame window at a time. MDI applications allow multiple document frame windows to be open in the same instance of an application. An MDI application has a window within which multiple MDI child windows, which are frame windows themselves, can be opened, each containing a separate document. In some applications, the child windows can be of different types, such as chart windows and spreadsheet windows. In that case, the menu bar can change as MDI child windows of different types are activated.  
   
 > [!NOTE]
->  Windows 95 の下で、アプリケーションは、オペレーティング システムが「ドキュメント中央揃え」ビューを採用しているため、一般に SDI です。  
+>  Under Windows 95 and later, applications are commonly SDI because the operating system has adopted a "document-centered" view.  
   
- 詳細については、「[ドキュメント、ビュー、およびフレームワーク](../mfc/documents-views-and-the-framework.md)」を参照してください。  
+ For more information, see [Documents, Views, and the Framework](../mfc/documents-views-and-the-framework.md).  
   
-## 参照  
- [クラスを使用した Windows アプリケーションの作成](../Topic/Using%20the%20Classes%20to%20Write%20Applications%20for%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Using the Classes to Write Applications for Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)
+

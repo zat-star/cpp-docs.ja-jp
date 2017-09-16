@@ -1,5 +1,5 @@
 ---
-title: "CBaseTransition クラス |Microsoft ドキュメント"
+title: CBaseTransition Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,7 +33,25 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CBaseTransition class
+- CBaseTransition [MFC], CBaseTransition
+- CBaseTransition [MFC], AddToStoryboard
+- CBaseTransition [MFC], AddToStoryboardAtKeyframes
+- CBaseTransition [MFC], Clear
+- CBaseTransition [MFC], Create
+- CBaseTransition [MFC], GetEndKeyframe
+- CBaseTransition [MFC], GetRelatedVariable
+- CBaseTransition [MFC], GetStartKeyframe
+- CBaseTransition [MFC], GetTransition
+- CBaseTransition [MFC], GetType
+- CBaseTransition [MFC], IsAdded
+- CBaseTransition [MFC], SetKeyframes
+- CBaseTransition [MFC], SetRelatedVariable
+- CBaseTransition [MFC], m_bAdded
+- CBaseTransition [MFC], m_pEndKeyframe
+- CBaseTransition [MFC], m_pRelatedVariable
+- CBaseTransition [MFC], m_pStartKeyframe
+- CBaseTransition [MFC], m_transition
+- CBaseTransition [MFC], m_type
 ms.assetid: dfe84007-bbc5-43b7-b5b8-fae9145573bf
 caps.latest.revision: 17
 author: mikeblome
@@ -53,136 +71,136 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: b979d03587ada42486d0462733dfe6fd22f9f7cc
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 596292b105b8b1b4b3174170dc4433111807f821
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cbasetransition-class"></a>CBaseTransition クラス
-基本遷移を表します。  
+# <a name="cbasetransition-class"></a>CBaseTransition Class
+Represents a basic transition.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CBaseTransition : public CObject;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-enumerations"></a>パブリック列挙型  
+### <a name="public-enumerations"></a>Public Enumerations  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBaseTransition::TRANSITION_TYPE 列挙型](#transition_type_enumeration)|現在 Windows Animation API の MFC 実装によってサポートされている遷移の種類を定義します。|  
+|[CBaseTransition::TRANSITION_TYPE Enumeration](#transition_type_enumeration)|Defines the transition types currently supported by the MFC implementation of Windows Animation API.|  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBaseTransition::CBaseTransition](#cbasetransition)|切り替え効果の基本オブジェクトを構築します。|  
-|[CBaseTransition:: ~ CBaseTransition](#cbasetransition__~cbasetransition)|デストラクターです。 移行オブジェクトが破棄されるときに呼び出されます。|  
+|[CBaseTransition::CBaseTransition](#cbasetransition)|Constructs a base transtion object.|  
+|[CBaseTransition::~CBaseTransition](#cbasetransition__~cbasetransition)|The destructor. Called when a transition object is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBaseTransition::AddToStoryboard](#addtostoryboard)|ストーリー ボードに遷移を追加します。|  
-|[CBaseTransition::AddToStoryboardAtKeyframes](#addtostoryboardatkeyframes)|ストーリー ボードに遷移を追加します。|  
-|[CBaseTransition::Clear](#clear)|リリースには、IUIAnimationTransition COM オブジェクトがカプセル化されます。|  
-|[CBaseTransition::Create](#create)|COM の遷移を作成します。|  
-|[CBaseTransition::GetEndKeyframe](#getendkeyframe)|返します。 は、キーフレームを起動します。|  
-|[CBaseTransition::GetRelatedVariable](#getrelatedvariable)|関連する変数へのポインターを返します。|  
-|[CBaseTransition::GetStartKeyframe](#getstartkeyframe)|返します。 は、キーフレームを起動します。|  
-|[CBaseTransition::GetTransition](#gettransition)|オーバーロードされます。 基になる COM 遷移オブジェクトへのポインターを返します。|  
-|[CBaseTransition::GetType](#gettype)|返します。 は、型を移行します。|  
-|[CBaseTransition::IsAdded](#isadded)|ストーリー ボードに遷移が追加されているかどうかを指示します。|  
-|[CBaseTransition::SetKeyframes](#setkeyframes)|遷移のキーフレームを設定します。|  
-|[CBaseTransition::SetRelatedVariable](#setrelatedvariable)|アニメーション変数と遷移の間のリレーションシップを確立します。|  
+|[CBaseTransition::AddToStoryboard](#addtostoryboard)|Adds a transition to a storyboard.|  
+|[CBaseTransition::AddToStoryboardAtKeyframes](#addtostoryboardatkeyframes)|Adds a transition to a storyboard.|  
+|[CBaseTransition::Clear](#clear)|Releases encapsulated IUIAnimationTransition COM object.|  
+|[CBaseTransition::Create](#create)|Creates a COM transition.|  
+|[CBaseTransition::GetEndKeyframe](#getendkeyframe)|Returns start keyframe.|  
+|[CBaseTransition::GetRelatedVariable](#getrelatedvariable)|Returns a pointer to related variable.|  
+|[CBaseTransition::GetStartKeyframe](#getstartkeyframe)|Returns start keyframe.|  
+|[CBaseTransition::GetTransition](#gettransition)|Overloaded. Returns a pointer to underlying COM transition object.|  
+|[CBaseTransition::GetType](#gettype)|Returns transition type.|  
+|[CBaseTransition::IsAdded](#isadded)|Tells whether a transition has been added to a storyboard.|  
+|[CBaseTransition::SetKeyframes](#setkeyframes)|Sets keyframes for a transition.|  
+|[CBaseTransition::SetRelatedVariable](#setrelatedvariable)|Establishes a relationship between animation variable and transition.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBaseTransition::m_bAdded](#m_badded)|ストーリー ボードに遷移が追加されているかどうかを指定します。|  
-|[CBaseTransition::m_pEndKeyframe](#m_pendkeyframe)|遷移の終わりを指定するキーフレームへのポインターを格納します。|  
-|[CBaseTransition::m_pRelatedVariable](#m_prelatedvariable)|M_transition に格納されている遷移とアニメーションがアニメーション変数へのポインター。|  
-|[CBaseTransition::m_pStartKeyframe](#m_pstartkeyframe)|遷移の始まりを指定するキーフレームへのポインターを格納します。|  
-|[CBaseTransition::m_transition](#m_transition)|IUIAnimationTransition へのポインターを格納します。 遷移の COM オブジェクトが作成されていない場合は NULL です。|  
-|[CBaseTransition::m_type](#m_type)|移行の種類を格納します。|  
+|[CBaseTransition::m_bAdded](#m_badded)|Specifies whether a transition has been added to a storyboard.|  
+|[CBaseTransition::m_pEndKeyframe](#m_pendkeyframe)|Stores a pointer to the keyframe that specifies the end of the transition.|  
+|[CBaseTransition::m_pRelatedVariable](#m_prelatedvariable)|A pointer to an animation variable, which is animated with the transition stored in m_transition.|  
+|[CBaseTransition::m_pStartKeyframe](#m_pstartkeyframe)|Stores a pointer to the keyframe that specifies the beginning of the transition.|  
+|[CBaseTransition::m_transition](#m_transition)|Stores a pointer to IUIAnimationTransition. NULL if a COM transition object has not been created.|  
+|[CBaseTransition::m_type](#m_type)|Stores the transition type.|  
   
-## <a name="remarks"></a>コメント  
- このクラスは、IUIAnimationTransition インターフェイスをカプセル化し、すべての遷移の基本クラスとして機能します。  
+## <a name="remarks"></a>Remarks  
+ This class encapsulates IUIAnimationTransition interface and serves as a base class for all transitions.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CBaseTransition`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxanimationcontroller.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxanimationcontroller.h  
   
-##  <a name="_dtorcbasetransition"></a>CBaseTransition:: ~ CBaseTransition  
- デストラクターです。 移行オブジェクトが破棄されるときに呼び出されます。  
+##  <a name="_dtorcbasetransition"></a>  CBaseTransition::~CBaseTransition  
+ The destructor. Called when a transition object is being destroyed.  
   
 ```  
 virtual ~CBaseTransition();
 ```  
   
-##  <a name="addtostoryboard"></a>CBaseTransition::AddToStoryboard  
- ストーリー ボードに遷移を追加します。  
+##  <a name="addtostoryboard"></a>  CBaseTransition::AddToStoryboard  
+ Adds a transition to a storyboard.  
   
 ```  
 BOOL AddToStoryboard(IUIAnimationStoryboard* pStoryboard);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStoryboard`  
- 関連する変数をアニメーション化する、ストーリー ボードへのポインター。  
+ A pointer to storyboard, which will animate the related variable.  
   
-### <a name="return-value"></a>戻り値  
- ストーリー ボードに切り替えが正常に追加する場合は TRUE。  
+### <a name="return-value"></a>Return Value  
+ TRUE, if transition was successfully added to a storyboard.  
   
-### <a name="remarks"></a>コメント  
- ストーリー ボードに関連する変数への移行を適用します。 このストーリー ボードでこの変数に適用される最初の遷移の場合は、ストーリー ボードの開始時に、移行を開始します。 それ以外の場合、移行は、変数に最も最近追加遷移に追加されます。  
+### <a name="remarks"></a>Remarks  
+ Applies the transition to the related variable in the storyboard. If this is the first transition applied to this variable in this storyboard, the transition begins at the start of the storyboard. Otherwise, the transition is appended to the transition added most recently to the variable.  
   
-##  <a name="addtostoryboardatkeyframes"></a>CBaseTransition::AddToStoryboardAtKeyframes  
- ストーリー ボードに遷移を追加します。  
+##  <a name="addtostoryboardatkeyframes"></a>  CBaseTransition::AddToStoryboardAtKeyframes  
+ Adds a transition to a storyboard.  
   
 ```  
 BOOL AddToStoryboardAtKeyframes(IUIAnimationStoryboard* pStoryboard);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStoryboard`  
- 関連する変数をアニメーション化する、ストーリー ボードへのポインター。  
+ A pointer to storyboard, which will animate the related variable.  
   
-### <a name="return-value"></a>戻り値  
- ストーリー ボードに切り替えが正常に追加する場合は TRUE。  
+### <a name="return-value"></a>Return Value  
+ TRUE, if transition was successfully added to a storyboard.  
   
-### <a name="remarks"></a>コメント  
- ストーリー ボードに関連する変数への移行を適用します。 開始キーフレームが指定されている場合、そのキーフレームでの移行が開始されます。 移行の開始のキーフレームの開始終了キーフレームが指定されている場合、終了キーフレームが停止します。 Duration パラメーターを指定の移行が作成されている場合は、最初と最後のキーフレーム間の時間の期間でその期間が上書きされます。 キーフレームが指定されていない場合は、変数に追加されて最近移行の移行が追加されます。  
+### <a name="remarks"></a>Remarks  
+ Applies the transition to the related variable in the storyboard. If the start keyframe was specified, the transition begins at that keyframe. If the end keyframe was specified, the transition begins at the start keyframe and and stops at the end keyframe. If the transition was created with a duration parameter specified, that duration is overwritten with the duration of time between the start and end keyframes. If no keyframe was specified, the transition is appended to the transition added most recently to the variable.  
   
-##  <a name="cbasetransition"></a>CBaseTransition::CBaseTransition  
- 切り替え効果の基本オブジェクトを構築します。  
+##  <a name="cbasetransition"></a>  CBaseTransition::CBaseTransition  
+ Constructs a base transtion object.  
   
 ```  
 CBaseTransition();
 ```  
   
-##  <a name="clear"></a>CBaseTransition::Clear  
- リリースには、IUIAnimationTransition COM オブジェクトがカプセル化されます。  
+##  <a name="clear"></a>  CBaseTransition::Clear  
+ Releases encapsulated IUIAnimationTransition COM object.  
   
 ```  
 void Clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、IUITransition インターフェイスのリークを防ぐために、派生クラスの Create メソッドから呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ This method should be called from a derived class's Create method in order to prevent IUITransition interface leak.  
   
-##  <a name="create"></a>CBaseTransition::Create  
- COM の遷移を作成します。  
+##  <a name="create"></a>  CBaseTransition::Create  
+ Creates a COM transition.  
   
 ```  
 virtual BOOL Create(
@@ -190,60 +208,60 @@ virtual BOOL Create(
     IUIAnimationTransitionFactory* pFactory) = 0;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pLibrary`  
- 標準的な遷移を作成する遷移ライブラリへのポインター。 カスタムの切り替えには、NULL になります。  
+ A pointer to transition library, which creates standard transitions. It can be NULL for custom transitions.  
   
  `pFactory`  
- カスタム遷移を作成する遷移ファクトリへのポインター。 標準の遷移では、NULL になります。  
+ A pointer to transition factory, which creates custom transitions. It can be NULL for standard transitions.  
   
-### <a name="return-value"></a>戻り値  
- 遷移 COM オブジェクトが正常に作成された場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if a transition COM object was created successfully; otherwise FALSE.  
   
-### <a name="remarks"></a>コメント  
- これは、純粋仮想関数、派生クラスでオーバーライドする必要があります。 基になる COM 遷移オブジェクトをインスタンス化するためにフレームワークによって呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This is a pure virtual function that must be overridden in a derived class. It's called by the framework to instantiate the underlying COM transition object.  
   
-##  <a name="getendkeyframe"></a>CBaseTransition::GetEndKeyframe  
- 返します。 は、キーフレームを起動します。  
+##  <a name="getendkeyframe"></a>  CBaseTransition::GetEndKeyframe  
+ Returns start keyframe.  
   
 ```  
 CBaseKeyFrame* GetEndKeyframe();
 ```  
   
-### <a name="return-value"></a>戻り値  
- キーフレーム、または NULL のキーフレームの間の遷移を挿入しないようにする場合に有効なポインター。  
+### <a name="return-value"></a>Return Value  
+ A valid pointer to a keyframe, or NULL if a transition should not be inserted between keyframes.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、SetKeyframes で以前に設定されたキーフレーム オブジェクトへのアクセスに使用できます。 遷移は、ストーリー ボードに追加されている場合は、最上位のコードによって呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This method can be used to access a keyframe object that was previously set by SetKeyframes. It's called by top level code when transitions are being added to storyboard.  
   
-##  <a name="getrelatedvariable"></a>CBaseTransition::GetRelatedVariable  
- 関連する変数へのポインターを返します。  
+##  <a name="getrelatedvariable"></a>  CBaseTransition::GetRelatedVariable  
+ Returns a pointer to related variable.  
   
 ```  
 CAnimationVariable* GetRelatedVariable();
 ```  
   
-### <a name="return-value"></a>戻り値  
- アニメーション変数、または NULL SetRelatedVariable によってアニメーション変数が設定されていない場合に有効なポインター。  
+### <a name="return-value"></a>Return Value  
+ A valid pointer to animation variable, or NULL if an animation variable has not been set by SetRelatedVariable.  
   
-### <a name="remarks"></a>コメント  
- これは、関連するアニメーション変数にアクセサーです。  
+### <a name="remarks"></a>Remarks  
+ This is an accessor to related animation variable.  
   
-##  <a name="getstartkeyframe"></a>CBaseTransition::GetStartKeyframe  
- 返します。 は、キーフレームを起動します。  
+##  <a name="getstartkeyframe"></a>  CBaseTransition::GetStartKeyframe  
+ Returns start keyframe.  
   
 ```  
 CBaseKeyFrame* GetStartKeyframe();
 ```  
   
-### <a name="return-value"></a>戻り値  
- キーフレームをまたはキーフレームの後の移行が開始しないようにする場合は NULL に有効なポインター。  
+### <a name="return-value"></a>Return Value  
+ A valid pointer to a keyframe, or NULL if a transition should not start after a keyframe.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、SetKeyframes で以前に設定されたキーフレーム オブジェクトへのアクセスに使用できます。 遷移は、ストーリー ボードに追加されている場合は、最上位のコードによって呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This method can be used to access a keyframe object that was previously set by SetKeyframes. It's called by top level code when transitions are being added to storyboard.  
   
-##  <a name="gettransition"></a>CBaseTransition::GetTransition  
- 基になる COM 遷移オブジェクトへのポインターを返します。  
+##  <a name="gettransition"></a>  CBaseTransition::GetTransition  
+ Returns a pointer to underlying COM transition object.  
   
 ```  
 IUIAnimationTransition* GetTransition(
@@ -253,89 +271,89 @@ IUIAnimationTransition* GetTransition(
 IUIAnimationTransition* GetTransition();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pLibrary`  
- 標準的な遷移を作成する遷移ライブラリへのポインター。 カスタムの切り替えには、NULL になります。  
+ A pointer to transition library, which creates standard transitions. It can be NULL for custom transitions.  
   
  `pFactory`  
- カスタム遷移を作成する遷移ファクトリへのポインター。 標準の遷移では、NULL になります。  
+ A pointer to transition factory, which creates custom transitions. It can be NULL for standard transitions.  
   
-### <a name="return-value"></a>戻り値  
- IUIAnimationTransition または遷移の基になる場合は NULL に有効なポインターを作成できません。  
+### <a name="return-value"></a>Return Value  
+ A valid pointer to IUIAnimationTransition or NULL if underlying transition can't be created.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、基になる COM 遷移オブジェクトへのポインターを返し、必要な場合は作成されます。  
+### <a name="remarks"></a>Remarks  
+ This method returns a pointer to underlying COM transition object and creates it if necessary.  
   
-##  <a name="gettype"></a>CBaseTransition::GetType  
- 返します。 は、型を移行します。  
+##  <a name="gettype"></a>  CBaseTransition::GetType  
+ Returns transition type.  
   
 ```  
 TRANSITION_TYPE GetType() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- TRANSITION_TYPE のいずれかの列挙値です。  
+### <a name="return-value"></a>Return Value  
+ One of TRANSITION_TYPE enumerated values.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、型によって遷移オブジェクトを識別するために使用できます。 種類は、派生クラスでコンス トラクターで設定されます。  
+### <a name="remarks"></a>Remarks  
+ This method can be used to identify a transition object by its type. The type is set in a constructor in a derived class.  
   
-##  <a name="isadded"></a>CBaseTransition::IsAdded  
- ストーリー ボードに遷移が追加されているかどうかを指示します。  
+##  <a name="isadded"></a>  CBaseTransition::IsAdded  
+ Tells whether a transition has been added to a storyboard.  
   
 ```  
 BOOL IsAdded();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 遷移が FALSE の場合は、ストーリー ボードに追加されたかどうかに TRUE を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns TRUE if a transition has been added to a storyboard, otherwise FALSE.  
   
-### <a name="remarks"></a>コメント  
- このフラグは、最上位レベルのコードは、ストーリー ボードへの切り替えを追加するときに、内部的に設定されます。  
+### <a name="remarks"></a>Remarks  
+ This flag is set internally when the top level code adds transitions to storyboard.  
   
-##  <a name="m_badded"></a>CBaseTransition::m_bAdded  
- ストーリー ボードに遷移が追加されているかどうかを指定します。  
+##  <a name="m_badded"></a>  CBaseTransition::m_bAdded  
+ Specifies whether a transition has been added to a storyboard.  
   
 ```  
 BOOL m_bAdded;  
 ```  
   
-##  <a name="m_pendkeyframe"></a>CBaseTransition::m_pEndKeyframe  
- 遷移の終わりを指定するキーフレームへのポインターを格納します。  
+##  <a name="m_pendkeyframe"></a>  CBaseTransition::m_pEndKeyframe  
+ Stores a pointer to the keyframe that specifies the end of the transition.  
   
 ```  
 CBaseKeyFrame* m_pEndKeyframe;  
 ```  
   
-##  <a name="m_prelatedvariable"></a>CBaseTransition::m_pRelatedVariable  
- M_transition に格納されている遷移とアニメーションがアニメーション変数へのポインター。  
+##  <a name="m_prelatedvariable"></a>  CBaseTransition::m_pRelatedVariable  
+ A pointer to an animation variable, which is animated with the transition stored in m_transition.  
   
 ```  
 CAnimationVariable* m_pRelatedVariable;  
 ```  
   
-##  <a name="m_pstartkeyframe"></a>CBaseTransition::m_pStartKeyframe  
- 遷移の始まりを指定するキーフレームへのポインターを格納します。  
+##  <a name="m_pstartkeyframe"></a>  CBaseTransition::m_pStartKeyframe  
+ Stores a pointer to the keyframe that specifies the beginning of the transition.  
   
 ```  
 CBaseKeyFrame* m_pStartKeyframe;  
 ```  
   
-##  <a name="m_transition"></a>CBaseTransition::m_transition  
- IUIAnimationTransition へのポインターを格納します。 遷移の COM オブジェクトが作成されていない場合は NULL です。  
+##  <a name="m_transition"></a>  CBaseTransition::m_transition  
+ Stores a pointer to IUIAnimationTransition. NULL if a COM transition object has not been created.  
   
 ```  
 ATL::CComPtr<IUIAnimationTransition> m_transition;  
 ```  
   
-##  <a name="m_type"></a>CBaseTransition::m_type  
- 移行の種類を格納します。  
+##  <a name="m_type"></a>  CBaseTransition::m_type  
+ Stores the transition type.  
   
 ```  
 TRANSITION_TYPE m_type;  
 ```  
   
-##  <a name="setkeyframes"></a>CBaseTransition::SetKeyframes  
- 遷移のキーフレームを設定します。  
+##  <a name="setkeyframes"></a>  CBaseTransition::SetKeyframes  
+ Sets keyframes for a transition.  
   
 ```  
 void SetKeyframes(
@@ -343,40 +361,40 @@ void SetKeyframes(
     CBaseKeyFrame* pEnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStart`  
- 遷移の始まりを指定するキーフレームです。  
+ A keyframe that specifies the beginning of the transition.  
   
  `pEnd`  
- 遷移の終わりを指定するキーフレームです。  
+ A keyframe that specifies the end of the transition.  
   
-### <a name="remarks"></a>コメント  
- この方法で指定したキーフレームの後に起動し、保留が NULL でない場合は終了必要に応じて、遷移は、指定したキーフレームの前にします。 Duration パラメーターを指定の移行が作成されている場合は、最初と最後のキーフレーム間の時間の期間でその期間が上書きされます。  
+### <a name="remarks"></a>Remarks  
+ This method tells the transition to start after specified keyframe and, optionally, if pEnd is not NULL, end before the specified keyframe. If the transition was created with a duration parameter specified, that duration is overwritten with the duration of time between the start and end keyframes.  
   
-##  <a name="setrelatedvariable"></a>CBaseTransition::SetRelatedVariable  
- アニメーション変数と遷移の間のリレーションシップを確立します。  
+##  <a name="setrelatedvariable"></a>  CBaseTransition::SetRelatedVariable  
+ Establishes a relationship between animation variable and transition.  
   
 ```  
 void SetRelatedVariable(CAnimationVariable* pVariable);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pVariable`  
- 関連するアニメーション変数へのポインター。  
+ A pointer to related animation variable.  
   
-### <a name="remarks"></a>コメント  
- アニメーション変数と遷移の間のリレーションシップを確立します。 遷移は、1 つの変数にのみ適用できます。  
+### <a name="remarks"></a>Remarks  
+ Establishes a relationship between animation variable and transition. A transition can be applied only to one variable.  
   
-##  <a name="transition_type_enumeration"></a>CBaseTransition::TRANSITION_TYPE 列挙型  
- 現在 Windows Animation API の MFC 実装によってサポートされている遷移の種類を定義します。  
+##  <a name="transition_type_enumeration"></a>  CBaseTransition::TRANSITION_TYPE Enumeration  
+ Defines the transition types currently supported by the MFC implementation of Windows Animation API.  
   
 ```  
 enum TRANSITION_TYPE;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 移行の種類は、特定の遷移のコンス トラクターで設定されます。 たとえば、CSinusoidalTransitionFromRange は、その型を SINUSOIDAL_FROM_RANGE に設定します。  
+### <a name="remarks"></a>Remarks  
+ A transition type is set in the constructor of specific transition. For example, CSinusoidalTransitionFromRange sets its type to SINUSOIDAL_FROM_RANGE.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

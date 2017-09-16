@@ -1,77 +1,96 @@
 ---
-title: "ドキュメント/ビュー アーキテクチャの代替手段 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDocument クラス, 領域の必要条件"
-  - "ドキュメント, アプリケーション (使用しない)"
-  - "ビュー, アプリケーション (使用しない)"
+title: Alternatives to the Document-View Architecture | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- documents [MFC], applications without
+- CDocument class [MFC], space requirements
+- views [MFC], applications without
 ms.assetid: 2c22f352-a137-45ce-9971-c142173496fb
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメント/ビュー アーキテクチャの代替手段
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d9f1d9a04a85565096892cd0e2ead82d5b74e288
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC アプリケーションでは、通常、ユーザーがデータの情報、ファイル形式とビジュアル表示を管理するには、ドキュメント\/ビュー アーキテクチャを使用します。  デスクトップ アプリケーションの大部分では、ドキュメント\/ビュー アーキテクチャは適切かつ効率的なアプリケーション アーキテクチャです。  このアーキテクチャにより、表示から別のデータが、ほとんどの場合、アプリケーションを簡略化し、詳細なコードが減少します。  
+---
+# <a name="alternatives-to-the-documentview-architecture"></a>Alternatives to the Document/View Architecture
+MFC applications normally use the document/view architecture to manage information, file formats, and the visual representation of data to users. For the majority of desktop applications, the document/view architecture is an appropriate and efficient application architecture. This architecture separates data from viewing and, in most cases, simplifies your application and reduces redundant code.  
   
- ただし、ドキュメント\/ビュー アーキテクチャは、状況に適しているわけではありません。  これらの例について考えます。:  
+ However, the document/view architecture is not appropriate for some situations. Consider these examples:  
   
--   Windows 向けの C で記述されたアプリケーションを移植する場合、ドキュメント\/ビュー アプリケーションにサポートを追加する前にポートが完了する場合があります。  
+-   If you are porting an application written in C for Windows, you might want to complete your port before adding document/view support to your application.  
   
--   軽量ユーティリティを作成する場合は、ドキュメント\/ビュー アーキテクチャを含まないできることに気付くことがあります。  
+-   If you are writing a lightweight utility, you might find that you can do without the document/view architecture.  
   
--   元のコードがデータ表示に既にデータ管理を混在させると、ドキュメント\/ビュー モデルに移行すると、作業の 2 を分けなければ必要があるため甲斐はありません。  なるようにコードを残すようにすることがあります。  
+-   If your original code already mixes data management with data viewing, moving the code to the document/view model is not worth the effort because you must separate the two. You might prefer to leave the code as is.  
   
- ドキュメント\/ビュー アーキテクチャを使用するアプリケーションを作成するには、MFC アプリケーション ウィザードの手順 1 で **ドキュメント\/ビュー アーキテクチャのサポート\(V\)** チェック ボックスをオフにします。  詳細については [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md) を参照してください。  
+ To create an application that does not use the document/view architecture, clear the **Document/View architecture support** check box in step 1 of the MFC Application Wizard. See [MFC Application Wizard](../mfc/reference/mfc-application-wizard.md) for details.  
   
 > [!NOTE]
->  MFC アプリケーション ウィザードで生成されたベースのアプリケーションでは、ドキュメント\/ビュー アーキテクチャを使用しないので、ダイアログのアプリケーションの種類を選択 **ドキュメント\/ビュー アーキテクチャのサポート\(V\)** のチェック ボックスが無効になります。  
+>  Dialog-based applications produced by the MFC Application Wizard do not use the document/view architecture, so the **Document/View architecture support** check box is disabled if you select the dialog application type.  
   
- だけが他のウィザードで生成されたアプリケーションと同様に、Visual C\+\+ のウィザード、ソースとダイアログ エディターで生成されたアプリケーションを使用します。  アプリケーションでは、ScrollBar とステータス バーをサポートする **\[バージョン情報\]** ボックスがあります。  アプリケーションでは、ドキュメント テンプレートを登録されず、ドキュメント クラスが含まれていません。  
+ The Visual C++ wizards, as well as the source and dialog editors, work with the generated application just as they would with any other Wizard-generated application. The application can support toolbars, scrollbars, and a status bar, and has an **About** box. Your application will not register any document templates, and it will not contain a document class.  
   
- **CChildView**の `CWnd`での派生と生成されたアプリケーションを持つビュー クラスです。  MFC は、アプリケーションによって作成されたフレーム ウィンドウ内のビュー クラスのインスタンスを 1 つ作成して配置します。  MFC は、ビュー ウィンドウを使用してアプリケーションのコンテンツの配置と管理を容易にするため、適用されます。  このクラスの `OnPaint` のメンバーに描画コードを追加できます。  コードはフレームではなくビューにスクロール バーを追加する必要があります。  
+ Note that your generated application has a view class, **CChildView**, derived from `CWnd`. MFC creates and positions one instance of the view class within the frame windows created by your application. MFC still enforces using a view window, because it simplifies positioning and managing the application's content. You can add painting code to the `OnPaint` member of this class. Your code should add scrollbars to the view rather than to the frame.  
   
- アプリケーションで複数の重要な機能の実装を行うことをドキュメント\/ビュー アーキテクチャが MFC でアプリケーションの基本的な機能の多くを、プロジェクトの欠落実装する必要があることを意味します。指定したため、T:  
+ Because the document/view architecture provided by MFC is responsible for implementing many of an application's basic features, its absence in your project means that you are responsible for implementing many important features of your application:  
   
--   その場合、MFC アプリケーション ウィザードによって、アプリケーションのメニューは **ファイル** メニューの `New` と `Exit` コマンドが含まれています。\(`New` コマンドはドキュメント\/ビューをサポートしない MDI アプリケーション、SDI アプリケーションでのみサポートされます。生成されたメニュー リソースは MRU \(最後に使用した一覧\) をサポートしていません。  
+-   As provided by the MFC Application Wizard, the menu for your application contains only `New` and `Exit` commands on the **File** menu. (The `New` command is supported only for MDI applications, not SDI applications without Document/View support.) The generated menu resource will not support an MRU (most recently used) list.  
   
--   アプリケーションがサポートする **開く** などのコマンドのハンドラー関数と実装と **ファイル** メニューの **\[保存\]** を追加する必要があります。  MFC では、通常、これらの機能をサポートするコードを提供しますが、サポートでは、ドキュメント\/ビュー アーキテクチャに厳密にバインドされます。  
+-   You must add handler functions and implementations for any commands that your application will support, including **Open** and **Save** on the **File** menu. MFC normally provides code to support these features, but that support is tightly bound to the document/view architecture.  
   
--   1 を要求された場合は、アプリケーションのツール バーはごくわずかです。  
+-   The toolbar for your application, if you requested one, will be minimal.  
   
- ウィザードが正しい MFC アーキテクチャを保証するようにドキュメント\/ビュー アーキテクチャを含まないアプリケーションを作成するには、MFC アプリケーション ウィザードを使用することを強くお勧めします。  ただし、ウィザードの使用を避ける必要があるコードのドキュメント\/ビュー アーキテクチャをバイパスするための方法を次に示します。:  
+ It is strongly recommended that you use the MFC Application Wizard to create applications without the document/view architecture, because the wizard guarantees a correct MFC architecture. However, if you must avoid using the wizard, here are several approaches for bypassing the document/view architecture in your code:  
   
--   ドキュメントを未使用のアタッチのものとして扱い、前に指定されているように、クラスのデータ管理コードを、実装してください。  ドキュメントのオーバーヘッドは比較的少ないです。  [CDocument](../Topic/CDocument%20Class.md) 単一のオブジェクトは **CDocument** 基本クラス、[CCmdTarget](../Topic/CCmdTarget%20Class.md) と [CObject](../Topic/CObject%20Class.md)の小さなオーバーヘッドと少しオーバーヘッドが、単独でかかります。  後者のクラスの両方が小さいです。  
+-   Treat the document as an unused appendage and implement your data management code in the view class, as suggested above. Overhead for the document is relatively low. A single [CDocument](../mfc/reference/cdocument-class.md) object incurs a small amount of overhead by itself, plus the small overhead of **CDocument**'s base classes, [CCmdTarget](../mfc/reference/ccmdtarget-class.md) and [CObject](../mfc/reference/cobject-class.md). Both of the latter classes are small.  
   
-     **CDocument**で宣言された:  
+     Declared in **CDocument**:  
   
-    -   `CString` の 2 つがオブジェクト。  
+    -   Two `CString` objects.  
   
-    -   3 **BOOL**s。  
+    -   Three **BOOL**s.  
   
-    -   `CDocTemplate` の 1 種類のポインター。  
+    -   One `CDocTemplate` pointer.  
   
-    -   ドキュメントのビューの一覧を含む `CPtrList` の 1 つがオブジェクトです。  
+    -   One `CPtrList` object, which contains a list of the document's views.  
   
-     また、ドキュメント オブジェクトは、ドキュメント、ビュー オブジェクト、フレーム ウィンドウ、ドキュメント テンプレート オブジェクトを作成する時間を要します。  
+     Additionally, the document requires the amount of time to create the document object, its view objects, a frame window, and a document template object.  
   
--   未使用のアタッチ物としてドキュメントやビューの両方を扱います。  ビューではなく、フレーム ウィンドウにデータ管理および描画コードを記述します。  この方法は、C 言語プログラミング モデルの近くにあります。  
+-   Treat both the document and view as unused appendages. Put your data management and drawing code in the frame window rather than the view. This approach is closer to the C-language programming model.  
   
--   これらのオブジェクトを作成することを削除するには、ドキュメントとビューを作成する MFC フレームワークの一部をオーバーライドします。  ドキュメントの作成が `CWinApp::AddDocTemplate`の呼び出しで開始されます。  その呼び出しをアプリケーション クラスの `InitInstance` のメンバー関数から削除し、その代わり `InitInstance` 独自にフレーム ウィンドウを作成します。  フレーム ウィンドウ クラスにデータ管理コードを配置します。  ドキュメント\/ビューの作成手順は [ドキュメント\/ビューの作成](../mfc/document-view-creation.md)で説明します。  これは、追加作業を、フレームワークにより詳しい知識が必要となるため、ドキュメント\/ビュー オーバーヘッドが完全になります。  
+-   Override the parts of the MFC framework that create the document and view to eliminate creating them at all. The document creation process begins with a call to `CWinApp::AddDocTemplate`. Eliminate that call from your application class's `InitInstance` member function and, instead, create a frame window in `InitInstance` yourself. Put your data management code in your frame window class. The document/view creation process is illustrated in [Document/View Creation](../mfc/document-view-creation.md). This is more work and requires a deeper understanding of the framework, but it frees you entirely of the document/view overhead.  
   
- 記事 [MFC: ドキュメントとビューを用いないデータベース クラスの使用"](../data/mfc-using-database-classes-without-documents-and-views.md) はデータベース アプリケーションのコンテキストでドキュメント\/ビューの代わりに具体的な例を示します。  
+ The article [MFC: Using Database Classes Without Documents and Views](../data/mfc-using-database-classes-without-documents-and-views.md) gives more concrete examples of document/view alternatives in the context of database applications.  
   
-## 参照  
- [ドキュメント\/ビュー アーキテクチャ](../Topic/Document-View%20Architecture.md)
+## <a name="see-also"></a>See Also  
+ [Document/View Architecture](../mfc/document-view-architecture.md)
+
+

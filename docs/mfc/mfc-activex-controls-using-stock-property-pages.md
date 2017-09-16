@@ -1,62 +1,81 @@
 ---
-title: "MFC ActiveX コントロール : ストック プロパティ ページの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CLSID_CPicturePropPage"
-  - "CLSID_CColorPropPage"
-  - "CLSID_CFontPropPage"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CLSID_CColorPropPage"
-  - "CLSID_CFontPropPage"
-  - "CLSID_CPicturePropPage"
-  - "カラー ストック プロパティ ページ"
-  - "フォント, ActiveX コントロール"
-  - "MFC ActiveX コントロール, プロパティ ページ"
-  - "ピクチャ ストック プロパティ ページ"
-  - "ストック プロパティ, ストック プロパティ ページ"
+title: 'MFC ActiveX Controls: Using Stock Property Pages | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CLSID_CPicturePropPage
+- CLSID_CColorPropPage
+- CLSID_CFontPropPage
+dev_langs:
+- C++
+helpviewer_keywords:
+- picture stock property pages [MFC]
+- CLSID_CFontPropPage [MFC]
+- color stock property pages [MFC]
+- CLSID_CColorPropPage [MFC]
+- fonts [MFC], ActiveX controls
+- stock properties [MFC], stock property pages
+- CLSID_CPicturePropPage [MFC]
+- MFC ActiveX controls [MFC], property pages
 ms.assetid: 22638d86-ff3e-4124-933e-54b7c2a25968
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : ストック プロパティ ページの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2a0a4b3ad54221500650b6e5c11e62e45805954c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ActiveX コントロールで使用できるストック プロパティ ページとその使用方法について説明します。  
+---
+# MFC ActiveX Controls: Using Stock Property Pages
+This article discusses the stock property pages available for ActiveX controls and how to use them.  
   
- ActiveX コントロールのプロパティ ページを使用する詳細については、次のトピックを参照します:  
+ For more information on using property pages in an ActiveX control, see the following articles:  
   
--   [MFC ActiveX コントロール: プロパティ ページ](../mfc/mfc-activex-controls-property-pages.md)  
+-   [MFC ActiveX Controls: Property Pages](../mfc/mfc-activex-controls-property-pages.md)  
   
--   [MFC ActiveX コントロール: 他のカスタム プロパティ ページの追加](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)  
+-   [MFC ActiveX Controls: Adding Another Custom Property Page](../mfc/mfc-activex-controls-adding-another-custom-property-page.md)  
   
- MFC は、ActiveX コントロールを使用する 3 とおりのストック プロパティ ページについて: **CLSID\_CColorPropPage**、**CLSID\_CFontPropPage**と **CLSID\_CPicturePropPage**。  これらのページは、標準色、フォント、およびピクチャ プロパティのためのユーザー インターフェイスがそれぞれ表示されます。  
+ MFC provides three stock property pages for use with ActiveX controls: **CLSID_CColorPropPage**, **CLSID_CFontPropPage**, and **CLSID_CPicturePropPage**. These pages display a user interface for stock color, font, and picture properties, respectively.  
   
- コントロールに二つのプロパティ ページを組み込むには、コントロール プロパティ ページの ID の配列を初期化するコードの ID を追加します。  次の例では、コントロールの実装ファイル \(.cpp\) で、このコードは 3 個のストック プロパティ ページとすべて既定のプロパティ ページ \(この例で名前付きな `CMyPropPage`\) を含めるように配列を初期化します:  
+ To incorporate these property pages into a control, add their IDs to the code that initializes the control's array of property page IDs. In the following example, this code, located in the control implementation file (.CPP), initializes the array to contain all three stock property pages and the default property page (named `CMyPropPage` in this example):  
   
- [!code-cpp[NVC_MFC_AxOpt#21](../mfc/codesnippet/CPP/mfc-activex-controls-using-stock-property-pages_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxOpt#21](../mfc/codesnippet/cpp/mfc-activex-controls-using-stock-property-pages_1.cpp)]  
   
- プロパティ ページの数が、`BEGIN_PROPPAGEIDS` マクロで、4.であることに注意してください。  これは、ActiveX コントロールでサポートされるプロパティ ページ数を表します。  
+ Note that the count of property pages, in the `BEGIN_PROPPAGEIDS` macro, is 4. This represents the number of property pages supported by the ActiveX control.  
   
- これらの変更を作成した後、プロジェクトをリビルドします。  コントロールは、フォント、画像やカラー プロパティのプロパティ ページがあります。  
+ After these modifications have been made, rebuild your project. Your control now has property pages for the font, picture, and color properties.  
   
 > [!NOTE]
->  コントロールのストック プロパティ ページにアクセスすることができない場合は、MFC DLL \(MFCxx.DLL\) が現在のオペレーティング システムで適切に登録されていない可能性があります。  通常、これは現在実行したものと異なるオペレーティング システムの Visual C\+\+ をインストールすることになります。  
+>  If the control stock property pages cannot be accessed, it may be because the MFC DLL (MFCxx.DLL) has not been properly registered with the current operating system. This usually results from installing Visual C++ under an operating system different from the one currently running.  
   
 > [!TIP]
->  ストック プロパティ ページが表示されない場合 \(前のメモを参照してください\)、完全パス名を指定して、コマンド ラインから DLL へ RegSvr32.exe を実行して DLL を登録します。  
+>  If your stock property pages are not visible (see previous Note), register the DLL by running RegSvr32.exe from the command line with the full path name to the DLL.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール : ストック プロパティの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Properties.md)
+## See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Controls: Adding Stock Properties](../mfc/mfc-activex-controls-adding-stock-properties.md)
+
+

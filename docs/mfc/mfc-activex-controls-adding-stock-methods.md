@@ -1,69 +1,88 @@
 ---
-title: "MFC ActiveX コントロール : ストック メソッドの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DoClick メソッド"
-  - "MFC ActiveX コントロール, メソッド"
-  - "MFC ActiveX コントロール, ストック メソッド"
+title: 'MFC ActiveX Controls: Adding Stock Methods | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], stock methods
+- MFC ActiveX controls [MFC], methods
+- DoClick method [MFC]
 ms.assetid: bc4fad78-cabd-4cc0-a798-464b1a682f0b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : ストック メソッドの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8a62e9c34de043f55b89b59554bf7aaac3b48421
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ストック メソッドはカスタム メソッドと [COleControl](../mfc/reference/colecontrol-class.md)クラスによって実装されることです。  たとえば、`COleControl` はコントロールの更新のメソッドをサポートする定義済みのなメンバー関数が含まれています。  このストック メソッドのディスパッチ マップ エントリが **DISP\_STOCKFUNC\_REFRESH**です。  
+---
+# MFC ActiveX Controls: Adding Stock Methods
+A stock method differs from a custom method in that it is already implemented by class [COleControl](../mfc/reference/colecontrol-class.md). For example, `COleControl` contains a predefined member function that supports the Refresh method for your control. The dispatch map entry for this stock method is **DISP_STOCKFUNC_REFRESH**.  
   
- `COleControl` は 2 個のストック メソッドをサポートする: DoClick と更新。  更新は、コントロールのユーザーが、コントロールの外観を更新するために呼び出される; DoClick はコントロールの Click イベントを発生させるために呼び出します。  
+ `COleControl` supports two stock methods: DoClick and Refresh. Refresh is invoked by the control's user to immediately update the control's appearance; DoClick is invoked to fire the control's Click event.  
   
-|方法|ディスパッチ マップ エントリ|コメント|  
-|--------|---------------------|----------|  
-|`DoClick`|**DISP\_STOCKPROP\_DOCLICK \(\)**|Click イベントを発生させます。|  
-|**更新する**|**DISP\_STOCKPROP\_REFRESH \(\)**|このコントロールの外観を更新します。|  
+|Method|Dispatch map entry|Comment|  
+|------------|------------------------|-------------|  
+|`DoClick`|**DISP_STOCKPROP_DOCLICK( )**|Fires a Click event.|  
+|**Refresh**|**DISP_STOCKPROP_REFRESH( )**|Immediately updates the control's appearance.|  
   
-##  <a name="_core_adding_a_stock_method_using_classwizard"></a> メソッドの追加ウィザードを使用して、ストック メソッドの追加  
- ストック メソッドを追加するには [メソッド追加ウィザード](../ide/add-method-wizard.md)を使用する方法です。  次の手順では、MFC ActiveX コントロール ウィザードを使用して作成されたコントロールへの更新メソッドを追加することです。  
+##  <a name="_core_adding_a_stock_method_using_classwizard"></a> Adding a Stock Method Using the Add Method Wizard  
+ Adding a stock method is simple using the [Add Method Wizard](../ide/add-method-wizard.md). The following procedure demonstrates adding the Refresh method to a control created using the MFC ActiveX Control Wizard.  
   
-#### 標準的な更新のメソッドを追加ウィザードのメソッドを追加するには  
+#### To add the stock Refresh method using the Add Method Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューの **追加** をクリックし、**メソッドの追加**をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Method**.  
   
-     これは、メソッドの追加ウィザードが表示されます。  
+     This opens the Add Method Wizard.  
   
-5.  **メソッド名** ボックスで、**最新の情報に更新**をクリックします。  
+5.  In the **Method Name** box, click **Refresh**.  
   
-6.  \[完了\] をクリックします。  
+6.  Click **Finish**.  
   
-##  <a name="_core_classwizard_changes_for_stock_methods"></a> ストック メソッドのメソッド ウィザードの変更を追加します。  
- 標準的な更新のメソッドがコントロールの基本クラスによってサポートされているため、**メソッド追加ウィザード** では、コントロールのクラス宣言を変更しません。  これは、コントロールのディスパッチ マップと .IDL ファイルにメソッドのエントリを追加します。  以下は、実装 \(.cpp\) ファイルにあるコントロールのディスパッチ マップに追加します:  
+##  <a name="_core_classwizard_changes_for_stock_methods"></a> Add Method Wizard Changes for Stock Methods  
+ Because the stock Refresh method is supported by the control's base class, the **Add Method Wizard** does not change the control's class declaration in any way. It adds an entry for the method to the control's dispatch map and to its .IDL file. The following line is added to the control's dispatch map, located in its implementation (.CPP) file:  
   
- [!code-cpp[NVC_MFC_AxUI#16](../mfc/codesnippet/CPP/mfc-activex-controls-adding-stock-methods_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#16](../mfc/codesnippet/cpp/mfc-activex-controls-adding-stock-methods_1.cpp)]  
   
- これにより、更新のメソッドをコントロールのユーザーが使用できるようにします。  
+ This makes the Refresh method available to the control's users.  
   
- 以下は、コントロールの .IDL ファイルに追加します:  
+ The following line is added to the control's .IDL file:  
   
- [!code-cpp[NVC_MFC_AxUI#17](../mfc/codesnippet/CPP/mfc-activex-controls-adding-stock-methods_2.idl)]  
+ [!code-cpp[NVC_MFC_AxUI#17](../mfc/codesnippet/cpp/mfc-activex-controls-adding-stock-methods_2.idl)]  
   
- この行は特定の ID 番号の更新メソッドに割り当てます。  
+ This line assigns the Refresh method a specific ID number.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

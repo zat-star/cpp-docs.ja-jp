@@ -1,72 +1,91 @@
 ---
-title: "タブ コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "TCS_EX_REGISTERDROP"
-  - "TCS_EX_FLATSEPARATORS"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTabCtrl クラス, 作成"
-  - "タブ コントロール, 作成"
-  - "TCS_EX_FLATSEPARATORS 拡張スタイル"
-  - "TCS_EX_REGISTERDROP 拡張スタイル"
+title: Creating the Tab Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- TCS_EX_REGISTERDROP
+- TCS_EX_FLATSEPARATORS
+dev_langs:
+- C++
+helpviewer_keywords:
+- TCS_EX_REGISTERDROP extended style [MFC]
+- tab controls [MFC], creating
+- CTabCtrl class [MFC], creating
+- TCS_EX_FLATSEPARATORS extended style
 ms.assetid: 3a9c2d64-f5f4-41ea-84ab-fceb73c3dbdc
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# タブ コントロールの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 45dca159d6102d0a30c5ac82c2d460186f24c002
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-タブ コントロールの作成方法をダイアログ ボックスにコントロールを使用するか、nondialog ウィンドウで作成されるかどうかによって異なります。  
+---
+# <a name="creating-the-tab-control"></a>Creating the Tab Control
+How the tab control is created depends on whether you are using the control in a dialog box or creating it in a nondialog window.  
   
-### CTabCtrl を直接ダイアログ ボックスで使用できます。  
+### <a name="to-use-ctabctrl-directly-in-a-dialog-box"></a>To use CTabCtrl directly in a dialog box  
   
-1.  ダイアログ エディターで、ダイアログ テンプレート リソースをタブ コントロールを追加します。  コントロール ID を指定します。  
+1.  In the dialog editor, add a Tab Control to your dialog template resource. Specify its control ID.  
   
-2.  コントロール プロパティを持つ型 [CTabCtrl](../Topic/CTabCtrl%20Class.md) のメンバー変数を追加するに [メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md) を使用します。  `CTabCtrl` のメンバー関数を呼び出すには、このメンバーを使用できます。  
+2.  Use the [Add Member Variable Wizard](../ide/adding-a-member-variable-visual-cpp.md) to add a member variable of type [CTabCtrl](../mfc/reference/ctabctrl-class.md) with the Control property. You can use this member to call `CTabCtrl` member functions.  
   
-3.  これを処理する必要があるタブ コントロールの通知メッセージのダイアログ クラス マップのハンドラー関数。  詳細については、「[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)」を参照してください。  
+3.  Map handler functions in the dialog class for any tab control notification messages you need to handle. For more information, see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md).  
   
-4.  [OnInitDialog](../Topic/CDialog::OnInitDialog.md)で、`CTabCtrl`のスタイルを設定します。  
+4.  In [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog), set the styles for the `CTabCtrl`.  
   
-### CTabCtrl を nondialog ウィンドウで使用します。  
+### <a name="to-use-ctabctrl-in-a-nondialog-window"></a>To use CTabCtrl in a nondialog window  
   
-1.  ビューまたはウィンドウ クラスのコントロールを定義します。  
+1.  Define the control in the view or window class.  
   
-2.  \(コントロールをサブクラス化したら\) 親ウィンドウの [OnCreate](../Topic/CWnd::OnCreate.md) のハンドラー関数には早くも [OnInitialUpdate](../Topic/CView::OnInitialUpdate.md)のコントロールの [作成](../Topic/CTabCtrl::Create.md) メンバー関数を、おそらく、場合に呼び出します。  コントロールのスタイルを設定します。  
+2.  Call the control's [Create](../mfc/reference/ctabctrl-class.md#create) member function, possibly in [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate), possibly as early as the parent window's [OnCreate](../mfc/reference/cwnd-class.md#oncreate) handler function (if you're subclassing the control). Set the styles for the control.  
   
- `CTabCtrl` オブジェクトを作成した後、次の拡張スタイルを設定またはクリアできます。:  
+ After the `CTabCtrl` object has been created, you can set or clear the following extended styles:  
   
--   **TCS\_EX\_FLATSEPARATORS**はタブ項目間でタブ コントロール区分線を描画します。  この拡張スタイルは **TCS\_BUTTONS** と **TCS\_FLATBUTTONS** のスタイルを持つタブ コントロールにのみ影響します。  **TCS\_FLATBUTTONS** のスタイルでタブ コントロールを作成します既定ではこの拡張スタイルを設定します。  
+-   **TCS_EX_FLATSEPARATORS** The tab control will draw separators between the tab items. This extended style only affects tab controls that have the **TCS_BUTTONS** and **TCS_FLATBUTTONS** styles. By default, creating the tab control with the **TCS_FLATBUTTONS** style sets this extended style.  
   
--   **TCS\_EX\_REGISTERDROP**はタブ コントロール オブジェクトがコントロールのタブ アイテムにドラッグすると、ドロップ ターゲット オブジェクトを要求するに **TCN\_GETOBJECT** 通知メッセージを生成します。  
+-   **TCS_EX_REGISTERDROP** The tab control generates **TCN_GETOBJECT** notification messages to request a drop target object when an object is dragged over the tab items in the control.  
   
     > [!NOTE]
-    >  **TCN\_GETOBJECT** 通知を受け取るには、[AfxOleInit](../Topic/AfxOleInit.md)を呼び出して OLE ライブラリを初期化しなければなりません。  
+    >  To receive the **TCN_GETOBJECT** notification, you must initialize the OLE libraries with a call to [AfxOleInit](../mfc/reference/ole-initialization.md#afxoleinit).  
   
- これらのスタイルは [GetExtendedStyle](../Topic/CTabCtrl::GetExtendedStyle.md) と [SetExtendedStyle](../Topic/CTabCtrl::SetExtendedStyle.md) のメンバー関数への呼び出しでコントロールが作成された後で取得され、設定できます。  
+ These styles can be retrieved and set, after the control has been created, with respective calls to the [GetExtendedStyle](../mfc/reference/ctabctrl-class.md#getextendedstyle) and [SetExtendedStyle](../mfc/reference/ctabctrl-class.md#setextendedstyle) member functions.  
   
- たとえば、次のコード行に **TCS\_EX\_FLATSEPARATORS** のスタイルを設定する:  
+ For instance, set the **TCS_EX_FLATSEPARATORS** style with the following lines of code:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#33](../mfc/codesnippet/CPP/creating-the-tab-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#33](../mfc/codesnippet/cpp/creating-the-tab-control_1.cpp)]  
   
- 次のコード行を持つ `CTabCtrl` オブジェクトから **TCS\_EX\_FLATSEPARATORS** のスタイルをクリアする:  
+ Clear the **TCS_EX_FLATSEPARATORS** style from a `CTabCtrl` object with the following lines of code:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#34](../mfc/codesnippet/CPP/creating-the-tab-control_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#34](../mfc/codesnippet/cpp/creating-the-tab-control_2.cpp)]  
   
- これは `CTabCtrl` オブジェクトのボタンの間に表示される区切り記号を削除します。  
+ This will remove the separators that appear between the buttons of your `CTabCtrl` object.  
   
-## 参照  
- [CTabCtrl の使い方](../mfc/using-ctabctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTabCtrl](../mfc/using-ctabctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

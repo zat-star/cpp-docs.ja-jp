@@ -1,58 +1,78 @@
 ---
-title: "方法: 再起動マネージャーのサポートを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "再起動マネージャー"
-  - "C++、アプリケーション クラッシュのサポート"
+title: 'How to: Add Restart Manager Support | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Restart manager [MFC]
+- C++, application crash support
 ms.assetid: 7f3f5867-d4bc-4ba8-b3c9-dc1e7be93642
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 方法: 再起動マネージャーのサポートを追加する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 13369ead9b6aac2e91f03a9e9939153ec1f94caf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-再起動マネージャーは、[!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] 用の [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] に追加された機能です。 再起動マネージャーにより、アプリケーションが予期せずに終了または再起動した場合のアプリケーションのサポートが強化されます。 再起動マネージャーの動作は、アプリケーションの種類によって異なります。 アプリケーションがドキュメント エディターの場合、再起動マネージャーは、アプリケーションが予期せずに終了したら、開いているドキュメントの状態と内容をアプリケーションが自動的に保存できるようにし、アプリケーションを再起動します。 アプリケーションがドキュメント エディターではない場合、再起動マネージャーは、アプリケーションを再起動しますが、既定ではアプリケーションの状態を保存できません。  
+---
+# <a name="how-to-add-restart-manager-support"></a>How to: Add Restart Manager Support
+The restart manager is a feature added to [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] for [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]. The restart manager adds support for your application if it unexpectedly closes or restarts. The behavior of the restart manager depends on the type of your application. If your application is a document editor, the restart manager enabled your application to automatically save the state and content of any open documents and restarts your application after an unexpected closure. If your application is not a document editor, the restart manager will restart the application, but it cannot save the state of the application by default.  
   
- Unicode アプリケーションは、再起動後、タスク ダイアログ ボックスを表示します。 ANSI アプリケーションは、Windows メッセージ ボックスを表示します。 この時点で、ユーザーは自動的に保存されたドキュメントを復元するかどうかを選択します。 自動的に保存されたドキュメントをユーザーが復元しない場合は、再起動マネージャーによって一時ファイルが破棄されます。  
+ After restart, the application displays a task dialog box if the application is Unicode. If it is an ANSI application, the application displays a Windows Message box. At this point, the user chooses whether to restore the automatically saved documents. If the user does not restore the automatically saved documents, the restart manager discards the temporary files.  
   
 > [!NOTE]
->  データの保存とアプリケーションの再起動を行う再起動マネージャーの既定の動作はオーバーライドできます。  
+>  You can override the default behavior of the restart manager for saving data and restarting the application.  
   
- 既定では、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] のプロジェクト ウィザードを使用して作成された MFC アプリケーションは、[!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)] を搭載したコンピューターで実行されていれば、再起動マネージャーをサポートします。 アプリケーションが再起動マネージャーをサポートしないようにする場合は、新しいプロジェクト ウィザードで再起動マネージャーを無効にすることができます。  
+ By default, MFC applications created by using the project wizard in [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] support the restart manager when the applications are run on a computer that has [!INCLUDE[wiprlhext](../c-runtime-library/reference/includes/wiprlhext_md.md)]. If you do not want your application to support the restart manager, you can disable the restart manager in the new project wizard.  
   
-### 既存のアプリケーションが再起動マネージャーをサポートするように設定するには  
+### <a name="to-add-support-for-the-restart-manager-to-an-existing-application"></a>To Add Support For the Restart Manager to an Existing Application  
   
-1.  [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] で既存の MFC アプリケーションを開きます。  
+1.  Open an existing MFC application in [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)].  
   
-2.  メイン アプリケーションのソース ファイルを開きます。 既定では、これはアプリケーションと同じ名前の .cpp ファイルです。 たとえば、MyProject のメイン アプリケーションのソース ファイルは、MyProject.cpp です。  
+2.  Open the source file for your main application. By default this is the .cpp file that has the same name as your application. For example, the main application source file for MyProject is MyProject.cpp.  
   
-3.  メイン アプリケーションのコンストラクターを探します。 たとえば、プロジェクトが MyProject である場合、コンストラクターは `CMyProjectApp::CMyProjectApp()` です。  
+3.  Find the constructor for your main application. For example, if your project is MyProject, the constructor is `CMyProjectApp::CMyProjectApp()`.  
   
-4.  次のコード行をコンストラクターに追加します。  
+4.  Add the following line of code to your constructor.  
   
-    ```  
+ ```  
     m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_ALL_ASPECTS;  
-    ```  
+ ```  
   
-5.  アプリケーションの `InitInstance` メソッドが、その親の `InitInstance` メソッド \([CWinApp::InitInstance](../Topic/CWinApp::InitInstance.md) または `CWinAppEx::InitInstance`\) を呼び出すことを確認します。`InitInstance` メソッドには、`m_dwRestartManagerSupportFlags` パラメーターをチェックする責任があります。  
+5.  Make sure the `InitInstance` method of your application calls its parent `InitInstance` method: [CWinApp::InitInstance](../mfc/reference/cwinapp-class.md#initinstance) or `CWinAppEx::InitInstance`. The `InitInstance` method is responsible for checking the `m_dwRestartManagerSupportFlags` parameter.  
   
-6.  アプリケーションをコンパイルして実行します。  
+6.  Compile and run your application.  
   
-## 参照  
- [CDataRecoveryHandler クラス](../mfc/reference/cdatarecoveryhandler-class.md)   
- [CWinApp::m\_dwRestartManagerSupportFlags](../Topic/CWinApp::m_dwRestartManagerSupportFlags.md)   
- [CWinApp クラス](../mfc/reference/cwinapp-class.md)   
- [CWinApp::m\_nAutosaveInterval](../Topic/CWinApp::m_nAutosaveInterval.md)   
- [CDocument::OnDocumentEvent](../Topic/CDocument::OnDocumentEvent.md)
+## <a name="see-also"></a>See Also  
+ [CDataRecoveryHandler Class](../mfc/reference/cdatarecoveryhandler-class.md)   
+ [CWinApp::m_dwRestartManagerSupportFlags](../mfc/reference/cwinapp-class.md#m_dwrestartmanagersupportflags)   
+ [CWinApp Class](../mfc/reference/cwinapp-class.md)   
+ [CWinApp::m_nAutosaveInterval](../mfc/reference/cwinapp-class.md#m_nautosaveinterval)   
+ [CDocument::OnDocumentEvent](../mfc/reference/cdocument-class.md#ondocumentevent)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "CD2DBitmapBrush クラス |Microsoft ドキュメント"
+title: CD2DBitmapBrush Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -32,7 +32,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DBitmapBrush class
+- CD2DBitmapBrush [MFC], CD2DBitmapBrush
+- CD2DBitmapBrush [MFC], Attach
+- CD2DBitmapBrush [MFC], Create
+- CD2DBitmapBrush [MFC], Destroy
+- CD2DBitmapBrush [MFC], Detach
+- CD2DBitmapBrush [MFC], Get
+- CD2DBitmapBrush [MFC], GetBitmap
+- CD2DBitmapBrush [MFC], GetExtendModeX
+- CD2DBitmapBrush [MFC], GetExtendModeY
+- CD2DBitmapBrush [MFC], GetInterpolationMode
+- CD2DBitmapBrush [MFC], SetBitmap
+- CD2DBitmapBrush [MFC], SetExtendModeX
+- CD2DBitmapBrush [MFC], SetExtendModeY
+- CD2DBitmapBrush [MFC], SetInterpolationMode
+- CD2DBitmapBrush [MFC], CommonInit
+- CD2DBitmapBrush [MFC], m_pBitmap
+- CD2DBitmapBrush [MFC], m_pBitmapBrush
+- CD2DBitmapBrush [MFC], m_pBitmapBrushProperties
 ms.assetid: 46ebbe34-66e0-44c8-af1d-d129e851de5e
 caps.latest.revision: 17
 author: mikeblome
@@ -52,70 +69,70 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: a9ab15dcae8715b98cc9f723a710b64e83649bf9
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 430dcb54636a07ecc9b9bb6315ea1beefac443ad
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dbitmapbrush-class"></a>CD2DBitmapBrush クラス
-ID2D1BitmapBrush のラッパーです。  
+# <a name="cd2dbitmapbrush-class"></a>CD2DBitmapBrush Class
+A wrapper for ID2D1BitmapBrush.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DBitmapBrush : public CD2DBrush;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBitmapBrush::CD2DBitmapBrush](#cd2dbitmapbrush)|オーバーロードされます。 ファイルから CD2DBitmapBrush オブジェクトを構築します。|  
-|[CD2DBitmapBrush:: ~ CD2DBitmapBrush](#dtor)|デストラクターです。 D2D ビットマップ ブラシ オブジェクトが破棄されるときに呼び出されます。|  
+|[CD2DBitmapBrush::CD2DBitmapBrush](#cd2dbitmapbrush)|Overloaded. Constructs a CD2DBitmapBrush object from file.|  
+|[CD2DBitmapBrush::~CD2DBitmapBrush](#dtor)|The destructor. Called when a D2D bitmap brush object is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBitmapBrush::Attach](#attach)|オブジェクトにリソース インタ フェースを既存の接続|  
-|[CD2DBitmapBrush::Create](#create)|CD2DBitmapBrush を作成します。 (上書き[CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create))。|  
-|[CD2DBitmapBrush::Destroy](#destroy)|CD2DBitmapBrush オブジェクトを破棄します。 (上書き[CD2DBrush::Destroy](../../mfc/reference/cd2dbrush-class.md#destroy))。|  
-|[CD2DBitmapBrush::Detach](#detach)|オブジェクトからリソース インタ フェースをデタッチします。|  
-|[CD2DBitmapBrush::Get](#get)|返します。 ID2D1BitmapBrush インターフェイス|  
-|[CD2DBitmapBrush::GetBitmap](#getbitmap)|このブラシを使用して描画するビットマップのソースを取得します。|  
-|[CD2DBitmapBrush::GetExtendModeX](#getextendmodex)|ブラシ水平方向に並べて表示がそのビットマップにまで及ぶ領域メソッドを取得します|  
-|[CD2DBitmapBrush::GetExtendModeY](#getextendmodey)|ブラシ垂直方向に並べて表示がそのビットマップにまで及ぶ領域メソッドを取得します|  
-|[CD2DBitmapBrush::GetInterpolationMode](#getinterpolationmode)|ブラシのビットマップを拡大縮小または回転するときに使用する補間メソッドを取得します|  
-|[CD2DBitmapBrush::SetBitmap](#setbitmap)|このブラシを使用して描画するビットマップのソースを指定します|  
-|[CD2DBitmapBrush::SetExtendModeX](#setextendmodex)|そのビットマップにまで及ぶが領域が水平方向にタイル ブラシ方法を指定します。|  
-|[CD2DBitmapBrush::SetExtendModeY](#setextendmodey)|どのようにブラシ垂直方向に並べて表示そのビットマップにまで及ぶが領域を指定します。|  
-|[CD2DBitmapBrush::SetInterpolationMode](#setinterpolationmode)|ブラシのビットマップを拡大縮小または回転するときに使用する補間モードを指定します|  
+|[CD2DBitmapBrush::Attach](#attach)|Attaches existing resource interface to the object|  
+|[CD2DBitmapBrush::Create](#create)|Creates a CD2DBitmapBrush. (Overrides [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|  
+|[CD2DBitmapBrush::Destroy](#destroy)|Destroys a CD2DBitmapBrush object. (Overrides [CD2DBrush::Destroy](../../mfc/reference/cd2dbrush-class.md#destroy).)|  
+|[CD2DBitmapBrush::Detach](#detach)|Detaches resource interface from the object|  
+|[CD2DBitmapBrush::Get](#get)|Returns ID2D1BitmapBrush interface|  
+|[CD2DBitmapBrush::GetBitmap](#getbitmap)|Gets the bitmap source that this brush uses to paint|  
+|[CD2DBitmapBrush::GetExtendModeX](#getextendmodex)|Gets the method by which the brush horizontally tiles those areas that extend past its bitmap|  
+|[CD2DBitmapBrush::GetExtendModeY](#getextendmodey)|Gets the method by which the brush vertically tiles those areas that extend past its bitmap|  
+|[CD2DBitmapBrush::GetInterpolationMode](#getinterpolationmode)|Gets the interpolation method used when the brush bitmap is scaled or rotated|  
+|[CD2DBitmapBrush::SetBitmap](#setbitmap)|Specifies the bitmap source that this brush uses to paint|  
+|[CD2DBitmapBrush::SetExtendModeX](#setextendmodex)|Specifies how the brush horizontally tiles those areas that extend past its bitmap|  
+|[CD2DBitmapBrush::SetExtendModeY](#setextendmodey)|Specifies how the brush vertically tiles those areas that extend past its bitmap|  
+|[CD2DBitmapBrush::SetInterpolationMode](#setinterpolationmode)|Specifies the interpolation mode used when the brush bitmap is scaled or rotated|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBitmapBrush::CommonInit](#commoninit)|オブジェクトを初期化します|  
+|[CD2DBitmapBrush::CommonInit](#commoninit)|Initializes the object|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBitmapBrush::operator ID2D1BitmapBrush *](#operator_id2d1bitmapbrush_star)|返します。 ID2D1BitmapBrush インターフェイス|  
+|[CD2DBitmapBrush::operator ID2D1BitmapBrush*](#operator_id2d1bitmapbrush_star)|Returns ID2D1BitmapBrush interface|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DBitmapBrush::m_pBitmap](#m_pbitmap)|CD2DBitmap オブジェクトへのポインターを格納します。|  
-|[CD2DBitmapBrush::m_pBitmapBrush](#m_pbitmapbrush)|ID2D1BitmapBrush オブジェクトへのポインターを格納します。|  
-|[CD2DBitmapBrush::m_pBitmapBrushProperties](#m_pbitmapbrushproperties)|ブラシのプロパティをビットマップします。|  
+|[CD2DBitmapBrush::m_pBitmap](#m_pbitmap)|Stores a pointer to a CD2DBitmap object.|  
+|[CD2DBitmapBrush::m_pBitmapBrush](#m_pbitmapbrush)|Stores a pointer to an ID2D1BitmapBrush object.|  
+|[CD2DBitmapBrush::m_pBitmapBrushProperties](#m_pbitmapbrushproperties)|Bitmap brush properties.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CD2DResource](../../mfc/reference/cd2dresource-class.md)  
@@ -124,29 +141,29 @@ class CD2DBitmapBrush : public CD2DBrush;
   
  `CD2DBitmapBrush`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="dtor"></a>CD2DBitmapBrush:: ~ CD2DBitmapBrush  
- デストラクターです。 D2D ビットマップ ブラシ オブジェクトが破棄されるときに呼び出されます。  
+##  <a name="dtor"></a>  CD2DBitmapBrush::~CD2DBitmapBrush  
+ The destructor. Called when a D2D bitmap brush object is being destroyed.  
   
 ```  
 virtual ~CD2DBitmapBrush();
 ```  
   
-##  <a name="attach"></a>CD2DBitmapBrush::Attach  
- オブジェクトにリソース インタ フェースを既存の接続  
+##  <a name="attach"></a>  CD2DBitmapBrush::Attach  
+ Attaches existing resource interface to the object  
   
 ```  
 void Attach(ID2D1BitmapBrush* pResource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pResource`  
- 既存のリソースのインターフェイスです。 NULL にすることはできません。  
+ Existing resource interface. Cannot be NULL  
   
-##  <a name="cd2dbitmapbrush"></a>CD2DBitmapBrush::CD2DBitmapBrush  
- CD2DBitmapBrush オブジェクトを構築します。  
+##  <a name="cd2dbitmapbrush"></a>  CD2DBitmapBrush::CD2DBitmapBrush  
+ Constructs a CD2DBitmapBrush object.  
   
 ```  
 CD2DBitmapBrush(
@@ -175,198 +192,198 @@ CD2DBitmapBrush(
     BOOL bAutoDestroy = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
  `pBitmapBrushProperties`  
- 拡張モードおよびビットマップ ブラシの補間モードへのポインター。  
+ A pointer to the extend modes and the interpolation mode of a bitmap brush.  
   
  `pBrushProperties`  
- 不透明度とブラシの変換へのポインター。  
+ A pointer to the opacity and transformation of a brush.  
   
  `bAutoDestroy`  
- 所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
+ Indicates that the object will be destroyed by owner (pParentTarget).  
   
  `uiResID`  
- リソースのリソース ID 番号。  
+ The resource ID number of the resource.  
   
  `lpszType`  
- リソースの種類を表す null で終わる文字列へのポインター。  
+ Pointer to a null-terminated string that contains the resource type.  
   
  `sizeDest`  
- コピー先ビットマップのサイズ。  
+ Destination size of the bitmap.  
   
  `lpszImagePath`  
- ファイルの名前を表す null で終わる文字列へのポインター。  
+ Pointer to a null-terminated string that contains the name of file.  
   
-##  <a name="commoninit"></a>CD2DBitmapBrush::CommonInit  
- オブジェクトを初期化します  
+##  <a name="commoninit"></a>  CD2DBitmapBrush::CommonInit  
+ Initializes the object  
   
 ```  
 void CommonInit(D2D1_BITMAP_BRUSH_PROPERTIES* pBitmapBrushProperties);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pBitmapBrushProperties`  
- ビットマップ ブラシのプロパティへのポインター。  
+ A pointer to the bitmap brush properties.  
   
-##  <a name="create"></a>CD2DBitmapBrush::Create  
- CD2DBitmapBrush を作成します。  
+##  <a name="create"></a>  CD2DBitmapBrush::Create  
+ Creates a CD2DBitmapBrush.  
   
 ```  
 virtual HRESULT Create(CRenderTarget* pRenderTarget);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRenderTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="destroy"></a>CD2DBitmapBrush::Destroy  
- CD2DBitmapBrush オブジェクトを破棄します。  
+##  <a name="destroy"></a>  CD2DBitmapBrush::Destroy  
+ Destroys a CD2DBitmapBrush object.  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="detach"></a>CD2DBitmapBrush::Detach  
- オブジェクトからリソース インタ フェースをデタッチします。  
+##  <a name="detach"></a>  CD2DBitmapBrush::Detach  
+ Detaches resource interface from the object  
   
 ```  
 ID2D1BitmapBrush* Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- デタッチされたリソース インタ フェースへのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to detached resource interface.  
   
-##  <a name="get"></a>CD2DBitmapBrush::Get  
- 返します。 ID2D1BitmapBrush インターフェイス  
+##  <a name="get"></a>  CD2DBitmapBrush::Get  
+ Returns ID2D1BitmapBrush interface  
   
 ```  
 ID2D1BitmapBrush* Get();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ID2D1BitmapBrush インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1BitmapBrush interface or NULL if object is not initialized yet.  
   
-##  <a name="getbitmap"></a>CD2DBitmapBrush::GetBitmap  
- このブラシを使用して描画するビットマップのソースを取得します。  
+##  <a name="getbitmap"></a>  CD2DBitmapBrush::GetBitmap  
+ Gets the bitmap source that this brush uses to paint  
   
 ```  
 CD2DBitmap* GetBitmap();
 ```  
   
-### <a name="return-value"></a>戻り値  
- CD2DBitmap オブジェクトまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an CD2DBitmap object or NULL if object is not initialized yet.  
   
-##  <a name="getextendmodex"></a>CD2DBitmapBrush::GetExtendModeX  
- ブラシ水平方向に並べて表示がそのビットマップにまで及ぶ領域メソッドを取得します  
+##  <a name="getextendmodex"></a>  CD2DBitmapBrush::GetExtendModeX  
+ Gets the method by which the brush horizontally tiles those areas that extend past its bitmap  
   
 ```  
 D2D1_EXTEND_MODE GetExtendModeX() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- そのビットマップにまで及ぶが領域が水平方向にタイル ブラシ方法を指定する値  
+### <a name="return-value"></a>Return Value  
+ A value that specifies how the brush horizontally tiles those areas that extend past its bitmap  
   
-##  <a name="getextendmodey"></a>CD2DBitmapBrush::GetExtendModeY  
- ブラシ垂直方向に並べて表示がそのビットマップにまで及ぶ領域メソッドを取得します  
+##  <a name="getextendmodey"></a>  CD2DBitmapBrush::GetExtendModeY  
+ Gets the method by which the brush vertically tiles those areas that extend past its bitmap  
   
 ```  
 D2D1_EXTEND_MODE GetExtendModeY() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- どのようにブラシ垂直方向に並べて表示そのビットマップにまで及ぶが領域を指定する値  
+### <a name="return-value"></a>Return Value  
+ A value that specifies how the brush vertically tiles those areas that extend past its bitmap  
   
-##  <a name="getinterpolationmode"></a>CD2DBitmapBrush::GetInterpolationMode  
- ブラシのビットマップを拡大縮小または回転するときに使用する補間メソッドを取得します  
+##  <a name="getinterpolationmode"></a>  CD2DBitmapBrush::GetInterpolationMode  
+ Gets the interpolation method used when the brush bitmap is scaled or rotated  
   
 ```  
 D2D1_BITMAP_INTERPOLATION_MODE GetInterpolationMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ブラシのビットマップを拡大縮小または回転するときに使用する補間メソッド  
+### <a name="return-value"></a>Return Value  
+ The interpolation method used when the brush bitmap is scaled or rotated  
   
-##  <a name="m_pbitmap"></a>CD2DBitmapBrush::m_pBitmap  
- CD2DBitmap オブジェクトへのポインターを格納します。  
+##  <a name="m_pbitmap"></a>  CD2DBitmapBrush::m_pBitmap  
+ Stores a pointer to a CD2DBitmap object.  
   
 ```  
 CD2DBitmap* m_pBitmap;  
 ```  
   
-##  <a name="m_pbitmapbrush"></a>CD2DBitmapBrush::m_pBitmapBrush  
- ID2D1BitmapBrush オブジェクトへのポインターを格納します。  
+##  <a name="m_pbitmapbrush"></a>  CD2DBitmapBrush::m_pBitmapBrush  
+ Stores a pointer to an ID2D1BitmapBrush object.  
   
 ```  
 ID2D1BitmapBrush* m_pBitmapBrush;  
 ```  
   
-##  <a name="m_pbitmapbrushproperties"></a>CD2DBitmapBrush::m_pBitmapBrushProperties  
- ブラシのプロパティをビットマップします。  
+##  <a name="m_pbitmapbrushproperties"></a>  CD2DBitmapBrush::m_pBitmapBrushProperties  
+ Bitmap brush properties.  
   
 ```  
 D2D1_BITMAP_BRUSH_PROPERTIES* m_pBitmapBrushProperties;  
 ```  
   
-##  <a name="operator_id2d1bitmapbrush_star"></a>CD2DBitmapBrush::operator ID2D1BitmapBrush *  
- 返します。 ID2D1BitmapBrush インターフェイス  
+##  <a name="operator_id2d1bitmapbrush_star"></a>  CD2DBitmapBrush::operator ID2D1BitmapBrush*  
+ Returns ID2D1BitmapBrush interface  
   
 ```  
 operator ID2D1BitmapBrush*();
 ```   
   
-### <a name="return-value"></a>戻り値  
- ID2D1BitmapBrush インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1BitmapBrush interface or NULL if object is not initialized yet.  
   
-##  <a name="setbitmap"></a>CD2DBitmapBrush::SetBitmap  
- このブラシを使用して描画するビットマップのソースを指定します  
+##  <a name="setbitmap"></a>  CD2DBitmapBrush::SetBitmap  
+ Specifies the bitmap source that this brush uses to paint  
   
 ```  
 void SetBitmap(CD2DBitmap* pBitmap);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pBitmap`  
- ブラシで使用されるビットマップ ソース  
+ The bitmap source used by the brush  
   
-##  <a name="setextendmodex"></a>CD2DBitmapBrush::SetExtendModeX  
- そのビットマップにまで及ぶが領域が水平方向にタイル ブラシ方法を指定します。  
+##  <a name="setextendmodex"></a>  CD2DBitmapBrush::SetExtendModeX  
+ Specifies how the brush horizontally tiles those areas that extend past its bitmap  
   
 ```  
 void SetExtendModeX(D2D1_EXTEND_MODE extendModeX);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `extendModeX`  
- そのビットマップにまで及ぶが領域が水平方向にタイル ブラシ方法を指定する値  
+ A value that specifies how the brush horizontally tiles those areas that extend past its bitmap  
   
-##  <a name="setextendmodey"></a>CD2DBitmapBrush::SetExtendModeY  
- どのようにブラシ垂直方向に並べて表示そのビットマップにまで及ぶが領域を指定します。  
+##  <a name="setextendmodey"></a>  CD2DBitmapBrush::SetExtendModeY  
+ Specifies how the brush vertically tiles those areas that extend past its bitmap  
   
 ```  
 void SetExtendModeY(D2D1_EXTEND_MODE extendModeY);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `extendModeY`  
- どのようにブラシ垂直方向に並べて表示そのビットマップにまで及ぶが領域を指定する値  
+ A value that specifies how the brush vertically tiles those areas that extend past its bitmap  
   
-##  <a name="setinterpolationmode"></a>CD2DBitmapBrush::SetInterpolationMode  
- ブラシのビットマップを拡大縮小または回転するときに使用する補間モードを指定します  
+##  <a name="setinterpolationmode"></a>  CD2DBitmapBrush::SetInterpolationMode  
+ Specifies the interpolation mode used when the brush bitmap is scaled or rotated  
   
 ```  
 void SetInterpolationMode(D2D1_BITMAP_INTERPOLATION_MODE interpolationMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `interpolationMode`  
- ブラシのビットマップを拡大縮小または回転するときに使用する補間モード  
+ The interpolation mode used when the brush bitmap is scaled or rotated  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

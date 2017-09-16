@@ -1,5 +1,5 @@
 ---
-title: "allocator_newdel クラス |Microsoft Docs"
+title: allocator_newdel Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,15 +9,14 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- allocators::allocator_newdel
 - allocators/stdext::allocators::allocator_newdel
 - allocators/stdext::allocator_newdel
-- allocator_newdel
 - stdext::allocators::allocator_newdel
 dev_langs:
 - C++
 helpviewer_keywords:
-- allocator_newdel class
+- stdext::allocators [C++], allocator_newdel
+- stdext::allocator_newdel
 ms.assetid: 62666cd2-3afe-49f7-9dd1-9bbbb154da98
 caps.latest.revision: 18
 author: corob-msft
@@ -37,38 +36,38 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 45a80316ddd36cccbe5e5aab6757163d45bc2f07
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: dfd1cbb010340c9e89918e241aae3cbdc139f9c6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="allocatornewdel-class"></a>allocator_newdel クラス
-`operator delete` を使用してメモリ ブロックの割り当てを解除し、`operator new` を使用してメモリ ブロックを割り当てるアロケーターを実装します。  
+# <a name="allocatornewdel-class"></a>allocator_newdel Class
+Implements an allocator that uses `operator delete` to deallocate a memory block and `operator new` to allocate a memory block.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Type>  
 class allocator_newdel;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Type`|アロケーターによって割り当てられた要素の型。|  
+|`Type`|The type of elements allocated by the allocator.|  
   
-## <a name="remarks"></a>コメント  
- [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) マクロは、このクラスを次のステートメント内の `name` パラメーターとして渡します: `ALLOCATOR_DECL(CACHE_FREELIST stdext::allocators::max_none), SYNC_DEFAULT, allocator_newdel);`  
+## <a name="remarks"></a>Remarks  
+ The [ALLOCATOR_DECL](../standard-library/allocators-functions.md#allocator_decl) macro passes this class as the `name` parameter in the following statement: `ALLOCATOR_DECL(CACHE_FREELIST stdext::allocators::max_none), SYNC_DEFAULT, allocator_newdel);`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<allocators>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<allocators>  
   
- **名前空間:** stdext  
+ **Namespace:** stdext  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<allocators>](../standard-library/allocators-header.md)
 
 

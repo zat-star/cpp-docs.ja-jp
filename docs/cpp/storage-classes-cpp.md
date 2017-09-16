@@ -1,64 +1,87 @@
 ---
-title: "ストレージ クラス (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "thread_local_cpp"
-  - "external_cpp"
-  - "static_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ストレージ クラス, 基本的な概念"
+title: Storage classes (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- thread_local_cpp
+- external_cpp
+- static_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- storage classes, basic concepts
 ms.assetid: f10e1c56-6249-4eb6-b08f-09ab1eef1992
 caps.latest.revision: 13
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# ストレージ クラス (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 0286098cb87ecfea244269a8e5756829759b82f7
+ms.openlocfilehash: db5a6c23d11f8cdf144e42aee4880ee1ac26066a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
-C\+\+ の変数宣言のコンテキストにおいて、*ストレージ クラス* は、オブジェクトの有効期間、リンケージ、およびメモリの場所を制御する型指定子です。  特定のオブジェクトはストレージ クラスを 1 つのみ持つことができます。  ブロック内で定義された変数は、`extern`、`static`、または `thread_local` 指定子によって指定されていない限り、自動ストレージを持ちます。  自動オブジェクトおよび変数にはリンケージがないため、ブロックの外側のコードには不可視です。  
+---
+# <a name="storage-classes-c"></a>Storage classes (C++)  
   
- **ノート**  
+A *storage class* in the context of C++ variable declarations is a type specifier that governs the lifetime, linkage, and memory location of objects. A given object can have only one storage class. Variables defined within a block have automatic storage unless otherwise specified using the `extern`, `static`, or `thread_local` specifiers. Automatic objects and variables have no linkage; they are not visible to code outside the block.  
   
-1.  [mutable](../cpp/mutable-data-members-cpp.md) キーワードは、ストレージ クラス指定子と見なされることがあります。  ただし、クラス定義のメンバー一覧でのみ使用できます。  
+**Notes**  
   
-2.  [!INCLUDE[cpp_dev10_long](../Token/cpp_dev10_long_md.md)] 以降、`auto` キーワードは C\+\+ のストレージ クラス指定子ではなくなりました。また、`register` キーワードは使用されていません。  
+1.  The [mutable](../cpp/mutable-data-members-cpp.md) keyword may be considered a storage class specifier. However, it is only available in the member list of a class definition.  
   
--   [静的](#static)  
+2.  **Visual C++ 2010 and later:** The `auto` keyword is no longer a C++ storage-class specifier, and the `register` keyword is deprecated. **Visual Studio 2017 version 15.3 and later:** (available with [/std:c++17](../build/reference/std-specify-language-standard-version.md)): The `register` keyword is no longer a supported storage class. The keyword is still reserved in the standard for future use. 
+```cpp
+   register int val; // warning C5033: 'register' is no longer a supported storage class
+```
+
+## <a name="in-this-section"></a>In this section:
   
+-   [static](#static)  
 -   [extern](#extern)  
+-   [thread_local](#thread_local)
+
+<a name="static"></a>
   
--   [thread\_local](#thread_local)  
+## <a name="static"></a>static  
   
-## 静的  
- `static` キーワードを使用すると、変数と関数をグローバル スコープ、名前空間スコープ、およびクラス スコープで宣言することができます。  静的変数は、ローカル スコープでも宣言できます。  
+The `static` keyword can be used to declare variables and functions at global scope, namespace scope, and class scope. Static variables can also be declared at local scope.  
   
- 静的存続期間は、オブジェクトまたは変数がプログラム起動時に割り当てられ、プログラムの終了時に解放されることを意味します。  外部リンケージは、変数が宣言されたファイルの外部から変数名が参照できることを意味します。  逆に、内部リンケージは、変数が宣言されたファイルの外部でその名前を参照できないことを意味します。  既定では、グローバル名前空間で定義されたオブジェクトまたは変数には静的存続期間と外部リンケージがあります。  キーワード `static` は次の状況で使用できます。  
+Static duration means that the object or variable is allocated when the program starts and is deallocated when the program ends. External linkage means that the name of the variable is visible from outside the file in which the variable is declared. Conversely, internal linkage means that the name is not visible outside the file in which the variable is declared. By default, an object or variable that is defined in the global namespace has static duration and external linkage. The `static` keyword can be used in the following situations.  
   
-1.  ファイル スコープ \(グローバル スコープまたは名前空間スコープ、あるいはその両方\) で変数または関数を宣言する場合、`static` キーワードは、変数または関数に内部リンケージがあることを指定します。  変数を宣言すると、変数は静的存続期間が設定され、コンパイラによって 0 に初期化されます \(別の値を指定していない場合\)。  
+1.  When you declare a variable or function at file scope (global and/or namespace scope), the `static` keyword specifies that the variable or function has internal linkage. When you declare a variable, the variable has static duration and the compiler initializes it to 0 unless you specify another value.  
   
-2.  関数で変数を宣言する場合、`static` キーワードは、その関数の呼び出しと呼び出しの間に変数がその状態を保持することを指定します。  
+2.  When you declare a variable in a function, the `static` keyword specifies that the variable retains its state between calls to that function.  
   
-3.  クラス宣言でデータ メンバーを宣言する場合、`static` キーワードは、メンバーの 1 つのコピーがクラスのすべてのインスタンスで共有されることを指定します。  静的データ メンバーはファイル スコープで定義する必要があります。  `const` `static` として宣言した整数データ メンバーには、初期化子を定義できます。  
+3.  When you declare a data member in a class declaration, the `static` keyword specifies that one copy of the member is shared by all instances of the class. A static data member must be defined at file scope. An integral data member that you declare as `const static` can have an initializer.  
   
-4.  クラス宣言でメンバー関数を宣言する場合、`static` キーワードは、関数がクラスのすべてのインスタンスで共有されることを指定します。  静的メンバー関数は、関数に暗黙の `this` ポインターがないため、インスタンス メンバーにアクセスできません。  インスタンス メンバーにアクセスするには、インスタンスのポインターまたは参照であるパラメーターを受け取る関数を宣言します。  
+4.  When you declare a member function in a class declaration, the `static` keyword specifies that the function is shared by all instances of the class. A static member function cannot access an instance member because the function does not have an implicit `this` pointer. To access an instance member, declare the function with a parameter that is an instance pointer or reference.  
   
-5.  共用体のメンバーを static として宣言することはできません。  ただし、グローバルに宣言された匿名共用体は、明示的に `static` として宣言する必要があります。  
+5.  You cannot declare the members of a union as static. However, a globally declared anonymous union must be explicitly declared `static`.  
   
- 次の例では、関数内で `static` として宣言された変数が、その関数の呼び出しと呼び出しの間、どのようにその状態を保持するかを示します。  
+This example shows how a variable declared `static` in a function retains its state between calls to that function.  
   
-```  
+```cpp  
 // static1.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -77,13 +100,17 @@ int main() {
 }  
 ```  
   
-  **nStatic is 0**  
-**nStatic is 1**  
-**nStatic is 3**  
-**nStatic is 6**  
-**nStatic is 10** クラスでの `static` の使用例を次に示します。  
-  
+```Output  
+nStatic is 0  
+nStatic is 1  
+nStatic is 3  
+nStatic is 6  
+nStatic is 10  
 ```  
+  
+This example shows the use of `static` in a class.  
+  
+```cpp  
 // static2.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -116,16 +143,20 @@ int main() {
 }  
 ```  
   
-  **0**  
-**0**  
-**1**  
-**1**  
-**2**  
-**2**  
-**3**  
-**3** 次の例では、メンバー関数内で `static` として宣言されたローカル変数を示します。  静的変数は、プログラム全体で使用できます。型のすべてのインスタンスは、静的変数の同じコピーを共有します。  
-  
+```Output  
+0  
+0  
+1  
+1  
+2  
+2  
+3  
+3  
 ```  
+  
+This example shows a local variable declared `static` in a member function. The static variable is available to the whole program; all instances of the type share the same copy of the static variable.  
+  
+```cpp  
 // static3.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -150,82 +181,89 @@ int main() {
 }  
 ```  
   
-  **var \!\= value**  
-**var \=\= value** C\+\+11 以降では、静的ローカル変数の初期化はスレッド セーフであることが保証されています。  この機能は、*静的マジック*と呼ばれることがあります。  ただし、マルチスレッド アプリケーションでは、後続の割り当てはすべて同期する必要があります。  CRT の依存関係を避けるには、\/Zc:threadSafeInit\-フラグを使用してスレッド セーフな静的変数の機能を無効にできます。  
-  
-## extern  
- `extern` として宣言されたオブジェクトと変数は、別の翻訳単位または外側のスコープで定義されているオブジェクトを、外部リンケージを持つものとして宣言します。  
-  
- **const** 変数を `extern` ストレージ クラスと共に宣言すると、変数は強制的に外部リンケージを持つことになります。  **extern const** 変数の初期化は、定義の翻訳単位で許可されます。  定義している翻訳単位以外の翻訳単位の初期化は未定義の結果になります。  詳細については、「[extern を使用したリンケージの指定](../cpp/using-extern-to-specify-linkage.md)」を参照してください。  
-  
- 次のコードは、2 つの `extern` 宣言、`DefinedElsewhere` \(別の翻訳単位で定義された名前を参照する\) と `DefinedHere` \(外側のスコープで定義された名前を参照する\) を示しています。  
-  
+```Output  
+var != value  
+var == value  
 ```  
+  
+Starting in C++11, a static local variable initialization is guaranteed to be thread-safe. This feature is sometimes called *magic statics*. However, in a multithreaded application all subsequent assignments must be synchronized. The thread-safe static initialization feature can be disabled by using the [/Zc:threadSafeInit-](../build/reference/zc-threadsafeinit-thread-safe-local-static-initialization.md) flag to avoid taking a dependency on the CRT.  
+  
+<a name="extern"></a>  
+  
+## <a name="extern"></a>extern  
+  
+Objects and variables declared as `extern` declare an object that is defined in another translation unit or in an enclosing scope as having external linkage.  
+  
+Declaration of `const` variables with the `extern` storage class forces the variable to have external linkage. An initialization of an `extern const` variable is allowed in the defining translation unit. Initializations in translation units other than the defining translation unit produce undefined results. For more information, see [Using extern to Specify Linkage](../cpp/using-extern-to-specify-linkage.md)  
+  
+The following code shows two `extern` declarations, `DefinedElsewhere` (which refers to a name defined in a different translation unit) and `DefinedHere` (which refers to a name defined in an enclosing scope):  
+  
+```cpp  
 // external.cpp  
-// defined in another translation unit  
+// DefinedElsewhere is defined in another translation unit  
 extern int DefinedElsewhere;     
 int main() {  
    int DefinedHere;   
    {  
       // refers to DefinedHere in the enclosing scope  
       extern int DefinedHere;  
-    }  
+   }  
 }  
 ```  
   
-## thread\_local \(C\+\+11\)  
- `thread_local` 指定子で宣言された変数は、それが作成されたスレッドでのみアクセスできます。  変数は、スレッドが作成されるときに作成され、スレッドが破棄されるときに破棄されます。  各スレッドには、それ自体の変数のコピーがあります。  Windows では、`thread_local` は Microsoft 固有の [\_\_declspec\( thread \)](../cpp/thread.md) 属性と機能的に同等です。  
+<a name="thread_local"></a>  
   
-```  
-thread_local float f = 42.0; //global namespace  
+## <a name="threadlocal-c11"></a>thread_local (C++11)  
   
-struct C // cannot be applied to type definition  
+A variable declared with the `thread_local` specifier is accessible only on the thread on which it is created. The variable is created when the thread is created, and destroyed when the thread is destroyed. Each thread has its own copy of the variable. On Windows, `thread_local` is functionally equivalent to the Microsoft-specific [__declspec( thread )](../cpp/thread.md) attribute.  
+  
+```cpp  
+thread_local float f = 42.0; // Global namespace. Not implicitly static.
+  
+struct S // cannot be applied to type definition  
 {  
-thread_local int i; //local  
-thread_local static char buf[10]; // local and static  
+    thread_local int i; // Illegal. The member must be static.  
+    thread_local static char buf[10]; // OK 
 };  
   
 void DoSomething()  
 {  
-thread_local C my_struct; // Apply  thread_local to a variable  
+    // Apply thread_local to a local variable.
+    // Implicitly "thread_local static S my_struct".
+    thread_local S my_struct;  
 }  
 ```  
   
-1.  thread\_local 指定子は、`static` または `extern` と組み合わせることができます。  
+Things to note about the `thread_local` specifier:  
   
-2.  `thread_local` は、データの宣言と定義にのみ適用できます。**thread\_local** は、関数の宣言または定義では使用できません。  
+-  The `thread_local` specifier may be combined with `static` or `extern`.  
   
-3.  `thread_local` を使用すると、DLL のインポートの[遅延読み込み](../build/reference/linker-support-for-delay-loaded-dlls.md)と干渉することがあります**。**  
+-  You can apply `thread_local` only to data declarations and definitions; `thread_local` cannot be used on function declarations or definitions.  
   
-4.  XP システムでは、DLL が `thread_local` のデータを使用して、データが LoadLibrary 経由で動的に読み込まれる場合、`thread_local` は正常に機能しないことがあります。  
+-  The use of `thread_local` may interfere with [delay loading](../build/reference/linker-support-for-delay-loaded-dlls.md) of DLL imports. 
   
-5.  `thread_local` は、静的ストレージ存続期間のあるデータ項目にのみ指定できます。  これには、グローバルなデータ オブジェクト \(**static** と `extern` の両方\)、ローカルな静的オブジェクト、クラスの静的データ メンバーなどが含まれます。  **thread\_local** を使用して自動データ オブジェクトを宣言することはできません。  
+-  On XP systems, `thread_local` may not function correctly if a DLL uses `thread_local` data and it is loaded dynamically via `LoadLibrary`.  
   
-6.  宣言と定義が同じファイルと別々のファイルのどちらで発生する場合でも、スレッド ローカル オブジェクトの宣言と定義には `thread_local` を使用する必要があります。  
+-  You can specify `thread_local` only on data items with static storage duration. This includes global data objects (both `static` and `extern`), local static objects, and static data members of classes. Any local variable declared `thread_local` is implicitly static if no other storage class is provided; in other words, at block scope `thread_local` is equivalent to `thread_local static`. 
   
- Windows では、`thread_local` は [\_\_declspec\(thread\)](../cpp/thread.md) と機能的に同等です。ただし、\_\_declspec\(thread\) が型定義に適用できる点および C コードで有効である点は除きます。  `thread_local` は C\+\+ 標準の一部であり、移植性がより高いため、できるだけ常にこれを使用してください。  
+-  You must specify `thread_local` for both the declaration and the definition of a thread local object, whether the declaration and definition occur in the same file or separate files.  
   
- 詳細については、「[スレッド ローカル ストレージ \(TLS: Thread Local Storage\)](../parallel/thread-local-storage-tls.md)」を参照してください。  
+On Windows, `thread_local` is functionally equivalent to  [__declspec(thread)](../cpp/thread.md) except that `__declspec(thread)` can be applied to a type definition and is valid in C code. Whenever possible, use `thread_local` because it is part of the C++ standard and is therefore more portable.  
   
-## register  
- C\+\+11 では、**register** キーワードは使用されていません。  可能であれば、変数をコンピューターのレジスタに格納するように指定します。  レジスタ ストレージ クラスで宣言できるのは、関数の引数とローカル変数だけです。  
+##  <a name="register"></a>  register  
+**Visual Studio 2017 version 15.3 and later** (available with [/std:c++17](../build/reference/std-specify-language-standard-version.md)): The `register` keyword is no longer a supported storage class. The keyword is still reserved in the standard for future use. 
+
+```cpp
+   register int val; // warning C5033: 'register' is no longer a supported storage class
+```
+
+## <a name="example-automatic-vs-static-initialization"></a>Example: automatic vs. static initialization  
   
-```  
-register int num;  
-```  
+A local automatic object or variable is initialized every time the flow of control reaches its definition. A local static object or variable is initialized the first time the flow of control reaches its definition.  
   
- 自動変数と同様、レジスタ変数は、それが宣言されたブロックの終わりまで保持されます。  
+Consider the following example, which defines a class that logs initialization and destruction of objects and then defines three objects, `I1`, `I2`, and `I3`:  
   
- コンパイラは、レジスタ変数に対するユーザーの要求を考慮しません。代わりに、グローバル最適化が有効な場合は独自にレジスタを選択します。  ただし、[register](http://msdn.microsoft.com/ja-jp/5b66905a-2f7f-4918-bb55-5e66d4bc50f9) キーワードに関連付けられた他のすべてのセマンティクスはコンパイラによって実行されます。  
-  
- register を使用して宣言されたオブジェクトでアドレス演算子 \(**&**\) を使用する場合、コンパイラは、レジスタではなく、メモリにオブジェクトを配置する必要があります。  
-  
-## 例: 自動的な初期化と静的な初期化  
- ローカル自動オブジェクトまたは変数が、制御フローが定義に到達するたびに初期化されます。  ローカル静的オブジェクトまたは変数が、最初に制御フローが定義に到達すると初期化されます。  
-  
- オブジェクトの初期化と破棄をログに記録するクラスを定義し、`I1`、`I2`、および `I3` の 3 つのオブジェクトを定義する、次の例を考えます。  
-  
-```  
+```cpp  
 // initialization_of_objects.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -235,65 +273,74 @@ using namespace std;
 // Define a class that logs initializations and destructions.  
 class InitDemo {  
 public:  
-   InitDemo( const char *szWhat );  
-   ~InitDemo();  
+    InitDemo( const char *szWhat );  
+    ~InitDemo();  
   
 private:  
-   char *szObjName;  
-   size_t sizeofObjName;  
+    char *szObjName;  
+    size_t sizeofObjName;  
 };  
   
 // Constructor for class InitDemo  
 InitDemo::InitDemo( const char *szWhat ) :  
-   szObjName(NULL), sizeofObjName(0) {  
-   if( szWhat != 0 && strlen( szWhat ) > 0 ) {  
-      // Allocate storage for szObjName, then copy  
-      // initializer szWhat into szObjName, using  
-      // secured CRT functions.  
-      sizeofObjName = strlen( szWhat ) + 1;  
+    szObjName(NULL), sizeofObjName(0) {  
+    if ( szWhat != 0 && strlen( szWhat ) > 0 ) {  
+        // Allocate storage for szObjName, then copy  
+        // initializer szWhat into szObjName, using  
+        // secured CRT functions.  
+        sizeofObjName = strlen( szWhat ) + 1;  
   
-      szObjName = new char[ sizeofObjName ];  
-      strcpy_s( szObjName, sizeofObjName, szWhat );  
+        szObjName = new char[ sizeofObjName ];  
+        strcpy_s( szObjName, sizeofObjName, szWhat );  
   
-      cout << "Initializing: " << szObjName << "\n";  
-   }  
-   else  
-      szObjName = 0;  
+        cout << "Initializing: " << szObjName << "\n";  
+    }  
+    else {  
+        szObjName = 0;  
+    }
 }  
   
 // Destructor for InitDemo  
 InitDemo::~InitDemo() {  
-   if( szObjName != 0 ) {  
-      cout << "Destroying: " << szObjName << "\n";  
-      delete szObjName;  
-   }  
+    if( szObjName != 0 ) {  
+        cout << "Destroying: " << szObjName << "\n";  
+        delete szObjName;  
+    }  
 }  
   
 // Enter main function  
 int main() {  
-   InitDemo I1( "Auto I1" ); {  
-      cout << "In block.\n";  
-      InitDemo I2( "Auto I2" );  
-      static InitDemo I3( "Static I3" );  
-   }  
-   cout << "Exited block.\n";  
+    InitDemo I1( "Auto I1" ); {  
+        cout << "In block.\n";  
+        InitDemo I2( "Auto I2" );  
+        static InitDemo I3( "Static I3" );  
+    }  
+    cout << "Exited block.\n";  
 }  
 ```  
   
-  **初期化: Auto I1**   
-**In ブロック。  初期化: Auto I2**   
-**初期化: Static I3**   
-**破棄: Auto I2**   
-**Exited ブロック。  破棄: Auto I1**   
-**破棄: 静的 I3**  前のコードは、オブジェクト `I1`、`I2`、および `I3` がいつどのように初期化および破棄されるかを示します。  
+```Output  
+Initializing: Auto I1  
+In block.  
+Initializing: Auto I2  
+Initializing: Static I3  
+Destroying: Auto I2  
+Exited block.  
+Destroying: Auto I1  
+Destroying: Static I3  
+```  
   
- プログラムについていくつか注意点があります。  
+This example demonstrates how and when the objects `I1`, `I2`, and `I3` are initialized and when they are destroyed.  
   
- 最初に、制御フローが `I1` と `I2` を定義しているブロックを終了すると、これらは自動的に破棄されます。  
+There are several points to note about the program:  
   
- 次に、C\+\+ では、ブロックの先頭でオブジェクトや変数を宣言する必要はありません。  さらに、これらのオブジェクトは、制御フローが定義に到達した場合にのみ初期化されます   \(このような定義には、`I2` や `I3` などがあります\)。 出力は、これらがいつ初期化されるかを正確に示します。  
+- First, `I1` and `I2` are automatically destroyed when the flow of control exits the block in which they are defined.  
   
- 最後に、`I3` などの静的ローカル変数は、プログラム実行中は値が保持されますが、プログラムが終了すると破棄されます。  
+- Second, in C++, it is not necessary to declare objects or variables at the beginning of a block. Furthermore, these objects are initialized only when the flow of control reaches their definitions. (`I2` and `I3` are examples of such definitions.) The output shows exactly when they are initialized.  
   
-## 参照  
- [宣言と定義](../cpp/declarations-and-definitions-cpp.md)
+- Finally, static local variables such as `I3` retain their values for the duration of the program, but are destroyed as the program terminates.  
+  
+## <a name="see-also"></a>See Also  
+  
+ [Declarations and Definitions](../cpp/declarations-and-definitions-cpp.md)
+

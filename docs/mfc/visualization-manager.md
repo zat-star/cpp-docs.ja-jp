@@ -1,86 +1,105 @@
 ---
-title: "ビジュアル マネージャー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビジュアル マネージャー"
+title: Visualization Manager | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Visualization Manager
 ms.assetid: c9dd1365-27ac-42e5-8caa-1004525b4129
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# ビジュアル マネージャー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 263fd911d68d6b179ee110594e4b8ed855b69473
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ビジュアル マネージャーは、アプリケーション全体の外観を制御するオブジェクトです。  単一のクラスとして動作し、これにアプリケーションの描画コードをすべて配置できます。  MFC ライブラリには、複数のビジュアル マネージャーがあります。  アプリケーションのカスタム ビューを作成する場合、独自のビジュアル マネージャーも作成できます。  異なるビジュアル マネージャーが有効になっている同じアプリケーションを次の図に示します。  
+---
+# <a name="visualization-manager"></a>Visualization Manager
+The visual manager is an object that controls the appearance of a whole application. It acts as a single class where you can put all the drawing code for your application. The MFC Library includes several visual managers. You can also create your own visual manager if you want to create a custom view for your application. The following images show the same application when different visual managers are enabled:  
   
- ![CMFCVisualManagerWindows で表示された MyApp](../Image/VMWindows.png "VMWindows")  
-CMFCVisualManagerWindows ビジュアル マネージャーを使用する MyApp  
+ ![MyApp as rendered by CMFCVisualManagerWindows](../mfc/media/vmwindows.png "vmwindows")  
+MyApp that uses the CMFCVisualManagerWindows visual manager  
   
- ![CMFCVisualManagerVS2005 で表示された MyApp](../mfc/media/vmvs2005.png "VMVS2005")  
-CMFCVisualManagerVS2005 ビジュアル マネージャーを使用する MyApp  
+ ![MyApp as rendered by CMFCVisualManagerVS2005](../mfc/media/vmvs2005.png "vmvs2005")  
+MyApp that uses the CMFCVisualManagerVS2005 visual manager  
   
- ![CMFCVisualManagerOfficeXP で表示された MyApp](../mfc/media/vmofficexp.png "VMOfficeXP")  
-CMFCVisualManagerOfficeXP ビジュアル マネージャーを使用する MyApp  
+ ![MyApp as rendered by CMFCVisualManagerOfficeXP](../mfc/media/vmofficexp.png "vmofficexp")  
+MyApp that uses the CMFCVisualManagerOfficeXP visual manager  
   
- ![CMFCVisualManagerOffice2003 で表示された MyApp](../mfc/media/vmoffice2003.png "VMOffice2003")  
-CMFCVisualManagerOffice2003 ビジュアル マネージャーを使用する MyApp  
+ ![MyApp as rendered by CMFCVisualManagerOffice2003](../mfc/media/vmoffice2003.png "vmoffice2003")  
+MyApp that uses the CMFCVisualManagerOffice2003 visual manager  
   
- ![CMFCVisualManagerOffice2007 で表示された MyApp](../mfc/media/msoffice2007.png "MSOffice2007")  
-CMFCVisualManagerOffice2007 ビジュアル マネージャーを使用する MyApp  
+ ![MyApp as rendered by CMFCVisualManagerOffice2007](../mfc/media/msoffice2007.png "msoffice2007")  
+MyApp that uses the CMFCVisualManagerOffice2007 visual manager  
   
- 既定では、ビジュアル マネージャーは複数の GUI 要素の描画コードを保持します。  カスタム UI 要素を用意するには、ビジュアル マネージャーの関連する描画メソッドをオーバーライドする必要があります。  これらのメソッドの一覧については、「[CMFCVisualManager クラス](../mfc/reference/cmfcvisualmanager-class.md)」を参照してください。  独自の外観を用意するためにオーバーライドできるメソッドはすべて `OnDraw` で始まるメソッドです。  
+ By default, the visual manager maintains the drawing code for several GUI elements. To provide custom UI elements, you need to override the related drawing methods of the visual manager. For the list of these methods, see [CMFCVisualManager Class](../mfc/reference/cmfcvisualmanager-class.md). The methods that you can override to provide a custom appearance are all the methods that start with `OnDraw`.  
   
- アプリケーションが保持できる `CMFCVisualManager` オブジェクトは 1 つだけです。  アプリケーションのビジュアル マネージャーへのポインターを取得するには、静的関数である [CMFCVisualManager::GetInstance](../Topic/CMFCVisualManager::GetInstance.md) を呼び出します。  すべてのビジュアル マネージャーは `CMFCVisualManager` を継承するので、カスタム ビジュアル マネージャーを作成した場合でも、`CMFCVisualManager::GetInstance` メソッドで該当するビジュアル マネージャーへのポインターを取得できます。  
+ Your application can have only one `CMFCVisualManager` object. To obtain a pointer to the visual manager for your application, call the static function [CMFCVisualManager::GetInstance](../mfc/reference/cmfcvisualmanager-class.md#getinstance). Because all visual managers inherit from `CMFCVisualManager`, the `CMFCVisualManager::GetInstance` method will get a pointer to the appropriate visual manager, even if you create a custom visual manager.  
   
- カスタム ビジュアル マネージャーを作成する場合、既に存在するビジュアル マネージャーから派生させる必要があります。  派生元の既定のクラスは `CMFCVisualManager` です。  ただし、別のビジュアル マネージャーがアプリケーションと類似している場合、そのビジュアル マネージャーを派生元として使用できます。  たとえば、`CMFCVisualManagerOffice2007` ビジュアル マネージャーを使用する場合で、区分線の外観のみを変更する場合は、`CMFCVisualManagerOffice2007` からカスタム クラスを派生させることができます。  このシナリオでは、区分線を描画するメソッドのみオーバーライドする必要があります。  
+ If you want to create a custom visual manager, you must derive it from a visual manager that already exists. The default class to derive from is `CMFCVisualManager`. However, you can use a different visual manager if it better resembles what you want for your application. For example, if you wanted to use the `CMFCVisualManagerOffice2007` visual manager, but wanted only to change how separators look, you could derive your custom class from `CMFCVisualManagerOffice2007`. In this scenario, you should overwrite only the methods for drawing separators.  
   
- アプリケーションで特定のビジュアル マネージャーを使用する方法は 2 つあります。  1 つは、[CMFCVisualManager::SetDefaultManager](../Topic/CMFCVisualManager::SetDefaultManager.md) メソッドを呼び出し、該当するビジュアル マネージャーをパラメーターとして渡す方法です。  このメソッドにより `CMFCVisualManagerVS2005` ビジュアル マネージャーを使用する方法を次のコード例に示します。  
+ There are two possible ways to use a specific visual manager for your application. One way is to call the [CMFCVisualManager::SetDefaultManager](../mfc/reference/cmfcvisualmanager-class.md#setdefaultmanager) method and pass the appropriate visual manager as a parameter. The following code example shows how you would use the `CMFCVisualManagerVS2005` visual manager with this method:  
   
 ```  
-CMFCVisualManager::SetDefaultManager (RUNTIME_CLASS (CMFCVisualManagerVS2005));  
+CMFCVisualManager::SetDefaultManager (RUNTIME_CLASS (CMFCVisualManagerVS2005));
 ```  
   
- アプリケーションでビジュアル マネージャーを使用するもう 1 つの方法は、ビジュアル マネージャーを手動で作成する方法です。  アプリケーションはこの新しいビジュアル マネージャーを使用してすべての描画処理を実行します。  ただし、使用できる `CMFCVisualManager` オブジェクトはアプリケーションにつき 1 つのみであるため、新しいビジュアル マネージャーを作成する前に、現在のビジュアル マネージャーを削除する必要があります。  次の例の `CMyVisualManager` は、`CMFCVisualManager` から派生させたカスタム ビジュアル マネージャーです。  以下のメソッドは、インデックスに基づいて、アプリケーションを表示するのに使用するビジュアル マネージャーを変更します。  
+ The other way to use a visual manager in your application is to create it manually. The application will then use this new visual manager for all the rendering. However, because there can be only one `CMFCVisualManager` object per application, you will have to delete the current visual manager before you create a new one. In the following example, `CMyVisualManager` is a custom visual manager that is derived from `CMFCVisualManager`. The following method will change what visual manager is used to display your application, depending on an index:  
   
 ```  
 void CMyApp::SetSkin (int index)  
 {  
-   if (CMFCVisualManager::GetInstance() != NULL)  
-   {  
-      delete CMFCVisualManager::GetInstance();  
-   }  
-  
-   switch (index)  
-   {  
-   case DEFAULT_STYLE:  
-      // The following statement creates a new CMFCVisualManager  
-      CMFCVisualManager::GetInstance();  
-      break;  
-  
-   case CUSTOM_STYLE:  
-      new CMyVisualManager;  
-      break;  
-  
-   default:  
-      CMFCVisualManager::GetInstance();  
-      break;  
-   }  
-  
-   CMFCVisualManager::GetInstance()->RedrawAll();  
-}  
+    if (CMFCVisualManager::GetInstance() != NULL)  
+ {  
+    delete CMFCVisualManager::GetInstance();
+
+ }  
+ 
+    switch (index)  
+ {  
+    case DEFAULT_STYLE: *// The following statement creates a new CMFCVisualManager  
+    CMFCVisualManager::GetInstance();
+break;  
+ 
+    case CUSTOM_STYLE:  
+    new CMyVisualManager;  
+    break; 
+ 
+    default: 
+    CMFCVisualManager::GetInstance();
+break;  
+ }  
+ 
+    CMFCVisualManager::GetInstance()->RedrawAll();
+
+} 
 ```  
   
-## 参照  
- [ユーザー インターフェイス要素](../mfc/user-interface-elements-mfc.md)   
- [CMFCVisualManager クラス](../mfc/reference/cmfcvisualmanager-class.md)
+## <a name="see-also"></a>See Also  
+ [User Interface Elements](../mfc/user-interface-elements-mfc.md)   
+ [CMFCVisualManager Class](../mfc/reference/cmfcvisualmanager-class.md)
+

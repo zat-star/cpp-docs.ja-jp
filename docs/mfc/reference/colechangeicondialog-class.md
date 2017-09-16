@@ -1,5 +1,5 @@
 ---
-title: "メンバー クラス |Microsoft ドキュメント"
+title: COleChangeIconDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,11 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- OLE dialog boxes, Change Icon
-- OLE Change Icon dialog box
-- dialog boxes, OLE
-- COleChangeIconDialog class
-- Change Icon dialog box
+- COleChangeIconDialog [MFC], COleChangeIconDialog
+- COleChangeIconDialog [MFC], DoChangeIcon
+- COleChangeIconDialog [MFC], DoModal
+- COleChangeIconDialog [MFC], GetIconicMetafile
+- COleChangeIconDialog [MFC], m_ci
 ms.assetid: 8d6e131b-ddbb-4dff-a432-f239efda8e3d
 caps.latest.revision: 22
 author: mikeblome
@@ -43,52 +43,52 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 07dfd7995bbbdb0f52f55dceedc318d8d702111b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b6ca28776cee2190380b370a121b918308635e19
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="colechangeicondialog-class"></a>メンバー クラス
-OLE の [アイコンの変更] ダイアログ ボックスに使用します。  
+# <a name="colechangeicondialog-class"></a>COleChangeIconDialog Class
+Used for the OLE Change Icon dialog box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleChangeIconDialog : public COleDialog  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleChangeIconDialog::COleChangeIconDialog](#colechangeicondialog)|`COleChangeIconDialog` オブジェクトを構築します。|  
+|[COleChangeIconDialog::COleChangeIconDialog](#colechangeicondialog)|Constructs a `COleChangeIconDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleChangeIconDialog::DoChangeIcon](#dochangeicon)|ダイアログ ボックスで指定した変更を実行します。|  
-|[COleChangeIconDialog::DoModal](#domodal)|OLE 2 変更 ダイアログ ボックスが表示されます。|  
-|[COleChangeIconDialog::GetIconicMetafile](#geticonicmetafile)|この項目のアイコン形式に関連付けられているメタファイルを識別するハンドルを取得します。|  
+|[COleChangeIconDialog::DoChangeIcon](#dochangeicon)|Performs the change specified in the dialog box.|  
+|[COleChangeIconDialog::DoModal](#domodal)|Displays the OLE 2 Change Icon dialog box.|  
+|[COleChangeIconDialog::GetIconicMetafile](#geticonicmetafile)|Gets a handle to the metafile associated with the iconic form of this item.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleChangeIconDialog::m_ci](#m_ci)|ダイアログ ボックスの動作を制御する構造体。|  
+|[COleChangeIconDialog::m_ci](#m_ci)|A structure that controls the behavior of the dialog box.|  
   
-## <a name="remarks"></a>コメント  
- クラスのオブジェクトを作成`COleChangeIconDialog`このダイアログ ボックスを呼び出そうとするとします。 後に、`COleChangeIconDialog`使用すると、オブジェクトが構築された、[各](#m_ci)値やダイアログ ボックスのコントロールの状態を初期化するためにします。 `m_ci`型の構造は、 **OLEUICHANGEICON**します。 このダイアログ ボックスの使い方の詳細については、次を参照してください。、 [DoModal](#domodal)メンバー関数。  
+## <a name="remarks"></a>Remarks  
+ Create an object of class `COleChangeIconDialog` when you want to call this dialog box. After a `COleChangeIconDialog` object has been constructed, you can use the [m_ci](#m_ci) structure to initialize the values or states of controls in the dialog box. The `m_ci` structure is of type **OLEUICHANGEICON**. For more information about using this dialog class, see the [DoModal](#domodal) member function.  
   
- 詳細については、次を参照してください。、 [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098) structure in the Windows SDK.  
   
- OLE 固有のダイアログ ボックスの詳細については、記事を参照してください。 [OLE のダイアログ ボックス](../../mfc/dialog-boxes-in-ole.md)します。  
+ For more information about OLE-specific dialog boxes, see the article [Dialog Boxes in OLE](../../mfc/dialog-boxes-in-ole.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -99,15 +99,15 @@ class COleChangeIconDialog : public COleDialog
   
  [CCommonDialog](../../mfc/reference/ccommondialog-class.md)  
   
- [関数](../../mfc/reference/coledialog-class.md)  
+ [COleDialog](../../mfc/reference/coledialog-class.md)  
   
  `COleChangeIconDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxodlgs.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxodlgs.h  
   
-##  <a name="colechangeicondialog"></a>COleChangeIconDialog::COleChangeIconDialog  
- この関数はのみ、`COleChangeIconDialog`オブジェクトです。  
+##  <a name="colechangeicondialog"></a>  COleChangeIconDialog::COleChangeIconDialog  
+ This function constructs only a `COleChangeIconDialog` object.  
   
 ```  
 explicit COleChangeIconDialog(
@@ -116,90 +116,90 @@ explicit COleChangeIconDialog(
     CWnd* pParentWnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pItem`  
- 変換する項目へのポインター。  
+ Points to the item to be converted.  
   
  `dwFlags`  
- 作成フラグは、次の値の任意の数が含まれていますが、ビットごとの使用を組み合わせるの or 演算子。  
+ Creation flag, which contains any number of the following values combined using the bitwise-or operator:  
   
-- **CIF_SELECTCURRENT** ] ダイアログ ボックスが呼び出されたときに、[現在のラジオ ボタンをクリックした状態を指定します。 既定値です。  
+- **CIF_SELECTCURRENT** Specifies that the Current radio button will be selected initially when the dialog box is called. This is the default.  
   
-- **CIF_SELECTDEFAULT** ] ダイアログ ボックスが呼び出されたときに、[既定のオプション ボタンをクリックした状態を指定します。  
+- **CIF_SELECTDEFAULT** Specifies that the Default radio button will be selected initially when the dialog box is called.  
   
-- **CIF_SELECTFROMFILE**  ダイアログ ボックスが呼び出されたときに、ファイルから ラジオ ボタンをクリックした状態を指定します。  
+- **CIF_SELECTFROMFILE** Specifies that the From File radio button will be selected initially when the dialog box is called.  
   
-- **CIF_SHOWHELP**  ダイアログ ボックスが呼び出されたときに、ヘルプ ボタンを表示するように指定します。  
+- **CIF_SHOWHELP** Specifies that the Help button will be displayed when the dialog box is called.  
   
-- **CIF_USEICONEXE**で指定された実行可能ファイルからアイコンを抽出することを指定、 **szIconExe**フィールド[各](#m_ci)の代わりに、型から取得します。 これは、埋め込みまたは非 OLE ファイルにリンクするのに便利です。  
+- **CIF_USEICONEXE** Specifies that the icon should be extracted from the executable specified in the **szIconExe** field of [m_ci](#m_ci) instead of retrieved from the type. This is useful for embedding or linking to non-OLE files.  
   
  `pParentWnd`  
- 親またはオーナー ウィンドウのオブジェクトを指します (型の`CWnd`) ダイアログ オブジェクトが属しています。 ある場合**NULL**、ダイアログ ボックスの親ウィンドウは、アプリケーションのメイン ウィンドウに設定されます。  
+ Points to the parent or owner window object (of type `CWnd`) to which the dialog object belongs. If it is **NULL**, the parent window of the dialog box will be set to the main application window.  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスを表示するには[DoModal](#domodal)関数です。  
+### <a name="remarks"></a>Remarks  
+ To display the dialog box, call the [DoModal](#domodal) function.  
   
- 詳細については、次を参照してください。、 [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098) structure in the Windows SDK.  
   
-##  <a name="dochangeicon"></a>COleChangeIconDialog::DoChangeIcon  
- 後のダイアログ ボックスで選択した項目を表すアイコンを変更するには、この関数を呼び出す[DoModal](#domodal)返します**IDOK**します。  
+##  <a name="dochangeicon"></a>  COleChangeIconDialog::DoChangeIcon  
+ Call this function to change the icon representing the item to the one selected in the dialog box after [DoModal](#domodal) returns **IDOK**.  
   
 ```  
 BOOL DoChangeIcon(COleClientItem* pItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pItem`  
- そのアイコンを変更する項目へのポインター。  
+ Points to the item whose icon is changing.  
   
-### <a name="return-value"></a>戻り値  
- 変更が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if change is successful; otherwise 0.  
   
-##  <a name="domodal"></a>COleChangeIconDialog::DoModal  
- OLE の [アイコンの変更] ダイアログ ボックスを表示するには、この関数を呼び出します。  
+##  <a name="domodal"></a>  COleChangeIconDialog::DoModal  
+ Call this function to display the OLE Change Icon dialog box.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ダイアログ ボックスの終了ステータスです。 次のいずれかの値です。  
+### <a name="return-value"></a>Return Value  
+ Completion status for the dialog box. One of the following values:  
   
-- **IDOK**  ダイアログ ボックスが正常に表示された場合。  
+- **IDOK** if the dialog box was successfully displayed.  
   
-- **IDCANCEL**場合は、ユーザーがダイアログ ボックスをキャンセルします。  
+- **IDCANCEL** if the user canceled the dialog box.  
   
-- **IDABORT**場合はエラーが発生しました。 場合**IDABORT**は呼び出しが返される、`COleDialog::GetLastError`の詳細については、発生したエラーの種類を取得します。 考えられるエラーの一覧については、次を参照してください。、 [OleUIChangeIcon](http://msdn.microsoft.com/library/windows/desktop/ms688307)で機能、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+- **IDABORT** if an error occurred. If **IDABORT** is returned, call the `COleDialog::GetLastError` member function to get more information about the type of error that occurred. For a listing of possible errors, see the [OleUIChangeIcon](http://msdn.microsoft.com/library/windows/desktop/ms688307) function in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- メンバーを設定して、さまざまなダイアログ ボックス コントロールを初期化する場合、[各](#m_ci)構造体を呼び出す前に、これを行う必要があります`DoModal`はダイアログ オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ If you want to initialize the various dialog box controls by setting members of the [m_ci](#m_ci) structure, you should do this before calling `DoModal`, but after the dialog object is constructed.  
   
- 場合`DoModal`返します**IDOK**、他のメンバーの設定やユーザー ダイアログ ボックスに入力した情報を取得する関数を呼び出すことができます。  
+ If `DoModal` returns **IDOK**, you can call other member functions to retrieve the settings or information that was input by the user into the dialog box.  
   
-##  <a name="geticonicmetafile"></a>COleChangeIconDialog::GetIconicMetafile  
- 選択した項目のアイコンの外観を持つメタファイルを識別するハンドルを取得するには、この関数を呼び出します。  
+##  <a name="geticonicmetafile"></a>  COleChangeIconDialog::GetIconicMetafile  
+ Call this function to get a handle to the metafile that contains the iconic aspect of the selected item.  
   
 ```  
 HGLOBAL GetIconicMetafile() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択してダイアログ ボックスを閉じた場合は、新しいアイコンのアイコンの外観を持つメタファイルを識別するハンドル**OK**、それ以外とアイコンが、ダイアログ ボックスが表示される前にします。  
+### <a name="return-value"></a>Return Value  
+ The handle to the metafile containing the iconic aspect of the new icon, if the dialog box was dismissed by choosing **OK**; otherwise, the icon as it was before the dialog was displayed.  
   
-##  <a name="m_ci"></a>COleChangeIconDialog::m_ci  
- 型の構造体**OLEUICHANGEICON**アイコンの変更 ダイアログ ボックスの動作を制御するために使用します。  
+##  <a name="m_ci"></a>  COleChangeIconDialog::m_ci  
+ Structure of type **OLEUICHANGEICON** used to control the behavior of the Change Icon dialog box.  
   
 ```  
 OLEUICHANGEICON m_ci;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この構造体のメンバーは、直接またはメンバー関数のいずれかに変更できます。  
+### <a name="remarks"></a>Remarks  
+ Members of this structure can be modified either directly or through member functions.  
   
- 詳細については、次を参照してください。、 [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [OLEUICHANGEICON](http://msdn.microsoft.com/library/windows/desktop/ms680098) structure in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [関数のクラス](../../mfc/reference/coledialog-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/coledialog-class.md)
+## <a name="see-also"></a>See Also  
+ [COleDialog Class](../../mfc/reference/coledialog-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleDialog Class](../../mfc/reference/coledialog-class.md)
 

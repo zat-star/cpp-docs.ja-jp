@@ -1,5 +1,5 @@
 ---
-title: "CMFCFilterChunkValueImpl クラス |Microsoft ドキュメント"
+title: CMFCFilterChunkValueImpl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,7 +34,26 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCFilterChunkValueImpl class
+- CMFCFilterChunkValueImpl [MFC], CMFCFilterChunkValueImpl
+- CMFCFilterChunkValueImpl [MFC], Clear
+- CMFCFilterChunkValueImpl [MFC], CopyChunk
+- CMFCFilterChunkValueImpl [MFC], CopyFrom
+- CMFCFilterChunkValueImpl [MFC], GetChunkGUID
+- CMFCFilterChunkValueImpl [MFC], GetChunkPID
+- CMFCFilterChunkValueImpl [MFC], GetChunkType
+- CMFCFilterChunkValueImpl [MFC], GetString
+- CMFCFilterChunkValueImpl [MFC], GetValue
+- CMFCFilterChunkValueImpl [MFC], GetValueNoAlloc
+- CMFCFilterChunkValueImpl [MFC], IsValid
+- CMFCFilterChunkValueImpl [MFC], SetBoolValue
+- CMFCFilterChunkValueImpl [MFC], SetDwordValue
+- CMFCFilterChunkValueImpl [MFC], SetFileTimeValue
+- CMFCFilterChunkValueImpl [MFC], SetInt64Value
+- CMFCFilterChunkValueImpl [MFC], SetIntValue
+- CMFCFilterChunkValueImpl [MFC], SetLongValue
+- CMFCFilterChunkValueImpl [MFC], SetSystemTimeValue
+- CMFCFilterChunkValueImpl [MFC], SetTextValue
+- CMFCFilterChunkValueImpl [MFC], SetChunk
 ms.assetid: 3c833f23-5b88-4d08-9e09-ca6a8aec88bf
 caps.latest.revision: 25
 author: mikeblome
@@ -54,227 +73,227 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 8de3cba19a60b8022df96a9edafd13677fa3fecb
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: df02b6a6b6ac7e0683dbd75f45a77dd6cb5bd06d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcfilterchunkvalueimpl-class"></a>CMFCFilterChunkValueImpl クラス
-これは、チャンクとプロパティ値のペアのロジックを単純化するクラスです。  
+# <a name="cmfcfilterchunkvalueimpl-class"></a>CMFCFilterChunkValueImpl Class
+This is a class which simplifies both chunk and property value pair logic.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCFilterChunkValueImpl : public ATL::IFilterChunkValue;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCFilterChunkValueImpl:: ~ CMFCFilterChunkValueImpl](#_dtorcmfcfilterchunkvalueimpl)|オブジェクトを破棄します。|  
-|[CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl](#cmfcfilterchunkvalueimpl)|オブジェクトを構築します。|  
+|[CMFCFilterChunkValueImpl::~CMFCFilterChunkValueImpl](#_dtorcmfcfilterchunkvalueimpl)|Destructs the object.|  
+|[CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl](#cmfcfilterchunkvalueimpl)|Constructs the object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCFilterChunkValueImpl::Clear](#clear)|ChunkValue をクリアします。|  
-|[CMFCFilterChunkValueImpl::CopyChunk](#copychunk)|このチャンクをチャンクの特性を記述する構造体にコピーします。|  
-|[CMFCFilterChunkValueImpl::CopyFrom](#copyfrom)|その他の値からこのチャンク値を初期化します。|  
-|[CMFCFilterChunkValueImpl::GetChunkGUID](#getchunkguid)|GUID のチャンクを取得します。|  
-|[CMFCFilterChunkValueImpl::GetChunkPID](#getchunkpid)|チャンクの PID (プロパティ ID) を取得します。|  
-|[CMFCFilterChunkValueImpl::GetChunkType](#getchunktype)|チャンクの種類を取得します。|  
-|[CMFCFilterChunkValueImpl::GetString](#getstring)|取得、文字列値。|  
-|[CMFCFilterChunkValueImpl::GetValue](#getvalue)|割り当てられた propvariant として値を取得します。|  
-|[CMFCFilterChunkValueImpl::GetValueNoAlloc](#getvaluenoalloc)|割り当てられた以外を返します (内部値) の値です。|  
-|[CMFCFilterChunkValueImpl::IsValid](#isvalid)|このプロパティの値が有効であるかどうかどうかをチェックします。|  
-|[CMFCFilterChunkValueImpl::SetBoolValue](#setboolvalue)|オーバーロードされます。 ブール値をキー プロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetDwordValue](#setdwordvalue)|DWORD へのキー プロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetFileTimeValue](#setfiletimevalue)|Filetime のキー プロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetInt64Value](#setint64value)|キーは int64 にプロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetIntValue](#setintvalue)|Int へのキー プロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetLongValue](#setlongvalue)|キー長整数型にプロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetSystemTimeValue](#setsystemtimevalue)|SystemTime にキー プロパティを設定します。|  
-|[CMFCFilterChunkValueImpl::SetTextValue](#settextvalue)|Unicode 文字列にキー プロパティを設定します。|  
+|[CMFCFilterChunkValueImpl::Clear](#clear)|Clears the ChunkValue.|  
+|[CMFCFilterChunkValueImpl::CopyChunk](#copychunk)|Copies this chunk to a structure describing the characteristics of a chunk.|  
+|[CMFCFilterChunkValueImpl::CopyFrom](#copyfrom)|Initializes this chunk value from the other value.|  
+|[CMFCFilterChunkValueImpl::GetChunkGUID](#getchunkguid)|Retrieves the chunk GUID.|  
+|[CMFCFilterChunkValueImpl::GetChunkPID](#getchunkpid)|Retrieves the chunk PID (property ID).|  
+|[CMFCFilterChunkValueImpl::GetChunkType](#getchunktype)|Gets chunk type.|  
+|[CMFCFilterChunkValueImpl::GetString](#getstring)|Retrieves the the string value.|  
+|[CMFCFilterChunkValueImpl::GetValue](#getvalue)|Retrieves the value as an allocated propvariant.|  
+|[CMFCFilterChunkValueImpl::GetValueNoAlloc](#getvaluenoalloc)|Returns non-allocated (internal value) value.|  
+|[CMFCFilterChunkValueImpl::IsValid](#isvalid)|Checks whether this property value is valid or not.|  
+|[CMFCFilterChunkValueImpl::SetBoolValue](#setboolvalue)|Overloaded. Sets the property by key to a Boolean.|  
+|[CMFCFilterChunkValueImpl::SetDwordValue](#setdwordvalue)|Sets the property by key to a DWORD.|  
+|[CMFCFilterChunkValueImpl::SetFileTimeValue](#setfiletimevalue)|Sets the property by key to a filetime.|  
+|[CMFCFilterChunkValueImpl::SetInt64Value](#setint64value)|Sets the property by key to an int64.|  
+|[CMFCFilterChunkValueImpl::SetIntValue](#setintvalue)|Sets the property by key to an int.|  
+|[CMFCFilterChunkValueImpl::SetLongValue](#setlongvalue)|Sets the property by key to a LONG.|  
+|[CMFCFilterChunkValueImpl::SetSystemTimeValue](#setsystemtimevalue)|Sets the property by key to a SystemTime.|  
+|[CMFCFilterChunkValueImpl::SetTextValue](#settextvalue)|Sets the property by key to a Unicode string.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCFilterChunkValueImpl::SetChunk](#setchunk)|チャンクの共通プロパティを設定するヘルパー関数。|  
+|[CMFCFilterChunkValueImpl::SetChunk](#setchunk)|A helper function that sets the chunk's common properties.|  
   
-## <a name="remarks"></a>コメント  
- 正しい種類の CMFCFilterChunkValueImpl クラスの作成だけで使用するには  
+## <a name="remarks"></a>Remarks  
+ To use, you simply create a CMFCFilterChunkValueImpl class of the right kind  
   
- 例:  
+ Example:  
   
- CMFCFilterChunkValueImpl チャンクです。  
+ CMFCFilterChunkValueImpl chunk;  
   
- hr = チャンクです。SetBoolValue(PKEY_IsAttachment, true) です。  
+ hr = chunk.SetBoolValue(PKEY_IsAttachment, true);  
   
- または  
+ or  
   
- hr = チャンクです。SetFileTimeValue (PKEY_ItemDate、ftLastModified) です。  
+ hr = chunk.SetFileTimeValue(PKEY_ItemDate, ftLastModified);  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `ATL::IFilterChunkValue`  
   
  [CMFCFilterChunkValueImpl](../../mfc/reference/cmfcfilterchunkvalueimpl-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="clear"></a>CMFCFilterChunkValueImpl::Clear  
- ChunkValue をクリアします。  
+##  <a name="clear"></a>  CMFCFilterChunkValueImpl::Clear  
+ Clears the ChunkValue.  
   
 ```  
 void Clear();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="cmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl  
- オブジェクトを構築します。  
+##  <a name="cmfcfilterchunkvalueimpl"></a>  CMFCFilterChunkValueImpl::CMFCFilterChunkValueImpl  
+ Constructs the object.  
   
 ```  
 CMFCFilterChunkValueImpl();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="_dtorcmfcfilterchunkvalueimpl"></a>CMFCFilterChunkValueImpl:: ~ CMFCFilterChunkValueImpl  
- オブジェクトを破棄します。  
+##  <a name="_dtorcmfcfilterchunkvalueimpl"></a>  CMFCFilterChunkValueImpl::~CMFCFilterChunkValueImpl  
+ Destructs the object.  
   
 ```  
 virtual ~CMFCFilterChunkValueImpl();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="copychunk"></a>CMFCFilterChunkValueImpl::CopyChunk  
- このチャンクをチャンクの特性を記述する構造体にコピーします。  
+##  <a name="copychunk"></a>  CMFCFilterChunkValueImpl::CopyChunk  
+ Copies this chunk to a structure describing the characteristics of a chunk.  
   
 ```  
 HRESULT CopyChunk(STAT_CHUNK* pStatChunk);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pStatChunk`  
- チャンクの特性を記述する対象値へのポインター。  
+ A pointer to destination value describing the characteristics of the chunk.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="copyfrom"></a>CMFCFilterChunkValueImpl::CopyFrom  
- その他の値からこのチャンク値を初期化します。  
+##  <a name="copyfrom"></a>  CMFCFilterChunkValueImpl::CopyFrom  
+ Initializes this chunk value from the other value.  
   
 ```  
 void CopyFrom (IFilterChunkValue* pValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pValue`  
- コピーするソース値を指定します。  
+ Specifies the source value to copy from.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getchunkguid"></a>CMFCFilterChunkValueImpl::GetChunkGUID  
- GUID のチャンクを取得します。  
+##  <a name="getchunkguid"></a>  CMFCFilterChunkValueImpl::GetChunkGUID  
+ Retrieves the chunk GUID.  
   
 ```  
 REFGUID GetChunkGUID() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- チャンクを識別する GUID への参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to a GUID identifying the chunk.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getchunkpid"></a>CMFCFilterChunkValueImpl::GetChunkPID  
- チャンクの PID (プロパティ ID) を取得します。  
+##  <a name="getchunkpid"></a>  CMFCFilterChunkValueImpl::GetChunkPID  
+ Retrieves the chunk PID (property ID).  
   
 ```  
 DWORD GetChunkPID() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- プロパティ ID を含む DWORD 値  
+### <a name="return-value"></a>Return Value  
+ A DWORD value containing the property ID.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getchunktype"></a>CMFCFilterChunkValueImpl::GetChunkType  
- チャンクの種類を取得します。  
+##  <a name="getchunktype"></a>  CMFCFilterChunkValueImpl::GetChunkType  
+ Retrieves the chunk type.  
   
 ```  
 CHUNKSTATE GetChunkType() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- CHUNKSTATE 列挙値、現在のチャンクが、テキスト型のプロパティまたは値型のプロパティかどうかを指定します。  
+### <a name="return-value"></a>Return Value  
+ A CHUNKSTATE enumerated value, which specifies whether the current chunk is a text-type property or a value-type property.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getstring"></a>CMFCFilterChunkValueImpl::GetString  
- 文字列値を取得します。  
+##  <a name="getstring"></a>  CMFCFilterChunkValueImpl::GetString  
+ Retrieves the string value.  
   
 ```  
 CString &GetString();
 ```  
   
-### <a name="return-value"></a>戻り値  
- チャンク値を含む文字列。  
+### <a name="return-value"></a>Return Value  
+ A string containing the chunk value.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getvalue"></a>CMFCFilterChunkValueImpl::GetValue  
- 割り当てられた propvariant として値を取得します。  
+##  <a name="getvalue"></a>  CMFCFilterChunkValueImpl::GetValue  
+ Retrieves the value as an allocated propvariant.  
   
 ```  
 HRESULT GetValue(PROPVARIANT** ppPropVariant);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ppPropVariant`  
- 関数から制御が戻るとき、このパラメーターには、チャンク値が含まれています。  
+ When the function returns, this parameter contains the chunk value.  
   
-### <a name="return-value"></a>戻り値  
- PROPVARIANT が正常に割り当てられているし、チャンク値に正常にコピーされた場合は S_OK`ppPropVariant`以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if PROPVARIANT was allocated successfully and the chunk value was successfully copied to `ppPropVariant`; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getvaluenoalloc"></a>CMFCFilterChunkValueImpl::GetValueNoAlloc  
- 未割り当て (内部値) の値を返します。  
+##  <a name="getvaluenoalloc"></a>  CMFCFilterChunkValueImpl::GetValueNoAlloc  
+ Returns the non-allocated (internal value) value.  
   
 ```  
 PROPVARIANT GetValueNoAlloc ();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のチャンク値を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the current chunk value.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isvalid"></a>CMFCFilterChunkValueImpl::IsValid  
- このプロパティの値が有効であるかどうかどうかをチェックします。  
+##  <a name="isvalid"></a>  CMFCFilterChunkValueImpl::IsValid  
+ Checks whether this property value is valid or not.  
   
 ```  
 BOOL IsValid() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`現在のチャンク値が無効である場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the current chunk value is valid; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setboolvalue"></a>CMFCFilterChunkValueImpl::SetBoolValue  
- オーバーロードされます。 ブール値をキー プロパティを設定します。  
+##  <a name="setboolvalue"></a>  CMFCFilterChunkValueImpl::SetBoolValue  
+ Overloaded. Sets the property by key to a Boolean.  
   
 ```  
 HRESULT SetBoolValue(
@@ -297,35 +316,35 @@ HRESULT SetBoolValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `bVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setchunk"></a>CMFCFilterChunkValueImpl::SetChunk  
- チャンクの共通プロパティを設定するヘルパー関数。  
+##  <a name="setchunk"></a>  CMFCFilterChunkValueImpl::SetChunk  
+ A helper function that sets the chunk's common properties.  
   
 ```  
 HRESULT SetChunk(
@@ -337,32 +356,32 @@ HRESULT SetChunk(
     CHUNK_BREAKTYPE chunkBreakType=CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合のエラー コードです。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setdwordvalue"></a>CMFCFilterChunkValueImpl::SetDwordValue  
- DWORD へのキーのプロパティを設定します。  
+##  <a name="setdwordvalue"></a>  CMFCFilterChunkValueImpl::SetDwordValue  
+ Set the property by key to a DWORD.  
   
 ```  
 HRESULT SetDwordValue(
@@ -375,35 +394,35 @@ HRESULT SetDwordValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `dwVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setfiletimevalue"></a>CMFCFilterChunkValueImpl::SetFileTimeValue  
- キー、filetime にプロパティを設定します。  
+##  <a name="setfiletimevalue"></a>  CMFCFilterChunkValueImpl::SetFileTimeValue  
+ Set the property by key to a filetime.  
   
 ```  
 HRESULT SetFileTimeValue(
@@ -416,35 +435,35 @@ HRESULT SetFileTimeValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `dtVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setint64value"></a>CMFCFilterChunkValueImpl::SetInt64Value  
- キーは int64 にプロパティを設定します。  
+##  <a name="setint64value"></a>  CMFCFilterChunkValueImpl::SetInt64Value  
+ Set the property by key to an int64.  
   
 ```  
 HRESULT SetInt64Value(
@@ -457,35 +476,35 @@ HRESULT SetInt64Value(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `nVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setintvalue"></a>CMFCFilterChunkValueImpl::SetIntValue  
- キーに int プロパティを設定します。  
+##  <a name="setintvalue"></a>  CMFCFilterChunkValueImpl::SetIntValue  
+ Set the property by key to an int.  
   
 ```  
 HRESULT SetIntValue(
@@ -498,35 +517,35 @@ HRESULT SetIntValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `nVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setlongvalue"></a>CMFCFilterChunkValueImpl::SetLongValue  
- キー長整数型にプロパティを設定します。  
+##  <a name="setlongvalue"></a>  CMFCFilterChunkValueImpl::SetLongValue  
+ Set the property by key to a LONG.  
   
 ```  
 HRESULT SetLongValue(
@@ -539,35 +558,35 @@ HRESULT SetLongValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `lVal`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setsystemtimevalue"></a>CMFCFilterChunkValueImpl::SetSystemTimeValue  
- SystemTime にキー プロパティを設定します。  
+##  <a name="setsystemtimevalue"></a>  CMFCFilterChunkValueImpl::SetSystemTimeValue  
+ Sets the property by key to a SystemTime.  
   
 ```  
 HRESULT SetSystemTimeValue(
@@ -580,35 +599,35 @@ HRESULT SetSystemTimeValue(
     CHUNK_BREAKTYPE chunkBreakType=CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `systemTime`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="settextvalue"></a>CMFCFilterChunkValueImpl::SetTextValue  
- Unicode 文字列にキー プロパティを設定します。  
+##  <a name="settextvalue"></a>  CMFCFilterChunkValueImpl::SetTextValue  
+ Sets the property by key to a Unicode string.  
   
 ```  
 HRESULT SetTextValue(
@@ -621,33 +640,33 @@ HRESULT SetTextValue(
     CHUNK_BREAKTYPE chunkBreakType = CHUNK_NO_BREAK);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pkey`  
- プロパティのキーを指定します。  
+ Specifies a property key.  
   
  `pszValue`  
- 設定するチャンク値を指定します。  
+ Specifies the chunk value to set.  
   
  `chunkType`  
- フラグは、このチャンクが text 型または値型のプロパティを含めるかどうかを指定します。 フラグの値は、CHUNKSTATE 列挙から取得されます。  
+ Flags indicate whether this chunk contains a text-type or a value-type property. Flag values are taken from the CHUNKSTATE enumeration.  
   
  `locale`  
- 言語とサブ言語のテキストのチャンクに関連付けられています。 ドキュメントのインデクサーはチャンクのロケールを使用して、適切な単語がテキストの分割を実行できます。 1 つのチャンクが text 型でも VT_LPWSTR、VT_LPSTR、または VT_BSTR のデータ型を持つ値型の場合は、このフィールドは無視されます。  
+ The language and sublanguage associated with a chunk of text. Chunk locale is used by document indexers to perform proper word breaking of text. If the chunk is neither text-type nor a value-type with data type VT_LPWSTR, VT_LPSTR, or VT_BSTR, this field is ignored.  
   
  `cwcLenSource`  
- 現在のチャンクの派生元のソース テキストの文字数。 値が&0; では、ソース テキストと派生のテキスト文字の対応を示します。 0 以外の値は、このような直接的な対応関係が存在しないことを意味します。  
+ The length in characters of the source text from which the current chunk was derived. A zero value signifies character-by-character correspondence between the source text and the derived text. A nonzero value means that no such direct correspondence exists.  
   
  `cwcStartSource`  
- 派生のチャンクをソース テキストのソースのチャンクで起動元のオフセット。  
+ The offset from which the source text for a derived chunk starts in the source chunk.  
   
  `chunkBreakType`  
- 前のチャンクでは、現在のチャンクから分離した中断の種類。 値は CHUNK_BREAKTYPE 列挙体です。  
+ The type of break that separates the previous chunk from the current chunk. Values are from the CHUNK_BREAKTYPE enumeration.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は S_OKそれ以外の場合はエラー コード。  
+### <a name="return-value"></a>Return Value  
+ S_OK if successful; otherwise an error code.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

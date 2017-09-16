@@ -1,7 +1,7 @@
 ---
-title: "リンカ ツール エラー LNK1120 |Microsoft ドキュメント"
+title: Linker Tools Error LNK1120 | Microsoft Docs
 ms.custom: 
-ms.date: 11/04/2016
+ms.date: 05/17/2017
 ms.reviewer: 
 ms.suite: 
 ms.technology:
@@ -34,17 +34,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: 1809ed4e5950165d6a187fd3c62871c25124663f
+ms.translationtype: MT
+ms.sourcegitcommit: 22000a296568c01082c9aef5ceaac8f266bcad5c
+ms.openlocfilehash: f183981b9c3bccdf2629e8f5f3bd2c1b07b52b6a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 09/08/2017
 
 ---
-# <a name="linker-tools-error-lnk1120"></a>リンカ ツール エラー LNK1120
-*数*未解決の外部項目  
+# <a name="linker-tools-error-lnk1120"></a>Linker Tools Error LNK1120
+*number* unresolved externals  
   
-数を報告するエラー LNK1120 (*数*) このリンク操作の未解決の外部シンボル エラーのです。 ほとんどの未解決の外部シンボル エラーが個別にによって[リンカ ツール エラー LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md)と[リンカ ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)、する前にこのエラー メッセージの 1 回ごとに未解決の外部シンボルというエラーです。  
+Error LNK1120 reports the count (*number*) of unresolved external symbol errors for this link operation. Most unresolved external symbol errors are reported individually by [Linker Tools Error LNK2001](../../error-messages/tool-errors/linker-tools-error-lnk2001.md) and  [Linker Tools Error LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md), which precede this error message, once for each unresolved external symbol error.  
   
-このエラーを解決するには、すべての他の未解決の外部エラーまたはビルド出力に先行するその他のリンカー エラーを修正します。 未解決の外部エラーが残っていない場合、このエラーは報告されません。  
+To fix this error, correct all of the other unresolved external errors or other linker errors that precede it in the build output. This error is not reported when no unresolved external errors remain.  
 

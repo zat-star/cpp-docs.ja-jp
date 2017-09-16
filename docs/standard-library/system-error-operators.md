@@ -1,29 +1,33 @@
 ---
-title: "&lt;system_error&gt; 演算子 | Microsoft Docs"
+title: '&lt;system_error&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- system_error/std::operator!=
+- system_error/std::operator==
+dev_langs:
+- C++
 ms.assetid: c14edefb-bd8a-4e90-88d3-c59c98e6f73c
 caps.latest.revision: 11
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: d5d69831f5157fab1914351de06adf050b74cc93
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 887b7c019857b1ae685b3108791e47158f48b921
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltsystemerrorgt-operators"></a>&lt;system_error&gt; 演算子
+# <a name="ltsystemerrorgt-operators"></a>&lt;system_error&gt; operators
 ||||  
 |-|-|-|  
 |[operator!=](#op_neq)|[operator&lt;](#op_lt)|[operator==](#op_eq_eq)|  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左側のオブジェクトが右側のオブジェクトと等しいかどうかを調べます。  
+ Tests if the object on the left side of the operator is equal to the object on the right side.  
   
 ```
 bool operator==(const error_code& left,
@@ -33,21 +37,21 @@ bool operator==(const error_condition& left,
     const error_code& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|等しいかどうかをテストするオブジェクト。|  
-|`right`|等しいかどうかをテストするオブジェクト。|  
+|`left`|The object to be tested for equality.|  
+|`right`|The object to be tested for equality.|  
   
-### <a name="return-value"></a>戻り値  
- オブジェクトが等しい場合は **true**、オブジェクトが等しくない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the objects are equal; **false** if objects are not equal.  
   
-### <a name="remarks"></a>コメント  
- この関数は `left.category() == right.category() && left.value() == right.value()` を返します。  
+### <a name="remarks"></a>Remarks  
+ This function returns `left.category() == right.category() && left.value() == right.value()`.  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左側のオブジェクトが右側のオブジェクトと等しくないかどうかを調べます。  
+ Tests if the object on the left side of the operator is not equal to the object on the right side.  
   
 ```
 bool operator!=(const error_code& left,
@@ -57,21 +61,21 @@ bool operator!=(const error_condition& left,
     const error_code& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|不等性をテストするオブジェクト。|  
-|`right`|不等性をテストするオブジェクト。|  
+|`left`|The object to be tested for inequality.|  
+|`right`|The object to be tested for inequality.|  
   
-### <a name="return-value"></a>戻り値  
- `left` で渡されるオブジェクトが `right` で渡されるオブジェクトと等しくない場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the object passed in `left` is not equal to the object passed in `right`; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- この関数は `!(left == right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ This function returns `!(left == right)`.  
   
 ##  <a name="op_lt"></a>  operator&lt;  
- オブジェクトが比較のために渡されるオブジェクトより小さいかどうかをテストします。  
+ Tests if an object is less than the object passed in for comparison.  
   
 ```
 template <class _Enum>  
@@ -97,20 +101,20 @@ inline bool operator<(
     const error_condition&>::type left, _Enum right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`left`|比較されるオブジェクト。|  
-|`right`|比較されるオブジェクト。|  
+|`left`|The object to be compared.|  
+|`right`|The object to be compared.|  
   
-### <a name="return-value"></a>戻り値  
- `left` で渡されるオブジェクトが `right` で渡されるオブジェクトより小さい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the object passed in `left` is less than the object passed in `right`; Otherwise, **false**.  
   
-### <a name="remarks"></a>コメント  
- この関数はエラー順序をテストします。  
+### <a name="remarks"></a>Remarks  
+ This function tests the error order.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<system_error>](../standard-library/system-error.md)
 
 

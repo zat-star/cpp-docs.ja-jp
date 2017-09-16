@@ -1,125 +1,141 @@
 ---
-title: "スマート ポインター (Modern C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: Smart Pointers (Modern C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 909ef870-904c-49b6-b8cd-e9d0b7dc9435
 caps.latest.revision: 26
-caps.handback.revision: 26
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# スマート ポインター (Modern C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 6b25a9c39f09aef0958c475b663151b97285a6fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-最新の C\+\+ プログラミングでは、標準ライブラリに*スマート ポインター*が含まれています。これは、プログラムからメモリ リークとリソース リークをなくし、プログラムを例外セーフにするのに役立ちます。  
+---
+# <a name="smart-pointers-modern-c"></a>Smart Pointers (Modern C++)
+In modern C++ programming, the Standard Library includes *smart pointers*, which are used to help ensure that programs are free of memory and resource leaks and are exception-safe.  
   
-## スマート ポインターの使用  
- スマート ポインターは、[\<memory\>](../standard-library/memory.md) ヘッダー ファイルの `std` 名前空間で定義されます。  これらは、[RAII](../cpp/objects-own-resources-raii.md) \(*Resource Acquisition Is Initialialization*\) プログラミングの表現方法にとって重要です。  この表現方法の主な目的は、オブジェクトのすべてのリソースが 1 行のコードで作成されて準備が完了するように、リソースの取得がオブジェクトの初期化と同時に行われるようにすることです。  具体的には、RAII の主要な原則は、ヒープ割り当てリソース \(動的に割り当てられたメモリやシステム オブジェクト ハンドルなど\) の所有権を、リソースを削除または解放するコードと関連するクリーンアップ コードがデストラクターに含まれるスタック割り当てオブジェクトに付与するというものです。  
+## <a name="uses-for-smart-pointers"></a>Uses for smart pointers  
+ Smart pointers are defined in the `std` namespace in the [\<memory>](../standard-library/memory.md) header file. They are crucial to the [RAII](../cpp/objects-own-resources-raii.md) or *Resource Acquisition Is Initialialization* programming idiom. The main goal of this idiom is to ensure that resource acquisition occurs at the same time that the object is initialized, so that all resources for the object are created and made ready in one line of code. In practical terms, the main principle of RAII is to give ownership of any heap-allocated resource—for example, dynamically-allocated memory or system object handles—to a stack-allocated object whose destructor contains the code to delete or free the resource and also any associated cleanup code.  
   
- ほとんどの場合、生のポインターまたはリソース ハンドルを初期化して実際のリソースをポイントするとき、ポインターをすぐにスマート ポインターに渡します。  最新の C\+\+ では、生のポインターは、パフォーマンスが重要な意味を持ち、所有権に関する混乱が発生する可能性がない限られたスコープ、ループ、またはヘルパー関数の小さなコード ブロックでのみ使用されます。  
+ In most cases, when you initialize a raw pointer or resource handle to point to an actual resource, pass the pointer to a smart pointer immediately. In modern C++, raw pointers are only used in small code blocks of limited scope, loops, or helper functions where performance is critical and there is no chance of confusion about ownership.  
   
- 次の例では、生のポインターの宣言とスマート ポインターの宣言を比較します。  
+ The following example compares a raw pointer declaration to a smart pointer declaration.  
   
  [!code-cpp[smart_pointers_intro#1](../cpp/codesnippet/CPP/smart-pointers-modern-cpp_1.cpp)]  
   
- この例に示されているように、スマート ポインターは、スタック上で宣言し、ヒープ割り当てオブジェクトをポイントする生のポインターを使用して初期化するクラス テンプレートです。  スマート ポインターは、初期化後、生のポインターを所有します。  つまり、スマート ポインターは、生のポインターが指定するメモリの削除を担当します。  スマート ポインターのデストラクターには、削除する呼び出しが含まれています。スマート ポインターはスタック上で宣言されるため、スタックの別の場所で例外がスローされた場合でも、スマート ポインターがスコープ外に移動するとデストラクターが呼び出されます。  
+ As shown in the example, a smart pointer is a class template that you declare on the stack, and initialize by using a raw pointer that points to a heap-allocated object. After the smart pointer is initialized, it owns the raw pointer. This means that the smart pointer is responsible for deleting the memory that the raw pointer specifies. The smart pointer destructor contains the call to delete, and because the smart pointer is declared on the stack, its destructor is invoked when the smart pointer goes out of scope, even if an exception is thrown somewhere further up the stack.  
   
- カプセル化されたポインターには、使い慣れたポインター演算子 `->` および `*` を使用することでアクセスします。これらの演算子には、カプセル化された生のポインターを返すためにスマート ポインター クラスがオーバーロードします。  
+ Access the encapsulated pointer by using the familiar pointer operators, `->` and `*`, which the smart pointer class overloads to return the encapsulated raw pointer.  
   
- C\+\+ のスマート ポインターの表現方法は、C\# などの言語でのオブジェクト作成に似ています。オブジェクトを作成し、システムが正しい時刻にファイルの削除を実行するようにします。  違いは、別個のガベージ コレクターがバックグラウンドで実行されないことです。メモリは、標準 C\+\+ のスコープ規則を通じて管理されるため、ランタイム環境が高速かつ効率的になります。  
+ The C++ smart pointer idiom resembles object creation in languages such as C#: you create the object and then let the system take care of deleting it at the correct time. The difference is that no separate garbage collector runs in the background; memory is managed through the standard C++ scoping rules so that the runtime environment is faster and more efficient.  
   
 > [!IMPORTANT]
->  特定のパラメーター リストの割り当て規則が原因でわずかなリソース リークが発生しないように、スマート ポインターは必ずパラメーター リストではなく別個のコード行に作成してください。  
+>  Always create smart pointers on a separate line of code, never in a parameter list, so that a subtle resource leak won't occur due to certain parameter list allocation rules.  
   
- 標準テンプレート ライブラリの `unique_ptr` スマート ポインターの型を使用して、大きいオブジェクトへのポインターをカプセル化する方法を次の例に示します。  
+ The following example shows how a `unique_ptr` smart pointer type from the C++ Standard Library could be used to encapsulate a pointer to a large object.  
   
  [!code-cpp[smart_pointers_intro#2](../cpp/codesnippet/CPP/smart-pointers-modern-cpp_2.cpp)]  
   
- この例は、スマート ポインターを使用するために必要な次の手順を示しています。  
+ The example demonstrates the following essential steps for using smart pointers.  
   
-1.  自動 \(ローカル\) 変数としてスマート ポインターを宣言します \(スマート ポインター自体で `new` または `malloc` 式を使用しないでください\)。  
+1.  Declare the smart pointer as an automatic (local) variable. (Do not use the `new` or `malloc` expression on the smart pointer itself.)  
   
-2.  型パラメーターで、カプセル化されたポインターの pointed\-to 型を指定します。  
+2.  In the type parameter, specify the pointed-to type of the encapsulated pointer.  
   
-3.  生のポインターを、スマート ポインター コンストラクター内の `new` オブジェクトに渡します \(これは、一部のユーティリティ関数またはスマート ポインター コンストラクターによって行われます\)。  
+3.  Pass a raw pointer to a `new`-ed object in the smart pointer constructor. (Some utility functions or smart pointer constructors do this for you.)  
   
-4.  オーバーロードされた `->` および `*` 演算子を使用してオブジェクトにアクセスします。  
+4.  Use the overloaded `->` and `*` operators to access the object.  
   
-5.  スマート ポインターがオブジェクトを削除するようにします。  
+5.  Let the smart pointer delete the object.  
   
- スマート ポインターは、メモリとパフォーマンスの両方の点でできる限り効率が高くなるように設計されています。  たとえば、`unique_ptr` の唯一のデータ メンバーはカプセル化されたポインターです。  これは、`unique_ptr` がそのポインターとまったく同じサイズ \(4 バイトまたは 8 バイト\) であることを意味します。  スマート ポインターによってオーバーロードされた \* および \-\> 演算子を使用することでカプセル化されたポインターにアクセスしても、生のポインターに直接アクセスするよりそれほど遅くなるわけではありません。  
+ Smart pointers are designed to be as efficient as possible both in terms of memory and performance. For example, the only data member in `unique_ptr` is the encapsulated pointer. This means that `unique_ptr` is exactly the same size as that pointer, either four bytes or eight bytes. Accessing the encapsulated pointer by using the smart pointer overloaded * and -> operators is not significantly slower than accessing the raw pointers directly.  
   
- スマート ポインターには、"ドット" 表記を使用してアクセスできる独自のメンバー関数があります。  たとえば、一部の STL スマート ポインターにはポインターの所有権を解放するリセット メンバー関数があります。  これは、次の例に示すように、スマート ポインターがスコープ外に移動する前に、スマート ポインターが所有するメモリを解放する場合に便利です。  
+ Smart pointers have their own member functions, which are accessed by using “dot” notation. For example, some C++ Standard Library smart pointers have a reset member function that releases ownership of the pointer. This is useful when you want to free the memory owned by the smart pointer before the smart pointer goes out of scope, as shown in the following example.  
   
  [!code-cpp[smart_pointers_intro#3](../cpp/codesnippet/CPP/smart-pointers-modern-cpp_3.cpp)]  
   
- スマート ポインターには、通常、生のポインターに直接アクセスする方法が用意されています。  STL スマート ポインターには、この目的で `get` メンバー関数が用意されており、`CComPtr` にはパブリック `p` クラス メンバーがあります。  基になるポインターへの直接アクセスを用意することにより、スマート ポインターを使用して独自のコード内のメモリを管理し、スマート ポインターをサポートしないコードに生のポインターを渡すこともできます。  
+ Smart pointers usually provide a way to access their  raw pointer directly. C++ Standard Library smart pointers have a `get` member function for this purpose, and `CComPtr` has a public `p` class member. By providing direct access to the underlying pointer, you can use the smart pointer to manage memory in your own code and still pass the raw pointer to code that does not support smart pointers.  
   
  [!code-cpp[smart_pointers_intro#4](../cpp/codesnippet/CPP/smart-pointers-modern-cpp_4.cpp)]  
   
-## スマート ポインターの種類  
- 次のセクションでは、Windows プログラミング環境で使用できるさまざまな種類のスマート ポインターの概要を示し、使用するタイミングについて説明します。  
+## <a name="kinds-of-smart-pointers"></a>Kinds of Smart Pointers  
+ The following section summarizes the different kinds of smart pointers that are available in the Windows programming environment and describes when to use them.  
   
- **C\+\+ 標準ライブラリのスマート ポインター**  
- これらのスマート ポインターは、Plain Old C\+\+ Object \(POCO\) にポインターをカプセル化する最初のオプションとして使用します。  
+ **C++ Standard Library Smart Pointers**  
+ Use these smart pointers as a first choice for encapsulating pointers to plain old C++ objects (POCO).  
   
--   `unique_ptr`    
-    基になるポインターの所有者は、厳密に 1 人許可されます。  `shared_ptr` が必要であることがわかっている場合を除き、POCO の既定のオプションとして使用します。  新しい所有者に移動できますが、コピーおよび共有することはできません。  廃止された `auto_ptr` を置き換えます。  `boost::scoped_ptr` に相当します。  `unique_ptr` は、サイズが小さく効率的です。サイズはポインター 1 個であり、STL コレクションからの高速な挿入および取得を実現するために右辺値参照がサポートされます。  ヘッダー ファイルは `<memory>` です。  詳細については、「[方法: unique\_ptr インスタンスを作成して使用する](../cpp/how-to-create-and-use-unique-ptr-instances.md)」および「[unique\_ptr クラス](../standard-library/unique-ptr-class.md)」を参照してください。  
+-   `unique_ptr`   
+     Allows exactly one owner of the underlying pointer. Use as the default choice for POCO unless you know for certain that you require a `shared_ptr`. Can be moved to a new owner, but not copied or shared. Replaces `auto_ptr`, which is deprecated. Compare to `boost::scoped_ptr`. `unique_ptr` is small and efficient; the size is one pointer and it supports rvalue references for fast insertion and retrieval from C++ Standard Library collections. Header file: `<memory>`. For more information, see [How to: Create and Use unique_ptr Instances](../cpp/how-to-create-and-use-unique-ptr-instances.md) and [unique_ptr Class](../standard-library/unique-ptr-class.md).  
   
--   `shared_ptr`    
-    参照カウント スマート ポインターです。  複数の所有者に 1 個の生のポインターなどを割り当てる場合に使用します。たとえば、コンテナーからポインターのコピーを返し、元のポインターを維持する場合などです。  生のポインターは、`shared_ptr` のすべての所有者がスコープ外になるか、所有権を放棄するまで削除されません。  サイズはポインター 2 個です。1 個はオブジェクト用で、もう 1 個は参照カウントを含む共有コントロール ブロック用です。  ヘッダー ファイルは `<memory>` です。  詳細については、「[方法: shared\_ptr インスタンスを作成して使用する](../cpp/how-to-create-and-use-shared-ptr-instances.md)」および「[shared\_ptr クラス](../standard-library/shared-ptr-class.md)」を参照してください。  
+-   `shared_ptr`   
+     Reference-counted smart pointer. Use when you want to assign one raw pointer to multiple owners, for example, when you return a copy of a pointer from a container but want to keep the original. The raw pointer is not deleted until all `shared_ptr` owners have gone out of scope or have otherwise given up ownership. The size is two pointers; one for the object and one for the shared control block that contains the reference count. Header file: `<memory>`. For more information, see [How to: Create and Use shared_ptr Instances](../cpp/how-to-create-and-use-shared-ptr-instances.md) and [shared_ptr Class](../standard-library/shared-ptr-class.md).  
   
--   `weak_ptr`    
-    `shared_ptr` と同時に使用する特殊ケースのスマート ポインターです。  `weak_ptr` は、1 つ以上の `shared_ptr` インスタンスが所有するオブジェクトへのアクセスを提供しますが、参照カウントには参加しません。  オブジェクトを観察するが、オブジェクトを維持しておく必要はない場合に使用します。  `shared_ptr` インスタンス間の循環参照を解除するいくつかのケースで必要です。  ヘッダー ファイルは `<memory>` です。  詳細については、「[方法: weak\_ptr インスタンスを作成して使用する](../Topic/How%20to:%20Create%20and%20Use%20weak_ptr%20Instances.md)」および「[weak\_ptr クラス](../standard-library/weak-ptr-class.md)」を参照してください。  
+-   `weak_ptr`   
+    Special-case smart pointer for use in conjunction with `shared_ptr`. A `weak_ptr` provides access to an object that is owned by one or more `shared_ptr` instances, but does not participate in reference counting. Use when you want to observe an object, but do not require it to remain alive. Required in some cases to break circular references between `shared_ptr` instances. Header file: `<memory>`. For more information, see [How to: Create and Use weak_ptr Instances](../cpp/how-to-create-and-use-weak-ptr-instances.md) and [weak_ptr Class](../standard-library/weak-ptr-class.md).  
   
- **COM オブジェクト用のスマート ポインター \(従来の Windows プログラミング\)**  
- COM オブジェクトを使用する場合、スマート ポインターの適切な型でインターフェイス ポインターをラップします。  Active Template Library \(ATL\) は、さまざまな目的で複数のスマート ポインターを定義します。  さらに、コンパイラが .tlb ファイルからラッパー クラスを作成するときに使用する `_com_ptr_t` スマート ポインターの型を使用することもできます。  これは、ATL ヘッダー ファイルをインクルードしたくない場合に最も適しています。  
+ **Smart Pointers for COM Objects (Classic Windows Programming)**  
+ When you work with COM objects, wrap the interface pointers in an appropriate smart pointer type. The Active Template Library (ATL) defines several smart pointers for various purposes. You can also use the `_com_ptr_t` smart pointer type, which the compiler uses when it creates wrapper classes from .tlb files. It's the best choice when you do not want to include the ATL header files.  
   
- [CComPtr クラス](../atl/reference/ccomptr-class.md)  
- ATL を使用できない場合以外は、これを使用してください。  `AddRef` メソッドと `Release` メソッドを使用して、参照カウントを実行します。  詳細については、「[方法: CComPtr および CComQIPtr インスタンスを作成して使用する](../Topic/How%20to:%20Create%20and%20Use%20CComPtr%20and%20CComQIPtr%20Instances.md)」を参照してください。  
+ [CComPtr Class](../atl/reference/ccomptr-class.md)  
+ Use this unless you cannot use ATL. Performs reference counting by using the `AddRef` and `Release` methods. For more information, see [How to: Create and Use CComPtr and CComQIPtr Instances](../cpp/how-to-create-and-use-ccomptr-and-ccomqiptr-instances.md).  
   
- [CComQIPtr クラス](../atl/reference/ccomqiptr-class.md)  
- `CComPtr` に似ていますが、COM オブジェクトで `QueryInterface` を呼び出すための簡単な構文も提供します。  詳細については、「[方法: CComPtr および CComQIPtr インスタンスを作成して使用する](../Topic/How%20to:%20Create%20and%20Use%20CComPtr%20and%20CComQIPtr%20Instances.md)」を参照してください。  
+ [CComQIPtr Class](../atl/reference/ccomqiptr-class.md)  
+ Resembles `CComPtr` but also provides simplified syntax for calling `QueryInterface` on COM objects. For more information, see [How to: Create and Use CComPtr and CComQIPtr Instances](../cpp/how-to-create-and-use-ccomptr-and-ccomqiptr-instances.md).  
   
- [CComHeapPtr クラス](../atl/reference/ccomheapptr-class.md)  
- `CoTaskMemFree` を使用してメモリを解放するオブジェクトへのスマート ポインター。  
+ [CComHeapPtr Class](../atl/reference/ccomheapptr-class.md)  
+ Smart pointer to objects that use `CoTaskMemFree` to free memory.  
   
- [CComGITPtr クラス](../Topic/CComGITPtr%20Class.md)  
- グローバル インターフェイス テーブル \(GIT\) から取得されたインターフェイスのスマート ポインターです。  
+ [CComGITPtr Class](../atl/reference/ccomgitptr-class.md)  
+ Smart pointer for interfaces that are obtained from the global interface table (GIT).  
   
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)  
- 機能の点では `CComQIPtr` に似ていますが、ATL ヘッダーには依存しません。  
+ [_com_ptr_t Class](../cpp/com-ptr-t-class.md)  
+ Resembles `CComQIPtr` in functionality but does not depend on ATL headers.  
   
- **POCO オブジェクト用の ATL スマート ポインター**  
- COM オブジェクト用のスマート ポインターに加えて、ATL は Plain Old C\+\+ Object 用のスマート ポインター、およびスマート ポインター コレクションも定義します。  従来の Windows プログラミングでは、特にコードに移植性が必要ない場合や、STL と ATL のプログラミング モデルを混在させたくない場合に、これらの型は STL コレクションの代わりとして役立ちます。  
+ **ATL Smart Pointers for POCO Objects**  
+ In addition to smart pointers for COM objects, ATL also defines smart pointers, and collections of smart pointers, for plain old C++ objects. In classic Windows programming, these types are useful alternatives to the C++ Standard Library collections, especially when code portability is not required or when you do not want to mix the programming models of the C++ Standard Library and ATL.  
   
- [CAutoPtr クラス](../atl/reference/cautoptr-class.md)  
- コピー時に所有権を移動することで一意の所有権を強制するスマート ポインターです。  廃止された `std::auto_ptr` クラスに相当します。  
+ [CAutoPtr Class](../atl/reference/cautoptr-class.md)  
+ Smart pointer that enforces unique ownership by transferring ownership on copy. Comparable to the deprecated `std::auto_ptr` Class.  
   
- [CHeapPtr クラス](../atl/reference/cheapptr-class.md)  
- C [malloc](../c-runtime-library/reference/malloc.md) 関数を使用して割り当てられたオブジェクトのスマート ポインターです。  
+ [CHeapPtr Class](../atl/reference/cheapptr-class.md)  
+ Smart pointer for objects that are allocated by using the C [malloc](../c-runtime-library/reference/malloc.md) function.  
   
- [CAutoVectorPtr クラス](../atl/reference/cautovectorptr-class.md)  
- `new[]` を使用して割り当てられた配列のスマート ポインターです。  
+ [CAutoVectorPtr Class](../atl/reference/cautovectorptr-class.md)  
+ Smart pointer for arrays that are allocated by using `new[]`.  
   
- [CAutoPtrArray クラス](../atl/reference/cautoptrarray-class.md)  
- `CAutoPtr` 要素の配列をカプセル化するクラスです。  
+ [CAutoPtrArray Class](../atl/reference/cautoptrarray-class.md)  
+ Class that encapsulates an array of `CAutoPtr` elements.  
   
- [CAutoPtrList クラス](../atl/reference/cautoptrlist-class.md)  
- `CAutoPtr` ノードの一覧を操作するメソッドをカプセル化するクラスです。  
+ [CAutoPtrList Class](../atl/reference/cautoptrlist-class.md)  
+ Class that encapsulates methods for manipulating a list of `CAutoPtr` nodes.  
   
-## 参照  
- [C\+\+ へようこそ](../Topic/Welcome%20Back%20to%20C++%20\(Modern%20C++\).md)   
- [C\+\+ 言語リファレンス](../cpp/cpp-language-reference.md)   
- [C\+\+ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)   
- [\(NOTINBUILD\)Overview: Memory Management in C\+\+](http://msdn.microsoft.com/ja-jp/2201885d-3d91-4a6e-aaa6-7a554e0362a8)
+## <a name="see-also"></a>See Also  
+ [Welcome Back to C++](../cpp/welcome-back-to-cpp-modern-cpp.md)   
+ [C++ Language Reference](../cpp/cpp-language-reference.md)   
+ [C++ Standard Library](../standard-library/cpp-standard-library-reference.md)   
+

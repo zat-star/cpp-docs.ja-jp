@@ -1,5 +1,5 @@
 ---
-title: "sub_match クラス | Microsoft Docs"
+title: sub_match Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- sub_match
 - regex/std::sub_match
 - regex/std::sub_match::matched
 - regex/std::sub_match::compare
@@ -21,7 +20,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- sub_match class
+- std::sub_match [C++]
+- std::sub_match [C++], matched
+- std::sub_match [C++], compare
+- std::sub_match [C++], length
+- std::sub_match [C++], str
+- std::sub_match [C++], difference_type
+- std::sub_match [C++], iterator
+- std::sub_match [C++], value_type
 ms.assetid: 804e2b9e-d16a-4c4c-ac60-024e0b2dd0e8
 caps.latest.revision: 19
 author: corob-msft
@@ -41,17 +47,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 12d12497fa96d7cf4185ad3664908a56be1078c9
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: cf13a50f8485a8981b39efec9ee5f785e5a0ab72
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="submatch-class"></a>sub_match クラス
-サブマッチを記述します。  
+# <a name="submatch-class"></a>sub_match Class
+Describes a submatch.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class BidIt>  
@@ -73,28 +79,28 @@ public:
  };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `BidIt`  
- サブマッチ用の反復子の型。  
+ The iterator type for submatches.  
   
-## <a name="remarks"></a>コメント  
- このテンプレート クラスへの呼び出しで、キャプチャ グループに一致する文字のシーケンスを指定するオブジェクトを記述する[regex_match](../standard-library/regex-functions.md#regex_match)または[regex_search](../standard-library/regex-functions.md#regex_search)です。 [match_results Class](../standard-library/match-results-class.md) 型のオブジェクトは、検索に使用された正規表現内のキャプチャ グループごとに 1 つずつ、これらのオブジェクトの配列を保持します。  
+## <a name="remarks"></a>Remarks  
+ The template class describes an object that designates a sequence of characters that matched a capture group in a call to [regex_match](../standard-library/regex-functions.md#regex_match) or to [regex_search](../standard-library/regex-functions.md#regex_search). Objects of type [match_results Class](../standard-library/match-results-class.md) hold an array of these objects, one for each capture group in the regular expression that was used in the search.  
   
- キャプチャ グループがオブジェクトのデータ メンバーと一致しなかった場合は、 `matched` が false を保持し、2 つの反復子の `first` と `second` (ベース `std::pair`から継承) が等しくなります。 キャプチャ グループが一致した場合は、 `matched` が true を保持し、反復子 `first` がキャプチャ グループと一致したターゲット シーケンスの最初の文字を指し、反復子 `second` がキャプチャ グループと一致したターゲット シーケンスの最後の文字の 1 つ先の位置を指します。 長さ 0 の一致の場合は、メンバー `matched` が true を保持し、2 つの反復子が等しくなり、両方が一致した位置を指します。  
+ If the capture group was not matched the object's data member `matched` holds false, and the two iterators `first` and `second` (inherited from the base `std::pair`) are equal. If the capture group was matched, `matched` holds true, the iterator `first` points to the first character in the target sequence that matched the capture group, and the iterator `second` points one position past the last character in the target sequence that matched the capture group. Note that for a zero-length match the member `matched` holds true, the two iterators will be equal, and both will point to the position of the match.  
   
- 長さ 0 の一致は、キャプチャ グループが 1 つのアサーションのみまたは 0 回の繰り返しが許可される 1 つの繰り返しのみで構成されている場合に発生します。 例:  
+ A zero-length match can occur when a capture group consists solely of an assertion, or of a repetition that allows zero repeats. For example:  
   
- "^" は、ターゲット シーケンス "a" と一致します。キャプチャ グループ 0 に対応する `sub_match` オブジェクトは、両方がシーケンスの最初の文字を指す反復子を保持します。  
+ "^" matches the target sequence "a"; the `sub_match` object corresponding to capture group 0 holds iterators that both point to the first character in the sequence.  
   
- "b(a*)b" は、ターゲット シーケンス "bb" と一致します。キャプチャ グループ 1 に対応する `sub_match` オブジェクトは、両方がシーケンスの 2 つ目の文字を指す反復子を保持します。  
+ "b(a*)b" matches the target sequence "bb"; the `sub_match` object corresponding to capture group 1 holds iterators that both point to the second character in the sequence.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<regex>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<regex>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="compare"></a>  sub_match::compare  
- サブマッチをシーケンスと比較します。  
+ Compare submatch against a sequence.  
   
 ```  
 int compare(const sub_match& right) const;
@@ -102,28 +108,28 @@ int compare(const basic_string<value_type>& str) const;
 int compare(const value_type *ptr) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 比較するサブマッチ。  
+ The submatch to compare to.  
   
  `str`  
- 比較対象の文字列。  
+ The string to compare to.  
   
  `ptr`  
- null で終わる比較対象のシーケンス。  
+ The null-terminated sequence to compare to.  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のメンバー関数は、一致するシーケンス `[first, second)` と一致したシーケンス `[right.first, right.second)` とを比較します。 2 つ目のメンバー関数は、一致するシーケンス `[first, second)` と文字シーケンス `[right.begin(), right.end())` とを比較します。 3 つ目のメンバー関数は、一致するシーケンス `[first, second)` と文字シーケンス `[right, right + std::char_traits<value_type>::length(right))` とを比較します。  
+### <a name="remarks"></a>Remarks  
+ The first member function compares the matched sequence `[first, second)` to the matched sequence `[right.first, right.second)`. The second member function compares the matched sequence `[first, second)` to the character sequence `[right.begin(), right.end())`. The third member function compares the matched sequence `[first, second)` to the character sequence `[right, right + std::char_traits<value_type>::length(right))`.  
   
- 各関数から返される値は次のとおりです。  
+ Each function returns:  
   
- 負の値。一致するシーケンス内の最初に異なる値が、オペランド シーケンス内の対応する要素よりも小さい場合 (`std::char_traits<value_type>::compare` で判断)、または両者のプレフィックスが共通していても、ターゲット シーケンスの方が長い場合は、負の値が返されます。  
+ a negative value if the first differing value in the matched sequence compares less than the corresponding element in the operand sequence (as determined by `std::char_traits<value_type>::compare`), or if the two have a common prefix but the target sequence is longer  
   
- ゼロ。両者の要素がすべて等しく、長さも同じである場合は、ゼロが返されます。  
+ zero if the two compare equal element by element and have the same length  
   
- 正の値。それ以外の場合は、正の値が返されます。  
+ a positive value otherwise  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_compare.cpp   
@@ -177,16 +183,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="difference_type"></a>  sub_match::difference_type  
- 反復子の差の型です。  
+ The type of an iterator difference.  
   
 ```  
 typedef typename iterator_traits<BidIt>::difference_type difference_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- typedef は、`iterator_traits<BidIt>::difference_type` の同意語です。  
+### <a name="remarks"></a>Remarks  
+ The typedef is a synonym for `iterator_traits<BidIt>::difference_type`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_difference_type.cpp   
@@ -240,16 +246,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="iterator"></a>  sub_match::iterator  
- 反復子の型。  
+ The type of an iterator.  
   
 ```  
 typedef BidIt iterator;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この typedef は、テンプレート型引数 `Bidit` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The typedef is a synonym for the template type argument `Bidit`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_iterator.cpp   
@@ -303,16 +309,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="length"></a>  sub_match::length  
- サブマッチの長さを返します。  
+ Returns the length of a submatch.  
   
 ```  
 difference_type length() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、一致するシーケンスの長さを返します。または、一致するシーケンスが存在しない場合、0 を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns the length of the matched sequence, or zero if there was no matched sequence.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_length.cpp   
@@ -366,16 +372,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="matched"></a>  sub_match::matched  
- 一致が成功したかどうかを示します。  
+ Indicates if match succeeded.  
   
 ```  
 bool matched;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバーは、 `true` に関連付けられているキャプチャ グループが、正規表現の一致に含まれていた場合にのみ、 `*this` を保持します。  
+### <a name="remarks"></a>Remarks  
+ The member holds `true` only if the capture group associated with `*this` was part of the regular expression match.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_matched.cpp   
@@ -429,16 +435,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="op_basic_string_lt_value_type_gt"></a>  sub_match::operator basic_string&lt;value_type&gt;  
- サブマッチを文字列にキャストします。  
+ Casts submatch to a string.  
   
 ```  
 operator basic_string<value_type>() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー演算子は、 `str()`を返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator returns `str()`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_operator_str.cpp   
@@ -492,16 +498,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="str"></a>  sub_match::str  
- サブマッチを文字列に変換します。  
+ Converts submatch to a string.  
   
 ```  
 basic_string<value_type> str() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、`basic_string<value_type>(first, second)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns `basic_string<value_type>(first, second)`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_str.cpp   
@@ -555,16 +561,16 @@ compare(sub) == 0
 ```  
   
 ##  <a name="value_type"></a>  sub_match::value_type  
- 要素の型。  
+ The type of an element.  
   
 ```  
 typedef typename iterator_traits<BidIt>::value_type value_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- typedef は、`iterator_traits<BidIt>::value_type` の同意語です。  
+### <a name="remarks"></a>Remarks  
+ The typedef is a synonym for `iterator_traits<BidIt>::value_type`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std__regex__sub_match_value_type.cpp   
@@ -617,7 +623,7 @@ compare(string) == 1
 compare(sub) == 0  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<regex>](../standard-library/regex.md)   
  [sub_match](../standard-library/sub-match-class.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "CBitmapButton クラス |Microsoft ドキュメント"
+title: CBitmapButton Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -18,9 +18,10 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- buttons, bitmap
-- CBitmapButton class
-- bitmaps, button controls
+- CBitmapButton [MFC], CBitmapButton
+- CBitmapButton [MFC], AutoLoad
+- CBitmapButton [MFC], LoadBitmaps
+- CBitmapButton [MFC], SizeToContent
 ms.assetid: 9ad6cb45-c3c4-4fb1-96d3-1fe3df7bbcfc
 caps.latest.revision: 22
 author: mikeblome
@@ -40,87 +41,87 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0b07f6b12e178d8e324313ea3b0f6de9ae7420c9
-ms.openlocfilehash: 16d39cb380b75e6dcef71dda01626f120d5c12fb
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fee359237607174805f39c54c4d79299ebbafaed
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cbitmapbutton-class"></a>CBitmapButton クラス
-ラベルがテキストではなくビットマップ イメージのプッシュ ボタン コントロールを作成します。  
+# <a name="cbitmapbutton-class"></a>CBitmapButton Class
+Creates pushbutton controls labeled with bitmapped images instead of text.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CBitmapButton : public CButton  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBitmapButton::CBitmapButton](#cbitmapbutton)|`CBitmapButton` オブジェクトを構築します。|  
+|[CBitmapButton::CBitmapButton](#cbitmapbutton)|Constructs a `CBitmapButton` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CBitmapButton::AutoLoad](#autoload)|ダイアログ ボックスのボタンのオブジェクトに関連付け、`CBitmapButton`クラス、名前で、ビットマップを読み込みおよびサイズをビットマップに合わせて ボタンをクリックします。|  
-|[CBitmapButton::LoadBitmaps](#loadbitmaps)|アプリケーションのリソース ファイルから&1; つまたは複数の名前付きのビットマップ リソースを読み込み、オブジェクトへのビットマップをアタッチするには、オブジェクトを初期化します。|  
-|[CBitmapButton::SizeToContent](#sizetocontent)|ビットマップが収まるように、ボタンのサイズを設定します。|  
+|[CBitmapButton::AutoLoad](#autoload)|Associates a button in a dialog box with an object of the `CBitmapButton` class, loads the bitmap(s) by name, and sizes the button to fit the bitmap.|  
+|[CBitmapButton::LoadBitmaps](#loadbitmaps)|Initializes the object by loading one or more named bitmap resources from the application's resource file and attaching the bitmaps to the object.|  
+|[CBitmapButton::SizeToContent](#sizetocontent)|Sizes the button to accommodate the bitmap.|  
   
-## <a name="remarks"></a>コメント  
- `CBitmapButton`オブジェクトに含める最大&4; つのビットマップは、さまざまな状態と見なすことが、ボタンの画像を含む: 最新 (または通常) 下 (または選択した) フォーカス、および無効になっています。 最初のビットマップだけが必要です。その他はオプションです。  
+## <a name="remarks"></a>Remarks  
+ `CBitmapButton` objects contain up to four bitmaps, which contain images for the different states a button can assume: up (or normal), down (or selected), focused, and disabled. Only the first bitmap is required; the others are optional.  
   
- ビットマップ ボタンのイメージには、イメージ自体だけでなく、イメージを囲む境界線が含まれます。 罫線は、通常、ボタンの状態の表示中に役割を果たします。 たとえば、フォーカスのある状態のビットマップは、状態を表すが、枠線の太い直線には境界の破線の四角形の内側にあるように通常です。 ビットマップ、無効な状態を通常のと似ていますが (淡色表示のメニューの選択) のようなコントラストがはっきりして最新の状態にします。  
+ Bitmap-button images include the border around the image as well as the image itself. The border typically plays a part in showing the state of the button. For example, the bitmap for the focused state usually is like the one for the up state but with a dashed rectangle inset from the border or a thick solid line at the border. The bitmap for the disabled state usually resembles the one for the up state but has lower contrast (like a dimmed or grayed menu selection).  
   
- あらゆる規模のこれらのビットマップを指定できますが、すべてものとして扱われますが、最新の状態のビットマップと同じサイズです。  
+ These bitmaps can be of any size, but all are treated as if they were the same size as the bitmap for the up state.  
   
- さまざまなアプリケーションでは、ビットマップ イメージのさまざまな組み合わせを要求します。  
+ Various applications demand different combinations of bitmap images:  
   
-|上へ|[下へ移動]|Focused|無効|アプリケーション|  
+|Up|Down|Focused|Disabled|Application|  
 |--------|----------|-------------|--------------|-----------------|  
-|×||||ビットマップ|  
-|×|×|||ボタンをクリックしてせず**WS_TABSTOP**スタイル|  
-|×|×|×|×|すべての状態を持つダイアログ ボタン|  
-|×|×|×||ダイアログ ボタン**WS_TABSTOP**スタイル|  
+|×||||Bitmap|  
+|×|×|||Button without **WS_TABSTOP** style|  
+|×|×|×|×|Dialog button with all states|  
+|×|×|×||Dialog button with **WS_TABSTOP** style|  
   
- ビットマップ ボタン コントロールを作成する設定、 **BS_OWNERDRAW**  ボタンがオーナー描画を指定するスタイル。 これが原因で送信する Windows、`WM_MEASUREITEM`と`WM_DRAWITEM`ボタン メッセージ フレームワークは、これらのメッセージを処理しするためのボタンの外観を管理します。  
+ When creating a bitmap-button control, set the **BS_OWNERDRAW** style to specify that the button is owner-drawn. This causes Windows to send the `WM_MEASUREITEM` and `WM_DRAWITEM` messages for the button; the framework handles these messages and manages the appearance of the button for you.  
   
-### <a name="to-create-a-bitmap-button-control-in-a-windows-client-area"></a>ウィンドウのクライアント領域のビットマップ ボタン コントロールを作成するには  
+### <a name="to-create-a-bitmap-button-control-in-a-windows-client-area"></a>To create a bitmap-button control in a window's client area  
   
-1.  ボタンの&1; ~&4; 個のビットマップ イメージを作成します。  
+1.  Create one to four bitmap images for the button.  
   
-2.  構築、 [CBitmapButton](#cbitmapbutton)オブジェクトです。  
+2.  Construct the [CBitmapButton](#cbitmapbutton) object.  
   
-3.  呼び出す、[作成](../../mfc/reference/cbutton-class.md#create)を Windows の button コントロールを作成し、添付、`CBitmapButton`オブジェクトです。  
+3.  Call the [Create](../../mfc/reference/cbutton-class.md#create) function to create the Windows button control and attach it to the `CBitmapButton` object.  
   
-4.  呼び出す、 [LoadBitmaps](#loadbitmaps)ビットマップ ボタンが構築した後に、ビットマップ リソースを読み込むためのメンバー関数。  
+4.  Call the [LoadBitmaps](#loadbitmaps) member function to load the bitmap resources after the bitmap button is constructed.  
   
-### <a name="to-include-a-bitmap-button-control-in-a-dialog-box"></a>ダイアログ ボックスにビットマップ ボタン コントロールを含める  
+### <a name="to-include-a-bitmap-button-control-in-a-dialog-box"></a>To include a bitmap-button control in a dialog box  
   
-1.  ボタンの&1; ~&4; 個のビットマップ イメージを作成します。  
+1.  Create one to four bitmap images for the button.  
   
-2.  オーナー描画ボタン、[ビットマップ] ボタンを配置を含むダイアログ テンプレートを作成します。 テンプレート内のボタンのサイズは関係ありません。  
+2.  Create a dialog template with an owner-draw button positioned where you want the bitmap button. The size of the button in the template does not matter.  
   
-3.  などの値に、ボタンのキャプションを設定" **MYIMAGE**"など、ボタンの記号の定義と**IDC_MYIMAGE**します。  
+3.  Set the button's caption to a value such as " **MYIMAGE**" and define a symbol for the button such as **IDC_MYIMAGE**.  
   
-4.  アプリケーションのリソースのスクリプトでの各ボタンの文字"U"、"D"、"F"のいずれかの操作を追加することによって構築された ID を作成したイメージを提供または"X"(、重点を置いて、および無効になっています) についてのボタンのキャプションに使用される文字列に手順 3. です。 ボタンのキャプションを" **MYIMAGE**、"などの Id が必要" **MYIMAGEU**、"" **MYIMAGED**、"" **MYIMAGEF**、"と"**手順&3;**"。 **必要があります**二重引用符で囲んで、ビットマップの ID を指定します。 それ以外の場合、リソース エディターは、リソースへの整数を代入し、MFC は、イメージの読み込み時にできません。  
+4.  In your application's resource script, give each of the images created for the button an ID constructed by appending one of the letters "U," "D," "F," or "X" (for up, down, focused, and disabled) to the string used for the button caption in step 3. For the button caption " **MYIMAGE**," for example, the IDs would be " **MYIMAGEU**," " **MYIMAGED**," " **MYIMAGEF**," and " **MYIMAGEX**." You **must** specify the ID of your bitmaps within double quotes. Otherwise the resource editor will assign an integer to the resource and MFC will fail when loading the image.  
   
-5.  アプリケーションのダイアログ クラスで (から派生した`CDialog`)、追加、`CBitmapButton`メンバー オブジェクトです。  
+5.  In your application's dialog class (derived from `CDialog`), add a `CBitmapButton` member object.  
   
-6.  `CDialog`オブジェクトの[OnInitDialog](../../mfc/reference/cdialog-class.md#oninitdialog)ルーチンを呼び出し、`CBitmapButton`オブジェクトの[AutoLoad](#autoload)関数をボタンのコントロール ID をパラメーターとして使用して、`CDialog`オブジェクトの**この**ポインター。  
+6.  In the `CDialog` object's [OnInitDialog](../../mfc/reference/cdialog-class.md#oninitdialog) routine, call the `CBitmapButton` object's [AutoLoad](#autoload) function, using as parameters the button's control ID and the `CDialog` object's **this** pointer.  
   
- Windows の通知メッセージを処理する**BN_CLICKED**、ビットマップ ボタン コントロールをその親によって送信された (から派生するクラスの通常**CDialog)**に追加、 `CDialog`-メッセージごとに、オブジェクトのメッセージ マップ エントリとメッセージ ハンドラー メンバー関数を派生します。 送信された通知、`CBitmapButton`オブジェクトは、によって送信されたものと同じ、 [CButton](../../mfc/reference/cbutton-class.md)オブジェクトです。  
+ If you want to handle Windows notification messages, such as **BN_CLICKED**, sent by a bitmap-button control to its parent (usually a class derived from **CDialog)**, add to the `CDialog`-derived object a message-map entry and message-handler member function for each message. The notifications sent by a `CBitmapButton` object are the same as those sent by a [CButton](../../mfc/reference/cbutton-class.md) object.  
   
- クラス[CToolBar](../../mfc/reference/ctoolbar-class.md)ビットマップ ボタンに別のアプローチを採用します。  
+ The class [CToolBar](../../mfc/reference/ctoolbar-class.md) takes a different approach to bitmap buttons.  
   
- 詳細については`CBitmapButton`を参照してください[コントロール](../../mfc/controls-mfc.md)します。  
+ For more information on `CBitmapButton`, see [Controls](../../mfc/controls-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -131,11 +132,11 @@ class CBitmapButton : public CButton
   
  `CBitmapButton`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxext.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxext.h  
   
-##  <a name="autoload"></a>CBitmapButton::AutoLoad  
- ダイアログ ボックスのボタンのオブジェクトに関連付け、`CBitmapButton`クラス、名前で、ビットマップを読み込みおよびサイズをビットマップに合わせて ボタンをクリックします。  
+##  <a name="autoload"></a>  CBitmapButton::AutoLoad  
+ Associates a button in a dialog box with an object of the `CBitmapButton` class, loads the bitmap(s) by name, and sizes the button to fit the bitmap.  
   
 ```  
 BOOL AutoLoad(
@@ -143,38 +144,37 @@ BOOL AutoLoad(
     CWnd* pParent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- ボタンのコントロールの id。  
+ The button's control ID.  
   
  `pParent`  
- ボタンを所有するオブジェクトへのポインター。  
+ Pointer to the object that owns the button.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用して、`AutoLoad`ビットマップ ボタンとして ダイアログ ボックスのオーナー描画ボタンを初期化します。 この関数を使用して手順については、「解説」で、`CBitmapButton`クラスです。  
+### <a name="remarks"></a>Remarks  
+ Use the `AutoLoad` function to initialize an owner-draw button in a dialog box as a bitmap button. Instructions for using this function are in the remarks for the `CBitmapButton` class.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog #&75;](../../mfc/codesnippet/cpp/cbitmapbutton-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#75](../../mfc/codesnippet/cpp/cbitmapbutton-class_1.cpp)]  
   
-##  <a name="cbitmapbutton"></a>CBitmapButton::CBitmapButton  
- 
-          `CBitmapButton` オブジェクトを作成します。  
+##  <a name="cbitmapbutton"></a>  CBitmapButton::CBitmapButton  
+ Creates a `CBitmapButton` object.  
   
 ```  
 CBitmapButton();
 ```  
   
-### <a name="remarks"></a>コメント  
- C++ で作成した後`CBitmapButton`オブジェクトで呼び出す[CButton::Create](../../mfc/reference/cbutton-class.md#create) Windows のボタン コントロールを作成し、添付、`CBitmapButton`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ After creating the C++ `CBitmapButton` object, call [CButton::Create](../../mfc/reference/cbutton-class.md#create) to create the Windows button control and attach it to the `CBitmapButton` object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog #&57;](../../mfc/codesnippet/cpp/cbitmapbutton-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#57](../../mfc/codesnippet/cpp/cbitmapbutton-class_2.cpp)]  
   
-##  <a name="loadbitmaps"></a>CBitmapButton::LoadBitmaps  
- 識別された、リソースの名前または ID 番号を使用できない場合、ビットマップ イメージを読み込む場合、この関数を使用して、 `AutoLoad` 、たとえば、ダイアログ ボックスの一部ではないビットマップ ボタンを作成するために機能します。  
+##  <a name="loadbitmaps"></a>  CBitmapButton::LoadBitmaps  
+ Use this function when you want to load bitmap images identified by their resource names or ID numbers, or when you cannot use the `AutoLoad` function because, for example, you are creating a bitmap button that is not part of a dialog box.  
   
 ```  
 BOOL LoadBitmaps(
@@ -191,50 +191,50 @@ BOOL LoadBitmaps(
     UINT nIDBitmapResourceDisabled = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszBitmapResource*  
- 「を」状態またはビットマップ ボタンの通常のビットマップの名前を表す null で終わる文字列へのポインター。 必須です。  
+ Points to the null-terminated string that contains the name of the bitmap for a bitmap button's normal or "up" state. Required.  
   
  *lpszBitmapResourceSel*  
- 「停止」状態またはビットマップのボタンの選択のビットマップの名前を含む null で終わる文字列へのポインター。 あります**NULL**します。  
+ Points to the null-terminated string that contains the name of the bitmap for a bitmap button's selected or "down" state. May be **NULL**.  
   
  *lpszBitmapResourceFocus*  
- ビットマップのボタンのビットマップの名前を表す null で終わる文字列へのポインターには、状態が重点を置いています。 あります**NULL**します。  
+ Points to the null-terminated string that contains the name of the bitmap for a bitmap button's focused state. May be **NULL**.  
   
  *lpszBitmapResourceDisabled*  
- ビットマップのボタンのビットマップの名前を表す null で終わる文字列へのポインターには、状態が無効になります。 あります**NULL**します。  
+ Points to the null-terminated string that contains the name of the bitmap for a bitmap button's disabled state. May be **NULL**.  
   
  *nIDBitmapResource*  
- ビットマップ リソースのビットマップ ボタンの通常の状態「を」リソースの ID 番号を指定します。 必須です。  
+ Specifies the resource ID number of the bitmap resource for a bitmap button's normal or "up" state. Required.  
   
  *nIDBitmapResourceSel*  
- ビットマップのボタンの選択または「停止」状態は、ビットマップ リソースのリソース ID 番号を指定します。 0 である可能性があります。  
+ Specifies the resource ID number of the bitmap resource for a bitmap button's selected or "down" state. May be 0.  
   
  *nIDBitmapResourceFocus*  
- フォーカスのある状態のビットマップ リソースのリソース ID 番号を指定します。 0 である可能性があります。  
+ Specifies the resource ID number of the bitmap resource for a bitmap button's focused state. May be 0.  
   
  *nIDBitmapResourceDisabled*  
- ビットマップ ボタンの無効状態のビットマップ リソースのリソース ID 番号を指定します。 0 である可能性があります。  
+ Specifies the resource ID number of the bitmap resource for a bitmap button's disabled state. May be 0.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog #&58;](../../mfc/codesnippet/cpp/cbitmapbutton-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#58](../../mfc/codesnippet/cpp/cbitmapbutton-class_3.cpp)]  
   
-##  <a name="sizetocontent"></a>CBitmapButton::SizeToContent  
- ビットマップのサイズをビットマップ ボタンのサイズを変更するには、この関数を呼び出します。  
+##  <a name="sizetocontent"></a>  CBitmapButton::SizeToContent  
+ Call this function to resize a bitmap button to the size of the bitmap.  
   
 ```  
 void SizeToContent();
 ```  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog #&59;](../../mfc/codesnippet/cpp/cbitmapbutton-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#59](../../mfc/codesnippet/cpp/cbitmapbutton-class_4.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル CTRLTEST](../../visual-cpp-samples.md)   
- [CButton クラス](../../mfc/reference/cbutton-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample CTRLTEST](../../visual-cpp-samples.md)   
+ [CButton Class](../../mfc/reference/cbutton-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 

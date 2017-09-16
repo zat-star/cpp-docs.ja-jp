@@ -1,5 +1,5 @@
 ---
-title: "num_put クラス | Microsoft Docs"
+title: num_put Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - xlocnum/std::num_put
-- num_put
 - locale/std::num_put::char_type
 - locale/std::num_put::iter_type
 - locale/std::num_put::do_put
@@ -18,7 +17,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- num_put class
+- std::num_put [C++]
+- std::num_put [C++], char_type
+- std::num_put [C++], iter_type
+- std::num_put [C++], do_put
+- std::num_put [C++], put
 ms.assetid: 36c5bffc-8283-4201-8ed4-78c4d81f8a17
 caps.latest.revision: 21
 author: corob-msft
@@ -38,17 +41,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a3161373a3a0edec1bf7272e3099432c7282b0cf
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: b1cc5cde768311e5ffb4155021a17fa32d357bcd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="numput-class"></a>num_put クラス
-数値から `CharType` 型のシーケンスへの変換を制御するためにロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。  
+# <a name="numput-class"></a>num_put Class
+A template class that describes an object that can serve as a locale facet to control conversions of numeric values to sequences of type `CharType`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType,  
@@ -56,53 +59,53 @@ template <class CharType,
 class num_put : public locale::facet;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- ロケールの文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters in a locale.  
   
  `OutputIterator`  
- 数値 put 関数が出力を書き込む反復子の型。  
+ The type of iterator to which the numeric put functions write their output.  
   
-## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。  
+## <a name="remarks"></a>Remarks  
+ As with any locale facet, the static object ID has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in **id.**  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[num_put](#num_put)|`num_put` 型のオブジェクトのコンストラクター。|  
+|[num_put](#num_put)|The constructor for objects of type `num_put`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|ロケールによって使用される文字を表すために使用される型。|  
-|[iter_type](#iter_type)|出力反復子を表す型。|  
+|[char_type](#char_type)|A type that is used to describe a character used by a locale.|  
+|[iter_type](#iter_type)|A type that describes an output iterator.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[do_put](#do_put)|数値を、特定のロケールで書式設定された数値を表す `CharType` のシーケンスに変換するために呼び出される仮想関数。|  
-|[put](#put)|数値を、特定のロケールで書式設定された数値を表す `CharType` のシーケンスに変換します。|  
+|[do_put](#do_put)|A virtual function that is called to convert a number into a sequence of `CharType`s that represents the number formatted for a given locale.|  
+|[put](#put)|Converts a number into a sequence of `CharType`s which represents the number formatted for a given locale.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  num_put::char_type  
- ロケールによって使用される文字を表すために使用される型。  
+ A type that is used to describe a character used by a locale.  
   
 ```  
 typedef CharType char_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
 ##  <a name="do_put"></a>  num_put::do_put  
- 数値を、特定のロケールで書式設定された数値を表す **CharType** のシーケンスに変換するために呼び出される仮想関数。  
+ A virtual function that is called to convert a number into a sequence of **CharType**s that represents the number formatted for a given locale.  
   
 ```  
 virtual iter_type do_put(
@@ -160,58 +163,58 @@ virtual iter_type do_put(
     const unsigned long long val) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `next`  
- 挿入された文字列の先頭の要素を示す反復子。  
+ An iterator addressing the first element of the inserted string.  
   
  `_Iosbase`  
- 出力に句読点を付けるために使用される numpunct ファセットを持つロケールおよび出力を書式設定するためのフラグを含むストリームを指定します。  
+ Specified the stream which contains locale with the numpunct facet used to punctuate the output and flags for formatting the output.  
   
  `_Fill`  
- スペースに使用される文字。  
+ A character that is used for spacing.  
   
  `val`  
- 出力する数値またはブール型。  
+ The number or Boolean type that is to be output.  
   
-### <a name="return-value"></a>戻り値  
- 生成される最後の要素を 1 つ超える位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator the addresses the position one beyond the last element produced.  
   
-### <a name="remarks"></a>コメント  
- 1 番目のプロテクト仮想メンバー関数は、`next` 以降の連続した要素を生成し、`val` の値から整数出力フィールドを生成します。 関数は、生成された出力フィールドを超える、次に要素を挿入する場所を指定する反復子を返します。  
+### <a name="remarks"></a>Remarks  
+ The first virtual protected member function generates sequential elements beginning at `next` to produce an integer output field from the value of `val`. The function returns an iterator designating the next place to insert an element beyond the generated integer output field.  
   
- 整数出力フィールドは、一連の `char` 要素をファイルに生成するために出力関数によって使用されるルールと同じルールで生成されます。 このような char 要素は、単純な一対一のマッピングで **CharType** 型の同等の要素にマップされると想定されます。 出力関数はフィールドを埋めるのにスペースと数字の 0 のいずれかを使用しますが、`do_put` は代わりに **fill** を使用します。 同等の出力変換仕様は次のように決定されます。  
+ The integer output field is generated by the same rules used by the print functions for generating a series of `char` elements to a file. Each such char element is assumed to map to an equivalent element of type **CharType** by a simple, one-to-one mapping. Where a print function pads a field with either spaces or the digit 0, however, `do_put` instead uses **fill**. The equivalent print conversion specification is determined as follows:  
   
--   場合**iosbase**です。 [フラグ](../standard-library/ios-base-class.md#flags) & `ios_base::basefield` == `ios_base::`[oct](../standard-library/ios-functions.md#oct)、変換の仕様は**lo**です。  
+-   If **iosbase**. [flags](../standard-library/ios-base-class.md#flags) & `ios_base::basefield` == `ios_base::`[oct](../standard-library/ios-functions.md#oct), the conversion specification is **lo**.  
   
--   **iosbase.flags** & **ios_base::basefield** == `ios_base::`[hex](../standard-library/ios-functions.md#hex) の場合、変換仕様は **lx** です。  
+-   If **iosbase.flags** & **ios_base::basefield** == `ios_base::`[hex](../standard-library/ios-functions.md#hex), the conversion specification is **lx**.  
   
--   それ以外の場合、変換仕様は **ld** です。  
+-   Otherwise, the conversion specification is **ld**.  
   
- 場合**iosbase**です。 [幅](../standard-library/ios-base-class.md#width)は 0 以外、この値のフィールドの幅が先頭に付加します。 関数を呼び出すし**iosbase**です。 **幅**フィールドの幅を 0 にリセットするには、(0) です。  
+ If **iosbase**. [width](../standard-library/ios-base-class.md#width) is nonzero, a field width of this value is prepended. The function then calls **iosbase**. **width**(0) to reset the field width to zero.  
   
- 場合にのみ、余白が発生する要素の最小数*N*出力フィールドを指定するために必要な未満**iosbase**です。 [幅](../standard-library/ios-base-class.md#width)です。 このような埋め込みは、一連の*N* - **幅**部数**fill**です。 この場合、埋め込みは次のように発生します。  
+ Padding occurs only if the minimum number of elements *N* required to specify the output field is less than **iosbase**. [width](../standard-library/ios-base-class.md#width). Such padding consists of a sequence of *N* - **width** copies of **fill**. Padding then occurs as follows:  
   
--   場合**iosbase**です。 **flags** & `ios_base::adjustfield` == `ios_base::`[left](../standard-library/ios-functions.md#left), the flag **-** is prepended. (埋め込みは、生成されたテキストの後に発生します。)  
+-   If **iosbase**. **flags** & `ios_base::adjustfield` == `ios_base::`[left](../standard-library/ios-functions.md#left), the flag **-** is prepended. (Padding occurs after the generated text.)  
   
--   **iosbase.flags** & **ios_base::adjustfield** == `ios_base::`[internal](../standard-library/ios-functions.md#internal) の場合、**0** フラグが先頭に付加されます。 (数値出力フィールド場合、埋め込みは、出力関数が 0 で埋め込む状況でのみ発生します。)  
+-   If **iosbase.flags** & **ios_base::adjustfield** == `ios_base::`[internal](../standard-library/ios-functions.md#internal), the flag **0** is prepended. (For a numeric output field, padding occurs where the print functions pad with 0.)  
   
--   それ以外の場合、追加のフラグは先頭に付加されません。 (埋め込みは、生成されたシーケンスの前に発生します。)  
+-   Otherwise, no additional flag is prepended. (Padding occurs before the generated sequence.)  
   
- 最後に次のようになります。  
+ Finally:  
   
--   場合**iosbase**です。 **フラグ** & `ios_base::`[showpos](../standard-library/ios-functions.md#showpos) 0 以外の場合は、フラグ **+** は前の変換指定に付加します。  
+-   If **iosbase**. **flags** & `ios_base::`[showpos](../standard-library/ios-functions.md#showpos) is nonzero, the flag **+** is prepended to the conversion specification.  
   
--   場合**iosbase**です。 **フラグ** & **ios_base::**[showbase](../standard-library/ios-functions.md#showbase) 0 以外の場合は、フラグ **#** は前の変換指定に付加します。  
+-   If **iosbase**. **flags** & **ios_base::**[showbase](../standard-library/ios-functions.md#showbase) is nonzero, the flag **#** is prepended to the conversion specification.  
   
- 整数値の形式は出力フィールドによって決定、[ロケールのファセット](../standard-library/locale-class.md#facet_class)**要素**呼び出しによって返される[use_facet](../standard-library/locale-functions.md#use_facet) < [numpunct](../standard-library/numpunct-class.md) \< **Elem**> ( **iosbase**です。 [getloc](../standard-library/ios-base-class.md#getloc))。 具体的には、次のように使用します。  
+ The format of an integer output field is further determined by the [locale facet](../standard-library/locale-class.md#facet_class)**fac** returned by the call [use_facet](../standard-library/locale-functions.md#use_facet) < [numpunct](../standard-library/numpunct-class.md)\< **Elem**>( **iosbase**. [getloc](../standard-library/ios-base-class.md#getloc)). Specifically:  
   
-- **fac**. [グループ化](../standard-library/numpunct-class.md#grouping)桁の数字が小数点の左側にグループ化する方法を決定  
+- **fac**. [grouping](../standard-library/numpunct-class.md#grouping) determines how digits are grouped to the left of any decimal point  
   
-- **fac**. [thousands_sep](../standard-library/numpunct-class.md#thousands_sep)小数点の左側にある数字のグループを区切る順序を決定  
+- **fac**. [thousands_sep](../standard-library/numpunct-class.md#thousands_sep) determines the sequence that separates groups of digits to the left of any decimal point  
   
- グループ化の制約が課せられなかった場合**要素**です。 **グループ化**(先頭の要素値を持つ CHAR_MAX) のインスタンスがしない**要素**です。 `thousands_sep`出力フィールドで生成されます。 それ以外の場合、出力変換が発生した後に区切り記号が挿入されます。  
+ If no grouping constraints are imposed by **fac**. **grouping** (its first element has the value CHAR_MAX), then no instances of **fac**. `thousands_sep` are generated in the output field. Otherwise, separators are inserted after the print conversion occurs.  
   
- 2 番目のプロテクト仮想メンバー関数:  
+ The second virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -220,9 +223,9 @@ virtual iter_type do_put(iter_type next,
     unsigned long val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、**ld** の変換仕様を **lu** に置き換えている点が異なります。  
+ behaves the same as the first, except that it replaces a conversion specification of **ld** with **lu**.  
   
- 3 番目のプロテクト仮想メンバー関数：  
+ The third virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -231,21 +234,21 @@ virtual iter_type do_put(iter_type next,
     double val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、**val** の値から浮動小数点出力フィールドを生成している点が異なります。 **fac**. [decimal_point](../standard-library/numpunct-class.md#decimal_point)整数部の桁数を小数点以下桁数から分離する順序を決定します。 同等の出力変換仕様は次のように決定されます。  
+ behaves the same as the first, except that it produces a floating-point output field from the value of **val**. **fac**. [decimal_point](../standard-library/numpunct-class.md#decimal_point) determines the sequence that separates the integer digits from the fraction digits. The equivalent print conversion specification is determined as follows:  
   
--   場合**iosbase**です。 **フラグ** & `ios_base::floatfield` == `ios_base::`[固定](../standard-library/ios-functions.md#fixed)、変換の仕様は**lf**です。  
+-   If **iosbase**. **flags** & `ios_base::floatfield` == `ios_base::`[fixed](../standard-library/ios-functions.md#fixed), the conversion specification is **lf**.  
   
--   場合**iosbase**です。 **フラグ** & **ios_base::floatfield** == `ios_base::`[科学](../standard-library/ios-functions.md#scientific)、変換の仕様は`le`します。 場合**iosbase**です。 **フラグ** & `ios_base::`[大文字](../standard-library/ios-functions.md#uppercase)がゼロ以外、 **e**に置き換えられます**E**です。  
+-   If **iosbase**. **flags** & **ios_base::floatfield** == `ios_base::`[scientific](../standard-library/ios-functions.md#scientific), the conversion specification is `le`. If **iosbase**. **flags** & `ios_base::`[uppercase](../standard-library/ios-functions.md#uppercase) is nonzero, **e** is replaced with **E**.  
   
--   それ以外の場合、変換仕様は **lg** です。 場合**iosbase**です。 **フラグ** & **ios_base::uppercase**がゼロ以外、 **g**に置き換えられます**G**です。  
+-   Otherwise, the conversion specification is **lg**. If **iosbase**. **flags** & **ios_base::uppercase** is nonzero, **g** is replaced with **G**.  
   
- 場合**iosbase**です。 **フラグ** & **ios_base::fixed**が 0 でない場合、または**iosbase**です。 [有効桁数](../standard-library/ios-base-class.md#precision)が 0 の場合、値を持つ有効桁数よりも大きい**iosbase**です。 **有効桁数**は前の変換指定に付加します。 埋め込みの動作は整数出力フィールドの場合と同様です。 埋め込み文字は **fill** です。 最後に次のようになります。  
+ If **iosbase**. **flags** & **ios_base::fixed** is nonzero or if **iosbase**. [precision](../standard-library/ios-base-class.md#precision) is greater than zero, a precision with the value **iosbase**. **precision** is prepended to the conversion specification. Any padding behaves the same as for an integer output field. The padding character is **fill**. Finally:  
   
--   場合**iosbase**です。 **フラグ** & `ios_base::`[showpos](../standard-library/ios-functions.md#showpos) 0 以外の場合は、フラグ **+** は前の変換指定に付加します。  
+-   If **iosbase**. **flags** & `ios_base::`[showpos](../standard-library/ios-functions.md#showpos) is nonzero, the flag **+** is prepended to the conversion specification.  
   
--   場合**iosbase**です。 **フラグ** & `ios_base::`[showpoint](../standard-library/ios-functions.md#showpoint) 0 以外の場合は、フラグ **#** は前の変換指定に付加します。  
+-   If **iosbase**. **flags** & `ios_base::`[showpoint](../standard-library/ios-functions.md#showpoint) is nonzero, the flag **#** is prepended to the conversion specification.  
   
- 4 番目のプロテクト仮想メンバー関数:  
+ The fourth virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -254,9 +257,9 @@ virtual iter_type do_put(iter_type next,
     long double val) const;
 ```  
   
- この関数の動作は 3 番目と同じですが、変換仕様内の修飾子 **l** が **L** に置き換えられている点が異なります。  
+ behaves the same the third, except that the qualifier **l** in the conversion specification is replaced with **L**.  
   
- 5 番目のプロテクト仮想メンバー関数:  
+ The fifth virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -265,9 +268,9 @@ virtual iter_type do_put(iter_type next,
     const void* val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、変換仕様が `p` と**、**埋め込みを指定するために必要なすべての修飾子である点が異なります。  
+ behaves the same the first, except that the conversion specification is `p`**,** plus any qualifier needed to specify padding.  
   
- 6 番目のプロテクト仮想メンバー関数:  
+ The sixth virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -276,11 +279,11 @@ virtual iter_type do_put(iter_type next,
     bool val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、`val` からブール値出力フィールドを生成している点が異なります。  
+ behaves the same as the first, except that it generates a Boolean output field from `val`.  
   
- ブール値出力フィールドは、次の 2 つの形式のいずれかになります。 場合**iosbase**です。 **フラグ** & `ios_base::`[boolalpha](../standard-library/ios-functions.md#boolalpha)は**false**、メンバー関数を返します`do_put`(_ *[次へ]*、 \_ *Iosbase*、 \_ *塗りつぶし*、(**長い**) `val`)、通常 0 の生成されたシーケンスが生成されます (の**false**) または 1 (の**true**)。 それ以外の場合、生成されたシーケンスであるか、**要素**です。 [falsename](../standard-library/numpunct-class.md#falsename)`)` (for **false**), or **fac**. [truename](../standard-library/numpunct-class.md#truename) (の**true**)。  
+ A Boolean output field takes one of two forms. If **iosbase**. **flags** & `ios_base::`[boolalpha](../standard-library/ios-functions.md#boolalpha) is **false**, the member function returns `do_put`(_ *Next*, \_ *Iosbase*, \_ *Fill*, ( **long**) `val`), which typically produces a generated sequence of either 0 (for **false**) or 1 (for **true**). Otherwise, the generated sequence is either **fac**. [falsename](../standard-library/numpunct-class.md#falsename)`)` (for **false**), or **fac**. [truename](../standard-library/numpunct-class.md#truename) (for **true**).  
   
- 7 番目のプロテクト仮想メンバー関数:  
+ The seventh virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -289,9 +292,9 @@ virtual iter_type do_put(iter_type next,
     long long val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、**ld** の変換仕様を **lld** に置き換えている点が異なります。  
+ behaves the same as the first, except that it replaces a conversion specification of **ld** with **lld**.  
   
- 8 番目のプロテクト仮想メンバー関数:  
+ The eighth virtual protected member function:  
   
 ```  
 virtual iter_type do_put(iter_type next,
@@ -300,47 +303,47 @@ virtual iter_type do_put(iter_type next,
     unsigned long long val) const;
 ```  
   
- この関数の動作は 1 番目と同じですが、`ld` の変換仕様を `llu` に置き換えている点が異なります。  
+ behaves the same as the first, except that it replaces a conversion specification of `ld` with `llu`.  
   
-### <a name="example"></a>例  
-  [put](#put) の例 (`do_put` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [put](#put), which calls `do_put`.  
   
 ##  <a name="iter_type"></a>  num_put::iter_type  
- 出力反復子を表す型。  
+ A type that describes an output iterator.  
   
 ```  
 typedef OutputIterator iter_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **OutputIterator** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **OutputIterator.**  
   
 ##  <a name="num_put"></a>  num_put::num_put  
- `num_put` 型のオブジェクトのコンストラクター。  
+ The constructor for objects of type `num_put`.  
   
 ```  
 explicit num_put(size_t _Refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Refs`  
- オブジェクトのメモリ管理のタイプを指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
-### <a name="remarks"></a>コメント  
- `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `_Refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- デストラクターが保護されているため、利用できる直接的な例はありません。  
+ No direct examples are possible, because the destructor is protected.  
   
- コンストラクターは、**locale::**[facet](../standard-library/locale-class.md#facet_class)(_ *Refs*) を使用して、その基本オブジェクトを初期化します。  
+ The constructor initializes its base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)(_ *Refs*).  
   
 ##  <a name="put"></a>  num_put::put  
- 数値を、特定のロケールで書式設定された数値を表す **CharType** のシーケンスに変換します。  
+ Converts a number into a sequence of **CharType**s that represents the number formatted for a given locale.  
   
 ```  
 iter_type put(
@@ -400,26 +403,26 @@ iter_type put(
     const void* val) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dest`  
- 挿入された文字列の先頭の要素を示す反復子。  
+ An iterator addressing the first element of the inserted string.  
   
  `_Iosbase`  
- 出力に句読点を付けるために使用される numpunct ファセットを持つロケールおよび出力を書式設定するためのフラグを含むストリームを指定します。  
+ Specified the stream that contains locale with the numpunct facet used to punctuate the output and flags for formatting the output.  
   
  `_Fill`  
- スペースに使用される文字。  
+ A character that is used for spacing.  
   
  `val`  
- 出力する数値またはブール型。  
+ The number or Boolean type that is to be output.  
   
-### <a name="return-value"></a>戻り値  
- 生成される最後の要素を 1 つ超える位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator the addresses the position one beyond the last element produced.  
   
-### <a name="remarks"></a>コメント  
- すべてのメンバー関数が [do_put](#do_put)( `next`, `_Iosbase`, `_Fill`, `val`) を返します。  
+### <a name="remarks"></a>Remarks  
+ All member functions return [do_put](#do_put)( `next`, `_Iosbase`, `_Fill`, `val`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // num_put_put.cpp  
@@ -455,9 +458,9 @@ The thousands separator is: .
 num_put( ) = 1.000,67  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [facet クラス](../standard-library/locale-class.md#facet_class)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [facet Class](../standard-library/locale-class.md#facet_class)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

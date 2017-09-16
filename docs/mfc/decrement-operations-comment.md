@@ -1,40 +1,58 @@
 ---
-title: "// Operations コメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コメント, MFC"
-  - "MFC ソース ファイル, Operations コメント"
-  - "Operations コメント (MFC ソース ファイルの)"
+title: -- Operations Comment | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Operations comment in MFC source files
+- comments, MFC
+- MFC source files, Operations comments
 ms.assetid: f3bff48d-26be-4db6-8435-9e4d079838c9
 caps.latest.revision: 9
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# // Operations コメント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f7b358534dbf0446aac45315f175ced930d0a53e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC のクラス宣言の `// Operations` セクションが実行を行うために、オブジェクトにするか、物事が実行するアクションを呼び出すことができるメンバー関数を含む \(\) 操作を実行します。  これらの関数は、通常副作用があるため、通常は非**const** です。  そのクラスでの必要に応じて、仮想メソッドまたは仮想である場合があります。  通常、これらのメンバーはパブリックです。  
+---
+# <a name="-operations-comment"></a>// Operations Comment
+The `// Operations` section of an MFC class declaration contains member functions that you can call on the object to make it do things or perform actions (perform operations). These functions are typically non-**const** because they usually have side effects. They may be virtual or nonvirtual depending on the needs of the class. Typically, these members are public.  
   
- クラスからサンプル `CStdioFile`リスティングで、[コメントの例](../mfc/an-example-of-the-comments.md)にリストはこのコメントの下に、2 種類のメンバー関数があります: `ReadString` と `WriteString`。  
+ In the sample listing from class `CStdioFile`, in [An Example of the Comments](../mfc/an-example-of-the-comments.md), the list includes two member functions under this comment: `ReadString` and `WriteString`.  
   
- 属性と同様に、さらに細分化できます。  
+ As with attributes, operations can be further subdivided.  
   
-## 参照  
- [MFC ソース ファイルの利用](../Topic/Using%20the%20MFC%20Source%20Files.md)   
- [コメントの例](../mfc/an-example-of-the-comments.md)   
- [\/\/ Implementation コメント](../mfc/decrement-implementation-comment.md)   
- [\/\/ Constructors コメント](../mfc/decrement-constructors-comment.md)   
- [\/\/ Attributes コメント](../Topic/--%20Attributes%20Comment.md)   
- [\/\/ Overridables コメント](../mfc/decrement-overridables-comment.md)
+## <a name="see-also"></a>See Also  
+ [Using the MFC Source Files](../mfc/using-the-mfc-source-files.md)   
+ [An Example of the Comments](../mfc/an-example-of-the-comments.md)   
+ [// Implementation Comment](../mfc/decrement-implementation-comment.md)   
+ [// Constructors Comment](../mfc/decrement-constructors-comment.md)   
+ [// Attributes Comment](../mfc/decrement-attributes-comment.md)   
+ [// Overridables Comment](../mfc/decrement-overridables-comment.md)
+
+

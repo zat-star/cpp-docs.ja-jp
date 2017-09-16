@@ -1,5 +1,5 @@
 ---
-title: "CFontDialog クラス |Microsoft ドキュメント"
+title: CFontDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -28,10 +28,20 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFontDialog class
-- dialog boxes, fonts
-- fonts
-- fonts, selecting
+- CFontDialog [MFC], CFontDialog
+- CFontDialog [MFC], DoModal
+- CFontDialog [MFC], GetCharFormat
+- CFontDialog [MFC], GetColor
+- CFontDialog [MFC], GetCurrentFont
+- CFontDialog [MFC], GetFaceName
+- CFontDialog [MFC], GetSize
+- CFontDialog [MFC], GetStyleName
+- CFontDialog [MFC], GetWeight
+- CFontDialog [MFC], IsBold
+- CFontDialog [MFC], IsItalic
+- CFontDialog [MFC], IsStrikeOut
+- CFontDialog [MFC], IsUnderline
+- CFontDialog [MFC], m_cf
 ms.assetid: 6228d500-ed0f-4156-81e5-ab0d57d1dcf4
 caps.latest.revision: 25
 author: mikeblome
@@ -51,75 +61,75 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 6f277ba8fba72106918e03397f57726bd5beb0ff
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fd52e37128e9363085c1825a3aeee2a4a4fa5a70
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfontdialog-class"></a>CFontDialog クラス
-フォントの選択 ダイアログ ボックス、アプリケーションに組み込むことができます。  
+# <a name="cfontdialog-class"></a>CFontDialog Class
+Allows you to incorporate a font-selection dialog box into your application.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFontDialog : public CCommonDialog  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFontDialog::CFontDialog](#cfontdialog)|`CFontDialog` オブジェクトを構築します。|  
+|[CFontDialog::CFontDialog](#cfontdialog)|Constructs a `CFontDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFontDialog::DoModal](#domodal)|ダイアログ ボックスが表示され、選択を行うことができます。|  
-|[CFontDialog::GetCharFormat](#getcharformat)|選択したフォントの文字の書式設定を取得します。|  
-|[CFontDialog::GetColor](#getcolor)|選択したフォントの色を返します。|  
-|[CFontDialog::GetCurrentFont](#getcurrentfont)|現在選択されているフォントの特性を割り当て、`LOGFONT`構造体。|  
-|[CFontDialog::GetFaceName](#getfacename)|選択したフォントの書体名を返します。|  
-|[CFontDialog::GetSize](#getsize)|選択したフォントのポイント サイズを返します。|  
-|[CFontDialog::GetStyleName](#getstylename)|選択したフォントのスタイル名を返します。|  
-|[CFontDialog::GetWeight](#getweight)|選択したフォントの太さを返します。|  
-|[CFontDialog::IsBold](#isbold)|フォントが太字かどうかを決定します。|  
-|[CFontDialog::IsItalic](#isitalic)|フォントが斜体かどうかを決定します。|  
-|[CFontDialog::IsStrikeOut](#isstrikeout)|取り消し線付きで表示されているかどうかを決定します。|  
-|[CFontDialog::IsUnderline](#isunderline)|フォントの下線が引かれたかどうかを決定します。|  
+|[CFontDialog::DoModal](#domodal)|Displays the dialog and allows the user to make a selection.|  
+|[CFontDialog::GetCharFormat](#getcharformat)|Retrieves the character formatting of the selected font.|  
+|[CFontDialog::GetColor](#getcolor)|Returns the color of the selected font.|  
+|[CFontDialog::GetCurrentFont](#getcurrentfont)|Assigns the characteristics of the currently selected font to a `LOGFONT` structure.|  
+|[CFontDialog::GetFaceName](#getfacename)|Returns the face name of the selected font.|  
+|[CFontDialog::GetSize](#getsize)|Returns the point size of the selected font.|  
+|[CFontDialog::GetStyleName](#getstylename)|Returns the style name of the selected font.|  
+|[CFontDialog::GetWeight](#getweight)|Returns the weight of the selected font.|  
+|[CFontDialog::IsBold](#isbold)|Determines whether the font is bold.|  
+|[CFontDialog::IsItalic](#isitalic)|Determines whether the font is italic.|  
+|[CFontDialog::IsStrikeOut](#isstrikeout)|Determines whether the font is displayed with strikeout.|  
+|[CFontDialog::IsUnderline](#isunderline)|Determines whether the font is underlined.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFontDialog::m_cf](#m_cf)|カスタマイズに使用する構造体、`CFontDialog`オブジェクトです。|  
+|[CFontDialog::m_cf](#m_cf)|A structure used to customize a `CFontDialog` object.|  
   
-## <a name="remarks"></a>コメント  
- A`CFontDialog`オブジェクトは、システムに現在インストールされているフォントの一覧がダイアログ ボックス。 ユーザーがリストから、特定のフォントを選択し、これを選択し、報告、アプリケーションにします。  
+## <a name="remarks"></a>Remarks  
+ A `CFontDialog` object is a dialog box with a list of fonts that are currently installed in the system. The user can select a particular font from the list, and this selection is then reported back to the application.  
   
- 構築する、`CFontDialog`オブジェクト、指定されたコンス トラクターを使用して、新しいサブクラスを派生させるや、独自のカスタム コンス トラクターを使用します。  
+ To construct a `CFontDialog` object, use the provided constructor or derive a new subclass and use your own custom constructor.  
   
- 1 回、`CFontDialog`使用すると、オブジェクトが構築された、`m_cf`値やダイアログ ボックスのコントロールの状態を初期化するためにします。 [構造体](#m_cf)型の構造は、 [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832)します。 この構造体の詳細については、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] を参照してください。  
+ Once a `CFontDialog` object has been constructed, you can use the `m_cf` structure to initialize the values or states of controls in the dialog box. The [m_cf](#m_cf) structure is of type [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832). For more information on this structure, see the Windows SDK.  
   
- ダイアログ オブジェクトのコントロールを初期化した後、`DoModal`メンバー関数 ダイアログ ボックスが表示され、ユーザーがフォントを選択できるようにします。 `DoModal`ユーザーが [ok] を選択するかどうかを返します ( **IDOK**) またはキャンセル ( **IDCANCEL**) ボタンをクリックします。  
+ After initializing the dialog object's controls, call the `DoModal` member function to display the dialog box and allow the user to select a font. `DoModal` returns whether the user selected the OK ( **IDOK**) or Cancel ( **IDCANCEL**) button.  
   
- 場合`DoModal`返します**IDOK**のいずれかを使用する`CFontDialog`のユーザーが入力情報を取得するメンバー関数。  
+ If `DoModal` returns **IDOK**, you can use one of `CFontDialog`'s member functions to retrieve the information input by the user.  
   
- ウィンドウを使用できます[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)関数 ダイアログ ボックスの初期化中にエラーが発生したかどうかを確認し、エラーについて説明します。 この関数の詳細については、次を参照してください。、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ You can use the Windows [CommDlgExtendedError](http://msdn.microsoft.com/library/windows/desktop/ms646916) function to determine whether an error occurred during initialization of the dialog box and to learn more about the error. For more information on this function, see the Windows SDK.  
   
- `CFontDialog`COMMDLG に依存します。Windows 3.1 以降のバージョンに付属している DLL ファイルです。  
+ `CFontDialog` relies on the COMMDLG.DLL file that ships with Windows versions 3.1 and later.  
   
- ダイアログ ボックスをカスタマイズするには、派生クラスを`CFontDialog`拡張されたコントロールからの通知メッセージを処理するメッセージ マップを追加、独自のダイアログ テンプレートを使用します。 処理されないメッセージは、基本クラスに渡す必要があります。  
+ To customize the dialog box, derive a class from `CFontDialog`, provide a custom dialog template, and add a message-map to process the notification messages from the extended controls. Any unprocessed messages should be passed to the base class.  
   
- フック関数をカスタマイズする必要はありません。  
+ Customizing the hook function is not required.  
   
- 使用する方法について`CFontDialog`を参照してください[コモン ダイアログ クラス](../../mfc/common-dialog-classes.md)します。  
+ For more information on using `CFontDialog`, see [Common Dialog Classes](../../mfc/common-dialog-classes.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -132,11 +142,11 @@ class CFontDialog : public CCommonDialog
   
  `CFontDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdlgs.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdlgs.h  
   
-##  <a name="cfontdialog"></a>CFontDialog::CFontDialog  
- `CFontDialog` オブジェクトを構築します。  
+##  <a name="cfontdialog"></a>  CFontDialog::CFontDialog  
+ Constructs a `CFontDialog` object.  
   
 ```  
 CFontDialog(
@@ -152,218 +162,218 @@ CFontDialog(
     CWnd* pParentWnd = NULL);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- l`plfInitial`  
- ポインター、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)フォントの特性の一部を設定できるようにするデータ構造体。  
+### <a name="parameters"></a>Parameters  
+ l `plfInitial`  
+ A pointer to a [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) data structure that allows you to set some of the font's characteristics.  
   
  `charFormat`  
- ポインター、 [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)を使用すると、機能豊富なフォントの特性の一部を設定するデータ構造は、コントロールを編集します。  
+ A pointer to a [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) data structure that allows you to set some of the font's characteristics in a rich edit control.  
   
  `dwFlags`  
- 1 つ以上のフォント選択フラグを指定します。 ビットごとの OR 演算子を使用して、1 つ以上の事前設定値を組み合わせることができます。 `m_cf.Flag`s 構造体メンバーを変更する場合は、変更内容でビットごとの OR 演算子を使用して、既定の動作をそのままにします。 詳細については、これらのフラグは、の説明を参照して、 [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies one or more choose-font flags. One or more preset values can be combined using the bitwise OR operator. If you modify the `m_cf.Flag`s structure member, be sure to use a bitwise OR operator in your changes to keep the default behavior intact. For details on each of these flags, see the description of the [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832) structure in the Windows SDK.  
   
  pdcPrinter  
- プリンター デバイス コンテキストへのポインター。 指定すると、このパラメーターはフォントが選択されるプリンターのプリンター デバイス コンテキストを指します。  
+ A pointer to a printer-device context. If supplied, this parameter points to a printer-device context for the printer on which the fonts are to be selected.  
   
  `pParentWnd`  
- フォント ダイアログ ボックスの親ウィンドウまたはオーナー ウィンドウへのポインター。  
+ A pointer to the font dialog box's parent or owner window.  
   
-### <a name="remarks"></a>コメント  
- `CHOOSEFONT` 構造体のメンバーはコンストラクターによって自動的に入力されることに注意してください。 既定とは異なるフォント ダイアログが必要な場合にのみ、これらを変更する必要があります。  
+### <a name="remarks"></a>Remarks  
+ Note that the constructor automatically fills in the members of the `CHOOSEFONT` structure. You should only change these if you want a font dialog different than the default.  
   
 > [!NOTE]
->  この関数の最初のバージョンは、リッチ エディット コントロールのサポートがない場合にのみ存在します。  
+>  The first version of this function only exists when there is no rich edit control support.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&78;](../../mfc/codesnippet/cpp/cfontdialog-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#78](../../mfc/codesnippet/cpp/cfontdialog-class_1.cpp)]  
   
-##  <a name="domodal"></a>CFontDialog::DoModal  
- この関数では、Windows に共通の [フォント] ダイアログ ボックスを表示し、ユーザーがフォントを選択できます。  
+##  <a name="domodal"></a>  CFontDialog::DoModal  
+ Call this function to display the Windows common font dialog box and allow the user to choose a font.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- **IDOK**または**IDCANCEL**します。 場合**IDCANCEL**は、Windows を呼び出し、返される[情報を得る](http://msdn.microsoft.com/library/windows/desktop/ms646916)エラーが発生したかどうかを判断します。  
+### <a name="return-value"></a>Return Value  
+ **IDOK** or **IDCANCEL**. If **IDCANCEL** is returned, call the Windows [CommDlgExtendedError](http://msdn.microsoft.com/library/windows/desktop/ms646916) function to determine whether an error occurred.  
   
- **IDOK**と**IDCANCEL**をユーザーが [ok] または [キャンセル] ボタンを選択するかどうかを示す定数です。  
+ **IDOK** and **IDCANCEL** are constants that indicate whether the user selected the OK or Cancel button.  
   
-### <a name="remarks"></a>コメント  
- メンバーを設定して、さまざまなフォント ダイアログ コントロールを初期化する場合、[構造体](#m_cf)構造体を呼び出す前に、これを行う必要があります`DoModal`はダイアログ オブジェクトを構築します。  
+### <a name="remarks"></a>Remarks  
+ If you want to initialize the various font dialog controls by setting members of the [m_cf](#m_cf) structure, you should do this before calling `DoModal`, but after the dialog object is constructed.  
   
- 場合`DoModal`返します**IDOK**、他のメンバー ダイアログ ボックスに、設定や、ユーザーが入力した情報を取得する関数を呼び出すことができます。  
+ If `DoModal` returns **IDOK**, you can call other member functions to retrieve the settings or information input by the user into the dialog box.  
   
-### <a name="example"></a>例  
-  例を参照して[CFontDialog::CFontDialog](#cfontdialog)と[CFontDialog::GetColor](#getcolor)します。  
+### <a name="example"></a>Example  
+  See the examples for [CFontDialog::CFontDialog](#cfontdialog) and [CFontDialog::GetColor](#getcolor).  
   
-##  <a name="getcharformat"></a>CFontDialog::GetCharFormat  
- 選択したフォントの文字の書式設定を取得します。  
+##  <a name="getcharformat"></a>  CFontDialog::GetCharFormat  
+ Retrieves the character formatting of the selected font.  
   
 ```  
 void GetCharFormat(CHARFORMAT& cf) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- A [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)選択したフォントの文字の書式設定に関する情報を含む構造体。  
+ A [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure containing information about the character formatting of the selected font.  
   
-##  <a name="getcolor"></a>CFontDialog::GetColor  
- 選択したフォントの色を取得するには、この関数を呼び出します。  
+##  <a name="getcolor"></a>  CFontDialog::GetColor  
+ Call this function to retrieve the selected font color.  
   
 ```  
 COLORREF GetColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントの色。  
+### <a name="return-value"></a>Return Value  
+ The color of the selected font.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&79;](../../mfc/codesnippet/cpp/cfontdialog-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#79](../../mfc/codesnippet/cpp/cfontdialog-class_2.cpp)]  
   
-##  <a name="getcurrentfont"></a>CFontDialog::GetCurrentFont  
- メンバーに現在選択されているフォントの特性を割り当てるには、この関数を呼び出す、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体。  
+##  <a name="getcurrentfont"></a>  CFontDialog::GetCurrentFont  
+ Call this function to assign the characteristics of the currently selected font to the members of a [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure.  
   
 ```  
 void GetCurrentFont(LPLOGFONT lplf);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lplf*  
- ポインター、`LOGFONT`構造体。  
+ A pointer to a `LOGFONT` structure.  
   
-### <a name="remarks"></a>コメント  
- その他の`CFontDialog`現在のフォントの特性を個別にアクセスするメンバー関数が用意されています。  
+### <a name="remarks"></a>Remarks  
+ Other `CFontDialog` member functions are provided to access individual characteristics of the current font.  
   
- 呼び出し中にこの関数が呼び出された場合[DoModal](#domodal)時に現在の選択項目を返します (ユーザーが表示されるかがするどのようなダイアログ ボックスで変更)。 呼び出し後にこの関数が呼び出された場合`DoModal`(場合にのみ、`DoModal`返します**IDOK**)、ユーザーが実際に選択したが返されます。  
+ If this function is called during a call to [DoModal](#domodal), it returns the current selection at the time (what the user sees or has changed in the dialog). If this function is called after a call to `DoModal` (only if `DoModal` returns **IDOK**), it returns what the user actually selected.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&80;](../../mfc/codesnippet/cpp/cfontdialog-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#80](../../mfc/codesnippet/cpp/cfontdialog-class_3.cpp)]  
   
-##  <a name="getfacename"></a>CFontDialog::GetFaceName  
- 選択したフォントの書体名を取得するには、この関数を呼び出します。  
+##  <a name="getfacename"></a>  CFontDialog::GetFaceName  
+ Call this function to retrieve the face name of the selected font.  
   
 ```  
 CString GetFaceName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択されているフォントの書体名、 `CFontDialog`  ダイアログ ボックス。  
+### <a name="return-value"></a>Return Value  
+ The face name of the font selected in the `CFontDialog` dialog box.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&81;](../../mfc/codesnippet/cpp/cfontdialog-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#81](../../mfc/codesnippet/cpp/cfontdialog-class_4.cpp)]  
   
-##  <a name="getsize"></a>CFontDialog::GetSize  
- この関数では、選択したフォントのサイズを取得します。  
+##  <a name="getsize"></a>  CFontDialog::GetSize  
+ Call this function to retrieve the size of the selected font.  
   
 ```  
 int GetSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- フォントのサイズ、ポイントの部分の&1;/10。  
+### <a name="return-value"></a>Return Value  
+ The font's size, in tenths of a point.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&82;](../../mfc/codesnippet/cpp/cfontdialog-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#82](../../mfc/codesnippet/cpp/cfontdialog-class_5.cpp)]  
   
-##  <a name="getstylename"></a>CFontDialog::GetStyleName  
- この関数では、選択したフォントのスタイル名を取得します。  
+##  <a name="getstylename"></a>  CFontDialog::GetStyleName  
+ Call this function to retrieve the style name of the selected font.  
   
 ```  
 CString GetStyleName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- フォントのスタイル名。  
+### <a name="return-value"></a>Return Value  
+ The style name of the font.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView&#83;](../../mfc/codesnippet/cpp/cfontdialog-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#83](../../mfc/codesnippet/cpp/cfontdialog-class_6.cpp)]  
   
-##  <a name="getweight"></a>CFontDialog::GetWeight  
- この関数では、選択したフォントの太さを取得します。  
+##  <a name="getweight"></a>  CFontDialog::GetWeight  
+ Call this function to retrieve the weight of the selected font.  
   
 ```  
 int GetWeight() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントの太さ。  
+### <a name="return-value"></a>Return Value  
+ The weight of the selected font.  
   
-### <a name="remarks"></a>コメント  
- フォントの太さの詳細については、次を参照してください。 [CFont::CreateFont](../../mfc/reference/cfont-class.md#createfont)します。  
+### <a name="remarks"></a>Remarks  
+ For more information on the weight of a font, see [CFont::CreateFont](../../mfc/reference/cfont-class.md#createfont).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&84;](../../mfc/codesnippet/cpp/cfontdialog-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#84](../../mfc/codesnippet/cpp/cfontdialog-class_7.cpp)]  
   
-##  <a name="isbold"></a>CFontDialog::IsBold  
- この関数では、選択したフォントが太字かを判断します。  
+##  <a name="isbold"></a>  CFontDialog::IsBold  
+ Call this function to determine if the selected font is bold.  
   
 ```  
 BOOL IsBold() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントが太字の特性が有効である場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the selected font has the Bold characteristic enabled; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&85;](../../mfc/codesnippet/cpp/cfontdialog-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#85](../../mfc/codesnippet/cpp/cfontdialog-class_8.cpp)]  
   
-##  <a name="isitalic"></a>CFontDialog::IsItalic  
- この関数では、選択したフォントが斜体かを判断します。  
+##  <a name="isitalic"></a>  CFontDialog::IsItalic  
+ Call this function to determine if the selected font is italic.  
   
 ```  
 BOOL IsItalic() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントが斜体の特性が有効である場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the selected font has the Italic characteristic enabled; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&86;](../../mfc/codesnippet/cpp/cfontdialog-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#86](../../mfc/codesnippet/cpp/cfontdialog-class_9.cpp)]  
   
-##  <a name="isstrikeout"></a>CFontDialog::IsStrikeOut  
- 選択したフォントが取り消し線付きで表示されるかどうかを判断するには、この関数を呼び出します。  
+##  <a name="isstrikeout"></a>  CFontDialog::IsStrikeOut  
+ Call this function to determine if the selected font is displayed with strikeout.  
   
 ```  
 BOOL IsStrikeOut() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントが有効である [取り消し線] の特性を持つ場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the selected font has the Strikeout characteristic enabled; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&87;](../../mfc/codesnippet/cpp/cfontdialog-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#87](../../mfc/codesnippet/cpp/cfontdialog-class_10.cpp)]  
   
-##  <a name="isunderline"></a>CFontDialog::IsUnderline  
- 選択したフォントの下線が引かれたかどうかを判断するには、この関数を呼び出します。  
+##  <a name="isunderline"></a>  CFontDialog::IsUnderline  
+ Call this function to determine if the selected font is underlined.  
   
 ```  
 BOOL IsUnderline() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 選択したフォントの特性として有効であるを下線付きの場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the selected font has the Underline characteristic enabled; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&88;](../../mfc/codesnippet/cpp/cfontdialog-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#88](../../mfc/codesnippet/cpp/cfontdialog-class_11.cpp)]  
   
-##  <a name="m_cf"></a>CFontDialog::m_cf  
- メンバーはダイアログ オブジェクトの特性を格納する構造体。  
+##  <a name="m_cf"></a>  CFontDialog::m_cf  
+ A structure whose members store the characteristics of the dialog object.  
   
 ```  
 CHOOSEFONT m_cf;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 構築した後、`CFontDialog`オブジェクトを使用する`m_cf`を呼び出す前に、ダイアログ ボックスのさまざまな側面を変更する、`DoModal`メンバー関数。 この構造体の詳細については、次を参照してください。 [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ After constructing a `CFontDialog` object, you can use `m_cf` to modify various aspects of the dialog box before calling the `DoModal` member function. For more information on this structure, see [CHOOSEFONT](http://msdn.microsoft.com/library/windows/desktop/ms646832) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&89;](../../mfc/codesnippet/cpp/cfontdialog-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#89](../../mfc/codesnippet/cpp/cfontdialog-class_12.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
- [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample HIERSVR](../../visual-cpp-samples.md)   
+ [CCommonDialog Class](../../mfc/reference/ccommondialog-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

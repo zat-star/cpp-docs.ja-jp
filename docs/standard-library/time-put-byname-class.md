@@ -1,5 +1,5 @@
 ---
-title: "time_put_byname クラス | Microsoft Docs"
+title: time_put_byname Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- time_put_byname
 - xloctime/std::time_put_byname
 dev_langs:
 - C++
@@ -34,17 +33,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a21c91fba99623ae7c97ef1455278617746fc310
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 64073ef0aec24e0e6ceae0c798e9519ebae1ee35
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="timeputbyname-class"></a>time_put_byname クラス
-この派生テンプレート クラスは、型 `time_put`\< CharType, OutputIterator > のロケール ファセットとして使用できるオブジェクトを表します。  
+# <a name="timeputbyname-class"></a>time_put_byname Class
+The derived template class describes an object that can serve as a locale facet of type `time_put`\< CharType, OutputIterator >.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class CharType, class OutIt = ostreambuf_iterator<CharType, char_traits<CharType>>>
@@ -65,23 +64,23 @@ protected:
 };
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `_Locname`  
- ロケール名。  
+ A locale name.  
   
  `_Refs`  
- 最初の参照数。  
+ An initial reference count.  
   
-## <a name="remarks"></a>コメント  
- その動作は [名前付きの](../standard-library/locale-class.md#name)ロケール `_Locname` で決まります。 各コンストラクターは、[time_put](../standard-library/time-put-class.md#time_put)\<CharType, OutputIterator>( `_Refs`) を使用して、その基本オブジェクトを初期化します。  
+## <a name="remarks"></a>Remarks  
+ Its behavior is determined by the [named](../standard-library/locale-class.md#name) locale `_Locname`. Each constructor initializes its base object with [time_put](../standard-library/time-put-class.md#time_put)\<CharType, OutputIterator>( `_Refs`).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

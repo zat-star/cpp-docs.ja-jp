@@ -1,5 +1,5 @@
 ---
-title: "MFC クラス追加ウィザード |Microsoft ドキュメント"
+title: MFC Add Class Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,72 +34,72 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4fafe461008e3545243d693e0d9e34acd57163e0
-ms.openlocfilehash: 08d258c2b8386a4dd0c1d24c6ac6aa10f6c04a63
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c7960628af7aefae7647ec185e461abc3aac5852
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="mfc-add-class-wizard"></a>MFC クラス追加ウィザード
-このコード ウィザードを使用して、既存の MFC プロジェクトにクラスを追加または MFC をサポートする ATL プロジェクトにクラスを追加します。 MFC がサポートしている Win32 プロジェクトに MFC クラスを追加することもできます。 プロジェクトの作成時に指定した機能は、このダイアログ ボックスで使用可能なオプションを決定します。  
+# <a name="mfc-add-class-wizard"></a>MFC Add Class Wizard
+Use this code wizard to add a class to an existing MFC project, or to add a class to an ATL project that supports MFC. You can also add MFC classes to Win32 projects that have MFC support. The features you specified when you created your project determine the options available in this dialog box.  
   
-## <a name="names"></a>名前  
- このページで、クラス名、基本クラスと新しいクラスのファイル名を指定します。  
+## <a name="names"></a>Names  
+ In this page, specify the class name, the base class, and file names for the new class.  
   
- **クラス名**  
- 新しいクラスの名前を指定し、Id とこのページ上のファイルの名前の既定の基盤を提供します。 C++ クラス、たとえば、""が「が付きます」、通常"C"で開始します。  
+ **Class name**  
+ Specifies the name of the new class and provides the default basis for the names of IDs and files on this page. C++ classes typically start with "C", so for example, "CMyClass" becomes "MyClass.h", and so on.  
   
- **基本クラス**  
- 新しいクラスの基本クラスの名前を指定します。 基本クラスは、既定では、 [CWnd](../../mfc/reference/cwnd-class.md)します。 選択した基本クラスでは、このページの他のボックスがアクティブかどうかを決定します。  
+ **Base class**  
+ Specifies the name of the base class for the new class. By default, the base class is [CWnd](../../mfc/reference/cwnd-class.md). The base class you select determines whether other boxes on this page are active.  
   
- 基本クラスでは、ダイアログの ID またはリソース ID に、クラスがあるかどうかを判断すると、設定するクラスの型 クラスの一般的な種類は次のとおりです。  
+ The type of class you set as the base class determines whether the class has a dialog ID or a resource ID. The general types of classes are as follows:  
   
--   などのクラス[CButton](../../mfc/reference/cbutton-class.md)、 [CWnd](../../mfc/reference/cwnd-class.md)、または[CDocument](../../mfc/reference/cdocument-class.md)、ダイアログ ボックスが不要 ID またはリソース id。 これらのクラスは、ダイアログ ボックスまたはリソース ID を使用しないでください。 基本クラスのこれらのクラスのいずれかを選択した場合、**ダイアログ ID**ボックスおよび**DHTML リソース ID**ボックスは淡色表示になります。  
+-   Classes such as [CButton](../../mfc/reference/cbutton-class.md), [CWnd](../../mfc/reference/cwnd-class.md), or [CDocument](../../mfc/reference/cdocument-class.md), which do not require a dialog ID or resource ID. These classes do not use a dialog or resource ID. If you select one of these classes for your base class, the **Dialog ID** box and the **DHTML resource ID** box are dimmed.  
   
--   などのクラス[CDialog](../../mfc/reference/cdialog-class.md)、 [CFormView](../../mfc/reference/cformview-class.md)、または[CPropertyPage](../../mfc/reference/cpropertypage-class.md)ダイアログの ID が必要な  
+-   Classes such as [CDialog](../../mfc/reference/cdialog-class.md), [CFormView](../../mfc/reference/cformview-class.md), or [CPropertyPage](../../mfc/reference/cpropertypage-class.md), which require a dialog ID.  
   
--   クラス[CDHtmlDialog](../../mfc/reference/cdhtmldialog-class.md)ダイアログの ID、DHTML リソース ID、および HTML ファイル名必要があります。  
+-   The class [CDHtmlDialog](../../mfc/reference/cdhtmldialog-class.md), which requires a dialog ID, a DHTML resource ID, and an HTML file name.  
   
- クラスについては、ダイアログの ID を必要とする、した方がより効果的に使用、[リソース エディター](../../windows/resource-editors.md)ダイアログ リソースを作成するには、その ID を割り当てる、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)、し、そのリソース ID に関連付けられているクラスを作成 参照してください[ ダイアログ ボックスの新規作成](../../windows/creating-a-new-dialog-box.md)標準の Windows ダイアログ ボックスを作成する方法についてです。  
+ For classes requiring a dialog ID, you might find it more efficient to use the [Resource editor](../../windows/resource-editors.md) to create the dialog resource, assign its ID in the [Properties window](/visualstudio/ide/reference/properties-window), and then create a class associated with that resource ID. See [Creating a New Dialog Box](../../windows/creating-a-new-dialog-box.md) for more information on creating a standard Windows dialog box.  
   
 > [!NOTE]
->  最初ダイアログ リソースを作成してから新しいクラスを派生させるかどうか`CDHtmlDialog`、標準の Windows を削除**OK**と**キャンセル**既定 ダイアログ ボックスに表示されるボタン。 Windows の標準のダイアログ ボックスがそれ自体を含む DHTML フォームをホスト**OK**と**キャンセル**ボタン。  
+>  If you create a dialog resource first and derive its new class from `CDHtmlDialog`, delete the standard Windows **OK** and **Cancel** buttons that appear on the default dialog box. The standard Windows dialog box hosts the DHTML form, which contains its own **OK** and **Cancel** buttons.  
   
- ダイアログ ボックスには、Windows のコントロールと DHTML コントロールの両方を含めることができますは推奨されません。  
+ While your dialog box can contain both Windows controls and DHTML controls, it is not recommended.  
   
- **ダイアログの ID**  
- 選択した場合に、ダイアログ ボックスの ID を指定する`CDialog`、 `CFormView`、 `CPropertyPage`、または`CDHtmlDialog`として、**基本クラス**します。  
+ **Dialog ID**  
+ Specifies the ID of the dialog, if you selected `CDialog`, `CFormView`, `CPropertyPage`, or `CDHtmlDialog` as the **Base class**.  
   
- **.h ファイル**  
- 新しいオブジェクトのクラスのヘッダー ファイルの名前を設定します。 既定では、この名前はで指定した名前に基づく**クラス名**します。 ファイル名を任意の場所に保存するか、既存のファイルに、クラス宣言を追加する、省略記号ボタンをクリックします。 既存のファイルを選択すると場合、ウィザードは保存されません選択した場所に表示されるまで をクリック**完了**ウィザード。  
+ **.h file**  
+ Sets the name of the header file for the new object's class. By default, this name is based on the name you provide in **Class name**. Click the ellipsis button to save the file name to the location of your choice, or to append the class declaration to an existing file. If you choose an existing file, the wizard will not save it to the selected location until you click **Finish** in the wizard.  
   
- ウィザードでは、ファイルは上書きされません。 クリックすると、既存のファイルの名前を選択するかどうかは**完了**ウィザードでは、クラス宣言がファイルの内容に追加されるかどうかを指定するように求められます。 をクリックして**はい**ファイルを追加する をクリックして**なし**ウィザードに戻り、別のファイル名を指定します。  
+ The wizard does not overwrite a file. If you select the name of an existing file, when you click **Finish**, the wizard prompts you to indicate whether the class declaration should be appended to the contents of the file. Click **Yes** to append the file; click **No** to return to the wizard and specify another file name.  
   
- **.cpp ファイル**  
- 新しいオブジェクトのクラスの実装ファイルの名前を設定します。 既定では、この名前はで指定した名前に基づく**クラス名**します。 任意の場所にファイル名を保存する、省略記号ボタンをクリックします。 クリックするまで、選択した場所にファイルが保存されません**完了**ウィザード。  
+ **.cpp file**  
+ Sets the name of the implementation file for the new object's class. By default, this name is based on the name you provide in **Class name**. Click the ellipsis button to save the file name to the location of your choice. The file is not saved to the selected location until you click **Finish** in the wizard.  
   
- ウィザードでは、ファイルは上書きされません。 クリックすると、既存のファイルの名前を選択するかどうかは**完了**ウィザードでは、クラスの実装が、ファイルの内容に追加されるかどうかを指定するように求められます。 をクリックして**はい**ファイルを追加する をクリックして**なし**ウィザードに戻り、別のファイル名を指定します。  
+ The wizard does not overwrite a file. If you select the name of an existing file, when you click **Finish**, the wizard prompts you to indicate whether the class implementation should be appended to the contents of the file. Click **Yes** to append the file; click **No** to return to the wizard and specify another file name.  
   
- **アクティブなユーザー補助機能**  
- 呼び出して Active Accessibility 用の MFC のサポートを有効に[EnableActiveAccessibility](../../mfc/reference/cwnd-class.md#enableactiveaccessibility)コンス トラクターでします。 このオプションから派生したクラスの使用可能な[CWnd](../../mfc/reference/cwnd-class.md)します。  
+ **Active accessibility**  
+ Enables MFC's support for Active Accessibility by calling [EnableActiveAccessibility](../../mfc/reference/cwnd-class.md#enableactiveaccessibility) in the constructor. This option is available for classes derived from [CWnd](../../mfc/reference/cwnd-class.md).  
   
- **DHTML リソース ID**  
- 派生したクラスに適用されます`CDHtmlDialog`のみです。 DHTML ダイアログ ボックスのリソース ID を指定します。 リソース ID は、HTML ダイアログ ボックスのファイル名と共に、プロジェクトの .rc ファイルの HTML セクションに表示されます。 識別されるダイアログ ボックスによってホストされる DHTML リソースは、この ID で識別される**ダイアログ ID**します。  
+ **DHTML resource ID**  
+ Applies to classes derived from `CDHtmlDialog` only. Specifies the resource ID of the DHTML dialog box. The resource ID appears in the HTML section of the project's .rc file, along with the HTML dialog box file name. The DHTML resource, identified by this ID, is hosted by the dialog box, identified by **Dialog ID**.  
   
- **.HTM ファイル**  
- 派生したクラスに適用されます`CDHtmlDialog`のみです。 DHTML のダイアログ ボックスの HTML ファイルの名前を設定します。 既定では、このファイル名は、クラス名に基づいています。 HTML」DHTML ダイアログ ボックスのリソース ID と共に、プロジェクトの .rc ファイルのファイル名が表示されます。  
+ **.HTM file**  
+ Applies to classes derived from `CDHtmlDialog` only. Sets the name of the HTML file for the DHTML dialog box. By default, this file name is based on the class name. The file name appears in the HTML section of the project's .rc file, along with the DHTML dialog box resource ID.  
   
- **オートメーション**  
- サポートのクラス レベルを設定[オートメーション](../../mfc/automation.md)します。 クラス レベルでのオートメーションは、オートメーションをサポートするすべてのクラスに対して有効です。 オートメーションのサポートで作成したプロジェクトの利用もできます。 いずれか、MFC をプロジェクトには、 [ATL サポート](../../atl/reference/mfc-support-in-atl-projects.md)、または選択した MFC プロジェクト、**オートメーション**チェック ボックスをオンに、[高度な機能](../../mfc/reference/advanced-features-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。  
+ **Automation**  
+ Sets the class level of support for [Automation](../../mfc/automation.md). Automation at the class level is available for all classes that support Automation. It is also available for projects created with support for Automation. That is, either an MFC project that [supports ATL](../../atl/reference/mfc-support-in-atl-projects.md), or an MFC project for which you selected the **Automation** check box in the [Advanced Features](../../mfc/reference/advanced-features-mfc-application-wizard.md) page of the MFC Application Wizard.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**None**|クラスにオートメーションによるサポートがないことを示します。|  
-|**オートメーション**|クラスがオートメーションをサポートしていることを示します。 このオプションを選択する場合、新しく作成されたクラスは Microsoft Visual Basic や Microsoft Excel などのオートメーション クライアント アプリケーションでのプログラミング可能なオブジェクトとして使用可能です。 このオプションでは、この表の後に記載されている基本クラスを使用できません。|  
-|**型 ID を使用して作成可能**|クラスとプロジェクトの両方がオートメーションを使用してこのクラスのオブジェクトを作成するその他のアプリケーションをサポートすることを示します。 このオプションを使用して、オートメーション クライアントはオートメーション オブジェクトを直接作成できます。 クライアント アプリケーションで作成されるオブジェクトを指定するテキスト ボックス内の型 ID が使用されます。システム全体と、一意である必要があります。 このオプションでは、この表の後に記載されている基本クラスを使用できません。|  
+|**None**|Indicates that the class has no Automation support.|  
+|**Automation**|Indicates that the class supports Automation. If you select this option, the newly created class is available as a programmable object by Automation client applications, such as Microsoft Visual Basic and Microsoft Excel. This option is not available for the base classes listed after this table.|  
+|**Creatable by type ID**|Indicates that both the class and project support other applications creating objects of this class using Automation. With this option, automation clients can directly create an Automation object. The type ID in the text box is used by the client application to specify the object to be created; it is systemwide and must be unique. This option is not available for the base classes listed after this table.|  
   
- オートメーションのサポートでは、次の基本クラスを使用できません。  
+ Automation support is not available for the following base classes:  
   
 -   `CAsyncMonitorFile`  
   
@@ -123,15 +123,15 @@ ms.lasthandoff: 02/24/2017
   
 -   `CSocket`  
   
- **種類 ID**  
- クラスの型 ID を設定します。 **タイプ ID**  ボックスには、次のようにするプロジェクトの名前と新しいクラスの名前が連結: *MFCProj.MFCClass*します。 この ID を変更できるは、選択した場合にのみ、**オートメーション**オプション**型の ID で作成可能**します。  
+ **Type ID**  
+ Sets the type ID of the class. The **Type ID** box concatenates the project name and the new class name as follows: *MFCProj.MFCClass*. This ID is changeable only if you selected the **Automation** option **Creatable by type ID**.  
   
- **ドキュメント テンプレート リソースを生成します。**  
- アプリケーションによって作成されたドキュメントのドキュメント テンプレート リソースことを示します。 このチェック ボックスをアクティブ化する、プロジェクトが MFC ドキュメント/ビュー アーキテクチャをサポートし、このクラスの基本クラスである必要があります[CFormView](../../mfc/reference/cformview-class.md)します。  
+ **Generate DocTemplate resources**  
+ Indicates that the documents created by the application have document template resources. To activate this check box, the project must support the MFC document/view architecture, and the base class of this class must be [CFormView](../../mfc/reference/cformview-class.md).  
   
- 参照してください[ドキュメント テンプレートとドキュメント/ビューの作成手順](../../mfc/document-templates-and-the-document-view-creation-process.md)の詳細。  
+ See [Document Templates and the Document/View Creation Process](../../mfc/document-templates-and-the-document-view-creation-process.md) for more information.  
   
-## <a name="see-also"></a>関連項目  
- [MFC クラス](../../mfc/reference/adding-an-mfc-class.md)   
- [クラスの追加](../../ide/adding-a-class-visual-cpp.md)
+## <a name="see-also"></a>See Also  
+ [MFC Class](../../mfc/reference/adding-an-mfc-class.md)   
+ [Adding a Class](../../ide/adding-a-class-visual-cpp.md)
 

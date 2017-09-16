@@ -1,52 +1,71 @@
 ---
-title: "ActiveX コントロール コンテナー : コントロール プロパティの表示と変更 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール コンテナー [C++], 表示と変更 (プロパティの)"
-  - "ActiveX コントロール [C++], プロパティ"
-  - "コントロール [MFC], プロパティ"
-  - "プロパティ [MFC], 表示と変更"
-  - "リソース エディター, 表示と変更 (ActiveX コントロールの)"
+title: 'ActiveX Control Containers: Viewing and Modifying Control Properties | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- properties [MFC], viewing and modifying
+- ActiveX control containers [MFC], viewing and modifying properties
+- resource editors, viewing and modifying ActiveX controls
+- ActiveX controls [MFC], properties
+- controls [MFC], properties
 ms.assetid: 14ce5152-742b-4e0d-a9ab-c7b456e32918
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ActiveX コントロール コンテナー : コントロール プロパティの表示と変更
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f147544230d135b89f208eef2aba8db9a31468f8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プロジェクトに ActiveX コントロールを挿入する場合、ActiveX コントロールでサポートされているプロパティを表示および変更すると便利です。  ここでは、これは Visual C\+\+ リソース エディターを使用する方法について説明します。  
+---
+# <a name="activex-control-containers-viewing-and-modifying-control-properties"></a>ActiveX Control Containers: Viewing and Modifying Control Properties
+When you insert an ActiveX control into a project, it is useful to view and change the properties supported by the ActiveX control. This article discusses how to use the Visual C++ resource editor to do this.  
   
- ActiveX コントロール コンテナー アプリケーションの埋め込みコントロールを使用する場合は、リソース エディターでコントロールのプロパティを表示および変更できます。  また、デザイン時に設定されたプロパティ値は、リソース エディターを使用できます。  リソース エディターでは、自動的にプロジェクトのリソース ファイルには、これらの値を格納します。  コントロールのインスタンスには、これらの値に初期化されたプロパティがあります。  
+ If your ActiveX control container application uses embedded controls, you can view and modify the control's properties while in the resource editor. You can also use the resource editor to set property values during design time. The resource editor then automatically saves these values in the project's resource file. Any instance of the control will then have its properties initialized to these values.  
   
- この手順では、プロジェクトにコントロールを挿入することを前提としています。  詳細については、「[ActiveX コントロール コンテナー: コントロール コンテナー アプリケーションにコントロールを挿入できます。](../mfc/inserting-a-control-into-a-control-container-application.md)」を参照してください。  
+ This procedure assumes that you have inserted a control into your project. For information, see [ActiveX Control Containers: Inserting a Control Into a Control Container Application](../mfc/inserting-a-control-into-a-control-container-application.md).  
   
- コントロールのプロパティを表示するには、まず、プロジェクト ダイアログ テンプレートにコントロールのインスタンスを追加します。  
+ The first step in viewing the control's properties is to add an instance of the control to the project's dialog template.  
   
-### コントロールのプロパティを表示するには  
+### <a name="to-view-the-properties-of-a-control"></a>To view the properties of a control  
   
-1.  リソース ビューで、**ダイアログ** フォルダーを開きます。  
+1.  In Resource View, open the **Dialog** folder.  
   
-2.  メイン ダイアログ ボックスのテンプレートを開きます。  
+2.  Open your main dialog box template.  
   
-3.  **\[ActiveX コントロールの挿入\]** ダイアログ ボックスを使用して ActiveX コントロールを挿入します。  詳細については、「[ActiveX コントロールを Dialog Box に表示して追加します。](../mfc/viewing-and-adding-activex-controls-to-a-dialog-box.md)」を参照してください。  
+3.  Insert an ActiveX control using the **Insert ActiveX Control** dialog box. For more information, see [Viewing and Adding ActiveX Controls to a Dialog Box](../windows/viewing-and-adding-activex-controls-to-a-dialog-box.md).  
   
-4.  ダイアログ ボックスに ActiveX コントロールを選択します。  
+4.  Select the ActiveX control in the dialog box.  
   
-5.  プロパティ ウィンドウで、**\[プロパティ\]** ボタンをクリックします。  
+5.  From the Properties window, click the **Properties** button.  
   
- 新しいプロパティを直ちに修正およびテストに **\[プロパティ\]** ダイアログ ボックスを使用します。  
+ Use the **Properties** dialog box to modify and test new properties immediately.  
   
-## 参照  
- [ActiveX コントロール コンテナー](../mfc/activex-control-containers.md)
+## <a name="see-also"></a>See Also  
+ [ActiveX Control Containers](../mfc/activex-control-containers.md)
+
+

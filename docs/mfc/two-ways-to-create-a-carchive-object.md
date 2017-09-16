@@ -1,79 +1,98 @@
 ---
-title: "CArchive オブジェクトを作成する 2 つの方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CArchive"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CArchive クラス, 閉じる (CArchive オブジェクトを)"
-  - "CArchive クラス, コンストラクター"
-  - "CArchive オブジェクト"
-  - "CArchive オブジェクト, 閉じる"
-  - "データ ストレージ [C++], CArchive クラス"
-  - "I/O [MFC], 作成 (CArchive オブジェクトを)"
-  - "シリアル化 [C++], CArchive クラス"
-  - "ストレージ [C++], CArchive クラス"
+title: Two Ways to Create a CArchive Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CArchive
+dev_langs:
+- C++
+helpviewer_keywords:
+- CArchive class [MFC], closing CArchive objects
+- CArchive objects [MFC], closing
+- I/O [MFC], creating CArchive objects
+- serialization [MFC], CArchive class
+- CArchive objects [MFC]
+- storage [MFC], CArchive class [MFC]
+- data storage [MFC], CArchive class
+- CArchive class [MFC], constructor
 ms.assetid: aefa28ce-b55c-40dc-9e42-5f038030985d
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CArchive オブジェクトを作成する 2 つの方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 13ac03d1c1188dff80c8ca0f33d39a8554a106c1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CArchive` オブジェクトを作成するには 2 とおりの方法があります。:  
+---
+# <a name="two-ways-to-create-a-carchive-object"></a>Two Ways to Create a CArchive Object
+There are two ways to create a `CArchive` object:  
   
--   [フレームワークによる CArchive オブジェクトの暗黙の作成](#_core_implicit_creation_of_a_carchive_object_via_the_framework)  
+-   [Implicit creation of a CArchive object via the framework](#_core_implicit_creation_of_a_carchive_object_via_the_framework)  
   
--   [CArchive オブジェクトが明示的に作成](#_core_explicit_creation_of_a_carchive_object)  
+-   [Explicit creation of a CArchive object](#_core_explicit_creation_of_a_carchive_object)  
   
-##  <a name="_core_implicit_creation_of_a_carchive_object_via_the_framework"></a> フレームワークによる CArchive オブジェクトの暗黙の作成  
- 共通のが最も簡単な方法は、ドキュメントの `CArchive` オブジェクトを保存、保存の代わりとして作成し、メニューのファイルを開くようにするフレームワークで行います。  
+##  <a name="_core_implicit_creation_of_a_carchive_object_via_the_framework"></a> Implicit Creation of a CArchive Object via the Framework  
+ The most common, and easiest, way is to let the framework create a `CArchive` object for your document on behalf of the Save, Save As, and Open commands on the File menu.  
   
- アプリケーションのユーザーが、ファイル メニューの名前を付けて保存コマンドを実行すると、ここでフレームワークの動作です:  
+ Here is what the framework does when the user of your application issues the Save As command from the File menu:  
   
-1.  **\[名前を付けて保存\]** ダイアログ ボックスが表示され、ユーザーからファイル名を取得します。  
+1.  Presents the **Save As** dialog box and gets the filename from the user.  
   
-2.  `CFile` オブジェクトとしてユーザーが指定するファイルを開きます。  
+2.  Opens the file named by the user as a `CFile` object.  
   
-3.  この `CFile` へのポインターを格納します。`CArchive` オブジェクトを作成します。  `CArchive` オブジェクトの作成では、フレームワークは「ストア」および「Load」に対してモード \(のシリアル化する書き込み\)、\(逆シリアル化するなど\) に設定します。  
+3.  Creates a `CArchive` object that points to this `CFile` object. In creating the `CArchive` object, the framework sets the mode to "store" (write, serialize), as opposed to "load" (read, deserialize).  
   
-4.  `Serialize` 関数を **CDocument**\-、`CArchive` オブジェクトへの参照を渡す派生クラスで定義された呼び出します。  
+4.  Calls the `Serialize` function defined in your **CDocument**-derived class, passing it a reference to the `CArchive` object.  
   
- ドキュメントの `Serialize` 関数はこれまで説明した、`CArchive` オブジェクトにデータを書き込みます。  次に `Serialize` 関数から制御が返されるときに、フレームワークは `CArchive` オブジェクトと `CFile` オブジェクトを破棄します。  
+ Your document's `Serialize` function then writes data to the `CArchive` object, as explained shortly. Upon return from your `Serialize` function, the framework destroys the `CArchive` object and then the `CFile` object.  
   
- したがって、フレームワークがドキュメントの `CArchive` オブジェクトを作成しようとしている必要があるのは、アーカイブに対する読み書きドキュメントの `Serialize` 関数を実装することだけです。  また、`CObject`の `Serialize` \-ドキュメントの `Serialize` 関数が直接的または間接的にシリアル化派生オブジェクトを実装しなければなりません。  
+ Thus, if you let the framework create the `CArchive` object for your document, all you have to do is implement the document's `Serialize` function that writes and reads to and from the archive. You also have to implement `Serialize` for any `CObject`-derived objects that the document's `Serialize` function in turn serializes directly or indirectly.  
   
-##  <a name="_core_explicit_creation_of_a_carchive_object"></a> CArchive オブジェクトが明示的に作成  
- フレームワークによるドキュメントのシリアル化のほかに `CArchive` オブジェクトを必要とする場合に、他の機会が与えられます。  たとえば、`CSharedFile` オブジェクトによって表されるクリップボードとの間でデータをシリアル化する場合があります。  または、フレームワークに用意されているものとは異なるファイルを格納するためのユーザー インターフェイスを使用することもできます。  この場合、明示的に `CArchive` オブジェクトを作成できます。  次の手順を使用してこれをフレームワークが同じ方法で行われます。  
+##  <a name="_core_explicit_creation_of_a_carchive_object"></a> Explicit Creation of a CArchive Object  
+ Besides serializing a document via the framework, there are other occasions when you may need a `CArchive` object. For example, you might want to serialize data to and from the Clipboard, represented by a `CSharedFile` object. Or, you may want to use a user interface for saving a file that is different from the one offered by the framework. In this case, you can explicitly create a `CArchive` object. You do this the same way the framework does, using the following procedure.  
   
-#### 明示的に CArchive オブジェクトを作成するには  
+#### <a name="to-explicitly-create-a-carchive-object"></a>To explicitly create a CArchive object  
   
-1.  `CFile`から派生される `CFile` オブジェクトまたはオブジェクトを構築します。  
+1.  Construct a `CFile` object or an object derived from `CFile`.  
   
-2.  次の例に示すように `CArchive`のコンストラクターへの `CFile` オブジェクトを、渡します。:  
+2.  Pass the `CFile` object to the constructor for `CArchive`, as shown in the following example:  
   
-     [!code-cpp[NVC_MFCSerialization#5](../mfc/codesnippet/CPP/two-ways-to-create-a-carchive-object_1.cpp)]  
+     [!code-cpp[NVC_MFCSerialization#5](../mfc/codesnippet/cpp/two-ways-to-create-a-carchive-object_1.cpp)]  
   
-     `CArchive` のコンストラクターへの 2 番目の引数は、アーカイブ ファイルから、または保存またはデータの読み込みに使用するかどうかを指定する列挙値です。  オブジェクトの `Serialize` 関数はアーカイブ オブジェクトを `IsStoring` 関数を呼び出すことでこの状態をチェックします。  
+     The second argument to the `CArchive` constructor is an enumerated value that specifies whether the archive will be used for storing or loading data to or from the file. The `Serialize` function of an object checks this state by calling the `IsStoring` function for the archive object.  
   
- 終了する格納したり、`CArchive` へのデータの読み込みを格納すると、ファイルを閉じます。  `CArchive` \(および `CFile`\) オブジェクトが自動的にアーカイブ \(およびファイル\) を閉じますが、明示的にエラーからの回復を簡単にするため、推奨される方法です。  エラー処理の詳細については、記事 [例外: 例外をキャッチするか、または削除します。](../mfc/exceptions-catching-and-deleting-exceptions.md)を参照します。  
+ When you are finished storing or loading data to or from the `CArchive` object, close it. Although the `CArchive` (and `CFile`) objects will automatically close the archive (and file), it is good practice to explicitly do so since it makes recovery from errors easier. For more information about error handling, see the article [Exceptions: Catching and Deleting Exceptions](../mfc/exceptions-catching-and-deleting-exceptions.md).  
   
-#### CArchive オブジェクトを閉じます。  
+#### <a name="to-close-the-carchive-object"></a>To close the CArchive object  
   
-1.  次の例に `CArchive` オブジェクトを閉じる方法を示しています。:  
+1.  The following example illustrates how to close the `CArchive` object:  
   
-     [!code-cpp[NVC_MFCSerialization#6](../mfc/codesnippet/CPP/two-ways-to-create-a-carchive-object_2.cpp)]  
+     [!code-cpp[NVC_MFCSerialization#6](../mfc/codesnippet/cpp/two-ways-to-create-a-carchive-object_2.cpp)]  
   
-## 参照  
- [シリアル化 : オブジェクトのシリアル化](../Topic/Serialization:%20Serializing%20an%20Object.md)
+## <a name="see-also"></a>See Also  
+ [Serialization: Serializing an Object](../mfc/serialization-serializing-an-object.md)
+
+

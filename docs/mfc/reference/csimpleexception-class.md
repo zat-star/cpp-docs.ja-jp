@@ -1,5 +1,5 @@
 ---
-title: "CSimpleException クラス |Microsoft ドキュメント"
+title: CSimpleException Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -16,7 +16,8 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CSimpleException class
+- CSimpleException [MFC], CSimpleException
+- CSimpleException [MFC], GetErrorMessage
 ms.assetid: be0eb8ef-e5b9-47d6-b0fb-efaff2d1e666
 caps.latest.revision: 19
 author: mikeblome
@@ -36,78 +37,78 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 5612d76a2351b9898b8ffe082844686d21fcd7a0
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3ab6a2347567dfe404d3dc5c154e24c789dff45c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="csimpleexception-class"></a>CSimpleException クラス
-このクラスは、リソース クリティカルな MFC 例外の基底クラスです。  
+# <a name="csimpleexception-class"></a>CSimpleException Class
+This class is a base class for resource-critical MFC exceptions.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class AFX_NOVTABLE CSimpleException : public CException  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSimpleException::CSimpleException](#csimpleexception)|コンストラクターです。|  
+|[CSimpleException::CSimpleException](#csimpleexception)|The constructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CSimpleException::GetErrorMessage](#geterrormessage)|発生したエラーに関するテキストを提供します。|  
+|[CSimpleException::GetErrorMessage](#geterrormessage)|Provides text about an error that has occurred.|  
   
-## <a name="remarks"></a>コメント  
- `CSimpleException`リソース クリティカルな MFC 例外の基底クラスは、所有権と、エラー メッセージの初期化を処理します。 次のクラスを使用して`CSimpleException`その基本クラスとして。  
+## <a name="remarks"></a>Remarks  
+ `CSimpleException` is the base class for resource-critical MFC exceptions and handles the ownership and initialization of an error message. The following classes use `CSimpleException` as their base class:  
   
 |||  
 |-|-|  
-|[関数のクラス](../../mfc/reference/cmemoryexception-class.md)|メモリ不足の例外|  
-|[行わないクラス](../../mfc/reference/cnotsupportedexception-class.md)|サポートされていない操作の要求|  
-|[関数のクラス](../../mfc/reference/cresourceexception-class.md)|Windows リソース見つからないか、または不可能|  
-|[チェック クラス](../../mfc/reference/cuserexception-class.md)|リソースを示す例外が見つかりませんでした。|  
-|[CInvalidArgException クラス](../../mfc/reference/cinvalidargexception-class.md)|無効な引数を示す例外|  
+|[CMemoryException Class](../../mfc/reference/cmemoryexception-class.md)|Out-of-memory exception|  
+|[CNotSupportedException Class](../../mfc/reference/cnotsupportedexception-class.md)|Requests for an unsupported operation|  
+|[CResourceException Class](../../mfc/reference/cresourceexception-class.md)|Windows resource not found or not creatable|  
+|[CUserException Class](../../mfc/reference/cuserexception-class.md)|Exception that indicates a resource could not be found|  
+|[CInvalidArgException Class](../../mfc/reference/cinvalidargexception-class.md)|Exception that indicates an invalid argument|  
   
- `CSimpleException`抽象基本クラスは、宣言することはできません、`CSimpleException`オブジェクトに直接します。 代わりに、前の表に示すなどの派生オブジェクトを宣言する必要があります。 派生クラスを宣言する場合は、モデルとして前のクラスを使用します。  
+ Because `CSimpleException` is an abstract base class, you cannot declare a `CSimpleException` object directly. Instead, you must declare derived objects such as those in the previous table. If you are declaring your own derived class, use the previous classes as a model.  
   
- 詳細については、次を参照してください。、 [CException クラス](../../mfc/reference/cexception-class.md)トピックと[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
+ For more information, see the [CException Class](../../mfc/reference/cexception-class.md) topic and [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
   
  `CSimpleException`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="csimpleexception"></a>CSimpleException::CSimpleException  
- コンストラクターです。  
+##  <a name="csimpleexception"></a>  CSimpleException::CSimpleException  
+ The constructor.  
   
 ```  
 CSimpleException();  
 explicit CSimpleException(BOOL bAutoDelete);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bAutoDelete`  
- 指定**TRUE**場合のメモリを`CSimpleException`オブジェクトがヒープに割り当てられています。 これにより、`CSimpleException`ときに削除するオブジェクト、**削除**例外を削除するメンバー関数が呼び出されます。 指定**FALSE**場合、`CSimpleException`オブジェクトがスタック上またはグローバル オブジェクトです。 ここで、`CSimpleException`オブジェクトはできない時に削除、**削除**メンバー関数が呼び出されます。  
+ Specify **TRUE** if the memory for the `CSimpleException` object has been allocated on the heap. This will cause the `CSimpleException` object to be deleted when the **Delete** member function is called to delete the exception. Specify **FALSE** if the `CSimpleException` object is on the stack or is a global object. In this case, the `CSimpleException` object will not be deleted when the **Delete** member function is called.  
   
-### <a name="remarks"></a>コメント  
- このコンス トラクターを直接呼び出す必要は通常ことはありません。 例外をスローする関数のインスタンスを作成する必要があります、 `CException`-クラスを派生し、呼び出すコンス トラクター、またはそれが、MFC のいずれかの使用をスローする関数など[AfxThrowFileException](exception-processing.md#afxthrowfileexception)、定義済みの型をスローします。  
+### <a name="remarks"></a>Remarks  
+ You would normally never need to call this constructor directly. A function that throws an exception should create an instance of a `CException`-derived class and call its constructor, or it should use one of the MFC throw functions, such as [AfxThrowFileException](exception-processing.md#afxthrowfileexception), to throw a predefined type.  
   
-##  <a name="geterrormessage"></a>CSimpleException::GetErrorMessage  
- 発生したエラーに関するテキストを提供するには、このメンバー関数を呼び出します。  
+##  <a name="geterrormessage"></a>  CSimpleException::GetErrorMessage  
+ Call this member function to provide text about an error that has occurred.  
   
 ```  
 virtual BOOL GetErrorMessage(
@@ -116,26 +117,26 @@ virtual BOOL GetErrorMessage(
     PUNIT  pnHelpContext = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszError`  
- エラー メッセージを受信するバッファーへのポインター。  
+ A pointer to a buffer that will receive an error message.  
   
  `nMaxError`  
- バッファーに保持できる文字の最大数、 **NULL**ターミネータです。  
+ The maximum number of characters the buffer can hold, including the **NULL** terminator.  
   
  `pnHelpContext`  
- アドレス、 **UINT**ヘルプ コンテキスト ID を受信します。 場合**NULL**ID は返されません。  
+ The address of a **UINT** that will receive the help context ID. If **NULL**, no ID will be returned.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合 0 (ゼロ) の場合、エラー メッセージ テキストは使用できます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0 if no error message text is available.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [CException::GetErrorMessage](../../mfc/reference/cfileexception-class.md#geterrormessage)します。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [CException::GetErrorMessage](../../mfc/reference/cfileexception-class.md#geterrormessage).  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [CException クラス](../../mfc/reference/cexception-class.md)   
- [例外処理](../../mfc/exception-handling-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CException Class](../../mfc/reference/cexception-class.md)   
+ [Exception Handling](../../mfc/exception-handling-in-mfc.md)
 
 
 

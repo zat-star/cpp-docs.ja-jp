@@ -1,69 +1,87 @@
 ---
-title: "印刷プレビューのアーキテクチャ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プレビュー (印刷を)"
-  - "印刷プレビュー, アーキテクチャ"
-  - "印刷プレビュー, 変更 (MFC に対する)"
-  - "印刷プレビュー, プロセス"
-  - "印刷 [MFC], 印刷プレビュー"
+title: Print Preview Architecture | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- print preview [MFC], process
+- previewing printing
+- print preview [MFC], architecture
+- printing [MFC], print preview
+- print preview [MFC], modifications to MFC
 ms.assetid: 0efc87e6-ff8d-43c5-9d72-9b729a169115
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 印刷プレビューのアーキテクチャ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a4460ad3ea8377c566cfd55e50010db5f1ed9254
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC フレームワークが印刷プレビュー機能を実装する方法について説明します。  ここでは、次の内容について説明します。  
+---
+# <a name="print-preview-architecture"></a>Print Preview Architecture
+This article explains how the MFC framework implements print preview functionality. Topics covered include:  
   
--   [印刷プレビュー プロセス](#_core_the_print_preview_process)  
+-   [Print preview process](#_core_the_print_preview_process)  
   
--   [変更の印刷プレビュー](#_core_modifying_print_preview)  
+-   [Modifying print preview](#_core_modifying_print_preview)  
   
- 印刷プレビューを直接デバイスのイメージを描画する代わりに、アプリケーションが画面を使用してプリンターをシミュレートする必要があるため、画面表示と印刷と多少異なります。  これを行うには、Microsoft Foundation Class ライブラリには **CPreviewDC**という [CDC クラス](../Topic/CDC%20Class.md)から派生したクラスで、\(非公開のな\) を定義します。  `CDC` のオブジェクトはすべて 2 デバイス コンテキストが含まれていますが、通常は同じです。  **CPreviewDC** オブジェクトでは、これらは異なります。: 1 番目は、モデル化されているプリンターを表し、2 番目の出力が実際に表示される画面を表します。  
+ Print preview is somewhat different from screen display and printing because, instead of directly drawing an image on a device, the application must simulate the printer using the screen. To accommodate this, the Microsoft Foundation Class Library defines a special (undocumented) class derived from [CDC Class](../mfc/reference/cdc-class.md), called **CPreviewDC**. All `CDC` objects contain two device contexts, but usually they are identical. In a **CPreviewDC** object, they are different: the first represents the printer being simulated, and the second represents the screen on which output is actually displayed.  
   
-##  <a name="_core_the_print_preview_process"></a> 印刷プレビュー プロセス  
- ユーザーが印刷プレビュー **ファイル** メニューからコマンドを選択すると、フレームワークは **CPreviewDC** オブジェクトを作成します。  アプリケーションがプリンター デバイス コンテキストの特性を設定する操作を実行すると、フレームワークは、画面デバイス コンテキストのようなアクションを実行します。  たとえば、アプリケーションが印刷にフォントを選択すると、フレームワークはプリンター フォントをシミュレートする画面にフォントを選択します。  アプリケーションがプリンターに出力するたびに、フレームワークは画面に出力を送信します。  
+##  <a name="_core_the_print_preview_process"></a> The Print Preview Process  
+ When the user selects the Print Preview command from the **File** menu, the framework creates a **CPreviewDC** object. Whenever your application performs an operation that sets a characteristic of the printer device context, the framework also performs a similar operation on the screen device context. For example, if your application selects a font for printing, the framework selects a font for screen display that simulates the printer font. Whenever your application would send output to the printer, the framework instead sends the output to the screen.  
   
- 印刷プレビューは、順序で印刷にはそれぞれがドキュメント ページを描画できます。  印刷時に、フレームワークが特定の範囲内のページが印刷されるまでループが継続されます。  印刷プレビュー中に、それらのページは常に表示され、アプリケーションが待機; そのほかのページから応答まで表示されません。  印刷プレビュー中に、アプリケーションには、`WM_PAINT` メッセージに対して通常の画面表示中に実行するように応答する必要があります。  
+ Print preview also differs from printing in the order that each draws the pages of a document. During printing, the framework continues a print loop until a certain range of pages has been rendered. During print preview, one or two pages are displayed at any time, and then the application waits; no further pages are displayed until the user responds. During print preview, the application must also respond to `WM_PAINT` messages, just as it does during ordinary screen display.  
   
- [CView::OnPreparePrinting](../Topic/CView::OnPreparePrinting.md) 関数は、印刷ジョブの先頭にあるため、プレビュー モードが呼び出されたときに呼び出されます。  関数に渡される [CPrintInfo 構造体](../mfc/reference/cprintinfo-structure.md) 構造体は値の設定、印刷プレビュー操作の特定の特性を変更するために使用できるいくつかのメンバーが含まれています。  たとえば、1 ページまたは 2 ページ モードで文書をプレビューするかどうかを **m\_nNumPreviewPages** のメンバーを設定できます。  
+ The [CView::OnPreparePrinting](../mfc/reference/cview-class.md#onprepareprinting) function is called when preview mode is invoked, just as it is at the beginning of a print job. The [CPrintInfo Structure](../mfc/reference/cprintinfo-structure.md) structure passed to the function contains several members whose values you can set to adjust certain characteristics of the print preview operation. For example, you can set the **m_nNumPreviewPages** member to specify whether you want to preview the document in one-page or two-page mode.  
   
-##  <a name="_core_modifying_print_preview"></a> 変更の印刷プレビュー  
- さまざまな方法で印刷プレビューの動作と外観を多少簡単に変更できます。  たとえば、特に:できます  
+##  <a name="_core_modifying_print_preview"></a> Modifying Print Preview  
+ You can modify the behavior and appearance of print preview in a number of ways rather easily. For example, you can, among other things:  
   
--   印刷プレビュー ウィンドウをドキュメント内の任意のページへの簡単なアクセスのスクロール バーを表示するようにつながります。  
+-   Cause the print preview window to display a scroll bar for easy access to any page of the document.  
   
--   印刷プレビューを現在のページの表示を開き、ドキュメントのユーザーの位置を保持するようにつながります。  
+-   Cause print preview to maintain the user's position in the document by beginning its display at the current page.  
   
--   別の初期化を印刷プレビュー、印刷するために実行します。  
+-   Cause different initialization to be performed for print preview and printing.  
   
--   独自の形式で表示ページ番号を印刷プレビューを発生させます。  
+-   Cause print preview to display page numbers in your own formats.  
   
- ドキュメントがどの程度あり、適切な値を `SetMaxPage` を呼び出すと、フレームワークは、印刷プレビュー モードでの実行時にこの情報を使用できます。  フレームワークは、ドキュメントの長さがわかっている場合は、スクロール バーがプレビュー ウィンドウに割り当てることができ、プレビュー モード ドキュメントをとおして双方向のページングをユーザーに許可します。  ドキュメントの長さを設定しない場合、フレームワークは現在位置を示すようにスクロール ボックスを配置できないので、フレームワークは、スクロール バーを追加しません。  この場合、ユーザーは文書をページングするためにプレビュー ウィンドウのコントロール バーの次のページ、前のページ ボタンを使用する必要があります。  
+ If you know how long the document is and call `SetMaxPage` with the appropriate value, the framework can use this information in preview mode as well as during printing. Once the framework knows the length of the document, it can provide the preview window with a scroll bar, allowing the user to page back and forth through the document in preview mode. If you haven't set the length of the document, the framework cannot position the scroll box to indicate the current position, so the framework doesn't add a scroll bar. In this case, the user must use the Next Page and Previous Page buttons on the preview window's control bar to page through the document.  
   
- 印刷プレビュー用に、通常の印刷では実行されません。`CPrintInfo`の `m_nCurPage` メンバーに値を割り当てると便利な場合があります。  通常の出力では、このメンバーはフレームワークからビュー クラスの情報を示します。  これにより、ページが印刷されるかをフレームワークがどのようにビューに指示します。  
+ For print preview, you may find it useful to assign a value to the `m_nCurPage` member of `CPrintInfo`, even though you would never do so for ordinary printing. During ordinary printing, this member carries information from the framework to your view class. This is how the framework tells the view which page should be printed.  
   
- 一方、印刷プレビュー モードが開始されると、`m_nCurPage` のメンバーは、逆方向に情報を送信: ビューからフレームワークの。  フレームワークは、ページが最初にプレビューするかを判断するには、このメンバーの値を使用します。  このメンバーの既定値は 1 です。したがって、このドキュメントの最初のページが最初に表示されます。  印刷プレビューの各コマンドが呼び出されたときに表示されるページの数は、このメンバーを設定するに `OnPreparePrinting` をオーバーライドできます。  この方法では、アプリケーションの通常の表示モードを印刷プレビュー モードに移行するとき、ユーザーの現在の位置を保持します。  
+ By contrast, when print preview mode is started, the `m_nCurPage` member carries information in the opposite direction: from the view to the framework. The framework uses the value of this member to determine which page should be previewed first. The default value of this member is 1, so the first page of the document is displayed initially. You can override `OnPreparePrinting` to set this member to the number of the page being viewed at the time the Print Preview command was invoked. This way, the application maintains the user's current position when moving from normal display mode to print preview mode.  
   
- 、印刷ジョブ印刷プレビューに呼び出されるかを `OnPreparePrinting` に別の初期化として追加する必要があります。  `CPrintInfo` 構造体の **m\_bPreview** のメンバー変数を調べることによってこれを確認できます。  このメンバーは **TRUE** に印刷プレビューが呼び出されたときに設定されます。  
+ Sometimes you may want `OnPreparePrinting` to perform different initialization depending on whether it is called for a print job or for print preview. You can determine this by examining the **m_bPreview** member variable in the `CPrintInfo` structure. This member is set to **TRUE** when print preview is invoked.  
   
- `CPrintInfo` 構造体は、**m\_strPageDesc**という名前の単一または複数のページ モードの画面の下部に表示される文字列の書式設定に使用するメンバーが含まれています。  既定ではフォームの文字列「 *n*」ページで、「 *n*のページングします   \-*m*」、が、複雑に `OnPreparePrinting` 内から **m\_strPageDesc** を変更し、要素に文字列を設定できます。  詳細については、" *MFC リファレンス* " の[CPrintInfo 構造体](../mfc/reference/cprintinfo-structure.md) を参照してください。  
+ The `CPrintInfo` structure also contains a member named **m_strPageDesc**, which is used to format the strings displayed at the bottom of the screen in single-page and multiple-page modes. By default these strings are of the form "Page *n*" and "Pages *n* - *m*," but you can modify **m_strPageDesc** from within `OnPreparePrinting` and set the strings to something more elaborate. See [CPrintInfo Structure](../mfc/reference/cprintinfo-structure.md) in the *MFC Reference* for more information.  
   
-## 参照  
- [印刷および印刷プレビュー](../mfc/printing-and-print-preview.md)   
- [印刷](../mfc/printing.md)   
- [CView クラス](../Topic/CView%20Class.md)   
- [CDC クラス](../Topic/CDC%20Class.md)
+## <a name="see-also"></a>See Also  
+ [Printing and Print Preview](../mfc/printing-and-print-preview.md)   
+ [Printing](../mfc/printing.md)   
+ [CView Class](../mfc/reference/cview-class.md)   
+ [CDC Class](../mfc/reference/cdc-class.md)
+

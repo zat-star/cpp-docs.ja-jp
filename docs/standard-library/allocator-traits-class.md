@@ -1,5 +1,5 @@
 ---
-title: "allocator_traits クラス | Microsoft Docs"
+title: allocator_traits Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -48,17 +48,36 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: d4fdcb8af6fa8b33ee6153563770b9bf00f02942
+helpviewer_keywords:
+- std::allocator_traits [C++]
+- std::allocator_traits [C++], propagate_on_container_move_assignment
+- std::allocator_traits [C++], const_pointer
+- std::allocator_traits [C++], propagate_on_container_swap
+- std::allocator_traits [C++], propagate_on_container_copy_assignment
+- std::allocator_traits [C++], difference_type
+- std::allocator_traits [C++], allocator_type
+- std::allocator_traits [C++], value_type
+- std::allocator_traits [C++], pointer
+- std::allocator_traits [C++], size_type
+- std::allocator_traits [C++], const_void_pointer
+- std::allocator_traits [C++], void_pointer
+- std::allocator_traits [C++], allocate
+- std::allocator_traits [C++], construct
+- std::allocator_traits [C++], deallocate
+- std::allocator_traits [C++], destroy
+- std::allocator_traits [C++], max_size
+- std::allocator_traits [C++], select_on_container_copy_construction
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: e76087fe07ce065aeb19de18acc17464e6b4e4a0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="allocatortraits-class"></a>allocator_traits クラス
-このテンプレート クラスは、*allocator type* を補足するオブジェクトを記述します。 アロケーターの型は、割り当てられた記憶域を管理するために使用されるアロケーター オブジェクトを記述する任意の型です。 具体的には、任意のアロケーターの型 `Alloc` に対し、`allocator_traits<Alloc>` を使用してアロケーター対応のコンテナーが必要とするすべての情報を決定することができます。 詳細については、既定の「[allocator クラス](../standard-library/allocator-class.md)」を参照してください。  
+# <a name="allocatortraits-class"></a>allocator_traits Class
+The template class describes an object that supplements an *allocator type*. An allocator type is any type that describes an allocator object that is used for managing allocated storage. Specifically, for any allocator type `Alloc`, you can use `allocator_traits<Alloc>` to determine all the information that is needed by an allocator-enabled container. For more information, see the default [allocator Class](../standard-library/allocator-class.md).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```cpp  
 template <class Alloc>
@@ -67,39 +86,39 @@ class allocator_traits;
   
 ### <a name="typedefs"></a>Typedefs  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`allocator_traits::allocator_type`|この型は、テンプレート パラメーター `Alloc` のシノニムです。|  
-|`allocator_traits::const_pointer`|この型は、整形式の場合は `Alloc::const_pointer`、それ以外の場合は `pointer_traits<pointer>::rebind<const value_type>` です。|  
-|`allocator_traits::const_void_pointer`|この型は、整形式の場合は `Alloc::const_void_pointer`、それ以外の場合は `pointer_traits<pointer>::rebind<const void>` です。|  
-|`allocator_traits::difference_type`|この型は、整形式の場合は `Alloc::difference_type`、それ以外の場合は `pointer_traits<pointer>::difference_type` です。|  
-|`allocator_traits::pointer`|この型は、整形式の場合は `Alloc::pointer`、それ以外の場合は `value_type *` です。|  
-|`allocator_traits::propagate_on_container_copy_assignment`|この型は、整形式の場合は `Alloc::propagate_on_container_copy_assignment`、それ以外の場合は `false_type` です。|  
-|`allocator_traits::propagate_on_container_move_assignment`|この型は、整形式の場合は `Alloc::propagate_on_container_move_assignment`、それ以外の場合は `false_type` です。 型が true を保持している場合、アロケーター対応のコンテナーは移動代入で格納されたアロケーターをコピーします。|  
-|`allocator_traits::propagate_on_container_swap`|この型は、整形式の場合は `Alloc::propagate_on_container_swap`、それ以外の場合は `false_type` です。 型が true を保持している場合、アロケーター対応のコンテナーはスワップで格納されたアロケーターをスワップします。|  
-|`allocator_traits::size_type`|この型は、整形式の場合は `Alloc::size_type`、それ以外の場合は `make_unsigned<difference_type>::type` です。|  
-|`allocator_traits::value_type`|この型は `Alloc::value_type` のシノニムです。|  
-|`allocator_traits::void_pointer`|この型は、整形式の場合は `Alloc::void_pointer`、それ以外の場合は `pointer_traits<pointer>::rebind<void>` です。|  
+|`allocator_traits::allocator_type`|This type is a synonym for the template parameter `Alloc`.|  
+|`allocator_traits::const_pointer`|This type is `Alloc::const_pointer`, if that type is well-formed; otherwise, this type is `pointer_traits<pointer>::rebind<const value_type>`.|  
+|`allocator_traits::const_void_pointer`|This type is `Alloc::const_void_pointer`, if that type is well-formed; otherwise, this type is `pointer_traits<pointer>::rebind<const void>`.|  
+|`allocator_traits::difference_type`|This type is `Alloc::difference_type`, if that type is well-formed; otherwise, this type is `pointer_traits<pointer>::difference_type`.|  
+|`allocator_traits::pointer`|This type is `Alloc::pointer`, if that type is well-formed; otherwise, this type is `value_type *`.|  
+|`allocator_traits::propagate_on_container_copy_assignment`|This type is `Alloc::propagate_on_container_copy_assignment`, if that type is well-formed; otherwise, this type is `false_type`.|  
+|`allocator_traits::propagate_on_container_move_assignment`|This type is `Alloc::propagate_on_container_move_assignment`, if that type is well-formed; otherwise, this type is `false_type`. If the type holds true, an allocator-enabled container copies its stored allocator on a move assignment.|  
+|`allocator_traits::propagate_on_container_swap`|This type is `Alloc::propagate_on_container_swap`, if that type is well-formed; otherwise, this type is `false_type`. If the type holds true, an allocator-enabled container swaps its stored allocator on a swap.|  
+|`allocator_traits::size_type`|This type is `Alloc::size_type`, if that type is well-formed; otherwise, this type is `make_unsigned<difference_type>::type`.|  
+|`allocator_traits::value_type`|This type is a synonym for `Alloc::value_type`.|  
+|`allocator_traits::void_pointer`|This type is `Alloc::void_pointer`, if that type is well-formed; otherwise, this type is `pointer_traits<pointer>::rebind<void>`.|  
   
-### <a name="static-methods"></a>静的メソッド  
- 次の静的メソッドは、特定のアロケーター パラメーターで対応するメソッドを呼び出します。  
+### <a name="static-methods"></a>Static Methods  
+ The following static methods call the corresponding method on a given allocator parameter.  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[allocate](#allocate)|特定のアロケーター パラメーターを使用してメモリを割り当てる静的メソッド。|  
-|[construct](#construct)|オブジェクトの構築に指定されたアロケーターを使用する静的メソッド。|  
-|[deallocate](#deallocate)|指定したアロケーターを使用して、指定数のオブジェクトの割り当てを解除する静的メソッド。|  
-|[destroy](#destroy)|指定したアロケーターを使用して、メモリの割り当てを解除せず、オブジェクトでデストラクターを呼び出す静的メソッド。|  
-|[max_size](#max_size)|指定したアロケーターを使用して割り当てることができるオブジェクトの最大数を決定する静的メソッド。|  
-|[select_on_container_copy_construction](#select_on_container_copy_construction)|指定したアロケーターで `select_on_container_copy_construction` を呼び出す静的メソッド。|  
+|[allocate](#allocate)|Static method that allocates memory by using the given allocator parameter.|  
+|[construct](#construct)|Static method that uses a specified allocator to construct an object.|  
+|[deallocate](#deallocate)|Static method that uses a specified allocator to deallocate a specified number of objects.|  
+|[destroy](#destroy)|Static method that uses a specified allocator to call the destructor on an object without deallocating its memory.|  
+|[max_size](#max_size)|Static method that uses a specified allocator to determine the maximum number of objects that can be allocated.|  
+|[select_on_container_copy_construction](#select_on_container_copy_construction)|Static method that calls `select_on_container_copy_construction` on the specified allocator.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="allocate"></a>allocator_traits::allocate
- 特定のアロケーター パラメーターを使用してメモリを割り当てる静的メソッド。  
+##  <a name="allocate"></a>  allocator_traits::allocate
+ Static method that allocates memory by using the given allocator parameter.  
   
 ```cpp  
 static pointer allocate(Alloc& al, size_type count);
@@ -108,46 +127,46 @@ static pointer allocate(Alloc& al, size_type count,
     typename allocator_traits<void>::const_pointer* hint);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
  `count`  
- 割り当てる要素数。  
+ The number of elements to allocate.  
   
  `hint`  
- 記憶域への要求を、要求の前に割り当てられたオブジェクトのアドレスを見つけることで満たすことについて、アロケーター オブジェクトを支援できる `const_pointer`。 Null ポインターは、hint なしとして扱われます。  
+ A `const_pointer` that might assist the allocator object in satisfying the request for storage by locating the address of an allocated object prior to the request. A null pointer is treated as no hint.  
   
-### <a name="return-value"></a>戻り値  
- 各メソッドは、割り当てられたオブジェクトへのポインターを返します。  
+### <a name="return-value"></a>Return Value  
+ Each method returns a pointer to the allocated object.  
   
- 最初の静的メソッドは `al.allocate(count)` を返します。  
+ The first static method returns `al.allocate(count)`.  
   
- 2 番目のメソッドは、その式が整形式の場合は `al.allocate(count, hint)` を返し、それ以外の場合は `al.allocate(count)` を返します。  
+ The second method returns `al.allocate(count, hint)`, if that expression is well formed; otherwise it returns `al.allocate(count)`.  
   
-##  <a name="construct"></a>allocator_traits::construct
- オブジェクトの構築に指定されたアロケーターを使用する静的メソッド。  
+##  <a name="construct"></a>  allocator_traits::construct
+ Static method that uses a specified allocator to construct an object.  
   
 ```cpp  
 template <class Uty, class Types>
 static void construct(Alloc& al, Uty* ptr, Types&&... args);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
  `ptr`  
- オブジェクトが構築される場所へのポインター。  
+ A pointer to the location where the object is to be constructed.  
   
  `args`  
- オブジェクト コンストラクターに渡される引数のリスト。  
+ A list of arguments that is passed to the object constructor.  
   
-### <a name="remarks"></a>コメント  
- 静的メンバー関数は、その式が整形式の場合は `al.construct(ptr, args...)` を呼び出し、それ以外の場合は `::new (static_cast<void *>(ptr)) Uty(std::forward<Types>(args)...)` を評価します。  
+### <a name="remarks"></a>Remarks  
+ The static member function calls `al.construct(ptr, args...)`, if that expression is well formed; otherwise it evaluates `::new (static_cast<void *>(ptr)) Uty(std::forward<Types>(args)...)`.  
   
-##  <a name="deallocate"></a>allocator_traits::deallocate
- 指定したアロケーターを使用して、指定数のオブジェクトの割り当てを解除する静的メソッド。  
+##  <a name="deallocate"></a>  allocator_traits::deallocate
+ Static method that uses a specified allocator to deallocate a specified number of objects.  
   
 ```cpp  
 static void deallocate(Alloc al,
@@ -155,72 +174,72 @@ static void deallocate(Alloc al,
     size_type count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
  `ptr`  
- 割り当てを解除されるオブジェクトの開始位置へのポインター。  
+ A pointer to the starting location of the objects to be deallocated.  
   
  `count`  
- 割り当てを解除するオブジェクトの数。  
+ The number of objects to deallocate.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは `al.deallocate(ptr, count)` を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ This method calls `al.deallocate(ptr, count)`.  
   
- このメソッドは何もスローしません。  
+ This method throws nothing.  
   
-##  <a name="destroy"></a>allocator_traits::destroy
- 指定したアロケーターを使用して、メモリの割り当てを解除せず、オブジェクトでデストラクターを呼び出す静的メソッド。  
+##  <a name="destroy"></a>  allocator_traits::destroy
+ Static method that uses a specified allocator to call the destructor on an object without deallocating its memory.  
   
 ```cpp  
 template <class Uty>
 static void destroy(Alloc& al, Uty* ptr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
  `ptr`  
- オブジェクトの場所へのポインター。  
+ A pointer to the location of the object.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、その式が整形式の場合は `al.destroy(ptr)` を呼び出し、それ以外の場合は `ptr->~Uty()` を評価します。  
+### <a name="remarks"></a>Remarks  
+ This method calls `al.destroy(ptr)`, if that expression is well formed; otherwise it evaluates `ptr->~Uty()`.  
   
-##  <a name="max_size"></a>allocator_traits::max_size
- 指定したアロケーターを使用して割り当てることができるオブジェクトの最大数を決定する静的メソッド。  
+##  <a name="max_size"></a>  allocator_traits::max_size
+ Static method that uses a specified allocator to determine the maximum number of objects that can be allocated.  
   
 ```cpp  
 static size_type max_size(const Alloc& al);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、その式が整形式の場合は `al.max_size()` を返し、それ以外の場合は `numeric_limits<size_type>::max()` を返します。  
+### <a name="remarks"></a>Remarks  
+ This method returns `al.max_size()`, if that expression is well formed; otherwise it returns `numeric_limits<size_type>::max()`.  
   
-##  <a name="select_on_container_copy_construction"></a>allocator_traits::select_on_container_copy_construction
- 指定したアロケーターで `select_on_container_copy_construction` を呼び出す静的メソッド。  
+##  <a name="select_on_container_copy_construction"></a>  allocator_traits::select_on_container_copy_construction
+ Static method that calls `select_on_container_copy_construction` on the specified allocator.  
   
 ```cpp  
 static Alloc select_on_container_copy_construction(const Alloc& al);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `al`  
- アロケーター オブジェクト。  
+ An allocator object.  
   
-### <a name="return-value"></a>戻り値  
- このメソッドは、その型が整形式の場合は `al.select_on_container_copy_construction()` を返し、それ以外の場合は `al` を返します。  
+### <a name="return-value"></a>Return Value  
+ This method returns `al.select_on_container_copy_construction()`, if that type is well formed; otherwise it returns `al`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、関連するコンテナーがコピー構築された場合に、アロケーターを指定するために使用されます。  
+### <a name="remarks"></a>Remarks  
+ This method is used to specify an allocator when the associated container is copy-constructed.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<memory>](../standard-library/memory.md)   
- [pointer_traits 構造体](../standard-library/pointer-traits-struct.md)   
- [scoped_allocator_adaptor クラス](../standard-library/scoped-allocator-adaptor-class.md)
+ [pointer_traits Struct](../standard-library/pointer-traits-struct.md)   
+ [scoped_allocator_adaptor Class](../standard-library/scoped-allocator-adaptor-class.md)
 

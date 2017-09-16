@@ -1,32 +1,49 @@
 ---
-title: "一般的な規則と制約 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: General Rules and Limitations | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: 6c48902d-4259-4761-95d4-e421d69aa050
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 一般的な規則と制約
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 722fabfa40045883ac7d3dcdbf5a1eb159439551
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-## Microsoft 固有の仕様 →  
+---
+# <a name="general-rules-and-limitations"></a>General Rules and Limitations
+## <a name="microsoft-specific"></a>Microsoft Specific  
   
--   **dllimport** 属性または `dllexport` 属性を指定しないで関数やオブジェクトを宣言した場合、その関数やオブジェクトは DLL インターフェイスの一部とは見なされません。  したがって、関数またはオブジェクトの定義は、該当のモジュール内か、同じプログラムの別のモジュール内に存在している必要があります。  関数やオブジェクトを DLL インターフェイスに含める場合は、その関数またはオブジェクトの定義を他のモジュールで `dllexport` として宣言する必要があります。  定義しない場合は、リンカー エラーが生成されます。  
+-   If you declare a function or object without the **dllimport** or `dllexport` attribute, the function or object is not considered part of the DLL interface. Therefore, the definition of the function or object must be present in that module or in another module of the same program. To make the function or object part of the DLL interface, you must declare the definition of the function or object in the other module as `dllexport`. Otherwise, a linker error is generated.  
   
-     `dllexport` 属性を使用して関数やオブジェクトを宣言する場合、その定義は同じプログラムのどこかのモジュールに存在する必要があります。  定義しない場合は、リンカー エラーが生成されます。  
+     If you declare a function or object with the `dllexport` attribute, its definition must appear in some module of the same program. Otherwise, a linker error is generated.  
   
--   プログラムの 1 つのモジュールに、同じ関数またはオブジェクトの **dllimport** 宣言と `dllexport` 宣言の両方が含まれる場合は、`dllexport` 属性が **dllimport** 属性よりも優先されます。  ただし、コンパイラの警告が生成されます。  次に例を示します。  
+-   If a single module in your program contains both **dllimport** and `dllexport` declarations for the same function or object, the `dllexport` attribute takes precedence over the **dllimport** attribute. However, a compiler warning is generated. For example:  
   
     ```  
     __declspec( dllimport ) int i;  
@@ -34,7 +51,7 @@ caps.handback.revision: 7
                                      // dllexport takes precedence.  
     ```  
   
--   C\+\+ では、グローバルに宣言されたポインターまたは静的なローカル データ ポインターを、**dllimport** 属性で宣言されたデータ オブジェクトのアドレスで初期化できます。これは、C ではエラーになります。  また、**dllimport** 属性で宣言された関数のアドレスで静的なローカル関数ポインターを初期化することもできます。  C では、このような代入で、関数のアドレスではなく、DLL インポート サンク \(関数に制御を移すコード スタブ\) のアドレスがポインターに設定されます。  C\+\+ では、ポインターに関数のアドレスが設定されます。  次に例を示します。  
+-   In C++, you can initialize a globally declared or static local data pointer or with the address of a data object declared with the **dllimport** attribute, which generates an error in C. In addition, you can initialize a static local function pointer with the address of a function declared with the **dllimport** attribute. In C, such an assignment sets the pointer to the address of the DLL import thunk (a code stub that transfers control to the function) rather than the address of the function. In C++, it sets the pointer to the address of the function. For example:  
   
     ```  
     __declspec( dllimport ) void func1( void );  
@@ -52,7 +69,7 @@ caps.handback.revision: 7
     }  
     ```  
   
-     ただし、`dllexport` 属性が含まれたオブジェクト宣言のあるプログラムでは、そのプログラム内のどこかでそのオブジェクトを定義している必要があるため、グローバルな、またはローカルの静的な関数ポインターを、`dllexport` の関数のアドレスで初期化できます。  同様に、`dllexport` データ オブジェクトのアドレスで、グローバルまたはローカルの静的データ ポインターを初期化できます。  たとえば、次のコードの場合、C または C\+\+ でエラーは発生しません。  
+     However, because a program that includes the `dllexport` attribute in the declaration of an object must provide the definition for that object somewhere in the program, you can initialize a global or local static function pointer with the address of a `dllexport` function. Similarly, you can initialize a global or local static data pointer with the address of a `dllexport` data object. For example, the following code does not generate errors in C or C++:  
   
     ```  
     __declspec( dllexport ) void func1( void );  
@@ -68,9 +85,9 @@ caps.handback.revision: 7
     }  
     ```  
   
--   通常のクラスとクラス テンプレートの特殊化の間でより一貫性のある `dllexport` の適用を可能にするために、Visual C\+\+ .NET には動作変更が加えられています。これにより、`dllexport` としてマークされていない基底クラスがを持つ通常のクラスに `dllexport` を適用すると、コンパイラで C4275 が発生します。  
+-   Because of a change in behavior introduce in Visual C++ .NET to make the application of `dllexport` more consistent between regular classes and specializations of class templates, if you apply `dllexport` to a regular class that has a base class that is not marked as `dllexport`, the compiler will generate C4275.  
   
-     クラス テンプレートの特殊化が基底クラスである場合、コンパイラでも同じ警告が発生します。  この問題を回避するには、基底クラスに `dllexport` のマークを付けます。  クラス テンプレートの特殊化の場合、問題は **\_\_declspec\(dllexport\)** をどこに配置するかです。クラス テンプレートへのマーク付けは許可されていません。  代わりに、明示的にクラス テンプレートをインスタンス化し、この明示的にインスタンス化したクラスに `dllexport` のマークを付けます。  次に例を示します。  
+     The compiler generates the same warning if the base class is a specialization of a class template. To work around this, mark the base-class with `dllexport`. The problem with a specialization of a class template is where to place the **__declspec(dllexport)**; you are not allowed to mark the class template. Instead, explicitly instantiate the class template and mark this explicit instantiation with `dllexport`. For example:  
   
     ```  
     template class __declspec(dllexport) B<int>;  
@@ -78,21 +95,21 @@ caps.handback.revision: 7
     // ...  
     ```  
   
-     この回避策は、テンプレート引数が派生クラスの場合は失敗します。  次に例を示します。  
+     This workaround fails if the template argument is the deriving class. For example:  
   
     ```  
     class __declspec(dllexport) D : public B<D> {  
     // ...  
     ```  
   
-     テンプレートではこれが一般的なパターンであるため、コンパイラでは、1 つ以上の基底クラスを持つクラスに `dllexport` が適用され、その基底クラスの 1 つ以上がクラス テンプレートの特殊化である場合の dllexport のセマンティックが変更されました。  このような場合、コンパイラはクラス テンプレートの特殊化に暗黙的に `dllexport` を適用します。  Visual C\+\+ .NET では、ユーザーは以下を実行でき、警告は発生しません。  
+     Because this is common pattern with templates, the compiler changed the semantics of `dllexport` when it is applied to a class that has one or more base-classes and when one or more of the base classes is a specialization of a class template. In this case, the compiler implicitly applies `dllexport` to the specializations of class templates. In Visual C++ .NET, a user can do the following and not get a warning:  
   
     ```  
     class __declspec(dllexport) D : public B<D> {  
     // ...  
     ```  
   
-## END Microsoft 固有の仕様  
+**END Microsoft Specific**  
   
-## 参照  
- [dllexport、dllimport](../cpp/dllexport-dllimport.md)
+## <a name="see-also"></a>See Also  
+ [dllexport, dllimport](../cpp/dllexport-dllimport.md)

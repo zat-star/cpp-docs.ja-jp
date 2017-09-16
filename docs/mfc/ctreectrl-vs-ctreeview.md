@@ -1,40 +1,58 @@
 ---
-title: "CTreeCtrl と CTreeView の比較 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CTreeCtrl"
-  - "CTreeView"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, vs. CTreeView クラス"
-  - "CTreeView クラス, vs. CTreeCtrl クラス"
-  - "ツリー コントロール, およびツリー ビュー"
-  - "ツリー ビュー コントロール"
+title: CTreeCtrl vs. CTreeView | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CTreeCtrl
+- CTreeView
+dev_langs:
+- C++
+helpviewer_keywords:
+- tree view controls
+- CTreeCtrl class [MFC], vs. CTreeView class [MFC]
+- CTreeView class [MFC], vs. CTreeCtrl class [MFC]
+- tree controls [MFC], and tree view
 ms.assetid: bba5af25-103f-4b53-84d3-071bc9bd6494
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# CTreeCtrl と CTreeView の比較
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9579c973c75898cb243fc1b47b638c35bd0423ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC では、ツリー コントロールをカプセル化するクラスを 2 つあります。: [CTreeCtrl](../mfc/reference/ctreectrl-class.md) と [CTreeView](../mfc/reference/ctreeview-class.md)。  各クラスは、さまざまな状況で役立ちます。  
+---
+# <a name="ctreectrl-vs-ctreeview"></a>CTreeCtrl vs. CTreeView
+MFC provides two classes that encapsulate tree controls: [CTreeCtrl](../mfc/reference/ctreectrl-class.md) and [CTreeView](../mfc/reference/ctreeview-class.md). Each class is useful in different situations.  
   
- 明確な子ウィンドウのコントロールが必要な場合 `CTreeCtrl` ;を使用します。たとえば、ダイアログ ボックスです。  ウィンドウに他の子コントロールがある場合は特に一般的なダイアログ ボックスと同様に `CTreeCtrl` を使用する必要があります。  
+ Use `CTreeCtrl` when you need a plain child window control; for instance, in a dialog box. You'd especially want to use `CTreeCtrl` if there will be other child controls in the window, as in a typical dialog box.  
   
- ツリー コントロールにドキュメント\/ビュー アーキテクチャ、ツリー コントロール ビュー ウィンドウのように動作させること `CTreeView` を使用します。  `CTreeView` はフレーム ウィンドウまたは分割ウィンドウのクライアント領域全体を占有します。  これは自動的に親ウィンドウのサイズが変更され、メニュー、アクセラレータ キーとツール バーからコマンド メッセージを処理できるようにサイズ変更されます。  ツリー コントロールのツリーを表示するために必要なデータが含まれているため、対応するドキュメント オブジェクトは複雑でなくてもかまいません。—ドキュメント テンプレートでドキュメント型として [CDocument](../Topic/CDocument%20Class.md) を使用できます。  
+ Use `CTreeView` when you want the tree control to act like a view window in document/view architecture as well as a tree control. A `CTreeView` will occupy the entire client area of a frame window or splitter window. It will be automatically resized when its parent window is resized, and it can process command messages from menus, accelerator keys, and toolbars. Since a tree control contains the data necessary to display the tree, the corresponding document object does not have to be complicated — you could even use [CDocument](../mfc/reference/cdocument-class.md) as the document type in your document template.  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

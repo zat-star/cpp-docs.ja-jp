@@ -1,5 +1,5 @@
 ---
-title: "remove_all_extents クラス | Microsoft Docs"
+title: remove_all_extents Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- remove_all_extents
 - type_traits/std::remove_all_extents
 dev_langs:
 - C++
@@ -35,17 +34,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: aa6a975b598f7e51445a777cc980d5541d7e0e8b
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: d0add5114c674b784b7719d1b56d4284e46312d1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="removeallextents-class"></a>remove_all_extents クラス
-配列型から非配列型を作成します。  
+# <a name="removeallextents-class"></a>remove_all_extents Class
+Makes non array type from array type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T>
@@ -55,14 +54,14 @@ template <class T>
 using remove_all_extents_t = typename remove_all_extents<T>::type;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 変更する型。  
+ The type to modify.  
   
-## <a name="remarks"></a>コメント  
- `remove_all_extents<T>` のインスタンスは、配列型 `T` の要素の型から、すべての配列次元を取り除いた修飾型を保持します。`T` が配列型でない場合は、`T` を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of `remove_all_extents<T>` holds a modified-type that is the element type of the array type `T` with all array dimensions removed, or `T` if `T` is not an array type.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <type_traits>   
@@ -84,12 +83,12 @@ int main()
     }  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [remove_extent クラス](../standard-library/remove-extent-class.md)
+ [remove_extent Class](../standard-library/remove-extent-class.md)
 

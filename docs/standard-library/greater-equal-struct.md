@@ -1,15 +1,14 @@
 ---
-title: "greater_equal 構造体 | Microsoft Docs"
+title: greater_equal Struct | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- greater_equal
 - xfunctional/std::greater_equal
 dev_langs:
 - C++
@@ -36,16 +35,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 56fd730319f7523915fcdbb71d9cd97c98fda5b0
-ms.lasthandoff: 02/24/2017
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: fe09161461c53bd174bc9f21e82c14fc7ea3d910
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="greaterequal-struct"></a>greater_equal 構造体
-引数に対して "以上" 演算 (`operator>=`) を実行する二項述語。  
+# <a name="greaterequal-struct"></a>greater_equal Struct
+A binary predicate that performs the greater-than-or-equal-to operation ( `operator>=`) on its arguments.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class Type = void>
@@ -64,23 +64,23 @@ struct greater_equal<void>
  };
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- `Type`、`T`、`U`  
- 指定または推論された型のオペランドを受け取る `operator>=` をサポートする任意の型。  
+#### <a name="parameters"></a>Parameters  
+ `Type`, `T`, `U`  
+ Any type that supports an `operator>=` that takes operands of the specified or inferred types.  
   
  `Left`  
- 以上演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
+ The left operand of the greater-than-or-equal-to operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `T`.  
   
  `Right`  
- 以上演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
+ The right operand of the greater-than-or-equal-to operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `U`.  
   
-## <a name="return-value"></a>戻り値  
- `Left``>=``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator>=` によって返された型が含まれます。  
+## <a name="return-value"></a>Return Value  
+ The result of `Left >= Right`. The specialized template does perfect forwarding of the result, which has the type that's returned by `operator>=`.  
   
-## <a name="remarks"></a>コメント  
- 二項述語 `greater_equal`< `Type`> は、型 `Type` の要素値のセットの、等価クラスへの厳密弱順序を提供します。ただし、その型がそのように順序付けられる標準的な数学的要件を満たす場合のみです。 任意のポインター型に対する特殊化によって、要素の完全な順序付けが生成されます。この場合、一意の値を持つすべての要素が、相互の値に基づいて並べ替えられます。  
+## <a name="remarks"></a>Remarks  
+ The binary predicate `greater_equal`< `Type`> provides a strict weak ordering of a set of element values of type `Type` into equivalence classes, if and only if this type satisfies the standard mathematical requirements for being so ordered. The specializations for any pointer type yield a total ordering of elements, in that all elements of distinct values are ordered with respect to each other.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // functional_greater_equal.cpp  
@@ -128,7 +128,7 @@ int main( )
 }  
 ```  
   
-## <a name="output"></a>出力  
+## <a name="output"></a>Output  
   
 ```
 Original vector v1 = (6262 6262 41 18467 6334 26500 19169)
@@ -136,13 +136,13 @@ Sorted vector v1 = (41 6262 6262 6334 18467 19169 26500)
 Resorted vector v1 = (26500 19169 18467 6334 6262 6262 41)
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<functional>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<functional>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 
 

@@ -1,76 +1,95 @@
 ---
-title: "コンテナー : コンテナーの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], OLE コンテナー"
-  - "OLE コンテナー, 実装"
+title: 'Containers: Implementing a Container | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- applications [OLE], OLE container
+- OLE containers [MFC], implementing
 ms.assetid: af1e2079-619a-4eac-9327-985ad875823a
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンテナー : コンテナーの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e9b68ee081de334a8ee0b5bfe599876a52c46896
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、コンテナーの実装に関する詳細な説明を提供するそのほかのトピックにコンテナーとポイントを実装するための手順を示します。  また、これらの機能を記述する文書実装したい場合がある省略可能な OLE 機能を説明します。  
+---
+# <a name="containers-implementing-a-container"></a>Containers: Implementing a Container
+This article summarizes the procedure for implementing a container and points you to other articles that provide more detailed explanations about implementing containers. It also lists some optional OLE features you may want to implement and the articles describing these features.  
   
-#### CWinApp 派生されたクラスを準備するには  
+#### <a name="to-prepare-your-cwinapp-derived-class"></a>To prepare your CWinApp-derived class  
   
-1.  `InitInstance` のメンバー関数の **AfxOleInit** を呼び出して OLE ライブラリを初期化してください。  
+1.  Initialize the OLE libraries by calling **AfxOleInit** in the `InitInstance` member function.  
   
-2.  メニューを関連付けるに `InitInstance` の `CDocTemplate::SetContainerInfo` を呼び出すと埋め込まれたアイテム埋め込みがアクティブ化されたときに、アクセラレータのリソースが使用されます。  このトピックの詳細については、「[アクティブ化](../mfc/activation-cpp.md)」を参照してください。  
+2.  Call `CDocTemplate::SetContainerInfo` in `InitInstance` to assign the menu and accelerator resources used when an embedded item is activated in-place. For more information on this topic, see [Activation](../mfc/activation-cpp.md).  
   
- これらの機能は、コンテナー アプリケーションを作成するには、MFC アプリケーション ウィザードを使用すると、自動的に提供されます。  [MFC EXE プログラムの作成](../Topic/MFC%20Application%20Wizard.md)を参照してください。  
+ These features are provided for you automatically when you use the MFC Application Wizard to create a container application. See [Creating an MFC EXE Program](../mfc/reference/mfc-application-wizard.md).  
   
-#### ビュー クラスを準備するには  
+#### <a name="to-prepare-your-view-class"></a>To prepare your view class  
   
-1.  ポインターを保持すると、選択した項目を複数選択をサポートする場合、または選択した項目にポインターのリストを、追跡する。  `OnDraw` 関数はすべての OLE アイテムを描画しない必要があります。  
+1.  Keep track of selected items by maintaining a pointer, or list of pointers if you support multiple selection, to the selected items. Your `OnDraw` function must draw all OLE items.  
   
-2.  このパラメーターに渡される項目が現在選択されているかどうかを確認するために `IsSelected` をオーバーライドします。  
+2.  Override `IsSelected` to check whether the item passed to it is currently selected.  
   
-3.  **Insert Object** ダイアログ ボックスを表示するに **OnInsertObject** のメッセージ ハンドラーを実装してください。  
+3.  Implement an **OnInsertObject** message handler to display the **Insert Object** dialog box.  
   
-4.  ビューから埋め込み先編集の OLE 埋め込まれたアイテムにフォーカスを移動するに `OnSetFocus` のメッセージ ハンドラーを実装してください。  
+4.  Implement an `OnSetFocus` message handler to transfer focus from the view to an in-place active OLE embedded item.  
   
-5.  含まれているビューの変更を反映するように四角形を変更する必要があります。OLE 埋め込まれたアイテムを通知するために `OnSize` のメッセージ ハンドラーを実装してください。  
+5.  Implement an `OnSize` message handler to inform an OLE embedded item that it needs to change its rectangle to reflect the change in size of its containing view.  
   
- これらの機能の実装が 1 アプリケーションから次に大幅に異なるため、アプリケーション ウィザードは基本実装を提供します。  正しく機能するようにアプリケーションを取得するために、これらの関数をカスタマイズする必要があります。  この例については、[コンテナー](../top/visual-cpp-samples.md) サンプルを参照してください。  
+ Because the implementation of these features varies dramatically from one application to the next, the application wizard provides only a basic implementation. You will likely have to customize these functions to get your application to function properly. For an example of this, see the [CONTAINER](../visual-cpp-samples.md) sample.  
   
-#### 埋め込まれたとリンク アイテムを処理するには  
+#### <a name="to-handle-embedded-and-linked-items"></a>To handle embedded and linked items  
   
-1.  [COleClientItem](../mfc/reference/coleclientitem-class.md)からクラスを派生してください。  このクラスのオブジェクトは、埋め込まれたまたは OLE ドキュメントにリンクされた項目を表します。  
+1.  Derive a class from [COleClientItem](../mfc/reference/coleclientitem-class.md). Objects of this class represent items that have been embedded in or linked to your OLE document.  
   
-2.  オーバーライド **OnChange**、`OnChangeItemPosition`と `OnGetItemPosition`。  これらの関数は、配置が埋め込まれた変更し、リンクされた項目のサイズ変更を処理します。  
+2.  Override **OnChange**, `OnChangeItemPosition`, and `OnGetItemPosition`. These functions handle sizing, positioning, and modifying embedded and linked items.  
   
- アプリケーション ウィザードによってクラスが派生しますが、その **OnChange** をオーバーライドする必要があり、もう一方は上記の手順 2 の動作と表示された機能します。  スケルトン実装はこれらの関数が 1 アプリケーションから次に異なる方法で実装されるため、ほとんどのアプリケーション用にカスタマイズする必要があります。  この例については、MFC サンプル [DRAWCLI](../top/visual-cpp-samples.md) と [コンテナー](../top/visual-cpp-samples.md)を参照してください。  
+ The application wizard will derive the class for you, but you will likely need to override **OnChange** and the other functions listed with it in step 2 in the preceding procedure. The skeleton implementations need to be customized for most applications, because these functions are implemented differently from one application to the next. For examples of this, see the MFC samples [DRAWCLI](../visual-cpp-samples.md) and [CONTAINER](../visual-cpp-samples.md).  
   
- コンテナー アプリケーションのメニュー構造に OLE をサポートするためにいくつかの項目を追加する必要があります。  これらの詳細については、「[メニューとリソース: コンテナーの追加](../mfc/menus-and-resources-container-additions.md)」を参照してください。  
+ You must add a number of items to the container application's menu structure to support OLE. For more information on these, see [Menus and Resources: Container Additions](../mfc/menus-and-resources-container-additions.md).  
   
- また、コンテナー アプリケーションの次の機能をサポートする必要があります:  
+ You may also want to support some of the following features in your container application:  
   
--   埋め込まれたアイテムを編集するときに、埋め込み先編集の有効化。  
+-   In-place activation when editing an embedded item.  
   
-     詳細については、「[アクティブ化](../mfc/activation-cpp.md)」を参照してください。  
+     For more information, see [Activation](../mfc/activation-cpp.md).  
   
--   サーバー アプリケーションから選択をドラッグ アンド ドロップして OLE アイテムの作成。  
+-   Creation of OLE items by dragging and dropping a selection from a server application.  
   
-     詳細については、「[ドラッグ アンド ドロップ \(OLE\)](../mfc/drag-and-drop-ole.md)」を参照してください。  
+     For more information, see [Drag and Drop (OLE)](../mfc/drag-and-drop-ole.md).  
   
--   埋め込みオブジェクトまたは組み合わせのコンテナーとサーバー アプリケーションへのリンクを示します。  
+-   Links to embedded objects or combination container/server applications.  
   
-     詳細については、「[コンテナー: 高度な機能](../mfc/containers-advanced-features.md)」を参照してください。  
+     For more information, see [Containers: Advanced Features](../mfc/containers-advanced-features.md).  
   
-## 参照  
- [コンテナー](../mfc/containers.md)   
- [コンテナー : クライアント アイテム](../mfc/containers-client-items.md)
+## <a name="see-also"></a>See Also  
+ [Containers](../mfc/containers.md)   
+ [Containers: Client Items](../mfc/containers-client-items.md)
+
+

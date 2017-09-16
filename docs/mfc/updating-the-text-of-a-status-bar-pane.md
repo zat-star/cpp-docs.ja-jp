@@ -1,87 +1,105 @@
 ---
-title: "ステータス バー ペインのテキストの更新 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBar クラス, 更新"
-  - "ON_UPDATE_COMMAND_UI マクロ"
-  - "ペイン, ステータス バー"
-  - "SetText メソッド"
-  - "ステータス バー, 更新"
-  - "テキスト, ステータス バー"
-  - "更新 (ユーザー インターフェイス オブジェクトを)"
-  - "ユーザー インターフェイス オブジェクト, 更新"
+title: Updating the Text of a Status-Bar Pane | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- updating user interface objects [MFC]
+- ON_UPDATE_COMMAND_UI macro [MFC]
+- user interface objects [MFC], updating
+- text, status bar
+- CStatusBar class [MFC], updating
+- SetText method [MFC]
+- panes, status bar
+- status bars [MFC], updating
 ms.assetid: 4984a3f4-9905-4d8c-a927-dca19781053b
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ステータス バー ペインのテキストの更新
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8a935d43a026259ecfacf44785c784e1a52534ae
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC のステータス バー ペインに表示されるテキストを変更する方法について説明します。  ステータス バー—クラス [CStatusBar](../mfc/reference/cstatusbar-class.md) ウィンドウ オブジェクト\) が含まれています。複数の「ペインを」各ペインには、情報を表示するために使用できるステータス バーの四角形領域です。  たとえば、多くのアプリケーションは、右側のペインの CapsLock キー、NumLock キー、およびそのほかのキーの状態を表示します。  アプリケーションは、通常は表示され、「メッセージ ペインは呼び出しの左端のペイン \(0\) ペインのわかりやすいテキストを」、たとえば、既定の MFC ステータス バーは、選択したメニュー項目やツール バー ボタンを現在説明するテキスト文字列を表示するためにメッセージ ペインを使用します。  [ステータス バー](../mfc/status-bar-implementation-in-mfc.md) の図は、アプリケーション ウィザードで作成される MFC アプリケーションのステータス バーを表示します。  
+---
+# <a name="updating-the-text-of-a-status-bar-pane"></a>Updating the Text of a Status-Bar Pane
+This article explains how to change the text that appears in an MFC status bar pane. A status bar — a window object of class [CStatusBar](../mfc/reference/cstatusbar-class.md) — contains several "panes." Each pane is a rectangular area of the status bar that you can use to display information. For example, many applications display the status of the CAPS LOCK, NUM LOCK, and other keys in the rightmost panes. Applications also often display informative text in the leftmost pane (pane 0), sometimes called the "message pane." For example, the default MFC status bar uses the message pane to display a string explaining the currently selected menu item or toolbar button. The figure in [Status Bars](../mfc/status-bar-implementation-in-mfc.md) shows a status bar from an Application Wizard-created MFC application.  
   
- ペインを作成するとき既定で、MFC は `CStatusBar` のペインはできません。  ペインをアクティブにするには、ステータス バーの各ペインに `ON_UPDATE_COMMAND_UI` マクロを使用して、ペインを更新しなければなりません。  ペインが **WM\_COMMAND** メッセージ \(ツール バー ボタンなどではありません\) を送信しないため、コードを手動で入力する必要があります。  
+ By default, MFC does not enable a `CStatusBar` pane when it creates the pane. To activate a pane, you must use the `ON_UPDATE_COMMAND_UI` macro for each pane on the status bar and update the panes. Because panes do not send **WM_COMMAND** messages (they aren't like toolbar buttons), you must type the code manually.  
   
- たとえば、1 個のペインにコマンド ID として `ID_INDICATOR_PAGE` があり、そのドキュメントで現在のページ番号があるとします。  次の手順では、ステータス バーに新しいウィンドウを作成する方法について説明します。  
+ For example, suppose one pane has `ID_INDICATOR_PAGE` as its command identifier and that it contains the current page number in a document. The following procedure describes how to create a new pane in the status bar.  
   
-### 新しいウィンドウを作成するには  
+### <a name="to-make-a-new-pane"></a>To make a new pane  
   
-1.  ペインのコマンド ID を定義します。  
+1.  Define the pane's command ID.  
   
-     **表示** メニュー **リソース ビュー**。  プロジェクト リソースを右クリックし、**リソース シンボル**をクリックします。  リソース シンボル ダイアログ ボックスで、`New`をクリックします。  コマンド ID の名前を入力します。: たとえば、`ID_INDICATOR_PAGE`。  値を ID に指定したり、リソース シンボル ダイアログ ボックスで提示される値を受け入れます。  たとえば、`ID_INDICATOR_PAGE`では、既定値を受け入れます。  リソース シンボル ダイアログ ボックスを閉じます。  
+     On the **View** menu, click **Resource View**. Right-click the project resource and click **Resource Symbols**. In the Resource Symbols dialog box, click `New`. Type a command ID name: for example, `ID_INDICATOR_PAGE`. Specify a value for the ID, or accept the value suggested by the Resource Symbols dialog box. For example, for `ID_INDICATOR_PAGE`, accept the default value. Close the Resource Symbols dialog box.  
   
-2.  ペインに表示する既定の文字列を定義します。  
+2.  Define a default string to display in the pane.  
   
-     リソース ビューを開くには、そのウィンドウのダブルクリック **ストリング テーブル** はアプリケーションのリソースの種類について説明します。  開く **ストリング テーブル** のエディターで **挿入** メニューから **新しい文字列** をクリックします。  文字列プロパティ ウィンドウで、ペインのコマンド ID \(たとえば、`ID_INDICATOR_PAGE`\) を選択し、「ページ」など、既定の文字列値を入力します。  ストリング エディターを閉じます。\(既定の文字列がコンパイラ エラーを回避することが必要です。  
+     With Resource View open, double-click **String Table** in the window that lists resource types for your application. With the **String Table** editor open, choose **New String** from the **Insert** menu. In the String Properties window, select your pane's command ID (for example, `ID_INDICATOR_PAGE`) and type a default string value, such as "Page   ". Close the string editor. (You need a default string to avoid a compiler error.)  
   
-3.  **インジケーター** の配列に追加します。  
+3.  Add the pane to the **indicators** array.  
   
-     ファイル MAINFRM.CPP で、**インジケーター** の配列を探します。  この配列リストが順番にステータス バー インジケーターのすべての ID は、左から右に表示します。  配列の適切な位置に、`ID_INDICATOR_PAGE`には次に示すように、ペインのコマンド ID を入力する:  
+     In file MAINFRM.CPP, locate the **indicators** array. This array lists command IDs for all of the status bar's indicators, in order from left to right. At the appropriate point in the array, enter your pane's command ID, as shown here for `ID_INDICATOR_PAGE`:  
   
-     [!code-cpp[NVC_MFCDocView#10](../mfc/codesnippet/CPP/updating-the-text-of-a-status-bar-pane_1.cpp)]  
+     [!code-cpp[NVC_MFCDocView#10](../mfc/codesnippet/cpp/updating-the-text-of-a-status-bar-pane_1.cpp)]  
   
- ペインのテキストを表示する方法、ペインの更新ハンドラー関数の `CCmdUI`**SetText** クラスのメンバー関数を呼び出すことです。  たとえば、数の文字列バージョンを、ペインのテキストを設定する、現在のページ番号を使用 **SetText** を含む整数変数 `m_nPage` を設定する場合があります。  
+ The recommended way to display text in a pane is to call the **SetText** member function of class `CCmdUI` in an update handler function for the pane. For example, you might want to set up an integer variable `m_nPage` that contains the current page number and use **SetText** to set the pane's text to a string version of that number.  
   
 > [!NOTE]
->  **SetText** の方法が推奨されます。  `CStatusBar` のメンバー関数 `SetPaneText`を呼び出すことによって若干低レベルでこのタスクを実行することもできます。  それでも、更新ハンドラーが必要です。  ペインのそのようなハンドラーがない場合、MFC は自動的に内容をオフ ペインを無効にします。  
+>  The **SetText** approach is recommended. It is possible to perform this task at a slightly lower level by calling the `CStatusBar` member function `SetPaneText`. Even so, you still need an update handler. Without such a handler for the pane, MFC automatically disables the pane, erasing its content.  
   
- 次の手順では、ペインのテキストの表示に更新ハンドラー関数を使用する方法を示します。  
+ The following procedure shows how to use an update handler function to display text in a pane.  
   
-#### ペインにテキストを表示する  
+#### <a name="to-make-a-pane-display-text"></a>To make a pane display text  
   
-1.  コマンドのコマンド更新ハンドラーを追加します。  
+1.  Add a command update handler for the command.  
   
-     手動で `ID_INDICATOR_PAGE` には次に示すように、ハンドラーのプロトタイプを追加します \(で MAINFRM.H\) :  
+     Manually add a prototype for the handler, as shown here for `ID_INDICATOR_PAGE` (in MAINFRM.H):  
   
-     [!code-cpp[NVC_MFCDocView#11](../mfc/codesnippet/CPP/updating-the-text-of-a-status-bar-pane_2.h)]  
+     [!code-cpp[NVC_MFCDocView#11](../mfc/codesnippet/cpp/updating-the-text-of-a-status-bar-pane_2.h)]  
   
-2.  適切な .cpp ファイルで、`ID_INDICATOR_PAGE` には次に示すように、ハンドラーの定義を追加します。MAINFRM.CPP\) :  
+2.  In the appropriate .CPP file, add the handler's definition, as shown here for `ID_INDICATOR_PAGE` (in MAINFRM.CPP):  
   
-     [!code-cpp[NVC_MFCDocView#12](../mfc/codesnippet/CPP/updating-the-text-of-a-status-bar-pane_3.cpp)]  
+     [!code-cpp[NVC_MFCDocView#12](../mfc/codesnippet/cpp/updating-the-text-of-a-status-bar-pane_3.cpp)]  
   
-     このハンドラーの最後の 3 行のテキストを表示するコードです。  
+     The last three lines of this handler are the code that displays your text.  
   
-3.  適切なメッセージ マップでは、`ID_INDICATOR_PAGE` には次に示すように `ON_UPDATE_COMMAND_UI` マクロを追加します。MAINFRM.CPP\) :  
+3.  In the appropriate message map, add the `ON_UPDATE_COMMAND_UI` macro, as shown here for `ID_INDICATOR_PAGE` (in MAINFRM.CPP):  
   
-     [!code-cpp[NVC_MFCDocView#13](../mfc/codesnippet/CPP/updating-the-text-of-a-status-bar-pane_4.cpp)]  
+     [!code-cpp[NVC_MFCDocView#13](../mfc/codesnippet/cpp/updating-the-text-of-a-status-bar-pane_4.cpp)]  
   
- \(クラス `CMainFrame`\) の `m_nPage` のメンバー変数の値を定義する場合は、この手法の原因と同様に処理するアイドル状態である間にペインに表示されるページ番号とアプリケーションの更新他のインジケーター。  `m_nPage` が変更されると、表示は、次のアイドル ループ中に変更します。  
+ Once you define the value of the `m_nPage` member variable (of class `CMainFrame`), this technique causes the page number to appear in the pane during idle processing in the same manner that the application updates other indicators. If `m_nPage` changes, the display changes during the next idle loop.  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ユーザー インターフェイス オブジェクトを更新します \(プログラム状態の変更としてツール バー ボタンとメニュー アイテムを更新する方法を\)](../mfc/how-to-update-user-interface-objects.md)  
+-   [Updating user-interface objects (how to update toolbar buttons and menu items as program conditions change)](../mfc/how-to-update-user-interface-objects.md)  
   
-## 参照  
- [MFC でのステータス バーの実装](../mfc/status-bar-implementation-in-mfc.md)   
- [CStatusBar クラス](../mfc/reference/cstatusbar-class.md)
+## <a name="see-also"></a>See Also  
+ [Status Bar Implementation in MFC](../mfc/status-bar-implementation-in-mfc.md)   
+ [CStatusBar Class](../mfc/reference/cstatusbar-class.md)
+

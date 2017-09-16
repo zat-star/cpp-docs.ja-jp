@@ -1,49 +1,66 @@
 ---
-title: "アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CMainFrame"
-  - "CMainFrame::PreCreateWindow"
-  - "CMainFrame.PreCreateWindow"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション ウィザード [C++], フレーム ウィンドウ クラス (作成された)"
-  - "CFrameWnd クラス, フレーム ウィンドウ"
-  - "クラス [C++], フレーム ウィンドウ"
-  - "CMainFrame クラス"
-  - "CMDIChildWnd クラス, フレーム ウィンドウ"
-  - "CMDIFrameWnd クラス, フレーム ウィンドウ"
-  - "フレーム ウィンドウ クラス, 作成 (アプリケーション ウィザードで)"
-  - "ウィンドウ クラス"
-  - "ウィンドウ クラス, フレーム"
+title: Frame-Window Classes Created by the Application Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CMainFrame
+dev_langs:
+- C++
+helpviewer_keywords:
+- application wizards [MFC], frame window classes created by
+- window classes [MFC]
+- classes [MFC], frame-window
+- CMDIFrameWnd class [MFC], frame windows
+- window classes [MFC], frame
+- CFrameWnd class [MFC], frame windows
+- CMDIChildWnd class [MFC], frame windows
+- frame window classes [MFC], created by application wizards
+- CMainFrame class [MFC]
 ms.assetid: 9947df73-4470-49a0-ac61-7b6ee401a74e
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
----
-# アプリケーション ウィザードで作成されるフレーム ウィンドウ クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 19de6bdd291126933c5a1f893c37c99824ccd062
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アプリケーション、ドキュメント、ビュー クラスに加えてスケルトン アプリケーションを作成するために [アプリケーション ウィザード](../ide/creating-desktop-projects-by-using-application-wizards.md) を使用するときは、アプリケーション ウィザードでは、アプリケーションのメイン フレーム ウィンドウの派生のフレーム ウィンドウを作成します。  クラスは `CMainFrame` とともに呼び出され、それを含むファイルは MAINFRM.H と MAINFRM.CPP という名前です。  
+---
+# <a name="frame-window-classes-created-by-the-application-wizard"></a>Frame-Window Classes Created by the Application Wizard
+When you use the [Application Wizard](../ide/creating-desktop-projects-by-using-application-wizards.md) to create a skeleton application, in addition to application, document, and view classes, the Application Wizard creates a derived frame-window class for your application's main frame window. The class is called `CMainFrame` by default, and the files that contain it are named MAINFRM.H and MAINFRM.CPP.  
   
- SDI アプリケーションでは、`CMainFrame` クラスは [CFrameWnd](../mfc/reference/cframewnd-class.md)クラスから派生されます。  
+ If your application is SDI, your `CMainFrame` class is derived from class [CFrameWnd](../mfc/reference/cframewnd-class.md).  
   
- MDI アプリケーションでは、`CMainFrame` は [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md)クラスから派生されます。  この場合 `CMainFrame` は、メニュー、ツール バーとステータス バーを保持するメイン フレームを実装します。  アプリケーション ウィザードによって新しいドキュメント フレーム ウィンドウ クラスを派生しません。  代わりに、[CMDIChildWnd クラス](../mfc/reference/cmdichildwnd-class.md)の既定の実装を使用します。  MFC フレームワークは、その `CScrollView`、`CEditView`、`CTreeView`、`CListView`、含める各ビューに子ウィンドウを作成\) アプリケーションが必要です。  ドキュメント フレーム ウィンドウをカスタマイズする場合、新しいドキュメント フレーム ウィンドウを作成できます。[クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)を参照してください。  
+ If your application is MDI, `CMainFrame` is derived from class [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md). In this case `CMainFrame` implements the main frame, which holds the menu, toolbar, and status bars. The Application Wizard does not derive a new document frame-window class for you. Instead, it uses the default implementation in [CMDIChildWnd Class](../mfc/reference/cmdichildwnd-class.md). The MFC framework creates a child window to contain each view (which can be of type `CScrollView`, `CEditView`, `CTreeView`, `CListView`, and so on) that the application requires. If you need to customize your document frame window, you can create a new document frame-window class (see [Adding a Class](../ide/adding-a-class-visual-cpp.md)).  
   
- ツール バーをサポートしている場合は、クラス型 [CToolBar](../mfc/reference/ctoolbar-class.md) と [CStatusBar](../mfc/reference/cstatusbar-class.md) のメンバー変数と `OnCreate` メッセージハンドラー関数の 2 [コントロール バー](../Topic/Control%20Bars.md)を初期化するです。  
+ If you choose to support a toolbar, the class also has member variables of type [CToolBar](../mfc/reference/ctoolbar-class.md) and [CStatusBar](../mfc/reference/cstatusbar-class.md) and an `OnCreate` message-handler function to initialize the two [control bars](../mfc/control-bars.md).  
   
- これらのフレーム ウィンドウ クラスを作成できるようになっていますが、機能を強化するために、メンバー変数とメンバー関数を追加する必要があります。  また、ウィンドウ クラスを他の Windows メッセージを処理してようにすることもできます。  詳細については、「[MFC によって作成されたウィンドウのスタイルを変更する](../Topic/Changing%20the%20Styles%20of%20a%20Window%20Created%20by%20MFC.md)」を参照してください。  
+ These frame-window classes work as created, but to enhance their functionality, you must add member variables and member functions. You may also want to have your window classes handle other Windows messages. For more information, see [Changing the Styles of a Window Created by MFC](../mfc/changing-the-styles-of-a-window-created-by-mfc.md).  
   
-## 参照  
- [フレーム ウィンドウ クラス](../mfc/frame-window-classes.md)   
- [MFC プログラムまたはコントロールのソース ファイルとヘッダー ファイル](../ide/mfc-program-or-control-source-and-header-files.md)
+## <a name="see-also"></a>See Also  
+ [Frame-Window Classes](../mfc/frame-window-classes.md)   
+ [MFC Program or Control Source and Header Files](../ide/mfc-program-or-control-source-and-header-files.md)
+
+

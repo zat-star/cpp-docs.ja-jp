@@ -1,96 +1,115 @@
 ---
-title: "アプリケーションのデザイン上の検討事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーションのデザイン [C++], デザイン目標"
-  - "アプリケーションのデザイン [C++], インターネット アプリケーション"
-  - "アプリケーション [MFC], インターネット"
-  - "クライアント アプリケーション [C++], およびサーバー アプリケーション (インターネット上の)"
-  - "デザイン"
-  - "インターネット [C++], およびイントラネット"
-  - "インターネット アプリケーション [C++], デザイン (アプリケーションを)"
-  - "サーバー アプリケーション, およびクライアント アプリケーション (インターネット上の)"
+title: Application Design Choices | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- design
+- application design [MFC], design goals
+- application design [MFC], Internet applications
+- Internet applications [MFC], designing applications
+- Internet [MFC], vs. intranets
+- applications [MFC], Internet
+- server applications [MFC], vs. client applications on Internet
+- client applications [MFC], vs. server applications on Internet
 ms.assetid: 9b96172c-b4d4-4c69-bfb2-226ce0de6d08
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# アプリケーションのデザイン上の検討事項
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 03501a90e5c16af6a95e5e2dd9f4b898244eb984
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、インターネットのプログラミング時に考慮する必要のあるデザイン上の問題について説明します。  
+---
+# <a name="application-design-choices"></a>Application Design Choices
+This article discusses some of the design issues to consider when programming for the Internet.  
   
- この記事で説明されているトピックは次のとおりです。:  
+ Topics covered in this article include:  
   
--   [イントラネット ゾーンとインターネット](#_core_intranet_versus_internet)  
+-   [Intranet Versus Internet](#_core_intranet_versus_internet)  
   
--   [クライアントとサーバー アプリケーション](#_core_client_or_server_application)  
+-   [Client or Server Application](#_core_client_or_server_application)  
   
--   [Web ページ: HTML の Active ドキュメント、ActiveX コントロール](#_core_the_web_page.3a_.html.2c_.activex_documents.2c_.activex_controls)  
+-   [](#_core_the_web_page)  
   
--   [ブラウザーまたはスタンドアロン アプリケーション](#_core_browser_or_stand.2d.alone_application)  
+-   [Browser or Stand-Alone Application](#_core_browser_or_standalone)  
   
--   [インターネットの COM](#_core_com_on_the_internet)  
+-   [COM on the Internet](#_core_com_on_the_internet)  
   
--   [Client Data のダウンロード サービス](#_core_client_data_download_services)  
+-   [Client Data Download Services](#_core_client_data_download_services)  
   
- プログラムを作成し、開始する準備ができている場合は [MFC アプリケーションの作成](../mfc/writing-mfc-applications.md)を参照してください。  
+ If you are ready to start writing your program now, see [Writing MFC Applications](../mfc/writing-mfc-applications.md).  
   
-##  <a name="_core_intranet_versus_internet"></a> イントラネット ゾーンとインターネット  
- インターネットで実行する多くのアプリケーションは、ブラウザーとインターネット アクセスを持つユーザー全員がアクセスできるようになります。  ビジネスは、TCP\/IP プロトコルと Web ブラウザーを使用して全社的なネットワークであるイントラネットを実装しています。  イントラネットは全社的な情報の単純にアップグレードする中央のソースを提供します。  これには、ソフトウェアを、アンケートをアップグレードすると、カスタマー サポート提供し、表にし、情報提供のために使用できます。  次の表は、インターネットまたはイントラネットの機能を比較します。  
+##  <a name="_core_intranet_versus_internet"></a> Intranet Versus Internet  
+ Many applications run on the Internet and are accessible to anyone with a browser and Internet access. Businesses are also implementing intranets, which are company-wide networks using TCP/IP protocols and Web browsers. Intranets offer an easily upgradeable, central source for company-wide information. They can be used for upgrading software, for delivering and tabulating surveys, for customer support, and for information delivery. The following table compares features of the Internet and intranets.  
   
-|インターネット|Intranet|  
-|-------------|--------------|  
-|低帯域|高帯域幅|  
-|データとシステムの遅延セキュリティ|データとシステムへのアクセス|  
-|コンテンツの最小コントロール|コンテンツの高いコントロール|  
+|Internet|Intranet|  
+|--------------|--------------|  
+|Low bandwidth|High bandwidth|  
+|Reduced security of data and systems|Controlled access to data and systems|  
+|Minimal control of content|High control of content|  
   
-##  <a name="_core_client_or_server_application"></a> クライアントとサーバー アプリケーション  
- アプリケーションはクライアント コンピューターまたはサーバー コンピューター上で実行されている可能性があります。  アプリケーションは、サーバーに格納し、クライアント コンピューターのインターネットおよび実行にダウンロードされる可能性があります。  MFC WinInet クラスはファイルをダウンロードするクライアント アプリケーションで使用されます。  MFC と非同期モニカー クラスは、ファイルおよびコントロール プロパティをダウンロードするために使用されます。  ActiveX コントロールと Active ドキュメントのクラスは、クライアント アプリケーションとサーバーからクライアントで実行するためにダウンロードされるアプリケーションで使用されます。  
+##  <a name="_core_client_or_server_application"></a> Client or Server Application  
+ Your application may run on a client computer or on a server computer. Your application may also be stored on a server, and then downloaded across the Internet and run on a client computer. MFC WinInet classes are used for client applications to download files. MFC and asynchronous moniker classes are used to download files and control properties. Classes for ActiveX controls and Active documents are used for client applications and for applications that are downloaded from the server to run on a client.  
   
-##  <a name="_core_the_web_page.3a_.html.2c_.activex_documents.2c_.activex_controls"></a> Web ページ: HTML の Active ドキュメント、ActiveX コントロール  
- Microsoft は、Web ページのコンテンツを提供する複数の方法を提供します。  Web ページは、ActiveX コントロールなどの動的なコンテンツを提供するために標準 HTML または HTML 拡張機能を、オブジェクト タグなどの同期プリミティブを使用できます。  
+##  <a name="_core_the_web_page"></a> The Web Page: HTML, Active Documents, ActiveX Controls  
+ Microsoft offers several ways of providing content on a Web page. Web pages can use standard HTML or HTML extensions, such as the object tag, to provide dynamic content such as ActiveX controls.  
   
- 通常、Web ブラウザーを表示する HTML ページ。  Active ドキュメントは、COM 対応のブラウザーの簡単なポイントしますインターフェイスのアプリケーションのデータを表示できます。  Active ドキュメント サーバーはドキュメント、独自のメニューおよびツール バーでのクライアント領域の完全なフレームを表示できます。  
+ Web browsers typically display HTML pages. Active documents can also display your application's data in the simple point-and-click interface of a COM-enabled browser. Your Active document server can display your document, full frame in the entire client area, with its own menus and toolbars.  
   
- 作成した ActiveX コントロールはサーバーから非同期にダウンロードされ、Web ページで表示することができます。  サーバーに情報を送信する前にクライアント側の検証を実行するために VBScript などのスクリプト言語を使用できます。  
+ ActiveX controls you write can be downloaded asynchronously from the server and displayed on a Web page. You can use a scripting language such as VBScript to perform client-side validation before sending information to the server.  
   
-##  <a name="_core_browser_or_stand.2d.alone_application"></a> ブラウザーまたはスタンドアロン アプリケーション  
- ブラウザーで表示される HTML ページと Active ドキュメント サーバーに埋め込まれている ActiveX コントロールを作成することもできます。  Web サーバーの ISAPI アプリケーションを実行する要求を送信するためのボタンを含む HTML ページを作成できます。  ブラウザー アプリケーションを使用してせずにファイルをダウンロードし、ユーザーに対して情報を表示するには、インターネット プロトコルを使用するスタンドアロン アプリケーションを作成できます。  
+##  <a name="_core_browser_or_standalone"></a> Browser or Stand-Alone Application  
+ You can write ActiveX controls that are embedded in an HTML page and Active document servers that are viewed in a browser. You can write HTML pages that contain a button to submit a request to run your ISAPI application on a Web server. You can write a stand-alone application that uses Internet protocols to download files and display the information to your user, without ever using a browser application.  
   
-##  <a name="_core_com_on_the_internet"></a> インターネットの COM  
- ActiveX コントロールと Active ドキュメントおよび非同期モニカーはすべて COM \(Component Object Model\) テクノロジを使用します。  
+##  <a name="_core_com_on_the_internet"></a> COM on the Internet  
+ ActiveX controls, Active documents, and asynchronous monikers all use COM (Component Object Model) technologies.  
   
- ActiveX コントロールは、インターネット サイトでドキュメントとページに動的コンテンツを提供します。  COM ではアクティブ ドキュメントを使用して ActiveX コントロールと全フレームのドキュメントを作成できます。  
+ ActiveX controls provide dynamic content to documents and pages on Internet sites. With COM you can build ActiveX controls and full-frame documents using Active documents.  
   
- 非同期モニカーは、コントロールがデータをダウンロードするインクリメンタルまたは推移的な対策を含むインターネットの環境で、機能するようにするための機能を提供します。  コントロールは、データを非同期に同時に取得する可能性のある他のコントロールに使用する必要があります。  
+ Asynchronous monikers provide features to enable a control to perform well in an Internet environment, including an incremental or progressive means to download data. Controls must also work well with other controls that may also be retrieving their data asynchronously at the same time.  
   
-##  <a name="_core_client_data_download_services"></a> Client Data のダウンロード サービス  
- クライアントにデータを渡すことができる 2 組の API は WinInet および非同期モニカーです。  HTML ページに .gif と .avi 大きなファイルと ActiveX コントロールがある場合、ユーザーが非同期にダウンロードして非同期モニカーを非同期的に使用するか、WinInet を使用することにより、応答性を向上させることができます。  
+##  <a name="_core_client_data_download_services"></a> Client Data Download Services  
+ Two sets of APIs that will help transfer data to your client are WinInet and asynchronous monikers. If you have large .gif and .avi files and ActiveX controls on your HTML page, you can increase the responsiveness to the user by downloading asynchronously, either by using asynchronous monikers or using WinInet asynchronously.  
   
- インターネットの一般的なタスクは、データを転送することです。  既に Active テクノロジを ActiveX コントロールがある場合 \(たとえば、使用している場合\)、ダウンロードする漸進的に変換するデータに非同期モニカーを使用できます。  HTTP、FTP、Gopher などの共通のインターネット プロトコルを使用してデータを転送するために WinInet を使用できます。  メソッドはそれぞれ独立プロトコルを提供し、WinSock および TCP\/IP を使用して抽象レイヤーを提供します。  まだ [WinSock](../mfc/windows-sockets-in-mfc.md) を直接使用できます。  
+ A common task on the Internet is transferring data. If you are already using Active technology (for example, if you have an ActiveX control), you can use asynchronous monikers to progressively render data as it downloads. You can use WinInet to transfer data using common Internet protocols like HTTP, FTP, and gopher. Both methods provide protocol independence, and provide an abstract layer to using WinSock and TCP/IP. You can still use [WinSock](../mfc/windows-sockets-in-mfc.md) directly.  
   
- 次の表は、インターネット間でデータを転送するために MFC を使用する方法を示します。  
+ The following table summarizes several ways of using MFC to transfer data across the Internet.  
   
-|このプロトコルを使用します。|このような状況で|これらのクラスを使用します。|  
-|--------------------|--------------|--------------------|  
-|[非同期モニカーを使用してインターネットのダウンロード](../mfc/asynchronous-monikers-on-the-internet.md)|COM、ActiveX コントロール、インターネット プロトコルを使用して非同期の転送します。|[CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md)、[CDataPathProperty](../mfc/reference/cdatapathproperty-class.md)|  
-|[WinInet](../mfc/win32-internet-extensions-wininet.md)|HTTP、FTP、Gopher のインターネット プロトコルです。  データは同期的または非同期的に転送することによって、キャッシュにシステムに格納されます。|[CInternetSession](../Topic/CInternetSession%20Class.md)、[CFtpFileFind](../Topic/CFtpFileFind%20Class.md)、[CGopherFileFind](../mfc/reference/cgopherfilefind-class.md)など。|  
-|[WinSock](../mfc/windows-sockets-in-mfc.md)|最大効率とコントロールです。  ソケットおよび TCP\/IP プロトコルを理解する必要があります。|[CSocket](../mfc/reference/csocket-class.md)、[CAsyncSocket](../Topic/CAsyncSocket%20Class.md)|  
+|Use this protocol|Under these conditions|Using these classes|  
+|-----------------------|----------------------------|-------------------------|  
+|[Internet Downloading Using Asynchronous Monikers](../mfc/asynchronous-monikers-on-the-internet.md)|For asynchronous transfer using COM, ActiveX controls, and any Internet protocol.|[CAsyncMonikerFile](../mfc/reference/casyncmonikerfile-class.md), [CDataPathProperty](../mfc/reference/cdatapathproperty-class.md)|  
+|[WinInet](../mfc/win32-internet-extensions-wininet.md)|For Internet protocols for HTTP, FTP, and gopher. Data can be transferred synchronously or asynchronously and is stored in a system-wide cache.|[CInternetSession](../mfc/reference/cinternetsession-class.md), [CFtpFileFind](../mfc/reference/cftpfilefind-class.md), [CGopherFileFind](../mfc/reference/cgopherfilefind-class.md), and many more.|  
+|[WinSock](../mfc/windows-sockets-in-mfc.md)|For maximum efficiency and control. Requires understanding of sockets and TCP/IP protocols.|[CSocket](../mfc/reference/csocket-class.md), [CAsyncSocket](../mfc/reference/casyncsocket-class.md)|  
   
-## 参照  
- [MFC インターネット プログラミングの作業](../mfc/mfc-internet-programming-tasks.md)   
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)   
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)   
- [インターネット上の非同期モニカー](../mfc/asynchronous-monikers-on-the-internet.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Tasks](../mfc/mfc-internet-programming-tasks.md)   
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)   
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)   
+ [Asynchronous Monikers on the Internet](../mfc/asynchronous-monikers-on-the-internet.md)
+
+

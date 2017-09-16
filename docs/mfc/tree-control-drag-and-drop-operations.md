@@ -1,39 +1,58 @@
 ---
-title: "ツリー コントロールのドラッグ アンド ドロップ操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, ドラッグ アンド ドロップ操作"
-  - "ドラッグ アンド ドロップ, CTreeCtrl"
-  - "ツリー コントロール, ドラッグ アンド ドロップ操作"
+title: Tree Control Drag-and-Drop Operations | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CTreeCtrl class [MFC], drag and drop operations
+- drag and drop [MFC], CTreeCtrl
+- tree controls [MFC], drag and drop operations
 ms.assetid: 3cf78b4c-4579-4fe1-9bc9-c5ab876e4af1
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# ツリー コントロールのドラッグ アンド ドロップ操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5beda5b1c08ed33e532d8987e1caee1a2745ff3c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ユーザーが項目のドラッグを開始すると、ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) は、通知を送信します。  コントロールは、ユーザーがマウスの右ボタンでのドラッグを開始すると、ユーザーがマウスの左ボタンと [TVN\_BEGINRDRAG](http://msdn.microsoft.com/library/windows/desktop/bb773509) 通知メッセージのアイテムのドラッグを開始すると [TVN\_BEGINDRAG](http://msdn.microsoft.com/library/windows/desktop/bb773504) 通知メッセージを送信します。  ツリー コントロールは、ツリー コントロールに **TVS\_DISABLEDRAGDROP** のスタイルを指定することにより、これらの通知を送信することを防ぐことができます。  
+---
+# <a name="tree-control-drag-and-drop-operations"></a>Tree Control Drag-and-Drop Operations
+A tree control ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) sends a notification when the user starts to drag an item. The control sends a [TVN_BEGINDRAG](http://msdn.microsoft.com/library/windows/desktop/bb773504) notification message when the user begins dragging an item with the left mouse button and a [TVN_BEGINRDRAG](http://msdn.microsoft.com/library/windows/desktop/bb773509) notification message when the user begins dragging with the right button. You can prevent a tree control from sending these notifications by giving the tree control the **TVS_DISABLEDRAGDROP** style.  
   
- [CreateDragImage](../Topic/CTreeCtrl::CreateDragImage.md) のメンバー関数を呼び出して、ドラッグ操作中に表示するイメージを取得します。  ツリー コントロールは、ドラッグした項目のラベルに基づいてドラッグ ビットマップを作成します。  ツリー コントロールは、イメージ リストを作成し、ビットマップを追加し、[CImageList](../Topic/CImageList%20Class.md) オブジェクトへのポインターを返します。  
+ You obtain an image to display during a drag operation by calling the [CreateDragImage](../mfc/reference/ctreectrl-class.md#createdragimage) member function. The tree control creates a dragging bitmap based on the label of the item being dragged. Then the tree control creates an image list, adds the bitmap to it, and returns a pointer to the [CImageList](../mfc/reference/cimagelist-class.md) object.  
   
- 実際に項目をドラッグするコードを記述する必要があります。  通常は、ドラッグ操作が開始された後、イメージ リストの関数のドラッグ機能を使用し、送信 [WM\_MOUSEMOVE](http://msdn.microsoft.com/library/windows/desktop/ms645616) と [WM\_LBUTTONUP](http://msdn.microsoft.com/library/windows/desktop/ms645608) \(または [WM\_RBUTTONUP](http://msdn.microsoft.com/library/windows/desktop/ms646243)\) メッセージを処理する必要があります。  イメージ リストの関数の詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の *" MFC リファレンス"* の [CImageList](../Topic/CImageList%20Class.md) と [イメージ リスト](http://msdn.microsoft.com/library/windows/desktop/bb761389) を参照します。  ツリー ビュー コントロールのアイテムのドラッグに関する詳細については、[!INCLUDE[winsdkshort](../atl/reference/includes/winsdkshort_md.md)]の [ツリー ビュー アイテムのドラッグ](http://msdn.microsoft.com/library/windows/desktop/bb760017)、または参照します。  
+ You must provide the code that actually drags the item. This typically involves using the dragging capabilities of the image list functions and processing the [WM_MOUSEMOVE](http://msdn.microsoft.com/library/windows/desktop/ms645616) and [WM_LBUTTONUP](http://msdn.microsoft.com/library/windows/desktop/ms645608) (or [WM_RBUTTONUP](http://msdn.microsoft.com/library/windows/desktop/ms646243)) messages sent after the drag operation has begun. For more information about the image list functions, see [CImageList](../mfc/reference/cimagelist-class.md) in the *MFC Reference* and [Image Lists](http://msdn.microsoft.com/library/windows/desktop/bb761389) in the Windows SDK. For more information about dragging a tree control item, see [Dragging the Tree View Item](http://msdn.microsoft.com/library/windows/desktop/bb760017), also in the [!INCLUDE[winsdkshort](../atl-mfc-shared/reference/includes/winsdkshort_md.md)].  
   
- ツリー コントロールの項目をドラッグ アンド ドロップ操作のターゲットである場合、マウス カーソルがターゲット項目にあることを確認する必要があります。  [HitTest](../Topic/CTreeCtrl::HitTest.md) のメンバー関数を呼び出すことによって確認できます。  マウス カーソルの現在の座標を含む [TVHITTESTINFO](http://msdn.microsoft.com/library/windows/desktop/bb773448) 構造体の点および整数、アドレスを指定します。  関数の戻り値は、整数または構造がツリー コントロールに対するマウス カーソルの位置を示すフラグが格納されます。  カーソルがツリー コントロール項目の場合、構造体は項目の処理も含まれます。  
+ If items in a tree control are to be the targets of a drag-and-drop operation, you need to know when the mouse cursor is on a target item. You can find out by calling the [HitTest](../mfc/reference/ctreectrl-class.md#hittest) member function. You specify either a point and integer, or the address of a [TVHITTESTINFO](http://msdn.microsoft.com/library/windows/desktop/bb773448) structure that contains the current coordinates of the mouse cursor. When the function returns, the integer or structure contains a flag indicating the location of the mouse cursor relative to the tree control. If the cursor is over an item in the tree control, the structure contains the handle of the item as well.  
   
- `TVIS_DROPHILITED` 値に状態を設定するために項目が [SetItem](../Topic/CTreeCtrl::SetItem.md) のメンバー関数を呼び出すことにより、ドラッグ アンド ドロップ操作のターゲットであることを示すことができます。  この状態がある項目はドラッグ アンド ドロップ ターゲットを示すために使用されるスタイルで描画されます。  
+ You can indicate that an item is the target of a drag-and-drop operation by calling the [SetItem](../mfc/reference/ctreectrl-class.md#setitem) member function to set the state to the `TVIS_DROPHILITED` value. An item that has this state is drawn in the style used to indicate a drag-and-drop target.  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

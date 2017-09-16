@@ -14,11 +14,11 @@ f1_keywords:
 ms.assetid: fdca01e9-f2f1-4b59-abda-0093d760b3cc
 caps.latest.revision: 12
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: d9bc4c7f814c44d91ec1cff881107fdc92949368
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 07de226afac564c50618d212648a63b90069c902
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltstringgt-typedefs"></a>&lt;string&gt; typedefs
@@ -28,16 +28,16 @@ ms.lasthandoff: 04/29/2017
 |[wstring](#wstring)|  
   
 ##  <a name="string"></a>  string  
- `char` 型の要素を持つテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を記述する型。  
+ A type that describes a specialization of the template class [basic_string](../standard-library/basic-string-class.md) with elements of type `char`.  
   
- `basic_string` を特殊化する他の typedef には、[wstring](../standard-library/string-typedefs.md#wstring)、[u16string](../standard-library/string-typedefs.md#u16string)、および [u32string](../standard-library/string-typedefs.md#u32string) があります。  
+ Other typedefs that specialize `basic_string` include [wstring](../standard-library/string-typedefs.md#wstring), [u16string](../standard-library/string-typedefs.md#u16string), and [u32string](../standard-library/string-typedefs.md#u32string).  
   
 ```cpp  
 typedef basic_string<char, char_traits<char>, allocator<char>> string;
 ```  
   
-### <a name="remarks"></a>コメント  
- 次の宣言は等価です。  
+### <a name="remarks"></a>Remarks  
+ The following are equivalent declarations:  
   
 ```cpp  
 string str("");
@@ -45,43 +45,43 @@ string str("");
 basic_string<char> str("");
 ```  
   
- 文字列コンストラクターの一覧については、「[basic_string::basic_string](../standard-library/basic-string-class.md#basic_string)」をご覧ください。  
+ For a list of string constructors, see [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).  
   
 ##  <a name="u16string"></a>  u16string  
- `char16_t` 型の要素を持つテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を記述する型。  
+ A type that describes a specialization of the template class [basic_string](../standard-library/basic-string-class.md) with elements of type `char16_t`.  
   
- `basic_string` を特殊化する他の typedef には、[wstring](../standard-library/string-typedefs.md#wstring)、[string](../standard-library/string-typedefs.md#string)、および [u32string](../standard-library/string-typedefs.md#u32string) があります。  
+ Other typedefs that specialize `basic_string` include [wstring](../standard-library/string-typedefs.md#wstring), [string](../standard-library/string-typedefs.md#string), and [u32string](../standard-library/string-typedefs.md#u32string).  
   
 ```cpp  
 typedef basic_string<char16_t, char_traits<char16_t>, allocator<char16_t>> u16string;
 ```  
   
-### <a name="remarks"></a>コメント  
- 文字列コンストラクターの一覧については、「[basic_string::basic_string](../standard-library/basic-string-class.md#basic_string)」をご覧ください。  
+### <a name="remarks"></a>Remarks  
+ For a list of string constructors, see [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).  
   
 ##  <a name="u32string"></a>  u32string  
- `char32_t` 型の要素を持つテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を記述する型。  
+ A type that describes a specialization of the template class [basic_string](../standard-library/basic-string-class.md) with elements of type `char32_t`.  
   
- `basic_string` を特殊化する他の typedef には、[string](../standard-library/string-typedefs.md#string)、[u16string](../standard-library/string-typedefs.md#u16string)、および [wstring](../standard-library/string-typedefs.md#wstring) があります。  
+ Other typedefs that specialize `basic_string` include [string](../standard-library/string-typedefs.md#string), [u16string](../standard-library/string-typedefs.md#u16string), and [wstring](../standard-library/string-typedefs.md#wstring).  
   
 ```cpp  
 typedef basic_string<char32_t, char_traits<char32_t>, allocator<char32_t>> u32string;
 ```  
   
-### <a name="remarks"></a>コメント  
- 文字列コンストラクターの一覧については、「[basic_string::basic_string](../standard-library/basic-string-class.md#basic_string)」をご覧ください。  
+### <a name="remarks"></a>Remarks  
+ For a list of string constructors, see [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).  
   
 ##  <a name="wstring"></a>  wstring  
- `wchar_t` 型の要素を持つテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を記述する型。  
+ A type that describes a specialization of the template class [basic_string](../standard-library/basic-string-class.md) with elements of type `wchar_t`.  
   
- `basic_string` を特殊化する他の typedef には、[string](../standard-library/string-typedefs.md#string)、[u16string](../standard-library/string-typedefs.md#u16string)、および [u32string](../standard-library/string-typedefs.md#u32string) があります。  
+ Other typedefs that specialize `basic_string` include [string](../standard-library/string-typedefs.md#string), [u16string](../standard-library/string-typedefs.md#u16string), and [u32string](../standard-library/string-typedefs.md#u32string).  
   
 ```cpp  
 typedef basic_string<wchar_t, char_traits<wchar_t>, allocator<wchar_t>> wstring;
 ```  
   
-### <a name="remarks"></a>コメント  
- 次の宣言は等価です。  
+### <a name="remarks"></a>Remarks  
+ The following are equivalent declarations:  
   
 ```cpp  
 wstring wstr(L"");
@@ -89,12 +89,12 @@ wstring wstr(L"");
 basic_string<wchar_t> wstr(L"");
 ```  
   
- 文字列コンストラクターの一覧については、「[basic_string::basic_string](../standard-library/basic-string-class.md#basic_string)」をご覧ください。  
+ For a list of string constructors, see [basic_string::basic_string](../standard-library/basic-string-class.md#basic_string).  
   
 > [!NOTE]
->  `wchar_t` のサイズは実装で定義されます。 `wchar_t` を使用してコードを一定のサイズにする場合は、お使いのプラットフォームの実装を確認してください (たとえば、`sizeof(wchar_t)` を使用)。 幅をすべてのプラットフォームで同一にできる文字列の文字の型が必要な場合は、[string](../standard-library/string-typedefs.md#string)、[u16string](../standard-library/string-typedefs.md#u16string)、または [u32string](../standard-library/string-typedefs.md#u32string) を使用します。  
+>  The size of `wchar_t` is implementation-defined. If your code depends on `wchar_t` to be a certain size, check your platform's implementation (for example, with `sizeof(wchar_t)`). If you need a string character type with a width that is guaranteed to remain the same on all platforms, use [string](../standard-library/string-typedefs.md#string), [u16string](../standard-library/string-typedefs.md#u16string), or [u32string](../standard-library/string-typedefs.md#u32string).  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<string>](../standard-library/string.md)
 
 

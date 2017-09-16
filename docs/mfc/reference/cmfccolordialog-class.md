@@ -1,5 +1,5 @@
 ---
-title: "CMFCColorDialog クラス |Microsoft ドキュメント"
+title: CMFCColorDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,20 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCColorDialog::m_CurrentColor data member
-- CMFCColorDialog::m_pPropSheet data member
-- CMFCColorDialog::m_btnColorSelect data member
-- CMFCColorDialog class
-- CMFCColorDialog::m_wndColors data member
-- CMFCColorDialog::m_bIsMyPalette data member
-- CMFCColorDialog::m_pColourSheetTwo data member
-- CMFCColorDialog::m_NewColor data member
-- CMFCColorDialog::m_pPalette data member
-- CMFCColorDialog::m_wndStaticPlaceHolder data member
-- CMFCColorDialog::m_pColourSheetOne data member
-- CMFCColorDialog::m_hcurPicker data member
-- CMFCColorDialog::PreTranslateMessage method
-- CMFCColorDialog::m_bPickerMode data member
+- CMFCColorDialog [MFC], CMFCColorDialog
+- CMFCColorDialog [MFC], GetColor
+- CMFCColorDialog [MFC], GetPalette
+- CMFCColorDialog [MFC], RebuildPalette
+- CMFCColorDialog [MFC], SetCurrentColor
+- CMFCColorDialog [MFC], SetNewColor
+- CMFCColorDialog [MFC], SetPageOne
+- CMFCColorDialog [MFC], SetPageTwo
 ms.assetid: 235bbbbc-a3b1-46e0-801b-fb55093ec579
 caps.latest.revision: 30
 author: mikeblome
@@ -55,67 +49,67 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: ac621157e0fcb5bcabef2ae8f367a1b141b4ace0
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 12272d0a71099bd2e65c8c32c65fc38035da0047
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfccolordialog-class"></a>CMFCColorDialog クラス
-`CMFCColorDialog`クラスは、色を選択 ダイアログ ボックスを表します。  
+# <a name="cmfccolordialog-class"></a>CMFCColorDialog Class
+The `CMFCColorDialog` class represents a color selection dialog box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCColorDialog : public CDialogEx  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCColorDialog::CMFCColorDialog](#cmfccolordialog)|`CMFCColorDialog` オブジェクトを構築します。|  
-|`CMFCColorDialog::~CMFCColorDialog`|デストラクターです。|  
+|[CMFCColorDialog::CMFCColorDialog](#cmfccolordialog)|Constructs a `CMFCColorDialog` object.|  
+|`CMFCColorDialog::~CMFCColorDialog`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCColorDialog::GetColor](#getcolor)|現在選択されている色を返します。|  
-|[CMFCColorDialog::GetPalette](#getpalette)|色のパレットを返します。|  
-|`CMFCColorDialog::PreTranslateMessage`|ウィンドウのメッセージの変換にディスパッチされる前に、 [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955)と[DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows 関数です。 構文と詳細については、次を参照してください。 [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage)します。 (`CDialogEx::PreTranslateMessage` をオーバーライドします)。|  
-|[CMFCColorDialog::RebuildPalette](#rebuildpalette)|パレットをシステム パレットから派生しています。|  
-|[CMFCColorDialog::SetCurrentColor](#setcurrentcolor)|現在の選択した色を設定します。|  
-|[CMFCColorDialog::SetNewColor](#setnewcolor)|指定した RGB 値に最も近い色を設定します。|  
-|[CMFCColorDialog::SetPageOne](#setpageone)|最初のプロパティ ページの RGB 値を選択します。|  
-|[CMFCColorDialog::SetPageTwo](#setpagetwo)|2 番目のプロパティ ページの RGB 値を選択します。|  
+|[CMFCColorDialog::GetColor](#getcolor)|Returns the current selected color.|  
+|[CMFCColorDialog::GetPalette](#getpalette)|Returns the color's palette.|  
+|`CMFCColorDialog::PreTranslateMessage`|Translates window messages before they are dispatched to the [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955) and [DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows functions. For syntax and more information, see [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage). (Overrides `CDialogEx::PreTranslateMessage`.)|  
+|[CMFCColorDialog::RebuildPalette](#rebuildpalette)|Derives a palette from the system palette.|  
+|[CMFCColorDialog::SetCurrentColor](#setcurrentcolor)|Sets the current selected color.|  
+|[CMFCColorDialog::SetNewColor](#setnewcolor)|Sets the color most equivalent to a specified RGB value.|  
+|[CMFCColorDialog::SetPageOne](#setpageone)|Selects an RGB value for the first property page.|  
+|[CMFCColorDialog::SetPageTwo](#setpagetwo)|Selects an RGB value for the second property page.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`m_bIsMyPalette`|`TRUE`色の選択 ダイアログ ボックスで、独自のカラー パレットを使用する場合、または`FALSE` ダイアログ ボックスがで指定されているパレットを使用するかどうか、`CMFCColorDialog`コンス トラクターです。|  
-|`m_bPickerMode`|`TRUE`選択 ダイアログ ボックスでは、ユーザーが色をクリックするときにそれ以外の場合、`FALSE`です。|  
-|`m_btnColorSelect`|色のボタンをユーザーが選択されます。|  
-|`m_CurrentColor`|現在選択されている色です。|  
-|`m_hcurPicker`|色の選択に使用するカーソル。|  
-|`m_NewColor`|見込み客に対して選択した色、永続的に選択または元の色を元に戻すことができます。|  
-|`m_pColourSheetOne`|色の選択のプロパティ シートの最初のプロパティ ページへのポインター。|  
-|`m_pColourSheetTwo`|色の選択のプロパティ シートの&2; 番目のプロパティ ページへのポインター。|  
-|`m_pPalette`|現在の論理パレット。|  
-|`m_pPropSheet`|色の選択 ダイアログ ボックスのプロパティ シートへのポインター。|  
-|`m_wndColors`|カラー ピッカー control オブジェクトです。|  
-|`m_wndStaticPlaceHolder`|カラー ピッカーのプロパティ シートのプレース ホルダーは、スタティック コントロールです。|  
+|`m_bIsMyPalette`|`TRUE` if the color selection dialog box uses its own color palette, or `FALSE` if the dialog box uses a palette that is specified in the `CMFCColorDialog` constructor.|  
+|`m_bPickerMode`|`TRUE` while the user is selecting a color from the selection dialog box; otherwise, `FALSE`.|  
+|`m_btnColorSelect`|The color button that the user has selected.|  
+|`m_CurrentColor`|The currently selected color.|  
+|`m_hcurPicker`|The cursor that is used to pick a color.|  
+|`m_NewColor`|The prospective selected color, which can be permanently selected or reverted to the original color.|  
+|`m_pColourSheetOne`|A pointer to the first property page of the color selection property sheet.|  
+|`m_pColourSheetTwo`|A pointer to the second property page of the color selection property sheet.|  
+|`m_pPalette`|The current logical palette.|  
+|`m_pPropSheet`|A pointer to the property sheet for the color selection dialog box.|  
+|`m_wndColors`|A color picker control object.|  
+|`m_wndStaticPlaceHolder`|A static control that is a placeholder for the color picker property sheet.|  
   
-## <a name="remarks"></a>コメント  
- 色の選択 ダイアログ ボックスは、2 つのページのプロパティ シートとして表示されます。 最初のページで、システム パレットから標準的な色を選択します。2 番目のページでは、カスタムの色を選択します。  
+## <a name="remarks"></a>Remarks  
+ The color selection dialog box is displayed as a property sheet with two pages. On the first page, you select a standard color from the system palette; on the second page, you select a custom color.  
   
- 構築することができます、`CMFCColorDialog`スタック上のオブジェクトし、し、呼び出す`DoModal`、初期の色をパラメーターとして渡すこと、`CMFCColorDialog`コンス トラクターです。 色の選択 ダイアログ ボックスは、いくつか作成[CMFCColorPickerCtrl クラス](../../mfc/reference/cmfccolorpickerctrl-class.md)各カラー パレットを処理するオブジェクト。  
+ You can construct a `CMFCColorDialog` object on the stack and then call `DoModal`, passing the initial color as a parameter to the `CMFCColorDialog` constructor. The color selection dialog box then creates several [CMFCColorPickerCtrl Class](../../mfc/reference/cmfccolorpickerctrl-class.md) objects to handle each color palette.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -128,16 +122,16 @@ class CMFCColorDialog : public CDialogEx
   
  [CMFCColorDialog](../../mfc/reference/cmfccolordialog-class.md)  
   
-## <a name="example"></a>例  
- 次の例では、多様なメソッドを使用してカラー ダイアログ ボックスを構成する方法、`CMFCColorDialog`クラスです。 例では、現在と、ダイアログ ボックスの新しい色を設定する方法および色 ダイアログ ボックスの&2; つのプロパティ ページで選択した色の赤、緑、および青のコンポーネントを設定する方法を示します。 この例は、[新しいコントロールのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to configure a color dialog by using various methods in the `CMFCColorDialog` class. The example shows how to set the current and the new colors of the dialog, and how to set the red, green, and blue components of a selected color on the two property pages of the color dialog. This example is part of the [New Controls sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_NewControls&#3;](../../mfc/reference/codesnippet/cpp/cmfccolordialog-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_NewControls#3](../../mfc/reference/codesnippet/cpp/cmfccolordialog-class_1.cpp)]  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcolordialog.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcolordialog.h  
   
-##  <a name="cmfccolordialog"></a>CMFCColorDialog::CMFCColorDialog  
- `CMFCColorDialog` オブジェクトを構築します。  
+##  <a name="cmfccolordialog"></a>  CMFCColorDialog::CMFCColorDialog  
+ Constructs a `CMFCColorDialog` object.  
   
 ```  
 CMFCColorDialog(
@@ -147,84 +141,84 @@ CMFCColorDialog(
     HPALETTE hPal=NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `clrInit`  
- 既定色を選択します。 値が指定されていない場合は、既定値は RGB(0,0,0) (黒) にします。  
+### <a name="parameters"></a>Parameters  
+ [in] `clrInit`  
+ The default color selection. If no value is specified, the default is RGB(0,0,0) (black).  
   
- [入力] `dwFlags`  
- (予約済み)  
+ [in] `dwFlags`  
+ (Reserved.)  
   
- [入力] `pParentWnd`  
- ダイアログ ボックスの親ウィンドウまたはオーナー ウィンドウへのポインター。  
+ [in] `pParentWnd`  
+ A pointer to the dialog box's parent or owner window.  
   
- [入力] `hPal`  
- カラー パレットへのハンドル。  
+ [in] `hPal`  
+ A handle to a color palette.  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcolor"></a>CMFCColorDialog::GetColor  
- カラー ダイアログ ボックスで、ユーザーが選択した色を取得します。  
+##  <a name="getcolor"></a>  CMFCColorDialog::GetColor  
+ Retrieves the color that the user selects from the color dialog.  
   
 ```  
 COLORREF GetColor() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)色 ダイアログ ボックスで選択した色の RGB 情報を含む値。  
+### <a name="return-value"></a>Return Value  
+ A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value that contains the RGB information for the color selected in the color dialog box.  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後に、この関数を呼び出して、`DoModal`メソッドです。  
+### <a name="remarks"></a>Remarks  
+ Call this function after you call the `DoModal` method.  
   
-##  <a name="getpalette"></a>CMFCColorDialog::GetPalette  
- 現在の色のダイアログ ボックスで使用可能なカラー パレットを取得します。  
+##  <a name="getpalette"></a>  CMFCColorDialog::GetPalette  
+ Retrieves the color palette that is available in the current color dialog.  
   
 ```  
 CPalette* GetPalette() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CPalette`で指定されたオブジェクト、`CMFCColorDialog`コンス トラクターです。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the `CPalette` object that was specified in the `CMFCColorDialog` constructor.  
   
-### <a name="remarks"></a>コメント  
- カラー パレットでは、ユーザーが選択できる色を指定します。  
+### <a name="remarks"></a>Remarks  
+ The color palette specifies the colors that the user can choose.  
   
-##  <a name="rebuildpalette"></a>CMFCColorDialog::RebuildPalette  
- パレットをシステム パレットから派生しています。  
+##  <a name="rebuildpalette"></a>  CMFCColorDialog::RebuildPalette  
+ Derives a palette from the system palette.  
   
 ```  
 void RebuildPalette();
 ```  
   
-##  <a name="setcurrentcolor"></a>CMFCColorDialog::SetCurrentColor  
- ダイアログ ボックスの現在の色を設定します。  
+##  <a name="setcurrentcolor"></a>  CMFCColorDialog::SetCurrentColor  
+ Sets the current color of the dialog box.  
   
 ```  
 void SetCurrentColor(COLORREF rgb);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `rgb`  
- RGB カラー値  
+### <a name="parameters"></a>Parameters  
+ [in] `rgb`  
+ An RGB color value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setnewcolor"></a>CMFCColorDialog::SetNewColor  
- 現在の色を最も近い現在パレットの色に設定します。  
+##  <a name="setnewcolor"></a>  CMFCColorDialog::SetNewColor  
+ Sets the current color to the color in the current palette that is most similar.  
   
 ```  
 void SetNewColor(COLORREF rgb);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `rgb`  
- A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) RGB 色を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `rgb`  
+ A [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) that specifies an RGB color.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setpageone"></a>CMFCColorDialog::SetPageOne  
- 色のダイアログ ボックスの最初のプロパティ ページで選択した色の赤、緑、および青のコンポーネントを明示的に指定します。  
+##  <a name="setpageone"></a>  CMFCColorDialog::SetPageOne  
+ Explicitly specifies the red, green, and blue components of a selected color on the first property page of a color dialog.  
   
 ```  
 void SetPageOne(
@@ -233,20 +227,20 @@ void SetPageOne(
     BYTE B);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `R`  
- RGB 値の赤の要素を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `R`  
+ Specifies the red component of the RGB value.  
   
- [入力] `G`  
- RGB 値の緑の要素を指定します。  
+ [in] `G`  
+ Specifies the green component of the RGB value.  
   
- [入力] `B`  
- RGB 値の青の要素を指定します。  
+ [in] `B`  
+ Specifies the blue component of the RGB value.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setpagetwo"></a>CMFCColorDialog::SetPageTwo  
- カラー ダイアログ ボックスの&2; 番目のプロパティ ページで選択した色の赤、緑、および青のコンポーネントを明示的に指定します。  
+##  <a name="setpagetwo"></a>  CMFCColorDialog::SetPageTwo  
+ Explicitly specifies the red, green, and blue components of a selected color on the second property page of a color dialog.  
   
 ```  
 void SetPageTwo(
@@ -255,20 +249,20 @@ void SetPageTwo(
     BYTE B);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `R`  
- RGB 値の赤の要素を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `R`  
+ Specifies a red component of the RGB value  
   
- [入力] `G`  
- RGB 値の緑の部分を指定します。  
+ [in] `G`  
+ Specifies a green component of an RGB value  
   
- [入力] `B`  
- RGB 値の青色の部分を指定します。  
+ [in] `B`  
+ Specifies a blue component of an RGB value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCColorPickerCtrl クラス](../../mfc/reference/cmfccolorpickerctrl-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCColorPickerCtrl Class](../../mfc/reference/cmfccolorpickerctrl-class.md)
 

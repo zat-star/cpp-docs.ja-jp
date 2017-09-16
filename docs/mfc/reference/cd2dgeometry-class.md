@@ -1,5 +1,5 @@
 ---
-title: "CD2DGeometry クラス |Microsoft ドキュメント"
+title: CD2DGeometry Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,7 +34,26 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DGeometry class
+- CD2DGeometry [MFC], CD2DGeometry
+- CD2DGeometry [MFC], Attach
+- CD2DGeometry [MFC], CombineWithGeometry
+- CD2DGeometry [MFC], CompareWithGeometry
+- CD2DGeometry [MFC], ComputeArea
+- CD2DGeometry [MFC], ComputeLength
+- CD2DGeometry [MFC], ComputePointAtLength
+- CD2DGeometry [MFC], Destroy
+- CD2DGeometry [MFC], Detach
+- CD2DGeometry [MFC], FillContainsPoint
+- CD2DGeometry [MFC], Get
+- CD2DGeometry [MFC], GetBounds
+- CD2DGeometry [MFC], GetWidenedBounds
+- CD2DGeometry [MFC], IsValid
+- CD2DGeometry [MFC], Outline
+- CD2DGeometry [MFC], Simplify
+- CD2DGeometry [MFC], StrokeContainsPoint
+- CD2DGeometry [MFC], Tessellate
+- CD2DGeometry [MFC], Widen
+- CD2DGeometry [MFC], m_pGeometry
 ms.assetid: 3f95054b-fdb8-4e87-87f2-9fc3df7279ec
 caps.latest.revision: 17
 author: mikeblome
@@ -54,96 +73,96 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 948b2e2154259557e3a52c2045586cffce2a16f8
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dc5ac92b1f9ea42ff03710976678c574f69f219d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dgeometry-class"></a>CD2DGeometry クラス
-ID2D1Geometry のラッパーです。  
+# <a name="cd2dgeometry-class"></a>CD2DGeometry Class
+A wrapper for ID2D1Geometry.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DGeometry : public CD2DResource;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DGeometry::CD2DGeometry](#cd2dgeometry)|CD2DGeometry のオブジェクトを構築します。|  
-|[CD2DGeometry:: ~ CD2DGeometry](#_dtorcd2dgeometry)|デストラクターです。 D2D geometry オブジェクトが破棄されるときに呼び出されます。|  
+|[CD2DGeometry::CD2DGeometry](#cd2dgeometry)|Constructs a CD2DGeometry object.|  
+|[CD2DGeometry::~CD2DGeometry](#_dtorcd2dgeometry)|The destructor. Called when a D2D geometry object is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DGeometry::Attach](#attach)|オブジェクトにリソース インタ フェースを既存の接続|  
-|[CD2DGeometry::CombineWithGeometry](#combinewithgeometry)|指定したジオメトリをこの geometry を結合し、その結果、ID2D1SimplifiedGeometrySink に格納します。|  
-|[CD2DGeometry::CompareWithGeometry](#comparewithgeometry)|このジオメトリと指定された geometry の交差部分をについて説明します。 フラット化の指定された許容範囲を使用して比較を実行します。|  
-|[CD2DGeometry::ComputeArea](#computearea)|ジオメトリの領域が計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。|  
-|[CD2DGeometry::ComputeLength](#computelength)|各セグメントは直線にロールバックされたかのように、ジオメトリの長さを計算します。|  
-|[CD2DGeometry::ComputePointAtLength](#computepointatlength)|ジオメトリに沿って指定された距離にあるポイントおよびタンジェント ベクトルが計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。|  
-|[CD2DGeometry::Destroy](#destroy)|CD2DGeometry オブジェクトを破棄します。 (上書き[CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy))。|  
-|[CD2DGeometry::Detach](#detach)|オブジェクトからリソース インタ フェースをデタッチします。|  
-|[CD2DGeometry::FillContainsPoint](#fillcontainspoint)|ジオメトリで埋められた領域はフラット化の指定された許容範囲を指定する指定された時点を含めるかどうかを示します。|  
-|[CD2DGeometry::Get](#get)|返します。 ID2D1Geometry インターフェイス|  
+|[CD2DGeometry::Attach](#attach)|Attaches existing resource interface to the object|  
+|[CD2DGeometry::CombineWithGeometry](#combinewithgeometry)|Combines this geometry with the specified geometry and stores the result in an ID2D1SimplifiedGeometrySink.|  
+|[CD2DGeometry::CompareWithGeometry](#comparewithgeometry)|Describes the intersection between this geometry and the specified geometry. The comparison is performed using the specified flattening tolerance.|  
+|[CD2DGeometry::ComputeArea](#computearea)|Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.|  
+|[CD2DGeometry::ComputeLength](#computelength)|Calculates the length of the geometry as though each segment were unrolled into a line.|  
+|[CD2DGeometry::ComputePointAtLength](#computepointatlength)|Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.|  
+|[CD2DGeometry::Destroy](#destroy)|Destroys a CD2DGeometry object. (Overrides [CD2DResource::Destroy](../../mfc/reference/cd2dresource-class.md#destroy).)|  
+|[CD2DGeometry::Detach](#detach)|Detaches resource interface from the object|  
+|[CD2DGeometry::FillContainsPoint](#fillcontainspoint)|Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.|  
+|[CD2DGeometry::Get](#get)|Returns ID2D1Geometry interface|  
 |[CD2DGeometry::GetBounds](#getbounds)||  
-|[CD2DGeometry::GetWidenedBounds](#getwidenedbounds)|指定した線の幅とスタイルによって上位変換して指定した行列によって変換された後は、ジオメトリの境界を取得します。|  
-|[CD2DGeometry::IsValid](#isvalid)|リソースの有効性をチェックする (上書き[CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid))。|  
-|[CD2DGeometry::Outline](#outline)|Geometry の輪郭を計算し、その結果を ID2D1SimplifiedGeometrySink に書き込みます。|  
-|[CD2DGeometry::Simplify](#simplify)|線および (必要に応じて)&3; 次ベジエ曲線のみを含み、結果を ID2D1SimplifiedGeometrySink に書き込むジオメトリの簡略版を作成します。|  
-|[CD2DGeometry::StrokeContainsPoint](#strokecontainspoint)|ジオメトリのストロークに指定したストロークの太さ、スタイル、および変換を指定する指定された時点が含まれているかどうかを判断します。|  
-|[CD2DGeometry::Tessellate](#tessellate)|指定した行列を使用して変換された後に、geometry をカバーし、指定された許容範囲を使用してフラット化する時計回りの三角形のセットを作成します。|  
-|[CD2DGeometry::Widen](#widen)|ジオメトリは拡大し、指定したストロークと、ID2D1SimplifiedGeometrySink を結果に出力しています。 指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。|  
+|[CD2DGeometry::GetWidenedBounds](#getwidenedbounds)|Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.|  
+|[CD2DGeometry::IsValid](#isvalid)|Checks resource validity (Overrides [CD2DResource::IsValid](../../mfc/reference/cd2dresource-class.md#isvalid).)|  
+|[CD2DGeometry::Outline](#outline)|Computes the outline of the geometry and writes the result to an ID2D1SimplifiedGeometrySink.|  
+|[CD2DGeometry::Simplify](#simplify)|Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an ID2D1SimplifiedGeometrySink.|  
+|[CD2DGeometry::StrokeContainsPoint](#strokecontainspoint)|Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.|  
+|[CD2DGeometry::Tessellate](#tessellate)|Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.|  
+|[CD2DGeometry::Widen](#widen)|Widens the geometry by the specified stroke and writes the result to an ID2D1SimplifiedGeometrySink after it has been transformed by the specified matrix and flattened using the specified tolerance.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DGeometry::operator ID2D1Geometry *](#operator_id2d1geometry_star)|返します。 ID2D1Geometry インターフェイス|  
+|[CD2DGeometry::operator ID2D1Geometry*](#operator_id2d1geometry_star)|Returns ID2D1Geometry interface|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DGeometry::m_pGeometry](#m_pgeometry)|ID2D1Geometry へのポインター。|  
+|[CD2DGeometry::m_pGeometry](#m_pgeometry)|A pointer to an ID2D1Geometry.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CD2DResource](../../mfc/reference/cd2dresource-class.md)  
   
  `CD2DGeometry`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="_dtorcd2dgeometry"></a>CD2DGeometry:: ~ CD2DGeometry  
- デストラクターです。 D2D geometry オブジェクトが破棄されるときに呼び出されます。  
+##  <a name="_dtorcd2dgeometry"></a>  CD2DGeometry::~CD2DGeometry  
+ The destructor. Called when a D2D geometry object is being destroyed.  
   
 ```  
 virtual ~CD2DGeometry();
 ```  
   
-##  <a name="attach"></a>CD2DGeometry::Attach  
- オブジェクトにリソース インタ フェースを既存の接続  
+##  <a name="attach"></a>  CD2DGeometry::Attach  
+ Attaches existing resource interface to the object  
   
 ```  
 void Attach(ID2D1Geometry* pResource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pResource`  
- 既存のリソースのインターフェイスです。 NULL にすることはできません。  
+ Existing resource interface. Cannot be NULL  
   
-##  <a name="cd2dgeometry"></a>CD2DGeometry::CD2DGeometry  
- CD2DGeometry のオブジェクトを構築します。  
+##  <a name="cd2dgeometry"></a>  CD2DGeometry::CD2DGeometry  
+ Constructs a CD2DGeometry object.  
   
 ```  
 CD2DGeometry(
@@ -151,15 +170,15 @@ CD2DGeometry(
     BOOL bAutoDestroy = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
  `bAutoDestroy`  
- 所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
+ Indicates that the object will be destroyed by owner (pParentTarget).  
   
-##  <a name="combinewithgeometry"></a>CD2DGeometry::CombineWithGeometry  
- 指定したジオメトリをこの geometry を結合し、その結果、ID2D1SimplifiedGeometrySink に格納します。  
+##  <a name="combinewithgeometry"></a>  CD2DGeometry::CombineWithGeometry  
+ Combines this geometry with the specified geometry and stores the result in an ID2D1SimplifiedGeometrySink.  
   
 ```  
 BOOL CombineWithGeometry(
@@ -170,27 +189,27 @@ BOOL CombineWithGeometry(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `inputGeometry`  
- このインスタンスと結合するジオメトリ。  
+ The geometry to combine with this instance.  
   
  `combineMode`  
- 結合操作を実行する型。  
+ The type of combine operation to perform.  
   
  `inputGeometryTransform`  
- 結合する前に inputGeometry に適用する変換です。  
+ The transform to apply to inputGeometry before combining.  
   
  `geometrySink`  
- 結合操作の結果。  
+ The result of the combine operation.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometries. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="comparewithgeometry"></a>CD2DGeometry::CompareWithGeometry  
- このジオメトリと指定された geometry の交差部分をについて説明します。 フラット化の指定された許容範囲を使用して比較を実行します。  
+##  <a name="comparewithgeometry"></a>  CD2DGeometry::CompareWithGeometry  
+ Describes the intersection between this geometry and the specified geometry. The comparison is performed using the specified flattening tolerance.  
   
 ```  
 D2D1_GEOMETRY_RELATION CompareWithGeometry(
@@ -199,21 +218,21 @@ D2D1_GEOMETRY_RELATION CompareWithGeometry(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `inputGeometry`  
- テストするジオメトリ。  
+ The geometry to test.  
   
  `inputGeometryTransform`  
- InputGeometry に適用する変換です。  
+ The transform to apply to inputGeometry.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometries. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="computearea"></a>CD2DGeometry::ComputeArea  
- ジオメトリの領域が計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
+##  <a name="computearea"></a>  CD2DGeometry::ComputeArea  
+ Computes the area of the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.  
   
 ```  
 BOOL ComputeArea(
@@ -222,21 +241,21 @@ BOOL ComputeArea(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `worldTransform`  
- その領域を計算する前にこのジオメトリに適用する変換です。  
+ The transform to apply to this geometry before computing its area.  
   
  `area`  
- このメソッドが戻るとき、変換されたフラット化されたバージョンのこの geometry の領域へのポインターが含まれています。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains a pointer to the area of the transformed, flattened version of this geometry. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="computelength"></a>CD2DGeometry::ComputeLength  
- 各セグメントは直線にロールバックされたかのように、ジオメトリの長さを計算します。  
+##  <a name="computelength"></a>  CD2DGeometry::ComputeLength  
+ Calculates the length of the geometry as though each segment were unrolled into a line.  
   
 ```  
 BOOL ComputeLength(
@@ -245,21 +264,21 @@ BOOL ComputeLength(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `worldTransform`  
- その長さを計算する前に、ジオメトリに適用する変換です。  
+ The transform to apply to the geometry before calculating its length.  
   
  `length`  
- このメソッドが戻るときに、ジオメトリの長さへのポインターが含まれています。 終了した場合は、長さには、暗黙的な終了セグメントが含まれています。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains a pointer to the length of the geometry. For closed geometries, the length includes an implicit closing segment. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="computepointatlength"></a>CD2DGeometry::ComputePointAtLength  
- ジオメトリに沿って指定された距離にあるポイントおよびタンジェント ベクトルが計算された後に指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
+##  <a name="computepointatlength"></a>  CD2DGeometry::ComputePointAtLength  
+ Calculates the point and tangent vector at the specified distance along the geometry after it has been transformed by the specified matrix and flattened using the specified tolerance.  
   
 ```  
 BOOL ComputePointAtLength(
@@ -270,44 +289,44 @@ BOOL ComputePointAtLength(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `length`  
- ポイントと検索に接するのジオメトリに沿った距離。 この距離が少なく、0 の場合は、このメソッドは、ジオメトリの 1 つ目のポイントを計算します。 この距離は、ジオメトリのサイズより大きい値は、このメソッドは、ジオメトリの最後の点を計算します。  
+ The distance along the geometry of the point and tangent to find. If this distance is less then 0, this method calculates the first point in the geometry. If this distance is greater than the length of the geometry, this method calculates the last point in the geometry.  
   
  `worldTransform`  
- 指定したポイントおよびタンジェントを計算する前に、ジオメトリに適用する変換です。  
+ The transform to apply to the geometry before calculating the specified point and tangent.  
   
  `point`  
- 指定された距離のジオメトリに沿った位置。 このポイントが、x と y として NaN を含む、ジオメトリが空の場合の値。  
+ The location at the specified distance along the geometry. If the geometry is empty, this point contains NaN as its x and y values.  
   
  `unitTangentVector`  
- このメソッドが戻るときに、指定されたジオメトリに沿った距離にある正接ベクトルへのポインターが含まれています。 このベクトルとその x および y NaN を含む、ジオメトリが空の場合の値。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains a pointer to the tangent vector at the specified distance along the geometry. If the geometry is empty, this vector contains NaN as its x and y values. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="destroy"></a>CD2DGeometry::Destroy  
- CD2DGeometry オブジェクトを破棄します。  
+##  <a name="destroy"></a>  CD2DGeometry::Destroy  
+ Destroys a CD2DGeometry object.  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="detach"></a>CD2DGeometry::Detach  
- オブジェクトからリソース インタ フェースをデタッチします。  
+##  <a name="detach"></a>  CD2DGeometry::Detach  
+ Detaches resource interface from the object  
   
 ```  
 ID2D1Geometry* Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- デタッチされたリソース インタ フェースへのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to detached resource interface.  
   
-##  <a name="fillcontainspoint"></a>CD2DGeometry::FillContainsPoint  
- ジオメトリで埋められた領域はフラット化の指定された許容範囲を指定する指定された時点を含めるかどうかを示します。  
+##  <a name="fillcontainspoint"></a>  CD2DGeometry::FillContainsPoint  
+ Indicates whether the area filled by the geometry would contain the specified point given the specified flattening tolerance.  
   
 ```  
 BOOL FillContainsPoint(
@@ -317,33 +336,33 @@ BOOL FillContainsPoint(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `point`  
- テストする点です。  
+ The point to test.  
   
  `worldTransform`  
- 含有をテストする前にジオメトリに適用する変換です。  
+ The transform to apply to the geometry prior to testing for containment.  
   
  `contains`  
- このメソッドが戻るとき、ジオメトリを塗りつぶし領域には、ポイントが含まれている場合は TRUE であるブール値が含まれています。それ以外の場合は FALSE。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains a bool value that is TRUE if the area filled by the geometry contains point; otherwise, FALSE. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- これを使用した数値の精度正確なジオメトリック パスとパスの交差部分を計算します。 許容値より小さいから塗りつぶしを未適用ポイントは内部考慮されます。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the fill by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="get"></a>CD2DGeometry::Get  
- 返します。 ID2D1Geometry インターフェイス  
+##  <a name="get"></a>  CD2DGeometry::Get  
+ Returns ID2D1Geometry interface  
   
 ```  
 ID2D1Geometry* Get();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ID2D1Geometry インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1Geometry interface or NULL if object is not initialized yet.  
   
-##  <a name="getbounds"></a>CD2DGeometry::GetBounds  
+##  <a name="getbounds"></a>  CD2DGeometry::GetBounds  
   
 ```   
 BOOL GetBounds(
@@ -351,14 +370,14 @@ const D2D1_MATRIX_3X2_F& worldTransform,
 CD2DRectF& bounds) const; 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `worldTransform`  
  `bounds`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-##  <a name="getwidenedbounds"></a>CD2DGeometry::GetWidenedBounds  
- 指定した線の幅とスタイルによって上位変換して指定した行列によって変換された後は、ジオメトリの境界を取得します。  
+##  <a name="getwidenedbounds"></a>  CD2DGeometry::GetWidenedBounds  
+ Gets the bounds of the geometry after it has been widened by the specified stroke width and style and transformed by the specified matrix.  
   
 ```  
 BOOL GetWidenedBounds(
@@ -369,54 +388,54 @@ BOOL GetWidenedBounds(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `strokeWidth`  
- 外枠を描画してジオメトリを拡大する量。  
+ The amount by which to widen the geometry by stroking its outline.  
   
  `strokeStyle`  
- ジオメトリは拡大し、線のスタイル。  
+ The style of the stroke that widens the geometry.  
   
  `worldTransform`  
- ジオメトリの変換後、およびジオメトリが描画した後、ジオメトリに適用する変換です。  
+ A transform to apply to the geometry after the geometry is transformed and after the geometry has been stroked.  
   
  `bounds`  
- このメソッドが戻るとき、拡張された geometry の境界を格納します。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains the bounds of the widened geometry. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometries. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="isvalid"></a>CD2DGeometry::IsValid  
- リソースの有効性のチェック  
+##  <a name="isvalid"></a>  CD2DGeometry::IsValid  
+ Checks resource validity  
   
 ```  
 virtual BOOL IsValid() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if resource is valid; otherwise FALSE.  
   
-##  <a name="m_pgeometry"></a>CD2DGeometry::m_pGeometry  
- ID2D1Geometry へのポインター。  
+##  <a name="m_pgeometry"></a>  CD2DGeometry::m_pGeometry  
+ A pointer to an ID2D1Geometry.  
   
 ```  
 ID2D1Geometry* m_pGeometry;  
 ```  
   
-##  <a name="operator_id2d1geometry_star"></a>CD2DGeometry::operator ID2D1Geometry *  
- 返します。 ID2D1Geometry インターフェイス  
+##  <a name="operator_id2d1geometry_star"></a>  CD2DGeometry::operator ID2D1Geometry*  
+ Returns ID2D1Geometry interface  
   
 ```  
 operator ID2D1Geometry*();
 ```   
   
-### <a name="return-value"></a>戻り値  
- ID2D1Geometry インターフェイスまたはオブジェクトがまだ初期化されていない場合は NULL へのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to an ID2D1Geometry interface or NULL if object is not initialized yet.  
   
-##  <a name="outline"></a>CD2DGeometry::Outline  
- Geometry の輪郭を計算し、その結果を ID2D1SimplifiedGeometrySink に書き込みます。  
+##  <a name="outline"></a>  CD2DGeometry::Outline  
+ Computes the outline of the geometry and writes the result to an ID2D1SimplifiedGeometrySink.  
   
 ```  
 BOOL Outline(
@@ -425,21 +444,21 @@ BOOL Outline(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `worldTransform`  
- ジオメトリのアウトラインに適用する変換です。  
+ The transform to apply to the geometry outline.  
   
  `geometrySink`  
- ジオメトリがアウトラインを変換 ID2D1SimplifiedGeometrySink が追加されます。  
+ The ID2D1SimplifiedGeometrySink to which the geometry transformed outline is appended.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="simplify"></a>CD2DGeometry::Simplify  
- 線および (必要に応じて)&3; 次ベジエ曲線のみを含み、結果を ID2D1SimplifiedGeometrySink に書き込むジオメトリの簡略版を作成します。  
+##  <a name="simplify"></a>  CD2DGeometry::Simplify  
+ Creates a simplified version of the geometry that contains only lines and (optionally) cubic Bezier curves and writes the result to an ID2D1SimplifiedGeometrySink.  
   
 ```  
 BOOL Simplify(
@@ -449,24 +468,24 @@ BOOL Simplify(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `simplificationOption`  
- 簡略化されたジオメトリのカーブを含めるかどうかを指定する値。  
+ A value that specifies whether the simplified geometry should contain curves.  
   
  `worldTransform`  
- 簡略化されたジオメトリに適用する変換です。  
+ The transform to apply to the simplified geometry.  
   
  `geometrySink`  
- ID2D1SimplifiedGeometrySink が簡略化されたジオメトリが追加されます。  
+ The ID2D1SimplifiedGeometrySink to which the simplified geometry is appended.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="strokecontainspoint"></a>CD2DGeometry::StrokeContainsPoint  
- ジオメトリのストロークに指定したストロークの太さ、スタイル、および変換を指定する指定された時点が含まれているかどうかを判断します。  
+##  <a name="strokecontainspoint"></a>  CD2DGeometry::StrokeContainsPoint  
+ Determines whether the geometry's stroke contains the specified point given the specified stroke thickness, style, and transform.  
   
 ```  
 BOOL StrokeContainsPoint(
@@ -478,30 +497,30 @@ BOOL StrokeContainsPoint(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `point`  
- 含有をテストする点です。  
+ The point to test for containment.  
   
  `strokeWidth`  
- 適用する線の太さ。  
+ The thickness of the stroke to apply.  
   
  `strokeStyle`  
- 適用する線のスタイル。  
+ The style of the stroke to apply.  
   
  `worldTransform`  
- 線のジオメトリに適用する変換です。  
+ The transform to apply to the stroked geometry.  
   
  `contains`  
- このメソッドが戻るとき、ジオメトリの線には、指定した点が含まれている場合に TRUE に設定するブール値が含まれています。それ以外の場合は FALSE。 このパラメーターには、記憶域を割り当てる必要があります。  
+ When this method returns, contains a boolean value set to TRUE if the geometry's stroke contains the specified point; otherwise, FALSE. You must allocate storage for this parameter.  
   
  `flatteningTolerance`  
- これを使用した数値の精度正確なジオメトリック パスとパスの交差部分を計算します。 許容値より小さいからストロークを未適用ポイントは内部考慮されます。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The numeric accuracy with which the precise geometric path and path intersection is calculated. Points missing the stroke by less than the tolerance are still considered inside. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="tessellate"></a>CD2DGeometry::Tessellate  
- 指定した行列を使用して変換された後に、geometry をカバーし、指定された許容範囲を使用してフラット化する時計回りの三角形のセットを作成します。  
+##  <a name="tessellate"></a>  CD2DGeometry::Tessellate  
+ Creates a set of clockwise-wound triangles that cover the geometry after it has been transformed using the specified matrix and flattened using the specified tolerance.  
   
 ```  
 BOOL Tessellate(
@@ -510,21 +529,21 @@ BOOL Tessellate(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `worldTransform`  
- この geometry、または NULL に適用する変換です。  
+ The transform to apply to this geometry, or NULL.  
   
  `tessellationSink`  
- ID2D1TessellationSink が先、テセレーションされたが追加されます。  
+ The ID2D1TessellationSink to which the tessellated is appended.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-##  <a name="widen"></a>CD2DGeometry::Widen  
- ジオメトリは拡大し、指定したストロークと、ID2D1SimplifiedGeometrySink を結果に出力しています。 指定した行列を使用して変換し、指定された許容範囲を使用してフラット化します。  
+##  <a name="widen"></a>  CD2DGeometry::Widen  
+ Widens the geometry by the specified stroke and writes the result to an ID2D1SimplifiedGeometrySink after it has been transformed by the specified matrix and flattened using the specified tolerance.  
   
 ```  
 BOOL Widen(
@@ -535,25 +554,25 @@ BOOL Widen(
     FLOAT flatteningTolerance = D2D1_DEFAULT_FLATTENING_TOLERANCE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `strokeWidth`  
- ジオメトリの幅を広げます量。  
+ The amount by which to widen the geometry.  
   
  `strokeStyle`  
- Geometry、または NULL に適用する線のスタイル。  
+ The style of stroke to apply to the geometry, or NULL.  
   
  `worldTransform`  
- それを拡大した後、ジオメトリに適用する変換です。  
+ The transform to apply to the geometry after widening it.  
   
  `geometrySink`  
- ID2D1SimplifiedGeometrySink が拡張されたジオメトリが追加されます。  
+ The ID2D1SimplifiedGeometrySink to which the widened geometry is appended.  
   
  `flatteningTolerance`  
- ジオメトリの多角形近似の点の間の距離の上限。 小さい値はより正確な結果を生成しますが、実行速度が低下します。  
+ The maximum bounds on the distance between points in the polygonal approximation of the geometry. Smaller values produce more accurate results but cause slower execution.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

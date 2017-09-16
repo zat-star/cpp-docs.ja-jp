@@ -1,49 +1,68 @@
 ---
-title: "CImageList の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CImageList"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CImageList クラス, 使用"
-  - "イメージ リスト コントロール"
+title: Using CImageList | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CImageList
+dev_langs:
+- C++
+helpviewer_keywords:
+- image list control
+- CImageList class [MFC], using
 ms.assetid: 3d2a909e-d641-46b7-aada-81cab1a29b41
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CImageList の使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bf76d92b14c2c4fc4d43115c569d1289a7ddc95c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CImageList](../Topic/CImageList%20Class.md)クラスによって表されるイメージ リストは、それぞれがインデックスによって参照できる同じサイズのイメージのコレクションです。  イメージ リストを効率的にアイコンまたはビットマップの大きいセットを管理するために使用されます。  ウィンドウではないため、イメージ リスト自体がコントロールではありません; ただし、リスト コントロール \([CListCtrl](../Topic/CListCtrl%20Class.md)\)、ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\)、およびタブ コントロール \([CTabCtrl](../Topic/CTabCtrl%20Class.md)\) を含むコントロールのさまざまな型として使用されます。  
+---
+# <a name="using-cimagelist"></a>Using CImageList
+An image list, represented by class [CImageList](../mfc/reference/cimagelist-class.md), is a collection of same-sized images, each of which can be referred to by its index. Image lists are used to efficiently manage large sets of icons or bitmaps. Image lists are not themselves controls since they are not windows; however, they are used with several different types of controls, including list controls ([CListCtrl](../mfc/reference/clistctrl-class.md)), tree controls ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)), and tab controls ([CTabCtrl](../mfc/reference/ctabctrl-class.md)).  
   
- イメージ リストのイメージは、画面デバイスの形式を使用すると、一つの大きなビットマップに含まれています。  イメージ リストは、イメージを透過的に描画するために使用されるマスクを含むモノクロ ビットマップを含める場合があります \(アイコン\) のスタイル。  `CImageList` は イメージを描画し、そのイメージを作成し、イメージ リストを破棄し、イメージを追加および削除できるメンバー関数が、イメージ、マージのイメージとドラッグ イメージを提供します。  
+ All images in an image list are contained in a single, wide bitmap in screen-device format. An image list may also include a monochrome bitmap that contains masks used to draw images transparently (icon style). `CImageList` provides member functions that enable you to draw images, create and destroy image lists, add and remove images, replace images, merge images, and drag images.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [イメージ リストの種類](../Topic/Types%20of%20Image%20Lists.md)  
+-   [Types of Image Lists](../mfc/types-of-image-lists.md)  
   
--   [イメージ リストを使用します。](../mfc/using-an-image-list.md)  
+-   [Using an Image List](../mfc/using-an-image-list.md)  
   
--   [イメージ リストの処理](../mfc/manipulating-image-lists.md)  
+-   [Manipulating Image Lists](../mfc/manipulating-image-lists.md)  
   
--   [イメージ リストのイメージの描画](../mfc/drawing-images-from-an-image-list.md)  
+-   [Drawing Images from an Image List](../mfc/drawing-images-from-an-image-list.md)  
   
--   [イメージ リスト内のイメージのオーバーレイ](../mfc/image-overlays-in-image-lists.md)  
+-   [Image Overlays in Image Lists](../mfc/image-overlays-in-image-lists.md)  
   
--   [イメージ リスト内のイメージにドラッグします。](../Topic/Dragging%20Images%20from%20an%20Image%20List.md)  
+-   [Dragging Images from an Image List](../mfc/dragging-images-from-an-image-list.md)  
   
--   [イメージ リストのイメージ情報](../mfc/image-information-in-image-lists.md)  
+-   [Image Information in Image Lists](../mfc/image-information-in-image-lists.md)  
   
-## 参照  
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Controls](../mfc/controls-mfc.md)
+
+

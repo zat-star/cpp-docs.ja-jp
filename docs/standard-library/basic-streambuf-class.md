@@ -1,15 +1,14 @@
 ---
-title: "basic_streambuf クラス |Microsoft Docs"
+title: basic_streambuf Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- basic_streambuf
 - streambuf/std::basic_streambuf
 - streambuf/std::basic_streambuf::char_type
 - streambuf/std::basic_streambuf::int_type
@@ -58,7 +57,51 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- basic_streambuf class
+- std::basic_streambuf [C++]
+- std::basic_streambuf [C++], char_type
+- std::basic_streambuf [C++], int_type
+- std::basic_streambuf [C++], off_type
+- std::basic_streambuf [C++], pos_type
+- std::basic_streambuf [C++], traits_type
+- std::basic_streambuf [C++], eback
+- std::basic_streambuf [C++], egptr
+- std::basic_streambuf [C++], epptr
+- std::basic_streambuf [C++], gbump
+- std::basic_streambuf [C++], getloc
+- std::basic_streambuf [C++], gptr
+- std::basic_streambuf [C++], imbue
+- std::basic_streambuf [C++], in_avail
+- std::basic_streambuf [C++], overflow
+- std::basic_streambuf [C++], pbackfail
+- std::basic_streambuf [C++], pbase
+- std::basic_streambuf [C++], pbump
+- std::basic_streambuf [C++], pptr
+- std::basic_streambuf [C++], pubimbue
+- std::basic_streambuf [C++], pubseekoff
+- std::basic_streambuf [C++], pubseekpos
+- std::basic_streambuf [C++], pubsetbuf
+- std::basic_streambuf [C++], pubsync
+- std::basic_streambuf [C++], sbumpc
+- std::basic_streambuf [C++], seekoff
+- std::basic_streambuf [C++], seekpos
+- std::basic_streambuf [C++], setbuf
+- std::basic_streambuf [C++], setg
+- std::basic_streambuf [C++], setp
+- std::basic_streambuf [C++], sgetc
+- std::basic_streambuf [C++], sgetn
+- std::basic_streambuf [C++], showmanyc
+- std::basic_streambuf [C++], snextc
+- std::basic_streambuf [C++], sputbackc
+- std::basic_streambuf [C++], sputc
+- std::basic_streambuf [C++], sputn
+- std::basic_streambuf [C++], stossc
+- std::basic_streambuf [C++], sungetc
+- std::basic_streambuf [C++], swap
+- std::basic_streambuf [C++], sync
+- std::basic_streambuf [C++], uflow
+- std::basic_streambuf [C++], underflow
+- std::basic_streambuf [C++], xsgetn
+- std::basic_streambuf [C++], xsputn
 ms.assetid: 136af6c3-13bf-4501-9288-b93da26efac7
 caps.latest.revision: 27
 author: corob-msft
@@ -78,140 +121,140 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 0e20dfefcfc46871d43ec5b89f492102d07a9610
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: df3cddeeb4f7d597b97325b7e0d8e7ddb4b96c1b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="basicstreambuf-class"></a>basic_streambuf クラス
-ストリームの特定の表現との相互間での要素の伝送を制御する、ストリーム バッファーを派生させるための抽象基底クラスについて説明します。  
+# <a name="basicstreambuf-class"></a>basic_streambuf Class
+Describes an abstract base class for deriving a stream buffer, which controls the transmission of elements to and from a specific representation of a stream.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Elem, class Tr = char_traits<Elem>>  
 class basic_streambuf;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Elem`  
- [char_type](#char_type)。  
+ A [char_type](#char_type).  
   
  `Tr`  
- 文字の [traits_type](#traits_type)。  
+ The character [traits_type](#traits_type).  
   
-## <a name="remarks"></a>コメント  
- このテンプレート クラスは、ストリームの特定の表現との相互間での要素の伝送を制御する、ストリーム バッファーを派生させるための抽象基底クラスについて説明します。 クラス `basic_streambuf` のオブジェクトは、[char_type](#char_type) とも呼ばれる型 `Tr` の要素を含むストリームを制御するのに役立ちます。この型の文字特性は、[traits_type](#traits_type) とも呼ばれる [char_traits](../standard-library/char-traits-struct.md) クラスによって決まります。  
+## <a name="remarks"></a>Remarks  
+ The template class describes an abstract base class for deriving a stream buffer, which controls the transmission of elements to and from a specific representation of a stream. An object of class `basic_streambuf` helps control a stream with elements of type `Tr`, also known as [char_type](#char_type), whose character traits are determined by the class [char_traits](../standard-library/char-traits-struct.md), also known as [traits_type](#traits_type).  
   
- 各ストリーム バッファーは、抽出 (入力) 用ストリームと挿入 (出力) 用ストリームという 2 つの独立したストリームを概念上制御します。 ただし、特定の表現によってこれらのストリームのいずれか、もしくは両方がアクセス不可になる場合があります。 通常、そのような表現は、これら 2 つのストリームの何らかの関係を保持しています。 たとえば、[basic_stringbuf](../standard-library/basic-stringbuf-class.md)< `Elem`, `Tr`> オブジェクトの出力ストリームに挿入したものが、その入力ストリームから後で抽出するものになります。 [basic_filebuf](../standard-library/basic-filebuf-class.md)< `Elem`, `Tr`> オブジェクトの 1 つのストリームを配置するときは、もう一方のストリームを直列に配置します。  
+ Every stream buffer conceptually controls two independent streams: one for extractions (input) and one for insertions (output). A specific representation may, however, make either or both of these streams inaccessible. It typically maintains some relationship between the two streams. What you insert into the output stream of a [basic_stringbuf](../standard-library/basic-stringbuf-class.md)< `Elem`, `Tr`> object, for example, is what you later extract from its input stream. When you position one stream of a [basic_filebuf](../standard-library/basic-filebuf-class.md)< `Elem`, `Tr`> object, you position the other stream in tandem.  
   
- テンプレート クラス `basic_streambuf` のパブリック インターフェイスでは、すべてのストリーム バッファーに共通な操作をそれぞれに特殊化して行えます。 保護されたインターフェイスでは、ストリームの特定の表現を動作させるのに必要な操作を行えます。 プロテクト仮想メンバー関数を使用することにより、ストリームの特定の表現に対する派生ストリーム バッファーの動作を調整できます。 このライブラリ内の各派生ストリーム バッファーで、各バッファーのプロテクト仮想メンバー関数に特殊化した動作方法について記述します。 基底クラスに対する既定の動作については (多くの場合、何の動作も発生しない)、このトピックで説明します。  
+ The public interface to template class `basic_streambuf` supplies the operations that are common to all stream buffers, however specialized. The protected interface supplies the operations needed for a specific representation of a stream to do its work. The protected virtual member functions let you tailor the behavior of a derived stream buffer for a specific representation of a stream. Each derived stream buffer in this library describes how it specializes the behavior of its protected virtual member functions. The default behavior for the base class, which is often to do nothing, is described in this topic.  
   
- 残りのプロテクト メンバー関数は、ストリームとのバッファーのやり取りに提供されるストレージとのコピーのやり取りを制御します。 たとえば、入力バッファーには以下の特性を指定できます。  
+ The remaining protected member functions control copying to and from any storage supplied to buffer transmissions to and from streams. An input buffer, for example, is characterized by:  
   
-- [eback](#eback)、バッファーの先頭を指すポインター。  
+- [eback](#eback), a pointer to the beginning of the buffer.  
   
-- [gptr](#gptr)、次に読み取る要素を指すポインター。  
+- [gptr](#gptr), a pointer to the next element to read.  
   
-- [egptr](#egptr)、バッファーの末尾の直後を指すポインター。  
+- [egptr](#egptr), a pointer just past the end of the buffer.  
   
- 同様に、出力バッファーには以下の特性を指定できます。  
+ Similarly, an output buffer is characterized by:  
   
-- [pbase](#pbase)、バッファーの先頭を指すポインター。  
+- [pbase](#pbase), a pointer to the beginning of the buffer.  
   
-- [pptr](#pptr)、次に書き込む要素を指すポインター。  
+- [pptr](#pptr), a pointer to the next element to write.  
   
-- [epptr](#epptr)、バッファーの末尾の直後を指すポインター。  
+- [epptr](#epptr), a pointer just past the end of the buffer.  
   
- どのバッファーの場合も、次のプロトコルが使用されます。  
+ For any buffer, the following protocol is used:  
   
--   ネクスト ポインターが null の場合、バッファーは存在しません。 それ以外の場合、3 つのポインターはすべて同じシーケンスを指し示します。 これらは順序で比較できます。  
+-   If the next pointer is null, no buffer exists. Otherwise, all three pointers point into the same sequence. They can be safely compared for order.  
   
--   出力バッファーの場合、ネクスト ポインターの比較対象がエンド ポインター未満であれば、ネクスト ポインターで指定された書き込み位置に要素を格納できます。  
+-   For an output buffer, if the next pointer compares less than the end pointer, you can store an element at the write position designated by the next pointer.  
   
--   入力バッファーの場合、ネクスト ポインターの比較対象がエンド ポインター未満であれば、ネクスト ポインターで指定された読み取り位置で要素を読み取ることができます。  
+-   For an input buffer, if the next pointer compares less than the end pointer, you can read an element at the read position designated by the next pointer.  
   
--   入力バッファーの場合、開始ポインターの比較対象がネクスト ポインター未満であれば、デクリメントされたネクスト ポインターで指定された戻り位置の要素を戻すことができます。  
+-   For an input buffer, if the beginning pointer compares less than the next pointer, you can put back an element at the putback position designated by the decremented next pointer.  
   
- `basic_streambuf`< `Elem`, `Tr`> の派生クラス用に作成するプロテクト仮想メンバー関数すべては、このプロトコルを維持する点で協調して動作する必要があります。  
+ Any protected virtual member functions you write for a class derived from `basic_streambuf`< `Elem`, `Tr`> must cooperate in maintaining this protocol.  
   
- クラス `basic_streambuf`< `Elem`, `Tr`> のオブジェクトは、ここまでに説明した 6 つのポインターを格納します。 また、派生ストリーム バッファーが使用する可能性のある [locale](../standard-library/locale-class.md) 型のオブジェクトのロケール オブジェクトを格納します。  
+ An object of class `basic_streambuf`< `Elem`, `Tr`> stores the six pointers previously described. It also stores a locale object in an object of type [locale](../standard-library/locale-class.md) for potential use by a derived stream buffer.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[basic_streambuf](#basic_streambuf)|`basic_streambuf` 型のオブジェクトを構築します。|  
+|[basic_streambuf](#basic_streambuf)|Constructs an object of type `basic_streambuf`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|型名を `Elem` テンプレート パラメーターに関連付けます。|  
-|[int_type](#int_type)|`basic_streambuf` スコープ内の型名と `Elem` テンプレート パラメーターを関連付けます。|  
-|[off_type](#off_type)|`basic_streambuf` スコープ内の型名と `Elem` テンプレート パラメーターを関連付けます。|  
-|[pos_type](#pos_type)|`basic_streambuf` スコープ内の型名と `Elem` テンプレート パラメーターを関連付けます。|  
-|[traits_type](#traits_type)|型名を `Tr` テンプレート パラメーターに関連付けます。|  
+|[char_type](#char_type)|Associates a type name with the `Elem` template parameter.|  
+|[int_type](#int_type)|Associates a type name within `basic_streambuf` scope with the `Elem` template parameter.|  
+|[off_type](#off_type)|Associates a type name within `basic_streambuf` scope with the `Elem` template parameter.|  
+|[pos_type](#pos_type)|Associates a type name within `basic_streambuf` scope with the `Elem` template parameter.|  
+|[traits_type](#traits_type)|Associates a type name with the `Tr` template parameter.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[eback](#eback)|入力バッファーの先頭を指すポインターを返すプロテクト関数。|  
-|[egptr](#egptr)|入力バッファーの末尾の直後を指すポインターを返すプロテクト関数。|  
-|[epptr](#epptr)|出力バッファーの末尾の直後を指すポインターを返すプロテクト関数。|  
-|[gbump](#gbump)|`count` を入力バッファーのネクスト ポインターに追加するプロテクト関数。|  
-|[getloc](#getloc)|`basic_streambuf` オブジェクトのロケールを取得します。|  
-|[gptr](#gptr)|入力バッファーの次の要素を指すポインターを返すプロテクト関数。|  
-|[imbue](#imbue)|[pubimbue](#pubimbue) によって呼び出されるプロテクト仮想関数。|  
-|[in_avail](#in_avail)|バッファーから読み取る準備が整っている要素の数を返します。|  
-|[overflow](#overflow)|いっぱいのバッファーに新しい文字が挿入されたときに呼び出すことができる、プロテクト仮想関数。|  
-|[pbackfail](#pbackfail)|要素を入力ストリームに戻そうと試み、その要素を現在の要素に (ネクスト ポインターによって指されるように) するプロテクト仮想メンバー関数。|  
-|[pbase](#pbase)|出力バッファーの先頭を指すポインターを返すプロテクト関数。|  
-|[pbump](#pbump)|`count` を出力バッファーのネクスト ポインターに追加するプロテクト関数。|  
-|[pptr](#pptr)|出力バッファーの次の要素を指すポインターを返すプロテクト関数。|  
-|[pubimbue](#pubimbue)|`basic_streambuf` オブジェクトのロケールを設定します。|  
-|[pubseekoff](#pubseekoff)|派生クラスでオーバーライドされるプロテクト仮想関数 [seekoff](#seekoff) を呼び出します。|  
-|[pubseekpos](#pubseekpos)|派生クラスでオーバーライドされ、現在のポインターの位置をリセットするプロテクト仮想関数 [seekpos](#seekpos) を呼び出します。|  
-|[pubsetbuf](#pubsetbuf)|派生クラスでオーバーライドされるプロテクト仮想関数 [setbuf](#setbuf) を呼び出します。|  
-|[pubsync](#pubsync)|派生クラスでオーバーライドされ、このバッファーに関連付けられた外部ストリームを更新するプロテクト仮想関数 [sync](#sync) を呼び出します。|  
-|[sbumpc](#sbumpc)|ストリーム ポインターを移動させながら、現在の要素を読み取って返します。|  
-|[seekoff](#seekoff)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
-|[seekpos](#seekpos)|プロテクト仮想メンバー関数が、制御されているストリームの現在の位置を変更しようと試みます。|  
-|[setbuf](#setbuf)|プロテクト仮想メンバー関数が、各派生ストリーム バッファーに固有の操作を実行します。|  
-|[setg](#setg)|開始ポインターの `_Gbeg`、ネクスト ポインターの `_Gnext`、およびエンド ポインターの `_Gend` を入力バッファー用に格納するプロテクト関数。|  
-|[setp](#setp)|開始ポインターの `_Pbeg` およびエンド ポインターの `_Pend` を出力バッファー用に格納するプロテクト関数。|  
-|[sgetc](#sgetc)|ストリーム内の位置を変更せずに、現在の要素を返します。|  
-|[sgetn](#sgetn)|読み取られる要素数を返します。|  
-|[showmanyc](#showmanyc)|入力ストリームから抽出できる文字数のカウントを返し、プログラムが無期限の待機状態にならないようにするプロテクト仮想メンバー関数。|  
-|[snextc](#snextc)|現在の要素を読み取り、次の要素を返します。|  
-|[sputbackc](#sputbackc)|`char_type` をストリームに渡します。|  
-|[sputc](#sputc)|ストリームに単一の文字を渡します。|  
-|[sputn](#sputn)|ストリームに文字列を渡します。|  
-|[stossc](#stossc)|ストリーム内の現在の要素の直後に移動します。|  
-|[sungetc](#sungetc)|ストリームから単一の文字を取得します。|  
-|[swap](#swap)|このオブジェクトの値を、指定した `basic_streambuf` オブジェクト パラメーターの値と交換します。|  
-|[sync](#sync)|制御されているストリームと関連付けられている外部ストリームとの同期を試みるプロテクト仮想関数。|  
-|[uflow](#uflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
-|[underflow](#underflow)|入力ストリームから現在の要素を抽出するプロテクト仮想関数。|  
-|[xsgetn](#xsgetn)|入力ストリームから要素を抽出するプロテクト仮想関数。|  
-|[xsputn](#xsputn)|出力ストリームに要素を挿入するプロテクト仮想関数。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[operator=](#op_eq)|別の `basic_streambuf` オブジェクトの値をこのオブジェクトに割り当てます。|  
+|[eback](#eback)|A protected function that returns a pointer to the beginning of the input buffer.|  
+|[egptr](#egptr)|A protected function that returns a pointer just past the end of the input buffer.|  
+|[epptr](#epptr)|A protected function that returns a pointer just past the end of the output buffer.|  
+|[gbump](#gbump)|A protected function that adds `count` to the next pointer for the input buffer.|  
+|[getloc](#getloc)|Gets the `basic_streambuf` object's locale.|  
+|[gptr](#gptr)|A protected function that returns a pointer to the next element of the input buffer.|  
+|[imbue](#imbue)|A protected, virtual function called by [pubimbue](#pubimbue).|  
+|[in_avail](#in_avail)|Returns the number of elements that are ready to be read from the buffer.|  
+|[overflow](#overflow)|A protected virtual function that can be called when a new character is inserted into a full buffer.|  
+|[pbackfail](#pbackfail)|A protected virtual member function that tries to put back an element into the input stream, then make it the current element (pointed to by the next pointer).|  
+|[pbase](#pbase)|A protected function that returns a pointer to the beginning of the output buffer.|  
+|[pbump](#pbump)|A protected function that adds `count` to the next pointer for the output buffer.|  
+|[pptr](#pptr)|A protected function that returns a pointer to the next element of the output buffer.|  
+|[pubimbue](#pubimbue)|Sets the `basic_streambuf` object's locale.|  
+|[pubseekoff](#pubseekoff)|Calls [seekoff](#seekoff), a protected virtual function that is overridden in a derived class.|  
+|[pubseekpos](#pubseekpos)|Calls [seekpos](#seekpos), a protected virtual function that is overridden in a derived class and resets the current pointer position.|  
+|[pubsetbuf](#pubsetbuf)|Calls [setbuf](#setbuf), a protected virtual function that is overridden in a derived class.|  
+|[pubsync](#pubsync)|Calls [sync](#sync), a protected virtual function that is overridden in a derived class and updates the external stream associated with this buffer.|  
+|[sbumpc](#sbumpc)|Reads and returns the current element, moving the stream pointer.|  
+|[seekoff](#seekoff)|The protected virtual member function tries to alter the current positions for the controlled streams.|  
+|[seekpos](#seekpos)|The protected virtual member function tries to alter the current positions for the controlled streams.|  
+|[setbuf](#setbuf)|The protected virtual member function performs an operation particular to each derived stream buffer.|  
+|[setg](#setg)|A protected function that stores `_Gbeg` in the beginning pointer, `_Gnext` in the next pointer, and `_Gend` in the end pointer for the input buffer.|  
+|[setp](#setp)|A protected function that stores `_Pbeg` in the beginning pointer and `_Pend` in the end pointer for the output buffer.|  
+|[sgetc](#sgetc)|Returns current element without changing position in the stream.|  
+|[sgetn](#sgetn)|Returns the number of elements read.|  
+|[showmanyc](#showmanyc)|Protected virtual member function that returns a count of the number of characters that can be extracted from the input stream and ensure that the program will not be subject to an indefinite wait.|  
+|[snextc](#snextc)|Reads the current element and returns the following element.|  
+|[sputbackc](#sputbackc)|Puts a `char_type` in the stream.|  
+|[sputc](#sputc)|Puts a character into the stream.|  
+|[sputn](#sputn)|Puts a character string into the stream.|  
+|[stossc](#stossc)|Move past the current element in the stream.|  
+|[sungetc](#sungetc)|Gets a character from the stream.|  
+|[swap](#swap)|Exchanges the values in this object for the values in the provided `basic_streambuf` object parameter.|  
+|[sync](#sync)|A protected virtual function that tries to synchronize the controlled streams with any associated external streams.|  
+|[uflow](#uflow)|A protected virtual function that extracts the current element from the input stream.|  
+|[underflow](#underflow)|A protected virtual function that extracts the current element from the input stream.|  
+|[xsgetn](#xsgetn)|A protected virtual function that extracts elements from the input stream.|  
+|[xsputn](#xsputn)|A protected virtual function that inserts elements into the output stream.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<streambuf>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator=](#op_eq)|Assigns the values of this object from another `basic_streambuf` object.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<streambuf>  
+  
+ **Namespace:** std  
   
 ##  <a name="basic_streambuf"></a>  basic_streambuf::basic_streambuf  
- `basic_streambuf` 型のオブジェクトを構築します。  
+ Constructs an object of type `basic_streambuf`.  
   
 ```  
 basic_streambuf();
@@ -219,77 +262,77 @@ basic_streambuf();
 basic_streambuf(const basic_streambuf& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- この `basic_streambuf` オブジェクトに値を設定するために使用される `basic_streambuf` オブジェクトへの左辺値参照。  
+ An lvalue reference to the `basic_streambuf` object that is used to set the values for this `basic_streambuf` object.  
   
-### <a name="remarks"></a>コメント  
- 最初の保護されたコンストラクターは、入力バッファーと出力バッファーを制御するすべてのポインターに Null ポインターを格納します。 また、`locale::classic` をロケール オブジェクトに格納します。 詳細については、「[locale::classic](../standard-library/locale-class.md#classic)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ The first protected constructor stores a null pointer in all pointers controlling the input buffer and the output buffer. It also stores `locale::classic` in the locale object. For more information, see [locale::classic](../standard-library/locale-class.md#classic).  
   
- 2 つ目の保護されたコンストラクターは、ポインターとロケールを `right` からコピーします。  
+ The second protected constructor copies the pointers and locale from `right`.  
   
 ##  <a name="char_type"></a>  basic_streambuf::char_type  
- 型名を **Elem** テンプレート パラメーターに関連付けます。  
+ Associates a type name with the **Elem** template parameter.  
   
 ```  
 typedef Elem char_type;  
 ```  
   
 ##  <a name="eback"></a>  basic_streambuf::eback  
- 入力バッファーの先頭を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer to the beginning of the input buffer.  
   
 ```  
 char_type *eback() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- バッファーの先頭を指すポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the beginning of the input buffer.  
   
 ##  <a name="egptr"></a>  basic_streambuf::egptr  
- 入力バッファーの末尾の直後を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer just past the end of the input buffer.  
   
 ```  
 char_type *egptr() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 入力バッファーの末尾の直後を指すポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer just past the end of the input buffer.  
   
 ##  <a name="epptr"></a>  basic_streambuf::epptr  
- 出力バッファーの末尾の直後を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer just past the end of the output buffer.  
   
 ```  
 char_type *epptr() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 出力バッファーの末尾の直後を指すポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer just past the end of the output buffer.  
   
 ##  <a name="gbump"></a>  basic_streambuf::gbump  
- `count` を入力バッファーのネクスト ポインターに追加するプロテクト関数。  
+ A protected function that adds `count` to the next pointer for the input buffer.  
   
 ```  
 void gbump(int count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- マウス ポインターを進める量。  
+ The amount by which to advance the pointer.  
   
 ##  <a name="getloc"></a>  basic_streambuf::getloc  
- basic_streambuf オブジェクトのロケールを取得します。  
+ Gets the basic_streambuf object's locale.  
   
 ```  
 locale getloc() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 格納されているロケール オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The stored locale object.  
   
-### <a name="remarks"></a>コメント  
- 関連情報については、「[ios_base::getloc](../standard-library/ios-base-class.md#getloc)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For related information, see [ios_base::getloc](../standard-library/ios-base-class.md#getloc).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_getloc.cpp  
@@ -308,43 +351,43 @@ C
 ```  
   
 ##  <a name="gptr"></a>  basic_streambuf::gptr  
- 入力バッファーの次の要素を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer to the next element of the input buffer.  
   
 ```  
 char_type *gptr() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 入力バッファーの次の要素へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the next element of the input buffer.  
   
 ##  <a name="imbue"></a>  basic_streambuf::imbue  
- [pubimbue](#pubimbue) によって呼び出されるプロテクト仮想関数。  
+ A protected virtual function called by [pubimbue](#pubimbue).  
   
 ```  
 virtual void imbue(const locale& _Loc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Loc`  
- ロケールへの参照。  
+ A reference to a locale.  
   
-### <a name="remarks"></a>コメント  
- 既定の動作では、何も行いません。  
+### <a name="remarks"></a>Remarks  
+ The default behavior is to do nothing.  
   
 ##  <a name="in_avail"></a>  basic_streambuf::in_avail  
- バッファーから読み取る準備が整っている要素の数を返します。  
+ Returns the number of elements that are ready to be read from the buffer.  
   
 ```  
 streamsize in_avail();
 ```  
   
-### <a name="return-value"></a>戻り値  
- バッファーから読み取る準備が整っている要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements that are ready to be read from the buffer.  
   
-### <a name="remarks"></a>コメント  
- 場合、[読み取り位置](../standard-library/basic-streambuf-class.md)が使用できるメンバー関数を返します[egptr](#egptr) - [gptr](#gptr)です。 それ以外の場合は、[showmanyc](#showmanyc) を返します。  
+### <a name="remarks"></a>Remarks  
+ If a [read position](../standard-library/basic-streambuf-class.md) is available, the member function returns [egptr](#egptr) - [gptr](#gptr). Otherwise, it returns [showmanyc](#showmanyc).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_in_avail.cpp  
@@ -363,147 +406,147 @@ int main( )
 ```  
   
 ##  <a name="int_type"></a>  basic_streambuf::int_type  
- basic_streambuf スコープ内の型名をテンプレート パラメーター内の型のいずれかと関連付けます。  
+ Associates a type name within basic_streambuf scope with one of the types in a template parameter.  
   
 ```  
 typedef typename traits_type::int_type int_type;  
 ```  
   
 ##  <a name="off_type"></a>  basic_streambuf::off_type  
- basic_streambuf スコープ内の型名をテンプレート パラメーター内の型のいずれかと関連付けます。  
+ Associates a type name within basic_streambuf scope with one of the types in a template parameter.  
   
 ```  
 typedef typename traits_type::off_type off_type;  
 ```  
   
 ##  <a name="op_eq"></a>  basic_streambuf::operator=  
- 別の `basic_streambuf` オブジェクトの値をこのオブジェクトに割り当てます。  
+ Assigns the values of this object from another `basic_streambuf` object.  
   
 ```  
 basic_streambuf& operator=(const basic_streambuf& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- このオブジェクトに値を代入するために使用される `basic_streambuf` オブジェクトへの左辺値参照。  
+ An lvalue reference to the `basic_streambuf` object that is used to assign values to this object.  
   
-### <a name="remarks"></a>コメント  
- プロテクト メンバーの演算子は、入力バッファーと出力バッファーを制御するポインターを `right` からコピーします。 また、`right``.`[getloc()](#getloc) を `locale object` に格納します。 `*this` を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected member operator copies from `right` the pointers that control the input buffer and the output buffer. It also stores `right.`[getloc()](#getloc) in the `locale object`. It returns `*this`.  
   
 ##  <a name="overflow"></a>  basic_streambuf::overflow  
- いっぱいのバッファーに新しい文字が挿入されたときに呼び出すことができる、プロテクト仮想関数。  
+ A protected virtual function that can be called when a new character is inserted into a full buffer.  
   
 ```  
 virtual int_type overflow(int_type _Meta = traits_type::eof());
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Meta`  
- バッファーまたは **traits_type::**[eof](../standard-library/char-traits-struct.md#eof) に挿入する文字。  
+ The character to insert into the buffer, or **traits_type::**[eof](../standard-library/char-traits-struct.md#eof).  
   
-### <a name="return-value"></a>戻り値  
- 関数は失敗すると、**traits_type::eof** を返すか、例外をスローします。 それ以外の場合は、**traits_type::**[not_eof](../standard-library/char-traits-struct.md#not_eof)(_ *Meta*) を返します。 既定の動作では、**traits_type::eof** を返します。  
+### <a name="return-value"></a>Return Value  
+ If the function cannot succeed, it returns **traits_type::eof** or throws an exception. Otherwise, it returns **traits_type::**[not_eof](../standard-library/char-traits-struct.md#not_eof)(_ *Meta*). The default behavior is to return **traits_type::eof**.  
   
-### <a name="remarks"></a>コメント  
- _ *Meta* が **traits_type::eof** と等しくない場合、プロテクト仮想メンバー関数は、要素 **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*) を出力ストリームに挿入しようとします。 これはさまざまな方法で行うことができます。  
+### <a name="remarks"></a>Remarks  
+ If _ *Meta* does not compare equal to **traits_type::eof**, the protected virtual member function endeavors to insert the element **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*) into the output stream. It can do so in various ways:  
   
--   `write position` が使用可能な場合は、書き込み位置に要素を格納し、出力バッファーのネクスト ポインターをインクリメントできます。  
+-   If a `write position` is available, it can store the element into the write position and increment the next pointer for the output buffer.  
   
--   新しい記憶域または追加の記憶域を出力バッファーに割り当てることで、書き込み位置を使用可能にすることができます。  
+-   It can make a write position available by allocating new or additional storage for the output buffer.  
   
--   出力バッファーの先頭とネクスト ポインターの間の一部またはすべての要素をいくつかの外部の宛先に書き出すことで、書き込み位置を使用可能にすることができます。  
+-   It can make a write position available by writing out, to some external destination, some or all of the elements between the beginning and next pointers for the output buffer.  
   
- 仮想オーバーフロー関数は [sync](#sync) 関数と [underflow](#underflow) 関数とともに、streambuf から派生したクラスの特性を定義します。 派生した各クラスは、オーバーフローを異なる方法で実装できますが、呼び出すストリーム クラスとのインターフェイスは同じです。  
+ The virtual overflow function, together with the [sync](#sync) and [underflow](#underflow) functions, defines the characteristics of the streambuf-derived class. Each derived class might implement overflow differently, but the interface with the calling stream class is the same.  
   
- `overflow` 関数は、put 領域がいっぱいの時に `sputc` や `sputn` のようなパブリック `streambuf` 関数で最も頻繁に呼び出されますが、ストリーム クラスなどのその他のクラスはいつでも `overflow` を呼び出すことができます。  
+ The `overflow` function is most frequently called by public `streambuf` functions like `sputc` and `sputn` when the put area is full, but other classes, including the stream classes, can call `overflow` anytime.  
   
- 関数は、`pbase` ポインターと `pptr` ポインター間の put 領域内の文字を使用し、put 領域を再初期化します。 `overflow` 関数は、(`nCh` が `EOF` ではない場合は) `nCh` も使用する必要があります。または、次の呼び出しで使用されるように新しい put 領域に文字を配置することもできます。  
+ The function consumes the characters in the put area between the `pbase` and `pptr` pointers and then reinitializes the put area. The `overflow` function must also consume `nCh` (if `nCh` is not `EOF`), or it might choose to put that character in the new put area so that it will be consumed on the next call.  
   
- 消費の定義は、派生クラスによって異なります。 たとえば、`filebuf` クラスが文字をファイルに書き込むのに対し、`strstreambuf` クラスは、文字をそのバッファーに保持して、(バッファーが動的として指定されている場合は) オーバーフローへの呼び出しに応えてバッファーを拡張します。 この拡張は、古いバッファーを解放して、新しいより大きなバッファーで置換することで実現されます。 ポインターは必要に応じて調整されます。  
+ The definition of consume varies among derived classes. For example, the `filebuf` class writes its characters to a file, while the `strstreambuf` class keeps them in its buffer and (if the buffer is designated as dynamic) expands the buffer in response to a call to overflow. This expansion is achieved by freeing the old buffer and replacing it with a new, larger one. The pointers are adjusted as necessary.  
   
 ##  <a name="pbackfail"></a>  basic_streambuf::pbackfail  
- 要素を入力ストリームに戻そうと試み、その要素を現在の要素に (ネクスト ポインターによって指されるように) するプロテクト仮想メンバー関数。  
+ A protected virtual member function that tries to put back an element into the input stream, then make it the current element (pointed to by the next pointer).  
   
 ```  
 virtual int_type pbackfail(int_type _Meta = traits_type::eof());
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Meta`  
- バッファーまたは **traits_type::**[eof](../standard-library/char-traits-struct.md#eof) に挿入する文字。  
+ The character to insert into the buffer, or **traits_type::**[eof](../standard-library/char-traits-struct.md#eof).  
   
-### <a name="return-value"></a>戻り値  
- 関数は失敗すると、**traits_type::eof** を返すか、例外をスローします。 それ以外の場合、関数は別の値を返します。 既定の動作では、**traits_type::eof** を返します。  
+### <a name="return-value"></a>Return Value  
+ If the function cannot succeed, it returns **traits_type::eof** or throws an exception. Otherwise, it returns some other value. The default behavior is to return **traits_type::eof**.  
   
-### <a name="remarks"></a>コメント  
- _ *Meta* が **traits_type::eof** と等しい場合、プッシュ バックする要素は、実質的に、現在の要素の前に既にストリームにある要素になります。 それ以外の場合、その要素が **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*) で置き換えられます。 この関数は、さまざまな方法で要素を戻すことができます。  
+### <a name="remarks"></a>Remarks  
+ If _ *Meta* compares equal to **traits_type::eof**, the element to push back is effectively the one already in the stream before the current element. Otherwise, that element is replaced by **traits_type::**[to_char_type](../standard-library/char-traits-struct.md#to_char_type)(\_ *Meta*). The function can put back an element in various ways:  
   
--   戻り位置が使用可能な場合は、戻り位置に要素を格納し、入力バッファーのネクスト ポインターをデクリメントできます。  
+-   If a putback position is available, it can store the element into the putback position and decrement the next pointer for the input buffer.  
   
--   新しい記憶域または追加の記憶域を入力バッファーに割り当てることで、戻り位置を使用可能にすることができます。  
+-   It can make a putback position available by allocating new or additional storage for the input buffer.  
   
--   一般的な入力ストリームと出力ストリームがあるストリーム バッファーの場合、出力バッファーの先頭とネクスト ポインターの間の一部またはすべての要素をいくつかの外部の宛先に書き出すことで、戻り位置を使用可能にすることができます。  
+-   For a stream buffer with common input and output streams, it can make a putback position available by writing out, to some external destination, some or all of the elements between the beginning and next pointers for the output buffer.  
   
 ##  <a name="pbase"></a>  basic_streambuf::pbase  
- 出力バッファーの先頭を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer to the beginning of the output buffer.  
   
 ```  
 char_type *pbase() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 出力バッファーの先頭を指すポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the beginning of the output buffer.  
   
 ##  <a name="pbump"></a>  basic_streambuf::pbump  
- `count` を出力バッファーのネクスト ポインターに追加するプロテクト関数。  
+ A protected function that adds `count` to the next pointer for the output buffer.  
   
 ```  
 void pbump(int count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `count`  
- 書き込み位置を前方に移動する文字数。  
+ The number of characters by which to move the write position forward.  
   
 ##  <a name="pos_type"></a>  basic_streambuf::pos_type  
- basic_streambuf スコープ内の型名をテンプレート パラメーター内の型のいずれかと関連付けます。  
+ Associates a type name within basic_streambuf scope with one of the types in a template parameter.  
   
 ```  
 typedef typename traits_type::pos_type pos_type;  
 ```  
   
 ##  <a name="pptr"></a>  basic_streambuf::pptr  
- 出力バッファーの次の要素を指すポインターを返すプロテクト関数。  
+ A protected function that returns a pointer to the next element of the output buffer.  
   
 ```  
 char_type *pptr() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 出力バッファーの次の要素を指すポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the next element of the output buffer.  
   
 ##  <a name="pubimbue"></a>  basic_streambuf::pubimbue  
- basic_streambuf オブジェクトのロケールを設定します。  
+ Sets the basic_streambuf object's locale.  
   
 ```  
 locale pubimbue(const locale& _Loc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Loc`  
- ロケールへの参照。  
+ A reference to a locale.  
   
-### <a name="return-value"></a>戻り値  
- ロケール オブジェクトに格納されている以前の値。  
+### <a name="return-value"></a>Return Value  
+ The previous value stored in the locale object.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、_ *Loc* をロケール オブジェクトに格納し、[imbue](#imbue) を呼び出します。  
+### <a name="remarks"></a>Remarks  
+ The member function stores _ *Loc* in the locale object and calls [imbue](#imbue).  
   
-### <a name="example"></a>例  
-  `pubimbue` の使用例については、「[basic_ios::imbue](../standard-library/basic-ios-class.md#imbue)」を参照してください。  
+### <a name="example"></a>Example  
+  See [basic_ios::imbue](../standard-library/basic-ios-class.md#imbue) for an example that uses `pubimbue`.  
   
 ##  <a name="pubseekoff"></a>  basic_streambuf::pubseekoff  
- 派生クラスでオーバーライドされるプロテクト仮想関数 [seekoff](#seekoff) を呼び出します。  
+ Calls [seekoff](#seekoff), a protected virtual function that is overridden in a derived class.  
   
 ```  
 pos_type pubseekoff(off_type _Off,
@@ -511,44 +554,44 @@ pos_type pubseekoff(off_type _Off,
     ios_base::openmode _Which = ios_base::in | ios_base::out);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- シークする `_Way` の相対位置。  
+ The position to seek for relative to `_Way`.  
   
  `_Way`  
- オフセット演算の開始位置。 有効値については、「[seekdir](../standard-library/ios-base-class.md#seekdir)」を参照してください。  
+ The starting point for offset operations. See [seekdir](../standard-library/ios-base-class.md#seekdir) for possible values.  
   
  `_Which`  
- ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。  
+ Specifies the mode for the pointer position. The default is to allow you to modify the read and write positions.  
   
-### <a name="return-value"></a>戻り値  
- 新しい位置または無効なストリーム位置 ( [seekoff](#seekoff)(_ *Off*, `_Way`, `_Which`) ) を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the new position or an invalid stream position ( [seekoff](#seekoff)(_ *Off*, `_Way`, `_Which`) ).  
   
-### <a name="remarks"></a>コメント  
- `_Way` に対してポインターを移動します。  
+### <a name="remarks"></a>Remarks  
+ Moves the pointer relative to `_Way`.  
   
 ##  <a name="pubseekpos"></a>  basic_streambuf::pubseekpos  
- 派生クラスでオーバーライドされ、現在のポインターの位置をリセットするプロテクト仮想関数 [seekpos](#seekpos) を呼び出します。  
+ Calls [seekpos](#seekpos), a protected virtual function that is overridden in a derived class, and resets the current pointer position.  
   
 ```  
 pos_type pubseekpos(pos_type _Sp, ios_base::openmode _Which = ios_base::in | ios_base::out);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Sp`  
- シークする位置。  
+ The position to seek for.  
   
  `_Which`  
- ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。  
+ Specifies the mode for the pointer position. The default is to allow you to modify the read and write positions.  
   
-### <a name="return-value"></a>戻り値  
- 新しい位置または無効なストリーム位置。 ストリームの位置が無効であることを確認するには、戻り値と `pos_type(off_type(-1))` を比較します。  
+### <a name="return-value"></a>Return Value  
+ The new position or an invalid stream position. To determine if the stream position is invalid, compare the return value with `pos_type(off_type(-1))`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[seekpos](#seekpos)(_ *Sp*, `_Which`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [seekpos](#seekpos)(_ *Sp*, `_Which`).  
   
 ##  <a name="pubsetbuf"></a>  basic_streambuf::pubsetbuf  
- 派生クラスでオーバーライドされるプロテクト仮想関数 [setbuf](#setbuf) を呼び出します。  
+ Calls [setbuf](#setbuf), a protected virtual function that is overridden in a derived class.  
   
 ```  
 basic_streambuf<Elem, Tr> *pubsetbuf(
@@ -556,40 +599,40 @@ basic_streambuf<Elem, Tr> *pubsetbuf(
     streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Buffer`  
- このインスタンス化の `char_type` を指すポインター。  
+ A pointer to `char_type` for this instantiation.  
   
  `count`  
- バッファーのサイズ。  
+ The size of the buffer.  
   
-### <a name="return-value"></a>戻り値  
- [setbuf](#setbuf)( `_Buffer`, `count`) を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns [setbuf](#setbuf)( `_Buffer`, `count`).  
   
 ##  <a name="pubsync"></a>  basic_streambuf::pubsync  
- 派生クラスでオーバーライドされ、このバッファーに関連付けられた外部ストリームを更新するプロテクト仮想関数 [sync](#sync) を呼び出します。  
+ Calls [sync](#sync), a protected virtual function that is overridden in a derived class, and updates the external stream associated with this buffer.  
   
 ```  
 int pubsync();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 返します[同期](#sync)場合は-1 が失敗します。  
+### <a name="return-value"></a>Return Value  
+ Returns [sync](#sync) or -1 if failure.  
   
 ##  <a name="sbumpc"></a>  basic_streambuf::sbumpc  
- ストリーム ポインターを移動させながら、現在の要素を読み取って返します。  
+ Reads and returns the current element, moving the stream pointer.  
   
 ```  
 int_type sbumpc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の要素。  
+### <a name="return-value"></a>Return Value  
+ The current element.  
   
-### <a name="remarks"></a>コメント  
- 読み取り位置が使用可能な場合、メンバー関数は **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **\***[gptr](#gptr)) を返し、入力バッファーのネクスト ポインターをインクリメントします。 それ以外の場合は、[uflow](#uflow) を返します。  
+### <a name="remarks"></a>Remarks  
+ If a read position is available, the member function returns **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **\***[gptr](#gptr)) and increments the next pointer for the input buffer. Otherwise, it returns [uflow](#uflow).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sbumpc.cpp  
@@ -618,7 +661,7 @@ int main( )
 ```  
   
 ##  <a name="seekoff"></a>  basic_streambuf::seekoff  
- 制御対象ストリームの現在の位置を変更しようと試みるプロテクト仮想メンバー関数。  
+ A protected virtual member function that tries to alter the current positions for the controlled streams.  
   
 ```  
 virtual pos_type seekoff(
@@ -627,58 +670,58 @@ virtual pos_type seekoff(
     ios_base::openmode _Which = ios_base::in | ios_base::out);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Off`  
- シークする `_Way` の相対位置。  
+ The position to seek for relative to `_Way`.  
   
  `_Way`  
- オフセット演算の開始位置。 有効値については、「[seekdir](../standard-library/ios-base-class.md#seekdir)」を参照してください。  
+ The starting point for offset operations. See [seekdir](../standard-library/ios-base-class.md#seekdir) for possible values.  
   
  `_Which`  
- ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。  
+ Specifies the mode for the pointer position. The default is to allow you to modify the read and write positions.  
   
-### <a name="return-value"></a>戻り値  
- 新しい位置または無効なストリーム位置 ( `seekoff` (_ *Off*, `_Way`, `_Which`) ) を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the new position or an invalid stream position ( `seekoff` (_ *Off*, `_Way`, `_Which`) ).  
   
-### <a name="remarks"></a>コメント  
- 新しい位置は、次のように決定されます。  
+### <a name="remarks"></a>Remarks  
+ The new position is determined as follows:  
   
--   `_Way` == `ios_base::beg` の場合、新しい位置はストリームの先頭と _ *Off* です。  
+-   If `_Way` == `ios_base::beg`, the new position is the beginning of the stream plus _ *Off*.  
   
--   `_Way` == `ios_base::cur` の場合、新しい位置は現在のストリームの位置と _ *Off* です。  
+-   If `_Way` == `ios_base::cur`, the new position is the current stream position plus _ *Off*.  
   
--   `_Way` == `ios_base::end` の場合、新しい位置はストリームの最後と _ *Off* です。  
+-   If `_Way` == `ios_base::end`, the new position is the end of the stream plus _ *Off*.  
   
- 通常、**which & ios_base::in** が 0 以外の場合、入力ストリームが影響を受け、**which & ios_base::out** が 0 以外の場合、出力ストリームが影響を受けます。 ただし、このパラメーターの実際の使用は、派生ストリーム バッファー間で異なります。  
+ Typically, if **which & ios_base::in** is nonzero, the input stream is affected, and if **which & ios_base::out** is nonzero, the output stream is affected. Actual use of this parameter varies among derived stream buffers, however.  
   
- 関数はストリームの位置の変更に成功すると、結果のストリームの位置を返します。複数の位置の変更に成功した場合は、結果のストリームの位置のうちの 1 つを返します。 それ以外の場合は、無効なストリームの位置が返されます。 既定の動作では、無効なストリームの位置を返します。  
+ If the function succeeds in altering the stream position or positions, it returns the resulting stream position or one of the resulting stream positions. Otherwise, it returns an invalid stream position. The default behavior is to return an invalid stream position.  
   
 ##  <a name="seekpos"></a>  basic_streambuf::seekpos  
- 制御対象ストリームの現在の位置を変更しようと試みるプロテクト仮想メンバー関数。  
+ A protected virtual member function that tries to alter the current positions for the controlled streams.  
   
 ```  
 virtual pos_type seekpos(pos_type _Sp, ios_base::openmode _Which = ios_base::in | ios_base::out);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Sp`  
- シークする位置。  
+ The position to seek for.  
   
  `_Which`  
- ポインター位置のモードを指定します。 既定では、読み取り位置および書き込み位置を変更できます。  
+ Specifies the mode for the pointer position. The default is to allow you to modify the read and write positions.  
   
-### <a name="return-value"></a>戻り値  
- 新しい位置または無効なストリーム位置。 ストリームの位置が無効であることを確認するには、戻り値と `pos_type(off_type(-1))` を比較します。  
+### <a name="return-value"></a>Return Value  
+ The new position, or an invalid stream position. To determine if the stream position is invalid, compare the return value with `pos_type(off_type(-1))`.  
   
-### <a name="remarks"></a>コメント  
- 新しい位置は _ *Sp* です。  
+### <a name="remarks"></a>Remarks  
+ The new position is _ *Sp*.  
   
- 通常、**which & ios_base::in** が 0 以外の場合、入力ストリームが影響を受け、**which & ios_base::out** が 0 以外の場合、出力ストリームが影響を受けます。 ただし、このパラメーターの実際の使用は、派生ストリーム バッファー間で異なります。  
+ Typically, if **which & ios_base::in** is nonzero, the input stream is affected, and if **which & ios_base::out** is nonzero, the output stream is affected. Actual use of this parameter varies among derived stream buffers, however.  
   
- 関数はストリームの位置の変更に成功すると、結果のストリームの位置を返します。複数の位置の変更に成功した場合は、結果のストリームの位置のうちの 1 つを返します。 それ以外の場合は、無効なストリームの位置 (-1) を返します。 既定の動作では、無効なストリームの位置を返します。  
+ If the function succeeds in altering the stream position or positions, it returns the resulting stream position or one of the resulting stream positions. Otherwise, it returns an invalid stream position (-1). The default behavior is to return an invalid stream position.  
   
 ##  <a name="setbuf"></a>  basic_streambuf::setbuf  
- 各派生ストリーム バッファーに固有の操作を実行するプロテクト仮想メンバー関数。  
+ A protected virtual member function that performs an operation particular to each derived stream buffer.  
   
 ```  
 virtual basic_streambuf<Elem, Tr> *setbuf(
@@ -686,21 +729,21 @@ virtual basic_streambuf<Elem, Tr> *setbuf(
     streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Buffer`  
- バッファーへのポインター。  
+ Pointer to a buffer.  
   
  `count`  
- バッファーのサイズ。  
+ Size of the buffer.  
   
-### <a name="return-value"></a>戻り値  
- 既定の動作では、**this** が返されます。  
+### <a name="return-value"></a>Return Value  
+ The default behavior is to return **this**.  
   
-### <a name="remarks"></a>コメント  
- 「[basic_filebuf](../standard-library/basic-filebuf-class.md)」を参照してください。 `setbuf` は `streambuf` オブジェクトが使用するメモリ領域を提供します。 派生クラス内の定義でのバッファーの使用方法。  
+### <a name="remarks"></a>Remarks  
+ See [basic_filebuf](../standard-library/basic-filebuf-class.md). `setbuf` provides an area of memory for the `streambuf` object to use. How the buffer is used in defined in the derived classes.  
   
 ##  <a name="setg"></a>  basic_streambuf::setg  
- 開始ポインターの _ *Gbeg*、ネクスト ポインターの `_Gnext`、およびエンド ポインターの `_Gend` を入力バッファー用に格納するプロテクト関数。  
+ A protected function that stores _ *Gbeg* in the beginning pointer, `_Gnext` in the next pointer, and `_Gend` in the end pointer for the input buffer.  
   
 ```  
 void setg(char_type* _Gbeg,
@@ -708,44 +751,44 @@ void setg(char_type* _Gbeg,
     char_type* _Gend);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *_Gbeg*  
- バッファーの先頭を指すポインター。  
+ A pointer to the beginning of the buffer.  
   
  `_Gnext`  
- バッファーの中心付近を指すポインター。  
+ A pointer to somewhere in the middle of the buffer.  
   
  `_Gend`  
- バッファーの末尾を指すポインター。  
+ A pointer to the end of the buffer.  
   
 ##  <a name="setp"></a>  basic_streambuf::setp  
- 開始ポインターの `_Pbeg` およびエンド ポインターの `_Pend` を出力バッファー用に格納するプロテクト関数。  
+ A protected function that stores `_Pbeg` in the beginning pointer and `_Pend` in the end pointer for the output buffer.  
   
 ```  
 void setp(char_type* _Pbeg, char_type* _Pend);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Pbeg`  
- バッファーの先頭を指すポインター。  
+ A pointer to the beginning of the buffer.  
   
  `_Pend`  
- バッファーの末尾を指すポインター。  
+ A pointer to the end of the buffer.  
   
 ##  <a name="sgetc"></a>  basic_streambuf::sgetc  
- ストリーム内の位置を変更せずに、現在の要素を返します。  
+ Returns current element without changing position in the stream.  
   
 ```  
 int_type sgetc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の要素。  
+### <a name="return-value"></a>Return Value  
+ The current element.  
   
-### <a name="remarks"></a>コメント  
- 読み取り位置が使用可能な場合、メンバー関数は **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `*`[gptr](#gptr)) を返します。 それ以外の場合は、[underflow](#underflow) を返します。  
+### <a name="remarks"></a>Remarks  
+ If a read position is available, the member function returns **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `*`[gptr](#gptr)). Otherwise, it returns [underflow](#underflow).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sgetc.cpp  
@@ -766,9 +809,9 @@ int main( )
 ```  
   
 ##  <a name="sgetn"></a>  basic_streambuf::sgetn  
- 最大 `count` 文字を入力バッファーから抽出し、指定のバッファー `ptr` にそれらを格納します。  
+ Extracts up to `count` characters from the input buffer and stores them in the provided buffer `ptr`.  
   
- 渡された値が正しいことの確認を呼び出し元に依存するため、このメソッドは安全ではない可能性があります。  
+ This method is potentially unsafe, as it relies on the caller to check that the passed values are correct.  
   
 ```  
 streamsize sgetn(
@@ -776,20 +819,20 @@ streamsize sgetn(
     streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 抽出した文字を格納するバッファー。  
+ The buffer to contain the extracted characters.  
   
  `count`  
- 読み取られる要素数。  
+ The number of elements to read.  
   
-### <a name="return-value"></a>戻り値  
- 読み取られる要素数。 詳細については、「[streamsize](../standard-library/ios-typedefs.md#streamsize)」を参照してください。  
+### <a name="return-value"></a>Return Value  
+ The number of elements read. See [streamsize](../standard-library/ios-typedefs.md#streamsize) for more information.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は [xsgetn](#xsgetn)( `ptr`, `count`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [xsgetn](#xsgetn)( `ptr`, `count`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sgetn.cpp  
@@ -817,29 +860,29 @@ int main()
 ```  
   
 ##  <a name="showmanyc"></a>  basic_streambuf::showmanyc  
- 入力ストリームから抽出できる文字数のカウントを返し、プログラムが無期限の待機状態にならないようにするプロテクト仮想メンバー関数。  
+ A protected virtual member function that returns a count of the number of characters that can be extracted from the input stream and ensure that the program will not be subject to an indefinite wait.  
   
 ```  
 virtual streamsize showmanyc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 既定の動作では、0 が返されます。  
+### <a name="return-value"></a>Return Value  
+ The default behavior is to return zero.  
   
 ##  <a name="snextc"></a>  basic_streambuf::snextc  
- 現在の要素を読み取り、次の要素を返します。  
+ Reads the current element and returns the following element.  
   
 ```  
 int_type snextc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ストリームの次の要素。  
+### <a name="return-value"></a>Return Value  
+ The next element in the stream.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は [sbumpc](#sbumpc) を呼び出し、その関数が **traits_type::**[eof](../standard-library/char-traits-struct.md#eof) を返す場合には、**traits_type::eof** を返します。 それ以外の場合は、[sgetc](#sgetc) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function calls [sbumpc](#sbumpc) and, if that function returns **traits_type::**[eof](../standard-library/char-traits-struct.md#eof), returns **traits_type::eof**. Otherwise, it returns [sgetc](#sgetc).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_snextc.cpp  
@@ -867,23 +910,23 @@ aa97
 ```  
   
 ##  <a name="sputbackc"></a>  basic_streambuf::sputbackc  
- ストリームに char_type を配置します。  
+ Puts a char_type in the stream.  
   
 ```  
 int_type sputbackc(char_type _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 文字。  
+ The character.  
   
-### <a name="return-value"></a>戻り値  
- 文字またはエラーを返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the character or failure.  
   
-### <a name="remarks"></a>コメント  
- 戻り位置が使用可能で、`_Ch` がその位置に格納されている文字と同じ場合には、メンバー関数は入力バッファーのネクスト ポインターをデクリメントし、**traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `_Ch`) を返します。 それ以外の場合は、[pbackfail](#pbackfail)( `_Ch`) を返します。  
+### <a name="remarks"></a>Remarks  
+ If a putback position is available and `_Ch` compares equal to the character stored in that position, the member function decrements the next pointer for the input buffer and returns **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `_Ch`). Otherwise, it returns [pbackfail](#pbackfail)( `_Ch`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sputbackc.cpp  
@@ -911,23 +954,23 @@ int main( )
 ```  
   
 ##  <a name="sputc"></a>  basic_streambuf::sputc  
- ストリームに単一の文字を渡します。  
+ Puts a character into the stream.  
   
 ```  
 int_type sputc(char_type _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- 文字。  
+ The character.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は、文字を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the character, if successful.  
   
-### <a name="remarks"></a>コメント  
- `write position` が使用可能な場合、メンバー関数は `_Ch` を書き込み位置に格納し、出力バッファーのネクスト ポインターをインクリメントし、**traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `_Ch`) を返します。 それ以外の場合は、[overflow](#overflow)( `_Ch`) を返します。  
+### <a name="remarks"></a>Remarks  
+ If a `write position` is available, the member function stores `_Ch` in the write position, increments the next pointer for the output buffer, and returns **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `_Ch`). Otherwise, it returns [overflow](#overflow)( `_Ch`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sputc.cpp  
@@ -950,26 +993,26 @@ a
 ```  
   
 ##  <a name="sputn"></a>  basic_streambuf::sputn  
- ストリームに文字列を渡します。  
+ Puts a character string into the stream.  
   
 ```  
 streamsize sputn(const char_type* ptr, streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 文字列。  
+ The character string.  
   
  `count`  
- 文字数。  
+ The count of characters.  
   
-### <a name="return-value"></a>戻り値  
- ストリームに実際に挿入された文字数。  
+### <a name="return-value"></a>Return Value  
+ The number of characters actually inserted into the stream.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は [xsputn](#xsputn)( `ptr`, `count`) を返します。 詳細については、このメンバーの「コメント」セクションを参照してください。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [xsputn](#xsputn)( `ptr`, `count`). See the Remarks section of this member for more information.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sputn.cpp  
@@ -992,16 +1035,16 @@ test
 ```  
   
 ##  <a name="stossc"></a>  basic_streambuf::stossc  
- ストリーム内の現在の要素の直後に移動します。  
+ Move past the current element in the stream.  
   
 ```  
 void stossc();
 ```  
   
-### <a name="remarks"></a>コメント  
- メンバー関数は、[sbumpc](#sbumpc) を呼び出します。 このメンバー関数を指定するために実装は不要です。  
+### <a name="remarks"></a>Remarks  
+ The member function calls [sbumpc](#sbumpc). Note that an implementation is not required to supply this member function.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_stossc.cpp  
@@ -1021,19 +1064,19 @@ int main( )
 ```  
   
 ##  <a name="sungetc"></a>  basic_streambuf::sungetc  
- ストリームから単一の文字を取得します。  
+ Gets a character from the stream.  
   
 ```  
 int_type sungetc();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 文字またはエラーを返します。  
+### <a name="return-value"></a>Return Value  
+ Returns either the character or failure.  
   
-### <a name="remarks"></a>コメント  
- 戻り位置が使用可能な場合、メンバー関数は入力バッファーのネクスト ポインターをデクリメントし、`traits_type::`[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `*`[gptr](#gptr)) を返します。 ただし、現在のバッファーの状態でキャプチャできるように、読み取る最後の文字を判断できない場合もあります。 この場合、関数は [pbackfail](#pbackfail) を返します。 このような状況を避けるためには、戻す文字を追跡し、`sputbackc(ch)` を呼び出します。これはストリームの先頭で呼び出さず、複数の文字を戻そうとしなければ、失敗しません。  
+### <a name="remarks"></a>Remarks  
+ If a putback position is available, the member function decrements the next pointer for the input buffer and returns `traits_type::`[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( `*`[gptr](#gptr)). However, it is not always possible to determine the last character read so that it can be captured in the state of the current buffer. If this is true, then the function returns [pbackfail](#pbackfail). To avoid this situation, keep track of the character to put back and call `sputbackc(ch)`, which will not fail provided you don't call it at the beginning of the stream and you don't try to put back more than one character.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // basic_streambuf_sungetc.cpp  
@@ -1068,93 +1111,93 @@ int main( )
 ```  
   
 ##  <a name="swap"></a>  basic_streambuf::swap  
- このオブジェクトの値を、指定した `basic_streambuf` オブジェクトの値と交換します。  
+ Exchanges the values in this object for the values in the provided `basic_streambuf` object.  
   
 ```  
 void swap(basic_streambuf& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`right`|値を交換するために使用される `basic_streambuf` オブジェクトの左辺値参照。|  
+|`right`|An lvalue reference to the `basic_streambuf` object that is used to exchange values.|  
   
-### <a name="remarks"></a>コメント  
- プロテクト メンバー関数は、`input buffer` および `output buffer` を制御するすべてのポインターを `right` と交換します。 `right``.`[getloc()](#getloc) も `locale` オブジェクトと交換します。  
+### <a name="remarks"></a>Remarks  
+ The protected member function exchanges with `right` all the pointers controlling the `input buffer` and the `output buffer`. It also exchanges `right.`[getloc()](#getloc) with the `locale` object.  
   
 ##  <a name="sync"></a>  basic_streambuf::sync  
- 制御されているストリームと関連付けられている外部ストリームとの同期を試みるプロテクト仮想関数。  
+ A protected virtual function that tries to synchronize the controlled streams with any associated external streams.  
   
 ```  
 virtual int sync();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が失敗すると、-1 を返します。 既定の動作では、0 が返されます。  
+### <a name="return-value"></a>Return Value  
+ If the function cannot succeed, it returns -1. The default behavior is to return zero.  
   
-### <a name="remarks"></a>コメント  
- `sync` には出力バッファーの開始ポインターとネクスト ポインター間の任意の要素の記述が必要です。 入力バッファーのネクスト ポインターとエンド ポインター間の任意の要素を戻す必要はありません。  
+### <a name="remarks"></a>Remarks  
+ `sync` involves writing out any elements between the beginning and next pointers for the output buffer. It does not involve putting back any elements between the next and end pointers for the input buffer.  
   
 ##  <a name="traits_type"></a>  basic_streambuf::traits_type  
- 型名を **Tr** テンプレート パラメーターに関連付けます。  
+ Associates a type name with the **Tr** template parameter.  
   
 ```  
 typedef Tr traits_type;  
 ```  
   
 ##  <a name="uflow"></a>  basic_streambuf::uflow  
- 入力ストリームから現在の要素を抽出するプロテクト仮想関数。  
+ A protected virtual function that extracts the current element from the input stream.  
   
 ```  
 virtual int_type uflow();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の要素。  
+### <a name="return-value"></a>Return Value  
+ The current element.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、現在の要素 **ch** を入力バッファーから抽出しようとし、現在のストリームの位置を進め、**traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **ch**) として要素を返します。 これはさまざまな方法で行うことができます。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function tries to extract the current element **ch** from the input stream, then advance the current stream position, and return the element as **traits_type::**[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **ch**). It can do so in various ways:  
   
--   読み取り位置が使用可能な場合は、読み取り位置に格納されている要素として **ch** を使用し、入力バッファーのネクスト ポインターを進めます。  
+-   If a read position is available, it takes **ch** as the element stored in the read position and advances the next pointer for the input buffer.  
   
--   いくつかの外部ソースから直接、要素を読み取り、それを値 **ch** として配付できます。  
+-   It can read an element directly, from some external source, and deliver it as the value **ch**.  
   
--   一般的な入力ストリームと出力ストリームがあるストリーム バッファーの場合、出力バッファーの先頭とネクスト ポインターの間の一部またはすべての要素をいくつかの外部の宛先に書き出すことで、読み取り位置を使用可能にすることができます。 または、入力バッファーに新しい記憶域または追加の記憶域を割り当てることができます。 その後、関数はいくつかの外部ソースから 1 つまたは複数の要素を読み取ります。  
+-   For a stream buffer with common input and output streams, it can make a read position available by writing out, to some external destination, some or all of the elements between the beginning and next pointers for the output buffer. Or it can allocate new or additional storage for the input buffer. The function then reads in, from some external source, one or more elements.  
   
- 関数は失敗すると、**traits_type::**[eof](../standard-library/char-traits-struct.md#eof) を返すか、例外をスローします。 それ以外の場合、上記のように変換された入力ストリームの現在の要素 `ch` を返して、入力バッファーのネクスト ポインターを進めます。 既定の動作では、[underflow](#underflow) を呼び出し、その関数が **traits_type::eof** を返す場合は、**traits_type::eof** を返します。 それ以外の場合、関数は上記のように変換された入力ストリームの現在の要素 **ch** を返して、入力バッファーのネクスト ポインターを進めます。  
+ If the function cannot succeed, it returns **traits_type::**[eof](../standard-library/char-traits-struct.md#eof), or throws an exception. Otherwise, it returns the current element `ch` in the input stream, converted as described above, and advances the next pointer for the input buffer. The default behavior is to call [underflow](#underflow) and, if that function returns **traits_type::eof**, to return **traits_type::eof**. Otherwise, the function returns the current element **ch** in the input stream, converted as previously described, and advances the next pointer for the input buffer.  
   
 ##  <a name="underflow"></a>  basic_streambuf::underflow  
- 入力ストリームから現在の要素を抽出するプロテクト仮想関数。  
+ Protected, virtual function to extract the current element from the input stream.  
   
 ```  
 virtual int_type underflow();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の要素。  
+### <a name="return-value"></a>Return Value  
+ The current element.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、現在のストリームの位置を進めずに現在の要素 **ch** を入力ストリームから抽出しようとし、それを `traits_type::`[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **ch**) として返します。 これはさまざまな方法で行うことができます。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function endeavors to extract the current element **ch** from the input stream, without advancing the current stream position, and return it as `traits_type::`[to_int_type](../standard-library/char-traits-struct.md#to_int_type)( **ch**). It can do so in various ways:  
   
--   読み取り位置が使用可能な場合、**ch** は読み取り位置に格納されている要素です。 この詳細については、[basic_streambuf クラス](../standard-library/basic-streambuf-class.md)の「コメント」セクションを参照してください。  
+-   If a read position is available, **ch** is the element stored in the read position. For more information on this, see the Remarks section of the [basic_streambuf Class](../standard-library/basic-streambuf-class.md).  
   
--   新しい記憶域または追加の記憶域を入力バッファーに割り当てた後に、いくつかの外部ソースから 1 つまたは複数の要素を読み取ることで、読み取り位置を使用可能にすることができます。 この詳細については、[basic_streambuf クラス](../standard-library/basic-streambuf-class.md)の「コメント」セクションを参照してください。  
+-   It can make a read position available by allocating new or additional storage for the input buffer, then reading in, from some external source, one or more elements. For more information on this, see the Remarks section of the [basic_streambuf Class](../standard-library/basic-streambuf-class.md).  
   
- 関数は失敗すると、`traits_type::`[eof](../standard-library/char-traits-struct.md#eof)`()` を返すか、例外をスローします。 それ以外の場合、上記のように変換された入力ストリームの現在の要素が返されます。 既定の動作では、`traits_type::eof()` が返されます。  
+ If the function cannot succeed, it returns `traits_type::`[eof](../standard-library/char-traits-struct.md#eof)`()` or throws an exception. Otherwise, it returns the current element in the input stream, converted as previously described. The default behavior is to return `traits_type::eof()`.  
   
- 仮想 `underflow` 関数は [sync](#sync) 関数と [overflow](#overflow) 関数とともに、`streambuf` から派生したクラスの特性を定義します。 派生した各クラスは、`underflow` を異なる方法で実装できますが、呼び出すストリーム クラスとのインターフェイスは同じです。  
+ The virtual `underflow` function, with the [sync](#sync) and [overflow](#overflow) functions, defines the characteristics of the `streambuf`-derived class. Each derived class might implement `underflow` differently, but the interface with the calling stream class is the same.  
   
- `underflow` 関数は、get 領域が空のときに [sgetc](#sgetc) や [sgetn](#sgetn) のようなパブリック `streambuf` 関数で最も頻繁に呼び出されますが、ストリーム クラスなどのその他のクラスはいつでも `underflow` を呼び出すことができます。  
+ The `underflow` function is most frequently called by public `streambuf` functions like [sgetc](#sgetc) and [sgetn](#sgetn) when the get area is empty, but other classes, including the stream classes, can call `underflow` anytime.  
   
- `underflow` 関数は get 領域に入力ソースからの文字を提供します。 get 領域に文字が含まれている場合、`underflow` は最初の文字を返します。 get 領域が空の場合、get 領域をいっぱいにして次の文字を返します (これは get 領域に残ります)。 これ以上使用できる文字がない場合には、`underflow` は `EOF` を返し、get 領域を空のままにします。  
+ The `underflow` function supplies the get area with characters from the input source. If the get area contains characters, `underflow` returns the first character. If the get area is empty, it fills the get area and returns the next character (which it leaves in the get area). If there are no more characters available, then `underflow` returns `EOF` and leaves the get area empty.  
   
- `strstreambuf` クラスでは、`underflow` は [egptr](#egptr) ポインターを調整して、`overflow` への呼び出しによって動的に割り当てられたストレージにアクセスします。  
+ In the `strstreambuf` class, `underflow` adjusts the [egptr](#egptr) pointer to access storage that was dynamically allocated by a call to `overflow`.  
   
 ##  <a name="xsgetn"></a>  basic_streambuf::xsgetn  
- 入力ストリームから要素を抽出するプロテクト仮想関数。  
+ Protected, virtual function to extract elements from the input stream.  
   
- 渡された値が正しいことの確認を呼び出し元に依存するため、このメソッドは安全ではない可能性があります。  
+ This method is potentially unsafe, as it relies on the caller to check that the passed values are correct.  
   
 ```  
 virtual streamsize xsgetn(
@@ -1162,42 +1205,42 @@ virtual streamsize xsgetn(
     streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 抽出した文字を格納するバッファー。  
+ The buffer to contain the extracted characters.  
   
  `count`  
- 抽出する要素数。  
+ The number of elements to extract.  
   
-### <a name="return-value"></a>戻り値  
- 抽出された要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements extracted.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、[sbumpc](#sbumpc) を繰り返し呼び出すのと同じように、最大 `count` の要素を入力ストリームから抽出し、それらを `ptr` で始まる配列に格納します。 実際に抽出された要素の数を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function extracts up to `count` elements from the input stream, as if by repeated calls to [sbumpc](#sbumpc), and stores them in the array beginning at `ptr`. It returns the number of elements actually extracted.  
   
 ##  <a name="xsputn"></a>  basic_streambuf::xsputn  
- 出力ストリームに要素を挿入するプロテクト仮想関数。  
+ Protected, virtual function to insert elements into the output stream.  
   
 ```  
 virtual streamsize xsputn(const char_type* ptr, streamsize count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `ptr`  
- 挿入する要素へのポインター。  
+ Pointer to elements to insert.  
   
  `count`  
- 挿入する要素の数。  
+ Number of elements to insert.  
   
-### <a name="return-value"></a>戻り値  
- ストリームに実際に挿入された要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements actually inserted into the stream.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数は、[sputc](#sputc) を繰り返し呼び出すのと同じように、`ptr` で始まる配列から最大 `count` の要素を出力ストリームに挿入します。 出力ストリームへの文字の挿入は、すべての `count` 文字が書き込まれるか、`sputc( count)` の呼び出しが `traits::eof()` を返すと停止します。 実際に挿入された要素の数を返します。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function inserts up to `count` elements into the output stream, as if by repeated calls to [sputc](#sputc), from the array beginning at `ptr`. The insertion of characters into the output stream stops once all `count` characters have been written, or if calling `sputc( count)` would return `traits::eof()`. It returns the number of elements actually inserted.  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
- [iostream プログラミング](../standard-library/iostream-programming.md)   
- [iostreams の規則](../standard-library/iostreams-conventions.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
+ [iostream Programming](../standard-library/iostream-programming.md)   
+ [iostreams Conventions](../standard-library/iostreams-conventions.md)
 
 

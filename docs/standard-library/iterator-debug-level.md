@@ -33,51 +33,51 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 441f493d8ada3ef232f60d917dc3f95812ba9114
-ms.openlocfilehash: d5f89f871f60827d894aa414e12b52f0c5f7ef38
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 1be5b41fb94638852df5b8756bbb4e103eaf20b9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="iteratordebuglevel"></a>_ITERATOR_DEBUG_LEVEL
-`_ITERATOR_DEBUG_LEVEL` マクロは、[チェックを行う反復子](../standard-library/checked-iterators.md)および[反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)が有効かどうかを制御します。 このマクロは、以前の `_SECURE_SCL` および `_HAS_ITERATOR_DEBUGGING` マクロを置き換え、組み合わせたものです。  
+The `_ITERATOR_DEBUG_LEVEL` macro controls whether [checked iterators](../standard-library/checked-iterators.md) and [debug iterator support](../standard-library/debug-iterator-support.md) are enabled. This macro supersedes and combines the functionality of the older `_SECURE_SCL` and `_HAS_ITERATOR_DEBUGGING` macros.  
   
-## <a name="macro-values"></a>マクロの値  
-`_ITERATOR_DEBUG_LEVEL` マクロの有効値を次の表に示します。  
+## <a name="macro-values"></a>Macro Values  
+The following table summarizes the possible values for the `_ITERATOR_DEBUG_LEVEL` macro.  
   
-|コンパイル モード|マクロの値|説明|  
+|Compilation mode|Macro value|Description|  
 |----------------------|----------------|-----------------|  
 |**Debug**|||  
-||0|チェックを行う反復子を無効にし、反復子のデバッグを無効にします。|  
-||1|チェックを行う反復子を有効にし、反復子のデバッグを無効にします。|  
-||2 (既定値)|反復子のデバッグを有効にします。チェックを行う反復子は関連しません。|  
+||0|Disables checked iterators and disables iterator debugging.|  
+||1|Enables checked iterators and disables iterator debugging.|  
+||2 (Default)|Enables iterator debugging; checked iterators are not relevant.|  
 |**Release**|||  
-||0 (既定値)|チェックを行う反復子を無効にします。|  
-||1|チェックを行う反復子を有効にします。反復子のデバッグは関連しません。|  
+||0 (Default)|Disables checked iterators.|  
+||1|Enables checked iterators; iterator debugging is not relevant.|  
   
-リリース モードでは、`_ITERATOR_DEBUG_LEVEL` に 2 を指定するとコンパイラはエラーを生成します。  
+In release mode, the compiler generates an error if you specify `_ITERATOR_DEBUG_LEVEL` as 2.  
   
-## <a name="remarks"></a>コメント  
-`_ITERATOR_DEBUG_LEVEL` マクロは、[チェックを行う反復子](../standard-library/checked-iterators.md)が有効かどうか、およびデバッグ モードで[反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)が有効かどうかを制御します。 `_ITERATOR_DEBUG_LEVEL` が 1 または 2 と定義されている場合、チェックを行う反復子は、コンテナーの境界が上書きされないようにします。 `_ITERATOR_DEBUG_LEVEL` が 0 の場合、反復子はチェックされません。 `_ITERATOR_DEBUG_LEVEL` が 1 と定義されている場合、反復子の安全でない使用によってランタイム エラーが発生し、プログラムが終了します。 `_ITERATOR_DEBUG_LEVEL` が 2 と定義されている場合、反復子の安全でない使用によってアサートが発生し、ランタイム エラー ダイアログによってデバッガーに侵入できます。 
+## <a name="remarks"></a>Remarks  
+The `_ITERATOR_DEBUG_LEVEL` macro controls whether [checked iterators](../standard-library/checked-iterators.md) are enabled, and in Debug mode, whether [debug iterator support](../standard-library/debug-iterator-support.md) is enabled. If `_ITERATOR_DEBUG_LEVEL` is defined as 1 or 2, checked iterators ensure that the bounds of your containers are not overwritten. If `_ITERATOR_DEBUG_LEVEL` is 0, iterators are not checked. When `_ITERATOR_DEBUG_LEVEL` is defined as 1, any unsafe iterator use causes a runtime error and the program is terminated. When `_ITERATOR_DEBUG_LEVEL` is defined as 2, unsafe iterator use causes an assert and a runtime error dialog that lets you break into the debugger. 
 
-`_ITERATOR_DEBUG_LEVEL` マクロでは、`_SECURE_SCL` および `_HAS_ITERATOR_DEBUGGING` マクロと同様の機能がサポートされるため、特定の状況で使用するマクロおよびマクロ値を判断できない場合があります。 混乱を回避するために、`_ITERATOR_DEBUG_LEVEL` マクロのみを使用することをお勧めします。 次の表では、既存のコードの `_SECURE_SCL` および `_HAS_ITERATOR_DEBUGGING` のさまざまな値に使用する `_ITERATOR_DEBUG_LEVEL` マクロの同等の値を示します。  
+Because the `_ITERATOR_DEBUG_LEVEL` macro supports similar functionality to the `_SECURE_SCL` and `_HAS_ITERATOR_DEBUGGING` macros, you may be uncertain which macro and macro value to use in a particular situation. To prevent confusion, we recommend that you use only the `_ITERATOR_DEBUG_LEVEL` macro. This table describes the equivalent `_ITERATOR_DEBUG_LEVEL` macro value to use for various values of `_SECURE_SCL` and `_HAS_ITERATOR_DEBUGGING` in existing code.  
   
 |**_ITERATOR_DEBUG_LEVEL** |**_SECURE_SCL** |**_HAS_ITERATOR_DEBUGGING**|
 |---|---|---|
-|0 (リリースの既定値)|0 (無効)|0 (無効)|
-|1|1 (有効)|0 (無効)|
-|2 (デバッグの既定値)|(関連性なし)|1 (デバッグ モードで有効)|
+|0 (Release default)|0 (disabled)|0 (disabled)|
+|1|1 (enabled)|0 (disabled)|
+|2 (Debug default)|(not relevant)|1 (enabled in Debug mode)|
   
-チェックを行う反復子に関する警告を無効にする方法の詳細については、「[_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md)」を参照してください。  
+For information on how to disable warnings about checked iterators, see [_SCL_SECURE_NO_WARNINGS](../standard-library/scl-secure-no-warnings.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
-`_ITERATOR_DEBUG_LEVEL` マクロの値を指定するには、[/D](../build/reference/d-preprocessor-definitions.md) コンパイラ オプションを使用して、コマンド ラインで定義するか、または C++ 標準ライブラリ ヘッダーがソース ファイルに含まれる前に `#define` を使用します。 たとえば、コマンド ラインで、*sample.cpp* をデバッグ モードでコンパイルし、反復子のデバッグのサポートを使用するには、`_ITERATOR_DEBUG_LEVEL` マクロ定義を指定します。  
+To specify a value for the `_ITERATOR_DEBUG_LEVEL` macro, use a [/D](../build/reference/d-preprocessor-definitions.md) compiler option to define it on the command line, or use `#define` before the C++ Standard Library headers are included in your source files. For example, on the command line, to compile *sample.cpp* in debug mode and to use debug iterator support, you can specify the `_ITERATOR_DEBUG_LEVEL` macro definition:  
   
 `cl /EHsc /Zi /MDd /D_ITERATOR_DEBUG_LEVEL=1 sample.cpp`  
   
-ソース ファイルで、反復子を定義する標準ライブラリ ヘッダーの前にマクロを指定します。  
+In a source file, specify the macro before any standard library headers that define iterators.  
   
 ```cpp  
 // sample.cpp  
@@ -89,8 +89,8 @@ ms.lasthandoff: 02/24/2017
 // ...
 ```  
   
-## <a name="see-also"></a>関連項目  
-[チェックを行う反復子](../standard-library/checked-iterators.md)   
-[反復子のデバッグのサポート](../standard-library/debug-iterator-support.md)   
-[安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+[Checked Iterators](../standard-library/checked-iterators.md)   
+[Debug Iterator Support](../standard-library/debug-iterator-support.md)   
+[Safe Libraries: C++ Standard Library](../standard-library/safe-libraries-cpp-standard-library.md)
 

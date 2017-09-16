@@ -1,99 +1,116 @@
 ---
-title: "HTML の基礎 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "HTML, 概要 (HTML の)"
+title: HTML Basics | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- HTML [MFC], about HTML
 ms.assetid: aab8ea9f-12d4-4bdd-a585-ac3124081a2a
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
----
-# HTML の基礎
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 765f52d5de6f85346eefe13ce60db45520a25552
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ほとんどのブラウザーでは、表示するページの HTML ソースを確認できます。  ユーザーが複数の HTML \(ハイパーテキストのマークアップ言語\) を参照するソースを表示するとき、テキストが混在している山かっこで \(\<\>\) で囲みます。  
+---
+# <a name="html-basics"></a>HTML Basics
+Most browsers have the capability of examining the HTML source of the pages you browse. When you view the source you will see a number of HTML (Hypertext markup language) tags, surrounded by angle brackets(<>), interspersed with text.  
   
- HTML を使用して以下の手順では、簡単な Web ページを作成するためのタグ。  これらの手順では、メモ帳のファイルにプレーンテキストを入力し、数を変更してファイルを保存し、変更を参照するために、ブラウザーのページを再読み込みします。  
+ The steps below use HTML tags to build a simple Web page. In these steps, you'll type plain text into a file in Notepad, make a few changes, save the file, and reload your page in the browser to see your changes.  
   
-#### HTML ファイルを作成するには  
+#### <a name="to-create-an-html-file"></a>To create an HTML file  
   
-1.  メモ帳か、プレーンテキスト エディターを開きます。  
+1.  Open Notepad or any plain text editor.  
   
-2.  **ファイル** メニューで、`New`をクリックします。  
+2.  From the **File** menu, choose `New`.  
   
-3.  次の行を入力する:  
+3.  Type the following lines:  
   
-    ```  
-    <HTML>  
-    <HEAD>  
-    <TITLE>Top HTML Tags</TITLE>  
-    </HEAD>  
-    </HTML>  
-    ```  
+ ```  
+ <HTML>  
+ <HEAD>  
+ <TITLE>Top HTML Tags</TITLE>  
+ </HEAD>  
+ </HTML>  
+ ```  
   
-4.  **ファイル** メニューで、**\[保存\]** をクリックします、c:\\webpages\\First.htm.としてファイルを保存します。  エディターにファイルを開いたままにしておきます。  
+4.  From the **File** menu, choose **Save**, and save the file as c:\webpages\First.htm. Leave the file open in the editor.  
   
-5.  **ファイル** メニューのブラウザーを選択するか **開く**を入力するブラウザーの URL のエディット ボックスの `file://C:/webpages/first.htm` をに切り替えれば。  ウィンドウ キャプションを持つ空のページが「HTML タグを超えるのを参照する必要があります」。  
+5.  Switch to your browser, and from the **File** menu, choose **Open**, or type `file://C:/webpages/first.htm` in the browser's URL edit box. You should see a blank page with the window caption "Top HTML Tags."  
   
-     タグが山かっこ組み合わせられに格納されていることを確認します。  タグでは大文字と小文字を区別しませんが、タグを際立たせます大文字がよく使用されます。  
+     Notice the tags are paired and are included in angle brackets. Tags are not case-sensitive, but capitalization is often used to make tags stand out.  
   
-     タグ \<は HTML\> ドキュメントを起動し、\/HTML\> タグ \<を終了します。  終了タグ \(常に必要\) 開始タグと同じですが、タグの前にはスラッシュ \(\/\) です。  そこに山かっこ \(\<\) と開始タグの間には空白が必要です。  
+     The tag \<HTML> starts the document, and the tag \</HTML> ends it. Ending tags (not always required) are the same as the starting tag, but have a forward slash (/) in front of the tag. There should be no spaces between the angle bracket (<) and the start of your tag.  
   
-6.  \/HEAD の行、型とメモ帳 \<に戻る\> とと:  
+6.  Switch back to Notepad, and after the \</HEAD> line, type:  
   
-    ```  
-    <BODY>  
+ ```  
+ <BODY>  
     HTML is swell.  
     Life is good.  
-    </BODY>  
-    ```  
+ </BODY>  
+ ```  
   
-7.  **ファイル** メニューで、**\[保存\]** をクリックします。  
+7.  From the **File** menu, choose **Save**.  
   
-8.  ブラウザーに戻り、ページを更新します。  
+8.  Switch back to your browser and refresh the page.  
   
-     Word、ブラウザー ウィンドウのクライアント領域に表示されます。  復帰を無視することに注意してください。  改行する場合に、最初の行 `<BR>` タグが必要です。  
+     The words will appear in the client area of your browser's window. Notice that your carriage return is ignored. If you want to have a line break, you must include a `<BR>` tag after the first line.  
   
-     ドキュメントの本文に追加する本体\> と \<\/BODY\> まで \<の テキストには続いたり、挿入するすべての手順です。  
+     For all the steps that follow, insert the text anywhere between \<BODY> and \</BODY> to add to the body of your document.  
   
-9. ヘッダーを追加する:  
+9. Add a header:  
   
-    ```  
-    <H3>Here's the big picture</H3>  
-    ```  
+ ```  
+ <H3>Here's the big picture</H3>  
+ ```  
   
-10. ページと同じディレクトリに格納される .gif ファイルを使用してイメージを追加する:  
+10. Add an image, using a .gif file saved in the same directory as your page:  
   
-    ```  
-    <IMG src="yourfile.gif">  
-    ```  
+ ```  
+ <IMG src="yourfile.gif">  
+ ```  
   
-11. リストを追加する:  
+11. Add a list:  
   
-    ```  
-    <UL>Make me an unordered list.  
-    <LI>One programmer</LI>  
-    <LI>Ten SDKs</LI>  
-    <LI>Great Internet Apps</LI>  
-    </UL>  
-    ```  
+ ```  
+ <UL>Make me an unordered list.  
+ <LI>One programmer</LI>  
+ <LI>Ten SDKs</LI>  
+ <LI>Great Internet Apps</LI>  
+ </UL>  
+ ```  
   
-12. リストに番号を追加するには、\/UL の UL\> と \<タグの代わりに、\<OL \<\> と \<\/OL\> タグを\> 使用します。  
+12. To number the list instead, use paired \<OL> and \</OL> tags in place of the \<UL> and \</UL> tags.  
   
- これは開始する必要があります。  Web ページの大きい機能を参照すれば、HTML ソースを調べることによってどのように作成されるかを確認できます。  Microsoft の Front Page などの HTML エディターは単純と詳細ページを作成するために使用できます。  
+ That should get you started. If you see a great feature on a Web page, you can find out how it was created by examining the HTML source. HTML editors such as Microsoft Front Page can be used to create both simple and advanced pages.  
   
- 、ビルドしているファイルのすべての HTML ソースを次に示します。:  
+ Here's the entire HTML source for the file you've been building:  
   
 ```  
 <HTML>  
@@ -114,9 +131,11 @@ Life is good.
 </HTML>  
 ```  
   
- タグの詳細については、"属性と拡張は、Hypertext Markup Language \(HTML\) 仕様を参照します:  
+ For a complete description of tags, attributes, and extensions, see the Hypertext Markup Language (HTML) specification:  
   
- [http:\/\/www.w3.org\/pub\/WWW\/MarkUp\/](http://www.w3.org/pub/WWW/MarkUp/)  
+ [http://www.w3.org/pub/WWW/MarkUp/](http://www.w3.org/pub/www/markup/)  
   
-## 参照  
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)
+
+

@@ -1,73 +1,92 @@
 ---
-title: "アプリケーションでのプロパティ シートの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AddPage メソッド"
-  - "CPropertyPage クラス, スタイル"
-  - "Create メソッド [C++], プロパティ シート"
-  - "ダイアログ リソース"
-  - "ダイアログ テンプレート, プロパティ シート"
-  - "DoModal メソッドのプロパティ シート"
-  - "プロパティ ページ, プロパティ シート"
-  - "プロパティ シート, プロパティ シートの概要"
+title: Using Property Sheets in Your Application | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- dialog templates [MFC], property sheets
+- dialog resources
+- property pages [MFC], property sheets
+- DoModal method property sheets
+- AddPage method [MFC]
+- property sheets, about property sheets
+- Create method [MFC], property sheets
+- CPropertyPage class [MFC], styles
 ms.assetid: 240654d4-152b-4e3f-af7b-44234339206e
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# アプリケーションでのプロパティ シートの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 45c1c305309c7136dc3b749bb1489c818764479b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アプリケーションのプロパティ シートを使用するには、次の手順を実行する:  
+---
+# <a name="using-property-sheets-in-your-application"></a>Using Property Sheets in Your Application
+To use a property sheet in your application, complete the following steps:  
   
-1.  各プロパティ ページのダイアログ テンプレート リソースを作成します。  ユーザーが 1 ページから別のページに切り替えるできるだけ一貫して配置します各ページであることに注意してください。  
+1.  Create a dialog template resource for each property page. Keep in mind that the user may be switching from one page to another, so lay out each page as consistently as possible.  
   
-     すべてのページのダイアログ テンプレートは同じサイズである必要はありません。  フレームワークは、プロパティ ページに対するプロパティ シートに割り当てる領域のサイズを決めるために最大ページ サイズを使用します。  
+     The dialog templates for all pages do not have to be the same size. The framework uses the size of the largest page to determine how much space to allocate in the property sheet for the property pages.  
   
-     プロパティ ページのダイアログ テンプレート リソースを作成するときに、プロパティ ダイアログ ボックスのプロパティ シートで次のスタイルを指定する必要があります:  
+     When you create the dialog template resource for a property page, you must specify the following styles in the Dialog Properties property sheet:  
   
-    -   このページのタブに表示するテキストに **全般** ページの **キャプション** のエディット ボックスを設定します。  
+    -   Set the **Caption** edit box on the **General** page to the text you wish to appear in the tab for this page.  
   
-    -   **子**に **スタイル** ページの **IDataObject::GetData** のリスト ボックスを設定します。  
+    -   Set the **Style** list box on the **Styles** page to **Child**.  
   
-    -   **細枠**に **スタイル** ページの **Insert New Control** のリスト ボックスを設定します。  
+    -   Set the **Border** list box on the **Styles** page to **Thin**.  
   
-    -   **スタイル** ページの **Titlebar** のチェック ボックスがオンになっていることを確認します。  
+    -   Ensure that the **Titlebar** check box on the **Styles** page is selected.  
   
-    -   **その他のスタイル** ページの **無効** のチェック ボックスがオンになっていることを確認します。  
+    -   Ensure that the **Disabled** check box on the **More Styles** page is selected.  
   
-2.  [CPropertyPage](../mfc/reference/cpropertypage-class.md)\-各プロパティ ページ ダイアログ テンプレートに対応する派生クラス\) を作成します。  [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)を参照してください。  基本クラスとして `CPropertyPage` をクリックします。  
+2.  Create a [CPropertyPage](../mfc/reference/cpropertypage-class.md)-derived class corresponding to each property page dialog template. See [Adding a Class](../ide/adding-a-class-visual-cpp.md). Choose `CPropertyPage` as the base class.  
   
-3.  このプロパティ ページの値を保持するメンバー変数を作成します。  プロパティ ページにメンバー変数を追加する方法は、メンバー変数をダイアログ ボックスに追加するとプロパティ ページを特化したダイアログ ボックスであるため、まったく同じです。  詳細については、「[ダイアログ ボックス コントロールのメンバー変数の定義](../mfc/defining-member-variables-for-dialog-controls.md)」を参照してください。  
+3.  Create member variables to hold the values for this property page. The process for adding member variables to a property page is exactly the same as adding member variables to a dialog box, because a property page is a specialized dialog box. For more information, see [Defining Member Variables for Dialog Controls](../windows/defining-member-variables-for-dialog-controls.md).  
   
-4.  ソース・コードの [CPropertySheet](../mfc/reference/cpropertysheet-class.md) オブジェクトを構築します。  通常、プロパティ シートを表示するコマンドのハンドラーの `CPropertySheet` オブジェクトを構築します。  このオブジェクトは、プロパティ シートを表します。  [DoModal](../Topic/CPropertySheet::DoModal.md) 関数とモーダル プロパティ シートを作成する場合、フレームワークは、3 個のコマンド ボタンを既定で指定する: わかりました、取り消しは、適用します。  フレームワークは [作成](../Topic/CPropertySheet::Create.md) 関数で作成されたモードレス プロパティ シートのコマンド ボタンを作成します。  に追加し、そのほかのコントロール \(プレビュー ウィンドウなど\) またはモードレス プロパティ シートを表示するよう `CPropertySheet` からクラスを派生する必要はありません。  この手順は、プロパティ シートを閉じるために使用できる既定のコントロールがないため、モードレス プロパティ シートに必要です。  
+4.  Construct a [CPropertySheet](../mfc/reference/cpropertysheet-class.md) object in your source code. Usually, you construct the `CPropertySheet` object in the handler for the command that displays the property sheet. This object represents the entire property sheet. If you create a modal property sheet with the [DoModal](../mfc/reference/cpropertysheet-class.md#domodal) function, the framework supplies three command buttons by default: OK, Cancel, and Apply. The framework creates no command buttons for modeless property sheets created with the [Create](../mfc/reference/cpropertysheet-class.md#create) function. You do not need to derive a class from `CPropertySheet` unless you want to either add other controls (such as a preview window) or display a modeless property sheet. This step is necessary for modeless property sheets because they do not contain any default controls that could be used to close the property sheet.  
   
-5.  プロパティ シートに追加するページごとに次の手順を実行します。:  
+5.  For each page to be added to the property sheet, do the following:  
   
-    -   各 `CPropertyPage`の 1 種類のオブジェクト \(この手順で前に作成した派生クラスを作成します。  
+    -   Construct one object for each `CPropertyPage`-derived class that you created earlier in this process.  
   
-    -   各ページの呼び出し [CPropertySheet::AddPage](../Topic/CPropertySheet::AddPage.md)。  
+    -   Call [CPropertySheet::AddPage](../mfc/reference/cpropertysheet-class.md#addpage) for each page.  
   
-     通常、`CPropertySheet` を作成するオブジェクトは、この手順で `CPropertyPage` オブジェクトを作成します。  ただし、`CPropertySheet`\-派生クラス、`CPropertySheet` オブジェクトに格納 `CPropertyPage` オブジェクトを埋め込み、`CPropertySheet`の各ページの `AddPage` を呼び出す場合は、派生クラスのコンストラクターの実装すれば。  `AddPage` は プロパティ シートのページの一覧への `CPropertyPage` オブジェクトを追加しますが、実際にはそのページのウィンドウを作成しません。  したがって `AddPage`を呼び出すには、プロパティ シートのウィンドウの作成まで待つ必要はありません; プロパティ シートのコンストラクターから `AddPage` を呼び出すことができます。  
+     Typically, the object that creates the `CPropertySheet` also creates the `CPropertyPage` objects in this step. However, if you implement a `CPropertySheet`-derived class, you can embed the `CPropertyPage` objects in the `CPropertySheet` object and call `AddPage` for each page from the `CPropertySheet`-derived class constructor. `AddPage` adds the `CPropertyPage` object to the property sheet's list of pages but does not actually create the window for that page. Therefore, it is not necessary to wait until creation of the property sheet window to call `AddPage`; you can call `AddPage` from the property sheet's constructor.  
   
-     プロパティ シートの単一行に合わせて、プロパティ シートに複数のタブがある場合既定では複数行に、タブを組み合わせて使用します。  スタックを無効にするには、**FALSE**にパラメーターがの [CPropertySheet::EnableStackedTabs](../Topic/CPropertySheet::EnableStackedTabs.md) を呼び出します。  プロパティ シートを作成するとき `EnableStackedTabs` を呼び出す必要があります。  
+     By default, if a property sheet has more tabs than will fit in a single row of the property sheet, the tabs will stack in multiple rows. To disable stacking, call [CPropertySheet::EnableStackedTabs](../mfc/reference/cpropertysheet-class.md#enablestackedtabs) with the parameter set to **FALSE**. You must call `EnableStackedTabs` when you create the property sheet.  
   
-6.  プロパティ シートを表示するに [CPropertySheet::DoModal](../Topic/CPropertySheet::DoModal.md) または [作成](../Topic/CPropertySheet::Create.md) を呼び出します。  モーダル ダイアログ ボックスとしてプロパティ シートを作成するに `DoModal` を呼び出します。  モードレス ダイアログ ボックスとしてプロパティ シートを作成するに **作成** を呼び出します。  
+6.  Call [CPropertySheet::DoModal](../mfc/reference/cpropertysheet-class.md#domodal) or [Create](../mfc/reference/cpropertysheet-class.md#create) to display the property sheet. Call `DoModal` to create a property sheet as a modal dialog box. Call **Create** to create the property sheet as a modeless dialog box.  
   
-7.  プロパティ シートのプロパティ ページと所有者間でデータを交換します。  これは技術情報 [データ交換](../mfc/exchanging-data.md)で説明します。  
+7.  Exchange data between property pages and the owner of the property sheet. This is explained in the article [Exchanging Data](../mfc/exchanging-data.md).  
   
- プロパティ シートを使用する方法の例については、MFC の一般的な [PROPDLG](../top/visual-cpp-samples.md)サンプルを参照してください。  
+ For an example of how to use property sheets, see the MFC General sample [PROPDLG](../visual-cpp-samples.md).  
   
-## 参照  
- [プロパティ シート](../mfc/property-sheets-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Property Sheets](../mfc/property-sheets-mfc.md)
+
+

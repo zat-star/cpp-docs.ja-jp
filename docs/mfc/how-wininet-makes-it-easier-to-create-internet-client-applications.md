@@ -1,59 +1,78 @@
 ---
-title: "WinInet を使ってインターネット クライアント アプリケーションを簡単に作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Windows ソケット [C++], および WinInet"
-  - "WinInet クラス, インターネット クライアント アプリケーション"
-  - "WinInet クラス, および WinSock"
+title: How WinInet Makes It Easier to Create Internet Client Applications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Windows Sockets [MFC], vs. WinInet
+- WinInet classes [MFC], vs. WinSock
+- WinInet classes [MFC], Internet client applications
 ms.assetid: dc0f9f47-3184-4e7a-8074-2c63e0359885
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# WinInet を使ってインターネット クライアント アプリケーションを簡単に作成する方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 63691437ad156494ecb0af2513ad6762f136e49d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Win32 インターネット拡張機能 \(WinInet は、FTP、HTTP、Gopher など、共通のインターネット プロトコルへのアクセスを提供します。  WinInet を使用すると、プログラミングの上位レベルにある特定のインターネット プロトコルの Winsock、TCP\/IP、または詳細を取扱わないでインターネット クライアント アプリケーションを記述できます。  WinInet を使い慣れた Win32 API インターフェイスを 3 つすべてのプロトコルに一貫した一連の関数を提供します。  この一貫性は基になるプロトコルが変更される変更を行う必要があるコード変更を最小限に抑えることができます \(たとえば、FTP から HTTP など\)。  
+---
+# <a name="how-wininet-makes-it-easier-to-create-internet-client-applications"></a>How WinInet Makes It Easier to Create Internet Client Applications
+The Win32 Internet Extensions, or WinInet, provide access to common Internet protocols, including gopher, FTP, and HTTP. Using WinInet, you can write Internet client applications at a higher level of programming, without having to deal with WinSock, TCP/IP, or the details of specific Internet protocols. WinInet provides a consistent set of functions for all three protocols, with a familiar Win32 API interface. This consistency minimizes code changes you need to make if the underlying protocol changes (for example, from FTP to HTTP).  
   
- Visual C\+\+ では、次の 2 通りの方法が WinInet を使用できます。  直接参照します \(詳細については、" [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] の OLE ドキュメントを\) Win32 インターネット関数を呼び出すことができます。また、[MFC WinInet クラス](../mfc/mfc-classes-for-creating-internet-client-applications.md)で WinInet を使用できます。  
+ Visual C++ provides two ways for you to use WinInet. You can call the Win32 Internet functions directly (see the OLE documentation in the Windows SDK for more information) or you can use WinInet through the [MFC WinInet classes](../mfc/mfc-classes-for-creating-internet-client-applications.md).  
   
- **WinInet を使用する:**  
+ **You can use WinInet to:**  
   
--   ダウンロード HTML ページ。  
+-   Download HTML pages.  
   
-     HTTP はサーバーからクライアント ブラウザーに HTML ページを転送するために使用されるプロトコルです。  
+     HTTP is a protocol used to transfer HTML pages from a server to a client browser.  
   
--   アップロードまたはファイルをダウンロードまたはディレクトリの一覧を取得する FTP Web 要求。  
+-   Send FTP requests to upload or download files or get directory listings.  
   
-     一般的な要求はファイルをダウンロードできる匿名ログオンです。  
+     A typical request is an anonymous logon to download a file.  
   
--   インターネット リソースへのアクセスについて Gopher のメニュー システムを使用します。  
+-   Use gopher's menu system for accessing resources on the Internet.  
   
-     メニュー項目は、検索できるそのほかのメニュー、被 ISAM データベース ニュースグループ、またはファイルを含む複数の型でもかまいません。  
+     Menu items can be several types, including other menus, an indexed database you can search, a newsgroup, or a file.  
   
- 3 つすべてのプロトコルでは、接続を確立し、サーバーに要求を、閉じる接続します。  
+ For all three protocols, you establish a connection, make requests to the server, and close the connection.  
   
- **MFC WinInet クラスを簡単に実現:**  
+ **The MFC WinInet classes make it easy to:**  
   
--   読み取りがハード ディスクからファイルに、HTTP、FTP、Gopher サーバーから情報を簡単に参照します。  
+-   Read information from HTTP, FTP, and gopher servers as easily as reading files from a hard drive.  
   
--   Winsock または TCP\/IP にプログラムせずに、HTTP、FTP、Gopher プロトコルを直接使用します。  
+-   Use HTTP, FTP, and gopher protocols without programming directly to WinSock or TCP/IP.  
   
-     Win32 インターネット関数を使用する開発者は、TCP\/IP または Windows ソケットを十分に理解しておく必要はありません。  まだ Winsock および TCP\/IP プロトコルを使用してソケット レベルに直接プログラミングできますが、インターネットを介して HTTP、FTP、Gopher などのプロトコルにアクセスするために MFC WinInet クラスを使用する方が簡単です。  多くの一般的な操作には、開発者が使用する特定のプロトコルの詳細を意識する必要はありません。  
+     Developers who use the Win32 Internet functions do not need to be familiar with TCP/IP or Windows Sockets. You can still program at the socket level, using WinSock and TCP/IP protocols directly, but it's even easier to use the MFC WinInet classes to access HTTP, FTP, and gopher protocols across the Internet. For many common operations, developers do not need to know the details of the particular protocol they are using.  
   
- インターネット上の他のコンピューターへのクライアントとしてコンピューターから実行できるさまざまな処理に長時間を要する場合があります。  これらの処理速度は、通常、ネットワーク接続の速度によって制限され、処理の別のネットワーク トラフィックと複雑さによって影響を受けることがあります。  たとえば、リモート FTP サーバーに接続は、アドレスを見つけるために、コンピューターが最初にサーバーの名前を検索する必要があります。  アプリケーションは、そのアドレスでサーバーに接続しようとします。  接続を開くと、ファイルを取得するために、実際に接続を使用するには、リモート コンピューターとサーバーは、ファイル転送プロトコル \(FTP の対話を開始します。  
+ Many operations that can be performed by your computer as a client to other computers on the Internet can take a long time. The speed of these operations is usually limited by the speed of your network connection, but they can also be affected by other network traffic and the complexity of the operation. Connecting to a remote FTP server, for example, requires that your computer first look up the name of that server to find its address. Your application will then attempt to connect to the server at that address. Once the connection is opened, your computer and the remote server will initiate a conversation with the file transfer protocol before you can actually use the connection to retrieve files.  
   
-## 参照  
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)   
- [MFC を使ってインターネット クライアント アプリケーションを簡単に作成する方法](../mfc/how-mfc-makes-it-easier-to-create-internet-client-applications.md)
+## <a name="see-also"></a>See Also  
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)   
+ [How MFC Makes It Easier to Create Internet Client Applications](../mfc/how-mfc-makes-it-easier-to-create-internet-client-applications.md)
+
+

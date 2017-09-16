@@ -1,5 +1,5 @@
 ---
-title: "LOGBRUSH 構造体 |Microsoft ドキュメント"
+title: LOGBRUSH Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- LOGBRUSH structure
+- LOGBRUSH structure [MFC]
 ms.assetid: 1bf96768-52c5-4444-9bb8-d41ba2e27e68
 caps.latest.revision: 11
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: eea7caf6139fd43dd77163271701d170c7a744e2
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cd4d96a7f7c858f8b3cf2e39bdc98233224a1e7a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="logbrush-structure"></a>LOGBRUSH 構造体
-`LOGBRUSH`構造体は、スタイル、色、および物理的なブラシのパターンを定義します。 Windows が使用して[CreateBrushIndirect](http://msdn.microsoft.com/library/windows/desktop/dd183487)と[構造体](http://msdn.microsoft.com/library/windows/desktop/dd162705)関数です。  
+# <a name="logbrush-structure"></a>LOGBRUSH Structure
+The `LOGBRUSH` structure defines the style, color, and pattern of a physical brush. It is used by the Windows [CreateBrushIndirect](http://msdn.microsoft.com/library/windows/desktop/dd183487) and [ExtCreatePen](http://msdn.microsoft.com/library/windows/desktop/dd162705) functions.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct tag LOGBRUSH { /* lb */  
@@ -53,56 +53,56 @@ typedef struct tag LOGBRUSH { /* lb */
 } LOGBRUSH;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `lbStyle`  
- ブラシのスタイルを指定します。 `lbStyle`メンバーは、次のスタイルのいずれかを指定する必要があります。  
+ Specifies the brush style. The `lbStyle` member must be one of the following styles:  
   
-- **BS_DIBPATTERN**ブラシをデバイスに依存しないビットマップ (DIB) 仕様で定義されるパターンです。 場合`lbStyle`は**BS_DIBPATTERN**、 **lbHatch**メンバーには、パックされた DIB へのハンドルが含まれています。  
+- **BS_DIBPATTERN** A pattern brush defined by a device-independent bitmap (DIB) specification. If `lbStyle` is **BS_DIBPATTERN**, the **lbHatch** member contains a handle to a packed DIB.  
   
-- **BS_DIBPATTERNPT**ブラシをデバイスに依存しないビットマップ (DIB) 仕様で定義されるパターンです。 場合`lbStyle`は**BS_DIBPATTERNPT**、 **lbHatch**メンバーには、パックされた DIB へのポインターが含まれています。  
+- **BS_DIBPATTERNPT** A pattern brush defined by a device-independent bitmap (DIB) specification. If `lbStyle` is **BS_DIBPATTERNPT**, the **lbHatch** member contains a pointer to a packed DIB.  
   
-- **BS_HATCHED**ハッチ ブラシ。  
+- **BS_HATCHED** Hatched brush.  
   
-- **BS_HOLLOW**白抜きのブラシ。  
+- **BS_HOLLOW** Hollow brush.  
   
-- **BS_NULL**と同じ**BS_HOLLOW**します。  
+- **BS_NULL** Same as **BS_HOLLOW**.  
   
-- **BS_PATTERN**メモリ ビットマップで定義されるパターン ブラシ。  
+- **BS_PATTERN** Pattern brush defined by a memory bitmap.  
   
-- **BS_SOLID**ソリッド ブラシ。  
+- **BS_SOLID** Solid brush.  
   
  `lbColor`  
- 描画するブラシの色を指定します。 場合`lbStyle`は、 **BS_HOLLOW**または**BS_PATTERN**スタイル、 **lbColor**は無視されます。 場合`lbStyle`は**BS_DIBPATTERN**または**BS_DIBPATTERNBT**の下位ワード**lbColor**を指定するかどうか、 **bmiColors**のメンバー、 [BITMAPINFO](../../mfc/reference/bitmapinfo-structure.md)構造は、明示的な赤、緑、青 (RGB) の値またはインデックスを現在実現論理パレットに含まれています。 **LbColor**メンバーは、次の値のいずれかを指定する必要があります。  
+ Specifies the color in which the brush is to be drawn. If `lbStyle` is the **BS_HOLLOW** or **BS_PATTERN** style, **lbColor** is ignored. If `lbStyle` is **BS_DIBPATTERN** or **BS_DIBPATTERNBT**, the low-order word of **lbColor** specifies whether the **bmiColors** members of the [BITMAPINFO](../../mfc/reference/bitmapinfo-structure.md) structure contain explicit red, green, blue (RGB) values or indices into the currently realized logical palette. The **lbColor** member must be one of the following values:  
   
-- **DIB_PAL_COLORS**カラー テーブルは、現在実現論理パレットに 16 ビットのインデックスの配列で構成されています。  
+- **DIB_PAL_COLORS** The color table consists of an array of 16-bit indices into the currently realized logical palette.  
   
-- **DIB_RGB_COLORS**カラー テーブルには、リテラルの RGB 値が含まれています。  
+- **DIB_RGB_COLORS** The color table contains literal RGB values.  
   
  *lbHatch*  
- 陰影のスタイルを指定します。 定義されているブラシのスタイルの意味は、`lbStyle`です。 場合`lbStyle`は**BS_DIBPATTERN**、 **lbHatch**メンバーには、パックされた DIB へのハンドルが含まれています。 場合`lbStyle`は**BS_DIBPATTERNPT**、 **lbHatch**メンバーには、パックされた DIB へのポインターが含まれています。 場合`lbStyle`は**BS_HATCHED**、 **lbHatch**メンバーは、陰影を作成するために使用する線の方向を指定します。 次の値のいずれかを指定できます。  
+ Specifies a hatch style. The meaning depends on the brush style defined by `lbStyle`. If `lbStyle` is **BS_DIBPATTERN**, the **lbHatch** member contains a handle to a packed DIB. If `lbStyle` is **BS_DIBPATTERNPT**, the **lbHatch** member contains a pointer to a packed DIB. If `lbStyle` is **BS_HATCHED**, the **lbHatch** member specifies the orientation of the lines used to create the hatch. It can be one of the following values:  
   
-- `HS_BDIAGONAL`45 度の上位方向へ、左から右へハッチ  
+- `HS_BDIAGONAL` A 45-degree upward, left-to-right hatch  
   
-- `HS_CROSS`水平および垂直方向の格子  
+- `HS_CROSS` Horizontal and vertical crosshatch  
   
-- `HS_DIAGCROSS`45 度格子  
+- `HS_DIAGCROSS` 45-degree crosshatch  
   
-- `HS_FDIAGONAL`45 度の下、左から右へハッチ  
+- `HS_FDIAGONAL` A 45-degree downward, left-to-right hatch  
   
-- `HS_HORIZONTAL`水平方向の陰影  
+- `HS_HORIZONTAL` Horizontal hatch  
   
-- `HS_VERTICAL`垂直方向の陰影  
+- `HS_VERTICAL` Vertical hatch  
   
- 場合`lbStyle`は**BS_PATTERN**、 **lbHatch**パターンを定義するビットマップへのハンドルします。 場合`lbStyle`は**BS_SOLID**または**BS_HOLLOW**、 **lbHatch**は無視されます。  
+ If `lbStyle` is **BS_PATTERN**, **lbHatch** is a handle to the bitmap that defines the pattern. If `lbStyle` is **BS_SOLID** or **BS_HOLLOW**, **lbHatch** is ignored.  
   
-## <a name="remarks"></a>コメント  
- **LbColor**ハッチ ブラシの前景の色を制御、 [CDC::SetBkMode](../../mfc/reference/cdc-class.md#setbkmode)と[CDC::SetBkColor](../../mfc/reference/cdc-class.md#setbkcolor)関数は、背景色を制御します。  
+## <a name="remarks"></a>Remarks  
+ Although **lbColor** controls the foreground color of a hatch brush, the [CDC::SetBkMode](../../mfc/reference/cdc-class.md#setbkmode) and [CDC::SetBkColor](../../mfc/reference/cdc-class.md#setbkcolor) functions control the background color.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** wingdi.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDC::GetCharABCWidths](../../mfc/reference/cdc-class.md#getcharabcwidths)
 
 

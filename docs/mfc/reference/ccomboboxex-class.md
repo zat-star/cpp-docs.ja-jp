@@ -1,5 +1,5 @@
 ---
-title: "CComboBoxEx クラス |Microsoft ドキュメント"
+title: CComboBoxEx Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -29,12 +29,21 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- extended combo boxes, CComboBoxEx class
-- Windows common controls [C++], extended combo boxes
-- common controls [C++], extended combo boxes
-- combo boxes [C++], CComboBoxEx class
-- Internet Explorer 4.0 common controls
-- CComboBoxEx class
+- CComboBoxEx [MFC], CComboBoxEx
+- CComboBoxEx [MFC], Create
+- CComboBoxEx [MFC], CreateEx
+- CComboBoxEx [MFC], DeleteItem
+- CComboBoxEx [MFC], GetComboBoxCtrl
+- CComboBoxEx [MFC], GetEditCtrl
+- CComboBoxEx [MFC], GetExtendedStyle
+- CComboBoxEx [MFC], GetImageList
+- CComboBoxEx [MFC], GetItem
+- CComboBoxEx [MFC], HasEditChanged
+- CComboBoxEx [MFC], InsertItem
+- CComboBoxEx [MFC], SetExtendedStyle
+- CComboBoxEx [MFC], SetImageList
+- CComboBoxEx [MFC], SetItem
+- CComboBoxEx [MFC], SetWindowTheme
 ms.assetid: 33ca960a-2409-478c-84a4-a2ee8ecfe8f7
 caps.latest.revision: 26
 author: mikeblome
@@ -54,74 +63,74 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: e88ed701111b49e3a5d3b32868bfad8e77206086
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f56aaf25507bebe2bb3c4b73133949360d53eb79
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="ccomboboxex-class"></a>CComboBoxEx クラス
-イメージ リストをサポートすることにより、コンボ ボックス コントロールを拡張します。  
+# <a name="ccomboboxex-class"></a>CComboBoxEx Class
+Extends the combo box control by providing support for image lists.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CComboBoxEx : public CComboBox  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CComboBoxEx::CComboBoxEx](#ccomboboxex)|`CComboBoxEx` オブジェクトを構築します。|  
+|[CComboBoxEx::CComboBoxEx](#ccomboboxex)|Constructs a `CComboBoxEx` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CComboBoxEx::Create](#create)|コンボ ボックスを作成し、それにアタッチ、`CComboBoxEx`オブジェクトです。|  
-|[CComboBoxEx::CreateEx](#createex)|指定した Windows 拡張スタイルを使用してコンボ ボックスを作成しに、 **ComboBoxEx**オブジェクトです。|  
-|[CComboBoxEx::DeleteItem](#deleteitem)|項目を削除、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::GetComboBoxCtrl](#getcomboboxctrl)|子のコンボ ボックス コントロールへのポインターを取得します。|  
-|[CComboBoxEx::GetEditCtrl](#geteditctrl)|編集コントロールの部分を識別するハンドルを取得、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::GetExtendedStyle](#getextendedstyle)|使用されている拡張スタイルを取得、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::GetImageList](#getimagelist)|割り当てられているイメージ リストへのポインターを取得、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::GetItem](#getitem)|項目の情報の取得、指定された**ComboBoxEx**項目。|  
-|[CComboBoxEx::HasEditChanged](#haseditchanged)|内容をユーザーが変更されたかどうかを判断、 **ComboBoxEx** 」と入力してコントロールを編集します。|  
-|[CComboBoxEx::InsertItem](#insertitem)|新しい項目を挿入、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::SetExtendedStyle](#setextendedstyle)|内で拡張スタイルを設定、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::SetImageList](#setimagelist)|用のイメージ リストの設定、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::SetItem](#setitem)|内の項目の属性を設定、 **ComboBoxEx**コントロールです。|  
-|[CComboBoxEx::SetWindowTheme](#setwindowtheme)|Visual スタイル拡張コンボ ボックス コントロールを設定します。|  
+|[CComboBoxEx::Create](#create)|Creates the combo box and attaches it to the `CComboBoxEx` object.|  
+|[CComboBoxEx::CreateEx](#createex)|Creates a combo box with the specified Windows extended styles and attaches it to a **ComboBoxEx** object.|  
+|[CComboBoxEx::DeleteItem](#deleteitem)|Removes an item from a **ComboBoxEx** control.|  
+|[CComboBoxEx::GetComboBoxCtrl](#getcomboboxctrl)|Retrieves a pointer to the child combo box control.|  
+|[CComboBoxEx::GetEditCtrl](#geteditctrl)|Retrieves the handle to the edit control portion of a **ComboBoxEx** control.|  
+|[CComboBoxEx::GetExtendedStyle](#getextendedstyle)|Retrieves the extended styles that are in use for a **ComboBoxEx** control.|  
+|[CComboBoxEx::GetImageList](#getimagelist)|Retrieves a pointer to the image list assigned to a **ComboBoxEx** control.|  
+|[CComboBoxEx::GetItem](#getitem)|Retrieves item information for a given **ComboBoxEx** item.|  
+|[CComboBoxEx::HasEditChanged](#haseditchanged)|Determines if the user has changed the contents of the **ComboBoxEx** edit control by typing.|  
+|[CComboBoxEx::InsertItem](#insertitem)|Inserts a new item in a **ComboBoxEx** control.|  
+|[CComboBoxEx::SetExtendedStyle](#setextendedstyle)|Sets extended styles within a **ComboBoxEx** control.|  
+|[CComboBoxEx::SetImageList](#setimagelist)|Sets an image list for a **ComboBoxEx** control.|  
+|[CComboBoxEx::SetItem](#setitem)|Sets the attributes for an item in a **ComboBoxEx** control.|  
+|[CComboBoxEx::SetWindowTheme](#setwindowtheme)|Sets the visual style of the extended combo box control.|  
   
-## <a name="remarks"></a>コメント  
- 使用して`CComboBoxEx`コンボ ボックス コントロールを作成するが不要に独自のイメージを描画コードを実装します。 代わりに、`CComboBoxEx`はイメージ リストのイメージをアクセスします。  
+## <a name="remarks"></a>Remarks  
+ By using `CComboBoxEx` to create combo box controls, you no longer need to implement your own image drawing code. Instead, use `CComboBoxEx` to access images from an image list.  
   
-## <a name="image-list-support"></a>イメージ リストのサポート  
- 標準のコンボ ボックスでは、コンボ ボックスの所有者は、イメージを描画するには、オーナー描画コントロールとコンボ ボックスの作成を担当します。 使用すると`CComboBoxEx`、描画スタイルを設定する必要はありません**CBS_OWNERDRAWFIXED**と**CBS_HASSTRINGS**は暗黙的に指定するためです。 それ以外の場合、描画操作を実行するコードを記述する必要があります。 A`CComboBoxEx`コントロールが項目ごとに最大&3; つのイメージをサポートしています: 選択された状態、選択されていない状態では、およびオーバーレイ イメージのいずれかです。  
+## <a name="image-list-support"></a>Image List Support  
+ In a standard combo box, the owner of the combo box is responsible for drawing an image by creating the combo box as an owner-draw control. When you use `CComboBoxEx`, you do not need to set the drawing styles **CBS_OWNERDRAWFIXED** and **CBS_HASSTRINGS** because they are implied. Otherwise, you must write code to perform drawing operations. A `CComboBoxEx` control supports up to three images per item: one for a selected state, one for an unselected state, and one for an overlay image.  
   
-## <a name="styles"></a>スタイル  
- `CComboBoxEx`スタイルをサポートしている**CBS_SIMPLE**、 **CBS_DROPDOWN**、 **CBS_DROPDOWNLIST**、および**WS_CHILD**します。 ウィンドウを作成するときに渡される他のすべてのスタイルがコントロールによって無視されます。 ウィンドウが作成されると、使用できるその他のコンボ ボックスのスタイルを呼び出して、`CComboBoxEx`メンバー関数[拡張](#setextendedstyle)します。 これらのスタイルは、次のことができます。  
+## <a name="styles"></a>Styles  
+ `CComboBoxEx` supports the styles **CBS_SIMPLE**, **CBS_DROPDOWN**, **CBS_DROPDOWNLIST**, and **WS_CHILD**. All other styles passed when you create the window are ignored by the control. After the window is created, you can provide other combo box styles by calling the `CComboBoxEx` member function [SetExtendedStyle](#setextendedstyle). With these styles, you can:  
   
--   大文字小文字を区別する一覧で、文字列の検索をセットします。  
+-   Set string searches in the list to be case-sensitive.  
   
--   コンボ ボックス コントロールを作成 ('/')、スラッシュを使用して円記号 ('\\')、および期間 ('. ') の単語の区切り記号として文字です。 これは、CTRL キーと方向のキーボード ショートカットを使用して、語間を移動するようにします。  
+-   Create a combo box control that uses the slash ('/'), backslash ('\\'), and period ('.') characters as word delimiters. This allow users to jump from word to word, using the keyboard shortcut CTRL+ ARROW.  
   
--   コンボ ボックス コントロールを表示またはイメージを表示しませんを設定します。 イメージが表示されていない場合、コンボ ボックスは、イメージに対応するテキストのインデントを削除できます。  
+-   Set the combo box control to either display or not display an image. If no image is displayed, the combo box can remove the text indent that accommodates an image.  
   
--   クリップが含まれているより広いコンボ ボックス幅の狭いコンボ ボックス コントロールを作成します。  
+-   Create a narrow combo box control, including sizing it so it clips the wider combo box it contains.  
   
- これらのスタイル フラグの詳細については [を使用して CComboBoxEx](../../mfc/using-ccomboboxex.md)します。  
+ These style flags are described further in [Using CComboBoxEx](../../mfc/using-ccomboboxex.md).  
   
-## <a name="item-retention-and-callback-item-attributes"></a>アイテムの保持と項目のコールバック属性  
- Win32 構造の項目とイメージ、インデントの幅、およびテキスト文字列のインデックスなどのアイテムの情報が格納されている[受け取る](http://msdn.microsoft.com/library/windows/desktop/bb775746)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 構造体には、コールバック フラグに対応するメンバーも含まれます。  
+## <a name="item-retention-and-callback-item-attributes"></a>Item Retention and Callback Item Attributes  
+ Item information, such as indexes for items and images, indentation values, and text strings, is stored in the Win32 structure [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746), as described in the Windows SDK. The structure also contains members that correspond to callback flags.  
   
- 詳細な概念的な詳細については、次を参照してください。[を使用して CComboBoxEx](../../mfc/using-ccomboboxex.md)します。  
+ For a detailed, conceptual discussion, see [Using CComboBoxEx](../../mfc/using-ccomboboxex.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -132,18 +141,18 @@ class CComboBoxEx : public CComboBox
   
  `CComboBoxEx`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcmn.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcmn.h  
   
-##  <a name="ccomboboxex"></a>CComboBoxEx::CComboBoxEx  
- 作成するには、このメンバー関数を呼び出す、`CComboBoxEx`オブジェクトです。  
+##  <a name="ccomboboxex"></a>  CComboBoxEx::CComboBoxEx  
+ Call this member function to create a `CComboBoxEx` object.  
   
 ```  
 CComboBoxEx();
 ```  
   
-##  <a name="create"></a>CComboBoxEx::Create  
- コンボ ボックスを作成し、それにアタッチ、`CComboBoxEx`オブジェクトです。  
+##  <a name="create"></a>  CComboBoxEx::Create  
+ Creates the combo box and attaches it to the `CComboBoxEx` object.  
   
 ```  
 virtual BOOL Create(
@@ -153,32 +162,32 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- コンボ ボックスに適用されるコンボ ボックス スタイルの組み合わせを指定します。 参照してください**解説**の下のスタイルの詳細についてです。  
+ Specifies the combination of combo box styles applied to the combo box. See **Remarks** below for more information about styles.  
   
  `rect`  
- 参照、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造コンボ ボックスのサイズと位置です。  
+ A reference to a [CRect](../../atl-mfc-shared/reference/crect-class.md) object or [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure, which is the position and size of the combo box.  
   
  `pParentWnd`  
- ポインター、 [CWnd](../../mfc/reference/cwnd-class.md)コンボ ボックスの親ウィンドウにオブジェクト (通常、 `CDialog`)。 ことはできません**NULL**します。  
+ A pointer to a [CWnd](../../mfc/reference/cwnd-class.md) object that is the parent window of the combo box (usually a `CDialog`). It must not be **NULL**.  
   
  `nID`  
- コンボ ボックスのコントロール ID を指定します  
+ Specifies the combo box's control ID.  
   
-### <a name="return-value"></a>戻り値  
- オブジェクトが正常に作成された場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the object was created successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 作成、 `CComboBoxEx`&2; つのステップ内のオブジェクト。  
+### <a name="remarks"></a>Remarks  
+ Create a `CComboBoxEx` object in two steps:  
   
-1.  呼び出す[CComboBoxEx](#ccomboboxex)を構築する、`CComboBoxEx`オブジェクトです。  
+1.  Call [CComboBoxEx](#ccomboboxex) to construct a `CComboBoxEx` object.  
   
-2.  このメンバー関数、拡張の Windows コンボ ボックスを作成し、それにアタッチする、`CComboBoxEx`オブジェクトです。  
+2.  Call this member function, which creates the extended Windows combo box and attaches it to the `CComboBoxEx` object.  
   
- 呼び出すと**作成**、MFC コモン コントロールを初期化します。  
+ When you call **Create**, MFC initializes the common controls.  
   
- コンボ ボックスを作成するときに、次のコンボ ボックス スタイルの一部またはすべてを選択できます。  
+ When you create the combo box, you can specify any or all of the following combo-box styles:  
   
 - **CBS_SIMPLE**  
   
@@ -190,12 +199,12 @@ virtual BOOL Create(
   
 - **WS_CHILD**  
   
- ウィンドウを作成するときに渡される他のすべてのスタイルは無視されます。 **ComboBoxEx**コントロールも追加機能が備わっている拡張スタイルをサポートします。 これらのスタイルは「 [ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 これらのスタイルを呼び出すことによって設定[拡張](#setextendedstyle)します。  
+ All other styles passed when you create the window are ignored. The **ComboBoxEx** control also supports extended styles that provide additional features. These styles are described in [ComboBoxEx control extended styles](http://msdn.microsoft.com/library/windows/desktop/bb775742), in the Windows SDK. Set these styles by calling [SetExtendedStyle](#setextendedstyle).  
   
- コントロールで拡張ウィンドウ スタイルを使用する場合は、呼び出す[CreateEx](#createex)の代わりに**作成**します。  
+ If you want to use extended windows styles with your control, call [CreateEx](#createex) instead of **Create**.  
   
-##  <a name="createex"></a>CComboBoxEx::CreateEx  
- 拡張コンボ ボックス コントロール (子ウィンドウ) を作成し、それをするには、この関数を呼び出して、`CComboBoxEx`オブジェクトです。  
+##  <a name="createex"></a>  CComboBoxEx::CreateEx  
+ Call this function to create an extended combo box control (a child window) and associate it with the `CComboBoxEx` object.  
   
 ```  
 virtual BOOL CreateEx(
@@ -206,152 +215,152 @@ virtual BOOL CreateEx(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the extended style of the control being created. For a list of extended Windows styles, see the `dwExStyle` parameter for [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680) in the Windows SDK.  
   
  `dwStyle`  
- コンボ ボックス コントロールのスタイル。 参照してください[作成](#create)スタイルの一覧です。  
+ The combo box control's style. See [Create](#create) for a list of styles.  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)構造体のサイズとのクライアント座標で、作成するウィンドウの位置を表す`pParentWnd`します。  
+ A reference to a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure describing the size and position of the window to be created, in client coordinates of `pParentWnd`.  
   
  `pParentWnd`  
- コントロールの親ウィンドウへのポインター。  
+ A pointer to the window that is the control's parent.  
   
  `nID`  
- コントロールの子ウィンドウの id。  
+ The control's child-window ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用`CreateEx`の代わりに**作成**、Windows 拡張スタイルの先頭で指定された、Windows の拡張スタイルを適用する**WS_EX**します。  
+### <a name="remarks"></a>Remarks  
+ Use `CreateEx` instead of **Create** to apply extended Windows styles, specified by the Windows extended style preface **WS_EX_**.  
   
- `CreateEx`指定された拡張ウィンドウ スタイルを使用してコントロールが作成され`dwExStyle`します。 必要があります拡張スタイルに固有の設定拡張コンボ ボックス コントロールを使用して、[拡張](#setextendedstyle)します。 などを使用して`CreateEx`としてこのようなスタイルを設定する**WS_EX_CONTEXTHELP**を使用して、`SetExtendedStyle`としてこのようなスタイルを設定する**CBES_EX_CASESENSITIVE**します。 詳細については、トピックに記載されているスタイルを参照してください。 [ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ `CreateEx` creates the control with the extended Windows styles specified by `dwExStyle`. You must set extended styles specific to an extended combo box control using [SetExtendedStyle](#setextendedstyle). For example, use `CreateEx` to set such styles as **WS_EX_CONTEXTHELP**, but use `SetExtendedStyle` to set such styles as **CBES_EX_CASESENSITIVE**. For more information, see the styles described in the topic [ComboBoxEx Control Extended Styles](http://msdn.microsoft.com/library/windows/desktop/bb775742) in the Windows SDK.  
   
-##  <a name="deleteitem"></a>CComboBoxEx::DeleteItem  
- 項目を削除、 **ComboBoxEx**コントロールです。  
+##  <a name="deleteitem"></a>  CComboBoxEx::DeleteItem  
+ Removes an item from a **ComboBoxEx** control.  
   
 ```  
 int DeleteItem(int iIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `iIndex`  
- 削除する項目の&0; から始まるインデックス。  
+ Zero-based index of the item to be removed.  
   
-### <a name="return-value"></a>戻り値  
- コントロール内の残りの項目の数。 場合`iIndex`が有効でない関数を返します**返します**します。  
+### <a name="return-value"></a>Return Value  
+ The number of items remaining in the control. If `iIndex` is invalid, the function returns **CB_ERR**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、メッセージの機能を実装して[CBEM_DELETEITEM](http://msdn.microsoft.com/library/windows/desktop/bb775768)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 DeleteItem を呼び出すときに、 [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)メッセージを**CBEN_DELETEITEM**を親ウィンドウに通知が送信されます。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the functionality of the message [CBEM_DELETEITEM](http://msdn.microsoft.com/library/windows/desktop/bb775768), as described in the Windows SDK. When you call DeleteItem, a [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583) message with **CBEN_DELETEITEM** notification will be sent to the parent window.  
   
-##  <a name="getcomboboxctrl"></a>CComboBoxEx::GetComboBoxCtrl  
- 内のコンボ ボックス コントロールへのポインターを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`オブジェクトです。  
+##  <a name="getcomboboxctrl"></a>  CComboBoxEx::GetComboBoxCtrl  
+ Call this member function to get a pointer to a combo box control within a `CComboBoxEx` object.  
   
 ```  
 CComboBox* GetComboBoxCtrl();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CComboBox`オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CComboBox` object.  
   
-### <a name="remarks"></a>コメント  
- `CComboBoxEx`カプセル化されている親ウィンドウ コントロールでは、`CComboBox`です。  
+### <a name="remarks"></a>Remarks  
+ The `CComboBoxEx` control consists of a parent window, which encapsulates a `CComboBox`.  
   
- `CComboBox`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
+ The `CComboBox` object pointed to by the return value is a temporary object and is destroyed during the next idle processing time.  
   
-##  <a name="geteditctrl"></a>CComboBoxEx::GetEditCtrl  
- コンボ ボックスのエディット コントロールへのポインターを取得するには、このメンバー関数を呼び出します。  
+##  <a name="geteditctrl"></a>  CComboBoxEx::GetEditCtrl  
+ Call this member function to get a pointer to the edit control for a combo box.  
   
 ```  
 CEdit* GetEditCtrl();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CEdit](../../mfc/reference/cedit-class.md)オブジェクトです。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CEdit](../../mfc/reference/cedit-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- A`CComboBoxEx`使用して作成されたときに、コントロールが編集ボックスを使用して、 **CBS_DROPDOWN**スタイル。  
+### <a name="remarks"></a>Remarks  
+ A `CComboBoxEx` control uses an edit box when it is created with the **CBS_DROPDOWN** style.  
   
- `CEdit`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
+ The `CEdit` object pointed to by the return value is a temporary object and is destroyed during the next idle processing time.  
   
-##  <a name="getextendedstyle"></a>CComboBoxEx::GetExtendedStyle  
- 使用する拡張スタイルを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`コントロールです。  
+##  <a name="getextendedstyle"></a>  CComboBoxEx::GetExtendedStyle  
+ Call this member function to get the extended styles used for a `CComboBoxEx` control.  
   
 ```  
 DWORD GetExtendedStyle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- `DWORD`コンボ ボックス コントロールの使用されている拡張スタイルを表す値。  
+### <a name="return-value"></a>Return Value  
+ The `DWORD` value that contains the extended styles that are used for the combo box control.  
   
-### <a name="remarks"></a>コメント  
- 参照してください[ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、これらのスタイル。  
+### <a name="remarks"></a>Remarks  
+ See [ComboBoxEx Control Extended Styles](http://msdn.microsoft.com/library/windows/desktop/bb775742) in the Windows SDK for more information about these styles.  
   
-##  <a name="getimagelist"></a>CComboBoxEx::GetImageList  
- 使用されるイメージ リストへのポインターを取得するには、このメンバー関数を呼び出す、`CComboBoxEx`コントロールです。  
+##  <a name="getimagelist"></a>  CComboBoxEx::GetImageList  
+ Call this member function to get a pointer to the image list used by a `CComboBoxEx` control.  
   
 ```  
 CImageList* GetImageList() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CImageList](../../mfc/reference/cimagelist-class.md)オブジェクトです。 失敗したかどうか、このメンバー関数を返します**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CImageList](../../mfc/reference/cimagelist-class.md) object. If it fails, this member function returns **NULL**.  
   
-### <a name="remarks"></a>コメント  
- `CImageList`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
+### <a name="remarks"></a>Remarks  
+ The `CImageList` object pointed to by the return value is a temporary object and is destroyed during the next idle processing time.  
   
-##  <a name="getitem"></a>CComboBoxEx::GetItem  
- 項目の情報の取得、指定された**ComboBoxEx**項目。  
+##  <a name="getitem"></a>  CComboBoxEx::GetItem  
+ Retrieves item information for a given **ComboBoxEx** item.  
   
 ```  
 BOOL GetItem(COMBOBOXEXITEM* pCBItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCBItem`  
- ポインター、[受け取る](http://msdn.microsoft.com/library/windows/desktop/bb775746)項目情報を受け取る構造体。  
+ A pointer to a [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746) structure that will receive the item information.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、メッセージの機能を実装して[CBEM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775779)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the functionality of the message [CBEM_GETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775779), as described in the Windows SDK.  
   
-##  <a name="haseditchanged"></a>CComboBoxEx::HasEditChanged  
- 内容をユーザーが変更されたかどうかを判断、 **ComboBoxEx** 」と入力してコントロールを編集します。  
+##  <a name="haseditchanged"></a>  CComboBoxEx::HasEditChanged  
+ Determines if the user has changed the contents of the **ComboBoxEx** edit control by typing.  
   
 ```  
 BOOL HasEditChanged();
 ```  
   
-### <a name="return-value"></a>戻り値  
- コントロールの編集ボックスに、ユーザーが入力した場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the user has typed in the control's edit box; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、メッセージの機能を実装して[CBEM_HASEDITCHANGED](http://msdn.microsoft.com/library/windows/desktop/bb775782)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the functionality of the message [CBEM_HASEDITCHANGED](http://msdn.microsoft.com/library/windows/desktop/bb775782), as described in the Windows SDK.  
   
-##  <a name="insertitem"></a>CComboBoxEx::InsertItem  
- 新しい項目を挿入、 **ComboBoxEx**コントロールです。  
+##  <a name="insertitem"></a>  CComboBoxEx::InsertItem  
+ Inserts a new item in a **ComboBoxEx** control.  
   
 ```  
 int InsertItem(const COMBOBOXEXITEM* pCBItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCBItem`  
- ポインター、[受け取る](http://msdn.microsoft.com/library/windows/desktop/bb775746)項目情報を受け取る構造体。 この構造体には、項目のコールバック フラグの値が含まれています。  
+ A pointer to a [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746) structure that will receive the item information. This structure contains callback flag values for the item.  
   
-### <a name="return-value"></a>戻り値  
- インデックスが正常に終了した場合に新しい項目の挿入それ以外の場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The index at which the new item was inserted if successful; otherwise -1.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すと`InsertItem`、 [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)メッセージを[CBEN_INSERTITEM](http://msdn.microsoft.com/library/windows/desktop/bb775764)を親ウィンドウに通知が送信されます。  
+### <a name="remarks"></a>Remarks  
+ When you call `InsertItem`, a [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583) message with [CBEN_INSERTITEM](http://msdn.microsoft.com/library/windows/desktop/bb775764) notification will be sent to the parent window.  
   
-##  <a name="setextendedstyle"></a>CComboBoxEx::SetExtendedStyle  
- コンボ ボックス コントロールを拡張するための拡張スタイルを設定するには、このメンバー関数を呼び出します。  
+##  <a name="setextendedstyle"></a>  CComboBoxEx::SetExtendedStyle  
+ Call this member function to set the extended styles used for a combo box extended control.  
   
 ```  
 DWORD SetExtendedStyle(
@@ -359,77 +368,77 @@ DWORD SetExtendedStyle(
     DWORD dwExStyles);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwExMask`  
- A`DWORD`のスタイルを示す値`dwExStyles`の影響を受けています。 拡張のスタイルのみ`dwExMask`は変更されます。 その他のすべてのスタイルが保持されます。 このパラメーターが&0; の場合、すべてのスタイルの場合`dwExStyles`影響を受けます。  
+ A `DWORD` value that indicates which styles in `dwExStyles` are to be affected. Only the extended styles in `dwExMask` will be changed. All other styles will be maintained as is. If this parameter is zero, then all of the styles in `dwExStyles` will be affected.  
   
  `dwExStyles`  
- A`DWORD`コンボ ボックスを含む値は、拡張スタイルがコントロールに対して設定を制御します。  
+ A `DWORD` value that contains the combo box control extended styles to set for the control.  
   
-### <a name="return-value"></a>戻り値  
- A`DWORD`コントロールの使用されていた拡張スタイルを表す値。  
+### <a name="return-value"></a>Return Value  
+ A `DWORD` value that contains the extended styles previously used for the control.  
   
-### <a name="remarks"></a>コメント  
- 参照してください[ComboBoxEx コントロールの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb775742)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細については、これらのスタイル。  
+### <a name="remarks"></a>Remarks  
+ See [ComboBoxEx Control Extended Styles](http://msdn.microsoft.com/library/windows/desktop/bb775742) in the Windows SDK for more information about these styles.  
   
- 拡張ウィンドウ スタイルを使用してコントロールを拡張コンボ ボックスを作成するには使用[CreateEx](#createex)します。  
+ To create a combo box extended control with extended windows styles, use [CreateEx](#createex).  
   
-##  <a name="setimagelist"></a>CComboBoxEx::SetImageList  
- 用のイメージ リストの設定、 **ComboBoxEx**コントロールです。  
+##  <a name="setimagelist"></a>  CComboBoxEx::SetImageList  
+ Sets an image list for a **ComboBoxEx** control.  
   
 ```  
 CImageList* SetImageList(CImageList* pImageList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pImageList`  
- ポインター、`CImageList`オブジェクトで使用するイメージを含む、`CComboBoxEx`コントロールです。  
+ A pointer to a `CImageList` object containing the images to use with the `CComboBoxEx` control.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [CImageList](../../mfc/reference/cimagelist-class.md)オブジェクトによって使用されていた画像を含む、`CComboBoxEx`コントロールです。 **NULL**イメージ リストが既に設定されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a [CImageList](../../mfc/reference/cimagelist-class.md) object containing the images previously used by the `CComboBoxEx` control. **NULL** if no image list was previously set.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、メッセージの機能を実装して[CBEM_SETIMAGELIST](http://msdn.microsoft.com/library/windows/desktop/bb775787)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 既定値 エディット コントロールの高さを変更する場合は、Win32 関数を呼び出して[SetWindowPos](http://msdn.microsoft.com/library/windows/desktop/ms633545)を呼び出した後、コントロールのサイズを変更する`SetImageList`、正しく表示されるか。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the functionality of the message [CBEM_SETIMAGELIST](http://msdn.microsoft.com/library/windows/desktop/bb775787), as described in the Windows SDK. If you change the height of the default edit control, call the Win32 function [SetWindowPos](http://msdn.microsoft.com/library/windows/desktop/ms633545) to resize your control after you call `SetImageList`, or it will not display properly.  
   
- `CImageList`戻り値によって指されるオブジェクトが一時オブジェクトし、次のアイドル状態の処理時に破棄します。  
+ The `CImageList` object pointed to by the return value is a temporary object and is destroyed during the next idle processing time.  
   
-##  <a name="setitem"></a>CComboBoxEx::SetItem  
- 内の項目の属性を設定、 **ComboBoxEx**コントロールです。  
+##  <a name="setitem"></a>  CComboBoxEx::SetItem  
+ Sets the attributes for an item in a **ComboBoxEx** control.  
   
 ```  
 BOOL SetItem(const COMBOBOXEXITEM* pCBItem);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCBItem`  
- ポインター、[受け取る](http://msdn.microsoft.com/library/windows/desktop/bb775746)項目情報を受け取る構造体。  
+ A pointer to a [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746) structure that will receive the item information.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、メッセージの機能を実装して[CBEM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775788)」を参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function implements the functionality of the message [CBEM_SETITEM](http://msdn.microsoft.com/library/windows/desktop/bb775788), as described in the Windows SDK.  
   
-##  <a name="setwindowtheme"></a>CComboBoxEx::SetWindowTheme  
- Visual スタイル拡張コンボ ボックス コントロールを設定します。  
+##  <a name="setwindowtheme"></a>  CComboBoxEx::SetWindowTheme  
+ Sets the visual style of the extended combo box control.  
   
 ```  
 HRESULT SetWindowTheme(LPCWSTR pszSubAppName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszSubAppName`  
- 拡張コンボ ボックスの表示スタイル設定を含む Unicode 文字列へのポインター。  
+ A pointer to a Unicode string that contains the extended combo box visual style to set.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値は使用されません。  
+### <a name="return-value"></a>Return Value  
+ The return value is not used.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数の機能をエミュレートする、 [CBEM_SETWINDOWTHEME](http://msdn.microsoft.com/library/windows/desktop/bb775790) 」の説明に従って、メッセージ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This member function emulates the functionality of the [CBEM_SETWINDOWTHEME](http://msdn.microsoft.com/library/windows/desktop/bb775790) message, as described in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル MFCIE](../../visual-cpp-samples.md)   
- [CComboBox クラス](../../mfc/reference/ccombobox-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CComboBox クラス](../../mfc/reference/ccombobox-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample MFCIE](../../visual-cpp-samples.md)   
+ [CComboBox Class](../../mfc/reference/ccombobox-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CComboBox Class](../../mfc/reference/ccombobox-class.md)
 

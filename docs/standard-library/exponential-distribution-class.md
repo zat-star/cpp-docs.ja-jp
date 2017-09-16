@@ -1,5 +1,5 @@
 ---
-title: "exponential_distribution クラス | Microsoft ドキュメント"
+title: exponential_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- exponential_distribution
 - random/std::exponential_distribution
 - random/std::exponential_distribution::reset
 - random/std::exponential_distribution::lambda
@@ -25,7 +24,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- exponential_distribution class
+- std::exponential_distribution [C++]
+- std::exponential_distribution [C++], reset
+- std::exponential_distribution [C++], lambda
+- std::exponential_distribution [C++], param
+- std::exponential_distribution [C++], min
+- std::exponential_distribution [C++], max
+- std::exponential_distribution [C++], param_type
+- std::exponential_distribution [C++], param_type
 ms.assetid: d54f3126-a09b-45f9-a30b-0d94d03bcdc9
 caps.latest.revision: 18
 author: corob-msft
@@ -45,17 +51,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: eaf28ef7a02d358422d7e655688f5f4bf7cccc7d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 9a01105b4c35fb1ada147fc4026eb0e459fc1229
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="exponentialdistribution-class"></a>exponential_distribution クラス
-指数分布を生成します。  
+# <a name="exponentialdistribution-class"></a>exponential_distribution Class
+Generates an exponential distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template<class RealType = double>
@@ -85,30 +91,30 @@ public:
    result_type max() const;
    };  
 ``` 
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。  
+The floating-point result type, defaults to `double`. For possible types, see [\<random>](../standard-library/random.md).  
   
-*URNG* 乱数ジェネレーター エンジン。 使用可能な型については、「[\<random>](../standard-library/random.md)」を参照してください。
+*URNG* The random number generator engine. For possible types, see [\<random>](../standard-library/random.md).
   
   
-## <a name="remarks"></a>コメント  
- テンプレート クラスは、ユーザー指定の整数型、または何も指定されない場合は `double` 型で、指数分布に従って分布されている値を生成する分布について説明します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+ The template class describes a distribution that produces values of a user-specified integral type, or type `double` if none is provided, distributed according to the Exponential Distribution. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[exponential_distribution](#exponential_distribution)|`exponential_distribution::lambda`|`exponential_distribution::param`|  
 |`exponential_distribution::operator()`||[param_type](#param_type)|  
   
-プロパティ関数 `lambda()` は、格納されている分布パラメーター `lambda` の値を返します。  
+The property member function `lambda()` returns the value for the stored distribution parameter `lambda`.  
   
-プロパティ メンバー関数 `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member function `param()` sets or returns the `param_type` stored distribution parameter package.  
   
-分布クラスとそのメンバーの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-指数分布の詳細については、Wolfram MathWorld の記事「[指数分布](http://go.microsoft.com/fwlink/LinkId=401098)」を参照してください。  
+For detailed information about the exponential distribution, see the Wolfram MathWorld article [Exponential Distribution](http://go.microsoft.com/fwlink/LinkId=401098).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -184,35 +190,35 @@ Distribution for 10 samples:
     10: 2.1201210996  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="exponential_distribution"></a>  exponential_distribution::exponential_distribution  
- 分布を作成します。  
+ Constructs the distribution.  
   
 ```  
 explicit exponential_distribution(result_type lambda = 1.0);
 explicit exponential_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *lambda*  
- `lambda` 分布パラメーター。  
+ The `lambda` distribution parameter.  
   
 *parm*  
- 分布の作成に使用されるパラメーター パッケージ。  
+ The parameter package used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < lambda`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < lambda`  
   
-1 つ目のコンストラクターは、格納されている `lambda` の値が *lambda* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `lambda` value holds the value *lambda*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  exponential_distribution::param_type  
-分布のパラメーターを格納します。  
+Stores the parameters of the distribution.  
   
 ```
 struct param_type {  
@@ -225,19 +231,19 @@ struct param_type {
    };
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *lambda*  
-`lambda` 分布パラメーター。  
+The `lambda` distribution parameter.  
   
 *right*  
-このオブジェクトと比較する `param_type` オブジェクト。  
+The `param_type` object to compare to this.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < lambda`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < lambda`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
 [\<random>](../standard-library/random.md)
 
 

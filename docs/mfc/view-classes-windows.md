@@ -1,93 +1,112 @@
 ---
-title: "ビュー クラス (Windows) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.view"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フォーム ビューとレコード ビュー"
-  - "分割ウィンドウ クラス"
-  - "ビュー クラス, Windows"
+title: View Classes (Windows) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.view
+dev_langs:
+- C++
+helpviewer_keywords:
+- form and record views [MFC]
+- splitter window classes [MFC]
+- view classes [MFC], Windows
 ms.assetid: b11683fb-9f43-4de3-9499-2b55775f9870
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ビュー クラス (Windows)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ff65a4a581035536bee8077f2736e273e36ce68d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CView` と派生クラスは、フレーム ウィンドウのクライアント領域を表す子ウィンドウです。  ビューにデータを表示し、ドキュメントの入力を受け付けます。  
+---
+# <a name="view-classes-windows"></a>View Classes (Windows)
+`CView` and its derived classes are child windows that represent the client area of a frame window. Views show data and accept input for a document.  
   
- ビュー クラスはドキュメントテンプレート オブジェクトを使用してドキュメント クラスおよびフレーム ウィンドウ クラスに関連付けられます。  
+ A view class is associated with a document class and a frame window class using a document-template object.  
   
- [CView](../Topic/CView%20Class.md)  
- ドキュメントのデータのアプリケーション固有のビューの基本クラスです。  ビューに表示されるデータは、データの編集または選択するには、ユーザー入力を受け入れ。  `CView`からビュー クラスを派生してください。  
+ [CView](../mfc/reference/cview-class.md)  
+ The base class for application-specific views of a document's data. Views display data and accept user input to edit or select the data. Derive your view class or classes from `CView`.  
   
  [CScrollView](../mfc/reference/cscrollview-class.md)  
- スクロール機能をビューの基本クラスです。  自動スクロールの `CScrollView` からビュー クラスを派生してください。  
+ The base class for views with scrolling capabilities. Derive your view class from `CScrollView` for automatic scrolling.  
   
-## フォームとレコード ビュー  
- フォーム ビューは、ビューをスクロールします。  これらはダイアログ ボックス テンプレートに基づいています。  
+## <a name="form-and-record-views"></a>Form and Record Views  
+ Form views are also scrolling views. They are based on a dialog box template.  
   
- レコード ビューは、フォーム ビューから派生されます。  ダイアログ ボックス テンプレートに加え、また、データベースへの接続があります。  
+ Record views are derived from form views. In addition to the dialog box template, they also have a connection to a database.  
   
  [CFormView](../mfc/reference/cformview-class.md)  
- レイアウトがダイアログ ボックス テンプレートで定義されるスクロール ビュー。  ダイアログ ボックス テンプレートに基づいてユーザー インターフェイスを実装するに `CFormView` からクラスを派生してください。  
+ A scroll view whose layout is defined in a dialog box template. Derive a class from `CFormView` to implement a user interface based on a dialog box template.  
   
- [CDaoRecordView クラス](../mfc/reference/cdaorecordview-class.md)  
- 直接 Data Access Object \(DAO\) のレコードセット オブジェクトにアタッチされるフォーム ビューを提供します。  すべてのフォーム ビューと同様に、`CDaoRecordView` はダイアログ ボックス テンプレートに基づいています。  
+ [CDaoRecordView](../mfc/reference/cdaorecordview-class.md)  
+ Provides a form view directly connected to a Data Access Object (DAO) recordset object. Like all form views, a `CDaoRecordView` is based on a dialog box template.  
   
  [CRecordView](../mfc/reference/crecordview-class.md)  
- 直接 ODBC \(Open Database Connectivity\) データ ソースに接続されているフォーム ビューを提供します。  すべてのフォーム ビューと同様に、`CRecordView` はダイアログ ボックス テンプレートに基づいています。  
+ Provides a form view directly connected to an Open Database Connectivity (ODBC) recordset object. Like all form views, a `CRecordView` is based on a dialog box template.  
   
  [CHtmlEditView](../mfc/reference/chtmleditview-class.md)  
- WebBrowser 編集プラットフォームの機能を提供する HTML フォーム ビュー。  
+ A form view that provides the functionality of the WebBrowser HTML editing platform.  
   
-## コントロール ビュー  
- コントロール ビューは、ビューとしてコントロールを表示します。  
+## <a name="control-views"></a>Control Views  
+ Control views display a control as their view.  
   
  [CCtrlView](../mfc/reference/cctrlview-class.md)  
- すべての基本クラスは、Windows のコントロールには、関連を検索します。  コントロールに基づくビューについて、次に説明します。  
+ The base class for all views associated with Windows controls. The views based on controls are described below.  
   
- [CEditView](../Topic/CEditView%20Class.md)  
- Windows 標準エディット コントロールを含むビューは [CEdit](../Topic/CEdit%20Class.md)を参照します\)。  エディット コントロール サポート機能をテキスト編集、検索、置換、およびスクロールします。  
+ [CEditView](../mfc/reference/ceditview-class.md)  
+ A view that contains a Windows standard edit control (see [CEdit](../mfc/reference/cedit-class.md)). Edit controls support text editing, searching, replacing, and scrolling capabilities.  
   
  [CRichEditView](../mfc/reference/cricheditview-class.md)  
- Windows のリッチ エディット コントロールを含むビューは [CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)を参照します\)。  エディット コントロールの機能に加えて、リッチ エディット コントロールは、フォント、色、段落書式と埋め込まれたな OLE オブジェクトをサポートします。  
+ A view that contains a Windows rich edit control (see [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)). In addition to the capabilities of an edit control, rich edit controls support fonts, colors, paragraph formatting, and embedded OLE objects.  
   
  [CListView](../mfc/reference/clistview-class.md)  
- Windows のリスト コントロールを含むビューは [CListCtrl](../Topic/CListCtrl%20Class.md)を参照します\)。  リスト項目コントロールには、それぞれファイル エクスプローラーの右ペインに似たアイコンから成るとラベルのコレクションを、では表示されます。  
+ A view that contains a Windows list control (see [CListCtrl](../mfc/reference/clistctrl-class.md)). A list control displays a collection of items, each consisting of an icon and a label, in a manner similar to the right pane of File Explorer.  
   
  [CTreeView](../mfc/reference/ctreeview-class.md)  
- Windows コモン ツリー コントロールを含むビューは [CTreeCtrl](../mfc/reference/ctreectrl-class.md)を参照します\)。  ツリー コントロールは、エクスプローラーの左ペインにアイコンとラベルで配置する同様の階層的な一覧が表示されます。  
+ A view that contains a Windows tree control (see [CTreeCtrl](../mfc/reference/ctreectrl-class.md)). A tree control displays a hierarchical list of icons and labels arranged in a manner similar to the left pane of File Explorer.  
   
-## 関連クラス  
- `CSplitterWnd` は 一つのフレーム ウィンドウ内の複数のビューを持つことができます。  `CPrintDialog` と `CPrintInfo` はビューの印刷や印刷プレビューの機能をサポートします。  `CRichEditDoc` と `CRichEditCntrItem` は `CRichEditView` と OLE コンテナーの機能を実装するために使用されます。  
+## <a name="related-classes"></a>Related Classes  
+ `CSplitterWnd` allows you to have multiple views within a single frame window. `CPrintDialog` and `CPrintInfo` support the print and print preview ability of views. `CRichEditDoc` and `CRichEditCntrItem` are used with `CRichEditView` to implement OLE container capabilities.  
   
  [CSplitterWnd](../mfc/reference/csplitterwnd-class.md)  
- ユーザーが複数のペインに分割できるウィンドウ。  これらのペインはユーザーがサイズ変更できるまたは固定サイズになります。  
+ A window that the user can split into multiple panes. These panes can be resizable by the user or fixed size.  
   
- [CPrintDialog](../Topic/CPrintDialog%20Class.md)  
- ファイルを印刷するために、標準のダイアログ ボックスを表示します。  
+ [CPrintDialog](../mfc/reference/cprintdialog-class.md)  
+ Provides a standard dialog box for printing a file.  
   
  [CPrintInfo](../mfc/reference/cprintinfo-structure.md)  
- 印刷や印刷プレビュー ジョブに関する情報が格納された構造体。  アーキテクチャを印刷する `CView` に使用されます。  
+ A structure containing information about a print or print preview job. Used by `CView`'s printing architecture.  
   
  [CRichEditDoc](../mfc/reference/cricheditdoc-class.md)  
- `CRichEditView`にある OLE クライアント項目のリストを保持します。  
+ Maintains the list of OLE client items that are in a `CRichEditView`.  
   
  [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md)  
- `CRichEditView`に格納された OLE アイテムへのクライアント側アクセスを提供します。  
+ Provides client-side access to an OLE item stored in a `CRichEditView`.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

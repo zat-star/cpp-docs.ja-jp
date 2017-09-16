@@ -1,5 +1,5 @@
 ---
-title: "データ型 (MFC) |Microsoft ドキュメント"
+title: Data Types (MFC) | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,24 +14,24 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- LPCRECT data type
-- WPARAM data type
-- data types [C++], MFC
-- LRESULT
-- POSITION data type
-- UINT
-- LPVOID data type
-- COLORREF
-- LPCTSTR
-- LPSTR
-- DWORD operator
-- WORD data type
-- LPTSTR
+- LPCRECT data type [MFC]
+- WPARAM data type [MFC]
+- data types [MFC], MFC
+- LRESULT [MFC]
+- POSITION data type [MFC]
+- UINT [MFC]
+- LPVOID data type [MFC]
+- COLORREF [MFC]
+- LPCTSTR [MFC]
+- LPSTR [MFC]
+- DWORD operator [MFC]
+- WORD data type [MFC]
+- LPTSTR [MFC]
 - BYTE data type (Windows)
-- Long data type, Windows types
-- Boolean data type [C++], supported data types
-- LPARAM data type
-- LPCSTR
+- Long data type [MFC], Windows types
+- Boolean data type [MFC], supported data types
+- LPARAM data type [MFC]
+- LPCSTR [MFC]
 ms.assetid: 8954848b-2c01-4a4f-abf5-ee55f6a05eeb
 caps.latest.revision: 14
 author: mikeblome
@@ -51,25 +51,25 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 042e8d987b64fca78dc3ff8eab9b9740b52017d9
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 88d40ab60e26647b840d673948b376c5549db137
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="data-types-mfc"></a>データ型 (MFC)
-このトピックでは、Microsoft Foundation Class ライブラリで最もよく使用されるデータ型を示します。 ほとんどのデータ型が MFC に固有のものもプラットフォーム ソフトウェア開発キット (SDK) のと同じです。  
+# <a name="data-types-mfc"></a>Data Types (MFC)
+This topic lists the data types most commonly used in the Microsoft Foundation Class Library. Most of the data types are the same as those in the Platform Software Development Kit (SDK), while others are unique to MFC.  
   
- 両方で使用されるデータ型について、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]と MFC を参照してください[Windows Data Types](http://msdn.microsoft.com/library/windows/desktop/aa383751)します。  
+ For information about the data types used in both the             Windows SDK and MFC, see             [Windows Data Types](http://msdn.microsoft.com/library/windows/desktop/aa383751).  
   
- Microsoft Foundation Class ライブラリに固有のデータ型を以下に示します。  
+ Data types unique to the Microsoft Foundation Class Library include the following:  
   
--   **位置**値で、コレクション内の要素の位置を示すために使用、MFC コレクション クラスで使用します。  
+-   **POSITION** A value used to denote the position of an element in a collection; used by MFC collection classes.  
   
--   **LPCRECT**定数 (変更不可能な) への 32 ビット ポインター`RECT`構造体。  
+-   **LPCRECT** A 32-bit pointer to a constant (nonmodifiable)                     `RECT` structure.  
   
-## <a name="see-also"></a>関連項目  
- [クラスの概要](../../mfc/class-library-overview.md)   
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../../mfc/class-library-overview.md)   
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

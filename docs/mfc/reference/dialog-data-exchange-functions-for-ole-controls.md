@@ -1,5 +1,5 @@
 ---
-title: "OLE コントロールのダイアログ データ エクス関数 |Microsoft ドキュメント"
+title: Dialog Data Exchange Functions for OLE Controls | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,7 +24,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- OLE controls, DDX functions
+- OLE controls [MFC], DDX functions
 - DDX (dialog data exchange), OLE support
 ms.assetid: 7ef1f288-ff65-40d4-aad2-5497bc00bb27
 caps.latest.revision: 13
@@ -45,35 +45,35 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 5c50690c1652c4136b7f52f852ddf201c9dd6c9b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1d20ebb94a41ad8ec1afb3a18da7957652a5eeb0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="dialog-data-exchange-functions-for-ole-controls"></a>OLE コントロールのダイアログ データ エクスチェンジ (DDX) 関数
-このトピックでは、OLE コントロールのプロパティ ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーの間でデータを交換するために使用する DDX_OC 関数を示します。  
+# <a name="dialog-data-exchange-functions-for-ole-controls"></a>Dialog Data Exchange Functions for OLE Controls
+This topic lists the DDX_OC functions used to exchange data between a property of an OLE control in a dialog box, form view, or control view object and a data member of the dialog box, form view, or control view object.  
   
-### <a name="ddxoc-functions"></a>DDX_OC 関数  
+### <a name="ddxoc-functions"></a>DDX_OC Functions  
   
 |||  
 |-|-|  
-|[DDX_OCBool](#ddx_ocbool)|データの転送を管理**BOOL** OLE コントロールのプロパティの間でデータと**BOOL**データ メンバーです。|  
-|[DDX_OCBoolRO](#ddx_ocboolro)|データの転送を管理**BOOL** OLE コントロールの読み取り専用プロパティの間でデータと**BOOL**データ メンバーです。|  
-|[DDX_OCColor](#ddx_occolor)|データの転送を管理**OLE_COLOR** OLE コントロールのプロパティの間でデータと**OLE_COLOR**データ メンバーです。|  
-|[DDX_OCColorRO](#ddx_occolorro)|データの転送を管理**OLE_COLOR** OLE コントロールの読み取り専用プロパティの間でデータと**OLE_COLOR**データ メンバーです。|  
-|[DDX_OCFloat](#ddx_ocfloat)|データの転送を管理**float** (または**二重**) OLE コントロールのプロパティの間でデータと**float** (または**二重**) データ メンバーです。|  
-|[DDX_OCFloatRO](#ddx_ocfloatro)|データの転送を管理**float** (または**二重**) OLE コントロールの読み取り専用プロパティの間でデータと**float** (または**二重**) データ メンバーです。|  
-|[DDX_OCInt](#ddx_ocint)|データの転送を管理`int`(または**長い**) OLE コントロールのプロパティの間でデータと`int`(または**長い**) データ メンバーです。|  
-|[DDX_OCIntRO](#ddx_ocintro)|データの転送を管理`int`(または**長い**) OLE コントロールの読み取り専用プロパティの間でデータと`int`(または**長い**) データ メンバーです。|  
-|[DDX_OCShort](#ddx_ocshort)|データの転送を管理**短い**OLE コントロールのプロパティの間でデータと**短い**データ メンバーです。|  
-|[DDX_OCShortRO](#ddx_ocshortro)|データの転送を管理**短い**OLE コントロールの読み取り専用プロパティの間でデータと**短い**データ メンバーです。|  
-|[DDX_OCText](#ddx_octext)|データの転送を管理**CString** OLE コントロールのプロパティの間でデータと**CString**データ メンバーです。|  
-|[DDX_OCTextRO](#ddx_octextro)|データの転送を管理**CString** OLE コントロールの読み取り専用プロパティの間でデータと**CString**データ メンバーです。|  
+|[DDX_OCBool](#ddx_ocbool)|Manages the transfer of **BOOL** data between a property of an OLE control and a **BOOL** data member.|  
+|[DDX_OCBoolRO](#ddx_ocboolro)|Manages the transfer of **BOOL** data between a read-only property of an OLE control and a **BOOL** data member.|  
+|[DDX_OCColor](#ddx_occolor)|Manages the transfer of **OLE_COLOR** data between a property of an OLE control and an **OLE_COLOR** data member.|  
+|[DDX_OCColorRO](#ddx_occolorro)|Manages the transfer of **OLE_COLOR** data between a read-only property of an OLE control and an **OLE_COLOR** data member.|  
+|[DDX_OCFloat](#ddx_ocfloat)|Manages the transfer of **float** (or **double**) data between a property of an OLE control and a **float** (or **double**) data member.|  
+|[DDX_OCFloatRO](#ddx_ocfloatro)|Manages the transfer of **float** (or **double**) data between a read-only property of an OLE control and a **float** (or **double**) data member.|  
+|[DDX_OCInt](#ddx_ocint)|Manages the transfer of `int` (or **long**) data between a property of an OLE control and an `int` (or **long**) data member.|  
+|[DDX_OCIntRO](#ddx_ocintro)|Manages the transfer of `int` (or **long**) data between a read-only property of an OLE control and an `int` (or **long**) data member.|  
+|[DDX_OCShort](#ddx_ocshort)|Manages the transfer of **short** data between a property of an OLE control and a **short** data member.|  
+|[DDX_OCShortRO](#ddx_ocshortro)|Manages the transfer of **short** data between a read-only property of an OLE control and a **short** data member.|  
+|[DDX_OCText](#ddx_octext)|Manages the transfer of **CString** data between a property of an OLE control and a **CString** data member.|  
+|[DDX_OCTextRO](#ddx_octextro)|Manages the transfer of **CString** data between a read-only property of an OLE control and a **CString** data member.|  
   
-##  <a name="ddx_ocbool"></a>DDX_OCBool  
- `DDX_OCBool`関数は、コンテンツの転送を管理**BOOL**  ダイアログ ボックスでは、OLE コントロールのプロパティの間でデータ ビュー、またはオブジェクトのフォームと**BOOL**  ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocbool"></a>  DDX_OCBool  
+ The `DDX_OCBool` function manages the transfer of **BOOL** data between a property of an OLE control in a dialog box, form view, or control view object and a **BOOL** data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCBool(
@@ -83,27 +83,27 @@ void AFXAPI DDX_OCBool(
     BOOL& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー :** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header:** afxdisp.h  
   
-##  <a name="ddx_ocboolro"></a>DDX_OCBoolRO  
- `DDX_OCBoolRO`関数は、コンテンツの転送を管理**BOOL**  ダイアログ ボックスでは、OLE コントロールの読み取り専用プロパティの間でデータ ビュー、またはオブジェクトのフォームと**BOOL**  ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocboolro"></a>  DDX_OCBoolRO  
+ The `DDX_OCBoolRO` function manages the transfer of **BOOL** data between a read-only property of an OLE control in a dialog box, form view, or control view object and a **BOOL** data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCBoolRO(
@@ -113,27 +113,27 @@ void AFXAPI DDX_OCBoolRO(
     BOOL& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_occolor"></a>DDX_OCColor  
- `DDX_OCColor`関数は、コンテンツの転送を管理**OLE_COLOR**  ダイアログ ボックスでは、OLE コントロールのプロパティの間でデータ ビュー、またはオブジェクトのフォームと**OLE_COLOR**  ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_occolor"></a>  DDX_OCColor  
+ The `DDX_OCColor` function manages the transfer of **OLE_COLOR** data between a property of an OLE control in a dialog box, form view, or control view object and a **OLE_COLOR** data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCColor(
@@ -143,27 +143,27 @@ void AFXAPI DDX_OCColor(
     OLE_COLOR& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_occolorro"></a>DDX_OCColorRO  
- `DDX_OCColorRO`関数は、コンテンツの転送を管理**OLE_COLOR**  ダイアログ ボックスでは、OLE コントロールの読み取り専用プロパティの間でデータ ビュー、またはオブジェクトのフォームと**OLE_COLOR**  ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_occolorro"></a>  DDX_OCColorRO  
+ The `DDX_OCColorRO` function manages the transfer of **OLE_COLOR** data between a read-only property of an OLE control in a dialog box, form view, or control view object and a **OLE_COLOR** data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCColorRO(
@@ -173,27 +173,27 @@ void AFXAPI DDX_OCColorRO(
     OLE_COLOR& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocfloat"></a>DDX_OCFloat  
- `DDX_OCFloat`関数は、コンテンツの転送を管理**float** (または**二重**) ダイアログ ボックスでは、OLE コントロールのプロパティの間でデータ ビュー、またはオブジェクトのフォームと**float** (または**二重**) ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocfloat"></a>  DDX_OCFloat  
+ The `DDX_OCFloat` function manages the transfer of **float** (or **double**) data between a property of an OLE control in a dialog box, form view, or control view object and a **float** (or **double**) data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCFloat(
@@ -209,27 +209,27 @@ void AFXAPI DDX_OCFloat(
     double& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocfloatro"></a>DDX_OCFloatRO  
- `DDX_OCFloatRO`関数は、コンテンツの転送を管理**float** (または**二重**) ダイアログ ボックスでは、OLE コントロールの読み取り専用プロパティの間でデータ ビュー、またはオブジェクトのフォームと**float** (または**二重**) ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocfloatro"></a>  DDX_OCFloatRO  
+ The `DDX_OCFloatRO` function manages the transfer of **float** (or **double**) data between a read-only property of an OLE control in a dialog box, form view, or control view object and a **float** (or **double**) data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCFloatRO(
@@ -245,27 +245,27 @@ void AFXAPI DDX_OCFloatRO(
     double& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocint"></a>DDX_OCInt  
- `DDX_OCInt`関数は、コンテンツの転送を管理`int`(または**長い**) ダイアログ ボックスでは、OLE コントロールのプロパティの間でデータ ビュー、またはオブジェクトのフォームと`int`(または**長い**) ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocint"></a>  DDX_OCInt  
+ The `DDX_OCInt` function manages the transfer of `int` (or **long**) data between a property of an OLE control in a dialog box, form view, or control view object and a `int` (or **long**) data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCInt(
@@ -281,27 +281,27 @@ void AFXAPI DDX_OCInt(
     long& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocintro"></a>DDX_OCIntRO  
- `DDX_OCIntRO`関数は、コンテンツの転送を管理`int`(または**長い**) ダイアログ ボックスでは、OLE コントロールの読み取り専用プロパティの間でデータ ビュー、またはオブジェクトのフォームと`int`(または**長い**) ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_ocintro"></a>  DDX_OCIntRO  
+ The `DDX_OCIntRO` function manages the transfer of `int` (or **long**) data between a read-only property of an OLE control in a dialog box, form view, or control view object and a `int` (or **long**) data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCIntRO(
@@ -317,27 +317,27 @@ void AFXAPI DDX_OCIntRO(
     long& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocshort"></a>DDX_OCShort  
- `DDX_OCShort`関数は、ダイアログ ボックスで、フォーム ビューでの OLE コントロールのプロパティ間の短いデータの転送を管理またはフォーム ビュー、オブジェクトと、ダイアログ ボックスの短いデータ メンバー、またはオブジェクトの表示を制御します。  
+##  <a name="ddx_ocshort"></a>  DDX_OCShort  
+ The `DDX_OCShort` function manages the transfer of short data between a property of an OLE control in a dialog box, form view, or control view object and a short data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCShort(
@@ -347,27 +347,27 @@ void AFXAPI DDX_OCShort(
     short& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_ocshortro"></a>DDX_OCShortRO  
- `DDX_OCShortRO`関数は、読み取り専用のプロパティ ダイアログ ボックスで、フォーム ビューの OLE コントロールの間の短いデータの転送を管理またはフォーム ビュー、オブジェクトと、ダイアログ ボックスの短いデータ メンバー、またはオブジェクトの表示を制御します。  
+##  <a name="ddx_ocshortro"></a>  DDX_OCShortRO  
+ The `DDX_OCShortRO` function manages the transfer of short data between a read-only property of an OLE control in a dialog box, form view, or control view object and a short data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCShortRO(
@@ -377,27 +377,27 @@ void AFXAPI DDX_OCShortRO(
     short& value);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_octext"></a>DDX_OCText  
- **DDX_OCText**関数は、コンテンツの転送を管理**CString**  ダイアログ ボックスでは、OLE コントロールのプロパティの間でデータ ビュー、またはオブジェクトのフォームと**CString**  ダイアログ ボックス、フォーム ビュー、またはオブジェクトのデータ メンバーです。  
+##  <a name="ddx_octext"></a>  DDX_OCText  
+ The **DDX_OCText** function manages the transfer of **CString** data between a property of an OLE control in a dialog box, form view, or control view object and a **CString** data member of the dialog box, form view, or control view object.  
   
 ```   
 void AFXAPI DDX_OCText(
@@ -407,27 +407,27 @@ void AFXAPI DDX_OCText(
     CString& value); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、 **CDataExchange**オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a **CDataExchange** object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="ddx_octextro"></a>DDX_OCTextRO  
- `DDX_OCTextRO` 関数は、ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの読み取り専用プロパティと、ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの `CString` データ メンバーの間の `CString` データ転送を管理します。  
+##  <a name="ddx_octextro"></a>  DDX_OCTextRO  
+ The `DDX_OCTextRO` function manages the transfer of `CString` data between a read-only property of an OLE control in a dialog box, form view, or control view object and a `CString` data member of the dialog box, form view, or control view object.  
   
 ```  
 void AFXAPI DDX_OCTextRO(
@@ -437,25 +437,25 @@ void AFXAPI DDX_OCTextRO(
     CString& value); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- `CDataExchange` オブジェクトへのポインター。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ A pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `nIDC`  
- ダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトの OLE コントロールの ID。  
+ The ID of an OLE control in the dialog box, form view, or control view object.  
   
  `dispid`  
- コントロールのプロパティのディスパッチ ID。  
+ The dispatch ID of a property of the control.  
   
  *value*  
- データの交換相手になるダイアログ ボックス、フォーム ビュー、またはコントロール ビュー オブジェクトのメンバー変数への参照。  
+ A reference to a member variable of the dialog box, form view or control view object with which data is exchanged.  
   
-### <a name="remarks"></a>コメント  
- DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)します。  
+### <a name="remarks"></a>Remarks  
+ For more information about DDX, see [Dialog Data Exchange and Validation](../../mfc/dialog-data-exchange-and-validation.md).  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h
     
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

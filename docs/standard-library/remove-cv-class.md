@@ -1,5 +1,5 @@
 ---
-title: "remove_cv クラス |Microsoft Docs"
+title: remove_cv Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- remove_cv
 - type_traits/std::remove_cv
 dev_langs:
 - C++
@@ -35,17 +34,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: e8e219b296e352fb5ad2f6e470126bfd2b773355
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 89ce7d66adfa283c711db1563fe5e72b7ba150a8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="removecv-class"></a>remove_cv クラス
-型から非 const/volatile 型を作成します。  
+# <a name="removecv-class"></a>remove_cv Class
+Makes non const/volatile type from type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class T>  
@@ -55,14 +54,14 @@ template <class T>
 using remove_cv_t = typename remove_cv<T>::type;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 変更する型。  
+ The type to modify.  
   
-## <a name="remarks"></a>コメント  
- `remove_cv<T>` のインスタンスは、`T1` の形式が `T`、`const T1`、または `volatile T1` である場合は、修飾型 `const volatile T1` を保持します。それ以外の場合は、`T` を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of `remove_cv<T>` holds a modified-type that is `T1` when `T` is of the form `const T1`, `volatile T1`, or `const volatile T1`, otherwise `T`.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <type_traits>   
@@ -84,13 +83,13 @@ int main()
 remove_cv_t<const volatile int> == int  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [remove_const クラス](../standard-library/remove-const-class.md)   
- [remove_volatile クラス](../standard-library/remove-volatile-class.md)
+ [remove_const Class](../standard-library/remove-const-class.md)   
+ [remove_volatile Class](../standard-library/remove-volatile-class.md)
 

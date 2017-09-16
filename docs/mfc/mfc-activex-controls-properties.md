@@ -1,48 +1,67 @@
 ---
-title: "MFC ActiveX コントロール : プロパティ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, プロパティ"
-  - "プロパティ [MFC]"
-  - "プロパティ [MFC], ActiveX コントロール"
+title: 'MFC ActiveX Controls: Properties | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- properties [MFC], ActiveX controls
+- MFC ActiveX controls [MFC], properties
+- properties [MFC]
 ms.assetid: b678a53c-0d9e-476f-8aa0-23b80baaba46
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# MFC ActiveX コントロール : プロパティ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fb056d7e94cd786d0e62167abccf1e599f2c63fc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロールは、コンテナーと通信するためにイベントを発生させます。  コンテナーは、戻り値として、コントロールと通信するためにメソッドとプロパティを使用します。  メソッドとプロパティは、類似の使用中に、メンバー関数、それぞれ、想定し、C\+\+. C\+\+ メンバー変数が用意されています。  プロパティはどのコンテナーに公開されている ActiveX コントロールのデータ メンバーです。  プロパティは、ActiveX コントロールを含むオートメーション クライアントと ActiveX コントロール コンテナーなどのアプリケーションへのインターフェイスを提供します。  
+---
+# <a name="mfc-activex-controls-properties"></a>MFC ActiveX Controls: Properties
+An ActiveX control fires events to communicate with its control container. The container, in return, uses methods and properties to communicate with the control. Methods and properties are similar in use and purpose, respectively, to member functions and member variables of a C++ class. Properties are data members of the ActiveX control that are exposed to any container. Properties provide an interface for applications that contain ActiveX controls, such as Automation clients and ActiveX control containers.  
   
- プロパティは、属性と呼ばれます。  
+ Properties are also called attributes.  
   
- ActiveX コントロール メソッドの詳細については、記事 [MFC ActiveX コントロール: メソッド](../mfc/mfc-activex-controls-methods.md)を参照します。  
+ For more information on ActiveX control methods, see the article [MFC ActiveX Controls: Methods](../mfc/mfc-activex-controls-methods.md).  
   
- ActiveX コントロールは、ストック イベントとカスタム メソッドやカスタム プロパティ実装できます。  クラス `COleControl`、ストック プロパティに実装を提供します。\(ストック プロパティの完全な一覧については、[MFC ActiveX コントロール: ストック プロパティの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Properties.md)を参照してください\)。開発者が定義したカスタム プロパティは ActiveX コントロールに特殊な機能を追加します。  詳細については、「[MFC ActiveX コントロール: カスタム プロパティの追加](../mfc/mfc-activex-controls-adding-custom-properties.md)」を参照してください。  
+ ActiveX controls can implement both stock and custom methods and properties. Class `COleControl` provides an implementation for stock properties. (For a complete list of stock properties, see the article [MFC ActiveX Controls: Adding Stock Properties](../mfc/mfc-activex-controls-adding-stock-properties.md).) Custom properties, defined by the developer, add specialized capabilities to an ActiveX control. For more information, see [MFC ActiveX Controls: Adding Custom Properties](../mfc/mfc-activex-controls-adding-custom-properties.md).  
   
- カスタムとストック プロパティはいずれも、メソッドなどのプロパティを処理し、`COleControl` のメソッドと既存のメンバー関数を使用してディスパッチ マップで構成される機能がサポートされます。  また、これらのプロパティは、開発者がコントロールに情報を渡すために使用するパラメーターを使用できます。  
+ Both custom and stock properties, like methods, are supported by a mechanism that consists of a dispatch map that handles properties and methods and existing member functions of the `COleControl` class. In addition, these properties can have parameters that the developer uses to pass extra information to the control.  
   
- 次のトピックでは、ActiveX コントロール プロパティについて詳細に説明します。:  
+ The following articles discuss ActiveX control properties in more detail:  
   
--   [MFC ActiveX コントロール: ストック プロパティの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Properties.md)  
+-   [MFC ActiveX Controls: Adding Stock Properties](../mfc/mfc-activex-controls-adding-stock-properties.md)  
   
--   [MFC ActiveX コントロール: カスタム プロパティの追加](../mfc/mfc-activex-controls-adding-custom-properties.md)  
+-   [MFC ActiveX Controls: Adding Custom Properties](../mfc/mfc-activex-controls-adding-custom-properties.md)  
   
--   [MFC ActiveX コントロール: 詳細プロパティの実装](../mfc/mfc-activex-controls-advanced-property-implementation.md)  
+-   [MFC ActiveX Controls: Advanced Property Implementation](../mfc/mfc-activex-controls-advanced-property-implementation.md)  
   
--   [MFC ActiveX コントロール: アクセスのアンビエント プロパティ](../mfc/mfc-activex-controls-accessing-ambient-properties.md)  
+-   [MFC ActiveX Controls: Accessing Ambient Properties](../mfc/mfc-activex-controls-accessing-ambient-properties.md)  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)
+
+

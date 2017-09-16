@@ -1,113 +1,132 @@
 ---
-title: "MFC ツール バーの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビットマップ [C++], ツール バー"
-  - "ボタン [C++], MFC ツール バー"
-  - "CToolBar クラス, 作成 (ツール バーを)"
-  - "CToolBarCtrl クラス, 実装 (ツール バーを)"
-  - "ドッキング (ツール バー)"
-  - "フローティング ツール バー"
-  - "MFC ツール バー"
-  - "ツール ヒント [C++], 有効化"
-  - "ツール バー コントロール [MFC]"
-  - "ツール バー [C++]"
-  - "ツール バー [C++], 作成"
-  - "ツール バー [C++], ドッキング"
-  - "ツール バー [C++], フローティング"
-  - "ツール バー [C++], 実装 (MFC ツール バーを)"
+title: MFC Toolbar Implementation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- toolbars [MFC], creating
+- buttons [MFC], MFC toolbars
+- toolbars [MFC], docking
+- CToolBar class [MFC], creating toolbars
+- MFC toolbars
+- floating toolbars [MFC]
+- toolbars [MFC], floating
+- docking toolbars [MFC]
+- bitmaps [MFC], toolbar
+- toolbar controls [MFC]
+- CToolBarCtrl class [MFC], implementing toolbars
+- tool tips [MFC], enabling
+- toolbars [MFC]
+- toolbars [MFC], implementing MFC toolbars
 ms.assetid: af3319ad-c430-4f90-8361-e6a2c06fd084
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ツール バーの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0c04958a1d726381432a5b4281dfa634518d8c10
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツール バーとは、コントロールのビットマップ イメージを含む[コントロール バー](../Topic/Control%20Bars.md)のことです。  これらのイメージはプッシュ ボタン、チェック ボックス、オプション ボタンに似た動作をすることができます。  MFC には、ツール バーを管理するための [CToolbar](../mfc/reference/ctoolbar-class.md) クラスがあります。  
+---
+# <a name="mfc-toolbar-implementation"></a>MFC Toolbar Implementation
+A toolbar is a [control bar](../mfc/control-bars.md) that contains the bitmap images of controls. These images can behave like pushbuttons, check boxes, or radio buttons. MFC supplies class [CToolbar](../mfc/reference/ctoolbar-class.md) to manage toolbars.  
   
- これを有効にすると、MFC ツール バーのユーザーは、ツール バーをウィンドウの端にドッキングするか、アプリケーション ウィンドウ内の任意の場所にツール バーを "フローティング" させることができます。  MFC では、開発環境のようなカスタマイズ可能なツール バーをサポートしていません。  
+ If you enable it, users of MFC toolbars can dock them to the edge of a window or "float" them anywhere within the application window. MFC doesn't support customizable toolbars like those in the development environment.  
   
- MFC では、ツール ヒントもサポートしています。これは、マウス ポインターをボタンの上に移動したときに、ツール バー ボタンの目的を説明する小さなポップアップ ウィンドウです。  既定では、ユーザーがツール バー ボタンをクリックすると、ステータス バー \(表示されている場合\) の中に、ステータス文字列が表示されます。  ボタンをクリックせずに、マウス ポインターをツール バー ボタンの上に移動したときに、ステータス文字列の表示を更新する、"フライ バイ" \(リアルタイム更新\) ステータス バーを有効にすることもできます。  
+ MFC also supports tool tips: small pop-up windows that describe a toolbar button's purpose when you position the mouse over the button. By default, when the user presses a toolbar button, a status string appears in the status bar (if there is one). You can activate "fly by" status bar updating to display the status string when the mouse is positioned over the button without pressing it.  
   
 > [!NOTE]
->  MFC バージョン 4.0 の時点で、ツール バーとツール ヒントは、MFC 固有の以前の実装ではなく、Windows 95 以降の機能を使用して実装されています。  
+>  As of MFC version 4.0, toolbars and tool tips are implemented using Windows 95 and later functionality instead of the previous implementation specific to MFC.  
   
- 下位互換性のため、MFC では古いツール バーの実装をクラス **COldToolBar** の中に保持しています。  以前のバージョンの MFC に関するドキュメントは `CToolBar`の中で **COldToolBar** について説明しています。  
+ For backward compatibility, MFC retains the older toolbar implementation in class **COldToolBar**. The documentation for earlier versions of MFC describe **COldToolBar** under `CToolBar`.  
   
- アプリケーション ウィザードの \[ツール バー\] オプションをクリックし、プログラムの最初のツール バーを作成します。  追加のツール バーを作成することもできます。  
+ Create the first toolbar in your program by selecting the Toolbar option in the Application Wizard. You can also create additional toolbars.  
   
- この記事では、次の項目を紹介します。  
+ The following are introduced in this article:  
   
--   [ツール バー ボタン](#_core_toolbar_buttons)  
+-   [Toolbar buttons](#_core_toolbar_buttons)  
   
--   [ツール バーのフローティングとドッキング](#_core_docking_and_floating_toolbars)  
+-   [Docking and floating toolbars](#_core_docking_and_floating_toolbars)  
   
--   [ツール バーとツール ヒント](#_core_toolbars_and_tool_tips)  
+-   [Toolbars and tool tips](#_core_toolbars_and_tool_tips)  
   
--   [CToolBar クラスと CToolBarCtrl クラス](#_core_the_ctoolbar_and_ctoolbarctrl_classes)  
+-   [The CToolBar and CToolBarCtrl classes](#_core_the_ctoolbar_and_ctoolbarctrl_classes)  
   
--   [ツール バー ビットマップ](#_core_the_toolbar_bitmap)  
+-   [The Toolbar bitmap](#_core_the_toolbar_bitmap)  
   
-##  <a name="_core_toolbar_buttons"></a> ツール バー ボタン  
- ツール バー内のボタンは、メニュー内の項目に似ています。  どちらの種類のユーザー インターフェイス オブジェクトも、コマンドを生成します。プログラムはハンドラー関数を提供して、これらのコマンドを処理します。  多くの場合、ツール バー ボタンはメニュー コマンドの機能を複製したものであり、同じ機能に対する別のユーザー インターフェイスを提供します。  このような重複は、単純にボタンとメニュー項目に対して同じ ID を付与する方法で実現できます。  
+##  <a name="_core_toolbar_buttons"></a> Toolbar Buttons  
+ The buttons in a toolbar are analogous to the items in a menu. Both kinds of user-interface objects generate commands, which your program handles by providing handler functions. Often toolbar buttons duplicate the functionality of menu commands, providing an alternative user interface to the same functionality. Such duplication is arranged simply by giving the button and the menu item the same ID.  
   
- ツール バー内で、プッシュ ボタン、チェック ボックス、またはオプション ボタンと同じ外観でボタンを作成し、同じ動作をさせることができます。  詳細については、["CToolBar \(CToolBar\)"](../mfc/reference/ctoolbar-class.md) クラスを参照してください。  
+ You can make the buttons in a toolbar appear and behave as pushbuttons, check boxes, or radio buttons. For more information, see class [CToolBar](../mfc/reference/ctoolbar-class.md).  
   
-##  <a name="_core_docking_and_floating_toolbars"></a> ツール バーのドッキングとフローティング  
- MFC ツール バーでは、次のことを実行できます。  
+##  <a name="_core_docking_and_floating_toolbars"></a> Docking and Floating Toolbars  
+ An MFC toolbar can:  
   
--   親ウィンドウの 1 つの辺に固定したままにします。  
+-   Remain stationary along one side of its parent window.  
   
--   ドラッグして、親ウィンドウの任意の辺に "ドッキング" させます \(取り付けます\)。  
+-   Be dragged and "docked," or attached, by the user to any side or sides of the parent window you specify.  
   
--   フレーム ウィンドウから切り離し、ミニフレーム ウィンドウの形でツール バーとして使用します。このツール バーは、ユーザーが任意の場所に移動できます。  
+-   Be "floated," or detached from the frame window, in its own mini-frame window so the user can move it around to any convenient position.  
   
--   フローティング中にサイズを変更します。  
+-   Be resized while floating.  
   
- 詳細については、「[ドッキング ツール バーとフローティング ツール バー](../mfc/docking-and-floating-toolbars.md)」を参照してください。  
+ For more information, see the article [Docking and Floating Toolbars](../mfc/docking-and-floating-toolbars.md).  
   
-##  <a name="_core_toolbars_and_tool_tips"></a> ツール バーとツール ヒント  
- MFC ツール バーには "ツール ヒント" を表示させることもできます。ツール ヒントとは、ツール バー ボタンの用途を説明する短いテキストを表示する小さなポップアップ ウィンドウのことです。  ユーザーがツール バー ボタンの上にマウス ポインタを置くと、ヒントを示すツール ヒントのウィンドウがポップアップ表示されます。  詳細については、「[ツール バーのツール ヒント](../Topic/Toolbar%20Tool%20Tips.md)」を参照してください。  
+##  <a name="_core_toolbars_and_tool_tips"></a> Toolbars and Tool Tips  
+ MFC toolbars can also be made to display "tool tips" — tiny popup windows containing a short text description of a toolbar button's purpose. As the user moves the mouse over a toolbar button, the tool tip window pops up to offer a hint. For more information, see the article [Toolbar Tool Tips](../mfc/toolbar-tool-tips.md).  
   
-##  <a name="_core_the_ctoolbar_and_ctoolbarctrl_classes"></a> CToolBar クラスと CToolBarCtrl クラス  
- アプリケーションのツール バーは、[CToolBar](../mfc/reference/ctoolbar-class.md) クラスを通じて管理します。  MFC Version 4.0 では、Windows 95 以降、および Windows NT Version 3.51 以降のバージョンで使用されているツール バー コモン コントロールを使用できるように、`CToolBar` が再実装されています。  
+##  <a name="_core_the_ctoolbar_and_ctoolbarctrl_classes"></a> The CToolBar and CToolBarCtrl Classes  
+ You manage your application's toolbars via class [CToolBar](../mfc/reference/ctoolbar-class.md). As of MFC version 4.0, `CToolBar` has been reimplemented to use the toolbar common control available under Windows 95 or later and Windows NT version 3.51 or later.  
   
- この再実装により、それらのオペレーティング システムでサポートされているコントロールを MFC で利用できるため、ツール バー関連の MFC コードは少なくなりました。  また、この再実装によって性能も向上しています。  `CToolBar` のメンバー関数を使用してツール バーを操作できます。また、基になる [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) オブジェクトへの参照を取得し、そのメンバー関数を呼び出して、ツール バーをカスタマイズしたり機能を追加したりできます。  
+ This reimplementation results in less MFC code for toolbars, because MFC makes use of the operating system support. The reimplementation also improves capability. You can use `CToolBar` member functions to manipulate toolbars, or you can obtain a reference to the underlying [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) object and call its member functions for toolbar customization and additional functionality.  
   
 > [!TIP]
->  以前の形式の `CToolBar` を実装するために多大な労力を費やしてきた場合は、そのまま以前の形式のツール バーを使用できます。  「[古い形式のツール バーの使用方法](../Topic/Using%20Your%20Old%20Toolbars.md)」を参照してください。  
+>  If you have invested heavily in the older MFC implementation of `CToolBar`, that support is still available. See the article [Using Your Old Toolbars](../mfc/using-your-old-toolbars.md).  
   
- また、MFC の「標準のサンプル」の「[DOCKTOOL](../top/visual-cpp-samples.md)」も参照してください。  
+ Also see the MFC General sample [DOCKTOOL](../visual-cpp-samples.md).  
   
-##  <a name="_core_the_toolbar_bitmap"></a> ツール バーのビットマップ  
- `CToolBar` オブジェクトは、いったん生成された後は、各ボタンのイメージを含む 1 つのビットマップを読み込んでツール バー イメージを作成します。  アプリケーション ウィザードでは、Visual C\+\+ [ツール バー エディター](../mfc/toolbar-editor.md)を使用してカスタマイズできる標準ツール バー ビットマップが作成されます。  
+##  <a name="_core_the_toolbar_bitmap"></a> The Toolbar Bitmap  
+ Once constructed, a `CToolBar` object creates the toolbar image by loading a single bitmap that contains one image for each button. The Application Wizard creates a standard toolbar bitmap that you can customize with the Visual C++ [toolbar editor](../windows/toolbar-editor.md).  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ツール バーに関する基本事項](../mfc/toolbar-fundamentals.md)  
+-   [Toolbar fundamentals](../mfc/toolbar-fundamentals.md)  
   
--   [ツール バーのフローティングとドッキング](../mfc/docking-and-floating-toolbars.md)  
+-   [Docking and floating toolbars](../mfc/docking-and-floating-toolbars.md)  
   
--   [ツール バーのツール ヒント](../Topic/Toolbar%20Tool%20Tips.md)  
+-   [Toolbar tool tips](../mfc/toolbar-tool-tips.md)  
   
--   [ToolBar コントロールの操作](../Topic/Working%20with%20the%20Toolbar%20Control.md)  
+-   [Working with the Toolbar Control](../mfc/working-with-the-toolbar-control.md)  
   
--   [古い形式のツール バーの使用方法](../Topic/Using%20Your%20Old%20Toolbars.md)  
+-   [Using Your Old Toolbars](../mfc/using-your-old-toolbars.md)  
   
--   [CToolBar](../mfc/reference/ctoolbar-class.md) クラスと [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) クラス  
+-   The [CToolBar](../mfc/reference/ctoolbar-class.md) and [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md) classes  
   
-## 参照  
- [ツール バー](../mfc/toolbars.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>See Also  
+ [Toolbars](../mfc/toolbars.md)   
+ [Toolbar Editor](../windows/toolbar-editor.md)
+
+

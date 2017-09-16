@@ -1,67 +1,86 @@
 ---
-title: "標準コマンド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド ID, 標準コマンド"
-  - "コマンド [C++], 標準"
-  - "[編集] メニューの標準コマンド"
-  - "[ファイル] メニュー"
-  - "ヘルプ, メニュー"
-  - "識別子 [C++], コマンド ID"
-  - "OLE コマンド"
-  - "プログラマが定義する ID [C++]"
-  - "標準コマンド ID"
-  - "標準コマンド"
-  - "[表示] メニューのコマンド"
-  - "[ウィンドウ] メニューのコマンド"
+title: Standard Commands | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- File menu
+- identifiers [MFC], command IDs
+- command IDs, standard commands
+- OLE commands
+- commands [MFC], standard
+- standard command IDs
+- Window menu commands
+- standard commands
+- View menu commands
+- Edit menu standard commands
+- Help [MFC], menus
+- programmer-defined IDs [MFC]
 ms.assetid: 88cf3ab4-79b3-4ac6-9365-8ac561036fbf
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 標準コマンド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 092d67376a9384ab9470d2d3bd6b1dcb12ad37a6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-フレームワークは、標準コマンド メッセージを定義します。  これらのコマンドの ID は、通常、T: System.Int32  
+---
+# <a name="standard-commands"></a>Standard Commands
+The framework defines many standard command messages. The IDs for these commands typically take the form:  
   
- **ID\_** *Source\_Item*  
+ **ID_** *Source*_*Item*  
   
- *ソースのが* 普通ですが、メニュー名と *項目は* メニュー項目です。  たとえば、ファイル メニューの新規作成コマンドのコマンド ID を `ID_FILE_NEW`です。  標準コマンド ID が太字でドキュメントを示します。  プログラマ定義の ID は、周囲のテキストとは異なるフォントで示します。  
+ where *Source* is usually a menu name and *Item* is a menu item. For example, the command ID for the New command on the File menu is `ID_FILE_NEW`. Standard command IDs are shown in bold type in the documentation. Programmer-defined IDs are shown in a font that is different from the surrounding text.  
   
- 次は、サポートされている最も重要なコマンドのリストです。:  
+ The following is a list of some of the most important commands supported:  
   
- *\[ファイル\] メニューのコマンド*  
- 保存の新規作成、開く、閉じる、保存、同様に、ページ設定、印刷、印刷設定、印刷、印刷プレビュー、終了処理、最近使用したファイル。  
+ *File Menu Commands*  
+ New, Open, Close, Save, Save As, Page Setup, Print Setup, Print, Print Preview, Exit, and most-recently-used files.  
   
- *\[編集\] メニューのコマンド*  
- オフにし、すべてのコピー、切り取り、貼り付け、検索、繰り返しオフに置き換え、すべてをクリックし、元に戻す、またはやり直す。  
+ *Edit Menu Commands*  
+ Clear, Clear All, Copy, Cut, Find, Paste, Repeat, Replace, Select All, Undo, and Redo.  
   
- *\[表示\] メニューのコマンド*  
- ツール バーとステータス バー。  
+ *View Menu Commands*  
+ Toolbar and Status Bar.  
   
- *\[ウィンドウ\] メニューのコマンド*  
- 新しい、水平および垂直の、タイルの分割を配置し、連鎖"ようにドロップします並べて表示してください。  
+ *Window Menu Commands*  
+ New, Arrange, Cascade, Tile Horizontal, Tile Vertical, and Split.  
   
- *\[ヘルプ\] メニューのコマンド*  
- 、ヘルプを使用して、開始インデックスをクリックします。  
+ *Help Menu Commands*  
+ Index, Using Help, and About.  
   
- *OLE コマンド \(メニューの編集\)*  
- 新しいオブジェクトを挿入し、リンクの編集で、リンク貼り付け、および *型名の* オブジェクト \(動詞コマンド\) を貼り付けます。  
+ *OLE Commands (Edit Menu)*  
+ Insert New Object, Edit Links, Paste Link, Paste Special, and *typename* Object (verb commands).  
   
- フレームワークは、これらのコマンドに異なるレベルのサポートを提供します。  一部のコマンドは他の完全な実装でサポートされますが、としてのみ定義されたコマンド ID がサポートされています。  たとえば、新しいドキュメント オブジェクトを作成し、ファイルを開くダイアログ ボックスを表示し、そのファイルを開き、読み取ることで、ファイル メニューの開くコマンドを実装します。  これに対し **ID\_EDIT\_COPY** などのコマンドがコピー元のデータの性質によって異なるため、場合によっては、編集メニューのコマンドを実装しなければなりません。  
+ The framework provides varying levels of support for these commands. Some commands are supported only as defined command IDs, while others are supported with thorough implementations. For example, the framework implements the Open command on the File menu by creating a new document object, displaying an Open dialog box, and opening and reading the file. In contrast, you must implement commands on the Edit menu yourself, since commands like **ID_EDIT_COPY** depend on the nature of the data you are copying.  
   
- サポートされているコマンドと指定された実装のレベルの詳細については [テクニカル ノート 22](../mfc/tn022-standard-commands-implementation.md)を参照します。  標準のコマンド ファイルは AFXRES.H.で定義されます。  
+ For more information about the commands supported and the level of implementation provided, see [Technical Note 22](../mfc/tn022-standard-commands-implementation.md). The standard commands are defined in the file AFXRES.H.  
   
-## 参照  
- [ユーザー インターフェイス オブジェクトとコマンド ID](../mfc/user-interface-objects-and-command-ids.md)
+## <a name="see-also"></a>See Also  
+ [User-Interface Objects and Command IDs](../mfc/user-interface-objects-and-command-ids.md)
+
+

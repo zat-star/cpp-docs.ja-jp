@@ -1,182 +1,219 @@
 ---
-title: "チュートリアル : 新しい MFC シェル コントロールの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "シェル コントロール (MFC)"
+title: 'Walkthrough: Using the New MFC Shell Controls | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- shell controls (MFC)
 ms.assetid: f0015caa-199d-4aaf-9501-5a239fce9095
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# チュートリアル : 新しい MFC シェル コントロールの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a6d09173d555fe5990917e2519da15b0cc657048
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルでは、ファイル エクスプローラーのような外観のアプリケーションを作成します。  ここでは、2 つのペインのあるウィンドウを作成します。  左ペインにある [CMFCShellTreeCtrl](../mfc/reference/cmfcshelltreectrl-class.md) オブジェクトには、デスクトップが階層構造で表示されます。  右ペインにある [CMFCShellListCtrl](../mfc/reference/cmfcshelllistctrl-class.md) には、左ペインで選択されたフォルダー内のファイルが表示されます。  
+---
+# <a name="walkthrough-using-the-new-mfc-shell-controls"></a>Walkthrough: Using the New MFC Shell Controls
+In this walkthrough, you will create an application that resembles File Explorer. You will create a window that contains two panes. The left pane will contain a [CMFCShellTreeCtrl](../mfc/reference/cmfcshelltreectrl-class.md) object that displays your Desktop in a hierarchical view. The right pane will contain a [CMFCShellListCtrl](../mfc/reference/cmfcshelllistctrl-class.md) that shows the files in the folder that is selected in the left pane.  
   
-## 必須コンポーネント  
- このチュートリアルは、読者が**全般的な開発設定**を使用することを指定して [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] のセットアップを完了していることを前提としています。  別の開発設定を使用している場合は、このチュートリアルで使用する一部の [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] ウィンドウが既定で表示されないことがあります。  
+## <a name="prerequisites"></a>Prerequisites  
+ This walkthrough assumes that you have set up [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] to use **General Development Settings**. If you are using a different development setting, some [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] windows that we use in this walkthrough might not be displayed by default.  
   
-### MFC アプリケーション ウィザードを使用して新しい MFC アプリケーションを作成するには  
+### <a name="to-create-a-new-mfc-application-by-using-the-mfc-application-wizard"></a>To create a new MFC application by using the MFC Application Wizard  
   
-1.  **MFC アプリケーション ウィザード**を使用して、新しい MFC アプリケーションを作成します。  このウィザードを実行するには、**\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。  **\[新しいプロジェクト\]** ダイアログ ボックスが表示されます。  
+1.  Use the **MFC Application Wizard** to create a new MFC application. To run the wizard, from the **File** menu select **New**, and then select **Project**. The **New Project** dialog box will be displayed.  
   
-2.  **\[新しいプロジェクト\]** ダイアログ ボックスの **\[プロジェクトの種類\]** ペインで、**\[Visual C\+\+\]** ノードを展開し、**\[MFC\]** をクリックします。  次に、**\[テンプレート\]** ペインで **\[MFC アプリケーション\]** をクリックします。  プロジェクトの名前 \(`MFCShellControls` など\) を入力し、**\[OK\]** をクリックします。  **MFC アプリケーション ウィザード**が表示されます。  
+2.  In the **New Project** dialog box, expand the **Visual C++** node in the **Project types** pane and select **MFC**. Then, in the **Templates** pane, select **MFC Application**. Type a name for the project, such as `MFCShellControls` and click **OK**. The **MFC Application Wizard** will be displayed.  
   
-3.  **\[MFC アプリケーション ウィザード\]** ダイアログ ボックスで、**\[次へ\]** をクリックします。  **\[アプリケーションの種類\]** ペインが表示されます。  
+3.  In the **MFC Application Wizard** dialog box, click **Next**. The **Application Type** pane will be displayed.  
   
-4.  **\[アプリケーションの種類\]** ペインの **\[アプリケーションの種類\]** で、**\[タブ付きドキュメント\]** をオフにします。  次に、**\[シングル ドキュメント\]** を選択し、**\[ドキュメント\/ビュー アーキテクチャのサポート\]** を選択します。  **\[プロジェクト形式\]** で、**\[Visual Studio\]** を選択し、**\[視覚スタイルと色\]** ボックスの一覧の **\[Office 2007 \(青のテーマ\)\]** をクリックします。  その他のオプションはそのままにします。  **\[次へ\]** をクリックして、**\[複合ドキュメント サポート\]** ペインを表示します。  
+4.  On the **Application Type** pane, under **Application type**, clear the **Tabbed documents** option. Next, select **Single document** and select **Document/View architecture support**. Under **Project style**, select **Visual Studio**, and from the **Visual style and colors** drop down list select **Office 2007 (Blue theme)**. Leave all other options as they are. Click **Next** to display the **Compound Document Support** pane.  
   
-5.  **\[複合ドキュメント サポート\]** ペインで、**\[なし\]** をクリックします。  **\[次へ\]** をクリックして、**\[ドキュメントテンプレート文字列\]** ペインを表示します。  
+5.  On the **Compound Document Support** pane, select **None**. Click **Next** to display the **Document Template Strings** pane.  
   
-6.  **\[ドキュメントテンプレート文字列\]** ペインでは何も変更しません。  **\[次へ\]** をクリックして、**\[データベース サポート\]** ペインを表示します。  
+6.  Do not make any changes to the **Document Template Strings** pane. Click **Next** to display the **Database Support** pane.  
   
-7.  このアプリケーションではデータベースを使用しないため、**\[データベース サポート\]** ペインで **\[なし\]** を選択します。  **\[次へ\]** をクリックして、**\[ユーザー インターフェイス機能\]** ペインを表示します。  
+7.  On the **Database Support** pane, select **None** because this application does not use a database. Click **Next** to display the **User Interface Features** pane.  
   
-8.  **\[ユーザー インターフェイス機能\]** ペインで、**\[メニュー バーとツール バーを使用する\]** が選択されていることを確認します。  その他のオプションはそのままにします。  **\[次へ\]** をクリックして、**\[高度な機能\]** ペインを表示します。  
+8.  On the **User Interface Features** pane, make sure that the **Use a menu bar and toolbar** option is selected. Leave all other options as they are. Click **Next** to display the **Advanced Features** pane.  
   
-9. **\[高度な機能\]** ペインの **\[高度な機能\]** で、**\[ActiveX コントロール\]** と **\[コモン コントロール マニフェスト\]** のみを選択します。  **\[高度なフレーム ペイン\]** で、**\[ナビゲーション ウィンドウ\]** のみを選択します。  これにより、ウィンドウの左側に、`CMFCShellTreeCtrl` が埋め込まれた状態でナビゲーション ウィンドウが作成されます。  **\[次へ\]** をクリックして、**\[生成されたクラス\]** ペインを表示します。  
+9. On the **Advanced Features** pane, under **Advanced features**, select only **ActiveX controls** and **Common Control Manifest**. Under **Advanced frame panes**, select only the **Navigation pane** option. This will cause the wizard to create the pane to the left of the window with a `CMFCShellTreeCtrl` already embedded. Click **Next** to display the **Generated Classes** pane.  
   
-10. **\[生成されたクラス\]** ペインでは何も変更しません。  **\[完了\]** をクリックして、新しい MFC プロジェクトを作成します。  
+10. We are not going to make any changes to the **Generated Classes** pane. Therefore, click **Finish** to create your new MFC project.  
   
-11. アプリケーションをビルドして実行することにより、アプリケーションが正常に作成されたことを確認します。  アプリケーションをビルドするには、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  アプリケーションが正常にビルドされたら、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックして、アプリケーションを実行します。  
+11. Verify that the application was created successfully by building and running it. To build the application, from the **Build** menu select **Build Solution**. If the application builds successfully, run the application by selecting **Start Debugging** from the **Debug** menu.  
   
-     標準メニュー バー、標準ツール バー、標準ステータス バー、およびウィンドウの左側に**フォルダー** ビューと**予定表**ビューのある Outlook バーを備えたアプリケーションが自動的に作成されます。  
+     The wizard automatically creates an application that has a standard menu bar, a standard toolbar, a standard status bar, and an Outlook bar to the left of the window with a **Folders** view and a **Calendar** view.  
   
-### シェル リスト コントロールをドキュメント ビューに追加するには  
+### <a name="to-add-the-shell-list-control-to-the-document-view"></a>To add the shell list control to the document view  
   
-1.  ここでは、ウィザードによって作成されたビューに `CMFCShellListCtrl` のインスタンスを追加します。  **ソリューション エクスプローラー**で MFCShellControlsView.h ファイルをダブルクリックしてビューのヘッダー ファイルを開きます。  
+1.  In this section, you will add an instance of `CMFCShellListCtrl` to the view that the wizard created. Open the view header file by double-clicking MFCShellControlsView.h in the **Solution Explorer**.  
   
-     ヘッダー ファイルの先頭部分にある `#pragma once` ディレクティブを探します。  その直後に、次のコードを追加して、`CMFCShellListCtrl` のヘッダー ファイルをインクルードします。  
+     Locate the `#pragma once` directive near the top of the header file. Immediately underneath it add this code to include the header file for `CMFCShellListCtrl`:  
   
-    ```  
+ ```  
     #include <afxShellListCtrl.h>  
-    ```  
+ ```  
   
-     次に、`CMFCShellListCtrl` 型のメンバー変数を追加します。  最初に、ヘッダー ファイルで次のコメントを探します。  
+     Now add a member variable of type `CMFCShellListCtrl`. First, locate the following comment in the header file:  
   
-    ```  
-    // Generated message map functions  
-    ```  
+ ``` *// Generated message map functions  
+ ```  
   
-     そのコメントの直前に、次のコードを追加します。  
+     Immediately above that comment add this code:  
   
-    ```  
-    private:  
-        CMFCShellListCtrl m_wndList;  
-    ```  
+ ```  
+    private: CMFCShellListCtrl m_wndList;  
+ ```  
   
-2.  **MFC アプリケーション ウィザード**によって既に `CMainFrame` クラスに `CMFCShellTreeCtrl` オブジェクトが作成されていますが、これはプロテクト メンバーです。  後で、このオブジェクトにアクセスします。  したがって、ここでアクセサーを作成します。  **ソリューション エクスプローラー**で MainFrm.h ヘッダー ファイルをダブルクリックして開きます。  次のコメントを探します。  
+2.  The **MFC Application Wizard** already created a `CMFCShellTreeCtrl` object in the `CMainFrame` class, but it is a protected member. We will access this object later. Therefore, create an accessor for it now. Open the MainFrm.h header file by double-clicking it in the **Solution Explorer**. Locate the following comment:  
   
-    ```  
-    // Attributes  
-    ```  
+ ``` *// Attributes  
+ ```  
   
-     この直後に、次のメソッド宣言を追加します。  
+     Immediately under it, add the following method declaration:  
   
-    ```  
-    public:  
-        CMFCShellTreeCtrl& GetShellTreeCtrl();  
-    ```  
+ ```  
+    public: 
+    CMFCShellTreeCtrl& GetShellTreeCtrl();
+
+ ```  
   
-     次に、**ソリューション エクスプローラー**で MainFrm.cpp ソース ファイルをダブルクリックして開きます。  このファイルの末尾に、次のメソッド定義を追加します。  
+     Next, open the MainFrm.cpp source file by double-clicking it in the **Solution Explorer**. At the bottom of that file, add the following method definition:  
   
-    ```  
+ ```  
     CMFCShellTreeCtrl& CMainFrame::GetShellTreeCtrl()  
-    {  
-        return m_wndTree;  
-    }  
-    ```  
+ {  
+    return m_wndTree;  
+ }  
+ ```  
   
-3.  **WM\_CREATE** Windows メッセージを処理するように `CMFCShellControlsView` クラスを更新します。  MFCShellControlsView.h ヘッダー ファイルを開き、次のコード行をクリックします。  
+3.  Now we update the `CMFCShellControlsView` class to handle the **WM_CREATE** windows message. Open the MFCShellControlsView.h header file and click on this line of code:  
   
-    ```  
+ ```  
     class CMFCShellControlsView : public CView  
-    ```  
+ ```  
   
-     次に、**\[プロパティ\]** ウィンドウで **\[メッセージ\]** アイコンをクリックします。  スクロール ダウンして **WM\_CREATE** メッセージを探します。  **WM\_CREATE** の横のドロップダウン リストで、**\[\<追加\>\> OnCreate\]** をクリックします。  これにより、メッセージ ハンドラーが作成され、MFC メッセージ マップが自動的に更新されます。  
+     Next, in the **Properties** window, click the **Messages** icon. Scroll down until you find the **WM_CREATE** message. From the drop down list next to **WM_CREATE**, select **\<Add> OnCreate**. This creates a message handler for us and automatically updates the MFC message map.  
   
-     `OnCreate` メソッドで、独自の `CMFCShellListCtrl` オブジェクトを作成します。  MFCShellControlsView.cpp ソース ファイルで `OnCreate` メソッド定義を探し、その実装を次のコードに置き換えます。  
+     In the `OnCreate` method we will now create our `CMFCShellListCtrl` object. Find the `OnCreate` method definition in the MFCShellControlsView.cpp source file, and replace its implementation with the following code:  
   
-    ```  
+ ```  
     int CMFCShellControlsView::OnCreate(LPCREATESTRUCT lpCreateStruct)  
-    {  
-        if (CView::OnCreate(lpCreateStruct) == -1)  
-            return -1;  
+ {  
+    if (CView::OnCreate(lpCreateStruct) == -1)  
+    return -1;  
+ 
+    CRect rectDummy (0,
+    0,
+    0,
+    0);
+
+    m_wndList.Create(WS_CHILD | WS_VISIBLE | LVS_REPORT,  
+    rectDummy,
+    this,
+    1);
+
+ 
+    return 0;  
+ }  
+ ```  
   
-        CRect rectDummy (0, 0, 0, 0);  
-        m_wndList.Create(WS_CHILD | WS_VISIBLE | LVS_REPORT,  
-            rectDummy, this, 1);  
+4.  Repeat the previous step but for the **WM_SIZE** message. This will cause your applications view to be redrawn whenever a user changes the size of the application window. Replace the definition for the `OnSize` method with the following code:  
   
-        return 0;  
-    }  
-    ```  
+ ```  
+    void CMFCShellControlsView::OnSize(UINT nType,
+    int cx,
+    int cy)  
+ {  
+    CView::OnSize(nType,
+    cx,
+    cy);
+
+    m_wndList.SetWindowPos(NULL, -1, -1,
+    cx,
+    cy,  
+    SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);
+
+ }  
+ ```  
   
-4.  **WM\_SIZE** メッセージについて、前の手順を繰り返します。  これにより、ユーザーがアプリケーション ウィンドウのサイズを変更するたびにアプリケーションのビューが再描画されるようになります。  `OnSize` メソッドの定義を次のコードに置き換えます。  
+5.  The last step is to connect the `CMFCShellTreeCtrl` and `CMFCShellListCtrl` objects by using the [CMFCShellTreeCtrl::SetRelatedList](../mfc/reference/cmfcshelltreectrl-class.md#setrelatedlist) method. After you call this method, the `CMFCShellListCtrl` will automatically display the contents of the item selected in the `CMFCShellTreeCtrl`. We will do this in the `OnActivateView` method, which is overridden from [CView::OnActivateView](../mfc/reference/cview-class.md#onactivateview).  
   
-    ```  
-    void CMFCShellControlsView::OnSize(UINT nType, int cx, int cy)  
-    {  
-        CView::OnSize(nType, cx, cy);  
-        m_wndList.SetWindowPos(NULL, -1, -1, cx, cy,  
-            SWP_NOMOVE | SWP_NOZORDER | SWP_NOACTIVATE);  
-    }  
-    ```  
+     In the MFCShellControlsView.h header file, inside the `CMFCShellControlsView` class declaration, add the following method declaration:  
   
-5.  最後に、[CMFCShellTreeCtrl::SetRelatedList](../Topic/CMFCShellTreeCtrl::SetRelatedList.md) メソッドを使用して、`CMFCShellTreeCtrl` オブジェクトと `CMFCShellListCtrl` オブジェクトを関連付けます。  このメソッドを呼び出すと、`CMFCShellTreeCtrl` で選択された項目の内容が自動的に `CMFCShellListCtrl` に表示されます。  これは、[CView::OnActivateView](../Topic/CView::OnActivateView.md) からオーバーライドした `OnActivateView` メソッドで行います。  
+ ```  
+    protected: 
+    virtual void OnActivateView(BOOL bActivate,  
+    CView* pActivateView,  
+    CView* pDeactiveView);
+
+ ```  
   
-     MFCShellControlsView.h ヘッダー ファイルの `CMFCShellControlsView` クラス宣言に、次のメソッド宣言を追加します。  
+     Next, add the definition for this method to the MFCShellControlsView.cpp source file:  
   
-    ```  
-    protected:  
-        virtual void OnActivateView(BOOL bActivate,  
-            CView* pActivateView,  
-            CView* pDeactiveView);  
-    ```  
-  
-     次に、このメソッドの定義を MFCShellControlsView.cpp ソース ファイルに追加します。  
-  
-    ```  
+ ```  
     void CMFCShellControlsView::OnActivateView(BOOL bActivate,  
-        CView* pActivateView,  
-        CView* pDeactiveView)   
-    {  
-        if (bActivate && AfxGetMainWnd() != NULL)  
-        {  
-            ((CMainFrame*)AfxGetMainWnd())->GetShellTreeCtrl().SetRelatedList(&m_wndList);  
-        }  
+    CView* pActivateView,  
+    CView* pDeactiveView)   
+ {  
+    if (bActivate&& AfxGetMainWnd() != NULL)  
+ {  
+ ((CMainFrame*)AfxGetMainWnd())->GetShellTreeCtrl().SetRelatedList(&m_wndList);
+
+ }  
+ 
+    CView::OnActivateView(bActivate,
+    pActivateView,
+    pDeactiveView);
+
+ }  
+ ```  
   
-        CView::OnActivateView(bActivate, pActivateView, pDeactiveView);  
-    }  
-    ```  
+     Because we are calling methods from the `CMainFrame` class, we must add an `#include` directive at the top of the MFCShellControlsView.cpp source file:  
   
-     `CMainFrame` クラスのメソッドを呼び出すため、MFCShellControlsView.cpp ソース ファイルの先頭部分に次の `#include` ディレクティブを追加する必要があります。  
-  
-    ```  
+ ```  
     #include "MainFrm.h"  
-    ```  
+ ```  
   
-6.  アプリケーションをビルドして実行することにより、アプリケーションが正常に作成されたことを確認します。  アプリケーションをビルドするには、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  アプリケーションが正常にビルドされたら、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックして、アプリケーションを実行します。  
+6.  Verify that the application was created successfully by building and running it. To build the application, from the **Build** menu select **Build Solution**. If the application builds successfully, run it by selecting **Start Debugging** from the **Debug** menu.  
   
-     `CMFCShellTreeCtrl` で選択されている項目の詳細が、ビュー ペインに表示されるようになりました。  `CMFCShellTreeCtrl` でノードをクリックすると、`CMFCShellListCtrl` が自動的に更新されます。  また、`CMFCShellListCtrl` でフォルダーをダブルクリックすると、`CMFCShellTreeCtrl` が自動的に更新されます。  
+     You should now see the details for the item selected in the `CMFCShellTreeCtrl` in the view pane. When you click a node in the `CMFCShellTreeCtrl`, the `CMFCShellListCtrl` will be automatically updated. Likewise, if you double-click a folder in the `CMFCShellListCtrl`, the `CMFCShellTreeCtrl` should be automatically updated.  
   
-     ツリー コントロールまたはリスト コントロールの任意の項目を右クリックします。  ファイル エクスプローラーを使用している場合と同じようなコンテキスト メニューが表示されます。  
+     Right click any item in the tree control or in the list control. Note that you get the same context menu as if you were using the real File Explorer.  
   
-## 次の手順  
+## <a name="next-steps"></a>Next Steps  
   
--   ウィザードによって、**フォルダー** ペインと**予定表**ペインのある Outlook バーが作成されました。  エクスプローラー ウィンドウには、おそらく**予定表**ペインは必要ありません。  したがって、このペインを削除します。  
+-   The wizard created an Outlook bar with both a **Folders** pane and a **Calendar** pane. It probably does not make sense to have a **Calendar** pane in an Explorer window. Therefore, remove that pane now.  
   
--   `CMFCShellListCtrl` では、**大きいアイコン**、**小さいアイコン**、**リスト**、**詳細**などのさまざまなモードでファイルを表示できます。  アプリケーションを更新して、この機能を実装します。  ヒントについては、「[Visual C\+\+ のサンプル](../top/visual-cpp-samples.md)」を参照してください。  
+-   The `CMFCShellListCtrl` supports viewing files in different modes, such as **Large Icons**, **Small Icons**, **List**, and **Details**. Update your application to implement this functionality. Hint: see [Visual C++ Samples](../visual-cpp-samples.md).  
   
-## 参照  
- [チュートリアル](../mfc/walkthroughs-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Walkthroughs](../mfc/walkthroughs-mfc.md)
+
+

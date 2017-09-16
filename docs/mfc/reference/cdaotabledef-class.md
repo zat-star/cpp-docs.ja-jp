@@ -1,5 +1,5 @@
 ---
-title: "どちらのクラス |Microsoft ドキュメント"
+title: CDaoTableDef Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -47,11 +47,39 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- database classes [C++], DAO
-- tabledefs [C++]
-- CDaoTableDef class
-- database tables [C++], attached table definition
-- database tables [C++], base table definition
+- CDaoTableDef [MFC], CDaoTableDef
+- CDaoTableDef [MFC], Append
+- CDaoTableDef [MFC], CanUpdate
+- CDaoTableDef [MFC], Close
+- CDaoTableDef [MFC], Create
+- CDaoTableDef [MFC], CreateField
+- CDaoTableDef [MFC], CreateIndex
+- CDaoTableDef [MFC], DeleteField
+- CDaoTableDef [MFC], DeleteIndex
+- CDaoTableDef [MFC], GetAttributes
+- CDaoTableDef [MFC], GetConnect
+- CDaoTableDef [MFC], GetDateCreated
+- CDaoTableDef [MFC], GetDateLastUpdated
+- CDaoTableDef [MFC], GetFieldCount
+- CDaoTableDef [MFC], GetFieldInfo
+- CDaoTableDef [MFC], GetIndexCount
+- CDaoTableDef [MFC], GetIndexInfo
+- CDaoTableDef [MFC], GetName
+- CDaoTableDef [MFC], GetRecordCount
+- CDaoTableDef [MFC], GetSourceTableName
+- CDaoTableDef [MFC], GetValidationRule
+- CDaoTableDef [MFC], GetValidationText
+- CDaoTableDef [MFC], IsOpen
+- CDaoTableDef [MFC], Open
+- CDaoTableDef [MFC], RefreshLink
+- CDaoTableDef [MFC], SetAttributes
+- CDaoTableDef [MFC], SetConnect
+- CDaoTableDef [MFC], SetName
+- CDaoTableDef [MFC], SetSourceTableName
+- CDaoTableDef [MFC], SetValidationRule
+- CDaoTableDef [MFC], SetValidationText
+- CDaoTableDef [MFC], m_pDAOTableDef
+- CDaoTableDef [MFC], m_pDatabase
 ms.assetid: 7c5d2254-8475-43c4-8a6c-2d32ead194c9
 caps.latest.revision: 24
 author: mikeblome
@@ -71,179 +99,179 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 51a93f7facdebb748ec819b731456066dfeaf55d
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 15740ba39184fc6838fc460aa24c849e367c078e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaotabledef-class"></a>どちらのクラス
-ベース テーブル、またはアタッチ テーブルの格納された定義を表現します。  
+# <a name="cdaotabledef-class"></a>CDaoTableDef Class
+Represents the stored definition of a base table or an attached table.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDaoTableDef : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoTableDef::CDaoTableDef](#cdaotabledef)|構築、**どちら**オブジェクト。|  
+|[CDaoTableDef::CDaoTableDef](#cdaotabledef)|Constructs a **CDaoTableDef** object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoTableDef::Append](#append)|データベースに新しいテーブルを追加します。|  
-|[CDaoTableDef::CanUpdate](#canupdate)|テーブルを更新する場合は 0 以外を返します (フィールドやテーブルのプロパティの定義を変更することができます)。|  
-|[CDaoTableDef::Close](#close)|開いているテーブル定義を終了します。|  
-|[CDaoTableDef::Create](#create)|使用して、データベースに追加できるテーブルを作成[Append](#append)です。|  
-|[CDaoTableDef::CreateField](#createfield)|テーブルのフィールドを作成するには、呼び出されます。|  
-|[CDaoTableDef::CreateIndex](#createindex)|テーブルのインデックスを作成するには、呼び出されます。|  
-|[CDaoTableDef::DeleteField](#deletefield)|テーブルからフィールドを削除するには、呼び出されます。|  
-|[CDaoTableDef::DeleteIndex](#deleteindex)|テーブルからインデックスを削除するには、呼び出されます。|  
-|[CDaoTableDef::GetAttributes](#getattributes)|1 つまたは複数の特性を示す値を返します、`CDaoTableDef`オブジェクト。|  
-|[CDaoTableDef::GetConnect](#getconnect)|テーブルのソースに関する情報を示す値を返します。|  
-|[CDaoTableDef::GetDateCreated](#getdatecreated)|基になるベース テーブルの日付と時刻を返します、`CDaoTableDef`オブジェクトが作成されました。|  
-|[CDaoTableDef::GetDateLastUpdated](#getdatelastupdated)|ベース テーブルのデザインに加えられた最近の変更日時を返します。|  
-|[CDaoTableDef::GetFieldCount](#getfieldcount)|テーブル内のフィールドの数を表す値を返します。|  
-|[CDaoTableDef::GetFieldInfo](#getfieldinfo)|テーブルの特定の種類のフィールドに関する情報を返します。|  
-|[CDaoTableDef::GetIndexCount](#getindexcount)|テーブルのインデックスの数を返します。|  
-|[CDaoTableDef::GetIndexInfo](#getindexinfo)|特定の種類のテーブルのインデックスに関する情報を返します。|  
-|[CDaoTableDef::GetName](#getname)|ユーザー定義テーブルの名前を返します。|  
-|[CDaoTableDef::GetRecordCount](#getrecordcount)|テーブルのレコードの数を返します。|  
-|[CDaoTableDef::GetSourceTableName](#getsourcetablename)|ソース データベースに接続されているテーブルの名前を指定する値を返します。|  
-|[CDaoTableDef::GetValidationRule](#getvalidationrule)|変更されたか、テーブルに追加するフィールドのデータを検証する値を返します。|  
-|[CDaoTableDef::GetValidationText](#getvalidationtext)|Field オブジェクトの値が指定した検証規則を満たしていない場合に、アプリケーションが表示されるメッセージのテキストを示す値を返します。|  
-|[CDaoTableDef::IsOpen](#isopen)|テーブルの場合は 0 以外を返しますが開きます。|  
-|[CDaoTableDef::Open](#open)|テーブル定義のコレクションに、データベースに格納されている既存のテーブル定義が表示されます。|  
-|[CDaoTableDef::RefreshLink](#refreshlink)|接続されたテーブルの接続情報を更新します。|  
-|[CDaoTableDef::SetAttributes](#setattributes)|1 つまたは複数の特性を示す値を設定、`CDaoTableDef`オブジェクト。|  
-|[CDaoTableDef::SetConnect](#setconnect)|テーブルのソースに関する情報を提供する値を設定します。|  
-|[CDaoTableDef::SetName](#setname)|テーブルの名前を設定します。|  
-|[CDaoTableDef::SetSourceTableName](#setsourcetablename)|ソース データベースに接続されているテーブルの名前を指定する値を設定します。|  
-|[CDaoTableDef::SetValidationRule](#setvalidationrule)|変更されたか、テーブルに追加するフィールドのデータを検証する値を設定します。|  
-|[CDaoTableDef::SetValidationText](#setvalidationtext)|Field オブジェクトの値が指定した検証規則を満たしていない場合に、アプリケーションが表示されるメッセージのテキストを指定する値を設定します。|  
+|[CDaoTableDef::Append](#append)|Adds a new table to the database.|  
+|[CDaoTableDef::CanUpdate](#canupdate)|Returns nonzero if the table can be updated (you can modify the definition of fields or the table properties).|  
+|[CDaoTableDef::Close](#close)|Closes an open tabledef.|  
+|[CDaoTableDef::Create](#create)|Creates a table which can be added to the database using [Append](#append).|  
+|[CDaoTableDef::CreateField](#createfield)|Called to create a field for a table.|  
+|[CDaoTableDef::CreateIndex](#createindex)|Called to create an index for a table.|  
+|[CDaoTableDef::DeleteField](#deletefield)|Called to delete a field from a table.|  
+|[CDaoTableDef::DeleteIndex](#deleteindex)|Called to delete an index from a table.|  
+|[CDaoTableDef::GetAttributes](#getattributes)|Returns a value that indicates one or more characteristics of a `CDaoTableDef` object.|  
+|[CDaoTableDef::GetConnect](#getconnect)|Returns a value that provides information about the source of a table.|  
+|[CDaoTableDef::GetDateCreated](#getdatecreated)|Returns the date and time the base table underlying a `CDaoTableDef` object was created.|  
+|[CDaoTableDef::GetDateLastUpdated](#getdatelastupdated)|Returns the date and time of the most recent change made to the design of the base table.|  
+|[CDaoTableDef::GetFieldCount](#getfieldcount)|Returns a value that represents the number of fields in the table.|  
+|[CDaoTableDef::GetFieldInfo](#getfieldinfo)|Returns specific kinds of information about the fields in the table.|  
+|[CDaoTableDef::GetIndexCount](#getindexcount)|Returns the number of indexes for the table.|  
+|[CDaoTableDef::GetIndexInfo](#getindexinfo)|Returns specific kinds of information about the indexes for the table.|  
+|[CDaoTableDef::GetName](#getname)|Returns the user-defined name of the table.|  
+|[CDaoTableDef::GetRecordCount](#getrecordcount)|Returns the number of records in the table.|  
+|[CDaoTableDef::GetSourceTableName](#getsourcetablename)|Returns a value that specifies the name of the attached table in the source database.|  
+|[CDaoTableDef::GetValidationRule](#getvalidationrule)|Returns a value that validates the data in a field as it is changed or added to a table.|  
+|[CDaoTableDef::GetValidationText](#getvalidationtext)|Returns a value that specifies the text of the message that your application displays if the value of a Field object does not satisfy the specified validation rule.|  
+|[CDaoTableDef::IsOpen](#isopen)|Returns nonzero if the table is open.|  
+|[CDaoTableDef::Open](#open)|Opens an existing tabledef stored in the database's TableDef's collection.|  
+|[CDaoTableDef::RefreshLink](#refreshlink)|Updates the connection information for an attached table.|  
+|[CDaoTableDef::SetAttributes](#setattributes)|Sets a value that indicates one or more characteristics of a `CDaoTableDef` object.|  
+|[CDaoTableDef::SetConnect](#setconnect)|Sets a value that provides information about the source of a table.|  
+|[CDaoTableDef::SetName](#setname)|Sets the name of the table.|  
+|[CDaoTableDef::SetSourceTableName](#setsourcetablename)|Sets a value that specifies the name of an attached table in the source database.|  
+|[CDaoTableDef::SetValidationRule](#setvalidationrule)|Sets a value that validates the data in a field as it is changed or added to a table.|  
+|[CDaoTableDef::SetValidationText](#setvalidationtext)|Sets a value that specifies the text of the message that your application displays if the value of a Field object does not satisfy the specified validation rule.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDaoTableDef::m_pDAOTableDef](#m_pdaotabledef)|テーブル定義オブジェクトを基になる DAO インターフェイスへのポインター。|  
-|[CDaoTableDef::m_pDatabase](#m_pdatabase)|このテーブルのソース データベースです。|  
+|[CDaoTableDef::m_pDAOTableDef](#m_pdaotabledef)|A pointer to the DAO interface underlying the tabledef object.|  
+|[CDaoTableDef::m_pDatabase](#m_pdatabase)|Source database for this table.|  
   
-## <a name="remarks"></a>コメント  
- DAO データベースの各オブジェクトは、保存されているすべての DAO tabledef オブジェクトを含むテーブル定義と呼ばれる、コレクションを保持します。  
+## <a name="remarks"></a>Remarks  
+ Each DAO database object maintains a collection, called TableDefs, that contains all saved DAO tabledef objects.  
   
- 使用してテーブル定義を操作する、`CDaoTableDef`オブジェクト。 たとえば、次のように操作できます。  
+ You manipulate a table definition using a `CDaoTableDef` object. For example, you can:  
   
--   データベース内の任意のローカル、アタッチ、または外部テーブルのフィールドとインデックス構造を調べます。  
+-   Examine the field and index structure of any local, attached, or external table in a database.  
   
--   呼び出す、`SetConnect`と`SetSourceTableName`アタッチ テーブル、および使用するためのメンバー関数、`RefreshLink`メンバー関数への接続を更新するには、テーブルが接続されています。  
+-   Call the `SetConnect` and `SetSourceTableName` member functions for attached tables, and use the `RefreshLink` member function to update connections to attached tables.  
   
--   呼び出す、`CanUpdate`かどうかは、テーブル内のフィールド定義を編集することができますを調べます。  
+-   Call the `CanUpdate` member function to determine if you can edit field definitions in the table.  
   
--   取得または設定を使用して検証条件、`GetValidationRule`と`SetValidationRule`、および`GetValidationText`と`SetValidationText`メンバー関数。  
+-   Get or set validation conditions using the `GetValidationRule` and `SetValidationRule`, and the `GetValidationText` and `SetValidationText` member functions.  
   
--   使用して、**開く**、テーブル、ダイナセット、またはスナップショットの種類を作成するメンバー関数`CDaoRecordset`オブジェクト。  
+-   Use the **Open** member function to create a table-, dynaset-, or snapshot-type `CDaoRecordset` object.  
   
     > [!NOTE]
-    >  DAO データベース クラスは、MFC データベース クラス ODBC Open Database Connectivity () をベースとは異なります。 DAO データベース クラスの名前では、"CDao"プレフィックスがあります。 DAO クラス; で ODBC データ ソースのアクセスをできます。Microsoft Jet データベース エンジンに固有であるために、DAO クラスは通常、優れた機能を提供します。  
+    >  The DAO database classes are distinct from the MFC database classes based on Open Database Connectivity (ODBC). All DAO database class names have the "CDao" prefix. You can still access ODBC data sources with the DAO classes; the DAO classes generally offer superior capabilities because they are specific to the Microsoft Jet database engine.  
   
-### <a name="to-use-tabledef-objects-either-to-work-with-an-existing-table-or-to-create-a-new-table"></a>既存のテーブルを使用するか、新しいテーブルを作成するテーブル定義オブジェクトを使用するには  
+### <a name="to-use-tabledef-objects-either-to-work-with-an-existing-table-or-to-create-a-new-table"></a>To use tabledef objects either to work with an existing table or to create a new table  
   
-1.  すべてのケースでは構築最初、`CDaoTableDef`へのポインターを提供するオブジェクト、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)テーブルが所属するオブジェクトします。  
+1.  In all cases, first construct a `CDaoTableDef` object, supplying a pointer to a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object to which the table belongs.  
   
-2.  目的に応じて、次の操作を行います。  
+2.  Then do the following, depending on what you want:  
   
-    -   既存のテーブルの名前を使用する呼び出し定義オブジェクトの[開く](#open)保存されているテーブルの名前を指定して、メンバー関数。  
+    -   To use an existing saved table, call the tabledef object's [Open](#open) member function, supplying the name of the saved table.  
   
-    -   新しいテーブルを作成するには、定義オブジェクトを呼び出す[作成](#create)メンバー関数、テーブルの名前を指定します。 呼び出す[CreateField](#createfield)と[CreateIndex](#createindex)フィールドとインデックスをテーブルに追加します。  
+    -   To create a new table, call the tabledef object's [Create](#create) member function, supplying the name of the table. Call [CreateField](#createfield) and [CreateIndex](#createindex) to add fields and indexes to the table.  
   
-    -   呼び出す[Append](#append)をデータベースのテーブル定義のコレクションに追加して、テーブルを保存します。 **作成**テーブル定義では、開いている状態を呼び出した後は**作成**呼び出さないでください**開く**です。  
+    -   Call [Append](#append) to save the table by appending it to the database's TableDefs collection. **Create** puts the tabledef into an open state, so after calling **Create** you do not call **Open**.  
   
         > [!TIP]
-        >  保存されているテーブルを作成する最も簡単な方法は、それらを作成し、Microsoft Access を使用して、データベースに保存するのにです。 開き、MFC コードで使用します。  
+        >  The easiest way to create saved tables is to create them and store them in your database using Microsoft Access. Then you can open and use them in your MFC code.  
   
- オブジェクトを使用する、テーブル定義を開くまたは作成した、作成し、開く、`CDaoRecordset`とテーブル定義の名前を指定するオブジェクト、 **dbOpenTable**値で、`nOpenType`パラメーター。  
+ To use the tabledef object you have opened or created, create and open a `CDaoRecordset` object, specifying the name of the tabledef with a **dbOpenTable** value in the `nOpenType` parameter.  
   
- テーブル定義オブジェクトを使用して作成する、`CDaoRecordset`オブジェクトをする通常の作成または、上記のようにテーブル定義を開き、レコード セット オブジェクトを作成するを呼び出すときに、テーブル定義オブジェクトにポインターを渡す[cdaorecordset::open](../../mfc/reference/cdaorecordset-class.md#open)です。 渡すテーブル定義は、開いている状態にする必要があります。 詳細については、クラスを参照してください。 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)です。  
+ To use a tabledef object to create a `CDaoRecordset` object, you typically create or open a tabledef as described above, then construct a recordset object, passing a pointer to your tabledef object when you call [CDaoRecordset::Open](../../mfc/reference/cdaorecordset-class.md#open). The tabledef you pass must be in an open state. For more information, see class [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md).  
   
- テーブル定義オブジェクトの使用が終了したらを呼び出す、[閉じる](../../mfc/reference/cdaorecordset-class.md#close)メンバー関数です。 テーブル定義オブジェクトを破棄します。  
+ When you finish using a tabledef object, call its [Close](../../mfc/reference/cdaorecordset-class.md#close) member function; then destroy the tabledef object.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CDaoTableDef`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-##  <a name="append"></a>CDaoTableDef::Append  
- このメンバー関数を呼び出した後[作成](#create)をデータベースにテーブル定義を保存する新しいテーブル定義オブジェクトを作成します。  
+##  <a name="append"></a>  CDaoTableDef::Append  
+ Call this member function after you call [Create](#create) to create a new tabledef object to save the tabledef in the database.  
   
 ```  
 virtual void Append();
 ```  
   
-### <a name="remarks"></a>コメント  
- 関数は、データベースのテーブル定義のコレクションにオブジェクトを追加します。 されませんが、追加することでそれを定義する際に一時オブジェクトとしてテーブル定義を使用することができますが、保存して使用する場合は、呼び出す必要があります**Append**です。  
+### <a name="remarks"></a>Remarks  
+ The function appends the object to the database's TableDefs collection. You can use the tabledef as a temporary object while defining it by not appending it, but if you want to save and use it, you must call **Append**.  
   
 > [!NOTE]
->  (Null または空の文字列を含む)、名前のないテーブルの定義を追加しようとすると、MFC は、例外をスローします。  
+>  If you attempt to append an unnamed tabledef (containing a null or empty string), MFC throws an exception.  
   
- 関連情報については、「DAO ヘルプの「メソッドの追加」」を参照してください。  
+ For related information, see the topic "Append Method" in DAO Help.  
   
-##  <a name="canupdate"></a>CDaoTableDef::CanUpdate  
- 決定するには、このメンバー関数を呼び出すかどうか基になるテーブルの定義、`CDaoTableDef`オブジェクトを変更することができます。  
+##  <a name="canupdate"></a>  CDaoTableDef::CanUpdate  
+ Call this member function to determine whether the definition of the table underlying a `CDaoTableDef` object can be changed.  
   
 ```  
 BOOL CanUpdate();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーブルの構造 (スキーマ) を変更する場合は 0 以外 (追加またはフィールドとインデックスを削除)、それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the table structure (schema) can be modified (add or delete fields and indexes), otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 既定では、基になる新しく作成されたテーブル、`CDaoTableDef`オブジェクトを更新することができます、関連付けられているテーブルの基になると、`CDaoTableDef`オブジェクトを更新することはできません。 A`CDaoTableDef`結果のレコード セットは更新可能でない場合でも、オブジェクトが、更新可能な可能性があります。  
+### <a name="remarks"></a>Remarks  
+ By default, a newly created table underlying a `CDaoTableDef` object can be updated, and an attached table underlying a `CDaoTableDef` object cannot be updated. A `CDaoTableDef` object may be updatable, even if the resulting recordset is not updatable.  
   
- 関連情報については、DAO ヘルプの「更新可能なプロパティ」を参照してください。  
+ For related information, see the topic "Updatable Property" in DAO Help.  
   
-##  <a name="cdaotabledef"></a>CDaoTableDef::CDaoTableDef  
- 構築、**どちら**オブジェクト。  
+##  <a name="cdaotabledef"></a>  CDaoTableDef::CDaoTableDef  
+ Constructs a **CDaoTableDef** object.  
   
 ```  
 CDaoTableDef(CDaoDatabase* pDatabase);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDatabase`  
- ポインター、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)オブジェクト。  
+ A pointer to a [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object.  
   
-### <a name="remarks"></a>コメント  
- オブジェクトを構築するには、後に呼び出す必要があります、[作成](#create)または[開く](#open)メンバー関数。 オブジェクトが完了したら、ときに呼び出す必要があります、[閉じる](#close)メンバー関数し、破棄、`CDaoTableDef`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ After constructing the object, you must call the [Create](#create) or [Open](#open) member function. When you finish with the object, you must call its [Close](#close) member function and destroy the `CDaoTableDef` object.  
   
-##  <a name="close"></a>CDaoTableDef::Close  
- このメンバー関数を閉じるし、テーブル定義オブジェクトを解放します。  
+##  <a name="close"></a>  CDaoTableDef::Close  
+ Call this member function to close and release the tabledef object.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後に通常**閉じる**で割り当てられた場合、テーブル定義オブジェクトを削除する**新しい**です。  
+### <a name="remarks"></a>Remarks  
+ Usually after calling **Close**, you delete the tabledef object if it was allocated with **new**.  
   
- 呼び出すことができます[開く](#open)呼び出した後にもう一度**閉じる**です。 これにより、テーブル定義オブジェクトを再利用できます。  
+ You can call [Open](#open) again after calling **Close**. This lets you reuse the tabledef object.  
   
- 関連情報については、「Close メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Close Method" in DAO Help.  
   
-##  <a name="create"></a>CDaoTableDef::Create  
- 保存されている新しいテーブルを作成するには、このメンバー関数を呼び出します。  
+##  <a name="create"></a>  CDaoTableDef::Create  
+ Call this member function to create a new saved table.  
   
 ```  
 virtual void Create(
@@ -253,33 +281,33 @@ virtual void Create(
     LPCTSTR lpszConnect = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- テーブルの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the table.  
   
  `lAttributes`  
- テーブル定義オブジェクトによって表されるテーブルの特性に対応する値。 ビットごとの OR を使用して、次の定数のいずれかを結合できます。  
+ A value corresponding to characteristics of the table represented by the tabledef object. You can use the bitwise-OR to combine any of the following constants:  
   
-|定数|説明|  
+|Constant|Description|  
 |--------------|-----------------|  
-|**dbAttachExclusive**|Microsoft Jet データベース エンジンを使用するデータベース、テーブルは排他的に開かれて、接続されているテーブルを示します。|  
-|**dbAttachSavePWD**|Microsoft Jet データベース エンジンを使用してデータベースの場合は、接続情報を使用、ユーザーの ID とパスワード、接続されているテーブルが保存されたことを示します。|  
-|**dbSystemObject**|テーブルが、Microsoft Jet データベース エンジンによって提供されるシステム テーブルであることを示します。|  
-|**dbHiddenObject**|テーブルが、Microsoft Jet データベース エンジンによって提供される非表示のテーブルであることを示します。|  
+|**dbAttachExclusive**|For databases that use the Microsoft Jet database engine, indicates the table is an attached table opened for exclusive use.|  
+|**dbAttachSavePWD**|For databases that use the Microsoft Jet database engine, indicates that the user ID and password for the attached table are saved with the connection information.|  
+|**dbSystemObject**|Indicates the table is a system table provided by the Microsoft Jet database engine.|  
+|**dbHiddenObject**|Indicates the table is a hidden table provided by the Microsoft Jet database engine.|  
   
  *lpszSrcTable*  
- ソース テーブル名を含む文字列へのポインター。 既定ではこの値として初期化**NULL**です。  
+ A pointer to a string containing the source table name. By default this value is initialized as **NULL**.  
   
  `lpszConnect`  
- 既定の接続文字列を含む文字列へのポインター。 既定ではこの値として初期化**NULL**です。  
+ A pointer to a string containing the default connection string. By default this value is initialized as **NULL**.  
   
-### <a name="remarks"></a>コメント  
- 呼び出すことができます、テーブル定義をという名前が、いったん[追加](#append)をデータベースのテーブル定義のコレクションに、テーブル定義を保存します。 呼び出した後**Append**、開いている状態では、テーブル定義、および作成を行うこともできます、 [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ Once you have named the tabledef, you can then call [Append](#append) to save the tabledef in the database's TableDefs collection. After calling **Append**, the tabledef is in an open state, and you can use it to create a [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) object.  
   
- 関連情報については、DAO ヘルプの「CreateTableDef メソッド」を参照してください。  
+ For related information, see the topic "CreateTableDef Method" in DAO Help.  
   
-##  <a name="createfield"></a>CDaoTableDef::CreateField  
- テーブルにフィールドを追加するには、このメンバー関数を呼び出します。  
+##  <a name="createfield"></a>  CDaoTableDef::CreateField  
+ Call this member function to add a field to the table.  
   
 ```  
 void CreateField(
@@ -291,48 +319,48 @@ void CreateField(
 void CreateField(CDaoFieldInfo& fieldinfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- このフィールドの名前を指定する文字列式へのポインター。  
+ A pointer to a string expression specifying the name of this field.  
   
  `nType`  
- フィールドのデータ型を示す値。 この設定は、これらの値のいずれかになります。  
+ A value indicating the data type of the field. The setting can be one of these values:  
   
-|型|サイズ (バイト)|説明|  
+|Type|Size (bytes)|Description|  
 |----------|--------------------|-----------------|  
-|**dbBoolean**|1 バイト|BOOL|  
+|**dbBoolean**|1 byte|BOOL|  
 |**dbByte**|1|BYTE|  
 |**dbInteger**|2|int|  
 |**dbLong**|4|long|  
-|**dbCurrency**|9|通貨 ( [COleCurrency](../../mfc/reference/colecurrency-class.md))|  
-|**dbSingle**|4|フローティング|  
-|**dbDouble**|9|double|  
-|**dbDate**|9|日付/時刻 ( [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md))|  
-|**dbText**|1 - 255|テキスト ( [CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
-|**dbLongBinary**|0|長いバイナリ (OLE オブジェクト)、 [CLongBinary](../../mfc/reference/clongbinary-class.md)または[CByteArray](../../mfc/reference/cbytearray-class.md)|  
-|**dbMemo**|0|メモ ( [CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
+|**dbCurrency**|8|Currency ( [COleCurrency](../../mfc/reference/colecurrency-class.md))|  
+|**dbSingle**|4|float|  
+|**dbDouble**|8|double|  
+|**dbDate**|8|Date/Time ( [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md))|  
+|**dbText**|1 - 255|Text ( [CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
+|**dbLongBinary**|0|Long Binary (OLE Object), [CLongBinary](../../mfc/reference/clongbinary-class.md) or [CByteArray](../../mfc/reference/cbytearray-class.md)|  
+|**dbMemo**|0|Memo ( [CString](../../atl-mfc-shared/reference/cstringt-class.md))|  
   
  `lSize`  
- 最大サイズ (バイト) のテキストを含むフィールドのまたはテキストまたは数値を格納するフィールドの固定サイズを示す値。 `lSize`テキスト フィールドを除くすべてのパラメーターは無視されます。  
+ A value that indicates the maximum size, in bytes, of a field that contains text, or the fixed size of a field that contains text or numeric values. The `lSize` parameter is ignored for all but text fields.  
   
  `lAttributes`  
- フィールドの特性に対応する値は、ビットごとの OR を使用して結合できます。  
+ A value corresponding to characteristics of the field and that can be combined using a bitwise-OR.  
   
-|定数|説明|  
+|Constant|Description|  
 |--------------|-----------------|  
-|**dbFixedField**|フィールド サイズには、(数値フィールドの既定値) は固定です。|  
-|**dbVariableField**|フィールド サイズは、変数 (テキスト フィールドのみ) です。|  
-|**dbAutoIncrField**|新しいレコードのフィールドの値は変更できない一意の長整数を自動的にインクリメントされます。 Microsoft Jet データベースのテーブルのみサポートされます。|  
-|**dbUpdatableField**|フィールドの値を変更できます。|  
-|**dbDescending**|降順で並べ替えられます (Z、A または 100-0) 順序 (インデックス オブジェクトのフィールド コレクション内のフィールド オブジェクトにのみ適用されます)。 この定数を省略した場合に昇順に並べ替えられます (A ~ Z、または 0 - 100) 順序 (既定値)。|  
+|**dbFixedField**|The field size is fixed (default for Numeric fields).|  
+|**dbVariableField**|The field size is variable (Text fields only).|  
+|**dbAutoIncrField**|The field value for new records is automatically incremented to a unique long integer that cannot be changed. Only supported for Microsoft Jet database tables.|  
+|**dbUpdatableField**|The field value can be changed.|  
+|**dbDescending**|The field is sorted in descending (Z - A or 100 - 0) order (applies only to a Field object in a Fields collection of an Index object). If you omit this constant, the field is sorted in ascending (A - Z or 0 - 100) order (default).|  
   
  `fieldinfo`  
- 参照、 [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md)構造体。  
+ A reference to a [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) structure.  
   
-### <a name="remarks"></a>コメント  
- A **DAOField** (OLE) オブジェクトが作成され、フィールド コレクションに追加、 **DAOTableDef** (OLE) オブジェクト。 オブジェクトのプロパティを確認するための使用だけでなく使用することも`CDaoFieldInfo`テーブル定義内の新しいフィールドを作成するための入力パラメーターを構築するためにします。 最初のバージョン`CreateField`が簡単に使用すると、さらに細かく制御する場合は、第 2 のバージョンを使用することが`CreateField`、受け取り、`CDaoFieldInfo`パラメーター。  
+### <a name="remarks"></a>Remarks  
+ A **DAOField** (OLE) object is created and appended to the Fields collection of the **DAOTableDef** (OLE) object. Besides its use for examining object properties, you can also use `CDaoFieldInfo` to construct an input parameter for creating new fields in a tabledef. The first version of `CreateField` is simpler to use, but if you want finer control, you can use the second version of `CreateField`, which takes a `CDaoFieldInfo` parameter.  
   
- バージョンを使用する場合`CreateField`を受け取る、`CDaoFieldInfo`パラメーター、する必要があります慎重に各設定の次のメンバー、`CDaoFieldInfo`構造体。  
+ If you use the version of `CreateField` that takes a `CDaoFieldInfo` parameter, you must carefully set each of the following members of the `CDaoFieldInfo` structure:  
   
 - **m_strName**  
   
@@ -344,173 +372,173 @@ void CreateField(CDaoFieldInfo& fieldinfo);
   
 - **m_bAllowZeroLength**  
   
- 残りのメンバー`CDaoFieldInfo`に設定する必要があります**0**、 **FALSE**、または、メンバーの必要に応じて、空の文字列または`CDaoException`発生する可能性があります。  
+ The remaining members of `CDaoFieldInfo` should be set to **0**, **FALSE**, or an empty string, as appropriate for the member, or a `CDaoException` may occur.  
   
- 関連情報については、DAO ヘルプの「CreateField メソッド」を参照してください。  
+ For related information, see the topic "CreateField Method" in DAO Help.  
   
-##  <a name="createindex"></a>CDaoTableDef::CreateIndex  
- テーブルにインデックスを追加するには、この関数を呼び出します。  
+##  <a name="createindex"></a>  CDaoTableDef::CreateIndex  
+ Call this function to add an index to a table.  
   
 ```  
 void CreateIndex(CDaoIndexInfo& indexinfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `indexinfo`  
- 参照、 [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md)構造体。  
+ A reference to a [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) structure.  
   
-### <a name="remarks"></a>コメント  
- インデックスは、データベースのテーブルと重複するレコードを受け付けるかどうかからアクセスされるレコードの順序を指定します。 インデックスでは、データに効率的にアクセスも提供します。  
+### <a name="remarks"></a>Remarks  
+ Indexes specify the order of records accessed from database tables and whether or not duplicate records are accepted. Indexes also provide efficient access to data.  
   
- テーブルにインデックスを作成する必要はありませんが、大規模なインデックスなしのテーブルで特定のレコードへのアクセスまたはレコード セットを作成することができます、長い時間がかかります。 その一方で、多くのインデックスを作成する速度が低下し更新、追加、および削除の操作をすべてのインデックスが自動的に更新します。 作成するインデックスを決定するときに、これらの要因を考慮します。  
+ You do not have to create indexes for tables, but in large, unindexed tables, accessing a specific record or creating a recordset can take a long time. On the other hand, creating too many indexes slows down update, append, and delete operations as all indexes are automatically updated. Consider these factors as you decide which indexes to create.  
   
- 次のメンバー、`CDaoIndexInfo`構造を設定する必要があります。  
+ The following members of the `CDaoIndexInfo` structure must be set:  
   
-- **m_strName**名前を指定する必要があります。  
+- **m_strName** A name must be supplied.  
   
-- `m_pFieldInfos`型の配列を指す必要があります`CDaoIndexFieldInfo`構造体。  
+- `m_pFieldInfos` Must point to an array of `CDaoIndexFieldInfo` structures.  
   
-- `m_nFields`配列内のフィールドの数を指定する必要があります`CDaoFieldInfo`構造体。  
+- `m_nFields` Must specify the number of fields in the array of `CDaoFieldInfo` structures.  
   
- 残りのメンバーは無視される場合に設定されます**FALSE**です。 さらに、 **m_lDistinctCount**メンバーは、インデックスの作成時に無視されます。  
+ The remaining members will be ignored if set to **FALSE**. In addition, the **m_lDistinctCount** member is ignored during creation of the index.  
   
-##  <a name="deletefield"></a>CDaoTableDef::DeleteField  
- フィールドを削除し、アクセスできないようにするには、このメンバー関数を呼び出します。  
+##  <a name="deletefield"></a>  CDaoTableDef::DeleteField  
+ Call this member function to remove a field and make it inaccessible.  
   
 ```  
 void DeleteField(LPCTSTR lpszName);  
 void DeleteField(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- 既存のフィールドの名前を指定する文字列式へのポインター。  
+ A pointer to a string expression that is the name of an existing field.  
   
  `nIndex`  
- インデックスで検索する場合のテーブルの 0 から始まるフィールド コレクション内のフィールドのインデックス。  
+ The index of the field in the table's zero-based Fields collection, for lookup by index.  
   
-### <a name="remarks"></a>コメント  
- データベースに追加されていない新しいオブジェクトでこのメンバー関数を使用する場合や[CanUpdate](#canupdate) 0 以外を返します。  
+### <a name="remarks"></a>Remarks  
+ You can use this member function on a new object that has not been appended to the database or when [CanUpdate](#canupdate) returns nonzero.  
   
- 関連情報については、「Delete メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Delete Method" in DAO Help.  
   
-##  <a name="deleteindex"></a>CDaoTableDef::DeleteIndex  
- 基になるテーブルのインデックスを削除するには、このメンバー関数を呼び出します。  
+##  <a name="deleteindex"></a>  CDaoTableDef::DeleteIndex  
+ Call this member function to delete an index in an underlying table.  
   
 ```  
 void DeleteIndex(LPCTSTR lpszName);  
 void DeleteIndex(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- 既存のインデックスの名前を指定する文字列式へのポインター。  
+ A pointer to a string expression that is the name of an existing index.  
   
  `nIndex`  
- インデックスで検索する場合のデータベースの 0 から始まる TableDefs コレクション内のインデックス オブジェクトの配列インデックス。  
+ The array index of the index object in the database's zero-based TableDefs collection, for lookup by index.  
   
-### <a name="remarks"></a>コメント  
- データベースに追加されていない新しいオブジェクトでこのメンバー関数を使用する場合や[CanUpdate](#canupdate) 0 以外を返します。  
+### <a name="remarks"></a>Remarks  
+ You can use this member function on a new object that hasn't been appended to the database or when [CanUpdate](#canupdate) returns nonzero.  
   
- 関連情報については、「Delete メソッド」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Delete Method" in DAO Help.  
   
-##  <a name="getattributes"></a>CDaoTableDef::GetAttributes  
- `CDaoTableDef`オブジェクトによって表されるテーブルの特性を指定する、戻り値、`CDaoTableDef`オブジェクトし、これらの定数の合計を指定できます。  
+##  <a name="getattributes"></a>  CDaoTableDef::GetAttributes  
+ For a `CDaoTableDef` object, the return value specifies characteristics of the table represented by the `CDaoTableDef` object and can be a sum of these constants:  
   
 ```  
 long GetAttributes();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 1 つまたは複数の特性を示す値を返します、`CDaoTableDef`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ Returns a value that indicates one or more characteristics of a `CDaoTableDef` object.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-|定数|説明|  
+|Constant|Description|  
 |--------------|-----------------|  
-|**dbAttachExclusive**|Microsoft Jet データベース エンジンを使用するデータベース、テーブルは排他的に開かれて、接続されているテーブルを示します。|  
-|**dbAttachSavePWD**|Microsoft Jet データベース エンジンを使用してデータベースの場合は、接続情報を使用、ユーザーの ID とパスワード、接続されているテーブルが保存されたことを示します。|  
-|**dbSystemObject**|テーブルが、Microsoft Jet データベース エンジンによって提供されるシステム テーブルであることを示します。|  
-|**dbHiddenObject**|テーブルが、Microsoft Jet データベース エンジンによって提供される非表示のテーブルであることを示します。|  
-|**dbAttachedTable**|テーブルが Paradox データベースなどの非 ODBC データベースからのアタッチのテーブルであることを示します。|  
-|**dbAttachedODBC**|テーブルが Microsoft SQL Server などの ODBC データベースからのアタッチのテーブルであることを示します。|  
+|**dbAttachExclusive**|For databases that use the Microsoft Jet database engine, indicates the table is an attached table opened for exclusive use.|  
+|**dbAttachSavePWD**|For databases that use the Microsoft Jet database engine, indicates that the user ID and password for the attached table are saved with the connection information.|  
+|**dbSystemObject**|Indicates the table is a system table provided by the Microsoft Jet database engine.|  
+|**dbHiddenObject**|Indicates the table is a hidden table provided by the Microsoft Jet database engine.|  
+|**dbAttachedTable**|Indicates the table is an attached table from a non-ODBC database, such as a Paradox database.|  
+|**dbAttachedODBC**|Indicates the table is an attached table from an ODBC database, such as Microsoft SQL Server.|  
   
- システム テーブルは、さまざまな内部情報を格納する Microsoft Jet データベース エンジンによって作成されるテーブルです。  
+ A system table is a table created by the Microsoft Jet database engine to contain various internal information.  
   
- 非表示の表は、一時的に使用、Microsoft Jet データベース エンジンによって作成されたテーブルです。  
+ A hidden table is a table created for temporary use by the Microsoft Jet database engine.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getconnect"></a>CDaoTableDef::GetConnect  
- データ ソースの接続文字列を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getconnect"></a>  CDaoTableDef::GetConnect  
+ Call this member function to obtain the connection string for a data source.  
   
 ```  
 CString GetConnect();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`テーブルのパスとデータベースの種類を含むオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object containing the path and database type for the table.  
   
-### <a name="remarks"></a>コメント  
- `CDaoTableDef` 、接続されているテーブルを表すオブジェクト、`CString`オブジェクトは、1 つまたは 2 つの部分 (データベースの型指定子およびデータベースへのパス) で構成されます。  
+### <a name="remarks"></a>Remarks  
+ For a `CDaoTableDef` object that represents an attached table, the `CString` object consists of one or two parts (a database type specifier and a path to the database).  
   
- 次の表に示すようにパスが、データベース ファイルを含むディレクトリの完全なパスし、識別子の前にする必要があります"DATABASE ="です。 場合によっては (Microsoft Jet や Microsoft Excel で次のようにデータベース) として、データベース パス引数で特定のファイル名が含まれています。  
+ The path as shown in the table below is the full path for the directory containing the database files and must be preceded by the identifier "DATABASE=". In some cases (as with Microsoft Jet and Microsoft Excel databases), a specific filename is included in the database path argument.  
   
- 内のテーブル[CDaoTableDef::SetConnect](#setconnect)可能なデータベースの種類とその対応するデータベースの指定子とパスを示しています。  
+ The table in [CDaoTableDef::SetConnect](#setconnect) shows possible database types and their corresponding database specifiers and paths:  
   
- Microsoft Jet データベースのベース テーブルでは、指定子は空の文字列 ("") です。  
+ For Microsoft Jet database base tables, the specifier is a empty string ("").  
   
- ODBC ドライバーが、テーブルにアクセス ログイン ダイアログ ボックス最初の時刻を表示する場合は、パスワードが必要な指定されていませんし、もう一度接続を閉じて、再び開く場合。 接続されているテーブルがある場合、 **dbAttachSavePWD**属性で、ログイン プロンプトは表示されません、テーブルを再び開くときにします。  
+ If a password is required but not provided, the ODBC driver displays a login dialog box the first time a table is accessed and again if the connection is closed and reopened. If an attached table has the **dbAttachSavePWD** attribute, the login prompt will not appear when the table is reopened.  
   
- 関連情報については、"接続 Property"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Connect Property" in DAO Help.  
   
-##  <a name="getdatecreated"></a>CDaoTableDef::GetDateCreated  
- テーブルの基になる日付と時刻を判断するには、この関数を呼び出して、`CDaoTableDef`オブジェクトが作成されました。  
+##  <a name="getdatecreated"></a>  CDaoTableDef::GetDateCreated  
+ Call this function to determine the date and time the table underlying the `CDaoTableDef` object was created.  
   
 ```  
 COleDateTime GetDateCreated();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるテーブルの作成日時を含む値、`CDaoTableDef`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A value containing the date and time of the creation of the table underlying the `CDaoTableDef` object.  
   
-### <a name="remarks"></a>コメント  
- 日付と時刻の設定は、ベース テーブルが作成または最後に更新されたコンピューターから派生します。 マルチ ユーザー環境の場合は、ユーザーは、矛盾を避けるため、ファイル サーバーから直接これらの設定を取得する必要があります。つまり、すべてのクライアントが「標準」タイム ソースを使用する必要があります: 1 台のサーバーからです。  
+### <a name="remarks"></a>Remarks  
+ The date and time settings are derived from the computer on which the base table was created or last updated. In a multiuser environment, users should get these settings directly from the file server to avoid discrepancies; that is, all clients should use a "standard" time source — perhaps from one server.  
   
- 関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
+ For related information, see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
-##  <a name="getdatelastupdated"></a>CDaoTableDef::GetDateLastUpdated  
- テーブルの基になる日付と時刻を判断するには、この関数を呼び出して、**どちら**オブジェクトが最後に更新されました。  
+##  <a name="getdatelastupdated"></a>  CDaoTableDef::GetDateLastUpdated  
+ Call this function to determine the date and time the table underlying the **CDaoTableDef** object was last updated.  
   
 ```  
 COleDateTime GetDateLastUpdated();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 基になるテーブルの日付と時刻を格納する値、**どちら**オブジェクトが最後に更新されました。  
+### <a name="return-value"></a>Return Value  
+ A value that contains the date and time the table underlying the **CDaoTableDef** object was last updated.  
   
-### <a name="remarks"></a>コメント  
- 日付と時刻の設定は、ベース テーブルが作成または最後に更新されたコンピューターから派生します。 マルチ ユーザー環境の場合は、ユーザーは、矛盾を避けるため、ファイル サーバーから直接これらの設定を取得する必要があります。つまり、すべてのクライアントが「標準」タイム ソースを使用する必要があります: 1 台のサーバーからです。  
+### <a name="remarks"></a>Remarks  
+ The date and time settings are derived from the computer on which the base table was created or last updated. In a multiuser environment, users should get these settings directly from the file server to avoid discrepancies; that is, all clients should use a "standard" time source — perhaps from one server.  
   
- 関連情報については、DAO ヘルプのトピックの「作成日時、LastUpdated プロパティ」を参照してください。  
+ For related information, see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
-##  <a name="getfieldcount"></a>CDaoTableDef::GetFieldCount  
- テーブルで定義されたフィールドの数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfieldcount"></a>  CDaoTableDef::GetFieldCount  
+ Call this member function to retrieve the number of fields defined in the table.  
   
 ```  
 short GetFieldCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーブル内のフィールドの数。  
+### <a name="return-value"></a>Return Value  
+ The number of fields in the table.  
   
-### <a name="remarks"></a>コメント  
- その値が 0 の場合に含まれないオブジェクト コレクションです。  
+### <a name="remarks"></a>Remarks  
+ If its value is 0, there are no objects in the collection.  
   
- 関連情報については、「Count プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Count Property" in DAO Help.  
   
-##  <a name="getfieldinfo"></a>CDaoTableDef::GetFieldInfo  
- さまざまなテーブル定義で定義されているフィールドに関する情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getfieldinfo"></a>  CDaoTableDef::GetFieldInfo  
+ Call this member function to obtain various kinds of information about a field defined in the tabledef.  
   
 ```  
 void GetFieldInfo(
@@ -525,49 +553,49 @@ void GetFieldInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- インデックスで検索する場合のテーブルの 0 から始まるフィールド コレクション内のフィールド オブジェクトのインデックス。  
+ The index of the field object in the table's zero-based Fields collection, for lookup by index.  
   
  `fieldinfo`  
- 参照、 [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md)構造体。  
+ A reference to a [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) structure.  
   
  `dwInfoOptions`  
- 取得するフィールドに関する情報を指定するオプション。 使用可能なオプションを返す関数が何もここで表示されます。  
+ Options that specify which information about the field to retrieve. The available options are listed here along with what they cause the function to return:  
   
-- `AFX_DAO_PRIMARY_INFO`(既定値)名前、種類、サイズ、属性です。 最も高速なパフォーマンスを得るには、このオプションを使用します。  
+- `AFX_DAO_PRIMARY_INFO` (Default) Name, Type, Size, Attributes. Use this option for fastest performance.  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリについては、プラス: 必要に応じて、序数位置 0 長、照合順序、外部名、ソース フィールド、ソース テーブルを許可します。  
+- `AFX_DAO_SECONDARY_INFO` Primary information, plus: Ordinal Position, Required, Allow Zero Length, Collating Order, Foreign Name, Source Field, Source Table  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報と: 検証規則、入力テキストの場合は、既定値  
+- `AFX_DAO_ALL_INFO` Primary and secondary information, plus: Validation Rule, Validation Text, Default Value  
   
  `lpszName`  
- 名前で検索のフィールド オブジェクトの名前へのポインター。 名前は、フィールドの一意名で、最大 64 文字の文字列です。  
+ A pointer to the name of the field object, for lookup by name. The name is a string with up to 64 characters that uniquely names the field.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、インデックスを使用してフィールドを検索することができます。 その他のバージョンでは、名前、フィールドを検索することができます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up a field by index. The other version lets you look up a field by name.  
   
- 返される情報については、次を参照してください。、 [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、同様に、以前のレベルの情報を取得します。  
+ For a description of the information returned, see the [CDaoFieldInfo](../../mfc/reference/cdaofieldinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for any prior levels as well.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getindexcount"></a>CDaoTableDef::GetIndexCount  
- テーブルのインデックスの数を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getindexcount"></a>  CDaoTableDef::GetIndexCount  
+ Call this member function to obtain the number of indexes for a table.  
   
 ```  
 short GetIndexCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーブルのインデックスの数。  
+### <a name="return-value"></a>Return Value  
+ The number of indexes for the table.  
   
-### <a name="remarks"></a>コメント  
- その値が 0 の場合に含まれないインデックス コレクションです。  
+### <a name="remarks"></a>Remarks  
+ If its value is 0, there are no indexes in the collection.  
   
- 関連情報については、「Count プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Count Property" in DAO Help.  
   
-##  <a name="getindexinfo"></a>CDaoTableDef::GetIndexInfo  
- さまざまなテーブル定義で定義されているインデックスに関する情報を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getindexinfo"></a>  CDaoTableDef::GetIndexInfo  
+ Call this member function to obtain various kinds of information about an index defined in the tabledef.  
   
 ```  
 void GetIndexInfo(
@@ -582,306 +610,306 @@ void GetIndexInfo(
     DWORD dwInfoOptions = AFX_DAO_PRIMARY_INFO);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- コレクション内での位置で検索する場合のテーブルの 0 から始まるインデックス コレクション内のインデックス オブジェクトの数値インデックス。  
+ The numeric index of the Index object in the table's zero-based Indexes collection, for lookup by its position in the collection.  
   
  `indexinfo`  
- 参照、 [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md)構造体。  
+ A reference to a [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) structure.  
   
  `dwInfoOptions`  
- 取得するインデックスに関する情報を指定するオプション。 使用可能なオプションを返す関数が何もここで表示されます。  
+ Options that specify which information about the index to retrieve. The available options are listed here along with what they cause the function to return:  
   
-- `AFX_DAO_PRIMARY_INFO`名前、フィールドの情報、フィールドです。 最も高速なパフォーマンスを得るには、このオプションを使用します。  
+- `AFX_DAO_PRIMARY_INFO` Name, Field Info, Fields. Use this option for fastest performance.  
   
-- `AFX_DAO_SECONDARY_INFO`プライマリについては、プラス: プライマリ、Unique、クラスター化された、Null を無視、必要に応じて、異形式  
+- `AFX_DAO_SECONDARY_INFO` Primary information, plus: Primary, Unique, Clustered, Ignore Nulls, Required, Foreign  
   
-- `AFX_DAO_ALL_INFO`プライマリとセカンダリの情報と: 個別のカウント  
+- `AFX_DAO_ALL_INFO` Primary and secondary information, plus: Distinct Count  
   
  `lpszName`  
- 名前で検索のインデックス オブジェクトの名前へのポインター。  
+ A pointer to the name of the index object, for lookup by name.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、コレクション内の位置でインデックスを検索することができます。 その他のバージョンでは、名前、インデックスを検索することができます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up an index by its position in the collection. The other version lets you look up an index by name.  
   
- 返される情報については、次を参照してください。、 [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md)構造体。 この構造体メンバーの説明に上記の情報項目に対応するは`dwInfoOptions`します。 1 つのレベルの情報を要求するときに、同様に、以前のレベルの情報を取得します。  
+ For a description of the information returned, see the [CDaoIndexInfo](../../mfc/reference/cdaoindexinfo-structure.md) structure. This structure has members that correspond to the items of information listed above in the description of `dwInfoOptions`. When you request information at one level, you get information for any prior levels as well.  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="getname"></a>CDaoTableDef::GetName  
- 基になるテーブルのユーザー定義名を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getname"></a>  CDaoTableDef::GetName  
+ Call this member function to obtain the user-defined name of the underlying table.  
   
 ```  
 CString GetName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- ユーザー定義テーブルの名前。  
+### <a name="return-value"></a>Return Value  
+ A user-defined name for a table.  
   
-### <a name="remarks"></a>コメント  
- この名前から始まり、文字と、最大 64 文字を含めることができます。 数字を含めることができ、アンダー スコア文字ですが、区切り記号やスペースを含めることはできません。  
+### <a name="remarks"></a>Remarks  
+ This name starts with a letter and can contain a maximum of 64 characters. It can include numbers and underscore characters but cannot include punctuation or spaces.  
   
- 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ For related information, see the topic "Name Property" in DAO Help.  
   
-##  <a name="getrecordcount"></a>CDaoTableDef::GetRecordCount  
- レコードの数を調べるには、このメンバー関数を呼び出す、`CDaoTableDef`オブジェクト。  
+##  <a name="getrecordcount"></a>  CDaoTableDef::GetRecordCount  
+ Call this member function to find out how many records are in a `CDaoTableDef` object.  
   
 ```  
 long GetRecordCount();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーブル定義オブジェクトにアクセスするレコードの数。  
+### <a name="return-value"></a>Return Value  
+ The number of records accessed in a tabledef object.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`GetRecordCount`テーブル型に対する`CDaoTableDef`オブジェクトがテーブル内のレコードの概数を反映し、テーブルのレコードが追加または削除されるとすぐに影響を受けるはします。 トランザクションがレコードの数の一部として表示されますが呼び出されるまでロールバック[CDaoWorkSpace::CompactDatabase](../../mfc/reference/cdaoworkspace-class.md#compactdatabase)です。 A`CDaoTableDef`レコードのないオブジェクトが 0 のレコード数プロパティの設定。 アタッチされているテーブルまたは ODBC データベースを使用するときに`GetRecordCount`常に-1 を返します。  
+### <a name="remarks"></a>Remarks  
+ Calling `GetRecordCount` for a table-type `CDaoTableDef` object reflects the approximate number of records in the table and is affected immediately as table records are added and deleted. Rolled back transactions will appear as part of the record count until you call [CDaoWorkSpace::CompactDatabase](../../mfc/reference/cdaoworkspace-class.md#compactdatabase). A `CDaoTableDef` object with no records has a record count property setting of 0. When working with attached tables or ODBC databases, `GetRecordCount` always returns -1.  
   
- 関連情報については、DAO ヘルプの「RecordCount プロパティ」を参照してください。  
+ For related information, see the topic "RecordCount Property" in DAO Help.  
   
-##  <a name="getsourcetablename"></a>CDaoTableDef::GetSourceTableName  
- ソース データベースのアタッチ テーブルの名前を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getsourcetablename"></a>  CDaoTableDef::GetSourceTableName  
+ Call this member function to retrieve the name of an attached table in a source database.  
   
 ```  
 CString GetSourceTableName();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`ネイティブ データ テーブルの場合は、接続されたテーブル、または空の文字列のソース名を指定するオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object that specifies the source name of an attached table, or an empty string if a native data table.  
   
-### <a name="remarks"></a>コメント  
- 接続されたテーブルは、Microsoft Jet データベースにリンクされている別のデータベースのテーブルです。 アタッチされているテーブルのデータは、他のアプリケーションで操作できる、外部データベースに残ります。  
+### <a name="remarks"></a>Remarks  
+ An attached table is a table in another database linked to a Microsoft Jet database. Data for attached tables remains in the external database, where it can be manipulated by other applications.  
   
- 関連情報については、DAO ヘルプの「SourceTableName プロパティ」を参照してください。  
+ For related information, see the topic "SourceTableName Property" in DAO Help.  
   
-##  <a name="getvalidationrule"></a>CDaoTableDef::GetValidationRule  
- テーブル定義の検証規則を取得するには、このメンバー関数を呼び出します。  
+##  <a name="getvalidationrule"></a>  CDaoTableDef::GetValidationRule  
+ Call this member function to retrieve the validation rule for a tabledef.  
   
 ```  
 CString GetValidationRule();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A **CString**が変更またはテーブルに追加すると、フィールド内のデータを検証するオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A **CString** object that validates the data in a field as it is changed or added to a table.  
   
-### <a name="remarks"></a>コメント  
- 検証規則は、更新操作に関連して使用されます。 テーブル定義に、検証規則が含まれている場合、そのテーブル定義の更新プログラムは、データが変更される前に事前に定義された条件に一致する必要があります。 変更が一致しない場合、条件の値を含む例外[GetValidationText](#getvalidationtext)がスローされます。 `CDaoTableDef`オブジェクトをこの`CString`は、接続されているテーブルと、ベース テーブルの読み取り/書き込みの読み取り専用です。  
+### <a name="remarks"></a>Remarks  
+ Validation rules are used in connection with update operations. If a tabledef contains a validation rule, updates to that tabledef must match predetermined criteria before the data is changed. If the change does not match the criteria, an exception containing the value of [GetValidationText](#getvalidationtext) is thrown. For a `CDaoTableDef` object, this `CString` is read-only for an attached table and read/write for a base table.  
   
- 関連情報については、"Validationrule"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "ValidationRule Property" in DAO Help.  
   
-##  <a name="getvalidationtext"></a>CDaoTableDef::GetValidationText  
- ユーザーが入力の検証規則に一致しないデータを表示する文字列を取得するには、この関数を呼び出します。  
+##  <a name="getvalidationtext"></a>  CDaoTableDef::GetValidationText  
+ Call this function to retrieve the string to display when a user enters data that does not match the validation rule.  
   
 ```  
 CString GetValidationText();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`検証規則に一致しないデータを入力した場合に表示されるテキストを指定するオブジェクト。  
+### <a name="return-value"></a>Return Value  
+ A `CString` object that specifies the text displayed if the user enters data that does not match the validation rule.  
   
-### <a name="remarks"></a>コメント  
- `CDaoTableDef`オブジェクトをこの`CString`は、接続されているテーブルと、ベース テーブルの読み取り/書き込みの読み取り専用です。  
+### <a name="remarks"></a>Remarks  
+ For a `CDaoTableDef` object, this `CString` is read-only for an attached table and read/write for a base table.  
   
- 関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "ValidationText Property" in DAO Help.  
   
-##  <a name="isopen"></a>CDaoTableDef::IsOpen  
- 決定するには、このメンバー関数を呼び出すかどうか、`CDaoTableDef`オブジェクトが現在開いています。  
+##  <a name="isopen"></a>  CDaoTableDef::IsOpen  
+ Call this member function to determine whether the `CDaoTableDef` object is currently open.  
   
 ```  
 BOOL IsOpen() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の場合、`CDaoTableDef`オブジェクトが開かれている場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the `CDaoTableDef` object is open; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_pdatabase"></a>CDaoTableDef::m_pDatabase  
- ポインターが含まれています、 [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md)このテーブルのオブジェクト。  
+##  <a name="m_pdatabase"></a>  CDaoTableDef::m_pDatabase  
+ Contains a pointer to the [CDaoDatabase](../../mfc/reference/cdaodatabase-class.md) object for this table.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_pdaotabledef"></a>CDaoTableDef::m_pDAOTableDef  
- DAO tabledef オブジェクト基になるの OLE インターフェイスへのポインターが含まれています、`CDaoTableDef`オブジェクト。  
+##  <a name="m_pdaotabledef"></a>  CDaoTableDef::m_pDAOTableDef  
+ Contains a pointer to the OLE interface for the DAO tabledef object underlying the `CDaoTableDef` object.  
   
-### <a name="remarks"></a>コメント  
- DAO インターフェイスに直接アクセスする必要がある場合は、このポインターを使用します。  
+### <a name="remarks"></a>Remarks  
+ Use this pointer if you need to access the DAO interface directly.  
   
-##  <a name="open"></a>CDaoTableDef::Open  
- 開くには、テーブル定義には、このメンバー関数がデータベースに保存した呼び出しはのテーブル定義のコレクションです。  
+##  <a name="open"></a>  CDaoTableDef::Open  
+ Call this member function to open a tabledef previously saved in the database's TableDef's collection.  
   
 ```  
 virtual void Open(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- テーブル名を指定する文字列へのポインター。  
+ A pointer to a string that specifies a table name.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="refreshlink"></a>CDaoTableDef::RefreshLink  
- 接続されたテーブルの接続情報を更新するには、このメンバー関数を呼び出します。  
+##  <a name="refreshlink"></a>  CDaoTableDef::RefreshLink  
+ Call this member function to update the connection information for an attached table.  
   
 ```  
 void RefreshLink();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出して、接続されているテーブルの接続情報を変更する[SetConnect](#setconnect) 、対応する`CDaoTableDef`オブジェクトとを使用して、`RefreshLink`情報を更新するメンバー関数。 呼び出すと`RefreshLink`、接続されているテーブルのプロパティは変更されません。  
+### <a name="remarks"></a>Remarks  
+ You change the connection information for an attached table by calling [SetConnect](#setconnect) on the corresponding `CDaoTableDef` object and then using the `RefreshLink` member function to update the information. When you call `RefreshLink`, the attached table's properties are not changed.  
   
- 強制的に、変更された接続情報を反映する、すべての開いている[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)このテーブルの定義に基づくオブジェクトを閉じる必要があります。  
+ To force the modified connect information to take effect, all open [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) objects based on this tabledef must be closed.  
   
- 関連情報については、DAO ヘルプの「RefreshLink メソッド」を参照してください。  
+ For related information, see the topic "RefreshLink Method" in DAO Help.  
   
-##  <a name="setattributes"></a>CDaoTableDef::SetAttributes  
- 1 つまたは複数の特性を示す値を設定、`CDaoTableDef`オブジェクト。  
+##  <a name="setattributes"></a>  CDaoTableDef::SetAttributes  
+ Sets a value that indicates one or more characteristics of a `CDaoTableDef` object.  
   
 ```  
 void SetAttributes(long lAttributes);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lAttributes`  
- によって表されるテーブルの特性、`CDaoTableDef`オブジェクトし、これらの定数の合計を指定できます。  
+ Characteristics of the table represented by the `CDaoTableDef` object and can be a sum of these constants:  
   
-|定数|説明|  
+|Constant|Description|  
 |--------------|-----------------|  
-|**dbAttachExclusive**|Microsoft Jet データベース エンジンを使用するデータベース、テーブルは排他的に開かれて、接続されているテーブルを示します。|  
-|**dbAttachSavePWD**|Microsoft Jet データベース エンジンを使用してデータベースの場合は、接続情報を使用、ユーザーの ID とパスワード、接続されているテーブルが保存されたことを示します。|  
-|**dbSystemObject**|テーブルが、Microsoft Jet データベース エンジンによって提供されるシステム テーブルであることを示します。|  
-|**dbHiddenObject**|テーブルが、Microsoft Jet データベース エンジンによって提供される非表示のテーブルであることを示します。|  
+|**dbAttachExclusive**|For databases that use the Microsoft Jet database engine, indicates the table is an attached table opened for exclusive use.|  
+|**dbAttachSavePWD**|For databases that use the Microsoft Jet database engine, indicates that the user ID and password for the attached table are saved with the connection information.|  
+|**dbSystemObject**|Indicates the table is a system table provided by the Microsoft Jet database engine.|  
+|**dbHiddenObject**|Indicates the table is a hidden table provided by the Microsoft Jet database engine.|  
   
-### <a name="remarks"></a>コメント  
- に複数の属性を設定するときは、ビットごとの OR 演算子を使用して適切な定数を組み合わせることができます。 設定**dbAttachExclusive**非添付テーブルで例外が生成されます。 結合は次の値も、例外が発生します。  
+### <a name="remarks"></a>Remarks  
+ When setting multiple attributes, you can combine them by summing the appropriate constants using the bitwise-OR operator. Setting **dbAttachExclusive** on a nonattached table produces an exception. Combining the following values also produce an exception:  
   
-- **dbAttachExclusive |dbAttachedODBC**  
+- **dbAttachExclusive &#124; dbAttachedODBC**  
   
-- **dbAttachSavePWD |dbAttachedTable**  
+- **dbAttachSavePWD &#124; dbAttachedTable**  
   
- 関連情報については、DAO ヘルプの「属性プロパティ」を参照してください。  
+ For related information, see the topic "Attributes Property" in DAO Help.  
   
-##  <a name="setconnect"></a>CDaoTableDef::SetConnect  
- `CDaoTableDef`アタッチ テーブルの文字列オブジェクトを表すオブジェクトは、1 つまたは 2 つの部分 (データベースの型指定子およびデータベースへのパス) で構成されます。  
+##  <a name="setconnect"></a>  CDaoTableDef::SetConnect  
+ For a `CDaoTableDef` object that represents an attached table, the string object consists of one or two parts (a database type specifier and a path to the database).  
   
 ```  
 void SetConnect(LPCTSTR lpszConnect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszConnect`  
- ODBC、またはインストール可能な ISAM ドライバーに渡す追加のパラメーターを指定する文字列式へのポインター。  
+ A pointer to a string expression that specifies additional parameters to pass to ODBC or installable ISAM drivers.  
   
-### <a name="remarks"></a>コメント  
- 次の表に示すようにパスが、データベース ファイルを含むディレクトリの完全なパスし、識別子の前にする必要があります"DATABASE ="です。 場合によっては (Microsoft Jet や Microsoft Excel で次のようにデータベース) として、データベース パス引数で特定のファイル名が含まれています。  
+### <a name="remarks"></a>Remarks  
+ The path as shown in the table below is the full path for the directory containing the database files and must be preceded by the identifier "DATABASE=". In some cases (as with Microsoft Jet and Microsoft Excel databases), a specific filename is included in the database path argument.  
   
 > [!NOTE]
->  フォームのパスのステートメントに等号 (=) の前後に空白を含めないでください"データベース ドライブを =:\\\path"です。 スローされた例外と接続の障害が発生したこのが発生します。  
+>  Do not include whitespace around the equal sign in path statements of the form "DATABASE=drive:\\\path". This will result in an exception being thrown and the connection failing.  
   
- 次の表は、可能なデータベースの種類と、対応するデータベースの指定子とパスを示しています。  
+ The following table shows possible database types and their corresponding database specifiers and paths:  
   
-|データベースの種類|指定子|パス|  
+|Database type|Specifier|Path|  
 |-------------------|---------------|----------|  
-|Jet データベース エンジンを使用して、データベース|"[ `database`];"|" `drive`:\\\ *path*\\\ *filename*.MDB"|  
+|Database using the Jet database engine|"[ `database`];"|" `drive`:\\\ *path*\\\ *filename*.MDB"|  
 |dBASE III|"dBASE III;"|" `drive`:\\\ *path*"|  
 |dBASE IV|"dBASE IV;"|" `drive`:\\\ *path*"|  
-|dBASE 5|"dBASE 5.0 です。"|" `drive`:\\\ *path*"|  
+|dBASE 5|"dBASE 5.0;"|" `drive`:\\\ *path*"|  
 |Paradox 3.x|"Paradox 3.x;"|" `drive`:\\\ *path*"|  
 |Paradox 4.x|"Paradox 4.x;"|" `drive`:\\\ *path*"|  
 |Paradox 5.x|"Paradox 5.x;"|" `drive`:\\\ *path*"|  
-|Excel 3.0|「Excel 3.0」です。|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
-|Excel 4.0|「Excel 4.0;」|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
-|Excel 5.0 または Excel 95|「Excel 5.0 です。」|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
-|Excel 97|「Excel 8.0;」|" `drive`:\\\ *path*\ *filename*.XLS"|  
-|HTML のインポート|「HTML のインポートです。」|" `drive`:\\\ *path*\ *filename*"|  
-|HTML のエクスポート|「HTML エクスポート;」|" `drive`:\\\ *path*"|  
-|テキスト|"Text"です。|"ドライブ:\\\path"|  
-|ODBC|"ODBC です。データベース =`database`です。UID= *user*;PWD =*パスワード*です。DSN = *%datasourcename;*LOGINTIMEOUT =*秒;*"(すべてのサーバーの完全な接続文字列とは限りません。 これは単なる例。 パラメーター間にスペースが非常に重要です。)|なし|  
-|Exchange|"Exchange です。<br /><br /> MAPILEVEL = *folderpath*です。<br /><br /> [TABLETYPE = {0 | 1} です]。<br /><br /> [プロファイル =*プロファイル*です]。<br /><br /> [PWD =*パスワード*です]。<br /><br /> [データベース = `database`;]"|*"drive*:\\\ *path*\\\ *filename*.MDB"|  
+|Excel 3.0|"Excel 3.0;"|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
+|Excel 4.0|"Excel 4.0;"|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
+|Excel 5.0 or Excel 95|"Excel 5.0;"|" `drive`:\\\ *path*\\\ *filename*.XLS"|  
+|Excel 97|"Excel 8.0;"|" `drive`:\\\ *path*\ *filename*.XLS"|  
+|HTML Import|"HTML Import;"|" `drive`:\\\ *path*\ *filename*"|  
+|HTML Export|"HTML Export;"|" `drive`:\\\ *path*"|  
+|Text|"Text;"|"drive:\\\path"|  
+|ODBC|"ODBC; DATABASE= `database`; UID= *user*;PWD= *password*; DSN= *datasourcename;* LOGINTIMEOUT= *seconds;*" (This may not be a complete connection string for all servers; it is just an example. It is very important not to have spaces between the parameters.)|None|  
+|Exchange|"Exchange;<br /><br /> MAPILEVEL= *folderpath*;<br /><br /> [TABLETYPE={ 0 &#124; 1 };]<br /><br /> [PROFILE= *profile*;]<br /><br /> [PWD= *password*;]<br /><br /> [DATABASE= `database`;]"|*"drive*:\\\ *path*\\\ *filename*.MDB"|  
   
 > [!NOTE]
->  DAO 3.5 の時点では、市販がサポートされていません。  
+>  Btrieve is no longer supported as of DAO 3.5.  
   
- 二重の円記号を使用する必要があります (\\\\)、接続文字列にします。 既存の接続を使用して、プロパティを変更したかどうかは`SetConnect`、後で呼び出す必要があります[RefreshLink](#refreshlink)です。 使用して接続プロパティを初期化する場合`SetConnect`、呼び出しではない必要がある`RefreshLink`、テーブル定義を追加するように選択する必要があります、最初にします。  
+ You must use a double backslash (\\\\) in the connection strings. If you have modified the properties of an existing connection using `SetConnect`, you must subsequently call [RefreshLink](#refreshlink). If you are initializing the connection properties using `SetConnect`, you need not call `RefreshLink`, but should you choose to do so, first append the tabledef.  
   
- ODBC ドライバーが、テーブルにアクセス ログイン ダイアログ ボックス最初の時刻を表示する場合は、パスワードが必要な指定されていませんし、もう一度接続を閉じて、再び開く場合。  
+ If a password is required but not provided, the ODBC driver displays a login dialog box the first time a table is accessed and again if the connection is closed and reopened.  
   
- 接続文字列を設定することができます、`CDaoTableDef`オブジェクトに元の引数を提供することによって、**作成**メンバー関数。 設定を確認して、型、パス、ユーザー ID、パスワード、またはデータベースの ODBC データ ソースを確認することができます。 詳細については、特定のドライバーのマニュアルを参照してください。  
+ You can set the connection string for a `CDaoTableDef` object by providing a source argument to the **Create** member function. You can check the setting to determine the type, path, user ID, password, or ODBC data source of the database. For more information, see the documentation for the specific driver.  
   
- 関連情報については、"接続 Property"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "Connect Property" in DAO Help.  
   
-##  <a name="setname"></a>CDaoTableDef::SetName  
- ユーザー定義テーブルの名前を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setname"></a>  CDaoTableDef::SetName  
+ Call this member function to set a user-defined name for a table.  
   
 ```  
 void SetName(LPCTSTR lpszName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- テーブルの名前を指定する文字列式へのポインター。  
+ A pointer to a string expression that specifies a name for a table.  
   
-### <a name="remarks"></a>コメント  
- 名前は文字で始める必要があり、最大 64 文字を含めることができます。 数字を含めることができ、アンダー スコア文字ですが、区切り記号やスペースを含めることはできません。  
+### <a name="remarks"></a>Remarks  
+ The name must start with a letter and can contain a maximum of 64 characters. It can include numbers and underscore characters but cannot include punctuation or spaces.  
   
- 関連情報については、DAO ヘルプの「名前プロパティ」を参照してください。  
+ For related information, see the topic "Name Property" in DAO Help.  
   
-##  <a name="setsourcetablename"></a>CDaoTableDef::SetSourceTableName  
- 接続されているテーブルの名前またはベース テーブルの名前を指定するには、このメンバー関数を呼び出す、`CDaoTableDef`オブジェクトが基のデータの元のソースに存在します。  
+##  <a name="setsourcetablename"></a>  CDaoTableDef::SetSourceTableName  
+ Call this member function to specify the name of an attached table or the name of the base table on which the `CDaoTableDef` object is based, as it exists in the original source of the data.  
   
 ```  
 void SetSourceTableName(LPCTSTR lpszSrcTableName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszSrcTableName*  
- 外部データベースのテーブル名を指定する文字列式へのポインター。 基本テーブルの場合は、設定は、空の文字列 ("") です。  
+ A pointer to a string expression that specifies a table name in the external database. For a base table, the setting is an empty string ("").  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります[RefreshLink](#refreshlink)です。 このプロパティの設定は、ベース テーブルと読み取り/書き込みの接続されたテーブルまたはコレクションに追加されていないオブジェクトに対しては空です。  
+### <a name="remarks"></a>Remarks  
+ You must then call [RefreshLink](#refreshlink). This property setting is empty for a base table and read/write for an attached table or an object not appended to a collection.  
   
- 関連情報については、DAO ヘルプの「SourceTableName プロパティ」を参照してください。  
+ For related information, see the topic "SourceTableName Property" in DAO Help.  
   
-##  <a name="setvalidationrule"></a>CDaoTableDef::SetValidationRule  
- テーブル定義の検証規則を設定するには、このメンバー関数を呼び出します。  
+##  <a name="setvalidationrule"></a>  CDaoTableDef::SetValidationRule  
+ Call this member function to set a validation rule for a tabledef.  
   
 ```  
 void SetValidationRule(LPCTSTR lpszValidationRule);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszValidationRule*  
- 操作を評価する文字列式へのポインター。  
+ A pointer to a string expression that validates an operation.  
   
-### <a name="remarks"></a>コメント  
- 検証規則は、更新操作に関連して使用されます。 テーブル定義に、検証規則が含まれている場合、そのテーブル定義の更新プログラムは、データが変更される前に事前に定義された条件に一致する必要があります。 変更が一致しない場合、条件のテキストを含む例外[GetValidationText](#getvalidationtext)が表示されます。  
+### <a name="remarks"></a>Remarks  
+ Validation rules are used in connection with update operations. If a tabledef contains a validation rule, updates to that tabledef must match predetermined criteria before the data is changed. If the change does not match the criteria, an exception containing the text of [GetValidationText](#getvalidationtext) is displayed.  
   
- 検証方法は、Microsoft Jet データベース エンジンを使用するデータベースにのみサポートされます。 式は、ユーザー定義関数、集計関数のドメイン、SQL の集計関数、またはクエリを参照できません。 検証規則を`CDaoTableDef`オブジェクトは、そのオブジェクト内の複数のフィールドを参照できます。  
+ Validation is supported only for databases that use the Microsoft Jet database engine. The expression cannot refer to user-defined functions, domain aggregate functions, SQL aggregate functions, or queries. A validation rule for a `CDaoTableDef` object can refer to multiple fields in that object.  
   
- たとえば、という名前のフィールド`hire_date`と`termination_date`、検証規則があります。  
+ For example, for fields named `hire_date` and `termination_date`, a validation rule might be:  
   
- [!code-cpp[NVC_MFCDatabase #34](../../mfc/codesnippet/cpp/cdaotabledef-class_1.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#34](../../mfc/codesnippet/cpp/cdaotabledef-class_1.cpp)]  
   
- 関連情報については、"Validationrule"DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "ValidationRule Property" in DAO Help.  
   
-##  <a name="setvalidationtext"></a>CDaoTableDef::SetValidationText  
- 検証規則の例外のテキストを設定するには、このメンバー関数を呼び出す、 `CDaoTableDef` Microsoft Jet データベース エンジンでサポートされている、基になるベース テーブルを持つオブジェクト。  
+##  <a name="setvalidationtext"></a>  CDaoTableDef::SetValidationText  
+ Call this member function to set the exception text of a validation rule for a `CDaoTableDef` object with an underlying base table supported by the Microsoft Jet database engine.  
   
 ```  
 void SetValidationText(LPCTSTR lpszValidationText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpszValidationText*  
- データを入力した場合に表示されるテキストを指定する文字列式へのポインターが正しくありません。  
+ A pointer to a string expression that specifies the text displayed if entered data is invalid.  
   
-### <a name="remarks"></a>コメント  
- アタッチ テーブルの検証のテキストを設定することはできません。  
+### <a name="remarks"></a>Remarks  
+ You cannot set the validation text of an attached table.  
   
- 関連情報については、「プロパティ」DAO ヘルプのトピックを参照してください。  
+ For related information, see the topic "ValidationText Property" in DAO Help.  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)   
- [CDaoRecordset クラス](../../mfc/reference/cdaorecordset-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)   
+ [CDaoRecordset Class](../../mfc/reference/cdaorecordset-class.md)
 

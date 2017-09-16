@@ -1,40 +1,58 @@
 ---
-title: "トラッカー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション [OLE], トラッカー"
-  - "CDC クラス, トラッカー"
-  - "CRectTracker クラス, 実装 (トラッカーを)"
-  - "OLE アプリケーション [C++], トラッカー"
-  - "OLE コンテナー, トラッカー"
-  - "OLE サーバー アプリケーション, トラッカー"
-  - "トラッカー"
-  - "追跡 (OLE アイテムを)"
+title: Trackers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- trackers [MFC]
+- OLE applications [MFC], trackers
+- applications [OLE], trackers
+- tracking OLE items [MFC]
+- OLE containers [MFC], trackers
+- CDC class [MFC], trackers
+- CRectTracker class [MFC], implementing trackers
+- OLE server applications [MFC], trackers
 ms.assetid: dcd09399-6637-4621-80e5-d12670429787
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# トラッカー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f4ea3db56feb48124a56ab71602261ab52fa7559
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CRectTracker](../mfc/reference/crecttracker-class.md) クラスは、アプリケーションの四角形項目とさまざまな表示スタイルを提供することによってユーザー間でユーザー インターフェイスを提供します。  これらのスタイルはハッチングされた実線または dotted 砕された境界が含まれています; 項目を覆うハッチ パターン; および境界の外側として配置できるハンドルのサイズを変更します。  TRACKER は OLE アイテム、`COleClientItem`から派生される、つまりオブジェクトとともによく使用されます。  トラッカーの四角形は、項目の現在の状態のビジュアル キューを示します。  
+---
+# <a name="trackers"></a>Trackers
+The [CRectTracker](../mfc/reference/crecttracker-class.md) class provides a user interface between rectangular items in your application and your user by providing a variety of display styles. These styles include solid, hatched, or dashed borders; a hatched pattern that covers the item; and resize handles that can be located on the outside or inside of a border. Trackers are often used in conjunction with OLE items, that is, objects derived from `COleClientItem`. The tracker rectangles give visual cues on the current status of the item.  
   
- MFC のサンプル [OCLIENT](../top/visual-cpp-samples.md) は OLE コンテナー アプリケーションの観点からトラッカーと OLE クライアント項目を使用して共通インターフェイスを示します。  トラッカーのさまざまなスタイルおよび機能の例については、MFC の一般的なサンプル [トラッカー](../top/visual-cpp-samples.md)に変換し、参照してください。  
+ The MFC OLE sample [OCLIENT](../visual-cpp-samples.md) demonstrates a common interface using trackers and OLE client items from the viewpoint of a container application. For a demonstration of the different styles and abilities of a tracker object, see the MFC general sample [TRACKER](../visual-cpp-samples.md).  
   
- OLE アプリケーションのトラッカーの実装の詳細については、[トラッカー: OLE アプリケーションのトラッカーの実装](../mfc/trackers-implementing-trackers-in-your-ole-application.md)を参照します  
+ For more information on implementing trackers in your OLE application, see [Trackers: Implementing Trackers in Your OLE Application](../mfc/trackers-implementing-trackers-in-your-ole-application.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [COleClientItem クラス](../mfc/reference/coleclientitem-class.md)
+ [COleClientItem Class](../mfc/reference/coleclientitem-class.md)
+

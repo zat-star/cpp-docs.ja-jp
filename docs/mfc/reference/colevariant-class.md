@@ -1,5 +1,5 @@
 ---
-title: "COleVariant クラス |Microsoft ドキュメント"
+title: COleVariant Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -21,9 +21,13 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- Automation, parameter types
-- COleVariant class
-- VARIANT data type
+- COleVariant [MFC], COleVariant
+- COleVariant [MFC], Attach
+- COleVariant [MFC], ChangeType
+- COleVariant [MFC], Clear
+- COleVariant [MFC], Detach
+- COleVariant [MFC], GetByteArrayFromVariantArray
+- COleVariant [MFC], SetString
 ms.assetid: e1b5cd4a-b066-4b9b-b48b-6215ed52d998
 caps.latest.revision: 24
 author: mikeblome
@@ -43,89 +47,89 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 753566adc5fc8e48ad31da52c2bb3f04c9e21727
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a2369df2b1953d2ef8a0eea66f4fde1cea30719f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="colevariant-class"></a>COleVariant クラス
-カプセル化、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)データ型。  
+# <a name="colevariant-class"></a>COleVariant Class
+Encapsulates the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) data type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleVariant : public tagVARIANT  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleVariant::COleVariant](#colevariant)|`COleVariant` オブジェクトを構築します。|  
+|[COleVariant::COleVariant](#colevariant)|Constructs a `COleVariant` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleVariant::Attach](#attach)|アタッチ、 **VARIANT**に、`COleVariant`です。|  
-|[COleVariant::ChangeType](#changetype)|このバリアント型を変更`COleVariant`オブジェクトです。|  
-|[COleVariant::Clear](#clear)|これをクリア`COleVariant`オブジェクトです。|  
-|[COleVariant::Detach](#detach)|デタッチ、 **VARIANT**から、`COleVariant`返します、 **VARIANT**します。|  
-|[COleVariant::GetByteArrayFromVariantArray](#getbytearrayfromvariantarray)|既存の配列からバイト配列を取得します。|  
-|[COleVariant::SetString](#setstring)|文字列を ANSI では通常、特定の型に設定します。|  
+|[COleVariant::Attach](#attach)|Attaches a **VARIANT** to a `COleVariant`.|  
+|[COleVariant::ChangeType](#changetype)|Changes the variant type of this `COleVariant` object.|  
+|[COleVariant::Clear](#clear)|Clears this `COleVariant` object.|  
+|[COleVariant::Detach](#detach)|Detaches a **VARIANT** from a `COleVariant` and returns the **VARIANT**.|  
+|[COleVariant::GetByteArrayFromVariantArray](#getbytearrayfromvariantarray)|Retrieves a byte array from an existing variant array.|  
+|[COleVariant::SetString](#setstring)|Sets the string to a particular type, typically ANSI.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleVariant::operator LPCVARIANT](#operator_lpcvariant)|変換、`COleVariant`値を`LPCVARIANT`です。|  
-|[COleVariant::operator LPVARIANT](#operator_lpvariant)|変換、`COleVariant`オブジェクトを`LPVARIANT`です。|  
-|[COleVariant::operator =](#operator_eq)|コピー、`COleVariant`値。|  
-|[COleVariant::operator = =](#operator_eq_eq)|2 つを比較して`COleVariant`値。|  
-|[COleVariant::operator &lt; &lt;、&gt;&gt;](#operator_lt_lt__gt_gt)|出力、`COleVariant`値を`CArchive`または`CDumpContext`を入力し、`COleVariant`オブジェクトから`CArchive`します。|  
+|[COleVariant::operator LPCVARIANT](#operator_lpcvariant)|Converts a `COleVariant` value into an `LPCVARIANT`.|  
+|[COleVariant::operator LPVARIANT](#operator_lpvariant)|Converts a `COleVariant` object into an `LPVARIANT`.|  
+|[COleVariant::operator =](#operator_eq)|Copies a `COleVariant` value.|  
+|[COleVariant::operator ==](#operator_eq_eq)|Compares two `COleVariant` values.|  
+|[COleVariant::operator &lt;&lt;, &gt;&gt;](#operator_lt_lt__gt_gt)|Outputs a `COleVariant` value to `CArchive` or `CDumpContext` and inputs a `COleVariant` object from `CArchive`.|  
   
-## <a name="remarks"></a>コメント  
- このデータ型は OLE オートメーションで使用されます。 具体的には、 [DISPPARAMS](http://msdn.microsoft.com/en-us/a16e5a21-766e-4287-b039-13429aa78f8b)構造体の配列へのポインターを格納する**VARIANT**構造体。 A **DISPPARAMS**にパラメーターを渡す構造体を使用[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)します。  
+## <a name="remarks"></a>Remarks  
+ This data type is used in OLE automation. Specifically, the [DISPPARAMS](http://msdn.microsoft.com/en-us/a16e5a21-766e-4287-b039-13429aa78f8b) structure contains a pointer to an array of **VARIANT** structures. A **DISPPARAMS** structure is used to pass parameters to [IDispatch::Invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d).  
   
 > [!NOTE]
->  このクラスから派生、 **VARIANT**構造体。 つまり、渡すことができます、`COleVariant`の呼び出しをパラメーターで、 **VARIANT**とのデータ メンバー、 **VARIANT**構造のアクセス可能なデータ メンバーである`COleVariant`です。  
+>  This class is derived from the **VARIANT** structure. This means you can pass a `COleVariant` in a parameter that calls for a **VARIANT** and that the data members of the **VARIANT** structure are accessible data members of `COleVariant`.  
   
- MFC クラスを関連する、2 つ[COleCurrency](../../mfc/reference/colecurrency-class.md)と[時刻](../../atl-mfc-shared/reference/coledatetime-class.md)variant データ型をカプセル化**通貨**( `VT_CY`) と**日付**( `VT_DATE`)。 `COleVariant`クラスは、DAO クラスで広く使用されます。 これらのクラスをこのクラスの一般的な使用を次に例を参照してください[CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md)と[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)します。  
+ The two related MFC classes [COleCurrency](../../mfc/reference/colecurrency-class.md) and [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) encapsulate the variant data types **CURRENCY** ( `VT_CY`) and **DATE** ( `VT_DATE`). The `COleVariant` class is used extensively in the DAO classes; see these classes for typical usage of this class, for example [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md) and [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md).  
   
- 詳細については、次を参照してください。、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)、[通貨](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e)、 [DISPPARAMS](http://msdn.microsoft.com/en-us/a16e5a21-766e-4287-b039-13429aa78f8b)、および[idispatch::invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118), [CURRENCY](http://msdn.microsoft.com/en-us/5e81273c-7289-45c7-93c0-32c1553f708e), [DISPPARAMS](http://msdn.microsoft.com/en-us/a16e5a21-766e-4287-b039-13429aa78f8b), and [IDispatch::Invoke](http://msdn.microsoft.com/en-us/964ade8e-9d8a-4d32-bd47-aa678912a54d) entries in the Windows SDK.  
   
- 詳細については、`COleVariant`クラスおよび OLE オートメーションでの使用、記事の「オートメーション パラメーターの受け渡しで」を参照して[オートメーション](../../mfc/automation.md)します。  
+ For more information on the `COleVariant` class and its use in OLE automation, see "Passing Parameters in OLE Automation" in the article [Automation](../../mfc/automation.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `tagVARIANT`  
   
  `COleVariant`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h  
   
-##  <a name="attach"></a>COleVariant::Attach  
- アタッチするには、この関数を呼び出す、指定された[VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)現在オブジェクト`COleVariant`オブジェクトです。  
+##  <a name="attach"></a>  COleVariant::Attach  
+ Call this function to attach the given [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) object to the current `COleVariant` object.  
   
 ```  
 void Attach(VARIANT& varSrc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *varSrc*  
- 既存の**VARIANT**オブジェクトに現在アタッチされている`COleVariant`オブジェクトです。  
+ An existing **VARIANT** object to be attached to the current `COleVariant` object.  
   
-### <a name="remarks"></a>コメント  
- この関数を設定、 [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)の*varSrc*に`VT_EMPTY`します。  
+### <a name="remarks"></a>Remarks  
+ This function sets the [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4) of *varSrc* to `VT_EMPTY`.  
   
- 詳細については、次を参照してください。、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)と[VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) and [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4) entries in the Windows SDK.  
   
-##  <a name="colevariant"></a>COleVariant::COleVariant  
- `COleVariant` オブジェクトを構築します。  
+##  <a name="colevariant"></a>  COleVariant::COleVariant  
+ Constructs a `COleVariant` object.  
   
 ```  
 COleVariant(); 
@@ -147,159 +151,159 @@ COleVariant(const CLongBinary& lbSrc);
 COleVariant(LPCITEMIDLIST pidl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *varSrc*  
- 既存の`COleVariant`または**VARIANT**新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ An existing `COleVariant` or **VARIANT** object to be copied into the new `COleVariant` object.  
   
  `pSrc`  
- ポインター、 **VARIANT**新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A pointer to a **VARIANT** object that will be copied into the new `COleVariant` object.  
   
  `lpszSrc`  
- 新しいにコピーされる null で終わる文字列`COleVariant`オブジェクトです。  
+ A null-terminated string to be copied into the new `COleVariant` object.  
   
  `vtSrc`  
- `VARTYPE`新しい`COleVariant`オブジェクトです。  
+ The `VARTYPE` for the new `COleVariant` object.  
   
  `strSrc`  
- A [CString](../../atl-mfc-shared/reference/cstringt-class.md)新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A [CString](../../atl-mfc-shared/reference/cstringt-class.md) object to be copied into the new `COleVariant` object.  
   
  `nSrc`, `lSrc`  
- 新しい `COleVariant` オブジェクトにコピーされる数値。  
+ A numerical value to be copied into the new `COleVariant` object.  
   
  `vtSrc`  
- `VARTYPE`新しい`COleVariant`オブジェクトです。  
+ The `VARTYPE` for the new `COleVariant` object.  
   
  `curSrc`  
- A [COleCurrency](../../mfc/reference/colecurrency-class.md)新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A [COleCurrency](../../mfc/reference/colecurrency-class.md) object to be copied into the new `COleVariant` object.  
   
  `fltSrc`, `dblSrc`  
- 新しい `COleVariant` オブジェクトにコピーされる数値。  
+ A numerical value to be copied into the new `COleVariant` object.  
   
  `timeSrc`  
- A[時刻](../../atl-mfc-shared/reference/coledatetime-class.md)新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object to be copied into the new `COleVariant` object.  
   
  `arrSrc`  
- A [CByteArray](../../mfc/reference/cbytearray-class.md)新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A [CByteArray](../../mfc/reference/cbytearray-class.md) object to be copied into the new `COleVariant` object.  
   
  `lbSrc`  
- A [CLongBinary](../../mfc/reference/clongbinary-class.md)新しいにコピーされるオブジェクト`COleVariant`オブジェクトです。  
+ A [CLongBinary](../../mfc/reference/clongbinary-class.md) object to be copied into the new `COleVariant` object.  
   
  `pidl`  
- ポインター、 [ITEMIDLIST](http://msdn.microsoft.com/library/windows/desktop/bb773321)新しいにコピーされる構造`COleVariant`オブジェクトです。  
+ A pointer to a [ITEMIDLIST](http://msdn.microsoft.com/library/windows/desktop/bb773321) structure to be copied into the new `COleVariant` object.  
   
-### <a name="remarks"></a>コメント  
- これらすべてのコンス トラクターが新規作成`COleVariant`指定した値に初期化されたオブジェクト。 これらのコンス トラクターのそれぞれの簡単な説明が続きます。  
+### <a name="remarks"></a>Remarks  
+ All these constructors create new `COleVariant` objects initialized to the specified value. A brief description of each of these constructors follows.  
   
-- **COleVariant ()** 、空の作成`COleVariant`オブジェクト、`VT_EMPTY`です。  
+- **COleVariant( )** Creates an empty `COleVariant` object, `VT_EMPTY`.  
   
-- **COleVariant (** *varSrc* **)** 、既存のコピー **VARIANT**または`COleVariant`オブジェクトです。 バリアント型は保持されます。  
+- **COleVariant(** *varSrc* **)** Copies an existing **VARIANT** or `COleVariant` object. The variant type is retained.  
   
-- **COleVariant (** `pSrc` **)** 、既存のコピー **VARIANT**または`COleVariant`オブジェクトです。 バリアント型は保持されます。  
+- **COleVariant(** `pSrc` **)** Copies an existing **VARIANT** or `COleVariant` object. The variant type is retained.  
   
-- **COleVariant (** `lpszSrc` **)**が新しいオブジェクトに文字列をコピー `VT_BSTR` (UNICODE)。  
+- **COleVariant(** `lpszSrc` **)** Copies a string into the new object, `VT_BSTR` (UNICODE).  
   
-- **COleVariant (** `lpszSrc` **、** `vtSrc` **)**が新しいオブジェクトに文字列をコピーします。 パラメーター`vtSrc`する必要があります`VT_BSTR`(UNICODE) または`VT_BSTRT`(ANSI) です。  
+- **COleVariant(** `lpszSrc` **,** `vtSrc` **)** Copies a string into the new object. The parameter `vtSrc` must be `VT_BSTR` (UNICODE) or `VT_BSTRT` (ANSI).  
   
-- **COleVariant (** `strSrc` **)**が新しいオブジェクトに文字列をコピー **VT_BSTR** (UNICODE)。  
+- **COleVariant(** `strSrc` **)** Copies a string into the new object, **VT_BSTR** (UNICODE).  
   
-- **COleVariant (** `nSrc` **)**を 8 ビット整数を新しいオブジェクトにコピー`VT_UI1`します。  
+- **COleVariant(** `nSrc` **)** Copies an 8-bit integer into the new object, `VT_UI1`.  
   
-- **COleVariant (** `nSrc` **、** `vtSrc` **)**が新しいオブジェクトに 16 ビット整数 (またはブール値) にコピーします。 パラメーター`vtSrc`する必要があります`VT_I2`または`VT_BOOL`です。  
+- **COleVariant(** `nSrc` **,** `vtSrc` **)** Copies a 16-bit integer (or Boolean value) into the new object. The parameter `vtSrc` must be `VT_I2` or `VT_BOOL`.  
   
-- **COleVariant (** `lSrc` **、** `vtSrc` **)** 32 ビット整数のコピー (または`SCODE`値) が新しいオブジェクトにします。 パラメーター`vtSrc`する必要があります`VT_I4`、 `VT_ERROR`、または`VT_BOOL`です。  
+- **COleVariant(** `lSrc` **,** `vtSrc` **)** Copies a 32-bit integer (or `SCODE` value) into the new object. The parameter `vtSrc` must be `VT_I4`, `VT_ERROR`, or `VT_BOOL`.  
   
-- **COleVariant (** `curSrc` **)**コピー、 **COleCurrency**が新しいオブジェクトに値`VT_CY`です。  
+- **COleVariant(** `curSrc` **)** Copies a **COleCurrency** value into the new object, `VT_CY`.  
   
-- **COleVariant (** `fltSrc` **)**が新しいオブジェクトに、32 ビット浮動小数点値をコピー`VT_R4`します。  
+- **COleVariant(** `fltSrc` **)** Copies a 32-bit floating-point value into the new object, `VT_R4`.  
   
-- **COleVariant (** `dblSrc` **)**が新しいオブジェクトに、64 ビット浮動小数点値をコピー`VT_R8`します。  
+- **COleVariant(** `dblSrc` **)** Copies a 64-bit floating-point value into the new object, `VT_R8`.  
   
-- **COleVariant (** `timeSrc` **)**コピー、`COleDateTime`が新しいオブジェクトに値`VT_DATE`です。  
+- **COleVariant(** `timeSrc` **)** Copies a `COleDateTime` value into the new object, `VT_DATE`.  
   
-- **COleVariant (** `arrSrc` **)**コピー、`CByteArray`が新しいオブジェクトにオブジェクト`VT_EMPTY`します。  
+- **COleVariant(** `arrSrc` **)** Copies a `CByteArray` object into the new object, `VT_EMPTY`.  
   
-- **COleVariant (** `lbSrc` **)**コピー、`CLongBinary`が新しいオブジェクトにオブジェクト`VT_EMPTY`します。  
+- **COleVariant(** `lbSrc` **)** Copies a `CLongBinary` object into the new object, `VT_EMPTY`.  
   
- 詳細については`SCODE`を参照してください[COM エラー コードの構造体](http://msdn.microsoft.com/library/windows/desktop/ms690088)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information on `SCODE`, see [Structure of COM Error Codes](http://msdn.microsoft.com/library/windows/desktop/ms690088) in the Windows SDK.  
   
-##  <a name="changetype"></a>COleVariant::ChangeType  
- このバリアント型の値の型を変換`COleVariant`オブジェクトです。  
+##  <a name="changetype"></a>  COleVariant::ChangeType  
+ Converts the type of variant value in this `COleVariant` object.  
   
 ```  
 void ChangeType(VARTYPE vartype, LPVARIANT pSrc = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `vartype`  
- [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)この`COleVariant`オブジェクトです。  
+ The [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4) for this `COleVariant` object.  
   
  `pSrc`  
- ポインター、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)変換するオブジェクト。 この値が場合**NULL**、この`COleVariant`オブジェクトは、変換のソースとして使用します。  
+ A pointer to the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) object to be converted. If this value is **NULL**, this `COleVariant` object is used as the source for the conversion.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)、 [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)、および[VariantChangeType](http://msdn.microsoft.com/en-us/48a51e32-95d7-4eeb-8106-f5043ffa2fd1)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118), [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4), and [VariantChangeType](http://msdn.microsoft.com/en-us/48a51e32-95d7-4eeb-8106-f5043ffa2fd1) entries in the Windows SDK.  
   
-##  <a name="clear"></a>COleVariant::Clear  
- 消去、 **VARIANT**します。  
+##  <a name="clear"></a>  COleVariant::Clear  
+ Clears the **VARIANT**.  
   
 ```  
 void Clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- これにより設定、 **VARTYPE**にこのオブジェクトの`VT_EMPTY`です。 `COleVariant`この関数はデストラクターを呼び出します。  
+### <a name="remarks"></a>Remarks  
+ This sets the **VARTYPE** for this object to `VT_EMPTY`. The `COleVariant` destructor calls this function.  
   
- 詳細については、次を参照してください。、 `VARIANT`、 `VARTYPE`、および`VariantClear`内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the `VARIANT`, `VARTYPE`, and `VariantClear` entries in the Windows SDK.  
   
-##  <a name="detach"></a>COleVariant::Detach  
- 基になるをデタッチ[VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)オブジェクトからこの`COleVariant`オブジェクトです。  
+##  <a name="detach"></a>  COleVariant::Detach  
+ Detaches the underlying [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) object from this `COleVariant` object.  
   
 ```  
 VARIANT Detach();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数を設定、 [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)この`COleVariant`オブジェクトを`VT_EMPTY`します。  
+### <a name="remarks"></a>Remarks  
+ This function sets the [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4) for this `COleVariant` object to `VT_EMPTY`.  
   
 > [!NOTE]
->  呼び出した後**デタッチ**を呼び出す呼び出し元の役目です**VariantClear** 、その結果に**VARIANT**構造体。  
+>  After calling **Detach**, it is the caller's responsibility to call **VariantClear** on the resulting **VARIANT** structure.  
   
- 詳細については、次を参照してください。、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)、 [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)、および[VariantClear](http://msdn.microsoft.com/en-us/28741d81-8404-4f85-95d3-5c209ec13835)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118), [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4), and [VariantClear](http://msdn.microsoft.com/en-us/28741d81-8404-4f85-95d3-5c209ec13835) entries in the Windows SDK.  
   
-##  <a name="getbytearrayfromvariantarray"></a>COleVariant::GetByteArrayFromVariantArray  
- 既存の配列からバイト配列を取得します。  
+##  <a name="getbytearrayfromvariantarray"></a>  COleVariant::GetByteArrayFromVariantArray  
+ Retrieves a byte array from an existing variant array  
   
 ```  
 void GetByteArrayFromVariantArray(CByteArray& bytes);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bytes`  
- 既存への参照を[CByteArray](../../mfc/reference/cbytearray-class.md)オブジェクトです。  
+ A reference to an existing [CByteArray](../../mfc/reference/cbytearray-class.md) object.  
   
-##  <a name="operator_lpcvariant"></a>COleVariant::operator LPCVARIANT  
- このキャスト演算子、`VARIANT`構造体の値がこれからコピー`COleVariant`オブジェクトです。  
+##  <a name="operator_lpcvariant"></a>  COleVariant::operator LPCVARIANT  
+ This casting operator returns a `VARIANT` structure whose value is copied from this `COleVariant` object.  
   
 ```  
 operator LPCVARIANT() const; 
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="operator_lpvariant"></a>COleVariant::operator LPVARIANT  
- このキャスト演算子を呼び出す`VARIANT`この構造体`COleVariant`オブジェクトです。  
+##  <a name="operator_lpvariant"></a>  COleVariant::operator LPVARIANT  
+ Call this casting operator to access the underlying `VARIANT` structure for this `COleVariant` object.  
   
 ```  
 operator LPVARIANT();
 ```   
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!CAUTION]
->  値を変更、 **VARIANT**構造体がこの関数によって返されるポインターではこの値を変更`COleVariant`オブジェクトです。  
+>  Changing the value in the **VARIANT** structure accessed by the pointer returned by this function will change the value of this `COleVariant` object.  
   
-##  <a name="operator_eq"></a>COleVariant::operator =  
- これらのオーバー ロード代入演算子はコピー元の値をこの`COleVariant`オブジェクトです。  
+##  <a name="operator_eq"></a>  COleVariant::operator =  
+ These overloaded assignment operators copy the source value into this `COleVariant` object.  
   
 ```  
 const COleVariant& operator=(const VARIANT& varSrc); 
@@ -318,45 +322,45 @@ const COleVariant& operator=(const CByteArray& arrSrc);
 const COleVariant& operator=(const CLongBinary& lbSrc);
 ```  
   
-### <a name="remarks"></a>コメント  
- 各演算子の簡単な説明に従います。  
+### <a name="remarks"></a>Remarks  
+ A brief description of each operator follows:  
   
-- **演算子 = (** *varSrc***)** 、既存のコピー **VARIANT**または`COleVariant`オブジェクトをこのオブジェクトにします。  
+- **operator =(** *varSrc***)** Copies an existing **VARIANT** or `COleVariant` object into this object.  
   
-- **演算子 = (** `pSrc` **)**コピー、 **VARIANT**からアクセスされるオブジェクト`pSrc`このオブジェクトにします。  
+- **operator =(** `pSrc` **)** Copies the **VARIANT** object accessed by `pSrc` into this object.  
   
-- **operator = (** `lpszSrc` **)**このオブジェクトに null で終わる文字列をコピーし、設定、 **VARTYPE**に`VT_BSTR`します。  
+- **operator =(** `lpszSrc` **)** Copies a null-terminated string into this object and sets the **VARTYPE** to `VT_BSTR`.  
   
-- **演算子 = (** `strSrc` **)**コピー、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)オブジェクトをこのオブジェクトと設定、 **VARTYPE**に`VT_BSTR`します。  
+- **operator =(** `strSrc` **)** Copies a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object into this object and sets the **VARTYPE** to `VT_BSTR`.  
   
-- **operator = (** `nSrc` **)** 8 ビットまたは 16 ビット整数値をこのオブジェクトにコピーします。 場合`nSrc`、8 ビット値には、 **VARTYPE**このに設定されている`VT_UI1`します。 場合`nSrc`16 ビット値は、および**VARTYPE**このは`VT_BOOL`、保持している以外の場合に設定されている`VT_I2`します。  
+- **operator =(** `nSrc` **)** Copies an 8- or 16-bit integer value into this object. If `nSrc` is an 8-bit value, the **VARTYPE** of this is set to `VT_UI1`. If `nSrc` is a 16-bit value and the **VARTYPE** of this is `VT_BOOL`, it is kept; otherwise, it is set to `VT_I2`.  
   
-- **operator = (** `lSrc` **)** 32 ビット整数値をこのオブジェクトにコピーします。 場合、 **VARTYPE**このは`VT_ERROR`、保持している以外の場合に設定されている`VT_I4`します。  
+- **operator =(** `lSrc` **)** Copies a 32-bit integer value into this object. If the **VARTYPE** of this is `VT_ERROR`, it is kept; otherwise, it is set to `VT_I4`.  
   
-- **演算子 = (** `curSrc` **)**コピー、 [COleCurrency](../../mfc/reference/colecurrency-class.md)をこのオブジェクトとセットのオブジェクト、 **VARTYPE**に`VT_CY`します。  
+- **operator =(** `curSrc` **)** Copies a [COleCurrency](../../mfc/reference/colecurrency-class.md) object into this object and sets the **VARTYPE** to `VT_CY`.  
   
-- **operator = (** `fltSrc` **)** 32 ビットの浮動小数点値をこのオブジェクトにコピーし、設定、 **VARTYPE**に`VT_R4`します。  
+- **operator =(** `fltSrc` **)** Copies a 32-bit floating-point value into this object and sets the **VARTYPE** to `VT_R4`.  
   
-- **operator = (** `dblSrc` **)** 64 ビットの浮動小数点値をこのオブジェクトにコピーし、設定、 **VARTYPE**に`VT_R8`します。  
+- **operator =(** `dblSrc` **)** Copies a 64-bit floating-point value into this object and sets the **VARTYPE** to `VT_R8`.  
   
-- **演算子 = (** `dateSrc` **)**コピー、[時刻](../../atl-mfc-shared/reference/coledatetime-class.md)オブジェクトをこのオブジェクトと設定、 **VARTYPE**に`VT_DATE`します。  
+- **operator =(** `dateSrc` **)** Copies a [COleDateTime](../../atl-mfc-shared/reference/coledatetime-class.md) object into this object and sets the **VARTYPE** to `VT_DATE`.  
   
-- **演算子 = (** `arrSrc` **)**コピー、 [CByteArray](../../mfc/reference/cbytearray-class.md)オブジェクトをこの`COleVariant`オブジェクトです。  
+- **operator =(** `arrSrc` **)** Copies a [CByteArray](../../mfc/reference/cbytearray-class.md) object into this `COleVariant` object.  
   
-- **演算子 = (** `lbSrc` **)**コピー、 [CLongBinary](../../mfc/reference/clongbinary-class.md)オブジェクトをこの`COleVariant`オブジェクトです。  
+- **operator =(** `lbSrc` **)** Copies a [CLongBinary](../../mfc/reference/clongbinary-class.md) object into this `COleVariant` object.  
   
- 詳細については、次を参照してください。、 [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118)と[VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4)内のエントリ、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [VARIANT](http://msdn.microsoft.com/en-us/e305240e-9e11-4006-98cc-26f4932d2118) and [VARTYPE](http://msdn.microsoft.com/en-us/317b911b-1805-402d-a9cb-159546bc88b4) entries in the Windows SDK.  
   
-##  <a name="operator_eq_eq"></a>COleVariant::operator = =  
- この演算子は、2 つのバリアント値を比較し、それらが等しい場合は 0 以外を返しますそれ以外の場合 0 を返します。  
+##  <a name="operator_eq_eq"></a>  COleVariant::operator ==  
+ This operator compares two variant values and returns nonzero if they are equal; otherwise 0.  
   
 ```  
 BOOL operator==(const VARIANT& varSrc) const; 
 BOOL operator==(LPCVARIANT pSrc) const;
 ```  
   
-##  <a name="operator_lt_lt__gt_gt"></a>COleVariant::operator &lt; &lt;、&gt;&gt;  
- 出力、`COleVariant`値を`CArchive`または**CdumpContext**を入力し、`COleVariant`オブジェクトから`CArchive`します。  
+##  <a name="operator_lt_lt__gt_gt"></a>  COleVariant::operator &lt;&lt;, &gt;&gt;  
+ Outputs a `COleVariant` value to `CArchive` or **CdumpContext** and inputs a `COleVariant` object from `CArchive`.  
   
 ```  
 friend CDumpContext& AFXAPI operator<<(
@@ -372,30 +376,30 @@ friend CArchive& AFXAPI operator>>(
     COleVariant& varSrc);
 ```  
   
-### <a name="remarks"></a>コメント  
- `COleVariant`カーソル ( ** < \< **) 演算子は、診断のダンプとアーカイブに格納することをサポートしています。 抽出 ( ** >> **) 演算子は、アーカイブからの読み込みをサポートしています。  
+### <a name="remarks"></a>Remarks  
+ The `COleVariant` insertion ( **<\<**) operator supports diagnostic dumping and storing to an archive. The extraction ( **>>**) operator supports loading from an archive.  
   
-##  <a name="setstring"></a>COleVariant::SetString  
- 特定の型に文字列を設定します。  
+##  <a name="setstring"></a>  COleVariant::SetString  
+ Sets the string to a particular type.  
   
 ```  
 void SetString(LPCTSTR lpszSrc, VARTYPE vtSrc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszSrc`  
- 新しいにコピーされる null で終わる文字列`COleVariant`オブジェクトです。  
+ A null-terminated string to be copied into the new `COleVariant` object.  
   
  *VtSrc*  
- **VARTYPE**新しい`COleVariant`オブジェクトです。  
+ The **VARTYPE** for the new `COleVariant` object.  
   
-### <a name="remarks"></a>コメント  
- パラメーター`vtSrc`する必要があります`VT_BSTR`(UNICODE) または`VT_BSTRT`(ANSI) です。 `SetString`既定値から文字列を ANSI に設定するのには、通常使用、 [COleVariant::COleVariant](#colevariant)の文字列または文字列ポインター パラメーターなしのコンス トラクター **VARTYPE**は UNICODE です。  
+### <a name="remarks"></a>Remarks  
+ The parameter `vtSrc` must be `VT_BSTR` (UNICODE) or `VT_BSTRT` (ANSI). `SetString` is typically used to set strings to ANSI, since the default for the [COleVariant::COleVariant](#colevariant) constructor with a string or string pointer parameter and no **VARTYPE** is UNICODE.  
   
- UNICODE 以外のビルドにおける DAO レコード セットは、文字列を ansi を想定しています。 したがって、DAO に使用する関数`COleVariant`UNICODE レコード セットを作成していない場合、オブジェクトが使用する必要があります、 **COleVariant::COleVariant (** `lpszSrc` **、** `vtSrc` **)**形式を持つコンス トラクターの`vtSrc`に設定`VT_BSTRT`(ANSI) を使用して、または`SetString`と`vtSrc`に設定`VT_BSTRT`ANSI 文字列の作成にします。 たとえば、`CDaoRecordset`関数[CDaoRecordset::Seek](../../mfc/reference/cdaorecordset-class.md#seek)と[たび](../../mfc/reference/cdaorecordset-class.md#setfieldvalue)を使用して`COleVariant`パラメーターとしてオブジェクトです。 DAO レコード セットが UNICODE でない場合は、これらのオブジェクトを ANSI にあります。  
+ A DAO recordset in a non-UNICODE build expects strings to be ANSI. Thus, for DAO functions that use `COleVariant` objects, if you are not creating a UNICODE recordset, you must use the **COleVariant::COleVariant(** `lpszSrc`**,** `vtSrc` **)** form of constructor with `vtSrc` set to `VT_BSTRT` (ANSI) or use `SetString` with `vtSrc` set to `VT_BSTRT` to make ANSI strings. For example, the `CDaoRecordset` functions [CDaoRecordset::Seek](../../mfc/reference/cdaorecordset-class.md#seek) and [CDaoRecordset::SetFieldValue](../../mfc/reference/cdaorecordset-class.md#setfieldvalue) use `COleVariant` objects as parameters. These objects must be ANSI if the DAO recordset is not UNICODE.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

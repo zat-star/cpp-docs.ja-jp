@@ -1,5 +1,5 @@
 ---
-title: "未定義のままクラス |Microsoft ドキュメント"
+title: CFileException Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,9 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFile class, exceptions of
-- exceptions, file type
-- CFileException class
+- CFileException [MFC], CFileException
+- CFileException [MFC], ErrnoToException
+- CFileException [MFC], GetErrorMessage
+- CFileException [MFC], OsErrorToException
+- CFileException [MFC], ThrowErrno
+- CFileException [MFC], ThrowOsError
+- CFileException [MFC], m_cause
+- CFileException [MFC], m_lOsError
+- CFileException [MFC], m_strFileName
 ms.assetid: f6491bb9-bfbc-42fd-a952-b33f9b62323f
 caps.latest.revision: 20
 author: mikeblome
@@ -45,65 +51,65 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: d9064ae66f0dcd0e9f0dce0eedd8e38353f9da06
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 34e70e01a2bc13c20d285bacf9c6907c13db5e02
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfileexception-class"></a>未定義のままクラス
-ファイルに関連した例外状態を表します。  
+# <a name="cfileexception-class"></a>CFileException Class
+Represents a file-related exception condition.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFileException : public CException  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileException::CFileException](#cfileexception)|`CFileException` オブジェクトを構築します。|  
+|[CFileException::CFileException](#cfileexception)|Constructs a `CFileException` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFileException::ErrnoToException](#errnotoexception)|原因、実行時のエラー番号に対応するコードを返します。|  
-|[CFileException::GetErrorMessage](#geterrormessage)|例外を説明するメッセージを取得します。|  
-|[CFileException::OsErrorToException](#oserrortoexception)|オペレーティング システム エラー コードに対応する原因のコードを返します。|  
-|[CFileException::ThrowErrno](#throwerrno)|ランタイム エラー番号に基づくファイルの例外をスローします。|  
-|[CFileException::ThrowOsError](#throwoserror)|オペレーティング システム エラー番号に基づくファイルの例外をスローします。|  
+|[CFileException::ErrnoToException](#errnotoexception)|Returns cause code corresponding to a run-time error number.|  
+|[CFileException::GetErrorMessage](#geterrormessage)|Retrieves the message describing an exception.|  
+|[CFileException::OsErrorToException](#oserrortoexception)|Returns a cause code corresponding to an operating system error code.|  
+|[CFileException::ThrowErrno](#throwerrno)|Throws a file exception based on a runtime error number.|  
+|[CFileException::ThrowOsError](#throwoserror)|Throws a file exception based on an operating system error number.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[については、「](#m_cause)|例外の原因に対応する移植可能なコードが含まれています。|  
-|[CFileException::m_lOsError](#m_loserror)|関連するオペレーティング システム エラー番号が含まれています。|  
-|[CFileException::m_strFileName](#m_strfilename)|この例外のファイルの名前が含まれています。|  
+|[CFileException::m_cause](#m_cause)|Contains portable code corresponding to the exception cause.|  
+|[CFileException::m_lOsError](#m_loserror)|Contains the related operating-system error number.|  
+|[CFileException::m_strFileName](#m_strfilename)|Contains the name of the file for this exception.|  
   
-## <a name="remarks"></a>コメント  
- `CFileException`クラスには、ポータブル原因コードとオペレーティング システム固有のエラー番号を保持するパブリック データ メンバーが含まれています。 クラスは、ファイルの例外をスローして、オペレーティング システム エラーと C ランタイム エラーの両方の原因コードを返すためにも静的メンバー関数を提供します。  
+## <a name="remarks"></a>Remarks  
+ The `CFileException` class includes public data members that hold the portable cause code and the operating-system-specific error number. The class also provides static member functions for throwing file exceptions and for returning cause codes for both operating-system errors and C run-time errors.  
   
- `CFileException`オブジェクトが構築されでスローされた`CFile`メンバー関数と派生クラスのメンバー関数。 これらのオブジェクトのスコープ内にアクセスすることができます、**キャッチ**式です。 移植性を原因コードのみを使用して、例外の理由を取得します。 例外の詳細については、記事を参照してください。[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
+ `CFileException` objects are constructed and thrown in `CFile` member functions and in member functions of derived classes. You can access these objects within the scope of a **CATCH** expression. For portability, use only the cause code to get the reason for an exception. For more information about exceptions, see the article [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
   
  `CFileException`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="cfileexception"></a>CFileException::CFileException  
- 構築、`CFileException`原因コードとオペレーティング システムのコードをオブジェクトに格納するオブジェクト。  
+##  <a name="cfileexception"></a>  CFileException::CFileException  
+ Constructs a `CFileException` object that stores the cause code and the operating-system code in the object.  
   
 ```  
 CFileException(
@@ -112,44 +118,44 @@ CFileException(
     LPCTSTR lpszArchiveName = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cause`  
- 例外の原因を示す列挙型の変数。 参照してください[については、「](#m_cause)の有効な値の一覧です。  
+ An enumerated type variable that indicates the reason for the exception. See [CFileException::m_cause](#m_cause) for a list of the possible values.  
   
  `lOsError`  
- 使用可能な場合は、例外のオペレーティング システム固有理由です。 `lOsError`パラメーターより多くの情報を提供`cause`です。  
+ An operating-system-specific reason for the exception, if available. The `lOsError` parameter provides more information than `cause` does.  
   
  `lpszArchiveName`  
- 名前を含む文字列を指す、`CFile`オブジェクトの例外が発生します。  
+ Points to a string containing the name of the `CFile` object causing the exception.  
   
-### <a name="remarks"></a>コメント  
- このコンス トラクターを直接使用されませんではなく、グローバル関数を呼び出す[AfxThrowFileException](exception-processing.md#afxthrowfileexception)します。  
+### <a name="remarks"></a>Remarks  
+ Do not use this constructor directly, but rather call the global function [AfxThrowFileException](exception-processing.md#afxthrowfileexception).  
   
 > [!NOTE]
->  変数`lOsError`にのみ適用されます`CFile`と`CStdioFile`オブジェクトです。 `CMemFile`クラスは、このエラー コードを処理しません。  
+>  The variable `lOsError` applies only to `CFile` and `CStdioFile` objects. The `CMemFile` class does not handle this error code.  
   
-##  <a name="errnotoexception"></a>CFileException::ErrnoToException  
- 特定のランタイム ライブラリのエラー値に変換、`CFileException`エラー値を列挙します。  
+##  <a name="errnotoexception"></a>  CFileException::ErrnoToException  
+ Converts a given run-time library error value to a `CFileException` enumerated error value.  
   
 ```  
 static int PASCAL ErrnoToException(int nErrno);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nErrno`  
- 整数エラー コード、実行時のインクルード ファイル ERRNO で定義されています。H.  
+ An integer error code as defined in the run-time include file ERRNO.H.  
   
-### <a name="return-value"></a>戻り値  
- 特定のランタイム ライブラリのエラー値に対応する列挙値。  
+### <a name="return-value"></a>Return Value  
+ Enumerated value that corresponds to a given run-time library error value.  
   
-### <a name="remarks"></a>コメント  
- 参照してください[については、「](#m_cause) 、候補のリストの列挙値。  
+### <a name="remarks"></a>Remarks  
+ See [CFileException::m_cause](#m_cause) for a list of the possible enumerated values.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&26;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#26](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_1.cpp)]  
   
-##  <a name="geterrormessage"></a>CFileException::GetErrorMessage  
- 例外を説明するテキストを取得します。  
+##  <a name="geterrormessage"></a>  CFileException::GetErrorMessage  
+ Retrieves text that describes an exception.  
   
 ```  
 virtual BOOL GetErrorMessage(
@@ -158,148 +164,148 @@ virtual BOOL GetErrorMessage(
     PUINT pnHelpContext = NULL) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力、出力] `lpszError`  
- エラー メッセージを受信するバッファーへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in, out] `lpszError`  
+ Pointer to a buffer that receives an error message.  
   
- [入力] `nMaxError`  
- 指定したバッファーに保持できる文字の最大数。 これには、終端の null 文字が含まれます。  
+ [in] `nMaxError`  
+ The maximum number of characters the specified buffer can hold. This includes the terminating null character.  
   
- [入力、出力] `pnHelpContext`  
- ヘルプ コンテキスト ID を受信する符号なし整数へのポインター 場合`NULL`ID は返されません。  
+ [in, out] `pnHelpContext`  
+ Pointer to an unsigned integer that receives the help context ID. If `NULL`, no ID is returned.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`メソッドが成功した場合それ以外の場合`FALSE`します。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the method was successful; otherwise `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- 指定されたバッファーが小さすぎる場合は、エラー メッセージが切り捨てられます。  
+### <a name="remarks"></a>Remarks  
+ If the specified buffer is too small, the error message is truncated.  
   
-### <a name="example"></a>例  
- 次の例では使用`CFileException::GetErrorMessage`します。  
+### <a name="example"></a>Example  
+ The following example uses `CFileException::GetErrorMessage`.  
   
- [!code-cpp[NVC_MFCExceptions #&22;](../../mfc/codesnippet/cpp/cfileexception-class_2.cpp)]  
+ [!code-cpp[NVC_MFCExceptions#22](../../mfc/codesnippet/cpp/cfileexception-class_2.cpp)]  
   
-##  <a name="m_cause"></a>については、「  
- `CFileException` 列挙型によって定義された値が含まれます。  
+##  <a name="m_cause"></a>  CFileException::m_cause  
+ Contains values defined by a `CFileException` enumerated type.  
   
 ```  
 int m_cause;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このデータ メンバーは `int` 型のパブリック変数です。 列挙子とその意味は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ This data member is a public variable of type `int`. The enumerators and their meanings are as follows:  
   
-- `CFileException::none`0: エラーが発生していません。  
+- `CFileException::none` 0: No error occurred.  
   
-- `CFileException::genericException`1: 未指定のエラーが発生しました。  
+- `CFileException::genericException` 1: An unspecified error occurred.  
   
-- `CFileException::fileNotFound`2: ファイルが見つかりませんでした。  
+- `CFileException::fileNotFound` 2: The file could not be located.  
   
-- `CFileException::badPath`3: パスの一部またはすべてが無効です。  
+- `CFileException::badPath` 3: All or part of the path is invalid.  
   
-- `CFileException::tooManyOpenFiles`4: 開いているファイルのアクセス許可の数を超えています。  
+- `CFileException::tooManyOpenFiles` 4: The permitted number of open files was exceeded.  
   
-- `CFileException::accessDenied`5: ファイルにアクセスできませんでした。  
+- `CFileException::accessDenied` 5: The file could not be accessed.  
   
-- `CFileException::invalidFile`6: 無効なファイル ハンドルを使用する試みが発生しました。  
+- `CFileException::invalidFile` 6: There was an attempt to use an invalid file handle.  
   
-- `CFileException::removeCurrentDir`7: 現在の作業ディレクトリを削除することはできません。  
+- `CFileException::removeCurrentDir` 7: The current working directory cannot be removed.  
   
-- `CFileException::directoryFull`8: ディレクトリのエントリがありません。  
+- `CFileException::directoryFull` 8: There are no more directory entries.  
   
-- `CFileException::badSeek`9: ファイル ポインターを設定しようとしてエラーが発生しました。  
+- `CFileException::badSeek` 9: There was an error trying to set the file pointer.  
   
-- `CFileException::hardIO`10: ハードウェア エラーが発生しました。  
+- `CFileException::hardIO` 10: There was a hardware error.  
   
-- `CFileException::sharingViolation`11: 共有します。Exe ファイルが読み込まれていないか、共有領域がロックされました。  
+- `CFileException::sharingViolation` 11: SHARE.EXE was not loaded, or a shared region was locked.  
   
-- `CFileException::lockViolation`12: 既にロックされている領域をロックしようとしましたがあります。  
+- `CFileException::lockViolation` 12: There was an attempt to lock a region that was already locked.  
   
-- `CFileException::diskFull`14: ディスクがいっぱいです。  
+- `CFileException::diskFull` 14: The disk is full.  
   
-- `CFileException::endOfFile`15: ファイルの末尾に達しました。  
-  
-    > [!NOTE]
-    >  これらの `CFileException` 原因列挙子は、`CArchiveException` 原因列挙子とは異なります。  
+- `CFileException::endOfFile` 15: The end of file was reached.  
   
     > [!NOTE]
-    > `CArchiveException::generic` は使用されなくなりました。 代わりに、`genericException` を使用してください。 `generic` をアプリケーションで使用して /clr でビルドした場合、発生した構文エラーを解読するのは困難です。  
+    >  These `CFileException` cause enumerators are distinct from the `CArchiveException` cause enumerators.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&30;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_3.cpp)]  
+    > [!NOTE]
+    > `CArchiveException::generic` is deprecated. Use `genericException` instead. If `generic` is used in an application and built with /clr, the resulting syntax errors are not easy to decipher.  
   
-##  <a name="m_loserror"></a>CFileException::m_lOsError  
- この例外のオペレーティング システムのエラー コードが含まれています。  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#30](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_3.cpp)]  
+  
+##  <a name="m_loserror"></a>  CFileException::m_lOsError  
+ Contains the operating-system error code for this exception.  
   
 ```  
 LONG m_lOsError;  
 ```  
   
-### <a name="remarks"></a>コメント  
- エラー コードの一覧については、オペレーティング システム技術マニュアルを参照してください。 このデータ メンバーは型のパブリック変数**長い**します。  
+### <a name="remarks"></a>Remarks  
+ See your operating-system technical manual for a listing of error codes. This data member is a public variable of type **LONG**.  
   
-##  <a name="m_strfilename"></a>CFileException::m_strFileName  
- この例外の状態のファイルの名前が含まれています。  
+##  <a name="m_strfilename"></a>  CFileException::m_strFileName  
+ Contains the name of the file for this exception condition.  
   
 ```  
 CString m_strFileName;  
 ```  
   
-##  <a name="oserrortoexception"></a>CFileException::OsErrorToException  
- 対応する列挙子を返します、指定された`lOsError`値。 エラー コードは不明でかどうかは、この関数を返します**定義**します。  
+##  <a name="oserrortoexception"></a>  CFileException::OsErrorToException  
+ Returns an enumerator that corresponds to a given `lOsError` value. If the error code is unknown, then the function returns **CFileException::generic**.  
   
 ```  
 static int PASCAL OsErrorToException(LONG lOsError);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lOsError`  
- オペレーティング システム固有のエラー コード。  
+ An operating-system-specific error code.  
   
-### <a name="return-value"></a>戻り値  
- 指定したオペレーティング システムのエラー値に対応する列挙値。  
+### <a name="return-value"></a>Return Value  
+ Enumerated value that corresponds to a given operating-system error value.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&27;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#27](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_4.cpp)]  
   
-##  <a name="throwerrno"></a>CFileException::ThrowErrno  
- 構築、`CFileException`オブジェクトに対応する、指定された`nErrno`し、例外をスローします。  
+##  <a name="throwerrno"></a>  CFileException::ThrowErrno  
+ Constructs a `CFileException` object corresponding to a given `nErrno` value, then throws the exception.  
   
 ```  
 static void PASCAL ThrowErrno(int nErrno, LPCTSTR lpszFileName = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nErrno`  
- 整数エラー コード、実行時のインクルード ファイル ERRNO で定義されています。H.  
+ An integer error code as defined in the run-time include file ERRNO.H.  
   
  `lpszFileName`  
- ファイルの名前を含む文字列へのポインターの原因となった例外、利用可能な場合です。  
+ A pointer to the string containing the name of the file that caused the exception, if available.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&28;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#28](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_5.cpp)]  
   
-##  <a name="throwoserror"></a>CFileException::ThrowOsError  
- スロー、`CFileException`に対応する、指定された`lOsError`値。 エラー コードが不明、し、関数としてコード化された例外をスローするかどうかは**定義**します。  
+##  <a name="throwoserror"></a>  CFileException::ThrowOsError  
+ Throws a `CFileException` corresponding to a given `lOsError` value. If the error code is unknown, then the function throws an exception coded as **CFileException::generic**.  
   
 ```  
 static void PASCAL ThrowOsError(LONG lOsError, LPCTSTR lpszFileName = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lOsError`  
- オペレーティング システム固有のエラー コード。  
+ An operating-system-specific error code.  
   
  `lpszFileName`  
- ファイルの名前を含む文字列へのポインターの原因となった例外、利用可能な場合です。  
+ A pointer to the string containing the name of the file that caused the exception, if available.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCFiles #&29;](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCFiles#29](../../atl-mfc-shared/reference/codesnippet/cpp/cfileexception-class_6.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CException クラス](../../mfc/reference/cexception-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [例外の処理](../../mfc/reference/exception-processing.md)
+## <a name="see-also"></a>See Also  
+ [CException Class](../../mfc/reference/cexception-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Exception Processing](../../mfc/reference/exception-processing.md)
 
 
 

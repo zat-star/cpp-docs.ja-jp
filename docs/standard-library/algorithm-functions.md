@@ -1,5 +1,5 @@
 ---
-title: "&lt;algorithm&gt; 関数 | Microsoft Docs"
+title: '&lt;algorithm&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -8,172 +8,90 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - algorithm/std::adjacent_find
-- adjacent_find
 - algorithm/std::all_of
-- all_of
 - algorithm/std::any_of
-- any_of
 - algorithm/std::binary_search
-- binary_search
 - algorithm/std::copy
-- copy
 - algorithm/std::copy_backward
-- copy_backward
 - algorithm/std::copy_if
-- copy_if
 - algorithm/std::copy_n
-- copy_n
 - algorithm/std::equal
-- equal
 - algorithm/std::equal_range
-- equal_range
 - algorithm/std::fill
-- fill
 - algorithm/std::fill_n
-- fill_n
 - algorithm/std::find
-- find
 - algorithm/std::find_end
-- find_end
 - algorithm/std::find_first_of
-- find_first_of
 - algorithm/std::find_if
-- find_if
 - algorithm/std::find_if_not
-- find_if_not
 - algorithm/std::for_each
-- for_each
 - algorithm/std::generate
-- generate
 - algorithm/std::generate_n
-- generate_n
 - algorithm/std::includes
-- includes
 - algorithm/std::inplace_merge
-- inplace_merge
 - algorithm/std::is_heap
-- is_heap
 - algorithm/std::is_heap_until
-- is_heap_until
 - algorithm/std::is_partitioned
-- is_partitioned
 - algorithm/std::is_permutation
-- is_permutation
 - algorithm/std::is_sorted
-- is_sorted
 - algorithm/std::is_sorted_until
-- is_sorted_until
 - algorithm/std::iter_swap
-- iter_swap
 - algorithm/std::lexicographical_compare
-- lexicographical_compare
 - algorithm/std::lower_bound
-- lower_bound
 - algorithm/std::make_heap
-- make_heap
 - algorithm/std::max
-- max
 - algorithm/std::max_element
-- max_element
 - algorithm/std::merge
-- merge
 - algorithm/std::min
-- min
 - algorithm/std::minmax
-- minmax
 - algorithm/std::minmax_element
-- minmax_element
 - algorithm/std::min_element
-- min_element
 - algorithm/std::mismatch
-- mismatch
 - algorithm/std::move
-- move
 - algorithm/std::move_backward
-- move_backward
 - algorithm/std::next_permutation
-- next_permutation
 - algorithm/std::none_of
-- none_of
 - algorithm/std::nth_element
-- nth_element
 - algorithm/std::partial_sort
-- partial_sort
 - algorithm/std::partial_sort_copy
-- partial_sort_copy
 - algorithm/std::partition
-- partition
 - algorithm/std::partition_point
-- partition_point
 - algorithm/std::pop_heap
-- pop_heap
 - algorithm/std::prev_permutation
-- prev_permutation
 - algorithm/std::push_heap
-- push_heap
 - algorithm/std::random_shuffle
-- random_shuffle
 - algorithm/std::remove
-- remove
 - algorithm/std::remove_copy
-- remove_copy
 - algorithm/std::remove_copy_if
-- remove_copy_if
 - algorithm/std::remove_if
-- remove_if
 - algorithm/std::replace
-- replace
 - algorithm/std::replace_copy
-- replace_copy
 - algorithm/std::replace_copy_if
-- replace_copy_if
 - algorithm/std::replace_if
-- replace_if
 - algorithm/std::reverse
-- reverse
 - algorithm/std::reverse_copy
-- reverse_copy
 - algorithm/std::rotate
-- rotate
 - algorithm/std::rotate_copy
-- rotate_copy
 - algorithm/std::search
-- search
 - algorithm/std::search_n
-- search_n
 - algorithm/std::set_difference
-- set_difference
 - algorithm/std::set_intersection
-- set_intersection
 - algorithm/std::set_symmetric_difference
-- set_symmetric_difference
 - algorithm/std::set_union
-- set_union
 - algorithm/std::shuffle
-- shuffle
 - algorithm/std::sort
-- sort
 - algorithm/std::sort_heap
-- sort_heap
 - algorithm/std::stable_partition
-- stable_partition
 - algorithm/std::stable_sort
-- stable_sort
 - algorithm/std::swap_ranges
-- swap_ranges
 - algorithm/std::transform
-- transform
 - algorithm/std::unique
-- unique
 - algorithm/std::unique_copy
-- unique_copy
 - algorithm/std::upper_bound
-- upper_bound
 - xutility/std::copy
 - xutility/std::copy_backward
 - xutility/std::copy_n
 - xutility/std::count
-- count
 - xutility/std::equal
 - xutility/std::fill
 - xutility/std::fill_n
@@ -194,14 +112,113 @@ caps.latest.revision: 20
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 6b3c288921fd86c4c02a8e2ffa09a060fe5fd3a1
+helpviewer_keywords:
+- std::adjacent_find [C++]
+- std::all_of [C++]
+- std::any_of [C++]
+- std::binary_search [C++]
+- std::copy [C++]
+- std::copy_backward [C++]
+- std::copy_if [C++]
+- std::copy_n [C++]
+- std::equal [C++]
+- std::equal_range [C++]
+- std::fill [C++]
+- std::fill_n [C++]
+- std::find [C++]
+- std::find_end [C++]
+- std::find_first_of [C++]
+- std::find_if [C++]
+- std::find_if_not [C++]
+- std::for_each [C++]
+- std::generate [C++]
+- std::generate_n [C++]
+- std::includes [C++]
+- std::inplace_merge [C++]
+- std::is_heap [C++]
+- std::is_heap_until [C++]
+- std::is_partitioned [C++]
+- std::is_permutation [C++]
+- std::is_sorted [C++]
+- std::is_sorted_until [C++]
+- std::iter_swap [C++]
+- std::lexicographical_compare [C++]
+- std::lower_bound [C++]
+- std::make_heap [C++]
+- std::max [C++]
+- std::max_element [C++]
+- std::merge [C++]
+- std::min [C++]
+- std::minmax [C++]
+- std::minmax_element [C++]
+- std::min_element [C++]
+- std::mismatch [C++]
+- std::move [C++]
+- std::move_backward [C++]
+- std::next_permutation [C++]
+- std::none_of [C++]
+- std::nth_element [C++]
+- std::partial_sort [C++]
+- std::partial_sort_copy [C++]
+- std::partition [C++]
+- std::partition_point [C++]
+- std::pop_heap [C++]
+- std::prev_permutation [C++]
+- std::push_heap [C++]
+- std::random_shuffle [C++]
+- std::remove [C++]
+- std::remove_copy [C++]
+- std::remove_copy_if [C++]
+- std::remove_if [C++]
+- std::replace [C++]
+- std::replace_copy [C++]
+- std::replace_copy_if [C++]
+- std::replace_if [C++]
+- std::reverse [C++]
+- std::reverse_copy [C++]
+- std::rotate [C++]
+- std::rotate_copy [C++]
+- std::search [C++]
+- std::search_n [C++]
+- std::set_difference [C++]
+- std::set_intersection [C++]
+- std::set_symmetric_difference [C++]
+- std::set_union [C++]
+- std::shuffle [C++]
+- std::sort [C++]
+- std::sort_heap [C++]
+- std::stable_partition [C++]
+- std::stable_sort [C++]
+- std::swap_ranges [C++]
+- std::transform [C++]
+- std::unique [C++]
+- std::unique_copy [C++]
+- std::upper_bound [C++]
+- std::copy [C++]
+- std::copy_backward [C++]
+- std::copy_n [C++]
+- std::count [C++]
+- std::equal [C++]
+- std::fill [C++]
+- std::fill_n [C++]
+- std::find [C++]
+- std::is_permutation [C++]
+- std::lexicographical_compare [C++]
+- std::move [C++]
+- std::move_backward [C++]
+- std::reverse [C++]
+- std::rotate [C++]
+- std::count_if [C++]
+- std::partition_copy [C++]
+- std::swap [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 941b66bd40b1b14fd07f823023675d9ac52e141c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; 関数
+# <a name="ltalgorithmgt-functions"></a>&lt;algorithm&gt; functions
 ||||  
 |-|-|-|  
 |[move](#alg_move)|[adjacent_find](#adjacent_find)|[all_of](#all_of)|  
@@ -235,7 +252,7 @@ ms.lasthandoff: 04/19/2017
 |[upper_bound](#upper_bound)|  
   
 ##  <a name="adjacent_find"></a>  adjacent_find  
- 等しいか、または指定された条件を満たす 2 個の隣接する要素を検索します。  
+ Searches for two adjacent elements that are either equal or satisfy a specified condition.  
   
 ```  
 template<class ForwardIterator>  
@@ -250,25 +267,25 @@ template<class ForwardIterator , class BinaryPredicate>
         BinaryPredicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
  `comp`  
- 検索範囲内の隣接する要素の値によって満たされる条件を提供する二項述語。  
+ The binary predicate giving the condition to be satisfied by the values of the adjacent elements in the range being searched.  
   
-### <a name="return-value"></a>戻り値  
- 互いに等しい (1 つ目のバージョン) か、二項述語によって指定された条件を満たす (2 つ目のバージョン) 隣接するペアの最初の要素への前方反復子 (このような要素のペアが見つかった場合)。 それ以外の場合、`last` を指す反復子が返されます。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator to the first element of the adjacent pair that are either equal to each other (in the first version) or that satisfy the condition given by the binary predicate (in the second version), provided that such a pair of elements is found. Otherwise, an iterator pointing to `last` is returned.  
   
-### <a name="remarks"></a>コメント  
- `adjacent_find` アルゴリズムは、変化しないシーケンス アルゴリズムです。 検索範囲が有効であり、すべてのポインターが逆参照可能であって、かつ先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 アルゴリズムの時間の複雑さは、範囲に含まれる要素の数に比例します。  
+### <a name="remarks"></a>Remarks  
+ The `adjacent_find` algorithm is a nonmutating sequence algorithm. The range to be searched must be valid; all pointers must be dereferenceable and the last position is reachable from the first by incrementation. The time complexity of the algorithm is linear in the number of elements contained in the range.  
   
- 要素間の一致を判断するために使用される `operator==` によって、そのオペランド間の等価関係関係が強制される必要があります。  
+ The `operator==` used to determine the match between elements must impose an equivalence relation between its operands.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_adj_fnd.cpp  
@@ -331,7 +348,7 @@ There are two adjacent elements where the second is twice the first.
 ```  
   
 ##  <a name="all_of"></a>  all_of  
- 特定の範囲内の各要素について条件が存在するときに、`true` を返します。  
+ Returns `true` when a condition is present at each element in the given range.  
   
 ```  
 template<class InputIterator, class Predicate>  
@@ -341,24 +358,24 @@ template<class InputIterator, class Predicate>
         BinaryPredicatecomp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件のチェックを開始する位置を示す入力反復子。 反復子は、要素の範囲の開始位置をマークします。  
+ An input iterator that indicates where to start to check for a condition. The iterator marks where a range of elements starts.  
   
  `last`  
- 条件をチェックする要素の範囲の終了を示す入力反復子。  
+ An input iterator that indicates the end of the range of elements to check for a condition.  
   
  `comp`  
- テストする条件。 これは、チェックされる要素によって満たされる条件を定義するユーザー定義の述語関数オブジェクトです。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ A condition to test for. This is a user-defined predicate function object that defines the condition to be satisfied by an element being checked. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 指定された範囲内の各要素で条件が検出された場合には `true` を返し、条件が 1 度も検出されない場合には `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `true` if the condition is detected at each element in the indicated range, and `false` if the condition is not detected at least one time.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は、範囲 `[0,Last - first)` 内の各 `N` に対し、述語 `comp(*(_First + N))` が `true` の場合にのみ `true` を返します。  
+### <a name="remarks"></a>Remarks  
+ The template function returns `true` only if, for each `N` in the range `[0,Last - first)`, the predicate `comp(*(_First + N))` is `true`.  
   
 ##  <a name="any_of"></a>  any_of  
- 指定された要素の範囲内で条件が少なくとも 1 回存在するときに、`true` を返します。  
+ Returns `true` when a condition is present at least once in the specified range of elements.  
   
 ```  
 template<class InputIterator, class UnaryPredicate>  
@@ -368,26 +385,26 @@ template<class InputIterator, class UnaryPredicate>
         UnaryPredicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件の要素の範囲のチェックを開始する位置を示す入力反復子。  
+ An input iterator that indicates where to start checking a range of elements for a condition.  
   
  `last`  
- 条件をチェックする要素の範囲の終了を示す入力反復子。  
+ An input iterator that indicates the end of the range of elements to check for a condition.  
   
  `comp`  
- テストする条件。 これは、ユーザー定義の述語関数オブジェクトによって提供されます。 述語は、テスト対象の要素によって満たされる条件を定義します。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ A condition to test for. This is provided by a user-defined predicate function object. The predicate defines the condition to be satisfied by the element being tested. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 指定された範囲で条件が 1 回以上検出された場合には `true` を返し、条件が 1 度も検出されない場合には `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `true` if the condition is detected at least once in the indicated range, `false` if the condition is never detected.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は、次の範囲内のいくつかの `N` に対し、`true` を返します。  
+### <a name="remarks"></a>Remarks  
+ The template function returns `true` only if, for some `N` in the range  
   
- `[0, last - first)`、、述語`comp(*(first + N))`は true です。  
+ `[0, last - first)`, the predicate `comp(*(first + N))` is true.  
   
 ##  <a name="binary_search"></a>  binary_search  
- 並べ替えられた範囲に、指定された値と等しい要素が存在するか、または二項述語で指定された意味で、指定された値と等価の要素が存在するかどうかをテストします。  
+ Tests whether there is an element in a sorted range that is equal to a specified value or that is equivalent to it in a sense specified by a binary predicate.  
   
 ```  
 template<class ForwardIterator, class Type>      
@@ -405,34 +422,34 @@ template<class ForwardIterator,  class Type,  class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
  `value`  
- 要素の値が一致する必要がある値、または二項述語で指定された要素の値によって条件を満たす必要がある値。  
+ The value required to be matched by the value of the element or that must satisfy the condition with the element value specified by the binary predicate.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は `true`、満たされていない場合は `false` を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns `true` when satisfied and `false` when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 要素が範囲内にある場合、または指定された値と等価である場合は `true`、そうでない場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` if an element is found in the range that is equal or equivalent to the specified value; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソースの範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source range referenced must be valid; all pointers must be dereferenceable and, within the sequence, the last position must be reachable from the first by incrementation.  
   
- `binary_search` アルゴリズムを適用するための事前条件として、それぞれの並べ替えられた範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted range must each be arranged as a precondition to the application of the `binary_search` algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- ソースの範囲は `binary_search` によって変更されません。  
+ The source ranges are not modified by `binary_search`.  
   
- 前方反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 個の要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます  
+ The value types of the forward iterators need to be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements  
   
- アルゴリズムの複雑さは、ランダム アクセス反復子の対数に比例したステップの数とそれ以外の場合、線形 ( `last`  -  `first`)。  
+ The complexity of the algorithm is logarithmic for random-access iterators and linear otherwise, with the number of steps proportional to ( `last` - `first`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_bin_srch.cpp  
@@ -515,7 +532,7 @@ int main( )
 ```  
   
 ##  <a name="copy"></a>  copy  
- 要素のソース シーケンス全体を繰り返し、順方向の新しい位置を割り当てて、ソース範囲内からターゲットの範囲に要素の値を割り当てます。  
+ Assigns the values of elements from a source range to a destination range, iterating through the source sequence of elements and assigning them new positions in a forward direction.  
   
 ```  
 template<class InputIterator, class OutputIterator>  
@@ -525,27 +542,27 @@ template<class InputIterator, class OutputIterator>
         OutputIterator destBeg);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ソース範囲内の先頭の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the source range.  
   
  `last`  
- ソース範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position that is one past the final element in the source range.  
   
  *destBeg*  
- ターゲット範囲の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range.  
   
-### <a name="return-value"></a>戻り値  
- 出力反復子は 1 つターゲット範囲の最後の要素の後ろの位置を示す、反復子アドレス`result`+ ( `last`  -   `first` )。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position that is one past the final element in the destination range, that is, the iterator addresses `result` + ( `last` -  `first` ).  
   
-### <a name="remarks"></a>コメント  
- ソース範囲内が有効で、コピーするすべての要素を保持する十分な領域がターゲットに必要です。  
+### <a name="remarks"></a>Remarks  
+ The source range must be valid and there must be sufficient space at the destination to hold all the elements being copied.  
   
- アルゴリズムは最初の要素で始まる順序でソース要素をコピーするため、ソース範囲の `last` の位置がターゲット範囲に含まれない場合、ターゲット範囲はソース範囲と重複する可能性があります。 **copy** は要素を左にシフトするために使用できますが、ソースとターゲットの範囲間に重複がない場合を除いて、右にはシフトできません。 任意の位置の数だけ右にシフトにするには、[copy_backward](../standard-library/algorithm-functions.md#copy_backward) アルゴリズムを使用します。  
+ Because the algorithm copies the source elements in order beginning with the first element, the destination range can overlap with the source range provided the `last` position of the source range is not contained in the destination range. **copy** can be used to shift elements to the left but not the right, unless there is no overlap between the source and destination ranges. To shift to the right any number of positions, use the [copy_backward](../standard-library/algorithm-functions.md#copy_backward) algorithm.  
   
- **copy** アルゴリズムは、反復子が指す値のみを変更し、ターゲット範囲の要素に新しい値を割り当てます。 これは、新しい要素の作成には使用できず、空のコンテナーに要素を直接挿入することはできません。  
+ The **copy** algorithm only modifies values pointed to by the iterators, assigning new values to elements in the destination range. It cannot be used to create new elements and cannot insert elements into an empty container directly.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_copy.cpp  
@@ -604,7 +621,7 @@ v2 with shifted insert = ( 0 3 0 10 20 10 20 21 24 27 30 )
 ```  
   
 ##  <a name="copy_backward"></a>  copy_backward  
- 要素のソース シーケンス全体を繰り返し、逆方向の新しい位置を割り当てて、ソース範囲内からターゲットの範囲に要素の値を割り当てます。  
+ Assigns the values of elements from a source range to a destination range, iterating through the source sequence of elements and assigning them new positions in a backward direction.  
   
 ```  
 template<class BidirectionalIterator1, class BidirectionalIterator2>  
@@ -614,31 +631,31 @@ template<class BidirectionalIterator1, class BidirectionalIterator2>
         BidirectionalIterator2 destEnd);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ソース範囲内の先頭の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the source range.  
   
  `last`  
- ソース範囲の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position that is one past the final element in the source range.  
   
  `destEnd`  
- 移動先範囲の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of one past the final element in the destination range.  
   
-### <a name="return-value"></a>戻り値  
- 出力反復子は 1 つターゲット範囲の最後の要素の後ろの位置を示す、反復子アドレス`destEnd`-( `last`  -   `first` )。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position that is one past the final element in the destination range, that is, the iterator addresses `destEnd` - ( `last` -  `first` ).  
   
-### <a name="remarks"></a>コメント  
- ソース範囲内が有効で、コピーするすべての要素を保持する十分な領域がターゲットに必要です。  
+### <a name="remarks"></a>Remarks  
+ The source range must be valid and there must be sufficient space at the destination to hold all the elements being copied.  
   
- `copy_backward` アルゴリズムには、コピーのアルゴリズムよりも厳しい要件があります。 入力反復子と出力反復子はどちらも、双方向である必要があります。  
+ The `copy_backward` algorithm imposes more stringent requirements than that the copy algorithm. Both its input and output iterators must be bidirectional.  
   
- `copy_backward` と [move_backward](../standard-library/algorithm-functions.md#move_backward) のアルゴリズムは、ターゲット範囲の末尾を指す反復子の出力範囲を指定する唯一の C++ 標準ライブラリのアルゴリズムです。  
+ The `copy_backward` and [move_backward](../standard-library/algorithm-functions.md#move_backward) algorithms are the only C++ Standard Library algorithms designating the output range with an iterator pointing to the end of the destination range.  
   
- アルゴリズムは最後の要素で始まる順序でソース要素をコピーするため、ソース範囲の `first` の位置がターゲット範囲に含まれない場合、ターゲット範囲はソース範囲と重複する可能性があります。 `copy_backward` は要素を右にシフトするために使用できますが、ソースとターゲットの範囲間に重複がない場合を除いて、左にはシフトできません。 任意の位置の数だけ左にシフトにするには、[copy](../standard-library/algorithm-functions.md#copy) アルゴリズムを使用します。  
+ Because the algorithm copies the source elements in order beginning with the last element, the destination range can overlap with the source range provided the  `first` position of the source range is not contained in the destination range. `copy_backward` can be used to shift elements to the right but not the left, unless there is no overlap between the source and destination ranges. To shift to the left any number of positions, use the [copy](../standard-library/algorithm-functions.md#copy) algorithm.  
   
- `copy_backward` アルゴリズムは、反復子が指す値のみを変更し、ターゲット範囲の要素に新しい値を割り当てます。 これは、新しい要素の作成には使用できず、空のコンテナーに要素を直接挿入することはできません。  
+ The `copy_backward` algorithm only modifies values pointed to by the iterators, assigning new values to elements in the destination range. It cannot be used to create new elements and cannot insert elements into an empty container directly.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_copy_bkwd.cpp  
@@ -690,7 +707,7 @@ int main() {
 ```  
   
 ##  <a name="copy_if"></a>  copy_if  
- 要素の範囲内で、指定した条件に対して `true` の要素をコピーします。  
+ In a range of elements, copies the elements that are `true` for the specified condition.  
   
 ```  
 template<class InputIterator, class OutputIterator, class BinaryPredicate>  
@@ -701,31 +718,31 @@ template<class InputIterator, class OutputIterator, class BinaryPredicate>
         Predicate pred);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件をチェックする範囲の先頭を指定する入力反復子。  
+ An input iterator that indicates the start of a range to check for the condition.  
   
  `last`  
- 範囲の終了位置を示す入力反復子。  
+ An input iterator that indicates the end of the range.  
   
  `dest`  
- コピーした要素のコピー先を示す出力反復子。  
+ The output iterator that indicates the destination for the copied elements.  
   
  `_Pred`  
- 範囲内のすべての要素がテストされる条件。 この条件は、ユーザー定義の述語関数オブジェクトによって提供されます。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition against which every element in the range is tested. This condition is provided by a user-defined predicate function object. A predicate takes one argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- `dest` に相当する出力反復子は、条件と一致する要素ごとに 1 回インクリメントされます。 つまり、戻り値から `dest` を引くと、コピーした要素の数と等しくなります。  
+### <a name="return-value"></a>Return Value  
+ An output iterator that equals `dest` incremented once for each element that fulfills the condition. In other words, the return value minus `dest` equals the number of copied elements.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、  
+### <a name="remarks"></a>Remarks  
+ The template function evaluates  
   
  `if (_Pred(*_First + N)) * dest++ = *(_First + N))`  
   
- を `[0, last - first)` の範囲で、各 `N` に対して 1 回評価し、`N` の値を最低値から厳密に 1 ずつ増やします。 `dest` および `first` がストレージの領域を指定する場合、`dest` が `[` `first``,` `last``)` の範囲外である必要があります。  
+ once for each `N` in the range `[0, last - first)`, for strictly increasing values of `N` starting with the lowest value. If `dest` and  `first` designate regions of storage, `dest` must not be in the range `[ first, last )`.  
   
 ##  <a name="copy_n"></a>  copy_n  
- 指定された数の要素をコピーします。  
+ Copies a specified number of elements.  
   
 ```  
 template<class InputIterator, class Size, class OutputIterator>  
@@ -735,24 +752,24 @@ template<class InputIterator, class Size, class OutputIterator>
         OutputIterator dest);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 要素のコピー元となる場所を示す入力反復子。  
+ An input iterator that indicates where to copy elements from.  
   
  `count`  
- コピーする要素の数を指定する符号付きまたは符号なし整数型。  
+ A signed or unsigned integer type specifying the number of elements to copy.  
   
  `dest`  
- 要素のコピー先となる場所を示す出力反復子。  
+ An output iterator that indicates where to copy elements to.  
   
-### <a name="return-value"></a>戻り値  
- 要素のコピー先となった場所を示す出力反復子を返します。 これは 3 番目のパラメーター `dest` の戻り値と同じです。  
+### <a name="return-value"></a>Return Value  
+ Returns an output iterator where elements have been copied to. It is the same as the returned value of the third parameter, `dest`.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は評価`*(dest + N) = *(first + N))`ごとに 1 回`N`範囲の`[0, count)`の値を確実に増加するの`N`の最小値から開始します。 その後で `dest + N` が返されます。 場合`dest`と`first`ストレージの領域を指定する`dest`、範囲内で指定する必要がありますいない`[first, last)`です。  
+### <a name="remarks"></a>Remarks  
+ The template function evaluates `*(dest + N) = *(first + N))` once for each `N` in the range `[0, count)`, for strictly increasing values of `N` starting with the lowest value. It then returns `dest + N`. If `dest` and `first` designate regions of storage, `dest` must not be in the range `[first, last)`.  
   
 ##  <a name="count"></a>  count  
- 範囲内で値が指定された値と一致する要素の数を返します。  
+ Returns the number of elements in a range whose values match a specified value.  
   
 ```  
 template<class InputIterator, class Type> 
@@ -762,25 +779,25 @@ template<class InputIterator, class Type>
         const Type& val);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 走査範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be traversed.  
   
  `last`  
- 走査範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range to be traversed.  
   
  `val`  
- カウントされる要素の値。  
+ The value of the elements to be counted.  
   
-### <a name="return-value"></a>戻り値  
- 値 `val` を持つ範囲 [  `first`, `last` ) 内の要素の数をカウントする **InputIterator** の異なる型。  
+### <a name="return-value"></a>Return Value  
+ The difference type of the **InputIterator** that counts the number of elements in the range [  `first`, `last` ) that have value `val`.  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- このアルゴリズムは、テンプレート関数 [count_if](../standard-library/algorithm-functions.md#count_if) を使用してすべての述語を満たす要素をカウントするために汎用化されます。  
+ This algorithm is generalized to count elements that satisfy any predicate with the template function [count_if](../standard-library/algorithm-functions.md#count_if).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_count.cpp  
@@ -818,7 +835,7 @@ The number of 10s in v2 is: 3.
 ```  
   
 ##  <a name="count_if"></a>  count_if  
- 範囲内で値が指定された条件を満たす要素の数を返します。  
+ Returns the number of elements in a range whose values satisfy a specified condition.  
   
 ```  
 template<class InputIterator, class Predicate>
@@ -828,23 +845,23 @@ template<class InputIterator, class Predicate>
         Predicate pred);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 検索範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range to be searched.  
   
  `_Pred`  
- 要素がカウントされる場合に満たされる条件を定義するユーザー定義の述語関数オブジェクト。 述語は 1 つの引数を取り、**true** または **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if an element is to be counted. A predicate takes single argument and returns **true** or **false**.  
   
-### <a name="return-value"></a>戻り値  
- 述語で指定された条件を満たす要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements that satisfy the condition specified by the predicate.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、アルゴリズム [count](../standard-library/algorithm-functions.md#count) を汎化したものであり、"特定の値に等しい" ことを示す述語を任意の述語に置き換えます。  
+### <a name="remarks"></a>Remarks  
+ This template function is a generalization of the algorithm [count](../standard-library/algorithm-functions.md#count), replacing the predicate "equals a specific value" with any predicate.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_count_if.cpp  
@@ -888,11 +905,11 @@ The number of elements in v1 greater than 10 is: 2.
 ```  
   
 ##  <a name="equal"></a>  equal  
- 二項述語によって指定された等値または等価について、2 つの範囲を要素ごとに比較します。  
+ Compares two ranges element by element for equality or equivalence in a sense specified by a binary predicate.  
   
- 異なる種類のコンテナー (たとえば `vector` と `list`) 内の要素を比較する場合、異なる要素型を比較する場合、またはコンテナー内のサブ範囲を比較する必要がある場合は、`std::equal` を使用します。 そうではなく、同じ種類のコンテナー内の同じ型の要素を比較する場合は、各コンテナーによって提供される非メンバーの `operator==` を使用します。  
+ Use `std::equal` when comparing elements in different container types (for example `vector` and `list`) or when comparing different element types, or when you need to compare sub-ranges of containers. Otherwise, when comparing elements of the same type in the same container type, use the non-member `operator==` that is provided for each container.  
   
- C++14 コードでは 2 範囲のオーバーロードを使用します。これは、2 つ目の範囲に対して 1 つの反復子のみを受け取るオーバーロードでは、2 つ目の範囲が 1 つ目の範囲より大きい場合にその差を検出できず、2 つ目の範囲が 1 つ目の範囲より小さい場合に未定義の動作が発生するためです。  
+ Use the dual-range overloads in C++14 code because the overloads that only take a single iterator for the second range will not detect differences if the second range is longer than the first range, and will result in undefined behavior if the second range is shorter than the first range.  
   
 ```  
 template<class InputIterator1, class InputIterator2>  
@@ -924,33 +941,33 @@ bool equal(
     BinaryPredicate Comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First1`  
- テストする 1 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first range to be tested.  
   
  `Last1`  
- テストする 1 つ目の範囲内の最後の要素の 1 つ後の位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first range to be tested.  
   
  `First2`  
- テストする 2 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the second range to be tested.  
   
  `First2`  
- テストする 2 つ目の範囲内の最後の要素の 1 つ後の位置を示す入力反復子。  
+ An input iterator addressing the position of one past the last element in the second range to be tested.  
   
  `Comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 二項述語の下で、要素ごとに比較したとき、範囲が同一または等価の場合に限り **true**。それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if and only if the ranges are identical or equivalent under the binary predicate when compared element by element; otherwise, **false**.  
   
-### <a name="remarks"></a>コメント  
- 検索対象の範囲が有効であること、すべての反復子が逆参照可能であること、さらに先頭位置からのインクリメントにより最後の位置に到達可能であることが必要です。  
+### <a name="remarks"></a>Remarks  
+ The range to be searched must be valid; all iterators must be dereferenceable and the last position is reachable from the first by incrementation.  
   
- 2 つの範囲の長さが等しい場合、アルゴリズムの時間の複雑さは、範囲に含まれる要素の数に比例します。 それ以外の場合、関数は直ちに `false` を返します。  
+ If the two ranges are equal length, then the time complexity of the algorithm is linear in the number of elements contained in the range. Otherwise the function immediately returns `false`.  
   
- `operator==` でもユーザー定義の述語でも、そのオペランド間で対称的、再帰的、および推移的な等価関係を強制する必要はありません。  
+ Neither the `operator==` nor the user-defined predicate is required to impose an equivalence relation that symmetric, reflexive and transitive between its operands.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 #include <iostream>  
@@ -985,7 +1002,7 @@ int main()
 ```  
   
 ##  <a name="equal_range"></a>  equal_range  
- 順序付けられた対象範囲で、すべての要素が指定された値と等価であるサブ範囲を検索します。  
+ Given an ordered range, finds the subrange in which all elements are equivalent to a given value.  
   
 ```  
 template<class ForwardIterator, class Type>  
@@ -1002,34 +1019,34 @@ pair<ForwardIterator, ForwardIterator> equal_range(
     Predicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
  `val`  
- 順序付けられた範囲内で検索する値。  
+ The value being searched for in the ordered range.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。  
+ User-defined predicate function object that defines the sense in which one element is less than another.  
   
-### <a name="return-value"></a>戻り値  
- 検索対象の範囲内にあり、使用する二項述語によって定義される意味 (`val` または既定の小なり比較 (less-than)) で、すべての要素が `comp` と等価であるサブ範囲を指定する前方反復子のペア。  
+### <a name="return-value"></a>Return Value  
+ A pair of forward iterators that specify a subrange, contained within the range searched, in which all of the elements are equivalent to `val` in the sense defined by the binary predicate used (either `comp` or the default, less-than).  
   
- 対象範囲内に `val` と等価の要素が存在しない場合、返される前方反復子のペアは同じ値となり、対象範囲の順序に影響を与えずに `val` を挿入できる位置を指定します。  
+ If no elements in the range are equivalent to `val`, the returned pair of forward iterators are equal and specify the point where `val` could be inserted without disturbing the order of the range.  
   
-### <a name="remarks"></a>コメント  
- アルゴリズムによって返されるペアの 1 番目の反復子は [lower_bound](../standard-library/algorithm-functions.md#lower_bound) で、2 番目の反復子は [upper_bound](../standard-library/algorithm-functions.md#upper_bound) です。  
+### <a name="remarks"></a>Remarks  
+ The first iterator of the pair returned by the algorithm is [lower_bound](../standard-library/algorithm-functions.md#lower_bound), and the second iterator is [upper_bound](../standard-library/algorithm-functions.md#upper_bound).  
   
- 対象範囲は `equal_range` に提供される述語に従って並べ替えられている必要があります。 たとえば、大なり (greater-than) 述語を使用する場合は、範囲を降順に並べ替える必要があります。  
+ The range must be sorted according to the predicate provided to `equal_range`. For example, if you are going to use the greater-than predicate, the range must be sorted in descending order.  
   
- `equal_range` が返す反復子のペアによって定義される、空の可能性があるサブ範囲の要素は、使用される述語が定義する意味で、`val` と等価です。  
+ Elements in the possibly empty subrange defined by the pair of iterators returned by `equal_range` will be equivalent to `val` in the sense defined by the predicate used.  
   
- アルゴリズムの複雑さは、ランダム アクセス反復子の対数に比例したステップの数とそれ以外の場合、線形 ( `last`  -  `first`)。  
+ The complexity of the algorithm is logarithmic for random-access iterators and linear otherwise, with the number of steps proportional to ( `last` - `first`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_equal_range.cpp  
@@ -1148,7 +1165,7 @@ int main()
 ```  
   
 ##  <a name="fill"></a>  fill  
- 指定された範囲のすべての要素に同じ新しい値を割り当てます。  
+ Assigns the same new value to every element in a specified range.  
   
 ```  
 template<class ForwardIterator, class Type>  
@@ -1158,20 +1175,20 @@ void fill(
     const Type& val);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 走査対象の範囲内の最初の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be traversed.  
   
  `last`  
- 走査対象の範囲内の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be traversed.  
   
  `val`  
- 範囲 [  `first`, `last`) の要素に割り当てられる値。  
+ The value to be assigned to elements in the range [  `first`, `last`).  
   
-### <a name="remarks"></a>コメント  
- 割り当て先の範囲が有効であり、すべてのポインターが逆参照可能であって、かつ先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 複雑さは、範囲のサイズに応じて線形的です。  
+### <a name="remarks"></a>Remarks  
+ The destination range must be valid; all pointers must be dereferenceable, and the last position is reachable from the first by incrementation. The complexity is linear with the size of the range.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_fill.cpp  
@@ -1213,7 +1230,7 @@ Modified v1 = ( 0 5 10 15 20 2 2 2 2 2 )
 ```  
   
 ##  <a name="fill_n"></a>  fill_n  
- 特定の要素で始まる要素範囲で、指定された数の要素に新しい値を割り当てます。  
+ Assigns a new value to a specified number of elements in a range beginning with a particular element.  
   
 ```  
 template<class OutputIterator, class Size, class Type>  
@@ -1223,23 +1240,23 @@ OutputIterator fill_n(
     const Type& Val);   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First`  
- 値 `Val` を割り当てる範囲の先頭の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the range to be assigned the value `Val`.  
   
  `Count`  
- 値を代入する要素の数を指定する符号付きまたは符号なし整数の型。  
+ A signed or unsigned integer type specifying the number of elements to be assigned the value.  
   
  `Val`  
- 範囲 [ `First`,          *First + Count*) の要素に割り当てられる値。  
+ The value to be assigned to elements in the range [ `First`,          *First + Count*).  
   
-### <a name="return-value"></a>戻り値  
- `Count` > 0 の場合は、値を割り当てた最後の要素の次の場所を指す反復子。それ以外の場合は、最初の要素。  
+### <a name="return-value"></a>Return Value  
+ An iterator to the element that follows the last element filled if `Count` > zero, otherwise the first element.  
   
-### <a name="remarks"></a>コメント  
- 割り当て先の範囲が有効であり、すべてのポインターが逆参照可能であって、かつ先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 複雑さは、範囲のサイズに応じて線形的です。  
+### <a name="remarks"></a>Remarks  
+ The destination range must be valid; all pointers must be dereferenceable, and the last position is reachable from the first by incrementation. The complexity is linear with the size of the range.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_fill_n.cpp  
@@ -1289,7 +1306,7 @@ int main()
 ```  
   
 ##  <a name="find"></a>  find  
- 範囲内で指定された値を持つ要素が最初に出現する位置を検索します。  
+ Locates the position of the first occurrence of an element in a range that has a specified value.  
   
 ```  
 template<class InputIterator, class T>  
@@ -1299,26 +1316,26 @@ InputIterator find(
     const T& val);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 指定された値に対する検索範囲内の先頭の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be searched for the specified value.  
   
  `last`  
- 指定された値に対する検索範囲内の末尾の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range to be searched for the specified value.  
   
  `val`  
- 検索対象の値。  
+ The value to be searched for.  
   
-### <a name="return-value"></a>戻り値  
- 指定された値が検索範囲内で最初に出現する位置を示す入力反復子。 等価の値を持つ要素が存在しない場合、`last` を返します。  
+### <a name="return-value"></a>Return Value  
+ An input iterator addressing the first occurrence of the specified value in the range being searched. If no element is found with an equivalent value, returns `last`.  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- `find()` を使用したコード例については、「[find_if](../standard-library/algorithm-functions.md#find_if)」を参照してください。  
+ For a code example using `find()`, see [find_if](../standard-library/algorithm-functions.md#find_if).  
   
 ##  <a name="find_end"></a>  find_end  
- 範囲内で指定されたシーケンスと等しい、つまり二項述語で指定された意味で等価である最後のサブシーケンスを検索します。  
+ Looks in a range for the last subsequence that is identical to a specified sequence or that is equivalent in a sense specified by a binary predicate.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -1337,31 +1354,31 @@ ForwardIterator1 find_end(
     Pred Comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First1`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `Last1`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the last element in the range to be searched.  
   
  `First2`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to search for.  
   
  `Last2`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the last element in the range to search for.  
   
  `Comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 指定したシーケンス [First2, Last2) と一致する、[First1, Last1) 内の最後のサブシーケンスの最初の要素の位置を指す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first element of the last subsequence within [First1, Last1) that matches the specified sequence [First2, Last2).  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The ranges referenced must be valid; all pointers must be dereferenceable and, within each sequence, the last position is reachable from the first by incrementation.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_find_end.cpp  
@@ -1458,7 +1475,7 @@ There is a sequence of elements in v1 that are equivalent to those
 ```  
   
 ##  <a name="find_first_of"></a>  find_first_of  
- 対象範囲内で複数の値のうち最初に出現するもの、つまり二項述語で指定された意味で、指定された要素のセットと等価である複数の要素のうち最初に出現するものを検索します。  
+ Searches for the first occurrence of any of several values within a target range or for the first occurrence of any of several elements that are equivalent in a sense specified by a binary predicate to a specified set of the elements.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -1477,31 +1494,31 @@ ForwardIterator1 find_first_of(
     BinaryPredicate  comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last1`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
   `first2`  
- 照合範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be matched.  
   
  `last2`  
- 照合範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be matched.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 指定したシーケンスと一致するか二項述語で指定された意味で等価である、最初のサブシーケンスの最初の要素の位置を指す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first element of the first subsequence that matches the specified sequence or that is equivalent in a sense specified by a binary predicate.  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The ranges referenced must be valid; all pointers must be dereferenceable and, within each sequence, the last position is reachable from the first by incrementation.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_find_first_of.cpp  
@@ -1601,7 +1618,7 @@ There is a sequence of elements in v1 that are equivalent
 ```  
   
 ##  <a name="find_if"></a>  find_if  
- 範囲内で指定された条件を満たす要素が最初に出現する位置を検索します。  
+ Locates the position of the first occurrence of an element in a range that satisfies a specified condition.  
   
 ```  
 template<class InputIterator, class Predicate>  
@@ -1611,23 +1628,23 @@ InputIterator find_if(
     Predicate pred);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range to be searched.  
   
  `pred`  
- ユーザー定義の述語関数オブジェクト、または検索対象の要素によって満たされる条件を定義する[ラムダ式](../cpp/lambda-expressions-in-cpp.md)。 述語は 1 つの引数を受け取り、`true` (条件が満たされた場合) または `false` (条件が満たされなかった場合) を返します。 `pred` の署名は、実質的には `bool pred(const T& arg);` にする必要があります。`T` は、`InputIterator` が逆参照されたときの暗黙的な変換先となる型です。 `const` キーワードは、関数オブジェクトまたはラムダを変更しないようにする必要があることを示すためにのみ指定します。  
+ User-defined predicate function object or [lambda expression](../cpp/lambda-expressions-in-cpp.md) that defines the condition to be satisfied by the element being searched for. A predicate takes single argument and returns `true` (satisfied) or `false` (not satisfied). The signature of `pred` must effectively be `bool pred(const T& arg);`, where `T` is a type to which `InputIterator` can be implicitly converted when dereferenced. The `const` keyword is shown only to illustrate that the function object or lambda should not modify the argument.  
   
-### <a name="return-value"></a>戻り値  
- 述語で指定された条件を満たす (述語の結果が `true`)、範囲内の最初の要素を参照する入力反復子。 述語の条件を満たす要素が存在しない場合は、`last` を返します。  
+### <a name="return-value"></a>Return Value  
+ An input iterator that refers to the first element in the range that satisfies the condition specified by the predicate (the predicate results in `true`). If no element is found to satisfy the predicate, returns `last`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、アルゴリズム [find](../standard-library/algorithm-functions.md#find) を汎化したものであり、"特定の値に等しい" ことを示す述語を任意の述語に置き換えます。 論理的に反対のもの (述語の条件を満たさない最初の要素を検索) については、「[find_if_not](../standard-library/algorithm-functions.md#find_if_not)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ This template function is a generalization of the algorithm [find](../standard-library/algorithm-functions.md#find), replacing the predicate "equals a specific value" with any predicate. For the logical opposite (find the first element that does not satisfy the predicate), see [find_if_not](../standard-library/algorithm-functions.md#find_if_not).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // cl.exe /W4 /nologo /EHsc /MTd  
@@ -1714,7 +1731,7 @@ int main()
 ```  
   
 ##  <a name="find_if_not"></a>  find_if_not  
- 指定された範囲内で条件を満たさない最初の要素を返します。  
+ Returns the first element in the indicated range that does not satisfy a condition.  
   
 ```  
 template<class InputIterator, class Predicate>  
@@ -1724,26 +1741,26 @@ InputIterator find_if_not(
     Predicate pred);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range to be searched.  
   
  `pred`  
- 検索対象の要素が満たさない条件を定義する、ユーザー定義の述語関数オブジェクトまたは[ラムダ式](../cpp/lambda-expressions-in-cpp.md)。 述語は 1 つの引数を受け取り、`true` (条件が満たされた場合) または `false` (条件が満たされなかった場合) を返します。 `pred` の署名は、実質的には `bool pred(const T& arg);` にする必要があります。`T` は、`InputIterator` が逆参照されたときの暗黙的な変換先となる型です。 `const` キーワードは、関数オブジェクトまたはラムダを変更しないようにする必要があることを示すためにのみ指定します。  
+ User-defined predicate function object or [lambda expression](../cpp/lambda-expressions-in-cpp.md) that defines the condition to be not satisfied by the element being searched for. A predicate takes single argument and returns `true` (satisfied) or `false` (not satisfied). The signature of `pred` must effectively be `bool pred(const T& arg);`, where `T` is a type to which `InputIterator` can be implicitly converted when dereferenced. The `const` keyword is shown only to illustrate that the function object or lambda should not modify the argument.  
   
-### <a name="return-value"></a>戻り値  
- 述語で指定された条件を満たさない (述語の結果が `false`)、範囲内の最初の要素を参照する入力反復子。 すべての要素が述語の条件を満たす (述語の結果がすべての要素に対して `true`) 場合、`last` を返します。  
+### <a name="return-value"></a>Return Value  
+ An input iterator that refers to the first element in the range that does not satisfy the condition specified by the predicate (the predicate results in `false`). If all elements satisfy the predicate (the predicate results in `true` for every element), returns `last`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、アルゴリズム [find](../standard-library/algorithm-functions.md#find) を汎化したものであり、"特定の値に等しい" ことを示す述語を任意の述語に置き換えます。 論理的に反対のもの (述語の条件を満たす最初の要素を検索) については、「[find_if](../standard-library/algorithm-functions.md#find_if)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ This template function is a generalization of the algorithm [find](../standard-library/algorithm-functions.md#find), replacing the predicate "equals a specific value" with any predicate. For the logical opposite (find the first element that does satisfy the predicate), see [find_if](../standard-library/algorithm-functions.md#find_if).  
   
- `find_if_not()` に簡単に適用できるコード例については、「[find_if](../standard-library/algorithm-functions.md#find_if)」を参照してください。  
+ For a code example readily adaptable to `find_if_not()`, see [find_if](../standard-library/algorithm-functions.md#find_if).  
   
 ##  <a name="for_each"></a>  for_each  
- 範囲内で順方向順序で各要素に対して指定された関数を適用し、関数オブジェクトを返します。  
+ Applies a specified function object to each element in a forward order within a range and returns the function object.  
   
 ```  
 template<class InputIterator, class Function>  
@@ -1753,27 +1770,27 @@ Function for_each(
     Function _Func);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 操作範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range to be operated on.  
   
  `last`  
- 操作範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range operated on.  
   
  `_Func`  
- 範囲内の各要素に適用されるユーザー定義関数オブジェクト。  
+ User-defined function object that is applied to each element in the range.  
   
-### <a name="return-value"></a>戻り値  
- 範囲内のすべての要素に適用後の関数オブジェクトのコピー。  
+### <a name="return-value"></a>Return Value  
+ A copy of the function object after it has been applied to all of the elements in the range.  
   
-### <a name="remarks"></a>コメント  
- アルゴリズム `for_each` は非常に柔軟で、範囲内の各要素をユーザーが指定したさまざまな方法で変更できます。 テンプレート化された関数は、異なるパラメーターを渡すことで、変更されたフォームで再利用することができます。 ユーザー定義関数は、範囲内のすべての要素を処理した後にアルゴリズムが返す可能性のある内部状態内に情報を蓄積することができます。  
+### <a name="remarks"></a>Remarks  
+ The algorithm `for_each` is very flexible, allowing the modification of each element within a range in different, user-specified ways. Templatized functions may be reused in a modified form by passing different parameters. User-defined functions may accumulate information within an internal state that the algorithm may return after processing all of the elements in the range.  
   
- 参照される範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and, within the sequence, the last position must be reachable from the first by incrementation.  
   
- 複雑さは線形的で最大で ( `last`  -   `first`) の比較できます。  
+ The complexity is linear with at most ( `last` -  `first`) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_for_each.cpp  
@@ -1887,7 +1904,7 @@ The average of the elements of v1 is:
 ```  
   
 ##  <a name="generate"></a>  generate  
- 範囲内の各要素に関数オブジェクトによって生成される値を割り当てます。  
+ Assigns the values generated by a function object to each element in a range.  
   
 ```  
 template<class ForwardIterator, class Generator>  
@@ -1897,24 +1914,24 @@ void generate(
     Generator _Gen);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 値が割り当てられる範囲の最初の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to which values are to be assigned.  
   
  `last`  
- 値が割り当てられる範囲の最初の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to which values are to be assigned.  
   
  `_Gen`  
- 引数を指定しないで呼び出され、範囲内の各要素に割り当てられる値を生成するために使用される関数オブジェクト。  
+ A function object that is called with no arguments that is used to generate the values to be assigned to each of the elements in the range.  
   
-### <a name="remarks"></a>コメント  
- 関数オブジェクトは範囲内の要素ごとに呼び出されます。呼び出されるたびに同じ値を返す必要はありません。 たとえば、ファイルから読み取る、ローカル状態を参照して変更するなどのことができます。 ジェネレーターの結果の型は、その範囲の前方反復子の値の型に変換可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The function object is invoked for each element in the range and does not need to return the same value each time it is called. It may, for example, read from a file or refer to and modify a local state. The generator's result type must be convertible to the value type of the forward iterators for the range.  
   
- 参照される範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and, within the sequence, the last position must be reachable from the first by incrementation.  
   
- 複雑さは線形的で正確に ( `last`  -   `first`) 要求されているジェネレーターへの呼び出しです。  
+ The complexity is linear, with exactly ( `last` -  `first`) calls to the generator being required.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_generate.cpp  
@@ -1958,7 +1975,7 @@ Deque deq1 is ( 15724 11478 29358 26962 24464 ).
 ```  
   
 ##  <a name="generate_n"></a>  generate_n  
- 範囲内の指定された数の要素に関数オブジェクトによって生成される値を割り当て、最後に割り当てられた値を 1 つ超えた位置を返します。  
+ Assigns the values generated by a function object to a specified number of elements in a range and returns to the position one past the last assigned value.  
   
 ```  
 template<class OutputIterator, class Diff, class Generator>  
@@ -1968,24 +1985,24 @@ void generate_n(
     Generator Gen);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First`  
- 値が割り当てられる範囲の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of first element in the range to which values are to be assigned.  
   
  `Count`  
- ジェネレーター関数によって値が割り当てられる要素の数を指定する符号付きまたは符号なし整数の型。  
+ A signed or unsigned integer type specifying the number of elements to be assigned a value by the generator function.  
   
  `Gen`  
- 引数を指定しないで呼び出され、範囲内の各要素に割り当てられる値を生成するために使用される関数オブジェクト。  
+ A function object that is called with no arguments that is used to generate the values to be assigned to each of the elements in the range.  
   
-### <a name="remarks"></a>コメント  
- 関数オブジェクトは範囲内の要素ごとに呼び出されます。呼び出されるたびに同じ値を返す必要はありません。 たとえば、ファイルから読み取る、ローカル状態を参照して変更するなどのことができます。 ジェネレーターの結果の型は、その範囲の前方反復子の値の型に変換可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The function object is invoked for each element in the range and does not need to return the same value each time it is called. It may, for example, read from a file or refer to and modify a local state. The generator's result type must be convertible to the value type of the forward iterators for the range.  
   
- 参照される範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and, within the sequence, the last position must be reachable from the first by incrementation.  
   
- 複雑さは、要求されているジェネレーターへの呼び出し回数 `Count` に正確に比例して線形的です。  
+ The complexity is linear, with exactly `Count` calls to the generator being required.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // cl.exe /EHsc /nologo /W4 /MTd  
@@ -2030,7 +2047,7 @@ int main()
 ```  
   
 ##  <a name="includes"></a>  includes  
- 1 つの並べ替えられた範囲に、別の並べ替えられた範囲内のすべての要素が含まれるかどうかをテストします。要素間の順序または等価の基準は二項述語によって指定できます。  
+ Tests whether one sorted range contains all the elements contained in a second sorted range, where the ordering or equivalence criterion between elements may be specified by a binary predicate.  
   
 ```  
 template<class InputIterator1, class InputIterator2>  
@@ -2049,39 +2066,39 @@ bool includes(
     BinaryPredicate comp );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 2 番目のすべての要素が 1 番目に含まれているかどうかをテストするため、2 つの並べ替えられたソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be tested for whether all the elements of the second are contained in the first.  
   
  `last1`  
- 2 番目のすべての要素が 1 番目に含まれているかどうかをテストするため、2 つの並べ替えられたソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be tested for whether all the elements of the second are contained in the first.  
   
   `first2`  
- 2 番目のすべての要素が 1 番目に含まれているかどうかをテストするため、2 つの連続する並べ替えられたソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be tested for whether all the elements of the second are contained in the first.  
   
  `last2`  
- 2 番目のすべての要素が 1 番目に含まれているかどうかをテストするため、2 つの連続する並べ替えられたソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be tested for whether all the elements of the second are contained in the first.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 最初の並べ替えられた範囲に 2 番目の並べ替えられた範囲内のすべての要素が含まれている場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the first sorted range contains all the elements in the second sorted range; otherwise, **false**.  
   
-### <a name="remarks"></a>コメント  
- このテストを検討する別の方法は、テストによって 2 番目のソース範囲が最初のソース範囲のサブセットであるかどうかが決定したことです。  
+### <a name="remarks"></a>Remarks  
+ Another way to think of this test is that it determined whether the second source range is a subset of the first source range.  
   
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and, within each sequence, the last position must be reachable from the first by incrementation.  
   
- アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the algorithm includes in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- ソース範囲が **merge**アルゴリズムによって変更されることはありません。  
+ The source ranges are not modified by the algorithm **merge**.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 より正確には、アルゴリズムは、指定した二項述語の下で最初の並べ替えられた範囲内のすべての要素に 2 番目の並べ替えられた範囲内の要素と同等の順序があるかどうかをテストします。  
+ The value types of the input iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. More precisely, the algorithm tests whether all the elements in the first sorted range under a specified binary predicate have equivalent ordering to those in the second sorted range.  
   
- アルゴリズムの複雑さは線形的で最大で 2 \* (( *last1 - first1*)-(* last2 - first2 *)) - 1 の空でないソース範囲の比較できます。  
+ The complexity of the algorithm is linear with at most 2 \* ( ( *last1 - first1*) - ( * last2 - first2*) ) - 1 comparisons for nonempty source ranges.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_includes.cpp  
@@ -2231,7 +2248,7 @@ At least one of the elements in vector v3b is  not contained under mod_lesser in
 ```  
   
 ##  <a name="inplace_merge"></a>  inplace_merge  
- 2 つの連続する並べ替えられた範囲の要素を単一の並べ替えられた範囲として連結します。順序の基準は二項述語によって指定できます。  
+ Combines the elements from two consecutive sorted ranges into a single sorted range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class BidirectionalIterator>  
@@ -2248,27 +2265,27 @@ void inplace_merge(
     Predicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 結合して単一の範囲に分類する 2 つの連続する並べ替えられた範囲の、最初の範囲の最初の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the first of two consecutive sorted ranges to be combined and sorted into a single range.  
   
  `middle`  
- 結合して単一の範囲に分類する 2 つの連続する並べ替えられた範囲の、2 番目の範囲の最初の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the second of two consecutive sorted ranges to be combined and sorted into a single range.  
   
  `last`  
- 結合して単一の範囲に分類する 2 つの連続する並べ替えられたソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position one past the last element in the second of two consecutive sorted ranges to be combined and sorted into a single range.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられた連続する範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted consecutive ranges referenced must be valid; all pointers must be dereferenceable and, within each sequence, the last position must be reachable from the first by incrementation.  
   
- `inplace_merge` アルゴリズムを適用するための事前条件として、それぞれの並べ替えられた連続する範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。 各範囲内の要素の相対順序は維持されるため、操作は安定しています。 両方のソース範囲に同等の要素がある場合は、結合された範囲では、最初の範囲の要素が、2 番目の範囲の要素よりも前に置かれます。  
+ The sorted consecutive ranges must each be arranged as a precondition to the application of the `inplace_merge` algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges. The operation is stable as the relative order of elements within each range is preserved. When there are equivalent elements in both source ranges, the element is the first range precedes the element from the second in the combined range.  
   
- 複雑さは、アルゴリズムがメモリを一時バッファーに割り当てる際に使用可能なメモリによって異なります。 最良の場合は線形的で十分なメモリが使用可能な場合は、(* - 姓*) - 1 比較; 補助的なメモリが使用できない場合、最悪のケースが*N*ログ*(N)*ここで、 *N* = (* - 姓*)。  
+ The complexity depends on the available memory as the algorithm allocates memory to a temporary buffer. If sufficient memory is available, the best case is linear with ( * last - first*) - 1 comparisons; if no auxiliary memory is available, the worst case is  *N* log *(N)*, where  *N* = ( * last - first*).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_inplace_merge.cpp  
@@ -2380,7 +2397,7 @@ Merged inplace with binary predicate mod_lesser specified,
 ```  
   
 ##  <a name="is_heap"></a>  is_heap  
- 指定された範囲の要素がヒープを形成する場合は `true` を返します。  
+ Returns `true` if the elements in the specified range form a heap.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -2395,28 +2412,28 @@ bool is_heap(
     BinaryPredicate comp);   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ヒープをチェックする範囲の先頭を指定するランダム アクセス反復子。  
+ A random access iterator that indicates the start of a range to check for a heap.  
   
  `last`  
- 範囲の最後を指定するランダム アクセス反復子。  
+ A random access iterator that indicates the end of a range.  
   
  `comp`  
- 要素の並べ替えをテストするための条件。 二項述語は 1 つの引数を返します`true`または`false`です。  
+ A condition to test to order elements. A binary predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 指定された範囲の要素がヒープを形成する場合は `true` を返し、形成しない場合は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `true` if the elements in the specified range form a heap, `false` if they do not.  
   
-### <a name="remarks"></a>コメント  
- 最初のテンプレート関数は、 [is_heap_until](../standard-library/algorithm-functions.md#is_heap_until)`(` `first``,` `last``) ==` `last` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns [is_heap_until](../standard-library/algorithm-functions.md#is_heap_until)`(` `first ,` `last ) ==` `last`.  
   
- 2 番目のテンプレート関数は、以下を返します。  
+ The second template function returns  
   
  `is_heap_until` `(`  `first` `,`  `last` `,`  `comp` `) ==`  `last`.  
   
 ##  <a name="is_heap_until"></a>  is_heap_until  
- ヒープの順序付け条件を満たしていない範囲 [ `begin`, `end`) の最初の要素に位置する反復子を返します。または、範囲がヒープを形成している場合は、最後の要素 `end` に位置する反復子を返します。  
+ Returns an iterator positioned at the first element in the range [ `begin`, `end`) that does not satisfy the heap ordering condition, or `end` if the range forms a heap.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -2431,26 +2448,26 @@ RandomAccessIterator is_heap_until(
     BinaryPredicate compare);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `begin`  
- ヒープを確認する範囲の最初の要素を指定するランダム アクセス反復子。  
+ A random access iterator that specifies the first element of a range to check for a heap.  
   
  `end`  
- ヒープを確認する範囲の末尾を指定するランダム アクセス反復子。  
+ A random access iterator that specifies the end of the range to check for a heap.  
   
  `compare`  
- ヒープを定義する厳密弱順序の条件を指定する二項述語。 `compare` を指定しない場合の既定の述語は `std::less<>` です。  
+ A binary predicate that specifies the strict weak ordering condition that defines a heap. The default predicate when `compare` is not specified is `std::less<>`.  
   
-### <a name="return-value"></a>戻り値  
- 指定された範囲がヒープを形成している場合、または指定された範囲に含まれる要素が 1 つ以下の場合は、`end` を返します。 それ以外の場合、ヒープの条件を満たさない最初の要素の反復子を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `end` if the specified range forms a heap or contains one or fewer elements. Otherwise, returns an iterator for the first element found that does not satisfy the heap condition.  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のテンプレート関数は、`[``begin``,` `end``]` のうち、`[``begin``, next)` が関数オブジェクト `std::less<>` によって順序付けられるヒープである場合の最後の反復子 `next` を返します。 距離が `end` `-` `begin` `< 2` の場合、関数は `end` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns the last iterator `next` in `[ begin , end ]` where `[ begin , next)` is a heap ordered by the function object `std::less<>`. If the distance `end - begin < 2`, the function returns `end`.  
   
- 2 つ目のテンプレート関数は 1 つ目の関数と同様の動作をしますが、ヒープの順序付け条件として `compare` ではなく、述語 `std::less<>` を使用します。  
+ The second template function behaves the same as the first, except that it uses the predicate `compare` instead of `std::less<>` as the heap ordering condition.  
   
 ##  <a name="is_partitioned"></a>  is_partitioned  
- 特定の範囲で条件が `true` になるすべての要素が、`true` になる要素の前にある場合は、`false` を返します。  
+ Returns `true` if all the elements in the given range that test `true` for a condition come before any elements that test `false`.  
   
 ```  
 template<class InputIterator, class BinaryPredicate>  
@@ -2460,24 +2477,24 @@ bool is_partitioned(
     BinaryPredicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件をチェックする範囲の先頭を指定する入力反復子。  
+ An input iterator that indicates where a range starts to check for a condition.  
   
  `last`  
- 範囲の終了位置を示す入力反復子。  
+ An input iterator that indicates the end of a range.  
   
  `comp`  
- テストする条件。 これは、検索対象の要素によって満たされる条件を定義するユーザー定義の述語関数オブジェクトによって提供されます。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition to test for. This is provided by a user-defined predicate function object that defines the condition to be satisfied by the element being searched for. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 特定の範囲で条件に対して `true` をテストする要素が、`false` をテストする任意の要素の前にある場合は true を返し、それ以外の場合は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns true when all of the elements in the given range that test `true` for a condition come before any elements that test `false`, and otherwise returns `false`.  
   
-### <a name="remarks"></a>コメント  
- `[` `first``,` `last``)` 内のすべての要素が `comp` によってパーティション分割されている場合にのみ、テンプレート関数は `true` を返します。つまり、`comp``(X)` が true の `[` `first``,` `last``)` 内のすべての要素 `X` は、`comp``(Y)` が `false` のすべての要素 `Y` の前に発生します。  
+### <a name="remarks"></a>Remarks  
+ The template function returns `true` only if all elements in `[` `first ,` `last )` are partitioned by `comp`; that is, all elements `X` in `[` `first ,` `last )` for which `comp (X)` is true occur before all elements `Y` for which `comp (Y)` is `false`.  
   
 ##  <a name="is_permutation"></a>  is_permutation  
- 要素が同じ順序であるかどうかに関係なく、両方の範囲に同じ要素が含まれる場合に true を返します。 C++14 コードでは 2 範囲のオーバーロードを使用します。これは、2 つ目の範囲に対して 1 つの反復子のみを受け取るオーバーロードでは、2 つ目の範囲が 1 つ目の範囲より大きい場合にその差を検出できず、2 つ目の範囲が 1 つ目の範囲より小さい場合に未定義の動作が発生するためです。  
+ Returns true if both ranges contain the same elements, whether or not the elements are in the same order. Use the dual-range overloads in C++14 code because the overloads that only take a single iterator for the second range will not detect differences if the second range is longer than the first range, and will result in undefined behavior if the second range is shorter than the first range.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -2510,34 +2527,34 @@ bool is_permutation(
     Predicate Pred);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First1`  
- 範囲の最初の要素を参照する前方反復子。  
+ A forward iterator that refers to the first element of the range.  
   
  `Last1`  
- 範囲の最後の要素の 1 つ後ろの要素を参照する前方反復子。  
+ A forward iterator that refers one past the last element of the range.  
   
  `First2`  
- 比較に使用される、2 つ目の範囲の最初の要素を参照する前方反復子。  
+ A forward iterator that refers to the first element of a second range, used for comparison.  
   
  `Last2`  
- 比較に使用される、2 つ目の範囲の最後の要素の 1 つ後ろの要素を参照する前方反復子。  
+ A forward iterator that refers to one past the last element of a second range, used for comparison.  
   
  `Pred`  
- 等価性をテストし、`bool` を返す述語。  
+ A predicate that tests for equivalence and returns a `bool`.  
   
-### <a name="return-value"></a>戻り値  
- 比較子述語に従って範囲を並べ替えた結果が同じになる場合は `true`、それ以外の場合は `false`。  
+### <a name="return-value"></a>Return Value  
+ `true` when the ranges can be rearranged so as to be identical according to the comparator predicate; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- `is_permutation` は、最悪の場合に 2 次の複雑さを持ちます。  
+### <a name="remarks"></a>Remarks  
+ `is_permutation` has quadratic complexity in the worst case.  
   
- 1 つ目のテンプレート関数では、`First2` で始まる範囲内に、[ `First1`, `Last1`) で指定された範囲内にあるのと同じ数の要素があると想定しています。 2 つ目の範囲にそれよりも多くの要素がある場合、それらの要素は無視されます。2 つ目の範囲にそれよりも少ない要素がある場合は、未定義の動作が発生します。 3 つ目のテンプレート関数 (C++ 14 以降) では、この想定を行っていません。  [ `First1`, `Last1`) で指定された範囲内の各要素 X について、`First2` または [ `First2, Last2).` で始まる範囲内にあるのと同じ数の要素 Y が X == Y である同じ範囲内にある場合にのみ、どちらも `true` を返します。ここで、`operator==` は、オペランド間でビットごとの比較を実行する必要があります。  
+ The first template function assumes that there are as many elements in the range beginning at `First2` as there are in the range designated by [ `First1`, `Last1`). If there are more elements in the second range, they are ignored; if there are less, undefined behavior will occur. The third template function (C++14 and later) does not make this assumption.  Both return `true` only if, for each element X in the range designated by [ `First1`, `Last1`) there are as many elements Y in the same range for which X == Y as there are in the range beginning at `First2` or [ `First2, Last2).` Here, `operator==` must perform a pairwise comparison between its operands.  
   
- 2 つ目と 4 つ目のテンプレート関数も同様に動作しますが、`operator==(X, Y)` を `Pred(X, Y)` に置き換えている点が異なります。 正常に動作するには、述語が対称的、推移的、および再帰的である必要があります。  
+ The second and fourth template functions behave the same, except that they replace `operator==(X, Y)` with `Pred(X, Y)`. To behave correctly, the predicate must be symmetric, reflexive and transitive.  
   
-### <a name="example"></a>例  
-  `is_permutation` を使用する方法を次の例に示します。  
+### <a name="example"></a>Example  
+  The following example shows how to use `is_permutation`:  
   
 ```cpp  
 #include <vector>  
@@ -2593,7 +2610,7 @@ int main()
 ```  
   
 ##  <a name="is_sorted"></a>  is_sorted  
- 指定された範囲の要素が並べ替えられた順序になっている場合は `true` を返します。  
+ Returns `true` if the elements in the specified range are in sorted order.  
   
 ```  
 template<class ForwardIterator>  
@@ -2608,25 +2625,25 @@ bool is_sorted(
     BinaryPredicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- チェックする範囲の開始位置を示す前方反復子。  
+ A forward iterator that indicates where the range to check begins.  
   
  `last`  
- 範囲の終了位置を示す前方反復子。  
+ A forward iterator that indicates the end of a range.  
   
  `comp`  
- 2 つの要素間の順序を決定するテストの条件。 述語は 1 つの引数を取り、`true` または `false` を返します。 これは `operator<` と同じタスクを実行します。  
+ The condition to test to determine an order between two elements. A predicate takes a single argument and returns `true` or `false`. This performs the same task as `operator<`.  
   
-### <a name="remarks"></a>コメント  
- 最初のテンプレート関数は、[is_sorted_until](http://msdn.microsoft.com/en-us/bbad99d0-deaa-4fe6-ae58-eb5b3e4dded0)`(` `first``,` `last``) ==` `last` を返します。 operator< 関数は順序の比較を実行します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns [is_sorted_until](http://msdn.microsoft.com/en-us/bbad99d0-deaa-4fe6-ae58-eb5b3e4dded0)`( first, last ) == last`. The `operator<` function performs the order comparison.  
   
- 2 番目のテンプレート関数は、`is_sorted_until``(` `first``,` `last``,` `comp``) ==` `last` を返します。 `comp` 述語関数は順序の比較を実行します。  
+ The second template function returns `is_sorted_until( first, last , comp ) == last`. The `comp` predicate function performs the order comparison.  
   
 ##  <a name="is_sorted_until"></a>  is_sorted_until  
- 指定した範囲から並べ替え順序で最後の要素に設定されている `ForwardIterator` を返します。  
+ Returns a `ForwardIterator` that is set to the last element that is in sorted order from a specified range.  
   
- 2 番目のバージョンでは、2 つの指定した要素が並べ替え順序になっている場合に `true` を返し、そうでない場合には `false` を返す `BinaryPredicate` 関数を提供できます。  
+ The second version lets you provide a `BinaryPredicate` function that returns `true` when two given elements are in sorted order, and `false` otherwise.  
   
 ```  
 template<class ForwardIterator>  
@@ -2642,26 +2659,26 @@ template<class ForwardIterator, class BinaryPredicate>
     );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- チェックする範囲の開始位置を示す前方反復子。  
+ A forward iterator that indicates where the range to check starts.  
   
  `last`  
- 範囲の終了位置を示す前方反復子。  
+ A forward iterator that indicates the end of a range.  
   
  `comp`  
- 2 つの要素間の順序を決定するテストの条件。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition to test to determine an order between two elements. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 並べ替え順序で最後の要素に設定された `ForwardIterator` を返します。 並べ替えられたシーケンスは `first` から開始します。  
+### <a name="return-value"></a>Return Value  
+ Returns a `ForwardIterator` set to the last element in sorted order. The sorted sequence starts from  `first`.  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のテンプレート関数は、`[` `first``, next)` が `operator<` によって並べ替えられたシーケンス順序になるように、`[` `first``,` `last``]` の中で最後の反復子 `next` を返します。 `distance()` `< 2` の場合、関数は `last` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns the last iterator `next` in `[` `first ,` `last ]` so that `[` `first , next)` is a sorted sequence ordered by `operator<`. If `distance()` `< 2` the function returns `last`.  
   
- 2 番目のテンプレート関数は、`operator<(X, Y)` と `comp``(X, Y)` を置き換える点を除いて、同じ動作をします。  
+ The second template function behaves the same, except that it replaces `operator<(X, Y)` with `comp (X, Y)`.  
   
 ##  <a name="iter_swap"></a>  iter_swap  
- 指定された反復子のペアで参照される 2 個の値を交換します。  
+ Exchanges two values referred to by a pair of specified iterators.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -2669,19 +2686,19 @@ void iter_swap( ForwardIterator1 left, ForwardIterator2 right );
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 値が交換される前方反復子の 1 つ。  
+ One of the forward iterators whose value is to be exchanged.  
   
  `right`  
- 値が交換される 2 つ目の前方反復子。  
+ The second of the forward iterators whose value is to be exchanged.  
   
-### <a name="remarks"></a>コメント  
- `swap` は、旧バージョンとの互換性のために C++ 標準に含まれていた i **ter_swap** よりも優先的に使用する必要があります。 `Fit1` と `Fit2` が前方反復子の場合、`iter_swap` ( `Fit1`, `Fit2` ) は `swap` ( * `Fit1`, \* `Fit2` ) と同じです。  
+### <a name="remarks"></a>Remarks  
+ `swap` should be used in preference to i **ter_swap**, which was included in the C++ Standard for backward compatibility. If `Fit1` and `Fit2` are forward iterators, then `iter_swap` ( `Fit1`, `Fit2` ), is equivalent to `swap` ( * `Fit1`, \* `Fit2` ).  
   
- 入力前方反復子の値の型は、同じ値にする必要があります。  
+ The value types of the input forward iterators must have the same value.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_iter_swap.cpp  
@@ -2815,7 +2832,7 @@ After exchanging first elements,
 ```  
   
 ##  <a name="lexicographical_compare"></a>  lexicographical_compare  
- 2 つのシーケンスを要素ごとに比較して、2 つのうちどちらが小さいかを判断します。  
+ Compares element by element between two sequences to determine which is lesser of the two.  
   
 ```  
 template<class InputIterator1, class InputIterator2>  
@@ -2835,35 +2852,35 @@ bool lexicographical_compare(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 比較する 1 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first range to be compared.  
   
  `last1`  
- 比較する 1 つ目の範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the first range to be compared.  
   
   `first2`  
- 比較する 2 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the second range to be compared.  
   
  `last2`  
- 比較する 2 つ目の範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the second range to be compared.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 最初の範囲が 2 番目の範囲よりも辞書順で小さい場合は **true**、それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the first range is lexicographically less than the second range; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- シーケンス間の辞書式比較は、次の条件を満たすまで要素ごとに比較します。  
+### <a name="remarks"></a>Remarks  
+ A lexicographical comparison between sequences compares them element by element until:  
   
--   2 つの対応する要素が等しくない場合、比較の結果はシーケンス間の比較の結果として取得されます。  
+-   It finds two corresponding elements unequal, and the result of their comparison is taken as the result of the comparison between sequences.  
   
--   不等値が見つからなくても、1 つのシーケンスに他より多くの要素がある場合、短いシーケンスは長いシーケンスより小さいと見なされます。  
+-   No inequalities are found, but one sequence has more elements than the other, and the shorter sequence is considered less than the longer sequence.  
   
--   不等値が見つからず、シーケンスにある要素の数が同じ場合、シーケンスは等しいので、比較の結果は false になります。  
+-   No inequalities are found and the sequences have the same number of elements, and so the sequences are equal and the result of the comparison is false.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_lex_comp.cpp  
@@ -2959,7 +2976,7 @@ Vector v1 is not lexicographically_less than v2 under twice.
 ```  
   
 ##  <a name="lower_bound"></a>  lower_bound  
- 順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値と等価以上の値を持つ最初の要素の位置を検索します。  
+ Finds the position of the first element in an ordered range that has a value greater than or equivalent to a specified value, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
  template<class ForwardIterator, class Type>  
@@ -2977,34 +2994,34 @@ ForwardIterator lower_bound(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
  `value`  
- 順序付けられた範囲内で、最初の位置や可能な最初の位置を検索する対象の値。  
+ The value whose first position or possible first position is being searched for in the ordered range.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 等価の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値と等価以上の値を持つ最初の要素の位置にある前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator at the position of the first element in an ordered range with a value that is greater than or equivalent to a specified value, where the equivalence is specified with a binary predicate.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソースの範囲が有効であり、すべての反復子が逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source range referenced must be valid; all iterators must be dereferenceable and within the sequence the last position must be reachable from the first by incrementation.  
   
- `lower_bound` を使用する事前条件として、対象の範囲は、二項述語によって指定された基準と同じ順序の基準を使用して並べ替えられている必要があります。  
+ A sorted range is a precondition of using `lower_bound` and where the ordering is the same as specified by with binary predicate.  
   
- 対象範囲は、`lower_bound` アルゴリズムによって変更されません。  
+ The range is not modified by the algorithm `lower_bound`.  
   
- 前方反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 個の要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます  
+ The value types of the forward iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements  
   
- アルゴリズムの複雑さは、ランダムアクセス反復子では対数的であり、そうでない場合は ( `last - first`) のステップ数に比例して線形的です。  
+ The complexity of the algorithm is logarithmic for random-access iterators and linear otherwise, with the number of steps proportional to ( `last - first`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_lower_bound.cpp  
@@ -3096,7 +3113,7 @@ int main( )
 ```  
   
 ##  <a name="make_heap"></a>  make_heap  
- 指定された範囲の要素を、最初の要素が最大であるヒープに変換します。並べ替えの基準は二項述語によって指定できます。  
+ Converts elements from a specified range into a heap in which the first element is the largest and for which a sorting criterion may be specified with a binary predicate.  
   
 ```  
  template<class RandomAccessIterator>  
@@ -3112,28 +3129,28 @@ void make_heap(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ヒープに変換される範囲内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the range to be converted into a heap.  
   
  `last`  
- ヒープに変換される範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the range to be converted into a heap.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- ヒープには次の 2 つのプロパティがあります。  
+### <a name="remarks"></a>Remarks  
+ Heaps have two properties:  
   
--   最初の要素は常に最大です。  
+-   The first element is always the largest.  
   
--   要素は体数時間で追加または削除できます。  
+-   Elements may be added or removed in logarithmic time.  
   
- ヒープは、優先順位キューを実装するのに最適な方法です。C++ 標準ライブラリ コンテナー アダプター [priority_queue Class](../standard-library/priority-queue-class.md) の実装に使用されます。  
+ Heaps are an ideal way to implement priority queues and they are used in the implementation of the C++ Standard Library container adaptor [priority_queue Class](../standard-library/priority-queue-class.md).  
   
- 複雑さは線形的で、3 を必要とする\*(* - 姓 *) の比較できます。  
+ The complexity is linear, requiring 3 \* ( * last - first*) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_make_heap.cpp  
@@ -3176,7 +3193,7 @@ int main() {
 ```  
   
 ##  <a name="max"></a>  max  
- 2 つのオブジェクトを比較し、大きい方のオブジェクトを返します。順序の基準は、二項述語によって指定できます。  
+ Compares two objects and returns the larger of the two, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class Type>  
@@ -3201,26 +3218,26 @@ template<class Type, class Pr>
     );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較される 2 つのオブジェクトの 1 番目のオブジェクト。  
+ The first of the two objects being compared.  
   
  `right`  
- 比較される 2 つのオブジェクトの 2 番目のオブジェクト。  
+ The second of the two objects being compared.  
   
  `comp`  
- 2 つのオブジェクトの比較で使用される二項述語。  
+ A binary predicate used to compare the two objects.  
   
  `_IList`  
- 比較されるオブジェクトを含む初期化子リスト。  
+ The initializer list that contains the objects to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのオブジェクトのうち大きい方のオブジェクト。大きいオブジェクトが存在しない場合は、2 つのオブジェクトのうち 1 番目のオブジェクトが返されます。 initializer_list を使用する場合、リスト内にある最大のオブジェクトが返されます。  
+### <a name="return-value"></a>Return Value  
+ The greater of the two objects, unless neither is greater; in that case, it returns the first of the two objects. In the case of an initializer_list, it returns the greatest of the objects in the list.  
   
-### <a name="remarks"></a>コメント  
- `max` アルゴリズムでは、パラメーターとして渡されるオブジェクトを使うことはほとんどありません。 C++ 標準ライブラリの多くのアルゴリズムは、パラメーターとして渡された反復子によって位置が指定されている要素の範囲で動作します。 要素の範囲で動作する関数が必要な場合は、代わりに [max_element](../standard-library/algorithm-functions.md#max_element) を使用してください。  
+### <a name="remarks"></a>Remarks  
+ The `max` algorithm is unusual in having objects passed as parameters. Most C++ Standard Library algorithms operate on a range of elements whose position is specified by iterators passed as parameters. If you need a function that operates on a range of elements, use [max_element](../standard-library/algorithm-functions.md#max_element) instead.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_max.cpp  
@@ -3389,7 +3406,7 @@ Vector v5 = max (v1,v3) is ( 0 2 4 ).
 ```  
   
 ##  <a name="max_element"></a>  max_element  
- 並べ替え基準をバイナリ述語で指定できる、指定された範囲内の最大の要素の最初の出現箇所を検索します。  
+ Finds the first occurrence of largest element in a specified range where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class ForwardIterator>  
@@ -3400,25 +3417,25 @@ ForwardIterator max_element(ForwardIterator first, ForwardIterator last, BinaryP
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 最大の要素の検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched for the largest element.  
   
  `last`  
- 最大の要素の検索範囲内の末尾の要素の 1 つ後の位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched for the largest element.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 検索範囲内の最大の要素の最初の出現位置を示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first occurrence of the largest element in the range searched.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within each sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは線形: ( `last`  -   `first`) - 1 の比較では、空でない範囲に必要です。  
+ The complexity is linear: ( `last` -  `first`) - 1 comparisons are required for a nonempty range.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_max_element.cpp  
@@ -3519,7 +3536,7 @@ int main( )
 ```  
   
 ##  <a name="merge"></a>  merge  
- 2 つの並べ替えられたソース範囲のすべての要素を、単一の並べ替えられたターゲット範囲として連結します。順序の基準は二項述語によって指定できます。  
+ Combines all of the elements from two sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class InputIterator1, class InputIterator2, class OutputIterator>  
@@ -3541,44 +3558,44 @@ OutputIterator merge(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 結合して単一の範囲に分類する 2 つの並べ替えられたソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be combined and sorted into a single range.  
   
  `last1`  
- 結合して単一の範囲に分類する 2 つの並べ替えられたソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be combined and sorted into a single range.  
   
   `first2`  
- 結合して単一の範囲に分類する 2 つの連続する並べ替えられたソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be combined and sorted into a single range.  
   
  `last2`  
- 結合して単一の範囲に分類する 2 つの連続する並べ替えられたソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be combined and sorted into a single range.  
   
  `result`  
- 2 つのソース範囲が単一の並べ替えられた範囲に結合されるターゲット範囲の、最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range where the two source ranges are to be combined into a single sorted range.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 並べ替えられたターゲット範囲内の最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the last element in the sorted destination range.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- ターゲット範囲はソース範囲のいずれかと重ならないようにします。また、ターゲット範囲を格納するのに十分な大きさが必要です。  
+ The destination range should not overlap either of the source ranges and should be large enough to contain the destination range.  
   
- **merge** アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the **merge** algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- 各範囲内の要素の相対順序はターゲット範囲内でも維持されるため、操作は安定しています。 ソース範囲が **merge**アルゴリズムによって変更されることはありません。  
+ The operation is stable as the relative order of elements within each range is preserved in the destination range. The source ranges are not modified by the algorithm **merge**.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 両方のソース範囲に同等の要素がある場合は、ターゲット範囲では、最初の範囲の要素が、2 番目のソース範囲の要素よりも前に置かれます。  
+ The value types of the input iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. When there are equivalent elements in both source ranges, the elements in the first range precede the elements from the second source range in the destination range.  
   
- アルゴリズムの複雑さは線形的で最大で (* last1 - first1*)-(* last2 - first2*) - 1 の比較できます。  
+ The complexity of the algorithm is linear with at most ( * last1 - first1*) - ( * last2 - first2*) - 1 comparisons.  
   
- [list クラス](../standard-library/list-class.md)には、2 つのリストの要素を結合するメンバー関数 "merge" が用意されています。  
+ The [list class](../standard-library/list-class.md) provides a member function "merge" to merge the elements of two lists.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_merge.cpp  
@@ -3689,7 +3706,7 @@ int main() {
 ```  
   
 ##  <a name="min"></a>  min  
- 2 つのオブジェクトを比較し、小さい方のオブジェクトを返します。順序の基準は、二項述語によって指定できます。  
+ Compares two objects and returns the lesser of the two, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class Type>  
@@ -3713,26 +3730,26 @@ template<class Type, class Pr>    Type min (
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較される 2 つのオブジェクトの 1 番目のオブジェクト。  
+ The first of the two objects being compared.  
   
  `right`  
- 比較される 2 つのオブジェクトの 2 番目のオブジェクト。  
+ The second of the two objects being compared.  
   
  `comp`  
- 2 つのオブジェクトの比較で使用される二項述語。  
+ A binary predicate used to compare the two objects.  
   
  `_IList`  
- 比較されるメンバーを含む initializer_list。  
+ The initializer_list that contains the members to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのオブジェクトのうち小さい方のオブジェクト。小さいオブジェクトが存在しない場合は、2 つのオブジェクトのうち 1 番目のオブジェクトが返されます。 initializer_list を使用する場合、リスト内にある最小のオブジェクトが返されます。  
+### <a name="return-value"></a>Return Value  
+ The lesser of the two objects, unless neither is lesser; in that case, it returns the first of the two objects. In the case of an initializer_list, it returns the least of the objects in the list.  
   
-### <a name="remarks"></a>コメント  
- `min` アルゴリズムでは、パラメーターとして渡されるオブジェクトを使うことはほとんどありません。 C++ 標準ライブラリの多くのアルゴリズムは、パラメーターとして渡された反復子によって位置が指定されている要素の範囲で動作します。 要素の範囲を使用する関数が必要な場合は、[min_element](../standard-library/algorithm-functions.md#min_element) を使用してください。  
+### <a name="remarks"></a>Remarks  
+ The `min` algorithm is unusual in having objects passed as parameters. Most C++ Standard Library algorithms operate on a range of elements whose position is specified by iterators passed as parameters. If you need a function that uses a range of elements, use [min_element](../standard-library/algorithm-functions.md#min_element).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_min.cpp  
@@ -3900,7 +3917,7 @@ Vector v5 = min ( v1,v3 ) is ( 0 1 2 ).
 ```  
   
 ##  <a name="min_element"></a>  min_element  
- 指定された範囲内の最小の要素の最初の出現箇所を検索します。順序の基準は二項述語によって指定できます。  
+ Finds the first occurrence of smallest element in a specified range where the ordering criterion may be specified by a binary predicate.  
   
 ```  
  template<class ForwardIterator>  
@@ -3911,25 +3928,25 @@ ForwardIterator min_element(ForwardIterator first, ForwardIterator last, BinaryP
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 最小の要素の検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched for the smallest element.  
   
  `last`  
- 最小の要素の検索範囲内の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched for the smallest element.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 検索範囲内の最小の要素の最初の出現位置を示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first occurrence of the smallest element in the range searched.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within each sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは線形: ( `last`  -  `first`) - 1 の比較では、空でない範囲に必要です。  
+ The complexity is linear: ( `last` - `first`) - 1 comparisons are required for a nonempty range.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_min_element.cpp  
@@ -4040,7 +4057,7 @@ The smallest element in v1 under the mod_lesser
 ```  
   
 ##  <a name="minmax_element"></a>  minmax_element  
- `min_element` と `max_element` によって実行される作業を 1 回の呼び出しで実行します。  
+ Performs the work performed by `min_element` and `max_element` in one call.  
   
 ```  
 template<class ForwardIterator>  
@@ -4058,36 +4075,36 @@ template<class ForwardIterator, class BinaryPredicate>
                 );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 範囲の開始位置を示す前方反復子。  
+ A forward iterator that indicates the beginning of a range.  
   
  `last`  
- 範囲の終了位置を示す前方反復子。  
+ A forward iterator that indicates the end of a range.  
   
  `comp`  
- 要素を並べ替えるのに使用される省略可能なテストです。  
+ An optional test used to order elements.  
   
-### <a name="return-value"></a>戻り値  
- 戻り値  
+### <a name="return-value"></a>Return Value  
+ Returns  
   
  `pair<ForwardIterator, ForwardIterator>`  
   
- `(` [min_element](../standard-library/algorithm-functions.md#min_element)(  `first`, `last`)、[max_element](../standard-library/algorithm-functions.md#max_element)(  `first`, `last`))  
+ `(` [min_element](../standard-library/algorithm-functions.md#min_element)`(first, last), `[max_element](../standard-library/algorithm-functions.md#max_element)`(first, last))`.  
   
-### <a name="remarks"></a>コメント  
- 1 番目のテンプレート関数は、以下を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns  
   
  `pair<ForwardIterator,ForwardIterator>`  
   
- `(min_element(_First,Last),max_element(_First,Last))`。  
+ `(min_element(_First,Last), max_element(_First,Last))`.  
   
- 2 番目のテンプレート関数は、`operator<(X, Y)` と `comp``(X, Y)` を置き換える点を除いて、同じ動作をします。  
+ The second template function behaves the same, except that it replaces `operator<(X, Y)` with `comp (X, Y)`.  
   
- シーケンスが空でない場合、関数は最大で `3 * (``last` `-`  `first` `- 1) / 2` の比較を実行します。  
+ If the sequence is non-empty, the function performs at most `3 * (last - first - 1) / 2` comparisons.  
   
 ##  <a name="minmax"></a>  minmax  
- 2 つの入力パラメーターを比較し、それらを昇順のペアとして返します。  
+ Compares two input parameters and returns them as a pair, in order of lesser to greater.  
   
 ```  
 template<class Type>  
@@ -4114,32 +4131,32 @@ template<class Type, class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 比較される 2 つのオブジェクトの 1 番目のオブジェクト。  
+ The first of the two objects being compared.  
   
  `right`  
- 比較される 2 つのオブジェクトの 2 番目のオブジェクト。  
+ The second of the two objects being compared.  
   
  `comp`  
- 2 つのオブジェクトの比較で使用される二項述語。  
+ A binary predicate used to compare the two objects.  
   
  `_IList`  
- 比較されるメンバーを含む initializer_list。  
+ The initializer_list that contains the members to be compared.  
   
-### <a name="remarks"></a>コメント  
- 一番目のテンプレート関数は、`right` が `left` 未満の場合、`pair<const Type&, const Type&>(``right``,` `left``)`を返します。 それ以外の場合は、`pair<const Type&, const Type&>(``left``,` `right``)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The first template function returns `pair<const Type&, const Type&>( right , left )` if `right` is less than `left`. Otherwise, it returns `pair<const Type&, const Type&>( left , right )`.  
   
- 2 番目のメンバー関数はペアを返し、述語 `comp` で比較した場合、1 番目の要素が小さい方で、2 番目の要素が大きい方になります。  
+ The second member function returns a pair where the first element is the lesser and the second is the greater when compared by the predicate `comp`.  
   
- 残りのテンプレート関数も同様に動作しますが、`left` と `right` パラメーターを `_IList` に置き換えている点が異なります。  
+ The remaining template functions behave the same, except that they replace the `left` and `right` parameters with `_IList`.  
   
- 関数は比較を 1 回だけ実行します。  
+ The function performs exactly one comparison.  
   
 ##  <a name="mismatch"></a>  mismatch  
- 要素ごとに 2 つの範囲を比較し、最初に違いが発生する位置を特定します。  
+ Compares two ranges element by element and locates the first position where a difference occurs.  
   
- C++14 コードでは 2 範囲のオーバーロードを使用します。これは、2 つ目の範囲に対して 1 つの反復子のみを受け取るオーバーロードでは、2 つ目の範囲が 1 つ目の範囲より大きい場合にその差を検出できず、2 つ目の範囲が 1 つ目の範囲より小さい場合に未定義の動作が発生するためです。  
+ Use the dual-range overloads in C++14 code because the overloads that only take a single iterator for the second range will not detect differences if the second range is longer than the first range, and will result in undefined behavior if the second range is shorter than the first range.  
   
 ```  
  template<class InputIterator1, class InputIterator2> pair<InputIterator1, InputIterator2>>   
@@ -4172,36 +4189,36 @@ mismatch(
      BinaryPredicate Comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `First1`  
- テストする 1 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first range to be tested.  
   
  `Last1`  
- テストする 1 つ目の範囲内の最後の要素の 1 つ後の位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first range to be tested.  
   
  `First2`  
- テストする 2 つ目の範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the second range to be tested.  
   
  `Last2`  
- テストする 2 つ目の範囲内の最後の要素の 1 つ後の位置を示す入力反復子。  
+ An input iterator addressing the position of one past the last element in the second range to be tested.  
   
  `Comp`  
- 各範囲内の現在の要素を比較し、それらが等しいかどうかを判定するための、ユーザー定義の述語関数オブジェクト。 条件が満たされている場合は **true**、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that compares the current elements in each range and determines whether they are equivalent. It returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 2 つの範囲で一致しない位置を示す反復子のペア。ペアを構成する 1 つ目の反復子は 1 つ目の範囲内の位置を示し、2 つ目の反復子は 2 つ目の範囲内の位置を示します。 比較する各範囲内の要素間に違いがない場合、または 2 つの範囲内のすべての要素ペアによって 2 つ目のバージョンの二項述語が満たされている場合、1 つ目の反復子は 1 つ目の範囲内の最後の要素の 1 つ後の位置を示し、2 つ目の反復子は 2 つ目の範囲内の最後のテスト対象の要素の 1 つ後の位置を示します。  
+### <a name="return-value"></a>Return Value  
+ A pair of iterators addressing the positions of the mismatch in the two ranges, the first component iterator to the position in the first range and the second component iterator to the position in the second range. If there is no difference between the elements in the ranges compared or if the binary predicate in the second version is satisfied by all element pairs from the two ranges, then the first component iterator points to the position one past the final element in the first range and the second component iterator to position one past the final element tested in the second range.  
   
-### <a name="remarks"></a>コメント  
- 1 つ目のテンプレート関数では、first2 で始まる範囲内に、[first1, last1) で指定された範囲内にあるのと同じ数の要素があると想定しています。 2 つ目の範囲内の要素がこれよりも多い場合、それらの要素は無視され、少ない場合、未定義の動作が発生します。  
+### <a name="remarks"></a>Remarks  
+ The first template function assumes that there are as many elements in the range beginning at first2 as there are in the range designated by [first1, last1). If there are more in the second range, they are ignored; if there are less then undefined behavior will result.  
   
- 検索対象の範囲が有効であること、すべての反復子が逆参照可能であること、さらに先頭位置からのインクリメントにより最後の位置に到達可能であることが必要です。  
+ The range to be searched must be valid; all iterators must be dereferenceable and the last position is reachable from the first by incrementation.  
   
- アルゴリズムの時間計算量は、短い方の範囲に含まれる要素の数に比例します。  
+ The time complexity of the algorithm is linear in the number of elements contained in the shorter range.  
   
- ユーザー定義の述語では、そのオペランド間で対称的、再帰的、および推移的な等価関係を強制する必要はありません。  
+ The user-defined predicate is not required to impose an equivalence relation that symmetric, reflexive and transitive between its operands.  
   
-### <a name="example"></a>例  
-  mismatch の使用例を次に示します。 C++03 オーバーロードは、これにより予期しない結果が引き起こされるしくみを示すことのみを目的に記載しています。  
+### <a name="example"></a>Example  
+  The following example demonstrates how to use mismatch. The C++03 overload is shown only in order to demonstrate how it can produce an unexpected result.  
   
 ```cpp  
 #include <vector>  
@@ -4297,7 +4314,7 @@ Press a key
 ```  
   
 ##  <a name="alg_move"></a>  &lt;alg&gt; move  
- 指定された範囲に関連付けられている要素を移動します。  
+ Move elements associated with a specified range.  
   
 ```  
 template<class InputIterator, class OutputIterator>  
@@ -4308,21 +4325,21 @@ template<class InputIterator, class OutputIterator>
                   );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 移動する要素の範囲の先頭を示す入力反復子。  
+ An input iterator that indicates where to start the range of elements to move.  
   
  `last`  
- 移動する要素の範囲の最後を示す入力反復子。  
+ An input iterator that indicates the end of a range of elements to move.  
   
  `dest`  
- 移動された要素が格納される出力反復子。  
+ The output iterator that is to contain the moved elements.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は評価`*(dest + N) = move(*(first + N))`ごとに 1 回`N`範囲の`[0, last - first)`の値を確実に増加するの`N`の最小値から開始します。 その後で `dest + N` が返されます。 場合`dest`と`first`ストレージの領域を指定する`dest`、範囲内で指定する必要がありますいない`[first, last)`です。  
+### <a name="remarks"></a>Remarks  
+ The template function evaluates `*(dest + N) = move(*(first + N))` once for each `N` in the range `[0, last - first)`, for strictly increasing values of `N` starting with the lowest value. It then returns `dest + N`. If `dest` and `first` designate regions of storage, `dest` must not be in the range `[first, last)`.  
   
 ##  <a name="move_backward"></a>  move_backward  
- ある反復子の要素を別の反復子に移動します。 移動は、指定した範囲の最後の要素から開始され、その範囲内の先頭の要素で終了します。  
+ Moves the elements of one iterator to another. The move starts with the last element in a specified range, and ends with the first element in that range.  
   
 ```  
 template<class BidirectionalIterator1, class BidirectionalIterator2>  
@@ -4333,23 +4350,23 @@ template<class BidirectionalIterator1, class BidirectionalIterator2>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素の移動元の範囲の先頭を指定する反復子。  
+ An iterator that indicates the start of a range to move elements from.  
   
  `last`  
- 要素の移動元の範囲の最後を指定する反復子。 この要素は移動されません。  
+ An iterator that indicates the end of a range to move elements from. This element is not moved.  
   
  `destEnd`  
- 移動先範囲の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of one past the final element in the destination range.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は評価`*(destEnd - N - 1) = move(*(last - N - 1))`ごとに 1 回`N`範囲の`[0, last - first)`の値を確実に増加するの`N`の最小値から開始します。 その後で `destEnd - (last - first)` が返されます。 場合`destEnd`と`first`ストレージの領域を指定する`destEnd`、範囲内で指定する必要がありますいない`[first, last)`です。  
+### <a name="remarks"></a>Remarks  
+ The template function evaluates `*(destEnd - N - 1) = move(*(last - N - 1))` once for each `N` in the range `[0, last - first)`, for strictly increasing values of `N` starting with the lowest value. It then returns `destEnd - (last - first)`. If `destEnd` and  `first` designate regions of storage, `destEnd` must not be in the range `[first, last)`.  
   
- `move` と `move_backward` は、移動反復子と共に `copy` と `copy_backward` を使用するのと機能的には同じです。  
+ `move` and `move_backward` are functionally equivalent to using `copy` and `copy_backward` with a move iterator.  
   
 ##  <a name="next_permutation"></a>  next_permutation  
- 範囲内の要素の順序を変更し、元の順序を辞書式に次に大きい順列 (存在する場合) に置き換えます。next の意味は二項述語によって指定できます。  
+ Reorders the elements in a range so that the original ordering is replaced by the lexicographically next greater permutation if it exists, where the sense of next may be specified with a binary predicate.  
   
 ```  
 template<class BidirectionalIterator>  
@@ -4360,27 +4377,27 @@ bool next_permutation(BidirectionalIterator first, BidirectionalIterator last, B
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 順序を変える範囲内の最初の要素の位置を指す双方向反復子。  
+ A bidirectional iterator pointing to the position of the first element in the range to be permuted.  
   
  `last`  
- 順序を変える範囲内の最後の要素の 1 つ後ろの位置を指す双方向反復子。  
+ A bidirectional iterator pointing to the position one past the final element in the range to be permuted.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 辞書順序で次の順列が存在し、範囲の元の順序を置き換えた場合は **true**、それ以外の場合は **false**。この場合は、順序が辞書式の最小の順列に変換されています。  
+### <a name="return-value"></a>Return Value  
+ **true** if the lexicographically next permutation exists and has replaced the original ordering of the range; otherwise **false**, in which case the ordering is transformed into the lexicographically smallest permutation.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 次の順列が明確に定義されるように、既定の二項述語と範囲内の要素は比較対象より少なくする必要があります。  
+ The default binary predicate is less than and the elements in the range must be less than comparable to insure that the next permutation is well defined.  
   
- 複雑さは線形的で最大で (* - 姓 *)/2 を交換します。  
+ The complexity is linear with at most ( * last - first*)/2 swaps.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_next_perm.cpp  
@@ -4520,7 +4537,7 @@ After another next_permutation of vector v1,
 ```  
   
 ##  <a name="nth_element"></a>  nth_element  
- 範囲内のシーケンスの *n* 番目の要素を正しく検索し、その要素の前にあるすべての要素がその要素以下、シーケンス内でその要素に続くすべての要素がその要素以上になるようにして、要素の範囲を分割します。  
+ Partitions a range of elements, correctly locating the                 *n*th element of the sequence in the range so that all the elements in front of it are less than or equal to it and all the elements that follow it in the sequence are greater than or equal to it.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -4531,29 +4548,29 @@ void nth_element( RandomAccessIterator first, RandomAccessIterator _Nth, RandomA
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- パーティション分割される範囲内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the range to be partitioned.  
   
  *_Nth*  
- パーティションの境界で正しく並べ替えられる要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of element to be correctly ordered on the boundary of the partition.  
   
  `last`  
- パーティション分割される範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the range to be partitioned.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- `nth_element` アルゴリズムは、*n* 番目の要素の両側のサブ範囲内の要素が並べ替えられることを保証していません。 そのため、一定の選択した要素を下回る範囲内の要素を並べ替える `partial_sort` よりも保証は少なくなり、下の範囲の要素を並べ替えが不要な場合に `partial_sort` のより高速な代替として使用することができます。  
+ The `nth_element` algorithm does not guarantee that elements in the sub-ranges either side of the  *n*th element are sorted. It thus makes fewer guarantees than `partial_sort`, which orders the elements in the range below some chosen element, and may be used as a faster alternative to `partial_sort` when the ordering of the lower range is not required.  
   
- どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。  
+ Elements are equivalent, but not necessarily equal, if neither is less than the other.  
   
- 並べ替えの複雑さの平均はに関して線形 * - 姓 * です。  
+ The average of a sort complexity is linear with respect to  * last - first*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_nth_elem.cpp  
@@ -4620,31 +4637,31 @@ int main() {
 ```  
   
 ##  <a name="none_of"></a>  none_of  
- 特定の範囲内の要素について条件が存在しないときに、`true` を返します。  
+ Returns `true` when a condition is never present among elements in the given range.  
   
 ```  
 template<class InputIterator, class BinaryPredicate>  
 bool none_of(InputIterator first, InputIterator last, BinaryPredicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件の要素の範囲のチェックを開始する位置を示す入力反復子。  
+ An input iterator that indicates where to start to check a range of elements for a condition.  
   
  `last`  
- 要素の範囲の最後を示す入力反復子。  
+ An input iterator that indicates the end of a range of elements.  
   
  `comp`  
- テストする条件。 これは、条件を定義するユーザー定義の述語関数オブジェクトによって提供されます。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition to test for. This is provided by a user-defined predicate function object that defines the condition. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- 指定された範囲で条件が 1 度も検出されない場合は `true`、条件が検出された場合は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns `true` if the condition is not detected at least once in the indicated range, and `false` if the condition is detected.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数を返します`true`場合にのみ、一部の`N`範囲の`[0, last - first)`、述語`comp(*(first + N))`は常に`false`です。  
+### <a name="remarks"></a>Remarks  
+ The template function returns `true` only if, for some `N` in the range `[0, last - first)`, the predicate `comp(*(first + N))` is always `false`.  
   
 ##  <a name="partial_sort"></a>  partial_sort  
- 範囲内で指定された数の、より小さい要素を、降順以外の順序、または二項述語で指定された順序の基準に従って配置します。  
+ Arranges a specified number of the smaller elements in a range into a nondescending order or according to an ordering criterion specified by a binary predicate.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -4662,27 +4679,27 @@ template<class RandomAccessIterator, class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 並べ替えられる範囲内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the range to be sorted.  
   
  `sortEnd`  
- 並べ替えられるサブ範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the subrange to be sorted.  
   
  `last`  
- 部分的に並べ替えられる範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the range to be partially sorted.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。 **sort** アルゴリズムは安定しておらず、同等の要素の相対順序が保持されることが保証されません。 アルゴリズム `stable_sort` は元の順序を保持します。  
+ Elements are equivalent, but not necessarily equal, if neither is less than the other. The **sort** algorithm is not stable and does not guarantee that the relative ordering of equivalent elements will be preserved. The algorithm `stable_sort` does preserve this original ordering.  
   
- 部分的な並べ替えの平均の複雑さは *O*(( `last`- `first`) log ( `sortEnd`- `first`)) です。  
+ The average partial sort complexity is  *O*(( `last`- `first`) log ( `sortEnd`- `first`)).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_partial_sort.cpp  
@@ -4756,7 +4773,7 @@ Partially resorted (UDgreater) vector:
 ```  
   
 ##  <a name="partial_sort_copy"></a>  partial_sort_copy  
- ソース範囲からターゲット範囲に要素をコピーします。ソース要素は小なりまたは指定された別の二項述語によって並べ替えられます。  
+ Copies elements from a source range into a destination range where the source elements are ordered by either less than or another specified binary predicate.  
   
 ```  
  template<class InputIterator, class RandomAccessIterator>  
@@ -4776,31 +4793,31 @@ template<class InputIterator, class RandomAccessIterator, class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- ソース範囲内の先頭の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the source range.  
   
  `last1`  
- ソース範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the source range.  
   
   `first2`  
- 並べ替えられたターゲット範囲内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the sorted destination range.  
   
  `last2`  
- 並べ替えられたターゲット範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the sorted destination range.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は `true`、満たされていない場合は `false` を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns `true` when satisfied and `false` when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- ソース範囲から挿入された最後の要素の 1 つ後ろの位置のターゲット範囲内の要素を示すランダム アクセス反復子。  
+### <a name="return-value"></a>Return Value  
+ A random-access iterator addressing the element in the destination range one position beyond the last element inserted from the source range.  
   
-### <a name="remarks"></a>コメント  
- ソース範囲とターゲット範囲は重複できません。また、両方とも有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source and destination ranges must not overlap and must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- 二項述語は、同等でない要素は順序付けされ、同等の要素は順序付けされないように、厳密弱順序を提供する必要があります。 2 つの要素がどちらも他方より小さくない場合、2 つの要素は同等ですが、必ずしも等しいわけではありません。  
+ The binary predicate must provide a strict weak ordering so that elements that are not equivalent are ordered, but elements that are equivalent are not. Two elements are equivalent under less than, but not necessarily equal, if neither is less than the other.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_partial_sort_copy.cpp  
@@ -4877,7 +4894,7 @@ int main() {
 ```  
   
 ##  <a name="partition"></a>  partition  
- 範囲内の要素を 2 つの分離されたセットに分類し、単項述語を満たす要素が単項述語を満たさない要素よりも前に来るように配置します。  
+ Classifies elements in a range into two disjoint sets, with those elements satisfying a unary predicate preceding those that fail to satisfy it.  
   
 ```  
 template<class BidirectionalIterator, class Predicate>  
@@ -4888,27 +4905,27 @@ template<class BidirectionalIterator, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- パーティション分割される範囲内の最初の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the range to be partitioned.  
   
  `last`  
- パーティション分割される範囲内の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position one past the final element in the range to be partitioned.  
   
  `comp`  
- 要素が分類される場合に満たされる条件を定義するユーザー定義の述語関数オブジェクト。 述語は 1 つの引数を取り、**true** または **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if an element is to be classified. A predicate takes a single argument and returns **true** or **false**.  
   
-### <a name="return-value"></a>戻り値  
- 述語条件を満たさない範囲内の最初の要素の位置を示す双方向反復子。  
+### <a name="return-value"></a>Return Value  
+ A bidirectional iterator addressing the position of the first element in the range to not satisfy the predicate condition.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- *Pr* ( *a*,  *b*) と *Pr* ( *b*,  *a*) の両方が false の場合 (この *Pr* はパラメーター指定した述語)、要素 *a* と *b* は同等ですが、必ずしも等しい必要はありません。 **partition** アルゴリズムは安定しておらず、同等の要素の相対順序が保持されることを保証しません。 アルゴリズム **stable_ partition** は元の順序を保持します。  
+ Elements  *a* and  *b* are equivalent, but not necessarily equal, if both  *Pr* ( *a*,  *b*) is false and  *Pr* ( *b*,  *a*) if false, where  *Pr* is the parameter-specified predicate. The **partition** algorithm is not stable and does not guarantee that the relative ordering of equivalent elements will be preserved. The algorithm **stable_ partition** does preserve this original ordering.  
   
- 複雑さは線形的: がある ( `last`  -   `first`) アプリケーションの`comp`個、最大 ( `last`  -   `first`)/2 を交換です。  
+ The complexity is linear: there are ( `last` -  `first`) applications of `comp` and at most ( `last` -  `first`)/2 swaps.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_partition.cpp  
@@ -4948,7 +4965,7 @@ int main( ) {
 ```  
   
 ##  <a name="partition_copy"></a>  partition_copy  
- 条件が `true` である要素を 1 つターゲットにコピーし、条件が `false` である要素を別のターゲットにコピーします。 要素は指定された範囲に含まれている必要があります。  
+ Copies elements for which a condition is `true` to one destination, and for which the condition is `false` to another. The elements must come from a specified range.  
   
 ```  
 template<class InputIterator, class OutputIterator1, class OutputIterator2, class Predicate>  
@@ -4962,27 +4979,27 @@ template<class InputIterator, class OutputIterator1, class OutputIterator2, clas
         );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件をチェックする範囲の先頭を指定する入力反復子。  
+ An input iterator that indicates the beginning of a range to check for a condition.  
   
  `last`  
- 範囲の終了位置を示す入力反復子。  
+ An input iterator that indicates the end of a range.  
   
  `dest1`  
- `_Pred` を使用してテストされた条件に対し true を返す要素をコピーするために使用される出力反復子。  
+ An output iterator used to copy elements that return true for a condition tested by using `_Pred`.  
   
  `dest2`  
- `_Pred` を使用してテストされた条件に対し false を返す要素をコピーするために使用される出力反復子。  
+ An output iterator used to copy elements that return false for a condition tested by using `_Pred`.  
   
  `_Pred`  
- テストする条件。 これは、テストする条件を定義するユーザー定義の述語関数オブジェクトによって提供されます。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition to test for. This is provided by a user-defined predicate function object that defines the condition to be tested. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、各要素をコピー`X`で`[first,last)`に`*dest1++`場合`_Pred(X)`が true の場合または`*dest2++`しない場合。 `pair<OutputIterator1, OutputIterator2>(dest1, dest2)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The template function copies each element `X` in `[first,last)` to `*dest1++` if `_Pred(X)` is true, or to `*dest2++` if not. It returns `pair<OutputIterator1, OutputIterator2>(dest1, dest2)`.  
   
 ##  <a name="partition_point"></a>  partition_point  
- 特定の範囲内で条件を満たさない最初の要素を返します。 要素は、条件を満たす要素が条件を満たさない要素の前に来るように並べ替えられます。  
+ Returns the first element in the given range that does not satisfy the condition. The elements are sorted so that those that satisfy the condition come before those that do not.  
   
 ```  
 template<class ForwardIterator, class Predicate>  
@@ -4993,24 +5010,24 @@ template<class ForwardIterator, class Predicate>
     );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 条件をチェックする範囲の先頭を指定する `ForwardIterator`。  
+ A `ForwardIterator` that indicates the start of a range to check for a condition.  
   
  `last`  
- 範囲の終了位置を示す `ForwardIterator`。  
+ A `ForwardIterator` that indicates the end of a range.  
   
  `comp`  
- テストする条件。 これは、検索対象の要素によって満たされる条件を定義するユーザー定義の述語関数オブジェクトによって提供されます。 述語は 1 つの引数を取り、`true` または `false` を返します。  
+ The condition to test for. This is provided by a user-defined predicate function object that defines the condition to be satisfied by the element being searched for. A predicate takes a single argument and returns `true` or `false`.  
   
-### <a name="return-value"></a>戻り値  
- `comp` によってテストされる条件を満たさない最初の要素を参照する `ForwardIterator` を返し、見つからない場合は `last` を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns a `ForwardIterator` that refers to the first element that does not fulfill the condition tested for by `comp`, or returns `last` if one is not found.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は、最初の反復子を検索`it`で`[first, last)`を`comp(*it)`は`false`します。 シーケンスは `comp` で順序付けする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The template function finds the first iterator `it` in `[first, last)` for which `comp(*it)` is `false`. The sequence must be ordered by `comp`.  
   
 ##  <a name="pop_heap"></a>  pop_heap  
- ヒープの先頭と範囲内の最後から 2 番目の位置との間で最大の要素を削除し、残りの要素から新しいヒープを形成します。  
+ Removes the largest element from the front of a heap to the next-to-last position in the range and then forms a new heap from the remaining elements.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -5021,34 +5038,34 @@ void pop_heap(RandomAccessIterator first, RandomAccessIterator last, BinaryPredi
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ヒープ内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the heap.  
   
  `last`  
- ヒープ内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the heap.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- `pop_heap` アルゴリズムは、push_heap アルゴリズムで実行されるのと逆の操作で、ヒープに追加される要素が既にヒープ内にある他のどの要素よりも大きい場合に、範囲の最後から 2 番目の位置にある要素が範囲内の前の要素を構成するヒープに追加されます。  
+### <a name="remarks"></a>Remarks  
+ The `pop_heap` algorithm is the inverse of the operation performed by the push_heap algorithm, in which an element at the next-to-last position of a range is added to a heap consisting of the prior elements in the range, in the case when the element being added to the heap is larger than any of the elements already in the heap.  
   
- ヒープには次の 2 つのプロパティがあります。  
+ Heaps have two properties:  
   
--   最初の要素は常に最大です。  
+-   The first element is always the largest.  
   
--   要素は体数時間で追加または削除できます。  
+-   Elements may be added or removed in logarithmic time.  
   
- ヒープは、優先順位キューを実装するのに最適な方法です。C++ 標準ライブラリ コンテナー アダプター [priority_queue Class](../standard-library/priority-queue-class.md) の実装に使用されます。  
+ Heaps are an ideal way to implement priority queues and they are used in the implementation of the C++ Standard Library container adaptor [priority_queue Class](../standard-library/priority-queue-class.md).  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 最後に新しく追加された要素の除外範囲は、ヒープである必要があります。  
+ The range excluding the newly added element at the end must be a heap.  
   
- 複雑さは最大でログを必要とする対数 (* - 姓 *) の比較できます。  
+ The complexity is logarithmic, requiring at most log ( * last - first*) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_pop_heap.cpp  
@@ -5111,7 +5128,7 @@ int main( )  {
 ```  
   
 ##  <a name="prev_permutation"></a>  prev_permutation  
- 範囲内の要素の順序を変更し、元の順序を辞書式で前の大きい順列 (存在する場合) に置き換えます。previous の意味は二項述語によって指定できます。  
+ Reorders the elements in a range so that the original ordering is replaced by the lexicographically previous greater permutation if it exists, where the sense of previous may be specified with a binary predicate.  
   
 ```  
 template<class BidirectionalIterator>  
@@ -5127,27 +5144,27 @@ template<class BidirectionalIterator, class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 順序を変える範囲内の最初の要素の位置を指す双方向反復子。  
+ A bidirectional iterator pointing to the position of the first element in the range to be permuted.  
   
  `last`  
- 順序を変える範囲内の最後の要素の 1 つ後ろの位置を指す双方向反復子。  
+ A bidirectional iterator pointing to the position one past the final element in the range to be permuted.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は `true`、満たされていない場合は `false` を返します。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. A binary predicate takes two arguments and returns `true` when satisfied and `false` when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 辞書順序で前の順列が存在し、範囲の元の順序を置き換えた場合は `true`、それ以外の場合は `false`。この場合は、順序が辞書式の最大の順列に変換されています。  
+### <a name="return-value"></a>Return Value  
+ `true` if the lexicographically previous permutation exists and has replaced the original ordering of the range; otherwise `false`, in which case the ordering is transformed into the lexicographically largest permutation.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 前の順列が明確に定義されるように、既定の二項述語は比較対象より少なく、範囲内の要素は少なくする必要があります。  
+ The default binary predicate is less than and the elements in the range must be less-than comparable to ensure that the previous permutation is well defined.  
   
- 複雑さは線形的で、最大で ( `last`  -   `first`)/2 を交換します。  
+ The complexity is linear, with at most ( `last` -  `first`)/2 swaps.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_prev_perm.cpp  
@@ -5282,7 +5299,7 @@ After another prev_permutation of vector v1,
 ```  
   
 ##  <a name="push_heap"></a>  push_heap  
- 範囲の末尾にある要素を、範囲内の以前の要素で構成される既存のヒープに追加します。  
+ Adds an element that is at the end of a range to an existing heap consisting of the prior elements in the range.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -5293,34 +5310,34 @@ void push_heap( RandomAccessIterator first, RandomAccessIterator last, BinaryPre
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ヒープ内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the heap.  
   
  `last`  
- ヒープに変換される範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the range to be converted into a heap.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- 最初に要素を既存のヒープの最後にプッシュ バックしてから、アルゴリズムを使用してこの要素を既存のヒープに追加する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The element must first be pushed back to the end of an existing heap and then the algorithm is used to add this element to the existing heap.  
   
- ヒープには次の 2 つのプロパティがあります。  
+ Heaps have two properties:  
   
--   最初の要素は常に最大です。  
+-   The first element is always the largest.  
   
--   要素は体数時間で追加または削除できます。  
+-   Elements may be added or removed in logarithmic time.  
   
- ヒープは、優先順位キューを実装するのに最適な方法です。C++ 標準ライブラリ コンテナー アダプター [priority_queue Class](../standard-library/priority-queue-class.md) の実装に使用されます。  
+ Heaps are an ideal way to implement priority queues and they are used in the implementation of the C++ Standard Library container adaptor [priority_queue Class](../standard-library/priority-queue-class.md).  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 最後に新しく追加された要素の除外範囲は、ヒープである必要があります。  
+ The range excluding the newly added element at the end must be a heap.  
   
- 複雑さは最大でログを必要とする対数 ( *- 姓*) 比較します。  
+ The complexity is logarithmic, requiring at most log ( *last - first*) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_push_heap.cpp  
@@ -5388,10 +5405,10 @@ int main( ) {
 ```  
   
 ##  <a name="random_shuffle"></a>  random_shuffle  
- Std::random_shuffle() 関数は推奨されず、置き換え[std::shuffle](../standard-library/algorithm-functions.md#shuffle)です。 コード例および詳細については、「 [\<ランダム >](../standard-library/random.md)と Stackoverflow の投稿[理由は:random_shuffle メソッドで使用されなくなった c++ 14?](http://go.microsoft.com/fwlink/?LinkId=397954)です。  
+ The std::random_shuffle() function is deprecated, replaced by [std::shuffle](../standard-library/algorithm-functions.md#shuffle). For a code example and more information, see [\<random>](../standard-library/random.md) and the Stackoverflow posting  [Why are std::random_shuffle methods being deprecated in C++14?](http://go.microsoft.com/fwlink/?LinkId=397954).  
   
 ##  <a name="remove"></a>  remove  
- 特定の範囲から指定された値を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。  
+ Eliminates a specified value from a given range without disturbing the order of the remaining elements and returning the end of a new range free of the specified value.  
   
 ```  
 template<class ForwardIterator, class Type>  
@@ -5399,31 +5416,31 @@ template<class ForwardIterator, class Type>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が削除される範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range from which elements are being removed.  
   
  `last`  
- 要素が削除される範囲内の末尾の要素の 1 つ後の位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range from which elements are being removed.  
   
  `val`  
- 範囲から削除される値。  
+ The value that is to be removed from the range.  
   
-### <a name="return-value"></a>戻り値  
- 変更された範囲の新しい末尾の位置、つまり、指定された値を含まない残されたシーケンスの最後の要素の 1 つ後を示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the new end position of the modified range, one past the final element of the remnant sequence free of the specified value.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 削除されなかった要素の順序はそのままになります。  
+ The order of the elements not removed remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的です。ある ( `last`  -   `first`) の等価比較します。  
+ The complexity is linear; there are ( `last` -  `first`) comparisons for equality.  
   
- [list クラス](../standard-library/list-class.md)には、**remove** のより効率的なメンバー関数バージョンがあり、これもポインターを再リンクします。  
+ The [list class](../standard-library/list-class.md) has a more efficient member function version of **remove**, which also relinks pointers.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_remove.cpp  
@@ -5470,7 +5487,7 @@ int main( ) {
 ```  
   
 ##  <a name="remove_copy"></a>  remove_copy  
- ソース範囲からターゲット範囲に要素をコピーしますが、指定された値の要素はコピーされません。残りの要素の順序に影響を及ぼすことはなく、新しいターゲット範囲の末尾を返します。  
+ Copies elements from a source range to a destination range, except that elements of a specified value are not copied, without disturbing the order of the remaining elements and returning the end of a new destination range.  
   
 ```  
 template<class InputIterator, class OutputIterator, class Type>  
@@ -5478,34 +5495,34 @@ template<class InputIterator, class OutputIterator, class Type>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が削除される範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range from which elements are being removed.  
   
  `last`  
- 要素が削除される範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range from which elements are being removed.  
   
  `result`  
- 要素が削除されるターゲット範囲内の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range to which elements are being removed.  
   
  `val`  
- 範囲から削除される値。  
+ The value that is to be removed from the range.  
   
-### <a name="return-value"></a>戻り値  
- ターゲット範囲の新しい末尾の位置、つまり、指定された値を含まない残されたシーケンス コピーの最後の要素の 1 つ後ろを示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the new end position of the destination range, one past the final element of the copy of the remnant sequence free of the specified value.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲とターゲット範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source and destination ranges referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- ターゲット範囲には、指定した値の要素が削除された後にコピーされる残りの要素を格納するのに十分な領域が必要です。  
+ There must be enough space in the destination range to contain the remnant elements that will be copied after elements of the specified value are removed.  
   
- 削除されなかった要素の順序はそのままになります。  
+ The order of the elements not removed remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的です。ある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) の割り当て。  
+ The complexity is linear; there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_remove_copy.cpp  
@@ -5549,7 +5566,7 @@ int main() {
 ```  
   
 ##  <a name="remove_copy_if"></a>  remove_copy_if  
- ソース範囲からターゲット範囲に要素をコピーしますが、述語を満たす要素はコピーされません。残りの要素の順序に影響を及ぼすことはなく、新しいターゲット範囲の末尾を返します。  
+ Copies elements from a source range to a destination range, except that satisfying a predicate are not copied, without disturbing the order of the remaining elements and returning the end of a new destination range.  
   
 ```  
 template<class InputIterator, class OutputIterator, class Predicate>  
@@ -5557,36 +5574,36 @@ OutputIterator remove_copy_if(InputIterator first, InputIterator Last, OutputIte
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が削除される範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the range from which elements are being removed.  
   
  `last`  
- 要素が削除される範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the range from which elements are being removed.  
   
  `result`  
- 要素が削除されるターゲット範囲内の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range to which elements are being removed.  
   
  `_Pred`  
- 満たす必要のある単項述語は、置き換えられる要素の値です。  
+ The unary predicate that must be satisfied is the value of an element is to be replaced.  
   
-### <a name="return-value"></a>戻り値  
- ターゲット範囲の最後の新しい位置、つまり、述語を満たす要素を含まない残されたシーケンスの最後の要素の 1 つ後ろを示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the new end position of the destination range, one past the final element of the remnant sequence free of the elements satisfying the predicate.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- ターゲット範囲には、指定した値の要素が削除された後にコピーされる残りの要素を格納するのに十分な領域が必要です。  
+ There must be enough space in the destination range to contain the remnant elements that will be copied after elements of the specified value are removed.  
   
- 削除されなかった要素の順序はそのままになります。  
+ The order of the elements not removed remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形: がある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) の割り当て。  
+ The complexity is linear: there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments.  
   
- これらの関数の動作については、「[チェックを行う反復子](../standard-library/checked-iterators.md)」を参照してください。  
+ For information on how these functions behave, see [Checked Iterators](../standard-library/checked-iterators.md).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_remove_copy_if.cpp  
@@ -5637,7 +5654,7 @@ int main() {
 ```  
   
 ##  <a name="remove_if"></a>  remove_if  
- 特定の範囲から述語を満たす要素を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。  
+ Eliminates elements that satisfy a predicate from a given range without disturbing the order of the remaining elements and returning the end of a new range free of the specified value.  
   
 ```  
 template<class ForwardIterator, class Predicate>  
@@ -5645,31 +5662,31 @@ template<class ForwardIterator, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が削除される範囲内の最初の要素の位置を指定する前方反復子。  
+ A forward iterator pointing to the position of the first element in the range from which elements are being removed.  
   
  `last`  
- 要素が削除される範囲内の最後の要素の 1 つ後ろの位置を指定する前方反復子。  
+ A forward iterator pointing to the position one past the final element in the range from which elements are being removed.  
   
  `_Pred`  
- 満たす必要のある単項述語は、置き換えられる要素の値です。  
+ The unary predicate that must be satisfied is the value of an element is to be replaced.  
   
-### <a name="return-value"></a>戻り値  
- 変更された範囲の新しい末尾の位置、つまり、指定された値を含まない残されたシーケンスの最後の要素の 1 つ後を示す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the new end position of the modified range, one past the final element of the remnant sequence free of the specified value.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 削除されなかった要素の順序はそのままになります。  
+ The order of the elements not removed remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形: がある ( `last`  -   `first`) の等価比較します。  
+ The complexity is linear: there are ( `last` -  `first`) comparisons for equality.  
   
- list には、ポインターを再リンクする remove のより効率的なメンバー関数バージョンがあります。  
+ List has a more efficient member function version of remove which relinks pointers.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_remove_if.cpp  
@@ -5720,36 +5737,36 @@ int main( ) {
 ```  
   
 ##  <a name="replace"></a>  replace  
- 範囲内の各要素が指定された値に一致するかどうかを調べ、一致する場合は置き換えます。  
+ Examines each element in a range and replaces it if it matches a specified value.  
   
 ```  
 template<class ForwardIterator, class Type>  
 void replace(ForwardIterator first, ForwardIterator last, const Type& _OldVal, const Type& _NewVal);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が置き換えられる範囲内の最初の要素の位置を指定する前方反復子。  
+ A forward iterator pointing to the position of the first element in the range from which elements are being replaced.  
   
  `last`  
- 要素が置き換えられる範囲内の最後の要素の 1 つ後ろの位置を指定する前方反復子。  
+ A forward iterator pointing to the position one past the final element in the range from which elements are being replaced.  
   
  `_OldVal`  
- 置き換えられる要素の古い値。  
+ The old value of the elements being replaced.  
   
  `_NewVal`  
- 古い値を持つ要素に割り当てられる新しい値。  
+ The new value being assigned to the elements with the old value.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 置き換えられなかった要素の順序はそのままになります。  
+ The order of the elements not replaced remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的です。ある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) 新しい値の割り当て。  
+ The complexity is linear; there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments of new values.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_replace.cpp  
@@ -5788,7 +5805,7 @@ int main( ) {
 ```  
   
 ##  <a name="replace_copy"></a>  replace_copy  
- ソース範囲内の各要素が指定された値に一致するかどうかを調べ、一致する場合は置き換えて結果を新しいターゲット範囲にコピーします。  
+ Examines each element in a source range and replaces it if it matches a specified value while copying the result into a new destination range.  
   
 ```  
  template<class InputIterator, class OutputIterator, class Type>  
@@ -5801,35 +5818,35 @@ int main( ) {
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が置き換えられる範囲内の最初の要素の位置を指定する入力反復子。  
+ An input iterator pointing to the position of the first element in the range from which elements are being replaced.  
   
  `last`  
- 要素が置き換えられる範囲内の最後の要素の 1 つ後ろの位置を指定する入力反復子。  
+ An input iterator pointing to the position one past the final element in the range from which elements are being replaced.  
   
  `result`  
- 変更された要素シーケンスのコピー先ターゲット範囲の、最初の要素を指定する出力反復子。  
+ An output iterator pointing to the first element in the destination range to where the altered sequence of elements is being copied.  
   
  `_OldVal`  
- 置き換えられる要素の古い値。  
+ The old value of the elements being replaced.  
   
  `_NewVal`  
- 古い値を持つ要素に割り当てられる新しい値。  
+ The new value being assigned to the elements with the old value.  
   
-### <a name="return-value"></a>戻り値  
- 変更された要素シーケンスのコピー先ターゲット範囲内の最後の要素の 1 つ後ろの位置を指し示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator pointing to the position one past the final element in the destination range to where the altered sequence of elements is being copied.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲とターゲット範囲は重複できません。また、両方とも有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source and destination ranges referenced must not overlap and must both be valid: all pointers must be dereferenceable and within the sequences the last position is reachable from the first by incrementation.  
   
- 置き換えられなかった要素の順序はそのままになります。  
+ The order of the elements not replaced remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的: がある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) 新しい値の割り当て。  
+ The complexity is linear: there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments of new values.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_replace_copy.cpp  
@@ -5887,7 +5904,7 @@ int main( ) {
 ```  
   
 ##  <a name="replace_copy_if"></a>  replace_copy_if  
- ソース範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えて結果を新しいターゲット範囲にコピーします。  
+ Examines each element in a source range and replaces it if it satisfies a specified predicate while copying the result into a new destination range.  
   
 ```  
 template<class InputIterator, class OutputIterator, class Predicate, class Type>  
@@ -5900,35 +5917,35 @@ OutputIterator replace_copy_if(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が置き換えられる範囲内の最初の要素の位置を指定する入力反復子。  
+ An input iterator pointing to the position of the first element in the range from which elements are being replaced.  
   
  `last`  
- 要素が置き換えられる範囲内の最後の要素の 1 つ後ろの位置を指定する入力反復子。  
+ An input iterator pointing to the position one past the final element in the range from which elements are being replaced.  
   
  `result`  
- 要素のコピー先ターゲット範囲内の最初の要素の位置を指し示す出力反復子。  
+ An output iterator pointing to the position of the first element in the destination range to which elements are being copied.  
   
  `_Pred`  
- 満たす必要のある単項述語は、置き換えられる要素の値です。  
+ The unary predicate that must be satisfied is the value of an element is to be replaced.  
   
  `val`  
- 古い値が述語を満たす要素に割り当てられている新しい値。  
+ The new value being assigned to the elements whose old value satisfies the predicate.  
   
-### <a name="return-value"></a>戻り値  
- 変更された要素シーケンスのコピー先ターゲット範囲内の最後の要素の 1 つ後ろの位置を指し示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator pointing to the position one past the final element in the destination range to where the altered sequence of elements is being copied.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲とターゲット範囲は重複できません。また、両方とも有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source and destination ranges referenced must not overlap and must both be valid: all pointers must be dereferenceable and within the sequences the last position is reachable from the first by incrementation.  
   
- 置き換えられなかった要素の順序はそのままになります。  
+ The order of the elements not replaced remains stable.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的です。ある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) 新しい値の割り当て。  
+ The complexity is linear; there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments of new values.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_replace_copy_if.cpp  
@@ -5993,7 +6010,7 @@ int main( ) {
 ```  
   
 ##  <a name="replace_if"></a>  replace_if  
- 範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えます。  
+ Examines each element in a range and replaces it if it satisfies a specified predicate.  
   
 ```  
 template<class ForwardIterator, class Predicate, class Type>  
@@ -6001,31 +6018,31 @@ void replace_if(ForwardIterator first, ForwardIterator last, Predicate pred, con
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素が置き換えられる範囲内の最初の要素の位置を指定する前方反復子。  
+ A forward iterator pointing to the position of the first element in the range from which elements are being replaced.  
   
  `last`  
- 要素が置き換えられる範囲内の最後の要素の 1 つ後ろの位置を指定する反復子。  
+ An iterator pointing to the position one past the final element in the range from which elements are being replaced.  
   
  `_Pred`  
- 満たす必要のある単項述語は、置き換えられる要素の値です。  
+ The unary predicate that must be satisfied is the value of an element is to be replaced.  
   
  `val`  
- 古い値が述語を満たす要素に割り当てられている新しい値。  
+ The new value being assigned to the elements whose old value satisfies the predicate.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 置き換えられなかった要素の順序はそのままになります。  
+ The order of the elements not replaced remains stable.  
   
- アルゴリズム `replace_if` は、アルゴリズム **replace** の汎化で、指定した定数値への等価性ではなく、任意の述語を指定できます。  
+ The algorithm `replace_if` is a generalization of the algorithm **replace**, allowing any predicate to be specified, rather than equality to a specified constant value.  
   
- 要素間の等価性を決定するために使用される `operator==` は、そのオペランド間の同値関係を示している必要があります。  
+ The `operator==` used to determine the equality between elements must impose an equivalence relation between its operands.  
   
- 複雑さは線形的: がある ( `last`  -   `first`) の等価比較と最大で ( `last`  -   `first`) 新しい値の割り当て。  
+ The complexity is linear: there are ( `last` -  `first`) comparisons for equality and at most ( `last` -  `first`) assignments of new values.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_replace_if.cpp  
@@ -6070,7 +6087,7 @@ int main( ) {
 ```  
   
 ##  <a name="reverse"></a>  reverse  
- 範囲内の要素の順序を反転させます。  
+ Reverses the order of the elements within a range.  
   
 ```  
 template<class BidirectionalIterator>  
@@ -6078,17 +6095,17 @@ template<class BidirectionalIterator>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素の順序を変える範囲内の最初の要素の位置を指し示す双方向反復子。  
+ A bidirectional iterator pointing to the position of the first element in the range within which the elements are being permuted.  
   
  `last`  
- 要素の順序を変える範囲内の、最後の要素の 1 つ後ろの位置を指し示す入力反復子。  
+ A bidirectional iterator pointing to the position one past the final element in the range within which the elements are being permuted.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_reverse.cpp  
@@ -6131,7 +6148,7 @@ The modified vector v1 with values reversed is:
 ```  
   
 ##  <a name="reverse_copy"></a>  reverse_copy  
- ソース範囲内の要素の順序を反転し、結果をターゲット範囲にコピーします。  
+ Reverses the order of the elements within a source range while copying them into a destination range  
   
 ```  
 template<class BidirectionalIterator, class OutputIterator>  
@@ -6142,23 +6159,23 @@ OutputIterator reverse_copy(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 要素の順序を変えるソース範囲内の最初の要素の位置を指し示す双方向反復子。  
+ A bidirectional iterator pointing to the position of the first element in the source range within which the elements are being permuted.  
   
  `last`  
- 要素の順序を変えるソース範囲内の、最後の要素の 1 つ後ろの位置を指し示す入力反復子。  
+ A bidirectional iterator pointing to the position one past the final element in the source range within which the elements are being permuted.  
   
  `result`  
- 要素のコピー先ターゲット範囲内の最初の要素の位置を指し示す出力反復子。  
+ An output iterator pointing to the position of the first element in the destination range to which elements are being copied.  
   
-### <a name="return-value"></a>戻り値  
- 変更された要素シーケンスのコピー先ターゲット範囲内の最後の要素の 1 つ後ろの位置を指し示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator pointing to the position one past the final element in the destination range to where the altered sequence of elements is being copied.  
   
-### <a name="remarks"></a>コメント  
- 参照されているソース範囲とターゲット範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The source and destination ranges referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_reverse_copy.cpp  
@@ -6199,7 +6216,7 @@ int main( ) {
 ```  
   
 ##  <a name="rotate"></a>  rotate  
- 2 つの隣接する範囲の要素を交換します。  
+ Exchanges the elements in two adjacent ranges.  
   
 ```  
 template<class ForwardIterator>  
@@ -6207,22 +6224,22 @@ template<class ForwardIterator>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 回転対象の範囲内の最初の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be rotated.  
   
  `middle`  
- 範囲の境界を定義する前方反復子。範囲の最初の部分にある要素と交換される要素が含まれる 2 番目の部分の最初の要素の位置を示します。  
+ A forward iterator defining the boundary within the range that addresses the position of the first element in the second part of the range whose elements are to be exchanged with those in the first part of the range.  
   
 `Last`  
- 回転対象の範囲内の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be rotated.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは線形的で最大で ( `last`  -   `first`) を交換します。  
+ The complexity is linear with at most ( `last` -  `first`) swaps.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_rotate.cpp  
@@ -6298,7 +6315,7 @@ After the rotation of a single deque element to the back,
 ```  
   
 ##  <a name="rotate_copy"></a>  rotate_copy  
- ソース範囲内の 2 つの隣接する範囲の要素を交換し、結果をターゲット範囲にコピーします。  
+ Exchanges the elements in two adjacent ranges within a source range and copies the result to a destination range.  
   
 ```  
 template<class ForwardIterator, class OutputIterator>  
@@ -6310,28 +6327,28 @@ OutputIterator rotate_copy(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 回転対象の範囲内の最初の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be rotated.  
   
  `middle`  
- 範囲の境界を定義する前方反復子。範囲の最初の部分にある要素と交換される要素が含まれる 2 番目の部分の最初の要素の位置を示します。  
+ A forward iterator defining the boundary within the range that addresses the position of the first element in the second part of the range whose elements are to be exchanged with those in the first part of the range.  
   
  _ `Last`  
- 回転対象の範囲内の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be rotated.  
   
  `result`  
- ターゲット範囲の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range.  
   
-### <a name="return-value"></a>戻り値  
- ターゲット範囲の最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the final element in the destination range.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは線形的で最大で ( `last`  -   `first`) を交換します。  
+ The complexity is linear with at most ( `last` -  `first`) swaps.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_rotate_copy.cpp  
@@ -6391,7 +6408,7 @@ int main() {
 ```  
   
 ##  <a name="search"></a>  search  
- 要素が特定の要素シーケンス内の要素と等しいか、または要素が二項述語で指定される意味において特定のシーケンス内の要素と等価であるシーケンスが、対象範囲内で最初に出現する位置を検索します。  
+ Searches for the first occurrence of a sequence within a target range whose elements are equal to those in a given sequence of elements or whose elements are equivalent in a sense specified by a binary predicate to the elements in the given sequence.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -6411,33 +6428,33 @@ template<class ForwardIterator1, class ForwardIterator2, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last1`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
   `first2`  
- 照合範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be matched.  
   
  `last2`  
- 照合範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be matched.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 指定したシーケンスと一致するか二項述語で指定された意味で等価である、最初のサブシーケンスの最初の要素の位置を指す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first element of the first subsequence that matches the specified sequence or that is equivalent in a sense specified by a binary predicate.  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position is reachable from the first by incrementation.  
   
- 平均の複雑さは、検索範囲のサイズに対して線形的で、最も複雑な場合は、検索対象のシーケンスのサイズに対しても線形的です。  
+ Average complexity is linear with respect to the size of the searched range, and worst case complexity is also linear with respect to the size of the sequence being searched for.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_search.cpp  
@@ -6536,7 +6553,7 @@ There is a sequence of elements in v1 that are equivalent
 ```  
   
 ##  <a name="search_n"></a>  search_n  
- 特定の値を持つか、二項述語によって指定される値と関連する、指定された数の要素で構成される範囲内の最初のサブシーケンスを検索します。  
+ Searches for the first subsequence in a range that of a specified number of elements having a particular value or a relation to that value as specified by a binary predicate.  
   
 ```  
 template<class ForwardIterator1, class Diff2, class Type>  
@@ -6556,33 +6573,33 @@ template<class ForwardIterator1, class Diff2, class Type, class BinaryPredicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 検索範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be searched.  
   
  `last1`  
- 検索範囲の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be searched.  
   
  `count`  
- 検索対象のサブシーケンスのサイズ。  
+ The size of the subsequence being searched for.  
   
  `val`  
- 検索対象のシーケンス内の要素の値。  
+ The value of the elements in the sequence being searched for.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 指定したシーケンスと一致するか二項述語で指定された意味で等価である、最初のサブシーケンスの最初の要素の位置を指す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator addressing the position of the first element of the first subsequence that matches the specified sequence or that is equivalent in a sense specified by a binary predicate.  
   
-### <a name="remarks"></a>コメント  
- 要素と指定された値の間の一致を判断するために使用される `operator==` によって、オペランド間の等価関係が強制される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The `operator==` used to determine the match between an element and the specified value must impose an equivalence relation between its operands.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは、検索されたサイズに対して線形的です。  
+ Complexity is linear with respect to the size of the searched.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_search_n.cpp  
@@ -6666,7 +6683,7 @@ There is a match of a sequence ( 5 5 5 ) under the equivalence
 ```  
   
 ##  <a name="set_difference"></a>  set_difference  
- 1 つの並べ替えられたソース範囲内に属するが、2 番目の並べ替えられたソース範囲には属さないすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
+ Unites all of the elements that belong to one sorted source range, but not to a second sorted source range, into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
  template<class InputIterator1, class InputIterator2, class OutputIterator>  
@@ -6688,42 +6705,42 @@ OutputIterator set_difference(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first1`  
- 2 つのソース範囲の差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be united and sorted into a single range representing the difference of the two source ranges.  
   
  `last1`  
- 2 つのソース範囲の差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be united and sorted into a single range representing the difference of the two source ranges.  
   
  `first2`  
- 2 つのソース範囲の差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the difference of the two source ranges.  
   
  `last2`  
- 2 つのソース範囲の差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the difference of the two source ranges.  
   
  `result`  
- 2 つのソース範囲の差を表すために 2 つのソース範囲が単一の並べ替え済みの範囲に結合されるターゲット範囲の、最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range where the two source ranges are to be united into a single sorted range representing the difference of the two source ranges.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのソース範囲の差を表すための並べ替え済みのターゲット範囲の、最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the last element in the sorted destination range representing the difference of the two source ranges.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- ターゲット範囲はソース範囲のいずれかと重ならないようにします。また、最初のソース範囲を格納するのに十分な大きさが必要です。  
+ The destination range should not overlap either of the source ranges and should be large enough to contain the first source range.  
   
- `set_difference` アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the `set_difference` algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- 各範囲内の要素の相対順序はターゲット範囲内でも維持されるため、操作は安定しています。 ソース範囲が merge アルゴリズムによって変更されることはありません。  
+ The operation is stable as the relative order of elements within each range is preserved in the destination range. The source ranges are not modified by the algorithm merge.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 両方のソース範囲に同等の要素がある場合は、ターゲット範囲では、最初の範囲の要素が、2 番目のソース範囲の要素よりも前に置かれます。 ソース範囲で要素が重複している場合、たとえば、最初のソース範囲の要素の数が 2 番目のソース範囲の要素の数を上回る場合、ターゲット範囲には、最初のソース範囲と 2 番目のソース範囲の該当する要素の出現回数の差を示す数値が含まれます。  
+ The value types of the input iterators need be less-than-comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. When there are equivalent elements in both source ranges, the elements in the first range precede the elements from the second source range in the destination range. If the source ranges contain duplicates of an element such that there are more in the first source range than in the second, then the destination range will contain the number by which the occurrences of those elements in the first source range exceed the occurrences of those elements in the second source range.  
   
- アルゴリズムの複雑さは線形的で最大で 2 \* (( *last1 - first1*)-( *last2 - first2*)) - 1 空でないソース範囲の比較できます。  
+ The complexity of the algorithm is linear with at most 2 \* ( ( *last1 - first1*) - ( *last2 - first2*) ) - 1 comparisons for nonempty source ranges.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_set_diff.cpp  
@@ -6843,7 +6860,7 @@ int main( )
 ```  
   
 ##  <a name="set_intersection"></a>  set_intersection  
- 両方の並べ替えられたソース範囲に属するすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
+ Unites all of the elements that belong to both sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
  template<class InputIterator1, class InputIterator2, class OutputIterator>  
@@ -6865,42 +6882,42 @@ OutputIterator set_intersection(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 2 つのソース範囲の交差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be united and sorted into a single range representing the intersection of the two source ranges.  
   
  `last1`  
- 2 つのソース範囲の交差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be united and sorted into a single range representing the intersection of the two source ranges.  
   
   `first2`  
- 2 つのソース範囲の交差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the intersection of the two source ranges.  
   
  `last2`  
- 2 つのソース範囲の交差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the intersection of the two source ranges.  
   
- **_** *結果*  
- 2 つのソース範囲の交差を表すために 2 つのソース範囲が単一の並べ替え済みの範囲に結合されるターゲット範囲の、最初の要素の位置を示す出力反復子。  
+ **_** *Result*  
+ An output iterator addressing the position of the first element in the destination range where the two source ranges are to be united into a single sorted range representing the intersection of the two source ranges.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのソース範囲の交差を表すための並べ替え済みのターゲット範囲の、最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the last element in the sorted destination range representing the intersection of the two source ranges.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- ターゲット範囲はソース範囲のいずれかと重ならないようにします。また、ターゲット範囲を格納するのに十分な大きさが必要です。  
+ The destination range should not overlap either of the source ranges and should be large enough to contain the destination range.  
   
- merge アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the merge algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- 各範囲内の要素の相対順序はターゲット範囲内でも維持されるため、操作は安定しています。 ソース範囲がこのアルゴリズムによって変更されることはありません。  
+ The operation is stable as the relative order of elements within each range is preserved in the destination range. The source ranges are not modified by the algorithm.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 両方のソース範囲に同等の要素がある場合は、ターゲット範囲では、最初の範囲の要素が、2 番目のソース範囲の要素よりも前に置かれます。 ソース範囲内で要素が重複している場合、ターゲット範囲は、両方のソース範囲内に存在する該当する要素の最大数を含みます。  
+ The value types of the input iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. When there are equivalent elements in both source ranges, the elements in the first range precede the elements from the second source range in the destination range. If the source ranges contain duplicates of an element, then the destination range will contain the maximum number of those elements that occur in both source ranges.  
   
- アルゴリズムの複雑さは線形的で最大で 2 \* (( *last1 - first1*) + ( *last2 - first2*)) - 1 の空でないソース範囲の比較できます。  
+ The complexity of the algorithm is linear with at most 2 \* ( ( *last1 - first1*) + ( *last2 - first2*) ) - 1 comparisons for nonempty source ranges.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_set_intersection.cpp  
@@ -7014,7 +7031,7 @@ int main() {
 ```  
   
 ##  <a name="set_symmetric_difference"></a>  set_symmetric_difference  
- 並べ替えられたソース範囲の一方には属するが、両方には属さないすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
+ Unites all of the elements that belong to one, but not both, of the sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class InputIterator1, class InputIterator2, class OutputIterator>  
@@ -7036,42 +7053,42 @@ OutputIterator set_symmetric_difference(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 2 つのソース範囲の対称差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be united and sorted into a single range representing the symmetric difference of the two source ranges.  
   
  `last1`  
- 2 つのソース範囲の対称差を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be united and sorted into a single range representing the symmetric difference of the two source ranges.  
   
   `first2`  
- 2 つのソース範囲の対称差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the symmetric difference of the two source ranges.  
   
  `last2`  
- 2 つのソース範囲の対称差を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the symmetric difference of the two source ranges.  
   
- **_** *結果*  
- 2 つのソース範囲の対称差を表すために 2 つのソース範囲が単一の並べ替え済みの範囲に結合されるターゲット範囲の、最初の要素の位置を示す出力反復子。  
+ **_** *Result*  
+ An output iterator addressing the position of the first element in the destination range where the two source ranges are to be united into a single sorted range representing the symmetric difference of the two source ranges.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのソース範囲の対称差を表すための並べ替え済みのターゲット範囲の、最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the last element in the sorted destination range representing the symmetric difference of the two source ranges.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- ターゲット範囲はソース範囲のいずれかと重ならないようにします。また、ターゲット範囲を格納するのに十分な大きさが必要です。  
+ The destination range should not overlap either of the source ranges and should be large enough to contain the destination range.  
   
- **merge** アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the **merge** algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- 各範囲内の要素の相対順序はターゲット範囲内でも維持されるため、操作は安定しています。 ソース範囲が merge アルゴリズムによって変更されることはありません。  
+ The operation is stable as the relative order of elements within each range is preserved in the destination range. The source ranges are not modified by the algorithm merge.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 両方のソース範囲に同等の要素がある場合は、ターゲット範囲では、最初の範囲の要素が、2 番目のソース範囲の要素よりも前に置かれます。 ソース範囲内で要素が重複している場合、ターゲット範囲には、1 番目と 2 番目のソース範囲内の該当する要素の出現回数の差を示す絶対値が含まれます。  
+ The value types of the input iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. When there are equivalent elements in both source ranges, the elements in the first range precede the elements from the second source range in the destination range. If the source ranges contain duplicates of an element, then the destination range will contain the absolute value of the number by which the occurrences of those elements in the one of the source ranges exceeds the occurrences of those elements in the second source range.  
   
- アルゴリズムの複雑さは線形的で最大で 2 \* ((*last1 - first1*)-(*last2 - first2*)) - 1 の空でないソース範囲の比較できます。  
+ The complexity of the algorithm is linear with at most 2 \* ( (*last1 - first1*) - (*last2 - first2*) ) - 1 comparisons for nonempty source ranges.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_set_sym_diff.cpp  
@@ -7191,7 +7208,7 @@ int main( )
 ```  
   
 ##  <a name="set_union"></a>  set_union  
- 2 つの並べ替えられたソース範囲の少なくとも一方に属するすべての要素を単一の並べ替えられたターゲット範囲として結合します。順序の基準は二項述語によって指定できます。  
+ Unites all of the elements that belong to at least one of two sorted source ranges into a single, sorted destination range, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
  template<class InputIterator1, class InputIterator2, class OutputIterator>  
@@ -7212,42 +7229,42 @@ OutputIterator set_union(
     BinaryPredicate comp );  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 2 つのソース範囲の和集合を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first of two sorted source ranges to be united and sorted into a single range representing the union of the two source ranges.  
   
  `last1`  
- 2 つのソース範囲の和集合を表すために単一の範囲に結合され並べ替えられる 2 つの並べ替え済みソース範囲の、最初の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in the first of two sorted source ranges to be united and sorted into a single range representing the union of the two source ranges.  
   
   `first2`  
- 2 つのソース範囲の和集合を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the union of the two source ranges.  
   
  `last2`  
- 2 つのソース範囲の和集合を表すために単一の範囲に結合され並べ替えられる 2 つの連続する並べ替え済みソース範囲の、2 番目の範囲の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the last element in second of two consecutive sorted source ranges to be united and sorted into a single range representing the union of the two source ranges.  
   
- **_** *結果*  
- 2 つのソース範囲の和集合を表すために 2 つのソース範囲が単一の並べ替え済みの範囲に結合されるターゲット範囲の、最初の要素の位置を示す出力反復子。  
+ **_** *Result*  
+ An output iterator addressing the position of the first element in the destination range where the two source ranges are to be united into a single sorted range representing the union of the two source ranges.  
   
  `comp`  
- 1 つの要素が別の要素より大きいという意味を定義するユーザー定義の述語関数オブジェクト。 2 項述語は 2 つの引数を受け取り、最初の要素が 2 番目の要素より小さい場合は **true** 、そうでない場合は **false** を返す必要があります。  
+ User-defined predicate function object that defines the sense in which one element is greater than another. The binary predicate takes two arguments and should return **true** when the first element is less than the second element and **false** otherwise.  
   
-### <a name="return-value"></a>戻り値  
- 2 つのソース範囲の和集合を表すための並べ替え済みのターゲット範囲の、最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the last element in the sorted destination range representing the union of the two source ranges.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソース範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation.  
   
- ターゲット範囲はソース範囲のいずれかと重ならないようにします。また、ターゲット範囲を格納するのに十分な大きさが必要です。  
+ The destination range should not overlap either of the source ranges and should be large enough to contain the destination range.  
   
- **merge** アルゴリズムを適用するための事前条件として、それぞれの並べ替えられたソース範囲は、結合された範囲の並べ替えにアルゴリズムが使用したのと同じ順序の基準に従って並べ替えられている必要があります。  
+ The sorted source ranges must each be arranged as a precondition to the application of the **merge** algorithm in accordance with the same ordering as is to be used by the algorithm to sort the combined ranges.  
   
- 各範囲内の要素の相対順序はターゲット範囲内でも維持されるため、操作は安定しています。 ソース範囲が **merge**アルゴリズムによって変更されることはありません。  
+ The operation is stable as the relative order of elements within each range is preserved in the destination range. The source ranges are not modified by the algorithm **merge**.  
   
- 入力反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 つの要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます。 両方のソース範囲に同等の要素がある場合は、ターゲット範囲では、最初の範囲の要素が、2 番目のソース範囲の要素よりも前に置かれます。 ソース範囲内で要素が重複している場合、ターゲット範囲は、両方のソース範囲内に存在する該当する要素の最大数を含みます。  
+ The value types of the input iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements. When there are equivalent elements in both source ranges, the elements in the first range precede the elements from the second source range in the destination range. If the source ranges contain duplicates of an element, then the destination range will contain the maximum number of those elements that occur in both source ranges.  
   
- アルゴリズムの複雑さは線形的で最大で 2 \* (( *last1 - first1*)-( *last2 - first2*)) - 1 の比較します。  
+ The complexity of the algorithm is linear with at most 2 \* ( ( *last1 - first1*) - ( *last2 - first2*) ) - 1 comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_set_union.cpp  
@@ -7367,7 +7384,7 @@ int main( )
 ```  
   
 ##  <a name="shuffle"></a>  std::shuffle  
- 乱数ジェネレーターを使用して、指定された範囲の要素をシャッフル (再配置) します。  
+ Shuffles (rearranges) elements for a given range by using a random number generator.  
   
 ```  
 template<class RandomAccessIterator, class UniformRandomNumberGenerator>  
@@ -7376,24 +7393,21 @@ void shuffle(RandomAccessIterator first,
     UniformRandomNumberGenerator&& gen);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- シャッフルされる範囲 (境界を含む) の最初の要素に対する反復子。 
-          `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
+ An iterator to the first element in the range to be shuffled, inclusive. Must meet the requirements of `RandomAccessIterator` and `ValueSwappable`.  
   
  `last`  
- シャッフルされる範囲 (境界を含まない) の最後の要素に対する反復子。 
-          `RandomAccessIterator` および `ValueSwappable` の要件を満たしている必要があります。  
+ An iterator to the last element in the range to be shuffled, exclusive. Must meet the requirements of `RandomAccessIterator` and `ValueSwappable`.  
   
  `gen`  
- 
-          `shuffle()` 関数が操作で使用する乱数ジェネレーター。 `UniformRandomNumberGenerator` の要件を満たしている必要があります。  
+ The random number generator that the `shuffle()` function will use for the operation. Must meet the requirements of a `UniformRandomNumberGenerator`.  
   
-### <a name="remarks"></a>コメント  
- `shuffle()` を使用するコード サンプルの詳細については、「[\<random>](../standard-library/random.md)」を参照してください。  
+### <a name="remarks"></a>Remarks  
+ For more information, and a code sample that uses `shuffle()`, see [\<random>](../standard-library/random.md).  
   
 ##  <a name="sort"></a>  sort  
- 指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って配置します。  
+ Arranges the elements in a specified range into a nondescending order or according to an ordering criterion specified by a binary predicate.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -7409,24 +7423,24 @@ template<class RandomAccessIterator, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 並べ替えられる範囲内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the range to be sorted.  
   
  `last`  
- 並べ替えられる範囲内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the range to be sorted.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 この二項述語は、2 つの引数を取り、2 つの引数が順番どおりの場合は `true`、それ以外の場合は `false` を返します。 この比較子関数は、シーケンスからの要素のペアで厳密弱順序を強制する必要があります。 詳細については、「[アルゴリズム](../standard-library/algorithms.md)」を参照してください。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. This binary predicate takes two arguments and returns `true` if the two arguments are in order and `false` otherwise. This comparator function must impose a strict weak ordering on pairs of elements from the sequence. For more information, see [Algorithms](../standard-library/algorithms.md).  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。 `sort` アルゴリズムは安定していないため、同等の要素の相対順序が保持されることを保証しません。 アルゴリズム `stable_sort` は元の順序を保持します。  
+ Elements are equivalent, but not necessarily equal, if neither is less than the other. The `sort` algorithm is not stable and so does not guarantee that the relative ordering of equivalent elements will be preserved. The algorithm `stable_sort` does preserve this original ordering.  
   
- 並べ替えの複雑さの平均は*O*( *N*ログ*N*) ここで、 *N* =  *- 姓*です。  
+ The average of a sort complexity is  *O*( *N* log  *N*), where  *N* =  *last - first*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_sort.cpp  
@@ -7495,7 +7509,7 @@ Resorted (UDgreater) vector v1 = ( 11 10 9 8 7 6 5 4 3 2 1 0 )
 ```  
   
 ##  <a name="sort_heap"></a>  sort_heap  
- ヒープを並べ替えられた範囲に変換します。  
+ Converts a heap into a sorted range.  
   
 ```  
 template<class RandomAccessIterator>  
@@ -7510,34 +7524,34 @@ template<class RandomAccessIterator, class Predicate>
       Predicate comp);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ターゲット ヒープ内の最初の要素の位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position of the first element in the target heap.  
   
  `last`  
- ターゲット ヒープ内の最後の要素の 1 つ後ろの位置を示すランダム アクセス反復子。  
+ A random-access iterator addressing the position one past the final element in the target heap.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- ヒープには次の 2 つのプロパティがあります。  
+### <a name="remarks"></a>Remarks  
+ Heaps have two properties:  
   
--   最初の要素は常に最大です。  
+-   The first element is always the largest.  
   
--   要素は体数時間で追加または削除できます。  
+-   Elements may be added or removed in logarithmic time.  
   
- このアルゴリズムの適用後、適用された範囲はヒープではなくなります。  
+ After the application if this algorithm, the range it was applied to is no longer a heap.  
   
- これは、同等の要素の相対順序が保持されるとは限らないため、安定した並べ替えではありません。  
+ This is not a stable sort because the relative order of equivalent elements is not necessarily preserved.  
   
- ヒープは、優先順位キューを実装するのに最適な方法です。C++ 標準ライブラリ コンテナー アダプター [priority_queue Class](../standard-library/priority-queue-class.md) の実装に使用されます。  
+ Heaps are an ideal way to implement priority queues and they are used in the implementation of the C++ Standard Library container adaptor [priority_queue Class](../standard-library/priority-queue-class.md).  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは、最大で*N*ログ*N*ここで、 *N* = ( *- 姓*)。  
+ The complexity is at most  *N* log  *N*, where  *N* = ( *last - first*).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_sort_heap.cpp  
@@ -7588,7 +7602,7 @@ int main() {
 ```  
   
 ##  <a name="stable_partition"></a>  stable_partition  
- 範囲内の要素を 2 つの分離されたセットに分類し、等価要素の相対順序は維持して、単項述語を満たす要素が単項述語を満たさない要素よりも前に来るように配置します。  
+ Classifies elements in a range into two disjoint sets, with those elements satisfying a unary predicate preceding those that fail to satisfy it, preserving the relative order of equivalent elements.  
   
 ```  
 template<class BidirectionalIterator, class Predicate>  
@@ -7599,25 +7613,25 @@ BidirectionalIterator stable_partition(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- パーティション分割される範囲内の最初の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the range to be partitioned.  
   
  `last`  
- パーティション分割される範囲内の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position one past the final element in the range to be partitioned.  
   
  `_Pred`  
- 要素が分類される場合に満たされる条件を定義するユーザー定義の述語関数オブジェクト。 述語は 1 つの引数を取り、**true** または **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if an element is to be classified. A predicate takes single argument and returns **true** or **false**.  
   
-### <a name="return-value"></a>戻り値  
- 述語条件を満たさない範囲内の最初の要素の位置を示す双方向反復子。  
+### <a name="return-value"></a>Return Value  
+ A bidirectional iterator addressing the position of the first element in the range to not satisfy the predicate condition.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- *Pr* ( *a*,  *b*) と *Pr* ( *b*,  *a*) の両方が false の場合 (この *Pr* はパラメーター指定した述語)、要素 *a* と *b* は同等ですが、必ずしも等しい必要はありません。 **stable_ partition** アルゴリズムは安定しており、同等の要素の相対順序が保持されることを保証します。 アルゴリズム **partition** はこの元の順序を必ずしも保持しません。  
+ Elements  *a* and  *b* are equivalent, but not necessarily equal, if both  *Pr* ( *a*,  *b*) is false and  *Pr* ( *b*,  *a*) if false, where  *Pr* is the parameter-specified predicate. The **stable_ partition** algorithm is stable and guarantees that the relative ordering of equivalent elements will be preserved. The algorithm **partition** does not necessarily preserve this original ordering.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_stable_partition.cpp  
@@ -7663,7 +7677,7 @@ int main( ) {
 ```  
   
 ##  <a name="stable_sort"></a>  stable_sort  
- 指定された範囲の要素を、降順以外の順序、または二項述語で指定された順序の基準に従って、等価要素の相対順序を維持して配置します。  
+ Arranges the elements in a specified range into a nondescending order or according to an ordering criterion specified by a binary predicate and preserves the relative ordering of equivalent elements.  
   
 ```  
 template<class BidirectionalIterator>  
@@ -7677,24 +7691,24 @@ void stable_sort(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 並べ替えられる範囲内の最初の要素の位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position of the first element in the range to be sorted.  
   
  `last`  
- 並べ替えられる範囲内の最後の要素の 1 つ後ろの位置を示す双方向反復子。  
+ A bidirectional iterator addressing the position one past the final element in the range to be sorted.  
   
  `comp`  
- 順序内の次の要素によって満たされる比較条件を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the comparison criterion to be satisfied by successive elements in the ordering. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation.  
   
- どちらの要素も他方より小さくない場合、要素は同等ですが、必ずしも等しいわけではありません。 **sort** アルゴリズムは安定しており、同等の要素の相対順序が保持されることを保証します。  
+ Elements are equivalent, but not necessarily equal, if neither is less than the other. The **sort** algorithm is stable and guarantees that the relative ordering of equivalent elements will be preserved.  
   
- 実行時の複雑さの`stable_sort`、使用可能なメモリの量によって異なりますが最良の場合 (十分なメモリを指定) は*O*( *N*ログ*N*) 最悪の場合は、 *O*( *N* (ログ*N* ) 2) ここで、 *N* =  *- 姓します。* 通常、**sort** アルゴリズムは `stable_sort` よりもはるかに高速です。  
+ The run-time complexity of `stable_sort` depends on the amount of memory available, but the best case (given sufficient memory) is  *O*( *N* log  *N*) and the worst case is  *O*(  *N* ( log  *N* )2 ), where  *N* =  *last - First.* Usually, the **sort** algorithm is significantly faster than `stable_sort`.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_stable_sort.cpp  
@@ -7762,7 +7776,7 @@ Resorted (UDgreater) vector v1 = ( 10 10 8 8 6 6 4 4 2 2 0 0 )
 ```  
   
 ##  <a name="swap"></a>  swap  
- 最初のオーバーライドは 2 つのオブジェクトの値を交換します。 2 番目のオーバーライドは、オブジェクトの 2 つの配列間で値を交換します。  
+ The first override exchanges the values of two objects. The second override exchanges the values between two arrays of objects.  
   
 ```  
 template<class Type>  
@@ -7776,17 +7790,17 @@ template<class Type, size_t N>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- 最初のオーバーライドでは、最初のオブジェクトがそのコンテンツを交換させます。 2 番目のオーバーライドでは、オブジェクトの最初の配列がそのコンテンツを交換させます。  
+ For the first override, the first object to have its contents exchanged. For the second override, the first array of objects to have its contents exchanged.  
   
  `right`  
- 最初のオーバーライドでは、2 番目のオブジェクトがそのコンテンツを交換させます。 2 番目のオーバーライドでは、オブジェクトの 2 番目の配列がそのコンテンツを交換させます。  
+ For the first override, the second object to have its contents exchanged. For the second override, the second array of objects to have its contents exchanged.  
   
-### <a name="remarks"></a>コメント  
- 最初のオーバーロードは、個々のオブジェクトで動作するように設計されています。 2 番目のオーバー ロードは、2 つの配列間でオブジェクトのコンテンツをスワップします。  
+### <a name="remarks"></a>Remarks  
+ The first overload is designed to operate on individual objects. The second overload swaps the contents of objects between two arrays.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_swap.cpp  
@@ -7843,7 +7857,7 @@ Vector v2 is ( 0 1 2 3 4 5 6 7 8 9 10 ).
 ```  
   
 ##  <a name="swap_ranges"></a>  swap_ranges  
- 1 つの範囲の要素を、同じサイズの別の範囲の要素と交換します。  
+ Exchanges the elements of one range with the elements of another, equal sized range.  
   
 ```  
 template<class ForwardIterator1, class ForwardIterator2>  
@@ -7854,25 +7868,25 @@ ForwardIterator2 swap_ranges(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 要素が交換される最初の範囲の最初の位置を指す前方反復子。  
+ A forward iterator pointing to the first position of the first range whose elements are to be exchanged.  
   
  `last1`  
- 要素が交換される最初の範囲の最後の位置の 1 つ後ろを指す前方反復子。  
+ A forward iterator pointing to one past the final position of the first range whose elements are to be exchanged.  
   
   `first2`  
- 要素が交換される 2 番目の範囲の最初の位置を指す前方反復子。  
+ A forward iterator pointing to the first position of the second range whose elements are to be exchanged.  
   
-### <a name="return-value"></a>戻り値  
- 要素が交換される 2 番目の範囲の最後の位置の 1 つ後ろを指す前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator pointing to one past the final position of the second range whose elements are to be exchanged.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 2 番目の範囲は最初の範囲と同じ大きさにする必要があります。  
+### <a name="remarks"></a>Remarks  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position is reachable from the first by incrementation. The second range has to be as large as the first range.  
   
- 複雑さは線形的で`last1`  -   `first1`スワップを実行します。 同じ種類のコンテナーから要素がスワップされる場合、そのコンテナーの `swap` メンバー関数を使用する必要があります。これは、メンバー関数には一般的に一定の複雑さがあるからです。  
+ The complexity is linear with `last1` -  `first1` swaps performed. If elements from containers of the same type are being swapped, them the `swap` member function from that container should be used, because the member function typically has constant complexity.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_swap_ranges.cpp  
@@ -7934,7 +7948,7 @@ After the swap_range deque d1 is   ( 0 1 2 3 4 5 ).
 ```  
   
 ##  <a name="transform"></a>  transform  
- 指定された関数オブジェクトをソース範囲内の各要素、または 2 つのソース範囲内の要素のペアに適用し、関数オブジェクトの戻り値をターゲット範囲にコピーします。  
+ Applies a specified function object to each element in a source range or to a pair of elements from two source ranges and copies the return values of the function object into a destination range.  
   
 ```  
  template<class InputIterator, class OutputIterator, class UnaryFunction>  
@@ -7954,33 +7968,33 @@ OutputIterator transform(
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first1`  
- 操作する最初のソース範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the first source range to be operated on.  
   
  `last1`  
- 操作する最初のソース範囲内の最後の要素の 1 つ後ろの位置を示す入力反復子。  
+ An input iterator addressing the position one past the final element in the first source range operated on.  
   
   `first2`  
- 操作する 2 番目のソース範囲内の最初の要素の位置を示す入力反復子。  
+ An input iterator addressing the position of the first element in the second source range to be operated on.  
   
  `result`  
- ターゲット範囲の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range.  
   
  `_Func`  
- 最初のソース範囲内の各要素に適用されるアルゴリズムの最初のバージョンで使用されるユーザー定義の単項関数オブジェクト、または順方向順序で 2 つのソース範囲内にペアで適用されるアルゴリズムの 2 番目のバージョンで使用されるユーザー定義 (UD) の二項関数オブジェクト。  
+ User-defined unary function object used in the first version of the algorithm that is applied to each element in the first source range or A user-defined (UD) binary function object used in the second version of the algorithm that is applied pairwise, in a forward order, to the two source ranges.  
   
-### <a name="return-value"></a>戻り値  
- 関数オブジェクトで変換された出力要素を受け取るターゲット範囲の最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the final element in the destination range that is receiving the output elements transformed by the function object.  
   
-### <a name="remarks"></a>コメント  
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつ各シーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 変換先の範囲は、変換されたソース範囲を格納するのに十分な大きさである必要があります。  
+### <a name="remarks"></a>Remarks  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within each sequence the last position must be reachable from the first by incrementation. The destination range must be large enough to contain the transformed source range.  
   
- 場合`result`に設定して`first1`で最初のバージョンのアルゴリズムでは、し、ソースとターゲットの範囲が同じであるし、シーケンスは場所で変更されます。 `result`範囲内の位置に対応してい場合があります [`first1`は + 1、 `last1`)。  
+ If `result` is set equal to  `first1` in the first version of the algorithm, then the source and destination ranges will be the same and the sequence will be modified in place. But the `result` may not address a position within the range [`first1` + 1, `last1`).  
   
- 複雑さは線形的で最大で (`last1` -  `first1`) の比較できます。  
+ The complexity is linear with at most (`last1` -  `first1`) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_transform.cpp  
@@ -8068,7 +8082,7 @@ Multiplying elements of the vectors v1mod and v2 pairwise gives:
 ```  
   
 ##  <a name="unique"></a>  unique  
- 指定された範囲内の互いに隣接する重複要素を削除します。  
+ Removes duplicate elements that are adjacent to each other in a specified range.  
   
 ```  
 template<class ForwardIterator>  
@@ -8084,33 +8098,33 @@ template<class ForwardIterator, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- 重複削除のスキャン範囲内の先頭の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the range to be scanned for duplicate removal.  
   
  `last`  
- 重複削除のスキャン範囲内の最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the range to be scanned for duplicate removal.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 連続する重複を含まない変更されたシーケンスの新しい末尾への前方反復子。削除されていない最後の要素の 1 つ後ろの位置を示します。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator to the new end of the modified sequence that contains no consecutive duplicates, addressing the position one past the last element not removed.  
   
-### <a name="remarks"></a>コメント  
- アルゴリズムの両方の形式により、連続した等値要素ペアの 2 番目の重複が削除されます。  
+### <a name="remarks"></a>Remarks  
+ Both forms of the algorithm remove the second duplicate of a consecutive pair of equal elements.  
   
- アルゴリズムの動作は安定しているため、削除が取り消された要素の相対順序は変更されません。  
+ The operation of the algorithm is stable so that the relative order of the undeleted elements is not changed.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。 シーケンス内の要素の数は、アルゴリズム **unique** によって変更されず、変更後のシーケンスの末尾の次の要素は逆参照可能ですが、指定されていません。  
+ The range referenced must be valid; all pointers must be dereferenceable and within the sequence the last position is reachable from the first by incrementation. he number of elements in the sequence is not changed by the algorithm **unique** and the elements beyond the end of the modified sequence are dereferenceable but not specified.  
   
- 複雑さは線形的で、必要とする ( `last`  -   `first`) - 1 の比較できます。  
+ The complexity is linear, requiring ( `last` -  `first`) - 1 comparisons.  
   
- リストは、パフォーマンスを向上させるより効率的なメンバー関数 "unique" を提供します。  
+ List provides a more efficient member function "unique", which may perform better.  
   
- 連想コンテナーでは、これらのアルゴリズムを使用できません。  
+ These algorithms cannot be used on an associative container.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_unique.cpp  
@@ -8198,7 +8212,7 @@ Removing adjacent elements satisfying the binary
 ```  
   
 ##  <a name="unique_copy"></a>  unique_copy  
- 互いに隣接する重複要素を除き、ソース範囲の要素をターゲット範囲にコピーします。  
+ Copies elements from a source range into a destination range except for the duplicate elements that are adjacent to each other.  
   
 ```  
  template<class InputIterator, class OutputIterator>  
@@ -8214,32 +8228,32 @@ OutputIterator unique_copy( InputIterator first,
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   `first`  
- ソース範囲内のコピーする最初の要素の位置を示す前方反復子。  
+ A forward iterator addressing the position of the first element in the source range to be copied.  
   
  `last`  
- ソース範囲内のコピーする最後の要素の 1 つ後ろの位置を示す前方反復子。  
+ A forward iterator addressing the position one past the final element in the source range to be copied.  
   
  `result`  
- 連続する重複が削除されたコピーを受け取るターゲット範囲の最初の要素の位置を示す出力反復子。  
+ An output iterator addressing the position of the first element in the destination range that is receiving the copy with consecutive duplicates removed.  
   
  `comp`  
- 2 つの要素が等価であると見なされた場合に条件が満たされると定義する、ユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines the condition to be satisfied if two elements are to be taken as equivalent. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 連続する重複が削除されたコピーを受け取るターゲット範囲の最後の要素の 1 つ後ろの位置を示す出力反復子。  
+### <a name="return-value"></a>Return Value  
+ An output iterator addressing the position one past the final element in the destination range that is receiving the copy with consecutive duplicates removed.  
   
-### <a name="remarks"></a>コメント  
- アルゴリズムの両方の形式により、連続した等値要素ペアの 2 番目の重複が削除されます。  
+### <a name="remarks"></a>Remarks  
+ Both forms of the algorithm remove the second duplicate of a consecutive pair of equal elements.  
   
- アルゴリズムの動作は安定しているため、削除が取り消された要素の相対順序は変更されません。  
+ The operation of the algorithm is stable so that the relative order of the undeleted elements is not changed.  
   
- 参照されている範囲が有効であり、すべてのポインターが逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+ The ranges referenced must be valid; all pointers must be dereferenceable and within a sequence the last position is reachable from the first by incrementation.  
   
- 複雑さは線形的で、必要とする ( `last`  -   `first`) の比較できます。  
+ The complexity is linear, requiring ( `last` -  `first`) comparisons.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_unique_copy.cpp  
@@ -8312,7 +8326,7 @@ int main() {
 ```  
   
 ##  <a name="upper_bound"></a>  upper_bound  
- 順序の基準が二項述語で指定できる場合に、順序付けられた範囲内で、指定した値を超える値を持つ最初の要素の位置を検索します。  
+ Finds the position of the first element in an ordered range that has a value that is greater than a specified value, where the ordering criterion may be specified by a binary predicate.  
   
 ```  
 template<class ForwardIterator, class Type>  
@@ -8330,34 +8344,34 @@ template<class ForwardIterator, class Type, class Predicate>
   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 検索する要素範囲内の最初の要素の位置。  
+ The position of the first element in the range to be searched.  
   
  `last`  
- 検索する要素範囲内の最後の要素の 1 つ後ろの位置。  
+ The position one past the final element in the range to be searched.  
   
  `value`  
- 返された反復子によってアドレス指定される要素の値が超える必要がある、順序付けられた範囲内の値。  
+ The value in the ordered range that needs to be exceeded by the value of the element addressed by the iterator returned.  
   
  `comp`  
- 1 つの要素が別の要素より小さいという意味を定義するユーザー定義の述語関数オブジェクト。 二項述語は 2 つの引数を受け取り、条件が満たされている場合は **true** 、満たされていない場合は **false** を返します。  
+ User-defined predicate function object that defines sense in which one element is less than another. A binary predicate takes two arguments and returns **true** when satisfied and **false** when not satisfied.  
   
-### <a name="return-value"></a>戻り値  
- 指定した値を超える値を持つ最初の要素の位置への前方反復子。  
+### <a name="return-value"></a>Return Value  
+ A forward iterator to the position of the first element that has a value greater than a specified value.  
   
-### <a name="remarks"></a>コメント  
- 参照される並べ替えられたソースの範囲が有効であり、すべての反復子が逆参照可能であって、かつシーケンス内で先頭位置からのインクリメントにより最後の位置に到達可能である必要があります。  
+### <a name="remarks"></a>Remarks  
+ The sorted source range referenced must be valid; all iterators must be dereferenceable and within the sequence the last position must be reachable from the first by incrementation.  
   
- `upper_bound` を使用する事前条件として、対象の範囲は、二項述語によって指定された基準と同じ順序の基準を使用して並べ替えられている必要があります。  
+ A sorted range is a precondition of the use of `upper_bound` and where the ordering criterion is the same as specified by the binary predicate.  
   
- 対象範囲は、`upper_bound` によって変更されません。  
+ The range is not modified by `upper_bound`.  
   
- 前方反復子の値の型は、小なり (less-than) 比較ができる必要があります。これにより、2 個の要素が与えられたときに、それらが等しいか (いずれも他方より小さくない)、または一方が他方より小さいかを判断できます。 この結果、等価でない複数の要素間で順序が付けられます  
+ The value types of the forward iterators need be less-than comparable to be ordered, so that, given two elements, it may be determined either that they are equivalent (in the sense that neither is less than the other) or that one is less than the other. This results in an ordering between the nonequivalent elements  
   
- アルゴリズムの複雑さは、ランダムアクセス反復子では対数的であり、そうでない場合は ( `last - first`) のステップ数に比例して線形的です。  
+ The complexity of the algorithm is logarithmic for random-access iterators and linear otherwise, with the number of steps proportional to ( `last - first`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // alg_upper_bound.cpp  
@@ -8447,5 +8461,5 @@ int main( )
 }  
   
 ```  
-## <a name="see-also"></a>関連項目   
+## <a name="see-also"></a>See Also   
  [\<algorithm>](../standard-library/algorithm.md)

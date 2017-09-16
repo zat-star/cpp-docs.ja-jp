@@ -1,64 +1,83 @@
 ---
-title: "エクスプローラー形式の MFC アプリケーションの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.mfcexplorer.project"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ブラウザー, エクスプローラー スタイル アプリケーション"
-  - "エクスプローラー スタイル アプリケーション, 作成"
-  - "MFC アプリケーション, Windows エクスプローラー形式"
+title: Creating a File Explorer-Style MFC Application | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.appwiz.mfcexplorer.project
+dev_langs:
+- C++
+helpviewer_keywords:
+- browsers [MFC], Explorer-style applications
+- MFC applications [MFC], Windows Explorer-style
+- Explorer-style applications [MFC], creating
 ms.assetid: f843ab5d-2d5d-41ca-88a4-badc0d2f8052
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# エクスプローラー形式の MFC アプリケーションの作成
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1ec48d8090c06c23670e21ef5fbdaa37428d7851
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-多くの Windows システム アプリケーションはファイル エクスプローラーのユーザー インターフェイス \(UI\) \(UI\) を使用します。  たとえば、エクスプローラーを起動すると、クライアント領域を区切る垂直方向の分割バーでアプリケーションを参照します。  クライアント領域の左側には移動と参照の機能があり、右側には左ペインで選択した項目の詳細が表示されます。  ユーザーが左ペインで項目をクリックすると、右ペインの表示内容が更新されます。  MDI アプリケーションでは、**\[表示\]** メニューのコマンドを使用して、右ペインに表示される詳細の表示内容を変更できます。SDI またはマルチ トップレベル ドキュメント アプリケーションでは、詳細の変更に使用できるのはツール バー ボタンだけです。  
+---
+# <a name="creating-a-file-explorer-style-mfc-application"></a>Creating a File Explorer-Style MFC Application
+Many Windows system applications use the user interface (UI) for File Explorer. When you start File Explorer, for example, you see an application with a vertical splitter bar dividing the client area. The left side of the client area provides navigation and browsing features, and the right side of the client area shows details pertinent to the selection in the left pane. When a user clicks an item in the left pane, the application repopulates the right pane. In an MDI application, you can use commands on the **View** menu to change the amount of detail shown in the right pane. (In an SDI or multiple top-level document application, you can change the detail using the toolbar buttons only.)  
   
- ペインの内容はアプリケーションによって異なります。  ファイル システム ブラウザーでは、左ペインにディレクトリ、コンピューター、またはコンピューター グループの階層構造が表示され、右ペインにフォルダー、各ファイル、またはコンピューター、さらにその詳細が表示されます。  ペインの内容はファイルとは限りません。  電子メール メッセージ、エラー レポート、またはデータベース内のその他のアイテムも表示できます。  
+ The contents of the panes depend on the application. In a file-system browser, the left pane shows a hierarchical view of directories or machines, or machine groups, while the right pane displays folders, individual files, or machines, and details about them. The contents do not necessarily have to be files. They could be e-mail messages, error reports, or other items in a database.  
   
- ウィザードでは以下のクラスが作成されます。  
+ The wizard creates the following classes for you:  
   
--   クライアント領域の左ペインを定義する **CLeftView** クラス。  このクラスは必ず [CTreeView](../../mfc/reference/ctreeview-class.md) から派生します。  
+-   The **CLeftView** class defines the left pane of the client area. It is always derived from [CTreeView](../../mfc/reference/ctreeview-class.md).  
   
--   クライアント領域の右ペインを定義する C*ProjName*View クラス。  既定では、このクラスは [CListView](../../mfc/reference/clistview-class.md) から派生しますが、ウィザードの [&#91;生成されたクラス&#93;](../../mfc/reference/generated-classes-mfc-application-wizard.md) ページの \[基本クラス\] ボックスでクラスを指定して、別の種類のビューにすることもできます。  
+-   The C*ProjName*View class defines the right pane of the client area. By default, it is derived from [CListView](../../mfc/reference/clistview-class.md) but can be another type of view depending on the class you specify from the **Base class** list in the [Generated Classes](../../mfc/reference/generated-classes-mfc-application-wizard.md) page of the wizard.  
   
- 生成するアプリケーションには、シングル ドキュメント インターフェイス \(SDI: Single Document Interface\)、マルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\)、またはマルチ トップレベル ドキュメント アーキテクチャを含めることができます。  アプリケーションで作成される各フレーム ウィンドウは、[CSplitterWnd](../../mfc/reference/csplitterwnd-class.md) で左右に分割されます。  このアプリケーション タイプのコーディングは、分割線を使用する通常の MFC アプリケーションのコーディングに似ていますが、各分割ペイン内にそれぞれコントロール ビューがある点が異なります。  
+ The generated application can have a single document interface (SDI), a multiple document interface (MDI), or a multiple top-level documents architecture. Each frame window the application creates is vertically split using [CSplitterWnd](../../mfc/reference/csplitterwnd-class.md). Coding this application type is similar to coding a normal MFC application that uses a splitter, except that this type of application has separate control views within each splitter pane.  
   
- 右ペインで既定のリスト ビューを使用する場合は、大きいアイコン、小さいアイコン、一覧、または詳細モードにビューの表示形式を切り替えるための、メニューの選択肢 \(MDI アプリケーションのみ\) およびツール バー ボタンがウィザードによって作成されます。  
+ If you use the default list view in the right pane, the wizard creates additional menu choices (in MDI applications only) and toolbar buttons to switch the view's style among large icons, small icons, list, and detail modes.  
   
-### 実行可能ファイル エクスプローラー スタイルのな MFC アプリケーションの作成を開始するには  
+### <a name="to-begin-creating-a-file-explorer-style-mfc-executable"></a>To begin creating a File Explorer-style MFC executable  
   
-1.  「[MFC アプリケーションの作成](../../mfc/reference/creating-an-mfc-application.md)」の手順に従って操作します。  
+1.  Follow the directions in [Creating an MFC Application](../../mfc/reference/creating-an-mfc-application.md).  
   
-2.  MFC アプリケーション ウィザードの [アプリケーションの種類](../Topic/Application%20Type,%20MFC%20Application%20Wizard.md) ページで、**\[エクスプローラー\]** のプロジェクトのスタイルを選択します。  
+2.  In the MFC Application Wizard [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md) page, select the **File Explorer** project style.  
   
-3.  ウィザードのその他のページで、必要なオプションを設定します。  
+3.  Set any other options you desire on the other pages of the wizard.  
   
-4.  \[完了\] をクリックして、スケルトン アプリケーションを作成します。  
+4.  Click **Finish** to generate the skeleton application.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [複数のドキュメント タイプ、ビュー、フレーム ウィンドウ](../../mfc/multiple-document-types-views-and-frame-windows.md)  
+-   [Multiple Document Types, Views, and Frame Windows](../../mfc/multiple-document-types-views-and-frame-windows.md)  
   
--   [MFC で使用できる派生ビュー クラス](../../mfc/derived-view-classes-available-in-mfc.md)  
+-   [Derived View Classes](../../mfc/derived-view-classes-available-in-mfc.md)  
   
--   [アプリケーションのデザイン上の検討事項](../../mfc/application-design-choices.md)  
+-   [Application Design Choices](../../mfc/application-design-choices.md)  
   
-## 参照  
- [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)   
- [Web ブラウザー形式の MFC アプリケーションの作成](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)   
- [フォーム ベースの MFC アプリケーションの作成](../Topic/Creating%20a%20Forms-Based%20MFC%20Application.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)   
+ [Creating a Web Browser-Style MFC Application](../../mfc/reference/creating-a-web-browser-style-mfc-application.md)   
+ [Creating a Forms-Based MFC Application](../../mfc/reference/creating-a-forms-based-mfc-application.md)
+
+

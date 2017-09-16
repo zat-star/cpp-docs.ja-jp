@@ -1,5 +1,5 @@
 ---
-title: "Cmfcimagepaintarea::image_edit_mode 列挙体 |Microsoft ドキュメント"
+title: CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,12 +10,10 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - IMAGE_EDIT_MODE Enumeration
-- CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration
-- CMFCImagePaintArea.IMAGE_EDIT_MODE Enumeration
 dev_langs:
 - C++
 helpviewer_keywords:
-- IMAGE_EDIT_MODE Enumeration method
+- IMAGE_EDIT_MODE Enumeration method [MFC]
 ms.assetid: e51db66a-fa1c-4766-9dac-a25b595f871a
 caps.latest.revision: 15
 author: mikeblome
@@ -35,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 364b33568e2a21a4649923f4478b5b2456b23747
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 644159d71a44297094f8304d40f990ee6957f450
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcimagepaintareaimageeditmode-enumeration"></a>CMFCImagePaintArea::IMAGE_EDIT_MODE 列挙体
-イメージ エディター ダイアログ ボックスでイメージを変更するために使用するための描画モードを指定します。  
+# <a name="cmfcimagepaintareaimageeditmode-enumeration"></a>CMFCImagePaintArea::IMAGE_EDIT_MODE Enumeration
+Specifies a drawing mode that you use to modify an image in an image editor dialog box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 enum IMAGE_EDIT_MODE  
@@ -59,30 +57,30 @@ enum IMAGE_EDIT_MODE
 };  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
 |||  
 |-|-|  
-|名前|説明|  
-|`IMAGE_EDIT_MODE_PEN`|個々 のピクセルを描画するために使用します。|  
-|`IMAGE_EDIT_MODE_FILL`|現在のカーソル位置の色を含むすべての隣接する領域を塗りつぶすために使用します。|  
-|`IMAGE_EDIT_MODE_LINE`|線を描画するために使用します。|  
-|`IMAGE_EDIT_MODE_RECT`|四角形を描画するために使用します。|  
-|`IMAGE_EDIT_MODE_ELLIPSE`|楕円を描画するために使用します。|  
-|`IMAGE_EDIT_MODE_COLOR`|現在のカーソル位置に、現在の色を色に設定するために使用します。|  
+|Name|Description|  
+|`IMAGE_EDIT_MODE_PEN`|Used to draw individual pixels.|  
+|`IMAGE_EDIT_MODE_FILL`|Used to fill all adjacent areas that contain the color at the current cursor location.|  
+|`IMAGE_EDIT_MODE_LINE`|Used to draw a line.|  
+|`IMAGE_EDIT_MODE_RECT`|Used to draw a rectangle.|  
+|`IMAGE_EDIT_MODE_ELLIPSE`|Used to draw an ellipse.|  
+|`IMAGE_EDIT_MODE_COLOR`|Used to set the current color to the color at the current cursor location.|  
   
-### <a name="remarks"></a>コメント  
- `CMFCImagePaintArea`と`CMFCImageEditorDialog`クラスでは、この列挙体を使用して、現在の描画モードを設定します。 描画モードと現在の色は、イメージ エディター ダイアログ ボックスで画像領域の変更に使用されます。 詳細については`CMFCImagePaintArea`と`CMFCImageEditorDialog`を参照してください[CMFCImagePaintArea クラス](../../mfc/reference/cmfcimagepaintarea-class.md)と[CMFCImageEditorDialog クラス](../../mfc/reference/cmfcimageeditordialog-class.md)します。  
+### <a name="remarks"></a>Remarks  
+ The `CMFCImagePaintArea` and `CMFCImageEditorDialog` classes use this enumeration to set the current drawing mode. The drawing mode and current color are used to modify the picture area in an image editor dialog box. For more information about `CMFCImagePaintArea` and `CMFCImageEditorDialog`, see [CMFCImagePaintArea Class](../../mfc/reference/cmfcimagepaintarea-class.md) and [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md).  
   
- 選択すると、カラー イメージからを使用して、`IMAGE_EDIT_MODE_COLOR`描画モード、フレームワーク、現在の描画モードを設定`IMAGE_EDIT_MODE_PEN`します。  
+ When you select a color from an image by using the `IMAGE_EDIT_MODE_COLOR` drawing mode, the framework sets the current drawing mode to `IMAGE_EDIT_MODE_PEN`.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afximagepaintarea.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afximagepaintarea.h  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCImagePaintArea クラス](../../mfc/reference/cmfcimagepaintarea-class.md)   
- [CMFCImageEditorDialog クラス](../../mfc/reference/cmfcimageeditordialog-class.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCImagePaintArea Class](../../mfc/reference/cmfcimagepaintarea-class.md)   
+ [CMFCImageEditorDialog Class](../../mfc/reference/cmfcimageeditordialog-class.md)
 

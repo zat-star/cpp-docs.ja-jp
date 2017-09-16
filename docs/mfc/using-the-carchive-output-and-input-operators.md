@@ -1,73 +1,91 @@
 ---
-title: "CArchive 演算子 &lt;&lt; および &gt;&gt; の使用法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CArchive"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CArchive クラス, 演算子"
-  - "CArchive クラス, 格納と読み込み (オブジェクトの)"
-  - "オブジェクト [C++], 読み込み (直前の格納値から)"
+title: Using the CArchive &lt;&lt; and &gt;&gt; Operators | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CArchive
+dev_langs:
+- C++
+helpviewer_keywords:
+- objects [MFC], loading from previously stored values
+- CArchive class [MFC], storing and loading objects
+- CArchive class [MFC], operators
 ms.assetid: 56aef326-02dc-4992-8282-f0a4b78a064e
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# CArchive 演算子 &lt;&lt; および &gt;&gt; の使用法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4a0a3577e4f36eda3148e91ed2223cde7524bf9e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CArchive` は 単純データ型を \<\< 作成して \>\> 読み取りを演算子は、ファイルに対する `CObject`s を提供します。  
+---
+# <a name="using-the-carchive-ltlt-and-gtgt-operators"></a>Using the CArchive &lt;&lt; and &gt;&gt; Operators
+`CArchive` provides <\< and >> operators for writing and reading simple data types as well as `CObject`s to and from a file.  
   
-#### オブジェクトをアーカイブによってファイルに格納します。  
+#### <a name="to-store-an-object-in-a-file-via-an-archive"></a>To store an object in a file via an archive  
   
-1.  次の例では、アーカイブによってファイルのオブジェクトを保存する方法を示します。:  
+1.  The following example shows how to store an object in a file via an archive:  
   
-     [!code-cpp[NVC_MFCSerialization#7](../mfc/codesnippet/CPP/using-the-carchive-output-and-input-operators_1.cpp)]  
+     [!code-cpp[NVC_MFCSerialization#7](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_1.cpp)]  
   
-#### 前にファイルに格納されている値からオブジェクトを読み込むには  
+#### <a name="to-load-an-object-from-a-value-previously-stored-in-a-file"></a>To load an object from a value previously stored in a file  
   
-1.  次の例は、前にファイルに格納されている値からオブジェクトを読み込む方法の設定:  
+1.  The following example shows how to load an object from a value previously stored in a file:  
   
-     [!code-cpp[NVC_MFCSerialization#8](../mfc/codesnippet/CPP/using-the-carchive-output-and-input-operators_2.cpp)]  
+     [!code-cpp[NVC_MFCSerialization#8](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_2.cpp)]  
   
- 通常、`CObject`の `Serialize` 関数 \(ユーザーが **DECLARE\_SERIALIZE** マクロを使って宣言されている必要のある派生クラスでアーカイブしてファイルに対するロード データ保存します。  `CArchive` オブジェクトへの参照が `Serialize` 関数に渡されます。  `Serialize` 関数がファイルまたはデータ ストアからファイルへのロード データに呼び出されるかどうかを確認するに `CArchive` オブジェクトの `IsLoading` 関数を呼び出します。  
+ Usually, you store and load data to and from a file via an archive in the `Serialize` functions of `CObject`-derived classes, which you must have declared with the **DECLARE_SERIALIZE** macro. A reference to a `CArchive` object is passed to your `Serialize` function. You call the `IsLoading` function of the `CArchive` object to determine whether the `Serialize` function has been called to load data from the file or store data to the file.  
   
- シリアル `CObject`の `Serialize` 関数\-派生クラスに、次のフォームがあります:  
+ The `Serialize` function of a serializable `CObject`-derived class typically has the following form:  
   
- [!code-cpp[NVC_MFCSerialization#9](../mfc/codesnippet/CPP/using-the-carchive-output-and-input-operators_3.cpp)]  
+ [!code-cpp[NVC_MFCSerialization#9](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_3.cpp)]  
   
- 上記のコード テンプレートは厳密に 1 AppWizard がドキュメント \(**CDocument\)**の `Serialize` 関数に対してから派生したクラスを作成するのと同じです。  このコード テンプレートは次の例のように保存コードと読み込みコードが平行常に必要なので、確認しやすいコードを作成するための T:  
+ The above code template is exactly the same as the one AppWizard creates for the `Serialize` function of the document (a class derived from **CDocument)**. This code template helps you write code that is easier to review, because the storing code and the loading code should always be parallel, as in the following example:  
   
- [!code-cpp[NVC_MFCSerialization#10](../mfc/codesnippet/CPP/using-the-carchive-output-and-input-operators_4.cpp)]  
+ [!code-cpp[NVC_MFCSerialization#10](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_4.cpp)]  
   
- ライブラリは 2 番目のオペランドが 1 番目のオペランドと `CArchive` の **\<\<** と **\>\>** の演算子と、次のデータ型とクラス型定義します:  
+ The library defines **<\<** and **>>** operators for `CArchive` as the first operand and the following data types and class types as the second operand:  
   
 ||||  
 |-|-|-|  
-|`CObject*`|**サイズおよび CSize**|**float**|  
-|**WORD**|`CString`|**POINT** と `CPoint`|  
-|`DWORD`|**BYTE**|`RECT` および `CRect`|  
-|**Double**|**LONG**|`CTime` および `CTimeSpan`|  
+|`CObject*`|**SIZE and CSize**|**float**|  
+|**WORD**|`CString`|**POINT** and `CPoint`|  
+|`DWORD`|**BYTE**|`RECT` and `CRect`|  
+|**Double**|**LONG**|`CTime` and `CTimeSpan`|  
 |`Int`|**COleCurrency**|`COleVariant`|  
 |`COleDateTime`|`COleDateTimeSpan`||  
   
 > [!NOTE]
->  アーカイブして `CObject`s を格納および読み込むと、余分な事項を考慮する必要があります。  詳細については、「[CObjects をアーカイブに格納し、読み込みます](../Topic/Storing%20and%20Loading%20CObjects%20via%20an%20Archive.md)」を参照してください。  
+>  Storing and loading `CObject`s via an archive requires extra consideration. For more information, see [Storing and Loading CObjects via an Archive](../mfc/storing-and-loading-cobjects-via-an-archive.md).  
   
- **CArchive \<\<** と **\>\>** の演算子は 1 番目のオペランドである `CArchive` オブジェクトへの参照を返します。  これは、後で説明するように、チェーンを演算子を使用すると、T:  
+ The **CArchive <\<** and **>>** operators always return a reference to the `CArchive` object, which is the first operand. This enables you to chain the operators, as illustrated below:  
   
- [!code-cpp[NVC_MFCSerialization#11](../mfc/codesnippet/CPP/using-the-carchive-output-and-input-operators_5.cpp)]  
+ [!code-cpp[NVC_MFCSerialization#11](../mfc/codesnippet/cpp/using-the-carchive-output-and-input-operators_5.cpp)]  
   
-## 参照  
- [シリアル化 : オブジェクトのシリアル化](../Topic/Serialization:%20Serializing%20an%20Object.md)
+## <a name="see-also"></a>See Also  
+ [Serialization: Serializing an Object](../mfc/serialization-serializing-an-object.md)
+
+

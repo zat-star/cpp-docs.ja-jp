@@ -1,5 +1,5 @@
 ---
-title: "CMDITabInfo クラス |Microsoft ドキュメント"
+title: CMDITabInfo Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,8 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMDITabInfo class
-- CMDITabInfo class, constructor
+- CMDITabInfo [MFC], Serialize
+- CMDITabInfo [MFC], m_bAutoColor
+- CMDITabInfo [MFC], m_bDocumentMenu
+- CMDITabInfo [MFC], m_bEnableTabSwap
+- CMDITabInfo [MFC], m_bFlatFrame
+- CMDITabInfo [MFC], m_bTabCloseButton
+- CMDITabInfo [MFC], m_bTabCustomTooltips
+- CMDITabInfo [MFC], m_bTabIcons
+- CMDITabInfo [MFC], m_nTabBorderSize
+- CMDITabInfo [MFC], m_style
+- CMDITabInfo [MFC], m_tabLocation
 ms.assetid: 988ae1b7-4f7f-4239-b88f-7e28b3291c5e
 caps.latest.revision: 37
 author: mikeblome
@@ -46,209 +55,209 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: a45532c98d5da7d89d27e3d29d9b40075cf0376f
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cceb706f4008cffd4b22bfb33798145451eb8d35
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmditabinfo-class"></a>CMDITabInfo クラス
-`CMDITabInfo`クラスを使用して、パラメーターを渡す[CMDIFrameWndEx::EnableMDITabbedGroups](../../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups)メソッドです。 MDI タブ付きグループの動作を制御するために、このクラスのメンバーを設定します。  
+# <a name="cmditabinfo-class"></a>CMDITabInfo Class
+The `CMDITabInfo` class is used to pass parameters to [CMDIFrameWndEx::EnableMDITabbedGroups](../../mfc/reference/cmdiframewndex-class.md#enablemditabbedgroups) method. Set members of this class to control the behavior of MDI tabbed groups.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMDITabInfo   
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`CMDITabInfo::CMDITabInfo`|既定のコンストラクター|  
+|`CMDITabInfo::CMDITabInfo`|Default constructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMDITabInfo::Serialize](#serialize)|アーカイブに対して、このオブジェクトの読み取りまたは書き込みを行います。|  
+|[CMDITabInfo::Serialize](#serialize)|Reads or writes this object from or to an archive.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMDITabInfo::m_bActiveTabCloseButton です。](#m_bactivetabclosebutton_)|指定するかどうか、**閉じる**ボタンがアクティブなタブのラベルに表示されます。|  
-|[CMDITabInfo::m_bAutoColor](#m_bautocolor)|MDI タブのカラーするかどうかを指定します。|  
-|[CMDITabInfo::m_bDocumentMenu](#m_bdocumentmenu)|タブ グループが開いているドキュメントの一覧を表示またはスクロール ボタンを表示するポップアップ メニューを表示するかどうかを指定します。|  
-|[CMDITabInfo::m_bEnableTabSwap](#m_benabletabswap)|ドラッグすることにより、ユーザーがタブの位置を入れ替えることができるかどうかを指定します。|  
-|[CMDITabInfo::m_bFlatFrame](#m_bflatframe)|フラットなフレームがタブにあるかどうかを指定します。|  
-|[CMDITabInfo::m_bTabCloseButton](#m_btabclosebutton)|各タブのラベルを表示するかどうかを指定する**閉じる** ボタンをクリックします。|  
-|[CMDITabInfo::m_bTabCustomTooltips](#m_btabcustomtooltips)|カスタム ツール ヒントが有効になっているかどうかを指定します。|  
-|[CMDITabInfo::m_bTabIcons](#m_btabicons)|MDI タブにアイコンを表示するかどうかを指定します。|  
-|[CMDITabInfo::m_nTabBorderSize](#m_ntabbordersize)|各タブ ウィンドウの境界線のサイズを指定します。|  
-|[CMDITabInfo::m_style](#m_style)|タブ ラベルのスタイルを指定します。|  
-|[CMDITabInfo::m_tabLocation](#m_tablocation)|タブのラベルが、上またはページの下部にあるかどうかを指定します。|  
+|[CMDITabInfo::m_bActiveTabCloseButton;](#m_bactivetabclosebutton_)|Specifies whether a **Close** button is displayed on the label of the active tab.|  
+|[CMDITabInfo::m_bAutoColor](#m_bautocolor)|Specifies whether to color the MDI tabs.|  
+|[CMDITabInfo::m_bDocumentMenu](#m_bdocumentmenu)|Specifies whether the tab group displays a popup menu that shows a list of opened documents or displays scroll buttons.|  
+|[CMDITabInfo::m_bEnableTabSwap](#m_benabletabswap)|Specifies whether the user can swap the positions of tabs by dragging.|  
+|[CMDITabInfo::m_bFlatFrame](#m_bflatframe)|Specifies whether tabs have a flat frame.|  
+|[CMDITabInfo::m_bTabCloseButton](#m_btabclosebutton)|Specifies whether each tab label displays a **Close** button.|  
+|[CMDITabInfo::m_bTabCustomTooltips](#m_btabcustomtooltips)|Specifies whether custom tooltips are enabled.|  
+|[CMDITabInfo::m_bTabIcons](#m_btabicons)|Specifies whether to display icons on MDI tabs.|  
+|[CMDITabInfo::m_nTabBorderSize](#m_ntabbordersize)|Specifies the border size of each tab window.|  
+|[CMDITabInfo::m_style](#m_style)|Specifies the style of the tab labels.|  
+|[CMDITabInfo::m_tabLocation](#m_tablocation)|Specifies whether the tabs labels are located at the top or the bottom of the page.|  
   
-## <a name="remarks"></a>コメント  
- このクラスは、フレームワークを作成する MDI タブ グループのパラメーターを指定します。  
+## <a name="remarks"></a>Remarks  
+ This class specifies the parameters of the MDI tab groups that the framework creates.  
   
-## <a name="example"></a>例  
- 次の例は、さまざまなメンバー変数の値を設定する方法を示します`CMDITabInfo`クラスです。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to set the values of the various member variables in `CMDITabInfo` class.  
   
- [!code-cpp[NVC_MFC_MDITab&#1;](../../mfc/reference/codesnippet/cpp/cmditabinfo-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_MDITab#1](../../mfc/reference/codesnippet/cpp/cmditabinfo-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CMDITabInfo](../../mfc/reference/cmditabinfo-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxmdiclientareawnd.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxmdiclientareawnd.h  
   
-##  <a name="m_bactivetabclosebutton_"></a>CMDITabInfo::m_bActiveTabCloseButton です。  
- 指定するかどうか、**閉じる**ボタンがアクティブなタブのラベルに表示されます。  
+##  <a name="m_bactivetabclosebutton_"></a>  CMDITabInfo::m_bActiveTabCloseButton;  
+ Specifies whether a **Close** button is displayed on the label of the active tab.  
   
 ```  
 BOOL m_bActiveTabCloseButton;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、アクティブなタブのラベルが表示されます、**閉じる** ボタンをクリックします。 **閉じる**ボタンはタブ領域の右上隅から削除されます。 それ以外の場合、アクティブなタブのラベルは表示されない、**閉じる** ボタンをクリックします。 **閉じる**タブ領域の右上隅にあるボタンが表示されます。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, the label of the active tab will display a **Close** button. The **Close** button will be removed from the right top corner of the tab area. Otherwise, the label of the active tab will not display a **Close** button. The **Close** button will appear in the right top corner of the tab area.  
   
-##  <a name="m_bautocolor"></a>CMDITabInfo::m_bAutoColor  
- MDI タブごとに、独自の色があるかどうかを指定します。  
+##  <a name="m_bautocolor"></a>  CMDITabInfo::m_bAutoColor  
+ Specifies whether each MDI tab has its own color.  
   
 ```  
 BOOL m_bAutoColor;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、各タブは、独自の色になります。 色のセットは、MFC ライブラリで管理されます。 それ以外の場合、タブは白色で表示されます。 既定値は `FALSE` です。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, each tab will have its own color. The set of colors is managed by the MFC library. Otherwise, the tabs are displayed in white. The default value is `FALSE`.  
   
-##  <a name="m_bdocumentmenu"></a>CMDITabInfo::m_bDocumentMenu  
- 各タブがタブ領域の右端に開いているドキュメントの一覧を表示するポップアップ メニューを表示するかどうかを指定します。  
+##  <a name="m_bdocumentmenu"></a>  CMDITabInfo::m_bDocumentMenu  
+ Specifies whether each tab displays a popup menu that shows a list of  opened documents at the right edge of the tab area.  
   
 ```  
 BOOL m_bDocumentMenu;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、各タブ ウィンドウには、タブ領域の右端に開いているドキュメントの一覧を表示するポップアップ メニューが表示されます。それ以外の場合、タブ ウィンドウは、タブ領域の右端にスクロール ボタンを表示します。 既定値は `FALSE` です。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, each tab windows displays a popup menu that shows a list of opened documents at the right edge of the tab area; Otherwise, the tab window displays scroll buttons at the right edge of the tab area. The default value is `FALSE`.  
   
-##  <a name="m_benabletabswap"></a>CMDITabInfo::m_bEnableTabSwap  
- ドラッグすることにより、ユーザーがタブの位置を入れ替えることができるかどうかを指定します。  
+##  <a name="m_benabletabswap"></a>  CMDITabInfo::m_bEnableTabSwap  
+ Specifies whether the user can swap the positions of tabs by dragging.  
   
 ```  
 BOOL m_bEnableTabSwap;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`タブをドラッグして、ユーザーがタブの位置を変更できます。 それ以外の場合、ユーザーは、タブ位置を変更することはできません。 既定値は `TRUE` です。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, the user can change the tabs positions by dragging the tabs. Otherwise, the user cannot change the tabs positions. The default value is `TRUE`.  
   
-##  <a name="m_bflatframe"></a>CMDITabInfo::m_bFlatFrame  
- 各タブ ウィンドウにフラット フレームがあるかどうかを指定します。  
+##  <a name="m_bflatframe"></a>  CMDITabInfo::m_bFlatFrame  
+ Specifies whether each tab window has a flat frame.  
   
 ```  
 BOOL m_bFlatFrame;  
 ```  
   
-##  <a name="m_btabclosebutton"></a>CMDITabInfo::m_bTabCloseButton  
- 各タブ ウィンドウを表示するかどうかを指定する**閉じる** ボタンをクリックします。  
+##  <a name="m_btabclosebutton"></a>  CMDITabInfo::m_bTabCloseButton  
+ Specifies whether each tab window displays a **Close** button.  
   
 ```  
 BOOL m_bTabCloseButton;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、各タブ ウィンドウを表示、**閉じる** タブの右端にボタンをクリックします。 それ以外の場合、**閉じる**ボタンは表示されません。 既定値は `TRUE` です。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, each tab window displays the **Close** button on the right edge of the tab. Otherwise, the **Close** button is not displayed. The default value is `TRUE`.  
   
-##  <a name="m_btabcustomtooltips"></a>CMDITabInfo::m_bTabCustomTooltips  
- タブがツールヒントを表示するかどうかを指定します。  
+##  <a name="m_btabcustomtooltips"></a>  CMDITabInfo::m_bTabCustomTooltips  
+ Specifies whether the tabs display tooltips.  
   
 ```  
 BOOL m_bTabCustomTooltips;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、アプリケーションの送信、`AFX_WM_ON_GET_TAB_TOOLTIP`メインフレームへのメッセージ。 このメッセージを処理するを使用して、`ON_REGISTERED_MESSAGE`マクロです。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, the application sends an `AFX_WM_ON_GET_TAB_TOOLTIP` message to the main frame. You can handle this message by using the `ON_REGISTERED_MESSAGE` macro.  
   
-##  <a name="m_btabicons"></a>CMDITabInfo::m_bTabIcons  
- MDI タブにアイコンを表示するかどうかを指定します。  
+##  <a name="m_btabicons"></a>  CMDITabInfo::m_bTabIcons  
+ Specifies whether to display icons on MDI tabs.  
   
 ```  
 BOOL m_bTabIcons;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合`TRUE`、各 MDI タブのアイコンが表示されます。 それ以外の場合、アイコンは、タブには表示されません。 既定値は `FALSE` です。  
+### <a name="remarks"></a>Remarks  
+ If `TRUE`, icons are displayed on each MDI tab. Otherwise, icons are not displayed on tabs. The default value is `FALSE`.  
   
-##  <a name="m_ntabbordersize"></a>CMDITabInfo::m_nTabBorderSize  
- 各タブ ウィンドウのピクセル単位の境界線のサイズを指定します。  
+##  <a name="m_ntabbordersize"></a>  CMDITabInfo::m_nTabBorderSize  
+ Specifies the border size, in pixels, of each tab window.  
   
 ```  
 int m_nTabBorderSize;  
 ```  
   
-### <a name="remarks"></a>コメント  
- [CMFCVisualManager::GetMDITabsBordersSize](../../mfc/reference/cmfcvisualmanager-class.md#getmditabsborderssize)既定値を返します。  
+### <a name="remarks"></a>Remarks  
+ [CMFCVisualManager::GetMDITabsBordersSize](../../mfc/reference/cmfcvisualmanager-class.md#getmditabsborderssize) returns the default value.  
   
-##  <a name="m_style"></a>CMDITabInfo::m_style  
- タブ ラベルのスタイルを指定します。  
+##  <a name="m_style"></a>  CMDITabInfo::m_style  
+ Specifies the style of the tab labels.  
   
 ```  
 CMFCTabCtrl::Style m_style  
 ```  
   
-### <a name="remarks"></a>コメント  
- 次のタブのラベルのスタイルのいずれかを指定します。  
+### <a name="remarks"></a>Remarks  
+ Specify one of the following styles for the tab labels:  
   
  `STYLE_3D`  
- 3D スタイル。  
+ 3D style.  
   
  `STYLE_3D_ONENOTE`  
- Microsoft OneNote スタイルです。  
+ Microsoft OneNote style.  
   
  `STYLE_3D_VS2005`  
- Microsoft Visual Studio 2005 のスタイル。  
+ Microsoft Visual Studio 2005 style.  
   
  `STYLE_3D_SCROLLED`  
- 四角形 タブのラベルが付いた&3;D スタイル。  
+ 3D style with rectangle tab labels.  
   
  `STYLE_FLAT_SHARED_HORZ_SCROLL`  
- 共有の水平スクロール バーのフラット スタイルです。  
+ Flat style with shared horizontal scroll bar.  
   
  `STYLE_3D_ROUNDED_SCROLL`  
- Round タブのラベルが付いた&3;D スタイル。  
+ 3D style with round tab labels.  
   
-##  <a name="m_tablocation"></a>CMDITabInfo::m_tabLocation  
- タブのラベルが、上またはページの下部にあるかどうかを指定します。  
+##  <a name="m_tablocation"></a>  CMDITabInfo::m_tabLocation  
+ Specifies whether the tabs labels are located at the top or the bottom of the page.  
   
 ```  
 CMFCTabCtrl::Location m_tabLocation;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 次の場所のフラグの&1; つのタブに適用されます。  
+### <a name="remarks"></a>Remarks  
+ Apply to the tabs one of the following location flags:  
   
--   LOCATION_BOTTOM: タブのラベルは、ページの下部にあります。  
+-   LOCATION_BOTTOM: the tabs labels are located at the bottom of the page.  
   
--   LOCATION_TOP: タブのラベルは、ページの上部には  
+-   LOCATION_TOP: the tabs labels are located at the top of the page  
   
-##  <a name="serialize"></a>CMDITabInfo::Serialize  
- 読み取りまたはアーカイブからまたはアーカイブは、このオブジェクトを書き込みます。  
+##  <a name="serialize"></a>  CMDITabInfo::Serialize  
+ Reads or writes this object from an archive or to an archive.  
   
 ```  
 void Serialize(CArchive& ar);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `ar`  
- A [CArchive クラス](../../mfc/reference/carchive-class.md)シリアル化するオブジェクト。  
+### <a name="parameters"></a>Parameters  
+ [in] `ar`  
+ A [CArchive Class](../../mfc/reference/carchive-class.md) object to serialize.  
   
-## <a name="see-also"></a>関連項目  
- [CMDIFrameWndEx クラス](../../mfc/reference/cmdiframewndex-class.md)   
- [MDI タブ付きグループ](../../mfc/mdi-tabbed-groups.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [CMDIFrameWndEx Class](../../mfc/reference/cmdiframewndex-class.md)   
+ [MDI Tabbed Groups](../../mfc/mdi-tabbed-groups.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

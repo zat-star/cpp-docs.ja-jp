@@ -1,5 +1,5 @@
 ---
-title: "remove_pointer クラス | Microsoft Docs"
+title: remove_pointer Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- remove_pointer
 - type_traits/std::remove_pointer
 dev_langs:
 - C++
@@ -35,17 +34,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: b9e00cba8b892c9834f56846f698ee59aca523cf
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 9efa6c69388dd00d9ac3eae5b7f180b6c2284bb6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="removepointer-class"></a>remove_pointer クラス
-型へのポインターから型を作成します。  
+# <a name="removepointer-class"></a>remove_pointer Class
+Makes type from pointer to type.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class T>  
@@ -55,14 +54,14 @@ template <class T>
 using remove_pointer_t = typename remove_pointer<T>::type;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 変更する型。  
+ The type to modify.  
   
-## <a name="remarks"></a>コメント  
- `remove_pointer<T>` のインスタンスは、`T1` の形式が `T`、`T1*`、`T1* const`、または `T1* volatile` である場合は、修飾型 `T1* const volatile` を保持します。それ以外の場合は、`T` を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of `remove_pointer<T>` holds a modified-type that is `T1` when `T` is of the form `T1*`, `T1* const`, `T1* volatile`, or `T1* const volatile`, otherwise `T`.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <type_traits>   
@@ -84,12 +83,12 @@ int main()
 remove_pointer_t<int *> == int  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [add_pointer クラス](../standard-library/add-pointer-class.md)
+ [add_pointer Class](../standard-library/add-pointer-class.md)
 

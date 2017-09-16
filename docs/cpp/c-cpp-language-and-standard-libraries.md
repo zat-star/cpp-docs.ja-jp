@@ -1,37 +1,54 @@
 ---
-title: "C++ 言語および標準ライブラリ | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: C/C++ Language and Standard Libraries | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: c26a6682-961a-43ef-ad33-2adc612f69ac
 caps.latest.revision: 11
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# C++ 言語および標準ライブラリ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: a9f154b6f2d96658eb898cac6ae3147088de29bc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-ドキュメントのこのセクションには、C および C\+\+ の ISO 標準の Microsoft による実装に関するガイドラインと参照コンテンツが含まれています。  
+---
+# <a name="cc-language-and-standard-libraries"></a>C/C++ Language and Standard Libraries
+This section of the documentation includes guidelines and reference content for the Microsoft implementation of the ISO standards for C and C++.  
   
-## 関連トピック  
+## <a name="related-articles"></a>Related Articles  
   
-|タイトル|説明|  
-|----------|--------|  
-|[C\+\+ へようこそ](../Topic/Welcome%20Back%20to%20C++%20\(Modern%20C++\).md)|最新の C\+\+ プログラミングの表現方法とベスト プラクティスについて説明します。|  
-|[C\+\+ 言語](../misc/c-cpp-languages.md)|C および C\+\+ 言語の参照コンテンツです。|  
-|[C ランタイム ライブラリ リファレンス](../c-runtime-library/c-run-time-library-reference.md)|C ランタイム \(CRT\) の Microsoft による実装の参照コンテンツです。|  
-|[C\+\+ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)|標準テンプレート ライブラリ \(STL\) の Microsoft による実装の参照コンテンツです。|  
-|[SafeInt ライブラリ](../windows/safeint-library.md)|オーバーフローのリスクなしで整数を処理する関数ライブラリの参照コンテンツです。|  
-|[Visual C\+\+](../top/visual-cpp-in-visual-studio-2015.md)|Visual Studio での Visual C\+\+ の主な機能について説明し、他の Visual C\+\+ ドキュメントへのリンクを示します。|  
-|[IDE と開発ツール](../Topic/IDE%20and%20Tools%20for%20Visual%20C++%20Development.md)|Visual Studio を使用する方法と、C\+\+ アプリを作成、ビルド、配置する関連ツールについて説明する他の記事へのリンクが記載されています。|  
-|[Visual C\+\+ の新機能](../top/what-s-new-for-visual-cpp-in-visual-studio-2015.md)|このリリースの新機能および機能強化について説明します。|
+|Title|Description|  
+|-----------|-----------------|  
+|[Welcome Back to C++](../cpp/welcome-back-to-cpp-modern-cpp.md)|Describes modern C++ programming idioms and best practices.|  
+|[C++ Language Reference](../cpp/cpp-language-reference.md)|Reference content for the C++ languages.|  
+|[C++ Standard Library](../standard-library/cpp-standard-library-reference.md)|Reference content for the Microsoft implementation of the C++ Standard Library.|  
+|[C Language Reference](../c-language/c-language-reference.md)|Reference content for the Microsoft implementation of the C language.|
+|[C Run-Time Library Reference](../c-runtime-library/c-run-time-library-reference.md)|Reference content for the Microsoft implementation of the C runtime (CRT).|
+|[SafeInt Library](../windows/safeint-library.md)|Reference content for a library of functions that handle integers without the risk of overflow.|  
+|[Visual C++](../visual-cpp-in-visual-studio.md)|Describes key features of Visual C++ in Visual Studio and links to the rest of the Visual C++ documentation.|  
+|[IDE and Development Tools](../ide/ide-and-tools-for-visual-cpp-development.md)|Links to other articles that contain information about how to use Visual Studio and its related tools to create, build, and deploy C++ apps.|  
+|[What's New for Visual C++](../what-s-new-for-visual-cpp-in-visual-studio.md)|Describes the new features and enhancements in this release.|

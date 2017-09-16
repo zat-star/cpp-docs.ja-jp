@@ -1,5 +1,5 @@
 ---
-title: "ドキュメント テンプレート文字列]、[MFC アプリケーション ウィザード |Microsoft ドキュメント"
+title: Document Template Strings, MFC Application Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,37 +33,37 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2feacba30f43ddcdde8250c21aca3d6b835307d5
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3aeaccbb050f93fb366f7352f8df0276e0327434
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="document-template-strings-mfc-application-wizard"></a>[ドキュメント テンプレート文字列] (MFC アプリケーション ウィザード)
-MFC アプリケーション ウィザードのこのページではドキュメント管理とローカライズを支援する次のオプションを指定または変更します。 ドキュメント テンプレート文字列は、アプリケーションで利用できる**ドキュメント/ビュー アーキテクチャ サポート**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)します。 これらはダイアログ ボックスを使用できません。 ほとんどのドキュメント テンプレート文字列が表示され、アプリケーションのユーザーによって使用されるためにローカライズされます、**リソース言語**に示されている、**アプリケーションの種類**ウィザードのページです。  
+# <a name="document-template-strings-mfc-application-wizard"></a>Document Template Strings, MFC Application Wizard
+In this page of the MFC Application Wizard, provide or refine the following options to help with document management and localization. Document template strings are available for applications that include **Document/view architecture support** in the [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md). They are not available for dialog boxes. Because most document template strings are visible and used by the application's users, they are localized into the **Resource language** indicated in the **Application Type** page of the wizard.  
   
- **ローカライズされない文字列**  
- ユーザーのドキュメントを作成するアプリケーションに適用されます。 ユーザーは、開く、印刷、およびドキュメントを保存の詳細に簡単にファイル拡張子とファイルの種類 ID を指定します。 ユーザーではなく、システムで使用されるため、これらの項目はローカライズされません。  
+ **Nonlocalized strings**  
+ Applies to applications that create user documents. Users can open, print, and save documents more easily if you provide a file extension and a file type ID. These items are not localized because they are used by the system rather than by the user.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**ファイル拡張子**|ユーザーがアプリケーションの使用時に保存するドキュメントに関連付けられているファイル拡張子を設定します。 たとえば、プロジェクト ウィジェットの名前が、ファイル拡張子 .wgt 名前です。 (ファイル拡張子を入力するときにピリオドが含まれません。)<br /><br /> ファイル拡張子を指定する場合、エクスプ ローラーは、ユーザーは、[ドキュメント] アイコンをプリンターのアイコンにドロップすると、アプリケーションを起動しなくても、アプリケーションのドキュメントを印刷できます。<br /><br /> 拡張機能を指定しないと、ファイルを保存するときに、ユーザーはファイル拡張子を指定する必要があります。 ウィザードには、既定のファイル拡張子は行いません。|  
-|**ファイルの種類 ID**|システム レジストリのドキュメントの種類のラベルを設定します。|  
+|**File extension**|Sets the file extension associated with the documents that the user saves when using the application. For example, if your project is named Widget, you could name the file extension .wgt. (When you enter the file extension, do not include the period.)<br /><br /> If you provide a file extension, the Explorer can print your application's documents without launching your application when the user drops the document icon on a printer icon.<br /><br /> If you do not specify an extension, a user must specify a file extension when saving files. The wizard does not provide a default file extension.|  
+|**File type ID**|Sets the label for your document type in the system registry.|  
   
- **ローカライズされた文字列**  
- アプリケーションとの読み取りおよびで使用されているアプリケーションのユーザー文字列をローカライズするドキュメントに関連付けられている文字列を生成します。  
+ **Localized strings**  
+ Produces strings associated with the application and document that are read and used by the application's users, so the strings are localized.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**Language**|すべてのボックスの文字列が表示される言語を示します**ローカライズ文字列**します。 このボックスに値を変更するには、下にある適切な言語を選択**リソース言語**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。|  
-|**メイン フレーム キャプション**|アプリケーションのメイン フレームの上部に表示されるテキストを設定します。 既定では、プロジェクトの名前。|  
-|**ドキュメントの種類の名前**|アプリケーションのドキュメントのグループ化するドキュメントの種類を識別します。 既定では、プロジェクトの名前。 既定値を変更しても、このダイアログ ボックスで、他のオプションは変わりません。|  
-|**フィルター名**|ユーザーがファイルの種類のファイルを検索するときに指定する名前を設定します。 このオプションは、**ファイルの種類**と**ファイルの種類**標準の Windows のオプション**開いている**と**として保存**ダイアログ ボックス。 指定した拡張子の後に既定値は、プロジェクト名 + + のファイル、**ファイル拡張子**します。 たとえば、ウィジェットでは、プロジェクトの名前し、ファイル拡張子は .wgt、**フィルター名**ウィジェット ファイル (*.wgt) は既定では、です。|  
-|**ファイルの新しい短い名前**|標準の Windows に表示される名前を設定`New`ダイアログ ボックスで、1 つ以上の新しいドキュメント テンプレートがある場合。 アプリケーションの場合、[オートメーション サーバー](../../mfc/automation-servers.md)、この名前は、オートメーション オブジェクトの短い名前として使用します。 既定では、プロジェクトの名前。|  
-|**ファイルの種類の長い名前**|システム レジストリのファイルの種類名を設定します。 アプリケーションがオートメーション サーバーの場合、この名前は、オートメーション オブジェクトの長い名前として使用されます。 既定では、プロジェクト名とします。ドキュメントです。|  
+|**Language**|Indicates the language in which strings are displayed for all the boxes under **Localized strings**. To change the value in this box, select the appropriate language under **Resource language** in the [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md) page of the MFC Application Wizard.|  
+|**Main frame caption**|Sets the text appearing at the top of the main application frame. By default, the project name.|  
+|**Doc type name**|Identifies the type of document under which a document of the application can be grouped. By default, the project name. Changing the default does not change any other options in this dialog box.|  
+|**Filter name**|Sets the name your users can indicate to find files of your file type. This option is available from the **Files of type** and **Save as type** options in the standard Windows **Open** and **Save as** dialog boxes. By default, the project name plus Files, followed by the extension provided in **File extension**. For example, if your project is named Widget, and the file extension is .wgt, the **Filter name** is Widget Files (*.wgt) by default.|  
+|**File new short name**|Sets the name appearing in the standard Windows `New` dialog box, if there is more than one new document template. If your application is an [Automation server](../../mfc/automation-servers.md), this name is used as the short name of your Automation object. By default, the project name.|  
+|**File type long name**|Sets the file type name in the system registry. If your application is an Automation server, this name is used as the long name of your Automation object. By default, the project name plus .Document.|  
   
-## <a name="see-also"></a>関連項目  
- [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)
 
 

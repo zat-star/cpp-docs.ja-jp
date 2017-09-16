@@ -1,81 +1,100 @@
 ---
-title: "例外処理 : データベースの例外 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DAO [C++], 例外"
-  - "データベースの例外 [C++]"
-  - "データベース [C++], 例外処理"
-  - "エラー コード [C++], データベース例外処理"
-  - "例外処理 [C++], データベース"
-  - "例外 [C++], データベース"
-  - "ODBC [C++], 例外"
-  - "ODBC 例外 [C++]"
+title: 'Exceptions: Database Exceptions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DAO [MFC], exceptions
+- exceptions [MFC], database
+- exception handling [MFC], databases
+- ODBC exceptions [MFC]
+- ODBC [MFC], exceptions
+- database exceptions [MFC]
+- databases [MFC], exception handling
+- error codes [MFC], database exception handling
 ms.assetid: 28daf260-f824-4be6-aecc-1f859e6dec26
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 例外処理 : データベースの例外
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b3d93438372497fb5ef24765210b3658dd4cd7ac
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、データベースの例外を処理する方法について説明します。  この記事の素材のほとんどは、ODBC \(Open Database Connectivity\) の MFC クラスまたはデータ アクセス オブジェクト \(DAO\) の MFC クラスを使用しているかに適用されます。  1 個のまたは他のモデルの素材の仕様は、明示的にマークされます。  ここでは、次の内容について説明します。  
+---
+# <a name="exceptions-database-exceptions"></a>Exceptions: Database Exceptions
+This article explains how to handle database exceptions. Most of the material in this article applies whether you are working with the MFC classes for Open Database Connectivity (ODBC) or the MFC classes for Data Access Objects (DAO). Material specific to one or the other model is explicitly marked. Topics include:  
   
--   [例外処理の方法](#_core_approaches_to_exception_handling)  
+-   [Approaches to exception handling](#_core_approaches_to_exception_handling)  
   
--   [データベースの例外処理の例](#_core_a_database_exception.2d.handling_example)  
+-   [A database exception-handling example](#_core_a_database_exception.2d.handling_example)  
   
-##  <a name="_core_approaches_to_exception_handling"></a> Exception Handling への方法  
- 方法は DAO または ODBC を使用している場合でも同じです。  
+##  <a name="_core_approaches_to_exception_handling"></a> Approaches to Exception Handling  
+ The approach is the same whether you are working with DAO or ODBC.  
   
- ハンドルの例外条件に例外ハンドラーを作成する必要があります。  
+ You should always write exception handlers to handle exceptional conditions.  
   
- データベースの例外のキャッチに最も実際的な方法は、例外のシナリオを使用してアプリケーションをテストします。  コードの操作が原因で発生する可能性のある確認発生する例外が発生する可能性のある例外を示します。  次に、例外がスローされる参照するために、デバッガーで返されるエラー情報を確認する方法を調べるトレース出力を示します。  これにより、リターン コードを使用するシナリオの例外については参照するかを通知します。  
+ The most pragmatic approach to catching database exceptions is to test your application with exception scenarios. Determine the likely exceptions that might occur for an operation in your code, and force the exception to occur. Then examine the trace output to see what exception is thrown, or examine the returned error information in the debugger. This lets you know which return codes you'll see for the exception scenarios you are using.  
   
-### ODBC の例外に使用するエラー コード  
- フレームワークによって定義されたフォーム **AFX\_SQL\_ERROR\_XXX**の名前を持つリターン コードに加えて、[CDBExceptions](../mfc/reference/cdbexception-class.md) は [ODBC\(D\)](../data/odbc/odbc-basics.md) のリターン コードに基づいています。  このような例外のリターン コードにフォーム **SQL\_ERROR\_XXX**の名前があります。  
+### <a name="error-codes-used-for-odbc-exceptions"></a>Error Codes Used for ODBC Exceptions  
+ In addition to return codes defined by the framework, which have names of the form **AFX_SQL_ERROR_XXX**, some [CDBExceptions](../mfc/reference/cdbexception-class.md) are based on [ODBC](../data/odbc/odbc-basics.md) return codes. The return codes for such exceptions have names of the form **SQL_ERROR_XXX**.  
   
- リターン コードはクラス `CDBException`の [m\_nRetCode](../Topic/CDBException::m_nRetCode.md) のデータ メンバーで—フレームワークで定義され、ODBC 定義された—データベース クラスを返すことができる説明しています。  ODBC によって定義されるリターン コードに関する追加情報については、MSDN ライブラリの" ODBC SDK *Programmer's Reference* "を参照してください。  
+ The return codes — both framework-defined and ODBC-defined — that the database classes can return are documented under the [m_nRetCode](../mfc/reference/cdbexception-class.md#m_nretcode) data member of class `CDBException`. Additional information about return codes defined by ODBC is available in the ODBC SDK *Programmer's Reference* in the MSDN Library.  
   
-### DAO 例外に使用するエラー コード  
- DAO の例外に対して、より多くの情報が広く利用できます。  [CDaoException](../mfc/reference/cdaoexception-class.md) のキャッチ オブジェクトの 3 個のデータ メンバーを介してエラー情報にアクセスする:  
+### <a name="error-codes-used-for-dao-exceptions"></a>Error Codes Used for DAO Exceptions  
+ For DAO exceptions, more information is typically available. You can access error information through three data members of a caught [CDaoException](../mfc/reference/cdaoexception-class.md) object:  
   
--   [m\_pErrorInfo](../Topic/CDaoException::m_pErrorInfo.md) は データベースに関連付けられた DAO の Error オブジェクトのコレクションのエラー情報をカプセル化する [CDaoErrorInfo](../mfc/reference/cdaoerrorinfo-structure.md) オブジェクトへのポインターが格納されます。  
+-   [m_pErrorInfo](../mfc/reference/cdaoexception-class.md#m_perrorinfo) contains a pointer to a [CDaoErrorInfo](../mfc/reference/cdaoerrorinfo-structure.md) object that encapsulates error information in DAO's collection of error objects associated with the database.  
   
--   [m\_nAfxDaoError](../Topic/CDaoException::m_nAfxDaoError.md) は MFC DAO クラスから拡張エラー コードが含まれています。  フォーム **AFX\_DAO\_ERROR\_XXX**の名前が、これらのエラー コードを `CDaoException`のデータ メンバーで説明しています。  
+-   [m_nAfxDaoError](../mfc/reference/cdaoexception-class.md#m_nafxdaoerror) contains an extended error code from the MFC DAO classes. These error codes, which have names of the form **AFX_DAO_ERROR_XXX**, are documented under the data member in `CDaoException`.  
   
--   [m\_scode](../Topic/CDaoException::m_scode.md) は DAO の OLE `SCODE` を、該当する場合があります。  しかし、このエラー コードを使用する必要はありません。  通常、より多くの情報が他の 2 種類のデータ メンバーで使用できます。  `SCODE` 値の詳細については、"データ メンバーを参照してください。  
+-   [m_scode](../mfc/reference/cdaoexception-class.md#m_scode) contains an OLE `SCODE` from DAO, if applicable. You'll seldom need to work with this error code, however. Usually more information is available in the other two data members. See the data member for more about `SCODE` values.  
   
- DAO のエラー、DAO のエラー オブジェクト型と DAO のエラー コレクションについての追加情報が [CDaoException](../mfc/reference/cdaoexception-class.md)クラスで使用できます。  
+ Additional information about DAO errors, the DAO Error object type, and the DAO Errors collection is available under class [CDaoException](../mfc/reference/cdaoexception-class.md).  
   
-##  <a name="_core_a_database_exception.2d.handling_example"></a> データベースの Exception Handling の例  
- 次の例では [CRecordset](../Topic/CRecordset%20Class.md)\- **new** の演算子を使用してヒープの派生オブジェクト\) を作成し、レコードセットを開くされます \(ODBC データ ソースの場合\)。  DAO クラスの同様の例については、「DAO 例外例」を参照してください。  
+##  <a name="_core_a_database_exception.2d.handling_example"></a> A Database Exception-Handling Example  
+ The following example attempts to construct a [CRecordset](../mfc/reference/crecordset-class.md)-derived object on the heap with the **new** operator, and then open the recordset (for an ODBC data source). For a similar example for the DAO classes, see "DAO Exception Example" below.  
   
-### ODBC の例外の例  
- [開く](../Topic/CRecordset::Open.md) のメンバー関数は **try** ブロックを使用して **開く** の呼び出し \(ODBC クラスの型 [CDBException](../mfc/reference/cdbexception-class.md)\) のため、このコードで例外をスローすることができます。  **catch** 内の後続のブロックは `CDBException`をキャッチします。  例外オブジェクト自体を、`e`と呼ばれるチェックできますが、この場合はレコードセットを作成するには、操作が失敗したことを確認するだけです。  **catch** ブロックはメッセージ ボックスを表示し、レコードセット オブジェクトを削除して、クリーンアップします。  
+### <a name="odbc-exception-example"></a>ODBC Exception Example  
+ The [Open](../mfc/reference/crecordset-class.md#open) member function could throw an exception (of type [CDBException](../mfc/reference/cdbexception-class.md) for the ODBC classes), so this code brackets the **Open** call with a **try** block. The subsequent **catch** block will catch a `CDBException`. You could examine the exception object itself, called `e`, but in this case it is enough to know that the attempt to create a recordset has failed. The **catch** block displays a message box and cleans up by deleting the recordset object.  
   
- [!code-cpp[NVC_MFCDatabase#36](../mfc/codesnippet/CPP/exceptions-database-exceptions_1.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#36](../mfc/codesnippet/cpp/exceptions-database-exceptions_1.cpp)]  
   
-### DAO 例外の例  
- DAO と ODBC の例の例に似ていますが、通常は、多くの種類の情報を取得できます。  次のコードは、レコードセットを開くとき。  この試みが例外をスローすれば、エラー情報の例外オブジェクトのデータ メンバーを確認できます。  前の ODBC の例と同様に、完全に、レコードセットを作成するには、操作が失敗したことを確認します。  
+### <a name="dao-exception-example"></a>DAO Exception Example  
+ The DAO example is similar to the example for ODBC, but you can typically retrieve more kinds of information. The following code also attempts to open a recordset. If that attempt throws an exception, you can examine a data member of the exception object for error information. As with the previous ODBC example, it is probably enough to know that the attempt to create a recordset failed.  
   
- [!code-cpp[NVC_MFCDatabase#37](../mfc/codesnippet/CPP/exceptions-database-exceptions_2.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#37](../mfc/codesnippet/cpp/exceptions-database-exceptions_2.cpp)]  
   
- このコードは、例外オブジェクトの [m\_pErrorInfo](../Topic/CDaoException::m_pErrorInfo.md) のメンバーからエラー メッセージの文字列を取得します。  MFC は、例外をスローすると、このメンバーを塗りつぶします。  
+ This code gets an error message string from the [m_pErrorInfo](../mfc/reference/cdaoexception-class.md#m_perrorinfo) member of the exception object. MFC fills this member when it throws the exception.  
   
- エラー情報の詳細については `CDaoException` オブジェクトによって返される、クラスに [CDaoException](../mfc/reference/cdaoexception-class.md) と [CDaoErrorInfo](../mfc/reference/cdaoerrorinfo-structure.md)を参照します。  
+ For a discussion of the error information returned by a `CDaoException` object, see classes [CDaoException](../mfc/reference/cdaoexception-class.md) and [CDaoErrorInfo](../mfc/reference/cdaoerrorinfo-structure.md).  
   
- Microsoft Jet の ODBC を使っている場合 \(.mdb\) データベースを使用すると、ほとんどの場合は、一つの 1 つがエラー オブジェクトがあります。  まれなケースで ODBC データ ソースを使用して、複数のエラーがある場合、[CDaoException::GetErrorCount](../Topic/CDaoException::GetErrorCount.md)が返すエラーの数に基づいて DAO のエラー コレクションを反復処理できます。  ループを使用して `m_pErrorInfo` のデータ メンバーを再設定する呼び出し [CDaoException::GetErrorInfo](../Topic/CDaoException::GetErrorInfo.md) たび。  
+ When you are working with Microsoft Jet (.mdb) databases, and in most cases when you are working with ODBC, there will be only one error object. In the rare case when you are using an ODBC data source and there are multiple errors, you can loop through DAO's Errors collection based on the number of errors returned by [CDaoException::GetErrorCount](../mfc/reference/cdaoexception-class.md#geterrorcount). Each time through the loop, call [CDaoException::GetErrorInfo](../mfc/reference/cdaoexception-class.md#geterrorinfo) to refill the `m_pErrorInfo` data member.  
   
-## 参照  
- [例外処理](../mfc/exception-handling-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Exception Handling](../mfc/exception-handling-in-mfc.md)
+
+

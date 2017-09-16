@@ -1,40 +1,59 @@
 ---
-title: "配列、リスト、およびマップ クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.mfc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], クラス"
-  - "コレクション クラス, 一覧"
-  - "コレクション クラス, マップ"
-  - "リスト クラス"
-  - "マップ クラス"
+title: Array, List, and Map Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.mfc
+dev_langs:
+- C++
+helpviewer_keywords:
+- arrays [MFC], classes
+- list classes [MFC]
+- collection classes [MFC], maps
+- map classes [MFC]
+- collection classes [MFC], lists
 ms.assetid: 81a13a7f-0c2c-4efd-b6bb-b4e624a0743d
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 配列、リスト、およびマップ クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 28ed43e1451c484dc2bb3ed08e1db194f77075de
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-データの集計を処理するために、クラス ライブラリには、コレクション クラス—配列、さまざまなオブジェクトおよび定義済みの型を保持できるリストとグループのマップを提供します。  コレクションは動的にサイズ変更されます。  これらのクラスは、プログラムで Windows 用に記述されていないかどうかを使用できます。  ただし、アプリケーション フレームワークのドキュメント クラスを定義するデータ構造を実装する場合に最も役立ちます。  これらの作業項目を簡単に特殊なコレクション クラスを派生するか、テンプレート クラスに基づいてそれらを作成できます。  これらの方法の詳細については、記事 [コレクション](../mfc/collections.md)を参照します。  テンプレートのコレクション クラスの一覧については、[配列、リスト、マップのテンプレート クラス](../mfc/template-classes-for-arrays-lists-and-maps.md)記事を参照してください。  
+---
+# <a name="array-list-and-map-classes"></a>Array, List, and Map Classes
+For handling aggregates of data, the class library provides a group of collection classes — arrays, lists, and maps — that can hold a variety of object and predefined types. The collections are dynamically sized. These classes can be used in any program, whether written for Windows or not. However, they are most useful for implementing the data structures that define your document classes in the application framework. You can readily derive specialized collection classes from these, or you can create them based on the template classes. For more information about these approaches, see the article [Collections](../mfc/collections.md). For a list of the template collection classes, see the article [Template Classes for Arrays, Lists, and Maps](../mfc/template-classes-for-arrays-lists-and-maps.md).  
   
- 配列は、メモリ内に連続して格納される 1 次元データ構造です。  これらは、指定した要素のメモリ アドレスの要素のインデックスを要素のサイズに乗算され、配列のベース アドレスに結果を追加して計算できるため、非常に高速ランダム アクセスをサポートします。  ただし、配列が挿入される要素を作るために挿入される要素を超える配列全体を移動する必要があるため、配列に要素を挿入する必要がある場合は非常に大きくなります。  配列は必要に応じて、拡大縮小することができます。  
+ Arrays are one-dimensional data structures that are stored contiguously in memory. They support very fast random access since the memory address of any given element can be calculated by multiplying the index of the element by the size of an element and adding the result to the base address of the array. But arrays are very expensive if you have to insert elements into the array, since the entire array past the element inserted has to be moved to make room for the element to be inserted. Arrays can grow and shrink as necessary.  
   
- リスト、配列に似ていますが、非常に別々に格納されます。  リストの各要素は、そのダブルリンク リストを行う前と次の要素へのポインターが格納されます。  これは、レンダリングを使用して複数のポインターを変更するためにのみが含まれる場合、またはアイテムの削除追加処理が高速です。  ただし、リストを検索すると、すべての検索はリストの最後の 1 つが選択された状態で開始する必要があるので、負荷がかかる場合があります。  
+ Lists are similar to arrays but are stored very differently. Each element in a list also includes a pointer to the previous and next elements, making it a doubly linked list. It is very fast to add or delete items because doing so only involves changing a few pointers. However, searching a list can be expensive since all searches need to start at one of the list's ends.  
   
- マップは、データ値にキー値を関連付けます。  たとえば、マップのキーには文字列とデータ ポインターであることができます。  特定の文字列に関連付けられたポインターを与えるためにマップを要求します。  マップ内の参照は、マップが素数参照に対するハッシュ テーブルを使用する場合があります。  項目を追加または削除すると、高速です。  マップは、補助インデックスとして別のデータ構造体とともに使用されます。  MFC は [メッセージ マップ](../mfc/mapping-messages.md) と呼ばれるメッセージに対するハンドラー関数へのポインターに Windows メッセージをマップするために対応する特殊なを使用します。  
+ Maps relate a key value to a data value. For instance, the key of a map could be a string and the data a pointer into a list. You would ask the map to give you the pointer associated with a particular string. Map lookups are fast because maps use hash tables for key lookups. Adding and deleting items is also fast. Maps are often used with other data structures as auxiliary indices. MFC uses a special kind of map called a [message map](../mfc/mapping-messages.md) to map Windows messages to a pointer to the handler function for that message.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

@@ -1,48 +1,67 @@
 ---
-title: "ツリー コントロールの通知メッセージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, 通知"
-  - "メッセージ, 通知"
-  - "通知, CTreeCtrl"
-  - "通知, ツリー コントロール"
-  - "ツリー コントロール, 通知メッセージ"
+title: Tree Control Notification Messages | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- notifications [MFC], tree controls
+- messages [MFC], notification
+- CTreeCtrl class [MFC], notifications
+- notifications [MFC], CTreeCtrl
+- tree controls [MFC], notification messages
 ms.assetid: ac7013b4-91dd-4668-bd75-439ca0680ef9
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ツリー コントロールの通知メッセージ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fa73f84bbbd6e8d4318b038831ccdd5b1721e9c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) は **WM\_NOTIFY** メッセージとして以下の通知メッセージ送信:  
+---
+# <a name="tree-control-notification-messages"></a>Tree Control Notification Messages
+A tree control ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) sends the following notification messages as **WM_NOTIFY** messages:  
   
-|通知メッセージ|説明|  
-|-------------|--------|  
-|**TVN\_BEGINDRAG**|ドラッグ アンド ドロップ操作の開始を示します|  
-|**TVN\_BEGINLABELEDIT**|埋め込みのラベル編集の開始を示します|  
-|**TVN\_BEGINRDRAG**|マウスの右ボタンを使用して、ドラッグ アンド ドロップ操作を開始するときに、通知します|  
-|**TVN\_DELETEITEM**|特定の項目の削除を通知します|  
-|**TVN\_ENDLABELEDIT**|ラベル編集の終了を示します|  
-|**TVN\_GETDISPINFO**|項目が表示されるようにツリー コントロールは、必要な情報を要求します。|  
-|**TVN\_ITEMEXPANDED**|親項目の子アイテムの一覧を展開するか、折りたたまれたの場合|  
-|**TVN\_ITEMEXPANDING**|親項目の子アイテムの一覧が展開されているか、または折りたたまれるしようとする場合|  
-|**TVN\_KEYDOWN**|キーボード イベントによって通知されます。|  
-|**TVN\_SELCHANGED**|選択範囲が 1 項目間で変更する場合|  
-|**TVN\_SELCHANGING**|選択範囲が 1 個の項目間に変更されるという場合|  
-|**TVN\_SETDISPINFO**|項目で維持される情報を更新する通知|  
+|Notification message|Description|  
+|--------------------------|-----------------|  
+|**TVN_BEGINDRAG**|Signals the start of a drag-and-drop operation|  
+|**TVN_BEGINLABELEDIT**|Signals the start of in-place label editing|  
+|**TVN_BEGINRDRAG**|Signals the start of a drag-and-drop operation, using the right mouse button|  
+|**TVN_DELETEITEM**|Signals the deletion of a specific item|  
+|**TVN_ENDLABELEDIT**|Signals the end of label editing|  
+|**TVN_GETDISPINFO**|Requests information that the tree control requires to display an item|  
+|**TVN_ITEMEXPANDED**|Signals that a parent item's list of child items was expanded or collapsed|  
+|**TVN_ITEMEXPANDING**|Signals that a parent item's list of child items is about to be expanded or collapsed|  
+|**TVN_KEYDOWN**|Signals a keyboard event|  
+|**TVN_SELCHANGED**|Signals that the selection has changed from one item to another|  
+|**TVN_SELCHANGING**|Signals that the selection is about to be changed from one item to another|  
+|**TVN_SETDISPINFO**|Notification to update the information maintained for an item|  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

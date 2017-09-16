@@ -1,64 +1,82 @@
 ---
-title: "リモート オートメーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション コントローラー"
-  - "オートメーション オブジェクト"
-  - "オートメーション オブジェクト, 作成"
-  - "COM, リモート オートメーション"
-  - "DCOM, リモート オートメーション"
-  - "MFC COM, リモート オートメーション"
-  - "MFC, COM サポート"
-  - "リモート オートメーション"
+title: Remote Automation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC COM, Remote Automation
+- Automation objects [MFC]
+- DCOM [MFC], Remote Automation
+- Automation objects [MFC], creating
+- Remote Automation [MFC]
+- MFC, COM support
+- Automation controller [MFC]
+- COM, Remote Automation [MFC]
 ms.assetid: 363f87fb-08fa-4458-b089-b46365a6d4f2
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# リモート オートメーション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 44f579ff2b10d4e8e4e655110a4ec9835b192fd8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="remote-automation"></a>Remote Automation
 > [!NOTE]
->  Visual C\+\+ .NET の開発者が新しいアプリケーションにリモート オートメーションではなく DCOM を使用することをお勧めします。  Visual C\+\+ .NET は、Windows 95 をサポートしません。  ユーザーがリモート オートメーションをサポートする必要がある場合は [リモート オートメーションの場所に最適です。](../mfc/where-does-remote-automation-fit-in-q.md)で説明します。  
+>  It is recommended that Visual C++ .NET developers use DCOM rather than Remote Automation for new applications. Visual C++ .NET does not support Windows 95. Cases in which you would need to support Remote Automation are described in [Where Does Remote Automation Fit In](where-does-remote-automation-fit-in-q.md).  
   
- リモート オートメーション インターフェイスは、コンシューマーがネットワーク上の別のコンピューターに、たとえば、存在するプロバイダー インターフェイスを実行できるようにする [オートメーション](../mfc/automation.md) の型です。  
+ Remote Automation is a type of [Automation](../mfc/automation.md) that allows an interface consumer to execute an interface provider that resides on another machine, for example, on a network.  
   
- ここでは、リモートでも実行できる、これらのリモート オートメーション オブジェクトを使用して、オートメーション コントローラーの作成方法を作成する方法について説明します。オートメーション オブジェクト。  また、構成オプションを調べて、リモート オートメーションと DCOM \(リモートで呼び出され、実行されるオートメーションに関連する型以外のインターフェイスを許可する\) COM の分散バージョンとの間の主な相違点を示しています。OLE  
+ This article explains how to create Automation objects that can be invoked and executed remotely, and how to create Automation controllers that can use these Remote Automation objects. It also examines configuration options and points out the major differences between Remote Automation and DCOM (the distributed version of COM and OLE that allows interfaces other than those related to automation to be invoked and executed remotely).  
   
-## このセクションの内容  
- [DCOM \(分散コンポーネント オブジェクト モデル\) の履歴](../mfc/history-of-dcom.md)  
+## <a name="in-this-section"></a>In This Section  
+ [History of DCOM (Distributed Component Object Model)](../mfc/history-of-dcom.md)  
   
- [リモート オートメーションの場所に最適です。](../mfc/where-does-remote-automation-fit-in-q.md)  
+ [Where Does Remote Automation Fit In](where-does-remote-automation-fit-in-q.md)  
   
- [リモート オートメーションは何を提供します。](../mfc/what-does-remote-automation-provide-q.md)  
+ [What Does Remote Automation Provide](what-does-remote-automation-provide-q.md)  
   
- [リモート オートメーションのセキュリティ](../mfc/security-in-remote-automation.md)  
+ [Remote Automation Security](../mfc/security-in-remote-automation.md)  
   
- [スレッド モデル](../mfc/remote-automation-threading-models.md)  
+ [Threading Models](../mfc/remote-automation-threading-models.md)  
   
- [インストール](../Topic/Remote%20Automation%20Installation.md)  
+ [Installation](../mfc/remote-automation-installation.md)  
   
- [オートメーション マネージャー](../mfc/automation-manager-mfc.md)  
+ [The Automation Manager](../mfc/automation-manager-mfc.md)  
   
--   [リモート オートメーション接続マネージャー](../mfc/remote-automation-connection-manager.md)  
+-   [The Remote Automation Connection Manager](../mfc/remote-automation-connection-manager.md)  
   
--   [リモート オートメーションのユーザー コンポーネント](../mfc/remote-automation-user-components.md)  
+-   [Remote Automation User Components](../mfc/remote-automation-user-components.md)  
   
- [リモート オートメーションを使用するプログラムを作成します。](../mfc/creating-programs-that-use-remote-automation.md)  
+ [Creating Programs That Use Remote Automation](../mfc/creating-programs-that-use-remote-automation.md)  
   
- [AUTOCLIK と AUTODRIV を使用して実行中のなリモート オートメーション](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)  
+ [Running Remote Automation Using AUTOCLIK and AUTODRIV](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [MFC COM](../mfc/mfc-com.md)   
- [オートメーション](../mfc/automation.md)
+ [Automation](../mfc/automation.md)
+

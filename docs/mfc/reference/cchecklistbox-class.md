@@ -1,5 +1,5 @@
 ---
-title: "CCheckListBox クラス |Microsoft ドキュメント"
+title: CCheckListBox Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -25,8 +25,17 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CCheckListBox class
-- checklist boxes
+- CCheckListBox [MFC], CCheckListBox
+- CCheckListBox [MFC], Create
+- CCheckListBox [MFC], DrawItem
+- CCheckListBox [MFC], Enable
+- CCheckListBox [MFC], GetCheck
+- CCheckListBox [MFC], GetCheckStyle
+- CCheckListBox [MFC], IsEnabled
+- CCheckListBox [MFC], MeasureItem
+- CCheckListBox [MFC], OnGetCheckPosition
+- CCheckListBox [MFC], SetCheck
+- CCheckListBox [MFC], SetCheckStyle
 ms.assetid: 1dd78438-00e8-441c-b36f-9c4f9ac0d019
 caps.latest.revision: 26
 author: mikeblome
@@ -46,73 +55,73 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 2cce91e3b6cb6cdf6ec2f4564fcf5090a54c917f
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: af338e05ffbbbcce5cd6fadd8e8d9e432924b353
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cchecklistbox-class"></a>CCheckListBox クラス
-Windows のチェックリスト ボックスの機能を提供します。  
+# <a name="cchecklistbox-class"></a>CCheckListBox Class
+Provides the functionality of a Windows checklist box.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CCheckListBox : public CListBox  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[サンプル](#cchecklistbox)|`CCheckListBox` オブジェクトを構築します。|  
+|[CCheckListBox::CCheckListBox](#cchecklistbox)|Constructs a `CCheckListBox` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CCheckListBox::Create](#create)|Windows チェックリスト ボックスを作成し、それをアタッチ、`CCheckListBox`オブジェクトです。|  
-|[:Drawitem](#drawitem)|オーナー描画リスト ボックスの変更のビジュアルな部分のときに、フレームワークによって呼び出されます。|  
-|[CCheckListBox::Enable](#enable)|有効またはチェックリスト ボックス アイテムを無効にします。|  
-|[CCheckListBox::GetCheck](#getcheck)|項目のチェック ボックスの状態を取得します。|  
-|[CCheckListBox::GetCheckStyle](#getcheckstyle)|コントロールのチェック ボックスのスタイルを取得します。|  
-|[CCheckListBox::IsEnabled](#isenabled)|アイテムが有効になっているかどうかを決定します。|  
-|[CCheckListBox::MeasureItem](#measureitem)|オーナー描画スタイルを持つリスト ボックスが作成されるときに、フレームワークによって呼び出されます。|  
-|[CCheckListBox::OnGetCheckPosition](#ongetcheckposition)|項目のチェック ボックスの位置を取得するためにフレームワークによって呼び出されます。|  
-|[CCheckListBox::SetCheck](#setcheck)|項目のチェック ボックスの状態を設定します。|  
-|[CCheckListBox::SetCheckStyle](#setcheckstyle)|コントロールのチェック ボックスのスタイルを設定します。|  
+|[CCheckListBox::Create](#create)|Creates the Windows checklist box and attaches it to the `CCheckListBox` object.|  
+|[CCheckListBox::DrawItem](#drawitem)|Called by the framework when a visual aspect of an owner-draw list box changes.|  
+|[CCheckListBox::Enable](#enable)|Enables or disables a checklist box item.|  
+|[CCheckListBox::GetCheck](#getcheck)|Gets the state of an item's check box.|  
+|[CCheckListBox::GetCheckStyle](#getcheckstyle)|Gets the style of the control's check boxes.|  
+|[CCheckListBox::IsEnabled](#isenabled)|Determines whether an item is enabled.|  
+|[CCheckListBox::MeasureItem](#measureitem)|Called by the framework when a list box with an owner-draw style is created.|  
+|[CCheckListBox::OnGetCheckPosition](#ongetcheckposition)|Called by the framework to get the position of an item's check box.|  
+|[CCheckListBox::SetCheck](#setcheck)|Sets the state of an item's check box.|  
+|[CCheckListBox::SetCheckStyle](#setcheckstyle)|Sets the style of the control's check boxes.|  
   
-## <a name="remarks"></a>コメント  
- 「チェックリスト ボックス」には、ファイル名などのアイテムの一覧が表示されます。 一覧には、各項目には、ユーザーがチェックまたはオフを隣のチェック ボックスがあります。  
+## <a name="remarks"></a>Remarks  
+ A "checklist box" displays a list of items, such as filenames. Each item in the list has a check box next to it that the user can check or clear.  
   
- `CCheckListBox`オーナー描画コントロールに対してのみ、一覧に表示のテキスト文字列を超えるためです。 簡単に言うと、チェックリスト ボックスには、テキスト文字列とチェック ボックスが含まれていますが、テキストはまったく必要はありません。 たとえば、小さいビットマップでは各項目の横のチェック ボックスの一覧がある可能性があります。  
+ `CCheckListBox` is only for owner-drawn controls because the list contains more than text strings. At its simplest, a checklist box contains text strings and check boxes, but you do not need to have text at all. For example, you could have a list of small bitmaps with a check box next to each item.  
   
- 独自のチェックリスト ボックスを作成するから独自のクラスを派生する必要があります`CCheckListBox`します。 派生クラスを記述するには、派生クラスのコンス トラクターを呼び出す、**作成**します。  
+ To create your own checklist box, you must derive your own class from `CCheckListBox`. To derive your own class, write a constructor for the derived class, then call **Create**.  
   
- リスト ボックスからその親に送信される Windows の通知メッセージを処理する場合 (通常から派生したクラス[CDialog](../../mfc/reference/cdialog-class.md))、親クラスに各メッセージをメッセージ マップ エントリとメッセージ ハンドラー メンバー関数を追加します。  
+ If you want to handle Windows notification messages sent by a list box to its parent (usually a class derived from [CDialog](../../mfc/reference/cdialog-class.md)), add a message-map entry and message-handler member function to the parent class for each message.  
   
- 各メッセージ マップ エントリは、次の形式をとります。  
+ Each message-map entry takes the following form:  
   
  **ON_**Notification **(**`id`, `memberFxn`**)**  
   
- ここで`id`通知を送信するコントロールの子ウィンドウの ID を指定し、`memberFxn`通知を処理する記述した親メンバー関数の名前を指定します。  
+ where `id` specifies the child window ID of the control sending the notification and `memberFxn` is the name of the parent member function you have written to handle the notification.  
   
- 親の関数のプロトタイプは次のとおりです。  
+ The parent's function prototype is as follows:  
   
  **afx_msg** `void` `memberFxn` **( );**  
   
- 特に関連する&1; つだけのメッセージ マップ エントリが**CCheckListBox** (メッセージ マップ エントリも参照してください。 が、 [CListBox](../../mfc/reference/clistbox-class.md))。  
+ There is only one message-map entry that pertains specifically to **CCheckListBox** (but see also the message-map entries for [CListBox](../../mfc/reference/clistbox-class.md)):  
   
-- **ON_CLBN_CHKCHANGE**ユーザーが項目のチェック ボックスをオンの状態を変更します。  
+- **ON_CLBN_CHKCHANGE** The user has changed the state of an item's checkbox.  
   
- チェックリスト ボックスが既定のチェックリスト ボックス (文字列の左に既定のサイズのチェック ボックスの一覧) の場合は、既定値を使用することができます[:drawitem](#drawitem)チェックリスト ボックスを描画します。 それ以外の場合、オーバーライドする必要があります、 [CListBox::CompareItem](../../mfc/reference/clistbox-class.md#compareitem)関数および[:drawitem](#drawitem)と[CCheckListBox::MeasureItem](#measureitem)関数です。  
+ If your checklist box is a default checklist box (a list of strings with the default-sized checkboxes to the left of each), you can use the default [CCheckListBox::DrawItem](#drawitem) to draw the checklist box. Otherwise, you must override the [CListBox::CompareItem](../../mfc/reference/clistbox-class.md#compareitem) function and the [CCheckListBox::DrawItem](#drawitem) and [CCheckListBox::MeasureItem](#measureitem) functions.  
   
- チェックリスト ボックスは、ダイアログ テンプレートから、またはコードで直接作成できます。  
+ You can create a checklist box either from a dialog template or directly in your code.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -123,24 +132,24 @@ class CCheckListBox : public CListBox
   
  `CCheckListBox`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="cchecklistbox"></a>サンプル  
- `CCheckListBox` オブジェクトを構築します。  
+##  <a name="cchecklistbox"></a>  CCheckListBox::CCheckListBox  
+ Constructs a `CCheckListBox` object.  
   
 ```  
 CCheckListBox();
 ```  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CCheckListBox`&2; つのステップ内のオブジェクト。 最初から派生するクラスを定義する`CCheckListBox`、物書き**作成**に接続を Windows チェックリスト ボックスを初期化し、`CCheckListBox`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CCheckListBox` object in two steps. First define a class derived from `CCheckListBox`, then call **Create**, which initializes the Windows checklist box and attaches it to the `CCheckListBox` object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog&#60;](../../mfc/codesnippet/cpp/cchecklistbox-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#60](../../mfc/codesnippet/cpp/cchecklistbox-class_1.cpp)]  
   
-##  <a name="create"></a>CCheckListBox::Create  
- Windows チェックリスト ボックスを作成し、それをアタッチ、`CCheckListBox`オブジェクトです。  
+##  <a name="create"></a>  CCheckListBox::Create  
+ Creates the Windows checklist box and attaches it to the `CCheckListBox` object.  
   
 ```  
 virtual BOOL Create(
@@ -150,67 +159,67 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- チェックリスト ボックスのスタイルを指定します。 スタイルである必要があります**LBS_HASSTRINGS** 、 **LBS_OWNERDRAWFIXED** (リスト内のすべての項目は同じ高さ) または**LBS_OWNERDRAWVARIABLE** (リスト内の項目は、高さが異なるは)。 このスタイルを他と組み合わせて[リスト ボックス スタイル](../../mfc/reference/list-box-styles.md)を除く**LBS_USETABSTOPS**します。  
+ Specifies the style of the checklist box. The style must be **LBS_HASSTRINGS** and either **LBS_OWNERDRAWFIXED** (all items in the list are the same height) or **LBS_OWNERDRAWVARIABLE** (items in the list are of varying heights). This style can be combined with other [list-box styles](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) except **LBS_USETABSTOPS**.  
   
  `rect`  
- チェックリスト ボックスのサイズと位置を指定します。 いずれか、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](../../mfc/reference/rect-structure1.md)構造体。  
+ Specifies the checklist-box size and position. Can be either a [CRect](../../atl-mfc-shared/reference/crect-class.md) object or a [RECT](../../mfc/reference/rect-structure1.md) structure.  
   
  `pParentWnd`  
- チェックリスト ボックスの親ウィンドウを指定します (通常、`CDialog`オブジェクト)。 ことはできません**NULL**します。  
+ Specifies the checklist box's parent window (usually a `CDialog` object). It must not be **NULL**.  
   
  `nID`  
- チェックリスト ボックスのコントロール ID を指定します  
+ Specifies the checklist box's control ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CCheckListBox`&2; つのステップ内のオブジェクト。 派生するクラスを最初に、定義**CcheckListBox**し、呼び出す**作成**に接続を Windows チェックリスト ボックスを初期化し、`CCheckListBox`です。 参照してください[サンプル](#cchecklistbox)サンプルです。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CCheckListBox` object in two steps. First, define a class derived from **CcheckListBox** and then call **Create**, which initializes the Windows checklist box and attaches it to the `CCheckListBox`. See [CCheckListBox::CCheckListBox](#cchecklistbox) for a sample.  
   
- **作成**実行されると、Windows の送信、 [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate)、 [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate)、 [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)と[WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo)チェックリスト ボックス コントロールへのメッセージ。  
+ When **Create** executes, Windows sends the [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate), [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate), [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize), and [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) messages to the checklist-box control.  
   
- 既定では、これらのメッセージが処理される、 [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate)、 [OnCreate](../../mfc/reference/cwnd-class.md#oncreate)、 [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize)、および[OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo)メンバー関数、`CWnd`基本クラスです。 既定のメッセージ処理を拡張するには、メッセージ マップを追加と派生クラスのメンバー関数が上記のメッセージ ハンドラーをオーバーライドします。 オーバーライド`OnCreate`など、新しいクラスに必要な初期化を実行します。  
+ These messages are handled by default by the [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate), [OnCreate](../../mfc/reference/cwnd-class.md#oncreate), [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize), and [OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) member functions in the `CWnd` base class. To extend the default message handling, add a message map to the your derived class and override the preceding message-handler member functions. Override `OnCreate`, for example, to perform needed initialization for a new class.  
   
- 次の適用[ウィンドウ スタイル](../../mfc/reference/window-styles.md)チェックリスト ボックス コントロールにします。  
+ Apply the following [window styles](../../mfc/reference/styles-used-by-mfc.md#window-styles) to a checklist-box control:  
   
-- **WS_CHILD**常に  
+- **WS_CHILD** Always  
   
-- **WS_VISIBLE**通常  
+- **WS_VISIBLE** Usually  
   
-- **WS_DISABLED**ことはほとんどありません  
+- **WS_DISABLED** Rarely  
   
-- **WS_VSCROLL**垂直スクロール バーを追加するには  
+- **WS_VSCROLL** To add a vertical scroll bar  
   
-- **WS_HSCROLL**水平スクロール バーを追加するには  
+- **WS_HSCROLL** To add a horizontal scroll bar  
   
-- **WS_GROUP**コントロールをグループ化  
+- **WS_GROUP** To group controls  
   
-- **WS_TABSTOP**コントロールのタブ オーダーを許可するには  
+- **WS_TABSTOP** To allow tabbing to this control  
   
-##  <a name="drawitem"></a>:Drawitem  
- オーナー描画のチェックリスト ボックスの変更のビジュアルな部分のときに、フレームワークによって呼び出されます。  
+##  <a name="drawitem"></a>  CCheckListBox::DrawItem  
+ Called by the framework when a visual aspect of an owner-drawn checklist box changes.  
   
 ```  
 virtual void DrawItem(LPDRAWITEMSTRUCT lpDrawItemStruct);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpDrawItemStruct`  
- Long ポインター、 [DRAWITEMSTRUCT](../../mfc/reference/drawitemstruct-structure.md)のために必要な図面の種類に関する情報を格納する構造体。  
+ A long pointer to a [DRAWITEMSTRUCT](../../mfc/reference/drawitemstruct-structure.md) structure that contains information about the type of drawing required.  
   
-### <a name="remarks"></a>コメント  
- **ItemAction**と**itemState**のメンバー、`DRAWITEMSTRUCT`構造体は、実行するのには、描画の動作を定義します。  
+### <a name="remarks"></a>Remarks  
+ The **itemAction** and **itemState** members of the `DRAWITEMSTRUCT` structure define the drawing action that is to be performed.  
   
- 既定では、この関数は、左に既定のサイズのチェック ボックスに文字列ごとのリストで構成される、既定のチェック ボックス リストを描画します。 チェック ボックスの一覧のサイズは、いずれかで指定された[作成](#create)します。  
+ By default, this function draws a default checkbox list, consisting of a list of strings each with a default-sized checkbox to the left. The checkbox list size is the one specified in [Create](#create).  
   
- チェックリスト ボックスの文字列ではないリスト、可変サイズの項目、または左側にチェック ボックスなど、既定ではないオーナー描画チェックリスト ボックスの描画を実装するには、この関数をオーバーライドします。 アプリケーションで指定されたディスプレイ コンテキスト用に選択したすべてのグラフィック デバイス インターフェイス (GDI) オブジェクトを復元する必要があります`lpDrawItemStruct`このメンバー関数が終了する前にします。  
+ Override this member function to implement drawing of owner-draw checklist boxes that are not the default, such as checklist boxes with lists that aren't strings, with variable-height items, or with checkboxes that aren't on the left. The application should restore all graphics device interface (GDI) objects selected for the display context supplied in `lpDrawItemStruct` before the termination of this member function.  
   
- チェックリスト ボックス スタイルのチェックリスト ボックスの項目はすべて同じ高さではない場合、(で指定されている**作成**) する必要があります**一定**をオーバーライドする必要があります、 [MeasureItem](#measureitem)関数です。  
+ If checklist box items are not all the same height, the checklist box style (specified in **Create**) must be **LBS_OWNERVARIABLE**, and you must override the [MeasureItem](#measureitem) function.  
   
-##  <a name="enable"></a>CCheckListBox::Enable  
- この関数では、有効またはチェックリスト ボックス アイテムを無効にします。  
+##  <a name="enable"></a>  CCheckListBox::Enable  
+ Call this function to enable or disable a checklist box item.  
   
 ```  
 void Enable(
@@ -218,76 +227,76 @@ void Enable(
     BOOL bEnabled = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 有効にするチェックリスト ボックス アイテムのインデックス。  
+ Index of the checklist box item to be enabled.  
   
  `bEnabled`  
- 項目が有効になっているかどうかを指定します。  
+ Specifies whether the item is enabled or disabled.  
   
-##  <a name="getcheck"></a>CCheckListBox::GetCheck  
- 指定されたチェック ボックスの状態を取得します。  
+##  <a name="getcheck"></a>  CCheckListBox::GetCheck  
+ Retrieves the state of the specified check box.  
   
 ```  
 int GetCheck(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- リスト ボックスに含まれているチェック ボックスの&0; から始まるインデックス。  
+ Zero-based index of a check box that is contained in the list box.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたチェック ボックスの状態。 次の表は、指定できる値を示します。  
+### <a name="return-value"></a>Return Value  
+ The state of the specified check box. The following table lists possible values.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|`BST_CHECKED`|チェック ボックスをオンにするとします。|  
-|`BST_UNCHECKED`|チェック ボックスをオフにするとします。|  
-|`BST_INDETERMINATE`|チェック ボックスの状態は予測できません。|  
+|`BST_CHECKED`|The check box is checked.|  
+|`BST_UNCHECKED`|The check box is not checked.|  
+|`BST_INDETERMINATE`|The check box state is indeterminate.|  
   
-##  <a name="getcheckstyle"></a>CCheckListBox::GetCheckStyle  
- チェックリスト ボックスのスタイルを取得するには、この関数を呼び出します。  
+##  <a name="getcheckstyle"></a>  CCheckListBox::GetCheckStyle  
+ Call this function to get the checklist box's style.  
   
 ```  
 UINT GetCheckStyle();
 ```  
   
-### <a name="return-value"></a>戻り値  
- コントロールのチェック ボックスのスタイル。  
+### <a name="return-value"></a>Return Value  
+ The style of the control's check boxes.  
   
-### <a name="remarks"></a>コメント  
- 有効なスタイルについては、次を参照してください。[有効なスタイル](#setcheckstyle)します。  
+### <a name="remarks"></a>Remarks  
+ For information on possible styles, see [SetCheckStyle](#setcheckstyle).  
   
-##  <a name="isenabled"></a>CCheckListBox::IsEnabled  
- アイテムが有効になっているかどうかを判断するには、この関数を呼び出します。  
+##  <a name="isenabled"></a>  CCheckListBox::IsEnabled  
+ Call this function to determine whether an item is enabled.  
   
 ```  
 BOOL IsEnabled(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 項目のインデックス。  
+ Index of the item.  
   
-### <a name="return-value"></a>戻り値  
- 項目が有効な場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the item is enabled; otherwise 0.  
   
-##  <a name="measureitem"></a>CCheckListBox::MeasureItem  
- 既定以外のスタイルとチェックリスト ボックスが作成されたときに、フレームワークによって呼び出されます。  
+##  <a name="measureitem"></a>  CCheckListBox::MeasureItem  
+ Called by the framework when a checklist box with a nondefault style is created.  
   
 ```  
 virtual void MeasureItem(LPMEASUREITEMSTRUCT lpMeasureItemStruct);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpMeasureItemStruct`  
- Long ポインター、 [MEASUREITEMSTRUCT](../../mfc/reference/measureitemstruct-structure.md)構造体。  
+ A long pointer to a [MEASUREITEMSTRUCT](../../mfc/reference/measureitemstruct-structure.md) structure.  
   
-### <a name="remarks"></a>コメント  
- 既定では、このメンバー関数は何もしません。 このメンバー関数をオーバーライドし、入力、`MEASUREITEMSTRUCT`構造チェックリスト ボックス アイテムのディメンションの Windows に通知します。 チェックリスト ボックスが作成された場合、 [LBS_OWNERDRAWVARIABLE](../../mfc/reference/list-box-styles.md)リスト ボックス内の各項目のスタイル、フレームワークと記述します。 それ以外の場合、このメンバーは、1 回だけ呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ By default, this member function does nothing. Override this member function and fill in the `MEASUREITEMSTRUCT` structure to inform Windows of the dimensions of checklist-box items. If the checklist box is created with the [LBS_OWNERDRAWVARIABLE](../../mfc/reference/styles-used-by-mfc.md#list-box-styles) style, the framework calls this member function for each item in the list box. Otherwise, this member is called only once.  
   
-##  <a name="ongetcheckposition"></a>CCheckListBox::OnGetCheckPosition  
- フレームワークでは、アイテムのチェック ボックスのサイズと位置を取得するには、この関数を呼び出します。  
+##  <a name="ongetcheckposition"></a>  CCheckListBox::OnGetCheckPosition  
+ The framework calls this function to get the position and size of the check box in an item.  
   
 ```  
 virtual CRect OnGetCheckPosition(
@@ -295,21 +304,21 @@ virtual CRect OnGetCheckPosition(
     CRect rectCheckBox);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *rectItem*  
- 位置とリスト アイテムのサイズ。  
+ The position and size of the list item.  
   
  `rectCheckBox`  
- 既定の位置と項目のチェック ボックスのサイズ。  
+ The default position and size of an item's check box.  
   
-### <a name="return-value"></a>戻り値  
- 位置と項目のチェック ボックスのサイズ。  
+### <a name="return-value"></a>Return Value  
+ The position and size of an item's check box.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装は、既定の位置とチェック ボックスのサイズにのみを返します ( `rectCheckBox`)。 既定では、チェック ボックスをアイテムの左上隅に配置する、標準のチェック ボックスのサイズ。 場合は、右側のチェック ボックスや、拡大または縮小のチェック ボックスがある可能性があります。 このような場合は、オーバーライド`OnGetCheckPosition` チェック ボックスの位置とサイズ内に項目を変更します。  
+### <a name="remarks"></a>Remarks  
+ The default implementation only returns the default position and size of the check box ( `rectCheckBox`). By default, a check box is aligned in the upper-left corner of an item and is the standard check box size. There may be cases where you want the check boxes on the right, or want a larger or smaller check box. In these cases, override `OnGetCheckPosition` to change the check box position and size within the item.  
   
-##  <a name="setcheck"></a>CCheckListBox::SetCheck  
- 指定されたチェック ボックスの状態を設定します。  
+##  <a name="setcheck"></a>  CCheckListBox::SetCheck  
+ Sets the state of the specified check box.  
   
 ```  
 void SetCheck(
@@ -317,35 +326,35 @@ void SetCheck(
     int nCheck);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- リスト ボックスに含まれているチェック ボックスの&0; から始まるインデックス。  
+ Zero-based index of a check box that is contained in the list box.  
   
  `nCheck`  
- 指定された チェック ボックス ボタンの状態。 指定できる値については、「解説」を参照してください。  
+ The button state for the specified check box. See the Remarks section for possible values.  
   
-### <a name="remarks"></a>コメント  
- 次の表に、可能な値、`nCheck`パラメーター。  
+### <a name="remarks"></a>Remarks  
+ The following table lists possible values for the `nCheck` parameter.  
   
-|値|説明|  
+|Value|Description|  
 |-----------|-----------------|  
-|**BST_CHECKED**|指定されたチェック ボックスを選択します。|  
-|**設定されています。**|指定されたチェック ボックスをオフにします。|  
-|**BST_INDETERMINATE**|不確定なに指定のチェック ボックスの状態を設定します。<br /><br /> この状態は場合のみ表示 チェック ボックスのスタイルは`BS_AUTO3STATE`または`BS_3STATE`です。 詳細については、次を参照してください。[ボタン スタイル](../../mfc/reference/button-styles.md)します。|  
+|**BST_CHECKED**|Select the specified check box.|  
+|**BST_UNCHECKED**|Clear the specified check box.|  
+|**BST_INDETERMINATE**|Set the specified check box state to indeterminate.<br /><br /> This state is only available if the check box style is `BS_AUTO3STATE` or `BS_3STATE`. For more information, see [Button Styles](../../mfc/reference/styles-used-by-mfc.md#button-styles).|  
   
-##  <a name="setcheckstyle"></a>CCheckListBox::SetCheckStyle  
- チェックリスト ボックス内のチェック ボックスのスタイルを設定するには、この関数を呼び出します。  
+##  <a name="setcheckstyle"></a>  CCheckListBox::SetCheckStyle  
+ Call this function to set the style of check boxes in the checklist box.  
   
 ```  
 void SetCheckStyle(UINT nStyle);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStyle`  
- チェックリスト ボックスのチェック ボックスのスタイルを決定します。  
+ Determines the style of check boxes in the checklist box.  
   
-### <a name="remarks"></a>コメント  
- 有効なスタイルは次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ Valid styles are:  
   
 - **BS_CHECKBOX**  
   
@@ -355,11 +364,11 @@ void SetCheckStyle(UINT nStyle);
   
 - **BS_3STATE**  
   
- 詳細については、これらのスタイルは、次を参照してください。[ボタン スタイル](../../mfc/reference/button-styles.md)します。  
+ For information on these styles, see [Button Styles](../../mfc/reference/styles-used-by-mfc.md#button-styles).  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル TSTCON](../../visual-cpp-samples.md)   
- [CListBox クラス](../../mfc/reference/clistbox-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CListBox クラス](../../mfc/reference/clistbox-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample TSTCON](../../visual-cpp-samples.md)   
+ [CListBox Class](../../mfc/reference/clistbox-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CListBox Class](../../mfc/reference/clistbox-class.md)
 

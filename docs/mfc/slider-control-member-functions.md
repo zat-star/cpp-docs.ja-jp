@@ -1,48 +1,67 @@
 ---
-title: "スライダー コントロールのメンバー関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CSliderCtrl クラス, メソッド"
-  - "スライダー コントロール, メンバー関数"
+title: Slider Control Member Functions | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CSliderCtrl class [MFC], methods
+- slider controls [MFC], member functions
 ms.assetid: dbde49ee-7306-4d14-a6ce-d09aa198178f
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# スライダー コントロールのメンバー関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 440f9a20c1d73bc7f7b125867216d356251d4a08
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アプリケーションでは、スライダー コントロールのメンバー関数を呼び出して、スライダー コントロール \([CSliderCtrl](../mfc/reference/csliderctrl-class.md)\) に関する情報を取得したり、その特性を変更したりできます。  
+---
+# <a name="slider-control-member-functions"></a>Slider Control Member Functions
+An application can call the slider control's member functions to retrieve information about the slider control ([CSliderCtrl](../mfc/reference/csliderctrl-class.md)) and to change its characteristics.  
   
- スライダーの位置 \(つまり、ユーザーが選択した値\) を取得するには、[GetPos](../Topic/CSliderCtrl::GetPos.md) メンバー関数を使用します。  スライダーの位置を設定するには、[SetPos](../Topic/CSliderCtrl::SetPos.md) メンバー関数を使用します。  `VerifyPos` メンバー関数を使用すると、スライダーが最小値と最大値の間にあることをいつでも確認できます。  
+ To retrieve the position of the slider (that is, the value the user has chosen), use the [GetPos](../mfc/reference/csliderctrl-class.md#getpos) member function. To set the position of the slider, use the [SetPos](../mfc/reference/csliderctrl-class.md#setpos) member function. At any time you can use the `VerifyPos` member function to make sure that the slider is between the minimum and maximum values.  
   
- スライダー コントロールの範囲は、スライダー コントロールで表すことのできる一連の連続する値です。  ほとんどのアプリケーションでは、最初の作成時に [SetRange](../Topic/CSliderCtrl::SetRange.md) メンバー関数を使用して、スライダー コントロールの範囲を設定します。  スライダー コントロールの作成後に、[SetRangeMax](../Topic/CSliderCtrl::SetRangeMax.md) メンバー関数および [SetRangeMin](../Topic/CSliderCtrl::SetRangeMin.md) メンバー関数を使用して、範囲を動的に変更することもできます。  範囲を動的に変更できるアプリケーションでは、通常、ユーザーが最後にスライダー コントロールの操作を終了したときの範囲の設定値が取得されます。  これらの設定値を取得するには、[GetRange](../Topic/CSliderCtrl::GetRange.md)、[GetRangeMax](../Topic/CSliderCtrl::GetRangeMax.md)、および [GetRangeMin](../Topic/CSliderCtrl::GetRangeMin.md) の各メンバー関数を使用します。  
+ The range of a slider control is the set of contiguous values that the slider control can represent. Most applications use the [SetRange](../mfc/reference/csliderctrl-class.md#setrange) member function to set the range of a slider control when it is first created. Applications can dynamically alter the range after the slider control has been created by using the [SetRangeMax](../mfc/reference/csliderctrl-class.md#setrangemax) and [SetRangeMin](../mfc/reference/csliderctrl-class.md#setrangemin) member functions. An application that allows the range to be changed dynamically typically retrieves the final range settings when the user has finished working with the slider control. To retrieve these settings, use the [GetRange](../mfc/reference/csliderctrl-class.md#getrange), [GetRangeMax](../mfc/reference/csliderctrl-class.md#getrangemax), and [GetRangeMin](../mfc/reference/csliderctrl-class.md#getrangemin) member functions.  
   
- `TBS_AUTOTICKS` スタイルを使用すると、スライダー コントロールの目盛りを自動的に表示できます。  ただし、アプリケーションで目盛りの位置と数を制御する必要がある場合は、複数のメンバー関数を使用できます。  
+ An application can use the `TBS_AUTOTICKS` style to have a slider control's tick marks displayed automatically. If an application needs to control the position or frequency of the tick marks, however, a number of member functions can be used.  
   
- 目盛りの位置を設定するには、[SetTic](../Topic/CSliderCtrl::SetTic.md) メンバー関数を使用します。  [SetTicFreq](../Topic/CSliderCtrl::SetTicFreq.md) メンバー関数を使用すると、スライダー コントロールの範囲内に目盛りを一定の間隔で設定できます。  たとえば、アプリケーションでこのメンバー関数を使用すると、1 ～ 100 の範囲に 10 個の目盛りを表示できます。  
+ To set the position of a tick mark, an application can use the [SetTic](../mfc/reference/csliderctrl-class.md#settic) member function. The [SetTicFreq](../mfc/reference/csliderctrl-class.md#setticfreq) member function allows an application to set tick marks that appear at regular intervals in the slider control's range. For example, the application can use this member function to display only 10 tick marks in a range of 1 through 100.  
   
- 目盛りに対応する、範囲内のインデックスを取得するには、[GetTic](../Topic/CSliderCtrl::GetTic.md) メンバー関数を使用します。  [GetTicArray](../Topic/CSliderCtrl::GetTicArray.md) メンバー関数を使用すると、これらのインデックスの配列を取得できます。  クライアント座標の目盛りの位置を取得するには、[GetTicPos](../Topic/CSliderCtrl::GetTicPos.md) メンバー関数を使用します。  [GetNumTics](../Topic/CSliderCtrl::GetNumTics.md) メンバー関数を使用すると、目盛りの数を取得できます。  
+ To retrieve the index in the range corresponding to a tick mark, use the [GetTic](../mfc/reference/csliderctrl-class.md#gettic) member function. The [GetTicArray](../mfc/reference/csliderctrl-class.md#getticarray) member function retrieves an array of these indices. To retrieve the position of a tick mark, in client coordinates, use the [GetTicPos](../mfc/reference/csliderctrl-class.md#getticpos) member function. An application can retrieve the number of tick marks by using the [GetNumTics](../mfc/reference/csliderctrl-class.md#getnumtics) member function.  
   
- [ClearTics](../Topic/CSliderCtrl::ClearTics.md) メンバー関数を使用すると、スライダー コントロールの目盛りをすべて削除できます。  
+ The [ClearTics](../mfc/reference/csliderctrl-class.md#cleartics) member function removes all of a slider control's tick marks.  
   
- スライダー コントロールの行サイズによって、アプリケーションが **TB\_LINEDOWN** 通知メッセージまたは **TB\_LINEUP** 通知メッセージを受け取るときにスライダーの移動する距離が決まります。  同様に、用紙サイズによって、**TB\_PAGEDOWN** 通知メッセージおよび **TB\_PAGEUP** 通知メッセージに対する応答が決まります。  アプリケーションでは、[GetLineSize](../Topic/CSliderCtrl::GetLineSize.md)、[SetLineSize](../Topic/CSliderCtrl::SetLineSize.md)、[GetPageSize](../Topic/CSliderCtrl::GetPageSize.md)、および [SetPageSize](../Topic/CSliderCtrl::SetPageSize.md) の各メンバー関数を使用して、行サイズと用紙サイズを取得または設定できます。  
+ A slider control's line size determines how far the slider moves when an application receives a **TB_LINEDOWN** or **TB_LINEUP** notification message. Similarly, the page size determines the response to the **TB_PAGEDOWN** and **TB_PAGEUP** notification messages. Applications can retrieve and set the line and page size values by using the [GetLineSize](../mfc/reference/csliderctrl-class.md#getlinesize), [SetLineSize](../mfc/reference/csliderctrl-class.md#setlinesize), [GetPageSize](../mfc/reference/csliderctrl-class.md#getpagesize), and [SetPageSize](../mfc/reference/csliderctrl-class.md#setpagesize) member functions.  
   
- メンバー関数を使用して、スライダー コントロールの寸法を取得することもできます。  [GetThumbRect](../Topic/CSliderCtrl::GetThumbRect.md) メンバー関数を使用すると、スライダーの外接する四角形を取得できます。  [GetChannelRect](../Topic/CSliderCtrl::GetChannelRect.md) メンバー関数を使用すると、スライダー コントロールのチャネルの外接する四角形を取得できます。チャネルとは、スライダーが移動する領域であり、範囲が選択されると強調表示されます。  
+ An application can use member functions to retrieve the dimensions of a slider control. The [GetThumbRect](../mfc/reference/csliderctrl-class.md#getthumbrect) member function retrieves the bounding rectangle for the slider. The [GetChannelRect](../mfc/reference/csliderctrl-class.md#getchannelrect) member function retrieves the bounding rectangle for the slider control's channel. (The channel is the area over which the slider moves and which contains the highlight when a range is selected.)  
   
- スライダー コントロールに `TBS_ENABLESELRANGE` スタイルが設定されている場合、ユーザーは連続する値の範囲をスライダー コントロールから選択できます。  選択範囲は、複数のメンバー関数を使用して動的に調整できます。  [SetSelection](../Topic/CSliderCtrl::SetSelection.md) メンバー関数を使用すると、選択範囲の開始位置と終了位置を設定できます。  ユーザーによる選択範囲の設定が終了している場合は、[GetSelection](../Topic/CSliderCtrl::GetSelection.md) メンバー関数を使用して設定値を取得できます。  ユーザーの選択範囲をクリアするには、[ClearSel](../Topic/CSliderCtrl::ClearSel.md) メンバー関数を使用します。  
+ If a slider control has the `TBS_ENABLESELRANGE` style, the user can select a range of contiguous values from it. A number of member functions allow the selection range to be adjusted dynamically. The [SetSelection](../mfc/reference/csliderctrl-class.md#setselection) member function sets the starting and ending positions of a selection. When the user has finished setting a selection range, an application can retrieve the settings by using the [GetSelection](../mfc/reference/csliderctrl-class.md#getselection) member function. To clear a user's selection, use the [ClearSel](../mfc/reference/csliderctrl-class.md#clearsel) member function.  
   
-## 参照  
- [CSliderCtrl の使い方](../mfc/using-csliderctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CSliderCtrl](../mfc/using-csliderctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

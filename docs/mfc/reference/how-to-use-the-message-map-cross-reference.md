@@ -1,40 +1,59 @@
 ---
-title: "メッセージ マップ クロス リファレンスの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.messages"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ウィンドウ [C++], メッセージ マップ"
+title: 'How to: Use the Message-Map Cross-Reference | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.messages
+dev_langs:
+- C++
+helpviewer_keywords:
+- windows [MFC], message maps
 ms.assetid: 2e863d23-9e58-45ba-b5e4-a8ceefccd0c8
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# メッセージ マップ クロス リファレンスの使い方
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b25095aab5f565df033945a9523d21fd14ae567c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-memberFxn というエントリ \<で\>は [CWnd](../Topic/CWnd%20Class.md) の派生クラスでは、独自のメンバー関数を記述します。  関数には任意の名前を付けることができます。  その他の関数、たとえば `OnActivate` などは、`CWnd` クラスのメンバー関数です。  呼び出されると Windows の `DefWindowProc` 関数にメッセージを渡します。  Windows の通知メッセージを処理する場合は、派生クラスで該当する `CWnd` のメンバー関数をオーバーライドします。  独自に作成する関数では、基本クラスや Windows がメッセージに応答できるように、オーバーライドされた基本クラスの関数を呼び出す必要があります。  
+---
+# <a name="how-to-use-the-message-map-cross-reference"></a>How to: Use the Message-Map Cross-Reference
+In entries labeled \<memberFxn>, write your own member function for a derived [CWnd](../../mfc/reference/cwnd-class.md) class. Give your function any name you like. Other functions, such as `OnActivate`, are member functions of class `CWnd`. If called, they pass the message to the `DefWindowProc` Windows function. To process Windows notification messages, override the corresponding `CWnd` function in your derived class. Your function should call the overridden function in your base class to let the base class and Windows respond to the message.  
   
- どのような場合でも、`CWnd` 派生クラスのヘッダーに関数のプロトタイプを記述し、さらにメッセージ マップのエントリをコーディングする必要があります。  
+ In all cases, put the function prototype in the `CWnd`-derived class header, and code the message map entry as shown.  
   
- リファレンスでは、次に示す用語を使っています。  
+ The following terms are used:  
   
-|語句|定義|  
-|--------|--------|  
-|id|ユーザー定義のメニュー項目 ID \(**WM\_COMMAND** メッセージ\) またはコントロール ID \(子ウィンドウからの通知メッセージ\)。|  
-|"message" および "wNotifyCode"|WINDOWS.H に定義された Windows のメッセージ ID。|  
-|nMessageVariable|Windows の **RegisterWindowMessage** 関数の戻り値を持つ変数の名前。|  
+|Term|Definition|  
+|----------|----------------|  
+|id|Any user-defined menu item ID (**WM_COMMAND** messages) or control ID (child window notification messages).|  
+|"message" and "wNotifyCode"|Windows message IDs as defined in WINDOWS.H.|  
+|nMessageVariable|Name of a variable that contains the return value from the **RegisterWindowMessage** Windows function.|  
   
-## 参照  
- [メッセージ マップ](../../mfc/reference/message-maps-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Message Maps](../../mfc/reference/message-maps-mfc.md)
+
+

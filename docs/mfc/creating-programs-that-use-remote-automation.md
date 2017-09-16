@@ -1,59 +1,78 @@
 ---
-title: "リモート オートメーションを使用するプログラムの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リモート オートメーション, 作成 (プログラムを)"
+title: Creating Programs That Use Remote Automation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remote Automation, creating programs
 ms.assetid: 8eb31320-1037-4029-b1f3-fdc9406dbaf1
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# リモート オートメーションを使用するプログラムの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d91501fc6f3c1bf962c7c2aba923209b8c261c20
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-すべてのオートメーション オブジェクトとオートメーション コントローラーは、ソース・コードに、再コンパイルのせずに、再リンクを使用することなく、リモート オートメーションを変更せずに使用できます。  これをリモートで実行することをローカルに作業が一部の手順によってのみ移動する \(つまり、同じコンピューターに\)、必要な設定がある場合。  
+---
+# <a name="creating-programs-that-use-remote-automation"></a>Creating Programs That Use Remote Automation
+Any automation object, and any automation controller, is able to use Remote Automation without any change to the source code, without the need for recompilation, and without the need for relinking. Once you have a setup that works locally (that is, on the same machine), you need go through only a few steps to execute it remotely.  
   
-#### リモート オートメーション オブジェクトを実行します。  
+#### <a name="to-execute-the-remote-automation-object"></a>To execute the Remote Automation object  
   
-1.  クライアント コンピューターまたはコンピューターのアプリケーションを登録します。  
+1.  Register the application on the client machine or machines.  
   
-2.  使用するリモート サーバーへのクライアント アクセスを設定します。  
+2.  Configure the client access to use remote server.  
   
-3.  サーバー コンピューターまたはコンピューターにアプリケーションをインストールし、登録します。  
+3.  Install and register the application on the server machine or machines.  
   
-4.  リモート アクティベーションを許可するようにサーバーを構成します。  
+4.  Configure the server to allow remote activation.  
   
-5.  サーバー コンピューターでオートメーション マネージャーをインストールします。  
+5.  Install the Automation Manager on the server machine(s).  
   
-6.  サーバーのオートメーション マネージャーを実行します。  
+6.  Run Automation Manager on the server(s).  
   
-7.  クライアント アプリケーションを実行します。  
+7.  Run the application on the client(s).  
   
- 手順 1 では、クライアント コンピューターのサーバー アプリケーションを読み込み、実行する場合、最も簡単に実現できます。ほとんどのサーバーが自己の登録であるためです。  セットアップを事前にローカルでテストする場合は、この段階に既に完了です。  サーバー アプリケーションが登録している自己でない場合、これを行うこともできます。  それ以外の場合は、この手順を実行するには、ローカル ユーザーが実行できるファイルを提供する必要があります。  これらの三つのどちらも行わない場合は、または管理者はすべての推奨されない最先端のユーザー必要がある手順レジストリを手動で編集できます。  
+ Step 1 is most easily accomplished by loading and executing the server application on the client machine, as most servers are self registering. If you tested the setup locally beforehand, this stage is already complete. If the server application is not self registering, you may want to make it so. Otherwise, you will need to provide a registration file that the local user can run to perform this step. If you do neither of these things, you or an administrator will need to edit the registry manually, a procedure which is not recommended for all but the most advanced users.  
   
- ステップ 2 がリモート オートメーションの Connectivity \(RAC\) マネージャーを使用します。  RAC マネージャーを実行し、サーバー接続タブが最優位であることを確認します。  次に、**OLE クラス** ペインのサーバー オブジェクトのエントリを見つけてクリックします。  次 **ネットワーク アドレス** のコンボ ボックスに移動し、リモート実行可能ファイルを実行するサーバー コンピューターの名前を入力します。  たとえば、\\\\MyServer を入力できます。  その後、表示される一覧から適切なネットワーク プロトコルをクリックします。  どのプロトコルが推奨されるかを判断するには、ネットワーク管理者に確認する必要があります。  多くの場合、これは TCP\/IP です。  最後に、認証レベルを選択することもできます。  ほとんどの場合、これは、\(なし\) または既定です。  ここで **OLE クラス** ペインのサーバーを右クリックします。  これは、ローカルまたはリモート操作を選択できるショートカット メニューを作成します。  リモートを選択します。  
+ Step 2 involves the use of the Remote Automation Connection (RAC) Manager. Run RAC Manager and ensure that the server connection tab is uppermost. Next, find the entry for the server object in the **OLE Classes** pane and click on it. Then move to the **Network Address** combo box and enter the name of the server machine on which the remote executable file will be run. For example, you may enter \\\MyServer here. Then choose the appropriate network protocol from the list provided. You may need to check with your network administrator to determine which protocol is recommended. In many cases, this will be TCP/IP. Finally, you may want to choose an authentication level. In most cases, this will be left as (None) or Default. Now right-click the server in the **OLE Classes** pane. This will produce a shortcut menu from which you can select local or remote operation. Select remote.  
   
- ステップ 3 が正しく指定サーバー コンピューターまたはサーバー コンピューターにアプリケーションをインストールし、登録する必要があります。  もう一度アプリケーションを登録している場合は、自動テストを実行すると、一度も登録します。  
+ Step 3 involves properly installing and registering the server application on the selected server machine or machines. Again, if the application is self registering, executing it once will also register it.  
   
- ステップ 4 がリモート実行を有効にするようにサーバーを構成する必要があります。  サーバー コンピューターの RAC マネージャーを実行し、**クライアント アクセス** タブにフォーカスがあることを確認します。  目的のアクティベーション モデルを選択します \(通常 **Allow Remote Creates by Key**。  このオプションを選択すると、「Y」にレジストリ エントリの値を設定するに **Allow Remote Activation** のチェック ボックスをオンにする必要があります\)。  Windows NT を実行するか、または Windows 2000 と、のリモートを作成している場合 \(ACL\) オプションを選択すると、**ACL の編集** ボタンを押すと、ACL を編集できます。  
+ Step 4 involves configuring the server to allow remote execution. Run RAC Manager on the server machine, and ensure that the **Client Access** tab has the focus. Choose the activation model that you want (typically **Allow Remote Creates by Key**. If you do choose this option, you also need to click the **Allow Remote Activation** check box to set the value of the registry entry to 'Y'). If you are running Windows NT or Windows 2000 and you choose the Allow Remote Creates (ACL) option, you also have the option to edit the ACL by pushing the **Edit ACL** button.  
   
- リモート オートメーションが機能するように、オートメーション マネージャーであることを確認する必要があります。インストールされ、サーバー コンピューターまたはコンピューターで動作します。  アプリケーションがインストールされていない場合は、Windows のシステム ディレクトリに AUTMGR32.EXE をコピーします。  これを行う方法の詳細については [リモート オートメーションのインストール](../Topic/Remote%20Automation%20Installation.md)を参照してください。  リモート オートメーションを開始するには、オートメーション マネージャーを実行します。  これには、いくつかのメッセージが表示される小さいステータス ウィンドウが表示されます。  アプリケーションが起動したら、それ自体を最小化します。  ステータス情報を参照しを継続する場合、ウィンドウを復元するために、タスク バーの **Automation Manager** タブをクリックします。  
+ To allow Remote Automation to work, you then need to ensure that the Automation Manager is installed and running on the server machine or machines. If it is not installed, copy AUTMGR32.EXE to the Windows system directory. For information on how to do so, see [Remote Automation Installation](../mfc/remote-automation-installation.md). To start Remote Automation, execute the Automation Manager. It will display a small status window in which a number of messages will be shown. Once it has started, it will minimize itself. If you want to continue to see status information, you can click the **Automation Manager** tab in the task bar to restore the window.  
   
- 最後の手順では、クライアント コンピューターのクライアント アプリケーションを実行します。  上記の手順を実行した場合は、サーバー オブジェクトは、ローカルに接続し、とはいえ、後のほとんどを正確に実行する必要があります。  
+ The final step is to execute the client application on the client machine. If you have followed the steps above, it should connect to the server object and execute precisely as it did locally, albeit a little slower.  
   
- RAC マネージャーは、オプション ボタンの一つをクリックしてリモート オートメーションと分散 COM \(DCOM をサポートするすべてのプラットフォームで、DCOM\) を切り替えることができることに注意してください。  DCOM を選択すると、他のさまざまな構成オプションを設定できます。  そのほかの詳細については、DCOM のドキュメントを参照してください。  
+ Notice that the RAC Manager also allows you to switch between Remote Automation and distributed COM (DCOM, on those platforms that support DCOM) with a single click of a radio button. If you choose DCOM, you can set various other configuration options. See the DCOM documentation for further details.  
   
-## 参照  
- [リモート オートメーション](../mfc/remote-automation.md)   
- [AUTOCLIK と AUTODRIV を使用したリモート オートメーションの実行](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)
+## <a name="see-also"></a>See Also  
+ [Remote Automation](../mfc/remote-automation.md)   
+ [Running Remote Automation Using AUTOCLIK and AUTODRIV](../mfc/running-remote-automation-using-autoclik-and-autodriv.md)
+
+

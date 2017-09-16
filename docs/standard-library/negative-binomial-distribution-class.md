@@ -1,5 +1,5 @@
 ---
-title: "negative_binomial_distribution クラス | Microsoft Docs"
+title: negative_binomial_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- negative_binomial_distribution
 - random/std::negative_binomial_distribution
 - random/std::negative_binomial_distribution::reset
 - random/std::negative_binomial_distribution::k
@@ -27,7 +26,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- negative_binomial_distribution class
+- std::negative_binomial_distribution [C++]
+- std::negative_binomial_distribution [C++], reset
+- std::negative_binomial_distribution [C++], k
+- std::negative_binomial_distribution [C++], p
+- std::negative_binomial_distribution [C++], param
+- std::negative_binomial_distribution [C++], min
+- std::negative_binomial_distribution [C++], max
+- std::negative_binomial_distribution [C++], param_type
+- std::negative_binomial_distribution [C++], param_type
 ms.assetid: 7f5f0967-7fdd-4578-99d4-88f292b4fe9c
 caps.latest.revision: 15
 author: corob-msft
@@ -47,17 +54,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 28d1c6ab187e29198380ceab75cd588b9d69340d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 21d45442f60f5cb290430fc6842b75747ac66245
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="negativebinomialdistribution-class"></a>negative_binomial_distribution クラス
-負の二項分布を生成します。  
+# <a name="negativebinomialdistribution-class"></a>negative_binomial_distribution Class
+Generates a negative binomial distribution.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template<class IntType = int>
@@ -170,7 +177,7 @@ int main()
   
 ```  
   
-最初の実行:  
+First run:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.  
@@ -189,7 +196,7 @@ Histogram for 100 samples:
     5 ::  
 ```  
   
-2 回目の実行:  
+Second run:  
   
 ```Output  
 Use CTRL-Z to bypass data entry and run using default values.  
@@ -233,38 +240,38 @@ Histogram for 100 samples:
     69 ::::  
 ```  
   
-## <a name="requirements"></a>要件  
-**ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+**Header:** \<random>  
   
-**名前空間:** std  
+**Namespace:** std  
   
 ##  <a name="negative_binomial_distribution"></a>  negative_binomial_distribution::negative_binomial_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit negative_binomial_distribution(result_type k = 1, double p = 0.5);
 explicit negative_binomial_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *k*  
-`k` 分布パラメーター。  
+The `k` distribution parameter.  
   
 *p*  
-`p` 分布パラメーター。  
+The `p` distribution parameter.  
   
 *parm*  
-分布の作成に使用されるパラメーターの構造体。  
+The parameter structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < k` かつ `0.0 < p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < k` and `0.0 < p ≤ 1.0`  
   
-1 つ目のコンストラクターは、格納値 `p` と `k` にそれぞれ *p* と *t* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `p` value holds the value *p* and whose stored `k` value holds the value *k*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  negative_binomial_distribution::param_type  
-分布のパラメーターを格納します。  
+Stores the parameters of the distribution.  
   
 struct param_type {  
    typedef negative_binomial_distribution`<`result_type> distribution_type;  
@@ -272,21 +279,21 @@ struct param_type {
 
    bool operator==(const param_type& right) const; bool operator!=(const param_type& right) const; };  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *k*  
-`k` 分布パラメーター。  
+The `k` distribution parameter.  
   
 *p*  
-`p` 分布パラメーター。  
+The `p` distribution parameter.  
   
 *right*  
-比較に使用される `param_type` 構造体。  
+The `param_type` structure used to compare.  
   
-### <a name="remarks"></a>コメント  
-**前提条件:** `0.0 < k` および `0.0 < p ≤ 1.0`  
+### <a name="remarks"></a>Remarks  
+**Precondition:** `0.0 < k` and `0.0 < p ≤ 1.0`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 

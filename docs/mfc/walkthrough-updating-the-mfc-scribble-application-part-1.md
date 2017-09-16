@@ -1,285 +1,309 @@
 ---
-title: "チュートリアル: MFC Scribble アプリケーションの更新 (パート 1) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例 [C++], 更新 (既存のアプリケーションを)"
-  - "MFC Feature Pack, 更新 (既存のアプリケーションを)"
-  - "Office Fluent UI, 移植"
-  - "リボン UI, 移植"
-  - "サンプル [C++], 更新 (既存のアプリケーションを)"
-  - "チュートリアル [C++], 更新 (既存のアプリケーションを)"
+title: 'Walkthrough: Updating the MFC Scribble Application (Part 1) | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- examples [MFC], update existing application
+- ribbon UI, porting to
+- Office Fluent UI, porting to
+- samples [MFC], update existing application
+- MFC Feature Pack, update existing application
+- walkthroughs [MFC], update existing application
 ms.assetid: aa6330d3-6cfc-4c79-8fcb-0282263025f7
 caps.latest.revision: 54
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 50
----
-# チュートリアル: MFC Scribble アプリケーションの更新 (パート 1)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b6b10b3a5f8033e927c6a7359b7eca48dddbc8eb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルでは、リボン ユーザー インターフェイスを使用するために MFC アプリケーションを修正する方法を説明します。  Visual Studio は、Office 2007 リボンと Windows 7 Scenic リボンの両方をサポートしています。  リボン ユーザー インターフェイスの詳細については、MSDN Web サイトの「[リボン](http://go.microsoft.com/fwlink/?LinkId=129233)」を参照してください。  
+---
+# <a name="walkthrough-updating-the-mfc-scribble-application-part-1"></a>Walkthrough: Updating the MFC Scribble Application (Part 1)
+This walkthrough demonstrates how to modify an existing MFC application to use the Ribbon user interface. Visual Studio supports both the Office 2007 Ribbon and the Windows 7 Scenic Ribbon. For more information about the Ribbon user interface, see [Ribbons](http://go.microsoft.com/fwlink/linkid=129233) on the MSDN Web site.  
   
- このチュートリアルでは、マウスを使用して線画を描く、従来の Scribble 1.0 MFC サンプルを変更します。  ここでは、リボン バーを表示するよう Scribble サンプルを変更します。  [パート 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md) では、リボン バーにさらにボタンを追加します。  
+ This walkthrough modifies the classic Scribble 1.0 MFC sample that lets you use the mouse to create line drawings. This part of the walkthrough shows how to modify the Scribble sample so that it displays a ribbon bar. [Part 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md) adds more buttons to the ribbon bar.  
   
-## 必須コンポーネント  
- [Visual C\+\+ のサンプル](../top/visual-cpp-samples.md)  
+## <a name="prerequisites"></a>Prerequisites  
+ [Visual C++ Samples](../visual-cpp-samples.md)  
   
- [Visual C\+\+ のサンプル](../top/visual-cpp-samples.md)  
+ [Visual C++ Samples](../visual-cpp-samples.md)  
   
-##  <a name="top"></a> セクション  
- このパートは、次のセクションで構成されています。  
+##  <a name="top"></a> Sections  
+ This part of the walkthrough has the following sections:  
   
--   [基底クラスの置き換え](#replaceClass)  
+- [Replacing the Base Classes](#replaceclass)  
   
--   [プロジェクトへのビットマップの追加](#addBitmap)  
+- [Adding Bitmaps to the Project](#addbitmap)  
   
--   [プロジェクトへのリボン リソースの追加](#addRibbon)  
+- [Adding a Ribbon Resource to the Project](#addribbon)  
   
--   [リボン バーのインスタンスの作成](#createInstance)  
+- [Creating an Instance of the Ribbon Bar](#createinstance)  
   
--   [リボン カテゴリの追加](#addCategory)  
+- [Adding a Ribbon Category](#addcategory)  
   
--   [アプリケーションの外観の設定](#setLook)  
+- [Setting the Look of the Application](#setlook)  
   
-##  <a name="replaceClass"></a> 基底クラスの置き換え  
- メニュー ベースのアプリケーションをリボン ベースのアプリケーションに変換するには、アプリケーション、フレーム ウィンドウ、ツール バーの各クラスを、更新された基底クラスから派生させる必要があります \(元の Scribble サンプルは変更せず、Scribble プロジェクトをクリーンアップし、別のディレクトリにコピーして、そのコピーを変更することをお勧めします\)。  
+##  <a name="replaceclass"></a> Replacing the Base Classes  
+ To convert an application that supports a menu to an application that supports a ribbon, you must derive the application, frame window, and toolbar classes from updated base classes. (We suggest that you do not modify the original Scribble sample; instead, clean the Scribble project, copy it to another directory, and then modify the copy.)  
   
-#### Scribble アプリケーションの基底クラスを置き換えるには  
+#### <a name="to-replace-the-base-classes-in-the-scribble-application"></a>To replace the base classes in the Scribble application  
   
-1.  scribble.cpp で、`CScribbleApp::InitInstance` に [AfxOleInit](../Topic/AfxOleInit.md) の呼び出しが含まれていることを確認します。  
+1.  In scribble.cpp, verify that `CScribbleApp::InitInstance` includes a call to [AfxOleInit](../mfc/reference/ole-initialization.md#afxoleinit).  
   
-2.  stdafx.h ファイルに次のコードを追加します。  
+2.  Add the following code to the stdafx.h file.  
   
-    ```  
+ ```  
     #include <afxcontrolbars.h>  
-    ```  
+ ```  
   
-3.  scribble.h で、`CScribbleApp` クラスの定義を変更し、[CWinAppEx クラス](../mfc/reference/cwinappex-class.md)から派生するようにします。  
+3.  In scribble.h, modify the definition for the `CScribbleApp` class so that it is derived from [CWinAppEx Class](../mfc/reference/cwinappex-class.md).  
   
-    ```  
+ ```  
     class CScribbleApp: public CWinAppEx  
-    ```  
+ ```  
   
-4.  Scribble 1.0 は、Windows アプリケーションが初期化 \(.ini\) ファイルを使用してユーザー設定のデータを保存したときに書き込まれています。  初期化ファイルは変更せず、Scribble を変更してユーザー設定をレジストリに格納します。  レジストリ キーとベースを設定するには、次のコードを、`LoadStdProfileSettings()` ステートメントの後ろの `CScribbleApp::InitInstance` に含めます。  
+4.  Scribble 1.0 was written when Windows applications used an initialization (.ini) file to save user preference data. Instead of an initialization file, modify Scribble to store user preferences in the registry. To set the registry key and base, type the following code in `CScribbleApp::InitInstance` after the `LoadStdProfileSettings()` statement.  
   
-    ```  
-    SetRegistryKey(_T("MFCNext\\Samples\\Scribble2"));  
-    SetRegistryBase(_T("Settings"));  
-    ```  
+ ```  
+    SetRegistryKey(_T("MFCNext\\Samples\\Scribble2"));
+
+ SetRegistryBase(_T("Settings"));
+
+ ```  
   
-5.  マルチ ドキュメント インターフェイス \(MDI\) アプリケーション用のメイン フレームはもう `CMDIFrameWnd` クラスから派生しません。  代わりに、[CMDIFrameWndEx](../Topic/CMDIFrameWndEx%20Class.md) クラスから派生します。  
+5.  The main frame for a multiple document interface (MDI) application is no longer derived from the `CMDIFrameWnd` class. Instead, it is derived from the [CMDIFrameWndEx](../mfc/reference/cmdiframewndex-class.md) class.  
   
-     mainfrm.h ファイルと mainfrm.cpp ファイルで、`CMDIFrameWnd` への参照をすべて、`CMDIFrameWndEx` への参照に置き換えます。  
+     In the mainfrm.h and mainfrm.cpp files, replace all references to `CMDIFrameWnd` with `CMDIFrameWndEx`.  
   
-6.  childfrm.h ファイルと childfrm.cpp ファイルで、`CMDIChildWnd` を `CMDIChildWndEx` に置き換えます。  
+6.  In the childfrm.h and childfrm.cpp files, replace `CMDIChildWnd` with `CMDIChildWndEx`.  
   
-     childfrm.h ファイル内で、`CSplitterWnd` を `CSplitterWndEx` に置換します。  
+     In the childfrm. h file, replace `CSplitterWnd` with `CSplitterWndEx`.  
   
-7.  ツール バーとステータス バーを変更して、新しい MFC クラスを使用します。  
+7.  Modify toolbars and status bars to use the new MFC classes.  
   
-     mainfrm.h ファイルでは、次の手順に従います。  
+     In the mainfrm.h file:  
   
-    1.  `CToolBar` を `CMFCToolBar` に置き換えます。  
+    1.  Replace `CToolBar` with `CMFCToolBar`.  
   
-    2.  `CStatusBar` を `CMFCStatusBar` に置き換えます。  
+    2.  Replace `CStatusBar` with `CMFCStatusBar`.  
   
-8.  mainfrm.cpp ファイルでは、次の手順に従います。  
+8.  In the mainfrm.cpp file:  
   
-    1.  `m_wndToolBar.SetBarStyle` を `m_wndToolBar.SetPaneStyle` に置き換えます。  
+    1.  Replace `m_wndToolBar.SetBarStyle` with `m_wndToolBar.SetPaneStyle`  
   
-    2.  `m_wndToolBar.GetBarStyle` を `m_wndToolBar.GetPaneStyle` に置き換えます。  
+    2.  Replace `m_wndToolBar.GetBarStyle` with `m_wndToolBar.GetPaneStyle`  
   
-    3.  `DockControlBar(&m_wndToolBar)` を `DockPane(&m_wndToolBar)` に置き換えます。  
+    3.  Replace `DockControlBar(&m_wndToolBar)` with `DockPane(&m_wndToolBar)`  
   
-9. ipframe.cpp ファイルでは、コードの次の 3 行をコメント アウトします。  
+9. In the ipframe.cpp file, comment out the following three lines of code.  
   
-    ```  
-    m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);  
-    pWndFrame->EnableDocking(CBRS_ALIGN_ANY);  
-    pWndFrame->DockPane(&m_wndToolBar);  
-    ```  
+ ```  
+    m_wndToolBar.EnableDocking(CBRS_ALIGN_ANY);
+
+ pWndFrame->EnableDocking(CBRS_ALIGN_ANY);
+
+    pWndFrame->DockPane(&m_wndToolBar);
+
+ ```  
   
-10. アプリケーションを静的にリンクする場合は、プロジェクトのリソース \(.rc\) ファイルの先頭に次のコードを追加します。  
+10. If you intend to link your application statically, add the following code to the start of the project resource (.rc) file.  
   
-    ```  
+ ```  
     #include "afxribbon.rc"  
-    ```  
+ ```  
   
-     afxribbon.rc ファイルには、実行時に必要とされるリソースが含まれています。  [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)には、アプリケーションを作成するときに、このファイルが自動的に含まれます。  
+     The afxribbon.rc file contains resources that are required at run time. The [MFC Application Wizard](../mfc/reference/mfc-application-wizard.md) includes this file automatically when you create an application.  
   
-11. 変更を保存し、アプリケーションをビルドして実行します。  
+11. Save the changes and then build and run the application.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addBitmap"></a> プロジェクトへのビットマップの追加  
- このチュートリアルの次の 4 つの手順には、ビットマップ リソースが必要です。  適切なビットマップをさまざまな方法で取得できます。  
+##  <a name="addbitmap"></a> Adding Bitmaps to the Project  
+ The next four steps of this walkthrough require bitmap resources. You can obtain appropriate bitmaps in various ways:  
   
--   [Resource Editors](../mfc/resource-editors.md)を使用して、独自のビットマップを作成します。  または、リソース エディターを使用して、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] に用意されている Portable Network Graphics \(.png\) イメージからビットマップを作成します。  これらのイメージは `VS2008ImageLibrary` ディレクトリに格納されています。  
+-   Use the [Resource Editors](../windows/resource-editors.md) to invent your own bitmaps. Or use the resource editors to assemble bitmaps from the portable network graphics (.png) images that are included with [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)]. These images are in the `VS2008ImageLibrary` directory.  
   
-     ただし、リボン ユーザー インターフェイスでは、特定のビットマップが透明なイメージをサポートしている必要があります。  透明なビットマップは 32 ビット ピクセルを使用しますが、そのうち 24 ビットは赤、緑、青の各色成分を表し、残りの 8 ビットは色の透明度を指定する*アルファ チャネル*を表します。  現在のリソース エディターでは、32 ビット ピクセルのビットマップを表示できますが、変更できません。  そのため、透明なビットマップを作成する場合は、リソース エディターではなく、外部のイメージ エディターを使用します。  
+     However, the Ribbon user interface requires that certain bitmaps support transparent images. Transparent bitmaps use 32-bit pixels, where 24 bits specify the red, green, and blue components of the color, and 8 bits define an *alpha channel* that specifies the transparency of the color. The current resource editors can view, but not modify bitmaps with 32-bit pixels. Consequently, use an external image editor instead of the resource editors to manipulate transparent bitmaps.  
   
--   適切なリソース ファイルを別のアプリケーションからプロジェクトにコピーし、そのファイルからビットマップをインポートします。  
+-   Copy an appropriate resource file from another application to your project and then import bitmaps from that file.  
   
- このチュートリアルでは、Samples ディレクトリにあるアプリケーションからリソース ファイルをコピーします。  
+ This walkthrough copies resource files from an application in the Samples directory.  
   
-#### ビットマップをプロジェクトに追加するには  
+#### <a name="to-add-bitmaps-to-the-project"></a>To add bitmaps to the Project  
   
-1.  ファイル エクスプローラーを使用して、RibbonGadgets サンプルのリソース ディレクトリ \(`res`\) から次の .bmp ファイルをコピーします。  
+1.  Use File Explorer to copy the following .bmp files from the resources directory (`res`) of the RibbonGadgets sample:  
   
-    1.  main.bmp を Scribble プロジェクトにコピーします。  
+    1.  Copy main.bmp to your Scribble project.  
   
-    2.  filesmall.bmp と filelarge.bmp を Scribble プロジェクトにコピーします。  
+    2.  Copy filesmall.bmp and filelarge.bmp to your Scribble project.  
   
-    3.  filelarge.bmp ファイルと filesmall.bmp ファイルの新しいコピーを作成します。このとき、コピーは RibbonGadgets サンプルに保存します。  homesmall.bmp と homelarge.bmp のコピーの名前を変更し、それらを Scribble プロジェクトに移動します。  
+    3.  Make new copies of the filelarge.bmp and filesmall.bmp files, but save the copies in the RibbonGadgets sample. Rename the copies homesmall.bmp and homelarge.bmp and then move the copies to your Scribble project.  
   
-    4.  toolbar.bmp ファイルのコピーを作成します。このとき、コピーを RibbonGadgets サンプルに保存します。  panelicons.bmp のコピーの名前を変更し、それを Scribble プロジェクトに移動します。  
+    4.  Make a copy of the toolbar.bmp file, but save the copy in the RibbonGadgets sample. Rename the copy panelicons.bmp and then move the copy to your Scribble project.  
   
-2.  MFC アプリケーション用のビットマップをインポートします。  **\[リソース ビュー\]** で、**\[scribble.rc\]** ノードをダブルクリックし、**\[ビットマップ\]** ノードをダブルクリックして **\[リソースの追加\]** をクリックします。  表示されたダイアログ ボックスで、**\[インポート\]** をクリックします。  `res` ディレクトリを開き、main.bmp ファイルを選択して、**\[開く\]** をクリックします。  
+2.  Import the bitmap for an MFC application. In **Resource View**, double-click the **scribble.rc** node, double-click the **Bitmap** node, and then click **Add resource**. On the dialog box that appears, click **Import**. Browse to the `res` directory, select the main.bmp file, and then click **Open**.  
   
-     main.bmp ビットマップには、26 × 26 イメージが含まれています。  ビットマップの ID を IDB\_RIBBON\_MAIN に変更します。  
+     The main.bmp bitmap contains a 26x26 image. Change the ID of the bitmap to IDB_RIBBON_MAIN.  
   
-3.  アプリケーション ボタンにアタッチされるファイル メニュー用のビットマップをインポートします。  
+3.  Import the bitmaps for the file menu that is attached to the Application button.  
   
-    1.  filesmall.bmp ファイルをインポートします。このファイルには 16 × 16 イメージが 10 個 \(16 × 160\) 含まれています。  必要な 16 × 16 イメージは 8 個 \(16 × 128\) なので、**\[リソース ビュー\]** を使用して、ビットマップの幅を 160 から 128 に変更します。  ビットマップの ID を IDB\_RIBBON\_FILESMALL に変更します。  
+    1.  Import the filesmall.bmp file, which contains ten 16x16 (16x160) images. Because we need only eight 16x16 images (16x128),  use the **Resource View** to change the width of that bitmap from 160 to 128. Change the ID of the bitmap to IDB_RIBBON_FILESMALL.  
   
-    2.  filelarge.bmp をインポートします。このファイルには 32 × 32 イメージが 8 個 \(32 × 256\) 含まれています。  ビットマップの ID を IDB\_RIBBON\_FILELARGE に変更します。  
+    2.  Import the filelarge.bmp, which contains eight 32x32 (32x256) images. Change the ID of the bitmap to IDB_RIBBON_FILELARGE.  
   
-4.  リボンのカテゴリとパネル用のビットマップをインポートします。  リボン バーの各タブはカテゴリであり、テキスト ラベルと省略可能なイメージで構成されます。  
+4.  Import the bitmaps for the ribbon categories and panels. Each tab on the ribbon bar is a category, and consists of a text label and an optional image.  
   
-    1.  homesmall.bmp ビットマップをインポートします。このファイルには、小さいボタン用の 16 × 16 イメージが 8 個含まれています。  ビットマップの ID を IDB\_RIBBON\_HOMESMALL に変更します。  
+    1.  Import the homesmall.bmp bitmap, which contains eight 16x16 images for small button bitmaps. Change the ID of the bitmap to IDB_RIBBON_HOMESMALL.  
   
-    2.  homelarge.bmp ビットマップをインポートします。このファイルには、大きいボタン用の 32 × 32 イメージが 8 個含まれています。  ビットマップの ID を IDB\_RIBBON\_HOMELARGE に変更します。  
+    2.  Import the homelarge.bmp bitmap, which contains eight 32x32 images for large button bitmaps. Change the ID of the bitmap to IDB_RIBBON_HOMELARGE.  
   
-5.  サイズが変更されたリボン パネル用のビットマップをインポートします。  このビットマップ、つまりパネル アイコンは、リボンが小さすぎてパネル全体を表示できない場合に、サイズ変更操作後に使用されます。  
+5.  Import bitmaps for the resized ribbon panels. These bitmaps, or panel icons, are used after a resize operation if the ribbon is too small to display the entire panel.  
   
-    1.  panelicons.bmp をインポートします。このファイルには 16 × 16 イメージが 8 個含まれています。  ビットマップ エディターの **\[プロパティ\]** ウィンドウで、ビットマップの幅を 64 \(16 × 64\) に変更します。  ビットマップの ID を IDB\_PANEL\_ICONS に変更します。  
+    1.  Import the panelicons.bmp bitmap, which contains eight 16x16 images. In the **Properties** window of the **Bitmap Editor**, adjust the width of the bitmap to 64 (16x64). Change the ID of the bitmap to IDB_PANEL_ICONS.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addRibbon"></a> プロジェクトへのリボン リソースの追加  
- メニューを使用するアプリケーションを、リボンを使用するアプリケーションに変更する場合は、既存のメニューを削除する必要も、無効にする必要もありません。  代わりに、リボン リソースを作成し、リボン ボタンを追加し、新しいボタンをメニュー項目と関連付けます。  メニューは表示されなくなりますが、リボン バーからのメッセージはメニュー経由で送られます。  また、メニューのショートカットは引き続き機能します。  
+##  <a name="addribbon"></a> Adding a Ribbon Resource to the Project  
+ When you convert an application that uses menus to an application that uses a ribbon, you do not have to remove or disable the existing menus. Instead, you create a ribbon resource, add ribbon buttons, and then associate the new buttons with the existing menu items. Although the menus are no longer visible, messages from the ribbon bar are routed through the menus. In addition, menu shortcuts continue to work.  
   
- リボンはアプリケーション ボタンと 1 つ以上のカテゴリ タブで構成されます。アプリケーション ボタンは、リボンの左上にある大きいボタンです。  各カテゴリ タブは、1 つまたは複数のパネルで構成されます。パネルは、リボンのボタンやコントロールのコンテナーの役割を果たします。  次の手順では、リボン リソースを作成して、アプリケーション ボタンをカスタマイズする方法を説明します。  
+ A ribbon consists of the Application button, which is the large button on the upper-left side of the ribbon, and one or more category tabs. Each category tab contains one or more panels that act as containers for ribbon buttons and controls. The following procedure shows how to create a ribbon resource and then customize the Application button.  
   
-#### リボン リソースをプロジェクトに追加するには  
+#### <a name="to-add-a-ribbon-resource-to-the-project"></a>To add a ribbon resource to the project  
   
-1.  **\[プロジェクト\]** メニューの **\[リソースの追加\]** をクリックします。  
+1.  On the **Project** menu, click **Add Resource**.  
   
-2.  **\[リソースの追加\]** ダイアログ ボックスで、**\[Ribbon\]** を選択し、**\[新規作成\]** をクリックします。  
+2.  In the **Add Resource** dialog box, select **Ribbon** and then click **New**.  
   
-     Visual Studio でリボン リソースが作成され、デザイン ビューで開かれます。  リボン リソース ID は IDR\_RIBBON1 です。これはリソース ビューに表示されます。  リボンには、1 つのカテゴリと 1 つのパネルがあります。  
+     Visual Studio creates a ribbon resource and opens it in the design view. The ribbon resource ID is IDR_RIBBON1, which is displayed in **Resource View**. The ribbon contains one category and one panel.  
   
-3.  アプリケーション ボタンのカスタマイズは、そのプロパティを修正して行います。  このコードで使用されているメッセージ ID は、Scribble 1.0 用のメニューで定義済みです。  
+3.  You can customize the Application button by modifying its properties. The message IDs that are used in this code are already defined in the menu for Scribble 1.0.  
   
-4.  デザイン ビューでアプリケーション ボタンをクリックして、そのプロパティを表示します。  **\[イメージ\]**、**\[プロンプト\]**、**\[キー\]**、**\[大きいイメージ\]**、**\[小さいイメージ\]** のプロパティの値を、それぞれ「`IDB_RIBBON_MAIN`」、「`ファイル`」、「`f`」、「`IDB_RIBBON_FILELARGE`」、「`IDB_RIBBON_FILESMALL`」に変更します。  
+4.  In the design view, click the Application Button to display its properties. Change property values as follows: **Image** to `IDB_RIBBON_MAIN`, **Prompt** to `File`, **Keys** to `f`, **Large Images** to `IDB_RIBBON_FILELARGE`, and **Small Images** to `IDB_RIBBON_FILESMALL`.  
   
-5.  次の修正を行い、ユーザーがアプリケーション ボタンをクリックしたときに表示されるメニューを作成します。  **\[項目エディター\]**を開くには、**\[Main Items\]** の隣にある省略記号 \(**...**\) をクリックします。  
+5.  The following modifications create the menu that appears when the user clicks the Application button. Click the ellipsis (**...**) next to **Main Items** to open the **Items Editor**.  
   
-    1.  **\[追加\]** をクリックしてボタンを追加します。  **\[キャプション\]** を「`新規作成(&N)`」、**\[ID\]** を「`ID_FILE_NEW`」、**\[イメージ\]** を「`0`」、**\[大きいイメージ\]** を「`0`」に変更します。  
+    1.  Click **Add** to add a button. Change **Caption** to `&New`, **ID** to `ID_FILE_NEW`, **Image** to `0`, **Image Large** to `0`.  
   
-    2.  **\[追加\]** をクリックして 2 つ目のボタンを追加します。  Change **\[キャプション\]** を「`保存(&S)`」、**\[ID\]** を「`ID_FILE_SAVE`」、**\[イメージ\]** を「`2`」、**\[大きいイメージ\]** を「`2`」に変更します。  
+    2.  Click **Add** to add a second button. Change **Caption** to `&Save`, **ID** to `ID_FILE_SAVE`, **Image** to `2`, and **Image Large** to `2`.  
   
-    3.  **\[追加\]** をクリックして 3 つ目のボタンを追加します。  **\[キャプション\]** を「`名前を付けて保存(&A)`」、**\[ID\]** を「`ID_FILE_SAVE_AS`」、**\[イメージ\]** を「`3`」、**\[大きいイメージ\]** を「`3`」変更します。  
+    3.  Click **Add** to add a third button. Change **Caption** to `Save &As`, **ID** to `ID_FILE_SAVE_AS`, **Image** to `3`, and **Image Large** to `3`.  
   
-    4.  **\[追加\]** をクリックして 4 つ目のボタンを追加します。  **\[キャプション\]** を「`印刷(&P)`」、**\[ID\]** を「`ID_FILE_PRINT`」、**\[イメージ\]** を「`4`」、**\[大きいイメージ\]** を「`4`」に変更します。  
+    4.  Click **Add** to add a fourth  button. Change **Caption** to `&Print`, **ID** to `ID_FILE_PRINT`, **Image** to `4`, and **Image Large** to `4`.  
   
-    5.  項目の種類を **\[区切り記号\]** に変更し、**\[追加\]** をクリックします。  
+    5.  Change the **Item** type to **Separator** and then click **Add**.  
   
-    6.  項目の種類を **\[ボタン\]** に変更します。  **\[追加\]** をクリックして 5 つ目ボタンを追加します。  **\[キャプション\]** を「`閉じる(&C)`」、**\[ID\]** を「`ID_FILE_CLOSE`」、**\[イメージ\]** を「`5`」、**\[大きいイメージ\]** を「`5`」に変更します。  
+    6.  Change the **Item** type to **Button**. Click **Add** to add a fifth button. Change **Caption** to `&Close`, **ID** to `ID_FILE_CLOSE`, **Image** to `5`, and **Image Large** to `5`.  
   
-6.  次の修正を行い、前の手順で作成した \[印刷\] ボタンにサブメニューを作成します。  
+6.  The following modifications create a submenu under the Print button that you created in the previous step.  
   
-    1.  **\[印刷\]** ボタンをクリックして、項目の種類を **\[ラベル\]** に変更し、**\[挿入\]** をクリックします。  **\[キャプション\]** を「`ドキュメントのプレビューと印刷`」に変更します。  
+    1.  Click the **Print** button, change the **Item** type to **Label**, and then click **Insert**. Change **Caption** to `Preview and print the document`.  
   
-    2.  **\[印刷\]** ボタンをクリックして、項目の種類を **\[ボタン\]** に変更し、**\[挿入\]** をクリックします。  **\[キャプション\]** を「`印刷(&P)`」、**\[ID\]** を「`ID_FILE_PRINT`」、**\[イメージ\]** を「`4`」、**\[大きいイメージ\]** を「`4`」に変更します。  
+    2.  Click the **Print** button, change the **Item** type to **Button**, and click **Insert**. Change **Caption** to `&Print`, **ID** to `ID_FILE_PRINT`, **Image** to `4`, and **Image Large** to `4`.  
   
-    3.  **\[印刷\]** ボタンをクリックし、**\[挿入\]** をクリックしてボタンを追加します。  **\[キャプション\]** を「`&クイック印刷(&Q)`」、**\[ID\]** を「`ID_FILE_PRINT_DIRECT`」、**\[イメージ\]** を「`7`」、**\[大きいイメージ\]** を `7`」に変更します。  
+    3.  Click the **Print** button and then click **Insert** to add a button. Change **Caption** to `&Quick Print`, **ID** to `ID_FILE_PRINT_DIRECT`, **Image** to `7`, and **Image Large** to `7`.  
   
-    4.  **\[印刷\]** ボタンをクリックし、**\[挿入\]** をクリックしてボタンをもう 1 つ追加します。  `6`に `ID_FILE_PRINT_PREVIEW`に `前の印刷&ビュー`に **\[キャプション\]**、**\[ID\]**、**\[イメージ\]**、`6`に **\[大きいイメージ\]** を変更します。  
+    4.  Click the **Print** button and then click **Insert** to add another button. Change **Caption** to `Print Pre&view`, **ID** to `ID_FILE_PRINT_PREVIEW`, **Image** to `6`, and **Image Large** to `6`.  
   
-    5.  これで、**\[Main Items\]** を修正できました。  **\[閉じる\]** をクリックして項目エディターを終了します。  
+    5.  You have now modified the **Main Items**. Click **Close** to exit the **Items Editor**.  
   
-7.  次の修正を行い、アプリケーション ボタン メニューの下部に表示される終了ボタンを作成します。  
+7.  The following modification creates an exit button that appears at the bottom of the Application button menu.  
   
-    1.  **\[プロパティ\]** ウィンドウで、**\[Button\]** の隣にある省略記号 \(**...**\) をクリックして **\[項目エディター\]** を開きます。  
+    1.  In the **Properties** window, click the ellipsis (**...**) next to **Button** to open the **Items Editor**.  
   
-    2.  **\[追加\]** をクリックしてボタンを追加します。  `E&xit`、`ID_APP_EXIT`、`8`への **\[イメージ\]** への **\[ID\]** に **\[キャプション\]** を変更します。  
+    2.  Click **Add** to add a button. Change **Caption** to `E&xit`, **ID** to `ID_APP_EXIT`, **Image** to `8`.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="createInstance"></a> リボン バーのインスタンスの作成  
- 次の手順では、アプリケーションの起動時にリボン バーのインスタンスを作成する方法を説明します。  リボン バーをアプリケーションに追加するには、mainfrm.h ファイルでリボン バーを宣言します。  次に、mainfrm.cpp ファイルで、リボン リソースを読み込むコードを作成します。  
+##  <a name="createinstance"></a> Creating an Instance of the Ribbon Bar  
+ The following steps show how to create an instance of the ribbon bar when your application starts. To add a ribbon bar to an application, declare the ribbon bar in the mainfrm.h file. Then, in the mainfrm.cpp file, write code to load the ribbon resource.  
   
-#### リボン バーのインスタンスを作成するには  
+#### <a name="to-create-an-instance-of-the-ribbon-bar"></a>To create an instance of the ribbon bar  
   
-1.  mainfrm.h ファイルで、メイン フレームのクラス定義 `CMainFrame` の保護されたセクションにデータ メンバーを追加します。  このメンバーはリボン バーを表します。  
+1.  In the mainfrm.h file, add a data member to the protected section of `CMainFrame`, the class definition for the main frame. This member represents the ribbon bar.  
   
-    ```  
-    // Ribbon bar for the application  
-    CMFCRibbonBar  m_wndRibbonBar;  
-    ```  
+ ``` *// Ribbon bar for the application  
+    CMFCRibbonBar m_wndRibbonBar;  
+ ```  
   
-2.  mainfrm.cpp ファイルで、`CMainFrame::OnCreate` 関数の末尾にある最後の `return` ステートメントの前に、次のコードを追加します。  このコードは、リボン バーのインスタンスを作成します。  
+2.  In the mainfrm.cpp file, add the following code before the final `return` statement at the end of the `CMainFrame::OnCreate` function. This creates an instance of the ribbon bar.  
   
-    ```  
-    // Create the ribbon bar  
+ ``` *// Create the ribbon bar  
     if (!m_wndRibbonBar.Create(this))  
-    {  
+ {  
     return -1;   //Failed to create ribbon bar  
-    }  
-    m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);  
-    ```  
+ }  
+    m_wndRibbonBar.LoadFromResource(IDR_RIBBON1);
+
+ ```  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="addCategory"></a> リボン リソースのカスタマイズ  
- アプリケーション ボタンを作成したので、要素をリボンに追加できます。  
+##  <a name="addcategory"></a> Customizing the Ribbon Resource  
+ Now that you have created the Application button, you can add elements to the ribbon.  
   
 > [!NOTE]
->  このチュートリアルでは、すべてのパネルで同じパネル アイコンを使用します。  ただし、他のイメージ リスト インデックスを使用して、他のアイコンを表示してもかまいません。  
+>  This walkthrough uses the same panel icon for all panels. However, you can use other image list indexes to display other icons.  
   
-#### \[Home\] カテゴリと \[Edit\] パネルを追加するには  
+#### <a name="to-add-a-home-category-and-edit-panel"></a>To add a Home category and Edit panel  
   
-1.  この Scribble プログラムに必要なカテゴリは 1 つだけです。  デザイン ビューで **\[カテゴリ\]** をクリックして、そのプロパティを表示します。  プロパティ値を次のように変更します。**\[キャプション\]** を「`ホーム(&H)`」、**\[大きいイメージ\]** を「`IDB_RIBBON_HOMELARGE`」、**\[小さいイメージ\]** を「`IDB_RIBBON_HOMESMALL`」に変更します。  
+1.  The Scribble program requires only one category. In the design view, click **Category** to display its properties. Change property values as follows: **Caption** to `&Home`, **Large Images** to `IDB_RIBBON_HOMELARGE`, **Small Images** to `IDB_RIBBON_HOMESMALL`.  
   
-2.  各リボン カテゴリは名前付きパネルに整理されます。  各パネルには、関連操作を実行するコントロールのセットが含まれています。  このカテゴリには 1 つのパネルがあります。  **\[パネル\]** をクリックし、**\[キャプション\]** を「`編集`」に変更し、**\[イメージ インデックス\]** を「`0`」に変更します。  
+2.  Each ribbon category is organized into named panels. Each panel contains a set of controls that perform related operations. This category has one panel. Click **Panel**, and then change **Caption** to `Edit` and **Image Index** to `0`.  
   
-3.  **\[編集\]** パネルに対して、ドキュメントの内容を消去するボタンを追加します。  このボタンのメッセージ ID は、IDR\_SCRIBBTYPE メニュー リソースに定義済みです。  ボタン テキストと、ボタンを装飾するビットマップのインデックスに、「`Clear All`」と指定します。  **\[ツールボックス\]** を開き、ボタンを **\[編集\]** パネルにドラッグします。  このボタンをクリックし、**\[キャプション\]**、**\[ID\]**、**\[イメージ インデックス\]**、**\[大きいイメージのインデックス\]** を、それぞれ「`すべてクリア`」、「`ID_EDIT_CLEAR_ALL`」、「`0`」、「`0`」に変更します。  
+3.  To the **Edit** panel, add a button that is responsible for clearing the contents of the document. The message ID for this button has already been defined in the IDR_SCRIBBTYPE menu resource. Specify `Clear All` as the button text and the index of the bitmap that decorates the button. Open the **Toolbox**, and then drag a **Button** to the **Edit** panel. Click the button  and then change **Caption** to `Clear All`, **ID** to `ID_EDIT_CLEAR_ALL`, **Image Index** to `0`, **Large Image Index** to `0`.  
   
-4.  変更内容を保存し、アプリケーションをビルドして実行します。  Scribble アプリケーションが起動されますが、ウィンドウ最上部にはメニュー バーではなく、リボンが表示されます。  リボン バーには 1 つのカテゴリ \(**\[ホーム\]**\) があります。また、**\[ホーム\]** には 1 つのパネル \(**\[編集\]**\) があります。  追加したリボン ボタンはイベント ハンドラーに関連付けられており、**\[開く\]**、**\[閉じる\]**、**\[保存\]**、**\[印刷\]**、**\[すべてクリア\]** の各ボタンは、意図したとおりに動作します。  
+4.  Save the changes, and then build and run the application. The Scribble application should be displayed, and it should have a ribbon bar at the top of the window instead of a menu bar. The ribbon bar should have one category, **Home**, and **Home** should have one panel, **Edit**. The ribbon buttons that you added should be associated with the existing event handlers, and the **Open**, **Close**, **Save**, **Print**, and **Clear All** buttons should work as expected.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-##  <a name="setLook"></a> アプリケーションの外観の設定  
- *ビジュアル マネージャー*は、アプリケーションのすべての描画を制御するグローバル オブジェクトです。  元の Scribble アプリケーションは Office 2000 のユーザー インターフェイス \(UI\) スタイルを使用しているため、このアプリケーションの外観は古めかしく感じられるかもしれません。  このアプリケーションは、Office 2007 のビジュアル マネージャーを使用するようにリセットして、Office 2007 のような外観にすることができます。  
+##  <a name="setlook"></a> Setting the Look of the Application  
+ A *visual manager* is a global object that controls all drawing for an application. Because the original Scribble application uses the Office 2000 user interface (UI) style, the application may look old-fashioned. You can reset the application to use the Office 2007 visual manager so that it resembles an Office 2007 application.  
   
-#### アプリケーションの外観を設定するには  
+#### <a name="to-set-the-look-of-the-application"></a>To set the look of the application  
   
-1.  `CMainFrame::OnCreate` 関数に次のコードを入力して、既定のビジュアル マネージャーとスタイルを変更します。  
+1.  In the `CMainFrame::OnCreate` function, type the following code to change the default visual manager and style.  
   
-    ```  
-    // Set the default manager to Office 2007   
-    CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerOffice2007));  
-    CMFCVisualManagerOffice2007::SetStyle(CMFCVisualManagerOffice2007::Office2007_LunaBlue);  
-    ```  
+ ``` *// Set the default manager to Office 2007   
+    CMFCVisualManager::SetDefaultManager(RUNTIME_CLASS(CMFCVisualManagerOffice2007));
+
+ CMFCVisualManagerOffice2007::SetStyle(CMFCVisualManagerOffice2007::Office2007_LunaBlue);
+
+ ```  
   
-2.  変更内容を保存し、アプリケーションをビルドして実行します。  アプリケーションの UI が Office 2007 と類似した UI になります。  
+2.  Save the changes, and then build and run the application. The application UI should resemble the Office 2007 UI.  
   
- \[[セクション](#top)\]  
+ [[Sections](#top)]  
   
-## 次の手順  
- これで、従来の Scribble 1.0 MFC サンプルを、リボン デザイナーを使用するように修正しました。  [パート 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md) へ進んでください。  
+## Next Steps  
+ You have modified the classic Scribble 1.0 MFC sample to use the Ribbon Designer. Now go to [Part 2](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md).  
   
-## 参照  
- [チュートリアル](../mfc/walkthroughs-mfc.md)   
- [チュートリアル: MFC Scribble アプリケーションの更新 \(パート 2\)](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md)
+## See Also  
+ [Walkthroughs](../mfc/walkthroughs-mfc.md)   
+ [Walkthrough: Updating the MFC Scribble Application (Part 2)](../mfc/walkthrough-updating-the-mfc-scribble-application-part-2.md)
+
+

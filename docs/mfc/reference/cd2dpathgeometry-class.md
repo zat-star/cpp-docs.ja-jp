@@ -1,5 +1,5 @@
 ---
-title: "CD2DPathGeometry クラス |Microsoft ドキュメント"
+title: CD2DPathGeometry Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,7 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DPathGeometry class
+- CD2DPathGeometry [MFC], CD2DPathGeometry
+- CD2DPathGeometry [MFC], Attach
+- CD2DPathGeometry [MFC], Create
+- CD2DPathGeometry [MFC], Destroy
+- CD2DPathGeometry [MFC], Detach
+- CD2DPathGeometry [MFC], GetFigureCount
+- CD2DPathGeometry [MFC], GetSegmentCount
+- CD2DPathGeometry [MFC], Open
+- CD2DPathGeometry [MFC], Stream
+- CD2DPathGeometry [MFC], m_pPathGeometry
 ms.assetid: 686216eb-5080-4242-ace5-8fa1ce96307c
 caps.latest.revision: 17
 author: mikeblome
@@ -44,50 +53,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 1c1158e55bf12d44f34896dd6752c9b8706db636
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: de29f4ee2e53d552de99908085839f38902aa5fe
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dpathgeometry-class"></a>CD2DPathGeometry クラス
-ID2D1PathGeometry のラッパーです。  
+# <a name="cd2dpathgeometry-class"></a>CD2DPathGeometry Class
+A wrapper for ID2D1PathGeometry.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DPathGeometry : public CD2DGeometry;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DPathGeometry::CD2DPathGeometry](#cd2dpathgeometry)|CD2DPathGeometry オブジェクトを構築します。|  
+|[CD2DPathGeometry::CD2DPathGeometry](#cd2dpathgeometry)|Constructs a CD2DPathGeometry object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DPathGeometry::Attach](#attach)|オブジェクトにリソース インタ フェースを既存の接続|  
-|[CD2DPathGeometry::Create](#create)|CD2DPathGeometry を作成します。 (上書き[CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create))。|  
-|[CD2DPathGeometry::Destroy](#destroy)|CD2DPathGeometry オブジェクトを破棄します。 (上書き[CD2DGeometry::Destroy](../../mfc/reference/cd2dgeometry-class.md#destroy))。|  
-|[CD2DPathGeometry::Detach](#detach)|オブジェクトからリソース インタ フェースをデタッチします。|  
-|[CD2DPathGeometry::GetFigureCount](#getfigurecount)|パス ジオメトリに数字の数を取得します。|  
-|[CD2DPathGeometry::GetSegmentCount](#getsegmentcount)|パス ジオメトリにセグメントの数を取得します。|  
-|[CD2DPathGeometry::Open](#open)|図形やセグメントのパス ジオメトリを作成するために使用する geometry シンクを取得します。|  
-|[CD2DPathGeometry::Stream](#stream)|指定した ID2D1GeometrySink にパス ジオメトリの内容をコピーします。|  
+|[CD2DPathGeometry::Attach](#attach)|Attaches existing resource interface to the object|  
+|[CD2DPathGeometry::Create](#create)|Creates a CD2DPathGeometry. (Overrides [CD2DResource::Create](../../mfc/reference/cd2dresource-class.md#create).)|  
+|[CD2DPathGeometry::Destroy](#destroy)|Destroys a CD2DPathGeometry object. (Overrides [CD2DGeometry::Destroy](../../mfc/reference/cd2dgeometry-class.md#destroy).)|  
+|[CD2DPathGeometry::Detach](#detach)|Detaches resource interface from the object|  
+|[CD2DPathGeometry::GetFigureCount](#getfigurecount)|Retrieves tthe number of figures in the path geometry.|  
+|[CD2DPathGeometry::GetSegmentCount](#getsegmentcount)|Retrieves the number of segments in the path geometry.|  
+|[CD2DPathGeometry::Open](#open)|Retrieves the geometry sink that is used to populate the path geometry with figures and segments.|  
+|[CD2DPathGeometry::Stream](#stream)|Copies the contents of the path geometry to the specified ID2D1GeometrySink.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DPathGeometry::m_pPathGeometry](#m_ppathgeometry)|ID2D1PathGeometry へのポインター。|  
+|[CD2DPathGeometry::m_pPathGeometry](#m_ppathgeometry)|A pointer to an ID2D1PathGeometry.|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CD2DResource](../../mfc/reference/cd2dresource-class.md)  
@@ -96,22 +105,22 @@ class CD2DPathGeometry : public CD2DGeometry;
   
  `CD2DPathGeometry`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="attach"></a>CD2DPathGeometry::Attach  
- オブジェクトにリソース インタ フェースを既存の接続  
+##  <a name="attach"></a>  CD2DPathGeometry::Attach  
+ Attaches existing resource interface to the object  
   
 ```  
 void Attach(ID2D1PathGeometry* pResource);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pResource`  
- 既存のリソースのインターフェイスです。 NULL にすることはできません。  
+ Existing resource interface. Cannot be NULL  
   
-##  <a name="cd2dpathgeometry"></a>CD2DPathGeometry::CD2DPathGeometry  
- CD2DPathGeometry オブジェクトを構築します。  
+##  <a name="cd2dpathgeometry"></a>  CD2DPathGeometry::CD2DPathGeometry  
+ Constructs a CD2DPathGeometry object.  
   
 ```  
 CD2DPathGeometry(
@@ -119,95 +128,95 @@ CD2DPathGeometry(
     BOOL bAutoDestroy = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
  `bAutoDestroy`  
- 所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
+ Indicates that the object will be destroyed by owner (pParentTarget).  
   
-##  <a name="create"></a>CD2DPathGeometry::Create  
- CD2DPathGeometry を作成します。  
+##  <a name="create"></a>  CD2DPathGeometry::Create  
+ Creates a CD2DPathGeometry.  
   
 ```  
 virtual HRESULT Create(CRenderTarget* pRenderTarget);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRenderTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="destroy"></a>CD2DPathGeometry::Destroy  
- CD2DPathGeometry オブジェクトを破棄します。  
+##  <a name="destroy"></a>  CD2DPathGeometry::Destroy  
+ Destroys a CD2DPathGeometry object.  
   
 ```  
 virtual void Destroy();
 ```  
   
-##  <a name="detach"></a>CD2DPathGeometry::Detach  
- オブジェクトからリソース インタ フェースをデタッチします。  
+##  <a name="detach"></a>  CD2DPathGeometry::Detach  
+ Detaches resource interface from the object  
   
 ```  
 ID2D1PathGeometry* Detach();
 ```  
   
-### <a name="return-value"></a>戻り値  
- デタッチされたリソース インタ フェースへのポインター。  
+### <a name="return-value"></a>Return Value  
+ Pointer to detached resource interface.  
   
-##  <a name="getfigurecount"></a>CD2DPathGeometry::GetFigureCount  
- パス ジオメトリに数字の数を取得します。  
+##  <a name="getfigurecount"></a>  CD2DPathGeometry::GetFigureCount  
+ Retrieves tthe number of figures in the path geometry.  
   
 ```  
 int GetFigureCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- パス ジオメトリに数字の数を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the number of figures in the path geometry.  
   
-##  <a name="getsegmentcount"></a>CD2DPathGeometry::GetSegmentCount  
- パス ジオメトリにセグメントの数を取得します。  
+##  <a name="getsegmentcount"></a>  CD2DPathGeometry::GetSegmentCount  
+ Retrieves the number of segments in the path geometry.  
   
 ```  
 int GetSegmentCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- パス ジオメトリにセグメントの数を返します。  
+### <a name="return-value"></a>Return Value  
+ Returns the number of segments in the path geometry.  
   
-##  <a name="m_ppathgeometry"></a>CD2DPathGeometry::m_pPathGeometry  
- ID2D1PathGeometry へのポインター。  
+##  <a name="m_ppathgeometry"></a>  CD2DPathGeometry::m_pPathGeometry  
+ A pointer to an ID2D1PathGeometry.  
   
 ```  
 ID2D1PathGeometry* m_pPathGeometry;  
 ```  
   
-##  <a name="open"></a>CD2DPathGeometry::Open  
- 図形やセグメントのパス ジオメトリを作成するために使用する geometry シンクを取得します。  
+##  <a name="open"></a>  CD2DPathGeometry::Open  
+ Retrieves the geometry sink that is used to populate the path geometry with figures and segments.  
   
 ```  
 ID2D1GeometrySink* Open();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 図形やセグメントのパス ジオメトリを設定に使用される ID2D1GeometrySink へのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the ID2D1GeometrySink that is used to populate the path geometry with figures and segments.  
   
-##  <a name="stream"></a>CD2DPathGeometry::Stream  
- 指定した ID2D1GeometrySink にパス ジオメトリの内容をコピーします。  
+##  <a name="stream"></a>  CD2DPathGeometry::Stream  
+ Copies the contents of the path geometry to the specified ID2D1GeometrySink.  
   
 ```  
 BOOL Stream(ID2D1GeometrySink* geometrySink);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `geometrySink`  
- パス ジオメトリの内容のコピー先となるシンクです。 このシンクを変更しても、このパス ジオメトリの内容は変更されません。  
+ The sink to which the path geometry's contents are copied. Modifying this sink does not change the contents of this path geometry.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合、TRUE を返します。 それ以外の場合、FALSE を返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns TRUE. Otherwise, it returns FALSE.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

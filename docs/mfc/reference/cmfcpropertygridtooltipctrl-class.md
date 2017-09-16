@@ -1,5 +1,5 @@
 ---
-title: "CMFCPropertyGridToolTipCtrl クラス |Microsoft ドキュメント"
+title: CMFCPropertyGridToolTipCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -21,10 +21,13 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCPropertyGridToolTipCtrl class
-- CMFCPropertyGridToolTipCtrl class, destructor
-- PreTranslateMessage method
-- ~CMFCPropertyGridToolTipCtrl destructor
+- CMFCPropertyGridToolTipCtrl [MFC], CMFCPropertyGridToolTipCtrl
+- CMFCPropertyGridToolTipCtrl [MFC], Create
+- CMFCPropertyGridToolTipCtrl [MFC], Deactivate
+- CMFCPropertyGridToolTipCtrl [MFC], GetLastRect
+- CMFCPropertyGridToolTipCtrl [MFC], Hide
+- CMFCPropertyGridToolTipCtrl [MFC], SetTextMargin
+- CMFCPropertyGridToolTipCtrl [MFC], Track
 ms.assetid: 84b436e5-6695-4da0-9569-1a875e087711
 caps.latest.revision: 24
 author: mikeblome
@@ -44,56 +47,56 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: e5290706799dcd253205ac74dad72cd7783d19dd
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: bdc742b8713252d57dbf58888f51b37d7042623f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcpropertygridtooltipctrl-class"></a>CMFCPropertyGridToolTipCtrl クラス
-ツール ヒントを実装を制御する、 [CMFCPropertyGridCtrl クラス](../../mfc/reference/cmfcpropertygridctrl-class.md)を使用してツールヒントを表示します。  
+# <a name="cmfcpropertygridtooltipctrl-class"></a>CMFCPropertyGridToolTipCtrl Class
+Implements a tooltip control that the [CMFCPropertyGridCtrl Class](../../mfc/reference/cmfcpropertygridctrl-class.md) uses to display tooltips.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCPropertyGridToolTipCtrl : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
-  
-|||  
-|-|-|  
-|名前|説明|  
-|[CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl](#cmfcpropertygridtooltipctrl)|`CMFCPropertyGridToolTipCtrl` オブジェクトを構築します。|  
-|`CMFCPropertyGridToolTipCtrl::~CMFCPropertyGridToolTipCtrl`|デストラクターです。|  
-  
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-constructors"></a>Public Constructors  
   
 |||  
 |-|-|  
-|名前|説明|  
-|[CMFCPropertyGridToolTipCtrl::Create](#create)|ツール ヒント コントロールのウィンドウを作成します。|  
-|[CMFCPropertyGridToolTipCtrl::Deactivate](#deactivate)|非アクティブ化し、tooltip コントロールを非表示にします。|  
-|[CMFCPropertyGridToolTipCtrl::GetLastRect](#getlastrect)|ツール ヒント コントロールの最後の位置の座標を返します。|  
-|[CMFCPropertyGridToolTipCtrl::Hide](#hide)|Tooltip コントロールを非表示にします。|  
-|`CMFCPropertyGridToolTipCtrl::PreTranslateMessage`|クラスで使用される[CWinApp](../../mfc/reference/cwinapp-class.md)にディスパッチされる前に、ウィンドウ メッセージを変換する、 [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955)と[DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows 関数です。 (上書き[CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage))。|  
-|[CMFCPropertyGridToolTipCtrl::SetTextMargin](#settextmargin)|ツールヒントのテキストと、ヒント ウィンドウの枠線の間隔を設定します。|  
-|[CMFCPropertyGridToolTipCtrl::Track](#track)|Tooltip コントロールが表示されます。|  
+|Name|Description|  
+|[CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl](#cmfcpropertygridtooltipctrl)|Constructs a `CMFCPropertyGridToolTipCtrl` object.|  
+|`CMFCPropertyGridToolTipCtrl::~CMFCPropertyGridToolTipCtrl`|Destructor.|  
   
-## <a name="remarks"></a>コメント  
- プロパティ名にポインターを合わせると、ツールヒントが表示されます。 [CMFCPropertyGridToolTipCtrl](../../mfc/reference/cmfcpropertygridtooltipctrl-class.md)クラスでは、ユーザーが読みやすいように、ツールヒントが表示されます。 通常、ツールヒントの位置は、ポインターの位置によって決まります。 このクラスを使用するは、ツールヒントは、プロパティの名前が表示され、プロパティ名が完全に表示されるように、本来のプロパティの拡張機能に似ています。  
+### <a name="public-methods"></a>Public Methods  
   
- MFC は、自動的にこのコントロールを作成してでそれを使用して、 [CMFCPropertyGridCtrl クラス](../../mfc/reference/cmfcpropertygridctrl-class.md)します。  
+|||  
+|-|-|  
+|Name|Description|  
+|[CMFCPropertyGridToolTipCtrl::Create](#create)|Creates a window for the tooltip control.|  
+|[CMFCPropertyGridToolTipCtrl::Deactivate](#deactivate)|Deactivates and hides the tooltip control.|  
+|[CMFCPropertyGridToolTipCtrl::GetLastRect](#getlastrect)|Returns the coordinates of the last position of the tooltip control.|  
+|[CMFCPropertyGridToolTipCtrl::Hide](#hide)|Hides the tooltip control.|  
+|`CMFCPropertyGridToolTipCtrl::PreTranslateMessage`|Used by class [CWinApp](../../mfc/reference/cwinapp-class.md) to translate window messages before they are dispatched to the [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955) and [DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows functions. (Overrides [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|  
+|[CMFCPropertyGridToolTipCtrl::SetTextMargin](#settextmargin)|Sets the spacing between the tooltip text and the border of the tooltip window.|  
+|[CMFCPropertyGridToolTipCtrl::Track](#track)|Displays the tooltip control.|  
   
-## <a name="example"></a>例  
- 次の例のオブジェクトを構築する方法、`CMFCPropertyGridToolTipCtrl`クラス、および tooltip コントロールを表示する方法です。  
+## <a name="remarks"></a>Remarks  
+ Tooltips are displayed when the pointer rests on a property name. The [CMFCPropertyGridToolTipCtrl](../../mfc/reference/cmfcpropertygridtooltipctrl-class.md) class displays a tooltip so that it is easily readable by the user. Usually, the position of a tooltip is determined by the position of the pointer. By using this class, the tooltip appears over the property name and resembles the natural property extension, so that the property name is fully visible.  
   
- [!code-cpp[NVC_MFC_RibbonApp 第&23;](../../mfc/reference/codesnippet/cpp/cmfcpropertygridtooltipctrl-class_1.cpp)]  
+ MFC automatically creates this control and uses it in the [CMFCPropertyGridCtrl Class](../../mfc/reference/cmfcpropertygridctrl-class.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="example"></a>Example  
+ The following example demonstrates how to construct an object of the `CMFCPropertyGridToolTipCtrl` class, and how to display the tooltip control.  
+  
+ [!code-cpp[NVC_MFC_RibbonApp#23](../../mfc/reference/codesnippet/cpp/cmfcpropertygridtooltipctrl-class_1.cpp)]  
+  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -102,71 +105,71 @@ class CMFCPropertyGridToolTipCtrl : public CWnd
   
  [CMFCPropertyGridToolTipCtrl](../../mfc/reference/cmfcpropertygridtooltipctrl-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxpropertygridtooltipctrl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxpropertygridtooltipctrl.h  
   
-##  <a name="cmfcpropertygridtooltipctrl"></a>CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl  
- `CMFCPropertyGridToolTipCtrl` オブジェクトを構築します。  
+##  <a name="cmfcpropertygridtooltipctrl"></a>  CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl  
+ Constructs a `CMFCPropertyGridToolTipCtrl` object.  
   
 ```  
 CMFCPropertyGridToolTipCtrl::CMFCPropertyGridToolTipCtrl();
 ```  
   
-##  <a name="create"></a>CMFCPropertyGridToolTipCtrl::Create  
- ツール ヒント コントロールのウィンドウを作成します。  
+##  <a name="create"></a>  CMFCPropertyGridToolTipCtrl::Create  
+ Creates a window for the tooltip control.  
   
 ```  
 BOOL Create(CWnd* pWndParent);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pWndParent`  
- 親ウィンドウへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pWndParent`  
+ A pointer to the parent window.  
   
-### <a name="return-value"></a>戻り値  
- ウィンドウが作成された場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if the window was successfully created; otherwise, FALSE.  
   
-##  <a name="deactivate"></a>CMFCPropertyGridToolTipCtrl::Deactivate  
- 非アクティブ化し、tooltip コントロールを非表示にします。  
+##  <a name="deactivate"></a>  CMFCPropertyGridToolTipCtrl::Deactivate  
+ Deactivates and hides the tooltip control.  
   
 ```  
 void Deactivate();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメソッドの最後の位置とテキストに設定の空白値ように呼び出しを将来[CMFCPropertyGridToolTipCtrl::Track](#track)ツールヒントを表示します。  
+### <a name="remarks"></a>Remarks  
+ This method sets the last position and text to empty values, so that future calls to [CMFCPropertyGridToolTipCtrl::Track](#track) display the tooltip.  
   
-##  <a name="getlastrect"></a>CMFCPropertyGridToolTipCtrl::GetLastRect  
- ツール ヒント コントロールの最後の位置の座標を返します。  
+##  <a name="getlastrect"></a>  CMFCPropertyGridToolTipCtrl::GetLastRect  
+ Returns the coordinates of the last position of the tooltip control.  
   
 ```  
 void GetLastRect(CRect& rect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [出力] `rect`  
- ツール ヒント コントロールの最後の位置が含まれています。  
+### <a name="parameters"></a>Parameters  
+ [out] `rect`  
+ Contains the last position of the tooltip control.  
   
-##  <a name="hide"></a>CMFCPropertyGridToolTipCtrl::Hide  
- Tooltip コントロールを非表示にします。  
+##  <a name="hide"></a>  CMFCPropertyGridToolTipCtrl::Hide  
+ Hides the tooltip control.  
   
 ```  
 void Hide();
 ```  
   
-##  <a name="settextmargin"></a>CMFCPropertyGridToolTipCtrl::SetTextMargin  
- ツールヒントのテキストと、ヒント ウィンドウの枠線の間隔を設定します。  
+##  <a name="settextmargin"></a>  CMFCPropertyGridToolTipCtrl::SetTextMargin  
+ Sets the spacing between the tooltip text and the border of the tooltip window.  
   
 ```  
 void SetTextMargin(int nTextMargin);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nTextMargin`  
- ツール ヒント コントロールのテキストと、ヒント ウィンドウの枠線の間隔を指定します。 既定値は、10 ピクセルです。  
+### <a name="parameters"></a>Parameters  
+ [in] `nTextMargin`  
+ Specifies the spacing between the tooltip control text and the border of the tooltip window. The default value is 10 pixels.  
   
-##  <a name="track"></a>CMFCPropertyGridToolTipCtrl::Track  
- Tooltip コントロールが表示されます。  
+##  <a name="track"></a>  CMFCPropertyGridToolTipCtrl::Track  
+ Displays the tooltip control.  
   
 ```  
 void Track(
@@ -174,17 +177,17 @@ void Track(
     const CString& strText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `rect`  
- ツール ヒント コントロールのサイズと位置を指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `rect`  
+ Specifies the position and size of the tooltip control.  
   
- [入力] `strText`  
- ツール ヒントに表示されるテキストを指定します。  
+ [in] `strText`  
+ Specifies the text to be shown in the tooltip.  
   
-### <a name="remarks"></a>コメント  
- このメソッドで指定されたサイズと位置で tooltip コントロールを表示する`rect`です。 位置、サイズ、およびテキストが変わらない場合前回このメソッドが呼び出された後、このメソッドは影響を与えません。  
+### <a name="remarks"></a>Remarks  
+ This method displays the tooltip control at the position and size specified by `rect`. If the position, size, and text have not changed since the last time this method was called, this method has no effect.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

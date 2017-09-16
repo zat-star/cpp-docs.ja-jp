@@ -9,10 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- =
-- operator=
-- vector<bool>::reference::operator=
-- std::vector<bool>::reference::operator=
+- =", "operator=", "vector<bool>::reference::operator=", "std::vector<bool>::reference::operator=
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -37,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: 82c542fff74866ac57d65dc25b8ee8f75d53415d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 2e32be8e98ca3aa7ca408883e31df03c8fef7f74
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="vectorltboolgtreferenceoperator"></a>vector&lt;bool&gt;::reference::operator=
-ブール値をビットに割り当てます。または参照先の要素が保持している値をビットに割り当てます。  
+Assigns a Boolean value to a bit, or the value held by a referenced element to a bit.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 reference& operator=(const reference& Right);
@@ -55,14 +52,14 @@ reference& operator=(const reference& Right);
 reference& operator=(bool Val);
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Right`  
- 値がビットに割り当てられている要素の参照。  
+ The element reference whose value is to be assigned to the bit.  
   
  `Val`  
- ビットに割り当てられるブール値。  
+ The Boolean value to be assigned to the bit.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // vector_bool_ref_op_assign.cpp  
@@ -121,7 +118,7 @@ int main()
   
 ```  
   
-## <a name="output"></a>出力  
+## <a name="output"></a>Output  
   
 ```  
 The vector is: true false false true true  
@@ -136,13 +133,13 @@ The original value of the 2nd element still stored in a bool: false
 The original value of the 3rd element still stored in a bool: false  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<vector>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<vector>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [vector\<bool>::reference クラス](../standard-library/vector-bool-reference-class.md)   
- [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [vector\<bool>::reference Class](../standard-library/vector-bool-reference-class.md)   
+ [C++ Standard Library Reference](../standard-library/cpp-standard-library-reference.md)
 
 

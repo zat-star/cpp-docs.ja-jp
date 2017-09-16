@@ -1,5 +1,5 @@
 ---
-title: "プロパティ ページ (MFC) |Microsoft ドキュメント"
+title: Property Pages (MFC) | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - property page data transfer functions in MFC
-- property pages, global MFC functions
+- property pages [MFC], global MFC functions
 ms.assetid: 734f88bc-c776-4136-9b0e-f45c761a45c1
 caps.latest.revision: 14
 author: mikeblome
@@ -34,47 +34,47 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
-ms.openlocfilehash: 50888697fe01d3a84d9aa4c6f5f92926e4681535
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3f8c11b8b59c2de16180173251b81e5f8fbbf35f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="property-pages-mfc"></a>プロパティ ページ (MFC)
-プロパティ ページでは、表示および編集ダイアログ データ エクス (チェンジ DDX) に基づくデータ マッピング メカニズムをサポートすることで、カスタマイズ可能なグラフィカル インターフェイスで特定の OLE コントロール プロパティの現在の値を表示します。  
+# <a name="property-pages-mfc"></a>Property Pages (MFC)
+Property pages display the current values of specific OLE control properties in a customizable, graphical interface for viewing and editing by supporting a data-mapping mechanism based on dialog data exchange (DDX).  
   
- このデータ マッピング メカニズムでは、OLE コントロールの個々 のプロパティをプロパティ ページのコントロールをマップします。 コントロールのプロパティの値には、ステータスやプロパティ ページのコントロールの内容が反映されます。 プロパティ ページのコントロールとプロパティ間のマッピングがで指定された**ddp _**関数呼び出しにプロパティ ページの`DoDataExchange`メンバー関数。 次の一覧は、 **ddp _**コントロールのプロパティ ページを使用して入力データを交換する関数。  
+ This data-mapping mechanism maps property page controls to the individual properties of the OLE control. The value of the control property reflects the status or content of the property page control. The mapping between property page controls and properties is specified by **DDP_** function calls in the property page's `DoDataExchange` member function. The following is a list of **DDP_** functions that exchange data entered using the property page of your control:  
   
-### <a name="property-page-data-transfer"></a>プロパティ ページのデータ転送  
-  
-|||  
-|-|-|  
-|[DDP_CBIndex](#ddp_cbindex)|コントロールのプロパティを持つコンボ ボックスで選択した文字列のインデックスをリンクします。|  
-|[DDP_CBString](#ddp_cbstring)|コントロールのプロパティを持つコンボ ボックスで選択された文字列をリンクします。 選択した文字列は、プロパティの値と同じ文字で始まることができますが、完全に一致する必要はありません。|  
-|[DDP_CBStringExact](#ddp_cbstringexact)|コントロールのプロパティを持つコンボ ボックスで選択された文字列をリンクします。 選択した文字列と、このプロパティの文字列値が正確に一致する必要があります。|  
-|[DDP_Check](#ddp_check)|コントロールのプロパティを使用して、コントロールのプロパティ ページでチェック ボックスをリンクします。|  
-|[DDP_LBIndex](#ddp_lbindex)|コントロールのプロパティを使用してリスト ボックスで選択した文字列のインデックスをリンクします。|  
-|[DDP_LBString](#ddp_lbstring)|コントロールのプロパティを使用してリスト ボックスで選択された文字列をリンクします。 選択した文字列は、プロパティの値と同じ文字で始まることができますが、一致しなくても、完全に。|  
-|[DDP_LBStringExact](#ddp_lbstringexact)|コントロールのプロパティを使用してリスト ボックスで選択された文字列をリンクします。 選択した文字列と、このプロパティの文字列値が正確に一致する必要があります。|  
-|[DDP_PostProcessing](#ddp_postprocessing)|コントロールからプロパティ値の転送を完了します。|  
-|[DDP_Radio](#ddp_radio)|リンク コントロールのプロパティを使用して、コントロールのプロパティ ページのオプション ボタン グループです。|  
-|[DDP_Text](#ddp_text)|コントロールのプロパティを使用して、コントロールのプロパティ ページのコントロールにリンクします。 この関数はさまざまな種類のプロパティの処理など**二重**、**短い**、 `BSTR`、および**長い**します。|  
-  
- 詳細については、`DoDataExchange`関数やプロパティ ページでは、記事を参照して[ActiveX コントロール: プロパティ ページ](../../mfc/mfc-activex-controls-property-pages.md)します。  
-  
- 作成し、OLE コントロールのプロパティ ページの管理に使用されるマクロの一覧を次に示します。  
-  
-### <a name="property-pages"></a>プロパティ ページ  
+### <a name="property-page-data-transfer"></a>Property Page Data Transfer  
   
 |||  
 |-|-|  
-|[BEGIN_PROPPAGEIDS](#begin_proppageids)|プロパティ ページ Id のリストを開始します。|  
-|[END_PROPPAGEIDS](#end_proppageids)|プロパティ ページ Id の一覧を終了します。|  
-|[PROPPAGEID](#proppageid)|コントロール クラスのプロパティ ページを宣言します。|  
+|[DDP_CBIndex](#ddp_cbindex)|Links the selected string's index in a combo box with a control's property.|  
+|[DDP_CBString](#ddp_cbstring)|Links the selected string in a combo box with a control's property. The selected string can begin with the same letters as the property's value but does not need to match it fully.|  
+|[DDP_CBStringExact](#ddp_cbstringexact)|Links the selected string in a combo box with a control's property. The selected string and the property's string value must match exactly.|  
+|[DDP_Check](#ddp_check)|Links a check box in the control's property page with a control's property.|  
+|[DDP_LBIndex](#ddp_lbindex)|Links the selected string's index in a list box with a control's property.|  
+|[DDP_LBString](#ddp_lbstring)|Links the selected string in a list box with a control's property. The selected string can begin with the same letters as the property's value but need not match it fully.|  
+|[DDP_LBStringExact](#ddp_lbstringexact)|Links the selected string in a list box with a control's property. The selected string and the property's string value must match exactly.|  
+|[DDP_PostProcessing](#ddp_postprocessing)|Finishes the transfer of property values from your control.|  
+|[DDP_Radio](#ddp_radio)|Links a radio button group in the control's property page with a control's property.|  
+|[DDP_Text](#ddp_text)|Links a control in the control's property page with a control's property. This function handles several different types of properties, such as **double**, **short**, `BSTR`, and **long**.|  
   
-##  <a name="ddp_cbindex"></a>DDP_CBIndex  
- プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるコンボ ボックスの現在の選択項目のインデックスの整数型のプロパティの値を同期する関数。  
+ For more information about the `DoDataExchange` function and property pages, see the article [ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).  
+  
+ The following is a list of macros used to create and manage property pages for an OLE control:  
+  
+### <a name="property-pages"></a>Property Pages  
+  
+|||  
+|-|-|  
+|[BEGIN_PROPPAGEIDS](#begin_proppageids)|Begins the list of property page IDs.|  
+|[END_PROPPAGEIDS](#end_proppageids)|Ends the list of property page IDs.|  
+|[PROPPAGEID](#proppageid)|Declares a property page of the control class.|  
+  
+##  <a name="ddp_cbindex"></a>  DDP_CBIndex  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of an integer property with the index of the current selection in a combo box on the property page.  
   
 ```   
 void AFXAPI DDP_CBIndex(
@@ -84,27 +84,27 @@ void AFXAPI DDP_CBIndex(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- コンボ ボックスのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the combo box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたコンボ ボックス コントロールと交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the combo box control specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_CBIndex`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_CBIndex` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_cbstring"></a>DDP_CBString  
- プロパティ ページの この関数を呼び出す`DoDataExchange`文字列プロパティの値をプロパティ ページにあるコンボ ボックスの現在の選択と同期します。  
+##  <a name="ddp_cbstring"></a>  DDP_CBString  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of a string property with the current selection in a combo box on the property page.  
   
 ```  
 void AFXAPI DDP_CBString(
@@ -114,27 +114,27 @@ void AFXAPI DDP_CBString(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- コンボ ボックスのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the combo box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたコンボ ボックスの文字列と交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the combo box string specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_CBString`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_CBString` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_cbstringexact"></a>DDP_CBStringExact  
- プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるコンボ ボックスの現在の選択内容を正確に一致する文字列プロパティの値を同期する関数。  
+##  <a name="ddp_cbstringexact"></a>  DDP_CBStringExact  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of a string property that exactly matches the current selection in a combo box on the property page.  
   
 ```  
 void AFXAPI DDP_CBStringExact(
@@ -144,27 +144,27 @@ void AFXAPI DDP_CBStringExact(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- コンボ ボックスのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the combo box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたコンボ ボックスの文字列と交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the combo box string specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_CBStringExact`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_CBStringExact` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_check"></a>DDP_Check  
- プロパティ ページの [この関数を呼び出す`DoDataExchange`関連付けられたプロパティ ページ] チェック ボックス コントロールとプロパティの値を同期する関数。  
+##  <a name="ddp_check"></a>  DDP_Check  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of the property with the associated property page check box control.  
   
 ```   
 void AFXAPI DDP_Check(
@@ -174,27 +174,27 @@ void AFXAPI DDP_Check(
     LPCSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- 指定されたコントロール プロパティに関連付けられているチェック ボックス コントロールのリソース ID`pszPropName`します。  
+ The resource ID of the check box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定された チェック ボックス コントロールと交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the check box control specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_Check`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_Check` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_lbindex"></a>DDP_LBIndex  
- プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるリスト ボックスの現在の選択項目のインデックスの整数型のプロパティの値を同期する関数。  
+##  <a name="ddp_lbindex"></a>  DDP_LBIndex  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of an integer property with the index of the current selection in a list box on the property page.  
   
 ```   
 void AFXAPI DDP_LBIndex(
@@ -204,27 +204,27 @@ void AFXAPI DDP_LBIndex(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- リストのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the list box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたリスト ボックスの文字列と交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the list box string specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_LBIndex`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_LBIndex` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_lbstring"></a>DDP_LBString  
- プロパティ ページの この関数を呼び出す`DoDataExchange`文字列プロパティの値をプロパティ ページにあるリスト ボックスの現在の選択と同期します。  
+##  <a name="ddp_lbstring"></a>  DDP_LBString  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of a string property with the current selection in a list box on the property page.  
   
 ```   
 void AFXAPI DDP_LBString(
@@ -234,27 +234,27 @@ void AFXAPI DDP_LBString(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- リストのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the list box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたリスト ボックスの文字列と交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the list box string specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_LBString`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_LBString` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_lbstringexact"></a>DDP_LBStringExact  
- プロパティ ページの この関数を呼び出す`DoDataExchange`プロパティ ページにあるリスト ボックスの現在の選択内容を正確に一致する文字列プロパティの値を同期する関数。  
+##  <a name="ddp_lbstringexact"></a>  DDP_LBStringExact  
+ Call this function in your property page's `DoDataExchange` function to synchronize the value of a string property that exactly matches the current selection in a list box on the property page.  
   
 ```   
 void AFXAPI DDP_LBStringExact(
@@ -264,46 +264,46 @@ void AFXAPI DDP_LBStringExact(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- リストのリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボックス`pszPropName`します。  
+ The resource ID of the list box control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたリスト ボックスの文字列と交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the list box string specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_LBStringExact`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_LBStringExact` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_postprocessing"></a>DDP_PostProcessing  
- プロパティ ページの この関数を呼び出す`DoDataExchange`関数、プロパティの値は、保存されているときに、プロパティ ページから、コントロールへのプロパティの値の転送を完了します。  
+##  <a name="ddp_postprocessing"></a>  DDP_PostProcessing  
+ Call this function in your property page's `DoDataExchange` function, to finish the transfer of property values from the property page to your control when property values are being saved.  
   
 ```   
 void AFXAPI DDP_PostProcessing(CDataExchange * pDX);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
-### <a name="remarks"></a>コメント  
- すべてのデータ交換関数が完了した後、この関数を呼び出す必要があります。 例:  
+### <a name="remarks"></a>Remarks  
+ This function should be called after all data exchange functions are completed. For example:  
   
- [!code-cpp[NVC_MFCAxCtl&#15;](../../mfc/reference/codesnippet/cpp/property-pages-mfc_1.cpp)]  
+ [!code-cpp[NVC_MFCAxCtl#15](../../mfc/reference/codesnippet/cpp/property-pages-mfc_1.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_radio"></a>DDP_Radio  
- コントロールのこの関数を呼び出す`DoPropExchange`関連付けられたプロパティ ページのオプション ボタン コントロールとプロパティの値を同期する関数。  
+##  <a name="ddp_radio"></a>  DDP_Radio  
+ Call this function in your control's `DoPropExchange` function to synchronize the value of the property with the associated property page radio button control.  
   
 ```   
 void AFXAPI DDP_Radio(
@@ -313,27 +313,27 @@ void AFXAPI DDP_Radio(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- 無線のリソース ID で指定されたコントロール プロパティに関連付けられたコントロールのボタン`pszPropName`します。  
+ The resource ID of the radio button control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定したオプション ボタン コントロールと交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the radio button control specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_Radio`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_Radio` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="ddp_text"></a>DDP_Text  
- コントロールのこの関数を呼び出す`DoDataExchange`関連付けられたプロパティ ページのコントロールとプロパティの値を同期する関数。  
+##  <a name="ddp_text"></a>  DDP_Text  
+ Call this function in your control's `DoDataExchange` function to synchronize the value of the property with the associated property page control.  
   
 ```   
 void AFXAPI DDP_Text(
@@ -385,78 +385,78 @@ void AFXAPI DDP_Text(
     LPCTSTR pszPropName);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDX`  
- ポインター、`CDataExchange`オブジェクトです。 フレームワークは、データ交換のコンテキスト (交換方向を含みます) を確定するためにこのオブジェクトを提供します。  
+ Pointer to a `CDataExchange` object. The framework supplies this object to establish the context of the data exchange, including its direction.  
   
  `id`  
- 指定されたコントロール プロパティに関連付けられたコントロールのリソース ID`pszPropName`します。  
+ The resource ID of the control associated with the control property specified by `pszPropName`.  
   
  `member`  
- 指定されたプロパティ ページのコントロールに関連付けられているメンバー変数`id`で指定されたプロパティと`pszPropName`です。  
+ The member variable associated with the property page control specified by `id` and the property specified by `pszPropName`.  
   
  `pszPropName`  
- 指定されたコントロールと交換するコントロール プロパティのプロパティ名`id`します。  
+ The property name of the control property to be exchanged with the control specified by `id`.  
   
-### <a name="remarks"></a>コメント  
- この関数は、対応する前に呼び出す必要があります`DDX_Text`関数の呼び出しです。  
+### <a name="remarks"></a>Remarks  
+ This function should be called before the corresponding `DDX_Text` function call.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="begin_proppageids"></a>BEGIN_PROPPAGEIDS  
- コントロールのプロパティ ページ Id のリストの定義を開始します。  
+##  <a name="begin_proppageids"></a>  BEGIN_PROPPAGEIDS  
+ Begins the definition of your control's list of property page IDs.  
   
 ```   
 BEGIN_PROPPAGEIDS(class_name,  count)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *それ以外*  
- プロパティ ページが指定されているコントロール クラスの名前。  
+### <a name="parameters"></a>Parameters  
+ *class_name*  
+ The name of the control class for which property pages are being specified.  
   
  *count*  
- コントロール クラスによって使用されるプロパティ ページの数。  
+ The number of property pages used by the control class.  
   
-### <a name="remarks"></a>コメント  
- クラスのメンバー関数を定義する実装 (.cpp) ファイルでのプロパティ ページの一覧を開始、`BEGIN_PROPPAGEIDS`マクロの各プロパティ ページで、マクロのエントリを追加し、しし、プロパティ ページの一覧で、`END_PROPPAGEIDS`マクロです。  
+### <a name="remarks"></a>Remarks  
+ In the implementation (.cpp) file that defines the member functions for your class, start the property page list with the `BEGIN_PROPPAGEIDS` macro, then add macro entries for each of your property pages, and complete the property page list with the `END_PROPPAGEIDS` macro.  
   
- プロパティ ページの詳細については、記事を参照してください。 [ActiveX コントロール: プロパティ ページ](../../mfc/mfc-activex-controls-property-pages.md)します。  
+ For more information on property pages, see the article [ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="end_proppageids"></a>END_PROPPAGEIDS  
- プロパティ ページの ID のリストの定義を終了します。  
+##  <a name="end_proppageids"></a>  END_PROPPAGEIDS  
+ Ends the definition of your property page ID list.  
   
 ```   
 END_PROPPAGEIDS(class_name)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *それ以外*  
- プロパティ ページを所有するコントロール クラスの名前。  
+### <a name="parameters"></a>Parameters  
+ *class_name*  
+ The name of the control class that owns the property page.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="proppageid"></a>PROPPAGEID  
- OLE コントロールで使用するためのプロパティ ページを追加します。  
+##  <a name="proppageid"></a>  PROPPAGEID  
+ Adds a property page for use by your OLE control.  
   
 ```   
 PROPPAGEID(clsid)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clsid`  
- プロパティ ページの一意のクラス ID。  
+ The unique class ID of a property page.  
   
-### <a name="remarks"></a>コメント  
- すべて`PROPPAGEID`マクロは、間に配置する必要があります、`BEGIN_PROPPAGEIDS`と`END_PROPPAGEIDS`コントロールの実装ファイル内のマクロです。  
+### <a name="remarks"></a>Remarks  
+ All `PROPPAGEID` macros must be placed between the `BEGIN_PROPPAGEIDS` and `END_PROPPAGEIDS` macros in your control's implementation file.  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
     
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

@@ -1,54 +1,73 @@
 ---
-title: "各項目のイメージの設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "拡張コンボ ボックス, イメージ"
-  - "イメージ [C++], コンボ ボックスの項目"
+title: Setting the Images for an Individual Item | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- extended combo boxes [MFC], images
+- images [MFC], combo box items
 ms.assetid: bde83db8-23a7-4e35-837a-c86447d2c0af
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 各項目のイメージの設定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fc4ae8c5833256c105009348ebe8a4e2624eb51a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-拡張コンボ ボックス項目に使用するイメージの種類に [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746) 構造体の `iImage`、**iSelectedImage**と **iOverlay** のメンバーの値によって決まります。  それぞれの値は、コントロールに関連付けられたイメージ リスト内のイメージのインデックスです。  既定では 0 に、これらのメンバーに設定され、項目のイメージを表示するようにコントロールに指示します。  特定の項目のイメージを使用する場合は、コンボ ボックス アイテムを既存のコンボ ボックスの項目の変更で挿入すると構造体、いずれかを適宜変更できます。  
+---
+# <a name="setting-the-images-for-an-individual-item"></a>Setting the Images for an Individual Item
+The different types of images used by the extended combo box item are determined by the values in the `iImage`, **iSelectedImage**, and **iOverlay** members of the [COMBOBOXEXITEM](http://msdn.microsoft.com/library/windows/desktop/bb775746) structure. Each value is the index of an image in the associated image list of the control. By default, these members are set to 0, causing the control to display no image for the item. If you want to use images for a specific item, you can modify the structure accordingly, either when inserting the combo box item or by modifying an existing combo box item.  
   
-## 新しい項目のイメージの設定  
- 新しい項目を挿入する場合は、適切な値を `iImage`、**iSelectedImage**と **iOverlay** の構造体メンバーを初期化し、[CComboBoxEx::InsertItem](../Topic/CComboBoxEx::InsertItem.md)を呼び出して項目を挿入します。  
+## <a name="setting-the-image-for-a-new-item"></a>Setting the Image for a New Item  
+ If you are inserting a new item, initialize the `iImage`, **iSelectedImage**, and **iOverlay** structure members with the proper values and then insert the item with a call to [CComboBoxEx::InsertItem](../mfc/reference/ccomboboxex-class.md#insertitem).  
   
- 次の例では、3 つすべてのイメージの状態のインデックスを指定する拡張コンボ ボックスのコントロール \(`m_comboEx`\) に新しい拡張コンボ ボックス項目 \(`cbi`\) を挿入します:  
+ The following example inserts a new extended combo box item (`cbi`) into the extended combo box control (`m_comboEx`), supplying indices for all three image states:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#12](../mfc/codesnippet/CPP/setting-the-images-for-an-individual-item_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#12](../mfc/codesnippet/cpp/setting-the-images-for-an-individual-item_1.cpp)]  
   
-## 既存の項目のイメージの設定  
- 既存のアイテムを変更する場合、**COMBOBOXEXITEM** 構造体の **マスク** のメンバーを使用する必要があります。  
+## <a name="setting-the-image-for-an-existing-item"></a>Setting the Image for an Existing Item  
+ If you are modifying an existing item, you need to work with the **mask** member of a **COMBOBOXEXITEM** structure.  
   
-#### 既存のアイテムをイメージを使用するように変更するには  
+#### <a name="to-modify-an-existing-item-to-use-images"></a>To modify an existing item to use images  
   
-1.  **COMBOBOXEXITEM** 構造体を宣言し、変更の対象となる値に **マスク** のデータ メンバーを TRUE に設定します。  
+1.  Declare a **COMBOBOXEXITEM** structure and set the **mask** data member to the values you are interested in modifying.  
   
-2.  この構造を使用すると、[CComboBoxEx::GetItem](../Topic/CComboBoxEx::GetItem.md)に呼び出しを行ってください。  
+2.  Using this structure, make a call to [CComboBoxEx::GetItem](../mfc/reference/ccomboboxex-class.md#getitem).  
   
-3.  適切な値を使用して最近返された構造体の **マスク**、`iImage`と **iSelectedImage** のメンバーを変更します。  
+3.  Modify the **mask**, `iImage`, and **iSelectedImage** members of the newly returned structure, using the appropriate values.  
   
-4.  変更された構造体を渡す [CComboBoxEx::SetItem](../Topic/CComboBoxEx::SetItem.md)に呼び出しを行ってください。  
+4.  Make a call to [CComboBoxEx::SetItem](../mfc/reference/ccomboboxex-class.md#setitem), passing in the modified structure.  
   
- 次の例では、3 番目の拡張コンボ ボックス項目の選択および選択解除にされたイメージの交換してこの手順です:  
+ The following example demonstrates this procedure by swapping the selected and unselected images of the third extended combo box item:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#13](../mfc/codesnippet/CPP/setting-the-images-for-an-individual-item_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#13](../mfc/codesnippet/cpp/setting-the-images-for-an-individual-item_2.cpp)]  
   
-## 参照  
- [CComboBoxEx の使い方](../mfc/using-ccomboboxex.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CComboBoxEx](../mfc/using-ccomboboxex.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

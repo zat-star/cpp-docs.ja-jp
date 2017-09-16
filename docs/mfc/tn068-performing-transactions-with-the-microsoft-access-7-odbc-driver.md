@@ -1,122 +1,157 @@
 ---
-title: "テクニカル ノート 68: Microsoft Access 7 ODBC ドライバーでのトランザクションの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.data.odbc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "TN068"
-  - "トランザクション, 呼び出し (BeginTrans を)"
-  - "トランザクション, Microsoft Access"
+title: 'TN068: Performing Transactions with the Microsoft Access 7 ODBC Driver | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.data.odbc
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN068 [MFC]
+- transactions [MFC], calling BeginTrans
+- transactions [MFC], Microsoft Access
 ms.assetid: d3f8f5d9-b118-4194-be36-a1aefb630c45
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# テクニカル ノート 68: Microsoft Access 7 ODBC ドライバーでのトランザクションの実行
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e1edd7a30ce66a1f4a5cdfb9e96ed18a36495f14
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn068-performing-transactions-with-the-microsoft-access-7-odbc-driver"></a>TN068: Performing Transactions with the Microsoft Access 7 ODBC Driver
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、MFC ODBC データベース クラスを使用する場合、トランザクションを実行する方法について説明し、デスクトップ Microsoft ODBC ドライバーに含まれる Microsoft Access 7.0 の ODBC ドライバーは Version 3.0 をパックされます。  
+ This note describes how to perform transactions when using the MFC ODBC database classes and the Microsoft Access 7.0 ODBC driver included in the Microsoft ODBC Desktop Driver Pack version 3.0.  
   
-## 概要  
- データベース アプリケーションでトランザクションを実行すると、アプリケーションの適切な順序で `CDatabase::BeginTrans` と `CRecordset::Open` を呼び出す必要があります。  Microsoft Access 7.0 ドライバーでの Microsoft Jet データベース エンジンを使用し、Jet はアプリケーション開かれているカーソルを持つすべてのデータベースのトランザクションが開始されて必要があります。  MFC の ODBC データベース クラスに、開かれているカーソルは、開いている `CRecordset` にオブジェクトと一致します。  
+## <a name="overview"></a>Overview  
+ If your database application performs transactions, you must be careful to call `CDatabase::BeginTrans` and `CRecordset::Open` in the correct sequence in your application. The Microsoft Access 7.0 driver uses the Microsoft Jet database engine, and Jet requires that your application not begin a transaction on any database that has an open cursor. For the MFC ODBC database classes, an open cursor equates to an open `CRecordset` object.  
   
- **BeginTrans**を呼び出す前に、レコードセットを開いた場合は、エラー メッセージを参照しないことができます。  ただし、どのレコードセットでもアプリケーションを作成 `CRecordset::Update`を呼び出した後に永続的な更新し、**Rollback**を呼び出してロールバックされません。  この問題を回避するには、**BeginTrans** を最初に呼び出すと、レコードセットを開きます。  
+ If you open a recordset before calling **BeginTrans**, you may not see any error messages. However, any recordset updates your application makes become permanent after calling `CRecordset::Update`, and the updates will not be rolled back by calling **Rollback**. To avoid this problem, you must call **BeginTrans** first and then open the recordset.  
   
- MFC は、カーソル、Rollback 動作の機能がコミット ドライバーをチェックします。  クラス `CDatabase` は `CRecordset` の開いているオブジェクトのトランザクションの影響を確認するための 2 種類のメンバー関数、`GetCursorCommitBehavior` と `GetCursorRollbackBehavior`を提供します。  Microsoft Access 7.0 ODBC ドライバーによっては、これらのメンバー関数はアクセス ドライバーがカーソルの保持をサポートしないため `SQL_CB_CLOSE` を返します。  したがって、**CommitTrans** または **Rollback** 操作を続行 `CRecordset::Requery` を呼び出す必要があります。  
+ MFC checks the driver functionality for cursor commit and rollback behavior. Class `CDatabase` provides two member functions, `GetCursorCommitBehavior` and `GetCursorRollbackBehavior`, to determine the effect of any transaction on your open `CRecordset` object. For the Microsoft Access 7.0 ODBC driver, these member functions return `SQL_CB_CLOSE` because the Access driver does not support cursor preservation. Therefore, you must call `CRecordset::Requery` following a **CommitTrans** or **Rollback** operation.  
   
- 複数のトランザクションを順次実行する必要がある場合は、最初のトランザクションの後に **再クエリ** を呼び出して次の 1 を開始することはできません。  **BeginTrans** に Jet の要件を満たすために、レコードセットを閉じる前に復元する必要があります。  このテクニカル ノートはこの状況を処理する 2 種類のメソッドについて説明します。:  
+ When you need to perform multiple transactions one after another, you cannot call **Requery** after the first transaction and then start the next one. You must close the recordset before the next call to **BeginTrans** in order to satisfy Jet's requirement. This technical note describes two methods of handling this situation:  
   
--   **CommitTrans** または **Rollback** 各操作後のレコードセットを閉じたとき。  
+-   Closing the recordset after each **CommitTrans** or **Rollback** operation.  
   
--   ODBC API 関数の **SQLFreeStmt**を使用します。  
+-   Using the ODBC API function **SQLFreeStmt**.  
   
-## CommitTrans または Rollback 各操作後のレコードセットを閉じたとき  
- トランザクションを開始する前に、レコードセット オブジェクトが閉じていることを確認します。  **BeginTrans**を呼び出した後、レコードセットの **開く** メンバー関数を呼び出します。  **CommitTrans** または **Rollback**を呼び出した直後のレコードセットを閉じます。  繰り返しレコードセットを開いたり閉じたりするとアプリケーションのパフォーマンスが低下する可能性があることに注意してください。  
+## <a name="closing-the-recordset-after-each-committrans-or-rollback-operation"></a>Closing the Recordset after each CommitTrans or Rollback Operation  
+ Before starting a transaction, make sure the recordset object is closed. After calling **BeginTrans**, call the recordset's **Open** member function. Close the recordset immediately after calling **CommitTrans** or **Rollback**. Note that repeatedly opening and closing the recordset can slow an application's performance.  
   
-## SQLFreeStmt を使用する  
- 明示的にトランザクションが終了したらカーソルを閉じるには、ODBC API 関数の **SQLFreeStmt** を使用できます。  別のトランザクションを開始するには、**BeginTrans** を `CRecordset::Requery`が従うから呼び出します。  **SQLFreeStmt**を呼び出した場合、最初のパラメーターとして、レコードセットの HSTMT と 2 番目のパラメーターとして **SQL\_CLOSE** を指定する必要があります。  このメソッドは、そのトランザクションの開始時に終了と開始高速です\)。  次のコードは、このテクニックを実装する方法について説明します。:  
+## <a name="using-sqlfreestmt"></a>Using SQLFreeStmt  
+ You can also use the ODBC API function **SQLFreeStmt** to explicitly close the cursor after ending a transaction. To start another transaction, call **BeginTrans** followed by `CRecordset::Requery`. When calling **SQLFreeStmt**, you must specify the recordset's HSTMT as the first parameter and **SQL_CLOSE** as the second parameter. This method is faster than closing and opening the recordset at the start of every transaction. The following code demonstrates how to implement this technique:  
   
 ```  
 CMyDatabase db;  
-db.Open( "MYDATASOURCE" );  
-CMyRecordset rs( &db );  
-  
+db.Open("MYDATASOURCE");
+
+CMyRecordset rs(&db);
+
+ 
 // start transaction 1 and   
 // open the recordset  
-db.BeginTrans( );  
-rs.Open( );  
-  
+db.BeginTrans();
+
+rs.Open();
+
+ 
 // manipulate data  
-  
+ 
 // end transaction 1  
-db.CommitTrans( );  // or Rollback( )  
-  
+db.CommitTrans();
+*// or Rollback()  
+ 
 // close the cursor  
-::SQLFreeStmt( rs.m_hstmt, SQL_CLOSE );  
-  
+::SQLFreeStmt(rs.m_hstmt, SQL_CLOSE);
+
+ 
 // start transaction 2  
-db.BeginTrans( );  
-  
+db.BeginTrans();
+
+ 
 // now get the result set  
-rs.Requery( );  
-  
+rs.Requery();
+
+ 
 // manipulate data  
-  
+ 
 // end transaction 2  
-db.CommitTrans( );  
-  
-rs.Close( );  
-db.Close( );  
+db.CommitTrans();
+
+ 
+rs.Close();
+
+db.Close();
 ```  
   
- この手法を実装するもう一つの方法は、ロールバック最初のブックマーク コミットすると新しい関数、次のトランザクションを開始するために呼び出すことができる **RequeryWithBeginTrans**を記述することです。  このような関数を記述するには、次の手順を行う:  
+ Another way to implement this technique is to write a new function, **RequeryWithBeginTrans**, which you can call to start the next transaction after you commit or rollback the first one. To write such a function, do the following steps:  
   
-1.  新しい関数に **CRecordset::Requery\( \)** のコードをコピーします。  
+1.  Copy the code for **CRecordset::Requery( )** to the new function.  
   
-2.  **SQLFreeStmt**の呼び出しの直後に次の行を追加する:  
+2.  Add the following line immediately after the call to **SQLFreeStmt**:  
   
-     `m_pDatabase->BeginTrans( );`  
+ `m_pDatabase->BeginTrans( );`  
   
- これで、トランザクションの各ペア間のこの関数を呼び出すことができますが、T:  
+ Now you can call this function between each pair of transactions:  
   
 ```  
 // start transaction 1 and   
 // open the recordset  
-db.BeginTrans( );  
-rs.Open( );  
-  
+db.BeginTrans();
+
+rs.Open();
+
+ 
 // manipulate data  
-  
+ 
 // end transaction 1  
-db.CommitTrans( );  // or Rollback( )  
-  
-// close the cursor, start new transaction,  
+db.CommitTrans();
+*// or Rollback()  
+ 
+// close the cursor,
+    start new transaction,  
 // and get the result set  
-rs.RequeryWithBeginTrans( );  
-  
+rs.RequeryWithBeginTrans();
+
+ 
 // manipulate data  
-  
+ 
 // end transaction 2  
-db.CommitTrans( );  // or Rollback( )  
+db.CommitTrans();
+*// or Rollback()  
 ```  
   
 > [!NOTE]
->  トランザクション中のレコードセットのメンバー変数 **m\_strFilter** または `m_strSort` を変更する必要がある場合は、この手法を使用しないでください。  この場合、**CommitTrans** または **Rollback** 各操作によってレコードセットを閉じる必要があります。  
+>  Do not use this technique if you need to change the recordset member variables **m_strFilter** or `m_strSort` between transactions. In that case, you should close the recordset after each **CommitTrans** or **Rollback** operation.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "char_traits 構造体 | Microsoft Docs"
+title: char_traits Struct | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - iosfwd/std::char_traits
-- char_traits
 - string/std::char_traits::char_type
 - string/std::char_traits::int_type
 - string/std::char_traits::off_type
@@ -55,67 +54,67 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 558234b6411d3f2d10e84e3befda99084c7ca6d2
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: e4b0571c6e9ee43fbd4dac0712440dd7bf5103c4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="chartraits-struct"></a>char_traits 構造体
-char_traits 構造体は文字に関連付けられた属性を記述します。  
+# <a name="chartraits-struct"></a>char_traits Struct
+The char_traits struct describes attributes associated with a character.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType>  
 struct char_traits;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 要素のデータ型。  
+ The element data type.  
   
-## <a name="remarks"></a>コメント  
- テンプレートの構造体は **CharType** 型のさまざまな文字特性を記述します。 このテンプレート クラス [basic_string](../standard-library/basic-string-class.md) は、[basic_ios](../standard-library/basic-ios-class.md) などのいくつかの iostream テンプレート クラスと同様、この情報を使用して **CharType** 型の要素を操作します。 このような要素型では、明示的な構築や破棄を要求できません。 既定のコンストラクター、コピー コンストラクター、および代入演算子を、必要なセマンティクスと共に指定する必要があります。 ビットごとのコピーは、代入と同じ効果を持つ必要があります。 char_traits 構造体のメンバー関数は、いずれも例外をスローしません。  
+## <a name="remarks"></a>Remarks  
+ The template struct describes various character traits for type **CharType**. The template class [basic_string](../standard-library/basic-string-class.md) as well as several iostream template classes, including [basic_ios](../standard-library/basic-ios-class.md), use this information to manipulate elements of type **CharType**. Such an element type must not require explicit construction or destruction. It must supply a default constructor, a copy constructor, and an assignment operator, with the expected semantics. A bitwise copy must have the same effect as an assignment. None of the member functions of struct char_traits can throw exceptions.  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|文字の型。|  
-|[int_type](#int_type)|`char_type` 型の文字、またはファイルの終端 (EOF) 文字を表すことができる整数型。|  
-|[off_type](#off_type)|ストリーム内の位置間のオフセットを表すことのできる整数型。|  
-|[pos_type](#pos_type)|ストリーム内の位置を表すことのできる整数型。|  
-|[state_type](#state_type)|ストリーム内のマルチバイト文字の変換状態を表す型。|  
+|[char_type](#char_type)|A type of character.|  
+|[int_type](#int_type)|An integer type that can represent a character of type `char_type` or an end-of-file (EOF) character.|  
+|[off_type](#off_type)|An integer type that can represent offsets between positions in a stream.|  
+|[pos_type](#pos_type)|An integer type that can represent positions in a stream.|  
+|[state_type](#state_type)|A type that represents the conversion state in for multibyte characters in a stream.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[assign](#assign)|1 つの文字の値を別の文字に割り当てます。|  
-|[compare](#compare)|指定した文字数まで 2 つの文字列を比較します。|  
-|[copy](#copy)|1 つの文字列から別の文字列に指定した数の文字をコピーします。 使用しないでください。 代わりに [char_traits::_Copy_s](#copy_s) を使用してください。|  
-|[_Copy_s](#copy_s)|1 つの文字列から別の文字列に指定した数の文字をコピーします。|  
-|[eof](#eof)|ファイルの終端 (EOF) 文字を返します。|  
-|[eq](#eq)|2 つの `char_type` 文字が等しいかどうかをテストします。|  
-|[eq_int_type](#eq_int_type)|`int_type` として表される 2 つの文字が等しいかどうかをテストします。|  
-|[find](#find)|文字の範囲内で指定した文字が最初に出現する位置を検索します。|  
-|[length](#length)|文字列の長さを返します。|  
-|[lt](#lt)|1 つの文字が別の文字よりも小さいかどうかをテストします。|  
-|[move](#move)|シーケンス内の文字を、指定された文字数だけ、重複が生じる可能性のある別のシーケンスにコピーします。 使用しないでください。 代わりに [char_traits::_Move_s](#move_s) を使用してください。|  
-|[_Move_s](#move_s)|シーケンス内の文字を、指定された文字数だけ、重複が生じる可能性のある別のシーケンスにコピーします。|  
-|[not_eof](#not_eof)|文字がファイルの終端 (EOF) 文字であるかどうかをテストします。|  
-|[to_char_type](#to_char_type)|`int_type` の文字を `char_type` の対応する文字に変換し、その結果を返します。|  
-|[to_int_type](#to_int_type)|`char_type` の文字を `int_type` の対応する文字に変換し、その結果を返します。|  
+|[assign](#assign)|Assigns one character value to another.|  
+|[compare](#compare)|Compares up to a specified number of characters in two strings.|  
+|[copy](#copy)|Copies a specified number of characters from one string to another. Deprecated. Use [char_traits::_Copy_s](#copy_s) instead.|  
+|[_Copy_s](#copy_s)|Copies a specified number of characters from one string to another.|  
+|[eof](#eof)|Returns the end-of-file (EOF) character.|  
+|[eq](#eq)|Tests whether two `char_type` characters are equal.|  
+|[eq_int_type](#eq_int_type)|Tests whether two characters represented as `int_type`s are equal.|  
+|[find](#find)|Searches for the first occurrence of a specified character in a range of characters.|  
+|[length](#length)|Returns the length of a string.|  
+|[lt](#lt)|Tests whether one character is less than another.|  
+|[move](#move)|Copies a specified number of characters in a sequence to another, possible overlapping, sequence. Deprecated. Use [char_traits::_Move_s](#move_s) instead.|  
+|[_Move_s](#move_s)|Copies a specified number of characters in a sequence to another, possible overlapping, sequence.|  
+|[not_eof](#not_eof)|Tests whether a character is the end-of-file (EOF) character.|  
+|[to_char_type](#to_char_type)|Converts an `int_type` character to the corresponding `char_type` character and returns the result.|  
+|[to_int_type](#to_int_type)|Converts a `char_type` character to the corresponding `int_type` character and returns the result.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<string>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<string>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="assign"></a>  char_traits::assign  
- 別の文字値または文字列内の要素の範囲に 1 つの文字値を割り当てます。  
+ Assigns one character value to another or to a range of elements in a string.  
   
 ```  
 static void assign(char_type& _CharTo,
@@ -126,23 +125,23 @@ static char_type *assign(char_type* strTo,
     char_type _CharFrom);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  **_** *CharFrom*  
- 値が割り当てられる文字。  
+ The character whose value is to be assigned.  
   
  *_CharTo*  
- 文字値を割り当てられる要素。  
+ The element that is to be assigned the character value.  
   
  * strTo*  
- 最初の要素が割り当てられた文字値になる文字列または文字の配列。  
+ The string or character array whose initial elements are to be assigned character values.  
   
  `_Num`  
- 値を割り当てられる要素の数。  
+ The number of elements that are going to be assigned values.  
   
-### <a name="return-value"></a>戻り値  
- 2 番目のメンバー関数は、最初の `_Num` 要素に *_CharFrom* という値が割り当てられている文字列へのポインターを返します。  
+### <a name="return-value"></a>Return Value  
+ The second member function returns a pointer to the string whose first `_Num` elements have been assigned values of *_CharFrom*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_assign.cpp  
@@ -184,20 +183,20 @@ The result1 = assign ( s1 , 4 , 'f' ) is: ffff-1234-abcd
 ```  
   
 ##  <a name="char_type"></a>  char_traits::char_type  
- 文字の型。  
+ A type of character.  
   
 ```  
 typedef CharType char_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
-### <a name="example"></a>例  
-  `char_type` の宣言方法や使用方法の例については、[copy](#copy) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [copy](#copy) for an example of how to declare and use `char_type`.  
   
 ##  <a name="compare"></a>  char_traits::compare  
- 指定した文字数まで 2 つの文字列を比較します。  
+ Compares up to a specified number of characters in two strings.  
   
 ```  
 static int compare(const char_type* str1,
@@ -205,25 +204,25 @@ static int compare(const char_type* str1,
     size_t _Num);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  * str1*  
- 相互に比較する 2 つの文字列の最初の文字列。  
+ The first of two strings to be compared to each other.  
   
  * str2*  
- 相互に比較する 2 つの文字列の 2 番目の文字列。  
+ The second of two strings to be compared to each other.  
   
  `_Num`  
- 比較する文字列内の要素の数。  
+ The number of elements in the strings to be compared.  
   
-### <a name="return-value"></a>戻り値  
- 最初の文字列が 2 番目の文字列より少ない場合は負の値、2 つの文字列が等しい場合は 0、最初の文字列が 2 番目の文字列より多い場合は正の値になります。  
+### <a name="return-value"></a>Return Value  
+ A negative value if the first string is less than the second string, 0 if the two strings are equal, or a positive value if the first string is greater than the second string.  
   
-### <a name="remarks"></a>コメント  
- 文字列間の比較は要素ごとに行われます。最初に等しいかどうかがテストされ、シーケンス テスト内の要素のペアが等しくない場合は、より少ないかどうかのテストが実行されます。  
+### <a name="remarks"></a>Remarks  
+ The comparison between the strings is made element by element, first testing for equality and then, if a pair of elements in the sequence tests not equal, they are tested for less than.  
   
- 2 つの文字列の比較で一定の範囲が等しい場合でも、1 つの文字列が他の文字列より長い場合、2 つのうち短い文字列が長い文字列よりも少ないということになります。  
+ If two strings compare equal over a range but one is longer than the other, then the shorter of the two is less than the longer one.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_compare.cpp  
@@ -257,9 +256,9 @@ int main() {
 ```  
   
 ##  <a name="copy"></a>  char_traits::copy  
- 1 つの文字列から別の文字列に指定した数の文字をコピーします。  
+ Copies a specified number of characters from one string to another.  
   
- 渡された値が正しいことの確認を呼び出し元に依存するため、このメソッドは安全ではない可能性があります。 代わりに [char_traits::_Copy_s](#copy_s) の使用を検討してください。  
+ This method is potentially unsafe, as it relies on the caller to check that the passed values are correct. Consider using [char_traits::_Copy_s](#copy_s) instead.  
   
 ```  
 static char_type *copy(char_type* _To,
@@ -267,23 +266,23 @@ static char_type *copy(char_type* _To,
     size_t _Num);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_To`  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the string or character array targeted to receive the copied sequence of characters.  
   
  `_From`  
- コピーされるソース文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the source string or character array to be copied.  
   
  `_Num`  
- コピーする要素の数。  
+ The number of elements to be copied.  
   
-### <a name="return-value"></a>戻り値  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列にコピーされる最初の要素。  
+### <a name="return-value"></a>Return Value  
+ The first element copied into the string or character array targeted to receive the copied sequence of characters.  
   
-### <a name="remarks"></a>コメント  
- ソースとコピー先の文字シーケンスは重複できません。  
+### <a name="remarks"></a>Remarks  
+ The source and destination character sequences must not overlap.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_copy.cpp  
@@ -315,7 +314,7 @@ The result1 = copy ( s1 , s2 , 4 ) is: ABCD-1234-abcd
 ```  
   
 ##  <a name="copy_s"></a>  char_traits::_Copy_s  
- 1 つの文字列から別の文字列に指定した数の文字をコピーします。  
+ Copies a specified number of characters from one string to another.  
   
 ```  
 static char_type *_Copy_s(
@@ -325,26 +324,26 @@ static char_type *_Copy_s(
     size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dest`  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列。  
+ The string or character array targeted to receive the copied sequence of characters.  
   
  `dest_size`  
- `dest` のサイズ。 `char_type` が `char` の場合、サイズはバイト単位です。 `char_type` が `wchar_t` の場合、サイズはワード数単位です。  
+ The size of `dest`. If `char_type` is `char`, then this size is in bytes. If `char_type` is `wchar_t`, then this size is in words.  
   
  `_From`  
- コピーされるソース文字列または文字配列。  
+ The source string or character array to be copied.  
   
  `count`  
- コピーする要素の数。  
+ The number of elements to be copied.  
   
-### <a name="return-value"></a>戻り値  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列。  
+### <a name="return-value"></a>Return Value  
+ The string or character array targeted to receive the copied sequence of characters.  
   
-### <a name="remarks"></a>コメント  
- ソースとコピー先の文字シーケンスは重複できません。  
+### <a name="remarks"></a>Remarks  
+ The source and destination character sequences must not overlap.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits__Copy_s.cpp  
@@ -376,21 +375,21 @@ The result1 = _Copy_s(s1, char_traits<char>::length(s1), s2, 4) is: ABCD-1234-ab
 ```  
   
 ##  <a name="eof"></a>  char_traits::eof  
- ファイルの終端 (EOF) 文字を返します。  
+ Returns the end-of-file (EOF) character.  
   
 ```  
 static int_type eof();
 ```  
   
-### <a name="return-value"></a>戻り値  
- EOF 文字。  
+### <a name="return-value"></a>Return Value  
+ The EOF character.  
   
-### <a name="remarks"></a>コメント  
- ファイルの終わりを表す値 (たとえば `EOF` または `WEOF` )。  
+### <a name="remarks"></a>Remarks  
+ A value that represents end of file (such as `EOF` or `WEOF`).  
   
- C++ 規格によると、この値は、有効な `char_type` 値に対応しないようにする必要があります。 Visual C++ コンパイラは `char` 型ではなく、`wchar_t` 型にこの制約を適用します。 次に示しているのはその例です。  
+ The C++ standard states that this value must not correspond to a valid `char_type` value. The Visual C++ compiler enforces this constraint for type `char`, but not for type `wchar_t`. The example below demonstrates this.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_eof.cpp  
@@ -424,23 +423,23 @@ The eof marker for char_traits<wchar_t> is: 65535
 ```  
   
 ##  <a name="eq"></a>  char_traits::eq  
- 2 つの `char_type` 文字が等しいかどうかをテストします。  
+ Tests whether two `char_type` characters are equal.  
   
 ```  
 static bool eq(const char_type& _Ch1, const char_type& _Ch2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch1`  
- 等しいかどうかをテストする 2 つの文字の最初の文字。  
+ The first of two characters to be tested for equality.  
   
  `_Ch2`  
- 等しいかどうかをテストする 2 つの文字の 2 番目文字。  
+ The second of two characters to be tested for equality.  
   
-### <a name="return-value"></a>戻り値  
- 最初の文字が 2 番目の文字に等しい場合は **true**、等しくない場合は **false** です。  
+### <a name="return-value"></a>Return Value  
+ **true** if the first character is equal to the second character; otherwise **false**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_eq.cpp  
@@ -481,23 +480,23 @@ The character ch1 is equal to the character ch3.
 ```  
   
 ##  <a name="eq_int_type"></a>  char_traits::eq_int_type  
- `int_type` として表される 2 つの文字が等しいかどうかをテストします。  
+ Tests whether two characters represented as `int_type`s are equal or not.  
   
 ```  
 static bool eq_int_type(const int_type& _Ch1, const int_type& _Ch2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch1`  
- **int_type** として等しいかどうかをテストする 2 つの文字の最初の文字。  
+ The first of the two characters to be tested for equality as **int_type**s.  
   
  `_Ch2`  
- `int_type` として等しいかどうかをテストする 2 つの文字の 2 番目の文字。  
+ The second of the two characters to be tested for equality as `int_type`s.  
   
-### <a name="return-value"></a>戻り値  
- 最初の文字が 2 番目の文字に等しい場合は **true**、等しくない場合は **false** です。  
+### <a name="return-value"></a>Return Value  
+ **true** if the first character is equal to the second character; otherwise **false**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_eq_int_type.cpp  
@@ -563,7 +562,7 @@ The int_type representation of character ch1
 ```  
   
 ##  <a name="find"></a>  char_traits::find  
- 文字の範囲内で指定した文字が最初に出現する位置を検索します。  
+ Searches for the first occurrence of a specified character in a range of characters.  
   
 ```  
 static const char_type* find(const char_type* str,
@@ -571,20 +570,20 @@ static const char_type* find(const char_type* str,
     const char_type& _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- 検索される文字列の先頭の文字。  
+ The first character in the string to be searched.  
   
  `_Num`  
- 検索される範囲内で先頭から数えてその位置が何番目かを示す数。  
+ The number of positions, counting from the first, in the range to be searched.  
   
  `_Ch`  
- 範囲内で検索される文字。  
+ The character to be searched for in the range.  
   
-### <a name="return-value"></a>戻り値  
- 一致するものが見つかった場合は、範囲内で指定された値の最初に出現した箇所へのポインター、それ以外の場合は、Null ポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the first occurrence of the specified character in the range if a match is found; otherwise, a null pointer.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_find.cpp  
@@ -627,33 +626,33 @@ The result2 of the search is NULL.
 ```  
   
 ##  <a name="int_type"></a>  char_traits::int_type  
- `char_type` 型の文字、またはファイルの終端 (EOF) 文字を表すことができる整数型。  
+ An integer type that can represent a character of type `char_type` or an end-of-file (EOF) character.  
   
 ```  
 typedef long int_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 元の値を変更せずに型 **CharType** の値を `int_type` に型キャストしてから、**CharType** に戻すことができる必要があります。  
+### <a name="remarks"></a>Remarks  
+ It must be possible to type cast a value of type **CharType** to `int_type` then back to **CharType** without altering the original value.  
   
-### <a name="example"></a>例  
-  `int_type` の宣言方法や使用方法の例については、[eq_int_type](#eq_int_type) の例を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [eq_int_type](#eq_int_type) for an example of how to declare and use `int_type`.  
   
 ##  <a name="length"></a>  char_traits::length  
- 文字列の長さを返します。  
+ Returns the length of a string.  
   
 ```  
 static size_t length(const char_type* str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `str`  
- 長さを測定する C 文字列。  
+ The C-string whose length is to be measured.  
   
-### <a name="return-value"></a>戻り値  
- Null 終端文字を含まない、測定するシーケンス内の要素の数。  
+### <a name="return-value"></a>Return Value  
+ The number of elements in the sequence being measured, not including the null terminator.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_length.cpp  
@@ -680,23 +679,23 @@ The length of C-string str1 is: 5.
 ```  
   
 ##  <a name="lt"></a>  char_traits::lt  
- 1 つの文字が別の文字よりも小さいかどうかをテストします。  
+ Tests whether one character is less than another.  
   
 ```  
 static bool lt(const char_type& _Ch1, const char_type& _Ch2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch1`  
- 少ないかどうかをテストする 2 つの文字の最初の文字。  
+ The first of two characters to be tested for less than.  
   
  `_Ch2`  
- 少ないかどうかをテストする 2 つの文字の 2 番目の文字。  
+ The second of two characters to be tested for less than.  
   
-### <a name="return-value"></a>戻り値  
- 最初の文字が 2 番目の文字より少ない場合は **true**、それ以外の場合は **false** です。  
+### <a name="return-value"></a>Return Value  
+ **true** if the first character is less than the second character; otherwise **false**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_lt.cpp  
@@ -736,9 +735,9 @@ The character ch3 is not less than the character ch2.
 ```  
   
 ##  <a name="move"></a>  char_traits::move  
- シーケンス内の文字を、指定された文字数だけ、重複が生じる可能性のある別のシーケンスにコピーします。  
+ Copies a specified number of characters in a sequence to another, possibly overlapping sequence.  
   
- 渡された値が正しいことの確認を呼び出し元に依存するため、このメソッドは安全ではない可能性があります。 代わりに [char_traits::_Move_s](#move_s) の使用を検討してください。  
+ This method is potentially unsafe, as it relies on the caller to check that the passed values are correct. Consider using [char_traits::_Move_s](#move_s) instead.  
   
 ```  
 static char_type *move(char_type* _To,
@@ -746,23 +745,23 @@ static char_type *move(char_type* _To,
     size_t _Num);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_To`  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the string or character array targeted to receive the copied sequence of characters.  
   
  `_From`  
- コピーされるソース文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the source string or character array to be copied.  
   
  `_Num`  
- ソース文字列からコピーされる要素の数。  
+ The number of elements to be copied from the source string.  
   
-### <a name="return-value"></a>戻り値  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列にコピーされる最初の要素 `_To`。  
+### <a name="return-value"></a>Return Value  
+ The first element `_To` copied into the string or character array targeted to receive the copied sequence of characters.  
   
-### <a name="remarks"></a>コメント  
- ソースと宛先が重複してもかまいません。  
+### <a name="remarks"></a>Remarks  
+ The source and destination may overlap.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_move.cpp  
@@ -809,7 +808,7 @@ The result2 = move ( sToFrom2 , findc , 8 ) is: cd-1234-4-ABCD
 ```  
   
 ##  <a name="move_s"></a>  char_traits::_Move_s  
- シーケンス内の文字を、指定された文字数だけ、重複が生じる可能性のある別のシーケンスにコピーします。  
+ Copies a specified number of characters in a sequence to another, possibly overlapping sequence.  
   
 ```  
 static char_type *_Move_s(
@@ -819,26 +818,26 @@ static char_type *_Move_s(
     size_t count);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dest`  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the string or character array targeted to receive the copied sequence of characters.  
   
  `dest_size`  
- `dest` のサイズ。 `char_type` が `char` の場合は、バイト単位です。 `char_type` が `wchar_t` の場合は、ワード数単位です。  
+ The size of `dest`. If `char_type` is `char`, then this is in bytes. If `char_type` is `wchar_t`, then this is in words.  
   
  `_From`  
- コピーされるソース文字列または文字配列の先頭にある要素。  
+ The element at the beginning of the source string or character array to be copied.  
   
  `count`  
- ソース文字列からコピーされる要素の数。  
+ The number of elements to be copied from the source string.  
   
-### <a name="return-value"></a>戻り値  
- コピーされた文字のシーケンスの受信ターゲットとなる文字列または文字配列にコピーされる最初の要素 `dest`。  
+### <a name="return-value"></a>Return Value  
+ The first element `dest` copied into the string or character array targeted to receive the copied sequence of characters.  
   
-### <a name="remarks"></a>コメント  
- ソースと宛先が重複してもかまいません。  
+### <a name="remarks"></a>Remarks  
+ The source and destination may overlap.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits__Move_s.cpp  
@@ -885,22 +884,22 @@ The result2 = _Move_s(sToFrom2, char_traits<char>::length(sToFrom2), findc, 8) i
 ```  
   
 ##  <a name="not_eof"></a>  char_traits::not_eof  
- 文字がファイルの終端 (EOF) 文字であるかどうかをテストします。  
+ Tests whether a character is not the end-of-file (EOF) character or is the EOF.  
   
 ```  
 static int_type not_eof(const int_type& _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- EOF 文字であるかどうかをテストされる `int_type` として表される文字。  
+ The character represented as an `int_type` to be tested for whether it is the EOF character or not.  
   
-### <a name="return-value"></a>戻り値  
- 文字の **int_type** が EOF 文字の型と異なる場合、テストされる文字の `int_type` 表現。  
+### <a name="return-value"></a>Return Value  
+ The `int_type` representation of the character tested, if the **int_type** of the character is not equal to that of the EOF character.  
   
- 文字 `int_type` 値が EOF `int_type` 値と等しい場合は、**false** です。  
+ If the character `int_type` value is equal to the EOF `int_type` value, then **false**.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_not_eof.cpp  
@@ -954,53 +953,53 @@ The eofTest2 indicates int2 is an EOF character.
 ```  
   
 ##  <a name="off_type"></a>  char_traits::off_type  
- ストリーム内の位置間のオフセットを表すことのできる整数型。  
+ An integer type that can represent offsets between positions in a stream.  
   
 ```  
 typedef streamoff off_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 型は、さまざまなストリーム位置決め操作に関連するオフセット バイト数を格納できるオブジェクトを記述する、符号付き整数です。 通常は、[streamoff](../standard-library/ios-typedefs.md#streamoff) のシノニムですが、基本的にその型と同じプロパティを持っています。  
+### <a name="remarks"></a>Remarks  
+ The type is a signed integer that describes an object that can store a byte offset involved in various stream positioning operations. It is typically a synonym for [streamoff](../standard-library/ios-typedefs.md#streamoff), but it has essentially the same properties as that type.  
   
 ##  <a name="pos_type"></a>  char_traits::pos_type  
- ストリーム内の位置を表すことのできる整数型。  
+ An integer type that can represent positions in a stream.  
   
 ```  
 typedef streampos pos_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、ストリーム内の任意のファイル位置インジケーターを復元するために必要なすべての情報を格納できるオブジェクトを表します。 通常は、[streampos](../standard-library/ios-typedefs.md#streampos) のシノニムですが、どのような場合も基本的にその型と同じプロパティを持っています。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can store all the information needed to restore an arbitrary file-position indicator within a stream. It is typically a synonym for [streampos](../standard-library/ios-typedefs.md#streampos), but in any case it has essentially the same properties as that type.  
   
 ##  <a name="state_type"></a>  char_traits::state_type  
- ストリーム内のマルチバイト文字の変換状態を表す型。  
+ A type that represents the conversion state for multibyte characters in a stream.  
   
 ```  
 typedef implementation-defined state_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、変換状態を表すことができるオブジェクトを表します。 通常は、`mbstate_t` のシノニムですが、どのような場合も基本的にその型と同じプロパティを持っています。  
+### <a name="remarks"></a>Remarks  
+ The type describes an object that can represent a conversion state. It is typically a synonym for `mbstate_t`, but in any case it has essentially the same properties as that type.  
   
 ##  <a name="to_char_type"></a>  char_traits::to_char_type  
- `int_type` の文字を `char_type` の対応する文字に変換し、その結果を返します。  
+ Converts an `int_type` character to the corresponding `char_type` character and returns the result.  
   
 ```  
 static char_type to_char_type(const int_type& _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- `char_type` として表される `int_type` 文字。  
+ The `int_type` character to be represented as a `char_type`.  
   
-### <a name="return-value"></a>戻り値  
- `int_type` 文字に対応する `char_type` 文字。  
+### <a name="return-value"></a>Return Value  
+ The `char_type` character corresponding to the `int_type` character.  
   
- 予期しない結果をもたらすようには表されない `_Ch` の値。  
+ A value of `_Ch` that cannot be represented as such yields an unspecified result.  
   
-### <a name="remarks"></a>コメント  
- 変換操作 [to_int_type](#to_int_type) と `to_char_type` は互いに逆の操作を実行できるので、次のようになります。  
+### <a name="remarks"></a>Remarks  
+ The conversion operations [to_int_type](#to_int_type) and `to_char_type` are inverse to each other, so that:  
   
  `to_int_type` ( `to_char_type` ( *x* ) ) == *x*  
   
@@ -1010,7 +1009,7 @@ static char_type to_char_type(const int_type& _Ch);
   
  for any `char_type` *x*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_to_char_type.cpp  
@@ -1086,31 +1085,31 @@ The recovered char_type of ch2 is equal to the original ch2.
 ```  
   
 ##  <a name="to_int_type"></a>  char_traits::to_int_type  
- `char_type` の文字を `int_type` の対応する文字に変換し、その結果を返します。  
+ Converts a `char_type` character to the corresponding `int_type` character and returns the result.  
   
 ```  
 static int_type to_int_type(const char_type& _Ch);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Ch`  
- `int_type` として表される `char_type` 文字。  
+ The `char_type` character to be represented as an `int_type`.  
   
-### <a name="return-value"></a>戻り値  
- `char_type` 文字に対応する `int_type` 文字。  
+### <a name="return-value"></a>Return Value  
+ The `int_type` character corresponding to the `char_type` character.  
   
-### <a name="remarks"></a>コメント  
- 変換操作 `to_int_type`to_char_type[ と ](#to_char_type) は互いに逆の操作を実行できるので、次のようになります。  
+### <a name="remarks"></a>Remarks  
+ The conversion operations `to_int_type` and [to_char_type](#to_char_type) are inverse to each other, so that:  
   
  `to_int_type` ( `to_char_type` ( *x* ) ) == *x*  
   
- for any `int_type` *x* and  
+ for any `int_type` *x*, and  
   
  `to_char_type` ( `to_int_type` ( *x* ) ) == *x*  
   
  for any `char_type` *x*.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // char_traits_to_int_type.cpp  
@@ -1184,7 +1183,7 @@ The recovered char_type of ch1 is equal to the original ch1.
 The recovered char_type of ch2 is equal to the original ch2.  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

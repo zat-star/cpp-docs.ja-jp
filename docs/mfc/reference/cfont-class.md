@@ -1,5 +1,5 @@
 ---
-title: "CFont クラス |Microsoft ドキュメント"
+title: CFont Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -21,9 +21,13 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CFont class
-- GDI, font classes
-- fonts, MFC classes
+- CFont [MFC], CFont
+- CFont [MFC], CreateFont
+- CFont [MFC], CreateFontIndirect
+- CFont [MFC], CreatePointFont
+- CFont [MFC], CreatePointFontIndirect
+- CFont [MFC], FromHandle
+- CFont [MFC], GetLogFont
 ms.assetid: 3fad6bfe-d6ce-4ab9-967a-5ce0aa102800
 caps.latest.revision: 23
 author: mikeblome
@@ -43,79 +47,79 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: cc7ecfb850bf24013acdb55075eeb3d64d4994ee
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 22898396daea9daa2f1d06d326a9727364b01302
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cfont-class"></a>CFont クラス
-Windows のグラフィック デバイス インターフェイス (GDI) のフォントをカプセル化したもので、フォントを操作するメンバー関数を提供します。  
+# <a name="cfont-class"></a>CFont Class
+Encapsulates a Windows graphics device interface (GDI) font and provides member functions for manipulating the font.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CFont : public CGdiObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFont::CFont](#cfont)|`CFont` オブジェクトを構築します。|  
+|[CFont::CFont](#cfont)|Constructs a `CFont` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFont::CreateFont](#createfont)|初期化、`CFont`指定の特性を持つ。|  
-|[CFont::CreateFontIndirect](#createfontindirect)|初期化、`CFont`オブジェクトで指定された特性を持つ、`LOGFONT`構造体。|  
-|[CFont::CreatePointFont](#createpointfont)|初期化、`CFont`ポイント、およびタイプフェイス&10; 分の&1; 単位は指定された高さにします。|  
-|[CFont::CreatePointFontIndirect](#createpointfontindirect)|同じ`CreateFontIndirect`する点を除いて、フォントの高さが論理ユニットではなく、ポイント&0;.1 単位で測定されます。|  
-|[CFont::FromHandle](#fromhandle)|ポインターを返す、 `CFont` Windows が指定されると**HFONT**します。|  
-|[CFont::GetLogFont](#getlogfont)|入力、`LOGFONT`に接続されている論理フォントに関する情報を`CFont`オブジェクトです。|  
+|[CFont::CreateFont](#createfont)|Initializes a `CFont` with the specified characteristics.|  
+|[CFont::CreateFontIndirect](#createfontindirect)|Initializes a `CFont` object with the characteristics given in a `LOGFONT` structure.|  
+|[CFont::CreatePointFont](#createpointfont)|Initializes a `CFont` with the specified height, measured in tenths of a point, and typeface.|  
+|[CFont::CreatePointFontIndirect](#createpointfontindirect)|Same as `CreateFontIndirect` except that the font height is measured in tenths of a point rather than logical units.|  
+|[CFont::FromHandle](#fromhandle)|Returns a pointer to a `CFont` object when given a Windows **HFONT**.|  
+|[CFont::GetLogFont](#getlogfont)|Fills a `LOGFONT` with information about the logical font attached to the `CFont` object.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CFont::operator HFONT](#operator_hfont)|接続されている Windows GDI フォント ハンドルを返します。、`CFont`オブジェクトです。|  
+|[CFont::operator HFONT](#operator_hfont)|Returns the Windows GDI font handle attached to the `CFont` object.|  
   
-## <a name="remarks"></a>コメント  
- 使用する、`CFont`オブジェクト、構築、`CFont`オブジェクトしてアタッチ Windows フォントで[構築](#createfont)、 [CreateFontIndirect](#createfontindirect)、 [CreatePointFont](#createpointfont)、または[CreatePointFontIndirect](#createpointfontindirect)、し、オブジェクトのメンバー関数を使用して、フォントを操作します。  
+## <a name="remarks"></a>Remarks  
+ To use a `CFont` object, construct a `CFont` object and attach a Windows font to it with [CreateFont](#createfont), [CreateFontIndirect](#createfontindirect), [CreatePointFont](#createpointfont), or [CreatePointFontIndirect](#createpointfontindirect), and then use the object's member functions to manipulate the font.  
   
- `CreatePointFont`と`CreatePointFontIndirect`関数は、多くの場合よりも使いやすく`CreateFont`または`CreateFontIndirect`のためフォントの高さの変換、ポイント サイズから論理ユニットを自動的にします。  
+ The `CreatePointFont` and `CreatePointFontIndirect` functions are often easier to use than `CreateFont` or `CreateFontIndirect` since they do the conversion for the height of the font from a point size to logical units automatically.  
   
- 詳細については`CFont`を参照してください[グラフィック オブジェクト](../../mfc/graphic-objects.md)します。  
+ For more information on `CFont`, see [Graphic Objects](../../mfc/graphic-objects.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CGdiObject](../../mfc/reference/cgdiobject-class.md)  
   
  `CFont`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="cfont"></a>CFont::CFont  
- `CFont` オブジェクトを構築します。  
+##  <a name="cfont"></a>  CFont::CFont  
+ Constructs a `CFont` object.  
   
 ```  
 CFont();
 ```  
   
-### <a name="remarks"></a>コメント  
- 結果のオブジェクトを初期化する必要があります`CreateFont`、 `CreateFontIndirect`、 `CreatePointFont`、または`CreatePointFontIndirect`を使用する前にします。  
+### <a name="remarks"></a>Remarks  
+ The resulting object must be initialized with `CreateFont`, `CreateFontIndirect`, `CreatePointFont`, or `CreatePointFontIndirect` before it can be used.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&70;](../../mfc/codesnippet/cpp/cfont-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#70](../../mfc/codesnippet/cpp/cfont-class_1.cpp)]  
   
-##  <a name="createfont"></a>CFont::CreateFont  
- 初期化、`CFont`指定の特性を持つオブジェクト。  
+##  <a name="createfont"></a>  CFont::CreateFont  
+ Initializes a `CFont` object with the specified characteristics.  
   
 ```  
 BOOL CreateFont(
@@ -135,100 +139,100 @@ BOOL CreateFont(
     LPCTSTR lpszFacename);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nHeight`  
- フォントの高さを (論理単位で) でを指定します。 参照してください、`lfHeight`のメンバー、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]についてです。 絶対値`nHeight`が変換された後、16,384 デバイス単位を超えない必要があります。 高さ比較を行う場合に、すべてのフォントが要求されたサイズを超える場合も、フォント マッパーは最も大きいフォントが要求されたサイズを超えていないか、最小のフォントを探します。  
+ Specifies the desired height (in logical units) of the font. See the `lfHeight` member of the [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)structure in the Windows SDK for a description. The absolute value of `nHeight` must not exceed 16,384 device units after it is converted. For all height comparisons, the font mapper looks for the largest font that does not exceed the requested size or the smallest font if all the fonts exceed the requested size.  
   
  `nWidth`  
- フォントの文字 (論理単位で平均の幅を指定します。 場合`nWidth`が 0 の差の絶対値によって決定される最も近い一致を検索する利用可能なフォントのデジタル化縦横比と一致するデバイスの縦横比場合、。  
+ Specifies the average width (in logical units) of characters in the font. If `nWidth` is 0, the aspect ratio of the device will be matched against the digitization aspect ratio of the available fonts to find the closest match, which is determined by the absolute value of the difference.  
   
  `nEscapement`  
- 傾斜ベクターと表示面の x 軸の角を (0.1 度単位) を指定します。 傾斜ベクターは、行の最初と最後の文字の原点を結ぶ直線です。 角度は、x 軸から反時計回りに測定されます。 参照してください、`lfEscapement`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。  
+ Specifies the angle (in 0.1-degree units) between the escapement vector and the x-axis of the display surface. The escapement vector is the line through the origins of the first and last characters on a line. The angle is measured counterclockwise from the x-axis. See the `lfEscapement` member in the `LOGFONT` structure in the Windows SDK for more information.  
   
  `nOrientation`  
- 角度 (度 0.1 単位で)、文字のベースラインと x 軸を指定します。 角度は、y 軸方向のダウンして、x 軸の y 方向が上の座標系から時計回りに座標系を x 軸から反時計回りに測定されます。  
+ Specifies the angle (in 0.1-degree units) between the baseline of a character and the x-axis. The angle is measured counterclockwise from the x-axis for coordinate systems in which the y-direction is down and clockwise from the x-axis for coordinate systems in which the y-direction is up.  
   
  `nWeight`  
- フォントの太さ (で 1000 ピクセル単位) を指定します。 参照してください、`lfWeight`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の詳細。 説明の値は概数です。実際の外観は、フォントに依存します。 一部のフォントがのみ`FW_NORMAL`、 `FW_REGULAR`、および`FW_BOLD`重みです。 場合`FW_DONTCARE`を指定すると、既定の重みが使用されます。  
+ Specifies the font weight (in inked pixels per 1000). See the `lfWeight` member in the `LOGFONT` structure in the Windows SDK for more information. The described values are approximate; the actual appearance depends on the typeface. Some fonts have only `FW_NORMAL`, `FW_REGULAR`, and `FW_BOLD` weights. If `FW_DONTCARE` is specified, a default weight is used.  
   
  `bItalic`  
- フォントが斜体かどうかを指定します。  
+ Specifies whether the font is italic.  
   
  `bUnderline`  
- フォントの下線が引かれたかどうかを指定します。  
+ Specifies whether the font is underlined.  
   
  `cStrikeOut`  
- のフォントの文字が当てられたかどうかを指定します。 場合に取り消し線フォントを指定する&0; 以外の値に設定します。  
+ Specifies whether characters in the font are struck out. Specifies a strikeout font if set to a nonzero value.  
   
  `nCharSet`  
- フォントの文字セットの指定、`lfCharSet`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の値の一覧です。  
+ Specifies the font's character setSee the `lfCharSet` member in the `LOGFONT` structure in the Windows SDK for a list of values.  
   
- OEM 文字セットは、システムによって異なります。  
+ The OEM character set is system-dependent.  
   
- その他の文字セットを使用するフォントは、システムに存在することができます。 不明な文字セットとフォントを使用するアプリケーションでは、変換や、そのフォントで表示するのには文字列の解釈がしよう必要があります。 代わりに、文字列は、出力デバイス ドライバーに直接渡す必要があります。  
+ Fonts with other character sets may exist in the system. An application that uses a font with an unknown character set must not attempt to translate or interpret strings that are to be rendered with that font. Instead, the strings should be passed directly to the output device driver.  
   
- フォント マッパーを使用して、`DEFAULT_CHARSET`値。 アプリケーションでは、論理フォントを完全に記述するのにフォントのサイズと名前を許可するように、この値を使用できます。 指定した名前のフォントが存在しない場合、任意の文字セットからフォントは、指定したフォントの代わりに使用できます。 予期しない結果を避けるためには、アプリケーションが使用する、`DEFAULT_CHARSET`値を多用しないようにします。  
+ The font mapper does not use the `DEFAULT_CHARSET` value. An application can use this value to allow the name and size of a font to fully describe the logical font. If a font with the specified name does not exist, a font from any character set can be substituted for the specified font. To avoid unexpected results, applications should use the `DEFAULT_CHARSET` value sparingly.  
   
  `nOutPrecision`  
- 目的の出力の有効桁数を指定します。 出力の有効桁数は、要求されたフォントの高さ、幅、文字の方向、傾斜、およびピッチに出力をどの程度一致する必要がありますを定義します。 参照してください、`lfOutPrecision`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]値と詳細の一覧についてです。  
+ Specifies the desired output precision. The output precision defines how closely the output must match the requested font's height, width, character orientation, escapement, and pitch. See the `lfOutPrecision` member in the `LOGFONT` structure in the Windows SDK for a list of values and more information.  
   
  `nClipPrecision`  
- 希望するクリッピングの有効桁数を指定します。 クリッピング精度は、部分的にクリッピング領域の外側にある文字をクリップする方法を定義します。 参照してください、`lfClipPrecision`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の値の一覧です。  
+ Specifies the desired clipping precision. The clipping precision defines how to clip characters that are partially outside the clipping region. See the `lfClipPrecision` member in the `LOGFONT` structure in the Windows SDK for a list of values.  
   
- 読み取り専用の埋め込みフォントを使用するアプリケーションを指定する必要があります`CLIP_ENCAPSULATE`します。  
+ To use an embedded read-only font, an application must specify `CLIP_ENCAPSULATE`.  
   
- デバイス、truetype フォント、およびベクター フォントの一貫した回転を実現するために、アプリケーションは、結合を OR 演算子を使用して、`CLIP_LH_ANGLES`値とその他の`nClipPrecision`値。 場合、`CLIP_LH_ANGLES`ビットが設定されている、すべてのフォントの回転、座標系の向きが左手座標系かによって違います右手座標系か。 (詳細については、座標系の向きの説明を参照して、`nOrientation`パラメーターです)。場合`CLIP_LH_ANGLES`が設定されていないデバイス フォント常に反時計回りに回転、その他のフォントの回転、座標系の向きに依存します。  
+ To achieve consistent rotation of device, TrueType, and vector fonts, an application can use the OR operator to combine the `CLIP_LH_ANGLES` value with any of the other `nClipPrecision` values. If the `CLIP_LH_ANGLES` bit is set, the rotation for all fonts depends on whether the orientation of the coordinate system is left-handed or right-handed. (For more information about the orientation of coordinate systems, see the description of the `nOrientation` parameter.) If `CLIP_LH_ANGLES` is not set, device fonts always rotate counterclockwise, but the rotation of other fonts is dependent on the orientation of the coordinate system.  
   
  `nQuality`  
- フォントの出力品質は、実際の物理的なフォントの論理フォント属性を一致するように、GDI を試みる必要がありますか慎重に定義を指定します。 参照してください、`lfQuality`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の値の一覧です。  
+ Specifies the font's output quality, which defines how carefully the GDI must attempt to match the logical-font attributes to those of an actual physical font. See the `lfQuality` member in the `LOGFONT` structure in the Windows SDK for a list of values.  
   
  `nPitchAndFamily`  
- ピッチとフォントのファミリを指定します。 参照してください、`lfPitchAndFamily`内のメンバー、`LOGFONT`構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]値と詳細の一覧についてです。  
+ Specifies the pitch and family of the font. See the `lfPitchAndFamily` member in the `LOGFONT` structure in the Windows SDK for a list of values and more information.  
   
  `lpszFacename`  
- A`CString`またはフォントの書体名を指定する null で終わる文字列へのポインター。 この文字列の長さは 30 文字を超えない必要があります。 Windows [EnumFontFamilies](http://msdn.microsoft.com/library/windows/desktop/dd162619)関数を使用して、現在利用可能なすべてのフォントを列挙します。 場合`lpszFacename`は`NULL`GDI がデバイスに依存しない書体を使用します。  
+ A `CString` or pointer to a null-terminated string that specifies the typeface name of the font. The length of this string must not exceed 30 characters. The Windows [EnumFontFamilies](http://msdn.microsoft.com/library/windows/desktop/dd162619) function can be used to enumerate all currently available fonts. If `lpszFacename` is `NULL`, the GDI uses a device-independent typeface.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- フォントは、任意のデバイス コンテキストのフォントとして後で選択できます。  
+### <a name="remarks"></a>Remarks  
+ The font can subsequently be selected as the font for any device context.  
   
- `CreateFont`関数では、新しい Windows GDI フォントは作成されません。 それだけで、最も近いから選択利用できる物理フォントに、GDI します。  
+ The `CreateFont` function does not create a new Windows GDI font. It merely selects the closest match from the physical fonts available to the GDI.  
   
- アプリケーションは、論理フォントを作成するときに、ほとんどのパラメーターに既定の設定を使用できます。 特定の値を常に指定するパラメーターは、`nHeight`と`lpszFacename`です。 場合`nHeight`と`lpszFacename`が設定されていない場合、アプリケーションによって作成される論理フォントにはデバイスに依存します。  
+ Applications can use the default settings for most parameters when creating a logical font. The parameters that should always be given specific values are `nHeight` and `lpszFacename`. If `nHeight` and `lpszFacename` are not set by the application, the logical font that is created is device-dependent.  
   
- 終了するときに、`CFont`によって作成されたオブジェクト、`CreateFont`関数を使用して`CDC::SelectObject`をデバイス コンテキストに、別のフォントを選択し、削除、`CFont`オブジェクトが不要です。  
+ When you finish with the `CFont` object created by the `CreateFont` function, use `CDC::SelectObject` to select a different font into the device context, then delete the `CFont` object that is no longer needed.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&71;](../../mfc/codesnippet/cpp/cfont-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#71](../../mfc/codesnippet/cpp/cfont-class_2.cpp)]  
   
-##  <a name="createfontindirect"></a>CFont::CreateFontIndirect  
- 初期化、`CFont`オブジェクトで指定された特性を持つ、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体。  
+##  <a name="createfontindirect"></a>  CFont::CreateFontIndirect  
+ Initializes a `CFont` object with the characteristics given in a [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)structure.  
   
 ```  
 BOOL CreateFontIndirect(const LOGFONT* lpLogFont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpLogFont`  
- 指す、`LOGFONT`論理フォントの特性を定義する構造体。  
+ Points to a `LOGFONT` structure that defines the characteristics of the logical font.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- フォントは、任意のデバイスの現在のフォントとして後で選択できます。  
+### <a name="remarks"></a>Remarks  
+ The font can subsequently be selected as the current font for any device.  
   
- このフォントにで指定された特性、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体。 使用して、フォントが選択されている場合、 [:selectobject](../../mfc/reference/cdc-class.md#selectobject)論理フォントを既存の物理フォントとは、メンバー関数では、GDI フォント マッパーとします。 フォント マッパーは、完全に一致する論理フォントを検索する失敗した場合、要求された特性をできるだけ多くします一致する特性を持つ別のフォントを提供します。  
+ This font has the characteristics specified in the [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure. When the font is selected by using the [CDC::SelectObject](../../mfc/reference/cdc-class.md#selectobject) member function, the GDI font mapper attempts to match the logical font with an existing physical font. If the font mapper fails to find an exact match for the logical font, it provides an alternative font whose characteristics match as many of the requested characteristics as possible.  
   
- 不要になった必要がある場合、`CFont`によって作成されたオブジェクト、`CreateFontIndirect`関数を使用して`CDC::SelectObject`をデバイス コンテキストに、別のフォントを選択し、削除、`CFont`オブジェクトが不要です。  
+ When you no longer need the `CFont` object created by the `CreateFontIndirect` function, use `CDC::SelectObject` to select a different font into the device context, then delete the `CFont` object that is no longer needed.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&72;](../../mfc/codesnippet/cpp/cfont-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#72](../../mfc/codesnippet/cpp/cfont-class_3.cpp)]  
   
-##  <a name="createpointfont"></a>CFont::CreatePointFont  
- この関数は、指定したフォントのフォントを作成し、ポイント サイズを簡単な方法を提供します。  
+##  <a name="createpointfont"></a>  CFont::CreatePointFont  
+ This function provides a simple way to create a font of a specified typeface and point size.  
   
 ```  
 BOOL CreatePointFont(
@@ -237,29 +241,29 @@ BOOL CreatePointFont(
     CDC* pDC = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPointSize`  
- 必要な点の&1;/10 でフォントの高さ。 (たとえば、パスの 12 ポイントのフォントを指定するのには 120 です。)  
+ Requested font height in tenths of a point. (For instance, pass 120 to request a 12-point font.)  
   
  `lpszFaceName`  
- A`CString`またはフォントの書体名を指定する null で終わる文字列へのポインター。 この文字列の長さは 30 文字を超えない必要があります。 Windows **EnumFontFamilies**関数を使用して、現在利用可能なすべてのフォントを列挙します。 場合`lpszFaceName`は**NULL**GDI がデバイスに依存しない書体を使用します。  
+ A `CString` or pointer to a null-terminated string that specifies the typeface name of the font. The length of this string must not exceed 30 characters. The Windows **EnumFontFamilies** function can be used to enumerate all currently available fonts. If `lpszFaceName` is **NULL**, the GDI uses a device-independent typeface.  
   
  `pDC`  
- ポインター、 [CDC](../../mfc/reference/cdc-class.md)を使用する高さを変換するオブジェクト`nPointSize`の論理ユニットにします。 場合**NULL**画面のデバイス コンテキストは、変換に使用します。  
+ Pointer to the [CDC](../../mfc/reference/cdc-class.md) object to be used to convert the height in `nPointSize` to logical units. If **NULL**, a screen device context is used for the conversion.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、0 以外。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 高さを自動変換`nPointSize`論理ユニットを使用して、`CDC`によって指されるオブジェクト`pDC`します。  
+### <a name="remarks"></a>Remarks  
+ It automatically converts the height in `nPointSize` to logical units using the `CDC` object pointed to by `pDC`.  
   
- 終了するときに、`CFont`によって作成されたオブジェクト、`CreatePointFont`関数で最初に、デバイス コンテキストからフォントを選択し、削除、`CFont`オブジェクトです。  
+ When you finish with the `CFont` object created by the `CreatePointFont` function, first select the font out of the device context, then delete the `CFont` object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&73;](../../mfc/codesnippet/cpp/cfont-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#73](../../mfc/codesnippet/cpp/cfont-class_4.cpp)]  
   
-##  <a name="createpointfontindirect"></a>CFont::CreatePointFontIndirect  
- この関数は、同じ[CreateFontIndirect](#createfontindirect)する点を除いて、**する**のメンバー、`LOGFONT`はデバイスではなくポイント単位の部分の&1;/10 に解釈されます。  
+##  <a name="createpointfontindirect"></a>  CFont::CreatePointFontIndirect  
+ This function is the same as [CreateFontIndirect](#createfontindirect) except that the **lfHeight** member of the `LOGFONT` is interpreted in tenths of a point rather than device units.  
   
 ```  
 BOOL CreatePointFontIndirect(
@@ -267,83 +271,83 @@ BOOL CreatePointFontIndirect(
     CDC* pDC = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpLogFont`  
- 指す、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)論理フォントの特性を定義する構造体。 **する**のメンバー、`LOGFONT`構造体は、論理ユニットではなく、ポイントの部分の&1;/10 で計測されます。 (たとえば、設定**する**を 120 に 12 ポイントのフォントを指定します)。  
+ Points to a [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure that defines the characteristics of the logical font. The **lfHeight** member of the `LOGFONT` structure is measured in tenths of a point rather than logical units. (For instance, set **lfHeight** to 120 to request a 12-point font.)  
   
  `pDC`  
- ポインター、 [CDC](../../mfc/reference/cdc-class.md)を使用する高さを変換するオブジェクト**する**の論理ユニットにします。 場合**NULL**画面のデバイス コンテキストは、変換に使用します。  
+ Pointer to the [CDC](../../mfc/reference/cdc-class.md) object to be used to convert the height in **lfHeight** to logical units. If **NULL**, a screen device context is used for the conversion.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、0 以外。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、高さを自動的に変換**する**を使用して論理ユニットに、`CDC`によって指されるオブジェクト`pDC`渡される前に、`LOGFONT`構造 Windows にログオンします。  
+### <a name="remarks"></a>Remarks  
+ This function automatically converts the height in **lfHeight** to logical units using the `CDC` object pointed to by `pDC` before passing the `LOGFONT` structure on to Windows.  
   
- 終了するときに、`CFont`によって作成されたオブジェクト、`CreatePointFontIndirect`関数で最初に、デバイス コンテキストからフォントを選択し、削除、`CFont`オブジェクトです。  
+ When you finish with the `CFont` object created by the `CreatePointFontIndirect` function, first select the font out of the device context, then delete the `CFont` object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&74;](../../mfc/codesnippet/cpp/cfont-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#74](../../mfc/codesnippet/cpp/cfont-class_5.cpp)]  
   
-##  <a name="fromhandle"></a>CFont::FromHandle  
- ポインターを返す、`CFont`が指定されると、 **HFONT** Windows GDI フォント オブジェクトへのハンドルします。  
+##  <a name="fromhandle"></a>  CFont::FromHandle  
+ Returns a pointer to a `CFont` object when given an **HFONT** handle to a Windows GDI font object.  
   
 ```  
 static CFont* PASCAL FromHandle(HFONT hFont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hFont`  
- **HFONT** Windows フォントに対するハンドルします。  
+ An **HFONT** handle to a Windows font.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CFont`成功以外の場合は、オブジェクト**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CFont` object if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- 場合、 `CFont` 、一時的なハンドルにオブジェクトが既にアタッチされていない`CFont`オブジェクトが作成され、接続されています。 この一時`CFont`だけですべて一時的なグラフィックを時間があるオブジェクトは削除されるまで、次回、アプリケーションのアイドル時間のイベント ループで、オブジェクトが有効です。 言い換えると、別の方法は、一時オブジェクトは、1 つのウィンドウ メッセージを処理中にのみ有効です。  
+### <a name="remarks"></a>Remarks  
+ If a `CFont` object is not already attached to the handle, a temporary `CFont` object is created and attached. This temporary `CFont` object is valid only until the next time the application has idle time in its event loop, at which time all temporary graphic objects are deleted. Another way of saying this is that the temporary object is valid only during the processing of one window message.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&75;](../../mfc/codesnippet/cpp/cfont-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#75](../../mfc/codesnippet/cpp/cfont-class_6.cpp)]  
   
-##  <a name="getlogfont"></a>CFont::GetLogFont  
- コピーを取得するには、この関数を呼び出して、`LOGFONT`の構造体`CFont`します。  
+##  <a name="getlogfont"></a>  CFont::GetLogFont  
+ Call this function to retrieve a copy of the `LOGFONT` structure for `CFont`.  
   
 ```  
 int GetLogFont(LOGFONT* pLogFont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pLogFont*  
- ポインター、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)フォント情報を受け取る構造です。  
+ Pointer to the [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure to receive the font information.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功すると、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function succeeds, otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&76;](../../mfc/codesnippet/cpp/cfont-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#76](../../mfc/codesnippet/cpp/cfont-class_7.cpp)]  
   
-##  <a name="operator_hfont"></a>CFont::operator HFONT  
- 接続されているフォントの Windows GDI ハンドルの取得にこの演算子を使用して、`CFont`オブジェクトです。  
+##  <a name="operator_hfont"></a>  CFont::operator HFONT  
+ Use this operator to get the Windows GDI handle of the font attached to the `CFont` object.  
   
 ```  
 operator HFONT() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 接続されている Windows GDI フォント オブジェクトのハンドルを`CFont`成功した場合は**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ The handle of the Windows GDI font object attached to `CFont` if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- この演算子からの変換が自動的に使用されるため`CFont`に[フォントとテキスト](http://msdn.microsoft.com/library/windows/desktop/dd144819)を渡すことができます`CFont`する関数にオブジェクト**HFONT**秒です。  
+### <a name="remarks"></a>Remarks  
+ Since this operator is automatically used for conversions from `CFont` to [Fonts and Text](http://msdn.microsoft.com/library/windows/desktop/dd144819), you can pass `CFont` objects to functions that expect **HFONT**s.  
   
- グラフィック オブジェクトの使い方の詳細については、次を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about using graphic objects, see [Graphic Objects](http://msdn.microsoft.com/library/windows/desktop/dd144962) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&77;](../../mfc/codesnippet/cpp/cfont-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#77](../../mfc/codesnippet/cpp/cfont-class_8.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
- [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample HIERSVR](../../visual-cpp-samples.md)   
+ [CGdiObject Class](../../mfc/reference/cgdiobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

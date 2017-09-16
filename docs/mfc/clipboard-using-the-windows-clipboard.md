@@ -1,53 +1,72 @@
 ---
-title: "クリップボード : Windows クリップボードの使用方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クリップボード [C++], コマンド"
-  - "クリップボード [C++], Windows クリップボード API"
-  - "クリップボード コマンド"
-  - "クリップボード コマンド, 実装"
-  - "コマンド [C++], 実装 (Edit を)"
-  - "[切り取り]、[コピー]、[貼り付け] の各コマンドのハンドラー関数"
-  - "ハンドラー関数, [切り取り]、[コピー]、[貼り付け] の各コマンド"
-  - "Windows クリップボード [C++]"
+title: 'Clipboard: Using the Windows Clipboard | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Clipboard commands
+- Cut/Copy and Paste command handler functions [MFC]
+- handler functions, Cut/Copy and Paste commands
+- Clipboard [MFC], commands
+- commands [MFC], implementing Edit
+- Clipboard commands [MFC], implementing
+- Windows Clipboard [MFC]
+- Clipboard [MFC], Windows Clipboard API
 ms.assetid: 24415b42-9301-4a70-b69a-44c97918319f
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# クリップボード : Windows クリップボードの使用方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 12a35751354566d8d260734aea6f19f9f8a8cabb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このトピックでは、MFC アプリケーション内の標準のクリップボード API を使用する方法について説明します。  
+---
+# <a name="clipboard-using-the-windows-clipboard"></a>Clipboard: Using the Windows Clipboard
+This topic describes how to use the standard Windows Clipboard API within your MFC application.  
   
- Windows のほとんどのアプリケーションは Windows クリップボードに切断またはデータのコピーが、クリップボードからの貼り付けデータをサポートします。  クリップボード データ形式はアプリケーションの間で異なります。  フレームワークはクラスの限られた数のクリップボード形式の限られた数のみをサポートします。  —をビューの編集メニューの…、クリップボードに関するコマンド—切り取り、コピー、および貼り付けできます。実装します。  クラス ライブラリには、これらのコマンドのコマンド ID を定義します: **ID\_EDIT\_CUT**、**ID\_EDIT\_COPY**と **ID\_EDIT\_PASTE**。  メッセージ行のプロンプトも定義されています。  
+ Most applications for Windows support cutting or copying data to the Windows Clipboard and pasting data from the Clipboard. The Clipboard data formats vary among applications. The framework supports only a limited number of Clipboard formats for a limited number of classes. You will normally implement the Clipboard-related commands — Cut, Copy, and Paste — on the Edit menu for your view. The class library defines the command IDs for these commands: **ID_EDIT_CUT**, **ID_EDIT_COPY**, and **ID_EDIT_PASTE**. Their message-line prompts are also defined.  
   
- [フレームワークのメッセージとコマンド](../mfc/messages-and-commands-in-the-framework.md) は ハンドラー関数にメニュー コマンドで、アプリケーションのメニュー コマンドを処理する方法について説明します。  アプリケーションが編集メニューのクリップボードのハンドラー関数をそのままコマンド、無効に定義する場合。  切り取りとコピー コマンドでハンドラー関数を記述するには、アプリケーションの選択を実装してください。  貼り付けコマンドでハンドラー関数を記述するには、アプリケーションで使用できる形式のデータが含まれているかどうかを参照するようにようにクリップボードを呼び出します。  たとえば、コピー コマンドを有効にするには、ハンドラーに次のように記述した場合:  
+ [Messages and Commands in the Framework](../mfc/messages-and-commands-in-the-framework.md) explains how to handle menu commands in your application by mapping the menu command to a handler function. As long as your application does not define handler functions for the Clipboard commands on the Edit menu, they remain disabled. To write handler functions for the Cut and Copy commands, implement selection in your application. To write a handler function for the Paste command, query the Clipboard to see whether it contains data in a format your application can accept. For example, to enable the Copy command, you might write a handler something like the following:  
   
- [!CODE [NVC_MFCListView#2](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCListView#2)]  
+ [!code-cpp[NVC_MFCListView#2](../atl/reference/codesnippet/cpp/clipboard-using-the-windows-clipboard_1.cpp)]  
   
- 切り取り、コピー、および貼り付けコマンドでは、特定のコンテキストでのみ有効です。  切り取りとコピー コマンドは何かがクリップボードにあるときに何かが選択されていると、貼り付けコマンドようにのみ有効になります。  コンテキストによってこれらのコマンドを有効にするか、無効にする更新ハンドラー関数を定義することで、この動作を実現できます。  詳細については、「[ユーザーインターフェイス オブジェクトを更新する方法](../mfc/how-to-update-user-interface-objects.md)」を参照してください。  
+ The Cut, Copy, and Paste commands are only meaningful in certain contexts. The Cut and Copy commands should be enabled only when something is selected, and the Paste command only when something is in the Clipboard. You can provide this behavior by defining update handler functions that enable or disable these commands depending on the context. For more information, see [How to Update User-Interface Objects](../mfc/how-to-update-user-interface-objects.md).  
   
- Microsoft Foundation Class ライブラリには `CEdit` と `CEditView` クラスをテキスト編集にクリップボード サポートします。  OLE クラスは、OLE アイテムを含むクリップボード操作を実装することが簡単になります。  OLE クラスの詳細については、「[クリップボード: OLE のクリップボード機能を使用する](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)」を参照してください。  
+ The Microsoft Foundation Class Library does provide Clipboard support for text editing with the `CEdit` and `CEditView` classes. The OLE classes also simplify implementing Clipboard operations that involve OLE items. For more information on the OLE classes, see [Clipboard: Using the OLE Clipboard Mechanism](../mfc/clipboard-using-the-ole-clipboard-mechanism.md).  
   
- ほかの実装して戻す \(**ID\_EDIT\_UNDO**\) などのメニュー コマンドを編集して再実行 \(**ID\_EDIT\_REDO**\) は、行われます。  アプリケーションでこれらのコマンドをサポートする、Visual C\+\+ リソース エディターを使用してリソース ファイルから簡単に削除できます。  
+ Implementing other Edit menu commands, such as Undo (**ID_EDIT_UNDO**) and Redo (**ID_EDIT_REDO**), is also left to you. If your application does not support these commands, you can easily delete them from your resource file using the Visual C++ resource editors.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [データのコピーと貼り付け](../Topic/Clipboard:%20Copying%20and%20Pasting%20Data.md)  
+-   [Copying and pasting data](../mfc/clipboard-copying-and-pasting-data.md)  
   
--   [OLE のクリップボード機能を使用する](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)  
+-   [Using the OLE Clipboard mechanism](../mfc/clipboard-using-the-ole-clipboard-mechanism.md)  
   
-## 参照  
- [クリップボードのトピック](../mfc/clipboard.md)
+## <a name="see-also"></a>See Also  
+ [Clipboard](../mfc/clipboard.md)
+
+

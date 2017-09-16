@@ -1,48 +1,66 @@
 ---
-title: "CReBar と CReBarCtrl の比較 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CReBar"
-  - "CReBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CReBar クラス, および CReBarCtrl"
-  - "GetReBarCtrl クラス"
-  - "rebar コントロール, CReBarCtrl クラス"
+title: CReBar vs. CReBarCtrl | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CReBar
+- CReBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- CReBar class [MFC], vs. CReBarCtrl
+- rebar controls [MFC], CReBarCtrl class [MFC]
+- GetReBarCtrl class [MFC]
 ms.assetid: 7f9c1d7e-5d5f-4956-843c-69ed3df688d0
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# CReBar と CReBarCtrl の比較
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 65b809ff977182ff3ef4248d9794f4ae002529c1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC は rebars を作成するための 2 種類のクラスが用意されています。: [CReBar](../mfc/reference/crebar-class.md) と [CReBarCtrl](../mfc/reference/crebarctrl-class.md) \(Windows コモン コントロール API をラップする\)。  **CReBar** は Rebar コモン コントロールの機能を提供し、の必須のコモン コントロールの設定と構造の多くを処理します。  
+---
+# <a name="crebar-vs-crebarctrl"></a>CReBar vs. CReBarCtrl
+MFC provides two classes to create rebars: [CReBar](../mfc/reference/crebar-class.md) and [CReBarCtrl](../mfc/reference/crebarctrl-class.md) (which wraps the Windows common control API). **CReBar** provides all of the functionality of the rebar common control, and it handles many of the required common control settings and structures for you.  
   
- したがって`CReBarCtrl` は MFC アーキテクチャに Rebar を統合する場合を除き、Win32 rebar のコントロールのラッパー クラスで、より実装し簡単に場合があります。  `CReBarCtrl` を使用し、MFC アーキテクチャに Rebar を統合する場合は、MFC と rebar コントロール操作を伝える追加注意を払う必要があります。  この通信は困難ではありません; ただし、**CReBar**を使用する場合は、追加の不要な作業です。  
+ `CReBarCtrl` is a wrapper class for the Win32 rebar control, and therefore may be easier to implement if you do not intend to integrate the rebar into the MFC architecture. If you plan to use `CReBarCtrl` and integrate the rebar into the MFC architecture, you must take additional care to communicate rebar control manipulations to MFC. This communication is not difficult; however, it is additional work that is unneeded when you use **CReBar**.  
   
- Visual C\+\+ は、Rebar コモン コントロールを使用する 2 とおりの方法を示します。  
+ Visual C++ provides two ways to take advantage of the rebar common control.  
   
--   Rebar の **CReBar**を使用して作成し、`CReBarCtrl` のメンバー関数へのアクセスを取得するに [CReBar::GetReBarCtrl](../Topic/CReBar::GetReBarCtrl.md) を呼び出します。  
+-   Create the rebar using **CReBar**, and then call [CReBar::GetReBarCtrl](../mfc/reference/crebar-class.md#getrebarctrl) to get access to the `CReBarCtrl` member functions.  
   
     > [!NOTE]
-    >  `CReBar::GetReBarCtrl` は Rebar オブジェクトの **this** のポインターをキャストするインライン メンバー関数です。  これは、実行時、関数呼び出しのオーバーヘッドがないことを意味します。  
+    >  `CReBar::GetReBarCtrl` is an inline member function that casts the **this** pointer of the rebar object. This means that, at run time, the function call has no overhead.  
   
--   [CReBarCtrl](../mfc/reference/crebarctrl-class.md) のコンストラクターを使用して rebar を作成します。  
+-   Create the rebar using [CReBarCtrl](../mfc/reference/crebarctrl-class.md)'s constructor.  
   
- どちらのメソッドは、Rebar コントロールのメンバー関数にアクセスできます。  `CReBar::GetReBarCtrl`を呼び出すと、`CReBarCtrl` オブジェクトへの参照を返すため、メンバー関数のいずれかを使用して設定できます。  **CReBar**を使用して rebar を構築し、作成する方法については、" [CReBar](../mfc/reference/crebar-class.md) を参照してください。  
+ Either method will give you access to the member functions of the rebar control. When you call `CReBar::GetReBarCtrl`, it returns a reference to a `CReBarCtrl` object so you can use either set of member functions. See [CReBar](../mfc/reference/crebar-class.md) for information on constructing and creating a rebar using **CReBar**.  
   
-## 参照  
- [CReBarCtrl の使い方](../Topic/Using%20CReBarCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CReBarCtrl](../mfc/using-crebarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

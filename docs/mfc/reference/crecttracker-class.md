@@ -1,5 +1,5 @@
 ---
-title: "CRectTracker クラス |Microsoft ドキュメント"
+title: CRectTracker Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -30,9 +30,22 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- displaying items
-- CRectTracker class
-- resizing items
+- CRectTracker [MFC], CRectTracker
+- CRectTracker [MFC], AdjustRect
+- CRectTracker [MFC], Draw
+- CRectTracker [MFC], DrawTrackerRect
+- CRectTracker [MFC], GetHandleMask
+- CRectTracker [MFC], GetTrueRect
+- CRectTracker [MFC], HitTest
+- CRectTracker [MFC], NormalizeHit
+- CRectTracker [MFC], OnChangedRect
+- CRectTracker [MFC], SetCursor
+- CRectTracker [MFC], Track
+- CRectTracker [MFC], TrackRubberBand
+- CRectTracker [MFC], m_nHandleSize
+- CRectTracker [MFC], m_nStyle
+- CRectTracker [MFC], m_rect
+- CRectTracker [MFC], m_sizeMin
 ms.assetid: 99caa7f2-3c0d-4a42-bbee-e5d1d342d4ee
 caps.latest.revision: 23
 author: mikeblome
@@ -52,74 +65,74 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 21fbd5457b6a3294a2925c88a72c32d568cce5e4
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 270ace8e02abeac1d8cb9307dd64c3ca786c724e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="crecttracker-class"></a>CRectTracker クラス
-項目を表示、移動、または異なる方法でサイズ変更を許可します。  
+# <a name="crecttracker-class"></a>CRectTracker Class
+Allows an item to be displayed, moved, and resized in different fashions.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CRectTracker  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[利用](#crecttracker)|`CRectTracker` オブジェクトを構築します。|  
+|[CRectTracker::CRectTracker](#crecttracker)|Constructs a `CRectTracker` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRectTracker::AdjustRect](#adjustrect)|四角形のサイズが変更されるときに呼び出されます。|  
-|[CRectTracker::Draw](#draw)|四角形を表示します。|  
-|[CRectTracker::DrawTrackerRect](#drawtrackerrect)|境界線を描画するときに呼び出されます、`CRectTracker`オブジェクト。|  
-|[CRectTracker::GetHandleMask](#gethandlemask)|マスクを取得すると呼ばれる、`CRectTracker`アイテムのサイズ変更ハンドル。|  
-|[CRectTracker::GetTrueRect](#gettruerect)|サイズ変更ハンドルを含む四角形の幅と高さを返します。|  
-|[CRectTracker::HitTest](#hittest)|関連する、カーソルの現在位置を返します、`CRectTracker`オブジェクト。|  
-|[CRectTracker::NormalizeHit](#normalizehit)|ヒット テストのコードを正規化します。|  
-|[CRectTracker::OnChangedRect](#onchangedrect)|四角形のサイズを変更または移動されたときに呼び出されます。|  
-|[CRectTracker::SetCursor](#setcursor)|四角形の上の位置によって、カーソル位置を設定します。|  
-|[反転](#track)|四角形を操作することができます。|  
-|[CRectTracker::TrackRubberBand](#trackrubberband)|ユーザーが「ラバー バンド」を選択できるようにします。|  
+|[CRectTracker::AdjustRect](#adjustrect)|Called when the rectangle is resized.|  
+|[CRectTracker::Draw](#draw)|Renders the rectangle.|  
+|[CRectTracker::DrawTrackerRect](#drawtrackerrect)|Called when drawing the border of a `CRectTracker` object.|  
+|[CRectTracker::GetHandleMask](#gethandlemask)|Called to get the mask of a `CRectTracker` item's resize handles.|  
+|[CRectTracker::GetTrueRect](#gettruerect)|Returns width and height of rectangle, including resize handles.|  
+|[CRectTracker::HitTest](#hittest)|Returns the current position of the cursor related to the `CRectTracker` object.|  
+|[CRectTracker::NormalizeHit](#normalizehit)|Normalizes a hit-test code.|  
+|[CRectTracker::OnChangedRect](#onchangedrect)|Called when the rectangle has been resized or moved.|  
+|[CRectTracker::SetCursor](#setcursor)|Sets the cursor, depending on its position over the rectangle.|  
+|[CRectTracker::Track](#track)|Allows the user to manipulate the rectangle.|  
+|[CRectTracker::TrackRubberBand](#trackrubberband)|Allows the user to "rubber-band" the selection.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRectTracker::m_nHandleSize](#m_nhandlesize)|サイズ変更ハンドルのサイズを決定します。|  
-|[CRectTracker::m_nStyle](#m_nstyle)|トラッカーの現在のスタイル。|  
-|[裏返し](#m_rect)|内の現在位置 (ピクセル単位) の四角形。|  
-|[CRectTracker::m_sizeMin](#m_sizemin)|最小の四角形の幅と高さを決定します。|  
+|[CRectTracker::m_nHandleSize](#m_nhandlesize)|Determines size of resize handles.|  
+|[CRectTracker::m_nStyle](#m_nstyle)|Current style(s) of the tracker.|  
+|[CRectTracker::m_rect](#m_rect)|Current position (in pixels) of the rectangle.|  
+|[CRectTracker::m_sizeMin](#m_sizemin)|Determines minimum rectangle width and height.|  
   
-## <a name="remarks"></a>コメント  
- `CRectTracker`基本クラスはありません。  
+## <a name="remarks"></a>Remarks  
+ `CRectTracker` does not have a base class.  
   
- ただし、`CRectTracker`クラスがグラフィカル インターフェイスを使用して OLE アイテムと対話するユーザーを許可するように設計、使用することは OLE 対応のアプリケーションに限定されません。 使用できるこのようなユーザー インターフェイスが必要な任意の場所。  
+ Although the `CRectTracker` class is designed to allow the user to interact with OLE items by using a graphical interface, its use is not restricted to OLE-enabled applications. It can be used anywhere such a user interface is required.  
   
- `CRectTracker`純色、罫線または点線。 アイテムの破線の境界線または斜線パターン、アイテムのさまざまな状態を示すために重なって表示できます。 8 つのサイズ変更ハンドルを配置するには、外側または内側のいずれかのアイテムの罫線。 (サイズ変更ハンドルの詳細については、次を参照してください[GetHandleMask](#gethandlemask)。)。最後に、`CRectTracker`方向を変更する項目のサイズ変更中にすることができます。  
+ `CRectTracker` borders can be solid or dotted lines. The item can be given a hatched border or overlaid with a hatched pattern to indicate different states of the item. You can place eight resize handles on either the outside or the inside border of the item. (For an explanation of the resize handles, see [GetHandleMask](#gethandlemask).) Finally, a `CRectTracker` allows you to change the orientation of an item during resizing.  
   
- 使用する`CRectTracker`、構築、`CRectTracker`オブジェクトを指定する表示状態が初期化されます。 関連付けられている OLE 項目の現在の状態のユーザーの視覚的フィードバックを提供する、このインターフェイスを使用することができますし、`CRectTracker`オブジェクト。  
+ To use `CRectTracker`, construct a `CRectTracker` object and specify which display states are initialized. You can then use this interface to give the user visual feedback on the current status of the OLE item associated with the `CRectTracker` object.  
   
- 使用する方法について`CRectTracker`、記事を参照して[トラッカー](../../mfc/trackers.md)です。  
+ For more information on using `CRectTracker`, see the article [Trackers](../../mfc/trackers.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CRectTracker`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxext.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxext.h  
   
-##  <a name="adjustrect"></a>CRectTracker::AdjustRect  
- サイズ変更ハンドルを使用して追跡四角形のサイズが変更されるときに、フレームワークによって呼び出されます。  
+##  <a name="adjustrect"></a>  CRectTracker::AdjustRect  
+ Called by the framework when the tracking rectangle is resized by using a resize handle.  
   
 ```  
 virtual void AdjustRect(
@@ -127,22 +140,22 @@ virtual void AdjustRect(
     LPRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nHandle`  
- 使用されるハンドルのインデックス。  
+ Index of handle used.  
   
  `lpRect`  
- 四角形の現在のサイズへのポインター。 (四角形のサイズは、その高さと幅によって得られます)。  
+ Pointer to the current size of the rectangle. (The size of a rectangle is given by its height and width.)  
   
-### <a name="remarks"></a>コメント  
- この関数の既定の動作により、変更される場合にのみ、四角形の向き`Track`と`TrackRubberBand`許可と呼ばれます。  
+### <a name="remarks"></a>Remarks  
+ The default behavior of this function allows the rectangle's orientation to change only when `Track` and `TrackRubberBand` are called with inverting allowed.  
   
- ドラッグ操作中に追跡四角形の調整を制御するには、この関数をオーバーライドします。 1 つの方法は、によって指定された座標を調整する`lpRect`を返す前にします。  
+ Override this function to control the adjustment of the tracking rectangle during a dragging operation. One method is to adjust the coordinates specified by `lpRect` before returning.  
   
- 特別な機能によって直接サポートされていない`CRectTracker`など、グリッドにスナップまたは縦横比の保持は、この関数をオーバーライドすることで実装できます。  
+ Special features that are not directly supported by `CRectTracker`, such as snap-to-grid or keep-aspect-ratio, can be implemented by overriding this function.  
   
-##  <a name="crecttracker"></a>利用  
- 作成して初期化、`CRectTracker`オブジェクト。  
+##  <a name="crecttracker"></a>  CRectTracker::CRectTracker  
+ Creates and initializes a `CRectTracker` object.  
   
 ```  
 CRectTracker();
@@ -153,44 +166,44 @@ CRectTracker(
     UINT nStyle);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpSrcRect`  
- Rectangle オブジェクトの座標。  
+ The coordinates of the rectangle object.  
   
  `nStyle`  
- スタイルを指定します、`CRectTracker`オブジェクト。 次のスタイルがサポートされています。  
+ Specifies the style of the `CRectTracker` object. The following styles are supported:  
   
-- **CRectTracker::solidLine**四角形の境界線の実線を使用します。  
+- **CRectTracker::solidLine** Use a solid line for the rectangle border.  
   
-- **CRectTracker::dottedLine**の四角形の枠線、点線を使用します。  
+- **CRectTracker::dottedLine** Use a dotted line for the rectangle border.  
   
-- **CRectTracker::hatchedBorder**四角形の境界線を斜線パターンを使用します。  
+- **CRectTracker::hatchedBorder** Use a hatched pattern for the rectangle border.  
   
-- **CRectTracker::resizeInside**四角形の内側にあるハンドルのサイズを変更します。  
+- **CRectTracker::resizeInside** Resize handles located inside the rectangle.  
   
-- **CRectTracker::resizeOutside**四角形の外部にあるハンドルのサイズを変更します。  
+- **CRectTracker::resizeOutside** Resize handles located outside the rectangle.  
   
-- **CRectTracker::hatchInside** Hatched パターンは、四角形全体をカバーします。  
+- **CRectTracker::hatchInside** Hatched pattern covers the entire rectangle.  
   
-### <a name="remarks"></a>コメント  
- 既定のコンス トラクター、`CRectTracker`から値を持つオブジェクト`lpSrcRect`し、その他のサイズをシステムの既定値を初期化します。 パラメーターなしで、オブジェクトが作成された場合、`m_rect`と`m_nStyle`データ メンバーは初期化されていません。  
+### <a name="remarks"></a>Remarks  
+ The default constructor initializes the `CRectTracker` object with the values from `lpSrcRect` and initializes other sizes to system defaults. If the object is created with no parameters, the `m_rect` and `m_nStyle` data members are uninitialized.  
   
-##  <a name="draw"></a>CRectTracker::Draw  
- 四角形の外枠と内部の領域を描画するには、この関数を呼び出します。  
+##  <a name="draw"></a>  CRectTracker::Draw  
+ Call this function to draw the rectangle's outer lines and inner region.  
   
 ```  
 void Draw(CDC* pDC) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- 描画するデバイス コンテキストへのポインター。  
+ Pointer to the device context on which to draw.  
   
-### <a name="remarks"></a>コメント  
- トラッカーのスタイルは、描画を実行する方法を決定します。 コンス トラクターを参照してください`CRectTracker`詳細については、使用可能なスタイル。  
+### <a name="remarks"></a>Remarks  
+ The style of the tracker determines how the drawing is done. See the constructor for `CRectTracker` for more information on the styles available.  
   
-##  <a name="drawtrackerrect"></a>CRectTracker::DrawTrackerRect  
- トラッカーの位置が変更されるたびに、フレームワークによって呼び出さ内中に、`Track`または`TrackRubberBand`メンバー関数。  
+##  <a name="drawtrackerrect"></a>  CRectTracker::DrawTrackerRect  
+ Called by the framework whenever the position of the tracker has changed while inside the `Track` or `TrackRubberBand` member function.  
   
 ```  
 virtual void DrawTrackerRect(
@@ -200,72 +213,72 @@ virtual void DrawTrackerRect(
     CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- ポインター、`RECT`描画する四角形を格納しています。  
+ Pointer to the `RECT` that contains the rectangle to draw.  
   
  `pWndClipTo`  
- クリッピング四角形で使用するウィンドウへのポインター。  
+ Pointer to the window to use in clipping the rectangle.  
   
  `pDC`  
- 描画するデバイス コンテキストへのポインター。  
+ Pointer to the device context on which to draw.  
   
  `pWnd`  
- ウィンドウの描画が発生する可能性へのポインター。  
+ Pointer to the window on which the drawing will occur.  
   
-### <a name="remarks"></a>コメント  
- 既定の実装への呼び出しは、 `CDC::DrawFocusRect`、ピリオドで区切られた四角形を描画します。  
+### <a name="remarks"></a>Remarks  
+ The default implementation makes a call to `CDC::DrawFocusRect`, which draws a dotted rectangle.  
   
- フィードバックを提供するさまざまな追跡操作中にこの関数をオーバーライドします。  
+ Override this function to provide different feedback during the tracking operation.  
   
-##  <a name="gethandlemask"></a>CRectTracker::GetHandleMask  
- フレームワークは、四角形のサイズ変更ハンドルをマスクを取得するには、このメンバー関数を呼び出します。  
+##  <a name="gethandlemask"></a>  CRectTracker::GetHandleMask  
+ The framework calls this member function to retrieve the mask for a rectangle's resize handles.  
   
 ```  
 virtual UINT GetHandleMask() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- マスクは、`CRectTracker`アイテムのサイズ変更ハンドル。  
+### <a name="return-value"></a>Return Value  
+ The mask of a `CRectTracker` item's resize handles.  
   
-### <a name="remarks"></a>コメント  
- サイズ変更ハンドルは、両側または四角形の角に表示され、図形や四角形のサイズを制御するアクセス許可。  
+### <a name="remarks"></a>Remarks  
+ The resize handles appear on the sides and corners of the rectangle and allow the user to control the shape and size of the rectangle.  
   
- 四角形には、8 のサイズ変更ハンドルが 0 ~ 7 の番号があります。 各サイズ変更ハンドルによってを表されるビット マスク内そのビットの値は 2 ^ *n*ここで、 *n*サイズ変更ハンドル数です。 ビット 0-3 は、角の開始位置として、左時計回りにサイズ変更ハンドルに対応します。 Bits 4 ~ 7 の側面に対応しているにサイズ変更ハンドル時計回り上部で開始を指定します。 次の図は、四角形のサイズ変更を処理し、それに対応するハンドル番号と値のサイズを変更します。  
+ A rectangle has 8 resize handles numbered 0-7. Each resize handle is represented by a bit in the mask; the value of that bit is 2^ *n*, where *n* is the resize handle number. Bits 0-3 correspond to the corner resize handles, starting at the top left moving clockwise. Bits 4-7 correspond to the side resize handles starting at the top moving clockwise. The following illustration shows a rectangle's resize handles and their corresponding resize handle numbers and values:  
   
- ![ハンドル番号のサイズを変更する](../../mfc/reference/media/vc35dp1.gif "vc35dp1")  
+ ![Resize handle numbers](../../mfc/reference/media/vc35dp1.gif "vc35dp1")  
   
- 既定の実装**GetHandleMask**サイズ変更ハンドルが表示されるようにビットのマスクを返します。 1 つのビットがオンの場合は、対応するサイズ変更ハンドルが描画されます。  
+ The default implementation of **GetHandleMask** returns the mask of the bits so that the resize handles appear. If the single bit is on, the corresponding resize handle will be drawn.  
   
- 指定したサイズ変更ハンドルを表示または非表示には、このメンバー関数をオーバーライドします。  
+ Override this member function to hide or show the indicated resize handles.  
   
-##  <a name="gettruerect"></a>CRectTracker::GetTrueRect  
- 四角形の座標を取得するには、この関数を呼び出します。  
+##  <a name="gettruerect"></a>  CRectTracker::GetTrueRect  
+ Call this function to retrieve the coordinates of the rectangle.  
   
 ```  
 void GetTrueRect(LPRECT lpTrueRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpTrueRect`  
- ポインター、`RECT`座標と、デバイスを含む構造体、`CRectTracker`オブジェクト。  
+ Pointer to the `RECT` structure that will contain the device coordinates of the `CRectTracker` object.  
   
-### <a name="remarks"></a>コメント  
- 四角形の寸法には、外側の境界線上にある任意のサイズ変更ハンドルの幅と高さが含まれます。 `lpTrueRect`は常に正規化されたデバイス座標の四角形。  
+### <a name="remarks"></a>Remarks  
+ The dimensions of the rectangle include the height and width of any resize handles located on the outer border. Upon returning, `lpTrueRect` is always a normalized rectangle in device coordinates.  
   
-##  <a name="hittest"></a>CRectTracker::HitTest  
- この関数では、ユーザーがサイズ変更ハンドルを取得するかどうかを確認します。  
+##  <a name="hittest"></a>  CRectTracker::HitTest  
+ Call this function to find out whether the user has grabbed a resize handle.  
   
 ```  
 int HitTest(CPoint point) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `point`  
- テストする、デバイスの座標でのポイント。  
+ The point, in device coordinates, to test.  
   
-### <a name="return-value"></a>戻り値  
- 返される値は列挙型に基づいて**CRectTracker::TrackerHit**値は次のいずれかを持つことができます。  
+### <a name="return-value"></a>Return Value  
+ The value returned is based on the enumerated type **CRectTracker::TrackerHit** and can have one of the following values:  
   
 - **CRectTracker::hitNothing** -1  
   
@@ -287,78 +300,78 @@ int HitTest(CPoint point) const;
   
 - **CRectTracker::hitMiddle** 8  
   
-##  <a name="m_nhandlesize"></a>CRectTracker::m_nHandleSize  
- サイズをピクセル単位での`CRectTracker`ハンドルのサイズを変更します。  
+##  <a name="m_nhandlesize"></a>  CRectTracker::m_nHandleSize  
+ The size, in pixels, of the `CRectTracker` resize handles.  
   
 ```  
 int m_nHandleSize;  
 ```  
   
-### <a name="remarks"></a>コメント  
- システムの既定値で初期化します。  
+### <a name="remarks"></a>Remarks  
+ Initialized with the default system value.  
   
-##  <a name="m_rect"></a>裏返し  
- 四角形の現在の位置をクライアント座標 (ピクセル単位)。  
+##  <a name="m_rect"></a>  CRectTracker::m_rect  
+ The current position of the rectangle in client coordinates (pixels).  
   
 ```  
 CRect m_rect;  
 ```  
   
-##  <a name="m_sizemin"></a>CRectTracker::m_sizeMin  
- 四角形の最小サイズ。  
+##  <a name="m_sizemin"></a>  CRectTracker::m_sizeMin  
+ The minimum size of the rectangle.  
   
 ```  
 CSize m_sizeMin;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 両方の既定値**cx**と**cy**罫線の幅に関する既定のシステム値から計算されます。 このデータ メンバーのみが使用、`AdjustRect`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ Both default values, **cx** and **cy**, are calculated from the default system value for the border width. This data member is used only by the `AdjustRect` member function.  
   
-##  <a name="m_nstyle"></a>CRectTracker::m_nStyle  
- 四角形の現在のスタイルです。  
+##  <a name="m_nstyle"></a>  CRectTracker::m_nStyle  
+ Current style of the rectangle.  
   
 ```  
 UINT m_nStyle;  
 ```  
   
-### <a name="remarks"></a>コメント  
- 参照してください[利用](#crecttracker)可能なスタイルの一覧についてはします。  
+### <a name="remarks"></a>Remarks  
+ See [CRectTracker::CRectTracker](#crecttracker) for a list of possible styles.  
   
-##  <a name="normalizehit"></a>CRectTracker::NormalizeHit  
- 反転された可能性があるハンドルを変換するには、この関数を呼び出します。  
+##  <a name="normalizehit"></a>  CRectTracker::NormalizeHit  
+ Call this function to convert a potentially inverted handle.  
   
 ```  
 int NormalizeHit(int nHandle) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nHandle`  
- ユーザーが選択されているハンドルです。  
+ Handle selected by the user.  
   
-### <a name="return-value"></a>戻り値  
- 正規化されたハンドルのインデックス。  
+### <a name="return-value"></a>Return Value  
+ The index of the normalized handle.  
   
-### <a name="remarks"></a>コメント  
- ときに`CRectTracker::Track`または`CRectTracker::TrackRubberBand`が呼び出された許可を反転するには、使用可能であれば、x 軸と y 軸のどちらか一方または両方に反転される四角形のです。 この場合、`HitTest`は四角形反転がハンドルを返します。 これはカーソルのフィードバックの描画の適切なフィードバックが変更される四角形のデータ構造の部分ではなく、四角形の画面位置に依存するためです。  
+### <a name="remarks"></a>Remarks  
+ When `CRectTracker::Track` or `CRectTracker::TrackRubberBand` is called with inverting allowed, it is possible for the rectangle to be inverted on the x-axis, the y-axis, or both. When this happens, `HitTest` will return handles that are also inverted with respect to the rectangle. This is inappropriate for drawing cursor feedback because the feedback depends on the screen position of the rectangle, not the portion of the rectangle data structure that will be modified.  
   
-##  <a name="onchangedrect"></a>CRectTracker::OnChangedRect  
- トラッカー四角形の呼び出し中に変更されるたびに、フレームワークによって呼び出さ`Track`です。  
+##  <a name="onchangedrect"></a>  CRectTracker::OnChangedRect  
+ Called by the framework whenever the tracker rectangle has changed during a call to `Track`.  
   
 ```  
 virtual void OnChangedRect(const CRect& rectOld);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *rectOld*  
- 古いデバイス座標が含まれています、`CRectTracker`オブジェクト。  
+ Contains the old device coordinates of the `CRectTracker` object.  
   
-### <a name="remarks"></a>コメント  
- 時にこの関数で描画されたすべてのフィードバック`DrawTrackerRect`は削除されました。 この関数の既定の実装は、何も行いません。  
+### <a name="remarks"></a>Remarks  
+ At the time this function is called, all feedback drawn with `DrawTrackerRect` has been removed. The default implementation of this function does nothing.  
   
- 四角形のサイズが変更された後、すべてのアクションを実行する場合は、この関数をオーバーライドします。  
+ Override this function when you want to perform any actions after the rectangle has been resized.  
   
-##  <a name="setcursor"></a>CRectTracker::SetCursor  
- 上では、カーソルの形状を変更するには、この関数を呼び出して、`CRectTracker`のオブジェクトの領域。  
+##  <a name="setcursor"></a>  CRectTracker::SetCursor  
+ Call this function to change the cursor shape while it is over the `CRectTracker` object's region.  
   
 ```  
 BOOL SetCursor(
@@ -366,21 +379,21 @@ BOOL SetCursor(
     UINT nHitTest) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- 現在カーソルが含まれるウィンドウへのポインター。  
+ Points to the window that currently contains the cursor.  
   
  `nHitTest`  
- 前のヒット テストの結果から、`WM_SETCURSOR`メッセージ。  
+ Results of the previous hit test, from the `WM_SETCURSOR` message.  
   
-### <a name="return-value"></a>戻り値  
- 前の検索結果がトラッカー四角形の; 経由の場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the previous hit was over the tracker rectangle; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、処理するウィンドウの関数の内部から呼び出す、`WM_SETCURSOR`メッセージ (通常`OnSetCursor`)。  
+### <a name="remarks"></a>Remarks  
+ Call this function from inside the function of your window that handles the `WM_SETCURSOR` message (typically `OnSetCursor`).  
   
-##  <a name="track"></a>反転  
- 四角形のサイズ変更用ユーザー インターフェイスを表示するには、この関数を呼び出します。  
+##  <a name="track"></a>  CRectTracker::Track  
+ Call this function to display the user interface for resizing the rectangle.  
   
 ```  
 BOOL Track(
@@ -390,31 +403,31 @@ BOOL Track(
     CWnd* pWndClipTo = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- 四角形を含むウィンドウのオブジェクト。  
+ The window object that contains the rectangle.  
   
  `point`  
- クライアント領域と相対的現在、マウスの位置のデバイスの座標。  
+ Device coordinates of the current mouse position relative to the client area.  
   
  `bAllowInvert`  
- 場合**TRUE**、四角形は、それ以外の x 軸または y 軸に沿って反転**FALSE**です。  
+ If **TRUE**, the rectangle can be inverted along the x-axis or y-axis; otherwise **FALSE**.  
   
  `pWndClipTo`  
- このウィンドウは、描画操作は、クリップされます。 場合**NULL**、`pWnd`クリッピング四角形として使用されます。  
+ The window that drawing operations will be clipped to. If **NULL**, `pWnd` is used as the clipping rectangle.  
   
-### <a name="return-value"></a>戻り値  
- ESC キーが押された場合は、追跡プロセスが中止し、トラッカーに格納されている四角形は変更されません 0 が返されます。 変更がコミットされた場合は、マウスを移動し、マウスの左ボタンを解放する、新しい位置とサイズがトラッカーの四角形に記録され、0 以外の値が返されます。  
+### <a name="return-value"></a>Return Value  
+ If the ESC key is pressed, the tracking process is halted, the rectangle stored in the tracker is not altered, and 0 is returned. If the change is committed, by moving the mouse and releasing the left mouse button, the new position and/or size is recorded in the tracker's rectangle and nonzero is returned.  
   
-### <a name="remarks"></a>コメント  
- 通常、処理するアプリケーションの関数の内部から呼び出されます、`WM_LBUTTONDOWN`メッセージ (通常`OnLButtonDown`)。  
+### <a name="remarks"></a>Remarks  
+ This is usually called from inside the function of your application that handles the `WM_LBUTTONDOWN` message (typically `OnLButtonDown`).  
   
- この関数は、ユーザーがマウスの左ボタンを離す、ESC キーを押すかマウスの右ボタンを押すまでに、マウスをキャプチャします。 フィードバックが呼び出すことによって更新されたユーザーがマウス カーソルを移動した`DrawTrackerRect`と`OnChangedRect`です。  
+ This function will capture the mouse until the user releases the left mouse button, presses the ESC key, or presses the right mouse button. As the user moves the mouse cursor, the feedback is updated by calling `DrawTrackerRect` and `OnChangedRect`.  
   
- 場合`bAllowInvert`は**TRUE**、x 軸または y 軸のいずれかで追跡四角形を反転することができます。  
+ If `bAllowInvert` is **TRUE**, the tracking rectangle can be inverted on either the x-axis or y-axis.  
   
-##  <a name="trackrubberband"></a>CRectTracker::TrackRubberBand  
- ラバー バンドの選択を行うには、この関数を呼び出します。  
+##  <a name="trackrubberband"></a>  CRectTracker::TrackRubberBand  
+ Call this function to do rubber-band selection.  
   
 ```  
 BOOL TrackRubberBand(
@@ -423,30 +436,30 @@ BOOL TrackRubberBand(
     BOOL bAllowInvert = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- 四角形を含むウィンドウのオブジェクト。  
+ The window object that contains the rectangle.  
   
  `point`  
- クライアント領域と相対的現在、マウスの位置のデバイスの座標。  
+ Device coordinates of the current mouse position relative to the client area.  
   
  `bAllowInvert`  
- 場合**true の場合、**四角形は、それ以外の x 軸または y 軸に沿って反転**FALSE**です。  
+ If **TRUE,** the rectangle can be inverted along the x-axis or y-axis; otherwise **FALSE**.  
   
-### <a name="return-value"></a>戻り値  
- マウスが移動して、四角形は空以外ではない場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the mouse has moved and the rectangle is not empty; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 通常、処理するアプリケーションの関数の内部から呼び出された、`WM_LBUTTONDOWN`メッセージ (通常`OnLButtonDown`)。  
+### <a name="remarks"></a>Remarks  
+ It is usually called from inside the function of your application that handles the `WM_LBUTTONDOWN` message (typically `OnLButtonDown`).  
   
- この関数は、ユーザーがマウスの左ボタンを離す、ESC キーを押すかマウスの右ボタンを押すまでに、マウスをキャプチャします。 フィードバックが呼び出すことによって更新されたユーザーがマウス カーソルを移動した`DrawTrackerRect`と`OnChangedRect`です。  
+ This function will capture the mouse until the user releases the left mouse button, presses the ESC key, or presses the right mouse button. As the user moves the mouse cursor, the feedback is updated by calling `DrawTrackerRect` and `OnChangedRect`.  
   
- 追跡は、右下隅のハンドルからラバー バンド タイプの選択で実行されます。 反転が許可された場合、四角形がいずれかを左またはダウンおよび右側にドラッグしてサイズことができます。  
+ Tracking is performed with a rubber-band-type selection from the lower-right handle. If inverting is allowed, the rectangle can be sized by dragging either up and to the left or down and to the right.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプルの追跡ツール](../../visual-cpp-samples.md)   
- [MFC サンプル DRAWCLI](../../visual-cpp-samples.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [COleResizeBar クラス](../../mfc/reference/coleresizebar-class.md)   
- [CRect クラス](../../atl-mfc-shared/reference/crect-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample TRACKER](../../visual-cpp-samples.md)   
+ [MFC Sample DRAWCLI](../../visual-cpp-samples.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleResizeBar Class](../../mfc/reference/coleresizebar-class.md)   
+ [CRect Class](../../atl-mfc-shared/reference/crect-class.md)
 

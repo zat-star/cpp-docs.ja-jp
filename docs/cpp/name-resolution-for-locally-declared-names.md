@@ -1,31 +1,50 @@
 ---
-title: "ローカルに宣言された名前の名前解決 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: Name Resolution for Locally Declared Names | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: 743b88f3-de11-48f4-ae83-931449ea3886
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# ローカルに宣言された名前の名前解決
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 63a5b95c5b4a1df7f850a4cf01b54b63e30196e6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-テンプレートの名前自体は、テンプレート引数の有無に関係なく参照できます。  クラス テンプレートのスコープ内で、名前がテンプレートを示します。  テンプレートの特殊化または部分的特殊化のスコープ内で、名前は単独で特殊化または部分的特殊化を示します。  テンプレートのその他の特化または部分的な特化は、適切なテンプレート引数を使用して参照できます。  
+---
+# <a name="name-resolution-for-locally-declared-names"></a>Name Resolution for Locally Declared Names
+
+The template's name itself can be referred to with or without the template arguments. In the scope of a class template, the name itself refers to the template. In the scope of a template specialization or partial specialization, the name alone refers to the specialization or partial specialization. Other specializations or partial specializations of the template can also be referenced, with the appropriate template arguments.  
   
-## 使用例  
- 次のコードは、クラス テンプレートの名前 A が特殊化または部分的特殊化のスコープ内で異なる方法で解釈されることを示します。  
+## <a name="example"></a>Example
+
+ The following code shows that the class template's name A is interpreted differently in the scope of a specialization or partial specialization.  
   
-```  
+```cpp
 // template_name_resolution3.cpp  
 // compile with: /c  
 template <class T> class A {  
@@ -43,12 +62,13 @@ template<> class A<int> {
 };  
 ```  
   
-## 使用例  
- テンプレート パラメーターと別のオブジェクト間で名前が競合するときは、テンプレート パラメーターを隠せる場合と隠せない場合があります。  次の規則は、優先度の決定に使用できます。  
+## <a name="example"></a>Example
+
+ In the case of a name conflict between a template parameter and another object, the template parameter can or cannot be hidden. The following rules will help determine precedence.  
   
- テンプレート パラメーターは、最初に表示されたポイントから、クラスまたは関数テンプレートの末尾までのスコープにあります。  名前がテンプレート引数リストまたは基底クラスのリストに再度表示された場合、同じ型を示します。  標準 C\+\+ では、同じスコープ内でテンプレート パラメーターと同じ名前を他の名前として宣言することはできません。  Microsoft 拡張機能は、テンプレート パラメーターがテンプレートのスコープ内で再定義できるようにします。  次の例は、クラス テンプレートの基本仕様におけるテンプレート パラメーターの使用を示します。  
+ The template parameter is in scope from the point where it first appears until the end of the class or function template. If the name appears again in the template argument list or in the list of base classes, it refers to the same type. In standard C++, no other name that is identical to the template parameter can be declared in the same scope. A Microsoft extension allows the template parameter to be redefined in the scope of the template. The following example shows using the template parameter in the base specification of a class template.  
   
-```  
+```cpp
 // template_name_resolution4.cpp  
 // compile with: /EHsc  
 template <class T>  
@@ -62,10 +82,11 @@ int main() {
 }  
 ```  
   
-## 使用例  
- クラス テンプレートの外部でテンプレートのメンバー関数を定義するときは、異なるテンプレート パラメーター名を使用できます。  テンプレート メンバー関数定義で、テンプレート パラメーターに宣言とは異なる名前が使用され、定義で使用される名前が宣言の他のメンバーと競合する場合、テンプレート宣言のメンバーが優先されます。  
+## <a name="example"></a>Example
+
+ When defining a template's member functions outside the class template, a different template parameter name can be used. If the template member function definition uses a different name for the template parameter than the declaration does, and the name used in the definition conflicts with another member of the declaration, the member in the template declaration takes precedence.  
   
-```  
+```cpp
 // template_name_resolution5.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -92,11 +113,15 @@ int main() {
 }  
 ```  
   
-  **Z::Z\(\)**   
-## 使用例  
- テンプレートが宣言された名前空間の外部でテンプレート関数またはメンバー関数を定義するときは、テンプレート引数が名前空間の他のメンバーの名前より優先されます。  
-  
+```Output  
+Z::Z()  
 ```  
+  
+## <a name="example"></a>Example
+
+ When defining a template function or member function outside the namespace in which the template was declared, the template argument takes precedence over the names of other members of the namespace.  
+  
+```cpp
 // template_name_resolution6.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -122,11 +147,15 @@ int main() {
 }  
 ```  
   
-  **C\<T\>::g**   
-## 使用例  
- テンプレート クラス宣言の外側の定義で、テンプレート クラスに、テンプレート引数に依存しない基底クラスがあり、その基底クラスまたはそのメンバーがテンプレート引数と同じ名前である場合、基底クラスまたはメンバー名にはテンプレート引数が表示されません。  
-  
+```Output  
+C<T>::g  
 ```  
+  
+## <a name="example"></a>Example
+
+ In definitions that are outside of the template class declaration, if a template class has a base class that does not depend on a template argument and if the base class or one of its members has the same name as a template argument, then the base class or member name hides the template argument.  
+  
+```cpp
 // template_name_resolution7.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -155,7 +184,12 @@ int main() {
 }  
 ```  
   
-  **基数**  
-**1**   
-## 参照  
- [名前解決](../cpp/templates-and-name-resolution.md)
+```Output  
+Base  
+1  
+```  
+  
+## <a name="see-also"></a>See Also
+
+ [Name Resolution](../cpp/templates-and-name-resolution.md)
+

@@ -1,5 +1,5 @@
 ---
-title: "error_condition クラス | Microsoft ドキュメント"
+title: error_condition Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,7 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - system_error/std::error_condition
-- error_condition
 - system_error/std::error_condition::value_type
 - system_error/std::error_condition::assign
 - system_error/std::error_condition::category
@@ -20,7 +19,13 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- error_condition class
+- std::error_condition
+- std::error_condition::value_type
+- std::error_condition::assign
+- std::error_condition::category
+- std::error_condition::clear
+- std::error_condition::message
+- 
 ms.assetid: 6690f481-97c9-4554-a0ff-851dc96b7a06
 caps.latest.revision: 16
 author: corob-msft
@@ -40,102 +45,102 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a9171a3f28109f38e3ff3844797e242c669f36c2
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: df6aac886871dd285dc8dd6e10c705633545fd60
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="errorcondition-class"></a>error_condition クラス
-ユーザー定義のエラー コードを表します。  
+# <a name="errorcondition-class"></a>error_condition Class
+Represents user-defined error codes.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class error_condition;
 ```  
   
-## <a name="remarks"></a>コメント  
- `error_condition` 型のオブジェクトは、エラー コード値を格納するほか、レポートされたユーザー定義のエラーに使用されるエラー コードの[カテゴリ](../standard-library/error-category-class.md)を表すオブジェクトを指すポインターも格納します。  
+## <a name="remarks"></a>Remarks  
+ An object of type `error_condition` stores an error code value and a pointer to an object that represents a [category](../standard-library/error-category-class.md) of error codes used for reported user-defined errors.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[error_condition](#error_condition)|`error_condition` 型のオブジェクトを構築します。|  
+|[error_condition](#error_condition)|Constructs an object of type `error_condition`.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[value_type](#value_type)|格納されたエラー コード値を表す型。|  
+|[value_type](#value_type)|A type that represents the stored error code value.|  
   
-### <a name="member-functions"></a>メンバー関数  
-  
-|||  
-|-|-|  
-|[assign](#assign)|エラー コード値とカテゴリをエラー条件に割り当てます。|  
-|[category](#category)|エラー カテゴリを返します。|  
-|[clear](#clear)|エラー コード値とカテゴリをクリアします。|  
-|[message](#message)|エラー コードの名前を返します。|  
-  
-### <a name="operators"></a>演算子  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[operator==](#op_eq_eq)|`error_condition` オブジェクト間の同等性をテストします。|  
-|[operator!=](#op_neq)|`error_condition` オブジェクト間の不等性をテストします。|  
-|[operator<](#op_lt)|`error_condition` オブジェクトが比較のために渡される `error_code` オブジェクトより小さいかどうかをテストします。|  
-|[operator=](#op_eq)|`error_condition` オブジェクトに新しい列挙値を代入します。|  
-|[operator bool](#op_bool)|`error_condition` 型の変数をキャストします。|  
+|[assign](#assign)|Assigns an error code value and category to an error condition.|  
+|[category](#category)|Returns the error category.|  
+|[clear](#clear)|Clears the error code value and category.|  
+|[message](#message)|Returns the name of the error code.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<system_error>  
+### <a name="operators"></a>Operators  
   
- **名前空間:** std  
+|||  
+|-|-|  
+|[operator==](#op_eq_eq)|Tests for equality between `error_condition` objects.|  
+|[operator!=](#op_neq)|Tests for inequality between `error_condition` objects.|  
+|[operator<](#op_lt)|Tests if the `error_condition` object is less than the `error_code` object passed in for comparison.|  
+|[operator=](#op_eq)|Assigns a new enumeration value to the `error_condition` object.|  
+|[operator bool](#op_bool)|Casts a variable of type `error_condition`.|  
+  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<system_error>  
+  
+ **Namespace:** std  
   
 ##  <a name="assign"></a>  error_condition::assign  
- エラー コード値とカテゴリをエラー条件に割り当てます。  
+ Assigns an error code value and category to an error condition.  
   
 ```
 void assign(value_type val, const error_category& _Cat);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`val`|`error_code` に格納するエラー コード値。|  
-|`_Cat`|`error_code` に格納するエラー カテゴリ。|  
+|`val`|The error code value to store in the `error_code`.|  
+|`_Cat`|The error category to store in the `error_code`.|  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、エラー コード値としての `val` と `_Cat` を指すポインターを格納します。  
+### <a name="remarks"></a>Remarks  
+ The member function stores `val` as the error code value and a pointer to `_Cat`.  
   
 ##  <a name="category"></a>  error_condition::category  
- エラー カテゴリを返します。  
+ Returns the error category.  
   
 ```
 const error_category& category() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- 格納されたエラー カテゴリへの参照  
+### <a name="return-value"></a>Return Value  
+ A reference to the stored error category  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="clear"></a>  error_condition::clear  
- エラー コード値とカテゴリをクリアします。  
+ Clears the error code value and category.  
   
 ```
 clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数はゼロ エラー コード値と [generic_category](../standard-library/system-error-functions.md#generic_category) を指すポインターを格納します。  
+### <a name="remarks"></a>Remarks  
+ The member function stores a zero error code value and a pointer to the [generic_category](../standard-library/system-error-functions.md#generic_category) object.  
   
 ##  <a name="error_condition"></a>  error_condition::error_condition  
- `error_condition` 型のオブジェクトを構築します。  
+ Constructs an object of type `error_condition`.  
   
 ```
 error_condition();
@@ -148,93 +153,93 @@ error_condition(_Enum _Errcode,
     error_code>::type* = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`val`|`error_condition` に格納するエラー コード値。|  
-|`_Cat`|`error_condition` に格納するエラー カテゴリ。|  
-|`_Errcode`|`error_condition` に格納する列挙値。|  
+|`val`|The error code value to store in the `error_condition`.|  
+|`_Cat`|The error category to store in the `error_condition`.|  
+|`_Errcode`|The enumeration value to store in the `error_condition`.|  
   
-### <a name="remarks"></a>コメント  
- 最初のコンストラクターはゼロ エラー コード値と [generic_category](../standard-library/system-error-functions.md#generic_category) を指すポインターを格納します。  
+### <a name="remarks"></a>Remarks  
+ The first constructor stores a zero error code value and a pointer to the [generic_category](../standard-library/system-error-functions.md#generic_category).  
   
- 2 番目のコンストラクターは、エラー コード値としての `val` と [error_category](http://msdn.microsoft.com/en-us/6fe57a15-63a1-4e79-8af4-6738e43e19c8) を指すポインターを格納します。  
+ The second constructor stores `val` as the error code value and a pointer to [error_category](http://msdn.microsoft.com/en-us/6fe57a15-63a1-4e79-8af4-6738e43e19c8).  
   
- 3 番目のコンストラクターは、エラー コード値としての `(value_type)_Errcode` と [generic_category](../standard-library/system-error-functions.md#generic_category) を指すポインターを格納します。  
+ The third constructor stores `(value_type)_Errcode` as the error code value and a pointer to the [generic_category](../standard-library/system-error-functions.md#generic_category).  
   
 ##  <a name="message"></a>  error_condition::message  
- エラー コードの名前を返します。  
+ Returns the name of the error code.  
   
 ```
 string message() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- エラー コードの名前を表す `string`。  
+### <a name="return-value"></a>Return Value  
+ A `string` representing the name of the error code.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は `category().message(value())` を返します。  
+### <a name="remarks"></a>Remarks  
+ This member function returns `category().message(value())`.  
   
 ##  <a name="op_eq_eq"></a>  error_condition::operator==  
- `error_condition` オブジェクト間の同等性をテストします。  
+ Tests for equality between `error_condition` objects.  
   
 ```
 bool operator==(const error_condition& right) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`right`|等しいかどうかをテストするオブジェクト。|  
+|`right`|The ojbect to be tested for equality.|  
   
-### <a name="return-value"></a>戻り値  
- オブジェクトが等しい場合は **true**、オブジェクトが等しくない場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the objects are equal; **false** if objects are not equal.  
   
-### <a name="remarks"></a>コメント  
- このメンバー演算子は、`category() == right.category() && value == right.value()` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator returns `category() == right.category() && value == right.value()`.  
   
 ##  <a name="op_neq"></a>  error_condition::operator!=  
- `error_condition` オブジェクト間の不等性をテストします。  
+ Tests for inequality between `error_condition` objects.  
   
 ```
 bool operator!=(const error_condition& right) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`right`|不等性をテストするオブジェクト。|  
+|`right`|The object to be tested for inequality.|  
   
-### <a name="return-value"></a>戻り値  
- `error_condition` オブジェクトが、`right` に渡される `error_condition` オブジェクトに等しくない場合は **true**。それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the `error_condition` object is not equal to the `error_condition` object passed in `right`; otherwise **false**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー演算子は、`!(*this == right)` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator returns `!(*this == right)`.  
   
 ##  <a name="op_lt"></a>  error_condition::operator&lt;  
- `error_condition` オブジェクトが比較のために渡される `error_code` オブジェクトより小さいかどうかをテストします。  
+ Tests if the `error_condition` object is less than the `error_code` object passed in for comparison.  
   
 ```
 bool operator<(const error_condition& right) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`right`|比較される `error_condition` オブジェクト。|  
+|`right`|The `error_condition` object to be compared.|  
   
-### <a name="return-value"></a>戻り値  
- `error_condition` オブジェクトが、比較対象として渡された `error_condition` より小さい場合は **true**。それ以外の場合は **false**。  
+### <a name="return-value"></a>Return Value  
+ **true** if the `error_condition` object is less than the `error_condition` object passed in for comparison; Otherwise, **false**.  
   
-### <a name="remarks"></a>コメント  
- このメンバー演算子は、`category() < right.category() || category() == right.category() && value < right.value()` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator returns `category() < right.category() || category() == right.category() && value < right.value()`.  
   
 ##  <a name="op_eq"></a>  error_condition::operator=  
- `error_condition` オブジェクトに新しい列挙値を代入します。  
+ Assigns a new enumeration value to the `error_condition` object.  
   
 ```
 template <class _Enum>
@@ -244,55 +249,55 @@ error_condition(_Enum error,
  operator=(Enum _Errcode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`_Errcode`|`error_condition` オブジェクトに代入する列挙値。|  
+|`_Errcode`|The enumeration value to assign to the `error_condition` object.|  
   
-### <a name="return-value"></a>戻り値  
- メンバー関数によって新しい列挙値が代入される `error_condition` オブジェクトへの参照。  
+### <a name="return-value"></a>Return Value  
+ A reference to the `error_condition` object that is being assigned the new enumeration value by the member function.  
   
-### <a name="remarks"></a>コメント  
- このメンバー演算子は、エラー コード値としての `(value_type)error` と [generic_category](../standard-library/system-error-functions.md#generic_category) を指すポインターを格納します。 `*this` を返します。  
+### <a name="remarks"></a>Remarks  
+ The member operator stores `(value_type)error` as the error code value and a pointer to the [generic_category](../standard-library/system-error-functions.md#generic_category). It returns `*this`.  
   
 ##  <a name="op_bool"></a>  error_condition::operator bool  
- `error_condition` 型の変数をキャストします。  
+ Casts a variable of type `error_condition`.  
   
 ```
 explicit operator bool() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- `error_condition` オブジェクトのブール値。  
+### <a name="return-value"></a>Return Value  
+ The Boolean value of the `error_condition` object.  
   
-### <a name="remarks"></a>コメント  
- この演算子は、[値](#value)が 0 と等しくない場合に限り、`true` に変換できる値が返されます。 戻り値の型は、`void *` またはその他の既知のスカラー型ではなく、`bool` 型にのみ変換可能です。  
+### <a name="remarks"></a>Remarks  
+ The operator returns a value convertible to `true` only if [value](#value) is not equal to zero. The return type is convertible only to `bool`, not to `void *` or other known scalar types.  
   
 ##  <a name="value"></a>  error_condition::value  
- 格納されたエラー コード値を返します。  
+ Returns the stored error code value.  
   
 ```
 value_type value() const;
 ```  
   
-### <a name="return-value"></a>戻り値  
- [value_type](#value_type) 型の格納されたエラー コード値。  
+### <a name="return-value"></a>Return Value  
+ The stored error code value of type [value_type](#value_type).  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 ##  <a name="value_type"></a>  error_condition::value_type  
- 格納されたエラー コード値を表す型。  
+ A type that represents the stored error code value.  
   
 ```
 typedef int value_type;
 ```  
   
-### <a name="remarks"></a>コメント  
- この型定義は `int` のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type definition is a synonym for `int`.  
   
-## <a name="see-also"></a>関連項目  
- [error_category クラス](../standard-library/error-category-class.md)   
+## <a name="see-also"></a>See Also  
+ [error_category Class](../standard-library/error-category-class.md)   
  [<system_error>](../standard-library/system-error.md)
 
 

@@ -1,5 +1,5 @@
 ---
-title: "collate クラス | Microsoft Docs"
+title: collate Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -10,8 +10,6 @@ ms.tgt_pltfrm:
 ms.topic: article
 f1_keywords:
 - locale/std::collate
-- collate
-- Collate
 - locale/std::collate::char_type
 - locale/std::collate::string_type
 - locale/std::collate::compare
@@ -23,7 +21,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- collate class
+- std::collate [C++]
+- std::collate [C++], char_type
+- std::collate [C++], string_type
+- std::collate [C++], compare
+- std::collate [C++], do_compare
+- std::collate [C++], do_hash
+- std::collate [C++], do_transform
+- std::collate [C++], hash
+- std::collate [C++], transform
 ms.assetid: 92168798-9628-4a2e-be6e-fa62dcd4d6a6
 caps.latest.revision: 18
 author: corob-msft
@@ -43,71 +49,71 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 070813dde1fc118e35ade636261541e585504c50
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: db02822b3e5e2e5fbf1851c6b8709a4963f70e15
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="collate-class"></a>collate クラス
-文字列内の文字の順序付けとグループ化、文字列内の文字の比較、および文字列のハッシュ化を制御するためのロケール ファセットとして使用できるオブジェクトを表すテンプレート クラス。  
+# <a name="collate-class"></a>collate Class
+A template class that describes an object that can serve as a locale facet to control the ordering and grouping of characters within a string, comparisons between them and the hashing of strings.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class CharType>  
 class collate : public locale::facet;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `CharType`  
- 文字をエンコードするためにプログラム内で使用される型。  
+ The type used within a program to encode characters.  
   
-## <a name="remarks"></a>コメント  
- すべてのロケールのファセットと同様、静的オブジェクト ID に最初に格納されている値は 0 です。 格納されている値に初めてアクセスしようとすると、**id** に一意の正の値が格納されます。 一部の言語では、複数の文字が 1 文字のように処理され、また別の言語では、個々の文字が 2 文字であるかのように処理されます。 照合クラスが提供する照合サービスは、これらの状況で文字を並べ替える方法を示します。  
+## <a name="remarks"></a>Remarks  
+ As with any locale facet, the static object ID has an initial stored value of zero. The first attempt to access its stored value stores a unique positive value in **id.** In some languages, characters are grouped and treated as a single character, and in others, individual characters are treated as if they were two characters. The collating services provided by the collate class provide the way to sort these cases.  
   
-### <a name="constructors"></a>コンストラクター  
+### <a name="constructors"></a>Constructors  
   
 |||  
 |-|-|  
-|[collate](#collate)|文字列の並べ替え規則を処理するためにロケールのファセットとして機能する `collate` クラスのオブジェクトのコンストラクター。|  
+|[collate](#collate)|The constructor for objects of class `collate` that serves as a locale facet to handle string sorting conventions.|  
   
 ### <a name="typedefs"></a>Typedefs  
   
 |||  
 |-|-|  
-|[char_type](#char_type)|`CharType` 型の文字を表す型。|  
-|[string_type](#string_type)|`basic_string` 型の文字を格納する `CharType` 型の文字列を表す型。|  
+|[char_type](#char_type)|A type that describes a character of type `CharType`.|  
+|[string_type](#string_type)|A type that describes a string of type `basic_string` containing characters of type `CharType`.|  
   
-### <a name="member-functions"></a>メンバー関数  
+### <a name="member-functions"></a>Member Functions  
   
 |||  
 |-|-|  
-|[compare](#compare)|等値または非等値のファセット固有の規則に従って、2 文字シーケンスを比較します。|  
-|[do_compare](#do_compare)|等値または非等値のファセット固有の規則に従って、2 文字シーケンスを比較するために呼び出される仮想関数。|  
-|[do_hash](#do_hash)|ファセット固有の規則に従ってシーケンスのハッシュ値を決定するために呼び出される仮想関数。|  
-|[do_transform](#do_transform)|ロケールの文字シーケンスを、同じロケールから同様に変換された他の文字シーケンスとの辞書式の比較で使用できる文字列に変換するために呼び出される仮想関数。|  
-|[hash](#hash)|ファセット固有の規則に従ってシーケンスのハッシュ値を決定します。|  
-|[transform](#transform)|ロケールの文字シーケンスを、同じロケールから同様に変換された他の文字シーケンスとの辞書式の比較で使用できる文字列に変換します。|  
+|[compare](#compare)|Compares two character sequences according to their facet-specific rules for equality or inequality.|  
+|[do_compare](#do_compare)|A virtual function called to compare two character sequences according to their facet-specific rules for equality or inequality.|  
+|[do_hash](#do_hash)|A virtual function called to determine the hash value of sequences according to their facet-specific rules.|  
+|[do_transform](#do_transform)|A virtual function called to convert a character sequence from a locale to a string that may be used in lexicographical comparisons with other character sequences similarly converted from the same locale.|  
+|[hash](#hash)|Determines the hash value of sequence according to their facet-specific rules.|  
+|[transform](#transform)|Converts a character sequence from a locale to a string that may be used in lexicographical comparisons with other character sequences similarly converted from the same locale.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<locale>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<locale>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="char_type"></a>  collate::char_type  
- **CharType** 型の文字を表す型。  
+ A type that describes a character of type **CharType**.  
   
 ```  
 typedef CharType char_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、テンプレート パラメーター **CharType** のシノニムです。  
+### <a name="remarks"></a>Remarks  
+ The type is a synonym for the template parameter **CharType**.  
   
 ##  <a name="collate"></a>  collate::collate  
- 文字列の並べ替え規則を処理するためにロケール ファセットとして機能する collate クラスのオブジェクトのコンストラクター。  
+ The constructor for objects of class collate that serves as a locale facet to handle string sorting conventions.  
   
 ```  
 public:  
@@ -120,26 +126,26 @@ protected:
     size_t _Refs = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `_Refs`  
- オブジェクトのメモリ管理の種類を指定するために使用する整数値。  
+ Integer value used to specify the type of memory management for the object.  
   
  `_Locname`  
- ロケールの名前。  
+ The name of the locale.  
   
-### <a name="remarks"></a>コメント  
- `_Refs` パラメーターの可能な値とその重要性は次のとおりです。  
+### <a name="remarks"></a>Remarks  
+ The possible values for the `_Refs` parameter and their significance are:  
   
--   0: オブジェクトの有効期間はそれが含まれるロケールによって管理されます。  
+-   0: The lifetime of the object is managed by the locales that contain it.  
   
--   1: オブジェクトの有効期間を手動で管理する必要があります。  
+-   1: The lifetime of the object must be manually managed.  
   
--   \>1: これらの値が定義されていません。  
+-   \> 1: These values are not defined.  
   
- コンス トラクターは、ベース オブジェクトと**ロケール::**[ファセット](../standard-library/locale-class.md#facet_class)(`_Refs`)。  
+ The constructor initializes its base object with **locale::**[facet](../standard-library/locale-class.md#facet_class)(`_Refs`).  
   
 ##  <a name="compare"></a>  collate::compare  
- 等値または非等値のファセット固有の規則に従って、2 文字シーケンスを比較します。  
+ Compares two character sequences according to their facet-specific rules for equality or inequality.  
   
 ```  
 int compare(const CharType* first1,
@@ -148,34 +154,34 @@ int compare(const CharType* first1,
     const CharType* last2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first1`  
- 比較する最初のシーケンスの最初の要素へのポインター。  
+ Pointer to the first element in the first sequence to be compared.  
   
  `last1`  
- 比較する最初のシーケンスの最後の要素へのポインター。  
+ Pointer to the last element in the first sequence to be compared.  
   
  `first2`  
- 比較する 2 番目のシーケンスの最初の要素へのポインター。  
+ Pointer to the first element in the second sequence to be compared.  
   
  `last2`  
- 比較する 2 番目のシーケンスの最後の要素へのポインター。  
+ Pointer to the last element in the second sequence to be compared.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数は、以下の値を返します。  
+### <a name="return-value"></a>Return Value  
+ The member function returns:  
   
--   最初のシーケンスが 2 番目のシーケンスより小さい場合は、-1。  
+-   -1 if the first sequence compares less than the second sequence.  
   
--   2 番目のシーケンスが最初のシーケンスより小さい場合は、+1。  
+-   +1 if the second sequence compares less than the first sequence.  
   
--   シーケンスが等しい場合は 0。  
+-   0 if the sequences are equivalent.  
   
-### <a name="remarks"></a>コメント  
- シーケンスの最も早い等しくないペアにより小さい要素がある場合、または等しくないペアは存在しないが、最初のシーケンスの方が短い場合は、最初のシーケンスが小さいと見なされます。  
+### <a name="remarks"></a>Remarks  
+ The first sequence compares less if it has the smaller element in the earliest unequal pair in the sequences, or, if no unequal pairs exist, but the first sequence is shorter.  
   
- このメンバー関数は、[do_compare](#do_compare)( `first1`, `last1`, `first2`, `last2`) を返します。  
+ The member function returns [do_compare](#do_compare)( `first1`, `last1`, `first2`, `last2`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // collate_compare.cpp  
@@ -201,7 +207,7 @@ int main() {
 ```  
   
 ##  <a name="do_compare"></a>  collate::do_compare  
- 等値または非等値のファセット固有の規則に従って、2 文字シーケンスを比較するために呼び出される仮想関数。  
+ A virtual function called to compare two character sequences according to their facet-specific rules for equality or inequality.  
   
 ```  
 virtual int do_compare(const CharType* first1,
@@ -210,103 +216,103 @@ virtual int do_compare(const CharType* first1,
     const CharType* last2) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first1`  
- 比較する最初のシーケンスの最初の要素へのポインター。  
+ Pointer to the first element in the first sequence to be compared.  
   
  `last1`  
- 比較する最初のシーケンスの最後の要素へのポインター。  
+ Pointer to the last element in the first sequence to be compared.  
   
  `first2`  
- 比較する 2 番目のシーケンスの最初の要素へのポインター。  
+ Pointer to the first element in the second sequence to be compared.  
   
  `last2`  
- 比較する 2 番目のシーケンスの最後の要素へのポインター。  
+ Pointer to the last element in the second sequence to be compared.  
   
-### <a name="return-value"></a>戻り値  
- このメンバー関数は、以下の値を返します。  
+### <a name="return-value"></a>Return Value  
+ The member function returns:  
   
--   最初のシーケンスが 2 番目のシーケンスより小さい場合は、-1。  
+-   -1 if the first sequence compares less than the second sequence.  
   
--   2 番目のシーケンスが最初のシーケンスより小さい場合は、+1。  
+-   +1 if the second sequence compares less than the first sequence.  
   
--   シーケンスが等しい場合は 0。  
+-   0 if the sequences are equivalent.  
   
-### <a name="remarks"></a>コメント  
- プロテクト仮想メンバー関数でシーケンスを比較し [* first1, Last1) * でシーケンスに*[first2、last2*)。 値を比較する場合、**CharType** 型の対応する要素のペア間で **operator<** を適用します。 シーケンスの最も早い等しくないペアにより小さい要素がある場合、または等しくないペアは存在しないが、最初のシーケンスの方が短い場合は、最初のシーケンスが小さいと見なされます。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function compares the sequence at [ * first1, Last1)* with the sequence at *[ first2,  last2*). It compares values by applying **operator<** between pairs of corresponding elements of type **CharType**. The first sequence compares less if it has the smaller element in the earliest unequal pair in the sequences or if no unequal pairs exist but the first sequence is shorter.  
   
-### <a name="example"></a>例  
-  [collate::compare](#compare) の例 (`do_compare` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [collate::compare](#compare), which calls `do_compare`.  
   
 ##  <a name="do_hash"></a>  collate::do_hash  
- ファセット固有の規則に従ってシーケンスのハッシュ値を決定するために呼び出される仮想関数。  
+ A virtual function called to determine the hash value of sequences according to their facet-specific rules.  
   
 ```  
 virtual long do_hash(const CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 値を決定するシーケンスの最初の文字へのポインター。  
+ A pointer to the first character in the sequence whose has value is to be determined.  
   
  `last`  
- 値を決定するシーケンスの最後の文字へのポインター。  
+ A pointer to the last character in the sequence whose has value is to be determined.  
   
-### <a name="return-value"></a>戻り値  
- シーケンスの **long** 型のハッシュ値。  
+### <a name="return-value"></a>Return Value  
+ A hash value of type **long** for the sequence.  
   
-### <a name="remarks"></a>コメント  
- ハッシュ値は、リストの配列で擬似ランダムにシーケンスを分散させる場合などに役立ちます。  
+### <a name="remarks"></a>Remarks  
+ A hash value can be useful, for example, in distributing sequences pseudo-randomly across an array of lists.  
   
-### <a name="example"></a>例  
-  [hash](#hash) の例 (`do_hash` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [hash](#hash), which calls `do_hash`.  
   
 ##  <a name="do_transform"></a>  collate::do_transform  
- ロケールの文字シーケンスを、同じロケールから同様に変換された他の文字シーケンスとの辞書式の比較で使用できる文字列に変換するために呼び出される仮想関数。  
+ A virtual function called to convert a character sequence from a locale to a string that may be used in lexicographical comparisons with other character sequences similarly converted from the same locale.  
   
 ```  
 virtual string_type do_transform(const CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換対象となるシーケンスの最初の文字へのポインター。  
+ A pointer to the first character in the sequence to be converted.  
   
  `last`  
- 変換対象となるシーケンスの最後の文字へのポインター。  
+ A pointer to the last character in the sequence to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 変換された文字シーケンスである文字列。  
+### <a name="return-value"></a>Return Value  
+ A string that is the transformed character sequence.  
   
-### <a name="remarks"></a>コメント  
- protected 仮想メンバー関数は、被制御シーケンスがシーケンス [ `first`, `last`) のコピーである [string_type](#string_type) クラスのオブジェクトを返します。 collate\< **CharType**> から派生したクラスで [do_compare](#do_compare) をオーバーライドする場合は、それに合わせて `do_transform` もオーバーライドする必要があります。 `collate::compare` に渡した場合、変換された 2 つの文字列の結果は、派生クラスで比較するために未変換文字列を渡した場合と同じものが生成される必要があります。  
+### <a name="remarks"></a>Remarks  
+ The protected virtual member function returns an object of class [string_type](#string_type) whose controlled sequence is a copy of the sequence [ `first`, `last`). If a class derived from collate\< **CharType**> overrides [do_compare](#do_compare), it should also override `do_transform` to match. When passed to `collate::compare`, two transformed strings should yield the same result that you would get from passing the untransformed strings to compare in the derived class.  
   
-### <a name="example"></a>例  
-  [transform](#transform) の例 (`do_transform` を呼び出す) を参照してください。  
+### <a name="example"></a>Example  
+  See the example for [transform](#transform), which calls `do_transform`.  
   
 ##  <a name="hash"></a>  collate::hash  
- ファセット固有の規則に従ってシーケンスのハッシュ値を決定します。  
+ Determines the hash value of sequence according to their facet-specific rules.  
   
 ```  
 long hash(const CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 値を決定するシーケンスの最初の文字へのポインター。  
+ A pointer to the first character in the sequence whose has value is to be determined.  
   
  `last`  
- 値を決定するシーケンスの最後の文字へのポインター。  
+ A pointer to the last character in the sequence whose has value is to be determined.  
   
-### <a name="return-value"></a>戻り値  
- シーケンスの **long** 型のハッシュ値。  
+### <a name="return-value"></a>Return Value  
+ A hash value of type **long** for the sequence.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_hash](#do_hash)( `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_hash](#do_hash)( `first`, `last`).  
   
- ハッシュ値は、リストの配列で擬似ランダムにシーケンスを分散させる場合などに役立ちます。  
+ A hash value can be useful, for example, in distributing sequences pseudo-randomly across an array of lists.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // collate_hash.cpp  
@@ -335,39 +341,39 @@ int main( )
 ```  
   
 ##  <a name="string_type"></a>  collate::string_type  
- **CharType** 型の文字を格納する `basic_string` 型の文字列を表す型。  
+ A type that describes a string of type `basic_string` containing characters of type **CharType**.  
   
 ```  
 typedef basic_string<CharType> string_type;  
 ```  
   
-### <a name="remarks"></a>コメント  
- この型は、オブジェクトにソース シーケンスのコピーを格納できるテンプレート クラス [basic_string](../standard-library/basic-string-class.md) の特殊化を表します。  
+### <a name="remarks"></a>Remarks  
+ The type describes a specialization of template class [basic_string](../standard-library/basic-string-class.md) whose objects can store copies of the source sequence.  
   
-### <a name="example"></a>例  
-  `string_type` の宣言および使用方法の例については、「[collate::transform](#transform)」を参照してください。  
+### <a name="example"></a>Example  
+  For an example of how to declare and use `string_type`, see [transform](#transform).  
   
 ##  <a name="transform"></a>  collate::transform  
- ロケールの文字シーケンスを、同じロケールから同様に変換された他の文字シーケンスとの辞書式の比較で使用できる文字列に変換します。  
+ Converts a character sequence from a locale to a string that may be used in lexicographical comparisons with other character sequences similarly converted from the same locale.  
   
 ```  
 string_type transform(const CharType* first, const CharType* last) const;
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `first`  
- 変換対象となるシーケンスの最初の文字へのポインター。  
+ A pointer to the first character in the sequence to be converted.  
   
  `last`  
- 変換対象となるシーケンスの最後の文字へのポインター。  
+ A pointer to the last character in the sequence to be converted.  
   
-### <a name="return-value"></a>戻り値  
- 変換された文字シーケンスを含む文字列。  
+### <a name="return-value"></a>Return Value  
+ A string that contains the transformed character sequence.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、[do_transform](#do_transform)( `first`, `last`) を返します。  
+### <a name="remarks"></a>Remarks  
+ The member function returns [do_transform](#do_transform)( `first`, `last`).  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // collate_transform.cpp  
@@ -412,8 +418,8 @@ int main( )
 -1-11  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<locale>](../standard-library/locale.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

@@ -1,45 +1,64 @@
 ---
-title: "リスト項目とイメージ リスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CImageList クラス, およびリスト項目"
-  - "CListCtrl クラス, イメージ リスト"
-  - "イメージ リスト [C++], リスト項目"
-  - "リスト項目, イメージ リスト"
+title: List Items and Image Lists | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CImageList class [MFC], and list items
+- image lists [MFC], list items
+- CListCtrl class [MFC], image lists
+- list items [MFC], image lists
 ms.assetid: 317d095f-f978-47da-acb6-7bfe7dd3bc69
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# リスト項目とイメージ リスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: de7e5fa9537d4cec3fed7c891fba9a7c4c11c4d2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リスト コントロール \([CListCtrl](../Topic/CListCtrl%20Class.md)\) の「Item」は、アイコン、ラベル、およびそのほかの情報で構成され \(「サブ項目で」\)。  
+---
+# <a name="list-items-and-image-lists"></a>List Items and Image Lists
+An "item" in a list control ([CListCtrl](../mfc/reference/clistctrl-class.md)) consists of an icon, a label, and possibly other information (in "subitems").  
   
- リスト コントロール項目のアイコンのイメージ リストに含まれています。  1 種類のイメージ リストのアイコン ビューで使用される大きいアイコンなどが含まれます。  2 番目は、省略可能、コントロールの他のビューにイメージ リスト使用の同じアイコンの小さなバージョンが含まれています。  3 番目の省略可能なリストは特定のビューに「状態」イメージを、小さいアイコンの表示のチェック ボックスなど\) が含まれます。  4 番目の省略可能な一覧がリスト コントロールのヘッダー項目に表示されるイメージを示します。  
+ The icons for list control items are contained in image lists. One image list contains full-sized icons used in icon view. A second, optional, image list contains smaller versions of the same icons for use in other views of the control. A third optional list contains "state" images, such as check boxes, for display in front of the small icons in certain views. A fourth optional list contains images that are displayed in individual header items of the list control.  
   
 > [!NOTE]
->  リスト ビュー コントロールが `LVS_SHAREIMAGELISTS` のスタイルで作成されている場合、使用していないときは、イメージ リストの破棄する必要があります。  複数のリスト ビュー コントロールに同じイメージ リストを割り当てた場合、このスタイルを指定します。; それ以外の場合は、複数のコントロールが同じイメージ リストを破棄しようとする場合があります。  
+>  If a list view control is created with the `LVS_SHAREIMAGELISTS` style, you are responsible for destroying the image lists when they are no longer in use. Specify this style if you assign the same image lists to multiple list view controls; otherwise, more than one control might try to destroy the same image list.  
   
- リスト項目の詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [リスト ビューのイメージ リスト](http://msdn.microsoft.com/library/windows/desktop/bb774736) と [項目とサブ項目](http://msdn.microsoft.com/library/windows/desktop/bb774736) を参照します。  、"ここの *MFC 参照* クラス [CImageList](../Topic/CImageList%20Class.md) と [CImageList を使用する](../mfc/using-cimagelist.md) を参照してください。  
+ For more information about list items, see [List View Image Lists](http://msdn.microsoft.com/library/windows/desktop/bb774736) and [Items and Subitems](http://msdn.microsoft.com/library/windows/desktop/bb774736) in the Windows SDK. Also see class [CImageList](../mfc/reference/cimagelist-class.md) in the *MFC Reference* and [Using CImageList](../mfc/using-cimagelist.md) in this family of articles.  
   
- リストに新しい項目を挿入すると、リスト コントロールを作成するには、使用するイメージ リストを指定する必要があります。  次の例では `m_pImagelist` が型 `CImageList` ポインターである `m_listctrl` が `CListCtrl` のデータ メンバーであるこのプロシージャを示しています。  
+ To create a list control, you need to supply image lists to be used when you insert new items into the list. The following example demonstrates this procedure, where `m_pImagelist` is a pointer of type `CImageList` and `m_listctrl` is a `CListCtrl` data member.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#19](../mfc/codesnippet/CPP/list-items-and-image-lists_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#19](../mfc/codesnippet/cpp/list-items-and-image-lists_1.cpp)]  
   
- ただし、リスト ビューまたはリスト コントロールのアイコンを表示することを計画するイメージ リストは必要ではありません。  
+ However, if you don't plan to display icons in your list view or list control, you don't need image lists.  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

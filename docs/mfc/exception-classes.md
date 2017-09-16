@@ -1,67 +1,86 @@
 ---
-title: "例外クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.exception"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例外クラス"
-  - "例外処理, 例外クラス"
-  - "MFC, 例外"
+title: Exception Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.exception
+dev_langs:
+- C++
+helpviewer_keywords:
+- exception classes [MFC]
+- exception handling [MFC], exception classes
+- MFC, exceptions
 ms.assetid: 1a2caf12-b3e9-4189-86d2-bf7a595bf025
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 例外クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f917d9f426a9ce20644c1897c595ba58fc9b5d41
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クラス ライブラリはクラス `CException`に基づいた例外処理機能を提供します。  アプリケーション フレームワークはコードで例外を使用して; また、でも使用できます。  詳細については、記事 [例外](../mfc/exception-handling-in-mfc.md)を参照します。  `CException`から独自の例外を派生できます。  
+---
+# <a name="exception-classes"></a>Exception Classes
+The class library provides an exception-handling mechanism based on class `CException`. The application framework uses exceptions in its code; you can also use them in yours. For more information, see the article [Exceptions](../mfc/exception-handling-in-mfc.md). You can derive your own exception types from `CException`.  
   
- MFC では、サポートするすべての例外の独自の例外、または例外クラスを派生する例外クラスを提供します。  
+ MFC provides an exception class from which you can derive your own exception as well as exception classes for all of the exceptions it supports.  
   
  [CException](../mfc/reference/cexception-class.md)  
- 例外の基本クラスです。  
+ The base class for exceptions.  
   
  [CArchiveException](../mfc/reference/carchiveexception-class.md)  
- アーカイブの例外。  
+ An archive exception.  
   
  [CDaoException](../mfc/reference/cdaoexception-class.md)  
- 例外 DAO データベース操作の失敗になります。  
+ An exception resulting from a failure in a DAO database operation.  
   
  [CDBException](../mfc/reference/cdbexception-class.md)  
- 例外の ODBC データベースの処理でエラーが発生します。  
+ An exception resulting from a failure in ODBC database processing.  
   
  [CFileException](../mfc/reference/cfileexception-class.md)  
- ファイル中心例外。  
+ A file-oriented exception.  
   
  [CMemoryException](../mfc/reference/cmemoryexception-class.md)  
- メモリ不足の例外。  
+ An out-of-memory exception.  
   
  [CNotSupportedException](../mfc/reference/cnotsupportedexception-class.md)  
- 例外にサポートされていない機能を使用して実行されます。  
+ An exception resulting from using an unsupported feature.  
   
  [COleException](../mfc/reference/coleexception-class.md)  
- OLE の例外処理でエラーが発生します。  このクラスは、コンテナーとサーバーの両方で使用されます。  
+ An exception resulting from a failure in OLE processing. This class is used by both containers and servers.  
   
- [COleDispatchException](../Topic/COleDispatchException%20Class.md)  
- 例外オートメーション中にエラーが発生します。  オートメーションの例外は、オートメーション サーバーでスローされ、オートメーション クライアントによってキャッチされます。  
+ [COleDispatchException](../mfc/reference/coledispatchexception-class.md)  
+ An exception resulting from an error during automation. Automation exceptions are thrown by automation servers and caught by automation clients.  
   
  [CResourceException](../mfc/reference/cresourceexception-class.md)  
- 例外 Windows リソースを読み込む場合に発生します。  
+ An exception resulting from a failure to load a Windows resource.  
   
  [CUserException](../mfc/reference/cuserexception-class.md)  
- ユーザーが起動するアクションの停止に使用される例外です。  通常、ユーザーは問題のこの例外がスローされる前に知らせられました。  
+ An exception used to stop a user-initiated operation. Typically, the user has been notified of the problem before this exception is thrown.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

@@ -1,35 +1,54 @@
 ---
-title: "ウィザードとしてのプロパティ シート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プロパティ シート, ウィザードとしての"
+title: Property Sheets as Wizards | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- property sheets, as wizards
 ms.assetid: 1ea66ecb-23b0-484a-838d-58671a2999b5
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ウィザードとしてのプロパティ シート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0b590d9587fafe23e570e22fac04173d91ca1976
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ウィザードのプロパティ シートの重要な特徴はナビゲーションが次にまたはタブではなく完了、戻るボタンおよびキャンセルすることです。  この機能を利用するには、プロパティ シート オブジェクトの [CPropertySheet::DoModal](../Topic/CPropertySheet::DoModal.md) を呼び出す前に [CPropertySheet::SetWizardMode](../Topic/CPropertySheet::SetWizardMode.md) を呼び出す必要があります。  
+---
+# <a name="property-sheets-as-wizards"></a>Property Sheets as Wizards
+A key characteristic of a wizard property sheet is that navigation is provided with Next or Finish, Back, and Cancel buttons instead of tabs. You need to call [CPropertySheet::SetWizardMode](../mfc/reference/cpropertysheet-class.md#setwizardmode) before calling [CPropertySheet::DoModal](../mfc/reference/cpropertysheet-class.md#domodal) on the property sheet object to take advantage of this feature.  
   
- ユーザーが 1 ページから別のページに移動する [CPropertyPage::OnKillActive](../Topic/CPropertyPage::OnKillActive.md) 間で同じ [CPropertyPage::OnSetActive](../Topic/CPropertyPage::OnSetActive.md) と通知を受け取ります。  次に完了ボタンは同時に指定できない;コントロールです。つまり、1 種類のうちの一つだけが一度に表示されます。  最初のページで、次のボタンが有効になります。  ユーザーが最後のページにある場合は、完了ボタンが有効になります。  これは、フレームワークによって自動的になります。  これを実現するには、最後のページの [CPropertySheet::SetWizardButton](../Topic/CPropertySheet::SetWizardButtons.md) を呼び出す必要があります。  
+ The user receives the same [CPropertyPage::OnSetActive](../mfc/reference/cpropertypage-class.md#onsetactive) and [CPropertyPage::OnKillActive](../mfc/reference/cpropertypage-class.md#onkillactive) notifications while moving from one page to another page. Next and Finish buttons are mutually exclusive controls; that is, only one of them will be shown at a time. On the first page, the Next button should be enabled. If the user is on the last page, the Finish button should be enabled. This is not done automatically by the framework. You have to call [CPropertySheet::SetWizardButton](../mfc/reference/cpropertysheet-class.md#setwizardbuttons) on the last page to achieve this.  
   
- 既定のボタンは、すべて粥は完了ボタンを表示し、次のボタンを移動します。  次のボタンへの相対位置が保持されるように戻るボタンを移動します。  詳細については、サポート技術情報 Q143210 を検索します。  サポート技術情報の文書は、MSDN ライブラリで使用できます。  
+ To display all of the default buttons, you mush show the Finish button and move the Next button. Then move the Back button so that its relative position to the Next button is maintained.  
   
-## 例  
- [!code-cpp[NVC_MFCDocView#5](../mfc/codesnippet/CPP/property-sheets-as-wizards_1.cpp)]  
+## <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#5](../mfc/codesnippet/cpp/property-sheets-as-wizards_1.cpp)]  
   
-## 参照  
- [プロパティ シート](../mfc/property-sheets-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Property Sheets](../mfc/property-sheets-mfc.md)
+
+

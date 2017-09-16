@@ -1,5 +1,5 @@
 ---
-title: "行わないクラス |Microsoft ドキュメント"
+title: CNotSupportedException Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,9 +15,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CNotSupportedException class
-- unsupported features
-- exceptions, not supported
+- CNotSupportedException [MFC], CNotSupportedException
 ms.assetid: e517391b-eb94-4c39-ae32-87b45bf7d624
 caps.latest.revision: 20
 author: mikeblome
@@ -37,36 +35,36 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 6cb66448d0dadaf1f70c3606bc1b9027bd217a38
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 83bc88d4618939650296e73a1c991b6e75883272
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cnotsupportedexception-class"></a>行わないクラス
-サポートされていない機能を要求した結果として起こる例外を表します。  
+# <a name="cnotsupportedexception-class"></a>CNotSupportedException Class
+Represents an exception that is the result of a request for an unsupported feature.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CNotSupportedException : public CSimpleException  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CNotSupportedException::CNotSupportedException](#cnotsupportedexception)|`CNotSupportedException` オブジェクトを構築します。|  
+|[CNotSupportedException::CNotSupportedException](#cnotsupportedexception)|Constructs a `CNotSupportedException` object.|  
   
-## <a name="remarks"></a>コメント  
- さらに認定には、実現できないことも必要はありません。  
+## <a name="remarks"></a>Remarks  
+ No further qualification is necessary or possible.  
   
- 使用する方法について`CNotSupportedException`、記事を参照して[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
+ For more information on using `CNotSupportedException`, see the article [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
@@ -75,22 +73,22 @@ class CNotSupportedException : public CSimpleException
   
  `CNotSupportedException`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="cnotsupportedexception"></a>CNotSupportedException::CNotSupportedException  
- `CNotSupportedException` オブジェクトを構築します。  
+##  <a name="cnotsupportedexception"></a>  CNotSupportedException::CNotSupportedException  
+ Constructs a `CNotSupportedException` object.  
   
 ```  
 CNotSupportedException();
 ```  
   
-### <a name="remarks"></a>コメント  
- このコンス トラクターを直接使用されませんではなく、グローバル関数を呼び出す[AfxThrowNotSupportedException](exception-processing.md#afxthrownotsupportedexception)します。 例外の処理の詳細については、記事を参照してください。[例外処理 (MFC)](../exception-handling-in-mfc.md)します。  
+### <a name="remarks"></a>Remarks  
+ Do not use this constructor directly, but rather call the global function [AfxThrowNotSupportedException](exception-processing.md#afxthrownotsupportedexception). for more information about exception processing, see the article [Exception Handling in MFC](../exception-handling-in-mfc.md).  
   
-## <a name="see-also"></a>関連項目  
- [CException クラス](cexception-class.md)   
- [階層図](../hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CException Class](cexception-class.md)   
+ [Hierarchy Chart](../hierarchy-chart.md)
 
 
 

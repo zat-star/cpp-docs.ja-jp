@@ -1,56 +1,75 @@
 ---
-title: "CObject の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CObject"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CObject クラス"
-  - "派生クラス, CObject から"
-  - "例 [MFC], CObject"
-  - "MFC, 基本クラス"
-  - "ルート基本クラス (MFC の)"
+title: Using CObject | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CObject
+dev_langs:
+- C++
+helpviewer_keywords:
+- examples [MFC], CObject
+- root base class for MFC
+- derived classes [MFC], from CObject
+- MFC, base class
+- CObject class [MFC]
 ms.assetid: d0cd19bb-2856-4b41-abbc-620fd64cb223
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# CObject の使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0346f7b28a8340fa5ea196388a986787d272f27d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CObject](../Topic/CObject%20Class.md) は Microsoft Foundation Class ライブラリ \(MFC\) のほとんどのルート基本クラスです。  `CObject` クラスは、独自のプログラム オブジェクトに、シリアル化のサポートなど、ランタイム クラス情報組み込みことができ、する診断出力に表示できる便利な機能を備えています。  `CObject`からクラスを派生すれば、`CObject` クラスは、これらの機能を開発できます。  
+---
+# <a name="using-cobject"></a>Using CObject
+[CObject](../mfc/reference/cobject-class.md) is the root base class for most of the Microsoft Foundation Class Library (MFC). The `CObject` class contains many useful features that you may want to incorporate into your own program objects, including serialization support, run-time class information, and object diagnostic output. If you derive your class from `CObject`, your class can exploit these `CObject` features.  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>What do you want to do  
   
--   [CObject からクラスを派生してください。](../mfc/deriving-a-class-from-cobject.md)  
+-   [Derive a class from CObject](../mfc/deriving-a-class-from-cobject.md)  
   
--   [My の派生クラスのランタイム クラス情報、動的生成およびシリアル化のサポートを追加します。](../mfc/specifying-levels-of-functionality.md)  
+-   [Add support for run-time class information, dynamic creation, and serialization to my derived class](../mfc/specifying-levels-of-functionality.md)  
   
--   [ランタイム クラス情報にアクセスします。](../mfc/accessing-run-time-class-information.md)  
+-   [Access run-time class information](../mfc/accessing-run-time-class-information.md)  
   
--   [オブジェクトを動的に作成します。](../Topic/Dynamic%20Object%20Creation.md)  
+-   [Create objects dynamically](../mfc/dynamic-object-creation.md)  
   
--   [オブジェクトのデータを診断用にダンプします。](http://msdn.microsoft.com/ja-jp/727855b1-5a83-44bd-9fe3-f1d535584b59)  
+-   [Dump the object's data for diagnostic purposes](http://msdn.microsoft.com/en-us/727855b1-5a83-44bd-9fe3-f1d535584b59)  
   
--   オブジェクトの内部状態を検証します \([MFC ASSERT\_VALID および CObject::AssertValid](http://msdn.microsoft.com/ja-jp/7654fb75-9e9a-499a-8165-0a96faf2d5e6)を参照してください\)。  
+-   Validate the object's internal state (see [MFC ASSERT_VALID and CObject::AssertValid](http://msdn.microsoft.com/en-us/7654fb75-9e9a-499a-8165-0a96faf2d5e6))  
   
--   [永続ストレージにクラスのシリアル化する自体を持ちます。](../Topic/Serialization%20in%20MFC.md)  
+-   [Have the class serialize itself to persistent storage](../mfc/serialization-in-mfc.md)  
   
--   [CObject のよく寄せられる質問](../mfc/cobject-class-frequently-asked-questions.md)の一覧を参照してください。  
+-   See a list of [CObject Frequently Asked Questions](../mfc/cobject-class-frequently-asked-questions.md)  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)   
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)   
- [CRuntimeClass 構造体](../Topic/CRuntimeClass%20Structure.md)   
- [ファイル](../mfc/files-in-mfc.md)   
- [シリアル化](../Topic/Serialization%20in%20MFC.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)   
+ [General MFC Topics](../mfc/general-mfc-topics.md)   
+ [CRuntimeClass Structure](../mfc/reference/cruntimeclass-structure.md)   
+ [Files](../mfc/files-in-mfc.md)   
+ [Serialization](../mfc/serialization-in-mfc.md)
+
+

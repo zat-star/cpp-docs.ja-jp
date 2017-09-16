@@ -1,137 +1,156 @@
 ---
-title: "ダイアログ ボックス クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.dialog"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン ダイアログ クラス"
-  - "ダイアログ ボックス クラス"
-  - "OLE コモン ダイアログ クラス"
-  - "プロパティ シート クラス"
-  - "タブ ダイアログ ボックス"
+title: Dialog Box Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.dialog
+dev_langs:
+- C++
+helpviewer_keywords:
+- property sheet classes
+- dialog box classes
+- OLE common dialog classes
+- common dialog classes [MFC]
+- tab dialog boxes
 ms.assetid: db75da23-4eff-4c6c-beae-79cf046fbce9
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ダイアログ ボックス クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 534f360915b0909b6dac97e6cc7afaae7ae38835
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CDialog` クラスとその派生クラスは、ダイアログ ボックスの機能をカプセル化します。  ダイアログ ボックスがウィンドウの特別な型であるため、`CDialog` は `CWnd`から派生されます。  ダイアログ クラスを `CDialog` から派生するか、開始または保存などの標準のダイアログ ボックスにコモン ダイアログ クラスの 1 を、フォントや色を選択するか、検索置換操作を開始したり、さまざまな OLE 関連の操作を実行するファイル、出力使用します。  
+---
+# <a name="dialog-box-classes"></a>Dialog Box Classes
+Class `CDialog` and its derived classes encapsulate dialog-box functionality. Since a dialog box is a special kind of window, `CDialog` is derived from `CWnd`. Derive your dialog classes from `CDialog` or use one of the common dialog classes for standard dialog boxes, such as opening or saving a file, printing, selecting a font or color, initiating a search-and-replace operation, or performing various OLE-related operations.  
   
  [CDialog](../mfc/reference/cdialog-class.md)  
- すべてのダイアログ ボックスの基本クラス、モーダルおよびモードレス両方。  
+ The base class for all dialog boxes, both modal and modeless.  
   
- [CDataExchange](../Topic/CDataExchange%20Class.md)  
- データ交換提供とダイアログ ボックスの検証情報。  
+ [CDataExchange](../mfc/reference/cdataexchange-class.md)  
+ Supplies data exchange and validation information for dialog boxes.  
   
-## コモン ダイアログ  
- これらのダイアログ ボックス クラスは、Windows のコモン ダイアログ ボックスをカプセル化します。  これらは、複雑なダイアログ ボックスの使いやすい実装を提供します。  
+## <a name="common-dialogs"></a>Common Dialogs  
+ These dialog box classes encapsulate the Windows common dialog boxes. They provide easy-to-use implementations of complicated dialog boxes.  
   
- [CCommonDialog](../Topic/CCommonDialog%20Class.md)  
- すべてのコモン ダイアログ ボックスの基本クラスです。  
+ [CCommonDialog](../mfc/reference/ccommondialog-class.md)  
+ Base class for all common dialog boxes.  
   
- [CFileDialog](../Topic/CFileDialog%20Class.md)  
- ファイルを開くか、または保存するために、標準のダイアログ ボックスを表示します。  
+ [CFileDialog](../mfc/reference/cfiledialog-class.md)  
+ Provides a standard dialog box for opening or saving a file.  
   
  [CColorDialog](../mfc/reference/ccolordialog-class.md)  
- 色を選択するために、標準のダイアログ ボックスを表示します。  
+ Provides a standard dialog box for selecting a color.  
   
  [CFontDialog](../mfc/reference/cfontdialog-class.md)  
- フォントを選択するために、標準のダイアログ ボックスを表示します。  
+ Provides a standard dialog box for selecting a font.  
   
- [CFindReplaceDialog](../Topic/CFindReplaceDialog%20Class.md)  
- 検索置換操作の標準のダイアログ ボックスを表示します。  
+ [CFindReplaceDialog](../mfc/reference/cfindreplacedialog-class.md)  
+ Provides a standard dialog box for a search-and-replace operation.  
   
- [CPrintDialog](../Topic/CPrintDialog%20Class.md)  
- ファイルを印刷するために、標準のダイアログ ボックスを表示します。  
+ [CPrintDialog](../mfc/reference/cprintdialog-class.md)  
+ Provides a standard dialog box for printing a file.  
   
  [CPrintDialogEx](../mfc/reference/cprintdialogex-class.md)  
- Windows 2000 の印刷プロパティ シートが用意されています。  
+ Provides a Windows 2000 Print property sheet.  
   
  [CPageSetupDialog](../mfc/reference/cpagesetupdialog-class.md)  
- 印刷マージンの設定や変更のに追加サポートとともにページ設定ダイアログ ボックスによって提供されるサービスをカプセル化します。  
+ Encapsulates the services provided by the Windows common Page Setup dialog box with additional support for setting and modifying print margins.  
   
-## OLE コモン ダイアログ  
- OLE\)、いくつかのコモン ダイアログ ボックスを追加します。  これらのクラスは OLE コモン ダイアログ ボックスをカプセル化します。  
+## <a name="ole-common-dialogs"></a>OLE Common Dialogs  
+ OLE adds several common dialog boxes to Windows. These classes encapsulate the OLE common dialog boxes.  
   
  [COleDialog](../mfc/reference/coledialog-class.md)  
- すべての OLE ダイアログ ボックスの一般的な実装を格納するために、フレームワークによって使用されます。  ユーザー カテゴリのすべてのダイアログ ボックス クラスは、この基本クラスから派生されます。  `COleDialog` を直接 使用することはできません。  
+ Used by the framework to contain common implementations for all OLE dialog boxes. All dialog box classes in the user-interface category are derived from this base class. `COleDialog` cannot be used directly.  
   
  [COleInsertDialog](../mfc/reference/coleinsertdialog-class.md)  
- オブジェクトの挿入ダイアログ ボックスで、新しい OLE リンクされたまたは埋め込まれたアイテムを挿入するための標準のユーザー インターフェイスが表示されます。  
+ Displays the Insert Object dialog box, the standard user interface for inserting new OLE linked or embedded items.  
   
  [COlePasteSpecialDialog](../mfc/reference/colepastespecialdialog-class.md)  
- 貼り付け時に特殊なダイアログ ボックス、編集の貼り付けコマンドを実装するための標準的なユーザー インターフェイスが表示されます。  
+ Displays the Paste Special dialog box, the standard user interface for implementing the Edit Paste Special command.  
   
  [COleLinksDialog](../mfc/reference/colelinksdialog-class.md)  
- Edit リンク ダイアログ ボックス、リンクされた項目に関する変更情報の標準のユーザー インターフェイスが表示されます。  
+ Displays the Edit Links dialog box, the standard user interface for modifying information about linked items.  
   
  [COleChangeIconDialog](../mfc/reference/colechangeicondialog-class.md)  
- 変更アイコン ダイアログ ボックス、埋め込まれた OLE のまたはリンク アイテムに関連付けられているアイコンを変更するための標準のユーザー インターフェイスが表示されます。  
+ Displays the Change Icon dialog box, the standard user interface for changing the icon associated with an OLE embedded or linked item.  
   
  [COleConvertDialog](../mfc/reference/coleconvertdialog-class.md)  
- 変換ダイアログ ボックス、1 種類のから別のプロジェクトに OLE アイテムを変換するための標準のユーザー インターフェイスが表示されます。  
+ Displays the Convert dialog box, the standard user interface for converting OLE items from one type to another.  
   
- [COlePropertiesDialog](../Topic/COlePropertiesDialog%20Class.md)  
- Windows に共通の OLE プロパティ ダイアログ ボックスをカプセル化します。  共通の OLE プロパティ ダイアログ ボックスは、Windows の標準に準拠した OLE ドキュメント アイテムのプロパティを表示および変更するための簡単な方法を提供します。  
+ [COlePropertiesDialog](../mfc/reference/colepropertiesdialog-class.md)  
+ Encapsulates the Windows common OLE Properties dialog box. Common OLE Properties dialog boxes provide an easy way to display and modify the properties of an OLE document item in a manner consistent with Windows standards.  
   
- [COleUpdateDialog](../Topic/COleUpdateDialog%20Class.md)  
- 更新ダイアログ ボックス、ドキュメントのすべてのリンクを更新するための標準的なユーザー インターフェイスが表示されます。  ダイアログ ボックスを閉じる更新プロシージャが完了に示す、プログレス インジケーターが含まれます。  
+ [COleUpdateDialog](../mfc/reference/coleupdatedialog-class.md)  
+ Displays the Update dialog box, the standard user interface for updating all links in a document. The dialog box contains a progress indicator to indicate how close the update procedure is to completion.  
   
  [COleChangeSourceDialog](../mfc/reference/colechangesourcedialog-class.md)  
- ソースの変更ダイアログ ボックスで、リンク先またはソースを変更するための標準のユーザー インターフェイスが表示されます。  
+ Displays the Change Source dialog box, the standard user interface for changing the destination or source of a link.  
   
  [COleBusyDialog](../mfc/reference/colebusydialog-class.md)  
- 使用するサーバーを表示し、ダイアログ ボックスを応答しないサーバーがビジー アプリケーションに処理の標準ユーザー インターフェイス呼び出します。  通常 [COleMessageFilter](../mfc/reference/colemessagefilter-class.md) の実装によって自動的に表示されます。  
+ Displays the Server Busy and Server Not Responding dialog boxes, the standard user interface for handling calls to busy applications. Usually displayed automatically by the [COleMessageFilter](../mfc/reference/colemessagefilter-class.md) implementation.  
   
-## プロパティ シート クラス  
- プロパティ シート クラスには、アプリケーションがプロパティ シート \(タブ付きダイアログを使用できるようになります。  プロパティ シートは、ダイアログ ボックスの多くのコントロールを整理する効率的です。  
+## <a name="property-sheet-classes"></a>Property Sheet Classes  
+ The property sheet classes allow your applications to use property sheets, also known as tabbed dialogs. Property sheets are an efficient way to organize a large number of controls in a single dialog box.  
   
  [CPropertyPage](../mfc/reference/cpropertypage-class.md)  
- プロパティ シート内の個々のページを提供します。  プロパティ シートに追加するページごとに `CPropertyPage` からクラスを派生してください。  
+ Provides the individual pages within a property sheet. Derive a class from `CPropertyPage` for each page to be added to your property sheet.  
   
  [CPropertySheet](../mfc/reference/cpropertysheet-class.md)  
- 複数のプロパティ ページにフレームを提供します。  プロパティ シートを一度に実装するに `CPropertySheet` のプロパティ シート クラスを派生してください。  
+ Provides the frame for multiple property pages. Derive your property sheet class from `CPropertySheet` to implement your property sheets quickly.  
   
- [COlePropertyPage クラス](../mfc/reference/colepropertypage-class.md)  
- ダイアログ ボックスのようなグラフィカル インターフェイスの OLE コントロールのプロパティが表示されます。  
+ [COlePropertyPage](../mfc/reference/colepropertypage-class.md)  
+ Displays the properties of an OLE control in a graphical interface, similar to a dialog box.  
   
-## HTML ベースのダイアログ クラス  
- [CDHtmlDialog](../Topic/CDHtmlDialog%20Class.md)  
- ダイアログ リソースではなく、HTML を含むユーザー インターフェイスを実装するダイアログ ボックスを作成するために使用します。  
+## <a name="html-based-dialog-classes"></a>HTML-based Dialog Classes  
+ [CDHtmlDialog](../mfc/reference/cdhtmldialog-class.md)  
+ Used to create dialog boxes that implement their user interface with HTML rather than dialog resources.  
   
  [CMultiPageDHtmlDialog](../mfc/reference/cmultipagedhtmldialog-class.md)  
- 複数の HTML ページを順番に表示し、各ページのイベントを処理します。  
+ Displays multiple HTML pages sequentially and handles the events from each page.  
   
-## 関連クラス  
- これらのクラスは、基本的にダイアログ ボックスではありませんが、ダイアログ ボックス テンプレートを使用して、ダイアログ ボックスの多くがあります。  
+## <a name="related-classes"></a>Related Classes  
+ These classes are not dialog boxes per se, but they use dialog box templates and have much of the behavior of dialog boxes.  
   
  [CDialogBar](../mfc/reference/cdialogbar-class.md)  
- ダイアログ ボックス テンプレートに基づくコントロール バーです。  
+ A control bar that is based on a dialog box template.  
   
  [CFormView](../mfc/reference/cformview-class.md)  
- レイアウトがダイアログ ボックス テンプレートで定義されるスクロール ビュー。  ダイアログ ボックス テンプレートに基づいてユーザー インターフェイスを実装するに `CFormView` からクラスを派生してください。  
+ A scroll view whose layout is defined in a dialog box template. Derive a class from `CFormView` to implement a user interface based on a dialog box template.  
   
- [CDaoRecordView クラス](../mfc/reference/cdaorecordview-class.md)  
- 直接 Data Access Object \(DAO\) のレコードセット オブジェクトにアタッチされるフォーム ビューを提供します。  すべてのフォーム ビューと同様に、`CDaoRecordView` はダイアログ ボックス テンプレートに基づいています。  
+ [CDaoRecordView](../mfc/reference/cdaorecordview-class.md)  
+ Provides a form view directly connected to a Data Access Object (DAO) recordset object. Like all form views, a `CDaoRecordView` is based on a dialog box template.  
   
  [CRecordView](../mfc/reference/crecordview-class.md)  
- 直接 ODBC \(Open Database Connectivity\) データ ソースに接続されているフォーム ビューを提供します。  すべてのフォーム ビューと同様に、`CRecordView` はダイアログ ボックス テンプレートに基づいています。  
+ Provides a form view directly connected to an Open Database Connectivity (ODBC) recordset object. Like all form views, a `CRecordView` is based on a dialog box template.  
   
  [CPrintInfo](../mfc/reference/cprintinfo-structure.md)  
- 印刷や印刷プレビュー ジョブに関する情報が格納された構造体。  [CView](../Topic/CView%20Class.md)の印刷アーキテクチャで使用されます。  
+ A structure containing information about a print or print preview job. Used by the printing architecture of [CView](../mfc/reference/cview-class.md).  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

@@ -1,106 +1,124 @@
 ---
-title: "MFC ActiveX コントロール : カスタム プロパティの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ActiveX コントロール, プロパティ"
-  - "プロパティ [MFC], カスタム"
+title: 'MFC ActiveX Controls: Adding Custom Properties | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], properties
+- properties [MFC], custom
 ms.assetid: 85af5167-74c7-427b-b8f3-e0d7b73942e5
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC ActiveX コントロール : カスタム プロパティの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: aaac18f6b8137aad6732bb69edb4b587e71aca2f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-カスタム プロパティは、ストック プロパティにカスタム プロパティを `COleControl` クラスによって既に実装されないことです。  プロパティがカスタム コントロールを使用するプログラマに ActiveX コントロールを特定の状態に表示するために使用されます。  
+---
+# <a name="mfc-activex-controls-adding-custom-properties"></a>MFC ActiveX Controls: Adding Custom Properties
+Custom properties differ from stock properties in that custom properties are not already implemented by the `COleControl` class. A custom property is used to expose a certain state or appearance of an ActiveX control to a programmer using the control.  
   
- ここでは、プロパティの追加ウィザードを使用して ActiveX コントロールにカスタム プロパティを追加する方法と、生成されたコード変更について説明します。  ここでは、次の内容について説明します。  
+ This article describes how to add a custom property to the ActiveX control using the Add Property Wizard and explains the resulting code modifications. Topics include:  
   
--   [カスタム プロパティを追加するプロパティの追加ウィザードを使用して](#_core_using_classwizard_to_add_a_custom_property)  
+-   [Using the Add Property Wizard to add a custom property](#_core_using_classwizard_to_add_a_custom_property)  
   
--   [カスタム プロパティのプロパティ ウィザードの変更を追加します。](#_core_classwizard_changes_for_custom_properties)  
+-   [Add Property Wizard changes for custom properties](#_core_classwizard_changes_for_custom_properties)  
   
- カスタム プロパティは、実装の 4 種類の影響があります: メンバー変数は、通知のメンバー変数は、およびパラメーターで表される get または set メソッド。  
+ Custom properties come in four varieties of implementation: Member Variable, Member Variable with Notification, Get/Set Methods, and Parameterized.  
   
--   メンバー変数の実装  
+-   Member Variable Implementation  
   
-     この実装では、コントロール クラスのメンバー変数としてプロパティの状態を表します。  プロパティ値が変化するかを確認する必要がある場合は、メンバー変数の実装を使用します。  3 種類の、この実装はプロパティの最小限のサポート コードを作成します。  メンバー変数の実装のディスパッチ マップ エントリ マクロは [DISP\_PROPERTY](../Topic/DISP_PROPERTY.md)です。  
+     This implementation represents the property's state as a member variable in the control class. Use the Member Variable implementation when it is not important to know when the property value changes. Of the three types, this implementation creates the least amount of support code for the property. The dispatch map entry macro for member variable implementation is [DISP_PROPERTY](../mfc/reference/dispatch-maps.md#disp_property).  
   
--   通知の実装を持つメンバー変数  
+-   Member Variable with Notification Implementation  
   
-     この実装は、プロパティの追加ウィザードによって作成されるメンバー変数と通知関数で構成されます。  通知関数はフレームワークによって自動的にプロパティ値が変更された後に呼び出されます。  プロパティ値が変更された後に通知する必要がある場合は、通知の実装を持つメンバー変数を使用します。  この実装は、関数呼び出しを必要とするため、より多くの時間を要します。  この実装のディスパッチ マップ エントリ マクロは [DISP\_PROPERTY\_NOTIFY](../Topic/DISP_PROPERTY_NOTIFY.md)です。  
+     This implementation consists of a member variable and a notification function created by the Add Property Wizard. The notification function is automatically called by the framework after the property value changes. Use the Member Variable with Notification implementation when you need to be notified after a property value has changed. This implementation requires more time because it requires a function call. The dispatch map entry macro for this implementation is [DISP_PROPERTY_NOTIFY](../mfc/reference/dispatch-maps.md#disp_property_notify).  
   
--   または、メソッドを実装する。  
+-   Get/Set Methods Implementation  
   
-     この実装では、コントロール クラスのメンバー関数のペアで構成されます。  Get\/Set メソッドの実装は自動的にプロパティが変更されると、コントロールのユーザーが要求したときに、コントロールのユーザーがプロパティと構成メンバー関数の現在の値を要求する場合は、Get メンバー関数を呼び出します。  渡された値を検証したり、読み取り専用または書き込み専用プロパティ型のプロパティの値を実行時中に計算するか、実際のプロパティを変更する前に、コントロールのユーザーを実装する必要がある場合は、この実装を使用します。  この実装のディスパッチ マップ エントリ マクロは [DISP\_PROPERTY\_EX](../Topic/DISP_PROPERTY_EX.md)です。  以下のセクションで、[Add a Custom のプロパティへのプロパティの追加ウィザードを使用して](#_core_using_classwizard_to_add_a_custom_property)は、この実装を示すために CircleOffset のカスタム プロパティを使用します。  
+     This implementation consists of a pair of member functions in the control class. The Get/Set Methods implementation automatically calls the Get member function when the control's user requests the current value of the property and the Set member function when the control's user requests that the property be changed. Use this implementation when you need to compute the value of a property during run time, validate a value passed by the control's user before changing the actual property, or implement a read- or write-only property type. The dispatch map entry macro for this implementation is [DISP_PROPERTY_EX](../mfc/reference/dispatch-maps.md#disp_property_ex). The following section, [Using the Add Property Wizard to Add a Custom Property](#_core_using_classwizard_to_add_a_custom_property), uses the CircleOffset custom property to demonstrate this implementation.  
   
--   パラメーター化されたな実装  
+-   Parameterized Implementation  
   
-     パラメーター化されたな実装はプロパティの追加ウィザードによってサポートされます。  パラメーター化されたプロパティが \(検索プロパティの配列とも呼ばれる\) コントロールの単一のプロパティを使用して、一連の値にアクセスするために使用できます。  この実装のディスパッチ マップ エントリ マクロは `DISP_PROPERTY_PARAM`です。  この型の実装の詳細については、" MFC ActiveX コントロールの [パラメーター化されたプロパティの実装](../mfc/mfc-activex-controls-advanced-topics.md) を参照します: 高度なトピック。  
+     Parameterized implementation is supported by the Add Property Wizard. A parameterized property (sometimes called a property array) can be used to access a set of values through a single property of your control. The dispatch map entry macro for this implementation is `DISP_PROPERTY_PARAM`. For more information on implementing this type, see [Implementing a Parameterized Property](../mfc/mfc-activex-controls-advanced-topics.md) in the article ActiveX Controls: Advanced Topics.  
   
-##  <a name="_core_using_classwizard_to_add_a_custom_property"></a> Add a Custom のプロパティへのプロパティの追加ウィザードを使用して  
- 次の手順では、カスタム プロパティ、Get\/Set メソッドの実装を使用する CircleOffset を追加することを示します。  CircleOffset のカスタム プロパティは、コントロールのユーザーがコントロールの外接する四角形の中央の範囲をオフセットすることができます。  実装を持つカスタム プロパティ以外の追加する手順は非常に似ています。get または set メソッド。  
+##  <a name="_core_using_classwizard_to_add_a_custom_property"></a> Using the Add Property Wizard to Add a Custom Property  
+ The following procedure demonstrates adding a custom property, CircleOffset, which uses the Get/Set Methods implementation. The CircleOffset custom property allows the control's user to offset the circle from the center of the control's bounding rectangle. The procedure for adding custom properties with an implementation other than Get/Set Methods is very similar.  
   
- これと同じプロシージャが目的の他にカスタム プロパティを追加することもできます。  CircleOffset プロパティ名とパラメーターのカスタム プロパティの名前で置き換えます。  
+ This same procedure can also be used to add other custom properties you want. Substitute your custom property name for the CircleOffset property name and parameters.  
   
-#### CircleOffset のカスタム プロパティの追加ウィザードのプロパティを追加するには  
+#### <a name="to-add-the-circleoffset-custom-property-using-the-add-property-wizard"></a>To add the CircleOffset custom property using the Add Property Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これは [プロパティ 追加ウィザード](../ide/names-add-property-wizard.md)を開きます。  
+     This opens the [Add Property Wizard](../ide/names-add-property-wizard.md).  
   
-5.  **プロパティ名** ボックスで、`CircleOffset`を入力します。  
+5.  In the **Property Name** box, type `CircleOffset`.  
   
-6.  **Implementation Type**の場合、クリック **Get\/Set メソッドの設定**。  
+6.  For **Implementation Type**, click **Get/Set Methods**.  
   
-7.  **プロパティの種類** ボックスで、**short**を選択します。  
+7.  In the **Property Type** box, select **short**.  
   
-8.  型の一意の名前は Set 関数取得または既定の名前を受け入れます。  
+8.  Type unique names for your Get and Set Functions, or accept the default names.  
   
-9. \[完了\] をクリックします。  
+9. Click **Finish**.  
   
-##  <a name="_core_classwizard_changes_for_custom_properties"></a> カスタム プロパティのプロパティ ウィザードの変更を追加します。  
- CircleOffset にカスタム プロパティを追加すると、プロパティの追加ウィザードはヘッダーを変更します。コントロール クラスの H\) と実装 \(.cpp\) ファイル。  
+##  <a name="_core_classwizard_changes_for_custom_properties"></a> Add Property Wizard Changes for Custom Properties  
+ When you add the CircleOffset custom property, the Add Property Wizard makes changes to the header (.H) and the implementation (.CPP) files of the control class.  
   
- 次の行が追加されます。2 個の関数を宣言する H ファイルは `GetCircleOffset` と `SetCircleOffset`という:  
+ The following lines are added to the .H file to declare two functions called `GetCircleOffset` and `SetCircleOffset`:  
   
- [!code-cpp[NVC_MFC_AxUI#25](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-properties_1.h)]  
+ [!code-cpp[NVC_MFC_AxUI#25](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_1.h)]  
   
- 以下は、コントロールの .IDL ファイルに追加します:  
+ The following line is added to your control's .IDL file:  
   
- [!code-cpp[NVC_MFC_AxUI#26](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-properties_2.idl)]  
+ [!code-cpp[NVC_MFC_AxUI#26](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_2.idl)]  
   
- この行は、プロパティの追加ウィザードのメソッドおよびプロパティの一覧のメソッドの位置にある特定の ID 番号 CircleOffset のプロパティに割り当てます。  
+ This line assigns the CircleOffset property a specific ID number, taken from the method's position in the methods and properties list of the Add Property Wizard.  
   
- さらに 2 コントロールのハンドラー関数に CircleOffset のプロパティをマップするには、次の行はディスパッチ マップに \(コントロール クラスの .cpp ファイルに\) :追加されます  
+ In addition, the following line is added to the dispatch map (in the .CPP file of the control class) to map the CircleOffset property to the control's two handler functions:  
   
- [!code-cpp[NVC_MFC_AxUI#27](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-properties_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#27](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_3.cpp)]  
   
- 最後に、`GetCircleOffset` の実装と `SetCircleOffset` 関数はコントロールの .cpp ファイルの末尾に追加されます。  ほとんどの場合、プロパティの値を返すには、Get 関数を変更します。  Set 関数は通常、プロパティの変更の前または後にも実行されるコードが含まれます。  
+ Finally, the implementations of the `GetCircleOffset` and `SetCircleOffset` functions are added to the end of the control's .CPP file. In most cases, you will modify the Get function to return the value of the property. The Set function will usually contain code that should be executed either before or after the property changes.  
   
- [!code-cpp[NVC_MFC_AxUI#28](../mfc/codesnippet/CPP/mfc-activex-controls-adding-custom-properties_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#28](../mfc/codesnippet/cpp/mfc-activex-controls-adding-custom-properties_4.cpp)]  
   
- プロパティの追加ウィザードが Set 関数の本体に、[SetModifiedFlag](../Topic/COleControl::SetModifiedFlag.md)に、自動的に呼び出しを追加することに注意してください。  この関数を呼び出すと、変更されるようにコントロールを示します。  コントロールが変更された場合、新しい状態はコンテナーを保存したときに保存されます。  この関数は、コントロールの永続的な状態の一部として保存されているプロパティの値が変更されるときに呼び出されます。  
+ Note that the Add Property Wizard automatically adds a call, to [SetModifiedFlag](../mfc/reference/colecontrol-class.md#setmodifiedflag), to the body of the Set function. Calling this function marks the control as modified. If a control has been modified, its new state will be saved when the container is saved. This function should be called whenever a property, saved as part of the control's persistent state, changes value.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール : プロパティ](../mfc/mfc-activex-controls-properties.md)   
- [MFC ActiveX コントロール : メソッド](../mfc/mfc-activex-controls-methods.md)   
- [COleControl クラス](../mfc/reference/colecontrol-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Controls: Properties](../mfc/mfc-activex-controls-properties.md)   
+ [MFC ActiveX Controls: Methods](../mfc/mfc-activex-controls-methods.md)   
+ [COleControl Class](../mfc/reference/colecontrol-class.md)
+

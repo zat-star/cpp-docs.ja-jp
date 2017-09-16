@@ -1,200 +1,236 @@
 ---
-title: "テクニカル ノート 53: DAO データベース クラス用カスタム DFX ルーチン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.dfx"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カスタム DFX ルーチン [C++]"
-  - "DAO [C++], クラス"
-  - "DAO [C++], MFC"
-  - "データベース クラス [C++], DAO"
-  - "DFX (DAO レコード フィールド エクスチェンジ) [C++]"
-  - "DFX (DAO レコード フィールド エクスチェンジ) [C++], カスタム ルーチン"
-  - "MFC [C++], DAO および"
-  - "TN053"
+title: 'TN053: Custom DFX Routines for DAO Database Classes | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.dfx
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, DAO and
+- database classes [MFC], DAO
+- DAO [MFC], MFC
+- DFX (DAO record field exchange) [MFC], custom routines
+- TN053
+- DAO [MFC], classes
+- DFX (DAO record field exchange) [MFC]
+- custom DFX routines [MFC]
 ms.assetid: fdcf3c51-4fa8-4517-9222-58aaa4f25cac
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# テクニカル ノート 53: DAO データベース クラス用カスタム DFX ルーチン
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 673f49b1588721eb42b33af035cc932cdd383c6a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn053-custom-dfx-routines-for-dao-database-classes"></a>TN053: Custom DFX Routines for DAO Database Classes
 > [!NOTE]
->  Visual C\+\+ .NET では、Visual C\+\+ 開発環境およびウィザードでは DAO はサポートされなくなりました \(DAO クラスは含まれているので、このクラスを使うことはできます\)。  Microsoft は、新しいプロジェクトに [OLE DB テンプレート](../Topic/OLE%20DB%20Templates.md) または [ODBC と MFC](../data/odbc/odbc-and-mfc.md) を使用することをお勧めします。  DAO は、既存のアプリケーションを保守するためだけに使用してください。  
+>  As of Visual C++ .NET, the Visual C++ environment and wizards no longer support DAO (although the DAO classes are included and you can still use them). Microsoft recommends that you use [OLE DB Templates](../data/oledb/ole-db-templates.md) or [ODBC and MFC](../data/odbc/odbc-and-mfc.md) for new projects. You should only use DAO in maintaining existing applications.  
   
- このテクニカル ノートは DAO レコード フィールド エクスチェンジ \(RFX\) 関数の機能について説明します。  DFX ルーチンで実行されていることを理解しやすいように、`DFX_Text` 関数は例として詳しく説明します。  このテクニカル ノートに追加情報源として、ユーザー DFX 関数他のコードを調べることができます。  カスタム RFX ルーチンを可能性があるほど、カスタム DFX ルーチンを頻繁に必要としません \(ODBC データベース クラスで使用される\) が必要です。  
+ This technical note describes the DAO record field exchange (DFX) mechanism. To help understand what is happening in the DFX routines, the `DFX_Text` function will be explained in detail as an example. As an additional source of information to this technical note, you can examine the code for the other the individual DFX functions. You probably will not need a custom DFX routine as often as you might need a custom RFX routine (used with ODBC database classes).  
   
- このテクニカル ノートは含まれています:  
+ This technical note contains:  
   
--   DFX の概要  
+-   DFX Overview  
   
--   DAO レコード フィールド エクスチェンジと動的バインディングを使用して[例](#_mfcnotes_tn053_examples)  
+- [Examples](#_mfcnotes_tn053_examples) using DAO Record Field Exchange and Dynamic Binding  
   
--   [DFX のしくみについて](#_mfcnotes_tn053_how_dfx_works)  
+- [How DFX Works](#_mfcnotes_tn053_how_dfx_works)  
   
--   [カスタム DFX ルーチンが何を](#_mfcnotes_tn053_what_your_custom_dfx_routine_does)  
+- [What Your Custom DFX Routine Does](#_mfcnotes_tn053_what_your_custom_dfx_routine_does)  
   
--   [DFX\_Text の詳細](#_mfcnotes_tn053_details_of_dfx_text)  
+- [Details of DFX_Text](#_mfcnotes_tn053_details_of_dfx_text)  
   
- **DFX の概要**  
+ **DFX Overview**  
   
- `CDaoRecordset` クラスを使用すると DAO レコード フィールド エクスチェンジ \(RFX\) 関数の機能がデータを取得すると更新する手順を簡素化するために使用されます。  プロセスは `CDaoRecordset` クラスのデータ メンバーを使用して簡略化されます。  `CDaoRecordset`から派生して、テーブルまたはクエリの各フィールドを表す派生クラスにデータ メンバーを追加できます。  この「静的バインディング」機構は単純ですが、すべてのアプリケーションに対して選択したデータ フェッチ\/更新メソッドではない可能性があります。  DFX は現在のレコードが変更されるたびに、バインドされたフィールドを取得します。  通貨が変更されたときに、フィールドをフェッチする必要なくパフォーマンス センシティブ アプリケーションを開発する場合、`CDaoRecordset::GetFieldValue` して「動的バインディング」と `CDaoRecordset::SetFieldValue` はデータ アクセスの選択モードである場合があります。  
+ The DAO record field exchange mechanism (DFX) is used to simplify the procedure of retrieving and updating data when using the `CDaoRecordset` class. The process is simplified using data members of the `CDaoRecordset` class. By deriving from `CDaoRecordset`, you can add data members to the derived class representing each field in a table or query. This "static binding" mechanism is simple, but it may not be the data fetch/update method of choice for all applications. DFX retrieves every bound field each time the current record is changed. If you are developing a performance-sensitive application that does not require fetching every field when currency is changed, "dynamic binding" via `CDaoRecordset::GetFieldValue` and `CDaoRecordset::SetFieldValue` may be the data access method of choice.  
   
 > [!NOTE]
->  DFX と動的バインディングは同時に指定できなくないです。したがって、静的リソース参照と動的バインディングを組み合わせた使用を使用できます。  
+>  DFX and dynamic binding are not mutually exclusive, so a hybrid use of static and dynamic binding can be used.  
   
- **例 DAO レコード フィールド エクスチェンジのみの使用**  
+## <a name="_mfcnotes_tn053_examples"></a> Example 1 — Use of DAO Record Field Exchange only  
   
- \(`CDaoRecordset` —開く派生クラス `CMySet` "を既に仮定します\)  
+ (assumes `CDaoRecordset` — derived class `CMySet` already open)  
   
 ```  
 // Add a new record to the customers table  
-myset.AddNew();  
-myset.m_strCustID = _T("MSFT");  
-myset.m_strCustName = _T("Microsoft");  
-myset.Update();  
+myset.AddNew();
+
+myset.m_strCustID = _T("MSFT");
+
+myset.m_strCustName = _T("Microsoft");
+
+myset.Update();
 ```  
   
- **例 2 \- 動的バインディングのみの使用**  
+ **Example 2 — Use of dynamic binding only**  
   
- \(`CDaoRecordset` クラス、`rs`を使用していて、既に開かれています\)  
+ (assumes using `CDaoRecordset` class, `rs`, and it is already open)  
   
 ```  
 // Add a new record to the customers table  
-COleVariant  varFieldValue1 ( _T("MSFT"), VT_BSTRT );  
-//Note: VT_BSTRT flags string type as ANSI, instead of UNICODE default  
-COleVariant  varFieldValue2  (_T("Microsoft"), VT_BSTRT );  
-rs.AddNew();  
-rs.SetFieldValue(_T("Customer_ID"), varFieldValue1);  
-rs.SetFieldValue(_T("Customer_Name"), varFieldValue2);  
-rs.Update();  
+COleVariant  varFieldValue1 (_T("MSFT"),
+    VT_BSTRT);
+
+//Note: VT_BSTRT flags string type as ANSI,
+    instead of UNICODE default  
+COleVariant  varFieldValue2  (_T("Microsoft"),
+    VT_BSTRT);
+
+rs.AddNew();
+
+rs.SetFieldValue(_T("Customer_ID"),
+    varFieldValue1);
+
+rs.SetFieldValue(_T("Customer_Name"),
+    varFieldValue2);
+
+rs.Update();
 ```  
   
- **例 DAO レコード フィールド エクスチェンジと動的バインディングの使用**  
+ **Example 3 — Use of DAO Record Field Exchange and dynamic binding**  
   
- \(`CDaoRecordset`の参照の従業員データ\-派生クラス `emp`を仮定します\)  
+ (assumes browsing employee data with `CDaoRecordset`-derived class `emp`)  
   
 ```  
 // Get the employee's data so that it can be displayed  
-emp.MoveNext();  
-  
+emp.MoveNext();
+
+ 
 // If user wants to see employee's photograph,  
 // fetch it  
 COleVariant varPhoto;  
 if (bSeePicture)  
-   emp.GetFieldValue(_T("photo"), varPhoto);  
-  
+    emp.GetFieldValue(_T("photo"),
+    varPhoto);
+
+ 
 // Display the data  
 PopUpEmployeeData(emp.m_strFirstName,  
-    emp.m_strLastName, varPhoto);  
+    emp.m_strLastName,
+    varPhoto);
 ```  
   
- **DFX のしくみについて**  
+## <a name="_mfcnotes_tn053_how_dfx_works"></a> How DFX Works  
   
- DFX の機能は、MFC ODBC クラスによって使用されるレコード フィールド エクスチェンジ \(RFX\) の機能と同様に機能します。  RFX と DFX の原則は同じですが、多数の内部違いがあります。  DFX 関数のデザインは、すべてのコードがユーザー DFX ルーチンによって共有されるようになりました。  最上位 DFX でさまざまな項目のみを表示します。  
+ The DFX mechanism works in a similar fashion to the record field exchange (RFX) mechanism used by the MFC ODBC classes. The principles of DFX and RFX are the same but there are numerous internal differences. The design of the DFX functions was such that virtually all the code is shared by the individual DFX routines. At the highest level DFX only does a few things.  
   
--   DFX は SQL **SELECT** 句および SQL **PARAMETERS** 句を必要に応じて構築します。  
+-   DFX constructs the SQL **SELECT** clause and SQL **PARAMETERS** clause if necessary.  
   
--   DFX は DAO の `GetRows` 関数 \(の後にこれ以上\) で使用される結合の構造を構築します。  
+-   DFX constructs the binding structure used by DAO's `GetRows` function (more on this later).  
   
--   DFX \(ダブル バッファリングを使用する場合\) が変更されたフィールドを検出するために使用されるデータ バッファーを管理します。  
+-   DFX manages the data buffer used to detect dirty fields (if double-buffering is being used)  
   
--   DFX は更新の **NULL** と **DIRTY** 状態の配列と設定値を必要に応じて管理します。  
+-   DFX manages the **NULL** and **DIRTY** status arrays and sets values if necessary on updates.  
   
- DFX の機能の中核となるの `CDaoRecordset` の派生クラスの `DoFieldExchange` 関数です。  この関数は、適切な型のユーザー操作の DFX の関数呼び出しをディスパッチします。  `DoFieldExchange` を内部 MFC 関数を呼び出す前に操作の種類を設定します。  次のリストは、さまざまなアクションの種類と簡単な説明が表示されます。  
+ At the heart of the DFX mechanism is the `CDaoRecordset` derived class's `DoFieldExchange` function. This function dispatches calls to the individual DFX functions of an appropriate operation type. Before calling `DoFieldExchange` the internal MFC functions set the operation type. The following list shows the various operation types and a brief description.  
   
-|操作|説明|  
-|--------|--------|  
-|**AddToParameterList**|ビルド パラメーター句|  
-|**AddToSelectList**|ビルドは句を選択します。|  
-|**BindField**|結合の構造を設定します。|  
-|**BindParam**|パラメーター値を設定します。|  
-|**Fixup**|設定の空白の状態|  
-|**AllocCache**|ダーティ チェックのキャッシュを割り当てます。|  
-|**StoreField**|現在のレコードをキャッシュに保存します。|  
-|**LoadField**|復元がメンバー値をキャッシュ|  
-|**FreeCache**|キャッシュを解放します。|  
-|`SetFieldNull`|フィールド ステータス値を & null に設定します。|  
-|**MarkForAddNew**|変更されたフィールドを受け入れない場合 PSEUDO NULL マークします。|  
-|**MarkForEdit**|キャッシュと一致しない場合は変更されたフィールドをマークします。|  
-|**SetDirtyField**|フィールドの値が変更されたことを示すマークを設定します。|  
+|Operation|Description|  
+|---------------|-----------------|  
+|**AddToParameterList**|Builds PARAMETERS clause|  
+|**AddToSelectList**|Builds SELECT clause|  
+|**BindField**|Sets up binding structure|  
+|**BindParam**|Sets parameter values|  
+|**Fixup**|Sets NULL status|  
+|**AllocCache**|Allocates cache for dirty check|  
+|**StoreField**|Saves current record to cache|  
+|**LoadField**|Restores cache to member values|  
+|**FreeCache**|Frees cache|  
+|`SetFieldNull`|Sets field status & value to NULL|  
+|**MarkForAddNew**|Marks fields dirty if not PSEUDO NULL|  
+|**MarkForEdit**|Marks fields dirty if don't match cache|  
+|**SetDirtyField**|Sets field values marked as dirty|  
   
- 次のセクションでは、各アクションは `DFX_Text`について詳しく説明します。  
+ In the next section, each operation will be explained in more detail for `DFX_Text`.  
   
- DAO レコード フィールド エクスチェンジ プロセスについて理解する最も重要な機能は `CDaoRecordset` オブジェクトの `GetRows` 関数を使用します。  DAO `GetRows` 関数が複数の方法で使用できます。  このテクニカル ノートは簡単にこのテクニカル ノートのスコープ外にある場合にのみ `GetRows` について説明します。  
+ The most important feature to understand about the DAO record field exchange process is that it uses the `GetRows` function of the `CDaoRecordset` object. The DAO `GetRows` function can work in several ways. This technical note will only briefly describe `GetRows` as it is outside of the scope of this technical note.  
   
- DAO `GetRows` は複数の方法で使用できます。  
+ DAO `GetRows` can work in several ways.  
   
--   これは、複数のデータ レコードと複数のフィールドを一度にフェッチできます。  これは、大規模なデータ構造を処理することで、より高速なデータ アクセスと各フィールドに適切なオフセットと構造体の各データ レコードを有効にします。  MFC はこの機能をフェッチする複数のレコードを使用しません。  
+-   It can fetch multiple records and multiple fields of data at one time. This allows for faster data access with the complication of dealing with a large data structure and the appropriate offsets to each field and for each record of data in the structure. MFC does not take advantage of this multiple record fetching mechanism.  
   
--   `GetRows` が操作するもう一つの方法は、1 種類のデータ レコードの各フィールドを取得したデータのバインド アドレスを指定することをプログラマが持つことです。  
+-   Another way `GetRows` can work is to allow programmers to specify binding addresses for the retrieved data of each field for one record of data.  
   
--   DAO は、可変長の列の呼び出し元を「コールバック」呼び出し元がメモリを割り当てることができます。  2 番目の機能に `CDaoRecordset` クラス \(派生クラス\) のメンバーにデータの部数を最小限に抑えるため、データを直接ストレージを使用することの利点があります。  2 番目の機能は `CDaoRecordset` の派生クラスのデータ メンバーにバインドする MFC メソッドの使用です。  
+-   DAO will also "call back" into the caller for variable length columns in order to allow the caller to allocate memory. This second feature has the benefit of minimizing the number of copies of data as well as allowing direct storage of data into members of a class (the `CDaoRecordset` derived class). This second mechanism is the method MFC uses to bind to data members in `CDaoRecordset` derived classes.  
   
-##  <a name="_mfcnotes_tn053_what_your_custom_dfx_routine_does"></a> カスタム DFX ルーチンが何を  
- 、DFX 関数で実装される正常に `GetRows`を呼び出すための最も重要な操作が必要なデータ構造を設定する機能である必要があります。この説明では顕著です。  他のいくつかの操作 DFX 関数と同様にサポートする必要があること `GetRows` の呼び出しで正しく準備する重要または複雑な None 同様に。  
+##  <a name="_mfcnotes_tn053_what_your_custom_dfx_routine_does"></a> What Your Custom DFX Routine Does  
+ It is apparent from this discussion that the most important operation implemented in any DFX function must be the ability to set up the required data structures to successfully call `GetRows`. There are a number of other operations that a DFX function must support as well, but none as important or complex as correctly preparing for the `GetRows` call.  
   
- DFX を使用すると、オンライン ドキュメントで説明されています。  基本的に、2 個の要件があります。  最初に、メンバーは、バインドされたフィールドとパラメーターの `CDaoRecordset` の派生クラスに追加する必要があります。  この `CDaoRecordset::DoFieldExchange` の後でオーバーライドする必要があります。  メンバーのデータ型が重要であることに注意してください。  これは、データベースのフィールドのデータに一致するか、またはその型に変換可能な一つ以上のようになります。  データベースなどの数値フィールドは、長整数などの `CString` のメンバーにテキストを送信し、境界は、常に変換できるデータベースのテキスト フィールドです長整数のメンバーへの長整数および境界などの数値表現には、変換されていない可能性があります。   \(MFC\) ではなく、DAO の Microsoft Jet データベース エンジンが変換を行います。  
+ The use of DFX is described in the online documentation. Essentially, there are two requirements. First, members must be added to the `CDaoRecordset` derived class for each bound field and parameter. Following this `CDaoRecordset::DoFieldExchange` should be overridden. Note that the data type of the member is important. It should match the data from the field in the database or at least be convertible to that type. For example a numeric field in database, such as a long integer, can always be converted to text and bound to a `CString` member, but a text field in a database may not necessarily be converted to a numeric representation, such as long integer and bound to a long integer member. DAO and the Microsoft Jet database engine are responsible for the conversion (rather than MFC).  
   
-##  <a name="_mfcnotes_tn053_details_of_dfx_text"></a> DFX\_Text の詳細  
- 前述のとおり、DFX 作業を例に対する操作方法を説明する最善の方法。  このため `DFX_Text` の内部に移動と DFX の少なくとも基礎的な機能を提供するためのさまざまな効果的な必要があります。  
+##  <a name="_mfcnotes_tn053_details_of_dfx_text"></a> Details of DFX_Text  
+ As mentioned previously, the best way to explain how DFX works is to work through an example. For this purpose going through the internals of `DFX_Text` should work quite well to help provide at least a basic understanding of DFX.  
   
  **AddToParameterList**  
- この操作は、Jet に必要な SQL **PARAMETERS** 句 \(「`Parameters <param name>, <param type> ... ;`」\) をビルドします。  各パラメーターには名前があり、入力されます \(RFX 関数呼び出しで指定されている\)。  個々の型名を参照するように関数の **CDaoFieldExchange::AppendParamType** 関数を参照してください。  `DFX_Text`の場合、使用する型が `text`です。  
+ This operation builds the SQL **PARAMETERS** clause ("`Parameters <param name>, <param type> ... ;`") required by Jet. Each parameter is named and typed (as specified in the RFX call). See the function **CDaoFieldExchange::AppendParamType** function to see the names of the individual types. In the case of `DFX_Text`, the type used is `text`.  
   
  **AddToSelectList**  
- SQL **SELECT** 句を作成します。  これは DFX の呼び出しで指定された項目の名前が単に付けられているため、非常に単純です \(「`SELECT <column name>, ...`」\)。  
+ Builds the SQL **SELECT** clause. This is pretty straight forward as the column name specified by the DFX call is simply appended ("`SELECT <column name>, ...`").  
   
  **BindField**  
- 操作の最も複雑です。  前に述べたように、これ `GetRows` で使われる DAO の結合の構造が設定されている場所です。  `DFX_Text` のコードから参照できるように、構造体の情報の種類に使われる DAO の型が表示されます。`DFX_Text`の場合は**DAO\_CHAR** または **DAO\_WCHAR**\)。  また、使用されるバインディングの種類はセットアップされます。  前のセクションで `GetRows` が一時的にのみ説明していますが、MFC で使用するバインディングの種類が直接アドレス バインディング \(常に**DAOBINDING\_DIRECT**\) であることを示すだけです。  また、可変長の列のバインディング \(`DFX_Text`など\) をコールバックのバインディングに MFC でメモリの割り当てを制御し、適切な長さのアドレスを指定するために使用されます。  これがデータを格納するような意味は、MFC DAO を「常に指示できます。位置に」で直接メンバー変数へのバインドを許可します。  結合の構造の残りの部分には、列バインディングのメモリ割り当てにコールバック関数と型のアドレスなどが格納されます \(項目の名前によってバインドする\)。  
+ The most complex of the operations. As mentioned previously this is where the DAO binding structure used by `GetRows` is set up. As you can see from the code in `DFX_Text` the types of information in the structure include the DAO type used (**DAO_CHAR** or **DAO_WCHAR** in the case of `DFX_Text`). Additionally, the type of binding used is also set up. In an earlier section `GetRows` was described only briefly, but it was sufficient to explain that the type of binding used by MFC is always direct address binding (**DAOBINDING_DIRECT**). In addition for variable-length column binding (like `DFX_Text`) callback binding is used so that MFC can control the memory allocation and specify an address of the correct length. What this means is that MFC can always tell DAO "where" to put the data, thus allowing binding directly to member variables. The rest of the binding structure is filled in with things like the address of the memory allocation callback function and the type of column binding (binding by column name).  
   
  **BindParam**  
- つまり、パラメーター メンバーに指定されるパラメーター値を使用して `SetParamValue` を呼び出す単純な操作です。  
+ This is a simple operation that calls `SetParamValue` with the parameter value specified in your parameter member.  
   
  **Fixup**  
- 各フィールドの **NULL** の状態を設定します。  
+ Fills in the **NULL** status for each field.  
   
  `SetFieldNull`  
- この操作は **NULL** としてのみ各フィールド ステータスを示し、**PSEUDO\_NULL**にメンバー変数の値を設定します。  
+ This operation only marks each field status as **NULL** and sets the member variable's value to **PSEUDO_NULL**.  
   
  **SetDirtyField**  
- 各フィールドに指定されたダーティの `SetFieldValue` を呼び出します。  
+ Calls `SetFieldValue` for each field marked dirty.  
   
- 残りのすべての操作がデータ キャッシュの使用だけが処理されます。  データ キャッシュは特定の操作を簡単にするために使用する、現在のレコードの追加バッファーです。  たとえば、「ダーティ」フィールドは自動的に検出できます。  オンライン ドキュメントで説明されているように、これは完全にフィールドまたはレベルでオフにできます。  バッファーの実装、マップを使用します。  このマップの「バインドされた」フィールドのアドレスとデータの動的に割り当てられたコピー使用されます \(または `CDaoRecordset` をデータ メンバーを派生しました\) 調和させるために使用されます。  
+ All the remaining operations only deal with using the data cache. The data cache is an extra buffer of the data in the current record that is used to make certain things simpler. For instance, "dirty" fields can be automatically detected. As described in the online documentation it can be turned off completely or at the field level. The implementation of the buffer utilizes a map. This map is used to match up dynamically allocated copies of the data with the address of the "bound" field (or `CDaoRecordset` derived data member).  
   
  **AllocCache**  
- 動的にキャッシュ フィールドに値を割り当てたり、マップに追加します。  
+ Dynamically allocates the cached field value and adds it to the map.  
   
  **FreeCache**  
- キャッシュ フィールド値を削除し、マップから削除します。  
+ Deletes the cached field value and removes it from the map.  
   
  **StoreField**  
- データ キャッシュに現在のフィールドの値をコピーします。  
+ Copies the current field value into the data cache.  
   
  **LoadField**  
- フィールド メンバーにキャッシュされた値をコピーします。  
+ Copies the cached value into the field member.  
   
  **MarkForAddNew**  
- 現在のフィールドの値が、**NULL** および必要に応じてマーク、ダーティかどうかを確認します。  
+ Checks if current field value is non-**NULL** and marks it dirty if necessary.  
   
  **MarkForEdit**  
- データ キャッシュに、現在のフィールドの値が変更されたとマークを必要に応じて比較します。  
+ Compares current field value with data cache and marks dirty if necessary.  
   
 > [!TIP]
->  基本データ型の既存の DFX ルーチンのカスタム DFX ルーチンをシミュレートします。  
+>  Model your custom DFX routines on the existing DFX routines for standard data types.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

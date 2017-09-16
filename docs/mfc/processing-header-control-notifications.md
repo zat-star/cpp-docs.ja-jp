@@ -1,35 +1,54 @@
 ---
-title: "ヘッダー コントロール通知の処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CHeaderCtrl クラス, 処理 (通知を)"
-  - "コントロール [MFC], ヘッダー"
-  - "ヘッダー コントロール通知"
-  - "ヘッダー コントロール, 処理 (通知を)"
-  - "通知, 処理 (CHeaderCtrl の)"
+title: Processing Header-Control Notifications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CHeaderCtrl class [MFC], processing notifications
+- controls [MFC], header
+- notifications [MFC], processing for CHeaderCtrl
+- header controls [MFC], processing notifications
+- header control notifications
 ms.assetid: e6c6af7c-d458-4d33-85aa-48014ccde5f6
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ヘッダー コントロール通知の処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: da13a2c3c352a7688242aa84c138dc1253b062a7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ビューやダイアログ クラスで処理したいすべてのヘッダー コントロール[CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md) \(\) の通知メッセージの switch ステートメントと [OnChildNotify](../Topic/CWnd::OnChildNotify.md) のハンドラー関数を作成するには、プロパティ ウィンドウを使用します。[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)を参照してください。  通知が親ウィンドウにユーザーがヘッダー項目をクリックするか、ダブルクリックすると、インポートされた項目間の区分線が使用されます。  
+---
+# <a name="processing-header-control-notifications"></a>Processing Header-Control Notifications
+In your view or dialog class, use the Properties window to create an [OnChildNotify](../mfc/reference/cwnd-class.md#onchildnotify) handler function with a switch statement for any header-control ([CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)) notification messages you want to handle (see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md)). Notifications are sent to the parent window when the user clicks or double-clicks a header item, drags a divider between items, and so on.  
   
- ヘッダー コントロールに関連付けられた通知メッセージが [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [ヘッダー コントロールの参照](http://msdn.microsoft.com/library/windows/desktop/bb775239) に一覧表示されます。  
+ The notification messages associated with a header control are listed in [Header Control Reference](http://msdn.microsoft.com/library/windows/desktop/bb775239) in the Windows SDK.  
   
-## 参照  
- [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CHeaderCtrl](../mfc/using-cheaderctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

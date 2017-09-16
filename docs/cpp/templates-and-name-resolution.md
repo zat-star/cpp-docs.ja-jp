@@ -1,85 +1,106 @@
 ---
-title: "テンプレートと名前解決 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: Templates and Name Resolution | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: 519ba7b5-cd25-4549-865a-9a7b9dffdc28
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# テンプレートと名前解決
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 83e4c6681f49b097c412040364d88bf8843ecbc5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-テンプレート定義では、3 種類の名前があります。  
+---
+# <a name="templates-and-name-resolution"></a>Templates and Name Resolution
+
+In template definitions, there are three types of names.  
   
--   ローカルに宣言された名前。これには、テンプレート自体の名前や、テンプレート定義内で宣言されている名前も含まれます。  
+-   Locally declared names, including the name of the template itself and any names declared inside the template definition.  
   
--   テンプレート定義の外側のスコープ内の名前。  
+-   Names from the enclosing scope outside the template definition.  
   
--   テンプレート引数になんらかの形で依存する名前 \(依存名とも呼ばれます\)。  
+-   Names that depend in some way on the template arguments, referred to as dependent names.  
   
- 最初の 2 つの名前もクラスと関数のスコープに関係しますが、テンプレート定義では、依存名によって高まる複雑さに対処するために、名前解決の特別な規則が必要になります。  これは、使用されるテンプレート引数によって依存名の型がまったく異なることがあるので、テンプレートがインスタンス化されるまで、コンパイラにはこれらの名前についての情報がほとんどないことによります。  非依存名は、通常の規則に従って、テンプレートの定義時点で検索されます。  これらの名前は、テンプレートの引数に依存しないので、テンプレートの特殊化すべてに対して 1 回参照されます。  依存名はテンプレートがインスタンス化されるまで検索されず、特殊化ごとに個別に検索されます。  
+ While the first two names also pertain to class and function scopes, special rules for name resolution are required in template definitions to deal with the added complexity of dependent names. This is because the compiler knows little about these names until the template is instantiated, because they could be totally different types depending on which template arguments are used. Nondependent names are looked up according to the usual rules and at the point of definition of the template. These names, being independent of the template arguments, are looked up once for all template specializations. Dependent names are not looked up until the template is instantiated and are looked up separately for each specialization.  
   
- 型がテンプレート引数に依存する場合、その型は依存する型です。  具体的には、以下に当てはまるものは依存する型になります。  
+ A type is dependent if it depends on the template arguments. Specifically, a type is dependent if it is:  
   
--   テンプレート引数自体。  
+-   The template argument itself:  
   
-    ```  
+    ```cpp
     T  
     ```  
   
--   依存する型を含む修飾を持つ修飾名。  
+-   A qualified name with a qualification including a dependent type:  
   
-    ```  
+    ```cpp
     T::myType  
     ```  
   
--   非修飾部で依存する型が特定される場合の修飾名。  
+-   A qualified name if the unqualified part identifies a dependent type:  
   
-    ```  
+    ```cpp
     N::T  
     ```  
   
--   基本型が依存する型である const または volatile 型。  
+-   A const or volatile type for which the base type is a dependent type:  
   
-    ```  
+    ```cpp
     const T  
     ```  
   
--   依存する型に基づくポインター、参照、配列、または関数ポインター型。  
+-   A pointer, reference, array, or function pointer type based on a dependent type:  
   
-    ```  
+    ```cpp
     T *, T &, T [10], T (*)()  
     ```  
   
--   サイズがテンプレート パラメーターに基づく配列。  
+-   An array whose size is based on a template parameter:  
   
-    ```  
+    ```cpp
     template <int arg> class X {  
     int x[arg] ; // dependent type  
     }  
     ```  
   
--   テンプレート パラメーターから構築されたテンプレート型。  
+-   a template type constructed from a template parameter:  
   
-    ```  
+    ```cpp
     T<int>, MyTemplate<T>  
     ```  
   
-## 型の依存性と値の依存性  
- テンプレート パラメーターに依存する名前と式は、テンプレート パラメーターが型パラメーターであるか値パラメーターであるかによって、型依存か値依存かに分類されます。  また、テンプレート内で宣言された、テンプレート引数に依存する型を持つ識別子は、整数型や列挙型が値に依存する式で初期化されるのと同様に、値依存であると見なされます。  
+## <a name="type-dependence-and-value-dependence"></a>Type Dependence and Value Dependence
+
+ Names and expressions dependent on a template parameter are categorized as type dependent or value dependent, depending on whether the template parameter is a type parameter or a value parameter. Also, any identifiers declared in a template with a type dependent on the template argument are considered value dependent, as is a integral or enumeration type initialized with a value-dependent expression.  
   
- 型に依存する式と値に依存する式は、型依存または値依存である変数が関係する式です。  これらの式は、テンプレートに使用されたパラメーターに応じて異なるセマンティクスを持つことができます。  
+ Type-dependent and value-dependent expressions are expressions that involve variables that are type dependent or value dependent. These expressions can have semantics that differ, depending on the parameters used for the template.  
   
-## 参照  
- [テンプレート](../Topic/Templates%20\(C++\).md)
+## <a name="see-also"></a>See Also
+
+ [Templates](../cpp/templates-cpp.md)
+

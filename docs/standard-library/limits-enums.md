@@ -1,5 +1,5 @@
 ---
-title: "&lt;limits&gt; 列挙型 | Microsoft Docs"
+title: '&lt;limits&gt; enums | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,20 +12,20 @@ f1_keywords:
 ms.assetid: c86680a2-ba97-4ed9-8c20-a448857d7dc5
 caps.latest.revision: 11
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 519cc2c696b5dcb67fed79fd04c3e7d66e7d0ad9
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 29eb4488b4bfc3768145ca970fa21dbf0b6130a7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltlimitsgt-enums"></a>&lt;limits&gt; 列挙型
+# <a name="ltlimitsgt-enums"></a>&lt;limits&gt; enums
 |||  
 |-|-|  
 |[float_denorm_style](#float_denorm_style)|[float_round_style](#float_round_style)|  
   
-##  <a name="float_denorm_style"></a>  float_denorm_style 列挙型  
- この列挙体では、小さすぎて、正規化された値としては表現できない非正規化された浮動小数点値を表現するために、実装で選択できるさまざまなメソッドを記述します。  
+##  <a name="float_denorm_style"></a>  float_denorm_style Enumeration  
+ The enumeration describes the various methods that an implementation can choose for representing a denormalized floating-point value — one too small to represent as a normalized value:  
   
 ```
 enum float_denorm_style {
@@ -34,20 +34,20 @@ enum float_denorm_style {
     denorm_present = 1    };
 ```  
   
-### <a name="return-value"></a>戻り値  
- この列挙型は以下を返します。  
+### <a name="return-value"></a>Return Value  
+ The enumeration returns:  
   
-- **denorm_indeterminate**: 変換時に非正規化形式の有無を特定できない場合。  
+- **denorm_indeterminate** if the presence or absence of denormalized forms cannot be determined at translation time.  
   
-- **denorm_absent**: 非正規化形式が存在しない場合。  
+- **denorm_absent** if denormalized forms are absent.  
   
-- **denorm_absent**: 非正規化形式が存在する場合。  
+- **denorm_present** if denormalized forms are present.  
   
-### <a name="example"></a>例  
-  この列挙型の値にアクセスする例については、「[numeric_limits::has_denorm](../standard-library/numeric-limits-class.md#has_denorm)」を参照してください。  
+### <a name="example"></a>Example  
+  See [numeric_limits::has_denorm](../standard-library/numeric-limits-class.md#has_denorm) for an example in which the values of this enumeration may be accessed.  
   
-##  <a name="float_round_style"></a>  float_round_style 列挙型  
- この列挙体では、浮動小数点値を整数値に丸めるために、実装で選択できるさまざまなメソッドを記述します。  
+##  <a name="float_round_style"></a>  float_round_style Enumeration  
+ The enumeration describes the various methods that an implementation can choose for rounding a floating-point value to an integer value.  
   
 ```
 enum float_round_style {    
@@ -58,23 +58,23 @@ enum float_round_style {
     round_toward_neg_infinity = 3    };
 ```  
   
-### <a name="return-value"></a>戻り値  
- この列挙型は以下を返します。  
+### <a name="return-value"></a>Return Value  
+ The enumeration returns:  
   
-- **round_indeterminate**: 丸め処理を行う方法を特定できない場合。  
+- **round_indeterminate** if the rounding method cannot be determined.  
   
-- **round_toward_zero**: ゼロに向かって丸める場合。  
+- **round_toward_zero** if the round toward zero.  
   
-- **round_to_nearest**: 最も近い整数に丸める場合。  
+- **round_to_nearest** if the round to nearest integer.  
   
-- **round_toward_infinity**: ゼロから離れるように丸める場合。  
+- **round_toward_infinity** if the round away from zero.  
   
-- **round_toward_neg_infinity**: より負の方向の整数に丸める場合。  
+- **round_toward_neg_infinity** if the round to more negative integer.  
   
-### <a name="example"></a>例  
-  この列挙型の値にアクセスする例については、「[numeric_limits::round_style](../standard-library/numeric-limits-class.md#round_style)」を参照してください。  
+### <a name="example"></a>Example  
+  See [numeric_limits::round_style](../standard-library/numeric-limits-class.md#round_style) for an example in which the values of this enumeration may be accessed.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<limits>](../standard-library/limits.md)
 
 

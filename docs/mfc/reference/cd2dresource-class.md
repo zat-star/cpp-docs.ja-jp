@@ -1,5 +1,5 @@
 ---
-title: "CD2DResource クラス |Microsoft ドキュメント"
+title: CD2DResource Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,7 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CD2DResource class
+- CD2DResource [MFC], CD2DResource
+- CD2DResource [MFC], Create
+- CD2DResource [MFC], Destroy
+- CD2DResource [MFC], IsValid
+- CD2DResource [MFC], IsAutoDestroy
+- CD2DResource [MFC], ReCreate
+- CD2DResource [MFC], m_bIsAutoDestroy
+- CD2DResource [MFC], m_pParentTarget
 ms.assetid: 34e3ee18-aab6-4c39-9294-de869e1f7820
 caps.latest.revision: 18
 author: mikeblome
@@ -42,70 +49,70 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: b5a357a3653e2126de85b21efddca881c6c43a09
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8b329c569fa44a5c4967f8cb65c65b15577be670
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cd2dresource-class"></a>CD2DResource クラス
-ブラシ、レイヤー、テキストなどの D2D リソースの作成および管理インターフェイスを提供する抽象クラスです。  
+# <a name="cd2dresource-class"></a>CD2DResource Class
+An abstract class that provides a interface for creating and managing D2D resources such as brushes, layers, and texts.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CD2DResource : public CObject;  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="protected-constructors"></a>プロテクト コンストラクター  
+### <a name="protected-constructors"></a>Protected Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DResource::CD2DResource](#cd2dresource)|CD2DResource オブジェクトを構築します。|  
-|[CD2DResource:: ~ CD2DResource](#cd2dresource__~cd2dresource)|デストラクターです。 D2D リソース オブジェクトが破棄されるときに呼び出されます。|  
+|[CD2DResource::CD2DResource](#cd2dresource)|Constructs a CD2DResource object.|  
+|[CD2DResource::~CD2DResource](#cd2dresource__~cd2dresource)|The destructor. Called when a D2D resource object is being destroyed.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DResource::Create](#create)|CD2DResource を作成します。|  
-|[CD2DResource::Destroy](#destroy)|CD2DResource オブジェクトを破棄します。|  
-|[CD2DResource::IsValid](#isvalid)|リソースの有効性のチェック|  
+|[CD2DResource::Create](#create)|Creates a CD2DResource.|  
+|[CD2DResource::Destroy](#destroy)|Destroys a CD2DResource object.|  
+|[CD2DResource::IsValid](#isvalid)|Checks resource validity|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DResource::IsAutoDestroy](#isautodestroy)|自動のチェックは、フラグを破棄します。|  
-|[CD2DResource::ReCreate](#recreate)|CD2DResource を再作成されます。|  
+|[CD2DResource::IsAutoDestroy](#isautodestroy)|Check auto destroy flag.|  
+|[CD2DResource::ReCreate](#recreate)|Re-creates a CD2DResource.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CD2DResource::m_bIsAutoDestroy](#m_bisautodestroy)|リソースに所有者 (CRenderTarget) によって destoyed なります|  
-|[CD2DResource::m_pParentTarget](#m_pparenttarget)|親 CRenderTarget へのポインター)|  
+|[CD2DResource::m_bIsAutoDestroy](#m_bisautodestroy)|Resource will be destoyed by owner (CRenderTarget)|  
+|[CD2DResource::m_pParentTarget](#m_pparenttarget)|Pointer to the parent CRenderTarget)|  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CD2DResource`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxrendertarget.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxrendertarget.h  
   
-##  <a name="_dtorcd2dresource"></a>CD2DResource:: ~ CD2DResource  
- デストラクターです。 D2D リソース オブジェクトが破棄されるときに呼び出されます。  
+##  <a name="_dtorcd2dresource"></a>  CD2DResource::~CD2DResource  
+ The destructor. Called when a D2D resource object is being destroyed.  
   
 ```  
 virtual ~CD2DResource();
 ```  
   
-##  <a name="cd2dresource"></a>CD2DResource::CD2DResource  
- CD2DResource オブジェクトを構築します。  
+##  <a name="cd2dresource"></a>  CD2DResource::CD2DResource  
+ Constructs a CD2DResource object.  
   
 ```  
 CD2DResource(
@@ -113,82 +120,82 @@ CD2DResource(
     BOOL bAutoDestroy);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pParentTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
  `bAutoDestroy`  
- 所有者 (pParentTarget) によって、オブジェクトが破棄されることを示します。  
+ Indicates that the object will be destroyed by owner (pParentTarget).  
   
-##  <a name="create"></a>CD2DResource::Create  
- CD2DResource を作成します。  
+##  <a name="create"></a>  CD2DResource::Create  
+ Creates a CD2DResource.  
   
 ```  
 virtual HRESULT Create(CRenderTarget* pRenderTarget) = 0;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRenderTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-##  <a name="destroy"></a>CD2DResource::Destroy  
- CD2DResource オブジェクトを破棄します。  
+##  <a name="destroy"></a>  CD2DResource::Destroy  
+ Destroys a CD2DResource object.  
   
 ```  
 virtual void Destroy() = 0;  
 ```  
   
-##  <a name="isautodestroy"></a>CD2DResource::IsAutoDestroy  
- 自動のチェックは、フラグを破棄します。  
+##  <a name="isautodestroy"></a>  CD2DResource::IsAutoDestroy  
+ Check auto destroy flag.  
   
 ```  
 BOOL IsAutoDestroy() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 所有者によって、オブジェクトが破棄される場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if the object will be destroyed by its owner; otherwise FALSE.  
   
-##  <a name="isvalid"></a>CD2DResource::IsValid  
- リソースの有効性のチェック  
+##  <a name="isvalid"></a>  CD2DResource::IsValid  
+ Checks resource validity  
   
 ```  
 virtual BOOL IsValid() const = 0;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- リソースが無効である場合は TRUE。それ以外の場合は FALSE。  
+### <a name="return-value"></a>Return Value  
+ TRUE if resource is valid; otherwise FALSE.  
   
-##  <a name="m_bisautodestroy"></a>CD2DResource::m_bIsAutoDestroy  
- リソースに所有者 (CRenderTarget) によって destoyed なります  
+##  <a name="m_bisautodestroy"></a>  CD2DResource::m_bIsAutoDestroy  
+ Resource will be destoyed by owner (CRenderTarget)  
   
 ```  
 BOOL m_bIsAutoDestroy;  
 ```  
   
-##  <a name="m_pparenttarget"></a>CD2DResource::m_pParentTarget  
- 親 CRenderTarget へのポインター)  
+##  <a name="m_pparenttarget"></a>  CD2DResource::m_pParentTarget  
+ Pointer to the parent CRenderTarget)  
   
 ```  
 CRenderTarget* m_pParentTarget;  
 ```  
   
-##  <a name="recreate"></a>CD2DResource::ReCreate  
- CD2DResource を再作成されます。  
+##  <a name="recreate"></a>  CD2DResource::ReCreate  
+ Re-creates a CD2DResource.  
   
 ```  
 virtual HRESULT ReCreate(CRenderTarget* pRenderTarget);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRenderTarget`  
- レンダー ターゲットへのポインター。  
+ A pointer to the render target.  
   
-### <a name="return-value"></a>戻り値  
- メソッドが成功した場合は S_OK を返します。 それ以外の場合、HRESULT エラー コードを返します。  
+### <a name="return-value"></a>Return Value  
+ If the method succeeds, it returns S_OK. Otherwise, it returns an HRESULT error code.  
   
-## <a name="see-also"></a>関連項目  
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Classes](../../mfc/reference/mfc-classes.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: COleDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,9 +15,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- OLE dialog boxes, base class
-- dialog boxes, OLE
-- COleDialog class
+- COleDialog [MFC], GetLastError
 ms.assetid: b1ed0aca-3914-4b00-af34-4a4fb491aec7
 caps.latest.revision: 21
 author: mikeblome
@@ -37,54 +35,54 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 018d06ac167a8c352d9f1822b373126c4e615854
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 82cc7cff7b295e2685a0456d525ed0d74af44e46
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coledialog-class"></a>関数のクラス
-OLE のダイアログ ボックスに共通の機能が用意されています。  
+# <a name="coledialog-class"></a>COleDialog Class
+Provides functionality common to dialog boxes for OLE.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleDialog : public CCommonDialog  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDialog::GetLastError](#getlasterror)|ダイアログ ボックスによって返されたエラー コードを取得します。|  
+|[COleDialog::GetLastError](#getlasterror)|Gets the error code returned by the dialog box.|  
   
-## <a name="remarks"></a>コメント  
- Microsoft Foundation Class ライブラリは、いくつかのクラスから派生した`COleDialog`:  
+## <a name="remarks"></a>Remarks  
+ The Microsoft Foundation Class Library provides several classes derived from `COleDialog`:  
   
-- [メンバー](../../mfc/reference/coleinsertdialog-class.md)  
+- [COleInsertDialog](../../mfc/reference/coleinsertdialog-class.md)  
   
-- [メンバー](../../mfc/reference/coleconvertdialog-class.md)  
+- [COleConvertDialog](../../mfc/reference/coleconvertdialog-class.md)  
   
-- [メンバー](../../mfc/reference/colechangeicondialog-class.md)  
+- [COleChangeIconDialog](../../mfc/reference/colechangeicondialog-class.md)  
   
-- [関数](../../mfc/reference/colelinksdialog-class.md)  
+- [COleLinksDialog](../../mfc/reference/colelinksdialog-class.md)  
   
 - [COleBusyDialog](../../mfc/reference/colebusydialog-class.md)  
   
-- [関数](../../mfc/reference/coleupdatedialog-class.md)  
+- [COleUpdateDialog](../../mfc/reference/coleupdatedialog-class.md)  
   
-- [関数](../../mfc/reference/colepastespecialdialog-class.md)  
+- [COlePasteSpecialDialog](../../mfc/reference/colepastespecialdialog-class.md)  
   
-- [メンバー](../../mfc/reference/colepropertiesdialog-class.md)  
+- [COlePropertiesDialog](../../mfc/reference/colepropertiesdialog-class.md)  
   
-- [メンバー](../../mfc/reference/colechangesourcedialog-class.md)  
+- [COleChangeSourceDialog](../../mfc/reference/colechangesourcedialog-class.md)  
   
- OLE 固有のダイアログ ボックスの詳細については、記事を参照してください。 [OLE のダイアログ ボックス](../../mfc/dialog-boxes-in-ole.md)します。  
+ For more information about OLE-specific dialog boxes, see the article [Dialog Boxes in OLE](../../mfc/dialog-boxes-in-ole.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -97,25 +95,25 @@ class COleDialog : public CCommonDialog
   
  `COleDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxodlgs.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxodlgs.h  
   
-##  <a name="getlasterror"></a>COleDialog::GetLastError  
- 呼び出す、`GetLastError`追加のエラー情報を取得するメンバー関数と`DoModal`を返します**IDABORT**します。  
+##  <a name="getlasterror"></a>  COleDialog::GetLastError  
+ Call the `GetLastError` member function to get additional error information when `DoModal` returns **IDABORT**.  
   
 ```  
 UINT GetLastError() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- によって返されるエラー コード`GetLastError`表示される特定のダイアログ ボックスに依存します。  
+### <a name="return-value"></a>Return Value  
+ The error codes returned by `GetLastError` depend on the specific dialog box displayed.  
   
-### <a name="remarks"></a>コメント  
- 参照してください、`DoModal`具体的なエラー メッセージについては、派生クラスのメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ See the `DoModal` member function in the derived classes for information about specific error messages.  
   
-## <a name="see-also"></a>関連項目  
- [CCommonDialog クラス](../../mfc/reference/ccommondialog-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CCommonDialog Class](../../mfc/reference/ccommondialog-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

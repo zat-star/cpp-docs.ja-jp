@@ -1,5 +1,5 @@
 ---
-title: "OLE コントロールの永続化 |Microsoft ドキュメント"
+title: Persistence of OLE Controls | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- OLE controls, persistence
+- OLE controls [MFC], persistence
 - persistence, OLE controls
 ms.assetid: 64f8dc80-f110-41af-b3ea-14948f6bfdf7
 caps.latest.revision: 17
@@ -34,41 +34,41 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: b8bbf72a1ea16b37dabf88c5d41a34b1a03ba0d1
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4134d8b916fbe2b5a33066708a2078d28cb1ee6c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="persistence-of-ole-controls"></a>OLE コントロールの永続化
-OLE コントロールの機能の&1; つはプロパティ永続化 (シリアル化)、OLE コントロールの読み取りまたは書き込みプロパティの値をファイルまたはストリームにできます。 コンテナー アプリケーションでは、シリアル化を使用して、アプリケーションがコントロールを破棄した後も、コントロールのプロパティの値を格納します。 OLE コントロールのプロパティ値はその後、ファイルから読み取ることができますか、ストリームの場合、コントロールの新しいインスタンスが後で作成します。  
+# <a name="persistence-of-ole-controls"></a>Persistence of OLE Controls
+One capability of OLE controls is property persistence (or serialization), which allows the OLE control to read or write property values to and from a file or stream. A container application can use serialization to store a control's property values even after the application has destroyed the control. The property values of the OLE control can then be read from the file or stream when a new instance of the control is created at a later time.  
   
-### <a name="persistence-of-ole-controls"></a>OLE コントロールの永続化  
+### <a name="persistence-of-ole-controls"></a>Persistence of OLE Controls  
   
 |||  
 |-|-|  
-|[PX_Blob](#px_blob)|バイナリ ラージ オブジェクト (BLOB) データを格納するコントロール プロパティを交換します。|  
-|[PX_Bool](#px_bool)|型のコントロール プロパティを交換**BOOL**します。|  
-|[PX_Color](#px_color)|コントロールの色のプロパティを交換します。|  
-|[PX_Currency](#px_currency)|型のコントロール プロパティを交換**CY**します。|  
-|[PX_DataPath](#px_datapath)|型のコントロール プロパティを交換`CDataPathProperty`します。|  
-|[PX_Double](#px_double)|型のコントロール プロパティを交換**二重**します。|  
-|[PX_Font](#px_font)|コントロールのフォント プロパティを交換します。|  
-|[PX_Float](#px_float)|型のコントロール プロパティを交換**float**します。|  
-|[PX_IUnknown](#px_iunknown)|未定義の型のコントロールのプロパティを交換します。|  
-|[PX_Long](#px_long)|型のコントロール プロパティを交換**長い**します。|  
-|[PX_Picture](#px_picture)|コントロールの画像のプロパティを交換します。|  
-|[PX_Short](#px_short)|型のコントロール プロパティを交換**短い**します。|  
-|[PX_ULong](#px_ulong)|型のコントロール プロパティを交換**ULONG**します。|  
-|[PX_UShort](#px_ushort)|型のコントロール プロパティを交換**USHORT**します。|  
-|[PXstring](#px_string)|文字の文字列のコントロールのプロパティを交換します。|  
-|[PX_VBXFontConvert](#px_vbxfontconvert)|OLE コントロールのフォント プロパティに VBX コントロールのフォント関連プロパティを交換します。|  
+|[PX_Blob](#px_blob)|Exchanges a control property that stores binary large object (BLOB) data.|  
+|[PX_Bool](#px_bool)|Exchanges a control property of type **BOOL**.|  
+|[PX_Color](#px_color)|Exchanges a color property of a control.|  
+|[PX_Currency](#px_currency)|Exchanges a control property of type **CY**.|  
+|[PX_DataPath](#px_datapath)|Exchanges a control property of type `CDataPathProperty`.|  
+|[PX_Double](#px_double)|Exchanges a control property of type **double**.|  
+|[PX_Font](#px_font)|Exchanges a font property of a control.|  
+|[PX_Float](#px_float)|Exchanges a control property of type **float**.|  
+|[PX_IUnknown](#px_iunknown)|Exchanges a control property of undefined type.|  
+|[PX_Long](#px_long)|Exchanges a control property of type **long**.|  
+|[PX_Picture](#px_picture)|Exchanges a picture property of a control.|  
+|[PX_Short](#px_short)|Exchanges a control property of type **short**.|  
+|[PX_ULong](#px_ulong)|Exchanges a control property of type **ULONG**.|  
+|[PX_UShort](#px_ushort)|Exchanges a control property of type **USHORT**.|  
+|[PXstring](#px_string)|Exchanges a character string control property.|  
+|[PX_VBXFontConvert](#px_vbxfontconvert)|Exchanges a VBX control's font-related properties into an OLE control font property.|  
   
- さらに、`AfxOleTypeMatchGuid`間で一致の判定に用意されているグローバル関数、`TYPEDESC`と指定された GUID です。  
+ In addition, the `AfxOleTypeMatchGuid` global function is provided to test for a match between a `TYPEDESC` and a given GUID.  
   
-##  <a name="px_blob"></a>PX_Blob  
- コントロールの中でこの関数を呼び出す`DoPropExchange`をシリアル化、またはバイナリ ラージ オブジェクト (BLOB) データを格納するプロパティを初期化します。  
+##  <a name="px_blob"></a>  PX_Blob  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property that stores binary large object (BLOB) data.  
   
 ```  
  
@@ -85,35 +85,35 @@ hBlobDefault
 = NULL);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `hBlob`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `hBlobDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値は読み取りやで参照される変数に書き込まれる`hBlob` をクリックします。 この変数を初期化する必要があります**NULL**最初を呼び出す前に`PX_Blob`を最初に (通常は、そのため、コントロールのコンス トラクターで)。 場合`hBlobDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールの初期化またはシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value will be read from or written to the variable referenced by `hBlob`, as appropriate. This variable should be initialized to **NULL** before initially calling `PX_Blob` for the first time (typically, this can be done in the control's constructor). If `hBlobDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's initialization or serialization process fails.  
   
- ハンドル`hBlob`と`hBlobDefault`次を含むメモリのブロックを参照してください。  
+ The handles `hBlob` and `hBlobDefault` refer to a block of memory which contains the following:  
   
--   A`DWORD`直後の後に、バイナリ データの長さ、(バイト単位) が含まれています  
+-   A `DWORD` which contains the length, in bytes, of the binary data that follows, followed immediately by  
   
--   実際のバイナリ データを格納しているメモリ ブロック。  
+-   A block of memory containing the actual binary data.  
   
- 注意`PX_Blob`、Windows を使用してメモリが割り当てられる[GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) API、BLOB 型のプロパティを読み込むときにします。 このメモリの解放を担当しています。 したがって、コントロールのデストラクターを呼び出す必要があります[GlobalFree](http://msdn.microsoft.com/library/windows/desktop/aa366579)ハンドルを解放する任意の型が BLOB のプロパティをコントロールに割り当てられたメモリがアップします。  
+ Note that `PX_Blob` will allocate memory, using the Windows [GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) API, when loading BLOB-type properties. You are responsible for freeing this memory. Therefore, the destructor of your control should call [GlobalFree](http://msdn.microsoft.com/library/windows/desktop/aa366579) on any BLOB-type property handles to free up any memory allocated to your control.  
   
-##  <a name="px_bool"></a>PX_Bool  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**BOOL**します。  
+##  <a name="px_bool"></a>  PX_Bool  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **BOOL**.  
   
 ```  
  
@@ -136,27 +136,27 @@ bValue  ,
     BOOL bDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `bValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `bDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値は読み取りやで参照される変数に書き込まれる`bValue` をクリックします。 場合`bDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value will be read from or written to the variable referenced by `bValue`, as appropriate. If `bDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_color"></a>PX_Color  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**OLE_COLOR**します。  
+##  <a name="px_color"></a>  PX_Color  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **OLE_COLOR**.  
   
 ```  
  
@@ -178,27 +178,27 @@ clrValue  ,
 clrDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `clrValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `clrDefault`  
- コントロールの開発者によって定義されている、プロパティの既定値。  
+ Default value for the property, as defined by the control developer.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値は読み取りやで参照される変数に書き込まれる`clrValue` をクリックします。 場合`clrDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value will be read from or written to the variable referenced by `clrValue`, as appropriate. If `clrDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_currency"></a>PX_Currency  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**通貨**します。  
+##  <a name="px_currency"></a>  PX_Currency  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **currency**.  
   
 ```  
  
@@ -221,27 +221,27 @@ cyValue  ,
     CY cyDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `cyValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `cyDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値は読み取りやで参照される変数に書き込まれる`cyValue` をクリックします。 場合`cyDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value will be read from or written to the variable referenced by `cyValue`, as appropriate. If `cyDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_datapath"></a>PX_DataPath  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のデータ パスのプロパティを初期化または逆シリアル化するメンバー関数を[関数](../../mfc/reference/cdatapathproperty-class.md)します。  
+##  <a name="px_datapath"></a>  PX_DataPath  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a data path property of type [CDataPathProperty](../../mfc/reference/cdatapathproperty-class.md).  
   
 ```  
  
@@ -260,24 +260,24 @@ pPX,
     CDataPathProperty& dataPathProperty);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `dataPathProperty`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- データ パスのプロパティは、非同期のコントロールのプロパティを実装します。 プロパティの値は読み取りやで参照される変数に書き込まれる`dataPathProperty` をクリックします。  
+### <a name="remarks"></a>Remarks  
+ Data path properties implement asynchronous control properties. The property's value will be read from or written to the variable referenced by `dataPathProperty`, as appropriate.  
   
-##  <a name="px_double"></a>PX_Double  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**二重**します。  
+##  <a name="px_double"></a>  PX_Double  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **double**.  
   
 ```  
  
@@ -300,27 +300,27 @@ doubleValue  ,
     double doubleDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `doubleValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `doubleDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`doubleValue` をクリックします。 場合`doubleDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `doubleValue`, as appropriate. If `doubleDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_font"></a>PX_Font  
- コントロールの中でこの関数を呼び出す`DoPropExchange`をシリアル化、または種類のフォントのプロパティを初期化します。  
+##  <a name="px_font"></a>  PX_Font  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type font.  
   
 ```  
  
@@ -343,30 +343,30 @@ pFontDispAmbient
 = NULL);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `font`  
- 参照、`CFontHolder`フォント プロパティを含むオブジェクト。  
+ A reference to a `CFontHolder` object that contains the font property.  
   
  `pFontDesc`  
- ポインター、 **FONTDESC**の場合は、フォントのプロパティの既定の状態の初期化中に使用する値を含む構造体、`pFontDispAmbient`は**NULL**します。  
+ A pointer to a **FONTDESC** structure containing the values to use in initializing the default state of the font property, in the case where `pFontDispAmbient` is **NULL**.  
   
  `pFontDispAmbient`  
- ポインター、**この**font プロパティの既定の状態の初期化中に使用するフォントのインターフェイスです。  
+ A pointer to the **IFontDisp** interface of a font to use in initializing the default state of the font property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値がから読み取り/書き込み`font`、`CFontHolder`適切な場合は、参照します。 場合`pFontDesc`と`pFontDispAmbient`が指定されているために必要なときに、このプロパティの既定値を初期化するためものです。 これらの値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。 通常は、渡す**NULL**の`pFontDesc`とアンビエントの値によって返される`COleControl::AmbientFont`の`pFontDispAmbient`です。 によって返されるフォント オブジェクト注`COleControl::AmbientFont`への呼び出しによって解放される必要があります、 **IFontDisp::Release**メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to `font`, a `CFontHolder` reference, when appropriate. If `pFontDesc` and `pFontDispAmbient` are specified, they are used for initializing the property's default value, when needed. These values are used if, for any reason, the control's serialization process fails. Typically, you pass **NULL** for `pFontDesc` and the ambient value returned by `COleControl::AmbientFont` for `pFontDispAmbient`. Note that the font object returned by `COleControl::AmbientFont` must be released by a call to the **IFontDisp::Release** member function.  
   
-##  <a name="px_float"></a>PX_Float  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**float**します。  
+##  <a name="px_float"></a>  PX_Float  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **float**.  
   
 ```  
  
@@ -389,27 +389,27 @@ floatValue  ,
     float floatDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `floatValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `floatDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`floatValue` をクリックします。 場合`floatDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `floatValue`, as appropriate. If `floatDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_iunknown"></a>PX_IUnknown  
- コントロールの中でこの関数を呼び出す`DoPropExchange`メンバー関数を持つオブジェクトによって表されるプロパティを初期化または逆シリアル化、 **IUnknown**-派生インターフェイスです。  
+##  <a name="px_iunknown"></a>  PX_IUnknown  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property represented by an object having an **IUnknown**-derived interface.  
   
 ```  
  
@@ -428,30 +428,30 @@ pUnkDefault
 = NULL);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  *pUnk*  
- プロパティの値を表すオブジェクトのインターフェイスを含む変数への参照。  
+ Reference to a variable containing the interface of the object that represents the value of the property.  
   
  `iid`  
- プロパティ オブジェクトのインターフェイスがコントロールによって使用されることを示すインターフェイス ID です。  
+ An interface ID indicating which interface of the property object is used by the control.  
   
  `pUnkDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる*pUnk* をクリックします。 場合`pUnkDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by *pUnk*, as appropriate. If `pUnkDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_long"></a>PX_Long  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**長い**します。  
+##  <a name="px_long"></a>  PX_Long  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **long**.  
   
 ```  
  
@@ -474,27 +474,27 @@ lValue  ,
     long lDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `lValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `lDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`lValue` をクリックします。 場合`lDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `lValue`, as appropriate. If `lDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_picture"></a>PX_Picture  
- コントロールの中でこの関数を呼び出す`DoPropExchange`をシリアル化、またはコントロールの画像のプロパティを初期化します。  
+##  <a name="px_picture"></a>  PX_Picture  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a picture property of your control.  
   
 ```  
  
@@ -517,27 +517,27 @@ pict  ,
     CPictureHolder& pictDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `pict`  
- 参照、[使って](../../mfc/reference/cpictureholder-class.md)プロパティが格納されているオブジェクト (通常、クラスのメンバー変数)。  
+ Reference to a [CPictureHolder](../../mfc/reference/cpictureholder-class.md) object where the property is stored (typically a member variable of your class).  
   
  `pictDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`pict` をクリックします。 場合`pictDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `pict`, as appropriate. If `pictDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_short"></a>PX_Short  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**短い**します。  
+##  <a name="px_short"></a>  PX_Short  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **short**.  
   
 ```  
  
@@ -560,27 +560,27 @@ sValue  ,
     short sDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `sValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `sDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`sValue` をクリックします。 場合`sDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `sValue`, as appropriate. If `sDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_ulong"></a>PX_ULong  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を**ULONG**します。  
+##  <a name="px_ulong"></a>  PX_ULong  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type **ULONG**.  
   
 ```  
  
@@ -603,27 +603,27 @@ ulValue  ,
     long ulDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前です。  
+ Name of the property being exchanged.  
   
  `ulValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `ulDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`ulValue` をクリックします。 場合`ulDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `ulValue`, as appropriate. If `ulDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_ushort"></a>PX_UShort  
- コントロールの中でこの関数を呼び出す`DoPropExchange`型のプロパティを初期化または逆シリアル化するメンバー関数を`unsigned`**短い**します。  
+##  <a name="px_ushort"></a>  PX_UShort  
+ Call this function within your control's `DoPropExchange` member function to serialize or initialize a property of type `unsigned` **short**.  
   
 ```  
  
@@ -646,27 +646,27 @@ usValue  ,
     USHORT usDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前です。  
+ Name of the property being exchanged.  
   
  *usValue*  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  *usDefault*  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる*usValue* をクリックします。 場合*usDefault*を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by *usValue*, as appropriate. If *usDefault* is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_string"></a>PXstring  
- コントロールの中でこの関数を呼び出す**DoPropExchange**をシリアル化、または文字の文字列プロパティを初期化します。  
+##  <a name="px_string"></a>  PXstring  
+ Call this function within your control's **DoPropExchange** member function to serialize or initialize a character string property.  
   
 ```  
  
@@ -689,27 +689,27 @@ strValue  ,
     CString strDefault);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `strValue`  
- プロパティが格納されている変数への参照 (通常、クラスのメンバー変数)。  
+ Reference to the variable where the property is stored (typically a member variable of your class).  
   
  `strDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値の読み取りまたはで参照される変数に書き込まれる`strValue` をクリックします。 場合`strDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化プロセスが失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to the variable referenced by `strValue`, as appropriate. If `strDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization process fails.  
   
-##  <a name="px_vbxfontconvert"></a>PX_VBXFontConvert  
- コントロールの中でこの関数を呼び出す`DoPropExchange`VBX コントロールのフォント関連プロパティを変換することでフォントのプロパティを初期化します。  
+##  <a name="px_vbxfontconvert"></a>  PX_VBXFontConvert  
+ Call this function within your control's `DoPropExchange` member function to initialize a font property by converting a VBX control's font-related properties.  
   
 ```  
  
@@ -720,24 +720,24 @@ pPX  ,
     CFontHolder& font);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pPX`  
- ポインター、 [CPropExchange](../../mfc/reference/cpropexchange-class.md)オブジェクト (通常のパラメーターとして渡された`DoPropExchange`)。  
+ Pointer to the [CPropExchange](../../mfc/reference/cpropexchange-class.md) object (typically passed as a parameter to `DoPropExchange`).  
   
  `font`  
- 変換された VBX のフォント関連のプロパティを格納する OLE コントロールのフォント プロパティ。  
+ The font property of the OLE control that will contain the converted VBX font-related properties.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- この関数は、VBX コントロールの直接の置き換えとして設計されていますが、OLE コントロールでのみ使用する必要があります。 Visual Basic 開発環境では、対応する置換 OLE コントロールを使用する VBX コントロールを表示するフォームが変換されるときに、呼び出すことが、コントロールの**IDataObject::SetData** VBX コントロールのプロパティのデータを含むプロパティ セットを渡す関数です。 この操作により、コントロールの`DoPropExchange`呼び出す関数。 `DoPropExchange`呼び出すことができます`PX_VBXFontConvert`VBX コントロールのフォント関連プロパティに変換する (たとえば、"FontName、""FontSize は、"に) OLE コントロールのフォントのプロパティの対応するコンポーネントにします。  
+### <a name="remarks"></a>Remarks  
+ This function should be used only by an OLE control that is designed as a direct replacement for a VBX control. When the Visual Basic development environment converts a form containing a VBX control to use the corresponding replacement OLE control, it will call the control's **IDataObject::SetData** function, passing in a property set that contains the VBX control's property data. This operation, in turn, causes the control's `DoPropExchange` function to be invoked. `DoPropExchange` can call `PX_VBXFontConvert` to convert the VBX control's font-related properties (for example, "FontName," "FontSize," and so on) into the corresponding components of the OLE control's font property.  
   
- `PX_VBXFontConvert`コントロールが VBX フォーム アプリケーションから実際に変換されているときにのみ呼び出されます必要があります。 例:  
+ `PX_VBXFontConvert` should only be called when the control is actually being converted from a VBX form application. For example:  
   
- [!code-cpp[NVC_MFCActiveXControl&#14;](../../mfc/codesnippet/cpp/persistence-of-ole-controls_1.cpp)]  
-[!code-cpp[NVC_MFCActiveXControl&#15;](../../mfc/codesnippet/cpp/persistence-of-ole-controls_2.cpp)]  
+ [!code-cpp[NVC_MFCActiveXControl#14](../../mfc/codesnippet/cpp/persistence-of-ole-controls_1.cpp)]  
+[!code-cpp[NVC_MFCActiveXControl#15](../../mfc/codesnippet/cpp/persistence-of-ole-controls_2.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

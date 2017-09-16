@@ -1,48 +1,67 @@
 ---
-title: "手動でコントロールを追加する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン コントロール [C++], 追加"
-  - "制御 (入力フォーカスを)"
-  - "コントロール [MFC], 追加 (ダイアログ ボックスに)"
-  - "ダイアログ ボックス コントロール [C++], 追加 (ダイアログ ボックスに)"
-  - "フォーカス, 制御 (入力を)"
-  - "入力フォーカス コントロール"
-  - "Windows コモン コントロール [C++], 追加"
+title: Adding Controls By Hand | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Windows common controls [MFC], adding
+- dialog box controls [MFC], adding to dialog boxes
+- controlling input focus
+- input focus control
+- focus, controlling input [MFC]
+- controls [MFC], adding to dialog boxes
+- common controls [MFC], adding
 ms.assetid: bc843e59-0c51-4b5b-8bf2-343f716469d2
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 手動でコントロールを追加する方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f91b61355e5a1c46099cc78cdafc3b26fde08c0e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コード内 [ダイアログ エディターを使用してダイアログ ボックスにコントロールを追加します。](../mfc/using-the-dialog-editor-to-add-controls.md) または追加する独自、できます。  
+---
+# <a name="adding-controls-by-hand"></a>Adding Controls By Hand
+You can either [add controls to a dialog box with the dialog editor](../mfc/using-the-dialog-editor-to-add-controls.md) or add them yourself, with code.  
   
- コントロール オブジェクトを独自に作成するには、通常、. C\+\+ ダイアログまたはフレーム ウィンドウ オブジェクトに C\+\+ コントロール オブジェクトを埋め込みます。  フレームワークの他のオブジェクトと同様に、コントロールは正常な構築式が必要です。  親ダイアログ ボックスまたはフレーム ウィンドウの作成時にコントロールの **作成** のメンバー関数を呼び出す必要があります。  ダイアログ ボックスでは、これは通常 [OnInitDialog](../Topic/CDialog::OnInitDialog.md)、[OnCreate](../Topic/CWnd::OnCreate.md)のフレーム ウィンドウに表示されます。  
+ To create a control object yourself, you will usually embed the C++ control object in a C++ dialog or frame-window object. Like many other objects in the framework, controls require two-stage construction. You should call the control's **Create** member function as part of creating the parent dialog box or frame window. For dialog boxes, this is usually done in [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog), and for frame windows, in [OnCreate](../mfc/reference/cwnd-class.md#oncreate).  
   
- どのように派生ダイアログ クラスのクラス宣言の `CEdit` オブジェクトを宣言し、`OnInitDialog`の **作成** のメンバー関数を呼び出す方法を次の例に示します。  `CEdit` オブジェクトは埋め込みオブジェクトとして宣言されているので、ダイアログ オブジェクトの構築、**作成** 独自のメンバー関数と初期化されなければなりませんと自動的に生成されます。  
+ The following example shows how you might declare a `CEdit` object in the class declaration of a derived dialog class and then call the **Create** member function in `OnInitDialog`. Because the `CEdit` object is declared as an embedded object, it is automatically constructed when the dialog object is constructed, but it must still be initialized with its own **Create** member function.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#1](../mfc/codesnippet/CPP/adding-controls-by-hand_1.h)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#1](../mfc/codesnippet/cpp/adding-controls-by-hand_1.h)]  
   
- `OnInitDialog` の次の関数は、四角形を設定し、Windows のエディット コントロールを作成し、`CEdit` の初期化されていないオブジェクトにアタッチします。**作成** を呼び出します。  
+ The following `OnInitDialog` function sets up a rectangle, then calls **Create** to create the Windows edit control and attach it to the uninitialized `CEdit` object.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#2](../mfc/codesnippet/CPP/adding-controls-by-hand_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#2](../mfc/codesnippet/cpp/adding-controls-by-hand_2.cpp)]  
   
- 編集オブジェクトを作成した後に、コントロールに `SetFocus` メンバー関数を呼び出すことで、入力フォーカスを設定できます。  最後に、`OnInitDialog` からフォーカスを設定できないことを示すには、0 を返します。  0 以外の値を返した場合、ダイアログ マネージャーは、ダイアログ コントロール項目リストの最初の項目にフォーカスを設定します。  ほとんどの場合は、ダイアログ エディターを使用してダイアログ ボックスにコントロールを追加する必要があります。  
+ After creating the edit object, you can also set the input focus to the control by calling the `SetFocus` member function. Finally, you return 0 from `OnInitDialog` to show that you set the focus. If you return a nonzero value, the dialog manager sets the focus to the first control item in the dialog item list. In most cases, you'll want to add controls to your dialog boxes with the dialog editor.  
   
-## 参照  
- [コントロールの作成方法と使い方](../mfc/making-and-using-controls.md)   
- [コントロール](../mfc/controls-mfc.md)   
- [CDialog::OnInitDialog](../Topic/CDialog::OnInitDialog.md)
+## <a name="see-also"></a>See Also  
+ [Making and Using Controls](../mfc/making-and-using-controls.md)   
+ [Controls](../mfc/controls-mfc.md)   
+ [CDialog::OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog)
+
+

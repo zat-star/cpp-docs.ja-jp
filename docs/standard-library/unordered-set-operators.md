@@ -1,20 +1,24 @@
 ---
-title: "&lt;unordered_set&gt; 演算子 | Microsoft Docs"
+title: '&lt;unordered_set&gt; operators | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- unordered_set/std::operator!=
+- unordered_set/std::operator==
+dev_langs:
+- C++
 ms.assetid: 8653eea6-12f2-4dd7-aa2f-db38a71599a0
 caps.latest.revision: 7
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 5fbd22c2f21eaa36e75afd051ab3fbaa5858e5a2
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: a967b858b6f1b31c623a15aa32655b6a83b865bf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltunorderedsetgt-operators"></a>&lt;unordered_set&gt; operators
@@ -23,26 +27,26 @@ ms.lasthandoff: 04/29/2017
 |[operator!=](#op_neq)|[operator==](#op_eq_eq)|[operator!=](#op_neq_unordered_multiset)|[operator==](#op_eq_eq_unordered_multiset)|  
   
 ##  <a name="op_neq"></a>  operator!=  
- 演算子の左側にある [unordered_set](../standard-library/unordered-set-class.md) オブジェクトが、右側にある unordered_set オブジェクトと等しくないかどうかをテストします。  
+ Tests whether the [unordered_set](../standard-library/unordered-set-class.md) object on the left side of the operator is not equal to the unordered_set object on the right side.  
   
 ```
 bool operator!=(const unordered_set <Key, Hash, Pred, Allocator>& left, const unordered_set <Key, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_set` 型のオブジェクト。  
+ An object of type `unordered_set`.  
   
  `right`  
- `unordered_set` 型のオブジェクト。  
+ An object of type `unordered_set`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_sets が等しくない場合 `true` で、等しい場合は `false` です。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_sets are not equal; `false` if they are equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_set オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在しており、一方のコンテナー内の要素がもう一方のコンテナー内の要素の並べ替えである場合、2 つの unordered_set は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_set objects is not affected by the arbitrary order in which they store their elements. Two unordered_sets are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_set_ne.cpp   
@@ -79,7 +83,7 @@ int main()
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `c1 != c2: true`  
   
@@ -88,26 +92,26 @@ int main()
  `c2 != c3: true`  
   
 ##  <a name="op_eq_eq"></a>  operator==  
- 演算子の左側にある [unordered_set](../standard-library/unordered-set-class.md) オブジェクトが、右側にある unordered_set オブジェクトと等しいかどうかをテストします。  
+ Tests whether the [unordered_set](../standard-library/unordered-set-class.md) object on the left side of the operator is equal to the unordered_set object on the right side.  
   
 ```
 bool operator==(const unordered_set <Key, Hash, Pred, Allocator>& left, const unordered_set <Key, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_set` 型のオブジェクト。  
+ An object of type `unordered_set`.  
   
  `right`  
- `unordered_set` 型のオブジェクト。  
+ An object of type `unordered_set`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_sets が等しい場合 `true` で、等しくない場合は `false` です。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_sets are equal; `false` if they are not equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_set オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在しており、一方のコンテナー内の要素がもう一方のコンテナー内の要素の並べ替えである場合、2 つの unordered_set は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_set objects is not affected by the arbitrary order in which they store their elements. Two unordered_sets are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_set_eq.cpp   
@@ -144,7 +148,7 @@ int main()
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `c1 == c2: false`  
   
@@ -153,26 +157,26 @@ int main()
  `c2 == c3: false`  
   
 ##  <a name="op_neq_unordered_multiset"></a>  operator!=  
- 演算子の左側の [unordered_multiset](../standard-library/unordered-multiset-class.md) オブジェクトが右側の unordered_multiset オブジェクトと等しくないかどうかをテストします。  
+ Tests whether the [unordered_multiset](../standard-library/unordered-multiset-class.md) object on the left side of the operator is not equal to the unordered_multiset object on the right side.  
   
 ```
 bool operator!=(const unordered_multiset <Key, Hash, Pred, Allocator>& left, const unordered_multiset <Key, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_multiset` 型のオブジェクト。  
+ An object of type `unordered_multiset`.  
   
  `right`  
- `unordered_multiset` 型のオブジェクト。  
+ An object of type `unordered_multiset`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_multisets が等しくない場合 `true` で、等しい場合は `false` です。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_multisets are not equal; `false` if they are equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_multiset オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在しており、一方のコンテナー内の要素がもう一方のコンテナー内の要素の並べ替えである場合、2 つの unordered_multisets は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_multiset objects is not affected by the arbitrary order in which they store their elements. Two unordered_multisets are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_multiset_ne.cpp   
@@ -212,7 +216,7 @@ int main()
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `c1 != c2: true`  
   
@@ -221,26 +225,26 @@ int main()
  `c2 != c3: true`  
   
 ##  <a name="op_eq_eq_unordered_multiset"></a>  operator==  
- 演算子の左側の [unordered_multiset](../standard-library/unordered-multiset-class.md) オブジェクトが右側の unordered_multiset オブジェクトと等しいかどうかをテストします。  
+ Tests whether the [unordered_multiset](../standard-library/unordered-multiset-class.md) object on the left side of the operator is equal to the unordered_multiset object on the right side.  
   
 ```
 bool operator==(const unordered_multiset <Key, Hash, Pred, Allocator>& left, const unordered_multiset <Key, Hash, Pred, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- `unordered_multiset` 型のオブジェクト。  
+ An object of type `unordered_multiset`.  
   
  `right`  
- `unordered_multiset` 型のオブジェクト。  
+ An object of type `unordered_multiset`.  
   
-### <a name="return-value"></a>戻り値  
- unordered_multisets が等しい場合 `true` で、等しくない場合は `false` です。  
+### <a name="return-value"></a>Return Value  
+ `true` if the unordered_multisets are equal; `false` if they are not equal.  
   
-### <a name="remarks"></a>コメント  
- unordered_multiset オブジェクト間の比較は、要素を任意の順序で格納することによる影響を受けません。 同じ数の要素が存在しており、一方のコンテナー内の要素がもう一方のコンテナー内の要素の並べ替えである場合、2 つの unordered_multisets は等しくなります。 それ以外の場合は等しくありません。  
+### <a name="remarks"></a>Remarks  
+ The comparison between unordered_multiset objects is not affected by the arbitrary order in which they store their elements. Two unordered_multisets are equal if they have the same number of elements and the elements in one container are a permutation of the elements in the other container. Otherwise, they are unequal.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // unordered_multiset_eq.cpp   
@@ -280,7 +284,7 @@ int main()
   
 ```  
   
- **出力:**  
+ **Output:**  
   
  `c1 == c2: false`  
   
@@ -288,7 +292,7 @@ int main()
   
  `c2 == c3: false`  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<unordered_set>](../standard-library/unordered-set.md)
 
 

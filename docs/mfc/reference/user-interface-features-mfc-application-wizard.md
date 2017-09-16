@@ -1,5 +1,5 @@
 ---
-title: "ユーザー インターフェイスの機能、MFC アプリケーション ウィザード |Microsoft ドキュメント"
+title: User Interface Features, MFC Application Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,57 +33,57 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 390d06ddb09786ac4e9960c1933e0b1a76531f5e
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d0612ca4dc78cbca0cffdd9f0ecb580864848ec5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="user-interface-features-mfc-application-wizard"></a>[ユーザー インターフェイスの機能] (MFC アプリケーション ウィザード)
-このトピックでは、アプリケーションの外観を指定するのに使用できるオプションについて説明します。 プロジェクトのユーザー インターフェイスの機能で指定したアプリケーションの種類によって異なります、[アプリケーションの種類、MFC アプリケーション ウィザード](../../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。 たとえば、シングル ドキュメント インターフェイス アプリケーションを作成する場合は、子フレームのスタイルを追加できません。  
+# <a name="user-interface-features-mfc-application-wizard"></a>User Interface Features, MFC Application Wizard
+This topic explains the options that you can use to specify the look of your application. The user interface features available for your project depend on the type of application you specified in the [Application Type, MFC Application Wizard](../../mfc/reference/application-type-mfc-application-wizard.md) page of the MFC Application Wizard. For example, if you create a single document interface application, you cannot add child frame styles.  
   
- **メイン フレーム スタイル**  
- アプリケーションのメイン ウィンドウ フレームの機能を設定します。  
+ **Main frame styles**  
+ Sets the features of your application's main window frame.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**シック (thick) フレーム**|サイズ変更境界のあるウィンドウを作成します。 これが既定値です。|  
-|**ボックスを最小化します。**|メイン フレーム ウィンドウには、最小化ボタンが含まれています。 これが既定値です。|  
-|**ボックスを最大化します。**|メイン フレーム ウィンドウには、最大化ボタンが含まれています。 これが既定値です。|  
-|**最小化**|メイン フレーム ウィンドウをアイコンとして開きます。|  
-|**最大化**|フル サイズ表示のメイン フレーム ウィンドウを開きます。|  
-|**システム メニュー**|メイン フレーム ウィンドウには、システム メニューが含まれています。 これが既定値です。|  
-|**ボックスの概要**|含まれています、**に関する**アプリケーションのボックスです。 ユーザーは、アプリケーションからこのボックスを表示することができます**ヘルプ**メニュー。 既定値、おり、選択した場合を除き、変更できません。**ダイアログ ベース**で、[アプリケーションの種類、MFC アプリケーション ウィザード](../../mfc/reference/application-type-mfc-application-wizard.md)ページ。<br /><br /> **注**通常、使用できないオプションを示します、ウィザードには適用されません、オプション、プロジェクトを使用できなくなったアイテムのチェック ボックスを選択するか、またはクリアするかどうか。 この例では、常に追加されます、**に関する**ダイアログ ベースとして最初にプロジェクトを指定する場合を除き、プロジェクトにボックスし、ボックスをオフにします。|  
-|**初期のステータス バー**|ステータス バーをアプリケーションに追加します。 ステータス バーには、キーボードの CAPSLOCK、NUMLOCK、および SCROLL LOCK キーの自動のインジケーターが含まれてし、メニュー コマンドやツールバーのボタンのヘルプを表示するメッセージ行文字列します。 このオプションをクリックすると、ステータス バーを非表示 メニューのコマンドも追加されます。 既定では、アプリケーションは、ステータス バーがします。 ダイアログ ベースのアプリケーションの種類は使用できません。|  
-|**分割ウィンドウ**|分割バーを提供します。 分割バーは、アプリケーションのメイン ビューを分割します。 マルチ ドキュメント インターフェイス (MDI) アプリケーションで、MDI 子フレームのクライアント ウィンドウ分割ウィンドウ、シングル ドキュメント インターフェイス (SDI) アプリケーションおよび上位レベルのドキュメントの複数のアプリケーションでメイン フレームのクライアント ウィンドウ分割ウィンドウです。 ダイアログ ベースのアプリケーションの種類は使用できません。|  
+|**Thick frame**|Creates a window that has a sizing border. The default.|  
+|**Minimize box**|Includes a minimize box in the main frame window. The default.|  
+|**Maximize box**|Includes a maximize box in the main frame window. The default.|  
+|**Minimized**|Opens the main frame window as an icon.|  
+|**Maximized**|Opens the main frame window to the full size of the display.|  
+|**System menu**|Includes a system menu in the main frame window. The default.|  
+|**About box**|Includes an **About** box for the application. The user can access this box from the application's **Help** menu. The default, and unchangeable unless you select **Dialog based**, in the [Application Type, MFC Application Wizard](../../mfc/reference/application-type-mfc-application-wizard.md) page.<br /><br /> **Note** Usually, an unavailable option indicates that the wizard does not apply the option to the project, whether the unavailable item's check box is selected or cleared. In this case, the wizard always adds an **About** box to the project unless you first specify the project as dialog based and then uncheck the box.|  
+|**Initial status bar**|Adds a status bar to your application. The status bar contains automatic indicators for the keyboard's CAPS LOCK, NUM LOCK, and SCROLL LOCK keys and a message line that displays help strings for menu commands and toolbar buttons. Clicking this option also adds menu commands to display or hide the status bar. By default, an application has a status bar. Not available for dialog-based application types.|  
+|**Split window**|Provides a splitter bar. The splitter bar splits the application's main views. In a multiple document interface (MDI) application, the MDI child frame's client window is a splitter window, and in a single document interface (SDI) application and multiple top level document application, the main frame's client window is a splitter window. Not available for dialog-based application types.|  
   
- **子フレームのスタイル**  
- アプリケーションでは、子フレームの初期状態と外観を指定します。 子フレームのスタイルの MDI アプリケーションでのみ利用できます。  
+ **Child frame styles**  
+ Specifies the appearance and initial state of the child frames in your application. Child frame styles are available for MDI applications only.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**ボックス最小化ボタンします。**|子ウィンドウが最小化ボタン (既定で有効になっている) を持つかどうかを指定します。|  
-|**[最大化ボタン] ボックス**|子ウィンドウが最大化ボタンを (既定で有効になっている) を持つかどうかを指定します。|  
-|**最大化子**|子ウィンドウが cs.style フラグを設定して最初から最大化するかどうかを示す**WS_MAXIMIZE**で、 [PreCreateWindow](../../mfc/reference/cwnd-class.md#precreatewindow)のメンバー関数`CChildFrame`です。|  
+|**Child minimize box**|Specifies whether a child window has a minimize button (enabled by default).|  
+|**Child maximize box**|Specifies whether a child window has a maximize button (enabled by default).|  
+|**Child maximized**|Specifies whether a child window is initially maximized by setting the cs.style flag **WS_MAXIMIZE** in the [PreCreateWindow](../../mfc/reference/cwnd-class.md#precreatewindow) member function of `CChildFrame`.|  
   
- **コマンド バー (メニュー/ツールバー/リボン)**  
- メニューのツールバー、およびリボン アプリケーションに含まれるかどうかを示します。 ダイアログ ベースのアプリケーションでは使用できません。  
+ **Command bars (menu/toolbar/ribbon)**  
+ Indicates whether your application includes menus, toolbars, and/or a ribbon. Not available for dialog-based applications.  
   
-|オプション|説明|  
+|Option|Description|  
 |------------|-----------------|  
-|**クラシック メニューを使用してください。**|アプリケーションがクラシック、非ドラッグ可能なメニューが含まれているを指定します。|  
-|**クラシック ドッキング ツールバーを使用します。**|アプリケーションには、標準 Windows ツールバーを追加します。 ツールバーには、新しいドキュメントを作成するためのボタンが含まれています。開くファイルを保存したりドキュメントです。切り取り、コピー、貼り付け、またはテキストの印刷およびヘルプ モードに移行します。 このオプションを有効にすると、メニュー コマンドまたはツールバーを非表示にも追加されます。|  
-|**ブラウザー スタイルのツールバーを使用します。**|アプリケーションをインターネット エクスプ ローラー スタイルのツールバーを追加します。|  
-|**メニュー バーとツールバーを使用します。**|ドラッグ可能なメニュー バーとツールバー、アプリケーションが含まれていることを示します。|  
-|**ユーザー定義のツールバーとイメージ**|ツールバーと実行時にツール バー イメージをカスタマイズすることができます。|  
-|**個人用に設定されたメニューの動作**|ユーザーが最も頻繁に使用するコマンドのみが含まれているかどうかは、メニューが開かれると、アイテムの完全な一覧を含むかどうか、またはを指定します。|  
-|**リボンを使用します。**|メニュー バーまたはツールバーではなく、アプリケーションでは、Office 2007 に似たリボンを使用します。|  
+|**Use a classic menu**|Specifies that your application contains a classic, non-draggable menu.|  
+|**Use a classic docking toolbar**|Adds a standard Windows toolbar to your application. The toolbar contains buttons for creating a new document; opening and saving document files; cutting copying, pasting, or printing text; and entering Help mode. Enabling this option also adds menu commands to display or hide the toolbar.|  
+|**Use a browser style toolbar**|Adds an Internet Explorer-style toolbar to your application.|  
+|**Use a menu bar and toolbar**|Indicates that your application contains a draggable menu bar and a toolbar.|  
+|**User-defined toolbars and images**|Allows the user to customize the toolbar and the toolbar images at runtime.|  
+|**Personalized menu behavior**|Specifies whether the menu contains the full list of items when opened, or if it contains only the commands that the user most frequently uses.|  
+|**Use a ribbon**|Uses an Office 2007-like ribbon in your application instead of a menu bar or toolbar.|  
   
- **ダイアログのタイトル**  
- [CDialog クラス](../../mfc/reference/cdialog-class.md)-ベースのアプリケーションのみ、このタイトルが、ダイアログ ボックスのタイトル バーに表示されます。 このフィールドを編集する必要があります最初に選択する、**ダイアログ ベース**オプションで **アプリケーションの種類**です。 詳細については、次を参照してください。[アプリケーションの種類、MFC アプリケーション ウィザード](../../mfc/reference/application-type-mfc-application-wizard.md)です。  
+ **Dialog title**  
+ For [CDialog Class](../../mfc/reference/cdialog-class.md)-based applications only, this title appears in the title bar of the dialog box. To edit this field, you must first select the **Dialog based** option under **Application type**. For more information, see [Application Type, MFC Application Wizard](../../mfc/reference/application-type-mfc-application-wizard.md).  
   
-## <a name="see-also"></a>関連項目  
- [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)
 
 

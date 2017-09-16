@@ -1,45 +1,64 @@
 ---
-title: "[適用] ボタンの処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "[適用] ボタン (プロパティ シートの)"
-  - "プロパティ シート、[適用] ボタン"
+title: Handling the Apply Button | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Apply button in property sheet
+- property sheets, Apply button
 ms.assetid: 7e977015-59b8-406f-b545-aad0bfd8d55b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# [適用] ボタンの処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 96feedc375f1430ae99851baf90aca49c7f6a296
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プロパティ シートに標準ダイアログ ボックスが機能があります: ユーザーがプロパティ シートを閉じる前に行った変更を適用できるようにします。  これは適用ボタンを使用します。  ここでは、この機能を適切に実装するために使用できるメソッドについて説明します。  
+---
+# <a name="handling-the-apply-button"></a>Handling the Apply Button
+Property sheets have a capability that standard dialog boxes do not: They allow the user to apply changes they have made before closing the property sheet. This is done using the Apply button. This article discusses methods you can use to implement this feature properly.  
   
- モーダル ダイアログ ボックスは、普通、外部オブジェクトにダイアログ ボックスを閉じる場合は、ユーザーが OK をクリックすると設定を適用します。  これは、プロパティ シートにも当てはまります: ユーザーが OK をクリックすると、プロパティ シートの新しい設定が適用されます。  
+ Modal dialog boxes usually apply the settings to an external object when the user clicks OK to close the dialog box. The same is true for a property sheet: When the user clicks OK, the new settings in the property sheet take effect.  
   
- ただし、ユーザーがプロパティ シート ダイアログ ボックスを閉じずに設定を保存することを許可することもできます。  これは適用ボタンの機能です。  適用ボタンは、現在アクティブなページの現在の設定だけを適用することに対して外部オブジェクトにプロパティ ページすべての現在の設定を適用します。  
+ However, you may want to allow the user to save settings without having to close the property sheet dialog box. This is the function of the Apply button. The Apply button applies the current settings in all of the property pages to the external object, as opposed to applying only the current settings of the currently active page.  
   
- 既定では、適用ボタンは常に無効になります。  適切なタイミングで適用ボタンを有効にするコードを作成し、後で説明するように、リソースの効果を実装するためのコードを記述する必要があります。  
+ By default, the Apply button is always disabled. You must write code to enable the Apply button at the appropriate times, and you must write code to implement the effect of Apply, as explained below.  
   
- ユーザーに適用の機能を提供しない場合、適用ボタンを削除する必要はありません。  Windows の将来のバージョンで使用できる標準のプロパティ シート サポートを使用するアプリケーション間で共通です。ように無効にされて残すことができます。  
+ If you do not wish to offer the Apply functionality to the user, it is not necessary to remove the Apply button. You can leave it disabled, as will be common among applications that use standard property sheet support available in future versions of Windows.  
   
- ページを報告し、適用ボタンを有効にするには、呼び出し **CPropertyPage::SetModified\( TRUE \)**変更されます。  ページのいずれかが変更を報告する、適用ボタンは、現在アクティブなページが変更されたかどうかを有効にすると、に関係なくなります。  
+ To report a page as being modified and enable the Apply button, call **CPropertyPage::SetModified( TRUE )**. If any of the pages report being modified, the Apply button will remain enabled, regardless of whether the currently active page has been modified.  
   
- たびにページのユーザーが変更してすべての構成 [CPropertyPage::SetModified](../Topic/CPropertyPage::SetModified.md) を呼び出す必要があります。  ページのユーザーが設定 **EN\_CHANGE** または **BN\_CLICKED**などのプロパティ ページのコントロールの変更通知、ハンドラーを実装することになったことを検出するには、1 とおりの方法を示します。  
+ You should call [CPropertyPage::SetModified](../mfc/reference/cpropertypage-class.md#setmodified) whenever the user changes any settings in the page. One way to detect when a user changes a setting in the page is to implement change notification handlers for each of the controls in the property page, such as **EN_CHANGE** or **BN_CLICKED**.  
   
- 適用ボタンの動作を実装するには、プロパティ シートはアプリケーションの所有者、またはプロパティ ページの現在の設定を適用する他の外部オブジェクトを告げなければ必要があります。  同時に、プロパティ シートは、外部オブジェクトへの変更を適用したすべてのページの **CPropertyPage::SetModified\( FALSE \)** を呼び出して適用ボタンを無効にする必要があります。  
+ To implement the effect of the Apply button, the property sheet must tell its owner, or some other external object in the application, to apply the current settings in the property pages. At the same time, the property sheet should disable the Apply button by calling **CPropertyPage::SetModified( FALSE )** for all pages that applied their modifications to the external object.  
   
- この手順の例については、MFC の一般的な [PROPDLG](../top/visual-cpp-samples.md)サンプルを参照してください。  
+ For an example of this process, see the MFC General sample [PROPDLG](../visual-cpp-samples.md).  
   
-## 参照  
- [プロパティ シート](../mfc/property-sheets-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Property Sheets](../mfc/property-sheets-mfc.md)
+
+

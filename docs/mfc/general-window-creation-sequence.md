@@ -1,50 +1,69 @@
 ---
-title: "一般的なウィンドウ作成順序 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フレーム ウィンドウ [C++], 作成"
-  - "手順 [C++]"
-  - "手順 [C++], ウィンドウの作成"
-  - "ウィンドウ [C++], 作成"
+title: General Window Creation Sequence | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- sequence [MFC], window creation
+- frame windows [MFC], creating
+- windows [MFC], creating
+- sequence [MFC]
 ms.assetid: 9cd8c7ea-5e24-429e-b6d9-d7b6041d8ba6
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 一般的なウィンドウ作成順序
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 48eabbb2bfd7ca90c8dbe9f82207f8770018b0e2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これでウィンドウを作成する場合は、独自の子ウィンドウ、フレームワークを同じプロセス [ドキュメント\/ビューの作成](../mfc/document-view-creation.md)で説明されている実装と多く使用されます。  
+---
+# <a name="general-window-creation-sequence"></a>General Window Creation Sequence
+When you create a window of your own, such as a child window, the framework uses much the same process as that described in [Document/View Creation](../mfc/document-view-creation.md).  
   
- MFC に用意されているすべてのウィンドウ クラスは [正常な構築式](../mfc/one-stage-and-two-stage-construction-of-objects.md)が行われます。  言い換えれば、C\+\+ **new** の演算子の呼び出し時に、コンストラクターには、が、C\+\+. C\+\+ オブジェクトを初期化しましたり対応するウィンドウを作成します。  これはウィンドウ オブジェクトの [作成](../Topic/CWnd::Create.md) のメンバー関数を呼び出すことによって、そのされます。  
+ All the window classes provided by MFC employ [two-stage construction](../mfc/one-stage-and-two-stage-construction-of-objects.md). That is, during an invocation of the C++ **new** operator, the constructor allocates and initializes a C++ object but does not create a corresponding Windows window. That is done afterward by calling the [Create](../mfc/reference/cwnd-class.md#create) member function of the window object.  
   
- **作成** のメンバー関数は、ウィンドウを行い、C\+\+ オブジェクトのパブリック データ メンバー [m\_hWnd](../Topic/CWnd::m_hWnd.md)で `HWND` を格納します。  **作成** は 作成パラメーター上の完全な柔軟性が得られます。  **作成**を呼び出す前に、フレームのアイコンとクラスのスタイルを設定するには、グローバル関数 [AfxRegisterWndClass](../Topic/AfxRegisterWndClass.md) ウィンドウ クラスを登録することもできます。  
+ The **Create** member function makes the Windows window and stores its `HWND` in the C++ object's public data member [m_hWnd](../mfc/reference/cwnd-class.md#m_hwnd). **Create** gives complete flexibility over the creation parameters. Before calling **Create**, you may want to register a window class with the global function [AfxRegisterWndClass](../mfc/reference/application-information-and-management.md#afxregisterwndclass) in order to set the icon and class styles for the frame.  
   
- フレーム ウィンドウの場合は、**作成**の代わりに [LoadFrame](../Topic/CFrameWnd::LoadFrame.md) メンバー関数を使用できます。  `LoadFrame` プロパティは パラメーターを使用してウィンドウを作成します。  これは、フレームのキャプション、アイコン、アクセラレータ テーブルとメニューを含むリソースから多くの既定値を取得します。  
+ For frame windows, you can use the [LoadFrame](../mfc/reference/cframewnd-class.md#loadframe) member function instead of **Create**. `LoadFrame` makes the Windows window using fewer parameters. It gets many default values from resources, including the frame's caption, icon, accelerator table, and menu.  
   
 > [!NOTE]
->  アイコン、アクセラレータ テーブルとメニュー リソースが共通のリソース id が、LoadFrame が読み込まれるようにするには、**IDR\_MAINFRAME**など\) である必要があります。  
+>  Your icon, accelerator table, and menu resources must have a common resource ID, such as **IDR_MAINFRAME**, for them to be loaded by LoadFrame.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ウィンドウ オブジェクト](../mfc/window-objects.md)  
+-   [Window objects](../mfc/window-objects.md)  
   
--   [ウィンドウに、「登録は設定します」。](../mfc/registering-window-classes.md)  
+-   [Registering window "classes"](../mfc/registering-window-classes.md)  
   
--   [分割ウィンドウ オブジェクト](../mfc/destroying-window-objects.md)  
+-   [Destroying window objects](../mfc/destroying-window-objects.md)  
   
--   [ドキュメント フレーム ウィンドウの作成](../Topic/Creating%20Document%20Frame%20Windows.md)  
+-   [Creating document frame windows](../mfc/creating-document-frame-windows.md)  
   
-## 参照  
- [ウィンドウの作成](../Topic/Creating%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Creating Windows](../mfc/creating-windows.md)
+
+

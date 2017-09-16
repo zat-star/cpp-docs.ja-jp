@@ -1,64 +1,83 @@
 ---
-title: "ダイアログ データ エクスチェンジ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "キャンセル (データ交換を)"
-  - "キャプチャ (ユーザー入力を)"
-  - "CDataExchange クラス, 使用 (DDX を)"
-  - "DDX (ダイアログ データ エクスチェンジ), キャンセル"
-  - "DDX (ダイアログ データ エクスチェンジ), データ交換機構"
-  - "ダイアログ ボックス データ"
-  - "ダイアログ ボックス データ, 取得"
-  - "ダイアログ ボックス, データ交換"
-  - "ダイアログ ボックス, 初期化"
-  - "ダイアログ ボックス, 取得 (DDX を使用してユーザー入力を)"
-  - "DoDataExchange メソッド"
-  - "初期化 (ダイアログ ボックスを)"
-  - "取得 (ダイアログ ボックスのデータを)"
-  - "転送 (ダイアログ ボックス データを)"
-  - "UpdateData メソッド"
-  - "ユーザー入力, 取得 (MFC のダイアログ ボックスから)"
+title: Dialog Data Exchange | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- initializing dialog boxes
+- canceling data exchange
+- dialog box data, retrieving
+- DDX (dialog data exchange), data exchange mechanism
+- dialog boxes [MFC], initializing
+- dialog boxes [MFC], retrieving user input using DDX
+- dialog box data
+- dialog boxes [MFC], data exchange
+- CDataExchange class [MFC], using DDX
+- DoDataExchange method [MFC]
+- user input [MFC], retrieving from MFC dialog boxes
+- capturing user input [MFC]
+- transferring dialog box data
+- DDX (dialog data exchange), canceling
+- UpdateData method [MFC]
+- retrieving dialog box data [MFC]
 ms.assetid: 4675f63b-41d2-45ed-b6c3-235ad8ab924b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ダイアログ データ エクスチェンジ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9fbb20507f4412ee32309d178ab473375bec1d29
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-DDX 機構を使用すると、`OnInitDialog` ハンドラーまたはダイアログのコンストラクターのダイアログ オブジェクトのメンバー変数の初期値を正常に設定します。  ダイアログが表示される直前に、フレームワークの DDX 機構は、表示されるダイアログ ボックスのコントロールにダイアログ ボックス自体が `DoModal` または **作成**に応じて表示されるメンバー変数の値を転送します。  `CDialog` の `OnInitDialog` の既定の実装では、ダイアログ ボックスのコントロールを初期化するに `CWnd` クラスの `UpdateData` メンバー関数を呼び出します。  
+---
+# <a name="dialog-data-exchange"></a>Dialog Data Exchange
+If you use the DDX mechanism, you set the initial values of the dialog object's member variables, typically in your `OnInitDialog` handler or the dialog constructor. Immediately before the dialog is displayed, the framework's DDX mechanism transfers the values of the member variables to the controls in the dialog box, where they appear when the dialog box itself appears in response to `DoModal` or **Create**. The default implementation of `OnInitDialog` in `CDialog` calls the `UpdateData` member function of class `CWnd` to initialize the controls in the dialog box.  
   
- 同じ機能がコントロールからメンバー変数にユーザーが OK ボタンをクリックして値を転送する \(または引数 **TRUE**で `UpdateData` のメンバー関数を呼び出すたびに\)。  ダイアログ データ検証の機能は検証規則を指定するデータ項目を検証します。  
+ The same mechanism transfers values from the controls to the member variables when the user clicks the OK button (or whenever you call the `UpdateData` member function with the argument **TRUE**). The dialog data validation mechanism validates any data items for which you specified validation rules.  
   
- 次の図は、ダイアログ データ エクスチェンジ \(DDX\) について説明します。  
+ The following figure illustrates dialog data exchange.  
   
- ![ダイアログ ボックス データ エクスチェンジ](../mfc/media/vc379d1.gif "vc379D1")  
-ダイアログ データ エクスチェンジ  
+ ![Dialog box data exchange](../mfc/media/vc379d1.gif "vc379d1")  
+Dialog Data Exchange  
   
- `UpdateData` は 渡された **BOOL** パラメーターで指定された二つの方向でも機能します。  変換を実行するには、`UpdateData` は `CDataExchange` オブジェクトを設定し、ダイアログ クラスの `CDialog``DoDataExchange` のメンバー関数のオーバーライドを呼び出します。  `DoDataExchange` は `CDataExchange`型の引数を受け取ります。  `UpdateData` に渡される `CDataExchange` オブジェクトは互換性の方向などの情報を定義する Swap のコンテキストを表します。  
+ `UpdateData` works in both directions, as specified by the **BOOL** parameter passed to it. To carry out the exchange, `UpdateData` sets up a `CDataExchange` object and calls your dialog class's override of `CDialog`'s `DoDataExchange` member function. `DoDataExchange` takes an argument of type `CDataExchange`. The `CDataExchange` object passed to `UpdateData` represents the context of the exchange, defining such information as the direction of the exchange.  
   
- \(または、コード ウィザード `DoDataExchange`\) をオーバーライドする場合、データ メンバー \(コントロール\)、1 人の DDX の 1 種類の関数呼び出しを指定します。  DDX の各関数は、`UpdateData`を `DoDataExchange` に渡される `CDataExchange` の引数で指定されるコンテキストに基づいて両方向のデータ交換にわかっています。  
+ When you (or a Code wizard) override `DoDataExchange`, you specify a call to one DDX function per data member (control). Each DDX function knows how to exchange data in both directions based on the context supplied by the `CDataExchange` argument passed to your `DoDataExchange` by `UpdateData`.  
   
- MFC は互換性の種類に DDX の多くの機能を提供します。  次の例は、DDX の 2 種類の関数、および 1 個の DDV 関数が呼び出される `DoDataExchange` のオーバーライドを示します。:  
+ MFC provides many DDX functions for different kinds of exchange. The following example shows a `DoDataExchange` override in which two DDX functions and one DDV function are called:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#49](../mfc/codesnippet/CPP/dialog-data-exchange_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#49](../mfc/codesnippet/cpp/dialog-data-exchange_1.cpp)]  
   
- `DDX_` と `DDV_` の行がデータ マップです。  サンプルと DDX 示す DDV 関数はチェック ボックス コントロールとエディット ボックスのコントロールに対して、それぞれです。  
+ The `DDX_` and `DDV_` lines are a data map. The sample DDX and DDV functions shown are for a check-box control and an edit-box control, respectively.  
   
- ユーザーにモーダル ダイアログ ボックスを取り消すと、`OnCancel` のメンバー関数は、ダイアログ ボックスを終了し、`DoModal` は **IDCANCEL**値を返します。  この場合、データは、ダイアログ ボックスとダイアログ オブジェクト間で交換されません。  
+ If the user cancels a modal dialog box, the `OnCancel` member function terminates the dialog box and `DoModal` returns the value **IDCANCEL**. In that case, no data is exchanged between the dialog box and the dialog object.  
   
-## 参照  
- [ダイアログ データ エクスチェンジとダイアログ データ バリデーション](../mfc/dialog-data-exchange-and-validation.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)   
- [ダイアログ データ バリデーション](../mfc/dialog-data-validation.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Data Exchange and Validation](../mfc/dialog-data-exchange-and-validation.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)   
+ [Dialog Data Validation](../mfc/dialog-data-validation.md)
+
+

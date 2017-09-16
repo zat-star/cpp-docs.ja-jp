@@ -1,40 +1,59 @@
 ---
-title: "MFC ODBC コンシューマーの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ODBC コンシューマー"
+title: Adding an MFC ODBC Consumer | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ODBC consumers
 ms.assetid: 2dc97909-1f7e-43ee-9d47-99e612727058
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# MFC ODBC コンシューマーの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6e345261ba9cde7e7d97c3741de0e34fd7fd2db8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC ODBC コンシューマーは、データ ソースへのアクセスに必要な ODBC レコードセット クラスとデータ バインディングで構成されます。  
+---
+# <a name="adding-an-mfc-odbc-consumer"></a>Adding an MFC ODBC Consumer
+An MFC ODBC consumer consists of an ODBC recordset class and data bindings necessary to access a data source.  
   
-### MFC ODBC コンシューマーを追加するには  
+### <a name="to-add-an-mfc-odbc-consumer"></a>To add an MFC ODBC consumer  
   
-1.  クラス ビューでプロジェクトを右クリックします。  ショートカット メニューの \[追加\] をポイントし、\[クラスの追加\] をクリックします。  
+1.  In Class View, right-click the project. On the shortcut menu, click **Add** and then click **Add Class**.  
   
-2.  Visual C\+\+ フォルダーで、\[MFC ODBC コンシューマー\] アイコンをダブルクリックするか、またはアイコンを選択して \[開く\] をクリックします。  
+2.  In the Visual C++ folder, double-click the **MFC ODBC Consumer** icon or select it and click **Open**.  
   
-     MFC ODBC コンシューマー ウィザードが開きます。  
+     The MFC ODBC Consumer Wizard opens.  
   
-3.  [MFC ODBC コンシューマー ウィザード](../../mfc/reference/mfc-odbc-consumer-wizard.md)の指示に従って、設定を定義します。  
+3.  Define settings as described in [MFC ODBC Consumer Wizard](../../mfc/reference/mfc-odbc-consumer-wizard.md).  
   
-4.  \[完了\] をクリックしてウィザードを閉じると、新規作成した ODBC コンシューマー コードがプロジェクトに挿入されます。  
+4.  Click **Finish** to close the wizard, which will insert the newly created ODBC consumer code in your project.  
   
-## 参照  
- [コード ウィザードを使用した機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)
+## <a name="see-also"></a>See Also  
+ [Adding Functionality with Code Wizards](../../ide/adding-functionality-with-code-wizards-cpp.md)
+
+

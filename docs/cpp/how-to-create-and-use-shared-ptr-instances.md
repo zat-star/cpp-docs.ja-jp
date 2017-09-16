@@ -1,72 +1,87 @@
 ---
-title: "方法: shared_ptr インスタンスを作成して使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: 'How to: Create and Use shared_ptr Instances | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: 7d6ebb73-fa0d-4b0b-a528-bf05de96518e
 caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# 方法: shared_ptr インスタンスを作成して使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 0d5915a9c05e115dd4af9303c08287259066a8dd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-`shared_ptr` 型は、C\+\+ 標準ライブラリ内のスマート ポインターであり、複数の所有者がメモリ内のオブジェクトの有効期間を管理する必要が生じる可能性があるシナリオを想定して設計されたものです。  `shared_ptr` を初期化した後、そのポインターをコピーすること、関数の引数内の値として渡すこと、および他の `shared_ptr` インスタンスに割り当てることができます。  すべてのインスタンスは同じオブジェクトを指し、1 つの "コントロール ブロック" へのアクセスを共有します。このコントロール ブロックは、新しい `shared_ptr` が追加されるとき、スコープ外になるとき、またはリセットされるときに必ず参照カウントをインクリメントおよびデクリメントします。  参照カウントが 0 に達したときに、コントロール ブロックはメモリ リソースと自らを削除します。  
+---
+# <a name="how-to-create-and-use-sharedptr-instances"></a>How to: Create and Use shared_ptr Instances
+The `shared_ptr` type is a smart pointer in the C++ standard library that is designed for scenarios in which more than one owner might have to manage the lifetime of the object in memory. After you initialize a `shared_ptr` you can copy it, pass it by value in function arguments, and assign it to other `shared_ptr` instances. All the instances point to the same object, and share access to one "control block" that increments and decrements the reference count whenever a new `shared_ptr` is added, goes out of scope, or is reset. When the reference count reaches zero, the control block deletes the memory resource and itself.  
   
- 次の図に、1 つのメモリ位置を指す `shared_ptr` の複数のインスタンスを示します。  
+ The following illustration shows several `shared_ptr` instances that point to one memory location.  
   
- [![共有ポインター](../Image/shared_ptr.png "shared\_ptr")](assetId:///9785ad08-31d8-411a-86a9-fb9cd9684c27)  
+ [![Shared pointer](../cpp/media/shared_ptr.png "shared_ptr")](assetId:///9785ad08-31d8-411a-86a9-fb9cd9684c27)  
   
-## 使用例  
- 最初にメモリ リソースを作成するときは、可能な限り、`shared_ptr` を作成するために [make\_shared](../Topic/make_shared%20\(%3Cmemory%3E\).md) 関数を使用してください。  `make_shared` は例外セーフです。  これは、コントロール ブロックとリソースにメモリを割り当てるために同じ呼び出しを使用し、その結果、構造のオーバーヘッドが削減されます。  `make_shared`を使用しない場合は、オブジェクトを `shared_ptr` コンストラクターに渡す前にオブジェクトを作成するために、明示的な新しい式を使用する必要があります。  次の例では、新しいオブジェクトと共に `shared_ptr` を宣言して初期化するさまざまな方法を示します。  
+## <a name="example"></a>Example  
+ Whenever possible, use the [make_shared](../standard-library/memory-functions.md#make_shared) function to create a `shared_ptr` when the memory resource is created for the first time. `make_shared` is exception-safe. It uses the same call to allocate the memory for the control block and the resource, and thereby reduces the construction overhead. If you do not use `make_shared`, then you have to use an explicit new expression to create the object before you pass it to the `shared_ptr` constructor. The following example shows various ways to declare and initialize a `shared_ptr` together with a new object.  
   
  [!code-cpp[stl_smart_pointers#1](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_1.cpp)]  
   
-## 使用例  
- 次の例では、別の `shared_ptr`によって既に割り当てられているオブジェクトの共有所有権を取得する `shared_ptr` インスタンスを宣言して初期化する方法を示します。  `sp2` が初期化された `shared_ptr`であることを想定します。  
+## <a name="example"></a>Example  
+ The following example shows how to declare and initialize `shared_ptr` instances that take on shared ownership of an object that has already been allocated by another `shared_ptr`. Assume that `sp2` is an initialized `shared_ptr`.  
   
  [!code-cpp[stl_smart_pointers#2](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_2.cpp)]  
   
-## 使用例  
- `shared_ptr` は、要素をコピーするアルゴリズムを使用しているときに、標準テンプレート ライブラリ \(STL\) のコンテナー内でも役立ちます。  基になるメモリが、必要とされている間は有効であり、必要なくなった後は無効になることを理解している場合は、要素を `shared_ptr` 内でラップし、他のコンテナーにコピーすることができます。  次の例では、ベクター内の `shared_ptr` インスタンスに対して `replace_copy_if` アルゴリズムを使用する方法を示します。  
+## <a name="example"></a>Example  
+ `shared_ptr` is also helpful in C++ Standard Library containers when you are using algorithms that copy elements. You can wrap elements in a `shared_ptr`, and then copy it into other containers with the understanding that the underlying memory is valid as long as you need it, and no longer. The following example shows how to use the `replace_copy_if` algorithm on `shared_ptr` instances in a vector.  
   
  [!code-cpp[stl_smart_pointers#4](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_3.cpp)]  
   
-## 使用例  
- `dynamic_pointer_cast`, `static_pointer_cast` および `const_pointer_cast` を使用して、`shared_ptr` をキャストすることができます。  これらの関数は、`dynamic_cast`、`static_cast`、および `const_cast` の各演算子に似ています。  次の例では、基底クラスの `shared_ptr` のベクター内にある各要素の派生型をテストし、要素をコピーし、それらに関する情報を表示する方法を示します。  
+## <a name="example"></a>Example  
+ You can use `dynamic_pointer_cast`, `static_pointer_cast`, and `const_pointer_cast` to cast a `shared_ptr`. These functions resemble the `dynamic_cast`, `static_cast`, and `const_cast` operators. The following example shows how to test the derived type of each element in a vector of `shared_ptr` of base classes, and then copy the elements and display information about them.  
   
  [!code-cpp[stl_smart_pointers#5](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_4.cpp)]  
   
-## 使用例  
- 次の方法で、`shared_ptr` を別の関数に渡すことができます。  
+## <a name="example"></a>Example  
+ You can pass a `shared_ptr` to another function in the following ways:  
   
--   値渡しで `shared_ptr` を渡します。  これは、コピー コンストラクターを呼び出し、参照カウントをインクリメントし、呼び出し先を所有者にします。  この操作には小規模なオーバーヘッドがあり、渡そうとする `shared_ptr` オブジェクトの数によっては、非常に大規模になる可能性があります。  呼び出し元と呼び出し先の間にあるコード コントラクト \(暗黙的または明示的\) が、呼び出し先を所有者にすることを要求する場合は、このオプションを使用します。  
+-   Pass the `shared_ptr` by value. This invokes the copy constructor, increments the reference count, and makes the callee an owner. There is a small amount of overhead in this operation, which may be significant depending on how many `shared_ptr` objects you are passing. Use this option when the code contract (implied or explicit) between the caller and callee requires that the callee be an owner.  
   
--   参照または定数参照により、`shared_ptr` を渡します。  この場合、参照カウントはインクリメントされず、呼び出し元がスコープ内にとどまっている限り、呼び出し先はポインターにアクセスできます。  または、呼び出し先は参照に基づいて `shared_ptr` を作成し、その後、共有所有者になる方針を使用することもできます。  呼び出し元が呼び出し先を把握していない場合や、`shared_ptr` を渡す必要があり、パフォーマンス上の理由でコピー操作を回避したいと考える場合は、このオプションを使用します。  
+-   Pass the `shared_ptr` by reference or const reference. In this case, the reference count is not incremented, and the callee can access the pointer as long as the caller does not go out of scope. Or, the callee can decide to create a `shared_ptr` based on the reference, and thereby become a shared owner. Use this option when the caller has no knowledge of the callee, or when you must pass a `shared_ptr` and want to avoid the copy operation for performance reasons.  
   
--   基になるポインター、または基になるオブジェクトへの参照を渡します。  この結果、呼び出し先はオブジェクトを使用できますが、そのオブジェクトを有効にして所有権を共有することや、有効期間を延長することはできません。  呼び出し先が、生ポインターから `shared_ptr` を作成する場合は、新しい `shared_ptr` は元のポインターから独立し、基になるリソースを制御することはできません。  呼び出し元と呼び出し先の間のコントラクトが、呼び出し元が `shared_ptr` の有効期間の所有権を保持することを明示的に指定する場合は、このオプションを使用します。  
+-   Pass the underlying pointer or a reference to the underlying object. This enables the callee to use the object, but does not enable it to share ownership or extend the lifetime. If the callee creates a `shared_ptr` from the raw pointer, the new `shared_ptr` is independent from the original, and does not control the underlying resource. Use this option when the contract between the caller and callee clearly specifies that the caller retains ownership of the `shared_ptr` lifetime.  
   
--   `shared_ptr`を渡す方法を決定するときに、呼び出し先が、基になるリソースの所有権を共有する必要があるかどうかを判断してください。  "所有者" とは、基になるリソースを自らが必要とする限り、そのリソースを維持することができるオブジェクトまたは関数です。  呼び出し先が、\(関数の\) 有効期間を上回ってポインターの有効期間を延長できるようにすることを、呼び出し元が保証する必要がある場合は、最初のオプションを使用します。  呼び出し先が有効期間を延長するかどうかが問題にならない場合は、参照渡しを使用し、コピーするかどうかを呼び出し先に任せます。  
+-   When you are deciding how to pass a `shared_ptr`, determine whether the callee has to share ownership of the underlying resource. An "owner" is an object or function that can keep the underlying resource alive for as long as it needs it. If the caller has to guarantee that the callee can extend the life of the pointer beyond its (the function's) lifetime, use the first option. If you don't care whether the callee extends the lifetime, then pass by reference and let the callee copy it or not.  
   
--   基になるポインターへのアクセスをヘルパー関数に付与する必要があり、ヘルパー関数がそのポインターを使用するだけであり、呼び出し元変数が制御を返す前にヘルパー関数が制御を返すことがわかっている場合は、関数は基になるポインターの所有権を共有する必要はありません。  ヘルパー関数は、呼び出し元の `shared_ptr` の有効期間内にのみ、ポインターにアクセスする必要があります。  この場合は、`shared_ptr` を参照渡しにするか、生ポインターを渡すか、基になるオブジェクトへの参照を渡す方法が安全です。  この方法で渡すと、パフォーマンスに関するある程度の利点が生じ、プログラミングの意図を示すのに役立つ可能性もあります。  
+-   If you have to give a helper function access to the underlying pointer, and you know that the helper function will just use the pointer and return before the calling function returns, then that function does not have to share ownership of the underlying pointer. It just has to access the pointer within the lifetime of the caller's `shared_ptr`. In this case, it is safe to pass the `shared_ptr` by reference, or pass the raw pointer or a reference to the underlying object. Passing this way provides a small performance benefit, and may also help you express your programming intent.  
   
--   時には、たとえば `std:vector<shared_ptr<T>>` のように、各 `shared_ptr` をラムダ式の本体または名前付き関数オブジェクトに渡す必要が生じることがあります。  ラムダまたは関数がそのポインターを格納しない場合は、`shared_ptr` の参照渡しを行い、各要素に対してコピー コンストラクターが呼び出されることを防止します。  
+-   Sometimes, for example in a `std:vector<shared_ptr<T>>`, you may have to pass each `shared_ptr` to a lambda expression body or named function object. If the lambda or function is not storing the pointer, then pass the `shared_ptr` by reference to avoid invoking the copy constructor for each element.    
   
- [!CODE [stl_smart_pointers#6](../CodeSnippet/VS_Snippets_Cpp/stl_smart_pointers#6)]  
-  
-## 使用例  
- `shared_ptr` インスタンスによって所有されているメモリ上のポインター比較を有効にするために、`shared_ptr` がさまざまな比較演算子をオーバーロードする方法を次の例に示します。  
+## <a name="example"></a>Example  
+ The following example shows how `shared_ptr` overloads various comparison operators to enable pointer comparisons on the memory that is owned by the `shared_ptr` instances.  
   
  [!code-cpp[stl_smart_pointers#3](../cpp/codesnippet/CPP/how-to-create-and-use-shared-ptr-instances_6.cpp)]  
   
-## 参照  
- [スマート ポインター](../cpp/smart-pointers-modern-cpp.md)
+## <a name="see-also"></a>See Also  
+ [Smart Pointers](../cpp/smart-pointers-modern-cpp.md)

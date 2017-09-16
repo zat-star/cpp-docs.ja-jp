@@ -1,5 +1,5 @@
 ---
-title: "アプリケーションの制御 |Microsoft ドキュメント"
+title: Application Control | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- application control
+- application control [MFC]
 ms.assetid: c1f69f15-e0fe-4515-9f36-d63d31869deb
 caps.latest.revision: 12
 author: mikeblome
@@ -33,167 +33,167 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: 5e48437920f56cdfd119c1d703db585616881833
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6022078118092b17b38a014eace7736328c6af83
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="application-control"></a>アプリケーションの制御
-OLE には、アプリケーションとそれらのオブジェクトを十分に制御が必要です。 OLE システム Dll は、起動アプリケーションのリリースを自動的に、その運用環境と、オブジェクトの変更を調整し、できる必要があります。 このトピック内の関数は、それらの要件を満たしています。 に加えて、OLE システム Dll によって呼び出されるは、アプリケーションもによって、これらの関数を呼び出される場合がありますする必要があります。 
+# <a name="application-control"></a>Application Control
+OLE requires substantial control over applications and their objects. The OLE system DLLs must be able to launch and release applications automatically, coordinate their production and modification of objects, and so on. The functions in this topic meet those requirements. In addition to being called by the OLE system DLLs, these functions must sometimes be called by applications as well. 
   
-### <a name="application-control"></a>アプリケーションの制御  
+### <a name="application-control"></a>Application Control  
   
 |||  
 |-|-|  
-|[AfxOleCanExitApp](#afxolecanexitapp)|アプリケーションが終了できるかどうかを示します。|  
-|[AfxOleGetMessageFilter](#afxolegetmessagefilter)|アプリケーションの現在のメッセージ フィルターを取得します。|  
-|[AfxOleGetUserCtrl](#afxolegetuserctrl)|現在のユーザー制御フラグを取得します。|  
-|[AfxOleSetUserCtrl](#afxolesetuserctrl)|設定またはユーザー コントロール フラグをクリアします。|  
-|[AfxOleLockApp](#afxolelockapp)|フレームワークのグローバルなアプリケーションのアクティブなオブジェクトの数のカウントをインクリメントします。|  
-|[AfxOleLockControl](#afxolelockcontrol)| 指定されたコントロールのクラス ファクトリをロックします。 |
-|[Afxoleunlockapp を呼び出します](#afxoleunlockapp)|デクリメントするアプリケーションのアクティブなオブジェクトの数のフレームワークの数。| 
-|[AfxOleUnlockControl](#afxoleunlockcontrol)| 指定されたコントロールのクラス ファクトリのロックを解除します。 |
-|[AfxOleRegisterServerClass](#afxoleregisterserverclass)|OLE システム レジストリのサーバーを登録します。|  
-|[AfxOleSetEditMenu](#afxoleseteditmenu)|ユーザー インターフェイスを実装して、 *typename*コマンド オブジェクトです。|  
+|[AfxOleCanExitApp](#afxolecanexitapp)|Indicates whether the application can terminate.|  
+|[AfxOleGetMessageFilter](#afxolegetmessagefilter)|Retrieves the application's current message filter.|  
+|[AfxOleGetUserCtrl](#afxolegetuserctrl)|Retrieves the current user-control flag.|  
+|[AfxOleSetUserCtrl](#afxolesetuserctrl)|Sets or clears the user-control flag.|  
+|[AfxOleLockApp](#afxolelockapp)|Increments the framework's global count of the number of active objects in an application.|  
+|[AfxOleLockControl](#afxolelockcontrol)| Locks the class factory of the specified control. |
+|[AfxOleUnlockApp](#afxoleunlockapp)|Decrements the framework's count of the number of active objects in an application.| 
+|[AfxOleUnlockControl](#afxoleunlockcontrol)| Unlocks the class factory of the specified control. |
+|[AfxOleRegisterServerClass](#afxoleregisterserverclass)|Registers a server in the OLE system registry.|  
+|[AfxOleSetEditMenu](#afxoleseteditmenu)|Implements the user interface for the *typename* Object command.|  
 
   
-##  <a name="afxolecanexitapp"></a>AfxOleCanExitApp  
- アプリケーションが終了できるかどうかを示します。  
+##  <a name="afxolecanexitapp"></a>  AfxOleCanExitApp  
+ Indicates whether the application can terminate.  
   
 ```   
 BOOL AFXAPI AfxOleCanExitApp(); 
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、アプリケーションが終了することができます。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the application can exit; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- そのオブジェクトへの未解決の参照がある場合、アプリケーションを終了する必要があります。 グローバル関数`AfxOleLockApp`と`AfxOleUnlockApp`をインクリメントし、それぞれ、アプリケーションのオブジェクトへの参照カウンターをデクリメントします。 このカウンターが 0 以外の場合、アプリケーションを終了する必要があります。 カウンターが 0 以外の場合は、アプリケーションのメイン ウィンドウが非表示 (破棄されずに)、システム メニューまたは ファイル メニューからの終了を閉じるを選択するとします。 フレームワークこの関数が呼び出さ**CFrameWnd::OnClose**です。  
+### <a name="remarks"></a>Remarks  
+ An application should not terminate if there are outstanding references to its objects. The global functions `AfxOleLockApp` and `AfxOleUnlockApp` increment and decrement, respectively, a counter of references to the application's objects. The application should not terminate when this counter is nonzero. If the counter is nonzero, the application's main window is hidden (not destroyed) when the user chooses Close from the system menu or Exit from the File menu. The framework calls this function in **CFrameWnd::OnClose**.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAutomation #2](../../mfc/codesnippet/cpp/application-control_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAutomation#2](../../mfc/codesnippet/cpp/application-control_1.cpp)]  
 
-## <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h 
+## <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h 
 
-##  <a name="afxolegetmessagefilter"></a>AfxOleGetMessageFilter  
- アプリケーションの現在のメッセージ フィルターを取得します。  
+##  <a name="afxolegetmessagefilter"></a>  AfxOleGetMessageFilter  
+ Retrieves the application's current message filter.  
   
 ```   
 COleMessageFilter* AFXAPI AfxOleGetMessageFilter(); 
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のメッセージ フィルターへのポインター。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the current message filter.  
   
-### <a name="remarks"></a>コメント  
- 現在にアクセスするには、この関数を呼び出す`COleMessageFilter`-呼び出しと同様に、オブジェクトを派生`AfxGetApp`現在のアプリケーション オブジェクトにアクセスします。  
+### <a name="remarks"></a>Remarks  
+ Call this function to access the current `COleMessageFilter`-derived object, just as you would call `AfxGetApp` to access the current application object.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAutomation #3](../../mfc/codesnippet/cpp/application-control_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAutomation#3](../../mfc/codesnippet/cpp/application-control_2.cpp)]  
   
- [!code-cpp[NVC_MFCAutomation 4](../../mfc/codesnippet/cpp/application-control_3.cpp)]  
+ [!code-cpp[NVC_MFCAutomation#4](../../mfc/codesnippet/cpp/application-control_3.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxwin.h 
+### <a name="requirements"></a>Requirements  
+ **Header**: afxwin.h 
 
-##  <a name="afxolegetuserctrl"></a>AfxOleGetUserCtrl  
- 現在のユーザー制御フラグを取得します。  
+##  <a name="afxolegetuserctrl"></a>  AfxOleGetUserCtrl  
+ Retrieves the current user-control flag.  
   
 ```   
 BOOL AFXAPI AfxOleGetUserCtrl(); 
 ```  
   
-### <a name="return-value"></a>戻り値  
- ユーザーがアプリケーションのコントロールの場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the user is in control of the application; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ユーザーが明示的に開かれるか、新しいドキュメントを作成した場合、ユーザーは、アプリケーションのコントロールです。 ユーザーはコントロールにもが OLE システム Dll によって、アプリケーションが起動していない場合: つまり、ユーザーがシステムのシェルを使用してアプリケーションを起動した場合。  
+### <a name="remarks"></a>Remarks  
+ The user is in control of the application when the user has explicitly opened or created a new document. The user is also in control if the application was not launched by the OLE system DLLs — in other words, if the user launched the application with the system shell.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h
+### <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h
 
-##  <a name="afxolesetuserctrl"></a>AfxOleSetUserCtrl  
- 設定またはのリファレンスで説明されているユーザー制御フラグをクリア`AfxOleGetUserCtrl`です。  
+##  <a name="afxolesetuserctrl"></a>  AfxOleSetUserCtrl  
+ Sets or clears the user-control flag, which is explained in the reference for `AfxOleGetUserCtrl`.  
   
 ```  
 void AFXAPI AfxOleSetUserCtrl(BOOL bUserCtrl); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *bUserCtrl*  
- ユーザー制御フラグを設定またはクリアするかどうかを指定します。  
+ Specifies whether the user-control flag is to be set or cleared.  
   
-### <a name="remarks"></a>コメント  
- フレームワークからこの関数、ユーザーを作成するか、ドキュメントを読み込みますが、ドキュメントが読み込まれるまたはコンテナー アプリケーションからの埋め込みオブジェクトの読み込みなどの間接操作によって作成されたときではなくです。  
+### <a name="remarks"></a>Remarks  
+ The framework calls this function when the user creates or loads a document, but not when a document is loaded or created through an indirect action such as loading an embedded object from a container application.  
   
- アプリケーションの他の操作は、アプリケーションのコントロールにユーザーを配置する必要がある場合は、この関数を呼び出します。  
+ Call this function if other actions in your application should put the user in control of the application.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h
+### <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h
 
-##  <a name="afxolelockapp"></a>AfxOleLockApp  
- フレームワークのグローバルなアプリケーションのアクティブなオブジェクトの数のカウントをインクリメントします。  
+##  <a name="afxolelockapp"></a>  AfxOleLockApp  
+ Increments the framework's global count of the number of active objects in the application.  
   
 ```   
 void AFXAPI AfxOleLockApp(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- フレームワークは、アプリケーションでアクティブなオブジェクトの数のカウントを保持します。 `AfxOleLockApp`と`AfxOleUnlockApp`関数はそれぞれ、インクリメントされ、このカウントをデクリメントします。  
+### <a name="remarks"></a>Remarks  
+ The framework keeps a count of the number of objects active in an application. The `AfxOleLockApp` and `AfxOleUnlockApp` functions, respectively, increment and decrement this count.  
   
- ユーザーがアクティブなオブジェクトを持つアプリケーションを終了しようとしたときに — アクティブなオブジェクトの数は 0 以外のアプリケーション-フレームワークには、完全にシャット ダウンではなく、ユーザーのビューから、アプリケーションが非表示にします。 `AfxOleCanExitApp`関数では、アプリケーションが終了できるかどうかを示します。  
+ When the user attempts to close an application that has active objects — an application for which the count of active objects is nonzero — the framework hides the application from the user's view instead of completely shutting it down. The `AfxOleCanExitApp` function indicates whether the application can terminate.  
   
- 呼び出す`AfxOleLockApp`できない場合は、そのオブジェクトをクライアント アプリケーションによってまだ使用されているときに破棄することをお勧め OLE インターフェイスを公開する任意のオブジェクトからです。 呼び出しても`AfxOleUnlockApp`を呼び出す任意のオブジェクトのデストラクターで`AfxOleLockApp`コンス トラクターでします。 既定では、 `COleDocument` (と派生クラス) に自動的にロックおよびアプリケーションのロックを解除します。  
+ Call `AfxOleLockApp` from any object that exposes OLE interfaces, if it would be undesirable for that object to be destroyed while still being used by a client application. Also call `AfxOleUnlockApp` in the destructor of any object that calls `AfxOleLockApp` in the constructor. By default, `COleDocument` (and derived classes) automatically lock and unlock the application.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAutomation #5](../../mfc/codesnippet/cpp/application-control_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAutomation#5](../../mfc/codesnippet/cpp/application-control_4.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h
+### <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h
 
-##  <a name="afxoleunlockapp"></a>Afxoleunlockapp を呼び出します  
- デクリメント、アプリケーションのアクティブなオブジェクトのフレームワークの数。  
+##  <a name="afxoleunlockapp"></a>  AfxOleUnlockApp  
+ Decrements the framework's count of active objects in the application.  
   
 ```   
 void AFXAPI AfxOleUnlockApp(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- 参照してください`AfxOleLockApp`についてさらにします。  
+### <a name="remarks"></a>Remarks  
+ See `AfxOleLockApp` for further information.  
   
- アクティブなオブジェクトの数がゼロに達すると**AfxOleOnReleaseAllObjects**と呼びます。  
+ When the number of active objects reaches zero, **AfxOleOnReleaseAllObjects** is called.  
   
-### <a name="example"></a>例  
- 例を参照して[AfxOleLockApp](#afxolelockapp)です。  
+### <a name="example"></a>Example  
+ See the example for [AfxOleLockApp](#afxolelockapp).  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h  
+### <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h  
 
  ## <a name="afxolelockcontrol"></a>AfxOleLockControl
-コントロールに関連付けられている動的に作成されたデータはメモリに保持されるように指定されたコントロールのクラス ファクトリをロックします。  
+Locks the class factory of the specified control so that dynamically created data associated with the control remains in memory.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 BOOL AFXAPI AfxOleLockControl(  REFCLSID clsid  );  
 BOOL AFXAPI AfxOleLockControl( LPCTSTR lpszProgID );  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clsid`  
- コントロールの一意のクラス ID。  
+ The unique class ID of the control.  
   
  `lpszProgID`  
- コントロールの一意なプログラム ID。  
+ The unique program ID of the control.  
    
-### <a name="return-value"></a>戻り値  
- コントロールのクラス ファクトリが正常にロックされている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the class factory of the control was successfully locked; otherwise 0.  
    
-### <a name="remarks"></a>コメント  
- これは、大幅にコントロールの表示を高速化できます。 たとえば、1 回 ダイアログ ボックスでコントロールを作成してコントロールをロック`AfxOleLockControl`、作成し、もう一度ダイアログを表示するか破棄するたびに、強制終了する必要はありません。 ユーザーが開き、繰り返し ダイアログ ボックスを閉じる場合は、コントロールをロックが大幅にパフォーマンスが向上します。 コントロールを破棄する準備ができたら、呼び出す`AfxOleUnlockControl`です。  
+### <a name="remarks"></a>Remarks  
+ This can significantly speed up display of the controls. For example, once you create a control in a dialog box and lock the control with `AfxOleLockControl`, you do not need to create and kill it again every time the dialog is shown or destroyed. If the user opens and closes a dialog box repeatedly, locking your controls can significantly enhance performance. When you are ready to destroy the control, call `AfxOleUnlockControl`.  
    
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
 ```cpp
 // Starts and locks control's (Microsoft Calendar) class factory. 
 // Control will remain in memory for lifetime of
@@ -202,15 +202,15 @@ BOOL AFXAPI AfxOleLockControl( LPCTSTR lpszProgID );
 AfxOleLockControl(_T("MSCAL.Calendar"));
 ```
    
-### <a name="requirements"></a>要件  
- **ヘッダー:**<afxwin.h></afxwin.h>  
+### <a name="requirements"></a>Requirements  
+ **Header:** <afxwin.h>  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
  [AfxOleUnlockControl](#afxoleunlockcontrol)
  
-##  <a name="afxoleregisterserverclass"></a>AfxOleRegisterServerClass  
- この関数では、OLE システム レジストリにサーバーを登録することができます。  
+##  <a name="afxoleregisterserverclass"></a>  AfxOleRegisterServerClass  
+ This function allows you to register your server in the OLE system registry.  
   
 ```   
 BOOL AFXAPI AfxOleRegisterServerClass(
@@ -223,59 +223,59 @@ BOOL AFXAPI AfxOleRegisterServerClass(
     LPCTSTR* rglpszOverwrite = NULL); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clsid`  
- サーバーの OLE クラス ID への参照  
+ Reference to the server's OLE class ID.  
   
  `lpszClassName`  
- サーバーのオブジェクトのクラス名を含む文字列へのポインター。  
+ Pointer to a string containing the class name of the server's objects.  
   
  *lpszShortTypeName*  
- サーバーのオブジェクトの種類、"Chart"などの短い名前を含む文字列へのポインター  
+ Pointer to a string containing the short name of the server's object type, such as "Chart."  
   
  *lpszLongTypeName*  
- サーバーのオブジェクトの種類、"Microsoft Excel 5.0 Chart"などの長い名前を含む文字列へのポインター  
+ Pointer to a string containing the long name of the server's object type, such as "Microsoft Excel 5.0 Chart."  
   
  `nAppType`  
- 取得された、値、 **OLE_APPTYPE** OLE アプリケーションの種類を指定します。 使用可能な値は次のとおりです。  
+ A value, taken from the **OLE_APPTYPE** enumeration, specifying the type of OLE application. Possible values are the following:  
   
-- `OAT_INPLACE_SERVER`サーバーには、サーバー全体のユーザー インターフェイスがあります。  
+- `OAT_INPLACE_SERVER` Server has full server user-interface.  
   
-- `OAT_SERVER`サーバーは、埋め込みだけをサポートします。  
+- `OAT_SERVER` Server supports only embedding.  
   
-- `OAT_CONTAINER`コンテナーは、埋め込みアイテムへのリンクをサポートします。  
+- `OAT_CONTAINER` Container supports links to embeddings.  
   
-- `OAT_DISPATCH_OBJECT``IDispatch`-できるオブジェクト。  
+- `OAT_DISPATCH_OBJECT` `IDispatch`-capable object.  
   
  `rglpszRegister`  
- キーとキーの既存の値が見つからない場合は、OLE システム レジストリに追加する値を表す文字列へのポインターの配列です。  
+ Array of pointers to strings representing the keys and values to be added to the OLE system registry if no existing values for the keys are found.  
   
  `rglpszOverwrite`  
- キーとレジストリに指定されたキーの既存の値が含まれている場合、OLE システム レジストリに追加する値を表す文字列へのポインターの配列です。  
+ Array of pointers to strings representing the keys and values to be added to the OLE system registry if the registry contains existing values for the given keys.  
   
-### <a name="return-value"></a>戻り値  
- サーバー クラスが登録できた場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the server class is successfully registered; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ほとんどのアプリケーションが使用できる**COleTemplateServer::Register**をアプリケーションのドキュメントの種類を登録します。 使用することができる場合は、アプリケーションのシステム レジストリの形式は、一般的なパターンに一致しない、`AfxOleRegisterServerClass`詳細に制御します。  
+### <a name="remarks"></a>Remarks  
+ Most applications can use **COleTemplateServer::Register** to register the application's document types. If your application's system-registry format does not fit the typical pattern, you can use `AfxOleRegisterServerClass` for more control.  
   
- レジストリは、キーと値のセットで構成されます。 `rglpszRegister`と`rglpszOverwrite`引数文字列へのポインターの配列は、それぞれので構成される、キーと値で区切られた、 **NULL**文字 ( `'\0'`)。 これらの文字列の各文字のシーケンスで可能な置き換え可能パラメーターを持つことができます`%1`を通じて`%5`です。  
+ The registry consists of a set of keys and values. The `rglpszRegister` and `rglpszOverwrite` arguments are arrays of pointers to strings, each consisting of a key and a value separated by a **NULL** character ( `'\0'`). Each of these strings can have replaceable parameters whose places are marked by the character sequences `%1` through `%5`.  
   
- シンボルは、ように入力します。  
+ The symbols are filled in as follows:  
   
-|シンボル|値|  
+|Symbol|Value|  
 |------------|-----------|  
-|%1|クラスの ID を文字列として書式設定|  
-|%2|クラス名|  
-|%3|実行可能ファイルへのパス|  
-|%4|Short 型の名前|  
-|%5|Long 型の名前|  
+|%1|Class ID, formatted as a string|  
+|%2|Class name|  
+|%3|Path to executable file|  
+|%4|Short type name|  
+|%5|Long type name|  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxdisp.h
+### <a name="requirements"></a>Requirements  
+ **Header**: afxdisp.h
 
-##  <a name="afxoleseteditmenu"></a>AfxOleSetEditMenu  
- ユーザー インターフェイスを実装して、 *typename*コマンド オブジェクトです。  
+##  <a name="afxoleseteditmenu"></a>  AfxOleSetEditMenu  
+ Implements the user interface for the *typename* Object command.  
   
 ```   
 void AFXAPI AfxOleSetEditMenu(
@@ -287,60 +287,60 @@ void AFXAPI AfxOleSetEditMenu(
     UINT nIDConvert = 0); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pClient`  
- クライアント OLE アイテムへのポインター。  
+ A pointer to the client OLE item.  
   
  `pMenu`  
- 更新するメニュー オブジェクトへのポインター。  
+ A pointer to the menu object to be updated.  
   
  *iMenuItem*  
- 更新するメニュー項目のインデックス。  
+ The index of the menu item to be updated.  
   
  `nIDVerbMin`  
- 主動詞に対応するコマンド ID。  
+ The command ID that corresponds to the primary verb.  
   
  *nIDVerbMax*  
- 動詞の最後に対応するコマンド ID。  
+ The command ID that corresponds to the last verb.  
   
  *nIDConvert*  
- 変換のメニュー項目の ID。  
+ ID for the Convert menu item.  
   
-### <a name="remarks"></a>コメント  
- サーバーでは、プライマリの動詞だけで認識場合、メニュー項目は次のようになります。"動詞*typename*オブジェクト"と`nIDVerbMin`コマンドが送信されるのは、コマンドを選択するとします。 かどうか、サーバーは、いくつかの動詞を認識し、メニュー項目になります" *typename*オブジェクト"され、コマンドを選択すると、すべての動詞の一覧を表示するサブメニューが表示されます。 サブメニューの動詞を選択すると`nIDVerbMin`最初の動詞を選択したかどうかは送信`nIDVerbMin`+ 1 が 2 番目の動作は、選択した場合に送信されます。 既定値`COleDocument`の実装は、この機能を自動的に処理します。  
+### <a name="remarks"></a>Remarks  
+ If the server recognizes only a primary verb, the menu item becomes "verb *typename* Object" and the `nIDVerbMin` command is sent when the user chooses the command. If the server recognizes several verbs, then the menu item becomes " *typename* Object" and a submenu listing all the verbs appears when the user chooses the command. When the user chooses a verb from the submenu, `nIDVerbMin` is sent if the first verb is chosen, `nIDVerbMin` + 1 is sent if the second verb is chosen, and so forth. The default `COleDocument` implementation automatically handles this feature.  
   
- 次のステートメント、クライアントのアプリケーションのリソース スクリプトにする必要があります (です。RC) のファイル:  
+ You must have the following statement in your client's application resource script (.RC) file:  
   
- **#include \<afxolecl.rc >**  
+ **#include \<afxolecl.rc>**  
 
-### <a name="requirements"></a>要件  
- **ヘッダー**: afxole.h 
+### <a name="requirements"></a>Requirements  
+ **Header**: afxole.h 
 
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 
-## <a name="afxoleunlockcontrol"></a>AfxOleUnlockControl
-指定されたコントロールのクラス ファクトリのロックを解除します。  
+## <a name="afxoleunlockcontrol"></a> AfxOleUnlockControl
+Unlocks the class factory of the specified control.  
    
-### <a name="syntax"></a>構文  
+### <a name="syntax"></a>Syntax  
   ```
 BOOL AFXAPI AfxOleUnlockControl( REFCLSID clsid );  
 BOOL AFXAPI AfxOleUnlockControl( LPCTSTR lpszProgID );  
 ```
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `clsid`  
- コントロールの一意のクラス ID。  
+ The unique class ID of the control.  
   
  `lpszProgID`  
- コントロールの一意なプログラム ID。  
+ The unique program ID of the control.  
    
-### <a name="return-value"></a>戻り値  
- コントロールのクラス ファクトリが正常にロックできなかった場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the class factory of the control was successfully unlocked; otherwise 0.  
    
-### <a name="remarks"></a>コメント  
- コントロールがロックされて`AfxOleLockControl`コントロールに関連付けられている動的に作成されたデータはメモリに保持されるようにします。 これが大幅に時間を短縮できますコントロールの表示コントロールが作成され破棄されるたびに表示されていない必要があるためです。 コントロールを破棄する準備ができたら、呼び出す`AfxOleUnlockControl`です。  
+### <a name="remarks"></a>Remarks  
+ A control is locked with `AfxOleLockControl`, so that dynamically created data associated with the control remains in memory. This can significantly speed up display of the control because the control need not be created and destroyed every time it is displayed. When you are ready to destroy the control, call `AfxOleUnlockControl`.  
    
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
  ```cpp
 // Unlock control's (Microsoft Calendar Control) class factory.
 
@@ -348,11 +348,11 @@ AfxOleUnlockControl(_T("MSCAL.Calendar"));
 
 ```
    
-### <a name="requirements"></a>要件  
- **ヘッダー:**<afxwin.h></afxwin.h>  
+### <a name="requirements"></a>Requirements  
+ **Header:** <afxwin.h>  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)  
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)  
  [AfxOleLockControl](#afxolelockcontrol)
 
 

@@ -1,71 +1,90 @@
 ---
-title: "ダイアログ ボックスでのコモン コントロールの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン コントロール [C++], ダイアログ ボックスで"
-  - "ダイアログ ボックス コントロール [C++], コモン コントロール"
-  - "Windows コモン コントロール [C++], ダイアログ ボックスで"
+title: Using Common Controls in a Dialog Box | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- common controls [MFC], in dialog boxes
+- dialog box controls [MFC], common controls
+- Windows common controls [MFC], in dialog boxes
 ms.assetid: 17713caf-09f8-484a-bf54-5f48bf09cce9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ダイアログ ボックスでのコモン コントロールの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8dc48fa0370c6801c40819151374b178446d0dc1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Windows コモン コントロールは [ダイアログ ボックス](../mfc/dialog-boxes.md)、フォーム ビュー、レコード ビュー、およびダイアログ テンプレートに基づく他のウィンドウで使用できます。  次の手順は、軽微な変更を伴ってフォームでは、同じように動作します。  
+---
+# <a name="using-common-controls-in-a-dialog-box"></a>Using Common Controls in a Dialog Box
+The Windows common controls can be used in [dialog boxes](../mfc/dialog-boxes.md), form views, record views, and any other window based on a dialog template. The following procedure, with minor changes, will work for forms as well.  
   
-## 手順  
+## <a name="procedures"></a>Procedures  
   
-#### コモン コントロールをダイアログ ボックスに使用します。  
+#### <a name="to-use-a-common-control-in-a-dialog-box"></a>To use a common control in a dialog box  
   
-1.  ダイアログ テンプレート [ダイアログ エディターを使用する](../mfc/using-the-dialog-editor-to-add-controls.md)にコントロールを配置します。  
+1.  Place the control on the dialog template [using the dialog editor](../mfc/using-the-dialog-editor-to-add-controls.md).  
   
-2.  ダイアログ クラスにコントロールを表すメンバー変数を追加します。  **メンバー変数の追加** ダイアログ ボックスで、**コントロール変数\(O\)** を確認し、**コントロールカテゴリ**がオンになっていることを確認します。  
+2.  Add to the dialog class a member variable that represents the control. In the **Add Member Variable** dialog box, check **Control variable** and ensure that **Control** is selected for the **Category**.  
   
-3.  このコモン コントロールがプログラムに入力を提供し、それらの入力値を処理すると、ダイアログ クラスの追加のメンバー変数を宣言します。  
-  
-    > [!NOTE]
-    >  クラス ビューでコンテキスト メニューを使用してこれらのメンバー変数を追加できます。[メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md)を参照してください。  
-  
-4.  ダイアログ クラスの [OnInitDialog](../Topic/CDialog::OnInitDialog.md) のコモン コントロールの最初の条件を設定します。  前の手順で作成したメンバー変数を使用して初期値とそのほかの設定を設定するには、メンバー関数を使用します。  設定の詳細については、"コントロールの次の説明を参照してください。  
-  
-     また、ダイアログ ボックスのコントロールを初期化するために [ダイアログ データ エクスチェンジ \(DDX\)](../mfc/dialog-data-exchange-and-validation.md) \(DDX\) を使用できます。  
-  
-5.  ダイアログ ボックスのコントロールのハンドラーでは、コントロールを操作するときにメンバー変数を使用します。  メソッドの詳細については、"コントロールの次の説明を参照してください。  
+3.  If this common control is providing input to the program, declare additional member variable(s) in the dialog class to handle those input values.  
   
     > [!NOTE]
-    >  メンバー変数はダイアログ ボックス自体がある場合のみです。  ダイアログ ボックスを閉じた後に値を入力するためのコントロールを呼び出されません。  コモン コントロールからの入力値を使用するには、ダイアログ クラスの `OnOK` をオーバーライドします。  このオーバーライドでは、値を入力するためのコントロールを呼び出し、ダイアログ クラスのメンバー変数にこれらの値を格納します。  
+    >  You can add these member variables using the context menu in Class View (see [Adding a Member Variable](../ide/adding-a-member-variable-visual-cpp.md)).  
+  
+4.  In [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog) for your dialog class, set the initial conditions for the common control. Using the member variable created in the previous step, use the member functions to set initial value and other settings. See the following descriptions of the controls for details on settings.  
+  
+     You can also use [dialog data exchange](../mfc/dialog-data-exchange-and-validation.md) (DDX) to initialize controls in a dialog box.  
+  
+5.  In handlers for controls on the dialog box, use the member variable to manipulate the control. See the following descriptions of the controls for details on methods.  
   
     > [!NOTE]
-    >  やデータ交換ダイアログ ボックスのコントロールの値を設定または取得するためにダイアログを使用できます。  
+    >  The member variable will exist only as long as the dialog box itself exists. You will not be able to query the control for input values after the dialog box has been closed. To work with input values from a common control, override `OnOK` in your dialog class. In your override, query the control for input values and store those values in member variables of the dialog class.  
   
-## 解説  
- ダイアログ ボックスにあるコモン コントロールの追加とダイアログ ボックスは機能します。  この状況の処理の詳細については [Adding Controls to a Dialog Causes the Dialog to No Longer Function](../mfc/adding-controls-to-a-dialog-causes-the-dialog-to-no-longer-function.md) "を参照してください。  
+    > [!NOTE]
+    >  You can also use dialog data exchange to set or retrieve values from the controls in a dialog box.  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="remarks"></a>Remarks  
+ The addition of some common controls to a dialog box will cause the dialog box to no longer function. Refer to [Adding Controls to a Dialog Causes the Dialog to No Longer Function](../windows/adding-controls-to-a-dialog-causes-the-dialog-to-no-longer-function.md) for more information on handling this situation.  
   
--   [ダイアログ エディターで、ダイアログ ボックスにコントロールを手動で追加します。](../mfc/adding-controls-by-hand.md)  
+## <a name="what-do-you-want-to-do"></a>What do you want to do  
   
--   [標準の Windows コモン コントロールの 1 つがから次のコントロールを派生してください。](../mfc/deriving-controls-from-a-standard-control.md)  
+-   [Add controls to a dialog box by hand instead of with the dialog editor](../mfc/adding-controls-by-hand.md)  
   
--   [子ウィンドウとしてコモン コントロールを使用します。](../mfc/using-a-common-control-as-a-child-window.md)  
+-   [Derive my control from one of the standard Windows common controls](../mfc/deriving-controls-from-a-standard-control.md)  
   
--   [コントロールからの通知メッセージを受け取ります。](../Topic/Receiving%20Notification%20from%20Common%20Controls.md)  
+-   [Use a common control as a child window](../mfc/using-a-common-control-as-a-child-window.md)  
   
--   [ダイアログ データ エクスチェンジを使用します \(DDX\)](../mfc/dialog-data-exchange-and-validation.md)  
+-   [Receive notification messages from a control](../mfc/receiving-notification-from-common-controls.md)  
   
-## 参照  
- [コントロールの作成方法と使い方](../mfc/making-and-using-controls.md)   
- [コントロール](../mfc/controls-mfc.md)
+-   [Use dialog data exchange (DDX)](../mfc/dialog-data-exchange-and-validation.md)  
+  
+## <a name="see-also"></a>See Also  
+ [Making and Using Controls](../mfc/making-and-using-controls.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

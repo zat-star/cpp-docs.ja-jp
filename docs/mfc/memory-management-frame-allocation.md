@@ -1,52 +1,71 @@
 ---
-title: "メモリ管理 : フレーム割り当て | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "検出 (メモリ リークを)"
-  - "フレーム割り当て"
-  - "フレーム変数"
-  - "フレーム変数, 自動的な削除"
-  - "ヒープ割り当て, およびフレーム割り当て"
-  - "メモリの割り当て, フレーム"
-  - "メモリ リーク, 割り当て (フレームにオブジェクトを)"
-  - "メモリ リーク, 検出"
-  - "メモリ リーク, フレーム割り当て"
-  - "メモリ, 検出 (リークを)"
-  - "メモリ, 解放"
-  - "メモリ, 解放"
-  - "スコープ, フレーム変数"
-  - "スタック フレーム"
-  - "変数, フレーム変数"
+title: 'Memory Management: Frame Allocation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- memory leaks [MFC], frame allocation
+- memory [MFC], detecting leaks
+- memory [MFC], reclaiming
+- memory allocation [MFC], frames
+- frame variables [MFC], automatic deletion of
+- scope [MFC], frame variables
+- heap allocation [MFC], vs. frame allocation
+- variables [MFC], frame variables
+- memory leaks [MFC], detecting
+- memory, releasing [MFC]
+- stack frames [MFC]
+- memory leaks [MFC], allocating objects on the frame
+- detecting memory leaks [MFC]
+- frame allocation [MFC]
+- frame variables [MFC]
 ms.assetid: 945a211a-6f4f-4679-bb6a-b0f2a0d4a6c1
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# メモリ管理 : フレーム割り当て
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b52e647f3639977f28906f49de2d5a605bf32622
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-フレームの割り当ては、関数が呼び出されるたびに設定された「スタック フレーム」の名前と同じになります。  スタック フレームが関数に一時的に引数を保持する、または関数に定義されたローカル変数であるメモリ領域です。  フレーム変数は、多くの場合、コンパイラが自動的にこれらの領域を割り当てるため、「自動」変数と呼ばれます。  
+---
+# <a name="memory-management-frame-allocation"></a>Memory Management: Frame Allocation
+Allocation on the frame takes its name from the "stack frame" that is set up whenever a function is called. The stack frame is an area of memory that temporarily holds the arguments to the function as well as any variables that are defined local to the function. Frame variables are often called "automatic" variables because the compiler automatically allocates the space for them.  
   
- フレームの割り当ての 2 種類の主要な特性があります。  最初にローカル変数を定義する際に、十分な領域がスタック フレーム内の大きな配列またはデータ構造体は、すべての変数を保持するように割り当てられます。  第 2 に、フレーム変数が自動的にスコープの外に出たときに削除されます:  
+ There are two key characteristics of frame allocations. First, when you define a local variable, enough space is allocated on the stack frame to hold the entire variable, even if it is a large array or data structure. Second, frame variables are automatically deleted when they go out of scope:  
   
- [!code-cpp[NVC_MFC_Utilities#10](../mfc/codesnippet/CPP/memory-management-frame-allocation_1.cpp)]  
+ [!code-cpp[NVC_MFC_Utilities#10](../mfc/codesnippet/cpp/memory-management-frame-allocation_1.cpp)]  
   
- ローカル関数の変数に対して、このスコープの切り替えは、入れ子になった中かっこを使用する関数の終了、フレーム変数のスコープは、関数より小さい可能性がある場合に発生します。  フレーム変数のこの自動削除は非常に重要です。  単純なプリミティブ型では `int` \(または **byte**など\)、配列、またはデータ構造は、自動削除変数によって使用されているメモリをクリアします。  変数がスコープ外になるため、常にアクセスできません。  ただし、C\+\+ オブジェクトの場合は自動削除のプロセスは少し複雑です。  
+ For local function variables, this scope transition happens when the function exits, but the scope of a frame variable can be smaller than a function if nested braces are used. This automatic deletion of frame variables is very important. In the case of simple primitive types (such as `int` or **byte**), arrays, or data structures, the automatic deletion simply reclaims the memory used by the variable. Since the variable has gone out of scope, it cannot be accessed anyway. In the case of C++ objects, however, the process of automatic deletion is a bit more complicated.  
   
- オブジェクトがフレーム変数に定義すると、コンストラクターが定義が見つかった時点で自動的に呼び出されます。  オブジェクトがスコープ外に出ると、デストラクターは自動的にオブジェクトのメモリが解放される前に呼び出されます。  この自動構築および破棄は非常に便利ですデストラクターに自動的に \(特にです。  
+ When an object is defined as a frame variable, its constructor is automatically invoked at the point where the definition is encountered. When the object goes out of scope, its destructor is automatically invoked before the memory for the object is reclaimed. This automatic construction and destruction can be very handy, but you must be aware of the automatic calls, especially to the destructor.  
   
- フレーム オブジェクトを代入する主な利点は自動的に削除されます。  フレーム オブジェクトを代入すると、メモリ リークが発生忘れたオブジェクトでを気にする必要はありません。\(メモリ リークの詳細については、[MFC でのメモリ リークの検出](http://msdn.microsoft.com/ja-jp/29ee8909-96e9-4246-9332-d3a8aa8d4658)を参照してください\)。フレームの割り当ての欠点は、フレーム変数がスコープの外側で使用できないという点です。  フレームの割り当てとそのヒープ割り当て選択のもう一つの要素は大きな構造体の DLL であり、スタック領域が頻繁に制限されているので、ストレージにスタックの代わりにヒープを使用することをお勧めします。  
+ The key advantage of allocating objects on the frame is that they are automatically deleted. When you allocate your objects on the frame, you don't have to worry about forgotten objects causing memory leaks. (For details on memory leaks, see the article [Detecting Memory Leaks in MFC](http://msdn.microsoft.com/en-us/29ee8909-96e9-4246-9332-d3a8aa8d4658).) A disadvantage of frame allocation is that frame variables cannot be used outside their scope. Another factor in choosing frame allocation versus heap allocation is that for large structures and objects, it is often better to use the heap instead of the stack for storage since stack space is often limited.  
   
-## 参照  
- [メモリ管理](../mfc/memory-management.md)
+## <a name="see-also"></a>See Also  
+ [Memory Management](../mfc/memory-management.md)
+
+

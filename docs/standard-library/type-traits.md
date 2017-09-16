@@ -5,7 +5,7 @@ ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -34,31 +34,31 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 86978cd4549f0672dac7cad0e4713380ea189c27
-ms.openlocfilehash: ec13a255f456254f89ca84488d12fbf5ce0440b4
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: bf9d18a5433f21c4f73d2c7da28a88b85767222e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/18/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="lttypetraitsgt"></a>&lt;type_traits&gt;
-型引数のプロパティに関する情報を提供する、または変換された型を生成する、コンパイル時定数を備えたテンプレートを定義します。  
+Defines templates that provide compile-time constants that give information about the properties of their type arguments or produce transformed types.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <type_traits>  
 ```  
   
-## <a name="remarks"></a>コメント  
- `<type_traits>` のクラスとテンプレートは、コンパイル時に型の推定、分類および変換をサポートしたり、型関連のエラーを検出したり、ジェネリック コードを最適化したりするために使用されます。 これらのクラスとテンプレートには、型のプロパティについて記述する単項の型の特徴、型間の関係を記述する二項の型の特徴、および型のプロパティを変更する変換の特徴が含まれます。  
+## <a name="remarks"></a>Remarks  
+ The classes and templates in `<type_traits>` are used to support type inference, classification, and transformation at compile time, to detect type-related errors, and to help you optimize your generic code. These classes and templates include unary type traits that describe a property of a type, binary type traits that describe a relationship between types, and transformation traits that modify a property of a type.  
   
- 型の特徴をサポートするために、ヘルパー クラス `integral_constant` が定義されています。 これには、型の述語の基底クラスを形成するテンプレート特殊化 `true_type` と `false_type` があります。 *型の述語*は、1 つ以上の型引数を受け取るテンプレートです。 型の述語が *true を保持*する場合は、[true_type](../standard-library/type-traits-typedefs.md#true_type) からパブリックに (直接または間接的に) 派生されます。 型の述語が *false を保持*する場合は、[false_type](../standard-library/type-traits-typedefs.md#false_type) からパブリックに (直接または間接的に) 派生されます。  
+ To support type traits, a helper class, `integral_constant`, is defined. It has template specializations `true_type` and `false_type` that form the base classes for type predicates. A *type predicate* is a template that takes one or more type arguments. When a type predicate *holds true*, it is publicly derived, directly or indirectly, from [true_type](../standard-library/type-traits-typedefs.md#true_type). When a type predicate *holds false*, it is publicly derived, directly or indirectly, from [false_type](../standard-library/type-traits-typedefs.md#false_type).  
   
- *型修飾子*または*変換の特徴*は、1 つ以上のテンプレート引数を受け取り、変更された型のシノニムである 1 つのメンバー、`type` を持つテンプレートです。  
+ A *type modifier* or *transformation trait* is a template that takes one or more template arguments and has one member, `type`, which is a synonym for the modified type.  
   
-### <a name="alias-templates"></a>エイリアス テンプレート  
- 型の特徴の式を簡略化するために、`typename some_trait<T>::type` の[エイリアス テンプレート](../cpp/aliases-and-typedefs-cpp.md)が提供されます。" `some_trait`" はテンプレート クラス名です。 たとえば、[add_const](../standard-library/add-const-class.md) には、その型 `add_const_t` のエイリアス テンプレートがあり、次のように定義されています。  
+### <a name="alias-templates"></a>Alias Templates  
+ To simplify type traits expressions, [alias templates](../cpp/aliases-and-typedefs-cpp.md) for `typename some_trait<T>::type` are provided, where " `some_trait`" is the template class name. For example, [add_const](../standard-library/add-const-class.md) has an alias template for its type, `add_const_t`, defined as:  
   
 ```cpp  
 template <class T>
@@ -74,159 +74,159 @@ using add_const_t = typename add_const<T>::type;
 |add_rvalue_reference_t|decay_t|remove_cv_t|underlying_type_t|  
 |add_volatile_t|enable_if_t|remove_extent_t||  
   
-### <a name="classes"></a>クラス  
- ヘルパー クラスと typedef  
+### <a name="classes"></a>Classes  
+ Helper class and typedefs  
   
 |||  
 |-|-|  
-|[integral_constant](../standard-library/integral-constant-class-bool-constant-class.md)|型および値から整数定数を作成します。|  
-|[true_type](../standard-library/type-traits-typedefs.md#true_type)|true 値を持つ整数定数を保持します。|  
-|[false_type](../standard-library/type-traits-typedefs.md#false_type)|false 値を持つ整数定数を保持します。|  
+|[integral_constant](../standard-library/integral-constant-class-bool-constant-class.md)|Makes an integral constant from a type and a value.|  
+|[true_type](../standard-library/type-traits-typedefs.md#true_type)|Holds integral constant with true value.|  
+|[false_type](../standard-library/type-traits-typedefs.md#false_type)|Holds integral constant with false value.|  
   
- 主な型のカテゴリ  
-  
-|||  
-|-|-|  
-|[is_void](../standard-library/is-void-class.md)|型が `void` であるかどうかをテストします。|  
-|[is_null_pointer](../standard-library/is-null-pointer-class.md)|型が `std::nullptr_t` であるかどうかをテストします。|  
-|[is_integral](../standard-library/is-integral-class.md)|型が整数型であるかどうかをテストします。|  
-|[is_floating_point](../standard-library/is-floating-point-class.md)|型が浮動小数点型であるかどうかをテストします。|  
-|[is_array](../standard-library/is-array-class.md)|型が配列型であるかどうかをテストします。|  
-|[is_pointer](../standard-library/is-pointer-class.md)|型がポインターであるかどうかをテストします。|  
-|[is_lvalue_reference](../standard-library/is-lvalue-reference-class.md)|型が左辺値参照かどうかをテストします。|  
-|[is_rvalue_reference](../standard-library/is-rvalue-reference-class.md)|型が右辺値参照かどうかをテストします。|  
-|[is_member_object_pointer](../standard-library/is-member-object-pointer-class.md)|型がメンバー オブジェクトへのポインターであるかどうかをテストします。|  
-|[is_member_function_pointer](../standard-library/is-member-function-pointer-class.md)|型がメンバー関数へのポインターであるかどうかをテストします。|  
-|[is_enum](../standard-library/is-enum-class.md)|型が列挙型であるかどうかをテストします。|  
-|[is_union](../standard-library/is-union-class.md)|型が共用体であるかどうかをテストします。|  
-|[is_class](../standard-library/is-class-class.md)|型がクラスであるかどうかをテストします。|  
-|[is_function](../standard-library/is-function-class.md)|型が関数型であるかどうかをテストします。|  
-  
- 複合型のカテゴリ  
+ Primary type categories  
   
 |||  
 |-|-|  
-|[is_reference](../standard-library/is-reference-class.md)|型が参照であるかどうかをテストします。|  
-|[is_arithmetic](../standard-library/is-arithmetic-class.md)|型が演算型であるかどうかをテストします。|  
-|[is_fundamental](../standard-library/is-fundamental-class.md)|型が `void` または演算型であるかどうかをテストします。|  
-|[is_object](../standard-library/is-object-class.md)|型がオブジェクト型であるかどうかをテストします。|  
-|[is_scalar](../standard-library/is-scalar-class.md)|型がスカラーであるかどうかをテストします。|  
-|[is_compound](../standard-library/is-compound-class.md)|型が非スカラーであるかどうかをテストします。|  
-|[is_member_pointer](../standard-library/is-member-pointer-class.md)|型がメンバーへのポインターであるかどうかをテストします。|  
+|[is_void](../standard-library/is-void-class.md)|Tests whether the type is `void`.|  
+|[is_null_pointer](../standard-library/is-null-pointer-class.md)|Tests whether the type is `std::nullptr_t`.|  
+|[is_integral](../standard-library/is-integral-class.md)|Tests whether the type is integral.|  
+|[is_floating_point](../standard-library/is-floating-point-class.md)|Tests whether the type is floating-point.|  
+|[is_array](../standard-library/is-array-class.md)|Tests whether the type is an array.|  
+|[is_pointer](../standard-library/is-pointer-class.md)|Tests whether the type is a pointer.|  
+|[is_lvalue_reference](../standard-library/is-lvalue-reference-class.md)|Tests if type is an lvalue reference.|  
+|[is_rvalue_reference](../standard-library/is-rvalue-reference-class.md)|Tests if type is an rvalue reference.|  
+|[is_member_object_pointer](../standard-library/is-member-object-pointer-class.md)|Tests whether the type is a pointer to a member object.|  
+|[is_member_function_pointer](../standard-library/is-member-function-pointer-class.md)|Tests whether the type is a pointer to a member function.|  
+|[is_enum](../standard-library/is-enum-class.md)|Tests whether the type is an enumeration.|  
+|[is_union](../standard-library/is-union-class.md)|Tests whether the type is a union.|  
+|[is_class](../standard-library/is-class-class.md)|Tests whether the type is a class.|  
+|[is_function](../standard-library/is-function-class.md)|Tests whether the type is a function type.|  
   
- 型のプロパティ  
-  
-|||  
-|-|-|  
-|[is_const](../standard-library/is-const-class.md)|型が `const` であるかどうかをテストします。|  
-|[is_volatile](../standard-library/is-volatile-class.md)|型が `volatile` であるかどうかをテストします。|  
-|[is_trivial](../standard-library/is-trivial-class.md)|型が単純であるかどうかをテストします。|  
-|[is_trivially_copyable](../standard-library/is-trivially-copyable-class.md)|型が普通にコピー可能であるかどうかをテストします。|  
-|[is_standard_layout](../standard-library/is-standard-layout-class.md)|型が標準レイアウト型であるかどうかをテストします。|  
-|[is_pod](../standard-library/is-pod-class.md)|型が POD であるかどうかをテストします。|  
-|[is_literal_type](../standard-library/is-literal-type-class.md)|型が、`constexpr` 変数にしたり、`constexpr` 関数で使用したりできるかどうかをテストします。|  
-|[is_empty](../standard-library/is-empty-class.md)|型が空のクラスであるかどうかをテストします。|  
-|[is_polymorphic](../standard-library/is-polymorphic-class.md)|型がポリモーフィックなクラスであるかどうかをテストします。|  
-|[is_abstract](../standard-library/is-abstract-class.md)|型が抽象クラスであるかどうかをテストします。|  
-|[is_final](../standard-library/is-final-class.md)|型が `final` とマークされるクラス型であるかどうかをテストします。|  
-|[is_signed](../standard-library/is-signed-class.md)|型が符号付き整数であるかどうかをテストします。|  
-|[is_unsigned](../standard-library/is-unsigned-class.md)|型が符号なし整数であるかどうかをテストします。|  
-|[is_constructible](../standard-library/is-constructible-class.md)|型が、指定された引数の型を使用して構築できるかどうかをテストします。|  
-|[is_default_constructible](../standard-library/type-traits-functions.md#is_default_constructible)|型に既定コンストラクターが存在するかどうかをテストします。|  
-|[is_copy_constructible](../standard-library/type-traits-functions.md#is_copy_constructible)|型にコピー コンストラクターが存在するかどうかをテストします。|  
-|[is_move_constructible](../standard-library/type-traits-functions.md#is_move_constructible)|型に移動コンストラクターが存在するかどうかをテストします。|  
-|[is_assignable](../standard-library/type-traits-functions.md#is_assignable)|最初の型に 2 番目の型の値を割り当てることができるかどうかをテストします。|  
-|[is_copy_assignable](../standard-library/type-traits-functions.md#is_copy_assignable)|型に、その型の const 参照値を割り当てることができるかどうかをテストします。|  
-|[is_move_assignable](../standard-library/type-traits-functions.md#is_move_assignable)|型に、その型の rvalue 参照を割り当てることができるかどうかをテストします。|  
-|[is_destructible](../standard-library/is-destructible-class.md)|型が破棄可能かどうかをテストします。|  
-|[is_trivially_constructible](../standard-library/is-trivially-constructible-class.md)|型が、指定された型を使用して作成されるときに、重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_default_constructible](../standard-library/is-trivially-default-constructible-class.md)|型が、既定で作成されるときに、重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_copy_constructible](../standard-library/is-trivially-copy-constructible-class.md)|型が、コピーで作成されるときに、重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_move_constructible](../standard-library/type-traits-functions.md#is_trivially_move_constructible)|型が、移動で作成されるときに、重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_assignable](../standard-library/is-trivially-assignable-class.md)|型が割り当て可能で、かつ割り当てで重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_copy_assignable](../standard-library/type-traits-functions.md#is_trivially_copy_assignable)|型が、コピー割り当て可能で、かつ割り当てで重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_move_assignable](../standard-library/type-traits-functions.md#is_trivially_move_assignable)|型が、移動で割り当て可能で、かつ割り当てで重要な操作を使用しないかどうかをテストします。|  
-|[is_trivially_destructible](../standard-library/is-trivially-destructible-class.md)|型が破棄可能で、かつデストラクターが重要な操作を使用しないかどうかをテストします。|  
-|[is_nothrow_constructible](../standard-library/is-nothrow-constructible-class.md)|型が構築可能で、指定された型を使用して構築されたときにスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_default_constructible](../standard-library/is-nothrow-default-constructible-class.md)|型が、既定で構築可能で、既定で構築されたときにスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_copy_constructible](../standard-library/is-nothrow-copy-constructible-class.md)|型が、コピーで構築可能で、コピー コンストラクターがスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_move_constructible](../standard-library/is-nothrow-move-constructible-class.md)|型が、移動で構築可能で、移動コンストラクターがスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_assignable](../standard-library/is-nothrow-assignable-class.md)|型が、指定された型を使用して割り当て可能で、割り当てがスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_copy_assignable](../standard-library/is-nothrow-copy-assignable-class.md)|型が、コピーで割り当て可能で、割り当てがスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_move_assignable](../standard-library/type-traits-functions.md#is_nothrow_move_assignable)|型が、移動で割り当て可能で、割り当てがスローしないと判明しているかどうかをテストします。|  
-|[is_nothrow_destructible](../standard-library/is-nothrow-destructible-class.md)|型が破棄可能で、デストラクターがスローしないと判明しているかどうかをテストします。|  
-|[has_virtual_destructor](http://msdn.microsoft.com/en-us/c0f85f0b-c63c-410d-a046-72eeaf44f7eb)|型に仮想デストラクターが存在するかどうかをテストします。|  
-  
- 型プロパティのクエリ  
+ Composite type categories  
   
 |||  
 |-|-|  
-|[alignment_of](../standard-library/alignment-of-class.md)|型のアラインメントを取得します。|  
-|[rank](../standard-library/rank-class.md)|配列の次元数を取得します。|  
-|[extent](../standard-library/extent-class.md)|指定した次元にある要素の数を取得します。|  
+|[is_reference](../standard-library/is-reference-class.md)|Tests whether the type is a reference.|  
+|[is_arithmetic](../standard-library/is-arithmetic-class.md)|Tests whether the type is arithmetic.|  
+|[is_fundamental](../standard-library/is-fundamental-class.md)|Tests whether the type is `void` or arithmetic.|  
+|[is_object](../standard-library/is-object-class.md)|Tests whether the type is an object type.|  
+|[is_scalar](../standard-library/is-scalar-class.md)|Tests whether the type is scalar.|  
+|[is_compound](../standard-library/is-compound-class.md)|Tests whether the type is not scalar.|  
+|[is_member_pointer](../standard-library/is-member-pointer-class.md)|Tests whether the type is a pointer to a member.|  
   
- 型の関係  
-  
-|||  
-|-|-|  
-|[is_same](../standard-library/is-same-class.md)|2 つの型が等しいかどうかをテストします。|  
-|[is_base_of](../standard-library/is-base-of-class.md)|一方の型がもう一方の型に基づいているかどうかをテストします。|  
-|[is_convertible](../standard-library/is-convertible-class.md)|一方の型をもう一方の型に変換できるかどうかをテストします。|  
-  
- const/volatile の変更  
+ Type properties  
   
 |||  
 |-|-|  
-|[add_const](../standard-library/add-const-class.md)|型から `const` 型を生成します。|  
-|[add_volatile](../standard-library/add-volatile-class.md)|型から `volatile` 型を生成します。|  
-|[add_cv](../standard-library/add-cv-class.md)|型から `const``volatile` 型を生成します。|  
-|[remove_const](../standard-library/remove-const-class.md)|型から非 const 型を生成します。|  
-|[remove_volatile](../standard-library/remove-volatile-class.md)|型から非 volatile 型を生成します。|  
-|[remove_cv](../standard-library/remove-cv-class.md)|型から非 const の非 volatile 型を生成します。|  
+|[is_const](../standard-library/is-const-class.md)|Tests whether the type is `const`.|  
+|[is_volatile](../standard-library/is-volatile-class.md)|Tests whether the type is `volatile`.|  
+|[is_trivial](../standard-library/is-trivial-class.md)|Tests whether the type is trivial.|  
+|[is_trivially_copyable](../standard-library/is-trivially-copyable-class.md)|Tests whether the type is trivially copyable.|  
+|[is_standard_layout](../standard-library/is-standard-layout-class.md)|Tests if type is a standard layout type.|  
+|[is_pod](../standard-library/is-pod-class.md)|Tests whether the type is a POD.|  
+|[is_literal_type](../standard-library/is-literal-type-class.md)|Tests whether the type can be a `constexpr` variable or used in a `constexpr` function.|  
+|[is_empty](../standard-library/is-empty-class.md)|Tests whether the type is an empty class.|  
+|[is_polymorphic](../standard-library/is-polymorphic-class.md)|Tests whether the type is a polymorphic class.|  
+|[is_abstract](../standard-library/is-abstract-class.md)|Tests whether the type is an abstract class.|  
+|[is_final](../standard-library/is-final-class.md)|Tests whether the type is a class type marked `final`.|  
+|[is_signed](../standard-library/is-signed-class.md)|Tests whether the type is a signed integer.|  
+|[is_unsigned](../standard-library/is-unsigned-class.md)|Tests whether the type is an unsigned integer.|  
+|[is_constructible](../standard-library/is-constructible-class.md)|Tests whether the type is constructible using the specified argument types.|  
+|[is_default_constructible](../standard-library/type-traits-functions.md#is_default_constructible)|Tests whether the type has a default constructor.|  
+|[is_copy_constructible](../standard-library/type-traits-functions.md#is_copy_constructible)|Tests whether the type has a copy constructor.|  
+|[is_move_constructible](../standard-library/type-traits-functions.md#is_move_constructible)|Tests whether the type has a move constructor.|  
+|[is_assignable](../standard-library/type-traits-functions.md#is_assignable)|Tests whether the first type can be assigned a value of the second type.|  
+|[is_copy_assignable](../standard-library/type-traits-functions.md#is_copy_assignable)|Tests whether a type can be assigned a const reference value of the type.|  
+|[is_move_assignable](../standard-library/type-traits-functions.md#is_move_assignable)|Tests whether a type can be assigned an rvalue reference of the type.|  
+|[is_destructible](../standard-library/is-destructible-class.md)|Tests whether the type is destructible.|  
+|[is_trivially_constructible](../standard-library/is-trivially-constructible-class.md)|Tests whether the type uses no non-trivial operations when constructed using the specified types.|  
+|[is_trivially_default_constructible](../standard-library/is-trivially-default-constructible-class.md)|Tests whether the type uses no non-trivial operations when default constructed.|  
+|[is_trivially_copy_constructible](../standard-library/is-trivially-copy-constructible-class.md)|Tests whether the type uses no non-trivial operations when copy constructed.|  
+|[is_trivially_move_constructible](../standard-library/type-traits-functions.md#is_trivially_move_constructible)|Tests whether the type uses no non-trivial operations when move constructed.|  
+|[is_trivially_assignable](../standard-library/is-trivially-assignable-class.md)|Tests whether the types are assignable and the assignment uses no non-trivial operations.|  
+|[is_trivially_copy_assignable](../standard-library/type-traits-functions.md#is_trivially_copy_assignable)|Tests whether the type is copy assignable and the assignment uses no non-trivial operations.|  
+|[is_trivially_move_assignable](../standard-library/type-traits-functions.md#is_trivially_move_assignable)|Tests whether the type is move assignable and the assignment uses no non-trivial operations.|  
+|[is_trivially_destructible](../standard-library/is-trivially-destructible-class.md)|Tests whether the type is destructible and the destructor uses no non-trivial operations.|  
+|[is_nothrow_constructible](../standard-library/is-nothrow-constructible-class.md)|Tests whether the type is constructible and is known not to throw when constructed using the specified types.|  
+|[is_nothrow_default_constructible](../standard-library/is-nothrow-default-constructible-class.md)|Tests whether the type is default constructible and is known not to throw when default constructed.|  
+|[is_nothrow_copy_constructible](../standard-library/is-nothrow-copy-constructible-class.md)|Tests whether the type is copy constructible and the copy constructor is known not to throw.|  
+|[is_nothrow_move_constructible](../standard-library/is-nothrow-move-constructible-class.md)|Tests whether the type is move constructible and the move constructor is known not to throw.|  
+|[is_nothrow_assignable](../standard-library/is-nothrow-assignable-class.md)|Tests whether the type is assignable using the specified type and the assignment is known not to throw.|  
+|[is_nothrow_copy_assignable](../standard-library/is-nothrow-copy-assignable-class.md)|Tests whether the type is copy assignable and the assignment is known not to throw.|  
+|[is_nothrow_move_assignable](../standard-library/type-traits-functions.md#is_nothrow_move_assignable)|Tests whether the type is move assignable and the assignment is known not to throw.|  
+|[is_nothrow_destructible](../standard-library/is-nothrow-destructible-class.md)|Tests whether the type is destructible and the destructor is known not to throw.|  
+|[has_virtual_destructor](http://msdn.microsoft.com/en-us/c0f85f0b-c63c-410d-a046-72eeaf44f7eb)|Tests whether the type has a virtual destructor.|  
   
- 参照の変更  
+ Type property queries  
   
 |||  
 |-|-|  
-|[add_lvalue_reference](../standard-library/add-lvalue-reference-class.md)|型から型への参照を生成します。|  
-|[add_rvalue_reference](../standard-library/add-rvalue-reference-class.md)|型から型への rvalue 参照を生成します。|  
-|[remove_reference](../standard-library/remove-reference-class.md)|型から非参照型を生成します。|  
+|[alignment_of](../standard-library/alignment-of-class.md)|Gets the alignment of a type.|  
+|[rank](../standard-library/rank-class.md)|Gets the number of array dimensions.|  
+|[extent](../standard-library/extent-class.md)|Gets the number of elements in the specified array dimension.|  
   
- 符号の変更  
-  
-|||  
-|-|-|  
-|[make_signed](../standard-library/make-signed-class.md)|符号付きの場合は型を生成し、サイズが型以上の型または最小の符号付きの型を生成します。|  
-|[make_unsigned](../standard-library/make-unsigned-class.md)|符号なしの場合は型を生成し、サイズが型以上の型または最小の符号なしの型を生成します。|  
-  
- 配列の変更  
+ Type relations  
   
 |||  
 |-|-|  
-|[remove_all_extents](../standard-library/remove-all-extents-class.md)|配列型から非配列型を生成します。|  
-|[remove_extent](../standard-library/remove-extent-class.md)|配列型から要素型を生成します。|  
+|[is_same](../standard-library/is-same-class.md)|Tests whether two types are the same.|  
+|[is_base_of](../standard-library/is-base-of-class.md)|Tests whether one type is a base of another.|  
+|[is_convertible](../standard-library/is-convertible-class.md)|Tests whether one type is convertible to another.|  
   
- ポインターの変更  
-  
-|||  
-|-|-|  
-|[add_pointer](../standard-library/add-pointer-class.md)|型から型へのポインターを生成します。|  
-|[remove_pointer](../standard-library/remove-pointer-class.md)|型へのポインターから型を生成します。|  
-  
- その他の変換  
+ Const-volatile modifications  
   
 |||  
 |-|-|  
-|[aligned_storage](../standard-library/aligned-storage-class.md)|整列された型の初期化されていないメモリを割り当てます。|  
-|[aligned_union](../standard-library/aligned-union-class.md)|重要なコンストラクターまたはデストラクターを含む整列された共用体の初期化されていないメモリを割り当てます。|  
-|[common_type](../standard-library/common-type-class.md)|パラメーター パックのすべての型の共通の型を生成します。|  
-|[conditional](../standard-library/conditional-class.md)|条件が true の場合は、最初に指定された型が生成され、それ以外の場合、2 番目に指定された型になります。|  
-|[decay](../standard-library/decay-class.md)|値で渡された型を生成します。 非参照、非定数、非揮発の型、または型へのポインターを作成します。|  
-|[enable_if](../standard-library/enable-if-class.md)|条件が true の場合は、指定された型が生成され、それ以外の場合、型は生成されません。|  
-|[result_of](../standard-library/result-of-class.md)|指定された引数型を受け取る呼び出し可能型の戻り値の型を決定します。|  
-|[underlying_type](../standard-library/underlying-type-class.md)|列挙型の基になる整数型を生成します。|  
+|[add_const](../standard-library/add-const-class.md)|Produces a `const` type from type.|  
+|[add_volatile](../standard-library/add-volatile-class.md)|Produces a `volatile` type from type.|  
+|[add_cv](../standard-library/add-cv-class.md)|Produces a `const volatile` type from type.|  
+|[remove_const](../standard-library/remove-const-class.md)|Produces a non-const type from type.|  
+|[remove_volatile](../standard-library/remove-volatile-class.md)|Produces a non-volatile type from type.|  
+|[remove_cv](../standard-library/remove-cv-class.md)|Produces a non-const non-volatile type from type.|  
   
-## <a name="see-also"></a>関連項目  
+ Reference modifications  
+  
+|||  
+|-|-|  
+|[add_lvalue_reference](../standard-library/add-lvalue-reference-class.md)|Produces a reference to type from type.|  
+|[add_rvalue_reference](../standard-library/add-rvalue-reference-class.md)|Produces an rvalue reference to type from type|  
+|[remove_reference](../standard-library/remove-reference-class.md)|Produces a non-reference type from type.|  
+  
+ Sign modifications  
+  
+|||  
+|-|-|  
+|[make_signed](../standard-library/make-signed-class.md)|Produces the type if signed, or the smallest signed type greater than or equal in size to type.|  
+|[make_unsigned](../standard-library/make-unsigned-class.md)|Produces the type if unsigned, or the smallest unsigned type greater than or equal in size to type.|  
+  
+ Array modifications  
+  
+|||  
+|-|-|  
+|[remove_all_extents](../standard-library/remove-all-extents-class.md)|Produces a non-array type from an array type.|  
+|[remove_extent](../standard-library/remove-extent-class.md)|Produces the element type from an array type.|  
+  
+ Pointer modifications  
+  
+|||  
+|-|-|  
+|[add_pointer](../standard-library/add-pointer-class.md)|Produces a pointer to type from type.|  
+|[remove_pointer](../standard-library/remove-pointer-class.md)|Produces a type from a pointer to type.|  
+  
+ Other transformations  
+  
+|||  
+|-|-|  
+|[aligned_storage](../standard-library/aligned-storage-class.md)|Allocates uninitialized memory for an aligned type.|  
+|[aligned_union](../standard-library/aligned-union-class.md)|Allocates uninitialized memory for an aligned union with a non-trivial constructor or destructor.|  
+|[common_type](../standard-library/common-type-class.md)|Produces the common type of all the types of the parameter pack.|  
+|[conditional](../standard-library/conditional-class.md)|If the condition is true, produces the first specified type, otherwise the second specified type.|  
+|[decay](../standard-library/decay-class.md)|Produces the type as passed by value. Makes non-reference, non-const, or non-volatile type, or makes a pointer to type.|  
+|[enable_if](../standard-library/enable-if-class.md)|If the condition is true, produces the specified type, otherwise no type.|  
+|[result_of](../standard-library/result-of-class.md)|Determines the return type of the callable type that takes the specified argument types.|  
+|[underlying_type](../standard-library/underlying-type-class.md)|Produces the underlying integral type for an enumeration type.|  
+  
+## <a name="see-also"></a>See Also  
  [\<functional>](../standard-library/functional.md)
 
 

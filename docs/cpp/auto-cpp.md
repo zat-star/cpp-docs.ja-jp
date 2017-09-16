@@ -1,29 +1,45 @@
 ---
-title: "自動 (C++ | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: auto (C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
 ms.assetid: e9d495d7-601c-4547-b897-998389a311f4
 caps.latest.revision: 18
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 自動 (C++
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: c3d761378e4265305905fab17768144aef403b29
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-宣言された変数の型を、その初期化式から推測します。  
+---
+# <a name="auto-c"></a>auto (C++)
+Deduces the type of a declared variable from its initialization expression.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 auto declarator initializer;  
@@ -33,104 +49,128 @@ auto declarator initializer;
 [](auto param1, auto param2) {};  
 ```  
   
-## 解説  
- `auto` キーワードは、宣言された変数の初期化式、またはラムダ式のパラメーターを使用してその型を推測するようにコンパイラに指示します。  
+## <a name="remarks"></a>Remarks  
+ The `auto` keyword directs the compiler to use the initialization expression of a declared variable, or lambda expression parameter, to deduce its type.  
   
- 次のような利点があるので、実際に変換が必要な場合を除き、ほとんどの状況で `auto` キーワードを使用することをお勧めします。  
+ We recommend that you use the `auto` keyword for most situations—unless you really want a conversion—because it provides these benefits:  
   
--   **保全性:** 式の型が変更されても、関数の戻り値の型が変更された場合も含めて、機能が保たれます。  
+-   **Robustness:** If the expression’s type is changed—this includes when a function return type is changed—it just works.  
   
--   **パフォーマンス:** 変換が行われないことが保証されます。  
+-   **Performance:** You’re guaranteed that there will be no conversion.  
   
--   **利便性:** 型名のスペルの難しさや入力ミスを気にする必要がありません。  
+-   **Usability:** You don't have to worry about type name spelling difficulties and typos.  
   
--   **効率性:** コーディングをより効率的にすることができます。  
+-   **Efficiency:** Your coding can be more efficient.  
   
- `auto` を使用するのではなく、変換を行うのは、次のような場合です。  
+ Conversion cases in which you might not want to use `auto`:  
   
--   特定の型が必要であり、他の型を使用できない場合。  
+-   When you want a specific type and nothing else will do.  
   
--   式テンプレート ヘルパー型 \(たとえば `(valarray+valarray)` と初期化子リスト\) の場合 \(実際に `auto x = { 1 };` を取得しようとしていて、`int` のように記述することはほとんどありませんが\)。  
+-   Expression template helper types—for example, `(valarray+valarray)`.  
   
- `auto` キーワードを使用するには、変数を宣言する型の代わりに使用し、初期化式を指定します。  また、`auto`、`const`、ポインター \(`volatile`\)、参照 \(`*`\)、および右辺値参照 `&`\) などの指定子と宣言子を使用して、`(&&` キーワードを修飾できます。  コンパイラは初期化式を評価し、その情報を使用して変数の型を推測します。  
+ To use the `auto` keyword, use it instead of a type to declare a variable, and specify an initialization expression. In addition, you can modify the `auto` keyword by using specifiers and declarators such as `const`, `volatile`, pointer (`*`), reference (`&`), and rvalue reference `(&&`). The compiler evaluates the initialization expression and then uses that information to deduce the type of the variable.  
   
- 初期化式は、代入 \(等号構文\)、直接の初期化 \(関数形式の構文\)、[new 演算子](../Topic/operator%20new%20\(%3Cnew%3E\).md)式にすることができます。また、[範囲ベースの for ステートメント \(C\+\+\)](../Topic/Range-based%20for%20Statement%20\(C++\).md) ステートメントの  *for\-range\-declaration* パラメーターにすることもできます。  詳細については、「[初期化子](../cpp/initializers.md)」と、このドキュメントの後の方のコード例を参照してください。  
+ The initialization expression can be an assignment (equal-sign syntax), a direct initialization (function-style syntax), an [operator new](new-operator-cpp.md) expression, or the initialization expression can be the *for-range-declaration* parameter in a [Range-based for Statement (C++)](../cpp/range-based-for-statement-cpp.md) statement. For more information, see [Initializers](../cpp/initializers.md) and the code examples later in this document.  
   
- `auto` キーワードは、型のプレースホルダーであり、それ自体が型ではありません。  そのため、`auto` キーワードは、[sizeof](../cpp/sizeof-operator.md) や [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) などの演算子やキャストでは使用できません。  
+ The `auto` keyword is a placeholder for a type, but it is not itself a type. Therefore, the `auto` keyword cannot be used in casts or operators such as [sizeof](../cpp/sizeof-operator.md) and [typeid](../windows/typeid-cpp-component-extensions.md).  
   
-## 実用性  
- `auto` キーワードは、複雑な型を持つ変数を宣言する簡単な方法です。  たとえば、`auto` キーワードを使用して、初期化式にテンプレート、関数へのポインター、またはメンバーへのポインターが含まれる変数を宣言できます。  
+## <a name="usefulness"></a>Usefulness  
+ The `auto` keyword is a simple way to declare a variable that has a complicated type. For example, you can use `auto` to declare a variable where the initialization expression involves templates, pointers to functions, or pointers to members.  
   
- `auto` を使用して、ラムダ式の変数を宣言して初期化することもできます。  ラムダ式の型を認識できるのはコンパイラのみであるため、プログラマが変数の型を宣言することはできません。  詳細については、「[ラムダ式の例](../cpp/examples-of-lambda-expressions.md)」を参照してください。  
+ You can also use `auto` to declare and initialize a variable to a lambda expression. You can't declare the type of the variable yourself because the type of a lambda expression is known only to the compiler. For more information, see [Examples of Lambda Expressions](../cpp/examples-of-lambda-expressions.md).  
   
-## 後続の戻り値の型  
- テンプレート ライブラリの記述を支援するには、`auto` 型指定子と共に、`decltype` を使用します。  `auto` と `decltype` を使用して、テンプレートの引数の型に応じた戻り値の型を持つテンプレート関数を宣言します。  または、別の関数の呼び出しをラップするテンプレート関数を `auto` と `decltype` を使用して宣言し、その別の関数の戻り値の型を返します。  詳細については、「[decltype](../cpp/decltype-cpp.md)」を参照してください。  
+## <a name="trailing-return-types"></a>Trailing Return Types  
+ You can use `auto`, together with the `decltype` type specifier, to help write template libraries. Use `auto` and `decltype` to declare a template function whose return type depends on the types of its template arguments. Or, use `auto` and `decltype` to declare a template function that wraps a call to another function, and then returns whatever is the return type of that other function. For more information, see [decltype](../cpp/decltype-cpp.md).  
   
-## 参照と cv 修飾子  
- `auto` を使用すると、参照、const 修飾子、および volatile 修飾子がなくなることに注意してください。  次に例を示します。  
+## <a name="references-and-cv-qualifiers"></a>References and cv-qualifiers  
+ Note that using `auto` drops references, const qualifiers, and volatile qualifiers. Consider the following example:  
   
 ```cpp  
-// cl.exe /analyze /EHsc /W4  
-#include <iostream>  
+// cl.exe /analyze /EHsc /W4  
+#include <iostream>  
   
-using namespace std;  
+using namespace std;  
   
-int main( )  
+int main( )  
 {  
-    int count = 10;  
-    int& countRef = count;  
-    auto myAuto = countRef;  
+    int count = 10;  
+    int& countRef = count;  
+    auto myAuto = countRef;  
   
-    countRef = 11;  
-    cout << count << " ";  
+    countRef = 11;  
+    cout << count << " ";  
   
-    myAuto = 12;  
-    cout << count << endl;  
+    myAuto = 12;  
+    cout << count << endl;  
 }  
   
 ```  
   
- myAuto は int の参照であると思うかもしれませんが、そうではありません。  これは単なる int です。そのため、出力は `11 11` です。`11 12` によって参照が解除されていなかったら、`auto` でしたが、そうなっていません。  
+ In the previous example, myAuto is an int, not an int reference, so the output is `11 11`, not `11 12` as would be the case if the reference qualifier had not been dropped by `auto`.  
   
-## 制限事項とエラー メッセージ  
- 次の表は、`auto` キーワードの使用に関する制限事項と、それに対応してコンパイラによって生成される診断エラー メッセージの一覧です。  
-  
-|エラー番号|説明|  
-|-----------|--------|  
-|[C3530](../Topic/Compiler%20Error%20C3530.md)|`auto` キーワードを他の型指定子と組み合わせることはできません。|  
-|[C3531](../error-messages/compiler-errors-2/compiler-error-c3531.md)|`auto` キーワードで宣言されたシンボルには初期化子が必要です。|  
-|[C3532](../error-messages/compiler-errors-2/compiler-error-c3532.md)|`auto` キーワードを不適切に使用して型を宣言しました。  たとえば、メソッドの戻り値の型または配列を宣言しました。|  
-|[C3533](../Topic/Compiler%20Error%20C3533.md)、[C3539](../Topic/Compiler%20Error%20C3539.md)|パラメーターまたはテンプレート引数は `auto` キーワードで宣言することはできません。|  
-|[C3534](../Topic/Compiler%20Error%20C3534.md)|`auto` 式内の `new` キーワードで宣言されたシンボルには初期化子が必要です。  詳細については、「[new 演算子](../Topic/operator%20new%20\(%3Cnew%3E\).md)」を参照してください。|  
-|[C3535](../error-messages/compiler-errors-2/compiler-error-c3535.md)|メソッドまたはテンプレート パラメーターは `auto` キーワードで宣言することはできません。|  
-|[C3536](../error-messages/compiler-errors-2/compiler-error-c3536.md)|シンボルは初期化前に使用することはできません。  実際には、変数はその変数自体を初期化するために使用できないことを意味します。|  
-|[C3537](../error-messages/compiler-errors-2/compiler-error-c3537.md)|`auto` キーワードで宣言された型にはキャストできません。|  
-|[C3538](../error-messages/compiler-errors-2/compiler-error-c3538.md)|`auto` キーワードで宣言されている宣言子リスト内のすべてのシンボルは、同じ型に解決する必要があります。  詳細については、「[宣言](../misc/declarations.md)」を参照してください。|  
-|[C3540](../error-messages/compiler-errors-2/compiler-error-c3540.md)、[C3541](../error-messages/compiler-errors-2/compiler-error-c3541.md)|[sizeof](../cpp/sizeof-operator.md) と [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) 演算子は `auto` キーワードで宣言されたシンボルに適用できません。|  
-  
-## 使用例  
- 以下のコード片は、`auto` キーワードを使用するためのいくつかの方法を示しています。  
-  
- 次の宣言は同等です。  最初のステートメントでは、変数 `j` は `int` 型として宣言されます。  2 番目のステートメントでは、初期化式 \(0\) が整数であるため、変数 `k` は型 `int` であると推測されます。  
+## <a name="type-deduction-with-braced-initializers-c14"></a>Type deduction with braced initializers (C++14)  
+ The following code exmample shows how to intialize an auto variable using braces. Note the difference between B and C and between A and E.  
   
 ```cpp  
+#include <initializer_list>  
   
+int main()  
+{  
+    // std::initializer_list<int>  
+    auto A = { 1, 2 };  
+  
+    // std::initializer_list<int>  
+    auto B = { 3 };  
+  
+    // int  
+    auto C{ 4 };  
+  
+    // C3535: cannot deduce type for 'auto' from initializer list'  
+    auto D = { 5, 6.7 };  
+  
+    // C3518 in a direct-list-initialization context the type for 'auto'  
+    // can only be deduced from a single initializer expression  
+    auto E{ 8, 9 };  
+  
+    return 0;  
+}  
+```  
+  
+## <a name="restrictions-and-error-messages"></a>Restrictions and Error Messages  
+ The following table lists the restrictions on the use of the `auto` keyword, and the corresponding diagnostic error message that the compiler emits.  
+  
+|Error number|Description|  
+|------------------|-----------------|  
+|[C3530](../error-messages/compiler-errors-2/compiler-error-c3530.md)|The `auto` keyword cannot be combined with any other type-specifier.|  
+|[C3531](../error-messages/compiler-errors-2/compiler-error-c3531.md)|A symbol that is declared with the `auto` keyword must have an initializer.|  
+|[C3532](../error-messages/compiler-errors-2/compiler-error-c3532.md)|You incorrectly used the `auto` keyword to declare a type. For example, you declared a method return type or an array.|  
+|[C3533](../error-messages/compiler-errors-2/compiler-error-c3533.md), [C3539](../error-messages/compiler-errors-2/compiler-error-c3539.md)|A parameter or template argument cannot be declared with the `auto` keyword.|  
+|[C3535](../error-messages/compiler-errors-2/compiler-error-c3535.md)|A method or template parameter cannot be declared with the `auto` keyword.|  
+|[C3536](../error-messages/compiler-errors-2/compiler-error-c3536.md)|A symbol cannot be used before it is initialized. In practice, this means that a variable cannot be used to initialize itself.|  
+|[C3537](../error-messages/compiler-errors-2/compiler-error-c3537.md)|You cannot cast to a type that is declared with the `auto` keyword.|  
+|[C3538](../error-messages/compiler-errors-2/compiler-error-c3538.md)|All the symbols in a declarator list that is declared with the `auto` keyword must resolve to the same type. For more information, see [Declarations and Definitions](declarations-and-definitions-cpp.md).|  
+|[C3540](../error-messages/compiler-errors-2/compiler-error-c3540.md), [C3541](../error-messages/compiler-errors-2/compiler-error-c3541.md)|The [sizeof](../cpp/sizeof-operator.md) and [typeid](../windows/typeid-cpp-component-extensions.md) operators cannot be applied to a symbol that is declared with the `auto` keyword.|  
+  
+## <a name="examples"></a>Examples  
+ These code fragments illustrate some of the ways in which the `auto` keyword can be used.  
+  
+ The following declarations are equivalent. In the first statement, variable `j` is declared to be type `int`. In the second statement, variable `k` is deduced to be type `int` because the initialization expression (0) is an integer.  
+  
+```cpp  
 int j = 0;  // Variable j is explicitly type int.  
 auto k = 0; // Variable k is implicitly type int because 0 is an integer.  
 ```  
   
- 次の宣言は同じ意味を持ちますが、2 番目の宣言の方が最初の宣言より単純です。  `auto` キーワードを使用する最も説得力のある理由の 1 つは簡潔さです。  
+ The following declarations are equivalent, but the second declaration is simpler than the first. One of the most compelling reasons to use the `auto` keyword is simplicity.  
   
 ```cpp  
-  
 map<int,list<string>>::iterator i = m.begin();   
 auto i = m.begin();   
 ```  
   
- 次のコード片は、`iter` と範囲の `elem` ループが開始されるときに、変数 `for` と `for` の型を宣言します。  
+ The following code fragment declares the type of variables `iter` and `elem` when the `for` and range `for` loops start.  
   
 ```cpp  
-  
 // cl /EHsc /nologo /W4  
 #include <deque>  
 using namespace std;  
@@ -154,39 +194,34 @@ int main()
     for (const auto& elem : dqDoubleData) // observes elements IN-PLACE  
     { /* ... */ }  
 }  
-  
 ```  
   
- 次のコード片は、ポインターを宣言するために、`new` 演算子とポインター宣言を使用します。  
+ The following code fragment uses the `new` operator and pointer declaration to declare pointers.  
   
 ```cpp  
-  
 double x = 12.34;  
 auto *y = new auto(x), **z = new auto(&x);  
 ```  
   
- 次のコード片は各宣言ステートメントで複数のシンボルを宣言します。  各ステートメントのすべてのシンボルが同じ型に解決されることに注意してください。  
+ The next code fragment declares multiple symbols in each declaration statement. Notice that all of the symbols in each statement resolve to the same type.  
   
 ```cpp  
-  
 auto x = 1, *y = &x, **z = &y; // Resolves to int.  
 auto a(2.01), *b (&a);         // Resolves to double.  
 auto c = 'a', *d(&c);          // Resolves to char.  
 auto m = 1, &n = m;            // Resolves to int.  
 ```  
   
- 次のコード片は、値が 200 の整数として変数 `?:` を宣言するために、条件演算子 \(`x`\) を使用します。  
+ This code fragment uses the conditional operator (`?:`) to declare variable `x` as an integer that has a value of 200:  
   
 ```cpp  
-  
 int v1 = 100, v2 = 200;  
 auto x = v1 > v2 ? v1 : v2;  
 ```  
   
- 次のコード フラグメントは、変数 `x` を型 `int` に、変数 `y` を型 `const` `int` への参照に、変数 `fp` を型 `int` を返す関数へのポインターに初期化します。  
+ The following code fragment initializes variable `x` to type `int`, variable `y` to a reference to type `const int`, and variable `fp` to a pointer to a function that returns type `int`.  
   
 ```cpp  
-  
 int f(int x) { return x; }  
 int main()  
 {  
@@ -197,18 +232,16 @@ int main()
     auto fp = p;  
     //...  
 }  
-  
 ```  
   
-## 参照  
- [auto キーワード](../cpp/auto-keyword.md)   
- [\(NOTINBUILD\)Storage\-Class Specifiers](http://msdn.microsoft.com/ja-jp/10b3d22d-cb40-450b-994b-08cf9a211b6c)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [\/Zc:auto \(変数の型の推測\)](../build/reference/zc-auto-deduce-variable-type.md)   
- [sizeof 演算子](../cpp/sizeof-operator.md)   
- [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md)   
- [new 演算子](../Topic/operator%20new%20\(%3Cnew%3E\).md)   
- [宣言](../misc/declarations.md)   
- [ラムダ式の例](../cpp/examples-of-lambda-expressions.md)   
- [初期化子](../cpp/initializers.md)   
+## <a name="see-also"></a>See Also  
+ [auto Keyword](../cpp/auto-keyword.md)   
+ [Keywords](../cpp/keywords-cpp.md)   
+ [/Zc:auto (Deduce Variable Type)](../build/reference/zc-auto-deduce-variable-type.md)   
+ [sizeof Operator](../cpp/sizeof-operator.md)   
+ [typeid](../windows/typeid-cpp-component-extensions.md)   
+ [operator new](new-operator-cpp.md)   
+ [Declarations and Definitions](declarations-and-definitions-cpp.md)   
+ [Examples of Lambda Expressions](../cpp/examples-of-lambda-expressions.md)   
+ [Initializers](../cpp/initializers.md)   
  [decltype](../cpp/decltype-cpp.md)

@@ -1,85 +1,102 @@
 ---
-title: "コレクション クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列のテンプレート"
-  - "配列 [C++], クラス"
-  - "コレクション クラス, コレクション クラスの概要"
-  - "コレクション クラス, 配列"
-  - "コレクション クラス, 一覧"
-  - "コレクション クラス, マップ"
-  - "コレクション クラス, MFC"
-  - "コレクション クラス, 形状"
-  - "コレクション クラス, テンプレート ベースの"
-  - "コレクション, 概要 (コレクションの)"
-  - "MFC コレクション クラス"
-  - "MFC, コレクション"
-  - "形状"
-  - "形状, コレクション"
+title: Collections | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, collections
+- arrays [MFC], classes
+- MFC collection classes
+- shapes, collection
+- collection classes [MFC], MFC
+- collections, about collections
+- array templates [MFC]
+- collection classes [MFC], template-based
+- collection classes [MFC], about collection classes
+- collection classes [MFC], maps
+- collection classes [MFC], arrays
+- shapes
+- collection classes [MFC], lists
+- collection classes [MFC], shapes
 ms.assetid: 02586e4c-851d-41d0-a722-feb11c17c74c
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# コレクション クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f4ae4981412a7cf494b551de7f5bb26c74512244
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC のコレクション クラスでは、オブジェクトのグループを管理できます。  次の 2 種類のコレクション クラスがあります。  
+---
+# <a name="collections"></a>Collections
+The Microsoft Foundation Class Library provides collection classes to manage groups of objects. These classes are of two types:  
   
--   [C\+\+ テンプレートから作成したコレクション クラス](#_core_the_template.2d.based_collection_classes)  
+-   [Collection classes created from C++ templates](#_core_the_template_based_collection_classes)  
   
--   [テンプレートで作成されていないコレクション クラス](#_core_the_collection_classes_not_based_on_templates)  
+-   [Collection classes not created from templates](#_core_the_collection_classes_not_based_on_templates)  
   
 > [!NOTE]
->  非テンプレート コレクション クラスを既に使用しているコードでは、引き続きそのクラスを使用できます。  独自のデータ型のためにタイプ セーフな \(型が保証された\) コレクション クラスを新規作成する場合は、テンプレート ベースのクラスの使用をお勧めします。  
+>  If your code already uses nontemplate collection classes, you can continue to use them. If you write new type-safe collection classes for your own data types, we recommend that you use the newer template-based classes.  
   
-##  <a name="_core_collection_shapes"></a> コレクション クラスの形状  
- コレクション クラスは、その "形状" と要素の型で識別されます。  この "形状" とは、コレクションにオブジェクト編成し、保存する形態のことです。  MFC では、コレクション クラスの基本形状として、リスト、配列、マップの 3 つがあります \(マップはディクショナリとも呼ばれます\)。  自分のプログラムの内容に最も合ったコレクション形状を選択できます。  
+##  <a name="_core_collection_shapes"></a> Collection Shapes  
+ A collection class is characterized by its "shape" and by the types of its elements. The shape refers to the way the objects are organized and stored by the collection. MFC provides three basic collection shapes: lists, arrays, and maps (also known as dictionaries). You can pick the collection shape that is most suited to your particular programming problem.  
   
- コレクション クラスの 3 種類の形状のそれぞれについては、このトピックで簡単に後述します。  機能を比較してプログラムに最も適した形状を決定するには、「[コレクション クラスの選択に関する推奨事項](../Topic/Recommendations%20for%20Choosing%20a%20Collection%20Class.md)」を参照してください。  
+ Each of the three provided collection shapes is described briefly later in this topic. To compare the features of the shapes to help you decide which is best for your program, see [Recommendations for Choosing a Collection Class](../mfc/recommendations-for-choosing-a-collection-class.md).  
   
--   リスト  
+-   List  
   
-     リスト クラスは、要素を順番に並べたインデックスのないリストであり、双方向のリンク リストとして実装されます。  リストには "先頭" と "末尾" があり、リストの先頭または末尾の要素の追加や削除、または中間の要素の挿入と削除を高速で行うことができます。  
+     The list class provides an ordered, nonindexed list of elements, implemented as a doubly linked list. A list has a "head" and a "tail," and adding or removing elements from the head or tail, or inserting or deleting elements in the middle, is very fast.  
   
 -   Array  
   
-     配列クラスは、オブジェクトを順番に並べた、整数インデックス付きの配列です。サイズを動的に変更できます。  
+     The array class provides a dynamically sized, ordered, and integer-indexed array of objects.  
   
--   マップ \(ディクショナリとも呼ばれます\)  
+-   Map (also known as a dictionary)  
   
-     マップは、キー オブジェクトと値オブジェクトを対応付けるコレクションです。  
+     A map is a collection that associates a key object with a value object.  
   
-##  <a name="_core_the_template.2d.based_collection_classes"></a> テンプレート ベースのコレクション クラス  
- 任意の型のオブジェクトを含むタイプ セーフなコレクションを実装する最も簡単な方法は、MFC のテンプレート ベースのクラスを使用することです。  これらのクラスの例については、MFC サンプル [収集する](../top/visual-cpp-samples.md)を参照してください。  
+##  <a name="_core_the_template_based_collection_classes"></a> The Template-Based Collection Classes  
+ The easiest way to implement a type-safe collection that contains objects of any type is to use one of the MFC template-based classes. For examples of these classes, see the MFC sample [COLLECT](../visual-cpp-samples.md).  
   
- 次の表は、MFC のテンプレート ベースのコレクション クラスの一覧です。  
+ The following table lists the MFC template-based collection classes.  
   
-### コレクション テンプレート クラス  
+### <a name="collection-template-classes"></a>Collection Template Classes  
   
-|コレクションの内容|配列|表示内容|マップ|  
-|---------------|--------|----------|---------|  
-|任意の型のオブジェクトのコレクション|`CArray`|`CList`|`CMap`|  
-|任意の型のオブジェクトを指すポインターのコレクション|`CTypedPtrArray`|`CTypedPtrList`|`CTypedPtrMap`|  
+|Collection contents|Arrays|Lists|Maps|  
+|-------------------------|------------|-----------|----------|  
+|Collections of objects of any type|`CArray`|`CList`|`CMap`|  
+|Collections of pointers to objects of any type|`CTypedPtrArray`|`CTypedPtrList`|`CTypedPtrMap`|  
   
-##  <a name="_core_the_collection_classes_not_based_on_templates"></a> テンプレート ベースでないコレクション クラス  
- アプリケーションで MFC 非テンプレート クラスを既に使用している場合は、引き続きそのクラスを使用できます。  ただし、新しいコレクションに対しては、テンプレート ベースのクラスを使用することをお勧めします。  次の表は、テンプレート ベースでない MFC のコレクション クラスの一覧です。  
+##  <a name="_core_the_collection_classes_not_based_on_templates"></a> The Collection Classes Not Based on Templates  
+ If your application already uses MFC nontemplate classes, you can continue to use them. However, for new collections, we recommend that you use the template-based classes. The following table lists the MFC collection classes that are not based on templates.  
   
-### 非テンプレート コレクション クラス  
+### <a name="nontemplate-collection-classes"></a>Nontemplate Collection Classes  
   
-|配列|表示内容|マップ|  
-|--------|----------|---------|  
+|Arrays|Lists|Maps|  
+|------------|-----------|----------|  
 |`CObArray`|`CObList`|`CMapPtrToWord`|  
 |`CByteArray`|`CPtrList`|`CMapPtrToPtr`|  
 |`CDWordArray`|`CStringList`|`CMapStringToOb`|  
@@ -88,38 +105,40 @@ MFC のコレクション クラスでは、オブジェクトのグループを
 |`CWordArray`||`CMapWordToOb`|  
 |`CUIntArray`||`CMapWordToPtr`|  
   
- 「[コレクション クラスの選択に関する推奨事項](../Topic/Recommendations%20for%20Choosing%20a%20Collection%20Class.md)」の表「MFC コレクション クラスの特徴」では、MFC コレクション クラスについて形状以外の次の特徴が示されています。  
+ The Characteristics of MFC Collection Classes table in [Recommendations for Choosing a Collection Class](../mfc/recommendations-for-choosing-a-collection-class.md) describes the MFC collection classes in terms of these characteristics (other than shape):  
   
--   クラスで C\+\+ テンプレートを使用しているか  
+-   Whether the class uses C++ templates  
   
--   コレクションに格納されている要素をシリアル化できるか  
+-   Whether the elements stored in the collection can be serialized  
   
--   コレクションに格納されている要素を診断用にダンプできるか  
+-   Whether the elements stored in the collection can be dumped for diagnostics  
   
--   タイプ セーフなコレクションか  
+-   Whether the collection is type-safe  
   
-### 目的に合ったトピックをクリックしてください  
+### <a name="what-do-you-want-to-do"></a>What do you want to do  
   
-#### 汎用コレクション クラスの操作方法  
+#### <a name="general-collection-class-tasks"></a>General Collection-Class Tasks  
   
--   [コレクション クラスの選択に関する推奨事項](../Topic/Recommendations%20for%20Choosing%20a%20Collection%20Class.md)  
+-   [Recommendations for Choosing a Collection Class](../mfc/recommendations-for-choosing-a-collection-class.md)  
   
--   [方法 : タイプ セーフなコレクションを作成する](../mfc/how-to-make-a-type-safe-collection.md)  
+-   [How to: Make a Type-Safe Collection](../mfc/how-to-make-a-type-safe-collection.md)  
   
--   [スタック コレクションとキュー コレクションの作成](../mfc/creating-stack-and-queue-collections.md)  
+-   [Creating Stack and Queue Collections](../mfc/creating-stack-and-queue-collections.md)  
   
--   [CArray::Add](../Topic/CArray::Add.md)  
+-   [CArray::Add](../mfc/reference/carray-class.md#add)  
   
-#### テンプレート ベースのコレクション クラスの操作方法  
+#### <a name="template-based-collection-class-tasks"></a>Template-Based Collection-Class Tasks  
   
--   [テンプレート ベースのクラス](../Topic/Template-Based%20Classes.md)  
+-   [Template-Based Classes](../mfc/template-based-classes.md)  
   
-#### コレクションのメンバーへのアクセス \(テンプレート ベース\/非テンプレート\)  
+#### <a name="accessing-the-members-of-a-collection-template-based-or-not"></a>Accessing the Members of a Collection (Template-Based or Not)  
   
--   [コレクションの全メンバーへのアクセス](../mfc/accessing-all-members-of-a-collection.md)  
+-   [Accessing All Members of a Collection](../mfc/accessing-all-members-of-a-collection.md)  
   
--   [CObject コレクションの全オブジェクトの削除](../Topic/Deleting%20All%20Objects%20in%20a%20CObject%20Collection.md)  
+-   [Deleting All Objects in a CObject Collection](../mfc/deleting-all-objects-in-a-cobject-collection.md)  
   
-## 参照  
- [概念](../mfc/mfc-concepts.md)   
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)
+## <a name="see-also"></a>See Also  
+ [Concepts](../mfc/mfc-concepts.md)   
+ [General MFC Topics](../mfc/general-mfc-topics.md)
+
+

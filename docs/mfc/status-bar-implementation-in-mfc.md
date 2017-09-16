@@ -1,63 +1,82 @@
 ---
-title: "MFC でのステータス バーの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "COldStatusBar"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COldStatusBar クラス"
-  - "CStatusBar クラス, および CStatusBarCtrl class"
-  - "CStatusBar クラス, および MFC ステータス バー"
-  - "CStatusBarCtrl クラス, および CStatusBar class"
-  - "CStatusBarCtrl クラス, および MFC ステータス バー"
-  - "ステータス バー, および CStatusBarCtrl class"
-  - "ステータス バー, 下位互換性"
-  - "ステータス バー, 実装 (MFC で)"
-  - "ステータス バー, 古いステータス バー (COldStatusBar クラス)"
-  - "ステータス バー, Windows 95 の実装"
-  - "ステータス インジケーター"
+title: Status Bar Implementation in MFC | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- COldStatusBar
+dev_langs:
+- C++
+helpviewer_keywords:
+- status bars [MFC], implementing in MFC
+- CStatusBarCtrl class [MFC], and MFC status bars
+- CStatusBar class [MFC], and CStatusBarCtrl class [MFC]
+- CStatusBarCtrl class [MFC], and CStatusBar class [MFC]
+- status bars [MFC], backward compatibility
+- status bars [MFC], old with COldStatusBar class [MFC]
+- COldStatusBar class [MFC]
+- status bars [MFC], and CStatusBarCtrl class
+- CStatusBar class [MFC], and MFC status bars
+- status indicators
+- status bars [MFC], Windows 95 implementation
 ms.assetid: be5cd876-38e3-4d5c-b8cb-16d57a16a142
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# MFC でのステータス バーの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1cd1fcd13a99451cc81bdd48d0a7a0f90cbc2c7c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CStatusBar](../mfc/reference/cstatusbar-class.md) オブジェクトは、テキスト出力ペインの行を持つコントロール バーです。  出力ウィンドウには、メッセージ行とステータス インジケーターとしてよく使用されます。  例を示し、NumLock キー、ScrollLock キーなどのキーの状態を示すインジケーターと指定されたメニュー コマンドについて説明するヘルプ メニュー メッセージの行が含まれます。  
+---
+# <a name="status-bar-implementation-in-mfc"></a>Status Bar Implementation in MFC
+A [CStatusBar](../mfc/reference/cstatusbar-class.md) object is a control bar with a row of text output panes. The output panes are commonly used as message lines and as status indicators. Examples include the menu help-message lines that briefly explain the selected menu command and the indicators that show the status of the SCROLL LOCK, NUM LOCK, and other keys.  
   
- MFC 4.0 以降では、ステータス バー コモン コントロールをカプセル化するクラス [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)を使用して実装されます。  下位互換性に対して、クラス **COldStatusBar**で古いステータス バーの実装を保持します。  以前のバージョンの MFC のドキュメントは `CStatusBar`で **COldStatusBar** について説明します。  
+ As of MFC version 4.0, status bars are implemented using class [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md), which encapsulates a status bar common control. For backward compatibility, MFC retains the older status bar implementation in class **COldStatusBar**. The documentation for earlier versions of MFC describes **COldStatusBar** under `CStatusBar`.  
   
- [CStatusBar::GetStatusBarCtrl](../Topic/CStatusBar::GetStatusBarCtrl.md)の MFC 4.0、割り当てに新しいメンバー関数ステータス バーのカスタマイズと追加機能の Windows コモン コントロールのサポートを利用できます。  `CStatusBar` の メンバー関数は、Windows コモン コントロールの機能の最もします; ただし、`GetStatusBarCtrl`を呼び出すと、ステータス バーにステータス バーの特性をさらに指定できます。  `GetStatusBarCtrl`を呼び出すと、`CStatusBarCtrl` オブジェクトへの参照を返します。  ステータス バー コントロールを操作するには、その参照を使用できます。  
+ [CStatusBar::GetStatusBarCtrl](../mfc/reference/cstatusbar-class.md#getstatusbarctrl), a member function new to MFC 4.0, allows you to take advantage of the Windows common control's support for status bar customization and additional functionality. `CStatusBar` member functions give you most of the functionality of the Windows common controls; however, when you call `GetStatusBarCtrl`, you can give your status bars even more of the characteristics of a status bar. When you call `GetStatusBarCtrl`, it will return a reference to a `CStatusBarCtrl` object. You can use that reference to manipulate the status bar control.  
   
- 次の図は、複数のインジケーターを表示するステータス バーを示します。  
+ The following figure shows a status bar that displays several indicators.  
   
- ![ステータス バー](../mfc/media/vc37dy1.gif "vc37DY1")  
-ステータス バー  
+ ![Status bar](../mfc/media/vc37dy1.gif "vc37dy1")  
+A Status Bar  
   
- ツール バーのように、ステータス バー オブジェクトが親フレーム ウィンドウにフレーム ウィンドウを作成するときに埋め込まれ、自動的に生成されます。  ステータス バーは、すべてのコントロール バーなど、親フレームが破棄されると同様に自動的に破棄されます。  
+ Like the toolbar, the status-bar object is embedded in its parent frame window and is constructed automatically when the frame window is constructed. The status bar, like all control bars, is destroyed automatically as well when the parent frame is destroyed.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ステータス バーのペインのテキストの更新](../mfc/updating-the-text-of-a-status-bar-pane.md)  
+-   [Updating the text of a status bar pane](../mfc/updating-the-text-of-a-status-bar-pane.md)  
   
--   MFC は [CStatusBar](../mfc/reference/cstatusbar-class.md) と [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)を設定します。  
+-   MFC classes [CStatusBar](../mfc/reference/cstatusbar-class.md) and [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)  
   
--   [コントロール バー](../Topic/Control%20Bars.md)  
+-   [Control bars](../mfc/control-bars.md)  
   
--   [ダイアログ バー](../mfc/dialog-bars.md)  
+-   [Dialog bars](../mfc/dialog-bars.md)  
   
--   [ツール バー \(MFC ツール バーの実装\)](../mfc/mfc-toolbar-implementation.md)  
+-   [Toolbars (MFC Toolbar Implementation)](../mfc/mfc-toolbar-implementation.md)  
   
-## 参照  
- [ステータス バー](../mfc/status-bars.md)
+## <a name="see-also"></a>See Also  
+ [Status Bars](../mfc/status-bars.md)
+
+

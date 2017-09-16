@@ -1,61 +1,80 @@
 ---
-title: "コンテナー : クライアント アイテムへの通知 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クライアント アイテムと OLE コンテナー"
-  - "通知, コンテナー クライアント アイテム"
-  - "OLE コンテナー, クライアント アイテム通知"
+title: 'Containers: Client-Item Notifications | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- notifications [MFC], container client item
+- OLE containers [MFC], client-item notifications
+- client items and OLE containers
 ms.assetid: e1f1c427-01f5-45f2-b496-c5bce3d76340
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンテナー : クライアント アイテムへの通知
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5023d697e6c87199d449687f21e35c3e31fea854
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、サーバー アプリケーションがクライアント アプリケーションのドキュメントの作業項目を変更するときに、フレームワークが呼び出しますオーバーライドできるな関数について説明します。  
+---
+# <a name="containers-client-item-notifications"></a>Containers: Client-Item Notifications
+This article discusses the overridable functions that the MFC framework calls when server applications modify items in your client application's document.  
   
- [COleClientItem](../mfc/reference/coleclientitem-class.md) は サーバー アプリケーションと呼ばれ、構成アプリケーションからの要求に対して、複数のオーバーライドできるな関数を定義します。  これらのオーバーライド可能な関数は、通常、通知として機能します。  これらは変更のスクロール、アクティブ化、または配置がなどのさまざまなイベントをコンテナー アプリケーションに、通知、そのユーザーにより、項目を編集すると、または別の方法で処理します。  
+ [COleClientItem](../mfc/reference/coleclientitem-class.md) defines several overridable functions that are called in response to requests from the component application, which is also called the server application. These overridables usually act as notifications. They inform the container application of various events, such as scrolling, activation, or a change of position, and of changes that the user makes when editing or otherwise manipulating the item.  
   
- フレームワークは、呼び出し、実装が必要なオーバーライドできるな関数によって `COleClientItem::OnChange`への変更のコンテナー アプリケーションに通知します。  この保護されたな関数は、2 個の引数を受け取ります。  1 番目のサーバーが項目を変更した理由を指定する:  
+ The framework notifies your container application of changes through a call to `COleClientItem::OnChange`, an overridable function whose implementation is required. This protected function receives two arguments. The first specifies the reason the server changed the item:  
   
-|通知|説明|  
-|--------|--------|  
-|`OLE_CHANGED`|OLE アイテムの外観が変更されました。|  
-|`OLE_SAVED`|OLE アイテムが格納されています。|  
-|`OLE_CLOSED`|OLE アイテムは閉じられました。|  
-|**OLE\_RENAMED**|OLE アイテムを含むサーバー ドキュメントの名前が変更されました。|  
-|`OLE_CHANGED_STATE`|OLE アイテムは 1 個の状態が変更されました。|  
-|**OLE\_CHANGED\_ASPECT**|OLE アイテムのレンダリング機能はフレームワークによって変更されました。|  
+|Notification|Meaning|  
+|------------------|-------------|  
+|`OLE_CHANGED`|The OLE item's appearance has changed.|  
+|`OLE_SAVED`|The OLE item has been saved.|  
+|`OLE_CLOSED`|The OLE item has been closed.|  
+|**OLE_RENAMED**|The server document containing the OLE item has been renamed.|  
+|`OLE_CHANGED_STATE`|The OLE item has changed from one state to another.|  
+|**OLE_CHANGED_ASPECT**|The OLE item's draw aspect has been changed by the framework.|  
   
- これらの値は AFXOLE.H.で定義されている **OLE\_NOTIFICATION** の列挙体からです。  
+ These values are from the **OLE_NOTIFICATION** enumeration, which is defined in AFXOLE.H.  
   
- この関数への 2 番目の引数は、項目がどのように変更されたか、どの状態を入力したかを指定する:  
+ The second argument to this function specifies how the item has changed or what state it has entered:  
   
-|最初の引数がある場合|2 番目の引数|  
-|----------------|-------------|  
-|`OLE_SAVED` または `OLE_CLOSED`|使用されません。|  
-|`OLE_CHANGED`|変更された OLE アイテムの要素を指定します。|  
-|`OLE_CHANGED_STATE`|入力状態を説明しています \(`emptyState`、**loadedState**、`openState`、`activeState`、または `activeUIState`\)。|  
+|When first argument is|Second argument|  
+|----------------------------|---------------------|  
+|`OLE_SAVED` or `OLE_CLOSED`|Is not used.|  
+|`OLE_CHANGED`|Specifies the aspect of the OLE item that has changed.|  
+|`OLE_CHANGED_STATE`|Describes the state being entered (`emptyState`, **loadedState**, `openState`, `activeState`, or `activeUIState`).|  
   
- クライアント項目を参照する [コンテナー: クライアント項目の状態](../mfc/containers-client-item-states.md)が使用できる状態に関する詳細について。  
+ For more information about the states a client item can assume, see [Containers: Client-Item States](../mfc/containers-client-item-states.md).  
   
- フレームワークは、項目が埋め込み先での編集に対してアクティブにする場合 `COleClientItem::OnGetItemPosition` を呼び出します。  実装は埋め込み先での編集をサポートするアプリケーションで必要です。  MFC アプリケーション ウィザードでは `OnGetItemPosition`に引数として渡す `CRect` オブジェクトに項目の座標を割り当てる基本実装を提供します。  
+ The framework calls `COleClientItem::OnGetItemPosition` when an item is being activated for in-place editing. Implementation is required for applications that support in-place editing. The MFC Application Wizard provides a basic implementation, which assigns the item's coordinates to the `CRect` object that is passed as an argument to `OnGetItemPosition`.  
   
- OLE アイテムの位置とサイズを埋め込み先での編集中に変更されると、項目の位置に関する情報とコンテナーのクリッピング四角形は更新されなければ、サーバーは変更に関する情報を受け取る必要があります。  フレームワークは `COleClientItem::OnChangeItemPosition` をモデル化します。  MFC アプリケーション ウィザードでは、基本クラスの関数を呼び出すオーバーライドを提供します。  アプリケーション ウィザードで `COleClientItem`\-関数がクライアント項目オブジェクトが保持している情報を更新すると、派生クラスに対して記述関数を編集する必要があります。  
+ If an OLE item's position or size changes during in-place editing, the container's information about the item's position and clipping rectangles must be updated and the server must receive information about the changes. The framework calls `COleClientItem::OnChangeItemPosition` for this purpose. The MFC Application Wizard provides an override that calls the base class's function. You should edit the function that the application wizard writes for your `COleClientItem`-derived class so that the function updates any information retained by your client-item object.  
   
-## 参照  
- [コンテナー](../mfc/containers.md)   
- [コンテナー : クライアント アイテムの状態](../mfc/containers-client-item-states.md)   
- [COleClientItem::OnChangeItemPosition](../Topic/COleClientItem::OnChangeItemPosition.md)
+## <a name="see-also"></a>See Also  
+ [Containers](../mfc/containers.md)   
+ [Containers: Client-Item States](../mfc/containers-client-item-states.md)   
+ [COleClientItem::OnChangeItemPosition](../mfc/reference/coleclientitem-class.md#onchangeitemposition)
+
+

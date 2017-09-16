@@ -1,5 +1,5 @@
 ---
-title: "拡張機能、MFC アプリケーション ウィザード |Microsoft ドキュメント"
+title: Advanced Features, MFC Application Wizard | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -33,62 +33,62 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: bb94e24657d16b2a3eda3a770c2b6ae734c6006f
-ms.openlocfilehash: 9a291af4641742cd9b771c80a7ea0770fab6de06
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0a476f56ef4119065884a152f475fa86bfb9a090
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="advanced-features-mfc-application-wizard"></a>[高度な機能] (MFC アプリケーション ウィザード)
-このトピックでは、ヘルプや印刷サポートなど、アプリケーションの追加機能のためのオプションを示します。 各セクションで、これらの高度な機能の追加サポートを指定します。  
+# <a name="advanced-features-mfc-application-wizard"></a>Advanced Features, MFC Application Wizard
+This topic lists options for additional features for your application, such as Help, printing support, and so on. In each section, specify additional support for these advanced features.  
   
- **状況依存のヘルプ (HTML)**  
- 状況依存のヘルプ、f1 キーと、ヘルプ メニューを使用して、またはをクリックして利用可能なヘルプ ファイルのセットを生成、**ヘルプ** ダイアログ ボックスにボタンをクリックします。 ヘルプ サポートにはヘルプ コンパイラが必要です。 ヘルプ コンパイラがない場合は、セットアップを再実行することによってインストールできます。  
+ **Context-sensitive help (HTML)**  
+ Generates a set of help files for context-sensitive help, available by using F1 and a Help menu, or by clicking a **Help** button on a dialog box. Help support requires the help compiler. If you do not have the help compiler, you can install it by rerunning Setup.  
   
- 参照してください[HTML ヘルプ: プログラムの状況依存のヘルプ](../../mfc/html-help-context-sensitive-help-for-your-programs.md)と[ヘルプ ファイル (HTML ヘルプ)](../../ide/help-files-html-help.md)詳細についてはします。  
+ See [HTML Help: Context-Sensitive Help for Your Programs](../../mfc/html-help-context-sensitive-help-for-your-programs.md) and [Help Files (HTML Help)](../../ide/help-files-html-help.md) for more information.  
   
- **印刷と印刷プレビュー**  
- 印刷と印刷プレビュー コマンド メンバー関数を呼び出すことによって、印刷を処理するコードを生成、 [CView クラス](../../mfc/reference/cview-class.md)MFC ライブラリからです。 これらの関数に対するコマンドも、ウィザードによってアプリケーションのメニューに追加されます。 印刷サポートは指定しているアプリケーションでのみ使用できます**ドキュメント/ビュー アーキテクチャ サポート**で、[アプリケーションの種類、MFC アプリケーション ウィザード](../../mfc/reference/application-type-mfc-application-wizard.md)ウィザードのページです。 既定では、ドキュメント/ビュー アプリケーションには印刷サポートが含まれます。  
+ **Printing and print preview**  
+ Generates the code to handle the print, print setup and print preview commands by calling member functions in the [CView Class](../../mfc/reference/cview-class.md) from the MFC library. The wizard also adds commands for these functions to the application's menu. Printing support is available only for applications that specify **Document/view architecture support** in the [Application Type, MFC Application Wizard](../../mfc/reference/application-type-mfc-application-wizard.md) page of the wizard. By default, document/view applications have printing support.  
   
- **オートメーション**  
- アプリケーションが別のアプリケーションに実装されているオブジェクトを操作したり、アプリケーションをオートメーション クライアントに公開したりできるように指定します。  
+ **Automation**  
+ Specifies that the application can handle objects that are implemented in another application, or exposes the application to Automation clients.  
   
- **ActiveX コントロール**  
- ActiveX コントロールをサポートします (既定値)。 このオプションを選択しないで後で、プロジェクトに ActiveX コントロールを挿入して場合、への呼び出しを追加する必要があります[AfxEnableControlContainer](ole-initialization.md#afxenablecontrolcontainer)アプリケーションの[場合は](../../mfc/reference/cwinapp-class.md#initinstance)メンバー関数。  
+ **ActiveX controls**  
+ Supports ActiveX controls (default). If you do not select this option and later want to insert ActiveX controls into your project, you must add a call to [AfxEnableControlContainer](ole-initialization.md#afxenablecontrolcontainer) in your application's [CWinApp::InitInstance](../../mfc/reference/cwinapp-class.md#initinstance) member function.  
   
- **MAPI (メッセージ API)**  
- アプリケーションでメール メッセージの作成、操作、転送、および格納ができるように指定します。  
+ **MAPI (Messaging API)**  
+ Specifies that the application can create, manipulate, transfer, and store mail messages.  
   
- **Windows ソケット**  
- TCP/IP ネットワークで通信するアプリケーションを作成するために使用できる Windows ソケットをサポートします。  
+ **Windows sockets**  
+ Supports Windows sockets, which you can use to write applications that communicate over TCP/IP networks.  
   
  **Active Accessibility**  
- サポートが追加[IAccessible](http://msdn.microsoft.com/library/windows/desktop/dd318466)に[CWnd](../../mfc/reference/cwnd-class.md)-派生クラスで、ユーザー補助クライアントと相互運用性ものユーザー インターフェイスのカスタマイズを行うこともできます。  
+ Adds support for [IAccessible](http://msdn.microsoft.com/library/windows/desktop/dd318466) to [CWnd](../../mfc/reference/cwnd-class.md)-derived classes, which you can use to customize the user interface for better interaction with accessibility clients.  
   
- **コモン コントロール マニフェスト**  
- 既定で有効になります。 Microsoft Windows XP 以降のオペレーティング システムに同梱されているコモン コントロール DLL を使用するためのアプリケーション マニフェストを生成します。  
+ **Common Control Manifest**  
+ Enabled by default. Generates an application manifest to enable the Common Control DLL that is included with Microsoft Windows XP and newer operating systems.  
   
- 既存のアプリケーションで使用されている以前のバージョンのコモン コントロールが、Version 6 のコモン コントロール DLL によって自動的に更新されることはありません。 Version 6 のコモン コントロール DLL を使用するには、アプリケーションが DLL を読み込むことができるようにするためのアプリケーション マニフェストを作成する必要があります。 Version 6 のコモン コントロール DLL は、Windows XP のテーマもサポートしています。  
+ Version 6 of the Common Control DLL does not automatically update the earlier version of the Common Controls that your existing applications use. To use version 6 of the Common Control DLL, you must create an application manifest that directs your application to load the DLL. This Common Control DLL also supports the Windows XP themes.  
   
- また、アプリケーション マニフェストによって、アプリケーションに必要なその他の DLL やその他のバージョンも指定できます。 アプリケーション マニフェストの詳細については、次を参照してください。[分離アプリケーションとサイド バイ サイド アセンブリ](http://msdn.microsoft.com/library/dd408052)で、[!INCLUDE[winsdkshort](../../atl-mfc-shared/reference/includes/winsdkshort_md.md)]です。  
+ An application manifest can also specify other DLLs and versions that your application needs. For more information about application manifests, see [Isolated Applications and Side-by-Side Assemblies](http://msdn.microsoft.com/library/dd408052) in the Windows SDK.  
   
- **再起動マネージャーのサポート**  
- サポートを追加、 [Windows 再起動マネージャー](http://msdn.microsoft.com/library/windows/desktop/aa373680\(v=vs.85\).aspx)です。 このビデオは、MFC から再起動マネージャーを使用する方法を示します:[方法: 新しい再起動マネージャーを使用](http://msdn.microsoft.com/vstudio/ee886407)です。  
+ **Support Restart Manager**  
+ Adds support for the [Windows Restart Manager](http://msdn.microsoft.com/library/windows/desktop/aa373680\(v=vs.85\).aspx). This video shows how to use the Restart Manager from MFC: [How Do I: Use the New Restart Manager](http://msdn.microsoft.com/vstudio/ee886407).  
   
- **高度なフレーム ペイン**  
- |オプション|説明|  
+ **Advanced frame panes**  
+ |Option|Description|  
 |------------|-----------------|  
-|**エクスプ ローラーのドッキング ウィンドウ**|Visual Studio のようなドッキング ペインを作成**ソリューション エクスプ ローラー**メイン フレーム ウィンドウの左側にします。|  
-|**出力のドッキング フレーム**|Visual Studio のようなドッキング ペインを作成**出力**メイン フレーム ウィンドウの下にあるウィンドウです。|  
-|**ウィンドウをドッキング可能なプロパティ**|Visual Studio のようなドッキング ペインを作成**プロパティ**メイン フレーム ウィンドウの右側のウィンドウ。|  
-|**ナビゲーション ウィンドウ**|メイン フレーム ウィンドウの左側に、Outlook のナビゲーション バーのようなドッキング ペインを作成します。|  
-|**キャプション バー**|メイン フレーム ウィンドウの上に、Office 形式のキャプション バーを作成します。|  
+|**Explorer docking pane**|Creates a docking pane that resembles the Visual Studio **Solution Explorer** to the left of the main frame window.|  
+|**Output docking frame**|Creates a docking pane that resembles the Visual Studio **Output** pane that is located under the main frame window.|  
+|**Properties docking pane**|Creates a docking pane that resembles the Visual Studio **Properties** pane to the right of the main frame window.|  
+|**Navigation pane**|Creates a docking pane that resembles the Outlook navigation bar and is located to the left of the main frame window.|  
+|**Caption bar**|Creates an Office-style caption bar above the main frame window.|  
   
- **最近使ったファイルのファイルの数**  
- 最近使ったファイルの一覧に表示するファイル数を指定します。 既定値は 4 です。  
+ **Number of files on recent file list**  
+ Specifies the number of files to be listed on the most recently used list. The default number is 4.  
   
-## <a name="see-also"></a>関連項目  
- [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)
 
 

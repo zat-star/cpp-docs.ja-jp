@@ -1,5 +1,5 @@
 ---
-title: "CInternetFile クラス |Microsoft ドキュメント"
+title: CInternetFile Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -27,9 +27,19 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CInternetFile class
-- Internet files
-- Internet files, CInternetFile class
+- CInternetFile [MFC], CInternetFile
+- CInternetFile [MFC], Abort
+- CInternetFile [MFC], Close
+- CInternetFile [MFC], Flush
+- CInternetFile [MFC], GetLength
+- CInternetFile [MFC], Read
+- CInternetFile [MFC], ReadString
+- CInternetFile [MFC], Seek
+- CInternetFile [MFC], SetReadBufferSize
+- CInternetFile [MFC], SetWriteBufferSize
+- CInternetFile [MFC], Write
+- CInternetFile [MFC], WriteString
+- CInternetFile [MFC], m_hFile
 ms.assetid: 96935681-ee71-4a8d-9783-5abc7b3e6f10
 caps.latest.revision: 23
 author: mikeblome
@@ -49,66 +59,66 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 6e1d6227ebd642025e6b00019518d29080cf0454
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 714aa0d61692c07068253ad0d942b9a52d4df83d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cinternetfile-class"></a>CInternetFile クラス
-インターネット プロトコルを使用するリモート システム上のファイルにアクセスをできます。  
+# <a name="cinternetfile-class"></a>CInternetFile Class
+Allows access to files on remote systems that use Internet protocols.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CInternetFile : public CStdioFile  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="protected-constructors"></a>プロテクト コンストラクター  
+### <a name="protected-constructors"></a>Protected Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CInternetFile::CInternetFile](#cinternetfile)|`CInternetFile` オブジェクトを構築します。|  
+|[CInternetFile::CInternetFile](#cinternetfile)|Constructs a `CInternetFile` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CInternetFile::Abort](#abort)|すべての警告およびエラーを無視して、ファイルを閉じます。|  
-|[CInternetFile::Close](#close)|閉じる、`CInternetFile`とそのリソースを解放します。|  
-|[CInternetFile::Flush](#flush)|書き込みバッファーの内容をフラッシュし、対象コンピューターにメモリ内のデータが書き込まれるようにします。|  
-|[CInternetFile::GetLength](#getlength)|ファイルのサイズを返します。|  
-|[細かい](#read)|指定したバイト数を読み取ります。|  
-|[CInternetFile::ReadString](#readstring)|文字のストリームを読み取ります。|  
-|[CInternetFile::Seek](#seek)|開いているファイルのポインターを移動します。|  
-|[CInternetFile::SetReadBufferSize](#setreadbuffersize)|データの読み取りがバッファーのサイズを設定します。|  
-|[CInternetFile::SetWriteBufferSize](#setwritebuffersize)|データの書き込み先のバッファーのサイズを設定します。|  
-|[CInternetFile::Write](#write)|指定されたバイト数を書き込みます。|  
-|[CInternetFile::WriteString](#writestring)|Null で終わる文字列をファイルに書き込みます。|  
+|[CInternetFile::Abort](#abort)|Closes the file, ignoring all warnings and errors.|  
+|[CInternetFile::Close](#close)|Closes a `CInternetFile` and frees its resources.|  
+|[CInternetFile::Flush](#flush)|Flushes the contents of the write buffer and makes sure the data in memory is written to the target machine.|  
+|[CInternetFile::GetLength](#getlength)|Returns the size of the file.|  
+|[CInternetFile::Read](#read)|Reads the number of specified bytes.|  
+|[CInternetFile::ReadString](#readstring)|Reads a stream of characters.|  
+|[CInternetFile::Seek](#seek)|Repositions the pointer in an open file.|  
+|[CInternetFile::SetReadBufferSize](#setreadbuffersize)|Sets the size of the buffer where data will be read.|  
+|[CInternetFile::SetWriteBufferSize](#setwritebuffersize)|Sets the size of the buffer where data will be written.|  
+|[CInternetFile::Write](#write)|Writes the number of specified bytes.|  
+|[CInternetFile::WriteString](#writestring)|Writes a null-terminated string to a file.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CInternetFile::operator HINTERNET](#operator_hinternet)|インターネット ハンドルのキャスト演算子です。|  
+|[CInternetFile::operator HINTERNET](#operator_hinternet)|A casting operator for an Internet handle.|  
   
-### <a name="protected-data-members"></a>プロテクト データ メンバー  
+### <a name="protected-data-members"></a>Protected Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CInternetFile::m_hFile](#m_hfile)|ファイルへのハンドル。|  
+|[CInternetFile::m_hFile](#m_hfile)|A handle to a file.|  
   
-## <a name="remarks"></a>コメント  
- 基本クラスを提供、 [CHttpFile](../../mfc/reference/chttpfile-class.md)と[CGopherFile](../../mfc/reference/cgopherfile-class.md)ファイル クラスです。 作成しないで、`CInternetFile`オブジェクトに直接します。 代わりを呼び出してその派生クラスのいずれかのオブジェクトを作成[CGopherConnection::OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile)または[しないで](../../mfc/reference/chttpconnection-class.md#openrequest)します。 作成することも、`CInternetFile`を呼び出してオブジェクト[CFtpConnection::OpenFile](../../mfc/reference/cftpconnection-class.md#openfile)します。  
+## <a name="remarks"></a>Remarks  
+ Provides a base class for the [CHttpFile](../../mfc/reference/chttpfile-class.md) and [CGopherFile](../../mfc/reference/cgopherfile-class.md) file classes. You never create a `CInternetFile` object directly. Instead, create an object of one of its derived classes by calling [CGopherConnection::OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile) or [CHttpConnection::OpenRequest](../../mfc/reference/chttpconnection-class.md#openrequest). You also can create a `CInternetFile` object by calling [CFtpConnection::OpenFile](../../mfc/reference/cftpconnection-class.md#openfile).  
   
- `CInternetFile`メンバー関数**開く**、 `LockRange`、 `UnlockRange`、および`Duplicate`は適用されていない`CInternetFile`します。 これらの関数を呼び出した場合、`CInternetFile`オブジェクトの取得は、[行わない](../../mfc/reference/cnotsupportedexception-class.md)します。  
+ The `CInternetFile` member functions **Open**, `LockRange`, `UnlockRange`, and `Duplicate` are not implemented for `CInternetFile`. If you call these functions on a `CInternetFile` object, you will get a [CNotSupportedException](../../mfc/reference/cnotsupportedexception-class.md).  
   
- 方法について説明する`CInternetFile`他のインターネットの MFC クラスと動作は、記事を参照して[WinInet を使用したプログラミング インターネット](../../mfc/win32-internet-extensions-wininet.md)します。  
+ To learn more about how `CInternetFile` works with the other MFC Internet classes, see the article [Internet Programming with WinInet](../../mfc/win32-internet-extensions-wininet.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CFile](../../mfc/reference/cfile-class.md)  
@@ -117,23 +127,23 @@ class CInternetFile : public CStdioFile
   
  `CInternetFile`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxinet.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxinet.h  
   
-##  <a name="abort"></a>CInternetFile::Abort  
- このオブジェクトに関連付けられているファイルを閉じ、ファイルを読み取りまたは書き込みが使用できなくなります。  
+##  <a name="abort"></a>  CInternetFile::Abort  
+ Closes the file associated with this object and makes the file unavailable for reading or writing.  
   
 ```  
 virtual void Abort();
 ```  
   
-### <a name="remarks"></a>コメント  
- オブジェクトを破棄する前に、ファイルを終了しなかった場合、デストラクターがファイルを閉じます。  
+### <a name="remarks"></a>Remarks  
+ If you have not closed the file before destroying the object, the destructor closes it for you.  
   
- 例外を処理するときに**中止**とは異なります[閉じる](#close)の&2; つの重要な点です。 1 つは、**中止**エラーを無視するため、関数がエラーに例外をスローしません。 2 番目、**中止**しない**ASSERT**ファイルが開かれていない、または以前に閉じられました。  
+ When handling exceptions, **Abort** differs from [Close](#close) in two important ways. First, the **Abort** function does not throw an exception on failures because it ignores failures. Second, **Abort** does not **ASSERT** if the file has not been opened or was closed previously.  
   
-##  <a name="cinternetfile"></a>CInternetFile::CInternetFile  
- このメンバー関数が呼び出されます、`CInternetFile`オブジェクトを作成します。  
+##  <a name="cinternetfile"></a>  CInternetFile::CInternetFile  
+ This member function is called when a `CInternetFile` object is created.  
   
 ```  
 CInternetFile(
@@ -152,74 +162,74 @@ CInternetFile(
     BOOL bReadMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hFile`  
- インターネット ファイルへのハンドル。  
+ A handle to an Internet file.  
   
  `pstrFileName`  
- ファイル名を含む文字列へのポインター。  
+ A pointer to a string containing the file name.  
   
  `pConnection`  
- ポインター、[関数](../../mfc/reference/cinternetconnection-class.md)オブジェクトです。  
+ A pointer to a [CInternetConnection](../../mfc/reference/cinternetconnection-class.md) object.  
   
  *bReadMode*  
- ファイルが読み取り専用であるかどうかを示します。  
+ Indicates whether the file is read-only.  
   
  `hSession`  
- インターネット セッションへのハンドル。  
+ A handle to an Internet session.  
   
  `pstrServer`  
- サーバーの名前を含む文字列へのポインター。  
+ A pointer to a string containing the name of the server.  
   
  `dwContext`  
- コンテキスト識別子、`CInternetFile`オブジェクトです。 参照してください[WinInet の基礎](../../mfc/wininet-basics.md)詳細については、コンテキスト識別子。  
+ The context identifier for the `CInternetFile` object. See [WinInet Basics](../../mfc/wininet-basics.md) for more information about the context identifier.  
   
-### <a name="remarks"></a>コメント  
- 作成しないで、`CInternetFile`オブジェクトに直接します。 代わりを呼び出してその派生クラスのいずれかのオブジェクトを作成[CGopherConnection::OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile)または[しないで](../../mfc/reference/chttpconnection-class.md#openrequest)します。 作成することも、`CInternetFile`を呼び出してオブジェクト[CFtpConnection::OpenFile](../../mfc/reference/cftpconnection-class.md#openfile)します。  
+### <a name="remarks"></a>Remarks  
+ You never create a `CInternetFile` object directly. Instead, create an object of one of its derived classes by calling [CGopherConnection::OpenFile](../../mfc/reference/cgopherconnection-class.md#openfile) or [CHttpConnection::OpenRequest](../../mfc/reference/chttpconnection-class.md#openrequest). You also can create a `CInternetFile` object by calling [CFtpConnection::OpenFile](../../mfc/reference/cftpconnection-class.md#openfile).  
   
-##  <a name="close"></a>CInternetFile::Close  
- 閉じる、`CInternetFile`のリソースを解放します。  
+##  <a name="close"></a>  CInternetFile::Close  
+ Closes a `CInternetFile` and frees any of its resources.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- 書き込みのため、ファイルが開かれた場合は、暗黙の呼び出しに[フラッシュ](#flush)バッファリングされたすべてのデータを確保するためには、ホストに書き込まれます。 呼び出す必要があります**閉じる**ファイルの使用が終了したとします。  
+### <a name="remarks"></a>Remarks  
+ If the file was opened for writing, there is an implicit call to [Flush](#flush) to assure that all buffered data is written to the host. You should call **Close** when you are finished using a file.  
   
-##  <a name="flush"></a>CInternetFile::Flush  
- 書き込みバッファーの内容をフラッシュするには、このメンバー関数を呼び出します。  
+##  <a name="flush"></a>  CInternetFile::Flush  
+ Call this member function to flush the contents of the write buffer.  
   
 ```  
 virtual void Flush();
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用`Flush`メモリ内のすべてのデータがターゲット コンピューターに実際に書き込まれたことを保証するために、ホスト コンピューターとのトランザクションの完了を保証するためにします。 `Flush`有効になるのみ`CInternetFile`オブジェクトを開いて書き込む。  
+### <a name="remarks"></a>Remarks  
+ Use `Flush` to assure that all data in memory has actually been written to the target machine and to assure your transaction with the host machine has been completed. `Flush` is only effective on `CInternetFile` objects opened for writing.  
   
-##  <a name="getlength"></a>CInternetFile::GetLength  
- ファイルのサイズを返します。  
+##  <a name="getlength"></a>  CInternetFile::GetLength  
+ Returns the size of the file.  
   
 ```  
 virtual ULONGLONG GetLength() const;  
 ```  
   
-##  <a name="m_hfile"></a>CInternetFile::m_hFile  
- このオブジェクトに関連付けられているファイルへのハンドル。  
+##  <a name="m_hfile"></a>  CInternetFile::m_hFile  
+ A handle to the file associated with this object.  
   
 ```  
 HINTERNET m_hFile;  
 ```  
   
-##  <a name="operator_hinternet"></a>CInternetFile::operator HINTERNET  
- この演算子を使用して、現在のインターネット セッションの Windows ハンドルを取得します。  
+##  <a name="operator_hinternet"></a>  CInternetFile::operator HINTERNET  
+ Use this operator to get the Windows handle for the current Internet session.  
   
 ```  
 operator HINTERNET() const;  
 ```  
   
-##  <a name="read"></a>細かい  
- このメンバー関数を呼び出して、指定されたメモリに読み込みます。`lpvBuf` を先頭として、`nCount` で指定されたバイト数を読み込みます。  
+##  <a name="read"></a>  CInternetFile::Read  
+ Call this member function to read into the given memory, starting at `lpvBuf`, the specified number of bytes, `nCount`.  
   
 ```  
 virtual UINT Read(
@@ -227,23 +237,23 @@ virtual UINT Read(
     UINT nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpBuf`  
- ファイル データを読み込むメモリ アドレスへのポインター。  
+ A pointer to a memory address to which file data is read.  
   
  `nCount`  
- 書き込むバイト数。  
+ The number of bytes to be written.  
   
-### <a name="return-value"></a>戻り値  
- バッファーに転送するバイト数。 ファイルの末尾に達した場合、戻り値は、`nCount` より小さくなることがあります。  
+### <a name="return-value"></a>Return Value  
+ The number of bytes transferred to the buffer. The return value may be less than `nCount` if the end of file was reached.  
   
-### <a name="remarks"></a>コメント  
- 関数は実際に読み取ったバイト数を返します。ファイルの末尾に達した場合、`nCount` より小さくなることがあります。 ファイルの読み取り中にエラーが発生した場合、関数、[表す](../../mfc/reference/cinternetexception-class.md)エラーを説明するオブジェクト。 ファイルの末尾を越える読み取りはエラーとは見なされず、例外がスローされないことに注意してください。  
+### <a name="remarks"></a>Remarks  
+ The function returns the number of bytes actually read — a number that may be less than `nCount` if the file ends. If an error occurs while reading the file, the function throws a [CInternetException](../../mfc/reference/cinternetexception-class.md) object that describes the error. Note that reading past the end of the file is not considered an error and no exception will be thrown.  
   
- 呼び出すすべてのデータが取得されるようにするには、アプリケーションを継続する必要があります、**細かい**メソッドまで、0 を返します。  
+ To ensure all data is retrieved, an application must continue to call the **CInternetFile::Read** method until the method returns zero.  
   
-##  <a name="readstring"></a>CInternetFile::ReadString  
- 改行文字が見つかるまでの文字のストリームを読み取るには、このメンバー関数を呼び出します。  
+##  <a name="readstring"></a>  CInternetFile::ReadString  
+ Call this member function to read a stream of characters until it finds a newline character.  
   
 ```  
 virtual BOOL ReadString(CString& rString);
@@ -254,28 +264,28 @@ virtual LPTSTR ReadString(
     UINT nMax);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstr`  
- 読み取られる行が格納される文字列へのポインター。  
+ A pointer to a string which will receive the line being read.  
   
  `nMax`  
- 読み取る文字の最大数。  
+ The maximum number of characters to be read.  
   
  `rString`  
- 参照、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)読み取りの行を受け取るオブジェクト。  
+ A reference to the [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that receives the read line.  
   
-### <a name="return-value"></a>戻り値  
- 取得されたプレーンなデータを格納しているバッファーへのポインター、 [CInternetFile](../../mfc/reference/cinternetfile-class.md)オブジェクトです。 このメソッドに渡されたバッファーのデータ型に関係なくデータ (たとえば、Unicode に変換) の任意の操作を行わず、期待の構造体に返されるデータをマップする必要がありますので、まるで、 **void\* **型が返されました。  
+### <a name="return-value"></a>Return Value  
+ A pointer to the buffer containing plain data retrieved from the [CInternetFile](../../mfc/reference/cinternetfile-class.md) object. Regardless of the data type of the buffer passed to this method, it does not perform any manipulations on the data (for example, conversion to Unicode), so you must map the returned data to the structure you expect, as if the **void\*** type were returned.  
   
- **NULL**場合はブール値、またはすべてのデータを読み取り中にファイルの終端に達した場合**FALSE**読み取らずに、データ ファイルの終端に達した場合。  
+ **NULL** if end-of-file was reached without reading any data; or, if boolean, **FALSE** if end-of-file was reached without reading any data.  
   
-### <a name="remarks"></a>コメント  
- この関数で参照されるメモリに、その結果、行を配置する、`pstr`パラメーター。 文字の読み取りを停止することで指定された文字の最大数に達したとき`nMax`します。 バッファーは、常に終端の null 文字を受け取ります。  
+### <a name="remarks"></a>Remarks  
+ The function places the resulting line into the memory referenced by the `pstr` parameter. It stops reading characters when it reaches the maximum number of characters, specified by `nMax`. The buffer always receives a terminating null character.  
   
- 呼び出した場合`ReadString`最初に呼び出さず[SetReadBufferSize](#setreadbuffersize)、4096 バイトのバッファーが表示されます。  
+ If you call `ReadString` without first calling [SetReadBufferSize](#setreadbuffersize), you will get a buffer of 4096 bytes.  
   
-##  <a name="seek"></a>CInternetFile::Seek  
- このメンバー関数を呼び出して以前に開いたファイルのポインターを移動します。  
+##  <a name="seek"></a>  CInternetFile::Seek  
+ Call this member function to reposition the pointer in a previously opened file.  
   
 ```  
 virtual ULONGLONG Seek(
@@ -283,77 +293,77 @@ virtual ULONGLONG Seek(
     UINT nFrom);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lOffset`  
- ファイルの読み取り/書き込みのポインターを移動するバイト オフセットします。  
+ Offset in bytes to move the read/write pointer in the file.  
   
  `nFrom`  
- オフセットの相対参照します。 次の値のいずれかを指定する必要があります。  
+ Relative reference for the offset. Must be one of the following values:  
   
-- **CFile::begin**ファイル ポインターを移動`lOff`ファイルの先頭からのバイト数を転送します。  
+- **CFile::begin** Move the file pointer `lOff` bytes forward from the beginning of the file.  
   
-- **CFile::current**ファイル ポインターを移動`lOff`ファイル内の現在位置からのバイト。  
+- **CFile::current** Move the file pointer `lOff` bytes from the current position in the file.  
   
-- **CFile::end**ファイル ポインターを移動`lOff`ファイルの末尾からのバイト。 `lOff`負の値を既存のファイルにする必要があります。ファイルの末尾を超える正の値を求めます。  
+- **CFile::end** Move the file pointer `lOff` bytes from the end of the file. `lOff` must be negative to seek into the existing file; positive values will seek past the end of the file.  
   
-### <a name="return-value"></a>戻り値  
- 新しいバイトを要求した位置が; 有効な場合、ファイルの先頭からのオフセットそれ以外の場合、値は未定義と[表す](../../mfc/reference/cinternetexception-class.md)オブジェクトがスローされます。  
+### <a name="return-value"></a>Return Value  
+ The new byte offset from the beginning of the file if the requested position is legal; otherwise, the value is undefined and a [CInternetException](../../mfc/reference/cinternetexception-class.md) object is thrown.  
   
-### <a name="remarks"></a>コメント  
- `Seek`関数を使用するファイルの内容へのランダム アクセス、ポインターを移動して、指定した時間絶対的または相対的です。 データは、検索中に実際には読み込まれません。  
+### <a name="remarks"></a>Remarks  
+ The `Seek` function permits random access to a file's contents by moving the pointer a specified amount, absolutely or relatively. No data is actually read during the seek.  
   
- この時点でこのメンバー関数への呼び出しはのみと関連付けられたデータ サポート`CHttpFile`オブジェクトです。 FTP または gopher 要求に対してはサポートされません。 呼び出した場合`Seek`これらのサポートされていないサービスの&1; つは、処理、バックアップするを Win32 エラー コード**ERROR_INTERNET_INVALID_OPERATION**します。  
+ At this time, a call to this member function is only supported for data associated with `CHttpFile` objects. It is not supported for FTP or gopher requests. If you call `Seek` for one of these unsupported services, it will pass back you to the Win32 error code **ERROR_INTERNET_INVALID_OPERATION**.  
   
- ファイルを開いたときに、ファイル ポインターがオフセット 0 で、ファイルの先頭には。  
+ When a file is opened, the file pointer is at offset 0, the beginning of the file.  
   
 > [!NOTE]
->  使用して`Seek`への暗黙の呼び出しが発生する可能性があります[フラッシュ](#flush)します。  
+>  Using `Seek` may cause an implicit call to [Flush](#flush).  
   
-### <a name="example"></a>例  
-  基本クラスの実装の例を参照してください ( [CFile::Seek](../../mfc/reference/cfile-class.md#seek))。  
+### <a name="example"></a>Example  
+  See the example for the base class implementation ( [CFile::Seek](../../mfc/reference/cfile-class.md#seek)).  
   
-##  <a name="setreadbuffersize"></a>CInternetFile::SetReadBufferSize  
- 使用される一時的な読み取りバッファーのサイズを設定するには、このメンバー関数を呼び出す、 `CInternetFile`-派生オブジェクト。  
+##  <a name="setreadbuffersize"></a>  CInternetFile::SetReadBufferSize  
+ Call this member function to set the size of the temporary read buffer used by a `CInternetFile`-derived object.  
   
 ```  
 BOOL SetReadBufferSize(UINT nReadSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nReadSize*  
- バイト単位のバッファー サイズ。  
+ The desired buffer size in bytes.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- 基になる WinInet Api はバッファー処理を実行ではなくバッファー サイズ、アプリケーションを読み取るデータの量に関係なく、効率的にデータを読み取ることができるように選択します。 各呼び出し場合[読み取り](#read)通常で大量 (たとえば、4 つまたは複数のキロバイト)、データの必要はありませんバッファー。 ただしを呼び出す場合**読み取り**少量のデータを取得または使用する場合[ReadString](#readstring)読み取りバッファーは、アプリケーションのパフォーマンスを向上し、一度に&1; 行ずつを読み取る。  
+### <a name="remarks"></a>Remarks  
+ The underlying WinInet APIs do not perform buffering, so choose a buffer size that allows your application to read data efficiently, regardless of the amount of data to be read. If each call to [Read](#read) normally involves a large aount of data (for example, four or more kilobytes), you should not need a buffer. However, if you call **Read** to get small chunks of data, or if you use [ReadString](#readstring) to read individual lines at a time, then a read buffer improves application performance.  
   
- 既定では、`CInternetFile`オブジェクトでは提供されません。 このメンバー関数を呼び出した場合は、読み取りアクセスのため、ファイルが開かれたことを確認する必要があります。  
+ By default, a `CInternetFile` object does not provide any buffering for reading. If you call this member function, you must be sure that the file has been opened for read access.  
   
- いつでも、バッファー サイズを増やすことができますが、バッファーを縮小効果はありません。 呼び出した場合[ReadString](#readstring)最初に呼び出さず`SetReadBufferSize`、4096 バイトのバッファーが表示されます。  
+ You can increase the buffer size at any time, but shrinking the buffer will have no effect. If you call [ReadString](#readstring) without first calling `SetReadBufferSize`, you will get a buffer of 4096 bytes.  
   
-##  <a name="setwritebuffersize"></a>CInternetFile::SetWriteBufferSize  
- 使用される一時的な書き込みバッファーのサイズを設定するには、このメンバー関数を呼び出す、 `CInternetFile`-派生オブジェクト。  
+##  <a name="setwritebuffersize"></a>  CInternetFile::SetWriteBufferSize  
+ Call this member function to set the size of the temporary write buffer used by a `CInternetFile`-derived object.  
   
 ```  
 BOOL SetWriteBufferSize(UINT nWriteSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nWriteSize*  
- バッファーのサイズ (バイト単位)。  
+ The size of the buffer in bytes.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。 呼び出しが失敗した場合は、Win32 関数[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)エラーの原因を特定するのには呼び出すことができます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0. If the call fails, the Win32 function [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) may be called to determine the cause of the error.  
   
-### <a name="remarks"></a>コメント  
- デバッグ情報を基になる、WinInet Api は、バッファリングを実行しないようを使うと、アプリケーションを記述するデータの量に関係なく効率的にデータを書き込むバッファー サイズに選択します。 各呼び出し場合[書き込み](#write)消費量は通常、(たとえば、次の&4; つまたは複数キロバイト一度に)、データの必要はありませんバッファー。 ただしを呼び出す場合[書き込み](#write)書き込みバッファー小さいデータ チャンクの書き込みは、アプリケーションのパフォーマンスが向上します。  
+### <a name="remarks"></a>Remarks  
+ The underlying WinInet APIs don't perform buffering, so choose a buffer size that allows your application to write data efficiently regardless of the amount of data to be written. If each call to [Write](#write) normally involves a large amount of data (for example, four or more kilobytes at a time), you should not need a buffer. However, if you call [Write](#write) to write small chunks of data, a write buffer improves your application's performance.  
   
- 既定では、`CInternetFile`オブジェクトでは提供されません。 このメンバー関数を呼び出した場合は、書き込みアクセスのため、ファイルが開かれたことを確認する必要があります。 いつでも書き込みバッファーのサイズを変更できますが、そのようにすると、暗黙的に呼び出す[フラッシュ](#flush)します。  
+ By default, a `CInternetFile` object does not provide any buffering for writing. If you call this member function, you must be sure that the file has been opened for write access. You can change the size of the write buffer at any time, but doing so causes an implicit call to [Flush](#flush).  
   
-##  <a name="write"></a>CInternetFile::Write  
- このメンバー関数を呼び出して指定されたメモリへの書き込み`lpvBuf`、指定された数 (バイト単位) の`nCount`です。  
+##  <a name="write"></a>  CInternetFile::Write  
+ Call this member function to write into the given memory, `lpvBuf`, the specified number of bytes, `nCount`.  
   
 ```  
 virtual void Write(
@@ -361,32 +371,32 @@ virtual void Write(
     UINT nCount);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpBuf`  
- 書き込まれる最初のバイトへのポインター。  
+ A pointer to the first byte to be written.  
   
  `nCount`  
- 書き込むバイト数を指定します。  
+ Specifies the number of bytes to be written.  
   
-### <a name="remarks"></a>コメント  
- データの書き込み中にエラーが発生した場合、関数、[表す](../../mfc/reference/cinternetexception-class.md)エラーを説明するオブジェクト。  
+### <a name="remarks"></a>Remarks  
+ If any error occurs while writing the data, the function throws a [CInternetException](../../mfc/reference/cinternetexception-class.md) object describing the error.  
   
-##  <a name="writestring"></a>CInternetFile::WriteString  
- この関数は、null で終わる文字列を関連付けられたファイルに書き込みます。  
+##  <a name="writestring"></a>  CInternetFile::WriteString  
+ This function writes a null-terminated string to the associated file.  
   
 ```  
 virtual void WriteString(LPCTSTR pstr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pstr`  
- 書き込むコンテンツを含む文字列へのポインター。  
+ A pointer to a string containing the contents to be written.  
   
-### <a name="remarks"></a>コメント  
- データの書き込み中にエラーが発生した場合、関数、[表す](../../mfc/reference/cinternetexception-class.md)エラーを説明するオブジェクト。  
+### <a name="remarks"></a>Remarks  
+ If any error occurs while writing the data, the function throws a [CInternetException](../../mfc/reference/cinternetexception-class.md) object describing the error.  
   
-## <a name="see-also"></a>関連項目  
- [CStdioFile クラス](../../mfc/reference/cstdiofile-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [関数のクラス](../../mfc/reference/cinternetconnection-class.md)
+## <a name="see-also"></a>See Also  
+ [CStdioFile Class](../../mfc/reference/cstdiofile-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CInternetConnection Class](../../mfc/reference/cinternetconnection-class.md)
 

@@ -1,73 +1,92 @@
 ---
-title: "DAO クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.data"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DAO [C++], クラス"
-  - "データベース クラス [C++], DAO"
+title: DAO Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.data
+dev_langs:
+- C++
+helpviewer_keywords:
+- database classes [MFC], DAO
+- DAO [MFC], classes
 ms.assetid: b15d0cd6-328b-4288-9c19-d037a795db57
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# DAO クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dbc2c515978597e4d7a386ec05afe1e5caae6563
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのクラスは、他のアプリケーション フレームワーク クラスを Microsoft Visual Basic や Microsoft Access と同じデータベース エンジンを使用する Data Access Object \(DAO\) のデータベースへの簡単なアクセスを提供するために使用します。  DAO クラスは、ODBC \(Open Database Connectivity\) ドライバーが使用できるさまざまなデータベースにアクセスできます。  
+---
+# <a name="dao-classes"></a>DAO Classes
+These classes work with the other application framework classes to give easy access to Data Access Object (DAO) databases, which use the same database engine as Microsoft Visual Basic and Microsoft Access. The DAO classes can also access a wide variety of databases for which Open Database Connectivity (ODBC) drivers are available.  
   
- DAO データベースを使用するプログラムに少なくとも `CDaoDatabase` オブジェクトと `CDaoRecordset` オブジェクトがあります。  
+ Programs that use DAO databases will have at least a `CDaoDatabase` object and a `CDaoRecordset` object.  
   
 > [!NOTE]
->  Visual C\+\+ .NET では、Visual C\+\+ 開発環境およびウィザードでは DAO はサポートされなくなりました \(DAO クラスは含まれているので、このクラスを使うことはできます\)。  Microsoft では、新しい MFC プロジェクトに ODBC を使用することをお勧めします。  DAO は、既存のアプリケーションを保守するためだけに使用してください。  
+>  As of Visual C++ .NET, the Visual C++ environment and wizards no longer support DAO (although the DAO classes are included and you can still use them). Microsoft recommends that you use ODBC for new MFC projects. You should only use DAO in maintaining existing applications.  
   
  [CDaoWorkspace](../mfc/reference/cdaoworkspace-class.md)  
- ログオンの名前付きで、パスワード保護されたなデータベース セッションからログオフするようにします。  大半のプログラムでは、既定のワークスペースを使用します。  
+ Manages a named, password-protected database session from login to logoff. Most programs use the default workspace.  
   
  [CDaoDatabase](../mfc/reference/cdaodatabase-class.md)  
- データを操作するデータベースへの接続。  
+ A connection to a database through which you can operate on the data.  
   
  [CDaoRecordset](../mfc/reference/cdaorecordset-class.md)  
- データ ソースから選択された 1 組のレコードセットを表現します。  
+ Represents a set of records selected from a data source.  
   
- [CDaoRecordView クラス](../mfc/reference/cdaorecordview-class.md)  
- コントロール内にデータベース レコードを表示するビューです。  
+ [CDaoRecordView](../mfc/reference/cdaorecordview-class.md)  
+ A view that displays database records in controls.  
   
  [CDaoQueryDef](../mfc/reference/cdaoquerydef-class.md)  
- クエリ定義は、データベースに格納されている通常 1 を表します。  
+ Represents a query definition, usually one saved in a database.  
   
  [CDaoTableDef](../mfc/reference/cdaotabledef-class.md)  
- ベース テーブル、またはアタッチ テーブルの格納された定義を表現します。  
+ Represents the stored definition of a base table or an attached table.  
   
  [CDaoException](../mfc/reference/cdaoexception-class.md)  
- DAO クラスから発生する例外状態を表します。  
+ Represents an exception condition arising from the DAO classes.  
   
  [CDaoFieldExchange](../mfc/reference/cdaofieldexchange-class.md)  
- DAO データベース クラスで使われる DAO レコード フィールド エクスチェンジ \(DFX: DAO Record Field eXchange\) ルーチンをサポートします。  通常、このクラスを直接使用しません。  
+ Supports the DAO record field exchange (DFX) routines used by the DAO database classes. You will normally not directly use this class.  
   
-## 関連クラス  
+## <a name="related-classes"></a>Related Classes  
  [CLongBinary](../mfc/reference/clongbinary-class.md)  
- ビットマップなどのバイナリ ラージ オブジェクト \(BLOB \(BLOB\) のストレージにハンドルをカプセル化します。  `CLongBinary` オブジェクトがデータベースのテーブルに格納されている大きいデータ オブジェクトを操作するために使用されます。  
+ Encapsulates a handle to storage for a binary large object (BLOB), such as a bitmap. `CLongBinary` objects are used to manage large data objects stored in database tables.  
   
- [COleCurrency](../Topic/COleCurrency%20Class.md)  
- 整数部 15 桁、小数部 4 桁の固定小数点の数値型である OLE オートメーション型 **CURRENCY** のラッパー。  
+ [COleCurrency](../mfc/reference/colecurrency-class.md)  
+ Wrapper for the OLE automation type **CURRENCY**, a fixed-point arithmetic type, with 15 digits before the decimal point and 4 digits after.  
   
  [COleDateTime](../atl-mfc-shared/reference/coledatetime-class.md)  
- OLE オートメーション型 **DATE** のラッパー。  日付と時間の値を表現します。  
+ Wrapper for the OLE automation type **DATE**. Represents date and time values.  
   
  [COleVariant](../mfc/reference/colevariant-class.md)  
- OLE オートメーション型 **VARIANT** のラッパー。  **VARIANT** のデータは、いろいろな形式で格納されます。  
+ Wrapper for the OLE automation type **VARIANT**. Data in **VARIANT**s can be stored in many formats.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

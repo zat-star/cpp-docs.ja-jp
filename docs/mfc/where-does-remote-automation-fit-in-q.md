@@ -1,40 +1,57 @@
 ---
-title: "リモート オートメーションを使用する場合 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "リモート オートメーション, DCOM"
+title: Where Does Remote Automation Fit In? | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remote Automation, DCOM
 ms.assetid: 4c4c8176-cfc0-44f7-bc87-b690f069ad2f
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# リモート オートメーションを使用する場合
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 005dc04f96136ac53dd0b06605d348d8c3414c0b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-DCOM が 1996 年に解放され、32 ビットおよび 64 ビットのプラットフォームでのみ使用できます。  Microsoft の Visual Basic チームが通信できるように、コンポーネントがするオートメーションを使用するように Visual Basic に常に参照しています。  分散バージョンでも、エンタープライズ環境の機能の使用が制限されるため、Visual Basic 4.0 Enterprise Edition を開発しているチームは、OLE オートメーションのパーツと COM のリモート処理コンポーネントの独自のセットの作成を調査することにしました。  当然ながら、主要目的が使用可能になったときに結果が互換性があり、DCOM に置き換えることができるようにすることです。  チームは、16 ビットと 32 ビット プラットフォームのリモート オートメーション \(RA\) を実装するようにします。  
+---
+# <a name="where-does-remote-automation-fit-in"></a>Where Does Remote Automation Fit In?
+DCOM was released in 1996 and is available with 32-bit and 64-bit platforms only. The Visual Basic team at Microsoft has always seen Visual Basic as using Automation to allow its components to communicate. The lack of a distributed version severely limited the use of these capabilities in enterprise environments, so the team developing Visual Basic 4.0 Enterprise Edition decided to investigate the creation of its own set of remoting components for the Automation parts of OLE and COM. Clearly, a major goal was to ensure that the result would be compatible with and could be replaced by DCOM when it became available. They then proceeded to implement Remote Automation (RA) for both 16-bit and 32-bit Windows platforms.  
   
- リモート オートメーションは、特定の言語に限定されませんが、Visual C\+\+ 4.2 Enterprise Edition のリリースまで、Visual Basic 4.0 でのみ提供されています。  リモート オートメーションが DCOM で完全に包含されることに注意してください。  アプリケーションでリモート オートメーションの代わりに DCOM を使用できる場合は、行ってください。  いずれにしても、リモート オートメーションが適切なシナリオがあります:  
+ Remote Automation is not tied to any specific language, but until the release of Visual C++ 4.2 Enterprise Edition, it was shipped only with Visual Basic 4.0. Be aware that Remote Automation is wholly subsumed by DCOM. If you have the opportunity to use DCOM instead of Remote Automation in your applications, you should do so. Nevertheless, there are scenarios where Remote Automation is more appropriate:  
   
--   16 ビットのクライアントがある場所で。  
+-   Wherever you have 16-bit clients.  
   
--   社内で Windows NT または Windows 95 の DCOM 対応のバージョンを、出さなかったら。  
+-   If your organization has not rolled out a DCOM-enabled version of Windows NT or Windows 95 yet.  
   
--   Visual Basic の一つ以上のコンポーネントの代わりに C\+\+ コンポーネントを使用するためにリモート オートメーションを使用する既存のアプリケーション スイートをアップグレードします。  
+-   If you are upgrading an existing application suite that uses Remote Automation to use C++ components in place of one or more Visual Basic components.  
   
- DCOM 上でオートメーションを使用するためにリモート オートメーションを使用するために作成されるプログラムで作成されたプログラムの違いがある必要がなく、構成ユーティリティはリモート オートメーションと DCOM の間で切り替え操作を非常に簡単にします。  その結果インフラストラクチャが整っている場合、リモート オートメーションから DCOM にアプリケーションをアップグレードすることは困難です。  
+ There need be no difference between programs created to use Remote Automation and those created to use Automation over DCOM, and the configuration utilities make it very simple to switch operation between Remote Automation and DCOM. Consequently, it is not difficult to upgrade an application from Remote Automation to DCOM once the infrastructure is in place.  
   
-## 参照  
- [リモート オートメーションの機能](../mfc/what-does-remote-automation-provide-q.md)   
- [DCOM の歴史](../mfc/history-of-dcom.md)
+## <a name="see-also"></a>See Also  
+ [What Does Remote Automation Provide](what-does-remote-automation-provide-q.md)   
+ [History of DCOM](../mfc/history-of-dcom.md)
+

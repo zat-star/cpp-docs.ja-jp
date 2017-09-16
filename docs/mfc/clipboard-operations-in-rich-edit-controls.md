@@ -1,43 +1,62 @@
 ---
-title: "リッチ エディット コントロールでのクリップボード操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クリップボードのトピック, 操作 (CRichEditCtrl での)"
-  - "コピー操作 (リッチ エディット コントロールの)"
-  - "CRichEditCtrl クラス, クリップボードの操作"
-  - "CRichEditCtrl クラス, 貼り付け操作"
-  - "切り取り操作 (CRichEditCtrl クラスの)"
-  - "貼り付け (クリップボード データを)"
-  - "リッチ エディット コントロール, クリップボードの操作"
+title: Clipboard Operations in Rich Edit Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- pasting Clipboard data
+- CRichEditCtrl class [MFC], paste operation
+- cut operation in CRichEditCtrl class [MFC]
+- CRichEditCtrl class [MFC], Clipboard operations
+- copy operations in rich edit controls
+- Clipboard, operations in CRichEditCtrl
+- rich edit controls [MFC], Clipboard operations
 ms.assetid: 15ce66bc-2636-4a35-a2ae-d52285dc1af6
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# リッチ エディット コントロールでのクリップボード操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 33364225e996cb8f36e9fa37567f6cb6c1b58444
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-アプリケーションはリッチ エディット コントロール \([CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)\) に最適な使用できるクリップボード形式または特定のクリップボード形式を使用してクリップボードの内容を貼り付けることができます。  、リッチ エディット コントロールがクリップボード形式を貼り付けることができるかどうかを確認できます。  
+---
+# <a name="clipboard-operations-in-rich-edit-controls"></a>Clipboard Operations in Rich Edit Controls
+Your application can paste the contents of the Clipboard into a rich edit control ([CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)) using either the best available Clipboard format or a specific Clipboard format. You can also determine whether a rich edit control is capable of pasting a Clipboard format.  
   
- [コピー](../Topic/CRichEditCtrl::Copy.md) または [切り取り](../Topic/CRichEditCtrl::Cut.md) メンバー関数を使用して、現在の選択内容をコピーまたは切断できます。  同様に、リッチ エディット コントロールに [貼り付け](../Topic/CRichEditCtrl::Paste.md) メンバー関数を使用して、クリップボードの内容を貼り付けることができます。  コントロールが見積もり上最もわかりやすい形式である、認識される最初の使用できる形式を貼り付けます。  
+ You can copy or cut the contents of the current selection by using the [Copy](../mfc/reference/cricheditctrl-class.md#copy) or [Cut](../mfc/reference/cricheditctrl-class.md#cut) member function. Similarly, you can paste the contents of the Clipboard into a rich edit control by using the [Paste](../mfc/reference/cricheditctrl-class.md#paste) member function. The control pastes the first available format that it recognizes, which presumably is the most descriptive format.  
   
- 特定のクリップボード形式を貼り付けるには、[PasteSpecial](../Topic/CRichEditCtrl::PasteSpecial.md) メンバー関数を使用できます。  この関数は、ユーザーがクリップボード形式を選択して貼り付け特殊なコマンドを使用してアプリケーションに役立ちます。  特定の形式がコントロールで認識されるかどうかを確認するに [CanPaste](../Topic/CRichEditCtrl::CanPaste.md) メンバー関数を使用できます。  
+ To paste a specific Clipboard format, you can use the [PasteSpecial](../mfc/reference/cricheditctrl-class.md#pastespecial) member function. This function is useful for applications with a Paste Special command that enables the user to select the Clipboard format. You can use the [CanPaste](../mfc/reference/cricheditctrl-class.md#canpaste) member function to determine whether a given format is recognized by the control.  
   
- また、使用できるクリップボード形式がリッチ エディット コントロールで認識されるかどうかを確認するに `CanPaste` を使用できます。  この関数は `OnInitMenuPopup` ハンドラーに役立ちます。  アプリケーションは、コントロールが使用する形式を貼り付けることができるかどうか、灰色貼り付けコマンドで有効になる可能性があります。  
+ You can also use `CanPaste` to determine whether any available Clipboard format is recognized by a rich edit control. This function is useful in the `OnInitMenuPopup` handler. An application might enable or gray its Paste command depending on whether the control can paste any available format.  
   
- リッチ エディット コントロールは 2 個のクリップボード形式を登録する: リッチ テキスト形式および形式は RichEdit Text and Objects と呼ばれます。  アプリケーションは [RegisterClipboardFormat](http://msdn.microsoft.com/library/windows/desktop/ms649049) 関数を使用してこれらの形式を登録できます。**CF\_RTF** と **CF\_RETEXTOBJ** 値を指定します。  
+ Rich edit controls register two Clipboard formats: rich-text format and a format called RichEdit Text and Objects. An application can register these formats by using the [RegisterClipboardFormat](http://msdn.microsoft.com/library/windows/desktop/ms649049) function, specifying the **CF_RTF** and **CF_RETEXTOBJ** values.  
   
-## 参照  
- [CRichEditCtrl の使い方](../mfc/using-cricheditctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CRichEditCtrl](../mfc/using-cricheditctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "ディスパッチ マップ |Microsoft ドキュメント"
+title: Dispatch Maps | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,9 +13,9 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- dispatch maps. macros
-- dispatch maps
-- dispatch map macros
+- dispatch maps [MFC], macros
+- dispatch maps [MFC]
+- dispatch map macros [MFC]
 ms.assetid: bef9d08b-ad35-4c3a-99d8-04150c7c04e2
 caps.latest.revision: 14
 author: mikeblome
@@ -35,86 +35,86 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
-ms.openlocfilehash: 48e5d1fe207089733caa5ed9e8ca30c2de21f95f
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1d3c8ce6d9099df6f5c19ce8e699c13f8739b878
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="dispatch-maps"></a>ディスパッチ マップ
-OLE オートメーションでは、メソッドを呼び出すと、アプリケーション間でプロパティにアクセスする方法を提供します。 これらの要求をディスパッチするためには、Microsoft Foundation Class ライブラリによって提供されるメカニズムは、「ディスパッチ マップ」のオブジェクトの関数とプロパティだけでなく、データ型および関数の引数のプロパティ自体の内部および外部の名前を指定します。  
+# <a name="dispatch-maps"></a>Dispatch Maps
+OLE Automation provides ways to call methods and to access properties across applications. The mechanism supplied by the Microsoft Foundation Class Library for dispatching these requests is the "dispatch map," which designates the internal and external names of object functions and properties, as well as the data types of the properties themselves and of function arguments.  
   
-### <a name="dispatch-maps"></a>ディスパッチ マップ  
+### <a name="dispatch-maps"></a>Dispatch Maps  
   
 |||  
 |-|-|  
-|[DECLARE_DISPATCH_MAP](#declare_dispatch_map)|クラスのメソッドとプロパティ (クラス宣言で使用する必要があります) を公開するディスパッチ マップを使用することを宣言します。|  
-|[BEGIN_DISPATCH_MAP](#begin_dispatch_map)|ディスパッチ マップの定義を開始します。|  
-|[END_DISPATCH_MAP](#end_dispatch_map)|ディスパッチ マップの定義を終了します。|  
-|[DISP_FUNCTION](#disp_function)|ディスパッチ マップで使用すると、OLE オートメーション関数を定義します。|  
-|[DISP_PROPERTY](#disp_property)|OLE オートメーションのプロパティを定義します。|  
-|[DISP_PROPERTY_EX](#disp_property_ex)|OLE オートメーションのプロパティを定義し、Get と Set 関数の名前します。|  
-|[DISP_PROPERTY_NOTIFY](#disp_property_notify)|通知の使用の OLE オートメーション プロパティを定義します。|  
-|[DISP_PROPERTY_PARAM](#disp_property_param)|Get と Set 関数のパラメーターと名前を受け取るための OLE オートメーション プロパティを定義します。|  
-|[DISP_DEFVALUE](#disp_defvalue)|既存のプロパティ オブジェクトの既定値を使用できます。|  
+|[DECLARE_DISPATCH_MAP](#declare_dispatch_map)|Declares that a dispatch map will be used to expose a class's methods and properties (must be used in the class declaration).|  
+|[BEGIN_DISPATCH_MAP](#begin_dispatch_map)|Starts the definition of a dispatch map.|  
+|[END_DISPATCH_MAP](#end_dispatch_map)|Ends the definition of a dispatch map.|  
+|[DISP_FUNCTION](#disp_function)|Used in a dispatch map to define an OLE automation function.|  
+|[DISP_PROPERTY](#disp_property)|Defines an OLE automation property.|  
+|[DISP_PROPERTY_EX](#disp_property_ex)|Defines an OLE automation property and names the Get and Set functions.|  
+|[DISP_PROPERTY_NOTIFY](#disp_property_notify)|Defines an OLE automation property with notification.|  
+|[DISP_PROPERTY_PARAM](#disp_property_param)|Defines an OLE automation property that takes parameters and names the Get and Set functions.|  
+|[DISP_DEFVALUE](#disp_defvalue)|Makes an existing property the default value of an object.|  
   
-##  <a name="declare_dispatch_map"></a>DECLARE_DISPATCH_MAP  
- 場合、 `CCmdTarget`-プログラム内の派生クラスは、クラスがそのメソッドとプロパティを公開するディスパッチ マップを提供する必要がありますの OLE オートメーションをサポートしています。  
+##  <a name="declare_dispatch_map"></a>  DECLARE_DISPATCH_MAP  
+ If a `CCmdTarget`-derived class in your program supports OLE Automation, that class must provide a dispatch map to expose its methods and properties.  
   
 ```   
 DECLARE_DISPATCH_MAP()  
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用して、`DECLARE_DISPATCH_MAP`クラス宣言の末尾のマクロです。 次に、します。クラスのメンバーを定義する CPP ファイルの機能を使用して、`BEGIN_DISPATCH_MAP`マクロです。 クラスが公開メソッドとプロパティのマクロのエントリを含める ( `DISP_FUNCTION`、`DISP_PROPERTY`など)。 最後に、使用して、`END_DISPATCH_MAP`マクロです。  
+### <a name="remarks"></a>Remarks  
+ Use the `DECLARE_DISPATCH_MAP` macro at the end of your class declaration. Then, in the .CPP file that defines the member functions for the class, use the `BEGIN_DISPATCH_MAP` macro. Then include macro entries for each of your class's exposed methods and properties ( `DISP_FUNCTION`, `DISP_PROPERTY`, and so on). Finally, use the `END_DISPATCH_MAP` macro.  
   
 > [!NOTE]
->  後のすべてのメンバーを宣言する場合`DECLARE_DISPATCH_MAP`、新しいアクセスの種類を指定する必要があります (**パブリック**、 `private`、または`protected`) にします。  
+>  If you declare any members after `DECLARE_DISPATCH_MAP`, you must specify a new access type ( **public**, `private`, or `protected`) for them.  
   
- アプリケーション ウィザードとコードのウィザードでは、オートメーション クラスの作成とディスパッチ マップの管理を支援します。 ディスパッチ マップの詳細については、次を参照してください。[オートメーション サーバー](../../mfc/automation-servers.md)します。  
+ The Application Wizard and code wizards assist in creating Automation classes and in maintaining dispatch maps. For more information on dispatch maps, see [Automation Servers](../../mfc/automation-servers.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAutomation&#10;](../../mfc/codesnippet/cpp/dispatch-maps_1.h)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAutomation#10](../../mfc/codesnippet/cpp/dispatch-maps_1.h)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
 
-##  <a name="begin_dispatch_map"></a>BEGIN_DISPATCH_MAP  
- ディスパッチ マップの定義を宣言します。  
+##  <a name="begin_dispatch_map"></a>  BEGIN_DISPATCH_MAP  
+ Declares the definition of your dispatch map.  
   
 ```  
 BEGIN_DISPATCH_MAP(theClass, baseClass)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- このディスパッチ マップを所有しているクラスの名前を指定します。  
+ Specifies the name of the class that owns this dispatch map.  
   
  `baseClass`  
- 基本クラスの名前を指定`theClass`します。  
+ Specifies the base class name of `theClass`.  
   
-### <a name="remarks"></a>コメント  
- クラスのメンバー関数を定義する実装 (.cpp) ファイル、ディスパッチ マップを開始、`BEGIN_DISPATCH_MAP`マクロは、それぞれのディスパッチ関数と、プロパティのマクロのエントリを追加ししでディスパッチ マップ、`END_DISPATCH_MAP`マクロです。  
+### <a name="remarks"></a>Remarks  
+ In the implementation (.cpp) file that defines the member functions for your class, start the dispatch map with the `BEGIN_DISPATCH_MAP` macro, add macro entries for each of your dispatch functions and properties, and complete the dispatch map with the `END_DISPATCH_MAP` macro.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h  
 
-##  <a name="end_dispatch_map"></a>END_DISPATCH_MAP  
- ディスパッチ マップの定義を終了します。  
+##  <a name="end_dispatch_map"></a>  END_DISPATCH_MAP  
+ Ends the definition of your dispatch map.  
   
 ```   
 END_DISPATCH_MAP()  
 ```  
   
-### <a name="remarks"></a>コメント  
- 組み合わせて使用する必要があります`BEGIN_DISPATCH_MAP`します。  
+### <a name="remarks"></a>Remarks  
+ It must be used in conjunction with `BEGIN_DISPATCH_MAP`.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h  
 
-##  <a name="disp_function"></a>DISP_FUNCTION  
- ディスパッチ マップでは、OLE オートメーション関数を定義します。  
+##  <a name="disp_function"></a>  DISP_FUNCTION  
+ Defines an OLE automation function in a dispatch map.  
   
 ```   
 DISP_FUNCTION(
@@ -125,26 +125,26 @@ DISP_FUNCTION(
   vtsParams)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  `pszName`  
- 関数の外部名。  
+ External name of the function.  
   
  `pfnMember`  
- メンバー関数の名前。  
+ Name of the member function.  
   
  `vtRetVal`  
- 関数の戻り値の型を指定する値。  
+ A value specifying the function's return type.  
   
  `vtsParams`  
- スペースで区切られた一連の関数のパラメーター リストを指定する&1; つ以上の定数です。  
+ A space-separated list of one or more constants specifying the function's parameter list.  
   
-### <a name="remarks"></a>コメント  
- `vtRetVal`型の引数は、 **VARTYPE**します。 この引数に次の考えられる値から取得されます、`VARENUM`列挙体。  
+### <a name="remarks"></a>Remarks  
+ The `vtRetVal` argument is of type **VARTYPE**. The following possible values for this argument are taken from the `VARENUM` enumeration:  
   
-|シンボル|戻り値の型|  
+|Symbol|Return type|  
 |------------|-----------------|  
 |`VT_EMPTY`|`void`|  
 |`VT_I2`|**short**|  
@@ -152,55 +152,55 @@ DISP_FUNCTION(
 |`VT_R4`|**float**|  
 |`VT_R8`|**double**|  
 |`VT_CY`|**CY**|  
-|`VT_DATE`|**日付**|  
+|`VT_DATE`|**DATE**|  
 |`VT_BSTR`|`BSTR`|  
 |**VT_DISPATCH**|`LPDISPATCH`|  
 |`VT_ERROR`|`SCODE`|  
 |`VT_BOOL`|**BOOL**|  
-|**VT_VARIANT**|**バリアント**|  
+|**VT_VARIANT**|**VARIANT**|  
 |**VT_UNKNOWN**|`LPUNKNOWN`|  
   
- `vtsParams`引数がスペースで区切られた一連の値から、 **vts _**定数です。 1 つ以上のスペース (コンマではなく) で区切られたこれらの値は、関数のパラメーター リストを指定します。 次に例を示します。 
+ The `vtsParams` argument is a space-separated list of values from the **VTS_** constants. One or more of these values separated by spaces (not commas) specifies the function's parameter list. For example, 
   
- [!code-cpp[NVC_MFCAutomation&#14;](../../mfc/codesnippet/cpp/dispatch-maps_2.cpp)]  
+ [!code-cpp[NVC_MFCAutomation#14](../../mfc/codesnippet/cpp/dispatch-maps_2.cpp)]  
   
- 短整数へのポインターの後に短整数を含むリストを指定します。  
+ specifies a list containing a short integer followed by a pointer to a short integer.  
   
- **Vts _**定数とその意味は次のようには。  
+ The **VTS_** constants and their meanings are as follows:  
   
-|シンボル|パラメーターの型|  
+|Symbol|Parameter type|  
 |------------|--------------------|  
 |**VTS_I2**|`Short`|  
 |**VTS_I4**|`Long`|  
-|**VTS_R4**|**浮動小数点数**|  
+|**VTS_R4**|**Float**|  
 |**VTS_R8**|`Double`|  
-|**VTS_CY**|**const CY**または**CY\***|  
-|**VTS_DATE**|**日付**|  
+|**VTS_CY**|**const CY** or **CY\***|  
+|**VTS_DATE**|**DATE**|  
 |**VTS_BSTR**|`LPCSTR`|  
 |**VTS_DISPATCH**|`LPDISPATCH`|  
 |**VTS_SCODE**|`SCODE`|  
 |**VTS_BOOL**|**BOOL**|  
-|**VTS_VARIANT**|**const バリアント\***または**VARIANT >/documents/report1.rdl」の**|  
+|**VTS_VARIANT**|**const VARIANT\*** or **VARIANT&**|  
 |**VTS_UNKNOWN**|`LPUNKNOWN`|  
-|**VTS_PI2**|**短い\***|  
-|**VTS_PI4**|**長い\***|  
-|**VTS_PR4**|**浮動小数点数\***|  
-|**VTS_PR8**|**二重\***|  
+|**VTS_PI2**|**short\***|  
+|**VTS_PI4**|**long\***|  
+|**VTS_PR4**|**float\***|  
+|**VTS_PR8**|**double\***|  
 |**VTS_PCY**|**CY\***|  
-|**VTS_PDATE**|**日付\***|  
+|**VTS_PDATE**|**DATE\***|  
 |**VTS_PBSTR**|**BSTR\***|  
 |**VTS_PDISPATCH**|**LPDISPATCH\***|  
 |**VTS_PSCODE**|**SCODE\***|  
 |**VTS_PBOOL**|**BOOL\***|  
-|**VTS_PVARIANT**|**バリアント\***|  
+|**VTS_PVARIANT**|**VARIANT\***|  
 |**VTS_PUNKNOWN**|**LPUNKNOWN\***|  
-|**VTS_NONE**|パラメーターなし|  
+|**VTS_NONE**|No parameters|  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-##  <a name="disp_property"></a>DISP_PROPERTY  
- ディスパッチ マップ内の OLE オートメーション プロパティを定義します。  
+##  <a name="disp_property"></a>  DISP_PROPERTY  
+ Defines an OLE automation property in a dispatch map.  
   
 ```   
 DISP_PROPERTY(
@@ -210,44 +210,44 @@ DISP_PROPERTY(
   vtPropType)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  `pszName`  
- プロパティの外部名。  
+ External name of the property.  
   
  `memberName`  
- プロパティが格納されているメンバー変数の名前。  
+ Name of the member variable in which the property is stored.  
   
  `vtPropType`  
- プロパティの型を指定する値。  
+ A value specifying the property's type.  
   
-### <a name="remarks"></a>コメント  
- `vtPropType`型の引数は、 **VARTYPE**します。 この引数に指定できる値はから取得、`VARENUM`列挙体。  
+### <a name="remarks"></a>Remarks  
+ The `vtPropType` argument is of type **VARTYPE**. Possible values for this argument are taken from the `VARENUM` enumeration:  
   
-|シンボル|**プロパティの型**|  
+|Symbol|**Property type**|  
 |------------|-----------------------|  
 |`VT_I2`|**short**|  
 |`VT_I4`|**long**|  
 |`VT_R4`|**float**|  
 |`VT_R8`|**double**|  
 |`VT_CY`|**CY**|  
-|`VT_DATE`|**日付**|  
+|`VT_DATE`|**DATE**|  
 |`VT_BSTR`|`CString`|  
 |**VT_DISPATCH**|`LPDISPATCH`|  
 |`VT_ERROR`|`SCODE`|  
 |`VT_BOOL`|**BOOL**|  
-|**VT_VARIANT**|**バリアント**|  
+|**VT_VARIANT**|**VARIANT**|  
 |**VT_UNKNOWN**|`LPUNKNOWN`|  
   
- 外部クライアントにプロパティで指定されたメンバー変数の値が変更されたとき`memberName`; を変更、変更の通知はありません。  
+ When an external client changes the property, the value of the member variable specified by `memberName` changes; there is no notification of the change.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-##  <a name="disp_property_ex"></a>DISP_PROPERTY_EX  
- OLE オートメーションのプロパティと名前を取得およびディスパッチ マップ内のプロパティの値を設定するための関数を定義します。  
+##  <a name="disp_property_ex"></a>  DISP_PROPERTY_EX  
+ Defines an OLE automation property and name the functions used to get and set the property's value in a dispatch map.  
   
 ```   
 DISP_PROPERTY_EX(
@@ -258,32 +258,32 @@ DISP_PROPERTY_EX(
   vtPropType)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  `pszName`  
- プロパティの外部名。  
+ External name of the property.  
   
  `memberGet`  
- プロパティを取得するために使用するメンバー関数の名前。  
+ Name of the member function used to get the property.  
   
  `memberSet`  
- プロパティの設定を使用するメンバー関数の名前です。  
+ Name of the member function used to set the property.  
   
  `vtPropType`  
- プロパティの型を指定する値。  
+ A value specifying the property's type.  
   
-### <a name="remarks"></a>コメント  
- `memberGet`と`memberSet`関数がによって決定されるシグネチャを持つ、`vtPropType`引数。 `memberGet`関数は引数を使用しないで指定された型の値を返します`vtPropType`します。 `memberSet`関数は、指定された型の引数を受け取る`vtPropType`何も返しません。  
+### <a name="remarks"></a>Remarks  
+ The `memberGet` and `memberSet` functions have signatures determined by the `vtPropType` argument. The `memberGet` function takes no arguments and returns a value of the type specified by `vtPropType`. The `memberSet` function takes an argument of the type specified by `vtPropType` and returns nothing.  
   
- `vtPropType`型の引数は、 **VARTYPE**します。 この引数に指定できる値はから取得、`VARENUM`列挙します。 これらの値の一覧は、「解説」を参照してください、`vtRetVal`パラメーター [DISP_FUNCTION](#disp_function)します。 `VT_EMPTY`で挙げられて、 `DISP_FUNCTION` remarks、プロパティのデータ型としては許可されません。  
+ The `vtPropType` argument is of type **VARTYPE**. Possible values for this argument are taken from the `VARENUM` enumeration. For a list of these values, see the Remarks for the `vtRetVal` parameter in [DISP_FUNCTION](#disp_function). Note that `VT_EMPTY`, listed in the `DISP_FUNCTION` remarks, is not permitted as a property data type.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-##  <a name="disp_property_notify"></a>DISP_PROPERTY_NOTIFY  
- ディスパッチ マップ内には、通知付きの OLE オートメーション プロパティを定義します。  
+##  <a name="disp_property_notify"></a>  DISP_PROPERTY_NOTIFY  
+ Defines an OLE automation property with notification in a dispatch map.  
   
 ```   
 DISP_PROPERTY_NOTIFY(
@@ -294,47 +294,47 @@ DISP_PROPERTY_NOTIFY(
   vtPropType)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  `szExternalName`  
- プロパティの外部名。  
+ External name of the property.  
   
  `memberName`  
- プロパティが格納されているメンバー変数の名前。  
+ Name of the member variable in which the property is stored.  
   
  `pfnAfterSet`  
- 通知関数の名前`szExternalName`します。  
+ Name of the notification function for `szExternalName`.  
   
  `vtPropType`  
- プロパティの型を指定する値。  
+ A value specifying the property's type.  
   
-### <a name="remarks"></a>コメント  
- 定義されたプロパティとは異なり`DISP_PROPERTY`で定義されているプロパティ`DISP_PROPERTY_NOTIFY`で指定された関数が自動的に呼び出さ`pfnAfterSet`プロパティが変更されたとき。  
+### <a name="remarks"></a>Remarks  
+ Unlike properties defined with `DISP_PROPERTY`, a property defined with `DISP_PROPERTY_NOTIFY` will automatically call the function specified by `pfnAfterSet` when the property is changed.  
   
- `vtPropType`型の引数は、 **VARTYPE**します。 この引数に指定できる値はから取得、`VARENUM`列挙体。  
+ The `vtPropType` argument is of type **VARTYPE**. Possible values for this argument are taken from the `VARENUM` enumeration:  
   
-|シンボル|**プロパティの型**|  
+|Symbol|**Property type**|  
 |------------|-----------------------|  
 |`VT_I2`|**short**|  
 |`VT_I4`|**long**|  
 |`VT_R4`|**float**|  
 |`VT_R8`|**double**|  
 |`VT_CY`|**CY**|  
-|`VT_DATE`|**日付**|  
+|`VT_DATE`|**DATE**|  
 |`VT_BSTR`|`CString`|  
 |**VT_DISPATCH**|`LPDISPATCH`|  
 |`VT_ERROR`|`SCODE`|  
 |`VT_BOOL`|**BOOL**|  
-|**VT_VARIANT**|**バリアント**|  
+|**VT_VARIANT**|**VARIANT**|  
 |**VT_UNKNOWN**|`LPUNKNOWN`|  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-##  <a name="disp_property_param"></a>DISP_PROPERTY_PARAM  
- 個別にアクセスされるプロパティを定義**取得**と`Set`メンバー関数。  
+##  <a name="disp_property_param"></a>  DISP_PROPERTY_PARAM  
+ Defines a property accessed with separate **Get** and `Set` member functions.  
   
 ```   
 DISP_PROPERTY_PARAM(
@@ -346,70 +346,70 @@ DISP_PROPERTY_PARAM(
   vtsParams)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  *pszExternalName*  
- プロパティの外部名。  
+ External name of the property.  
   
  `pfnGet`  
- プロパティを取得するために使用するメンバー関数の名前。  
+ Name of the member function used to get the property.  
   
  `pfnSet`  
- プロパティの設定を使用するメンバー関数の名前です。  
+ Name of the member function used to set the property.  
   
  `vtPropType`  
- プロパティの型を指定する値。  
+ A value specifying the property's type.  
   
  `vtsParams`  
- スペースで区切られた文字列**vts _**のバリアント型パラメーターが型パラメーターごとに&1; つです。  
+ A string of space-separated **VTS_** variant parameter types, one for each parameter.  
   
-### <a name="remarks"></a>コメント  
- 異なり、`DISP_PROPERTY_EX`マクロ、このマクロを使用すると、プロパティのパラメーター リストを指定します。 これは、インデックスを作成またはパラメーター化されているプロパティを実装するのに便利です。  
+### <a name="remarks"></a>Remarks  
+ Unlike the `DISP_PROPERTY_EX` macro, this macro allows you to specify a parameter list for the property. This is useful for implementing properties that are indexed or parameterized.  
   
-### <a name="example"></a>例  
- Get の次の宣言を検討し、メンバーのプロパティにアクセスする際に、特定の行と列を要求するユーザーをできるようにする関数を設定します。  
+### <a name="example"></a>Example  
+ Consider the following declaration of get and set member functions that allow the user to request a specific row and column when accessing the property:  
   
- [!code-cpp[NVC_MFCActiveXControl&#9;](../../mfc/codesnippet/cpp/dispatch-maps_3.h)]  
+ [!code-cpp[NVC_MFCActiveXControl#9](../../mfc/codesnippet/cpp/dispatch-maps_3.h)]  
   
- これらは、次に対応して`DISP_PROPERTY_PARAM`コントロールのディスパッチ マップ マクロ。  
+ These correspond to the following `DISP_PROPERTY_PARAM` macro in the control dispatch map:  
   
- [!code-cpp[NVC_MFCActiveXControl&#10;](../../mfc/codesnippet/cpp/dispatch-maps_4.cpp)]  
+ [!code-cpp[NVC_MFCActiveXControl#10](../../mfc/codesnippet/cpp/dispatch-maps_4.cpp)]  
   
- 別の例としては、次の取得を検討してくださいし、set メンバー関数。  
+ As another example, consider the following get and set member functions:  
   
- [!code-cpp[NVC_MFCActiveXControl&#11;](../../mfc/codesnippet/cpp/dispatch-maps_5.h)]  
+ [!code-cpp[NVC_MFCActiveXControl#11](../../mfc/codesnippet/cpp/dispatch-maps_5.h)]  
   
- これらは、次に対応して`DISP_PROPERTY_PARAM`コントロールのディスパッチ マップ マクロ。  
+ These correspond to the following `DISP_PROPERTY_PARAM` macro in the control dispatch map:  
   
- [!code-cpp[NVC_MFCActiveXControl&#12;](../../mfc/codesnippet/cpp/dispatch-maps_6.cpp)]  
+ [!code-cpp[NVC_MFCActiveXControl#12](../../mfc/codesnippet/cpp/dispatch-maps_6.cpp)]  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-##  <a name="disp_defvalue"></a>DISP_DEFVALUE  
- 既存のプロパティ オブジェクトの既定値を使用できます。  
+##  <a name="disp_defvalue"></a>  DISP_DEFVALUE  
+ Makes an existing property the default value of an object.  
   
 ```   
 DISP_DEFVALUE(theClass, pszName)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `theClass`  
- クラスの名前です。  
+ Name of the class.  
   
  `pszName`  
- オブジェクトの"value"を表すプロパティの外部名。  
+ External name of the property that represents the "value" of the object.  
   
-### <a name="remarks"></a>コメント  
- 既定値を使用するには、Visual Basic アプリケーションの簡単なオートメーション オブジェクトのプログラミングすることができます。  
+### <a name="remarks"></a>Remarks  
+ Using a default value can make programming your automation object simpler for Visual Basic applications.  
   
- オブジェクトの「既定値」は、プロパティが取得または設定オブジェクトへの参照は、プロパティまたはメンバー関数を指定していない場合ですです。  
+ The "default value" of your object is the property that is retrieved or set when a reference to an object does not specify a property or member function.  
 
-### <a name="requirements"></a>要件  
- **ヘッダー :** afxdisp.h 
+### <a name="requirements"></a>Requirements  
+ **Header:** afxdisp.h 
 
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "CRecordset クラス |Microsoft ドキュメント"
+title: CRecordset Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -76,10 +76,68 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- database records [C++]
-- CRecordset class
-- ODBC recordsets [C++], CRecordset objects
-- sets of records [C++]
+- CRecordset [MFC], CRecordset
+- CRecordset [MFC], AddNew
+- CRecordset [MFC], CanAppend
+- CRecordset [MFC], CanBookmark
+- CRecordset [MFC], Cancel
+- CRecordset [MFC], CancelUpdate
+- CRecordset [MFC], CanRestart
+- CRecordset [MFC], CanScroll
+- CRecordset [MFC], CanTransact
+- CRecordset [MFC], CanUpdate
+- CRecordset [MFC], CheckRowsetError
+- CRecordset [MFC], Close
+- CRecordset [MFC], Delete
+- CRecordset [MFC], DoBulkFieldExchange
+- CRecordset [MFC], DoFieldExchange
+- CRecordset [MFC], Edit
+- CRecordset [MFC], FlushResultSet
+- CRecordset [MFC], GetBookmark
+- CRecordset [MFC], GetDefaultConnect
+- CRecordset [MFC], GetDefaultSQL
+- CRecordset [MFC], GetFieldValue
+- CRecordset [MFC], GetODBCFieldCount
+- CRecordset [MFC], GetODBCFieldInfo
+- CRecordset [MFC], GetRecordCount
+- CRecordset [MFC], GetRowsetSize
+- CRecordset [MFC], GetRowsFetched
+- CRecordset [MFC], GetRowStatus
+- CRecordset [MFC], GetSQL
+- CRecordset [MFC], GetStatus
+- CRecordset [MFC], GetTableName
+- CRecordset [MFC], IsBOF
+- CRecordset [MFC], IsDeleted
+- CRecordset [MFC], IsEOF
+- CRecordset [MFC], IsFieldDirty
+- CRecordset [MFC], IsFieldNull
+- CRecordset [MFC], IsFieldNullable
+- CRecordset [MFC], IsOpen
+- CRecordset [MFC], Move
+- CRecordset [MFC], MoveFirst
+- CRecordset [MFC], MoveLast
+- CRecordset [MFC], MoveNext
+- CRecordset [MFC], MovePrev
+- CRecordset [MFC], OnSetOptions
+- CRecordset [MFC], OnSetUpdateOptions
+- CRecordset [MFC], Open
+- CRecordset [MFC], RefreshRowset
+- CRecordset [MFC], Requery
+- CRecordset [MFC], SetAbsolutePosition
+- CRecordset [MFC], SetBookmark
+- CRecordset [MFC], SetFieldDirty
+- CRecordset [MFC], SetFieldNull
+- CRecordset [MFC], SetLockingMode
+- CRecordset [MFC], SetParamNull
+- CRecordset [MFC], SetRowsetCursorPosition
+- CRecordset [MFC], SetRowsetSize
+- CRecordset [MFC], Update
+- CRecordset [MFC], m_hstmt
+- CRecordset [MFC], m_nFields
+- CRecordset [MFC], m_nParams
+- CRecordset [MFC], m_pDatabase
+- CRecordset [MFC], m_strFilter
+- CRecordset [MFC], m_strSort
 ms.assetid: dd89a21d-ef39-4aab-891b-1e373d67c855
 caps.latest.revision: 23
 author: mikeblome
@@ -99,524 +157,524 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 9271608528699e93fa7b8315f8ef2fdd5ae1e54d
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e2aad553929522346ae9fde947e0b01a4469a43a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="crecordset-class"></a>CRecordset クラス
-データ ソースから選択された 1 組のレコードセットを表現します。  
+# <a name="crecordset-class"></a>CRecordset Class
+Represents a set of records selected from a data source.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CRecordset : public CObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecordset::CRecordset](#crecordset)|`CRecordset` オブジェクトを構築します。 派生クラスでは、この関数を呼び出すコンス トラクターを提供する必要があります。|  
+|[CRecordset::CRecordset](#crecordset)|Constructs a `CRecordset` object. Your derived class must provide a constructor that calls this one.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecordset::AddNew](#addnew)|新しいレコードを追加する準備をします。 呼び出す`Update`追加を完了します。|  
-|[CRecordset::CanAppend](#canappend)|使用して、レコード セットに新しいレコードを追加する場合は 0 以外を返します、`AddNew`メンバー関数。|  
-|[値](#canbookmark)|レコード セットは、ブックマークをサポートする場合は 0 以外を返します。|  
-|[CRecordset::Cancel](#cancel)|非同期操作または 2 番目のスレッドからのプロセスをキャンセルします。|  
-|[CRecordset::CancelUpdate](#cancelupdate)|キャンセルの理由のため、保留中の更新プログラム、`AddNew`または`Edit`操作します。|  
-|[CRecordset::CanRestart](#canrestart)|場合は 0 以外を返します`Requery`レコード セットのクエリを再実行を呼び出すことができます。|  
-|[CRecordset::CanScroll](#canscroll)|レコード間をスクロールできる場合は 0 以外を返します。|  
-|[CRecordset::CanTransact](#cantransact)|データ ソースには、トランザクションがサポートしている場合は 0 以外を返します。|  
-|[CRecordset::CanUpdate](#canupdate)|レコード セットを更新する場合は 0 以外を返します (することができますを追加、更新、またはレコードを削除) します。|  
-|[CRecordset::CheckRowsetError](#checkrowseterror)|レコードのフェッチ中に生成されたエラーの処理と呼ばれます。|  
-|[ような場合](#close)|レコード セットと、ODBC 閉じます**HSTMT**関連付けられています。|  
-|[CRecordset::Delete](#delete)|レコード セットから現在のレコードを削除します。 削除された後は、別のレコードに明示的にスクロールする必要があります。|  
-|[CRecordset::DoBulkFieldExchange](#dobulkfieldexchange)|バルク行をデータ ソースからレコード セットへのデータを交換するには、呼び出されます。 レコード フィールド エクス チェンジ (Bulk RFX) の一括を実装します。|  
-|[CRecordset::DoFieldExchange](#dofieldexchange)|レコード セットのフィールド データ メンバーと、データ ソースに対応するレコードの間で (双方向) のデータを交換するには、呼び出されます。 レコード フィールド エクス (チェンジ RFX) をを実装します。|  
-|[CRecordset::Edit](#edit)|現在のレコードへの変更を準備します。 呼び出す`Update`編集を完了します。|  
-|[CRecordset::FlushResultSet](#flushresultset)|別の結果がある場合は 0 以外を返しますでは、定義済みクエリを使用する場合は、取得する設定。|  
-|[CRecordset::GetBookmark](#getbookmark)|パラメーター オブジェクトには、レコードのブックマークの値を割り当てます。|  
-|[:Getdefaultconnect](#getdefaultconnect)|既定の接続文字列を取得するには、呼び出されます。|  
-|[CRecordset::GetDefaultSQL](#getdefaultsql)|実行する既定の SQL 文字列を取得するには、呼び出されます。|  
-|[CRecordset::GetFieldValue](#getfieldvalue)|レコード セット内のフィールドの値を返します。|  
-|[CRecordset::GetODBCFieldCount](#getodbcfieldcount)|レコード セットのフィールドの数を返します。|  
-|[に](#getodbcfieldinfo)|レコード セットから特定の種類のフィールドに関する情報を返します。|  
-|[CRecordset::GetRecordCount](#getrecordcount)|レコード セットのレコードの数を返します。|  
-|[CRecordset::GetRowsetSize](#getrowsetsize)|1 回のフェッチ中に取得するレコードの数を返します。|  
-|[CRecordset::GetRowsFetched](#getrowsfetched)|フェッチ中に取得される行の実際の数を返します。|  
-|[CRecordset::GetRowStatus](#getrowstatus)|フェッチ後に、行の状態を返します。|  
-|[CRecordset::GetSQL](#getsql)|レコード セットのレコードを選択するために使用する SQL 文字列を取得します。|  
-|[CRecordset::GetStatus](#getstatus)|レコード セットの状態を取得します。 現在のレコードと、レコードの最後の数が取得されたかどうかのインデックス。|  
-|[CRecordset::GetTableName](#gettablename)|レコード セットを基になるテーブルの名前を取得します。|  
-|[CRecordset::IsBOF](#isbof)|レコード セットは、最初のレコードの前に位置付けられている場合は 0 以外を返します。 現在のレコードがありません。|  
-|[CRecordset::IsDeleted](#isdeleted)|レコード セットが削除されたレコードに配置されている場合は 0 以外を返します。|  
-|[CRecordset::IsEOF](#iseof)|レコード セットは、後の最後のレコードに位置付けられている場合は 0 以外を返します。 現在のレコードがありません。|  
-|[CRecordset::IsFieldDirty](#isfielddirty)|現在のレコードで指定されたフィールドが変更された場合は 0 以外を返します。|  
-|[CRecordset::IsFieldNull](#isfieldnull)|現在のレコードで指定されたフィールドが null の場合は 0 以外を返します (値はありません)。|  
-|[CRecordset::IsFieldNullable](#isfieldnullable)|現在のレコードで指定されたフィールドは、(値を持たない) を null に設定することができる場合は 0 以外を返します。|  
-|[CRecordset::IsOpen](#isopen)|場合は 0 以外を返します`Open`既に呼び出されています。|  
-|[CRecordset::Move](#move)|どちらの方向に現在のレコードから指定した数のレコードに、レコード セットを配置します。|  
-|[CRecordset::MoveFirst](#movefirst)|レコード セットの最初のレコードの現在のレコードを配置します。 テスト`IsBOF`最初。|  
-|[CRecordset::MoveLast](#movelast)|最後のレコードまたは最後の行セットは、現在のレコードを位置付けます。 テスト`IsEOF`最初。|  
-|[CRecordset::MoveNext](#movenext)|次のレコードまたは次の行セットは、現在のレコードを位置付けます。 テスト`IsEOF`最初。|  
-|[CRecordset::MovePrev](#moveprev)|前のレコードまたは前の行セットは、現在のレコードを位置付けます。 テスト`IsBOF`最初。|  
-|[CRecordset::OnSetOptions](#onsetoptions)|指定された ODBC ステートメントには、(選択に使用する) オプションを設定すると呼ばれます。|  
-|[CRecordset::OnSetUpdateOptions](#onsetupdateoptions)|指定された ODBC ステートメントのオプション (更新プログラムで使用される) を設定すると呼ばれます。|  
-|[:Open](#open)|テーブルを取得するか、レコードセットが表すクエリを実行して、レコードセットを開きます。|  
-|[CRecordset::RefreshRowset](#refreshrowset)|指定した行の状態とデータを更新します。|  
-|[:Requery](#requery)|選択したレコードを更新するには、もう一度、レコード セットのクエリを実行します。|  
-|[CRecordset::SetAbsolutePosition](#setabsoluteposition)|指定されたレコード番号に対応するレコードのレコード セットを配置します。|  
-|[CRecordset::SetBookmark](#setbookmark)|ブックマークが指定されたレコードのレコード セットを配置します。|  
-|[CRecordset::SetFieldDirty](#setfielddirty)|変更されると、現在のレコードで指定したフィールドをマークします。|  
-|[CRecordset::SetFieldNull](#setfieldnull)|現在のレコード (値を持たない) を null に指定されたフィールドの値を設定します。|  
-|[CRecordset::SetLockingMode](#setlockingmode)|ロック (既定)「オプティミスティック」または「ペシミスティック」をロックするロック モードを設定します。 更新プログラムのレコードをロックする方法を決定します。|  
-|[CRecordset::SetParamNull](#setparamnull)|Null (値を持たない) を指定されたパラメーターを設定します。|  
-|[CRecordset::SetRowsetCursorPosition](#setrowsetcursorposition)|行セット内の指定された行にカーソルを位置付けます。|  
-|[CRecordset::SetRowsetSize](#setrowsetsize)|フェッチ中に取得するレコードの数を指定します。|  
-|[CRecordset::Update](#update)|完了、`AddNew`または`Edit`データ ソースで新しいまたは更新されたデータを保存することで操作します。|  
+|[CRecordset::AddNew](#addnew)|Prepares for adding a new record. Call `Update` to complete the addition.|  
+|[CRecordset::CanAppend](#canappend)|Returns nonzero if new records can be added to the recordset via the `AddNew` member function.|  
+|[CRecordset::CanBookmark](#canbookmark)|Returns nonzero if the recordset supports bookmarks.|  
+|[CRecordset::Cancel](#cancel)|Cancels an asynchronous operation or a process from a second thread.|  
+|[CRecordset::CancelUpdate](#cancelupdate)|Cancels any pending updates due to an `AddNew` or `Edit` operation.|  
+|[CRecordset::CanRestart](#canrestart)|Returns nonzero if `Requery` can be called to run the recordset's query again.|  
+|[CRecordset::CanScroll](#canscroll)|Returns nonzero if you can scroll through the records.|  
+|[CRecordset::CanTransact](#cantransact)|Returns nonzero if the data source supports transactions.|  
+|[CRecordset::CanUpdate](#canupdate)|Returns nonzero if the recordset can be updated (you can add, update, or delete records).|  
+|[CRecordset::CheckRowsetError](#checkrowseterror)|Called to handle errors generated during record fetching.|  
+|[CRecordset::Close](#close)|Closes the recordset and the ODBC **HSTMT** associated with it.|  
+|[CRecordset::Delete](#delete)|Deletes the current record from the recordset. You must explicitly scroll to another record after the deletion.|  
+|[CRecordset::DoBulkFieldExchange](#dobulkfieldexchange)|Called to exchange bulk rows of data from the data source to the recordset. Implements bulk record field exchange (Bulk RFX).|  
+|[CRecordset::DoFieldExchange](#dofieldexchange)|Called to exchange data (in both directions) between the field data members of the recordset and the corresponding record on the data source. Implements record field exchange (RFX).|  
+|[CRecordset::Edit](#edit)|Prepares for changes to the current record. Call `Update` to complete the edit.|  
+|[CRecordset::FlushResultSet](#flushresultset)|Returns nonzero if there is another result set to be retrieved, when using a predefined query.|  
+|[CRecordset::GetBookmark](#getbookmark)|Assigns the bookmark value of a record to the parameter object.|  
+|[CRecordset::GetDefaultConnect](#getdefaultconnect)|Called to get the default connection string.|  
+|[CRecordset::GetDefaultSQL](#getdefaultsql)|Called to get the default SQL string to execute.|  
+|[CRecordset::GetFieldValue](#getfieldvalue)|Returns the value of a field in a recordset.|  
+|[CRecordset::GetODBCFieldCount](#getodbcfieldcount)|Returns the number of fields in the recordset.|  
+|[CRecordset::GetODBCFieldInfo](#getodbcfieldinfo)|Returns specific kinds of information about the fields in a recordset.|  
+|[CRecordset::GetRecordCount](#getrecordcount)|Returns the number of records in the recordset.|  
+|[CRecordset::GetRowsetSize](#getrowsetsize)|Returns the number of records you wish to retrieve during a single fetch.|  
+|[CRecordset::GetRowsFetched](#getrowsfetched)|Returns the actual number of rows retrieved during a fetch.|  
+|[CRecordset::GetRowStatus](#getrowstatus)|Returns the status of the row after a fetch.|  
+|[CRecordset::GetSQL](#getsql)|Gets the SQL string used to select records for the recordset.|  
+|[CRecordset::GetStatus](#getstatus)|Gets the status of the recordset: the index of the current record and whether a final count of the records has been obtained.|  
+|[CRecordset::GetTableName](#gettablename)|Gets the name of the table on which the recordset is based.|  
+|[CRecordset::IsBOF](#isbof)|Returns nonzero if the recordset has been positioned before the first record. There is no current record.|  
+|[CRecordset::IsDeleted](#isdeleted)|Returns nonzero if the recordset is positioned on a deleted record.|  
+|[CRecordset::IsEOF](#iseof)|Returns nonzero if the recordset has been positioned after the last record. There is no current record.|  
+|[CRecordset::IsFieldDirty](#isfielddirty)|Returns nonzero if the specified field in the current record has been changed.|  
+|[CRecordset::IsFieldNull](#isfieldnull)|Returns nonzero if the specified field in the current record is null (has no value).|  
+|[CRecordset::IsFieldNullable](#isfieldnullable)|Returns nonzero if the specified field in the current record can be set to null (having no value).|  
+|[CRecordset::IsOpen](#isopen)|Returns nonzero if `Open` has been called previously.|  
+|[CRecordset::Move](#move)|Positions the recordset to a specified number of records from the current record in either direction.|  
+|[CRecordset::MoveFirst](#movefirst)|Positions the current record on the first record in the recordset. Test for `IsBOF` first.|  
+|[CRecordset::MoveLast](#movelast)|Positions the current record on the last record or on the last rowset. Test for `IsEOF` first.|  
+|[CRecordset::MoveNext](#movenext)|Positions the current record on the next record or on the next rowset. Test for `IsEOF` first.|  
+|[CRecordset::MovePrev](#moveprev)|Positions the current record on the previous record or on the previous rowset. Test for `IsBOF` first.|  
+|[CRecordset::OnSetOptions](#onsetoptions)|Called to set options (used on selection) for the specified ODBC statement.|  
+|[CRecordset::OnSetUpdateOptions](#onsetupdateoptions)|Called to set options (used on update) for the specified ODBC statement.|  
+|[CRecordset::Open](#open)|Opens the recordset by retrieving the table or performing the query that the recordset represents.|  
+|[CRecordset::RefreshRowset](#refreshrowset)|Refreshes the data and status of the specified row(s).|  
+|[CRecordset::Requery](#requery)|Runs the recordset's query again to refresh the selected records.|  
+|[CRecordset::SetAbsolutePosition](#setabsoluteposition)|Positions the recordset on the record corresponding to the specified record number.|  
+|[CRecordset::SetBookmark](#setbookmark)|Positions the recordset on the record specified by the bookmark.|  
+|[CRecordset::SetFieldDirty](#setfielddirty)|Marks the specified field in the current record as changed.|  
+|[CRecordset::SetFieldNull](#setfieldnull)|Sets the value of the specified field in the current record to null (having no value).|  
+|[CRecordset::SetLockingMode](#setlockingmode)|Sets the locking mode to "optimistic" locking (the default) or "pessimistic" locking. Determines how records are locked for updates.|  
+|[CRecordset::SetParamNull](#setparamnull)|Sets the specified parameter to null (having no value).|  
+|[CRecordset::SetRowsetCursorPosition](#setrowsetcursorposition)|Positions the cursor on the specified row within the rowset.|  
+|[CRecordset::SetRowsetSize](#setrowsetsize)|Specifies the number of records you wish to retrieve during a fetch.|  
+|[CRecordset::Update](#update)|Completes an `AddNew` or `Edit` operation by saving the new or edited data on the data source.|  
   
-### <a name="public-data-members"></a>パブリック データ メンバー  
+### <a name="public-data-members"></a>Public Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecordset::m_hstmt](#m_hstmt)|レコード セットの ODBC ステートメント ハンドルが含まれています。 「`HSTMT`」と入力します。|  
-|[CRecordset::m_nFields](#m_nfields)|レコード セットのフィールド データ メンバーの数が含まれています。 「`UINT`」と入力します。|  
-|[CRecordset::m_nParams](#m_nparams)|レコード セット内のパラメーター データ メンバーの数が含まれています。 「`UINT`」と入力します。|  
-|[CRecordset::m_pDatabase](#m_pdatabase)|ポインターが含まれています、`CDatabase`データ ソースに使用されるレコード セットが接続されているオブジェクト。|  
-|[CRecordset::m_strFilter](#m_strfilter)|含まれています、 `CString` Structured Query Language (SQL) を指定する`WHERE`句。 特定の条件を満たすレコードだけを選択するフィルターとして使用します。|  
-|[CRecordset::m_strSort](#m_strsort)|含まれています、 `CString` SQL を指定する`ORDER BY`句。 レコードの並べ替え方法を制御するために使用します。|  
+|[CRecordset::m_hstmt](#m_hstmt)|Contains the ODBC statement handle for the recordset. Type `HSTMT`.|  
+|[CRecordset::m_nFields](#m_nfields)|Contains the number of field data members in the recordset. Type `UINT`.|  
+|[CRecordset::m_nParams](#m_nparams)|Contains the number of parameter data members in the recordset. Type `UINT`.|  
+|[CRecordset::m_pDatabase](#m_pdatabase)|Contains a pointer to the `CDatabase` object through which the recordset is connected to a data source.|  
+|[CRecordset::m_strFilter](#m_strfilter)|Contains a `CString` that specifies a Structured Query Language (SQL) `WHERE` clause. Used as a filter to select only those records that meet certain criteria.|  
+|[CRecordset::m_strSort](#m_strsort)|Contains a `CString` that specifies a SQL `ORDER BY` clause. Used to control how the records are sorted.|  
   
-## <a name="remarks"></a>コメント  
- 「レコード セット」と呼ばれる`CRecordset`オブジェクトが 2 つの形式に用いられます: ダイナセットを使う場合とスナップショット。 ダイナセットは、同期されているその他のユーザーによって行われたデータの更新プログラムにします。 スナップショットは、データの静的ビューです。 各フォームは、レコード セットを開いた時点で固定されたレコードのセットを表しますが、ダイナセットのレコードをスクロールする際に他のユーザーまたはアプリケーションで他のレコード セットのいずれかのレコードに加えられた変更が反映されます。  
+## <a name="remarks"></a>Remarks  
+ Known as "recordsets," `CRecordset` objects are typically used in two forms: dynasets and snapshots. A dynaset stays synchronized with data updates made by other users. A snapshot is a static view of the data. Each form represents a set of records fixed at the time the recordset is opened, but when you scroll to a record in a dynaset, it reflects changes subsequently made to the record, either by other users or by other recordsets in your application.  
   
 > [!NOTE]
->  オープン データベース コネクティビティ (ODBC) クラスではなく、データ アクセス オブジェクト (DAO) クラスで作業している場合は、クラスを使用して[CDaoRecordset](../../mfc/reference/cdaorecordset-class.md)代わりにします。 詳細については、記事を参照してください。[概要: データベース プログラミング](../../data/data-access-programming-mfc-atl.md)です。  
+>  If you are working with the Data Access Objects (DAO) classes rather than the Open Database Connectivity (ODBC) classes, use class [CDaoRecordset](../../mfc/reference/cdaorecordset-class.md) instead. For more information, see the article [Overview: Database Programming](../../data/data-access-programming-mfc-atl.md).  
   
- レコード セットのいずれかの種類を使用する通常クラスを派生する、アプリケーション固有のレコード セットから`CRecordset`です。 レコード セットは、データ ソースからレコードを選択しを選択できます。  
+ To work with either kind of recordset, you typically derive an application-specific recordset class from `CRecordset`. Recordsets select records from a data source, and you can then:  
   
--   レコード間をスクロールします。  
+-   Scroll through the records.  
   
--   レコードを更新し、ロックのモードを指定します。  
+-   Update the records and specify a locking mode.  
   
--   データ ソースで使用できるものからを選択するレコードを制限するレコード セットをフィルター処理します。  
+-   Filter the recordset to constrain which records it selects from those available on the data source.  
   
--   レコード セットを並べ替えます。  
+-   Sort the recordset.  
   
--   実行時まで不明情報で、選択範囲をカスタマイズするレコード セットをパラメーター化します。  
+-   Parameterize the recordset to customize its selection with information not known until run time.  
   
- クラスを使用するデータベースを開くし、へのポインターをコンス トラクターに渡して、レコード セット オブジェクトを構築、`CDatabase`オブジェクト。 レコード セットを呼び出す**開く**メンバー関数、オブジェクトは、ダイナセットまたはスナップショットかどうかを指定できます。 呼び出す**開く**データ ソースからデータを選択します。 レコード セット オブジェクトが開かれた後に、レコード間をスクロールし、それらを操作するメンバー関数とデータ メンバーを使用します。 使用できる操作は、更新可能または読み取り専用であるかどうかオブジェクトは、ダイナセットまたはスナップショットかどうかに依存 (これに依存オープン データベース コネクティビティ (ODBC) のデータ ソースの機能)、バルク行フェッチを実装するかどうかとします。 されている変更されたか、後に追加するレコードを更新する、**開く**呼び出し、オブジェクトの**Requery**メンバー関数。 オブジェクトの**閉じる**メンバー関数を関連付けが完了したら、オブジェクトを破棄します。  
+ To use your class, open a database and construct a recordset object, passing the constructor a pointer to your `CDatabase` object. Then call the recordset's **Open** member function, where you can specify whether the object is a dynaset or a snapshot. Calling **Open** selects data from the data source. After the recordset object is opened, use its member functions and data members to scroll through the records and operate on them. The operations available depend on whether the object is a dynaset or a snapshot, whether it is updatable or read-only (this depends on the capability of the Open Database Connectivity (ODBC) data source), and whether you have implemented bulk row fetching. To refresh records that may have been changed or added since the **Open** call, call the object's **Requery** member function. Call the object's **Close** member function and destroy the object when you finish with it.  
   
- 派生で`CRecordset`クラス、レコード フィールド エクス (チェンジ RFX) または読み取りとレコード フィールドの更新をサポートするためにバルク レコード フィールド エクス チェンジ (Bulk RFX) を使用します。  
+ In a derived `CRecordset` class, record field exchange (RFX) or bulk record field exchange (Bulk RFX) is used to support reading and updating of record fields.  
   
- レコード セットとレコード フィールド エクス チェンジの詳細については、記事を参照してください。[概要: データベース プログラミング](../../data/data-access-programming-mfc-atl.md)、[レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)、[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)、および[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。 ダイナセットを使う場合のスナップショットに重点を置いて、記事を参照してください。[ダイナセット](../../data/odbc/dynaset.md)と[スナップショット](../../data/odbc/snapshot.md)です。  
+ For more information about recordsets and record field exchange, see the articles [Overview: Database Programming](../../data/data-access-programming-mfc-atl.md), [Recordset (ODBC)](../../data/odbc/recordset-odbc.md), [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md), and [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md). For a focus on dynasets and snapshots, see the articles [Dynaset](../../data/odbc/dynaset.md) and [Snapshot](../../data/odbc/snapshot.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  `CRecordset`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdb.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdb.h  
   
-##  <a name="addnew"></a>CRecordset::AddNew  
- テーブルに新しいレコードを追加する準備を行います。  
+##  <a name="addnew"></a>  CRecordset::AddNew  
+ Prepares for adding a new record to the table.  
   
 ```  
 virtual void AddNew();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります、 [Requery](#requery)メンバー関数を新しく追加したレコードを参照してください。 レコードのフィールドは、最初に null 値がします。 (データベース用語では、「値を持たない」手段を Null に設定と同じではありませんし**NULL** c++)。完了するには、操作を呼び出す必要があります、[更新](#update)メンバー関数。 **更新**データ ソースへの変更を保存します。  
+### <a name="remarks"></a>Remarks  
+ You must call the [Requery](#requery) member function to see the newly added record. The record's fields are initially Null. (In database terminology, Null means "having no value" and is not the same as **NULL** in C++.) To complete the operation, you must call the [Update](#update) member function. **Update** saves your changes to the data source.  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合を呼び出すことはできません`AddNew`です。 これにより、失敗したアサーションが発生します。 クラス`CRecordset`メカニズムが用意されていないデータの一括行を更新するには、ODBC API 関数を使用して、独自の関数を記述することができます**SQLSetPos**です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you cannot call `AddNew`. This will result in a failed assertion. Although class `CRecordset` does not provide a mechanism for updating bulk rows of data, you can write your own functions by using the ODBC API function **SQLSetPos**. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- `AddNew`レコード セットのフィールド データ メンバーを使用して、新しい空のレコードを準備します。 呼び出した後`AddNew`、レコード セットのフィールド データ メンバーに適用する値を設定します。 (呼び出しする必要はありません、[編集](#edit)この目的のためのメンバー関数以外の使用**編集**のみの既存のレコードです)。関数を呼び出すと**更新**、変更されたフィールド データ メンバー内の値は、データ ソースに保存されます。  
+ `AddNew` prepares a new, empty record using the recordset's field data members. After you call `AddNew`, set the values you want in the recordset's field data members. (You do not have to call the [Edit](#edit) member function for this purpose; use **Edit** only for existing records.) When you subsequently call **Update**, changed values in the field data members are saved on the data source.  
   
 > [!CAUTION]
->  呼び出す前に、新しいレコードをスクロールする**更新**、新しいレコードが失われ、警告が指定されていません。  
+>  If you scroll to a new record before you call **Update**, the new record is lost, and no warning is given.  
   
- データ ソースは、トランザクションをサポートすることができます、`AddNew`呼び出し、トランザクションの一部です。 トランザクションの詳細については、クラスを参照してください。 [CDatabase](../../mfc/reference/cdatabase-class.md)です。 呼び出す必要があります[CDatabase::BeginTrans](../../mfc/reference/cdatabase-class.md#begintrans)呼び出す前に`AddNew`です。  
+ If the data source supports transactions, you can make your `AddNew` call part of a transaction. For more information about transactions, see class [CDatabase](../../mfc/reference/cdatabase-class.md). Note that you should call [CDatabase::BeginTrans](../../mfc/reference/cdatabase-class.md#begintrans) before calling `AddNew`.  
   
 > [!NOTE]
->  ダイナセットを使う場合の新しいレコードは、最後のレコードとしてレコード セットに追加されます。 スナップショットに追加されたレコードは追加されません。呼び出す必要があります**Requery**をレコード セットを更新します。  
+>  For dynasets, new records are added to the recordset as the last record. Added records are not added to snapshots; you must call **Requery** to refresh the recordset.  
   
- 呼び出すことはできません`AddNew`レコード セットの持つ**開く**メンバー関数が呼び出されていません。 A`CDBException`を呼び出す場合にスローされる`AddNew`レコード セットに追加することはできません。 呼び出すことによって、レコード セットは更新可能かどうかを判断できます[CanAppend](#canappend)です。  
+ It is illegal to call `AddNew` for a recordset whose **Open** member function has not been called. A `CDBException` is thrown if you call `AddNew` for a recordset that cannot be appended to. You can determine whether the recordset is updatable by calling [CanAppend](#canappend).  
   
- 詳細については、次の記事を参照してください:[レコード セット: レコード更新のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md)、[レコード セット: 追加、更新、およびレコードの削除 (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)、および[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)です。  
+ For more information, see the following articles: [Recordset: How Recordsets Update Records (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md), [Recordset: Adding, Updating, and Deleting Records (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md), and [Transaction (ODBC)](../../data/odbc/transaction-odbc.md).  
   
-### <a name="example"></a>例  
- 記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
+### <a name="example"></a>Example  
+ See the article [Transaction: Performing a Transaction in a Recordset (ODBC)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md).  
   
-##  <a name="canappend"></a>CRecordset::CanAppend  
- 以前に開いたレコード セットが、新しいレコードを追加することができるかどうかを判断します。  
+##  <a name="canappend"></a>  CRecordset::CanAppend  
+ Determines whether the previously opened recordset allows you to add new records.  
   
 ```  
 BOOL CanAppend() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、レコード セットは、新しいレコードを追加できます。それ以外の場合 0 を返します。 `CanAppend`読み取り専用とレコード セットを開いた場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset allows adding new records; otherwise 0. `CanAppend` will return 0 if you opened the recordset as read-only.  
   
-##  <a name="canbookmark"></a>値  
- レコード セットが、ブックマークを使用してレコードをマークすることができるかどうかを判断します。  
+##  <a name="canbookmark"></a>  CRecordset::CanBookmark  
+ Determines whether the recordset allows you to mark records using bookmarks.  
   
 ```  
 BOOL CanBookmark() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットは、ブックマークをサポートしている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset supports bookmarks; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は独立して、 **crecordset::usebookmarks**オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。 `CanBookmark`特定の ODBC ドライバーとカーソルがサポート ブックマークを入力するかどうかを示します。 **Crecordset::usebookmarks**はサポートされていれば、ブックマークが使用できるかどうかを示します。  
+### <a name="remarks"></a>Remarks  
+ This function is independent of the **CRecordset::useBookmarks** option in the `dwOptions` parameter of the [Open](#open) member function. `CanBookmark` indicates whether the given ODBC driver and cursor type support bookmarks. **CRecordset::useBookmarks** indicates whether bookmarks will be available, provided they are supported.  
   
 > [!NOTE]
->  順方向専用レコード セットでは、ブックマークはサポートされていません。  
+>  Bookmarks are not supported on forward-only recordsets.  
   
- ブックマークとレコード セットの移動の詳細については、記事を参照してください。[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)と[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)です。  
+ For more information about bookmarks and recordset navigation, see the articles [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md) and [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).  
   
-##  <a name="cancel"></a>CRecordset::Cancel  
- 実行中の非同期操作または 2 番目のスレッドからのプロセスのいずれかのデータ ソースのキャンセルを要求します。  
+##  <a name="cancel"></a>  CRecordset::Cancel  
+ Requests that the data source cancel either an asynchronous operation in progress or a process from a second thread.  
   
 ```  
 void Cancel();
 ```  
   
-### <a name="remarks"></a>コメント  
- MFC ODBC クラスに非同期処理が使用できなくに注意してください。非同期操作を実行する ODBC API 関数を直接に呼び出す必要があります**SQLSetConnectOption**です。 詳細についてを参照してください「関数の非同期実行」、 *ODBC SDK プログラマー ガイド*です。  
+### <a name="remarks"></a>Remarks  
+ Note that the MFC ODBC classes no longer use asynchronous processing; to perform an asychronous operation, you must directly call the ODBC API function **SQLSetConnectOption**. For more information, see the topic "Executing Functions Asynchronously" in the *ODBC SDK Programmer's Guide*.  
   
-##  <a name="cancelupdate"></a>CRecordset::CancelUpdate  
- 保留中の原因で、更新をキャンセル、[編集](#edit)または[AddNew](#addnew)操作、前に[更新](#update)と呼びます。  
+##  <a name="cancelupdate"></a>  CRecordset::CancelUpdate  
+ Cancels any pending updates, caused by an [Edit](#edit) or [AddNew](#addnew) operation, before [Update](#update) is called.  
   
 ```  
 void CancelUpdate();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!NOTE]
->  このメンバー関数はバルク行フェッチ、このようなレコード セットを呼び出すことはできませんのでを使用しているレコード セットで適用できません**編集**、 `AddNew`、または**更新**です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  This member function is not applicable on recordsets that are using bulk row fetching, since such recordsets cannot call **Edit**, `AddNew`, or **Update**. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- 自動ダーティ フィールド チェックが有効になっている場合`CancelUpdate`メンバー変数を前の値に復元されます**編集**または`AddNew`が呼び出されたです。 それ以外の場合、その変更は保持されます。 既定では、自動フィールドが有効になって、レコード セットが開かれたときにします。 これを無効にする必要がありますを指定する、 **crecordset::nodirtyfieldcheck**で、`dwOptions`のパラメーター、[開く](#open)メンバー関数。  
+ If automatic dirty field checking is enabled, `CancelUpdate` will restore the member variables to the values they had before **Edit** or `AddNew` was called; otherwise, any value changes will remain. By default, automatic field checking is enabled when the recordset is opened. To disable it, you must specify the **CRecordset::noDirtyFieldCheck** in the `dwOptions` parameter of the [Open](#open) member function.  
   
- データ更新の詳細については、記事を参照してください。[レコード セット: 追加、更新、およびレコードの削除 (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)です。  
+ For more information about updating data, see the article [Recordset: Adding, Updating, and Deleting Records (ODBC)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md).  
   
-##  <a name="canrestart"></a>CRecordset::CanRestart  
- レコード セットでは、呼び出すことによって、クエリを (そのレコードの更新) を再起動できるかどうかを判断、 **Requery**メンバー関数。  
+##  <a name="canrestart"></a>  CRecordset::CanRestart  
+ Determines whether the recordset allows restarting its query (to refresh its records) by calling the **Requery** member function.  
   
 ```  
 BOOL CanRestart() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 再クエリが使用できる場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if requery is allowed; otherwise 0.  
   
-##  <a name="canscroll"></a>CRecordset::CanScroll  
- レコード セットでは、スクロールできるかどうかを判断します。  
+##  <a name="canscroll"></a>  CRecordset::CanScroll  
+ Determines whether the recordset allows scrolling.  
   
 ```  
 BOOL CanScroll() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットがスクロールできる場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset allows scrolling; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- スクロールの詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about scrolling, see the article [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).  
   
-##  <a name="cantransact"></a>CRecordset::CanTransact  
- レコード セットがトランザクションを許可するかどうかを判断します。  
+##  <a name="cantransact"></a>  CRecordset::CanTransact  
+ Determines whether the recordset allows transactions.  
   
 ```  
 BOOL CanTransact() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットがトランザクションを許可する場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset allows transactions; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see the article [Transaction (ODBC)](../../data/odbc/transaction-odbc.md).  
   
-##  <a name="canupdate"></a>CRecordset::CanUpdate  
- レコード セットを更新できるかどうかを判断します。  
+##  <a name="canupdate"></a>  CRecordset::CanUpdate  
+ Determines whether the recordset can be updated.  
   
 ```  
 BOOL CanUpdate() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、レコード セットを更新することができます。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset can be updated; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 基になるデータ ソースが読み取り専用の場合、または指定した場合、レコード セットを読み取り専用可能性があります**crecordset::readonly**で、`dwOptions`パラメーターは、レコード セットが開かれたときにします。  
+### <a name="remarks"></a>Remarks  
+ A recordset might be read-only if the underlying data source is read-only or if you specified **CRecordset::readOnly** in the `dwOptions` parameter when you opened the recordset.  
   
-##  <a name="checkrowseterror"></a>CRecordset::CheckRowsetError  
- レコードのフェッチ中に生成されたエラーの処理と呼ばれます。  
+##  <a name="checkrowseterror"></a>  CRecordset::CheckRowsetError  
+ Called to handle errors generated during record fetching.  
   
 ```  
 virtual void CheckRowsetError(RETCODE nRetCode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nRetCode`  
- ODBC API 関数には、コードが返されます。 詳細については、「解説」を参照してください。  
+ An ODBC API function return code. For details, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- この仮想メンバー関数は、レコードをフェッチしたときに発生するエラーを処理とバルク行フェッチ中に便利です。 オーバーライドすることを検討することも`CheckRowsetError`独自のエラー処理を実装します。  
+### <a name="remarks"></a>Remarks  
+ This virtual member function handles errors that occur when records are fetched, and is useful during bulk row fetching. You may want to consider overriding `CheckRowsetError` to implement your own error handling.  
   
- `CheckRowsetError`自動的に呼び出されますカーソル ナビゲーション操作では、ように**開く**、 **Requery**、または any**移動**操作します。 ODBC API 関数の戻り値が渡される**SQLExtendedFetch**です。 次の表に、可能な値、`nRetCode`パラメーター。  
+ `CheckRowsetError` is called automatically in a cursor navigation operation, such as **Open**, **Requery**, or any **Move** operation. It is passed the return value of the ODBC API function **SQLExtendedFetch**. The following table lists the possible values for the `nRetCode` parameter.  
   
-|終了|説明|  
+|nRetCode|Description|  
 |--------------|-----------------|  
-|**SQL_SUCCESS**|関数は正常に完了しました追加情報はありません。|  
-|**SQL_SUCCESS_WITH_INFO**|関数が正常に完了して可能性のある重大なエラーをします。 追加情報を呼び出すことによって取得できます**SQLError**です。|  
-|**SQL_NO_DATA_FOUND**|結果セットからすべての行がフェッチされました。|  
-|**SQL_ERROR**|関数が失敗しました。 追加情報を呼び出すことによって取得できます**SQLError**です。|  
-|**SQL_INVALID_HANDLE**|関数は、無効な環境ハンドル、接続ハンドル、またはステートメント ハンドルのため失敗しました。 これは、プログラミング エラーを示します。 追加情報が利用できない**SQLError**です。|  
-|`SQL_STILL_EXECUTING`|非同期的に起動された関数が実行中です。 既定では、MFC は決して渡すことには、この値に注意してください`CheckRowsetError`です。MFC の呼び出しは引き続き**SQLExtendedFetch**返されなくなるまで`SQL_STILL_EXECUTING`です。|  
+|**SQL_SUCCESS**|Function completed successfully; no additional information is available.|  
+|**SQL_SUCCESS_WITH_INFO**|Function completed successfully, possibly with a nonfatal error. Additional information can be obtained by calling **SQLError**.|  
+|**SQL_NO_DATA_FOUND**|All rows from the result set have been fetched.|  
+|**SQL_ERROR**|Function failed. Additional information can be obtained by calling **SQLError**.|  
+|**SQL_INVALID_HANDLE**|Function failed due to an invalid environment handle, connection handle, or statement handle. This indicates a programming error. No additional information is available from **SQLError**.|  
+|`SQL_STILL_EXECUTING`|A function that was started asynchronously is still executing. Note that by default, MFC will never pass this value to `CheckRowsetError`; MFC will continue calling **SQLExtendedFetch** until it no longer returns `SQL_STILL_EXECUTING`.|  
   
- 詳細については**SQLError**を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about **SQLError**, see the Windows SDK. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-##  <a name="close"></a>ような場合  
- レコード セットを閉じます。  
+##  <a name="close"></a>  CRecordset::Close  
+ Closes the recordset.  
   
 ```  
 virtual void Close();
 ```  
   
-### <a name="remarks"></a>コメント  
- ODBC **HSTMT**とレコード セットに割り当てられているフレームワークの割り当てが解除されるすべてのメモリ。 呼び出した後に通常**閉じる**で割り当てられた場合に、C++ のレコード セット オブジェクトを削除する**新しい**です。  
+### <a name="remarks"></a>Remarks  
+ The ODBC **HSTMT** and all memory the framework allocated for the recordset are deallocated. Usually after calling **Close**, you delete the C++ recordset object if it was allocated with **new**.  
   
- 呼び出すことができます**開く**呼び出した後にもう一度**閉じる**です。 これにより、レコード セット オブジェクトを再利用できます。 呼び出す場合は**Requery**です。  
+ You can call **Open** again after calling **Close**. This lets you reuse the recordset object. The alternative is to call **Requery**.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase 17](../../mfc/codesnippet/cpp/crecordset-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#17](../../mfc/codesnippet/cpp/crecordset-class_1.cpp)]  
   
-##  <a name="crecordset"></a>CRecordset::CRecordset  
- `CRecordset` オブジェクトを構築します。  
+##  <a name="crecordset"></a>  CRecordset::CRecordset  
+ Constructs a `CRecordset` object.  
   
 ```  
 CRecordset(CDatabase* pDatabase = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDatabase`  
- ポインターが含まれています、`CDatabase`オブジェクトまたは値**NULL**です。 しない場合**NULL**と`CDatabase`オブジェクトの**を開く**データ ソースに接続するメンバー関数が呼び出されていない、レコード セットが、ファイルを開いて、それ自体の中にしようとしています。**開く**を呼び出します。 渡す場合**NULL**、`CDatabase`オブジェクトが構築され、ClassWizard でレコード セット クラスの派生を指定したデータ ソース情報を使用するために接続します。  
+ Contains a pointer to a `CDatabase` object or the value **NULL**. If not **NULL** and the `CDatabase` object's **Open** member function has not been called to connect it to the data source, the recordset attempts to open it for you during its own **Open** call. If you pass **NULL**, a `CDatabase` object is constructed and connected for you using the data source information you specified when you derived your recordset class with ClassWizard.  
   
-### <a name="remarks"></a>コメント  
- 使用するか`CRecordset`直接からアプリケーションに固有のクラスを派生または`CRecordset`です。 ClassWizard を使用するには、レコード セット クラスを派生します。  
+### <a name="remarks"></a>Remarks  
+ You can either use `CRecordset` directly or derive an application-specific class from `CRecordset`. You can use ClassWizard to derive your recordset classes.  
   
 > [!NOTE]
->  派生クラス*必要があります*独自のコンス トラクターを指定します。 派生クラスのコンス トラクターで、コンス トラクターを呼び出します`CRecordset::CRecordset`、に沿って、適切なパラメーターを渡します。  
+>  A derived class *must* supply its own constructor. In the constructor of your derived class, call the constructor `CRecordset::CRecordset`, passing the appropriate parameters along to it.  
   
- 渡す**NULL**がレコード セット コンス トラクターに、`CDatabase`オブジェクトが構築され、自動的に結合します。 これは、方法を使う構築し、接続を必要としない、`CDatabase`レコード セットを構築する前にオブジェクト。  
+ Pass **NULL** to your recordset constructor to have a `CDatabase` object constructed and connected for you automatically. This is a useful shorthand that does not require you to construct and connect a `CDatabase` object prior to constructing your recordset.  
   
-### <a name="example"></a>例  
- 詳細については、記事を参照してください。[レコード セット: テーブル (ODBC) のクラスの宣言](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md)です。  
+### <a name="example"></a>Example  
+ For more information, see the article [Recordset: Declaring a Class for a Table (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md).  
   
-##  <a name="delete"></a>CRecordset::Delete  
- 現在のレコードを削除します。  
+##  <a name="delete"></a>  CRecordset::Delete  
+ Deletes the current record.  
   
 ```  
 virtual void Delete();
 ```  
   
-### <a name="remarks"></a>コメント  
- 削除が成功した後、レコード セットのフィールド データ メンバーは、Null 値に設定されのいずれかを明示的に呼び出す必要があります、**移動**削除されたレコードを移動するために機能します。 削除されたレコードから移動するに戻るにことはできません。 データ ソースは、トランザクションをサポートすることができます、**削除**呼び出し、トランザクションの一部です。 詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)です。  
+### <a name="remarks"></a>Remarks  
+ After a successful deletion, the recordset's field data members are set to a Null value, and you must explicitly call one of the **Move** functions in order to move off the deleted record. Once you move off the deleted record, it is not possible to return to it. If the data source supports transactions, you can make the **Delete** call part of a transaction. For more information, see the article [Transaction (ODBC)](../../data/odbc/transaction-odbc.md).  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合を呼び出すことはできません**削除**です。 これにより、失敗したアサーションが発生します。 クラス`CRecordset`メカニズムが用意されていないデータの一括行を更新するには、ODBC API 関数を使用して、独自の関数を記述することができます**SQLSetPos**です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you cannot call **Delete**. This will result in a failed assertion. Although class `CRecordset` does not provide a mechanism for updating bulk rows of data, you can write your own functions by using the ODBC API function **SQLSetPos**. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
 > [!CAUTION]
->  レコード セットは更新可能である必要があり、ありますの有効なレコードの現在のレコード セットを呼び出すとき**削除**です。 それ以外の場合、エラーが発生します。 たとえば、レコードを削除してを呼び出す前に、新しいレコードをスクロールしません**削除**もう一度、**削除**をスロー、 [CDBException](../../mfc/reference/cdbexception-class.md)です。  
+>  The recordset must be updatable and there must be a valid record current in the recordset when you call **Delete**; otherwise, an error occurs. For example, if you delete a record but do not scroll to a new record before you call **Delete** again, **Delete** throws a [CDBException](../../mfc/reference/cdbexception-class.md).  
   
- 異なり[AddNew](#addnew)と[編集](#edit)への呼び出し**削除**への呼び出しが続かない[更新](#update)です。 場合、**削除**呼び出しが失敗した場合は、変更されていないフィールドのデータ メンバーのままにします。  
+ Unlike [AddNew](#addnew) and [Edit](#edit), a call to **Delete** is not followed by a call to [Update](#update). If a **Delete** call fails, the field data members are left unchanged.  
   
-### <a name="example"></a>例  
- この例では、関数のフレームで作成されたレコード セットを示します。 例では、ことを想定の`m_dbCust`、型のメンバー変数`CDatabase`既にデータ ソースに接続されています。  
+### <a name="example"></a>Example  
+ This example shows a recordset created on the frame of a function. The example assumes the existence of `m_dbCust`, a member variable of type `CDatabase` already connected to the data source.  
   
- [!code-cpp[NVC_MFCDatabase # 18](../../mfc/codesnippet/cpp/crecordset-class_2.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#18](../../mfc/codesnippet/cpp/crecordset-class_2.cpp)]  
   
-##  <a name="dobulkfieldexchange"></a>CRecordset::DoBulkFieldExchange  
- バルク行をデータ ソースからレコード セットへのデータを交換するには、呼び出されます。 レコード フィールド エクス チェンジ (Bulk RFX) の一括を実装します。  
+##  <a name="dobulkfieldexchange"></a>  CRecordset::DoBulkFieldExchange  
+ Called to exchange bulk rows of data from the data source to the recordset. Implements bulk record field exchange (Bulk RFX).  
   
 ```  
 virtual void DoBulkFieldExchange(CFieldExchange* pFX);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](../../mfc/reference/cfieldexchange-class.md)オブジェクト。 フレームワークは、フィールド交換操作のコンテキストを指定する、このオブジェクトは、既に設定しました。  
+ A pointer to a [CFieldExchange](../../mfc/reference/cfieldexchange-class.md) object. The framework will already have set up this object to specify a context for the field exchange operation.  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチが実装された場合、フレームワークは、レコード セット オブジェクトにデータ ソースからデータを自動的に転送するには、このメンバー関数を呼び出します。 `DoBulkFieldExchange`レコード セットの選択用の SQL ステートメント文字列内のパラメーターのプレース ホルダーに存在する場合も、パラメーターのデータ メンバーをバインドします。  
+### <a name="remarks"></a>Remarks  
+ When bulk row fetching is implemented, the framework calls this member function to automatically transfer data from the data source to your recordset object. `DoBulkFieldExchange` also binds your parameter data members, if any, to parameter placeholders in the SQL statement string for the recordset's selection.  
   
- バルク行フェッチが実装されていない場合、フレームワークによって呼び出されます[DoFieldExchange](#dofieldexchange)です。 バルク行フェッチを実装する必要がありますを指定する、`CRecordset::useMultiRowFetch`のオプション、`dwOptions`内のパラメーター、[開く](#open)メンバー関数。  
+ If bulk row fetching is not implemented, the framework calls [DoFieldExchange](#dofieldexchange). To implement bulk row fetching, you must specify the `CRecordset::useMultiRowFetch` option of the `dwOptions` parameter in the [Open](#open) member function.  
   
 > [!NOTE]
-> `DoBulkFieldExchange`派生するクラスを使用している場合にのみ使用できますが`CRecordset`です。 直接からレコード セット オブジェクトを作成した場合`CRecordset`、呼び出す必要があります、 [GetFieldValue](#getfieldvalue)データを取得するメンバー関数。  
+> `DoBulkFieldExchange` is available only if you are using a class derived from `CRecordset`. If you have created a recordset object directly from `CRecordset`, you must call the [GetFieldValue](#getfieldvalue) member function to retrieve data.  
   
- バルク レコード フィールド エクス チェンジ (Bulk RFX) は、レコード フィールド エクス (チェンジ RFX) に似ています。 データは、レコード セット オブジェクトをデータ ソースから自動的に転送されます。 ただし、呼び出すことはできません`AddNew`、**編集**、**削除**、または**更新**変更をデータ ソースに転送します。 クラス`CRecordset`現在一括データの行を更新するためのメカニズムが用意されていませんただし、ODBC API 関数を使用して、独自の関数を記述することができます**SQLSetPos**です。  
+ Bulk record field exchange (Bulk RFX) is similar to record field exchange (RFX). Data is automatically transferred from the data source to the recordset object. However, you cannot call `AddNew`, **Edit**, **Delete**, or **Update** to transfer changes back to the data source. Class `CRecordset` currently does not provide a mechanism for updating bulk rows of data; however, you can write your own functions by using the ODBC API function **SQLSetPos**.  
   
- ClassWizard では、バルク レコード フィールド エクス チェンジ; はサポートされていないことに注意してください。このため、オーバーライドする必要があります`DoBulkFieldExchange`バルク RFX 関数の呼び出しを記述して手動でします。 これらの関数の詳細については、トピックを参照してください。[レコード フィールド エクス チェンジ関数](../../mfc/reference/record-field-exchange-functions.md)です。  
+ Note that ClassWizard does not support bulk record field exchange; therefore, you must override `DoBulkFieldExchange` manually by writing calls to the Bulk RFX functions. For more information about these functions, see the topic [Record Field Exchange Functions](../../mfc/reference/record-field-exchange-functions.md).  
   
- バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。 関連情報の記事を参照してください。[レコード フィールド エクス チェンジ (RFX)](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md). For related information, see the article [Record Field Exchange (RFX)](../../data/odbc/record-field-exchange-rfx.md).  
   
-##  <a name="dofieldexchange"></a>CRecordset::DoFieldExchange  
- レコード セットのフィールド データ メンバーと、データ ソースに対応するレコードの間で (双方向) のデータを交換するには、呼び出されます。 レコード フィールド エクス (チェンジ RFX) をを実装します。  
+##  <a name="dofieldexchange"></a>  CRecordset::DoFieldExchange  
+ Called to exchange data (in both directions) between the field data members of the recordset and the corresponding record on the data source. Implements record field exchange (RFX).  
   
 ```  
 virtual void DoFieldExchange(CFieldExchange* pFX);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pFX`  
- ポインター、 [CFieldExchange](../../mfc/reference/cfieldexchange-class.md)オブジェクト。 フレームワークは、フィールド交換操作のコンテキストを指定する、このオブジェクトは、既に設定しました。  
+ A pointer to a [CFieldExchange](../../mfc/reference/cfieldexchange-class.md) object. The framework will already have set up this object to specify a context for the field exchange operation.  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチが実装されていない場合、フレームワークは、レコード セット オブジェクトのフィールド データ メンバーと、データ ソースの現在のレコードの対応する列の間でデータを自動的に交換するには、このメンバー関数を呼び出します。 `DoFieldExchange`レコード セットの選択用の SQL ステートメント文字列内のパラメーターのプレース ホルダーに存在する場合も、パラメーターのデータ メンバーをバインドします。  
+### <a name="remarks"></a>Remarks  
+ When bulk row fetching is not implemented, the framework calls this member function to automatically exchange data between the field data members of your recordset object and the corresponding columns of the current record on the data source. `DoFieldExchange` also binds your parameter data members, if any, to parameter placeholders in the SQL statement string for the recordset's selection.  
   
- バルク行フェッチが実装されている場合、フレームワークによって呼び出されます[DoBulkFieldExchange](#dobulkfieldexchange)です。 バルク行フェッチを実装する必要がありますを指定する、`CRecordset::useMultiRowFetch`のオプション、`dwOptions`内のパラメーター、[開く](#open)メンバー関数。  
+ If bulk row fetching is implemented, the framework calls [DoBulkFieldExchange](#dobulkfieldexchange). To implement bulk row fetching, you must specify the `CRecordset::useMultiRowFetch` option of the `dwOptions` parameter in the [Open](#open) member function.  
   
 > [!NOTE]
-> `DoFieldExchange`派生するクラスを使用している場合にのみ使用できますが`CRecordset`です。 直接からレコード セット オブジェクトを作成した場合`CRecordset`、呼び出す必要があります、 [GetFieldValue](#getfieldvalue)データを取得するメンバー関数。  
+> `DoFieldExchange` is available only if you are using a class derived from `CRecordset`. If you have created a recordset object directly from `CRecordset`, you must call the [GetFieldValue](#getfieldvalue) member function to retrieve data.  
   
- レコード フィールド エクス チェンジ (RFX) と呼ばれる、フィールドのデータの交換が両方向で動作します。 データ ソースのレコードのフィールドにレコード セット オブジェクトのフィールド データ メンバーと、レコード セット オブジェクトにデータ ソースのレコードからです。  
+ The exchange of field data, called record field exchange (RFX), works in both directions: from the recordset object's field data members to the fields of the record on the data source, and from the record on the data source to the recordset object.  
   
- 唯一の操作を実装する通常実行する必要があります`DoFieldExchange`クラスは、派生したレコード セットを ClassWizard でクラスを作成し、フィールド データ メンバーの名前とデータ型を指定します。 ClassWizard をパラメーター データ メンバーを指定するか、動的に連結する列を処理するために記述するコードを追加することも可能性があります。 詳細については、記事を参照してください。[レコード セット: データ列を動的に結びつける (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)です。  
+ The only action you must normally take to implement `DoFieldExchange` for your derived recordset class is to create the class with ClassWizard and specify the names and data types of the field data members. You might also add code to what ClassWizard writes to specify parameter data members or to deal with any columns you bind dynamically. For more information, see the article [Recordset: Dynamically Binding Data Columns (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md).  
   
- ClassWizard で派生したレコード セット クラスを宣言するときのオーバーライドが書き込まれます`DoFieldExchange`次の例のようを。  
+ When you declare your derived recordset class with ClassWizard, the wizard writes an override of `DoFieldExchange` for you, which resembles the following example:  
   
- [!code-cpp[NVC_MFCDatabase #19](../../mfc/codesnippet/cpp/crecordset-class_3.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#19](../../mfc/codesnippet/cpp/crecordset-class_3.cpp)]  
   
- RFX 関数の詳細については、トピックを参照してください。[レコード フィールド エクス チェンジ関数](../../mfc/reference/record-field-exchange-functions.md)です。  
+ For more information about the RFX functions, see the topic [Record Field Exchange Functions](../../mfc/reference/record-field-exchange-functions.md).  
   
- さらに例と詳細`DoFieldExchange`、記事を参照して[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。 RFX に関する全般情報の記事を参照してください。[レコード フィールド エクス チェンジ](../../data/odbc/record-field-exchange-rfx.md)です。  
+ For further examples and details about `DoFieldExchange`, see the article [Record Field Exchange: How RFX Works](../../data/odbc/record-field-exchange-how-rfx-works.md). For general information about RFX, see the article [Record Field Exchange](../../data/odbc/record-field-exchange-rfx.md).  
   
-##  <a name="edit"></a>CRecordset::Edit  
- 現在のレコードに変更をできます。  
+##  <a name="edit"></a>  CRecordset::Edit  
+ Allows changes to the current record.  
   
 ```  
 virtual void Edit();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出した後**編集**、直接その値をリセットすることにより、フィールド データ メンバーを変更することができます。 後で呼び出すときに、操作が完了、[更新](#update)メンバー関数、データ ソースで変更を保存します。  
+### <a name="remarks"></a>Remarks  
+ After you call **Edit**, you can change the field data members by directly resetting their values. The operation is completed when you subsequently call the [Update](#update) member function to save your changes on the data source.  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合を呼び出すことはできません**編集**です。 これにより、失敗したアサーションが発生します。 クラス`CRecordset`メカニズムが用意されていないデータの一括行を更新するには、ODBC API 関数を使用して、独自の関数を記述することができます**SQLSetPos**です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you cannot call **Edit**. This will result in a failed assertion. Although class `CRecordset` does not provide a mechanism for updating bulk rows of data, you can write your own functions by using the ODBC API function **SQLSetPos**. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- **編集**レコード セットのデータ メンバーの値を保存します。 呼び出す場合**編集**、変更では、まず、**編集**元に 1 つ目の前に、レコードの値を復元する、もう一度**編集**を呼び出します。  
+ **Edit** saves the values of the recordset's data members. If you call **Edit**, make changes, then call **Edit** again, the record's values are restored to what they were before the first **Edit** call.  
   
- 場合によっては、(データを含まない) を Null にすることで、列を更新することがあります。 これを行うには、呼び出す[な](#setfieldnull)のパラメーターを持つ**TRUE** Null です。 このフィールドをマークするこれもにより、更新する列。 場合は、フィールドの値が変更されていない場合でも、データ ソースに書き込まれ、呼び出しを[き](#setfielddirty)のパラメーターを持つ**TRUE**です。 これは、フィールド値の Null であった場合でも機能します。  
+ In some cases, you may want to update a column by making it Null (containing no data). To do so, call [SetFieldNull](#setfieldnull) with a parameter of **TRUE** to mark the field Null; this also causes the column to be updated. If you want a field to be written to the data source even though its value has not changed, call [SetFieldDirty](#setfielddirty) with a parameter of **TRUE**. This works even if the field had the value Null.  
   
- データ ソースは、トランザクションをサポートすることができます、**編集**呼び出し、トランザクションの一部です。 呼び出す必要があります[CDatabase::BeginTrans](../../mfc/reference/cdatabase-class.md#begintrans)呼び出す前に**編集**とレコード セットが開かれた後。 その呼び出し元にも注意してください[CDatabase::CommitTrans](../../mfc/reference/cdatabase-class.md#committrans)呼び出しに代わるものではありません**更新**を完了する、**編集**操作します。 トランザクションの詳細については、クラスを参照してください。 [CDatabase](../../mfc/reference/cdatabase-class.md)です。  
+ If the data source supports transactions, you can make the **Edit** call part of a transaction. Note that you should call [CDatabase::BeginTrans](../../mfc/reference/cdatabase-class.md#begintrans) before calling **Edit** and after the recordset has been opened. Also note that calling [CDatabase::CommitTrans](../../mfc/reference/cdatabase-class.md#committrans) is not a substitute for calling **Update** to complete the **Edit** operation. For more information about transactions, see class [CDatabase](../../mfc/reference/cdatabase-class.md).  
   
- 現在のロック モードによって、レコードが更新されている可能性がありますによってロックされている**編集**が呼び出されるまで**更新**または別のレコードをスクロール中だけにロックされる可能性がありますか、**編集**を呼び出します。 ロック モードを変更する[SetLockingMode](#setlockingmode)です。  
+ Depending on the current locking mode, the record being updated may be locked by **Edit** until you call **Update** or scroll to another record, or it may be locked only during the **Edit** call. You can change the locking mode with [SetLockingMode](#setlockingmode).  
   
- 呼び出す前に新しいレコードをスクロールする場合に、現在のレコードの前の値が復元**更新**です。 A`CDBException`を呼び出す場合にスローされる**編集**更新できないレコード セットまたはかどうかは、現在のレコードはありません。  
+ The previous value of the current record is restored if you scroll to a new record before calling **Update**. A `CDBException` is thrown if you call **Edit** for a recordset that cannot be updated or if there is no current record.  
   
- 詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)と[レコード セット: ロック (ODBC)](../../data/odbc/recordset-locking-records-odbc.md)です。  
+ For more information, see the articles [Transaction (ODBC)](../../data/odbc/transaction-odbc.md) and [Recordset: Locking Records (ODBC)](../../data/odbc/recordset-locking-records-odbc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase #20](../../mfc/codesnippet/cpp/crecordset-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#20](../../mfc/codesnippet/cpp/crecordset-class_4.cpp)]  
   
-##  <a name="flushresultset"></a>CRecordset::FlushResultSet  
- 複数の結果セットがある場合は、定義済みクエリ (ストアド プロシージャ) の次の結果セットを取得します。  
+##  <a name="flushresultset"></a>  CRecordset::FlushResultSet  
+ Retrieves the next result set of a predefined query (stored procedure), if there are multiple result sets.  
   
 ```  
 BOOL FlushResultSet();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 取得する複数の結果セットがある場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if there are more result sets to be retrieved; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す必要があります`FlushResultSet`のみ完全に終了したら現在の結果セットにカーソルを使用します。 次の結果を呼び出してセットを取得するときに注意してください`FlushResultSet`、カーソルを置き、その結果セットでは有効ではなく呼び出す必要があります、 [MoveNext](#movenext)メンバー関数の呼び出し後`FlushResultSet`です。  
+### <a name="remarks"></a>Remarks  
+ You should call `FlushResultSet` only when you are completely finished with the cursor on the current result set. Note that when you retrieve the next result set by calling `FlushResultSet`, your cursor is not valid on that result set; you should call the [MoveNext](#movenext) member function after calling `FlushResultSet`.  
   
- 定義済みのクエリでは、出力パラメーターまたは入出力パラメーターを使用する必要がありますを呼び出した場合`FlushResultSet`返されるまで`FALSE`(値は 0)、これらのパラメーター値を取得するためにします。  
+ If a predefined query uses an output parameter or input/output parameters, you must call `FlushResultSet` until it returns `FALSE` (the value 0), in order to obtain these parameter values.  
   
- `FlushResultSet`ODBC API 関数を呼び出す`SQLMoreResults`です。 場合`SQLMoreResults`返します`SQL_ERROR`または`SQL_INVALID_HANDLE`、し`FlushResultSet`例外がスローされます。 詳細については`SQLMoreResults`を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ `FlushResultSet` calls the ODBC API function `SQLMoreResults`. If `SQLMoreResults` returns `SQL_ERROR` or `SQL_INVALID_HANDLE`, then `FlushResultSet` will throw an exception. For more information about `SQLMoreResults`, see the Windows SDK.  
   
- ストアド プロシージャを呼び出そうとする場合、フィールドにバインドする必要があります`FlushResultSet`です。  
+ Your stored procedure needs to have bound fields if you want to call `FlushResultSet`.  
   
-### <a name="example"></a>例  
- 次のコードが想定する`COutParamRecordset`は、 `CRecordset`-入力パラメーターと出力パラメーター、定義済みのクエリに基づいており、複数の結果セットを持つ派生オブジェクト。 構造に注意してください、 [DoFieldExchange](#dofieldexchange)をオーバーライドします。  
+### <a name="example"></a>Example  
+ The following code assumes that `COutParamRecordset` is a `CRecordset`-derived object based on a predefined query with an input parameter and an output parameter, and having multiple result sets. Note the structure of the [DoFieldExchange](#dofieldexchange) override.  
   
- [!code-cpp[NVC_MFCDatabase # 21](../../mfc/codesnippet/cpp/crecordset-class_5.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#21](../../mfc/codesnippet/cpp/crecordset-class_5.cpp)]  
   
- [!code-cpp[NVC_MFCDatabase # 22](../../mfc/codesnippet/cpp/crecordset-class_6.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#22](../../mfc/codesnippet/cpp/crecordset-class_6.cpp)]  
   
-##  <a name="getbookmark"></a>CRecordset::GetBookmark  
- 現在のレコードのブックマークの値を取得します。  
+##  <a name="getbookmark"></a>  CRecordset::GetBookmark  
+ Obtains the bookmark value for the current record.  
   
 ```  
 void GetBookmark(CDBVariant& varBookmark);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `varBookmark`  
- 参照、 [CDBVariant](../../mfc/reference/cdbvariant-class.md)現在のレコード、ブックマークを表すオブジェクト。  
+ A reference to a [CDBVariant](../../mfc/reference/cdbvariant-class.md) object representing the bookmark on the current record.  
   
-### <a name="remarks"></a>コメント  
- 調べるには、レコード セットで、ブックマークがサポートされているかどうか、呼び出す[調べる](#canbookmark)です。 ブックマークを使用できるようにサポートされている場合に設定する必要があります、 **crecordset::usebookmarks**オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。  
-  
-> [!NOTE]
->  ブックマークはサポートされていないか使用できない場合、呼び出す`GetBookmark`例外がスローされます。 順方向専用レコード セットでは、ブックマークはサポートされていません。  
-  
- `GetBookmark`現在のレコードのブックマークの値を割り当てます、`CDBVariant`オブジェクト。 いつでも別のレコードに移動した後、そのレコードに戻り、呼び出す[SetBookmark](#setbookmark)で対応する`CDBVariant`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ To determine if bookmarks are supported on the recordset, call [CanBookmark](#canbookmark). To make bookmarks available if they are supported, you must set the **CRecordset::useBookmarks** option in the `dwOptions` parameter of the [Open](#open) member function.  
   
 > [!NOTE]
->  特定のレコード セットの操作後のブックマークの有効な不要になった場合があります。 呼び出す場合など、`GetBookmark`続く**Requery**、レコードに戻ることはできません`SetBookmark`です。 呼び出す[CDatabase::GetBookmarkPersistence](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence)を安全に呼び出すことができるかどうかを確認する`SetBookmark`です。  
+>  If bookmarks are unsupported or unavailable, calling `GetBookmark` will result in an exception being thrown. Bookmarks are not supported on forward-only recordsets.  
   
- ブックマークとレコード セットの移動の詳細については、記事を参照してください。[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)と[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)です。  
+ `GetBookmark` assigns the value of the bookmark for the current record to a `CDBVariant` object. To return to that record at any time after moving to a different record, call [SetBookmark](#setbookmark) with the corresponding `CDBVariant` object.  
   
-##  <a name="getdefaultconnect"></a>:Getdefaultconnect  
- 既定の接続文字列を取得するには、呼び出されます。  
+> [!NOTE]
+>  After certain recordset operations, bookmarks may no longer be valid. For example, if you call `GetBookmark` followed by **Requery**, you may not be able to return to the record with `SetBookmark`. Call [CDatabase::GetBookmarkPersistence](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence) to check whether you can safely call `SetBookmark`.  
+  
+ For more information about bookmarks and recordset navigation, see the articles [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md) and [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).  
+  
+##  <a name="getdefaultconnect"></a>  CRecordset::GetDefaultConnect  
+ Called to get the default connection string.  
   
 ```  
 virtual CString GetDefaultConnect();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`既定の接続文字列を格納しています。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the default connection string.  
   
-### <a name="remarks"></a>コメント  
- フレームワークは、レコード セットの基になるデータ ソースの既定の接続文字列を取得するには、このメンバー関数を呼び出します。 ClassWizard では、テーブルと列に関する情報を取得する ClassWizard で使用する、同じデータ ソースを識別することによってのこの関数を実装します。 可能性がありますがわかりますが、アプリケーションの開発中に、この既定の接続に依存するは便利です。 既定の接続は、アプリケーションのユーザーに適したできない可能性があります。 場合は、する必要がありますを再実装この関数は、ClassWizard のバージョンを破棄します。 接続文字列の詳細については、記事を参照してください。[データ ソース (ODBC)](../../data/odbc/data-source-odbc.md)です。  
+### <a name="remarks"></a>Remarks  
+ The framework calls this member function to get the default connection string for the data source on which the recordset is based. ClassWizard implements this function for you by identifying the same data source you use in ClassWizard to get information about tables and columns. You will probably find it convenient to rely on this default connection while developing your application. But the default connection may not be appropriate for users of your application. If that is the case, you should reimplement this function, discarding ClassWizard's version. For more information about connection strings, see the article [Data Source (ODBC)](../../data/odbc/data-source-odbc.md).  
   
-##  <a name="getdefaultsql"></a>CRecordset::GetDefaultSQL  
- 実行する既定の SQL 文字列を取得するには、呼び出されます。  
+##  <a name="getdefaultsql"></a>  CRecordset::GetDefaultSQL  
+ Called to get the default SQL string to execute.  
   
 ```  
 virtual CString GetDefaultSQL();
 ```  
   
-### <a name="return-value"></a>戻り値  
- A`CString`を既定の SQL ステートメントが含まれています。  
+### <a name="return-value"></a>Return Value  
+ A `CString` that contains the default SQL statement.  
   
-### <a name="remarks"></a>コメント  
- フレームワークは、レコード セットの基になる既定の SQL ステートメントを取得するには、このメンバー関数を呼び出します。 これは、テーブル名または SQL**選択**ステートメントです。  
+### <a name="remarks"></a>Remarks  
+ The framework calls this member function to get the default SQL statement on which the recordset is based. This might be a table name or a SQL **SELECT** statement.  
   
- 直接定義していない既定の SQL ステートメントで ClassWizard、レコード セット クラスを宣言することによってと ClassWizard では、このタスクを実行します。  
+ You indirectly define the default SQL statement by declaring your recordset class with ClassWizard, and ClassWizard performs this task for you.  
   
- 独自の SQL ステートメントの文字列が必要な場合`GetSQL`、開かれたときに、レコード セットのレコードを選択するために使用する SQL ステートメントが返されます。 クラスのオーバーライドで、既定の SQL 文字列を編集する`GetDefaultSQL`です。 使用して、定義済みクエリへの呼び出しを指定するなど、**呼び出す**ステートメントです。 (注、編集する場合、`GetDefaultSQL`も変更する必要があります`m_nFields`データ ソース内の列の数と一致する)。  
+ If you need the SQL statement string for your own use, call `GetSQL`, which returns the SQL statement used to select the recordset's records when it was opened. You can edit the default SQL string in your class's override of `GetDefaultSQL`. For example, you could specify a call to a predefined query using a **CALL** statement. (Note, however, that if you edit `GetDefaultSQL`, you also need to modify `m_nFields` to match the number of columns in the data source.)  
   
- 詳細については、記事を参照してください。[レコード セット: テーブル (ODBC) のクラスの宣言](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md)です。  
+ For more information, see the article [Recordset: Declaring a Class for a Table (ODBC)](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md).  
   
 > [!CAUTION]
->  テーブル名は、フレームワークが複数のテーブル名が指定された場合、またはテーブル名を識別できない場合は空になります、**呼び出す**ステートメントを解釈できませんでした。 使用するときに注意してください、**を呼び出す**ステートメントでは、中かっこの間の空白を挿入する必要がありますと**を呼び出す**キーワード、中かっこの前に、または前に空白を挿入する必要がありますも、**選択**キーワード、**を選択**ステートメント。  
+>  The table name will be empty if the framework could not identify a table name, if multiple table names were supplied, or if a **CALL** statement could not be interpreted. Note that when using a **CALL** statement, you must not insert whitespace between the curly brace and the **CALL** keyword, nor should you insert whitespace before the curly brace or before the **SELECT** keyword in a **SELECT** statement.  
   
-##  <a name="getfieldvalue"></a>CRecordset::GetFieldValue  
- 現在のレコードのフィールドのデータを取得します。  
+##  <a name="getfieldvalue"></a>  CRecordset::GetFieldValue  
+ Retrieves field data in the current record.  
   
 ```  
 void GetFieldValue(
@@ -641,17 +699,17 @@ void GetFieldValue(
     CStringW& strValue);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- フィールドの名前。  
+ The name of a field.  
   
  *varValu*e  
- 参照、 [CDBVariant](../../mfc/reference/cdbvariant-class.md)フィールドの値を格納するオブジェクト。  
+ A reference to a [CDBVariant](../../mfc/reference/cdbvariant-class.md) object that will store the field's value.  
   
  `nFieldType`  
- フィールドの ODBC C データ型。 既定値を使用して**DEFAULT_FIELD_TYPE**、強制的に`GetFieldValue`次の表に基づいて SQL データ型から C データ型を判断します。 それ以外の場合、データを直接入力または互換性のあるデータの種類の選択を指定できます。たとえばに任意のデータ型を格納することができます**SQL_C_CHAR**です。  
+ The ODBC C data type of the field. Using the default value, **DEFAULT_FIELD_TYPE**, forces `GetFieldValue` to determine the C data type from the SQL data type, based on the following table. Otherwise, you can specify the data type directly or choose a compatible data type; for example, you can store any data type into **SQL_C_CHAR**.  
   
-|C データ型|SQL データ型|  
+|C data type|SQL data type|  
 |-----------------|-------------------|  
 |**SQL_C_BIT**|**SQL_BIT**|  
 |**SQL_C_UTINYINT**|**SQL_TINYINT**|  
@@ -663,51 +721,51 @@ void GetFieldValue(
 |**SQL_C_CHAR**|**SQL_NUMERICSQL_DECIMALSQL_BIGINTSQL_CHARSQL_VARCHARSQL_LONGVARCHAR**|  
 |**SQL_C_BINARY**|**SQL_BINARYSQL_VARBINARYSQL_LONGVARBINARY**|  
   
- ODBC データ型の詳細については、「SQL データ型」および「C データ型」の付録 D のトピックを参照して、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about ODBC data types, see the topics "SQL Data Types" and "C Data Types" in Appendix D of the Windows SDK.  
   
  `nIndex`  
- フィールドの 0 から始まるインデックス。  
+ The zero-based index of the field.  
   
  `strValue`  
- 参照、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)フィールドの値を格納するオブジェクトは、フィールドのデータ型に関係なく、テキストに変換します。  
+ A reference to a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that will store the field's value converted to text, regardless of the field's data type.  
   
-### <a name="remarks"></a>コメント  
- 名前またはインデックスを使用して、フィールドを参照することができます。 いずれかのフィールドの値を格納することができます、`CDBVariant`オブジェクトまたは`CString`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ You can look up a field either by name or by index. You can store the field value in either a `CDBVariant` object or a `CString` object.  
   
- バルク行フェッチを実装した場合、現在のレコードは常に、行セットの最初のレコードに位置付けられます。 使用する`GetFieldValue`で指定された行セット内のレコード、最初に呼び出す必要があります、 [SetRowsetCursorPosition](#setrowsetcursorposition)その行セット内で目的の行にカーソルを移動するメンバー関数。 呼び出す`GetFieldValue`その行にします。 バルク行フェッチを実装する必要がありますを指定する、`CRecordset::useMultiRowFetch`のオプション、`dwOptions`内のパラメーター、[開く](#open)メンバー関数。  
+ If you have implemented bulk row fetching, the current record is always positioned on the first record in a rowset. To use `GetFieldValue` on a record within a given rowset, you must first call the [SetRowsetCursorPosition](#setrowsetcursorposition) member function to move the cursor to the desired row within that rowset. Then call `GetFieldValue` for that row. To implement bulk row fetching, you must specify the `CRecordset::useMultiRowFetch` option of the `dwOptions` parameter in the [Open](#open) member function.  
   
- 使用することができます`GetFieldValue`を動的にデザイン時に静的にバインドするのではなく、実行時にフィールドを取得します。 たとえば、直接からレコード セット オブジェクトを宣言した場合`CRecordset`、使用する必要があります`GetFieldValue`を取得するフィールドのデータ以外の場合はレコード フィールド エクス チェンジ (RFX)、またはバルク レコード フィールド エクス チェンジ (Bulk RFX) が実装されていません。  
-  
-> [!NOTE]
->  派生することがなく、レコード セット オブジェクトを宣言する場合`CRecordset`、読み込まれた ODBC カーソル ライブラリはありません。 カーソル ライブラリが必要です、レコード セットに少なくとも 1 つのバインドされた列です。ただし、使用`CRecordset`直接、どの列もバインドされています。 メンバー関数は、 [cdatabase::openex](../../mfc/reference/cdatabase-class.md#openex)と[cdatabase::open](../../mfc/reference/cdatabase-class.md#open)カーソル ライブラリが読み込まれるかどうかを制御します。  
-  
- `GetFieldValue`ODBC API 関数を呼び出す**SQLGetData**です。 ドライバーが値を出力する場合**SQL_NO_TOTAL**フィールドの値の実際の長さの`GetFieldValue`例外をスローします。 詳細については**SQLGetData**を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
-  
-### <a name="example"></a>例  
- 次のサンプル コードへの呼び出しを示しています。`GetFieldValue`から直接宣言済みのレコード セット オブジェクトの`CRecordset`します。  
-  
- [!code-cpp[NVC_MFCDatabase # 23](../../mfc/codesnippet/cpp/crecordset-class_7.cpp)]  
+ You can use `GetFieldValue` to dynamically fetch fields at run time rather than statically binding them at design time. For example, if you have declared a recordset object directly from `CRecordset`, you must use `GetFieldValue` to retrieve the field data; record field exchange (RFX), or bulk record field exchange (Bulk RFX), is not implemented.  
   
 > [!NOTE]
->  DAO クラスとは異なり`CDaoRecordset`、`CRecordset`はありません、`SetFieldValue`メンバー関数。 直接オブジェクトを作成する場合`CRecordset`、効果的に読み取り専用であります。  
+>  If you declare a recordset object without deriving from `CRecordset`, do not have the ODBC Cursor Library loaded. The cursor library requires that the recordset have at least one bound column; however, when you use `CRecordset` directly, none of the columns are bound. The member functions [CDatabase::OpenEx](../../mfc/reference/cdatabase-class.md#openex) and [CDatabase::Open](../../mfc/reference/cdatabase-class.md#open) control whether the cursor library will be loaded.  
   
- バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ `GetFieldValue` calls the ODBC API function **SQLGetData**. If your driver outputs the value **SQL_NO_TOTAL** for the actual length of the field value, `GetFieldValue` throws an exception. For more information about **SQLGetData**, see the Windows SDK.  
   
-##  <a name="getodbcfieldcount"></a>CRecordset::GetODBCFieldCount  
- レコード セット オブジェクト内のフィールドの合計数を取得します。  
+### <a name="example"></a>Example  
+ The following sample code illustrates calls to `GetFieldValue` for a recordset object declared directly from `CRecordset`.  
+  
+ [!code-cpp[NVC_MFCDatabase#23](../../mfc/codesnippet/cpp/crecordset-class_7.cpp)]  
+  
+> [!NOTE]
+>  Unlike the DAO class `CDaoRecordset`, `CRecordset` does not have a `SetFieldValue` member function. If you create an object directly from `CRecordset`, it is effectively read-only.  
+  
+ For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
+  
+##  <a name="getodbcfieldcount"></a>  CRecordset::GetODBCFieldCount  
+ Retrieves the total number of fields in your recordset object.  
   
 ```  
 short GetODBCFieldCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットのフィールドの数。  
+### <a name="return-value"></a>Return Value  
+ The number of fields in the recordset.  
   
-### <a name="remarks"></a>コメント  
- レコード セットの作成に関する詳細については、記事を参照してください。[レコード セット: を作成すると、レコード セット (ODBC) を終了](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information about creating recordsets, see the article [Recordset: Creating and Closing Recordsets (ODBC)](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md).  
   
-##  <a name="getodbcfieldinfo"></a>に  
- レコード セット内のフィールドに関する情報を取得します。  
+##  <a name="getodbcfieldinfo"></a>  CRecordset::GetODBCFieldInfo  
+ Obtains information about the fields in the recordset.  
   
 ```  
 void GetODBCFieldInfo(
@@ -720,118 +778,118 @@ void GetODBCFieldInfo(
     CODBCFieldInfo& fieldinfo);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszName`  
- フィールドの名前。  
+ The name of a field.  
   
  `fieldinfo`  
- 参照、`CODBCFieldInfo`構造体。  
+ A reference to a `CODBCFieldInfo` structure.  
   
  `nIndex`  
- フィールドの 0 から始まるインデックス。  
+ The zero-based index of the field.  
   
-### <a name="remarks"></a>コメント  
- 関数の 1 つのバージョンでは、名前、フィールドを検索することができます。 その他のバージョンでは、インデックスを使用してフィールドを検索できます。  
+### <a name="remarks"></a>Remarks  
+ One version of the function lets you look up a field by name. The other version lets you look up a field by index.  
   
- 詳細については、返される情報は、次を参照してください。、 [CODBCFieldInfo](../../mfc/reference/codbcfieldinfo-structure.md)構造体。  
+ For a description about the information returned, see the [CODBCFieldInfo](../../mfc/reference/codbcfieldinfo-structure.md) structure.  
   
- レコード セットの作成に関する詳細については、記事を参照してください。[レコード セット: を作成すると、レコード セット (ODBC) を終了](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md)です。  
+ For more information about creating recordsets, see the article [Recordset: Creating and Closing Recordsets (ODBC)](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md).  
   
-##  <a name="getrecordcount"></a>CRecordset::GetRecordCount  
- レコード セットのサイズを決定します。  
+##  <a name="getrecordcount"></a>  CRecordset::GetRecordCount  
+ Determines the size of the recordset.  
   
 ```  
 long GetRecordCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セット内のレコードの数レコード セットにレコードが含まれていない場合は 0または、レコード カウントを特定できない場合は-1。  
+### <a name="return-value"></a>Return Value  
+ The number of records in the recordset; 0 if the recordset contains no records; or -1 if the record count cannot be determined.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
 > [!CAUTION]
->  レコード カウントが、"high watermark"番号が最大レコードとして保持まだ、ユーザーがレコードを移動すると表示されます。 レコードの合計数は、最後のレコードを超えるユーザーが移動した後にだけ呼ばれます。 パフォーマンス上の理由を呼び出すと、数は更新されません`MoveLast`です。 レコードを自分でカウントを呼び出す`MoveNext`まで繰り返し`IsEOF`0 以外を返します。 使用してレコードを追加する**CRecordset:AddNew**と**更新**のカウントを増やします。 を使用してレコードを削除する`CRecordset::Delete`カウントが減少します。  
+>  The record count is maintained as a "high water mark," the highest-numbered record yet seen as the user moves through the records. The total number of records is only known after the user has moved beyond the last record. For performance reasons, the count is not updated when you call `MoveLast`. To count the records yourself, call `MoveNext` repeatedly until `IsEOF` returns nonzero. Adding a record via **CRecordset:AddNew** and **Update** increases the count; deleting a record via `CRecordset::Delete` decreases the count.  
   
-##  <a name="getrowsetsize"></a>CRecordset::GetRowsetSize  
- 回のフェッチ中に取得する行の数の現在の設定を取得します。  
+##  <a name="getrowsetsize"></a>  CRecordset::GetRowsetSize  
+ Obtains the current setting for the number of rows you wish to retrieve during a given fetch.  
   
 ```  
 DWORD GetRowsetSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 回のフェッチ中に取得する行の数。  
+### <a name="return-value"></a>Return Value  
+ The number of rows to retrieve during a given fetch.  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチを使用しているレコード セットが開かれたときに、既定の行セット サイズが 25 です。それ以外の場合は 1 です。  
+### <a name="remarks"></a>Remarks  
+ If you are using bulk row fetching, the default rowset size when the recordset is opened is 25; otherwise, it is 1.  
   
- バルク行フェッチを実装する必要がありますを指定する、`CRecordset::useMultiRowFetch`オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。 行セット サイズの設定を変更するには、呼び出す[SetRowsetSize](#setrowsetsize)です。  
+ To implement bulk row fetching, you must specify the `CRecordset::useMultiRowFetch` option in the `dwOptions` parameter of the [Open](#open) member function. To change the setting for the rowset size, call [SetRowsetSize](#setrowsetsize).  
   
- バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-##  <a name="getrowsfetched"></a>CRecordset::GetRowsFetched  
- フェッチ後に実際に取得されたレコード数を決定します。  
+##  <a name="getrowsfetched"></a>  CRecordset::GetRowsFetched  
+ Determines how many records were actually retrieved after a fetch.  
   
 ```  
 DWORD GetRowsFetched() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 行の数は、指定されたフェッチ後に、データ ソースから取得します。  
+### <a name="return-value"></a>Return Value  
+ The number of rows retrieved from the data source after a given fetch.  
   
-### <a name="remarks"></a>コメント  
- これは、機能は、バルク行フェッチを実装しているときに便利です。 行セットのサイズが通常フェッチ; から取得する行の数を示しますただし、レコード セット内の行の合計数にも影響行セットの行の数が取得されます。 たとえば、レコード セットに行セット サイズ設定が 4 の 10 個のレコードがある場合は、し、ループ レコード セットを呼び出して`MoveNext`最後の行セットのみに 2 つのレコードになります。  
+### <a name="remarks"></a>Remarks  
+ This is useful when you have implemented bulk row fetching. The rowset size normally indicates how many rows will be retrieved from a fetch; however, the total number of rows in the recordset also affects how many rows will be retrieved in a rowset. For example, if your recordset has 10 records with a rowset size setting of 4, then looping through the recordset by calling `MoveNext` will result in the final rowset having only 2 records.  
   
- バルク行フェッチを実装する必要がありますを指定する、`CRecordset::useMultiRowFetch`オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。 行セットのサイズを指定するには、呼び出す[SetRowsetSize](#setrowsetsize)です。  
+ To implement bulk row fetching, you must specify the `CRecordset::useMultiRowFetch` option in the `dwOptions` parameter of the [Open](#open) member function. To specify the rowset size, call [SetRowsetSize](#setrowsetsize).  
   
- バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase # 24](../../mfc/codesnippet/cpp/crecordset-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#24](../../mfc/codesnippet/cpp/crecordset-class_8.cpp)]  
   
-##  <a name="getrowstatus"></a>CRecordset::GetRowStatus  
- 現在の行セット内の行の状態を取得します。  
+##  <a name="getrowstatus"></a>  CRecordset::GetRowStatus  
+ Obtains the status for a row in the current rowset.  
   
 ```  
 WORD GetRowStatus(WORD wRow) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wRow`  
- 1 から始まる位置の行の現在の行セット。 この値の範囲は 1、行セットのサイズにします。  
+ The one-based position of a row in the current rowset. This value can range from 1 to the size of the rowset.  
   
-### <a name="return-value"></a>戻り値  
- 行の状態値です。 詳細については、「解説」を参照してください。  
+### <a name="return-value"></a>Return Value  
+ A status value for the row. For details, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- `GetRowStatus`返しますまたは、データ ソースからが最後の行に状態の変更を示す値を取得ない行に対応する`wRow`がフェッチされました。 次の表は、可能性のある戻り値の一覧です。  
+### <a name="remarks"></a>Remarks  
+ `GetRowStatus` returns a value that indicates either any change in status to the row since it was last retrieved from the data source, or that no row corresponding to `wRow` was fetched. The following table lists the possible return values.  
   
-|状態値|説明|  
+|Status value|Description|  
 |------------------|-----------------|  
-|`SQL_ROW_SUCCESS`|行は変更されません。|  
-|`SQL_ROW_UPDATED`|行が更新されました。|  
-|`SQL_ROW_DELETED`|行が削除されました。|  
-|`SQL_ROW_ADDED`|行が追加されました。|  
-|`SQL_ROW_ERROR`|行は、エラーのため取得することができます。|  
-|`SQL_ROW_NOROW`|対応する行がない`wRow`です。|  
+|`SQL_ROW_SUCCESS`|The row is unchanged.|  
+|`SQL_ROW_UPDATED`|The row has been updated.|  
+|`SQL_ROW_DELETED`|The row has been deleted.|  
+|`SQL_ROW_ADDED`|The row has been added.|  
+|`SQL_ROW_ERROR`|The row is unretrievable due to an error.|  
+|`SQL_ROW_NOROW`|There is no row that corresponds to `wRow`.|  
   
- 詳細については、ODBC API 関数を参照してください。 **SQLExtendedFetch**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the ODBC API function **SQLExtendedFetch** in the Windows SDK.  
   
-##  <a name="getstatus"></a>CRecordset::GetStatus  
- レコード セットと最後のレコードが認識されているかどうかの現在のレコードのインデックスを決定します。  
+##  <a name="getstatus"></a>  CRecordset::GetStatus  
+ Determines the index of the current record in the recordset and whether the last record has been seen.  
   
 ```  
 void GetStatus(CRecordsetStatus& rStatus) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `rStatus`  
- 参照、 **CRecordsetStatus**オブジェクト。 詳細については、「解説」を参照してください。  
+ A reference to a **CRecordsetStatus** object. See the Remarks section for more information.  
   
-### <a name="remarks"></a>コメント  
- `CRecordset`、インデックスを管理しようとしていますが、特定の状況でこのできない可能性があります。 参照してください[GetRecordCount](#getrecordcount)説明します。  
+### <a name="remarks"></a>Remarks  
+ `CRecordset` attempts to track the index, but under some circumstances this may not be possible. See [GetRecordCount](#getrecordcount) for an explanation.  
   
- **CRecordsetStatus**構造体には、次の形式。  
+ The **CRecordsetStatus** structure has the following form:  
   
  `struct CRecordsetStatus`  
   
@@ -843,282 +901,282 @@ void GetStatus(CRecordsetStatus& rStatus) const;
   
  `};`  
   
- 2 つのメンバー **CRecordsetStatus**次の意味を持ちます。  
+ The two members of **CRecordsetStatus** have the following meanings:  
   
-- **m_lCurrentRecord**既知の場合、レコード セットの現在のレコードの 0 から始まるインデックスが含まれています。 このメンバーを含むインデックスを特定できない場合**AFX_CURRENT_RECORD_UNDEFINED** (-2)。 場合`IsBOF`は**TRUE** (レコード セットを空にする、または先頭レコードの前にスクロールしようとしています)、 **m_lCurrentRecord**に設定されている**AFX_CURRENT_RECORD_BOF** (-1)。 最初のレコードで、設定されている場合に 0 を第 2 1, と記録にします。  
+- **m_lCurrentRecord** Contains the zero-based index of the current record in the recordset, if known. If the index cannot be determined, this member contains **AFX_CURRENT_RECORD_UNDEFINED** (-2). If `IsBOF` is **TRUE** (empty recordset or attempt to scroll before first record), then **m_lCurrentRecord** is set to **AFX_CURRENT_RECORD_BOF** (-1). If on the first record, then it is set to 0, second record 1, and so on.  
   
-- **m_bRecordCountFinal** 0 以外の場合は、レコード セット内のレコードの合計数が決定されました。 レコード セットの先頭からを呼び出すことにより、その一般的にこれ行う必要があります`MoveNext`まで`IsEOF`0 以外を返します。 このメンバーは、0 は場合、によって返されるレコードのカウント`GetRecordCount`-1 ではありませんが、レコードの「ハイ ウォーターマーク」数だけの場合。  
+- **m_bRecordCountFinal** Nonzero if the total number of records in the recordset has been determined. Generally this must be accomplished by starting at the beginning of the recordset and calling `MoveNext` until `IsEOF` returns nonzero. If this member is zero, the record count as returned by `GetRecordCount`, if not -1, is only a "high water mark" count of the records.  
   
-##  <a name="getsql"></a>CRecordset::GetSQL  
- 開かれたときに、レコード セットのレコードを選択するために使用された SQL ステートメントを取得するには、このメンバー関数を呼び出します。  
+##  <a name="getsql"></a>  CRecordset::GetSQL  
+ Call this member function to get the SQL statement that was used to select the recordset's records when it was opened.  
   
 ```  
 const CString& GetSQL() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A **const**への参照、 `CString` SQL ステートメントを含むです。  
+### <a name="return-value"></a>Return Value  
+ A **const** reference to a `CString` that contains the SQL statement.  
   
-### <a name="remarks"></a>コメント  
- これは一般に、SQL になります**選択**ステートメントです。 によって返される文字列`GetSQL`は読み取り専用です。  
+### <a name="remarks"></a>Remarks  
+ This will generally be a SQL **SELECT** statement. The string returned by `GetSQL` is read-only.  
   
- によって返される文字列`GetSQL`通常とは異なる任意の文字列でレコード セットに渡された可能性があります、`lpszSQL`パラメーターを**開く**メンバー関数。 これは、レコード セットに渡される内容に基づく完全な SQL ステートメントを作成するため**開く**、どのような場合がありますで指定した ClassWizard で指定した、**か**と`m_strSort`データ メンバー、およびすべてのパラメーターを指定した可能性があります。 レコード セットがこの SQL ステートメントを作成する方法の詳細については、記事を参照してください[レコード セット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)です。  
+ The string returned by `GetSQL` is typically different from any string you may have passed to the recordset in the `lpszSQL` parameter to the **Open** member function. This is because the recordset constructs a full SQL statement based on what you passed to **Open**, what you specified with ClassWizard, what you may have specified in the **m_strFilter** and `m_strSort` data members, and any parameters you may have specified. For details about how the recordset constructs this SQL statement, see the article [Recordset: How Recordsets Select Records (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md).  
   
 > [!NOTE]
->  呼び出した後にのみ、このメンバー関数を呼び出す[開く](#open)です。  
+>  Call this member function only after calling [Open](#open).  
   
-##  <a name="gettablename"></a>CRecordset::GetTableName  
- レコード セットのクエリの基になる SQL テーブルの名前を取得します。  
+##  <a name="gettablename"></a>  CRecordset::GetTableName  
+ Gets the name of the SQL table on which the recordset's query is based.  
   
 ```  
 const CString& GetTableName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- A **const**への参照、`CString`テーブルを格納しているレコード セットがテーブルに基づく、それ以外の場合、空の文字列の名前します。  
+### <a name="return-value"></a>Return Value  
+ A **const** reference to a `CString` that contains the table name, if the recordset is based on a table; otherwise, an empty string.  
   
-### <a name="remarks"></a>コメント  
- `GetTableName`有効なは、レコード セットが、複数のテーブルまたは定義済みクエリ (ストアド プロシージャ) の結合ではないテーブルに基づいている場合のみです。 名前は、読み取り専用です。  
+### <a name="remarks"></a>Remarks  
+ `GetTableName` is only valid if the recordset is based on a table, not a join of multiple tables or a predefined query (stored procedure). The name is read-only.  
   
 > [!NOTE]
->  呼び出した後にのみ、このメンバー関数を呼び出す[開く](#open)です。  
+>  Call this member function only after calling [Open](#open).  
   
-##  <a name="isbof"></a>CRecordset::IsBOF  
- レコード セットは、最初のレコードの前に位置付けられている場合は 0 以外を返します。 現在のレコードがありません。  
+##  <a name="isbof"></a>  CRecordset::IsBOF  
+ Returns nonzero if the recordset has been positioned before the first record. There is no current record.  
   
 ```  
 BOOL IsBOF() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットにレコードが含まれていない場合、または最初のレコードの前にスクロールした場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset contains no records or if you have scrolled backward before the first record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- レコード セットの最初のレコードの前に位置しているかどうかを学習するレコードにレコードをスクロールする前に、このメンバー関数を呼び出します。 使用することも`IsBOF`と共に`IsEOF`レコード セットがすべてのレコードが含まれていますか空かどうかを確認します。 呼び出した後すぐに**開く**レコード セットに、レコードが含まれていない場合、 `IsBOF` 0 以外を返します。最初のレコードが現在のレコードには、少なくとも 1 つのレコードがレコード セットを開いたときと`IsBOF`0 を返します。  
+### <a name="remarks"></a>Remarks  
+ Call this member function before you scroll from record to record to learn whether you have gone before the first record of the recordset. You can also use `IsBOF` along with `IsEOF` to determine whether the recordset contains any records or is empty. Immediately after you call **Open**, if the recordset contains no records, `IsBOF` returns nonzero.When you open a recordset that has at least one record, the first record is the current record and `IsBOF` returns 0.  
   
- 最初のレコードは、現在のレコードとを呼び出す場合`MovePrev`、`IsBOF`後以外を返します。 場合`IsBOF`呼び出す 0 以外を返しますと`MovePrev`エラーが発生します。 場合`IsBOF`0 以外を返します、現在のレコードが定義されていないと、現在のレコードを必要とする任意のアクション、エラーが発生します。  
+ If the first record is the current record and you call `MovePrev`, `IsBOF` will subsequently return nonzero. If `IsBOF` returns nonzero and you call `MovePrev`, an error occurs. If `IsBOF` returns nonzero, the current record is undefined, and any action that requires a current record will result in an error.  
   
-### <a name="example"></a>例  
- この例では`IsBOF`と`IsEOF`レコード セットを双方向にスクロールすると、レコード セットの制限を検出するためにします。  
+### <a name="example"></a>Example  
+ This example uses `IsBOF` and `IsEOF` to detect the limits of a recordset as the code scrolls through the recordset in both directions.  
   
- [!code-cpp[NVC_MFCDatabase #25](../../mfc/codesnippet/cpp/crecordset-class_9.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#25](../../mfc/codesnippet/cpp/crecordset-class_9.cpp)]  
   
-##  <a name="isdeleted"></a>CRecordset::IsDeleted  
- 現在のレコードが削除されたかどうかを判断します。  
+##  <a name="isdeleted"></a>  CRecordset::IsDeleted  
+ Determines whether the current record has been deleted.  
   
 ```  
 BOOL IsDeleted() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットが削除されたレコードに配置されている場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset is positioned on a deleted record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- レコードをスクロールする場合と`IsDeleted`返します**TRUE** (0 以外)、スクロールして別のレコードに他のレコード セットの操作を実行する前にします。  
+### <a name="remarks"></a>Remarks  
+ If you scroll to a record and `IsDeleted` returns **TRUE** (nonzero), then you must scroll to another record before you can perform any other recordset operations.  
   
- 結果`IsDeleted`レコード セットを指定するかどうかが、更新可能かどうか、レコード セットの種類など、さまざまな要因によって異なります、 **crecordset::skipdeletedrecords**オプションと、ドライバー パックは、レコードを削除するかどうか、レコード セットが開かれたときに、複数のユーザーがあるかどうか。  
+ The result of `IsDeleted` depends on many factors, such as your recordset type, whether your recordset is updatable, whether you specified the **CRecordset::skipDeletedRecords** option when you opened the recordset, whether your driver packs deleted records, and whether there are multiple users.  
   
- 詳細については**crecordset::skipdeletedrecords**とドライバーの梱包を参照してください、[開く](#open)メンバー関数。  
+ For more information about **CRecordset::skipDeletedRecords** and driver packing, see the [Open](#open) member function.  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合は、呼び出す必要はありません`IsDeleted`です。 代わりを呼び出して、 [GetRowStatus](#getrowstatus)メンバー関数。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you should not call `IsDeleted`. Instead, call the [GetRowStatus](#getrowstatus) member function. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-##  <a name="iseof"></a>CRecordset::IsEOF  
- レコード セットは、後の最後のレコードに位置付けられている場合は 0 以外を返します。 現在のレコードがありません。  
+##  <a name="iseof"></a>  CRecordset::IsEOF  
+ Returns nonzero if the recordset has been positioned after the last record. There is no current record.  
   
 ```  
 BOOL IsEOF() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットにレコードが含まれていない場合、または最後のレコードより後にスクロールする場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset contains no records or if you have scrolled beyond the last record; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- レコードからレコード セットの最後のレコードを越えているかどうかを説明するレコードをスクロールするときに、このメンバー関数を呼び出します。 使用することも`IsEOF`レコード セットがすべてのレコードが含まれていますか空かどうかを確認します。 呼び出した後すぐに**開く**レコード セットに、レコードが含まれていない場合、 `IsEOF` 0 以外を返します。 最初のレコードが現在のレコードには、少なくとも 1 つのレコードがレコード セットを開いたときと`IsEOF`0 を返します。  
+### <a name="remarks"></a>Remarks  
+ Call this member function as you scroll from record to record to learn whether you have gone beyond the last record of the recordset. You can also use `IsEOF` to determine whether the recordset contains any records or is empty. Immediately after you call **Open**, if the recordset contains no records, `IsEOF` returns nonzero. When you open a recordset that has at least one record, the first record is the current record and `IsEOF` returns 0.  
   
- 呼び出すときに、最後のレコードが現在のレコードがかどうか`MoveNext`、`IsEOF`後以外を返します。 場合`IsEOF`呼び出す 0 以外を返しますと`MoveNext`エラーが発生します。 場合`IsEOF`0 以外を返します、現在のレコードが定義されていないと、現在のレコードを必要とする任意のアクション、エラーが発生します。  
+ If the last record is the current record when you call `MoveNext`, `IsEOF` will subsequently return nonzero. If `IsEOF` returns nonzero and you call `MoveNext`, an error occurs. If `IsEOF` returns nonzero, the current record is undefined, and any action that requires a current record will result in an error.  
   
-### <a name="example"></a>例  
- 例を参照して[IsBOF](#isbof)です。  
+### <a name="example"></a>Example  
+ See the example for [IsBOF](#isbof).  
   
-##  <a name="isfielddirty"></a>CRecordset::IsFieldDirty  
- 以降、指定されたフィールド データ メンバーが変更されたかどうかを判断[編集](#edit)または[AddNew](#addnew)が呼び出されました。  
+##  <a name="isfielddirty"></a>  CRecordset::IsFieldDirty  
+ Determines whether the specified field data member has been changed since [Edit](#edit) or [AddNew](#addnew) was called.  
   
 ```  
 BOOL IsFieldDirty(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**をフィールドのいずれがダーティかどうかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields are dirty.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたフィールド データ メンバーが呼び出し以降に変更された場合は 0 以外`AddNew`または**編集**。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified field data member has changed since calling `AddNew` or **Edit**; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- すべてのダーティ フィールド データ メンバー内のデータは上を転送レコード、データ ソースへの呼び出しによって、現在のレコードが更新されたときに、[更新](#update)のメンバー関数`CRecordset`(の呼び出しに続く**編集**または`AddNew`)。  
+### <a name="remarks"></a>Remarks  
+ The data in all dirty field data members will be transferred to the record on the data source when the current record is updated by a call to the [Update](#update) member function of `CRecordset` (following a call to **Edit** or `AddNew`).  
   
 > [!NOTE]
->  このメンバー関数では、バルク行フェッチを使用しているレコード セットに適用されません。 実装した場合、バルク行フェッチし、`IsFieldDirty`は常に返します**FALSE**と失敗したアサーションが発生します。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  This member function is not applicable on recordsets that are using bulk row fetching. If you have implemented bulk row fetching, then `IsFieldDirty` will always return **FALSE** and will result in a failed assertion. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- 呼び出す`IsFieldDirty`への呼び出しの前の効果をリセット[き](#setfielddirty)フィールドのダーティ状態が再評価されるためです。 `AddNew`場合は、擬似、null 値と現在のフィールドの値が異なる場合、フィールド ステータスが設定ダーティです。 **編集**大文字と小文字、フィールドの値が異なる場合、キャッシュされた値、フィールドの状態は、ダーティで設定されます。  
+ Calling `IsFieldDirty` will reset the effects of preceding calls to [SetFieldDirty](#setfielddirty) since the dirty status of the field is re-evaluated. In the `AddNew` case, if the current field value differs from the pseudo null value, the field status is set dirty. In the **Edit** case, if the field value differs from the cached value, then the field status is set dirty.  
   
- `IsFieldDirty`によって実装され[DoFieldExchange](#dofieldexchange)です。  
+ `IsFieldDirty` is implemented through [DoFieldExchange](#dofieldexchange).  
   
- ダーティ フラグの詳細については、記事を参照してください。[レコード セット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)です。  
+ For more information on the dirty flag, see the article [Recordset: How Recordsets Select Records (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md).  
   
-##  <a name="isfieldnull"></a>CRecordset::IsFieldNull  
- 現在のレコードで指定されたフィールドが Null の場合は 0 以外を返します (値はありません)。  
+##  <a name="isfieldnull"></a>  CRecordset::IsFieldNull  
+ Returns nonzero if the specified field in the current record is Null (has no value).  
   
 ```  
 BOOL IsFieldNull(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**をフィールドのいずれかが Null であるかどうかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields are Null.  
   
-### <a name="return-value"></a>戻り値  
- 指定されたフィールド データ メンバーが Null です。 としてフラグが設定された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the specified field data member is flagged as Null; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- レコード セットの指定したフィールド データ メンバーを Null としてマークされているかどうかを決定するには、このメンバー関数を呼び出します。 (データベース用語では、「値を持たない」手段を Null に設定と同じではありませんし**NULL** c++)。フィールド データ メンバーが Null としてフラグが設定した場合は、対象の値はありません、現在のレコードの列として解釈されます。  
+### <a name="remarks"></a>Remarks  
+ Call this member function to determine whether the specified field data member of a recordset has been flagged as Null. (In database terminology, Null means "having no value" and is not the same as **NULL** in C++.) If a field data member is flagged as Null, it is interpreted as a column of the current record for which there is no value.  
   
 > [!NOTE]
->  このメンバー関数では、バルク行フェッチを使用しているレコード セットに適用されません。 実装した場合、バルク行フェッチし、`IsFieldNull`は常に返します**FALSE**と失敗したアサーションが発生します。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  This member function is not applicable on recordsets that are using bulk row fetching. If you have implemented bulk row fetching, then `IsFieldNull` will always return **FALSE** and will result in a failed assertion. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- `IsFieldNull`によって実装され[DoFieldExchange](#dofieldexchange)です。  
+ `IsFieldNull` is implemented through [DoFieldExchange](#dofieldexchange).  
   
-##  <a name="isfieldnullable"></a>CRecordset::IsFieldNullable  
- 現在のレコードで指定したフィールドを Null に設定する (値がない) 場合は 0 以外を返します。  
+##  <a name="isfieldnullable"></a>  CRecordset::IsFieldNullable  
+ Returns nonzero if the specified field in the current record can be set to Null (having no value).  
   
 ```  
 BOOL IsFieldNullable(void* pv);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- 状態を確認するにはフィールド データ メンバーへのポインターまたは**NULL**を Null 値に設定するかどうか、フィールドのいずれかを判断します。  
+ A pointer to the field data member whose status you want to check, or **NULL** to determine if any of the fields can be set to a Null value.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数、指定されたフィールド データ メンバーが"null 値を許容"するかどうかを判断する (できます; に Null 値に設定C++ **NULL** Null の場合、つまり、データベース用語と同じではありません「値を持たない」) です。  
+### <a name="remarks"></a>Remarks  
+ Call this member function to determine whether the specified field data member is "nullable" (can be set to a Null value; C++ **NULL** is not the same as Null, which, in database terminology, means "having no value").  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合を呼び出すことはできません`IsFieldNullable`です。 代わりを呼び出して、 [GetODBCFieldInfo](#getodbcfieldinfo)フィールドを Null 値に設定できるかどうかを決定するメンバー関数。 常に呼び出すことのできる注`GetODBCFieldInfo`バルク行フェッチを実装するかどうかに関係なく、します。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you cannot call `IsFieldNullable`. Instead, call the [GetODBCFieldInfo](#getodbcfieldinfo) member function to determine whether a field can be set to a Null value. Note that you can always call `GetODBCFieldInfo`, regardless of whether you have implemented bulk row fetching. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- Null 値は、フィールド値が必要です。 このようなフィールドを追加またはレコードを更新する場合は Null に設定しようとすると、データ ソースは追加または更新プログラムを拒否し、[更新](#update)例外がスローされます。 呼び出すときに例外が発生した**更新**を呼び出すときではなく、[な](#setfieldnull)します。  
+ A field that cannot be Null must have a value. If you attempt to set a such a field to Null when adding or updating a record, the data source rejects the addition or update, and [Update](#update) will throw an exception. The exception occurs when you call **Update**, not when you call [SetFieldNull](#setfieldnull).  
   
- 使用して**NULL**関数の最初の引数が関数にのみ適用されますの**outputColumn**フィールドいない**param**フィールドです。 インスタンスの呼び出し  
+ Using **NULL** for the first argument of the function will apply the function only to **outputColumn** fields, not **param** fields. For instance, the call  
   
- [!code-cpp[NVC_MFCDatabase # 26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
   
- セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドには影響ありません。  
+ will set only **outputColumn** fields to **NULL**; **param** fields will be unaffected.  
   
- 作業する**param**フィールドで、個々 の実際のアドレスを指定する必要があります**param**など、作業します。  
+ To work on **param** fields, you must supply the actual address of the individual **param** you want to work on, such as:  
   
- [!code-cpp[NVC_MFCDatabase # 27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
   
- つまり、すべて設定することはできません**param**フィールドを**NULL**と同様、 **outputColumn**フィールドです。  
+ This means you cannot set all **param** fields to **NULL**, as you can with **outputColumn** fields.  
   
- `IsFieldNullable`によって実装され[DoFieldExchange](#dofieldexchange)です。  
+ `IsFieldNullable` is implemented through [DoFieldExchange](#dofieldexchange).  
   
-##  <a name="isopen"></a>CRecordset::IsOpen  
- かどうか、レコード セットは既に開いてを決定します。  
+##  <a name="isopen"></a>  CRecordset::IsOpen  
+ Determines if the recordset is already open.  
   
 ```  
 BOOL IsOpen() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の場合、レコード セット オブジェクトの[開いている](#open)または[Requery](#requery)メンバー関数が呼び出されていたため、レコード セットが閉じられましたできません; 0 それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset object's [Open](#open) or [Requery](#requery) member function has previously been called and the recordset has not been closed; otherwise 0.  
   
-##  <a name="m_hstmt"></a>CRecordset::m_hstmt  
- 型の ODBC ステートメントのデータ構造体へのハンドルを含む**HSTMT**レコード セットに関連付けられている。  
+##  <a name="m_hstmt"></a>  CRecordset::m_hstmt  
+ Contains a handle to the ODBC statement data structure, of type **HSTMT**, associated with the recordset.  
   
-### <a name="remarks"></a>コメント  
- ODBC データ ソースには、各クエリに関連付けられている、 **HSTMT**です。  
-  
-> [!CAUTION]
->  使用しないでください**m_hstmt**する前に[開く](#open)呼び出されました。  
-  
- 通常にアクセスする必要はありません、 **HSTMT**を直接 SQL ステートメントの直接の実行にならない場合があります。 `ExecuteSQL`クラスのメンバー関数`CDatabase`の使用例を示します**m_hstmt**です。  
-  
-##  <a name="m_nfields"></a>CRecordset::m_nFields  
- レコード セット クラスのフィールド データ メンバーの数が含まれていますつまり、データ ソースからレコード セットが選択した列の数。  
-  
-### <a name="remarks"></a>コメント  
- レコード セット クラスのコンス トラクターを初期化する必要があります`m_nFields`を正しい値にします。 バルク行フェッチを実装していない場合、ClassWizard は、レコード セット クラスの宣言を使用するときにこの初期化を記述を書き込みます。 手動で記述することもできます。  
-  
- フレームワークは、フィールド データ メンバーと、データ ソースの現在のレコードの対応する列間の相互作用を管理するのに、この番号を使用します。  
+### <a name="remarks"></a>Remarks  
+ Each query to an ODBC data source is associated with an **HSTMT**.  
   
 > [!CAUTION]
->  この数は、「出力列」に登録されている数に対応する必要があります`DoFieldExchange`または`DoBulkFieldExchange`への呼び出し後[SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype)パラメーターを使用して**CFieldExchange::outputColumn**です。  
+>  Do not use **m_hstmt** before [Open](#open) has been called.  
   
- アーティクルの説明に従って、動的に列をバインドすることができます"レコード セット: 動的にバインディングのデータ列です"。 これを行う場合に含まれる数を大きく必要があります`m_nFields`呼び出し rfx 関数または Bulk RFX 関数の数を反映するように、`DoFieldExchange`または`DoBulkFieldExchange`動的にバインドされた列のメンバー関数。  
+ Normally you do not need to access the **HSTMT** directly, but you might need it for direct execution of SQL statements. The `ExecuteSQL` member function of class `CDatabase` provides an example of using **m_hstmt**.  
   
- 詳細については、記事を参照してください。[レコード セット: データ列を動的に結びつける (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)と[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+##  <a name="m_nfields"></a>  CRecordset::m_nFields  
+ Contains the number of field data members in the recordset class; that is, the number of columns selected by the recordset from the data source.  
   
-### <a name="example"></a>例  
- 記事を参照して[レコード フィールド エクス チェンジ: RFX の使い方](../../data/odbc/record-field-exchange-using-rfx.md)です。  
+### <a name="remarks"></a>Remarks  
+ The constructor for the recordset class must initialize `m_nFields` with the correct number. If you have not implemented bulk row fetching, ClassWizard writes this initialization for you when you use it to declare your recordset class. You can also write it manually.  
   
-##  <a name="m_nparams"></a>CRecordset::m_nParams  
- レコード セット クラスのパラメーター データ メンバーの数が含まれていますつまり、パラメーターの数は、レコード セットのクエリで渡されます。  
-  
-### <a name="remarks"></a>コメント  
- クラスのコンス トラクターを初期化する必要があります、レコード セット クラスにパラメーター データ メンバーがある場合は、`m_nParams`を正しい値にします。 値`m_nParams`既定値は 0 です。 手動でパラメーターの数を反映するように、クラス コンス トラクターで初期化を追加する必要があります (を手動で行う必要があります) のパラメーター データ メンバーを追加する場合 (の数とサイズ以上である必要がありますが ' 内のプレース ホルダー、**か**または`m_strSort`文字列)。  
-  
- フレームワークは、レコード セットのクエリをパラメーター化するときに、この番号を使用します。  
+ The framework uses this number to manage interaction between the field data members and the corresponding columns of the current record on the data source.  
   
 > [!CAUTION]
->  この数は、「パラメーター」に登録されている数に対応する必要があります`DoFieldExchange`または`DoBulkFieldExchange`への呼び出し後[SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype)のパラメーター値を持つ**CFieldExchange::inputParam**、 **CFieldExchange::param**、 **CFieldExchange::outputParam**、または**CFieldExchange::inoutParam**です。  
+>  This number must correspond to the number of "output columns" registered in `DoFieldExchange` or `DoBulkFieldExchange` after a call to [SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype) with the parameter **CFieldExchange::outputColumn**.  
   
-### <a name="example"></a>例  
-  記事を参照して[レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)と[レコード フィールド エクス チェンジ: RFX の使い方](../../data/odbc/record-field-exchange-using-rfx.md)です。  
+ You can bind columns dynamically, as explained in the article "Recordset: Dynamically Binding Data Columns." If you do so, you must increase the count in `m_nFields` to reflect the number of RFX or Bulk RFX function calls in your `DoFieldExchange` or `DoBulkFieldExchange` member function for the dynamically bound columns.  
   
-##  <a name="m_pdatabase"></a>CRecordset::m_pDatabase  
- ポインターが含まれています、`CDatabase`データ ソースに使用されるレコード セットが接続されているオブジェクト。  
+ For more information, see the articles [Recordset: Dynamically Binding Data Columns (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md) and [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="remarks"></a>コメント  
- この変数は、2 つの方法で設定されます。 通常、ポインターを渡して、既に接続されている`CDatabase`オブジェクトのレコード セット オブジェクトを構築するときにします。 渡す場合**NULL**代わりに、`CRecordset`を作成、`CDatabase`するオブジェクトを接続します。 どちらの場合、`CRecordset`この変数にポインターを格納します。  
+### <a name="example"></a>Example  
+ See the article [Record Field Exchange: Using RFX](../../data/odbc/record-field-exchange-using-rfx.md).  
   
- 通常は直接不要に格納されているポインターを使用する**m_pDatabase**です。 独自の拡張機能を記述する場合`CRecordset`、ただし、ポインターを使用する必要があります。 たとえば、する必要があります、ポインターをスローする場合、独自`CDBException`s。 必要になるを使用して、同じ処理を行う必要がある場合または`CDatabase`、実行されるトランザクションのタイムアウト設定、または呼び出しなどのオブジェクト、`ExecuteSQL`クラスのメンバー関数`CDatabase`直接 SQL ステートメントを実行します。  
+##  <a name="m_nparams"></a>  CRecordset::m_nParams  
+ Contains the number of parameter data members in the recordset class; that is, the number of parameters passed with the recordset's query.  
   
-##  <a name="m_strfilter"></a>CRecordset::m_strFilter  
- 呼び出す前に、レコード セット オブジェクトを構築した後、その**開く**メンバー関数、このデータ メンバーを使用して格納する、 `CString` SQL を含む**場所**句。  
+### <a name="remarks"></a>Remarks  
+ If your recordset class has any parameter data members, the constructor for the class must initialize `m_nParams` with the correct number. The value of `m_nParams` defaults to 0. If you add parameter data members (which you must do manually) you must also manually add an initialization in the class constructor to reflect the number of parameters (which must be at least as large as the number of '' placeholders in your **m_strFilter** or `m_strSort` string).  
   
-### <a name="remarks"></a>コメント  
- レコード セットでは、この文字列を使用して、制約 (フィルター) 中に、選択されたレコード、**開く**または**Requery**を呼び出します。 これは、「すべての販売員カリフォルニア州に基づいた」など、レコードのサブセットを選択するのに便利です ("の状態 = CA") です。 ODBC SQL 構文を**場所**句は、  
+ The framework uses this number when it parameterizes the recordset's query.  
+  
+> [!CAUTION]
+>  This number must correspond to the number of "params" registered in `DoFieldExchange` or `DoBulkFieldExchange` after a call to [SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype) with a parameter value of **CFieldExchange::inputParam**, **CFieldExchange::param**, **CFieldExchange::outputParam**, or **CFieldExchange::inoutParam**.  
+  
+### <a name="example"></a>Example  
+  See the articles [Recordset: Parameterizing a Recordset (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md) and [Record Field Exchange: Using RFX](../../data/odbc/record-field-exchange-using-rfx.md).  
+  
+##  <a name="m_pdatabase"></a>  CRecordset::m_pDatabase  
+ Contains a pointer to the `CDatabase` object through which the recordset is connected to a data source.  
+  
+### <a name="remarks"></a>Remarks  
+ This variable is set in two ways. Typically, you pass a pointer to an already connected `CDatabase` object when you construct the recordset object. If you pass **NULL** instead, `CRecordset` creates a `CDatabase` object for you and connects it. In either case, `CRecordset` stores the pointer in this variable.  
+  
+ Normally you will not directly need to use the pointer stored in **m_pDatabase**. If you write your own extensions to `CRecordset`, however, you might need to use the pointer. For example, you might need the pointer if you throw your own `CDBException`s. Or you might need it if you need to do something using the same `CDatabase` object, such as running transactions, setting timeouts, or calling the `ExecuteSQL` member function of class `CDatabase` to execute SQL statements directly.  
+  
+##  <a name="m_strfilter"></a>  CRecordset::m_strFilter  
+ After you construct the recordset object, but before you call its **Open** member function, use this data member to store a `CString` containing a SQL **WHERE** clause.  
+  
+### <a name="remarks"></a>Remarks  
+ The recordset uses this string to constrain (or filter) the records it selects during the **Open** or **Requery** call. This is useful for selecting a subset of records, such as "all salespersons based in California" ("state = CA"). The ODBC SQL syntax for a **WHERE** clause is  
   
  `WHERE search-condition`  
   
- 含めないようにすることに注意してください、**場所**文字列のキーワードでします。 フレームワークを指定します。  
+ Note that you do not include the **WHERE** keyword in your string. The framework supplies it.  
   
- 配置することで、フィルター文字列をパラメーター化することもできます ' 内のプレース ホルダー、各プレース ホルダーのクラスにパラメーター データ メンバーを宣言して、パラメーターを渡すことで、レコード セットを実行します。 これにより、実行時にフィルターを作成できます。 詳細については、記事を参照してください。[レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)です。  
+ You can also parameterize your filter string by placing '' placeholders in it, declaring a parameter data member in your class for each placeholder, and passing parameters to the recordset at run time. This lets you construct the filter at run time. For more information, see the article [Recordset: Parameterizing a Recordset (ODBC)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md).  
   
- SQL の詳細については**場所**句は、記事を参照して[SQL](../../data/odbc/sql.md)です。 選択して、レコードのフィルター処理する方法の詳細については、記事を参照してください。[レコード セット: レコードのフィルター処理 (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)です。  
+ For more information about SQL **WHERE** clauses, see the article [SQL](../../data/odbc/sql.md). For more information about selecting and filtering records, see the article [Recordset: Filtering Records (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase # 30](../../mfc/codesnippet/cpp/crecordset-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#30](../../mfc/codesnippet/cpp/crecordset-class_12.cpp)]  
   
-##  <a name="m_strsort"></a>CRecordset::m_strSort  
- 呼び出す前に、レコード セット オブジェクトを構築した後、その**開く**メンバー関数、ストアにこのデータ メンバーを使用して、 `CString` SQL を含む**ORDER BY**句。  
+##  <a name="m_strsort"></a>  CRecordset::m_strSort  
+ After you construct the recordset object, but before you call its **Open** member function, use this data member to store a `CString` containing a SQL **ORDER BY** clause.  
   
-### <a name="remarks"></a>コメント  
- レコード セットは、この文字列を使用して、並べ替え中に、選択されたレコード、**開く**または**Requery**呼び出します。 1 つ以上の列をレコード セットを並べ替えるには、この機能を使用することができます。 ODBC SQL 構文を**ORDER BY**句は、  
+### <a name="remarks"></a>Remarks  
+ The recordset uses this string to sort the records it selects during the **Open** or **Requery** call. You can use this feature to sort a recordset on one or more columns. The ODBC SQL syntax for an **ORDER BY** clause is  
   
  `ORDER BY sort-specification [, sort-specification]...`  
   
- 並べ替え仕様は、整数または列の名前です。 (既定では、順序は昇順)、昇順または降順の順序は、並べ替え文字列の列リストに"ASC"または"DESC"を追加しても指定できます。 選択したレコードは、秒のように、次の最初の列が表示されている、最初に並べ替えられます。 たとえば、姓、名、姓で"Customers"レコード セットを注文する可能性があります。 表示できる列の数は、データ ソースに依存します。 詳細については、「[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]」を参照してください。  
+ where a sort-specification is an integer or a column name. You can also specify ascending or descending order (the order is ascending by default) by appending "ASC" or "DESC" to the column list in the sort string. The selected records are sorted first by the first column listed, then by the second, and so on. For example, you might order a "Customers" recordset by last name, then first name. The number of columns you can list depends on the data source. For more information, see the Windows SDK.  
   
- 含めないようにすることに注意してください、 **ORDER BY**文字列のキーワードでします。 フレームワークを指定します。  
+ Note that you do not include the **ORDER BY** keyword in your string. The framework supplies it.  
   
- SQL 句の詳細については、記事を参照してください。 [SQL](../../data/odbc/sql.md)です。 レコードの並べ替えの詳細については、記事を参照してください。[レコード セット: レコードの並べ替え (ODBC)](../../data/odbc/recordset-sorting-records-odbc.md)です。  
+ For more information about SQL clauses, see the article [SQL](../../data/odbc/sql.md). For more information about sorting records, see the article [Recordset: Sorting Records (ODBC)](../../data/odbc/recordset-sorting-records-odbc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase # 31](../../mfc/codesnippet/cpp/crecordset-class_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#31](../../mfc/codesnippet/cpp/crecordset-class_13.cpp)]  
   
-##  <a name="move"></a>CRecordset::Move  
- 前方または後方のいずれか、レコード セット内の現在のレコード ポインターを移動します。  
+##  <a name="move"></a>  CRecordset::Move  
+ Moves the current record pointer within the recordset, either forward or backward.  
   
 ```  
 virtual void Move(
@@ -1126,203 +1184,203 @@ virtual void Move(
     WORD wFetchType = SQL_FETCH_RELATIVE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nRows`  
- 前方または後方に移動する行の数。 正の値は、レコード セットの末尾に向かって前方移動します。 負の値は、先頭に向かって後方移動します。  
+ The number of rows to move forward or backward. Positive values move forward, toward the end of the recordset. Negative values move backward, toward the beginning.  
   
  `wFetchType`  
- 行セットを決定する**移動**がフェッチされます。 詳細については、「解説」を参照してください。  
+ Determines the rowset that **Move** will fetch. For details, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- 場合は 0 の値を渡す場合`nRows`、**移動**; 現在のレコードを更新**移動**、現在は終了`AddNew`または**編集**モードでは、前に、現在のレコードの値を復元し、`AddNew`または**編集**が呼び出されました。  
+### <a name="remarks"></a>Remarks  
+ If you pass a value of 0 for `nRows`, **Move** refreshes the current record; **Move** will end any current `AddNew` or **Edit** mode, and will restore the current record's value before `AddNew` or **Edit** was called.  
   
 > [!NOTE]
->  レコード セット内を移動するときに、削除されたレコードをスキップできません。 参照してください[CRecordset::IsDeleted](#isdeleted)詳細についてはします。 開くと、`CRecordset`で、 **skipDeletedRecords**オプションを設定、**移動**場合アサート、`nRows`パラメーターが 0 です。 この動作は、同じデータを使用して他のクライアント アプリケーションによって削除される行の更新を防止します。 参照してください、`dwOption`パラメーター[開く](#open)の詳細については**skipDeletedRecords**です。  
+>  When you move through a recordset, you cannot skip deleted records. See [CRecordset::IsDeleted](#isdeleted) for more information. When you open a `CRecordset` with the **skipDeletedRecords** option set, **Move** asserts if the `nRows` parameter is 0. This behavior prevents the refresh of rows that are deleted by other client applications using the same data. See the `dwOption` parameter in [Open](#open) for a description of **skipDeletedRecords**.  
   
- **移動**行セットによって、レコード セットの位置を変更します。 値に基づく`nRows`と`wFetchType`、**移動**適切な行セットをフェッチし、最初のレコードを行セットの現在のレコードです。 バルク行フェッチを実装したされない場合、行セットのサイズは常に 1 です。 行セットをフェッチするときに**移動**直接呼び出します、 [CheckRowsetError](#checkrowseterror)メンバー関数からのフェッチで、結果として得られるエラーの処理をします。  
+ **Move** repositions the recordset by rowsets. Based on the values for `nRows` and `wFetchType`, **Move** fetches the appropriate rowset and then makes the first record in that rowset the current record. If you have not implemented bulk row fetching, then the rowset size is always 1. When fetching a rowset, **Move** directly calls the [CheckRowsetError](#checkrowseterror) member function to handle any errors resulting from the fetch.  
   
- 渡すと、値に応じて**移動**は他のと同じ`CRecordset`メンバー関数。 特にの値で`wFetchType`より直感的であるメンバー関数と、多くの場合、現在のレコードを移動するための推奨される方法を示す可能性があります。  
+ Depending on the values you pass, **Move** is equivalent to other `CRecordset` member functions. In particular, the value of `wFetchType` may indicate a member function that is more intuitive and often the preferred method for moving the current record.  
   
- 次の表に、可能な値`wFetchType`、行セットを**移動**がフェッチに基づいて`wFetchType`と`nRows`、およびすべての同等メンバー関数に対応する`wFetchType`です。  
+ The following table lists the possible values for `wFetchType`, the rowset that **Move** will fetch based on `wFetchType` and `nRows`, and any equivalent member function corresponding to `wFetchType`.  
   
-|wFetchType|フェッチされた行セット|同等のメンバー関数|  
+|wFetchType|Fetched rowset|Equivalent member function|  
 |----------------|--------------------|--------------------------------|  
-|`SQL_FETCH_RELATIVE`(既定値)|行セットの開始`nRows`現在の行セットの最初の行からの行。||  
-|`SQL_FETCH_NEXT`|次の行セットです。`nRows`は無視されます。|[MoveNext](#movenext)|  
-|`SQL_FETCH_PRIOR`|前の行セットです。`nRows`は無視されます。|[MovePrev](#moveprev)|  
-|`SQL_FETCH_FIRST`|レコード セットの最初の行セット`nRows`は無視されます。|[MoveFirst](#movefirst)|  
-|`SQL_FETCH_LAST`|レコード セットの最後の完全な行セット`nRows`は無視されます。|[MoveLast](#movelast)|  
-|`SQL_FETCH_ABSOLUTE`|場合`nRows`> 0 で始まる行セット`nRows`レコード セットの先頭からの行。 場合`nRows` < 0,="" the="" rowset="" starting=""> `nRows`レコード セットの末尾から行です。 場合`nRows`= 0、先頭のファイル (BOF) の状態が返されます。|[SetAbsolutePosition](#setabsoluteposition)|  
-|`SQL_FETCH_BOOKMARK`|ブックマーク値を持つは、行で始まる行セット`nRows`です。|[SetBookmark](#setbookmark)|  
+|`SQL_FETCH_RELATIVE` (the default value)|The rowset starting `nRows` row(s) from the first row in the current rowset.||  
+|`SQL_FETCH_NEXT`|The next rowset; `nRows` is ignored.|[MoveNext](#movenext)|  
+|`SQL_FETCH_PRIOR`|The previous rowset; `nRows` is ignored.|[MovePrev](#moveprev)|  
+|`SQL_FETCH_FIRST`|The first rowset in the recordset; `nRows` is ignored.|[MoveFirst](#movefirst)|  
+|`SQL_FETCH_LAST`|The last complete rowset in the recordset; `nRows` is ignored.|[MoveLast](#movelast)|  
+|`SQL_FETCH_ABSOLUTE`|If `nRows` > 0, the rowset starting `nRows` row(s) from the beginning of the recordset. If `nRows` < 0, the rowset starting `nRows` row(s) from the end of the recordset. If `nRows` = 0, then a beginning-of-file (BOF) condition is returned.|[SetAbsolutePosition](#setabsoluteposition)|  
+|`SQL_FETCH_BOOKMARK`|The rowset starting at the row whose bookmark value corresponds to `nRows`.|[SetBookmark](#setbookmark)|  
   
 > [!NOTE]
->  順方向専用レコード セットの場合、**移動**はの値でのみ有効`SQL_FETCH_NEXT`の`wFetchType`します。  
+>  For foward-only recordsets, **Move** is only valid with a value of `SQL_FETCH_NEXT` for `wFetchType`.  
   
 > [!CAUTION]
->  呼び出す**移動**レコード セットにレコードが存在しない場合、例外をスローします。 レコード セットがすべてのレコードを持つかどうかを確認するのには、呼び出す[IsBOF](#isbof)と[IsEOF](#iseof)です。  
+>  Calling **Move** throws an exception if the recordset has no records. To determine whether the recordset has any records, call [IsBOF](#isbof) and [IsEOF](#iseof).  
   
 > [!NOTE]
->  先頭またはレコード セットの末尾を越えてスクロールした場合 (`IsBOF`または`IsEOF`0 以外を返します) を呼び出す、**移動**関数がスローされますが、`CDBException`です。 たとえば場合、 `IsEOF` 0 以外を返しますと`IsBOF`しない、し`MoveNext`、例外がスローされますが、`MovePrev`は表示されません。  
+>  If you have scrolled past the beginning or end of the recordset ( `IsBOF` or `IsEOF` returns nonzero), calling a **Move** function will possibly throw a `CDBException`. For example, if `IsEOF` returns nonzero and `IsBOF` does not, then `MoveNext` will throw an exception, but `MovePrev` will not.  
   
 > [!NOTE]
->  呼び出す場合**移動**現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call **Move** while the current record is being updated or added, the updates are lost without warning.  
   
- レコード セットの移動の詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。 関連情報については、ODBC API 関数を参照してください。 **SQLExtendedFetch**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about recordset navigation, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md). For related information, see the ODBC API function **SQLExtendedFetch** in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDatabase # 28](../../mfc/codesnippet/cpp/crecordset-class_14.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDatabase#28](../../mfc/codesnippet/cpp/crecordset-class_14.cpp)]  
   
-##  <a name="movefirst"></a>CRecordset::MoveFirst  
- 現在のレコードを最初の行セットの最初のレコードに位置付けます。  
+##  <a name="movefirst"></a>  CRecordset::MoveFirst  
+ Makes the first record in the first rowset the current record.  
   
 ```  
 void MoveFirst();
 ```  
   
-### <a name="remarks"></a>コメント  
- かどうかバルク行フェッチが実装されてに関係なく、必ずこのレコード セットの最初のレコード。  
+### <a name="remarks"></a>Remarks  
+ Regardless of whether bulk row fetching has been implemented, this will always be the first record in the recordset.  
   
- 呼び出していない**MoveFirst**レコード セットを開いた直後後。 その時点では、最初のレコード (存在する場合) と、現在のレコードでは自動的にします。  
-  
-> [!NOTE]
->  前方スクロール専用レコードのこのメンバー関数が正しくありません。  
+ You do not have to call **MoveFirst** immediately after you open the recordset. At that time, the first record (if any) is automatically the current record.  
   
 > [!NOTE]
->  レコード セット内を移動するときに、削除されたレコードをスキップできません。 参照してください、 [IsDeleted](#isdeleted)詳細については、メンバー関数。  
+>  This member function is not valid for forward-only recordsets.  
+  
+> [!NOTE]
+>  When you move through a recordset, you cannot skip deleted records. See the [IsDeleted](#isdeleted) member function for details.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 レコード セットがすべてのレコードを持つかどうかを確認するのには、呼び出す`IsBOF`と`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. To determine whether the recordset has any records, call `IsBOF` and `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- レコード セットの移動の詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about recordset navigation, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="example"></a>例  
-  例を参照して[IsBOF](#isbof)です。  
+### <a name="example"></a>Example  
+  See the example for [IsBOF](#isbof).  
   
-##  <a name="movelast"></a>CRecordset::MoveLast  
- 現在のレコードを最後の完全な行セットの最初のレコードに位置付けます。  
+##  <a name="movelast"></a>  CRecordset::MoveLast  
+ Makes the first record in the last complete rowset the current record.  
   
 ```  
 void MoveLast();
 ```  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチを実装したされない場合、レコード セットがあり、行セットのサイズは 1、その`MoveLast`だけレコードに移動最後のレコード セットにします。  
+### <a name="remarks"></a>Remarks  
+ If you have not implemented bulk row fetching, your recordset has a rowset size of 1, so `MoveLast` simply moves to the last record in the recordset.  
   
 > [!NOTE]
->  前方スクロール専用レコードのこのメンバー関数が正しくありません。  
+>  This member function is not valid for forward-only recordsets.  
   
 > [!NOTE]
->  レコード セット内を移動するときに、削除されたレコードをスキップできません。 参照してください、 [IsDeleted](#isdeleted)詳細については、メンバー関数。  
+>  When you move through a recordset, you cannot skip deleted records. See the [IsDeleted](#isdeleted) member function for details.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 レコード セットがすべてのレコードを持つかどうかを確認するのには、呼び出す`IsBOF`と`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. To determine whether the recordset has any records, call `IsBOF` and `IsEOF`.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- レコード セットの移動の詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about recordset navigation, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="example"></a>例  
-  例を参照して[IsBOF](#isbof)です。  
+### <a name="example"></a>Example  
+  See the example for [IsBOF](#isbof).  
   
-##  <a name="movenext"></a>CRecordset::MoveNext  
- 現在のレコードを次の行セットの最初のレコードに位置付けます。  
+##  <a name="movenext"></a>  CRecordset::MoveNext  
+ Makes the first record in the next rowset the current record.  
   
 ```  
 void MoveNext();
 ```  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチを実装したされない場合、レコード セットがあり、行セットのサイズは 1、その`MoveNext`単純に次のレコードに移動します。  
+### <a name="remarks"></a>Remarks  
+ If you have not implemented bulk row fetching, your recordset has a rowset size of 1, so `MoveNext` simply moves to the next record.  
   
 > [!NOTE]
->  レコード セット内を移動するときに、削除されたレコードをスキップできません。 参照してください、 [IsDeleted](#isdeleted)詳細については、メンバー関数。  
+>  When you move through a recordset, you cannot skip deleted records. See the [IsDeleted](#isdeleted) member function for details.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 レコード セットがすべてのレコードを持つかどうかを確認するのには、呼び出す`IsBOF`と`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. To determine whether the recordset has any records, call `IsBOF` and `IsEOF`.  
   
 > [!NOTE]
->  呼び出すことも推奨`IsEOF`呼び出す前に`MoveNext`です。 たとえば、レコード セットの末尾を越えてスクロールした`IsEOF`は 0 以外を返します後続の呼び出しに`MoveNext`例外をスローした場合します。  
+>  It is also recommended that you call `IsEOF` before calling `MoveNext`. For example, if you have scrolled past the end of the recordset, `IsEOF` will return nonzero; a subsequent call to `MoveNext` would throw an exception.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- レコード セットの移動の詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about recordset navigation, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="example"></a>例  
-  例を参照して[IsBOF](#isbof)です。  
+### <a name="example"></a>Example  
+  See the example for [IsBOF](#isbof).  
   
-##  <a name="moveprev"></a>CRecordset::MovePrev  
- 現在のレコードを前の行セットの最初のレコードに位置付けます。  
+##  <a name="moveprev"></a>  CRecordset::MovePrev  
+ Makes the first record in the previous rowset the current record.  
   
 ```  
 void MovePrev();
 ```  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチを実装したされない場合、レコード セットがあり、行セットのサイズは 1、その`MovePrev`単純に前のレコードに移動します。  
+### <a name="remarks"></a>Remarks  
+ If you have not implemented bulk row fetching, your recordset has a rowset size of 1, so `MovePrev` simply moves to the previous record.  
   
 > [!NOTE]
->  前方スクロール専用レコードのこのメンバー関数が正しくありません。  
+>  This member function is not valid for forward-only recordsets.  
   
 > [!NOTE]
->  レコード セット内を移動するときに、削除されたレコードをスキップできません。 参照してください、 [IsDeleted](#isdeleted)詳細については、メンバー関数。  
+>  When you move through a recordset, you cannot skip deleted records. See the [IsDeleted](#isdeleted) member function for details.  
   
 > [!CAUTION]
->  いずれかを呼び出して、**移動**レコード セットにレコードが存在しない場合、関数が例外をスローします。 レコード セットがすべてのレコードを持つかどうかを確認するのには、呼び出す`IsBOF`と`IsEOF`です。  
+>  Calling any of the **Move** functions throws an exception if the recordset has no records. To determine whether the recordset has any records, call `IsBOF` and `IsEOF`.  
   
 > [!NOTE]
->  呼び出すことも推奨`IsBOF`呼び出す前に`MovePrev`です。 たとえば、レコード セットの先頭にスクロールして`IsBOF`は 0 以外を返します後続の呼び出しに`MovePrev`例外をスローした場合します。  
+>  It is also recommended that you call `IsBOF` before calling `MovePrev`. For example, if you have scrolled ahead of the beginning of the recordset, `IsBOF` will return nonzero; a subsequent call to `MovePrev` would throw an exception.  
   
 > [!NOTE]
->  呼び出す場合、**移動**関数を現在のレコードがされている間に更新または追加、更新プログラムは警告なしに失われます。  
+>  If you call any of the **Move** functions while the current record is being updated or added, the updates are lost without warning.  
   
- レコード セットの移動の詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about recordset navigation, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md). For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-### <a name="example"></a>例  
-  例を参照して[IsBOF](#isbof)です。  
+### <a name="example"></a>Example  
+  See the example for [IsBOF](#isbof).  
   
-##  <a name="onsetoptions"></a>CRecordset::OnSetOptions  
- 指定された ODBC ステートメントには、(選択に使用する) オプションを設定すると呼ばれます。  
+##  <a name="onsetoptions"></a>  CRecordset::OnSetOptions  
+ Called to set options (used on selection) for the specified ODBC statement.  
   
 ```  
 virtual void OnSetOptions(HSTMT hstmt);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hstmt`  
- **HSTMT**を設定するオプションは、ODBC ステートメントのです。  
+ The **HSTMT** of the ODBC statement whose options are to be set.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`OnSetOptions`を指定された ODBC ステートメントのオプション (選択に使用される) を設定します。 フレームワークは、レコード セットの最初のオプションを設定するには、このメンバー関数を呼び出します。 `OnSetOptions`スクロール可能なカーソルとカーソルの同時実行のデータ ソースのサポートを決定し、レコード セットのオプションを設定します。 (一方`OnSetOptions`選択操作のために使用`OnSetUpdateOptions`更新操作のために使用します)。  
+### <a name="remarks"></a>Remarks  
+ Call `OnSetOptions` to set options (used on selection) for the specified ODBC statement. The framework calls this member function to set initial options for the recordset. `OnSetOptions` determines the data source's support for scrollable cursors and for cursor concurrency and sets the recordset's options accordingly. (Whereas `OnSetOptions` is used for selection operations, `OnSetUpdateOptions` is used for update operations.)  
   
- オーバーライド`OnSetOptions`ドライバーまたはデータ ソースに固有のオプションを設定します。 たとえば場合は、データ ソースの排他アクセスのオープンをサポートする方が優先`OnSetOptions`その機能を利用するためにします。  
+ Override `OnSetOptions` to set options specific to the driver or the data source. For example, if your data source supports opening for exclusive access, you might override `OnSetOptions` to take advantage of that ability.  
   
- カーソルの詳細については、記事を参照してください。 [ODBC](../../data/odbc/odbc-basics.md)です。  
+ For more information about cursors, see the article [ODBC](../../data/odbc/odbc-basics.md).  
   
-##  <a name="onsetupdateoptions"></a>CRecordset::OnSetUpdateOptions  
- 指定された ODBC ステートメントのオプション (更新プログラムで使用される) を設定すると呼ばれます。  
+##  <a name="onsetupdateoptions"></a>  CRecordset::OnSetUpdateOptions  
+ Called to set options (used on update) for the specified ODBC statement.  
   
 ```  
 virtual void OnSetUpdateOptions(HSTMT hstmt);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hstmt`  
- **HSTMT**を設定するオプションは、ODBC ステートメントのです。  
+ The **HSTMT** of the ODBC statement whose options are to be set.  
   
-### <a name="remarks"></a>コメント  
- 呼び出す`OnSetUpdateOptions`を指定された ODBC ステートメントのオプション (更新プログラムで使用される) を設定します。 フレームワークは、レコード セットからレコードを更新する HSTMT が作成された後に、このメンバー関数を呼び出します。 (一方`OnSetOptions`選択操作のために使用`OnSetUpdateOptions`更新操作のために使用します)。`OnSetUpdateOptions`スクロール可能なカーソルとカーソルの同時実行のデータ ソースのサポートを決定し、レコード セットのオプションを設定します。  
+### <a name="remarks"></a>Remarks  
+ Call `OnSetUpdateOptions` to set options (used on update) for the specified ODBC statement. The framework calls this member function after it creates an HSTMT to update records in a recordset. (Whereas `OnSetOptions` is used for selection operations, `OnSetUpdateOptions` is used for update operations.) `OnSetUpdateOptions` determines the data source's support for scrollable cursors and for cursor concurrency and sets the recordset's options accordingly.  
   
- オーバーライド`OnSetUpdateOptions`をそのステートメントを使用して、データベースにアクセスする前に、ODBC ステートメントのオプションを設定します。  
+ Override `OnSetUpdateOptions` to set options of an ODBC statement before that statement is used to access a database.  
   
- カーソルの詳細については、記事を参照してください。 [ODBC](../../data/odbc/odbc-basics.md)です。  
+ For more information about cursors, see the article [ODBC](../../data/odbc/odbc-basics.md).  
   
-##  <a name="open"></a>:Open  
- テーブルを取得するか、レコードセットが表すクエリを実行して、レコードセットを開きます。  
+##  <a name="open"></a>  CRecordset::Open  
+ Opens the recordset by retrieving the table or performing the query that the recordset represents.  
   
 ```  
 virtual BOOL Open(
@@ -1331,106 +1389,106 @@ virtual BOOL Open(
     DWORD dwOptions = none);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nOpenType`  
- 既定値をそのまま**AFX_DB_USE_DEFAULT_TYPE**、または、次のいずれかの値を使用して、 **enum OpenType**:  
+ Accept the default value, **AFX_DB_USE_DEFAULT_TYPE**, or use one of the following values from the **enum OpenType**:  
   
-- **Crecordset::dynaset**双方向にスクロールできるレコード セット。 レコードのメンバーシップおよび順序は、レコードセットを開いたときに決定されますが、他のユーザーによるデータ値の変更は、フェッチ操作後に表示されます。 ダイナセットは、キーセット ドリブン レコードセットとも呼ばれます。  
+- **CRecordset::dynaset** A recordset with bi-directional scrolling. The membership and ordering of the records are determined when the recordset is opened, but changes made by other users to the data values are visible following a fetch operation. Dynasets are also known as keyset-driven recordsets.  
   
-- **Crecordset::snapshot**双方向にスクロールできる静的レコード セット。 レコードのメンバーシップと順序は、レコードセットを開いたときに決定されます。データ値は、レコードをフェッチしたときに決定されます。 他のユーザーが行った変更は、レコードセットを閉じてから再度開くまで表示されません。  
+- **CRecordset::snapshot** A static recordset with bi-directional scrolling. The membership and ordering of the records are determined when the recordset is opened; the data values are determined when the records are fetched. Changes made by other users are not visible until the recordset is closed and then reopened.  
   
-- **Crecordset::dynamic**双方向にスクロールできるレコード セット。 他のユーザーが行ったメンバーシップ、順序、およびデータ値の変更は、フェッチ操作後に表示されます。 多くの ODBC ドライバーでは、この型のレコードセットはサポートされていません。  
+- **CRecordset::dynamic** A recordset with bi-directional scrolling. Changes made by other users to the membership, ordering, and data values are visible following a fetch operation. Note that many ODBC drivers do not support this type of recordset.  
   
-- **Crecordset::forwardonly**前方スクロールのみが読み取り専用レコード セット。  
+- **CRecordset::forwardOnly** A read-only recordset with only forward scrolling.  
   
-     `CRecordset`、既定値は**crecordset::snapshot**です。 既定値の機構により、Visual C++ ウィザードで既定値の異なる ODBC `CRecordset` と DAO `CDaoRecordset` 両方を操作できます。  
+     For `CRecordset`, the default value is **CRecordset::snapshot**. The default-value mechanism allows the Visual C++ wizards to interact with both ODBC `CRecordset` and DAO `CDaoRecordset`, which have different defaults.  
   
- これらのレコード セットの種類の詳細については、記事を参照してください。[レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)です。 関連情報については、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] の「Using Block and Scrollable Cursors (ブロックとスクロール可能なカーソルの使用)」を参照してください。  
+ For more information about these recordset types, see the article [Recordset (ODBC)](../../data/odbc/recordset-odbc.md). For related information, see the article "Using Block and Scrollable Cursors" in the Windows SDK.  
   
 > [!CAUTION]
->  要求した型がサポートされていない場合、例外がスローされます。  
+>  If the requested type is not supported, the framework throws an exception.  
   
  `lpszSQL`  
- 次のいずれかを含む文字列ポインター:  
+ A string pointer containing one of the following:  
   
--   A **NULL**のポインター。  
+-   A **NULL** pointer.  
   
--   テーブルの名前。  
+-   The name of a table.  
   
--   SQL**選択**ステートメント (SQL オプションで**場所**または**ORDER BY**句)。  
+-   A SQL **SELECT** statement (optionally with a SQL **WHERE** or **ORDER BY** clause).  
   
--   A**呼び出す**定義済みクエリ (ストアド プロシージャ) の名前を指定するステートメント。 中かっこの間にスペースを挿入しないように注意してください、**呼び出す**キーワード。  
+-   A **CALL** statement specifying the name of a predefined query (stored procedure). Be careful that you do not insert whitespace between the curly brace and the **CALL** keyword.  
   
- この文字列の詳細については、「解説」の表と ClassWizard のロールの説明を参照してください。  
+ For more information about this string, see the table and the discussion of ClassWizard's role under Remarks.  
   
 > [!NOTE]
->  結果セットの列の順序は、RFX の順序と一致する必要がありますまたはバルク RFX 関数呼び出しに、 [DoFieldExchange](#dofieldexchange)または[DoBulkFieldExchange](#dobulkfieldexchange)関数オーバーライドします。  
+>  The order of the columns in your result set must match the order of the RFX or Bulk RFX function calls in your [DoFieldExchange](#dofieldexchange) or [DoBulkFieldExchange](#dobulkfieldexchange) function override.  
   
  `dwOptions`  
- 以下に示す値の組み合わせを指定できるビットマスク。 これらの値の一部は同時に指定できません。 既定値は**none**です。  
+ A bitmask which can specify a combination of the values listed below. Some of these are mutually exclusive. The default value is **none**.  
   
-- **Crecordset::none**オプションが設定されていません。 このパラメーター値は、他のすべての値と同時に指定できません。 既定では、レコード セットを更新することができます[編集](#edit)または[削除](#delete)で新しいレコードを追加できると[AddNew](#addnew)です。 更新できるかどうかは、データ ソースと指定する `nOpenType` オプションによって異なります。 バルク追加の最適化は使用できません。 バルク行フェッチは実装されません。 削除されたレコードはレコードセットの移動中にスキップされません。 ブックマークは使用できません。 自動ダーティ フィールド チェックが実装されます。  
+- **CRecordset::none** No options set. This parameter value is mutually exclusive with all other values. By default, the recordset can be updated with [Edit](#edit) or [Delete](#delete) and allows appending new records with [AddNew](#addnew). Updatability depends on the data source as well as on the `nOpenType` option you specify. Optimization for bulk additions is not available. Bulk row fetching will not be implemented. Deleted records will not be skipped during recordset navigation. Bookmarks are not available. Automatic dirty field checking is implemented.  
   
-- **Crecordset::appendonly**許可しない**編集**または**削除**レコード セットでします。 `AddNew` のみ実行できます。 このオプションで相互に排他的**crecordset::readonly**です。  
+- **CRecordset::appendOnly** Do not allow **Edit** or **Delete** on the recordset. Allow `AddNew` only. This option is mutually exclusive with **CRecordset::readOnly**.  
   
-- **Crecordset::readonly**読み取り専用とレコード セットを開きます。 このオプションで相互に排他的**crecordset::appendonly**です。  
+- **CRecordset::readOnly** Open the recordset as read-only. This option is mutually exclusive with **CRecordset::appendOnly**.  
   
-- **Crecordset::optimizebulkadd**同時に多数のレコードを追加する方法を最適化するために準備された SQL ステートメントを使用します。 ODBC API 関数を使用していない場合にのみ適用**SQLSetPos**をレコード セットを更新します。 最新の更新で、ダーティとマークされるフィールドが決まります。 このオプションは `CRecordset::useMultiRowFetch` と同時に指定できません。  
+- **CRecordset::optimizeBulkAdd** Use a prepared SQL statement to optimize adding many records at one time. Applies only if you are not using the ODBC API function **SQLSetPos** to update the recordset. The first update determines which fields are marked dirty. This option is mutually exclusive with `CRecordset::useMultiRowFetch`.  
   
-- `CRecordset::useMultiRowFetch`複数の行を 1 回のフェッチ操作で取得するようにするバルク行フェッチを実装します。 これは、パフォーマンスを向上するために設計された拡張機能です。ただし、バルク レコード フィールド エクスチェンジは ClassWizard ではサポートされていません。 このオプションで相互に排他的**crecordset::optimizebulkadd**です。 指定した場合`CRecordset::useMultiRowFetch`、オプションでは、 **crecordset::nodirtyfieldcheck**自動的に有効 (ダブル バッファリングは使用できません)。 前方スクロール専用レコード セットをオプションで**crecordset::useextendedfetch**自動的に有効です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+- `CRecordset::useMultiRowFetch` Implement bulk row fetching to allow multiple rows to be retrieved in a single fetch operation. This is an advanced feature designed to improve performance; however, bulk record field exchange is not supported by ClassWizard. This option is mutually exclusive with **CRecordset::optimizeBulkAdd**. Note that if you specify `CRecordset::useMultiRowFetch`, then the option **CRecordset::noDirtyFieldCheck** will be turned on automatically (double buffering will not be available); on forward-only recordsets, the option **CRecordset::useExtendedFetch** will be turned on automatically. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-- **Crecordset::skipdeletedrecords**レコード セット内を移動するときに削除されたすべてのレコードをスキップします。 これにより、特定の相対フェッチでパフォーマンスが低下します。 このオプションは前方スクロール専用レコードセットでは無効です。 呼び出す場合[移動](#move)で、`nRows`パラメーターを 0 に設定され、 **crecordset::skipdeletedrecords**オプションを設定、**移動**アサートされます。 注意してください**crecordset::skipdeletedrecords**に似ていますが*ドライバーによるパック*、削除された行を示しますが、レコード セットから削除されます。 ただし、ドライバーによってレコードがパックされる場合、ユーザー自身が削除するレコードだけがスキップされます。レコードセットを開いている間に他のユーザーによって削除されたレコードはスキップされません。 **Crecordset::skipdeletedrecords**は他のユーザーによって削除された行をスキップします。  
+- **CRecordset::skipDeletedRecords** Skip all deleted records when navigating through the recordset. This will slow performance in certain relative fetches. This option is not valid on forward-only recordsets. If you call [Move](#move) with the `nRows` parameter set to 0, and the **CRecordset::skipDeletedRecords** option set, **Move** will assert. Note that **CRecordset::skipDeletedRecords** is similar to *driver packing*, which means that deleted rows are removed from the recordset. However, if your driver packs records, then it will skip only those records that you delete; it will not skip records deleted by other users while the recordset is open. **CRecordset::skipDeletedRecords** will skip rows deleted by other users.  
   
-- **Crecordset::usebookmarks**サポートされている場合、レコード セットでブックマークの使用可能性があります。 ブックマークを使用すると、データの取得速度は低下しますが、データ移動のパフォーマンスが向上します。 前方スクロール専用レコードセットでは無効です。 詳細については、記事を参照してください。[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。  
+- **CRecordset::useBookmarks** May use bookmarks on the recordset, if supported. Bookmarks slow data retrieval but improve performance for data navigation. Not valid on forward-only recordsets. For more information, see the article [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md).  
   
-- **Crecordset::nodirtyfieldcheck**自動ダーティ フィールド チェック (ダブル バッファリング) をオフにします。 これにより、パフォーマンスは向上しますが、`SetFieldDirty` メンバー関数と `SetFieldNull` メンバー関数を呼び出して手動でフィールドをダーティとしてマークする必要があります。`CRecordset` クラスのダブル バッファリングは、`CDaoRecordset` クラスのダブル バッファリングに似ています。 ただし、`CRecordset` では、個別のフィールドに対してダブル バッファリングを有効にできません。すべてのフィールドに対して有効にするか、またはすべてのフィールドに対して無効にします。 オプションを指定する場合は、 `CRecordset::useMultiRowFetch`、し**crecordset::nodirtyfieldcheck**有効になりますが、自動的に`SetFieldDirty`と`SetFieldNull`バルク行フェッチを実装したレコード セットでは使用できません。  
+- **CRecordset::noDirtyFieldCheck** Turn off automatic dirty field checking (double buffering). This will improve performance; however, you must manually mark fields as dirty by calling the `SetFieldDirty` and `SetFieldNull` member functions.Note that double buffering in class `CRecordset` is similar to double buffering in class `CDaoRecordset`. However, in `CRecordset`, you cannot enable double buffering on individual fields; you either enable it for all fields or disable it for all fields. Note that if you specify the option `CRecordset::useMultiRowFetch`, then **CRecordset::noDirtyFieldCheck** will be turned on automatically; however, `SetFieldDirty` and `SetFieldNull` cannot be used on recordsets that implement bulk row fetching.  
   
-- **:Executedirect**準備された SQL ステートメントを使用しないでください。 パフォーマンスを向上させる場合にこのオプションを指定、 **Requery**メンバー関数は呼び出されません。  
+- **CRecordset::executeDirect** Do not use a prepared SQL statement. For improved performance, specify this option if the **Requery** member function will never be called.  
   
-- **Crecordset::useextendedfetch**実装**SQLExtendedFetch**の代わりに**SQLFetch**です。 これは、前方スクロール専用レコードセットに対してバルク行フェッチを実装するために設計されています。 オプションを指定する場合`CRecordset::useMultiRowFetch`、順方向専用レコード セットで、 **crecordset::useextendedfetch**自動的に有効です。  
+- **CRecordset::useExtendedFetch** Implement **SQLExtendedFetch** instead of **SQLFetch**. This is designed for implementing bulk row fetching on forward-only recordsets. If you specify the option `CRecordset::useMultiRowFetch` on a forward-only recordset, then **CRecordset::useExtendedFetch** will be turned on automatically.  
   
-- **Crecordset::userallocmultirowbuffers**ユーザーは、データの格納バッファーを割り当てます。 独自の格納バッファーを割り当てる場合は、このオプションと一緒に `CRecordset::useMultiRowFetch` を使用します。使用しない場合、必要な格納バッファーが自動的に割り当てられます。 詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。 指定する**crecordset::userallocmultirowbuffers**を指定せず`CRecordset::useMultiRowFetch`アサーションは失敗が発生します。  
+- **CRecordset::userAllocMultiRowBuffers** The user will allocate storage buffers for the data. Use this option in conjunction with `CRecordset::useMultiRowFetch` if you want to allocate your own storage; otherwise, the framework will automatically allocate the necessary storage. For more information, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md). Note that specifying **CRecordset::userAllocMultiRowBuffers** without specifying `CRecordset::useMultiRowFetch` will result in a failed assertion.  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の場合、`CRecordset`オブジェクトが正常に開かれたそれ以外の場合は 0 [cdatabase::open](../../mfc/reference/cdatabase-class.md#open) (と呼ばれる) 場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the `CRecordset` object was successfully opened; otherwise 0 if [CDatabase::Open](../../mfc/reference/cdatabase-class.md#open) (if called) returns 0.  
   
-### <a name="remarks"></a>コメント  
- レコードセットによって定義されたクエリを実行するには、このメンバー関数を呼び出す必要があります。 呼び出しの前に**開く**、レコード セット オブジェクトを構築する必要があります。  
+### <a name="remarks"></a>Remarks  
+ You must call this member function to run the query defined by the recordset. Before calling **Open**, you must construct the recordset object.  
   
- このレコード セットのソースへの接続、データが呼び出す前に、レコード セットを作成する方法に依存**開く**です。 渡す場合、 [CDatabase](../../mfc/reference/cdatabase-class.md)このメンバー関数を使用してオブジェクト データ ソースに接続されていないレコード セットのコンス トラクターを[GetDefaultConnect](#getdefaultconnect)しようとするデータベース オブジェクトを開きます。 渡す場合**NULL**コンス トラクターを作成、レコード セットのコンス トラクターを`CDatabase`、オブジェクトおよび**開く**データベース オブジェクトを接続しようとしています。 レコード セットとさまざまな状況で接続を閉じる方法の詳細については、「[閉じる](#close)です。  
+ This recordset's connection to the data source depends on how you construct the recordset before calling **Open**. If you pass a [CDatabase](../../mfc/reference/cdatabase-class.md) object to the recordset constructor that has not been connected to the data source, this member function uses [GetDefaultConnect](#getdefaultconnect) to attempt to open the database object. If you pass **NULL** to the recordset constructor, the constructor constructs a `CDatabase` object for you, and **Open** attempts to connect the database object. For details on closing the recordset and the connection under these varying circumstances, see [Close](#close).  
   
 > [!NOTE]
->  `CRecordset` オブジェクトを使用したデータ ソースへのアクセスは常に共有されます。 `CDaoRecordset` クラスとは異なり、`CRecordset` オブジェクトを使用して排他アクセスでデータ ソースを開くことはできません。  
+>  Access to a data source through a `CRecordset` object is always shared. Unlike the `CDaoRecordset` class, you cannot use a `CRecordset` object to open a data source with exclusive access.  
   
- 呼び出すと**開いている**、クエリ、通常、SQL**選択**ステートメントでは、次の表に示す条件に基づいてレコードを選択します。  
+ When you call **Open**, a query, usually a SQL **SELECT** statement, selects records based on criteria shown in the following table.  
   
-|lpszSQL パラメーターの値|レコードの選択基準|例|  
+|Value of the lpszSQL parameter|Records selected are determined by|Example|  
 |------------------------------------|----------------------------------------|-------------|  
-|**NULL**|`GetDefaultSQL` の返す文字列。||  
-|SQL テーブル名|`DoFieldExchange` または `DoBulkFieldExchange` のテーブル リストのすべての列。|`"Customer"`|  
-|定義済みクエリ (ストアド プロシージャ) の名前|返すためにクエリが定義された列。|`"{call OverDueAccts}"`|  
-|**選択**列リスト**FROM**テーブル リスト|指定したテーブルの指定した列。|`"SELECT CustId, CustName FROM`<br /><br /> `Customer"`|  
+|**NULL**|The string returned by `GetDefaultSQL`.||  
+|SQL table name|All columns of the table-list in `DoFieldExchange` or `DoBulkFieldExchange`.|`"Customer"`|  
+|Predefined query (stored procedure) name|The columns the query is defined to return.|`"{call OverDueAccts}"`|  
+|**SELECT** column-list **FROM** table-list|The specified columns from the specified table(s).|`"SELECT CustId, CustName FROM`<br /><br /> `Customer"`|  
   
 > [!CAUTION]
->  SQL 文字列に余分な空白を挿入しないでください。 中かっこの間にスペースを挿入する場合など、および**を呼び出す**キーワード、MFC は、テーブル名として、SQL 文字列を誤って解釈およびに組み込むため、**選択**ステートメントでは、例外がスローされる原因となります。 同様に、定義済みクエリは、出力パラメーターを使用する場合は空白を挿入しないで中かっこの間および ' 記号です。 中かっこの前に空白を挿入する最後に、必要があります、**呼び出す**ステートメントまたは前に、**選択**キーワード、**選択**ステートメントです。  
+>  Be careful that you do not insert extra whitespace in your SQL string. For example, if you insert whitespace between the curly brace and the **CALL** keyword, MFC will misinterpret the SQL string as a table name and incorporate it into a **SELECT** statement, which will result in an exception being thrown. Similarly, if your predefined query uses an output parameter, do not insert whitespace between the curly brace and the '' symbol. Finally, you must not insert whitespace before the curly brace in a **CALL** statement or before the **SELECT** keyword in a **SELECT** statment.  
   
- 通常のプロシージャでは**NULL**に**開く**です。 この場合、**開く**呼び出し[GetDefaultSQL](#getdefaultsql)です。 派生を使用している場合`CRecordset`クラス、 **GetDefaultSQL** ClassWizard で指定したテーブル名を提供します。 代わりに、その他の情報を `lpszSQL` パラメーターに指定できます。  
+ The usual procedure is to pass **NULL** to **Open**; in this case, **Open** calls [GetDefaultSQL](#getdefaultsql). If you are using a derived `CRecordset` class, **GetDefaultSQL** gives the table name(s) you specified in ClassWizard. You can instead specify other information in the `lpszSQL` parameter.  
   
- ものを渡すと、**開く**クエリの最終的な SQL 文字列を構築 (SQL も**場所**と**ORDER BY**に句が追加されます、`lpszSQL`渡された文字列) し、そのクエリを実行します。 呼び出すことによって構築された文字列を調べることができます[GetSQL](#getsql)呼び出した後**開く**です。 レコード セットの SQL ステートメントを作成して、レコードを選択する詳細については、記事を参照してください[レコード セット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)です。  
+ Whatever you pass, **Open** constructs a final SQL string for the query (the string may have SQL **WHERE** and **ORDER BY** clauses appended to the `lpszSQL` string you passed) and then executes the query. You can examine the constructed string by calling [GetSQL](#getsql) after calling **Open**. For additional details about how the recordset constructs a SQL statement and selects records, see the article [Recordset: How Recordsets Select Records (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md).  
   
- レコードセット クラスのフィールド データ メンバーは、選択したデータの列に結び付けられています。 いくつかのレコードが返された場合、最初のレコードが現在のレコードになります。  
+ The field data members of your recordset class are bound to the columns of the data selected. If any records are returned, the first record becomes the current record.  
   
- フィルターや並べ替えなど、レコード セットのオプションを設定する場合を指定してこれらを呼び出す前に、レコード セット オブジェクトを構築した後、**開く**です。 レコード セットは既に開いてレコード セット内のレコードを更新する場合は、呼び出す[Requery](#requery)です。  
+ If you want to set options for the recordset, such as a filter or sort, specify these after you construct the recordset object but before you call **Open**. If you want to refresh the records in the recordset after the recordset is already open, call [Requery](#requery).  
   
- 詳細については、その他の例を含む、記事をご覧ください。[レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)、[レコード セット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)、および[レコード セット: を作成すると、レコード セット (ODBC) を終了](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md)です。  
+ For more information, including additional examples, see the articles [Recordset (ODBC)](../../data/odbc/recordset-odbc.md), [Recordset: How Recordsets Select Records (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md), and [Recordset: Creating and Closing Recordsets (ODBC)](../../data/odbc/recordset-creating-and-closing-recordsets-odbc.md).  
   
-### <a name="example"></a>例  
- 次のコード例のさまざまなフォームを表示する、**開く**呼び出します。  
+### <a name="example"></a>Example  
+ The following code examples show different forms of the **Open** call.  
   
- [!code-cpp[NVC_MFCDatabase #16](../../mfc/codesnippet/cpp/crecordset-class_15.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#16](../../mfc/codesnippet/cpp/crecordset-class_15.cpp)]  
   
-##  <a name="refreshrowset"></a>CRecordset::RefreshRowset  
- データと現在の行セット内の行の状態を更新します。  
+##  <a name="refreshrowset"></a>  CRecordset::RefreshRowset  
+ Updates the data and the status for a row in the current rowset.  
   
 ```  
 void RefreshRowset(
@@ -1438,204 +1496,204 @@ void RefreshRowset(
     WORD wLockType = SQL_LOCK_NO_CHANGE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wRow`  
- 1 から始まる位置の行の現在の行セット。 この値の範囲は、行セットのサイズに 0 です。  
+ The one-based position of a row in the current rowset. This value can range from zero to the size of the rowset.  
   
  `wLockType`  
- 更新された後に行をロックする方法を示す値です。 詳細については、「解説」を参照してください。  
+ A value indicating how to lock the row after it has been refreshed. For details, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- ゼロの値を渡す場合`wRow`、行セット内のすべての行が更新されます。  
+### <a name="remarks"></a>Remarks  
+ If you pass a value of zero for `wRow`, then every row in the rowset will be refreshed.  
   
- 使用する`RefreshRowset`、する必要がありますバルク行フェッチを実装を指定して、 **CRecordset::useMulitRowFetch**オプション、[開く](#open)メンバー関数。  
+ To use `RefreshRowset`, you must have implemented bulk row fetching by specifying the **CRecordset::useMulitRowFetch** option in the [Open](#open) member function.  
   
- `RefreshRowset`ODBC API 関数を呼び出す**SQLSetPos**です。 `wLockType`パラメーターを指定した後の行のロック状態**SQLSetPos**が実行されます。 次の表に、可能な値`wLockType`です。  
+ `RefreshRowset` calls the ODBC API function **SQLSetPos**. The `wLockType` parameter specifies the lock state of the row after **SQLSetPos** has executed. The following table describes the possible values for `wLockType`.  
   
-|wLockType|説明|  
+|wLockType|Description|  
 |---------------|-----------------|  
-|`SQL_LOCK_NO_CHANGE`(既定値)|ドライバーまたはデータ ソースにより、行は前に、と同じロックまたはロック解除状態でが`RefreshRowset`呼び出されました。|  
-|`SQL_LOCK_EXCLUSIVE`|ドライバーまたはデータ ソースでは、行が排他的ロックします。 すべてのデータ ソースは、この種類のロックをサポートします。|  
-|`SQL_LOCK_UNLOCK`|ドライバーまたはデータ ソースには、行がロック解除します。 すべてのデータ ソースは、この種類のロックをサポートします。|  
+|`SQL_LOCK_NO_CHANGE` (the default value)|The driver or data source ensures that the row is in the same locked or unlocked state as it was before `RefreshRowset` was called.|  
+|`SQL_LOCK_EXCLUSIVE`|The driver or data source locks the row exclusively. Not all data sources support this type of lock.|  
+|`SQL_LOCK_UNLOCK`|The driver or data source unlocks the row. Not all data sources support this type of lock.|  
   
- 詳細については**SQLSetPos**を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about **SQLSetPos**, see the Windows SDK. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-##  <a name="requery"></a>:Requery  
- (更新) を再構築、レコード セット。  
+##  <a name="requery"></a>  CRecordset::Requery  
+ Rebuilds (refreshes) a recordset.  
   
 ```  
 virtual BOOL Requery();
 ```  
   
-### <a name="return-value"></a>戻り値  
- レコード セットが正常に再構築された場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the recordset was successfully rebuilt; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- いくつかのレコードが返された場合、最初のレコードが現在のレコードになります。  
+### <a name="remarks"></a>Remarks  
+ If any records are returned, the first record becomes the current record.  
   
- レコード セットを反映して追加および削除するか、他のユーザーがデータ ソースに対して実行するためには、呼び出すことによってレコード セットをリビルドする必要があります**Requery**です。 レコード セットがダイナセットの場合は、または他のユーザーがその既存のレコード (ただし、追加機能ではない) を構成する更新プログラムを自動的に反映します。 レコード セットがスナップショットの場合は、呼び出す必要があります**Requery**編集内容を他のユーザーだけでなく追加および削除を反映するようにします。  
+ In order for the recordset to reflect the additions and deletions that you or other users are making to the data source, you must rebuild the recordset by calling **Requery**. If the recordset is a dynaset, it automatically reflects updates that you or other users make to its existing records (but not additions). If the recordset is a snapshot, you must call **Requery** to reflect edits by other users as well as additions and deletions.  
   
- ダイナセットまたはスナップショットのいずれかを呼び出す**Requery**いつでも新しいフィルターや並べ替え、または新しいパラメーター値を使用して、レコード セットを再構築します。 新しいフィルターまたは並べ替えプロパティを設定する新しい値を割り当てるを**か**と`m_strSort`呼び出す前に**Requery**です。 新しい値を呼び出す前にパラメーター データ メンバーに割り当てることによって新しいパラメーターの設定**Requery**です。 フィルターと並べ替え文字列が変更されていない場合は、パフォーマンスを向上させると、クエリが再利用できます。  
+ For either a dynaset or a snapshot, call **Requery** any time you want to rebuild the recordset using a new filter or sort, or new parameter values. Set the new filter or sort property by assigning new values to **m_strFilter** and `m_strSort` before calling **Requery**. Set new parameters by assigning new values to parameter data members before calling **Requery**. If the filter and sort strings are unchanged, you can reuse the query, which improves performance.  
   
- レコード セットを再構築する試行が失敗した場合、レコード セットは閉じられます。 呼び出す前に**Requery**、呼び出すことによって、レコード セットを表示できるかどうかを決定できます、`CanRestart`メンバー関数。 `CanRestart`限りませんを**Requery**は成功します。  
+ If the attempt to rebuild the recordset fails, the recordset is closed. Before you call **Requery**, you can determine whether the recordset can be requeried by calling the `CanRestart` member function. `CanRestart` does not guarantee that **Requery** will succeed.  
   
 > [!CAUTION]
->  呼び出す**Requery**を呼び出した後にのみ[開く](#open)です。  
+>  Call **Requery** only after you have called [Open](#open).  
   
-### <a name="example"></a>例  
- この例では、別の並べ替え順序を適用するレコード セットが再構築します。  
+### <a name="example"></a>Example  
+ This example rebuilds a recordset to apply a different sort order.  
   
- [!code-cpp[NVC_MFCDatabase # 29](../../mfc/codesnippet/cpp/crecordset-class_16.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#29](../../mfc/codesnippet/cpp/crecordset-class_16.cpp)]  
   
-##  <a name="setabsoluteposition"></a>CRecordset::SetAbsolutePosition  
- 指定されたレコード番号に対応するレコードのレコード セットを配置します。  
+##  <a name="setabsoluteposition"></a>  CRecordset::SetAbsolutePosition  
+ Positions the recordset on the record corresponding to the specified record number.  
   
 ```  
 void SetAbsolutePosition(long nRows);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nRows`  
- 1 から始まる序数位置、現在のレコードのレコード セット。  
+ The one-based ordinal position for the current record in the recordset.  
   
-### <a name="remarks"></a>コメント  
- `SetAbsolutePosition`この位置を表す序数に基づく現在のレコード ポインターを移動します。  
-  
-> [!NOTE]
->  このメンバー関数は前方スクロール専用レコードでは無効です。  
-  
- ODBC レコード セットの絶対位置は 1 に設定は、レコード セットの最初のレコードを指します0 に設定は、ファイルの先頭 (BOF) の位置を指します。  
-  
- 負の値を渡すこともできます`SetAbsolutePosition`です。 ここでは、レコード セットの位置は、レコード セットの末尾から評価されます。 たとえば、`SetAbsolutePosition( -1 )`レコード セットの最後のレコードを現在のレコード ポインターを移動します。  
+### <a name="remarks"></a>Remarks  
+ `SetAbsolutePosition` moves the current record pointer based on this ordinal position.  
   
 > [!NOTE]
->  絶対位置は、レコード番号の代わりとして使用するものではありません。 ブックマークは、まだ保持して、レコードの位置変更前のレコードが削除されたとき以降を指定された位置を返すための推奨される方法です。 さらに、することはできません確実に実行する場合は、レコード セットが再作成された SQL ステートメントを使用して、使用して作成された場合を除き、レコード セット内の各レコードの順序が保証されないために、特定のレコードが同じ絶対位置を持つこと、 **ORDER BY**句。  
+>  This member function is not valid on forward-only recordsets.  
   
- レコード セットの移動とブックマークの詳細については、記事を参照してください。[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)と[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)です。  
+ For ODBC recordsets, an absolute position setting of 1 refers to the first record in the recordset; a setting of 0 refers to the beginning-of-file (BOF) position.  
   
-##  <a name="setbookmark"></a>CRecordset::SetBookmark  
- 指定されたブックマークを含むレコードをレコード セットに配置します。  
+ You can also pass negative values to `SetAbsolutePosition`. In this case the recordset's position is evaluated from the end of the recordset. For example, `SetAbsolutePosition( -1 )` moves the current record pointer to the last record in the recordset.  
+  
+> [!NOTE]
+>  Absolute position is not intended to be used as a surrogate record number. Bookmarks are still the recommended way of retaining and returning to a given position, since a record's position changes when preceding records are deleted. In addition, you cannot be assured that a given record will have the same absolute position if the recordset is re-created again because the order of individual records within a recordset is not guaranteed unless it is created with a SQL statement using an **ORDER BY** clause.  
+  
+ For more information about recordset navigation and bookmarks, see the articles [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md) and [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md).  
+  
+##  <a name="setbookmark"></a>  CRecordset::SetBookmark  
+ Positions the recordset on the record containing the specified bookmark.  
   
 ```  
 void SetBookmark(const CDBVariant& varBookmark);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `varBookmark`  
- 参照、 [CDBVariant](../../mfc/reference/cdbvariant-class.md)特定のレコードのブックマークの値を含むオブジェクト。  
+ A reference to a [CDBVariant](../../mfc/reference/cdbvariant-class.md) object containing the bookmark value for a specific record.  
   
-### <a name="remarks"></a>コメント  
- 調べるには、レコード セットで、ブックマークがサポートされているかどうか、呼び出す[調べる](#canbookmark)です。 ブックマークを使用できるようにサポートされている場合に設定する必要があります、 **crecordset::usebookmarks**オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。  
-  
-> [!NOTE]
->  ブックマークはサポートされていないか使用できない場合、呼び出す`SetBookmark`例外がスローされます。 順方向専用レコード セットでは、ブックマークはサポートされていません。  
-  
- 現在のレコードのブックマークを最初に取得するを呼び出す[GetBookmark](#getbookmark)、するブックマークの値を保存、`CDBVariant`オブジェクト。 呼び出してそのレコードを返すことができます、後で`SetBookmark`保存されているブックマークの値を使用します。  
+### <a name="remarks"></a>Remarks  
+ To determine if bookmarks are supported on the recordset, call [CanBookmark](#canbookmark). To make bookmarks available if they are supported, you must set the **CRecordset::useBookmarks** option in the `dwOptions` parameter of the [Open](#open) member function.  
   
 > [!NOTE]
->  レコード セットの特定の操作後に、呼び出す前に、ブックマークの永続性をチェックする必要があります`SetBookmark`です。 持つブックマークを取得する場合など、`GetBookmark`し**Requery**ブックマークは有効でなくなる可能性があります。 呼び出す[CDatabase::GetBookmarkPersistence](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence)を安全に呼び出すことができるかどうかを確認する`SetBookmark`です。  
+>  If bookmarks are unsupported or unavailable, calling `SetBookmark` will result in an exception being thrown. Bookmarks are not supported on forward-only recordsets.  
   
- ブックマークとレコード セットの移動の詳細については、記事を参照してください。[レコード セット: ブックマークと絶対位置 (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md)と[レコード セット: スクロール (ODBC)](../../data/odbc/recordset-scrolling-odbc.md)です。  
+ To first retrieve the bookmark for the current record, call [GetBookmark](#getbookmark), which saves the bookmark value to a `CDBVariant` object. Later, you can return to that record by calling `SetBookmark` using the saved bookmark value.  
   
-##  <a name="setfielddirty"></a>CRecordset::SetFieldDirty  
- フィールド データ メンバーを変更なしまたは変更されると、レコード セットのフラグを設定します。  
+> [!NOTE]
+>  After certain recordset operations, you should check the bookmark persistence before calling `SetBookmark`. For example, if you retrieve a bookmark with `GetBookmark` and then call **Requery**, the bookmark may no longer be valid. Call [CDatabase::GetBookmarkPersistence](../../mfc/reference/cdatabase-class.md#getbookmarkpersistence) to check whether you can safely call `SetBookmark`.  
+  
+ For more information about bookmarks and recordset navigation, see the articles [Recordset: Bookmarks and Absolute Positions (ODBC)](../../data/odbc/recordset-bookmarks-and-absolute-positions-odbc.md) and [Recordset: Scrolling (ODBC)](../../data/odbc/recordset-scrolling-odbc.md).  
+  
+##  <a name="setfielddirty"></a>  CRecordset::SetFieldDirty  
+ Flags a field data member of the recordset as changed or as unchanged.  
   
 ```  
 void SetFieldDirty(void* pv, BOOL bDirty = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- レコード セットのフィールド データ メンバーのアドレスを格納または**NULL**です。 場合**NULL**、レコード セット内のすべてのフィールド データ メンバーのフラグが付けられます。 (C++ **NULL**は Null の場合と同じデータベース用語では、「値を持たない」を意味する)。  
+ Contains the address of a field data member in the recordset or **NULL**. If **NULL**, all field data members in the recordset are flagged. (C++ **NULL** is not the same as Null in database terminology, which means "having no value.")  
   
  `bDirty`  
- **TRUE**かどうか、フィールド データ メンバーは「ダーティ」(変更されている) としてマークされます。 それ以外の場合**FALSE**かどうか、フィールド データ メンバーは「クリーンアップ」(変更なし) としてフラグが付けられます。  
+ **TRUE** if the field data member is to be flagged as "dirty" (changed). Otherwise **FALSE** if the field data member is to be flagged as "clean" (unchanged).  
   
-### <a name="remarks"></a>コメント  
- フィールドを変更されないとしてマークすることにより、フィールドは更新されません結果、SQL トラフィックも少なくて済みます。  
+### <a name="remarks"></a>Remarks  
+ Marking fields as unchanged ensures the field is not updated and results in less SQL traffic.  
   
 > [!NOTE]
->  このメンバー関数では、バルク行フェッチを使用しているレコード セットに適用されません。 実装した場合、バルク行フェッチし、`SetFieldDirty`アサーションは失敗が発生します。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  This member function is not applicable on recordsets that are using bulk row fetching. If you have implemented bulk row fetching, then `SetFieldDirty` will result in a failed assertion. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- フレームワークは、レコード フィールド エクス (チェンジ RFX) メカニズムによって、データ ソースのレコードに書き込まが確認するためのフィールド データ メンバーを変更します。 フィールドの値を変更すると、通常、フィールド ダーティは自動的に設定を呼び出すことはほとんどありません必要がありますので`SetFieldDirty`が自分で必要があります、列が明示的に更新またはフィールド データ メンバーには、どのような値に関係なく挿入を確認してください。  
+ The framework marks changed field data members to ensure they will be written to the record on the data source by the record field exchange (RFX) mechanism. Changing the value of a field generally sets the field dirty automatically, so you will seldom need to call `SetFieldDirty` yourself, but you might sometimes want to ensure that columns will be explicitly updated or inserted regardless of what value is in the field data member.  
   
 > [!CAUTION]
->  このメンバー関数を呼び出した後にのみ[編集](#edit)または[AddNew](#addnew)です。  
+>  Call this member function only after you have called [Edit](#edit) or [AddNew](#addnew).  
   
- 使用して**NULL**関数の最初の引数が関数にのみ適用されますの**outputColumn**フィールドいない**param**フィールドです。 インスタンスの呼び出し  
+ Using **NULL** for the first argument of the function will apply the function only to **outputColumn** fields, not **param** fields. For instance, the call  
   
- [!code-cpp[NVC_MFCDatabase # 26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
   
- セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドには影響ありません。  
+ will set only **outputColumn** fields to **NULL**; **param** fields will be unaffected.  
   
- 作業する**param**フィールドで、個々 の実際のアドレスを指定する必要があります**param**など、作業します。  
+ To work on **param** fields, you must supply the actual address of the individual **param** you want to work on, such as:  
   
- [!code-cpp[NVC_MFCDatabase # 27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
   
- つまり、すべて設定することはできません**param**フィールドを**NULL**と同様、 **outputColumn**フィールドです。  
+ This means you cannot set all **param** fields to **NULL**, as you can with **outputColumn** fields.  
   
-##  <a name="setfieldnull"></a>CRecordset::SetFieldNull  
- レコード セットのフィールド データ メンバー (具体的には値を持たない) Null または null 以外のフラグを設定します。  
+##  <a name="setfieldnull"></a>  CRecordset::SetFieldNull  
+ Flags a field data member of the recordset as Null (specifically having no value) or as non-Null.  
   
 ```  
 void SetFieldNull(void* pv, BOOL bNull = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pv`  
- レコード セットのフィールド データ メンバーのアドレスを格納または**NULL**です。 場合**NULL**、レコード セット内のすべてのフィールド データ メンバーのフラグが付けられます。 (C++ **NULL**は Null の場合と同じデータベース用語では、「値を持たない」を意味する)。  
+ Contains the address of a field data member in the recordset or **NULL**. If **NULL**, all field data members in the recordset are flagged. (C++ **NULL** is not the same as Null in database terminology, which means "having no value.")  
   
  `bNull`  
- 以外の場合は、フィールド データ メンバーが値 (Null) がないものとしてフラグが付けられます。 それ以外の場合は 0 場合は、フィールド データ メンバーは Null としてフラグが付けられます。  
+ Nonzero if the field data member is to be flagged as having no value (Null). Otherwise 0 if the field data member is to be flagged as non-Null.  
   
-### <a name="remarks"></a>コメント  
- レコード セットに新しいレコードを追加すると、すべてのフィールド データ メンバーは、最初に Null 値に設定し、「ダーティ」(変更されている) フラグが付けられます。 データ ソースからレコードを取得するときにその列既に値があるかが Null です。  
+### <a name="remarks"></a>Remarks  
+ When you add a new record to a recordset, all field data members are initially set to a Null value and flagged as "dirty" (changed). When you retrieve a record from a data source, its columns either already have values or are Null.  
   
 > [!NOTE]
->  バルク行フェッチを使用しているレコード セットでこのメンバー関数を呼び出さないでください。 バルク行フェッチを実装した場合は、呼び出す`SetFieldNull`結果アサーションは失敗します。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  Do not call this member function on recordsets that are using bulk row fetching. If you have implemented bulk row fetching, calling `SetFieldNull` results in a failed assertion. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- 具体的には呼び出し、値を持っていないと、現在のレコードのフィールドを指定する場合`SetFieldNull`で`bNull`'éý' **TRUE**に Null としてフラグを設定します。 フィールドが以前に設定された場合 Null とするようになりましたする値を単にその新しい値を設定します。 Null フラグを削除する必要はありません`SetFieldNull`です。 フィールドが Null を指定できるかどうかを確認するのには、呼び出す`IsFieldNullable`です。  
+ If you specifically wish to designate a field of the current record as not having a value, call `SetFieldNull` with `bNull` set to **TRUE** to flag it as Null. If a field was previously marked Null and you now want to give it a value, simply set its new value. You do not have to remove the Null flag with `SetFieldNull`. To determine whether the field is allowed to be Null, call `IsFieldNullable`.  
   
 > [!CAUTION]
->  このメンバー関数を呼び出した後にのみ[編集](#edit)または[AddNew](#addnew)です。  
+>  Call this member function only after you have called [Edit](#edit) or [AddNew](#addnew).  
   
- 使用して**NULL**関数の最初の引数が関数にのみ適用されますの**outputColumn**フィールドいない**param**フィールドです。 インスタンスの呼び出し  
+ Using **NULL** for the first argument of the function will apply the function only to **outputColumn** fields, not **param** fields. For instance, the call  
   
- [!code-cpp[NVC_MFCDatabase # 26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#26](../../mfc/codesnippet/cpp/crecordset-class_10.cpp)]  
   
- セットのみが**outputColumn**フィールドを**NULL**です。**param**フィールドには影響ありません。  
+ will set only **outputColumn** fields to **NULL**; **param** fields will be unaffected.  
   
- 作業する**param**フィールドで、個々 の実際のアドレスを指定する必要があります**param**など、作業します。  
+ To work on **param** fields, you must supply the actual address of the individual **param** you want to work on, such as:  
   
- [!code-cpp[NVC_MFCDatabase # 27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
+ [!code-cpp[NVC_MFCDatabase#27](../../mfc/codesnippet/cpp/crecordset-class_11.cpp)]  
   
- つまり、すべて設定することはできません**param**フィールドを**NULL**と同様、 **outputColumn**フィールドです。  
+ This means you cannot set all **param** fields to **NULL**, as you can with **outputColumn** fields.  
   
 > [!NOTE]
->  Null の場合への呼び出しにパラメーターを設定するときに`SetFieldNull`レコード セットが開かれている結果アサーションで前にします。 この例では、呼び出す[SetParamNull](#setparamnull)です。  
+>  When setting parameters to Null, a call to `SetFieldNull` before the recordset is opened results in an assertion. In this case, call [SetParamNull](#setparamnull).  
   
- `SetFieldNull`によって実装され[DoFieldExchange](#dofieldexchange)です。  
+ `SetFieldNull` is implemented through [DoFieldExchange](#dofieldexchange).  
   
-##  <a name="setlockingmode"></a>CRecordset::SetLockingMode  
- ロック (既定)「オプティミスティック」または「ペシミスティック」をロックするロック モードを設定します。 更新プログラムのレコードをロックする方法を決定します。  
+##  <a name="setlockingmode"></a>  CRecordset::SetLockingMode  
+ Sets the locking mode to "optimistic" locking (the default) or "pessimistic" locking. Determines how records are locked for updates.  
   
 ```  
 void SetLockingMode(UINT nMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nMode`  
- 次の値のいずれかが含まれています、 **enum LockMode**:  
+ Contains one of the following values from the **enum LockMode**:  
   
-- **オプティミスティック**ロックへの呼び出し中にのみ更新されるレコード**更新**です。  
+- **optimistic** Optimistic locking locks the record being updated only during the call to **Update**.  
   
-- **ペシミスティック**レコードをロックして排他ロックとすぐに**編集**が呼び出され、までロック状態に保ちます、**更新**呼び出しが完了するか、新しいレコードに移動します。  
+- **pessimistic** Pessimistic locking locks the record as soon as **Edit** is called and keeps it locked until the **Update** call completes or you move to a new record.  
   
-### <a name="remarks"></a>コメント  
- レコード セットが更新プログラムを使用して、2 つのレコードのロック方法を指定する必要がある場合は、このメンバー関数を呼び出します。 レコード セットのロック モードは、既定では、**オプティミスティック**です。 慎重に変更することできます**ペシミスティック**戦略をロックします。 呼び出す`SetLockingMode`を呼び出す前に、構築して、レコード セット オブジェクトを開いた後**編集**です。  
+### <a name="remarks"></a>Remarks  
+ Call this member function if you need to specify which of two record-locking strategies the recordset is using for updates. By default, the locking mode of a recordset is **optimistic**. You can change that to a more cautious **pessimistic** locking strategy. Call `SetLockingMode` after you construct and open the recordset object but before you call **Edit**.  
   
-##  <a name="setparamnull"></a>CRecordset::SetParamNull  
- (具体的には値を持たない) Null または null 以外のパラメーターのフラグを設定します。  
+##  <a name="setparamnull"></a>  CRecordset::SetParamNull  
+ Flags a parameter as Null (specifically having no value) or as non-Null.  
   
 ```  
 void SetParamNull(
@@ -1643,104 +1701,104 @@ void SetParamNull(
     BOOL bNull = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- パラメーターの 0 から始まるインデックス。  
+ The zero-based index of the parameter.  
   
  `bNull`  
- 場合**TRUE** (既定値) の場合は、パラメーターが Null としてフラグが付けられます。 それ以外の場合、パラメーターは Null としてフラグが設定されます。  
+ If **TRUE** (the default value), the parameter is flagged as Null. Otherwise, the parameter is flagged as non-Null.  
   
-### <a name="remarks"></a>コメント  
- 異なり[な](#setfieldnull)、呼び出すことができます`SetParamNull`レコード セットを開く前にします。  
+### <a name="remarks"></a>Remarks  
+ Unlike [SetFieldNull](#setfieldnull), you can call `SetParamNull` before you have opened the recordset.  
   
- `SetParamNull`通常、定義済みクエリ (ストアド プロシージャ) と一緒に使用します。  
+ `SetParamNull` is typically used with predefined queries (stored procedures).  
   
-##  <a name="setrowsetcursorposition"></a>CRecordset::SetRowsetCursorPosition  
- 現在の行セット内の行にカーソルを移動します。  
+##  <a name="setrowsetcursorposition"></a>  CRecordset::SetRowsetCursorPosition  
+ Moves the cursor to a row within the current rowset.  
   
 ```  
 void SetRowsetCursorPosition(WORD wRow, WORD wLockType = SQL_LOCK_NO_CHANGE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wRow`  
- 1 から始まる位置の行の現在の行セット。 この値の範囲は 1、行セットのサイズにします。  
+ The one-based position of a row in the current rowset. This value can range from 1 to the size of the rowset.  
   
  `wLockType`  
- 更新された後に行をロックする方法を示す値です。 詳細については、「解説」を参照してください。  
+ Value indicating how to lock the row after it has been refreshed. For details, see Remarks.  
   
-### <a name="remarks"></a>コメント  
- バルク行フェッチを実装する場合は、レコードが現在のレコードをフェッチした行セットの最初のレコードがここでは、行セットによって取得されます。 行セット内の別のレコードを現在のレコードにするには、するために呼び出す`SetRowsetCursorPosition`です。 たとえば、結合`SetRowsetCursorPosition`で、 [GetFieldValue](#getfieldvalue)レコード セットの任意のレコードからデータを動的に取得するメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ When implementing bulk row fetching, records are retrieved by rowsets, where the first record in the fetched rowset is the current record. In order to make another record within the rowset the current record, call `SetRowsetCursorPosition`. For example, you can combine `SetRowsetCursorPosition` with the [GetFieldValue](#getfieldvalue) member function to dynamically retrieve the data from any record of your recordset.  
   
- 使用する`SetRowsetCursorPosition`、する必要がありますバルク行フェッチを実装を指定して、`CRecordset::useMultiRowFetch`のオプション、`dwOptions`内のパラメーター、[開く](#open)メンバー関数。  
+ To use `SetRowsetCursorPosition`, you must have implemented bulk row fetching by specifying the `CRecordset::useMultiRowFetch` option of the `dwOptions` parameter in the [Open](#open) member function.  
   
- `SetRowsetCursorPosition`ODBC API 関数を呼び出す**SQLSetPos**です。 `wLockType`パラメーターを指定した後の行のロック状態**SQLSetPos**が実行されます。 次の表に、可能な値`wLockType`です。  
+ `SetRowsetCursorPosition` calls the ODBC API function **SQLSetPos**. The `wLockType` parameter specifies the lock state of the row after **SQLSetPos** has executed. The following table describes the possible values for `wLockType`.  
   
-|wLockType|説明|  
+|wLockType|Description|  
 |---------------|-----------------|  
-|`SQL_LOCK_NO_CHANGE`(既定値)|ドライバーまたはデータ ソースにより、行は前に、と同じロックまたはロック解除状態でが`SetRowsetCursorPosition`呼び出されました。|  
-|`SQL_LOCK_EXCLUSIVE`|ドライバーまたはデータ ソースでは、行が排他的ロックします。 すべてのデータ ソースは、この種類のロックをサポートします。|  
-|`SQL_LOCK_UNLOCK`|ドライバーまたはデータ ソースには、行がロック解除します。 すべてのデータ ソースは、この種類のロックをサポートします。|  
+|`SQL_LOCK_NO_CHANGE` (the default value)|The driver or data source ensures that the row is in the same locked or unlocked state as it was before `SetRowsetCursorPosition` was called.|  
+|`SQL_LOCK_EXCLUSIVE`|The driver or data source locks the row exclusively. Not all data sources support this type of lock.|  
+|`SQL_LOCK_UNLOCK`|The driver or data source unlocks the row. Not all data sources support this type of lock.|  
   
- 詳細については**SQLSetPos**を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+ For more information about **SQLSetPos**, see the Windows SDK. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
-##  <a name="setrowsetsize"></a>CRecordset::SetRowsetSize  
- フェッチ中に取得するレコードの数を指定します。  
+##  <a name="setrowsetsize"></a>  CRecordset::SetRowsetSize  
+ Specifies the number of records you wish to retrieve during a fetch.  
   
 ```  
 virtual void SetRowsetSize(DWORD dwNewRowsetSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *dwNewRowsetSize*  
- 回のフェッチ中に取得する行の数。  
+ The number of rows to retrieve during a given fetch.  
   
-### <a name="remarks"></a>コメント  
- この仮想メンバー関数は、バルク行フェッチを使用する場合は、1 回のフェッチ中に取得する行の数を指定します。 バルク行フェッチを実装するのに設定する必要があります、`CRecordset::useMultiRowFetch`オプション、`dwOptions`のパラメーター、[開く](#open)メンバー関数。  
-  
-> [!NOTE]
->  呼び出す`SetRowsetSize`一括を実装することがなく、失敗したアサーションの行フェッチが発生します。  
-  
- 呼び出す`SetRowsetSize`呼び出す前に**開く**を最初に、レコード セットの行セットのサイズを設定します。 バルク行フェッチを実装する場合は、既定行セットのサイズは 25 です。  
+### <a name="remarks"></a>Remarks  
+ This virtual member function specifies how many rows you wish to retrieve during a single fetch when using bulk row fetching. To implement bulk row fetching, you must set the `CRecordset::useMultiRowFetch` option in the `dwOptions` parameter of the [Open](#open) member function.  
   
 > [!NOTE]
->  呼び出すときに警告を使用して`SetRowsetSize`です。 場合は、データの記憶域を手動で割り当てている場合 (で指定されたとおり、 **crecordset::userallocmultirowbuffers** dwOptions のパラメーターのオプション**開く**) を呼び出した後、これらの記憶域バッファーを再割り当てする必要があるかどうかを確認する必要があります`SetRowsetSize`、カーソル ナビゲーション操作を実行する前にします。  
+>  Calling `SetRowsetSize` without implementing bulk row fetching will result in a failed assertion.  
   
- 行セットのサイズの現在の設定を取得する呼び出し[GetRowsetSize](#getrowsetsize)です。  
+ Call `SetRowsetSize` before calling **Open** to initially set the rowset size for the recordset. The default rowset size when implementing bulk row fetching is 25.  
   
- バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+> [!NOTE]
+>  Use caution when calling `SetRowsetSize`. If you are manually allocating storage for the data (as specified by the **CRecordset::userAllocMultiRowBuffers** option of the dwOptions parameter in **Open**), you should check whether you need to reallocate these storage buffers after you call `SetRowsetSize`, but before you perform any cursor navigation operation.  
   
-##  <a name="update"></a>CRecordset::Update  
- 完了、`AddNew`または**編集**データ ソースで新しいまたは更新されたデータを保存することによりします。  
+ To obtain the current setting for the rowset size, call [GetRowsetSize](#getrowsetsize).  
+  
+ For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
+  
+##  <a name="update"></a>  CRecordset::Update  
+ Completes an `AddNew` or **Edit** operation by saving the new or edited data on the data source.  
   
 ```  
 virtual BOOL Update();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は 1 つのレコードが正常に更新されました。列が変更されていない場合それ以外の場合 0 を返します。 レコードが更新されない、または 1 つのレコードが更新された数より多い場合は、例外がスローされます。 例外は、データ ソース上の他のエラーもスローされます。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if one record was successfully updated; otherwise 0 if no columns have changed. If no records were updated, or if more than one record was updated, an exception is thrown. An exception is also thrown for any other failure on the data source.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を呼び出した後、 [AddNew](#addnew)または[編集](#edit)メンバー関数。 この呼び出しが完了するために必要な`AddNew`または**編集**操作します。  
+### <a name="remarks"></a>Remarks  
+ Call this member function after a call to the [AddNew](#addnew) or [Edit](#edit) member function. This call is required to complete the `AddNew` or **Edit** operation.  
   
 > [!NOTE]
->  バルク行フェッチを実装した場合を呼び出すことはできません**更新**です。 これにより、失敗したアサーションが発生します。 クラス`CRecordset`メカニズムが用意されていないデータの一括行を更新するには、ODBC API 関数を使用して、独自の関数を記述することができます**SQLSetPos**です。 バルク行フェッチの詳細については、記事を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
+>  If you have implemented bulk row fetching, you cannot call **Update**. This will result in a failed assertion. Although class `CRecordset` does not provide a mechanism for updating bulk rows of data, you can write your own functions by using the ODBC API function **SQLSetPos**. For more information about bulk row fetching, see the article [Recordset: Fetching Records in Bulk (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md).  
   
- 両方`AddNew`と**編集**データ ソースに保存するため、追加または編集されたデータが置かれている編集バッファーを準備します。 **更新**データを保存します。 マークまたは変更されたものとして検出されたフィールドのみ更新されます。  
+ Both `AddNew` and **Edit** prepare an edit buffer in which the added or edited data is placed for saving to the data source. **Update** saves the data. Only those fields marked or detected as changed are updated.  
   
- データ ソースは、トランザクションをサポートする場合は、**更新**呼び出し (とその対応する`AddNew`または**編集**呼び出し)、トランザクションの一部です。 トランザクションの詳細については、記事を参照してください。[トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)です。  
+ If the data source supports transactions, you can make the **Update** call (and its corresponding `AddNew` or **Edit** call) part of a transaction. For more information about transactions, see the article [Transaction (ODBC)](../../data/odbc/transaction-odbc.md).  
   
 > [!CAUTION]
->  呼び出す場合は**更新**最初に呼び出して、`AddNew`または**編集**、**更新**スロー、`CDBException`です。 呼び出す場合`AddNew`または**編集**、呼び出す必要があります**更新**を呼び出す前に、**移動**操作、またはレコード セットまたはデータ ソース接続を閉じる前にします。 それ以外の場合、変更は、通知することがなく失われます。  
+>  If you call **Update** without first calling either `AddNew` or **Edit**, **Update** throws a `CDBException`. If you call `AddNew` or **Edit**, you must call **Update** before you call a **Move** operation or before you close either the recordset or the data source connection. Otherwise, your changes are lost without notification.  
   
- 処理の詳細**更新**の障害は、記事を参照して[レコード セット: レコード更新のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md)です。  
+ For details on handling **Update** failures, see the article [Recordset: How Recordsets Update Records (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md).  
   
-### <a name="example"></a>例  
- 記事を参照して[トランザクション: レコード セット (ODBC) でのトランザクションを実行する](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)です。  
+### <a name="example"></a>Example  
+ See the article [Transaction: Performing a Transaction in a Recordset (ODBC)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md).  
   
-## <a name="see-also"></a>関連項目  
- [CObject クラス](../../mfc/reference/cobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CDatabase クラス](../../mfc/reference/cdatabase-class.md)   
- [CRecordView クラス](../../mfc/reference/crecordview-class.md)
+## <a name="see-also"></a>See Also  
+ [CObject Class](../../mfc/reference/cobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDatabase Class](../../mfc/reference/cdatabase-class.md)   
+ [CRecordView Class](../../mfc/reference/crecordview-class.md)
 

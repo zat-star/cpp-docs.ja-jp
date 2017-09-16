@@ -1,61 +1,80 @@
 ---
-title: "ドキュメント クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.document"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドキュメント クラス"
+title: Document Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.document
+dev_langs:
+- C++
+helpviewer_keywords:
+- document classes [MFC]
 ms.assetid: 4bf19b02-0a4f-4319-b68e-cddcba2705cb
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメント クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: e93e195b4cd2648b2e860e061e3e4d2a59809d59
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ドキュメントテンプレート オブジェクトで作成したドキュメント クラスのオブジェクトは、アプリケーションのデータを管理します。  これらのクラスの 1 つがからドキュメントのクラスを派生します。  
+---
+# <a name="document-classes"></a>Document Classes
+Document class objects, created by document-template objects, manage the application's data. You will derive a class for your documents from one of these classes.  
   
- ドキュメント クラスのオブジェクトは、ビュー オブジェクトと対話します。  ビュー オブジェクトは、ウィンドウのクライアント領域を表し、文書内にデータを表示し、ユーザーが操作できるようにします。  ドキュメントとビューはドキュメントテンプレート オブジェクトによって作成されます。  
+ Document class objects interact with view objects. View objects represent the client area of a window, display a document's data, and allow users to interact with it. Documents and views are created by a document-template object.  
   
- [CDocument](../Topic/CDocument%20Class.md)  
- アプリケーション固有のドキュメントの基本クラスです。  **CDocument**からドキュメント クラスを派生してください。  
+ [CDocument](../mfc/reference/cdocument-class.md)  
+ The base class for application-specific documents. Derive your document class or classes from **CDocument**.  
   
  [COleDocument](../mfc/reference/coledocument-class.md)  
- 複合ドキュメントの実装、および基本的なコンテナーのサポートに使用します。  クラスのコンテナーとして機能します [CDocItem](../mfc/reference/cdocitem-class.md)からは派生しました。  このクラスは、コンテナー ドキュメントの基本クラスとして使用され、`COleServerDoc`の基本クラスです。  
+ Used for compound document implementation, as well as basic container support. Serves as a container for classes derived from [CDocItem](../mfc/reference/cdocitem-class.md). This class can be used as the base class for container documents and is the base class for `COleServerDoc`.  
   
  [COleLinkingDoc](../mfc/reference/colelinkingdoc-class.md)  
- `COleDocument` から派生したクラスのリンクにインフラストラクチャを提供する。  埋め込みオブジェクトにリンクを表示するには `COleDocument` の代わりにこのクラスからコンテナー アプリケーションのドキュメント クラスを派生する必要があります。  
+ A class derived from `COleDocument` that provides the infrastructure for linking. You should derive the document classes for your container applications from this class instead of from `COleDocument` if you want them to support links to embedded objects.  
   
  [CRichEditDoc](../mfc/reference/cricheditdoc-class.md)  
- リッチ エディット コントロールにある OLE クライアント項目のリストを保持します。  [CRichEditView](../mfc/reference/cricheditview-class.md) と [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md)で使用します。  
+ Maintains the list of OLE client items that are in the rich edit control. Used with [CRichEditView](../mfc/reference/cricheditview-class.md) and [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md).  
   
- [COleServerDoc](../Topic/COleServerDoc%20Class.md)  
- サーバー アプリケーションのドキュメント クラスの基本クラスとして使用されます。  `COleServerDoc` オブジェクトは [COleServerItem](../mfc/reference/coleserveritem-class.md) オブジェクトを選択して、サーバー サポートの概要を示します。  ビジュアル編集機能は、クラス ライブラリのドキュメント\/ビュー アーキテクチャを使用して指定されます。  
+ [COleServerDoc](../mfc/reference/coleserverdoc-class.md)  
+ Used as the base class for server-application document classes. `COleServerDoc` objects provide the bulk of server support through interactions with [COleServerItem](../mfc/reference/coleserveritem-class.md) objects. Visual editing capability is provided using the class library's document/view architecture.  
   
  [CHtmlEditDoc](../mfc/reference/chtmleditdoc-class.md)  
- 、[CHtmlEditView](../mfc/reference/chtmleditview-class.md)を、MFC のドキュメント\/ビュー アーキテクチャのコンテキストで WebBrowser 編集プラットフォーム HTML 機能が用意されています。  
+ Provides, with [CHtmlEditView](../mfc/reference/chtmleditview-class.md), the functionality of the WebBrowser HTML editing platform within the context of the MFC document-view architecture.  
   
-## 関連クラス  
- ドキュメント クラス オブジェクトは永続的です。つまり、ストレージ メディアの状態を記述して読み取ることができます。  MFC は、ストレージ メディアをドキュメント内のデータを転送することを容易にするために `CArchive` クラスが用意されています。  
+## <a name="related-classes"></a>Related Classes  
+ Document class objects can be persistent — in other words, they can write their state to a storage medium and read it back. MFC provides the `CArchive` class to facilitate transferring the document's data to a storage medium.  
   
  [CArchive](../mfc/reference/carchive-class.md)  
- シリアル化を通じてオブジェクトの実装の永続ストレージに [CFile](../mfc/reference/cfile-class.md) オブジェクトに協力して \([CObject::Serialize](../Topic/CObject::Serialize.md)を参照してください。  
+ Cooperates with a [CFile](../mfc/reference/cfile-class.md) object to implement persistent storage for objects through serialization (see [CObject::Serialize](../mfc/reference/cobject-class.md#serialize)).  
   
- ドキュメントは、OLE オブジェクトを含めることができます。  `CDocItem` は、サーバーとクライアントの項目の基本クラスです。  
+ Documents can also contain OLE objects. `CDocItem` is the base class of the server and client items.  
   
  [CDocItem](../mfc/reference/cdocitem-class.md)  
- [COleClientItem](../mfc/reference/coleclientitem-class.md) と [COleServerItem](../mfc/reference/coleserveritem-class.md)の抽象基本クラスです。  `CDocItem` からの派生クラスのオブジェクトは、文書内の部分を表します。  
+ Abstract base class of [COleClientItem](../mfc/reference/coleclientitem-class.md) and [COleServerItem](../mfc/reference/coleserveritem-class.md). Objects of classes derived from `CDocItem` represent parts of documents.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

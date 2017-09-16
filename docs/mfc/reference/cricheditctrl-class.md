@@ -1,5 +1,5 @@
 ---
-title: "CRichEditCtrl クラス |Microsoft ドキュメント"
+title: CRichEditCtrl Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -87,9 +87,79 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CRichEditCtrl class, common controls
-- CRichEditCtrl class
-- formatted text [C++]
+- CRichEditCtrl [MFC], CRichEditCtrl
+- CRichEditCtrl [MFC], CanPaste
+- CRichEditCtrl [MFC], CanRedo
+- CRichEditCtrl [MFC], CanUndo
+- CRichEditCtrl [MFC], CharFromPos
+- CRichEditCtrl [MFC], Clear
+- CRichEditCtrl [MFC], Copy
+- CRichEditCtrl [MFC], Create
+- CRichEditCtrl [MFC], CreateEx
+- CRichEditCtrl [MFC], Cut
+- CRichEditCtrl [MFC], DisplayBand
+- CRichEditCtrl [MFC], EmptyUndoBuffer
+- CRichEditCtrl [MFC], FindText
+- CRichEditCtrl [MFC], FindWordBreak
+- CRichEditCtrl [MFC], FormatRange
+- CRichEditCtrl [MFC], GetCharPos
+- CRichEditCtrl [MFC], GetDefaultCharFormat
+- CRichEditCtrl [MFC], GetEventMask
+- CRichEditCtrl [MFC], GetFirstVisibleLine
+- CRichEditCtrl [MFC], GetIRichEditOle
+- CRichEditCtrl [MFC], GetLimitText
+- CRichEditCtrl [MFC], GetLine
+- CRichEditCtrl [MFC], GetLineCount
+- CRichEditCtrl [MFC], GetModify
+- CRichEditCtrl [MFC], GetOptions
+- CRichEditCtrl [MFC], GetParaFormat
+- CRichEditCtrl [MFC], GetPunctuation
+- CRichEditCtrl [MFC], GetRect
+- CRichEditCtrl [MFC], GetRedoName
+- CRichEditCtrl [MFC], GetSel
+- CRichEditCtrl [MFC], GetSelectionCharFormat
+- CRichEditCtrl [MFC], GetSelectionType
+- CRichEditCtrl [MFC], GetSelText
+- CRichEditCtrl [MFC], GetTextLength
+- CRichEditCtrl [MFC], GetTextLengthEx
+- CRichEditCtrl [MFC], GetTextMode
+- CRichEditCtrl [MFC], GetTextRange
+- CRichEditCtrl [MFC], GetUndoName
+- CRichEditCtrl [MFC], GetWordWrapMode
+- CRichEditCtrl [MFC], HideSelection
+- CRichEditCtrl [MFC], LimitText
+- CRichEditCtrl [MFC], LineFromChar
+- CRichEditCtrl [MFC], LineIndex
+- CRichEditCtrl [MFC], LineLength
+- CRichEditCtrl [MFC], LineScroll
+- CRichEditCtrl [MFC], Paste
+- CRichEditCtrl [MFC], PasteSpecial
+- CRichEditCtrl [MFC], PosFromChar
+- CRichEditCtrl [MFC], Redo
+- CRichEditCtrl [MFC], ReplaceSel
+- CRichEditCtrl [MFC], RequestResize
+- CRichEditCtrl [MFC], SetAutoURLDetect
+- CRichEditCtrl [MFC], SetBackgroundColor
+- CRichEditCtrl [MFC], SetDefaultCharFormat
+- CRichEditCtrl [MFC], SetEventMask
+- CRichEditCtrl [MFC], SetModify
+- CRichEditCtrl [MFC], SetOLECallback
+- CRichEditCtrl [MFC], SetOptions
+- CRichEditCtrl [MFC], SetParaFormat
+- CRichEditCtrl [MFC], SetPunctuation
+- CRichEditCtrl [MFC], SetReadOnly
+- CRichEditCtrl [MFC], SetRect
+- CRichEditCtrl [MFC], SetSel
+- CRichEditCtrl [MFC], SetSelectionCharFormat
+- CRichEditCtrl [MFC], SetTargetDevice
+- CRichEditCtrl [MFC], SetTextMode
+- CRichEditCtrl [MFC], SetUndoLimit
+- CRichEditCtrl [MFC], SetWordCharFormat
+- CRichEditCtrl [MFC], SetWordWrapMode
+- CRichEditCtrl [MFC], StopGroupTyping
+- CRichEditCtrl [MFC], StreamIn
+- CRichEditCtrl [MFC], StreamOut
+- CRichEditCtrl [MFC], Undo
 ms.assetid: 2be52788-822c-4c27-aafd-2471231e74eb
 caps.latest.revision: 26
 author: mikeblome
@@ -109,126 +179,126 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 262b2b8548f203a210b1aabbe149fe25cf6ad655
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2dd08ed607d269f57d9211a3c520b2ff969df259
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cricheditctrl-class"></a>CRichEditCtrl クラス
-リッチ エディット コントロールの機能を提供します。  
+# <a name="cricheditctrl-class"></a>CRichEditCtrl Class
+Provides the functionality of the rich edit control.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CRichEditCtrl : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRichEditCtrl::CRichEditCtrl](#cricheditctrl)|`CRichEditCtrl` オブジェクトを構築します。|  
+|[CRichEditCtrl::CRichEditCtrl](#cricheditctrl)|Constructs a `CRichEditCtrl` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRichEditCtrl::CanPaste](#canpaste)|リッチ エディット コントロールに、クリップボードの内容を貼り付けることができるかどうかを判断します。|  
-|[CRichEditCtrl::CanRedo](#canredo)|コントロールの再実行キュー内のすべてのアクションがあるかどうかを判断します。|  
-|[CRichEditCtrl::CanUndo](#canundo)|編集操作を元に戻すことができるかどうかを決定します。|  
-|[CRichEditCtrl::CharFromPos](#charfrompos)|エディット コントロールのクライアント領域の特定の時点に最も近い文字に関する情報を取得します。|  
-|[CRichEditCtrl::Clear](#clear)|現在の選択範囲をクリアします。|  
-|[CRichEditCtrl::Copy](#copy)|現在の選択範囲をクリップボードにコピーします。|  
-|[CRichEditCtrl::Create](#create)|Windows リッチ エディット コントロールを作成し、この関連付けます`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::CreateEx](#createex)|拡張ウィンドウ スタイルを指定した Windows リッチ エディット コントロールを作成し、この関連付けます`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::Cut](#cut)|クリップボードに現在の選択を切り取ります。|  
-|[CRichEditCtrl::DisplayBand](#displayband)|この内容の一部が表示`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::EmptyUndoBuffer](#emptyundobuffer)|リセット (消去) この取り消しのフラグ`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::FindText](#findtext)|この内のテキストを検索し`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::FindWordBreak](#findwordbreak)|指定した文字位置の前後には、ワード区切りを検索または、その位置にある文字に関する情報を取得します。|  
-|[CRichEditCtrl::FormatRange](#formatrange)|ターゲットの出力デバイス用のテキストの範囲の書式を設定します。|  
-|[CRichEditCtrl::GetCharPos](#getcharpos)|内で指定された文字の位置を決める`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetDefaultCharFormat](#getdefaultcharformat)|この属性の書式設定現在の既定の文字を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetEventMask](#geteventmask)|このイベント マスクを取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetFirstVisibleLine](#getfirstvisibleline)|この最上位に表示されている行を決定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetIRichEditOle](#getiricheditole)|ポインターを取得、`IRichEditOle`リッチ エディット コントロールのインターフェイスです。|  
-|[CRichEditCtrl::GetLimitText](#getlimittext)|これにユーザーが入力できるテキストの量に上限を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetLine](#getline)|これから、行のテキストを取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetLineCount](#getlinecount)|この行の数を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetModify](#getmodify)|かどうかをこの`CRichEditCtrl`前回保存以降に変更されたオブジェクト。|  
-|[CRichEditCtrl::GetOptions](#getoptions)|リッチ エディット コントロール オプションを取得します。|  
-|[CRichEditCtrl::GetParaFormat](#getparaformat)|この現在の選択範囲内の属性の書式設定、段落を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetPunctuation](#getpunctuation)|リッチ エディット コントロールの現在の区切り文字を取得します。 このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。|  
-|[CRichEditCtrl::GetRect](#getrect)|この書式設定の四角形を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetRedoName](#getredoname)|いずれか、コントロールの再実行キューの場合は、次のアクションの種類を取得します。|  
-|[CRichEditCtrl::GetSel](#getsel)|開始と終了、現在の選択の位置を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetSelectionCharFormat](#getselectioncharformat)|この現在の選択範囲内の属性の書式設定文字取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetSelectionType](#getselectiontype)|この現在の選択範囲内でコンテンツの種類を取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::GetSelText](#getseltext)|これで、現在の選択範囲のテキストを取得`CRichEditCtrl`オブジェクト|  
-|[CRichEditCtrl::GetTextLength](#gettextlength)|これで、文字のテキストの長さを取得`CRichEditCtrl`オブジェクト。 終端の null 文字は含まれません。|  
-|[CRichEditCtrl::GetTextLengthEx](#gettextlengthex)|文字またはリッチ エディット ビュー内のバイトの数を取得します。 リッチ エディット コントロールでテキストの長さを特定する方法を示すフラグの一覧を受け入れます|  
-|[CRichEditCtrl::GetTextMode](#gettextmode)|リッチ エディット コントロールの現在のテキスト モードと元に戻すレベルを取得します。|  
-|[CRichEditCtrl::GetTextRange](#gettextrange)|指定したテキスト範囲を取得します。|  
-|[CRichEditCtrl::GetUndoName](#getundoname)|存在する場合は、[次へ] の元に戻す操作の種類を取得します。|  
-|[CRichEditCtrl::GetWordWrapMode](#getwordwrapmode)|リッチ エディット コントロールの word 互換性に影響するオプションの現在のワード ラップを取得します。 このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。|  
-|[CRichEditCtrl::HideSelection](#hideselection)|現在の選択範囲の表示と非表示を切り替えます。|  
-|[CRichEditCtrl::LimitText](#limittext)|ユーザーに入力できるテキストの量を制限、`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::LineFromChar](#linefromchar)|指定された文字を含む行を決定します。|  
-|[CRichEditCtrl::LineIndex](#lineindex)|これで指定された行の文字インデックスを取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::LineLength](#linelength)|これで指定された行の長さを取得`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::LineScroll](#linescroll)|このテキストをスクロール`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::Paste](#paste)|リッチ エディット コントロールに、クリップボードの内容を挿入します。|  
-|[CRichEditCtrl::PasteSpecial](#pastespecial)|指定したデータ形式でリッチ エディット コントロールに、クリップボードの内容を挿入します。|  
-|[CRichEditCtrl::PosFromChar](#posfromchar)|指定した文字エディット コントロール内のクライアント領域の座標を取得します。|  
-|[CRichEditCtrl::Redo](#redo)|コントロールの再実行キュー内の次の操作をやり直します。|  
-|[CRichEditCtrl::ReplaceSel](#replacesel)|この現在の選択項目を置き換えます`CRichEditCtrl`テキストが指定されたオブジェクト。|  
-|[CRichEditCtrl::RequestResize](#requestresize)|これを強制的`CRichEditCtrl`サイズ変更通知を要求を送信するオブジェクト。|  
-|[CRichEditCtrl::SetAutoURLDetect](#setautourldetect)|URL の自動検出が、リッチ エディット コントロールでアクティブなかどうかを示します。|  
-|[CRichEditCtrl::SetBackgroundColor](#setbackgroundcolor)|この背景色を設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetDefaultCharFormat](#setdefaultcharformat)|現在の既定文字がこの属性の書式設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetEventMask](#seteventmask)|このイベント マスクを設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetModify](#setmodify)|設定またはこの変更のフラグをクリア`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetOLECallback](#setolecallback)|セット、`IRichEditOleCallback`リッチ エディット コントロールの COM オブジェクトです。|  
-|[CRichEditCtrl::SetOptions](#setoptions)|このオプションを設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetParaFormat](#setparaformat)|段落この現在の選択範囲内の属性の書式設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetPunctuation](#setpunctuation)|リッチ エディット コントロールの区切り文字を設定します。 このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。|  
-|[CRichEditCtrl::SetReadOnly](#setreadonly)|この読み取り専用オプションを設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetRect](#setrect)|書式を設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetSel](#setsel)|これで、選択範囲を設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetSelectionCharFormat](#setselectioncharformat)|この現在の選択範囲内の属性の書式設定文字`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetTargetDevice](#settargetdevice)|ターゲットの出力デバイスを設定`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetTextMode](#settextmode)|リッチ エディット コントロールのテキスト モードまたは元に戻すレベルを設定します。 コントロールにテキストが含まれている場合、メッセージが失敗します。|  
-|[CRichEditCtrl::SetUndoLimit](#setundolimit)|元に戻すキューに格納できる操作の最大数を設定します。|  
-|[CRichEditCtrl::SetWordCharFormat](#setwordcharformat)|これで、現在の単語内の属性の書式設定文字`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::SetWordWrapMode](#setwordwrapmode)|ワード ラップおよび単語区切り、豊富なオプションを設定では、コントロールを編集します。 このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。|  
-|[CRichEditCtrl::StopGroupTyping](#stopgrouptyping)|収集から現在の元に戻す操作にアクションを入力するその他のコントロールを停止します。 コントロールは、新しいアクションを元に戻すキュー内に存在する場合に、次の入力のアクションを格納します。|  
-|[CRichEditCtrl::StreamIn](#streamin)|これに入力ストリームからテキストを挿入`CRichEditCtrl`オブジェクト。|  
-|[CRichEditCtrl::StreamOut](#streamout)|これからテキストを格納`CRichEditCtrl`オブジェクトを出力ストリームにします。|  
-|[CRichEditCtrl::Undo](#undo)|最後の編集操作を反転させます。|  
+|[CRichEditCtrl::CanPaste](#canpaste)|Determines if the contents of the Clipboard can be pasted into this rich edit control.|  
+|[CRichEditCtrl::CanRedo](#canredo)|Determines whether there are any actions in the control's redo queue.|  
+|[CRichEditCtrl::CanUndo](#canundo)|Determines if an editing operation can be undone.|  
+|[CRichEditCtrl::CharFromPos](#charfrompos)|Retrieves information about the character closest to a specified point in the client area of an edit control.|  
+|[CRichEditCtrl::Clear](#clear)|Clears the current selection.|  
+|[CRichEditCtrl::Copy](#copy)|Copies the current selection to the Clipboard.|  
+|[CRichEditCtrl::Create](#create)|Creates the Windows rich edit control and associates it with this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::CreateEx](#createex)|Creates the Windows rich edit control with the specified extended Windows styles and associates it with this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::Cut](#cut)|Cuts the current selection to the Clipboard.|  
+|[CRichEditCtrl::DisplayBand](#displayband)|Displays a portion of the contents of this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::EmptyUndoBuffer](#emptyundobuffer)|Resets (clears) the undo flag of this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::FindText](#findtext)|Locates text within this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::FindWordBreak](#findwordbreak)|Finds the next word break before or after the specified character position, or retrieves information about the character at that position.|  
+|[CRichEditCtrl::FormatRange](#formatrange)|Formats a range of text for the target output device.|  
+|[CRichEditCtrl::GetCharPos](#getcharpos)|Determines the location of a given character within this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetDefaultCharFormat](#getdefaultcharformat)|Retrieves the current default character formatting attributes in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetEventMask](#geteventmask)|Retrieves the event mask for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetFirstVisibleLine](#getfirstvisibleline)|Determines the topmost visible line in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetIRichEditOle](#getiricheditole)|Retrieves a pointer to the `IRichEditOle` interface for this rich edit control.|  
+|[CRichEditCtrl::GetLimitText](#getlimittext)|Gets the limit on the amount of text a user can enter into this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetLine](#getline)|Retrieves a line of text from this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetLineCount](#getlinecount)|Retrieves the number of lines in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetModify](#getmodify)|Determines if the contents of this `CRichEditCtrl` object have changed since the last save.|  
+|[CRichEditCtrl::GetOptions](#getoptions)|Retrieves the rich edit control options.|  
+|[CRichEditCtrl::GetParaFormat](#getparaformat)|Retrieves the paragraph formatting attributes in the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetPunctuation](#getpunctuation)|Retrieves the current punctuation characters for the rich edit control. This message is available only in Asian-language versions of the operating system.|  
+|[CRichEditCtrl::GetRect](#getrect)|Retrieves the formatting rectangle for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetRedoName](#getredoname)|Retrieves the type of the next action, if any, in the control's redo queue.|  
+|[CRichEditCtrl::GetSel](#getsel)|Gets the starting and ending positions of the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetSelectionCharFormat](#getselectioncharformat)|Retrieves the character formatting attributes in the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetSelectionType](#getselectiontype)|Retrieves the type of contents in the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::GetSelText](#getseltext)|Gets the text of the current selection in this `CRichEditCtrl` object|  
+|[CRichEditCtrl::GetTextLength](#gettextlength)|Retrieves the length of the text, in characters, in this `CRichEditCtrl` object. Does not include the terminating null character.|  
+|[CRichEditCtrl::GetTextLengthEx](#gettextlengthex)|Retrieves the number of characters or bytes in the rich edit view. Accepts a list of flags to indicate the method of determining length of the text in a rich edit control|  
+|[CRichEditCtrl::GetTextMode](#gettextmode)|Retrieves the current text mode and undo level of a rich edit control.|  
+|[CRichEditCtrl::GetTextRange](#gettextrange)|Retrieves the specified range of text.|  
+|[CRichEditCtrl::GetUndoName](#getundoname)|Retrieves the type of the next undo action, if any.|  
+|[CRichEditCtrl::GetWordWrapMode](#getwordwrapmode)|Retrieves the current word wrapping and word breaking options for the rich edit control. This message is available only in Asian-language versions of the operating system.|  
+|[CRichEditCtrl::HideSelection](#hideselection)|Shows or hides the current selection.|  
+|[CRichEditCtrl::LimitText](#limittext)|Limits the amount of text a user can enter into the `CRichEditCtrl` object.|  
+|[CRichEditCtrl::LineFromChar](#linefromchar)|Determines which line contains the given character.|  
+|[CRichEditCtrl::LineIndex](#lineindex)|Retrieves the character index of a given line in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::LineLength](#linelength)|Retrieves the length of a given line in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::LineScroll](#linescroll)|Scrolls the text in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::Paste](#paste)|Inserts the contents of the Clipboard into this rich edit control.|  
+|[CRichEditCtrl::PasteSpecial](#pastespecial)|Inserts the contents of the Clipboard into this rich edit control in the specified data format.|  
+|[CRichEditCtrl::PosFromChar](#posfromchar)|Retrieves the client area coordinates of a specified character in an edit control.|  
+|[CRichEditCtrl::Redo](#redo)|Redoes the next action in the control's redo queue.|  
+|[CRichEditCtrl::ReplaceSel](#replacesel)|Replaces the current selection in this `CRichEditCtrl` object with specified text.|  
+|[CRichEditCtrl::RequestResize](#requestresize)|Forces this `CRichEditCtrl` object to send request resize notifications.|  
+|[CRichEditCtrl::SetAutoURLDetect](#setautourldetect)|Indicates if the auto URL detection is active in a rich edit control.|  
+|[CRichEditCtrl::SetBackgroundColor](#setbackgroundcolor)|Sets the background color in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetDefaultCharFormat](#setdefaultcharformat)|Sets the current default character formatting attributes in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetEventMask](#seteventmask)|Sets the event mask for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetModify](#setmodify)|Sets or clears the modification flag for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetOLECallback](#setolecallback)|Sets the `IRichEditOleCallback` COM object for this rich edit control.|  
+|[CRichEditCtrl::SetOptions](#setoptions)|Sets the options for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetParaFormat](#setparaformat)|Sets the paragraph formatting attributes in the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetPunctuation](#setpunctuation)|Sets the punctuation characters for a rich edit control. This message is available only in Asian-language versions of the operating system.|  
+|[CRichEditCtrl::SetReadOnly](#setreadonly)|Sets the read-only option for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetRect](#setrect)|Sets the formatting rectangle for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetSel](#setsel)|Sets the selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetSelectionCharFormat](#setselectioncharformat)|Sets the character formatting attributes in the current selection in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetTargetDevice](#settargetdevice)|Sets the target output device for this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetTextMode](#settextmode)|Sets the text mode or undo level of a rich edit control. The message fails if the control contains text.|  
+|[CRichEditCtrl::SetUndoLimit](#setundolimit)|Sets the maximum number of actions that can stored in the undo queue.|  
+|[CRichEditCtrl::SetWordCharFormat](#setwordcharformat)|Sets the character formatting attributes in the current word in this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::SetWordWrapMode](#setwordwrapmode)|Sets the word-wrapping and word-breaking options for the rich edit control. This message is available only in Asian-language versions of the operating system.|  
+|[CRichEditCtrl::StopGroupTyping](#stopgrouptyping)|Stops the control from collecting additional typing actions into the current undo action. The control stores the next typing action, if any, into a new action in the undo queue.|  
+|[CRichEditCtrl::StreamIn](#streamin)|Inserts text from an input stream into this `CRichEditCtrl` object.|  
+|[CRichEditCtrl::StreamOut](#streamout)|Stores text from this `CRichEditCtrl` object into an output stream.|  
+|[CRichEditCtrl::Undo](#undo)|Reverses the last editing operation.|  
   
-## <a name="remarks"></a>コメント  
- 「リッチ エディット コントロール」は、ユーザーを入力し、テキストを編集するウィンドウです。 テキストは、文字と段落の書式に割り当てることができるし、埋め込み OLE オブジェクトを含めることができます。 リッチ エディット コントロールでは、テキストの書式設定のプログラミング インターフェイスを提供します。 ただし、アプリケーションでは、書式設定操作をユーザーに使用できるようにするために必要なすべてのユーザー インターフェイス コンポーネントを実装する必要があります。  
+## <a name="remarks"></a>Remarks  
+ A "rich edit control" is a window in which the user can enter and edit text. The text can be assigned character and paragraph formatting, and can include embedded OLE objects. Rich edit controls provide a programming interface for formatting text. However, an application must implement any user interface components necessary to make formatting operations available to the user.  
   
- この Windows コモン コントロール (したがって、`CRichEditCtrl`クラス) は、Windows 95/98 および Windows NT version 3.51 の下で実行されているプログラムにのみ使用可能な以降。 `CRichEditCtrl`クラスのバージョン 2.0 および 3.0 をサポートしている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]リッチ エディット コントロール。  
+ This Windows Common control (and therefore the `CRichEditCtrl` class) is available only to programs running under Windows 95/98 and Windows NT versions 3.51 and later. The `CRichEditCtrl` class supports versions 2.0 and 3.0 of the Windows SDK rich edit control.  
   
 > [!CAUTION]
->  ダイアログ ボックスで、リッチ エディット コントロールを使用しているかどうか (アプリケーションが SDI、MDI、かどうかに関係なくまたはダイアログ ベース)、呼び出す必要があります[AfxInitRichEdit](application-information-and-management.md#afxinitrichedit)ボックスが表示されるダイアログ ボックスの前に一度です。 この関数を呼び出して標準的な場所は、プログラムの`InitInstance`メンバー関数。 最初にのみ、ダイアログ ボックスを表示するたびに呼び出す必要はありません。 呼び出していない`AfxInitRichEdit`を扱う場合`CRichEditView`です。  
+>  If you are using a rich edit control in a dialog box (regardless whether your application is SDI, MDI, or dialog-based), you must call [AfxInitRichEdit](application-information-and-management.md#afxinitrichedit) once before the dialog box is displayed. A typical place to call this function is in your program's `InitInstance` member function. You do not need to call it for each time you display the dialog box, only the first time. You do not have to call `AfxInitRichEdit` if you are working with `CRichEditView`.  
   
- 使用する方法についての`CRichEditCtrl`を参照してください。  
+ For more information on using `CRichEditCtrl`, see:  
   
-- [コントロール](../../mfc/controls-mfc.md)  
+- [Controls](../../mfc/controls-mfc.md)  
   
-- [CRichEditCtrl の使い方](../../mfc/using-cricheditctrl.md)  
+- [Using CRichEditCtrl](../../mfc/using-cricheditctrl.md)  
   
--   サポート技術情報の記事 Q259949: 情報: SetCaretPos() が適切ではない CEdit または CRichEditCtrl コントロール  
+-   Knowledge Base article Q259949 : INFO: SetCaretPos() Is Not Appropriate with CEdit or CRichEditCtrl Controls  
   
- MFC アプリケーションでリッチ エディット コントロールの使い方の例は、次を参照してください。、[ワードパッド](../../visual-cpp-samples.md)サンプル アプリケーションです。  
+ For an example of using a rich edit control in an MFC application, see the [WORDPAD](../../visual-cpp-samples.md) sample application.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -237,113 +307,113 @@ class CRichEditCtrl : public CWnd
   
  `CRichEditCtrl`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxcmn.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxcmn.h  
   
-##  <a name="canpaste"></a>CRichEditCtrl::CanPaste  
- リッチ エディット コントロールが指定されたクリップボードの形式を貼り付けることができるかどうかを判断します。  
+##  <a name="canpaste"></a>  CRichEditCtrl::CanPaste  
+ Determines if the rich edit control can paste the specified Clipboard format.  
   
 ```  
 BOOL CanPaste(UINT nFormat = 0) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFormat`  
- クエリをクリップボードのデータ形式。 このパラメーターには、定義済みのクリップボード形式またはによって返される値のいずれかを指定できます[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)です。  
+ The Clipboard data format to query. This parameter can be one of the predefined Clipboard formats or the value returned by [RegisterClipboardFormat](http://msdn.microsoft.com/library/windows/desktop/ms649049).  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、クリップボードの形式を貼り付けることができます。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the Clipboard format can be pasted; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 場合`nFormat`0 の場合は、`CanPaste`現在クリップボードに任意の形式が試行されます。  
+### <a name="remarks"></a>Remarks  
+ If `nFormat` is 0, `CanPaste` will try any format currently on the Clipboard.  
   
- 詳細については、次を参照してください。 [EM_CANPASTE](http://msdn.microsoft.com/library/windows/desktop/bb787993)メッセージと[独自のデータ](http://msdn.microsoft.com/library/windows/desktop/ms649049)で機能、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_CANPASTE](http://msdn.microsoft.com/library/windows/desktop/bb787993) message and [RegisterClipboardFormat](http://msdn.microsoft.com/library/windows/desktop/ms649049) function in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #1](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#1](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_1.cpp)]  
   
-##  <a name="canredo"></a>CRichEditCtrl::CanRedo  
- 任意のアクションが再実行キューに含まれて かどうかを判断します。  
+##  <a name="canredo"></a>  CRichEditCtrl::CanRedo  
+ Determines if the redo queue contains any actions.  
   
 ```  
 BOOL CanRedo() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、再実行キューには、アクション、それ以外の場合に 0 が含まれています。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the redo queue contains actions, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 再実行キュー操作の名前を探索するを呼び出す[CRichEditCtrl::GetRedoName](#getredoname)です。 最新の元に戻す操作をやり直すを呼び出す[やり直し](#redo)です。  
+### <a name="remarks"></a>Remarks  
+ To discover the name of the operation in the redo queue, call [CRichEditCtrl::GetRedoName](#getredoname). To redo the most recent Undo operation, call [Redo](#redo).  
   
- 詳細については、次を参照してください。 [EM_CANREDO](http://msdn.microsoft.com/library/windows/desktop/bb787995)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_CANREDO](http://msdn.microsoft.com/library/windows/desktop/bb787995) in the Windows SDK.  
   
-##  <a name="canundo"></a>CRichEditCtrl::CanUndo  
- 最後の編集操作を元に戻すことができるかどうかを決定します。  
+##  <a name="canundo"></a>  CRichEditCtrl::CanUndo  
+ Determines if the last editing operation can be undone.  
   
 ```  
 BOOL CanUndo() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 呼び出しによってに最後の編集操作を元に戻すことができる場合は 0 以外、[を元に戻す](#undo)メンバー関数は元に戻すことができない場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the last edit operation can be undone by a call to the [Undo](#undo) member function; 0 if it cannot be undone.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_CANUNDO](http://msdn.microsoft.com/library/windows/desktop/bb775468)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_CANUNDO](http://msdn.microsoft.com/library/windows/desktop/bb775468) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #2](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#2](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_2.cpp)]  
   
-##  <a name="charfrompos"></a>CRichEditCtrl::CharFromPos  
- パラメーターに指定された位置の文字に関する情報を取得`pt`です。  
+##  <a name="charfrompos"></a>  CRichEditCtrl::CharFromPos  
+ Retrieves information about the character at the point specified by the parameter `pt`.  
   
 ```  
 int CharFromPos(CPoint pt) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pt`  
- A [CPoint](../../atl-mfc-shared/reference/cpoint-class.md)指定した点の座標を持つオブジェクト。  
+ A [CPoint](../../atl-mfc-shared/reference/cpoint-class.md) object containing the coordinates of the specified point.  
   
-### <a name="return-value"></a>戻り値  
- 指定したポイントに最も近い文字の 0 から始まる文字インデックス。 指定したポイントが、コントロール内の最後の文字を超える場合は、戻り値は、コントロール内の最後の文字を示します。  
+### <a name="return-value"></a>Return Value  
+ The zero-based character index of the character nearest the specified point. If the specified point is beyond the last character in the control, the return value indicates the last character in the control.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、リッチ エディット コントロールで使用できます。 エディット コントロールの情報を取得するには、呼び出す[場合](../../mfc/reference/cedit-class.md#charfrompos)です。  
+### <a name="remarks"></a>Remarks  
+ This member function works with a rich edit control. To get the information for an edit control, call [CEdit::CharFromPos](../../mfc/reference/cedit-class.md#charfrompos).  
   
- 詳細については、次を参照してください。 [EM_CHARFROMPOS](http://msdn.microsoft.com/library/windows/desktop/bb761566)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_CHARFROMPOS](http://msdn.microsoft.com/library/windows/desktop/bb761566) in the Windows SDK.  
   
-##  <a name="clear"></a>CRichEditCtrl::Clear  
- 削除 (クリア) 現在の選択 (存在する場合)、リッチ エディット コントロール。  
+##  <a name="clear"></a>  CRichEditCtrl::Clear  
+ Deletes (clears) the current selection (if any) in the rich edit control.  
   
 ```  
 void Clear();
 ```  
   
-### <a name="remarks"></a>コメント  
- による削除**クリア**で元に戻すことができます、[を元に戻す](#undo)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The deletion performed by **Clear** can be undone by calling the [Undo](#undo) member function.  
   
- を現在の選択範囲を削除してから削除された内容をクリップボードに配置する呼び出し、[切り取り](#cut)メンバー関数。  
+ To delete the current selection and place the deleted contents onto the Clipboard, call the [Cut](#cut) member function.  
   
- 詳細については、次を参照してください。 [WM_CLEAR](http://msdn.microsoft.com/library/windows/desktop/ms649020)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_CLEAR](http://msdn.microsoft.com/library/windows/desktop/ms649020) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #3](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#3](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_3.cpp)]  
   
-##  <a name="copy"></a>CRichEditCtrl::Copy  
- 現在の選択 (もしあれば) リッチ エディット コントロールでクリップボードにコピーします。  
+##  <a name="copy"></a>  CRichEditCtrl::Copy  
+ Copies the current selection (if any) in the rich edit control to the Clipboard.  
   
 ```  
 void Copy();
 ```  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [WM_COPY](http://msdn.microsoft.com/library/windows/desktop/ms649022)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [WM_COPY](http://msdn.microsoft.com/library/windows/desktop/ms649022) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl 4](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#4](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_4.cpp)]  
   
-##  <a name="create"></a>CRichEditCtrl::Create  
- Windows リッチ エディット コントロールを作成し、この関連付けます`CRichEditCtrl`オブジェクト。  
+##  <a name="create"></a>  CRichEditCtrl::Create  
+ Creates the Windows rich edit control and associates it with this `CRichEditCtrl` object.  
   
 ```  
 virtual BOOL Create(
@@ -353,50 +423,50 @@ virtual BOOL Create(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwStyle`  
- エディット コントロールのスタイルを指定します。 ウィンドウ スタイルが示されたの組み合わせを適用、**解説**以下のセクションと[コントロールのスタイルを編集](http://msdn.microsoft.com/library/windows/desktop/bb775464)に記述されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the edit control's style. Apply a combination of the window styles listed in the **Remarks** section below, and [edit control styles](http://msdn.microsoft.com/library/windows/desktop/bb775464), described in the Windows SDK.  
   
  `rect`  
- エディット コントロールのサイズと位置を指定します。 指定できます、 [CRect](../../atl-mfc-shared/reference/crect-class.md)オブジェクトまたは[RECT](../../mfc/reference/rect-structure1.md)構造体。  
+ Specifies the edit control's size and position. Can be a [CRect](../../atl-mfc-shared/reference/crect-class.md) object or [RECT](../../mfc/reference/rect-structure1.md) structure.  
   
  `pParentWnd`  
- エディット コントロールの親ウィンドウを指定します (多くの場合、 [CDialog](../../mfc/reference/cdialog-class.md))。 なければなりません**NULL**です。  
+ Specifies the edit control's parent window (often a [CDialog](../../mfc/reference/cdialog-class.md)). It must not be **NULL**.  
   
  `nID`  
- エディット コントロールの ID を指定します  
+ Specifies the edit control's ID.  
   
-### <a name="return-value"></a>戻り値  
- 初期化が成功した場合は 0 以外。それ以外の場合、0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if initialization is successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 構築する、 `CRichEditCtrl` 2 つのステップ内のオブジェクト。 最初に、呼び出し、 [CRichEditCtrl](#cricheditctrl)コンス トラクターを呼び出す**作成**、Windows のエディット コントロールを作成しにアタッチする、`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ You construct a `CRichEditCtrl` object in two steps. First, call the [CRichEditCtrl](#cricheditctrl) constructor, then call **Create**, which creates the Windows edit control and attaches it to the `CRichEditCtrl` object.  
   
- この関数でリッチ エディット コントロールを作成するときに最初に必要なコモン コントロール ライブラリを読み込む必要があります。 ライブラリを読み込むには、グローバル関数を呼び出す[AfxInitRichEdit](application-information-and-management.md#afxinitrichedit)、さらに、コモン コントロール ライブラリを初期化します。 呼び出す必要がある`AfxInitRichEdit`プロセスで 1 回だけです。  
+ When you create a rich edit control with this function, first you must load the necessary common controls library. To load the libary, call the global function [AfxInitRichEdit](application-information-and-management.md#afxinitrichedit), which in turn initializes the common controls library. You need to call `AfxInitRichEdit` only once in your process.  
   
- ときに**作成**を実行する Windows の送信、 [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate)、 [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize)、 [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate)と[WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo)エディット コントロールへのメッセージ。  
+ When **Create** executes, Windows sends the [WM_NCCREATE](../../mfc/reference/cwnd-class.md#onnccreate), [WM_NCCALCSIZE](../../mfc/reference/cwnd-class.md#onnccalcsize), [WM_CREATE](../../mfc/reference/cwnd-class.md#oncreate), and [WM_GETMINMAXINFO](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) messages to the edit control.  
   
- 既定では、これらのメッセージが処理されます、 [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate)、 [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize)、 [OnCreate](../../mfc/reference/cwnd-class.md#oncreate)、および[OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo)メンバー関数、`CWnd`基本クラスです。 既定のメッセージ処理を拡張するには、派生クラスを`CRichEditCtrl`メッセージ マップを新しいクラスに追加し、上記のメッセージ ハンドラー メンバー関数をオーバーライドします。 オーバーライド`OnCreate`など、新しいクラスに必要な初期化を実行します。  
+ These messages are handled by default by the [OnNcCreate](../../mfc/reference/cwnd-class.md#onnccreate), [OnNcCalcSize](../../mfc/reference/cwnd-class.md#onnccalcsize), [OnCreate](../../mfc/reference/cwnd-class.md#oncreate), and [OnGetMinMaxInfo](../../mfc/reference/cwnd-class.md#ongetminmaxinfo) member functions in the `CWnd` base class. To extend the default message handling, derive a class from `CRichEditCtrl`, add a message map to the new class, and override the above message-handler member functions. Override `OnCreate`, for example, to perform needed initialization for the new class.  
   
- 次の適用[ウィンドウ スタイル](../../mfc/reference/window-styles.md)エディット コントロールにします。  
+ Apply the following [window styles](../../mfc/reference/styles-used-by-mfc.md#window-styles) to an edit control.  
   
-- **WS_CHILD**常にします。  
+- **WS_CHILD** Always.  
   
-- **WS_VISIBLE**通常します。  
+- **WS_VISIBLE** Usually.  
   
-- **WS_DISABLED**ことはほとんどありません。  
+- **WS_DISABLED** Rarely.  
   
-- **WS_GROUP**コントロールをグループ化します。  
+- **WS_GROUP** To group controls.  
   
-- **WS_TABSTOP**編集コントロールに含めるタブ オーダーにします。  
+- **WS_TABSTOP** To include edit control in the tabbing order.  
   
- ウィンドウ スタイルの詳細については、次を参照してください。 [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about window styles, see [CreateWindow](http://msdn.microsoft.com/library/windows/desktop/ms632679) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #5](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#5](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_5.cpp)]  
   
-##  <a name="createex"></a>CRichEditCtrl::CreateEx  
- コントロール (子ウィンドウ) を作成しに関連付けます、`CRichEditCtrl`オブジェクト。  
+##  <a name="createex"></a>  CRichEditCtrl::CreateEx  
+ Creates a control (a child window) and associates it with the `CRichEditCtrl` object.  
   
 ```  
 virtual BOOL CreateEx(
@@ -407,99 +477,99 @@ virtual BOOL CreateEx(
     UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwExStyle`  
- 作成されるコントロールの拡張スタイルを指定します。 拡張ウィンドウ スタイルの一覧は、次を参照してください。、`dwExStyle`パラメーター[について](http://msdn.microsoft.com/library/windows/desktop/ms632680)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the extended style of the control being created. For a list of extended Windows styles, see the `dwExStyle` parameter for [CreateWindowEx](http://msdn.microsoft.com/library/windows/desktop/ms632680) in the Windows SDK.  
   
  `dwStyle`  
- エディット コントロールのスタイルを指定します。 ウィンドウ スタイルが示されたの組み合わせを適用、**解説**のセクション[作成](#create)と[コントロールのスタイルを編集](http://msdn.microsoft.com/library/windows/desktop/bb775464)に記述されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the edit control's style. Apply a combination of the window styles listed in the **Remarks** section of [Create](#create) and [edit control styles](http://msdn.microsoft.com/library/windows/desktop/bb775464), described in the Windows SDK.  
   
  `rect`  
- 参照、 [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897)のクライアント座標で、作成するウィンドウの位置とサイズを記述する構造体`pParentWnd`です。  
+ A reference to a [RECT](http://msdn.microsoft.com/library/windows/desktop/dd162897) structure describing the size and position of the window to be created, in client coordinates of `pParentWnd`.  
   
  `pParentWnd`  
- コントロールの親であるウィンドウへのポインター。  
+ A pointer to the window that is the control's parent.  
   
  `nID`  
- コントロールの子ウィンドウ ID  
+ The control's child-window ID.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 使用して`CreateEx`の代わりに**作成**Windows 拡張スタイル「はじめに」で指定された Windows の拡張スタイルを適用する**ws_ex**です。  
+### <a name="remarks"></a>Remarks  
+ Use `CreateEx` instead of **Create** to apply extended Windows styles, specified by the Windows extended style preface **WS_EX_**.  
   
-##  <a name="cricheditctrl"></a>CRichEditCtrl::CRichEditCtrl  
- `CRichEditCtrl` オブジェクトを構築します。  
+##  <a name="cricheditctrl"></a>  CRichEditCtrl::CRichEditCtrl  
+ Constructs a `CRichEditCtrl` object.  
   
 ```  
 CRichEditCtrl();
 ```  
   
-### <a name="remarks"></a>コメント  
- 使用して[作成](#create)リッチ エディット コントロールを Windows を構築するためにします。  
+### <a name="remarks"></a>Remarks  
+ Use [Create](#create) to construct the Windows rich edit control.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #6](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#6](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_6.cpp)]  
   
-##  <a name="cut"></a>CRichEditCtrl::Cut  
- 削除 (切り取り) 現在の選択 (存在する場合)、リッチ エディット コントロールであり削除したテキストをクリップボードにコピーします。  
+##  <a name="cut"></a>  CRichEditCtrl::Cut  
+ Delete (cuts) the current selection (if any) in the rich edit control and copies the deleted text to the Clipboard.  
   
 ```  
 void Cut();
 ```  
   
-### <a name="remarks"></a>コメント  
- による削除**切り取り**で元に戻すことができます、[を元に戻す](#undo)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The deletion performed by **Cut** can be undone by calling the [Undo](#undo) member function.  
   
- 削除したテキストをクリップボードに配置することがなく、現在の選択範囲を削除する呼び出し、[クリア](#clear)メンバー関数。  
+ To delete the current selection without placing the deleted text into the Clipboard, call the [Clear](#clear) member function.  
   
- 詳細については、次を参照してください。 [WM_CUT](http://msdn.microsoft.com/library/windows/desktop/ms649023)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_CUT](http://msdn.microsoft.com/library/windows/desktop/ms649023) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #7](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#7](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_7.cpp)]  
   
-##  <a name="displayband"></a>CRichEditCtrl::DisplayBand  
- によって既に書式設定 (テキストと OLE アイテム) のリッチ エディット コントロールの内容の一部が表示され[FormatRange](#formatrange)です。  
+##  <a name="displayband"></a>  CRichEditCtrl::DisplayBand  
+ Displays a portion of the contents of the rich edit control (text and OLE items), as previously formatted by [FormatRange](#formatrange).  
   
 ```  
 BOOL DisplayBand(LPRECT pDisplayRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDisplayRect`  
- ポインター、 [RECT](../../mfc/reference/rect-structure1.md)または[CRect](../../atl-mfc-shared/reference/crect-class.md)テキストを表示するデバイスの領域を指定するオブジェクト。  
+ Pointer to a [RECT](../../mfc/reference/rect-structure1.md) or [CRect](../../atl-mfc-shared/reference/crect-class.md) object specifying the area of the device to display the text.  
   
-### <a name="return-value"></a>戻り値  
- フォーマットされたテキストの表示が成功した場合、それ以外の場合 0 0 以外の値。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the display of the formatted text succeeds, otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- テキストと OLE アイテムは、ポインターは、指定された領域にクリッピング`pDisplayRect`です。  
+### <a name="remarks"></a>Remarks  
+ The text and OLE items are clipped to the area specified by the pointer `pDisplayRect`.  
   
- 詳細については、次を参照してください。 [EM_DISPLAYBAND](http://msdn.microsoft.com/library/windows/desktop/bb787997)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_DISPLAYBAND](http://msdn.microsoft.com/library/windows/desktop/bb787997) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CRichEditCtrl::FormatRange](#formatrange)です。  
+### <a name="example"></a>Example  
+  See the example for [CRichEditCtrl::FormatRange](#formatrange).  
   
-##  <a name="emptyundobuffer"></a>CRichEditCtrl::EmptyUndoBuffer  
- リッチ エディット コントロールの取り消しのフラグをリセット (オフ) します。  
+##  <a name="emptyundobuffer"></a>  CRichEditCtrl::EmptyUndoBuffer  
+ Resets (clear) the undo flag of this rich edit control.  
   
 ```  
 void EmptyUndoBuffer();
 ```  
   
-### <a name="remarks"></a>コメント  
- コントロールようになりましたことはできません、最後の編集操作を取り消します。 リッチ エディット コントロール内の操作が取り消せるされるたびに、元に戻すフラグが設定されています。  
+### <a name="remarks"></a>Remarks  
+ The control will now be unable to undo the last editing operation. The undo flag is set whenever an operation within the rich edit control can be undone.  
   
- 呼び出すたびに取り消しのフラグは自動的に消去、 [CWnd](../../mfc/reference/cwnd-class.md)メンバー関数は、 [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext)です。  
+ The undo flag is automatically cleared whenever you call the [CWnd](../../mfc/reference/cwnd-class.md) member function [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext).  
   
- 詳細については、次を参照してください。 [EM_EMPTYUNDOBUFFER](http://msdn.microsoft.com/library/windows/desktop/bb761568)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EMPTYUNDOBUFFER](http://msdn.microsoft.com/library/windows/desktop/bb761568) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #8](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_8.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#8](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_8.cpp)]  
   
-##  <a name="findtext"></a>CRichEditCtrl::FindText  
- リッチ エディット コントロール内のテキストを検索します。  
+##  <a name="findtext"></a>  CRichEditCtrl::FindText  
+ Finds text within the rich edit control.  
   
 ```  
 long FindText(
@@ -507,26 +577,26 @@ long FindText(
     FINDTEXTEX* pFindText) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwFlags`  
- 使用可能な値の一覧は、次を参照してください。`wParam`で[EM_FINDTEXTEXT](http://msdn.microsoft.com/library/windows/desktop/bb788011)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For a list of possible values, see `wParam` in [EM_FINDTEXTEXT](http://msdn.microsoft.com/library/windows/desktop/bb788011) in the Windows SDK.  
   
  *pFindText*  
- ポインター、[指定](http://msdn.microsoft.com/library/windows/desktop/bb787909)検索のパラメーターを提供し、一致が見つかった範囲を返すことを構造体します。  
+ Pointer to the [FINDTEXTEX](http://msdn.microsoft.com/library/windows/desktop/bb787909) structure giving the parameters for the search and returning the range where the match was found.  
   
-### <a name="return-value"></a>戻り値  
- 次の一致項目の 0 から始まる文字の位置-一致するものがある場合は 1 です。  
+### <a name="return-value"></a>Return Value  
+ Zero-based character position of the next match; - 1 if there are no more matches.  
   
-### <a name="remarks"></a>コメント  
- 検索できますいずれかの上または下適切な範囲のパラメーターを設定して、[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)内で構造体、**指定**構造体。  
+### <a name="remarks"></a>Remarks  
+ You can search either up or down by setting the proper range parameters in the [CHARRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787885) structure within the **FINDTEXTEX** structure.  
   
- 詳細については、次を参照してください。 [EM_FINDTEXTEX](http://msdn.microsoft.com/library/windows/desktop/bb788011)メッセージと[指定](http://msdn.microsoft.com/library/windows/desktop/bb787909)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_FINDTEXTEX](http://msdn.microsoft.com/library/windows/desktop/bb788011) message and [FINDTEXTEX](http://msdn.microsoft.com/library/windows/desktop/bb787909) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #9](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_9.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#9](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_9.cpp)]  
   
-##  <a name="findwordbreak"></a>CRichEditCtrl::FindWordBreak  
- 指定した位置の前後にワード区切りを検索`nStart`です。  
+##  <a name="findwordbreak"></a>  CRichEditCtrl::FindWordBreak  
+ Finds the next word break before or after the position specified by `nStart`.  
   
 ```  
 DWORD FindWordBreak(
@@ -534,21 +604,21 @@ DWORD FindWordBreak(
     DWORD nStart) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nCode`  
- 実行するアクションを示します。 使用可能な値の一覧は、パラメーターの説明を参照してください。`code`で**EM_FINDWORDBREAK**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Indicates the action to take. For a list of possible values, see the description for the parameter `code` in **EM_FINDWORDBREAK** in the Windows SDK.  
   
  `nStart`  
- 開始位置となる 0 から始まる文字位置。  
+ The zero-based character position from which to start.  
   
-### <a name="return-value"></a>戻り値  
- パラメーターに基づく`nCode`です。 詳細については、次を参照してください。 [EM_FINDWORDBREAK](http://msdn.microsoft.com/library/windows/desktop/bb788018)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="return-value"></a>Return Value  
+ Based on the parameter `nCode`. For more information, see [EM_FINDWORDBREAK](http://msdn.microsoft.com/library/windows/desktop/bb788018) in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を使用すると、指定した位置にある文字に関する情報を取得します。  
+### <a name="remarks"></a>Remarks  
+ You can use this member function to retrieve information about a character at a given position.  
   
-##  <a name="formatrange"></a>CRichEditCtrl::FormatRange  
- 特定のデバイスのリッチ エディット コントロールでテキストの範囲の書式を設定します。  
+##  <a name="formatrange"></a>  CRichEditCtrl::FormatRange  
+ Formats a range of text in a rich edit control for a specific device.  
   
 ```  
 long FormatRange(
@@ -556,134 +626,134 @@ long FormatRange(
     BOOL bDisplay = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *pfr*  
- ポインター、 [FORMATRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787911)出力デバイスに関する情報を格納する構造体。 **NULL**リッチ エディット コントロール内のキャッシュされた情報を解放できることを示します。  
+ Pointer to the [FORMATRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787911) structure which contains information about the output device. **NULL** indicates that cached information within the rich edit control can be freed.  
   
  *bDisplay*  
- テキストを表示するかどうかを示します。 場合**FALSE**テキストが計測されるだけです。  
+ Indicates if the text should be rendered. If **FALSE**, the text is just measured.  
   
-### <a name="return-value"></a>戻り値  
- 1 を加えた領域内に収まる範囲の最後の文字のインデックス。  
+### <a name="return-value"></a>Return Value  
+ The index of the last character that fits in the region plus one.  
   
-### <a name="remarks"></a>コメント  
- 呼び出しにこの呼び出しが続いて一般的に、[続いて](#displayband)です。  
+### <a name="remarks"></a>Remarks  
+ Typically, this call is followed by a call to [DisplayBand](#displayband).  
   
- 詳細については、次を参照してください。[しかし](http://msdn.microsoft.com/library/windows/desktop/bb788020)メッセージと[FORMATRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787911)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_FORMATRANGE](http://msdn.microsoft.com/library/windows/desktop/bb788020) message and [FORMATRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787911) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #10](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_10.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#10](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_10.cpp)]  
   
-##  <a name="getcharpos"></a>CRichEditCtrl::GetCharPos  
- 内で指定された文字の位置 (左上隅) を取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getcharpos"></a>  CRichEditCtrl::GetCharPos  
+ Gets the position (top-left corner) of a given character within this `CRichEditCtrl` object.  
   
 ```  
 CPoint GetCharPos(long lChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lChar`  
- 文字の 0 から始まるインデックス。  
+ Zero-based index of the character.  
   
-### <a name="return-value"></a>戻り値  
- 指定された文字の左上隅の位置`lChar`です。  
+### <a name="return-value"></a>Return Value  
+ The location of the top-left corner of the character specified by `lChar`.  
   
-### <a name="remarks"></a>コメント  
- 文字を指定するには、0 から始まるインデックス値を提供します。 場合`lChar`がのこの最後の文字のインデックスよりも大きい`CRichEditCtrl`オブジェクトの戻り値は、この最後の文字の直後の文字の位置の座標を指定`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The character is specified by giving its zero-based index value. If `lChar` is greater than the index of the last character in this `CRichEditCtrl` object, the return value specifies the coordinates of the character position just past the last character in this `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。 [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631) in the Windows SDK.  
   
-##  <a name="getdefaultcharformat"></a>CRichEditCtrl::GetDefaultCharFormat  
- 既定の文字書式のこの属性を取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getdefaultcharformat"></a>  CRichEditCtrl::GetDefaultCharFormat  
+ Gets the default character formatting attributes of this `CRichEditCtrl` object.  
   
 ```  
 DWORD GetDefaultCharFormat(CHARFORMAT& cf) const;  DWORD GetDefaultCharFormat(CHARFORMAT2& cf) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- 最初のバージョンへのポインターで、 **CHARFORMAT**属性の書式設定、既定の文字を保持する構造体。  
+ In the first version, a pointer to a **CHARFORMAT** structure holding the default character formatting attributes.  
   
- 2 番目のバージョンへのポインターで、 **CHARFORMAT2**リッチ エディット 2.0 拡張子が構造体を**CHARFORMAT**属性の書式設定、既定の文字を保持する、構造体。  
+ In the second version, a pointer to a **CHARFORMAT2** structure, which is a Rich Edit 2.0 extension to the **CHARFORMAT** structure, holding the default character formatting attributes.  
   
-### <a name="return-value"></a>戻り値  
- **DwMask**のデータ メンバー`cf`です。 既定の文字の属性の書式を指定します。  
+### <a name="return-value"></a>Return Value  
+ The **dwMask** data member of `cf`. It specified the default character formatting attributes.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。、 **EM_GETCHARFORMAT**メッセージ、および**CHARFORMAT**と**CHARFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see the **EM_GETCHARFORMAT** message and the **CHARFORMAT** and **CHARFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[SetDefaultCharFormat](#setdefaultcharformat)です。  
+### <a name="example"></a>Example  
+  See the example for [SetDefaultCharFormat](#setdefaultcharformat).  
   
-##  <a name="geteventmask"></a>CRichEditCtrl::GetEventMask  
- このイベント マスクを取得`CRichEditCtrl`オブジェクト。  
+##  <a name="geteventmask"></a>  CRichEditCtrl::GetEventMask  
+ Gets the event mask for this `CRichEditCtrl` object.  
   
 ```  
 long GetEventMask() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- このイベント マスク`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The event mask for this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- イベント マスクを指定する通知メッセージ、`CRichEditCtrl`オブジェクトを親ウィンドウに送信します。  
+### <a name="remarks"></a>Remarks  
+ The event mask specifies which notification messages the `CRichEditCtrl` object sends to its parent window.  
   
- 詳細については、次を参照してください。 [EM_GETEVENTMASK](http://msdn.microsoft.com/library/windows/desktop/bb788032)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETEVENTMASK](http://msdn.microsoft.com/library/windows/desktop/bb788032) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CRichEditCtrl::SetEventMask](#seteventmask)です。  
+### <a name="example"></a>Example  
+  See the example for [CRichEditCtrl::SetEventMask](#seteventmask).  
   
-##  <a name="getfirstvisibleline"></a>CRichEditCtrl::GetFirstVisibleLine  
- この最上位に表示されている行を決定`CRichEditCtrl`オブジェクト。  
+##  <a name="getfirstvisibleline"></a>  CRichEditCtrl::GetFirstVisibleLine  
+ Determines the topmost visible line in this `CRichEditCtrl` object.  
   
 ```  
 int GetFirstVisibleLine() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この最上位に表示されている行の 0 から始まるインデックス`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ Zero-based index of the uppermost visible line in this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_GETFIRSTVISIBLELINE](http://msdn.microsoft.com/library/windows/desktop/bb761574)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_GETFIRSTVISIBLELINE](http://msdn.microsoft.com/library/windows/desktop/bb761574) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #11](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_11.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#11](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_11.cpp)]  
   
-##  <a name="getiricheditole"></a>CRichEditCtrl::GetIRichEditOle  
- アクセス、 **IRichEditOle**このインターフェイス`CRichEditCtrl`オブジェクト。  
+##  <a name="getiricheditole"></a>  CRichEditCtrl::GetIRichEditOle  
+ Accesses the **IRichEditOle** interface for this `CRichEditCtrl` object.  
   
 ```  
 IRichEditOle* GetIRichEditOle() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター、 [IRichEditOle](http://msdn.microsoft.com/library/windows/desktop/bb774306)これにアクセスするために使用するインターフェイス`CRichEditCtrl`オブジェクトの OLE の機能です。**NULL**インターフェイスにアクセスできない場合。  
+### <a name="return-value"></a>Return Value  
+ Pointer to the [IRichEditOle](http://msdn.microsoft.com/library/windows/desktop/bb774306) interface that can be used to access this `CRichEditCtrl` object's OLE functionality; **NULL** if the interface is not accessible.  
   
-### <a name="remarks"></a>コメント  
- このインターフェイスを使用して、このオプションを表示する`CRichEditCtrl`オブジェクトの OLE 機能します。  
+### <a name="remarks"></a>Remarks  
+ Use this interface to access this `CRichEditCtrl` object's OLE functionality.  
   
- 詳細については、次を参照してください。 [EM_GETOLEINTERFACE](http://msdn.microsoft.com/library/windows/desktop/bb788041)メッセージと[IRichEditOle](http://msdn.microsoft.com/library/windows/desktop/bb774306)インターフェイスで、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETOLEINTERFACE](http://msdn.microsoft.com/library/windows/desktop/bb788041) message and [IRichEditOle](http://msdn.microsoft.com/library/windows/desktop/bb774306) interface in the Windows SDK.  
   
-##  <a name="getlimittext"></a>CRichEditCtrl::GetLimitText  
- このテキストの制限値を取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getlimittext"></a>  CRichEditCtrl::GetLimitText  
+ Gets the text limit for this `CRichEditCtrl` object.  
   
 ```  
 long GetLimitText() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のテキストの制限、(バイト単位) でこの`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The current text limit, in bytes, for this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- テキストの制限が最大量 (バイト単位) 内のテキストのリッチ エディット コントロールが受け入れることができます。  
+### <a name="remarks"></a>Remarks  
+ The text limit is the maximum amount of text, in bytes, the rich edit control can accept.  
   
- 詳細については、次を参照してください。 [EM_GETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761582)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb761582) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #12](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_12.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#12](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_12.cpp)]  
   
-##  <a name="getline"></a>CRichEditCtrl::GetLine  
- これから、行のテキストを取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getline"></a>  CRichEditCtrl::GetLine  
+ Retrieves a line of text from this `CRichEditCtrl` object.  
   
 ```  
 int GetLine(
@@ -696,100 +766,100 @@ int GetLine(
     int nMaxLength) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 取得する行の 0 から始まるインデックス。  
+ Zero-based index of the line to retrieve.  
   
  `lpszBuffer`  
- テキストを受け取るバッファーへのポインター。 バッファーの最初の単語は、バイトをバッファーにコピーすることができますの最大数を指定する必要があります。  
+ Points to the buffer to receive the text. The first word of the buffer must specify the maximum number of bytes that can be copied into the buffer.  
   
  `nMaxLength`  
- コピーできる文字の最大数`lpszBuffer`です。 2 番目の形式の`GetLine`で指定したバッファーの最初の単語にこの値を配置`lpszBuffer`です。  
+ Maximum number of characters that can be copied into `lpszBuffer`. The second form of `GetLine` places this value into the first word of the buffer specified by `lpszBuffer`.  
   
-### <a name="return-value"></a>戻り値  
- コピーされた文字数`lpszBuffer`です。  
+### <a name="return-value"></a>Return Value  
+ The number of characters copied into `lpszBuffer`.  
   
-### <a name="remarks"></a>コメント  
- コピーした行では、終端の null 文字は含まれません。  
+### <a name="remarks"></a>Remarks  
+ The copied line does not contain a terminating null character.  
   
 > [!NOTE]
->  バッファーの最初の単語にコピーする文字の数が格納されるため、バッファーが 4 バイト長であることを確認します。  
+>  Because the first word of the buffer stores the number of characters to be copied, make sure that your buffer is at least 4 bytes long.  
   
- 詳細については、次を参照してください。 [EM_GETLINE](http://msdn.microsoft.com/library/windows/desktop/bb761584)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETLINE](http://msdn.microsoft.com/library/windows/desktop/bb761584) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[GetLineCount](#getlinecount)です。  
+### <a name="example"></a>Example  
+  See the example for [GetLineCount](#getlinecount).  
   
-##  <a name="getlinecount"></a>CRichEditCtrl::GetLineCount  
- 内の行の数を取得、`CRichEditCtrl`オブジェクト。  
+##  <a name="getlinecount"></a>  CRichEditCtrl::GetLineCount  
+ Retrieves the number of lines in the `CRichEditCtrl` object.  
   
 ```  
 int GetLineCount() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- この行の数`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The number of lines in this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_GETLINECOUNT](http://msdn.microsoft.com/library/windows/desktop/bb761586)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_GETLINECOUNT](http://msdn.microsoft.com/library/windows/desktop/bb761586) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #13](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_13.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#13](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_13.cpp)]  
   
-##  <a name="getmodify"></a>CRichEditCtrl::GetModify  
- かどうかをこの`CRichEditCtrl`オブジェクトが変更されています。  
+##  <a name="getmodify"></a>  CRichEditCtrl::GetModify  
+ Determines if the contents of this `CRichEditCtrl` object have been modified.  
   
 ```  
 BOOL GetModify() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 0 以外の値でこのテキスト`CRichEditCtrl`オブジェクトが変更された 0 それ以外の場合。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the text in this `CRichEditCtrl` object has been modified; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Windows では、リッチ エディット コントロールの内容が変更されたかどうかを示す内部フラグを保持します。 このフラグがオフになってエディット コントロールが最初に作成し、呼び出すことによってもクリアできます、 [SetModify](#setmodify)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ Windows maintains an internal flag indicating whether the contents of the rich edit control have been changed. This flag is cleared when the edit control is first created and can also be cleared by calling the [SetModify](#setmodify) member function.  
   
- 詳細については、次を参照してください。 [EM_GETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761592)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761592) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #14](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_14.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#14](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_14.cpp)]  
   
-##  <a name="getoptions"></a>CRichEditCtrl::GetOptions  
- リッチ エディット コントロールに現在設定オプションを取得します。  
+##  <a name="getoptions"></a>  CRichEditCtrl::GetOptions  
+ Retrieves the options currently set for the rich edit control.  
   
 ```  
 UINT GetOptions() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のオプション フラグの値の組み合わせ。 これらの値の一覧は、次を参照してください。、 *foptions の*内のパラメーター、 [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254)メッセージ、」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="return-value"></a>Return Value  
+ A combination of the current option flag values. For a list of these values, see the *fOptions* parameter in the [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254) message, as described in the Windows SDK.  
   
-##  <a name="getparaformat"></a>CRichEditCtrl::GetParaFormat  
- 現在の選択の属性を段落書式指定を取得します。  
+##  <a name="getparaformat"></a>  CRichEditCtrl::GetParaFormat  
+ Gets the paragraph formatting attributes of the current selection.  
   
 ```  
 DWORD GetParaFormat(PARAFORMAT& pf) const;  DWORD GetParaFormat(PARAFORMAT2& pf) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pf`  
- 最初のバージョンへのポインターで、 [PARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787940)段落の現在の選択の属性を保持する構造体。  
+ In the first version, a pointer to a [PARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787940) structure to hold the paragraph formatting attributes of the current selection.  
   
- 2 番目のバージョンへのポインターで、 [PARAFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787942)リッチ エディット 2.0 拡張子が構造体を**PARAFORMAT**属性の書式設定、既定の文字を保持する、構造体。  
+ In the second version, a pointer to a [PARAFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787942) structure, which is a Rich Edit 2.0 extension to the **PARAFORMAT** structure, holding the default character formatting attributes.  
   
-### <a name="return-value"></a>戻り値  
- **DwMask**のデータ メンバー`pf`です。 段落の現在の選択範囲全体で一貫性のある属性を指定します。  
+### <a name="return-value"></a>Return Value  
+ The **dwMask** data member of `pf`. It specifies the paragraph formatting attributes that are consistent throughout the current selection.  
   
-### <a name="remarks"></a>コメント  
- 複数の段落が選択されている場合`pf`最初の選択した段落の属性を受け取る。 戻り値は、選択範囲全体に適用されている属性を指定します。  
+### <a name="remarks"></a>Remarks  
+ If more than one paragraph is selected, `pf` receives the attributes of the first selected paragraph. The return value specifies which attributes are consistent throughout the selection.  
   
- 詳細については、次を参照してください。、 [EM_GETPARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774182)メッセージ、および**PARAFORMAT**と**PARAFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_GETPARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774182) message and the **PARAFORMAT** and **PARAFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CRichEditCtrl::SetParaFormat](#setparaformat)です。  
+### <a name="example"></a>Example  
+  See the example for [CRichEditCtrl::SetParaFormat](#setparaformat).  
   
-##  <a name="getpunctuation"></a>CRichEditCtrl::GetPunctuation  
- リッチ エディット コントロールで現在の区切り文字を取得します。  
+##  <a name="getpunctuation"></a>  CRichEditCtrl::GetPunctuation  
+ Gets the current punctuation characters in a rich edit control.  
   
 ```  
 BOOL GetPunctuation(
@@ -797,53 +867,53 @@ BOOL GetPunctuation(
     PUNCTUATION* lpPunc) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fType`  
- 区切り記号の種類、フラグ」の説明に従って、`fType`のパラメーター [EM_GETPUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb774184)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ The punctuation type flag, as described in the `fType` parameter of [EM_GETPUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb774184) in the Windows SDK.  
   
  `lpPunc`  
- ポインター、[句読点](http://msdn.microsoft.com/library/windows/desktop/bb787944)構造体」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ A pointer to a [PUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb787944) structure, as described in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- 以外の場合は、操作が成功した場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、オペレーティング システムのアジア言語のバージョンのみで利用可能です。  
+### <a name="remarks"></a>Remarks  
+ This member function is available with only the Asian-language versions of the operating system.  
   
-##  <a name="getrect"></a>CRichEditCtrl::GetRect  
- この書式設定の四角形を取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getrect"></a>  CRichEditCtrl::GetRect  
+ Retrieves the formatting rectangle for this `CRichEditCtrl` object.  
   
 ```  
 void GetRect(LPRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- [CRect](../../atl-mfc-shared/reference/crect-class.md)またはへのポインター、 [RECT](../../mfc/reference/rect-structure1.md)これの書式設定、四角形を受信する`CRichEditCtrl`オブジェクト。  
+ [CRect](../../atl-mfc-shared/reference/crect-class.md) or pointer to a [RECT](../../mfc/reference/rect-structure1.md) to receive the formatting rectangle of this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- 書式設定の四角形は、テキストの外接する四角形です。 この値の規模に関係なく、`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The formatting rectangle is the bounding rectangle for the text. This value is independent of the size of the `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。 [EM_GETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761596)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761596) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[LimitText](#limittext)です。  
+### <a name="example"></a>Example  
+  See the example for [LimitText](#limittext).  
   
-##  <a name="getredoname"></a>CRichEditCtrl::GetRedoName  
- 存在する場合は、再実行キューでは、次のアクションの種類を取得します。  
+##  <a name="getredoname"></a>  CRichEditCtrl::GetRedoName  
+ Retrieves the type of the next available action in the redo queue, if any.  
   
 ```  
 UNDONAMEID GetRedoName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、`GetRedoName`を返します、[ある場合](http://msdn.microsoft.com/library/windows/desktop/bb774365)コントロールの再実行キューの次のアクションの種類を示す列挙型。 キューに再実行操作が 不明な型の場合、再実行キューが空の場合、または`GetRedoName`0 を返します。  
+### <a name="return-value"></a>Return Value  
+ If successful, `GetRedoName` returns the [UNDONAMEID](http://msdn.microsoft.com/library/windows/desktop/bb774365) enumeration type indicating the type of the next action in the control's redo queue. If the redo queue is empty, or if the redo action in the queue is of an unknown type, `GetRedoName` returns 0.  
   
-### <a name="remarks"></a>コメント  
- 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、アンドゥ操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
+### <a name="remarks"></a>Remarks  
+ The types of actions that can be undone or redone include typing, delete, drag-drop, cut, and paste operations. This information can be useful for applications that provide an extended user interface for Undo and Redo operations, such as a drop-down list box of redoable actions.  
   
-##  <a name="getsel"></a>CRichEditCtrl::GetSel  
- この現在の選択範囲の境界を取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getsel"></a>  CRichEditCtrl::GetSel  
+ Retrieves the bounds of the current selection in this `CRichEditCtrl` object.  
   
 ```  
 void GetSel(CHARRANGE& cr) const;  
@@ -853,124 +923,124 @@ void GetSel(
     long& nEndChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cr`  
- 参照、[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)を現在の選択範囲の境界を受信する構造体。  
+ Reference to a [CHARRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787885) structure to receive the bounds of the current selection.  
   
  `nStartChar`  
- 現在の選択範囲の最初の文字の 0 から始まるインデックス。  
+ Zero-based index of the first character in the current selection.  
   
  `nEndChar`  
- 現在の選択範囲の最後の文字の 0 から始まるインデックス。  
+ Zero-based index of the last character in the current selection.  
   
-### <a name="remarks"></a>コメント  
- この関数の 2 つの形式は、選択範囲の境界を取得する代替方法を提供します。 これらの形式の簡単な説明に従ってください。  
+### <a name="remarks"></a>Remarks  
+ The two forms of this function provide alternate ways to get the bounds for the selection. Brief descriptions of these forms follow:  
   
-- **GetSel (** `cr` **)**このフォームを使用して、**上**構造体、 **cpMin**と**cpMax**境界を取得するメンバー。  
+- **GetSel(** `cr` **)** This form uses the **CHARRANGE** structure with its **cpMin** and **cpMax** members to return the bounds.  
   
-- **GetSel (** `nStartChar` **、** `nEndChar` **)**このフォームは、パラメーターで境界を返します`nStartChar`と`nEndChar`です。  
+- **GetSel(** `nStartChar` **,** `nEndChar` **)** This form returns the bounds in the parameters `nStartChar` and `nEndChar`.  
   
- 選択範囲を含むすべての場合、先頭 ( **cpMin**または`nStartChar`) 0 と終了は、( **cpMax**または`nEndChar`) が - 1。  
+ The selection includes everything if the beginning ( **cpMin** or `nStartChar`) is 0 and the end ( **cpMax** or `nEndChar`) is - 1.  
   
- 詳細については、次を参照してください。 [EM_EXGETSEL](http://msdn.microsoft.com/library/windows/desktop/bb788001)メッセージと[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EXGETSEL](http://msdn.microsoft.com/library/windows/desktop/bb788001) message and [CHARRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787885) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #15](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_15.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#15](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_15.cpp)]  
   
-##  <a name="getselectioncharformat"></a>CRichEditCtrl::GetSelectionCharFormat  
- 現在の選択の属性を書式指定文字を取得します。  
+##  <a name="getselectioncharformat"></a>  CRichEditCtrl::GetSelectionCharFormat  
+ Gets the character formatting attributes of the current selection.  
   
 ```  
 DWORD GetSelectionCharFormat(CHARFORMAT& cf) const;  DWORD GetSelectionCharFormat(CHARFORMAT2& cf) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- 最初のバージョンへのポインターで、 [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)文字書式の現在の選択の属性を受け取る。  
+ In the first version, a pointer to a [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure to receive the character formatting attributes of the current selection.  
   
- 2 番目のバージョンへのポインターで、 [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883)リッチ エディット 2.0 拡張子が構造体を**CHARFORMAT**文字書式の現在の選択の属性を受け取る。  
+ In the second version, a pointer to a [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883) structure, which is a Rich Edit 2.0 extension to the **CHARFORMAT** structure to receive the character formatting attributes of the current selection.  
   
-### <a name="return-value"></a>戻り値  
- **DwMask**のデータ メンバー`cf`です。 現在の選択範囲全体で一貫性のある属性の書式設定文字を指定します。  
+### <a name="return-value"></a>Return Value  
+ The **dwMask** data member of `cf`. It specifies the character formatting attributes that are consistent throughout the current selection.  
   
-### <a name="remarks"></a>コメント  
- `cf`パラメーターは、現在の選択範囲の最初の文字の属性を受け取ります。 戻り値は、選択範囲全体に適用されている属性を指定します。  
+### <a name="remarks"></a>Remarks  
+ The `cf` parameter receives the attributes of the first character in the current selection. The return value specifies which attributes are consistent throughout the selection.  
   
- 詳細については、次を参照してください。、 [EM_GETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb788026)メッセージ、および**CHARFORMAT**と**CHARFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_GETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb788026) message and the **CHARFORMAT** and **CHARFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[SetSelectionCharFormat](#setselectioncharformat)です。  
+### <a name="example"></a>Example  
+  See the example for [SetSelectionCharFormat](#setselectioncharformat).  
   
-##  <a name="getselectiontype"></a>CRichEditCtrl::GetSelectionType  
- この選択の種類を決定`CRichEditCtrl`オブジェクト。  
+##  <a name="getselectiontype"></a>  CRichEditCtrl::GetSelectionType  
+ Determines the selection type in this `CRichEditCtrl` object.  
   
 ```  
 WORD GetSelectionType() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在の選択範囲の内容を示すフラグです。 次のフラグの組み合わせです。  
+### <a name="return-value"></a>Return Value  
+ Flags indicating the contents of the current selection. A combination of the following flags:  
   
-- `SEL_EMPTY`現在選択されていないことを示します。  
+- `SEL_EMPTY` Indicates that there is no current selection.  
   
-- `SEL_TEXT`現在の選択範囲にテキストが含まれていることを示します。  
+- `SEL_TEXT` Indicates that the current selection contains text.  
   
-- `SEL_OBJECT`現在の選択範囲に少なくとも 1 つの OLE 項目が含まれていることを示します。  
+- `SEL_OBJECT` Indicates that the current selection contains at least one OLE item.  
   
-- `SEL_MULTICHAR`現在の選択範囲にテキストの 2 つ以上の文字が含まれていることを示します。  
+- `SEL_MULTICHAR` Indicates that the current selection contains more than one character of text.  
   
-- `SEL_MULTIOBJECT`現在の選択範囲が 1 つ以上の OLE オブジェクトが含まれていることを示します。  
+- `SEL_MULTIOBJECT` Indicates that the current selection contains more than one OLE object.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_SELECTIONTYPE](http://msdn.microsoft.com/library/windows/desktop/bb774223)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_SELECTIONTYPE](http://msdn.microsoft.com/library/windows/desktop/bb774223) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #16](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_16.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#16](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_16.cpp)]  
   
-##  <a name="getseltext"></a>CRichEditCtrl::GetSelText  
- この現在の選択範囲からテキストを取得`CRichEditCtrl`オブジェクト。  
+##  <a name="getseltext"></a>  CRichEditCtrl::GetSelText  
+ Retrieves the text from the current selection in this `CRichEditCtrl` object.  
   
 ```  
 long GetSelText(LPSTR lpBuf) const;  CString GetSelText() const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpBuf`  
- 現在の選択範囲にテキストを受信するバッファーへのポインター。  
+ Pointer to the buffer to receive the text in the current selection.  
   
-### <a name="return-value"></a>戻り値  
- フォームによって異なります。  
+### <a name="return-value"></a>Return Value  
+ Depends on the form:  
   
-- **GetSelText (** `lpBuf` **)**にコピーされた文字数`lpBuf`終端の null は含まない。  
+- **GetSelText(** `lpBuf` **)** The number of characters copied into `lpBuf`, not including the null termination.  
   
-- **GetSelText に関するページ ()**現在の選択範囲を含む文字列。  
+- **GetSelText( )** The string containing the current selection.  
   
-### <a name="remarks"></a>コメント  
- 最初の形式を使用する場合**GetSelText (** `lpBuf` **)**バッファーが十分な大きさを受信するテキストにあることを確認する必要があります。 呼び出す[GetSel](#getsel)を現在の選択範囲の文字数を決定します。  
+### <a name="remarks"></a>Remarks  
+ If you use the first form, **GetSelText(** `lpBuf` **)**, you must ensure that the buffer is large enough for the text it will receive. Call [GetSel](#getsel) to determine the number of characters in the current selection.  
   
- 詳細については、次を参照してください。 [EM_GETSELTEXT](http://msdn.microsoft.com/library/windows/desktop/bb774190)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_GETSELTEXT](http://msdn.microsoft.com/library/windows/desktop/bb774190) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CRichEditCtrl::GetSelectionType](#getselectiontype)です。  
+### <a name="example"></a>Example  
+  See the example for [CRichEditCtrl::GetSelectionType](#getselectiontype).  
   
-##  <a name="gettextlength"></a>CRichEditCtrl::GetTextLength  
- これで、文字のテキストの長さを取得`CRichEditCtrl`オブジェクト、終端の null 文字は含まれません。  
+##  <a name="gettextlength"></a>  CRichEditCtrl::GetTextLength  
+ Retrieves the length of the text, in characters, in this `CRichEditCtrl` object, not including the terminating null character.  
   
 ```  
 long GetTextLength() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- このテキストの長さ`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The length of the text in this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [WM_GETTEXTLENGTH](http://msdn.microsoft.com/library/windows/desktop/ms632628)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [WM_GETTEXTLENGTH](http://msdn.microsoft.com/library/windows/desktop/ms632628) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl 17](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_17.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#17](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_17.cpp)]  
   
-##  <a name="gettextlengthex"></a>CRichEditCtrl::GetTextLengthEx  
- リッチ エディット コントロール内のテキストの長さを計算します。  
+##  <a name="gettextlengthex"></a>  CRichEditCtrl::GetTextLengthEx  
+ Calculates the length of the text in the rich edit control.  
   
 ```  
 long GetTextLengthEx(
@@ -978,31 +1048,31 @@ long GetTextLengthEx(
     UINT uCodePage = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `dwFlags`  
- テキストの長さを決定に使用する方法を指定する値。 このメンバーは、いずれかを指定できますまたは以上の値のフラグのメンバーに示されている[GETTEXTLENGTHEX](http://msdn.microsoft.com/library/windows/desktop/bb787915)で説明されている、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Value specifying the method to be used in determining the text length. This member can be one or more of the values listed in the flags member of [GETTEXTLENGTHEX](http://msdn.microsoft.com/library/windows/desktop/bb787915) described in the Windows SDK.  
   
  `uCodePage`  
- 変換 (Unicode の 1200 の ANSI コード ページの CP_ACP) 用のコード ページです。  
+ Code page for translation (CP_ACP for ANSI Code Page, 1200 for Unicode).  
   
-### <a name="return-value"></a>戻り値  
- 文字またはエディット コントロールでのバイト数。 互換性のないフラグが設定されている場合`dwFlags`、このメンバー関数を返します`E_INVALIDARG`です。  
+### <a name="return-value"></a>Return Value  
+ The number of characters or bytes in the edit control. If incompatible flags were set in `dwFlags`, this member function returns `E_INVALIDARG`.  
   
-### <a name="remarks"></a>コメント  
- `GetTextLengthEx`テキストの長さを決定するその他の方法を提供します。 リッチ エディット 2.0 の機能をサポートします。 参照してください[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細についてはします。  
+### <a name="remarks"></a>Remarks  
+ `GetTextLengthEx` provides additional ways of determining the length of the text. It supports the Rich Edit 2.0 functionality. See [About Rich Edit Controls](http://msdn.microsoft.com/library/windows/desktop/bb787873) in the Windows SDKfor more information.  
   
-##  <a name="gettextmode"></a>CRichEditCtrl::GetTextMode  
- リッチ エディット コントロールの現在のテキスト モードと元に戻すレベルを取得します。  
+##  <a name="gettextmode"></a>  CRichEditCtrl::GetTextMode  
+ Retrieves the current text mode and undo level of a rich edit control.  
   
 ```  
 UINT GetTextMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ビット フラグのセット、 [TEXTMODE](http://msdn.microsoft.com/library/windows/desktop/bb774364) 」の説明に従って、列挙型、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 フラグは、現在のテキスト モードを示し、コントロールのレベルを元に戻します。  
+### <a name="return-value"></a>Return Value  
+ A set of bit flags from the [TEXTMODE](http://msdn.microsoft.com/library/windows/desktop/bb774364) enumeration type, as described in the Windows SDK. The flags indicate the current text mode and undo level of the control.  
   
-##  <a name="gettextrange"></a>CRichEditCtrl::GetTextRange  
- 指定された文字の範囲を取得します。  
+##  <a name="gettextrange"></a>  CRichEditCtrl::GetTextRange  
+ Gets the specified range of characters.  
   
 ```  
 int GetTextRange(
@@ -1011,52 +1081,52 @@ int GetTextRange(
     CString& refString) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFirst`  
- 範囲の最初の文字の直前の文字位置を示すインデックス。  
+ The character position index immediately preceding the first character in the range.  
   
  `nLast`  
- 範囲の最後の文字の直後の文字位置。  
+ The character position immediately following the last character in the range.  
   
  `refString`  
- 参照、 [CString](../../atl-mfc-shared/reference/cstringt-class.md)テキストを受け取るオブジェクト。  
+ A reference to a [CString](../../atl-mfc-shared/reference/cstringt-class.md) object that will receive the text.  
   
-### <a name="return-value"></a>戻り値  
- 終端の null 文字を含まないコピーされた文字の数。  
+### <a name="return-value"></a>Return Value  
+ The number of characters copied, not including the terminating null character.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_GETTEXTRANGE](http://msdn.microsoft.com/library/windows/desktop/bb774199)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_GETTEXTRANGE](http://msdn.microsoft.com/library/windows/desktop/bb774199) in the Windows SDK.  
   
- `GetTextRange`リッチ エディット 2.0 の機能をサポートしています。 参照してください[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細についてはします。  
+ `GetTextRange` supports the Rich Edit 2.0 functionality. See [About Rich Edit Controls](http://msdn.microsoft.com/library/windows/desktop/bb787873) in the Windows SDKfor more information.  
   
-##  <a name="getundoname"></a>CRichEditCtrl::GetUndoName  
- 存在する場合は、元に戻すキューの次の使用可能なアクションの種類を取得します。  
+##  <a name="getundoname"></a>  CRichEditCtrl::GetUndoName  
+ Retrieves the type of the next available action in the undo queue, if any.  
   
 ```  
 UNDONAMEID GetUndoName() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 元に戻す操作がコントロールの元に戻すキューの場合`GetUndoName`を返します、[ある場合](http://msdn.microsoft.com/library/windows/desktop/bb774365)キューの次のアクションの種類を示す列挙型。 キューに元に戻す操作が 不明な型の場合、元に戻すキューが空の場合、または`GetUndoName`0 を返します。  
+### <a name="return-value"></a>Return Value  
+ If an undo action is in the control's undo queue, `GetUndoName` returns the [UNDONAMEID](http://msdn.microsoft.com/library/windows/desktop/bb774365) enumeration type indicating the type of the next action in the queue. If the undo queue is empty, or if the undo action in the queue is of an unknown type, `GetUndoName` returns 0.  
   
-### <a name="remarks"></a>コメント  
- 元に戻すまたはやり直すことができるアクションの種類は、入力、delete、ドラッグ アンド ドロップ、切り取り、および貼り付け操作します。 この情報は、元に戻すことができる操作のドロップダウン リスト ボックスなどの取り消しとやり直し操作に対して拡張ユーザー インターフェイスを提供するアプリケーションで役立ちます。  
+### <a name="remarks"></a>Remarks  
+ The types of actions that can be undone or redone include typing, delete, drag-drop, cut, and paste operations. This information can be useful for applications that provide an extended user interface for Undo and Redo operations, such as a drop-down list box of actions that can be undone.  
   
-##  <a name="getwordwrapmode"></a>CRichEditCtrl::GetWordWrapMode  
- リッチ エディット コントロールの word 互換性に影響するオプションの現在のワード ラップを取得します。  
+##  <a name="getwordwrapmode"></a>  CRichEditCtrl::GetWordWrapMode  
+ Retrieves the current word wrapping and word breaking options for the rich edit control.  
   
 ```  
 UINT GetWordWrapMode() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のワード ラップおよび単語区切りオプション。 これらのオプションの説明を[EM_SETWORDWRAPMODE](http://msdn.microsoft.com/library/windows/desktop/bb774294)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="return-value"></a>Return Value  
+ The current word wrapping and word breaking options. These options are described in [EM_SETWORDWRAPMODE](http://msdn.microsoft.com/library/windows/desktop/bb774294) in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、オペレーティング システムのアジア言語のバージョンでのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ This member function is available only for Asian-language versions of the operating system.  
   
-##  <a name="hideselection"></a>CRichEditCtrl::HideSelection  
- 選択範囲の可視性を変更します。  
+##  <a name="hideselection"></a>  CRichEditCtrl::HideSelection  
+ Changes the visibility of the selection.  
   
 ```  
 void HideSelection(
@@ -1064,111 +1134,111 @@ void HideSelection(
     BOOL bPerm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bHide`  
- 選択範囲を表示するか、非表示を示す**TRUE**選択範囲を非表示にします。  
+ Indicates if the selection should be shown or hidden, **TRUE** to hide the selection.  
   
  `bPerm`  
- この選択の表示の変更を永続的にするかどうかを示します。  
+ Indicates if this change in visibility for the selection should be permanent.  
   
-### <a name="remarks"></a>コメント  
- ときに`bPerm`は**TRUE**、変更、`ECO_NOHIDESEL`このオプション`CRichEditCtrl`オブジェクト。 このオプションの簡単な説明を参照してください。 [SetOptions](#setoptions)です。 この関数を使用するにはこれのすべてのオプションを設定する`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ When `bPerm` is **TRUE**, it changes the `ECO_NOHIDESEL` option for this `CRichEditCtrl` object. For a brief description of this option, see [SetOptions](#setoptions). You can use this function to set all the options for this `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。 [EM_HIDESELECTION](http://msdn.microsoft.com/library/windows/desktop/bb774210)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_HIDESELECTION](http://msdn.microsoft.com/library/windows/desktop/bb774210) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 18](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_18.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#18](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_18.cpp)]  
   
-##  <a name="limittext"></a>CRichEditCtrl::LimitText  
- ユーザーがエディット コントロールに入力できるテキストの長さを制限します。  
+##  <a name="limittext"></a>  CRichEditCtrl::LimitText  
+ Limits the length of the text that the user can enter into an edit control.  
   
 ```  
 void LimitText(long nChars = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nChars`  
- ユーザーが入力できるテキストの長さ (単位: バイト) を指定します。 このパラメーターが 0 (既定値) の場合は、テキストの長さは 64 kb に設定されます。  
+ Specifies the length (in bytes) of the text that the user can enter. If this parameter is 0 (the default value), the text length is set to 64K bytes.  
   
-### <a name="remarks"></a>コメント  
- テキストの制限を変更すると、ユーザーが入力できるテキストのみが制限されます。 影響を与えません任意のテキストで既に編集コントロールにも、によって、編集コントロールにコピーされたテキストの長さに影響は、 [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext)メンバー関数内`CWnd`です。 アプリケーションで使用する場合、`SetWindowText`関数への呼び出しで指定されているよりエディット コントロールにテキストを配置する`LimitText`ユーザーがエディット コントロール内のテキストのいずれかを削除します。 ただし、テキストの制限は、ユーザーが新しいテキストに、既存のテキストを置換できないように、現在の選択範囲を削除しない限り、により、テキストは、テキストの制限値未満になってしまいます。  
+### <a name="remarks"></a>Remarks  
+ Changing the text limit restricts only the text the user can enter. It has no effect on any text already in the edit control, nor does it affect the length of the text copied to the edit control by the [SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext) member function in `CWnd`. If an application uses the `SetWindowText` function to place more text into an edit control than is specified in the call to `LimitText`, the user can delete any of the text within the edit control. However, the text limit will prevent the user from replacing the existing text with new text, unless deleting the current selection causes the text to fall below the text limit.  
   
 > [!NOTE]
->  テキストの制限値の各 OLE アイテムは 1 つの文字としてカウントされます。  
+>  For the text limit, each OLE item counts as a single character.  
   
- 詳細については、次を参照してください。 [EM_EXLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb788003)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EXLIMITTEXT](http://msdn.microsoft.com/library/windows/desktop/bb788003) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #19](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_19.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#19](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_19.cpp)]  
   
-##  <a name="linefromchar"></a>CRichEditCtrl::LineFromChar  
- 指定した文字のインデックスを含む行の行番号を取得します。  
+##  <a name="linefromchar"></a>  CRichEditCtrl::LineFromChar  
+ Retrieves the line number of the line that contains the specified character index.  
   
 ```  
 long LineFromChar(long nIndex) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- エディット コントロールのテキストに必要な文字の 0 から始まるインデックス値が含まれるか、-1 を含んでいます。 場合`nIndex`-1 で、現在の行では、カーソルがある行を指定します。  
+ Contains the zero-based index value for the desired character in the text of the edit control, or contains -1. If `nIndex` is -1, it specifies the current line, that is, the line that contains the caret.  
   
-### <a name="return-value"></a>戻り値  
- 指定された文字のインデックスを含む行の 0 から始まる行番号`nIndex`です。 場合`nIndex`-1 で、選択範囲の最初の文字を含む行の数が返されます。 選択されていない場合は、現在の行番号が返されます。  
+### <a name="return-value"></a>Return Value  
+ The zero-based line number of the line containing the character index specified by `nIndex`. If `nIndex` is -1, the number of the line that contains the first character of the selection is returned. If there is no selection, the current line number is returned.  
   
-### <a name="remarks"></a>コメント  
- 文字のインデックスは、リッチ エディット コントロールの先頭から文字の数です。 文字をカウントする OLE 項目が 1 つの文字としてカウントされます。  
+### <a name="remarks"></a>Remarks  
+ A character index is the number of characters from the beginning of the rich edit control. For character counting, an OLE item is counted as a single character.  
   
- 詳細については、次を参照してください。 [EM_EXLINEFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb788005)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EXLINEFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb788005) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #20](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_20.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#20](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_20.cpp)]  
   
-##  <a name="lineindex"></a>CRichEditCtrl::LineIndex  
- この内の行の文字インデックスを取得`CRichEditCtrl`オブジェクト。  
+##  <a name="lineindex"></a>  CRichEditCtrl::LineIndex  
+ Retrieves the character index of a line within this `CRichEditCtrl` object.  
   
 ```  
 int LineIndex(int nLine = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLine`  
- エディット コントロールのテキストで目的の行のインデックス値が含まれていますか、-1 を含んでいます。 場合`nLine`-1 で、現在の行では、カーソルがある行を指定します。  
+ Contains the index value for the desired line in the text of the edit control, or contains -1. If `nLine` is -1, it specifies the current line, that is, the line that contains the caret.  
   
-### <a name="return-value"></a>戻り値  
- 指定した行の文字インデックス`nLine`または指定した行番号が大きい場合は-1、エディット コントロールで行の数。  
+### <a name="return-value"></a>Return Value  
+ The character index of the line specified in `nLine` or -1 if the specified line number is greater then the number of lines in the edit control.  
   
-### <a name="remarks"></a>コメント  
- 文字インデックスは、リッチ エディット コントロールの先頭から指定した行までの文字の数です。  
+### <a name="remarks"></a>Remarks  
+ The character index is the number of characters from the beginning of the rich edit control to the specified line.  
   
- 詳細については、次を参照してください。 [EM_LINEINDEX](http://msdn.microsoft.com/library/windows/desktop/bb761611)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINEINDEX](http://msdn.microsoft.com/library/windows/desktop/bb761611) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 21](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_21.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#21](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_21.cpp)]  
   
-##  <a name="linelength"></a>CRichEditCtrl::LineLength  
- リッチ エディット コントロール内の行の長さを取得します。  
+##  <a name="linelength"></a>  CRichEditCtrl::LineLength  
+ Retrieves the length of a line in a rich edit control.  
   
 ```  
 int LineLength(int nLine = -1) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLine`  
- 長さを取得する行で、文字の文字インデックスを指定します。 このパラメーターが-1 の場合は、現在の行 (カーソルがある行) の長さは返されて、行内テキストが選択されている任意の長さは含まれません。 ときに`LineLength`が呼び出された単一行エディット コントロールでは、このパラメーターは無視されます。  
+ Specifies the character index of a character in the line whose length is to be retrieved. If this parameter is -1, the length of the current line (the line that contains the caret) is returned, not including the length of any selected text within the line. When `LineLength` is called for a single-line edit control, this parameter is ignored.  
   
-### <a name="return-value"></a>戻り値  
- ときに`LineLength`と呼ばれますが、複数行エディット コントロールでは、戻り値は、長 (バイト単位) で指定された行の`nLine`します。 ときに`LineLength`が呼び出された単一行エディット コントロールでは、戻り値は、長 (バイト単位) がエディット コントロール内のテキスト。  
+### <a name="return-value"></a>Return Value  
+ When `LineLength` is called for a multiple-line edit control, the return value is the length (in bytes) of the line specified by `nLine`. When `LineLength` is called for a single-line edit control, the return value is the length (in bytes) of the text in the edit control.  
   
-### <a name="remarks"></a>コメント  
- 使用して、 [LineIndex](#lineindex)内で指定した行番号の文字インデックスを取得するメンバー関数`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ Use the [LineIndex](#lineindex) member function to retrieve a character index for a given line number within this `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。 [EM_LINELENGTH](http://msdn.microsoft.com/library/windows/desktop/bb761613)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINELENGTH](http://msdn.microsoft.com/library/windows/desktop/bb761613) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[LineIndex](#lineindex)です。  
+### <a name="example"></a>Example  
+  See the example for [LineIndex](#lineindex).  
   
-##  <a name="linescroll"></a>CRichEditCtrl::LineScroll  
- 複数行のエディット コントロールのテキストをスクロールします。  
+##  <a name="linescroll"></a>  CRichEditCtrl::LineScroll  
+ Scrolls the text of a multiple-line edit control.  
   
 ```  
 void LineScroll(
@@ -1176,40 +1246,40 @@ void LineScroll(
     int nChars = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nLines`  
- 垂直方向にスクロールする行数を指定します。  
+ Specifies the number of lines to scroll vertically.  
   
  `nChars`  
- 水平方向にスクロールする文字位置の数を指定します。 リッチ エディット コントロールにいずれかがある場合、この値は無視されます、 **ES_RIGHT**または**ES_CENTER**スタイル。 [エディット スタイル](../../mfc/reference/edit-styles.md)で指定された[作成](#create)です。  
+ Specifies the number of character positions to scroll horizontally. This value is ignored if the rich edit control has either the **ES_RIGHT** or **ES_CENTER** style. [Edit styles](../../mfc/reference/styles-used-by-mfc.md#edit-styles) are specified in [Create](#create).  
   
-### <a name="remarks"></a>コメント  
- エディット コントロールは、過去のエディット コントロールでテキストの最後の行は垂直方向にスクロールされません。 場合は、現在の行で指定された行の数と`nLines`エディット コントロールで行の合計数を超える場合、値がエディット コントロールの最後の行がエディット コントロール ウィンドウの一番上にスクロールされる基準を調整します。  
+### <a name="remarks"></a>Remarks  
+ The edit control does not scroll vertically past the last line of text in the edit control. If the current line plus the number of lines specified by `nLines` exceeds the total number of lines in the edit control, the value is adjusted so that the last line of the edit control is scrolled to the top of the edit-control window.  
   
- `LineScroll`過去の任意の行の最後の文字、水平方向にスクロールするために使用します。  
+ `LineScroll` can be used to scroll horizontally past the last character of any line.  
   
- 詳細については、次を参照してください。 [EM_LINESCROLL](http://msdn.microsoft.com/library/windows/desktop/bb761615)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_LINESCROLL](http://msdn.microsoft.com/library/windows/desktop/bb761615) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[GetFirstVisibleLine](#getfirstvisibleline)です。  
+### <a name="example"></a>Example  
+  See the example for [GetFirstVisibleLine](#getfirstvisibleline).  
   
-##  <a name="paste"></a>CRichEditCtrl::Paste  
- クリップボードからデータを挿入、`CRichEditCtrl`カーソル、カーソルの場所にします。  
+##  <a name="paste"></a>  CRichEditCtrl::Paste  
+ Inserts the data from the Clipboard into the `CRichEditCtrl` at the insertion point, the location of the caret.  
   
 ```  
 void Paste();
 ```  
   
-### <a name="remarks"></a>コメント  
- クリップボードに認識される形式でデータが含まれている場合にのみ、データが挿入されます。  
+### <a name="remarks"></a>Remarks  
+ Data is inserted only if the Clipboard contains data in a recognized format.  
   
- 詳細については、次を参照してください。 [WM_PASTE](http://msdn.microsoft.com/library/windows/desktop/ms649028)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [WM_PASTE](http://msdn.microsoft.com/library/windows/desktop/ms649028) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 22](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_22.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#22](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_22.cpp)]  
   
-##  <a name="pastespecial"></a>CRichEditCtrl::PasteSpecial  
- これに特定のクリップボード形式でデータを貼り付けます`CRichEditCtrl`オブジェクト。  
+##  <a name="pastespecial"></a>  CRichEditCtrl::PasteSpecial  
+ Pastes data in a specific Clipboard format into this `CRichEditCtrl` object.  
   
 ```  
 void PasteSpecial(
@@ -1218,56 +1288,56 @@ void PasteSpecial(
     HMETAFILE hMF = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nClipFormat*  
- クリップボードの形式にこれを貼り付ける`CRichEditCtrl`オブジェクト。  
+ Clipboard format to paste into this `CRichEditCtrl` object.  
   
- *型*  
- クリップボードから取得するデータのデバイス アスペクトです。  
+ *dvAspect*  
+ Device aspect for the data to be retrieved from the Clipboard.  
   
  *hMF*  
- 貼り付けをオブジェクトのアイコンのビューを含むメタファイルへのハンドルします。  
+ Handle to the metafile containing the iconic view of the object to be pasted.  
   
-### <a name="remarks"></a>コメント  
- 新しい素材は、カーソル、カーソルの位置に挿入されます。  
+### <a name="remarks"></a>Remarks  
+ The new material is inserted at the insertion point, the location of the caret.  
   
- 詳細については、次を参照してください。 [EM_PASTESPECIAL](http://msdn.microsoft.com/library/windows/desktop/bb774214)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_PASTESPECIAL](http://msdn.microsoft.com/library/windows/desktop/bb774214) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 23](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_23.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#23](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_23.cpp)]  
   
-##  <a name="posfromchar"></a>CRichEditCtrl::PosFromChar  
- 指定した文字エディット コントロール内のクライアント領域の座標を取得します。  
+##  <a name="posfromchar"></a>  CRichEditCtrl::PosFromChar  
+ Retrieves the client area coordinates of a specified character in an edit control.  
   
 ```  
 CPoint PosFromChar(UINT nChar) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nChar`  
- 文字の 0 から始まるインデックス。  
+ The zero-based index of the character.  
   
-### <a name="return-value"></a>戻り値  
- 文字、(x, y) の位置。 単一行エディット コントロールの y 座標は常に 0 です。  
+### <a name="return-value"></a>Return Value  
+ The position of the character, (x, y). For a single-line edit control, the y-coordinate is always zero.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_POSFROMCHAR](http://msdn.microsoft.com/library/windows/desktop/bb761631) in the Windows SDK.  
   
-##  <a name="redo"></a>CRichEditCtrl::Redo  
- コントロールの再実行キュー内の次の操作をやり直します。  
+##  <a name="redo"></a>  CRichEditCtrl::Redo  
+ Redoes the next action in the control's redo queue.  
   
 ```  
 BOOL Redo();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 詳細については、次を参照してください。 [EM_REDO](http://msdn.microsoft.com/library/windows/desktop/bb774218)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For more information, see [EM_REDO](http://msdn.microsoft.com/library/windows/desktop/bb774218) in the Windows SDK.  
   
-##  <a name="replacesel"></a>CRichEditCtrl::ReplaceSel  
- この現在の選択項目を置き換えます`CRichEditCtrl`テキストが指定されたオブジェクト。  
+##  <a name="replacesel"></a>  CRichEditCtrl::ReplaceSel  
+ Replaces the current selection in this `CRichEditCtrl` object with the specified text.  
   
 ```  
 void ReplaceSel(
@@ -1275,59 +1345,59 @@ void ReplaceSel(
     BOOL bCanUndo = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszNewText`  
- 置換テキストを含む null で終わる文字列へのポインター。  
+ Pointer to a null-terminated string containing the replacement text.  
   
  `bCanUndo`  
- この関数が完了できることを指定するには、このパラメーターの値を設定**TRUE**です。 既定値は**FALSE**です。  
+ To specify that this function can be undone, set the value of this parameter to **TRUE**. The default value is **FALSE**.  
   
-### <a name="remarks"></a>コメント  
- これですべてのテキストを置換する`CRichEditCtrl`オブジェクトを使用して[とき](../../mfc/reference/cwnd-class.md#setwindowtext)です。  
+### <a name="remarks"></a>Remarks  
+ To replace all the text in this `CRichEditCtrl` object, use [CWnd::SetWindowText](../../mfc/reference/cwnd-class.md#setwindowtext).  
   
- 現在選択されていない、置換テキストは、カーソルは、現在のカレット位置に挿入されます。  
+ If there is no current selection, the replacement text is inserted at the insertion point, that is, the current caret location.  
   
- この関数を既存の書式設定文字挿入されたテキストの書式設定されます。 テキストの範囲全体を置換する (呼び出すことによって`SetSel`(0,-1) 呼び出しの前に`ReplaceSel`)、段落の文字の前の段落の書式を保持では新しく挿入したテキストで継承する end があります。  
+ This function will format the inserted text with the existing character formatting. When replacing the entire range of text (by calling `SetSel`(0,-1) before calling `ReplaceSel`), there is an end of paragraph character that retains the previous paragraph's formatting, which in inherited by the newly inserted text.  
   
- 詳細については、次を参照してください。 [EM_REPLACESEL](http://msdn.microsoft.com/library/windows/desktop/bb761633)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_REPLACESEL](http://msdn.microsoft.com/library/windows/desktop/bb761633) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[LineIndex](#lineindex)です。  
+### <a name="example"></a>Example  
+  See the example for [LineIndex](#lineindex).  
   
-##  <a name="requestresize"></a>CRichEditCtrl::RequestResize  
- これを強制的`CRichEditCtrl`を送信するオブジェクト**EN_REQUESTRESIZE**親ウィンドウに通知メッセージです。  
+##  <a name="requestresize"></a>  CRichEditCtrl::RequestResize  
+ Forces this `CRichEditCtrl` object to send **EN_REQUESTRESIZE** notification messages to its parent window.  
   
 ```  
 void RequestResize();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数は[、ボトムレス](../../mfc/reference/cwnd-class.md#onsize)処理をボトムレス`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This function is useful during [CWnd::OnSize](../../mfc/reference/cwnd-class.md#onsize) processing for a bottomless `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。、 [EM_REQUESTRESIZE](http://msdn.microsoft.com/library/windows/desktop/bb774220)メッセージ、および**ボトムレス リッチ エディット コントロール**のセクション[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_REQUESTRESIZE](http://msdn.microsoft.com/library/windows/desktop/bb774220) message and the **Bottomless Rich Edit Controls** section of [About Rich Edit Controls](http://msdn.microsoft.com/library/windows/desktop/bb787873) in the Windows SDK.  
   
-##  <a name="setautourldetect"></a>CRichEditCtrl::SetAutoURLDetect  
- URL を自動的に検出するためにリッチ エディット コントロールを設定します。  
+##  <a name="setautourldetect"></a>  CRichEditCtrl::SetAutoURLDetect  
+ Sets the rich edit control to automatically detect a URL.  
   
 ```  
 BOOL SetAutoURLDetect(BOOL bEnable = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bEnable`  
- コントロールが自動的に検出する URL に設定されているかどうかを指定します。 場合**TRUE**が有効になっています。 場合**FALSE**、無効になっています。  
+ Specifies whether the control is set to automatically detect a URL. If **TRUE**, it is enabled. If **FALSE**, it is disabled.  
   
-### <a name="return-value"></a>戻り値  
- 成功すると、それ以外の場合は 0 以外の場合は 0 を返します。 たとえば、メッセージがメモリ不足が原因で失敗します。  
+### <a name="return-value"></a>Return Value  
+ Zero if successful, otherwise nonzero. For example, the message may fail due to insufficient memory.  
   
-### <a name="remarks"></a>コメント  
- 有効な場合、リッチ エディット コントロールは、標準の URL の形式と一致するかどうかを決定するテキストをスキャンします。 これらの URL 形式の一覧は、次を参照してください。 [EM_AUTOURLDETECT](http://msdn.microsoft.com/library/windows/desktop/bb787991)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ If enabled, the rich edit control will scan the text to determine if it matches a standard URL format. For a list of these URL formats, see [EM_AUTOURLDETECT](http://msdn.microsoft.com/library/windows/desktop/bb787991) in the Windows SDK.  
   
 > [!NOTE]
->  設定しないでください`SetAutoURLDetect`に**TRUE**エディット コントロールで使用する場合、 **CFE_LINK** Url 以外のテキストに対して有効にします。 `SetAutoURLDetect`Url に対してこの特殊効果を有効にし、その他のすべてのテキストを無効にします。 参照してください[EN_LINK](http://msdn.microsoft.com/library/windows/desktop/bb787970)の詳細については、 **CFE_LINK**効果。  
+>  Do not set `SetAutoURLDetect` to **TRUE** if your edit control uses the **CFE_LINK** effect for text other than URLs. `SetAutoURLDetect` enables this effect for URLs and disables it for all other text. See [EN_LINK](http://msdn.microsoft.com/library/windows/desktop/bb787970) for more information about the **CFE_LINK** effect.  
   
-##  <a name="setbackgroundcolor"></a>CRichEditCtrl::SetBackgroundColor  
- 背景色を設定`CRichEditCtrl`オブジェクト。  
+##  <a name="setbackgroundcolor"></a>  CRichEditCtrl::SetBackgroundColor  
+ Sets the background color for this `CRichEditCtrl` object.  
   
 ```  
 COLORREF SetBackgroundColor(
@@ -1335,111 +1405,111 @@ COLORREF SetBackgroundColor(
     COLORREF cr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bSysColor`  
- 背景色がシステム値に設定するかどうかを示します。 この値が場合**TRUE**、`cr`は無視されます。  
+ Indicates if the background color should be set to the system value. If this value is **TRUE**, `cr` is ignored.  
   
  `cr`  
- 要求された背景色。 使用されている場合にのみ`bSysColor`は**FALSE**です。  
+ The requested background color. Used only if `bSysColor` is **FALSE**.  
   
-### <a name="return-value"></a>戻り値  
- この前の背景色`CRichEditCtrl`オブジェクト。  
+### <a name="return-value"></a>Return Value  
+ The previous background color for this `CRichEditCtrl` object.  
   
-### <a name="remarks"></a>コメント  
- システムの値または指定した背景色を設定できます[COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)値。  
+### <a name="remarks"></a>Remarks  
+ The background color can be set to the system value or to a specified [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) value.  
   
- 詳細については、次を参照してください。 [EM_SETBKGNDCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774228)メッセージと[COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETBKGNDCOLOR](http://msdn.microsoft.com/library/windows/desktop/bb774228) message and [COLORREF](http://msdn.microsoft.com/library/windows/desktop/dd183449) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 24](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_24.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#24](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_24.cpp)]  
   
-##  <a name="setdefaultcharformat"></a>CRichEditCtrl::SetDefaultCharFormat  
- これで新しいテキストの属性の書式設定文字`CRichEditCtrl`オブジェクト。  
+##  <a name="setdefaultcharformat"></a>  CRichEditCtrl::SetDefaultCharFormat  
+ Sets the character formatting attributes for new text in this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetDefaultCharFormat(CHARFORMAT& cf);  
 BOOL SetDefaultCharFormat(CHARFORMAT2& cf);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- 最初のバージョンへのポインターで、 [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)書式属性新しい既定の文字を含む構造体。  
+ In the first version, a pointer to a [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure containing the new default character formatting attributes.  
   
- 2 番目のバージョンへのポインターで、 [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883)リッチ エディット 2.0 拡張子が構造に、 **CHARFORMAT**属性の書式設定、既定の文字を含んでいる構造。  
+ In the second version, a pointer to a [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883) structure, which is a Rich Edit 2.0 extension to the **CHARFORMAT** structure, containing the default character formatting attributes.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 指定された属性だけ、 **dwMask**のメンバー`cf`は、この関数によって変更します。  
+### <a name="remarks"></a>Remarks  
+ Only the attributes specified by the **dwMask** member of `cf` are changed by this function.  
   
- 詳細については、次を参照してください。、 [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230)メッセージ、および**CHARFORMAT**と**CHARFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230) message and the **CHARFORMAT** and **CHARFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #25](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_25.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#25](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_25.cpp)]  
   
-##  <a name="seteventmask"></a>CRichEditCtrl::SetEventMask  
- このイベント マスクを設定`CRichEditCtrl`オブジェクト。  
+##  <a name="seteventmask"></a>  CRichEditCtrl::SetEventMask  
+ Sets the event mask for this `CRichEditCtrl` object.  
   
 ```  
 DWORD SetEventMask(DWORD dwEventMask);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *dwEventMask*  
- この新しいイベント マスク`CRichEditCtrl`オブジェクト。  
+ The new event mask for this `CRichEditCtrl` object.  
   
-### <a name="return-value"></a>戻り値  
- 前のイベント マスクです。  
+### <a name="return-value"></a>Return Value  
+ The previous event mask.  
   
-### <a name="remarks"></a>コメント  
- イベント マスクを指定する通知メッセージ、`CRichEditCtrl`オブジェクトを親ウィンドウに送信します。  
+### <a name="remarks"></a>Remarks  
+ The event mask specifies which notification messages the `CRichEditCtrl` object sends to its parent window.  
   
- 詳細については、次を参照してください。 [//EM_SETEVENTMASK](http://msdn.microsoft.com/library/windows/desktop/bb774238)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETEVENTMASK](http://msdn.microsoft.com/library/windows/desktop/bb774238) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 26](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_26.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#26](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_26.cpp)]  
   
-##  <a name="setmodify"></a>CRichEditCtrl::SetModify  
- 設定または編集コントロールの変更されたフラグをクリアします。  
+##  <a name="setmodify"></a>  CRichEditCtrl::SetModify  
+ Sets or clears the modified flag for an edit control.  
   
 ```  
 void SetModify(BOOL bModified = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bModified`  
- 値**TRUE**テキストが変更されたことを示す、値を**FALSE**修正されていないことを示します。 既定では、変更されたフラグは設定されます。  
+ A value of **TRUE** indicates that the text has been modified, and a value of **FALSE** indicates it is unmodified. By default, the modified flag is set.  
   
-### <a name="remarks"></a>コメント  
- 変更されたフラグは、エディット コントロール内のテキストが変更されたかどうかを示します。 ユーザーがテキストを変更するたびに自動的に設定されます。 その値を取得できる、[この](#getmodify)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The modified flag indicates whether or not the text within the edit control has been modified. It is automatically set whenever the user changes the text. Its value can be retrieved with the [GetModify](#getmodify) member function.  
   
- 詳細については、次を参照してください。 [EM_SETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761651)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETMODIFY](http://msdn.microsoft.com/library/windows/desktop/bb761651) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[この](#getmodify)です。  
+### <a name="example"></a>Example  
+  See the example for [GetModify](#getmodify).  
   
-##  <a name="setolecallback"></a>CRichEditCtrl::SetOLECallback  
- これは、`CRichEditCtrl`オブジェクト、 **IRichEditOleCallback** OLE に関連するリソースと情報へのアクセスに使用するオブジェクト。  
+##  <a name="setolecallback"></a>  CRichEditCtrl::SetOLECallback  
+ Gives this `CRichEditCtrl` object an **IRichEditOleCallback** object to use to access OLE-related resources and information.  
   
 ```  
 BOOL SetOLECallback(IRichEditOleCallback* pCallback);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCallback`  
- ポインター、 [IRichEditOleCallback](http://msdn.microsoft.com/library/windows/desktop/bb774308)オブジェクトこの`CRichEditCtrl`OLE に関連するリソースと情報を取得するオブジェクトが使用されます。  
+ Pointer to an [IRichEditOleCallback](http://msdn.microsoft.com/library/windows/desktop/bb774308) object that this `CRichEditCtrl` object will use to get OLE-related resources and information.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- これは、`CRichEditCtrl`オブジェクトが呼び出す[:addref](http://msdn.microsoft.com/library/windows/desktop/ms691379)で指定された COM オブジェクトの使用カウントをインクリメントする`pCallback`です。  
+### <a name="remarks"></a>Remarks  
+ This `CRichEditCtrl` object will call [IUnknown::AddRef](http://msdn.microsoft.com/library/windows/desktop/ms691379) to increment the usage count for the COM object specified by `pCallback`.  
   
- 詳細については、次を参照してください。 [EM_SETOLECALLBACK](http://msdn.microsoft.com/library/windows/desktop/bb774252)メッセージと[IRichEditOleCallback](http://msdn.microsoft.com/library/windows/desktop/bb774308)インターフェイスで、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETOLECALLBACK](http://msdn.microsoft.com/library/windows/desktop/bb774252) message and [IRichEditOleCallback](http://msdn.microsoft.com/library/windows/desktop/bb774308) interface in the Windows SDK.  
   
-##  <a name="setoptions"></a>CRichEditCtrl::SetOptions  
- このオプションを設定`CRichEditCtrl`オブジェクト。  
+##  <a name="setoptions"></a>  CRichEditCtrl::SetOptions  
+ Sets the options for this `CRichEditCtrl` object.  
   
 ```  
 void SetOptions(
@@ -1447,72 +1517,72 @@ void SetOptions(
     DWORD dwFlags);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *wOp*  
- 操作の種類を示します。 次のいずれかの値です。  
+ Indicates the type of operation. One of the following values:  
   
-- `ECOOP_SET`によって指定されたオプションを設定`dwFlags`です。  
+- `ECOOP_SET` Set the options to those specified by `dwFlags`.  
   
-- `ECOOP_OR`現在のオプションを組み合わせてで指定されている`dwFlags`です。  
+- `ECOOP_OR` Combine the current options with those specified by `dwFlags`.  
   
-- `ECOOP_AND`によっても指定されている現在のオプションのみを保持`dwFlags`です。  
+- `ECOOP_AND` Retain only those current options that are also specified by `dwFlags`.  
   
-- `ECOOP_XOR`現在のオプションのみを保持*いない*によって指定された`dwFlags`です。  
+- `ECOOP_XOR` Logically exclusive OR the current options with those specified by `dwFlags`.  
   
  `dwFlags`  
- 豊富な編集オプション。 フラグの値は、「解説」セクションに表示されます。  
+ Rich edit options. The flag values are listed in the Remarks section.  
   
-### <a name="remarks"></a>コメント  
- オプションは、次の値の組み合わせにすることができます。  
+### <a name="remarks"></a>Remarks  
+ The options can be a combination of the following values:  
   
-- `ECO_AUTOWORDSELECTION`単語の自動選択をダブルクリックします。  
+- `ECO_AUTOWORDSELECTION` Automatic word selection on double-click.  
   
-- `ECO_AUTOVSCROLL`自動的に、ユーザーが、行の末尾に文字を入力したときは、10 文字で右側にテキストをスクロールします。 ユーザーは、ENTER キーを押すと、コントロールの位置 0 にすべてのテキストをスクロールします。  
+- `ECO_AUTOVSCROLL` Automatically scrolls text to the right by 10 characters when the user types a character at the end of the line. When the user presses the ENTER key, the control scrolls all text back to position zero.  
   
-- `ECO_AUTOHSCROLL`自動的にユーザーが最後の行で ENTER キーを押したときに、1 ページ上のテキストをスクロールします。  
+- `ECO_AUTOHSCROLL` Automatically scrolls text up one page when the user presses the ENTER key on the last line.  
   
-- `ECO_NOHIDESEL`エディット コントロールの既定の動作を無効にします。 既定の動作には、コントロールが入力フォーカスを失うし、コントロールが入力フォーカスを受け取るときに、選択範囲を示して ときの選択範囲が非表示にします。 指定した場合`ECO_NOHIDESEL`コントロールがフォーカスを持っていない場合でも、選択したテキストが反転します。  
+- `ECO_NOHIDESEL` Negates the default behavior for an edit control. The default behavior hides the selection when the control loses the input focus and shows the selection when the control receives the input focus. If you specify `ECO_NOHIDESEL`, the selected text is inverted, even if the control does not have the focus.  
   
-- `ECO_READONLY`ユーザーが入力するか、編集コントロールでテキストを編集できなくなります。  
+- `ECO_READONLY` Prevents the user from typing or editing text in the edit control.  
   
-- `ECO_WANTRETURN`ユーザーがダイアログ ボックス内の複数行のリッチ エディット コントロールにテキストを入力するときに、ENTER キーを押したときにキャリッジ リターンが挿入されるように指定します。 このスタイルを指定しない場合は、リッチ エディット コントロールの親ウィンドウは、親ウィンドウの既定のボタン (たとえば、ダイアログ ボックスで [ok] ボタン) をクリックするとを模倣するコマンドを送ります ENTER キーを押します。 このスタイルには影響しません、単一行エディット コントロール。  
+- `ECO_WANTRETURN` Specifies that a carriage return be inserted when the user presses the ENTER key while entering text into a multiple-line rich edit control in a dialog box. If you do not specify this style, pressing the ENTER key sends a command to the rich edit control's parent window, which mimics clicking the parent window's default button (for example, the OK button in a dialog box). This style has no effect on a single-line edit control.  
   
-- `ECO_SAVESEL`コントロールがフォーカスを失ったときに、選択を保存します。 既定では、そのフォーカスを得たときに、コントロールの内容全体が選択されます。  
+- `ECO_SAVESEL` Preserves the selection when the control loses the focus. By default, the entire contents of the control are selected when it regains the focus.  
   
-- `ECO_VERTICAL`テキストおよびオブジェクトを垂直方向に描画します。 アジア言語のみで使用できます。  
+- `ECO_VERTICAL` Draws text and objects in a vertical direction. Available for Asian languages only.  
   
- 詳細については、次を参照してください。 [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETOPTIONS](http://msdn.microsoft.com/library/windows/desktop/bb774254) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 27](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_27.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#27](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_27.cpp)]  
   
-##  <a name="setparaformat"></a>CRichEditCtrl::SetParaFormat  
- 段落これの現在の選択の属性の書式設定`CRichEditCtrl`オブジェクト。  
+##  <a name="setparaformat"></a>  CRichEditCtrl::SetParaFormat  
+ Sets the paragraph formatting attributes for the current selection in this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetParaFormat(PARAFORMAT& pf);  
 BOOL SetParaFormat(PARAFORMAT2& pf);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pf`  
- 最初のバージョンへのポインターで、 [PARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787940)新しい既定の段落書式属性。  
+ In the first version, a pointer to a [PARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787940) structure containing the new default paragraph formatting attributes.  
   
- 2 番目のバージョンへのポインターで、 [PARAFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787942)リッチ エディット 2.0 拡張子が構造体を**PARAFORMAT**属性の書式設定、既定の文字を保持する、構造体。  
+ In the second version, a pointer to a [PARAFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787942) structure, which is a Rich Edit 2.0 extension to the **PARAFORMAT** structure, holding the default character formatting attributes.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 指定された属性だけ、 **dwMask**のメンバー`pf`は、この関数によって変更します。  
+### <a name="remarks"></a>Remarks  
+ Only the attributes specified by the **dwMask** member of `pf` are changed by this function.  
   
- 詳細については、次を参照してください。、 [EM_SETPARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774276)メッセージ、および**PARAFORMAT**と**PARAFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_SETPARAFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774276) message and the **PARAFORMAT** and **PARAFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 28](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_28.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#28](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_28.cpp)]  
   
-##  <a name="setpunctuation"></a>CRichEditCtrl::SetPunctuation  
- リッチ エディット コントロールに区切り記号を設定します。  
+##  <a name="setpunctuation"></a>  CRichEditCtrl::SetPunctuation  
+ Sets the punctuation in a rich edit control.  
   
 ```  
 BOOL SetPunctuation(
@@ -1520,62 +1590,62 @@ BOOL SetPunctuation(
     PUNCTUATION* lpPunc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `fType`  
- 区切り記号のフラグ。 使用可能な値の一覧は、次を参照してください。、`fType`パラメーター [EM_SETPUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb774278)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ The punctuation flag. For a list of possible values, see the `fType` parameter for [EM_SETPUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb774278) in the Windows SDK.  
   
  `lpPunc`  
- ポインター、[句読点](http://msdn.microsoft.com/library/windows/desktop/bb787944)構造体」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ A pointer to a [PUNCTUATION](http://msdn.microsoft.com/library/windows/desktop/bb787944) structure, as described in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、0 以外。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、オペレーティング システムのアジア系言語バージョンのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ This member function is available for only Asian-language versions of the operating system.  
   
-##  <a name="setreadonly"></a>CRichEditCtrl::SetReadOnly  
- 変更、`ECO_READONLY`このオプション`CRichEditCtrl`オブジェクト。  
+##  <a name="setreadonly"></a>  CRichEditCtrl::SetReadOnly  
+ Changes the `ECO_READONLY` option for this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetReadOnly(BOOL bReadOnly = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bReadOnly`  
- 示す場合は、この`CRichEditCtrl`オブジェクトが読み取り専用でする必要があります。  
+ Indicates if this `CRichEditCtrl` object should be read only.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- このオプションの簡単な説明を参照してください。 [SetOptions](#setoptions)です。 この関数を使用するにはこれのすべてのオプションを設定する`CRichEditCtrl`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ For a brief description of this option, see [SetOptions](#setoptions). You can use this function to set all the options for this `CRichEditCtrl` object.  
   
- 詳細については、次を参照してください。 [EM_SETREADONLY](http://msdn.microsoft.com/library/windows/desktop/bb761655)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETREADONLY](http://msdn.microsoft.com/library/windows/desktop/bb761655) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 29](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_29.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#29](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_29.cpp)]  
   
-##  <a name="setrect"></a>CRichEditCtrl::SetRect  
- 書式を設定`CRichEditCtrl`オブジェクト。  
+##  <a name="setrect"></a>  CRichEditCtrl::SetRect  
+ Sets the formatting rectangle for this `CRichEditCtrl` object.  
   
 ```  
 void SetRect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- [CRect](../../atl-mfc-shared/reference/crect-class.md)またはへのポインター、 [RECT](../../mfc/reference/rect-structure1.md)書式の四角形の新しい境界を示すです。  
+ [CRect](../../atl-mfc-shared/reference/crect-class.md) or pointer to a [RECT](../../mfc/reference/rect-structure1.md) that indicates the new bounds for the formatting rectangle.  
   
-### <a name="remarks"></a>コメント  
- 書式設定の四角形は、テキストの外接する四角形です。 外接する四角形は、リッチ エディット コントロール ウィンドウのサイズに依存しません。 ときにこの`CRichEditCtrl`オブジェクトが最初に作成された、書式設定の四角形は、ウィンドウのクライアント領域と同じサイズです。 使用して`SetRect`書式の四角形のリッチ エディット ウィンドウよりも小さいを変更します。  
+### <a name="remarks"></a>Remarks  
+ The formatting rectangle is the limiting rectangle for the text. The limiting rectangle is independent of the size of the rich edit control window. When this `CRichEditCtrl` object is first created, the formatting rectangle is the same size as the client area of the window. Use `SetRect` to make the formatting rectangle larger or smaller than the rich edit window.  
   
- 詳細については、次を参照してください。 [EM_SETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761657)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETRECT](http://msdn.microsoft.com/library/windows/desktop/bb761657) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 30](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_30.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#30](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_30.cpp)]  
   
-##  <a name="setsel"></a>CRichEditCtrl::SetSel  
- この選択を設定`CRichEditCtrl`オブジェクト。  
+##  <a name="setsel"></a>  CRichEditCtrl::SetSel  
+ Sets the selection within this `CRichEditCtrl` object.  
   
 ```  
 void SetSel(
@@ -1585,59 +1655,59 @@ void SetSel(
 void SetSel(CHARRANGE& cr);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStartChar`  
- 選択範囲の最初の文字の 0 から始まるインデックス。  
+ Zero-based index of the first character for the selection.  
   
  `nEndChar`  
- 選択範囲の最後の文字の 0 から始まるインデックス。  
+ Zero-based index of the last character for the selection.  
   
  `cr`  
- [上](http://msdn.microsoft.com/library/windows/desktop/bb787885)現在の選択範囲の境界を保持する構造体。  
+ [CHARRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787885) structure which holds the bounds of the current selection.  
   
-### <a name="remarks"></a>コメント  
- この関数の 2 つの形式は、選択範囲の境界を設定する代替方法を提供します。 これらの形式の簡単な説明に従ってください。  
+### <a name="remarks"></a>Remarks  
+ The two forms of this function provide alternate ways to set the bounds for the selection. Brief descriptions of these forms follow:  
   
-- **SetSel (** `cr` **)**このフォームを使用して、**上**構造体、 **cpMin**と**cpMax**のメンバーが、境界を設定します。  
+- **SetSel(** `cr` **)** This form uses the **CHARRANGE** structure with its **cpMin** and **cpMax** members to set the bounds.  
   
-- **SetSel (** `nStartChar` **、** `nEndChar` **)**このフォームは、パラメーターを使用して`nStartChar`と`nEndChar`境界を設定します。  
+- **SetSel(** `nStartChar` **,** `nEndChar` **)** This form use the parameters `nStartChar` and `nEndChar` to set the bounds.  
   
- キャレットは、開始の大きい方によって示される選択範囲の末尾に置かれます ( **cpMin**または`nStartChar`) と終了 ( **cpMax**または`nEndChar`) のインデックス。 この関数は、の内容をスクロール、`CRichEditCtrl`キャレットが表示されるようにします。  
+ The caret is placed at the end of the selection indicated by the greater of the start ( **cpMin** or `nStartChar`) and end ( **cpMax** or `nEndChar`) indices. This function scrolls the contents of the `CRichEditCtrl` so that the caret is visible.  
   
- これですべてのテキストを選択する`CRichEditCtrl`オブジェクトを呼び出す`SetSel`を 0 と 1 の終了インデックスの開始インデックス。  
+ To select all the text in this `CRichEditCtrl` object, call `SetSel` with a start index of 0 and an end index of - 1.  
   
- 詳細については、次を参照してください。 [EM_EXSETSEL](http://msdn.microsoft.com/library/windows/desktop/bb788007)メッセージと[上](http://msdn.microsoft.com/library/windows/desktop/bb787885)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_EXSETSEL](http://msdn.microsoft.com/library/windows/desktop/bb788007) message and [CHARRANGE](http://msdn.microsoft.com/library/windows/desktop/bb787885) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[GetSel](#getsel)です。  
+### <a name="example"></a>Example  
+  See the example for [GetSel](#getsel).  
   
-##  <a name="setselectioncharformat"></a>CRichEditCtrl::SetSelectionCharFormat  
- この現在の選択範囲内のテキストの属性の書式設定文字`CRichEditCtrl`オブジェクト。  
+##  <a name="setselectioncharformat"></a>  CRichEditCtrl::SetSelectionCharFormat  
+ Sets the character formatting attributes for the text in the current selection in this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetSelectionCharFormat(CHARFORMAT& cf);  
 BOOL SetSelectionCharFormat(CHARFORMAT2& cf);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- 最初のバージョンへのポインターで、 [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)文字書式を含む構造体の現在の選択の属性です。  
+ In the first version, a pointer to a [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure containing the new character formatting attributes for the current selection.  
   
- 2 番目のバージョンへのポインターで、 [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883)リッチ エディット 2.0 拡張子が構造体を**CHARFORMAT**構造を新しい現在の選択の属性の書式設定文字を含むです。  
+ In the second version, a pointer to a [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883) structure, which is a Rich Edit 2.0 extension to the **CHARFORMAT** structure, containing the new character formatting attributes for the current selection.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 指定された属性だけ、 **dwMask**のメンバー`cf`は、この関数によって変更します。  
+### <a name="remarks"></a>Remarks  
+ Only the attributes specified by the **dwMask** member of `cf` are changed by this function.  
   
- 詳細については、次を参照してください。、 [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230)と**CHARFORMAT**と**CHARFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230) and the **CHARFORMAT** and **CHARFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 31](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_31.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#31](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_31.cpp)]  
   
-##  <a name="settargetdevice"></a>CRichEditCtrl::SetTargetDevice  
- WYSIWYG を使用するターゲット デバイスと行の幅を設定 (表示される内容は、取得する) で書式設定`CRichEditCtrl`オブジェクト。  
+##  <a name="settargetdevice"></a>  CRichEditCtrl::SetTargetDevice  
+ Sets the target device and line width used for WYSIWYG (what you see is what you get) formatting in this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetTargetDevice(
@@ -1650,119 +1720,119 @@ BOOL SetTargetDevice(
     long lLineWidth);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hDC`  
- 新しいターゲット デバイスのデバイス コンテキストへのハンドルします。  
+ Handle to the device context for the new target device.  
   
  *lLineWidth*  
- 書式設定に使用する線の幅。  
+ Line width to use for formatting.  
   
  `dc`  
- [CDC](../../mfc/reference/cdc-class.md)新しいターゲット デバイスにします。  
+ [CDC](../../mfc/reference/cdc-class.md) for the new target device.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- リッチ エディット コントロールに、デバイスを所有しているこの関数が成功した場合は、パラメーターとして渡されるコンテキストです。 その場合は、呼び出し元の関数は、デバイス コンテキストを破棄しないようにします。  
+### <a name="remarks"></a>Remarks  
+ If this function is successful, the rich edit control owns the device context passed as a parameter. In that case, the calling function should not destroy the device context.  
   
- 詳細については、次を参照してください。 [EM_SETTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/bb774282)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_SETTARGETDEVICE](http://msdn.microsoft.com/library/windows/desktop/bb774282) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 32](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_32.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#32](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_32.cpp)]  
   
-##  <a name="settextmode"></a>CRichEditCtrl::SetTextMode  
- リッチ エディット コントロールのテキスト モードまたは元に戻す/やり直しのレベルを設定します。  
+##  <a name="settextmode"></a>  CRichEditCtrl::SetTextMode  
+ Sets the text mode or undo and redo level for a rich edit control.  
   
 ```  
 BOOL SetTextMode(UINT fMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *fMode*  
- コントロールのテキスト モードと元に戻すレベルのパラメーターの新しい設定を指定します。 有効な値の一覧は、モード パラメーターを参照してください。 [EM_SETTEXTMODE](http://msdn.microsoft.com/library/windows/desktop/bb774286)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Specifies the new settings for the control's text mode and undo level parameters. For a list of the possible values, see the mode parameter for [EM_SETTEXTMODE](http://msdn.microsoft.com/library/windows/desktop/bb774286) in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- 成功すると、それ以外の場合は 0 以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Zero if successful, otherwise nonzero.  
   
-### <a name="remarks"></a>コメント  
- テキスト モードの説明は、次を参照してください。 **EM_SETTEXTMODE**で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ For a description of the text modes, see **EM_SETTEXTMODE** in the Windows SDK.  
   
- このメンバー関数は、コントロールにテキストが含まれている場合に失敗します。 コントロールが空であることを確認するには、送信、[によって](http://msdn.microsoft.com/library/windows/desktop/ms632644)空の文字列でのメッセージ。  
+ This member function fails if the control contains text. To make sure the control is empty, send a [WM_SETTEXT](http://msdn.microsoft.com/library/windows/desktop/ms632644) message with an empty string.  
   
-##  <a name="setundolimit"></a>CRichEditCtrl::SetUndoLimit  
- 元に戻すキューに格納できる操作の最大数を設定します。  
+##  <a name="setundolimit"></a>  CRichEditCtrl::SetUndoLimit  
+ Sets the maximum number of actions that can stored in the undo queue.  
   
 ```  
 UINT SetUndoLimit(UINT nLimit);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nLimit*  
- 元に戻すキューに格納できる操作の最大数を指定します。 元に戻すを無効にするには 0 に設定します。  
+ Specifies the maximum number of actions that can be stored in the undo queue. Set to zero to disable Undo.  
   
-### <a name="return-value"></a>戻り値  
- リッチ元に戻す操作の新しいの最大数は、コントロールを編集します。  
+### <a name="return-value"></a>Return Value  
+ The new maximum number of undo actions for the rich edit control.  
   
-### <a name="remarks"></a>コメント  
- 既定では、元に戻すキュー内のアクションの最大数は 100 です。 この数を増やす場合は、使用可能なメモリ不足のため、新しい番号に対応する必要があります。 パフォーマンス向上のためには、最小有効値に制限を設定します。  
+### <a name="remarks"></a>Remarks  
+ By default, the maximum number of actions in the undo queue is 100. If you increase this number, there must be enough available memory to accommodate the new number. For better performance, set the limit to the smallest possible value.  
   
-##  <a name="setwordcharformat"></a>CRichEditCtrl::SetWordCharFormat  
- これで、現在選択されている単語に対して属性の書式設定文字`CRichEditCtrl`オブジェクト。  
+##  <a name="setwordcharformat"></a>  CRichEditCtrl::SetWordCharFormat  
+ Sets the character formatting attributes for the currently selected word in this `CRichEditCtrl` object.  
   
 ```  
 BOOL SetWordCharFormat(CHARFORMAT& cf);  
 BOOL SetWordCharFormat(CHARFORMAT2& cf);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cf`  
- 最初のバージョンへのポインターで、 [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881)現在選択されている単語の属性を新しい文字の書式を含む構造体。  
+ In the first version, a pointer to a [CHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb787881) structure containing the new character formatting attributes for the currently selected word.  
   
- 2 番目のバージョンへのポインターで、 [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883)リッチ エディット 2.0 拡張子が構造体を**CHARFORMAT**書式属性、現在選択されている単語を新しい文字を含む構造です。  
+ In the second version, a pointer to a [CHARFORMAT2](http://msdn.microsoft.com/library/windows/desktop/bb787883) structure, which is a Rich Edit 2.0 extension to the **CHARFORMAT** structure, containing the new character formatting attributes for the currently selected word.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 指定された属性だけ、 **dwMask**のメンバー`cf`は、この関数によって変更します。  
+### <a name="remarks"></a>Remarks  
+ Only the attributes specified by the **dwMask** member of `cf` are changed by this function.  
   
- 詳細については、次を参照してください。、 [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230)メッセージ、および**CHARFORMAT**と**CHARFORMAT2**構造体に、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see the [EM_SETCHARFORMAT](http://msdn.microsoft.com/library/windows/desktop/bb774230) message and the **CHARFORMAT** and **CHARFORMAT2** structures in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 33](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_33.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#33](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_33.cpp)]  
   
-##  <a name="setwordwrapmode"></a>CRichEditCtrl::SetWordWrapMode  
- ワード ラップおよび単語区切り、豊富なオプションを設定では、コントロールを編集します。  
+##  <a name="setwordwrapmode"></a>  CRichEditCtrl::SetWordWrapMode  
+ Sets the word-wrapping and word-breaking options for the rich edit control.  
   
 ```  
 UINT SetWordWrapMode(UINT uFlags) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `uFlags`  
- ワード ラップや単語区切りに設定するオプションです。 使用可能なオプションの一覧は、次を参照してください。 [EM_SETWORDWRAPMODE](http://msdn.microsoft.com/library/windows/desktop/bb774294)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ The options to set for word wrapping and word breaking. For a list of possible options, see [EM_SETWORDWRAPMODE](http://msdn.microsoft.com/library/windows/desktop/bb774294) in the Windows SDK.  
   
-### <a name="return-value"></a>戻り値  
- 現在のワード ラップと単語を区切るオプションです。  
+### <a name="return-value"></a>Return Value  
+ The current word-wrapping and word-breaking options.  
   
-### <a name="remarks"></a>コメント  
- このメッセージは、オペレーティング システムのアジア言語のバージョンでのみ使用できます。  
+### <a name="remarks"></a>Remarks  
+ This message is available only in Asian-language versions of the operating system.  
   
-##  <a name="stopgrouptyping"></a>CRichEditCtrl::StopGroupTyping  
- 収集から現在の元に戻す操作にアクションを入力するその他のコントロールを停止します。  
+##  <a name="stopgrouptyping"></a>  CRichEditCtrl::StopGroupTyping  
+ Stops the control from collecting additional typing actions into the current undo action.  
   
 ```  
 void StopGroupTyping();
 ```  
   
-### <a name="remarks"></a>コメント  
- コントロールは、新しいアクションを元に戻すキュー内に存在する場合に、次の入力のアクションを格納します。  
+### <a name="remarks"></a>Remarks  
+ The control stores the next typing action, if any, into a new action in the undo queue.  
   
- 詳細については、次を参照してください。 [EM_STOPGROUPTYPING](http://msdn.microsoft.com/library/windows/desktop/bb774300)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_STOPGROUPTYPING](http://msdn.microsoft.com/library/windows/desktop/bb774300) in the Windows SDK.  
   
-##  <a name="streamin"></a>CRichEditCtrl::StreamIn  
- このテキストを置換`CRichEditCtrl`指定された入力ストリームからのテキストを持つオブジェクト。  
+##  <a name="streamin"></a>  CRichEditCtrl::StreamIn  
+ Replaces text in this `CRichEditCtrl` object with text from the specified input stream.  
   
 ```  
 long StreamIn(
@@ -1770,36 +1840,36 @@ long StreamIn(
     EDITSTREAM& es);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFormat`  
- 入力データの形式を指定するフラグ。 詳細については、「解説」を参照してください。  
+ Flags specifying the input data formats. See the Remarks section for more information.  
   
  `es`  
- [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891)入力ストリームを指定します。 詳細については、「解説」を参照してください。  
+ [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891) structure specifying the input stream. See the Remarks section for more information.  
   
-### <a name="return-value"></a>戻り値  
- 入力ストリームから読み取られた文字数。  
+### <a name="return-value"></a>Return Value  
+ Number of characters read from the input stream.  
   
-### <a name="remarks"></a>コメント  
- 値`nFormat`次のいずれかを指定する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The value of `nFormat` must be one of the following:  
   
-- `SF_TEXT`テキストだけを読み込むことを示します。  
+- `SF_TEXT` Indicates reading text only.  
   
-- `SF_RTF`読み取るテキストと書式設定を示します。  
+- `SF_RTF` Indicates reading text and formatting.  
   
- これらの値のいずれかと組み合わせて使用できます`SFF_SELECTION`です。 場合`SFF_SELECTION`が指定されている`StreamIn`現在の選択範囲を入力ストリームの内容に置き換えます。 指定されていない場合`StreamIn`これの内容全体を置き換える`CRichEditCtrl`オブジェクト。  
+ Either of these values can be combined with `SFF_SELECTION`. If `SFF_SELECTION` is specified, `StreamIn` replaces the current selection with the contents of the input stream. If it is not specified, `StreamIn` replaces the entire contents of this `CRichEditCtrl` object.  
   
- **EDITSTREAM**パラメーター`es`テキストをバッファーするコールバック関数を指定します。 このコールバック関数は、入力ストリームがなくなるまで繰り返し呼び出されます。  
+ In the **EDITSTREAM** parameter `es`, you specify a callback function that fills a buffer with text. This callback function is called repeatedly, until the input stream is exhausted.  
   
- 詳細については、次を参照してください。 [EM_STREAMIN](http://msdn.microsoft.com/library/windows/desktop/bb774302)メッセージと[EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_STREAMIN](http://msdn.microsoft.com/library/windows/desktop/bb774302) message and [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl #34](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_34.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#34](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_34.cpp)]  
   
- [!code-cpp[NVC_MFC_CRichEditCtrl #35](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_35.cpp)]  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#35](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_35.cpp)]  
   
-##  <a name="streamout"></a>CRichEditCtrl::StreamOut  
- このコンテンツを書き込みます`CRichEditCtrl`オブジェクトを指定された出力ストリームにします。  
+##  <a name="streamout"></a>  CRichEditCtrl::StreamOut  
+ Writes out the contents of this `CRichEditCtrl` object to the specified output stream.  
   
 ```  
 long StreamOut(
@@ -1807,60 +1877,60 @@ long StreamOut(
     EDITSTREAM& es);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nFormat`  
- 出力データ形式を指定するフラグ。 詳細については、「解説」を参照してください。  
+ Flags specifying the output data formats. See the Remarks section for more information.  
   
  `es`  
- [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891)出力ストリームを指定します。 詳細については、「解説」を参照してください。  
+ [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891) structure specifying the output stream. See the Remarks section for more information.  
   
-### <a name="return-value"></a>戻り値  
- 出力ストリームに書き込まれた文字数。  
+### <a name="return-value"></a>Return Value  
+ Number of characters written to the output stream.  
   
-### <a name="remarks"></a>コメント  
- 値`nFormat`次のいずれかを指定する必要があります。  
+### <a name="remarks"></a>Remarks  
+ The value of `nFormat` must be one of the following:  
   
-- `SF_TEXT`テキストだけを書き込むことを示します。  
+- `SF_TEXT` Indicates writing text only.  
   
-- `SF_RTF`手書きテキストと書式設定を示します。  
+- `SF_RTF` Indicates writing text and formatting.  
   
-- `SF_RTFNOOBJS`OLE 項目をスペースに置き換えて手書きテキストと書式設定を示します。  
+- `SF_RTFNOOBJS` Indicates writing text and formatting, replacing OLE items with spaces.  
   
-- `SF_TEXTIZED`テキストの書き込みと書式設定、OLE アイテムのテキスト表現を示します。  
+- `SF_TEXTIZED` Indicates writing text and formatting, with textual representations of OLE items.  
   
- これらの値のいずれかと組み合わせて使用できます`SFF_SELECTION`です。 場合`SFF_SELECTION`が指定されている`StreamOut`出力ストリームに現在の選択範囲を書き込みます。 指定されていない場合`StreamOut`これの内容全体を書き込みます`CRichEditCtrl`オブジェクト。  
+ Any of these values can be combined with `SFF_SELECTION`. If `SFF_SELECTION` is specified, `StreamOut` writes out the current selection into the output stream. If it is not specified, `StreamOut` writes out the entire contents of this `CRichEditCtrl` object.  
   
- **EDITSTREAM**パラメーター`es`テキストをバッファーするコールバック関数を指定します。 このコールバック関数は、出力ストリームがなくなるまで繰り返し呼び出されます。  
+ In the **EDITSTREAM** parameter `es`, you specify a callback function which fills a buffer with text. This callback function is called repeatedly, until the output stream is exhausted.  
   
- 詳細については、次を参照してください。 [EM_STREAMOUT](http://msdn.microsoft.com/library/windows/desktop/bb774304)メッセージと[EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_STREAMOUT](http://msdn.microsoft.com/library/windows/desktop/bb774304) message and [EDITSTREAM](http://msdn.microsoft.com/library/windows/desktop/bb787891) structure in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFC_CRichEditCtrl # 36](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_36.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#36](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_36.cpp)]  
   
- [!code-cpp[NVC_MFC_CRichEditCtrl # 37](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_37.cpp)]  
+ [!code-cpp[NVC_MFC_CRichEditCtrl#37](../../mfc/reference/codesnippet/cpp/cricheditctrl-class_37.cpp)]  
   
-##  <a name="undo"></a>CRichEditCtrl::Undo  
- リッチ エディット コントロールの最後の操作を元に戻します。  
+##  <a name="undo"></a>  CRichEditCtrl::Undo  
+ Undoes the last operation in the rich edit control.  
   
 ```  
 BOOL Undo();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 元に戻す操作が成功した場合は 0 以外。それ以外の場合、0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the undo operation is successful; otherwise, 0.  
   
-### <a name="remarks"></a>コメント  
- 元に戻す操作が元に戻すことができますもあります。 たとえば、最初の呼び出し、削除した文字列を戻すことができます**を元に戻す**です。 2 番目の呼び出しを使用してテキストを削除するには中間の編集操作がない限り、**を元に戻す**です。  
+### <a name="remarks"></a>Remarks  
+ An undo operation can also be undone. For example, you can restore deleted text with the first call to **Undo**. As long as there is no intervening edit operation, you can remove the text again with a second call to **Undo**.  
   
- 詳細については、次を参照してください。 [EM_UNDO](http://msdn.microsoft.com/library/windows/desktop/bb761670)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [EM_UNDO](http://msdn.microsoft.com/library/windows/desktop/bb761670) in the Windows SDK.  
   
-### <a name="example"></a>例  
-  例を参照して[CanUndo](#canundo)です。  
+### <a name="example"></a>Example  
+  See the example for [CanUndo](#canundo).  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル ワードパッド](../../visual-cpp-samples.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CEdit クラス](../../mfc/reference/cedit-class.md)   
- [CRichEditView クラス](../../mfc/reference/cricheditview-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample WORDPAD](../../visual-cpp-samples.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CEdit Class](../../mfc/reference/cedit-class.md)   
+ [CRichEditView Class](../../mfc/reference/cricheditview-class.md)
 

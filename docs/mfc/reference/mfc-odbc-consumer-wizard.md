@@ -1,74 +1,93 @@
 ---
-title: "MFC ODBC コンシューマー ウィザード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.codewiz.class.mfc.consumer.overview"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ODBC コンシューマー ウィザード"
-  - "ウィザード [MFC]"
+title: MFC ODBC Consumer Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.codewiz.class.mfc.consumer.overview
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ODBC Consumer Wizard
+- wizards [MFC]
 ms.assetid: f64a890b-a252-4887-88a1-782a7cd4ff3d
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# MFC ODBC コンシューマー ウィザード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: adefd54cecc45f662bea3bf2b1deb7ec562773d3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここに "検索結果" の概要を挿入します。  
+---
+# <a name="mfc-odbc-consumer-wizard"></a>MFC ODBC Consumer Wizard
+Insert "Search Results" summary here.  
   
- このウィザードでは、指定されたデータ ソースへのアクセスに必要な ODBC レコードセット クラスとデータ バインディングを設定します。  
+ This wizard sets up an ODBC recordset class and the data bindings necessary to access the specified data source.  
   
-## UIElement の一覧  
+## <a name="uielement-list"></a>UIElement List  
  **Data Source**  
- **\[データ ソース\]** をクリックすると、指定された ODBC ドライバーを使用して、指定されたデータ ソースを設定できます。  データ ソース ファイル \(DSN\) の詳細については、「[File Data Sources](https://msdn.microsoft.com/en-us/library/ms715401.aspx)」を参照してください。  **\[データ ソースの選択\]** ダイアログ ボックスには、以下の 2 つのタブがあります。  
+ The **Data Source** button lets you set up the specified data source using the specified ODBC driver. For more information about data source files (DSN), see [File Data Sources](https://msdn.microsoft.com/library/ms715401.aspx) in the ODBC SDK. The **Select Data Source** dialog box has two tabs:  
   
--   **\[ファイル データ ソース\]** タブ: データ ソースとして使用するファイルを選択するディレクトリを、\[検索対象\] ボックスで指定します。  既定では、\\Program Files\\Common Files\\ODBC\\Data Sources になります。  既存のファイル データ ソース \(.dsn ファイル\) がメイン リスト ボックスに表示されます。  [ODBC データ ソース アドミニストレーター](https://msdn.microsoft.com/en-us/library/ms714024.aspx)の **\[ファイル DSN\]** タブでデータ ソースを設定したり、このダイアログ ボックスで新しく作成したりできます。  
+-   **File Data Source** tab: The **Look in** box specifies the directory in which to select files to be used as data sources. The default is \Program Files\Common Files\ODBC\Data Sources. The existing file data sources (.dsn files) appear in the main list box. You can either set up the data sources ahead of time using the **File DSN** tab on the [ODBC Data Source Administrator](https://msdn.microsoft.com/library/ms714024.aspx), or create new ones using this dialog box.  
   
-     このダイアログ ボックスで新しいファイル データ ソースを作成するには、\[新規作成\] をクリックし、表示される \[データ ソースの新規作成\] ダイアログ ボックスで DSN 名を指定します。  \[データ ソースの新規作成\] ダイアログ ボックスで適切なドライバーを選択し、\[次へ\] をクリックします。次に、\[参照\] をクリックしてデータ ソースとして使用するファイルの名前を選択します \(.xls ファイルなど、DSN ファイル以外のファイルを表示するには、\[すべてのファイル\] を選択します\)。次に、\[次へ\] をクリックし、\[完了\] をクリックします。DSN ファイル以外のファイルを選択した場合は、\[ODBC Microsoft Excel セットアップ\] などのドライバー固有のダイアログ ボックスが表示されます。このダイアログ ボックスでファイルが DSN に変換されます。  
+     To create a new file data source from this dialog box, click `New` to specify a DSN name; the **Create New Data Source** dialog box appears. In the **Create New Data Source** dialog box, select an appropriate driver and click `Next`; click **Browse**, and select the name of the file to be used as a data source (you have to select "All Files" to view non-DSN files, such as .xls files); click `Next`, and then click **Finish**. (If you selected a non-DSN file, you will get a driver-specific dialog box, such as "ODBC Microsoft Excel Setup," which will convert the file to a DSN.)  
   
     > [!NOTE]
-    >  ODBC データ ソース アドミニストレーターを使用して、新しいファイル データ ソースを作成しておくこともできます。  **\[スタート\]** メニューの **\[設定\]** をポイントし、**\[コントロール パネル\]** をクリックします。**\[管理ツール\]**、\[データ ソース \(ODBC\)\] の順に選択すると、\[ODBC データ ソース アドミニストレーター\] ダイアログ ボックスが表示されます。  
+    >  You can also create a new file data source beforehand using the ODBC Data Source Administrator. From the **Start** menu, select **Settings**, **Control Panel**, **Administrative Tools**, **Data Sources (ODBC)**, and then **ODBC Data Source Administrator**.  
   
-     \[DSN 名\] ボックスではファイル データ ソース名を指定します。  Excel ファイルの場合は .xls、Access ファイルの場合は .mdb など、DSN 名の最後に適切なファイル拡張子が指定されていることを確認してください。  
+     The **DSN Name** box allows you to specify a name for the file data source. You must ensure that the DSN name ends with the appropriate file extension, such as .xls for Excel files or .mdb for Access files.  
   
-     DSN の詳細については、『ODBC Programmer's Reference』の「[File Data Sources](https://msdn.microsoft.com/en-us/library/ms715401.aspx)」を参照してください。  
+     For more information on DSNs, see [File Data Sources](https://msdn.microsoft.com/library/ms715401.aspx) in the ODBC SDK.  
   
--   **\[コンピューター データ ソース\]** タブ: このタブには、システム データ ソースおよびユーザー データ ソースが一覧表示されます。  ユーザー データ ソースは、コンピューターのユーザー固有のデータ ソースです。  システム データ ソースは、コンピューターまたはシステム全体のサービスのすべてのユーザーが使用できます。  『ODBC Programmer's Reference』の「[Machine Data Sources](https://msdn.microsoft.com/en-us/library/ms710952.aspx)」を参照してください。  
+-   **Machine Data Source** tab: This tab lists system and User DATA sources. User data sources are specific to a user on this machine. System data sources can be used by all users on this machine or on a systemwide service. See [Machine Data Sources](https://msdn.microsoft.com/library/ms710952.aspx) in the ODBC SDK  
   
- ODBC データ ソースの詳細については、『ODBC Programmer's Reference』の「[Data Sources](https://msdn.microsoft.com/en-us/library/ms711688.aspx)」を参照してください。  
+ For more information on ODBC data sources, see [Data Sources](https://msdn.microsoft.com/library/ms711688.aspx) in the ODBC SDK.  
   
- **\[OK\]** をクリックして終了します。  \[データベース オブジェクトの選択\] ダイアログ ボックスが表示されます。  このダイアログ ボックスでは、コンシューマーが使用するテーブルまたはビューを選択します。  複数のビューまたはテーブルを選択するには、**Ctrl** キーを押しながら各項目をクリックします。  
+ Click **OK** to finish. The **Select Database Object** dialog box appears. From this dialog box, select the table or view that the consumer will use. Note that you can select multiple views and tables by holding the control key while clicking on the items.  
   
  **Class**  
- コンシューマー クラス名。既定では、選択したファイル名またはコンピューター データ ソース名に基づいた名前になります。  
+ The name of the consumer class, based by default on the name of the file or machine data source that you selected.  
   
- **\[.h ファイル\]**  
- コンシューマー クラスのヘッダー ファイル名。既定では、選択したファイル名またはマシン データ ソース名に基づいた名前になります。  
+ **.h file**  
+ The name of the consumer class header file, based by default on the name of the file or machine data source that you selected.  
   
- **\[.cpp ファイル\]**  
- コンシューマー クラスの実装ファイル名。既定では、選択したファイル名またはマシン データ ソース名に基づいた名前になります。  
+ **.cpp file**  
+ The name of the consumer class implementation file, based by default on the name of the file or machine data source that you selected.  
   
  **Type**  
- レコードセットがダイナセット \(既定\) とスナップショットのどちらであるのかを指定します。  
+ Specifies whether the recordset is a dynaset (default) or a snapshot.  
   
--   **\[ダイナセット\]**: レコードセットがダイナセットであることを示します。  ダイナセットとは、クエリを実行したデータベースのデータにインデックス付きのビューを提供するクエリの結果です。  ダイナセットは、元のデータのインデックス部分だけをキャッシュに格納するため、スナップショットに比べてパフォーマンスが向上します。  インデックスはクエリの各結果レコードを直接指しており、レコードが削除されるかどうかを示します。  クエリが実行されたレコード内の更新情報にもアクセスできます。  これは、既定の設定です。  
+-   **Dynaset**: Specifies that the recordset is a dynaset. A dynaset is the result of a query that provides an indexed view into the queried database's data. A dynaset caches only an integral index to the original data and thus offers a performance gain over a snapshot. The index points directly to each record found as a result of a query and indicates if a record is removed. You also have access to updated information in the queried records. This is the default.  
   
--   **\[スナップショット\]**: レコードセットがスナップショットであることを示します。  スナップショットとはクエリ結果であり、ある時点におけるデータベースのビューです。  クエリ結果レコードはすべてキャッシュに格納されるため、元のレコードに対する変更内容は参照できません。  
+-   **Snapshot**: Specifies that the recordset is a snapshot. A snapshot is the result of a query and is a view into a database at one point in time. All records found as a result of the query are cached, so you do not see any changes to the original records.  
   
- **\[すべての列をバインド\]**  
- 選択したテーブルのすべての列をバインドするかどうかを指定します。  このボックスをオンにすると \(既定\)、すべての列がバインドされます。オンにしない場合は、列がバインドされないため、レコードセット クラスで手動でバインドする必要があります。  
+ **Bind all columns**  
+ Specifies whether all columns in the selected table are bound. If you select this box (default), all columns are bound; if you do not select this box, no columns are bound, and you must bind them manually in the recordset class.  
   
-## 参照  
- [MFC ODBC コンシューマー](../../mfc/reference/adding-an-mfc-odbc-consumer.md)   
- [コード ウィザードを使用した機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)
+## <a name="see-also"></a>See Also  
+ [MFC ODBC Consume](../../mfc/reference/adding-an-mfc-odbc-consumer.md)   
+ [Adding Functionality with Code Wizards](../../ide/adding-functionality-with-code-wizards-cpp.md)
+
+

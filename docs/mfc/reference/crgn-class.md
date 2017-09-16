@@ -1,5 +1,5 @@
 ---
-title: "CRgn クラス |Microsoft ドキュメント"
+title: CRgn Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -34,9 +34,26 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- HRGN
-- CRgn class
-- regions, MFC
+- CRgn [MFC], CRgn
+- CRgn [MFC], CombineRgn
+- CRgn [MFC], CopyRgn
+- CRgn [MFC], CreateEllipticRgn
+- CRgn [MFC], CreateEllipticRgnIndirect
+- CRgn [MFC], CreateFromData
+- CRgn [MFC], CreateFromPath
+- CRgn [MFC], CreatePolygonRgn
+- CRgn [MFC], CreatePolyPolygonRgn
+- CRgn [MFC], CreateRectRgn
+- CRgn [MFC], CreateRectRgnIndirect
+- CRgn [MFC], CreateRoundRectRgn
+- CRgn [MFC], EqualRgn
+- CRgn [MFC], FromHandle
+- CRgn [MFC], GetRegionData
+- CRgn [MFC], GetRgnBox
+- CRgn [MFC], OffsetRgn
+- CRgn [MFC], PtInRegion
+- CRgn [MFC], RectInRegion
+- CRgn [MFC], SetRectRgn
 ms.assetid: d904da84-76aa-481e-8780-b09485f49e64
 caps.latest.revision: 23
 author: mikeblome
@@ -56,79 +73,79 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 3aa69aa3947409b5b3d96a9da92f5d4549eebbb4
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9aab720a355bb351c32d6a2242979306e62cbbaf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="crgn-class"></a>CRgn クラス
-Windows のグラフィック デバイス インターフェイス (GDI) の領域をカプセル化したものです。  
+# <a name="crgn-class"></a>CRgn Class
+Encapsulates a Windows graphics device interface (GDI) region.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CRgn : public CGdiObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRgn::CRgn](#crgn)|`CRgn` オブジェクトを構築します。|  
+|[CRgn::CRgn](#crgn)|Constructs a `CRgn` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRgn::CombineRgn](#combinergn)|セット、`CRgn`オブジェクトの指定した 2 つの和集合と等価であるように`CRgn`オブジェクト。|  
-|[CRgn::CopyRgn](#copyrgn)|セット、`CRgn`オブジェクトは、指定されたのコピーを`CRgn`オブジェクト。|  
-|[CRgn::CreateEllipticRgn](#createellipticrgn)|初期化、`CRgn`楕円の領域を持つオブジェクト。|  
-|[CRgn::CreateEllipticRgnIndirect](#createellipticrgnindirect)|初期化、`CRgn`によって定義される楕円の領域を持つオブジェクト、 [RECT](../../mfc/reference/rect-structure1.md)構造体。|  
-|[CRgn::CreateFromData](#createfromdata)|指定された領域と変換のデータから領域を作成します。|  
-|[CRgn::CreateFromPath](#createfrompath)|指定されたデバイス コンテキストに選択されているパスからの領域を作成します。|  
-|[CRgn::CreatePolygonRgn](#createpolygonrgn)|初期化、`CRgn`多角形の領域を持つオブジェクト。 システム多角形が自動的に終了、必要に応じて、最初最後の頂点から線が描画します。|  
-|[CRgn::CreatePolyPolygonRgn](#createpolypolygonrgn)|初期化、`CRgn`閉じた多角形の系列で構成される領域を持つオブジェクト。 多角形、不整合のあるか、重なる可能性があります。|  
-|[CRgn::CreateRectRgn](#createrectrgn)|初期化、`CRgn`四角形の領域を持つオブジェクト。|  
-|[CRgn::CreateRectRgnIndirect](#createrectrgnindirect)|初期化、`CRgn`で定義された四角形の領域を持つオブジェクト、 [RECT](../../mfc/reference/rect-structure1.md)構造体。|  
-|[CRgn::CreateRoundRectRgn](#createroundrectrgn)|初期化、`CRgn`角の丸い四角形の領域を持つオブジェクト。|  
-|[CRgn::EqualRgn](#equalrgn)|2 つ`CRgn`それらが等しいかどうかを決定するオブジェクト。|  
-|[CRgn::FromHandle](#fromhandle)|ポインターを返します、 `CRgn` Windows 領域へのハンドルが指定されるとします。|  
-|[CRgn::GetRegionData](#getregiondata)|指定された領域を記述するデータを指定したバッファーに設定します。|  
-|[CRgn::GetRgnBox](#getrgnbox)|外接する四角形の座標を取得、`CRgn`オブジェクト。|  
-|[CRgn::OffsetRgn](#offsetrgn)|移動、`CRgn`指定されたオフセットでのオブジェクト。|  
-|[CRgn::PtInRegion](#ptinregion)|指定したポイントが領域内にあるかどうかを判断します。|  
-|[CRgn::RectInRegion](#rectinregion)|指定した四角形の任意の部分が領域の境界内にあるかどうかを判断します。|  
-|[CRgn::SetRectRgn](#setrectrgn)|セット、`CRgn`オブジェクトを指定した四角形領域です。|  
+|[CRgn::CombineRgn](#combinergn)|Sets a `CRgn` object so that it is equivalent to the union of two specified `CRgn` objects.|  
+|[CRgn::CopyRgn](#copyrgn)|Sets a `CRgn` object so that it is a copy of a specified `CRgn` object.|  
+|[CRgn::CreateEllipticRgn](#createellipticrgn)|Initializes a `CRgn` object with an elliptical region.|  
+|[CRgn::CreateEllipticRgnIndirect](#createellipticrgnindirect)|Initializes a `CRgn` object with an elliptical region defined by a [RECT](../../mfc/reference/rect-structure1.md) structure.|  
+|[CRgn::CreateFromData](#createfromdata)|Creates a region from the given region and transformation data.|  
+|[CRgn::CreateFromPath](#createfrompath)|Creates a region from the path that is selected into the given device context.|  
+|[CRgn::CreatePolygonRgn](#createpolygonrgn)|Initializes a `CRgn` object with a polygonal region. The system closes the polygon automatically, if necessary, by drawing a line from the last vertex to the first.|  
+|[CRgn::CreatePolyPolygonRgn](#createpolypolygonrgn)|Initializes a `CRgn` object with a region consisting of a series of closed polygons. The polygons may be disjoint, or they may overlap.|  
+|[CRgn::CreateRectRgn](#createrectrgn)|Initializes a `CRgn` object with a rectangular region.|  
+|[CRgn::CreateRectRgnIndirect](#createrectrgnindirect)|Initializes a `CRgn` object with a rectangular region defined by a [RECT](../../mfc/reference/rect-structure1.md) structure.|  
+|[CRgn::CreateRoundRectRgn](#createroundrectrgn)|Initializes a `CRgn` object with a rectangular region with rounded corners.|  
+|[CRgn::EqualRgn](#equalrgn)|Checks two `CRgn` objects to determine whether they are equivalent.|  
+|[CRgn::FromHandle](#fromhandle)|Returns a pointer to a `CRgn` object when given a handle to a Windows region.|  
+|[CRgn::GetRegionData](#getregiondata)|Fills the specified buffer with data describing the given region.|  
+|[CRgn::GetRgnBox](#getrgnbox)|Retrieves the coordinates of the bounding rectangle of a `CRgn` object.|  
+|[CRgn::OffsetRgn](#offsetrgn)|Moves a `CRgn` object by the specified offsets.|  
+|[CRgn::PtInRegion](#ptinregion)|Determines whether a specified point is in the region.|  
+|[CRgn::RectInRegion](#rectinregion)|Determines whether any part of a specified rectangle is within the boundaries of the region.|  
+|[CRgn::SetRectRgn](#setrectrgn)|Sets the `CRgn` object to the specified rectangular region.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRgn::operator HRGN](#operator_hrgn)|含まれる Windows ハンドルを返します、`CRgn`オブジェクト。|  
+|[CRgn::operator HRGN](#operator_hrgn)|Returns the Windows handle contained in the `CRgn` object.|  
   
-## <a name="remarks"></a>コメント  
- 領域は、ウィンドウ内で楕円形または多角形領域です。 クラスのメンバー関数を使用する領域を使用する`CRgn`クラスのメンバーとして定義されているクリッピング関数と`CDC`です。  
+## <a name="remarks"></a>Remarks  
+ A region is an elliptical or polygonal area within a window. To use regions, you use the member functions of class `CRgn` with the clipping functions defined as members of class `CDC`.  
   
- メンバー関数は、`CRgn`作成、変更、およびが呼び出された対象の領域オブジェクトに関する情報を取得します。  
+ The member functions of `CRgn` create, alter, and retrieve information about the region object for which they are called.  
   
- 使用する方法についての`CRgn`を参照してください[グラフィック オブジェクト](../../mfc/graphic-objects.md)です。  
+ For more information on using `CRgn`, see [Graphic Objects](../../mfc/graphic-objects.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CGdiObject](../../mfc/reference/cgdiobject-class.md)  
   
  `CRgn`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="combinergn"></a>CRgn::CombineRgn  
- 既存の 2 つの領域を組み合わせることによって、新しい GDI 領域を作成します。  
+##  <a name="combinergn"></a>  CRgn::CombineRgn  
+ Creates a new GDI region by combining two existing regions.  
   
 ```  
 int CombineRgn(
@@ -137,79 +154,79 @@ int CombineRgn(
     int nCombineMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn1`  
- 既存の領域を識別します。  
+ Identifies an existing region.  
   
  `pRgn2`  
- 既存の領域を識別します。  
+ Identifies an existing region.  
   
  `nCombineMode`  
- 2 つの領域を結合するときに実行する操作を指定します。 次の値のいずれかを指定できます。  
+ Specifies the operation to be performed when combining the two source regions. It can be any one of the following values:  
   
-- **RGN_AND** (共通集合) の両方の地域の重なり合う領域を使用します。  
+- **RGN_AND** Uses overlapping areas of both regions (intersection).  
   
-- **RGN_COPY**地域 1 のコピーを作成 (で識別される`pRgn1`)。  
+- **RGN_COPY** Creates a copy of region 1 (identified by `pRgn1`).  
   
-- **RGN_DIFF**領域 1 の部分から成る領域を作成する (で識別される`pRgn1`) 領域 2 の一部ではないこと (で識別される`pRgn2`)。  
+- **RGN_DIFF** Creates a region consisting of the areas of region 1 (identified by `pRgn1`) that are not part of region 2 (identified by `pRgn2`).  
   
-- **RGN_OR**全体 (union) の両方の領域を結合します。  
+- **RGN_OR** Combines both regions in their entirety (union).  
   
-- **RGN_XOR**両方の地域の結合が、重なり合う領域を削除します。  
+- **RGN_XOR** Combines both regions but removes overlapping areas.  
   
-### <a name="return-value"></a>戻り値  
- 結果として得られる領域の種類を指定します。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the type of the resulting region. It can be one of the following values:  
   
-- **COMPLEXREGION**新しい領域が重なり合う境界線です。  
+- **COMPLEXREGION** New region has overlapping borders.  
   
-- **エラー**新しい領域は作成します。  
+- **ERROR** No new region created.  
   
-- **NULLREGION**新しい領域が空です。  
+- **NULLREGION** New region is empty.  
   
-- **SIMPLEREGION**新しい領域には、重複する境界がありません。  
+- **SIMPLEREGION** New region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 領域を結合の指定に従って`nCombineMode`です。  
+### <a name="remarks"></a>Remarks  
+ The regions are combined as specified by `nCombineMode`.  
   
- 2 つの指定された領域は結合に結果として得られる領域ハンドルが格納されている、`CRgn`オブジェクト。 どのような領域が格納されるため、`CRgn`オブジェクトは、結合された領域に置換します。  
+ The two specified regions are combined, and the resulting region handle is stored in the `CRgn` object. Thus, whatever region is stored in the `CRgn` object is replaced by the combined region.  
   
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- 使用して[CopyRgn](#copyrgn)単に 1 つの領域を別の領域にコピーします。  
+ Use [CopyRgn](#copyrgn) to simply copy one region into another region.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 144](../../mfc/codesnippet/cpp/crgn-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#144](../../mfc/codesnippet/cpp/crgn-class_1.cpp)]  
   
-##  <a name="copyrgn"></a>CRgn::CopyRgn  
- によって定義される領域をコピー`pRgnSrc`に、`CRgn`オブジェクト。  
+##  <a name="copyrgn"></a>  CRgn::CopyRgn  
+ Copies the region defined by `pRgnSrc` into the `CRgn` object.  
   
 ```  
 int CopyRgn(CRgn* pRgnSrc);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgnSrc`  
- 既存の領域を識別します。  
+ Identifies an existing region.  
   
-### <a name="return-value"></a>戻り値  
- 結果として得られる領域の種類を指定します。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the type of the resulting region. It can be one of the following values:  
   
-- **COMPLEXREGION**新しい領域が重なり合う境界線です。  
+- **COMPLEXREGION** New region has overlapping borders.  
   
-- **エラー**新しい領域は作成します。  
+- **ERROR** No new region created.  
   
-- **NULLREGION**新しい領域が空です。  
+- **NULLREGION** New region is empty.  
   
-- **SIMPLEREGION**新しい領域には、重複する境界がありません。  
+- **SIMPLEREGION** New region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 新しい領域が以前に格納されている領域を置き換えます、`CRgn`オブジェクト。 この関数は、の特殊なケース、 [CombineRgn](#combinergn)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The new region replaces the region formerly stored in the `CRgn` object. This function is a special case of the [CombineRgn](#combinergn) member function.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreateEllipticRgn](#createellipticrgn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreateEllipticRgn](#createellipticrgn).  
   
-##  <a name="createellipticrgn"></a>CRgn::CreateEllipticRgn  
- 楕円の領域を作成します。  
+##  <a name="createellipticrgn"></a>  CRgn::CreateEllipticRgn  
+ Creates an elliptical region.  
   
 ```  
 BOOL CreateEllipticRgn(
@@ -219,58 +236,58 @@ BOOL CreateEllipticRgn(
     int y2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で楕円の外接する四角形の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the bounding rectangle of the ellipse.  
   
  `y1`  
- 論理で楕円の外接する四角形の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the bounding rectangle of the ellipse.  
   
  `x2`  
- 論理で楕円の外接する四角形の右下隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the bounding rectangle of the ellipse.  
   
  `y2`  
- 論理で楕円の外接する四角形の右下隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the bounding rectangle of the ellipse.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 領域がで指定された外接する四角形によって定義された`x1`、 `y1`、 `x2`、および`y2`です。 地域が格納されている、`CRgn`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The region is defined by the bounding rectangle specified by `x1`, `y1`, `x2`, and `y2`. The region is stored in the `CRgn` object.  
   
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- これが終了した場合に作成された領域を使用して、`CreateEllipticRgn`関数、アプリケーションはデバイス コンテキストおよび使用のアウト地域を選択する必要があります、`DeleteObject`関数を削除します。  
+ When it has finished using a region created with the `CreateEllipticRgn` function, an application should select the region out of the device context and use the `DeleteObject` function to remove it.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 145](../../mfc/codesnippet/cpp/crgn-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#145](../../mfc/codesnippet/cpp/crgn-class_2.cpp)]  
   
-##  <a name="createellipticrgnindirect"></a>CRgn::CreateEllipticRgnIndirect  
- 楕円の領域を作成します。  
+##  <a name="createellipticrgnindirect"></a>  CRgn::CreateEllipticRgnIndirect  
+ Creates an elliptical region.  
   
 ```  
 BOOL CreateEllipticRgnIndirect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造体、または`CRect`楕円の外接する四角形の左上隅および右下コーナーの論理座標を格納しているオブジェクト。  
+ Points to a `RECT` structure or a `CRect` object that contains the logical coordinates of the upper-left and lower-right corners of the bounding rectangle of the ellipse.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 地域が構造体またはによって指されるオブジェクトによって定義された`lpRect`に格納されて、`CRgn`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The region is defined by the structure or object pointed to by `lpRect` and is stored in the `CRgn` object.  
   
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- これが終了した場合に作成された領域を使用して、`CreateEllipticRgnIndirect`関数、アプリケーションはデバイス コンテキストおよび使用のアウト地域を選択する必要があります、`DeleteObject`関数を削除します。  
+ When it has finished using a region created with the `CreateEllipticRgnIndirect` function, an application should select the region out of the device context and use the `DeleteObject` function to remove it.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreateRectRgnIndirect](#createrectrgnindirect)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreateRectRgnIndirect](#createrectrgnindirect).  
   
-##  <a name="createfromdata"></a>CRgn::CreateFromData  
- 指定された領域と変換のデータから領域を作成します。  
+##  <a name="createfromdata"></a>  CRgn::CreateFromData  
+ Creates a region from the given region and transformation data.  
   
 ```  
 BOOL CreateFromData(
@@ -279,41 +296,41 @@ BOOL CreateFromData(
     const RGNDATA* pRgnData);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *lpXForm*  
- 指す、 [XFORM](../../mfc/reference/xform-structure.md)領域上で実行される変換を定義するデータ構造体。 このポインターがある場合**NULL**、identity 変換を使用します。  
+ Points to an [XFORM](../../mfc/reference/xform-structure.md) data structure that defines the transformation to be performed on the region. If this pointer is **NULL**, the identity transformation is used.  
   
  `nCount`  
- によって示されるバイト数を指定`pRgnData`です。  
+ Specifies the number of bytes pointed to by `pRgnData`.  
   
  `pRgnData`  
- 指す、 [RGNDATA](../../mfc/reference/rgndata-structure.md)地域のデータを格納するデータ構造です。  
+ Points to a [RGNDATA](../../mfc/reference/rgndata-structure.md) data structure that contains the region data.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- アプリケーションが呼び出すことによって、地域のデータを取得できます、`CRgn::GetRegionData`関数。  
+### <a name="remarks"></a>Remarks  
+ An application can retrieve data for a region by calling the `CRgn::GetRegionData` function.  
   
-##  <a name="createfrompath"></a>CRgn::CreateFromPath  
- 指定されたデバイス コンテキストに選択されているパスからの領域を作成します。  
+##  <a name="createfrompath"></a>  CRgn::CreateFromPath  
+ Creates a region from the path that is selected into the given device context.  
   
 ```  
 BOOL CreateFromPath(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pDC`  
- 閉じられたパスを格納しているデバイス コンテキストを識別します。  
+ Identifies a device context that contains a closed path.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- デバイス コンテキストで識別される、`pDC`パラメーターが閉じられたパスを含める必要があります。 後に`CreateFromPath`領域、Windows をパスに変換は、デバイス コンテキストから閉じたパスを破棄します。  
+### <a name="remarks"></a>Remarks  
+ The device context identified by the `pDC` parameter must contain a closed path. After `CreateFromPath` converts a path into a region, Windows discards the closed path from the device context.  
   
-##  <a name="createpolygonrgn"></a>CRgn::CreatePolygonRgn  
- 多角形の領域を作成します。  
+##  <a name="createpolygonrgn"></a>  CRgn::CreatePolygonRgn  
+ Creates a polygonal region.  
   
 ```  
 BOOL CreatePolygonRgn(
@@ -322,9 +339,9 @@ BOOL CreatePolygonRgn(
     int nMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す**ポイント**構造体や配列の`CPoint`オブジェクト。 X 座標と y 座標の多角形の 1 つの頂点の各構造体を指定します。 **ポイント**構造体には、次の形式。  
+ Points to an array of **POINT** structures or an array of `CPoint` objects. Each structure specifies the x-coordinate and y-coordinate of one vertex of the polygon. The **POINT** structure has the following form:  
   
  `typedef struct tagPOINT {`  
   
@@ -335,30 +352,30 @@ BOOL CreatePolygonRgn(
  `} POINT;`  
   
  `nCount`  
- 数を指定**ポイント**構造体または`CPoint`配列内のオブジェクトを指す`lpPoints`です。  
+ Specifies the number of **POINT** structures or `CPoint` objects in the array pointed to by `lpPoints`.  
   
  `nMode`  
- 領域の塗りつぶしモードを指定します。 このパラメーターには、いずれかを指定できます**代替**または**ワインディング**です。  
+ Specifies the filling mode for the region. This parameter may be either **ALTERNATE** or **WINDING**.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- システム多角形が自動的に終了、必要に応じて、最初最後の頂点から線が描画します。 作成された領域が格納されている、`CRgn`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The system closes the polygon automatically, if necessary, by drawing a line from the last vertex to the first. The resulting region is stored in the `CRgn` object.  
   
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- 多角形の塗りつぶしモードのときは**代替**システムが各スキャン ラインに奇数し、偶数の多角形の辺の間の領域を塗りつぶします。 つまり、システムは、最初と 2 番目の側の間で、3 番目と 4 番目の側との間の領域を塗りつぶします。  
+ When the polygon-filling mode is **ALTERNATE**, the system fills the area between odd-numbered and even-numbered polygon sides on each scan line. That is, the system fills the area between the first and second side, between the third and fourth side, and so on.  
   
- 多角形の塗りつぶしモードのときは**ワインディング**システムは、図が描いた領域を入力するかどうかを決定する方向を使用します。 多角形の場合は、各直線セグメントは、時計回りまたは反時計回りに描画されます。 囲まれた領域から、図の外側に描画虚数部の行が時計回りに直線セグメントを通過するたびに、カウントが増加します。 行は、反時計回りの線分を通過、ときに、カウントがデクリメントします。 行が、図の外側に達すると、カウントが 0 でない場合、領域を塗りつぶします。  
+ When the polygon-filling mode is **WINDING**, the system uses the direction in which a figure was drawn to determine whether to fill an area. Each line segment in a polygon is drawn in either a clockwise or a counterclockwise direction. Whenever an imaginary line drawn from an enclosed area to the outside of a figure passes through a clockwise line segment, a count is incremented. When the line passes through a counterclockwise line segment, the count is decremented. The area is filled if the count is nonzero when the line reaches the outside of the figure.  
   
- アプリケーションが終了した場合に作成された領域を使用して、`CreatePolygonRgn`関数を使用して、デバイス コンテキストのアウト リージョンを選択にする必要があります、`DeleteObject`関数を削除します。  
+ When an application has finished using a region created with the `CreatePolygonRgn` function, it should select the region out of the device context and use the `DeleteObject` function to remove it.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 146](../../mfc/codesnippet/cpp/crgn-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#146](../../mfc/codesnippet/cpp/crgn-class_3.cpp)]  
   
-##  <a name="createpolypolygonrgn"></a>CRgn::CreatePolyPolygonRgn  
- 閉じた多角形の系列で構成される領域を作成します。  
+##  <a name="createpolypolygonrgn"></a>  CRgn::CreatePolyPolygonRgn  
+ Creates a region consisting of a series of closed polygons.  
   
 ```  
 BOOL CreatePolyPolygonRgn(
@@ -368,9 +385,9 @@ BOOL CreatePolyPolygonRgn(
     int nPolyFillMode);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpPoints`  
- 配列を指す**ポイント**構造体や配列の`CPoint`多角形の頂点を定義するオブジェクト。 システムは閉じませんに自動的にあるために、各多角形を明示的に閉じる必要があります。 多角形が連続的に指定します。 **ポイント**構造体には、次の形式。  
+ Points to an array of **POINT** structures or an array of `CPoint` objects that defines the vertices of the polygons. Each polygon must be explicitly closed because the system does not close them automatically. The polygons are specified consecutively. The **POINT** structure has the following form:  
   
  `typedef struct tagPOINT {`  
   
@@ -381,32 +398,32 @@ BOOL CreatePolyPolygonRgn(
  `} POINT;`  
   
  `lpPolyCounts`  
- 整数の配列を指します。 最初の整数は、最初の多角形の頂点の数を指定、 `lpPoints` 2 番目の整数の配列が 2 番目の多角形で頂点の数を指定します。  
+ Points to an array of integers. The first integer specifies the number of vertices in the first polygon in the `lpPoints` array, the second integer specifies the number of vertices in the second polygon, and so on.  
   
  `nCount`  
- で整数の合計数を指定、`lpPolyCounts`配列。  
+ Specifies the total number of integers in the `lpPolyCounts` array.  
   
  `nPolyFillMode`  
- 多角形の塗りつぶしモードを指定します。 この値は、いずれかの**代替**または**ワインディング**です。  
+ Specifies the polygon-filling mode. This value may be either **ALTERNATE** or **WINDING**.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 作成された領域が格納されている、`CRgn`オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ The resulting region is stored in the `CRgn` object.  
   
- 多角形、不整合のあるか、重なる可能性があります。  
+ The polygons may be disjoint, or they may overlap.  
   
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- 多角形の塗りつぶしモードのときは**代替**システムが各スキャン ラインに奇数し、偶数の多角形の辺の間の領域を塗りつぶします。 つまり、システムは、最初と 2 番目の側の間で、3 番目と 4 番目の側との間の領域を塗りつぶします。  
+ When the polygon-filling mode is **ALTERNATE**, the system fills the area between odd-numbered and even-numbered polygon sides on each scan line. That is, the system fills the area between the first and second side, between the third and fourth side, and so on.  
   
- 多角形の塗りつぶしモードのときは**ワインディング**システムは、図が描いた領域を入力するかどうかを決定する方向を使用します。 多角形の場合は、各直線セグメントは、時計回りまたは反時計回りに描画されます。 囲まれた領域から、図の外側に描画虚数部の行が時計回りに直線セグメントを通過するたびに、カウントが増加します。 行は、反時計回りの線分を通過、ときに、カウントがデクリメントします。 行が、図の外側に達すると、カウントが 0 でない場合、領域を塗りつぶします。  
+ When the polygon-filling mode is **WINDING**, the system uses the direction in which a figure was drawn to determine whether to fill an area. Each line segment in a polygon is drawn in either a clockwise or a counterclockwise direction. Whenever an imaginary line drawn from an enclosed area to the outside of a figure passes through a clockwise line segment, a count is incremented. When the line passes through a counterclockwise line segment, the count is decremented. The area is filled if the count is nonzero when the line reaches the outside of the figure.  
   
- アプリケーションが終了した場合に作成された領域を使用して、`CreatePolyPolygonRgn`関数を使用して、デバイス コンテキストのアウト リージョンを選択にする必要があります、 [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)メンバー関数を削除します。  
+ When an application has finished using a region created with the `CreatePolyPolygonRgn` function, it should select the region out of the device context and use the [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject) member function to remove it.  
   
-##  <a name="createrectrgn"></a>CRgn::CreateRectRgn  
- 格納されている四角形の領域を作成、`CRgn`オブジェクト。  
+##  <a name="createrectrgn"></a>  CRgn::CreateRectRgn  
+ Creates a rectangular region that is stored in the `CRgn` object.  
   
 ```  
 BOOL CreateRectRgn(
@@ -416,42 +433,42 @@ BOOL CreateRectRgn(
     int y2);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で領域の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the region.  
   
  `y1`  
- 論理で領域の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the region.  
   
  `x2`  
- 論理で領域の右下隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the region.  
   
  `y2`  
- 論理で領域の右下隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the region.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+### <a name="remarks"></a>Remarks  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- によって作成された領域の使用の終了時`CreateRectRgn`、アプリケーションを使用する必要があります、 [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)領域を削除するメンバー関数。  
+ When it has finished using a region created by `CreateRectRgn`, an application should use the [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject) member function to remove the region.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #147](../../mfc/codesnippet/cpp/crgn-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#147](../../mfc/codesnippet/cpp/crgn-class_4.cpp)]  
   
- たとえば、次を参照してください。 [CRgn::CombineRgn](#combinergn)です。  
+ For an additional example, see [CRgn::CombineRgn](#combinergn).  
   
-##  <a name="createrectrgnindirect"></a>CRgn::CreateRectRgnIndirect  
- 格納されている四角形の領域を作成、`CRgn`オブジェクト。  
+##  <a name="createrectrgnindirect"></a>  CRgn::CreateRectRgnIndirect  
+ Creates a rectangular region that is stored in the `CRgn` object.  
   
 ```  
 BOOL CreateRectRgnIndirect(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造または`CRect`領域の左上隅および右下コーナーの論理座標を格納しているオブジェクト。 `RECT`構造体には、次の形式。  
+ Points to a `RECT` structure or `CRect` object that contains the logical coordinates of the upper-left and lower-right corners of the region. The `RECT` structure has the following form:  
   
  `typedef struct tagRECT {`  
   
@@ -465,19 +482,19 @@ BOOL CreateRectRgnIndirect(LPCRECT lpRect);
   
  `} RECT;`  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+### <a name="remarks"></a>Remarks  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- によって作成された領域の使用の終了時`CreateRectRgnIndirect`、アプリケーションを使用する必要があります、 [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)領域を削除するメンバー関数。  
+ When it has finished using a region created by `CreateRectRgnIndirect`, an application should use the [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject) member function to remove the region.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #148](../../mfc/codesnippet/cpp/crgn-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#148](../../mfc/codesnippet/cpp/crgn-class_5.cpp)]  
   
-##  <a name="createroundrectrgn"></a>CRgn::CreateRoundRectRgn  
- 格納されている角の丸い四角形の領域を作成、`CRgn`オブジェクト。  
+##  <a name="createroundrectrgn"></a>  CRgn::CreateRoundRectRgn  
+ Creates a rectangular region with rounded corners that is stored in the `CRgn` object.  
   
 ```  
 BOOL CreateRoundRectRgn(
@@ -489,85 +506,85 @@ BOOL CreateRoundRectRgn(
     int y3);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 論理で領域の左上隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the upper-left corner of the region.  
   
  `y1`  
- 論理で領域の左上隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the upper-left corner of the region.  
   
  `x2`  
- 論理で領域の右下隅の x 座標を指定します。  
+ Specifies the logical x-coordinate of the lower-right corner of the region.  
   
  `y2`  
- 論理で領域の右下隅の y 座標を指定します。  
+ Specifies the logical y-coordinate of the lower-right corner of the region.  
   
  *x3*  
- 丸い角を作成するために使用する省略記号の幅を指定します。  
+ Specifies the width of the ellipse used to create the rounded corners.  
   
  `y3`  
- 丸い角を作成するために使用する省略記号の高さを指定します。  
+ Specifies the height of the ellipse used to create the rounded corners.  
   
-### <a name="return-value"></a>戻り値  
- 操作が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the operation succeeded; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 領域のサイズは、32,767 で 32,767 の論理ユニットまたは 64 K のメモリに制限されます、小さい方です。  
+### <a name="remarks"></a>Remarks  
+ The size of a region is limited to 32,767 by 32,767 logical units or 64K of memory, whichever is smaller.  
   
- アプリケーションが終了した場合に作成された領域を使用して、`CreateRoundRectRgn`関数を使用して、デバイス コンテキストのアウト リージョンを選択にする必要があります、 [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)メンバー関数を削除します。  
+ When an application has finished using a region created with the `CreateRoundRectRgn` function, it should select the region out of the device context and use the [CGDIObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject) member function to remove it.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView # 149](../../mfc/codesnippet/cpp/crgn-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#149](../../mfc/codesnippet/cpp/crgn-class_6.cpp)]  
   
-##  <a name="crgn"></a>CRgn::CRgn  
- `CRgn` オブジェクトを構築します。  
+##  <a name="crgn"></a>  CRgn::CRgn  
+ Constructs a `CRgn` object.  
   
 ```  
 CRgn();
 ```  
   
-### <a name="remarks"></a>コメント  
- `m_hObject`データ メンバーを含まない有効な Windows GDI 領域とその他の 1 つ以上のオブジェクトが初期化されるまで`CRgn`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ The `m_hObject` data member does not contain a valid Windows GDI region until the object is initialized with one or more of the other `CRgn` member functions.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreateRoundRectRgn](#createroundrectrgn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreateRoundRectRgn](#createroundrectrgn).  
   
-##  <a name="equalrgn"></a>CRgn::EqualRgn  
- 指定された領域に格納されている領域に相当するかどうかを判断、`CRgn`オブジェクト。  
+##  <a name="equalrgn"></a>  CRgn::EqualRgn  
+ Determines whether the given region is equivalent to the region stored in the `CRgn` object.  
   
 ```  
 BOOL EqualRgn(CRgn* pRgn) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pRgn`  
- 領域を識別します。  
+ Identifies a region.  
   
-### <a name="return-value"></a>戻り値  
- 2 つの領域が等しい場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the two regions are equivalent; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #150](../../mfc/codesnippet/cpp/crgn-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#150](../../mfc/codesnippet/cpp/crgn-class_7.cpp)]  
   
-##  <a name="fromhandle"></a>CRgn::FromHandle  
- ポインターを返します、 `CRgn` Windows 領域へのハンドルが指定されるとします。  
+##  <a name="fromhandle"></a>  CRgn::FromHandle  
+ Returns a pointer to a `CRgn` object when given a handle to a Windows region.  
   
 ```  
 static CRgn* PASCAL FromHandle(HRGN hRgn);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hRgn`  
- Windows の領域へのハンドルを指定します。  
+ Specifies a handle to a Windows region.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CRgn`オブジェクト。 関数が成功しなかった場合、戻り値は**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CRgn` object. If the function was not successful, the return value is **NULL**.  
   
-### <a name="remarks"></a>コメント  
- 場合、`CRgn`オブジェクトが、一時的なハンドルに既にアタッチされていない`CRgn`オブジェクトが作成され、接続されています。 この一時`CRgn`オブジェクトが有効では、次回アプリケーションがある移動するまでのアイドル時間イベント ループで、すべて一時的なグラフィックを時間でオブジェクトが削除専用です。 言い換えると、別の方法は、1 つのウィンドウ メッセージを処理中に、一時オブジェクトが有効でのみことです。  
+### <a name="remarks"></a>Remarks  
+ If a `CRgn` object is not already attached to the handle, a temporary `CRgn` object is created and attached. This temporary `CRgn` object is valid only until the next time the application has idle time in its event loop, at which time all temporary graphic objects are deleted. Another way of saying this is that the temporary object is only valid during the processing of one window message.  
   
-##  <a name="getregiondata"></a>CRgn::GetRegionData  
- 領域を記述するデータを指定したバッファーに設定します。  
+##  <a name="getregiondata"></a>  CRgn::GetRegionData  
+ Fills the specified buffer with data describing the region.  
   
 ```  
 int GetRegionData(
@@ -575,29 +592,29 @@ int GetRegionData(
     int nCount) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRgnData`  
- 指す、 [RGNDATA](../../mfc/reference/rgndata-structure.md)情報を受信するデータ構造です。 このパラメーターが場合**NULL**、戻り値には地域のデータに必要なバイト数が含まれています。  
+ Points to a [RGNDATA](../../mfc/reference/rgndata-structure.md) data structure that receives the information. If this parameter is **NULL**, the return value contains the number of bytes needed for the region data.  
   
  `nCount`  
- サイズ (バイト単位) を指定、`lpRgnData`バッファー。  
+ Specifies the size, in bytes, of the `lpRgnData` buffer.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合と`nCount`十分な数を指定します (バイト単位) の戻り値は常に`nCount`です。 関数が失敗した場合、または場合`nCount`未満を示すバイトの十分な数よりも、戻り値は 0 (エラー)。  
+### <a name="return-value"></a>Return Value  
+ If the function succeeds and `nCount` specifies an adequate number of bytes, the return value is always `nCount`. If the function fails, or if `nCount` specifies less than adequate number of bytes, the return value is 0 (error).  
   
-### <a name="remarks"></a>コメント  
- このデータには、領域を構成する四角形のディメンションが含まれています。 この関数を組み合わせて使用、`CRgn::CreateFromData`関数。  
+### <a name="remarks"></a>Remarks  
+ This data includes the dimensions of the rectangles that make up the region. This function is used in conjunction with the `CRgn::CreateFromData` function.  
   
-##  <a name="getrgnbox"></a>CRgn::GetRgnBox  
- 外接する四角形の座標を取得、`CRgn`オブジェクト。  
+##  <a name="getrgnbox"></a>  CRgn::GetRgnBox  
+ Retrieves the coordinates of the bounding rectangle of the `CRgn` object.  
   
 ```  
 int GetRgnBox(LPRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造または`CRect`外接する四角形の座標を受け取るオブジェクト。 `RECT`構造体には、次の形式。  
+ Points to a `RECT` structure or `CRect` object to receive the coordinates of the bounding rectangle. The `RECT` structure has the following form:  
   
  `typedef struct tagRECT {`  
   
@@ -611,22 +628,22 @@ int GetRgnBox(LPRECT lpRect) const;
   
  `} RECT;`  
   
-### <a name="return-value"></a>戻り値  
- 領域の種類を指定します。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ Specifies the region's type. It can be any of the following values:  
   
-- **COMPLEXREGION**境界が重複領域には、します。  
+- **COMPLEXREGION** Region has overlapping borders.  
   
-- **NULLREGION**領域が空です。  
+- **NULLREGION** Region is empty.  
   
-- **エラー** `CRgn`オブジェクトが有効な領域が指定されていません。  
+- **ERROR** `CRgn` object does not specify a valid region.  
   
-- **SIMPLEREGION**領域に重複する境界がありません。  
+- **SIMPLEREGION** Region has no overlapping borders.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreatePolygonRgn](#createpolygonrgn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreatePolygonRgn](#createpolygonrgn).  
   
-##  <a name="offsetrgn"></a>CRgn::OffsetRgn  
- 格納されている領域を移動、`CRgn`指定されたオフセットでのオブジェクト。  
+##  <a name="offsetrgn"></a>  CRgn::OffsetRgn  
+ Moves the region stored in the `CRgn` object by the specified offsets.  
   
 ```  
 int OffsetRgn(
@@ -636,52 +653,52 @@ int OffsetRgn(
 int OffsetRgn(POINT point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 左に移動する単位数を指定します。  
+ Specifies the number of units to move left or right.  
   
  *y*  
- 上下に移動する単位の数を指定します。  
+ Specifies the number of units to move up or down.  
   
  `point`  
- X 座標`point`左に移動する単位の数を指定します。 Y 座標`point`を上下に移動する単位の数を指定します。 `point`パラメーターには、いずれかを指定できます、**ポイント**構造体、または`CPoint`オブジェクト。  
+ The x-coordinate of `point` specifies the number of units to move left or right. The y-coordinate of `point` specifies the number of units to move up or down. The `point` parameter may be either a **POINT** structure or a `CPoint` object.  
   
-### <a name="return-value"></a>戻り値  
- 新しい領域の種類。 次の値のいずれかを指定できます。  
+### <a name="return-value"></a>Return Value  
+ The new region's type. It can be any one of the following values:  
   
-- **COMPLEXREGION**境界が重複領域には、します。  
+- **COMPLEXREGION** Region has overlapping borders.  
   
-- **エラー**領域ハンドルは無効です。  
+- **ERROR** Region handle is not valid.  
   
-- **NULLREGION**領域が空です。  
+- **NULLREGION** Region is empty.  
   
-- **SIMPLEREGION**領域に重複する境界がありません。  
+- **SIMPLEREGION** Region has no overlapping borders.  
   
-### <a name="remarks"></a>コメント  
- 関数は、領域を移動*x* x 軸に単位と*y* y 軸に沿って単位です。  
+### <a name="remarks"></a>Remarks  
+ The function moves the region *x* units along the x-axis and *y* units along the y-axis.  
   
- 領域の座標の値は、32,767 および以上-32,768 を以下にする必要があります。 *X*と*y*パラメーターが無効な領域の座標値を防ぐために慎重に選択する必要があります。  
+ The coordinate values of a region must be less than or equal to 32,767 and greater than or equal to -32,768. The *x* and *y* parameters must be carefully chosen to prevent invalid region coordinates.  
   
-### <a name="example"></a>例  
-  例を参照して[CRgn::CreateEllipticRgn](#createellipticrgn)です。  
+### <a name="example"></a>Example  
+  See the example for [CRgn::CreateEllipticRgn](#createellipticrgn).  
   
-##  <a name="operator_hrgn"></a>CRgn::operator HRGN  
- この演算子のアタッチされた Windows GDI ハンドルの取得を使用して、`CRgn`オブジェクト。  
+##  <a name="operator_hrgn"></a>  CRgn::operator HRGN  
+ Use this operator to get the attached Windows GDI handle of the `CRgn` object.  
   
 ```  
 operator HRGN() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- かどうかは成功すると、Windows GDI オブジェクトへのハンドルによって表される、`CRgn`オブジェクト。 それ以外の場合**NULL**です。  
+### <a name="return-value"></a>Return Value  
+ If successful, a handle to the Windows GDI object represented by the `CRgn` object; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- この演算子はキャスト演算子の**HRGN**オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ This operator is a casting operator, which supports direct use of an **HRGN** object.  
   
- グラフィック オブジェクトの使用に関する詳細については、記事を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information about using graphic objects, see the article [Graphic Objects](http://msdn.microsoft.com/library/windows/desktop/dd144962) in the Windows SDK.  
   
-##  <a name="ptinregion"></a>CRgn::PtInRegion  
- チェックするかどうかで指定したポイント*x*と*y*に格納されている地域では、`CRgn`オブジェクト。  
+##  <a name="ptinregion"></a>  CRgn::PtInRegion  
+ Checks whether the point given by *x* and *y* is in the region stored in the `CRgn` object.  
   
 ```  
 BOOL PtInRegion(
@@ -691,29 +708,29 @@ BOOL PtInRegion(
 BOOL PtInRegion(POINT point) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *x*  
- 論理でテストする点の x 座標を指定します。  
+ Specifies the logical x-coordinate of the point to test.  
   
  *y*  
- 論理でテストする点の y 座標を指定します。  
+ Specifies the logical y-coordinate of the point to test.  
   
  `point`  
- X 座標と y 座標`point`の値をテストする点の x 座標と y 座標を指定します。 `point`パラメーターを指定できますか、**ポイント**構造体、または`CPoint`オブジェクト。  
+ The x- and y-coordinates of `point` specify the x- and y-coordinates of the point to test the value of. The `point` parameter can either be a **POINT** structure or a `CPoint` object.  
   
-### <a name="return-value"></a>戻り値  
- ポイントが、領域の場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the point is in the region; otherwise 0.  
   
-##  <a name="rectinregion"></a>CRgn::RectInRegion  
- 四角形の任意の部分が指定したかどうかを判定`lpRect`に格納されている領域の境界内にある、`CRgn`オブジェクト。  
+##  <a name="rectinregion"></a>  CRgn::RectInRegion  
+ Determines whether any part of the rectangle specified by `lpRect` is within the boundaries of the region stored in the `CRgn` object.  
   
 ```  
 BOOL RectInRegion(LPCRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、`RECT`構造または`CRect`オブジェクト。 `RECT`構造体には、次の形式。  
+ Points to a `RECT` structure or `CRect` object. The `RECT` structure has the following form:  
   
  `typedef struct tagRECT {`  
   
@@ -727,11 +744,11 @@ BOOL RectInRegion(LPCRECT lpRect) const;
   
  `} RECT;`  
   
-### <a name="return-value"></a>戻り値  
- 指定した四角形の任意の部分が、領域の境界内に存在する場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if any part of the specified rectangle lies within the boundaries of the region; otherwise 0.  
   
-##  <a name="setrectrgn"></a>CRgn::SetRectRgn  
- 四角形の領域を作成します。  
+##  <a name="setrectrgn"></a>  CRgn::SetRectRgn  
+ Creates a rectangular region.  
   
 ```  
 void SetRectRgn(
@@ -743,30 +760,30 @@ void SetRectRgn(
 void SetRectRgn(LPCRECT lpRect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `x1`  
- 四角形領域の左上隅の x 座標を指定します。  
+ Specifies the x-coordinate of the upper-left corner of the rectangular region.  
   
  `y1`  
- 四角形領域の左上隅の y 座標を指定します。  
+ Specifies the y-coordinate of the upper-left corner of the rectangular region.  
   
  `x2`  
- 四角形領域の右下隅の x 座標を指定します。  
+ Specifies the x-coordinate of the lower-right corner of the rectangular region.  
   
  `y2`  
- 四角形領域の右下隅の y 座標を指定します。  
+ Specifies the y-coordinate of the lower-right corner of the rectangular region.  
   
  `lpRect`  
- 四角形の領域を指定します。 ポインターにすることができます、`RECT`構造体、または`CRect`オブジェクト。  
+ Specifies the rectangular region. Can be either a pointer to a `RECT` structure or a `CRect` object.  
   
-### <a name="remarks"></a>コメント  
- 異なり[CreateRectRgn](#createrectrgn)、ただし、これは割り当てません追加のメモリが、ローカルの Windows アプリケーション ヒープからです。 代わりに格納されている領域に割り当てられた領域を使用して、`CRgn`オブジェクト。 つまり、`CRgn`オブジェクト既に初期化されていなければなりませんを呼び出す前に有効な Windows 領域`SetRectRgn`です。 によって指定されたポイント`x1`、 `y1`、 `x2`、および`y2`割り当てられた領域の最小サイズを指定します。  
+### <a name="remarks"></a>Remarks  
+ Unlike [CreateRectRgn](#createrectrgn), however, it does not allocate any additional memory from the local Windows application heap. Instead, it uses the space allocated for the region stored in the `CRgn` object. This means that the `CRgn` object must already have been initialized with a valid Windows region before calling `SetRectRgn`. The points given by `x1`, `y1`, `x2`, and `y2` specify the minimum size of the allocated space.  
   
- 代わりにこの関数を使用して、`CreateRectRgn`ローカル メモリ マネージャーへの呼び出しを避けるためにメンバー関数。  
+ Use this function instead of the `CreateRectRgn` member function to avoid calls to the local memory manager.  
   
-## <a name="see-also"></a>関連項目  
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

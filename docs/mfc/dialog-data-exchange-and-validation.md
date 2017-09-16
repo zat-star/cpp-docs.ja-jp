@@ -1,46 +1,65 @@
 ---
-title: "ダイアログ データ エクスチェンジとダイアログ データ バリデーション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン コントロール [C++], ダイアログ ボックス"
-  - "データ [MFC], ダイアログ ボックス"
-  - "データの妥当性検査 [C++], ダイアログ ボックス"
-  - "DDV (ダイアログ データ バリデーション) [C++]"
-  - "DDX (ダイアログ データ エクスチェンジ) [C++], データの妥当性検査"
-  - "ダイアログ ボックス データ [C++]"
-  - "ダイアログ ボックス データ [C++], 取得"
-  - "ダイアログ ボックス [C++], 取得 (データを)"
-  - "ダイアログ ボックス [C++], 検証 (データを)"
-  - "取得 (ダイアログ ボックスのデータを)"
-  - "妥当性検査 (データを) [C++], ダイアログ ボックスのデータ入力"
-  - "Windows コモン コントロール [C++], ダイアログ ボックス"
+title: Dialog Data Exchange and Validation | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- data validation [MFC], dialog boxes
+- dialog box data [MFC]
+- dialog boxes [MFC], validating data
+- validating data [MFC], dialog box data entry
+- DDX (dialog data exchange) [MFC], data validation
+- dialog box data [MFC], retrieving
+- Windows common controls [MFC], dialog boxes
+- DDV (dialog data validation) [MFC]
+- data [MFC], dialog boxes
+- common controls [MFC], dialog boxes
+- dialog boxes [MFC], retrieving data
+- retrieving dialog box data
 ms.assetid: 7d373554-7330-43ae-abf1-4bb14e437b4a
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ダイアログ データ エクスチェンジとダイアログ データ バリデーション
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ed01ece0c4318b0c3cd92100147aab030222e2f9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ダイアログ データ エクスチェンジ \(DDX\) ダイアログ ボックスのコントロールを初期化し、ユーザーによって入力データを収集する簡単です。  ダイアログ データ検証 \(DDV\) は、ダイアログ ボックスの入力データを検証することができます。  ダイアログ ボックスの DDX と DDV を利用して、データ メンバーを作成するには [メンバー変数の追加](../ide/add-member-variable-wizard.md) を使用して、それらのデータ型を設定して、検証規則を指定します。  
+---
+# <a name="dialog-data-exchange-and-validation"></a>Dialog Data Exchange and Validation
+Dialog data exchange (DDX) is an easy way to initialize the controls in your dialog box and to gather data input by the user. Dialog data validation (DDV) is an easy way to validate data entry in a dialog box. To take advantage of DDX and DDV in your dialog boxes, use the [Add Member Variable Wizard](../ide/add-member-variable-wizard.md) to create the data members and set their data types and specify validation rules.  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ダイアログ データ エクスチェンジ \(DDX\)](../mfc/dialog-data-exchange.md)  
+-   [Dialog data exchange](../mfc/dialog-data-exchange.md)  
   
--   [ダイアログ データ検証](../mfc/dialog-data-validation.md)  
+-   [Dialog data validation](../mfc/dialog-data-validation.md)  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)
+
+

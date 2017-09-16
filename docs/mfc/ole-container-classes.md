@@ -1,61 +1,80 @@
 ---
-title: "OLE コンテナー クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.ole"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX クラス [C++]"
-  - "コンテナー クラス [C++]"
-  - "コンテナー [C++], OLE コンテナー アプリケーション"
-  - "OLE [C++], クラス"
-  - "OLE クラス [C++]"
-  - "ビジュアル編集 [C++], クラス"
+title: OLE Container Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.ole
+dev_langs:
+- C++
+helpviewer_keywords:
+- ActiveX classes [MFC]
+- container classes [MFC]
+- OLE classes [MFC]
+- visual editing [MFC], classes
+- OLE [MFC], classes
+- containers [MFC], OLE container applications
 ms.assetid: 1e27e1ab-4c22-41eb-8547-6915c72668ae
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# OLE コンテナー クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eb954b9d9671bc9f09bae737469c90151c7011f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これらのクラスは、コンテナー アプリケーションによって使用されます。  `COleLinkingDoc` と `COleDocument` は両方 `COleClientItem` オブジェクトのコレクションを管理します。  ドキュメントに埋め込まれたオブジェクトにリンクのサポートが必要かどうかを **CDocument**ドキュメント クラスから派生してではなく、`COleLinkingDoc` または `COleDocument`からは、から派生します。  
+---
+# <a name="ole-container-classes"></a>OLE Container Classes
+These classes are used by container applications. Both `COleLinkingDoc` and `COleDocument` manage collections of `COleClientItem` objects. Rather than deriving your document class from **CDocument**, you'll derive it from `COleLinkingDoc` or `COleDocument`, depending on whether you want support for links to objects embedded in your document.  
   
- 別のドキュメントから埋め込まれたまたは別のドキュメントにリンクしているドキュメントの OLE アイテムを表すために `COleClientItem` オブジェクトを使用します。  
+ Use a `COleClientItem` object to represent each OLE item in your document that is embedded from another document or is a link to another document.  
   
- [COleDocObjectItem](../Topic/COleDocObjectItem%20Class.md)  
- アクティブ ドキュメントのコンテインメントをサポートします。  
+ [COleDocObjectItem](../mfc/reference/coledocobjectitem-class.md)  
+ Supports active document containment.  
   
  [COleDocument](../mfc/reference/coledocument-class.md)  
- 複合ドキュメントの実装、および基本的なコンテナーのサポートに使用します。  クラスのコンテナーとして機能します `CDocItem`からは派生しました。  このクラスは、コンテナー ドキュメントの基本クラスとして使用され、`COleServerDoc`の基本クラスです。  
+ Used for compound document implementation, as well as basic container support. Serves as a container for classes derived from `CDocItem`. This class can be used as the base class for container documents and is the base class for `COleServerDoc`.  
   
  [COleLinkingDoc](../mfc/reference/colelinkingdoc-class.md)  
- `COleDocument` から派生したクラスのリンクにインフラストラクチャを提供する。  埋め込みオブジェクトにリンクを表示するには `COleDocument` の代わりにこのクラスからコンテナー アプリケーションのドキュメント クラスを派生する必要があります。  
+ A class derived from `COleDocument` that provides the infrastructure for linking. You should derive the document classes for your container applications from this class instead of from `COleDocument` if you want them to support links to embedded objects.  
   
  [CRichEditDoc](../mfc/reference/cricheditdoc-class.md)  
- リッチ エディット コントロールにある OLE クライアント項目のリストを保持します。  [CRichEditView](../mfc/reference/cricheditview-class.md) と [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md)で使用します。  
+ Maintains the list of OLE client items that are in the rich edit control. Used with [CRichEditView](../mfc/reference/cricheditview-class.md) and [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md).  
   
  [CDocItem](../mfc/reference/cdocitem-class.md)  
- `COleClientItem` と `COleServerItem`の抽象基本クラスです。  `CDocItem` からの派生クラスのオブジェクトは、文書内の部分を表します。  
+ Abstract base class of `COleClientItem` and `COleServerItem`. Objects of classes derived from `CDocItem` represent parts of documents.  
   
  [COleClientItem](../mfc/reference/coleclientitem-class.md)  
- クライアントの埋め込まれたまたはリンクされたな OLE アイテムへの接続の側を表すクライアント項目クラス。  このクラスからクライアント項目を派生してください。  
+ A client item class that represents the client's side of the connection to an embedded or linked OLE item. Derive your client items from this class.  
   
  [CRichEditCntrItem](../mfc/reference/cricheditcntritem-class.md)  
- 使用すると `CRichEditView` と `CRichEditDoc`をリッチ エディット コントロールに格納された OLE アイテムへのクライアント側アクセスを提供します。  
+ Provides client-side access to an OLE item stored in a rich edit control when used with `CRichEditView` and `CRichEditDoc`.  
   
  [COleException](../mfc/reference/coleexception-class.md)  
- OLE の例外処理でエラーが発生します。  このクラスは、コンテナーとサーバーの両方で使用されます。  
+ An exception resulting from a failure in OLE processing. This class is used by both containers and servers.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

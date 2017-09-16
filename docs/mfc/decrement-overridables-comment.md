@@ -1,48 +1,66 @@
 ---
-title: "// Overridables コメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コメント, MFC"
-  - "MFC ソース ファイル, Overridables コメント"
-  - "Overridables コメント (MFC ソース ファイルの)"
-  - "オーバーライド, Overridables コメント (MFC ソース ファイルの)"
+title: -- Overridables Comment | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Overridables comment in MFC source files
+- MFC source files, Overridables comment
+- overriding, Overridables comment in MFC source files
+- comments, MFC
 ms.assetid: 8968dea5-0d94-451f-bcb2-991580e65ba2
 caps.latest.revision: 10
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# // Overridables コメント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1c0031565dcc66b1db0c1f6ce35a4f7fc490da9f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC のクラス宣言の `// Overridables` セクションでは、基本クラスの動作を変更する必要がある場合は、派生クラスでオーバーライドできる仮想関数が含まれています。  これは通常、厳密には必要ないが、" on "から始まってという名前です。  次の関数がオーバーライドされるように設計されており、種類の「callback」を実装するか、または「OnCreateclient 提供します」。通常、これらのメンバーが保護されます。  
+---
+# <a name="-overridables-comment"></a>// Overridables Comment
+The `// Overridables` section of an MFC class declaration contains virtual functions that you can override in a derived class when you need to modify the base class behavior. They are usually named starting with "On", although it is not strictly necessary. Functions here are designed to be overridden, and often implement or provide some sort of "callback" or "hook." Typically, these members are protected.  
   
- MFC 自体で、純粋仮想関数は、このセクションに配置されます。  C\+\+ の純粋仮想関数はフォームの一つです: 1  
+ In MFC itself, pure virtual functions are always placed in this section. A pure virtual function in C++ is one of the form:  
   
  `virtual void OnDraw( ) = 0;`  
   
- クラスからサンプル `CStdioFile`リスティングで、[コメントの例](../mfc/an-example-of-the-comments.md)にリストがオーバーライド可能な関数セクションは含まれません。  **CDocument**を一方、リスト 10 個前後のオーバーライドできるなメンバー関数分類します。  
+ In the sample listing from class `CStdioFile`, in [An Example of the Comments](../mfc/an-example-of-the-comments.md), the list includes no overridables section. Class **CDocument**, on the other hand, lists approximately 10 overridable member functions.  
   
- 一部のクラスでは、コメント `// Advanced Overridables`を参照することができます。  これらは、高度なプログラマのみをオーバーライドする必要のある関数です。  ほとんどの場合、それらをオーバーライドする必要はありません。  
+ In some classes, you may also see the comment `// Advanced Overridables`. These are functions that only advanced programmers should attempt to override. You will probably never need to override them.  
   
 > [!NOTE]
->  この記事で説明されている規則は、オートメーション \(以前の OLE オートメーションと呼ばれます\) メソッドとプロパティの場合、並行して、一般に機能します。  オートメーション メソッドは MFC 操作に似ています。  オートメーション プロパティは MFC 属性に似ています。  オートメーション イベント \(ActiveX コントロールで、OLE コントロールとして以前既知のサポート\) MFC のオーバーライドできるなメンバー関数とほぼ同じです。  
+>  The conventions described in this article also work well, in general, for Automation (formerly known as OLE Automation) methods and properties. Automation methods are similar to MFC operations. Automation properties are similar to MFC attributes. Automation events (supported for ActiveX controls, formerly known as OLE controls) are similar to MFC overridable member functions.  
   
-## 参照  
- [MFC ソース ファイルの利用](../Topic/Using%20the%20MFC%20Source%20Files.md)   
- [コメントの例](../mfc/an-example-of-the-comments.md)   
- [\/\/ Implementation コメント](../mfc/decrement-implementation-comment.md)   
- [\/\/ Constructors コメント](../mfc/decrement-constructors-comment.md)   
- [\/\/ Attributes コメント](../Topic/--%20Attributes%20Comment.md)   
- [\/\/ Operations コメント](../mfc/decrement-operations-comment.md)
+## <a name="see-also"></a>See Also  
+ [Using the MFC Source Files](../mfc/using-the-mfc-source-files.md)   
+ [An Example of the Comments](../mfc/an-example-of-the-comments.md)   
+ [// Implementation Comment](../mfc/decrement-implementation-comment.md)   
+ [// Constructors Comment](../mfc/decrement-constructors-comment.md)   
+ [// Attributes Comment](../mfc/decrement-attributes-comment.md)   
+ [// Operations Comment](../mfc/decrement-operations-comment.md)
+
+

@@ -1,48 +1,67 @@
 ---
-title: "コード ウィザードを使用した、コントロールへのタイプ セーフ アクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コード ウィザード"
-  - "DDX (ダイアログ データ エクスチェンジ), アクセス (コントロールに)"
-  - "ダイアログ ボックス コントロール, アクセス"
-  - "ダイアログ ボックス, アクセス (コントロールに)"
+title: Type-Safe Access to Controls With Code Wizards | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DDX (dialog data exchange), access to controls
+- code wizards
+- dialog boxes [MFC], access to controls
+- dialog box controls [MFC], accessing
 ms.assetid: b8874393-ee48-4124-8d78-e3648a7e29b9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コード ウィザードを使用した、コントロールへのタイプ セーフ アクセス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 77917663ef027781f7d132028dac21c735ca48dc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-DDX 機能に精通している場合は、[メンバー変数の追加](../ide/add-member-variable-wizard.md) のタイプ セーフ アクセスを作成するには、コントロールのプロパティを使用できます。  この方法は、コントロールをコード ウィザードを使用せずに作成するよりも簡単です。  
+---
+# <a name="type-safe-access-to-controls-with-code-wizards"></a>Type-Safe Access to Controls With Code Wizards
+If you are familiar with DDX features, you can use the Control property in the [Add Member Variable Wizard](../ide/add-member-variable-wizard.md) to create type-safe access. This approach is easier than creating controls without code wizards.  
   
- コントロールの値へのアクセスを簡単にする場合は、DDX によって提供されます。  よりアクセスするコントロールの値にロジックを追加するには、ダイアログ クラスに適切なクラスのメンバー変数を追加するには、メンバー変数の追加ウィザードを使用します。  コントロールのプロパティにこのメンバー変数を追加します。  
+ If you simply want access to a control's value, DDX provides it. If you want to do more than access a control's value, use the Add Member Variable Wizard to add a member variable of the appropriate class to your dialog class. Attach this member variable to the Control property.  
   
- メンバー変数には値のプロパティの代わりにコントロールのプロパティを設定できます。  値のプロパティは `CString` または `int`などのコントロールから返されたデータの種類を示します。  コントロールのプロパティでは、型が `CButton` または `CEdit`などの MFC コントロール クラスの 1 つが、であるデータ メンバーを通じてコントロールに直接アクセスします。  
+ Member variables can have a Control property instead of a Value property. The Value property refers to the type of data returned from the control, such as `CString` or `int`. The Control property enables direct access to the control through a data member whose type is one of the control classes in MFC, such as `CButton` or `CEdit`.  
   
 > [!NOTE]
->  指定されたコントロールの場合、望めば、得た値のプロパティで複数のメンバー変数とコントロールのプロパティで、最大で 1 個のメンバー変数を指定できます。  コントロールへの複数のオブジェクトの添付、またはそのほかのウィンドウ、メッセージ マップのあいまいさの原因となるため、コントロールへの 1 回の MFC オブジェクトのみをマップできます。  
+>  For a given control, you can, if you wish, have multiple member variables with the Value property and at most one member variable with the Control property. You can have only one MFC object mapped to a control because multiple objects attached to a control, or any other window, would lead to an ambiguity in the message map.  
   
- コントロール オブジェクトのメンバー関数を呼び出すには、このオブジェクトを使用する。  このような呼び出しは、ダイアログ ボックスのコントロールに影響します。  たとえば、A という変数 `m_Checkbox`を使用すると、型指定された `CButton`のチェック ボックス コントロール: Microsoft.Office.Tools.Word.Document.InnerObject  
+ You can use this object to call any member functions for the control object. Such calls affect the control in the dialog box. For example, for a check-box control represented by a variable `m_Checkbox`, of type `CButton`, you could call:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#52](../mfc/codesnippet/CPP/type-safe-access-to-controls-with-code-wizards_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#52](../mfc/codesnippet/cpp/type-safe-access-to-controls-with-code-wizards_1.cpp)]  
   
- ここでメンバー変数 `m_Checkbox` は [コード ウィザードのないコントロールへのタイプ セーフ アクセス](../mfc/type-safe-access-to-controls-without-code-wizards.md)で示したメンバー関数 `GetMyCheckbox` と同じ目的に使用されます。  チェック ボックスが自動検査チェック ボックスでない限り、ボタンがクリックされたときに、**BN\_CLICKED** コントロール通知メッセージのダイアログ クラスのハンドラーが必要です。  
+ Here the member variable `m_Checkbox` serves the same purpose as the member function `GetMyCheckbox` shown in [Type-Safe Access to Controls Without Code Wizards](../mfc/type-safe-access-to-controls-without-code-wizards.md). If the check box is not an auto check box, you would still need a handler in your dialog class for the **BN_CLICKED** control-notification message when the button is clicked.  
   
- コントロールに関する詳細については、「[コントロール](../mfc/controls-mfc.md)」を参照してください。  
+ For more information about controls, see [Controls](../mfc/controls-mfc.md).  
   
-## 参照  
- [ダイアログ ボックスのコントロールへのタイプ セーフ アクセス](../Topic/Type-Safe%20Access%20to%20Controls%20in%20a%20Dialog%20Box.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)   
- [コード ウィザードを使用しない、コントロールへのタイプ セーフ アクセス](../mfc/type-safe-access-to-controls-without-code-wizards.md)
+## <a name="see-also"></a>See Also  
+ [Type-Safe Access to Controls in a Dialog Box](../mfc/type-safe-access-to-controls-in-a-dialog-box.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)   
+ [Type-Safe Access to Controls Without Code Wizards](../mfc/type-safe-access-to-controls-without-code-wizards.md)
+
+

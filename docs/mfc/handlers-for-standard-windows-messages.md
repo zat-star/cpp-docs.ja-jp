@@ -1,51 +1,69 @@
 ---
-title: "標準 Windows メッセージのハンドラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "afx_msg"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "関数 [C++], ハンドラー"
-  - "ハンドラー関数, 標準 Windows メッセージ"
-  - "メッセージ処理 [C++], Windows メッセージ ハンドラー"
-  - "メッセージ [C++], Windows"
-  - "Windows メッセージ [C++], ハンドラー"
+title: Handlers for Standard Windows Messages | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- afx_msg
+dev_langs:
+- C++
+helpviewer_keywords:
+- Windows messages [MFC], handlers
+- message handling [MFC], Windows message handlers
+- handler functions, standard Windows messages
+- functions [MFC], handler
+- messages [MFC], Windows
 ms.assetid: 19412a8b-2c38-4502-81da-13c823c7e36c
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 標準 Windows メッセージのハンドラー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9fa19a16623224e92442b00d6ea082d70c8ba040
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-標準 Windows メッセージ \(**WM\_**\) の既定のハンドラーは、`CWnd`クラスで定義されます。  クラス ライブラリには、メッセージの名前にこれらのハンドラーの名前をベースになります。  たとえば、`WM_PAINT` メッセージのハンドラーは `CWnd` で次のように宣言します。:  
+---
+# <a name="handlers-for-standard-windows-messages"></a>Handlers for Standard Windows Messages
+Default handlers for standard Windows messages (**WM_**) are predefined in class `CWnd`. The class library bases names for these handlers on the message name. For example, the handler for the `WM_PAINT` message is declared in `CWnd` as:  
   
  `afx_msg void OnPaint();`  
   
- **afx\_msg** キーワードは `CWnd` の他のメンバー関数とハンドラーを区別できるように、C\+\+ **virtual** キーワードの効果を示します。  ただし、これらの関数が実際に仮想でないので注意してください; これらは、メッセージ マップを通じて代わりに実装されます。  メッセージ マップは、C\+\+ 言語の標準プリプロセッサ マクロに、各機能に依存します。  **afx\_msg** キーワードは空白でプリプロセス後で解決します。  
+ The **afx_msg** keyword suggests the effect of the C++ **virtual** keyword by distinguishing the handlers from other `CWnd` member functions. Note, however, that these functions are not actually virtual; they are instead implemented through message maps. Message maps depend solely on standard preprocessor macros, not on any extensions to the C++ language. The **afx_msg** keyword resolves to white space after preprocessing.  
   
- 基本クラスで定義されているハンドラーを派生クラスの同じプロトタイプに対する関数をオーバーライドして、ハンドラーに対するメッセージ マップ エントリの作成を簡単に定義します。  ハンドラーはクラスの基本クラスの同じ名前のハンドラーを「オーバーライド」します。  
+ To override a handler defined in a base class, simply define a function with the same prototype in your derived class and to make a message-map entry for the handler. Your handler "overrides" any handler of the same name in any of your class's base classes.  
   
- 場合によっては、ハンドラーは、オーバーライドされた基本クラスのハンドラーを呼び出す必要があります。基本クラスと Windows にはメッセージをアクティブにできます。  呼び出すと、オーバーライドされた基本クラスのハンドラーは状況によって異なります。  この基本クラスのハンドラーにと、最後に呼び出す必要があります。  ことに気付くメッセージを処理しない場合は、基本クラスのハンドラーに条件付きで呼び出します。  、実行する基本クラス ハンドラーに、条件付きで基本クラスのクラス ハンドラーが返す値または状態に応じて独自のハンドラーを呼び出すコードになります。  
+ In some cases, your handler should call the overridden handler in the base class so the base class(es) and Windows can operate on the message. Where you call the base-class handler in your override depends on the circumstances. Sometimes you must call the base-class handler first and sometimes last. Sometimes you call the base-class handler conditionally, if you choose not to handle the message yourself. Sometimes you should call the base-class handler, then conditionally execute your own handler code, depending on the value or state returned by the base-class handler.  
   
 > [!CAUTION]
->  基本クラスのハンドラーに渡す場合は、ハンドラーに渡される引数を変更するのは安全ではありません。  `OnChar` ハンドラーの `nChar` 引数を変更するには、たとえば、たくなる場合があります \(大文字に変換する場合など\)。  この動作は、曖昧で、この効果を実現する必要がある場合 `CWnd` のメンバー関数 **SendMessage** を代わりに使用します。  
+>  It is not safe to modify the arguments passed into a handler if you intend to pass them to a base-class handler. For example, you might be tempted to modify the `nChar` argument of the `OnChar` handler (to convert to uppercase, for example). This behavior is fairly obscure, but if you need to accomplish this effect, use the `CWnd` member function **SendMessage** instead.  
   
- どのように特定のメッセージをオーバーライドする適切な方法が決まります。  プロパティ ウィンドウでは、特定のメッセージ `WM_CREATE`—次の `OnCreate` ハンドラー、など\) に対するハンドラー関数のスケルトンを記述するときに推奨されるオーバーライドされるメンバー関数の形式でスケッチします。  次の例では–1 を返すという条件でだけをハンドラー関数の最初の呼び出し基本クラス ハンドラーお勧めしますか。  
+ How do you determine the proper way to override a given message When the Properties window writes the skeleton of the handler function for a given message — an `OnCreate` handler for `WM_CREATE`, for example — it sketches in the form of the recommended overridden member function. The following example recommends that the handler first call the base-class handler and proceed only on condition that it does not return -1.  
   
- [!CODE [NVC_MFCMessageHandling#3](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCMessageHandling#3)]  
+ [!code-cpp[NVC_MFCMessageHandling#3](../mfc/codesnippet/cpp/handlers-for-standard-windows-messages_1.cpp)]  
   
- 通常、これらのハンドラーの名前はプレフィックスで始まります。「他のいくつかを受け取りますが、これらのハンドラーの一部の引数はありません。  中には、`void`以外の戻り値の型が異なります。  **WM\_** すべてのメッセージの既定のハンドラーは、名前が「から」で始まるクラス `CWnd` のメンバー関数として *MFC* "で説明しています`CWnd` のメンバー関数の宣言は **afx\_msg**がプレフィックスとして付けられます。  
+ By convention, the names of these handlers begin with the prefix "On." Some of these handlers take no arguments, while others take several. Some also have a return type other than `void`. The default handlers for all **WM_** messages are documented in the *MFC Reference* as member functions of class `CWnd` whose names begin with "On." The member function declarations in `CWnd` are prefixed with **afx_msg**.  
   
-## 参照  
- [メッセージ ハンドラー関数の宣言](../mfc/declaring-message-handler-functions.md)
+## <a name="see-also"></a>See Also  
+ [Declaring Message Handler Functions](../mfc/declaring-message-handler-functions.md)
+

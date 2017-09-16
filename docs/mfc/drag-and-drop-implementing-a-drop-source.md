@@ -1,52 +1,71 @@
 ---
-title: "ドラッグ アンド ドロップ : ドロップ ソースの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドラッグ アンド ドロップ, 呼び出し (DoDragDrop を)"
-  - "ドラッグ アンド ドロップ, ドロップ ソース"
-  - "ドラッグ アンド ドロップ, 開始 (ドラッグ操作を)"
-  - "OLE のドラッグ アンド ドロップ, 呼び出し (DoDragDrop を)"
-  - "OLE のドラッグ アンド ドロップ, ドロップ ソース"
-  - "OLE のドラッグ アンド ドロップ, 開始 (ドラッグ操作を)"
+title: 'Drag and Drop: Implementing a Drop Source | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE drag and drop [MFC], initiating drag operations
+- drag and drop [MFC], calling DoDragDrop
+- OLE drag and drop [MFC], drop source
+- OLE drag and drop [MFC], calling DoDragDrop
+- drag and drop [MFC], initiating drag operations
+- drag and drop [MFC], drop source
 ms.assetid: 0ed2fda0-63fa-4b1e-b398-f1f142f40035
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ドラッグ アンド ドロップ : ドロップ ソースの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f3bb2f7b11c3ce4d46f0dda53980c0c751ec41ef
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ドラッグ アンド ドロップ操作にデータを提供するためにアプリケーションを取得する方法について説明します。  
+---
+# <a name="drag-and-drop-implementing-a-drop-source"></a>Drag and Drop: Implementing a Drop Source
+This article explains how to get your application to provide data to a drag-and-drop operation.  
   
- ドラッグ ソースの基本実装は比較的簡単です。  最初の手順は、イベントがドラッグ操作を開始する位置を決定します。  推奨されるユーザー インターフェイスのガイドラインでは、データの選択とドラッグ操作と選択したデータ内の位置で一致する `WM_LBUTTONDOWN` イベントの先頭を定義します。  MFC の OLE サンプル [OCLIENT](../top/visual-cpp-samples.md) と [HIERSVR](../top/visual-cpp-samples.md) は、以下のガイドラインに従います。  
+ Basic implementation of a drop source is relatively simple. The first step is to determine what events begin a drag operation. Recommended user interface guidelines define the beginning of a drag operation as the selection of data and a `WM_LBUTTONDOWN` event occurring on a point inside the selected data. The MFC OLE samples [OCLIENT](../visual-cpp-samples.md) and [HIERSVR](../visual-cpp-samples.md) follow these guidelines.  
   
- アプリケーションがコンテナーで、選択したデータ型が `COleClientItem`のリンクされたや埋め込みオブジェクト、`DoDragDrop` メンバー関数を呼び出します。  それ以外の場合は `COleDataSource` オブジェクトを構築し、選択を初期化し、データ ソース オブジェクトの `DoDragDrop` メンバー関数を呼び出します。  アプリケーションは、サーバー `COleServerItem::DoDragDrop`を使用します。  標準ドラッグ アンド ドロップの動作をカスタマイズする方法の詳細については、[ドラッグ アンド ドロップ: カスタマイズ](../Topic/Drag%20and%20Drop:%20Customizing.md)記事を参照してください。  
+ If your application is a container and the selected data is a linked or an embedded object of type `COleClientItem`, call its `DoDragDrop` member function. Otherwise, construct a `COleDataSource` object, initialize it with the selection, and call the data source object's `DoDragDrop` member function. If your application is a server, use `COleServerItem::DoDragDrop`. For information about customizing standard drag-and-drop behavior, see the article [Drag and Drop: Customizing](../mfc/drag-and-drop-customizing.md).  
   
- `DoDragDrop` が `DROPEFFECT_MOVE`が返されると、ソース ドキュメントからソース データを削除します。  `DoDragDrop` から他の戻り値は、ドラッグ ソースには影響しません。  
+ If `DoDragDrop` returns `DROPEFFECT_MOVE`, delete the source data from the source document immediately. No other return value from `DoDragDrop` has any effect on a drop source.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [ドロップ ターゲットの実装](../mfc/drag-and-drop-implementing-a-drop-target.md)  
+-   [Implementing a Drop Target](../mfc/drag-and-drop-implementing-a-drop-target.md)  
   
--   [ドラッグ アンド ドロップのカスタマイズ](../Topic/Drag%20and%20Drop:%20Customizing.md)  
+-   [Customizing Drag and Drop](../mfc/drag-and-drop-customizing.md)  
   
--   [作成と破棄の OLE データ オブジェクトとデータ ソース](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
+-   [Creating and Destroying OLE Data Objects and Data Sources](../mfc/data-objects-and-data-sources-creation-and-destruction.md)  
   
--   [処理の OLE データ オブジェクトとデータ ソース](../mfc/data-objects-and-data-sources-manipulation.md)  
+-   [Manipulating OLE Data Objects and Data Sources](../mfc/data-objects-and-data-sources-manipulation.md)  
   
-## 参照  
- [ドラッグ アンド ドロップ \(OLE\)](../mfc/drag-and-drop-ole.md)   
- [COleDataSource::DoDragDrop](../Topic/COleDataSource::DoDragDrop.md)   
- [COleClientItem::DoDragDrop](../Topic/COleClientItem::DoDragDrop.md)   
- [CView::OnDragLeave](../Topic/CView::OnDragLeave.md)
+## <a name="see-also"></a>See Also  
+ [Drag and Drop (OLE)](../mfc/drag-and-drop-ole.md)   
+ [COleDataSource::DoDragDrop](../mfc/reference/coledatasource-class.md#dodragdrop)   
+ [COleClientItem::DoDragDrop](../mfc/reference/coleclientitem-class.md#dodragdrop)   
+ [CView::OnDragLeave](../mfc/reference/cview-class.md#ondragleave)
+
+

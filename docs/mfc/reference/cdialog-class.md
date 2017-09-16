@@ -1,5 +1,5 @@
 ---
-title: "CDialog クラス |Microsoft ドキュメント"
+title: CDialog Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -31,11 +31,23 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- modal dialog boxes, creating
-- MFC dialog boxes, base class
-- modeless dialog boxes, creating
-- modeless dialog boxes, displaying
-- CDialog class
+- CDialog [MFC], CDialog
+- CDialog [MFC], Create
+- CDialog [MFC], CreateIndirect
+- CDialog [MFC], DoModal
+- CDialog [MFC], EndDialog
+- CDialog [MFC], GetDefID
+- CDialog [MFC], GotoDlgCtrl
+- CDialog [MFC], InitModalIndirect
+- CDialog [MFC], MapDialogRect
+- CDialog [MFC], NextDlgCtrl
+- CDialog [MFC], OnInitDialog
+- CDialog [MFC], OnSetFont
+- CDialog [MFC], PrevDlgCtrl
+- CDialog [MFC], SetDefID
+- CDialog [MFC], SetHelpID
+- CDialog [MFC], OnCancel
+- CDialog [MFC], OnOK
 ms.assetid: ca64b77e-2cd2-47e3-8eff-c2645ad578f9
 caps.latest.revision: 23
 author: mikeblome
@@ -55,94 +67,94 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 128bd124c2536d86c8b673b54abc4b5505526b41
-ms.openlocfilehash: 9ae60a13db0f975aca84c74caed43327e5bd1267
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 20d6d1caad93fd0d0fecbe9033f078f3b849ec50
 ms.contentlocale: ja-jp
-ms.lasthandoff: 05/10/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdialog-class"></a>CDialog クラス
-[画面] ダイアログ ボックスを表示するための基本クラス。  
+# <a name="cdialog-class"></a>CDialog Class
+The base class used for displaying dialog boxes on the screen.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CDialog : public CWnd  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[詳細](#cdialog)|`CDialog` オブジェクトを構築します。|  
+|[CDialog::CDialog](#cdialog)|Constructs a `CDialog` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDialog::Create](#create)|初期化、`CDialog`オブジェクト。 モードレス ダイアログ ボックスを作成しにアタッチ、`CDialog`オブジェクト。|  
-|[CDialog::CreateIndirect](#createindirect)|(ないリソースに基づく) のメモリ内のダイアログ ボックス テンプレートからモードレス ダイアログ ボックスを作成します。|  
-|[CDialog::DoModal](#domodal)|モーダル ダイアログ ボックスの呼び出しを行う場合を返します。|  
-|[CDialog::EndDialog](#enddialog)|モーダル ダイアログ ボックスを閉じます。|  
-|[CDialog::GetDefID](#getdefid)|ダイアログ ボックスの既定のプッシュ ボタン コントロールの ID を取得します。|  
-|[CDialog::GotoDlgCtrl](#gotodlgctrl)|ダイアログ ボックス内の指定 ダイアログ ボックス コントロールにフォーカスを移動します。|  
-|[CDialog::InitModalIndirect](#initmodalindirect)|(ないリソースに基づく) のメモリ内のダイアログ ボックス テンプレートからモーダル ダイアログ ボックスを作成します。 パラメーターが関数まで格納されている`DoModal`と呼びます。|  
-|[CDialog::MapDialogRect](#mapdialogrect)|四角形のダイアログ ボックスの単位を画面の単位に変換します。|  
-|[CDialog::NextDlgCtrl](#nextdlgctrl)|ダイアログ ボックスで次のダイアログ ボックス コントロールにフォーカスを移動します。|  
-|[CDialog::OnInitDialog](#oninitdialog)|ダイアログ ボックスの初期化を拡張するためにオーバーライドします。|  
-|[CDialog::OnSetFont](#onsetfont)|ダイアログ ボックス コントロールがテキストを描画するときを使用するフォントを指定するためにオーバーライドします。|  
-|[CDialog::PrevDlgCtrl](#prevdlgctrl)|ダイアログ ボックスで、前のダイアログ ボックス コントロールにフォーカスを移動します。|  
-|[CDialog::SetDefID](#setdefid)|指定されたプッシュ ボタンをダイアログ ボックスの既定のプッシュ ボタン コントロールを変更します。|  
-|[CDialog::SetHelpID](#sethelpid)|ダイアログ ボックスの状況依存のヘルプ ID を設定します。|  
+|[CDialog::Create](#create)|Initializes the `CDialog` object. Creates a modeless dialog box and attaches it to the `CDialog` object.|  
+|[CDialog::CreateIndirect](#createindirect)|Creates a modeless dialog box from a dialog-box template in memory (not resource-based).|  
+|[CDialog::DoModal](#domodal)|Calls a modal dialog box and returns when done.|  
+|[CDialog::EndDialog](#enddialog)|Closes a modal dialog box.|  
+|[CDialog::GetDefID](#getdefid)|Gets the ID of the default pushbutton control for a dialog box.|  
+|[CDialog::GotoDlgCtrl](#gotodlgctrl)|Moves the focus to a specified dialog-box control in the dialog box.|  
+|[CDialog::InitModalIndirect](#initmodalindirect)|Creates a modal dialog box from a dialog-box template in memory (not resource-based). The parameters are stored until the function `DoModal` is called.|  
+|[CDialog::MapDialogRect](#mapdialogrect)|Converts the dialog-box units of a rectangle to screen units.|  
+|[CDialog::NextDlgCtrl](#nextdlgctrl)|Moves the focus to the next dialog-box control in the dialog box.|  
+|[CDialog::OnInitDialog](#oninitdialog)|Override to augment dialog-box initialization.|  
+|[CDialog::OnSetFont](#onsetfont)|Override to specify the font that a dialog-box control is to use when it draws text.|  
+|[CDialog::PrevDlgCtrl](#prevdlgctrl)|Moves the focus to the previous dialog-box control in the dialog box.|  
+|[CDialog::SetDefID](#setdefid)|Changes the default pushbutton control for a dialog box to a specified pushbutton.|  
+|[CDialog::SetHelpID](#sethelpid)|Sets a context-sensitive help ID for the dialog box.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="protected-methods"></a>Protected Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CDialog::OnCancel](#oncancel)|[キャンセル] ボタンまたは ESC キーを操作を実行するためにオーバーライドします。 既定値は、ダイアログ ボックスを閉じ、 **DoModal**返します**IDCANCEL**です。|  
-|[CDialog::OnOK](#onok)|モーダル ダイアログ ボックスで [ok] ボタンの操作を実行するためにオーバーライドします。 既定値は、ダイアログ ボックスを閉じ、`DoModal`返します**IDOK**です。|  
+|[CDialog::OnCancel](#oncancel)|Override to perform the Cancel button or ESC key action. The default closes the dialog box and **DoModal** returns **IDCANCEL**.|  
+|[CDialog::OnOK](#onok)|Override to perform the OK button action in a modal dialog box. The default closes the dialog box and `DoModal` returns **IDOK**.|  
   
-## <a name="remarks"></a>コメント  
- ダイアログ ボックスの 2 つの型である: モーダルとモードレスです。 アプリケーションを続行する前に、ユーザーが、モーダル ダイアログ ボックスを閉じる必要があります。 モードレス ダイアログ ボックスは、ダイアログ ボックスを表示し、キャンセルまたはダイアログ ボックスを削除せずに別のタスクに戻ることができます。  
+## <a name="remarks"></a>Remarks  
+ Dialog boxes are of two types: modal and modeless. A modal dialog box must be closed by the user before the application continues. A modeless dialog box allows the user to display the dialog box and return to another task without canceling or removing the dialog box.  
   
- A`CDialog`オブジェクトするダイアログ テンプレートの組み合わせは、および`CDialog`-クラスを派生します。 ダイアログ テンプレートを作成し、リソースに格納する、ダイアログ エディターを使用してから派生したクラスを作成するクラスの追加ウィザードを使用して`CDialog`です。  
+ A `CDialog` object is a combination of a dialog template and a `CDialog`-derived class. Use the dialog editor to create the dialog template and store it in a resource, then use the Add Class wizard to create a class derived from `CDialog`.  
   
- その他のウィンドウと同様に、ダイアログ ボックスでは、Windows からメッセージを受信します。 ダイアログ ボックスで、ユーザーが、ダイアログ ボックスと対話する方法であるため、ダイアログ ボックスのコントロールからの通知メッセージを処理、特に興味のあります。 [プロパティ] ウィンドウを使用すると、どの対象のメッセージ処理は、適切なメッセージ マップ エントリとメッセージ ハンドラー メンバー関数をクラスに追加するを選択できます。 のみでハンドラー メンバー関数は、アプリケーション固有のコードを記述する必要があります。  
+ A dialog box, like any other window, receives messages from Windows. In a dialog box, you are particularly interested in handling notification messages from the dialog box's controls since that is how the user interacts with your dialog box. Use the Properties window to select which messages you wish to handle and it will add the appropriate message-map entries and message-handler member functions to the class for you. You only need to write application-specific code in the handler member functions.  
   
- 場合は、常に記述できますとメンバー関数のメッセージ マップ エントリを手動で。  
+ If you prefer, you can always write message-map entries and member functions manually.  
   
- ささい ダイアログ ボックスがすべてで、ユーザーがダイアログ ボックスのコントロールに入力したデータを格納するか、ユーザーのデータを表示するダイアログの派生クラスにメンバー変数を追加します。 変数の追加ウィザードを使用して、メンバー変数を作成し、コントロールに関連付けることができます。 同時に、変数の型と各変数の値の許容範囲を選択します。 コード ウィザードでは、派生ダイアログ クラスにメンバー変数を追加します。  
+ In all but the most trivial dialog box, you add member variables to your derived dialog class to store data entered in the dialog box's controls by the user or to display data for the user. You can use the Add Variable wizard to create member variables and associate them with controls. At the same time, you choose a variable type and permissible range of values for each variable. The code wizard adds the member variables to your derived dialog class.  
   
- データ マップを生成して、メンバー変数と、ダイアログ ボックスのコントロール間のデータ交換を自動的に処理されます。 データ マップは、適切な値を使用して、ダイアログ ボックスでコントロールを初期化し、データを取得、データの検証機能を提供します。  
+ A data map is generated to automatically handle the exchange of data between the member variables and the dialog box's controls. The data map provides functions that initialize the controls in the dialog box with the proper values, retrieve the data, and validate the data.  
   
- モーダル ダイアログ ボックスを作成する派生ダイアログ クラスのコンス トラクターを使用して、スタック上のオブジェクトを構築し、呼び出す`DoModal`ダイアログ ウィンドウとそのコントロールを作成します。 モードレス ダイアログを作成する場合は、呼び出す**作成**ダイアログ クラスのコンス トラクターです。  
+ To create a modal dialog box, construct an object on the stack using the constructor for your derived dialog class and then call `DoModal` to create the dialog window and its controls. If you wish to create a modeless dialog, call **Create** in the constructor of your dialog class.  
   
- 使用して、メモリ内テンプレートを作成することも、 [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) 」の説明に従って、データが構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 構築した後、`CDialog`オブジェクトを呼び出す[CreateIndirect](#createindirect) 、モードレスを作成するダイアログ ボックスで、または呼び出し[持たない](#initmodalindirect)と[DoModal](#domodal)モーダル ダイアログ ボックスを作成します。  
+ You can also create a template in memory by using a [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) data structure as described in the Windows SDK. After you construct a `CDialog` object, call [CreateIndirect](#createindirect) to create a modeless dialog box, or call [InitModalIndirect](#initmodalindirect) and [DoModal](#domodal) to create a modal dialog box.  
   
- データ マップの交換と検証のオーバーライドで書き込まれます`CWnd::DoDataExchange`ですが、新しいダイアログ クラスに追加します。 参照してください、 [:dodataexchange](../../mfc/reference/cwnd-class.md#dodataexchange)メンバー関数内`CWnd`の詳細については、exchange と検証の機能です。  
+ The exchange and validation data map is written in an override of `CWnd::DoDataExchange` that is added to your new dialog class. See the [DoDataExchange](../../mfc/reference/cwnd-class.md#dodataexchange) member function in `CWnd` for more on the exchange and validation functionality.  
   
- プログラマとフレームワークの呼び出しの両方`DoDataExchange`への呼び出しを通じて間接的に[:updatedata](../../mfc/reference/cwnd-class.md#updatedata)です。  
+ Both the programmer and the framework call `DoDataExchange` indirectly through a call to [CWnd::UpdateData](../../mfc/reference/cwnd-class.md#updatedata).  
   
- フレームワークによって`UpdateData`ユーザーがモーダル ダイアログ ボックスを閉じる [ok] ボタンをクリックしたとき。 (データは取得されません、[キャンセル] ボタンがクリックされた場合。)既定の実装[OnInitDialog](#oninitdialog)も呼び出します`UpdateData`コントロールの初期値を設定します。 通常、オーバーライドする`OnInitDialog`をさらにコントロールを初期化します。 `OnInitDialog`すべてのダイアログ コントロールを作成し、ボックスが表示されるダイアログ ボックスの直前に呼び出されます。  
+ The framework calls `UpdateData` when the user clicks the OK button to close a modal dialog box. (The data is not retrieved if the Cancel button is clicked.) The default implementation of [OnInitDialog](#oninitdialog) also calls `UpdateData` to set the initial values of the controls. You typically override `OnInitDialog` to further initialize controls. `OnInitDialog` is called after all the dialog controls are created and just before the dialog box is displayed.  
   
- 呼び出すことができます`CWnd::UpdateData`モーダルまたはモードレス ダイアログ ボックスの実行中にいつでもできます。  
+ You can call `CWnd::UpdateData` at any time during the execution of a modal or modeless dialog box.  
   
- ダイアログ ボックスを手動で開発する場合は、自分自身、ダイアログ ボックスの派生クラスに必要なメンバー変数を追加して、設定またはこれらの値を取得するメンバー関数を追加します。  
+ If you develop a dialog box by hand, you add the necessary member variables to the derived dialog-box class yourself, and you add member functions to set or get these values.  
   
- ユーザーが、[ok] または [キャンセル] ボタンを押したときや、コードを呼び出すと、モーダル ダイアログ ボックスが自動的に終了、`EndDialog`メンバー関数。  
+ A modal dialog box closes automatically when the user presses the OK or Cancel buttons or when your code calls the `EndDialog` member function.  
   
- モードレス ダイアログ ボックスを実装するときに常にオーバーライド、`OnCancel`メンバー関数と呼び出し`DestroyWindow`から内部にします。 基本クラスを呼び出しません`CDialog::OnCancel`を呼び出すので、 `EndDialog`、 ダイアログ ボックスを非表示になりますは破棄されません。 オーバーライドする必要がありますも`PostNcDestroy`削除するのには、モードレス ダイアログ ボックスの**この**モードレス ダイアログ ボックスは通常に割り当てられているため、**新しい**です。 モーダル ダイアログ ボックスは、通常、フレームに構築され、必要はありません`PostNcDestroy`クリーンアップします。  
+ When you implement a modeless dialog box, always override the `OnCancel` member function and call `DestroyWindow` from within it. Don't call the base class `CDialog::OnCancel`, because it calls `EndDialog`, which will make the dialog box invisible but will not destroy it. You should also override `PostNcDestroy` for modeless dialog boxes in order to delete **this**, since modeless dialog boxes are usually allocated with **new**. Modal dialog boxes are usually constructed on the frame and do not need `PostNcDestroy` cleanup.  
   
- `CDialog` の詳細については、次を参照してください。  
+ For more information on `CDialog`, see:  
   
-- [ダイアログ ボックス](../../mfc/dialog-boxes.md)  
+- [Dialog Boxes](../../mfc/dialog-boxes.md)  
   
--   サポート技術情報の記事 Q262954: HOWTO: スクロール バーのあるサイズ ダイアログ ボックスを作成します。  
+-   Knowledge Base article Q262954 : HOWTO: Create a Resizeable Dialog Box with Scroll Bars  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -151,11 +163,11 @@ class CDialog : public CWnd
   
  `CDialog`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="cdialog"></a>詳細  
- リソース ベースのモーダル ダイアログ ボックスを作成するには、どちらのパブリック コンス トラクターは、の形式を呼び出します。  
+##  <a name="cdialog"></a>  CDialog::CDialog  
+ To construct a resource-based modal dialog box, call either public form of the constructor.  
   
 ```  
 explicit CDialog(
@@ -170,27 +182,27 @@ explicit CDialog(
 CDialog();
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszTemplateName`  
- ダイアログ テンプレート リソースの名前を表す null で終わる文字列が含まれています。  
+ Contains a null-terminated string that is the name of a dialog-box template resource.  
   
  `nIDTemplate`  
- ダイアログ テンプレート リソースの ID 番号が含まれています。  
+ Contains the ID number of a dialog-box template resource.  
   
  `pParentWnd`  
- 親またはオーナー ウィンドウ オブジェクトを指し示す (型の[CWnd](../../mfc/reference/cwnd-class.md)) ダイアログ オブジェクトが属しています。 場合は**NULL**、ダイアログ オブジェクトの親ウィンドウがアプリケーションのメイン ウィンドウに設定します。  
+ Points to the parent or owner window object (of type [CWnd](../../mfc/reference/cwnd-class.md)) to which the dialog object belongs. If it is **NULL**, the dialog object's parent window is set to the main application window.  
   
-### <a name="remarks"></a>コメント  
- コンス トラクターの 1 つのフォームは、テンプレート名でダイアログ リソースへのアクセスを提供します。 その他のコンス トラクターへのアクセス提供テンプレート ID 番号では、通常、**文字列の先頭**プレフィックス (IDD_DIALOG1 など)。  
+### <a name="remarks"></a>Remarks  
+ One form of the constructor provides access to the dialog resource by template name. The other constructor provides access by template ID number, usually with an **IDD_** prefix (for example, IDD_DIALOG1).  
   
- メモリ内のテンプレートからモーダル ダイアログ ボックスを構築するために、まずパラメーターなし、保護されているコンス トラクターを呼び出すし、呼び出す`InitModalIndirect`です。  
+ To construct a modal dialog box from a template in memory, first invoke the parameterless, protected constructor and then call `InitModalIndirect`.  
   
- 上記のメソッドのいずれかのモーダル ダイアログ ボックスを構築した後に呼び出す`DoModal`です。  
+ After you construct a modal dialog box with one of the above methods, call `DoModal`.  
   
- モードレス ダイアログ ボックスを作成するには、保護されたフォームを使用して、`CDialog`コンス トラクターです。 モードレス ダイアログ ボックスを実装する独自のダイアログ ボックス クラスを派生させる必要がありますので、コンス トラクターは保護されています。 モードレス ダイアログ ボックスの構築は、2 段階に分かれたプロセスです。 コンス トラクターの最初の呼び出し呼び出す、**作成**リソース ベースのダイアログ ボックスを作成するメンバー関数を呼び出したり`CreateIndirect`メモリ内のテンプレートからダイアログ ボックスを作成します。  
+ To construct a modeless dialog box, use the protected form of the `CDialog` constructor. The constructor is protected because you must derive your own dialog-box class to implement a modeless dialog box. Construction of a modeless dialog box is a two-step process. First call the constructor; then call the **Create** member function to create a resource-based dialog box, or call `CreateIndirect` to create the dialog box from a template in memory.  
   
-##  <a name="create"></a>CDialog::Create  
- 呼び出す**作成**リソースからダイアログ ボックスのテンプレートを使用してモードレス ダイアログ ボックスを作成します。  
+##  <a name="create"></a>  CDialog::Create  
+ Call **Create** to create a modeless dialog box using a dialog-box template from a resource.  
   
 ```  
 virtual BOOL Create(
@@ -203,37 +215,37 @@ virtual BOOL Create(
     CWnd* pParentWnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszTemplateName`  
- ダイアログ テンプレート リソースの名前を表す null で終わる文字列が含まれています。  
+ Contains a null-terminated string that is the name of a dialog-box template resource.  
   
  `pParentWnd`  
- 親ウィンドウ オブジェクトを指し示す (型の[CWnd](../../mfc/reference/cwnd-class.md)) ダイアログ オブジェクトが属しています。 場合は**NULL**、ダイアログ オブジェクトの親ウィンドウがアプリケーションのメイン ウィンドウに設定します。  
+ Points to the parent window object (of type [CWnd](../../mfc/reference/cwnd-class.md)) to which the dialog object belongs. If it is **NULL**, the dialog object's parent window is set to the main application window.  
   
  `nIDTemplate`  
- ダイアログ テンプレート リソースの ID 番号が含まれています。  
+ Contains the ID number of a dialog-box template resource.  
   
-### <a name="return-value"></a>戻り値  
- 両方の形式 ダイアログ ボックスの作成と初期化が成功した場合は 0 以外を返しますそれ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Both forms return nonzero if dialog-box creation and initialization were successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 呼び出しを配置する**作成**コンス トラクターまたは呼び出しの内部、コンス トラクターの後に呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ You can put the call to **Create** inside the constructor or call it after the constructor is invoked.  
   
- 2 つの形式、**作成**テンプレート名またはテンプレートの ID 番号 (IDD_DIALOG1 など) のいずれかによってダイアログ テンプレート リソースにアクセスするためのメンバー関数が提供されます。  
+ Two forms of the **Create** member function are provided for access to the dialog-box template resource by either template name or template ID number (for example, IDD_DIALOG1).  
   
- いずれかの形式では、親ウィンドウ オブジェクトへのポインターを渡します。 場合`pParentWnd`は**NULL**、その親ウィンドウまたはオーナー ウィンドウにアプリケーションのメイン ウィンドウ設定のダイアログ ボックスが作成されます。  
+ For either form, pass a pointer to the parent window object. If `pParentWnd` is **NULL**, the dialog box will be created with its parent or owner window set to the main application window.  
   
- **作成** ダイアログ ボックスを作成したらすぐに、メンバー関数が返されます。  
+ The **Create** member function returns immediately after it creates the dialog box.  
   
- 使用して、 **WS_VISIBLE**  ダイアログ ボックス テンプレートのスタイルを設定 ダイアログ ボックスが表示されない場合は親ウィンドウが作成されます。 それ以外の場合、呼び出す必要があります`ShowWindow`です。 さらにダイアログ ボックスのスタイルとそのアプリケーションは、次を参照してください。、 [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]と[ウィンドウ スタイル](../../mfc/reference/window-styles.md)で、 *『 MFC リファレンス*です。  
+ Use the **WS_VISIBLE** style in the dialog-box template if the dialog box should appear when the parent window is created. Otherwise, you must call `ShowWindow`. For further dialog-box styles and their application, see the [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) structure in the Windows SDK and [Window Styles](../../mfc/reference/styles-used-by-mfc.md#window-styles) in the *MFC Reference*.  
   
- 使用して、`CWnd::DestroyWindow`によって作成されたダイアログ ボックスを破棄する関数、**作成**関数。  
+ Use the `CWnd::DestroyWindow` function to destroy a dialog box created by the **Create** function.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog #62](../../mfc/codesnippet/cpp/cdialog-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#62](../../mfc/codesnippet/cpp/cdialog-class_1.cpp)]  
   
-##  <a name="createindirect"></a>CDialog::CreateIndirect  
- メモリ内のダイアログ ボックス テンプレートからモードレス ダイアログ ボックスを作成するには、このメンバー関数を呼び出します。  
+##  <a name="createindirect"></a>  CDialog::CreateIndirect  
+ Call this member function to create a modeless dialog box from a dialog-box template in memory.  
   
 ```  
 virtual BOOL CreateIndirect(
@@ -247,107 +259,107 @@ virtual BOOL CreateIndirect(
     CWnd* pParentWnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpDialogTemplate`  
- ダイアログ ボックスを作成するために使用 ダイアログ ボックス テンプレートが含まれるメモリへのポインター。 このテンプレートは、の形式では、 [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394)構造とコントロールについては、」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Points to memory that contains a dialog-box template used to create the dialog box. This template is in the form of a [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) structure and control information, as described in the Windows SDK.  
   
  `pParentWnd`  
- ダイアログ オブジェクトの親ウィンドウ オブジェクトを指し示す (型の[CWnd](../../mfc/reference/cwnd-class.md))。 場合は**NULL**、ダイアログ オブジェクトの親ウィンドウがアプリケーションのメイン ウィンドウに設定します。  
+ Points to the dialog object's parent window object (of type [CWnd](../../mfc/reference/cwnd-class.md)). If it is **NULL**, the dialog object's parent window is set to the main application window.  
   
  `lpDialogInit`  
- 指す、 **DLGINIT**リソース。  
+ Points to a **DLGINIT** resource.  
   
  `hDialogTemplate`  
- ダイアログ ボックスのテンプレートを含むグローバル メモリへのハンドルが含まれています。 このテンプレートは、の形式では、 **DLGTEMPLATE**構造と、ダイアログ ボックス内の各コントロールのデータ。  
+ Contains a handle to global memory containing a dialog-box template. This template is in the form of a **DLGTEMPLATE** structure and data for each control in the dialog box.  
   
-### <a name="return-value"></a>戻り値  
- ダイアログ ボックスが作成され、正常に初期化される場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the dialog box was created and initialized successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `CreateIndirect`  ダイアログ ボックスを作成したらすぐに、メンバー関数が返されます。  
+### <a name="remarks"></a>Remarks  
+ The `CreateIndirect` member function returns immediately after it creates the dialog box.  
   
- 使用して、 **WS_VISIBLE**  ダイアログ ボックス テンプレートのスタイルを設定 ダイアログ ボックスが表示されない場合は親ウィンドウが作成されます。 それ以外の場合、呼び出す必要があります`ShowWindow`に表示されるようにします。 テンプレートの他のダイアログ ボックスのスタイルを指定する方法の詳細については、次を参照してください。、 [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394)構造体、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Use the **WS_VISIBLE** style in the dialog-box template if the dialog box should appear when the parent window is created. Otherwise, you must call `ShowWindow` to cause it to appear. For more information on how you can specify other dialog-box styles in the template, see the [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) structure in the Windows SDK.  
   
- 使用して、`CWnd::DestroyWindow`によって作成されたダイアログ ボックスを破棄する関数、`CreateIndirect`関数。  
+ Use the `CWnd::DestroyWindow` function to destroy a dialog box created by the `CreateIndirect` function.  
   
- ActiveX コントロールを含むダイアログ ボックスで提供される追加情報を必要とする**DLGINIT**リソース。 詳細については、サポート技術情報の記事 Q231591 を参照してください"HOWTO: ActiveX コントロールと MFC ダイアログを作成するダイアログ テンプレートを使用します。"。 サポート技術情報については、「 [http://support.microsoft.com](http://support.microsoft.com/)です。  
+ Dialog boxes that contain ActiveX controls require additional information provided in a **DLGINIT** resource. For more information, see Knowledge Base article Q231591, " HOWTO: Use a Dialog Template to Create a MFC Dialog with an ActiveX Control." Knowledge Base articles are available at [http://support.microsoft.com](http://support.microsoft.com/).  
   
-##  <a name="domodal"></a>CDialog::DoModal  
- モーダル ダイアログ ボックスを起動し、実行時にダイアログ ボックスの結果を返すには、このメンバー関数を呼び出します。  
+##  <a name="domodal"></a>  CDialog::DoModal  
+ Call this member function to invoke the modal dialog box and return the dialog-box result when done.  
   
 ```  
 virtual INT_PTR DoModal();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `int`の値を指定する値、`nResult`パラメーターに渡された、 [CDialog::EndDialog](#enddialog)メンバー関数は、ダイアログ ボックスを閉じるために使用します。 関数は、ダイアログ ボックスを作成できませんでしたの場合、戻り値は-1 または**IDABORT**その他のエラーが発生した場合いる場合は、出力ウィンドウがエラー情報を含むから[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)です。  
+### <a name="return-value"></a>Return Value  
+ An `int` value that specifies the value of the `nResult` parameter that was passed to the [CDialog::EndDialog](#enddialog) member function, which is used to close the dialog box. The return value is -1 if the function could not create the dialog box, or **IDABORT** if some other error occurred, in which case the output window will contain error information from [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360).  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数は、ダイアログ ボックスがアクティブな間にユーザーとすべての対話を処理します。 モーダル ダイアログ ボックスは、します。ユーザーは ダイアログ ボックスが閉じられるまで、他のウィンドウを操作できません。  
+### <a name="remarks"></a>Remarks  
+ This member function handles all interaction with the user while the dialog box is active. This is what makes the dialog box modal; that is, the user cannot interact with other windows until the dialog box is closed.  
   
- ユーザーがクリックするとダイアログ ボックスで、[ok] または [キャンセル] メッセージ ハンドラー メンバー関数などのプッシュ ボタンのいずれかのように[OnOK](#onok)または[OnCancel](#oncancel)、しようとするダイアログ ボックスを閉じると呼びます。 既定値`OnOK`メンバー関数は、検証し、ダイアログ ボックスのデータを更新し、結果を含むダイアログ ボックスを閉じます**IDOK**と既定`OnCancel`メンバー関数は、ダイアログ ボックスを閉じます結果と共に**IDCANCEL**の検証またはダイアログ ボックスのデータを更新せずします。 これらのメッセージ ハンドラー関数の動作を変更するのにはオーバーライドできます。  
+ If the user clicks one of the pushbuttons in the dialog box, such as OK or Cancel, a message-handler member function, such as [OnOK](#onok) or [OnCancel](#oncancel), is called to attempt to close the dialog box. The default `OnOK` member function will validate and update the dialog-box data and close the dialog box with result **IDOK**, and the default `OnCancel` member function will close the dialog box with result **IDCANCEL** without validating or updating the dialog-box data. You can override these message-handler functions to alter their behavior.  
   
 > [!NOTE]
-> `PreTranslateMessage`モーダル ダイアログ ボックスのメッセージの処理に対しては呼び出さようになりました。  
+> `PreTranslateMessage` is now called for modal dialog box message processing.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog # 63](../../mfc/codesnippet/cpp/cdialog-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#63](../../mfc/codesnippet/cpp/cdialog-class_2.cpp)]  
   
-##  <a name="enddialog"></a>CDialog::EndDialog  
- モーダル ダイアログ ボックスを終了するには、このメンバー関数を呼び出します。  
+##  <a name="enddialog"></a>  CDialog::EndDialog  
+ Call this member function to terminate a modal dialog box.  
   
 ```  
 void EndDialog(int nResult);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nResult`  
- ダイアログ ボックスからの呼び出し元に返される値が含まれる`DoModal`です。  
+ Contains the value to be returned from the dialog box to the caller of `DoModal`.  
   
-### <a name="remarks"></a>コメント  
- このメンバー関数を返します`nResult`の戻り値として`DoModal`です。 使用する必要があります、`EndDialog`関数がモーダル ダイアログ ボックスが作成されるたびに処理を完了します。  
+### <a name="remarks"></a>Remarks  
+ This member function returns `nResult` as the return value of `DoModal`. You must use the `EndDialog` function to complete processing whenever a modal dialog box is created.  
   
- 呼び出すことができます`EndDialog`であっても、いつでも[OnInitDialog](#oninitdialog)case を閉じる必要がある前にダイアログ ボックスを表示または入力フォーカスを設定する前にします。  
+ You can call `EndDialog` at any time, even in [OnInitDialog](#oninitdialog), in which case you should close the dialog box before it is shown or before the input focus is set.  
   
- `EndDialog`ダイアログ ボックスをすぐに閉じません。 代わりに、現在のメッセージ ハンドラーを返すとすぐに閉じるダイアログ ボックスに指示するフラグを設定します。  
+ `EndDialog` does not close the dialog box immediately. Instead, it sets a flag that directs the dialog box to close as soon as the current message handler returns.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog # 64](../../mfc/codesnippet/cpp/cdialog-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#64](../../mfc/codesnippet/cpp/cdialog-class_3.cpp)]  
   
- [!code-cpp[NVC_MFCControlLadenDialog # 65](../../mfc/codesnippet/cpp/cdialog-class_4.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#65](../../mfc/codesnippet/cpp/cdialog-class_4.cpp)]  
   
-##  <a name="getdefid"></a>CDialog::GetDefID  
- 呼び出す、 `GetDefID`  ダイアログ ボックスの既定のプッシュ ボタン コントロールの ID を取得するメンバー関数。  
+##  <a name="getdefid"></a>  CDialog::GetDefID  
+ Call the `GetDefID` member function to get the ID of the default pushbutton control for a dialog box.  
   
 ```  
 DWORD GetDefID() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 32 ビットの値 ( `DWORD`)。 高位の単語に含まれる既定のプッシュ ボタンに ID 値がある場合は、 **DC_HASDEFID**下位ワードに ID 値が含まれています。 既定のプッシュ ボタンが ID 値を持たない場合、戻り値は 0 です。  
+### <a name="return-value"></a>Return Value  
+ A 32-bit value ( `DWORD`). If the default pushbutton has an ID value, the high-order word contains **DC_HASDEFID** and the low-order word contains the ID value. If the default pushbutton does not have an ID value, the return value is 0.  
   
-### <a name="remarks"></a>コメント  
- これは、通常、[ok] ボタンです。  
+### <a name="remarks"></a>Remarks  
+ This is usually an OK button.  
   
-##  <a name="gotodlgctrl"></a>CDialog::GotoDlgCtrl  
- ダイアログ ボックスで指定されたコントロールにフォーカスを移動します。  
+##  <a name="gotodlgctrl"></a>  CDialog::GotoDlgCtrl  
+ Moves the focus to the specified control in the dialog box.  
   
 ```  
 void GotoDlgCtrl(CWnd* pWndCtrl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWndCtrl`  
- フォーカスを受け取るには、ウィンドウ (コントロール) を識別します。  
+ Identifies the window (control) that is to receive the focus.  
   
-### <a name="remarks"></a>コメント  
- コントロールとして渡す (子ウィンドウ) へのポインターを取得する`pWndCtrl`を呼び出し、`CWnd::GetDlgItem`へのポインターを返すメンバー関数、 [CWnd](../../mfc/reference/cwnd-class.md)オブジェクト。  
+### <a name="remarks"></a>Remarks  
+ To get a pointer to the control (child window) to pass as `pWndCtrl`, call the `CWnd::GetDlgItem` member function, which returns a pointer to a [CWnd](../../mfc/reference/cwnd-class.md) object.  
   
-### <a name="example"></a>例  
-  例を参照して[:getdlgitem](../../mfc/reference/cwnd-class.md#getdlgitem)です。  
+### <a name="example"></a>Example  
+  See the example for [CWnd::GetDlgItem](../../mfc/reference/cwnd-class.md#getdlgitem).  
   
-##  <a name="initmodalindirect"></a>CDialog::InitModalIndirect  
- メモリ内で構築する ダイアログ ボックス テンプレートを使用してモーダル ダイアログ ボックスのオブジェクトを初期化するためにこのメンバー関数を呼び出します。  
+##  <a name="initmodalindirect"></a>  CDialog::InitModalIndirect  
+ Call this member function to initialize a modal dialog object using a dialog-box template that you construct in memory.  
   
 ```  
 BOOL InitModalIndirect(
@@ -361,169 +373,169 @@ BOOL InitModalIndirect(
     CWnd* pParentWnd = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpDialogTemplate`  
- ダイアログ ボックスを作成するために使用 ダイアログ ボックス テンプレートが含まれるメモリへのポインター。 このテンプレートは、の形式では、 [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394)構造とコントロールについては、」の説明に従って、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Points to memory that contains a dialog-box template used to create the dialog box. This template is in the form of a [DLGTEMPLATE](http://msdn.microsoft.com/library/windows/desktop/ms645394) structure and control information, as described in the Windows SDK.  
   
  `hDialogTemplate`  
- ダイアログ ボックスのテンプレートを含むグローバル メモリへのハンドルが含まれています。 このテンプレートは、の形式では、 **DLGTEMPLATE**構造と、ダイアログ ボックス内の各コントロールのデータ。  
+ Contains a handle to global memory containing a dialog-box template. This template is in the form of a **DLGTEMPLATE** structure and data for each control in the dialog box.  
   
  `pParentWnd`  
- 親またはオーナー ウィンドウ オブジェクトを指し示す (型の[CWnd](../../mfc/reference/cwnd-class.md)) ダイアログ オブジェクトが属しています。 場合は**NULL**、ダイアログ オブジェクトの親ウィンドウがアプリケーションのメイン ウィンドウに設定します。  
+ Points to the parent or owner window object (of type [CWnd](../../mfc/reference/cwnd-class.md)) to which the dialog object belongs. If it is **NULL**, the dialog object's parent window is set to the main application window.  
   
  `lpDialogInit`  
- 指す、 **DLGINIT**リソース。  
+ Points to a **DLGINIT** resource.  
   
-### <a name="return-value"></a>戻り値  
- ダイアログ オブジェクトが作成され、正常に初期化される場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the dialog object was created and initialized successfully; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- まず、モーダル ダイアログ ボックスを直接作成するには、グローバル メモリ ブロックを割り当て、 ダイアログ ボックスのテンプレートを使用して入力します。 空を呼び出す`CDialog` ダイアログ ボックスのオブジェクトを構築するコンス トラクターです。 次に、`InitModalIndirect`インメモリ ダイアログ ボックス テンプレートに、ハンドルを格納します。 Windows のダイアログ ボックスが作成され、表示されるときに、後で、 [DoModal](#domodal)メンバー関数が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ To create a modal dialog box indirectly, first allocate a global block of memory and fill it with the dialog box template. Then call the empty `CDialog` constructor to construct the dialog-box object. Next, call `InitModalIndirect` to store your handle to the in-memory dialog-box template. The Windows dialog box is created and displayed later, when the [DoModal](#domodal) member function is called.  
   
- ActiveX コントロールを含むダイアログ ボックスで提供される追加情報を必要とする**DLGINIT**リソース。 詳細については、サポート技術情報の記事 Q231591 を参照してください"HOWTO: ActiveX コントロールと MFC ダイアログを作成するダイアログ テンプレートを使用します。"。 サポート技術情報については、「 [http://support.microsoft.com](http://support.microsoft.com/)です。  
+ Dialog boxes that contain ActiveX controls require additional information provided in a **DLGINIT** resource. For more information, see Knowledge Base article Q231591, " HOWTO: Use a Dialog Template to Create a MFC Dialog with an ActiveX Control." Knowledge Base articles are available at [http://support.microsoft.com](http://support.microsoft.com/).  
   
-##  <a name="mapdialogrect"></a>CDialog::MapDialogRect  
- 四角形のダイアログ ボックスの単位を画面の単位に変換する呼び出しです。  
+##  <a name="mapdialogrect"></a>  CDialog::MapDialogRect  
+ Call to convert the dialog-box units of a rectangle to screen units.  
   
 ```  
 void MapDialogRect(LPRECT lpRect) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpRect`  
- 指す、 [RECT](../../mfc/reference/rect-structure1.md)構造または[CRect](../../atl-mfc-shared/reference/crect-class.md)  ダイアログ ボックスを含むオブジェクトを変換する座標します。  
+ Points to a [RECT](../../mfc/reference/rect-structure1.md) structure or [CRect](../../atl-mfc-shared/reference/crect-class.md) object that contains the dialog-box coordinates to be converted.  
   
-### <a name="remarks"></a>コメント  
- ダイアログ単位は、に関して、平均の幅と高さの使用 ダイアログ ボックスのテキストのフォントの文字から派生した現在のダイアログ ボックス基本単位です。 水平方向に 1 つのユニットのダイアログ ボックスのベースの幅単位の 4 分の 1、垂直方向の 1 つの単位 ダイアログ ボックスの高さの基本単位の 8 分の 1。  
+### <a name="remarks"></a>Remarks  
+ Dialog-box units are stated in terms of the current dialog-box base unit derived from the average width and height of characters in the font used for dialog-box text. One horizontal unit is one-fourth of the dialog-box base-width unit, and one vertical unit is one-eighth of the dialog-box base height unit.  
   
- **GetDialogBaseUnits** Windows 関数はシステム フォントのサイズ情報を返しますが、使用する場合は、ダイアログ ボックスごとに別のフォントを指定できます、 **DS_SETFONT**リソース定義ファイル内のスタイル。 `MapDialogRect` Windows 関数は、このダイアログ ボックスの適切なフォントを使用します。  
+ The **GetDialogBaseUnits** Windows function returns size information for the system font, but you can specify a different font for each dialog box if you use the **DS_SETFONT** style in the resource-definition file. The `MapDialogRect` Windows function uses the appropriate font for this dialog box.  
   
- `MapDialogRect`メンバー関数は置換 ダイアログ ボックスの単位を`lpRect`で四角形を作成 ダイアログ ボックスか、ボックス内でコントロールを配置に使用できるようにする画面の単位 (ピクセル単位)。  
+ The `MapDialogRect` member function replaces the dialog-box units in `lpRect` with screen units (pixels) so that the rectangle can be used to create a dialog box or position a control within a box.  
   
-##  <a name="nextdlgctrl"></a>CDialog::NextDlgCtrl  
- ダイアログ ボックスで次のコントロールにフォーカスを移動します。  
+##  <a name="nextdlgctrl"></a>  CDialog::NextDlgCtrl  
+ Moves the focus to the next control in the dialog box.  
   
 ```  
 void NextDlgCtrl() const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスで、最後のコントロールにフォーカスがある場合は、最初のコントロールに移動します。  
+### <a name="remarks"></a>Remarks  
+ If the focus is at the last control in the dialog box, it moves to the first control.  
   
-##  <a name="oncancel"></a>CDialog::OnCancel  
- フレームワークは、ユーザーがクリックしたときにこのメソッドを呼び出します**キャンセル**かモーダルまたはモードレス ダイアログ ボックスで、ESC キーを押します。  
+##  <a name="oncancel"></a>  CDialog::OnCancel  
+ The framework calls this method when the user clicks **Cancel** or presses the ESC key in a modal or modeless dialog box.  
   
 ```  
 virtual void OnCancel();
 ```  
   
-### <a name="remarks"></a>コメント  
- (古いデータを復元する) などのアクションを実行するには、このメソッドをオーバーライドして、ユーザーが をクリックしてダイアログ ボックスを閉じたときに**キャンセル**ESC キーを押すか。 既定値は、呼び出すことによって、モーダル ダイアログ ボックスを閉じます[EndDialog](#enddialog)およびによって[DoModal](#domodal) IDCANCEL に戻ります。  
+### <a name="remarks"></a>Remarks  
+ Override this method to perform actions (such as restoring old data) when a user closes the dialog box by clicking **Cancel** or hitting the ESC key. The default closes a modal dialog box by calling [EndDialog](#enddialog) and causing [DoModal](#domodal) to return IDCANCEL.  
   
- 実装する場合、**キャンセル**ボタン モードレス ダイアログ ボックスでは、オーバーライドする必要があります、`OnCancel`メソッドと呼び出し[DestroyWindow](../../mfc/reference/cwnd-class.md#destroywindow)内です。 呼び出すので、基本クラスのメソッドを呼び出さないでください`EndDialog`、ダイアログ ボックスを非表示には、破棄することがされます。  
+ If you implement the **Cancel** button in a modeless dialog box, you must override the `OnCancel` method and call [DestroyWindow](../../mfc/reference/cwnd-class.md#destroywindow) inside it. Do not call the base-class method, because it calls `EndDialog`, which will make the dialog box invisible but not destroy it.  
   
 > [!NOTE]
->  使用する場合は、このメソッドをオーバーライドすることはできません、 `CFileDialog` Windows XP でコンパイルされたプログラム内のオブジェクト。 詳細については`CFileDialog`を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+>  You cannot override this method when you use a `CFileDialog` object in a program that is compiled under Windows XP. For more information about `CFileDialog`, see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog # 66](../../mfc/codesnippet/cpp/cdialog-class_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#66](../../mfc/codesnippet/cpp/cdialog-class_5.cpp)]  
   
-##  <a name="oninitdialog"></a>CDialog::OnInitDialog  
- 応答でこのメソッドは、`WM_INITDIALOG`メッセージ。  
+##  <a name="oninitdialog"></a>  CDialog::OnInitDialog  
+ This method is called in response to the `WM_INITDIALOG` message.  
   
 ```  
 virtual BOOL OnInitDialog();
 ```  
   
-### <a name="return-value"></a>戻り値  
- アプリケーションがダイアログ ボックスで、コントロールのいずれかに入力フォーカスを設定したかどうかを指定します。 場合`OnInitDialog`0 以外を返します、Windows、入力フォーカスを設定 ダイアログ ボックスの最初のコントロール、既定の場所。 アプリケーションは、明示的にフォーカスを設定した、入力コントロールのいずれかに ダイアログ ボックスで場合にのみ、0 を返すことができます。  
+### <a name="return-value"></a>Return Value  
+ Specifies whether the application has set the input focus to one of the controls in the dialog box. If `OnInitDialog` returns nonzero, Windows sets the input focus to the default location, the first control in the dialog box. The application can return 0 only if it has explicitly set the input focus to one of the controls in the dialog box.  
   
-### <a name="remarks"></a>コメント  
- Windows の送信、`WM_INITDIALOG`中に、ダイアログ ボックスにメッセージ、[作成](#create)、 [CreateIndirect](#createindirect)、または[DoModal](#domodal)呼び出しで、ダイアログ ボックスが表示される直前に発生します。  
+### <a name="remarks"></a>Remarks  
+ Windows sends the `WM_INITDIALOG` message to the dialog box during the [Create](#create), [CreateIndirect](#createindirect), or [DoModal](#domodal) calls, which occur immediately before the dialog box is displayed.  
   
- ダイアログ ボックスが初期化されたときに、特別な処理を実行する場合は、このメソッドをオーバーライドします。 オーバーライドされたバージョンでは、基底クラスを呼び出して最初`OnInitDialog`が、その戻り値は無視されます。 通常戻ります`TRUE`オーバーライドされたメソッドからです。  
+ Override this method if you want to perform special processing when the dialog box is initialized. In the overridden version, first call the base class `OnInitDialog` but ignore its return value. You will typically return `TRUE` from your overridden method.  
   
- Windows の呼び出し、 `OnInitDialog` Microsoft Foundation Class ライブラリのすべてのダイアログ ボックスに共通の標準のグローバル ダイアログ ボックス プロシージャを使用することによって機能します。 メッセージ マップを使用して関数を呼び出しません、したがってする必要はありませんメッセージ マップ エントリこのメソッドの。  
+ Windows calls the `OnInitDialog` function by using the standard global dialog-box procedure common to all Microsoft Foundation Class Library dialog boxes. It does not call this function through your message map, and therefore you do not need a message map entry for this method.  
   
 > [!NOTE]
->  使用する場合は、このメソッドをオーバーライドすることはできません、`CFileDialog`でコンパイルされたプログラムではオブジェクト[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 変更の詳細については`CFileDialog`[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+>  You cannot override this method when you use a `CFileDialog` object in a program that is compiled under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. For more information about changes to `CFileDialog` under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog # 67](../../mfc/codesnippet/cpp/cdialog-class_6.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#67](../../mfc/codesnippet/cpp/cdialog-class_6.cpp)]  
   
-##  <a name="onok"></a>CDialog::OnOK  
- ユーザーがクリックしたときに呼び出されます、 **OK** (idok ID のボタン) のボタンをクリックします。  
+##  <a name="onok"></a>  CDialog::OnOK  
+ Called when the user clicks the **OK** button (the button with an ID of IDOK).  
   
 ```  
 virtual void OnOK();
 ```  
   
-### <a name="remarks"></a>コメント  
- アクションを実行するには、このメソッドをオーバーライドするときに、 **ok**  ボタンがアクティブにします。 ダイアログ ボックスには、データの自動検証し、exchange が含まれている場合、このメソッドの既定の実装はダイアログ ボックスのデータを検証し、アプリケーションの適切な変数を更新します。  
+### <a name="remarks"></a>Remarks  
+ Override this method to perform actions when the **OK** button is activated. If the dialog box includes automatic data validation and exchange, the default implementation of this method validates the dialog box data and updates the appropriate variables in your application.  
   
- 実装する場合、 **OK**  ボタン モードレス ダイアログ ボックスでは、オーバーライドする必要があります、`OnOK`メソッドを呼び出します[DestroyWindow](../../mfc/reference/cwnd-class.md#destroywindow)内です。 呼び出すので、基本クラスのメソッドを呼び出さないでください[EndDialog](#enddialog)  ダイアログ ボックスを非表示にするは、破棄することができます。  
+ If you implement the **OK** button in a modeless dialog box, you must override the `OnOK` method and call [DestroyWindow](../../mfc/reference/cwnd-class.md#destroywindow) inside it. Do not call the base-class method, because it calls [EndDialog](#enddialog) which makes the dialog box invisible but does not destroy it.  
   
 > [!NOTE]
->  使用する場合は、このメソッドをオーバーライドすることはできません、 `CFileDialog` Windows XP でコンパイルされたプログラム内のオブジェクト。 詳細については`CFileDialog`を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+>  You cannot override this method when you use a `CFileDialog` object in a program that is compiled under Windows XP. For more information about `CFileDialog`, see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCControlLadenDialog # 68](../../mfc/codesnippet/cpp/cdialog-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCControlLadenDialog#68](../../mfc/codesnippet/cpp/cdialog-class_7.cpp)]  
   
-##  <a name="onsetfont"></a>CDialog::OnSetFont  
- テキストを描画するときに、ダイアログ ボックス コントロールを使用するフォントを指定します。  
+##  <a name="onsetfont"></a>  CDialog::OnSetFont  
+ Specifies the font a dialog-box control will use when drawing text.  
   
 ```  
 Virtual void OnSetFont(CFont* pFont);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pFont`  
- このダイアログ ボックスのすべてのコントロールの既定のフォントとして使用されるフォントへのポインターを指定します。  
+### <a name="parameters"></a>Parameters  
+ [in] `pFont`  
+ Specifies a pointer to the font that will be used as the default font for all controls in this dialog box.  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスは、そのすべてのコントロールを指定したフォントを既定値として使用されます。  
+### <a name="remarks"></a>Remarks  
+ The dialog box will use the specified font as the default for all its controls.  
   
- ダイアログ エディターは通常、ダイアログ ボックスのテンプレート リソースの一部として、ダイアログ ボックスのフォントを設定します。  
+ The dialog editor typically sets the dialog-box font as part of the dialog-box template resource.  
   
 > [!NOTE]
->  使用する場合は、このメソッドをオーバーライドすることはできません、`CFileDialog`でコンパイルされたプログラムではオブジェクト[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]です。 変更の詳細については`CFileDialog`[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]を参照してください[CFileDialog クラス](../../mfc/reference/cfiledialog-class.md)です。  
+>  You cannot override this method when you use a `CFileDialog` object in a program that is compiled under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]. For more information about changes to `CFileDialog` under [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] see [CFileDialog Class](../../mfc/reference/cfiledialog-class.md).  
   
-##  <a name="prevdlgctrl"></a>CDialog::PrevDlgCtrl  
- ダイアログ ボックスで、前のコントロールにフォーカスを設定します。  
+##  <a name="prevdlgctrl"></a>  CDialog::PrevDlgCtrl  
+ Sets the focus to the previous control in the dialog box.  
   
 ```  
 void PrevDlgCtrl() const;  
 ```  
   
-### <a name="remarks"></a>コメント  
- ダイアログ ボックスの最初のコントロールにフォーカスがある場合、最後に移動コントロール ボックス。  
+### <a name="remarks"></a>Remarks  
+ If the focus is at the first control in the dialog box, it moves to the last control in the box.  
   
-##  <a name="setdefid"></a>CDialog::SetDefID  
- ダイアログ ボックスの既定のプッシュ ボタン コントロールを変更します。  
+##  <a name="setdefid"></a>  CDialog::SetDefID  
+ Changes the default pushbutton control for a dialog box.  
   
 ```  
 void SetDefID(UINT nID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nID`  
- 既定値になるプッシュ ボタン コントロールの ID を指定します。  
+ Specifies the ID of the pushbutton control that will become the default.  
   
-##  <a name="sethelpid"></a>CDialog::SetHelpID  
- ダイアログ ボックスの状況依存のヘルプ ID を設定します。  
+##  <a name="sethelpid"></a>  CDialog::SetHelpID  
+ Sets a context-sensitive help ID for the dialog box.  
   
 ```  
 void SetHelpID(UINT nIDR);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *nIDR*  
- 状況依存のヘルプ ID を指定します  
+ Specifies the context-sensitive help ID.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル DLGCBR32](../../visual-cpp-samples.md)   
- [MFC サンプル DLGTEMPL](../../visual-cpp-samples.md)   
- [CWnd クラス](../../mfc/reference/cwnd-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample DLGCBR32](../../visual-cpp-samples.md)   
+ [MFC Sample DLGTEMPL](../../visual-cpp-samples.md)   
+ [CWnd Class](../../mfc/reference/cwnd-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 

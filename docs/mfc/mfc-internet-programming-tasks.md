@@ -1,62 +1,81 @@
 ---
-title: "MFC インターネット プログラミングの作業 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インターネット アプリケーション, 最初の段階"
-  - "インターネット アプリケーション, はじめに"
+title: MFC Internet Programming Tasks | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Internet applications [MFC], getting started
+- Internet applications [MFC], first steps
 ms.assetid: 6377e9b8-07c4-4380-b63b-05f5a9061313
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# MFC インターネット プログラミングの作業
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 966dbcf797ee1429789afdd5bda4a1492307c324
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、アプリケーションにインターネットのサポートを追加するための詳しい手順について説明します。  具体的には、MFC クラスを使って既存のアプリケーションをインターネット対応にする方法、および既存の  COM コンポーネントにアクティブ ドキュメントのサポートを追加する方法を紹介します。  たとえば、現時点の株価、J リーグの試合の結果、南極の温度などを示すドキュメントを作成できます。  Microsoft は、これらをインターネット上で実現するためのさまざまな技術を提供しています。  
+---
+# <a name="mfc-internet-programming-tasks"></a>MFC Internet Programming Tasks
+This section contains detailed steps for adding Internet support to your applications. Topics include how to use the MFC classes to Internet-enable your existing applications, and how to add Active document support to your existing COM component. Do you want to create a document with up-to-the-minute stock quotes, Pittsburgh's football scores, and the latest temperature in Antarctica Microsoft provides a number of technologies to help you do that over the Internet.  
   
- Active テクノロジには、従来の OLE コントロールに相当する ActiveX コントロールと Active ドキュメント、インターネットを通じてファイルを簡単に取得して保存するための WinInet、データを効率的にダウンロードするための非同期モニカーなどがあります。  Visual C\+\+ には、起動アプリケーションを使用して、すばやくプログラミングを始めるための便利なウィザードが用意されています。  各技術の詳細については、「[MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)」および「[MFC COM](../mfc/mfc-com.md)」を参照してください。  
+ Active technologies include ActiveX controls (formerly OLE controls) and Active documents; WinInet for easily retrieving and saving files across the Internet; and asynchronous monikers for efficient data downloading. Visual C++ provides wizards to help you get started quickly with a starter application. For an introduction to these technologies, see [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md) and [MFC COM](../mfc/mfc-com.md).  
   
- ファイルの操作を FTP で行いたいが、WinSock やネットワーク プログラミング プロトコルについては詳しくない、という場合があります。  WinInet クラスには、これらのプロトコルがカプセル化されています。WinInet クラスに用意されている簡単な関数を使用すると、HTTP、FTP、および Gopher でファイルをダウンロードするインターネット クライアント アプリケーションを作成できます。  WinInet を使用すると、自分のハード ディスク ドライブのフォルダーだけでなく、世界中のフォルダーを検索できます。  また、データの種類にかかわらずさまざまな種類のデータを集めることができ、そのデータを統合インターフェイスを通じてユーザーに提供できます。  
+ Have you always wanted to FTP a file but haven't learned WinSock and network programming protocols WinInet classes encapsulate these protocols, providing you with a simple set of functions you can use to write a client application on the Internet to download files using HTTP, FTP, and gopher. You can use WinInet to search directories on your hard drive or around the world. You can transparently collect data of several different types, and present it to the user in an integrated interface.  
   
- 大量のデータをダウンロードすることもできます。  非同期モニカーには、大きなオブジェクトを少しずつ描画するための COM \(Component Object Model\) ソリューションが用意されています。  WinInet を非同期的に使用することもできます。  
+ Do you have large amounts of data to download Asynchronous monikers provide a COM (Component Object Model) solution for progressive rendering of large objects. WinInet can also be used asynchronously.  
   
- 次の表は、各技術を通じて実現できる処理の一部を示しています。  
+ The following table describes a few of the things you can do with these technologies.  
   
-|環境|処理|使用する技術|  
-|--------|--------|------------|  
-|Web サーバー|ログオンと URL 要求に関する詳細情報を追跡する。|フィルターを作成し、ログオン イベントや URL マップの通知を要求します。|  
-|Web ブラウザー|動的コンテンツを提供する。|ActiveX コントロールと Active ドキュメントを作成します。|  
-|ドキュメント ベースのアプリケーション|FTP によるファイル操作のサポートを追加する。|WinInet または非同期モニカーを使用します。|  
+|You have|You want to|You should|  
+|--------------|-----------------|----------------|  
+|A Web server.|Track logons and detailed information about URL requests.|Write a filter, request notifications for logon events and URL mapping.|  
+|A Web browser.|Provide dynamic content.|Create ActiveX controls and Active documents.|  
+|A document-based application.|Add support to FTP a file.|Use WinInet or asynchronous monikers.|  
   
- インターネットのプログラミングを始めるための方法については、以下の項目を参照してください。  
+ See the following topics for details to get you started:  
   
--   [アプリケーションのデザイン上の検討事項](../mfc/application-design-choices.md)  
+-   [Application Design Choices](../mfc/application-design-choices.md)  
   
--   [MFC アプリケーションの作成](../mfc/writing-mfc-applications.md)  
+-   [Writing MFC Applications](../mfc/writing-mfc-applications.md)  
   
--   [インターネット上の ActiveX コントロール](../mfc/activex-controls-on-the-internet.md)  
+-   [ActiveX Controls on the Internet](../mfc/activex-controls-on-the-internet.md)  
   
--   [既存の ActiveX コントロールのアップグレード](../Topic/Upgrading%20an%20Existing%20ActiveX%20Control.md)  
+-   [Upgrading an Existing ActiveX Control](../mfc/upgrading-an-existing-activex-control.md)  
   
--   [インターネット上の Active ドキュメント](../Topic/Active%20Documents%20on%20the%20Internet.md)  
+-   [Active Documents on the Internet](../mfc/active-documents-on-the-internet.md)  
   
--   [インターネット上の非同期モニカー](../mfc/asynchronous-monikers-on-the-internet.md)  
+-   [Asynchronous Monikers on the Internet](../mfc/asynchronous-monikers-on-the-internet.md)  
   
--   [インターネット アプリケーションのテスト](../mfc/testing-internet-applications.md)  
+-   [Testing Internet Applications](../mfc/testing-internet-applications.md)  
   
--   [インターネットのセキュリティ](../Topic/Internet%20Security%20\(C++\).md)  
+-   [Internet Security](../mfc/internet-security-cpp.md)  
   
-## 参照  
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)   
- [操作別のインターネット情報](../mfc/internet-information-by-task.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)   
+ [Internet Information by Task](../mfc/internet-information-by-task.md)
+
+

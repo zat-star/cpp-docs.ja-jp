@@ -1,51 +1,70 @@
 ---
-title: "MFC アプリケーション アーキテクチャ クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.mfc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプケーション アーキテクチャ クラス"
-  - "クラス [C++], MFC"
-  - "MFC [C++], アプリケーション開発"
-  - "MFC [C++], クラス"
+title: MFC Application Architecture Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.mfc
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, classes
+- MFC, application development
+- classes [MFC], MFC
+- application architecture classes [MFC]
 ms.assetid: 71b2de54-b44d-407e-9c71-9baf954e18d9
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# MFC アプリケーション アーキテクチャ クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ff7e847340e6afb6c1a97160a7b1763e43447a6a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このカテゴリのクラスは、.NET Framework アプリケーションのアーキテクチャを提供します。  これらは、ほとんどのアプリケーションに共通の機能を提供します。  アプリケーション固有の機能を追加するために、フレームワークが設定されます。  通常は、新しいクラスをアーキテクチャ クラスから派生し、新しいメンバーを追加するか、既存のメンバー関数をオーバーライドすることで実現します。  
+---
+# <a name="mfc-application-architecture-classes"></a>MFC Application Architecture Classes
+Classes in this category contribute to the architecture of a framework application. They supply functionality common to most applications. You fill in the framework to add application-specific functionality. Typically, you do so by deriving new classes from the architecture classes, and then adding new members or overriding existing member functions.  
   
- [アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md) は さまざまな方法でアプリケーション フレームワークを使用するアプリケーションの型が生成されます。  SDI \(シングル ドキュメント インターフェイス\)、マルチ ドキュメント インターフェイス \(MDI\) アプリケーションでは、ドキュメント\/ビュー アーキテクチャというフレームワークの一部を活用します。  アプリケーションの他の型は、ダイアログ ベースのアプリケーションなど、フォーム ベースのアプリケーションと DLL、ドキュメント\/ビュー アーキテクチャ機能の一部だけを使用します。  
+ [Application wizards](../mfc/reference/mfc-application-wizard.md) generate several types of applications, all of which use the application framework in differing ways. SDI (single document interface) and MDI (multiple document interface) applications make full use of a part of the framework called document/view architecture. Other types of applications, such as dialog-based applications, form-based applications, and DLLs, use only some of document/view architecture features.  
   
- ドキュメント\/ビュー アプリケーション、ドキュメント、ビュー、およびフレーム ウィンドウの一つ以上のセットが含まれます。  ドキュメントテンプレート オブジェクトでは、各ドキュメント\/ビュー、フレーム セットのクラスを関連付けます。  
+ Document/view applications contain one or more sets of documents, views, and frame windows. A document-template object associates the classes for each document/view/frame set.  
   
- MFC アプリケーションでは、ドキュメント\/ビュー アーキテクチャを使用する必要はありませんが、それにいくつかの利点があります。  MFC OLE コンテナーとサーバー サポートは、ドキュメント\/ビュー アーキテクチャの印刷や印刷プレビューのサポートになるように基づきます。  
+ Although you do not have to use document/view architecture in your MFC application, there are a number of advantages to doing so. The MFC OLE container and server support is based on document/view architecture, as is support for printing and print preview.  
   
- すべての MFC アプリケーションに 2 個以上のオブジェクトがあります: [CWinApp](../mfc/reference/cwinapp-class.md)から、種類のメイン ウィンドウ オブジェクト派生される、アプリケーション オブジェクト [CWnd](../Topic/CWnd%20Class.md)から派生 \(通常は間接的になります。\(通常は、メイン ウィンドウが `CWnd`から派生される [CFrameWnd](../mfc/reference/cframewnd-class.md)、[CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md)、または [CDialog](../mfc/reference/cdialog-class.md)から派生されます\)。  
+ All MFC applications have at least two objects: an application object derived from [CWinApp](../mfc/reference/cwinapp-class.md), and some sort of main window object, derived (often indirectly) from [CWnd](../mfc/reference/cwnd-class.md). (Most often, the main window is derived from [CFrameWnd](../mfc/reference/cframewnd-class.md), [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md), or [CDialog](../mfc/reference/cdialog-class.md), all of which are derived from `CWnd`.)  
   
- ドキュメント\/ビュー アーキテクチャを使用するアプリケーションは追加オブジェクトが含まれます。  プリンシパル オブジェクトは、次の操作:  
+ Applications that use document/view architecture contain additional objects. The principal objects are:  
   
--   クラス [CWinApp](../mfc/reference/cwinapp-class.md)から派生されるアプリケーション オブジェクトで説明したようにします。  
+-   An application object derived from class [CWinApp](../mfc/reference/cwinapp-class.md), as mentioned before.  
   
--   クラス [CDocument](../Topic/CDocument%20Class.md)から派生される一つ以上のドキュメント クラス オブジェクト。  ドキュメント クラスのオブジェクトは、ビューで処理されるデータを内部表現を行います。  これらは、データ ファイルに関連付けられている可能性があります。  
+-   One or more document class objects derived from class [CDocument](../mfc/reference/cdocument-class.md). Document class objects are responsible for the internal representation of the data manipulated in the view. They may be associated with a data file.  
   
--   クラス [CView](../Topic/CView%20Class.md)から派生される一つ以上のビュー オブジェクト。  各ビューは、ドキュメントに関連付けられ、フレーム ウィンドウに関連付けられたウィンドウです。  ビューはドキュメント クラスのオブジェクトに格納されているデータを表示および処理します。  
+-   One or more view objects derived from class [CView](../mfc/reference/cview-class.md). Each view is a window that is attached to a document and associated with a frame window. Views display and manipulate the data contained in a document class object.  
   
- ドキュメント\/ビュー アプリケーションは、フレーム ウィンドウ \([CFrameWnd](../mfc/reference/cframewnd-class.md)から派生される\) とドキュメント テンプレートを含む \([CDocTemplate](../mfc/reference/cdoctemplate-class.md)から派生される\)。  
+ Document/view applications also contain frame windows (derived from [CFrameWnd](../mfc/reference/cframewnd-class.md)) and document templates (derived from [CDocTemplate](../mfc/reference/cdoctemplate-class.md)).  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

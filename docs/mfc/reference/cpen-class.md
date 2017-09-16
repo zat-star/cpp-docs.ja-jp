@@ -1,5 +1,5 @@
 ---
-title: "CPen クラス |Microsoft ドキュメント"
+title: CPen Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -20,9 +20,12 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- HPEN
-- CPen class
-- pens, MFC
+- CPen [MFC], CPen
+- CPen [MFC], CreatePen
+- CPen [MFC], CreatePenIndirect
+- CPen [MFC], FromHandle
+- CPen [MFC], GetExtLogPen
+- CPen [MFC], GetLogPen
 ms.assetid: 93175a3a-d46c-4768-be8d-863254f97a5f
 caps.latest.revision: 20
 author: mikeblome
@@ -42,61 +45,61 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: edea12c84a8f39161acbf367360fd86a1ff19998
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: de0a94fd6b6a324c64a7efee4ce0b07a38edc954
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cpen-class"></a>CPen クラス
-Windows のグラフィック デバイス インターフェイス (GDI) のペンをカプセル化したものです。  
+# <a name="cpen-class"></a>CPen Class
+Encapsulates a Windows graphics device interface (GDI) pen.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CPen : public CGdiObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPen::CPen](#cpen)|`CPen` オブジェクトを構築します。|  
+|[CPen::CPen](#cpen)|Constructs a `CPen` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPen::CreatePen](#createpen)|指定したスタイル、幅、およびブラシ属性と論理表面的または幾何学的ペンを作成し、それにアタッチ、`CPen`オブジェクトです。|  
-|[CPen::CreatePenIndirect](#createpenindirect)|スタイル、幅、および色でペンを作成、 [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041)構造、およびそれにアタッチ、`CPen`オブジェクトです。|  
-|[CPen::FromHandle](#fromhandle)|ポインターを返す、 `CPen` Windows が指定されると`HPEN`です。|  
-|[CPen::GetExtLogPen](#getextlogpen)|取得、[保持](http://msdn.microsoft.com/library/windows/desktop/dd162711)構造体の基になります。|  
-|[CPen::GetLogPen](#getlogpen)|取得、 [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041)構造体の基になります。|  
+|[CPen::CreatePen](#createpen)|Creates a logical cosmetic or geometric pen with the specified style, width, and brush attributes, and attaches it to the `CPen` object.|  
+|[CPen::CreatePenIndirect](#createpenindirect)|Creates a pen with the style, width, and color given in a [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041) structure, and attaches it to the `CPen` object.|  
+|[CPen::FromHandle](#fromhandle)|Returns a pointer to a `CPen` object when given a Windows `HPEN`.|  
+|[CPen::GetExtLogPen](#getextlogpen)|Gets an [EXTLOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd162711) underlying structure.|  
+|[CPen::GetLogPen](#getlogpen)|Gets a [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041) underlying structure.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPen::operator HPEN](#operator_hpen)|接続されている Windows ハンドルを返す、`CPen`オブジェクトです。|  
+|[CPen::operator HPEN](#operator_hpen)|Returns the Windows handle attached to the `CPen` object.|  
   
-## <a name="remarks"></a>コメント  
- 使用する方法について`CPen`を参照してください[グラフィック オブジェクト](../../mfc/graphic-objects.md)します。  
+## <a name="remarks"></a>Remarks  
+ For more information on using `CPen`, see [Graphic Objects](../../mfc/graphic-objects.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CGdiObject](../../mfc/reference/cgdiobject-class.md)  
   
  `CPen`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="cpen"></a>CPen::CPen  
- `CPen` オブジェクトを構築します。  
+##  <a name="cpen"></a>  CPen::CPen  
+ Constructs a `CPen` object.  
   
 ```  
 CPen();
@@ -116,81 +119,81 @@ CPen(
     const DWORD* lpStyle = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPenStyle`  
- ペンのスタイルを指定します。 コンス トラクターの最初のバージョンでは、このパラメーターは、次の値のいずれかになります。  
+ Specifies the pen style. This parameter in the first version of the constructor can be one of the following values:  
   
-- **きは**ソリッド ペンを作成します。  
+- **PS_SOLID** Creates a solid pen.  
   
-- **PS_DASH**破線のペンを作成します。 ペンの幅が 1 またはそれ以下のデバイスでの単位である場合にのみ有効です。  
+- **PS_DASH** Creates a dashed pen. Valid only when the pen width is 1 or less, in device units.  
   
-- **PS_DOT**ピリオドで区切られたペンを作成します。 ペンの幅が 1 またはそれ以下のデバイスでの単位である場合にのみ有効です。  
+- **PS_DOT** Creates a dotted pen. Valid only when the pen width is 1 or less, in device units.  
   
-- **PS_DASHDOT**の代替ダッシュとドットでペンを作成します。 ペンの幅が 1 またはそれ以下のデバイスでの単位である場合にのみ有効です。  
+- **PS_DASHDOT** Creates a pen with alternating dashes and dots. Valid only when the pen width is 1 or less, in device units.  
   
-- **PS_DASHDOTDOT**の代替ダッシュと&2; つのドットでペンを作成します。 ペンの幅が 1 またはそれ以下のデバイスでの単位である場合にのみ有効です。  
+- **PS_DASHDOTDOT** Creates a pen with alternating dashes and double dots. Valid only when the pen width is 1 or less, in device units.  
   
-- **必ず**null ペンを作成します。  
+- **PS_NULL** Creates a null pen.  
   
-- **ペン**外接する四角形を指定する Windows GDI の出力関数によって生成される、閉じた図形のフレーム内の行を描画するペンを作成 (たとえば、**楕円**、**四角形**、 `RoundRect`、 `Pie`、および`Chord`メンバー関数)。 外接する四角形が指定されていない Windows GDI 関数と共にこのスタイルを使用した場合 (たとえば、`LineTo`メンバー関数)、ペンの描画領域は、フレームによって制限されません。  
+- **PS_INSIDEFRAME** Creates a pen that draws a line inside the frame of closed shapes produced by the Windows GDI output functions that specify a bounding rectangle (for example, the **Ellipse**, **Rectangle**, `RoundRect`, `Pie`, and `Chord` member functions). When this style is used with Windows GDI output functions that do not specify a bounding rectangle (for example, the `LineTo` member function), the drawing area of the pen is not limited by a frame.  
   
- 第&2; のバージョン、`CPen`コンス トラクターは、種類、スタイル、端点キャップ、および結合の属性の組み合わせを指定します。 各カテゴリの値は、ビットごとの OR 演算子 (|) を使用して組み合わせる必要があります。 ペンの種類には、次の値のいずれかを指定できます。  
+ The second version of the `CPen` constructor specifies a combination of type, style, end cap, and join attributes. The values from each category should be combined by using the bitwise OR operator (&#124;). The pen type can be one of the following values:  
   
-- **PS_GEOMETRIC**幾何学模様のペンを作成します。  
+- **PS_GEOMETRIC** Creates a geometric pen.  
   
-- **PS_COSMETIC**表面的でペンを作成します。  
+- **PS_COSMETIC** Creates a cosmetic pen.  
   
-     第&2; のバージョン、`CPen`コンス トラクターの次のペンのスタイルを追加する`nPenStyle`:  
+     The second version of the `CPen` constructor adds the following pen styles for `nPenStyle`:  
   
-- **PS_ALTERNATE**他のすべてのピクセルを設定するペンを作成します。 (このスタイルは、表面的でペンにのみ適用)。  
+- **PS_ALTERNATE** Creates a pen that sets every other pixel. (This style is applicable only for cosmetic pens.)  
   
-- **PS_USERSTYLE**ユーザーが指定したスタイルの配列を使用するペンを作成します。  
+- **PS_USERSTYLE** Creates a pen that uses a styling array supplied by the user.  
   
-     端点キャップには、次の値のいずれかを指定できます。  
+     The end cap can be one of the following values:  
   
-- **PS_ENDCAP_ROUND**端点キャップ、round します。  
+- **PS_ENDCAP_ROUND** End caps are round.  
   
-- **PS_ENDCAP_SQUARE**端点キャップが四角形。  
+- **PS_ENDCAP_SQUARE** End caps are square.  
   
-- **PS_ENDCAP_FLAT**端点キャップがフラットです。  
+- **PS_ENDCAP_FLAT** End caps are flat.  
   
-     結合は、次の値のいずれかになります。  
+     The join can be one of the following values:  
   
-- **PS_JOIN_BEVEL**斜め結合します。  
+- **PS_JOIN_BEVEL** Joins are beveled.  
   
-- **PS_JOIN_MITER**結合はマイターによって設定された現在の制限内にいるときに、 [SetMiterLimit](http://msdn.microsoft.com/library/windows/desktop/dd145076)関数です。 結合は、この上限を超えている場合は斜めです。  
+- **PS_JOIN_MITER** Joins are mitered when they are within the current limit set by the [SetMiterLimit](http://msdn.microsoft.com/library/windows/desktop/dd145076) function. If the join exceeds this limit, it is beveled.  
   
-- **PS_JOIN_ROUND**の結合がラウンドです。  
+- **PS_JOIN_ROUND** Joins are round.  
   
  `nWidth`  
- ペンの幅を指定します。  
+ Specifies the width of the pen.  
   
--   コンス トラクターの最初のバージョンのこの値が 0 の場合、幅デバイス単位では常にマッピング モードに関係なく、1 ピクセルです。  
+-   For the first version of the constructor, if this value is 0, the width in device units is always 1 pixel, regardless of the mapping mode.  
   
--   コンス トラクターの&2; 番目のバージョンの場合`nPenStyle`は**PS_GEOMETRIC**幅を論理単位で指定します。 場合`nPenStyle`は**PS_COSMETIC**幅が 1 に設定する必要があります。  
+-   For the second version of the constructor, if `nPenStyle` is **PS_GEOMETRIC**, the width is given in logical units. If `nPenStyle` is **PS_COSMETIC**, the width must be set to 1.  
   
  `crColor`  
- ペンの RGB の色が含まれています。  
+ Contains an RGB color for the pen.  
   
  `pLogBrush`  
- 指す、`LOGBRUSH`構造体。 場合`nPenStyle`は**PS_COSMETIC**、`lbColor`のメンバー、`LOGBRUSH`構造体は、ペンの色を指定し、`lbStyle`のメンバー、`LOGBRUSH`に構造体を設定する必要があります**BS_SOLID**します。 場合`nPenStyle`は**PS_GEOMETRIC**、すべてのメンバーは、ペンのブラシ属性を指定するために使用する必要があります。  
+ Points to a `LOGBRUSH` structure. If `nPenStyle` is **PS_COSMETIC**, the `lbColor` member of the `LOGBRUSH` structure specifies the color of the pen and the `lbStyle` member of the `LOGBRUSH` structure must be set to **BS_SOLID**. If `nPenStyle` is **PS_GEOMETRIC**, all members must be used to specify the brush attributes of the pen.  
   
  `nStyleCount`  
- 長さをダブルワード単位を指定、`lpStyle`配列。 この値は場合は&0; である必要があります`nPenStyle`は**PS_USERSTYLE**します。  
+ Specifies the length, in doubleword units, of the `lpStyle` array. This value must be zero if `nPenStyle` is not **PS_USERSTYLE**.  
   
  `lpStyle`  
- ダブルワードの値の配列を指します。 最初の値では、最初のダッシュの長さを指定したユーザー定義のスタイル、2 番目の値は、最初の空白の長さを指定します。 このポインターである必要があります**NULL**場合`nPenStyle`は**PS_USERSTYLE**します。  
+ Points to an array of doubleword values. The first value specifies the length of the first dash in a user-defined style, the second value specifies the length of the first space, and so on. This pointer must be **NULL** if `nPenStyle` is not **PS_USERSTYLE**.  
   
-### <a name="remarks"></a>コメント  
- 引数なしのコンス トラクターを使用する場合、その結果を初期化する必要があります`CPen`オブジェクトを`CreatePen`、 `CreatePenIndirect`、または`CreateStockObject`メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ If you use the constructor with no arguments, you must initialize the resulting `CPen` object with the `CreatePen`, `CreatePenIndirect`, or `CreateStockObject` member functions.  
   
- 引数を受け取るコンス トラクターを使用する場合は、さらに初期化もする必要はありません。 引数を持つコンス トラクターは、引数なしのコンス トラクターは常に成功しますが、エラーが発生した場合、例外をスローできます。  
+ If you use the constructor that takes arguments, then no further initialization is necessary. The constructor with arguments can throw an exception if errors are encountered, while the constructor with no arguments will always succeed.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView&#99;](../../mfc/codesnippet/cpp/cpen-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#99](../../mfc/codesnippet/cpp/cpen-class_1.cpp)]  
   
-##  <a name="createpen"></a>CPen::CreatePen  
- 指定したスタイル、幅、およびブラシ属性と論理表面的または幾何学的ペンを作成し、それにアタッチ、`CPen`オブジェクトです。  
+##  <a name="createpen"></a>  CPen::CreatePen  
+ Creates a logical cosmetic or geometric pen with the specified style, width, and brush attributes, and attaches it to the `CPen` object.  
   
 ```  
 BOOL CreatePen(
@@ -207,176 +210,176 @@ BOOL CreatePen(
     const DWORD* lpStyle = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nPenStyle`  
- ペンのスタイルを指定します。 使用可能な値の一覧は、次を参照してください。、`nPenStyle`内のパラメーター、 [CPen](#cpen)コンス トラクターです。  
+ Specifies the style for the pen. For a list of possible values, see the `nPenStyle` parameter in the [CPen](#cpen) constructor.  
   
  `nWidth`  
- ペンの幅を指定します。  
+ Specifies the width of the pen.  
   
--   最初のバージョンの`CreatePen`幅をデバイス単位がマッピング モードに関係なく、1 ピクセルでは常にこの値が 0 の場合。  
+-   For the first version of `CreatePen`, if this value is 0, the width in device units is always 1 pixel, regardless of the mapping mode.  
   
--   2 番目のバージョンの`CreatePen`場合は、`nPenStyle`は**PS_GEOMETRIC**幅を論理単位で指定します。 場合`nPenStyle`は**PS_COSMETIC**幅が 1 に設定する必要があります。  
+-   For the second version of `CreatePen`, if `nPenStyle` is **PS_GEOMETRIC**, the width is given in logical units. If `nPenStyle` is **PS_COSMETIC**, the width must be set to 1.  
   
  `crColor`  
- ペンの RGB の色が含まれています。  
+ Contains an RGB color for the pen.  
   
  `pLogBrush`  
- 指す、 [LOGBRUSH](http://msdn.microsoft.com/library/windows/desktop/dd145035)構造体。 場合`nPenStyle`は**PS_COSMETIC**、 **lbColor**のメンバー、`LOGBRUSH`構造体は、ペンの色を指定し、`lbStyle`のメンバー、`LOGBRUSH`に構造体を設定する必要があります**BS_SOLID**します。 場合**nPenStyle**は**PS_GEOMETRIC**、すべてのメンバーは、ペンのブラシ属性を指定するために使用する必要があります。  
+ Points to a [LOGBRUSH](http://msdn.microsoft.com/library/windows/desktop/dd145035) structure. If `nPenStyle` is **PS_COSMETIC**, the **lbColor** member of the `LOGBRUSH` structure specifies the color of the pen and the `lbStyle` member of the `LOGBRUSH` structure must be set to **BS_SOLID**. If **nPenStyle** is **PS_GEOMETRIC**, all members must be used to specify the brush attributes of the pen.  
   
  `nStyleCount`  
- 長さをダブルワード単位を指定、`lpStyle`配列。 この値は場合は&0; である必要があります`nPenStyle`は**PS_USERSTYLE**します。  
+ Specifies the length, in doubleword units, of the `lpStyle` array. This value must be zero if `nPenStyle` is not **PS_USERSTYLE**.  
   
  `lpStyle`  
- ダブルワードの値の配列を指します。 最初の値では、最初のダッシュの長さを指定したユーザー定義のスタイル、2 番目の値は、最初の空白の長さを指定します。 このポインターである必要があります**NULL**場合`nPenStyle`は**PS_USERSTYLE**します。  
+ Points to an array of doubleword values. The first value specifies the length of the first dash in a user-defined style, the second value specifies the length of the first space, and so on. This pointer must be **NULL** if `nPenStyle` is not **PS_USERSTYLE**.  
   
-### <a name="return-value"></a>戻り値  
- 成功した場合、0 以外の値またはメソッドが失敗した場合は&0; です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful, or zero if the method fails.  
   
-### <a name="remarks"></a>コメント  
- 最初のバージョン`CreatePen`指定したスタイル、幅、および色のペンを初期化します。 任意のデバイス コンテキストには、現在のペンとペンを後で選択できます。  
+### <a name="remarks"></a>Remarks  
+ The first version of `CreatePen` initializes a pen with the specified style, width, and color. The pen can be subsequently selected as the current pen for any device context.  
   
- ペンの幅の 1 ピクセルがあるいずれかのより大きい、**必ず**、**きは**、または**ペン**スタイル。  
+ Pens that have a width greater than 1 pixel should always have either the **PS_NULL**, **PS_SOLID**, or **PS_INSIDEFRAME** style.  
   
- ペンがある場合、**ペン**スタイルおよび色の論理テーブルで使用する色に一致しない色ディザー カラーでペンを描画します。 **きは**にディザー カラー ペンを作成するのには、ペンのスタイルを使用できません。 スタイル**ペン**と同じ**きは**ペンの幅が 1 以下である場合。  
+ If a pen has the **PS_INSIDEFRAME** style and a color that does not match a color in the logical color table, the pen is drawn with a dithered color. The **PS_SOLID** pen style cannot be used to create a pen with a dithered color. The style **PS_INSIDEFRAME** is identical to **PS_SOLID** if the pen width is less than or equal to 1.  
   
- 2 番目のバージョンの`CreatePen`を指定したスタイル、幅、およびブラシ属性を持つ論理表面的または幾何学的ペンを初期化します。 表面的でペンの幅は、常に 1 です。幾何学模様のペンの幅は常に、ワールド単位で指定します。 アプリケーションには、論理ペンが作成されたら、デバイス コンテキストのペン、選択を呼び出して、 [:selectobject](../../mfc/reference/cdc-class.md#selectobject)関数です。 デバイス コンテキストにペンを選択すると後、は、直線と曲線の描画に使用できます。  
+ The second version of `CreatePen` initializes a logical cosmetic or geometric pen that has the specified style, width, and brush attributes. The width of a cosmetic pen is always 1; the width of a geometric pen is always specified in world units. After an application creates a logical pen, it can select that pen into a device context by calling the [CDC::SelectObject](../../mfc/reference/cdc-class.md#selectobject) function. After a pen is selected into a device context, it can be used to draw lines and curves.  
   
--   場合`nPenStyle`は**PS_COSMETIC**と**PS_USERSTYLE**、内のエントリ、`lpStyle`スタイル単位で配列がダッシュと空白の長さを指定します。 スタイルの単位は、直線を描画するペンが使用されるデバイスによって定義されます。  
+-   If `nPenStyle` is **PS_COSMETIC** and **PS_USERSTYLE**, the entries in the `lpStyle` array specify lengths of dashes and spaces in style units. A style unit is defined by the device in which the pen is used to draw a line.  
   
--   場合`nPenStyle`は**PS_GEOMETRIC**と**PS_USERSTYLE**、内のエントリ、`lpStyle`配列が論理ユニットにダッシュと空白の長さを指定します。  
+-   If `nPenStyle` is **PS_GEOMETRIC** and **PS_USERSTYLE**, the entries in the `lpStyle` array specify lengths of dashes and spaces in logical units.  
   
--   場合`nPenStyle`は**PS_ALTERNATE**スタイル、単位は無視され、その他のすべてのピクセルを設定します。  
+-   If `nPenStyle` is **PS_ALTERNATE**, the style unit is ignored and every other pixel is set.  
   
- 呼び出して、アプリケーションが不要になった特定のペンに必要な場合、 [CGdiObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject)メンバー関数または破棄、`CPen`オブジェクトのリソースが使用できないようにします。 デバイス コンテキストで、ペンを選択すると、アプリケーションは、ペンを削除しないでください。  
+ When an application no longer requires a given pen, it should call the [CGdiObject::DeleteObject](../../mfc/reference/cgdiobject-class.md#deleteobject) member function or destroy the `CPen` object so the resource is no longer in use. An application should not delete a pen when the pen is selected in a device context.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView&#100;](../../mfc/codesnippet/cpp/cpen-class_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#100](../../mfc/codesnippet/cpp/cpen-class_2.cpp)]  
   
-##  <a name="createpenindirect"></a>CPen::CreatePenIndirect  
- スタイル、幅、および色が指す構造体では、ペンを初期化します`lpLogPen`します。  
+##  <a name="createpenindirect"></a>  CPen::CreatePenIndirect  
+ Initializes a pen that has the style, width, and color given in the structure pointed to by `lpLogPen`.  
   
 ```  
 BOOL CreatePenIndirect(LPLOGPEN lpLogPen);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpLogPen`  
- Windows が指す[LOGPEN](../../mfc/reference/logpen-structure.md)ペンについての情報を格納する構造体。  
+ Points to the Windows [LOGPEN](../../mfc/reference/logpen-structure.md) structure that contains information about the pen.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- ペンの幅の 1 ピクセルがあるいずれかのより大きい、**必ず**、**きは**、または**ペン**スタイル。  
+### <a name="remarks"></a>Remarks  
+ Pens that have a width greater than 1 pixel should always have either the **PS_NULL**, **PS_SOLID**, or **PS_INSIDEFRAME** style.  
   
- ペンがある場合、**ペン**スタイルおよび色の論理テーブルで使用する色に一致しない色ディザー カラーでペンを描画します。 **ペン**スタイルは**きは**ペンの幅が 1 以下である場合。  
+ If a pen has the **PS_INSIDEFRAME** style and a color that does not match a color in the logical color table, the pen is drawn with a dithered color. The **PS_INSIDEFRAME** style is identical to **PS_SOLID** if the pen width is less than or equal to 1.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&101;](../../mfc/codesnippet/cpp/cpen-class_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#101](../../mfc/codesnippet/cpp/cpen-class_3.cpp)]  
   
-##  <a name="fromhandle"></a>CPen::FromHandle  
- ポインターを返す、 `CPen` Windows GDI pen オブジェクトへのハンドルを指定したオブジェクト。  
+##  <a name="fromhandle"></a>  CPen::FromHandle  
+ Returns a pointer to a `CPen` object given a handle to a Windows GDI pen object.  
   
 ```  
 static CPen* PASCAL FromHandle(HPEN hPen);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *hPen*  
- `HPEN`Windows GDI ペンへのハンドルします。  
+ `HPEN` handle to Windows GDI pen.  
   
-### <a name="return-value"></a>戻り値  
- ポインター、`CPen`成功以外の場合は、オブジェクト**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ A pointer to a `CPen` object if successful; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- `CPen` オブジェクトがハンドルに関連付けられていない場合は、一時的な `CPen` オブジェクトが生成され、関連付けられます。 この一時`CPen`だけですべて一時的なグラフィックを時間があるオブジェクトは削除されるまで、次回、アプリケーションのアイドル時間のイベント ループで、オブジェクトが有効です。 つまり、一時オブジェクトは&1; つのウィンドウ メッセージを処理中に有効なだけなりました。  
+### <a name="remarks"></a>Remarks  
+ If a `CPen` object is not attached to the handle, a temporary `CPen` object is created and attached. This temporary `CPen` object is valid only until the next time the application has idle time in its event loop, at which time all temporary graphic objects are deleted. In other words, the temporary object is only valid during the processing of one window message.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&105;](../../mfc/codesnippet/cpp/cpen-class_4.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#105](../../mfc/codesnippet/cpp/cpen-class_4.cpp)]  
   
-##  <a name="getextlogpen"></a>CPen::GetExtLogPen  
- 取得、**保持**構造体の基になります。  
+##  <a name="getextlogpen"></a>  CPen::GetExtLogPen  
+ Gets an **EXTLOGPEN** underlying structure.  
   
 ```  
 int GetExtLogPen(EXTLOGPEN* pLogPen);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pLogPen`  
- 指す、[保持](http://msdn.microsoft.com/library/windows/desktop/dd162711)ペンについての情報を格納する構造体。  
+ Points to an [EXTLOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd162711) structure that contains information about the pen.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- **保持**構造体は、スタイル、幅、およびペンのブラシ属性を定義します。 たとえば、呼び出す`GetExtLogPen`ペンの特定のスタイルに一致します。  
+### <a name="remarks"></a>Remarks  
+ The **EXTLOGPEN** structure defines the style, width, and brush attributes of a pen. For example, call `GetExtLogPen` to match the particular style of a pen.  
   
- 次のトピックを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]ペン属性については。  
+ See the following topics in the Windows SDK for information about pen attributes:  
   
-- [Getobject メソッド](http://msdn.microsoft.com/library/windows/desktop/dd144904)  
+- [GetObject](http://msdn.microsoft.com/library/windows/desktop/dd144904)  
   
-- [保持](http://msdn.microsoft.com/library/windows/desktop/dd162711)  
+- [EXTLOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd162711)  
   
 - [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041)  
   
-- [構造体](http://msdn.microsoft.com/library/windows/desktop/dd162705)  
+- [ExtCreatePen](http://msdn.microsoft.com/library/windows/desktop/dd162705)  
   
-### <a name="example"></a>例  
- 呼び出しを次のコード例に示します`GetExtLogPen`ペンの属性を取得し、同じ色を持つ新しい表面的でペンを作成します。  
+### <a name="example"></a>Example  
+ The following code example demonstrates calling `GetExtLogPen` to retrieve a pen's attributes, and then create a new, cosmetic pen with the same color.  
   
- [!code-cpp[NVC_MFCDocView #&102;](../../mfc/codesnippet/cpp/cpen-class_5.cpp)]  
+ [!code-cpp[NVC_MFCDocView#102](../../mfc/codesnippet/cpp/cpen-class_5.cpp)]  
   
-##  <a name="getlogpen"></a>CPen::GetLogPen  
- 取得、`LOGPEN`構造体の基になります。  
+##  <a name="getlogpen"></a>  CPen::GetLogPen  
+ Gets a `LOGPEN` underlying structure.  
   
 ```  
 int GetLogPen(LOGPEN* pLogPen);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pLogPen`  
- 指す、 [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041)ペンについての情報を格納する構造体。  
+ Points to a [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041) structure to contain information about the pen.  
   
-### <a name="return-value"></a>戻り値  
- 正常終了した場合は 0 以外を返します。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- `LOGPEN`構造体は、スタイル、色、およびペンのパターンを定義します。  
+### <a name="remarks"></a>Remarks  
+ The `LOGPEN` structure defines the style, color, and pattern of a pen.  
   
- たとえば、呼び出す`GetLogPen`ペンの特定のスタイルに一致します。  
+ For example, call `GetLogPen` to match the particular style of pen.  
   
- 次のトピックを参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]ペン属性については。  
+ See the following topics in the Windows SDK for information about pen attributes:  
   
-- [Getobject メソッド](http://msdn.microsoft.com/library/windows/desktop/dd144904)  
+- [GetObject](http://msdn.microsoft.com/library/windows/desktop/dd144904)  
   
 - [LOGPEN](http://msdn.microsoft.com/library/windows/desktop/dd145041)  
   
-### <a name="example"></a>例  
- 呼び出しを次のコード例に示します`GetLogPen`ペンの文字を取得し、同じ色を持つ新しいソリッド ペンを作成します。  
+### <a name="example"></a>Example  
+ The following code example demonstrates calling `GetLogPen` to retrieve a pen character, and then create a new, solid pen with the same color.  
   
- [!code-cpp[NVC_MFCDocView #&103;](../../mfc/codesnippet/cpp/cpen-class_6.cpp)]  
+ [!code-cpp[NVC_MFCDocView#103](../../mfc/codesnippet/cpp/cpen-class_6.cpp)]  
   
-##  <a name="operator_hpen"></a>CPen::operator HPEN  
- 接続されている Windows GDI ハンドルを取得、`CPen`オブジェクトです。  
+##  <a name="operator_hpen"></a>  CPen::operator HPEN  
+ Gets the attached Windows GDI handle of the `CPen` object.  
   
 ```  
 operator HPEN() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- かどうかは成功すると、Windows GDI オブジェクトへのハンドルによって表される、`CPen`オブジェクト。 それ以外の場合**NULL**します。  
+### <a name="return-value"></a>Return Value  
+ If successful, a handle to the Windows GDI object represented by the `CPen` object; otherwise **NULL**.  
   
-### <a name="remarks"></a>コメント  
- この演算子はキャスト演算子の`HPEN`オブジェクトです。  
+### <a name="remarks"></a>Remarks  
+ This operator is a casting operator, which supports direct use of an `HPEN` object.  
   
- グラフィック オブジェクトの使い方の詳細については、記事を参照してください。[グラフィック オブジェクト](http://msdn.microsoft.com/library/windows/desktop/dd144962)で[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]します。  
+ For more information about using graphic objects, see the article [Graphic Objects](http://msdn.microsoft.com/library/windows/desktop/dd144962) in Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&104;](../../mfc/codesnippet/cpp/cpen-class_7.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#104](../../mfc/codesnippet/cpp/cpen-class_7.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CGdiObject クラス](../../mfc/reference/cgdiobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CBrush クラス](../../mfc/reference/cbrush-class.md)
+## <a name="see-also"></a>See Also  
+ [CGdiObject Class](../../mfc/reference/cgdiobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CBrush Class](../../mfc/reference/cbrush-class.md)
 

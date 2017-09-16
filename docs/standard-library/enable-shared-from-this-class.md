@@ -1,5 +1,5 @@
 ---
-title: "enable_shared_from_this クラス | Microsoft Docs"
+title: enable_shared_from_this Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- enable_shared_from_this
 - memory/std::enable_shared_from_this
 dev_langs:
 - C++
@@ -35,17 +34,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: bfe398bf4829d6ef86543890bea28a351bcb4a3d
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 79690ccec24d8efc2f4b3a61bb889fa8ed109483
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="enablesharedfromthis-class"></a>enable_shared_from_this クラス
-`shared_ptr` の生成を支援します。  
+# <a name="enablesharedfromthis-class"></a>enable_shared_from_this Class
+Helps generate a `shared_ptr`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```    
 class enable_shared_from_this {
 public:
@@ -59,34 +58,34 @@ protected:
     ~enable_shared_from_this();
 }; 
 ``` 
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `Ty`  
- 共有ポインターによって制御される型。  
+ The type controlled by the shared pointer.  
   
-## <a name="remarks"></a>コメント  
- `enable_shared_from_this` の派生オブジェクトは、メンバー関数の `shared_from_this` メソッドを使って、既存の `shared_ptr` 所有者と所有権を共有するインスタンスの [shared_ptr](../standard-library/shared-ptr-class.md) 所有者を作成できます。 それ以外の場合は、`this` を使って作成した新しい `shared_ptr` は、既存の `shared_ptr` 所有者とは区別され、無効な参照になるか、またはオブジェクトが複数回削除される可能性があります。  
+## <a name="remarks"></a>Remarks  
+ Objects derived from `enable_shared_from_this` can use the `shared_from_this` methods in member functions to create [shared_ptr](../standard-library/shared-ptr-class.md) owners of the instance that share ownership with existing `shared_ptr` owners. Otherwise, if you create a new `shared_ptr` by using `this`, it is distinct from existing `shared_ptr` owners, which can lead to invalid references or cause the object to be deleted more than once.  
   
- コンストラクター、デストラクター、および代入演算子は、偶発的な誤用を防ぐために保護されています。 テンプレート引数型 `Ty` は、派生クラスの型である必要があります。  
+ The constructors, destructor, and assignment operator are protected to help prevent accidental misuse. The template argument type `Ty` must be the type of the derived class.  
   
- 使用方法の例については、「[enable_shared_from_this::shared_from_this](#shared_from_this)」をご覧ください。  
+ For an example of usage, see [enable_shared_from_this::shared_from_this](#shared_from_this).  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<memory>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<memory>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="shared_from_this"></a>  enable_shared_from_this::shared_from_this  
- インスタンスの所有権を既存の `shared_ptr` 所有者と共有する `shared_ptr` を生成します。  
+ Generates a `shared_ptr` that shares ownership of the instance with existing `shared_ptr` owners.  
   
 ```  
 shared_ptr<T> shared_from_this();
 shared_ptr<const T> shared_from_this() const;
 ```  
   
-### <a name="remarks"></a>コメント  
- 基底クラス `enable_shared_from_this` からオブジェクトを派生すると、`shared_from_this` テンプレート メンバー関数は、このインスタンスの所有権を既存の `shared_ptr` 所有者と共有する [shared_ptr クラス](../standard-library/shared-ptr-class.md)のオブジェクトを返します。 それ以外の場合は、`this` から作成した新しい `shared_ptr` は、既存の `shared_ptr` 所有者とは区別され、無効な参照になるか、またはオブジェクトが複数回削除される可能性があります。 `shared_ptr` オブジェクトによってまだ所有されていないインスタンスで `shared_from_this` を呼び出した場合の動作は未定義です。  
+### <a name="remarks"></a>Remarks  
+ When you derive objects from the `enable_shared_from_this` base class, the `shared_from_this` template member functions return a [shared_ptr Class](../standard-library/shared-ptr-class.md) object that shares ownership of this instance with existing `shared_ptr` owners. Otherwise, if you create a new `shared_ptr` from `this`, it is distinct from existing `shared_ptr` owners, which can lead to invalid references or cause the object to be deleted more than once. The  behavior is undefined if you call `shared_from_this` on an instance that is not already owned by a `shared_ptr` object.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // std_memory_shared_from_this.cpp   
@@ -120,6 +119,6 @@ int main()
 sp2->val == 3  
 ```  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [enable_shared_from_this::shared_from_this](#shared_from_this)   
- [shared_ptr クラス](../standard-library/shared-ptr-class.md)
+ [shared_ptr Class](../standard-library/shared-ptr-class.md)

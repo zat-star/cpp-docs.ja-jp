@@ -1,5 +1,5 @@
 ---
-title: "is_nothrow_copy_assignable クラス | Microsoft Docs"
+title: is_nothrow_copy_assignable Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- is_nothrow_copy_assignable
 - type_traits/std::is_nothrow_copy_assignable
 dev_langs:
 - C++
@@ -34,38 +33,38 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 51fbd09793071631985720550007dddbe16f598f
-ms.openlocfilehash: 64502f44f46280317028fc2e7092e28cfc75f343
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 3515b7c881d55df77724c093d66f5870ec2e185f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="isnothrowcopyassignable-class"></a>is_nothrow_copy_assignable クラス
-スローしないことがコンパイラに判明しているコピー代入演算子が型にあるかどうかをテストします。  
+# <a name="isnothrowcopyassignable-class"></a>is_nothrow_copy_assignable Class
+Tests whether type has a copy assignment operator that is known to the compiler not to throw.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <class T>
 struct is_nothrow_copy_assignable;
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `T`  
- 照会する型。  
+ The type to query.  
   
-## <a name="remarks"></a>コメント  
- `is_nothrow_assignable<T&, const T&>` が true を保持する場合に、参照型 `T` に対して型述語のインスタンスは true を保持します。それ以外の場合は、false を保持します。  
+## <a name="remarks"></a>Remarks  
+ An instance of the type predicate holds true for a referenceable type `T` where `is_nothrow_assignable<T&, const T&>` holds true; otherwise it holds false.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<type_traits>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<type_traits>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [<type_traits>](../standard-library/type-traits.md)   
- [is_nothrow_assignable クラス](../standard-library/is-nothrow-assignable-class.md)   
+ [is_nothrow_assignable Class](../standard-library/is-nothrow-assignable-class.md)   
 
 
 

@@ -1,67 +1,85 @@
 ---
-title: "PAINTSTRUCT 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PAINTSTRUCT"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PAINTSTRUCT 構造体"
+title: PAINTSTRUCT Structure | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- PAINTSTRUCT
+dev_langs:
+- C++
+helpviewer_keywords:
+- PAINTSTRUCT structure [MFC]
 ms.assetid: 81ce4993-3e89-43b2-8c98-7946f1314d24
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# PAINTSTRUCT 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b27dcb247437b37631e306b171c4201142c33cae
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`PAINTSTRUCT` 構造体は、ウィンドウのクライアント領域を描画するために使用できる情報が含まれます。  
+---
+# <a name="paintstruct-structure"></a>PAINTSTRUCT Structure
+The `PAINTSTRUCT` structure contains information that can be used to paint the client area of a window.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
-  
-      typedef struct tagPAINTSTRUCT {  
-   HDC hdc;  
-   BOOL fErase;  
-   RECT rcPaint;  
-   BOOL fRestore;  
-   BOOL fIncUpdate;  
-   BYTE rgbReserved[16];  
+typedef struct tagPAINTSTRUCT {  
+    HDC hdc;  
+    BOOL fErase;  
+    RECT rcPaint;  
+    BOOL fRestore;  
+    BOOL fIncUpdate;  
+    BYTE rgbReserved[16];  
 } PAINTSTRUCT;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>Parameters  
  *hdc*  
- 描画に使用するコンテキストを指定します。  
+ Identifies the display context to be used for painting.  
   
  *fErase*  
- 背景が再描画される必要があるかどうかを指定します。  アプリケーションが背景を再描画すれば 0 ではありません。  アプリケーションは、Windows のウィンドウ クラスの背景ブラシなしで作成された背景を描画する必要があります \([!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]の [WNDCLASS](http://msdn.microsoft.com/library/windows/desktop/ms633576) 構造体の **hbrBackground** のメンバーの説明を参照してください。  
+ Specifies whether the background needs to be redrawn. It is not 0 if the application should redraw the background. The application is responsible for drawing the background if a Windows window-class is created without a background brush (see the description of the **hbrBackground** member of the [WNDCLASS](http://msdn.microsoft.com/library/windows/desktop/ms633576) structure in the Windows SDK).  
   
  *rcPaint*  
- 描画が要求される四角形の左上、右下隅を指定します。  
+ Specifies the upper left and lower right corners of the rectangle in which the painting is requested.  
   
  *fRestore*  
- 予約済みのメンバー。  これは Windows で内部的に使用されます。  
+ Reserved member. It is used internally by Windows.  
   
  *fIncUpdate*  
- 予約済みのメンバー。  これは Windows で内部的に使用されます。  
+ Reserved member. It is used internally by Windows.  
   
- *rgbReserved\[16\]*  
- 予約済みのメンバー。  Windows によって内部的に使用されるメモリの予約ブロック。  
+ *rgbReserved[16]*  
+ Reserved member. A reserved block of memory used internally by Windows.  
   
-## 必要条件  
- **ヘッダー:** winuser.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winuser.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CPaintDC::m\_ps](../Topic/CPaintDC::m_ps.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CPaintDC::m_ps](../../mfc/reference/cpaintdc-class.md#m_ps)
+
+

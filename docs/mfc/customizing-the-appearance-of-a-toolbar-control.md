@@ -1,66 +1,85 @@
 ---
-title: "ツール バー コントロールの外観のカスタマイズ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "TBSTYLE_"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolBar クラス, スタイル"
-  - "CToolBarCtrl クラス, オブジェクト スタイル"
-  - "フラット ツール バー"
-  - "TBSTYLE_ スタイル"
-  - "ツール バー コントロール [MFC], スタイル"
-  - "透過ツール バー"
+title: Customizing the Appearance of a Toolbar Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- TBSTYLE_
+dev_langs:
+- C++
+helpviewer_keywords:
+- flat toolbars
+- CToolBar class [MFC], styles
+- transparent toolbars
+- TBSTYLE_ styles [MFC]
+- CToolBarCtrl class [MFC], object styles
+- toolbar controls [MFC], style
 ms.assetid: fd0a73db-7ad1-4fe4-889b-02c3980f49e8
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ツール バー コントロールの外観のカスタマイズ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5f3f482e66b7c584f7f7ec176fdef5df895a3260
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`CToolBarCtrl` クラスは、ツール バー オブジェクトの外観 \(および場合によっては、動作\) によって影響を受ける多数のスタイルを提供します。  `CToolBarCtrl::Create` \(または `CToolBar::CreateEx`\) メンバー関数の `dwCtrlStyle` パラメーターの設定によって、ツール バー オブジェクトを変更します。最初にツール バー コントロールを作成する場合。  
+---
+# <a name="customizing-the-appearance-of-a-toolbar-control"></a>Customizing the Appearance of a Toolbar Control
+Class `CToolBarCtrl` provides many styles that affect the appearance (and, occasionally, the behavior) of the toolbar object. Modify the toolbar object by setting the `dwCtrlStyle` parameter of the `CToolBarCtrl::Create` (or `CToolBar::CreateEx`) member function, when you first create the toolbar control.  
   
- 次のスタイルは、ツール バー ボタンの「3D」、およびボタン テキストの配置に影響する:  
+ The following styles affect the "3D" aspect of the toolbar buttons and the placement of the button text:  
   
--   **TBSTYLE\_FLAT**はツール バーとボタンの両方が透明なフラット ツール バーを作成します。  ボタン テキストをボタンのビットマップの下に表示されます。  このスタイルを使用する場合、カーソルの下に、自動的に強調表示されます。  
+-   **TBSTYLE_FLAT** Creates a flat toolbar where both the toolbar and the buttons are transparent. Button text appears under button bitmaps. When this style is used, the button underneath the cursor is automatically highlighted.  
   
--   **TBSTYLE\_TRANSPARENT**は透明なツール バーを作成します。  透明なツール バーで、ツール バーは透過的ですが、ボタンは無効です。  ボタン テキストをボタンのビットマップの下に表示されます。  
+-   **TBSTYLE_TRANSPARENT** Creates a transparent toolbar. In a transparent toolbar, the toolbar is transparent but the buttons are not. Button text appears under button bitmaps.  
   
--   ボタンのビットマップの右側の**TBSTYLE\_LIST**の場所のボタン テキスト。  
+-   **TBSTYLE_LIST** Places button text to the right of button bitmaps.  
   
 > [!NOTE]
->  無効にするには、**TBSTYLE\_FLAT** 問題を再描画すればツール バー オブジェクトが表示される前に **TBSTYLE\_TRANSPARENT** のスタイルを設定する必要があります。  
+>  To prevent repaint problems, the **TBSTYLE_FLAT** and **TBSTYLE_TRANSPARENT** styles should be set before the toolbar object is visible.  
   
- 次のスタイルでは、ユーザーがツール バーをドラッグ アンド ドロップを使用してツール バー オブジェクト内の個々のボタンの位置を変更できるかどうかの確認:  
+ The following styles determine if the toolbar allows a user to reposition individual buttons within a toolbar object using drag and drop:  
   
--   **TBSTYLE\_ALTDRAG**は Alt キーを押しながら、ユーザーがドラッグすることによって、ツール バー ボタンの位置を変更することができます。  このスタイルが指定されていない場合、ユーザーはボタンをドラッグしながら Shift キーを保持する必要があります。  
+-   **TBSTYLE_ALTDRAG** Allows users to change a toolbar button's position by dragging it while holding down ALT. If this style is not specified, the user must hold down SHIFT while dragging a button.  
   
     > [!NOTE]
-    >  `CCS_ADJUSTABLE` のスタイルは、ツール バー ボタンがドラッグできるようにするように指定する必要があります。  
+    >  The `CCS_ADJUSTABLE` style must be specified to enable toolbar buttons to be dragged.  
   
--   **TBSTYLE\_REGISTERDROP**は、マウス ポインターがツール バー ボタンを渡すときドロップ ターゲット オブジェクトを要求するに **TBN\_GETOBJECT** 通知メッセージを生成します。  
+-   **TBSTYLE_REGISTERDROP** Generates **TBN_GETOBJECT** notification messages to request drop target objects when the mouse pointer passes over toolbar buttons.  
   
- 残りのスタイルは、ツール バー オブジェクトをとおしてビジュアル要素に影響する:  
+ The remaining styles affect visual and nonvisual aspects of the toolbar object:  
   
--   `TBSTYLE_WRAPABLE`はボタンの複数行を追加できるツール バーを作成します。  ツール バー ボタンは次の行にツール バーが同じ行に含まれるすべてのボタンには"縮小変換に「ラップ」を表示できます。  ラップすると、分離と nongroup の境界に一致します。  
+-   `TBSTYLE_WRAPABLE` Creates a toolbar that can have multiple lines of buttons. Toolbar buttons can "wrap" to the next line when the toolbar becomes too narrow to include all buttons on the same line. Wrapping occurs on separation and nongroup boundaries.  
   
--   **TBSTYLE\_CUSTOMERASE**は  `WM_ERASEBKGND` メッセージを処理するときに **NM\_CUSTOMDRAW** 通知メッセージを生成します。  
+-   **TBSTYLE_CUSTOMERASE** Generates **NM_CUSTOMDRAW** notification messages when it processes `WM_ERASEBKGND` messages.  
   
--   `TBSTYLE_TOOLTIPS`はツール バーのボタンの説明テキストを表示するには、アプリケーションが使用できるツール ヒント コントロールを作成します。  
+-   `TBSTYLE_TOOLTIPS` Creates a tool tip control that an application can use to display descriptive text for the buttons in the toolbar.  
   
- ツール バー スタイルと拡張スタイルの一覧については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [Toolbar Control and Button のスタイル](http://msdn.microsoft.com/library/windows/desktop/bb760439) と [ツールバーの拡張スタイル](http://msdn.microsoft.com/library/windows/desktop/bb760430) を参照してください。  
+ For a complete listing of toolbar styles and extended styles, see [Toolbar Control and Button Styles](http://msdn.microsoft.com/library/windows/desktop/bb760439) and [Toolbar Extended Styles](http://msdn.microsoft.com/library/windows/desktop/bb760430) in the Windows SDK.  
   
-## 参照  
- [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolBarCtrl](../mfc/using-ctoolbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

@@ -1,35 +1,51 @@
 ---
-title: "値型 (Modern C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: Value Types (Modern C++) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
 ms.assetid: f63bb62c-60da-40d5-ac14-4366608fe260
 caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 値型 (Modern C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 39a215bb62e4452a2324db5dec40c6754d59209b
+ms.openlocfilehash: 20f7ef06bd0bd505ab429ac112d9af0c9bc80b59
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/11/2017
 
-C\+\+ クラスは既定で値型です。  このトピックでは、使用に関連する値型、および問題の基本的な概要を示します。  
+---
+# <a name="value-types-modern-c"></a>Value Types (Modern C++)
+C++ classes are by default value types. This topic provides an introductory overview of value types and issues relating to their use.  
   
-## 値型と参照  
- さらに述べたように、C\+\+ クラスは既定で値型です。  これらはポリモーフィック動作はオブジェクト指向プログラミングをサポートできる参照型として指定できます。  値型は、メモリとレイアウト コントロールの観点から参照型はポリモーフィック目的のための基本クラスと仮想関数についての場合、表示されます。  コピー コンストラクターまたはコピー代入演算子を使用することを意味します既定で、値型はコピーです。  参照型の場合、クラスの非コピー \(コピー コンストラクターまたはコピー代入演算子を無効にしてください\) し、その目的のポリモーフィズムをサポートする仮想デストラクターを使用します。  値型は個別に変更できる 2 種類の個別の値を常に提供内容についてコピーするときは、です。  参照型は、識別子–について、どのようなオブジェクトにすることもできます。  したがって、「ポリモーフィック型」型」は、「と呼ばれます。  
+## <a name="value-vs-reference-types"></a>Value vs. reference types  
+ As previously stated, C++ classes are by default value types. They can be specified as reference types, which enable polymorphic behavior to support object-oriented programming. Value types are sometimes viewed from the perspective of memory and layout control, whereas reference types are about base classes and virtual functions for polymorphic purposes. By default, value types are copyable, which means there is always a copy constructor and a copy assignment operator. For reference types, you make the class non-copyable (disable the copy constructor and copy assignment operator) and use a virtual destructor, which supports their intended polymorphism. Value types are also about the contents, which, when they are copied, always give you two independent values that can be modified separately. Reference types are about identity - what kind of object is it? For this reason, "reference types" are also referred to as "polymorphic types".  
   
- 実際に参照に似た型 \(基本クラス\)、仮想関数が必要な場合は、明示的に次のコードを `MyRefType` クラスに示すように、コピーを無効にする必要があります。  
+ If you really want a reference-like type (base class, virtual functions), you need to explicitly disable copying, as shown in the `MyRefType` class in the following code.  
   
 ```cpp  
-  
 // cl /EHsc /nologo /W4  
   
 class MyRefType {  
@@ -48,20 +64,23 @@ int main()
 }  
 ```  
   
- 上記のコードをコンパイルすると、次のエラーが発生する:  
+ Compiling the above code will result in the following error:  
   
-  **test.cpp \(15\) : エラー: C2248 「MyRefType::operator \=」: クラス「MyRefType」で宣言されているプライベート メンバーにアクセスできません。**  
- **meow.cpp \(5\) : 参照してください「MyRefType::operator の宣言を \=」**  
- **meow.cpp \(3\) : 参照してください「MyRefType」の宣言を**   
-## 値型、および移動効率  
- コピーの割り当てのオーバーヘッドが新しいコピーの最適化が避けられた原因です。  たとえば、文字列のベクターの途中で文字列を挿入すると、ベクターの開発中に生じることだけがコピーを再配分を移動できません。  たとえば、他の操作に適用し、2 個の大きいオブジェクト非常に追加の操作を実行します。  どのようにこれらの操作が最適化を評価することが可能になります。  C\+\+ コンパイラでは、コンパイラはコンパイラによってコピー コンストラクターと同様に、暗黙的な、これを自動的に生成できるようになります。  ただし、Visual C\+\+ でクラス定義の宣言で割り当ておよびコンストラクターを移動すると、クラスは「選択」を付ける必要があります。  これにより、適切なメンバー関数宣言の二重アンパサンド \(&&\) rvalue 参照を使用し、移動コンストラクターと移動割り当てのメソッドを定義することによって実現されます。ソース オブジェクトから「したり内臓」を正しいコードを挿入する必要があります。  
+```Output  
+test.cpp(15) : error C2248: 'MyRefType::operator =' : cannot access private member declared in class 'MyRefType'  
+        meow.cpp(5) : see declaration of 'MyRefType::operator ='  
+        meow.cpp(3) : see declaration of 'MyRefType'  
   
- 有効な移動を必要とするかどうかを決定します。  既にわかっているディープ コピーより安い場合は、有効なコピーの構築、関連付けますが有効な移動が必要です。  ただし、確認して移動サポートが必要となるため、有効なコピーが必要なことを意味するとは限りません。  後者の場合は「移動のみ」と呼ばれます。  標準ライブラリの例は、既に `unique_ptr`です。  注釈として、古い `auto_ptr` は C\+\+ の前のバージョンの移動セマンティクス サポートがないため、`unique_ptr` と使用されなくなり、正確に置き換えられました。  
+```  
   
- 移動セマンティクスを使用して戻り値渡しまたは中央に挿入できます。  コピーの最適化に移動します。  代替手段としてヒープ割り当ての必要があります。  次の擬似コードを検討する:  
+## <a name="value-types-and-move-efficiency"></a>Value types and move efficiency  
+ Copy allocation overhead is avoided due to new copy optimizations. For example, when you insert a string in the middle of a vector of strings, there will be no copy re-allocation overhead, only a move- even if it results in a grow of the vector itself. This also applies to other operations, for instance performing an add operation on two very large objects. How do you enable these value operation optimizations? In some C++ compilers, the compiler will enable this for you implicitly, much like copy constructors can be automatically generated by the compiler. However, in Visual C++, your class will need to "opt-in" to move assignment and constructors by declaring it in your class definition. This is accomplished by using the double ampersand (&&) rvalue reference in the appropriate member function declarations and defining move constructor and move assignment methods.  You also need to insert the correct code to "steal the guts" out of the source object.  
+  
+ How do you decide if you need move enabled? If you already know you need copy construction enabled, you probably want move enabled if it can be cheaper than a deep copy. However, if you know you need move support, it doesn't necessarily mean you want copy enabled. This latter case would be called a "move-only type". An example already in the standard library is `unique_ptr`. As a side note, the old `auto_ptr` is deprecated, and was replaced by `unique_ptr` precisely due to the lack of move semantics support in the previous version of C++.  
+  
+ By using move semantics you can return-by-value or insert-in-middle. Move is an optimization of copy. There is need for heap allocation as a workaround. Consider the following pseudocode:  
   
 ```cpp  
-  
 #include <set>  
 #include <vector>  
 #include <string>  
@@ -88,11 +107,10 @@ HugeMatrix operator+(      HugeMatrix&&,       HugeMatrix&&);
 hm5 = hm1+hm2+hm3+hm4+hm5;   // efficient, no extra copies  
 ```  
   
-### 適切な値型の移動を有効にします。  
- 移動が詳細コピーよりビットという値に似たクラスについて効率の移動構築および移動割り当てを有効にします。  次の擬似コードを検討する:  
+### <a name="enabling-move-for-appropriate-value-types"></a>Enabling move for appropriate value types  
+ For a value-like class where move can be cheaper than a deep copy, enable move construction and move assignment for efficiency. Consider the following pseudocode:  
   
 ```cpp  
-  
 #include <memory>  
 #include <stdexcept>  
 using namespace std;  
@@ -113,15 +131,15 @@ public:
   
 ```  
   
- コピーの構築と割り当てを有効にする場合は、詳細コピーより安い移動構築\/割り当てを有効にします。  
+ If you enable copy construction/assignment, also enable move construction/assignment if it can be cheaper than a deep copy.  
   
- ある *値* 型以外はロールアップ リソースの所有権を複製を作成する場合にのみ、移動などです。  例 : `unique_ptr`。  
+ Some *non-value* types are move-only, such as when you can’t clone a resource, only transfer ownership. Example: `unique_ptr`.  
   
-## セクション  
+## <a name="section"></a>Section  
  Content  
   
-## 参照  
- [C\+\+ 型システム](../Topic/C++%20Type%20System%20\(Modern%20C++\).md)   
- [C\+\+ へようこそ](../Topic/Welcome%20Back%20to%20C++%20\(Modern%20C++\).md)   
- [C\+\+ 言語リファレンス](../cpp/cpp-language-reference.md)   
- [C\+\+ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)
+## <a name="see-also"></a>See Also  
+ [C++ Type System](../cpp/cpp-type-system-modern-cpp.md)   
+ [Welcome Back to C++](../cpp/welcome-back-to-cpp-modern-cpp.md)   
+ [C++ Language Reference](../cpp/cpp-language-reference.md)   
+ [C++ Standard Library](../standard-library/cpp-standard-library-reference.md)

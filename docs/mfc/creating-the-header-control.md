@@ -1,54 +1,73 @@
 ---
-title: "ヘッダー コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CHeaderCtrl クラス, 作成"
-  - "ヘッダー コントロール, 作成"
+title: Creating the Header Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CHeaderCtrl class [MFC], creating
+- header controls [MFC], creating
 ms.assetid: 7864d9d2-4a2c-4622-b58b-7b110a1e28d2
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ヘッダー コントロールの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 19990137630ff7074523f98399ca21b0accc00ee
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ヘッダー コントロールは、ヘッダー コントロールを含むリスト コントロールを追加するには、ダイアログ エディターでは使用できません。  
+---
+# <a name="creating-the-header-control"></a>Creating the Header Control
+The header control is not directly available in the dialog editor (although you can add a list control, which includes a header control).  
   
-### ヘッダー コントロールをダイアログ ボックスに配置するには  
+### <a name="to-put-a-header-control-in-a-dialog-box"></a>To put a header control in a dialog box  
   
-1.  手動でダイアログ クラスの型 [CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md) のメンバー変数を埋め込みます。  
+1.  Manually embed a member variable of type [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md) in your dialog class.  
   
-2.  [OnInitDialog](../Topic/CDialog::OnInitDialog.md)で作成、`CHeaderCtrl`のスタイルを設定し、それを配置して、表示します。  
+2.  In [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog), create and set the styles for the `CHeaderCtrl`, position it, and display it.  
   
-3.  ヘッダー コントロールに項目を追加します。  
+3.  Add items to the header control.  
   
-4.  これを処理する必要があるヘッダー コントロール通知メッセージのダイアログ クラスのハンドラー関数をマップするには、プロパティ ウィンドウを使用します。[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)を参照してください。  
+4.  Use the Properties window to map handler functions in the dialog class for any header-control notification messages you need to handle (see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md)).  
   
-### ビューではなく CListView\) にヘッダー コントロールを配置するには  
+### <a name="to-put-a-header-control-in-a-view-not-a-clistview"></a>To put a header control in a view (not a CListView)  
   
-1.  クラス ビューで [CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md) オブジェクトを埋め込みます。  
+1.  Embed a [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md) object in your view class.  
   
-2.  スタイル、位置は、ビューの [OnInitialUpdate](../Topic/CView::OnInitialUpdate.md) のメンバー関数のヘッダー コントロール ウィンドウを表示します。  
+2.  Style, position, and display the header control window in the view's [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate) member function.  
   
-3.  ヘッダー コントロールに項目を追加します。  
+3.  Add items to the header control.  
   
-4.  これを処理する必要があるヘッダー コントロール通知メッセージのビュー クラスのハンドラー関数をマップするには、プロパティ ウィンドウを使用します。[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)を参照してください。  
+4.  Use the Properties window to map handler functions in the view class for any header-control notification messages you need to handle (see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md)).  
   
- いずれの場合も、埋め込みコントロール オブジェクトはビューまたはダイアログ オブジェクトが作成されたときに作成されます。  その後、コントロール ウィンドウを作成するに [CHeaderCtrl::Create](../Topic/CHeaderCtrl::Create.md) を呼び出す必要があります。  コントロール、呼び出し [CHeaderCtrl::Layout](../Topic/CHeaderCtrl::Layout.md) をコントロールの目的の位置を設定する初期サイズを確認し、配置するように設定すると [SetWindowPos](../Topic/CWnd::SetWindowPos.md) を。  次 [ヘッダー コントロールに項目を追加します。](../mfc/adding-items-to-the-header-control.md)"に説明されているように項目を追加します。  
+ In either case, the embedded control object is created when the view or dialog object is created. Then you must call [CHeaderCtrl::Create](../mfc/reference/cheaderctrl-class.md#create) to create the control window. To position the control, call [CHeaderCtrl::Layout](../mfc/reference/cheaderctrl-class.md#layout) to determine the control's initial size and position and [SetWindowPos](../mfc/reference/cwnd-class.md#setwindowpos) to set the position you want. Then add items as described in [Adding Items to the Header Control](../mfc/adding-items-to-the-header-control.md).  
   
- 詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [ヘッダー コントロールの作成](http://msdn.microsoft.com/library/windows/desktop/bb775238) を参照します。  
+ For more information, see [Creating a Header Control](http://msdn.microsoft.com/library/windows/desktop/bb775238) in the Windows SDK.  
   
-## 参照  
- [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CHeaderCtrl](../mfc/using-cheaderctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

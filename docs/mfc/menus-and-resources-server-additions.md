@@ -1,80 +1,99 @@
 ---
-title: "メニューとリソース : サーバーの変更点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDP_OLE_INIT_FAILED"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセラレータ テーブル [C++], サーバー アプリケーション"
-  - "IDP_OLE_INIT_FAILED マクロ"
-  - "OLE の初期化の失敗"
-  - "OLE サーバー アプリケーション, メニューとリソース"
-  - "OLE ビジュアル編集サーバー"
-  - "リソース [MFC], サーバー アプリケーション"
-  - "サーバー アプリケーション, アクセラレータ テーブル"
-  - "サーバー アプリケーション, OLE のメニューとリソース"
-  - "サーバー, メニューの追加"
-  - "文字列編集, ビジュアル編集アプリケーション"
-  - "ストリング テーブル, ビジュアル編集アプリケーション"
-  - "ビジュアル編集, アプリケーションのメニューとリソース"
+title: 'Menus and Resources: Server Additions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IDP_OLE_INIT_FAILED
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE visual editing servers [MFC]
+- accelerator tables [MFC], server applications
+- visual editing [MFC], application menus and resources
+- server applications [MFC], accelerator table
+- string tables [MFC], visual editing applications
+- servers [MFC], menu additions
+- resources [MFC], server applications
+- OLE server applications [MFC], menus and resources
+- string editing [MFC], visual editing applications
+- IDP_OLE_INIT_FAILED macro [MFC]
+- server applications [MFC], OLE menus and resources
+- OLE initialization failure [MFC]
 ms.assetid: 56ce9e8d-8f41-4db8-8dee-e8b0702d057c
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# メニューとリソース : サーバーの変更点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dfbeb53251242f545f35908c051ab18192965124
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ビジュアル編集サーバー \(コンポーネント\) アプリケーションのメニューやそのほかのリソースに加える必要がある変更を示しています。  サーバー アプリケーションでは、メニュー構造などのリソースには、3 種類のモードの 1 つがで起動できるため、多くの追加が必要です: スタンドアロンの、埋め込まれた。  [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md) のトピックで説明されているように、最大 4 組のメニューがあります。  4 はすべて MDI フル サーバー アプリケーションで 3 つのみがミニサーバーで使用され、使用されます。  アプリケーション ウィザードでは、あるサーバーの種類に必要なレイアウト メニューを作成します。  カスタマイズに必要になることもあります。  
+---
+# <a name="menus-and-resources-server-additions"></a>Menus and Resources: Server Additions
+This article explains the changes that need to be made to the menus and other resources in a visual editing server (component) application. A server application requires many additions to the menu structure and other resources because it can be started in one of three modes: stand alone, embedded, or in place. As described in the [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md) article, there are a maximum of four sets of menus. All four are used for an MDI full-server application, while only three are used for a miniserver. The application wizard will create the menu layout necessary for the type of server you want. Some customization may be necessary.  
   
- アプリケーション ウィザードを使用しない場合は、これらの変更がどのように実装されるかを参照する、HIERSVR.RC の MFC サンプル アプリケーション [HIERSVR](../top/visual-cpp-samples.md)のリソース スクリプトを表示することもできます。  
+ If you do not use the application wizard, you may want to look at HIERSVR.RC, the resource script for the MFC sample application [HIERSVR](../visual-cpp-samples.md), to see how these changes are implemented.  
   
- この記事で説明されているトピックは次のとおりです。:  
+ Topics covered in this article include:  
   
--   [メニュー追加サーバー](#_core_server_menu_additions)  
+-   [Server Menu Additions](#_core_server_menu_additions)  
   
--   [アクセラレータ テーブルの追加](#_core_server_application_accelerator_table_additions)  
+-   [Accelerator Table Additions](#_core_server_application_accelerator_table_additions)  
   
--   [ストリング テーブルの追加](../mfc/menus-and-resources-container-additions.md)  
+-   [String Table Additions](../mfc/menus-and-resources-container-additions.md)  
   
--   [ミニサーバーの追加](#_core_mini.2d.server_additions)  
+-   [Miniserver Additions](#_core_mini.2d.server_additions)  
   
-##  <a name="_core_server_menu_additions"></a> メニュー追加サーバー  
- サーバー コンポーネント \(\) アプリケーションで OLE ビジュアル編集をサポートするために追加されたメニュー リソースが必要です。  アプリケーションが独立モードで実行するときに使用されるメニューはアプリケーションをビルドする前に、2 種類の新しいメニュー リソースを追加する:変更する必要はありません。完全に開いているサーバーをサポートするために、埋め込み先編集の有効化をサポートする 1 および 1。  メニュー リソースが両方とも全体とミニサーバー アプリケーションによって使用されます。  
+##  <a name="_core_server_menu_additions"></a> Server Menu Additions  
+ Server (component) applications must have menu resources added to support OLE visual editing. The menus used when the application is run in stand-alone mode do not have to be changed, but you must add two new menu resources before building the application: one to support in-place activation and one to support the server being fully open. Both menu resources are used by full- and miniserver applications.  
   
--   埋め込み先編集の有効化をサポートするには、メニュー リソースを作成する必要があります独立モードで実行するときに使用されるメニュー リソースによく似ています。  このメニューの違いがアプリケーションを処理するファイルとウィンドウ項目 \(および他のメニュー項目が、データ\) 発生していることが考えられます。  コンテナー アプリケーションはこれらのメニュー項目を指定します。  詳細について、の例は、このメニューのマージ方法、技術情報 [メニューとリソース: メニューのマージ](../mfc/menus-and-resources-menu-merging.md)を参照します。  
+-   To support in-place activation, you must create a menu resource that is very similar to the menu resource used when run in stand-alone mode. The difference in this menu is that the File and Window items (and any other menu items that deal with the application, and not the data) are missing. The container application will supply these menu items. For more information on, and an example of, this menu-merging technique, see the article [Menus and Resources: Menu Merging](../mfc/menus-and-resources-menu-merging.md).  
   
--   独立して動作します。このため、方式で完全に開かれたアクティベーションをサポートするには、が使用されるメニュー リソースとほぼ同じのメニュー リソースを作成します。  このメニュー リソースへの変更は、サーバーが複合ドキュメントに埋め込まれている項目で実行するという事実を反映している項目が反復処理されることです。  
+-   To support fully open activation, you must create a menu resource nearly identical to the menu resource used when run in stand-alone mode. The only modification to this menu resource is that some items are reworded to reflect the fact that the server is operating on an item embedded in a compound document.  
   
- 変更に加えてこの記事でリソース ファイル、Microsoft Foundation Class ライブラリの実装に必要な AFXOLESV.RC を含める必要があります。指定します。  このファイルは MFC\\Include のサブディレクトリにあります。  
+ In addition to the changes listed in this article, your resource file needs to include AFXOLESV.RC, which is required for the Microsoft Foundation Class Library implementation. This file is in the MFC\Include subdirectory.  
   
-##  <a name="_core_server_application_accelerator_table_additions"></a> サーバー アプリケーションのアクセラレータ テーブルの追加  
- 2 種類の新しいアクセラレータ テーブル リソースは、サーバー アプリケーションに追加する必要があります; これらは、前に説明した新しいメニュー リソースに直接対応しています。  最初のアクセラレータ テーブルがサーバー アプリケーションをアクティブ化するときに使用します。  これはファイルとウィンドウ メニューに関連付けられた以外ビューのアクセラレータ テーブルのエントリから構成されます。  
+##  <a name="_core_server_application_accelerator_table_additions"></a> Server Application Accelerator Table Additions  
+ Two new accelerator table resources must be added to server applications; they correspond directly to the new menu resources previously described. The first accelerator table is used when the server application is activated in place. It consists of all the entries in the view's accelerator table except those tied to the File and Window menus.  
   
- 2 番目のテーブルは、アクセラレータ テーブルでほぼ同じコピーです。  変更された [メニュー追加サーバー](#_core_server_menu_additions)で説明した完全に開いたメニューの相違点の並列変更。  
+ The second table is nearly an exact copy of the view's accelerator table. Any differences parallel changes made in the fully open menu mentioned in [Server Menu Additions](#_core_server_menu_additions).  
   
- これらのアクセラレータ テーブルの変更例については、MFC サンプルの OLE [HIERSVR](../top/visual-cpp-samples.md)に含まれる HIERSVR.RC ファイルの **IDR\_MAINFRAME** と **IDR\_HIERSVRTYPE\_SRVR\_IP** と **IDR\_HIERSVRTYPE\_SRVR\_EMB** のアクセラレータ テーブルを比較します。  ファイルとウィンドウのアクセラレータは埋め込み先編集用のテーブルされない、それらの正確なコピーが埋め込まれたなテーブルにあります。  
+ For an example of these accelerator table changes, compare the **IDR_HIERSVRTYPE_SRVR_IP** and **IDR_HIERSVRTYPE_SRVR_EMB** accelerator tables with **IDR_MAINFRAME** in the HIERSVR.RC file included in the MFC OLE sample [HIERSVR](../visual-cpp-samples.md). The File and Window accelerators are missing from the in-place table and exact copies of them are in the embedded table.  
   
-##  <a name="_core_string_table_additions_for_server_applications"></a> サーバー アプリケーションのストリング テーブルの追加  
- 1 個のストリング テーブルを追加することだけサーバー アプリケーション— OLE 初期化に失敗したことを示す文字列が必要です。  たとえば、アプリケーション ウィザードで生成されたストリング テーブルのエントリを次に示します。:  
+##  <a name="_core_string_table_additions_for_server_applications"></a> String Table Additions for Server Applications  
+ Only one string table addition is necessary in a server application — a string to signify that the OLE initialization failed. As an example, here is the string-table entry that the application wizard generates:  
   
 |ID|String|  
 |--------|------------|  
-|**IDP\_OLE\_INIT\_FAILED**|OLE の初期化に失敗しました。  OLE ライブラリのバージョンが正しいことを確認してください。|  
+|**IDP_OLE_INIT_FAILED**|OLE initialization failed. Make sure that the OLE libraries are the correct version.|  
   
-##  <a name="_core_mini.2d.server_additions"></a> ミニサーバーの追加  
- 同じ追加は、サーバーに上記のものとしてミニサーバーに適用されます。  ミニサーバーは独立モードで実行できないため、メイン メニューはとても小さいです。  アプリケーション ウィザードで作成されるメイン メニュー項目に終了だけを含むファイル メニューだけになります。  ミニサーバーの埋め込まれた、埋め込み先編集用メニュー アクセラレータは同じサーバー全体のものです。  
+##  <a name="_core_mini.2d.server_additions"></a> Miniserver Additions  
+ The same additions apply for miniservers as those listed above for full-servers. Because a miniserver cannot be run in stand-alone mode, its main menu is much smaller. The main menu created by the application wizard has only a File menu, containing only the items Exit and About. Embedded and in-place menus and accelerators for miniservers are the same as those for full-servers.  
   
-## 参照  
- [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md)   
- [メニューとリソース : メニューの結合](../mfc/menus-and-resources-menu-merging.md)
+## <a name="see-also"></a>See Also  
+ [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md)   
+ [Menus and Resources: Menu Merging](../mfc/menus-and-resources-menu-merging.md)
+
+

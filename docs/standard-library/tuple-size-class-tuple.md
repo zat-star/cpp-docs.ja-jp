@@ -1,5 +1,5 @@
 ---
-title: "tuple_size クラス | Microsoft Docs"
+title: tuple_size Class; | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,13 +9,11 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- tuple_size
-- std::tuple_size
-- utility/std::tuple_size
+- tuple_size", "std::tuple_size", "utility/std::tuple_size
 dev_langs:
 - C++
 helpviewer_keywords:
-- tuple_size Class
+- ', '
 ms.assetid: 73852fc5-eb68-41f1-8379-465cedc2314a
 caps.latest.revision: 23
 author: corob-msft
@@ -35,17 +33,17 @@ translation.priority.mt:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 41b445ceeeb1f37ee9873cb55f62d30d480d8718
-ms.openlocfilehash: f0ae102852f1db46b68d86438e20ce9645535d19
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 15bc0b29c4775438ee93b899c061aa539f5c1546
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="tuplesize-class"></a>tuple_size クラス
-`tuple` を含む要素の数を報告します。  
+# <a name="tuplesize-class"></a>tuple_size Class;
+Reports the number of elements that a `tuple` contains.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 // TEMPLATE STRUCT tuple_size  
@@ -80,34 +78,34 @@ template <class Tuple>
    struct tuple_size<const volatile Tuple>;   
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
 *Tuple*  
-組の型。 
+The type of the tuple. 
   
 *Elem*  
-配列要素の型。 
+The type of the array elements. 
   
 *Size*  
-配列のサイズ。 
+The size of the array. 
   
 *T1*  
-ペアの最初のメンバーの型。 
+The type of the first member of the pair. 
   
 *T2*  
-ペアの&2; 番目のメンバーの型。 
+The type of the second member of the pair. 
   
-*型*  
-タプル要素の型。 
+*Types*  
+The types of the tuple elements. 
   
   
-## <a name="remarks"></a>コメント  
-テンプレート クラスは、組型 `value` の範囲を値として持つ整数定数式であるメンバー `Tuple`を持ちます。  
+## <a name="remarks"></a>Remarks  
+The template class has a member `value` that is an integral constant expression whose value is the extent of the tuple type `Tuple`.  
   
-配列のテンプレート特殊化には、配列のサイズである `Size` を値として持つ整数定数式であるメンバー `value` が含まれます。  
+The template specialization for arrays has a member `value` that is an integral constant expression whose value is `Size`, which is the size of the array.  
   
-ペアのテンプレート特殊化には、2 を値として持つ整数定数式であるメンバー `value` が含まれます。  
+The template specialization for pair has a member `value` that is an integral constant expression whose value is 2.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 #include <tuple>   
@@ -135,15 +133,15 @@ int main()
  0 1.5 2 3.7  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<tuple>  
- **ヘッダー:** \<array> (配列の特殊化用)  
- **ヘッダー:** \<utility> (ペアの特殊化用)  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<tuple>  
+ **Header:** \<array> (for array specialization)  
+ **Header:** \<utility> (for pair specialization)  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<tuple>](../standard-library/tuple.md)   
- [タプル](../standard-library/tuple-class.md)  
- [tuple_element クラス](../standard-library/tuple-element-class-tuple.md)
+ [tuple](../standard-library/tuple-class.md)  
+ [tuple_element Class](../standard-library/tuple-element-class-tuple.md)
 

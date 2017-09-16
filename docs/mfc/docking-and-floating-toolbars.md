@@ -1,121 +1,140 @@
 ---
-title: "ドッキング ツール バーとフローティング ツール バー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CBRS_SIZE_DYNAMIC"
-  - "CBRS_SIZE_FIXED"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CBRS_ALIGN_ANY 定数"
-  - "CBRS_SIZE_DYNAMIC 定数"
-  - "CBRS_SIZE_FIXED 定数"
-  - "固定サイズのツール バー"
-  - "フローティング パレット"
-  - "フローティング ツール バー"
-  - "フレーム ウィンドウ, ツール バーのドッキング"
-  - "パレット, フローティング"
-  - "サイズ"
-  - "サイズ, ツール バー"
-  - "ツール バー コントロール [MFC], ラップ"
-  - "ツール バー [C++], ドッキング"
-  - "ツール バー [C++], フローティング"
-  - "ツール バー [C++], サイズ"
-  - "ツール バー [C++], ラップ"
+title: Docking and Floating Toolbars | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CBRS_SIZE_DYNAMIC
+- CBRS_SIZE_FIXED
+dev_langs:
+- C++
+helpviewer_keywords:
+- size [MFC], toolbars
+- size
+- frame windows [MFC], toolbar docking
+- CBRS_ALIGN_ANY constant [MFC]
+- palettes, floating
+- toolbars [MFC], docking
+- CBRS_SIZE_DYNAMIC constant [MFC]
+- floating toolbars
+- toolbars [MFC], size
+- toolbars [MFC], floating
+- fixed-size toolbars
+- CBRS_SIZE_FIXED constant [MFC]
+- toolbar controls [MFC], wrapping
+- toolbars [MFC], wrapping
+- floating palettes
 ms.assetid: b7f9f9d4-f629-47d2-a3c4-2b33fa6b51e4
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ドッキング ツール バーとフローティング ツール バー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a22dbdc0aec475896833460411275c7bae8c3b85
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Microsoft Foundation Class ライブラリにはドッキング可能ツール バーをサポートします。  ドッキング可能ツール バーは添付にすることも、親ウィンドウの各辺にドッキングされて、独自のミニフレーム ウィンドウの辺またはデタッチします。  ここでは、アプリケーションでドッキング可能ツール バーを使用する方法について説明します。  
+---
+# <a name="docking-and-floating-toolbars"></a>Docking and Floating Toolbars
+The Microsoft Foundation Class Library supports dockable toolbars. A dockable toolbar can be attached, or docked, to any side of its parent window, or it can be detached, or floated, in its own mini-frame window. This article explains how to use dockable toolbars in your applications.  
   
- アプリケーションのスケルトンを生成するときにアプリケーション ウィザードを使用してドッキング可能ツール バーが必要かを選択するように指示されます。  既定では、アプリケーション ウィザードはアプリケーションにドッキング可能ツール バーを配置するための 3 種類の操作を実行するコードを生成する:  
+ If you use the Application Wizard to generate the skeleton of your application, you are asked to choose whether you want dockable toolbars. By default, the Application Wizard generates the code that performs the three actions necessary to place a dockable toolbar in your application:  
   
--   [フレーム ウィンドウのドッキング](#_core_enabling_docking_in_a_frame_window)。  
+-   [Enable docking in a frame window](#_core_enabling_docking_in_a_frame_window).  
   
--   [ツール バーのドッキングを有効にする](#_core_enabling_docking_for_a_toolbar)。  
+-   [Enable docking for a toolbar](#_core_enabling_docking_for_a_toolbar).  
   
--   [ツール バーをドッキングしてください \(フレーム ウィンドウに\)](#_core_docking_the_toolbar)。  
+-   [Dock the toolbar (to the frame window)](#_core_docking_the_toolbar).  
   
- これらの手順のいずれかが存在しない場合、アプリケーションは標準ツール バーが表示されます。  最後の 2 つの手順は、アプリケーションの各ドッキング可能ツール バーごとに必要です。  
+ If any of these steps are missing, your application will display a standard toolbar. The last two steps must be performed for each dockable toolbar in your application.  
   
- この記事で説明されている他のトピックは次のとおりです。:  
+ Other topics covered in this article include:  
   
--   [フローティング ツール バー](#_core_floating_the_toolbar)  
+-   [Floating the toolbar](#_core_floating_the_toolbar)  
   
--   [動的にツール バーのサイズを変更できます。](#_core_dynamically_resizing_the_toolbar)  
+-   [Dynamically resizing the toolbar](#_core_dynamically_resizing_the_toolbar)  
   
--   [固定スタイルのツール バーの折り返しの位置の設定](#_core_setting_wrap_positions_for_a_fixed.2d.style_toolbar)  
+-   [Setting wrap positions for a fixed-style toolbar](#_core_setting_wrap_positions_for_a_fixed_style_toolbar)  
   
- MFC に例の一般的な [DOCKTOOL](../top/visual-cpp-samples.md) サンプルを参照してください。  
+ See the MFC General sample [DOCKTOOL](../visual-cpp-samples.md) for examples.  
   
-##  <a name="_core_enabling_docking_in_a_frame_window"></a> フレーム ウィンドウのドッキングを有効にします。  
- ツール バーをフレーム ウィンドウにドッキングするには、フレーム ウィンドウ \(または対象\) ドッキングすることのできるようにする必要があります。  次に示す一連のスタイル ビットのドッキング先のフレーム ウィンドウの辺を受け入れるとともにある `DWORD` 1 個のパラメーターを受け取る [CFrameWnd::EnableDocking](../Topic/CFrameWnd::EnableDocking.md) 関数を使用します。  にドッキングできるツール バーがドッキングされるとしており、複数の側がある場合 `EnableDocking` に渡されるパラメーターで指定されている側は次の順序で使用されています: Top、Left、Right です。  任意のコントロール バーをドッキングできるようにするには `EnableDocking`に `CBRS_ALIGN_ANY` を渡します。  
+##  <a name="_core_enabling_docking_in_a_frame_window"></a> Enabling Docking in a Frame Window  
+ To dock toolbars to a frame window, the frame window (or destination) must be enabled to allow docking. This is done using the [CFrameWnd::EnableDocking](../mfc/reference/cframewnd-class.md#enabledocking) function, which takes one `DWORD` parameter that is a set of style bits indicating which side of the frame window accepts docking. If a toolbar is about to be docked and there are multiple sides that it could be docked to, the sides indicated in the parameter passed to `EnableDocking` are used in the following order: top, bottom, left, right. If you want to be able to dock control bars anywhere, pass `CBRS_ALIGN_ANY` to `EnableDocking`.  
   
-##  <a name="_core_enabling_docking_for_a_toolbar"></a> ツール バーのドッキングを有効にします。  
- ドッキングの出力先の準備が整ったら、ツール バー \(ソース\) を同じように準備する必要があります。  ドッキングし、各ツール バーの呼び出し [CControlBar::EnableDocking](../Topic/CControlBar::EnableDocking.md) ツール バーがドッキングする必要のある先の辺を指定します。  `CControlBar::EnableDocking` の一致がフレーム ウィンドウのドッキングの呼び出しで指定した辺が有効になっている側のドッキング ツール バー、—置きます。  いったんフローティング状態になると、そのツール バーはフローティング ツール バーのままとなり、フレーム ウィンドウにはドッキングできません。  
+##  <a name="_core_enabling_docking_for_a_toolbar"></a> Enabling Docking for a Toolbar  
+ After you have prepared the destination for docking, you must prepare the toolbar (or source) in a similar fashion. Call [CControlBar::EnableDocking](../mfc/reference/ccontrolbar-class.md#enabledocking) for each toolbar you want to dock, specifying the destination sides to which the toolbar should dock. If none of the sides specified in the call to `CControlBar::EnableDocking` match the sides enabled for docking in the frame window, the toolbar cannot dock — it will float. Once it has been floated, it remains a floating toolbar, unable to dock to the frame window.  
   
- 表示する効果が完全にフローティング ツール バー、呼び出す 0 のパラメーターの `EnableDocking` である場合。  [CFrameWnd::FloatControlBar](../Topic/CFrameWnd::FloatControlBar.md)を呼び出す。  ツール バーは、任意の場所にドッキングすると、完全にフローティングに残ります。  
+ If the effect you want is a permanently floating toolbar, call `EnableDocking` with a parameter of 0. Then call [CFrameWnd::FloatControlBar](../mfc/reference/cframewnd-class.md#floatcontrolbar). The toolbar remains floating, permanently unable to dock anywhere.  
   
-##  <a name="_core_docking_the_toolbar"></a> ツールバーのドッキング  
- フレームワークは、ユーザーがその割り当てのフレーム ウィンドウの辺にドッキング バーを削除しようとしたとき [CFrameWnd::DockControlBar](../Topic/CFrameWnd::DockControlBar.md) を呼び出します。  
+##  <a name="_core_docking_the_toolbar"></a> Docking the Toolbar  
+ The framework calls [CFrameWnd::DockControlBar](../mfc/reference/cframewnd-class.md#dockcontrolbar) when the user attempts to drop the toolbar on a side of the frame window that allows docking.  
   
- また、コントロール バーをフレーム ウィンドウにドッキングする場合は、この関数をいつでも呼び出すことができます。  これは、初期化中に、されます。  複数のツール バーがフレーム ウィンドウの指定した辺にドッキングすることもできます。  
+ In addition, you can call this function at any time to dock control bars to the frame window. This is normally done during initialization. More than one toolbar can be docked to a particular side of the frame window.  
   
-##  <a name="_core_floating_the_toolbar"></a> フローティング ツール バー  
- ドッキング可能ツール バーをフレーム ウィンドウからデタッチ ツール バーをフローティングと呼ばれます。  これを行う [CFrameWnd::FloatControlBar](../Topic/CFrameWnd::FloatControlBar.md) 呼び出し。  フローティングにツール バーを配置する必要があるとフローティング ツール バーを水平または垂直のどちらであるかを判断配置スタイルをポイントを指定してください。  
+##  <a name="_core_floating_the_toolbar"></a> Floating the Toolbar  
+ Detaching a dockable toolbar from the frame window is called floating the toolbar. Call [CFrameWnd::FloatControlBar](../mfc/reference/cframewnd-class.md#floatcontrolbar) to do this. Specify the toolbar to be floated, the point where it should be placed, and an alignment style that determines whether the floating toolbar is horizontal or vertical.  
   
- フレームワークは、ユーザーがドッキングが有効になっていない場所にドッキングされた場所とドロップからツール バーを描画するときにこの関数を呼び出します。  これは、フレーム ウィンドウ内にまたは外のどこでもかまいません。  `DockControlBar`と同様に、初期化中にこの関数を呼び出すことができます。  
+ The framework calls this function when a user drags a toolbar off its docked location and drops it in a location where docking is not enabled. This can be anywhere inside or outside the frame window. As with `DockControlBar`, you can also call this function during initialization.  
   
- ドッキング可能ツール バーの MFC 実装はドッキング可能ツール バーをサポートするアプリケーションにある拡張機能の一部を提供しません。  カスタマイズ可能なツール バーなどの機能は提供されません。  
+ The MFC implementation of dockable toolbars does not provide some of the extended features found in some applications that support dockable toolbars. Features such as customizable toolbars are not provided.  
   
-##  <a name="_core_dynamically_resizing_the_toolbar"></a> 動的にツール バーのサイズを変更できます。  
- Visual C\+\+ 4.0 以降では、アプリケーションのユーザーがフローティング ツール バーのサイズを動的に変更できるようにすることができます。  通常、ツール バーに水平に表示されている長い、線形図形があります。  ただし、ツール バーの方向と形状を変更できます。  たとえば、ユーザーがフレーム ウィンドウの垂直方向の端に 1 に対してツール バーをドッキングすると、図形は縦のレイアウトに変更します。  ボタンを複数の行に四角形にツール バーを作成することもできます。  
+##  <a name="_core_dynamically_resizing_the_toolbar"></a> Dynamically Resizing the Toolbar  
+ As of Visual C++ version 4.0, you can make it possible for users of your application to resize floating toolbars dynamically. Typically, a toolbar has a long, linear shape, displayed horizontally. But you can change the toolbar's orientation and its shape. For example, when the user docks a toolbar against one of the vertical sides of the frame window, the shape changes to a vertical layout. It's also possible to reshape the toolbar into a rectangle with multiple rows of buttons.  
   
- 次の操作を行うことができます。  
+ You can:  
   
--   ツール バーの特性として動的なサイズ変更を指定します。  
+-   Specify dynamic sizing as a toolbar characteristic.  
   
--   ツール バーの特性として固定サイズを指定します。  
+-   Specify fixed sizing as a toolbar characteristic.  
   
- この機能をサポートするには、[CToolBar::Create](../Topic/CToolBar::Create.md) のメンバー関数呼び出しの 2 種類の新しいツール バー スタイルです。  それらは次のとおりです。  
+ To provide this support, there are two new toolbar styles for use in your calls to the [CToolBar::Create](../mfc/reference/ctoolbar-class.md#create) member function. They are:  
   
--   **CBRS\_SIZE\_DYNAMIC** コントロール バーは動的です。  
+-   **CBRS_SIZE_DYNAMIC** Control bar is dynamic.  
   
--   **CBRS\_SIZE\_FIXED** コントロール バーが修正されます。  
+-   **CBRS_SIZE_FIXED** Control bar is fixed.  
   
- サイズの動的なスタイルは重ねると、がない場合、ドッキングされるユーザーがツール バーのサイズを変更できるようにします。  ツール バーは、「ユーザーのドラッグとして変換に必要末尾位置にラップします」。  
+ The size dynamic style lets your user resize the toolbar while it is floating, but not while it is docked. The toolbar "wraps" where needed to change shape as the user drags its edges.  
   
- サイズの固定のスタイルは、各列のボタンの位置を修正するツール バーの折り返しの状態を維持します。  アプリケーションのユーザーは、ツール バーの形状を変更できません。  ボタンの間に区切り記号の位置などの指定された位置のツール バーにラップします。  また、ツール バーがドッキングされるフローティングかどうかこの図形を保持します。  効果はボタンを複数の列を使用して固定パレットです。  
+ The size fixed style preserves the wrap states of a toolbar, fixing the position of the buttons in each column. Your application's user can't change the shape of the toolbar. The toolbar wraps at designated places, such as the locations of separators between the buttons. It maintains this shape whether the toolbar is docked or floating. The effect is a fixed palette with multiple columns of buttons.  
   
- ツール バーのボタンの状態およびスタイルを返すために [CToolBar::GetButtonStyle](../Topic/CToolBar::GetButtonStyle.md) を使用できます。  ボタンのスタイルがボタンの表示、およびユーザー入力に応答するかを; 状態は、ボタンがラップされた状態かどうかを示します。  
+ You can also use [CToolBar::GetButtonStyle](../mfc/reference/ctoolbar-class.md#getbuttonstyle) to return a state and style for buttons on your toolbars. A button's style determines how the button appears and how it responds to user input; the state tells whether the button is in a wrapped state.  
   
-##  <a name="_core_setting_wrap_positions_for_a_fixed.2d.style_toolbar"></a> 固定スタイルのツール バーの折り返しの位置の設定  
- 固定サイズのスタイルのツール バーでは、選択されたツール バー ボタンのインデックスをラップするツール バー。  次のコードは、メイン フレーム ウィンドウの `OnCreate` のオーバーライドでこれを行う方法を説明します:  
+##  <a name="_core_setting_wrap_positions_for_a_fixed_style_toolbar"></a> Setting Wrap Positions for a Fixed-Style Toolbar  
+ For a toolbar with the size fixed style, designate toolbar button indexes at which the toolbar will wrap. The following code shows how to do this in your main frame window's `OnCreate` override:  
   
- [!code-cpp[NVC_MFCDocViewSDI#10](../mfc/codesnippet/CPP/docking-and-floating-toolbars_1.cpp)]  
+ [!code-cpp[NVC_MFCDocViewSDI#10](../mfc/codesnippet/cpp/docking-and-floating-toolbars_1.cpp)]  
   
- MFC の一般的なサンプル [DOCKTOOL](../top/visual-cpp-samples.md) 表示クラス [CControlBar](../mfc/reference/ccontrolbar-class.md) と [CToolBar](../mfc/reference/ctoolbar-class.md) メンバー関数をツール バーの動的レイアウトを管理する方法を示します。  DOCKTOOL のファイル EDITBAR.CPP を参照してください。  
+ The MFC General sample [DOCKTOOL](../visual-cpp-samples.md) shows how to use member functions of classes [CControlBar](../mfc/reference/ccontrolbar-class.md) and [CToolBar](../mfc/reference/ctoolbar-class.md) to manage dynamic layout of a toolbar. See the file EDITBAR.CPP in DOCKTOOL.  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>What do you want to know more about  
   
--   [ツール バーに関する基本事項](../mfc/toolbar-fundamentals.md)  
+-   [Toolbar fundamentals](../mfc/toolbar-fundamentals.md)  
   
--   [ツール バーのツール ヒント](../Topic/Toolbar%20Tool%20Tips.md)  
+-   [Toolbar tool tips](../mfc/toolbar-tool-tips.md)  
   
--   [古いツール バーを使用する](../Topic/Using%20Your%20Old%20Toolbars.md)  
+-   [Using your old toolbars](../mfc/using-your-old-toolbars.md)  
   
-## 参照  
- [MFC ツール バーの実装](../mfc/mfc-toolbar-implementation.md)
+## <a name="see-also"></a>See Also  
+ [MFC Toolbar Implementation](../mfc/mfc-toolbar-implementation.md)
+
+

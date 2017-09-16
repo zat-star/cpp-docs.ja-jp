@@ -1,41 +1,60 @@
 ---
-title: "ツリー コントロール項目の状態の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CTreeCtrl クラス, 項目の状態"
-  - "状態, CTreeCtrl 項目"
-  - "ツリー コントロール, 項目の状態の概要"
+title: Tree Control Item States Overview | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- states, CTreeCtrl items
+- tree controls [MFC], item states overview
+- CTreeCtrl class [MFC], item states
 ms.assetid: 2db11ae0-0d87-499d-8c1f-5e0dbe9e94c8
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# ツリー コントロール項目の状態の概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 88fdf5d34ba35aa0f3e33cab12313c4fa87d5e25
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ツリー コントロール \([CTreeCtrl](../mfc/reference/ctreectrl-class.md)\) の各項目が現在の状態になります。  たとえば、項目が展開されて無効にされてなど、選択できます。  ほとんどの場合、ツリー コントロールは、自動的に項目の選択などのユーザー アクションを反映するように、項目の状態を設定します。  ただし、[SetItemState](../Topic/CTreeCtrl::SetItemState.md) メンバー関数を使用して、項目の状態を設定し、[GetItemState](../Topic/CTreeCtrl::GetItemState.md) メンバー関数を使用して項目の現在の状態を取得できます。  項目の条件の一覧については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [ツリービュー コントロールの定数](http://msdn.microsoft.com/library/windows/desktop/bb759985) を参照してください。  
+---
+# <a name="tree-control-item-states-overview"></a>Tree Control Item States Overview
+Each item in a tree control ([CTreeCtrl](../mfc/reference/ctreectrl-class.md)) has a current state. For example, an item can be selected, disabled, expanded, and so on. For the most part, the tree control automatically sets an item's state to reflect user actions, such as selection of an item. However, you can also set an item's state by using the [SetItemState](../mfc/reference/ctreectrl-class.md#setitemstate) member function and retrieve the current state of an item by using the [GetItemState](../mfc/reference/ctreectrl-class.md#getitemstate) member function. For a complete list of item states, see [Tree-View Control Constants](http://msdn.microsoft.com/library/windows/desktop/bb759985) in the Windows SDK.  
   
- 項目の現在の状態が `nState` パラメーターによって指定されます。  ツリー項目コントロールは、項目を選択したり、フォーカスを設定するなどのユーザー アクションを反映するように、項目の状態を変更する場合があります。  また、アプリケーションは無効にするか、項目を非表示または状態イメージとオーバーレイ イメージを指定するために、項目の状態を変更する場合があります。  
+ An item's current state is specified by the `nState` parameter. A tree control might change an item's state to reflect a user action, such as selecting the item or setting the focus to the item. In addition, an application might change an item's state to disable or hide the item or to specify an overlay image or state image.  
   
- 項目の状態を指定するか、または変更するときは、`nStateMask` パラメーターを設定する状態ビットと `nState` パラメーターがこれらのビットの新しい値を含む名前空間を指定します。  たとえば、次の例では **TVIS\_EXPANDPARTIAL**への `CTreeCtrl` オブジェクト \(`m_treeCtrl`\) の親項目の現在の状態 \(`hParentItem`で指定された\) 変更します:  
+ When you specify or change an item's state, the `nStateMask` parameter specifies which state bits to set, and the `nState` parameter contains the new values for those bits. For example, the following example changes the current state of a parent item (specified by `hParentItem`) in a `CTreeCtrl` object (`m_treeCtrl`) to **TVIS_EXPANDPARTIAL**:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#71](../mfc/codesnippet/CPP/tree-control-item-states-overview_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#71](../mfc/codesnippet/cpp/tree-control-item-states-overview_1.cpp)]  
   
- 状態を変更するもう一つの例では、項目のオーバーレイ イメージを設定します。  これを行うには、`nStateMask` は `TVIS_OVERLAYMASK` 値が格納 `nState` は [INDEXTOOVERLAYMASK](http://msdn.microsoft.com/library/windows/desktop/bb761408) マクロを使用して左シフト オーバーレイ イメージの 8 ビット インデックス番号が 1 から始まるなインデックスを含める必要があります。  インデックスは、オーバーレイ イメージを指定する 0 です。  オーバーレイ イメージは [CImageList::SetOverlayImage](../Topic/CImageList::SetOverlayImage.md) 関数への呼び出しでツリー コントロールのオーバーレイ イメージ リストに追加されている必要があります。  関数は、追加するイメージのインデックス番号が 1 から始まるなインデックスを指定します; これは **INDEXTOOVERLAYMASK** マクロで使用されるインデックスです。  ツリー コントロールには 4 個のオーバーレイ イメージを指定できます。  
+ Another example of changing the state would be to set an item's overlay image. To accomplish this, `nStateMask` must include the `TVIS_OVERLAYMASK` value, and `nState` must include the one-based index of the overlay image shifted left eight bits by using the [INDEXTOOVERLAYMASK](http://msdn.microsoft.com/library/windows/desktop/bb761408) macro. The index can be 0 to specify no overlay image. The overlay image must have been added to the tree control's list of overlay images by a previous call to the [CImageList::SetOverlayImage](../mfc/reference/cimagelist-class.md#setoverlayimage) function. The function specifies the one-based index of the image to add; this is the index used with the **INDEXTOOVERLAYMASK** macro. A tree control can have up to four overlay images.  
   
- 項目の状態イメージを設定するには、`nStateMask` は `TVIS_STATEIMAGEMASK` 値が格納 `nState` は [INDEXTOSTATEIMAGEMASK](http://msdn.microsoft.com/library/windows/desktop/bb775597) マクロを使用して左シフト状態イメージ 12 ビットのインデックス番号が 1 から始まるなインデックスを含める必要があります。  インデックスは状態イメージを指定する 0 です。  オーバーレイと状態イメージの詳細については、「[ツリー コントロールのイメージ リスト](../mfc/tree-control-image-lists.md)」を参照してください。  
+ To set an item's state image, `nStateMask` must include the `TVIS_STATEIMAGEMASK` value, and `nState` must include the one-based index of the state image shifted left 12 bits by using the [INDEXTOSTATEIMAGEMASK](http://msdn.microsoft.com/library/windows/desktop/bb775597) macro. The index can be 0 to specify no state image. For more information about overlay and state images, see [Tree Control Image Lists](../mfc/tree-control-image-lists.md).  
   
-## 参照  
- [CTreeCtrl の使い方](../Topic/Using%20CTreeCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CTreeCtrl](../mfc/using-ctreectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

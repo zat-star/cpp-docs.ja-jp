@@ -1,51 +1,70 @@
 ---
-title: "ユーザー インターフェイス オブジェクトの更新方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド, 更新 (UI を)"
-  - "無効化 (メニューを)"
-  - "無効化 (UI 要素を)"
-  - "有効化 (メニューを)"
-  - "有効化 (UI 要素を)"
-  - "メニュー, 更新 (コンテキスト変更に応じて)"
-  - "更新ハンドラー"
-  - "更新 (ユーザー インターフェイス オブジェクトを)"
-  - "ユーザー インターフェイス オブジェクト"
-  - "ユーザー インターフェイス オブジェクト, 更新"
+title: 'How to: Update User-Interface Objects | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- menus [MFC], updating as context changes
+- user interface objects [MFC], updating
+- user interface objects [MFC]
+- update handlers [MFC]
+- enabling UI elements [MFC]
+- disabling menus [MFC]
+- updating user-interface objects [MFC]
+- disabling UI elements [MFC]
+- commands [MFC], updating UI
+- enabling menus [MFC]
 ms.assetid: 82f09773-c978-427b-b321-05a6143b7369
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ユーザー インターフェイス オブジェクトの更新方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7b1e085cf7ee4d0e3ac040b3128ca2d778fdaea4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-通常、メニュー項目やツール バー ボタンは複数の状態があります。  たとえば、メニュー項目は、現在のコンテキストで使用できない場合淡色表示になっているです \(淡色表示されます\)。  メニュー項目は、checked または unchecked の場合があります。  ツール バー ボタンは、使用できない場合無効にすることができますしたり、チェック アウトすることができます。  
+---
+# <a name="how-to-update-user-interface-objects"></a>How to: Update User-Interface Objects
+Typically, menu items and toolbar buttons have more than one state. For example, a menu item is grayed (dimmed) if it is unavailable in the present context. Menu items can also be checked or unchecked. A toolbar button can also be disabled if unavailable, or it can be checked.  
   
- プログラムの状態が変化したときにユーザーがこれらの項目の状態を更新します。  論理的にメニュー項目がドキュメントによって処理されるコマンドを生成した場合は、ドキュメントをメニュー項目を更新して、意味があります。  ドキュメントは、更新の基になる情報が含まれています。  
+ Who updates the state of these items as program conditions change Logically, if a menu item generates a command that is handled by, say, a document, it makes sense to have the document update the menu item. The document probably contains the information on which the update is based.  
   
- コマンドに複数ユーザー インターフェイス オブジェクト \(通常はメニュー項目やツール バー ボタンなど\) がある場合、両方とも同じハンドラー関数にルーティングされます。  こうすると、一つの場所で同じユーザー インターフェイス オブジェクトのすべてのユーザー インターフェイス更新コードをカプセル化します。  
+ If a command has multiple user-interface objects (perhaps a menu item and a toolbar button), both are routed to the same handler function. This encapsulates your user-interface update code for all of the equivalent user-interface objects in a single place.  
   
- フレームワークは、自動的にユーザー インターフェイス オブジェクトを更新するために便利なインターフェイスを提供します。  他の方法で更新を選択できますが、提供されるインターフェイスは効率的使いやすくなります。  
+ The framework provides a convenient interface for automatically updating user-interface objects. You can choose to do the updating in some other way, but the interface provided is efficient and easy to use.  
   
- 次のトピックでは、更新ハンドラーの使用について説明します。:  
+ The following topics explain the use of update handlers:  
   
--   [更新ハンドラーが呼び出されるとき](../mfc/when-update-handlers-are-called.md)  
+-   [When update handlers are called](../mfc/when-update-handlers-are-called.md)  
   
--   [ON\_UPDATE\_COMMAND\_UI マクロ](../mfc/on-update-command-ui-macro.md)  
+-   [The ON_UPDATE_COMMAND_UI macro](../mfc/on-update-command-ui-macro.md)  
   
--   [CCmdUI クラス](../mfc/the-ccmdui-class.md)  
+-   [The CCmdUI class](../mfc/the-ccmdui-class.md)  
   
-## 参照  
- [メニュー](../mfc/menus-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Menus](../mfc/menus-mfc.md)
+
+

@@ -1,50 +1,69 @@
 ---
-title: "ツール バー コントロールでのイメージ リストの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolBarCtrl クラス, イメージ リスト"
-  - "イメージ リスト [C++], ツール バー コントロール"
-  - "ツール バー コントロール [MFC], イメージ"
+title: Using Image Lists in a Toolbar Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- toolbar controls [MFC], image
+- image lists [MFC], toolbar controls
+- CToolBarCtrl class [MFC], image lists
 ms.assetid: ccbe8df4-4ed9-4b54-bb93-9a1dcb3b97eb
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# ツール バー コントロールでのイメージ リストの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5569e45080f2427481041ef8164e369becc97792
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-既定では一つのビットマップとして、ToolBar コントロール内のボタンによって使用されるイメージ格納されます。  ただし、一連のイメージ リストにあるボタン イメージを格納できます。  ツール バー コントロール オブジェクトは 3 つまでのイメージ リストを使用する:  
+---
+# <a name="using-image-lists-in-a-toolbar-control"></a>Using Image Lists in a Toolbar Control
+By default, the images used by the buttons in a toolbar control are stored as a single bitmap. However, you can also store button images in a set of image lists. The toolbar control object can use up to three separate image lists:  
   
--   有効なイメージ リストは現在有効になっているツール バー ボタンのイメージが含まれます。  
+-   Enabled image list   Contains images for toolbar buttons that are currently enabled.  
   
--   無効イメージのリストには、現在無効になるツール バー ボタンのイメージが含まれます。  
+-   Disabled image list   Contains images for toolbar buttons that are currently disabled.  
   
--   強調表示されたイメージ リストは現在強調表示されているツール バー ボタンのイメージが含まれています。  このイメージ リストはツール バーが **TBSTYLE\_FLAT** のスタイルを使用する場合にのみ使用されます。  
+-   Highlighted image list   Contains images for toolbar buttons that are currently highlighted. This image list is used only when the toolbar uses the **TBSTYLE_FLAT** style.  
   
- これらのイメージ リストは、ツール バー コントロールによって `CToolBarCtrl` オブジェクトに関連付ける場合に使用されます。  この関連付けは、[CToolBarCtrl::SetImageList](../Topic/CToolBarCtrl::SetImageList.md)[SetDisabledImageList](../Topic/CToolBarCtrl::SetDisabledImageList.md)と [SetHotImageList](../Topic/CToolBarCtrl::SetHotImageList.md)を呼び出すことによって実現されます。  
+ These image lists are used by the toolbar control when you associate them with the `CToolBarCtrl` object. This association is accomplished by making calls to [CToolBarCtrl::SetImageList](../mfc/reference/ctoolbarctrl-class.md#setimagelist), [SetDisabledImageList](../mfc/reference/ctoolbarctrl-class.md#setdisabledimagelist), and [SetHotImageList](../mfc/reference/ctoolbarctrl-class.md#sethotimagelist).  
   
- 既定で、MFC アプリケーション ツール バーを実装するために `CToolBar` クラスを使用します。  ただし `CToolBarCtrl` の埋め込まれたなオブジェクトを取得するために、`GetToolBarCtrl` のメンバー関数を使用できます。  返されたオブジェクトを使用して `CToolBarCtrl` のメンバー関数を呼び出すことができます。  
+ By default, MFC uses the `CToolBar` class to implement MFC application toolbars. However, the `GetToolBarCtrl` member function can be used to retrieve the embedded `CToolBarCtrl` object. You can then make calls to `CToolBarCtrl` member functions using the returned object.  
   
- 次の例では `CToolBarCtrl` オブジェクト \(`m_ToolBarCtrl`\) \(`m_ToolBarDisabledImages`\) の有効な \(`m_ToolBarImages`\) 無効イメージ リストを割り当てると、この手法を示します。  
+ The following example demonstrates this technique by assigning an enabled (`m_ToolBarImages`) and disabled (`m_ToolBarDisabledImages`) image list to a `CToolBarCtrl` object (`m_ToolBarCtrl`).  
   
- [!code-cpp[NVC_MFCControlLadenDialog#35](../mfc/codesnippet/CPP/using-image-lists-in-a-toolbar-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#35](../mfc/codesnippet/cpp/using-image-lists-in-a-toolbar-control_1.cpp)]  
   
 > [!NOTE]
->  ツール バー オブジェクトで使用されるイメージ リストは、永続的なオブジェクトである必要があります。  したがって、一般に MFC クラスのデータ メンバーで; この例では、メイン フレーム ウィンドウのクラスです。  
+>  The image lists used by the toolbar object must be permanent objects. For this reason, they are commonly data members of an MFC class; in this example, the main frame window class.  
   
- イメージ リストが `CToolBarCtrl` オブジェクトに関連付けられている場合、フレームワークは自動的に適切なボタン イメージを表示します。  
+ Once the image lists are associated with the `CToolBarCtrl` object, the framework automatically displays the proper button image.  
   
-## 参照  
- [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolBarCtrl](../mfc/using-ctoolbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

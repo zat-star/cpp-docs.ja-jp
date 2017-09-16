@@ -1,123 +1,142 @@
 ---
-title: "例外処理 : 古いコードの変換 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "catch ブロック, 区切り"
-  - "CException クラス, 削除 (CException クラス オブジェクトを)"
-  - "変換, コード (MFC マクロで記述された)"
-  - "変換の例外"
-  - "例外処理, 変換の例外"
-  - "例外オブジェクト"
-  - "例外オブジェクト, 削除"
-  - "例外, 変換"
-  - "例外, 削除 (例外オブジェクトを)"
-  - "キーワード [C++], マクロ"
-  - "マクロ, C++ のキーワード"
+title: 'Exceptions: Converting from MFC Exception Macros | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- converting exceptions [MFC]
+- exception objects [MFC]
+- conversions [MFC], code written with MFC macros
+- keywords [MFC], macros
+- macrosv, C++ keywords
+- exception objects [MFC], deleting
+- CException class [MFC], deleting CException class objects
+- exceptions [MFC], converting
+- exceptions [MFC], deleting exception objects
+- catch blocks [MFC], delimiting
+- exception handling [MFC], converting exceptions
 ms.assetid: bd3ac3b3-f3ce-4fdd-a168-a2cff13ed796
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 例外処理 : 古いコードの変換
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 41f83358d6a472a01a32ccf9b86d62481f6e03a7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-これは高度なトピックです。  
+---
+# <a name="exceptions-converting-from-mfc-exception-macros"></a>Exceptions: Converting from MFC Exception Macros
+This is an advanced topic.  
   
- ここでは、C\+\+ 例外処理 **try**キーワード、**catch**と `throw`を使用するには、Microsoft Foundation Class **TRY**—マクロ、**CATCH**、**THROW**記述された既存のコードに変換する方法をなど\) について説明します。  ここでは、次の内容について説明します。  
+ This article explains how to convert existing code written with Microsoft Foundation Class macros — **TRY**, **CATCH**, **THROW**, and so on — to use the C++ exception-handling keywords **try**, **catch**, and `throw`. Topics include:  
   
--   [変換の利点](#_core_advantages_of_converting)  
+-   [Conversion advantages](#_core_advantages_of_converting)  
   
--   [例外処理マクロのコードの C\+\+ 例外処理機構を使用するように変換](#_core_doing_the_conversion)  
+-   [Converting code with exception macros to use C++ exceptions](#_core_doing_the_conversion)  
   
-##  <a name="_core_advantages_of_converting"></a> 変換の利点  
- MFC バージョン 3.0 のマクロ実装と旧バージョンの実装の違いについて意識する必要がある場合は、既存のコードに変換する必要はありません。  コード実行の違いとそれ以降の変更は [例外: バージョン 3.0 の Exception Macros への変更](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)で説明します。  
+##  <a name="_core_advantages_of_converting"></a> Advantages of Converting  
+ You probably do not need to convert existing code, although you should be aware of differences between the macro implementations in MFC version 3.0 and the implementations in earlier versions. These differences and subsequent changes in code behavior are discussed in [Exceptions: Changes to Exception Macros in Version 3.0](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md).  
   
- 変換の主な利点は次のとおりです。:  
+ The principal advantages of converting are:  
   
--   コードは、わずかに小さい .EXE または .DLL に対して C\+\+ 例外処理キーワードをコンパイルするために使用できます。  
+-   Code that uses the C++ exception-handling keywords compiles to a slightly smaller .EXE or .DLL.  
   
--   C\+\+ 例外処理キーワードは、より幅広い用途: そのクラス `CException` にのみ例外処理マクロとクラスがそのクラスから派生した場合、\(`int`、**float**、`char`など\) コピーできる任意のデータ型の例外を処理できます。  
+-   The C++ exception-handling keywords are more versatile: They can handle exceptions of any data type that can be copied (`int`, **float**, `char`, and so on), whereas the macros handle exceptions only of class `CException` and classes derived from it.  
   
- マクロとキーワードとの主な違いは例外がスコープ外に出るとマクロを使用して、コードが「自動的に」キャッチされた例外を削除します。  キーワードを使用するコードでは、ため、明示的にキャッチした例外を削除する必要があります。  詳細については、記事 [例外: 例外をキャッチするか、または削除します。](../mfc/exceptions-catching-and-deleting-exceptions.md)を参照します。  
+ The major difference between the macros and the keywords is that code using the macros "automatically" deletes a caught exception when the exception goes out of scope. Code using the keywords does not, so you must explicitly delete a caught exception. For more information, see the article [Exceptions: Catching and Deleting Exceptions](../mfc/exceptions-catching-and-deleting-exceptions.md).  
   
- もう一つの相違点は、構文です。  マクロとキーワードの構文は、3 種類の点で異なって:  
+ Another difference is syntax. The syntax for macros and keywords differs in three respects:  
   
-1.  マクロ引数と例外宣言:  
+1.  Macro arguments and exception declarations:  
   
-     **CATCH** のマクロの呼び出しに次の構文があります:  
+     A **CATCH** macro invocation has the following syntax:  
   
-     **CATCH\(**の *exception\_class*、*exception\_object\_pointer\_name* \#\#\#\)  
+     **CATCH(** *exception_class*, *exception_object_pointer_name* **)**  
   
-     クラス名とオブジェクト ポインター名の間にコンマを確認します。  
+     Notice the comma between the class name and the object pointer name.  
   
-     **catch** キーワードの例外宣言は、この構文を使用して T:  
+     The exception declaration for the **catch** keyword uses this syntax:  
   
-     **catch\(**の *exception\_type の* *exception\_name*\#\#\#\)  
+     **catch(** *exception_type* *exception_name***)**  
   
-     この例外の宣言ステートメントは、例外の型を catch ブロックで処理されます。  
+     This exception declaration statement indicates the type of exception the catch block handles.  
   
-2.  catch ブロックの限界:  
+2.  Delimitation of catch blocks:  
   
-     マクロによっては、**CATCH** マクロ \(引数を使用\) 最初の catch ブロックを開始します; `AND_CATCH` マクロは、その後に続く catch ブロックを開始し、`END_CATCH` マクロは、catch ブロックのシーケンスを終了します。  
+     With the macros, the **CATCH** macro (with its arguments) begins the first catch block; the `AND_CATCH` macro begins subsequent catch blocks, and the `END_CATCH` macro terminates the sequence of catch blocks.  
   
-     キーワードによって、**catch** キーワード \(例外宣言を使用する\) 各 catch ブロックを開始します。  対応するメソッドは `END_CATCH` マクロはありません; 右中かっこ \(}\) を持つ catch ブロックを終了します。  
+     With the keywords, the **catch** keyword (with its exception declaration) begins each catch block. There is no counterpart to the `END_CATCH` macro; the catch block ends with its closing brace.  
   
-3.  throw 式:  
+3.  The throw expression:  
   
-     マクロが再スローに `THROW_LAST` を現在の例外を使用します。  `throw` キーワードは、引数なしで、同じ効果があります。  
+     The macros use `THROW_LAST` to re-throw the current exception. The `throw` keyword, with no argument, has the same effect.  
   
-##  <a name="_core_doing_the_conversion"></a> 変換が行われます。  
+##  <a name="_core_doing_the_conversion"></a> Doing the Conversion  
   
-#### コードを C\+\+ 例外処理キーワードを使用するマクロを使用して変換します。  
+#### <a name="to-convert-code-using-macros-to-use-the-c-exception-handling-keywords"></a>To convert code using macros to use the C++ exception-handling keywords  
   
-1.  MFC マクロ **TRY**、**CATCH**、`AND_CATCH`、`END_CATCH`、**THROW**と `THROW_LAST`のすべての一致を検索します。  
+1.  Locate all occurrences of the MFC macros **TRY**, **CATCH**, `AND_CATCH`, `END_CATCH`, **THROW**, and `THROW_LAST`.  
   
-2.  次のマクロのすべてのインスタンスを、置換、または削除する:  
+2.  Replace or delete all occurrences of the following macros:  
   
-     **TRY** \(**try**に置き換えます。\)  
+     **TRY** (Replace it with **try**)  
   
-     **CATCH** \(**catch**に置き換えます。\)  
+     **CATCH** (Replace it with **catch**)  
   
-     `AND_CATCH` \(**catch**に置き換えます。\)  
+     `AND_CATCH` (Replace it with **catch**)  
   
-     `END_CATCH` \(削除\)。  
+     `END_CATCH` (Delete it)  
   
-     **THROW** \(`throw`に置き換えます。\)  
+     **THROW** (Replace it with `throw`)  
   
-     `THROW_LAST` \(`throw`に置き換えます。\)  
+     `THROW_LAST` (Replace it with `throw`)  
   
-3.  有効な例外宣言を形成するためにマクロ引数を変更します。  
+3.  Modify the macro arguments so that they form valid exception declarations.  
   
-     たとえば、変更します。  
+     For example, change  
   
-     [!code-cpp[NVC_MFCExceptions#6](../mfc/codesnippet/CPP/exceptions-converting-from-mfc-exception-macros_1.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#6](../mfc/codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_1.cpp)]  
   
-     から  
+     to  
   
-     [!code-cpp[NVC_MFCExceptions#7](../mfc/codesnippet/CPP/exceptions-converting-from-mfc-exception-macros_2.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#7](../mfc/codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_2.cpp)]  
   
-4.  必要に応じて例外オブジェクトを削除するには、catch ブロックのコードを変更します。  詳細については、記事 [例外: 例外をキャッチするか、または削除します。](../mfc/exceptions-catching-and-deleting-exceptions.md)を参照します。  
+4.  Modify the code in the catch blocks so that it deletes exception objects as necessary. For more information, see the article [Exceptions: Catching and Deleting Exceptions](../mfc/exceptions-catching-and-deleting-exceptions.md).  
   
- 例外処理コードの例は、マクロ ベースの例外処理機構を使用して次のようになります。  次のコード例では、マクロを使用すると、例外 `e` は自動的に削除されることを確認する:  
+ Here is an example of exception-handling code using MFC exception macros. Note that because the code in the following example uses the macros, the exception `e` is deleted automatically:  
   
- [!code-cpp[NVC_MFCExceptions#8](../mfc/codesnippet/CPP/exceptions-converting-from-mfc-exception-macros_3.cpp)]  
+ [!code-cpp[NVC_MFCExceptions#8](../mfc/codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_3.cpp)]  
   
- 次のコード例では、C\+\+ の exception キーワードを使用するため、例外を明示的に削除する必要があります:  
+ The code in the next example uses the C++ exception keywords, so the exception must be explicitly deleted:  
   
- [!code-cpp[NVC_MFCExceptions#9](../mfc/codesnippet/CPP/exceptions-converting-from-mfc-exception-macros_4.cpp)]  
+ [!code-cpp[NVC_MFCExceptions#9](../mfc/codesnippet/cpp/exceptions-converting-from-mfc-exception-macros_4.cpp)]  
   
- 詳細については、「[例外: MFC マクロと C\+\+ 例外を使用する](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md)」を参照してください。  
+ For more information, see [Exceptions: Using MFC Macros and C++ Exceptions](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md).  
   
-## 参照  
- [例外処理](../mfc/exception-handling-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Exception Handling](../mfc/exception-handling-in-mfc.md)
+
+

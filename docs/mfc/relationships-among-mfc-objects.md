@@ -1,62 +1,81 @@
 ---
-title: "各種 MFC オブジェクト間の関係 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC オブジェクトのリレーションシップ"
-  - "MFC, リレーションシップ (キー オブジェクト間の)"
-  - "オブジェクト [C++], リレーションシップ"
-  - "リレーションシップ, MFC オブジェクト"
+title: Relationships Among MFC Objects | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, relationships between key objects
+- objects [MFC], relationships
+- relationships, MFC objects
+- MFC object relationships
 ms.assetid: 6e8f3b51-e80f-4d88-94c8-4c1e4ee163ad
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# 各種 MFC オブジェクト間の関係
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 66df0ca425038c60927822b14aba1cb6379488c4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-すると、パースペクティブにドキュメント\/ビューの作成手順を考慮して、実行中のプログラムを置いて: ドキュメント、ビューの格納に使用されたフレーム ウィンドウとビューはドキュメントに関連付けられています。  
+---
+# <a name="relationships-among-mfc-objects"></a>Relationships Among MFC Objects
+To help put the document/view creation process in perspective, consider a running program: a document, the frame window used to contain the view, and the view associated with the document.  
   
--   ドキュメントは、このドキュメントを作成したドキュメント テンプレートによってドキュメントやポインターの一覧を保持します。  
+-   A document keeps a list of the views of that document and a pointer to the document template that created the document.  
   
--   ビューはドキュメントへのポインターを保持し、親フレーム ウィンドウの子です。  
+-   A view keeps a pointer to its document and is a child of its parent frame window.  
   
--   ドキュメント フレーム ウィンドウは、現在アクティブなビューへのポインターを保持します。  
+-   A document frame window keeps a pointer to its current active view.  
   
--   ドキュメント テンプレートは、開いているドキュメントのリストを保持します。  
+-   A document template keeps a list of its open documents.  
   
--   アプリケーションでは、ドキュメント テンプレートのリストを保持します。  
+-   The application keeps a list of its document templates.  
   
--   Windows は、開いているすべてのウィンドウを管理するので、ユーザーにメッセージを送信できます。  
+-   Windows keeps track of all open windows so it can send messages to them.  
   
- これらの関係はドキュメント\/ビューの作成時に設定されます。  実行中のプログラムのオブジェクトが他のオブジェクトにアクセスする方法を次の表に示します。  オブジェクトは、アプリケーションのオブジェクトに [AfxGetAppCWinApp](../Topic/AfxGetApp.md)関数を呼び出すことで、ポインターを取得できます。  
+ These relationships are established during document/view creation. The following table shows how objects in a running program can access other objects. Any object can obtain a pointer to the application object by calling the global function [AfxGetApp](../mfc/reference/application-information-and-management.md#afxgetapp).  
   
-### アプリケーションの Other Objects へのアクセス権を得ること  
+### <a name="gaining-access-to-other-objects-in-your-application"></a>Gaining Access to Other Objects in Your Application  
   
-|オブジェクトから|他のオブジェクトにアクセスする方法|  
-|--------------|-----------------------|  
-|Document|ドキュメントの一覧にアクセスするために [GetFirstViewPosition](../Topic/CDocument::GetFirstViewPosition.md) と [GetNextView](../Topic/CDocument::GetNextView.md) を使用します。<br /><br /> ドキュメント テンプレートを取得する [GetDocTemplate](../Topic/CDocument::GetDocTemplate.md) 呼び出し。|  
-|ビュー|ドキュメントを取得 [GetDocument](../Topic/CView::GetDocument.md) 呼び出し。<br /><br /> フレーム ウィンドウを取得 [GetParentFrame](../Topic/CWnd::GetParentFrame.md) 呼び出し。|  
-|ドキュメント フレーム ウィンドウ|現在のビューを取得 [GetActiveView](../Topic/CFrameWnd::GetActiveView.md) 呼び出し。<br /><br /> ドキュメントを現在のビューに接続するに [GetActiveDocument](../Topic/CFrameWnd::GetActiveDocument.md) を呼び出します。|  
-|MDI フレーム ウィンドウ|現在アクティブな [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md)を取得 [MDIGetActive](../Topic/CMDIFrameWnd::MDIGetActive.md) 呼び出し。|  
+|From object|How to access other objects|  
+|-----------------|---------------------------------|  
+|Document|Use [GetFirstViewPosition](../mfc/reference/cdocument-class.md#getfirstviewposition) and [GetNextView](../mfc/reference/cdocument-class.md#getnextview) to access the document's view list.<br /><br /> Call [GetDocTemplate](../mfc/reference/cdocument-class.md#getdoctemplate) to get the document template.|  
+|View|Call [GetDocument](../mfc/reference/cview-class.md#getdocument) to get the document.<br /><br /> Call [GetParentFrame](../mfc/reference/cwnd-class.md#getparentframe) to get the frame window.|  
+|Document frame window|Call [GetActiveView](../mfc/reference/cframewnd-class.md#getactiveview) to get the current view.<br /><br /> Call [GetActiveDocument](../mfc/reference/cframewnd-class.md#getactivedocument) to get the document attached to the current view.|  
+|MDI frame window|Call [MDIGetActive](../mfc/reference/cmdiframewnd-class.md#mdigetactive) to get the currently active [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md).|  
   
- 通常、フレーム ウィンドウの 1 種類のビューがありますが、場合によっては、分割ウィンドウのように、同じフレーム ウィンドウは、複数のビューが含まれます。  フレーム ウィンドウには、現在アクティブなビューへのポインターを保持します; ポインターは別のビューがアクティブに更新されます。  
+ Typically, a frame window has one view, but sometimes, as in splitter windows, the same frame window contains multiple views. The frame window keeps a pointer to the currently active view; the pointer is updated any time another view is activated.  
   
 > [!NOTE]
->  メイン フレーム ウィンドウへのポインターは、アプリケーションの [m\_pMainWnd](../Topic/CWinThread::m_pMainWnd.md) オブジェクトのメンバー変数に格納されます。  `CWinApp` の `InitInstance` のメンバー関数をオーバーライドする `OnFileNew` への呼び出しによって `m_pMainWnd` を設定します。  `OnFileNew`を呼び出さないと、独自 `InitInstance` の変数の値を設定する必要があります。SDI COM コンポーネント \(サーバー\) アプリケーションは \/Embedding コマンド ラインにある変数を設定していない可能性があります\)。これで、`m_pMainWnd` が `CWinApp`ではなくクラス `CWinThread` のメンバーであることに注意してください。  
+>  A pointer to the main frame window is stored in the [m_pMainWnd](../mfc/reference/cwinthread-class.md#m_pmainwnd) member variable of the application object. A call to `OnFileNew` in your override of the `InitInstance` member function of `CWinApp` sets `m_pMainWnd` for you. If you do not call `OnFileNew`, you must set the variable's value in `InitInstance` yourself. (SDI COM component (server) applications may not set the variable if /Embedding is on the command line.) Note that `m_pMainWnd` is now a member of class `CWinThread` rather than `CWinApp`.  
   
-## 参照  
- [ドキュメント テンプレートとドキュメント\/ビューの作成手順](../mfc/document-templates-and-the-document-view-creation-process.md)   
- [ドキュメント テンプレートの作成](../Topic/Document%20Template%20Creation.md)   
- [ドキュメントおよびビューの作成](../mfc/document-view-creation.md)   
- [新しいドキュメント、ウィンドウ、ビューの作成](../Topic/Creating%20New%20Documents,%20Windows,%20and%20Views.md)
+## <a name="see-also"></a>See Also  
+ [Document Templates and the Document/View Creation Process](../mfc/document-templates-and-the-document-view-creation-process.md)   
+ [Document Template Creation](../mfc/document-template-creation.md)   
+ [Document/View Creation](../mfc/document-view-creation.md)   
+ [Creating New Documents, Windows, and Views](../mfc/creating-new-documents-windows-and-views.md)
+
+

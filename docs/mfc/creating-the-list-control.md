@@ -1,46 +1,65 @@
 ---
-title: "リスト コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CListCtrl クラス, creating コントロール"
-  - "リスト コントロール"
+title: Creating the List Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CListCtrl class [MFC], creating control
+- list controls [MFC]
 ms.assetid: a4cb1729-31b6-4d2b-a44b-367474848a39
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# リスト コントロールの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3a1bd5a720f7acd8053bbdc8b673c4884ae3644c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-リスト コントロール \([CListCtrl](../Topic/CListCtrl%20Class.md)\) をどのように作成するかコントロールを直接使用するか、クラス [CListView](../mfc/reference/clistview-class.md) を使用しているかによって異なります。  `CListView`を使用している場合、フレームワークはドキュメント\/ビューの作成手順の一部としてビューを構築します。  リスト ビューを作成すると、リスト コントロールを作成します。2 は同じです\)。  コントロールは、[OnCreate](../Topic/CWnd::OnCreate.md) のハンドラー関数で作成されます。  この場合、コントロールは、[GetListCtrl](../Topic/CListView::GetListCtrl.md)呼び出しによって項目を追加できるように準備が整いました。  
+---
+# <a name="creating-the-list-control"></a>Creating the List Control
+How the list control ([CListCtrl](../mfc/reference/clistctrl-class.md)) is created depends on whether you're using the control directly or using class [CListView](../mfc/reference/clistview-class.md) instead. If you use `CListView`, the framework constructs the view as part of its document/view creation sequence. Creating the list view creates the list control as well (the two are the same thing). The control is created in the view's [OnCreate](../mfc/reference/cwnd-class.md#oncreate) handler function. In this case, the control is ready for you to add items, via a call to [GetListCtrl](../mfc/reference/clistview-class.md#getlistctrl).  
   
-### CListCtrl を直接ダイアログ ボックスで使用できます。  
+### <a name="to-use-clistctrl-directly-in-a-dialog-box"></a>To use CListCtrl directly in a dialog box  
   
-1.  ダイアログ エディターで、ダイアログ テンプレート リソースをリスト コントロールを追加します。  コントロール ID を指定します。  
+1.  In the dialog editor, add a List Control to your dialog template resource. Specify its control ID.  
   
-2.  コントロール プロパティを持つ型 `CListCtrl` のメンバー変数を追加するに [メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md) を使用します。  `CListCtrl` のメンバー関数を呼び出すには、このメンバーを使用できます。  
+2.  Use the [Add Member Variable Wizard](../ide/adding-a-member-variable-visual-cpp.md) to add a member variable of type `CListCtrl` with the Control property. You can use this member to call `CListCtrl` member functions.  
   
-3.  これを処理する必要があるすべてのリスト コントロールからの通知メッセージのダイアログ クラスのハンドラー関数をマップするには、プロパティ ウィンドウを使用します。[関数へのメッセージの割り当て](../Topic/Mapping%20Messages%20to%20Functions.md)を参照してください。  
+3.  Use the Properties window to map handler functions in the dialog class for any list control notification messages you need to handle (see [Mapping Messages to Functions](../mfc/reference/mapping-messages-to-functions.md)).  
   
-4.  [OnInitDialog](../Topic/CDialog::OnInitDialog.md)で、`CListCtrl`のスタイルを設定します。  [変更のリスト コントロールのスタイル](../Topic/Changing%20List%20Control%20Styles.md)を参照してください。  これは「ビューの種類ビューを後で変更することができますが」、はコントロールで取得できます。  
+4.  In [OnInitDialog](../mfc/reference/cdialog-class.md#oninitdialog), set the styles for the `CListCtrl`. See [Changing List Control Styles](../mfc/changing-list-control-styles.md). This determines the kind of "view" you get in the control, although you can change the view later.  
   
-### CListCtrl を nondialog ウィンドウで使用します。  
+### <a name="to-use-clistctrl-in-a-nondialog-window"></a>To use CListCtrl in a nondialog window  
   
-1.  ビューまたはウィンドウ クラスのコントロールを定義します。  
+1.  Define the control in the view or window class.  
   
-2.  \(コントロールをサブクラス化したら\) 親ウィンドウの [OnCreate](../Topic/CWnd::OnCreate.md) のハンドラー関数には早くも [OnInitialUpdate](../Topic/CView::OnInitialUpdate.md)のコントロールの [作成](../Topic/CListCtrl::Create.md) メンバー関数を、おそらく、場合に呼び出します。  コントロールのスタイルを設定します。  
+2.  Call the control's [Create](../mfc/reference/clistctrl-class.md#create) member function, possibly in [OnInitialUpdate](../mfc/reference/cview-class.md#oninitialupdate), possibly as early as the parent window's [OnCreate](../mfc/reference/cwnd-class.md#oncreate) handler function (if you're subclassing the control). Set the styles for the control.  
   
-## 参照  
- [CListCtrl の使い方](../Topic/Using%20CListCtrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CListCtrl](../mfc/using-clistctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

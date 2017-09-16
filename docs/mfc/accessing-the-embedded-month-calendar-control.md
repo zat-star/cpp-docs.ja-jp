@@ -1,51 +1,70 @@
 ---
-title: "埋め込み月間予定表コントロールへのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDateTimeCtrl クラス, アクセス (埋め込まれたコントロールに)"
-  - "CMonthCalCtrl クラス, 変更 (フォントを)"
-  - "DateTimePicker コントロール [MFC]"
-  - "DateTimePicker コントロール [MFC], アクセス (月間予定表に)"
-  - "月間予定表コントロール, 変更 (フォントを)"
-  - "月間予定表コントロール, 埋め込み (日時指定の)"
+title: Accessing the Embedded Month Calendar Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- DateTimePicker control [MFC], accessing month calendar
+- CDateTimeCtrl class [MFC], accessing embedded control
+- month calendar controls [MFC], embedded in date/time picker
+- CMonthCalCtrl class [MFC], changing the font
+- month calendar controls [MFC], changing the font
+- DateTimePicker control [MFC]
 ms.assetid: 355e97ed-cf81-4df3-a2f8-9ddbbde93227
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 埋め込み月間予定表コントロールへのアクセス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ad47b376fd5f3cc044bffe3c98116489362d046d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-埋め込まれたな月間予定表コントロール オブジェクトは、呼び出しで `CDateTimeCtrl` オブジェクトから [GetMonthCalCtrl](../Topic/CDateTimeCtrl::GetMonthCalCtrl.md) のメンバー関数にアクセスできます。  
+---
+# <a name="accessing-the-embedded-month-calendar-control"></a>Accessing the Embedded Month Calendar Control
+The embedded month calendar control object can be accessed from the `CDateTimeCtrl` object with a call to the [GetMonthCalCtrl](../mfc/reference/cdatetimectrl-class.md#getmonthcalctrl) member function.  
   
 > [!NOTE]
->  埋め込まれたな月間予定表コントロールは日時指定のコントロールに設定されている **DTS\_UPDOWN** のスタイルがない場合にのみ使用されます。  
+>  The embedded month calendar control is used only when the date and time picker control does not have the **DTS_UPDOWN** style set.  
   
- これは埋め込みコントロールが表示される前に、特定の属性を変更する場合に便利です。  これを行うには、**DTN\_DROPDOWN** 通知を取得し、月間予定表コントロール \([CDateTimeCtrl::GetMonthCalCtrl](../Topic/CDateTimeCtrl::GetMonthCalCtrl.md)を使用\) と変更を処理してください。  ただし、月間予定表コントロールは永続的ではありません。  
+ This is useful if you want to modify certain attributes before the embedded control is displayed. To accomplish this, handle the **DTN_DROPDOWN** notification, retrieve the month calendar control (using [CDateTimeCtrl::GetMonthCalCtrl](../mfc/reference/cdatetimectrl-class.md#getmonthcalctrl)), and make your modifications. Unfortunately, the month calendar control is not persistent.  
   
- つまり、ユーザーが月間予定表コントロールの表示、新しい月間予定表コントロール作成されます \(**DTN\_DROPDOWN** 通知の前に\)。  コントロール \(**DTN\_CLOSEUP** 通知\) の後にユーザーが終了すると、破棄されます。  これは埋め込みコントロールが終了すると埋め込みコントロールが表示される前に、変更する属性が失われることを意味します。  
+ In other words, when the user requests the display of the month calendar control, a new month calendar control is created (before the **DTN_DROPDOWN** notification). The control is destroyed (after the **DTN_CLOSEUP** notification) when dismissed by the user. This means that any attributes you modify, before the embedded control is displayed, are lost when the embedded control is dismissed.  
   
- 次の例では **DTN\_DROPDOWN** 通知のハンドラーを使用して、この手順を示します。  コードは灰色に [SetMonthCalColor](../Topic/CDateTimeCtrl::SetMonthCalColor.md)を呼び出して月間予定表コントロールの背景色を選択し、変更します。  コードは次のとおりです。:  
+ The following example demonstrates this procedure, using a handler for the **DTN_DROPDOWN** notification. The code changes the background color of the month calendar control, with a call to [SetMonthCalColor](../mfc/reference/cdatetimectrl-class.md#setmonthcalcolor), to gray. The code is as follows:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#5](../mfc/codesnippet/CPP/accessing-the-embedded-month-calendar-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#5](../mfc/codesnippet/cpp/accessing-the-embedded-month-calendar-control_1.cpp)]  
   
- 前に説明したように、月間予定表コントロールのプロパティへのすべての変更は、2 種類の例外に埋め込まれたコントロールが終了すると、失われます。  最初の例外、月間予定表コントロールの色は、既に参照されています。  2 番目の例外は月間予定表コントロールに使用しているフォントです。  既存のフォントのハンドルを渡す [CDateTimeCtrl::SetMonthCalFont](../Topic/CDateTimeCtrl::SetMonthCalFont.md)を呼び出すことによって、既定のフォントを変更できます。  次の例では、\(`m_dtPicker` の日時コントロール オブジェクト\) は、1 とおりのメソッドを示しています。:  
+ As stated previously, all modifications to properties of the month calendar control are lost, with two exceptions, when the embedded control is dismissed. The first exception, the colors of the month calendar control, has already been discussed. The second exception is the font used by the month calendar control. You can modify the default font by making a call to [CDateTimeCtrl::SetMonthCalFont](../mfc/reference/cdatetimectrl-class.md#setmonthcalfont), passing the handle of an existing font. The following example (where `m_dtPicker` is the date and time control object) demonstrates one possible method:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#6](../mfc/codesnippet/CPP/accessing-the-embedded-month-calendar-control_2.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#6](../mfc/codesnippet/cpp/accessing-the-embedded-month-calendar-control_2.cpp)]  
   
- 月間予定表が表示されるときにフォントが `CDateTimeCtrl::SetMonthCalFont`と、新しいフォント格納および使用される変更された場合。  
+ Once the font has been changed, with a call to `CDateTimeCtrl::SetMonthCalFont`, the new font is stored and used the next time a month calendar is to be displayed.  
   
-## 参照  
- [CDateTimeCtrl の使い方](../mfc/using-cdatetimectrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CDateTimeCtrl](../mfc/using-cdatetimectrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

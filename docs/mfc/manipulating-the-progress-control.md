@@ -1,61 +1,80 @@
 ---
-title: "プログレス コントロールの操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "制御 (プログレス コントロールを)"
-  - "CProgressCtrl クラス, 操作"
-  - "CProgressCtrl クラス, 使用"
-  - "CProgressCtrl クラス, 処理"
-  - "プログレス コントロール [C++], 操作"
+title: Manipulating the Progress Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CProgressCtrl class [MFC], working with
+- progress controls [MFC], manipulating
+- CProgressCtrl class [MFC], manipulating
+- controlling progress controls [MFC]
+- CProgressCtrl class [MFC], using
 ms.assetid: 9af561d1-980b-4003-a6da-ff79be15bf23
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# プログレス コントロールの操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 82c8e32789f396a371af38c372d622d1405024f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-プログレス コントロール \([CProgressCtrl](../mfc/reference/cprogressctrl-class.md)\) の現在の位置を変更するには、3 とおりの方法があります。  
+---
+# <a name="manipulating-the-progress-control"></a>Manipulating the Progress Control
+There are three ways to change the current position of a progress control ([CProgressCtrl](../mfc/reference/cprogressctrl-class.md)).  
   
--   位置はプリセット インクリメント量変更できます。  
+-   The position can be changed by a preset increment amount.  
   
--   位置は任意の量変更できます。  
+-   The position can be changed by an arbitrary amount.  
   
--   位置、特定の値を変更できます。  
+-   The position can be changed to a specific value.  
   
-### 事前定義して位置を変更する必要がある。  
+### <a name="to-change-the-position-by-a-preset-amount"></a>To change the position by a preset amount  
   
-1.  インクリメント量を設定するために [SetStep](../Topic/CProgressCtrl::SetStep.md) メンバー関数を使用します。  既定値は 10 です。  この値は、コントロールの初期化の 1 文字として正常に設定されます。  ステップ値が負のです。  
+1.  Use the [SetStep](../mfc/reference/cprogressctrl-class.md#setstep) member function to set the increment amount. By default, this value is 10. This value is typically set as one of the initial settings for the control. The step value can be negative.  
   
-2.  位置をインクリメントするには [StepIt](../Topic/CProgressCtrl::StepIt.md) メンバー関数を使用します。  これにより、コントロールがそれ自体を再描画します。  
-  
-    > [!NOTE]
-    >  `StepIt` 位置をラップします。  たとえば、1 –100 の範囲を、手順 20 の場合、90 の位置は、`StepIt` 10.に位置を設定します。  
-  
-### 任意の量位置を変更するには  
-  
-1.  位置を変更するには [OffsetPos](../Topic/CProgressCtrl::OffsetPos.md) メンバー関数を使用します。  `OffsetPos` は 負の値を指定できます。  
+2.  Use the [StepIt](../mfc/reference/cprogressctrl-class.md#stepit) member function to increment the position. This causes the control to redraw itself.  
   
     > [!NOTE]
-    >  `OffsetPos`は、`StepIt`とは異なり、位置をラップしません。  新しい位置が範囲内になるように調整されます。  
+    >  `StepIt` will cause the position to wrap. For example, given a range of 1 -100, a step of 20, and a position of 90, `StepIt` will set the position to 10.  
   
-### 位置を特定の値に変更するには  
+### <a name="to-change-the-position-by-an-arbitrary-amount"></a>To change the position by an arbitrary amount  
   
-1.  特定の位置に値を設定するには [SetPos](../Topic/CProgressCtrl::SetPos.md) メンバー関数を使用します。  必要に応じて、新しい位置が範囲内になるように調整されます。  
+1.  Use the [OffsetPos](../mfc/reference/cprogressctrl-class.md#offsetpos) member function to change the position. `OffsetPos` will accept negative values.  
   
- 通常、プログレス コントロールは出力のためだけに使用されます。  新しい値を指定せずに現在位置を取得するには、[GetPos](../Topic/CProgressCtrl::GetPos.md)を使用します。  
+    > [!NOTE]
+    >  `OffsetPos`, unlike `StepIt`, will not wrap the position. The new position is adjusted to remain within the range.  
   
-## 参照  
- [CProgressCtrl の使い方](../mfc/using-cprogressctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+### <a name="to-change-the-position-to-a-specific-value"></a>To change the position to a specific value  
+  
+1.  Use the [SetPos](../mfc/reference/cprogressctrl-class.md#setpos) member function to set the position to a specific value. If necessary, the new position is adjusted to be within the range.  
+  
+ Typically, the progress control is used solely for output. To get the current position without specifying a new value, use [GetPos](../mfc/reference/cprogressctrl-class.md#getpos).  
+  
+## <a name="see-also"></a>See Also  
+ [Using CProgressCtrl](../mfc/using-cprogressctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

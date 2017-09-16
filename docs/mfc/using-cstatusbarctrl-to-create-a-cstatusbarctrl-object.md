@@ -1,46 +1,65 @@
 ---
-title: "CStatusBarCtrl を使用して CStatusBarCtrl オブジェクトを作成する方法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CStatusBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBarCtrl クラス, 作成"
-  - "ステータス バー コントロール, 作成"
+title: Using CStatusBarCtrl to Create a CStatusBarCtrl Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CStatusBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- status bar controls [MFC], creating
+- CStatusBarCtrl class [MFC], creating
 ms.assetid: 365c2b65-12de-49e6-9a2e-416c6ee10d60
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# CStatusBarCtrl を使用して CStatusBarCtrl オブジェクトを作成する方法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cc4f7e0b0639b228c70ca438096e341627bb2a56
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-[CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)の一般的な使用方法の例を次に示します。:  
+---
+# <a name="using-cstatusbarctrl-to-create-a-cstatusbarctrl-object"></a>Using CStatusBarCtrl to Create a CStatusBarCtrl Object
+Here is an example of a typical use of [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md):  
   
-### パーツとのステータス バー コントロールを使用するには  
+### <a name="to-use-a-status-bar-control-with-parts"></a>To use a status bar control with parts  
   
-1.  `CStatusBarCtrl` オブジェクトを構築します。  
+1.  Construct the `CStatusBarCtrl` object.  
   
-2.  ステータス バー コントロールの描画領域の最小の高さを設定するには、呼び出し [SetMinHeight](../Topic/CStatusBarCtrl::SetMinHeight.md)。  
+2.  Call [SetMinHeight](../mfc/reference/cstatusbarctrl-class.md#setminheight) if you want to set the minimum height of the status bar control's drawing area.  
   
-3.  ステータス バー コントロールの背景色を設定する呼び出し [SetBkColor](../Topic/CStatusBarCtrl::SetBkColor.md)。  
+3.  Call [SetBkColor](../mfc/reference/cstatusbarctrl-class.md#setbkcolor) to set the background color of the status bar control.  
   
-4.  ステータス バー コントロールの一部の数と各部分の右端の座標を設定する呼び出し [SetParts](../Topic/CStatusBarCtrl::SetParts.md)。  
+4.  Call [SetParts](../mfc/reference/cstatusbarctrl-class.md#setparts) to set the number of parts in a status bar control and the coordinate of the right edge of each part.  
   
-5.  ステータス バー コントロールの特定の部分のテキストを設定する呼び出し [SetText](../Topic/CStatusBarCtrl::SetText.md)。  メッセージは、次のコントロールが `WM_PAINT` メッセージを受け取ったときに新しいテキストを表示し、変更したコントロールの部分が無効になります。  
+5.  Call [SetText](../mfc/reference/cstatusbarctrl-class.md#settext) to set the text in a given part of the status bar control. The message invalidates the portion of the control that has changed, causing it to display the new text when the control next receives the `WM_PAINT` message.  
   
- 場合によっては、ステータス バーのテキスト行を表示するだけです。  この場合、[SetSimple](../Topic/CStatusBarCtrl::SetSimple.md)に呼び出しを行ってください。  これは、単一行のテキストを表示する「単純な」モードでは、ステータス バー コントロールを送信します。  
+ In some cases, the status bar only needs to display a line of text. In this case, make a call to [SetSimple](../mfc/reference/cstatusbarctrl-class.md#setsimple). This puts the status bar control into "simple" mode, which displays a single line of text.  
   
-## 参照  
- [CStatusBarCtrl の使い方](../mfc/using-cstatusbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

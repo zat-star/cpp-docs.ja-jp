@@ -1,50 +1,67 @@
 ---
-title: "Windows Vista コモン コントロールの作成要件 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コモン コントロール (MFC)"
-  - "コモン コントロール (MFC), ビルドの要件"
+title: Build Requirements for Windows Vista Common Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- common controls (MFC), build requirements
+- common controls (MFC)
 ms.assetid: 025f7d55-55a2-4dcd-8f62-02424e3dcc04
 caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# Windows Vista コモン コントロールの作成要件
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 604e0ae364c8316fea386c1bb7160fc9030c0a67
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Microsoft Foundation Class \(MFC\) ライブラリは Windows コモン コントロール バージョン 6.1 をサポートします。  コモン コントロールは [!INCLUDE[windowsver](../Token/windowsver_md.md)] に含まれ、[!INCLUDE[vsipsdk](../mfc/includes/vsipsdk_md.md)]に含まれます。  ライブラリは、既存のクラスを拡張し、[!INCLUDE[windowsver](../Token/windowsver_md.md)]コモン コントロールをサポートするメソッドと新しいクラスです。新しいメソッド。  アプリケーションをビルドする場合は、次のセクションで説明するコンパイルおよび移行に関する要件に従う必要があります。  
+---
+# <a name="build-requirements-for-windows-vista-common-controls"></a>Build Requirements for Windows Vista Common Controls
+The Microsoft Foundation Class (MFC) library supports Windows Common Controls version 6.1. The common controls are included in [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)] and the library is included in the [!INCLUDE[vsipsdk](../mfc/includes/vsipsdk_md.md)]. The library provides new methods that enhance existing classes, and new classes and methods that support [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)] common controls. When you build your application, you should follow the compilation and migration requirements that are described in the following sections.  
   
-## コンパイル要件  
+## <a name="compilation-requirements"></a>Compilation Requirements  
   
-### サポートされているバージョン  
- 他のメソッドでは、旧バージョンのオペレーティング システムがサポートされますが、新しいクラスとメソッドは [!INCLUDE[windowsver](../Token/windowsver_md.md)] だけを後でサポートします。  各メソッドの `Requirements` セクションの説明は必要最小限のオペレーティング システムが [!INCLUDE[windowsver](../Token/windowsver_md.md)]になったかどうかを指定します。  
+### <a name="supported-versions"></a>Supported Versions  
+ Some new classes and methods support only [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)] and later, while other methods also support earlier operating systems. A note in the `Requirements` section of each method topic specifies when the minimum required operating system is [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)].  
   
- コンピューターが [!INCLUDE[windowsver](../Token/windowsver_md.md)]を実行しない場合でも、コンピューター上でバージョン 6.1 MFC ヘッダー ファイルがある場合 [!INCLUDE[windowsver](../Token/windowsver_md.md)] で実行する MFC アプリケーションをビルドできます。  ただし、[!INCLUDE[windowsver](../Token/windowsver_md.md)] 用に設計されているコモン コントロールは、そのシステムでのみ機能し、以前のオペレーティング システムでは無視されます。  
+ Even if your computer does not run [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)], you can build an MFC application that will run on [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)] if you have the version 6.1 MFC header files on your computer. However, common controls that are designed specifically for [!INCLUDE[windowsver](../build/reference/includes/windowsver_md.md)] operate only on that system, and are ignored by earlier operating systems.  
   
-### サポートされている文字セット  
- 新しい Windows コモン コントロールは、Unicode 文字セットだけで、ANSI 文字セットをサポートします。  アプリケーションをコマンド ラインでビルドする場合は、以下の両方を定義して使用します \(\/D\)、基になる文字セットとして Unicode を指定するコンパイラ オプション:  
+### <a name="supported-character-sets"></a>Supported Character Sets  
+ The new Windows common controls support only the Unicode character set, and not the ANSI character set. If you build your application on the command line, use both of the following define (/D) compiler options to specify Unicode as the underlying character set:  
   
 ```  
 /D_UNICODE /DUNICODE  
 ```  
   
- Visual Studio 統合開発環境 \(IDE\) でアプリケーションをビルドする場合は、プロジェクトのプロパティ **\[全般\]** ノードで **\[文字セット\]** のプロパティの **\[Unicode 文字セット\]** オプションを指定します。  
+ If you build your application in the Visual Studio integrated development environment (IDE), specify the **Unicode Character Set** option of the **Character Set** property in the **General** node of the project properties.  
   
- 複数の MFC メソッドの ANSI バージョンは Windows コモン コントロール バージョン、6.1 から使用されなくなった開始です。  詳細については、「[サポートされなくなった ANSI API](../mfc/deprecated-ansi-apis.md)」を参照してください。  
+ The ANSI version of several MFC methods have been deprecated starting with Windows Common Controls version 6.1. For more information, see [Deprecated ANSI APIs](../mfc/deprecated-ansi-apis.md).  
   
-## 移行の要件  
- Windows コモン コントロール Version 6.1 を使用する新しい MFC アプリケーションを作成するために Visual Studio IDE を使用して、IDE で自動的に適切なマニフェストを宣言します。  ただし、Visual Studio の旧バージョンで作成した既存の MFC アプリケーションを移行し、新しいコモン コントロールを使用する場合は、IDE で自動的にアプリケーションをアップグレードするマニフェスト情報は提供しません。  代わりに、stdafx.h ファイルに手動で次のソース・コードを挿入する必要があります:  
+## <a name="migration-requirements"></a>Migration Requirements  
+ If you use the Visual Studio IDE to build a new MFC application that uses Windows Common Controls version 6.1, the IDE automatically declares an appropriate manifest. However, if you migrate an existing MFC application from an earlier version of Visual Studio and you want to use the new common controls, the IDE does not automatically provide manifest information to upgrade your application. Instead, you must manually insert the following source code in your stdafx.h file:  
   
 ```  
 #ifdef UNICODE  
@@ -60,7 +77,9 @@ Microsoft Foundation Class \(MFC\) ライブラリは Windows コモン コン�
 #endif  
 ```  
   
-## 参照  
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)   
- [階層図](../mfc/hierarchy-chart.md)   
- [サポートされなくなった ANSI API](../mfc/deprecated-ansi-apis.md)
+## <a name="see-also"></a>See Also  
+ [General MFC Topics](../mfc/general-mfc-topics.md)   
+ [Hierarchy Chart](../mfc/hierarchy-chart.md)   
+ [Deprecated ANSI APIs](../mfc/deprecated-ansi-apis.md)
+
+

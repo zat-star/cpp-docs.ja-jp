@@ -1,56 +1,75 @@
 ---
-title: "ツール ヒントの通知の処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolBarCtrl クラス, 処理 (通知を)"
-  - "通知, ツール ヒント"
-  - "ツール ヒント [C++], 通知"
-  - "TOOLTIPTEXT 構造体"
+title: Handling Tool Tip Notifications | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- TOOLTIPTEXT structure [MFC]
+- CToolBarCtrl class [MFC], handling notifications
+- notifications [MFC], tool tips
+- tool tips [MFC], notifications
 ms.assetid: ddb93b5f-2e4f-4537-8053-3453c86e2bbb
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# ツール ヒントの通知の処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4b6ad56302dc7bcbafad48452408bd931696257b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`TBSTYLE_TOOLTIPS` スタイルを指定している場合、ツール バーではツール ヒント コントロールが作成され、管理されます。  ツール ヒントとは、ツール バー ボタンについて説明する 1 行のテキストを表示する小さなポップアップ ウィンドウのことです。  ツール ヒントは、ユーザーがツール バー ボタンの上にマウス ポインターを約 0.5 秒置いたままにしたときだけ表示され、通常は非表示になっています。  ツール ヒントはポインターの近くに表示されます。  
+---
+# <a name="handling-tool-tip-notifications"></a>Handling Tool Tip Notifications
+When you specify the `TBSTYLE_TOOLTIPS` style, the toolbar creates and manages a tool tip control. A tool tip is a small pop-up window that contains a line of text describing a toolbar button. The tool tip is hidden, appearing only when the user puts the cursor on a toolbar button and leaves it there for approximately one-half second. The tool tip is displayed near the cursor.  
   
- ツール ヒントが表示される前に、ボタンの説明テキストを取得するために **TTN\_NEEDTEXT** 通知メッセージがツール バーのオーナー ウィンドウに送られます。  ツール バーのオーナー ウィンドウが `CFrameWnd` ウィンドウの場合、特に何もしなくてもツール ヒントは表示されます。`CFrameWnd` には既定で **TTN\_NEEDTEXT** 通知用のハンドラーが用意されているからです。  ツール バーのオーナー ウィンドウが、ダイアログ ボックスやフォーム ビューなど、`CFrameWnd` から派生されたものではない場合は、オーナー ウィンドウのメッセージ マップにエントリを追加して、メッセージ マップに通知ハンドラーを用意する必要があります。  オーナー ウィンドウのメッセージ マップのエントリは、次のようになります。  
+ Before the tool tip is displayed, the **TTN_NEEDTEXT** notification message is sent to the toolbar's owner window to retrieve the descriptive text for the button. If the toolbar's owner window is a `CFrameWnd` window, tool tips are displayed without any extra effort, because `CFrameWnd` has a default handler for the **TTN_NEEDTEXT** notification. If the toolbar's owner window is not derived from `CFrameWnd`, such as a dialog box or form view, you must add an entry to your owner window's message map and provide a notification handler in the message map. The entry to your owner window's message map is as follows:  
   
- [!code-cpp[NVC_MFCControlLadenDialog#40](../mfc/codesnippet/CPP/handling-tool-tip-notifications_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#40](../mfc/codesnippet/cpp/handling-tool-tip-notifications_1.cpp)]  
   
-## 解説  
+## <a name="remarks"></a>Remarks  
  `memberFxn`  
- 対象のボタンに対してテキストが必要になったときに呼び出すメンバー関数。  
+ The member function to be called when text is needed for this button.  
   
- ツール ヒントの ID は常に 0 です。  
+ Note that the id of a tool tip is always 0.  
   
- **TTN\_NEEDTEXT** 通知のほかに、ツール ヒント コントロールは以下の通知をツール バー コントロールに送ることができます。  
+ In addition to the **TTN_NEEDTEXT** notification, a tool tip control can send the following notifications to a toolbar control:  
   
-|通知|説明|  
-|--------|--------|  
-|**TTN\_NEEDTEXTA**|ツール ヒント コントロールが ASCII テキストを使用することを示します \(Windows 95 のみ\)。|  
-|**TTN\_NEEDTEXTW**|ツール ヒント コントロールが UNICODE テキストを使用することを示します \(Windows NT のみ\)。|  
-|**TBN\_HOTITEMCHANGE**|ホット アイテム \(強調表示されている項目\) が変更されたことを示します。|  
-|**NM\_RCLICK**|ユーザーがボタンを右クリックしたことを示します。|  
-|**TBN\_DRAGOUT**|ユーザーがボタンをクリックし、ボタンからポインターをドラッグしたことを示します。  これにより、アプリケーションにツール バー ボタンからのドラッグ アンド ドロップを実装できるようになります。  この通知を受け取ると、アプリケーションはドラッグ アンド ドロップ操作を開始します。|  
-|**TBN\_DROPDOWN**|**TBSTYLE\_DROPDOWN** スタイルを使用するボタンをユーザーがクリックしたことを示します。|  
-|**TBN\_GETOBJECT**|**TBSTYLE\_DROPPABLE** スタイルを使用するボタン上にユーザーがポインターを移動したことを示します。|  
+|Notification|Meaning|  
+|------------------|-------------|  
+|**TTN_NEEDTEXTA**|Tool tip control requires ASCII text (Windows 95 only)|  
+|**TTN_NEEDTEXTW**|Tool tip control requires UNICODE text (Windows NT only)|  
+|**TBN_HOTITEMCHANGE**|Indicates that the hot (highlighted) item has changed.|  
+|**NM_RCLICK**|Indicates the user has right-clicked a button.|  
+|**TBN_DRAGOUT**|Indicates the user has clicked the button and dragged the pointer off the button. It allows an application to implement drag and drop from a toolbar button. When receiving this notification, the application will begin the drag and drop operation.|  
+|**TBN_DROPDOWN**|Indicates the user has clicked a button that uses the **TBSTYLE_DROPDOWN** style.|  
+|**TBN_GETOBJECT**|Indicates the user moved the pointer over a button that uses the **TBSTYLE_DROPPABLE** style.|  
   
- ハンドラー関数の例とツール ヒントを有効にする詳細については、「[CFrameWnd から派生していないウィンドウのツール ヒント](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md)」を参照してください。  
+ For an example handler function and more information about enabling tool tips, see [Tool Tips](../mfc/tool-tips-in-windows-not-derived-from-cframewnd.md).  
   
-## 参照  
- [CToolBarCtrl の使い方](../mfc/using-ctoolbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolBarCtrl](../mfc/using-ctoolbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

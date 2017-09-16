@@ -1,5 +1,5 @@
 ---
-title: "&lt;map&gt; 系関数 | Microsoft Docs"
+title: '&lt;map&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -12,20 +12,20 @@ f1_keywords:
 ms.assetid: 7cb3d1a5-7add-4726-a73f-61927eafd466
 caps.latest.revision: 6
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: a72fb2cd6a34cc7946503593657aa0c3a5dc894e
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 5ff194ea81690443d24d82768ef2d6cfdcfc6837
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltmapgt-functions"></a>&lt;map&gt; 系関数
+# <a name="ltmapgt-functions"></a>&lt;map&gt; functions
 |||  
 |-|-|  
 |[swap (map)](#swap)|[swap (multimap)](#swap_multimap)|  
   
 ##  <a name="swap_multimap"></a>  swap  (map)
- 2 つの map の要素を交換します。  
+ Exchanges the elements of two maps.  
   
 ```  
 template <class key, class T, class _Pr, class _Alloc>  
@@ -34,21 +34,21 @@ void swap(
     map<Key, Traits, Compare, Alloctor>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 交換する要素を提供する map (map `left` と要素を交換する map)。  
+ The map providing the elements to be swapped, or the map whose elements are to be exchanged with those of the map `left`.  
   
  `left`  
- 要素が map `right` の要素と交換される map。  
+ The map whose elements are to be exchanged with those of the map `right`.  
   
-### <a name="remarks"></a>コメント  
- メンバー関数を実行するコンテナー クラスのマップに特化したアルゴリズムは、テンプレート関数は`left`.[swap](../standard-library/map-class.md#swap)( `right`). これは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョンであり、algorithm クラスにある **template** \< **class T**> **void swap**(**T&**, **T&**) は、代入によって機能し、処理が低速です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
+### <a name="remarks"></a>Remarks  
+ The template function is an algorithm specialized on the container class map to execute the member function `left`.[swap](../standard-library/map-class.md#swap)( `right`). This is an instance of the partial ordering of function templates by the compiler. When template functions are overloaded in such a way that the match of the template with the function call is not unique, then the compiler will select the most specialized version of the template function. The general version of the template function, **template** \< **class T**> **void swap**( **T&**, **T&**), in the algorithm class works by assignment and is a slow operation. The specialized version in each container is much faster as it can work with the internal representation of the container class.  
   
-### <a name="example"></a>例  
-  `swap` のテンプレート バージョンの使用例については、メンバー関数 [map::swap](../standard-library/map-class.md#swap) のコード例をご覧ください。  
+### <a name="example"></a>Example  
+  See the code example for member function [map::swap](../standard-library/map-class.md#swap) for an example that uses the template version of `swap`.  
   
 ##  <a name="swap"></a>  swap  (multimap)
- 2 つの multimap の要素を交換します。  
+ Exchanges the elements of two multimaps.  
   
 ```  
 template <class key, class T, class _Pr, class _Alloc>  
@@ -57,19 +57,19 @@ void swap(
     multimap<Key, Traits, Compare, Alloctor>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `right`  
- 交換する要素を提供する multimap (multimap `left` と要素を交換する multimap)。  
+ The multimap providing the elements to be swapped, or the multimap whose elements are to be exchanged with those of the multimap `left`.  
   
  `left`  
- 要素が multimap `right` の要素と交換される multimap。  
+ The multimap whose elements are to be exchanged with those of the multimap `right`.  
   
-### <a name="remarks"></a>コメント  
- テンプレート関数は、アルゴリズムは、コンテナー クラス multimap メンバー関数を実行するを実行するコンテナー クラスのマップに特化した`left`.[swap](../standard-library/multimap-class.md#swap) ( `right`). これは、コンパイラによる関数テンプレートの部分的な順序付けのインスタンスです。 テンプレートと関数呼び出しの照合が一意にならないようにテンプレート関数がオーバーロードされた場合、コンパイラは、最も特化したバージョンのテンプレート関数を選択します。 テンプレート関数の一般的なバージョンであり、algorithm クラスにある **template** \< **class T**> **void swap**(**T&**, **T&**) は、代入によって機能し、処理が低速です。 各コンテナー内の特化バージョンのほうが、コンテナー クラスの内部表現で使用できるため大幅に高速になります。  
+### <a name="remarks"></a>Remarks  
+ The template function is an algorithm specialized on the container class map to execute on the container class multimap to execute the member function `left`.[swap](../standard-library/multimap-class.md#swap) ( `right`). This is an instance of the partial ordering of function templates by the compiler. When template functions are overloaded in such a way that the match of the template with the function call is not unique, then the compiler will select the most specialized version of the template function. The general version of the template function, **template** \< **class T**> **void swap**( **T&**, **T&**), in the algorithm class works by assignment and is a slow operation. The specialized version in each container is much faster as it can work with the internal representation of the container class.  
   
-### <a name="example"></a>例  
-  `swap` のテンプレート バージョンの使用例については、メンバー関数 [multimap::swap](../standard-library/multimap-class.md#swap) のコード例をご覧ください。  
+### <a name="example"></a>Example  
+  See the code example for member function [multimap::swap](../standard-library/multimap-class.md#swap) for an example that uses the template version of `swap`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<map>](../standard-library/map.md)
 

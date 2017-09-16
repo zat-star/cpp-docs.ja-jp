@@ -1,64 +1,83 @@
 ---
-title: "操作別のインターネット情報 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, インターネット アプリケーション"
+title: Internet Information by Task | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC, Internet applications
 ms.assetid: da078bf5-53c3-4167-b1ef-509b5a544ad9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 操作別のインターネット情報
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8e847bcb7852a0338b07d26759fba9448e564bfd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このトピックで示すタスクは、実行するタスクに基づいて並べ替えられます。  
+---
+# <a name="internet-information-by-task"></a>Internet Information by Task
+The tasks listed in this topic are sorted based on the task you want to accomplish.  
   
- タスクの次のカテゴリはこのトピックに記載されている T:  
+ The following categories of tasks are listed in this topic:  
   
--   [ActiveX コントロール、ドキュメント、および非同期モニカー タスク](#_core_activex_controls.2c_.documents_and_asynchronous_moniker_tasks)  
+-   [ActiveX Controls, Documents and Asynchronous Moniker Tasks](#_core_activex_controls.2c_.documents_and_asynchronous_moniker_tasks)  
   
--   [WinInet タスク](#_core_wininet_tasks)  
+-   [WinInet Tasks](#_core_wininet_tasks)  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>What do you want to do  
   
-###  <a name="_core_activex_controls.2c_.documents_and_asynchronous_moniker_tasks"></a> ActiveX コントロール、ドキュメント、および非同期モニカー タスク  
+###  <a name="_core_activex_controls.2c_.documents_and_asynchronous_moniker_tasks"></a> ActiveX Controls, Documents and Asynchronous Moniker Tasks  
   
--   [アクティブ ドキュメントについて説明します。](../Topic/Active%20Documents%20on%20the%20Internet.md)  
+-   [Learn about Active documents](../mfc/active-documents-on-the-internet.md)  
   
--   [非同期モニカーについて説明します。](../mfc/asynchronous-monikers-on-the-internet.md)  
+-   [Learn about Asynchronous Monikers](../mfc/asynchronous-monikers-on-the-internet.md)  
   
--   [インターネットのコンテキストの ActiveX コントロールについて説明します。](../mfc/activex-controls-on-the-internet.md)  
+-   [Learn about ActiveX controls in the Internet context](../mfc/activex-controls-on-the-internet.md)  
   
--   [インターネットのコンテキストの作業中のドキュメントについて説明します。](../Topic/Active%20Documents%20on%20the%20Internet.md)  
+-   [Learn about Active documents in the Internet context](../mfc/active-documents-on-the-internet.md)  
   
--   [ActiveX コントロールを最適化します。](../mfc/mfc-activex-controls-optimization.md)  
+-   [Optimize an ActiveX control](../mfc/mfc-activex-controls-optimization.md)  
   
--   [MFC および ATL のコントロールの符号付きな CAB ファイルを作成します。](http://msdn.microsoft.com/ja-jp/14e50724-2505-4258-ae6b-326b706de409)  
+-   [Create Signed CAB Files for MFC and ATL Controls](http://msdn.microsoft.com/en-us/14e50724-2505-4258-ae6b-326b706de409)  
   
-###  <a name="_core_wininet_tasks"></a> WinInet タスク  
+###  <a name="_core_wininet_tasks"></a> WinInet Tasks  
   
--   [WinInet のインターネット アクセスの Win32 API 関数について説明します。](../mfc/wininet-basics.md)  
+-   [Learn about WinInet, the Win32 API functions for Internet access](../mfc/wininet-basics.md)  
   
--   [関連するもの WinInet のプログラミングの確認](../mfc/win32-internet-extensions-wininet.md)  
+-   [Review what's involved with WinInet programming](../mfc/win32-internet-extensions-wininet.md)  
   
--   [MFC WinInet クラスを使用してインターネット クライアント アプリケーションを記述します。](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)  
+-   [Write an Internet client application, using MFC WinInet classes](../mfc/writing-an-internet-client-application-using-mfc-wininet-classes.md)  
   
--   [FTP のクライアント アプリケーションを記述します。](../mfc/steps-in-a-typical-ftp-client-application.md)  
+-   [Write an FTP client application](../mfc/steps-in-a-typical-ftp-client-application.md)  
   
--   [HTTP のクライアント アプリケーションを記述します。](../mfc/steps-in-a-typical-http-client-application.md)  
+-   [Write an HTTP client application](../mfc/steps-in-a-typical-http-client-application.md)  
   
--   [gopher クライアント アプリケーションを記述します。](../mfc/steps-in-a-typical-gopher-client-application.md)  
+-   [Write a Gopher client application](../mfc/steps-in-a-typical-gopher-client-application.md)  
   
-## 参照  
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)
+
+

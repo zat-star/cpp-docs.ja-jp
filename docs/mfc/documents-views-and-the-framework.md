@@ -1,77 +1,95 @@
 ---
-title: "ドキュメント、ビュー、フレームワーク | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション オブジェクト [C++], リレーションシップ (ほかの MFC オブジェクトとの)"
-  - "アプリケーション [MFC]"
-  - "ドキュメント オブジェクト, ほかの MFC オブジェクトとの関連"
-  - "ドキュメント テンプレート, テンプレート オブジェクト"
-  - "ドキュメント/ビュー アーキテクチャ, ドキュメント/ビュー アーキテクチャの概要"
-  - "ドキュメント [C++]"
-  - "MFC [C++], アプリケーション フレームワーク"
-  - "MFC [C++], ドキュメント"
-  - "MFC [C++], ビュー"
-  - "MFC オブジェクトのリレーションシップ"
-  - "オブジェクト [C++], MFC アプリケーション"
-  - "スレッド オブジェクト"
-  - "ビュー オブジェクト, リレーションシップ (ほかの MFC オブジェクトとの)"
+title: Documents, Views, and the Framework | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- document templates [MFC], template objects
+- applications [MFC]
+- MFC, application framework
+- application objects [MFC], relation to other MFC objects
+- documents [MFC]
+- MFC, documents
+- document objects [MFC], in relation to other MFC objects
+- view objects [MFC], relation to other MFC objects
+- MFC, views
+- document/view architecture [MFC], about document/view architecture
+- objects [MFC], MFC applications
+- MFC object relationships
+- thread objects [MFC]
 ms.assetid: 409ddd9b-66ad-4625-84f7-bf55a41d697b
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメント、ビュー、フレームワーク
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fedc1c3bd792265aa8c375a6162dd13315dcabc3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC フレームワークの中心にドキュメントやビューの概念です。  ドキュメントには、ユーザーが編集セッションでやり取りするデータ オブジェクトです。  これは **ファイル** メニューの `New` または **開く** コマンドで作成され、通常はファイルに保存されます。\(標準の MFC ドキュメント、**CDocument**クラスからの派生は、アクティブ ドキュメントと OLE 複合ドキュメントとは異なります。\) ビューは、ドキュメントと対話するウィンドウ オブジェクトです。  
+---
+# <a name="documents-views-and-the-framework"></a>Documents, Views, and the Framework
+At the heart of the MFC framework are the concepts of document and view. A document is a data object with which the user interacts in an editing session. It is created by the `New` or **Open** command on the **File** menu and is typically saved in a file. (Standard MFC documents, derived from class **CDocument**, are different from Active documents and OLE compound documents.) A view is a window object through which the user interacts with a document.  
   
- 実行中のアプリケーションのキー オブジェクトは、次の操作:  
+ The key objects in a running application are:  
   
--   ドキュメント。  
+-   The document or documents.  
   
-     ドキュメント クラス \([CDocument](../Topic/CDocument%20Class.md)から派生\) は、アプリケーションのデータを指定します。  
+     Your document class (derived from [CDocument](../mfc/reference/cdocument-class.md)) specifies your application's data.  
   
-     アプリケーションの OLE 機能が必要な場合は、必要な機能に、派生クラスの [COleDocument](../mfc/reference/coledocument-class.md) または 1 回からドキュメント クラス \(派生してください。  
+     If you want OLE functionality in your application, derive your document class from [COleDocument](../mfc/reference/coledocument-class.md) or one of its derived classes, depending on the type of functionality you need.  
   
--   ビュー。  
+-   The view or views.  
   
-     ビュー クラス \([CView](../Topic/CView%20Class.md)から派生される\) がユーザーの「データ ウィンドウは」ユーザーがどのようにドキュメント内のデータを参照し、相互作用をビュー クラスのコントロール。  場合によっては、ドキュメントはデータの複数のビューを持つ必要があります。  
+     Your view class (derived from [CView](../mfc/reference/cview-class.md)) is the user's "window on the data." The view class controls how the user sees your document's data and interacts with it. In some cases, you may want a document to have multiple views of the data.  
   
-     スクロールする必要がある場合 [CScrollView](../mfc/reference/cscrollview-class.md)から派生してください。  ビューのダイアログ テンプレート リソースに配置されるユーザー インターフェイスがある場合は、[CFormView](../mfc/reference/cformview-class.md)から派生してください。  単純なテキスト データの場合、[CEditView](../Topic/CEditView%20Class.md)から使用または派生してください。  フォーム ベースのデータ アクセス アプリケーションでは、データ入力プログラムなど、[CRecordView](../mfc/reference/crecordview-class.md) から派生してください \(ODBC の場合\)。  も使用できます [CTreeView](../mfc/reference/ctreeview-class.md)クラス、[CListView](../mfc/reference/clistview-class.md)と [CRichEditView](../mfc/reference/cricheditview-class.md)です。  
+     If you need scrolling, derive from [CScrollView](../mfc/reference/cscrollview-class.md). If your view has a user interface that is laid out in a dialog-template resource, derive from [CFormView](../mfc/reference/cformview-class.md). For simple text data, use or derive from [CEditView](../mfc/reference/ceditview-class.md). For a form-based data-access application, such as a data-entry program, derive from [CRecordView](../mfc/reference/crecordview-class.md) (for ODBC). Also available are classes [CTreeView](../mfc/reference/ctreeview-class.md), [CListView](../mfc/reference/clistview-class.md), and [CRichEditView](../mfc/reference/cricheditview-class.md).  
   
--   フレーム ウィンドウ  
+-   The frame windows  
   
-     ビューは表示されている「ドキュメント フレーム ウィンドウ」。SDI アプリケーションでは、ドキュメントのフレーム ウィンドウには、アプリケーションのメイン フレーム ウィンドウ「」です。  MDI アプリケーションでは、ドキュメント ウィンドウに、メイン フレーム ウィンドウ内に表示する子ウィンドウです。  派生のメイン フレーム ウィンドウ クラスには、ビューを含むフレーム ウィンドウのスタイルおよびそのほかの特性を指定します。  フレーム ウィンドウをカスタマイズする必要がある場合は、SDI アプリケーションのドキュメント フレーム ウィンドウをカスタマイズするために [CFrameWnd](../mfc/reference/cframewnd-class.md) から派生してください。  MDI アプリケーションのメイン フレーム ウィンドウをカスタマイズするために [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md) から派生してください。  また、アプリケーションがサポートするたびに別の種類の MDI ドキュメント フレーム ウィンドウをカスタマイズするために [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md) からクラスを派生してください。  
+     Views are displayed inside "document frame windows." In an SDI application, the document frame window is also the "main frame window" for the application. In an MDI application, document windows are child windows displayed inside a main frame window. Your derived main frame-window class specifies the styles and other characteristics of the frame windows that contain your views. If you need to customize frame windows, derive from [CFrameWnd](../mfc/reference/cframewnd-class.md) to customize the document frame window for SDI applications. Derive from [CMDIFrameWnd](../mfc/reference/cmdiframewnd-class.md) to customize the main frame window for MDI applications. Also derive a class from [CMDIChildWnd](../mfc/reference/cmdichildwnd-class.md) to customize each distinct kind of MDI document frame windows that your application supports.  
   
--   ドキュメント テンプレートまたはテンプレート  
+-   The document template or templates  
   
-     ドキュメント テンプレートによってドキュメント、ビュー、およびフレーム ウィンドウの作成に編曲を調整します。  特定のドキュメントテンプレート クラス、[CDocTemplate](../mfc/reference/cdoctemplate-class.md)クラスからの派生は、1 種類のすべての開かれているドキュメントを作成および管理します。  サポートされるアプリケーションにドキュメント種類の複数のドキュメント テンプレートがあります。  クラス [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) を SDI アプリケーションで使用するか、MDI アプリケーションのクラス [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md) を使用します。  
+     A document template orchestrates the creation of documents, views, and frame windows. A particular document-template class, derived from class [CDocTemplate](../mfc/reference/cdoctemplate-class.md), creates and manages all open documents of one type. Applications that support more than one type of document have multiple document templates. Use class [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) for SDI applications, or use class [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md) for MDI applications.  
   
--   アプリケーション オブジェクト  
+-   The application object  
   
-     アプリケーション クラス \([CWinApp](../mfc/reference/cwinapp-class.md)から派生\) は、上記のすべてのオブジェクトを制御し、初期化およびクリーンアップなど、アプリケーションの動作を指定します。  アプリケーションの一つのアプリケーション オブジェクトは、ドキュメントの種類のドキュメント テンプレートをアプリケーションでサポート作成および管理されます。  
+     Your application class (derived from [CWinApp](../mfc/reference/cwinapp-class.md)) controls all of the objects above and specifies application behavior such as initialization and cleanup. The application's one and only application object creates and manages the document templates for any document types the application supports.  
   
--   スレッド オブジェクト  
+-   Thread objects  
   
-     アプリケーションを実行中のスレッドを作成した場合 \(たとえば、計算をバックグラウンドで実行する— [CWinThread](../mfc/reference/cwinthread-class.md)から派生されたクラスを使用します。  [CWinApp](../mfc/reference/cwinapp-class.md) 自体は `CWinThread` から派生され、アプリケーションの実行 \(またはメイン プロセス\) のプライマリ スレッドを表します。  、セカンダリ スレッドで MFC を使用できます。  
+     If your application creates separate threads of execution — for example, to perform calculations in the background — you'll use classes derived from [CWinThread](../mfc/reference/cwinthread-class.md). [CWinApp](../mfc/reference/cwinapp-class.md) itself is derived from `CWinThread` and represents the primary thread of execution (or the main process) in your application. You can also use MFC in secondary threads.  
   
- 実行中のアプリケーションでは、これらのオブジェクトは、コマンドによってユーザー アクション、境界、他のメッセージに協調的に応答します。  一つのアプリケーション オブジェクトは一つ以上のドキュメント テンプレートを管理します。  各ドキュメント テンプレートは、アプリケーションが SDI または MDI か\) 一つ以上のドキュメントを作成、管理する \(によって異なります。  ユーザーがフレーム ウィンドウ ビュー内に含まれるビューでドキュメントを処理します。  次の図は、SDI アプリケーションのオブジェクトの関係を示します。  
+ In a running application, these objects cooperatively respond to user actions, bound together by commands and other messages. A single application object manages one or more document templates. Each document template creates and manages one or more documents (depending on whether the application is SDI or MDI). The user views and manipulates a document through a view contained inside a frame window. The following figure shows the relationships among these objects for an SDI application.  
   
- ![実行中の SDI アプリケーションのオブジェクト](../mfc/media/vc386v1.gif "vc386V1")  
-動作中の SDI アプリケーションのオブジェクト  
+ ![Objects in a running SDI application](../mfc/media/vc386v1.gif "vc386v1")  
+Objects in a Running SDI Application  
   
- 詳細については、ここで他方がどのように連携して動作する方法、およびプログラミングで使用するフレームワーク ツール、MFC アプリケーション ウィザード、およびリソース エディターは、これらのオブジェクトを作成する方法について説明します。  ドキュメント、ビュー、およびフレーム ウィンドウは [ウィンドウ オブジェクト](../mfc/window-objects.md) と [ドキュメント\/ビュー アーキテクチャ](../Topic/Document-View%20Architecture.md)で詳しく説明します。  
+ The rest of this family of articles explains how the framework tools, the MFC Application Wizard, and the resource editors, create these objects, how they work together, and how you use them in your programming. Documents, views, and frame windows are discussed in more detail in [Window Objects](../mfc/window-objects.md) and [Document/View Architecture](../mfc/document-view-architecture.md).  
   
-## 参照  
- [クラスを使用した Windows アプリケーションの作成](../Topic/Using%20the%20Classes%20to%20Write%20Applications%20for%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Using the Classes to Write Applications for Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)
+

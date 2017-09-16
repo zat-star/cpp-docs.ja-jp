@@ -33,41 +33,41 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: ae857750efe2d1f80e703e0c44f9646f7bfd3733
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 39d42e2a74e2ef5000367dfbc5cd789011837434
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="ltunorderedsetgt"></a>&lt;unordered_set&gt;
-コンテナー テンプレート クラスの [unordered_multiset](../standard-library/unordered-multiset-class.md) と [unordered_set](../standard-library/unordered-set-class.md) およびそれらのサポート テンプレートを定義します。  
+Defines the container template classes [unordered_multiset](../standard-library/unordered-multiset-class.md) and [unordered_set](../standard-library/unordered-set-class.md) and their supporting templates.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 #include <unordered_set>  
 ```  
   
-### <a name="classes"></a>クラス  
+### <a name="classes"></a>Classes  
   
 |||  
 |-|-|  
-|[unordered_multiset クラス](../standard-library/unordered-multiset-class.md)|キーのハッシュ テーブルを格納します。|  
-|[unordered_set クラス](../standard-library/unordered-set-class.md)|キーのハッシュ テーブルを格納します。|  
+|[unordered_multiset Class](../standard-library/unordered-multiset-class.md)|Stores hash table of keys.|  
+|[unordered_set Class](../standard-library/unordered-set-class.md)|Stores hash table of keys.|  
   
-### <a name="functions"></a>関数  
+### <a name="functions"></a>Functions  
   
 |||  
 |-|-|  
-|[operator!=](../standard-library/unordered-set-operators.md#op_neq)|演算子の左側の unordered_multiset オブジェクトが右側の unordered_multiset オブジェクトと等しくないかどうかをテストします。|  
-|[operator==](../standard-library/unordered-set-operators.md#op_eq_eq)|演算子の左側の unordered_multiset オブジェクトが右側の unordered_multiset オブジェクトと等しいかどうかをテストします。|  
-|[swap](../standard-library/unordered-set-functions.md#swap_unordered_multiset)|2 つの multiset を入れ替えます。|  
-|[operator!=](../standard-library/unordered-set-operators.md#op_neq)|演算子の左側の unordered_set オブジェクトが右側の unordered_set オブジェクトと等しくないかどうかをテストします。|  
-|[operator==](../standard-library/unordered-set-operators.md#op_eq_eq)|演算子の左側の unordered_set オブジェクトが右側の unordered_set オブジェクトと等しいかどうかをテストします。|  
-|[swap](../standard-library/unordered-set-functions.md#swap)|2 つのセットを入れ替えます。|  
+|[operator!=](../standard-library/unordered-set-operators.md#op_neq)|Tests if the unordered_multiset object on the left side of the operator is not equal to the unordered_multiset object on the right side.|  
+|[operator==](../standard-library/unordered-set-operators.md#op_eq_eq)|Tests if the unordered_multiset object on the left side of the operator is equal to the unordered_multiset object on the right side.|  
+|[swap](../standard-library/unordered-set-functions.md#swap_unordered_multiset)|Swaps two multisets.|  
+|[operator!=](../standard-library/unordered-set-operators.md#op_neq)|Tests if the unordered_set object on the left side of the operator is not equal to the unordered_set object on the right side.|  
+|[operator==](../standard-library/unordered-set-operators.md#op_eq_eq)|Tests if the unordered_set object on the left side of the operator is equal to the unordered_set object on the right side.|  
+|[swap](../standard-library/unordered-set-functions.md#swap)|Swaps two sets.|  
   
-## <a name="see-also"></a>関連項目  
- [unordered_map クラス](../standard-library/unordered-map-class.md)   
- [unordered_multimap クラス](../standard-library/unordered-multimap-class.md)
+## <a name="see-also"></a>See Also  
+ [unordered_map Class](../standard-library/unordered-map-class.md)   
+ [unordered_multimap Class](../standard-library/unordered-multimap-class.md)
 

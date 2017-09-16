@@ -1,48 +1,67 @@
 ---
-title: "モーダルとモードレスのダイアログ ボックス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC ダイアログ ボックス, モーダル"
-  - "MFC ダイアログ ボックス, モードレス"
-  - "モーダル ダイアログ ボックス"
-  - "モードレス ダイアログ ボックス"
+title: Modal and Modeless Dialog Boxes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC dialog boxes [MFC], modeless
+- modeless dialog boxes [MFC]
+- MFC dialog boxes [MFC], modal
+- modal dialog boxes [MFC]
 ms.assetid: e83df336-5994-4b8f-8233-7942f997315b
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# モーダルとモードレスのダイアログ ボックス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 85bddb463705b83332bd16dc19fcbd627ffc3063
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-2 種類のダイアログ ボックスを管理するために [CDialog](../mfc/reference/cdialog-class.md) クラスを使用する場合:  
+---
+# <a name="modal-and-modeless-dialog-boxes"></a>Modal and Modeless Dialog Boxes
+You can use class [CDialog](../mfc/reference/cdialog-class.md) to manage two kinds of dialog boxes:  
   
--   ユーザーがプログラムを続行に反応するように要求する*モーダル ダイアログ ボックス*、  
+-   *Modal dialog boxes*, which require the user to respond before continuing the program  
   
--   画面になり、使用のためにいつでも使用できる他のユーザー操作を割り当てます*モードレス ダイアログ ボックスは*  
+-   *Modeless dialog boxes*, which stay on the screen and are available for use at any time but permit other user activities  
   
- ダイアログ テンプレートを作成するためのリソースの編集および手順はモーダルおよびモードレス ダイアログ ボックスと同じです。  
+ The resource editing and procedures for creating a dialog template are the same for modal and modeless dialog boxes.  
   
- プログラムのダイアログ ボックスを作成するには、次の手順が必要です。T:  
+ Creating a dialog box for your program requires the following steps:  
   
-1.  ダイアログ ボックスを設計し、ダイアログ テンプレート リソースを作成するには [ダイアログ エディター](../mfc/dialog-editor.md) を使用します。  
+1.  Use the [dialog editor](../windows/dialog-editor.md) to design the dialog box and create its dialog-template resource.  
   
-2.  ダイアログ クラスを作成します。  
+2.  Create a dialog class.  
   
-3.  ダイアログ クラスの [メッセージ ハンドラーにダイアログ リソースのコントロール](../mfc/adding-event-handlers-for-dialog-box-controls.md) を接続します。  
+3.  Connect the [dialog resource's controls to message handlers](../windows/adding-event-handlers-for-dialog-box-controls.md) in the dialog class.  
   
-4.  ダイアログ ボックスのコントロールに関連付けられたデータ メンバーを [ダイアログ データ エクスチェンジ \(DDX\)](../mfc/dialog-data-exchange.md) と [ダイアログ データ検証](../mfc/dialog-data-validation.md) をコントロールに対して指定する追加します。  
+4.  Add data members associated with the dialog box's controls and to specify [dialog data exchange](../mfc/dialog-data-exchange.md) and [dialog data validations](../mfc/dialog-data-validation.md) for the controls.  
   
-## 参照  
- [ダイアログ ボックス](../mfc/dialog-boxes.md)   
- [ダイアログ ボックスの有効期間](../mfc/life-cycle-of-a-dialog-box.md)
+## <a name="see-also"></a>See Also  
+ [Dialog Boxes](../mfc/dialog-boxes.md)   
+ [Life Cycle of a Dialog Box](../mfc/life-cycle-of-a-dialog-box.md)
+
+

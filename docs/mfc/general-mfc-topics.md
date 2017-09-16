@@ -1,67 +1,86 @@
 ---
-title: "MFC の一般的なトピック | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス ライブラリ, MFC"
-  - "MFC"
-  - "MFC, アプリケーション開発"
+title: General MFC Topics | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC
+- class libraries [MFC], MFC
+- MFC, application development
 ms.assetid: 617e9945-9bb3-471d-a3ba-e235fcfb55d1
 caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# MFC の一般的なトピック
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 4e6d3368bc32cfffd07dad512d95c58f2c81996e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC \(Microsoft Foundation Class\) ライブラリについて説明します。また、MFC フレームワークとその主要なコンポーネント、およびサブシステムの概要を示します。  
+---
+# <a name="general-mfc-topics"></a>General MFC Topics
+This family of articles includes technical details about the Microsoft Foundation Class (MFC) Library and provides an overview of the MFC framework and its key components and subsystems.  
   
- Microsoft Foundation Class ライブラリは、Microsoft Windows プログラミングのためのアプリケーション フレームワークです。  C\+\+ 言語で書かれた MFC では、ウィンドウ、メニュー、ダイアログ ボックスの管理、基本的な入出力の実行、データ オブジェクトのコレクションの保存といった機能に必要なコードの多くが提供されます。  このフレームワークに独自のコードを追加するだけで、アプリケーションのコードとして利用できます。  C\+\+ クラス プログラミングの特性により、簡単に [MFC フレームワーク](../mfc/framework-mfc.md)が供給する基本的な機能を拡張し、オーバーライドできます。  
+ The Microsoft Foundation Class Library is an application framework for programming in Microsoft Windows. Written in C++, MFC provides much of the code necessary for managing windows, menus, and dialog boxes; performing basic input/output; storing collections of data objects; and so on. All you need to do is add your application-specific code into this framework. Given the nature of C++ class programming, it is easy to extend or override the basic functionality that [the MFC framework](../mfc/framework-mfc.md) supplies.  
   
- MFC フレームワークは、Windows の熟練プログラマの成果を基にしたプログラミングを可能にする強力なアプローチです。  MFC は、開発時間を短縮し、コードの移植性を高め、プログラミングの自由度や柔軟性を損なうことなく、さまざまなサポートを提供します。また MFC は、ユーザー インターフェイスの要素や通常はプログラミングが難しいと考えられている技術への簡便なアクセスを実現し、Active テクノロジ、OLE、インターネットなどのプログラミングを大幅に簡略化します。  さらに MFC は、データ アクセス オブジェクト \(DAO: Data Access Objects\) とオープン データベース コネクティビティ \(ODBC: Open Database Connectivity\) を通じてデータベースのプログラミング、さらに Windows Sockets を通じてネットワークのプログラミングを簡略化します。  MFC は、フローティング ツール バー、カスタマイズ可能なツール バー、プロパティ シート \("タブ ダイアログ ボックス"\)、印刷プレビューのプログラミングなどを簡単にします。  
+ The MFC framework is a powerful approach that lets you build upon the work of expert programmers for Windows. MFC shortens development time; makes code more portable; provides tremendous support without reducing programming freedom and flexibility; and gives easy access to "hard to program" user-interface elements and technologies, like Active technology, OLE, and Internet programming. Furthermore, MFC simplifies database programming through Data Access Objects (DAO) and Open Database Connectivity (ODBC), and network programming through Windows Sockets. MFC makes it easy to program features like property sheets ("tab dialogs"), print preview, and floating, customizable toolbars.  
   
-## このセクションの内容  
- `MFC Samples` \([Visual C\+\+ のサンプル](../top/visual-cpp-samples.md)で提供されます\)  
+## <a name="in-this-section"></a>In This Section  
+ `MFC Samples`, which are supplied in [Visual C++ Samples](../visual-cpp-samples.md)  
   
- [MFC ソース ファイルの利用](../Topic/Using%20the%20MFC%20Source%20Files.md)  
+ [Using the MFC Source Files](../mfc/using-the-mfc-source-files.md)  
   
- [MFC ライブラリのバージョン](../mfc/mfc-library-versions.md)  
+ [MFC Library Versions](../mfc/mfc-library-versions.md)  
   
- [クラスを使用した Windows アプリケーションの作成](../Topic/Using%20the%20Classes%20to%20Write%20Applications%20for%20Windows.md)  
+ [Using the Classes to Write Applications for Windows](../mfc/using-the-classes-to-write-applications-for-windows.md)  
   
- [フレームワークを使ったアプリケーションの作成](../mfc/building-on-the-framework.md)  
+ [Building on the Framework](../mfc/building-on-the-framework.md)  
   
- [CWinApp : アプリケーション クラス](../Topic/CWinApp:%20The%20Application%20Class.md)  
+ [CWinApp: The Application Class](../mfc/cwinapp-the-application-class.md)  
   
- [ドキュメント テンプレートとドキュメント\/ビューの作成手順](../mfc/document-templates-and-the-document-view-creation-process.md)  
+ [Document Templates and the Document/View Creation Process](../mfc/document-templates-and-the-document-view-creation-process.md)  
   
- [MFC モジュールの状態データの管理](../mfc/managing-the-state-data-of-mfc-modules.md)  
+ [Managing the State Data of MFC Modules](../mfc/managing-the-state-data-of-mfc-modules.md)  
   
- [アイドリング ループ処理](../Topic/Idle%20Loop%20Processing.md)  
+ [Idle Loop Processing](../mfc/idle-loop-processing.md)  
   
- [MFC モジュール状態でのアクティベーション コンテキストのサポート](../Topic/Support%20for%20Activation%20Contexts%20in%20the%20MFC%20Module%20State.md)  
+ [Support for Activation Contexts in the MFC Module State](../mfc/support-for-activation-contexts-in-the-mfc-module-state.md)  
   
- [MFC コモン コントロール ライブラリの分離](../mfc/isolation-of-the-mfc-common-controls-library.md)  
+ [Isolation of the MFC Common Controls Library](../mfc/isolation-of-the-mfc-common-controls-library.md)  
   
- [Windows Vista コモン コントロールの作成要件](../mfc/build-requirements-for-windows-vista-common-controls.md)  
+ [Build Requirements for Windows Vista Common Controls](../mfc/build-requirements-for-windows-vista-common-controls.md)  
   
- [方法: 再起動マネージャーのサポートを追加する](../mfc/how-to-add-restart-manager-support.md)  
+ [How to: Add Restart Manager Support](../mfc/how-to-add-restart-manager-support.md)  
   
- [動的レイアウト](../mfc/dynamic-layout.md)  
+ [Dynamic Layout](../mfc/dynamic-layout.md)  
   
- MFC のリファレンス マニュアルの概要については、「[MFC リファレンス](../mfc/mfc-desktop-applications.md)」を参照してください。  
+ For an overview of the MFC reference documentation, see [Microsoft Foundation Class Library](../mfc/mfc-desktop-applications.md).  
   
- ATL については、「[ATL リファレンス](../atl/atl-class-overview.md)」を参照してください。  
+ For information about ATL, see [Active Template Library Reference](../atl/atl-class-overview.md).  
   
-## 参照  
- [ウィンドウ オブジェクトの操作](../Topic/Working%20with%20Window%20Objects.md)
+## <a name="see-also"></a>See Also  
+ [Working with Window Objects](../mfc/working-with-window-objects.md)
+
+

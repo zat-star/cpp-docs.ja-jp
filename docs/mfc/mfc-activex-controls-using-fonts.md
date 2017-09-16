@@ -1,239 +1,258 @@
 ---
-title: "MFC ActiveX コントロール : フォントの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "OnFontChanged"
-  - "HeadingFont"
-  - "InternalFont"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "フォント, ActiveX コントロール"
-  - "GetFont メソッド"
-  - "HeadingFont プロパティ"
-  - "InternalFont メソッド"
-  - "IPropertyNotifySink クラス"
-  - "MFC ActiveX コントロール, フォント"
-  - "通知, MFC ActiveX コントロールのフォント"
-  - "OnDraw メソッド, MFC ActiveX コントロール"
-  - "OnFontChanged メソッド"
-  - "SelectStockFont メソッド"
-  - "SetFont メソッド"
-  - "ストック フォント プロパティ"
+title: 'MFC ActiveX Controls: Using Fonts | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- OnFontChanged
+- HeadingFont
+- InternalFont
+dev_langs:
+- C++
+helpviewer_keywords:
+- notifications [MFC], MFC ActiveX controls fonts
+- OnDraw method, MFC ActiveX controls
+- InternalFont method [MFC]
+- SetFont method [MFC]
+- OnFontChanged method [MFC]
+- IPropertyNotifySink class [MFC]
+- MFC ActiveX controls [MFC], fonts
+- Stock Font property [MFC]
+- HeadingFont property [MFC]
+- GetFont method [MFC]
+- SelectStockFont method [MFC]
+- fonts [MFC], ActiveX controls
 ms.assetid: 7c51d602-3f5a-481d-84d1-a5d8a3a71761
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# MFC ActiveX コントロール : フォントの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 160c743fef712d42deae76711f0df3069d82b709
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ActiveX コントロールの表示がテキストを送信する場合は、コントロールのユーザーがフォントのプロパティを変更して、テキストの外観を変更できるようにすることができます。  フォント プロパティはフォント オブジェクトとして実装され、2 種類の 1 種類です: ストックまたはカスタム。  ストック フォント プロパティが、プロパティの追加ウィザードを使用して追加できる preimplemented フォント プロパティです。  カスタム フォントのプロパティは、preimplemented し、コントロールの開発者はプロパティの動作と使用方法を決定します。  
+---
+# <a name="mfc-activex-controls-using-fonts"></a>MFC ActiveX Controls: Using Fonts
+If your ActiveX control displays text, you can allow the control user to change the text appearance by changing a font property. Font properties are implemented as font objects and can be one of two types: stock or custom. Stock Font properties are preimplemented font properties that you can add using the Add Property Wizard. Custom Font properties are not preimplemented and the control developer determines the property's behavior and usage.  
   
- ここでは、次のトピックについて説明します。  
+ This article covers the following topics:  
   
--   [ストック フォント プロパティを使用します。](#_core_using_the_stock_font_property)  
+-   [Using the Stock Font property](#_core_using_the_stock_font_property)  
   
--   [コントロールのカスタム プロパティを使用してフォントの](#_core_implementing_a_custom_font_property)  
+-   [Using Custom Font Properties in Your Control](#_core_implementing_a_custom_font_property)  
   
-##  <a name="_core_using_the_stock_font_property"></a> ストック フォント プロパティを使用します。  
- ストック フォント プロパティは [COleControl](../mfc/reference/colecontrol-class.md)クラスによって preimplemented。  また、標準フォント プロパティ ページを使用すると、名前、サイズ、スタイルなどのフォント オブジェクトのさまざまな属性を、変更を許可します。  
+##  <a name="_core_using_the_stock_font_property"></a> Using the Stock Font Property  
+ Stock Font properties are preimplemented by the class [COleControl](../mfc/reference/colecontrol-class.md). In addition, a standard Font property page is also available, allowing the user to change various attributes of the font object, such as its name, size, and style.  
   
- `COleControl`の [GetFont](../Topic/COleControl::GetFont.md)、[SetFont](../Topic/COleControl::SetFont.md)と [InternalGetFont](../Topic/COleControl::InternalGetFont.md) 関数でフォント オブジェクトにアクセスします。  コントロールのユーザーが `GetFont` と `SetFont` 関数によって他の取得と設定のプロパティと同様にフォント オブジェクトにアクセスします。  フォント オブジェクトへのアクセスがコントロール内の必要な場合は、`InternalGetFont` 関数を使用します。  
+ Access the font object through the [GetFont](../mfc/reference/colecontrol-class.md#getfont), [SetFont](../mfc/reference/colecontrol-class.md#setfont), and [InternalGetFont](../mfc/reference/colecontrol-class.md#internalgetfont) functions of `COleControl`. The control user will access the font object via the `GetFont` and `SetFont` functions in the same manner as any other Get/Set property. When access to the font object is required from within a control, use the `InternalGetFont` function.  
   
- [MFC ActiveX コントロール: プロパティ](../mfc/mfc-activex-controls-properties.md)"に説明されているように、ストック プロパティを追加するには [プロパティ 追加ウィザード](../ide/names-add-property-wizard.md)と簡単です。  フォント プロパティを選択し、プロパティの追加ウィザードはコントロールのディスパッチ マップに自動的にストック フォント エントリを挿入します。  
+ As discussed in [MFC ActiveX Controls: Properties](../mfc/mfc-activex-controls-properties.md), adding stock properties is easy with the [Add Property Wizard](../ide/names-add-property-wizard.md). You choose the Font property, and the Add Property Wizard automatically inserts the stock Font entry into the control's dispatch map.  
   
-#### ストック フォント プロパティの追加ウィザードのプロパティを追加するには  
+#### <a name="to-add-the-stock-font-property-using-the-add-property-wizard"></a>To add the stock Font property using the Add Property Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これは、プロパティの追加ウィザードが表示されます。  
+     This opens the Add Property Wizard.  
   
-5.  **プロパティ名** ボックスで、**フォント**をクリックします。  
+5.  In the **Property Name** box, click **Font**.  
   
-6.  \[完了\] をクリックします。  
+6.  Click **Finish**.  
   
- プロパティの追加ウィザードはコントロール クラスの実装ファイルにあるコントロールのディスパッチ マップに次の行を追加する:  
+ The Add Property Wizard adds the following line to the control's dispatch map, located in the control class implementation file:  
   
- [!code-cpp[NVC_MFC_AxFont#1](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_1.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#1](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_1.cpp)]  
   
- また、プロパティの追加ウィザードはコントロール .IDL ファイルに次の行を追加する:  
+ In addition, the Add Property Wizard adds the following line to the control .IDL file:  
   
- [!code-cpp[NVC_MFC_AxFont#2](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_2.idl)]  
+ [!code-cpp[NVC_MFC_AxFont#2](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_2.idl)]  
   
- ストック Caption プロパティには、ストック フォント プロパティ情報を使用して描画できるテキストのプロパティの例です。  コントロールにストック Caption プロパティを追加すると、ストック フォント プロパティに使用するような手順を使用します。  
+ The stock Caption property is an example of a text property that can be drawn using the stock Font property information. Adding the stock Caption property to the control uses steps similar to those used for the stock Font property.  
   
-#### ストック Caption プロパティの追加ウィザードのプロパティを追加するには  
+#### <a name="to-add-the-stock-caption-property-using-the-add-property-wizard"></a>To add the stock Caption property using the Add Property Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これは、プロパティの追加ウィザードが表示されます。  
+     This opens the Add Property Wizard.  
   
-5.  **プロパティ名** ボックスで、**キャプション**をクリックします。  
+5.  In the **Property Name** box, click **Caption**.  
   
-6.  \[完了\] をクリックします。  
+6.  Click **Finish**.  
   
- プロパティの追加ウィザードはコントロール クラスの実装ファイルにあるコントロールのディスパッチ マップに次の行を追加する:  
+ The Add Property Wizard adds the following line to the control's dispatch map, located in the control class implementation file:  
   
- [!code-cpp[NVC_MFC_AxFont#3](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#3](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_3.cpp)]  
   
-##  <a name="_core_modifying_the_ondraw_function"></a> OnDraw 関数の変更  
- `OnDraw` の既定の実装では、コントロールに表示されるすべてのテキストに Windows システム フォントを使用します。  これはデバイス コンテキストにフォント オブジェクトを選択して `OnDraw` コードを変更する必要があります。  これを行うには、[COleControl::SelectStockFont](../Topic/COleControl::SelectStockFont.md) を呼び出し、次の例に示すように、コントロールのデバイス コンテキストを渡します。:  
+##  <a name="_core_modifying_the_ondraw_function"></a> Modifying the OnDraw Function  
+ The default implementation of `OnDraw` uses the Windows system font for all text displayed in the control. This means that you must modify the `OnDraw` code by selecting the font object into the device context. To do this, call [COleControl::SelectStockFont](../mfc/reference/colecontrol-class.md#selectstockfont) and pass the control's device context, as shown in the following example:  
   
- [!code-cpp[NVC_MFC_AxFont#4](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_4.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#4](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_4.cpp)]  
   
- フォント オブジェクトを使用するに `OnDraw` 関数が変更された後にコントロール内のテキストは、コントロールのストックのフォント プロパティの特性が表示されます。  
+ After the `OnDraw` function has been modified to use the font object, any text within the control is displayed with characteristics from the control's stock Font property.  
   
-##  <a name="_core_using_custom_font_properties_in_your_control"></a> コントロールのカスタム プロパティを使用してフォントの  
- ストック フォント プロパティに加えて、ActiveX コントロールはカスタム フォントのプロパティを持つことができます。  カスタム フォントのプロパティを追加するには、次のようにする必要があります:  
+##  <a name="_core_using_custom_font_properties_in_your_control"></a> Using Custom Font Properties in Your Control  
+ In addition to the stock Font property, the ActiveX control can have custom Font properties. To add a custom font property you must:  
   
--   カスタム フォントのプロパティを実装するには、プロパティの追加ウィザードを使用します。  
+-   Use the Add Property Wizard to implement the custom Font property.  
   
--   [フォントの通知の処理](#_core_processing_font_notifications)。  
+-   [Processing font notifications](#_core_processing_font_notifications).  
   
--   [新しいフォントの通知インターフェイスの実装](#_core_implementing_a_new_font_notification_interface)。  
+-   [Implementing a new font notification interface](#_core_implementing_a_new_font_notification_interface).  
   
-###  <a name="_core_implementing_a_custom_font_property"></a> カスタム フォントのプロパティの実装  
- カスタム フォントのプロパティを実装するには、プロパティを追加し、コードに対して変更を行うには、プロパティの追加ウィザードを使用します。  次のセクションでは、サンプル コントロールに `HeadingFont` にカスタム プロパティを追加する方法について説明します。  
+###  <a name="_core_implementing_a_custom_font_property"></a> Implementing a Custom Font Property  
+ To implement a custom Font property, you use the Add Property Wizard to add the property and then make some modifications to the code. The following sections describe how to add the custom `HeadingFont` property to the Sample control.  
   
-##### カスタム フォントのプロパティをプロパティの追加ウィザードを追加するには  
+##### <a name="to-add-the-custom-font-property-using-the-add-property-wizard"></a>To add the custom Font property using the Add Property Wizard  
   
-1.  コントロールのプロジェクトを読み込んでください。  
+1.  Load your control's project.  
   
-2.  クラス ビューで、コントロール ライブラリ ノードを展開します。  
+2.  In Class View, expand the library node of your control.  
   
-3.  ショートカット メニューを表示するコントロール \(ライブラリ ノードの 2 番目のノード\) のインターフェイス ノードを右クリックします。  
+3.  Right-click the interface node for your control (the second node of the library node) to open the shortcut menu.  
   
-4.  ショートカット メニューで、クリック **追加** は、**\[プロパティの追加\]** をクリックします。  
+4.  From the shortcut menu, click **Add** and then click **Add Property**.  
   
-     これは、プロパティの追加ウィザードが表示されます。  
+     This opens the Add Property Wizard.  
   
-5.  **プロパティ名** ボックスで、プロパティの名前を入力します。  この例では、**HeadingFont**を使用します。  
+5.  In the **Property Name** box, type a name for the property. For this example, use **HeadingFont**.  
   
-6.  **Implementation Type**の場合、クリック **Get\/Set メソッドの設定**。  
+6.  For **Implementation Type**, click **Get/Set Methods**.  
   
-7.  **プロパティの種類** ボックスで、プロパティの型に **IDispatch\*** を選択します。  
+7.  In the **Property Type** box, select **IDispatch\*** for the property's type.  
   
-8.  \[完了\] をクリックします。  
+8.  Click **Finish**.  
   
- プロパティの追加ウィザードが `CSampleCtrl` クラスと SAMPLE.IDL ファイルに `HeadingFont` にカスタム プロパティを追加するコードを作成します。  `HeadingFont` が Get\/Set プロパティ型であるため、プロパティの追加ウィザードが `DISP_PROPERTY_EX_ID`[DISP\_PROPERTY\_EX](../Topic/DISP_PROPERTY_EX.md) マクロ エントリを含むように `CSampleCtrl` クラスのディスパッチ マップを変更する:  
+ The Add Property Wizard creates the code to add the `HeadingFont` custom property to the `CSampleCtrl` class and the SAMPLE.IDL file. Because `HeadingFont` is a Get/Set property type, the Add Property Wizard modifies the `CSampleCtrl` class's dispatch map to include a `DISP_PROPERTY_EX_ID`[DISP_PROPERTY_EX](../mfc/reference/dispatch-maps.md#disp_property_ex) macro entry:  
   
- [!code-cpp[NVC_MFC_AxFont#5](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_5.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#5](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_5.cpp)]  
   
- `DISP_PROPERTY_EX` マクロは `CSampleCtrl` の対応するクラスと `HeadingFont` プロパティ名を取得します `GetHeadingFont` set メソッド、および `SetHeadingFont`関連付けます。  プロパティ値の種類も指定されます; この場合、**VT\_FONT**。  
+ The `DISP_PROPERTY_EX` macro associates the `HeadingFont` property name with its corresponding `CSampleCtrl` class Get and Set methods, `GetHeadingFont` and `SetHeadingFont`. The type of the property value is also specified; in this case, **VT_FONT**.  
   
- プロパティの追加ウィザードによって、コントロールのヘッダー ファイルの宣言を追加します。`GetHeadingFont` と `SetHeadingFont` の H\) はしたり、コントロールの実装ファイル \(.cpp\) 関数テンプレートを追加する:  
+ The Add Property Wizard also adds a declaration in the control header file (.H) for the `GetHeadingFont` and `SetHeadingFont` functions and adds their function templates in the control implementation file (.CPP):  
   
- [!code-cpp[NVC_MFC_AxFont#6](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_6.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#6](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_6.cpp)]  
   
- 最後に、プロパティの追加ウィザードが `HeadingFont` のプロパティのエントリを追加して、コントロール .IDL ファイルを変更する:  
+ Finally, the Add Property Wizard modifies the control .IDL file by adding an entry for the `HeadingFont` property:  
   
- [!code-cpp[NVC_MFC_AxFont#7](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_7.idl)]  
+ [!code-cpp[NVC_MFC_AxFont#7](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_7.idl)]  
   
-### 制御コードの変更  
- コントロールに `HeadingFont` のプロパティを追加したので、新しいプロパティをサポートするコントロールのヘッダー ファイルと実装ファイルへの変更を行う必要があります。  
+### <a name="modifications-to-the-control-code"></a>Modifications to the Control Code  
+ Now that you have added the `HeadingFont` property to the control, you must make some changes to the control header and implementation files to fully support the new property.  
   
- コントロールのヘッダー ファイル \(。H\) は、プロテクト メンバー変数の次の宣言を追加する:  
+ In the control header file (.H), add the following declaration of a protected member variable:  
   
- [!code-cpp[NVC_MFC_AxFont#8](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_8.h)]  
+ [!code-cpp[NVC_MFC_AxFont#8](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_8.h)]  
   
- コントロールの実装ファイル \(.cpp\) で、次の手順を実行します。:  
+ In the control implementation file (.CPP), do the following:  
   
--   コントロールのコンストラクターの `m_fontHeading` を初期化してください。  
+-   Initialize `m_fontHeading` in the control constructor.  
   
-     [!code-cpp[NVC_MFC_AxFont#9](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_9.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#9](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_9.cpp)]  
   
--   フォントの静的な **FONTDESC** を含む構造体の既定のプロパティを宣言します。  
+-   Declare a static **FONTDESC** structure containing default attributes of the font.  
   
-     [!code-cpp[NVC_MFC_AxFont#10](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_10.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#10](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_10.cpp)]  
   
--   コントロールの `DoPropExchange` のメンバー関数では、`PX_Font` 関数の呼び出しを追加します。  これは、カスタム フォントのプロパティに初期化、永続性を提供します。  
+-   In the control `DoPropExchange` member function, add a call to the `PX_Font` function. This provides initialization and persistence for your custom Font property.  
   
-     [!code-cpp[NVC_MFC_AxFont#11](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_11.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#11](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_11.cpp)]  
   
--   コントロールの `GetHeadingFont` メンバー関数を実装する終了します。  
+-   Finish implementing the control `GetHeadingFont` member function.  
   
-     [!code-cpp[NVC_MFC_AxFont#12](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_12.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#12](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_12.cpp)]  
   
--   コントロールの `SetHeadingFont` メンバー関数を実装する終了します。  
+-   Finish implementing the control `SetHeadingFont` member function.  
   
-     [!code-cpp[NVC_MFC_AxFont#13](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_13.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#13](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_13.cpp)]  
   
--   変数を選択したフォントを保持するために定義されたときにコントロールの `OnDraw` メンバー関数を変更します。  
+-   Modify the control `OnDraw` member function to define a variable to hold the previously selected font.  
   
-     [!code-cpp[NVC_MFC_AxFont#14](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_14.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#14](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_14.cpp)]  
   
--   次の行を追加して、デバイス コンテキストにカスタム フォントを選択するためのコントロールの `OnDraw` メンバー関数を変更して、フォントを使用する必要がある場所で。  
+-   Modify the control `OnDraw` member function to select the custom font into the device context by adding the following line wherever the font is to be used.  
   
-     [!code-cpp[NVC_MFC_AxFont#15](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_15.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#15](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_15.cpp)]  
   
--   次の行を追加して、デバイス コンテキストに戻す前のフォントを選択するためのコントロールの `OnDraw` メンバー関数を変更して、フォントを使用した後。  
+-   Modify the control `OnDraw` member function to select the previous font back into the device context by adding the following line after the font has been used.  
   
-     [!code-cpp[NVC_MFC_AxFont#16](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_16.cpp)]  
+     [!code-cpp[NVC_MFC_AxFont#16](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_16.cpp)]  
   
- カスタム フォントのプロパティが実装された後、標準フォント プロパティ ページが実装されるようにコントロールの現在のフォントを変更するには、コントロールのユーザーを許可します。  標準フォント プロパティ ページの ID プロパティ ページを追加するには、`BEGIN_PROPPAGEIDS` マクロの後に次の行を挿入する:  
+ After the custom Font property has been implemented, the standard Font property page should be implemented, allowing control users to change the control's current font. To add the property page ID for the standard Font property page, insert the following line after the `BEGIN_PROPPAGEIDS` macro:  
   
- [!code-cpp[NVC_MFC_AxFont#17](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_17.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#17](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_17.cpp)]  
   
- または 1 ずつ `BEGIN_PROPPAGEIDS` マクロのパラメーター数をインクリメントしなければなりません。  次の行ではこれを説明する:  
+ You must also increment the count parameter of your `BEGIN_PROPPAGEIDS` macro by one. The following line illustrates this:  
   
- [!code-cpp[NVC_MFC_AxFont#18](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_18.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#18](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_18.cpp)]  
   
- これらの変更が行われた後で、追加機能を取り込んだプロジェクト全体を再ビルドします。  
+ After these changes have been made, rebuild the entire project to incorporate the additional functionality.  
   
-###  <a name="_core_processing_font_notifications"></a> フォントの通知の処理  
- ほとんどの場合、フォント オブジェクトの特性がいつ変更したかを確認するコントロールが。  各フォント オブジェクトは **IFontNotification** インターフェイスのメンバー関数を呼び出して、変更されたときに通知を提供できますが、`COleControl`で実装されています。  
+###  <a name="_core_processing_font_notifications"></a> Processing Font Notifications  
+ In most cases the control needs to know when the characteristics of the font object have been modified. Each font object is capable of providing notifications when it changes by calling a member function of the **IFontNotification** interface, implemented by `COleControl`.  
   
- コントロールがストック フォント プロパティを使用すると、通知は `COleControl`の `OnFontChanged` のメンバー関数によって処理されます。  カスタム フォントのプロパティを追加すると、それらを同じ実装を使用できます。  前述の例では、これは**m\_xFontNotification** を渡すことによって &**m\_fontHeading** のメンバー変数を初期化するときに実行されます。  
+ If the control uses the stock Font property, its notifications are handled by the `OnFontChanged` member function of `COleControl`. When you add custom font properties, you can have them use the same implementation. In the example in the previous section, this was accomplished by passing &**m_xFontNotification** when initializing the **m_fontHeading** member variable.  
   
- ![複数のフォント オブジェクト インターフェイスの実装](../mfc/media/vc373q1.gif "vc373Q1")  
-複数のフォント オブジェクト インターフェイスの実装  
+ ![Implementing multiple font object interfaces](../mfc/media/vc373q1.gif "vc373q1")  
+Implementing Multiple Font Object Interfaces  
   
- フォント、両方のオブジェクトが同じ **IFontNotification**の実装を使用している、上の図の純色。  これには、フォントが変更した区別する場合、問題が発生する可能性があります。  
+ The solid lines in the figure above show that both font objects are using the same implementation of **IFontNotification**. This could cause problems if you wanted to distinguish which font changed.  
   
- コントロールのフォント オブジェクトの通知を区別する 1 番目の方法は、コントロールの各フォント オブジェクトの **IFontNotification** インターフェイスの別の実装を作成します。  この方法は、最近変更されたフォントを使用し、文字列は、文字列が更新によって描画コードを最適化するようにします。  以下のセクションでは、2 番目のフォント プロパティに別の通知インターフェイスを実装するために必要な手順について説明します。  2 番目のフォント プロパティは、前のセクションで追加した `HeadingFont` のプロパティと見なされます。  
+ One way to distinguish between the control's font object notifications is to create a separate implementation of the **IFontNotification** interface for each font object in the control. This technique allows you to optimize your drawing code by updating only the string, or strings, that use the recently modified font. The following sections demonstrate the steps necessary to implement separate notification interfaces for a second Font property. The second font property is assumed to be the `HeadingFont` property that was added in the previous section.  
   
-###  <a name="_core_implementing_a_new_font_notification_interface"></a> 新しいフォントの通知インターフェイスの実装  
- 複数のフォントの通知を区別するために、新しい通知インターフェイスは、コントロールで使用される各フォントで実装されなければなりません。  以下のセクションでは、コントロールのヘッダー ファイルと実装ファイルを変更して、新しいフォントの通知インターフェイスを実装する方法について説明します。  
+###  <a name="_core_implementing_a_new_font_notification_interface"></a> Implementing a New Font Notification Interface  
+ To distinguish between the notifications of two or more fonts, a new notification interface must be implemented for each font used in the control. The following sections describe how to implement a new font notification interface by modifying the control header and implementation files.  
   
-### ヘッダー ファイルへの追加  
- コントロールのヘッダー ファイル \(。H\) はクラス宣言に、次の行を追加する:  
+### <a name="additions-to-the-header-file"></a>Additions to the Header File  
+ In the control header file (.H), add the following lines to the class declaration:  
   
- [!code-cpp[NVC_MFC_AxFont#19](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_19.h)]  
+ [!code-cpp[NVC_MFC_AxFont#19](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_19.h)]  
   
- これは `HeadingFontNotify`という `IPropertyNotifySink` インターフェイスの実装を作成します。  この新しいインターフェイスが `OnChanged`というメソッドが含まれています。  
+ This creates an implementation of the `IPropertyNotifySink` interface called `HeadingFontNotify`. This new interface contains a method called `OnChanged`.  
   
-### 実装ファイルへの追加  
- ヘッダーのフォントを初期化するコードでは、コントロールのコンストラクター\)、`&m_xHeadingFontNotify`に `&m_xFontNotification` を変更します。  次のコードを追加する:  
+### <a name="additions-to-the-implementation-file"></a>Additions to the Implementation File  
+ In the code that initializes the heading font (in the control constructor), change `&m_xFontNotification` to `&m_xHeadingFontNotify`. Then add the following code:  
   
- [!code-cpp[NVC_MFC_AxFont#20](../mfc/codesnippet/CPP/mfc-activex-controls-using-fonts_20.cpp)]  
+ [!code-cpp[NVC_MFC_AxFont#20](../mfc/codesnippet/cpp/mfc-activex-controls-using-fonts_20.cpp)]  
   
- `IPropertyNotifySink` インターフェイスの `AddRef` と `Release` のメソッドは ActiveX コントロール オブジェクトの参照カウントを追跡します。  コントロールがインターフェイス ポインターへのアクセスを取得すると、コントロールが参照カウントをインクリメントするに `AddRef` を呼び出します。  コントロールは、ポインターが完了したら、グローバル メモリのブロックを解除するに **GlobalFree** が呼び出される可能性があります。`Release`を、ほとんど同じ方法で呼び出します。  このインターフェイスの参照カウントがゼロになると、インターフェイスの実装を解放できます。  この例では、特定のオブジェクトの `IPropertyNotifySink` インターフェイスへの `QueryInterface` 関数の戻り値はポインター。  この関数は、ActiveX コントロールを任意のインターフェイスをサポートしているかを判断するためにオブジェクトを呼び出すことができます。  
+ The `AddRef` and `Release` methods in the `IPropertyNotifySink` interface keep track of the reference count for the ActiveX control object. When the control obtains access to interface pointer, the control calls `AddRef` to increment the reference count. When the control is finished with the pointer, it calls `Release`, in much the same way that **GlobalFree** might be called to free a global memory block. When the reference count for this interface goes to zero, the interface implementation can be freed. In this example, the `QueryInterface` function returns a pointer to a `IPropertyNotifySink` interface on a particular object. This function allows an ActiveX control to query an object to determine what interfaces it supports.  
   
- プロジェクトに変更が加えられると、プロジェクトを再度ビルドし、インターフェイスをテストするには、テスト コンテナーを使用します。  テスト コンテナーへのアクセス方法については、「[テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md)」を参照してください。  
+ After these changes have been made to your project, rebuild the project and use Test Container to test the interface. See [Testing Properties and Events with Test Container](../mfc/testing-properties-and-events-with-test-container.md) for information on how to access the test container.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール : ActiveX コントロールにおけるピクチャの使用](../mfc/mfc-activex-controls-using-pictures-in-an-activex-control.md)   
- [MFC ActiveX コントロール : ストック プロパティ ページの使用](../mfc/mfc-activex-controls-using-stock-property-pages.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [MFC ActiveX Controls: Using Pictures in an ActiveX Control](../mfc/mfc-activex-controls-using-pictures-in-an-activex-control.md)   
+ [MFC ActiveX Controls: Using Stock Property Pages](../mfc/mfc-activex-controls-using-stock-property-pages.md)
+
+

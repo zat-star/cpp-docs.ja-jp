@@ -1,53 +1,72 @@
 ---
-title: "例外処理 : 独自関数からの例外のスロー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例外, スロー"
-  - "関数 [C++], スロー (例外を)"
-  - "スロー (例外を), 関数から"
+title: 'Exceptions: Throwing Exceptions from Your Own Functions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- throwing exceptions [MFC], from functions
+- functions [MFC], throwing exceptions
+- exceptions [MFC], throwing
 ms.assetid: 492976e8-8804-4234-8e8f-30dffd0501be
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 例外処理 : 独自関数からの例外のスロー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9a67bebf4f9f71ae86a5c0bcbe3716c96ced6b56
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC または他のライブラリ関数によってスローされる例外をキャッチするために MFC の例外処理のメリットをのみ使用することができます。  ライブラリ コードによってスローされた例外をキャッチすることに加えて、例外状況に遭遇する関数を作成する場合は、独自のコードが例外をスローすることができます。  
+---
+# <a name="exceptions-throwing-exceptions-from-your-own-functions"></a>Exceptions: Throwing Exceptions from Your Own Functions
+It is possible to use the MFC exception-handling paradigm solely to catch exceptions thrown by functions in MFC or other libraries. In addition to catching exceptions thrown by library code, you can throw exceptions from your own code if you are writing functions that can encounter exceptional conditions.  
   
- 例外がスローされると、現在の関数の直接実行が停止し、最も内側例外フレームの **catch** ブロックにジャンプします。  例外の機能、関数の正常終了のパスをバイパスします。  したがって、正常終了で削除されているメモリ ブロックを削除することを確認する必要があります。  
+ When an exception is thrown, execution of the current function is stopped and jumps directly to the **catch** block of the innermost exception frame. The exception mechanism bypasses the normal exit path from a function. Therefore, you must be sure to delete those memory blocks that would be deleted in a normal exit.  
   
-#### 例外をスローするには  
+#### <a name="to-throw-an-exception"></a>To throw an exception  
   
-1.  `AfxThrowMemoryException`などの MFC のヘルパー関数の 1 種類を使用します。  これらの関数は、適切な型の割り当て済み例外オブジェクトをスローします。  
+1.  Use one of the MFC helper functions, such as `AfxThrowMemoryException`. These functions throw a preallocated exception object of the appropriate type.  
   
-     次の例では、関数は、いずれかの割り当てが失敗した場合は 2 個のメモリ ブロックを割り当てると、例外をスローします:  
+     In the following example, a function tries to allocate two memory blocks and throws an exception if either allocation fails:  
   
-     [!code-cpp[NVC_MFCExceptions#17](../mfc/codesnippet/CPP/exceptions-throwing-exceptions-from-your-own-functions_1.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#17](../mfc/codesnippet/cpp/exceptions-throwing-exceptions-from-your-own-functions_1.cpp)]  
   
-     最初の割り当てが失敗した場合、メモリ不足の例外をスローすることができます。  最初の割り当てが成功した場合は、2 1 番目に失敗すると、例外をスローする前に、最初の割り当てブロックを解放する必要があります。  割り当てが両方とも成功した場合は、関数が終了するときに進み、ブロックを解除できます。  
+     If the first allocation fails, you can simply throw the memory exception. If the first allocation is successful but the second one fails, you must free the first allocation block before throwing the exception. If both allocations succeed, you can proceed normally and free the blocks when exiting the function.  
   
-     または  
+     - or -  
   
-2.  懸案事項の状態を示すためにユーザー定義例外を使用します。  例外として、型、クラス全体の項目もスローすることができます。  
+2.  Use a user-defined exception to indicate a problem condition. You can throw an item of any type, even an entire class, as your exception.  
   
-     次の例では、エラーが発生した波のデバイスでサウンドをしようとすると、例外をスローします。  
+     The following example attempts to play a sound through a wave device and throws an exception if there is a failure.  
   
-     [!code-cpp[NVC_MFCExceptions#18](../mfc/codesnippet/CPP/exceptions-throwing-exceptions-from-your-own-functions_2.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#18](../mfc/codesnippet/cpp/exceptions-throwing-exceptions-from-your-own-functions_2.cpp)]  
   
 > [!NOTE]
->  MFC の例外の既定の処理は `CException` オブジェクト適用されます \(および `CException`オブジェクト\-派生クラスへのポインターにのみ\)。  上の例のバイパス MFC 例外の機能。  
+>  MFC's default handling of exceptions applies only to pointers to `CException` objects (and objects of `CException`-derived classes). The example above bypasses MFC's exception mechanism.  
   
-## 参照  
- [例外処理](../mfc/exception-handling-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Exception Handling](../mfc/exception-handling-in-mfc.md)
+
+

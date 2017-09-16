@@ -1,5 +1,5 @@
 ---
-title: "CMFCVisualManagerWindows クラス |Microsoft ドキュメント"
+title: CMFCVisualManagerWindows Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -81,7 +81,73 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCVisualManagerWindows class
+- CMFCVisualManagerWindows [MFC], AlwaysHighlight3DTabs
+- CMFCVisualManagerWindows [MFC], DrawComboBorderWinXP
+- CMFCVisualManagerWindows [MFC], DrawComboDropButtonWinXP
+- CMFCVisualManagerWindows [MFC], DrawPushButtonWinXP
+- CMFCVisualManagerWindows [MFC], GetButtonExtraBorder
+- CMFCVisualManagerWindows [MFC], GetCaptionButtonExtraBorder
+- CMFCVisualManagerWindows [MFC], GetDockingPaneCaptionExtraHeight
+- CMFCVisualManagerWindows [MFC], GetHighlightedMenuItemTextColor
+- CMFCVisualManagerWindows [MFC], GetPopupMenuGap
+- CMFCVisualManagerWindows [MFC], GetToolbarButtonTextColor
+- CMFCVisualManagerWindows [MFC], IsDefaultWinXPPopupButton
+- CMFCVisualManagerWindows [MFC], IsHighlightWholeMenuItem
+- CMFCVisualManagerWindows [MFC], IsOfficeStyleMenus
+- CMFCVisualManagerWindows [MFC], IsOfficeXPStyleMenus
+- CMFCVisualManagerWindows [MFC], IsWindowsThemingSupported
+- CMFCVisualManagerWindows [MFC], IsWinXPThemeAvailable
+- CMFCVisualManagerWindows [MFC], OnDrawBarGripper
+- CMFCVisualManagerWindows [MFC], OnDrawBrowseButton
+- CMFCVisualManagerWindows [MFC], OnDrawButtonBorder
+- CMFCVisualManagerWindows [MFC], OnDrawButtonSeparator
+- CMFCVisualManagerWindows [MFC], OnDrawCaptionButton
+- CMFCVisualManagerWindows [MFC], OnDrawCaptionButtonIcon
+- CMFCVisualManagerWindows [MFC], OnDrawCheckBoxEx
+- CMFCVisualManagerWindows [MFC], OnDrawComboBorder
+- CMFCVisualManagerWindows [MFC], OnDrawComboDropButton
+- CMFCVisualManagerWindows [MFC], OnDrawControlBorder
+- CMFCVisualManagerWindows [MFC], OnDrawEditBorder
+- CMFCVisualManagerWindows [MFC], OnDrawExpandingBox
+- CMFCVisualManagerWindows [MFC], OnDrawFloatingToolbarBorder
+- CMFCVisualManagerWindows [MFC], OnDrawHeaderCtrlBorder
+- CMFCVisualManagerWindows [MFC], OnDrawHeaderCtrlSortArrow
+- CMFCVisualManagerWindows [MFC], OnDrawMenuBorder
+- CMFCVisualManagerWindows [MFC], OnDrawMenuSystemButton
+- CMFCVisualManagerWindows [MFC], OnDrawMiniFrameBorder
+- CMFCVisualManagerWindows [MFC], OnDrawOutlookPageButtonBorder
+- CMFCVisualManagerWindows [MFC], OnDrawPaneBorder
+- CMFCVisualManagerWindows [MFC], OnDrawPaneCaption
+- CMFCVisualManagerWindows [MFC], OnDrawPopupWindowButtonBorder
+- CMFCVisualManagerWindows [MFC], OnDrawScrollButtons
+- CMFCVisualManagerWindows [MFC], OnDrawSeparator
+- CMFCVisualManagerWindows [MFC], OnDrawSpinButtons
+- CMFCVisualManagerWindows [MFC], OnDrawStatusBarPaneBorder
+- CMFCVisualManagerWindows [MFC], OnDrawStatusBarProgress
+- CMFCVisualManagerWindows [MFC], OnDrawStatusBarSizeBox
+- CMFCVisualManagerWindows [MFC], OnDrawTab
+- CMFCVisualManagerWindows [MFC], OnDrawTabCloseButton
+- CMFCVisualManagerWindows [MFC], OnDrawTabsButtonBorder
+- CMFCVisualManagerWindows [MFC], OnDrawTask
+- CMFCVisualManagerWindows [MFC], OnDrawTasksGroupAreaBorder
+- CMFCVisualManagerWindows [MFC], OnDrawTasksGroupCaption
+- CMFCVisualManagerWindows [MFC], OnDrawTearOffCaption
+- CMFCVisualManagerWindows [MFC], OnErasePopupWindowButton
+- CMFCVisualManagerWindows [MFC], OnEraseTabsArea
+- CMFCVisualManagerWindows [MFC], OnEraseTabsButton
+- CMFCVisualManagerWindows [MFC], OnEraseTabsFrame
+- CMFCVisualManagerWindows [MFC], OnFillBarBackground
+- CMFCVisualManagerWindows [MFC], OnFillButtonInterior
+- CMFCVisualManagerWindows [MFC], OnFillCommandsListBackground
+- CMFCVisualManagerWindows [MFC], OnFillMiniFrameCaption
+- CMFCVisualManagerWindows [MFC], OnFillOutlookPageButton
+- CMFCVisualManagerWindows [MFC], OnFillTasksGroupInterior
+- CMFCVisualManagerWindows [MFC], OnFillTasksPaneBackground
+- CMFCVisualManagerWindows [MFC], OnHighlightMenuItem
+- CMFCVisualManagerWindows [MFC], OnHighlightRarelyUsedMenuItems
+- CMFCVisualManagerWindows [MFC], OnUpdateSystemColors
+- CMFCVisualManagerWindows [MFC], SetOfficeStyleMenus
+- CMFCVisualManagerWindows [MFC], m_b3DTabsXPTheme
 ms.assetid: 568b6e9e-8e67-4477-9a3d-2981cbd09861
 caps.latest.revision: 46
 author: mikeblome
@@ -101,120 +167,120 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 7b5b6a81af56dfabf733fbd5c6b018f5355164c8
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ba6f9642c2a6567e1dea13a05701c287e77821c9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcvisualmanagerwindows-class"></a>CMFCVisualManagerWindows クラス
-`CMFCVisualManagerWindows`Windows XP または Vista テーマを選択すると、Microsoft Windows XP または Microsoft Vista の外観を模倣します。  
+# <a name="cmfcvisualmanagerwindows-class"></a>CMFCVisualManagerWindows Class
+`CMFCVisualManagerWindows` mimics the appearance of Microsoft Windows XP or Microsoft Vista when the user selects a Windows XP or Vista theme.  
 
  [!INCLUDE[cpp_fp_under_construction](../../mfc/reference/includes/cpp_fp_under_construction_md.md)]  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCVisualManagerWindows : public CMFCVisualManagerOfficeXP  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`CMFCVisualManagerWindows::CMFCVisualManagerWindows`|既定のコンストラクター|  
+|`CMFCVisualManagerWindows::CMFCVisualManagerWindows`|Default constructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCVisualManagerWindows::AlwaysHighlight3DTabs](#alwayshighlight3dtabs)|フレームワークでは、アプリケーションで 3D のタブをハイライト常にかどうかを判断するには、このメソッドを呼び出します。 (上書き[CMFCVisualManager::AlwaysHighlight3DTabs](../../mfc/reference/cmfcvisualmanager-class.md#alwayshighlight3dtabs))。|  
-|[CMFCVisualManagerWindows::DrawComboBorderWinXP](#drawcomboborderwinxp)|(`CMFCVisualManager::DrawComboBorderWinXP` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::DrawComboDropButtonWinXP](#drawcombodropbuttonwinxp)|(上書き[CMFCVisualManager::DrawComboDropButtonWinXP](../../mfc/reference/cmfcvisualmanager-class.md#drawcombodropbuttonwinxp))。|  
-|[CMFCVisualManagerWindows::DrawPushButtonWinXP](#drawpushbuttonwinxp)|(上書き[CMFCVisualManager::DrawPushButtonWinXP](../../mfc/reference/cmfcvisualmanager-class.md#drawpushbuttonwinxp))。|  
-|[CMFCVisualManagerWindows::GetButtonExtraBorder](#getbuttonextraborder)|フレームワークは、ツール バー ボタンを描画するときに、このメソッドを呼び出します。 (上書き[CMFCVisualManager::GetButtonExtraBorder](../../mfc/reference/cmfcvisualmanager-class.md#getbuttonextraborder))。|  
-|[CMFCVisualManagerWindows::GetCaptionButtonExtraBorder](#getcaptionbuttonextraborder)|(上書き[CMFCVisualManager::GetCaptionButtonExtraBorder](../../mfc/reference/cmfcvisualmanager-class.md#getcaptionbuttonextraborder))。|  
-|[CMFCVisualManagerWindows::GetDockingPaneCaptionExtraHeight](#getdockingpanecaptionextraheight)|(`CMFCVisualManager::GetDockingPaneCaptionExtraHeight` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::GetHighlightedMenuItemTextColor](#gethighlightedmenuitemtextcolor)|(`CMFCVisualManagerOfficeXP::GetHighlightedMenuItemTextColor` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::GetPopupMenuGap](#getpopupmenugap)|(`CMFCVisualManagerOfficeXP::GetPopupMenuGap` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::GetToolbarButtonTextColor](#gettoolbarbuttontextcolor)|(`CMFCVisualManagerOfficeXP::GetToolbarButtonTextColor` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::IsDefaultWinXPPopupButton](#isdefaultwinxppopupbutton)|(上書き[CMFCVisualManager::IsDefaultWinXPPopupButton](../../mfc/reference/cmfcvisualmanager-class.md#isdefaultwinxppopupbutton))。|  
-|[CMFCVisualManagerWindows::IsHighlightWholeMenuItem](#ishighlightwholemenuitem)|(`CMFCVisualManagerOfficeXP::IsHighlightWholeMenuItem` をオーバーライドします)。|  
+|[CMFCVisualManagerWindows::AlwaysHighlight3DTabs](#alwayshighlight3dtabs)|The framework calls this method to determine whether 3D tabs should always be highlighted in the application. (Overrides [CMFCVisualManager::AlwaysHighlight3DTabs](../../mfc/reference/cmfcvisualmanager-class.md#alwayshighlight3dtabs).)|  
+|[CMFCVisualManagerWindows::DrawComboBorderWinXP](#drawcomboborderwinxp)|(Overrides `CMFCVisualManager::DrawComboBorderWinXP`.)|  
+|[CMFCVisualManagerWindows::DrawComboDropButtonWinXP](#drawcombodropbuttonwinxp)|(Overrides [CMFCVisualManager::DrawComboDropButtonWinXP](../../mfc/reference/cmfcvisualmanager-class.md#drawcombodropbuttonwinxp).)|  
+|[CMFCVisualManagerWindows::DrawPushButtonWinXP](#drawpushbuttonwinxp)|(Overrides [CMFCVisualManager::DrawPushButtonWinXP](../../mfc/reference/cmfcvisualmanager-class.md#drawpushbuttonwinxp).)|  
+|[CMFCVisualManagerWindows::GetButtonExtraBorder](#getbuttonextraborder)|The framework calls this method when it draws a toolbar button. (Overrides [CMFCVisualManager::GetButtonExtraBorder](../../mfc/reference/cmfcvisualmanager-class.md#getbuttonextraborder).)|  
+|[CMFCVisualManagerWindows::GetCaptionButtonExtraBorder](#getcaptionbuttonextraborder)|(Overrides [CMFCVisualManager::GetCaptionButtonExtraBorder](../../mfc/reference/cmfcvisualmanager-class.md#getcaptionbuttonextraborder).)|  
+|[CMFCVisualManagerWindows::GetDockingPaneCaptionExtraHeight](#getdockingpanecaptionextraheight)|(Overrides `CMFCVisualManager::GetDockingPaneCaptionExtraHeight`.)|  
+|[CMFCVisualManagerWindows::GetHighlightedMenuItemTextColor](#gethighlightedmenuitemtextcolor)|(Overrides `CMFCVisualManagerOfficeXP::GetHighlightedMenuItemTextColor`.)|  
+|[CMFCVisualManagerWindows::GetPopupMenuGap](#getpopupmenugap)|(Overrides `CMFCVisualManagerOfficeXP::GetPopupMenuGap`.)|  
+|[CMFCVisualManagerWindows::GetToolbarButtonTextColor](#gettoolbarbuttontextcolor)|(Overrides `CMFCVisualManagerOfficeXP::GetToolbarButtonTextColor`.)|  
+|[CMFCVisualManagerWindows::IsDefaultWinXPPopupButton](#isdefaultwinxppopupbutton)|(Overrides [CMFCVisualManager::IsDefaultWinXPPopupButton](../../mfc/reference/cmfcvisualmanager-class.md#isdefaultwinxppopupbutton).)|  
+|[CMFCVisualManagerWindows::IsHighlightWholeMenuItem](#ishighlightwholemenuitem)|(Overrides `CMFCVisualManagerOfficeXP::IsHighlightWholeMenuItem`.)|  
 |[CMFCVisualManagerWindows::IsOfficeStyleMenus](#isofficestylemenus)||  
-|[CMFCVisualManagerWindows::IsOfficeXPStyleMenus](#isofficexpstylemenus)|ビジュアル マネージャーが Office XP スタイルのメニューを実装するかどうかを示します。 (上書き[CMFCVisualManager::IsOfficeXPStyleMenus](../../mfc/reference/cmfcvisualmanager-class.md#isofficexpstylemenus))。|  
-|[CMFCVisualManagerWindows::IsWindowsThemingSupported](#iswindowsthemingsupported)|(`CMFCVisualManager::IsWindowsThemingSupported` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::IsWinXPThemeAvailable](#iswinxpthemeavailable)|Windows のテーマが使用できるかどうかを示します。 テーマは、Windows XP テーマまたは[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]テーマです。|  
-|[CMFCVisualManagerWindows::OnDrawBarGripper](#ondrawbargripper)|(`CMFCVisualManagerOfficeXP::OnDrawBarGripper` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawBrowseButton](#ondrawbrowsebutton)|(`CMFCVisualManagerOfficeXP::OnDrawBrowseButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawButtonBorder](#ondrawbuttonborder)|(`CMFCVisualManagerOfficeXP::OnDrawButtonBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawButtonSeparator](#ondrawbuttonseparator)|(`CMFCVisualManagerOfficeXP::OnDrawButtonSeparator` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawCaptionButton](#ondrawcaptionbutton)|(`CMFCVisualManagerOfficeXP::OnDrawCaptionButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawCaptionButtonIcon](#ondrawcaptionbuttonicon)|(`CMFCVisualManagerOfficeXP::OnDrawCaptionButtonIcon` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawCheckBoxEx](#ondrawcheckboxex)|(上書き[CMFCVisualManager::OnDrawCheckBoxEx](../../mfc/reference/cmfcvisualmanager-class.md#ondrawcheckboxex))。|  
-|[CMFCVisualManagerWindows::OnDrawComboBorder](#ondrawcomboborder)|(`CMFCVisualManagerOfficeXP::OnDrawComboBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawComboDropButton](#ondrawcombodropbutton)|(`CMFCVisualManagerOfficeXP::OnDrawComboDropButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawControlBorder](#ondrawcontrolborder)|(上書き[CMFCVisualManager::OnDrawControlBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawcontrolborder))。|  
-|[CMFCVisualManagerWindows::OnDrawEditBorder](#ondraweditborder)|(`CMFCVisualManagerOfficeXP::OnDrawEditBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawExpandingBox](#ondrawexpandingbox)|(上書き[CMFCVisualManager::OnDrawExpandingBox](../../mfc/reference/cmfcvisualmanager-class.md#ondrawexpandingbox))。|  
-|[CMFCVisualManagerWindows::OnDrawFloatingToolbarBorder](#ondrawfloatingtoolbarborder)|(`CMFCVisualManagerOfficeXP::OnDrawFloatingToolbarBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawHeaderCtrlBorder](#ondrawheaderctrlborder)|インスタンスの境界線を描画するときに、フレームワークがこのメソッドを呼び出して、 [CMFCHeaderCtrl クラス](../../mfc/reference/cmfcheaderctrl-class.md)します。 (上書き[CMFCVisualManager::OnDrawHeaderCtrlBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawheaderctrlborder))。|  
-|[CMFCVisualManagerWindows::OnDrawHeaderCtrlSortArrow](#ondrawheaderctrlsortarrow)|フレームワークは、ヘッダー コントロールの並べ替えの矢印を描画するときに、この関数を呼び出します。 (上書き[CMFCVisualManager::OnDrawHeaderCtrlSortArrow](../../mfc/reference/cmfcvisualmanager-class.md#ondrawheaderctrlsortarrow))。|  
-|[CMFCVisualManagerWindows::OnDrawMenuBorder](#ondrawmenuborder)|(`CMFCVisualManagerOfficeXP::OnDrawMenuBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawMenuSystemButton](#ondrawmenusystembutton)|(`CMFCVisualManagerOfficeXP::OnDrawMenuSystemButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawMiniFrameBorder](#ondrawminiframeborder)|(`CMFCVisualManagerOfficeXP::OnDrawMiniFrameBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawOutlookPageButtonBorder](#ondrawoutlookpagebuttonborder)|Outlook のページ ボタンの境界線を描画するときに、フレームワークによって呼び出されます。 (上書き[CMFCVisualManager::OnDrawOutlookPageButtonBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawoutlookpagebuttonborder))。|  
-|[CMFCVisualManagerWindows::OnDrawPaneBorder](#ondrawpaneborder)|(`CMFCVisualManagerOfficeXP::OnDrawPaneBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawPaneCaption](#ondrawpanecaption)|(`CMFCVisualManagerOfficeXP::OnDrawPaneCaption` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawPopupWindowButtonBorder](#ondrawpopupwindowbuttonborder)|(`CMFCVisualManagerOfficeXP::OnDrawPopupWindowButtonBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawScrollButtons](#ondrawscrollbuttons)|(`CMFCVisualManagerOfficeXP::OnDrawScrollButtons` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawSeparator](#ondrawseparator)|(`CMFCVisualManagerOfficeXP::OnDrawSeparator` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawSpinButtons](#ondrawspinbuttons)|(`CMFCVisualManagerOfficeXP::OnDrawSpinButtons` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawStatusBarPaneBorder](#ondrawstatusbarpaneborder)|(`CMFCVisualManagerOfficeXP::OnDrawStatusBarPaneBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawStatusBarProgress](#ondrawstatusbarprogress)|フレームワークは、進行状況インジケーターを描画するときにこのメソッドを呼び出して、 [CMFCStatusBar](../../mfc/reference/cmfcstatusbar-class.md)オブジェクトです。 (上書き[CMFCVisualManager::OnDrawStatusBarProgress](../../mfc/reference/cmfcvisualmanager-class.md#ondrawstatusbarprogress))。|  
-|[CMFCVisualManagerWindows::OnDrawStatusBarSizeBox](#ondrawstatusbarsizebox)|フレームワークは、の [サイズ] ボックスを描画するときにこのメソッドを呼び出して、 [CMFCStatusBar](../../mfc/reference/cmfcstatusbar-class.md)します。 (上書き[CMFCVisualManager::OnDrawStatusBarSizeBox](../../mfc/reference/cmfcvisualmanager-class.md#ondrawstatusbarsizebox))。|  
-|[CMFCVisualManagerWindows::OnDrawTab](#ondrawtab)|(`CMFCVisualManagerOfficeXP::OnDrawTab` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTabCloseButton](#ondrawtabclosebutton)|(`CMFCVisualManagerOfficeXP::OnDrawTabCloseButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTabsButtonBorder](#ondrawtabsbuttonborder)|(`CMFCVisualManagerOfficeXP::OnDrawTabsButtonBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTask](#ondrawtask)|(`CMFCVisualManagerOfficeXP::OnDrawTask` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTasksGroupAreaBorder](#ondrawtasksgroupareaborder)|(`CMFCVisualManagerOfficeXP::OnDrawTasksGroupAreaBorder` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTasksGroupCaption](#ondrawtasksgroupcaption)|(`CMFCVisualManagerOfficeXP::OnDrawTasksGroupCaption` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnDrawTearOffCaption](#ondrawtearoffcaption)|(`CMFCVisualManagerOfficeXP::OnDrawTearOffCaption` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnErasePopupWindowButton](#onerasepopupwindowbutton)|(`CMFCVisualManagerOfficeXP::OnErasePopupWindowButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnEraseTabsArea](#onerasetabsarea)|(`CMFCVisualManagerOfficeXP::OnEraseTabsArea` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnEraseTabsButton](#onerasetabsbutton)|(`CMFCVisualManagerOfficeXP::OnEraseTabsButton` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnEraseTabsFrame](#onerasetabsframe)|フレームワークは、上のフレームを消去するときにこのメソッドを呼び出して、 [CMFCBaseTabCtrl クラス](../../mfc/reference/cmfcbasetabctrl-class.md)します。 (上書き[CMFCVisualManager::OnEraseTabsFrame](../../mfc/reference/cmfcvisualmanager-class.md#onerasetabsframe))。|  
-|[CMFCVisualManagerWindows::OnFillBarBackground](#onfillbarbackground)|(`CMFCVisualManagerOfficeXP::OnFillBarBackground` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnFillButtonInterior](#onfillbuttoninterior)|(`CMFCVisualManagerOfficeXP::OnFillButtonInterior` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnFillCommandsListBackground](#onfillcommandslistbackground)|(`CMFCVisualManagerOfficeXP::OnFillCommandsListBackground` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnFillMiniFrameCaption](#onfillminiframecaption)|(`CMFCVisualManagerOfficeXP::OnFillMiniFrameCaption` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnFillOutlookPageButton](#onfilloutlookpagebutton)|フレームワークは、Outlook のページのボタンの内部を塗りつぶすときに、このメソッドを呼び出します。 (上書き[CMFCVisualManager::OnFillOutlookPageButton](../../mfc/reference/cmfcvisualmanager-class.md#onfilloutlookpagebutton))。|  
-|[CMFCVisualManagerWindows::OnFillTasksGroupInterior](#onfilltasksgroupinterior)|(`CMFCVisualManagerOfficeXP::OnFillTasksGroupInterior` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnFillTasksPaneBackground](#onfilltaskspanebackground)|背景を塗りつぶすときに、フレームワークはこのメソッドを呼び出して、 [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md)コントロールです。 (上書き[CMFCVisualManager::OnFillTasksPaneBackground](../../mfc/reference/cmfcvisualmanager-class.md#onfilltaskspanebackground))。|  
-|[CMFCVisualManagerWindows::OnHighlightMenuItem](#onhighlightmenuitem)|(`CMFCVisualManagerOfficeXP::OnHighlightMenuItem` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnHighlightRarelyUsedMenuItems](#onhighlightrarelyusedmenuitems)|(`CMFCVisualManagerOfficeXP::OnHighlightRarelyUsedMenuItems` をオーバーライドします)。|  
-|[CMFCVisualManagerWindows::OnUpdateSystemColors](#onupdatesystemcolors)|(`CMFCVisualManagerOfficeXP::OnUpdateSystemColors` をオーバーライドします)。|  
+|[CMFCVisualManagerWindows::IsOfficeXPStyleMenus](#isofficexpstylemenus)|Indicates whether the visual manager implements Office XP-style menus. (Overrides [CMFCVisualManager::IsOfficeXPStyleMenus](../../mfc/reference/cmfcvisualmanager-class.md#isofficexpstylemenus).)|  
+|[CMFCVisualManagerWindows::IsWindowsThemingSupported](#iswindowsthemingsupported)|(Overrides `CMFCVisualManager::IsWindowsThemingSupported`.)|  
+|[CMFCVisualManagerWindows::IsWinXPThemeAvailable](#iswinxpthemeavailable)|Indicates whether a Windows theme is available. A theme can be either a Windows XP theme or a [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] theme.|  
+|[CMFCVisualManagerWindows::OnDrawBarGripper](#ondrawbargripper)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawBarGripper`.)|  
+|[CMFCVisualManagerWindows::OnDrawBrowseButton](#ondrawbrowsebutton)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawBrowseButton`.)|  
+|[CMFCVisualManagerWindows::OnDrawButtonBorder](#ondrawbuttonborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawButtonBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawButtonSeparator](#ondrawbuttonseparator)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawButtonSeparator`.)|  
+|[CMFCVisualManagerWindows::OnDrawCaptionButton](#ondrawcaptionbutton)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawCaptionButton`.)|  
+|[CMFCVisualManagerWindows::OnDrawCaptionButtonIcon](#ondrawcaptionbuttonicon)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawCaptionButtonIcon`.)|  
+|[CMFCVisualManagerWindows::OnDrawCheckBoxEx](#ondrawcheckboxex)|(Overrides [CMFCVisualManager::OnDrawCheckBoxEx](../../mfc/reference/cmfcvisualmanager-class.md#ondrawcheckboxex).)|  
+|[CMFCVisualManagerWindows::OnDrawComboBorder](#ondrawcomboborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawComboBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawComboDropButton](#ondrawcombodropbutton)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawComboDropButton`.)|  
+|[CMFCVisualManagerWindows::OnDrawControlBorder](#ondrawcontrolborder)|(Overrides [CMFCVisualManager::OnDrawControlBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawcontrolborder).)|  
+|[CMFCVisualManagerWindows::OnDrawEditBorder](#ondraweditborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawEditBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawExpandingBox](#ondrawexpandingbox)|(Overrides [CMFCVisualManager::OnDrawExpandingBox](../../mfc/reference/cmfcvisualmanager-class.md#ondrawexpandingbox).)|  
+|[CMFCVisualManagerWindows::OnDrawFloatingToolbarBorder](#ondrawfloatingtoolbarborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawFloatingToolbarBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawHeaderCtrlBorder](#ondrawheaderctrlborder)|The framework calls this method when it draws the border around an instance of the [CMFCHeaderCtrl Class](../../mfc/reference/cmfcheaderctrl-class.md). (Overrides [CMFCVisualManager::OnDrawHeaderCtrlBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawheaderctrlborder).)|  
+|[CMFCVisualManagerWindows::OnDrawHeaderCtrlSortArrow](#ondrawheaderctrlsortarrow)|The framework calls this function when it draws the sort arrow of a header control. (Overrides [CMFCVisualManager::OnDrawHeaderCtrlSortArrow](../../mfc/reference/cmfcvisualmanager-class.md#ondrawheaderctrlsortarrow).)|  
+|[CMFCVisualManagerWindows::OnDrawMenuBorder](#ondrawmenuborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawMenuBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawMenuSystemButton](#ondrawmenusystembutton)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawMenuSystemButton`.)|  
+|[CMFCVisualManagerWindows::OnDrawMiniFrameBorder](#ondrawminiframeborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawMiniFrameBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawOutlookPageButtonBorder](#ondrawoutlookpagebuttonborder)|Called by the framework when it draws the border of an Outlook page button. (Overrides [CMFCVisualManager::OnDrawOutlookPageButtonBorder](../../mfc/reference/cmfcvisualmanager-class.md#ondrawoutlookpagebuttonborder).)|  
+|[CMFCVisualManagerWindows::OnDrawPaneBorder](#ondrawpaneborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawPaneBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawPaneCaption](#ondrawpanecaption)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawPaneCaption`.)|  
+|[CMFCVisualManagerWindows::OnDrawPopupWindowButtonBorder](#ondrawpopupwindowbuttonborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawPopupWindowButtonBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawScrollButtons](#ondrawscrollbuttons)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawScrollButtons`.)|  
+|[CMFCVisualManagerWindows::OnDrawSeparator](#ondrawseparator)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawSeparator`.)|  
+|[CMFCVisualManagerWindows::OnDrawSpinButtons](#ondrawspinbuttons)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawSpinButtons`.)|  
+|[CMFCVisualManagerWindows::OnDrawStatusBarPaneBorder](#ondrawstatusbarpaneborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawStatusBarPaneBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawStatusBarProgress](#ondrawstatusbarprogress)|The framework calls this method when it draws the progress indicator on the [CMFCStatusBar](../../mfc/reference/cmfcstatusbar-class.md) object. (Overrides [CMFCVisualManager::OnDrawStatusBarProgress](../../mfc/reference/cmfcvisualmanager-class.md#ondrawstatusbarprogress).)|  
+|[CMFCVisualManagerWindows::OnDrawStatusBarSizeBox](#ondrawstatusbarsizebox)|The framework calls this method when it draws the size box for a [CMFCStatusBar](../../mfc/reference/cmfcstatusbar-class.md). (Overrides [CMFCVisualManager::OnDrawStatusBarSizeBox](../../mfc/reference/cmfcvisualmanager-class.md#ondrawstatusbarsizebox).)|  
+|[CMFCVisualManagerWindows::OnDrawTab](#ondrawtab)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTab`.)|  
+|[CMFCVisualManagerWindows::OnDrawTabCloseButton](#ondrawtabclosebutton)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTabCloseButton`.)|  
+|[CMFCVisualManagerWindows::OnDrawTabsButtonBorder](#ondrawtabsbuttonborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTabsButtonBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawTask](#ondrawtask)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTask`.)|  
+|[CMFCVisualManagerWindows::OnDrawTasksGroupAreaBorder](#ondrawtasksgroupareaborder)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTasksGroupAreaBorder`.)|  
+|[CMFCVisualManagerWindows::OnDrawTasksGroupCaption](#ondrawtasksgroupcaption)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTasksGroupCaption`.)|  
+|[CMFCVisualManagerWindows::OnDrawTearOffCaption](#ondrawtearoffcaption)|(Overrides `CMFCVisualManagerOfficeXP::OnDrawTearOffCaption`.)|  
+|[CMFCVisualManagerWindows::OnErasePopupWindowButton](#onerasepopupwindowbutton)|(Overrides `CMFCVisualManagerOfficeXP::OnErasePopupWindowButton`.)|  
+|[CMFCVisualManagerWindows::OnEraseTabsArea](#onerasetabsarea)|(Overrides `CMFCVisualManagerOfficeXP::OnEraseTabsArea`.)|  
+|[CMFCVisualManagerWindows::OnEraseTabsButton](#onerasetabsbutton)|(Overrides `CMFCVisualManagerOfficeXP::OnEraseTabsButton`.)|  
+|[CMFCVisualManagerWindows::OnEraseTabsFrame](#onerasetabsframe)|The framework calls this method when it erases a frame on a [CMFCBaseTabCtrl Class](../../mfc/reference/cmfcbasetabctrl-class.md). (Overrides [CMFCVisualManager::OnEraseTabsFrame](../../mfc/reference/cmfcvisualmanager-class.md#onerasetabsframe).)|  
+|[CMFCVisualManagerWindows::OnFillBarBackground](#onfillbarbackground)|(Overrides `CMFCVisualManagerOfficeXP::OnFillBarBackground`.)|  
+|[CMFCVisualManagerWindows::OnFillButtonInterior](#onfillbuttoninterior)|(Overrides `CMFCVisualManagerOfficeXP::OnFillButtonInterior`.)|  
+|[CMFCVisualManagerWindows::OnFillCommandsListBackground](#onfillcommandslistbackground)|(Overrides `CMFCVisualManagerOfficeXP::OnFillCommandsListBackground`.)|  
+|[CMFCVisualManagerWindows::OnFillMiniFrameCaption](#onfillminiframecaption)|(Overrides `CMFCVisualManagerOfficeXP::OnFillMiniFrameCaption`.)|  
+|[CMFCVisualManagerWindows::OnFillOutlookPageButton](#onfilloutlookpagebutton)|The framework calls this method when it fills the interior of an Outlook page button. (Overrides [CMFCVisualManager::OnFillOutlookPageButton](../../mfc/reference/cmfcvisualmanager-class.md#onfilloutlookpagebutton).)|  
+|[CMFCVisualManagerWindows::OnFillTasksGroupInterior](#onfilltasksgroupinterior)|(Overrides `CMFCVisualManagerOfficeXP::OnFillTasksGroupInterior`.)|  
+|[CMFCVisualManagerWindows::OnFillTasksPaneBackground](#onfilltaskspanebackground)|The framework calls this method when it fills the background of a [CMFCTasksPane](../../mfc/reference/cmfctaskspane-class.md) control. (Overrides [CMFCVisualManager::OnFillTasksPaneBackground](../../mfc/reference/cmfcvisualmanager-class.md#onfilltaskspanebackground).)|  
+|[CMFCVisualManagerWindows::OnHighlightMenuItem](#onhighlightmenuitem)|(Overrides `CMFCVisualManagerOfficeXP::OnHighlightMenuItem`.)|  
+|[CMFCVisualManagerWindows::OnHighlightRarelyUsedMenuItems](#onhighlightrarelyusedmenuitems)|(Overrides `CMFCVisualManagerOfficeXP::OnHighlightRarelyUsedMenuItems`.)|  
+|[CMFCVisualManagerWindows::OnUpdateSystemColors](#onupdatesystemcolors)|(Overrides `CMFCVisualManagerOfficeXP::OnUpdateSystemColors`.)|  
 |[CMFCVisualManagerWindows::SetOfficeStyleMenus](#setofficestylemenus)||  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCVisualManagerWindows::m_b3DTabsXPTheme](#m_b3dtabsxptheme)|Windows XP のテーマが 3D のタブを表示するかどうかを指定します。|  
+|[CMFCVisualManagerWindows::m_b3DTabsXPTheme](#m_b3dtabsxptheme)|Specifies whether the Windows XP theme displays 3D tabs.|  
   
-## <a name="remarks"></a>コメント  
- 使用して、`CMFCVisualManagerWindows`現在の Windows XP を模倣するために、アプリケーションの外観を変更するクラスまたは[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]アプリケーションを実行するコンピューター上のテーマです。  
+## <a name="remarks"></a>Remarks  
+ Use the `CMFCVisualManagerWindows` class to change the appearance of your application to mimic the current Windows XP or [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] theme on the computer where the application runs.  
   
- ただし、Windows のテーマが利用できないアプリケーションが Windows XP より前のバージョンの Windows で実行されている場合、またはユーザーが使用されているので、テーマが無効な場合、**クラシック**表示します。 アプリケーションで定義されている既定のビジュアル マネージャーを使用して利用可能なテーマがない場合は、 [CMFCVisualManager](../../mfc/reference/cmfcvisualmanager-class.md)します。  
+ However, a Windows theme might be unavailable if your application is running on a version of Windows earlier than Windows XP or if themes are disabled because the user is using the **Classic** view. If no theme is available, the application uses the default visual manager defined in [CMFCVisualManager](../../mfc/reference/cmfcvisualmanager-class.md).  
   
-## <a name="example"></a>例  
- 次の例では、使用して`CMFCVisualManagerWindows`します。 このコード スニペットの一部である、[デスクトップ アラート デモのサンプル](../../visual-cpp-samples.md)します。  
+## <a name="example"></a>Example  
+ The following example demonstrates how to use `CMFCVisualManagerWindows`. This code snippet is part of the [Desktop Alert Demo sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_DesktopAlertDemo&#10;](../../mfc/reference/codesnippet/cpp/cmfcvisualmanagerwindows-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_DesktopAlertDemo#10](../../mfc/reference/codesnippet/cpp/cmfcvisualmanagerwindows-class_1.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CMFCBaseVisualManager](../../mfc/reference/cmfcbasevisualmanager-class.md)  
@@ -225,33 +291,33 @@ class CMFCVisualManagerWindows : public CMFCVisualManagerOfficeXP
   
  [CMFCVisualManagerWindows](../../mfc/reference/cmfcvisualmanagerwindows-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxvisualmanagerwindows.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxvisualmanagerwindows.h  
   
-##  <a name="alwayshighlight3dtabs"></a>CMFCVisualManagerWindows::AlwaysHighlight3DTabs  
+##  <a name="alwayshighlight3dtabs"></a>  CMFCVisualManagerWindows::AlwaysHighlight3DTabs  
 
   
 ```  
 virtual BOOL AlwaysHighlight3DTabs() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="cmfcvisualmanagerwindows"></a>CMFCVisualManagerWindows::CMFCVisualManagerWindows  
+##  <a name="cmfcvisualmanagerwindows"></a>  CMFCVisualManagerWindows::CMFCVisualManagerWindows  
 
   
 ```  
 CMFCVisualManagerWindows(BOOL bIsTemporary = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bIsTemporary`  
+### <a name="parameters"></a>Parameters  
+ [in] `bIsTemporary`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="drawcomboborderwinxp"></a>CMFCVisualManagerWindows::DrawComboBorderWinXP  
+##  <a name="drawcomboborderwinxp"></a>  CMFCVisualManagerWindows::DrawComboBorderWinXP  
 
   
 ```  
@@ -263,18 +329,18 @@ virtual BOOL DrawComboBorderWinXP(
     BOOL bIsHighlighted);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bDisabled`  
- [入力] `bIsDropped`  
- [入力] `bIsHighlighted`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bDisabled`  
+ [in] `bIsDropped`  
+ [in] `bIsHighlighted`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="drawcombodropbuttonwinxp"></a>CMFCVisualManagerWindows::DrawComboDropButtonWinXP  
+##  <a name="drawcombodropbuttonwinxp"></a>  CMFCVisualManagerWindows::DrawComboDropButtonWinXP  
 
   
 ```  
@@ -286,18 +352,18 @@ virtual BOOL DrawComboDropButtonWinXP(
     BOOL bIsHighlighted);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bDisabled`  
- [入力] `bIsDropped`  
- [入力] `bIsHighlighted`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bDisabled`  
+ [in] `bIsDropped`  
+ [in] `bIsHighlighted`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="drawpushbuttonwinxp"></a>CMFCVisualManagerWindows::DrawPushButtonWinXP  
+##  <a name="drawpushbuttonwinxp"></a>  CMFCVisualManagerWindows::DrawPushButtonWinXP  
 
   
 ```  
@@ -308,75 +374,75 @@ virtual BOOL DrawPushButtonWinXP(
     UINT uiState);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pButton`  
- [入力] `uiState`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pButton`  
+ [in] `uiState`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getbuttonextraborder"></a>CMFCVisualManagerWindows::GetButtonExtraBorder  
+##  <a name="getbuttonextraborder"></a>  CMFCVisualManagerWindows::GetButtonExtraBorder  
 
   
 ```  
 virtual CSize GetButtonExtraBorder() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getcaptionbuttonextraborder"></a>CMFCVisualManagerWindows::GetCaptionButtonExtraBorder  
+##  <a name="getcaptionbuttonextraborder"></a>  CMFCVisualManagerWindows::GetCaptionButtonExtraBorder  
 
   
 ```  
 virtual CSize GetCaptionButtonExtraBorder() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getdockingpanecaptionextraheight"></a>CMFCVisualManagerWindows::GetDockingPaneCaptionExtraHeight  
+##  <a name="getdockingpanecaptionextraheight"></a>  CMFCVisualManagerWindows::GetDockingPaneCaptionExtraHeight  
 
   
 ```  
 virtual int GetDockingPaneCaptionExtraHeight() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="gethighlightedmenuitemtextcolor"></a>CMFCVisualManagerWindows::GetHighlightedMenuItemTextColor  
+##  <a name="gethighlightedmenuitemtextcolor"></a>  CMFCVisualManagerWindows::GetHighlightedMenuItemTextColor  
 
   
 ```  
 virtual COLORREF GetHighlightedMenuItemTextColor(CMFCToolBarMenuButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pButton`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getpopupmenugap"></a>CMFCVisualManagerWindows::GetPopupMenuGap  
+##  <a name="getpopupmenugap"></a>  CMFCVisualManagerWindows::GetPopupMenuGap  
 
   
 ```  
 virtual int GetPopupMenuGap() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="gettoolbarbuttontextcolor"></a>CMFCVisualManagerWindows::GetToolbarButtonTextColor  
+##  <a name="gettoolbarbuttontextcolor"></a>  CMFCVisualManagerWindows::GetToolbarButtonTextColor  
 
   
 ```  
@@ -385,97 +451,97 @@ virtual COLORREF GetToolbarButtonTextColor(
     CMFCVisualManager::AFX_BUTTON_STATE state);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pButton`  
- [入力] `state`  
+### <a name="parameters"></a>Parameters  
+ [in] `pButton`  
+ [in] `state`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isdefaultwinxppopupbutton"></a>CMFCVisualManagerWindows::IsDefaultWinXPPopupButton  
+##  <a name="isdefaultwinxppopupbutton"></a>  CMFCVisualManagerWindows::IsDefaultWinXPPopupButton  
 
   
 ```  
 virtual BOOL IsDefaultWinXPPopupButton(CMFCDesktopAlertWndButton* pButton) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pButton`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ishighlightwholemenuitem"></a>CMFCVisualManagerWindows::IsHighlightWholeMenuItem  
+##  <a name="ishighlightwholemenuitem"></a>  CMFCVisualManagerWindows::IsHighlightWholeMenuItem  
 
   
 ```  
 virtual BOOL IsHighlightWholeMenuItem();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isofficestylemenus"></a>CMFCVisualManagerWindows::IsOfficeStyleMenus  
+##  <a name="isofficestylemenus"></a>  CMFCVisualManagerWindows::IsOfficeStyleMenus  
 
   
 ```  
 BOOL IsOfficeStyleMenus() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="isofficexpstylemenus"></a>CMFCVisualManagerWindows::IsOfficeXPStyleMenus  
+##  <a name="isofficexpstylemenus"></a>  CMFCVisualManagerWindows::IsOfficeXPStyleMenus  
 
   
 ```  
 virtual BOOL IsOfficeXPStyleMenus() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="iswindowsthemingsupported"></a>CMFCVisualManagerWindows::IsWindowsThemingSupported  
+##  <a name="iswindowsthemingsupported"></a>  CMFCVisualManagerWindows::IsWindowsThemingSupported  
 
   
 ```  
 virtual BOOL IsWindowsThemingSupported() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="iswinxpthemeavailable"></a>CMFCVisualManagerWindows::IsWinXPThemeAvailable  
- Windows XP かどうかを決定または[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]テーマとは、使用できます。  
+##  <a name="iswinxpthemeavailable"></a>  CMFCVisualManagerWindows::IsWinXPThemeAvailable  
+ Determines whether a Windows XP or [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] theme is available.  
   
 ```  
 static BOOL IsWinXPThemeAvailible();
 ```  
   
-### <a name="return-value"></a>戻り値  
- テーマがある場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if a theme is available; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは両方の Windows XP と[!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)]テーマです。  
+### <a name="remarks"></a>Remarks  
+ This method is valid for both Windows XP and [!INCLUDE[wiprlhext](../../c-runtime-library/reference/includes/wiprlhext_md.md)] themes.  
   
- `IsWinXPThemeAvailable`同じ`CMFCVisualManagerWindows::IsWindowsThemingAvailable`する点を除いて`IsWinXPThemeAvailable`の静的メソッドです。 そのため、いずれかが存在しない場合の一時的なビジュアル マネージャーが作成されます。  
+ `IsWinXPThemeAvailable` is identical to `CMFCVisualManagerWindows::IsWindowsThemingAvailable` except that `IsWinXPThemeAvailable` is a static method. Therefore, it will create a temporary visual manager if one does not exist.  
   
- `IsWinXPThemeAvailable`常に Windows XP より前のバージョンの Windows で 0 を返します。  
+ `IsWinXPThemeAvailable` always return 0s for versions of Windows earlier than Windows XP.  
   
-##  <a name="m_b3dtabsxptheme"></a>CMFCVisualManagerWindows::m_b3DTabsXPTheme  
- ビジュアル マネージャーが 3D のタブを表示するかどうかを決定するブール値パラメーター。  
+##  <a name="m_b3dtabsxptheme"></a>  CMFCVisualManagerWindows::m_b3DTabsXPTheme  
+ A Boolean parameter that determines whether the visual manager displays 3D tabs.  
   
 ```  
 AFX_IMPORT_DATA static BOOL m_b3DTabsXPTheme;  
 ```  
   
-##  <a name="ondrawbargripper"></a>CMFCVisualManagerWindows::OnDrawBarGripper  
+##  <a name="ondrawbargripper"></a>  CMFCVisualManagerWindows::OnDrawBarGripper  
 
   
 ```  
@@ -486,15 +552,15 @@ virtual void OnDrawBarGripper(
     CBasePane* pBar);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectGripper`  
- [入力] `bHorz`  
- [入力] `pBar`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectGripper`  
+ [in] `bHorz`  
+ [in] `pBar`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawbrowsebutton"></a>CMFCVisualManagerWindows::OnDrawBrowseButton  
+##  <a name="ondrawbrowsebutton"></a>  CMFCVisualManagerWindows::OnDrawBrowseButton  
 
   
 ```  
@@ -506,18 +572,18 @@ virtual BOOL OnDrawBrowseButton(
     COLORREF& clrText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pEdit`  
- [入力] `state`  
- [入力] `clrText`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pEdit`  
+ [in] `state`  
+ [in] `clrText`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawbuttonborder"></a>CMFCVisualManagerWindows::OnDrawButtonBorder  
+##  <a name="ondrawbuttonborder"></a>  CMFCVisualManagerWindows::OnDrawButtonBorder  
 
   
 ```  
@@ -528,15 +594,15 @@ virtual void OnDrawButtonBorder(
     CMFCVisualManager::AFX_BUTTON_STATE state);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `rect`  
- [入力] `state`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `rect`  
+ [in] `state`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawbuttonseparator"></a>CMFCVisualManagerWindows::OnDrawButtonSeparator  
+##  <a name="ondrawbuttonseparator"></a>  CMFCVisualManagerWindows::OnDrawButtonSeparator  
 
   
 ```  
@@ -548,16 +614,16 @@ virtual void OnDrawButtonSeparator(
     BOOL bHorz);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `rect`  
- [入力] `state`  
- [入力] `bHorz`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `rect`  
+ [in] `state`  
+ [in] `bHorz`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcaptionbutton"></a>CMFCVisualManagerWindows::OnDrawCaptionButton  
+##  <a name="ondrawcaptionbutton"></a>  CMFCVisualManagerWindows::OnDrawCaptionButton  
 
   
 ```  
@@ -571,18 +637,18 @@ virtual void OnDrawCaptionButton(
     int nImageID = -1);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `bActive`  
- [入力] `bHorz`  
- [入力] `bMaximized`  
- [入力] `bDisabled`  
- [入力] `nImageID`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `bActive`  
+ [in] `bHorz`  
+ [in] `bMaximized`  
+ [in] `bDisabled`  
+ [in] `nImageID`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcaptionbuttonicon"></a>CMFCVisualManagerWindows::OnDrawCaptionButtonIcon  
+##  <a name="ondrawcaptionbuttonicon"></a>  CMFCVisualManagerWindows::OnDrawCaptionButtonIcon  
 
   
 ```  
@@ -595,17 +661,17 @@ virtual void OnDrawCaptionButtonIcon(
     CPoint ptImage);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `id`  
- [入力] `bActive`  
- [入力] `bDisabled`  
- [入力] `ptImage`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `id`  
+ [in] `bActive`  
+ [in] `bDisabled`  
+ [in] `ptImage`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcheckboxex"></a>CMFCVisualManagerWindows::OnDrawCheckBoxEx  
+##  <a name="ondrawcheckboxex"></a>  CMFCVisualManagerWindows::OnDrawCheckBoxEx  
 
   
 ```  
@@ -618,17 +684,17 @@ virtual void OnDrawCheckBoxEx(
     BOOL bEnabled);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `nState`  
- [入力] `bHighlighted`  
- [入力] `bPressed`  
- [入力] `bEnabled`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `nState`  
+ [in] `bHighlighted`  
+ [in] `bPressed`  
+ [in] `bEnabled`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcomboborder"></a>CMFCVisualManagerWindows::OnDrawComboBorder  
+##  <a name="ondrawcomboborder"></a>  CMFCVisualManagerWindows::OnDrawComboBorder  
 
   
 ```  
@@ -641,17 +707,17 @@ virtual void OnDrawComboBorder(
     CMFCToolBarComboBoxButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bDisabled`  
- [入力] `bIsDropped`  
- [入力] `bIsHighlighted`  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bDisabled`  
+ [in] `bIsDropped`  
+ [in] `bIsHighlighted`  
+ [in] `pButton`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcombodropbutton"></a>CMFCVisualManagerWindows::OnDrawComboDropButton  
+##  <a name="ondrawcombodropbutton"></a>  CMFCVisualManagerWindows::OnDrawComboDropButton  
 
   
 ```  
@@ -664,29 +730,29 @@ virtual void OnDrawComboDropButton(
     CMFCToolBarComboBoxButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bDisabled`  
- [入力] `bIsDropped`  
- [入力] `bIsHighlighted`  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bDisabled`  
+ [in] `bIsDropped`  
+ [in] `bIsHighlighted`  
+ [in] `pButton`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawcontrolborder"></a>CMFCVisualManagerWindows::OnDrawControlBorder  
+##  <a name="ondrawcontrolborder"></a>  CMFCVisualManagerWindows::OnDrawControlBorder  
 
   
 ```  
 virtual void OnDrawControlBorder(CWnd* pWndCtrl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pWndCtrl`  
+### <a name="parameters"></a>Parameters  
+ [in] `pWndCtrl`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondraweditborder"></a>CMFCVisualManagerWindows::OnDrawEditBorder  
+##  <a name="ondraweditborder"></a>  CMFCVisualManagerWindows::OnDrawEditBorder  
 
   
 ```  
@@ -698,16 +764,16 @@ virtual void OnDrawEditBorder(
     CMFCToolBarEditBoxButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bDisabled`  
- [入力] `bIsHighlighted`  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bDisabled`  
+ [in] `bIsHighlighted`  
+ [in] `pButton`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawexpandingbox"></a>CMFCVisualManagerWindows::OnDrawExpandingBox  
+##  <a name="ondrawexpandingbox"></a>  CMFCVisualManagerWindows::OnDrawExpandingBox  
 
   
 ```  
@@ -718,15 +784,15 @@ virtual void OnDrawExpandingBox(
     COLORREF colorBox);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsOpened`  
- [入力] `colorBox`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsOpened`  
+ [in] `colorBox`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawfloatingtoolbarborder"></a>CMFCVisualManagerWindows::OnDrawFloatingToolbarBorder  
+##  <a name="ondrawfloatingtoolbarborder"></a>  CMFCVisualManagerWindows::OnDrawFloatingToolbarBorder  
 
   
 ```  
@@ -737,15 +803,15 @@ virtual void OnDrawFloatingToolbarBorder(
     CRect rectBorderSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pToolBar`  
- [入力] `rectBorder`  
- [入力] `rectBorderSize`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pToolBar`  
+ [in] `rectBorder`  
+ [in] `rectBorderSize`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawheaderctrlborder"></a>CMFCVisualManagerWindows::OnDrawHeaderCtrlBorder  
+##  <a name="ondrawheaderctrlborder"></a>  CMFCVisualManagerWindows::OnDrawHeaderCtrlBorder  
 
   
 ```  
@@ -757,16 +823,16 @@ virtual void OnDrawHeaderCtrlBorder(
     BOOL bIsHighlighted);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pCtrl`  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsPressed`  
- [入力] `bIsHighlighted`  
+### <a name="parameters"></a>Parameters  
+ [in] `pCtrl`  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsPressed`  
+ [in] `bIsHighlighted`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawheaderctrlsortarrow"></a>CMFCVisualManagerWindows::OnDrawHeaderCtrlSortArrow  
+##  <a name="ondrawheaderctrlsortarrow"></a>  CMFCVisualManagerWindows::OnDrawHeaderCtrlSortArrow  
 
   
 ```  
@@ -777,15 +843,15 @@ virtual void OnDrawHeaderCtrlSortArrow(
     BOOL bIsUp);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pCtrl`  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsUp`  
+### <a name="parameters"></a>Parameters  
+ [in] `pCtrl`  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsUp`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawmenuborder"></a>CMFCVisualManagerWindows::OnDrawMenuBorder  
+##  <a name="ondrawmenuborder"></a>  CMFCVisualManagerWindows::OnDrawMenuBorder  
 
   
 ```  
@@ -795,14 +861,14 @@ virtual void OnDrawMenuBorder(
     CRect rect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pMenu`  
- [入力] `rect`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pMenu`  
+ [in] `rect`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawmenusystembutton"></a>CMFCVisualManagerWindows::OnDrawMenuSystemButton  
+##  <a name="ondrawmenusystembutton"></a>  CMFCVisualManagerWindows::OnDrawMenuSystemButton  
 
   
 ```  
@@ -814,16 +880,16 @@ virtual void OnDrawMenuSystemButton(
     BOOL bHighlight);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `uiSystemCommand`  
- [入力] `nStyle`  
- [入力] `bHighlight`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `uiSystemCommand`  
+ [in] `nStyle`  
+ [in] `bHighlight`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawminiframeborder"></a>CMFCVisualManagerWindows::OnDrawMiniFrameBorder  
+##  <a name="ondrawminiframeborder"></a>  CMFCVisualManagerWindows::OnDrawMiniFrameBorder  
 
   
 ```  
@@ -834,15 +900,15 @@ virtual void OnDrawMiniFrameBorder(
     CRect rectBorderSize);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pFrameWnd`  
- [入力] `rectBorder`  
- [入力] `rectBorderSize`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pFrameWnd`  
+ [in] `rectBorder`  
+ [in] `rectBorderSize`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawoutlookpagebuttonborder"></a>CMFCVisualManagerWindows::OnDrawOutlookPageButtonBorder  
+##  <a name="ondrawoutlookpagebuttonborder"></a>  CMFCVisualManagerWindows::OnDrawOutlookPageButtonBorder  
 
   
 ```  
@@ -853,15 +919,15 @@ virtual void OnDrawOutlookPageButtonBorder(
     BOOL bIsPressed);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectBtn`  
- [入力] `bIsHighlighted`  
- [入力] `bIsPressed`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectBtn`  
+ [in] `bIsHighlighted`  
+ [in] `bIsPressed`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawpaneborder"></a>CMFCVisualManagerWindows::OnDrawPaneBorder  
+##  <a name="ondrawpaneborder"></a>  CMFCVisualManagerWindows::OnDrawPaneBorder  
 
   
 ```  
@@ -871,14 +937,14 @@ virtual void OnDrawPaneBorder(
     CRect& rect);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pBar`  
- [入力] `rect`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pBar`  
+ [in] `rect`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawpanecaption"></a>CMFCVisualManagerWindows::OnDrawPaneCaption  
+##  <a name="ondrawpanecaption"></a>  CMFCVisualManagerWindows::OnDrawPaneCaption  
 
   
 ```  
@@ -890,18 +956,18 @@ virtual COLORREF OnDrawPaneCaption(
     CRect rectButtons);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pBar`  
- [入力] `bActive`  
- [入力] `rectCaption`  
- [入力] `rectButtons`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pBar`  
+ [in] `bActive`  
+ [in] `rectCaption`  
+ [in] `rectButtons`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawpopupwindowbuttonborder"></a>CMFCVisualManagerWindows::OnDrawPopupWindowButtonBorder  
+##  <a name="ondrawpopupwindowbuttonborder"></a>  CMFCVisualManagerWindows::OnDrawPopupWindowButtonBorder  
 
   
 ```  
@@ -911,14 +977,14 @@ virtual void OnDrawPopupWindowButtonBorder(
     CMFCDesktopAlertWndButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectClient`  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectClient`  
+ [in] `pButton`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawscrollbuttons"></a>CMFCVisualManagerWindows::OnDrawScrollButtons  
+##  <a name="ondrawscrollbuttons"></a>  CMFCVisualManagerWindows::OnDrawScrollButtons  
 
   
 ```  
@@ -930,16 +996,16 @@ virtual void OnDrawScrollButtons(
     BOOL bHilited);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `nBorderSize`  
- [入力] `iImage`  
- [入力] `bHilited`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `nBorderSize`  
+ [in] `iImage`  
+ [in] `bHilited`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawseparator"></a>CMFCVisualManagerWindows::OnDrawSeparator  
+##  <a name="ondrawseparator"></a>  CMFCVisualManagerWindows::OnDrawSeparator  
 
   
 ```  
@@ -950,15 +1016,15 @@ virtual void OnDrawSeparator(
     BOOL bIsHoriz);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pBar`  
- [入力] `rect`  
- [入力] `bIsHoriz`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pBar`  
+ [in] `rect`  
+ [in] `bIsHoriz`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawspinbuttons"></a>CMFCVisualManagerWindows::OnDrawSpinButtons  
+##  <a name="ondrawspinbuttons"></a>  CMFCVisualManagerWindows::OnDrawSpinButtons  
 
   
 ```  
@@ -970,16 +1036,16 @@ virtual void OnDrawSpinButtons(
     CMFCSpinButtonCtrl* pSpinCtrl);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectSpin`  
- [入力] `nState`  
- [入力] `bOrientation`  
- [入力] `pSpinCtrl`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectSpin`  
+ [in] `nState`  
+ [in] `bOrientation`  
+ [in] `pSpinCtrl`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawstatusbarpaneborder"></a>CMFCVisualManagerWindows::OnDrawStatusBarPaneBorder  
+##  <a name="ondrawstatusbarpaneborder"></a>  CMFCVisualManagerWindows::OnDrawStatusBarPaneBorder  
 
   
 ```  
@@ -991,16 +1057,16 @@ virtual void OnDrawStatusBarPaneBorder(
     UINT nStyle);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pBar`  
- [入力] `rectPane`  
- [入力] `uiID`  
- [入力] `nStyle`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pBar`  
+ [in] `rectPane`  
+ [in] `uiID`  
+ [in] `nStyle`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawstatusbarprogress"></a>CMFCVisualManagerWindows::OnDrawStatusBarProgress  
+##  <a name="ondrawstatusbarprogress"></a>  CMFCVisualManagerWindows::OnDrawStatusBarProgress  
 
   
 ```  
@@ -1016,20 +1082,20 @@ virtual void OnDrawStatusBarProgress(
     BOOL bProgressText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pStatusBar`  
- [入力] `rectProgress`  
- [入力] `nProgressTotal`  
- [入力] `nProgressCurr`  
- [入力] `clrBar`  
- [入力] `clrProgressBarDest`  
- [入力] `clrProgressText`  
- [入力] `bProgressText`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pStatusBar`  
+ [in] `rectProgress`  
+ [in] `nProgressTotal`  
+ [in] `nProgressCurr`  
+ [in] `clrBar`  
+ [in] `clrProgressBarDest`  
+ [in] `clrProgressText`  
+ [in] `bProgressText`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawstatusbarsizebox"></a>CMFCVisualManagerWindows::OnDrawStatusBarSizeBox  
+##  <a name="ondrawstatusbarsizebox"></a>  CMFCVisualManagerWindows::OnDrawStatusBarSizeBox  
 
   
 ```  
@@ -1039,14 +1105,14 @@ virtual void OnDrawStatusBarSizeBox(
     CRect rectSizeBox);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pStatBar`  
- [入力] `rectSizeBox`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pStatBar`  
+ [in] `rectSizeBox`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtab"></a>CMFCVisualManagerWindows::OnDrawTab  
+##  <a name="ondrawtab"></a>  CMFCVisualManagerWindows::OnDrawTab  
 
   
 ```  
@@ -1058,16 +1124,16 @@ virtual void OnDrawTab(
     const CMFCBaseTabCtrl* pTabWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectTab`  
- [入力] `iTab`  
- [入力] `bIsActive`  
- [入力] `pTabWnd`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectTab`  
+ [in] `iTab`  
+ [in] `bIsActive`  
+ [in] `pTabWnd`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtabclosebutton"></a>CMFCVisualManagerWindows::OnDrawTabCloseButton  
+##  <a name="ondrawtabclosebutton"></a>  CMFCVisualManagerWindows::OnDrawTabCloseButton  
 
   
 ```  
@@ -1080,17 +1146,17 @@ virtual void OnDrawTabCloseButton(
     BOOL bIsDisabled);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pTabWnd`  
- [入力] `bIsHighlighted`  
- [入力] `bIsPressed`  
- [入力] `bIsDisabled`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pTabWnd`  
+ [in] `bIsHighlighted`  
+ [in] `bIsPressed`  
+ [in] `bIsDisabled`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtabsbuttonborder"></a>CMFCVisualManagerWindows::OnDrawTabsButtonBorder  
+##  <a name="ondrawtabsbuttonborder"></a>  CMFCVisualManagerWindows::OnDrawTabsButtonBorder  
 
   
 ```  
@@ -1102,16 +1168,16 @@ virtual void OnDrawTabsButtonBorder(
     CMFCBaseTabCtrl* pWndTab);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pButton`  
- [入力] `uiState`  
- [入力] `pWndTab`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pButton`  
+ [in] `uiState`  
+ [in] `pWndTab`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtask"></a>CMFCVisualManagerWindows::OnDrawTask  
+##  <a name="ondrawtask"></a>  CMFCVisualManagerWindows::OnDrawTask  
 
   
 ```  
@@ -1123,16 +1189,16 @@ virtual void OnDrawTask(
     BOOL bIsSelected = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pTask`  
- [入力] `pIcons`  
- [入力] `bIsHighlighted`  
- [入力] `bIsSelected`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pTask`  
+ [in] `pIcons`  
+ [in] `bIsHighlighted`  
+ [in] `bIsSelected`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtasksgroupareaborder"></a>CMFCVisualManagerWindows::OnDrawTasksGroupAreaBorder  
+##  <a name="ondrawtasksgroupareaborder"></a>  CMFCVisualManagerWindows::OnDrawTasksGroupAreaBorder  
 
   
 ```  
@@ -1143,15 +1209,15 @@ virtual void OnDrawTasksGroupAreaBorder(
     BOOL bNoTitle = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bSpecial`  
- [入力] `bNoTitle`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bSpecial`  
+ [in] `bNoTitle`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtasksgroupcaption"></a>CMFCVisualManagerWindows::OnDrawTasksGroupCaption  
+##  <a name="ondrawtasksgroupcaption"></a>  CMFCVisualManagerWindows::OnDrawTasksGroupCaption  
 
   
 ```  
@@ -1163,16 +1229,16 @@ virtual void OnDrawTasksGroupCaption(
     BOOL bCanCollapse = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pGroup`  
- [入力] `bIsHighlighted`  
- [入力] `bIsSelected`  
- [入力] `bCanCollapse`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pGroup`  
+ [in] `bIsHighlighted`  
+ [in] `bIsSelected`  
+ [in] `bCanCollapse`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="ondrawtearoffcaption"></a>CMFCVisualManagerWindows::OnDrawTearOffCaption  
+##  <a name="ondrawtearoffcaption"></a>  CMFCVisualManagerWindows::OnDrawTearOffCaption  
 
   
 ```  
@@ -1182,14 +1248,14 @@ virtual void OnDrawTearOffCaption(
     BOOL bIsActive);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsActive`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsActive`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onerasepopupwindowbutton"></a>CMFCVisualManagerWindows::OnErasePopupWindowButton  
+##  <a name="onerasepopupwindowbutton"></a>  CMFCVisualManagerWindows::OnErasePopupWindowButton  
 
   
 ```  
@@ -1199,14 +1265,14 @@ virtual void OnErasePopupWindowButton(
     CMFCDesktopAlertWndButton* pButton);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectClient`  
- [入力] `pButton`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectClient`  
+ [in] `pButton`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onerasetabsarea"></a>CMFCVisualManagerWindows::OnEraseTabsArea  
+##  <a name="onerasetabsarea"></a>  CMFCVisualManagerWindows::OnEraseTabsArea  
 
   
 ```  
@@ -1216,14 +1282,14 @@ virtual void OnEraseTabsArea(
     const CMFCBaseTabCtrl* pTabWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pTabWnd`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pTabWnd`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onerasetabsbutton"></a>CMFCVisualManagerWindows::OnEraseTabsButton  
+##  <a name="onerasetabsbutton"></a>  CMFCVisualManagerWindows::OnEraseTabsButton  
 
   
 ```  
@@ -1234,15 +1300,15 @@ virtual void OnEraseTabsButton(
     CMFCBaseTabCtrl* pWndTab);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pButton`  
- [入力] `pWndTab`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pButton`  
+ [in] `pWndTab`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onerasetabsframe"></a>CMFCVisualManagerWindows::OnEraseTabsFrame  
+##  <a name="onerasetabsframe"></a>  CMFCVisualManagerWindows::OnEraseTabsFrame  
 
   
 ```  
@@ -1252,16 +1318,16 @@ virtual BOOL OnEraseTabsFrame(
     const CMFCBaseTabCtrl* pTabWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `pTabWnd`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `pTabWnd`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfillbarbackground"></a>CMFCVisualManagerWindows::OnFillBarBackground  
+##  <a name="onfillbarbackground"></a>  CMFCVisualManagerWindows::OnFillBarBackground  
 
   
 ```  
@@ -1273,16 +1339,16 @@ virtual void OnFillBarBackground(
     BOOL bNCArea = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pBar`  
- [入力] `rectClient`  
- [入力] `rectClip`  
- [入力] `bNCArea`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pBar`  
+ [in] `rectClient`  
+ [in] `rectClip`  
+ [in] `bNCArea`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfillbuttoninterior"></a>CMFCVisualManagerWindows::OnFillButtonInterior  
+##  <a name="onfillbuttoninterior"></a>  CMFCVisualManagerWindows::OnFillButtonInterior  
 
   
 ```  
@@ -1293,15 +1359,15 @@ virtual void OnFillButtonInterior(
     CMFCVisualManager::AFX_BUTTON_STATE state);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `rect`  
- [入力] `state`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `rect`  
+ [in] `state`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfillcommandslistbackground"></a>CMFCVisualManagerWindows::OnFillCommandsListBackground  
+##  <a name="onfillcommandslistbackground"></a>  CMFCVisualManagerWindows::OnFillCommandsListBackground  
 
   
 ```  
@@ -1311,16 +1377,16 @@ virtual COLORREF OnFillCommandsListBackground(
     BOOL bIsSelected = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsSelected`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsSelected`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfillminiframecaption"></a>CMFCVisualManagerWindows::OnFillMiniFrameCaption  
+##  <a name="onfillminiframecaption"></a>  CMFCVisualManagerWindows::OnFillMiniFrameCaption  
 
   
 ```  
@@ -1331,17 +1397,17 @@ virtual COLORREF OnFillMiniFrameCaption(
     BOOL bActive);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectCaption`  
- [入力] `pFrameWnd`  
- [入力] `bActive`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectCaption`  
+ [in] `pFrameWnd`  
+ [in] `bActive`  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfilloutlookpagebutton"></a>CMFCVisualManagerWindows::OnFillOutlookPageButton  
+##  <a name="onfilloutlookpagebutton"></a>  CMFCVisualManagerWindows::OnFillOutlookPageButton  
 
   
 ```  
@@ -1353,16 +1419,16 @@ virtual void OnFillOutlookPageButton(
     COLORREF& clrText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bIsHighlighted`  
- [入力] `bIsPressed`  
- [入力] `clrText`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bIsHighlighted`  
+ [in] `bIsPressed`  
+ [in] `clrText`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfilltasksgroupinterior"></a>CMFCVisualManagerWindows::OnFillTasksGroupInterior  
+##  <a name="onfilltasksgroupinterior"></a>  CMFCVisualManagerWindows::OnFillTasksGroupInterior  
 
   
 ```  
@@ -1372,14 +1438,14 @@ virtual void OnFillTasksGroupInterior(
     BOOL bSpecial = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rect`  
- [入力] `bSpecial`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rect`  
+ [in] `bSpecial`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onfilltaskspanebackground"></a>CMFCVisualManagerWindows::OnFillTasksPaneBackground  
+##  <a name="onfilltaskspanebackground"></a>  CMFCVisualManagerWindows::OnFillTasksPaneBackground  
 
   
 ```  
@@ -1388,13 +1454,13 @@ virtual void OnFillTasksPaneBackground(
     CRect rectWorkArea);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectWorkArea`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectWorkArea`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onhighlightmenuitem"></a>CMFCVisualManagerWindows::OnHighlightMenuItem  
+##  <a name="onhighlightmenuitem"></a>  CMFCVisualManagerWindows::OnHighlightMenuItem  
 
   
 ```  
@@ -1405,15 +1471,15 @@ virtual void OnHighlightMenuItem(
     COLORREF& clrText);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `pButton`  
- [入力] `rect`  
- [入力] `clrText`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `pButton`  
+ [in] `rect`  
+ [in] `clrText`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onhighlightrarelyusedmenuitems"></a>CMFCVisualManagerWindows::OnHighlightRarelyUsedMenuItems  
+##  <a name="onhighlightrarelyusedmenuitems"></a>  CMFCVisualManagerWindows::OnHighlightRarelyUsedMenuItems  
 
   
 ```  
@@ -1422,36 +1488,36 @@ virtual void OnHighlightRarelyUsedMenuItems(
     CRect rectRarelyUsed);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- [入力] `rectRarelyUsed`  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ [in] `rectRarelyUsed`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="onupdatesystemcolors"></a>CMFCVisualManagerWindows::OnUpdateSystemColors  
+##  <a name="onupdatesystemcolors"></a>  CMFCVisualManagerWindows::OnUpdateSystemColors  
 
   
 ```  
 virtual void OnUpdateSystemColors();
 ```  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="setofficestylemenus"></a>CMFCVisualManagerWindows::SetOfficeStyleMenus  
+##  <a name="setofficestylemenus"></a>  CMFCVisualManagerWindows::SetOfficeStyleMenus  
 
   
 ```  
 void SetOfficeStyleMenus(BOOL bOn = TRUE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bOn`  
+### <a name="parameters"></a>Parameters  
+ [in] `bOn`  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCVisualManager クラス](../../mfc/reference/cmfcvisualmanager-class.md)   
- [CMFCVisualManagerOfficeXP クラス](../../mfc/reference/cmfcvisualmanagerofficexp-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCVisualManager Class](../../mfc/reference/cmfcvisualmanager-class.md)   
+ [CMFCVisualManagerOfficeXP Class](../../mfc/reference/cmfcvisualmanagerofficexp-class.md)
 

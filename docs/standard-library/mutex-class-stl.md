@@ -1,5 +1,5 @@
 ---
-title: "mutex クラス (C++ 標準ライブラリ)| Microsoft Docs"
+title: mutex Class (C++ Standard Library)| Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -36,107 +36,114 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: e08c7c13d1e182bc3299f11769eddb699b03ab3f
+helpviewer_keywords:
+- std::mutex [C++]
+- std::mutex [C++], mutex
+- std::mutex [C++], lock
+- std::mutex [C++], native_handle
+- std::mutex [C++], try_lock
+- std::mutex [C++], unlock
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: ff1727e4d308dd7c3824aa6bfb86b385876c74aa
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="mutex-class-c-standard-library"></a>mutex クラス (C++ 標準ライブラリ)
-*mutex 型*を表します。 この型のオブジェクトを使用して、プログラム内で相互排他を適用できます。  
+# <a name="mutex-class-c-standard-library"></a>mutex Class (C++ Standard Library)
+Represents a *mutex type*. Objects of this type can be used to enforce mutual exclusion within a program.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 class mutex;
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[mutex](#mutex)|`mutex` オブジェクトを構築します。|  
-|[mutex::~mutex デストラクター](#dtormutex_destructor)|`mutex` オブジェクトで使用されたすべてのリソースを解放します。|  
+|[mutex](#mutex)|Constructs a `mutex` object.|  
+|[mutex::~mutex Destructor](#dtormutex_destructor)|Releases any resources that were used by the `mutex` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[lock](#lock)|呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。|  
-|[native_handle](#native_handle)|ミューテックス ハンドルを表す実装固有の型を返します。|  
-|[try_lock](#try_lock)|ブロックせずに `mutex` の所有権を取得しようとします。|  
-|[unlock](#unlock)|`mutex` の所有権を解放します。|  
+|[lock](#lock)|Blocks the calling thread until the thread obtains ownership of the `mutex`.|  
+|[native_handle](#native_handle)|Returns the implementation-specific type that represents the mutex handle.|  
+|[try_lock](#try_lock)|Attempts to obtain ownership of the `mutex` without blocking.|  
+|[unlock](#unlock)|Releases ownership of the `mutex`.|  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<ミュー テックス >  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<mutex>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-##  <a name="lock"></a>mutex::lock
- 呼び出しスレッドが `mutex` の所有権を取得するまでそのスレッドをブロックします。  
+##  <a name="lock"></a>  mutex::lock
+ Blocks the calling thread until the thread obtains ownership of the `mutex`.  
   
 ```cpp  
 void lock();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出しスレッドが既に `mutex` を所有している場合の動作は未定義です。  
+### <a name="remarks"></a>Remarks  
+ If the calling thread already owns the `mutex`, the behavior is undefined.  
   
-##  <a name="mutex"></a>  mutex::mutex コンストラクター  
- ロックされていない `mutex` オブジェクトを構築します。  
+##  <a name="mutex"></a>  mutex::mutex Constructor  
+ Constructs a `mutex` object that is not locked.  
   
 ```cpp  
 constexpr mutex() noexcept;
 ```  
   
-##  <a name="dtormutex_destructor"></a>  mutex::~mutex デストラクター  
- `mutex` オブジェクトによって使用されているすべてのリソースを解放します。  
+##  <a name="dtormutex_destructor"></a>  mutex::~mutex Destructor  
+ Releases any resources that are used by the `mutex` object.  
   
 ```cpp  
 ~mutex();
 ```  
   
-### <a name="remarks"></a>コメント  
- デストラクターの実行時にオブジェクトがロックされる場合の動作は未定義です。  
+### <a name="remarks"></a>Remarks  
+ If the object is locked when the destructor runs, the behavior is undefined.  
   
-##  <a name="native_handle"></a>mutex::native_handle
- ミューテックス ハンドルを表す実装固有の型を返します。 ミューテックス ハンドルは、実装固有の方法で使用できます。  
+##  <a name="native_handle"></a>  mutex::native_handle
+ Returns the implementation-specific type that represents the mutex handle. The mutex handle can be used in implementation-specific ways.  
   
 ```
 native_handle_type native_handle();
 ```  
   
-### <a name="return-value"></a>戻り値  
- `native_handle_type` は、`void *` としてキャストされる `Concurrency::critical_section *` と定義されます。  
+### <a name="return-value"></a>Return Value  
+ `native_handle_type` is defined as a `Concurrency::critical_section *` that's cast as `void *`.  
   
-##  <a name="try_lock"></a>mutex::try_lock
- ブロックせずに `mutex` の所有権を取得しようとします。  
+##  <a name="try_lock"></a>  mutex::try_lock
+ Attempts to obtain ownership of the `mutex` without blocking.  
   
 ```cpp  
 bool try_lock();
 ```  
   
-### <a name="return-value"></a>戻り値  
- メソッドが `true` の所有権の取得に成功した場合は `mutex` を返します。それ以外の場合は `false` を返します。  
+### <a name="return-value"></a>Return Value  
+ `true` if the method successfully obtains ownership of the `mutex`; otherwise, `false`.  
   
-### <a name="remarks"></a>コメント  
- 呼び出しスレッドが既に `mutex` を所有している場合の動作は未定義です。  
+### <a name="remarks"></a>Remarks  
+ If the calling thread already owns the `mutex`, the behavior is undefined.  
   
-##  <a name="unlock"></a>mutex::unlock
- `mutex` の所有権を解放します。  
+##  <a name="unlock"></a>  mutex::unlock
+ Releases ownership of the `mutex`.  
   
 ```cpp  
 void unlock();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出しスレッドが `mutex` を所有していない場合の動作は未定義です。  
+### <a name="remarks"></a>Remarks  
+ If the calling thread does not own the `mutex`, the behavior is undefined.  
   
-## <a name="see-also"></a>関連項目  
- [ヘッダー ファイル リファレンス](../standard-library/cpp-standard-library-header-files.md)   
+## <a name="see-also"></a>See Also  
+ [Header Files Reference](../standard-library/cpp-standard-library-header-files.md)   
  [\<mutex>](../standard-library/mutex.md)
 
 

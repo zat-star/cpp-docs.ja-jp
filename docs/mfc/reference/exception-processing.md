@@ -1,5 +1,5 @@
 ---
-title: "例外の処理 |Microsoft ドキュメント"
+title: Exception Processing | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,14 +13,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- macros, exception handling
-- DAO (Data Access Objects), exceptions
-- OLE exceptions, MFC functions
-- exceptions, processing
-- exception macros
+- macros [MFC], exception handling
+- DAO (Data Access Objects), exceptions [MFC]
+- OLE exceptions [MFC], MFC functions
+- exceptions [MFC], processing
+- exception macros [MFC]
 - termination functions, MFC
 - MFC, exceptions
-- exceptions, MFC throwing functions
+- exceptions [MFC], MFC throwing functions
 ms.assetid: 26d4457c-8350-48f5-916e-78f919787c30
 caps.latest.revision: 16
 author: mikeblome
@@ -40,281 +40,281 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b943ef8dd652df061965fe81ecc9c08115636141
-ms.openlocfilehash: fc136efaa6312edf3edfa8420411eda73e1c2468
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 69cc68402930b677c6585602c0e6575e18db64a9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="exception-processing"></a>例外処理
-プログラムを実行するとき、多くの異常な状態と「例外」というエラーが発生する可能性がします。 これらには、メモリ、リソース割り当てのエラー、およびファイルを検索する障害の不足が含まれます。  
+# <a name="exception-processing"></a>Exception Processing
+When a program executes, a number of abnormal conditions and errors called "exceptions" can occur. These may include running out of memory, resource allocation errors, and failure to find files.  
   
- Microsoft Foundation Class ライブラリでは、いずれかの C++ の場合、ANSI 標準委員会によって提案された後に密接にモデル化例外処理パターンを使用します。 異常状態に陥る可能性があります関数を呼び出す前に、例外ハンドラーの設定を作成する必要があります。 関数には、異常な状態が発生すると、例外がスローし、例外ハンドラーに制御が渡されます。  
+ The Microsoft Foundation Class Library uses an exception-handling scheme that is modeled closely after the one proposed by the ANSI standards committee for C++. An exception handler must be set up before calling a function that may encounter an abnormal situation. If the function encounters an abnormal condition, it throws an exception and control is passed to the exception handler.  
   
- Microsoft Foundation Class ライブラリに含まれているいくつかのマクロは、例外ハンドラーを設定します。 他のグローバル関数の数は、必要に応じて、特殊な例外をスローして、プログラムを終了に役立ちます。 これらのマクロとグローバル関数は、次のカテゴリに分類されます。  
+ Several macros included with the Microsoft Foundation Class Library will set up exception handlers. A number of other global functions help to throw specialized exceptions and terminate programs, if necessary. These macros and global functions fall into the following categories:  
   
-- 例外処理マクロは、例外ハンドラーを構成します。  
+- Exception macros, which structure your exception handler.  
   
-- 関数を Exception-throwing)、特定の種類の例外を生成します。  
+- Exception-throwing functions), which generate exceptions of specific types.  
   
-- 終了関数には、プログラムの終了が発生します。  
+- Termination functions, which cause program termination.  
   
- 例と詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For examples and more details, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="exception-macros"></a>例外処理マクロ  
-  
-|||  
-|-|-|  
-|[再試行してください。](#try)|例外の処理用のコード ブロックを指定します。|  
-|[CATCH](#catch)|前述からの例外をキャッチするためのコードのブロックを指定**再試行**ブロックします。|  
-|[CATCH_ALL](#catch_all)|上記のすべての例外をキャッチするためのコードのブロックを指定**再試行**ブロックします。|  
-|[AND_CATCH](#and_catch)|上記から追加の例外型をキャッチするためのコードのブロックを指定**再試行**ブロックします。|  
-|[AND_CATCH_ALL](#and_catch_all)|他のすべての直前に追加の例外の種類をキャッチするためのコードのブロックを指定**再試行**ブロックします。|  
-|[END_CATCH](#end_catch)|最後の終了**キャッチ**または`AND_CATCH`コード ブロック。|  
-|[END_CATCH_ALL](#end_catch_all)|最後の終了`CATCH_ALL`コード ブロック。|  
-|[スローします。](#throw)|指定した例外をスローします。|  
-|[THROW_LAST](#throw_last)|[次へ] の外側のハンドラーを現在処理されている例外をスローします。|  
-  
-### <a name="exception-throwing-functions"></a>例外スロー関数  
+### <a name="exception-macros"></a>Exception Macros  
   
 |||  
 |-|-|  
-|[AfxThrowArchiveException](#afxthrowarchiveexception)|アーカイブの例外をスローします。|  
-|[AfxThrowFileException](#afxthrowfileexception)|ファイルの例外をスローします。|  
-|[AfxThrowInvalidArgException](#afxthrowinvalidargexception)|無効な引数の例外をスローします。|
-|[AfxThrowMemoryException](#afxthrowmemoryexception)|メモリ不足の例外をスローします。|  
-|[AfxThrowNotSupportedException](#afxthrownotsupportedexception)|サポートしていない例外がスローされます。|  
-|[AfxThrowResourceException](#afxthrowresourceexception)|Windows リソースが見つからないの例外をスローします。|  
-|[AfxThrowUserException](#afxthrowuserexception)|プログラムのユーザーによる操作で例外をスローします。|  
+|[TRY](#try)|Designates a block of code for exception processing.|  
+|[CATCH](#catch)|Designates a block of code for catching an exception from the preceding **TRY** block.|  
+|[CATCH_ALL](#catch_all)|Designates a block of code for catching all exceptions from the preceding **TRY** block.|  
+|[AND_CATCH](#and_catch)|Designates a block of code for catching additional exception types from the preceding **TRY** block.|  
+|[AND_CATCH_ALL](#and_catch_all)|Designates a block of code for catching all other additional exception types thrown in a preceding **TRY** block.|  
+|[END_CATCH](#end_catch)|Ends the last **CATCH** or `AND_CATCH` code block.|  
+|[END_CATCH_ALL](#end_catch_all)|Ends the last `CATCH_ALL` code block.|  
+|[THROW](#throw)|Throws a specified exception.|  
+|[THROW_LAST](#throw_last)|Throws the currently handled exception to the next outer handler.|  
   
- MFC には、OLE の例外を具体的には 2 つの例外スロー関数が用意されています。  
-  
-### <a name="ole-exception-functions"></a>OLE 例外関数  
-  
-|||  
-|-|-|  
-|[AfxThrowOleDispatchException](#afxthrowoledispatchexception)|OLE オートメーション関数内で例外をスローします。|  
-|[AfxThrowOleException](#afxthrowoleexception)|OLE 例外をスローします。|  
-  
- データベース クラスが 2 つの例外クラスを提供するデータベースの例外をサポートする`CDBException`と`CDaoException`、および例外の種類をサポートするためにグローバル関数。  
-  
-### <a name="dao-exception-functions"></a>DAO 例外関数  
+### <a name="exception-throwing-functions"></a>Exception-Throwing Functions  
   
 |||  
 |-|-|  
-|[AfxThrowDAOException](#afxthrowdaoexception)|スロー、 [CDaoException](../../mfc/reference/cdaoexception-class.md)独自のコードからです。|  
-|[AfxThrowDBException](#afxthrowdbexception)|スロー、 [CDBException](../../mfc/reference/cdbexception-class.md)独自のコードからです。|  
+|[AfxThrowArchiveException](#afxthrowarchiveexception)|Throws an archive exception.|  
+|[AfxThrowFileException](#afxthrowfileexception)|Throws a file exception.|  
+|[AfxThrowInvalidArgException](#afxthrowinvalidargexception)|Throws an invalid argument exception.|
+|[AfxThrowMemoryException](#afxthrowmemoryexception)|Throws a memory exception.|  
+|[AfxThrowNotSupportedException](#afxthrownotsupportedexception)|Throws a not-supported exception.|  
+|[AfxThrowResourceException](#afxthrowresourceexception)|Throws a Windows resource-not-found exception.|  
+|[AfxThrowUserException](#afxthrowuserexception)|Throws an exception in a user-initiated program action.|  
   
- MFC には、次の終了関数が用意されています。  
+ MFC provides two exception-throwing functions specifically for OLE exceptions:  
   
-### <a name="termination-functions"></a>終了関数  
+### <a name="ole-exception-functions"></a>OLE Exception Functions  
   
 |||  
 |-|-|  
-|[AfxAbort](#afxabort)|呼ばれるときに致命的なエラーにアプリケーションを終了するに発生します。|  
+|[AfxThrowOleDispatchException](#afxthrowoledispatchexception)|Throws an exception within an OLE automation function.|  
+|[AfxThrowOleException](#afxthrowoleexception)|Throws an OLE exception.|  
   
-##  <a name="try"></a>再試行してください。  
- 設定、**再試行**ブロックします。  
+ To support database exceptions, the database classes provide two exception classes, `CDBException` and `CDaoException`, and global functions to support the exception types:  
+  
+### <a name="dao-exception-functions"></a>DAO Exception Functions  
+  
+|||  
+|-|-|  
+|[AfxThrowDAOException](#afxthrowdaoexception)|Throws a [CDaoException](../../mfc/reference/cdaoexception-class.md) from your own code.|  
+|[AfxThrowDBException](#afxthrowdbexception)|Throws a [CDBException](../../mfc/reference/cdbexception-class.md) from your own code.|  
+  
+ MFC provides the following termination function:  
+  
+### <a name="termination-functions"></a>Termination Functions  
+  
+|||  
+|-|-|  
+|[AfxAbort](#afxabort)|Called to terminate an application when a fatal error occurs.|  
+  
+##  <a name="try"></a>  TRY  
+ Sets up a **TRY** block.  
   
 ```   
 TRY   
 ```  
   
-### <a name="remarks"></a>コメント  
- A**再試行**ブロックが例外をスローするコードのブロックを指定します。 これらの例外は、次に**キャッチ**と`AND_CATCH`ブロックします。 再帰が許可されている: 例外は、外側に渡される可能性があります**再試行**ブロックを無視するかを使用して、`THROW_LAST`マクロです。 終了、**再試行**ブロックを`END_CATCH`または`END_CATCH_ALL`マクロです。  
+### <a name="remarks"></a>Remarks  
+ A **TRY** block identifies a block of code that might throw exceptions. Those exceptions are handled in the following **CATCH** and `AND_CATCH` blocks. Recursion is allowed: exceptions may be passed to an outer **TRY** block, either by ignoring them or by using the `THROW_LAST` macro. End the **TRY** block with an `END_CATCH` or `END_CATCH_ALL` macro.  
   
- 詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For more information, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="example"></a>例  
- 例を参照して[キャッチ](#catch)です。  
+### <a name="example"></a>Example  
+ See the example for [CATCH](#catch).  
 
-### <a name="requirements"></a>要件
-ヘッダー: afx.h
+### <a name="requirements"></a>Requirements
+Header: afx.h
 
-##  <a name="catch"></a>CATCH  
- 最初に、上記でスローされた例外の種類をキャッチするコードのブロックを定義**再試行**ブロックします。  
+##  <a name="catch"></a>  CATCH  
+ Defines a block of code that catches the first exception type thrown in the preceding **TRY** block.  
   
 ```   
 CATCH(exception_class, exception_object_pointer_name)  
  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *exception_class*  
- テストするための例外の種類を指定します。 標準の例外クラスの一覧は、クラスを参照してください。 [CException](../../mfc/reference/cexception-class.md)です。  
+ Specifies the exception type to test for. For a list of standard exception classes, see class [CException](../../mfc/reference/cexception-class.md).  
   
- *ことは*  
- マクロにより作成される例外オブジェクト ポインターの名前を指定します。 内の例外オブジェクトにアクセスするポインターの名前を使用することができます、**キャッチ**ブロックします。 この変数を宣言します。  
+ *exception_object_pointer_name*  
+ Specifies a name for an exception-object pointer that will be created by the macro. You can use the pointer name to access the exception object within the **CATCH** block. This variable is declared for you.  
   
-### <a name="remarks"></a>コメント  
- 例外処理コードは、必要に応じて、例外の特定の原因に関する詳細情報を取得する例外オブジェクトを問い合わせることができます。 呼び出す、`THROW_LAST`処理を外側の例外の次のフレームにシフトするマクロです。 終了、**再試行**ブロックを`END_CATCH`マクロです。  
+### <a name="remarks"></a>Remarks  
+ The exception-processing code can interrogate the exception object, if appropriate, to get more information about the specific cause of the exception. Invoke the `THROW_LAST` macro to shift processing to the next outer exception frame. End the **TRY** block with an `END_CATCH` macro.  
   
- 場合*exception_class*クラス`CException`、すべての例外の種類をキャッチし、します。 使用することができます、[使うため](../../mfc/reference/cobject-class.md#iskindof)メンバー関数を決定する特定の例外がスローされました。 いくつかの種類の例外をキャッチする優れた方法としては、シーケンシャルを使用する`AND_CATCH`ステートメントは、それぞれに異なる例外の種類。  
+ If *exception_class* is the class `CException`, then all exception types will be caught. You can use the [CObject::IsKindOf](../../mfc/reference/cobject-class.md#iskindof) member function to determine which specific exception was thrown. A better way to catch several kinds of exceptions is to use sequential `AND_CATCH` statements, each with a different exception type.  
   
- マクロでは、例外オブジェクトへのポインターが作成されます。 自分で宣言する必要はありません。  
+ The exception object pointer is created by the macro. You do not need to declare it yourself.  
   
 > [!NOTE]
->  **キャッチ**ブロックは中かっこで囲んで示して C++ スコープとして定義します。 このスコープで変数を宣言する場合は、そのスコープ内でのみ利用可能です。 これにも当てはまります*ことは*します。  
+>  The **CATCH** block is defined as a C++ scope delineated by braces. If you declare variables in this scope, they are accessible only within that scope. This also applies to *exception_object_pointer_name*.  
   
- 例外の詳細については、**キャッチ**マクロ、記事を参照して[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For more information on exceptions and the **CATCH** macro, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCExceptions # 26](../../mfc/codesnippet/cpp/exception-processing_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCExceptions#26](../../mfc/codesnippet/cpp/exception-processing_1.cpp)]  
   
-##  <a name="catch_all"></a>CATCH_ALL  
- 上記でスローされたすべての例外の種類をキャッチするコードのブロックを定義**再試行**ブロックします。  
+##  <a name="catch_all"></a>  CATCH_ALL  
+ Defines a block of code that catches all exception types thrown in the preceding **TRY** block.  
   
 ```   
 CATCH_ALL(exception_object_pointer_name)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *ことは*  
- マクロにより作成される例外オブジェクト ポインターの名前を指定します。 内の例外オブジェクトにアクセスするポインターの名前を使用することができます、`CATCH_ALL`ブロックします。 この変数を宣言します。  
+### <a name="parameters"></a>Parameters  
+ *exception_object_pointer_name*  
+ Specifies a name for an exception-object pointer that will be created by the macro. You can use the pointer name to access the exception object within the `CATCH_ALL` block. This variable is declared for you.  
   
-### <a name="remarks"></a>コメント  
- 例外処理コードは、必要に応じて、例外の特定の原因に関する詳細情報を取得する例外オブジェクトを問い合わせることができます。 呼び出す、`THROW_LAST`処理を外側の例外の次のフレームにシフトするマクロです。 使用する場合`CATCH_ALL`、終了、**再試行**ブロックを`END_CATCH_ALL`マクロです。  
+### <a name="remarks"></a>Remarks  
+ The exception-processing code can interrogate the exception object, if appropriate, to get more information about the specific cause of the exception. Invoke the `THROW_LAST` macro to shift processing to the next outer exception frame. If you use `CATCH_ALL`, end the **TRY** block with an `END_CATCH_ALL` macro.  
   
 > [!NOTE]
->  `CATCH_ALL`ブロックは中かっこで囲んで示して C++ スコープとして定義します。 このスコープで変数を宣言する場合は、そのスコープ内でのみ利用可能です。  
+>  The `CATCH_ALL` block is defined as a C++ scope delineated by braces. If you declare variables in this scope, they are accessible only within that scope.  
   
- 例外の詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For more information on exceptions, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="example"></a>例  
- 例を参照して[解放](../../mfc/reference/cfile-class.md#abort)です。  
+### <a name="example"></a>Example  
+ See the example for [CFile::Abort](../../mfc/reference/cfile-class.md#abort).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
 
-##  <a name="and_catch"></a>AND_CATCH  
- 直前に追加の例外型をキャッチするためのコードのブロックを定義**再試行**ブロックします。  
+##  <a name="and_catch"></a>  AND_CATCH  
+ Defines a block of code for catching additional exception types thrown in a preceding **TRY** block.  
   
 ```   
 AND_CATCH(exception_class, exception_object_pointer_name)   
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *exception_class*  
- テストするための例外の種類を指定します。 標準の例外クラスの一覧は、クラスを参照してください。 [CException](../../mfc/reference/cexception-class.md)です。  
+ Specifies the exception type to test for. For a list of standard exception classes, see class [CException](../../mfc/reference/cexception-class.md).  
   
- *ことは*  
- マクロにより作成される例外オブジェクトのポインターの名前。 内の例外オブジェクトにアクセスするポインターの名前を使用することができます、`AND_CATCH`ブロックします。 この変数を宣言します。  
+ *exception_object_pointer_name*  
+ A name for an exception-object pointer that will be created by the macro. You can use the pointer name to access the exception object within the `AND_CATCH` block. This variable is declared for you.  
   
-### <a name="remarks"></a>コメント  
- 使用して、**キャッチ**1 つの例外の種類をキャッチする、`AND_CATCH`マクロをキャッチします。 終了、**再試行**ブロックを`END_CATCH`マクロです。  
+### <a name="remarks"></a>Remarks  
+ Use the **CATCH** macro to catch one exception type, then the `AND_CATCH` macro to catch each subsequent type. End the **TRY** block with an `END_CATCH` macro.  
   
- 例外処理コードは、必要に応じて、例外の特定の原因に関する詳細情報を取得する例外オブジェクトを問い合わせることができます。 呼び出す、`THROW_LAST`内でのマクロ、 `AND_CATCH` shift キーを次のフレームの外側の例外処理をブロックします。 `AND_CATCH`上記の末尾をマーク**キャッチ**または`AND_CATCH`ブロックします。  
+ The exception-processing code can interrogate the exception object, if appropriate, to get more information about the specific cause of the exception. Call the `THROW_LAST` macro within the `AND_CATCH` block to shift processing to the next outer exception frame. `AND_CATCH` marks the end of the preceding **CATCH** or `AND_CATCH` block.  
   
 > [!NOTE]
->  `AND_CATCH`ブロックは、C++ のスコープ (中かっこで囲んで示して) として定義します。 このスコープ内の変数を宣言する場合は、そのスコープ内でのみアクセスされることに注意してください。 これにも当てはまります、*ことは*変数。  
+>  The `AND_CATCH` block is defined as a C++ scope (delineated by curly braces). If you declare variables in this scope, remember that they are accessible only within that scope. This also applies to the *exception_object_pointer_name* variable.  
   
-### <a name="example"></a>例  
- 例を参照して[キャッチ](#catch)です。  
+### <a name="example"></a>Example  
+ See the example for [CATCH](#catch).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
-##  <a name="and_catch_all"></a>AND_CATCH_ALL  
- 直前に追加の例外型をキャッチするためのコードのブロックを定義**再試行**ブロックします。  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
+##  <a name="and_catch_all"></a>  AND_CATCH_ALL  
+ Defines a block of code for catching additional exception types thrown in a preceding **TRY** block.  
   
 ```   
 AND_CATCH_ALL(exception_object_pointer_name)  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *ことは*  
- マクロにより作成される例外オブジェクトのポインターの名前。 内の例外オブジェクトにアクセスするポインターの名前を使用することができます、`AND_CATCH_ALL`ブロックします。 この変数を宣言します。  
+### <a name="parameters"></a>Parameters  
+ *exception_object_pointer_name*  
+ A name for an exception-object pointer that will be created by the macro. You can use the pointer name to access the exception object within the `AND_CATCH_ALL` block. This variable is declared for you.  
   
-### <a name="remarks"></a>コメント  
- 使用する、**キャッチ**1 つの例外の種類をキャッチする、`AND_CATCH_ALL`マクロを他のすべての後続の種類をキャッチします。 使用する場合`AND_CATCH_ALL`、終了、**再試行**ブロックを`END_CATCH_ALL`マクロです。  
+### <a name="remarks"></a>Remarks  
+ Use the **CATCH** macro to catch one exception type, then the `AND_CATCH_ALL` macro to catch all other subsequent types. If you use `AND_CATCH_ALL`, end the **TRY** block with an `END_CATCH_ALL` macro.  
   
- 例外処理コードは、必要に応じて、例外の特定の原因に関する詳細情報を取得する例外オブジェクトを問い合わせることができます。 呼び出す、`THROW_LAST`内でのマクロ、 `AND_CATCH_ALL` shift キーを次のフレームの外側の例外処理をブロックします。 `AND_CATCH_ALL`上記の末尾をマーク**キャッチ**または`AND_CATCH_ALL`ブロックします。  
+ The exception-processing code can interrogate the exception object, if appropriate, to get more information about the specific cause of the exception. Call the `THROW_LAST` macro within the `AND_CATCH_ALL` block to shift processing to the next outer exception frame. `AND_CATCH_ALL` marks the end of the preceding **CATCH** or `AND_CATCH_ALL` block.  
   
 > [!NOTE]
->  `AND_CATCH_ALL`ブロックは、C++ のスコープ (中かっこで囲んで示して) として定義します。 このスコープ内の変数を宣言する場合は、そのスコープ内でのみアクセスされることに注意してください。  
+>  The `AND_CATCH_ALL` block is defined as a C++ scope (delineated by braces). If you declare variables in this scope, remember that they are accessible only within that scope.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="end_catch"></a>END_CATCH  
- 最後の終了をマーク**キャッチ**または`AND_CATCH`ブロックします。  
+##  <a name="end_catch"></a>  END_CATCH  
+ Marks the end of the last **CATCH** or `AND_CATCH` block.  
   
 ```   
 END_CATCH  
 ```  
   
-### <a name="remarks"></a>コメント  
- 詳細については、`END_CATCH`マクロ、記事を参照して[例外](../../mfc/exception-handling-in-mfc.md)です。  
+### <a name="remarks"></a>Remarks  
+ For more information on the `END_CATCH` macro, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="end_catch_all"></a>END_CATCH_ALL  
- 最後の終了をマーク`CATCH_ALL`または`AND_CATCH_ALL`ブロックします。  
+##  <a name="end_catch_all"></a>  END_CATCH_ALL  
+ Marks the end of the last `CATCH_ALL` or `AND_CATCH_ALL` block.  
   
 ```   
 END_CATCH_ALL  
 ```  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="throw"></a>スロー (MFC)  
- 指定された例外をスローします。  
+##  <a name="throw"></a>  THROW (MFC)  
+ Throws the specified exception.  
   
 ```   
 THROW(exception_object_pointer) 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *exception_object_pointer*  
- 派生した例外オブジェクトへのポインター`CException`です。  
+ Points to an exception object derived from `CException`.  
   
-### <a name="remarks"></a>コメント  
- **スロー**割り込みプログラムの実行を関連付けられているコントロールを渡す**キャッチ**でプログラムをブロックします。 提供されていない場合、**キャッチ**コントロールが、エラーを出力メッセージを終了する Microsoft Foundation Class ライブラリ モジュールに渡され、ブロックします。  
+### <a name="remarks"></a>Remarks  
+ **THROW** interrupts program execution, passing control to the associated **CATCH** block in your program. If you have not provided the **CATCH** block, then control is passed to a Microsoft Foundation Class Library module that prints an error message and exits.  
   
- 詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For more information, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="throw_last"></a>THROW_LAST  
- 例外を次にスローバック外部**キャッチ**ブロックします。  
+##  <a name="throw_last"></a>  THROW_LAST  
+ Throws the exception back to the next outer **CATCH** block.  
   
 ```   
 THROW_LAST()   
 ```  
   
-### <a name="remarks"></a>コメント  
- このマクロでは、ローカルで作成された例外をスローすることができます。 キャッチした例外をスローしようとする場合はスコープ外に出るは通常され、削除されます。 `THROW_LAST`、[次へ] を正常に渡された例外**キャッチ**ハンドラー。  
+### <a name="remarks"></a>Remarks  
+ This macro allows you to throw a locally created exception. If you try to throw an exception that you have just caught, it will normally go out of scope and be deleted. With `THROW_LAST`, the exception is passed correctly to the next **CATCH** handler.  
   
- 詳細については、記事を参照してください。[例外](../../mfc/exception-handling-in-mfc.md)です。  
+ For more information, see the article [Exceptions](../../mfc/exception-handling-in-mfc.md).  
   
-### <a name="example"></a>例  
- 例を参照して[解放](../../mfc/reference/cfile-class.md#abort)です。  
+### <a name="example"></a>Example  
+ See the example for [CFile::Abort](../../mfc/reference/cfile-class.md#abort).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowarchiveexception"></a>AfxThrowArchiveException  
- アーカイブの例外をスローします。  
+##  <a name="afxthrowarchiveexception"></a>  AfxThrowArchiveException  
+ Throws an archive exception.  
   
 ```   
 void  AfxThrowArchiveException(int cause, LPCTSTR lpszArchiveName); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cause`  
- 例外の原因を示す整数を指定します。 有効な値の一覧は、次を参照してください。 [CArchiveException::m_cause](../../mfc/reference/carchiveexception-class.md#m_cause)です。  
+ Specifies an integer that indicates the reason for the exception. For a list of the possible values, see [CArchiveException::m_cause](../../mfc/reference/carchiveexception-class.md#m_cause).  
   
  `lpszArchiveName`  
- 名前を含む文字列を指す、 `CArchive` (使用可能な場合)、例外の原因となったオブジェクトです。  
+ Points to a string containing the name of the `CArchive` object that caused the exception (if available).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowfileexception"></a>AfxThrowFileException  
- ファイルの例外をスローします。  
+##  <a name="afxthrowfileexception"></a>  AfxThrowFileException  
+ Throws a file exception.  
   
 ```   
 void AfxThrowFileException(
@@ -323,93 +323,93 @@ void AfxThrowFileException(
     LPCTSTR lpszFileName = NULL); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `cause`  
- 例外の原因を示す整数を指定します。 有効な値の一覧は、次を参照してください。[については、「](../../mfc/reference/cfileexception-class.md#m_cause)です。  
+ Specifies an integer that indicates the reason for the exception. For a list of the possible values, see [CFileException::m_cause](../../mfc/reference/cfileexception-class.md#m_cause).  
   
  `lOsError`  
- オペレーティング システムのエラー番号が含まれています (ある場合)、例外の原因を示すです。 エラー コードの一覧については、オペレーティング システムのマニュアルを参照してください。  
+ Contains the operating-system error number (if available) that states the reason for the exception. See your operating-system manual for a listing of error codes.  
   
  `lpszFileName`  
- (該当する場合)、例外の原因となったファイルの名前を含む文字列へのポインター。  
+ Points to a string containing the name of the file that caused the exception (if available).  
   
-### <a name="remarks"></a>コメント  
- オペレーティング システム エラー コードに基づく原因を特定するを担当しています。  
+### <a name="remarks"></a>Remarks  
+ You are responsible for determining the cause based on the operating-system error code.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
 
-## <a name="afxthrowinvalidargexception"></a>AfxThrowInvalidArgException
-無効な引数の例外をスローします。  
+## <a name="afxthrowinvalidargexception"></a>  AfxThrowInvalidArgException
+Throws an invalid argument exception.  
    
-### <a name="syntax"></a>構文    
+### <a name="syntax"></a>Syntax    
 ```
 void AfxThrowInvalidArgException( );  
 ```  
    
-### <a name="remarks"></a>コメント  
- 無効な引数を使用する場合は、この関数が呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This function is called when invalid arguments are used.  
    
-### <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+### <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
    
-### <a name="see-also"></a>関連項目  
- [マクロとグローバル](mfc-macros-and-globals.md)   
- [CInvalidArgException クラス](cinvalidargexception-class.md)   
- [スローします。](#throw)
+### <a name="see-also"></a>See Also  
+ [Macros and Globals](mfc-macros-and-globals.md)   
+ [CInvalidArgException Class](cinvalidargexception-class.md)   
+ [THROW](#throw)
   
   
-##  <a name="afxthrowmemoryexception"></a>AfxThrowMemoryException  
- メモリ不足の例外をスローします。  
+##  <a name="afxthrowmemoryexception"></a>  AfxThrowMemoryException  
+ Throws a memory exception.  
   
 ```   
 void AfxThrowMemoryException(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- 場合、この関数を呼び出す基になるシステム メモリ アロケーターへの呼び出し (など`malloc`と[GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) Windows 関数) は失敗します。 呼び出す必要はありません**新しい**ため**新しい**メモリ割り当てに失敗した場合に自動的にメモリ不足例外がスローされます。  
+### <a name="remarks"></a>Remarks  
+ Call this function if calls to underlying system memory allocators (such as `malloc` and the [GlobalAlloc](http://msdn.microsoft.com/library/windows/desktop/aa366574) Windows function) fail. You do not need to call it for **new** because **new** will throw a memory exception automatically if the memory allocation fails.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrownotsupportedexception"></a>AfxThrowNotSupportedException  
- サポートされていない機能を要求の結果である例外をスローします。  
+##  <a name="afxthrownotsupportedexception"></a>  AfxThrowNotSupportedException  
+ Throws an exception that is the result of a request for an unsupported feature.  
   
 ```  
 void AfxThrowNotSupportedException(); 
 ```  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowresourceexception"></a>AfxThrowResourceException  
- リソースの例外をスローします。  
+##  <a name="afxthrowresourceexception"></a>  AfxThrowResourceException  
+ Throws a resource exception.  
   
 ```   
 void  AfxThrowResourceException(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数は通常、Windows のリソースを読み込むことができないときに呼び出されます。  
+### <a name="remarks"></a>Remarks  
+ This function is normally called when a Windows resource cannot be loaded.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowuserexception"></a>AfxThrowUserException  
- エンドユーザーの操作を停止する例外をスローします。  
+##  <a name="afxthrowuserexception"></a>  AfxThrowUserException  
+ Throws an exception to stop an end-user operation.  
   
 ```   
 void AfxThrowUserException(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数は通常、直後に呼び出される`AfxMessageBox`をユーザーに、エラーが発生しました。  
+### <a name="remarks"></a>Remarks  
+ This function is normally called immediately after `AfxMessageBox` has reported an error to the user.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowoledispatchexception"></a>AfxThrowOleDispatchException  
- OLE オートメーション関数内で例外をスローするのにには、この関数を使用します。  
+##  <a name="afxthrowoledispatchexception"></a>  AfxThrowOleDispatchException  
+ Use this function to throw an exception within an OLE automation function.  
   
 ```   
 void AFXAPI AfxThrowOleDispatchException(
@@ -423,51 +423,51 @@ void AFXAPI AfxThrowOleDispatchException(
     UINT nHelpID = -1); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `wCode`  
- アプリケーションに固有のエラー コード。  
+ An error code specific to your application.  
   
  `lpszDescription`  
- エラーの口頭で説明します。  
+ Verbal description of the error.  
   
  `nDescriptionID`  
- 文章によるエラーの説明のリソース ID です。  
+ Resource ID for the verbal error description.  
   
  `nHelpID`  
- アプリケーションのヘルプのヘルプ コンテキスト (です。HLP) ファイルです。  
+ A help context for your application's help (.HLP) file.  
   
-### <a name="remarks"></a>コメント  
- 駆動アプリケーション (Microsoft Visual Basic または別の OLE オートメーション クライアント アプリケーション) では、この関数に指定された情報を表示できます。  
+### <a name="remarks"></a>Remarks  
+ The information provided to this function can be displayed by the driving application (Microsoft Visual Basic or another OLE automation client application).  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCExceptions #25](../../mfc/codesnippet/cpp/exception-processing_2.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCExceptions#25](../../mfc/codesnippet/cpp/exception-processing_2.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxthrowoleexception"></a>AfxThrowOleException  
- 型のオブジェクトを作成する`COleException`例外をスローします。  
+##  <a name="afxthrowoleexception"></a>  AfxThrowOleException  
+ Creates an object of type `COleException` and throws an exception.  
   
 ``` 
 void AFXAPI AfxThrowOleException(SCODE sc);
 void AFXAPI AfxThrowOleException(HRESULT hr); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `sc`  
- OLE ステータス コードの例外の理由を示します。  
+ An OLE status code that indicates the reason for the exception.  
   
  `hr`  
- 例外の理由を示す結果コードへのハンドルします。  
+ Handle to a result code that indicates the reason for the exception.  
   
-### <a name="remarks"></a>コメント  
- 受け取るバージョンで、`HRESULT`引数に変換結果コード、対応するよう`SCODE`です。 詳細については`HRESULT`と`SCODE`を参照してください[COM エラー コードの構造体](http://msdn.microsoft.com/library/windows/desktop/ms690088)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ The version that takes an `HRESULT` as an argument converts that result code into the corresponding `SCODE`. For more information on `HRESULT` and `SCODE`, see [Structure of COM Error Codes](http://msdn.microsoft.com/library/windows/desktop/ms690088) in the Windows SDK.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdao.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdao.h  
   
-##  <a name="afxthrowdaoexception"></a>AfxThrowDaoException  
- 型の例外をスローするには、この関数を呼び出す[CDaoException](../../mfc/reference/cdaoexception-class.md)独自のコードからです。  
+##  <a name="afxthrowdaoexception"></a>  AfxThrowDaoException  
+ Call this function to throw an exception of type [CDaoException](../../mfc/reference/cdaoexception-class.md) from your own code.  
   
 ```   
 void AFXAPI AfxThrowDaoException(
@@ -475,23 +475,23 @@ void AFXAPI AfxThrowDaoException(
     SCODE scode = S_OK); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nAfxDaoError`  
- DAO の拡張エラー コードを表す整数値、することができます、値の 1 つ下に表示[CDaoException::m_nAfxDaoError](../../mfc/reference/cdaoexception-class.md#m_nafxdaoerror)です。  
+ An integer value representing a DAO extended error code, which can be one of the values listed under [CDaoException::m_nAfxDaoError](../../mfc/reference/cdaoexception-class.md#m_nafxdaoerror).  
   
  *scode*  
- 型の DAO から OLE エラー コード`SCODE`です。 詳細については、次を参照してください。 [CDaoException::m_scode](../../mfc/reference/cdaoexception-class.md#m_scode)です。  
+ An OLE error code from DAO, of type `SCODE`. For information, see [CDaoException::m_scode](../../mfc/reference/cdaoexception-class.md#m_scode).  
   
-### <a name="remarks"></a>コメント  
- フレームワークによって呼び出されますも`AfxThrowDaoException`します。 呼び出しでは、パラメーターのいずれかまたは両方を渡すことができます。 たとえばのいずれかが発生する場合、エラーで定義されている**CDaoException::nAfxDaoError**を気にせず、 *scode*パラメーターで有効なコードを渡す、`nAfxDaoError`パラメーターの既定値をそのまま使用し、 *scode*です。  
+### <a name="remarks"></a>Remarks  
+ The framework also calls `AfxThrowDaoException`. In your call, you can pass one of the parameters or both. For example, if you want to raise one of the errors defined in **CDaoException::nAfxDaoError** but you do not care about the *scode* parameter, pass a valid code in the `nAfxDaoError` parameter and accept the default value for *scode*.  
   
- MFC DAO クラスに関連する例外については、クラスを参照してください。`CDaoException`本書と、アーティクルで[例外: データベースの例外](../../mfc/exceptions-database-exceptions.md)です。  
+ For information about exceptions related to the MFC DAO classes, see class `CDaoException` in this book and the article [Exceptions: Database Exceptions](../../mfc/exceptions-database-exceptions.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdb.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdb.h  
   
-##  <a name="afxthrowdbexception"></a>AfxThrowDBException  
- 型の例外をスローするには、この関数を呼び出す`CDBException`独自のコードからです。  
+##  <a name="afxthrowdbexception"></a>  AfxThrowDBException  
+ Call this function to throw an exception of type `CDBException` from your own code.  
   
 ```  
 void AfxThrowDBException(
@@ -500,41 +500,41 @@ void AfxThrowDBException(
     HSTMT hstmt);  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nRetCode`  
- 型の値**RETCODE**例外がスローされる原因となったエラーの種類を定義します。  
+ A value of type **RETCODE**, defining the type of error that caused the exception to be thrown.  
   
  `pdb`  
- ポインター、`CDatabase`例外が関連付けられているデータ ソース接続を表すオブジェクト。  
+ A pointer to the `CDatabase` object that represents the data source connection with which the exception is associated.  
   
  `hstmt`  
- ODBC **HSTMT**例外が関連付けられているステートメント ハンドルを指定するハンドル。  
+ An ODBC **HSTMT** handle that specifies the statement handle with which the exception is associated.  
   
-### <a name="remarks"></a>コメント  
- フレームワークによって`AfxThrowDBException`受信すると、ODBC **RETCODE** ODBC API の呼び出しから関数および解釈、 **RETCODE** expectable エラーではなく、例外が発生します。 たとえば、データ アクセス操作ディスクの読み取りエラーのため失敗します。  
+### <a name="remarks"></a>Remarks  
+ The framework calls `AfxThrowDBException` when it receives an ODBC **RETCODE** from a call to an ODBC API function and interprets the **RETCODE** as an exceptional condition rather than an expectable error. For example, a data access operation might fail because of a disk read error.  
   
- については、 **RETCODE** 、ODBC で定義されている値の第 8 章「を取得するステータスおよびエラーについては、」を参照してください、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。 これらのコードに MFC の拡張機能の概要については、クラスを参照してください。 [CDBException](../../mfc/reference/cdbexception-class.md)です。  
+ For information about the **RETCODE** values defined by ODBC, see Chapter 8, "Retrieving Status and Error Information," in the Windows SDK. For information about MFC extensions to these codes, see class [CDBException](../../mfc/reference/cdbexception-class.md).  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h  
   
-##  <a name="afxabort"></a>AfxAbort  
- MFC によって提供される既定の終了関数。  
+##  <a name="afxabort"></a>  AfxAbort  
+ The default termination function supplied by MFC.  
   
 ```   
 void  AfxAbort(); 
 ```  
   
-### <a name="remarks"></a>コメント  
- `AfxAbort`内部的に呼び出されます MFC メンバー関数によってキャッチされない例外は処理できないなどの致命的なエラーがある場合。 呼び出すことができます`AfxAbort`まれな場合は、回復することはできません、致命的なエラーが発生したときにします。  
+### <a name="remarks"></a>Remarks  
+ `AfxAbort` is called internally by MFC member functions when there is a fatal error, such as an uncaught exception that cannot be handled. You can call `AfxAbort` in the rare case when you encounter a catastrophic error from which you cannot recover.  
   
-### <a name="example"></a>例  
- 例を参照して[キャッチ](#catch)です。  
+### <a name="example"></a>Example  
+ See the example for [CATCH](#catch).  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afx.h   
+### <a name="requirements"></a>Requirements  
+  **Header** afx.h   
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)   
- [CException クラス](../../mfc/reference/cexception-class.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)   
+ [CException Class](../../mfc/reference/cexception-class.md)
 

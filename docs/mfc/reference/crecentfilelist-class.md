@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: CRecentFileList Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,9 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- files [C++], most recently used
-- MRU files
-- CRecentFileList class
+- CRecentFileList [MFC], CRecentFileList
+- CRecentFileList [MFC], Add
+- CRecentFileList [MFC], GetDisplayName
+- CRecentFileList [MFC], GetSize
+- CRecentFileList [MFC], ReadList
+- CRecentFileList [MFC], Remove
+- CRecentFileList [MFC], UpdateMenu
+- CRecentFileList [MFC], WriteList
 ms.assetid: a77f0524-7584-4582-849a-7e97b76d186e
 caps.latest.revision: 19
 author: mikeblome
@@ -44,63 +49,63 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 5d18daee2e4d809c750ae4654d731888df1db39e
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c3bda8ecbd413769fe3d4d12baf40b57f9da622a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="crecentfilelist-class"></a>関数のクラス
-MRU ファイル リストのコントロールをサポートします。  
+# <a name="crecentfilelist-class"></a>CRecentFileList Class
+Supports control of the most recently used (MRU) file list.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CRecentFileList  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecentFileList::CRecentFileList](#crecentfilelist)|`CRecentFileList` オブジェクトを構築します。|  
+|[CRecentFileList::CRecentFileList](#crecentfilelist)|Constructs a `CRecentFileList` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecentFileList::Add](#add)|MRU ファイル リストにファイルを追加します。|  
-|[CRecentFileList::GetDisplayName](#getdisplayname)|MRU ファイル名のメニューの表示の表示名を提供します。|  
-|[CRecentFileList::GetSize](#getsize)|MRU ファイル リスト内のファイルの数を取得します。|  
-|[CRecentFileList::ReadList](#readlist)|MRU ファイル リストをレジストリから読み取るか。INI ファイルです。|  
-|[CRecentFileList::Remove](#remove)|MRU ファイル リストからファイルを削除します。|  
-|[CRecentFileList::UpdateMenu](#updatemenu)|MRU ファイル リストのメニューの表示を更新します。|  
-|[CRecentFileList::WriteList](#writelist)|レジストリから MRU ファイル リストを書き込みますか。INI ファイルです。|  
+|[CRecentFileList::Add](#add)|Adds a file to the MRU file list.|  
+|[CRecentFileList::GetDisplayName](#getdisplayname)|Provides a display name for menu display of an MRU filename.|  
+|[CRecentFileList::GetSize](#getsize)|Retrieves the number of files in the MRU file list.|  
+|[CRecentFileList::ReadList](#readlist)|Reads the MRU file list from the registry or .INI file.|  
+|[CRecentFileList::Remove](#remove)|Removes a file from the MRU file list.|  
+|[CRecentFileList::UpdateMenu](#updatemenu)|Updates the menu display of the MRU file list.|  
+|[CRecentFileList::WriteList](#writelist)|Writes the MRU file list from the registry or .INI file.|  
   
-### <a name="public-operators"></a>パブリック演算子  
+### <a name="public-operators"></a>Public Operators  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CRecentFileList::operator](#operator_at)|返します。、`CString`指定位置にあるオブジェクト。|  
+|[CRecentFileList::operator [ ]](#operator_at)|Returns a `CString` object at a given position.|  
   
-## <a name="remarks"></a>コメント  
- ファイルを追加または MRU ファイル リストから削除、ファイルの一覧の読み取りや、レジストリに書き込まれたことができますか。INI ファイルおよび MRU ファイル リストを表示するメニューを更新することができます。  
+## <a name="remarks"></a>Remarks  
+ Files can be added to or deleted from the MRU file list, the file list can be read from or written to the registry or an .INI file, and the menu displaying the MRU file list can be updated.  
   
- 最近使用したメニュー項目の詳細については、次を参照してください。  
+ For more information about MRU menu items, see  
   
--   サポート技術情報記事 Q243751: HOWTO: MFC アプリケーションで最近使用したメニュー項目に対するコマンド ハンドラーの追加  
+-   Knowledge Base article Q243751 : HOWTO: Add Command Handlers for MRU Menu Items in MFC Application  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CRecentFileList`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxadv.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxadv.h  
   
-##  <a name="add"></a>CRecentFileList::Add  
- ファイルを最近使用した MRU ファイル リストに追加します。  
+##  <a name="add"></a>  CRecentFileList::Add  
+ Adds a file to the most recently used (MRU) file list.  
   
 ```  
 virtual void Add(LPCTSTR lpszPathName);
@@ -126,27 +131,27 @@ void Add(
     LPCTSTR lpszAppID);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `lpszPathName`  
- 一覧に追加するパス名を指定します。  
+ Specifies pathname to be added to the list.  
   
  `lpszAppID`  
- アプリケーションのアプリケーションのユーザーのモデル ID を指定します。  
+ Specifies Application User Model ID for the application.  
   
  `pItem`  
- 一覧に追加するシェル項目へのポインターを指定します。  
+ Specifies a pointer to Shell Item to be added to the list.  
   
  `pLink`  
- 一覧に追加するシェル リンクへのポインターを指定します。  
+ Specifies a pointer to Shell Link to be added to the list.  
   
  `pidl`  
- 最近使ったドキュメント フォルダーに追加する必要がありますシェル項目の IDLIST を指定します。  
+ Specifies the IDLIST for the shell item that should be added to the recent docs folder.  
   
-### <a name="remarks"></a>コメント  
- ファイル名は、MRU 一覧の先頭に追加されます。 MRU 一覧にファイル名が既に存在する場合は、先頭に移動されます。  
+### <a name="remarks"></a>Remarks  
+ The file name will be added to the top of the MRU list. If the file name already exists in the MRU list, it will be moved to the top.  
   
-##  <a name="crecentfilelist"></a>CRecentFileList::CRecentFileList  
- `CRecentFileList` オブジェクトを構築します。  
+##  <a name="crecentfilelist"></a>  CRecentFileList::CRecentFileList  
+ Constructs a `CRecentFileList` object.  
   
 ```  
 CRecentFileList(
@@ -157,27 +162,27 @@ CRecentFileList(
     int nMaxDispLen = AFX_ABBREV_FILENAME_LEN);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nStart`  
- (最近使用された) MRU ファイル リストのメニュー表示内の番号のオフセットします。  
+ Offset for the numbering in the menu display of the MRU (most recently used) file list.  
   
  `lpszSection`  
- レジストリまたはアプリケーションのセクションの名前を指します。MRU ファイル リスト INI ファイルは読み取りや書き込みをします。  
+ Points to the name of the section of the registry or the application's .INI file where the MRU file list is read and/or written.  
   
  `lpszEntryFormat`  
- レジストリまたはアプリケーションの格納されているエントリの名前に使用する書式指定文字列を指します。INI ファイルです。  
+ Points to a format string to be used for the names of the entries stored in the registry or the application's .INI file.  
   
  `nSize`  
- MRU ファイル リスト内のファイルの最大数。  
+ Maximum number of files in the MRU file list.  
   
  `nMaxDispLen`  
- MRU ファイル リスト内のファイル名の表示方法] メニューの [利用可能な文字の最大長。  
+ Maximum length, in characters, available for the menu display of a filename in the MRU file list.  
   
-### <a name="remarks"></a>コメント  
- 書式指定文字列を指す`lpszEntryFormat`"%d"の各最近使用した項目のインデックスを置き換えに使用されるを含める必要があります。 たとえば、書式指定文字列は`"file%d"`このという名前を付けると、エントリは`file0`、 `file1`、という具合です。  
+### <a name="remarks"></a>Remarks  
+ The format string pointed to by `lpszEntryFormat` should contain "%d", which will be used for substituting the index of each MRU item. For example, if the format string is `"file%d"` then the entries will be named `file0`, `file1`, and so on.  
   
-##  <a name="getdisplayname"></a>CRecentFileList::GetDisplayName  
- MRU 一覧のメニューの表示で使用するため、MRU ファイル リスト内のファイルの表示名を取得します。  
+##  <a name="getdisplayname"></a>  CRecentFileList::GetDisplayName  
+ Obtains a display name for a file in the MRU file list, for use in the menu display of the MRU list.  
   
 ```  
 virtual BOOL GetDisplayName(
@@ -188,87 +193,87 @@ virtual BOOL GetDisplayName(
     BOOL bAtLeastName = TRUE) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `strName`  
- MRU ファイル メニューの一覧に表示される名前のファイルの完全パス。  
+ Full path of the file whose name is to be displayed in the menu list of MRU files.  
   
  `nIndex`  
- MRU ファイル リスト内のファイルの&0; から始まるインデックス。  
+ Zero-based index of the file in the MRU file list.  
   
  *lpszCurDir*  
- 現在のディレクトリを保持している文字列。  
+ String holding the current directory.  
   
  *nCurDir*  
- 現在のディレクトリの文字列の長さです。  
+ Length of the current directory string.  
   
  `bAtLeastName`  
- ゼロ以外の場合を示すファイルのベース名を返すこと、最大表示数を超えた場合でも (として渡される、`nMaxDispLen`パラメーターを`CRecentFileList`コンス トラクター)。  
+ If nonzero, indicates that the base name of the file should be returned, even if it exceeds the maximum display length (passed as the `nMaxDispLen` parameter to the `CRecentFileList` constructor).  
   
-### <a name="return-value"></a>戻り値  
- **FALSE**かどうかがないファイル名の指定したインデックスにある最近使用した MRU ファイル リストです。  
+### <a name="return-value"></a>Return Value  
+ **FALSE** if there is no filename at the specified index in the most recently used (MRU) file list.  
   
-### <a name="remarks"></a>コメント  
- ファイルが現在のディレクトリ内にある場合は、関数は、ディレクトリ、ディスプレイの電源を残します。 ファイル名が長すぎる場合、ディレクトリと拡張機能が削除されています。 しない限り表示名は空の文字列に設定、ファイル名が長すぎるまだ場合`bAtLeastName`は&0; 以外。  
+### <a name="remarks"></a>Remarks  
+ If the file is in the current directory, the function leaves the directory off the display. If the filename is too long, the directory and extension are stripped. If the filename is still too long, the display name is set to an empty string unless `bAtLeastName` is nonzero.  
   
-##  <a name="getsize"></a>CRecentFileList::GetSize  
- MRU ファイル リスト内のファイルの数を取得します。  
+##  <a name="getsize"></a>  CRecentFileList::GetSize  
+ Retrieves the number of files in the MRU file list.  
   
 ```  
 int GetSize() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 現在のファイルの数は、最近 MRU ファイル リストを使用します。  
+### <a name="return-value"></a>Return Value  
+ The number of files in the current most recently used (MRU) file list.  
   
-##  <a name="operator_at"></a>CRecentFileList::operator  
- オーバー ロードされた添字 ( `[]`) 演算子は、1 つを返します`CString`内の&0; から始まるインデックスによって指定された`nIndex`します。  
+##  <a name="operator_at"></a>  CRecentFileList::operator [ ]  
+ The overloaded subscript ( `[]`) operator returns a single `CString` specified by the zero-based index in `nIndex`.  
   
 ```  
 CString& operator[ ](int nindex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 0 から始まるインデックス、`CString`一連の`CString`秒です。  
+ Zero-based index of a `CString` in a set of `CString`s.  
   
-##  <a name="readlist"></a>CRecentFileList::ReadList  
- 最近使用したレジストリまたはアプリケーションの MRU ファイル リストを読み取ります。INI ファイルです。  
+##  <a name="readlist"></a>  CRecentFileList::ReadList  
+ Reads the most recently used (MRU) file list from the registry or the application's .INI file.  
   
 ```  
 virtual void ReadList();
 ```  
   
-##  <a name="remove"></a>CRecentFileList::Remove  
- MRU ファイル リストからファイルを削除します。  
+##  <a name="remove"></a>  CRecentFileList::Remove  
+ Removes a file from the MRU file list.  
   
 ```  
 virtual void Remove(int nIndex);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIndex`  
- 最近使用した MRU ファイル リストから削除するファイルの&0; から始まるインデックス。  
+ Zero-based index of the file to be removed from the most recently used (MRU) file list.  
   
-##  <a name="updatemenu"></a>CRecentFileList::UpdateMenu  
- MRU ファイル リストのメニューの表示を更新します。  
+##  <a name="updatemenu"></a>  CRecentFileList::UpdateMenu  
+ Updates the menu display of the MRU file list.  
   
 ```  
 virtual void UpdateMenu(CCmdUI* pCmdUI);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pCmdUI`  
- ポインター、 [CCmdUI](../../mfc/reference/ccmdui-class.md)最近使用した MRU ファイル リスト メニューのオブジェクト。  
+ A pointer to the [CCmdUI](../../mfc/reference/ccmdui-class.md) object for the most recently used (MRU) file list menu.  
   
-##  <a name="writelist"></a>CRecentFileList::WriteList  
- 最近使用した MRU ファイル リスト、アプリケーションのレジストリに書き込みます。INI ファイルです。  
+##  <a name="writelist"></a>  CRecentFileList::WriteList  
+ Writes the most recently used (MRU) file list into the registry or the application's .INI file.  
   
 ```  
 virtual void WriteList();
 ```  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 
 

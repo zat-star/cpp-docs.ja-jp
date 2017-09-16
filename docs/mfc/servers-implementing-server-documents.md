@@ -1,50 +1,69 @@
 ---
-title: "サーバー : サーバー ドキュメントの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE サーバー アプリケーション, 実装 (OLE サーバーを)"
-  - "OLE サーバー アプリケーション, 管理 (サーバー ドキュメントの)"
-  - "サーバー ドキュメント, 実装"
-  - "サーバー, サーバー ドキュメント"
+title: 'Servers: Implementing Server Documents | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE server applications [MFC], managing server documents
+- OLE server applications [MFC], implementing OLE servers
+- servers, server documents
+- server documents [MFC], implementing
 ms.assetid: cca1451a-ad09-47ed-b56e-bccd78fc86d1
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# サーバー : サーバー ドキュメントの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: df2da0855532b4f5503933b3c0b1f6379b3d0ade
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、アプリケーション ウィザードで OLE サーバー オプションを使用して正常にサーバーのドキュメントを実装するために必要な手順について説明します。  
+---
+# <a name="servers-implementing-server-documents"></a>Servers: Implementing Server Documents
+This article explains the steps you must take to successfully implement a server document if you did not specify the OLE Server option in the application wizard.  
   
-#### サーバー ドキュメント クラスを定義するには  
+#### <a name="to-define-a-server-document-class"></a>To define a server document class  
   
-1.  **CDocument**の代わりに `COleServerDoc` ドキュメントからクラスを派生してください。  
+1.  Derive your document class from `COleServerDoc` instead of **CDocument**.  
   
-2.  `COleServerItem`から派生したクラスで、サーバー項目を作成します。  
+2.  Create a server item class derived from `COleServerItem`.  
   
-3.  サーバー ドキュメント クラスの `OnGetEmbeddedItem` メンバー関数を実装してください。  
+3.  Implement the `OnGetEmbeddedItem` member function of your server document class.  
   
-     `OnGetEmbeddedItem` は コンテナー アプリケーションのユーザーが埋め込まれたアイテムを作成または編集するときに呼び出されます。  これは、ドキュメント全体を表す項目を返す必要があります。  これは `COleServerItem`オブジェクト\-派生クラスとして作成します。  
+     `OnGetEmbeddedItem` is called when the user of a container application creates or edits an embedded item. It should return an item representing the entire document. This should be an object of your `COleServerItem`-derived class.  
   
-4.  ドキュメントの内容をシリアル化するに `Serialize` のメンバー関数をオーバーライドします。  ドキュメントのネイティブ データを表すために使用するサーバー項目の一覧をシリアル化する必要はありません。  詳細については、記事 [サーバー: サーバー項目](../mfc/servers-server-items.md)の *サーバー項目の実装を* 参照します。  
+4.  Override the `Serialize` member function to serialize the contents of the document. You do not need to serialize the list of server items unless you are using them to represent the native data in your document. For more information, see *Implementing Server Items* in the article [Servers: Server Items](../mfc/servers-server-items.md).  
   
- サーバー ドキュメントが作成されると、フレームワークは自動的に、OLE システム DLL を使用してドキュメントを登録します。  これは、DLL はサーバーのドキュメントを識別できます。  
+ When a server document is created, the framework automatically registers the document with the OLE system DLLs. This allows the DLLs to identify the server documents.  
   
- 詳細については、" MFC *リファレンス*"の [COleServerItem](../mfc/reference/coleserveritem-class.md) と [COleServerDoc](../Topic/COleServerDoc%20Class.md) を参照します。  
+ For more information, see [COleServerItem](../mfc/reference/coleserveritem-class.md) and [COleServerDoc](../mfc/reference/coleserverdoc-class.md) in the *Class Library Reference*.  
   
-## 参照  
- [サーバー](../mfc/servers.md)   
- [サーバー : サーバー アイテム](../mfc/servers-server-items.md)   
- [サーバー : サーバーの実装](../mfc/servers-implementing-a-server.md)   
- [サーバー : 埋め込み先フレーム ウィンドウの実装](../Topic/Servers:%20Implementing%20In-Place%20Frame%20Windows.md)
+## <a name="see-also"></a>See Also  
+ [Servers](../mfc/servers.md)   
+ [Servers: Server Items](../mfc/servers-server-items.md)   
+ [Servers: Implementing a Server](../mfc/servers-implementing-a-server.md)   
+ [Servers: Implementing In-Place Frame Windows](../mfc/servers-implementing-in-place-frame-windows.md)
+
+

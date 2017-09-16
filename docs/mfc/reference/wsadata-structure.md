@@ -1,74 +1,92 @@
 ---
-title: "WSADATA 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "WSADATA"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "WSADATA 構造体"
+title: WSADATA Structure | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- WSADATA
+dev_langs:
+- C++
+helpviewer_keywords:
+- WSADATA structure [MFC]
 ms.assetid: 80cc60e5-f9ae-4290-8ed5-07003136627d
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# WSADATA 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: d640639aaf048173547cbeaf4f40d2041c026768
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-`WSADATA` 構造体は `AfxSocketInit` のグローバル関数の呼び出しによって返されるストア ウィンドウのソケット初期化情報に使用されます。  
+---
+# <a name="wsadata-structure"></a>WSADATA Structure
+The `WSADATA` structure is used to store Windows Sockets initialization information returned by a call to the `AfxSocketInit` global function.  
   
-## 構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
-  
-      struct WSAData {  
-   WORD wVersion;  
-   WORD wHighVersion;  
-   char szDescription[WSADESCRIPTION_LEN+1];  
-   char szSystemStatus[WSASYSSTATUS_LEN+1];  
-   unsigned short iMaxSockets;  
-   unsigned short iMaxUdpDg;  
-   char FAR * lpVendorInfo;  
+struct WSAData {  
+    WORD wVersion;  
+    WORD wHighVersion;  
+    char szDescription[WSADESCRIPTION_LEN+1];  
+    char szSystemStatus[WSASYSSTATUS_LEN+1];  
+    unsigned short iMaxSockets;  
+    unsigned short iMaxUdpDg;  
+    char FAR* lpVendorInfo;  
 };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>Parameters  
  *wVersion*  
- Windows ソケット DLL が呼び出し元が使用できるようにします。Windows ソケットの固有のバージョン。  
+ The version of the Windows Sockets specification that the Windows Sockets DLL expects the caller to use.  
   
  *wHighVersion*  
- このサポート DLL ができる Windows ソケット固有の最上位バージョン \(上の例として、エンコードされて\)。  通常、これは **wVersion**と同じです。  
+ The highest version of the Windows Sockets specification that this DLL can support (also encoded as above). Normally, this is the same as **wVersion**.  
   
  *szDescription*  
- Windows ソケット DLL が Windows ソケットの実装の説明をコピーした販売元の ID を含む null で終わるな ASCII 文字列。  テキスト \(長さが 256 文字まで\) はコントロールと書式指定文字が含まれるように対する警告されます文字、販売元を含めることができますが、: アプリケーションがこれを配置する最も一般的な用途は、ステータス メッセージで \(通常は切り捨てられる\) を表示することです。  
+ A null-terminated ASCII string into which the Windows Sockets DLL copies a description of the Windows Sockets implementation, including vendor identification. The text (up to 256 characters in length) can contain any characters, but vendors are cautioned against including control and formatting characters: the most likely use that an application will put this to is to display it (possibly truncated) in a status message.  
   
  *szSystemStatus*  
- Windows ソケット DLL が関連するステータスまたは構成情報をコピーする null で終わるな ASCII 文字列。  Windows ソケット DLL は、情報のユーザーまたはサポート スタッフに便利な場合があります。場合のみ、このフィールドを使用する必要があります; これは **szDescription** フィールドの拡張と見なされることはありません。  
+ A null-terminated ASCII string into which the Windows Sockets DLL copies relevant status or configuration information. The Windows Sockets DLL should use this field only if the information might be useful to the user or support staff; it should not be considered as an extension of the **szDescription** field.  
   
  *iMaxSockets*  
- 一つのプロセス内に、開くできるソケットの最大数。  Windows ソケットの実装は、プロセスへの割り当てのソケット グローバル プールを提供する; \/p に、ソケットのプロセスごとのリソースを割り当てることができます。  数値は、Windows ソケット DLL またはネットワーク ソフトウェアが設定された方法を反映できます。  アプリケーションの作成者は粗野に示す値として Windows ソケットの実装がアプリケーションで使用できるかどうかをこの数を指定できます。  たとえば、X の Windows サーバーが最初に起動されたとき **iMaxSockets** を調べる可能性があります: それ以外の 8 未満の場合、アプリケーションはネットワーク ソフトウェアを再構成するようにユーザーに指示するエラー メッセージが表示されます。これは **szSystemStatus** のテキストが使用される場合があります\)。マニフェストに使用されている他の Windows ソケットのアプリケーションが存在する可能性があるため、特定のアプリケーションを実際に **iMaxSockets** ソケットを割り当てることができるという保証はありません。  
+ The maximum number of sockets that a single process can potentially open. A Windows Sockets implementation can provide a global pool of sockets for allocation to any process; alternately, it can allocate per-process resources for sockets. The number can well reflect the way in which the Windows Sockets DLL or the networking software was configured. Application writers can use this number as a crude indication of whether the Windows Sockets implementation is usable by the application. For example, an X Windows server might check **iMaxSockets** when first started: if it is less than 8, the application would display an error message instructing the user to reconfigure the networking software. (This is a situation in which the **szSystemStatus** text might be used.) Obviously there is no guarantee that a particular application can actually allocate **iMaxSockets** sockets, since there can be other Windows Sockets applications in use.  
   
  *iMaxUdpDg*  
- Windows ソケットのアプリケーションで送信または受信できるユーザー データグラム プロトコル \(UDP\) の最大データグラムのサイズ \(バイト単位\)。  実装が制限を課さなければ、**iMaxUdpDg** はゼロです。  Berkeley ソケットの多くの実装では、必要に応じて断片化\) の 8192 バイトの暗黙の制限が UDP "データグラムです。  たとえば、Windows ソケットの実装は、フラグメントの再組立てバッファーの割り当てに基づいて制限を課すことができます。  準拠の Windows ソケットの実装の **iMaxUdpDg** の最小値は 512 です。  **iMaxUdpDg**の値に関係なく、ネットワークの最大伝送単位 \(MTU\) より大きいブロードキャストのデータグラムを送信するようにするには、この方法であることに注意してください。\(MTU を検出するために、Windows ソケット API の機能を提供しない 512 バイト以下である必要があります\)。  
+ The size in bytes of the largest User Datagram Protocol (UDP) datagram that can be sent or received by a Windows Sockets application. If the implementation imposes no limit, **iMaxUdpDg** is zero. In many implementations of Berkeley sockets, there is an implicit limit of 8192 bytes on UDP datagrams (which are fragmented if necessary). A Windows Sockets implementation can impose a limit based, for instance, on the allocation of fragment reassembly buffers. The minimum value of **iMaxUdpDg** for a compliant Windows Sockets implementation is 512. Note that regardless of the value of **iMaxUdpDg**, it is inadvisable to attempt to send a broadcast datagram that is larger than the Maximum Transmission Unit (MTU) for the network. (The Windows Sockets API does not provide a mechanism to discover the MTU, but it must be no less than 512 bytes.)  
   
  *lpVendorInfo*  
- ベンダー固有のデータ構造に far ポインター。   \(指定されている場合\) は、この構造体の定義は、Windows ソケットの固有の対象外です。  
+ A far pointer to a vendor-specific data structure. The definition of this structure (if supplied) is beyond the scope of the Windows Sockets specification.  
   
 > [!NOTE]
->  MFC では、`WSADATA` 構造体は、`InitInstance` 関数で呼び出す `AfxSocketInit` 関数によって返されます。  そこから情報を使用する必要がある場合は、構造体を取得し、プログラムでも格納できます。  
+>  In MFC, the `WSADATA` structure is returned by the `AfxSocketInit` function, which you call in your `InitInstance` function. You can retrieve the structure and store it in your program if you need to use information from it later.  
   
-## 必要条件  
- **ヘッダー:** winsock2.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winsock2.h  
   
-## 参照  
- [構造体、スタイル、コールバック関数とメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [AfxSocketInit](../Topic/AfxSocketInit.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [AfxSocketInit](../../mfc/reference/application-information-and-management.md#afxsocketinit)
+
+

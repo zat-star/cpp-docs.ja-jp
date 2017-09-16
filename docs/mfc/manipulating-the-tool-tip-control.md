@@ -1,48 +1,67 @@
 ---
-title: "ツール ヒント コントロールの操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CToolTipCtrl クラス, 操作 (ツール ヒント属性を)"
-  - "ツール ヒント [C++], 属性"
+title: Manipulating the Tool Tip Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- CToolTipCtrl class [MFC], manipulating tool tip attributes
+- tool tips [MFC], attributes
 ms.assetid: 3600afe5-712a-4b56-8456-96e85fe879af
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# ツール ヒント コントロールの操作
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a6f30981d9bacbd9191c1cc70012131c9064b91f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-クラス `CToolTipCtrl` は `CToolTipCtrl` オブジェクトとツール ヒント ウィンドウのさまざまな属性を制御するメンバー関数のグループが用意されています。  
+---
+# <a name="manipulating-the-tool-tip-control"></a>Manipulating the Tool Tip Control
+Class `CToolTipCtrl` provides a group of member functions that control the various attributes of the `CToolTipCtrl` object and the tool tip window.  
   
- ツール ヒント ウィンドウの初期ウィンドウ、ポップアップ ウィンドウ、および reshow の長さは [GetDelayTime](../Topic/CToolTipCtrl::GetDelayTime.md) と [SetDelayTime](../Topic/CToolTipCtrl::SetDelayTime.md)への呼び出しに設定され、取得することができます。  
+ The initial, pop-up, and reshow durations for the tool tip windows can be set and retrieved with calls to [GetDelayTime](../mfc/reference/ctooltipctrl-class.md#getdelaytime) and [SetDelayTime](../mfc/reference/ctooltipctrl-class.md#setdelaytime).  
   
- 次の関数のツール ヒント ウィンドウの外観を変更する:  
+ Change the appearance of the tool tip windows with the following functions:  
   
--   [GetMargin](../Topic/CToolTipCtrl::GetMargin.md) と [SetMargin](../Topic/CToolTipCtrl::SetMargin.md)はツール ヒントの境界とツールヒント テキストの間で幅を取得し、設定します。  
+-   [GetMargin](../mfc/reference/ctooltipctrl-class.md#getmargin) and [SetMargin](../mfc/reference/ctooltipctrl-class.md#setmargin) Retrieves and sets the width between the tool tip border and the tool tip text.  
   
--   [GetMaxTipWidth](../Topic/CToolTipCtrl::GetMaxTipWidth.md) と [SetMaxTipWidth](../Topic/CToolTipCtrl::SetMaxTipWidth.md)はツール ヒント ウィンドウの最大幅を取得し、設定します。  
+-   [GetMaxTipWidth](../mfc/reference/ctooltipctrl-class.md#getmaxtipwidth) and [SetMaxTipWidth](../mfc/reference/ctooltipctrl-class.md#setmaxtipwidth) Retrieves and sets the maximum width of the tool tip window.  
   
--   [GetTipBkColor](../Topic/CToolTipCtrl::GetTipBkColor.md) と [SetTipBkColor](../Topic/CToolTipCtrl::SetTipBkColor.md)はツール ヒント ウィンドウの背景色を取得し、設定します。  
+-   [GetTipBkColor](../mfc/reference/ctooltipctrl-class.md#gettipbkcolor) and [SetTipBkColor](../mfc/reference/ctooltipctrl-class.md#settipbkcolor) Retrieves and sets the background color of the tool tip window.  
   
--   [GetTipTextColor](../Topic/CToolTipCtrl::GetTipTextColor.md) と [SetTipTextColor](../Topic/CToolTipCtrl::SetTipTextColor.md)はツール ヒント ウィンドウのテキストの色を取得し、設定します。  
+-   [GetTipTextColor](../mfc/reference/ctooltipctrl-class.md#gettiptextcolor) and [SetTipTextColor](../mfc/reference/ctooltipctrl-class.md#settiptextcolor) Retrieves and sets the text color of the tool tip window.  
   
- 重要なメッセージが、**WM\_LBUTTONXXX** メッセージなどの通知されるツール ヒント コントロールにツール ヒント コントロールにメッセージを中継に送る必要があります。  この中継の最適なメソッドは、オーナー ウィンドウの `PreTranslateMessage` 関数 [CToolTipCtrl::RelayEvent](../Topic/CToolTipCtrl::RelayEvent.md)への呼び出しを行うことです。  次の例は、1 種類の可能なメソッドを示しています。\(ツール ヒント コントロールを `m_ToolTip`と呼ばれます\) とする:  
+ In order for the tool tip control to be notified of important messages, such as **WM_LBUTTONXXX** messages, you must relay the messages to your tool tip control. The best method for this relay is to make a call to [CToolTipCtrl::RelayEvent](../mfc/reference/ctooltipctrl-class.md#relayevent), in the `PreTranslateMessage` function of the owner window. The following example illustrates one possible method (assuming the tool tip control is called `m_ToolTip`):  
   
- [!code-cpp[NVC_MFCControlLadenDialog#41](../mfc/codesnippet/CPP/manipulating-the-tool-tip-control_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#41](../mfc/codesnippet/cpp/manipulating-the-tool-tip-control_1.cpp)]  
   
- このツール ヒント ウィンドウを削除するには、[pop](../Topic/CToolTipCtrl::Pop.md) メンバー関数を呼び出します。  
+ To immediately remove a tool tip window, call the [Pop](../mfc/reference/ctooltipctrl-class.md#pop) member function.  
   
-## 参照  
- [CToolTipCtrl の使い方](../mfc/using-ctooltipctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CToolTipCtrl](../mfc/using-ctooltipctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

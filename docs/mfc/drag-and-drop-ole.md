@@ -1,52 +1,71 @@
 ---
-title: "ドラッグ アンド ドロップ (OLE) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドラッグ アンド ドロップ [C++]"
-  - "ドラッグ アンド ドロップ [C++], OLE のドラッグ アンド ドロップの概要"
-  - "ファイル マネージャーでのドラッグ アンド ドロップのサポート"
-  - "OLE アプリケーション, ドラッグ アンド ドロップ"
-  - "OLE のドラッグ アンド ドロップ"
-  - "OLE サーバー アプリケーション, ドラッグ アンド ドロップ"
+title: Drag and Drop (OLE) | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- OLE server applications [MFC], drag and drop
+- drag and drop [MFC]
+- OLE applications [MFC], drag and drop
+- File Manager drag and drop support [MFC]
+- drag and drop [MFC], about OLE drag and drop
+- OLE drag and drop [MFC]
 ms.assetid: a4595350-ca06-4400-88a1-f0175c76b77b
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# ドラッグ アンド ドロップ (OLE)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b1f25b062583bf498fa18399a84e708db774aecf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-OLE ドラッグ アンド ドロップ機能はデータをコピーして貼り付けるための組み込みへのショートカットです。  データをコピーするか貼り付けるためにクリップボードを使用するときにいくつかの手順が必要です。  データを選択し、**編集** メニュー、移動先のファイルに **切り取り** または **コピー** を、ウィンドウまたはアプリケーションをクリックし、目的の場所にカーソルを置き、**編集** メニューの **貼り付け** をクリックします。  
+---
+# <a name="drag-and-drop-ole"></a>Drag and Drop (OLE)
+The drag-and-drop feature of OLE is primarily a shortcut for copying and pasting data. When you use the Clipboard to copy or paste data, a number of steps are required. You select the data, click **Cut** or **Copy** from the **Edit** menu, move to the destination file, window or application, place the cursor in the desired location, and click **Paste** from the **Edit** menu.  
   
- OLE ドラッグ アンド ドロップはファイル名のみ処理なし、アプリケーションにファイル名を渡すように特別に設計されたファイル マネージャーのドラッグ アンド ドロップ機能とは異なります。  OLE ドラッグ アンド ドロップの方が一般的です。  また、クリップボードに配置できるデータをドラッグ アンド ドロップすることができます。  
+ OLE drag and drop is different from the File Manager drag-and-drop mechanism, which can only handle filenames and is designed specifically to pass filenames to applications. OLE drag and drop is much more general. It allows you to drag and drop any data that could also be placed on the Clipboard.  
   
- OLE ドラッグ アンド ドロップを使用すると、プロセスから手順 2 を削除します。  ソース ウィンドウ \(「ドロップ ソース」\) から目的のターゲット \(「ドロップ ターゲット」\) データを、それをドラッグし、マウス ボタンを解放して格納します。  操作は、メニューの必要性を削除し、コピーおよび貼り付けシーケンスよりも高速です。  唯一の要件は、ドラッグ ソースとドロップ ターゲットの両方が画面で開き、少なくとも部分的に参照できない場合があります。  
+ When you use OLE drag and drop, you remove two steps from the process. You select the data from the source window (the "drop source"), drag it to the desired destination (the "drop target"), and drop it by releasing the mouse button. The operation eliminates the need for menus and is quicker than the copy/paste sequence. The only requirement is that both the drop source and drop target must be open and at least partially visible on the screen.  
   
- OLE ドラッグ アンド ドロップを使用すると、データは 1 か所からドキュメント内の、さまざまなドキュメント、またはアプリケーション間の別の場所に移動できます。  これはコンテナーまたはサーバー アプリケーションのアプリケーションは、またはその両方にドロップ ソース、ドロップ ターゲットである場合もあります。実装し  アプリケーションに実装されるドラッグ ソースとドロップ ターゲットの両方がサポートするドラッグ アンド ドロップまたは子ウィンドウの間、または 1 ウィンドウ内で有効です。  この機能は、アプリケーションを使用すると、より簡単にできます。  
+ Using OLE drag and drop, data can be transferred from one location to another within a document, between different documents, or between applications. It can be implemented in either a container or a server application, and any application can be a drop source, a drop target, or both. If an application has both drop-source and drop-target support implemented, drag and drop is enabled between child windows, or within one window. This feature can make your application much easier to use.  
   
- だけ OLE ドラッグ アンド ドロップ機能を使用する場合は、[ドラッグ アンド ドロップ: カスタマイズ](../Topic/Drag%20and%20Drop:%20Customizing.md)を参照してください。  この記事で非 OLE アプリケーション ドロップ ソースの説明する手法を使用できます。  記事 [ドラッグ アンド ドロップ: ドロップ ターゲットの実装](../mfc/drag-and-drop-implementing-a-drop-target.md) は OLE オブジェクトと非 OLE アプリケーションのドロップ ターゲット サポートを実装する方法について説明します。  MFC の OLE サンプル [OCLIENT](../top/visual-cpp-samples.md) と [HIERSVR](../top/visual-cpp-samples.md)を調べることも有効です。  
+ If you only want to use the drag-and-drop capabilities of OLE, see [Drag and Drop: Customizing](../mfc/drag-and-drop-customizing.md). You can use the techniques explained in that article to make non-OLE applications drop sources. The article [Drag and Drop: Implementing a Drop Target](../mfc/drag-and-drop-implementing-a-drop-target.md) describes how to implement drop-target support for both OLE and non-OLE applications. It will also be helpful to examine the MFC OLE samples [OCLIENT](../visual-cpp-samples.md) and [HIERSVR](../visual-cpp-samples.md).  
   
- " [データ オブジェクトとデータ ソース \(OLE\)](../mfc/data-objects-and-data-sources-ole.md) のファミリを読まなかったら、は次のようにすることもできます。  これらのトピックでは、データ転送の基礎を、アプリケーションの有効期間を実装する方法について説明します。  
+ If you have not read the [Data Objects and Data Sources (OLE)](../mfc/data-objects-and-data-sources-ole.md) family of articles, you may want to do so now. These articles explain the fundamentals of data transfer, and how to implement it in your applications.  
   
- ドラッグ アンド ドロップに関する詳細については、参照します:  
+ For more information about drag and drop, see:  
   
--   [ドラッグ アンド ドロップ: ドラッグ ソースの実装](../mfc/drag-and-drop-implementing-a-drop-source.md)  
+-   [Drag and Drop: Implementing a Drop Source](../mfc/drag-and-drop-implementing-a-drop-source.md)  
   
--   [ドラッグ アンド ドロップ: ドロップ ターゲットの実装](../mfc/drag-and-drop-implementing-a-drop-target.md)  
+-   [Drag and Drop: Implementing a Drop Target](../mfc/drag-and-drop-implementing-a-drop-target.md)  
   
--   [ドラッグ アンド ドロップ: カスタマイズ](../Topic/Drag%20and%20Drop:%20Customizing.md)  
+-   [Drag and Drop: Customizing](../mfc/drag-and-drop-customizing.md)  
   
-## 参照  
+## <a name="see-also"></a>See Also  
  [OLE](../mfc/ole-in-mfc.md)   
- [データ オブジェクトとデータ ソース \(OLE\)](../mfc/data-objects-and-data-sources-ole.md)
+ [Data Objects and Data Sources (OLE)](../mfc/data-objects-and-data-sources-ole.md)
+
+

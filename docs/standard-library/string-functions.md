@@ -1,5 +1,5 @@
 ---
-title: "&lt;string&gt; 関数 | Microsoft Docs"
+title: '&lt;string&gt; functions | Microsoft Docs'
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,14 +24,27 @@ caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 41a8dd5345b1e857abbd1cd5586a1fabd400eca4
+helpviewer_keywords:
+- std::getline [C++]
+- std::stod [C++]
+- std::stof [C++]
+- std::stoi [C++]
+- std::stol [C++]
+- std::stold [C++]
+- std::stoll [C++]
+- std::stoul [C++]
+- std::stoull [C++]
+- std::swap [C++]
+- std::to_string [C++]
+- std::to_wstring [C++]
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 19db8720226e00c48aa433af963f67b2ae655c7a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="ltstringgt-functions"></a>&lt;string&gt; 関数
+# <a name="ltstringgt-functions"></a>&lt;string&gt; functions
 ||||  
 |-|-|-|  
 |[getline](#getline)|[stod](#stod)|[stof](#stof)|  
@@ -40,7 +53,7 @@ ms.lasthandoff: 04/29/2017
 |[swap](#swap)|[to_string](#to_string)|[to_wstring](#to_wstring)|  
   
 ##  <a name="getline"></a>  getline  
- 入力ストリームから文字列を行単位で抽出します。  
+ Extract strings from the input stream line-by-line.  
   
 ```  
 // (1) delimiter as parameter  
@@ -71,44 +84,44 @@ basic_istream<Allocator, Traits>& getline(
     basic_string<Allocator, Traits, Allocator>& str);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `is`  
- 文字列の抽出元となる入力ストリーム。  
+ The input stream from which a string is to be extracted.  
   
  `str`  
- 入力ストリームから抽出した文字の読み込み先となる文字列。  
+ The string into which are read the characters from the input stream.  
   
  `delim`  
- 行の区切り記号。  
+ The line delimiter.  
   
-### <a name="return-value"></a>戻り値  
- 入力ストリーム `is`。  
+### <a name="return-value"></a>Return Value  
+ The input stream `is`.  
   
-### <a name="remarks"></a>コメント  
- `(1)` としてマークされた関数シグネチャのペアが、`is` が検出されるまで `delim` から文字を抽出し、それらを `str` に格納します。  
+### <a name="remarks"></a>Remarks  
+ The pair of function signatures marked `(1)` extract characters from `is` until `delim` is found, storing them in `str`.  
   
- `(2)` としてマークされた関数シグネチャのペアが、既定行の区切り文字として改行文字を使用し、**getline**( `is`, `str`, `is`. `widen`(' `\n`')) として動作します。  
+ The pair of function signatures marked `(2)` use newline as the default line delimiter and behave as **getline**( `is`, `str`, `is`. `widen`(' `\n`')).  
   
- 各ペアの 2 つ目の関数では、1 つ目の関数と同様に、[右辺値参照](../cpp/lvalues-and-rvalues-visual-cpp.md)がサポートされます。  
+ The second function of each pair is an analog to the first one to support [rvalue references](../cpp/lvalues-and-rvalues-visual-cpp.md).  
   
- 抽出は、次のいずれかが発生したときに停止します。  
+ Extraction stops when one of the following occurs:  
   
--   ファイルの末尾に達した場合。このとき、内部状態フラグ `is` は `ios_base::eofbit` に設定されます。  
+-   At end-of-file, in which case the internal state flag of `is` is set to `ios_base::eofbit`.  
   
--   関数が **delim** と等しい要素を抽出した場合。このとき、抽出された要素が制御対象シーケンスに戻されたり、追加されたりすることはありません。  
+-   After the function extracts an element that compares equal to **delim**, in which case the element is neither put back nor appended to the controlled sequence.  
   
--   関数が `str.`[max_size](../standard-library/basic-string-class.md#max_size) 要素を抽出した場合。このとき、内部状態フラグ `is` は `ios_base::failbit` に設定されます。  
+-   After the function extracts `str.`[max_size](../standard-library/basic-string-class.md#max_size) elements, in which case the internal state flag of `is` is set to `ios_base::failbit`.  
   
--   上記に含まれていないその他のエラーが発生した場合。このとき、内部状態フラグ `is` は `ios_base::badbit` に設定されます。  
+-   Some other error other than those previously listed, in which case the internal state flag of `is` is set to `ios_base::badbit`  
   
- 内部状態フラグについては、「[ios_base::iostate](../standard-library/ios-base-class.md#iostate)」を参照してください。  
+ For information about internal state flags, see [ios_base::iostate](../standard-library/ios-base-class.md#iostate).  
   
- 関数が要素を抽出しなかった場合、内部状態フラグ `is` は `ios_base::failbit` に設定されます。 いずれの場合も、`getline` は `is` を返します。  
+ If the function extracts no elements, the internal state flag of `is` is set to `ios_base::failbit`. In any case, `getline` returns `is`.  
   
- 例外がスローされた場合、`is` と `str` は引き続き有効な状態になります。  
+ If an exception is thrown, `is` and `str` are left in a valid state.  
   
-### <a name="example"></a>例  
-  次のコードは、2 つのモードの `getline()` を示しています。1 つ目は既定の区切り文字 (改行文字)、2 つ目は区切り文字として空白文字を使用しています。 また、while ループの終了を制御するために、ファイル終端文字 (Ctrl + Z キー) を使用しています。 この文字により、内部状態フラグ `cin` が `eofbit` に設定されます。2 つ目の while ループを正常に動作させるには、このフラグを [basic_ios::clear()](../standard-library/basic-ios-class.md#clear) でクリアする必要があります。  
+### <a name="example"></a>Example  
+  The following code demonstrates `getline()` in two modes: first with the default delimiter (newline) and second with a whitespace as delimiter. The end-of-file character (CTRL-Z on the keyboard) is used to control termination of the while loops. This sets the internal state flag of `cin` to `eofbit`, which must be cleared with [basic_ios::clear()](../standard-library/basic-ios-class.md#clear) before the second while loop will work properly.  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -151,7 +164,7 @@ int main()
 ```  
   
 ##  <a name="stod"></a>  stod  
- 文字シーケンスを `double` に変換します。  
+ Converts a character sequence to a `double`.  
   
 ```  
 double stod(
@@ -164,21 +177,21 @@ double stod(
 ;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
   
-### <a name="return-value"></a>戻り値  
- `double` 値。  
+### <a name="return-value"></a>Return Value  
+ The `double` value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `double` 型の値 `strtod( str.c_str(), _Eptr)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `double` as if by calling `strtod( str.c_str(), _Eptr)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stof"></a>  stof  
- 文字シーケンスを float に変換します。  
+ Converts a character sequence to a float.  
   
 ```  
 float stof(
@@ -190,21 +203,21 @@ float stof(
     size_t* idx = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
   
-### <a name="return-value"></a>戻り値  
- 浮動小数点数値。  
+### <a name="return-value"></a>Return Value  
+ The float value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `float` 型の値 `strtof( str.c_str(), _Eptr)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `float` as if by calling `strtof( str.c_str(), _Eptr)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stoi"></a>  stoi  
- 文字シーケンスを integer に変換します。  
+ Converts a character sequence to an integer.  
   
 ```  
 int stoi(
@@ -218,26 +231,26 @@ int stoi(
     int base = 10);
 ```  
   
-### <a name="return-value"></a>戻り値  
- 整数値。  
+### <a name="return-value"></a>Return Value  
+ The integer value.  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|値が返されるときに、最初の未変換文字のインデックスが格納されます。|  
-|`base`|使用する基数。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|Contains the index of the first unconverted character on return.|  
+|`base`|The number base to use.|  
   
-### <a name="remarks"></a>コメント  
- 関数 `stoi` は、`str` 内の文字のシーケンスを `int` 型の値に変換し、その値を返します。 たとえば、文字シーケンス "10" を渡した場合、`stoi` によって返される値は整数 10 です。  
+### <a name="remarks"></a>Remarks  
+ The function `stoi` converts the sequence of characters in `str` to a value of type `int` and returns the value. For example, when passed a character sequence "10", the value returned by `stoi` is the integer 10.  
   
- 1 バイト文字に対しては、`stoi` は `strtol` の形式で呼び出された場合の `strtol( str.c_str(), _Eptr, idx)` と同様に動作します。`_Eptr` は関数の内部オブジェクトです。ワイド文字に対しては、類似した `wcstol` の形式で呼び出された場合の `wcstol(Str.c_str(), _Eptr, idx)` と同様に動作します。 詳細については、「[strtol、wcstol、_strtol_l、_wcstol_l](../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md)」を参照してください。  
+ `stoi` behaves similarly to the function `strtol` for single-byte characters when it is called in the manner `strtol( str.c_str(), _Eptr, idx)`, where `_Eptr` is an object internal to the function; or `wcstol` for wide characters, when it is called in similar manner, `wcstol(Str.c_str(), _Eptr, idx)`. For more information, see [strtol, wcstol, _strtol_l, _wcstol_l](../c-runtime-library/reference/strtol-wcstol-strtol-l-wcstol-l.md).  
   
- 場合`str.c_str() == *_Eptr`、`stoi`型のオブジェクトをスロー`invalid_argument`です。 このような呼び出しによって `errno` が設定されるか、戻り値を `int` 型のオブジェクトとして表すことができない場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr - str.c_str()` を `*idx` に格納します。  
+ If `str.c_str() == *_Eptr`, `stoi` throws an object of type `invalid_argument`. If such a call would set `errno`, or if the returned value cannot be represented as an object of type `int`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr - str.c_str()` in `*idx`.  
   
 ##  <a name="stol"></a>  stol  
- 文字シーケンスを `long` に変換します。  
+ Converts a character sequence to a `long`.  
   
 ```  
 long stol(
@@ -251,22 +264,22 @@ long stol(
     int base = 10);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
-|`base`|使用する基数。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
+|`base`|The number base to use.|  
   
-### <a name="return-value"></a>戻り値  
- 長整数値。  
+### <a name="return-value"></a>Return Value  
+ The long-integer value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `long` 型の値 `strtol( str.c_str(), _Eptr, idx)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `long` as if by calling `strtol( str.c_str(), _Eptr, idx)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stold"></a>  stold  
- 文字シーケンスを `long double` に変換します。  
+ Converts a character sequence to a `long double`.  
   
 ```  
 double stold(
@@ -278,21 +291,21 @@ double stold(
     size_t* idx = 0);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
   
-### <a name="return-value"></a>戻り値  
- `long double` 値。  
+### <a name="return-value"></a>Return Value  
+ The `long double` value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `long double` 型の値 `strtold( str.c_str(), _Eptr)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `long double` as if by calling `strtold( str.c_str(), _Eptr)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stoll"></a>  stoll  
- 文字シーケンスを `long long` に変換します。  
+ Converts a character sequence to a `long long`.  
   
 ```  
 long long stoll(
@@ -306,22 +319,22 @@ long long stoll(
     int base = 10);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
-|`base`|使用する基数。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
+|`base`|The number base to use.|  
   
-### <a name="return-value"></a>戻り値  
- `long long` 値。  
+### <a name="return-value"></a>Return Value  
+ The `long long` value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `long long` 型の値 `strtoll( str.c_str(), _Eptr, idx)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `long long` as if by calling `strtoll( str.c_str(), _Eptr, idx)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stoul"></a>  stoul  
- 文字シーケンスを unsigned long に変換します。  
+ Converts a character sequence to an unsigned long.  
   
 ```  
 unsigned long stoul(
@@ -335,22 +348,22 @@ unsigned long stoul(
     int base = 10);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
-|`base`|使用する基数。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
+|`base`|The number base to use.|  
   
-### <a name="return-value"></a>戻り値  
- unsigned long 整数値。  
+### <a name="return-value"></a>Return Value  
+ The unsigned long-integer value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `unsigned long` 型の値 `strtoul( str.c_str(), _Eptr, idx)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `unsigned long` as if by calling `strtoul( str.c_str(), _Eptr, idx)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="stoull"></a>  stoull  
- 文字シーケンスを `unsigned long long` に変換します。  
+ Converts a character sequence to an `unsigned long long`.  
   
 ```  
 unsigned long long stoull(
@@ -364,39 +377,39 @@ unsigned long long stoull(
     int base = 10);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`str`|変換する文字シーケンス。|  
-|`idx`|最初の未変換文字のインデックス値。|  
-|`base`|使用する基数。|  
+|`str`|The character sequence to be converted.|  
+|`idx`|The index value of the first unconverted character.|  
+|`base`|The number base to use.|  
   
-### <a name="return-value"></a>戻り値  
- `unsigned long long` 値。  
+### <a name="return-value"></a>Return Value  
+ The `unsigned long long` value.  
   
-### <a name="remarks"></a>コメント  
- この関数は、`str` を呼び出したときと同じように、`val` 内の要素のシーケンスを `unsigned long long` 型の値 `strtoull( str.c_str(), _Eptr, idx)` に変換します。`_Eptr` は関数の内部オブジェクトです。 ` str.c_str() == *_Eptr` の場合、`invalid_argument` 型のオブジェクトをスローします。 このような呼び出しによって `errno` が設定される場合、`out_of_range` 型のオブジェクトをスローします。 それ以外で、`idx` が null ポインターではない場合、この関数は `*_Eptr -  str.c_str()` を `*idx` に格納し、`val` を返します。  
+### <a name="remarks"></a>Remarks  
+ The function converts the sequence of elements in `str` to a value `val` of type `unsigned long long` as if by calling `strtoull( str.c_str(), _Eptr, idx)`, where `_Eptr` is an object internal to the function. If ` str.c_str() == *_Eptr` it throws an object of type `invalid_argument`. If such a call would set `errno`, it throws an object of type `out_of_range`. Otherwise, if `idx` is not a null pointer, the function stores `*_Eptr -  str.c_str()` in `*idx` and returns `val`.  
   
 ##  <a name="swap"></a>  swap  
- 2 つの文字列の、文字の配列を交換します。  
+ Exchanges the arrays of characters of two strings.  
   
 ```  
 template <class Traits, class Allocator>  
 void swap(basic_string<CharType, Traits, Allocator>& left, basic_string<CharType, Traits, Allocator>& right);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `left`  
- もう一方の文字列と要素を交換する 1 つの文字列。  
+ One string whose elements are to be swapped with those of another string.  
   
  `right`  
- 最初の文字列と要素を交換するもう一方の文字列。  
+ The other string whose elements are to be swapped with the first string.  
   
-### <a name="remarks"></a>コメント  
- このテンプレート関数は、特殊なメンバー関数を実行します*左*.[スワップ](../standard-library/basic-string-class.md#swap)(*右*) 文字列は、一定の複雑さを保証します。  
+### <a name="remarks"></a>Remarks  
+ The template function executes the specialized member function *left*.[swap](../standard-library/basic-string-class.md#swap)(*right*) for strings, which guarantees constant complexity.  
   
-### <a name="example"></a>例  
+### <a name="example"></a>Example  
   
 ```cpp  
 // string_swap.cpp  
@@ -432,7 +445,7 @@ The basic_string s2 = Tweedledee.
 ```  
   
 ##  <a name="to_string"></a>  to_string  
- 値を `string` に変換します。  
+ Converts a value to a `string`.  
   
 ```  
 string to_string(int Val);
@@ -446,38 +459,38 @@ string to_string(double Val);
 string to_string(long double Val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Val`|変換する値。|  
+|`Val`|The value to be converted.|  
   
-### <a name="return-value"></a>戻り値  
- 値を表す `string` 値。  
+### <a name="return-value"></a>Return Value  
+ The `string` that represents the value.  
   
-### <a name="remarks"></a>コメント  
- 関数は `Val` を呼び出すように、`Buf` を関数内部の配列オブジェクト `sprintf(Buf, Fmt, Val)` に格納された要素シーケンスに変換します。ここで、`Fmt` は  
+### <a name="remarks"></a>Remarks  
+ The function converts `Val` to a sequence of elements stored in an array object `Buf` internal to the function as if by calling `sprintf(Buf, Fmt, Val)`, where `Fmt` is  
   
-- `"%d"` に `Val` 型がある場合、`int` です。  
+- `"%d"` if `Val` has type `int`  
   
-- `"%u"` に `Val` 型がある場合、`unsigned int` です。  
+- `"%u"` if `Val` has type `unsigned int`  
   
-- `"%ld"` に `Val` 型がある場合、`long` です。  
+- `"%ld"` if `Val` has type `long`  
   
-- `"%lu"` に `Val` 型がある場合、`unsigned long` です。  
+- `"%lu"` if `Val` has type `unsigned long`  
   
-- `"%lld"` に `Val` 型がある場合、`long long` です。  
+- `"%lld"` if `Val` has type `long long`  
   
-- `"%llu"` に `Val` 型がある場合、`unsigned long long` です。  
+- `"%llu"` if `Val` has type `unsigned long long`  
   
-- `"%f"` に `Val` 型または `float` 型がある場合、`double` です。  
+- `"%f"` if `Val` has type `float` or `double`  
   
-- `"%Lf"` に `Val` 型がある場合、`long double` です。  
+- `"%Lf"` if `Val` has type `long double`  
   
- `string(Buf)` が返されます。  
+ The function returns `string(Buf)`.  
   
 ##  <a name="to_wstring"></a>  to_wstring  
- 値をワイド文字列に変換します。  
+ Converts a value to a wide string.  
   
 ```  
 wstring to_wstring(int Val);
@@ -491,37 +504,37 @@ wstring to_wstring(double Val);
 wstring to_wstring(long double Val);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
-|パラメーター|説明|  
+|Parameter|Description|  
 |---------------|-----------------|  
-|`Val`|変換する値。|  
+|`Val`|The value to be converted.|  
   
-### <a name="return-value"></a>戻り値  
- 値を表すワイド文字列。  
+### <a name="return-value"></a>Return Value  
+ The wide string that represents the value.  
   
-### <a name="remarks"></a>コメント  
- 関数は `Val` を呼び出すように、`Buf` を関数内部の配列オブジェクト `swprintf(Buf, Len, Fmt, Val)` に格納された要素シーケンスに変換します。ここで、`Fmt` は  
+### <a name="remarks"></a>Remarks  
+ The function converts `Val` to a sequence of elements stored in an array object `Buf` internal to the function as if by calling `swprintf(Buf, Len, Fmt, Val)`, where `Fmt` is  
   
-- `L"%d"` に `Val` 型がある場合、`int` です。  
+- `L"%d"` if `Val` has type `int`  
   
-- `L"%u"` に `Val` 型がある場合、`unsigned int` です。  
+- `L"%u"` if `Val` has type `unsigned int`  
   
-- `L"%ld"` に `Val` 型がある場合、`long` です。  
+- `L"%ld"` if `Val` has type `long`  
   
-- `L"%lu"` に `Val` 型がある場合、`unsigned long` です。  
+- `L"%lu"` if `Val` has type `unsigned long`  
   
-- `L"%lld"` に `Val` 型がある場合、`long long` です。  
+- `L"%lld"` if `Val` has type `long long`  
   
-- `L"%llu"` に `Val` 型がある場合、`unsigned long long` です。  
+- `L"%llu"` if `Val` has type `unsigned long long`  
   
-- `L"%f"` に `Val` 型または `float` 型がある場合、`double` です。  
+- `L"%f"` if `Val` has type `float` or `double`  
   
-- `L"%Lf"` に `Val` 型がある場合、`long double` です。  
+- `L"%Lf"` if `Val` has type `long double`  
   
- `wstring(Buf)` が返されます。  
+ The function returns `wstring(Buf)`.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<string>](../standard-library/string.md)
 
 

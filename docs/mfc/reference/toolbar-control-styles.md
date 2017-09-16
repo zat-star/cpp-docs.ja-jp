@@ -1,5 +1,5 @@
 ---
-title: "ツール バー コントロールのスタイル |Microsoft ドキュメント"
+title: ToolBar Control Styles | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -11,7 +11,7 @@ ms.topic: article
 dev_langs:
 - C++
 helpviewer_keywords:
-- ToolBar control styles
+- ToolBar control styles [MFC]
 ms.assetid: 0f717eb9-fa32-4263-b852-809238863feb
 caps.latest.revision: 16
 author: mikeblome
@@ -31,65 +31,65 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 1c50009a50c5b80e007add9de679315df6aecea9
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 383120b1eecd7db663ef878c386f51ad6a2a92f8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="toolbar-control-styles"></a>ツール バー コントロールのスタイル
-[CMFCToolBarButton クラス](../../mfc/reference/cmfctoolbarbutton-class.md)がボタンの動作と外観を表すスタイル フラグのセットです。 これらのフラグの組み合わせを設定するにを呼び出して[CMFCToolBarButton::SetStyle](../../mfc/reference/cmfctoolbarbutton-class.md#setstyle)します。 このトピックでは、スタイルのフラグの値とその意味を示します。  
+# <a name="toolbar-control-styles"></a>ToolBar Control Styles
+[CMFCToolBarButton Class](../../mfc/reference/cmfctoolbarbutton-class.md) has a set of style flags that determine the appearance and behavior of the button. You can set a combination of these flags by calling             [CMFCToolBarButton::SetStyle](../../mfc/reference/cmfctoolbarbutton-class.md#setstyle). This topic lists the style flag values and their meanings.  
   
-## <a name="property-values"></a>プロパティ値  
- 次の値では、コントロールを表すボタンの種類を決定します。  
+## <a name="property-values"></a>Property Values  
+ The following values determine the type of button that the control represents:  
   
  TBBS_BUTTON  
- 標準プッシュ ボタン (既定)。  
+ Standard pushbutton (default).  
   
  TBBS_CHECKBOX  
- チェック ボックスです。  
+ Check box.  
   
  TBBS_CHECKGROUP  
- チェック ボックスのグループの開始。  
+ The start of a group of checkboxes.  
   
  TBBS_GROUP  
- ボタンのグループの開始。  
+ The start of a group of buttons.  
   
  TBBS_SEPARATOR  
- 区切り記号。  
+ Separator.  
   
- 次の値は、コントロールの現在の状態を表します。  
+ The following values represent the current status of the control:  
   
  TBBS_CHECKED  
- チェック ボックスをオンにするとします。  
+ Check box is checked.  
   
  TBBS_DISABLED  
- コントロールが無効にします。  
+ Control is disabled.  
   
  TBBS_INDETERMINATE  
- チェック ボックスは、不定状態では。  
+ Check box is in an indeterminate state.  
   
  TBBS_PRESSED  
- ボタンが押されました。  
+ Button is pressed.  
   
- 次の値は、ツールバーのボタンのレイアウトを変更します。  
+ The following value changes the layout of the button in the toolbar:  
   
  TBBS_BREAK  
- または、新しい列で、新しい行に列を分離することがなく、項目を配置します。  
+ Places the item on a new line or in a new column without separating columns.  
   
-## <a name="remarks"></a>コメント  
- 現在のスタイルは[CMFCToolBarButton::m_nStyle](../../mfc/reference/cmfctoolbarbutton-class.md#m_nstyle)します。 新しい値を設定しないでください`m_nStyle`直接、いくつかの派生クラスを呼び出すときに、追加の処理を実行するため`SetStyles`です。  
+## <a name="remarks"></a>Remarks  
+ The current style is stored in                 [CMFCToolBarButton::m_nStyle](../../mfc/reference/cmfctoolbarbutton-class.md#m_nstyle). Do not set a new value in                 `m_nStyle` directly, because some derived classes perform additional processing when you call                 `SetStyles`.  
   
- ビジュアル マネージャーでは、各状態のボタンの外観を決定します。 参照してください[ビジュアル マネージャー](../../mfc/visualization-manager.md)の詳細。  
+ The visual manager determines the appearance of buttons in each state. See                 [Visualization Manager](../../mfc/visualization-manager.md) for more information.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxtoolbarbutton.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxtoolbarbutton.h  
   
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)   
- [CMFCToolBarButton クラス](../../mfc/reference/cmfctoolbarbutton-class.md)   
- [ビジュアル マネージャー](../../mfc/visualization-manager.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)   
+ [CMFCToolBarButton Class](../../mfc/reference/cmfctoolbarbutton-class.md)   
+ [Visualization Manager](../../mfc/visualization-manager.md)
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: "overflow_error クラス | Microsoft Docs"
+title: overflow_error Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- overflow_error
 - stdexcept/std::overflow_error
 dev_langs:
 - C++
@@ -34,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 0bcfc791c9e147ee505a8e94173437d3615bc589
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 61dd1daa1e7a17b53285cee185a6191fc60c2ed5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="overflowerror-class"></a>overflow_error クラス
-このクラスは、算術オーバーフローを通知するためにスローされる例外すべてに対する基底クラスとして機能します。  
+# <a name="overflowerror-class"></a>overflow_error Class
+The class serves as the base class for all exceptions thrown to report an arithmetic overflow.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class overflow_error : public runtime_error {  
@@ -56,10 +55,10 @@ public:
 };  
 ```  
   
-## <a name="remarks"></a>コメント  
- [what](../standard-library/exception-class.md) によって返される値は、**message**`.`[data](../standard-library/basic-string-class.md#data) のコピーです。  
+## <a name="remarks"></a>Remarks  
+ The value returned by [what](../standard-library/exception-class.md) is a copy of **message**`.`[data](../standard-library/basic-string-class.md#data).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // overflow_error.cpp  
@@ -90,13 +89,13 @@ Type class std::overflow_error
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<stdexcept>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<stdexcept>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [runtime_error クラス](../standard-library/runtime-error-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [runtime_error Class](../standard-library/runtime-error-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 

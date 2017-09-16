@@ -9,8 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- _SCL_SECURE_NO_DEPRECATE
-- _SCL_SECURE_NO_WARNINGS
+- _SCL_SECURE_NO_DEPRECATE", "_SCL_SECURE_NO_WARNINGS
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,50 +34,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f69f0c3176d2fbe19e11ce08c071691a72d858d
-ms.openlocfilehash: e2f39c4f07235c75204a63e634053f887682337e
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 118fb8246000bfe40fbf88e9962f4bff7bacb026
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="sclsecurenowarnings"></a>_SCL_SECURE_NO_WARNINGS
-C++ 標準ライブラリで安全でない可能性のあるメソッドのいずれかを呼び出すと、[コンパイラの警告 (レベル 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) が表示されます。 この警告を無効にするには、コードでマクロ **_SCL_SECURE_NO_WARNINGS** を定義します。  
+Calling any one of the potentially unsafe methods in the C++ Standard Library will result in [Compiler Warning (level 3) C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md). To disable this warning, define the macro **_SCL_SECURE_NO_WARNINGS** in your code:  
   
 ```  
 #define _SCL_SECURE_NO_WARNINGS  
 ```  
   
-## <a name="remarks"></a>コメント  
- 警告 C4996 を無効にするその他の方法は、次のとおりです。  
+## <a name="remarks"></a>Remarks  
+ Other ways to disable warning C4996 include:  
   
--   [/D (プリプロセッサの定義)](../build/reference/d-preprocessor-definitions.md) コンパイラ オプションの使用:  
+-   Using the [/D (Preprocessor Definitions)](../build/reference/d-preprocessor-definitions.md) compiler option:  
   
  ```  
     cl /D_SCL_SECURE_NO_WARNINGS [other compiler options] myfile.cpp  
 ```  
   
--   [/w](../build/reference/compiler-option-warning-level.md) コンパイラ オプションの使用:  
+-   Using the [/w](../build/reference/compiler-option-warning-level.md) compiler option:  
   
  ```  
     cl /wd4996 [other compiler options] myfile.cpp  
 ```  
   
--   [#pragma 警告](../preprocessor/warning.md) ディレクティブの使用:  
+-   Using the [#pragma warning](../preprocessor/warning.md) directive:  
   
  ```  
  #pragma warning(disable:4996)  
 ```  
   
- また、**/w\<l>\<n>** コンパイラ オプションを使用して、警告 C4996 のレベルを手動で変更できます。 たとえば、警告 C4996 をレベル 4 に設定します。  
+ Also, you can manually change the level of warning C4996 with the **/w\<l>\<n>** compiler option. For example, to set warning C4996 to level 4:  
   
 ```  
 cl /w44996 [other compiler options] myfile.cpp  
 ```  
   
- 詳細については、「[/w、/W0、/W1、/W2、/W3、/W4, /w1, /w2, /w3、/w4、/Wall、/wd、/we、/wo、/Wv、/WX (警告レベル)](../build/reference/compiler-option-warning-level.md)」を参照してください。  
+ For more information, see [/w, /W0, /W1, /W2, /W3, /W4, /w1, /w2, /w3, /w4, /Wall, /wd, /we, /wo, /Wv, /WX (Warning Level)](../build/reference/compiler-option-warning-level.md).  
   
-## <a name="see-also"></a>関連項目  
- [安全なライブラリ: C++ 標準ライブラリ](../standard-library/safe-libraries-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [Safe Libraries: C++ Standard Library](../standard-library/safe-libraries-cpp-standard-library.md)
 
 

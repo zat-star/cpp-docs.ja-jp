@@ -1,5 +1,5 @@
 ---
-title: "CMultiDocTemplate クラス |Microsoft ドキュメント"
+title: CMultiDocTemplate Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,8 +15,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- MDI, template
-- CMultiDocTemplate class
+- CMultiDocTemplate [MFC], CMultiDocTemplate
 ms.assetid: 5b8aa328-e461-41d0-b388-00594535e119
 caps.latest.revision: 21
 author: mikeblome
@@ -36,50 +35,50 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4fafe461008e3545243d693e0d9e34acd57163e0
-ms.openlocfilehash: 6e58325cd4dcaec01bf8a76006bb397fccd9a171
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 24a67c832c2fca2af5e91acc799e42f2324df6ad
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmultidoctemplate-class"></a>CMultiDocTemplate クラス
-MDI (マルチ ドキュメント インターフェイス) を実装するドキュメント テンプレートを定義します。  
+# <a name="cmultidoctemplate-class"></a>CMultiDocTemplate Class
+Defines a document template that implements the multiple document interface (MDI).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMultiDocTemplate : public CDocTemplate  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMultiDocTemplate::CMultiDocTemplate](#cmultidoctemplate)|`CMultiDocTemplate` オブジェクトを構築します。|  
+|[CMultiDocTemplate::CMultiDocTemplate](#cmultidoctemplate)|Constructs a `CMultiDocTemplate` object.|  
   
-## <a name="remarks"></a>コメント  
- MDI アプリケーションでは、ドキュメントを表示する各ユーザーが&0; 個以上のドキュメント フレーム ウィンドウを開くことができますワークスペースとしてメイン フレーム ウィンドウを使用します。 MDI のより詳細な説明を参照してください。*ソフトウェア設計のための Windows インターフェイスのガイドライン*します。  
+## <a name="remarks"></a>Remarks  
+ An MDI application uses the main frame window as a workspace in which the user can open zero or more document frame windows, each of which displays a document. For a more detailed description of the MDI, see *Windows Interface Guidelines for Software Design*.  
   
- ドキュメント テンプレートには、3 種類のクラス間の関係を定義します。  
+ A document template defines the relationships among three types of classes:  
   
--   派生するドキュメント クラス[CDocument](../../mfc/reference/cdocument-class.md)します。  
+-   A document class, which you derive from [CDocument](../../mfc/reference/cdocument-class.md).  
   
--   ビュー クラス上に示したドキュメント クラスからのデータが表示されます。 このクラスから派生できます[CView](../../mfc/reference/cview-class.md)、 `CScrollView`、 `CFormView`、または`CEditView`です。 (使用することも`CEditView`直接)。  
+-   A view class, which displays data from the document class listed above. You can derive this class from [CView](../../mfc/reference/cview-class.md), `CScrollView`, `CFormView`, or `CEditView`. (You can also use `CEditView` directly.)  
   
--   ビューを含むフレーム ウィンドウ クラスです。 MDI のドキュメント テンプレートからこのクラスを派生できます`CMDIChildWnd`、あるいはを使用中のドキュメント フレーム ウィンドウの動作をカスタマイズする必要はありません、 [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md)独自のクラスを派生させることがなく直接します。  
+-   A frame window class, which contains the view. For an MDI document template, you can derive this class from `CMDIChildWnd`, or, if you don't need to customize the behavior of the document frame windows, you can use [CMDIChildWnd](../../mfc/reference/cmdichildwnd-class.md) directly without deriving your own class.  
   
- MDI アプリケーションは、ドキュメントの&1; つ以上の種類をサポートできますが、異なる種類のドキュメントを同時に開くことができます。 アプリケーションでは、サポートされているドキュメントの種類ごとに&1; つのドキュメント テンプレートを持ちます。 たとえば、MDI アプリケーションでは、スプレッドシートやテキスト ドキュメントの両方をサポートする場合、アプリケーションが&2; つ`CMultiDocTemplate`オブジェクトです。  
+ An MDI application can support more than one type of document, and documents of different types can be open at the same time. Your application has one document template for each document type that it supports. For example, if your MDI application supports both spreadsheets and text documents, the application has two `CMultiDocTemplate` objects.  
   
- アプリケーションは、ユーザーが新しいドキュメントを作成するときに、ドキュメント テンプレートを使用します。 アプリケーションでは、ドキュメントの&1; つ以上の種類をサポートするフレームワークはドキュメント テンプレートからサポートされているドキュメントの種類の名前を取得し、新しいファイル ダイアログ ボックスの一覧に表示されます。 ユーザーがドキュメントの種類を選択すると、アプリケーションはドキュメント クラスのオブジェクト、フレーム ウィンドウのオブジェクト、およびビューのオブジェクトを作成し、それらを相互に接続します。  
+ The application uses the document template(s) when the user creates a new document. If the application supports more than one type of document, then the framework gets the names of the supported document types from the document templates and displays them in a list in the File New dialog box. Once the user has selected a document type, the application creates a document class object, a frame window object, and a view object and attaches them to each other.  
   
- すべてのメンバーの関数を呼び出す必要はありません`CMultiDocTemplate`を除き、コンス トラクターです。 Framework ハンドル`CMultiDocTemplate`オブジェクトを内部的にします。  
+ You do not need to call any member functions of `CMultiDocTemplate` except the constructor. The framework handles `CMultiDocTemplate` objects internally.  
   
- 詳細については`CMultiDocTemplate`を参照してください[ドキュメント テンプレートとドキュメント/ビューの作成手順](../../mfc/document-templates-and-the-document-view-creation-process.md)します。  
+ For more information on `CMultiDocTemplate`, see [Document Templates and the Document/View Creation Process](../../mfc/document-templates-and-the-document-view-creation-process.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -88,11 +87,11 @@ class CMultiDocTemplate : public CDocTemplate
   
  `CMultiDocTemplate`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxwin.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxwin.h  
   
-##  <a name="cmultidoctemplate"></a>CMultiDocTemplate::CMultiDocTemplate  
- `CMultiDocTemplate` オブジェクトを構築します。  
+##  <a name="cmultidoctemplate"></a>  CMultiDocTemplate::CMultiDocTemplate  
+ Constructs a `CMultiDocTemplate` object.  
   
 ```  
 CMultiDocTemplate(
@@ -102,11 +101,11 @@ CMultiDocTemplate(
     CRuntimeClass* pViewClass);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `nIDResource`  
- ドキュメントの種類に使用されているリソースの ID を指定します。 これには、メニューのアイコン、アクセラレータ テーブル、および文字列リソースが含まれます。  
+ Specifies the ID of the resources used with the document type. This may include menu, icon, accelerator table, and string resources.  
   
- 文字列リソースは、"\n"文字で区切られた最大&7; つの部分文字列で構成されます (部分文字列が含まれていない場合は、プレース ホルダーとして"\n"文字が必要。 ただし、末尾の"\n"文字は必要ありません) です。これらの部分文字列では、ドキュメントの種類について説明します。 詳細については、部分文字列は、次を参照してください。 [CDocTemplate::GetDocString](../../mfc/reference/cdoctemplate-class.md#getdocstring)します。 アプリケーションのリソース ファイルでは、この文字列リソースが見つかります。 例:  
+ The string resource consists of up to seven substrings separated by the '\n' character (the '\n' character is needed as a place holder if a substring is not included; however, trailing '\n' characters are not necessary); these substrings describe the document type. For information on the substrings, see [CDocTemplate::GetDocString](../../mfc/reference/cdoctemplate-class.md#getdocstring). This string resource is found in the application's resource file. For example:  
   
  `// MYCALC.RC`  
   
@@ -118,33 +117,33 @@ CMultiDocTemplate(
   
  `END`  
   
- 文字列の先頭が"\n"文字であることに注意してください。これは、最初の部分文字列が MDI アプリケーションで実行されていない、したがってが含まれていないためです。 ストリング エディターを使用してこの文字列を編集することができます。文字列全体は、7 つの別のエントリとしてではなく文字列エディターで、1 つのエントリとして表示されます。  
+ Note that the string begins with a '\n' character; this is because the first substring is not used for MDI applications and so is not included. You can edit this string using the string editor; the entire string appears as a single entry in the String Editor, not as seven separate entries.  
   
- これらのリソースの種類の詳細については、次を参照してください。[リソース エディター](../../windows/resource-editors.md)します。  
+ For more information about these resource types, see [Resource Editors](../../windows/resource-editors.md).  
   
  `pDocClass`  
- 指す、`CRuntimeClass`ドキュメント クラスのオブジェクト。 このクラスは、 **CDocument**-には、ドキュメントを表すために定義するクラスを派生します。  
+ Points to the `CRuntimeClass` object of the document class. This class is a **CDocument**-derived class you define to represent your documents.  
   
  `pFrameClass`  
- 指す、`CRuntimeClass`フレーム ウィンドウ クラスのオブジェクト。 このクラスを指定できます、 `CMDIChildWnd`-派生クラス、またはできます`CMDIChildWnd`自体、ドキュメント フレーム ウィンドウの既定の動作をする場合。  
+ Points to the `CRuntimeClass` object of the frame-window class. This class can be a `CMDIChildWnd`-derived class, or it can be `CMDIChildWnd` itself if you want default behavior for your document frame windows.  
   
  `pViewClass`  
- 指す、`CRuntimeClass`ビュー クラスのオブジェクト。 このクラスは、 `CView`-には、ドキュメントを表示するように定義するクラスを派生します。  
+ Points to the `CRuntimeClass` object of the view class. This class is a `CView`-derived class you define to display your documents.  
   
-### <a name="remarks"></a>コメント  
- いずれかを動的に割り当てる`CMultiDocTemplate`各ドキュメントの種類をアプリケーションがサポートし、それぞれを渡すオブジェクト`CWinApp::AddDocTemplate`から、`InitInstance`アプリケーション クラスのメンバー関数。  
+### <a name="remarks"></a>Remarks  
+ Dynamically allocate one `CMultiDocTemplate` object for each document type that your application supports and pass each one to `CWinApp::AddDocTemplate` from the `InitInstance` member function of your application class.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCDocView #&92;](../../mfc/codesnippet/cpp/cmultidoctemplate-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCDocView#92](../../mfc/codesnippet/cpp/cmultidoctemplate-class_1.cpp)]  
   
- 2 番目の例を次に示します。  
+ Here is a second example.  
   
- [!code-cpp[NVC_MFCDocView #&93;](../../mfc/codesnippet/cpp/cmultidoctemplate-class_2.cpp)]  
+ [!code-cpp[NVC_MFCDocView#93](../../mfc/codesnippet/cpp/cmultidoctemplate-class_2.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [CDocTemplate クラス](../../mfc/reference/cdoctemplate-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CDocTemplate クラス](../../mfc/reference/cdoctemplate-class.md)   
- [関数のクラス](../../mfc/reference/csingledoctemplate-class.md)   
- [CWinApp クラス](../../mfc/reference/cwinapp-class.md)
+## <a name="see-also"></a>See Also  
+ [CDocTemplate Class](../../mfc/reference/cdoctemplate-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CDocTemplate Class](../../mfc/reference/cdoctemplate-class.md)   
+ [CSingleDocTemplate Class](../../mfc/reference/csingledoctemplate-class.md)   
+ [CWinApp Class](../../mfc/reference/cwinapp-class.md)
 

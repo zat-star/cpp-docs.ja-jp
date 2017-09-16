@@ -1,68 +1,87 @@
 ---
-title: "テスト コンテナーでのプロパティとイベントのテスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール テスト コンテナー"
-  - "ActiveX コントロール [C++], テスト"
-  - "デバッグ (ActiveX コントロールの)"
-  - "プロパティ [MFC], テスト"
-  - "テスト コンテナー"
-  - "テスト, テスト コンテナー"
-  - "tstcon32.exe"
+title: Testing Properties and Events with Test Container | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- testing, test containers
+- tstcon32.exe
+- debugging ActiveX controls
+- test container
+- ActiveX Control Test Container
+- ActiveX controls [MFC], testing
+- properties [MFC], testing
 ms.assetid: 626867cf-fe53-4c30-8973-55bb93ef3917
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# テスト コンテナーでのプロパティとイベントのテスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: b3edf6c89e6d960ad2aad3058364755b53be07db
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Visual C\+\+ に付属しているテスト コンテナー アプリケーションは ActiveX コントロールをテストし、デバッグするための ActiveX コントロール コンテナーです。  テスト コンテナーは、コントロールの開発者がプロパティを変更し、メソッドを呼び出し、イベントを発生させることによって、コントロールの機能をテストすることができます。  テスト コンテナーは、データ バインディングの通知のログを表示し、テストの ActiveX コントロールの永続性の機能に提供します: ストリームまたは substorage にプロパティを保存し、再読み込み、格納されたストリーム データを調べることができます。  このセクションでは、テスト コンテナーの基本機能を使用する方法について説明します。  詳細については、**ヘルプ** メニューを行うと、実行中のテスト コンテナー選択します。  
+---
+# <a name="testing-properties-and-events-with-test-container"></a>Testing Properties and Events with Test Container
+The Test Container application, shipped in Visual C++, is an ActiveX control container for testing and debugging ActiveX controls. Test Container allows the control developer to test the control's functionality by changing its properties, invoking its methods, and firing its events. Test Container can display logs of data-binding notifications and also provides facilities for testing an ActiveX control's persistence functionality: you can save properties to a stream or to substorage, reload them, and examine the stored stream data. This section describes how to use the basic features of Test Container. For additional information, select the **Help** menu while running Test Container.  
   
-### ActiveX コントロール テスト コンテナーにアクセスするには  
+### <a name="to-access-the-activex-control-test-container"></a>To access the ActiveX Control Test Container  
   
-1.  [TSTCON サンプル: ActiveX コントロール テスト コンテナー](../top/visual-cpp-samples.md)をビルドします。  
+1.  Build the [TSTCON Sample: ActiveX Control Test Container](../visual-cpp-samples.md).  
   
-### ActiveX コントロールをテストするには  
+### <a name="to-test-your-activex-control"></a>To test your ActiveX control  
   
-1.  テスト コンテナーの **編集** メニューで、**新しいコントロールを挿入**をクリックします。  
+1.  On the **Edit** menu of Test Container, click **Insert New Control**.  
   
-2.  **コントロールの挿入** ボックスで、目的のコントロールを選択し、**\[OK\]** をクリックします。  コントロールがコンテナー コントロールに表示されます。  
+2.  In the **Insert Control** box, select the desired control and click **OK**. The control will appear in the control container.  
   
     > [!NOTE]
-    >  コントロールが **コントロールの挿入** ダイアログ ボックスに表示されない場合は、テスト コンテナーの **ファイル** メニューの **コントロールの登録** コマンドに登録する必要があります。  
+    >  If your control is not listed in the **Insert Control** dialog box, make sure you have registered it with the **Register Controls** command from the **File** menu of Test Container.  
   
- この時点でコントロールのプロパティやイベントをテストできます。  
+ At this point you can test your control's properties or events.  
   
-#### テストにプロパティ  
+#### <a name="to-test-properties"></a>To test properties  
   
-1.  **コントロール** メニュー **メソッドの呼び出し**。  
+1.  On the **Control** menu, click **Invoke Methods**.  
   
-2.  **メソッド名** のドロップダウン リストで、テストするプロパティに PropPut のメソッドを選択します。  
+2.  In the **Method Name** drop-down list, select the PropPut method for the property you want to test.  
   
-3.  **パラメーター値** または **パラメータの種類** を変更し、**値の設定** をクリックします。  
+3.  Modify the **Parameter Value** or **Parameter Type** and click on the **Set Value** button.  
   
-4.  オブジェクトに新しい値を適用するに **呼び出し** をクリックします。  
+4.  Click **Invoke** to apply the new value to the object.  
   
-     プロパティに新しい値が含まれます。  
+     The property now contains the new value.  
   
-#### イベントをテストし、イベント情報の出力先を指定します。  
+#### <a name="to-test-events-and-specify-the-destination-of-event-information"></a>To test events and specify the destination of event information.  
   
-1.  **オプション** メニュー **ログ**。  
+1.  On the **Options** menu, click **Logging**.  
   
-2.  イベント情報の出力先を指定します。  
+2.  Specify the destination of event information.  
   
-## 参照  
- [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [方法 : ActiveX コントロールをデバッグする](../Topic/How%20to:%20Debug%20an%20ActiveX%20Control.md)
+## <a name="see-also"></a>See Also  
+ [MFC ActiveX Controls](../mfc/mfc-activex-controls.md)   
+ [How to: Debug an ActiveX Control](/visualstudio/debugger/how-to-debug-an-activex-control)
+
+

@@ -1,55 +1,74 @@
 ---
-title: "プログレス コントロールのスタイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CProgressCtrl クラス, スタイル"
-  - "PBS_SMOOTH 形式"
-  - "PBS_VERTICAL 形式"
-  - "プログレス コントロール [C++], スタイル"
+title: Styles for the Progress Control | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- PBS_SMOOTH style
+- progress controls [MFC], styles
+- PBS_VERTICAL style
+- CProgressCtrl class [MFC], styles
 ms.assetid: 39eb8081-bc20-4552-91b9-e7cdd1b7d8ae
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# プログレス コントロールのスタイル
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2f7a2fd46e9a9af0e3de95f99b717629feab3357
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-最初にプログレス コントロール \([CProgressCtrl::Create](../Topic/CProgressCtrl::Create.md)\) を作成すると、プログレス コントロールに目的のウィンドウ スタイルを指定するに `dwStyle` パラメーターを使用します。  次の一覧は、適度なウィンドウ スタイルについて詳しく説明します。  コントロールは、ここに示されているもの以外のウィンドウ スタイルは無視されます。  ダイアログ ボックスの親ウィンドウの子としてコントロール、通常は常に作成する必要があります。  
+---
+# <a name="styles-for-the-progress-control"></a>Styles for the Progress Control
+When you initially create the progress control ([CProgressCtrl::Create](../mfc/reference/cprogressctrl-class.md#create)), use the `dwStyle` parameter to specify the desired window styles for your progress control. The following list details the applicable window styles. The control ignores any window style other than the ones listed here. You should always create the control as a child window, usually of a dialog box parent.  
   
-|ウィンドウ スタイル|効果|  
-|----------------|--------|  
-|`WS_BORDER`|ウィンドウの周りに境界が作成されます。|  
-|**WS\_CHILD**|子ウィンドウを作成します。`CProgressCtrl`を必ず使用する必要があります\)。|  
-|**WS\_CLIPCHILDREN**|親ウィンドウ内に描画するときの子ウィンドウが占める領域を除外します。  親ウィンドウを作成するときに使用します。|  
-|**WS\_CLIPSIBLINGS**|相対的な子ウィンドウを相互切り取られます。|  
-|**WS\_DISABLED**|最初に無効になるウィンドウを作成します。|  
-|**WS\_VISIBLE**|最初に表示するウィンドウを作成します。|  
-|**WS\_TABSTOP**|ユーザーがボタンの上に移動するには、Tab キーを押すとコントロールがフォーカスを受け取ることができることを指定します。|  
+|Window style|Effect|  
+|------------------|------------|  
+|`WS_BORDER`|Creates a border around the window.|  
+|**WS_CHILD**|Creates a child window (should always be used for `CProgressCtrl`).|  
+|**WS_CLIPCHILDREN**|Excludes the area occupied by child windows when you draw within the parent window. Used when you create the parent window.|  
+|**WS_CLIPSIBLINGS**|Clips child windows relative to each other.|  
+|**WS_DISABLED**|Creates a window that is initially disabled.|  
+|**WS_VISIBLE**|Creates a window that is initially visible.|  
+|**WS_TABSTOP**|Specifies that the control can receive focus when the user presses the TAB key to move to it.|  
   
- さらに、プログレス コントロール、`PBS_VERTICAL` と `PBS_SMOOTH`にのみ適用される 2 種類のスタイルを指定できます。  
+ In addition, you can specify two styles that apply only to the progress control, `PBS_VERTICAL` and `PBS_SMOOTH`.  
   
- 水平方向ではなく、コントロールを垂直方向に `PBS_VERTICAL` を使用します。  使用するコントロールをインクリメント方式で満たす小さい説明した四角形を表示するのではなく、コントロールを完全に塗りつぶすために `PBS_SMOOTH` を。  
+ Use `PBS_VERTICAL` to orient the control vertically, rather than horizontally. Use `PBS_SMOOTH` to fill the control completely, rather than displaying small delineated squares that fill the control incrementally.  
   
- `PBS_SMOOTH` のスタイル:なし  
+ Without `PBS_SMOOTH` style:  
   
- ![標準の進行状況バーのスタイル](../mfc/media/vc4ruw1.png "vc4RUW1")  
+ ![Standard progress bar style](../mfc/media/vc4ruw1.gif "vc4ruw1")  
   
- `PBS_SMOOTH` と `PBS_VERTICAL` のスタイルを使用する場合:  
+ With `PBS_SMOOTH` and `PBS_VERTICAL` styles:  
   
- ![進行状況バーのスタイル、スムーズおよび垂直](../mfc/media/vc4ruw2.png "vc4RUW2")  
+ ![Progress bar style, smooth and vertical](../mfc/media/vc4ruw2.gif "vc4ruw2")  
   
- 詳細については、" *MFC リファレンス"の*" [Window Styles](../mfc/reference/frame-window-styles-mfc.md) を参照します。  
+ For more information, see [Window Styles](../mfc/reference/styles-used-by-mfc.md#frame-window-styles-mfc) in the *MFC Reference*.  
   
-## 参照  
- [CProgressCtrl の使い方](../mfc/using-cprogressctrl.md)
+## <a name="see-also"></a>See Also  
+ [Using CProgressCtrl](../mfc/using-cprogressctrl.md)
+
+

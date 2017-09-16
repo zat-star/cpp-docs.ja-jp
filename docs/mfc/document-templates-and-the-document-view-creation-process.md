@@ -1,52 +1,71 @@
 ---
-title: "ドキュメント テンプレートとドキュメント/ビューの作成手順 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDocTemplate クラス"
-  - "ドキュメント テンプレート, およびビュー"
-  - "ドキュメント/ビュー アーキテクチャ, 作成 (ドキュメント/ビューを)"
-  - "アイコン, 複数のドキュメント テンプレートの"
-  - "MFC, ドキュメント テンプレート"
-  - "複数のドキュメント テンプレート"
-  - "1 つのドキュメント テンプレート"
-  - "テンプレート, ドキュメント テンプレート"
+title: Document Templates and the Document-View Creation Process | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- icons, for multiple document templates
+- document templates [MFC], and views
+- document/view architecture [MFC], creating document/view
+- single document template
+- MFC, document templates
+- multiple document template
+- CDocTemplate class [MFC]
+- templates [MFC], document templates
 ms.assetid: 311ce4cd-fbdf-4ea1-a51b-5bb043abbcee
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# ドキュメント テンプレートとドキュメント/ビューの作成手順
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a9df24e536d134962d189ed45a869bf793ae7b0a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-関連ビューおよびフレーム ウィンドウでドキュメントを作成する複雑なプロセスを管理するには、2 種類のドキュメント テンプレート クラスを使用して T: SDI アプリケーションの [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) と MDI アプリケーションの [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md)。  `CSingleDocTemplate` は 1 個の型に 1 個のドキュメントを同時に作成し、保存できます。  `CMultiDocTemplate` は 1 種類の多くの開いているドキュメントのリストを保持します。  
+---
+# <a name="document-templates-and-the-documentview-creation-process"></a>Document Templates and the Document/View Creation Process
+To manage the complex process of creating documents with their associated views and frame windows, the framework uses two document template classes: [CSingleDocTemplate](../mfc/reference/csingledoctemplate-class.md) for SDI applications and [CMultiDocTemplate](../mfc/reference/cmultidoctemplate-class.md) for MDI applications. A `CSingleDocTemplate` can create and store one document of one type at a time. A `CMultiDocTemplate` keeps a list of many open documents of one type.  
   
- アプリケーションは複数のドキュメントの種類。  たとえば、アプリケーションでテキスト ドキュメントとグラフィック ドキュメントをサポートする場合があります。  このようなアプリケーションでは、ユーザーがファイル メニューの新規作成コマンドを選択すると、使用できる新しいドキュメント リストを開くを選択するダイアログ ボックスを表示します。  サポートされている各ドキュメント型の場合、アプリケーションでは、個別のドキュメント テンプレート オブジェクトを使用します。  次の図は、サポートが 2 のドキュメント型など、開いているドキュメントに示す MDI アプリケーションの構成について説明します。  
+ Some applications support multiple document types. For example, an application might support text documents and graphics documents. In such an application, when the user chooses the New command on the File menu, a dialog box shows a list of possible new document types to open. For each supported document type, the application uses a distinct document template object. The following figure illustrates the configuration of an MDI application that supports two document types and shows several open documents.  
   
- ![2 ドキュメント タイプを持つ MDI アプリケーション](../mfc/media/vc387h1.gif "vc387H1")  
-2 つのドキュメント タイプをサポートする MDI アプリケーション  
+ ![MDI application that has two document types](../mfc/media/vc387h1.gif "vc387h1")  
+An MDI Application with Two Document Types  
   
- ドキュメント テンプレートは、アプリケーション オブジェクトによって作成および保持されます。  アプリケーションの `InitInstance` 関数の中に実行する主な五つのタスクの 1 つが、適切な種類の一つ以上のドキュメント テンプレートを作成することです。  この機能は [ドキュメント テンプレートの作成](../Topic/Document%20Template%20Creation.md)で説明します。  Application オブジェクトは、テンプレートの一覧で、各ドキュメント テンプレートへのポインターを格納し、ドキュメント テンプレートを追加するためのインターフェイスを提供します。  
+ Document templates are created and maintained by the application object. One of the key tasks performed during your application's `InitInstance` function is to construct one or more document templates of the appropriate kind. This feature is described in [Document Template Creation](../mfc/document-template-creation.md). The application object stores a pointer to each document template in its template list and provides an interface for adding document templates.  
   
- 複数の種類のドキュメントをサポートする必要がある [AddDocTemplate](../Topic/CWinApp::AddDocTemplate.md) に各ドキュメントの種類の追加の呼び出しを追加する必要があります。  
+ If you need to support two or more document types, you must add an extra call to [AddDocTemplate](../mfc/reference/cwinapp-class.md#adddoctemplate) for each document type.  
   
- アイコンは、アプリケーションのドキュメント テンプレートの位置に基づいて各ドキュメント テンプレートに登録されます。  ドキュメント テンプレートの順序は、`AddDocTemplate`と追加されたときの順序によって決まります。  MFC は、アプリケーションの最初のアイコン リソースをアプリケーション アイコンであると次のアイコン リソースで最初にドキュメント アイコンなどとします。  
+ An icon is registered for each document template based on its position in the application's list of document templates. The order of the document templates is determined by the order they are added with calls to `AddDocTemplate`. MFC assumes that the first Icon resource in the application is the application icon, the next Icon resource is the first document icon, and so on.  
   
- たとえば、ドキュメント テンプレートには、アプリケーション用の 3 番目のチュートリアルです。  アプリケーションにアイコン リソース インデックスが 3 である場合、そのアイコンは、ドキュメント テンプレートに使用されます。  アイコンは、既定としてインデックス 0 以外では使用されます。  
+ For example, a document template is the third of three for the application. If there is an Icon resource in the application at index 3, that icon is used for the document template. If not, the icon at index 0 is used as a default.  
   
-## 参照  
- [MFC の一般的なトピック](../mfc/general-mfc-topics.md)   
- [ドキュメント テンプレートの作成](../Topic/Document%20Template%20Creation.md)   
- [ドキュメントおよびビューの作成](../mfc/document-view-creation.md)   
- [各種 MFC オブジェクト間の関係](../mfc/relationships-among-mfc-objects.md)   
- [新しいドキュメント、ウィンドウ、ビューの作成](../Topic/Creating%20New%20Documents,%20Windows,%20and%20Views.md)
+## <a name="see-also"></a>See Also  
+ [General MFC Topics](../mfc/general-mfc-topics.md)   
+ [Document Template Creation](../mfc/document-template-creation.md)   
+ [Document/View Creation](../mfc/document-view-creation.md)   
+ [Relationships Among MFC Objects](../mfc/relationships-among-mfc-objects.md)   
+ [Creating New Documents, Windows, and Views](../mfc/creating-new-documents-windows-and-views.md)
+
+

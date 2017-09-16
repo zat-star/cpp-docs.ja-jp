@@ -1,5 +1,5 @@
 ---
-title: "CTypedPtrList クラス |Microsoft ドキュメント"
+title: CTypedPtrList Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -24,12 +24,16 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CTypedPtrList class
-- type-safe collections
-- lists [C++]
-- template classes, CTypedPtrList class
-- linked lists [C++]
-- pointer lists
+- CTypedPtrList [MFC], AddHead
+- CTypedPtrList [MFC], AddTail
+- CTypedPtrList [MFC], GetAt
+- CTypedPtrList [MFC], GetHead
+- CTypedPtrList [MFC], GetNext
+- CTypedPtrList [MFC], GetPrev
+- CTypedPtrList [MFC], GetTail
+- CTypedPtrList [MFC], RemoveHead
+- CTypedPtrList [MFC], RemoveTail
+- CTypedPtrList [MFC], SetAt
 ms.assetid: c273096e-1756-4340-864b-4a08b674a65e
 caps.latest.revision: 24
 author: mikeblome
@@ -49,315 +53,315 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: ca8d868333aa977710e387fc1bb13271dc8f99fa
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c049f0d54e6a583e21af5f67d03f6b1373c1d915
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="ctypedptrlist-class"></a>CTypedPtrList クラス
-`CPtrList`クラスのオブジェクトに対してタイプ セーフな "ラップ" が用意されています。  
+# <a name="ctypedptrlist-class"></a>CTypedPtrList Class
+Provides a type-safe "wrapper" for objects of class `CPtrList`.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template<class BASE_CLASS, class TYPE>  
 class CTypedPtrList : public BASE_CLASS  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `BASE_CLASS`  
- クラスの基本クラス、型指定されたポインター ボックスの一覧です。ポインター リスト クラスである必要があります (`CObList`または`CPtrList`)。  
+ Base class of the typed pointer list class; must be a pointer list class ( `CObList` or `CPtrList`).  
   
  `TYPE`  
- 基底クラス リストに格納された要素の型。  
+ Type of the elements stored in the base-class list.  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CTypedPtrList::AddHead](#addhead)|(新しいヘッドによって作成) リストの先頭に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CTypedPtrList::AddTail](#addtail)|(新しい末尾によって作成) リストの末尾に要素 (または別のリスト内のすべての要素) を追加します。|  
-|[CTypedPtrList::GetAt](#getat)|指定された位置に要素を取得します。|  
-|[CTypedPtrList::GetHead](#gethead)|(空にすることはできません) の一覧の先頭の要素を返します。|  
-|[CTypedPtrList::GetNext](#getnext)|反復処理するためには、次の要素を取得します。|  
-|[CTypedPtrList::GetPrev](#getprev)|反復処理するためには、直前の要素を取得します。|  
-|[CTypedPtrList::GetTail](#gettail)|(空にすることはできません)、リストの末尾の要素を返します。|  
-|[CTypedPtrList::RemoveHead](#removehead)|リストの先頭から要素を削除します。|  
-|[CTypedPtrList::RemoveTail](#removetail)|リストの末尾から要素を削除します。|  
-|[CTypedPtrList::SetAt](#setat)|指定された位置に要素を設定します。|  
+|[CTypedPtrList::AddHead](#addhead)|Adds an element (or all the elements in another list) to the head of the list (makes a new head).|  
+|[CTypedPtrList::AddTail](#addtail)|Adds an element (or all the elements in another list) to the tail of the list (makes a new tail).|  
+|[CTypedPtrList::GetAt](#getat)|Gets the element at a given position.|  
+|[CTypedPtrList::GetHead](#gethead)|Returns the head element of the list (cannot be empty).|  
+|[CTypedPtrList::GetNext](#getnext)|Gets the next element for iterating.|  
+|[CTypedPtrList::GetPrev](#getprev)|Gets the previous element for iterating.|  
+|[CTypedPtrList::GetTail](#gettail)|Returns the tail element of the list (cannot be empty).|  
+|[CTypedPtrList::RemoveHead](#removehead)|Removes the element from the head of the list.|  
+|[CTypedPtrList::RemoveTail](#removetail)|Removes the element from the tail of the list.|  
+|[CTypedPtrList::SetAt](#setat)|Sets the element at a given position.|  
   
-## <a name="remarks"></a>コメント  
- 使用すると`CTypedPtrList`なく`CObList`または`CPtrList`C++ の型チェック機能により、一致しないポインター型によって発生したエラーを排除します。  
+## <a name="remarks"></a>Remarks  
+ When you use `CTypedPtrList` rather than `CObList` or `CPtrList`, the C++ type-checking facility helps eliminate errors caused by mismatched pointer types.  
   
- さらに、`CTypedPtrList`を使用した場合に必要がありますキャストの多くを実行するラッパー`CObList`または`CPtrList`です。  
+ In addition, the `CTypedPtrList` wrapper performs much of the casting that would be required if you used `CObList` or `CPtrList`.  
   
- すべて`CTypedPtrList`関数はインラインで、このテンプレートを使用しない変わらないサイズや、コードの処理速度。  
+ Because all `CTypedPtrList` functions are inline, use of this template does not significantly affect the size or speed of your code.  
   
- 派生したリスト`CObList`から派生したのですが、シリアル化できる`CPtrList`ことはできません。  
+ Lists derived from `CObList` can be serialized, but those derived from `CPtrList` cannot.  
   
- `CTypedPtrList` オブジェクトが削除されたとき、またはその要素が削除されたときは、ポインターだけが削除されます。ポインターが参照するエンティティは削除されません。  
+ When a `CTypedPtrList` object is deleted, or when its elements are removed, only the pointers are removed, not the entities they reference.  
   
- 使用する方法について`CTypedPtrList`、記事を参照して[コレクション](../../mfc/collections.md)と[クラスのテンプレートに基づく](../../mfc/template-based-classes.md)します。  
+ For more information on using `CTypedPtrList`, see the articles [Collections](../../mfc/collections.md) and [Template-Based Classes](../../mfc/template-based-classes.md).  
   
-## <a name="example"></a>例  
- この例のインスタンスを作成する`CTypedPtrList`、1 つのオブジェクトを追加、リストをディスクにシリアル化およびから、オブジェクトを削除します。  
+## <a name="example"></a>Example  
+ This example creates an instance of `CTypedPtrList`, adds one object, serializes the list to disk, and then deletes the object:  
   
- [!code-cpp[NVC_MFCCollections #&110;](../../mfc/codesnippet/cpp/ctypedptrlist-class_1.cpp)]  
+ [!code-cpp[NVC_MFCCollections#110](../../mfc/codesnippet/cpp/ctypedptrlist-class_1.cpp)]  
   
- [!code-cpp[NVC_MFCCollections #&111;](../../mfc/codesnippet/cpp/ctypedptrlist-class_2.cpp)]  
+ [!code-cpp[NVC_MFCCollections#111](../../mfc/codesnippet/cpp/ctypedptrlist-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `BASE_CLASS`  
   
  `_CTypedPtrList`  
   
  `CTypedPtrList`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxtempl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxtempl.h  
   
-##  <a name="addhead"></a>CTypedPtrList::AddHead  
- このメンバー関数を呼び出す`BASE_CLASS` **:: AddHead**します。  
+##  <a name="addhead"></a>  CTypedPtrList::AddHead  
+ This member function calls `BASE_CLASS`**::AddHead**.  
   
 ```  
 POSITION AddHead(TYPE newElement);  
 void AddHead(CTypedPtrList<BASE_CLASS, TYPE>* pNewList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- 基底クラス リストに格納された要素の型。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Type of the elements stored in the base-class list.  
   
  `newElement`  
- この一覧に追加するオブジェクトのポインター。 A **NULL**値を指定します。  
+ The object pointer to be added to this list. A **NULL** value is allowed.  
   
  `BASE_CLASS`  
- クラスの基本クラス、型指定されたポインター ボックスの一覧です。ポインター リスト クラスである必要があります ( [CObList](../../mfc/reference/coblist-class.md)または[CPtrList](../../mfc/reference/cptrlist-class.md))。  
+ Base class of the typed pointer list class; must be a pointer list class ( [CObList](../../mfc/reference/coblist-class.md) or [CPtrList](../../mfc/reference/cptrlist-class.md)).  
   
  `pNewList`  
- 別のポインター [CTypedPtrList](../../mfc/reference/ctypedptrlist-class.md)オブジェクトです。 内の要素`pNewList`この一覧に追加されます。  
+ A pointer to another [CTypedPtrList](../../mfc/reference/ctypedptrlist-class.md) object. The elements in `pNewList` will be added to this list.  
   
-### <a name="return-value"></a>戻り値  
- 最初のバージョンの取得、**位置**新しく挿入される要素の値。  
+### <a name="return-value"></a>Return Value  
+ The first version returns the **POSITION** value of the newly inserted element.  
   
-### <a name="remarks"></a>コメント  
- 最初のバージョンでは、リストの先頭の前に新しい要素を追加します。 2 番目のバージョンでは、別のリストの先頭の前に要素を追加します。  
+### <a name="remarks"></a>Remarks  
+ The first version adds a new element before the head of the list. The second version adds another list of elements before the head.  
   
-##  <a name="addtail"></a>CTypedPtrList::AddTail  
- このメンバー関数を呼び出す`BASE_CLASS` **:: AddTail**します。  
+##  <a name="addtail"></a>  CTypedPtrList::AddTail  
+ This member function calls `BASE_CLASS`**::AddTail**.  
   
 ```  
 POSITION AddTail(TYPE newElement);  
 void AddTail(CTypedPtrList<BASE_CLASS, TYPE>* pNewList);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- 基底クラス リストに格納された要素の型。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Type of the elements stored in the base-class list.  
   
  `newElement`  
- この一覧に追加するオブジェクトのポインター。 A **NULL**値を指定します。  
+ The object pointer to be added to this list. A **NULL** value is allowed.  
   
  `BASE_CLASS`  
- クラスの基本クラス、型指定されたポインター ボックスの一覧です。ポインター リスト クラスである必要があります ( [CObList](../../mfc/reference/coblist-class.md)または[CPtrList](../../mfc/reference/cptrlist-class.md))。  
+ Base class of the typed pointer list class; must be a pointer list class ( [CObList](../../mfc/reference/coblist-class.md) or [CPtrList](../../mfc/reference/cptrlist-class.md)).  
   
  `pNewList`  
- 別のポインター [CTypedPtrList](../../mfc/reference/ctypedptrlist-class.md)オブジェクトです。 内の要素`pNewList`この一覧に追加されます。  
+ A pointer to another [CTypedPtrList](../../mfc/reference/ctypedptrlist-class.md) object. The elements in `pNewList` will be added to this list.  
   
-### <a name="return-value"></a>戻り値  
- 最初のバージョンの取得、**位置**新しく挿入される要素の値。  
+### <a name="return-value"></a>Return Value  
+ The first version returns the **POSITION** value of the newly inserted element.  
   
-### <a name="remarks"></a>コメント  
- 最初のバージョンでは、リストの末尾に新しい要素を追加します。 2 番目のバージョンでは、リストの後部後の要素の別のリストを追加します。  
+### <a name="remarks"></a>Remarks  
+ The first version adds a new element after the tail of the list. The second version adds another list of elements after the tail of the list.  
   
-##  <a name="getat"></a>CTypedPtrList::GetAt  
- 型の変数**位置**リストのキーです。  
+##  <a name="getat"></a>  CTypedPtrList::GetAt  
+ A variable of type **POSITION** is a key for the list.  
   
 ```  
 TYPE& GetAt(POSITION position);  
 TYPE GetAt(POSITION position) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- リストに格納されている要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements stored in the list.  
   
- *位置*  
- A**位置**以前から返される値`GetHeadPosition`または**検索**メンバー関数の呼び出しです。  
+ *position*  
+ A **POSITION** value returned by a previous `GetHeadPosition` or **Find** member function call.  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CTypedPtrList**、し`GetAt`テンプレート パラメーターで指定された型のポインターを返します*型*します。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CTypedPtrList**, then `GetAt` returns a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CTypedPtrList`、し`GetAt`テンプレート パラメーターで指定された型のポインターへの参照を返します*型*します。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CTypedPtrList`, then `GetAt` returns a reference to a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- 操作できません。 したり、インデックスと同じには、**位置**自分の値。 `GetAt`取得、`CObject`指定した位置に関連付けられたポインター。  
+### <a name="remarks"></a>Remarks  
+ It is not the same as an index, and you cannot operate on a **POSITION** value yourself. `GetAt` retrieves the `CObject` pointer associated with a given position.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- このインライン関数が呼び出す`BASE_CLASS` **:: GetAt**します。  
+ This inline function calls `BASE_CLASS`**::GetAt**.  
   
-##  <a name="gethead"></a>CTypedPtrList::GetHead  
- この一覧の先頭の要素を表すポインターを取得します。  
+##  <a name="gethead"></a>  CTypedPtrList::GetHead  
+ Gets the pointer that represents the head element of this list.  
   
 ```  
 TYPE& GetHead();  
 TYPE GetHead() const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- リストに格納されている要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements stored in the list.  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CTypedPtrList**、し`GetHead`テンプレート パラメーターで指定された型のポインターを返します*型*します。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CTypedPtrList**, then `GetHead` returns a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CTypedPtrList`、し`GetHead`テンプレート パラメーターで指定された型のポインターへの参照を返します*型*します。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CTypedPtrList`, then `GetHead` returns a reference to a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`GetHead`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](../../mfc/reference/coblist-class.md#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `GetHead`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](../../mfc/reference/coblist-class.md#isempty) to verify that the list contains elements.  
   
-##  <a name="getnext"></a>CTypedPtrList::GetNext  
- 識別される要素を取得`rPosition`、設定し、`rPosition`に、**位置**一覧の次のエントリの値。  
+##  <a name="getnext"></a>  CTypedPtrList::GetNext  
+ Gets the list element identified by `rPosition`, then sets `rPosition` to the **POSITION** value of the next entry in the list.  
   
 ```  
 TYPE& GetNext(POSITION& rPosition);  
 TYPE GetNext(POSITION& rPosition) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- この一覧に含まれる要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements contained in this list.  
   
  `rPosition`  
- 参照、**位置**以前から返される値`GetNext`、 `GetHeadPosition`、またはその他のメンバー関数の呼び出しです。  
+ A reference to a **POSITION** value returned by a previous `GetNext`, `GetHeadPosition`, or other member function call.  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CTypedPtrList**、し`GetNext`テンプレート パラメーターで指定された型のポインターを返します*型*します。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CTypedPtrList**, then `GetNext` returns a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CTypedPtrList`、し`GetNext`テンプレート パラメーターで指定された型のポインターへの参照を返します*型*します。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CTypedPtrList`, then `GetNext` returns a reference to a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- 使用する`GetNext`への呼び出しでは、最初の位置を確立する場合は、順方向の反復ループで`GetHeadPosition`または[CPtrList::Find](../../mfc/reference/coblist-class.md#find)します。  
+### <a name="remarks"></a>Remarks  
+ You can use `GetNext` in a forward iteration loop if you establish the initial position with a call to `GetHeadPosition` or [CPtrList::Find](../../mfc/reference/coblist-class.md#find).  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 取得した要素が値の場合、リスト内の最後の新しいの`rPosition`に設定されている**NULL**します。  
+ If the retrieved element is the last in the list, then the new value of `rPosition` is set to **NULL**.  
   
- 反復処理中に要素を削除することができます。 例を参照してください[CObList::RemoveAt](../../mfc/reference/coblist-class.md#removeat)します。  
+ It is possible to remove an element during an iteration. See the example for [CObList::RemoveAt](../../mfc/reference/coblist-class.md#removeat).  
   
-##  <a name="getprev"></a>CTypedPtrList::GetPrev  
- 識別される要素を取得`rPosition`、設定し、`rPosition`に、**位置**一覧の前のエントリの値。  
+##  <a name="getprev"></a>  CTypedPtrList::GetPrev  
+ Gets the list element identified by `rPosition`, then sets `rPosition` to the **POSITION** value of the previous entry in the list.  
   
 ```  
 TYPE& GetPrev(POSITION& rPosition);  
 TYPE GetPrev(POSITION& rPosition) const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- この一覧に含まれる要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements contained in this list.  
   
  `rPosition`  
- 参照、**位置**以前から返される値`GetPrev`またはその他のメンバー関数の呼び出しです。  
+ A reference to a **POSITION** value returned by a previous `GetPrev` or other member function call.  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CTypedPtrList**、し`GetPrev`テンプレート パラメーターで指定された型のポインターを返します*型*します。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CTypedPtrList**, then `GetPrev` returns a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CTypedPtrList`、し`GetPrev`テンプレート パラメーターで指定された型のポインターへの参照を返します*型*します。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CTypedPtrList`, then `GetPrev` returns a reference to a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- 使用する`GetPrev`への呼び出しでは、最初の位置を確立する場合に、逆順イテレーション ループで`GetTailPosition`または**検索**します。  
+### <a name="remarks"></a>Remarks  
+ You can use `GetPrev` in a reverse iteration loop if you establish the initial position with a call to `GetTailPosition` or **Find**.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 要素を取得した一覧で、最初からの新しい値場合`rPosition`に設定されている**NULL**します。  
+ If the retrieved element is the first in the list, then the new value of `rPosition` is set to **NULL**.  
   
-##  <a name="gettail"></a>CTypedPtrList::GetTail  
- この一覧の先頭の要素を表すポインターを取得します。  
+##  <a name="gettail"></a>  CTypedPtrList::GetTail  
+ Gets the pointer that represents the head element of this list.  
   
 ```  
 TYPE& GetTail();  
 TYPE GetTail() const;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- リストに格納されている要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements stored in the list.  
   
-### <a name="return-value"></a>戻り値  
- 一覧にはへのポインターを介してアクセスする場合、 **const CTypedPtrList**、し`GetTail`テンプレート パラメーターで指定された型のポインターを返します*型*します。 これは、関数は、代入ステートメントの右側にあるでのみ使用し、したがって、ボックスの一覧を変更から保護します。  
+### <a name="return-value"></a>Return Value  
+ If the list is accessed through a pointer to a **const CTypedPtrList**, then `GetTail` returns a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used only on the right side of an assignment statement and thus protects the list from modification.  
   
- 一覧には直接、またはポインターにアクセスする場合、 `CTypedPtrList`、し`GetTail`テンプレート パラメーターで指定された型のポインターへの参照を返します*型*します。 代入ステートメントのどちらにも使用される関数は、このできるので、リスト エントリを変更できます。  
+ If the list is accessed directly or through a pointer to a `CTypedPtrList`, then `GetTail` returns a reference to a pointer of the type specified by the template parameter *TYPE*. This allows the function to be used on either side of an assignment statement and thus allows the list entries to be modified.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`GetTail`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](../../mfc/reference/coblist-class.md#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `GetTail`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](../../mfc/reference/coblist-class.md#isempty) to verify that the list contains elements.  
   
-##  <a name="removehead"></a>CTypedPtrList::RemoveHead  
- リストの先頭から要素を削除し、それを返します。  
+##  <a name="removehead"></a>  CTypedPtrList::RemoveHead  
+ Removes the element from the head of the list and returns it.  
   
 ```  
 TYPE RemoveHead();
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- リストに格納されている要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements stored in the list.  
   
-### <a name="return-value"></a>戻り値  
- リストの先頭にあったのポインター。 このポインターは、テンプレート パラメーターで指定された型*型*します。  
+### <a name="return-value"></a>Return Value  
+ The pointer previously at the head of the list. This pointer is of the type specified by the template parameter *TYPE*.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`RemoveHead`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](../../mfc/reference/coblist-class.md#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `RemoveHead`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](../../mfc/reference/coblist-class.md#isempty) to verify that the list contains elements.  
   
-##  <a name="removetail"></a>CTypedPtrList::RemoveTail  
- リストの末尾から要素を削除し、それを返します。  
+##  <a name="removetail"></a>  CTypedPtrList::RemoveTail  
+ Removes the element from the tail of the list and returns it.  
   
 ```  
 TYPE RemoveTail();
 ```  
   
-### <a name="parameters"></a>パラメーター  
- *型*  
- リストに格納されている要素の型を指定するテンプレート パラメーター。  
+### <a name="parameters"></a>Parameters  
+ *TYPE*  
+ Template parameter specifying the type of elements stored in the list.  
   
-### <a name="return-value"></a>戻り値  
- リストの後部にあったのポインター。 このポインターは、テンプレート パラメーターで指定された型*型*します。  
+### <a name="return-value"></a>Return Value  
+ The pointer previously at the tail of the list. This pointer is of the type specified by the template parameter *TYPE*.  
   
-### <a name="remarks"></a>コメント  
- リストが呼び出す前に空でないことを確認する必要があります`RemoveTail`します。 リストが空の場合、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。 使用[IsEmpty](../../mfc/reference/coblist-class.md#isempty)リストに要素が含まれていることを確認します。  
+### <a name="remarks"></a>Remarks  
+ You must ensure that the list is not empty before calling `RemoveTail`. If the list is empty, then the Debug version of the Microsoft Foundation Class Library asserts. Use [IsEmpty](../../mfc/reference/coblist-class.md#isempty) to verify that the list contains elements.  
   
-##  <a name="setat"></a>CTypedPtrList::SetAt  
- このメンバー関数を呼び出す`BASE_CLASS` **:: SetAt**します。  
+##  <a name="setat"></a>  CTypedPtrList::SetAt  
+ This member function calls `BASE_CLASS`**::SetAt**.  
   
 ```  
 void SetAt(POSITION pos, TYPE newElement);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pos`  
- **位置**を設定する要素のです。  
+ The **POSITION** of the element to be set.  
   
- *型*  
- 基底クラス リストに格納された要素の型。  
+ *TYPE*  
+ Type of the elements stored in the base-class list.  
   
  `newElement`  
- 一覧に書き込まれるオブジェクトのポインター。  
+ The object pointer to be written to the list.  
   
-### <a name="remarks"></a>コメント  
- 型の変数**位置**リストのキーです。 操作できません。 したり、インデックスと同じには、**位置**自分の値。 `SetAt`オブジェクトへのポインターを一覧内の指定位置に書き込みます。  
+### <a name="remarks"></a>Remarks  
+ A variable of type **POSITION** is a key for the list. It is not the same as an index, and you cannot operate on a **POSITION** value yourself. `SetAt` writes the object pointer to the specified position in the list.  
   
- 確認する必要があります、**位置**値がリスト内の有効な位置を表します。 有効な場合は、Microsoft Foundation Class ライブラリのデバッグ バージョンはアサートします。  
+ You must ensure that your **POSITION** value represents a valid position in the list. If it is invalid, then the Debug version of the Microsoft Foundation Class Library asserts.  
   
- 詳細についてを参照してください。 [CObList::SetAt](../../mfc/reference/coblist-class.md#setat)します。  
+ For more detailed remarks, see [CObList::SetAt](../../mfc/reference/coblist-class.md#setat).  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプルの収集](../../visual-cpp-samples.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [CPtrList クラス](../../mfc/reference/cptrlist-class.md)   
- [CObList クラス](../../mfc/reference/coblist-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample COLLECT](../../visual-cpp-samples.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [CPtrList Class](../../mfc/reference/cptrlist-class.md)   
+ [CObList Class](../../mfc/reference/coblist-class.md)
 

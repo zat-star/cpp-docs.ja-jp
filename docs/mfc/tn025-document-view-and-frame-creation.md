@@ -1,76 +1,96 @@
 ---
-title: "テクニカル ノート 25: ドキュメント、ビュー、フレームの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.creation"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ドキュメント, ビューとフレームの作成"
-  - "TN025"
+title: 'TN025: Document, View, and Frame Creation | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.creation
+dev_langs:
+- C++
+helpviewer_keywords:
+- documents [MFC], view and frame creation
+- TN025
 ms.assetid: 09254d72-6e1d-43db-80e9-693887dbeda2
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# テクニカル ノート 25: ドキュメント、ビュー、フレームの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f2464f927450319b2b649d5601a157f4269993ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn025-document-view-and-frame-creation"></a>TN025: Document, View, and Frame Creation
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、WinApps DocTemplates、ドキュメント、ビュー、およびフレームの作成および所有権問題について説明します。  
+ This note describes the creation and ownership issues for WinApps, DocTemplates, Documents, Frames and Views.  
   
-## WinApp  
- システムに `CWinApp` の 1 種類のオブジェクトがあります。  
+## <a name="winapp"></a>WinApp  
+ There is one `CWinApp` object in the system.  
   
- これは、.NET Framework の `WinMain`の内部実装によって静的に作成され、初期化されます。  `CWinApp` から便利な処理を行うために派生しなければなりません \(例外: 拡張 DLL は `DllMain` にされます `CWinApp` のインスタンスの初期化を指定する必要はありません\)。  
+ It is statically constructed and initialized by the framework's internal implementation of `WinMain`. You must derive from `CWinApp` to do anything useful (exception: MFC extension DLLs should not have a `CWinApp` instance — initialization is done in `DllMain` instead).  
   
- `CWinApp` の 1 種類のオブジェクトはドキュメント テンプレート \(`CPtrList`\) のリストを所有します。  一つ以上のアプリケーションに対してドキュメント テンプレートです。  DocTemplates は通常 `CWinApp::InitInstance`のリソース ファイル \(つまり、文字列配列\) から読み込まれます。  
+ The one `CWinApp` object owns a list of document templates (a `CPtrList`). There is one or more document template per application. DocTemplates are usually loaded from the resource file (that is, a string array) in `CWinApp::InitInstance`.  
   
 ```  
-pTemplate = new CDocTemplate(IDR_MYDOCUMENT, ...);  
-AddDocTemplate(pTemplate);  
+pTemplate = new CDocTemplate(IDR_MYDOCUMENT, ...);
+
+AddDocTemplate(pTemplate);
 ```  
   
- `CWinApp` の 1 種類のオブジェクトは、アプリケーションのすべてのフレーム ウィンドウを所有します。  アプリケーションのメイン フレーム ウィンドウが **CWinApp::m\_pMainWnd**に格納するように; AppWizard と自動的に許可されない場合、通常 `InitInstance` の実装の `m_pMainWnd` を設定します。  シングル ドキュメント インターフェイス \(SDI \(SDI\) のメイン アプリケーション フレーム ウィンドウ、または唯一のドキュメント フレーム ウィンドウとして動作する手段が 1 `CFrameWnd` です。  マルチ ドキュメント インターフェイス \(MDI\) では、子を `CFrameWnd`s.含むメイン アプリケーション フレーム ウィンドウとして機能する MDI フレーム \(クラス `CMDIFrameWnd`\) です。  各子ウィンドウには、クラス `CMDIChildWnd` \(`CFrameWnd`から派生\) 機能を多数のドキュメント フレーム ウィンドウを 1 文字としてそのです。  
+ The one `CWinApp` object owns all frame windows in the application. The main frame window for the application should be stored in **CWinApp::m_pMainWnd**; usually you set `m_pMainWnd` in the `InitInstance` implementation if you have not let AppWizard do it for you. For single document interface (SDI) this is one `CFrameWnd` that serves as the main application frame window as well as the only document frame window. For multiple document interface (MDI) this is an MDI-Frame (class `CMDIFrameWnd`) that serves as the main application frame window that contains all the child `CFrameWnd`s. Each child window is of class `CMDIChildWnd` (derived from `CFrameWnd`) and serves as one of potentially many document frame windows.  
   
-## DocTemplates  
- `CDocTemplate` はドキュメントの作成者および manager です。  これは、作成するドキュメントを所有します。  アプリケーションが次のリソース ベースの方法を使用した場合 `CDocTemplate`から派生する必要はありません。  
+## <a name="doctemplates"></a>DocTemplates  
+ The `CDocTemplate` is the creator and manager of documents. It owns the documents that it creates. If your application uses the resource-based approach described below, it will not need to derive from `CDocTemplate`.  
   
- SDI アプリケーションでは、クラス `CSingleDocTemplate` は 1 個の開いているドキュメントを監視します。  MDI アプリケーションでは、`CMultiDocTemplate` クラスは、テンプレートから作成されたすべての現在開いているドキュメントのリスト \(`CPtrList`\) を保持します。  `CDocTemplate::AddDocument` と `CDocTemplate::RemoveDocument` はテンプレートからドキュメントを追加または削除する仮想メンバー関数を提供します。  `CDocTemplate` は Friend です **CDocument** のそのドキュメントを作成したドキュメント テンプレートが指すように **CDocument::m\_pDocTemplate** の保護されたなバック ポインターを設定します。  
+ For an SDI application, the class `CSingleDocTemplate` keeps track of one open document. For an MDI application, the class `CMultiDocTemplate` keeps a list (a `CPtrList`) of all the currently open documents created from that template. `CDocTemplate::AddDocument` and `CDocTemplate::RemoveDocument` provide the virtual member functions for adding or removing a document from the template. `CDocTemplate` is a friend of **CDocument** so we can set the protected **CDocument::m_pDocTemplate** back pointer to point back to the doc template that created the document.  
   
- `CWinApp` が 順番にすべてのドキュメント テンプレートを呼び出す既定の `OnFileOpen` の実装を処理します。  実装は、開いているドキュメントを既に検索や、新しいドキュメントを開くどの形式を決定が含まれます。  
+ `CWinApp` handles the default `OnFileOpen` implementation, which will in turn query all the doc templates. The implementation includes looking for already open documents and deciding what format to open new documents in.  
   
- `CDocTemplate` は ドキュメントとフレームの UI のバインディングを管理します。  
+ `CDocTemplate` manages the UI binding for documents and frames.  
   
- `CDocTemplate` は 匿名のなドキュメントの数を保持します。  
+ `CDocTemplate` keeps a count of the number of unnamed documents.  
   
-## CDocument  
- **CDocument** は `CDocTemplate`によって所有されます。  
+## <a name="cdocument"></a>CDocument  
+ A **CDocument** is owned by a `CDocTemplate`.  
   
- ドキュメント `CPtrList` \(\) が表示されているドキュメントに現在開いているビューの一覧があります。`CView`から派生される\)。  
+ Documents have a list of currently open views (derived from `CView`) that are viewing the document (a `CPtrList`).  
   
- ドキュメントは作成\/破棄するためのビューが作成されると、相互に接続されます。  ドキュメントを閉じる \(つまり、ファイルを使用して、閉じる\)、すべての添付のビューが閉じます。  ドキュメントの最後のビューを閉じたとき \(つまり、ウィンドウ、閉じる\) ドキュメントが閉じます。  
+ Documents do not create/destroy the views, but they are attached to each other after they are created. When a document is closed (that is, through File/Close), all attached views will be closed. When the last view on a document is closed (that is, Window/Close) the document will be closed.  
   
- `CDocument::AddView`の `RemoveView` インターフェイスがビューのリストを保持するために使用されます。  **CDocument** は Friend です `CView` のその **CView::m\_pDocument** のバック ポインターを設定します。  
+ The `CDocument::AddView`, `RemoveView` interface is used to maintain the view list. **CDocument** is a friend of `CView` so we can set the **CView::m_pDocument** back pointer.  
   
-## CFrameWnd  
- `CFrameWnd` \(またはフレーム\) は、MFC 1.0 と同じロール、`CFrameWnd` クラスを新しいクラスを派生しないでさまざまな状況で使用するように設計されています。します。  派生クラス `CMDIFrameWnd` と `CMDIChildWnd` は、多くの標準コマンド既に実装されますが向上します。  
+## <a name="cframewnd"></a>CFrameWnd  
+ A `CFrameWnd` (also known as a frame) plays the same role as in MFC 1.0, but now the `CFrameWnd` class is designed to be used in many cases without deriving a new class. The derived classes `CMDIFrameWnd` and `CMDIChildWnd` are also enhanced so many standard commands are already implemented.  
   
- `CFrameWnd` はフレームのクライアント領域のウィンドウを作成する必要があります。  通常、フレームのクライアント領域全体を占める 1 個のメイン ウィンドウがあります。  
+ The `CFrameWnd` is responsible for creating windows in the client area of the frame. Normally there is one main window filling the client area of the frame.  
   
- MDI フレーム ウィンドウの場合、クライアント領域が順番にすべての MDI 子フレーム ウィンドウの親である MDICLIENT のコントロールが格納されます。  SDI フレーム ウィンドウまたは MDI 子フレーム ウィンドウの場合は、クライアント領域は、通常 `CView`\-派生ウィンドウ オブジェクトが格納されます。  `CSplitterWnd`の場合は、ビューのクライアント領域は、`CSplitterWnd` ウィンドウ オブジェクトと `CView`が格納されます。派生ウィンドウ オブジェクト \(分割ペインにつき 1\) は `CSplitterWnd`ウィンドウの子として作成されます。  
+ For an MDI-Frame window, the client area is filled with the MDICLIENT control which is in turn the parent of all the MDI-Child frame windows. For an SDI-Frame window or an MDI-Child frame window, the client area is usually filled with a `CView`-derived window object. In the case of `CSplitterWnd`, the client area of the view is filled with the `CSplitterWnd` window object, and the `CView`-derived window objects (one per split pane) are created as child windows of the `CSplitterWnd`.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

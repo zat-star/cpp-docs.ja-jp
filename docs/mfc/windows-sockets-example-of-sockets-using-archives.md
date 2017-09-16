@@ -1,71 +1,90 @@
 ---
-title: "Windows ソケット : アーカイブを使用するソケットの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例 [MFC], Windows ソケット"
-  - "ソケット [C++], アーカイブを使用する"
-  - "Windows ソケット [C++], アーカイブを使用する"
+title: 'Windows Sockets: Example of Sockets Using Archives | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- sockets [MFC], with archives
+- examples [MFC], Windows Sockets
+- Windows Sockets [MFC], with archives
 ms.assetid: 2e3c9bb2-7e7b-4f28-8dc5-6cb7a484edac
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# Windows ソケット : アーカイブを使用するソケットの例
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: fc51b4ea00b6511786a6a95c9a17f82ffe1f7a7c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、クラス [CSocket](../mfc/reference/csocket-class.md)使用例を示します。  例では、ソケットを通じてシリアル化するデータへの `CArchive` オブジェクトを使用しています。  これがファイルから、またはドキュメントのシリアル化ではないことに注意してください。  
+---
+# <a name="windows-sockets-example-of-sockets-using-archives"></a>Windows Sockets: Example of Sockets Using Archives
+This article presents an example of using class [CSocket](../mfc/reference/csocket-class.md). The example employs `CArchive` objects to serialize data through a socket. Note that this is not document serialization to or from a file.  
   
- `CSocket` オブジェクトを通じてデータを送受信するためにアーカイブを使用する方法を次の例に示します。  例はアプリケーション \(同じコンピューターまたはネットワーク上の別のコンピューター\) の 2 種類のデータ インスタンス設計されています。  1 個のインスタンスは、他のインスタンスを受け取り、にデータを送信します。  どのアプリケーションが交換を開始する他のアプリケーションにサーバーまたはクライアントとして動作します。  次の関数は、アプリケーションのビュー クラスで定義されています:  
+ The following example illustrates how you use the archive to send and receive data through `CSocket` objects. The example is designed so that two instances of the application (on the same machine or on different machines on the network) exchange data. One instance sends data, which the other instance receives and acknowledges. Either application can initiate an exchange, and either can act as server or as client to the other application. The following function is defined in the application's view class:  
   
- [!CODE [NVC_MFCSimpleSocket#1](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCSimpleSocket#1)]  
+ [!code-cpp[NVC_MFCSimpleSocket#1](../mfc/codesnippet/cpp/windows-sockets-example-of-sockets-using-archives_1.cpp)]  
   
- この例の重要なことは、MFC `Serialize` の相互作用する構造体の並列です。  **PacketSerialize** のメンバー関数は **else** 句との **if** のステートメントで構成されます。  関数では、パラメーターとして [CArchive](../mfc/reference/carchive-class.md) の 2 種類の参照が表示: `arData` と `arAck`。  `arData` のアーカイブ オブジェクト \(送信\) 用に設定されている場合、**if** の分岐が実行される; それ以外の場合は `arData` が読み込み \(受信\) に設定されている場合、関数は **else** の分岐を受け取ります。  MFC のシリアル化の詳細については、「[シリアル化](../mfc/how-to-make-a-type-safe-collection.md)」を参照してください。  
+ The most important thing about this example is that its structure parallels that of an MFC `Serialize` function. The **PacketSerialize** member function consists of an **if** statement with an **else** clause. The function receives two [CArchive](../mfc/reference/carchive-class.md) references as parameters: `arData` and `arAck`. If the `arData` archive object is set for storing (sending), the **if** branch executes; otherwise, if `arData` is set for loading (receiving) the function takes the **else** branch. For more information about serialization in MFC, see [Serialization](../mfc/how-to-make-a-type-safe-collection.md).  
   
 > [!NOTE]
->  `arAck` のアーカイブ オブジェクトは `arData`のオブジェクトと見なされます。  `arData` が送信する場合は、`arAck` を受け取り、その逆は true です。  
+>  The `arAck` archive object is assumed to be the opposite of `arData`. If `arData` is for sending, `arAck` receives, and the converse is true.  
   
- 送信するために、この例の関数は、ランダムなデータをわかりやすくするために生成される指定回数では、各ループします。  アプリケーションは、ファイルなどのソースから実際のデータを取得します。  `arData` アーカイブの出力ストリーム演算子 \(**\<\<**\) がデータの 3 個の連続するチャンクのストリームを送信するために使用されています:  
+ For sending, the example function loops for a specified number of times, each time generating some random data for demonstration purposes. Your application would obtain real data from some source, such as a file. The `arData` archive's insertion operator (**<<**) is used to send a stream of three consecutive chunks of data:  
   
--   データの性質を指定する「ヘッダー」 \(数枚コピーの送信先\) この場合、変数 `bValue` の値および。  
+-   A "header" that specifies the nature of the data (in this case, the value of the `bValue` variable and how many copies will be sent).  
   
-     項目は、どちらもこの例にランダムに生成されます。  
+     Both items are generated randomly for this example.  
   
--   データの指定部数。  
+-   The specified number of copies of the data.  
   
-     **for** の内側のループが `bValue` に指定された回数を送信します。  
+     The inner **for** loop sends `bValue` the specified number of times.  
   
--   文字列が受信者がユーザーに表示する `strText` と呼ばれます。  
+-   A string called `strText` that the receiver displays to its user.  
   
- 受信側の場合、関数は同じように動作します。ただし、アーカイブからデータを取得するためにアーカイブのストリーム演算子 \(**\>\>**\) を使用します。  受信側アプリケーションが受け取るデータを検証し、最終「」受信メッセージを表示し、表示する送信元のアプリケーションに「の」通知メッセージを送信しています。  
+ For receiving, the function operates similarly, except that it uses the archive's extraction operator (**>>**) to get data from the archive. The receiving application verifies the data it receives, displays the final "Received" message, and then sends back a message that says "Sent" for the sending application to display.  
   
- この通信では、コミュニケーションの反対側に表示するには」、受信「 `strText` 変数に送信されたメッセージをシミュレートするため、特定のデータ パケットの受信を受信のユーザーを指定します。  受信側は「の」と表示元の送信元の画面の表示と同様の文字列に応答します。  両方の文字列を受け取るは通常の通信が発生したことを示します。  
+ In this communications model, the word "Received", the message sent in the `strText` variable, is for display at the other end of the communication, so it specifies to the receiving user that a certain number of packets of data have been received. The receiver replies with a similar string that says "Sent", for display on the original sender's screen. Receipt of both strings indicates that successful communication has occurred.  
   
 > [!CAUTION]
->  確立された \(非 MFC\) サーバーと通信する MFC クライアント プログラムを記述したアーカイブを通じて C\+\+ オブジェクトを送信しません。  サーバーがオブジェクトの種類を把握する MFC アプリケーション送信するとき、であるオブジェクトを受け取り、逆シリアル化できません。  記事 [Windows ソケット: バイト順序](../mfc/windows-sockets-byte-ordering.md) の例は、この型の通信を示しています。  
+>  If you are writing an MFC client program to communicate with established (non-MFC) servers, do not send C++ objects through the archive. Unless the server is an MFC application that understands the kinds of objects you want to send, it won't be able to receive and deserialize your objects. An example in the article [Windows Sockets: Byte Ordering](../mfc/windows-sockets-byte-ordering.md) shows a communication of this type.  
   
- 詳細については、Windows ソケットの仕様を参照します: **htonl**、**htons**、**ntohl**、**ntohs**。  また、詳細については、"参照してください:  
+ For more information, see Windows Sockets Specification: **htonl**, **htons**, **ntohl**, **ntohs**. Also, for more information, see:  
   
--   [Windows ソケット: ソケット クラスからの派生](../mfc/windows-sockets-deriving-from-socket-classes.md)  
+-   [Windows Sockets: Deriving from Socket Classes](../mfc/windows-sockets-deriving-from-socket-classes.md)  
   
--   [Windows ソケット: アーカイブが持つソケットのしくみについて](../mfc/windows-sockets-how-sockets-with-archives-work.md)  
+-   [Windows Sockets: How Sockets with Archives Work](../mfc/windows-sockets-how-sockets-with-archives-work.md)  
   
--   [Windows ソケット: 背景](../mfc/windows-sockets-background.md)  
+-   [Windows Sockets: Background](../mfc/windows-sockets-background.md)  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)   
- [CArchive::IsStoring](../Topic/CArchive::IsStoring.md)   
- [CArchive::operator \<\<](../Topic/CArchive::operator%20%3C%3C.md)   
- [CArchive::operator \>\>](../Topic/CArchive::operator%20%3E%3E.md)   
- [CArchive::Flush](../Topic/CArchive::Flush.md)   
- [CObject::Serialize](../Topic/CObject::Serialize.md)
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)   
+ [CArchive::IsStoring](../mfc/reference/carchive-class.md#isstoring)   
+ [CArchive::operator <<](../mfc/reference/carchive-class.md#operator_lt_lt)   
+ [CArchive::operator >>](../mfc/reference/carchive-class.md#operator_lt_lt)   
+ [CArchive::Flush](../mfc/reference/carchive-class.md#flush)   
+ [CObject::Serialize](../mfc/reference/cobject-class.md#serialize)
+
+

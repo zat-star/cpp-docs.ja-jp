@@ -1,5 +1,5 @@
 ---
-title: "SYSTEMTIME Structure1 |Microsoft ドキュメント"
+title: SYSTEMTIME Structure1 | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- SYSTEMTIME structure
+- SYSTEMTIME structure [MFC]
 ms.assetid: 9aaef4d6-de79-4fa1-8158-86b245ef5bff
 caps.latest.revision: 15
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 298b2673a3eb05525683f8269fcd415d5be1c80a
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 16af580a7aea15814d1e45f4854d5ded946ebdf0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
 # <a name="systemtime-structure1"></a>SYSTEMTIME Structure1
-`SYSTEMTIME` 構造体は、月、日、年、曜日、時間、分、秒、およびミリ秒の各メンバーを使用して日付と時刻を表します。  
+The `SYSTEMTIME` structure represents a date and time using individual members for the month, day, year, weekday, hour, minute, second, and millisecond.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct _SYSTEMTIME {  
@@ -58,39 +58,39 @@ typedef struct _SYSTEMTIME {
 } SYSTEMTIME;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *wYear*  
- 現在の年です。  
+ The current year.  
   
  *wMonth*  
- 現在の月です。1 月は 1 です。  
+ The current month; January is 1.  
   
  *wDayOfWeek*  
- 現在の曜日です。日曜日 は 0、月曜日 は 1 などのように指定します。  
+ The current day of the week; Sunday is 0, Monday is 1, and so on.  
   
  *wDay*  
- 月の現在の日付です。  
+ The current day of the month.  
   
  *wHour*  
- 現在の時刻 (時間) です。  
+ The current hour.  
   
  *wMinute*  
- 現在の時刻 (分) です。  
+ The current minute.  
   
  *wSecond*  
- 現在の時刻 (秒) です。  
+ The current second.  
   
  *wMilliseconds*  
- 現在の時刻 (ミリ秒) です。  
+ The current millisecond.  
   
-## <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities&#39;](../../mfc/codesnippet/cpp/systemtime-structure1_1.cpp)]  
+## <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#39](../../mfc/codesnippet/cpp/systemtime-structure1_1.cpp)]  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** winbase.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** winbase.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CTime::CTime](../../atl-mfc-shared/reference/ctime-class.md#ctime)
 
 

@@ -1,42 +1,61 @@
 ---
-title: "イメージ リストの使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CImageList クラス, 使用"
-  - "イメージ リスト [C++]"
-  - "リスト [C++], イメージ"
+title: Using an Image List | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- lists [MFC], image
+- CImageList class [MFC], using
+- image lists [MFC]
 ms.assetid: e0aed188-a1e6-400e-9f51-033d61c5541f
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# イメージ リストの使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 28533532f589e58307ca6e5624a3faf758d24e06
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-イメージ リストの一般的な使用法がパターンに従います。:  
+---
+# <a name="using-an-image-list"></a>Using an Image List
+Typical usage of an image list follows the pattern below:  
   
--   [CImageList](../Topic/CImageList%20Class.md) オブジェクトを構築し、イメージ リストを作成し、`CImageList` オブジェクトに接続するに [作成](../Topic/CImageList::Create.md) 関数のオーバーロードの 1 を呼び出します。  
+-   Construct a [CImageList](../mfc/reference/cimagelist-class.md) object and call one of the overloads of its [Create](../mfc/reference/cimagelist-class.md#create) function to create an image list and attach it to the `CImageList` object.  
   
--   イメージ リストを作成したときにイメージを追加しない場合、[追加](../Topic/CImageList::Add.md) または [読み取り](../Topic/CImageList::Read.md) のメンバー関数を呼び出して、イメージ リストにイメージを追加します。  
+-   If you didn't add images when you created the image list, add images to the image list by calling the [Add](../mfc/reference/cimagelist-class.md#add) or [Read](../mfc/reference/cimagelist-class.md#read) member function.  
   
--   そのコントロールの適切なメンバー関数またはイメージ リストの [描画](../Topic/CImageList::Draw.md) のメンバー関数を使用して、イメージ リストのイメージの描画独自を呼び出して、イメージ リストをコントロールに関連付けます。  
+-   Associate the image list with a control by calling the appropriate member function of that control, or draw images from the image list yourself using the image list's [Draw](../mfc/reference/cimagelist-class.md#draw) member function.  
   
--   ユーザーがドラッグのイメージ リストの組み込みサポートを使用してイメージを、ドラッグすることができます。  
+-   Perhaps allow the user to drag an image, using the image list's built-in support for dragging.  
   
 > [!NOTE]
->  イメージ リストが **new** の演算子を使用して作成された場合、それが終わったとき `CImageList` オブジェクトを破棄する必要があります。  
+>  If the image list was created with the **new** operator, you must destroy the `CImageList` object when you are done with it.  
   
-## 参照  
- [CImageList の使い方](../mfc/using-cimagelist.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CImageList](../mfc/using-cimagelist.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

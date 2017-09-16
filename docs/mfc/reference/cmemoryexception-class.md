@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: CMemoryException Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -15,11 +15,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMemoryException class
-- memory exceptions
-- exceptions, memory type
-- C++ exception handling, memory
-- memory, exception handling
+- CMemoryException [MFC], CMemoryException
 ms.assetid: 9af0ed57-d12a-45ca-82b5-c910a60f7edf
 caps.latest.revision: 20
 author: mikeblome
@@ -39,36 +35,36 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 87be1b16d546791d24bbffa62207ec9ccb350139
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ed7fb0e3689129bf41b13511c70073253bb81b4a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmemoryexception-class"></a>関数のクラス
-メモリ不足例外条件を表します。  
+# <a name="cmemoryexception-class"></a>CMemoryException Class
+Represents an out-of-memory exception condition.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMemoryException : public CSimpleException  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMemoryException::CMemoryException](#cmemoryexception)|`CMemoryException` オブジェクトを構築します。|  
+|[CMemoryException::CMemoryException](#cmemoryexception)|Constructs a `CMemoryException` object.|  
   
-## <a name="remarks"></a>コメント  
- さらに認定には、実現できないことも必要はありません。 メモリ不足例外のスローによって自動的に**新しい**します。 使用して、独自のメモリ関数を記述する場合`malloc`例では後、は、メモリ不足例外をスローするためのします。  
+## <a name="remarks"></a>Remarks  
+ No further qualification is necessary or possible. Memory exceptions are thrown automatically by **new**. If you write your own memory functions, using `malloc`, for example, then you are responsible for throwing memory exceptions.  
   
- 詳細については`CMemoryException`、記事を参照して[例外処理 (MFC)](../../mfc/exception-handling-in-mfc.md)します。  
+ For more information on `CMemoryException`, see the article [Exception Handling (MFC)](../../mfc/exception-handling-in-mfc.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CException](../../mfc/reference/cexception-class.md)  
@@ -77,22 +73,22 @@ class CMemoryException : public CSimpleException
   
  `CMemoryException`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afx.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afx.h  
   
-##  <a name="cmemoryexception"></a>CMemoryException::CMemoryException  
- `CMemoryException` オブジェクトを構築します。  
+##  <a name="cmemoryexception"></a>  CMemoryException::CMemoryException  
+ Constructs a `CMemoryException` object.  
   
 ```  
 CMemoryException();  
 ```  
   
-### <a name="remarks"></a>コメント  
- このコンス トラクターを直接使用されませんではなく、グローバル関数を呼び出す[AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception)します。 割り当てられていたメモリ内の例外オブジェクトを構築するのでメモリ不足の状況でこのグローバル関数は成功しています。 例外の処理の詳細については、記事を参照してください。[例外](../exception-handling-in-mfc.md)します。  
+### <a name="remarks"></a>Remarks  
+ Do not use this constructor directly, but rather call the global function [AfxThrowMemoryException](exception-processing.md#afxthrowmemoryexception). this global function can succeed in an out-of-memory situation because it constructs the exception object in previously allocated memory. for more information about exception processing, see the article [exceptions](../exception-handling-in-mfc.md).  
   
-## <a name="see-also"></a>関連項目  
- [CException クラス](cexception-class.md)   
- [階層図](../hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CException Class](cexception-class.md)   
+ [Hierarchy Chart](../hierarchy-chart.md)
 
 
 

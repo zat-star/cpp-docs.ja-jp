@@ -1,5 +1,5 @@
 ---
-title: "CDaoQueryDefInfo 構造体 |Microsoft ドキュメント"
+title: CDaoQueryDefInfo Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - DAO (Data Access Objects), QueryDefs collection
-- CDaoQueryDefInfo structure
+- CDaoQueryDefInfo structure [MFC]
 ms.assetid: e20837dc-e78d-4171-a195-1b4075fb5d2a
 caps.latest.revision: 13
 author: mikeblome
@@ -34,17 +34,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 80e681345091ef54e2be2e3f1c1ea6ccaefd9d17
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 0c9f4f84340bb2f05289782992d2b969a1e58b9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cdaoquerydefinfo-structure"></a>CDaoQueryDefInfo 構造体
-`CDaoQueryDefInfo`構造体には、データ アクセス オブジェクト (DAO) に対して定義されているクエリ定義のオブジェクトに関する情報が含まれています。  
+# <a name="cdaoquerydefinfo-structure"></a>CDaoQueryDefInfo Structure
+The `CDaoQueryDefInfo` structure contains information about a querydef object defined for data access objects (DAO).  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 struct CDaoQueryDefInfo  
@@ -61,75 +61,75 @@ struct CDaoQueryDefInfo
 };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `m_strName`  
- クエリ定義オブジェクトの一意名します。 詳細については、DAO ヘルプの「名前プロパティ」を参照してください。 呼び出す[CDaoQueryDef::GetName](../../mfc/reference/cdaoquerydef-class.md#getname)のため、このプロパティを直接取得します。  
+ Uniquely names the querydef object. For more information, see the topic "Name Property" in DAO Help. Call [CDaoQueryDef::GetName](../../mfc/reference/cdaoquerydef-class.md#getname) to retrieve this property directly.  
   
  `m_nType`  
- クエリ定義オブジェクトの操作の型を示す値です。 値は、次のいずれかになります。  
+ A value that indicates the operational type of a querydef object. The value can be one of the following:  
   
-- **dbQSelect**選択、クエリを作成します。  
+- **dbQSelect** Select — the query selects records.  
   
-- **dbQAction**アクション-クエリは、移動、またはデータの変更レコードが返されません。  
+- **dbQAction** Action — the query moves or changes data but does not return records.  
   
-- **dbQCrosstab**クロス集計表形式: クエリでは、スプレッドシートのような形式でデータを返します。  
+- **dbQCrosstab** Crosstab — the query returns data in a spreadsheet-like format.  
   
-- **dbQDelete**削除-クエリが指定された行のセットを削除します。  
+- **dbQDelete** Delete — the query deletes a set of specified rows.  
   
-- **dbQUpdate**更新など、クエリが一連のレコードを変更します。  
+- **dbQUpdate** Update — the query changes a set of records.  
   
-- **dbQAppend** Append-クエリがテーブルまたはクエリの末尾に新しいレコードを追加します。  
+- **dbQAppend** Append — the query adds new records to the end of a table or query.  
   
-- **dbQMakeTable**テーブルの作成、クエリでは、レコード セットから新しいテーブルを作成します。  
+- **dbQMakeTable** Make-table — the query creates a new table from a recordset.  
   
-- **dbQDDL**データ定義、クエリのテーブルまたはその一部の構造に影響を与えます。  
+- **dbQDDL** Data-definition — the query affects the structure of tables or their parts.  
   
-- **dbQSQLPassThrough**パススルー-SQL ステートメントは、中間処理なしでデータベースのバックエンドに直接渡されます。  
+- **dbQSQLPassThrough** Pass-through — the SQL statement is passed directly to the database backend, without intermediate processing.  
   
-- **dbQSetOperation**共用体、クエリが&2; つの指定したすべてのレコードからデータを含むスナップショット タイプのレコード セット オブジェクトを作成または重複するレコードと他のテーブルを削除します。 重複するものは、キーワードを追加**すべて**クエリ定義の SQL ステートメントにします。  
+- **dbQSetOperation** Union — the query creates a snapshot-type recordset object containing data from all specified records in two or more tables with any duplicate records removed. To include the duplicates, add the keyword **ALL** in the querydef's SQL statement.  
   
-- **dbQSPTBulk**併用**dbQSQLPassThrough**レコードを返さないクエリを指定します。  
+- **dbQSPTBulk** Used with **dbQSQLPassThrough** to specify a query that does not return records.  
   
 > [!NOTE]
->  SQL パススルー クエリを作成するに設定しない、 **dbQSQLPassThrough**定数です。 これは自動的に設定 Microsoft Jet データベース エンジンによってクエリ定義オブジェクトを作成し、接続プロパティを設定します。  
+>  To create a SQL pass-through query, you do not set the **dbQSQLPassThrough** constant. This is set automatically by the Microsoft Jet database engine when you create a querydef object and set the Connect property.  
   
- 詳細については、DAO ヘルプの「型プロパティ」を参照してください。  
+ For more information, see the topic "Type Property" in DAO Help.  
   
  `m_dateCreated`  
- 日付とクエリ定義が作成された時刻。 クエリ定義が作成された日付を直接取得する呼び出し、 [GetDateCreated](../../mfc/reference/cdaotabledef-class.md#getdatecreated)のメンバー関数、`CDaoTableDef`テーブルに関連付けられているオブジェクト。 詳細については、次のコメントを参照してください。 DAO のヘルプでは、トピックの「作成日時、LastUpdated プロパティ」を参照してください。  
+ The date and time the querydef was created. To directly retrieve the date the querydef was created, call the [GetDateCreated](../../mfc/reference/cdaotabledef-class.md#getdatecreated) member function of the `CDaoTableDef` object associated with the table. See Comments below for more information. Also see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
  `m_dateLastUpdated`  
- 日付とクエリ定義に加えられた最新の変更の時刻。 テーブルの最終更新日を直接取得する呼び出し、 [GetDateLastUpdated](../../mfc/reference/cdaoquerydef-class.md#getdatelastupdated)クエリ定義のメンバー関数。 詳細については、次のコメントを参照してください。 DAO ヘルプの「「DateCreated LastUpdated プロパティ」を参照してください。  
+ The date and time of the most recent change made to the querydef. To directly retrieve the date the table was last updated, call the [GetDateLastUpdated](../../mfc/reference/cdaoquerydef-class.md#getdatelastupdated) member function of the querydef. See Comments below for more information. And see the topic "DateCreated, LastUpdated Properties" in DAO Help.  
   
  `m_bUpdatable`  
- クエリ定義のオブジェクトへの変更を行うことができるかどうかを示します。 このプロパティは、する場合**TRUE**は、クエリ定義は更新可能な以外の場合。 更新可能では、クエリ定義オブジェクトのクエリ定義を変更することを意味します。 クエリ定義オブジェクトの更新可能なプロパティに設定**TRUE**かどうか、クエリ定義を更新できる場合でも、結果のレコード セットは更新できません。 このプロパティを直接取得するには、クエリ定義を呼び出す[CanUpdate](../../mfc/reference/cdaoquerydef-class.md#canupdate)メンバー関数。 詳細については、DAO ヘルプの「更新可能なプロパティ」を参照してください。  
+ Indicates whether changes can be made to a querydef object. If this property is **TRUE**, the querydef is updatable; otherwise, it is not. Updatable means the querydef object's query definition can be changed. The Updatable property of a querydef object is set to **TRUE** if the query definition can be updated, even if the resulting recordset is not updatable. To retrieve this property directly, call the querydef's [CanUpdate](../../mfc/reference/cdaoquerydef-class.md#canupdate) member function. For more information, see the topic "Updatable Property" in DAO Help.  
   
  *m_bReturnsRecords*  
- 外部データベースに SQL パススルー クエリがレコードを返すかどうかを示します。 このプロパティは、する場合**TRUE**レコードが返されます。 このプロパティを直接取得する呼び出し[CDaoQueryDef::GetReturnsRecords](../../mfc/reference/cdaoquerydef-class.md#getreturnsrecords)します。 外部データベースへのすべての SQL パススルー クエリは、レコードを返します。 SQL など**更新**ステートメントは、SQL の中に、レコードを返さずにレコードを更新**選択**ステートメントはレコードを返します。 詳細については、DAO のヘルプで「レコード表示プロパティ」を参照してください。  
+ Indicates whether a SQL pass-through query to an external database returns records. If this property is **TRUE**, the query returns records. To directly retrieve this property, call [CDaoQueryDef::GetReturnsRecords](../../mfc/reference/cdaoquerydef-class.md#getreturnsrecords). Not all SQL pass-through queries to external databases return records. For example, a SQL **UPDATE** statement updates records without returning records, while a SQL **SELECT** statement does return records. For more information, see the topic "ReturnsRecords Property" in DAO Help.  
   
  *m_strSQL*  
- クエリ定義オブジェクトによって実行されるクエリを定義する SQL ステートメント。 SQL のプロパティには、レコードの選択方法、グループ化、および順序付けられたクエリを実行するときを決定する SQL ステートメントが含まれています。 ダイナセット型またはスナップショットのレコード セット オブジェクトに含めるレコードを選択するのにクエリを使用できます。 レコードを返さずにデータを変更する一括クエリを定義することもできます。 このプロパティの値を取得するには、クエリ定義を呼び出すことによって直接[GetSQL](../../mfc/reference/cdaoquerydef-class.md#getsql)メンバー関数。  
+ The SQL statement that defines the query executed by a querydef object. The SQL property contains the SQL statement that determines how records are selected, grouped, and ordered when you execute the query. You can use the query to select records to include in a dynaset- or snapshot-type recordset object. You can also define bulk queries to modify data without returning records. You can retrieve the value of this property directly by calling the querydef's [GetSQL](../../mfc/reference/cdaoquerydef-class.md#getsql) member function.  
   
  `m_strConnect`  
- パススルー クエリで使用されるデータベースのソースに関する情報を提供します。 この情報は、接続文字列の形式をとります。 詳細については、文字列を約接続し、このプロパティの値を直接取得する方法の詳細については、次を参照してください。、 [CDaoDatabase::GetConnect](../../mfc/reference/cdaodatabase-class.md#getconnect)メンバー関数。  
+ Provides information about the source of a database used in a pass-through query. This information takes the form of a connect string. For more information about connect strings, and for information about retrieving the value of this property directly, see the [CDaoDatabase::GetConnect](../../mfc/reference/cdaodatabase-class.md#getconnect) member function.  
   
  *m_nODBCTimeout*  
- Microsoft Jet データベース エンジンがタイムアウト エラーの前に待機する秒数は、ODBC データベース クエリの実行時に発生します。 Microsoft SQL Server などの ODBC データベースを使用している場合がある遅延 ODBC サーバーのネットワーク トラフィックや複雑な使用のため。 無限に待機するのではなく、Microsoft Jet エンジンがエラーを生成するまでに待機する時間を指定できます。 既定のタイムアウト値は、60 秒です。 このプロパティの値を取得するには、クエリ定義を呼び出すことによって直接[GetODBCTimeout](../../mfc/reference/cdaoquerydef-class.md#getodbctimeout)メンバー関数。 詳細については、DAO ヘルプの「補足プロパティ」を参照してください。  
+ The number of seconds the Microsoft Jet database engine waits before a timeout error occurs when a query is run on an ODBC database. When you're using an ODBC database, such as Microsoft SQL Server, there may be delays because of network traffic or heavy use of the ODBC server. Rather than waiting indefinitely, you can specify how long the Microsoft Jet engine waits before it produces an error. The default timeout value is 60 seconds. You can retrieve the value of this property directly by calling the querydef's [GetODBCTimeout](../../mfc/reference/cdaoquerydef-class.md#getodbctimeout) member function. For more information, see the topic "ODBCTimeout Property" in DAO Help.  
   
-## <a name="remarks"></a>コメント  
- クエリ定義クラスのオブジェクトである[CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md)します。 プライマリ、セカンダリ データベースを上記のすべての参照がによって情報が返される方法を示す、 [GetQueryDefInfo](../../mfc/reference/cdaodatabase-class.md#getquerydefinfo)クラスのメンバー関数`CDaoDatabase`します。  
+## <a name="remarks"></a>Remarks  
+ The querydef is an object of class [CDaoQueryDef](../../mfc/reference/cdaoquerydef-class.md). The references to Primary, Secondary, and All above indicate how the information is returned by the [GetQueryDefInfo](../../mfc/reference/cdaodatabase-class.md#getquerydefinfo) member function in class `CDaoDatabase`.  
   
- によって取得される情報、 [CDaoDatabase::GetQueryDefInfo](../../mfc/reference/cdaodatabase-class.md#getquerydefinfo)メンバー関数は、`CDaoQueryDefInfo`構造体。 呼び出す`GetQueryDefInfo`QueryDefs コレクションでのクエリ定義オブジェクトが格納されているデータベース オブジェクト用です。 `CDaoQueryDefInfo`定義して、`Dump`デバッグでのメンバー関数を作成します。 使用することができます`Dump`の内容をダンプする`CDaoQueryDefInfo`オブジェクトです。 クラス`CDaoDatabase`も直接アクセスすることで返されるプロパティのすべてのメンバー関数を提供、`CDaoQueryDefInfo`オブジェクトを呼び出す必要がありますおそらくほとんど`GetQueryDefInfo`します。  
+ Information retrieved by the [CDaoDatabase::GetQueryDefInfo](../../mfc/reference/cdaodatabase-class.md#getquerydefinfo) member function is stored in a `CDaoQueryDefInfo` structure. Call `GetQueryDefInfo` for the database object in whose QueryDefs collection the querydef object is stored. `CDaoQueryDefInfo` also defines a `Dump` member function in debug builds. You can use `Dump` to dump the contents of a `CDaoQueryDefInfo` object. Class `CDaoDatabase` also supplies member functions for directly accessing all of the properties returned in a `CDaoQueryDefInfo` object, so you will probably seldom need to call `GetQueryDefInfo`.  
   
- 新しいフィールドまたはパラメーター オブジェクトをクエリ定義オブジェクトのフィールドまたはパラメーターのコレクションに追加する場合は、基になるデータベースが新しいオブジェクトの指定されたデータ型をサポートしていない場合、例外がスローされます。  
+ When you append a new field or parameter object to the Fields or Parameters collection of a querydef object, an exception is thrown if the underlying database does not support the data type specified for the new object.  
   
- 日付と時刻の設定は、クエリ定義が作成または最後に更新されたコンピューターから派生します。 マルチ ユーザー環境で、使用して、ファイル サーバーから直接のこれらの設定を取得する必要があります、**時の net** DateCreated および LastUpdated のプロパティの設定の不一致を避けるためのコマンドです。  
+ The date and time settings are derived from the computer on which the querydef was created or last updated. In a multiuser environment, users should get these settings directly from the file server using the **net time** command to avoid discrepancies in the DateCreated and LastUpdated property settings.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxdao.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxdao.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
- [CDaoQueryDef クラス](../../mfc/reference/cdaoquerydef-class.md)   
- [CDaoDatabase クラス](../../mfc/reference/cdaodatabase-class.md)
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+ [CDaoQueryDef Class](../../mfc/reference/cdaoquerydef-class.md)   
+ [CDaoDatabase Class](../../mfc/reference/cdaodatabase-class.md)
 

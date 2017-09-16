@@ -1,45 +1,64 @@
 ---
-title: "CStatusBarCtrl オブジェクトの区画の初期化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CStatusBarCtrl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStatusBarCtrl クラス, 宣言 (部分)"
-  - "CStatusBarCtrl クラス, 簡易モード"
-  - "アイコン, 使用 (ステータス バーで)"
-  - "簡易ステータス バー"
-  - "ステータス バー, 宣言 (部分)"
-  - "ステータス バー, アイコン"
-  - "ステータス バー, 簡易モード"
+title: Initializing the Parts of a CStatusBarCtrl Object | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CStatusBarCtrl
+dev_langs:
+- C++
+helpviewer_keywords:
+- CStatusBarCtrl class [MFC], simple mode
+- status bars [MFC], declaring parts of
+- simple status bars [MFC]
+- status bars [MFC], icons
+- status bars [MFC], simple mode
+- icons, using in status bars
+- CStatusBarCtrl class [MFC], declaring parts of
 ms.assetid: 60e8f285-d2d8-424a-a6ea-2fc548370303
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# CStatusBarCtrl オブジェクトの区画の初期化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5d946ed45cebba1d0f1f54a65e6c35129d209b57
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-既定で、別のペインを使用して、ステータス バー ステータス情報が表示されます。  これらのペインは \(または部分とも呼ばれます\) 文字列、アイコン、またはその両方を含めることができます。  
+---
+# <a name="initializing-the-parts-of-a-cstatusbarctrl-object"></a>Initializing the Parts of a CStatusBarCtrl Object
+By default, a status bar displays status information using separate panes. These panes (also referred to as parts) can contain either a text string, an icon, or both.  
   
- 複数のパーツがと長さが、ステータス バーである方法を定義するために [SetParts](../Topic/CStatusBarCtrl::SetParts.md) を使用します。  ステータス バーの一部を作成したら、ステータス バーの特定の部分のテキストまたはアイコンを設定するに [SetText](../Topic/CStatusBarCtrl::SetText.md) と [SetIcon](../Topic/CStatusBarCtrl::SetIcon.md) に呼び出しを行ってください。  一度パートは、通常、コントロールに自動的に再描画されます設定されました。  
+ Use [SetParts](../mfc/reference/cstatusbarctrl-class.md#setparts) to define how many parts, and the length, the status bar will have. After you have created the parts of the status bar, make calls to [SetText](../mfc/reference/cstatusbarctrl-class.md#settext) and [SetIcon](../mfc/reference/cstatusbarctrl-class.md#seticon) to set the text or icon for a specific part of the status bar. Once the part has been successfully set, the control is automatically redrawn.  
   
- 次の例は、4 種類のペインを持つ `CStatusBarCtrl` の既存のオブジェクト \(`m_StatusBarCtrl`\) を初期化し、アイコン \(IDI\_ICON1\) と 2 番目のテキストを設定します。  
+ The following example initializes an existing `CStatusBarCtrl` object (`m_StatusBarCtrl`) with four panes and then sets an icon (IDI_ICON1) and some text in the second part.  
   
- [!code-cpp[NVC_MFCControlLadenDialog#31](../mfc/codesnippet/CPP/initializing-the-parts-of-a-cstatusbarctrl-object_1.cpp)]  
+ [!code-cpp[NVC_MFCControlLadenDialog#31](../mfc/codesnippet/cpp/initializing-the-parts-of-a-cstatusbarctrl-object_1.cpp)]  
   
- 簡単に `CStatusBarCtrl` オブジェクト モードの設定の詳細については、「[CStatusBarCtrl オブジェクト モードの設定](../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md)」を参照してください。  
+ For more information on setting the mode of a `CStatusBarCtrl` object to simple, see [Setting the Mode of a CStatusBarCtrl Object](../mfc/setting-the-mode-of-a-cstatusbarctrl-object.md).  
   
-## 参照  
- [CStatusBarCtrl の使い方](../mfc/using-cstatusbarctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CStatusBarCtrl](../mfc/using-cstatusbarctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

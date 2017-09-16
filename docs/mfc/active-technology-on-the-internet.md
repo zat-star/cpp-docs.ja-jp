@@ -1,46 +1,65 @@
 ---
-title: "インターネット上の Active テクノロジ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インターネット アプリケーション, Active テクノロジ"
+title: Active Technology on the Internet | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Internet applications [MFC], Active technology
 ms.assetid: 6f782aa1-5c2f-47a2-9e63-ddd0829d5a08
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# インターネット上の Active テクノロジ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 3286a06350fde7c345f07dce909f90c85bfb4d83
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-Active テクノロジは、世界的なインターネット用、またはイントラネットと呼ばれる企業内ネットワーク用に、動的コンテンツとアプリケーションを作成するためのオープン アーキテクチャです。  Microsoft がインターネットのプログラミングのために提供する主な技術を以下に紹介します。  
+---
+# <a name="active-technology-on-the-internet"></a>Active Technology on the Internet
+Active technology is an open platform that lets developers create exciting, dynamic content and applications for the global Internet, or for a company's internal network, known as an intranet. The major technologies provided by Microsoft for Internet programming are described below.  
   
-## ActiveX コントロール  
- ActiveX コントロールは、Web ページまたは ActiveX コントロールのコンテナー アプリケーション内に挿入できるオブジェクトで、OLE コントロールです。  ボタン、株価ティッカー、グラフ コントロールなどが該当します。  詳細については、「[インターネット上の ActiveX コントロール](../mfc/activex-controls-on-the-internet.md)」を参照してください。  
+## <a name="activex-controls"></a>ActiveX Controls  
+ ActiveX controls (formerly OLE controls) are objects that can be inserted into Web pages or any other application that is an ActiveX control container. Examples include buttons, stock tickers, and chart controls. For more information, see [ActiveX Controls on the Internet](../mfc/activex-controls-on-the-internet.md).  
   
-## Active ドキュメント  
- Active ドキュメントは、Web ブラウザーまたはドキュメント ビューアーに表示できます。  従来の埋め込みオブジェクトは、単一のページに限定され、ドキュメント内に埋め込まれて表示されました。  Active テクノロジでは、Active ドキュメントはクライアント領域のウィンドウ全体に全画面表示できます。  詳細については、「[インターネット上の Active ドキュメント](../Topic/Active%20Documents%20on%20the%20Internet.md)」を参照してください。  
+## <a name="active-documents"></a>Active Documents  
+ Active documents can be displayed by Web browsers or document viewers. Traditional embedded objects were limited to one page and were shown embedded in the document. With Active technology, the document can be displayed full frame in the entire client area window. For more information, see [Active Documents on the Internet](../mfc/active-documents-on-the-internet.md).  
   
-## インターネットでのデータのダウンロード サービス  
- インターネットでは、HTTP、FTP、Gopher などの一般的なプロトコルを使用してデータをダウンロードできます。  MFC WinInet クラスを使用すると、TCP\/IP および WinSock プロトコルを抽象化し、HTTP、FTP、Gopher の各プロトコルでデータを簡単に転送できます。  また、MFC 非同期モニカー クラスを使用すると、その他の処理を停止することなくファイルをダウンロードできるため、大きなオブジェクトを非同期的に描画できます。  詳細については、「[Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)」を参照してください。  
+## <a name="internet-data-download-services"></a>Internet Data Download Services  
+ Data can be downloaded over the Internet using common protocols: HTTP, FTP, and gopher. The MFC WinInet classes make it easy to transfer data using HTTP, FTP, and gopher protocols by abstracting the TCP/IP and WinSock protocols. The MFC asynchronous moniker classes provide a way to download files without blocking and to render large objects asynchronously. For more information, see [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md).  
   
-## アクティブ スクリプト  
- VBScript などのスクリプト言語を使用すると、Web ページにコントロールを接続して、操作機能を追加できます。  スクリプトは、サーバーからクライアントに処理を移動します。  たとえば、クライアントでフォームのエントリの妥当性を検討してから、それをサーバーに転送できます。  
+## <a name="active-scripts"></a>Active Scripts  
+ VBScript and other scripting languages connect controls and add interactive functionality to Web pages. Scripting moves processing from the server to the client. For example, form entries can be validated on the client and then sent to the server.  
   
-## HTML 拡張機能  
- コントロールとスクリプトをサポートするために、オブジェクト タグなどの HTML 拡張機能が追加されました。  
+## <a name="html-extensions"></a>HTML Extensions  
+ HTML extensions, such as the object tag, have been added to support controls and scripting.  
   
-## 参照  
- [MFC インターネット プログラミングの基礎](../mfc/mfc-internet-programming-basics.md)   
- [インターネット上の ActiveX コントロール](../mfc/activex-controls-on-the-internet.md)   
- [インターネット上の Active ドキュメント](../Topic/Active%20Documents%20on%20the%20Internet.md)   
- [Win32 インターネット拡張機能 \(WinInet\)](../mfc/win32-internet-extensions-wininet.md)
+## <a name="see-also"></a>See Also  
+ [MFC Internet Programming Basics](../mfc/mfc-internet-programming-basics.md)   
+ [ActiveX Controls on the Internet](../mfc/activex-controls-on-the-internet.md)   
+ [Active Documents on the Internet](../mfc/active-documents-on-the-internet.md)   
+ [Win32 Internet Extensions (WinInet)](../mfc/win32-internet-extensions-wininet.md)
+
+

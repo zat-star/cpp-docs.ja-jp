@@ -1,33 +1,52 @@
 ---
-title: "オーナー描画ヘッダー コントロールの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CHeaderCtrl クラス, 作成 (オーナー描画を)"
-  - "コントロール [MFC], ヘッダー"
-  - "描画, ヘッダー コントロール"
-  - "ヘッダー コントロール, オーナー描画"
-  - "オーナー描画ヘッダー コントロール"
+title: Making Owner-Drawn Header Controls | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- header controls [MFC], owner-drawn
+- drawing [MFC], header controls
+- CHeaderCtrl class [MFC], making owner-drawn
+- controls [MFC], header
+- owner-drawn header controls [MFC]
 ms.assetid: 455c113b-e8d0-400c-8690-dbb92cba0d05
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# オーナー描画ヘッダー コントロールの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 25acdcc20273eae027c4ce64e255458f4d3d9a7b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-オーナー描画項目であるヘッダー コントロール \([CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md)\) の個別の項目を定義できます。  詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]の [オーナー描画のヘッダー コントロール](http://msdn.microsoft.com/library/windows/desktop/bb775238) を参照します。  
+---
+# <a name="making-owner-drawn-header-controls"></a>Making Owner-Drawn Header Controls
+You can define individual items of a header control ([CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)) to be owner-drawn items. For more information, see [Owner-Drawn Header Controls](http://msdn.microsoft.com/library/windows/desktop/bb775238) in the Windows SDK.  
   
-## 参照  
- [CHeaderCtrl の使い方](../mfc/using-cheaderctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CHeaderCtrl](../mfc/using-cheaderctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

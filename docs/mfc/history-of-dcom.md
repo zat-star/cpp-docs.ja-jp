@@ -1,41 +1,59 @@
 ---
-title: "DCOM の歴史 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DCOM"
-  - "DCOM, 概要 (DCOM の)"
-  - "リモート オートメーション, DCOM"
+title: History of DCOM | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Remote Automation, DCOM
+- DCOM, about DCOM
+- DCOM
 ms.assetid: c21aa0ea-1396-4b52-b77f-88fb0fdd2a5c
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# DCOM の歴史
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: a932ac569b5c43aa652eeb39ae2758d33298f6ec
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-オートメーション モデルは 1993 年に最初に導入されたときに、同じコンピューターで実行するアプリケーション間でのみ使用することができます。  ただし、OLE の他、つまり COM リモート処理の新機能を含むように COM 自体が更新されたときに、「リモート処理可能」であることは、コンポーネント オブジェクト モデル \(COM\) と同じ基盤を共有するため、常に用意されています。  ローカル、操作の分散操作への移行が既存のコードにほとんど変更が必要なことが計画されています。  
+---
+# <a name="history-of-dcom"></a>History of DCOM
+When Automation was first introduced in early 1993, it was capable of being used only between applications running on the same machine. However, because it shared the same underpinnings as the rest of OLE, that is, COM (or Component Object Model), it was always intended that it would become "remotable" when COM itself was updated to include remoting capabilities. It was also planned that the transition from purely local operation to distributed operation would require little or no change to existing code.  
   
- したがって、リモート処理が「または」の平均。  ローカルは COM インターフェイスのコンシューマーがそのインターフェイスのプロバイダーと同じコンピューターに置かれ、実行すると判断しました。  たとえば、Microsoft Visual Basic では、デスクトップ コンピューターの Microsoft Excel のコピーを制御できますが、別のマシンで Excel の実行を制御できません。  分散 COM を開発することにより、インターフェイスのコンシューマーは、プロバイダー インターフェイスを実行したときと同じコンピューターに存在する必要はありません。  
+ So what does "remoting" mean Local COM dictated that the consumer of an interface reside and execute on the same machine as the provider of that interface. For example, Microsoft Visual Basic could control a copy of Microsoft Excel on your desktop machine, but it was not capable of directing the execution of Excel on another machine. With the development of distributed COM, the consumer of an interface no longer needs to reside on the same machine as that on which the interface provider executes.  
   
- COM オブジェクトがネットワーク間の作業に対応し、ローカル実行モデル \(結ばれなかったどのインターフェイスであるインターフェイス メソッドにパラメーターとしてデバイス コンテキストのハンドル\) を持つへの機能を持つインターフェイスの描画などのローカル コンピューター機能固有の信頼があります。  インターフェイス コンシューマーは特定のインターフェイスの要求を行います; このインターフェイスは、オブジェクト インスタンスの実行して \(または別のコンピューターで実行されると、指定された可能性があります。  COM の中の配布メカニズムはプロバイダーには多くのコンシューマー メソッドの呼び出しが実行されるプロバイダーの末尾に表示されるように、コンシューマーを接続します。  どの戻り値がコンシューマーに送信されます。  実際には、分布の動作は、コンシューマーとプロバイダーの両方に対して透過的です。  
+ Once COM was adapted to work across a network, then any interface that was not tied to a local execution model (some interfaces have inherent reliance on local machine facilities, such as those drawing interfaces whose methods have handles to device contexts as parameters) would have the capability of being distributed. An interface consumer would make a request for a given interface; that interface may be provided by an instance of an object running (or to be run) on a different machine. The distribution mechanism inside COM would connect the consumer to the provider in such a way that method calls made by the consumer would appear at the provider end, where they would be executed. Any return values would then be sent back to the consumer. To all intents and purposes, the act of distribution is transparent to both the consumer and the provider.  
   
- このようなさまざまな COM で存在します。  DCOM がバージョン 4.0 と記述して Windows NT 以降のバージョン \(「分散 COM に」\) Windows 2000 が付属しています。  後で 1996 年以降、または Windows 9x、のようになります。  いずれの場合も、DCOM が置換と追加の DLL で設定を、ローカルおよびリモート COM 機能を提供するユーティリティで構成されます。  これらは、Win32 ベースのプラットフォーム固有の一部であり、他のプラットフォームで他の組織で使用できるように、時間の経過とともに表示されます。  
+ Such a variety of COM does now exist. DCOM (for "distributed COM") has shipped with versions of Windows NT beginning with version 4.0 and including Windows 2000. Since late 1996, it has also been available for Windows 9x. In both cases, DCOM comprises a set of replacement and additional DLLs, with some utilities, which provide both local and remote COM capabilities. It is therefore now an inherent part of Win32-based platforms, and will be made available on other platforms by other organizations over time.  
   
-## このセクションの内容  
- [リモート オートメーションの場所に最適です。](../mfc/where-does-remote-automation-fit-in-q.md)  
+## <a name="in-this-section"></a>In This Section  
+ [Where Does Remote Automation Fit In](where-does-remote-automation-fit-in-q.md)  
   
- [リモート オートメーションは何を提供します。](../mfc/what-does-remote-automation-provide-q.md)  
+ [What Does Remote Automation Provide](what-does-remote-automation-provide-q.md)  
   
-## 参照  
- [リモート オートメーション](../mfc/remote-automation.md)
+## <a name="see-also"></a>See Also  
+ [Remote Automation](../mfc/remote-automation.md)
+

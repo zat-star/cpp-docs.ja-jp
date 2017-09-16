@@ -1,5 +1,5 @@
 ---
-title: "uniform_real_distribution クラス | Microsoft Docs"
+title: uniform_real_distribution Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,7 +9,6 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- uniform_real_distribution
 - random/std::uniform_real_distribution
 - random/std::uniform_real_distribution::reset
 - random/std::uniform_real_distribution::a
@@ -27,7 +26,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- uniform_real_distribution class
+- std::uniform_real_distribution [C++]
+- std::uniform_real_distribution [C++], reset
+- std::uniform_real_distribution [C++], a
+- std::uniform_real_distribution [C++], b
+- std::uniform_real_distribution [C++], param
+- std::uniform_real_distribution [C++], min
+- std::uniform_real_distribution [C++], max
+- std::uniform_real_distribution [C++], param_type
+- std::uniform_real_distribution [C++], param_type
 ms.assetid: 5cf906fd-0319-4984-b21b-98425cd7532d
 caps.latest.revision: 18
 author: corob-msft
@@ -47,17 +54,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 34c8090f40b4653f4c8798ffac404dc1652f7b52
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 0534c96f521c4bbe60647f0b644342c272b07209
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="uniformrealdistribution-class"></a>uniform_real_distribution クラス
-下限を含み上限を含まない出力範囲内で、浮動小数点の一様 (すべての値の可能性が同様である) 分布を生成します。  
+# <a name="uniformrealdistribution-class"></a>uniform_real_distribution Class
+Generates a uniform (every value is equally probable) floating-point distribution within an output range that is inclusive-exclusive.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
 ```  
 template<class RealType = double>
    class uniform_real_distribution {
@@ -87,31 +94,31 @@ public:
    result_type max() const;
 };
  ``` 
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *RealType*  
-浮動小数点の結果の型は、既定では `double` です。 使用可能な型については、[\<random>](../standard-library/random.md) をご覧ください。  
+The floating-point result type, defaults to `double`. For possible types, see [\<random>](../standard-library/random.md).  
   
-## <a name="remarks"></a>コメント  
-このテンプレート クラスは、すべての値の可能性が同様となるように、分布を使用してユーザー指定の整数浮動小数点型の値を生成する、下限を含み上限を含まない分布を表します。 次の表は、個々のメンバーに関する記事にリンクしています。  
+## <a name="remarks"></a>Remarks  
+The template class describes an inclusive-exclusive distribution that produces values of a user-specified integral floating point type with a distribution so that every value is equally probable. The following table links to articles about individual members.  
   
 ||||  
 |-|-|-|  
 |[uniform_real_distribution](#uniform_real_distribution)|`uniform_real_distribution::a`|`uniform_real_distribution::param`|  
 |`uniform_real_distribution::operator()`|`uniform_real_distribution::b`|[param_type](#param_type)|  
   
-プロパティ メンバー `a()` は、現在格納されている分布の最小限度値を返し、`b()` は、現在格納されている最大限度値を返します。 この分布クラスの場合、これらの最小値と最大値は、「[\<random>](../standard-library/random.md)」トピックで説明されている一般的なプロパティ関数 `min()` と `max()` で返される値と同じです。  
+The property member `a()` returns the currently stored minimum bound of the distribution, while `b()` returns the currently stored maximum bound. For this distribution class, these minimum and maximum values are the same as those returned by the common property functions `min()` and `max()` described in the [\<random>](../standard-library/random.md) topic.  
   
-プロパティ メンバー `param()` は、格納されている分布パラメーター パッケージ `param_type` を設定または返します。  
+The property member `param()` sets or returns the `param_type` stored distribution parameter package.  
 
-メンバー関数の `min()` と `max()` はそれぞれ、考えられる結果の最小値と最大値を返します。  
+The `min()` and `max()` member functions return the smallest possible result and largest possible result, respectively.  
   
-`reset()` メンバー関数は、次回 `operator()` を呼び出したときに、その結果が、その前にエンジンから取得された値に左右されないようにするため、キャッシュされている値をすべて破棄します。  
+The `reset()` member function discards any cached values, so that the result of the next call to `operator()` does not depend on any values obtained from the engine before the call.  
   
-`operator()` メンバー関数は、現在のパラメーター パッケージと指定したパラメーター パッケージのいずれかから、URNG エンジンに基づいて次に生成された値を返します。
+The `operator()` member functions return the next generated value based on the URNG engine, either from the current parameter package, or the specified parameter package.
   
-分布クラスとそのメンバーの詳細については、[\<random>](../standard-library/random.md) をご覧ください。  
+For more information about distribution classes and their members, see [\<random>](../standard-library/random.md).  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // compile with: /EHsc /W4  
@@ -189,38 +196,38 @@ Distribution for 10 samples:
          10: 0.8795716566
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** \<random>  
+## <a name="requirements"></a>Requirements  
+ **Header:** \<random>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
 ##  <a name="uniform_real_distribution"></a>  uniform_real_distribution::uniform_real_distribution  
-分布を作成します。  
+Constructs the distribution.  
   
 ```  
 explicit uniform_real_distribution(result_type a = 0.0, result_type b = 1.0);
 explicit uniform_real_distribution(const param_type& parm);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *a*  
-乱数値の下限 (包含的)。  
+The lower bound for random values, inclusive.  
   
 *b*  
-乱数値の上限 (排他的)。  
+The upper bound for random values, exclusive.  
   
 *parm*  
-分布の作成に使用される `param_type` の構造体。  
+The `param_type` structure used to construct the distribution.  
   
-### <a name="remarks"></a>コメント  
- **前提条件:** `a < b`  
+### <a name="remarks"></a>Remarks  
+ **Precondition:** `a < b`  
   
-1 つ目のコンストラクターは、格納されている値 `a` と `b` にそれぞれ *a* と *b* の値を保持するオブジェクトを作成します。  
+The first constructor constructs an object whose stored `a` value holds the value *a* and whose stored `b` value holds the value *b*.  
   
-2 つ目のコンストラクターは、格納されているパラメーターが *parm* から初期化されるオブジェクトを作成します。 `param()` メンバー関数を呼び出すと、既存の分布の現在のパラメーターを取得および設定できます。  
+The second constructor constructs an object whose stored parameters are initialized from *parm*. You can obtain and set the current parameters of an existing distribution by calling the `param()` member function.  
   
 ##  <a name="param_type"></a>  uniform_real_distribution::param_type  
- 分布のすべてのパラメーターを格納します。  
+ Stores all the parameters of the distribution.  
   
 ```  
 struct param_type {  
@@ -233,22 +240,22 @@ struct param_type {
    bool operator!=(const param_type& right) const;
    };  
 ```  
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
 *a*  
-乱数値の下限 (包含的)。  
+The lower bound for random values, inclusive.  
   
 *b*  
-乱数値の上限 (排他的)。  
+The upper bound for random values, exclusive.  
   
 *right*  
-このオブジェクトと比較する `param_type` オブジェクト。  
+The `param_type` object to compare to this.  
   
-### <a name="remarks"></a>コメント  
- **前提条件:** `a < b`  
+### <a name="remarks"></a>Remarks  
+ **Precondition:** `a < b`  
   
-この構造体は、インスタンス化時に分布のクラス コンストラクターに渡したり、`param()` メンバー関数に渡して、既存の分布の格納されているパラメーターを設定したり、`operator()` に渡して、格納されているパラメーターの代わりに使用したりすることができます。  
+This structure can be passed to the distribution's class constructor at instantiation, to the `param()` member function to set the stored parameters of an existing distribution, and to `operator()` to be used in place of the stored parameters.  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>See Also  
  [\<random>](../standard-library/random.md)
 
 

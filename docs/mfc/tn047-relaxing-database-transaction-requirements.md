@@ -1,33 +1,52 @@
 ---
-title: "テクニカル ノート 47: データベース トランザクション条件の緩和 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.data"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "TN047"
+title: 'TN047: Relaxing Database Transaction Requirements | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.data
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN047
 ms.assetid: f93c51cf-a8c0-43d0-aa47-7bcb8333d693
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# テクニカル ノート 47: データベース トランザクション条件の緩和
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 2ea5b26d266d064b9966620a4f05473644421f71
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC ODBC データベース クラスのトランザクションの要件について検討したこのテクニカル ノートは今後使用しません。  MFC 4.2 以前では、データベース クラスは、カーソルが **CommitTrans** または **Rollback** 操作の後でレコードセットに保持されていることが必要です。  ODBC ドライバーは、DBMS カーソルの保持にこのレベルをサポートしない場合は、データベース クラスは、トランザクションを有効にします。  
+---
+# <a name="tn047-relaxing-database-transaction-requirements"></a>TN047: Relaxing Database Transaction Requirements
+This tech note, which discussed the transaction requirements of the MFC ODBC database classes, is now obsolete. Before MFC 4.2, the database classes required that cursors be preserved on recordsets after a **CommitTrans** or **Rollback** operation. If the ODBC driver and DBMS did not support this level of cursor preservation, then the database classes did not enable transactions.  
   
- MFC 4.2 以降では、データベース クラスは、カーソルの保持を要求する場合の制限を緩めました。  トランザクションは、ドライバーでサポートすると有効になります。  ただし、レコードセットを開くには **CommitTrans** または **Rollback** 操作の影響を確認する必要があります。  詳細については、"メンバー関数 [CDatabase::GetCursorCommitBehavior](../Topic/CDatabase::GetCursorCommitBehavior.md) と [CDatabase::GetCursorRollbackBehavior](../Topic/CDatabase::GetCursorRollbackBehavior.md) を参照してください。  
+ Beginning with MFC 4.2, the database classes have relaxed the restriction of requiring cursor preservation. Transactions will be enabled if the driver supports them. However, you must now check the effect of a **CommitTrans** or **Rollback** operation on open recordsets. See the member functions [CDatabase::GetCursorCommitBehavior](../mfc/reference/cdatabase-class.md#getcursorcommitbehavior) and [CDatabase::GetCursorRollbackBehavior](../mfc/reference/cdatabase-class.md#getcursorrollbackbehavior) for more information.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

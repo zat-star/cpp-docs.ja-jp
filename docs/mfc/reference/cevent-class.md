@@ -1,5 +1,5 @@
 ---
-title: "CEvent クラス |Microsoft ドキュメント"
+title: CEvent Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,9 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- synchronization objects, event
-- synchronization classes, CEvent class
-- CEvent class
+- CEvent [MFC], CEvent
+- CEvent [MFC], PulseEvent
+- CEvent [MFC], ResetEvent
+- CEvent [MFC], SetEvent
+- CEvent [MFC], Unlock
 ms.assetid: df676042-ce27-4702-800a-e73ff4f44395
 caps.latest.revision: 27
 author: mikeblome
@@ -41,73 +43,73 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 9edadeec87cf04ae6166c173c65463d1509eb1d8
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 07229413827af29688caffbff9b2ccbd6b113f4e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cevent-class"></a>CEvent クラス
-別のイベントが発生したことを通知する&1; つのスレッドを有効にする同期オブジェクトであるイベントを表します。  
+# <a name="cevent-class"></a>CEvent Class
+Represents an event, which is a synchronization object that enables one thread to notify another that an event has occurred.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CEvent : public CSyncObject  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CEvent::CEvent](#cevent)|`CEvent` オブジェクトを構築します。|  
+|[CEvent::CEvent](#cevent)|Constructs a `CEvent` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CEvent::PulseEvent](#pulseevent)|セットは使用可能なイベント (シグナル状態になる)、待機中のスレッドを解放し、使用できなくするイベントを (非シグナル) に設定します。|  
-|[CEvent::ResetEvent](#resetevent)|(非シグナル) を使用できないイベントを設定します。|  
-|[CEvent::SetEvent](#setevent)|(シグナル) を使用可能なイベントを設定し、待機中のスレッドを解放します。|  
-|[CEvent::Unlock](#unlock)|イベント オブジェクトを解放します。|  
+|[CEvent::PulseEvent](#pulseevent)|Sets the event to available (signaled), releases waiting threads, and sets the event to unavailable (nonsignaled).|  
+|[CEvent::ResetEvent](#resetevent)|Sets the event to unavailable (nonsignaled).|  
+|[CEvent::SetEvent](#setevent)|Sets the event to available (signaled) and releases any waiting threads.|  
+|[CEvent::Unlock](#unlock)|Releases the event object.|  
   
-## <a name="remarks"></a>コメント  
- イベントは、スレッドがそのタスクを実行するタイミングを知る必要があるときに便利です。 たとえば、データ アーカイブにデータをコピーするスレッドは、新しいデータを利用可能な場合に通知する必要があります。 使用して、`CEvent`オブジェクトに新しいデータがある場合は、コピー スレッドを通知する、スレッドがそのタスクをできるだけ早く行うことができます。  
+## <a name="remarks"></a>Remarks  
+ Events are useful when a thread must know when to perform its task. For example, a thread that copies data to a data archive must be notified when new data is available. By using a `CEvent` object to notify the copy thread when new data is available, the thread can perform its task as soon as possible.  
   
- `CEvent`オブジェクトが&2; 種類あります。 手動および自動です。  
+ `CEvent` objects have two types: manual and automatic.  
   
- 自動`CEvent`には、少なくとも&1; つのスレッドが解放された後、このオブジェクトは、自動的に非シグナル状態 (利用不可) の状態を返します。 既定では、`CEvent`しない限り、オブジェクトが自動`TRUE`の`bManualReset`の構築時にパラメーター。  
+ An automatic `CEvent` object automatically returns to a non-signaled (unavailable) state after at least one thread is released. By default, a `CEvent` object is automatic unless you pass `TRUE` for the `bManualReset` parameter during construction.  
   
- 手動`CEvent`オブジェクトで設定された状態に保持[SetEvent](#setevent)または[ResetEvent](#resetevent)他の関数が呼び出されるまでです。 手動で作成する`CEvent`オブジェクトを渡す`TRUE`の`bManualReset`の構築時にパラメーター。  
+ A manual `CEvent` object stays in the state set by [SetEvent](#setevent) or [ResetEvent](#resetevent) until the other function is called. To create a manual `CEvent` object, pass `TRUE` for the `bManualReset` parameter during construction.  
   
- 使用する、`CEvent`オブジェクト、構築、`CEvent`オブジェクトが必要な場合です。 待機し、アプリケーションが最初に所有しているを指定するイベントの名前を指定します。 コンス トラクターから戻るときに、イベントを表示できます。 呼び出す[SetEvent](#setevent)信号 (可能化すること) にイベント オブジェクトと、呼び出し[Unlock](#unlock)したら被制御リソースにアクセスします。  
+ To use a `CEvent` object, construct the `CEvent` object when it is required. Specify the name of the event you want to wait on, and also specify that your application should initially own it. You can then access the event when the constructor returns. Call [SetEvent](#setevent) to signal (make available) the event object and then call [Unlock](#unlock) when you are done accessing the controlled resource.  
   
- 別の方法を使用するため`CEvent`オブジェクトは、型の変数を追加する`CEvent`を制御クラスにデータ メンバーとして参加します。 コンス トラクターを呼び出す、制御されるオブジェクトの構築時に、`CEvent`データ メンバーおよびイベントが最初に通知するかどうか、およびイベント オブジェクトが、(これは、プロセス境界で使用されます) 場合、イベントの名前の型を指定し、セキュリティの属性します。  
+ An alternative method for using `CEvent` objects is to add a variable of type `CEvent` as a data member to the class you want to control. During construction of the controlled object, call the constructor of the `CEvent` data member and specify whether the event is initially signaled, and also specifythe type of event object you want, the name of the event (if it will be used across process boundaries), and any security attributes you want.  
   
- 制御されるリソースにアクセスする、`CEvent`オブジェクトのこの方法では、まずいずれかの型の変数を作成[CSingleLock](../../mfc/reference/csinglelock-class.md)または型[CMultiLock](../../mfc/reference/cmultilock-class.md)リソースのアクセス方法にします。 まず、`Lock`ロック オブジェクトのメソッド (たとえば、 [CMultiLock::Lock](../../mfc/reference/cmultilock-class.md#lock))。 この時点で、スレッドがいずれかにアクセス リソース、リソースを解放して、アクセスを取得またはリソースが解放されるまでの待機に待機、タイムアウトが発生しリソースにアクセスするために失敗します。 いずれの場合、リソースは、スレッド セーフな方法でアクセスがあった。 リソースを解放する呼び出し`SetEvent`イベント オブジェクトを通知し、使用する、`Unlock`ロック オブジェクトのメソッド (たとえば、 [CMultiLock::Unlock](../../mfc/reference/cmultilock-class.md#unlock))、させたり、ロック オブジェクトがスコープから除外します。  
+ To access a resource controlled by a `CEvent` object in this manner, first create a variable of either type [CSingleLock](../../mfc/reference/csinglelock-class.md) or type [CMultiLock](../../mfc/reference/cmultilock-class.md) in the access method of your resource. Then call the `Lock` method of the lock object (for example, [CMultiLock::Lock](../../mfc/reference/cmultilock-class.md#lock)). At this point, your thread will either gain access to the resource, wait for the resource to be released and gain access, or wait for the resource to be released, time out, and fail to gain access to the resource. In any case, your resource has been accessed in a thread-safe manner. To release the resource, call `SetEvent` to signal the event object, and then use the `Unlock` method of the lock object (for example, [CMultiLock::Unlock](../../mfc/reference/cmultilock-class.md#unlock)), or let the lock object fall out of scope.  
   
- 使用する方法の詳細についての`CEvent`オブジェクトを参照してください[マルチ スレッド: 同期クラスを使用する方法](../../parallel/multithreading-how-to-use-the-synchronization-classes.md)します。  
+ For more information about how to use `CEvent` objects, see [Multithreading: How to Use the Synchronization Classes](../../parallel/multithreading-how-to-use-the-synchronization-classes.md).  
   
-## <a name="example"></a>例  
- [!code-cpp[NVC_MFC_Utilities #&45;](../../mfc/codesnippet/cpp/cevent-class_1.cpp)]  
+## <a name="example"></a>Example  
+ [!code-cpp[NVC_MFC_Utilities#45](../../mfc/codesnippet/cpp/cevent-class_1.cpp)]  
   
- [!code-cpp[NVC_MFC_Utilities&#46;](../../mfc/codesnippet/cpp/cevent-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_Utilities#46](../../mfc/codesnippet/cpp/cevent-class_2.cpp)]  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
- [関数](../../mfc/reference/csyncobject-class.md)  
+ [CSyncObject](../../mfc/reference/csyncobject-class.md)  
   
  `CEvent`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxmt.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxmt.h  
   
-##  <a name="cevent"></a>CEvent::CEvent  
- 名前付き、または名前を作成`CEvent`オブジェクトです。  
+##  <a name="cevent"></a>  CEvent::CEvent  
+ Constructs a named or unnamed `CEvent` object.  
   
 ```  
 CEvent(
@@ -117,87 +119,87 @@ CEvent(
     LPSECURITY_ATTRIBUTES lpsaAttribute = NULL);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `bInitiallyOwn`  
- 場合**TRUE**のスレッド、 **CMultilock**または`CSingleLock`オブジェクトが有効になっています。 それ以外の場合、リソースにアクセスするすべてのスレッドは待機する必要があります。  
+ If **TRUE**, the thread for the **CMultilock** or `CSingleLock` object is enabled. Otherwise, all threads wanting to access the resource must wait.  
   
  *bManualReset*  
- 場合**TRUE**、イベント オブジェクトは、手動のイベントか、それ以外の場合、イベント オブジェクトは、自動のイベントを指定します。  
+ If **TRUE**, specifies that the event object is a manual event, otherwise the event object is an automatic event.  
   
  `lpszName`  
- `CEvent` オブジェクトの名前。 プロセス境界をまたいでオブジェクトを使用する場合を指定する必要があります。 コンス トラクターは、ビルド、新しい名前には、既存のイベントが一致すると、`CEvent`その名前のイベントを参照するオブジェクト。 名前には、イベントではない既存の同期オブジェクトが一致すると、構築が失敗します。 場合**NULL**名前は null になります。  
+ Name of the `CEvent` object. Must be supplied if the object will be used across process boundaries. If the name matches an existing event, the constructor builds a new `CEvent` object which references the event of that name. If the name matches an existing synchronization object that is not an event, the construction will fail. If **NULL**, the name will be null.  
   
  `lpsaAttribute`  
- イベント オブジェクトのセキュリティ属性。 この構造体の詳細については、次を参照してください。 [SECURITY_ATTRIBUTES](http://msdn.microsoft.com/library/windows/desktop/aa379560)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Security attributes for the event object. For a full description of this structure, see [SECURITY_ATTRIBUTES](http://msdn.microsoft.com/library/windows/desktop/aa379560) in the Windows SDK.  
   
-### <a name="remarks"></a>コメント  
- アクセスまたはリリース、`CEvent`オブジェクトは、作成、 [CMultiLock](../../mfc/reference/cmultilock-class.md)または[CSingleLock](../../mfc/reference/csinglelock-class.md)オブジェクトと呼び出しの[ロック](../../mfc/reference/csinglelock-class.md#lock)と[Unlock](../../mfc/reference/csinglelock-class.md#unlock)メンバー関数。  
+### <a name="remarks"></a>Remarks  
+ To access or release a `CEvent` object, create a [CMultiLock](../../mfc/reference/cmultilock-class.md) or [CSingleLock](../../mfc/reference/csinglelock-class.md) object and call its [Lock](../../mfc/reference/csinglelock-class.md#lock) and [Unlock](../../mfc/reference/csinglelock-class.md#unlock) member functions.  
   
- 状態を変更する、`CEvent`シグナル状態にオブジェクト (スレッドがない待機する) を呼び出す[SetEvent](#setevent)または[PulseEvent](#pulseevent)します。 状態を設定する、`CEvent`非シグナル状態にオブジェクト (スレッド待つ必要があります)、呼び出す[ResetEvent](#resetevent)します。  
+ To change the state of a `CEvent` object to signaled (threads do not have to wait), call [SetEvent](#setevent) or [PulseEvent](#pulseevent). To set the state of a `CEvent` object to nonsignaled (threads must wait), call [ResetEvent](#resetevent).  
   
 > [!IMPORTANT]
->  作成した後、`CEvent`オブジェクトを使用[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)をミュー テックスがまだ存在していないことを確認します。 ミュー テックスが予期せず存在して問題のあるプロセスが発生したり、悪意を持って、ミュー テックスを使用するつもりが可能性があります。 ここでは、セキュリティ意識の推奨手順が、ハンドルを閉じるし、クリックすると、オブジェクトの作成でエラーが発生しました。  
+>  After creating the `CEvent` object, use [GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360) to ensure that the mutex didn't already exist. If the mutex did exist unexpectedly, it may indicate a rogue process is squatting and may be intending to use the mutex maliciously. In this case, the recommended security-conscious procedure is to close the handle and continue as if there was a failure in creating the object.  
   
-##  <a name="pulseevent"></a>CEvent::PulseEvent  
- (使用可能) イベントをシグナルの状態を設定の待機中のスレッドを解放し、非シグナル状態 (利用不可) に自動的にリセットします。  
+##  <a name="pulseevent"></a>  CEvent::PulseEvent  
+ Sets the state of the event to signaled (available), releases any waiting threads, and resets it to nonsignaled (unavailable) automatically.  
   
 ```  
 BOOL PulseEvent();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- イベントが手動の場合は、待機中のすべてのスレッドがリリースされる、イベントが非シグナル状態に設定されてと`PulseEvent`を返します。 イベントが自動の場合は、1 つのスレッドがリリースされたら、イベントが非シグナル状態に設定されてと`PulseEvent`を返します。  
+### <a name="remarks"></a>Remarks  
+ If the event is manual, all waiting threads are released, the event is set to nonsignaled, and `PulseEvent` returns. If the event is automatic, a single thread is released, the event is set to nonsignaled, and `PulseEvent` returns.  
   
- 待機しているスレッドがないか、すぐに解放する`PulseEvent`するイベントの状態を非シグナル状態に設定し、返します。  
+ If no threads are waiting, or no threads can be released immediately, `PulseEvent` sets the state of the event to nonsignaled and returns.  
   
- `PulseEvent`基になる Win32 を使用して`PulseEvent`待機状態からカーネル モードの非同期プロシージャ コールによって一時的に削除できる関数です。 したがって、`PulseEvent`の信頼性が低いと、新しいアプリケーションでは使用しない必要があります。 詳細については、次を参照してください。、 [PulseEvent 関数](http://msdn.microsoft.com/library/windows/desktop/ms684914)します。  
+ `PulseEvent` uses the underlying Win32 `PulseEvent` function, which can be momentarily removed from the wait state by a kernel-mode asynchronous procedure call. Therefore, `PulseEvent` is unreliable and should not be used by new applications. For more information, see the [PulseEvent function](http://msdn.microsoft.com/library/windows/desktop/ms684914).  
   
-##  <a name="resetevent"></a>CEvent::ResetEvent  
- 設定するイベントの状態まで非シグナル状態に明示的にシグナル状態に設定、 [SetEvent](#setevent)メンバー関数。  
+##  <a name="resetevent"></a>  CEvent::ResetEvent  
+ Sets the state of the event to nonsignaled until explicitly set to signaled by the [SetEvent](#setevent) member function.  
   
 ```  
 BOOL ResetEvent();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function was successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- これにより、すべてのスレッドが待機するには、このイベントにアクセスしたいです。  
+### <a name="remarks"></a>Remarks  
+ This causes all threads wishing to access this event to wait.  
   
- このメンバー関数は、自動イベントでは使用されません。  
+ This member function is not used by automatic events.  
   
-##  <a name="setevent"></a>CEvent::SetEvent  
- 待機中のスレッドを解放するイベントをシグナルの状態を設定します。  
+##  <a name="setevent"></a>  CEvent::SetEvent  
+ Sets the state of the event to signaled, releasing any waiting threads.  
   
 ```  
 BOOL SetEvent();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。 それ以外の場合に 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function was successful, otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- イベントをまでシグナル状態になりますが、イベントが手動の場合は、 [ResetEvent](#resetevent)が呼び出されます。 ここでは、複数のスレッドが解放できます。 イベントが自動の場合は、1 つのスレッドが解放されるまで、イベントがシグナル状態残ります。 システムは、非シグナル状態イベントの状態が設定されます。 待機しているスレッドがない場合、状態は、1 つのスレッドが解放されるまでシグナル状態のままです。  
+### <a name="remarks"></a>Remarks  
+ If the event is manual, the event will remain signaled until [ResetEvent](#resetevent) is called. More than one thread can be released in this case. If the event is automatic, the event will remain signaled until a single thread is released. The system will then set the state of the event to nonsignaled. If no threads are waiting, the state remains signaled until one thread is released.  
   
-##  <a name="unlock"></a>CEvent::Unlock  
- イベント オブジェクトを解放します。  
+##  <a name="unlock"></a>  CEvent::Unlock  
+ Releases the event object.  
   
 ```  
 BOOL Unlock();
 ```  
   
-### <a name="return-value"></a>戻り値  
- 自動イベントをイベント オブジェクトと、イベント、スレッドが所有している場合は 0 以外にはそれ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the thread owned the event object and the event is an automatic event; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- 解放するが、終了後、ロック オブジェクトが再利用することがある場合の自動イベントを現在所有するスレッドによって呼び出されます。 ロック オブジェクトは、再利用することはありませんが場合、この関数は、ロック オブジェクトのデストラクターを呼び出せません。  
+### <a name="remarks"></a>Remarks  
+ This member function is called by threads that currently own an automatic event to release it after they are done, if their lock object is to be reused. If the lock object is not to be reused, this function will be called by the lock object's destructor.  
   
-## <a name="see-also"></a>関連項目  
- [関数のクラス](../../mfc/reference/csyncobject-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)
+## <a name="see-also"></a>See Also  
+ [CSyncObject Class](../../mfc/reference/csyncobject-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)
 
 

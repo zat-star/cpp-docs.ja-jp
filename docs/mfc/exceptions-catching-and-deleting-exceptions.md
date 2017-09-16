@@ -1,64 +1,83 @@
 ---
-title: "例外処理 : 例外のキャッチと削除 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AND_CATCH マクロ"
-  - "catch ブロック, キャッチと削除 (例外を)"
-  - "例外処理, キャッチと削除 (例外を)"
-  - "例外, 削除"
-  - "実行, 戻る (catch ブロック内から)"
-  - "try-catch 例外処理, キャッチと削除 (例外を)"
+title: 'Exceptions: Catching and Deleting Exceptions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- exceptions [MFC], deleting
+- AND_CATCH macro [MFC]
+- try-catch exception handling [MFC], catching and deleting exceptions
+- exception handling [MFC], catching and deleting exceptions
+- catch blocks [MFC], catching and deleting exceptions
+- execution [MFC], returns from within catch block
 ms.assetid: 7c233ff0-89de-4de0-a68a-9e9cdb164311
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 例外処理 : 例外のキャッチと削除
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 24544b69849dca2425cdd0df6e7919c89f0a1e72
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-次の手順と例は、例外をキャッチして削除する方法を説明します。  **try**、**catch**と `throw` キーワードの詳細については、「[C\+\+ Exception Handling](../cpp/cpp-exception-handling.md)」を参照してください。  
+---
+# <a name="exceptions-catching-and-deleting-exceptions"></a>Exceptions: Catching and Deleting Exceptions
+The following instructions and examples show you how to catch and delete exceptions. For more information on the **try**, **catch**, and `throw` keywords, see [C++ Exception Handling](../cpp/cpp-exception-handling.md).  
   
- 例外ハンドラーをそのコードが例外をキャッチするたびに例外を削除に失敗すると、メモリ リークが発生するため、処理する例外オブジェクトを削除する必要があります。  
+ Your exception handlers must delete exception objects they handle, because failure to delete the exception causes a memory leak whenever that code catches an exception.  
   
- **catch** ブロックは次の場合に例外を削除する必要があります:  
+ Your **catch** block must delete an exception when:  
   
--   **catch** ブロックは新しい例外をスローします。  
+-   The **catch** block throws a new exception.  
   
-     。同じ例外を再びスローすれば、例外を削除する必要があります:  
+     Of course, you must not delete the exception if you throw the same exception again:  
   
-     [!code-cpp[NVC_MFCExceptions#3](../mfc/codesnippet/CPP/exceptions-catching-and-deleting-exceptions_1.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#3](../mfc/codesnippet/cpp/exceptions-catching-and-deleting-exceptions_1.cpp)]  
   
--   **catch** ブロック内から実行を返します。  
+-   Execution returns from within the **catch** block.  
   
 > [!NOTE]
->  `CException`を削除した場合、例外を削除するに **削除** メンバー関数を使用します。  例外がヒープには失敗する可能性があるため、**delete** キーワードを使用しないでください。  
+>  When deleting a `CException`, use the **Delete** member function to delete the exception. Do not use the **delete** keyword, because it can fail if the exception is not on the heap.  
   
-#### 例外をキャッチするか、または削除するには  
+#### <a name="to-catch-and-delete-exceptions"></a>To catch and delete exceptions  
   
-1.  **try** ブロックを設定するには **try** キーワードを使用します。  **try** ブロック内で例外をスローする可能性のあるプログラム ステートメントを実行します。  
+1.  Use the **try** keyword to set up a **try** block. Execute any program statements that might throw an exception within a **try** block.  
   
-     **catch** ブロックを設定するには **catch** キーワードを使用します。  **catch** ブロックに例外処理コードを記述します。  **catch** ブロックのコードが **try** ブロック内のコードが **catch** のステートメントで指定された型の例外をスローする場合にだけ実行されます。  
+     Use the **catch** keyword to set up a **catch** block. Place exception-handling code in a **catch** block. The code in the **catch** block is executed only if the code within the **try** block throws an exception of the type specified in the **catch** statement.  
   
-     次のスケルトンが **try** と **catch** ブロックが正常にどのように配置されるか:  
+     The following skeleton shows how **try** and **catch** blocks are normally arranged:  
   
-     [!code-cpp[NVC_MFCExceptions#4](../mfc/codesnippet/CPP/exceptions-catching-and-deleting-exceptions_2.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#4](../mfc/codesnippet/cpp/exceptions-catching-and-deleting-exceptions_2.cpp)]  
   
-     例外がスローされると、例外宣言が例外の種類に一致する **catch** の最初のブロックへのコントロールのパス。  次に示すように **catch** の順次ブロックで例外の種類を処理する:  
+     When an exception is thrown, control passes to the first **catch** block whose exception-declaration matches the type of the exception. You can selectively handle different types of exceptions with sequential **catch** blocks as listed below:  
   
-     [!code-cpp[NVC_MFCExceptions#5](../mfc/codesnippet/CPP/exceptions-catching-and-deleting-exceptions_3.cpp)]  
+     [!code-cpp[NVC_MFCExceptions#5](../mfc/codesnippet/cpp/exceptions-catching-and-deleting-exceptions_3.cpp)]  
   
- 詳細については、「[例外: MFC Exception Macros からの変換](../mfc/exceptions-converting-from-mfc-exception-macros.md)」を参照してください。  
+ For more information, see [Exceptions: Converting from MFC Exception Macros](../mfc/exceptions-converting-from-mfc-exception-macros.md).  
   
-## 参照  
- [例外処理](../mfc/exception-handling-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Exception Handling](../mfc/exception-handling-in-mfc.md)
+
+

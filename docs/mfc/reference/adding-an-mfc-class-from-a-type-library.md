@@ -1,48 +1,67 @@
 ---
-title: "タイプ ライブラリからの MFC クラスの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス [C++], 追加 (MFC を)"
-  - "MFC, 追加 (クラスをタイプ ライブラリから)"
-  - "タイプ ライブラリ, 追加 (MFC クラスを)"
+title: Adding an MFC Class from a Type Library | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- classes [MFC], adding MFC
+- MFC, adding classes from type libraries
+- type libraries, adding MFC classes from
 ms.assetid: aba40476-3cfb-47af-990e-ae2e9e0d79cf
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# タイプ ライブラリからの MFC クラスの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: c0cbd52202de867fb330a3acd2d72a4b940f56ed
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このウィザードを使用して、利用できるタイプ ライブラリのインターフェイスから MFC クラスを作成します。  MFC クラスは、[MFC アプリケーション](../../mfc/reference/creating-an-mfc-application.md)、[MFC DLL](../../mfc/reference/creating-an-mfc-dll-project.md)、および [MFC ActiveX コントロール](../../mfc/reference/creating-an-mfc-activex-control.md)に追加できます。  
+---
+# <a name="adding-an-mfc-class-from-a-type-library"></a>Adding an MFC Class from a Type Library
+Use this wizard to create an MFC class from an interface in an available type library. You can add an MFC class to an [MFC application](../../mfc/reference/creating-an-mfc-application.md), an [MFC DLL](../../mfc/reference/creating-an-mfc-dll-project.md), or an [MFC ActiveX control](../../mfc/reference/creating-an-mfc-activex-control.md).  
   
 > [!NOTE]
->  タイプ ライブラリからクラスを追加するために、オートメーションを有効にして MFC プロジェクトを作成する必要はありません。  
+>  You do not need to create your MFC project with Automation enabled to add a class from a type library.  
   
- タイプ ライブラリには、コンポーネントによって公開されたインターフェイスのバイナリ記述が含まれます。この記述では、メソッド、およびそのパラメーターと戻り値の型が定義されます。  Typelib クラス追加ウィザードの \[使用できるタイプ ライブラリ\] ボックスの一覧にタイプ ライブラリを表示するには、タイプ ライブラリを登録する必要があります。  詳細については、MSDN ライブラリの「Inside Distributed COM: Type Libraries and Language Integration」を参照してください。  
+ A type library contains a binary description of the interfaces exposed by a component, defining the methods along with their parameters and return types. Your type library must be registered for it to appear in the **Available type libraries** list in the Add Class from Typelib Wizard. See "Inside Distributed COM: Type Libraries and Language Integration" in the MSDN library for more information.  
   
-### タイプ ライブラリから MFC クラスを追加するには  
+### <a name="to-add-an-mfc-class-from-a-type-library"></a>To add an MFC class from a type library  
   
-1.  **ソリューション エクスプローラー**または[クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)で、クラスを追加するプロジェクトの名前を右クリックします。  
+1.  In either **Solution Explorer** or [Class View](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925), right-click the name of the project to which you want to add the class.  
   
-2.  ショートカット メニューの \[追加\] をポイントし、\[クラスの追加\] をクリックします。  
+2.  From the shortcut menu, click **Add**, and then click **Add Class**.  
   
-3.  [&#91;クラスの追加&#93;](../../ide/add-class-dialog-box.md) ダイアログ ボックスのテンプレート ペインの \[TypeLib からの MFC クラス\] をクリックし、次に \[開く\] をクリックして[Typelib クラス追加ウィザード](../../mfc/reference/add-class-from-typelib-wizard.md)を表示します。  
+3.  In the [Add Class](../../ide/add-class-dialog-box.md) dialog box, in the Templates pane, click **MFC Class from Typelib**, and then click **Open** to display the [Add Class from Typelib Wizard](../../mfc/reference/add-class-from-typelib-wizard.md).  
   
- このウィザードでは、タイプ ライブラリ内の複数のクラスを追加できます。  同様に、1 回のウィザード セッションで複数のタイプ ライブラリからクラスを追加できます。  
+ In the wizard, you can add more than one class in a type library. Likewise, you can add classes from more than one type library in a single wizard session.  
   
- このウィザードによって、選択したタイプ ライブラリから追加するインターフェイスごとに、[COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md) から派生した MFC クラスが作成されます。  `COleDispatchDriver` によって OLE オートメーションのクライアント側が実装されます。  
+ The wizard creates an MFC class, derived from [COleDispatchDriver](../../mfc/reference/coledispatchdriver-class.md), for each interface you add from the selected type library. `COleDispatchDriver` implements the client side of OLE automation.  
   
-## 参照  
- [オートメーション クライアント](../../mfc/automation-clients.md)   
- [オートメーション クライアント : タイプ ライブラリの使用](../Topic/Automation%20Clients:%20Using%20Type%20Libraries.md)
+## <a name="see-also"></a>See Also  
+ [Automation Clients](../../mfc/automation-clients.md)   
+ [Automation Clients: Using Type Libraries](../../mfc/automation-clients-using-type-libraries.md)
+
+

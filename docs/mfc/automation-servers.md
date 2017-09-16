@@ -1,64 +1,83 @@
 ---
-title: "オートメーション サーバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション サーバー"
-  - "COM コンポーネント, オートメーション サーバー"
-  - "ディスパッチ マップ, オートメーション サーバー"
-  - "サーバー, オートメーション"
+title: Automation Servers | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- Automation servers
+- COM components, Automation servers
+- dispatch maps [MFC]], Automation servers
+- servers, Automation
 ms.assetid: 523fd155-51ce-4f91-b986-b74bdbdd7d92
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# オートメーション サーバー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 7e5d43a45b9b09c93319ae447a229075ec04c064
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-オートメーション機能を使うと、他のアプリケーションで実装されているオブジェクトを操作することも、逆に自分のオブジェクトを公開して他のアプリケーションでそれを操作できるようにすることも可能です。  オートメーション サーバーを他のアプリケーションとのプログラミング可能なオブジェクト \(オートメーション オブジェクトとも呼ばれます\) を公開するアプリケーションです \([オートメーション クライアント](../mfc/automation-clients.md)とも呼ばれます\)。  オートメーション サーバーは、オートメーション コンポーネントと呼ばれます。  
+---
+# <a name="automation-servers"></a>Automation Servers
+Automation makes it possible for your application to manipulate objects implemented in another application, or to expose objects so they can be manipulated. An Automation server is an application that exposes programmable objects (called Automation objects) to other applications (called [Automation clients](../mfc/automation-clients.md)). Automation servers are sometimes called Automation components.  
   
- オートメーション オブジェクトを公開することで、クライアントがオブジェクトに直接アクセスすることによって、特定のプロシージャを自動化したり、サーバーが利用できるようにする機能。  公開はアプリケーションが他のアプリケーションに役立つ機能を提供する場合は、この方法では、表示します。  たとえば、ワード プロセッサは、他のプログラムで使用できるようにスペル チェック機能を公開する場合があります。  オブジェクトの一つはそれに販売元が他のアプリケーションの既成の機能を使用してアプリケーションの機能を向上させることができます。  
+ Exposing Automation objects enables clients to automate certain procedures by directly accessing the objects and functionality the server makes available. Exposing objects this way is beneficial when applications provide functionality that is useful for other applications. For example, a word processor might expose its spell-checking functionality so that other programs can use it. Exposure of objects thus enables vendors to improve their applications' functionality by using the ready-made functionality of other applications.  
   
- これらのオートメーション オブジェクトに外部インターフェイスとしてプロパティとメソッドがあります。  プロパティはオートメーション オブジェクトの名前付き属性です。  プロパティは、.クラスのデータ メンバーに似ています。  メソッドはオートメーション オブジェクトで実行される関数です。  メソッドは、.クラスのパブリック メンバー関数と同様です。  
+ These Automation objects have properties and methods as their external interface. Properties are named attributes of the Automation object. Properties are like the data members of a C++ class. Methods are functions that work on Automation objects. Methods are like the public member functions of a C++ class.  
   
 > [!NOTE]
->  プロパティは C\+\+ のデータ メンバーと同様ですが、直接アクセスできません。  透過的なアクセスを提供するには、アクセスを取得します。値の設定のメンバー関数のオートメーション オブジェクトの内部変数を設定します。  
+>  Although properties are like C++ data members, they are not directly accessible. To provide transparent access, set up an internal variable in the Automation object with a pair of get/set member functions to access them.  
   
- 一般的で定義されたインターフェイス、オートメーションを使用してアプリケーションの機能を公開することで、さまざまなアプリケーション固有のマクロ言語のではなく、Microsoft Visual Basic などの単一の一般的なプログラミング言語でアプリケーションをビルドすることができます。  
+ By exposing application functionality through a common, well-defined interface, Automation makes it possible to build applications in a single general programming language like Microsoft Visual Basic instead of in diverse, application-specific macro languages.  
   
-##  <a name="_core_support_for_automation_servers"></a> オートメーション サーバーのサポート  
- Visual C\+\+ と MFC フレームワークはオートメーション サーバーの広範なサポートが用意されています。  これらは、オートメーション サーバーの作成のオーバーヘッドの多くを処理します。したがって、アプリケーションの機能に作業に集中できます。  
+##  <a name="_core_support_for_automation_servers"></a> Support for Automation Servers  
+ Visual C++ and the MFC framework provide extensive support for Automation servers. They handle much of the overhead involved in making an Automation server, so you can focus your efforts on the functionality of your application.  
   
- オートメーションのサポートのフレームワークの主な機能は、ディスパッチ マップ、宣言に展開し、OLE のメソッドとプロパティを公開するために呼び出すマクロのセットです。  一般的なディスパッチ マップの例を次に示します。:  
+ The framework's principal mechanism for supporting Automation is the dispatch map, a set of macros that expands into the declarations and calls needed to expose methods and properties for OLE. A typical dispatch map looks like this:  
   
- [!code-cpp[NVC_MFCAutomation#1](../mfc/codesnippet/CPP/automation-servers_1.cpp)]  
+ [!code-cpp[NVC_MFCAutomation#1](../mfc/codesnippet/cpp/automation-servers_1.cpp)]  
   
- プロパティ ウィンドウとクラス ビューは維持のディスパッチ マップで役立ちます。  新しいメソッドまたはプロパティをクラスに追加すると、Visual C\+\+ によってメソッド、クラス名、および外部内部名またはプロパティ、およびデータ型を示すパラメーターの `DISP_PROPERTY` の対応する `DISP_FUNCTION` マクロを追加します。  
+ The Properties window and Class View assist in maintaining dispatch maps. When you add a new method or property to a class, Visual C++ adds a corresponding `DISP_FUNCTION` or `DISP_PROPERTY` macro with parameters indicating the class name, external and internal names of the method or property, and data types.  
   
- **クラスの追加** ダイアログ ボックスは、オートメーション クラスの宣言とプロパティおよび操作の管理が簡単になります。  プロジェクトにクラスを追加するには、クラスの追加ダイアログ ボックスを使用するときに、基本クラスを指定します。  基本クラスは、オートメーションを有効にしている場合、クラス オブジェクトを COM クライアントからの要求で作成できるかどうかを新しいクラスが使用するかどうかを COM クライアント オートメーション「OLE 作成」 \(\) であるか、外部名をサポートするかどうかを指定するために使用するクラスの追加ダイアログ ボックスのリモート コントロールが表示されます。  
+ The **Add Class** dialog box also simplifies the declaration of Automation classes and the management of their properties and operations. When you use the Add Class dialog box to add a class to your project, you specify its base class. If the base class allows Automation, the Add Class dialog box displays controls you use to specify whether the new class should support Automation, whether it is "OLE creatable" (that is, whether objects of the class can be created on a request from a COM client), and the external name for the COM client to use.  
   
- **クラスの追加** ダイアログ ボックスに、指定した OLE 機能に対する適切なマクロを含む、クラス宣言を作成します。  また、クラスのメンバー関数の実装のスケルトン コードを追加します。  
+ The **Add Class** dialog box then creates a class declaration, including the appropriate macros for the OLE features you have specified. It also adds the skeleton code for implementation of your class's member functions.  
   
- MFC アプリケーション ウィザードでは、地面からオートメーション サーバー アプリケーションを取得する手順を簡素化します。  **\[高度な機能\]** ページから **オートメーション** のチェック ボックスをオンにすると、MFC アプリケーション ウィザードでは、アプリケーションの `InitInstance` 関数にオートメーション オブジェクトを登録し、オートメーション サーバーとしてアプリケーションを実行するために必要な呼び出しを追加します。  
+ The MFC Application Wizard simplifies the steps involved in getting your automation server application off the ground. If you select the **Automation** check box from the **Advanced Features** page, the MFC Application Wizard adds to your application's `InitInstance` function the calls required to register your Automation objects and run your application as an Automation server.  
   
-### 目的に合ったトピックをクリックしてください  
+### <a name="what-do-you-want-to-do"></a>What do you want to do  
   
--   [オートメーション クライアントについて説明します。](../mfc/automation-clients.md)  
+-   [Learn about Automation clients](../mfc/automation-clients.md)  
   
--   [CCmdTarget クラスについて説明します。](../Topic/CCmdTarget%20Class.md)  
+-   [Learn more about class CCmdTarget](../mfc/reference/ccmdtarget-class.md)  
   
--   [COleDispatchDriver クラスについて説明します。](../mfc/reference/coledispatchdriver-class.md)  
+-   [Learn more about class COleDispatchDriver](../mfc/reference/coledispatchdriver-class.md)  
   
-## 参照  
- [オートメーション](../mfc/automation.md)   
- [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)
+## <a name="see-also"></a>See Also  
+ [Automation](../mfc/automation.md)   
+ [MFC Application Wizard](../mfc/reference/mfc-application-wizard.md)
+
+

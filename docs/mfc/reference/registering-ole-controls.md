@@ -1,5 +1,5 @@
 ---
-title: "OLE コントロールの登録 |Microsoft ドキュメント"
+title: Registering OLE Controls | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -14,7 +14,7 @@ dev_langs:
 - C++
 helpviewer_keywords:
 - registering OLE controls
-- OLE controls, registering
+- OLE controls [MFC], registering
 ms.assetid: 73c45b7f-7dbc-43f5-bd17-dd77c6acec72
 caps.latest.revision: 15
 author: mikeblome
@@ -34,32 +34,32 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 17a158366f94d27b7a46917282425d652e6b9042
-ms.openlocfilehash: 9c54fb7dc3802e78c8dc68df02ff55ef4732a36b
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 545b3c44b0ce4866c13f1fd3d62d24aa621a8974
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="registering-ole-controls"></a>OLE コントロールの登録
-その他の OLE サーバー オブジェクトと同様に、OLE コントロールは、その他の OLE に対応するアプリケーションからアクセスできます。 これは、コントロールのタイプ ライブラリとクラスを登録することによって実現されます。  
+# <a name="registering-ole-controls"></a>Registering OLE Controls
+OLE controls, like other OLE server objects, can be accessed by other OLE-aware applications. This is achieved by registering the control's type library and class.  
   
- 次の機能を追加および Windows registration データベースに、コントロールのクラス、プロパティ ページ、およびタイプ ライブラリを削除できます。  
+ The following functions allow you to add and remove the control's class, property pages, and type library in the Windows registration database:  
   
-### <a name="registering-ole-controls"></a>OLE コントロールの登録  
+### <a name="registering-ole-controls"></a>Registering OLE Controls  
   
 |||  
 |-|-|  
-|[AfxOleRegisterControlClass](#afxoleregistercontrolclass)|コントロールのクラスを登録データベースに追加します。|  
-|[AfxOleRegisterPropertyPageClass](#afxoleregisterpropertypageclass)|登録情報データベースには、コントロールのプロパティ ページを追加します。|  
-|[AfxOleRegisterTypeLib](#afxoleregistertypelib)|コントロールのタイプ ライブラリを登録データベースに追加します。|  
-|[AfxOleUnregisterClass](#afxoleunregisterclass)|登録情報データベースから、コントロール クラスまたはプロパティ ページのクラスを削除します。|  
-|[AfxOleUnregisterTypeLib](#afxoleunregistertypelib)|コントロールのタイプ ライブラリを登録情報データベースから削除します。|  
+|[AfxOleRegisterControlClass](#afxoleregistercontrolclass)|Adds the control's class to the registration database.|  
+|[AfxOleRegisterPropertyPageClass](#afxoleregisterpropertypageclass)|Adds a control property page to the registration database.|  
+|[AfxOleRegisterTypeLib](#afxoleregistertypelib)|Adds the control's type library to the registration database.|  
+|[AfxOleUnregisterClass](#afxoleunregisterclass)|Removes a control class or a property page class from the registration database.|  
+|[AfxOleUnregisterTypeLib](#afxoleunregistertypelib)|Removes the control's type library from the registration database.|  
   
- `AfxOleRegisterTypeLib`通常の制御 DLL の実装で呼び出されます`DllRegisterServer`します。 同様に、`AfxOleUnregisterTypeLib`によって呼び出される`DllUnregisterServer`です。 `AfxOleRegisterControlClass`、 `AfxOleRegisterPropertyPageClass`、および`AfxOleUnregisterClass`通常と呼ばれる、`UpdateRegistry`コントロールのクラス ファクトリまたはプロパティ ページのメンバー関数。  
+ `AfxOleRegisterTypeLib` is typically called in a control DLL's implementation of `DllRegisterServer`. Similarly, `AfxOleUnregisterTypeLib` is called by `DllUnregisterServer`. `AfxOleRegisterControlClass`, `AfxOleRegisterPropertyPageClass`, and `AfxOleUnregisterClass` are typically called by the `UpdateRegistry` member function of a control's class factory or property page.  
   
-##  <a name="afxoleregistercontrolclass"></a>AfxOleRegisterControlClass  
- コントロール クラスを Windows の登録データベースに登録します。  
+##  <a name="afxoleregistercontrolclass"></a>  AfxOleRegisterControlClass  
+ Registers the control class with the Windows registration database.  
   
 ```   
 BOOL AFXAPI AfxOleRegisterControlClass(
@@ -75,38 +75,38 @@ BOOL AFXAPI AfxOleRegisterControlClass(
     WORD wVerMinor); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hInstance`  
- コントロール クラスに関連付けられているモジュールのインスタンス ハンドル。  
+ The instance handle of the module associated with the control class.  
   
  `clsid`  
- コントロールの一意のクラス ID。  
+ The unique class ID of the control.  
   
  `pszProgID`  
- コントロールの固有のプログラム ID。  
+ The unique program ID of the control.  
   
  `idTypeName`  
- コントロールのユーザーが判読できる形式名を含む文字列のリソース ID。  
+ The resource ID of the string that contains a user-readable type name for the control.  
   
  *idBitmap*  
- ツールバーまたはパレットでの OLE コントロールを表すために使用するビットマップのリソース ID です。  
+ The resource ID of the bitmap used to represent the OLE control in a toolbar or palette.  
   
  `nRegFlags`  
- 次のフラグの&1; つ以上含まれています。  
+ Contains one or more of the following flags:  
   
-- `afxRegInsertable`OLE オブジェクトのオブジェクトの挿入 ダイアログ ボックスに表示するには、制御できます。  
+- `afxRegInsertable` Allows the control to appear in the Insert Object dialog box for OLE objects.  
   
-- `afxRegApartmentThreading`スレッド処理モデルを ThreadingModel をレジストリに設定 = アパートメントします。  
+- `afxRegApartmentThreading` Sets the threading model in the registry to ThreadingModel=Apartment.  
   
-- `afxRegFreeThreading`スレッド処理モデルを ThreadingModel をレジストリに設定 = 無料です。  
+- `afxRegFreeThreading` Sets the threading model in the registry to ThreadingModel=Free.  
   
-     2 つのフラグを結合する`afxRegApartmentThreading`と`afxRegFreeThreading`ThreadingModel を設定する = Both です。 参照してください[InprocServer32](http://msdn.microsoft.com/library/windows/desktop/ms682390)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]スレッド モデルの登録の詳細についてです。  
+     You can combine the two flags `afxRegApartmentThreading` and `afxRegFreeThreading` to set ThreadingModel=Both. See [InprocServer32](http://msdn.microsoft.com/library/windows/desktop/ms682390) in the Windows SDK for more information on threading model registration.  
   
 > [!NOTE]
->  MFC 4.2 より前に、のバージョンの MFC で、 `int` `nRegFlags`パラメーターが指定されて、 **BOOL**パラメーター、 *bInsertable*、許可する、またはオブジェクトの挿入 ダイアログ ボックスから挿入されるコントロールを禁止します。  
+>  In MFC versions before MFC 4.2, the `int` `nRegFlags` parameter was a **BOOL** parameter, *bInsertable*, that allowed or disallowed the control to be inserted from the Insert Object dialog box.  
   
  *dwMiscStatus*  
- 次の状態フラグの&1; つ以上含まれています (フラグの説明は、次を参照してください。**入ります**内の列挙型、 [!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)])。  
+ Contains one or more of the following status flags (for a description of the flags, see **OLEMISC** enumeration in the Windows SDK):  
   
 -   OLEMISC_RECOMPOSEONRESIZE  
   
@@ -124,7 +124,7 @@ BOOL AFXAPI AfxOleRegisterControlClass(
   
 -   OLEMISC_INSIDEOUT  
   
--   されて  
+-   OLEMISC_ACTIVATEWHENVISIBLE  
   
 -   OLEMISC_RENDERINGISDEVICEINDEPENDENT  
   
@@ -147,34 +147,34 @@ BOOL AFXAPI AfxOleRegisterControlClass(
 -   OLEMISC_SETCLIENTSITEFIRST  
   
  *tlid*  
- コントロール クラスの一意の ID。  
+ The unique ID of the control class.  
   
  `wVerMajor`  
- コントロール クラスのメジャー バージョン番号。  
+ The major version number of the control class.  
   
  `wVerMinor`  
- コントロール クラスのマイナー バージョン番号。  
+ The minor version number of the control class.  
   
-### <a name="return-value"></a>戻り値  
- コントロールのクラスが登録されている場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control class was registered; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- これにより、OLE コントロールを認識するコンテナーで使用するコントロール。 `AfxOleRegisterControlClass`コントロールの名前と、システム上の場所で、レジストリを更新しも、レジストリで、コントロールがサポートしているスレッド モデルを設定します。 詳細については、次を参照してください。[テクニカル ノート 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md)、"アパートメント モデルのスレッドで OLE コントロール"は、と[に関するプロセスおよびスレッド](http://msdn.microsoft.com/library/windows/desktop/ms681917)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This allows the control to be used by containers that are OLE-control aware. `AfxOleRegisterControlClass` updates the registry with the control's name and location on the system and also sets the threading model that the control supports in the registry. For more information, see [Technical Note 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment-Model Threading in OLE Controls," and [About Processes and Threads](http://msdn.microsoft.com/library/windows/desktop/ms681917) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAxCtl&#11;](../../mfc/reference/codesnippet/cpp/registering-ole-controls_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAxCtl#11](../../mfc/reference/codesnippet/cpp/registering-ole-controls_1.cpp)]  
   
- 上記の例では、どのように`AfxOleRegisterControlClass`挿入可能なフラグを使用して呼び出されたとフラグのアパートメント モデルの&6; 番目のパラメーターを作成する論理和。  
+ The above example demonstrates how `AfxOleRegisterControlClass` is called with the flag for insertable and the flag for apartment model ORed together to create the sixth parameter:  
   
- [!code-cpp[NVC_MFCAxCtl&#12;](../../mfc/reference/codesnippet/cpp/registering-ole-controls_2.cpp)]  
+ [!code-cpp[NVC_MFCAxCtl#12](../../mfc/reference/codesnippet/cpp/registering-ole-controls_2.cpp)]  
   
- 有効なコンテナーでは、オブジェクトの挿入 ダイアログ ボックスに、コントロールが表示され、アパートメント モデルを認識がなります。 アパートメント モデルに対応したコントロールでは、1 つのアパートメントでのコントロールは、静的データにアクセスするときに、無効になっていなかったスケジューラによってが完了したら、同じ静的データを使用して、同じクラスの別のインスタンスを開始する前にできるように静的クラスのデータは、ロックで保護のことを確認する必要があります。 静的なデータへのアクセスはクリティカル セクションのコードで囲まれます。  
+ The control will show up in the Insert Object dialog box for enabled containers, and it will be apartment model-aware. Apartment model-aware controls must ensure that static class data is protected by locks, so that while a control in one apartment is accessing the static data, it isn't disabled by the scheduler before it is finished, and another instance of the same class starts using the same static data. Any accesses to the static data will be surrounded by critical section code.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="afxoleregisterpropertypageclass"></a>AfxOleRegisterPropertyPageClass  
- プロパティ ページのクラスを Windows の登録データベースに登録します。  
+##  <a name="afxoleregisterpropertypageclass"></a>  AfxOleRegisterPropertyPageClass  
+ Registers the property page class with the Windows registration database.  
   
 ```  
 BOOL AFXAPI AfxOleRegisterPropertyPageClass(
@@ -184,35 +184,35 @@ BOOL AFXAPI AfxOleRegisterPropertyPageClass(
    int nRegFlags); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hInstance`  
- プロパティ ページ クラスに関連付けられているモジュールのインスタンス ハンドル。  
+ The instance handle of the module associated with the property page class.  
   
  `clsid`  
- プロパティ ページの一意のクラス ID。  
+ The unique class ID of the property page.  
   
  `idTypeName`  
- プロパティ ページのユーザーが判読できる名前を表す文字列のリソース ID。  
+ The resource ID of the string that contains a user-readable name for the property page.  
   
  `nRegFlags`  
- フラグを含めることがあります。  
+ May contain the flag:  
   
-- `afxRegApartmentThreading`スレッド処理モデルを ThreadingModel をレジストリに設定 = アパートメントします。  
+- `afxRegApartmentThreading` Sets the threading model in the registry to ThreadingModel = Apartment.  
   
 > [!NOTE]
->  MFC 4.2 は、以前のバージョンの MFC で、 `int` `nRegFlags`パラメーターは使用できませんでした。 なお、`afxRegInsertable`フラグは、プロパティ ページの有効なオプションではありませんし、によって設定されている場合、MFC で ASSERT を実行  
+>  In MFC versions prior to MFC 4.2, the `int` `nRegFlags` parameter was not available. Note also that the `afxRegInsertable` flag is not a valid option for property pages and will cause an ASSERT in MFC if it is set  
   
-### <a name="return-value"></a>戻り値  
- コントロールのクラスが登録されている場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control class was registered; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- これにより、OLE コントロールを認識するコンテナーで使用されるプロパティ ページです。 `AfxOleRegisterPropertyPageClass`プロパティ ページの名前と、システム上の場所のレジストリを更新し、また、レジストリで、コントロールがサポートしているスレッド モデルを設定します。 詳細については、次を参照してください。[テクニカル ノート 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md)、"アパートメント モデルのスレッドで OLE コントロール"は、と[に関するプロセスおよびスレッド](http://msdn.microsoft.com/library/windows/desktop/ms681917)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+### <a name="remarks"></a>Remarks  
+ This allows the property page to be used by containers that are OLE-control aware. `AfxOleRegisterPropertyPageClass` updates the registry with the property page name and its location on the system and also sets the threading model that the control supports in the registry. For more information, see [Technical Note 64](../../mfc/tn064-apartment-model-threading-in-activex-controls.md), "Apartment-Model Threading in OLE Controls," and [About Processes and Threads](http://msdn.microsoft.com/library/windows/desktop/ms681917) in the Windows SDK.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="afxoleregistertypelib"></a>AfxOleRegisterTypeLib  
- Windows 登録データベースのタイプ ライブラリを登録し、OLE コントロールを認識している他のコンテナーで使用されるタイプ ライブラリを使用します。  
+##  <a name="afxoleregistertypelib"></a>  AfxOleRegisterTypeLib  
+ Registers the type library with the Windows registration database and allows the type library to be used by other containers that are OLE-control aware.  
   
 ```   
 BOOL AfxOleRegisterTypeLib(
@@ -222,73 +222,73 @@ BOOL AfxOleRegisterTypeLib(
     LPCTSTR pszHelpDir  = NULL); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `hInstance`  
- タイプ ライブラリに関連付けられているアプリケーションのインスタンス ハンドル。  
+ The instance handle of the application associated with the type library.  
   
  *tlid*  
- タイプ ライブラリの一意の ID。  
+ The unique ID of the type library.  
   
  *pszFileName*  
- ローカライズされたタイプ ライブラリの省略可能なファイル名を指す (します。コントロールの TLB) ファイルです。  
+ Points to the optional filename of a localized type library (.TLB) file for the control.  
   
  *pszHelpDir*  
- タイプ ライブラリのヘルプ ファイルの場所のディレクトリの名前。 場合**NULL**、ヘルプ ファイルが、タイプ ライブラリ自体と同じディレクトリにあると見なされます。  
+ The name of the directory where the help file for the type library can be found. If **NULL**, the help file is assumed to be in the same directory as the type library itself.  
   
-### <a name="return-value"></a>戻り値  
- タイプ ライブラリが登録されている場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the type library was registered; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、タイプ ライブラリ名と、システム上の場所のレジストリを更新します。  
+### <a name="remarks"></a>Remarks  
+ This function updates the registry with the type library name and its location on the system.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAutomation&#7;](../../mfc/codesnippet/cpp/registering-ole-controls_3.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAutomation#7](../../mfc/codesnippet/cpp/registering-ole-controls_3.cpp)]  
   
- [!code-cpp[NVC_MFCAutomation&#8;](../../mfc/codesnippet/cpp/registering-ole-controls_4.cpp)]  
+ [!code-cpp[NVC_MFCAutomation#8](../../mfc/codesnippet/cpp/registering-ole-controls_4.cpp)]  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
   
-##  <a name="afxoleunregisterclass"></a>AfxOleUnregisterClass  
- Windows 登録情報データベースからのコントロールまたはプロパティ ページ クラスのエントリを削除します。  
+##  <a name="afxoleunregisterclass"></a>  AfxOleUnregisterClass  
+ Removes the control or property page class entry from the Windows registration database.  
   
 ```   
 BOOL AFXAPI AfxOleUnregisterClass(REFCLSID clsID, LPCSTR pszProgID); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *clsID*  
- コントロールまたはプロパティ ページの一意のクラス ID。  
+ The unique class ID of the control or property page.  
   
  `pszProgID`  
- コントロールまたはプロパティ ページの固有のプログラム ID。  
+ The unique program ID of the control or property page.  
   
-### <a name="return-value"></a>戻り値  
- コントロールまたはプロパティ ページ クラスが正常に登録できなかった場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the control or property page class was successfully unregistered; otherwise 0.  
   
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxctl.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxctl.h  
   
-##  <a name="afxoleunregistertypelib"></a>AfxOleUnregisterTypeLib  
- Windows 登録情報データベースからタイプ ライブラリのエントリを削除するには、この関数を呼び出します。  
+##  <a name="afxoleunregistertypelib"></a>  AfxOleUnregisterTypeLib  
+ Call this function to remove the type library entry from the Windows registration database.  
   
 ```   
 BOOL AFXAPI AfxOleUnregisterTypeLib(REFGUID tlID); 
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `tlID`  
- タイプ ライブラリの一意の ID。  
+ The unique ID of the type library.  
   
-### <a name="return-value"></a>戻り値  
- タイプ ライブラリが正常に登録できなかった場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the type library was successfully unregistered; otherwise 0.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCAxCtl&#13;](../../mfc/reference/codesnippet/cpp/registering-ole-controls_5.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCAxCtl#13](../../mfc/reference/codesnippet/cpp/registering-ole-controls_5.cpp)]  
 
-### <a name="requirements"></a>要件  
-  **ヘッダー** afxdisp.h  
+### <a name="requirements"></a>Requirements  
+  **Header** afxdisp.h  
 
-## <a name="see-also"></a>関連項目  
- [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
+## <a name="see-also"></a>See Also  
+ [Macros and Globals](../../mfc/reference/mfc-macros-and-globals.md)
 

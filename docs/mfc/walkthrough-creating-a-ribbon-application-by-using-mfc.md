@@ -1,101 +1,120 @@
 ---
-title: "チュートリアル: MFC によるリボン アプリケーションの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "作成 (リボン アプリケーションを) (MFC)"
-  - "リボン アプリケーション, 作成 (MFC)"
+title: 'Walkthrough: Creating a Ribbon Application By Using MFC | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- ribbon application, creating (MFC)
+- creating a ribbon aplication (MFC)
 ms.assetid: e61393e2-1d6b-4594-a7ce-157d3d1b0d9f
 caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 17
----
-# チュートリアル: MFC によるリボン アプリケーションの作成
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dd9aff0bf52100207e2df0504226c991d0f66614
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このチュートリアルでは、MFC アプリケーション ウィザードを使用して、既定でリボンを備えたアプリケーションを作成する方法を説明します。  このようなアプリケーションを作成すると、**\[お気に入り\]** リボン パネルを持つ **\[カスタム\]** リボン カテゴリを追加し、頻繁に使用するいくつかのコマンドをそのパネルに追加して、リボンを拡張できます。  
+---
+# <a name="walkthrough-creating-a-ribbon-application-by-using-mfc"></a>Walkthrough: Creating a Ribbon Application By Using MFC
+This walkthrough shows how to use the **MFC Application Wizard** to create an application that has a ribbon by default. You can then expand the ribbon by adding a **Custom** ribbon category that has a **Favorites** ribbon panel, and then adding some frequently used commands to the panel.  
   
-## 必須コンポーネント  
- このチュートリアルは、**全般的な開発設定**を使用するように [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] を設定していることを前提としています。  別の設定を使用している場合は、次の手順に示されているいくつかのユーザー インターフェイス \(UI\) 要素が既定では表示されないことがあります。  設定を変更する方法の詳細については、「[How to: Reset Your Settings](http://msdn.microsoft.com/ja-jp/c95c51be-e609-4769-abba-65e6beedec76)」を参照してください。  
+## <a name="prerequisites"></a>Prerequisites  
+ This walkthrough assumes that you have set [!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] to use **General Development Settings**. If you are using different settings, some of the user interface (UI) elements that are referenced in the following instructions might not be displayed. For information about how to change settings, see [How to: Reset Your Settings](http://msdn.microsoft.com/en-us/c95c51be-e609-4769-abba-65e6beedec76).  
   
-### リボンを備えた MFC アプリケーションを作成するには  
+### <a name="to-create-an-mfc-application-that-has-a-ribbon"></a>To create an MFC application that has a ribbon  
   
-1.  MFC アプリケーション ウィザードを使用して、リボンを備えた MFC アプリケーションを作成します。  ウィザードを起動するには、**\[ファイル\]** メニューの **\[新規作成\]** をポイントし、**\[プロジェクト\]** をクリックします。  
+1.  Use the **MFC Application Wizard** to create an MFC application that has a ribbon. To run the wizard, on the **File** menu, point to **New**, and then click **Project**.  
   
-2.  **\[新しいプロジェクト\]** ダイアログ ボックスで、**\[インストールされたテンプレート\]** の **\[Visual C\+\+\]** ノードを展開し、**\[MFC\]** をクリックしてから **\[MFC アプリケーション\]** をクリックします。  プロジェクトの名前 \(`MFCRibbonApp` など\) を入力し、**\[OK\]** をクリックします。  
+2.  In the **New Project** dialog box, expand the **Visual C++** node under **Installed Templates**, select **MFC**, and then select **MFC Application**. Type a name for the project, for example, `MFCRibbonApp`, and then click **OK**.  
   
-3.  MFC アプリケーション ウィザードの最初のページで、**\[次へ\]** をクリックします。  
+3.  On the first page of the **MFC Application Wizard**, click **Next**.  
   
-4.  **\[アプリケーションの種類\]** ページの **\[表示スタイルと色\]** で、**\[Office 2007 \(青のテーマ\)\]** をクリックします。  その他の設定はそのままにします。  **\[次へ\]** をクリックします。  
+4.  On the **Application Type** page, under **Visual style and colors**, select **Office 2007 (Blue theme)**. Leave the other settings as they are. Click **Next**.  
   
-5.  **\[複合ドキュメント サポート\]** ページで **\[なし\]** が選択されていることを確認し、**\[次へ\]** をクリックします。  
+5.  On the **Compound Document Support** page, make sure that **None** is selected and then click **Next**.  
   
-6.  **\[ドキュメント テンプレート文字列\]** ページの \[**ファイル拡張子**\] ボックスに、このアプリケーションが作成するドキュメントのファイル名拡張子、たとえば「`mfcrbnapp`」を入力します。  **\[次へ\]** をクリックします。  
+6.  On the **Document Template Properties** page, in the **File extension** box, type a file name extension for documents that this application creates, for example, `mfcrbnapp`. Click **Next**.  
   
-7.  **\[データベース サポート\]** ページで **\[なし\]** が選択されていることを確認し、**\[次へ\]** をクリックします。  
+7.  On the **Database Support** page, make sure that **None** is selected and then click **Next**.  
   
-8.  **\[ユーザー インターフェイス機能\]** ページで、**\[リボンを使用する\]** が選択されていることを確認します。  **\[次へ\]** をクリックします。  
+8.  On the **User Interface Features** page, make sure that **Use a ribbon** is selected. Click **Next**.  
   
-9. 既定では、**MFC アプリケーション ウィザード**はドッキング ペインのサポートをいくつか追加します。  ただし、このチュートリアルで説明するのはリボンについてのみであるため、アプリケーションからこれらのオプションを削除します。  **\[高度な機能\]** ページで、オプションをすべてオフにします。  **\[次へ\]** をクリックします。  
+9. By default, the **MFC Application Wizard** adds support for several docking panes. Because this walkthrough just teaches about the ribbon, you can remove these options from the application. On the **Advanced Features** page, clear all options. Click **Next**.  
   
-10. **\[生成されたクラス\]** ページで **\[完了\]** をクリックして、MFC アプリケーションの作成を実行します。  
+10. On the **Generated Classes** page, click **Finish** to create the MFC application.  
   
-11. アプリケーションが正常に作成されたことを確認するために、アプリケーションをビルドして実行します。  ソリューションをビルドするには、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  アプリケーションが正常にビルドされたら、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックして、アプリケーションを実行します。  
+11. To verify that the application was created successfully, build it and run it. To build the application, on the **Build** menu, click **Build Solution**. If the application builds successfully, run it by clicking **Start Debugging** on the **Debug** menu.  
   
-     ウィザードは、**\[ホーム\]** という名前の 1 つのリボン カテゴリを持つリボンを自動的に作成します。  このリボンには、**\[クリップボード\]**、**\[ビュー\]**、および **\[ウィンドウ\]** という名前の 3 つのリボン パネルが含まれています。  
+     The wizard automatically creates a ribbon that has one ribbon category that is named **Home**. This ribbon contains three ribbon panels, which are named **Clipboard**, **View**, and **Window**.  
   
-### カテゴリとパネルをリボンに追加するには  
+### <a name="to-add-a-category-and-panel-to-the-ribbon"></a>To add a category and panel to the ribbon  
   
-1.  ウィザードが作成したリボン リソースを開くには、**\[表示\]** メニューで **\[その他のウィンドウ\]** をポイントし、**\[リソース ビュー\]** をクリックします。  **\[リソース ビュー\]** で、**\[リボン\]** をクリックし、**\[IDR\_RIBBON\]** をダブルクリックします。  
+1.  To open the ribbon resource that the wizard created, on the **View** menu, point to **Other Windows** and then click **Resource View**. In **Resource View**, click **Ribbon** and then double-click **IDR_RIBBON**.  
   
-2.  最初に **\[ツールボックス\]** 内の **\[カテゴリ\]** をダブルクリックし、カスタム カテゴリをリボンに追加します。  
+2.  First, add a custom category to the ribbon by double-clicking **Category** in the **Toolbox**.  
   
-     Category1 というキャプションのカテゴリが作成されます。  既定では、カテゴリにはパネルが 1 つあります。  
+     A category that has the caption **Category1** is created. By default, the category contains one panel.  
   
-     Category1 を右クリックし、**\[プロパティ\]** をクリックします。  **\[プロパティ\]** ウィンドウで、**\[キャプション\]** を「`カスタム`」に変更します。  
+     Right-click **Category1** and then click **Properties**. In the **Properties** window, change **Caption** to `Custom`.  
   
-     **\[大きいイメージ\]** プロパティと **\[小さいイメージ\]** プロパティでは、このカテゴリのリボン要素のアイコンとして使用されるビットマップを指定します。  カスタムのビットマップの作成はこのチュートリアルの対象外であるため、ウィザードで作成されたビットマップをそのまま使用します。  小さいビットマップは 16 × 16 ピクセルです。  小さいイメージには、IDB\_FILESMALL というリソース ID でアクセスされるビットマップを使用します。  大きいビットマップは 32 × 32 ピクセルです。  大きいイメージには、IDB\_FILELARGE というリソース ID でアクセスされるビットマップを使用します。  
+     The **Large Images** and **Small Images** properties specify the bitmaps that are used as icons for the ribbon elements in this category. Because creating custom bitmaps is beyond the scope of this walkthrough, just reuse the bitmaps that were created by the wizard. Small bitmaps are 16 pixels by 16 pixels. For small images, use the bitmaps that are accessed by the IDB_FILESMALL resource ID. Large bitmaps are 32 pixels by 32 pixels. For large images, use the bitmaps that are accessed by the IDB_FILELARGE resource ID.  
   
     > [!NOTE]
-    >  高解像度 \(HDPI: High Dots per Inch\) 表示では、HDPI 版のイメージが自動的に使用されます。  
+    >  On high dots per inch (HDPI) displays, the HDPI versions of the images are automatically used.  
   
-3.  次は、パネルをカスタマイズします。  パネルは、互いに論理的に関連する項目をグループ化するために使用されます。  たとえば、このアプリケーションの **\[ホーム\]** タブの **\[切り取り\]**、**\[コピー\]**、および **\[貼り付け\]** の各コマンドをすべて **\[クリップボード\]** パネルに配置します。  パネルをカスタマイズするには、**\[Panel1\]** を右クリックしてから **\[プロパティ\]** をクリックします。  **\[プロパティ\]** ウィンドウで、**\[キャプション\]** を「`お気に入り`」に変更します。  
+3.  Next, customize the panel. Panels are used to group items that are logically related to one another. For example, on the **Home** tab of this application, the **Cut**, **Copy**, and **Paste** commands are all located on the **Clipboard** panel. To customize the panel, right-click **Panel1** and then click **Properties**. In the **Properties** window, change **Caption** to `Favorites`.  
   
-     パネルの **\[イメージ インデックス\]** を指定できます。  この番号により、リボン パネルをクイック アクセス ツール バーに追加した場合に表示されるアイコンが指定されます。  このアイコンは、リボン パネルそのものには表示されません。  
+     You can specify the **Image Index** for the panel. This number specifies the icon that is displayed if the ribbon panel is added to the **Quick Access Toolbar**. The icon is not displayed on the ribbon panel itself.  
   
-4.  リボンのカテゴリとパネルが正しく作成されたことを確認するために、リボン コントロールをプレビューします。  **\[Ribbon エディター ツール バー\]** の **\[Ribbon のテスト\]** をクリックします。  **\[カスタム\]** タブと **\[お気に入り\]** パネルがリボンに表示されます。  
+4.  To verify that the ribbon category and panel were created successfully, preview the ribbon control. On the **Ribbon Editor Toolbar**, click the **Test Ribbon** button. A **Custom** tab and **Favorites** panel should be displayed on the ribbon.  
   
-### リボン パネルに要素を追加するには  
+### <a name="to-add-elements-to-the-ribbon-panels"></a>To add elements to the ribbon panels  
   
-1.  前の手順で作成したパネルに要素を追加するには、**\[ツールボックス\]** の **\[リボン エディター\]** セクションからデザイン ビュー内のパネルにコントロールをドラッグします。  
+1.  To add elements to the panel that you created in the previous procedure, drag controls from the **Ribbon Editor** section of the **Toolbox** to the panel in the design view.  
   
-2.  まず、**\[印刷\]** ボタンを追加します。  **\[印刷\]** ボタンには、既定のプリンターを使用して印刷する **\[クイック印刷\]** コマンドを含むサブメニューを指定します。  このアプリケーションに対して、両方のコマンドが既に定義されています。  これらはアプリケーションのメニュー内にあります。  
+2.  First, add a **Print** button. The **Print** button will have a submenu that contains a **Quick Print** command that prints by using the default printer. Both of these commands are already defined for this application. They are located on the application menu.  
   
-     **\[印刷\]** ボタンを作成するために、Button ツールをパネルにドラッグします。  
+     To create the **Print** button, drag a Button tool to the panel.  
   
-     **\[プロパティ\]** ウィンドウで、**\[ID\]** プロパティを定義済みの **\[ID\_FILE\_PRINT\]** に変更します。  **\[キャプション\]** を「`印刷`」に変更します。  **\[イメージ インデックス\]** を「`4`」に変更します。  
+     In the **Properties** window, change the **ID** property to **ID_FILE_PRINT**, which should already be defined. Change **Caption** to `Print`. Change **Image Index** to `4`.  
   
-     **\[クイック印刷\]** ボタンを作成するには、**\[メニュー項目\]** の隣にあるプロパティの値列をクリックしてから、省略記号 \(**...**\) をクリックします。  **\[項目エディター\]** で、ラベルのない **\[追加\]** をクリックしてメニュー項目を作成します。  **\[プロパティ\]** ウィンドウで、**\[キャプション\]**、**\[ID\]**、**\[イメージ\]** を、それぞれ「`クイック印刷`」、「`ID_FILE_PRINT_DIRECT`」、「`5`」に変更します。  イメージのプロパティは IDB\_FILESMALL ビットマップ リソースの中にある \[高速印刷\] アイコンを指定します。  
+     To create the **Quick Print** button, click the property value column next to **Menu Items**, and then click the ellipsis (**...**). In the **Items Editor**, click the unlabeled **Add** button to create a menu item. In the **Properties** window, change **Caption** to `Quick Print`, **ID** to `ID_FILE_PRINT_DIRECT`, and **Image** to `5`. The image property specifies the Quick Print icon in the IDB_FILESMALL bitmap resource.  
   
-3.  ボタンがリボン パネルに追加されたことを確認するには、アプリケーションをビルドして実行します。  ソリューションをビルドするには、**\[ビルド\]** メニューの **\[ソリューションのビルド\]** をクリックします。  アプリケーションが正常にビルドされたら、**\[デバッグ\]** メニューの **\[デバッグ開始\]** をクリックして、アプリケーションを実行します。  リボンの **\[カスタム\]** タブの **\[お気に入り\]** パネルに **\[印刷\]** ボタンとコンボ ボックスが表示されます。  
+3.  To verify that the buttons were added to the ribbon panel, build the application and run it. To build the application, on the **Build** menu, click **Build Solution**. If the application builds successfully, run the application by clicking **Start Debugging** on the **Debug** menu. The **Print** button and the combo box on the **Favorites** panel on the **Custom** tab on the ribbon should be displayed.  
   
-## 次の手順  
- [方法: クイック アクセス ツール バーをカスタマイズする](../mfc/how-to-customize-the-quick-access-toolbar.md)  
+## <a name="next-steps"></a>Next Steps  
+ [How to: Customize the Quick Access Toolbar](../mfc/how-to-customize-the-quick-access-toolbar.md)  
   
- [方法: アプリケーション ボタンをカスタマイズする](../mfc/how-to-customize-the-application-button.md)  
+ [How to: Customize the Application Button](../mfc/how-to-customize-the-application-button.md)  
   
- エンド ツー エンドのサンプルについては、["Samples \(MFC Feature Pack\) \(サンプル \(MFC Feature Pack\)\)"](../top/visual-cpp-samples.md) を参照してください。  
+ For end-to-end samples, see [Samples (MFC Feature Pack)](../visual-cpp-samples.md).  
   
-## 参照  
- [チュートリアル](../mfc/walkthroughs-mfc.md)   
- ["Samples \(MFC Feature Pack\) \(サンプル \(MFC Feature Pack\)\)"](../top/visual-cpp-samples.md)
+## <a name="see-also"></a>See Also  
+ [Walkthroughs](../mfc/walkthroughs-mfc.md)   
+ [Samples (MFC Feature Pack)](../visual-cpp-samples.md)
+
+

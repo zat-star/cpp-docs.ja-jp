@@ -1,5 +1,5 @@
 ---
-title: "CPropExchange クラス |Microsoft ドキュメント"
+title: CPropExchange Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,9 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CPropExchange class
-- OLE controls, persistence
-- controls [MFC], OLE
+- CPropExchange [MFC], ExchangeBlobProp
+- CPropExchange [MFC], ExchangeFontProp
+- CPropExchange [MFC], ExchangePersistentProp
+- CPropExchange [MFC], ExchangeProp
+- CPropExchange [MFC], ExchangeVersion
+- CPropExchange [MFC], GetVersion
+- CPropExchange [MFC], IsAsynchronous
+- CPropExchange [MFC], IsLoading
 ms.assetid: ed872180-e770-4942-892a-92139d501fab
 caps.latest.revision: 22
 author: mikeblome
@@ -44,60 +49,60 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 655d8e2f074c3bd12b1b52ece74efb844c7a9904
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cf71556f16272d2d4beef7ade248c28dd2509f01
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cpropexchange-class"></a>CPropExchange クラス
-OLE コントロールの永続性の実装をサポートします。  
+# <a name="cpropexchange-class"></a>CPropExchange Class
+Supports the implementation of persistence for your OLE controls.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class AFX_NOVTABLE CPropExchange  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CPropExchange::ExchangeBlobProp](#exchangeblobprop)|バイナリ ラージ オブジェクト (BLOB) のプロパティを交換します。|  
-|[CPropExchange::ExchangeFontProp](#exchangefontprop)|フォントのプロパティを交換します。|  
-|[CPropExchange::ExchangePersistentProp](#exchangepersistentprop)|コントロールとファイルのプロパティを交換します。|  
-|[CPropExchange::ExchangeProp](#exchangeprop)|すべての組み込み型のプロパティを交換します。|  
-|[CPropExchange::ExchangeVersion](#exchangeversion)|OLE コントロールのバージョン番号を交換します。|  
-|[CPropExchange::GetVersion](#getversion)|OLE コントロールのバージョン番号を取得します。|  
-|[CPropExchange::IsAsynchronous](#isasynchronous)|プロパティの交換が非同期的に実行を決定します。|  
-|[CPropExchange::IsLoading](#isloading)|プロパティがされているかどうかを示す、コントロールに読み込まれるかから保存します。|  
+|[CPropExchange::ExchangeBlobProp](#exchangeblobprop)|Exchanges a binary large object (BLOB) property.|  
+|[CPropExchange::ExchangeFontProp](#exchangefontprop)|Exchanges a font property.|  
+|[CPropExchange::ExchangePersistentProp](#exchangepersistentprop)|Exchanges a property between a control and a file.|  
+|[CPropExchange::ExchangeProp](#exchangeprop)|Exchanges properties of any built-in type.|  
+|[CPropExchange::ExchangeVersion](#exchangeversion)|Exchanges the version number of an OLE control.|  
+|[CPropExchange::GetVersion](#getversion)|Retrieves the version number of an OLE control.|  
+|[CPropExchange::IsAsynchronous](#isasynchronous)|Determines if property exchanges are done asynchronously.|  
+|[CPropExchange::IsLoading](#isloading)|Indicates whether properties are being loaded into the control or saved from it.|  
   
-## <a name="remarks"></a>コメント  
- `CPropExchange`基本クラスはありません。  
+## <a name="remarks"></a>Remarks  
+ `CPropExchange` does not have a base class.  
   
- コンテキストとプロパティの exchange の方向を確立します。  
+ Establishes the context and direction of a property exchange.  
   
- 永続化には、通常、コントロール自体とは [中] の間でそのプロパティで表される、コントロールの状態情報の交換です。  
+ Persistence is the exchange of the control's state information, usually represented by its properties, between the control itself and a medium.  
   
- 派生したオブジェクトを構築するために、フレームワーク`CPropExchange`から読み込まれる OLE コントロールのプロパティができたことを通知には、またはストアドに永続的なストレージです。  
+ The framework constructs an object derived from `CPropExchange` when it is notified that an OLE control's properties are to be loaded from or stored to persistent storage.  
   
- フレームワークは、このポインターを渡します`CPropExchange`オブジェクトに、コントロールの`DoPropExchange`関数です。 目的のコントロールのコントロールのスターター ファイルを作成するウィザードを使用した場合`DoPropExchange`関数呼び出し`COleControl::DoPropExchange`します。 基底クラス版交換コントロールのストック プロパティです。コントロールに追加した exchange のプロパティに、派生クラスのバージョンを変更します。  
+ The framework passes a pointer to this `CPropExchange` object to your control's `DoPropExchange` function. If you used a wizard to create the starter files for your control, your control's `DoPropExchange` function calls `COleControl::DoPropExchange`. The base-class version exchanges the control's stock properties; you modify your derived class's version to exchange properties you have added to your control.  
   
- `CPropExchange`コントロールのプロパティをシリアル化または負荷またはコントロールの作成時にコントロールのプロパティを初期化するために使用します。 `ExchangeProp`と`ExchangeFontProp`のメンバー関数`CPropExchange`にプロパティを格納し、それらを別のメディアから読み込むことができます。  
+ `CPropExchange` can be used to serialize a control's properties or initialize a control's properties upon the load or creation of a control. The `ExchangeProp` and `ExchangeFontProp` member functions of `CPropExchange` are able to store properties to and load them from different media.  
   
- 使用する方法について`CPropExchange`、記事を参照して[MFC ActiveX コントロール: プロパティ ページ](../../mfc/mfc-activex-controls-property-pages.md)します。  
+ For more information on using `CPropExchange`, see the article [MFC ActiveX Controls: Property Pages](../../mfc/mfc-activex-controls-property-pages.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  `CPropExchange`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxctl.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxctl.h  
   
-##  <a name="exchangeblobprop"></a>CPropExchange::ExchangeBlobProp  
- バイナリ ラージ オブジェクト (BLOB) データを格納するプロパティをシリアル化します。  
+##  <a name="exchangeblobprop"></a>  CPropExchange::ExchangeBlobProp  
+ Serializes a property that stores binary large object (BLOB) data.  
   
 ```  
 virtual BOOL ExchangeBlobProp(
@@ -106,26 +111,26 @@ virtual BOOL ExchangeBlobProp(
     HGLOBAL hBlobDefault = NULL) = 0;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `phBlob`  
- プロパティの格納場所を指す変数へのポインター (変数は、通常、クラスのメンバー)。  
+ Pointer to a variable pointing to where the property is stored (variable is typically a member of your class).  
   
  `hBlobDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値は、読み取り、書き込み先とで参照される変数の適切な`phBlob`です。 場合`hBlobDefault`を指定すると、これは、プロパティの既定値として使用します。 この値は、何らかの理由で、コントロールのシリアル化が失敗したときに使用されます。  
+### <a name="remarks"></a>Remarks  
+ The property's value is read from or written to, as appropriate, the variable referenced by `phBlob`. If `hBlobDefault` is specified, it will be used as the property's default value. This value is used if, for any reason, the control's serialization fails.  
   
- 関数は、 **CArchivePropExchange::ExchangeBlobProp**、 **CResetPropExchange::ExchangeBlobProp**、および**CPropsetPropExchange::ExchangeBlobProp**純粋仮想関数をオーバーライドします。  
+ The functions **CArchivePropExchange::ExchangeBlobProp**, **CResetPropExchange::ExchangeBlobProp**, and **CPropsetPropExchange::ExchangeBlobProp** override this pure virtual function.  
   
-##  <a name="exchangefontprop"></a>CPropExchange::ExchangeFontProp  
- ストレージ メディアとコントロール間でのフォント プロパティを交換します。  
+##  <a name="exchangefontprop"></a>  CPropExchange::ExchangeFontProp  
+ Exchanges a font property between a storage medium and the control.  
   
 ```  
 virtual BOOL ExchangeFontProp(
@@ -135,29 +140,29 @@ virtual BOOL ExchangeFontProp(
     LPFONTDISP pFontDispAmbient) = 0;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `font`  
- 参照、 [CFontHolder](../../mfc/reference/cfontholder-class.md)フォント プロパティを含むオブジェクト。  
+ A reference to a [CFontHolder](../../mfc/reference/cfontholder-class.md) object that contains the font property.  
   
  `pFontDesc`  
- ポインター、 [FONTDESC](http://msdn.microsoft.com/library/windows/desktop/ms692782) font プロパティの既定の状態を初期化するための値を含む構造体と`pFontDispAmbient`は**NULL**します。  
+ A pointer to a [FONTDESC](http://msdn.microsoft.com/library/windows/desktop/ms692782) structure containing values for initializing the default state of the font property when `pFontDispAmbient` is **NULL**.  
   
  `pFontDispAmbient`  
- ポインター、**この**font プロパティの既定の状態を初期化するために使用するフォントのインターフェイスです。  
+ A pointer to the **IFontDisp** interface of a font to be used for initializing the default state of the font property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- フォントのプロパティは、コントロールに、メディアから読み込まれて、フォントの特性は、メディアから取得されます、`CFontHolder`によって参照されるオブジェクト`font`で初期化されます。 Font プロパティが格納される場合は、font オブジェクトの特性がメディアに書き込まれます。  
+### <a name="remarks"></a>Remarks  
+ If the font property is being loaded from the medium to the control, the font's characteristics are retrieved from the medium and the `CFontHolder` object referenced by `font` is initialized with them. If the font property is being stored, the characteristics in the font object are written to the medium.  
   
- 関数は、 **CArchivePropExchange::ExchangeFontProp**、 **CResetPropExchange::ExchangeFontProp**、および**CPropsetPropExchange::ExchangeFontProp**純粋仮想関数をオーバーライドします。  
+ The functions **CArchivePropExchange::ExchangeFontProp**, **CResetPropExchange::ExchangeFontProp**, and **CPropsetPropExchange::ExchangeFontProp** override this pure virtual function.  
   
-##  <a name="exchangepersistentprop"></a>CPropExchange::ExchangePersistentProp  
- コントロールとファイルのプロパティを交換します。  
+##  <a name="exchangepersistentprop"></a>  CPropExchange::ExchangePersistentProp  
+ Exchanges a property between the control and a file.  
   
 ```  
 virtual BOOL ExchangePersistentProp(
@@ -167,29 +172,29 @@ virtual BOOL ExchangePersistentProp(
     LPUNKNOWN pUnkDefault) = 0;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `ppUnk`  
- プロパティへのポインターを含む変数へのポインター **IUnknown**インターフェイス (この変数は、通常、クラスのメンバー)。  
+ A pointer to a variable containing a pointer to the property's **IUnknown** interface (this variable is typically a member of your class).  
   
  `iid`  
- コントロールを使用するプロパティのインターフェイスのインターフェイス ID です。  
+ Interface ID of the interface on the property that the control will use.  
   
  `pUnkDefault`  
- プロパティの既定値です。  
+ Default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティは、コントロールに、ファイルから読み込まれるが場合、プロパティが作成され、ファイルを使用して初期化します。 プロパティが格納される場合、その値は、ファイルに書き込まれます。  
+### <a name="remarks"></a>Remarks  
+ If the property is being loaded from the file to the control, the property is created and initialized from the file. If the property is being stored, its value is written to the file.  
   
- 関数は、 **CArchivePropExchange::ExchangePersistentProp**、 **CResetPropExchange::ExchangePersistentProp**、および**CPropsetPropExchange::ExchangePersistentProp**純粋仮想関数をオーバーライドします。  
+ The functions **CArchivePropExchange::ExchangePersistentProp**, **CResetPropExchange::ExchangePersistentProp**, and **CPropsetPropExchange::ExchangePersistentProp** override this pure virtual function.  
   
-##  <a name="exchangeprop"></a>CPropExchange::ExchangeProp  
- ストレージ メディアとコントロール間でのプロパティを交換します。  
+##  <a name="exchangeprop"></a>  CPropExchange::ExchangeProp  
+ Exchanges a property between a storage medium and the control.  
   
 ```  
 virtual BOOL ExchangeProp(
@@ -199,14 +204,14 @@ virtual BOOL ExchangeProp(
     const void* pvDefault = NULL) = 0 ;  
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pszPropName`  
- 交換されるプロパティの名前。  
+ The name of the property being exchanged.  
   
  `vtProp`  
- 交換されるプロパティの型を指定する記号です。 指定できる値は次のとおりです。  
+ A symbol specifying the type of the property being exchanged. Possible values are:  
   
-|シンボル|プロパティの型|  
+|Symbol|Property Type|  
 |------------|-------------------|  
 |`VT_I2`|**short**|  
 |`VT_I4`|**long**|  
@@ -217,21 +222,21 @@ virtual BOOL ExchangeProp(
 |`VT_R8`|**double**|  
   
  `pvProp`  
- プロパティの値へのポインター。  
+ A pointer to the property's value.  
   
  *pvDefault*  
- プロパティの既定値へのポインター。  
+ Pointer to a default value for the property.  
   
-### <a name="return-value"></a>戻り値  
- 交換が成功した場合は 0 以外。それ以外の場合は 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the exchange was successful; 0 if unsuccessful.  
   
-### <a name="remarks"></a>コメント  
- プロパティの値が、メディアから取得され、によって指されるオブジェクトに格納されている場合は、プロパティは、コントロールに、メディアから読み込まれて、`pvProp`です。 、、プロパティがメディアに格納される場合、オブジェクトの値が指す`pvProp`はメディアに書き込まれます。  
+### <a name="remarks"></a>Remarks  
+ If the property is being loaded from the medium to the control, the property's value is retrieved from the medium and stored in the object pointed to by `pvProp`. If the property is being stored to the medium, the value of the object pointed to by `pvProp` is written to the medium.  
   
- 関数は、 **CArchivePropExchange::ExchangeProp**、 **CResetPropExchange::ExchangeProp**、および**CPropsetPropExchange::ExchangeProp**純粋仮想関数をオーバーライドします。  
+ The functions **CArchivePropExchange::ExchangeProp**, **CResetPropExchange::ExchangeProp**, and **CPropsetPropExchange::ExchangeProp** override this pure virtual function.  
   
-##  <a name="exchangeversion"></a>CPropExchange::ExchangeVersion  
- バージョン番号の永続化を処理するためにフレームワークによって呼び出されます。  
+##  <a name="exchangeversion"></a>  CPropExchange::ExchangeVersion  
+ Called by the framework to handle persistence of a version number.  
   
 ```  
 virtual BOOL ExchangeVersion(
@@ -240,52 +245,52 @@ virtual BOOL ExchangeVersion(
     BOOL bConvert);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  *dwVersionLoaded*  
- 読み込まれている永続的なデータのバージョン番号を格納する変数への参照。  
+ Reference to a variable where the version number of the persistent data being loaded will be stored.  
   
  `dwVersionDefault`  
- コントロールの現在のバージョン番号。  
+ The current version number of the control.  
   
  `bConvert`  
- 現在のバージョンを永続的なデータを変換するか、既に読み込まれているバージョンが同じで保持するかどうかを示します。  
+ Indicates whether to convert persistent data to the current version or keep it at the same version that was loaded.  
   
-### <a name="return-value"></a>戻り値  
- 関数が成功した場合は 0 以外。それ以外の場合は 0 です。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the function succeeded; 0 otherwise.  
   
-##  <a name="getversion"></a>CPropExchange::GetVersion  
- コントロールのバージョン番号を取得するには、この関数を呼び出します。  
+##  <a name="getversion"></a>  CPropExchange::GetVersion  
+ Call this function to retrieve the version number of the control.  
   
 ```  
 DWORD GetVersion();
 ```  
   
-### <a name="return-value"></a>戻り値  
- コントロールのバージョン番号。  
+### <a name="return-value"></a>Return Value  
+ The version number of the control.  
   
-##  <a name="isasynchronous"></a>CPropExchange::IsAsynchronous  
- プロパティの交換が非同期的に実行を決定します。  
+##  <a name="isasynchronous"></a>  CPropExchange::IsAsynchronous  
+ Determines if property exchanges are done asynchronously.  
   
 ```  
 BOOL IsAsynchronous();
 ```  
   
-### <a name="return-value"></a>戻り値  
- プロパティは TRUE を返しますがそれ以外の場合の FALSE では非同期、交換されます。  
+### <a name="return-value"></a>Return Value  
+ Returns TRUE if properties are exchanged asynchronously, otherwise FALSE.  
   
-##  <a name="isloading"></a>CPropExchange::IsLoading  
- プロパティがされているかどうかを判断するには、この関数を呼び出して、コントロールに読み込みまたはそこから保存します。  
+##  <a name="isloading"></a>  CPropExchange::IsLoading  
+ Call this function to determine whether properties are being loaded to the control or saved from it.  
   
 ```  
 BOOL IsLoading();
 ```  
   
-### <a name="return-value"></a>戻り値  
- プロパティが読み込まれる場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if properties are being loaded; otherwise 0.  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [使って](../../mfc/reference/colecontrol-class.md#dopropexchange)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleControl::DoPropExchange](../../mfc/reference/colecontrol-class.md#dopropexchange)
 
 
 

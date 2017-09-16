@@ -1,5 +1,5 @@
 ---
-title: "クラスの関数 |Microsoft ドキュメント"
+title: COleDropTarget Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -23,10 +23,15 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- COleDropTarget class
-- drag and drop, drop target
-- drop commands, accepting
-- drop commands
+- COleDropTarget [MFC], COleDropTarget
+- COleDropTarget [MFC], OnDragEnter
+- COleDropTarget [MFC], OnDragLeave
+- COleDropTarget [MFC], OnDragOver
+- COleDropTarget [MFC], OnDragScroll
+- COleDropTarget [MFC], OnDrop
+- COleDropTarget [MFC], OnDropEx
+- COleDropTarget [MFC], Register
+- COleDropTarget [MFC], Revoke
 ms.assetid: a58c9a48-6a93-4357-b078-4594df258311
 caps.latest.revision: 23
 author: mikeblome
@@ -46,72 +51,72 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 0e9429d531d6af86bc571b1f871fbcd4a8fe2532
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 5cdf8f39470df66a3a9e6a625774744da6d3fd4a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coledroptarget-class"></a>関数のクラス
-ウィンドウと OLE ライブラリの間の通信機構を提供します。  
+# <a name="coledroptarget-class"></a>COleDropTarget Class
+Provides the communication mechanism between a window and the OLE libraries.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class COleDropTarget : public CCmdTarget  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDropTarget::COleDropTarget](#coledroptarget)|`COleDropTarget` オブジェクトを構築します。|  
+|[COleDropTarget::COleDropTarget](#coledroptarget)|Constructs a `COleDropTarget` object.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[COleDropTarget::OnDragEnter](#ondragenter)|カーソルが最初に、ウィンドウに入ったときに呼び出されます。|  
-|[COleDropTarget::OnDragLeave](#ondragleave)|カーソルがウィンドウ外にドラッグされたときに呼び出されます。|  
-|[COleDropTarget::OnDragOver](#ondragover)|ウィンドウの上にカーソルをドラッグするときに繰り返し呼び出されます。|  
-|[COleDropTarget::OnDragScroll](#ondragscroll)|カーソルがウィンドウのスクロール領域にドラッグされるかどうかを判断するには、呼び出されます。|  
-|[COleDropTarget::OnDrop](#ondrop)|既定のハンドラーのウィンドウにデータが削除されるときに呼び出されます。|  
-|[COleDropTarget::OnDropEx](#ondropex)|最初のハンドラーのウィンドウにデータが削除されるときに呼び出されます。|  
-|[COleDropTarget::Register](#register)|有効なドロップ先として、ウィンドウを登録します。|  
-|[COleDropTarget::Revoke](#revoke)|によって有効なドロップ先はしないようにするウィンドウです。|  
+|[COleDropTarget::OnDragEnter](#ondragenter)|Called when the cursor first enters the window.|  
+|[COleDropTarget::OnDragLeave](#ondragleave)|Called when the cursor is dragged out of the window.|  
+|[COleDropTarget::OnDragOver](#ondragover)|Called repeatedly when the cursor is dragged over the window.|  
+|[COleDropTarget::OnDragScroll](#ondragscroll)|Called to determine whether the cursor is dragged into the scroll region of the window.|  
+|[COleDropTarget::OnDrop](#ondrop)|Called when data is dropped into the window, default handler.|  
+|[COleDropTarget::OnDropEx](#ondropex)|Called when data is dropped into the window, initial handler.|  
+|[COleDropTarget::Register](#register)|Registers the window as a valid drop target.|  
+|[COleDropTarget::Revoke](#revoke)|Causes the window to cease being a valid drop target.|  
   
-## <a name="remarks"></a>コメント  
- このクラスのオブジェクトを作成すると、OLE のドラッグ アンド ドロップ メカニズムを通じてデータを受信するウィンドウことができます。  
+## <a name="remarks"></a>Remarks  
+ Creating an object of this class allows a window to accept data through the OLE drag-and-drop mechanism.  
   
- Drop コマンドをそのまま使用するウィンドウを取得するには、オブジェクトを最初に作成する必要があります、`COleDropTarget`クラスし、まず、[登録](#register)目的へのポインターを関数`CWnd`唯一のパラメーターとしてオブジェクトです。  
+ To get a window to accept drop commands, you should first create an object of the `COleDropTarget` class, and then call the [Register](#register) function with a pointer to the desired `CWnd` object as the only parameter.  
   
- ドラッグ アンド ドロップ操作の詳細については、OLE を使用して記事を参照して[ドラッグ アンド ドロップ (OLE)](../../mfc/drag-and-drop-ole.md)します。  
+ For more information on drag-and-drop operations using OLE, see the article [Drag and Drop (OLE)](../../mfc/drag-and-drop-ole.md).  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
   
  `COleDropTarget`  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxole.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxole.h  
   
-##  <a name="coledroptarget"></a>COleDropTarget::COleDropTarget  
- クラスのオブジェクトを構築`COleDropTarget`します。  
+##  <a name="coledroptarget"></a>  COleDropTarget::COleDropTarget  
+ Constructs an object of class `COleDropTarget`.  
   
 ```  
 COleDropTarget();
 ```  
   
-### <a name="remarks"></a>コメント  
- 呼び出す[登録](#register)ウィンドウにこのオブジェクトに関連付けることです。  
+### <a name="remarks"></a>Remarks  
+ Call [Register](#register) to associate this object with a window.  
   
-##  <a name="ondragenter"></a>COleDropTarget::OnDragEnter  
- カーソルが最初に、ウィンドウにドラッグされたときに、フレームワークによって呼び出されます。  
+##  <a name="ondragenter"></a>  COleDropTarget::OnDragEnter  
+ Called by the framework when the cursor is first dragged into the window.  
   
 ```  
 virtual DROPEFFECT OnDragEnter(
@@ -121,55 +126,55 @@ virtual DROPEFFECT OnDragEnter(
     CPoint point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- ウィンドウへのポインターが、カーソルを入力します。  
+ Points to the window the cursor is entering.  
   
  `pDataObject`  
- ドロップ可能なデータを含むデータ オブジェクトへのポインター。  
+ Points to the data object containing the data that can be dropped.  
   
  `dwKeyState`  
- 修飾子キーの状態を格納します。 これは、次の任意の数の組み合わせ: **MK_CONTROL**、 **MK_SHIFT**、 **MK_ALT**、 **MK_LBUTTON**、 **MK_MBUTTON**、および**MK_RBUTTON**します。  
+ Contains the state of the modifier keys. This is a combination of any number of the following: **MK_CONTROL**, **MK_SHIFT**, **MK_ALT**, **MK_LBUTTON**, **MK_MBUTTON**, and **MK_RBUTTON**.  
   
  `point`  
- クライアント座標でのカーソルの現在の場所が含まれています。  
+ Contains the current location of the cursor in client coordinates.  
   
-### <a name="return-value"></a>戻り値  
- によって指定された位置にドロップが行われた場合に発生する影響`point`します。 次の&1; つ以上を指定できます。  
+### <a name="return-value"></a>Return Value  
+ The effect that would result if a drop were attempted at the location specified by `point`. It can be one or more of the following:  
   
-- `DROPEFFECT_NONE`ドロップは許可されていません。  
+- `DROPEFFECT_NONE` A drop would not be allowed.  
   
-- `DROPEFFECT_COPY`コピー操作が実行されます。  
+- `DROPEFFECT_COPY` A copy operation would be performed.  
   
-- `DROPEFFECT_MOVE`移動操作が実行されます。  
+- `DROPEFFECT_MOVE` A move operation would be performed.  
   
-- `DROPEFFECT_LINK`ドロップされたデータから、元のデータへのリンクが確立されます。  
+- `DROPEFFECT_LINK` A link from the dropped data to the original data would be established.  
   
-- `DROPEFFECT_SCROLL`ドラッグ スクロール操作が発生するか、ターゲットで発生しています。  
+- `DROPEFFECT_SCROLL` A drag scroll operation is about to occur or is occurring in the target.  
   
-### <a name="remarks"></a>コメント  
- ウィンドウでドロップ操作を許可するには、この関数をオーバーライドします。 既定の実装[CView::OnDragEnter](../../mfc/reference/cview-class.md#ondragenter)、単に返す`DROPEFFECT_NONE`既定です。  
+### <a name="remarks"></a>Remarks  
+ Override this function to allow drop operations to occur in the window. The default implementation calls [CView::OnDragEnter](../../mfc/reference/cview-class.md#ondragenter), which simply returns `DROPEFFECT_NONE` by default.  
   
- 詳細については、次を参照してください。 [IDropTarget::DragEnter](http://msdn.microsoft.com/library/windows/desktop/ms680106)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IDropTarget::DragEnter](http://msdn.microsoft.com/library/windows/desktop/ms680106) in the Windows SDK.  
   
-##  <a name="ondragleave"></a>COleDropTarget::OnDragLeave  
- ドラッグ操作の実行中に、カーソルがウィンドウを離れたときに、フレームワークによって呼び出されます。  
+##  <a name="ondragleave"></a>  COleDropTarget::OnDragLeave  
+ Called by the framework when the cursor leaves the window while a dragging operation is in effect.  
   
 ```  
 virtual void OnDragLeave(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カーソルのまま、ウィンドウを指します。  
+ Points to the window the cursor is leaving.  
   
-### <a name="remarks"></a>コメント  
- ドラッグ操作が指定されたウィンドウを離れると、特別な動作をする場合は、この関数をオーバーライドします。 この関数の既定の実装を呼び出す[CView::OnDragLeave](../../mfc/reference/cview-class.md#ondragleave)します。  
+### <a name="remarks"></a>Remarks  
+ Override this function if you want special behavior when the drag operation leaves the specified window. The default implementation of this function calls [CView::OnDragLeave](../../mfc/reference/cview-class.md#ondragleave).  
   
- 詳細については、次を参照してください。 [IDropTarget::DragLeave](http://msdn.microsoft.com/library/windows/desktop/ms680110)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IDropTarget::DragLeave](http://msdn.microsoft.com/library/windows/desktop/ms680110) in the Windows SDK.  
   
-##  <a name="ondragover"></a>COleDropTarget::OnDragOver  
- カーソルがウィンドウの上にドラッグされたときに、フレームワークによって呼び出されます。  
+##  <a name="ondragover"></a>  COleDropTarget::OnDragOver  
+ Called by the framework when the cursor is dragged over the window.  
   
 ```  
 virtual DROPEFFECT OnDragOver(
@@ -179,42 +184,42 @@ virtual DROPEFFECT OnDragOver(
     CPoint point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カーソルを上にウィンドウへのポインター。  
+ Points to the window that the cursor is over.  
   
  `pDataObject`  
- 削除するデータを含むデータ オブジェクトへのポインター。  
+ Points to the data object that contains the data to be dropped.  
   
  `dwKeyState`  
- 修飾子キーの状態を格納します。 これは、次の任意の数の組み合わせ: **MK_CONTROL**、 **MK_SHIFT**、 **MK_ALT**、 **MK_LBUTTON**、 **MK_MBUTTON**、および**MK_RBUTTON**します。  
+ Contains the state of the modifier keys. This is a combination of any number of the following: **MK_CONTROL**, **MK_SHIFT**, **MK_ALT**, **MK_LBUTTON**, **MK_MBUTTON**, and **MK_RBUTTON**.  
   
  `point`  
- クライアント座標でのカーソルの現在の場所が含まれています。  
+ Contains the current location of the cursor in client coordinates.  
   
-### <a name="return-value"></a>戻り値  
- によって指定された位置にドロップが行われた場合に発生する影響`point`します。 次の&1; つ以上を指定できます。  
+### <a name="return-value"></a>Return Value  
+ The effect that would result if a drop were attempted at the location specified by `point`. It can be one or more of the following:  
   
-- `DROPEFFECT_NONE`ドロップは許可されていません。  
+- `DROPEFFECT_NONE` A drop would not be allowed.  
   
-- `DROPEFFECT_COPY`コピー操作が実行されます。  
+- `DROPEFFECT_COPY` A copy operation would be performed.  
   
-- `DROPEFFECT_MOVE`移動操作が実行されます。  
+- `DROPEFFECT_MOVE` A move operation would be performed.  
   
-- `DROPEFFECT_LINK`ドロップされたデータから、元のデータへのリンクが確立されます。  
+- `DROPEFFECT_LINK` A link from the dropped data to the original data would be established.  
   
-- `DROPEFFECT_SCROLL`ドラッグ スクロール操作が発生するか、ターゲットで発生していることを示します。  
+- `DROPEFFECT_SCROLL` Indicates that a drag scroll operation is about to occur or is occurring in the target.  
   
-### <a name="remarks"></a>コメント  
- この関数は、ウィンドウにドロップ操作を許可するようにオーバーライドする必要があります。 この関数の既定の実装[直前](../../mfc/reference/cview-class.md#ondragover)、返す`DROPEFFECT_NONE`既定です。 この関数が呼び出されるため、ドラッグ アンド ドロップ操作中に頻繁に、必要があります最適化することが可能な限りです。  
+### <a name="remarks"></a>Remarks  
+ This function should be overridden to allow drop operations to occur in the window. The default implementation of this function calls [CView::OnDragOver](../../mfc/reference/cview-class.md#ondragover), which returns `DROPEFFECT_NONE` by default. Because this function is called frequently during a drag-and-drop operation, it should be optimized as much as possible.  
   
- 詳細については、次を参照してください。 [IDropTarget::DragOver](http://msdn.microsoft.com/library/windows/desktop/ms680129)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IDropTarget::DragOver](http://msdn.microsoft.com/library/windows/desktop/ms680129) in the Windows SDK.  
   
-### <a name="example"></a>例  
- [!code-cpp[NVC_MFCOleContainer #&21;](../../mfc/codesnippet/cpp/coledroptarget-class_1.cpp)]  
+### <a name="example"></a>Example  
+ [!code-cpp[NVC_MFCOleContainer#21](../../mfc/codesnippet/cpp/coledroptarget-class_1.cpp)]  
   
-##  <a name="ondragscroll"></a>COleDropTarget::OnDragScroll  
- 呼び出しの前に、フレームワークによって呼び出さ[OnDragEnter](#ondragenter)または[OnDragOver](#ondragover)を判断するかどうか`point`スクロール可能な領域ができます。  
+##  <a name="ondragscroll"></a>  COleDropTarget::OnDragScroll  
+ Called by the framework before calling [OnDragEnter](#ondragenter) or [OnDragOver](#ondragover) to determine whether `point` is in the scrolling region.  
   
 ```  
 virtual DROPEFFECT OnDragScroll(
@@ -223,34 +228,34 @@ virtual DROPEFFECT OnDragScroll(
     CPoint point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カーソルを上に現在のウィンドウへのポインター。  
+ Points to the window the cursor is currently over.  
   
  `dwKeyState`  
- 修飾子キーの状態を格納します。 これは、次の任意の数の組み合わせ: **MK_CONTROL**、 **MK_SHIFT**、 **MK_ALT**、 **MK_LBUTTON**、 **MK_MBUTTON**、および**MK_RBUTTON**します。  
+ Contains the state of the modifier keys. This is a combination of any number of the following: **MK_CONTROL**, **MK_SHIFT**, **MK_ALT**, **MK_LBUTTON**, **MK_MBUTTON**, and **MK_RBUTTON**.  
   
  `point`  
- (ピクセル単位)、画面を基準と、カーソルの位置が含まれています。  
+ Contains the location of the cursor, in pixels, relative to the screen.  
   
-### <a name="return-value"></a>戻り値  
- によって指定された位置にドロップが行われた場合に発生する影響`point`します。 次の&1; つ以上を指定できます。  
+### <a name="return-value"></a>Return Value  
+ The effect that would result if a drop were attempted at the location specified by `point`. It can be one or more of the following:  
   
-- `DROPEFFECT_NONE`ドロップは許可されていません。  
+- `DROPEFFECT_NONE` A drop would not be allowed.  
   
-- `DROPEFFECT_COPY`コピー操作が実行されます。  
+- `DROPEFFECT_COPY` A copy operation would be performed.  
   
-- `DROPEFFECT_MOVE`移動操作が実行されます。  
+- `DROPEFFECT_MOVE` A move operation would be performed.  
   
-- `DROPEFFECT_LINK`ドロップされたデータから、元のデータへのリンクが確立されます。  
+- `DROPEFFECT_LINK` A link from the dropped data to the original data would be established.  
   
-- `DROPEFFECT_SCROLL`ドラッグ スクロール操作が発生するか、ターゲットで発生していることを示します。  
+- `DROPEFFECT_SCROLL` Indicates that a drag scroll operation is about to occur or is occurring in the target.  
   
-### <a name="remarks"></a>コメント  
- このイベントの特別な動作を提供する場合に、この関数をオーバーライドします。 この関数の既定の実装[CView::OnDragScroll](../../mfc/reference/cview-class.md#ondragscroll)、返す`DROPEFFECT_NONE`し、カーソルがウィンドウの枠線内の既定のスクロール領域にドラッグされると、ウィンドウをスクロールします。  
+### <a name="remarks"></a>Remarks  
+ Override this function when you want to provide special behavior for this event. The default implementation of this function calls [CView::OnDragScroll](../../mfc/reference/cview-class.md#ondragscroll), which returns `DROPEFFECT_NONE` and scrolls the window when the cursor is dragged into the default scroll region inside the border of the window.  
   
-##  <a name="ondrop"></a>COleDropTarget::OnDrop  
- ドロップ操作が行われるときに、フレームワークによって呼び出されます。  
+##  <a name="ondrop"></a>  COleDropTarget::OnDrop  
+ Called by the framework when a drop operation is to occur.  
   
 ```  
 virtual BOOL OnDrop(
@@ -260,37 +265,37 @@ virtual BOOL OnDrop(
     CPoint point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カーソルを上に現在のウィンドウへのポインター。  
+ Points to the window the cursor is currently over.  
   
  `pDataObject`  
- 削除するデータを含むデータ オブジェクトへのポインター。  
+ Points to the data object that contains the data to be dropped.  
   
  `dropEffect`  
- Drop 操作のユーザーが選択した結果。 次の&1; つ以上を指定できます。  
+ The effect that the user chose for the drop operation. It can be one or more of the following:  
   
-- `DROPEFFECT_COPY`コピー操作が実行されます。  
+- `DROPEFFECT_COPY` A copy operation would be performed.  
   
-- `DROPEFFECT_MOVE`移動操作が実行されます。  
+- `DROPEFFECT_MOVE` A move operation would be performed.  
   
-- `DROPEFFECT_LINK`ドロップされたデータから、元のデータへのリンクが確立されます。  
+- `DROPEFFECT_LINK` A link from the dropped data to the original data would be established.  
   
  `point`  
- (ピクセル単位)、画面を基準と、カーソルの位置が含まれています。  
+ Contains the location of the cursor, in pixels, relative to the screen.  
   
-### <a name="return-value"></a>戻り値  
- ドロップが正常に終了した場合は 0 以外それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if the drop is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- Framework の最初の呼び出し[OnDropEx](#ondropex)します。 場合、`OnDropEx`関数は、削除を処理しない、フレームワークは、このメンバー関数を呼び出す`OnDrop`します。 通常、アプリケーションは[OnDropEx](../../mfc/reference/cview-class.md#ondropex)をマウスの右ボタンを処理するビュー クラスでドラッグ アンド ドロップします。 ビュー クラスでは通常、 [OnDrop](../../mfc/reference/cview-class.md#ondrop)単純なドラッグ アンド ドロップを処理するために使用します。  
+### <a name="remarks"></a>Remarks  
+ The framework first calls [OnDropEx](#ondropex). If the `OnDropEx` function does not handle the drop, the framework then calls this member function, `OnDrop`. Typically, the application overrides [OnDropEx](../../mfc/reference/cview-class.md#ondropex) in the view class to handle right mouse-button drag and drop. Typically, the view class [OnDrop](../../mfc/reference/cview-class.md#ondrop) is used to handle simple drag and drop.  
   
- 既定の実装`COleDropTarget::OnDrop`呼び出し[この関数](../../mfc/reference/cview-class.md#ondrop)、単に返す**FALSE**既定です。  
+ The default implementation of `COleDropTarget::OnDrop` calls [CView::OnDrop](../../mfc/reference/cview-class.md#ondrop), which simply returns **FALSE** by default.  
   
- 詳細については、次を参照してください。 [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242) in the Windows SDK.  
   
-##  <a name="ondropex"></a>COleDropTarget::OnDropEx  
- ドロップ操作が行われるときに、フレームワークによって呼び出されます。  
+##  <a name="ondropex"></a>  COleDropTarget::OnDropEx  
+ Called by the framework when a drop operation is to occur.  
   
 ```  
 virtual DROPEFFECT OnDropEx(
@@ -301,79 +306,79 @@ virtual DROPEFFECT OnDropEx(
     CPoint point);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- カーソルを上に現在のウィンドウへのポインター。  
+ Points to the window the cursor is currently over.  
   
  `pDataObject`  
- 削除するデータを含むデータ オブジェクトへのポインター。  
+ Points to the data object that contains the data to be dropped.  
   
  `dropDefault`  
- 現在のキーの状態に基づく既定のドロップ操作のユーザーが選択した結果。 できます`DROPEFFECT_NONE`します。 ドロップ効果は、「解説」セクションで説明します。  
+ The effect that the user chose for the default drop operation based on the current key state. It can be `DROPEFFECT_NONE`. Drop effects are discussed in the Remarks section.  
   
  `dropList`  
- ドロップ ソースがサポートする、ドロップ効果の一覧。 ビットごとの OR を使用して、ドロップ効果の値を組み合わせることができます ( **|**) 操作です。 ドロップ効果は、「解説」セクションで説明します。  
+ A list of the drop effects that the drop source supports. Drop effect values can be combined using the bitwise OR ( **&#124;**) operation. Drop effects are discussed in the Remarks section.  
   
  `point`  
- (ピクセル単位)、画面を基準と、カーソルの位置が含まれています。  
+ Contains the location of the cursor, in pixels, relative to the screen.  
   
-### <a name="return-value"></a>戻り値  
- 指定された位置にある削除の試行から生成されるドロップ効果`point`します。 ドロップ効果は、「解説」セクションで説明します。  
+### <a name="return-value"></a>Return Value  
+ The drop effect that resulted from the drop attempt at the location specified by `point`. Drop effects are discussed in the Remarks section.  
   
-### <a name="remarks"></a>コメント  
- フレームワークは、まず、この関数を呼び出します。 これで、削除が処理しない場合、フレームワーク[OnDrop](#ondrop)します。 通常をオーバーライド[OnDropEx](../../mfc/reference/cview-class.md#ondropex)マウスの右ボタンをサポートするためにビュー クラスにドラッグ アンド ドロップします。 ビュー クラスでは通常、 [OnDrop](../../mfc/reference/cview-class.md#ondrop)単純なドラッグ アンド ドロップのサポートのケースを処理するために使用します。  
+### <a name="remarks"></a>Remarks  
+ The framework first calls this function. If it does not handle the drop, the framework then calls [OnDrop](#ondrop). Typically, you will override [OnDropEx](../../mfc/reference/cview-class.md#ondropex) in the view class to support right mouse-button drag and drop. Typically, the view class [OnDrop](../../mfc/reference/cview-class.md#ondrop) is used to handle the case of support for simple drag and drop.  
   
- 既定の実装`COleDropTarget::OnDropEx`呼び出し[CView::OnDropEx](../../mfc/reference/cview-class.md#ondropex)します。 既定では、 [CView::OnDropEx](../../mfc/reference/cview-class.md#ondropex)を示すためにダミーの値を返すだけで、 [OnDrop](#ondrop)メンバー関数を呼び出す必要があります。  
+ The default implementation of `COleDropTarget::OnDropEx` calls [CView::OnDropEx](../../mfc/reference/cview-class.md#ondropex). By default, [CView::OnDropEx](../../mfc/reference/cview-class.md#ondropex) simply returns a dummy value to indicate the [OnDrop](#ondrop) member function should be called.  
   
- ドロップ効果では、ドロップ操作に関連付けられたアクションについて説明します。 次のようなドロップ効果の一覧を参照してください。  
+ Drop effects describe the action associated with a drop operation. See the following list of drop effects:  
   
-- `DROPEFFECT_NONE`ドロップは許可されていません。  
+- `DROPEFFECT_NONE` A drop would not be allowed.  
   
-- `DROPEFFECT_COPY`コピー操作が実行されます。  
+- `DROPEFFECT_COPY` A copy operation would be performed.  
   
-- `DROPEFFECT_MOVE`移動操作が実行されます。  
+- `DROPEFFECT_MOVE` A move operation would be performed.  
   
-- `DROPEFFECT_LINK`ドロップされたデータから、元のデータへのリンクが確立されます。  
+- `DROPEFFECT_LINK` A link from the dropped data to the original data would be established.  
   
-- `DROPEFFECT_SCROLL`ドラッグ スクロール操作が発生するか、ターゲットで発生していることを示します。  
+- `DROPEFFECT_SCROLL` Indicates that a drag scroll operation is about to occur or is occurring in the target.  
   
- 詳細については、次を参照してください。 [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [IDropTarget::Drop](http://msdn.microsoft.com/library/windows/desktop/ms687242) in the Windows SDK.  
   
-##  <a name="register"></a>COleDropTarget::Register  
- 有効なドロップ先として OLE Dll を現在のウィンドウを登録するには、この関数を呼び出します。  
+##  <a name="register"></a>  COleDropTarget::Register  
+ Call this function to register your window with the OLE DLLs as a valid drop target.  
   
 ```  
 BOOL Register(CWnd* pWnd);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
  `pWnd`  
- ドロップ先として登録するのには、ウィンドウへのポインター。  
+ Points to the window that is to be registered as a drop target.  
   
-### <a name="return-value"></a>戻り値  
- 登録が成功した場合は 0 以外。それ以外の場合 0 を返します。  
+### <a name="return-value"></a>Return Value  
+ Nonzero if registration is successful; otherwise 0.  
   
-### <a name="remarks"></a>コメント  
- この関数は、許容されるためにドロップ操作を呼び出す必要があります。  
+### <a name="remarks"></a>Remarks  
+ This function must be called for drop operations to be accepted.  
   
- 詳細については、次を参照してください。 [RegisterDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms678405)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [RegisterDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms678405) in the Windows SDK.  
   
-##  <a name="revoke"></a>COleDropTarget::Revoke  
- この関数を呼び出すことによって、ドロップ先として登録されている任意のウィンドウを破棄する前に[登録](#register)ドロップ ターゲットの一覧から削除します。  
+##  <a name="revoke"></a>  COleDropTarget::Revoke  
+ Call this function before destroying any window that has been registered as a drop target through a call to [Register](#register) to remove it from the list of drop targets.  
   
 ```  
 virtual void Revoke();
 ```  
   
-### <a name="remarks"></a>コメント  
- この関数が自動的に呼び出される、 [OnDestroy](../../mfc/reference/cwnd-class.md#ondestroy)のためいないこの関数を明示的に呼び出す必要は通常は、登録されているウィンドウのハンドラーです。  
+### <a name="remarks"></a>Remarks  
+ This function is called automatically from the [OnDestroy](../../mfc/reference/cwnd-class.md#ondestroy) handler for the window that was registered, so it is usually not necessary to call this function explicitly.  
   
- 詳細については、次を参照してください。 [RevokeDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms692643)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ For more information, see [RevokeDragDrop](http://msdn.microsoft.com/library/windows/desktop/ms692643) in the Windows SDK.  
   
-## <a name="see-also"></a>関連項目  
- [MFC サンプル HIERSVR](../../visual-cpp-samples.md)   
- [MFC サンプルの OCLIENT](../../visual-cpp-samples.md)   
- [CCmdTarget クラス](../../mfc/reference/ccmdtarget-class.md)   
- [階層図](../../mfc/hierarchy-chart.md)   
- [COleDropSource クラス](../../mfc/reference/coledropsource-class.md)
+## <a name="see-also"></a>See Also  
+ [MFC Sample HIERSVR](../../visual-cpp-samples.md)   
+ [MFC Sample OCLIENT](../../visual-cpp-samples.md)   
+ [CCmdTarget Class](../../mfc/reference/ccmdtarget-class.md)   
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [COleDropSource Class](../../mfc/reference/coledropsource-class.md)
 

@@ -1,5 +1,5 @@
 ---
-title: "CMFCRibbonSeparator クラス |Microsoft ドキュメント"
+title: CMFCRibbonSeparator Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -22,9 +22,14 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCRibbonSeparator class
-- GetThisClass method
-- CreateObject method
+- CMFCRibbonSeparator [MFC], CMFCRibbonSeparator
+- CMFCRibbonSeparator [MFC], AddToListBox
+- CMFCRibbonSeparator [MFC], CopyFrom
+- CMFCRibbonSeparator [MFC], GetRegularSize
+- CMFCRibbonSeparator [MFC], IsSeparator
+- CMFCRibbonSeparator [MFC], IsTabStop
+- CMFCRibbonSeparator [MFC], OnDraw
+- CMFCRibbonSeparator [MFC], OnDrawOnList
 ms.assetid: bedb1a53-cb07-4c3c-be12-698c5409e7cf
 caps.latest.revision: 21
 author: mikeblome
@@ -44,56 +49,56 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 98a58d43b5e6299f26521d873caec06d4581f7b3
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 9dbf1f41e811d44abe8d763d18f2de6634aeec87
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcribbonseparator-class"></a>CMFCRibbonSeparator クラス
-リボンの区分線を実装します。  
+# <a name="cmfcribbonseparator-class"></a>CMFCRibbonSeparator Class
+Implements the ribbon separator.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCRibbonSeparator : public CMFCRibbonBaseElement  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
-  
-|||  
-|-|-|  
-|名前|説明|  
-|[CMFCRibbonSeparator::CMFCRibbonSeparator](#cmfcribbonseparator)|`CMFCRibbonSeparator` オブジェクトを構築します。|  
-  
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-constructors"></a>Public Constructors  
   
 |||  
 |-|-|  
-|名前|説明|  
-|[CMFCRibbonSeparator::AddToListBox](#addtolistbox)|区分線を追加、**コマンド**リストに、**カスタマイズ** ダイアログ ボックス。 (上書き[CMFCRibbonBaseElement::AddToListBox](../../mfc/reference/cmfcribbonbaseelement-class.md#addtolistbox))。|  
-|`CMFCRibbonSeparator::CreateObject`|このクラス型の動的インスタンスを作成するために、フレームワークで使用されます。|  
-|`CMFCRibbonSeparator::GetThisClass`|ポインターを取得するために、フレームワークで使用される、 [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md)このクラス型に関連付けられているオブジェクト。|  
+|Name|Description|  
+|[CMFCRibbonSeparator::CMFCRibbonSeparator](#cmfcribbonseparator)|Constructs a `CMFCRibbonSeparator` object.|  
   
-### <a name="protected-methods"></a>プロテクト メソッド  
+### <a name="public-methods"></a>Public Methods  
   
 |||  
 |-|-|  
-|名前|説明|  
-|[CMFCRibbonSeparator::CopyFrom](#copyfrom)|別のオブジェクトから区切り記号のメンバー変数を設定するコピー メソッド。|  
-|[CMFCRibbonSeparator::GetRegularSize](#getregularsize)|区切り記号のサイズを返します。|  
-|[CMFCRibbonSeparator::IsSeparator](#isseparator)|これが、区切り記号であるかどうかを示します。|  
-|[CMFCRibbonSeparator::IsTabStop](#istabstop)|タブ ストップであるかどうかを示します。|  
-|[CMFCRibbonSeparator::OnDraw](#ondraw)|リボンまたはクイック アクセス ツールバーに区分線を描画する、システムによって呼び出されます。|  
-|[CMFCRibbonSeparator::OnDrawOnList](#ondrawonlist)|区分線を描画する、システムによって呼び出さ、**コマンド** ボックスの一覧です。|  
+|Name|Description|  
+|[CMFCRibbonSeparator::AddToListBox](#addtolistbox)|Adds a separator to the **Commands** list in the **Customize** dialog box. (Overrides [CMFCRibbonBaseElement::AddToListBox](../../mfc/reference/cmfcribbonbaseelement-class.md#addtolistbox).)|  
+|`CMFCRibbonSeparator::CreateObject`|Used by the framework to create a dynamic instance of this class type.|  
+|`CMFCRibbonSeparator::GetThisClass`|Used by the framework to obtain a pointer to the [CRuntimeClass](../../mfc/reference/cruntimeclass-structure.md) object that is associated with this class type.|  
   
-## <a name="remarks"></a>コメント  
- リボンの区分線は、水平または垂直の行を論理的に分離リボン要素です。 リボン コントロール、アプリケーションのメイン メニューのリボン ステータス バー、およびクイック アクセス ツールバーに区分線を描画できます。  
+### <a name="protected-methods"></a>Protected Methods  
   
- アプリケーションで、区切り記号を使用するには、新しいオブジェクトを構築し、次のように、アプリケーションのメイン メニューに追加します。  
+|||  
+|-|-|  
+|Name|Description|  
+|[CMFCRibbonSeparator::CopyFrom](#copyfrom)|A copy method that sets a separator's member variables from another object.|  
+|[CMFCRibbonSeparator::GetRegularSize](#getregularsize)|Returns the size of a separator.|  
+|[CMFCRibbonSeparator::IsSeparator](#isseparator)|Indicates whether this is a separator.|  
+|[CMFCRibbonSeparator::IsTabStop](#istabstop)|Indicates whether this is a tab stop.|  
+|[CMFCRibbonSeparator::OnDraw](#ondraw)|Called by the system to draw the separator on either the ribbon or the Quick Access Toolbar.|  
+|[CMFCRibbonSeparator::OnDrawOnList](#ondrawonlist)|Called by the system to draw the separator on the **Commands** list.|  
+  
+## <a name="remarks"></a>Remarks  
+ A ribbon separator is a vertical or horizontal line that logically separates ribbon elements. A separator can be drawn on the ribbon control, the main application menu, the ribbon status bar, and the Quick Access Toolbar.  
+  
+ To use a separator in your application, construct the new object and add it to the main application menu as shown here:  
   
 ```  
 CMFCRibbonMainPanel* pMainPanel = m_wndRibbonBar.AddMainCategory(_T("Main Menu"),
@@ -103,20 +108,20 @@ CMFCRibbonMainPanel* pMainPanel = m_wndRibbonBar.AddMainCategory(_T("Main Menu")
 ...  
 pMainPanel->Add(new CMFCRibbonSeparator(TRUE));
 ```  
-呼び出す[CMFCRibbonPanel::AddSeparator](../../mfc/reference/cmfcribbonpanel-class.md#addseparator)リボン パネルに区切り記号を追加します。 区切り記号が割り当てられ、内部で追加、`AddSeparator`メソッドです。  
+Call [CMFCRibbonPanel::AddSeparator](../../mfc/reference/cmfcribbonpanel-class.md#addseparator) to add separators to ribbon panels. The separators are allocated and added internally by the `AddSeparator` method.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CMFCRibbonBaseElement](../../mfc/reference/cmfcribbonbaseelement-class.md)  
   
  [CMFCRibbonSeparator](../../mfc/reference/cmfcribbonseparator-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxbaseribbonelement.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxbaseribbonelement.h  
   
-##  <a name="addtolistbox"></a>CMFCRibbonSeparator::AddToListBox  
- 区分線を追加、**コマンド**リストに、**カスタマイズ** ダイアログ ボックス。  
+##  <a name="addtolistbox"></a>  CMFCRibbonSeparator::AddToListBox  
+ Adds a separator to the **Commands** list in the **Customize** dialog box.  
   
 ```  
 virtual int AddToListBox(
@@ -124,96 +129,96 @@ virtual int AddToListBox(
     BOOL bDeep);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pWndListBox`  
- ポインター、**コマンド**区切り記号が追加された一覧です。  
+### <a name="parameters"></a>Parameters  
+ [in] `pWndListBox`  
+ A pointer to the **Commands** list where the separator is added.  
   
- [入力] `bDeep`  
- 無視されます。  
+ [in] `bDeep`  
+ Ignored.  
   
-### <a name="return-value"></a>戻り値  
- 0 から始まるインデックスで指定されたリスト ボックス内の文字列に`pWndListBox`します。  
+### <a name="return-value"></a>Return Value  
+ Zero-based index to the string in the list box specified by `pWndListBox`.  
   
-##  <a name="cmfcribbonseparator"></a>CMFCRibbonSeparator::CMFCRibbonSeparator  
- `CMFCRibbonSeparator` オブジェクトを構築します。  
+##  <a name="cmfcribbonseparator"></a>  CMFCRibbonSeparator::CMFCRibbonSeparator  
+ Constructs a `CMFCRibbonSeparator` object.  
   
 ```  
 CMFCRibbonSeparator(BOOL bIsHoriz = FALSE);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `bIsHoriz`  
- 場合`TRUE`、区切り記号は水平方向場合`FALSE`、区切り文字は垂直に表示します。  
+### <a name="parameters"></a>Parameters  
+ [in] `bIsHoriz`  
+ If `TRUE`, the separator is horizontal; if `FALSE`, the separator is vertical.  
   
-### <a name="remarks"></a>コメント  
- 水平方向の区切り記号は、アプリケーションのメニューで使用されます。 垂直方向の区切り記号は、ツールバーで使用されます。  
+### <a name="remarks"></a>Remarks  
+ Horizontal separators are used in application menus. Vertical separators are used in toolbars.  
   
-### <a name="example"></a>例  
- 次の例のオブジェクトを構築する方法、`CMFCRibbonSeparator`クラスです。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to construct an object of the `CMFCRibbonSeparator` class.  
   
- [!code-cpp[NVC_MFC_RibbonApp&#19;](../../mfc/reference/codesnippet/cpp/cmfcribbonseparator-class_1.cpp)]  
+ [!code-cpp[NVC_MFC_RibbonApp#19](../../mfc/reference/codesnippet/cpp/cmfcribbonseparator-class_1.cpp)]  
   
-##  <a name="copyfrom"></a>CMFCRibbonSeparator::CopyFrom  
- 別のオブジェクトから区切り記号のメンバー変数を設定するコピー メソッド。  
+##  <a name="copyfrom"></a>  CMFCRibbonSeparator::CopyFrom  
+ A copy method that sets a separator's member variables from another object.  
   
 ```  
 virtual void CopyFrom(const CMFCRibbonBaseElement& src);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `Src`  
- コピー元ソース リボン要素。  
+### <a name="parameters"></a>Parameters  
+ [in] `Src`  
+ The source ribbon element to copy from.  
   
-##  <a name="getregularsize"></a>CMFCRibbonSeparator::GetRegularSize  
- 区切り記号のサイズを返します。  
+##  <a name="getregularsize"></a>  CMFCRibbonSeparator::GetRegularSize  
+ Returns the size of a separator.  
   
 ```  
 virtual CSize GetRegularSize(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイスのコンテンツへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device content.  
   
-### <a name="return-value"></a>戻り値  
- 指定したデバイス コンテキストで区切り記号のサイズ。  
+### <a name="return-value"></a>Return Value  
+ The size of the separator on the given device context.  
   
-##  <a name="isseparator"></a>CMFCRibbonSeparator::IsSeparator  
- これが、区切り記号であるかどうかを示します。  
+##  <a name="isseparator"></a>  CMFCRibbonSeparator::IsSeparator  
+ Indicates whether this is a separator.  
   
 ```  
 virtual BOOL IsSeparator() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 常に`TRUE`このクラスにします。  
+### <a name="return-value"></a>Return Value  
+ Always `TRUE` for this class.  
   
-##  <a name="istabstop"></a>CMFCRibbonSeparator::IsTabStop  
- タブ ストップであるかどうかを示します。  
+##  <a name="istabstop"></a>  CMFCRibbonSeparator::IsTabStop  
+ Indicates whether this is a tab stop.  
   
 ```  
 virtual BOOL IsTabStop() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- 常に`FALSE`このクラスにします。  
+### <a name="return-value"></a>Return Value  
+ Always `FALSE` for this class.  
   
-### <a name="remarks"></a>コメント  
- リボンの区切り記号は、タブ ストップではありません。  
+### <a name="remarks"></a>Remarks  
+ A ribbon separator is not a tab stop.  
   
-##  <a name="ondraw"></a>CMFCRibbonSeparator::OnDraw  
- リボンまたはクイック アクセス ツールバーに区分線を描画する、システムによって呼び出されます。  
+##  <a name="ondraw"></a>  CMFCRibbonSeparator::OnDraw  
+ Called by the system to draw the separator on either the ribbon or the Quick Access Toolbar.  
   
 ```  
 virtual void OnDraw(CDC* pDC);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDC`  
- デバイス コンテキストへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDC`  
+ A pointer to a device context.  
   
-##  <a name="ondrawonlist"></a>CMFCRibbonSeparator::OnDrawOnList  
- 区分線を描画する、システムによって呼び出さ、**コマンド** ボックスの一覧です。  
+##  <a name="ondrawonlist"></a>  CMFCRibbonSeparator::OnDrawOnList  
+ Called by the system to draw the separator on the **Commands** list.  
   
 ```  
 virtual void OnDrawOnList(
@@ -225,19 +230,19 @@ virtual void OnDrawOnList(
     BOOL bHighlighted);
 ```  
   
-### <a name="parameters"></a>パラメーター  
+### <a name="parameters"></a>Parameters  
   
 |||  
 |-|-|  
-|パラメーター|説明|  
-|[入力] `pDC`|デバイス コンテキストへのポインター。|  
-|[入力] `strText`|一覧に表示されるテキスト。|  
-|[入力] `nTextOffset`|テキストと外接する四角形の左端の間の間隔。|  
-|[入力] `rect`|外接する四角形を指定します。|  
-|[入力] `bIsSelected`|無視されます。|  
-|[入力] `bHighlighted`|無視されます。|  
+|Parameter|Description|  
+|[in] `pDC`|A pointer to a device context.|  
+|[in] `strText`|Text displayed on the list.|  
+|[in] `nTextOffset`|Spacing between the text and the left side of the bounding rectangle.|  
+|[in] `rect`|Specifies the bounding rectangle.|  
+|[in] `bIsSelected`|Ignored.|  
+|[in] `bHighlighted`|Ignored.|  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)
 

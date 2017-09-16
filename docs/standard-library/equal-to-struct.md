@@ -1,15 +1,14 @@
 ---
-title: "equal_to Struct | Microsoft ドキュメント"
+title: equal_to Struct | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
 ms.technology:
-- devlang-cpp
+- cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- equal_to
 - xfunctional/std::equal_to
 dev_langs:
 - C++
@@ -36,17 +35,17 @@ translation.priority.mt:
 - pl-pl
 - pt-br
 - tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: bac0d0114b10fc4ac7a83a60f21db5218cb3f1c8
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 21ed5f4db02ed8fa096a7e10271e5c3a5d9a3261
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
+ms.lasthandoff: 09/09/2017
 
 ---
-# <a name="equalto-struct"></a>equal_to 構造体
-引数に対して等値演算 (`operator==`) を実行する 2 項述語。  
+# <a name="equalto-struct"></a>equal_to Struct
+A binary predicate that performs the equality operation ( `operator==`) on its arguments.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 template <class Type = void>  
@@ -65,23 +64,23 @@ struct equal_to<void>
  };  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
- `Type`、`T`、`U`  
- 指定または推論された型のオペランドを受け取る `operator==` をサポートする任意の型。  
+#### <a name="parameters"></a>Parameters  
+ `Type`, `T`, `U`  
+ Any type that supports an `operator==` that takes operands of the specified or inferred types.  
   
  `Left`  
- 等値演算の左オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `T` の左辺値および右辺値参照引数の完全転送を行います。  
+ The left operand of the equality operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `T`.  
   
  `Right`  
- 等値演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
+ The right operand of the equality operation. The unspecialized template takes an lvalue reference argument of type `Type`. The specialized template does perfect forwarding of lvalue and rvalue reference arguments of inferred type `U`.  
   
-## <a name="return-value"></a>戻り値  
- `Left``==``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator==` によって返された型が含まれます。  
+## <a name="return-value"></a>Return Value  
+ The result of `Left == Right`. The specialized template does perfect forwarding of the result, which has the type that's returned by `operator==`.  
   
-## <a name="remarks"></a>コメント  
- `Type` 型のオブジェクトは、等値比較できる型であることが必要です。 オブジェクトのセットに対して定義されている `operator==` が、等価関係の数学的性質を満たしている必要があります。 組み込みの数値型とポインター型はすべて、この要件を満たします。  
+## <a name="remarks"></a>Remarks  
+ The objects of type `Type` must be equality-comparable. This requires that the `operator==` defined on the set of objects satisfies the mathematical properties of an equivalence relation. All of the built-in numeric and pointer types satisfy this requirement.  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // functional_equal_to.cpp  

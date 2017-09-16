@@ -1,119 +1,139 @@
 ---
-title: "テクニカル ノート 11: DLL の構成要素としての MFC | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.mfc.dll"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_USRDLL シンボル"
-  - "DLL [C++], リンク"
-  - "MFC DLL [C++], リンク (MFC への通常の DLL の)"
-  - "TN011"
-  - "USRDLL, コンパイラ スイッチ"
+title: 'TN011: Using MFC as Part of a DLL | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.mfc.dll
+dev_langs:
+- C++
+helpviewer_keywords:
+- _USRDLL symbol
+- USRDLLs, compiler switches
+- TN011
+- DLLs [MFC], linking
+- MFC DLLs [MFC], linking regular MFC DLLs to MFC
 ms.assetid: 76753e9c-59dc-40f6-b6a7-f6bb9a7c4190
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# テクニカル ノート 11: DLL の構成要素としての MFC
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 6c705e64040214c028cdc2e5a59ba173a04ec9ea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、MFC ライブラリを Windows ダイナミック リンク ライブラリ \(DLL\) の一部として使えるようにする標準 DLL について説明します。  このテクニカル ノートは、Windows DLL とそのビルド方法に精通したプログラマを対象としています。  MFC ライブラリの拡張機能を作成するための MFC 拡張 DLL の詳細については、「[テクニカル ノート 33: MFC の DLL バージョン](../mfc/tn033-dll-version-of-mfc.md)」を参照してください。  
+---
+# <a name="tn011-using-mfc-as-part-of-a-dll"></a>TN011: Using MFC as Part of a DLL
+This note describes regular MFC DLLs, which allow you to use the MFC library as part of a Windows dynamic-link library (DLL). It assumes that you are familiar with Windows DLLs and how to build them. For information about MFC extension DLLs, with which you can create extensions to the MFC library, see [DLL Version of MFC](../mfc/tn033-dll-version-of-mfc.md).  
   
-## DLL インターフェイス  
- 標準 DLL では、アプリケーションと DLL の間のインターフェイスは、C スタイルの関数または明示的にエクスポートしたクラスで指定されることが前提となります。  MFC のクラス インターフェイスはエクスポートできません。  
+## <a name="dll-interfaces"></a>DLL Interfaces  
+ regular MFC DLLs assume interfaces between the application and the DLL are specified in C-like functions or explicitly exported classes. MFC class interfaces cannot be exported.  
   
- DLL とアプリケーションの両方で MFC を使用する場合は、共有バージョンの MFC ライブラリを使用するか、ライブラリのコピーに静的にリンクするかをそれぞれが選択できます。  アプリケーションと DLL の両方が、標準バージョンの MFC ライブラリの 1 つを使用することもあります。  
+ If both a DLL and an application want to use MFC, both have a choice to either use the shared version of the MFC libraries or to statically link to a copy of the libraries. The application and DLL may both use one of the standard versions of the MFC library.  
   
- 標準 DLL には次のような利点があります。  
+ regular MFC DLLs have several advantages:  
   
--   DLL を使用するアプリケーションは、MFC を使用する必要がありません。また、Visual C\+\+ アプリケーションでなくてもかまいません。  
+-   The application that uses the DLL does not have to use MFC and does not have to be a Visual C++ application.  
   
--   MFC と静的にリンクする標準 DLL のサイズは、使用されてリンクされる MFC と C のランタイム ルーチンにのみ依存します。  
+-   With regular MFC DLLs that statically link to MFC, the size of the DLL depends only on the MFC and C runtime routines that are used and linked.  
   
--   MFC と動的にリンクする標準 DLL では、MFC の共有バージョンを使用することで大幅なメモリの節約を期待できます。  ただし、DLL と共有 DLL、Mfc*\<version\>*.dll や Msvvcrt*\<version\>*、.dll を配布する必要があります。  
+-   With regular MFC DLLs that dynamically link to MFC, the savings in memory from using the shared version of MFC can be significant. However, you must distribute the shared DLLs, Mfc*\<version>*.dll and Msvvcrt*\<version>*.dll, with your DLL.  
   
--   DLL のデザインはクラスの実装方法に依存しません。  独自のデザインの DLL では、必要な API だけをエクスポートします。  そのため、実装が変わっても、標準 DLL は同じように使用できます。  
+-   The DLL design is independent of how classes are implemented. Your DLL design exports only to the APIs you want. As a result, if the implementation changes, regular MFC DLLs are still valid.  
   
--   MFC と静的にリンクする標準 DLL では、DLL とアプリケーションの両方で MFC を使用する場合に、MFC のバージョンがアプリケーションと DLL で異なっていても問題はありません。  MFC ライブラリは各 DLL または EXE と静的にリンクされるので、どのバージョンを使っても問題はありません。  
+-   With regular MFC DLLs that statically link to MFC, if both DLL and application use MFC, there are no problems with the application that wants a different version of MFC than the DLL or vice versa. Because the MFC library is statically linked into each DLL or EXE, there is no question about which version you have.  
   
-## API の制約  
- MFC の機能には、DLL バージョンでは使用できないものがあります。これは、技術上の制約による場合と、そのサービスが通常はアプリケーションから提供されるためという理由による場合があります。  現在のバージョンの MFC では、使用できない関数は `CWinApp::SetDialogBkColor` だけです。  
+## <a name="api-limitations"></a>API Limitations  
+ Some MFC functionality does not apply to the DLL version, either because of technical limitations or because those services are usually provided by the application. With the current version of MFC, the only function that is not applicable is `CWinApp::SetDialogBkColor`.  
   
-## 独自の DLL のビルド  
- MFC と静的にリンクする標準 DLL をコンパイルするときは、シンボル `_USRDLL` と `_WINDLL` を定義する必要があります。  また、独自の DLL のコードは次のコンパイラ スイッチを使ってコンパイルする必要があります。  
+## <a name="building-your-dll"></a>Building Your DLL  
+ When compiling regular MFC DLLs that statically link to MFC, the symbols `_USRDLL` and `_WINDLL` must be defined. Your DLL code must also be compiled with the following compiler switches:  
   
--   **\/D\_WINDLL** は DLL のコンパイルを意味します。  
+- **/D_WINDLL** signifies the compilation is for a DLL  
   
--   **\/D\_USRDLL** は標準 DLL のビルドを意味します。  
+- **/D_USRDLL** specifies you are building a regular MFC DLL  
   
- MFC と動的にリンクする標準 DLL をコンパイルするときも、これらのシンボルを定義し、コンパイラ スイッチを使用する必要があります。  さらに、シンボル `_AFXDLL` を定義し、次のコンパイラ スイッチを使用して DLL のコードをコンパイルする必要があります。  
+ You must also define these symbols and use these compiler switches when you compile regular MFC DLLs that dynamically link to MFC. Additionally, the symbol `_AFXDLL` must be defined and your DLL code must be compiled with:  
   
--   **\/D\_AFXDLL** は、MFC と動的にリンクする標準 DLL のビルドを意味します。  
+- **/D_AFXDLL** specifies that you are building a regular MFC DLL that dynamically links to MFC  
   
- アプリケーションと DLL 間のインターフェイス \(API\) は明示的にエクスポートしてください。  独自のインターフェイスは低帯域に定義して、できるだけ C インターフェイスを使うことをお勧めします。  直接的な C インターフェイスの方が、複雑な C\+\+ クラスより保守が簡単です。  
+ The interfaces (APIs) between the application and the DLL must be explicitly exported. We recommend that you define your interfaces to be low bandwidth, and use only C interfaces if you can. Direct C interfaces are easier to maintain than more complex C++ classes.  
   
- 独自の API は別のヘッダー ファイルに記述し、C と C\+\+ の両方のファイルにインクルードできるようにします。  例については、" MFC サンプル [DLLScreenCap](../top/visual-cpp-samples.md) のヘッダー ファイル ScreenCap.h を参照してください。  独自の関数をエクスポートするには、関数をモジュール定義 \(.DEF\) ファイルの `EXPORTS` セクションに入れるか、関数定義に `__declspec(dllexport)` を含めます。  これらの関数をクライアント実行可能ファイルにインポートするには、`__declspec(dllimport)` を使用します。  
+ Place your APIs in a separate header that can be included by both C and C++ files. See the header ScreenCap.h in the MFC Advanced Concepts sample [DLLScreenCap](../visual-cpp-samples.md) for an example. To export your functions, enter them in the `EXPORTS` section of your module definition file (.DEF) or include `__declspec(dllexport)` on your function definitions. Use `__declspec(dllimport)` to import these functions into the client executable.  
   
- MFC と動的にリンクする標準 DLL では、エクスポートされるすべての関数の先頭に `AFX_MANAGE_STATE` マクロを追加する必要があります。  このマクロは、現在のモジュール ステートを DLL 用に設定します。  このマクロを使用するには、DLL からエクスポートされる関数の先頭に次のコード行を追加します。  
+ You must add the `AFX_MANAGE_STATE` macro at the beginning of all the exported functions in regular MFC DLLs that dynamically link to MFC. This macro sets the current module state to the one for the DLL. To use this macro, add the following line of code to the beginning of functions exported from the DLL:  
   
  `AFX_MANAGE_STATE(AfxGetStaticModuleState( ))`  
   
-## WinMain \-\> DllMain  
- MFC ライブラリでは、Win32 の標準の `DllMain` エントリ ポイントが定義され、[CWinApp](../mfc/reference/cwinapp-class.md) からの派生オブジェクトが通常の MFC アプリケーションと同じように初期化されます。  DLL 固有の初期化処理はすべて、通常の MFC アプリケーションと同様に [InitInstance](../Topic/CWinApp::InitInstance.md) メソッドに記述します。  
+## <a name="winmain---dllmain"></a>WinMain -> DllMain  
+ The MFC library defines the standard Win32 `DllMain` entry point that initializes your [CWinApp](../mfc/reference/cwinapp-class.md) derived object as in a typical MFC application. Place all DLL-specific initialization in the [InitInstance](../mfc/reference/cwinapp-class.md#initinstance) method as in a typical MFC application.  
   
- [CWinApp::Run](../Topic/CWinApp::Run.md) の機構は DLL では使用できません。これは、アプリケーションがメイン メッセージ ポンプを所有しているためです。  DLL でモードレス ダイアログを表示したり、独自のメイン フレーム ウィンドウを作成したりする場合は、まず DLL によってエクスポートされたルーチンをアプリケーションのメイン メッセージ ポンプから呼び出し、次にそのルーチンから [CWinApp::PreTranslateMessage](../Topic/CWinApp::PreTranslateMessage.md) を呼び出す必要があります。  
+ Note that the [CWinApp::Run](../mfc/reference/cwinapp-class.md#run) mechanism does not apply to a DLL, because the application owns the main message pump. If your DLL displays modeless dialogs or has a main frame window of its own, your application's main message pump must call a DLL-exported routine that calls [CWinApp::PreTranslateMessage](../mfc/reference/cwinapp-class.md#pretranslatemessage).  
   
- この関数の使い方については、DLLScreenCap サンプルを参照してください。  
+ See the DLLScreenCap sample for use of this function.  
   
- MFC の提供する `DllMain` 関数は、DLL がアンロードされる前に、`CWinApp`  から派生したクラスの [CWinApp::ExitInstance](../Topic/CWinApp::ExitInstance.md) メソッドを呼び出します。  
+ The `DllMain` function that MFC provides will call the [CWinApp::ExitInstance](../mfc/reference/cwinapp-class.md#exitinstance) method of your class that is derived from `CWinApp` before the DLL is unloaded.  
   
-## 独自の DLL のリンク  
- MFC と静的にリンクする標準 DLL では、独自の DLL を Nafxcwd.lib または Nafxcw.lib とリンクし、C ランタイム ライブラリの Libcmt.lib ともリンクする必要があります。  これらのライブラリは既にビルドされており、Visual C\+\+ のセットアップの実行時に指定してインストールできます。  
+## <a name="linking-your-dll"></a>Linking Your DLL  
+ With regular MFC DLLs that statically link to MFC, you must link your DLL with Nafxcwd.lib or Nafxcw.lib and with the version of the C runtimes named Libcmt.lib. These libraries are pre-built and may be installed by specifying them when you run Visual C++ setup.  
   
-## サンプル コード  
- サンプル全体については、「MFC サンプル」のサンプル プログラム DLLScreenCap を参照してください。  このサンプルでは、次の点に注目してください。  
+## <a name="sample-code"></a>Sample Code  
+ See the MFC Advanced Concepts sample program DLLScreenCap for a complete sample. Several interesting things to note in this sample are as follows:  
   
--   コンパイラ フラグは、DLL とアプリケーションの間で異なります。  
+-   The compiler flags of the DLL and those of the application are different.  
   
--   リンク行と .DEF ファイルは、DLL とアプリケーションの間で異なります。  
+-   The link lines and .DEF files for the DLL and those for the application are different.  
   
--   DLL を使用するアプリケーションは、C\+\+ で作成されていなくてもかまいません。  
+-   The application that uses the DLL does not have to be in C++.  
   
--   アプリケーションと DLL の間のインターフェイスは、C または C\+\+ で使用できる API であり、DLLScreenCap.def でエクスポートされます。  
+-   The interface between the application and the DLL is an API that is usable by C or C++ and is exported with DLLScreenCap.def.  
   
- 次の例では、MFC と静的にリンクする標準 DLL で定義される API を示します。  この例では、C\+\+ ユーザーのために宣言を `extern "C" { }` ブロックで囲んでいます。  この方法は、いくつかの利点があります。  まず、DLL API を非 C\+\+ クライアント アプリケーションでも使えます。  第 2 の利点として、C\+\+ の名前修飾がエクスポート名に適用されないため、DLL のオーバーロードが減ります。  第 3 の利点として、.DEF ファイルへの明示的な追加がさらに簡単になり \(序数によるエクスポート\)、名前の変更を心配する必要がなくなります。  
+ The following example illustrates an API that is defined in a regular MFC DLL that statically links to MFC. In this example, the declaration is enclosed in an `extern "C" { }` block for C++ users. This has several advantages. First, it makes your DLL APIs usable by non-C++ client applications. Second, it reduces DLL overhead because C++ name mangling will not be applied to the exported name. Lastly, it makes it easier to explicitly add to a .DEF file (for exporting by ordinal) without having to worry about name mangling.  
   
 ```  
 #ifdef __cplusplus  
 extern "C" {  
 #endif  /* __cplusplus */  
-  
+ 
 struct TracerData  
 {  
-    BOOL    bEnabled;  
-    UINT    flags;  
+    BOOL bEnabled;  
+    UINT flags;  
 };  
-  
-BOOL PromptTraceFlags(TracerData FAR* lpData);  
-  
+ 
+BOOL PromptTraceFlags(TracerData FAR* lpData);
+
+ 
 #ifdef __cplusplus  
 }  
 #endif  
 ```  
   
- API で使用する構造体は、MFC クラスから派生するのではなく、API ヘッダーで定義します。  これにより、DLL とアプリケーションの間のインターフェイスが複雑になるのを避けられるほか、C プログラムからも DLL を使用できるようになります。  
+ The structures used by the API are not derived from MFC classes and are defined in the API header. This reduces the complexity of the interface between the DLL and the application and makes the DLL usable by C programs.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

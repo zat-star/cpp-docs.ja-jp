@@ -1,205 +1,224 @@
 ---
-title: "テクニカル ノート 21: コマンドとメッセージのルーティング | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.routing"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド ルーティング [C++], テクニカル ノート TN021"
-  - "TN021"
-  - "Windows メッセージ [C++], ルーティング"
+title: 'TN021: Command and Message Routing | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.routing
+dev_langs:
+- C++
+helpviewer_keywords:
+- TN021
+- command routing [MFC], technical note TN021
+- Windows messages [MFC], routing
 ms.assetid: b5952c8b-123e-406c-a36d-a6ac7c6df307
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# テクニカル ノート 21: コマンドとメッセージのルーティング
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 41e050bcfaa39f2aec0cc62ee31e8a0e6b7d8391
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
+---
+# <a name="tn021-command-and-message-routing"></a>TN021: Command and Message Routing
 > [!NOTE]
->  次のテクニカル ノートは、最初にオンライン ドキュメントの一部とされてから更新されていません。  結果として、一部のプロシージャおよびトピックが最新でないか、不正になります。  最新の情報について、オンライン ドキュメントのキーワードで関係のあるトピックを検索することをお勧めします。  
+>  The following technical note has not been updated since it was first included in the online documentation. As a result, some procedures and topics might be out of date or incorrect. For the latest information, it is recommended that you search for the topic of interest in the online documentation index.  
   
- ここでは、一般的なウィンドウ メッセージのルーティングのコマンド ルーティングとディスパッチのアーキテクチャ、上級者向けのトピックで説明します。  
+ This note describes the command routing and dispatch architecture as well as advanced topics in general window message routing.  
   
- 相違点、コントロール通知とコマンドを次、Windows メッセージの間に特に説明した一般的なアーキテクチャの詳細については、" Visual C\+\+ "を参照してください。  ここでは、印刷されたドキュメントと Address 非常に説明した問題を十分理解している高度なトピックのみであることを前提としています。  
+ Please refer to Visual C++ for general details on the architectures described here, especially the distinction between Windows messages, control notifications, and commands. This note assumes you are very familiar with the issues described in the printed documentation and only addresses very advanced topics.  
   
-## Command Routing およびディスパッチ MFC 1.0 では、MFC 2.0 アーキテクチャに進化します  
- Windows は、メニュー コマンド、アクセラレータ キーとダイアログ コントロール通知の通知されるようにオーバーロードされる **WM\_COMMAND** メッセージがあります。  
+## <a name="command-routing-and-dispatch-mfc-10-functionality-evolves-to-mfc-20-architecture"></a>Command Routing and Dispatch MFC 1.0 Functionality Evolves to MFC 2.0 Architecture  
+ Windows has the **WM_COMMAND** message that is overloaded to provide notifications of menu commands, accelerator keys and dialog-control notifications.  
   
- **CWnd** の派生クラスでコマンド ハンドラーの特定の **WM\_COMMAND**に対する応答として呼び出されるため、それに小さい \(たとえば、「OnFileNew」\) は、MFC 1.0。  これは、メッセージ マップというデータ構造と非常に効率的なコマンド機構の結果とともに設定します。  
+ MFC 1.0 built on that a little by allowing a command handler (for example, "OnFileNew") in a **CWnd** derived class to get called in response to a specific **WM_COMMAND**. This is glued together with a data structure called the message map, and results in a very space-efficient command mechanism.  
   
- コマンド メッセージからコントロール通知を分離するための MFC 1.0 の、指定された追加機能。  コマンドは、コマンド ID と呼ばれる 16 ビット ID で、表されます。  コマンドは **CFrameWnd** \(つまり、メニュー選択または変換されたアクセラレータ\) から通常どおり起動し、他のさまざまなウィンドウに送られます。  
+ MFC 1.0 also provided additional functionality for separating control notifications from command messages. Commands are represented by a 16-bit ID, sometimes known as a Command ID. Commands normally start from a **CFrameWnd** (that is, a menu select or a translated accelerator) and get routed to a variety of other windows.  
   
- MFC 1.0 はマルチ ドキュメント インターフェイス \(MDI\) の実装のために対して意味でコマンド ルーティングを使用します。\(MDI フレーム ウィンドウのデリゲートはアクティブな MDI 子ウィンドウへ\)。  
+ MFC 1.0 used command routing in a limited sense for the implementation of Multiple Document Interface (MDI). (An MDI frame window delegate commands to its active MDI Child window.)  
   
- この機能は、より広い範囲のオブジェクト \(単にウィンドウ オブジェクト\) によって処理される割り当てコマンドに MFC 2.0 に汎化され、拡張されました。  これはメッセージをルーティングするために正式により、拡張性に優れたアーキテクチャを提供し、コマンドだけでなく、処理のコマンドの対象のルーティングを再利用して、コマンドの現在の可用性を反映するように、更新の UI \(メニュー項目やツール バー ボタンなど\) を表示します。  
+ This functionality has been generalized and extended in MFC 2.0 to allow commands to be handled by a wider range of objects (not just window objects). It provides a more formal and extensible architecture for routing messages and reuses the command target routing for not only handling of commands, but also for updating UI objects (like menu items and toolbar buttons) to reflect the current availability of a command.  
   
-## コマンド ID  
- コマンド ルーティングとバインディング プロセスの詳細については、" Visual C\+\+ を参照してください。  [テクニカル ノート 20](../mfc/tn020-id-naming-and-numbering-conventions.md) は ID の名前付けに関する情報が含まれています。  
+## <a name="command-ids"></a>Command IDs  
+ See Visual C++ for an explanation of the command routing and binding process. [Technical Note 20](../mfc/tn020-id-naming-and-numbering-conventions.md) contains information on ID naming.  
   
- これは、コマンド ID に一般的なプリフィックス「ID\_」を使用します。  コマンド ID \= 0x8000 です \>。  同じ ID の STRINGTABLE リソースがコマンド ID にあるメッセージ行またはステータス バーにコマンドの説明文字列を示します。  
+ We use the generic prefix "ID_" for command IDs. Command IDs are >= 0x8000. The message line or status bar will show the command description string if there is a STRINGTABLE resource with the same IDs as the command ID.  
   
- アプリケーションのリソースでは、コマンド ID の機能は、複数の場所で表示:  
+ In the resources of your application, a command ID can appears in several places:  
   
--   メッセージ行のプロンプトと同じ ID を持つ 1 個の STRINGTABLE リソース。  
+-   In one STRINGTABLE resource that has the same ID as the message-line prompt.  
   
--   。同じコマンドを呼び出すメニュー項目に接続する多くのメニュー リソース。  
+-   In possibly many MENU resources that are attached to menu items that invoke the same command.  
   
--   \(詳細\) GOSUB コマンドのダイアログ ボタンです。  
+-   (ADVANCED) in a dialog button for a GOSUB command.  
   
- アプリケーションのソース・コードでは、コマンド ID の機能は、複数の場所で表示:  
+ In the source code of your application, a command ID can appears in several places:  
   
--   アプリケーション固有のコマンド ID を定義する RESOURCE.H \(またはそのほかの主要なシンボル ヘッダー ファイル\)。  
+-   In your RESOURCE.H (or other main symbol header file) to define application-specific command IDs.  
   
--   多くのツール バーを作成するために使用される ID の配列です。  
+-   PERHAPS In an ID array used to create a toolbar.  
   
--   **ON\_COMMAND** マクロ。  
+-   In an **ON_COMMAND** macro.  
   
--   多く **ON\_UPDATE\_COMMAND\_UI** マクロで。  
+-   PERHAPS In an **ON_UPDATE_COMMAND_UI** macro.  
   
- 現在、コマンド ID が必要な MFC の実装は \= 0x8000 です GOSUB ダイアログとコマンドの実装です \>。  
+ Currently, the only implementation in MFC that requires command IDs be >= 0x8000 is the implementation of GOSUB dialogs/commands.  
   
-## ダイアログのコマンド アーキテクチャを使用して、GOSUB コマンド  
- ルーティングおよび有効なコマンドのコマンド アーキテクチャは、フレーム ウィンドウ、メニュー項目、ツール バー ボタン、ダイアログ バーのボタンと、オンデマンドで更新し、主要なコマンドの対象 \(通常はメイン フレーム ウィンドウ\) にコマンドやコントロールの ID をルーティングするようにされている他のすべてのコントロール バーなどのユーザー インターフェイス要素が使用されます。  主要なコマンドの対象は、必要に応じて、他のコマンド ターゲット オブジェクトにコマンドやコントロール通知をルーティングすること。  
+## <a name="gosub-commands-using-command-architecture-in-dialogs"></a>GOSUB Commands, Using Command Architecture in Dialogs  
+ The command architecture of routing and enabling commands works well with frame windows, menu items, toolbar buttons, dialog bar buttons, other control bars and other user-interface elements designed to update on demand and route commands or control IDs to a main command target (usually the main frame window). That main command target may route the command or control notifications to other command target objects as appropriate.  
   
- ダイアログ ボックスがコマンド アーキテクチャの機能 \(モーダルまたはモードレス\) 適切なコマンド ID にダイアログ コントロールのコントロール ID を割り当てることができます。  ダイアログのサポートは自動ではないため、追加のコードを記述する必要があります。  
+ A dialog (modal or modeless) can benefit from some of the features of the command architecture if you assign the control ID of the dialog control to the appropriate command ID. Support for dialogs is not automatic, so you may have to write some additional code.  
   
- 正しく動作するすべての機能に対するコマンド ID が \= 0x8000 である \>ことに注意してください。  多数のダイアログが同じフレームにルーティングすることができるため、共有コマンドでは、特定の \>ダイアログの非共有 IDCs \= 0x7FFF 必要ですが、\= 0x8000 \<必要です。  
+ Note that for all these features to work properly, your command IDs should be >= 0x8000. Since many dialogs could get routed to the same frame, shared commands should be >= 0x8000, while the nonshared IDCs in a specific dialog should be <= 0x7FFF.  
   
- 適切なコマンド ID に設定したボタンで IDC を正常にモーダル ダイアログに正常にボタンを配置できます。  ユーザーがボタンをクリックした場合、ダイアログ \(通常はメイン フレーム ウィンドウ\) の所有者は他のコマンドなどのコマンドが、取得します。  これは、ダイアログ \(最初のダイアログ GOSUB\) を呼び出すことを通常使用するため GOSUB コマンドと呼ばれます。  
+ You can place a normal button in a normal modal dialog with the IDC of the button set to the appropriate command ID. When the user selects the button, the owner of the dialog (usually the main frame window) gets the command just like any other command. This is called a GOSUB command since it usually is used to bring up another dialog (a GOSUB of the first dialog).  
   
- このダイアログ **CWnd::UpdateDialogControls** 関数を呼び出し、それにメイン フレーム ウィンドウのアドレスを渡すことができます。  この関数は、フレームでコマンド ハンドラーがあるかどうかに基づいて、ダイアログ コントロールを有効または無効にします。  この関数は、アプリケーションのアイドル ループ コントロール バーの使用を自動的に対しては、この機能を使用すると、通常のダイアログの直接呼び出す必要があります。  
+ You can also call the function **CWnd::UpdateDialogControls** on your dialog and pass it the address of your main frame window. This function will enable or disable your dialog controls based on whether they have command handlers in the frame. This function is called automatically for you for control bars in your application's idle loop, but you must call it directly for normal dialogs that you wish to have this feature.  
   
-## ON\_UPDATE\_COMMAND\_UI が呼び出されます。  
- 有効\/すべてオンの状態管理のプログラムのメニュー項目に負荷の高い問題になることがあります。  一般的な方法は、ユーザーがポップアップを選択した場合のみ有効にするために、チェックのメニュー項目です。  **CFrameWnd** の MFC 2.0 の実装は **WM\_INITMENUPOPUP** メッセージを処理し、**ON\_UPDATE\_COMMAND\_UI** ハンドラーを通じてメニューの状態を判断するときにコマンド ルーティング アーキテクチャを使用します。  
+## <a name="when-onupdatecommandui-is-called"></a>When ON_UPDATE_COMMAND_UI is Called  
+ Maintaining the enabled/checked state of all a program's menu items all the time can be a computationally expensive problem. A common technique is to enable/check menu items only when the user selects the POPUP. The MFC 2.0 implementation of **CFrameWnd** handles the **WM_INITMENUPOPUP** message and uses the command routing architecture to determine the states of menus through **ON_UPDATE_COMMAND_UI** handlers.  
   
- **CFrameWnd** は、ステータス バーのメッセージ行 \(エイリアス\) で選択した現在のメニュー項目を説明する **WM\_ENTERIDLE** メッセージを処理します。  
+ **CFrameWnd** also handles the **WM_ENTERIDLE** message to describe the current menu item selected on the status bar (also known as the message line).  
   
- Visual C\+\+ で編集されたアプリケーションのメニュー構造が **WM\_INITMENUPOPUP** 時に使用できる潜在的なコマンドを表すために使用されます。  **ON\_UPDATE\_COMMAND\_UI** ハンドラーは、メニューが描画される前に \(MRU ファイル リストまたは OLE 動詞ポップアップ メニューなど\) を実際に変更して、メニュー構造をメニュー内、または高度な使い方の状態またはテキストを変更できます。  
+ An application's menu structure, edited by Visual C++, is used to represent the potential commands available at **WM_INITMENUPOPUP** time. **ON_UPDATE_COMMAND_UI** handlers can modify the state or text of a menu, or for advanced uses (like the File MRU list or the OLE Verbs pop-up menu), actually modify the menu structure before the menu is drawn.  
   
- アプリケーションがアイドル ループに入るときに同じ処理、一種の **ON\_UPDATE\_COMMAND\_UI** の処理はツール バー行われます \(および他のすべてのコントロール バーの場合\)。  コントロール バーの詳細については、" *クラス ライブラリ リファレンス* と [テクニカル ノート 31](../mfc/tn031-control-bars.md) を参照してください。  
+ The same sort of **ON_UPDATE_COMMAND_UI** processing is done for toolbars (and other control bars) when the application enters its idle loop. See the *Class Library Reference* and [Technical Note 31](../mfc/tn031-control-bars.md) for more information on control bars.  
   
-## 入れ子のポップアップ メニュー  
- 入れ子になったメニュー構造を使用して、ポップアップ メニューの最初のメニュー項目の **ON\_UPDATE\_COMMAND\_UI** ハンドラーが 2 の場合に呼び出されることがわかります。  
+## <a name="nested-pop-up-menus"></a>Nested Pop-up Menus  
+ If you are using a nested menu structure, you will notice that the **ON_UPDATE_COMMAND_UI** handler for the first menu item in the pop-up menu is called in two different cases.  
   
- まず、ポップアップ メニュー自体に対して呼び出されます。  これは、ポップアップ メニューに ID がなく、全体のポップアップ メニューを表示するために、本来はポップアップ メニューの最初のメニュー項目の ID を使用するためです。  この場合、**CCmdUI** オブジェクトの **m\_pSubMenu** のメンバー変数が null 以外では、ポップアップ メニューを指します。  
+ First, it is called for the pop-up menu itself. This is necessary because pop-up menus do not have IDs and we use the ID of the first menu item of the pop-up menu to refer to the entire pop-up menu. In this case, the **m_pSubMenu** member variable of the **CCmdUI** object will be non-NULL and will point to the pop-up menu.  
   
- 第 2 に、ポップアップ メニューのメニュー項目を描画する必要がある直前に呼び出されます。  この場合、ID は、最初のメニュー項目にのみ関連します。また、**CCmdUI** オブジェクトの **m\_pSubMenu** のメンバー変数が null です。  
+ Second, it is called just before the menu items in the pop-up menu are to be drawn. In this case, the ID refers just to the first menu item and the **m_pSubMenu** member variable of the **CCmdUI** object will be NULL.  
   
- これは、メニュー項目の個々のポップアップ メニューを有効にすることができますが、メニューに対応するコードを記述する必要があります。  たとえば、次の構造を持つ入れ子になったメニューの:  
+ This allows you to enable the pop-up menu distinct from its menu items, but requires that you write some menu aware code. For example, in a nested menu with the following structure:  
   
 ```  
 File>  
-    New>  
-        Sheet (ID_NEW_SHEET)  
-        Chart (ID_NEW_CHART)  
+    New> 
+    Sheet (ID_NEW_SHEET)  
+    Chart (ID_NEW_CHART)  
 ```  
   
- ID\_NEW\_SHEET と ID\_NEW\_CHART コマンドは個別に有効または無効にすることができます。  **新規作成** ポップアップ メニューは 2 のいずれかが有効な場合は有効になります。  
+ The ID_NEW_SHEET and ID_NEW_CHART commands can be independently enabled or disabled. The **New** pop-up menu should be enabled if either of the two is enabled.  
   
- ID\_NEW\_SHEET \(ポップアップの最初のコマンド\) のコマンド ハンドラーは次のような表示:  
+ The command handler for ID_NEW_SHEET (the first command in the pop-up) would look something like:  
   
 ```  
 void CMyApp::OnUpdateNewSheet(CCmdUI* pCmdUI)  
 {  
     if (pCmdUI->m_pSubMenu != NULL)  
-    {  
-        // enable entire pop-up for "New" sheet and chart  
-        BOOL bEnable = m_bCanCreateSheet || m_bCanCreateChart;  
-  
-        // CCmdUI::Enable is a no-op for this case, so we  
-        //   must do what it would have done.  
-        pCmdUI->m_pMenu->EnableMenuItem(pCmdUI->m_nIndex,  
-            MF_BYPOSITION |   
-                (bEnable ? MF_ENABLED : (MF_DISABLED | MF_GRAYED)));  
-        return;  
-    }  
-    // otherwise just the New Sheet command  
-    pCmdUI->Enable(m_bCanCreateSheet);  
-}  
+ { *// enable entire pop-up for "New" sheet and chart  
+    BOOL bEnable = m_bCanCreateSheet || m_bCanCreateChart;  
+ *// CCmdUI::Enable is a no-op for this case,
+    so we *//   must do what it would have done.  
+    pCmdUI->m_pMenu->EnableMenuItem(pCmdUI->m_nIndex, 
+    MF_BYPOSITION |   
+ (bEnable  MF_ENABLED : (MF_DISABLED | MF_GRAYED)));
+
+    return; 
+ } *// otherwise just the New Sheet command  
+    pCmdUI->Enable(m_bCanCreateSheet);
+
+} 
 ```  
   
- ID\_NEW\_CHART のコマンド ハンドラーは、正常な更新コマンド ハンドラーの外観や動作などです:  
+ The command handler for ID_NEW_CHART would be a normal update command handler and look something like:  
   
 ```  
 void CMyApp::OnUpdateNewChart(CCmdUI* pCmdUI)  
 {  
-    pCmdUI->Enable(m_bCanCreateChart);  
-}  
+    pCmdUI->Enable(m_bCanCreateChart);
+
+} 
 ```  
   
-## ON\_COMMAND および ON\_BN\_CLICKED  
- **ON\_COMMAND** と **ON\_BN\_CLICKED** のメッセージ マップ マクロは同じです。  MFC コマンドとコントロール通知のルーティングの機能は、どこにルーティングするかを決定するためにコマンド ID だけを使用しています。  ゼロ コントロール通知コード コントロール通知はコマンド \(**BN\_CLICKED**\) として解釈されます。  
+## <a name="oncommand-and-onbnclicked"></a>ON_COMMAND and ON_BN_CLICKED  
+ The message map macros for **ON_COMMAND** and **ON_BN_CLICKED** are the same. The MFC command and control notification routing mechanism only uses the command ID to decide where to route to. Control notifications with control notification code of zero (**BN_CLICKED**) are interpreted as commands.  
   
 > [!NOTE]
->  実際、すべてコントロール通知メッセージは、コマンド ハンドラーのチェーンを通過します。  たとえば、ドキュメント クラスの **EN\_CHANGE** のコントロール通知ハンドラーを記述することは技術的には可能です。  これは、ClassWizard でこの機能が実用化の数になるため、一般に、勧められない機能はサポートされない、機能の使用は、脆弱なコードを生成できます。  
+>  In fact, all control notification messages go through the command handler chain. For example, it is technically possible for you to write a control notification handler for **EN_CHANGE** in your document class. This is not generally advisable because the practical applications of this feature are few, the feature is not supported by ClassWizard, and use of the feature can result in fragile code.  
   
-## ボタン コントロールを自動的に無効になることを無効にする。  
- ダイアログ バー、を使用して **CWnd::UpdateDialogControls** を手動で呼び出しているダイアログに Button コントロールを配置すると、**ON\_COMMAND** または **ON\_UPDATE\_COMMAND\_UI** ハンドラーがないボタンがフレームワークによって自動的に無効になることがわかります。  場合によっては、ハンドラーは必要ではありませんが、ボタンに有効にしたままにする必要があります。  これを実現するための最も簡単な方法は、ダミー コマンド ハンドラー \(ClassWizard としやすい\) 追加し、では機能しません。  
+## <a name="disabling-the-automatic-disabling-of-button-controls"></a>Disabling the Automatic Disabling of Button Controls  
+ If you place a button control on a dialog bar, or in a dialog using where you are calling **CWnd::UpdateDialogControls** on your own, you will notice that buttons which do not have **ON_COMMAND** or **ON_UPDATE_COMMAND_UI** handlers will be automatically disabled for you by the framework. In some cases, you will not need to have a handler, but you will want the button to remain enabled. The easiest way to achieve this is to add a dummy command handler (easy to do with ClassWizard) and do nothing in it.  
   
-## ウィンドウ メッセージのルーティング  
- 次に、Windows メッセージ ルーティングなどのトピックがユーザーにどのように影響するか MFC クラスのいくつかの高度なトピックについて説明します。  次の情報は、簡単に説明します。  パブリックな API については *クラス ライブラリ リファレンス"を* 参照してください。  実装の詳細の詳細については、MFC ライブラリのソース・コードを参照してください。  
+## <a name="window-message-routing"></a>Window Message Routing  
+ The following describes some more advanced topics on the MFC classes and how Windows message routing and other topics impact them. The information here is only described briefly. Refer to the *Class Library Reference* for details about public APIs. Please refer to the MFC library source code for more information on implementation details.  
   
- ウィンドウのクリーンアップの詳細については [テクニカル ノート 17](../mfc/tn017-destroying-window-objects.md)、すべての **CWnd**にとって重要なトピック\-派生クラスを参照してください。  
+ Please refer to [Technical Note 17](../mfc/tn017-destroying-window-objects.md) for details on Window cleanup, a very important topic for all **CWnd**-derived classes.  
   
-## CWnd の問題  
- 実装のメンバー関数 **CWnd::OnChildNotify** は子ウィンドウ \(またはコントロール\) にフックする強力かつ拡張可能なアーキテクチャを提供するか、別の方法では親移動コマンド メッセージ、およびコントロールの通知機能のある \(または「所有者に」\)。  子ウィンドウ \(\/control\) によって. C\+\+ **CWnd** オブジェクト自体は、仮想関数 **OnChildNotify** は元のメッセージ \(つまり、**MSG** 構造体\) からパラメーターを最初に呼び出されます。  子ウィンドウはメッセージをそのまま、いるか、または親のメッセージを \(ほとんど\) を変更できます。  
+## <a name="cwnd-issues"></a>CWnd Issues  
+ The implementation member function **CWnd::OnChildNotify** provides a powerful and extensible architecture for child windows (also known as controls) to hook or otherwise be informed of messages, commands, and control notifications that go to their parent (or "owner"). If the child window (/control) is a C++ **CWnd** object itself, the virtual function **OnChildNotify** is called first with the parameters from the original message (that is, a **MSG** structure). The child window can leave the message alone, eat it, or modify the message for the parent (rare).  
   
- 既定の **CWnd** の実装に次のメッセージを処理し、メッセージに初めてアクセスに子ウィンドウ \(コントロール\) を有効にするために **OnChildNotify** フックを使用します:  
+ The default **CWnd** implementation handles the following messages and uses the **OnChildNotify** hook to allow child windows (controls) to first access at the message:  
   
--   **WM\_MEASUREITEM** と **WM\_DRAWITEM** 自己描画の場合\)  
+- **WM_MEASUREITEM** and **WM_DRAWITEM** (for self-draw)  
   
--   **WM\_COMPAREITEM** と **WM\_DELETEITEM** 自己描画の場合\)  
+- **WM_COMPAREITEM** and **WM_DELETEITEM** (for self-draw)  
   
--   **WM\_HSCROLL** と **WM\_VSCROLL**  
+- **WM_HSCROLL** and **WM_VSCROLL**  
   
--   **WM\_CTLCOLOR**  
+- **WM_CTLCOLOR**  
   
--   **WM\_PARENTNOTIFY**  
+- **WM_PARENTNOTIFY**  
   
- **OnChildNotify** フックが自己描画メッセージにオーナー描画メッセージを変更するために使用されることを確認します。  
+ You will notice the **OnChildNotify** hook is used for changing owner-draw messages into self-draw messages.  
   
- **OnChildNotify** フックに加えて、スクロール メッセージにそれ以上のルーティングの動作が異なります。  **WM\_HSCROLL** と **WM\_VSCROLL** メッセージのスクロール バーとソースの詳細については、次を参照してください。  
+ In addition to the **OnChildNotify** hook, scroll messages have further routing behavior. Please see below for more details on scroll bars and sources of **WM_HSCROLL** and **WM_VSCROLL** messages.  
   
-## CFrameWnd 問題  
- 実装を更新する **CFrameWnd** クラスは、コマンド ルーティングとユーザー インターフェイスのほとんどを提供します。  これは、アプリケーション**CWinApp::m\_pMainWnd** \(\) のメイン フレーム ウィンドウに主に使用されますが、すべてのフレーム ウィンドウに適用されます。  
+## <a name="cframewnd-issues"></a>CFrameWnd Issues  
+ The **CFrameWnd** class provides most of the command routing and user-interface updating implementation. This is primarily used for the main frame window of the application (**CWinApp::m_pMainWnd**) but applies to all frame windows.  
   
- メイン フレーム ウィンドウにメニュー バーがあるウィンドウで、ステータス バーまたはメッセージ行の親です。  コマンド ルーティングと **WM\_INITMENUPOPUP.**、上記の説明を参照してください。  
+ The main frame window is the window with the menu bar and is the parent of the status bar or message line. Please refer to the above discussion on command routing and **WM_INITMENUPOPUP.**  
   
- **CFrameWnd** クラスはアクティブなビューの管理を提供します。  次のメッセージは、アクティブなビューを通じてルーティングされます:  
+ The **CFrameWnd** class provides management of the active view. The following messages are routed through the active view:  
   
--   すべてのコマンド メッセージ \(アクティブなビューがそれらの最初のアクセスの取得など\)。  
+-   All command messages (the active view gets first access to them).  
   
--   兄弟スクロール バー \(以下を参照\) から**WM\_HSCROLL** と **WM\_VSCROLL** メッセージ。  
+- **WM_HSCROLL** and **WM_VSCROLL** messages from sibling scroll bars (see below).  
   
--   **WM\_ACTIVATE** \(および MDI の **WM\_MDIACTIVATE**\) 仮想関数 **CView::OnActivateView**呼び出しに回転します。  
+- **WM_ACTIVATE** (and **WM_MDIACTIVATE** for MDI) get turned into calls to the virtual function **CView::OnActivateView**.  
   
-## CMDIFrameWnd\/CMDIChildWnd 問題  
- したがって、MDI フレーム ウィンドウ クラスは両方とも **CFrameWnd** から派生し、同じ一種の **CFrameWnd**で提供されるコマンド ルーティングとユーザー インターフェイスの更新の両方が有効になります。  この一般的な MDI アプリケーションでは、メイン フレーム ウィンドウに \(つまり、**CMDIFrameWnd** オブジェクト\) メニュー バー、ステータス バーを保持し、コマンド ルーティングの実装の主要なソースです。  
+## <a name="cmdiframewndcmdichildwnd-issues"></a>CMDIFrameWnd/CMDIChildWnd Issues  
+ Both MDI frame window classes derive from **CFrameWnd** and therefore are both enabled for the same sort of command routing and user-interface updating provided in **CFrameWnd**. In a typical MDI application, only the main frame window (that is, the **CMDIFrameWnd** object) holds the menu bar and the status bar and therefore is the main source of the command routing implementation.  
   
- 一般的なルーティング スキームはアクティブな MDI 子ウィンドウが最初のコマンドにアクセスできます。  既定の **PreTranslateMessage** 関数は、MDI 子ウィンドウの両方のアクセラレータ テーブル \(最初\) と MDI フレーム \(second\) は、通常 **TranslateMDISysAccel** して処理します \(最後の\) 処理される標準 MDI システム コマンド アクセラレータ。  
+ The general routing scheme is that the active MDI child window gets first access to commands. The default **PreTranslateMessage** functions handle accelerator tables for both MDI child windows (first) and the MDI frame (second) as well as the standard MDI system-command accelerators normally handled by **TranslateMDISysAccel** (last).  
   
-## スクロール バーの問題  
- スクロール メッセージ \(**WM\_HSCROLL**\/**OnHScroll** と **WM\_VSCROLL**\/**OnVScroll**\) を処理した場合、ハンドラー コードを記述することをお勧めします。スクロール バー メッセージの位置にからのアセンブリまたは依存しません。  これにより、スクロール メッセージが true のスクロール バー コントロールまたは **WS\_HSCROLL**とスクロール バー コントロールの**WS\_VSCROLL** のスクロール バーから取得される可能性があるため、だけでなく、汎用 Windows 終了です。  
+## <a name="scroll-bar-issues"></a>Scroll Bar Issues  
+ When handling scroll-message (**WM_HSCROLL**/**OnHScroll** and/or **WM_VSCROLL**/**OnVScroll**), you should try to write the handler code so it does not rely on where the scroll bar message came from. This is not only a general Windows issue, since scroll messages can come from true scroll bar controls or from **WS_HSCROLL**/**WS_VSCROLL** scroll bars which are not scroll bar controls.  
   
- MFC では、スクロール バー コントロールにスクロールするウィンドウの子または兄弟であることを拡張 \(実際、スクロール バーの間にスクロールされます親子のリレーションシップとウィンドウは何でもかまいません\)。  これは、分割ウィンドウに共有スクロール バーにとって特に重要です。  共有スクロール バー問題の詳細情報を含む **CSplitterWnd** の実装の詳細については [テクニカル ノート 29](../mfc/tn029-splitter-windows.md) "を参照してください。  
+ MFC extends that to allow for scroll bar controls to be either child or siblings of the window being scrolled (in fact, the parent/child relationship between the scroll bar and window being scrolled can be anything). This is especially important for shared scroll bars with splitter windows. Please refer to [Technical Note 29](../mfc/tn029-splitter-windows.md) for details on the implementation of **CSplitterWnd** including more information on shared scroll bar issues.  
   
- 注釈で指定されるスクロール バーのスタイルが Windows に時間をトラップして渡されていない作成する **CWnd** の 2 種類の派生クラスがあります。  作成ルーチンに渡されると、作成が変更できないと **WS\_HSCROLL** と **WS\_VSCROLL** は個別に設定できます。  もちろん、直接 WS\_ をテストしたり、設定するのでしょうか。作成したウィンドウのスタイル ビットをスクロールします。  
+ On a side note, there are two **CWnd** derived classes where the scroll bar styles specified at create time are trapped and not passed to Windows. When passed to a creation routine, **WS_HSCROLL** and **WS_VSCROLL** can be independently set, but after creation cannot be changed. Of course, you should not directly test or set the WS_SCROLL style bits of the window that they created.  
   
- MDICLIENT の作成に **CMDIFrameWnd** の場合は、**作成** に渡されるまたは **LoadFrame** を使用して、スクロール バーのスタイル。  スクロール可能 MDICLIENT の領域がある場合は \(Windows プログラム マネージャーなど\) の両方のスクロール バーのスタイル \(**WS\_HSCROLL**を設定してください。   &#124; **CMDIFrameWnd**の作成に使用されるスタイルの**WS\_VSCROLL**\)。  
+ For **CMDIFrameWnd** the scroll bar styles you pass in to **Create** or **LoadFrame** are used to create the MDICLIENT. If you wish to have a scrollable MDICLIENT area (like the Windows Program Manager) be sure to set both scroll bar styles (**WS_HSCROLL** &#124; **WS_VSCROLL**) for the style used to create the **CMDIFrameWnd**.  
   
- **CSplitterWnd** にスクロール バーのスタイルは分割領域の Shared、スクロール バーに適用されます。  静的な分割ウィンドウの場合、通常、いずれかのスクロール バーのスタイルを設定します。  動的な分割ウィンドウで、列を分割して行を分割して、スクロール バーのスタイルを分割する方向、つまり **WS\_HSCROLLWS\_VSCROLL** を設定します。  
+ For **CSplitterWnd** the scroll bar styles apply to the special shared scroll bars for the splitter regions. For static splitter windows, you will normally not set either scroll bar style. For dynamic splitter windows, you will usually have the scroll bar style set for the direction you will split, That is, **WS_HSCROLL** if you can split rows, **WS_VSCROLL** if you can split columns.  
   
-## 参照  
- [番号順テクニカル ノート](../mfc/technical-notes-by-number.md)   
- [カテゴリ別テクニカル ノート](../mfc/technical-notes-by-category.md)
+## <a name="see-also"></a>See Also  
+ [Technical Notes by Number](../mfc/technical-notes-by-number.md)   
+ [Technical Notes by Category](../mfc/technical-notes-by-category.md)
+
+

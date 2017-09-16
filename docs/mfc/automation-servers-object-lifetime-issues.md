@@ -1,42 +1,61 @@
 ---
-title: "オートメーション サーバー : オブジェクトの生成と破棄 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オートメーション サーバー, オブジェクトの有効期間"
-  - "有効期間, オートメーション サーバー"
-  - "オブジェクト [C++], 有効期間"
-  - "サーバー, 有効期間 (オートメーションの)"
+title: 'Automation Servers: Object-Lifetime Issues | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- objects [MFC], lifetime
+- lifetime, automation server
+- Automation servers, object lifetime
+- servers, lifetime of Automation
 ms.assetid: 342baacf-4015-4a0e-be2f-321424f1cb43
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# オートメーション サーバー : オブジェクトの生成と破棄
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: ffb133e595e8367b2c454e2c77b3e453d65f4afe
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-OLE アイテムは、オートメーション クライアントからを作成または操作すると、サーバーはそのオブジェクトにクライアントにポインターを渡します。  クライアントは、呼び出しによって OLE 関数 [IUnknown::AddRef](http://msdn.microsoft.com/library/windows/desktop/ms691379)にオブジェクトへの参照を確立します。  この参照は、クライアントの呼び出し [IUnknown::Release](http://msdn.microsoft.com/library/windows/desktop/ms682317)まで有効です。\(Microsoft Foundation Class\) ライブラリの OLE クラスで作成されたクライアント アプリケーションは、これらの呼び出しを呼び出す必要はありません; フレームワークは、\)。OLE システムとサーバー自体はオブジェクトへの参照を確立する場合があります。  サーバーは、そのオブジェクトに対する外部参照の有効性を保持しているオブジェクトを破棄する必要があります。  
+---
+# <a name="automation-servers-object-lifetime-issues"></a>Automation Servers: Object-Lifetime Issues
+When an Automation client creates or activates an OLE item, the server passes the client a pointer to that object. The client establishes a reference to the object through a call to the OLE function [IUnknown::AddRef](http://msdn.microsoft.com/library/windows/desktop/ms691379). This reference is in effect until the client calls [IUnknown::Release](http://msdn.microsoft.com/library/windows/desktop/ms682317). (Client applications written with the Microsoft Foundation Class Library's OLE classes need not make these calls; the framework does so.) The OLE system and the server itself may establish references to the object. A server should not destroy an object as long as external references to the object remain in effect.  
   
- フレームワークは [CCmdTarget](../Topic/CCmdTarget%20Class.md)から派生されるすべてのサーバー オブジェクトへの参照の数の内部カウントを保持します。  この数値は、オートメーション クライアントまたはそのほかのエンティティをオブジェクトへの参照を追加するか、離したときに更新されます。  
+ The framework maintains an internal count of the number of references to any server object derived from [CCmdTarget](../mfc/reference/ccmdtarget-class.md). This count is updated when an Automation client or other entity adds or releases a reference to the object.  
   
- 参照カウントが 0 になると、フレームワークによって仮想 [CCmdTarget::OnFinalRelease](../Topic/CCmdTarget::OnFinalRelease.md)関数を呼び出します。  この関数の既定の実装からこのオブジェクトを削除する **delete** の演算子。  
+ When the reference count becomes 0, the framework calls the virtual function [CCmdTarget::OnFinalRelease](../mfc/reference/ccmdtarget-class.md#onfinalrelease). The default implementation of this function calls the **delete** operator to delete this object.  
   
- Microsoft Foundation Class ライブラリは制御のアプリケーションの動作に外部クライアントがアプリケーション オブジェクトへの参照がある場合に、追加の機能を提供します。  各オブジェクトへの参照の数を保持する以外に、サーバーはアクティブなオブジェクトのグローバルのカウントを保持します。  グローバル関数 [AfxOleLockApp](../Topic/AfxOleLockApp.md) と [AfxOleUnlockApp](../Topic/AfxOleUnlockApp.md)、実行中のアプリケーションのオブジェクトの数を更新します。  この数値に 0 以外のの場合、アプリケーションはユーザーがシステム メニューの閉じるまたはファイル メニューの終了をクリックすると終了しません。  代わりに、アプリケーションのメイン ウィンドウは、保留中のすべてのクライアント要求が完了するまでになります \(ただし、破棄されない\)。  通常、`AfxOleLockApp` と `AfxOleUnlockApp` はクラスのコンストラクターとデストラクターで、それぞれそのサポート オートメーション呼び出されます。  
+ The Microsoft Foundation Class Library provides additional facilities for controlling application behavior when external clients have references to the application's objects. Besides maintaining a count of references to each object, servers maintain a global count of active objects. The global functions [AfxOleLockApp](../mfc/reference/application-control.md#afxolelockapp) and [AfxOleUnlockApp](../mfc/reference/application-control.md#afxoleunlockapp) update the application's count of active objects. If this count is nonzero, the application does not terminate when the user chooses Close from the system menu or Exit from the File menu. Instead, the application's main window is hidden (but not destroyed) until all pending client requests have been completed. Typically, `AfxOleLockApp` and `AfxOleUnlockApp` are called in the constructors and destructors, respectively, of classes that support Automation.  
   
- 状況により、クライアントは、オブジェクトへの参照があるときに、サーバーに変換されます。  たとえば、サーバー リソースが依存する使用できなくなる可能性があるエラーを検出するためにサーバーを指定します。  ユーザーは、他のアプリケーションが参照するオブジェクトを含むサーバー ドキュメントを閉じることがあります。  
+ Sometimes circumstances force the server to terminate while a client still has a reference to an object. For example, a resource on which the server depends may become unavailable, causing the server to encounter an error. The user may also close a server document that contains objects to which other applications have references.  
   
- [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]で、`IUnknown::AddRef` と `IUnknown::Release`を参照してください。  
+ In the Windows SDK, see `IUnknown::AddRef` and `IUnknown::Release`.  
   
-## 参照  
- [オートメーション サーバー](../mfc/automation-servers.md)   
- [AfxOleCanExitApp](../Topic/AfxOleCanExitApp.md)
+## <a name="see-also"></a>See Also  
+ [Automation Servers](../mfc/automation-servers.md)   
+ [AfxOleCanExitApp](../mfc/reference/application-control.md#afxolecanexitapp)
+
+

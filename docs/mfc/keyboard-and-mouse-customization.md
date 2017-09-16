@@ -1,79 +1,99 @@
 ---
-title: "キーボードとマウスのカスタマイズ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カスタマイズ, キーボードとマウス (MFC の拡張)"
-  - "キーボードとマウスのカスタマイズ (MFC の拡張)"
+title: Keyboard and Mouse Customization | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- customizations [MFC], keyboard and mouse (MFC Extensions)
+- keyboard and mouse customizations (MFC Extensions)
 ms.assetid: 1f789f1b-5f2e-4b11-b974-e3e2a2e49d82
 caps.latest.revision: 23
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 19
----
-# キーボードとマウスのカスタマイズ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: cbce5ace18bf7b4fc185055b00c9306a86e75090
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-MFC は、アプリケーションのユーザーがキーボード入力とマウス入力を処理する方法をカスタマイズできるようにします。  ユーザーは、コマンドにショートカット キーを割り当てることで、キーボード入力をカスタマイズできます。  また、ユーザーは、アプリケーションの特定のウィンドウ内をダブルクリックしたときに実行されるコマンドを選択することで、マウス入力をカスタマイズできます。  このトピックでは、アプリケーションでの入力をカスタマイズする方法について説明します。  
+---
+# <a name="keyboard-and-mouse-customization"></a>Keyboard and Mouse Customization
+MFC allows the user of your application to customize how it handles keyboard and mouse input. The user can customize keyboard input by assigning keyboard shortcuts to commands. The user can also customize the mouse input by selecting the command that should be executed when the user double-clicks inside specific windows of the application. This topic explains how to customize the input for your application.  
   
- ユーザーは、**\[カスタマイズ\]** ダイアログ ボックスでマウスおよびキーボードのカスタム コントロールを変更できます。  ユーザーは、**\[表示\]** メニューの **\[カスタマイズ\]** をポイントし、**\[ツール バーとドッキング ウィンドウ\]** をクリックして、このダイアログ ボックスを表示します。  次に、このダイアログ ボックスで、**\[キーボード\]** タブまたは **\[マウス\]** タブをクリックします。  
+ In the **Customization** dialog box, the user can change the custom controls for the mouse and the keyboard. To display this dialog box, the user points to **Customize** on the **View** menu and then clicks **Toolbars and Docking**. In the dialog box, the user clicks either the **Keyboard** tab or the **Mouse** tab.  
   
-## キーボードのカスタマイズ  
- 次の図は、**\[カスタマイズ\]** ダイアログ ボックスの **\[キーボード\]** タブを示しています。  
+## <a name="keyboard-customization"></a>Keyboard Customization  
+ The following illustration shows the **Keyboard** tab of the **Customization** dialog box.  
   
- ![カスタム ダイアログ ボックスの &#91;キーボード&#93; タブ](../mfc/media/mfcnextkeyboardtab.png "MFCNextKeyboardTab")  
-キーボードのカスタマイズ タブ  
+ ![Keyboard tab in the Customize dialog box](../mfc/media/mfcnextkeyboardtab.png "mfcnextkeyboardtab")  
+Keyboard Customization Tab  
   
- ユーザーは、\[キーボード\] タブを使用して、1 つのコマンドに 1 つまたは複数のショートカット キーを割り当てます。  使用できるコマンドが、タブの左側に一覧表示されます。  ユーザーは、メニューから使用できるコマンドを選択できます。  ショートカット キーに関連付けることができるのはメニュー コマンドだけです。  新しいショートカット キーを入力すると、**\[割り当て\]** ボタンが有効になります。  ユーザーがこのボタンをクリックすると、アプリケーションは選択されたコマンドをそのショートカット キーに関連付けます。  
+ The user interacts with the keyboard tab to assign one or more keyboard shortcuts to a command. The available commands are listed on the left side of the tab. The user can select any available command from the menu. Only menu commands can be associated with a keyboard shortcut. After the user enters a new shortcut, the **Assign** button becomes enabled. When the user clicks this button, the application associates the selected command with that shortcut.  
   
- 現在割り当てられているすべてのショートカット キーが、右側の列のリスト ボックスに表示されます。  個々のショートカット キーを選択して削除したり、アプリケーションのすべての割り当てをリセットしたりすることもできます。  
+ All of the currently assigned keyboard shortcuts are listed in the list box in the right column. The user can also select individual shortcuts and remove them, or reset all the mappings for the application.  
   
- アプリケーションでこのカスタマイズをサポートするには、[CKeyboardManager](../mfc/reference/ckeyboardmanager-class.md) オブジェクトを作成する必要があります。  `CKeyboardManager` オブジェクトを作成するには、[CWinAppEx::InitKeyboardManager](../Topic/CWinAppEx::InitKeyboardManager.md) 関数を呼び出します。  このメソッドは、キーボード マネージャーを作成し、初期化します。  キーボード マネージャーを手動で作成する場合は、`CWinAppEx::InitKeyboardManager` を呼び出してキーボード マネージャーを初期化する必要があります。  
+ If you want to support this customization in your application, you must create a [CKeyboardManager](../mfc/reference/ckeyboardmanager-class.md) object. To create a `CKeyboardManager` object, call the function [CWinAppEx::InitKeyboardManager](../mfc/reference/cwinappex-class.md#initkeyboardmanager). This method creates and initializes a keyboard manager. If you create a keyboard manager manually, you still must call `CWinAppEx::InitKeyboardManager` to initialize it.  
   
- ウィザードを使用してアプリケーションを作成する場合は、ウィザードによってキーボード マネージャーが初期化されます。  アプリケーションがキーボード マネージャーを初期化すると、フレームワークは **\[Keyboard\]** タブを **\[Customization\]** ダイアログ ボックスに追加します。  
+ If you use the Wizard to create your application, the Wizard will initialize the keyboard manager. After your application initializes the keyboard manager, the framework adds a **Keyboard** tab to the **Customization** dialog box.  
   
-## マウスのカスタマイズ  
- 次の図は、**\[カスタマイズ\]** ダイアログ ボックスの **\[マウス\]** タブを示しています。  
+## <a name="mouse-customization"></a>Mouse Customization  
+ The following illustration shows the **Mouse** tab of the **Customization** dialog box.  
   
- ![カスタム ダイアログ ボックスの &#91;マウス&#93; タブ](../mfc/media/mfcnextmousetab.png "MFCNextMouseTab")  
-マウスのカスタマイズ タブ  
+ ![Mouse tab in the Customize dialog box](../mfc/media/mfcnextmousetab.png "mfcnextmousetab")  
+Mouse Customization Tab  
   
- ユーザーは、このタブを使用して、マウスのダブルクリック アクションにメニュー コマンドを割り当てます。  ウィンドウの左側からビューを選択し、右側のコントロールを使用してコマンドをダブルクリック アクションに関連付けます。  ユーザーが **\[Close\]** をクリックすると、アプリケーションは、ユーザーがビューの任意の場所をダブルクリックするたびに、関連付けられたコマンドを実行します。  
+ The user interacts with this tab to assign a menu command to the mouse double-click action. The user selects a view from the left side of the window and then uses the controls on the right side to associate a command with the double-click action. After the user clicks **Close**, the application executes the associated command whenever the user double-clicks anywhere in the view.  
   
- ウィザードを使用してアプリケーションを作成する場合、既定ではマウスのカスタマイズは有効になりません。  
+ By default, mouse customization is not enabled when you create an application by using the Wizard.  
   
-#### マウスのカスタマイズを有効にするには  
+#### <a name="to-enable-mouse-customization"></a>To enable mouse customization  
   
-1.  [CWinAppEx::InitMouseManager](../Topic/CWinAppEx::InitMouseManager.md) を呼び出して [CMouseManager](../mfc/reference/cmousemanager-class.md) オブジェクトを初期化します。  
+1.  Initialize a [CMouseManager](../mfc/reference/cmousemanager-class.md) object by calling [CWinAppEx::InitMouseManager](../mfc/reference/cwinappex-class.md#initmousemanager).  
   
-2.  [CWinAppEx::GetMouseManager](../Topic/CWinAppEx::GetMouseManager.md) を使用して、マウス マネージャーへのポインターを取得します。  
+2.  Obtain a pointer to the mouse manager by using [CWinAppEx::GetMouseManager](../mfc/reference/cwinappex-class.md#getmousemanager).  
   
-3.  [CMouseManager::AddView](../Topic/CMouseManager::AddView.md) メソッドを使用してマウス マネージャーにビューを追加します。  この操作を、マウス マネージャーに追加するすべてのビューに対して行います。  
+3.  Add views to the mouse manager by using the [CMouseManager::AddView](../mfc/reference/cmousemanager-class.md#addview) method. Do this for every view you want to add to the mouse manager.  
   
- アプリケーションがマウス マネージャーを初期化すると、フレームワークは **\[Mouse\]** タブを **\[Customize\]** ダイアログ ボックスに追加します。  ビューを追加しない場合は、タブにアクセスすると、ハンドルされない例外が発生します。  ビューの一覧を作成すると、ユーザーは **\[Mouse\]** タブを使用できるようになります。  
+ After your application initializes the mouse manager, the framework adds the **Mouse** tab to the **Customize** dialog box. If you do not add any views, accessing the tab will cause an unhandled exception. After you have created a list of views, the **Mouse** tab is available to the user.  
   
- 新しいビューをマウス マネージャーに追加するときに、ビューに一意の ID を割り当てます。  ウィンドウのマウスのカスタマイズをサポートするには、`WM_LBUTTONDBLCLICK` メッセージを処理し、[CWinAppEx::OnViewDoubleClick](../Topic/CWinAppEx::OnViewDoubleClick.md) 関数を呼び出す必要があります。  この関数を呼び出すときに、パラメーターの 1 つとして、そのウィンドウの ID を指定します。  ID 番号および ID 番号に関連付けられたオブジェクトの管理は、プログラマが行います。  
+ When you add a new view to the mouse manager, you give it a unique ID. If you want to support mouse customization for a window, you must process the `WM_LBUTTONDBLCLICK` message and call the [CWinAppEx::OnViewDoubleClick](../mfc/reference/cwinappex-class.md#onviewdoubleclick) function. When you call this function, one of the parameters is the ID for that window. It is the responsibility of the programmer to keep track of the ID numbers and the objects associated with them.  
   
-## セキュリティに関する注意事項  
- 「[ユーザー定義のツール](../Topic/User-defined%20Tools.md)」で説明されているように、ユーザーはユーザー定義のツール ID をダブルクリック イベントに関連付けることができます。  ユーザーがビューをダブルクリックすると、アプリケーションは関連付けられた ID に一致するユーザー ツールを探します。  一致するツールが見つかった場合、アプリケーションはそのツールを実行します。  一致するツールが見つからない場合は、WM\_COMMAND メッセージを ID と共にダブルクリックされたビューに送信します。  
+## <a name="security-concerns"></a>Security Concerns  
+ As described in [User-defined Tools](../mfc/user-defined-tools.md), the user can associate a user-defined tool ID with the double-click event. When the user double-clicks a view, the application looks for a user tool that matches the associated ID. If the application finds a matching tool, it executes the tool. If the application cannot find a matching tool, it sends a WM_COMMAND message with the ID to the view that was double-clicked.  
   
- カスタマイズした設定はレジストリに格納されます。  攻撃者はレジストリを編集することで、有効なユーザー ツール ID を任意のコマンドに置き換えることができます。  ユーザーがビューをダブルクリックすると、ビューは攻撃者が仕掛けたコマンドを処理します。  これにより、予期しない動作や危険性のある動作が発生する可能性があります。  
+ The customized settings are stored in the registry. By editing the registry, an attacker can replace a valid user tool ID with an arbitrary command. When the user double-clicks a view, the view processes the command that the attacker planted. This could cause unexpected and potentially dangerous behavior.  
   
- さらに、この種の攻撃は、ユーザー インターフェイスの保護をバイパスできます。  たとえば、アプリケーションで印刷機能が無効になっているとします。  つまり、アプリケーションのユーザー インターフェイスでは、**\[Print\]** のメニューとボタンが使用できません。  通常は、これでアプリケーションは印刷を実行できなくなります。  ただし、攻撃者がレジストリを編集した場合は、使用できないユーザー インターフェイス要素がバイパスされて、ユーザーはビューをダブルクリックすることで印刷コマンドを直接送信できます。  
+ In addition, this kind of attack can bypass user interface safeguards. For example, suppose an application has printing disabled. That is, in its user interface, the **Print** menu and button are unavailable. Normally this prevents the application from printing. But if an attacker edited the registry, a user could now could send the print command directly by double-clicking the view, bypassing the user interface elements that are unavailable.  
   
- この種の攻撃を防ぐには、アプリケーションのコマンド ハンドラーに、実行前にコマンドが有効かどうかを検証するコードを追加します。  アプリケーションへのコマンド送信の防止をユーザー インターフェイスに依存しないでください。  
+ To guard against this kind of attack, add code to your application command handler to verify that a command is valid before it is executed. Do not depend on the user interface to prevent a command from being sent to the application.  
   
-## 参照  
- [MFC のカスタマイズ](../mfc/customization-for-mfc.md)   
- [CKeyboardManager クラス](../mfc/reference/ckeyboardmanager-class.md)   
- [CMouseManager クラス](../mfc/reference/cmousemanager-class.md)   
- [カスタマイズによるセキュリティへの影響](../Topic/Security%20Implications%20of%20Customization.md)
+## <a name="see-also"></a>See Also  
+ [Customization for MFC](../mfc/customization-for-mfc.md)   
+ [CKeyboardManager Class](../mfc/reference/ckeyboardmanager-class.md)   
+ [CMouseManager Class](../mfc/reference/cmousemanager-class.md)   
+ [Security Implications of Customization](../mfc/security-implications-of-customization.md)
+
+

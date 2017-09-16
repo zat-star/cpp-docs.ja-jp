@@ -1,5 +1,5 @@
 ---
-title: "CMFCFontComboBox クラス |Microsoft ドキュメント"
+title: CMFCFontComboBox Class | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,11 +19,11 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- CMFCFontComboBox::DrawItem method
-- CMFCFontComboBox::PreTranslateMessage method
-- CMFCFontComboBox::MeasureItem method
-- CMFCFontComboBox class
-- CMFCFontComboBox::CompareItem method
+- CMFCFontComboBox [MFC], CMFCFontComboBox
+- CMFCFontComboBox [MFC], GetSelFont
+- CMFCFontComboBox [MFC], SelectFont
+- CMFCFontComboBox [MFC], Setup
+- CMFCFontComboBox [MFC], m_bDrawUsingFont
 ms.assetid: 9a53fb0c-7b45-486d-8187-2a4c723d9fbb
 caps.latest.revision: 29
 author: mikeblome
@@ -43,53 +43,53 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 1252f5ca102637e70cc384afd723464aec4144b4
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dd8301564b5e28a4473184eb257879bc6ae7dd3b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="cmfcfontcombobox-class"></a>CMFCFontComboBox クラス
-`CMFCFontComboBox`クラスは、フォントの一覧を含むコンボ ボックス コントロールを作成します。  
+# <a name="cmfcfontcombobox-class"></a>CMFCFontComboBox Class
+The `CMFCFontComboBox` class creates a combo box control that contains a list of fonts.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 class CMFCFontComboBox : public CComboBox  
 ```  
   
-## <a name="members"></a>メンバー  
+## <a name="members"></a>Members  
   
-### <a name="public-constructors"></a>パブリック コンストラクター  
+### <a name="public-constructors"></a>Public Constructors  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCFontComboBox::CMFCFontComboBox](#cmfcfontcombobox)|`CMFCFontComboBox` オブジェクトを構築します。|  
-|`CMFCFontComboBox::~CMFCFontComboBox`|デストラクターです。|  
+|[CMFCFontComboBox::CMFCFontComboBox](#cmfcfontcombobox)|Constructs a `CMFCFontComboBox` object.|  
+|`CMFCFontComboBox::~CMFCFontComboBox`|Destructor.|  
   
-### <a name="public-methods"></a>パブリック メソッド  
+### <a name="public-methods"></a>Public Methods  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|`CMFCFontComboBox::CompareItem`|現在のフォント コンボ ボックス コントロールの並べ替えられたリスト ボックスに新しい項目の相対的な位置を決定するためにフレームワークによって呼び出されます。 (上書き[CComboBox::CompareItem](../../mfc/reference/ccombobox-class.md#compareitem))。|  
-|`CMFCFontComboBox::DrawItem`|現在のフォント コンボ ボックス コントロールで、指定した項目を描画するためにフレームワークによって呼び出されます。 (上書き[CComboBox::DrawItem](../../mfc/reference/ccombobox-class.md#drawitem))。|  
-|[CMFCFontComboBox::GetSelFont](#getselfont)|現在選択されているフォントについての情報を取得します。|  
-|`CMFCFontComboBox::MeasureItem`|現在のフォント コンボ ボックス コントロールのリスト ボックスの各次元の Windows に通知するためにフレームワークによって呼び出されます。 (上書き[CComboBox::MeasureItem](../../mfc/reference/ccombobox-class.md#measureitem))。|  
-|`CMFCFontComboBox::PreTranslateMessage`|ウィンドウのメッセージの変換にディスパッチされる前に、 [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955)と[DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows 関数です。 (上書き[CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage))。|  
-|[CMFCFontComboBox::SelectFont](#selectfont)|フォント コンボ ボックスから、指定した条件に一致するフォントを選択します。|  
-|[CMFCFontComboBox::Setup](#setup)|フォント コンボ ボックス内の項目の一覧を初期化します。|  
+|`CMFCFontComboBox::CompareItem`|Called by the framework to determine the relative position of a new item in the sorted list box of the current font combo box control. (Overrides [CComboBox::CompareItem](../../mfc/reference/ccombobox-class.md#compareitem).)|  
+|`CMFCFontComboBox::DrawItem`|Called by the framework to draw a specified item in the current font combo box control. (Overrides [CComboBox::DrawItem](../../mfc/reference/ccombobox-class.md#drawitem).)|  
+|[CMFCFontComboBox::GetSelFont](#getselfont)|Retrieves information about the currently selected font.|  
+|`CMFCFontComboBox::MeasureItem`|Called by the framework to inform Windows of the dimensions of the list box in the current font combo box control. (Overrides [CComboBox::MeasureItem](../../mfc/reference/ccombobox-class.md#measureitem).)|  
+|`CMFCFontComboBox::PreTranslateMessage`|Translates window messages before they are dispatched to the [TranslateMessage](http://msdn.microsoft.com/library/windows/desktop/ms644955) and [DispatchMessage](http://msdn.microsoft.com/library/windows/desktop/ms644934) Windows functions. (Overrides [CWnd::PreTranslateMessage](../../mfc/reference/cwnd-class.md#pretranslatemessage).)|  
+|[CMFCFontComboBox::SelectFont](#selectfont)|Selects the font that matches the specified criteria from the font combo box.|  
+|[CMFCFontComboBox::Setup](#setup)|Initializes the list of items in the font combo box.|  
   
-### <a name="data-members"></a>データ メンバー  
+### <a name="data-members"></a>Data Members  
   
-|名前|説明|  
+|Name|Description|  
 |----------|-----------------|  
-|[CMFCFontComboBox::m_bDrawUsingFont](#m_bdrawusingfont)|現在のフォント コンボ ボックス内の項目のラベルの描画に使用するフォントをフレームワークに指示します。|  
+|[CMFCFontComboBox::m_bDrawUsingFont](#m_bdrawusingfont)|Indicates to the framework which font to use to draw the item labels in the current font combo box.|  
   
-## <a name="remarks"></a>コメント  
- 使用する、 `CMFCFontComboBox`  ダイアログ ボックス内のオブジェクトを追加、`CMFCFontComboBox`変数 ダイアログ ボックス クラスにします。 次に、 `OnInitDialog`  ダイアログ ボックス クラスの呼び出しのメソッド、 [CMFCFontComboBox::Setup](#setup)コンボ ボックス コントロールの項目の一覧を初期化します。  
+## <a name="remarks"></a>Remarks  
+ To use a `CMFCFontComboBox` object in a dialog box, add a `CMFCFontComboBox` variable to the dialog box class. Then in the `OnInitDialog` method of the dialog box class, call the [CMFCFontComboBox::Setup](#setup) method to initialize the list of items in the combo box control.  
   
-## <a name="inheritance-hierarchy"></a>継承階層  
+## <a name="inheritance-hierarchy"></a>Inheritance Hierarchy  
  [CObject](../../mfc/reference/cobject-class.md)  
   
  [CCmdTarget](../../mfc/reference/ccmdtarget-class.md)  
@@ -100,44 +100,44 @@ class CMFCFontComboBox : public CComboBox
   
  [CMFCFontComboBox](../../mfc/reference/cmfcfontcombobox-class.md)  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** afxfontcombobox.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** afxfontcombobox.h  
   
-##  <a name="cmfcfontcombobox"></a>CMFCFontComboBox::CMFCFontComboBox  
- `CMFCFontComboBox` オブジェクトを構築します。  
+##  <a name="cmfcfontcombobox"></a>  CMFCFontComboBox::CMFCFontComboBox  
+ Constructs a `CMFCFontComboBox` object.  
   
 ```  
 CMFCFontComboBox();
 ```  
   
-### <a name="return-value"></a>戻り値  
+### <a name="return-value"></a>Return Value  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="getselfont"></a>CMFCFontComboBox::GetSelFont  
- 現在選択されているフォントについての情報を取得します。  
+##  <a name="getselfont"></a>  CMFCFontComboBox::GetSelFont  
+ Retrieves information about the currently selected font.  
   
 ```  
 CMFCFontInfo* GetSelFont() const;  
 ```  
   
-### <a name="return-value"></a>戻り値  
- ポインター [CMFCFontInfo クラス](../../mfc/reference/cmfcfontinfo-class.md)フォントを表すオブジェクト。 できます`NULL`コンボ ボックスにフォントが選択されていない場合。  
+### <a name="return-value"></a>Return Value  
+ A pointer to [CMFCFontInfo Class](../../mfc/reference/cmfcfontinfo-class.md) object that describes a font. It can be `NULL` if no font is selected in the combo box.  
   
-### <a name="remarks"></a>コメント  
+### <a name="remarks"></a>Remarks  
   
-##  <a name="m_bdrawusingfont"></a>CMFCFontComboBox::m_bDrawUsingFont  
- 現在のフォント コンボ ボックス内の項目のラベルの描画に使用するフォントをフレームワークに指示します。  
+##  <a name="m_bdrawusingfont"></a>  CMFCFontComboBox::m_bDrawUsingFont  
+ Indicates to the framework which font to use to draw the item labels in the current font combo box.  
   
 ```  
 static BOOL m_bDrawUsingFont;  
 ```  
   
-### <a name="remarks"></a>コメント  
- このメンバーを設定`TRUE`に同じフォントを使用して各項目のラベルを描画するようフレームワークに指示します。 このメンバーを設定`FALSE`フレームワークの名前は、ラベルと同じフォントを使用して各項目のラベルの描画に指示します。 このメンバーの既定値は`FALSE`です。  
+### <a name="remarks"></a>Remarks  
+ Set this member to `TRUE` to direct the framework to use the same font to draw each item label. Set this member to `FALSE` to direct the framework to draw each item label with the font whose name is the same as the label. The default value of this member is `FALSE`.  
   
-##  <a name="selectfont"></a>CMFCFontComboBox::SelectFont  
- フォント コンボ ボックスから、指定した条件に一致するフォントを選択します。  
+##  <a name="selectfont"></a>  CMFCFontComboBox::SelectFont  
+ Selects the font that matches the specified criteria from the font combo box.  
   
 ```  
 BOOL SelectFont(CMFCFontInfo* pDesc);
@@ -148,30 +148,30 @@ BOOL SelectFont(
     BYTE nCharSet=DEFAULT_CHARSET);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `pDesc`  
- フォントの説明オブジェクトへのポインター。  
+### <a name="parameters"></a>Parameters  
+ [in] `pDesc`  
+ Points to a font description object.  
   
- [入力] `lpszName`  
- フォント名を指定します。  
+ [in] `lpszName`  
+ Specifies a font name.  
   
- [入力] `nCharSet`  
- 文字セットを指定します。 既定値は、DEFAULT_CHARSET です。 詳細については、次を参照してください。、`lfCharSet`のメンバー、 [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037)構造体。  
+ [in] `nCharSet`  
+ Specifies a character set. The default value is DEFAULT_CHARSET. For more information, see the `lfCharSet` member of the [LOGFONT](http://msdn.microsoft.com/library/windows/desktop/dd145037) structure.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`フォント コンボ ボックス内の項目は、説明オブジェクトの指定したフォントまたはフォントの名前と charset; と一致する場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if an item in the font combo box matches the specified font description object or font name and charset; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドを使用して、選択し、指定したフォントに対応するフォント コンボ ボックス内の項目までスクロールします。  
+### <a name="remarks"></a>Remarks  
+ Use this method to select and scroll to the item in the font combo box that corresponds to the specified font.  
   
-### <a name="example"></a>例  
- 次の例では、使用して、`SelectFont`メソッドで、`CMFCFontComboBox`クラスです。 この例は、[新しいコントロールのサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to use the `SelectFont` method in the `CMFCFontComboBox` class. This example is part of the [New Controls sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_NewControls #&34;](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]  
-[!code-cpp[NVC_MFC_NewControls&#35;](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_2.cpp)]  
+ [!code-cpp[NVC_MFC_NewControls#34](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]  
+[!code-cpp[NVC_MFC_NewControls#35](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_2.cpp)]  
   
-##  <a name="setup"></a>CMFCFontComboBox::Setup  
- フォント コンボ ボックス内の項目の一覧を初期化します。  
+##  <a name="setup"></a>  CMFCFontComboBox::Setup  
+ Initializes the list of items in the font combo box.  
   
 ```  
 BOOL Setup(
@@ -180,31 +180,31 @@ BOOL Setup(
     BYTE nPitchAndFamily=DEFAULT_PITCH);
 ```  
   
-### <a name="parameters"></a>パラメーター  
- [入力] `nFontType`  
- フォントの種類を指定します。 既定値は、DEVICE_FONTTYPE、RASTER_FONTTYPE、および TRUETYPE_FONTTYPE のビットごとの組み合わせ (OR です)。  
+### <a name="parameters"></a>Parameters  
+ [in] `nFontType`  
+ Specifies the font type. The default value is the bitwise combination (OR) of DEVICE_FONTTYPE, RASTER_FONTTYPE, and TRUETYPE_FONTTYPE.  
   
- [入力] `nCharSet`  
- フォントの文字セットを指定します。 既定値は、DEFAULT_CHARSET です。  
+ [in] `nCharSet`  
+ Specifies the font character set. The default value is DEFAULT_CHARSET.  
   
- [入力] `nPitchAndFamily`  
- フォントのピッチとファミリを指定します。 既定値は、DEFAULT_PITCH です。  
+ [in] `nPitchAndFamily`  
+ Specifies the font pitch and family. The default value is DEFAULT_PITCH.  
   
-### <a name="return-value"></a>戻り値  
- `TRUE`フォント コンボ ボックスが正常に初期化されていた場合それ以外の場合、`FALSE`です。  
+### <a name="return-value"></a>Return Value  
+ `TRUE` if the font combo box was initialized successfully; otherwise, `FALSE`.  
   
-### <a name="remarks"></a>コメント  
- このメソッドは、指定されたパラメーターと一致する現在インストールされているフォントを列挙して、フォント コンボ ボックスにそのフォント名を挿入する、フォント コンボ ボックスを初期化します。  
+### <a name="remarks"></a>Remarks  
+ This method initializes the font combo box by enumerating the currently installed fonts that match the specified parameters and inserting those font names in the font combo box.  
   
-### <a name="example"></a>例  
- 次の例では、使用して、`Setup`メソッドで、`CMFCFontComboBox`クラスです。 この例は、[新しいコントロールのサンプル](../../visual-cpp-samples.md)します。  
+### <a name="example"></a>Example  
+ The following example demonstrates how to use the `Setup` method in the `CMFCFontComboBox` class. This example is part of the [New Controls sample](../../visual-cpp-samples.md).  
   
- [!code-cpp[NVC_MFC_NewControls #&34;](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]  
-[!code-cpp[NVC_MFC_NewControls&#36;](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_3.cpp)]  
+ [!code-cpp[NVC_MFC_NewControls#34](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_1.h)]  
+[!code-cpp[NVC_MFC_NewControls#36](../../mfc/reference/codesnippet/cpp/cmfcfontcombobox-class_3.cpp)]  
   
-## <a name="see-also"></a>関連項目  
- [階層図](../../mfc/hierarchy-chart.md)   
- [クラス](../../mfc/reference/mfc-classes.md)   
- [CMFCToolBarFontComboBox クラス](../../mfc/reference/cmfctoolbarfontcombobox-class.md)   
- [CMFCFontInfo クラス](../../mfc/reference/cmfcfontinfo-class.md)
+## <a name="see-also"></a>See Also  
+ [Hierarchy Chart](../../mfc/hierarchy-chart.md)   
+ [Classes](../../mfc/reference/mfc-classes.md)   
+ [CMFCToolBarFontComboBox Class](../../mfc/reference/cmfctoolbarfontcombobox-class.md)   
+ [CMFCFontInfo Class](../../mfc/reference/cmfcfontinfo-class.md)
 

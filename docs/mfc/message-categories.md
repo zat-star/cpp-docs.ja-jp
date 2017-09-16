@@ -1,54 +1,73 @@
 ---
-title: "メッセージの種類 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド メッセージ [C++]"
-  - "コントロール通知メッセージ"
-  - "コントロール [MFC], 通知"
-  - "メッセージ処理 [C++], メッセージ タイプ"
-  - "メッセージ [C++], カテゴリ"
-  - "メッセージ [C++], Windows"
-  - "Windows メッセージ [C++], カテゴリ"
+title: Message Categories | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- messages [MFC], categories
+- control-notification messages [MFC]
+- Windows messages [MFC], categories
+- controls [MFC], notifications
+- command messages [MFC]
+- messages [MFC], Windows
+- message handling [MFC], message types
 ms.assetid: 68e1db75-9da6-4a4d-b2c2-dc4d59f8d87b
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# メッセージの種類
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: eddd5d0e35bd76f3efbff916ce541bb840ca4936
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-どのようなメッセージのハンドラーを記述します。  3 種類の主要カテゴリがあります:  
+---
+# <a name="message-categories"></a>Message Categories
+What kinds of messages do you write handlers for There are three main categories:  
   
-1.  Windows メッセージ  
+1.  Windows messages  
   
-     これは **WM\_COMMAND**を除く **WM\_** プレフィックスでは主にメッセージが含まれます。  Windows メッセージは、ウィンドウとビューによって処理されます。  これらのメッセージは、メッセージを処理する方法を決めるで使用されるパラメーターがあります。  
+     This includes primarily those messages beginning with the **WM_** prefix, except for **WM_COMMAND**. Windows messages are handled by windows and views. These messages often have parameters that are used in determining how to handle the message.  
   
-2.  コントロールの通知  
+2.  Control notifications  
   
-     これは、コントロールおよびそのほかの子ウィンドウの親ウィンドウに **WM\_COMMAND** 通知メッセージが含まれています。  たとえば、エディット コントロールは、ユーザーがエディット コントロールのテキストを変更する可能性があるアクションをとったら親に **WM\_COMMAND** を含むメッセージを **EN\_CHANGE** コントロール通知コード送信します。  メッセージのウィンドウのハンドラーでは、コントロールのテキストの取得などの適切な方法で、通知メッセージに応答します。  
+     This includes **WM_COMMAND** notification messages from controls and other child windows to their parent windows. For example, an edit control sends its parent a **WM_COMMAND** message containing the **EN_CHANGE** control-notification code when the user has taken an action that may have altered text in the edit control. The window's handler for the message responds to the notification message in some appropriate way, such as retrieving the text in the control.  
   
-     フレームワークは **WM\_** 他のメッセージなどのコントロール通知メッセージをルーティングします。  ただし、次の 1 種類の例外は、ユーザーがクリックしたボタンから送信された **BN\_CLICKED** コントロール通知メッセージです。  このメッセージは、コマンド メッセージとして特に処理され、他のコマンドのようにルーティングされます。  
+     The framework routes control-notification messages like other **WM_** messages. One exception, however, is the **BN_CLICKED** control-notification message sent by buttons when the user clicks them. This message is treated specially as a command message and routed like other commands.  
   
-3.  コマンド メッセージ  
+3.  Command messages  
   
-     これにより、ユーザー インターフェイス オブジェクトの **WM\_COMMAND** 通知メッセージがあります: メニュー、ツール バー ボタンとアクセラレータ キー。  フレームワークは、コマンドを他のメッセージとは異なる方法で処理し、[コマンドの対象](../Topic/Command%20Targets.md)"で説明しているように複数の型のオブジェクトによって、処理することができます。  
+     This includes **WM_COMMAND** notification messages from user-interface objects: menus, toolbar buttons, and accelerator keys. The framework processes commands differently from other messages, and they can be handled by more kinds of objects, as explained in [Command Targets](../mfc/command-targets.md).  
   
-##  <a name="_core_windows_messages_and_control.2d.notification_messages"></a> Windows メッセージとコントロール通知メッセージ  
- カテゴリ 1 および 2 のメッセージは、ウィンドウによって— Windows メッセージとコントロール通知—処理されます: クラス `CWnd`から派生されるクラス オブジェクト。  これは、`CFrameWnd``CMDIFrameWnd`、`CMDIChildWnd`、`CView`、`CDialog`、これらの基本クラスから派生される独自のクラスが含まれています。  このようなオブジェクトは `HWND`ウィンドウへのハンドルをカプセル化します。  
+##  <a name="_core_windows_messages_and_control.2d.notification_messages"></a> Windows Messages and Control-Notification Messages  
+ Messages in categories 1 and 2 — Windows messages and control notifications — are handled by windows: objects of classes derived from class `CWnd`. This includes `CFrameWnd`, `CMDIFrameWnd`, `CMDIChildWnd`, `CView`, `CDialog`, and your own classes derived from these base classes. Such objects encapsulate an `HWND`, a handle to a Windows window.  
   
-##  <a name="_core_command_messages"></a> コマンド メッセージ  
- カテゴリ 3 のメッセージがオブジェクトのさまざまなコマンドで— —処理することができますが、T: ウィンドウとビューに適用するドキュメント、ドキュメント テンプレートとアプリケーション オブジェクト自体。  コマンドでは、特定のオブジェクトに影響を与える場合、その意味を。オブジェクトのハンドル コマンド便利です。  たとえば、ファイル メニューの開くコマンドはアプリケーションとともに論理的に関連付けられています。: アプリケーションは、コマンドを受信したときに指定したドキュメントを開きます。  したがって、開くコマンドのハンドラーは、アプリケーション クラスのメンバー関数です。  コマンドの詳細については、オブジェクトにルーティングされるか、[フレームワークがハンドラーに問い合わせる場合](../mfc/how-the-framework-calls-a-handler.md)を参照すれば。  
+##  <a name="_core_command_messages"></a> Command Messages  
+ Messages in category 3 — commands — can be handled by a wider variety of objects: documents, document templates, and the application object itself in addition to windows and views. When a command directly affects some particular object, it makes sense to have that object handle the command. For example, the Open command on the File menu is logically associated with the application: the application opens a specified document upon receiving the command. So the handler for the Open command is a member function of the application class. For more about commands and how they are routed to objects, see [How the Framework Calls a Handler](../mfc/how-the-framework-calls-a-handler.md).  
   
-## 参照  
- [フレームワークのメッセージとコマンド](../mfc/messages-and-commands-in-the-framework.md)
+## <a name="see-also"></a>See Also  
+ [Messages and Commands in the Framework](../mfc/messages-and-commands-in-the-framework.md)
+
+

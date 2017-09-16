@@ -1,150 +1,169 @@
 ---
-title: "コントロール クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.classes.control"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ボタン, MFC コントロール クラス"
-  - "コントロール クラス"
-  - "コントロール クラス, MFC"
-  - "コントロール [C++], MFC コントロール クラス"
-  - "コントロール [MFC]"
-  - "リスト ボックス, MFC コントロール クラス"
-  - "静的表示コントロール"
-  - "テキスト, コントロール (入力の)"
-  - "ユーザー入力, MFC コントロール クラス"
+title: Control Classes | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.classes.control
+dev_langs:
+- C++
+helpviewer_keywords:
+- static display controls [MFC]
+- control classes [MFC]
+- buttons, MFC control classes
+- controls [MFC], MFC control classes
+- controls [MFC]
+- list boxes [MFC], MFC control classes
+- control classes [MFC], MFC
+- text, controls for input [MFC]
+- user input [MFC], MFC control classes
 ms.assetid: f9876606-9f5b-44cb-9135-213298d1df8f
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コントロール クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: dad536746997bbad1d506bac0676a277d760b126
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-コントロール クラスには、静的テキスト コントロールからのツリー コントロールまで、さまざまな標準の Windows コントロールをカプセル化します。  また、MFC はビットマップとコントロール バー ボタンを含む、新しいコントロールを提供します。  
+---
+# <a name="control-classes"></a>Control Classes
+Control classes encapsulate a wide variety of standard Windows controls ranging from static text controls to tree controls. In addition, MFC provides some new controls, including buttons with bitmaps and control bars.  
   
- クラス名が「**Ctrl**」で終わるコントロールは Windows 95 および Windows NT 3.51 で新しかったです。  
+ The controls whose class names end in "**Ctrl**" were new in Windows 95 and Windows NT version 3.51.  
   
-## 表示コントロール  
- [CStatic](../Topic/CStatic%20Class.md)  
- 静的表示ウィンドウ。  スタティック コントロールがダイアログ ボックスまたはウィンドウの他のコントロールを使用して、囲むか、分離されます。  また、よりも、テキストをボックスまたはグラフィカル イメージを表示する場合があります。  
+## <a name="static-display-controls"></a>Static Display Controls  
+ [CStatic](../mfc/reference/cstatic-class.md)  
+ A static-display window. Static controls are used to label, box, or separate other controls in a dialog box or window. They may also display graphical images rather than text or a box.  
   
-## テキスト コントロール  
- [CEdit](../Topic/CEdit%20Class.md)  
- 編集できるテキストのコントロール ウィンドウ。  エディット コントロールのテキストをユーザーからの入力を受け入れるために使用されます。  
+## <a name="text-controls"></a>Text Controls  
+ [CEdit](../mfc/reference/cedit-class.md)  
+ An editable-text control window. Edit controls are used to accept textual input from the user.  
   
  [CIPAddressCtrl](../mfc/reference/cipaddressctrl-class.md)  
- インターネット プロトコル \(IP\) のアドレスを処理するためのエディット ボックスをサポートします。  
+ Supports an edit box for manipulating an Internet Protocol (IP) address.  
   
- [CRichEditCtrl](../Topic/CRichEditCtrl%20Class.md)  
- ユーザーがテキストを入力して編集できるコントロール。  `CEdit`にカプセル化されたコントロールとは異なり、リッチ エディット コントロールは文字や段落書式と OLE オブジェクトをサポートします。  
+ [CRichEditCtrl](../mfc/reference/cricheditctrl-class.md)  
+ A control in which the user can enter and edit text. Unlike the control encapsulated in `CEdit`, a rich edit control supports character and paragraph formatting and OLE objects.  
   
-## 数値を表すコントロール  
+## <a name="controls-that-represent-numbers"></a>Controls That Represent Numbers  
  [CSliderCtrl](../mfc/reference/csliderctrl-class.md)  
- 値を値または複数選択して、ユーザーが移動できるスライダーを含むコントロール。  
+ A control containing a slider, which the user moves to select a value or set of values.  
   
  [CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)  
- 値をインクリメントするか、デクリメントするためにユーザーがクリックできる矢印ボタンのペア。  
+ A pair of arrow buttons the user can click to increment or decrement a value.  
   
  [CProgressCtrl](../mfc/reference/cprogressctrl-class.md)  
- 操作の進行状況を示すために、左から右に塗りつぶされた四角形を表示します。  
+ Displays a rectangle that is gradually filled from left to right to indicate the progress of an operation.  
   
  [CScrollBar](../mfc/reference/cscrollbar-class.md)  
- スクロール バー コントロール ウィンドウ。  クラスは、ユーザーが範囲内の位置を指定します。指定できるウィンドウまたはダイアログ ボックスのコントロールとして使用するスクロール バー機能を利用します。  
+ A scroll-bar control window. The class provides the functionality of a scroll bar, for use as a control in a dialog box or window, through which the user can specify a position within a range.  
   
-## ボタン  
+## <a name="buttons"></a>Buttons  
  [CButton](../mfc/reference/cbutton-class.md)  
- ボタン コントロールのウィンドウ。  クラスは、ダイアログ ボックスまたはウィンドウのプッシュ ボタン、チェック ボックス、オプション ボタンはプログラミング インターフェイスを提供します。  
+ A button control window. The class provides a programmatic interface for a push button, check box, or radio button in a dialog box or window.  
   
  [CBitmapButton](../mfc/reference/cbitmapbutton-class.md)  
- キャプション テキストではなくビットマップのボタン。  
+ A button with a bitmap rather than a text caption.  
   
-## 表示内容  
- [CListBox](../Topic/CListBox%20Class.md)  
- リストボックス コントロールのウィンドウ。  ボックスに表示し、ユーザーが選択できるアイテムの一覧が表示されます。  
+## <a name="lists"></a>Lists  
+ [CListBox](../mfc/reference/clistbox-class.md)  
+ A list-box control window. A list box displays a list of items that the user can view and select.  
   
  [CDragListBox](../mfc/reference/cdraglistbox-class.md)  
- Windows のリスト ボックスの機能を提供します。; ユーザーがリスト ボックス内の項目を、リスト ボックス内のファイル名とリテラル文字列など、移動できるようにします。  この機能のリスト ボックスがアルファベット以外の順序で項目リストに便利ですなどのプロジェクトのパスまたはファイル名を含めます。  
+ Provides the functionality of a Windows list box; allows the user to move list box items, such as filenames and string literals, within the list box. List boxes with this capability are useful for an item list in an order other than alphabetical, such as include pathnames or files in a project.  
   
  [CComboBox](../mfc/reference/ccombobox-class.md)  
- コンボ ボックス コントロールのウィンドウ。  コンボ ボックスのリスト ボックスとエディット コントロールから構成されます。  
+ A combo-box control window. A combo box consists of an edit control plus a list box.  
   
  [CComboBoxEx](../mfc/reference/ccomboboxex-class.md)  
- イメージ リストをサポートすることにより、コンボ ボックス コントロールを拡張します。  
+ Extends the combo box control by providing support for image lists.  
   
  [CCheckListBox](../mfc/reference/cchecklistbox-class.md)  
- 各項目の横にあるユーザーがチェック アウトするか、できるチェック ボックスの項目の一覧を表示します。  
+ Displays a list of items with check boxes, which the user can check or clear, next to each item.  
   
- [CListCtrl](../Topic/CListCtrl%20Class.md)  
- 項目、それぞれファイル エクスプローラーの右ペインに似たアイコンから成るとラベルのコレクションを、では表示されます。  
+ [CListCtrl](../mfc/reference/clistctrl-class.md)  
+ Displays a collection of items, each consisting of an icon and a label, in a manner similar to the right pane of File Explorer.  
   
  [CTreeCtrl](../mfc/reference/ctreectrl-class.md)  
- ファイル エクスプローラーの左ペインにアイコンとラベルで配置する同様の階層的な一覧が表示されます。  
+ Displays a hierarchical list of icons and labels arranged in a manner similar to the left pane of File Explorer.  
   
-## ツール バーとステータス バー  
+## <a name="toolbars-and-status-bars"></a>Toolbars and Status Bars  
  [CToolBarCtrl](../mfc/reference/ctoolbarctrl-class.md)  
- Windows ツール バー コモン コントロールの機能が用意されています。  ほとんどの MFC プログラムは、このクラスの代わりに [CToolBar](../mfc/reference/ctoolbar-class.md) を使用します。  
+ Provides the functionality of the Windows toolbar common control. Most MFC programs use [CToolBar](../mfc/reference/ctoolbar-class.md) instead of this class.  
   
  [CStatusBarCtrl](../mfc/reference/cstatusbarctrl-class.md)  
- 通常、アプリケーションのステータス情報を表示できるペインに水平方向の分割ウィンドウ。  ほとんどの MFC プログラムは、このクラスの代わりに [CStatusBar](../mfc/reference/cstatusbar-class.md) を使用します。  
+ A horizontal window, usually divided into panes, in which an application can display status information. Most MFC programs use [CStatusBar](../mfc/reference/cstatusbar-class.md) instead of this class.  
   
-## そのほかのコントロール  
+## <a name="miscellaneous-controls"></a>Miscellaneous Controls  
  [CAnimateCtrl](../mfc/reference/canimatectrl-class.md)  
- 単純なビデオ クリップを表示します。  
+ Displays a simple video clip.  
   
- [CToolTipCtrl](../Topic/CToolTipCtrl%20Class.md)  
- アプリケーションでツールの目的を説明する、単一行のテキストを表示する小さなポップアップ ウィンドウ。  
+ [CToolTipCtrl](../mfc/reference/ctooltipctrl-class.md)  
+ A small pop-up window that displays a single line of text describing the purpose of a tool in an application.  
   
  [CDateTimeCtrl](../mfc/reference/cdatetimectrl-class.md)  
- 拡張エディット コントロール、またはユーザーが時刻値を特定の日付を選択できるようにする簡単な暦のインターフェイス コントロールをサポートします。  
+ Supports either an extended edit control, or a simple calendar interface control, that allows a user to choose a specific date or time value.  
   
- [CHeaderCtrl](../Topic/CHeaderCtrl%20Class.md)  
- 列の表示タイトルまたはラベル。  
+ [CHeaderCtrl](../mfc/reference/cheaderctrl-class.md)  
+ Displays titles or labels for columns.  
   
  [CMonthCalCtrl](../mfc/reference/cmonthcalctrl-class.md)  
- ユーザーが日付を選択できるようにする簡単な暦のインターフェイス コントロールをサポートします。  
+ Supports a simple calendar interface control that allows a user to select a date.  
   
- [CTabCtrl](../Topic/CTabCtrl%20Class.md)  
- ユーザーがクリックできるメモの区分線のようなタブを持つコントロール。  
+ [CTabCtrl](../mfc/reference/ctabctrl-class.md)  
+ A control with tabs on which the user can click, analogous to the dividers in a notebook.  
   
  [CHotKeyCtrl](../mfc/reference/chotkeyctrl-class.md)  
- ユーザーが操作を簡単に実行するためにユーザーがクリックできるホット キーの組み合わせを作成できるようにします。  
+ Enables the user to create a hot key combination, which the user can press to perform an action quickly.  
   
  [CLinkCtrl](../mfc/reference/clinkctrl-class.md)  
- ユーザーが埋め込まれたなリンクをクリックしたときに Renders マーク付きのテキストおよび起動の適切なアプリケーション。  
+ Renders marked-up text and launches appropriate applications when the user clicks the embedded link.  
   
  [CHtmlEditCtrl](../mfc/reference/chtmleditctrl-class.md)  
- MFC ウィンドウ内の WebBrowser ActiveX コントロールの機能が用意されています。  
+ Provides the functionality of the WebBrowser ActiveX control in an MFC window.  
   
-## 関連クラス  
- [CImageList](../Topic/CImageList%20Class.md)  
- Windows イメージ リストの機能が用意されています。  イメージ リストはリスト コントロールやツリー コントロールで使われます。  また、同じサイズのビットマップの組の格納や保存にも使用できます。  
+## <a name="related-classes"></a>Related Classes  
+ [CImageList](../mfc/reference/cimagelist-class.md)  
+ Provides the functionality of the Windows image list. Image lists are used with list controls and tree controls. They can also be used to store and archive a set of same-sized bitmaps.  
   
  [CCtrlView](../mfc/reference/cctrlview-class.md)  
- すべての基本クラスは、Windows のコントロールには、関連を検索します。  コントロールに基づくビューについて、次に説明します。  
+ The base class for all views associated with Windows controls. The views based on controls are described below.  
   
- [CEditView](../Topic/CEditView%20Class.md)  
- Windows の標準のエディット コントロールを含むビュー。  
+ [CEditView](../mfc/reference/ceditview-class.md)  
+ A view that contains a Windows standard edit control.  
   
  [CRichEditView](../mfc/reference/cricheditview-class.md)  
- Windows のリッチ エディット コントロールを含むビュー。  
+ A view that contains a Windows rich edit control.  
   
  [CListView](../mfc/reference/clistview-class.md)  
- Windows のリスト コントロールを含むビュー。  
+ A view that contains a Windows list control.  
   
  [CTreeView](../mfc/reference/ctreeview-class.md)  
- Windows コモン ツリー コントロールを含むビュー。  
+ A view that contains a Windows tree control.  
   
-## 参照  
- [クラスの概要](../mfc/class-library-overview.md)
+## <a name="see-also"></a>See Also  
+ [Class Overview](../mfc/class-library-overview.md)
+
+

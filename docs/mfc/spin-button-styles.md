@@ -1,49 +1,68 @@
 ---
-title: "スピン ボタンのスタイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CSpinButtonCtrl クラス, スタイル"
-  - "スピン ボタン コントロール, スタイル"
-  - "スタイル, CSpinButtonCtrl"
-  - "スタイル, スピン ボタン コントロール"
+title: Spin Button Styles | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- styles [MFC], CSpinButtonCtrl
+- CSpinButtonCtrl class [MFC], styles
+- styles [MFC], spin button control
+- spin button control, styles
 ms.assetid: fb4a7f6f-9182-47be-bccf-0728fdc5332f
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# スピン ボタンのスタイル
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f13ad271270af4c5eb5bcc12d62c3397d8edb8fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-スピン ボタン \([CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)\) の設定の多くは、スタイルによって制御されます。  ダイアログ エディターの **\[プロパティ\]** ウィンドウを使用すると、次のスタイルを設定できます。  
+---
+# <a name="spin-button-styles"></a>Spin Button Styles
+Many of the settings for a spin button ([CSpinButtonCtrl](../mfc/reference/cspinbuttonctrl-class.md)) are controlled by styles. You can set the following styles using the **Properties** window in the dialog editor.  
   
--   縦または横**向き**。  矢印ボタンの方向を制御します。  `UDS_HORZ` のスタイルに関連付けられます。  
+-   **Orientation** Either Vertical or Horizontal. Controls the orientation of the arrow buttons. Associated with the `UDS_HORZ` style.  
   
--   アタッチされていません、左の**配置** 1、またはアクセス許可。  スピン ボタンの場所を制御します。  左の位置関連ウィンドウの横にあるスピン ボタン。  関連するウィンドウの幅は、スピン ボタンを入力できるようになります。  `UDS_ALIGNLEFT` と `UDS_ALIGNRIGHT` のスタイルに関連付けられます。  
+-   **Alignment** One of Unattached, Left, or Right. Controls the location of the spin button. Left and Right position the spin button next to the buddy window. The width of the buddy window is decreased to accommodate the spin button. Associated with the `UDS_ALIGNLEFT` and `UDS_ALIGNRIGHT` styles.  
   
--   **Auto Buddy**は、スピン ボタンに関連ウィンドウとして自動的に Z オーダーの前のウィンドウを選択します。  ダイアログ テンプレートでは、this はタブ オーダーのスピン ボタンに先行するコントロールです。  `UDS_AUTOBUDDY` のスタイルに関連付けられます。  
+-   **Auto Buddy** Automatically selects the previous window in Z-order as buddy window to the spin button. In a dialog template, this is the control which precedes the spin button in the tab order. Associated with the `UDS_AUTOBUDDY` style.  
   
--   現在位置を変更するときに**Set Buddy Integer**スピン コントロールは関連ウィンドウのキャプションをインクリメントし、デクリメントします。  `UDS_SETBUDDYINT` のスタイルに関連付けられます。  
+-   **Set Buddy Integer** Causes the spin control to increment and decrement the caption of the buddy window as the current position changes. Associated with the `UDS_SETBUDDYINT` style.  
   
--   **No Thousands**は関連ウィンドウのキャプションの値で桁区切り記号は挿入されません。  `UDS_NOTHOUSANDS` のスタイルに関連付けられます。  
+-   **No Thousands** Does not insert the thousands separator in the value in the caption of the buddy window. Associated with the `UDS_NOTHOUSANDS` style.  
   
     > [!NOTE]
-    >  関連コントロールから整数値を取得するには、ダイアログ データ エクスチェンジ \(DDX\) を使用する場合は、このスタイルを設定します。  `DDX_Text` は 埋め込まれたな区切り記号数値は使用できません。  
+    >  Set this style if you want to use dialog data exchange (DDX) to get the integer value from the buddy control. `DDX_Text` does not accept embedded thousand separators.  
   
--   値がコントロールの範囲を超えてインクリメントされるか、デクリメントされるように**右端で折り返す**により「ラップ」位置になります。  `UDS_WRAP` のスタイルに関連付けられます。  
+-   **Wrap** Causes the position to "wrap" as the value is incremented or decremented beyond the range of the control. Associated with the `UDS_WRAP` style.  
   
--   ↑キーおよび↓キーを押すと**方向キー**スピン ボタンの位置をインクリメントするか、デクリメントします。  `UDS_ARROWKEYS` のスタイルに関連付けられます。  
+-   **Arrow Keys** Causes the spin button to increment or decrement the position when the UP ARROW and DOWN ARROW keys are pressed. Associated with the `UDS_ARROWKEYS` style.  
   
-## 参照  
- [CSpinButtonCtrl の使い方](../mfc/using-cspinbuttonctrl.md)   
- [コントロール](../mfc/controls-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Using CSpinButtonCtrl](../mfc/using-cspinbuttonctrl.md)   
+ [Controls](../mfc/controls-mfc.md)
+
+

@@ -1,5 +1,5 @@
 ---
-title: "COLORADJUSTMENT 構造体 |Microsoft ドキュメント"
+title: COLORADJUSTMENT Structure | Microsoft Docs
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -13,7 +13,7 @@ f1_keywords:
 dev_langs:
 - C++
 helpviewer_keywords:
-- COLORADJUSTMENT structure
+- COLORADJUSTMENT structure [MFC]
 ms.assetid: 67fc4e63-0e0e-4fcb-8c45-aa5ebfefa013
 caps.latest.revision: 11
 author: mikeblome
@@ -33,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 040985df34f2613b4e4fae29498721aef15d50cb
-ms.openlocfilehash: 7f88877fa009abf4e811ba0a99b7e0e1683f998a
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: f8d3066b39a11369ca8f0a4f04429a26d2f04702
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 09/12/2017
 
 ---
-# <a name="coloradjustment-structure"></a>COLORADJUSTMENT 構造体
-`COLORADJUSTMENT`構造体は、Windows で使用される色の調整値を定義`StretchBlt`と**StretchDIBits**関数と、`StretchBlt`モードは**ハーフトーン**します。  
+# <a name="coloradjustment-structure"></a>COLORADJUSTMENT Structure
+The `COLORADJUSTMENT` structure defines the color adjustment values used by the Windows `StretchBlt` and **StretchDIBits** functions when the `StretchBlt` mode is **HALFTONE**.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```  
 typedef struct  tagCOLORADJUSTMENT {    /* ca */  
@@ -62,19 +62,19 @@ typedef struct  tagCOLORADJUSTMENT {    /* ca */
 } COLORADJUSTMENT;  
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  *caSize*  
- 構造体のサイズをバイトで指定します。  
+ Specifies the size of the structure in bytes.  
   
  *caFlags*  
- 出力のイメージを準備する方法を指定します。 このメンバーを設定することができます**NULL**または、次の値の任意の組み合わせ。  
+ Specifies how the output image should be prepared. This member can be set to **NULL** or any combination of the following values:  
   
-- **CA_NEGATIVE**元のイメージの負の値を表示することを指定します。  
+- **CA_NEGATIVE** Specifies that the negative of the original image should be displayed.  
   
-- **CA_LOG_FILTER**最終的な出力色の濃さを対数関数が適用されることを指定します。 輝度が少なくなると、色コントラストが増加します。  
+- **CA_LOG_FILTER** Specifies that a logarithmic function should be applied to the final density of the output colors. This will increase the color contrast when the luminance is low.  
   
  *caIlluminantIndex*  
- イメージ オブジェクトが表示される光の光源の輝度を指定します。 このメンバーは、次の値のいずれかに設定できます。  
+ Specifies the luminance of the light source under which the image object is viewed. This member can be set to one of the following values:  
   
 - **ILLUMINANT_EQUAL_ENERGY**  
   
@@ -103,37 +103,37 @@ typedef struct  tagCOLORADJUSTMENT {    /* ca */
 - **ILLUMINANT_NTSC**  
   
  *caRedGamma*  
- ソースの色の赤の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
+ Specifies the nth power gamma-correction value for the red primary of the source colors. The value must be in the range from 2,500 to 65,000. A value of 10,000 means no gamma-correction.  
   
  *caGreenGamma*  
- ソースの色の緑の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
+ Specifies the nth power gamma-correction value for the green primary of the source colors. The value must be in the range from 2,500 to 65,000. A value of 10,000 means no gamma-correction.  
   
  *caBlueGamma*  
- ソースの色の青の原色の n 番目ガンマ補正値を指定します。 値は、2,500 から 65,000 の範囲内で指定する必要があります。 10,000 の値は、ガンマ補正がないことを意味します。  
+ Specifies the nth power gamma-correction value for the blue primary of the source colors. The value must be in the range from 2,500 to 65,000. A value of 10,000 means no gamma-correction.  
   
  *caReferenceBlack*  
- ソース カラーに対して黒の参照を指定します。 これよりも暗い色は黒として扱われます。 値は、0 ~ 4,000 の範囲でなければなりません。  
+ Specifies the black reference for the source colors. Any colors that are darker than this are treated as black. The value must be in the range from 0 to 4,000.  
   
  *caReferenceWhite*  
- ソース カラーの白の参照を指定します。 これよりも明るい色は白として扱われます。 値は 6,000 から 10,000 の範囲でなければなりません。  
+ Specifies the white reference for the source colors. Any colors that are lighter than this are treated as white. The value must be in the range from 6,000 to 10,000.  
   
  *caContrast*  
- ソース オブジェクトに適用されるコントラストの量を指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 はコントラストの調整がないことを意味します。  
+ Specifies the amount of contrast to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no contrast adjustment.  
   
  *caBrightness*  
- ソース オブジェクトに適用される明るさを指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 は、明るさの調整がないことを意味します。  
+ Specifies the amount of brightness to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no brightness adjustment.  
   
  *caColorfulness*  
- ソース オブジェクトに適用される彩度の量を指定します。 値は、100 ~-100 の範囲でなければなりません。 値 0 は、彩度の調整がないことを意味します。  
+ Specifies the amount of colorfulness to be applied to the source object. The value must be in the range from -100 to 100. A value of 0 means no colorfulness adjustment.  
   
  *caRedGreenTint*  
- ソース オブジェクトに適用する赤または緑の濃淡の調整の量を指定します。 値は、100 ~-100 の範囲でなければなりません。 正の数値が赤に調整し、負の数値が緑に調整します。 0 は濃淡の補正を意味します。  
+ Specifies the amount of red or green tint adjustment to be applied to the source object. The value must be in the range from -100 to 100. Positive numbers would adjust towards red and negative numbers adjust towards green. A 0 means no tint adjustment.  
   
-## <a name="requirements"></a>要件  
- **ヘッダー:** wingdi.h  
+## <a name="requirements"></a>Requirements  
+ **Header:** wingdi.h  
   
-## <a name="see-also"></a>関連項目  
- [構造体、スタイル、コールバック、およびメッセージ マップ](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
+## <a name="see-also"></a>See Also  
+ [Structures, Styles, Callbacks, and Message Maps](../../mfc/reference/structures-styles-callbacks-and-message-maps.md)   
  [CDC::GetColorAdjustment](../../mfc/reference/cdc-class.md#getcoloradjustment)
 
 

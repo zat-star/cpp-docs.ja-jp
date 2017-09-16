@@ -9,9 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
-- std::complex<long double>
-- complex<long double>
-- std.complex<long double>
+- std::complex<long double>", "complex<long double>", "std.complex<long double>
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -35,17 +33,17 @@ translation.priority.ht:
 - tr-tr
 - zh-cn
 - zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 75e4e8bc79cb972c19e200a4d8fc1340535cd297
+ms.translationtype: MT
+ms.sourcegitcommit: 5d026c375025b169d5db8445cbb52c0c917b2d8d
+ms.openlocfilehash: 4433a4904bf903f59de746cf1f185a91a4b02ee3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 09/09/2017
 
 ---
 # <a name="complexltlong-doublegt"></a>complex&lt;long double&gt;
-順序付けされたオブジェクトのペア (いずれも `long double` 型) を格納するオブジェクトについて説明します。最初のオブジェクトが複素数の実数部、2 番目のオブジェクトが虚数部を表します。  
+Describes an object that stores an ordered pair of objects both of type `long double`, the first representing the real part of a complex number and the second representing the imaginary part.  
   
-## <a name="syntax"></a>構文  
+## <a name="syntax"></a>Syntax  
   
 ```
 template <>
@@ -61,25 +59,25 @@ complex(
 };
 ```  
   
-#### <a name="parameters"></a>パラメーター  
+#### <a name="parameters"></a>Parameters  
  `_RealVal`  
- 構築される複素数の実数部の **long double** 型の値。  
+ The value of type **long double** for the real part of the complex number being constructed.  
   
  `_ImagVal`  
- 構築される複素数の虚数部の `long double` 型の値。  
+ The value of type `long double` for the imaginary part of the complex number being constructed.  
   
  `complexNum`  
- **double** 型または **float** 型で、その実数部と虚数部の値が、構築される `long double` 型の複素数の初期化に使用される複素数。  
+ The complex number of type **double** or of type **float** whose real and imaginary parts are used to initialize a complex number of type `long double` being constructed.  
   
-## <a name="return-value"></a>戻り値  
- `long double` 型の複素数。  
+## <a name="return-value"></a>Return Value  
+ A complex number of type `long double`.  
   
-## <a name="remarks"></a>コメント  
- テンプレート クラス complex の `long double` 型の complex クラスに対する明示的な特殊化と、テンプレート クラスによって定義されるコンストラクター内でのみ使用するテンプレート クラスとは異なります。 `long double` から **float** への変換は暗黙的に行えますが、**double** から `long double` への変換は **explicit** でなければなりません。 **explicit** を使用すると、割り当て構文を使用した型変換による開始は禁止されます。  
+## <a name="remarks"></a>Remarks  
+ The explicit specialization of the template class complex to a complex class of type `long double` differs from the template class only in the constructors it defines. The conversion from `long double` to **float** is allowed to be implicit, but the conversion from **double** to `long double` is required to be **explicit**. The use of **explicit** rules out the initiation with type conversion using assignment syntax.  
   
- テンプレート クラス `complex` の詳細については、「[complex クラス](../standard-library/complex-class.md)」を参照してください。 テンプレート クラス `complex` のメンバー一覧については、以下を参照してください。  
+ For more information on the template class `complex`, see [complex Class](../standard-library/complex-class.md). For a list of members of the template class `complex`, see .  
   
-## <a name="example"></a>例  
+## <a name="example"></a>Example  
   
 ```cpp  
 // complex_comp_ld.cpp  
@@ -134,14 +132,14 @@ Argument of c3 is recovered from c3 using:
 *\  
 ```  
   
-## <a name="requirements"></a>要件  
- **ヘッダー**: \<complex>  
+## <a name="requirements"></a>Requirements  
+ **Header**: \<complex>  
   
- **名前空間:** std  
+ **Namespace:** std  
   
-## <a name="see-also"></a>関連項目  
- [complex クラス](../standard-library/complex-class.md)   
- [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
+## <a name="see-also"></a>See Also  
+ [complex Class](../standard-library/complex-class.md)   
+ [Thread Safety in the C++ Standard Library](../standard-library/thread-safety-in-the-cpp-standard-library.md)
 
 
 

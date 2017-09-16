@@ -1,80 +1,98 @@
 ---
-title: "[データベース サポート] (MFC アプリケーション ウィザード) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.appwiz.mfc.exe.database"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC アプリケーション ウィザード、データベース サポート"
+title: Database Support, MFC Application Wizard | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.appwiz.mfc.exe.database
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC Application Wizard, database support
 ms.assetid: 9ddf4558-fd41-4ac7-8d9b-c93d9c68ab59
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# [データベース サポート] (MFC アプリケーション ウィザード)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: MT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 1f2a15baeb9e475f93872ed9b53b2cdf035b1920
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-このページには、プロジェクトのデータベース サポートのレベル、およびデータ ソース \(必要な場合のみ\) を指定するためのオプションが用意されています。  
+---
+# <a name="database-support-mfc-application-wizard"></a>Database Support, MFC Application Wizard
+This page provides options that allow you to specify the level of database support (plus a data source, if necessary) for your project.  
   
- **データベース サポート**  
- プロジェクトのデータベース サポートのレベルを設定します。  
+ **Database support**  
+ Sets the level of database support for your project.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**なし。**|データベースはサポートされません。  これは、既定の設定です。|  
-|**\[ヘッダー ファイルのみ\]**|アプリケーションに基本レベルのデータベース サポートを提供します。<br /><br /> <ul><li>\[クライアントの種類\] の \[ODBC\] を選択すると、MFC アプリケーション ウィザードによってヘッダー ファイル AFXDB.H がプロジェクトにインクルードされます。  このファイルによってリンク ライブラリが追加されますが、データベース固有のクラスは作成されません。  レコードセットを後から作成し、それを使用してレコードをチェックおよび更新できます。</li><li>\[クライアントの種類\] の \[OLE DB\] を選択すると、以下のヘッダー ファイルがインクルードされます。<br /><br /> <ul><li>ATLBASE.H</li><li>AFXOLEDB.H</li><li>ATLPLUS.H</li></ul></li></ul>|  
-|**\[ファイル サポートのないデータベース ビュー\]**|データベースのヘッダー ファイル、リンク ライブラリ、レコード ビュー、およびレコードセットがインクルードされます。このオプションが使用できるのは、[&#91;アプリケーションの種類&#93;](../Topic/Application%20Type,%20MFC%20Application%20Wizard.md) ページの \[ドキュメント ビュー アーキテクチャ サポート\] を選択したアプリケーションだけです。このオプションには、ドキュメント サポートは含まれますが、シリアル化サポートは含まれません。  データベース ビューを含めるには、データのソースを指定する必要があります。|  
-|**\[ファイル サポートのあるデータベース ビュー\]**|データベースのヘッダー ファイル、リンク ライブラリ、レコード ビュー、およびレコードセットがインクルードされます。このオプションが使用できるのは、**\[アプリケーションの種類\]** ページの \[ドキュメント ビュー アーキテクチャ サポート\] を選択したアプリケーションだけです。このオプションでは、ドキュメントのシリアル化をサポートされます。ドキュメントのシリアル化は、ユーザー プロファイル ファイルの更新などに使用できます。  通常、データベース アプリケーションはファイル単位ではなくレコード単位で動作するため、シリアル化は不要です。  ただし、シリアル化が使用される場合もあります。  データベース ビューを含めるには、データのソースを指定する必要があります。|  
+|Option|Description|  
+|------------|-----------------|  
+|**None**|Provides no database support. This is the default option.|  
+|**Header files only**|Provides the basic level of database support for your application. If you select ODBC support under **Client type**, the MFC Application Wizard includes in your project the header file AFXDB.H. It adds link libraries, but it does not create any database-specific classes. You can create recordsets later and use them to examine and update records. If you select OLE DB support under **Client type**, the following header files are included: ATLBASE.H AFXOLEDB.H ATLPLUS.H|  
+|**Database view without file support**|Includes database header files, link libraries, a record view and a recordset. (Available only for applications with the **Document/view architecture support** option selected in the [Application Type](../../mfc/reference/application-type-mfc-application-wizard.md) page.) This option includes document support but no serialization support. If you choose to include a database view, you must specify the source of the data.|  
+|**Database view with file support**|Includes database header files, link libraries, a record view and a recordset. (Available only for applications with the **Document/view architecture support** option selected in the **Application Type** page.) This option supports document serialization, which you can use, for example, to update a user profile file. Database applications typically operate on a per-record basis rather than on a per-file basis and so do not need serialization. However, you may have a special use for serialization. If you choose to include a database view, you must specify the source of the data.|  
   
 > [!NOTE]
->  \[データベース サポート\] の \[ファイル サポートのないデータベース ビュー\] または \[ファイル サポートのあるデータベース ビュー\] を選択すると、\[クライアントの種類\] の選択内容に応じて、ビュー クラスの派生が以下のように変わります。  
+>  Under **Database Support**, if you select either **Database view without file support** or **Database view with file support**, the view class derivation differs, depending on your **Client type** selection, as follows:  
   
--   \[クライアントの種類\] の \[ODBC\] を選択すると、アプリケーションのビュー クラスは [CRecordView](../../mfc/reference/crecordview-class.md) から派生します。  このクラスは、MFC アプリケーション ウィザードで作成される [CRecordset](../Topic/CRecordset%20Class.md) の派生クラスにも関連付けられます。  このオプションを指定すると、レコード ビューを使用してレコードセット内のレコードの表示と更新を行う、フォーム ベースのアプリケーションが作成されます。  
+-   If you select **ODBC** under **Client type**, then the application's view class derives from [CRecordView](../../mfc/reference/crecordview-class.md). This class is associated with a [CRecordset](../../mfc/reference/crecordset-class.md)-derived class, which the MFC Application Wizard also creates for you. This option gives you a form-based application in which the record view is used to view and update records through its recordset.  
   
--   \[クライアントの種類\] の \[OLE DB\] を選択すると、ビュー クラスは [COleDBRecordView](../../mfc/reference/coledbrecordview-class.md) から派生し、[CTable](../../data/oledb/ctable-class.md) または [CCommand](../../data/oledb/ccommand-class.md) の派生クラスに関連付けられます。  
+-   If you select **OLE DB** under **Client type**, then the view class derives from [COleDBRecordView](../../mfc/reference/coledbrecordview-class.md), and it is associated with a [CTable](../../data/oledb/ctable-class.md) or [CCommand](../../data/oledb/ccommand-class.md)-derived class.  
   
- **\[クライアントの種類\]**  
- プロジェクトが OLE DB クラスと ODBC クラスのどちらを使用するかを指定します。  
+ **Client type**  
+ Indicates whether your project uses OLE DB or ODBC classes.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**\[OLE DB\]**|このオプションを選択すると、**\[データ ソース\]** をクリックしたときに **\[データ リンク プロパティ\]** ダイアログ ボックスが開き、OLE DB データ ソースへの接続を作成できます。|  
-|**\[ODBC\]**|このオプションを選択すると、**\[データ ソース\]** をクリックしたときに \[データ ソースの選択\] ダイアログ ボックスが開き、ODBC データ ソースへの接続を作成できます。|  
+|Option|Description|  
+|------------|-----------------|  
+|**OLE DB**|When this option is selected, clicking the **Data Source** button invokes the **Data Link Properties** wizard to help you create a connection to an OLE DB data source.|  
+|**ODBC**|When this option is selected, clicking the **Data Source** button invokes the **Select Data Source** wizard to help you create a connection to an ODBC data source.|  
   
  **Data Source**  
- **\[データ ソース\]** ボタンをクリックして、指定のドライバーまたはプロバイダーおよびデータベースを使用するデータ ソースを設定します。  \[Client type\] の \[OLE DB\] を選択した場合は、このボタンをクリックすると **\[データ リンク プロパティ\]** ダイアログ ボックスが表示されます。  \[クライアントの種類\] オプションの \[ODBC\] を選択した場合は、このボタンをクリックすると \[データ ソースの選択\] ダイアログ ボックスが表示されます。  このオプションを使用できるのは、データベース ビューのアプリケーションへの組み込みを選択した場合だけです。  
+ Click the **Data Source** button to set up a data source using the specified driver or provider and database. If you selected OLE DB in the **Client type** option, this button displays the **Data Link Properties** dialog box. If you selected ODBC in the **Client type** option, this button provides the **Select Data Source** dialog box. This option is available only if you choose to include a database view in your application.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**\[データ リンク プロパティ\]** \(OLE DB\)|指定の OLE DB プロバイダーを使用して指定のデータ ソースを設定します。  OLE DB プロバイダー、データの場所、データ ソース、ログオン ID、およびパスワード \(省略可\) を指定する必要があります。  このダイアログ ボックスの詳細については、「[ATL OLEDB コンシューマー ウィザード](../../atl/reference/atl-ole-db-consumer-wizard.md)」のデータ ソースに関する説明を参照してください。|  
-|\[データ ソースの選択\] \(ODBC\)|指定の ODBC ドライバーを使用して指定のデータ ソースを設定します。  データ ソース名を指定して、データ ソース用のテーブルを選択する必要があります。  ウィザードによって、テーブルのすべての列が `CRecordset` の派生クラスのメンバー変数にバインドされます。  このダイアログ ボックスの詳細については、「[MFC ODBC コンシューマー ウィザード](../../mfc/reference/mfc-odbc-consumer-wizard.md)」のデータ ソースに関する説明を参照してください。|  
+|Option|Description|  
+|------------|-----------------|  
+|**Data Link Properties** (OLE DB)|Establishes the specified data source using the specified OLE DB provider. You must specify the OLE DB provider, the location of the data, the data source, logon ID, and (optionally) a password. For details on this dialog box, see **Data source** in [ATL OLE DB Consumer Wizard](../../atl/reference/atl-ole-db-consumer-wizard.md).|  
+|**Select Data Source** (ODBC)|Establishes the specified data source using the specified ODBC driver. You must select a data source name to choose a table for the data source. The wizard binds all columns of the table to the member variables of a `CRecordset`-derived class. For details on this dialog box, see **Data source** in [MFC ODBC Consumer Wizard](../../mfc/reference/mfc-odbc-consumer-wizard.md).|  
   
 > [!NOTE]
->  以前のリリースでは、Shift キーを押しながら **\[データ ソース\]** ボタンをクリックすると \[ファイルを開く\] ダイアログが表示され、データ リンク \(.udl\) ファイルを選択できました。  現在のリリースでは、この機能はサポートされていません。  
+>  In previous releases, Shift-clicking the **Data Source** button opened a File Open dialog to allow you to select a Data Link (.udl) file. This functionality is no longer supported.  
   
- **\[属性データベース クラスを生成する\]**  
- 使用できるのは OLE DB クライアントだけです。  生成されたプロジェクト内のデータベース クラスで属性を使用するかどうかを指定します。  
+ **Generate attributed database class**  
+ Available for OLE DB client only. Specifies whether the database classes in the generated project use attributes.  
   
- **\[すべての列をバインド\]**  
- 使用できるのは ODBC クライアントだけです。  選択したテーブルのすべての列をバインドするかどうかを指定します。  このボックスをオンにすると、すべての列がバインドされます。オンにしない場合は、列がバインドされないため、レコードセット クラスで手動でバインドする必要があります。  
+ **Bind all columns**  
+ Available for ODBC client only. Specifies whether all columns in the selected table are bound. If you select this box, all columns are bound; if you do not select this box, no columns are bound, and you must bind them manually in the recordset class.  
   
  **Type**  
- 使用できるのは ODBC クライアントだけです。  レコードセットがダイナセットとスナップショットのどちらであるかを指定します。各オプションの内容を以下の表に示します。  
+ Available for ODBC client only. Specifies whether the recordset is a dynaset or a snapshot, as described in the following table.  
   
-|オプション|説明|  
-|-----------|--------|  
-|**\[ダイナセット\]**|レコードセットがダイナセットであることを示します。  ダイナセットとは、クエリを実行したデータベースのデータにインデックス付きのビューを提供するクエリの結果です。  ダイナセットは、元のデータのインデックス部分だけをキャッシュに格納するため、スナップショットに比べてパフォーマンスが向上します。  インデックスはクエリの各結果レコードを直接指しており、レコードが削除されるかどうかを示します。  クエリが実行されたレコード内の更新情報にもアクセスできます。|  
-|\[スナップショット\]|レコードセットがスナップショットであることを示します。  スナップショットとはクエリ結果であり、ある時点におけるデータベースのビューです。  クエリ結果レコードはすべてキャッシュに格納されるため、元のレコードに対する変更内容は参照できません。|  
+|Option|Description|  
+|------------|-----------------|  
+|**Dynaset**|Specifies that the recordset is a dynaset. A dynaset is the result of a query that provides an indexed view into the queried database's data. A dynaset caches only an integral index to the original data and thus offers a performance gain over a snapshot. The index points directly to each record found as a result of a query and indicates if a record is removed. You also have access to updated information in the queried records.|  
+|Snapshot|Specifies that the recordset is a snapshot. A snapshot is the result of a query and is a view into a database at one point in time. All records found as a result of the query are cached, so you do not see any changes to the original records.|  
   
-## 参照  
- [MFC アプリケーション ウィザード](../Topic/MFC%20Application%20Wizard.md)
+## <a name="see-also"></a>See Also  
+ [MFC Application Wizard](../../mfc/reference/mfc-application-wizard.md)
+

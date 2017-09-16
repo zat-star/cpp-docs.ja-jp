@@ -1,115 +1,134 @@
 ---
-title: "Windows ソケット : バイトの順序付け | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バイト順の問題点 (ソケット プログラミングの)"
-  - "ソケット [C++], バイト順の問題点"
-  - "Windows ソケット [C++], バイト順の問題点"
+title: 'Windows Sockets: Byte Ordering | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- byte order issues in sockets programming
+- sockets [MFC], byte order issues
+- Windows Sockets [MFC], byte order issues
 ms.assetid: 8a787a65-f9f4-4002-a02f-ac25a5dace5d
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# Windows ソケット : バイトの順序付け
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 8542122bc1d242c564a3b25eacc7387d784057fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-この記事と 2 桁の関連記事は Windows ソケットのプログラミングの問題について説明します。  ここでは、バイト順序について説明します。  他の懸案事項が記事で説明されている: [Windows ソケット: ブロッキング](../Topic/Windows%20Sockets:%20Blocking.md) と [Windows ソケット: 文字列からの変換](../mfc/windows-sockets-converting-strings.md)。  
+---
+# <a name="windows-sockets-byte-ordering"></a>Windows Sockets: Byte Ordering
+This article and two companion articles explain several issues in Windows Sockets programming. This article covers byte ordering. The other issues are covered in the articles: [Windows Sockets: Blocking](../mfc/windows-sockets-blocking.md) and [Windows Sockets: Converting Strings](../mfc/windows-sockets-converting-strings.md).  
   
- クラス [CAsyncSocket](../Topic/CAsyncSocket%20Class.md)から使用または派生すれば、独自懸案事項を管理する必要があります。  クラス [CSocket](../mfc/reference/csocket-class.md)から使用または派生すれば、MFC は自動的にこれらを管理します。  
+ If you use or derive from class [CAsyncSocket](../mfc/reference/casyncsocket-class.md), you will need to manage these issues yourself. If you use or derive from class [CSocket](../mfc/reference/csocket-class.md), MFC manages them for you.  
   
-## バイト順序  
- 別のバイト順を使用する別のコンピューター アーキテクチャ、ストア データ。  たとえば、Macintosh \(Motorola\) コンピューターの逆の順序で Intel ベースのコンピューター ストア データ。  リトル エンディアン「」、ネットワーク標準「ビッグ エンディアン」という順序を反転 Intel のバイト順ですか。  次の表は、これらの用語を示しています。  
+## <a name="byte-ordering"></a>Byte Ordering  
+ Different machine architectures sometimes store data using different byte orders. For example, Intel-based machines store data in the reverse order of Macintosh (Motorola) machines. The Intel byte order, called "little-Endian," is also the reverse of the network standard "big-Endian" order. The following table explains these terms.  
   
-### 大きいとリトル エンディアンのバイト順  
+### <a name="big--and-little-endian-byte-ordering"></a>Big- and Little-Endian Byte Ordering  
   
-|バイト順序|説明|  
-|-----------|--------|  
-|ビッグ エンディアン|最上位バイトは Word の左端です。|  
-|リトル エンディアン|最上位バイトは Word の右端にあります。|  
+|Byte ordering|Meaning|  
+|-------------------|-------------|  
+|Big-Endian|The most significant byte is on the left end of a word.|  
+|Little-Endian|The most significant byte is on the right end of a word.|  
   
- 通常、ネットワークにありますが、バイト順を変換する必要がある状況を送信し、が受け取るデータのバイト順の変換を実行する必要はありません。  
+ Typically, you do not have to worry about byte-order conversion for data that you send and receive over the network, but there are situations in which you must convert byte orders.  
   
-## バイト順を変換する必要があります  
- バイト順は次のような場合に変換する必要があります:  
+## <a name="when-you-must-convert-byte-orders"></a>When You Must Convert Byte Orders  
+ You need to convert byte orders in the following situations:  
   
--   別のコンピューターに送信されるデータに対してネットワークに解釈する必要がある情報を渡しています。  たとえば、理解する必要のあるネットワーク アドレス渡すことがあります。およびポートを。  
+-   You are passing information that needs to be interpreted by the network, as opposed to the data you are sending to another machine. For example, you might pass ports and addresses, which the network must understand.  
   
--   、通信しているサーバー アプリケーションは、MFC アプリケーションではありません \(と、そのクラスのソース・コードがありません\)。  これは、バイト順の変換を 2 台のコンピューターが同じバイト順序を共有するします。  
+-   The server application with which you are communicating is not an MFC application (and you do not have source code for it). This calls for byte order conversions if the two machines do not share the same byte ordering.  
   
-## バイト順を変換する必要がなくなったとき  
- バイト順は次のような場合に変換する作業が回避できます:  
+## <a name="when-you-do-not-have-to-convert-byte-orders"></a>When You Do Not Have to Convert Byte Orders  
+ You can avoid the work of converting byte orders in the following situations:  
   
--   両端のマシンからバイトを交換したことに同意してコンピューターの両方が同じのバイト順を使用します。  
+-   The machines on both ends can agree not to swap bytes, and both machines use the same byte order.  
   
--   対象と伝えているサーバーは MFC アプリケーションです。  
+-   The server you are communicating with is an MFC application.  
   
--   対象と伝達ため、バイト順を変換する必要があるかどうかを明示的に理解することは、サーバーのソース・コードがあります。  
+-   You have source code for the server you're communicating with, so you can tell explicitly whether you must convert byte orders or not.  
   
--   MFC にサーバーを移植できます。  これは、してが比較的単純です。その結果、小規模で、高速コードです。  
+-   You can port the server to MFC. This is fairly easy to do, and the result is usually smaller, faster code.  
   
- [CAsyncSocket](../Topic/CAsyncSocket%20Class.md)を使用して、ユーザーが必要なバイト順の変換を管理する必要があります。  Windows ソケットの「」ビッグ エンディアンのバイト順モデルを標準化し、この順序やそのほかの変換に関数を提供します。  ただし、これは [CSocket](../mfc/reference/csocket-class.md)で使用する[CArchive](../mfc/reference/carchive-class.md)はカウンター \(「リトル エンディアン」\) 順序、`CArchive` を処理するためのバイト順の変換の詳細が使用されます。  アプリケーションでこの標準命令または Windows ソケットのバイト順の変換関数を使用することによって、コードの移植性を高めることができます。  
+ Working with [CAsyncSocket](../mfc/reference/casyncsocket-class.md), you must manage any necessary byte-order conversions yourself. Windows Sockets standardizes the "big-Endian" byte-order model and provides functions to convert between this order and others. [CArchive](../mfc/reference/carchive-class.md), however, which you use with [CSocket](../mfc/reference/csocket-class.md), uses the opposite ("little-Endian") order, but `CArchive` takes care of the details of byte-order conversions for you. By using this standard ordering in your applications, or using Windows Sockets byte-order conversion functions, you can make your code more portable.  
   
- MFC ソケットの理想的な使用状況は、通信の両端を自分で作成し、両端で MFC を使用する場合です。  非 MFC アプリケーションを作成する場合は、FTP サーバーなど、通信するアプリケーションは、Windows ソケットの変換ルーチン **ntohs**、**ntohl**、**htons**と **htonl**を使用してアーカイブ オブジェクトにデータを渡す前に、独自のバイト スワップ処理を管理する必要があります。  非 MFC アプリケーションとの通信に使用されるこの記事でこれらの関数には後で表示されます。  
+ The ideal case for using MFC sockets is when you are writing both ends of the communication: using MFC at both ends. If you are writing an application that will communicate with non-MFC applications, such as an FTP server, you will probably need to manage byte-swapping yourself before you pass data to the archive object, using the Windows Sockets conversion routines **ntohs**, **ntohl**, **htons**, and **htonl**. An example of these functions used in communicating with a non-MFC application appears later in this article.  
   
 > [!NOTE]
->  通信の反対側の端部が MFC アプリケーションの場合は、受信側がそれらを処理できないため、アーカイブに `CObject` から派生される C\+\+ オブジェクトをストリームを避ける必要があります。  [Windows ソケット: アーカイブが持つソケットを使用する](../mfc/windows-sockets-using-sockets-with-archives.md)のメモを参照してください。  
+>  When the other end of the communication is not an MFC application, you also must avoid streaming C++ objects derived from `CObject` into your archive because the receiver will not be able to handle them. See the note in [Windows Sockets: Using Sockets with Archives](../mfc/windows-sockets-using-sockets-with-archives.md).  
   
- バイト順に関する詳細については、[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)]で Windows ソケットの仕様を参照します。  
+ For more information about byte orders, see the Windows Sockets specification, available in the Windows SDK.  
   
-## バイト順の変換の例  
- 次の例は、アーカイブを使用する `CSocket` オブジェクトのシリアル化関数を示します。  また、Windows ソケット API のバイト順の変換関数を使用する方法について説明します。  
+## <a name="a-byte-order-conversion-example"></a>A Byte-Order Conversion Example  
+ The following example shows a serialization function for a `CSocket` object that uses an archive. It also illustrates using the byte-order conversion functions in the Windows Sockets API.  
   
- この例は、ソース・コードにアクセスできない非 MFC サーバー アプリケーションと通信するクライアントを作成する例を示します。  このシナリオでは、非 MFC サーバーが標準ネットワークのバイト順を使用すると仮定します。  これに対し、MFC クライアント アプリケーションは `CSocket` オブジェクトを使用して `CArchive` オブジェクト、および `CArchive` の「」リトル エンディアンのバイト順、ネットワーク標準のオブジェクトを使用します。  
+ This example presents a scenario in which you are writing a client that communicates with a non-MFC server application for which you have no access to the source code. In this scenario, you must assume that the non-MFC server uses standard network byte order. In contrast, your MFC client application uses a `CArchive` object with a `CSocket` object, and `CArchive` uses "little-Endian" byte order, the opposite of the network standard.  
   
- 、通信する非 MFC サーバーとします。次のようなメッセージ パケットの確立されるプロトコルを持つ:  
+ Suppose the non-MFC server with which you plan to communicate has an established protocol for a message packet like the following:  
   
- [!CODE [NVC_MFCSimpleSocket#5](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCSimpleSocket#5)]  
+ [!code-cpp[NVC_MFCSimpleSocket#5](../mfc/codesnippet/cpp/windows-sockets-byte-ordering_1.cpp)]  
   
- MFC の用語では、これは次のように表されます。:  
+ In MFC terms, this would be expressed as follows:  
   
- [!CODE [NVC_MFCSimpleSocket#6](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCSimpleSocket#6)]  
+ [!code-cpp[NVC_MFCSimpleSocket#6](../mfc/codesnippet/cpp/windows-sockets-byte-ordering_2.cpp)]  
   
- C\+\+ では、`struct` はクラスは基本的に同じです。  `Message` 構造体上で宣言された `Serialize` のメンバー関数などのメンバー関数を持つことができます。  `Serialize` メンバー関数は次のようになります。:  
+ In C++, a `struct` is essentially the same thing as a class. The `Message` structure can have member functions, such as the `Serialize` member function declared above. The `Serialize` member function might look like this:  
   
- [!CODE [NVC_MFCSimpleSocket#7](../CodeSnippet/VS_Snippets_Cpp/NVC_MFCSimpleSocket#7)]  
+ [!code-cpp[NVC_MFCSimpleSocket#7](../mfc/codesnippet/cpp/windows-sockets-byte-ordering_3.cpp)]  
   
- この例では、データのバイト順の変換を 1 辺の非 MFC サーバー アプリケーションのバイト順序ともう一方の端の MFC クライアント アプリケーションで使用される `CArchive` 間に明確に不一致があるとします。  例では、バイト順の変換関数の例を、Windows ソケットの提供示しています。  次の表は、これらの機能を示します。  
+ This example calls for byte-order conversions of data because there is a clear mismatch between the byte ordering of the non-MFC server application on one end and the `CArchive` used in your MFC client application on the other end. The example illustrates several of the byte-order conversion functions that Windows Sockets supplies. The following table describes these functions.  
   
-### Windows ソケットのバイト順の変換関数  
+### <a name="windows-sockets-byte-order-conversion-functions"></a>Windows Sockets Byte-Order Conversion Functions  
   
-|関数|目的|  
-|--------|--------|  
-|**ntohs**|ネットワークのバイト順からホスト \(ビッグ エンディアンのバイト順にリトル エンディアン\) に 16 ビット値を変換します。|  
-|**ntohl**|ネットワークのバイト順からホスト \(ビッグ エンディアンのバイト順にリトル エンディアン\) に 32 ビット値を変換します。|  
-|**Htons**|ホストのバイト順からネットワーク \(リトル エンディアンのバイト順にビッグ エンディアン\) に 16 ビット値を変換します。|  
-|**Htonl**|ホストのバイト順からネットワーク \(リトル エンディアンのバイト順にビッグ エンディアン\) に 32 ビット値を変換します。|  
+|Function|Purpose|  
+|--------------|-------------|  
+|**ntohs**|Convert a 16-bit quantity from network byte order to host byte order (big-Endian to little-Endian).|  
+|**ntohl**|Convert a 32-bit quantity from network byte order to host byte order (big-Endian to little-Endian).|  
+|**Htons**|Convert a 16-bit quantity from host byte order to network byte order (little-Endian to big-Endian).|  
+|**Htonl**|Convert a 32-bit quantity from host byte order to network byte order (little-Endian to big-Endian).|  
   
- この例のもう一つの点が通信の反対側の端部のソケット アプリケーションで非 MFC アプリケーションの場合、次のようにすることを避ける必要があります:  
+ Another point of this example is that when the socket application on the other end of the communication is a non-MFC application, you must avoid doing something like the following:  
   
  `ar << pMsg;`  
   
- `pMsg` が `CObject`クラスから派生される C\+\+. C\+\+ オブジェクトへのポインターです。  これは、オブジェクトに関連付けられた MFC 情報を追加し、それが MFC アプリケーション サーバーは同じように理解されません。  
+ where `pMsg` is a pointer to a C++ object derived from class `CObject`. This will send extra MFC information associated with objects and the server will not understand it, as it would if it were an MFC application.  
   
- 詳細については、次のトピックを参照してください。  
+ For more information, see:  
   
--   [Windows ソケット: CAsyncSocket クラスの使い方](../mfc/windows-sockets-using-class-casyncsocket.md)  
+-   [Windows Sockets: Using Class CAsyncSocket](../mfc/windows-sockets-using-class-casyncsocket.md)  
   
--   [Windows ソケット: 背景](../mfc/windows-sockets-background.md)  
+-   [Windows Sockets: Background](../mfc/windows-sockets-background.md)  
   
--   [Windows ソケット: ストリーム ソケット](../mfc/windows-sockets-stream-sockets.md)  
+-   [Windows Sockets: Stream Sockets](../mfc/windows-sockets-stream-sockets.md)  
   
--   [Windows ソケット: データグラム ソケット](../mfc/windows-sockets-datagram-sockets.md)  
+-   [Windows Sockets: Datagram Sockets](../mfc/windows-sockets-datagram-sockets.md)  
   
-## 参照  
- [MFC における Windows ソケット](../mfc/windows-sockets-in-mfc.md)
+## <a name="see-also"></a>See Also  
+ [Windows Sockets in MFC](../mfc/windows-sockets-in-mfc.md)
+
+

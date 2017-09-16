@@ -1,94 +1,113 @@
 ---
-title: "メニューとリソース : コンテナーの変更点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDP_OLE_INIT_FAILED"
-  - "IDP_FAILED_TO_CREATE"
-  - "VK_ESCAPE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセラレータ テーブル [C++], コンテナー アプリケーション"
-  - "アプリケーションのアクセラレータ テーブル [C++]"
-  - "CONTAIN チュートリアル"
-  - "IDP_FAILED_TO_CREATE マクロ"
-  - "IDP_OLE_INIT_FAILED マクロ"
-  - "リンク (メニュー項目)"
-  - "OLE コンテナー, メニューとリソース"
-  - "ビジュアル編集, アプリケーションのメニューとリソース"
-  - "VK_ESCAPE キー"
+title: 'Menus and Resources: Container Additions | Microsoft Docs'
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IDP_OLE_INIT_FAILED
+- IDP_FAILED_TO_CREATE
+- VK_ESCAPE
+dev_langs:
+- C++
+helpviewer_keywords:
+- application accelerator table [MFC]
+- VK_ESCAPE key [MFC]
+- IDP_FAILED_TO_CREATE macro [MFC]
+- visual editing, application menus and resources
+- OLE containers [MFC], menus and resources
+- accelerator tables [MFC], container applications
+- IDP_OLE_INIT_FAILED macro [MFC]
+- CONTAIN tutorial [MFC]
+- Links menu item [MFC]
 ms.assetid: 425448be-8ca0-412e-909a-a3a9ce845288
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# メニューとリソース : コンテナーの変更点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 4e0027c345e4d414e28e8232f9e9ced2b73f0add
+ms.openlocfilehash: 600c7dffddb8e12c52cf07cc65868b94542656c0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/12/2017
 
-ここでは、ビジュアル編集コンテナー アプリケーションのメニューやそのほかのリソースに加える必要がある変更を示しています。  
+---
+# <a name="menus-and-resources-container-additions"></a>Menus and Resources: Container Additions
+This article explains the changes that need to be made to the menus and other resources in a visual editing container application.  
   
- コンテナー アプリケーションの変更の 2 種類が行われる必要があります: 埋め込み先編集の有効化に使用する新しいリソースの OLE ビジュアル編集と追加をサポートする既存のリソースに変更します。  コンテナー アプリケーションを作成するときにアプリケーション ウィザードを使用する場合、これらの手順は、され、カスタマイズが必要な場合があります。  
+ In container applications, two types of changes need to be made: modifications to existing resources to support OLE visual editing and addition of new resources used for in-place activation. If you use the application wizard to create your container application, these steps will be done for you, but they may require some customization.  
   
- アプリケーション ウィザードを使用して、OCLIENT.RC でこれらの変更がどのように実装されるかを参照する OCLIENT サンプル アプリケーションのリソース スクリプトを表示することもできます。  MFC の OLE [OCLIENT](../top/visual-cpp-samples.md)サンプルを参照してください。  
+ If you do not use the application wizard, you may want to look at OCLIENT.RC, the resource script for the OCLIENT sample application, to see how these changes are implemented. See the MFC OLE sample [OCLIENT](../visual-cpp-samples.md).  
   
- この記事で説明されているトピックは次のとおりです。:  
+ Topics covered in this article include:  
   
--   [コンテナーのメニューの追加](#_core_container_menu_additions)  
+-   [Container Menu Additions](#_core_container_menu_additions)  
   
--   [アクセラレータ テーブルの追加](#_core_container_application_accelerator_table_additions)  
+-   [Accelerator Table Additions](#_core_container_application_accelerator_table_additions)  
   
--   [ストリング テーブルの追加](#_core_string_table_additions_for_container_applications)  
+-   [String Table Additions](#_core_string_table_additions_for_container_applications)  
   
-##  <a name="_core_container_menu_additions"></a> コンテナーのメニューの追加  
- 編集メニューで、次の要素を追加する必要があります:  
+##  <a name="_core_container_menu_additions"></a> Container Menu Additions  
+ You must add the following items to the Edit menu:  
   
-|項目|目的|  
-|--------|--------|  
-|**新しいオブジェクトを挿入します。**|OLE のオブジェクトの挿入ダイアログ ボックスをドキュメントにリンクされたを埋め込まれたアイテムが挿入されます。|  
-|**リンク貼り付け**|ドキュメントにクリップボードのアイテムへのリンクを貼り付けます。|  
-|**OLE 動詞**|選択した項目の主動詞を呼び出します。  このメニュー項目のテキストが、選択した項目の主動詞を反映するように変更します。|  
-|**リンク**|OLE を既存のリンク アイテムを変更して編集しますリンク ダイアログ ボックスを開きます。|  
+|Item|Purpose|  
+|----------|-------------|  
+|**Insert New Object**|Opens the OLE Insert Object dialog box to insert a linked or embedded item into the document.|  
+|**Paste Link**|Pastes a link to the item on the Clipboard into the document.|  
+|**OLE Verb**|Calls the selected item's primary verb. The text of this menu item changes to reflect the primary verb of the selected item.|  
+|**Links**|Opens the OLE Edit Links dialog box to change existing linked items.|  
   
- 表示されているこの記事の変更はソース ファイルに加えて、Microsoft Foundation Class ライブラリの実装に必要な AFXOLECL.RC を含める必要があります。  \) 新しいオブジェクトが唯一の必須メニュー追加です。  そのほかの項目を追加することもできますが、ここに示されているものが一般的です。  
+ In addition to the changes listed in this article, your source file must include AFXOLECL.RC, which is required for the Microsoft Foundation Class Library implementation. Insert New Object is the only required menu addition. Other items can be added, but those listed here are the most common.  
   
- 含まれる項目の埋め込み先編集の有効化をサポートするには、コンテナー アプリケーションの新しいメニューを作成する必要があります。  このメニューは同じファイル メニューから構成され、ファイルが開いているときは、その中に配置される 2 種類の区切り記号は、ウィンドウのポップアップ メニューを使用します。  アクティブになったときにこれらの区切り記号はサーバー コンポーネント \(\)\) がメニュー項目 \(アプリケーションを配置する方法を示すために使用されます。  このメニューのマージの詳細については、「[メニューとリソース: メニューのマージ](../mfc/menus-and-resources-menu-merging.md)」を参照してください。  
+ You must create a new menu for your container application if you want to support in-place activation of contained items. This menu consists of the same File menu and Window pop-up menus used when files are open, but it has two separators placed between them. These separators are used to indicate where the server (component) item (application) should place its menus when activated in place. For more information on this menu-merging technique, see [Menus and Resources: Menu Merging](../mfc/menus-and-resources-menu-merging.md).  
   
-##  <a name="_core_container_application_accelerator_table_additions"></a> コンテナー アプリケーションのアクセラレータ テーブルの追加  
- コンテナー アプリケーションのアクセラレータ テーブル リソースにわずかな変更は、埋め込み先編集の有効化をサポートする必要があります。  最初の変更は、ユーザーが埋め込み先での編集モードを取り消すには、Esc キー\) \(Esc キーを押すこともできます。  主要なアクセラレータ テーブルに次のエントリを追加する:  
+##  <a name="_core_container_application_accelerator_table_additions"></a> Container Application Accelerator Table Additions  
+ Small changes to a container application's accelerator table resources are necessary if you are supporting in-place activation. The first change allows the user to press the escape key (ESC) to cancel the in-place editing mode. Add the following entry to the main accelerator table:  
   
-|ID|キー|型|  
-|--------|--------|-------|  
-|**ID\_CANCEL\_EDIT\_CNTR**|VK\_ESCAPE|**VIRTKEY**|  
+|ID|Key|Type|  
+|--------|---------|----------|  
+|**ID_CANCEL_EDIT_CNTR**|VK_ESCAPE|**VIRTKEY**|  
   
- 2 番目の変更は、埋め込み先編集の有効化用に作成された新しいメニュー リソースに対応する新しいアクセラレータ テーブルを作成します。  この表に上記の **VK\_ESCAPE** エントリに加えてファイルとウィンドウ メニューのエントリがあります。  次の例では、MFC のサンプル [コンテナー](../top/visual-cpp-samples.md)で埋め込み先編集の有効化用に作成されたアクセラレータ テーブルです:  
+ The second change is to create a new accelerator table that corresponds to the new menu resource created for in-place activation. This table has entries for the File and Window menus in addition to the **VK_ESCAPE** entry above. The following example is the accelerator table created for in-place activation in the MFC sample [CONTAINER](../visual-cpp-samples.md):  
   
-|ID|キー|型|  
-|--------|--------|-------|  
-|`ID_FILE_NEW`|Ctrl \+ N|**VIRTKEY**|  
-|`ID_FILE_OPEN`|Ctrl \+ O|**VIRTKEY**|  
-|**ID\_FILE\_SAVE**|Ctrl \+ S|**VIRTKEY**|  
-|**ID\_FILE\_PRINT**|Ctrl \+ P|**VIRTKEY**|  
-|**ID\_NEXT\_PANE**|VK\_F6|**VIRTKEY**|  
-|**ID\_PREV\_PANE**|SHIFT\+VK\_F6|**VIRTKEY**|  
-|**ID\_CANCEL\_EDIT\_CNTR**|VK\_ESCAPE|**VIRTKEY**|  
+|ID|Key|Type|  
+|--------|---------|----------|  
+|`ID_FILE_NEW`|CTRL+N|**VIRTKEY**|  
+|`ID_FILE_OPEN`|CTRL+O|**VIRTKEY**|  
+|**ID_FILE_SAVE**|CTRL+S|**VIRTKEY**|  
+|**ID_FILE_PRINT**|CTRL+P|**VIRTKEY**|  
+|**ID_NEXT_PANE**|VK_F6|**VIRTKEY**|  
+|**ID_PREV_PANE**|SHIFT+VK_F6|**VIRTKEY**|  
+|**ID_CANCEL_EDIT_CNTR**|VK_ESCAPE|**VIRTKEY**|  
   
-##  <a name="_core_string_table_additions_for_container_applications"></a> コンテナー アプリケーションのストリング テーブルの追加  
- コンテナー アプリケーションのストリング テーブルに対する変更の大部分は [コンテナーのメニューの追加](#_core_container_menu_additions)で説明した追加メニュー項目に対応します。  チームは各メニュー項目が表示されたときに、ステータス バーに表示されるテキストを指定します。  たとえば、アプリケーション ウィザードで生成されたストリング テーブルのエントリを次に示します。:  
+##  <a name="_core_string_table_additions_for_container_applications"></a> String Table Additions for Container Applications  
+ Most of the changes to string tables for container applications correspond to the additional menu items mentioned in [Container Menu Additions](#_core_container_menu_additions). They supply the text displayed in the status bar when each menu item is displayed. As an example, here are the string-table entries the application wizard generates:  
   
 |ID|String|  
 |--------|------------|  
-|**IDP\_OLE\_INIT\_FAILED**|OLE の初期化に失敗しました。  OLE ライブラリのバージョンが正しいことを確認してください。|  
-|**IDP\_FAILED\_TO\_CREATE**|オブジェクトの作成に失敗しました。  オブジェクトがシステム レジストリに入力してください。|  
+|**IDP_OLE_INIT_FAILED**|OLE initialization failed. Make sure that the OLE libraries are the correct version.|  
+|**IDP_FAILED_TO_CREATE**|Failed to create object. Make sure that the object is entered in the system registry.|  
   
-## 参照  
- [メニューとリソース \(OLE\)](../mfc/menus-and-resources-ole.md)   
- [メニューとリソース : サーバーの変更点](../mfc/menus-and-resources-server-additions.md)
+## <a name="see-also"></a>See Also  
+ [Menus and Resources (OLE)](../mfc/menus-and-resources-ole.md)   
+ [Menus and Resources: Server Additions](../mfc/menus-and-resources-server-additions.md)
+
+
