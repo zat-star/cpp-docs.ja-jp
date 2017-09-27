@@ -1,43 +1,60 @@
 ---
-title: "プロセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Process"
-  - "process_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__declspec キーワード [C++], プロセス"
-  - "process __declspec キーワード"
+title: "プロセス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- Process
+- process_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- __declspec keyword [C++], process
+- process __declspec keyword
 ms.assetid: 60eecc2f-4eef-4567-b9db-aaed34733023
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# プロセス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: d4f2500adaaa7941444b22d7ce548370fc370533
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-マネージ アプリケーション プロセスが、プロセス内のすべてのアプリケーション ドメイン間で共有される特定のグローバル変数、静的メンバー変数、または静的ローカル変数のコピーを 1 つ持つことを指定します。  **\/clr:pure** では、グローバル変数と静的変数が既定でアプリケーション ドメインごとになっているため、これは、主に、**\/clr:pure** を指定してコンパイルするときに使用するためのものです。  **\/clr** でコンパイルすると、グローバル変数と静的変数は既定でプロセスごとになります \(そのため、`__declspec(process)` を使用する必要はありません\)。  
+---
+# <a name="process"></a>process
+マネージ アプリケーション プロセスが、プロセス内のすべてのアプリケーション ドメイン間で共有される特定のグローバル変数、静的メンバー変数、または静的ローカル変数のコピーを 1 つ持つことを指定します。 これは、主に使用するためでコンパイルするときに**/clr: 純粋な**ため、 **/clr: 純粋な**グローバルと静的変数は、既定では、アプリケーション ドメインごとです。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。 コンパイルするときに**/clr**、グローバル変数と静的変数は既定ではプロセスごと (を使用する必要はありません`__declspec(process)`です。  
   
  `__declspec(process)` でマークできるのは、グローバル変数、静的メンバー変数、またはネイティブ型の静的ローカル変数だけです。  
   
- **\/clr:pure** を指定してコンパイルする場合、プロセスごととしてマークされている変数は、`const` としても宣言する必要があります。  これにより、プロセスごとの変数は 1 つのアプリケーション ドメイン内で変更されなくなり、他のアプリケーション ドメインに予測できない結果を与えることもなくなります。  `__declspec(process)` の主な用途は、**\/clr:pure** でグローバル変数、静的メンバー変数、または静的ローカル変数のコンパイル時初期化を可能にすることです。  
+ コンパイルするときに**/clr: 純粋な**、としてプロセスに従ってマークされている変数を宣言する必要がありますも`const`します。 これにより、プロセスごとの変数は 1 つのアプリケーション ドメイン内で変更されなくなり、他のアプリケーション ドメインに予測できない結果を与えることもなくなります。 主な用途`__declspec(process)`グローバル変数、静的メンバー変数、または静的ローカル変数のコンパイル時の初期化を有効にするのには、 **/clr: 純粋な**します。  
   
- `process` は、[\/clr](../build/reference/clr-common-language-runtime-compilation.md) または **\/clr:pure** を指定してコンパイルする場合にのみ有効であり、**\/clr:safe** を指定してコンパイルする場合は無効になります。  
+ `process`コンパイルする場合にのみ有効[/clr](../build/reference/clr-common-language-runtime-compilation.md)または**/clr: 純粋な**でコンパイルするときは無効と**/clr:safe**です。  
   
- 各アプリケーション ドメインがグローバル変数の独自のコピーを持つようにするには、[appdomain](../Topic/appdomain.md) を使用します。  
+ 使用する場合は、グローバル変数の独自のコピーが存在する場合は、各アプリケーション ドメイン、 [appdomain](../cpp/appdomain.md)です。  
   
- 詳細については、「[アプリケーション ドメインと Visual C\+\+](../dotnet/application-domains-and-visual-cpp.md)」を参照してください。  
+ 参照してください[アプリケーション ドメインと Visual C](../dotnet/application-domains-and-visual-cpp.md)詳細についてはします。  
   
-## 参照  
- [\_\_declspec](../cpp/declspec.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [_ _declspec](../cpp/declspec.md)   
+ [キーワード](../cpp/keywords-cpp.md)

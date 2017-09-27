@@ -1,65 +1,82 @@
 ---
-title: "__if_exists ステートメント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__if_exists_cpp"
-  - "__if_exists"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__if_exists キーワード [C++]"
-  - "識別子, テスト (存在するかどうかを)"
-  - "シンボル, テスト (存在するかどうかを)"
+title: "_ _if_exists ステートメント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __if_exists_cpp
+- __if_exists
+dev_langs:
+- C++
+helpviewer_keywords:
+- identifiers, testing for existence
+- symbols, testing for existence
+- __if_exists keyword [C++]
 ms.assetid: d3eb34b6-f3a9-4063-a286-b62a28c0c7fa
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# __if_exists ステートメント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 3d0eaa00abb1f833ef491fc27bfee01790776edb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`__if_exists` ステートメントは、指定された識別子があるかどうかをテストします。  ID が存在する場合、指定されたステートメント ブロックが実行されます。  
+---
+# <a name="ifexists-statement"></a>__if_exists ステートメント
+`__if_exists` ステートメントは、指定された識別子があるかどうかをテストします。 ID が存在する場合、指定されたステートメント ブロックが実行されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-__if_exists ( identifier ) {   
+__if_exists ( identifier ) {   
 statements  
 };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
   
 |パラメーター|説明|  
-|------------|--------|  
+|---------------|-----------------|  
 |`identifier`|存在をテストしたい識別子。|  
-|`statements`|`identifier`  が存在する場合に実行する 1 つ以上のステートメント。|  
+|`statements`|場合に実行する 1 つまたは複数のステートメント`identifier`が存在します。|  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
 > [!CAUTION]
 >  最も信頼できる結果を得るには、次の制約に基づいて `__if_exists` ステートメントを使用します。  
   
 -   テンプレートではなく、単純型にのみ `__if_exists` ステートメントを適用します。  
   
--   クラスの内部または外部の識別子に `__if_exists` ステートメントを適用します。  ローカル変数に `__if_exists` ステートメントを適用しないでください。  
+-   クラスの内部または外部の識別子に `__if_exists` ステートメントを適用します。 ローカル変数に `__if_exists` ステートメントを適用しないでください。  
   
--   `__if_exists` ステートメントは関数の本体でのみ使用します。  関数本体の外側では、`__if_exists` ステートメントは完全に定義された型のみテストできます。  
+-   `__if_exists` ステートメントは関数の本体でのみ使用します。 関数本体の外側では、`__if_exists` ステートメントは完全に定義された型のみテストできます。  
   
 -   オーバーロードされた関数をテストする場合、特定の形式のオーバーロードはテストできません。  
   
- [\_\_if\_not\_exists](../cpp/if-not-exists-statement.md) ステートメントは、`__if_exists` ステートメントを補完します。  
+ 補完する、`__if_exists`ステートメントは、 [_ _if_not_exists](../cpp/if-not-exists-statement.md)ステートメントです。  
   
-## 使用例  
+## <a name="example"></a>例  
  この例ではテンプレートを使用していますが、これは推奨されません。  
   
 ```  
@@ -119,7 +136,7 @@ int main() {
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 In X<T>::Dump()  
@@ -130,7 +147,7 @@ g_bFlag = 1
 C::f exists  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [選択ステートメント](../cpp/selection-statements-cpp.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [\_\_if\_not\_exists ステートメント](../cpp/if-not-exists-statement.md)
+ [キーワード](../cpp/keywords-cpp.md)   
+ [__if_not_exists ステートメント](../cpp/if-not-exists-statement.md)

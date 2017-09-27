@@ -1,52 +1,69 @@
 ---
-title: "演算子のオーバーロード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "operator_cpp"
-  - "operator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "再定義不可演算子"
-  - "operator キーワード [C++]"
-  - "演算子のオーバーロード"
-  - "演算子 [C++], オーバーロード"
-  - "再定義可能な演算子"
+title: "演算子のオーバー ロード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- operator_cpp
+- operator
+dev_langs:
+- C++
+helpviewer_keywords:
+- redefinable operators
+- non-redefinable operators
+- operator keyword [C++]
+- operators [C++], overloading
+- operator overloading
 ms.assetid: 56ad4c4f-dd0c-45e0-adaa-08fe98cb1f8e
 caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# 演算子のオーバーロード
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 5ac9415ec186760a70394772ffaff011d7c68c95
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`operator` キーワードは、クラスのインスタンスに適用されたときの `operator-symbol` の意味を指定する関数を宣言します。  これによって、演算子に複数の意味を与えます \(つまり、"オーバーロード" します\)。  コンパイラは、オペランドの型を検査することにより、演算子の異なる意味を区別します。  
+---
+# <a name="operator-overloading"></a>演算子のオーバーロード
+`operator` キーワードは、クラスのインスタンスに適用されたときの `operator-symbol` の意味を指定する関数を宣言します。 これによって、演算子に複数の意味を与えます (つまり、"オーバーロード" します)。 コンパイラは、オペランドの型を検査することにより、演算子の異なる意味を区別します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 type operator operator-symbol ( parameter-list )  
 ```  
   
-## 解説  
- ほとんどの組み込み演算子の関数をグローバルに、またはクラス単位で定義し直すことができます。  オーバーロードされた演算子は、関数として実装されます。  
+## <a name="remarks"></a>コメント  
+ ほとんどの組み込み演算子の関数をグローバルに、またはクラス単位で定義し直すことができます。 オーバーロードされた演算子は、関数として実装されます。  
   
- オーバーロードされた演算子の名前は、`operator``x` です。`x` は次の表に示すような演算子です。  たとえば、加算演算子をオーバーロードするために、`operator+` と呼ばれる関数を定義します。  同様に、加算\/代入演算子 `+=` をオーバーロードするには、`operator+=` という名前の関数を定義します。  
+ オーバー ロードされた演算子の名前は`operator x`ここで、`x`演算子は次の表に表示されます。 たとえば、加算演算子をオーバーロードするために、`operator+` と呼ばれる関数を定義します。 同様に、加算/代入演算子 `+=` をオーバーロードするには、`operator+=` という名前の関数を定義します。  
   
-### 再定義可能な演算子  
+### <a name="redefinable-operators"></a>再定義可能な演算子  
   
 |演算子|名前|種類|  
-|---------|--------|--------|  
+|--------------|----------|----------|  
 |`,`|コンマ|2 項|  
 |`!`|論理 NOT|単項|  
 |`!=`|非等値|2 項|  
@@ -63,15 +80,15 @@ type operator operator-symbol ( parameter-list )
 |`*=`|乗算代入|2 項|  
 |`+`|加算|2 項|  
 |`+`|単項プラス|単項|  
-|`++`|インクリメント <sup>1</sup>|単項|  
+|`++`|インクリメント<sup>1</sup>|単項|  
 |`+=`|加算代入|2 項|  
-|`–`|減算|2 項|  
-|`–`|単項マイナス符号|単項|  
-|`––`|デクリメント <sup>1</sup>|単項|  
-|`–=`|減算代入|2 項|  
-|`–>`|メンバー選択|2 項|  
-|`–>*`|メンバーへのポインター選択|2 項|  
-|`/`|除算記号|2 項|  
+|`-`|減算|2 項|  
+|`-`|単項マイナス符号|単項|  
+|`--`|デクリメント<sup>1</sup>|単項|  
+|`-=`|減算代入|2 項|  
+|`->`|メンバー選択|2 項|  
+|`->*`|メンバーへのポインター選択|2 項|  
+|`/`|除算|2 項|  
 |`/=`|除算代入|2 項|  
 |`<`|より小さい|2 項|  
 |`<<`|左シフト|2 項|  
@@ -94,9 +111,9 @@ type operator operator-symbol ( parameter-list )
 |`new`|`New`|—|  
 |`conversion operators`|変換演算子|単項|  
   
- 1   単項インクリメントおよびデクリメント演算子には、前置インクリメントと後置インクリメントの 2 種類のバージョンがあります。  
+ 1 つのバージョンの単項インクリメントおよびデクリメント演算子: 前置インクリメントと後置インクリメントします。  
   
- 詳細については、「[演算子のオーバーロードに関する一般的な規則](../cpp/general-rules-for-operator-overloading.md)」を参照してください。  さまざまなカテゴリのオーバーロードされた演算子に対する制約については、次のトピックを参照してください。  
+ 参照してください[演算子のオーバー ロードに関する一般的な規則](../cpp/general-rules-for-operator-overloading.md)詳細についてはします。 さまざまなカテゴリのオーバーロードされた演算子に対する制約については、次のトピックを参照してください。  
   
 -   [単項演算子](../cpp/overloading-unary-operators.md)  
   
@@ -104,19 +121,19 @@ type operator operator-symbol ( parameter-list )
   
 -   [代入](../cpp/assignment.md)  
   
--   [関数呼び出し](../Topic/Function%20Call%20\(C++\).md)  
+-   [関数呼び出し](../cpp/function-call-cpp.md)  
   
 -   [添字演算子](../cpp/subscripting.md)  
   
--   [クラス メンバーに対するアクセス](../Topic/Member%20Access.md)  
+-   [クラス メンバー アクセス](../cpp/member-access.md)  
   
--   [インクリメントとデクリメント](../Topic/Increment%20and%20Decrement%20Operator%20Overloading%20\(C++\).md)  
+-   [インクリメントとデクリメント](../cpp/increment-and-decrement-operator-overloading-cpp.md)です。  
   
--   [変換](../cpp/user-defined-type-conversions-cpp.md)  
+-   [ユーザー定義型の変換](../cpp/user-defined-type-conversions-cpp.md)  
   
- 次のテーブルに示す演算子は、オーバーロードできません。  テーブルにはプリプロセッサ シンボル `#` および `##` が含まれます。  
+ 次のテーブルに示す演算子は、オーバーロードできません。 テーブルにはプリプロセッサ シンボル `#` および `##` が含まれます。  
   
-### 再定義不可演算子  
+### <a name="nonredefinable-operators"></a>再定義不可演算子  
   
 |||  
 |-|-|  
@@ -124,7 +141,7 @@ type operator operator-symbol ( parameter-list )
 |`.`|メンバー選択|  
 |`.*`|メンバーへのポインター選択|  
 |`::`|スコープ解決|  
-|`?  :`|条件|  
+|`? :`|条件|  
 |`#`|プリプロセッサによる文字列への変換|  
 |`##`|プリプロセッサによる連結|  
   
@@ -135,7 +152,7 @@ Point pt;
 pt.operator+( 3 );  // Call addition operator to add 3 to pt.  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、`+` 演算子をオーバーロードして、2 つの複素数を加算して結果を返すようにします。  
   
 ```  
@@ -167,13 +184,13 @@ int main() {
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 6.8, 11.2  
 ```  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
 1.  [演算子のオーバーロードに関する一般的な規則](../cpp/general-rules-for-operator-overloading.md)  
   
@@ -183,12 +200,12 @@ int main() {
   
 4.  [代入](../cpp/assignment.md)  
   
-5.  [関数呼び出し](../Topic/Function%20Call%20\(C++\).md)  
+5.  [関数呼び出し](../cpp/function-call-cpp.md)  
   
 6.  [添字演算子](../cpp/subscripting.md)  
   
-7.  [メンバー アクセス](../Topic/Member%20Access.md)  
+7.  [メンバー アクセス](../cpp/member-access.md)  
   
-## 参照  
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+ [キーワード](../cpp/keywords-cpp.md)

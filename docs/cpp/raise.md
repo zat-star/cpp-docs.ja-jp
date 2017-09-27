@@ -1,33 +1,50 @@
 ---
-title: "__raise | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__raise"
-  - "__raise_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__raise キーワード [C++]"
+title: "_ _raise |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __raise
+- __raise_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- __raise keyword [C++]
 ms.assetid: 6f1ae418-5f0f-48b6-9f6e-8ea7e66b239a
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# __raise
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 0303198f352b97cf84a97d63dce18055e63622b1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="raise"></a>__raise
 イベントの呼び出しサイトを強調します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,15 +54,15 @@ method-declarator
   
 ```  
   
-## 解説  
- マネージ コードからは、イベントが定義されたクラス内からのみイベントを発生させることができます。  詳細については、「[event](../windows/event-cpp-component-extensions.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ マネージ コードからは、イベントが定義されたクラス内からのみイベントを発生させることができます。 参照してください[イベント](../windows/event-cpp-component-extensions.md)詳細についてはします。  
   
  キーワード `__raise` は、非イベントを呼び出すときにエラーを生成します。  
   
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // EventHandlingRef_raise.cpp  
@@ -71,7 +88,7 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
  [イベント処理](../cpp/event-handling.md)   
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

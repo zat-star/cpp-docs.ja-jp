@@ -1,35 +1,52 @@
 ---
-title: "_com_ptr_t::CreateInstance | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t::CreateInstance"
-  - "_com_ptr_t.CreateInstance"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CreateInstance メソッド"
+title: "_com_ptr_t::CreateInstance |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t::CreateInstance
+- _com_ptr_t.CreateInstance
+dev_langs:
+- C++
+helpviewer_keywords:
+- CreateInstance method
 ms.assetid: ab89b0e1-9da3-4784-a079-58b17340f111
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_ptr_t::CreateInstance
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 1c07f7366c76c96580fc989475bd7f5ea23a38fe
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrtcreateinstance"></a>_com_ptr_t::CreateInstance
+**Microsoft 固有の仕様**  
   
- **CLSID** または **ProgID** を指定してオブジェクトの新しいインスタンスを作成します。  
+ 指定されたオブジェクトの新しいインスタンスを作成、 **CLSID**または**ProgID**です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -50,32 +67,32 @@ HRESULT CreateInstance(
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `rclsid`  
- オブジェクトの **CLSID**。  
+ **CLSID**のオブジェクト。  
   
  `clsidString`  
- **CLSID** \(先頭が "**{**"\) または **ProgID** を保持する Unicode 文字列。  
+ 保持する Unicode 文字列、 **CLSID** (以降で"**{**") または**ProgID**です。  
   
  `clsidStringA`  
- **CLSID** \(先頭が "**{**"\) または **ProgID** を保持する、ANSI コード ページを使用するマルチバイト文字列。  
+ 保持する、ANSI コード ページを使用し、マルチバイト文字列、 **CLSID** (以降で"**{**") または**ProgID**です。  
   
  `dwClsContext`  
  実行可能コードを実行するコンテキスト。  
   
  `pOuter`  
- [集計](../atl/aggregation.md)で不明な外部の値。  
+ 外側、不明な[集計](../atl/aggregation.md)です。  
   
-## 解説  
- これらのメンバー関数は、`CoCreateInstance` を呼び出して新しい COM オブジェクトを作成し、このスマート ポインターのインターフェイス型を照会します。  結果のポインターは、この `_com_ptr_t` オブジェクトの中にカプセル化されます。  **Release** は、以前にカプセル化されたポインターの参照カウントをデクリメントするために呼び出されます。  このルーチンは、成功または失敗を示すために、`HRESULT` を返します。  
+## <a name="remarks"></a>コメント  
+ これらのメンバー関数は、`CoCreateInstance` を呼び出して新しい COM オブジェクトを作成し、このスマート ポインターのインターフェイス型を照会します。 結果のポインターは、この `_com_ptr_t` オブジェクトの中にカプセル化されます。 **リリース**は以前にカプセル化されたポインターの参照カウントをデクリメントするために呼び出されます。 このルーチンは、成功または失敗を示すために、`HRESULT` を返します。  
   
--   **CreateInstance\(**  `rclsid` **,**  `dwClsContext`  **\) CLSID** を指定したオブジェクトの新しい実行中のインスタンスを作成します。  
+-   **CreateInstance (** `rclsid` **、**`dwClsContext`**)**指定されたオブジェクトの実行中の新しいインスタンスを作成、 **CLSID**です。        
   
--   **CreateInstance\(**  `clsidString` **,**  `dwClsContext`  **\) CLSID** \("**{**" で始まる\) または **ProgID** を保持する Unicode 文字列を指定したオブジェクトの新しい実行中のインスタンスを作成します。  
+-   **CreateInstance (** `clsidString` **、**`dwClsContext`**)**保持する Unicode 文字列を指定してオブジェクトの実行中の新しいインスタンスを作成、 **CLSID**(以降で"**{**") または**ProgID**です。        
   
--   **CreateInstance\(**  `clsidStringA` **,**  `dwClsContext`  **\) CLSID** \("**{**" で始まる\) または **ProgID** を保持するマルチバイト文字列を指定したオブジェクトの新しい実行中のインスタンスを作成します。  [MultiByteToWideChar](http://msdn.microsoft.com/library/windows/desktop/dd319072) を呼び出します。この関数では、文字列は OEM コード ページではなく ANSI コード ページが使用されていることを前提としています。  
+-   **CreateInstance (** `clsidStringA` **、**`dwClsContext`**)**保持するマルチバイト文字の文字列を指定してオブジェクトの実行中の新しいインスタンスを作成、 **CLSID** (以降で"**{**") または**ProgID**です。       呼び出し[MultiByteToWideChar](http://msdn.microsoft.com/library/windows/desktop/dd319072)文字列は OEM コード ページではなく、ANSI コード ページで、ことを想定しています。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

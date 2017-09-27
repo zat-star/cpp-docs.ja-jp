@@ -1,71 +1,86 @@
 ---
-title: "new および delete 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "delete_cpp"
-  - "new_cpp"
-  - "new"
-  - "delete"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "delete キーワード [C++], 構文"
-  - "new キーワード [C++], オブジェクトの動的な割り当て"
-  - "nothrownew.obj"
+title: "新しい演算子と delete 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- delete_cpp
+- new_cpp
+- new
+- delete
+dev_langs:
+- C++
+helpviewer_keywords:
+- new keyword [C++], dynamic allocation of objects
+- nothrownew.obj
+- delete keyword [C++], syntax
 ms.assetid: fa721b9e-0374-4f04-bb87-032ea775bcc8
 caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# new および delete 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 88f91e113ef47dc44ec0a300a99051cfaed3f08c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-C\+\+ では、[new](../cpp/new-operator-cpp.md) 演算子と [delete](../cpp/delete-operator-cpp.md) 演算子を使用して、オブジェクトの動的割り当てと割り当て解除をサポートしています。  これらの演算子は、フリー ストアと呼ばれるプールからオブジェクトのメモリを割り当てます。  `new` 演算子は特殊な関数 [operator new](../misc/operator-new-function.md) を呼び出し、`delete` 演算子は特殊な関数 [operator delete](../Topic/operator%20delete%20Function.md) を呼び出します。  
+---
+# <a name="new-and-delete-operators"></a>new および delete 演算子
+
+C++ を使用してオブジェクトの動的割り当てと解放がサポートしている、[新しい](../cpp/new-operator-cpp.md)と[削除](../cpp/delete-operator-cpp.md)演算子。 これらの演算子は、フリー ストアと呼ばれるプールからオブジェクトのメモリを割り当てます。 `new`演算子は特殊な関数を呼び出す[new 演算子](../cpp/new-operator-cpp.md)、および`delete`演算子は特殊な関数を呼び出す[delete 演算子](../cpp/delete-operator-cpp.md)です。  
   
- [!INCLUDE[vcprvc](../build/includes/vcprvc_md.md)] .NET 2002 では、標準 C\+\+ ライブラリの `new` 関数は、メモリ割り当てに失敗した場合に std::bad\_alloc 例外をスローするという、C\+\+ 標準で指定されている動作をサポートします。  
+ Visual C .NET 2002 では、 `new` C++ 標準ライブラリ内の関数では、メモリ割り当てが失敗した場合は、std::bad_alloc 例外をスローする、C++ 標準で指定された動作をサポートします。 かどうかか例外をスローしないバージョンの`new`プログラムを nothrownew.obj とリンクします。ただし、リンクする場合を nothrownew.obj と、既定値`operator new`C++ 標準ライブラリでは機能しなくなります。  
   
- C ランタイム ライブラリの `new` 関数も、メモリ割り当てに失敗した場合に std::bad\_alloc 例外をスローします。  
+ C ランタイム ライブラリおよび C++ 標準ライブラリを構成するライブラリ ファイルの一覧は、次を参照してください。 [CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)します。  
   
- 引き続き C ランタイム ライブラリの `new` のスローしないバージョンが必要な場合は、プログラムを nothrownew.obj とリンクします。  ただし、nothrownew.obj とリンクすると、標準 C\+\+ ライブラリの `new` は機能しなくなります。  
-  
- C ランタイム ライブラリと標準 C\+\+ ライブラリを構成するライブラリ ファイルの一覧については、「[CRT ライブラリの機能](../c-runtime-library/crt-library-features.md)」を参照してください。  
-  
-## 新しい演算子  
+##  <a id="new_operator"></a> New 演算子  
  次のようなステートメントがプログラムで検出された場合は、関数 `operator new` の呼び出しに変換されます。  
   
-```  
+```cpp  
 char *pch = new char[BUFFER_SIZE];  
 ```  
   
- 要求がゼロ バイトのストレージに対するものである場合、**operator new** は別のオブジェクトへのポインターを返します \(つまり、**operator new** を繰り返し呼び出すと、複数の異なるポインターが返されます\)。  割り当て要求のメモリが不足している場合、**operator new** は **NULL** を返すか、例外をスローします \(詳細については、「[new 演算子と delete 演算子](../cpp/new-and-delete-operators.md)」を参照\)。  
+要求がゼロ バイトのストレージの場合**new 演算子**個別のオブジェクトへのポインターを返します (つまりへの呼び出しを繰り返す**new 演算子**別のポインターを返す)。 不足しているメモリの割り当て要求がある場合**new 演算子**std::bad_alloc 例外をスローするかを返します**nullptr**例外をスローしないでリンクしている場合`operator new`をサポートします。  
   
- メモリを解放し割り当てを再試行するルーチンを記述できます。詳細については、「[\_set\_new\_handler](../Topic/_set_new_handler.md)」を参照してください。  復旧方法の詳細については、「[メモリ不足状態の処理](../Topic/Handling%20Insufficient%20Memory%20Conditions.md)」を参照してください。  
+メモリを解放して; 割り当てを再試行しようとするルーチンを記述することができます。参照してください[_set_new_handler](../c-runtime-library/reference/set-new-handler.md)詳細についてはします。 復旧方法の詳細については、このトピックの処理が不足しているメモリのセクションを参照してください。  
+
   
- `operator new` 関数の 2 つのスコープの説明を次の表に示します。  
+`operator new` 関数の 2 つのスコープの説明を次の表に示します。  
   
-### operator new 関数のスコープ  
+### <a name="scope-for-operator-new-functions"></a>operator new 関数のスコープ  
   
 |演算子|スコープ|  
-|---------|----------|  
-|**::operator new**|グローバル|  
-|*class\-name* **::operator new**|クラス|  
+|--------------|-----------|  
+|**: 演算子の new**|Global|  
+|*クラス名* **:: 演算子の new**|クラス|  
   
- **operator new** の最初の引数は、**size\_t** 型 \(STDDEF.H で定義した型\) で、戻り値の型は常に **void \*** である必要があります。  
+ 1 番目の引数**new 演算子**型でなければなりません**size_t** (STDDEF で定義された型。H)、および戻り値の型は、常に**void \***です。  
   
- グローバルな **operator new** 関数は、**new** 演算子が、組み込み型のオブジェクト、ユーザー定義の **operator new** 関数を含まないクラス型のオブジェクト、および任意の型の配列の割り当てに使用されるときに呼び出されます。  **operator new** が定義されたクラス型のオブジェクトを割り当てるために **new** 演算子が使用されると、そのクラスの **operator new** が呼び出されます。  
+ グローバル**new 演算子**関数が呼び出されます、**新しい**演算子を使用して、組み込み型のオブジェクトを割り当てる、含まれていないクラス型のオブジェクトのユーザー定義**演算子の new**関数、および任意の型の配列。 ときに、**新しい**演算子を使用して、クラス型のオブジェクトを割り当てる場所、 **new 演算子**定義されると、そのクラスの**new 演算子**と呼びます。  
   
- クラスに定義された **operator new** 関数は、そのクラス型のオブジェクトのグローバルな **operator new** 関数を隠す静的メンバー関数です \(したがって仮想関数にはできません\)。  **new** を使用してメモリを割り当て、指定した値に設定する場合を考えます。  
+ **New 演算子**クラスは、グローバルの表示と非静的メンバー関数 (これは、そのため、仮想できません) に対して定義された関数**new 演算子**そのクラス型のオブジェクトに対して関数。 場合を考えます場所**新しい**を割り当てるし、メモリの指定した値を設定するために使用します。  
   
-```  
+```cpp  
 // spec1_the_operator_new_function1.cpp  
 #include <malloc.h>  
 #include <memory.h>  
@@ -93,17 +108,17 @@ int main()
 }  
 ```  
   
- **new** のかっこ内で指定された引数は、`Blanks::operator new` 引数として `chInit` に渡されます。  ただし、グローバルな **operator new** 関数は隠されているため、次のようなコードではエラーが生成されます。  
+ かっこ内で指定された引数**新しい**に渡される`Blanks::operator new`として、`chInit`引数。 ただし、グローバル**new 演算子**エラーを生成するには、次のようなコードの原因と、関数は隠されます。  
   
-```  
+```cpp  
 Blanks *SomeBlanks = new Blanks;  
 ```  
   
- Visual C\+\+ 5.0 以前では、**new** 演算子を使用して割り当てられる非クラス型とすべての配列 \(**class** 型であるかどうかに関係なく\) は、常に **operator new** グローバル関数を使用していました。  
+ Visual C 5.0 およびそれ以前、クラス型とすべての配列 (のいたかどうかに関係なく**クラス**型) を使用して割り当て、**新しい**演算子は常にグローバル使用**演算子の new**関数。  
   
- Visual C\+\+ 5.0 から、コンパイラはクラス宣言でのメンバー配列の **new** および **delete** 演算子をサポートします。  例:  
+ Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例:  
   
-```  
+```cpp  
 // spec1_the_operator_new_function2.cpp  
 class MyClass  
 {  
@@ -124,10 +139,10 @@ int main()
 }  
 ```  
   
-### メモリ不足の処理  
+### <a name="handling-insufficient-memory"></a>メモリ不足の処理  
  失敗したメモリ割り当てのテストは、次のようなコードを使用して実行できます。  
   
-```  
+```cpp  
 // insufficient_memory_conditions.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -142,27 +157,29 @@ int main() {
 }  
 ```  
   
- 他にも失敗したメモリ割り当て要求を処理する方法はあります。このようなエラーを処理するカスタム リカバリ ルーチンを作成し、[\_set\_new\_handler](../Topic/_set_new_handler.md) ランタイム関数を呼び出して関数を登録する方法です。  
+ 失敗したメモリ割り当て要求を処理する別の方法がある: などの障害に対処するカスタム リカバリ ルーチンを記述し、呼び出すことによって、関数を登録、 [_set_new_handler](../c-runtime-library/reference/set-new-handler.md)ランタイム関数。  
   
-## delete 演算子  
- **new** 演算子を使用して動的に割り当てられたメモリは、**delete** 演算子を使用して解放できます。  delete 演算子は **operator delete** 関数を呼び出し、この関数がメモリを解放して使用可能なプールに戻します。  **delete** 演算子を使用すると、クラスのデストラクターも呼び出されます \(存在する場合\)。  
+##  <a id="delete_operator"></a> Delete 演算子  
+ 動的に割り当てられたメモリを使用して、**新しい**演算子を使用して解放することができます、**削除**演算子。 Delete 演算子の呼び出し、**演算子 delete**関数で、使用可能なプールにメモリを解放します。 使用して、**削除**演算子もが、クラスのデストラクター (1 つである) 場合に呼び出されます。  
   
- グローバルとクラス スコープの **operator delete** 関数があります。  特定のクラスに対して定義できる **operator delete** 関数は、1 つだけです。定義されている場合、グローバルの **operator delete**関数は隠されます。  グローバルの **operator delete** 関数は、常に任意の型の配列に対して呼び出されます。  
+ グローバルとクラス スコープがある**演算子 delete**関数。 1 つだけ**演算子 delete**関数は、特定のクラスに対して定義できます以外の場合は、定義されている場合がグローバルを隠す**演算子 delete**関数。 グローバル**演算子 delete**関数が常に任意の型の配列に対して呼び出されます。  
   
- グローバルの **operator delete** 関数は、宣言された場合、解放するオブジェクトへのポインターを含む **void \*** 型の単一の引数を受け取ります。  戻り値の型は `void` です \(**operator delete** は値を返せません\)。  クラス メンバーの **operator delete** 関数には、2 つの形式が存在します。  
+ グローバル**演算子 delete**関数。 2 つの形式は、グローバルの存在**演算子 delete**およびクラス メンバー**演算子 delete**関数。  
   
-```  
+```cpp  
 void operator delete( void * );  
 void operator delete( void *, size_t );  
 ```  
   
- 特定のクラスに存在できるのは、上記の 2 つのバリアントのうち 1 つだけです。  最初の形式は、グローバルの `operator delete` の説明と同様に動作します。  2 番目の形式は 2 つの引数を取ります。最初の引数は解放するメモリ ブロックへのポインターで、2 番目は解放するバイト数です。  2 番目の形式は、基底クラスの **operator delete** 関数を派生クラスのオブジェクトの削除に使用するときに、特に便利です。  
+ 上記の 2 つの形式の 1 つのみは、特定のクラスの存在することができます。 最初の形式で、1 つの引数型の**void \* **、割り当てを解除するオブジェクトへのポインターが含まれています。 2 番目の形式: サイズ割り当て解除-最初の割り当てを解除するメモリ ブロックへのポインター、2 番目の割り当てを解除するバイト数の 2 つの引数を使用します。 両方のフォームの戻り値の型は`void`(**演算子 delete**値を返すことはできません)。  
   
- **operator delete** 関数は静的です。したがって、仮想関数にすることはできません。  `operator delete` 関数は、「[メンバー アクセス コントロール](../cpp/member-access-control-cpp.md)」で説明されているように、アクセス制御に従います。  
+ 2 番目の形式の目的は、高速化、削除するオブジェクトの適切なサイズのカテゴリの検索は、ほとんどの場合、割り当て自体の近くに格納され、キャッシュを使用しないで可能性があります。2 番目の形式は特に便利だときに、**演算子 delete**基底クラスから関数を使用して、派生クラスのオブジェクトを削除します。  
   
- 次の例は、メモリの割り当てと解放を記録するように設計された、ユーザー定義の **operator new** 関数と **operator delete** 関数を示しています。  
+ **演算子 delete**関数は静的です。 そのため、その仮想できません。 `operator delete` 」の説明に従って、関数は、アクセス制御を従う[メンバー アクセス コントロール](../cpp/member-access-control-cpp.md)です。  
   
-```  
+ 次の例は、ユーザー定義**new 演算子**と**delete 演算子**関数のメモリの割り当てと解放を記録するよう設計されています。  
+  
+```cpp  
 // spec1_the_operator_delete_function1.cpp  
 // compile with: /EHsc  
 // arguments: 3  
@@ -211,11 +228,11 @@ int main( int argc, char *argv[] ) {
 }  
 ```  
   
- 上記のコードを "メモリ リーク" の検出に使うことができます。メモリ リークとは、フリー ストアに割り当てられ、解放されていないメモリを指します。  この検出を実行するため、グローバルな **new** 演算子と **delete** 演算子がメモリの割り当てと解放をカウントするように再定義されています。  
+ 上記のコードを "メモリ リーク" の検出に使うことができます。メモリ リークとは、フリー ストアに割り当てられ、解放されていないメモリを指します。 グローバルに、この検出を実行する**新しい**と**削除**演算子がメモリのカウントの割り当てと解放を再定義します。  
   
- Visual C\+\+ 5.0 から、コンパイラはクラス宣言でのメンバー配列の **new** および **delete** 演算子をサポートします。  例:  
+ Visual C 5.0 以降では、コンパイラはメンバーの配列をサポート**新しい**と**削除**クラス宣言内の演算子。 例:  
   
-```  
+```cpp  
 // spec1_the_operator_delete_function2.cpp  
 // compile with: /c  
 class X  {  
@@ -231,6 +248,5 @@ void f() {
    delete [] pX;  
 }  
 ```  
-  
-## 参照  
- [特殊なメンバー関数](../misc/special-member-functions-cpp.md)
+
+

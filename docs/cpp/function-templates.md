@@ -1,32 +1,49 @@
 ---
-title: "関数テンプレート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "関数テンプレート"
-  - "関数テンプレート, 関数テンプレートの"
-  - "テンプレート, 関数"
+title: "関数テンプレート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- function templates
+- templates, function
+- function templates, about function templates
 ms.assetid: 59b56a4b-0689-4161-9c07-25021562e2a7
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# 関数テンプレート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
+ms.openlocfilehash: c3a740bb922a9e0e644275b5c7b8d3f4c50304d4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-クラス テンプレートは、インスタンス化の際にクラスに渡される型引数に基づいた、関連性のある複数クラスによるファミリを定義します。  関数テンプレートは、クラス テンプレートに似ていますが、定義されるのは関数ファミリです。  関数テンプレートを使用すると、同じコードに基づいているものの、異なる型またはクラスを対象にする関数のセットを指定できます。  次の関数テンプレートは、2 つの項目を入れ替えます。  
+---
+# <a name="function-templates"></a>関数テンプレート
+クラス テンプレートは、インスタンス化の際にクラスに渡される型引数に基づいた、関連性のある複数クラスによるファミリを定義します。 関数テンプレートは、クラス テンプレートに似ていますが、定義されるのは関数ファミリです。 関数テンプレートを使用すると、同じコードに基づいているものの、異なる型またはクラスを対象にする関数のセットを指定できます。 次の関数テンプレートは、2 つの項目を入れ替えます。  
   
-```  
+```cpp
 // function_templates1.cpp  
 template< class T > void MySwap( T& a, T& b ) {  
    T c(a);   
@@ -37,13 +54,13 @@ int main() {
 }  
 ```  
   
- このコードは、引数の値を入れ替える関数のファミリを定義します。  このテンプレートから、`int` 型、**long** 型、およびユーザー定義型を入れ替える関数を生成できます。  `MySwap` は、クラスのコピー コンストラクターと代入演算子が正しく定義されていれば、クラスの入れ替えも実行します。  
+ このコードは、引数の値を入れ替える関数のファミリを定義します。 このテンプレートからを入れ替える関数を生成できます**int**と**長い**型、およびユーザー定義型です。 `MySwap` は、クラスのコピー コンストラクターと代入演算子が正しく定義されていれば、クラスの入れ替えも実行します。  
   
  また、コンパイラがコンパイル時に `a` パラメーターと `b` パラメーターの型を認識するため、この関数テンプレートでは異なる型のオブジェクトの入れ替えが防止されます。  
   
- template 宣言されていない関数も、void ポインターを使用してこの関数を実行できますが、テンプレート バージョンはタイプ セーフです。  次の呼び出しがあるとします。  
+ template 宣言されていない関数も、void ポインターを使用してこの関数を実行できますが、テンプレート バージョンはタイプ セーフです。 次の呼び出しがあるとします。  
   
-```  
+```cpp
 int j = 10;  
 int k = 18;  
 CString Hello = "Hello, Windows!";  
@@ -51,11 +68,11 @@ MySwap( j, k );          //OK
 MySwap( j, Hello );      //error  
 ```  
   
- コンパイラはパラメーターの型が異なる `MySwap` 関数を生成できないため、2 番目の `MySwap` 呼び出しでは、コンパイル時にエラーが発生します。  void ポインターが使用されている場合は、どちらの関数呼び出しも正しくコンパイルされますが、関数は実行時に正しく機能しません。  
+ コンパイラはパラメーターの型が異なる `MySwap` 関数を生成できないため、2 番目の `MySwap` 呼び出しでは、コンパイル時にエラーが発生します。 void ポインターが使用されている場合は、どちらの関数呼び出しも正しくコンパイルされますが、関数は実行時に正しく機能しません。  
   
- 関数テンプレートのテンプレート引数を明示的に指定できます。  次に例を示します。  
+ 関数テンプレートのテンプレート引数を明示的に指定できます。 例:  
   
-```  
+```cpp
 // function_templates2.cpp  
 template<class T> void f(T) {}  
 int main(int j) {  
@@ -64,10 +81,11 @@ int main(int j) {
 }  
 ```  
   
- テンプレート引数を明示的に指定すると、通常の暗黙の型変換が実行されて、関数の引数が対応する関数テンプレート パラメーターの型に変換されます。  上の例では、コンパイラは \(`char j` を\) `int` 型に変換します。  
+ テンプレート引数を明示的に指定すると、通常の暗黙の型変換が実行されて、関数の引数が対応する関数テンプレート パラメーターの型に変換されます。 上記の例では、コンパイラの変換`char j`入力`int`です。  
   
-## 参照  
- [テンプレート](../Topic/Templates%20\(C++\).md)   
+## <a name="see-also"></a>関連項目  
+ [テンプレート](../cpp/templates-cpp.md)   
  [関数テンプレートのインスタンス化](../cpp/function-template-instantiation.md)   
- [明示的なインスタンス化](../Topic/Explicit%20Instantiation.md)   
+ [明示的なインスタンス化](../cpp/explicit-instantiation.md)   
  [関数テンプレートの明示的特殊化](../cpp/explicit-specialization-of-function-templates.md)
+

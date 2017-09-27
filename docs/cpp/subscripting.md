@@ -1,35 +1,52 @@
 ---
-title: "添字演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], 添字"
-  - "演算子のオーバーロード, 例"
-  - "演算子 [C++], オーバーロード"
-  - "添字演算子"
-  - "添字演算子, オーバーロード"
-  - "添字"
+title: "添字演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- subscript operator, overloaded
+- arrays [C++], subscripting
+- subscripting
+- operators [C++], overloading
+- operator overloading, examples
+- subscript operator
 ms.assetid: eb151281-6733-401d-9787-39ab6754c62c
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 添字演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 82feaa68724e36c7ac7e739397d8a11a18e970a0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-関数呼び出し演算子など、添字演算子 \(**\[ \]**\) は、二項演算子と見なされます。  添字演算子は 1 つの引数を受け取る非静的メンバー関数である必要があります。  この引数は任意の型にでき、目的の配列の添字を指定します。  
+---
+# <a name="subscripting"></a>添字演算子 
+添字演算子 (****) と同様、関数呼び出し演算子は二項演算子と見なされます。 添字演算子は 1 つの引数を受け取る非静的メンバー関数である必要があります。 この引数は任意の型にでき、目的の配列の添字を指定します。  
   
-## 使用例  
+## <a name="example"></a>例  
  範囲チェックを実行する型 `int` のベクターを作成する方法を次の例に示します。  
   
 ```  
@@ -81,23 +98,26 @@ int main() {
 }  
 ```  
   
-  **配列の範囲違反。**  
-**Element: \[0\] \= 0**  
-**Element: \[1\] \= 1**  
-**Element: \[2\] \= 2**  
-**Element: \[3\] \= 9**  
-**Element: \[4\] \= 4**  
-**Element: \[5\] \= 5**  
-**Element: \[6\] \= 6**  
-**Element: \[7\] \= 7**  
-**Element: \[8\] \= 8**  
-**Element: \[9\] \= 9**  
-**配列の範囲違反。**  
-**Element: \[10\] \= 10**   
-## コメント  
+```Output  
+Array bounds violation.  
+Element: [0] = 0  
+Element: [1] = 1  
+Element: [2] = 2  
+Element: [3] = 9  
+Element: [4] = 4  
+Element: [5] = 5  
+Element: [6] = 6  
+Element: [7] = 7  
+Element: [8] = 8  
+Element: [9] = 9  
+Array bounds violation.  
+Element: [10] = 10  
+```  
+  
+## <a name="comments"></a>コメント  
  前のプログラムで `i` が 10 に達すると、`operator[]` は境界外の添字が使用されていることを検出して、エラー メッセージを発行します。  
   
- 関数 `operator[]` は参照型を返すことに注意してください。  これにより、これが左辺値になり、代入演算子の両側で添字式を使用できるようになります。  
+ 関数 `operator[]` は参照型を返すことに注意してください。 これにより、これが左辺値になり、代入演算子の両側で添字式を使用できるようになります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [演算子のオーバーロード](../cpp/operator-overloading.md)

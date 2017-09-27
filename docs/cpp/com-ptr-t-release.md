@@ -1,35 +1,52 @@
 ---
-title: "_com_ptr_t::Release | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t.Release"
-  - "_com_ptr_t::Release"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Release メソッド"
+title: "_com_ptr_t::Release |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t.Release
+- _com_ptr_t::Release
+dev_langs:
+- C++
+helpviewer_keywords:
+- Release method
 ms.assetid: db448b34-0efa-4f02-b701-ad1ca3ae6ca5
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_ptr_t::Release
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 6f3875a48977b047dfd8706369d448838626e5c6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrtrelease"></a>_com_ptr_t::Release
+**Microsoft 固有の仕様**  
   
- カプセル化されたインターフェイス ポインターで **IUnknown** の **Release** メンバー関数を呼び出します。  
+ 呼び出し、**リリース**のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,10 +54,10 @@ void Release( );
   
 ```  
   
-## 解説  
- このインターフェイス ポインターが **NULL** の場合、カプセル化されたインターフェイス ポインターで `IUnknown::Release` を呼び出し、`E_POINTER` エラーを発生させます。  
+## <a name="remarks"></a>コメント  
+ 呼び出し`IUnknown::Release`カプセル化されたインターフェイス ポインターでさせると、`E_POINTER`このインターフェイス ポインターがある場合はエラー **NULL**です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

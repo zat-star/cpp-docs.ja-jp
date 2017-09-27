@@ -1,34 +1,51 @@
 ---
-title: "__unhook | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__unhook"
-  - "__unhook_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__unhook キーワード [C++]"
-  - "イベント ハンドラー, 関連付けの解除 (イベント)"
+title: "_ _unhook |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __unhook
+- __unhook_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- event handlers, dissociating events
+- __unhook keyword [C++]
 ms.assetid: 953a14f3-5199-459d-81e5-fcf015a19878
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# __unhook
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 2b1909cf5d7bde440d434bb44ff2276e68679e78
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="unhook"></a>__unhook
 イベントからハンドラー メソッドの関連付けを解除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -47,49 +64,49 @@ long  __unhook(
 );  
 ```  
   
-#### パラメーター  
- **&** *SourceClass* `::` *EventMethod*  
+#### <a name="parameters"></a>パラメーター  
+ **&***SourceClass* `::` *EventMethod*  
  イベント ハンドラー メソッドをアンフックする元のイベント メソッドへのポインター。  
   
--   ネイティブ C\+\+ イベント: *SourceClass* はイベント ソース クラスであり、*EventMethod* はイベントです。  
+-   ネイティブ C++ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
   
--   COM イベント: *SourceClass* はイベント ソース インターフェイスであり、*EventMethod* はメソッドの 1 つです。  
+-   COM イベント: *SourceClass*は、イベント ソース インターフェイスと*EventMethod*はそのメソッドの 1 つです。  
   
--   マネージ イベント: *SourceClass* はイベント ソース クラスであり、*EventMethod* はイベントです。  
+-   マネージ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
   
  `interface`  
- [event\_receiver](../windows/event-receiver.md) 属性の *layout\_dependent* パラメーターが **true** である COM イベント レシーバーのみに対して、`receiver` からアンフックされるインターフェイス名。  
+ Unhooked されているインターフェイスの名前`receiver`、する COM イベント レシーバーにのみ、 *layout_dependent*のパラメーター、 [event_receiver](../windows/event-receiver.md)属性は**true**.  
   
- *source*  
- イベント ソースのインスタンスへのポインター。  **event\_receiver** に指定された `type` コードに応じて、*source* は次のいずれかになります。  
+ *ソース*  
+ イベント ソースのインスタンスへのポインター。 コードに応じて`type`で指定された**event_receiver**、*ソース*次のいずれかになります。  
   
 -   ネイティブ イベント ソース オブジェクト ポインター。  
   
--   **IUnknown** のベースの COM ポインター \(COM ソース\)。  
+-   **IUnknown**-ベース ポインター (COM ソース)。  
   
--   マネージ オブジェクトのポインター \(マネージ イベントの場合\)。  
+-   マネージ オブジェクトのポインター (マネージ イベントの場合)。  
   
- **&** *ReceiverClass* `::` `HandlerMethod`  
- イベントからアンフックするイベント ハンドラー メソッドへのポインター。  ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__unhook` は、それを呼び出したクラスを使用します。  
+ **&***ReceiverClass* `::``HandlerMethod`  
+ イベントからアンフックするイベント ハンドラー メソッドへのポインター。 ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__unhook` は、それを呼び出したクラスを使用します。  
   
--   ネイティブ C\+\+ イベント: *ReceiverClass* はイベント レシーバー クラスであり、`HandlerMethod` はハンドラーです。  
+-   ネイティブ C++ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
   
--   COM イベント: *ReceiverClass* はイベント レシーバー インターフェイスであり、`HandlerMethod` はハンドラーの 1 つです。  
+-   COM イベント: *ReceiverClass*は、イベント レシーバー インターフェイスと`HandlerMethod`そのハンドラーの 1 つです。  
   
--   マネージ イベント: *ReceiverClass* はイベント レシーバー クラスであり、`HandlerMethod` はハンドラーです。  
+-   マネージ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
   
- `receiver` \(省略可能\)  
- イベント レシーバー クラスのインスタンスへのポインター。  レシーバーを指定しない場合、既定値は `__unhook` が呼び出されるレシーバー クラスまたは構造体です。  
+ `receiver`(省略可能)  
+ イベント レシーバー クラスのインスタンスへのポインター。 レシーバーを指定しない場合、既定値は `__unhook` が呼び出されるレシーバー クラスまたは構造体です。  
   
-## 使用法  
+## <a name="usage"></a>使用方法  
  イベント レシーバー クラス外の main を含む、任意の関数スコープで使用できます。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  ハンドラー メソッドとイベント メソッドとの関連付けを解除、つまり "アンフック" するには、イベント レシーバー内で組み込み関数 `__unhook` を使用します。  
   
- `__unhook` には 3 つの形式があります。  ほとんどの場合、最初の形式 \(引数が 4 つ\) を使用できます。  `__unhook` の 2 番目 \(引数が 2 つ\) の形式は、COM イベント レシーバーにのみ使用でき、イベント インターフェイス全体がアンフックされます。  3 番目 \(引数が 1 つ\) の形式は、指定したソースからすべてのデリゲートをアンフックする場合に使用します。  
+ `__unhook` には 3 つの形式があります。 ほとんどの場合、最初の形式 (引数が 4 つ) を使用できます。 `__unhook` の 2 番目 (引数が 2 つ) の形式は、COM イベント レシーバーにのみ使用でき、イベント インターフェイス全体がアンフックされます。 3 番目 (引数が 1 つ) の形式は、指定したソースからすべてのデリゲートをアンフックする場合に使用します。  
   
- ゼロ以外の戻り値は、エラーが発生したことを示します \(マネージ イベントは例外をスローします\)。  
+ ゼロ以外の戻り値は、エラーが発生したことを示します (マネージ イベントは例外をスローします)。  
   
  フックされていないイベントやイベント ハンドラーに対して `__unhook` を呼び出した場合、効果はありません。  
   
@@ -97,20 +114,20 @@ long  __unhook(
   
  COM イベントを除き、`__hook` と `__unhook` は、イベント レシーバーの外部で呼び出すことができます。  
   
- `__unhook` の使用の代替手段は、\-\= 演算子を使用することです。  
+ `__unhook` の使用の代替手段は、-= 演算子を使用することです。  
   
- 新しい構文でのマネージ イベントのコーディングの詳細については、「[event](../windows/event-cpp-component-extensions.md)」を参照してください。  
+ 新しい構文で管理されているイベントのコーディング方法の詳細については、次を参照してください。[イベント](../windows/event-cpp-component-extensions.md)です。  
   
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## 使用例  
- 使用例については、「[ネイティブ C\+\+ でのイベント処理](../Topic/Event%20Handling%20in%20Native%20C++.md)」および「[COM でのイベント処理](../cpp/event-handling-in-com.md)」を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [event\_source](../windows/event-source.md)   
- [event\_receiver](../windows/event-receiver.md)   
- [\_\_event](../cpp/event.md)   
- [\_\_hook](../cpp/hook.md)   
- [\_\_raise](../cpp/raise.md)
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
+ [event_source](../windows/event-source.md)   
+ [event_receiver](../windows/event-receiver.md)   
+ [_ _event](../cpp/event.md)   
+ [_ _hook します。](../cpp/hook.md)   
+ [__raise](../cpp/raise.md)

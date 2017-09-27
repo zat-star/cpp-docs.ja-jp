@@ -1,87 +1,104 @@
 ---
-title: "乗算演算子と剰余演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "%"
-  - "/"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "% 演算子"
-  - "* 演算子"
-  - "算術演算子 [C++], 乗算演算子"
-  - "除算演算子"
-  - "除算演算子, 乗算演算子"
-  - "剰余演算子, C+"
-  - "乗算演算子 [C++], 乗算演算子"
-  - "乗算演算子 [C++]"
-  - "演算子 [C++], 乗法"
+title: "乗算演算子と剰余演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- '%'
+- /
+dev_langs:
+- C++
+helpviewer_keywords:
+- operators [C++], multiplicative
+- arithmetic operators [C++], multiplicative operators
+- modulus operator, C+
+- '* operator'
+- division operator, multiplicative operators
+- '% operator'
+- multiplication operator [C++], multiplicative operators
+- multiplicative operators [C++]
+- division operator
 ms.assetid: b53ea5da-d0b4-40dc-98f3-0aa52d548293
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 乗算演算子と剰余演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: b63a36817bb0366d21fba11c5e1e4eccbcc6951f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## 構文  
+---
+# <a name="multiplicative-operators-and-the-modulus-operator"></a>乗算演算子と剰余演算子
+## <a name="syntax"></a>構文  
   
 ```  
-expression * expression   
-expression / expression   
+expression * expression   
+expression / expression   
 expression % expression  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  乗算演算子は次のとおりです。  
   
--   乗算 \(**\***\)  
+-   乗算 (**\***)  
   
--   除算 \(**\/**\)  
+-   除算 (**/**)  
   
--   剰余 \(除算の剰余\) \(`%`\)  
+-   剰余 (除算の剰余) (`%`)  
   
  これらの二項演算子の結合規則は、左から右方向です。  
   
- 乗算演算子は、数値型のオペランドを受け取ります。  剰余演算子 \(`%`\) には、そのオペランドが整数型でなければならないという点で、より厳しい要件があります \(浮動小数点部分の剰余を取得するには、ランタイム関数、[fmod](../Topic/fmod,%20fmodf.md) を使用します\)。「[算術変換](../misc/arithmetic-conversions.md)」で説明されている変換がオペランドに適用され、結果は変換後の型になります。  
+ 乗算演算子は、数値型のオペランドを受け取ります。 剰余演算子 (`%`) には、そのオペランドが整数型でなければならないという点で、より厳しい要件があります  (浮動小数点除算の剰余を取得するには、ランタイム関数を使用して[fmod](../c-runtime-library/reference/fmod-fmodf.md))。変換は、「[標準変換](standard-conversions.md)オペランドに適用され結果は変換後の型のです。  
   
  乗算演算子は、最初のオペランドを 2 番目のオペランドで乗算した結果を生成します。  
   
  除算演算子は、最初のオペランドを 2 番目のオペランドで除算した結果を生成します。  
   
- 剰余演算子は次の式が生成する剰余を提供します。ここで、*e1* は最初のオペランド、*e2* は 2 番目のオペランドです。両方のオペランドは整数型です。*e1* – \(*e1* \/ *e2*\) \* *e2*  
+ 剰余演算子は、次の式で指定した残りの部分を生成、 *e1*最初のオペランドと*e2* 2 番目の: *e1* -(*e1* /  *e2*) \* *e2*では、両方のオペランドは整数型。  
   
- 除算または剰余式における 0 での除算は未定義になり、実行時エラーが発生します。  したがって、次の式は未定義の間違った結果を生成します。  
+ 除算または剰余式における 0 での除算は未定義になり、実行時エラーが発生します。 したがって、次の式は未定義の間違った結果を生成します。  
   
 ```  
 i % 0  
 f / 0.0  
 ```  
   
- 乗算式、除算式、剰余式への両方のオペランドに同じ符号がある場合、結果は正の値になります。  それ以外の場合、結果は負になります。  剰余演算の符号の結果は実装定義されます。  
+ 乗算式、除算式、剰余式への両方のオペランドに同じ符号がある場合、結果は正の値になります。 それ以外の場合、結果は負になります。 剰余演算の符号の結果は実装定義されます。  
   
 > [!NOTE]
 >  乗算演算子によって実行される変換ではオーバーフロー条件やアンダーフロー条件が提供されないため、乗算演算の結果を変換後のオペランドの型で表すことができない場合、情報が失われる可能性があります。  
   
-## Microsoft 固有の仕様 →  
- Microsoft C\+\+ では、剰余式の結果は常に最初のオペランドと同じ符号になります。  
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様 →  
+ Microsoft C++ では、剰余式の結果は常に最初のオペランドと同じ符号になります。  
   
-## END Microsoft 固有の仕様  
- 2 つの整数の計算された除算が正確ではなく、1 つのオペランドだけが負の値の場合、結果は、除算演算で算出された正確な値未満の最大の整数 \(大きさでは、符号を無視します\) になります。  たとえば、–11 \/ 3 の計算値は –3.666666666 です。  整数の除算の結果は \-3 です。  
+**Microsoft 固有の仕様はここまで**  
+ 2 つの整数の計算された除算が正確ではなく、1 つのオペランドだけが負の値の場合、結果は、除算演算で算出された正確な値未満の最大の整数 (大きさでは、符号を無視します) になります。 -11 の計算値など、3 は-3.666666666/です。 整数の除算の結果は-3 です。  
   
- 乗算演算子の間の関係は、識別子 \(*e1* \/ *e2*\) \* *e2* \+ *e1* % *e2* \=\= *e1* によって得られます。  
+ 乗算演算子間のリレーションシップは、id によって指定されます (*e1* / *e2*) \* *e2*  +  *e1* % *e2* == *e1*です。  
   
-## 使用例  
- 次のプログラムは乗算演算子を示します。  切り捨てを避けるため、両方のオペランドが分割の前に `float` 型になるように `10 / 3` のいずれかのオペランドを明示的に `float` 型にキャストする必要があることに注意してください。  
+## <a name="example"></a>例  
+ 次のプログラムは乗算演算子を示します。 注意してくださいいずれかのオペランド`10 / 3`型に明示的にキャストする必要があります`float`ように両方のオペランド型の切り捨てを回避する`float`除算する前にします。  
   
 ```  
 // expre_Multiplicative_Operators.cpp  
@@ -97,8 +114,7 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C 乗算演算子](../c-language/c-multiplicative-operators.md)

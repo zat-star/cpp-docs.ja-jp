@@ -1,49 +1,65 @@
 ---
-title: "continue ステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "continue"
-  - "continue_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "continue キーワード [C++]"
+title: "continue ステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- continue
+- continue_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- continue keyword [C++]
 ms.assetid: 3c94ee57-f732-4c1d-8537-d0ce5382bfd4
 caps.latest.revision: 12
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# continue ステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 502254adc8b01966182f911af5a0dce8af36c1f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-外側にある最小の [do](../cpp/do-while-statement-cpp.md)、[for](../cpp/for-statement-cpp.md)、または [while](../cpp/while-statement-cpp.md) ループの制御式に強制的に制御を移します。  
+---
+# <a name="continue-statement-c"></a>continue ステートメント (C++)
+制御の転送を強制的に外側にある最小の制御式[は](../cpp/do-while-statement-cpp.md)、[の](../cpp/for-statement-cpp.md)、または[中](../cpp/while-statement-cpp.md)ループします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 continue;  
 ```  
   
-## 解説  
- 現在のイテレーションの残りのステートメントは実行されません。  ループの次のイテレーションは、次のように決定されます。  
+## <a name="remarks"></a>コメント  
+ 現在のイテレーションの残りのステートメントは実行されません。 ループの次のイテレーションは、次のように決定されます。  
   
 -   `do` または `while` ループ内では、次のイテレーションは `do` または `while` ステートメントの制御式を再評価することによって開始されます。  
   
--   `for` ループ \(構文 `for`\(`init-expr`; `cond-expr`; `loop-expr`\) を使用\) では、`loop-expr` 句が実行されます。  次に、`cond-expr` 句が再評価され、その結果に応じて、ループが終了するか、別のイテレーションが発生します。  
+-   `for` ループ (構文 `for`(`init-expr`; `cond-expr`; `loop-expr`) を使用) では、`loop-expr` 句が実行されます。 次に、`cond-expr` 句が再評価され、その結果に応じて、ループが終了するか、別のイテレーションが発生します。  
   
  次の例は、`continue` ステートメントを使用してコードのセクションをバイパスし、ループの次のイテレーションを開始する方法を示しています。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // continue_statement.cpp  
@@ -63,10 +79,13 @@ int main()
 }  
 ```  
   
-  **before the continue**  
-**before the continue**  
-**before the continue**  
-**after the do loop**   
-## 参照  
+```Output  
+before the continue  
+before the continue  
+before the continue  
+after the do loop  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [ジャンプ ステートメント](../cpp/jump-statements-cpp.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+ [キーワード](../cpp/keywords-cpp.md)

@@ -1,37 +1,53 @@
 ---
-title: "_bstr_t::operator ! | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_bstr_t::operator!"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "! 演算子"
-  - "! 演算子, bstr"
-  - "operator!, bstr"
+title: _bstr_t::operator ! | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _bstr_t::operator!
+dev_langs:
+- C++
+helpviewer_keywords:
+- '! operator'
+- operator!, bstr
+- operator !, bstr
 ms.assetid: 6e60b5a5-2d28-4eec-9e12-790da8f1fdd4
 caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# _bstr_t::operator !
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 06866cfca077c776b086e5cde9ccf1a0278eca25
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="bstrtoperator-"></a>_bstr_t::operator !
+**Microsoft 固有の仕様**  
   
- カプセル化された `BSTR` が **NULL** 文字列であるかどうかを調べます。  
+ 場合にチェック カプセル化された`BSTR`は、 **NULL**文字列。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -39,10 +55,10 @@ bool operator!( ) const throw( );
   
 ```  
   
-## 戻り値  
- そうである場合は **true**、それ以外の場合は **false** を返します。  
+## <a name="return-value"></a>戻り値  
+ 返します**true**場合は、 **false**しない場合。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_bstr\_t クラス](../cpp/bstr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_bstr_t クラス](../cpp/bstr-t-class.md)

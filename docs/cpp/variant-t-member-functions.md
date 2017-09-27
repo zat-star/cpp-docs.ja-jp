@@ -1,28 +1,45 @@
 ---
-title: "_variant_t メンバー関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_variant_t クラス, メンバー関数"
+title: "_variant_t メンバー関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- _variant_t class, member functions
 ms.assetid: 3c340097-55c3-4efe-873e-11e8a56f552d
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# _variant_t メンバー関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: e895bebee4fcb3b11f42b7ff9e3042ef9783a866
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`_variant_t` のメンバー関数については、「[\_variant\_t Class \(\_variant\_t クラス\)](../cpp/variant-t-class.md)」を参照してください。  
+---
+# <a name="variantt-member-functions"></a>_variant_t メンバー関数
+については、`_variant_t`メンバー関数を参照してください[_variant_t クラス](../cpp/variant-t-class.md)です。  
   
-## 参照  
- [\_variant\_t クラス](../cpp/variant-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_variant_t クラス](../cpp/variant-t-class.md)

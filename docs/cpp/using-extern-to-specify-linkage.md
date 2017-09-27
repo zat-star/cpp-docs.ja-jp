@@ -1,43 +1,60 @@
 ---
-title: "extern を使用したリンケージの指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "extern"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言, 外部"
-  - "extern キーワード [C++], C++ 以外の関数へのリンケージ"
-  - "外部リンケージ, extern 修飾子"
+title: "Extern リンケージの指定を使用した |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- extern
+dev_langs:
+- C++
+helpviewer_keywords:
+- extern keyword [C++], linkage to non-C++ functions
+- declarations, external
+- external linkage, extern modifier
 ms.assetid: 1e2f0ae3-ae98-4410-85b5-222d6abc865a
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# extern を使用したリンケージの指定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: b17479bfda8dbe009d3b2381afc2d87819811bc5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## 構文  
+---
+# <a name="using-extern-to-specify-linkage"></a>extern を使用したリンケージの指定
+## <a name="syntax"></a>構文  
   
 ```  
   
-        extern string-literal { declaration-list }  
+      extern string-literal { declaration-list }  
 extern string-literal declaration  
 ```  
   
-## 解説  
- `extern` キーワードは、変数または関数を宣言し、それが外部リンケージを持つことを指定します \(その名前は、それが定義されたファイル以外のファイルから見ることができます\)。  変数を変更するとき、`extern` は変数が静的存続期間を持つことを指定します \(プログラムの開始時に割り当てられ、プログラムの終了時に解放されます\)。  変数または関数は、別のソース ファイルで定義されることも、後で同じファイル内で定義されることもあります。  ファイル スコープでの変数と関数の宣言は既定で external です。  
+## <a name="remarks"></a>コメント  
+ `extern` キーワードは、変数または関数を宣言し、それが外部リンケージを持つことを指定します (その名前は、それが定義されたファイル以外のファイルから見ることができます)。 変数を変更するとき、`extern` は変数が静的存続期間を持つことを指定します (プログラムの開始時に割り当てられ、プログラムの終了時に解放されます)。 変数または関数は、別のソース ファイルで定義されることも、後で同じファイル内で定義されることもあります。 ファイル スコープでの変数と関数の宣言は既定で external です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // specifying_linkage1.cpp  
@@ -58,11 +75,11 @@ void other() {
 }  
 ```  
   
- C\+\+ では、文字列を使用する場合、`extern` により、別の言語のリンケージ規則が宣言に使用されることが示されます。  C の関数とデータには、C リンケージを持つと以前に宣言されている場合にのみ、アクセスできます。  ただし、別にコンパイルされた翻訳単位で定義する必要があります。  
+ C++ では、文字列を使用する場合、`extern` により、別の言語のリンケージ規則が宣言に使用されることが示されます。 C の関数とデータには、C リンケージを持つと以前に宣言されている場合にのみ、アクセスできます。 ただし、別にコンパイルされた翻訳単位で定義する必要があります。  
   
- Microsoft C\+\+ は **string\-literal** フィールドで文字列 **"C"** と *"C\+\+"* をサポートします。  すべての標準の include ファイルは、`extern` "C" 構文を使用して、ランタイム ライブラリ関数が C\+\+ プログラムで使用されるようにします。  
+ Microsoft C は、文字列をサポートしている**"C"**と**"C++"**で、*文字列リテラル*フィールドです。 すべての標準の include ファイルは、`extern` "C" 構文を使用して、ランタイム ライブラリ関数が C++ プログラムで使用されるようにします。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、C リンケージを持つ名前を宣言する別の方法を示します。  
   
 ```  
@@ -103,7 +120,7 @@ extern "C" char GetChar( void ) {
 extern "C" int errno;  
 ```  
   
- 関数に複数のリンケージ指定子がある場合、それらは一致する必要があります。関数を C と C\+\+ 両方のリンケージを持つ関数として宣言するとエラーになります。  また、プログラム内に、リンケージ指定子を含む関数宣言と含まない関数宣言がある場合、リンケージ指定子を含む宣言を最初に記述する必要があります。  既にリンケージ指定を持つ関数の冗長な宣言には、最初の宣言で指定したリンケージが与えられます。  例:  
+ 関数に複数のリンケージ指定子がある場合、それらは一致する必要があります。関数を C と C++ 両方のリンケージを持つ関数として宣言するとエラーになります。 また、プログラム内に、リンケージ指定子を含む関数宣言と含まない関数宣言がある場合、リンケージ指定子を含む宣言を最初に記述する必要があります。 既にリンケージ指定を持つ関数の冗長な宣言には、最初の宣言で指定したリンケージが与えられます。 例:  
   
 ```  
 extern "C" int CFunc1();  
@@ -118,11 +135,10 @@ extern "C" int CFunc2(); // Error: not the first declaration of
                          //  specifier.  
 ```  
   
- 複合リンケージ指定子 \(**{ }**\) の本体内で **static** として明示的に宣言された関数およびオブジェクトは、静的関数またはオブジェクトとして扱われます。リンケージ指定子は無視されます。  `extern` キーワードを使用して宣言したかのように、他の関数やオブジェクトが動作します。  [extern を使用したリンケージの指定](../cpp/using-extern-to-specify-linkage.md) キーワードの詳細については、「`extern`」を参照してください。  
+ 関数とオブジェクトが明示的に宣言**静的**複合リンケージ指定子の本体内で (**{}**) は静的関数またはオブジェクトとして扱われます、リンケージ指定子は無視されます。 `extern` キーワードを使用して宣言したかのように、他の関数やオブジェクトが動作します。 (を参照してください[extern リンケージの指定を使用した](../cpp/using-extern-to-specify-linkage.md)詳細については、`extern`キーワードです)。  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [\(NOTINBUILD\)Linkage Specifications](http://msdn.microsoft.com/ja-jp/d2b0cff1-7798-4c38-9ac8-61c3bfe2bfb9)   
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
  [extern ストレージ クラス指定子](../c-language/extern-storage-class-specifier.md)   
  [識別子の動作](../c-language/behavior-of-identifiers.md)   
  [リンケージ](../c-language/linkage.md)

@@ -1,47 +1,63 @@
 ---
-title: "__restrict | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__restrict"
-  - "__restrict_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__restrict キーワード [C++]"
+title: "_ _restrict |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __restrict
+- __restrict_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- __restrict keyword [C++]
 ms.assetid: 2d151b4d-f930-49df-bd16-d8757ec7fa83
 caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# __restrict
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: c0ed875845323d4125a97ca004bb50385f59c53d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**\_\_declspec \( [restrict](../cpp/restrict.md) \)** 修飾子と同様に、`__restrict` キーワードは、現在のスコープではシンボルがエイリアス化されないことを示します。  `__restrict` キーワードは、`__declspec ( restrict )` 修飾子とは次の点で相違があります。  
+---
+# <a name="restrict"></a>__restrict
+同様に、 **_ _declspec ([制限](../cpp/restrict.md))**修飾子、`__restrict`キーワードは、シンボルは、現在のスコープで別名を指定ではないことを示します。 `__restrict` キーワードは、`__declspec ( restrict )` 修飾子とは次の点で相違があります。  
   
 -   `__restrict` キーワードは変数に対してのみ有効です。`__declspec ( restrict )` は関数の宣言と定義内でのみ有効です。  
   
--   `__restrict` は C99 仕様の `restrict` に似ていますが、`__restrict` は C\+\+ または C プログラムで使用できます。  
+-   `__restrict` は C99 仕様の `restrict` に似ていますが、`__restrict` は C++ または C プログラムで使用できます。  
   
--   `__restrict` が使用されていると、コンパイラは変数の非エイリアスのプロパティを伝達しません。  つまり、`__restrict` 変数を `__restrict` ではない変数に割り当てる場合、コンパイラは引き続き non\-\_\_restrict 変数のエイリアス化を許可します。  これは C99 仕様の `restrict` キーワードの動作とは異なります。  
+-   `__restrict` が使用されていると、コンパイラは変数の非エイリアスのプロパティを伝達しません。 つまり、`__restrict` 変数を `__restrict` ではない変数に割り当てる場合、コンパイラは引き続き non-__restrict 変数のエイリアス化を許可します。 これは C99 仕様の `restrict` キーワードの動作とは異なります。  
   
  一般に、関数全体の動作に影響を及ぼす場合、キーワードよりも `__declspec ( restrict )` を使用する方が適切です。  
   
- Visual Studio 2015 以降では、C\+\+ 参照で `__restrict` を使用できます。  
+ Visual Studio 2015 以降では、C++ 参照で `__restrict` を使用できます。  
   
 > [!NOTE]
->  [volatile](../cpp/volatile-cpp.md) キーワードも持っている変数に対して使用すると、`volatile` が優先されます。  
+>  持っている変数で使用すると、[揮発性](../cpp/volatile-cpp.md)キーワード、`volatile`が優先されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // __restrict_keyword.c  
@@ -65,5 +81,5 @@ union z {
 };  
 ```  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)

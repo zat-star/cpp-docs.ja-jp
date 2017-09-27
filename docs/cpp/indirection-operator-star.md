@@ -1,44 +1,60 @@
 ---
-title: "間接演算子: * | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "* 演算子"
-  - "間接演算子"
-  - "間接演算子, 構文"
-  - "演算子 [C++], 間接"
+title: "間接演算子: * |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- '* operator'
+- indirection operator
+- operators [C++], indirection
+- indirection operator, syntax
 ms.assetid: c50309e1-6c02-4184-9fcb-2e13c1f4ac03
 caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 間接演算子: *
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 1f9b758e3bfa1a01ed2b2a428758c3e4a982fdae
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## 構文  
+---
+# <a name="indirection-operator-"></a>間接演算子: *
+## <a name="syntax"></a>構文  
   
 ```  
   
 * cast-expression  
 ```  
   
-## 解説  
- 単項間接演算子 \(**\***\) はポインターを逆参照します。つまり、ポインター値を左辺値に変換します。  間接演算子のオペランドを型へのポインターにすることはできません。  間接式の結果は、ポインター型の派生元の型です。  このコンテキストでの **\*** 演算子の使用は、乗算の二項演算子としての意味とは異なります。  
+## <a name="remarks"></a>コメント  
+ 単項間接演算子 (**\***)、ポインターを逆参照、ポインター値を左辺値に変換します。 間接演算子のオペランドを型へのポインターにすることはできません。 間接式の結果は、ポインター型の派生元の型です。 使用、 ** \* **このコンテキストでは演算子とは異なる乗算は、バイナリ演算子とその意味します。  
   
- オペランドが関数を指している場合、結果は関数指定子になります。  格納場所を指している場合、結果は格納場所を指定する左辺値になります。  
+ オペランドが関数を指している場合、結果は関数指定子になります。 格納場所を指している場合、結果は格納場所を指定する左辺値になります。  
   
- 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。  次に例を示します。  
+ 間接演算子は、ポインターへのポインターを逆参照するために累積的に使用される場合があります。 例:  
   
 ```  
 // expre_Indirection_Operator.cpp  
@@ -60,7 +76,7 @@ int main() {
 }  
 ```  
   
- ポインターの値が無効な場合、結果は未定義になります。  次の一覧に、ポインター値が無効になる一般的な条件をいくつか示します。  
+ ポインターの値が無効な場合、結果は未定義になります。 次の一覧に、ポインター値が無効になる一般的な条件をいくつか示します。  
   
 -   ポインターが null ポインターです。  
   
@@ -70,9 +86,8 @@ int main() {
   
 -   ポインターが、実行プログラムで使用されていないアドレスを指定しています。  
   
-## 参照  
- [単項演算子を含む式](../Topic/Expressions%20with%20Unary%20Operators.md)   
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
- [address\-of 演算子: &](../cpp/address-of-operator-amp.md)   
+## <a name="see-also"></a>関連項目  
+ [単項演算子を含む式](../cpp/expressions-with-unary-operators.md)   
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+ [Address-of 演算子: (& a)](../cpp/address-of-operator-amp.md)   
  [間接演算子とアドレス演算子](../c-language/indirection-and-address-of-operators.md)

@@ -1,43 +1,59 @@
 ---
-title: "true (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "true_cpp"
-  - "true"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "true キーワード [C++]"
+title: "true (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- true_cpp
+- "true"
+dev_langs:
+- C++
+helpviewer_keywords:
+- true keyword [C++]
 ms.assetid: 96be2a70-51c3-4250-9752-874d25a5a11e
 caps.latest.revision: 12
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# true (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: b10cf33ff93a01347ee8c8e7fc56bb5be8058f3a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## 構文  
+---
+# <a name="true-c"></a>true (C++)
+## <a name="syntax"></a>構文  
   
 ```  
   
-        bool-identifier = true ;  
+      bool-identifier = true ;  
 bool-expression logical-operator true ;  
 ```  
   
-## 解説  
- このキーワードは、[bool](../cpp/bool-cpp.md) 型の変数または条件式で使用する 2 つの値のうちの 1 つです \(現在、条件式は true ブール式です\)。  `i` が `bool` 型の場合、ステートメント `i = true;` は  **に `i`true** を割り当てます。  
+## <a name="remarks"></a>コメント  
+ このキーワードは、型の変数の 2 つの値のいずれかの[bool](../cpp/bool-cpp.md)または (条件式は true ブール式では今すぐ) 条件式。 場合`i`の種類は`bool`、then ステートメント`i = true;`割り当てます**true**に`i`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // bool_true.cpp  
@@ -51,7 +67,10 @@ int main()
 }  
 ```  
   
-  **1**  
-**0**   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+```Output  
+1  
+0  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)

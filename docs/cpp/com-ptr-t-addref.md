@@ -1,36 +1,53 @@
 ---
-title: "_com_ptr_t::AddRef | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t::AddRef"
-  - "_com_ptr_t.AddRef"
-  - "AddRef"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AddRef メソッド [C++], インターフェイス ポインター"
+title: "_com_ptr_t::AddRef |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t::AddRef
+- _com_ptr_t.AddRef
+- AddRef
+dev_langs:
+- C++
+helpviewer_keywords:
+- AddRef method [C++], interface pointers
 ms.assetid: c104dac3-aad3-40bb-a298-75c6cd0e63a2
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_ptr_t::AddRef
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: d873d91192dc13f7b1277cbe8ef26b24421b6904
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrtaddref"></a>_com_ptr_t::AddRef
+**Microsoft 固有の仕様**  
   
- カプセル化されたインターフェイス ポインターで **IUnknown** の `AddRef` メンバー関数を呼び出します。  
+ 呼び出し、`AddRef`のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,10 +55,10 @@ void AddRef( );
   
 ```  
   
-## 解説  
- ポインターが **NULL** の場合、カプセル化されたインターフェイス ポインターで `IUnknown::AddRef` を呼び出し、`E_POINTER` エラーを発生させます。  
+## <a name="remarks"></a>コメント  
+ 呼び出し`IUnknown::AddRef`カプセル化されたインターフェイス ポインターでさせると、`E_POINTER`ポインターがある場合はエラー **NULL**です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

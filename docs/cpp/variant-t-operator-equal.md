@@ -1,36 +1,52 @@
 ---
-title: "_variant_t::operator = | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_variant_t.operator="
-  - "_variant_t::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "= 演算子, Visual C++ 固有のオブジェクトを使用する"
-  - "演算子 =, バリアント"
-  - "演算子 =, バリアント"
+title: "_variant_t::operator = |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _variant_t.operator=
+- _variant_t::operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator=, variant
+- operator =, variant
+- = operator, with specific Visual C++ objects
 ms.assetid: 77622723-6e49-4dec-9e0f-fa74028f1a3c
 caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# _variant_t::operator =
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 850562235442ef8fed4f7b130948a5e92b15a1fb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="varianttoperator-"></a>_variant_t::operator =
+**Microsoft 固有の仕様**  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -127,42 +143,42 @@ _variant_t& operator=(
 );  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  この演算子は、`_variant_t` オブジェクトに新しい値を代入します。  
   
--   **operator\=\(**  *varSrc*  **\)** `_variant_t` オブジェクトに既存の **VARIANT** を代入します。  
+-   **演算子 = = (***varSrc***)**既存を割り当てます**バリアント**を`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *pVarSrc*  **\)** `_variant_t` オブジェクトに既存の **VARIANT** を代入します。  
+-   **演算子 = = (***pVarSrc***)**既存を割り当てます**バリアント**を`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *var\_t\_Src*  **\)** `_variant_t` オブジェクトに既存の `_variant_t` オブジェクトを代入します。  
+-   **演算子 = = (***var_t_Src***)**既存割り当てます`_variant_t`オブジェクトを`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *sSrc*  **\)** `_variant_t` オブジェクトに **short** 統合値を代入します。  
+-   **演算子 = = (***sSrc***)**割り当てます、**短い**整数値を`_variant_t`オブジェクト。      
   
--   **operator\=\(**  `lSrc`  **\)** `_variant_t` オブジェクトに **long** 整数値を代入します。  
+-   **演算子 = (**`lSrc`**)**割り当てます、**長い**整数値を`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *fltSrc*  **\)** `_variant_t` オブジェクトに **float** 数値を代入します。  
+-   **演算子 = = (***fltSrc***)**割り当てます、 **float**する数値を指定、`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *dblSrc*  **\)** `_variant_t` オブジェクトに **double** 数値を代入します。  
+-   **演算子 = = (***dblSrc***)**割り当てます、**二重**する数値を指定、`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *cySrc*  **\)** `_variant_t` オブジェクトに **CY** オブジェクトを代入します。  
+-   **演算子 = = (***cySrc***)**割り当てます、 **CY**オブジェクトを`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *bstrSrc*  **\)** `_variant_t` オブジェクトに `BSTR` オブジェクトを代入します。  
+-   **演算子 = = (***bstrSrc***)**割り当てます、`BSTR`オブジェクトを`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *wstrSrc*  **\)** `_variant_t` オブジェクトに Unicode 文字列を代入します。  
+-   **演算子 = = (***wstrSrc***)**に Unicode 文字列を割り当てます、`_variant_t`オブジェクト。      
   
--   **operator\=\(**  `strSrc`  **\)** `_variant_t` オブジェクトにマルチバイト文字列を代入します。  
+-   **演算子 = = (**`strSrc`**)**にマルチバイト文字列を割り当てます、`_variant_t`オブジェクト。      
   
--   **operator\=\(**  `bSrc` **\)** `_variant_t` オブジェクトに `bool` 値を代入します。  
+-   **演算子 = = (** `bSrc` **)**割り当てます、`bool`値を`_variant_t`オブジェクト。    
   
--   **operator\=\(**  *pDispSrc*  **\)** `_variant_t` オブジェクトに **VT\_DISPATCH** オブジェクトを代入します。  
+-   **演算子 = = (***pDispSrc***)**割り当てます、 **VT_DISPATCH**オブジェクトを`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *pIUnknownSrc*  **\)** `_variant_t` オブジェクトに **VT\_UNKNOWN** オブジェクトを代入します。  
+-   **演算子 = = (***pIUnknownSrc***)**割り当てます、 **VT_UNKNOWN**オブジェクトを`_variant_t`オブジェクト。      
   
--   **operator\=\(**  *decSrc*  **\)** `_variant_t` オブジェクトに **DECIMAL** 値を代入します。  
+-   **演算子 = = (***decSrc***)**割り当てます、 **10 進**値を`_variant_t`オブジェクト。      
   
--   **operator\=\(**  `bSrc` **\)** `_variant_t` オブジェクトに **BYTE** 値を代入します。  
+-   **演算子 = = (** `bSrc` **)**割り当てます、**バイト**値を`_variant_t`オブジェクト。    
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_variant\_t クラス](../cpp/variant-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_variant_t クラス](../cpp/variant-t-class.md)

@@ -1,33 +1,50 @@
 ---
-title: "exit または return の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Exit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "exit 関数"
-  - "return キーワード [C++], プログラムの終了のための使用"
+title: "使用して終了するかを返す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- Exit
+dev_langs:
+- C++
+helpviewer_keywords:
+- exit function
+- return keyword [C++], using for program termination
 ms.assetid: b5136c5c-2505-4229-8691-2a1d6a98760b
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# exit または return の使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 9fc6588a6593559314774e30a4d65c5a60779eb5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**exit** を呼び出すか **main** から `return` ステートメントを実行すると、静的オブジェクトが初期化と逆の順序で破棄されます。  次の例は、こうした初期化やクリーンアップがどのように機能するのかを示します。  
+---
+# <a name="using-exit-or-return"></a>exit または return の使用
+呼び出すと**終了**またはを実行、`return`ステートメントから**メイン**、静的オブジェクトは、初期化の逆の順序で破棄されます。 次の例は、こうした初期化やクリーンアップがどのように機能するのかを示します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // using_exit_or_return1.cpp  
@@ -65,7 +82,7 @@ int main() {
 }  
 ```  
   
- 前の例では、静的オブジェクト `sd1` と `sd2` は、`main` に入る前に作成および初期化されます。  このプログラムが `return` ステートメントを使用して終了した後、最初に `sd2` が破棄され、その後に `sd1` が破棄されます。  `ShowData` クラスのデストラクターは、これらの静的オブジェクトに関連付けられたファイルを閉じます  \(初期化、コンストラクター、およびデストラクターに関する詳細については、「[特殊なメンバー関数](../misc/special-member-functions-cpp.md)」を参照してください\)。  
+ 前の例では、静的オブジェクト `sd1` と `sd2` は、`main` に入る前に作成および初期化されます。 このプログラムが `return` ステートメントを使用して終了した後、最初に `sd2` が破棄され、その後に `sd1` が破棄されます。 `ShowData` クラスのデストラクターは、これらの静的オブジェクトに関連付けられたファイルを閉じます    
   
  このコードを作成するもう 1 つの方法は、ブロック スコープを持つ `ShowData` オブジェクトを宣言して、スコープ外に出ると破棄できるようにすることです。  
   
@@ -78,5 +95,5 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [終了に関するその他の考慮事項](../cpp/additional-termination-considerations.md)

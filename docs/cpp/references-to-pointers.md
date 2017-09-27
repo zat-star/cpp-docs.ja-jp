@@ -1,33 +1,50 @@
 ---
-title: "ポインターへの参照 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "参照, ポインターへの"
+title: "ポインターへの参照 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- references, to pointers
 ms.assetid: 4ce48b08-1511-4d2f-a31f-95f99eac0c70
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# ポインターへの参照
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: cf7a3fe930e8b862578286908598c9152943f134
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-ポインターへの参照は、オブジェクトへの参照とほぼ同じ方法で宣言できます。  ポインターへの参照を宣言すると、通常のポインターのように使用される変更可能な値が生成されます。  
+---
+# <a name="references-to-pointers"></a>References to Pointers (ポインターへの参照)
+ポインターへの参照は、オブジェクトへの参照とほぼ同じ方法で宣言できます。 ポインターへの参照を宣言すると、通常のポインターのように使用される変更可能な値が生成されます。  
   
-## 使用例  
+## <a name="example"></a>例  
  次のコード例で、ポインターへのポインターとポインターへの参照の使用方法の相違点について説明します。  
   
- 関数 `Add1` および `Add2` は、機能的に同等です \(ただし、呼び出し方法が異なります\)。  違いは、`Add1` が二重の間接参照を使用しているのに対し、`Add2` はポインターへの参照を便利に利用している点です。  
+ 関数 `Add1` および `Add2` は、機能的に同等です (ただし、呼び出し方法が異なります)。 違いは、`Add1` が二重の間接参照を使用しているのに対し、`Add2` はポインターへの参照を便利に利用している点です。  
   
 ```  
 // references_to_pointers.cpp  
@@ -36,7 +53,7 @@ caps.handback.revision: 12
 #include <iostream>  
 #include <string>  
   
-// STL namespace  
+// C++ Standard Library namespace  
 using namespace std;  
   
 enum {  
@@ -157,9 +174,15 @@ int Add2( BTree*& Root, char *szToAdd ) {
 }  
 ```  
   
-  **Usage: Refptr \[1 &#124; 2\]**  
-**それぞれの文字について以下に説明します。**  
-**1 uses double indirection**  
-**2 uses a reference to a pointer.  Input is from stdin.**    
-## 参照  
+```Output  
+Usage: Refptr [1 | 2]  
+  
+where:  
+1 uses double indirection  
+2 uses a reference to a pointer.  
+  
+Input is from stdin.  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [参照](../cpp/references-cpp.md)

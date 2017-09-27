@@ -1,76 +1,93 @@
 ---
-title: "_com_ptr_t クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_com_ptr_t クラス"
+title: "_com_ptr_t クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t
+dev_langs:
+- C++
+helpviewer_keywords:
+- _com_ptr_t class
 ms.assetid: 3753a8a0-03d4-4cfd-8a9a-74872ea53971
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# _com_ptr_t クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 3979a33f095092c5cbaac91793c501e31304a6d4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrt-class"></a>_com_ptr_t クラス
+**Microsoft 固有の仕様**  
   
- `_com_ptr_t` オブジェクトは COM インターフェイス ポインターをカプセル化し、"スマート" ポインターと呼ばれます。  このテンプレート クラスは、**IUnknown** メンバー関数 \(`QueryInterface`、`AddRef`、および **Release**\) の関数呼び出しによってリソースの割り当てと割り当て解除を管理します。  
+ `_com_ptr_t` オブジェクトは COM インターフェイス ポインターをカプセル化し、"スマート" ポインターと呼ばれます。 このテンプレート クラスは、リソースの割り当てと関数の呼び出しによる割り当て解除を管理する、 **IUnknown**メンバー関数: `QueryInterface`、 `AddRef`、および**リリース**です。  
   
- スマート ポインターは通常、**\_COM\_SMARTPTR\_TYPEDEF** マクロによって提供される typedef 定義で参照されます。  このマクロは、インターフェイス名と IID を受け取り、インターフェイスの名前と `Ptr` のサフィックスを指定して、`_com_ptr_t` の特殊化を宣言します。  次に例を示します。  
+ スマート ポインターは通常によって提供される typedef 定義で参照されている、 **_COM_SMARTPTR_TYPEDEF**マクロです。 このマクロは、インターフェイス名と IID を受け取り、インターフェイスの名前と `_com_ptr_t` のサフィックスを指定して、`Ptr` の特殊化を宣言します。 例:  
   
 ```  
 _COM_SMARTPTR_TYPEDEF(IMyInterface, __uuidof(IMyInterface));  
 ```  
   
- このコードは、`_com_ptr_t` の特殊化である **IMyInterfacePtr** を宣言します。  
+ 宣言、`_com_ptr_t`特殊化**IMyInterfacePtr**です。  
   
- 一連の[関数テンプレート](../cpp/relational-function-templates.md)は、このテンプレート クラスのメンバーではなく、比較演算子の右側でスマート ポインターとの比較をサポートします。  
+ 一連の[関数テンプレート](../cpp/relational-function-templates.md)、このテンプレートのメンバー以外のクラス、比較演算子の右側にあるスマート ポインターを使用して比較をサポートします。  
   
-### 構築  
-  
-|||  
-|-|-|  
-|[\_com\_ptr\_t](../cpp/com-ptr-t-com-ptr-t.md)|`_com_ptr_t` オブジェクトを構築します。|  
-  
-### 低水準操作  
+### <a name="construction"></a>構築  
   
 |||  
 |-|-|  
-|[AddRef](../cpp/com-ptr-t-addref.md)|カプセル化されたインターフェイス ポインターで **IUnknown** の `AddRef` メンバー関数を呼び出します。|  
-|[Attach](../Topic/_com_ptr_t::Attach.md)|このスマート ポインターの型の生のインターフェイス ポインターをカプセル化します。|  
-|[CreateInstance](../cpp/com-ptr-t-createinstance.md)|**CLSID** または **ProgID** を指定してオブジェクトの新しいインスタンスを作成します。|  
-|[Detach](../cpp/com-ptr-t-detach.md)|カプセル化されたインターフェイス ポインターを抽出して返します。|  
-|[GetActiveObject](../Topic/_com_ptr_t::GetActiveObject.md)|**CLSID** または **ProgID** の指定により、オブジェクトの既存のインスタンスにアタッチします。|  
+|[_com_ptr_t](../cpp/com-ptr-t-com-ptr-t.md)|`_com_ptr_t` オブジェクトを構築します。|  
+  
+### <a name="low-level-operations"></a>低水準操作  
+  
+|||  
+|-|-|  
+|[AddRef](../cpp/com-ptr-t-addref.md)|呼び出し、`AddRef`のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。|  
+|[添付](../cpp/com-ptr-t-attach.md)|このスマート ポインターの型の生のインターフェイス ポインターをカプセル化します。|  
+|[CreateInstance](../cpp/com-ptr-t-createinstance.md)|指定されたオブジェクトの新しいインスタンスを作成、 **CLSID**または**ProgID**です。|  
+|[デタッチ](../cpp/com-ptr-t-detach.md)|カプセル化されたインターフェイス ポインターを抽出して返します。|  
+|[GetActiveObject](../cpp/com-ptr-t-getactiveobject.md)|指定されたオブジェクトの既存のインスタンスにアタッチ、 **CLSID**または**ProgID**です。|  
 |[GetInterfacePtr](../cpp/com-ptr-t-getinterfaceptr.md)|カプセル化されたインターフェイス ポインターを返します。|  
-|[QueryInterface](../cpp/com-ptr-t-queryinterface.md)|カプセル化されたインターフェイス ポインターで **IUnknown** の `QueryInterface` メンバー関数を呼び出します。|  
-|[Release](../cpp/com-ptr-t-release.md)|カプセル化されたインターフェイス ポインターで **IUnknown** の **Release** メンバー関数を呼び出します。|  
+|[QueryInterface](../cpp/com-ptr-t-queryinterface.md)|呼び出し、`QueryInterface`のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。|  
+|[Release](../cpp/com-ptr-t-release.md)|呼び出し、**リリース**のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。|  
   
-### 演算子  
+### <a name="operators"></a>演算子  
   
 |||  
 |-|-|  
-|[operator \=](../cpp/com-ptr-t-operator-equal.md)|既存の `_com_ptr_t` オブジェクトに新しい値を代入します。|  
-|[operators \=\=、\!\=、\<、\>、\<\=、\>\=](../cpp/com-ptr-t-relational-operators.md)|スマート ポインター オブジェクトを、別のスマート ポインター、生のインターフェイス ポインター、または **NULL** と比較します。|  
+|[演算子 =](../cpp/com-ptr-t-operator-equal.md)|既存の `_com_ptr_t` オブジェクトに新しい値を代入します。|  
+|[演算子 = =、! =、 \<、>、 \<=、> =](../cpp/com-ptr-t-relational-operators.md)|スマート ポインター オブジェクトを別のスマート ポインター、生のインターフェイス ポインターの比較または**NULL**です。|  
 |[抽出](../cpp/com-ptr-t-extractors.md)|カプセル化された COM インターフェイス ポインターを抽出します。|  
   
-## END Microsoft 固有の仕様  
+**Microsoft 固有の仕様はここまで**  
   
-## 要件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** comip.h  
   
- **ライブラリ:** comsuppw.lib または comsuppwd.lib \(詳細については、「[\/Zc:wchar\_t \(wchar\_t をネイティブ型として認識\)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照\)  
+ **Lib:** comsuppw.lib または comsuppwd.lib (を参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)詳細)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ COM サポート クラス](../cpp/compiler-com-support-classes.md)

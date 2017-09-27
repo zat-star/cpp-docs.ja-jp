@@ -1,35 +1,52 @@
 ---
-title: "_com_ptr_t::QueryInterface | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t::QueryInterface"
-  - "_com_ptr_t.QueryInterface"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "QueryInterface メソッド"
+title: "_com_ptr_t::QueryInterface |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t::QueryInterface
+- _com_ptr_t.QueryInterface
+dev_langs:
+- C++
+helpviewer_keywords:
+- QueryInterface method
 ms.assetid: d03292f1-6b02-40db-9756-8b0837a97319
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_ptr_t::QueryInterface
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 6b5c8fb9ca1d628b178c19b677b90f17cc992373
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrtqueryinterface"></a>_com_ptr_t::QueryInterface
+**Microsoft 固有の仕様**  
   
- カプセル化されたインターフェイス ポインターで **IUnknown** の `QueryInterface` メンバー関数を呼び出します。  
+ 呼び出し、`QueryInterface`のメンバー関数**IUnknown**カプセル化されたインターフェイス ポインター。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -43,17 +60,17 @@ template<typename _InterfaceType> HRESULT QueryInterface (
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `iid`  
- インターフェイス ポインターの **IID**。  
+ **IID**のインターフェイス ポインター。  
   
  `p`  
  生のインターフェイス ポインター。  
   
-## 解説  
- 指定した **IID** を持つカプセル化されたインターフェイス ポインターで **IUnknown::QueryInterface** を呼び出し、結果として得られる生のインターフェイス ポインターを `p` に返します。  このルーチンは、成功または失敗を示すために、`HRESULT` を返します。  
+## <a name="remarks"></a>コメント  
+ 呼び出し**iunknown::queryinterface** 、指定したカプセル化されたインターフェイス ポインターで**IID**で結果として得られる生のインターフェイス ポインターを返します`p`です。 このルーチンは、成功または失敗を示すために、`HRESULT` を返します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

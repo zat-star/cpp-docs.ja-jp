@@ -1,43 +1,59 @@
 ---
-title: "繰り返しステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "繰り返しステートメント"
-  - "ループ構造, 繰り返しステートメント"
+title: "繰り返しステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- iteration statements
+- loop structures, iteration statements
 ms.assetid: bf6d75f7-ead2-426a-9c47-33847f59b8c7
 caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 繰り返しステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: e00939a9ff383be4cf84c098ee7e93af307a1536
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-繰り返しステートメントにより、ループ終了条件に応じて、ステートメント \(または複合ステートメント\) が複数回実行されます。  これらのステートメントが複合ステートメントの場合、[break](../cpp/break-statement-cpp.md) ステートメントまたは [continue](../cpp/continue-statement-cpp.md) ステートメントに達した場合を除き、順序どおりに実行されます。  
+---
+# <a name="iteration-statements-c"></a>繰り返しステートメント (C++)
+繰り返しステートメントにより、ループ終了条件に応じて、ステートメント (または複合ステートメント) が複数回実行されます。 これらのステートメントが複合ステートメントの場合は、場合を除き、順序どおりに実行されますか、 [break](../cpp/break-statement-cpp.md)ステートメントまたは[続行](../cpp/continue-statement-cpp.md)ステートメントが見つかりました。  
   
- C\+\+ 言語には、4 つの繰り返しステートメント \([while](../cpp/while-statement-cpp.md)、[do](../cpp/do-while-statement-cpp.md)、[for](../cpp/for-statement-cpp.md)、[範囲ベースの for](../Topic/Range-based%20for%20Statement%20\(C++\).md)\) があります。  これらのステートメントは、終了式が 0 \(false\) と評価されるか、**break** ステートメントによってループが強制的に終了されるまで繰り返されます。  次の表は、これらのステートメントと操作をまとめたものです。それぞれについては以降のセクションで詳しく説明します。  
+ C には、次の 4 つの繰り返しステートメントが用意されています:[中に](../cpp/while-statement-cpp.md)、[は](../cpp/do-while-statement-cpp.md)、[の](../cpp/for-statement-cpp.md)、および[範囲ベースの for](../cpp/range-based-for-statement-cpp.md)です。 ゼロ (false) に、終了式が評価されるまで、またはループの終了時に強制されるまでこれらの各反復処理、 **break**ステートメントです。 次の表は、これらのステートメントと操作をまとめたものです。それぞれについては以降のセクションで詳しく説明します。  
   
-### 繰り返しステートメント  
+### <a name="iteration-statements"></a>繰り返しステートメント  
   
 |ステートメント|評価のタイミング|初期化|インクリメント|  
-|-------------|--------------|---------|-------------|  
-|`while`|ループの先頭|Ｘ|Ｘ|  
-|**do**|ループの最後|Ｘ|Ｘ|  
-|**for**|ループの先頭|○|○|  
-|**範囲ベースの for**|ループの先頭|○|○|  
+|---------------|------------------|--------------------|---------------|  
+|`while`|ループの先頭|いいえ|いいえ|  
+|**do**|ループの最後|いいえ|いいえ|  
+|**for**|ループの先頭|はい|はい|  
+|**範囲ベースの for**|ループの先頭|はい|はい|  
   
- 繰り返しステートメントのステートメント部分は宣言にできません。  ただし、宣言を含む複合ステートメントにすることができます。  
+ 繰り返しステートメントのステートメント部分は宣言にできません。 ただし、宣言を含む複合ステートメントにすることができます。  
   
-## 参照  
- [C\+\+ ステートメントの概要](../cpp/overview-of-cpp-statements.md)
+## <a name="see-also"></a>関連項目  
+ [C++ ステートメントの概要](../cpp/overview-of-cpp-statements.md)

@@ -1,34 +1,51 @@
 ---
-title: "__event | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__event_cpp"
-  - "__event"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__event キーワード [C++]"
-  - "イベント [C++], __event"
+title: "_ _event |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __event_cpp
+- __event
+dev_langs:
+- C++
+helpviewer_keywords:
+- __event keyword [C++]
+- events [C++], __event
 ms.assetid: d3019b3e-722e-48df-8536-c05878461f9e
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# __event
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: dbc936d124ad97017494e4f3fbdc41c4ad68d6b0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="event"></a>__event
 イベントを宣言します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -39,26 +56,26 @@ __event __interface interface-specifier;
 __event member-declarator;  
 ```  
   
-## 解説  
- `__event` キーワードは、メソッド宣言、インターフェイス宣言、またはデータ メンバーの宣言に適用できます。  ただし、`__event` キーワードを使用して、入れ子になったクラスのメンバーを修飾することはできません。  
+## <a name="remarks"></a>コメント  
+ `__event` キーワードは、メソッド宣言、インターフェイス宣言、またはデータ メンバーの宣言に適用できます。 ただし、`__event` キーワードを使用して、入れ子になったクラスのメンバーを修飾することはできません。  
   
- イベント ソースとイベント レシーバーがネイティブ C\+\+、COM、またはマネージ \(.NET Framework\) であるかによって、次の構成体をイベントとして使用できます。  
+ イベント ソースとイベント レシーバーがネイティブ C++、COM、またはマネージ (.NET Framework) であるかによって、次の構成体をイベントとして使用できます。  
   
-|ネイティブ C\+\+|COM|マネージ \(.NET Framework\)|  
-|-----------------|---------|-----------------------------|  
-|方法|—|メソッド|  
-|—|インターフェイス|—|  
+|ネイティブ C++|COM|マネージ (.NET Framework)|  
+|------------------|---------|--------------------------------|  
+|メソッド|—|メソッド|  
+|—|interface|—|  
 |—|—|データ メンバー|  
   
- ハンドラー メソッドをイベント メソッドに関連付けるには、イベント レシーバー内で [\_\_hook](../cpp/hook.md) を使用します。  `__event` キーワードを使用してイベントを作成した後、そのイベントが呼び出されると、そのイベントにフックされているすべてのイベント ハンドラーが呼び出されることに注意してください。  
+ 使用して[_ _hook](../cpp/hook.md)ハンドラー メソッドをイベント メソッドに関連付けるには、イベント レシーバーでします。 `__event` キーワードを使用してイベントを作成した後、そのイベントが呼び出されると、そのイベントにフックされているすべてのイベント ハンドラーが呼び出されることに注意してください。  
   
  `__event` メソッド宣言では定義を記述できません。定義は暗黙的に生成されるため、通常のメソッドと同じようにイベント メソッドを呼び出すことができます。  
   
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## ネイティブ イベント  
- ネイティブ イベントはメソッドです。  戻り値の型は、通常、`HRESULT` または `void` ですが、`enum` などの任意の整数型でもかまいません。  イベントが整数の戻り値の型を使用していて、イベント ハンドラーがゼロ以外の値を返すときのエラー条件が定義されていると、発生するイベントは他のデリゲートを呼び出します。  
+## <a name="native-events"></a>ネイティブ イベント  
+ ネイティブ イベントはメソッドです。 戻り値の型は、通常、`HRESULT` または `void` ですが、`enum` などの任意の整数型でもかまいません。 イベントが整数の戻り値の型を使用していて、イベント ハンドラーがゼロ以外の値を返すときのエラー条件が定義されていると、発生するイベントは他のデリゲートを呼び出します。  
   
 ```  
 // Examples of native C++ events:  
@@ -66,28 +83,28 @@ __event void OnDblClick();
 __event HRESULT OnClick(int* b, char* s);  
 ```  
   
- サンプル コードについては、「[ネイティブ C\+\+ でのイベント処理](../Topic/Event%20Handling%20in%20Native%20C++.md)」を参照してください。  
+ 参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)サンプル コードについてはします。  
   
-## COM イベント  
- COM イベントはインターフェイスです。  イベント ソース インターフェイスのメソッドのパラメーターは、**in** パラメーターである必要があります \(ただし、厳密には適用されません\)。これは、**out** パラメーターはマルチキャストした場合に有効ではないためです。  レベル 1 の警告は **out** パラメーターを使用した場合に発行されます。  
+## <a name="com-events"></a>COM イベント  
+ COM イベントはインターフェイスです。 イベント ソース インターフェイスのメソッドのパラメーターにする必要があります**で**パラメーター (ただし、これが厳格に強制されていません)、ため、**アウト**パラメーターはマルチキャストした場合に便利です。 使用する場合に、レベル 1 の警告が発行される、**アウト**パラメーター。  
   
- 戻り値の型は、通常、`HRESULT` または `void` ですが、`enum` などの任意の整数型でもかまいません。  イベントが整数の戻り値の型を使用していて、イベント ハンドラーがゼロ以外の値を返すと、これはエラー状態であり、発生するイベントは他のデリゲートの呼び出しをアボートします。  コンパイラは、生成する IDL でイベント ソース インターフェイスを[ソース](../Topic/source%20\(C++\).md)として自動的にマークすることに注意してください。  
+ 戻り値の型は、通常、`HRESULT` または `void` ですが、`enum` などの任意の整数型でもかまいません。 イベントが整数の戻り値の型を使用していて、イベント ハンドラーがゼロ以外の値を返すと、これはエラー状態であり、発生するイベントは他のデリゲートの呼び出しをアボートします。 コンパイラは、イベント ソース インターフェイスとしてに自動的にマークされますに注意してください、[ソース](../windows/source-cpp.md)生成された IDL にします。  
   
- [\_\_interface](../Topic/__interface.md) キーワードは、常に COM イベント ソースの `__event` の後に指定する必要があります。  
+ [_ _Interface](../cpp/interface.md)キーワードの後に必要なは常に`__event`COM イベント ソース。  
   
 ```  
 // Example of a COM event:  
 __event __interface IEvent1;  
 ```  
   
- サンプル コードについては、「[COM でのイベント処理](../cpp/event-handling-in-com.md)」を参照してください。  
+ 参照してください[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプル コードについてはします。  
   
-## マネージ イベント  
- 新しい構文でイベントをコーディングする方法については、「[event](../windows/event-cpp-component-extensions.md)」を参照してください。  
+## <a name="managed-events"></a>マネージ イベント  
+ 新しい構文でイベントをコーディング方法の詳細については、次を参照してください。[イベント](../windows/event-cpp-component-extensions.md)です。  
   
- マネージ イベントは、データ メンバーまたはメソッドです。  イベントで使用する場合、デリゲートの戻り値の型は[共通言語仕様](../Topic/Language%20Independence%20and%20Language-Independent%20Components.md)に準拠している必要があります。  イベント ハンドラーの戻り値の型は、デリゲートの戻り値の型と一致する必要があります。  デリゲートの詳細については、「[\_\_delegate](../Topic/__delegate.md)」を参照してください。  マネージ イベントがメンバー関数である場合、その型はデリゲートへのポインターでなければなりません。  
+ マネージ イベントは、データ メンバーまたはメソッドです。 デリゲートの戻り値の型に準拠している必要がありますイベントと共に使用すると、[共通言語仕様](/dotnet/standard/language-independence-and-language-independent-components)です。 イベント ハンドラーの戻り値の型は、デリゲートの戻り値の型と一致する必要があります。 デリゲートの詳細については、次を参照してください。[デリゲートとイベント](../dotnet/delegates-and-events.md)です。 マネージ イベントがメンバー関数である場合、その型はデリゲートへのポインターでなければなりません。  
   
- .NET Framework では、それ自身がメソッド \(つまり、対応するデリゲートの `Invoke` メソッド\) であるかのようにデータ メンバーを処理できます。  マネージ イベント データ メンバーを宣言するためのデリゲート型を事前に定義する必要があります。  これに対し、マネージ イベント メソッドは、まだ定義されていない場合、対応するマネージ デリゲートを暗黙的に定義します。  たとえば、次のように、`OnClick` などのイベント値をイベントとして宣言できます。  
+ .NET Framework では、それ自身がメソッド (つまり、対応するデリゲートの `Invoke` メソッド) であるかのようにデータ メンバーを処理できます。 マネージ イベント データ メンバーを宣言するためのデリゲート型を事前に定義する必要があります。 これに対し、マネージ イベント メソッドは、まだ定義されていない場合、対応するマネージ デリゲートを暗黙的に定義します。 たとえば、次のように、`OnClick` などのイベント値をイベントとして宣言できます。  
   
 ```  
 // Examples of managed events:  
@@ -95,9 +112,9 @@ __event ClickEventHandler* OnClick;  // data member as event
 __event void OnClick(String* s);  // method as event  
 ```  
   
- マネージ イベントを暗黙的に宣言するときは、イベント ハンドラーが追加または削除されたときに呼び出される追加および削除アクセサーを指定できます。  クラスの外部からイベントを呼び出す \(発生させる\) メソッドを定義することもできます。  
+ マネージ イベントを暗黙的に宣言するときは、イベント ハンドラーが追加または削除されたときに呼び出される追加および削除アクセサーを指定できます。 クラスの外部からイベントを呼び出す (発生させる) メソッドを定義することもできます。  
   
-## 例: ネイティブ イベント  
+## <a name="example-native-events"></a>例: ネイティブ イベント  
   
 ```  
 // EventHandling_Native_Event.cpp  
@@ -109,7 +126,7 @@ public:
 };  
 ```  
   
-## 例: COM イベント  
+## <a name="example-com-events"></a>例: COM イベント  
   
 ```  
 // EventHandling_COM_Event.cpp  
@@ -135,43 +152,11 @@ public:
 };  
 ```  
   
-## 例: マネージ イベント  
-  
-```  
-// EventHandling_Managed_Event.cpp  
-// compile with: /clr:oldSyntax /c  
-using namespace System;  
-[event_source(managed)]  
-public __gc class CPSource {  
-  
-public:  
-   __event void MyEvent(Int16 nValue);  
-};  
-```  
-  
- イベントに属性を適用するときは、その属性を生成されたメソッドに適用するか、生成されたデリゲートの呼び出しメソッドに適用するかを指定できます。  既定 \(`event:`\) では、属性がイベントに適用されます。  
-  
-```  
-// EventHandling_Managed_Event_2.cpp  
-// compile with: /clr:oldSyntax /c  
-using namespace System;  
-[attribute(All, AllowMultiple=true)]  
-public __gc class Attr {};  
-  
-public __delegate void D();  
-  
-public __gc class X {  
-public:  
-   [method:Attr] __event D* E;  
-   [returnvalue:Attr] __event void noE();  
-};  
-```  
-  
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
  [イベント処理](../cpp/event-handling.md)   
- [event\_source](../windows/event-source.md)   
- [event\_receiver](../windows/event-receiver.md)   
- [\_\_hook](../cpp/hook.md)   
- [\_\_unhook](../cpp/unhook.md)   
- [\_\_raise](../cpp/raise.md)
+ [event_source](../windows/event-source.md)   
+ [event_receiver](../windows/event-receiver.md)   
+ [_ _hook します。](../cpp/hook.md)   
+ [_ _unhook](../cpp/unhook.md)   
+ [__raise](../cpp/raise.md)

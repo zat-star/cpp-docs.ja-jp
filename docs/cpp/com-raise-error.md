@@ -1,34 +1,51 @@
 ---
-title: "_com_raise_error | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_raise_error"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_com_raise_error 関数"
+title: "_com_raise_error |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_raise_error
+dev_langs:
+- C++
+helpviewer_keywords:
+- _com_raise_error function
 ms.assetid: a98226c2-c3fe-44f1-8ff5-85863de11cd6
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# _com_raise_error
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 1f2072a6f3a6f78bc6751e39e0c79d978845fe97
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comraiseerror"></a>_com_raise_error
+**Microsoft 固有の仕様**  
   
- 失敗に応答して [\_com\_error](../cpp/com-error-class.md) をスローします。  
+ スロー、 [_com_error](../cpp/com-error-class.md)エラーに応答します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,17 +55,17 @@ caps.handback.revision: 10
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `hr`  
  `HRESULT` 情報。  
   
  `perrinfo`  
- **IErrorInfo** オブジェクト。  
+ **IErrorInfo**オブジェクト。  
   
-## 解説  
- `_com_raise_error` は、comdef.h で定義され、同じ名前とプロトタイプのユーザー作成のバージョンで置き換えることができます。  `#import` を使用し、C\+\+ 例外処理を使用しない場合は、こうすることができます。  その場合、**\_com\_raise\_error** のユーザー バージョンが `longjmp` を実行するか、メッセージ ボックスを表示して停止するかを決定することがあります。  ユーザー バージョンで返すことはできません。コンパイラ COM サポート コードがそれを予期していないためです。  
+## <a name="remarks"></a>コメント  
+ `_com_raise_error` は、comdef.h で定義され、同じ名前とプロトタイプのユーザー作成のバージョンで置き換えることができます。 `#import` を使用し、C++ 例外処理を使用しない場合は、こうすることができます。 その場合、ユーザーのバージョンで**_com_raise_error**を行うことができます、`longjmp`またはメッセージ ボックスを表示および停止します。 ユーザー バージョンで返すことはできません。コンパイラ COM サポート コードがそれを予期していないためです。  
   
- また、[\_set\_com\_error\_handler](../cpp/set-com-error-handler.md) を使用して、既定のエラー処理関数を置き換えることもできます。  
+ 使用することも[_set_com_error_handler](../cpp/set-com-error-handler.md)を既定のエラー処理関数を置き換えます。  
   
  既定では、`_com_raise_error` は次のように定義されています。  
   
@@ -58,13 +75,13 @@ void __stdcall _com_raise_error(HRESULT hr, IErrorInfo* perrinfo) {
 }  
 ```  
   
-## END Microsoft 固有の仕様  
+**Microsoft 固有の仕様はここまで**  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** comdef.h  
   
- **Lib:** "wchar\_t をネイティブ型として認識" のコンパイラ オプションが有効な場合は、comsuppw.lib または comsuppwd.lib を使用します。  "wchar\_t をネイティブ型として認識" の設定が無効になっている場合は、comsupp.lib を使用します。  詳細については、「[\/Zc:wchar\_t \(wchar\_t をネイティブ型として認識\)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
+ **Lib:**場合、 **wchar_t をネイティブ型**コンパイラ オプションは、comsuppw.lib または comsuppwd.lib を使用します。 場合**wchar_t をネイティブ型**オフ、comsupp.lib を使用します。 「[/Zc:wchar_t (wchar_t をネイティブ型として認識)](../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
   
-## 参照  
- [コンパイラ COM のグローバル関数](../cpp/compiler-com-global-functions.md)   
- [\_set\_com\_error\_handler](../cpp/set-com-error-handler.md)
+## <a name="see-also"></a>関連項目  
+ [コンパイラ COM グローバル関数](../cpp/compiler-com-global-functions.md)   
+ [_set_com_error_handler](../cpp/set-com-error-handler.md)

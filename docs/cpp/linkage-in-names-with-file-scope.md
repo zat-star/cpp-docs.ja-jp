@@ -1,54 +1,71 @@
 ---
-title: "ファイル スコープを持つ名前にあるリンケージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言 [C++], 外部"
-  - "外部リンケージ, スコープ リンケージの規則"
-  - "ファイル スコープ [C++]"
-  - "リンケージ [C++], スコープ リンケージの規則"
-  - "名前 [C++], スコープ リンケージの規則"
-  - "スコープ [C++], リンケージの規則"
-  - "static 修飾子, ファイル スコープ"
-  - "静的な名前とファイル スコープ"
-  - "静的変数, 外部宣言"
+title: "ファイル スコープを持つ名前にあるリンケージ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- scope [C++], linkage rules
+- linkage [C++], scope linkage rules
+- names [C++], scope linkage rules
+- static modifier, file scope
+- static names and file scope
+- file scope [C++]
+- declarations [C++], external
+- external linkage, scope linkage rules
+- static variables, external declarations
 ms.assetid: 38d3fa5e-1861-466e-a590-84b86f7b184e
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# ファイル スコープを持つ名前にあるリンケージ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: c4d33071426eac428cc1728aa13b403953a99389
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-次のリンケージ規則は、ファイル スコープを持つ名前 \(`typedef` と列挙子の名前以外\) に適用されます。  
+---
+# <a name="linkage-in-names-with-file-scope"></a>ファイル スコープを持つ名前にあるリンケージ
+次のリンケージ規則は、ファイル スコープを持つ名前 (`typedef` と列挙子の名前以外) に適用されます。  
   
--   名前が **static** として明示的に宣言されている場合、その名前は内部リンケージを持ち、プログラム要素を独自の翻訳単位内で識別します。  
+-   名前として明示的に宣言されている場合**静的**、内部リンケージを持ち、独自の翻訳単位内のプログラム要素を識別します。  
   
 -   列挙子名と `typedef` 名はリンケージを持ちません。  
   
 -   ファイル スコープを持つ他のすべての名前は外部リンケージを持ちます。  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
--   ファイル スコープを持つ関数名が **inline** として明示的に宣言されると、その関数がインスタンス化される場合やそのアドレスが参照される場合、関数名は外部リンケージを持ちます。  したがって、ファイル スコープを持つ関数は内部または外部リンケージを持つことができます。  
+-   ファイル スコープを持つ関数名が明示的に宣言されているとして**インライン**がインスタンス化されるか、そのアドレスが参照されている場合、外部リンケージがあります。 したがって、ファイル スコープを持つ関数は内部または外部リンケージを持つことができます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
  次の場合、クラスは内部リンケージを持ちます。  
   
--   C\+\+ の機能を使用していません \(たとえば、メンバー アクセス制御、メンバー関数、コンストラクター、デストラクターなど\)。  
+-   C++ の機能を使用していません (たとえば、メンバー アクセス制御、メンバー関数、コンストラクター、デストラクターなど)。  
   
--   外部リンケージを持つ別の名前の宣言で使用されていません。  この制約は、外部リンケージを持つ関数に渡されるクラス型のオブジェクトにより、クラスが外部リンケージを持つことを意味します。  
+-   外部リンケージを持つ別の名前の宣言で使用されていません。 この制約は、外部リンケージを持つ関数に渡されるクラス型のオブジェクトにより、クラスが外部リンケージを持つことを意味します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

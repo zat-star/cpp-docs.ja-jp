@@ -1,50 +1,66 @@
 ---
-title: "break ステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "break_cpp"
-  - "break"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "break キーワード [C++]"
+title: "break ステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- break_cpp
+- break
+dev_langs:
+- C++
+helpviewer_keywords:
+- break keyword [C++]
 ms.assetid: 63739928-8985-4b05-93ce-016322e6da3d
 caps.latest.revision: 13
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# break ステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 2e016ccc90ef53ca5f269a73d3f5b7ed3185f550
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`break` ステートメントは、それを囲む最も近いループまたは条件付きステートメントの実行を終了させます。  このステートメントの終了の後ろにステートメントがある場合は、そこに制御が移動します。  
+---
+# <a name="break-statement-c"></a>break ステートメント (C++)
+`break` ステートメントは、それを囲む最も近いループまたは条件付きステートメントの実行を終了させます。 このステートメントの終了の後ろにステートメントがある場合は、そこに制御が移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 break;  
 ```  
   
-## 解説  
- `break` ステートメントは、条件付き [switch](../cpp/switch-statement-cpp.md) ステートメントと、[do](../cpp/do-while-statement-cpp.md)、[for](../cpp/for-statement-cpp.md)、および [while](../cpp/while-statement-cpp.md) ループ ステートメントと共に使用されます。  
+## <a name="remarks"></a>コメント  
+ `break` 、条件付きステートメントが使用される[スイッチ](../cpp/switch-statement-cpp.md)ステートメントを使用して、[は](../cpp/do-while-statement-cpp.md)、[の](../cpp/for-statement-cpp.md)、および[中に](../cpp/while-statement-cpp.md)ループステートメント。  
   
- `switch` ステートメントでは、`break` ステートメントがあると、その `switch` ステートメントの外側にある次のステートメントが実行されます。  `break` ステートメントがない場合は、一致する `case` ラベルから `switch` ステートメントの最後までのすべてのステートメントが、`default` 句も含めて実行されます。  
+ `switch` ステートメントでは、`break` ステートメントがあると、その `switch` ステートメントの外側にある次のステートメントが実行されます。 `break` ステートメントがない場合は、一致する `case` ラベルから `switch` ステートメントの最後までのすべてのステートメントが、`default` 句も含めて実行されます。  
   
- ループでは、`break` ステートメントは、そのすぐ外側の `do`、`for`、または `while` ステートメントの実行を終了します。  終了したステートメントの次にステートメントがある場合は、そこに制御が移動します。  
+ ループでは、`break` ステートメントは、そのすぐ外側の `do`、`for`、または `while` ステートメントの実行を終了します。 終了したステートメントの次にステートメントがある場合は、そこに制御が移動します。  
   
- 入れ子になったステートメント内では、`break` ステートメントは、それを直接囲む `do`、`for`、`switch`、または `while` ステートメントだけを終了させます。  `return` ステートメントまたは `goto` ステートメントを使用して、より深い入れ子構造から制御を移すことができます。  
+ 入れ子になったステートメント内では、`break` ステートメントは、それを直接囲む `do`、`for`、`switch`、または `while` ステートメントだけを終了させます。 `return` ステートメントまたは `goto` ステートメントを使用して、より深い入れ子構造から制御を移すことができます。  
   
-## 使用例  
- 次のコードでは、`for` ループ内で `break` ステートメントを使用する方法を示しています。  
+## <a name="example"></a>例  
+ 次のコードでは、`break` ループ内で `for` ステートメントを使用する方法を示しています。  
   
 ```cpp  
 #include <iostream>  
@@ -72,13 +88,16 @@ int nums []{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 }  
 ```  
   
-  **各 case で:**   
-**1**  
-**2**  
-**3** 次のコードでは、`while` ループ内と `do` ループ内で `break` ステートメントを使用する方法を示しています。  
+```Output  
+In each case:   
+1  
+2  
+3  
+```  
+  
+ 次のコードでは、`break` ループ内と `while` ループ内で `do` ステートメントを使用する方法を示しています。  
   
 ```cpp  
-  
 #include <iostream>  
 using namespace std;  
   
@@ -104,11 +123,12 @@ int main() {
 }  
 ```  
   
-  **各 case で:**   
-**0**  
-**1**  
-**2**  
-**3** 次のコードでは、switch ステートメント内で `break` を使用する方法を示しています。  各 case を個別に処理する場合は、それぞれの case で `break` を使用する必要があります。`break` を使用しない場合、コードの実行は次の case にフォール スルーします。  
+```Output  
+In each case:  
+0123  
+```  
+  
+ 次のコードでは、switch ステートメント内で `break` を使用する方法を示しています。 各 case を個別に処理する場合は、それぞれの case で `break` を使用する必要があります。`break` を使用しない場合、コードの実行は次の case にフォール スルーします。  
   
 ```cpp  
 #include <iostream>  
@@ -155,7 +175,7 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ジャンプ ステートメント](../cpp/jump-statements-cpp.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
+ [キーワード](../cpp/keywords-cpp.md)   
  [continue ステートメント](../cpp/continue-statement-cpp.md)

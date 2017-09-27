@@ -1,32 +1,49 @@
 ---
-title: "参照型関数の引数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "引数 [C++], 関数"
-  - "関数の引数, 参照の種類"
-  - "関数パラメーター, 参照の種類"
-  - "関数 [C++], パラメーター"
-  - "渡す (パラメーターを), 参照型の引数"
+title: "参照型関数の引数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- arguments [C++], function
+- functions [C++], paramters
+- function parameters, reference-type
+- function arguments, reference-type
+- passing parameters, reference-type arguments
 ms.assetid: 0a70e831-9e76-46c0-821d-aeba13d73cc0
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 参照型関数の引数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: e74cbde44cad618720983fbda4a6cf9ce8b75dc1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-多くの場合、大きなオブジェクトよりも、関数への参照を渡す方が効率的です。  これにより、コンパイラは、オブジェクトへのアクセスに使用される構文を保持しつつ、オブジェクトのアドレスを渡すことができます。  `Date` 構造体を使用する次の例について考えます。  
+---
+# <a name="reference-type-function-arguments"></a>Reference-Type Function Arguments (参照型関数の引数)
+多くの場合、大きなオブジェクトよりも、関数への参照を渡す方が効率的です。 これにより、コンパイラは、オブジェクトへのアクセスに使用される構文を保持しつつ、オブジェクトのアドレスを渡すことができます。 `Date` 構造体を使用する次の例について考えます。  
   
 ```  
 // reference_type_function_arguments.cpp  
@@ -67,9 +84,9 @@ int main()
 }  
 ```  
   
- 前のコードは、参照によって渡された構造体のメンバーは、ポインター メンバー選択演算子 \(**\-\>**\) ではなく、メンバー選択演算子 \(**.**\) を使用してアクセスされることを示しています。  
+ 上記のコードは、メンバー選択演算子を使用して参照渡しによる構造体のメンバーをアクセスすることを示しています (**.**) ポインター メンバー選択演算子ではなく (**->**)。  
   
- 参照型として渡された引数はポインター型以外の型の構文に従いますが、**const** として宣言されない限り変更できるという、ポインター型の 1 つの重要な特性を保持します。  前のコードの意図は `GDate` オブジェクトを変更することではないため、より適切な関数プロトタイプは次のとおりです。  
+ 参照型として渡された引数が非ポインター型の構文を観察しますが、ポインター型の 1 つの重要な特性を保持します。 として宣言されない限り変更できる**const**です。 前のコードの意図は `GDate` オブジェクトを変更することではないため、より適切な関数プロトタイプは次のとおりです。  
   
 ```  
 long JulianFromGregorian( const Date& GDate );  
@@ -77,7 +94,7 @@ long JulianFromGregorian( const Date& GDate );
   
  このプロトタイプによって、関数 `JulianFromGregorian` が引数を変更しないことが保証されます。  
   
- 参照型を受け取るようにプロトタイプ宣言された関数は、*typename* から *typename***&** に標準で変換されるため、参照型の代わりに同じ型のオブジェクトを受け取ることができます。  
+ 標準変換があるので、参照型を受け取るようなプロトタイプ関数がその場所に同じ型のオブジェクトを受け入れることができます*typename*に*typename* ** &**.  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [参照](../cpp/references-cpp.md)

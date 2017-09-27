@@ -1,39 +1,56 @@
 ---
-title: "exit 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Exit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "exit 関数"
+title: "exit 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- Exit
+dev_langs:
+- C++
+helpviewer_keywords:
+- exit function
 ms.assetid: 26ce439f-81e2-431c-9ff8-a09a96f32127
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# exit 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 240636bf7b6f10421c5d4ebd202a5fb3473a819d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-標準インクルード ファイルの STDLIB.H で宣言された **exit** 関数は、C\+\+ プログラムを終了します。  
+---
+# <a name="exit-function"></a>exit 関数
+**終了**STDLIB 標準インクルード ファイルで宣言された関数。H は、C++ プログラムを終了します。  
   
- **exit** の引数として指定された値は、プログラムのリターン コードまたは終了コードとしてオペレーティング システムに返されます。  慣例により、ゼロのリターン コードは、プログラムが正常に完了したことを意味します。  
+ 引数として指定された値**終了**プログラムのリターン コードまたは終了コードとしてオペレーティング システムに返されます。 慣例により、ゼロのリターン コードは、プログラムが正常に完了したことを意味します。  
   
 > [!NOTE]
 >  STDLIB.H で定義された定数 `EXIT_FAILURE` および `EXIT_SUCCESS` を使用して、プログラムの成功または失敗を示すことができます。  
   
- **main** 関数から `return` ステートメントを発行することは、戻り値を引数として **exit** 関数を呼び出すことと同じです。  
+ 発行、`return`ステートメントから、**メイン**関数が呼び出すことと同じ、**終了**引数として戻り値を持つ関数です。  
   
- 詳細については、『ランタイム ライブラリ リファレンス』の「[exit](../c-runtime-library/reference/exit-exit-exit.md)」を参照してください。  
+ 詳細については、次を参照してください。[終了](../c-runtime-library/reference/exit-exit-exit.md)で、*ランタイム ライブラリ リファレンス*です。  
   
-## 参照  
- [プログラムの終了](../Topic/Program%20Termination.md)
+## <a name="see-also"></a>関連項目  
+ [プログラムの終了](../cpp/program-termination.md)

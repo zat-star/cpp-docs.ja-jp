@@ -1,61 +1,78 @@
 ---
-title: "指定子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言指定子"
-  - "宣言, 指定子"
-  - "指定子, 宣言内"
+title: "指定子の使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- declaration specifiers
+- declarations, specifiers
+- specifiers, in declarations
 ms.assetid: 8b14e844-9880-4571-8779-28c8efe44633
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 指定子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: c67ae6ce353ee48635df1b3be6b124344cdd4e91
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-このトピックでは、[宣言](../misc/declarations.md)の *decl\-specifiers* \(宣言指定子\) コンポーネントについて説明します。  
+---
+# <a name="specifiers"></a>指定子
+このトピックの内容について説明します、*子*の (宣言指定子) コンポーネント、[宣言](declarations-and-definitions-cpp.md)です。  
   
  次のプレースホルダーと言語キーワードは宣言指定子です。  
   
- *storage\-class\-specifier*  
+ *ストレージ クラス指定子*  
   
- *type\-specifier*  
+ *型指定子*  
   
- *function\-specifier*  
+ *関数指定子*  
   
  [friend](../cpp/friend-cpp.md)  
   
- [Typedef](http://msdn.microsoft.com/ja-jp/cc96cf26-ba93-4179-951e-695d1f5fdcf1)  
+ [typedef](http://msdn.microsoft.com/en-us/cc96cf26-ba93-4179-951e-695d1f5fdcf1)  
   
- [\_\_declspec](../cpp/declspec.md) `(` *extended\-decl\-modifier\-seq* `)`  
+ [_ _declspec](../cpp/declspec.md) `(` *拡張修飾子 decl seq*`)`  
   
-## 解説  
- 宣言の *decl\-specifiers* 部分は、型名を示すために使用できる最も長い *decl\-specifiers* のシーケンスであり、ポインターや参照修飾子を含みません。  宣言の残りは、導入された名前を含む *declarator* \(宣言子\) です。  
+## <a name="remarks"></a>コメント  
+ *子*宣言の一部が最も長いシーケンスの*子*という意味では、ポインターを含まない型名、または参照修飾子を実行することができます。 宣言の残りの部分は、*宣言子*、導入された名前が含まれます。  
   
- 次の表は、4 つの宣言を一覧表示し、次に各宣言の *decl\-specifers* コンポーネントと *declarator* コンポーネントを別々に一覧表示します。  
+ 次の表の 4 つの宣言を一覧表示し、各宣言の一覧表示*宣言指定子*と*宣言子*コンポーネントとは別にします。  
   
-|宣言|*decl\-specifiers*|`declarator`|  
-|--------|------------------------|------------------|  
+|宣言|*宣言指定子*|`declarator`|  
+|-----------------|------------------------|------------------|  
 |`char *lpszAppName;`|`char`|`*lpszAppName`|  
 |`typedef char * LPSTR;`|`char`|`*LPSTR`|  
 |`const int func1();`|`const int`|`func1`|  
 |`volatile void *pvvObj;`|`volatile void`|`*pvvObj`|  
   
- `signed`、`unsigned`、`long` および `short` はすべて `int` を意味するため、これらのキーワードの 1 つに続く `typedef` 名は *decl\-specifiers* ではなく、*declarator\-list* のメンバーであると見なされます。  
+ `signed`、 `unsigned`、 `long`、および`short`意味すべて`int`、`typedef`名前を次のメンバーであるこれらのキーワードのいずれかが実行*宣言子リスト、* のではありません*子*です。  
   
 > [!NOTE]
->  名前は再宣言できるため、その解釈は、現在のスコープ内の最新の宣言に従います。  再宣言は、名前 \(特に `typedef` 名\) がコンパイラによってどのように解釈されるかに影響を与える可能性があります。  
+>  名前は再宣言できるため、その解釈は、現在のスコープ内の最新の宣言に従います。 再宣言は、名前 (特に `typedef` 名) がコンパイラによってどのように解釈されるかに影響を与える可能性があります。  
   
-## 参照  
- [宣言](../misc/declarations.md)
+## <a name="see-also"></a>関連項目  
+ [宣言と定義](declarations-and-definitions-cpp.md)

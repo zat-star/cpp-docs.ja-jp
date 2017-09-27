@@ -1,40 +1,57 @@
 ---
-title: "リンケージのない名前 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "列挙子 [C++], リンケージ"
-  - "関数パラメーター [C++]"
-  - "関数 [C++], パラメーター"
-  - "名前 [C++], リンケージなし"
-  - "typedef 名, リンケージ"
+title: "リンケージのない名前 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- functions [C++], parameters
+- typedef names, linkage
+- enumerators [C++], linkage
+- names [C++], with no linkage
+- function parameters [C++]
 ms.assetid: 7174c500-12d2-4572-8c16-63c27c758fb1
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# リンケージのない名前
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 161698d01e9cc9aeaac8f2b9bdc491343555880d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="names-with-no-linkage"></a>リンケージのない名前
 リンケージを持たない名前は次のとおりです。  
   
 -   関数パラメーター。  
   
--   `extern` または **static** として宣言されていないブロック スコープの名前。  
+-   ブロック スコープの名前として宣言されていない`extern`または**静的**です。  
   
 -   列挙子。  
   
--   `typedef` ステートメントで宣言されている名前。  例外は、名前のないクラス型に名前を付けるために `typedef` ステートメントが使用されている場合です。  クラスに外部リンケージがある場合、名前に外部リンケージがある場合があります。  次の例は、`typedef` 名に外部リンケージがある状況を示しています。  
+-   `typedef` ステートメントで宣言されている名前。 例外は、名前のないクラス型に名前を付けるために `typedef` ステートメントが使用されている場合です。 クラスに外部リンケージがある場合、名前に外部リンケージがある場合があります。 次の例は、`typedef` 名に外部リンケージがある状況を示しています。  
   
     ```  
     // names_with_no_linkage.cpp  
@@ -51,9 +68,9 @@ caps.handback.revision: 7
     }  
     ```  
   
-     `typedef` 名の `POINT` は、無名構造体のクラス名になります。  その後、外部リンケージで関数を宣言するために使用されます。  
+     `typedef` 名の `POINT` は、無名構造体のクラス名になります。 その後、外部リンケージで関数を宣言するために使用されます。  
   
- `typedef` 名にリンケージがないため、それらの定義は変換単位の間で異なる場合があります。  コンパイルは個別に実行されるため、コンパイラがこれらの相違点を検出する方法はありません。  その結果、この種類のエラーは、リンク時まで検出されません。  次のケースがあるとします。  
+ `typedef` 名にリンケージがないため、それらの定義は変換単位の間で異なる場合があります。 コンパイルは個別に実行されるため、コンパイラがこれらの相違点を検出する方法はありません。 その結果、この種類のエラーは、リンク時まで検出されません。 次のケースがあるとします。  
   
 ```  
 // Translation unit 1  
@@ -71,8 +88,8 @@ extern INT myInt;
   
  前のコードは、リンク時に「未解決の外部」エラーを生成します。  
   
-## 使用例  
- C\+\+ 関数は、ファイル スコープまたはクラス スコープでのみ定義できます。  次の例では、関数を定義する方法と、間違った関数定義を示します。  
+## <a name="example"></a>例  
+ C++ 関数は、ファイル スコープまたはクラス スコープでのみ定義できます。 次の例では、関数を定義する方法と、間違った関数定義を示します。  
   
 ```  
 // function_definitions.cpp  
@@ -111,5 +128,5 @@ void GoodFuncDef( char ch )  // Define GoodFuncDef
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

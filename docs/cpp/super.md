@@ -1,35 +1,52 @@
 ---
-title: "__super | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__super_cpp"
-  - "__super"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__super キーワード [C++]"
+title: "_ _super |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __super_cpp
+- __super
+dev_langs:
+- C++
+helpviewer_keywords:
+- __super keyword [C++]
 ms.assetid: f0957c31-9256-405b-b402-cad182404b5f
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# __super
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 64600f8cf642b0c7906873a73aa4da41897a57f5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="super"></a>__super
+**Microsoft 固有の仕様**  
   
  オーバーライドする関数について、基底クラス実装を呼び出すことを明示できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -39,16 +56,16 @@ member_function
   
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  オーバーロード解決フェーズ時にすべてのアクセス可能な基底クラス メソッドが考慮され、最優先の一致を示す関数が呼び出されます。  
   
  `__super` は、メンバー関数の本体でのみ表示できます。  
   
- `__super` は、using 宣言と共に使用することはできません。  詳細については、「[using 宣言](../cpp/using-declaration.md)」を参照してください。  
+ `__super` は、using 宣言と共に使用することはできません。 参照してください[宣言を使用して](../cpp/using-declaration.md)詳細についてはします。  
   
- コードを挿入する[属性](../windows/cpp-attributes-reference.md)を導入すると、呼び出す必要があるメソッドを含む 1 つ以上の名前がわからない基底クラスがコードに含まれる可能性があります。  
+ 導入に伴い[属性](../windows/cpp-attributes-reference.md)コードを挿入する、コードがわからない場合がありますが、名前に呼び出すメソッドを含む 1 つまたは複数の基底クラスを含めることがあります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // deriv_super.cpp  
@@ -71,7 +88,7 @@ struct D : B1, B2 {
 };  
 ```  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)

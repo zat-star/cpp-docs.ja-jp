@@ -1,46 +1,62 @@
 ---
-title: "while ステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "while_cpp"
-  - "while"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "while キーワード [C++]"
-  - "while キーワード [C++], 構文"
+title: "while ステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- while_cpp
+- while
+dev_langs:
+- C++
+helpviewer_keywords:
+- while keyword [C++]
+- while keyword [C++], syntax
 ms.assetid: 358dbe76-5e5e-4af5-b575-c2293c636899
 caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# while ステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 694852e40699ac7b2663392cb8a4c02218a422a7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-*expression* がゼロになるまで *statement* を繰り返し実行します。  
+---
+# <a name="while-statement-c"></a>while ステートメント (C++)
+実行*ステートメント*まで繰り返し*式*0 に評価します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
       while ( expression )  
-   statement  
+   statement  
 ```  
   
-## 解説  
- *expression* が評価されてからループが実行されるので、`while` ループは 0 回以上実行されます。  *expression* は、整数またはポインター型への明確な変換を使用した整数型、ポインター型、またはクラス型である必要があります。  
+## <a name="remarks"></a>コメント  
+ テスト*式*ループの各実行する前に処理を行うのため、`while`ループは、0 回以上を実行します。 *式*の整数型、ポインター型、または、整数への明確な変換を持つクラス型またはポインター型である必要があります。  
   
- `while` ループは、[break](../cpp/break-statement-cpp.md)、[goto](../cpp/goto-statement-cpp.md)、または [return](../Topic/return%20Statement%20\(C++\).md) がステートメント本体で実行されたときにも終了できます。  `while` ループを終了せずに現在の反復を終了するには、[continue](../cpp/continue-statement-cpp.md) を使用します。  **continue** は `while` ループの次のイテレーションに制御を渡します。  
+ A`while`ループは終了時にも、 [break](../cpp/break-statement-cpp.md)、 [goto](../cpp/goto-statement-cpp.md)、または[返す](../cpp/return-statement-cpp.md)本体の実行ステートメント内で。 使用して[続行](../cpp/continue-statement-cpp.md)を終了せず、現在のイテレーションを終了する、`while`ループします。 **続行**の次のイテレーションに制御を渡します、`while`ループします。  
   
  次のコードは、文字列の末尾のアンダースコアをトリミングするために `while` ループを使用します。  
   
@@ -71,11 +87,11 @@ int main()
 }  
 ```  
   
- 終了条件はループの先頭で評価されます。  末尾のアンダースコアがない場合、ループは実行されません。  
+ 終了条件はループの先頭で評価されます。 末尾のアンダースコアがない場合、ループは実行されません。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [繰り返しステートメント](../cpp/iteration-statements-cpp.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [do\-while ステートメント \(C\+\+\)](../cpp/do-while-statement-cpp.md)   
- [for ステートメント \(C\+\+\)](../cpp/for-statement-cpp.md)   
- [範囲ベースの for ステートメント \(C\+\+\)](../Topic/Range-based%20for%20Statement%20\(C++\).md)
+ [キーワード](../cpp/keywords-cpp.md)   
+ [do-while ステートメント (C++)](../cpp/do-while-statement-cpp.md)   
+ [for ステートメント (C++)](../cpp/for-statement-cpp.md)   
+ [範囲ベースの for ステートメント (C++)](../cpp/range-based-for-statement-cpp.md)
