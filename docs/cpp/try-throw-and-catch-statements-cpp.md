@@ -1,51 +1,67 @@
 ---
-title: "try、throw、および catch ステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "catch_cpp"
-  - "throw"
-  - "try_cpp"
-  - "try"
-  - "throw_cpp"
-  - "catch"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "catch キーワード [C++]"
-  - "キーワード [C++] 例外処理"
-  - "C++ 例外処理、ステートメントの構文"
-  - "try-catch 例外処理は、try-catch キーワード [C++]"
-  - "throw キーワード [C++]"
-  - "try-catch キーワード [C++]"
-  - "try-catch キーワード [C++] 例外処理"
-  - "例外はスローされず、throw キーワード"
-  - "try-catch キーワード [C++]、throw キーワード [C++]"
-  - "C++ 例外処理を実装する例外のスロー"
-  - "スロー (例外を)"
-  - "throw キーワード [C++] throw() および throw (...)"
+title: "try、throw、および catch ステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- catch_cpp
+- throw
+- try_cpp
+- try
+- throw_cpp
+- catch
+dev_langs:
+- C++
+helpviewer_keywords:
+- catch keyword [C++]
+- keywords [C++], exception handling
+- C++ exception handling, statement syntax
+- try-catch keyword [C++], about try-catch exception handling
+- throw keyword [C++]
+- try-catch keyword [C++]
+- try-catch keyword [C++], exception handling
+- throwing exceptions, throw keyword
+- try-catch keyword [C++], throw keyword [C++]s
+- throwing exceptions, implementing C++ exception handling
+- throwing exceptions
+- throw keyword [C++], throw() vs. throw(...)
 ms.assetid: 15e6a87b-b8a5-4032-a7ef-946c644ba12a
 caps.latest.revision: 24
-caps.handback.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# try、throw、および catch ステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 89db418a92239460379d1ea41d2d49a8073095c2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="try-throw-and-catch-statements-c"></a>try、throw、および catch ステートメント (C++)
 C++ で例外処理を実装するには、`try`、`throw`、`catch` の式を使用します。  
   
  まず、`try` ブロックを使用して、例外をスローする可能性がある 1 つ以上のステートメントを囲みます。  
   
- `throw` は、`try` ブロックで例外条件 (多くの場合はエラー) が発生したことを通知するために使用します。 任意の型のオブジェクトを `throw` 式のオペランドとして使用できます。 通常、このオブジェクトを使用してエラーに関する情報を通知します。 使用することお勧めをほとんどの場合、 [std::exception](../standard-library/exception-class1.md) クラスまたは標準ライブラリで定義されている派生クラスのいずれかです。 これらのいずれのクラスも適さない場合は、`std::exception` から派生させた独自の例外クラスを使用することをお勧めします。  
+ `throw` は、`try` ブロックで例外条件 (多くの場合はエラー) が発生したことを通知するために使用します。 任意の型のオブジェクトを `throw` 式のオペランドとして使用できます。 通常、このオブジェクトを使用してエラーに関する情報を通知します。 使用することお勧めをほとんどの場合、 [std::exception](../standard-library/exception-class.md)クラスまたは標準ライブラリで定義されている派生クラスのいずれか。 これらのいずれのクラスも適さない場合は、`std::exception` から派生させた独自の例外クラスを使用することをお勧めします。  
   
  スローされる可能性のある例外を処理するために、1 つ以上の `catch` ブロックを `try` ブロックの直後に実装します。 各 `catch` ブロックには、処理できる例外の型を指定します。  
   
@@ -87,7 +103,7 @@ MyData GetNetworkResource()
 ```  
   
 ## <a name="remarks"></a>コメント  
- `try` 句の後ろのコードは、コードの保護されたコード セクションです。  `throw` 式 *スロー*-つまりを発生させます — 例外です。 `catch` 句の後ろのコード ブロックが例外ハンドラーです。 これは、ハンドラーを *キャッチ* 場合にスローされる例外の型、 `throw` と `catch` 式に互換性があります。 型の一致を制御する規則の一覧については `catch` ブロックを参照してください [方法 Catch ブロックの評価](../Topic/How%20Catch%20Blocks%20are%20Evaluated%20\(C++\).md)します。 `catch` ステートメントで型ではなく省略記号 (...) を指定した場合、`catch` ブロックはいずれの型の例外も処理します。 コンパイルするときに、 [/EHa](../build/reference/eh-exception-handling-model.md) オプション、C 構造化例外とメモリ保護、0 による除算、および浮動小数点の違反などのシステムまたはアプリケーションによって生成される非同期例外が含まれます。 `catch` ブロックは一致する型を検索するプログラムの順序で処理されるため、省略記号を指定したハンドラーは関連付ける `try` ブロックの最後のハンドラーにする必要があります。 `catch(...)` は慎重に使用してください。プログラムの実行が継続されるには、キャッチした特定の例外を処理する方法を catch ブロックに記述する必要があります。 `catch(...)` ブロックは通常、プログラムの実行を停止する前に、エラーを記録して特別なクリーンアップを実行するために使用します。  
+ `try` 句の後ろのコードは、コードの保護されたコード セクションです。 `throw`式*スロー*-を発生させます — 例外。 `catch` 句の後ろのコード ブロックが例外ハンドラーです。 これは、ハンドラーを*キャッチ*場合にスローされる例外内の型、`throw`と`catch`式は互換性があります。 型が一致するかを制御する規則の一覧については`catch`ブロックを参照してください[方法 Catch ブロックの評価](../cpp/how-catch-blocks-are-evaluated-cpp.md)です。 `catch` ステートメントで型ではなく省略記号 (...) を指定した場合、`catch` ブロックはいずれの型の例外も処理します。 コンパイルするとき、 [/EHa](../build/reference/eh-exception-handling-model.md)オプション、C 構造化例外とメモリの保護、0 による除算、および浮動小数点の違反などのシステムまたはアプリケーションによって生成される非同期例外が含まれます. `catch` ブロックは一致する型を検索するプログラムの順序で処理されるため、省略記号を指定したハンドラーは関連付ける `try` ブロックの最後のハンドラーにする必要があります。 `catch(...)` は慎重に使用してください。プログラムの実行が継続されるには、キャッチした特定の例外を処理する方法を catch ブロックに記述する必要があります。 `catch(...)` ブロックは通常、プログラムの実行を停止する前に、エラーを記録して特別なクリーンアップを実行するために使用します。  
   
  オペランドのない `throw` 式は現在処理中の例外を再スローします。 この方法は例外を再スローするときにお勧めします。元の例外のポリモーフィックな型情報が保持されるためです。 このような式は `catch` ハンドラー内か、`catch` ハンドラーから呼び出された関数内でのみ使用する必要があります。 再スローされた例外オブジェクトはコピーではなく元の例外オブジェクトです。  
   
@@ -96,7 +112,7 @@ try {
    throw CSomeOtherException();  
 }  
 catch(...) {  
-   // Catch all exceptions – dangerous!!!  
+   // Catch all exceptions - dangerous!!!  
    // Respond (perhaps only partially) to the exception, then  
    // re-throw to pass the exception to some other handler  
    // ...  

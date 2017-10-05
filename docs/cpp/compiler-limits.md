@@ -1,46 +1,63 @@
 ---
-title: "コンパイラの制限 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cl.exe コンパイラ, 言語構成要素の制限"
+title: "コンパイラの制限 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- cl.exe compiler, limits for language constructs
 ms.assetid: f1fa59c6-55b4-414b-80c5-3df72952160d
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラの制限
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 986a158ea74e56a0e52c1ffff77f83b8ede71ef5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-C\+\+ 標準は、さまざまな言語構成体の制限を勧告しています。  以下は、Visual C\+\+ コンパイラが推奨される制限を実装しない場合のリストです。  最初の数字は ISO C\+\+ 11 標準 \(INCITS\/ISO\/IEC 14882\-2011\[2012\], Annex B\) で規定されている制限であり、2 番目の数字は Visual C\+\+ で実装されている制限です。  
+---
+# <a name="compiler-limits"></a>コンパイラの制限
+C++ 標準は、さまざまな言語構成体の制限を勧告しています。 以下は、Visual C++ コンパイラが推奨される制限を実装しない場合のリストです。 最初の数字は ISO C++ 11 標準 (INCITS/ISO/IEC 14882-2011[2012], Annex B) で規定されている制限であり、2 番目の数字は Visual C++ で実装されている制限です。  
   
--   複合ステートメント、イテレーション制御構造、および選択制御構造の入れ子レベル \[C\+\+ 標準: 256\] \(Visual C\+\+ コンパイラ: 入れ子になっているステートメントの組み合わせに依存しますが、一般的には 100 から 110 の間\)。  
+-   入れ子レベルの複合ステートメント、イテレーション制御構造、および選択制御構造の C++ 標準: 256、Visual C コンパイラ: 入れ子になっているステートメントが一般的に、100 と 110 の間の組み合わせによって決まります。  
   
--   1 つのマクロ定義内のパラメーター \[C\+\+ 標準: 256\] \(Visual C\+\+ コンパイラ: 127\)。  
+-   パラメーターの 1 つのマクロ定義の C++ 標準: 256、Visual C コンパイラ: 127 です。  
   
--   1 つのマクロ呼び出しの引数 \[C\+\+ 標準: 256\] \(Visual C\+\+ コンパイラ: 127\)。  
+-   引数の 1 つのマクロ呼び出しの C++ 標準: 256、Visual C コンパイラ 127 です。  
   
--   文字列リテラルまたはワイド文字列リテラル \(連結後\) の文字数 \[C\+\+ 標準: 65536\] \(Visual C\+\+ コンパイラ: `null` 終端文字を含む 1 バイト文字の場合は 65535、 `null` 終端文字を含む 2 バイト文字の場合は 32767\)。  
+-   文字数では、リテラルまたはワイド文字列リテラルを文字列 (連結後)、C++ 標準: 65536、Visual C コンパイラ: 65535 1 バイト文字を含む文字、`null`終端記号、および 32767 2 バイト文字を含む文字、 `null`ターミネータです。  
   
--   単一の `struct-declaration-list` で入れ子になったクラス、構造体、または共用体の定義のレベル \[C\+\+ 標準: 256\] \(Visual C\+\+ コンパイラ: 16\)。  
+-   入れ子になったクラス、構造体、共用体の定義で、1 つのレベル`struct-declaration-list`の C++ 標準: 256、Visual C コンパイラ: 16。  
   
--   コンストラクター定義内のメンバー初期化子 \[C\+\+ 標準: 6144\] \(Visual C\+\+ コンパイラ: 最低 6144\)。  
+-   メンバーの初期化子コンス トラクターの定義の C++ 標準: 6144、Visual C コンパイラ: 最低 6144 です。  
   
--   1 つの識別子のスコープ修飾 \[C\+\+ 標準: 256\] \(Visual C\+\+ コンパイラ: 127\)。  
+-   スコープ修飾の 1 つの識別子の C++ 標準: 256、Visual C コンパイラ: 127 です。  
   
--   入れ子になった `extern` 指定 \[C\+\+ 標準: 1024\] \(Visual C\+\+ コンパイラ: 9 \(グローバル スコープの暗黙的な `extern` 指定をカウントしません。グローバル スコープの暗黙的な `extern` 指定をカウントする場合は 10\)。  
+-   入れ子になった`extern`仕様の C++ 標準: 1024、Visual C コンパイラ: 9 (暗黙をカウントせず`extern`グローバル スコープ、または 10 の暗黙的なをカウントする場合、仕様`extern`グローバル スコープ内の指定..  
   
--   テンプレート宣言内のテンプレート引数 \[C\+\+ 標準: 1024\] \(Visual C\+\+ コンパイラ: 2046\)。  
+-   テンプレートの宣言では、C++ 標準にテンプレート引数: 1024、Visual C コンパイラ: 2046 です。  
   
-## 参照  
- [非標準動作](../Topic/Nonstandard%20Behavior.md)
+## <a name="see-also"></a>関連項目  
+ [非標準動作](../cpp/nonstandard-behavior.md)

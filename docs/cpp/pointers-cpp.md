@@ -1,35 +1,51 @@
 ---
-title: "ポインター | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言, ポインター"
-  - "宣言子, ポインター"
-  - "ポインター"
-  - "ポインター, 宣言"
+title: "ポインター (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- declarators, pointers
+- declarations, pointers
+- pointers
+- pointers, declarations
 ms.assetid: 595387c5-8e58-4670-848f-344c7caf985e
 caps.latest.revision: 14
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# ポインター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: c164a934f14f7b65c159cf21feb576d0a8bdf36d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="pointers-c"></a>ポインター (C++)
 ポインターは次の順序で宣言します。  
   
 ```  
-[storage-class-specifiers] [cv-qualifiers] type-specifiers   
+[storage-class-specifiers] [cv-qualifiers] type-specifiers   
 [ms-modifier] declarator ;  
 ```  
   
@@ -39,25 +55,25 @@ manager: "ghogen"
 * [cv-qualifiers] identifier [= expression]  
 ```  
   
- 1.  宣言指定子:  
+ 1. 宣言指定子:  
   
--   ストレージ クラスの指定子 \(省略可能\)。  詳細については、「[Specifiers \(指定子\)](../cpp/specifiers.md)」を参照してください。  
+-   ストレージ クラスの指定子 (省略可能)。 詳細については、次を参照してください。[指定子](../cpp/specifiers.md)です。  
   
--   ポイントされるオブジェクトの型に適用する `const` または `volatile` キーワード \(省略可能\)。  
+-   ポイントされるオブジェクトの型に適用する `const` または `volatile` キーワード (省略可能)。  
   
 -   型指定子: ポイントされるオブジェクトの型を表す型の名前。  
   
- 2.  宣言子:  
+ 2. 宣言子:   
   
--   オプションの Microsoft 固有の修飾子。  詳細については、「[Microsoft 固有の修飾子](../Topic/Microsoft-Specific%20Modifiers.md)」を参照してください。  
+-   オプションの Microsoft 固有の修飾子。 詳細については、次を参照してください。 [Microsoft 固有の修飾子](../cpp/microsoft-specific-modifiers.md)です。  
   
 -   `*` 演算子。  
   
--   ポインター自体に適用する `const` または `volatile` キーワード \(省略可能\)。  
+-   ポインター自体に適用する `const` または `volatile` キーワード (省略可能)。  
   
 -   識別子。  
   
--   初期化子 \(省略可能\)。  
+-   初期化子 (省略可能)。  
   
  関数へのポインターの宣言子は次のようになります。  
   
@@ -71,8 +87,6 @@ manager: "ghogen"
 ```  
 * identifier [ [ constant-expression ] ]  
 ```  
-  
--   ただし、ポインター宣言子はより複雑になることがあります。  詳細については、「[宣言子](http://msdn.microsoft.com/ja-jp/8a7b9b51-92bd-4ac0-b3fe-0c4abe771838)」を参照してください。  
   
 -   1 つの宣言内で、宣言指定子の後ろのコンマ区切りリストとして、複数の宣言子とその初期化子をまとめて指定することができます。  
   
@@ -90,7 +104,7 @@ char *pch;
 static unsigned int * const ptr;  
 ```  
   
- 上記の宣言は、`ptr` が、静的ストレージ存続期間を持つ `unsigned` `int` 型のオブジェクトへの定数ポインターであることを指定しています。  
+ 上記の宣言を指定する`ptr`型のオブジェクトへの定数ポインターは、 `unsigned` `int`静的ストレージ存続期間とします。  
   
  次の例は、複数のポインターを宣言および初期化する方法を示しています。  
   
@@ -100,7 +114,7 @@ static int *p = &i, *q = &j;
   
  上記の例では、p ポインターと q ポインターはどちらも `int` 型のオブジェクトをポイントし、それぞれ i と j のアドレスに初期化されます。  ストレージ クラス指定子 `static` は、両方のポインターに適用されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // pointer.cpp  
@@ -176,19 +190,22 @@ int main() {
 }  
 ```  
   
-  **0x0012FEC8**  
-**0x0012FEC8 2**  
-**0x0012FEC8 7**  
-**j is 10**  
-**0x00320850 5**  
-**0x00320850 0**  
-**0x00320854 10**  
-**0x00320858 20**  
-**0x0032085C 30**  
-**0x00320860 40**  
-**dog dog**   
-## 使用例  
- 別の例として、データ構造 \(この場合、リンク リスト\) でのポインターの使用を示します。  
+```Output  
+0x0012FEC8  
+0x0012FEC8 2  
+0x0012FEC8 7  
+j is 10  
+0x00320850 5  
+0x00320850 0  
+0x00320854 10  
+0x00320858 20  
+0x0032085C 30  
+0x00320860 40  
+dog dog  
+```  
+  
+## <a name="example"></a>例  
+ 別の例として、データ構造 (この場合、リンク リスト) でのポインターの使用を示します。  
   
 ```  
 // pointer_linkedlist.cpp  
@@ -248,18 +265,26 @@ int main() {
 }  
 ```  
   
-  **`a 45 d a 789 d q`a \(add node\) d \(display list\) q \(quit\)**  
-**enter a number:**   
-**a \(add node\) d \(display list\) q \(quit\)**  
-**node 1 \= 45**  
-**a \(add node\) d \(display list\) q \(quit\)**  
-**enter a number:**   
-**a \(add node\) d \(display list\) q \(quit\)**  
-**node 1 \= 45**  
-**node 2 \= 789**  
-**a \(add node\) d \(display list\) q \(quit\)**   
-## 参照  
- [C\+\+ Abstract Declarators](http://msdn.microsoft.com/ja-jp/e7e18c18-0cad-4450-942b-d27e1d4dd088)   
- [ポインター型の追加](../misc/addition-of-pointer-types.md)   
- [間接演算子: \*](../cpp/indirection-operator-star.md)   
- [address\-of 演算子: &](../cpp/address-of-operator-amp.md)
+```Output  
+  
+      a  
+45  
+d  
+a  
+789  
+d  
+qa (add node)  d (display list)  q (quit)  
+enter a number:   
+a (add node)  d (display list)  q (quit)  
+node 1 = 45  
+a (add node)  d (display list)  q (quit)  
+enter a number:   
+a (add node)  d (display list)  q (quit)  
+node 1 = 45  
+node 2 = 789  
+a (add node)  d (display list)  q (quit)  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [間接演算子: *](../cpp/indirection-operator-star.md)   
+ [address-of 演算子: &](../cpp/address-of-operator-amp.md)

@@ -1,42 +1,59 @@
 ---
-title: "関数テンプレートの明示的特殊化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "宣言 (関数を), 関数テンプレートの特殊化"
-  - "関数テンプレートの明示的特殊化"
-  - "関数テンプレート, 特殊化"
-  - "オーバーライド, 関数"
-  - "関数テンプレートの特殊化"
+title: "関数テンプレートの明示的特殊化 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- overriding, functions
+- function templates, specialization
+- explicit specialization of function templates
+- declaring functions, specialization of function template
+- specialization of function templates
 ms.assetid: eb0fcb73-eaed-42a1-9b83-14b055a34bf8
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 関数テンプレートの明示的特殊化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
+ms.openlocfilehash: c5caabae41383edbdc92806249026ce8a0daa5d5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-関数テンプレートを使用すると、特定の型のために関数テンプレートの明示的な特殊化 \(オーバーライド\) を提供することによって、その型の特別な動作を定義できます。  次に例を示します。  
+---
+# <a name="explicit-specialization-of-function-templates"></a>関数テンプレートの明示的特殊化
+関数テンプレートを使用すると、特定の型のために関数テンプレートの明示的な特殊化 (オーバーライド) を提供することによって、その型の特別な動作を定義できます。 例:  
   
-```  
+```cpp
 template<> void MySwap(double a, double b);  
 ```  
   
- この宣言によって、**double** の変数用に、別の関数を定義できます。  非テンプレート関数と同様、標準データ型変換 \(変数の **float** 型から **double** への上位変換など\) が適用されます。  
+ この宣言では、別の関数を定義できます。**二重**変数。 などの非テンプレート関数、標準的な型変換 (型の変数を昇格させるなど**float**に**二重**) 適用されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp
 // explicit_specialization.cpp  
 template<class T> void f(T t)  
 {  
@@ -60,5 +77,6 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [関数テンプレート](../cpp/function-templates.md)
+

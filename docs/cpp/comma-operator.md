@@ -1,60 +1,77 @@
 ---
-title: "コンマ演算子: , | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "%2C"
-  - ","
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コンマ演算子"
+title: "コンマ演算子: |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- '%2C'
+- ','
+dev_langs:
+- C++
+helpviewer_keywords:
+- comma operator
 ms.assetid: 38e0238e-19da-42ba-ae62-277bfdab6090
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンマ演算子: ,
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: e5e7af401a0c435931f6952674d97752d2ac7730
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="comma-operator-"></a>コンマ演算子: ,
 1 つのステートメントが期待される場所で 2 つのステートメントをグループ化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 expression , expression  
 ```  
   
-## 解説  
- コンマ演算子の結合規則は、左から右方向です。  コンマで区切られた 2 つの式は左から右に評価されます。  左オペランドは常に評価され、右オペランドが評価される前にすべての副作用が完了します。  
+## <a name="remarks"></a>コメント  
+ コンマ演算子の結合規則は、左から右方向です。 コンマで区切られた 2 つの式は左から右に評価されます。 左オペランドは常に評価され、右オペランドが評価される前にすべての副作用が完了します。  
   
- コンマは、関数の引数リストなどの一部のコンテキストで、区切り記号として使用できます。  区切り記号としてのコンマの使用と演算子としての使用を混同しないでください。この 2 つの用途は、まったく別のものです。  
+ コンマは、関数の引数リストなどの一部のコンテキストで、区切り記号として使用できます。 区切り記号としてのコンマの使用と演算子としての使用を混同しないでください。この 2 つの用途は、まったく別のものです。  
   
  次の式を考えます。  
   
- *e1* , *e2*  
+ *e1* 、 *e2*  
   
- この式の型と値は、*e2* の型と値です。*e1* を評価した結果は破棄されます。  結果は、右オペランドが左辺値の場合は左辺値です。  
+ 値と型には、式の値と型*e2*; の評価結果*e1*は破棄されます。 結果は、右オペランドが左辺値の場合は左辺値です。  
   
- 通常、コンマが区切り記号として使用される場所 \(たとえば、関数の実引数や集約の初期化子\) では、コンマ演算子とそのオペランドをかっこで囲む必要があります。  次に例を示します。  
+ 通常、コンマが区切り記号として使用される場所 (たとえば、関数の実引数や集約の初期化子) では、コンマ演算子とそのオペランドをかっこで囲む必要があります。 例:  
   
 ```  
 func_one( x, y + 2, z );  
 func_two( (x--, y + 2), z );  
 ```  
   
- 前の `func_one` の関数呼び出しでは、`x`、`y + 2`、`z` という 3 つの引数がコンマで区切られて渡されます。  `func_two` の関数呼び出しでは、かっこにより、コンパイラは順次評価演算子として最初のコンマを解釈します。  この関数呼び出しは、`func_two` に 2 つの引数を渡します。  最初の引数は、順次評価演算 `(x--, y + 2)` の結果です。この演算は、式 `y + 2` の値と型を持ち、第 2 の引数は `z` です。  
+ 前の `func_one` の関数呼び出しでは、`x`、`y + 2`、`z` という 3 つの引数がコンマで区切られて渡されます。 `func_two` の関数呼び出しでは、かっこにより、コンパイラは順次評価演算子として最初のコンマを解釈します。 この関数呼び出しは、`func_two` に 2 つの引数を渡します。 最初の引数は、順次評価演算 `(x--, y + 2)` の結果です。この演算は、式 `y + 2` の値と型を持ち、第 2 の引数は `z` です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_comma_operator.cpp  
@@ -69,10 +86,12 @@ int main () {
 }  
 ```  
   
-  **20**  
-**30**   
-## 参照  
+```Output  
+20  
+30  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [二項演算子を含む式](../cpp/expressions-with-binary-operators.md)   
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [順次評価演算子](../c-language/sequential-evaluation-operator.md)

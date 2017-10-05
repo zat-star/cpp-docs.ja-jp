@@ -1,35 +1,52 @@
 ---
-title: "_com_error::Description | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_error.Description"
-  - "_com_error::Description"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Description メソッド"
+title: "_com_error::Description |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_error.Description
+- _com_error::Description
+dev_langs:
+- C++
+helpviewer_keywords:
+- Description method
 ms.assetid: 88191e24-4ee8-44a6-8c4c-3758e22e0548
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_error::Description
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 0d91f6fded1fa1c4ea4d44cadd0d9285913b5f42
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comerrordescription"></a>_com_error::Description
+**Microsoft 固有の仕様**  
   
- **IErrorInfo::GetDescription** 関数を呼び出します。  
+ 呼び出し**ierrorinfo::getdescription**関数。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,13 +54,13 @@ _bstr_t Description( ) const;
   
 ```  
   
-## 戻り値  
- `_com_error` オブジェクト内に記録された **IErrorInfo** オブジェクトに対する **IErrorInfo::GetDescription** の結果を返します。  結果の `BSTR` は `_bstr_t` オブジェクトにカプセル化されます。  **IErrorInfo** が記録されていない場合は、空の `_bstr_t` を返します。  
+## <a name="return-value"></a>戻り値  
+ 結果を返します**ierrorinfo::getdescription**の**IErrorInfo**内オブジェクトに記録された、`_com_error`オブジェクト。 結果の `BSTR` は `_bstr_t` オブジェクトにカプセル化されます。 ない場合は**IErrorInfo**は空白を返しますが、記録`_bstr_t`です。  
   
-## 解説  
- **IErrorInfo::GetDescription** 関数を呼び出し、`_com_error` オブジェクト内で記録された **IErrorInfo** を取得します。  **IErrorInfo::GetDescription** メソッドを呼び出すときの失敗は無視されます。  
+## <a name="remarks"></a>コメント  
+ 呼び出し、 **ierrorinfo::getdescription**関数と取得**IErrorInfo**内に記録された、`_com_error`オブジェクト。 呼び出すときの失敗、 **ierrorinfo::getdescription**メソッドは無視されます。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_error クラス](../cpp/com-error-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_error クラス](../cpp/com-error-class.md)

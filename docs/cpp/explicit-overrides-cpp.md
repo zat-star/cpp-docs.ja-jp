@@ -1,41 +1,57 @@
 ---
-title: "明示的なオーバーライド (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "派生クラス, 仮想関数"
-  - "明示的なオーバーライド (仮想関数の)"
-  - "明示的なオーバーライド (仮想関数の)"
-  - "オーバーライド, 関数"
-  - "仮想関数, 明示的なオーバーライド"
+title: "明示的なオーバーライド (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- virtual functions, explicit overrides
+- overriding, functions
+- derived classes, virtual functions
+- explicit virtual function overrides
+- explicit override of virtual function
 ms.assetid: ee583234-5cda-4e90-b55e-3f9fbf079ced
 caps.latest.revision: 12
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 明示的なオーバーライド (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 9ee79034ca7c74094753094cce29fc4a11b044ff
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="explicit-overrides-c"></a>明示的なオーバーライド (C++)
+**Microsoft 固有の仕様**  
   
- 同じ仮想関数が 2 つ以上の[インターフェイス](../Topic/__interface.md)で宣言され、クラスがこれらのインターフェイスから派生されている場合、各仮想関数を明示的にオーバーライドできます。  
+ 2 つまたは複数の同じ仮想関数が宣言されている[インターフェイス](../cpp/interface.md)し、これらのインターフェイスから派生したクラスは場合、は、各仮想関数を明示的にオーバーライドできます。  
   
- 新しいマネージ構文を使用したマネージ コードの明示的なオーバーライドの詳細については、「[明示的なオーバーライド](../windows/explicit-overrides-cpp-component-extensions.md)」を参照してください。  
+ 新しいマネージ構文を使用してマネージ コードで明示的に情報を上書きするを参照してください。[明示的なオーバーライド](../windows/explicit-overrides-cpp-component-extensions.md)です。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 使用例  
+## <a name="example"></a>例  
  明示的なオーバーライドを使用する方法を次のコード例に示します。  
   
 ```  
@@ -113,17 +129,20 @@ int main() {
   
    // Cast to a CMyClass pointer so that the destructor gets called  
       CMyClass *p = dynamic_cast<CMyClass *>(pIMyInt1);  
-      delete p;  
+      delete p;  
 }  
 ```  
   
-  **In CMyClass::IMyInt1::mf1\(\)**  
-**In CMyClass::IMyInt1::mf1\(int\)**  
-**In CMyClass::IMyInt1::mf2\(\)**  
-**In CMyClass::IMyInt1::mf2\(int\)**  
-**In CMyClass::IMyInt2::mf1\(\)**  
-**In CMyClass::IMyInt2::mf1\(int\)**  
-**In CMyClass::IMyInt2::mf2\(\)**  
-**In CMyClass::IMyInt2::mf2\(int\)**   
-## 参照  
+```Output  
+In CMyClass::IMyInt1::mf1()  
+In CMyClass::IMyInt1::mf1(int)  
+In CMyClass::IMyInt1::mf2()  
+In CMyClass::IMyInt1::mf2(int)  
+In CMyClass::IMyInt2::mf1()  
+In CMyClass::IMyInt2::mf1(int)  
+In CMyClass::IMyInt2::mf2()  
+In CMyClass::IMyInt2::mf2(int)  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [継承](../cpp/inheritance-cpp.md)

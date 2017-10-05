@@ -1,53 +1,69 @@
 ---
-title: "volatile (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "volatile_cpp"
-  - "volatile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "割り込みハンドラーと volatile キーワード"
-  - "オブジェクト [C++], volatile"
-  - "volatile キーワード [C++]"
-  - "volatile オブジェクト"
+title: "volatile (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- volatile_cpp
+- volatile
+dev_langs:
+- C++
+helpviewer_keywords:
+- interrupt handlers and volatile keyword
+- volatile keyword [C++]
+- volatile objects
+- objects [C++], volatile
 ms.assetid: 81db4a85-ed5a-4a2c-9a53-5d07a771d2de
 caps.latest.revision: 43
-caps.handback.revision: 43
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# volatile (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 1bbbceaa8f170ad8c75173d60d38e5dd3df1fbdd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="volatile-c"></a>volatile (C++)
 オブジェクトをハードウェアがプログラム内で変更できることを宣言するために使用できる型修飾子です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 volatile declarator ;  
 ```  
   
-## 解説  
- このキーワードをコンパイラが解釈する方法を変更するために、[\/volatile](../build/reference/volatile-volatile-keyword-interpretation.md) コンパイラ スイッチを使用できます。  
+## <a name="remarks"></a>コメント  
+ 使用することができます、 [/volatile](../build/reference/volatile-volatile-keyword-interpretation.md)コンパイラ スイッチをこのキーワードをコンパイラが解釈する方法を変更します。  
   
- Visual Studio は、ターゲット アーキテクチャに応じて、`volatile` キーワードの解釈を変えます。  ARM の場合、**\/volatile** コンパイラ オプションが指定されないと、コンパイラは **\/volatile:iso** が指定されたかのように動作します。  ARM 以外のアーキテクチャの場合は、**\/volatile** コンパイラ オプションが指定されないと、コンパイラは **\/volatile:ms** が指定されたかのように動作します。そのため、ARM 以外のアーキテクチャでは、複数のスレッド間で共有されるメモリを扱う場合、**\/volatile:iso** を指定し、明示的な同期プリミティブとコンパイラ組み込み関数を使用することを強くお勧めします。  
+ Visual Studio は、ターゲット アーキテクチャに応じて、`volatile` キーワードの解釈を変えます。 Arm、ない場合は**/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として**/volatile:iso**が指定されています。 いない場合、ARM 以外のアーキテクチャの**/volatile**コンパイラ オプションを指定すると、コンパイラは、実行として**/volatile:ms**が指定されましたそのため、アーキテクチャお強く ARM 以外の場合。指定することをお勧め**/volatile:iso**、およびスレッド間で共有されるメモリを扱うときに、明示的な同期プリミティブとコンパイラ組み込み関数を使用します。  
   
  `volatile` 修飾子を使用すると、割り込みハンドラーのような非同期プロセスによって使用されるメモリ位置へのアクセスを提供することができます。  
   
- [\_\_restrict](../cpp/extension-restrict.md) キーワードも持っている変数に対して `volatile` を使用すると、`volatile` が優先されます。  
+ ときに`volatile`も持っている変数で使用される、 [_ _restrict](../cpp/extension-restrict.md)キーワード、`volatile`が優先されます。  
   
- `struct` メンバーが `volatile` としてマークされている場合、`volatile` は構造体全体に反映されます。  構造体に、1 つの命令を使用して現在のアーキテクチャでコピーできる長さがない場合、`volatile` がその構造体で完全に失われることがあります。  
+ `struct` メンバーが `volatile` としてマークされている場合、`volatile` は構造体全体に反映されます。 構造体に、1 つの命令を使用して現在のアーキテクチャでコピーできる長さがない場合、`volatile` がその構造体で完全に失われることがあります。  
   
  次のいずれかの条件が当てはまる場合、`volatile` キーワードはフィールドに対して効果を持ちません。  
   
@@ -59,26 +75,26 @@ volatile declarator ;
   
  値がいつでも変更可能であるため、`volatile` として宣言されるオブジェクトは、特定の最適化では使用されません。  システムは、以前の命令で同じオブジェクトの値が要求されていても、常に volatile オブジェクトの現在の値を、要求されたときに読み取ります。  また、オブジェクトの値は、代入時にすぐに書き込まれます。  
   
-## ISO 準拠 →  
- [C\# volatile](../Topic/volatile%20\(C%23%20Reference\).md) キーワードに慣れていたり、以前のバージョンの Visual C\+\+ `volatile` の動作に慣れていたりする場合は、C\+\+11 ISO 標準の `volatile` キーワードは異なっており、[\/volatile:iso](../build/reference/volatile-volatile-keyword-interpretation.md) コンパイラ オプションが指定された場合に Visual Studio でサポートされることに注意してください。 ARM では、このオプションが既定で指定されています。  C\+\+11 ISO 標準コードの `volatile` キーワードは、ハードウェア アクセスにのみ使用してください。スレッド間通信には使用しないでください。  スレッド間通信には、[C\+\+ 標準テンプレート ライブラリ](../standard-library/cpp-standard-library-reference.md)の [std::atomic\<T\>](../standard-library/atomic.md) などの機構を使用します。  
+## <a name="iso-compliant"></a>ISO 準拠 →  
+ C# volatile キーワード、慣れてまたはの動作に慣れている場合`volatile`以前のバージョンの Visual C では、対応であるを c++ 11 ISO 標準`volatile`キーワードは異なっており、Visual Studio ではサポートされているときに、 [//volatile:iso](../build/reference/volatile-volatile-keyword-interpretation.md)コンパイラ オプションを指定します。 ARM では、このオプションが既定で指定されています。 C++11 ISO 標準コードの `volatile` キーワードは、ハードウェア アクセスにのみ使用してください。スレッド間通信には使用しないでください。 スレッド間通信の場合などのメカニズムを使用して[std::atomic\<T >](../standard-library/atomic.md)から、 [C++ 標準ライブラリ](../standard-library/cpp-standard-library-reference.md)です。  
   
-## END ISO 準拠  
+## <a name="end-of-iso-compliant"></a>END ISO 準拠  
   
-## Microsoft 固有の仕様 →  
- **\/volatile:ms** コンパイラ オプションが使用される場合 \(既定では、ARM 以外のアーキテクチャがターゲットになる場合\)、コンパイラは volatile オブジェクトへの参照の順序と、その他のグローバル オブジェクトへの参照の順序を保持するために、追加のコードを生成します。  特に次の点に注意してください。  
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ ときに、 **/volatile:ms**コンパイラ オプションを使用: ARM 以外のアーキテクチャが対象となる場合、既定では、コンパイラは volatile オブジェクトへの参照の間で順序を維持するために余分なコード生成その他のグローバル オブジェクトへの参照を順序付けです。 特に次の点に注意してください。  
   
--   volatile オブジェクトへの書き込み \(volatile 書き込み\) は、解放セマンティクスを持っています。つまり、命令シーケンスで volatile オブジェクトへの書き込み前に発生するグローバル オブジェクトまたは静的オブジェクトへの参照は、コンパイルされたバイナリでの volatile 書き込みの前に発生します。  
+-   volatile オブジェクトへの書き込み (volatile 書き込み) は、解放セマンティクスを持っています。つまり、命令シーケンスで volatile オブジェクトへの書き込み前に発生するグローバル オブジェクトまたは静的オブジェクトへの参照は、コンパイルされたバイナリでの volatile 書き込みの前に発生します。  
   
--   volatile オブジェクトの読み取り \(volatile 読み取り\) は、取得セマンティクスを持っています。つまり、命令シーケンスで volatile メモリの読み取り後に発生するグローバル オブジェクトまたは静的オブジェクトへの参照は、コンパイルされたバイナリでの volatile 読み取りの後に発生します。  
+-   volatile オブジェクトの読み取り (volatile 読み取り) は、取得セマンティクスを持っています。つまり、命令シーケンスで volatile メモリの読み取り後に発生するグローバル オブジェクトまたは静的オブジェクトへの参照は、コンパイルされたバイナリでの volatile 読み取りの後に発生します。  
   
  これによって、マルチスレッド アプリケーションでのメモリのロックと解放に volatile オブジェクトを使用できるようになります。  
   
 > [!NOTE]
->  **\/volatile:ms** コンパイラ オプションの使用によって提供される強化された保証に依存するコードは、移植不可能です。  
+>  によって提供される強化された保証に依存、 **/volatile:ms**コンパイラ オプションを使用すると、コードを移植します。  
   
-## END Microsoft 固有の仕様  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
  [const](../cpp/const-cpp.md)   
- [const ポインターと volatile ポインター](../Topic/const%20and%20volatile%20Pointers.md)
+ [const ポインターと volatile ポインター](../cpp/const-and-volatile-pointers.md)

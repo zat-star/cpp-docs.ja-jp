@@ -1,36 +1,53 @@
 ---
-title: "_com_error::WCode | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_error.WCode"
-  - "_com_error::WCode"
-  - "WCode"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "WCode メソッド"
+title: "_com_error::wcode |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_error.WCode
+- _com_error::WCode
+- WCode
+dev_langs:
+- C++
+helpviewer_keywords:
+- WCode method
 ms.assetid: f3b21852-f8ea-4e43-bff1-11c2d35454c4
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_error::WCode
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 15c0d860a5faffc160def725630fbbb1d84d8ed8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comerrorwcode"></a>_com_error::WCode
+**Microsoft 固有の仕様**  
   
  カプセル化された `HRESULT` にマップされた 16 ビット エラー コードを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,15 +55,15 @@ WORD WCode ( ) const throw( );
   
 ```  
   
-## 戻り値  
- `HRESULT` が範囲 0x80040200 ～ 0x8004FFFF 内にある場合、**WCode** メソッドは `HRESULT` から 0x80040200 を引いた値を返します。それ以外の場合は、ゼロを返します。  
+## <a name="return-value"></a>戻り値  
+ 場合、`HRESULT`が範囲 0x80040200 を 0x8004FFFF 内に、 **WCode**メソッドを返します、`HRESULT`から; 0x80040200 を引いたそれ以外の場合、ゼロを返します。  
   
-## 解説  
- **WCode** メソッドは、COM サポート コードでのマッピングを元に戻すために使用されます。  **dispinterface** プロパティまたはメソッドのラッパーは、引数をパッケージ化するサポート ルーチンを呼び出し、**IDispatch::Invoke** を呼び出します。  `DISP_E_EXCEPTION` の `HRESULT` エラーが返される場合は、**IDispatch::Invoke** に渡された **EXCEPINFO** 構造体からエラー情報が取得されます。  エラー コードは **EXCEPINFO** 構造体の `wCode` メンバーに格納される 16 ビット値、または **EXCEPINFO** 構造体の **scode** メンバー内の完全な 32 ビット値のいずれかです。  16 ビットの `wCode` が返された場合は、最初に 32 ビットのエラー `HRESULT` にマップする必要があります。  
+## <a name="remarks"></a>コメント  
+ **WCode** COM サポート コードで発生したマッピングを元に戻すメソッドを使用します。 ラッパー、 **dispinterface**プロパティまたはメソッドの呼び出しで引数をパッケージするサポート ルーチンを呼び出すと**idispatch::invoke**です。 関数が戻るとき場合エラー`HRESULT`の`DISP_E_EXCEPTION`からエラー情報を取得、返される、 **EXCEPINFO**に構造体が渡される**idispatch::invoke**です。 エラー コードは、いずれかに格納された 16 ビット値、`wCode`のメンバー、 **EXCEPINFO**構造体またはで完全な 32 ビット値、 **scode**のメンバー、 **EXCEPINFO**構造体。 16 ビットの `wCode` が返された場合は、最初に 32 ビットのエラー `HRESULT` にマップする必要があります。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_error::HRESULTToWCode](../cpp/com-error-hresulttowcode.md)   
- [\_com\_error::WCodeToHRESULT](../Topic/_com_error::WCodeToHRESULT.md)   
- [\_com\_error クラス](../cpp/com-error-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_error::HRESULTToWCode](../cpp/com-error-hresulttowcode.md)   
+ [_com_error::WCodeToHRESULT](../cpp/com-error-wcodetohresult.md)   
+ [_com_error クラス](../cpp/com-error-class.md)

@@ -1,34 +1,50 @@
 ---
-title: "選択ステートメント (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "index-page "
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "選択ステートメント"
-  - "選択ステートメント, 構文"
+title: "選択ステートメント (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: 'index-page '
+dev_langs:
+- C++
+helpviewer_keywords:
+- selection statements, syntax
+- selection statements
 ms.assetid: 2ce662fc-5e62-461b-ac31-2c159d8ef33b
 caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 選択ステートメント (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 1aefe5d9b9e56e1fd88bfc1ecb150b704be7c5c0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-C\+\+ の選択ステートメントである [if](../cpp/if-else-statement-cpp.md) および [switch](../cpp/switch-statement-cpp.md) は、コード セクションを条件付きで実行する手段を提供します。  
+---
+# <a name="selection-statements-c"></a>選択ステートメント (C++)
+C++ の選択ステートメント[場合](../cpp/if-else-statement-cpp.md)と[切り替える](../cpp/switch-statement-cpp.md)コードのセクションを条件付きで実行するための手段を提供します。  
   
- [\_\_if\_exists](../cpp/if-exists-statement.md) および [\_\_if\_not\_exists](../cpp/if-not-exists-statement.md) ステートメントを使用すると、シンボルの有無に応じて条件付きでコードをインクルードできます。  
+ [_ _If_exists](../cpp/if-exists-statement.md)と[_ _if_not_exists](../cpp/if-not-exists-statement.md)ステートメントを使用すると、条件付きで、シンボルの有無によってコードが含まれます。  
   
  各ステートメントの構文については、個々のトピックを参照してください。  
   
-## 参照  
- [C\+\+ ステートメントの概要](../cpp/overview-of-cpp-statements.md)
+## <a name="see-also"></a>関連項目  
+ [C++ ステートメントの概要](../cpp/overview-of-cpp-statements.md)

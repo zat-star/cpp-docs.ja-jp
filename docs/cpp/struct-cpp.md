@@ -1,82 +1,98 @@
 ---
-title: "struct (C++ ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "struct"
-  - "struct_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "静的コンストラクター"
+title: "構造体 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- struct
+- struct_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- struct constructors
 ms.assetid: 3c6ba273-e248-4ff1-8c69-d2abcf1263c6
 caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# struct (C++ )
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 4918adb779a620afd4a0c1e4ef64ef9892de1ba8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="struct-c"></a>struct (C++ )
 `struct` キーワードは構造体型や構造体型の変数の定義に使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-[template-spec] struct [ms-decl-spec] [tag [: base-list ]]  
-{   
-   member-list   
+[template-spec] struct[ms-decl-spec] [tag [: base-list ]]  
+{   
+   member-list   
 } [declarators];  
 [struct] tag declarators;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `template-spec`  
- テンプレートの指定 \(省略可能\)。  詳細については、「[テンプレートの仕様](../Topic/Template%20Specifications.md)」を参照してください。  
+ テンプレートの指定 (省略可能)。 詳細についてを参照してください[テンプレートの仕様](templates-cpp.md)です。  
   
  `struct`  
  `struct` キーワード。  
   
  `ms-decl-spec`  
- ストレージ クラスの指定 \(省略可能\)。  詳細については、「[\_\_declspec](../cpp/declspec.md) キーワード」を参照してください。  
+ ストレージ クラスの指定 (省略可能)。 詳細についてを参照してください、 [_ _declspec](../cpp/declspec.md)キーワード。  
   
  `tag`  
- 構造体に渡す型名。  タグは構造体のスコープ内で予約語になります。  タグは省略できます。  省略した場合、匿名構造体が定義されます。  詳細については、「[匿名クラス型](../cpp/anonymous-class-types.md)」を参照してください。  
+ 構造体に渡す型名。 タグは構造体のスコープ内で予約語になります。 タグは省略できます。 省略した場合、匿名構造体が定義されます。 詳細については、次を参照してください。[匿名クラス型](../cpp/anonymous-class-types.md)です。  
   
  `base-list`  
- この構造体がメンバーを継承するクラスまたは構造体のリスト \(省略可能\)。  詳細については、「[基本クラス](../cpp/base-classes.md)」を参照してください。  各基底クラスまたは構造体の名前の前には、アクセス指定子 \([public](../cpp/public-cpp.md)、[private](../Topic/private%20\(C++\).md)、[protected](../Topic/protected%20\(C++\).md)\) および [virtual](../cpp/virtual-cpp.md) キーワードを付けることができます。  詳細については、「[クラス メンバーへのアクセスの制御](../misc/controlling-access-to-class-members.md)」のメンバー アクセス テーブルを参照してください。  
+ この構造体がメンバーを継承するクラスまたは構造体のリスト (省略可能)。 参照してください[基底クラス](../cpp/base-classes.md)詳細についてはします。 各基底クラスまたは構造体名の前に、アクセス指定子 ([パブリック](../cpp/public-cpp.md)、[プライベート](../cpp/private-cpp.md)、[保護](../cpp/protected-cpp.md)) および[仮想](../cpp/virtual-cpp.md)キーワードです。 メンバー アクセス テーブルを参照してください[クラス メンバーへのアクセスの制御](member-access-control-cpp.md)詳細についてはします。  
   
  `member-list`  
- 構造体のメンバーのリスト。  詳細については、「[クラス メンバーの概要](../Topic/Class%20Member%20Overview.md)」を参照してください。  ここで唯一の違いは、`struct` が `class` の代わりに使用されることです。  
+ 構造体のメンバーのリスト。 参照してください[クラス メンバーの概要](../cpp/class-member-overview.md)詳細についてはします。 ここで唯一の違いは、`struct` が `class` の代わりに使用されることです。  
   
  `declarators`  
- クラスの名前を指定する宣言子リスト。  宣言子リストは構造体型の 1 つ以上のインスタンスを宣言します。  宣言子には、クラスのすべてのデータ メンバーが `public` である場合、初期化子リストを含めてもかまいません。  初期子のリストは構造体では一般的です。構造体のデータ メンバーは既定で `public` であるためです。詳細については、「[宣言の概要](../cpp/overview-of-declarators.md)」を参照してください。  
+ クラスの名前を指定する宣言子リスト。 宣言子リストは構造体型の 1 つ以上のインスタンスを宣言します。 宣言子には、クラスのすべてのデータ メンバーが `public` である場合、初期化子リストが含まれる場合があります。 初期子のリストは構造体では一般的です。構造体のデータ メンバーは既定で `public` であるためです。  参照してください[概要の宣言子](../cpp/overview-of-declarators.md)詳細についてはします。  
   
-## 解説  
- 構造体型はユーザー定義の複合データ型です。  この型は異なる型のフィールドやメンバーで構成されます。  
+## <a name="remarks"></a>コメント  
+ 構造体型はユーザー定義の複合データ型です。 この型は異なる型のフィールドやメンバーで構成されます。  
   
- C\+\+ では、構造体はクラスと同じですが、そのメンバーが既定で `public` である点は異なります。  
+ C++ では、構造体はクラスと同じですが、そのメンバーが既定で `public` である点は異なります。  
   
- マネージ クラスと構造体の詳細については、「[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、マネージ クラスと構造体は、次を参照してください。[クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
-## 構造体の使用  
- C では、構造体を宣言するには、`struct` キーワードの明示的な使用が必要です。  C\+\+ では、型の定義後に `struct` キーワードを使用する必要はありません。  
+## <a name="using-a-structure"></a>構造体の使用  
+ C では、構造体を宣言するには、`struct` キーワードの明示的な使用が必要です。 C++ では、型の定義後に `struct` キーワードを使用する必要はありません。  
   
  右中かっことセミコロンの間に 1 つ以上のコンマ区切りの変数名を挿入することで構造体型を定義している場合は、変数を宣言してもかまいません。  
   
- 構造体の変数は初期化できます。  各変数の初期化は中かっこで囲む必要があります。  
+ 構造体の変数は初期化できます。 各変数の初期化は中かっこで囲む必要があります。  
   
- 関連情報については、「[クラス](../cpp/class-cpp.md)」、「[共用体](../cpp/unions.md)」、「[列挙型](../cpp/enumerations-cpp.md)」を参照してください。  
+ 関連情報については、次を参照してください。[クラス](../cpp/class-cpp.md)、[共用体](../cpp/unions.md)、および[enum](../cpp/enumerations-cpp.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 #include <iostream>  
@@ -115,5 +131,4 @@ int main() {
 // my_cell.character = 1  
 ```  
   
-## 参照  
- [\(NOTINBUILD\) Defining Class Types](http://msdn.microsoft.com/ja-jp/e8c65425-0f3a-4dca-afc2-418c3b1e57da)
+

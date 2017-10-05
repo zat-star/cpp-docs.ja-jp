@@ -1,37 +1,54 @@
 ---
-title: "クラス テンプレートの部分的特殊化 (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス テンプレートの部分的特殊化"
+title: "テンプレートの特殊化 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- partial specialization of class templates
 ms.assetid: f3c67c0b-3875-434a-b8d8-bb47e99cf4f0
 caps.latest.revision: 12
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# クラス テンプレートの部分的特殊化 (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
+ms.openlocfilehash: 6e6cf3d4ad48a50d6f4cdffa81cd4ca330ed33a9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-クラス テンプレートは部分的に特殊化されており、結果として生成されるクラスはテンプレートのままです。  部分的特殊化により、次のような状況で、特定の型に対してテンプレート コードを部分的にカスタマイズできます。  
+---
+# <a name="template-specialization-c"></a>テンプレートの特殊化 (C++)
+
+クラス テンプレートは部分的に特殊化されており、結果として生成されるクラスはテンプレートのままです。 部分的特殊化により、次のような状況で、特定の型に対してテンプレート コードを部分的にカスタマイズできます。  
   
--   テンプレートには複数の型があり、そのうちの一部だけを特殊化する必要があります。  結果は、残りの型でパラメーター化されたテンプレートです。  
+-   テンプレートには複数の型があり、そのうちの一部だけを特殊化する必要があります。 結果は、残りの型でパラメーター化されたテンプレートです。  
   
--   テンプレートには型は 1 つだけですが、特殊化は、ポインター、参照、メンバーへのポインター、または関数ポインターの型に必要です。  特殊化自体は、ポイントまたは参照される型のテンプレートです。  
+-   テンプレートには型は 1 つだけですが、特殊化は、ポインター、参照、メンバーへのポインター、または関数ポインターの型に必要です。 特殊化自体は、ポイントまたは参照される型のテンプレートです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp
 // partial_specialization_of_class_templates.cpp  
 template <class T> struct PTS {  
    enum {  
@@ -72,13 +89,17 @@ int main() {
 }  
 ```  
   
-  **PTS\<S\>::IsPointer \=\= 0 PTS\<S\>::IsPointerToDataMember \=\= 0**  
-**PTS\<S\*\>::IsPointer \=\= 1 PTS\<S\*\>::IsPointerToDataMember \=\=0**  
-**PTS\<int S::\*\>::IsPointer \=\= 0 PTS\<int S::\*\>::IsPointerToDataMember \=\= 1**   
-## 使用例  
- 型 **T** を受け取るテンプレートのコレクション クラスがある場合、ポインター型 **T\*** を受け取る部分的特殊化を作成できます。  次のコードは、コレクション クラス テンプレート `Bag` と、配列にコピーする前にコレクションがポインター型を逆参照するポインター型の部分的特殊化を示します。  次に、コレクションは、指されている値を格納します。  元のテンプレートでは、ポインター自体だけがコレクションに格納され、データは削除や変更の危険性がある状態のままにされます。  コレクションのこの特殊なポインター バージョンでは、`add` メソッドの null ポインターを確認するコードが追加されます。  
-  
+```Output  
+PTS<S>::IsPointer == 0 PTS<S>::IsPointerToDataMember == 0  
+PTS<S*>::IsPointer == 1 PTS<S*>::IsPointerToDataMember ==0  
+PTS<int S::*>::IsPointer == 0 PTS<int S::*>::IsPointerToDataMember == 1  
 ```  
+  
+## <a name="example"></a>例
+
+ 任意の型を受け取るテンプレート コレクション クラスがあるかどうかは**T**、任意のポインター型を受け取る部分的特殊化を作成する**T*** です。 次のコードは、コレクション クラス テンプレート `Bag` と、配列にコピーする前にコレクションがポインター型を逆参照するポインター型の部分的特殊化を示します。 次に、コレクションは、指されている値を格納します。 元のテンプレートでは、ポインター自体だけがコレクションに格納され、データは削除や変更の危険性がある状態のままにされます。 コレクションのこの特殊なポインター バージョンでは、`add` メソッドの null ポインターを確認するコードが追加されます。  
+  
+```cpp
 // partial_specialization_of_class_templates2.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -179,14 +200,18 @@ int main() {
 }  
 ```  
   
-  **10 9 8**   
-**a b c**   
-**Null pointer\!**  
-**3 87 8 100**    
-## 使用例  
- 次の例では、2 つの型のペアを受け取り、型の 1 つが `int` になるように、特殊化されたそのテンプレート クラスの部分的特殊化を定義するテンプレート クラスを定義しています。  特殊化では、整数に基づいて簡単なバブル ソートを実装する追加のソート メソッドを定義します。  
-  
+```Output  
+10 9 8   
+a b c   
+Null pointer!  
+3 87 8 100   
 ```  
+  
+## <a name="example"></a>例
+
+ 次の例では、2 つの型のペアを受け取り、型の 1 つが `int` になるように、特殊化されたそのテンプレート クラスの部分的特殊化を定義するテンプレート クラスを定義しています。 特殊化では、整数に基づいて簡単なバブル ソートを実装する追加のソート メソッドを定義します。  
+  
+```cpp
 // partial_specialization_of_class_templates3.cpp  
 // compile with: /EHsc  
 #include <iostream>  
@@ -315,17 +340,19 @@ int main() {
 }  
 ```  
   
-  **{apple, fruit}**  
-**{banana, fruit}**  
-**{dog, animal}**  
-**{100, apple}**  
-**{101, banana}**  
-**{103, dog}**  
-**{89, cat}**  
-**Sorted list:**  
-**{89, cat}**  
-**{100, apple}**  
-**{101, banana}**  
-**{103, dog}**   
-## 参照  
- [クラス テンプレートの明示的特殊化](../Topic/Explicit%20Specialization%20of%20Class%20Templates.md)
+```Output  
+{apple, fruit}  
+{banana, fruit}  
+{dog, animal}  
+{100, apple}  
+{101, banana}  
+{103, dog}  
+{89, cat}  
+  
+Sorted list:  
+{89, cat}  
+{100, apple}  
+{101, banana}  
+{103, dog}  
+```  
+

@@ -1,34 +1,51 @@
 ---
-title: "__hook | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "__hook_cpp"
-  - "__hook"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__hook キーワード [C++]"
-  - "イベント ハンドラー, 接続 (イベントを)"
+title: "_ _hook |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- __hook_cpp
+- __hook
+dev_langs:
+- C++
+helpviewer_keywords:
+- __hook keyword [C++]
+- event handlers, connecting events to
 ms.assetid: f4cabb10-d293-4c0e-a1d2-4745ef9cc22c
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# __hook
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 21bb75853d8664ad46bc48fc907946ae5a147f9a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="hook"></a>__hook
 ハンドラー メソッドをイベントに関連付けます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -44,70 +61,70 @@ long __hook(
 );  
 ```  
   
-#### パラメーター  
- **&** *SourceClass* `::` *EventMethod*  
+#### <a name="parameters"></a>パラメーター  
+ **&***SourceClass* `::` *EventMethod*  
  イベント ハンドラー メソッドをフックする先のイベント メソッドへのポインター。  
   
--   ネイティブ C\+\+ イベント: *SourceClass* はイベント ソース クラスであり、*EventMethod* はイベントです。  
+-   ネイティブ C++ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
   
--   COM イベント: *SourceClass* はイベント ソース インターフェイスであり、*EventMethod* はメソッドの 1 つです。  
+-   COM イベント: *SourceClass*は、イベント ソース インターフェイスと*EventMethod*はそのメソッドの 1 つです。  
   
--   マネージ イベント: *SourceClass* はイベント ソース クラスであり、*EventMethod* はイベントです。  
+-   マネージ イベント: *SourceClass*は、イベント ソース クラスと*EventMethod*イベントします。  
   
  `interface`  
- [event\_receiver](../windows/event-receiver.md) 属性の *layout\_dependent* パラメーターが **true** である COM イベント レシーバーのみに対して、`receiver` にフックされているインターフェイス名。  
+ 接続されているインターフェイスの名前`receiver`、する COM イベント レシーバーにのみ、 *layout_dependent*のパラメーター、 [event_receiver](../windows/event-receiver.md)属性は**true**.  
   
- *source*  
- イベント ソースのインスタンスへのポインター。  **event\_receiver** に指定された `type` コードに応じて、*source* は次のいずれかになります。  
+ *ソース*  
+ イベント ソースのインスタンスへのポインター。 コードに応じて`type`で指定された**event_receiver**、*ソース*次のいずれかになります。  
   
 -   ネイティブ イベント ソース オブジェクト ポインター。  
   
--   **IUnknown** のベースの COM ポインター \(COM ソース\)。  
+-   **IUnknown**-ベース ポインター (COM ソース)。  
   
--   マネージ オブジェクトのポインター \(マネージ イベントの場合\)。  
+-   マネージ オブジェクトのポインター (マネージ イベントの場合)。  
   
- **&** *ReceiverClass* `::` `HandlerMethod`  
- イベントにフックするイベント ハンドラー メソッドへのポインター。  ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__hook` は、それを呼び出したクラスを使用します。  
+ **&***ReceiverClass* `::``HandlerMethod`  
+ イベントにフックするイベント ハンドラー メソッドへのポインター。 ハンドラーは、クラスのメソッドまたはそれへの参照として指定されます。ユーザーがクラス名を指定しない場合、`__hook` は、それを呼び出したクラスを使用します。  
   
--   ネイティブ C\+\+ イベント: *ReceiverClass* はイベント レシーバー クラスであり、`HandlerMethod` はハンドラーです。  
+-   ネイティブ C++ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
   
--   COM イベント: *ReceiverClass* はイベント レシーバー インターフェイスであり、`HandlerMethod` はハンドラーの 1 つです。  
+-   COM イベント: *ReceiverClass*は、イベント レシーバー インターフェイスと`HandlerMethod`そのハンドラーの 1 つです。  
   
--   マネージ イベント: *ReceiverClass* はイベント レシーバー クラスであり、`HandlerMethod` はハンドラーです。  
+-   マネージ イベント: *ReceiverClass*イベント レシーバー クラスと`HandlerMethod`ハンドラーします。  
   
- `receiver` \(省略可能\)  
- イベント レシーバー クラスのインスタンスへのポインター。  レシーバーを指定しない場合、既定値は `__hook` が呼び出されるレシーバー クラスまたは構造体です。  
+ `receiver`(省略可能)  
+ イベント レシーバー クラスのインスタンスへのポインター。 レシーバーを指定しない場合、既定値は `__hook` が呼び出されるレシーバー クラスまたは構造体です。  
   
-## 使用法  
+## <a name="usage"></a>使用方法  
  イベント レシーバー クラス外の main を含む、任意の関数スコープで使用できます。  
   
-## 解説  
- ハンドラー メソッドをイベント メソッドに関連付けるかフックするには、イベント レシーバー内で組み込み関数 `__hook` を使用します。  ソースで指定されたイベントが発生すると、指定されたハンドラーが呼び出されます。  複数のイベント ハンドラーを 1 つのイベントに、または複数のイベントを 1 つのイベント ハンドラーにフックすることができます。  
+## <a name="remarks"></a>コメント  
+ ハンドラー メソッドをイベント メソッドに関連付けるかフックするには、イベント レシーバー内で組み込み関数 `__hook` を使用します。 ソースで指定されたイベントが発生すると、指定されたハンドラーが呼び出されます。 複数のイベント ハンドラーを 1 つのイベントに、または複数のイベントを 1 つのイベント ハンドラーにフックすることができます。  
   
- `__hook` には 2 つの形式があります。  ほとんどの場合、最初 \(引数が 4 つ\) の形式を使用できます。特に、[event\_receiver](../windows/event-receiver.md) 属性の *layout\_dependent* パラメーターが **false** である COM のイベント レシーバーの場合が該当します。  
+ `__hook` には 2 つの形式があります。 COM のイベント レシーバーを具体的には、ほとんどの場合、最初 (引数が 4 つ) の形式を使用することができます、 *layout_dependent*のパラメーター、 [event_receiver](../windows/event-receiver.md)属性は**false**.  
   
- このような場合、メソッドの 1 つでイベントを発生させる前に、インターフェイスのすべてのメソッドをフックする必要はありません。イベントを処理するメソッドのみフックする必要があります。  `__hook` の 2 番目 \(引数が 2 つ\) の形式は、*layout\_dependent***\=true** となる COM イベント レシーバーにのみ使用できます。  
+ このような場合、メソッドの 1 つでイベントを発生させる前に、インターフェイスのすべてのメソッドをフックする必要はありません。イベントを処理するメソッドのみフックする必要があります。 2 番目 (引数が 2 つ) の形式を使用する`__hook`する COM イベント レシーバーにのみ*layout_dependent***= true**です。  
   
- `__hook` は long 型の値を返します。  ゼロ以外の戻り値は、エラーが発生したことを示します \(マネージ イベントは例外をスローします\)。  
+ `__hook` は long 型の値を返します。 ゼロ以外の戻り値は、エラーが発生したことを示します (マネージ イベントは例外をスローします)。  
   
  コンパイラは、イベントが存在するかどうかをチェックし、イベント プロシージャがデリゲート シグネチャと一致することを確認します。  
   
  COM イベントを除き、`__hook` と `__unhook` は、イベント レシーバーの外部で呼び出すことができます。  
   
- `__hook` の使用の代替手段は、\+\= 演算子を使用することです。  
+ `__hook` の使用の代替手段は、+= 演算子を使用することです。  
   
- 新しい構文でのマネージ イベントのコーディングの詳細については、「[event](../windows/event-cpp-component-extensions.md)」を参照してください。  
+ 新しい構文で管理されているイベントのコーディング方法の詳細については、次を参照してください。[イベント](../windows/event-cpp-component-extensions.md)です。  
   
 > [!NOTE]
 >  テンプレート クラスまたは構造体にイベントを含めることはできません。  
   
-## 使用例  
- 使用例については、「[ネイティブ C\+\+ でのイベント処理](../Topic/Event%20Handling%20in%20Native%20C++.md)」および「[COM でのイベント処理](../cpp/event-handling-in-com.md)」を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[ネイティブ C++ でのイベント処理](../cpp/event-handling-in-native-cpp.md)と[COM でのイベント処理](../cpp/event-handling-in-com.md)サンプルについてはします。  
   
-## 参照  
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [キーワード](../cpp/keywords-cpp.md)   
  [イベント処理](../cpp/event-handling.md)   
- [event\_source](../windows/event-source.md)   
- [event\_receiver](../windows/event-receiver.md)   
- [\_\_unhook](../cpp/unhook.md)   
- [\_\_raise](../cpp/raise.md)
+ [event_source](../windows/event-source.md)   
+ [event_receiver](../windows/event-receiver.md)   
+ [_ _unhook](../cpp/unhook.md)   
+ [__raise](../cpp/raise.md)

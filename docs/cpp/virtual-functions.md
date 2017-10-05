@@ -1,34 +1,51 @@
 ---
-title: "仮想関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "派生クラス, 仮想関数"
-  - "関数 [C++], 仮想関数"
-  - "仮想関数"
+title: "仮想関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- functions [C++], virtual functions
+- derived classes, virtual functions
+- virtual functions
 ms.assetid: b3e1ed88-2a90-4af8-960a-16f47deb3452
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# 仮想関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 9c0607bdc502e8478784c1e9e3a884e0c3d3a537
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-仮想関数は、派生クラスで再定義されるメンバー関数です。  基底クラスへのポインターまたは参照を使用して派生クラス オブジェクトを参照する場合、そのオブジェクトの仮想関数を呼び出して派生クラスのバージョンの関数を実行できます。  
+---
+# <a name="virtual-functions"></a>仮想関数
+仮想関数は、派生クラスで再定義されるメンバー関数です。 基底クラスへのポインターまたは参照を使用して派生クラス オブジェクトを参照する場合、そのオブジェクトの仮想関数を呼び出して派生クラスのバージョンの関数を実行できます。  
   
  仮想関数では、関数の呼び出しに使用する式に関係なく、オブジェクトに対して正しい関数が呼び出されます。  
   
- [virtual](../cpp/virtual-cpp.md) として宣言された関数と、同じ関数を定義する派生クラスが基底クラスに含まれるとします。  派生クラスからの関数は、基底クラスへのポインターまたは参照を使用して呼び出された場合でも、派生クラスのオブジェクトに対して呼び出されます。  次の例は、`PrintBalance` 関数と 2 つの派生クラスの実装を提供する基底クラスを示しています。  
+ 基底クラスにはとして宣言された関数が含まれていますと[仮想](../cpp/virtual-cpp.md)し、派生クラスは、同じ関数を定義します。 派生クラスからの関数は、基底クラスへのポインターまたは参照を使用して呼び出された場合でも、派生クラスのオブジェクトに対して呼び出されます。 次の例は、`PrintBalance` 関数と 2 つの派生クラスの実装を提供する基底クラスを示しています。  
   
 ```  
 // deriv_VirtualFunctions.cpp  
@@ -72,11 +89,11 @@ int main() {
 }  
 ```  
   
- このコードでは、`PrintBalance` への呼び出しは、`pAccount` が指すオブジェクトを除いて同じです。  `PrintBalance` は仮想であるため、各オブジェクトに対して定義された関数のバージョンが呼び出されます。  派生クラス `PrintBalance` と `CheckingAccount` の `SavingsAccount` 関数が、基底クラス `Account` の関数を「オーバーライド」します。  
+ このコードでは、`PrintBalance` への呼び出しは、`pAccount` が指すオブジェクトを除いて同じです。 `PrintBalance` は仮想であるため、各オブジェクトに対して定義された関数のバージョンが呼び出されます。 派生クラス `PrintBalance` と `CheckingAccount` の `SavingsAccount` 関数が、基底クラス `Account` の関数を「オーバーライド」します。  
   
  `PrintBalance` 関数のオーバーライド実装を提供しないクラスが宣言されている場合、基底クラス `Account` の既定の実装が使用されます。  
   
- 派生クラスの関数は、型が同じである場合にのみ、基底クラスの仮想関数をオーバーライドします。  派生クラスの関数は、基底クラスの仮想関数と戻り値の型だけが異なると無効です。引数リストも異なっている必要があります。  
+ 派生クラスの関数は、型が同じである場合にのみ、基底クラスの仮想関数をオーバーライドします。 派生クラスの関数は、基底クラスの仮想関数と戻り値の型だけが異なると無効です。引数リストも異なっている必要があります。  
   
  ポインターまたは参照を使用して関数を呼び出すときは、次の規則が適用されます。  
   
@@ -139,7 +156,7 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 Derived::NameOf  
@@ -148,15 +165,15 @@ Derived::NameOf
 Invoked by Derived  
 ```  
   
- `NameOf` 関数が `Base` へのポインターまたは `Derived` へのポインターを介して呼び出されるかどうかに関係なく、`Derived` に対してこの関数が呼び出されます。  `Derived` が仮想関数であり、`NameOf` と `pBase` の両方が `pDerived` 型のオブジェクトを指すため、`Derived` に対する関数を呼び出します。  
+ `NameOf` 関数が `Base` へのポインターまたは `Derived` へのポインターを介して呼び出されるかどうかに関係なく、`Derived` に対してこの関数が呼び出されます。 `Derived` が仮想関数であり、`NameOf` と `pBase` の両方が `pDerived` 型のオブジェクトを指すため、`Derived` に対する関数を呼び出します。  
   
- 仮想関数はクラス型のオブジェクトに対してのみ呼び出されるため、グローバル関数または静的関数を **virtual** として宣言できません。  
+ 仮想関数が呼び出されるためのクラス型のオブジェクトに対してのみ、としてグローバルまたは静的関数を宣言することはできません**仮想**です。  
   
- **virtual** キーワードは、派生クラスで関数のオーバーライドを宣言するときに使用できますが、不要です。仮想関数のオーバーライドは常に仮想です。  
+ **仮想**キーワードは派生クラスで関数オーバーライドを宣言するときに使用できますが、必要はありません。 仮想関数のオーバーライドが仮想では常にします。  
   
- 基底クラスの仮想関数は、純粋指定子を使用して宣言されていない限り、定義する必要があります   \(純粋仮想関数の詳細については、「[抽象クラス](../cpp/abstract-classes-cpp.md)」を参照してください\)。  
+ 使用して宣言されている場合を除き、基本クラスの仮想関数を定義する必要があります、*純粋指定子*です。 (純粋仮想関数の詳細については、次を参照してください[抽象クラス](../cpp/abstract-classes-cpp.md)。)。  
   
- 仮想関数呼び出し機構は、スコープ解決演算子 \(`::`\) を使用して、明示的に関数名を修飾することで抑制できます。  `Account` クラスに関連する前の例を考えます。  基底クラスの `PrintBalance` を呼び出すには、次のようなコードを使用します。  
+ 仮想関数呼び出し機構は、スコープ解決演算子 (`::`) を使用して、明示的に関数名を修飾することで抑制できます。 `Account` クラスに関連する前の例を考えます。 基底クラスの `PrintBalance` を呼び出すには、次のようなコードを使用します。  
   
 ```  
 CheckingAccount *pChecking = new CheckingAccount( 100.00 );  
@@ -170,5 +187,4 @@ pAccount->Account::PrintBalance();   //  Explicit qualification.
   
  前の例の `PrintBalance` への呼び出しは両方とも、仮想関数呼び出し機構を抑制します。  
   
-## 参照  
- [仮想関数へのアクセス](../misc/access-to-virtual-functions.md)
+

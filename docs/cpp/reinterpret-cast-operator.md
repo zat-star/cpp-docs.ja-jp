@@ -1,46 +1,63 @@
 ---
-title: "reinterpret_cast 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "reinterpret_cast"
-  - "reinterpret_cast_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reinterpret_cast キーワード [C++]"
+title: "reinterpret_cast 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- reinterpret_cast
+- reinterpret_cast_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- reinterpret_cast keyword [C++]
 ms.assetid: eb3283c7-7f88-467e-affd-407d37b46d6c
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# reinterpret_cast 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 71218dc713b24669dc1648b748a0326da0c03152
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-ポインターが他のポインター型に変換されることを許可します。  また、整数型から任意のポインター型への変換およびその逆の変換を許可します。  
+---
+# <a name="reinterpretcast-operator"></a>reinterpret_cast 演算子
+ポインターが他のポインター型に変換されることを許可します。 また、整数型から任意のポインター型への変換およびその逆の変換を許可します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reinterpret_cast < type-id > ( expression )  
 ```  
   
-## 解説  
- `reinterpret_cast` 演算子の誤用により簡単に安全でない状態になります。  必要な変換が本質的に低レベルでない限り、他のキャスト演算子の 1 つを使用する必要があります。  
+## <a name="remarks"></a>コメント  
+ `reinterpret_cast` 演算子の誤用により簡単に安全でない状態になります。 必要な変換が本質的に低レベルでない限り、他のキャスト演算子の 1 つを使用する必要があります。  
   
  `reinterpret_cast` 演算子は、本質的に安全でない `char*` から `int*` へ、`One_class*` から `Unrelated_class*` へなどの変換に使用できます。  
   
- `reinterpret_cast` の結果は、元の型にキャスト バックする場合以外は安全に使用することはできません。  その他の使用方法は、最高でも非ポータブルです。  
+ `reinterpret_cast` の結果は、元の型にキャスト バックする場合以外は安全に使用することはできません。 その他の使用方法は、最高でも非ポータブルです。  
   
- `reinterpret_cast` 演算子は、**const** 属性、`volatile` 属性、または **\_\_unaligned** 属性をキャストできません。  これらの属性の削除については、「[const\_cast 演算子](../Topic/const_cast%20Operator.md)」を参照してください。  
+ `reinterpret_cast`キャストできません演算子、 **const**、 `volatile`、または**_ _unaligned**属性。 参照してください[const_cast 演算子](../cpp/const-cast-operator.md)これらの属性を削除する方法についてです。  
   
  `reinterpret_cast` 演算子は、null ポインター値を変換先の型の null ポインター値に変換します。  
   
@@ -86,8 +103,8 @@ Output:
 64829  
 ```  
   
- `reinterpret_cast` は、ポインターが整数型として処理されることを許可します。  結果は、一意のインデックス \(高レベルの発生確率で一意\) を生成するためにビット シフトされ、XOR されます。  インデックスは、関数の戻り値の型への標準 C 形式のキャストにより切り捨てられます。  
+ `reinterpret_cast` は、ポインターが整数型として処理されることを許可します。 結果は、一意のインデックス (高レベルの発生確率で一意) を生成するためにビット シフトされ、XOR されます。 インデックスは、関数の戻り値の型への標準 C 形式のキャストにより切り捨てられます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [キャスト演算子](../cpp/casting-operators.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+ [キーワード](../cpp/keywords-cpp.md)

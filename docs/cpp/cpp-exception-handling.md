@@ -1,52 +1,68 @@
 ---
-title: "C++ 例外処理 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 例外処理"
-  - "Visual C++, 例外処理"
+title: "C++ 例外処理 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- C++ exception handling
+- Visual C++, exception handling
 ms.assetid: 65f80b44-9d0f-4d17-b910-07205a5c5c40
 caps.latest.revision: 14
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# C++ 例外処理
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 9e23f99ad4c2b2a1129fa318fe6960e1c08df21d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-C\+\+ 言語は、例外のスローおよびキャッチに関する組み込みサポートを提供します。  C\+\+ でプログラミングするときは、通常、このセクションで説明するように、組み込みの C\+\+ 例外サポートを使用する必要があります。  
+---
+# <a name="c-exception-handling"></a>C++ 例外処理
+C++ 言語は、例外のスローおよびキャッチに関する組み込みサポートを提供します。 C++ でプログラミングするときは、通常、このセクションで説明するように、組み込みの C++ 例外サポートを使用する必要があります。  
   
- コードの C\+\+ 例外処理を有効にするには、[\/EHsc](../build/reference/eh-exception-handling-model.md) を使用します。  
+ コードの C++ 例外処理を有効にするには、 [/EHsc](../build/reference/eh-exception-handling-model.md)です。  
   
-## このセクションの内容  
- C\+\+ 例外処理についてのこの説明には、次の事項が含まれます。  
+## <a name="in-this-section"></a>このセクションの内容  
+ C++ 例外処理についてのこの説明には、次の事項が含まれます。  
   
--   [try、catch、および throw ステートメント](../cpp/try-throw-and-catch-statements-cpp.md)  
+-   [Try、catch、および throw ステートメント](../cpp/try-throw-and-catch-statements-cpp.md)  
   
--   [catch ブロックの評価方法](../Topic/How%20Catch%20Blocks%20are%20Evaluated%20\(C++\).md)  
+-   [Catch ブロックの評価方法](../cpp/how-catch-blocks-are-evaluated-cpp.md)  
   
 -   [例外とスタック アンワインド](../cpp/exceptions-and-stack-unwinding-in-cpp.md)  
   
 -   [例外の指定](../cpp/exception-specifications-throw-cpp.md)  
   
--   [noexcept](../Topic/noexcept%20\(C++\).md)  
+-   [noexcept](../cpp/noexcept-cpp.md)  
   
--   [未処理の C\+\+ 例外](../cpp/unhandled-cpp-exceptions.md)  
+-   [未処理の C++ 例外](../cpp/unhandled-cpp-exceptions.md)  
   
--   [C \(構造化\) と C\+\+ の混合例外](../Topic/Mixing%20C%20\(Structured\)%20and%20C++%20Exceptions.md)  
+-   [C (構造化) と C++ の混合例外](../cpp/mixing-c-structured-and-cpp-exceptions.md)  
   
-## MFC の以前のバージョンの例外のサポート  
- バージョン 4.0 の時点で、MFC は C\+\+ 例外処理メカニズムの使用を開始しました。  新しいコードで C\+\+ 例外処理を使用するように推奨されますが、古いコードが壊れないように、MFC のバージョン 4.0 以降では MFC の以前のバージョンのマクロを保持します。  マクロと新しいメカニズムも組み合わせることができます。  マクロと C\+\+ 例外処理を使用する方法と古いコードを変換して新しいメカニズムを使用する方法については、「[例外: MFC マクロと C\+\+ の例外の使用](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md)」および「[例外: MFC 例外マクロからの変換](../mfc/exceptions-converting-from-mfc-exception-macros.md)」を参照してください。  以前の MFC 例外マクロを使用している場合、これは C\+\+ の例外のキーワードに評価されます。  「[例外: Version 3.0 での例外マクロの変更点](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)」を参照してください。  
+## <a name="support-for-earlier-mfc-exceptions"></a>MFC の以前のバージョンの例外のサポート  
+ バージョン 4.0 の時点で、MFC は C++ 例外処理メカニズムの使用を開始しました。 新しいコードで C++ 例外処理を使用するように推奨されますが、古いコードが壊れないように、MFC のバージョン 4.0 以降では MFC の以前のバージョンのマクロを保持します。 マクロと新しいメカニズムも組み合わせることができます。 マクロと C++ 例外処理と新しいメカニズムを使用する古いコードの変換については、記事を参照してください[例外: MFC マクロと C++ 例外](../mfc/exceptions-using-mfc-macros-and-cpp-exceptions.md)と[例外: MFC からの変換。例外処理マクロ](../mfc/exceptions-converting-from-mfc-exception-macros.md)です。 以前の MFC 例外マクロを使用している場合、これは C++ の例外のキーワードに評価されます。 参照してください[例外: Version 3.0 での例外処理マクロを変更](../mfc/exceptions-changes-to-exception-macros-in-version-3-0.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)

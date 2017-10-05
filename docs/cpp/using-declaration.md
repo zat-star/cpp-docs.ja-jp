@@ -1,46 +1,74 @@
 ---
-title: "using 宣言 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "using 宣言"
-  - "名前空間の宣言、名前空間で修飾されていない名前"
-  - "宣言 [C++]、using 宣言"
-  - "名前空間 [C++]、修飾されていない名前"
-  - "using キーワード [C++]"
-  - "宣言 [C++]、名前空間"
+title: "using 宣言 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- using declaration
+- declaring namespaces, unqualified names in namespaces
+- declarations [C++], using-declaration
+- namespaces [C++], unqualified names in
+- using keyword [C++]
+- declarations [C++], namespaces
 ms.assetid: 4184e2b1-3adc-408e-b5f3-0b3f8b554723
 caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# using 宣言
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- ru-ru
+- zh-cn
+- zh-tw
+translation.priority.mt:
+- cs-cz
+- pl-pl
+- pt-br
+- tr-tr
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: c55abac758c636bce596b0613e0ad5671fc9c430
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`using` 宣言を使用すると、 `using` 宣言があるスコープ内に名前を定義できます。  
+---
+# <a name="using-declaration"></a>using 宣言
+あるスコープ内で名前の宣言を使用して、using 宣言が表示されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      using [typename][::] nested-name-specifier unqualified-id  
-using :: unqualified-id  
+using [typename] nested-name-specifier unqualified-id ;  
+using declarator-list ;  
 ```  
   
-## 解説  
- その名前は、他の場所で宣言されたエンティティのシノニムになります。  特定の名前空間から個々の名前を[明示的な修飾](../misc/explicit-qualification.md)なしで使用できるようになります。  これは、名前空間内のすべての名前を修飾なしで使用できるようにする `using` ディレクティブとは対照的です。  詳細については、「[using ディレクティブ](../misc/using-directive-cpp.md)」を参照してください。  このキーワードは[型のエイリアス](../cpp/aliases-and-typedefs-cpp.md)にも使用されます。  
+### <a name="parameters"></a>パラメーター
   
-## 使用例  
+*入れ子になった名前の指定子*  
+    一連の名前空間、クラス、または列挙の名前、スコープ解決演算子 (:)、スコープ解決演算子で終了します。 1 つのスコープ解決演算子は、グローバル名前空間から名前を導入するために可能性があります。 キーワード`typename`は省略可能であり、基底クラスからクラス テンプレートに導入されたときに依存する名前を解決するのには使用できます。  
+  
+*非修飾 id*  
+    修飾されていない id の式、識別子、オーバー ロードされた演算子名、ユーザー定義リテラル演算子または変換関数名、クラスのデストラクター名、またはテンプレートの名前と引数リストがあります。  
+  
+*宣言子リスト*  
+    コンマ区切りの一覧 [`typename`]*入れ子になった名前の指定子**修飾されていない id*省略記号を必要に応じて続けて宣言子を指定します。
+    
+## <a name="remarks"></a>コメント  
+A、エンティティのシノニムとして、非修飾名を導入宣言を使用して別の場所を宣言します。 これにより、単一の名前が表示される宣言領域内の明示的な修飾しないで使用する特定の名前空間からできます。 これは、対照的に、[ディレクティブを使用して](../cpp/namespaces-cpp.md#using_directives)、これにより、*すべて*修飾しないで使用する名前空間内の名前。 `using`キーワードも使用[エイリアスを入力](../cpp/aliases-and-typedefs-cpp.md)です。  
+  
+## <a name="example"></a>例  
  using 宣言は、クラス定義で使用できます。  
   
 ```cpp  
@@ -59,16 +87,16 @@ public:
   
 class D : B {  
 public:  
-   using B::f;  
-   using B::g;  
+   using B::f;    // B::f(char) is now visible as D::f(char)  
+   using B::g;    // B::g(char) is now visible as D::g(char)  
    void f(int) {  
       printf_s("In D::f()\n");  
-      f('c');  
+      f('c');     // Invokes B::f(char) instead of recursing  
    }  
   
    void g(int) {  
       printf_s("In D::g()\n");  
-      g('c');  
+      g('c');     // Invokes B::g(char) instead of recursing  
    }  
 };  
   
@@ -79,11 +107,14 @@ int main() {
 }  
 ```  
   
-  **In D::f\(\)**  
-**In B::f\(\)**  
-**In B::g\(\)**   
-## 使用例  
- メンバーの宣言に使用する場合、using 宣言は基底クラスのメンバーを参照する必要があります。  
+```Output  
+In D::f()  
+In B::f()  
+In B::g()  
+```  
+  
+## <a name="example"></a>例  
+メンバーの宣言に使用する場合、using 宣言は基底クラスのメンバーを参照する必要があります。  
   
 ```cpp  
 // using_declaration2.cpp  
@@ -117,9 +148,12 @@ int main() {
 }  
 ```  
   
-  **In B::f\(\)**   
-## 使用例  
- using 宣言で宣言されたメンバーは明示的な修飾で参照できます。  `::` プレフィックスは、グローバル名前空間を参照します。  
+```Output  
+In B::f()  
+```  
+  
+## <a name="example"></a>例  
+使用して、使用して宣言されたメンバーの宣言は、明示的な修飾を使用して参照できます。 `::` プレフィックスは、グローバル名前空間を参照します。  
   
 ```cpp  
 // using_declaration3.cpp  
@@ -136,8 +170,8 @@ namespace A {
 }  
   
 namespace X {  
-   using ::f;   // global f  
-   using A::g;   // A's g  
+   using ::f;   // global f is also visible as X::f  
+   using A::g;   // A's g is now visible as X::g 
 }  
   
 void h() {  
@@ -151,13 +185,16 @@ int main() {
 }  
 ```  
   
-  **In h**  
-**In f**  
-**In A::g**   
-## 使用例  
- using 宣言を行うと、宣言によって作成されるシノニムは、using 宣言の時点で有効である定義のみを参照します。  using 宣言の後で名前空間に追加される定義は、無効なシノニムです。  
+```Output  
+In h  
+In f  
+In A::g  
+```  
   
- using 宣言で定義された名前は元の名前のエイリアスです。  using 宣言は元の宣言の型、リンケージ、またはその他の属性には影響しません。  
+## <a name="example"></a>例  
+using 宣言を行うと、宣言によって作成されるシノニムは、using 宣言の時点で有効である定義のみを参照します。 using 宣言の後で名前空間に追加される定義は、無効なシノニムです。  
+  
+によって定義された名前、`using`宣言は元の名前のエイリアスです。 using 宣言は元の宣言の型、リンケージ、またはその他の属性には影響しません。  
   
 ```cpp  
 // post_declaration_namespace_additions.cpp  
@@ -182,8 +219,8 @@ void b() {
 }  
 ```  
   
-## 使用例  
- 名前空間内の関数では、1 つの名前のローカル宣言と using 宣言が同じスコープ内にある場合、それらはすべて同じエンティティ、つまり関数を参照している必要があります。  
+## <a name="example"></a>例  
+名前空間内の関数では、1 つの名前のローカル宣言と using 宣言が同じスコープ内にある場合、それらはすべて同じエンティティ、つまり関数を参照している必要があります。  
   
 ```cpp  
 // functions_in_namespaces1.cpp  
@@ -202,10 +239,10 @@ void g() {
 }  
 ```  
   
- この例では、`using B::i` ステートメントにより、2 つ目の `int i` が `g()` 関数で宣言されます。  `B::f` 内に定義された関数名に異なるパラメーター型があるため、`using B::f` ステートメントと `f(char)` 関数は競合しません。  
+ この例では、`using B::i` ステートメントにより、2 つ目の `int i` が `g()` 関数で宣言されます。 `using B::f` 内に定義された関数名に異なるパラメーター型があるため、`f(char)` ステートメントと `B::f` 関数は競合しません。  
   
-## 使用例  
- ローカル関数宣言は、using 宣言で定義された関数と同じ名前および型を含むことはできません。  たとえば、次のようになります。  
+## <a name="example"></a>例  
+ ローカル関数宣言は、using 宣言で定義された関数と同じ名前および型を含むことはできません。 例:  
   
 ```cpp  
 // functions_in_namespaces2.cpp  
@@ -230,7 +267,7 @@ void h() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  継承では、using 宣言で基底クラスの名前を派生クラスのスコープ内に定義すると、派生クラスのメンバー関数によって、基底クラスで同じ名前と引数の型を持つ仮想メンバー関数がオーバーライドされます。  
   
 ```cpp  
@@ -268,9 +305,9 @@ struct D : B {
 };  
   
 void f(D* pd) {  
-   pd->f(1);   // calls D::f(int)  
+   pd->f(1);     // calls D::f(int)  
    pd->f('a');   // calls B::f(char)  
-   pd->g(1);   // calls B::g(int)  
+   pd->g(1);     // calls B::g(int)  
    pd->g('a');   // calls D::g(char)  
 }  
   
@@ -280,14 +317,17 @@ int main() {
 }  
 ```  
   
-  **In D::f\(int\)**  
-**In B::f\(char\)**  
-**In B::g**  
-**In D::g\(char\)**   
-## 使用例  
- using 宣言で定義された名前のすべてのインスタンスはアクセス可能である必要があります。  特に、派生クラスが基底クラスのメンバーにアクセスするために using 宣言を使用する場合は、そのメンバー名がアクセス可能である必要があります。  名前がオーバーロードされたメンバー関数の名前である場合、その名前のすべての関数にアクセス可能である必要があります。  
+```Output  
+In D::f(int)  
+In B::f(char)  
+In B::g  
+In D::g(char)  
+```  
   
- メンバーのアクセシビリティの詳細については、「[メンバー アクセス コントロール](../cpp/member-access-control-cpp.md)」を参照してください。  
+## <a name="example"></a>例  
+using 宣言で定義された名前のすべてのインスタンスはアクセス可能である必要があります。 特に、派生クラスが基底クラスのメンバーにアクセスするために using 宣言を使用する場合は、そのメンバー名がアクセス可能である必要があります。 名前がオーバーロードされたメンバー関数の名前である場合、その名前のすべての関数にアクセス可能である必要があります。  
+  
+メンバーのアクセシビリティの詳細については、次を参照してください。[メンバー アクセス コントロール](../cpp/member-access-control-cpp.md)です。  
   
 ```cpp  
 // using_declaration_inheritance2.cpp  
@@ -308,6 +348,6 @@ public:
 };  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [名前空間](../cpp/namespaces-cpp.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+ [キーワード](../cpp/keywords-cpp.md)

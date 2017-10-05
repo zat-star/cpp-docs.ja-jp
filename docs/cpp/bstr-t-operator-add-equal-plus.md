@@ -1,37 +1,53 @@
 ---
-title: "_bstr_t::operator +=、+ | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_bstr_t::operator+"
-  - "_bstr_t::operator+="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "+ 演算子, _bstr_t オブジェクト"
-  - "+= 演算子, 追加 (文字列を)"
+title: "_bstr_t::operator + =、+ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _bstr_t::operator+
+- _bstr_t::operator+=
+dev_langs:
+- C++
+helpviewer_keywords:
+- += operator, appending strings
+- + operator, _bstr_t objects
 ms.assetid: d28316ce-c2c8-4a38-bdb3-44fa4e582c44
 caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# _bstr_t::operator +=、+
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 0ba8936df56359523a76992866642521f899af69
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="bstrtoperator--"></a>_bstr_t::operator +=、+
+**Microsoft 固有の仕様**  
   
  `_bstr_t` オブジェクトの末尾に文字を追加するか、2 つの文字列を連結します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -51,7 +67,7 @@ friend _bstr_t operator+(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *s1*  
  `_bstr_t` オブジェクト。  
   
@@ -61,18 +77,18 @@ friend _bstr_t operator+(
  `s3`  
  Unicode 文字列。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  これらの演算子は文字列連結を実行します。  
   
--   **operator\+\=\(**  *s1*  **\)** このオブジェクトのカプセル化された `BSTR` の末尾に、*s1* のカプセル化された `BSTR` の文字を追加します。  
+-   **演算子 + = (***s1***)**でカプセル化された文字を追加`BSTR`の*s1*このオブジェクトのカプセル化されたの末尾に`BSTR`.      
   
--   **operator\+\(**  *s1*  **\)** このオブジェクトの `BSTR` を *s1* に連結することによって作成される、新しい `_bstr_t` を返します。  
+-   **operator + (***s1***)**新しいを返します`_bstr_t`は、このオブジェクトを連結して形成される`BSTR`の*s1*です。      
   
--   **operator\+\(**  *s2*  **&#124;**  *s1*  **\)** Unicode に変換されたマルチバイト文字列 *s2* を *s1* 内にカプセル化された `BSTR` と連結することによって作成される、新しい `_bstr_t` を返します。  
+-   **operator + (***s2***&#124;***s1***)**新しいを返します`_bstr_t`マルチバイト文字列の連結によって形成される*s2*を Unicode に変換された、使用、 `BSTR`内のカプセル化された*s1*です。          
   
--   **operator\+\(**  `s3` **,**  *s1*  **\)** *s1* にカプセル化された `BSTR` に Unicode 文字列 `s3` を連結することによって作成される、新しい `_bstr_t` を返します。  
+-   **operator + (** `s3` **、***s1***)**新しいを返します`_bstr_t`Unicode 文字列を連結して形成する`s3``BSTR`にカプセル化された*s1*です。        
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_bstr\_t クラス](../cpp/bstr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_bstr_t クラス](../cpp/bstr-t-class.md)

@@ -1,35 +1,52 @@
 ---
-title: "クラス スコープを持つ名前にあるリンケージ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クラス名 [C++], リンケージ"
-  - "クラス スコープ [C++], リンケージ (名前の中)"
-  - "クラス [C++], 名前"
-  - "クラス [C++], スコープ"
-  - "外部リンケージ, スコープ リンケージの規則"
-  - "リンケージ [C++], スコープ リンケージの規則"
-  - "名前 [C++], スコープ リンケージの規則"
-  - "スコープ [C++], クラス名"
-  - "スコープ [C++], リンケージの規則"
+title: "クラスのスコープを持つ名前にあるリンケージ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- scope [C++], linkage rules
+- linkage [C++], scope linkage rules
+- names [C++], scope linkage rules
+- classes [C++], scope
+- external linkage, scope linkage rules
+- class names [C++], linkage
+- classes [C++], names
+- scope [C++], class names
+- class scope [C++], linkage in names with
 ms.assetid: 45275ff3-6e94-4967-82c8-ba540ef4da28
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# クラス スコープを持つ名前にあるリンケージ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 37a0dcca1da0ae56a8144adf862eda89bfb1c4d6
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="linkage-in-names-with-class-scope"></a>クラス スコープを持つ名前にあるリンケージ
 クラス スコープの名前には、次のリンケージ規則が適用されます。  
   
 -   静的クラス メンバーは外部リンケージを持ちます。  
@@ -38,11 +55,11 @@ caps.handback.revision: 8
   
 -   列挙子と `typedef` 名はリンケージを持ちません。  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
--   `friend` 関数として宣言された関数には、外部リンケージが必要です。  静的関数を `friend` として宣言すると、エラーが発生します。  
+-   `friend` 関数として宣言された関数には、外部リンケージが必要です。 静的関数を `friend` として宣言すると、エラーが発生します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)

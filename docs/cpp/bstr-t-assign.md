@@ -1,34 +1,51 @@
 ---
-title: "_bstr_t::Assign | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_bstr_t::Assign"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Assign メソッド"
+title: "_bstr_t::assign |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _bstr_t::Assign
+dev_langs:
+- C++
+helpviewer_keywords:
+- Assign method
 ms.assetid: 2e209bbe-77ca-4598-86d5-6c2ea213f43c
 caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# _bstr_t::Assign
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 11bbf30deb45e33bbc52354b3b1b03ac26e8a4ae
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="bstrtassign"></a>_bstr_t::Assign
+**Microsoft 固有の仕様**  
   
- `BSTR` を **\_**`bstr_t` でラップされた `BSTR` にコピーします。  
+ コピー、`BSTR`に、`BSTR`によってラップされた、 **_**`bstr_t`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void Assign(  
@@ -36,14 +53,14 @@ void Assign(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `s`  
- `_bstr_t` でラップされた `BSTR` にコピーする `BSTR`。  
+ `BSTR` でラップされた `BSTR` にコピーする `_bstr_t`。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `Assign` はバイナリ コピーを実行します。つまり、内容に関係なく `BSTR` の全長がコピーされます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // _bstr_t_Assign.cpp  
@@ -104,16 +121,19 @@ int main()
 }  
 ```  
   
-  **bstrWrapper \= some text**  
-**bstrWrapper \= \(null\)**  
-**bstr \= some text**  
-**bstrWrapper \= SysAllocedString**  
-**bstrWrapper \= some text**  
-**bstrWrapper \= Yet another string**  
-**bstrWrapper2 \= some text**  
-**bstrWrapper \= changing BSTR**  
-**bstrWrapper2 \= some text**   
-## END Microsoft 固有の仕様  
+```Output  
+bstrWrapper = some text  
+bstrWrapper = (null)  
+bstr = some text  
+bstrWrapper = SysAllocedString  
+bstrWrapper = some text  
+bstrWrapper = Yet another string  
+bstrWrapper2 = some text  
+bstrWrapper = changing BSTR  
+bstrWrapper2 = some text  
+```  
   
-## 参照  
- [\_bstr\_t クラス](../cpp/bstr-t-class.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>関連項目  
+ [_bstr_t クラス](../cpp/bstr-t-class.md)

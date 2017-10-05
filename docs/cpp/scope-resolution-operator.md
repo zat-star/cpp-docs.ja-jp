@@ -1,44 +1,65 @@
 ---
-title: "スコープ解決演算子: :: | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "::"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ":: 演算子"
-  - "演算子 [C++], スコープ解決"
-  - "スコープ解決演算子"
-  - "スコープ, スコープ解決演算子"
+title: "スコープ解決演算子::: |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- '::'
+dev_langs:
+- C++
+helpviewer_keywords:
+- scope, scope resolution operator
+- operators [C++], scope resolution
+- scope resolution operator
+- ':: operator'
 ms.assetid: fd5de9d3-c716-4e12-bae9-03a16fd79a50
 caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# スコープ解決演算子: ::
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 715eb7c5e004d7e0731ef599e54beb5fc6690e50
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-スコープ解決演算子 `::` は異なるスコープで使用される識別子を特定し、あいまいさを解消するために使用されます。  スコープの詳細については、「[スコープ](../cpp/scope-visual-cpp.md)」を参照してください。  
+---
+# <a name="scope-resolution-operator-"></a>スコープ解決演算子: ::
+スコープ解決演算子 `::` は異なるスコープで使用される識別子を特定し、あいまいさを解消するために使用されます。 スコープの詳細については、次を参照してください。[スコープ](../cpp/scope-visual-cpp.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-:: identifier class-name :: identifier namespace :: identifier enum class :: identifier enum struct :: identifier  
+:: identifier  
+class-name :: identifier  
+namespace :: identifier  
+enum class :: identifier  
+enum struct :: identifier  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `identifier` は変数、関数、または列挙値になることがあります。  
   
-## クラスと名前空間の使用  
+## <a name="with-classes-and-namespaces"></a>クラスと名前空間の使用  
  次の例は、スコープ解決演算子を名前空間およびクラスと共に使用する方法を示します。  
   
 ```cpp  
@@ -85,7 +106,7 @@ int main() {
 }  
 ```  
   
- スコープ解決演算子は、名前空間のメンバーの特定、または using ディレクティブでメンバーの名前空間をノミネートする名前空間の特定に使用できます。  下の例では、名前空間 `NamespaceB` で `ClassB` が宣言されていた場合でも、`NamespaceC` を使用して `ClassB` を修飾できます。これは、`NamespaceB` が using ディレクティブにより `NamespaceC` でノミネートされているからです。  
+ スコープ解決演算子は、名前空間のメンバーの特定、または using ディレクティブでメンバーの名前空間をノミネートする名前空間の特定に使用できます。 下の例では、名前空間 `NamespaceC` で `ClassB` が宣言されていた場合でも、`ClassB` を使用して `NamespaceB` を修飾できます。これは、`NamespaceB` が using ディレクティブにより `NamespaceC` でノミネートされているからです。  
   
 ```cpp  
 namespace NamespaceB {  
@@ -109,7 +130,7 @@ int main() {
   
 ```  
   
- スコープ解決演算子のチェーンを使用できます。  次の例で、`NamespaceD::NamespaceD1` は入れ子になった名前空間 `NamespaceD1` を特定し、`NamespaceE::ClassE::ClassE1` は入れ子になったクラス `ClassE1` を特定します。  
+ スコープ解決演算子のチェーンを使用できます。 次の例で、`NamespaceD::NamespaceD1` は入れ子になった名前空間 `NamespaceD1` を特定し、`NamespaceE::ClassE::ClassE1` は入れ子になったクラス `ClassE1` を特定します。  
   
 ```cpp  
 namespace NamespaceD{  
@@ -137,7 +158,7 @@ int main() {
   
 ```  
   
-## 静的メンバーの使用  
+## <a name="with-static-members"></a>静的メンバーの使用  
  スコープ解決演算子を使用してクラスの静的メンバーを呼び出すことができます。  
   
 ```cpp  
@@ -157,8 +178,8 @@ int main() {
   
 ```  
   
-## スコープを持つ列挙型の使用  
- 次の例のように、スコープ解決演算子をスコープを持つ列挙型[列挙体の宣言](../cpp/enumerations-cpp.md)の値と共に使用することもできます。  
+## <a name="with-scoped-enumerations"></a>スコープを持つ列挙型の使用  
+ スコープ列挙の値を持つ、スコープ解決演算子を使用しても[列挙体の宣言](../cpp/enumerations-cpp.md)、次の例のようにします。  
   
 ```cpp  
 enum class EnumA{  
@@ -174,7 +195,6 @@ int main() {
   
 ```  
   
-## 参照  
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+## <a name="see-also"></a>関連項目  
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [名前空間](../cpp/namespaces-cpp.md)   
- [名前と修飾名](../misc/names-and-qualified-names.md)

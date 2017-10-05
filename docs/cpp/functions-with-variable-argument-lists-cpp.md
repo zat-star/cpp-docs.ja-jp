@@ -1,51 +1,67 @@
 ---
-title: "可変個の引数リストを取る関数 (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "引数リスト [C++], 可変数の"
-  - "引数 [C++], 可変数の"
-  - "宣言子, 関数"
-  - "宣言 (関数を), 変数"
-  - "関数呼び出し, 可変数の引数"
-  - "可変個引数リスト"
+title: "可変個引数リスト (C++) を持つ関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- arguments [C++], variable number of
+- variable argument lists
+- declarators, functions
+- argument lists [C++], variable number of
+- declaring functions, variables
+- function calls, variable number of arguments
 ms.assetid: 27c2f83a-21dd-44c6-913c-2834cb944703
 caps.latest.revision: 16
-caps.handback.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 可変個の引数リストを取る関数 (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: e7a1f434b9c286bfa625d703023080f55586f0a8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-最後のメンバーが省略記号 \(...\) である関数宣言は、可変数の引数を受け取ることができます。  このような場合、C\+\+ は、明示的に宣言された引数に対してのみ型チェックを行います。  引数の数や型も変わるほどの汎用関数を作成する必要がある場合は、可変個引数リストを使用できます。  ファミリの関数は、可変個引数リストを使用する関数の例です。`printf`*argument\-declaration\-list*  
+---
+# <a name="functions-with-variable-argument-lists--c"></a>リストに可変個引数関数 (C++)
+最後のメンバーが省略記号 (...) である関数宣言は、可変数の引数を受け取ることができます。 このような場合、C++ は、明示的に宣言された引数に対してのみ型チェックを行います。 引数の数や型も変わるほどの汎用関数を作成する必要がある場合は、可変個引数リストを使用できます。 ファミリの関数は、可変個引数リストを使用する関数の例です。`printf`*引数宣言リスト*  
   
-## 可変個の引数を取る関数  
+## <a name="functions-with-variable-arguments"></a>可変個の引数を取る関数  
  宣言した後の引数にアクセスするには、以下に示すように、標準インクルード ファイル STDARG.H に含まれているマクロを使用します。  
   
- **Microsoft 固有の仕様 →**  
+ **Microsoft 固有の仕様**  
   
- Microsoft C\+\+ では、省略記号が最後の引数であり、省略記号の前にコンマにある場合、省略記号を引数として指定できます。  したがって、宣言 `int Func( int i, ... );` は有効ですが、`int Func( int i ... );` は有効ではありません。  
+ Microsoft C++ では、省略記号が最後の引数であり、省略記号の前にコンマにある場合、省略記号を引数として指定できます。 したがって、宣言 `int Func( int i, ... );` は有効ですが、`int Func( int i ... );` は有効ではありません。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
- 可変個の引数を受け取る関数の宣言には、使用しない場合でも、少なくとも 1 つのプレースホルダー引数が必要です。  このプレースホルダー引数が指定されていない場合、残りの引数にアクセスする方法はありません。  
+ 可変個の引数を受け取る関数の宣言には、使用しない場合でも、少なくとも 1 つのプレースホルダー引数が必要です。 このプレースホルダー引数が指定されていない場合、残りの引数にアクセスする方法はありません。  
   
- `char` 型の引数が可変個の引数として渡される場合は、`int` 型に変換されます。  同様に、**float** 型の変数が可変個の引数として渡される場合は、**double** 型に変換されます。  他の型の引数は、通常の整数および浮動小数点の上位変換を受ける可能性があります。  詳細については、「[整数の上位変換](../misc/integral-promotions.md)」を参照してください。  
+ `char` 型の引数が可変個の引数として渡される場合は、`int` 型に変換されます。 同様に、型の引数**float**渡される型に可変個の引数として変換されます**二重**です。 他の型の引数は、通常の整数および浮動小数点の上位変換を受ける可能性があります。 参照してください[標準変換](standard-conversions.md)詳細についてはします。  
   
- 変数リストを必要とする関数は、引数リストで省略記号 \(...\) を使用して宣言されます。  変数リストによって渡された引数にアクセスするには、STDARG.H インクルード ファイル内に記述された型とマクロを使用します。  これらのマクロの詳細については、「[va\_arg、va\_copy、va\_end、va\_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)」を参照してください。  これは、C ランタイム ライブラリのドキュメントにあります。  
+ 変数リストを必要とする関数は、引数リストで省略記号 (...) を使用して宣言されます。 変数リストによって渡された引数にアクセスするには、STDARG.H インクルード ファイル内に記述された型とマクロを使用します。 これらのマクロの詳細については、次を参照してください。 [va_arg、va_copy、va_end、va_start](../c-runtime-library/reference/va-arg-va-copy-va-end-va-start.md)です。 これは、C ランタイム ライブラリのドキュメントにあります。  
   
- 次の例で、マクロが型 \(STDARG.H で宣言\) とどのように協働するかを示します: `va_list` `va_end` `va_arg` `va_start`  
+ 次の例は、マクロが (STDARG で宣言型を併用する方法を示しています。 します。H): 
   
 ```  
 // variable_argument_lists.cpp  
@@ -123,9 +139,9 @@ void ShowVar( char *szTypes, ... ) {
   
  前の例は、次のような重要な概念を示しています。  
   
-1.  いずれかの可変個引数がアクセスされる前に、型 `va_list` の変数としてリスト マーカーを確立する必要があります。  前の例では、マーカーは `vl` と呼ばれます。  
+1.  いずれかの可変個引数がアクセスされる前に、型 `va_list` の変数としてリスト マーカーを確立する必要があります。 前の例では、マーカーは `vl` と呼ばれます。  
   
-2.  個々の引数は `va_arg` マクロを使用してアクセスします。  スタックから正しいバイト数を転送できるように、取得する引数の型を `va_arg` マクロで指定する必要があります。  呼び出し元プログラムによって `va_arg` に指定された型とは異なるサイズの正しくない型を指定した場合、結果は予測不能となります。  
+2.  個々の引数は `va_arg` マクロを使用してアクセスします。 スタックから正しいバイト数を転送できるように、取得する引数の型を `va_arg` マクロで指定する必要があります。 呼び出し元プログラムによって `va_arg` に指定された型とは異なるサイズの正しくない型を指定した場合、結果は予測不能となります。  
   
 3.  `va_arg` マクロを使用して取得した結果を、必要な型に明示的にキャストする必要があります。  
   

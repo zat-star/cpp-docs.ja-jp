@@ -1,28 +1,45 @@
 ---
-title: "配列の初期化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列の初期化"
-  - "初期化の配列 [C++]"
+title: "配列の初期化 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- initializing arrays
+- arrays [C++], initializing
 ms.assetid: 41efe5f0-15b5-4f49-9196-c4902f8fc705
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 配列の初期化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 5370633ac0d73815c048153f7025ea50b990a3f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
+---
+# <a name="initializing-arrays"></a>配列の初期化
 クラスにコンストラクターがある場合、そのクラスの配列はコンストラクターによって初期化されます。 配列の要素よりも初期化子リスト内の項目が少ない場合、残りの要素には既定のコンストラクターが使用されます。 クラスに対して既定のコンストラクターが定義されていない場合は、完全な初期化子リストが必要です。つまり、配列の各要素に 1 つずつ初期化子が必要です。  
   
  2 つのコンストラクターを定義する `Point` クラスを考えます。  
@@ -52,7 +69,7 @@ int main()
   
  `aPoint` の最初の要素はコンストラクター `Point( int, int )` を使用して構築されます。残りの 2 つの要素は既定のコンストラクターを使用して構築されます。  
   
- 静的メンバー配列 (かどうか **const** またはない) (、クラス宣言の外側) 定義内で初期化できます。 例:  
+ 静的メンバー配列 (かどうか**const**か) の定義 (、クラス宣言の外側) で初期化することができます。 例:  
   
 ```  
 // initializing_arrays2.cpp  
@@ -70,5 +87,4 @@ int main()
 }  
 ```  
   
-## <a name="see-also"></a>関連項目  
- [(NOTINBUILD)特殊なメンバー関数](http://msdn.microsoft.com/ja-jp/82223d73-64cb-4923-b678-78f9568ff3ca)
+

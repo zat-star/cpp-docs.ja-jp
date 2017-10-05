@@ -1,39 +1,56 @@
 ---
-title: "novtable | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "novtable"
-  - "novtable_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__declspec キーワード [C++], novtable"
-  - "novtable __declspec キーワード"
+title: "novtable |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- novtable
+- novtable_cpp
+dev_langs:
+- C++
+helpviewer_keywords:
+- novtable __declspec keyword
+- __declspec keyword [C++], novtable
 ms.assetid: cfef09c5-8c1e-4b14-8a72-7d726ded4484
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# novtable
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 7064bd08a97f3eabbf337b1a351614e94d6458dd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## Microsoft 固有の仕様 →  
+---
+# <a name="novtable"></a>novtable
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
  これは `__declspec` 拡張属性です。  
   
- この形式の `__declspec` は任意のクラス宣言に適用できますが、純粋なインターフェイス クラス \(それ自体はインスタンス化されないクラス\) だけに適用してください。  `__declspec` は、クラスのコンストラクターおよびデストラクター内の vfptr を初期化するコードをコンパイラが生成することを阻止します。  多くの場合、これは、クラスに関連付けられている vtable への参照のみを削除するので、リンカーはこれを削除します。  この形式の `__declspec` を使用すると、コード サイズが大幅に削減されます。  
+ この形式の `__declspec` は任意のクラス宣言に適用できますが、純粋なインターフェイス クラス (それ自体はインスタンス化されないクラス) だけに適用してください。 `__declspec` は、クラスのコンストラクターおよびデストラクター内の vfptr を初期化するコードをコンパイラが生成することを阻止します。 多くの場合、これは、クラスに関連付けられている vtable への参照のみを削除するので、リンカーはこれを削除します。 この形式の `__declspec` を使用すると、コード サイズが大幅に削減されます。  
   
- `novtable` でマークされたクラスをインスタンス化してから、クラス メンバーにアクセスしようとすると、アクセス違反 \(AV\) となります。  
+ `novtable` でマークされたクラスをインスタンス化してから、クラス メンバーにアクセスしようとすると、アクセス違反 (AV) となります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // novtable.cpp  
@@ -58,9 +75,12 @@ int main() {
 }  
 ```  
   
-  **In Y**   
-## END Microsoft 固有の仕様  
+```Output  
+In Y  
+```  
   
-## 参照  
- [\_\_declspec](../cpp/declspec.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>関連項目  
+ [_ _declspec](../cpp/declspec.md)   
+ [キーワード](../cpp/keywords-cpp.md)

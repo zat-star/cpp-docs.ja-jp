@@ -1,35 +1,52 @@
 ---
-title: "_com_ptr_t::Detach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_ptr_t::Detach"
-  - "_com_ptr_t.Detach"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Detach メソッド"
+title: "_com_ptr_t::Detach |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_ptr_t::Detach
+- _com_ptr_t.Detach
+dev_langs:
+- C++
+helpviewer_keywords:
+- Detach method
 ms.assetid: 0652053e-af37-44e9-a278-2522212ebfed
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _com_ptr_t::Detach
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: f61b0fb05f182ef2723fdcc564fd697f490aed20
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comptrtdetach"></a>_com_ptr_t::Detach
+**Microsoft 固有の仕様**  
   
  カプセル化されたインターフェイス ポインターを抽出して返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,10 +54,10 @@ Interface* Detach( ) throw( );
   
 ```  
   
-## 解説  
- カプセル化されたインターフェイス ポインターを抽出して返した後、カプセル化されたポインター ストレージを **NULL** にクリアします。  これによって、カプセル化からインターフェイス ポインターが削除されます。  返されたインターフェイス ポインターの **Release** を呼び出すかどうかは開発者の責任です。  
+## <a name="remarks"></a>コメント  
+ 抽出、カプセル化されたインターフェイス ポインターを返し、カプセル化されたポインター ストレージをクリア**NULL**です。 これによって、カプセル化からインターフェイス ポインターが削除されます。 呼び出すかどうかは**リリース**返されたインターフェイス ポインター。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_ptr\_t クラス](../cpp/com-ptr-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_ptr_t クラス](../cpp/com-ptr-t-class.md)

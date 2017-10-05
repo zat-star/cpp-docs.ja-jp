@@ -1,31 +1,48 @@
 ---
-title: "制御の移動 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "制御フロー, 分岐"
-  - "制御フロー, 転送 (制御を)"
+title: "制御の移動 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- control flow, branching
+- control flow, transferring control
 ms.assetid: aa51e7f2-060f-4106-b0fe-331f04357423
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 制御の移動
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: a604c95bb21ad0098a3d4563738971791fc94a07
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-`goto` ステートメント、または  **ステートメント内の `switch`case** ラベルを使用して、初期化子を越えて分岐するプログラムを指定できます。  初期化子を含む宣言がジャンプ ステートメントの発生元のブロックで囲まれたブロックに存在しない限り、このようなコードは無効です。  
+---
+# <a name="transfers-of-control"></a>制御の移動
+使用することができます、`goto`ステートメントまたは**ケース**でラベル付け、`switch`初期化子を越えて分岐するプログラムを指定するステートメント。 初期化子を含む宣言がジャンプ ステートメントの発生元のブロックで囲まれたブロックに存在しない限り、このようなコードは無効です。  
   
- 次の例は、オブジェクト `total`、`ch`、`i` を宣言して初期化するループを示します。  初期化子を越えて制御を転送する、不適切な `goto` ステートメントもあります。  
+ 次の例は、オブジェクト `total`、`ch`、`i` を宣言して初期化するループを示します。 初期化子を越えて制御を転送する、不適切な `goto` ステートメントもあります。  
   
 ```  
 // transfers_of_control.cpp  
@@ -57,9 +74,8 @@ int main()
 }  
 ```  
   
- 前の例では、`goto` ステートメントは、`i` の初期化の後、制御権を委譲しようとします。  ただし、`i` が宣言されていても初期化されていない場合、転送は有効になります。  
+ 前の例では、`goto` ステートメントは、`i` の初期化の後、制御権を委譲しようとします。 ただし、`i` が宣言されていても初期化されていない場合、転送は有効になります。  
   
- `total` ステートメントのステートメントとして動作するブロックで宣言されたオブジェクト `ch` と  *は、ブロックが `while` ステートメントを使用して終了すると破棄されます`break`*。  
+ オブジェクト`total`と`ch`として機能するブロックで宣言された、*ステートメント*の`while`ステートメントを使用して、そのブロックが終了したときに破棄されますが、`break`ステートメントです。  
   
-## 参照  
- [\(NOTINBUILD\) Declaration of Automatic Objects](http://msdn.microsoft.com/ja-jp/81f941e9-c1b1-4d1c-a28d-70b6ee9765db)
+

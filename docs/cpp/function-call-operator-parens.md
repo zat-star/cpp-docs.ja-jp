@@ -1,77 +1,92 @@
 ---
-title: "関数呼び出し演算子: () | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "( ) 関数呼び出し演算子"
-  - "() 関数呼び出し演算子"
-  - "関数呼び出し演算子 ( )"
-  - "関数呼び出し, C++ 関数"
-  - "関数呼び出し, operator"
-  - "関数 [C++], 関数呼び出し演算子"
-  - "後置演算子"
+title: "関数呼び出し演算子: () |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- ( ) function call operator
+- function calls, C++ functions
+- () function call operator
+- postfix operators
+- function calls, operator
+- functions [C++], function-call operator
+- function call operator ( )
 ms.assetid: 50c92e59-a4bf-415a-a6ab-d66c679ee80a
 caps.latest.revision: 14
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# 関数呼び出し演算子: ()
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: bcd44b1c33488d4bbe4dac8bfe541dfa04f4709a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-後置式の後ろに関数呼び出し演算子 **\( \)** を付けると、関数呼び出しが指定されます。  
+---
+# <a name="function-call-operator-"></a>関数呼び出し演算子: ()
+後置式の後ろに関数呼び出し演算子**に関するページ ()**、関数呼び出しを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
 postfix-expression   
 ( [argument-expression-list ] )  
 ```  
   
-## 解説  
- 関数呼び出し演算子への引数は、コンマで区切ったゼロ個以上の式 \(関数への実引数\) です。  
+## <a name="remarks"></a>コメント  
+ 関数呼び出し演算子への引数は、コンマで区切ったゼロ個以上の式 (関数への実引数) です。  
   
- *postfix\-expression* は、関数アドレス \(たとえば、関数の識別子または関数ポインターの値\) に評価される必要があります。*argument\-expression\-list* は、式の \(コンマ区切りの\) リストで、各式の値 \(引数\) が関数に渡されます。  *argument\-expression\-list* 引数は空の場合もあります。  
+ *後置式*関数のアドレス (たとえば、関数の識別子または関数ポインターの値) に評価される必要がありますと*引数式リスト*式 (区切りの一覧を示しますコンマ) での値 (引数) が、関数に渡されます。 *argument-expression-list* 引数は空の場合もあります。  
   
- *postfix\-expression* は、次のいずれかの種類である必要があります。  
+ *後置式*これらの型のいずれかを指定する必要があります。  
   
--   関数の戻り値の型 `T`。  以下に宣言例を示します。  
+-   関数の戻り値の型 `T`。 以下に宣言例を示します。  
   
     ```  
     T func( int i )  
     ```  
   
--   関数の戻り値の型へのポインター `T`。  以下に宣言例を示します。  
+-   関数の戻り値の型へのポインター `T`。 以下に宣言例を示します。  
   
     ```  
     T (*func)( int i )  
     ```  
   
--   関数の戻り値の型への参照 `T`。  以下に宣言例を示します。  
+-   関数の戻り値の型への参照 `T`。 以下に宣言例を示します。  
   
     ```  
     T (&func)(int i)  
     ```  
   
--   メンバー関数の逆参照戻り値の型へのポインター `T`。  以下に、関数呼び出しの例を示します。  
+-   メンバー関数の逆参照戻り値の型へのポインター `T`。 以下に、関数呼び出しの例を示します。  
   
     ```  
     (pObject->*pmf)();  
     (Object.*pmf)();  
     ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、3 個の引数を持つ標準ライブラリ関数 `strcat_s` を呼び出しています。  
   
 ```  
@@ -81,7 +96,7 @@ postfix-expression
 #include <iostream>  
 #include <string>  
   
-// STL name space  
+// C++ Standard Library name space  
 using namespace std;  
   
 int main()  
@@ -100,9 +115,12 @@ int main()
 }  
 ```  
   
-  **Welcome to C\+\+**   
-## 関数呼び出しの結果  
- 関数呼び出しは、関数が参照型として宣言されていない限り結果が r 値になります。  参照の戻り値の型を持つ関数は左辺値に評価され、次のように代入ステートメントの左側で使用できます。  
+```Output  
+Welcome to C++  
+```  
+  
+## <a name="function-call-results"></a>関数呼び出しの結果  
+ 関数呼び出しは、関数が参照型として宣言されていない限り結果が r 値になります。 参照の戻り値の型を持つ関数は左辺値に評価され、次のように代入ステートメントの左側で使用できます。  
   
 ```  
 // expre_Function_Call_Results.cpp  
@@ -134,9 +152,9 @@ int main()
 }  
 ```  
   
- 前のコードは、`Point`x と *y* の座標を表すプライベート データ オブジェクトを含む  *というクラスを定義します。* これらのデータ オブジェクトを変更し、値を取得する必要があります。  このプログラムは、このようなクラスのいくつかの設計の 1 つに過ぎません。`GetX` と `SetX` または `GetY` と `SetY` 関数を使う設計も可能です。  
+ 上記のコードと呼ばれるクラスを定義する`Point`、オブジェクトを表すのプライベート データが含まれています*x*と*y*座標。 これらのデータ オブジェクトを変更し、値を取得する必要があります。 このプログラムは、このようなクラスのいくつかの設計の 1 つに過ぎません。`GetX` と `SetX` または `GetY` と `SetY` 関数を使う設計も可能です。  
   
- クラス型を返す関数、クラス型へのポインター、またはクラス型への参照は、メンバー選択演算子の左のオペランドとして使用できます。  したがって、次のコードは有効です。  
+ クラス型を返す関数、クラス型へのポインター、またはクラス型への参照は、メンバー選択演算子の左のオペランドとして使用できます。 したがって、次のコードは有効です。  
   
 ```  
 // expre_Function_Results2.cpp  
@@ -179,11 +197,10 @@ int main() {
 }  
 ```  
   
- 関数は再帰的に呼び出すことができます。  関数の宣言に関する詳細については、「[関数指定子](../misc/function-specifiers.md)」および「[メンバー関数](../Topic/Member%20Functions%20\(C++\).md)」を参照してください。  関連資料は「[プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)」にあります。  
+ 関数は再帰的に呼び出すことができます。 関数宣言の詳細については、次を参照してください。[関数](functions-cpp.md)です。 関連資料は「[プログラムとリンケージ](../cpp/program-and-linkage-cpp.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [後置式](../cpp/postfix-expressions.md)   
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [関数呼び出し](../c-language/function-call-c.md)   
- [\(NOTINBUILD\) Function Declarations](http://msdn.microsoft.com/ja-jp/3f9b4e14-60d2-47c1-acd8-4fa8fc988be7)
+

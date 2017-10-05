@@ -1,38 +1,54 @@
 ---
-title: "_com_error::operator = | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_com_error::operator="
-  - "_com_error.operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "= 演算子, Visual C++ 固有のオブジェクトを使用する"
-  - "演算子 = _com_error オブジェクト"
-  - "演算子 = _com_error オブジェクト"
+title: "_com_error::operator = |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _com_error::operator=
+- _com_error.operator=
+dev_langs:
+- C++
+helpviewer_keywords:
+- operator= _com_error objects
+- = operator, with specific Visual C++ objects
+- operator = _com_error objects
 ms.assetid: b9cc4094-d055-450c-b45a-0a95317488f8
 caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# _com_error::operator =
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: ddbd09e7783818cb5d2bc72941c8f9e0472e7a3c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="comerroroperator-"></a>_com_error::operator =
+**Microsoft 固有の仕様**  
   
  既存の `_com_error` オブジェクトを別のオブジェクトに割り当てます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -41,11 +57,11 @@ manager: "ghogen"
 ) throw ( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `that`  
  `_com_error` オブジェクト。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_com\_error クラス](../cpp/com-error-class.md)
+## <a name="see-also"></a>関連項目  
+ [_com_error クラス](../cpp/com-error-class.md)

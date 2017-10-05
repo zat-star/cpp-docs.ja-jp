@@ -1,89 +1,105 @@
 ---
-title: "_variant_t 抽出 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "_variant_t.operatordouble"
-  - "operatorlong"
-  - "_variant_t::operator_bstr_t"
-  - "operatordouble"
-  - "_variant_t.operatorCY"
-  - "operatorCY"
-  - "_variant_t::operatorCY"
-  - "_variant_t::operatordouble"
-  - "operatorfloat"
-  - "operatorBYTE"
-  - "_variant_t.operatorDECIMAL"
-  - "_variant_t::operatorlong"
-  - "operatorIDispatch"
-  - "_variant_t.operatorBYTE"
-  - "operatorDECIMAL"
-  - "_variant_t.operator_bstr_t"
-  - "_variant_t::operatorDECIMAL"
-  - "_variant_t.operatorIUnknown"
-  - "_variant_t.operatorlong"
-  - "_variant_t::operatorIDispatch"
-  - "_variant_t::operatorIUnknown"
-  - "operatorIUnknown"
-  - "_variant_t.operatorbool"
-  - "_variant_t::operatorBYTE"
-  - "_variant_t.operatorfloat"
-  - "operator_bstr_t"
-  - "_variant_t::operatorbool"
-  - "operatorshort"
-  - "_variant_t::operatorshort"
-  - "_variant_t::operatorfloat"
-  - "_variant_t.operatorIDispatch"
-  - "_variant_t.operatorshort"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "抽出, _variant_t クラス"
-  - "operator _bstr_t"
-  - "演算子 bool"
-  - "演算子 BYTE"
-  - "演算子 CY"
-  - "演算子 DECIMAL"
-  - "演算子 double"
-  - "演算子 float"
-  - "演算子 IDispatch"
-  - "演算子 IUnknown"
-  - "演算子 long"
-  - "SHORT 演算子"
+title: "_variant_t 抽出 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- _variant_t.operatordouble
+- operatorlong
+- _variant_t::operator_bstr_t
+- operatordouble
+- _variant_t.operatorCY
+- operatorCY
+- _variant_t::operatorCY
+- _variant_t::operatordouble
+- operatorfloat
+- operatorBYTE
+- _variant_t.operatorDECIMAL
+- _variant_t::operatorlong
+- operatorIDispatch
+- _variant_t.operatorBYTE
+- operatorDECIMAL
+- _variant_t.operator_bstr_t
+- _variant_t::operatorDECIMAL
+- _variant_t.operatorIUnknown
+- _variant_t.operatorlong
+- _variant_t::operatorIDispatch
+- _variant_t::operatorIUnknown
+- operatorIUnknown
+- _variant_t.operatorbool
+- _variant_t::operatorBYTE
+- _variant_t.operatorfloat
+- operator_bstr_t
+- _variant_t::operatorbool
+- operatorshort
+- _variant_t::operatorshort
+- _variant_t::operatorfloat
+- _variant_t.operatorIDispatch
+- _variant_t.operatorshort
+dev_langs:
+- C++
+helpviewer_keywords:
+- extractors, _variant_t class
+- operator CY
+- operator IDispatch
+- operator SHORT
+- operator double
+- operator long
+- operator _bstr_t
+- operator DECIMAL
+- operator float
+- operator bool
+- operator BYTE
+- operator IUnknown
 ms.assetid: 33c1782f-045a-4673-9619-1d750efc83a9
 caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# _variant_t 抽出
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
+ms.openlocfilehash: 9ec02d82529a6772e079305c34c5f43ee163a2f7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-**Microsoft 固有の仕様 →**  
+---
+# <a name="variantt-extractors"></a>_variant_t 抽出
+**Microsoft 固有の仕様**  
   
- カプセル化された **VARIANT** オブジェクトからデータを抽出します。  
+ カプセル化されたからデータを抽出**バリアント**オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      operator short( ) const;   
-operator long( ) const;   
-operator float( ) const;   
-operator double( ) const;   
-operator CY( ) const;   
-operator _bstr_t( ) const;   
-operator IDispatch*( ) const;   
-operator bool( ) const;   
-operator IUnknown*( ) const;   
-operator DECIMAL( ) const;   
+operator short( ) const;   
+operator long( ) const;   
+operator float( ) const;   
+operator double( ) const;   
+operator CY( ) const;   
+operator _bstr_t( ) const;   
+operator IDispatch*( ) const;   
+operator bool( ) const;   
+operator IUnknown*( ) const;   
+operator DECIMAL( ) const;   
 operator BYTE( ) const;  
 operator VARIANT() const throw();  
 operator char() const;  
@@ -95,32 +111,33 @@ operator __int64() const;
 operator unsigned __int64() const;  
 ```  
   
-## 解説  
- カプセル化された **VARIANT** オブジェクトから生データを抽出します。  **VARIANT** が適切な型になっていない場合、**VariantChangeType** が変換を実行するために使用され、失敗するとエラーが発生します。  
+## <a name="remarks"></a>コメント  
+ カプセル化されたから生データを抽出**バリアント**です。 場合、**バリアント**されませんが、適切な型に既に**VariantChangeType**変換を実行するために使用し、エラー発生時にエラーが生成します。  
   
--   **operator short\( \) short** 整数値を抽出します。  
+-   **operator short ()**抽出、**短い**整数値。  
   
--   **operator long\( \) long** 整数値を抽出します。  
+-   **operator long ()**抽出、**長い**整数値。  
   
--   **operator float\( \) float** 数値を抽出します。  
+-   **operator float ()**抽出、 **float**数値を指定します。  
   
--   **operator double\( \) double** 数値を抽出します。  
+-   **operator double ()**抽出、**二重**整数値。  
   
--   **operator CY\( \) CY** オブジェクトを抽出します。  
+-   **operator CY ()**抽出、 **CY**オブジェクト。  
   
--   **operator bool\( \)** `bool` 値を抽出します。  
+-   **operator bool ()**抽出、`bool`値。  
   
--   **operator DECIMAL\( \) DECIMAL** 値を抽出します。  
+-   **operator DECIMAL ()**抽出、 **DECIMAL**値。  
   
--   **operator BYTE\( \) BYTE** 値を抽出します。  
+-   **operator BYTE ()**抽出、**バイト**値。  
   
--   **operator \_bstr\_t\( \)** `_bstr_t` オブジェクトにカプセル化された文字列を抽出します。  
+-   **operator _bstr_t ()**にカプセル化された文字列を抽出、`_bstr_t`オブジェクト。  
   
--   **operator IDispatch\*\( \)** カプセル化された **VARIANT** からディスパッチ インターフェイス ポインターを抽出します。  `AddRef` が結果のポインターから呼び出されるため、それを解放する **Release** を呼び出す必要があります。  
+-   **演算子 IDispatch\*に関するページ ()**カプセル化されたからディスパッチ インターフェイス ポインターを抽出**バリアント**です。 `AddRef`呼び出される結果のポインターのために呼び出すかどうかは**リリース**解放します。  
   
--   **operator IUnknown\*\( \)** カプセル化された **VARIANT** から COM インターフェイス ポインターを抽出します。  `AddRef` が結果のポインターから呼び出されるため、それを解放する **Release** を呼び出す必要があります。  
+-   **演算子 IUnknown\*に関するページ ()**からカプセル化された COM インターフェイス ポインターを抽出**バリアント**です。 `AddRef`呼び出される結果のポインターのために呼び出すかどうかは**リリース**解放します。  
   
- **END Microsoft 固有の仕様**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_variant\_t クラス](../cpp/variant-t-class.md)
+## <a name="see-also"></a>関連項目  
+ [_variant_t クラス](../cpp/variant-t-class.md)
+

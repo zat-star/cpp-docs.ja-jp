@@ -1,38 +1,55 @@
 ---
-title: "例外処理の相違点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 例外処理, 構造化例外処理との比較"
-  - "例外, ラッパー クラス"
-  - "構造化例外処理, C++ 例外処理との比較"
-  - "構造化例外処理, および非構造化"
-  - "ラッパー クラス, C の例外"
+title: "例外処理の相違点 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- structured exception handling, vs. C++ exception handling
+- structured exception handling, vs. unstructured
+- exceptions, wrapper class
+- C++ exception handling, vs. structured exception handling
+- wrapper classes, C exception
 ms.assetid: f21d1944-4810-468e-b02a-9f77da4138c9
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 例外処理の相違点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 191b59d21f56ee810a981082806a6775bc6ea40d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-構造化例外処理と C\+\+ 例外処理との主な相違点は、C\+\+ 例外処理モデルが複数の型を取り扱うのに対し、C の構造化例外処理モデルは 1 つの型 \(特に、`unsigned int`\) を取り扱うことです。  つまり、C 例外は符号なし整数値で識別されますが、C\+\+ 例外はデータ型で識別されます。  例外が C で発生すると、可能な各ハンドラーは、C 例外コンテキストをチェックするフィルターを実行して、例外を受け入れるか、他のハンドラーに渡すか、または無視するかを決定します。  C\+\+ でスローされる例外は、どのような型でもかまいません。  
+---
+# <a name="exception-handling-differences"></a>例外処理の相違点
+構造化例外処理と C++ 例外処理との主な相違点は、C++ 例外処理モデルが複数の型を取り扱うのに対し、C の構造化例外処理モデルは 1 つの型 (特に、`unsigned int`) を取り扱うことです。 つまり、C 例外は符号なし整数値で識別されますが、C++ 例外はデータ型で識別されます。 例外が C で発生すると、可能な各ハンドラーは、C 例外コンテキストをチェックするフィルターを実行して、例外を受け入れるか、他のハンドラーに渡すか、または無視するかを決定します。 C++ でスローされる例外は、どのような型でもかまいません。  
   
- 2 番目の相違点は、例外がコントロールの標準フローに従属的に発生すると C の構造化例外処理モデルが "非同期" と呼ばれることです。  C\+\+ の例外処理機構は、完全な "同期処理" を提供します。つまり、例外は、スローされたときにのみ発生します。  
+ 2 番目の相違点は、例外がコントロールの標準フローに従属的に発生すると C の構造化例外処理モデルが "非同期" と呼ばれることです。 C++ の例外処理機構は、完全な "同期処理" を提供します。つまり、例外は、スローされたときにのみ発生します。  
   
- C の例外が C \+\+ プログラムで発生した場合、その例外は、関連のフィルターを持つ構造化例外ハンドラーまたは C \+\+ **catch** ハンドラーのどちらか例外コンテキストに動的に近い方で処理できます。  たとえば、次の C\+\+ プログラムでは、C\+\+ **try** コンテキスト内で C 例外が発生します。  
+ C++ プログラムでは、C 例外が発生する場合、処理できる関連付けられているフィルターと構造化例外ハンドラーによって、または C++ で**キャッチ**ハンドラー、どちらかが動的に近い例外コンテキスト。 たとえば、次の C++ プログラムは、C++ 内で C 例外を発生させます。**再試行**コンテキスト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // exceptions_Exception_Handling_Differences.cpp  
@@ -62,12 +79,15 @@ void SEHFunc() {
 }  
 ```  
   
-  **In finally.**  
-**Caught a C exception.**   
-##  <a name="_core_c_exception_wrapper_class"></a> C 例外のラッパー クラス  
- 上のような単純な例では、C 例外は省略記号 \(**...**\) **catch** ハンドラーによってのみキャッチされます。  ハンドラーに伝達される例外の種類または特性に関する情報はありません。  このメソッドは動作しますが、場合によっては、それぞれの C 例外が特定のクラスに関連付けられるように、2 つの例外処理モデル間の変換を定義する必要があります。  これを行うために、特定のクラスの種類を C 例外に起因すると見なすために利用したり派生させたりできる、C 例外の "wrapper" クラスを定義できます。  それにより、C の各例外は、C\+\+ の **catch** ハンドラーによって前の例よりも個別に処理できます。  
+```Output  
+In finally.  
+Caught a C exception.  
+```  
   
- ラッパー クラスには、例外の値を決定して、C 例外モデルが提供する拡張例外コンテキスト情報にアクセスするメンバー関数で構成されるインターフェイスが含まれることがあります。  また、既定のコンストラクター、`unsigned int` 引数を受け入れるコンストラクター \(基になる C の例外の表現を提供するため\)、およびビット単位のコピー コンストラクターを定義した方がよい場合もあります。  次は、C 例外のラッパー クラスの実装の例です。  
+##  <a name="_core_c_exception_wrapper_class"></a>C 例外のラッパー クラス  
+ 上記のような単純な例として、省略記号によってのみ、C の例外をキャッチできます (**.**)**キャッチ**ハンドラー。 ハンドラーに伝達される例外の種類または特性に関する情報はありません。 このメソッドは動作しますが、場合によっては、それぞれの C 例外が特定のクラスに関連付けられるように、2 つの例外処理モデル間の変換を定義する必要があります。 これを行うために、特定のクラスの種類を C 例外に起因すると見なすために利用したり派生させたりできる、C 例外の "wrapper" クラスを定義できます。 これにより、C の例外を処理して、c++**キャッチ**ハンドラーよりも個別に前の例です。  
+  
+ ラッパー クラスには、例外の値を決定して、C 例外モデルが提供する拡張例外コンテキスト情報にアクセスするメンバー関数で構成されるインターフェイスが含まれることがあります。 また、既定のコンストラクター、`unsigned int` 引数を受け入れるコンストラクター (基になる C の例外の表現を提供するため)、およびビット単位のコピー コンストラクターを定義した方がよい場合もあります。 次は、C 例外のラッパー クラスの実装の例です。  
   
 ```  
 // exceptions_Exception_Handling_Differences2.cpp  
@@ -87,11 +107,11 @@ public:
   
 ```  
   
- このクラスを使用するには、C 例外がスローされるたびに内部例外処理メカニズムによって呼び出されるカスタム C 例外変換関数をインストールします。  変換関数内で、適切な一致する C\+\+ **catch** ハンドラーでキャッチできる、任意の型指定例外 \(通常は `SE_Exception` 型、または `SE_Exception` から派生したクラス型\) をスローできます。  変換関数は、単純に制御を返すことができます。これは、例外を処理しなかったことを示します。  変換関数自体で C 例外が発生した場合は、[terminate](../c-runtime-library/reference/terminate-crt.md) が呼び出されます。  
+ このクラスを使用するには、C 例外がスローされるたびに内部例外処理メカニズムによって呼び出されるカスタム C 例外変換関数をインストールします。 変換関数内で任意の型の例外をスローすることができます (おそらく、`SE_Exception`から派生した型、またはクラス型`SE_Exception`) を適切な一致する C++ によってキャッチできます**キャッチ**ハンドラー。 変換関数は、単純に制御を返すことができます。これは、例外を処理しなかったことを示します。 変換関数自体は、C の例外を発生させた場合[終了](../c-runtime-library/reference/terminate-crt.md)と呼びます。  
   
- カスタム変換関数を指定する場合は、変換関数の名前を単一の引数として指定して [\_set\_se\_translator](../c-runtime-library/reference/set-se-translator.md) 関数を呼び出します。  作成した変換関数は、**try** ブロックを持つスタックの関数呼び出しごとに 1 回呼び出されます。  既定の変換関数はありません。`_set_se_translator` を呼び出してそれを指定しない場合、C の例外は省略記号 **catch** ハンドラーでしかキャッチできません。  
+ カスタム変換関数を指定するには、呼び出し、 [_set_se_translator](../c-runtime-library/reference/set-se-translator.md)単一の引数として、変換関数の名前を持つ関数です。 記述する変換関数を持つスタックの関数呼び出しごとに 1 回呼び出されます**再試行**ブロックします。 既定の変換関数はありません。呼び出していずれかを指定しない場合`_set_se_translator`、C 例外は、省略記号によってのみキャッチできます**キャッチ**ハンドラー。  
   
-## 使用例  
+## <a name="example"></a>例  
  たとえば、次のコードでは、カスタム変換関数がインストールされた後に、`SE_Exception` クラスでラップされた C 例外が発生します。  
   
 ```  
@@ -140,9 +160,12 @@ int main() {
 }  
 ```  
   
-  **In trans\_func.**  
-**In finally**  
-**Caught a \_\_try exception with SE\_Exception.**  
-**nSE \= 0xc0000094**   
-## 参照  
- [C \(構造化\) と C\+\+ の混合例外](../Topic/Mixing%20C%20\(Structured\)%20and%20C++%20Exceptions.md)
+```Output  
+In trans_func.  
+In finally  
+Caught a __try exception with SE_Exception.  
+nSE = 0xc0000094  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C (構造化) と C++ の混合例外](../cpp/mixing-c-structured-and-cpp-exceptions.md)

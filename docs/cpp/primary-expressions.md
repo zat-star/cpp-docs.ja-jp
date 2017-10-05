@@ -1,47 +1,62 @@
 ---
-title: "一次式 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "式 [C++], リテラル"
-  - "式 [C++], 名前"
-  - "式 [C++], 主"
-  - "式 [C++], 修飾名"
-  - "一次式"
+title: "一次式 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- primary expressions
+- expressions [C++], name
+- expressions [C++], literal
+- expressions [C++], primary
+- expressions [C++], qualified names
 ms.assetid: 8ef9a814-6058-4b93-9b6e-e8eb8350b1ca
 caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 一次式
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 2ba603c19a88849c15c9402e21d2acf39bb9f54d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-基本式は、より複雑な式のビルド ブロックです。  つまり、リテラル、名前、スコープ解決演算子 \(`::`\) で修飾された名前です。基本式は次のいずれかの形式になります。  
+---
+# <a name="primary-expressions"></a>一次式
+基本式は、より複雑な式のビルド ブロックです。 つまり、リテラル、名前、スコープ解決演算子 (`::`) で修飾された名前です。  基本式は次のいずれかの形式になります。  
   
 ```  
   
-        literal  
-this  
-:: name  
-name   
-( expression )  
+      literal  
+      this  
+:: namename( expression )  
 ```  
   
- *literal* は定数基本式です。  その型は、リテラルの指定の形式によって決まります。  リテラルの指定の詳細については、「[リテラル](../cpp/numeric-boolean-and-pointer-literals-cpp.md)」を参照してください。  
+ A*リテラル*は定数基本式です。 その型は、リテラルの指定の形式によって決まります。 参照してください[リテラル](../cpp/numeric-boolean-and-pointer-literals-cpp.md)詳細については、リテラルを指定します。  
   
- **this** キーワードはクラス オブジェクトへのポインターです。  非静的メンバー関数内で使用でき、その関数が呼び出されたクラスのインスタンスを参照します。  **this** キーワードはクラス メンバー関数の本体の外部で使用することはできません。  
+ **この**キーワードはクラス オブジェクトへのポインター。 非静的メンバー関数内で使用でき、その関数が呼び出されたクラスのインスタンスを参照します。 **この**クラス メンバー関数の本体の外側キーワードは使用できません。  
   
- **this** ポインターの型は、明示的に **this** ポインターを変更しない関数内では、`type` **\*const** \(`type` はクラス名\) です。  次の例では、メンバー関数の宣言と **this** の型を示しています。  
+ 型、**この**ポインターが`type` ** \*const** (ここで`type`クラスの名前を指定) 以外に変更する関数内で、**この**ポインター。 次の例は、関数宣言との型にメンバーを示します**この**:  
   
 ```  
 // expre_Primary_Expressions.cpp  
@@ -55,13 +70,13 @@ public:
 };  
 ```  
   
- **this** ポインターの型の変更の詳細については、「[Type of this Pointer \(this ポインターの型\)](../misc/type-of-this-pointer.md)」を参照してください。  
+ 参照してください[このポインター](this-pointer.md)の型を変更する方法について、**この**ポインター。  
   
- 名前の前のスコープ解決演算子 \(`::`\) は基本式です。そのような名前は、メンバー名ではなく、グローバル スコープでの名前であることが必要です。この式の型は名前の宣言によって決まります。  宣言名が左辺値である場合は、左辺値 \(代入演算子式の左辺になる式\) です。  スコープ解決演算子を使用すると、グローバル名が現在のスコープでは隠されていても、その名前を参照できます。  スコープ解決演算子の使用例については、「[スコープ](../cpp/scope-visual-cpp.md)」を参照してください。  
+ 名前の前のスコープ解決演算子 (`::`) は基本式です。  そのような名前は、メンバー名ではなく、グローバル スコープでの名前であることが必要です。  この式の型は名前の宣言によって決まります。 宣言名が左辺値である場合は、左辺値 (代入演算子式の左辺になる式) です。 スコープ解決演算子を使用すると、グローバル名が現在のスコープでは隠されていても、その名前を参照できます。 参照してください[スコープ](../cpp/scope-visual-cpp.md)スコープ解決演算子を使用する方法の例についてはします。  
   
- かっこで囲まれた式も基本式であり、その型と値はかっこで囲まれていない式のものと一致します。  この式は、かっこで囲まれていない式が左辺値であれば、左辺値です。  
+ かっこで囲まれた式も基本式であり、その型と値はかっこで囲まれていない式のものと一致します。 この式は、かっこで囲まれていない式が左辺値であれば、左辺値です。  
   
- 前に示している基本式の構文のコンテキストでは、*name* は「[Names \(名前\)](http://msdn.microsoft.com/ja-jp/1c49cc24-08d5-4884-b170-ba8ed42d80db)」で説明している構文で宣言されるいずれかの名前です。ただし、その名前の前にスコープ解決演算子を使用すると、クラス内にのみ出現する名前の型は受け入れられなくなります。このような名前には、ユーザー定義の変換関数やデストラクターの名前が該当します。  
+ プライマリの式の構文が、上記のコンテキストで*名前*意味を説明する構文では何も[名](http://msdn.microsoft.com/en-us/1c49cc24-08d5-4884-b170-ba8ed42d80db)がときに、名前、種類の名前の前に、スコープ解決演算子を使用クラスでのみ発生することが許可されていません。  このような名前には、ユーザー定義の変換関数やデストラクターの名前が該当します。  
   
  次に示しているのは、基本式の例です。  
   
@@ -75,7 +90,7 @@ this // in a member function, a pointer to the class instance
 ( i + 1 ) // a parenthesized expression  
 ```  
   
- 次に示しているのは、考えられるすべての *name* つまり基本式の、さまざまな形式の例です。  
+ 次の例はすべてと見なされます*名*、さまざまな形式で、つまり基本式。  
   
 ```  
 MyClass // a identifier  
@@ -87,5 +102,5 @@ A::B   // a qualified name
 A<int> // a template id  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [式の型](../cpp/types-of-expressions.md)

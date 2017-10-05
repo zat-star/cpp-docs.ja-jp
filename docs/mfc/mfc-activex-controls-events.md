@@ -1,62 +1,80 @@
 ---
-title: "MFC ActiveX コントロール : イベント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COleControl クラス, 処理 (イベントを)"
-  - "コンテナー イベント"
-  - "カスタム イベント, 追加 (ActiveX コントロールに)"
-  - "イベント [C++], ActiveX コントロール"
-  - "イベント [C++], マップ"
-  - "マップ, イベント"
-  - "MFC ActiveX コントロール, イベント"
-  - "通知 [C++], 通知 (コンテナーにイベントを)"
-  - "OLE イベント"
-  - "ストック イベント"
+title: "MFC ActiveX コントロール: イベント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs:
+- C++
+helpviewer_keywords:
+- MFC ActiveX controls [MFC], events
+- notifications [MFC], notifying containers of events
+- custom events [MFC], adding to ActiveX controls
+- events [MFC], mapping
+- COleControl class [MFC], handling of events
+- mappings [MFC], events
+- stock events [MFC]
+- container events [MFC]
+- events [MFC], ActiveX controls
+- OLE events [MFC]
 ms.assetid: e1e57e0c-206b-4923-a0b5-682c26564f74
 caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# MFC ActiveX コントロール : イベント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 3903be230f130aeaeb1953faf73a0c8af4c3492f
+ms.openlocfilehash: f4e6cfc21a12288a53eca391eccb86bb4ea3ff55
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-ActiveX コントロールは何かがコントロールになったコンテナーに通知するためにイベントを使用します。  イベントの一般的な例は、メニュー コントロール、キーボードを使用して入力されたデータをコントロールの状態の変更を示します。  これらのアクションが発生したときに、コントロールがコンテナーに通知するためにイベントを発生させます。  
+---
+# <a name="mfc-activex-controls-events"></a>MFC ActiveX コントロール : イベント
+ActiveX コントロールは、コントロールに問題が発生しましたが、コンテナーに通知するのにイベントを使用します。 イベントの一般的な例には、コントロール、コントロールの状態で、キーボード、および変更を使用して入力データのクリックが含まれます。 これらのアクションが発生すると、コントロールは、コンテナーのアラートを生成するイベントを発生させます。  
   
- イベントは、メッセージと呼ばれます。  
+ イベントは、メッセージとも呼ばれます。  
   
- MFC には、2 種類のイベントをサポートする: ストック イベントとカスタム。  ストック イベントは [COleControl](../mfc/reference/colecontrol-class.md) ハンドルを自動的にラベル付けするイベントです。  ストック イベントの完全な一覧については、[MFC ActiveX コントロール: ストック イベントの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Events%20to%20an%20ActiveX%20Control.md)記事を参照してください。  カスタム イベントは、コントロールに固有のアクションが発生したときにコントロールのコンテナーを通知する機能が用意されています。  たとえば、特定のコントロールまたはウィンドウ メッセージの受信側の内部状態の変更点です。  
+ MFC は、次の 2 つの種類のイベントをサポートしています: 株価とカスタムです。 ストック イベントはイベント クラスを[COleControl](../mfc/reference/colecontrol-class.md)自動的に処理されます。 ストック イベントの完全な一覧は、記事を参照してください。 [MFC ActiveX コントロール: ストック イベントの追加](../mfc/mfc-activex-controls-adding-stock-events-to-an-activex-control.md)です。 カスタム イベントは、コントロールをコントロールに固有の動作が発生すると、コンテナーに通知する機能を許可します。 コントロールの内部状態または特定のウィンドウ メッセージの受信に変更があります。  
   
- イベントを適切に実行するコントロールには、コントロール クラスを呼び出す必要のあるメンバー関数に関連するイベントが発生したときにコントロールの各イベントをマップする必要があります。  簡単にコントロールのイベントにアクセスし、処理するイベントと、Visual Studio に関するこの割り当て機能 \(イベント マップと呼ぶ\) 集中化する情報。  このイベント マップはヘッダーにある次のマクロで宣言されます。H\) コントロール クラス宣言のファイル:  
+ 正しくイベントを発生させる、コントロールのコントロール クラスは、関連するイベントが発生したときに呼び出す必要がありますをメンバー関数に、コントロールの各イベントをマップする必要があります。 このマッピング機構 (イベント マップと呼ばれます) を使用して、イベントに関する情報を一元化、Visual Studio は簡単にアクセスし、コントロールのイベントを操作できます。 このイベントのマップがヘッダーにある次のマクロで宣言されている (です。H) コントロール クラス宣言のファイル:  
   
- [!code-cpp[NVC_MFC_AxUI#2](../mfc/codesnippet/CPP/mfc-activex-controls-events_1.h)]  
+ [!code-cpp[NVC_MFC_AxUI#2](../mfc/codesnippet/cpp/mfc-activex-controls-events_1.h)]  
   
- イベント マップを宣言した後、コントロールの実装 \(.cpp\) ファイルで定義する必要があります。  次のコードは、イベント マップを定義し、特定のイベントを発生させるようにコントロールがします:  
+ イベント マップを宣言すると、コントロールの実装で定義する必要があります (です。CPP) ファイルです。 次のコード行には、コントロールで特定のイベントを発生させるイベント マップを定義します。  
   
- [!code-cpp[NVC_MFC_AxUI#3](../mfc/codesnippet/CPP/mfc-activex-controls-events_2.cpp)]  
-[!code-cpp[NVC_MFC_AxUI#4](../mfc/codesnippet/CPP/mfc-activex-controls-events_3.cpp)]  
+ [!code-cpp[NVC_MFC_AxUI#3](../mfc/codesnippet/cpp/mfc-activex-controls-events_2.cpp)]  
+[!code-cpp[NVC_MFC_AxUI#4](../mfc/codesnippet/cpp/mfc-activex-controls-events_3.cpp)]  
   
- プロジェクトを作成したときに、MFC ActiveX コントロール ウィザードを使用すると、自動的に次の行を追加します。  MFC ActiveX コントロール ウィザードを使用して、次の行を手動で追加する必要があります。  
+ MFC ActiveX コントロール ウィザードを使用して、プロジェクトを作成する場合は、これらの行が自動的に追加します。 MFC ActiveX コントロール ウィザードを使用しない場合は、これらの行を手動で追加する必要があります。  
   
- クラス ビューを使用すると、定義したカスタム イベントまたは `COleControl` クラスでサポートされるストック イベントを追加できます。  新しいイベントでは、クラス ビューでは、コントロールのイベント マップとコントロールの .IDL ファイルに自動的に適切なエントリを追加します。  
+ クラス ビュー、クラスがサポートするストック イベントを追加できます`COleControl`やカスタム イベントを定義します。 自動的にクラス ビューは、新しいイベントごとに、コントロールのイベント マップし、コントロールの適切なエントリを追加します。IDL ファイルです。  
   
- 2 種類のそのほかのトピックはイベントを解説します:  
+ その他の 2 つのアーティクルでは、イベントの詳細について説明します。  
   
--   [MFC ActiveX コントロール: ストック イベントの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Stock%20Events%20to%20an%20ActiveX%20Control.md)  
+-   [MFC ActiveX コントロール: ストック イベントの追加](../mfc/mfc-activex-controls-adding-stock-events-to-an-activex-control.md)  
   
--   [MFC ActiveX コントロール: カスタム イベントの追加](../Topic/MFC%20ActiveX%20Controls:%20Adding%20Custom%20Events.md)  
+-   [MFC ActiveX コントロール: カスタム イベントの追加](../mfc/mfc-activex-controls-adding-custom-events.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [MFC ActiveX コントロール](../mfc/mfc-activex-controls.md)   
- [MFC ActiveX コントロール : メソッド](../mfc/mfc-activex-controls-methods.md)   
+ [MFC ActiveX コントロール: メソッド](../mfc/mfc-activex-controls-methods.md)   
  [COleControl クラス](../mfc/reference/colecontrol-class.md)
+

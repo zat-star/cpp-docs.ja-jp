@@ -1,33 +1,49 @@
 ---
-title: "ビット処理 AND 演算子: &amp; | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "bitand"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "& 演算子, ビット処理演算子"
-  - "AND 演算子"
-  - "ビット処理演算子, AND 演算子"
+title: "ビットごとの AND 演算子: &amp; |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-language
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- bitand
+dev_langs:
+- C++
+helpviewer_keywords:
+- AND operator
+- bitwise operators, AND operator
+- '& operator, bitwise operators'
 ms.assetid: 76f40de3-c417-47b9-8a77-532f3fc990a5
 caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
----
-# ビット処理 AND 演算子: &amp;
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+translation.priority.ht:
+- cs-cz
+- de-de
+- es-es
+- fr-fr
+- it-it
+- ja-jp
+- ko-kr
+- pl-pl
+- pt-br
+- ru-ru
+- tr-tr
+- zh-cn
+- zh-tw
+ms.translationtype: HT
+ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
+ms.openlocfilehash: 99ff65f38abf5cfcac135e2cc54e3df6df5f336d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 09/25/2017
 
-## 構文  
+---
+# <a name="bitwise-and-operator-amp"></a>ビットごとの AND 演算子:&amp;
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,17 +53,17 @@ expression
   
 ```  
   
-## 解説  
- 式は、他の and 式、または \(以下に言及する型制限に基づき\) 等価式、関係式、加算式、乗算式、メンバー式へのポインター、キャスト式、単項式、後置式、または 1 次式である場合もあります。  
+## <a name="remarks"></a>コメント  
+ 式は、他の and 式、または (以下に言及する型制限に基づき) 等価式、関係式、加算式、乗算式、メンバー式へのポインター、キャスト式、単項式、後置式、または 1 次式である場合もあります。  
   
- ビットごとの AND 演算子 \(**&**\) は、最初のオペランドの各ビットを 2 番目のオペランドの対応するビットと比較します。  両方のビットが 1 の場合、対応する結果のビットは 1 に設定されます。  それ以外の場合は、対応する結果ビットが 0 に設定されます。  
+ ビットごとの AND 演算子 (**&**) 2 番目のオペランドの対応するビットを 1 番目のオペランドの各ビットと比較します。 両方のビットが 1 の場合、対応する結果のビットは 1 に設定されます。 それ以外の場合は、対応する結果ビットが 0 に設定されます。  
   
- ビットごとの AND 演算子のオペランドは両方とも整数型である必要があります。  オペランドには「[Arithmetic Conversion \(算術変換\)](../misc/arithmetic-conversions.md)」で説明している通常の算術変換が適用されます。  
+ ビットごとの AND 演算子のオペランドは両方とも整数型である必要があります。 通常の算術変換は、「[標準変換](standard-conversions.md)オペランドに適用されます。  
   
-## & の演算子キーワード  
- `bitand` 演算子は **&** の代替表現です。  プログラムで `bitand` 演算子にアクセスするには、2 つの方法があります。1 つはヘッダー ファイル `iso646.h` を含める方法で、もう 1 つは [\/Za](../build/reference/za-ze-disable-language-extensions.md) \(言語拡張機能を無効にする\) コンパイラ オプションを使用してコンパイルする方法です。  
+## <a name="operator-keyword-for-"></a>演算子キーワード (& a)  
+ `bitand`演算子に相当するテキストは、 ** &**です。 アクセスする方法を次の 2 つが、`bitand`をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // expre_Bitwise_AND_Operator.cpp  
@@ -63,8 +79,7 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ ビット処理演算子](../Topic/C++%20Bitwise%20Operators.md)   
- [C\+\+ Operators](../misc/cpp-operators.md)   
- [C\+\+ の演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
+## <a name="see-also"></a>関連項目  
+ [C++ の組み込み演算子、優先順位と結合規則](cpp-built-in-operators-precedence-and-associativity.md)  
+ [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [C ビット処理演算子](../c-language/c-bitwise-operators.md)
