@@ -9,7 +9,7 @@ ms.technology:
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
-- address-of
+- '&'
 dev_langs:
 - C++
 helpviewer_keywords:
@@ -46,7 +46,6 @@ ms.lasthandoff: 09/25/2017
 ## <a name="syntax"></a>構文  
   
 ```  
-  
 & cast-expression  
 ```  
   
@@ -136,3 +135,4 @@ int main() {
  [C++ 組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
  [左辺値参照宣言子: &](../cpp/lvalue-reference-declarator-amp.md)   
  [間接演算子とアドレス演算子](../c-language/indirection-and-address-of-operators.md)
+
