@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2085 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2085"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2085"
+title: "コンパイラ エラー C2085 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2085
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2085
 ms.assetid: 0a86785c-8e6f-481b-8c7b-412220c1950d
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2085
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 45805bbea2eca77ae81922088471e99de26be1e4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'identifier' : 仮引数リスト内にありません。  
+---
+# <a name="compiler-error-c2085"></a>コンパイラ エラー C2085
+'identifier': 仮パラメーター リストではなく  
   
- この識別子は、関数定義の中の仮パラメーター リストではないところで宣言されました。これは、ANSI C だけに対応します。  
+ 識別子は、仮パラメーター リストではなく、関数定義で宣言されました。 (ANSI C のみ)  
   
- 次の例では警告 C2085 が生成されます。  
+ 次の例では、C2085 が生成されます。  
   
 ```  
 // C2085.c  
@@ -36,7 +39,7 @@ void func1( void )
 int main( void ) {}   // C2085  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C2085b.c  
@@ -44,4 +47,4 @@ void func1( void );
 int main( void ) {}  
 ```  
   
- セミコロンがない場合、`func1()` はプロトタイプではなく関数定義と見なされます。このため、`main` が `func1()` で定義され、識別子 `main` に対して C2085 エラーが生成されます。
+ セミコロンの欠落している`func1()`のでは関数定義では、プロトタイプではないようになります`main`内で定義された`func1()`、識別子のエラー C2085 を生成する`main`です。

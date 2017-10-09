@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2247 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2247"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2247"
+title: "コンパイラ エラー C2247 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2247
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2247
 ms.assetid: 72efa03e-615e-4ef9-aede-0a98654b20fd
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# コンパイラ エラー C2247
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 64eafb23ca83cb61ac9b45cf9c84ba69365f8198
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'識別子' はアクセスできません。'クラス' は '指定子' で 'クラス' からの継承で使われています。  
+---
+# <a name="compiler-error-c2247"></a>コンパイラ エラー C2247
+' identifier' の 'class' では、'specifier' を使用して、'class' から継承するためアクセスできません。  
   
- `identifier` が、プライベートまたはプロテクトのアクセス レベルで宣言されたクラスから継承されています。  
+ `identifier`プライベートまたはプロテクトのアクセスで宣言されたクラスから継承されます。  
   
- 次の例では警告 C2247 が生成されます。  
+ 次の例では、C2247 が生成されます。  
   
 ```  
 // C2247.cpp  
@@ -41,9 +44,9 @@ class C : public B {} c;   // so even though C's B is public
 int j = c.i;               // C2247, i not accessible  
 ```  
   
- このエラーは、プロテクト メンバーのアクセスを制御している Visual Studio .NET 2003 で行った、コンパイラ準拠作業の結果として生成されることもあります。  プロテクト メンバー \(n\) には、そのメンバー \(n\) が属するクラス \(A\) の継承クラス \(B\) のメンバー関数を通じてだけアクセスできます。  
+ このエラーは、Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成することもできます。 プロテクト メンバーのアクセスを制御します。 プロテクト メンバー (n) は、(A) (n) がメンバーである、クラスから継承するクラス (B) のメンバー関数からのみアクセスできます。  
   
- Visual Studio .NET 2003 と Visual Studio .NET の両方のバージョンの Visual C\+\+ で有効なコードを作成するには、メンバーをその型のフレンドとして宣言します。  パブリック継承も使用できます。  
+ Visual Studio .NET 2003 と Visual Studio .NET のバージョンの Visual C の両方で有効であるコードでは、型のフレンドであるメンバーを宣言します。 パブリック継承も使用できます。  
   
 ```  
 // C2247b.cpp  
@@ -66,9 +69,9 @@ void A::f() {
 }  
 ```  
   
- C2247 は、プライベート基本クラスにはアクセスできない Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成されることもあります。  型 \(B\) に対するプライベート基本クラスであるクラス \(A\) は、B を基本クラスとして使用する型 \(C\) からアクセスできません。  
+ C2247 が Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成されることもできます: プライベート基本クラスはアクセスできないようになりました。 プライベート基底クラスを型には、クラス (A) は、(C)、基底クラスとして B を使用する型にアクセスできない (B) 必要があります。  
   
- Visual Studio .NET 2003 と Visual Studio .NET の両方のバージョンの Visual C\+\+ で有効なコードを作成するには、スコープ演算子を使用します。  
+ Visual Studio .NET 2003 と Visual Studio .NET のバージョンの Visual C の両方で有効であるコードでは、スコープ演算子を使用します。  
   
 ```  
 // C2247c.cpp  

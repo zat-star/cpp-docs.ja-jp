@@ -19,26 +19,11 @@ caps.latest.revision: 16
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 0837d8f5e48ccf0de0ba8630801667da2ddb6bfa
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 865eea3ed69ea817aafea011e81033f2bd4ca5f4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2259"></a>コンパイラ エラー C2259
@@ -48,7 +33,7 @@ ms.lasthandoff: 02/24/2017
   
  1 つ以上の純粋仮想関数を持つクラスまたは構造体をインスタンス化することはできません。 派生クラスのオブジェクトをインスタンス化するには、派生クラスが各純粋仮想関数をオーバーライドする必要があります。  
   
- 詳細については、次を参照してください。[暗黙的な抽象クラス](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Implicitly_abstract_classes)します。  
+ 詳細については、次を参照してください。[暗黙的な抽象クラス](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Implicitly_abstract_classes)です。  
   
  次の例では、C2259 が生成されます。  
   
@@ -71,13 +56,13 @@ B b;  // OK, B defines func()
   
  インターフェイスから派生して、パブリック以外のアクセス許可を持つインターフェイス メソッドを派生クラスに実装する場合は、常に C2259 が発生する可能性があります。  これは、コンパイラでは、派生クラスに実装されたインターフェイス メソッドはパブリック アクセスを持つことが想定されているために発生します。 より制限の厳しいアクセス許可を持つインターフェイスのメンバー関数を実装する場合、コンパイラはそれらをインターフェイスに定義されるインターフェイス メソッドの実装とは見なさず、代わりにその派生クラスを抽象クラスとします。  
   
- この問題を回避する方法は&2; つあります。  
+ この問題を回避する方法は 2 つあります。  
   
 -   実装されるメソッドのアクセス許可をパブリックにします。  
   
 -   派生クラスに実装されるインターフェイス メソッドに対してスコープ解決演算子を使用して、実装されるメソッド名をインターフェイスの名前で修飾します。  
   
- C2259 は Visual C 2005 で行った準拠作業の結果として発生する可能性がも**/Zc:wchar_t**が既定でオンでします。 このような状況で c2599 エラーを使用してコンパイルする解決できる**/Zc:wchar_t-**を以前のバージョンからさらに、対応しているため、型を更新するか、動作を取得します。 「[/Zc:wchar_t (wchar_t をネイティブ型として認識)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
+ C2259 は Visual C 2005 で行った準拠作業の結果として発生する可能性がも**/Zc:wchar_t**が既定でオンでします。 このような状況に c2599 エラーを解決できますか、指定してコンパイル**/Zc:wchar_t-**、以前のバージョン、または可能であればに適合しているため、型を更新することによって動作を取得します。 「[/Zc:wchar_t (wchar_t をネイティブ型として認識)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
   
  次の例では、C2259 が生成されます。  
   

@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 20dd7fee3fdb8a07249d5a3a32447ebcb9387e26
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 329c5250067c1d7db275326c6a3debb73d389cf6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2093"></a>コンパイラ エラー C2093
-'variable1': 'variable2' の自動変数のアドレスを使用して初期化することはできません  
+'variable1': 自動変数 'variable2' のアドレスを使用して初期化することはできません  
   
- コンパイルすると[/Za](../../build/reference/za-ze-disable-language-extensions.md)プログラムは初期化子として、自動変数のアドレスを使用しようとしています。  
+ コンパイルするときに[/Za](../../build/reference/za-ze-disable-language-extensions.md)プログラムは初期化子として自動変数のアドレスを使用しようとしています。  
   
- 次の例では、c2093 エラーが生成されます。  
+ 次の例では、C2093 が生成されます。  
   
 ```  
 // C2093.c  

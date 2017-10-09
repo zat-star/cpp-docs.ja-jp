@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2217 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2217"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2217"
+title: "コンパイラ エラー C2217 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2217
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2217
 ms.assetid: 1ce1e3f5-4171-4376-804d-967f7e612935
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2217
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0f1795534af1332859fd1a33a137573df82643b4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'attribute1' には 'attribute2' が必要です。  
+---
+# <a name="compiler-error-c2217"></a>コンパイラ エラー C2217
+'attribute1' が 'attribute2' が必要です。  
   
- 関数に与える属性のうち、メッセージに示した最初の属性は 2 番目の属性と一緒に使う必要があります。  
+ 関数の最初の属性には、2 番目の属性が必要です。  
   
-### 次のような原因をチェックして問題を解決するには  
+### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
-1.  割り込み \(`__interrupt`\) 関数が `near` として宣言されています。  割り込み関数は `far` にする必要があります。  
+1.  中断 (`__interrupt`) として宣言された関数`near`です。 中断する必要があります関数`far`です。  
   
-2.  割り込み関数が `__stdcall` または `__fastcall` で宣言されています。  割り込み関数では C の呼び出し規約を使う必要があります。  
+2.  宣言された関数の割り込み`__stdcall`、または`__fastcall`です。 割り込み関数呼び出し規約を C を使用する必要があります。  
   
-## 使用例  
- また、C2217 エラーは、可変個の引数を受け取る CLR 関数にデリゲートをバインドする場合にも発生することがあります。  この関数にパラメーター配列のオーバーロードがある場合は、代わりにそれを使用します。  次の例では C2217 エラーが生成されます。  
+## <a name="example"></a>例  
+ C2217 は、可変個の引数を受け取る CLR 関数にデリゲートをバインドしようとする場合にも発生することができます。 関数は、e param 配列のオーバー ロードもが、代わりに使用します。 次の例では、C2217 を生成します。  
   
 ```  
 // C2217.cpp  

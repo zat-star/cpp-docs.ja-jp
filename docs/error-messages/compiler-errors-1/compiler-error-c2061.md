@@ -1,38 +1,41 @@
 ---
-title: "コンパイラ エラー C2061 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2061"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2061"
+title: "コンパイラ エラー C2061 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2061
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2061
 ms.assetid: b0e61c0c-a205-4820-b9aa-301d6c6fe6eb
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C2061
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 82518c78b49418c10cc0cd07ae59e58336af08f3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-構文エラー : 識別子 'identifier'  
+---
+# <a name="compiler-error-c2061"></a>コンパイラ エラー C2061
+構文エラー: 識別子 'identifier'  
   
- 予期しない位置で identifier を見つけました。  `identifier` は、使用する前に宣言してください。  
+ コンパイラは、ことが想定されている識別子を検出します。 確認して`identifier`が宣言されているは、使用する前にします。  
   
- 初期化子がかっこで囲まれている可能性があります。  このエラーを回避するには、宣言子をかっこで囲むか、宣言子を `typedef` にしてください。  
+ 初期化子は、かっこで囲むことがあります。 この問題を避けるためには、宣言子をかっこで囲みますまたはやすく、`typedef`です。  
   
- このエラーは、コンパイラがクラス テンプレート引数として式を検出した場合にも発生することがあります。[typename](../Topic/typename.md) を使用して、それが型であることをコンパイラに通知してください。  
+ コンパイラが、クラス テンプレート引数として式を検出したときに、このエラーを発生する可能性がありますも使用して[typename](../../cpp/typename.md)これは、型をコンパイラに指示します。  
   
- 次の例では警告 C2061 が生成されます。  
+ 次の例では、C2061 が生成されます。  
   
 ```  
 // C2061.cpp  
@@ -43,7 +46,7 @@ template < A a >   // C2061
 class c{};  
 ```  
   
- C2061 は、インスタンス名を [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) に渡す場合に発生することがあります。  
+ C2061 は、インスタンス名を渡す場合に発生する可能性が[typeid](../../windows/typeid-cpp-component-extensions.md):  
   
 ```  
 // C2061b.cpp  

@@ -1,31 +1,34 @@
 ---
-title: "コンパイラ エラー C2223 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2223"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2223"
+title: "コンパイラ エラー C2223 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2223
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2223
 ms.assetid: e4506f0f-0317-4a96-8a90-877a156d7939
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C2223
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 60fd15e0e514e30f62be32c4b465536deb7e252d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-左の\-\>「識別子」は構造体か共用体に  
+---
+# <a name="compiler-error-c2223"></a>コンパイラ エラー C2223
+'識別子 ->' の左側が構造体/共用体を指す必要があります。  
   
- `->` の左側のオペランドが、クラス、構造体、または共用体へのポインターではありません。  
+ `->` の左側のオペランドがクラス、構造体、または共用体へのポインターではありません。  
   
- このエラーは、左側のオペランドが未定義の変数 \(つまり `int` 型\) であることが原因で発生する場合があります。
+ このエラーは、未定義の変数は、左のオペランドで発生することができます (したがって入力`int`)。

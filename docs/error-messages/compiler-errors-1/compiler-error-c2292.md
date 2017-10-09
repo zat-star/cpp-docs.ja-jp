@@ -19,31 +19,17 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: d3a838fb14161c577dbc952756b600a04d8feabd
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a4810da162223b6e9ca33781a608c416a34aa804
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2292"></a>コンパイラ エラー C2292
-'identifier': 継承表現を最適なケース: 'representation1' が必要な 'representation2' が宣言されています。  
+'identifier': 最適な継承の処理形式: 'representation1' 必須 'representation2' が宣言されています。  
   
- 次のコードをコンパイルする[/vmb](../../build/reference/vmb-vmg-representation-method.md) ("最高常に"表現) C2292 が発生します。  
+ 次のコードをコンパイルする[/vmb 処理形式](../../build/reference/vmb-vmg-representation-method.md)("最高常に"表現) C2292 をによりします。  
   
 ```  
 // C2292.cpp  

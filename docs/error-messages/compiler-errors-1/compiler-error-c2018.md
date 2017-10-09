@@ -19,28 +19,14 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a6cf6d97c6152acdc9964d9ffcfb8fffd62f073a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 32a6e00ffc7ba90c9e600c4fa19f6b040be7c040
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2018"></a>コンパイラ エラー C2018
 文字 'hexnumber' は認識できません  
   
- ソース ファイルには、予期しない、16 進の番号によって識別される ASCII 文字が含まれています。 エラーを解決するのには、文字を削除します。
+ ソース ファイルには、16 進数の番号で識別される、予期しない ASCII 文字が含まれています。 エラーを解決するには、文字を削除します。

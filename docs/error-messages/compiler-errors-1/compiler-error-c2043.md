@@ -19,29 +19,14 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: f81dd45e55c68f1618ee8f5f42ab349e40f1d0f0
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8a683fda3b774d39297ed10fb80400536936d77e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2043"></a>コンパイラ エラー C2043
 'break' が正しくありません。  
   
- A [break](../../cpp/break-statement-cpp.md)は内でのみ有効な`do`を`for`を`while`をまたは`switch`ステートメント。
+ [break](../../cpp/break-statement-cpp.md) は、 `do`、 `for`、 `while`、または `switch` ステートメント内でのみ有効です。

@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2144 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2144"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2144"
+title: "コンパイラ エラー C2144 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2144
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2144
 ms.assetid: 49f3959b-324f-4c06-9588-c0ecef5dc5b3
 caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
----
-# コンパイラ エラー C2144
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0f541465009dcc137b8853351d10ceb9d5db4d05
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-構文エラー : 'type' は 'token' によって先行されなければなりません。  
+---
+# <a name="compiler-error-c2144"></a>コンパイラ エラー C2144
+構文エラー: 'type' は 'token' によって先行されなければなりません  
   
- `token` を置く必要がある場所で `type` を検出しました。  
+ コンパイラの想定`token`と見つかる`type`代わりにします。  
   
- このエラーは、右中かっこ \(}\)、右かっこ、またはセミコロンが欠落していることが原因で発生する場合があります。  
+ このエラーは、右中かっこ、右かっこ、またはセミコロンで発生する可能性があります。  
   
- C2144 は、空白文字を含む CLR キーワードからマクロを作成しようとした場合にも発生します。  
+ C2144 は、空白文字を含む CLR キーワードからマクロを作成しようとするときにも発生することができます。  
   
- 型の転送を行おうとして C2144 が発生することもあります。  詳細については、「[Type Forwarding \(C\+\+\/CLI\)](../../windows/type-forwarding-cpp-cli.md)」を参照してください。  
+ 型の転送しようとしている場合、C2144 する可能性がありますにも参照してください。 参照してください[Type Forwarding (C + + CLI)](../../windows/type-forwarding-cpp-cli.md)詳細についてはします。  
   
-## 使用例  
- 次の例では C2144 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2144 を生成します。  
   
 ```  
 // C2144.cpp  
@@ -48,8 +51,8 @@ REF struct MyStruct0;   // C2144
 REF1 MyStruct1;  
 ```  
   
-## 使用例  
- 次の例では C2144 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2144 を生成します。  
   
 ```  
 // C2144_2.cpp  

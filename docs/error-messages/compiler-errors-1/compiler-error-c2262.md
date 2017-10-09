@@ -19,32 +19,17 @@ caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 62a32d2a15e36819c8b74f35ef5eae57f1abb50f
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 216a82734603db0fd62692f7818dcb1e1fa67b06
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2262"></a>コンパイラ エラー C2262
 'attribute_specifiers' : InternalsVisibleTo 宣言にバージョン、カルチャ、またはプロセッサ属性を指定することはできません  
   
- <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性が正しく指定されていません</xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>。  
+ <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性が正しく指定されていません。  
   
 ## <a name="example"></a>例  
  次の例では C2262 が生成されます。  

@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2270 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2270"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2270"
+title: "コンパイラ エラー C2270 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2270
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2270
 ms.assetid: b52c068e-0b61-42e7-b775-4d57b3ddcba0
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2270
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: bc380d8a44e61ac0f709b8440d788d12f3795922
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'function' : 非メンバー関数が、メモリ モデル修飾子で宣言されています。  
+---
+# <a name="compiler-error-c2270"></a>コンパイラ エラー C2270
+'function': 修飾子の非メンバー関数では使用できません  
   
- 非メンバー関数が、[const](../../cpp/const-cpp.md)、[volatile](../../cpp/volatile-cpp.md)、または別のメモリ モデル修飾子で宣言されています。  
+ 非メンバー関数が宣言された[const](../../cpp/const-cpp.md)、[揮発性](../../cpp/volatile-cpp.md)、または別のメモリ モデル修飾子です。  
   
- 次の例では警告 C2270 が生成されます。  
+ 次の例では、C2270 が生成されます。  
   
 ```  
 // C2270.cpp  

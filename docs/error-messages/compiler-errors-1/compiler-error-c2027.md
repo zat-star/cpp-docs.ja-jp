@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2027 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2027"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2027"
+title: "コンパイラ エラー C2027 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2027
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2027
 ms.assetid: a39150c0-ec04-45ec-934c-a838bfe76627
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2027
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2a2fec9194858127ca08ecc0a891a81a91de48fa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-認識できない型 'type' が使われています。  
+---
+# <a name="compiler-error-c2027"></a>コンパイラ エラー C2027
+未定義の型 'type' の使用します。  
   
- 型は定義せずに使うことはできません。  このエラーを解決するには、型を完全に定義してから参照してください。  
+ 定義されるまで、型を使用できません。 エラーを解決するのには、型が参照する前に完全に定義されていることを確認します。  
   
-## 使用例  
- 次の例では C2027 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2027 を生成します。  
   
 ```  
 // C2027.cpp  
@@ -49,10 +52,10 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 宣言されているが未定義の型へのポインターを宣言することはできます。しかし、Visual C\+\+ では、未定義の型への参照は許可されません。  
+## <a name="example"></a>例  
+ 宣言されているが定義されていない型へのポインターを宣言することができます。  Visual C が未定義の型への参照を許可しません。  
   
- 次の例では C2027 エラーが生成されます。  
+ 次の例では、C2027 を生成します。  
   
 ```  
 // C2027_b.cpp  

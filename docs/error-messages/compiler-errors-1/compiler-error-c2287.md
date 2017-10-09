@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b1e869d4e9113852af6cab93883695909ac62982
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ed8537c7da77da7e5401448e8a6d579cfb4ebe07
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2287"></a>コンパイラ エラー C2287
-'class': 継承表現: 'representation1' が必要な 'representation2' よりも汎用性の低い  
+'class': 継承の処理形式: 'representation1' が必要な 'representation2' より汎用性の低い  
   
- クラスは、単純な表記が短すぎます宣言されます。  
+ クラスは、必要なよりも単純な表現と宣言されます。  
   
- 次の例では、c2287 エラーが生成されます。  
+ 次の例では、C2287 が生成されます。  
   
 ```  
 // C2287.cpp  

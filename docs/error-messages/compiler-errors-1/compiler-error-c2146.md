@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2146 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2146"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2146"
+title: "コンパイラ エラー C2146 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2146
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2146
 ms.assetid: 6bfb7de6-6723-4486-9350-c66ef88d7a64
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# コンパイラ エラー C2146
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 92e94ae29c1a7a3fc6adfdc0b3e82f5ce4dfcaf0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-構文エラー : 'token' が、識別子 'identifier' の前に必要です。  
+---
+# <a name="compiler-error-c2146"></a>コンパイラ エラー C2146
+構文エラー: 識別子 'identifier' の前に ' token' がありません  
   
- `token` を置く必要がある場所で `identifier` を検出しました。以下の原因が考えられます。  
+ コンパイラの想定`token`と見つかる`identifier`代わりにします。  以下の原因が考えられます。  
   
-1.  スペルの誤りまたは大文字小文字の入力ミスがあります。  
+1.  スペルまたは大文字と小文字のエラーです。  
   
-2.  識別子の宣言に型指定子がありません。  
+2.  識別子の宣言で型指定子がありません。  
   
- このエラーは、誤字が原因で発生する場合があります。  通常、このエラーは [C2065](../../error-messages/compiler-errors-1/compiler-error-c2065.md) エラーの前に発生します。  
+ このエラーは、入力ミスによって発生する可能性があります。 エラー [C2065](../../error-messages/compiler-errors-1/compiler-error-c2065.md)通常このエラーの前にします。  
   
-## 使用例  
- 次の例では C2146 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2146 を生成します。  
   
 ```  
 // C2146.cpp  
@@ -52,10 +55,10 @@ int main() {
 }  
 ```  
   
-## 使用例  
- このエラーは、`typename` キーワードがない Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成されることもあります。  
+## <a name="example"></a>例  
+ このエラーは、Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成することもできます。 見つからない`typename`キーワード。  
   
- 次のコード例は、Visual Studio .NET 2002 ではコンパイルされますが、Visual Studio .NET 2003 ではエラーになります。  
+ 次の例では、Visual Studio .NET 2002 でコンパイルは、Visual Studio .NET 2003 では失敗します。  
   
 ```  
 // C2146b.cpp  
@@ -76,12 +79,12 @@ template <typename T>
 typename X<T>::Y func() { }  
 ```  
   
-## 使用例  
- このエラーは、プライマリ パラメーターからテンプレート パラメーターを、明示的に特殊化された形式で検出できない Visual Studio .NET 2003 で行った、コンパイラ準拠作業の結果として表示されることもあります。  
+## <a name="example"></a>例  
+ Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として、このエラーが表示されます。 明示的な特殊化が不要になったプライマリ テンプレートからテンプレート パラメーターを検索します。  
   
- 明示的に特殊化された形式では、プライマリ テンプレートから `T` を使用できません。  Visual Studio .NET 2003 と Visual Studio .NET の両方のバージョンの Visual C\+\+ でコードを有効にするには、特殊化されたテンプレート パラメーターのすべてのインスタンスを明示的に特殊化された型に置換します。  
+ 使用`T`プライマリ テンプレートからは、明示的な特殊化では許可されませんが。 コードを Visual Studio .NET 2003 および Visual Studio .NET のバージョンの Visual C で有効にするには、特殊化のテンプレート パラメーターのすべてのインスタンスを明示的に特殊な種類に置き換えます。  
   
- 次のコード例は、Visual Studio .NET ではコンパイルされますが、Visual Studio .NET 2003 ではエラーになります。  
+ 次の例では、Visual Studio .NET でコンパイルは、Visual Studio .NET 2003 では失敗します。  
   
 ```  
 // C2146_c.cpp  

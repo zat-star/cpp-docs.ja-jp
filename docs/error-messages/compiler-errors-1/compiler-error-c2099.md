@@ -19,26 +19,11 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 74fdc75470600c29029c52e38ab2073e484dbde6
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0378426777bc7ce831eee9ecb62170baf5e906b9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2099"></a>コンパイラ エラー C2099
@@ -57,13 +42,13 @@ j = *p;   // C2099 *p is not a constant
 ```  
   
 ## <a name="example"></a>例  
- C2099 エラーは、コンパイラが下にある式に定数の圧縮を実行できないためにも発生することができます**/fp: 厳密な**ため、浮動小数点の有効桁数の環境設定 (を参照してください[_controlfp_s](../../c-runtime-library/reference/controlfp-s.md)詳細については) 実行時とコンパイル時に異なる場合があります。  
+ 浮動小数点の有効桁数の環境設定 (詳細については「 **_controlfp_s** 」を参照) が実行時とコンパイル時では異なるため、 [/fp:strict](../../c-runtime-library/reference/controlfp-s.md) で式への定数の圧縮を実行できない場合にも、C2099 が発生します。  
   
  定数の圧縮が失敗すると、コンパイラは C で使用できない動的な初期化を呼び出します。  
   
  このエラーを解決するには、モジュールを .cpp ファイルとしてコンパイルするか、式を簡単にします。  
   
- 詳細については、「[/fp (浮動小数点の動作の指定)](../../build/reference/fp-specify-floating-point-behavior.md)」を参照してください。  
+ 詳細については、「 [/fp (Specify Floating-Point Behavior)](../../build/reference/fp-specify-floating-point-behavior.md)」を参照してください。  
   
  次の例では C2099 エラーが生成されます。  
   
