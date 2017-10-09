@@ -37,25 +37,11 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 6c1bf74e3b597026af02e2fdd4dc6cec327793dd
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: 249fc38a36ee0f3a61b6347b48219154bada7d22
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="securityinitcookie"></a>__security_init_cookie
@@ -83,7 +69,7 @@ void __security_init_cookie(void);
 |-------------|---------------------|  
 |`__security_init_cookie`|\<process.h>|  
   
- `__security_init_cookie` は、標準の C ランタイム ライブラリの Microsoft 拡張機能です。 互換性の詳細については、「 [互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ `__security_init_cookie` は、標準の C ランタイム ライブラリの Microsoft 拡張機能です。 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [コンパイラ セキュリティの徹底調査](http://go.microsoft.com/fwlink/?linkid=7260)

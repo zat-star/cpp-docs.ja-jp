@@ -1,44 +1,49 @@
 ---
-title: "ATL OLEDB コンシューマーの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL OLE DB コンシューマー"
-  - "ATL プロジェクト, 追加 (ATL OLE DB コンシューマーを)"
-  - "OLE DB, 追加 (ATL OLE DB コンシューマーをプロジェクトに)"
+title: "ATL OLE DB コンシューマーの追加 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL projects, adding ATL OLE DB consumers
+- OLE DB, adding ATL OLE DB consumer to projects
+- ATL OLE DB consumers
 ms.assetid: f940a513-4e42-4148-b521-dd0d7dc89fa2
 caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# ATL OLEDB コンシューマーの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 41e31e82c97252a2ab5e34a78db5af1fd4e24f98
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-このウィザードを使用して、ATL OLEDB コンシューマーをプロジェクトに追加します。  ATL OLEDB コンシューマーは、OLEDB アクセサー クラス、およびデータ ソースにアクセスするために必要なデータ連結で構成されます。  ATL COM アプリケーション、または、ATL サポートを含む MFC アプリケーションや Win32 アプリケーションとしてプロジェクトを作成しておく必要があります。ATL サポートは、ATL OLE DB コンシューマー ウィザードを使用すると自動的に追加されます。  
+---
+# <a name="adding-an-atl-ole-db-consumer"></a>ATL OLE DB コンシューマーの追加
+このウィザードを使用すると、プロジェクトに ATL OLE DB コンシューマーを追加します。 ATL OLE DB コンシューマーは、OLE DB アクセサー クラスとデータ バインディングのデータ ソースにアクセスするために必要なので構成されます。 プロジェクトは、ATL COM アプリケーションまたは ATL のサポート (ATL OLE DB コンシューマー ウィザードが自動的に追加します) を含む MFC または Win32 アプリケーションとして作成されていなければなりません。  
   
- **Note** MFC プロジェクトに OLE DB コンシューマーを追加できます。  その場合、ATL OLE DB コンシューマー ウィザードは必要な COM サポートをプロジェクトに追加します。  ここでは、MFC プロジェクトを作成したときに、MFC アプリケーション ウィザードの **\[高度な機能\]** ページで **\[ActiveX コントロール\]** チェック ボックスをオンにしていることを前提としています。このチェック ボックスは既定でオンになっています。  このオプションをオンにすると、アプリケーションで **CoInitialize** と **CoUninitialize** が必ず呼び出されます。  MFC プロジェクトを作成したときに **\[ActiveX コントロール\]** チェック ボックスをオンにしなかった場合は、メイン コードで **CoInitialize** と **CoUninitialize** を呼び出す必要があります。  
+ **注**MFC プロジェクトに、OLE DB コンシューマーを追加することができます。 作成する場合は、ATL OLE DB コンシューマー ウィザードは、プロジェクトに必要な COM サポートを追加します。 これは、MFC プロジェクトを作成したときに、選択されていることを前提としています、 **ActiveX コントロール** チェック ボックスを (で、**高度な機能**MFC アプリケーション ウィザードのページ)、これは既定でオンです。 アプリケーションを呼び出すことにより、このオプションを選択する**CoInitialize**と**CoUninitialize**です。 選択しなかった場合**ActiveX コントロール**MFC プロジェクトを作成したときに呼び出す必要がある**CoInitialize**と**CoUninitialize**メイン コードにします。  
   
-### プロジェクトに ATL OLEDB コンシューマーを追加するには  
+### <a name="to-add-an-atl-ole-db-consumer-to-your-project"></a>プロジェクトに ATL OLE DB コンシューマーを追加するには  
   
-1.  クラス ビューでプロジェクトを右クリックします。  ショートカット メニューの \[追加\] をポイントし、\[クラスの追加\] をクリックします。  
+1.  クラス ビュー で、プロジェクトを右クリックします。 ショートカット メニューをクリックして**追加**をクリックし、**クラスの追加**です。  
   
-2.  \[Visual C\+\+\] フォルダーの \[ATL OLEDB コンシューマー\] アイコンをダブルクリックするか、またはそのアイコンを選択して \[開く\] をクリックします。  
+2.  Visual C フォルダーをダブルクリックして、 **ATL OLE DB コンシューマー**アイコンまたは選択し、をクリックして**開く**です。  
   
-     ATL OLEDB コンシューマー ウィザードが開きます。  
+     ATL OLE DB コンシューマー ウィザードが開きます。  
   
-3.  「[ATL OLEDB コンシューマー ウィザード](../../atl/reference/atl-ole-db-consumer-wizard.md)」の説明に従って設定を定義します。  
+3.  」の説明に従って設定を定義する[ATL OLE DB コンシューマー ウィザード](../../atl/reference/atl-ole-db-consumer-wizard.md)です。  
   
-4.  **\[完了\]** をクリックして、ウィザードを閉じます。  新規作成された OLEDB コンシューマー コードがプロジェクトに追加されます。  
+4.  をクリックして**完了**ウィザードを閉じます。 プロジェクトで、新しく作成された OLE DB コンシューマー コードが挿入されます。  
   
-## 参照  
- [コード ウィザードを使用した機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)
+
+

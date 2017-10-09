@@ -20,29 +20,15 @@ caps.latest.revision: 17
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 918694610bd029c5cc6f67e7227a9a1461b1408b
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 1ddb59d2ac448725de719423d1634f00e568d2c9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="cdefaultelementtraits-class"></a>CDefaultElementTraits クラス
-このクラスは、コレクション クラスに対する既定のメソッドおよび関数を提供します。  
+このクラスは、コレクション クラスの既定のメソッドおよび関数を提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -58,9 +44,9 @@ class CDefaultElementTraits : public CElementTraitsBase<T>,
  コレクションに格納されるデータの型。  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、移動、コピー、比較すると、コレクション クラスのオブジェクトに格納されたハッシュの要素を既定の静的関数とメソッドを提供します。 その関数とメソッドをこのクラスの派生[CElementTraitsBase](../../atl/reference/celementtraitsbase-class.md)、 [CDefaultHashTraits](../../atl/reference/cdefaulthashtraits-class.md)、および[CDefaultCompareTraits](../../atl/reference/cdefaultcomparetraits-class.md)、使用していると[CElementTraits](../../atl/reference/celementtraits-class.md)、 [CPrimitiveElementTraits](../../atl/reference/cprimitiveelementtraits-class.md)、および[CHeapPtrElementTraits](../../atl/reference/cheapptrelementtraits-class.md)します。  
+ このクラスは、移動、コピー、比較、およびコレクション クラスのオブジェクトに格納されているハッシュ要素の既定の静的な関数とメソッドを提供します。 このクラスは、その関数やメソッドから派生している[CElementTraitsBase](../../atl/reference/celementtraitsbase-class.md)、 [CDefaultHashTraits](../../atl/reference/cdefaulthashtraits-class.md)、および[CDefaultCompareTraits](../../atl/reference/cdefaultcomparetraits-class.md)、によって使用されて、 [CElementTraits](../../atl/reference/celementtraits-class.md)、 [CPrimitiveElementTraits](../../atl/reference/cprimitiveelementtraits-class.md)、および[CHeapPtrElementTraits](../../atl/reference/cheapptrelementtraits-class.md)です。  
   
- 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  

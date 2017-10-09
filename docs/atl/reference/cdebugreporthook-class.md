@@ -26,25 +26,11 @@ caps.latest.revision: 22
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 1de883341e0a53a1520fa44d99e7907ee1fe10b6
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 72790fca5fbfb2856d4da780f276b9cfdc53a26a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="cdebugreporthook-class"></a>CDebugReportHook クラス
@@ -136,7 +122,7 @@ static int __cdecl CDebugReportHookProc(
  かどうか、フックでメッセージを完全に処理できるように、さらに報告する必要はありませんは、FALSE を返します。 場合に TRUE を返します`_CrtDbgReport`通常の方法でメッセージを報告する必要があります。  
   
 ### <a name="remarks"></a>コメント  
- レポートの関数は、名前付きパイプを開き、もう一方の端のプロセスとの通信を試みます。 パイプがビジー状態の場合、レポート機能はパイプが無料か、タイムアウト時間が経過するまで待機します。 コンス トラクターまたはへの呼び出しによって、タイムアウトを設定することができます[CDebugReportHook::SetTimeout](#settimeout)です。  
+ レポートの関数は、名前付きパイプを開き、もう一方の端のプロセスとの通信を試みます。 パイプがビジー状態である場合は、レポートの関数はパイプが無料か、タイムアウト時間が経過するまで待機します。 コンス トラクターまたはへの呼び出しによって、タイムアウトを設定することができます[CDebugReportHook::SetTimeout](#settimeout)です。  
   
  呼び出し元のスレッドの基になるセキュリティ コンテキストでこの関数のコードが実行され、この関数の実行中、権限借用は、無効になっています。  
   

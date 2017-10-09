@@ -24,29 +24,15 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: 2c1269288e03a8ac9f359dad9acf1a81ddbc84c2
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 6232a3e8b6c392361a1e57681e9ba4dff66d6aa4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="ccomfakecriticalsection-class"></a>CComFakeCriticalSection クラス
-このクラスと同じメソッドを提供する[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)クリティカル セクションは提供されません。  
+このクラスと同じメソッドを提供する[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)は、クリティカル セクションは提供しません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -60,21 +46,21 @@ class CComFakeCriticalSection
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComFakeCriticalSection::Init](#init)|クリティカル セクションがないので実行されません。|  
-|[CComFakeCriticalSection::Lock](#lock)|クリティカル セクションがないので実行されません。|  
-|[CComFakeCriticalSection::Term](#term)|クリティカル セクションがないので実行されません。|  
-|[CComFakeCriticalSection::Unlock](#unlock)|クリティカル セクションがないので実行されません。|  
+|[CComFakeCriticalSection::Init](#init)|クリティカル セクションが存在しないために機能しません。|  
+|[CComFakeCriticalSection::Lock](#lock)|クリティカル セクションが存在しないために機能しません。|  
+|[CComFakeCriticalSection::Term](#term)|クリティカル セクションが存在しないために機能しません。|  
+|[CComFakeCriticalSection::Unlock](#unlock)|クリティカル セクションが存在しないために機能しません。|  
   
 ## <a name="remarks"></a>コメント  
- `CComFakeCriticalSection`含まれるメソッドをミラー化[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)します。 ただし、`CComFakeCriticalSection`に重要なセクションの管轄外そのため、そのメソッドが何も行いません。  
+ `CComFakeCriticalSection`内のメソッドをミラー化[CComCriticalSection](../../atl/reference/ccomcriticalsection-class.md)です。 ただし、`CComFakeCriticalSection`に重要なセクションは行わないため、そのメソッドが何もしません。  
   
- 通常、使用して`CComFakeCriticalSection`を通じて、`typedef`名前か、`AutoCriticalSection`または`CriticalSection`です。 使用する場合[CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)または[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらの両方の`typedef`名前参照`CComFakeCriticalSection`します。 使用する場合[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)を参照している[CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)と`CComCriticalSection`、それぞれします。  
+ 通常、使用して`CComFakeCriticalSection`を通じて、`typedef`名前か、`AutoCriticalSection`または`CriticalSection`です。 使用する場合[CComSingleThreadModel](../../atl/reference/ccomsinglethreadmodel-class.md)または[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらの両方の`typedef`名前参照`CComFakeCriticalSection`です。 使用する場合[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)を参照する[CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)と`CComCriticalSection`、それぞれします。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
   
 ##  <a name="init"></a>CComFakeCriticalSection::Init  
- クリティカル セクションがないので実行されません。  
+ クリティカル セクションが存在しないために機能しません。  
   
 ```
 HRESULT Init() throw();
@@ -84,7 +70,7 @@ HRESULT Init() throw();
  S_OK を返します。  
   
 ##  <a name="lock"></a>CComFakeCriticalSection::Lock  
- クリティカル セクションがないので実行されません。  
+ クリティカル セクションが存在しないために機能しません。  
   
 ```
 HRESULT Lock() throw();
@@ -94,7 +80,7 @@ HRESULT Lock() throw();
  S_OK を返します。  
   
 ##  <a name="term"></a>CComFakeCriticalSection::Term  
- クリティカル セクションがないので実行されません。  
+ クリティカル セクションが存在しないために機能しません。  
   
 ```
 HRESULT Term() throw();
@@ -104,7 +90,7 @@ HRESULT Term() throw();
  S_OK を返します。  
   
 ##  <a name="unlock"></a>CComFakeCriticalSection::Unlock  
- クリティカル セクションがないので実行されません。  
+ クリティカル セクションが存在しないために機能しません。  
   
 ```
 HRESULT Unlock() throw();

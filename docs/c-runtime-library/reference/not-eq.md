@@ -1,46 +1,49 @@
 ---
-title: "not_eq | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "not_eq"
-  - "std::not_eq"
-  - "std.not_eq"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "not_eq 関数"
+title: not_eq | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- not_eq
+- std::not_eq
+- std.not_eq
+dev_langs:
+- C++
+helpviewer_keywords:
+- not_eq function
 ms.assetid: d87ad299-8b50-4393-a57f-06f70e1f23fb
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# not_eq
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: 55d31bbb9d7823161bd98d76884298f3cc089f4d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-\!\= 演算子の代替手段。  
+---
+# <a name="noteq"></a>not_eq
+!= 演算子の代替手段。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -48,10 +51,10 @@ caps.handback.revision: 12
   
 ```  
   
-## 解説  
- マクロにより \!\= 演算子が生成されます。  
+## <a name="remarks"></a>コメント  
+ マクロにより != 演算子が生成されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // iso646_not_eq.cpp  
@@ -72,7 +75,10 @@ int main( )
 }  
 ```  
   
-  **a が b と等しくありません**  
-**a が b と等しくありません**   
-## 必要条件  
- **ヘッダー:** \<iso646.h\>
+```Output  
+a is not equal to b  
+a is not equal to b  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<iso646.h>

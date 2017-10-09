@@ -26,25 +26,11 @@ caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 1cc2adef85c902b7ad12b152b35a7ef68e6abacb
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 01198e8de5f2eb1cbe0787bd287820d222875c20
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="ccomsafearraybound-class"></a>CComSafeArrayBound クラス
@@ -63,7 +49,7 @@ class CComSafeArrayBound : public SAFEARRAYBOUND
 |||  
 |-|-|  
 |[CComSafeArrayBound](#ccomsafearraybound)|コンストラクターです。|  
-|[GetCount](#getcount)|このメソッドでは、要素の数を取得します。|  
+|[GetCount](#getcount)|このメソッドを呼び出して要素の数を返します。|  
 |[GetLowerBound](#getlowerbound)|下限の境界を返すには、このメソッドを呼び出します。|  
 |[です](#getupperbound)|上限の境界を返すには、このメソッドを呼び出します。|  
 |[SetCount](#setcount)|要素の数を設定するには、このメソッドを呼び出します。|  
@@ -73,10 +59,10 @@ class CComSafeArrayBound : public SAFEARRAYBOUND
   
 |||  
 |-|-|  
-|[演算子 =](#operator_eq)|セット、`CComSafeArrayBound`を新しい値にします。|  
+|[演算子 =](#operator_eq)|セット、`CComSafeArrayBound`に新しい値。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、用のラッパー、 **SAFEARRAYBOUND**によって使用される構造[CComSafeArray](../../atl/reference/ccomsafearray-class.md)します。 メソッドを提供してクエリを実行して、1 つのディメンションの上限と下限の境界を設定、`CComSafeArray`オブジェクトと含まれる要素の数。 多次元`CComSafeArray`オブジェクトの配列を使用して`CComSafeArrayBound`オブジェクト、ディメンションごとに&1; つです。 そのため、メソッドを使って[GetCount](#getcount)、このメソッドは多次元配列の要素の合計数事項を返すことはありません。  
+ このクラスは、用のラッパー、 **SAFEARRAYBOUND**によって使用される構造[CComSafeArray](../../atl/reference/ccomsafearray-class.md)です。 クエリを実行するための 1 つのディメンションの上限と下限の境界を設定メソッドを提供する`CComSafeArray`オブジェクトとが含まれている要素の数。 多次元`CComSafeArray`オブジェクトの配列を使用して`CComSafeArrayBound`オブジェクト、ディメンションごとに 1 つです。 したがってなどのメソッドを使用[GetCount](#getcount)、このメソッドは多次元配列の要素の合計数を返されませんことに注意してください。  
   
  **ヘッダー:** atlsafe.h  
   
@@ -98,10 +84,10 @@ CComSafeArrayBound(ULONG ulCount = 0, LONG lLowerBound = 0) throw();
  配列の番号を下限値です。  
   
 ### <a name="remarks"></a>コメント  
- 配列が、Visual C プログラムからアクセスする場合は、下限を 0 として定義することをお勧めします。 配列の Visual Basic など他の言語で使用する場合は、別の下限値を使用するよりも望ましい場合があります。  
+ 配列は、Visual C プログラムからアクセスすることの場合は、下限を 0 として定義することをお勧めします。 配列が Visual Basic など他の言語で使用する場合は、別の下限値を使用する方がある可能性があります。  
   
 ##  <a name="getcount"></a>CComSafeArrayBound::GetCount  
- このメソッドでは、要素の数を取得します。  
+ このメソッドを呼び出して要素の数を返します。  
   
 ```
 ULONG GetCount() const throw();
@@ -111,7 +97,7 @@ ULONG GetCount() const throw();
  要素の数を返します。  
   
 ### <a name="remarks"></a>コメント  
- 場合、関連付けられている`CComSafeArray`オブジェクトは、多次元配列を表す、このメソッドは右端の次元で要素の合計数を返すのみです。 使用[CComSafeArray::GetCount](../../atl/reference/ccomsafearray-class.md#getcount)要素の合計数を取得します。  
+ 場合、関連付けられている`CComSafeArray`オブジェクトは、多次元配列を表す、このメソッドは、右端にあるディメンション内の要素の合計数を返しますのみです。 使用して[CComSafeArray::GetCount](../../atl/reference/ccomsafearray-class.md#getcount)要素の合計数を取得します。  
   
 ##  <a name="getlowerbound"></a>CComSafeArrayBound::GetLowerBound  
  下限の境界を返すには、このメソッドを呼び出します。  
@@ -121,7 +107,7 @@ LONG GetLowerBound() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 下限値を返す、`CComSafeArrayBound`オブジェクトです。  
+ 下限値を返します、`CComSafeArrayBound`オブジェクト。  
   
 ##  <a name="getupperbound"></a>CComSafeArrayBound::GetUpperBound  
  上限の境界を返すには、このメソッドを呼び出します。  
@@ -131,13 +117,13 @@ LONG GetUpperBound() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 上限値を返す、`CComSafeArrayBound`オブジェクトです。  
+ 上限値を返します、`CComSafeArrayBound`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- 上限の境界は、要素および下限の境界値の数によって異なります。 たとえば、下限が 0 で、要素の数が 10 の場合上限の境界が 9 を自動的に設定されます。  
+ 上限の境界は、要素と下限の境界値の数によって異なります。 たとえば、下限は 0 要素の数は 10、上限の境界が 9 に自動的に設定されます。  
   
 ##  <a name="operator_eq"></a>CComSafeArrayBound::operator =  
- セット、`CComSafeArrayBound`を新しい値にします。  
+ セット、`CComSafeArrayBound`に新しい値。  
   
 ```
 CComSafeArrayBound& operator= (const CComSafeArrayBound& bound) throw();
@@ -152,10 +138,10 @@ CComSafeArrayBound& operator= (ULONG ulCount) throw();
  要素の数。  
   
 ### <a name="return-value"></a>戻り値  
- ポインターを返す、`CComSafeArrayBound`オブジェクトです。  
+ ポインターを返します、`CComSafeArrayBound`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- `CComSafeArrayBound`オブジェクトは、既存を使用して割り当てることができます`CComSafeArrayBound`、またはケース下限の境界が設定されるを 0 に既定では、要素の数を指定しています。  
+ `CComSafeArrayBound`オブジェクトは、既存を使用して割り当てることができる`CComSafeArrayBound`、またはを下限の境界の場合は既定で設定を 0 には、要素の数を指定することによってです。  
   
 ##  <a name="setcount"></a>CComSafeArrayBound::SetCount  
  要素の数を設定するには、このメソッドを呼び出します。  
@@ -169,7 +155,7 @@ ULONG SetCount(ULONG ulCount) throw();
  要素の数。  
   
 ### <a name="return-value"></a>戻り値  
- 要素の数を返す、`CComSafeArrayBound`オブジェクトです。  
+ 内の要素の数を返します、`CComSafeArrayBound`オブジェクト。  
   
 ##  <a name="setlowerbound"></a>CComSafeArrayBound::SetLowerBound  
  下限の境界を設定するには、このメソッドを呼び出します。  
@@ -183,12 +169,12 @@ LONG SetLowerBound(LONG lLowerBound) throw();
  下限値です。  
   
 ### <a name="return-value"></a>戻り値  
- 新しい下限値を返す、`CComSafeArrayBound`オブジェクトです。  
+ 新しい下限を返します、`CComSafeArrayBound`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- 配列が、Visual C プログラムからアクセスする場合は、下限を 0 として定義することをお勧めします。 配列の Visual Basic など他の言語で使用する場合は、別の下限値を使用するよりも望ましい場合があります。  
+ 配列は、Visual C プログラムからアクセスすることの場合は、下限を 0 として定義することをお勧めします。 配列が Visual Basic など他の言語で使用する場合は、別の下限値を使用する方がある可能性があります。  
   
- 上限の境界は、要素および下限の境界値の数によって異なります。 たとえば、下限が 0 で、要素の数が 10 の場合上限の境界が 9 を自動的に設定されます。  
+ 上限の境界は、要素と下限の境界値の数によって異なります。 たとえば、下限は 0 要素の数は 10、上限の境界が 9 に自動的に設定されます。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

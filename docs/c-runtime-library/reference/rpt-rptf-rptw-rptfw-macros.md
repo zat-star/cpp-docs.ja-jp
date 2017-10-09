@@ -99,30 +99,15 @@ caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: ca0ae546af28c342db2e452bec432ced0437738a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 43efb76381db85f4f1d601cb6d83dd82074e960a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="rpt-rptf-rptw-rptfw-macros"></a>_RPT、_RPTF、_RPTW、_RPTFW のマクロ
-デバッグ レポートを生成してアプリケーションの進行状況を追跡します (デバッグ バージョンのみ)。 *n* には、`args` 内の引数の数を指定し、0、1、2、3、4、または 5 のいずれかを使用できることにご注意ください。  
+デバッグ レポートを生成してアプリケーションの進行状況を追跡します (デバッグ バージョンのみ)。 なお *n* 内の引数の数を指定`args`0、1、2、3、4、または 5 を指定できます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -169,7 +154,7 @@ _RPTFWn(
   
  `_RPTW` マクロと `_RPTFW` マクロは、これらのマクロのワイド文字バージョンです。 これらは、`wprintf` に似ており、引数としてワイド文字列を受け取ります。  
   
- `_RPT` マクロは [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) 関数を呼び出して、ユーザー メッセージを含むデバッグ レポートを生成します。 `_RPTW` マクロは、`_CrtDbgReportW` 関数を呼び出して、ワイド文字で同じレポートを生成します。 `_RPTF` マクロと `_RPTFW` マクロは、ユーザー メッセージに加え、レポート マクロが呼び出された場所のソース ファイルと行番号を含むデバッグ レポートを作成します。 ユーザー メッセージは、[printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md) 関数で定義されている同じ規則を使用して、`arg`[*n*] 引数を `format` 文字列に置き換えることで作成されます。  
+ `_RPT` マクロは [_CrtDbgReport](../../c-runtime-library/reference/crtdbgreport-crtdbgreportw.md) 関数を呼び出して、ユーザー メッセージを含むデバッグ レポートを生成します。 `_RPTW` マクロは、`_CrtDbgReportW` 関数を呼び出して、ワイド文字で同じレポートを生成します。 `_RPTF` マクロと `_RPTFW` マクロは、ユーザー メッセージに加え、レポート マクロが呼び出された場所のソース ファイルと行番号を含むデバッグ レポートを作成します。 置き換えることによって、ユーザー メッセージの作成、 `arg`[*n*] 引数を`format`文字列、によって定義されている同じ規則を使用して、 [printf](../../c-runtime-library/reference/printf-printf-l-wprintf-wprintf-l.md)関数。  
   
  `_CrtDbgReport` または `_CrtDbgReportW` は、`reportType` に定義されている現在のレポート モードとファイルに基づいて、デバッグ レポートを生成し、その宛先を決定します。 [_CrtSetReportMode](../../c-runtime-library/reference/crtsetreportmode.md) 関数と [_CrtSetReportFile](../../c-runtime-library/reference/crtsetreportfile.md) 関数は、各レポートの種類の宛先を定義するために使用されます。  
   

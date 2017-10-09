@@ -22,25 +22,11 @@ caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 347e7bf7cd9173fb2815f44fc052ec23ab4055a6
-ms.openlocfilehash: 7456d441d7b3fb74f404f29c893c492feab10ed9
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 1e824c2b85e7f80ad93a1f154be7f2e680bd00a9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="atlbasemodule70-structure"></a>_ATL_BASE_MODULE70 構造体
@@ -63,16 +49,16 @@ struct _ATL_BASE_MODULE70 {
   
 ## <a name="members"></a>メンバー  
  `cbSize`  
- バージョン管理に使用される、構造体のサイズ。  
+ バージョン管理に使用される、構造のサイズ。  
   
  `m_hInst`  
- **HInstance** (exe または dll) は、このモジュールのです。  
+ **HInstance**このモジュール (exe または dll) です。  
   
  `m_hInstResource`  
  既定のインスタンスのリソース ハンドル。  
   
  **m_bNT5orWin98**  
- オペレーティング システムのバージョン情報。 ATL で内部的に使用  
+ オペレーティング システムのバージョン情報です。 ATL で内部的に使用  
   
  **dwAtlBuildVer**  
  ATL のバージョンを格納します。 現在は 0x0700 です。  
@@ -81,13 +67,13 @@ struct _ATL_BASE_MODULE70 {
  ATL の内部の GUID です。  
   
  **m_csResource**  
- アクセスを同期するために使用、 **m_rgResourceInstance**配列。 ATL で内部的に使用  
+ アクセスを同期するために使用される、 **m_rgResourceInstance**配列。 ATL で内部的に使用  
   
  **m_rgResourceInstance**  
  ATL が対応であるすべてのリソース インスタンスのリソースを検索するために使用する配列。 ATL で内部的に使用  
   
 ## <a name="remarks"></a>コメント  
- [_ATL_BASE_MODULE](atl-typedefs.md#_atl_base_module)の typedef と定義`_ATL_BASE_MODULE70`します。  
+ [_ATL_BASE_MODULE](atl-typedefs.md#_atl_base_module)の typedef として定義された`_ATL_BASE_MODULE70`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  

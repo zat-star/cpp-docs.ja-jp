@@ -43,25 +43,11 @@ caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: e213247266cad2c0f96b96057cf8e6933dfe45c6
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: 6d8beea978bcbd6aaf876c92a2ff80d3b8325b93
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="kbhit"></a>_kbhit
@@ -78,7 +64,7 @@ int _kbhit( void );
 ```  
   
 ## <a name="return-value"></a>戻り値  
- `_kbhit` はキーが押されていた場合に&0; 以外の値を返します。 それ以外の場合は、0 を返します。  
+ `_kbhit` はキーが押されていた場合に 0 以外の値を返します。 それ以外の場合は、0 を返します。  
   
 ## <a name="remarks"></a>コメント  
  `_kbhit` 関数は、の最新のキーストロークのコンソールをチェックします。 関数がゼロ以外の値を返した場合、キーストロークがバッファー内で待機しています。 プログラムでは、`_getch` または `_getche` を呼び出して、キーストロークを取得できます。  

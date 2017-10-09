@@ -1,69 +1,75 @@
 ---
-title: "ATL 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "index-page "
-f1_keywords: 
-  - "vc.atl.structures"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, 構造体"
-  - "構造体, ATL"
+title: "構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: 'index-page '
+f1_keywords:
+- vc.atl.structures
+dev_langs:
+- C++
+helpviewer_keywords:
+- ATL, structures
+- structures, ATL
 ms.assetid: 622173c8-6f2e-457c-8fae-28d4e80ecdb5
 caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
----
-# ATL 構造体
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 2546608c3c84a2228fba35bb1470064f64c2212b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-Active Template Library\) は次の構造が含まれます。  
+---
+# <a name="atl-structures"></a>構造体
+
+
+Active Template Library には、次の構造体が含まれています。  
   
-## このセクションの内容  
- [ATL\_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md)  
- プリンター、メタファイル、または ActiveX コントロールなど、さまざまなターゲットに表示に使用される情報が含まれます。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [ATL_DRAWINFO](../../atl/reference/atl-drawinfo-structure.md)  
+ プリンター、メタファイル、ActiveX コントロールなど、さまざまな対象に表示するために使用する情報が含まれています。  
   
- [\_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md)  
- ATL ウィンドウ コードでクラスのインスタンス データが含まれます。  
+ [_AtlCreateWndData](../../atl/reference/atlcreatewnddata-structure.md)  
+ ATL の windowing コードのクラス インスタンス データが含まれています  
   
- [\_ATL\_BASE\_MODULE70](../Topic/_ATL_BASE_MODULE70%20Structure.md)  
- ATL を使用するプロジェクトによって使用されます。  
+ [_ATL_BASE_MODULE70](../../atl/reference/atl-base-module70-structure.md)  
+ ATL を使用する他のプロジェクトで使用されます。  
   
- [\_ATL\_COM\_MODULE70](../../atl/reference/atl-com-module70-structure.md)  
- ATL で COM 関連のコードによって使用されます。  
+ [_ATL_COM_MODULE70](../../atl/reference/atl-com-module70-structure.md)  
+ ATL で COM に関連するコードで使用されます。  
   
- [\_ATL\_FUNC\_INFO](../../atl/reference/atl-func-info-structure.md)  
- ディスパッチ インターフェイスでメソッドまたはプロパティの記述に使用する型情報が含まれます。  
+ [_ATL_FUNC_INFO](../../atl/reference/atl-func-info-structure.md)  
+ ディスパッチ インターフェイスでメソッドまたはプロパティを記述するために使用する型情報が含まれています。  
   
- [\_ATL\_MODULE70](../../atl/reference/atl-module70-structure.md)  
- すべての ATL モジュールによって使用されるデータが含まれます。  
+ [_ATL_MODULE70](../../atl/reference/atl-module70-structure.md)  
+ すべての ATL モジュールによって使用されるデータが含まれています。  
   
- [\_ATL\_WIN\_MODULE70](../../atl/reference/atl-win-module70-structure.md)  
- ATL ウィンドウでコードによって使用されます。  
+ [_ATL_WIN_MODULE70](../../atl/reference/atl-win-module70-structure.md)  
+ ATL の windowing コードによって使用されます。  
   
-## 関連項目  
- [ATL のリファレンス](../../atl/atl-com-desktop-components.md)  
- COM オブジェクトのプログラミングを簡単にする、ATL ライブラリ \(テンプレート ベースの C\+\+ クラスの集合\) の一覧があります。  
+## <a name="related-sections"></a>関連項目  
+ [ATL リファレンス](../../atl/atl-com-desktop-components.md)  
+ COM オブジェクトのプログラミングを簡単にする、ATL ライブラリ (テンプレート ベースの C++ クラスの集合) の一覧があります。  
   
  [ATL 関数](../../atl/reference/atl-functions.md)  
- アルファベット順に編成されるグローバル関数に関するリファレンス情報を提供します。  カテゴリに関数を整理するトピックを示します。  
+ アルファベット順グローバル関数に関するリファレンス情報を提供します。 カテゴリに関数のトピックが含まれます。  
   
- [ATL グローバル変数](../Topic/ATL%20Global%20Variables.md)  
- アルファベット順に編成されるグローバル変数に関するリファレンス情報を提供します。  
+ [ATL グローバル変数](../../atl/reference/atl-global-variables.md)  
+ アルファベット順のグローバル変数に関するリファレンス情報を提供します。  
   
  [ATL マクロ](../../atl/reference/atl-macros.md)  
- アルファベット順に編成されているマクロでのリファレンス資料を提供します。  カテゴリにマクロを整理するトピックを示します。  
+ アルファベット順のマクロの参考資料を提供します。 マクロのカテゴリにトピックが含まれます。  
   
- [ATL typedef](../../atl/reference/atl-typedefs.md)  
- アルファベット順に編成された typedef でリファレンス情報を紹介します  
+ [ATL Typedef](../../atl/reference/atl-typedefs.md)  
+ Typedef のアルファベット順での参考資料を提供します。  
   
  [ATL クラス](../../atl/reference/atl-classes.md)  
- アルファベット順に編成されるクラスのリファレンスです。
+ アルファベット順クラスに関する参考資料を提供します。
+

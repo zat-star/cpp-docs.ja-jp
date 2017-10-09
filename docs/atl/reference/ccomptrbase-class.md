@@ -30,25 +30,11 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 65541d9e6f15bcc56811fa6a5d9d168737131108
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 1e6bf79ce5de5d19468b3cbb230e16882483dc30
 ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="ccomptrbase-class"></a>CComPtrBase クラス
@@ -93,11 +79,11 @@ class CComPtrBase
 |----------|-----------------|  
 |[CComPtrBase::operator T *](#operator_t_star)|キャスト演算子です。|  
 |[CComPtrBase::operator!](#operator_not)|NOT 演算子です。|  
-|[CComPtrBase::operator >/documents/report1.rdl」の](#operator_amp)|&Gt;/documents/report1.rdl」の演算子。|  
+|[CComPtrBase::operator (& a)](#operator_amp)|(& A) 演算子。|  
 |[CComPtrBase::operator *](#operator_star)|* 演算子。|  
-|[CComPtrBase::operator](#ccomptrbase__operator lt)|小さいの演算子よりもします。|  
+|[CComPtrBase::operator <](#ccomptrbase__operator lt)|小さいの演算子よりもします。|  
 |[CComPtrBase::operator = =](#operator_eq_eq)|等値演算子。|  
-|[-> CComPtrBase::operator](#operator_ptr)|メンバーへのポインター演算子です。|  
+|[CComPtrBase::operator -> します。](#operator_ptr)|メンバーへのポインター演算子です。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
@@ -106,7 +92,7 @@ class CComPtrBase
 |[解放](#p)|ポインターのデータ メンバー変数です。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、COM メモリ管理ルーチンを使用するその他のスマート ポインターの基盤[CComQIPtr](../../atl/reference/ccomqiptr-class.md)と[CComPtr](../../atl/reference/ccomptr-class.md)です。 派生クラス コンス トラクターと演算子を追加しますがによって提供されるメソッドに依存`CComPtrBase`です。  
+ このクラスは、COM メモリ管理ルーチンを使用するその他のスマート ポインターの基盤[CComQIPtr](../../atl/reference/ccomqiptr-class.md)と[CComPtr](../../atl/reference/ccomptr-class.md)です。 派生クラスは、独自のコンス トラクターと演算子がによって提供されるメソッドに依存して`CComPtrBase`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcomcli.h  
@@ -206,7 +192,7 @@ HRESULT CopyTo(T** ppT) throw();
   
 ### <a name="parameters"></a>パラメーター  
  *ppT*  
- 受け取る変数のアドレス、`CComPtrBase`のポインター。  
+ 受け取る変数のアドレス、`CComPtrBase`ポインター。  
   
 ### <a name="return-value"></a>戻り値  
  成功した場合、エラー発生時に E_POINTER S_OK を返します。  
@@ -214,7 +200,7 @@ HRESULT CopyTo(T** ppT) throw();
 ### <a name="remarks"></a>コメント  
  コピー、`CComPtrBase`へのポインター *ppT*です。 参照カウント、[解放](#p)メンバー変数が増加します。  
   
- 場合に返される HRESULT エラー *ppT*が NULL です。 デバッグ ビルドで、アサーション エラーが発生場合*ppT*は null です。  
+ 場合に返される HRESULT エラー *ppT*が NULL です。 デバッグ ビルドで、アサーション エラーが発生場合*ppT*が NULL です。  
   
 ##  <a name="detach"></a>CComPtrBase::Detach  
  ポインターの所有権を解放するには、このメソッドを呼び出します。  
@@ -238,10 +224,10 @@ bool IsEqualObject(IUnknown* pOther) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `pOther`  
- **IUnknown \***を比較します。  
+ **IUnknown \*** を比較します。  
   
 ### <a name="return-value"></a>戻り値  
- オブジェクトが場合と同じ場合は false それ以外の場合は true を返します。  
+ オブジェクトは同一の場合は false をそれ以外の場合がある場合は true を返します。  
   
 ##  <a name="operator_not"></a>CComPtrBase::operator!  
  NOT 演算子です。  
@@ -254,7 +240,7 @@ bool operator!() const throw();
  場合は true を返します、`CComHeapPtr`ポインターが NULL、false それ以外の場合。  
   
 ##  <a name="operator_amp"></a>CComPtrBase::operator&amp;  
- &Gt;/documents/report1.rdl」の演算子。  
+ (& A) 演算子。  
   
 ```
 T** operator&() throw();
@@ -315,7 +301,7 @@ bool operator<(T* pT) const throw();
  オブジェクトへのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- ポインターは、現在のオブジェクトによって管理されている場合、true を返しますでは、比較するポインターより小さいです。  
+ ポインターが現在のオブジェクトによって管理されている場合、true を返しますでは、比較するポインターより小さいです。  
   
 ##  <a name="operator_t_star"></a>CComPtrBase::operator T *  
  キャスト演算子です。  

@@ -1,49 +1,52 @@
 ---
-title: "_aligned_malloc | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_aligned_malloc"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-heap-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_aligned_malloc"
-  - "alligned_malloc"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_aligned_malloc 関数"
-  - "aligned_malloc 関数"
+title: _aligned_malloc | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _aligned_malloc
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-heap-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _aligned_malloc
+- alligned_malloc
+dev_langs:
+- C++
+helpviewer_keywords:
+- aligned_malloc function
+- _aligned_malloc function
 ms.assetid: fb788d40-ee94-4039-aa4d-97d73dab1ca0
 caps.latest.revision: 25
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 25
----
-# _aligned_malloc
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: e81ecad3276abc34243f18a8df367d82122a1064
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="alignedmalloc"></a>_aligned_malloc
 指定された配置の境界にメモリを割り当てます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void * _aligned_malloc(  
@@ -52,30 +55,30 @@ void * _aligned_malloc(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `size`  
  要求されたメモリ割り当てのサイズ。  
   
  `alignment`  
  配置の値。2 の累乗の整数である必要があります。  
   
-## 戻り値  
- 割り当てられたメモリ ブロックへのポインター。操作が失敗した場合は `NULL`。  ポインターは、`alignment` の倍数です。  
+## <a name="return-value"></a>戻り値  
+ 割り当てられたメモリ ブロックへのポインター。操作が失敗した場合は `NULL`。 ポインターは、`alignment` の倍数です。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `_aligned_malloc` は [malloc](../../c-runtime-library/reference/malloc.md) に基づいています。  
   
- `_aligned_malloc` が `__declspec(noalias)` と `__declspec(restrict)` でマークされている場合、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。  詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
+ `_aligned_malloc` が `__declspec(noalias)` と `__declspec(restrict)` でマークされている場合、この関数がグローバル変数を変更せず、返されるポインターがエイリアス化されない保証があることを意味します。 詳細については、「[noalias](../../cpp/noalias.md)」、および「[restrict](../../cpp/restrict.md)」を参照してください。  
   
- この関数は、メモリ割り当てが失敗するか、要求されたサイズが `errno` より大きかった場合に、`ENOMEM` を `_HEAP_MAXREQ` に設定します。  `errno` に関する詳細については、「[errno、\_doserrno、\_sys\_errlist、および \_sys\_nerr](../Topic/errno,%20_doserrno,%20_sys_errlist,%20and%20_sys_nerr.md)」を参照してください。  また、`_aligned_malloc` はそのパラメーターを検証します。  `alignment` が 2 の累乗でないか `size` が 0 の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。  実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
+ この関数は、メモリ割り当てが失敗するか、要求されたサイズが `errno` より大きかった場合に、`ENOMEM` を `_HEAP_MAXREQ` に設定します。 `errno` に関する詳細については、「[errno、_doserrno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。 また、`_aligned_malloc` はそのパラメーターを検証します。 `alignment` が 2 の累乗でないか `size` が 0 の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、この関数によって無効なパラメーター ハンドラーが呼び出されます。 実行の継続が許可された場合、この関数は `NULL` を返し、`errno` を `EINVAL` に設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_aligned_malloc`|\<malloc.h\>|  
+|-------------|---------------------|  
+|`_aligned_malloc`|\<malloc.h>|  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_aligned_malloc.c  
@@ -150,9 +153,12 @@ int main() {
 }  
 ```  
   
-  **ポインター 3280880 は、アラインメント 16 に設定されます**  
-**ポインター 3280880 は、アラインメント 16 に設定されます**  
-**ポインター 3280891 は、オフセット 5、アラインメント 16 に設定されます**  
-**ポインター 3280891 は、オフセット 5、アラインメント 16 に設定されます**   
-## 参照  
+```Output  
+This pointer, 3280880, is aligned on 16  
+This pointer, 3280880, is aligned on 16  
+This pointer, 3280891, is offset by 5 on alignment of 16  
+This pointer, 3280891, is offset by 5 on alignment of 16  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [データの整列](../../c-runtime-library/data-alignment.md)
