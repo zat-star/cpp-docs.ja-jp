@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c0bb71b560b86f7d31ec581c27f3f0743690457a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 845740c871d13b62dfa91313c136c5f0331deb9c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2120"></a>コンパイラ エラー C2120
-void 型が他の型と同時に使われました。  
+すべての型で 'void' が正しくありません。  
   
- `void`に別の型宣言で型を使用します。  
+ `void`別の型を含む宣言で型を使用します。  
   
- 次の例では、c2120 エラーが生成されます。  
+ 次の例では、C2120 が生成されます。  
   
 ```  
 // C2120.cpp  
