@@ -19,32 +19,17 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2ce61109a2d428bbaa5fffdf4bd39de46d09a077
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: fb6c45ad153a428d090d05c8fa24c05eef024607
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2666"></a>コンパイラ エラー C2666
-'identifier': 数値のオーバー ロードがある同様の変換  
+'identifier': オーバー ロードの番号がある同様の変換  
   
- オーバー ロードされた関数または演算子があいまいです。   仮パラメーター リストは、あいまいさを解決するのには、コンパイラのすぎるような可能性があります。  このエラーを解決するには、1 つ以上の実際のパラメーターを明示的にキャストします。  
+ オーバー ロードされた関数または演算子があいまいです。   仮パラメーター リストは、あいまいさを解決するのには、コンパイラと似すぎて可能性があります。  このエラーを解決するには、1 つ以上の実際のパラメーターを明示的にキャストします。  
   
  次の例では、C2666 が生成されます。  
   
@@ -62,15 +47,15 @@ int main() {
 }  
 ```  
   
- このエラーは、Visual Studio .NET 2003 で行ったコンパイラへの準拠作業の結果として生成できます。  
+ このエラーは、Visual Studio .NET 2003 で行ったコンパイラ準拠作業の結果として生成することもできます。  
   
 -   二項演算子とポインター型へのユーザー定義の変換  
   
--   修飾変換は、id 変換と同じではありません。  
+-   限定変換は、id 変換と同じではありません。  
   
- 二項演算子の\<、>、 \<=、および > =、渡されるパラメーターは今すぐ暗黙的変換、オペランドの型パラメーターの型には、オペランドの型に変換するユーザー定義の変換演算子が定義されている場合。 これであいまいさが発生する可能性。  
+ 二項演算子の\<、>、 \<=、および > =、渡されるパラメーターは、今すぐに暗黙的に変換、オペランドの型パラメーターの型には、オペランドの型に変換するユーザー定義変換演算子が定義されている場合。 これであいまいさが残る可能性があります。  
   
- Visual Studio .NET 2003 および Visual Studio .NET のバージョンの Visual C の両方で有効なコードでは、関数の構文を使用して明示的にクラスの演算子を呼び出します。  
+ Visual Studio .NET 2003 と Visual Studio .NET のバージョンの Visual C の両方で有効であるコードでは、関数の構文を使用して明示的にクラスの演算子を呼び出します。  
   
 ## <a name="example"></a>例  
   
@@ -130,7 +115,7 @@ int main()
 ```  
   
 ## <a name="example"></a>例  
- 次の例では、C2666 を生成されます。  
+ 次の例には、C2666 が生成されます。  
   
 ```  
 // C2666c.cpp  

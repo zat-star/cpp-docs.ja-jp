@@ -19,40 +19,26 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 629d1c0b98f1bf6a813bd28f25c4e5afc0e7b367
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6c35294472fe4142e7e6689adfc5f5f71c27b664
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2891"></a>コンパイラ エラー C2891
-'パラメーター': テンプレート パラメーターのアドレスを受け取ることはできません  
+'parameter': テンプレート パラメーターのアドレスを取得できません  
   
- 左辺値である場合を除き、テンプレート パラメーターのアドレスを受け取ることはできません。 型パラメーターは、アドレスがないために、左辺値ではありません。 また、左辺値ではない、テンプレート パラメーター リスト内の非型の値には、アドレスはありません。 これは、テンプレート パラメーターとして渡される値がテンプレート引数のコンパイラが生成したコピーであるために、コンパイラ エラー C2891 を発生するコードの例です。  
+ 左辺値である場合を除き、テンプレート パラメーターのアドレスを取得できません。 型パラメーターは、アドレスがないために、左辺値ではありません。 また、左辺値ではないテンプレート パラメーター リスト内の非型の値には、アドレスがありません。 これは、テンプレート パラメーターとして渡された値がコンパイラによって生成されたテンプレート引数のコピーであるために、コンパイラ エラー C2891 を原因となったコードの例です。  
   
 ```  
 template <int i> int* f() { return &i; }  
 ```  
   
- テンプレート パラメーターなど、参照型の左辺値であることができます、アドレスを採用しています。  
+ テンプレート パラメーターなど、参照型の左辺値であることができますが、アドレスを取得します。  
   
 ```  
 template <int& r> int* f() { return &r; }  
 ```  
   
- このエラーを修正するには、なりませんテンプレート パラメーターのアドレスを左辺値でない限り。
+ このエラーを修正するにはなりませんテンプレート パラメーターのアドレスは左辺値である場合を除き。

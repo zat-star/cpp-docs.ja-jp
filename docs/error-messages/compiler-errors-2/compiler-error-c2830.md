@@ -19,29 +19,15 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: 1cbaa14c04aac55a09f646bfbe669a475e527add
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 44b64b447a9cc5482014c9304f9101f54f45c72c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
+ms.lasthandoff: 10/10/2017
 
 ---
-# <a name="compiler-error-c2830"></a>{1&gt;コンパイラ エラー C2830&lt;1}
-'operator new' の標準の仮引数には既定の値を与えることはできません。  
+# <a name="compiler-error-c2830"></a>コンパイラ エラー C2830
+'operator new' を標準の仮引数は、既定値を持つことができます。  
   
 標準の仮パラメーター [new 演算子](../../standard-library/new-operators.md#op_new)既定値を持つことはできません。 ユーザー定義の仮パラメーターだけでは、既定値を指定できます。
 

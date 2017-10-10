@@ -19,37 +19,23 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f6ada3a8894c8bc40c3821342a9a59911270029a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 573b7bbbe40929d291c10426e7826293e8dfd4bc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3110"></a>コンパイラ エラー C3110
 'function_name': COM インターフェイスのメソッドをオーバー ロードすることはできません  
   
- インターフェイス属性などの先頭はインターフェイス:  
+ インターフェイスが付けられましたインターフェイス属性などです。  
   
 -   [カスタム](../../windows/custom-cpp.md)  
   
--   [ディスパッチ インターフェイス](../../windows/dispinterface.md)  
+-   [dispinterface](../../windows/dispinterface.md)  
   
--   [デュアル](../../windows/dual.md)  
+-   [dual](../../windows/dual.md)  
   
 -   [object](../../windows/object-cpp.md)  
   

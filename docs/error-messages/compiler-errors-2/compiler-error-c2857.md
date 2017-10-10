@@ -1,31 +1,34 @@
 ---
-title: "コンパイラ エラー C2857 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2857"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2857"
+title: "コンパイラ エラー C2857 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2857
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2857
 ms.assetid: b57302bd-58ec-45ae-992a-1e282d5eeccc
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2857
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ca0f2b8847600096c9e39de24c58e6a0021fa83f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-\/Yc コマンド ライン オプションで指定したインクルード ファイル filename はソース ファイルに含まれていません。  
+---
+# <a name="compiler-error-c2857"></a>コンパイラ エラー C2857
+' #include '/Ycfilename コマンド ライン オプションで指定されたソース ファイルに含まれていません。  
   
- [\/Yc](../../build/reference/yc-create-precompiled-header-file.md) オプションでインクルード ファイルの名前が指定されていますが、指定されたファイルは、コンパイルしているソース ファイルではインクルードされていません。  
+ [/Yc](../../build/reference/yc-create-precompiled-header-file.md)オプションが含まれていないコンパイルされているソース ファイルのインクルード ファイルの名前を指定します。  
   
- このエラーは、コンパイルされていない条件付きコンパイル ブロックにある `#include` ステートメントが原因で発生する場合があります。
+ このエラーは、によって発生することができます、`#include`コンパイルされていない条件付きコンパイル ブロック内のステートメント。

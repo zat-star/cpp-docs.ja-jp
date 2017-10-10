@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C3072 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3072"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3072"
+title: "コンパイラ エラー C3072 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3072
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3072
 ms.assetid: cdd5cb6b-c478-4698-adfa-c40188d34a18
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C3072
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3334edd6f297a61ca62a5fe5a0f8b6cddfef7f80
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-演算子 '演算子' は ref クラスのインスタンスに適用できません。  
+---
+# <a name="compiler-error-c3072"></a>コンパイラ エラー C3072
+演算子 'operator' は ref クラスのインスタンスに適用することはできません。  
   
- ref クラスのインスタンスをハンドル型に変換するには、単項 '`operator` ' 演算子を使用してください。  
+ 単項を使用して '`operator` ' ref クラスのインスタンスをハンドル型に変換する演算子  
   
- CLR 型には、ネイティブ \(標準\) 演算子ではなく CLR 演算子が必要です。詳細については、「[Tracking Reference Operator](../../windows/tracking-reference-operator-cpp-component-extensions.md)」を参照してください。  
+ CLR 型には、CLR 演算子、いないネイティブ (標準) 演算子が必要です。  詳細については、次を参照してください。[参照演算子の追跡](../../windows/tracking-reference-operator-cpp-component-extensions.md)です。  
   
-## 使用例  
- 次の例では C3072 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3072 を生成します。  
   
 ```  
 // C3072.cpp  

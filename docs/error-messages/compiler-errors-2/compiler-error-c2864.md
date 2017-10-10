@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2864 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2864"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2864"
+title: "コンパイラ エラー C2864 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2864
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2864
 ms.assetid: d0ca2ad9-90a6-4aef-8511-98a3b414c102
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# コンパイラ エラー C2864
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f205aeb886921439360191def0853e33e4eb0fea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'variable' : in\-class initializer を持つ静的データ メンバーには、非揮発性 const integral 型が必要です  
+---
+# <a name="compiler-error-c2864"></a>コンパイラ エラー C2864
+'variable' : in-class initializer を持つ静的データ メンバーには、非揮発性 const integral 型が必要です  
   
- `volatile`、非 `const`、または非整数型として定義された `static` データ メンバーを初期化するには、member\-definition ステートメントを使用します。  これらを宣言で初期化することはできません。  
+ `static`、非 `volatile`、または非整数型として定義された `const` データ メンバーを初期化するには、member-definition ステートメントを使用します。 これらを宣言で初期化することはできません。  
   
- 次の例では C2864 エラーが生成されます。  
+ このサンプルでは、C2864 が生成されます。  
   
 ```  
 // C2864.cpp  

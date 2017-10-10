@@ -19,35 +19,21 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 2fbe6bcb1850948d4484fca93f2cd511a9e2a1da
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2d3adf42ddb4df4365a45fd3ef24bccd682ac3c9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2833"></a>コンパイラ エラー C2833
-'演算子' は認識されている演算子または種類ではありません。  
+'operator 演算子' は認識されている演算子または型ではありません。  
   
- 単語`operator`をオーバーライドする演算子または変換する型に従わなければなりません。  
+ 単語`operator`をオーバーライドする演算子または変換する型が続かなければなりません。  
   
- マネージ型で定義できる演算子の一覧は、次を参照してください。[ユーザー定義演算子](../../dotnet/user-defined-operators-cpp-cli.md)します。  
+ マネージ型で定義できる演算子の一覧は、次を参照してください。[ユーザー定義の演算子](../../dotnet/user-defined-operators-cpp-cli.md)です。  
   
- 次の例では、c2833 エラーが生成されます。  
+ 次の例では、C2833 が生成されます。  
   
 ```  
 // C2833.cpp  

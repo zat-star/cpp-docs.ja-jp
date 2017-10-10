@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: b9bb61acb079dcab24b1cbc453f6e92a9f8bd0a9
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 28c2031c3e659099507a8e59758e27f364dd29b9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2883"></a>コンパイラ エラー C2883
-'name': 'identifier' を使用して宣言によって導入される関数の宣言と競合  
+'name': 関数宣言が 'identifier' を使用して宣言によって導入されると競合しています  
   
- 関数を複数回定義しようとしました。 最初の定義が、名前空間から行われた、`using`宣言します。 2 つ目は、ローカルの定義をしました。  
+ 関数を複数回定義しようとするとします。 最初の定義が、名前空間から行われた、`using`宣言します。 2 つ目は、ローカルの定義をでした。  
   
- 次の例では、c2883 エラーが生成されます。  
+ 次の例では、C2883 が生成されます。  
   
 ```  
 // C2883.cpp  

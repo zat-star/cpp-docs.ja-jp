@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: b09a83e77e906a4a65efa12cf51a067361fad95a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4bb972ffa8bee016dd158490d123353bd6f46a8e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2879"></a>コンパイラ エラー C2879
-'symbol': 既存の名前空間名前を指定できます、代替名前空間エイリアス定義でのみ  
+'symbol': 既存の名前空間を指定できます代替名名前空間のエイリアス定義によってのみ  
   
  作成することはできません、[名前空間の別名](../../cpp/namespaces-cpp.md#namespace_aliases)名前空間以外のシンボルにします。  
   
- 次の例では、c2879 エラーが生成されます。  
+ 次の例では、C2879 が生成されます。  
   
 ```  
 // C2879.cpp  

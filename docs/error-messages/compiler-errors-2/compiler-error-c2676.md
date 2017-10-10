@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2676 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2676"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2676"
+title: "コンパイラ エラー C2676 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2676
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2676
 ms.assetid: 838a5e34-c92f-4f65-a597-e150bf8cf737
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C2676
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ed21b76da0834ff4a2aaa8af647d791fdaac075a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c2676"></a>コンパイラ エラー C2676
 二項演算子 'operator' : 'type' は、この演算子または定義済の演算子に適切な型への変換の定義を行いません。  
   
  この演算子を使うには、型を指定してこの演算子をオーバーロードするか、この演算子が定義された型への変換を定義する必要があります。  
   
-## 使用例  
- 次の例では C2676 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2676 を生成します。  
   
 ```  
 // C2676.cpp  
@@ -59,12 +62,12 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  C2676 は、参照型の `this` ポインターでポインター演算を試行した場合にも発生することがあります。  
   
- `this` ポインターは、参照型の型ハンドルのポインターです。  詳細については、「[このポインターのセマンティクス](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Semantics_of_the_this_pointer)」を参照してください。  
+ `this` ポインターは、参照型の型ハンドルのポインターです。 詳細については、次を参照してください。[このセマンティクス ポインター](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Semantics_of_the_this_pointer)です。  
   
- 次の例では C2676 エラーが生成されます。  
+ 次の例では、C2676 を生成します。  
   
 ```  
 // C2676_a.cpp  

@@ -19,32 +19,17 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: d9aff323a1c00edb6646a6cd4b6125cc69a9418f
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3ddd3aaface0e500dc92778333cd3672398909da
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3038"></a>コンパイラ エラー C3038
 'var': 'private' 句の変数を、それを囲むコンテキスト内で減少変数にすることはできません  
   
- 表示される変数、[削減](../../parallel/openmp/reference/reduction.md)並列ディレクティブの句を指定することはできません、[プライベート](../../parallel/openmp/reference/private-openmp.md)parallel コンストラクトにバインドする、work-sharing ディレクティブの句。  
+ parallel ディレクティブの [reduction](../../parallel/openmp/reference/reduction.md) 句に出現する変数を、parallel コンストラクトにバインドされる動作共有ディレクティブの [private](../../parallel/openmp/reference/private-openmp.md) 句に指定することはできません。  
   
  次の例では C3038 が生成されます。  
   

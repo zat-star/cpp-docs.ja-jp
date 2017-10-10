@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a2ef8264326ec47cead99d2c492cb7ec725d3929
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: fb418621a4a20fc802f22ca014c44809f80ce65b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3019"></a>コンパイラ エラー C3019
-OpenMP 'for' ステートメントのインクリメントには、正しくない形式が含まれています  
+openmp 'for' ステートメントの増分値が正しくない形式  
   
- OpenMP のインクリメント部分`for`ループ インデックス変数、演算子の右辺と左辺の両方を使用する必要があります。  
+ OpenMP のインクリメント部分`for`ループが演算子の右辺と左辺の両方のインデックス変数を使用する必要があります。  
   
- 次の例では、c3019 エラーが生成されます。  
+ 次の例では、C3019 が生成されます。  
   
 ```  
 // C3019.cpp  

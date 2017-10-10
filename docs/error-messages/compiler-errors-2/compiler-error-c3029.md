@@ -19,32 +19,17 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 0476e551f78505381eb7ab1f90233acf7cb670d6
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b04e6004f02a57023ed999f30ec5f318e7a72bb4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3029"></a>コンパイラ エラー C3029
 'symbol' : OpenMP ディレクティブのデータ共有句で一度だけ使用することができます  
   
- シンボルは、ディレクティブの&1; つ以上の句で複数回使用されました。 シンボルは、ディレクティブで一度だけ使用することができます。  
+ シンボルは、ディレクティブの 1 つ以上の句で複数回使用されました。 シンボルは、ディレクティブで一度だけ使用することができます。  
   
  次の例では C3029 が生成されます。  
   

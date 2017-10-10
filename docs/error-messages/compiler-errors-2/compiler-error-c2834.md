@@ -1,29 +1,32 @@
 ---
-title: "コンパイラ エラー C2834 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2834"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2834"
+title: "コンパイラ エラー C2834 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2834
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2834
 ms.assetid: 28f9f6eb-ab2a-4e64-aaaa-9d14f955de41
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2834
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5b85b01fa832b0d14d01b6b7cbb5ef65107177ef
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'operator operator' をクラスに対して局所的にすることはできません。  
+---
+# <a name="compiler-error-c2834"></a>コンパイラ エラー C2834
+'operator 演算子' はグローバルに修飾する必要があります。  
   
- `new` 演算子と `delete` 演算子は、それぞれが置かれているクラスに結び付けられています。  スコープ解決演算子を使用して、他のクラスにある `new` または `delete` を選択することはできません。  複数の形式の `new` 演算子と `delete` 演算子を実装するには、余分の仮パラメーターを指定できる形式の演算子を作成します。
+ `new`と`delete`演算子はクラスに関連付けられて、その場所します。 バージョンを選択するスコープ解決演算子を使用することはできません`new`または`delete`別のクラスからです。 複数のフォームを実装する、`new`または`delete`演算子は、余分の仮パラメーターを持つ演算子のバージョンを作成します。

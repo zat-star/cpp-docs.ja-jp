@@ -19,38 +19,24 @@ caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 5df018fe26e66ed480ed2464c19c876adfac8dd1
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 837ff564bc3b2795bce6de69caa85e1d1dcf2766
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3104"></a>コンパイラ エラー C3104
-無効な属性引数です。  
+無効な属性引数  
   
  属性に無効な引数を指定したとします。  
   
- 参照してください[属性パラメーターの型](../../windows/attribute-parameter-types-cpp-component-extensions.md)の詳細。  
+ 参照してください[属性パラメーター型](../../windows/attribute-parameter-types-cpp-component-extensions.md)詳細についてはします。  
   
- このエラーは、Visual C 2005 で行ったコンパイラへの準拠作業の結果として生成されることができます。 カスタム属性には、マネージ配列を渡すことと、配列の型が不要になった集約の初期化リストから推測します。 これで、コンパイラでは初期化子リストと同様に、配列の型を指定する必要があります。  
+ このエラーは、Visual C 2005 で行ったコンパイラ準拠作業の結果として生成されることができます。 カスタム属性をマネージ配列を渡すときに、配列の型は、集約の初期化リストからは推測不要になった。 今すぐ、コンパイラでは初期化子リストと同様に、配列の型を指定する必要があります。  
   
 ## <a name="example"></a>例  
- 次の例では、c3104 エラーを生成します。  
+ 次の例では、C3104 を生成します。  
   
 ```  
 // C3104a.cpp  
@@ -70,7 +56,7 @@ ref struct AStruct{};
 ```  
   
 ## <a name="example"></a>例  
- 次の例では、c3104 エラーを生成します。  
+ 次の例では、C3104 を生成します。  
   
 ```  
 // C3104b.cpp  

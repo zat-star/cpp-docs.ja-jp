@@ -1,32 +1,35 @@
 ---
-title: "コンパイラ エラー C2898 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2898"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2898"
+title: "コンパイラ エラー C2898 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2898
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2898
 ms.assetid: 68466e11-2541-4f6b-b772-13a642f30dfb
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2898
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0833d3e4bab22673c6bca5aee64430134762e98f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'declaration' : メンバー関数テンプレートを仮想にすることはできません。  
+---
+# <a name="compiler-error-c2898"></a>コンパイラ エラー C2898
+'declaration': メンバー関数テンプレートを仮想にすることはできません  
   
- 次の例では警告 C2898 が生成されます。  
+ 次の例では、C2898 が生成されます。  
   
 ```  
 // C2898.cpp  

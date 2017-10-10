@@ -19,28 +19,14 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 6c4cb41ad915054bb5f597b8b0eee3bf57d876c9
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4a4af3997ddf0921227c8e6448491c08e25f9957
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2873"></a>コンパイラ エラー C2873
-'symbol': シンボルは、using 宣言では使用できません  
+'symbol': シンボルは、using 宣言で使用することはできません  
   
- A`using`ディレクティブがない、[名前空間](../../cpp/namespaces-cpp.md)キーワードです。 これは、場合はコード コンパイラ、[宣言を使用して](../../cpp/using-declaration.md)ではなく、[ディレクティブを使用して](../../cpp/namespaces-cpp.md#using_directives)します。
+ A`using`ディレクティブが存在しない、[名前空間](../../cpp/namespaces-cpp.md)キーワード。 これは、場合はコード コンパイラ、[宣言を使用して](../../cpp/using-declaration.md)ではなく、[ディレクティブを使用して](../../cpp/namespaces-cpp.md#using_directives)です。

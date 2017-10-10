@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3028 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3028"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3028"
+title: "コンパイラ エラー C3028 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3028
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3028
 ms.assetid: 175e697f-8e8f-492a-8456-6240ffbbb900
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3028
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 56d1ed561b4f414cc85c7b0d7f2c112648ae6281
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'メンバー' : データ共有句では、変数またはスタティック データ メンバーのみを使用することができます  
+---
+# <a name="compiler-error-c3028"></a>コンパイラ エラー C3028
+'member': データ共有句で変数または静的データ メンバーのみを使用することができます  
   
  変数または静的データ メンバー以外のシンボルが reduction 句に渡されました。  
   
- 次の例では警告 C3028 が生成されます。  
+ 次の例では、C3028 が生成されます。  
   
 ```  
 // C3028.cpp  

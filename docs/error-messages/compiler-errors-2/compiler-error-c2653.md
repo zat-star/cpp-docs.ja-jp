@@ -19,25 +19,11 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: eb0c1bf407d1478451c246cf615d031ef6c45bf9
-ms.openlocfilehash: 2203cf8a09dbb05f6145ed238ab9fc03e458aaa5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: cc7990614283a20e9d07f52187258dbccad7c075
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2653"></a>コンパイラ エラー C2653
@@ -45,7 +31,7 @@ ms.lasthandoff: 02/24/2017
   
 構文は、クラス、構造体、共用体、または名前空間の名前が必要です。  
   
-次の例では、c2653 エラーが生成されます。  
+次の例では、C2653 が生成されます。  
   
 ```cpp  
 // C2653.cpp  
@@ -58,7 +44,7 @@ void xx::func1(int m) {}   // C2653
 void yy::func1(int m) {}   // OK  
 ```  
   
-C2653 を定義しようとする場合も、*複合名前空間*、Visual Studio 2015 の更新プログラム 3 より前の Visual C のバージョンを使用する場合に、1 つ以上のスコープにネストされた名前空間名を含む名前空間。 C++&17; する前に、定義は C++ では許可されませんが名前空間を合成します。 Visual C++ 2015 更新プログラム 3 以降、コンパイラは複合名前空間の定義をサポートと、 [/std:c では最新](../../build/reference/std-specify-language-standard-version.md)コンパイラ オプションを指定します。  
+C2653 ことも可能です定義しようとする場合、*複合名前空間*、Visual Studio 2015 Update 3 より前の Visual C のバージョンを使用するときに、1 つまたは複数のスコープの入れ子になった名前空間名を含む名前空間。 複合の名前空間の定義が、c++ 17 の前に C++ では許可されていません。 Visual C++ 2015 Update 3 以降をコンパイラは複合名前空間の定義がサポートするときに、 [/std:c + + 最新](../../build/reference/std-specify-language-standard-version.md)コンパイラ オプションを指定します。  
 ```cpp  
 // C2653b.cpp  
 namespace a::b {int i;}   // C2653 prior to Visual C++ 2015 Update 3,  

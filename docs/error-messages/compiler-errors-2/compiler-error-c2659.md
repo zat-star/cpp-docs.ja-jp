@@ -1,32 +1,35 @@
 ---
-title: "コンパイラ エラー C2659 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2659"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2659"
+title: "コンパイラ エラー C2659 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2659
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2659
 ms.assetid: b0883600-4d27-4ca7-a931-8ca6bd48654d
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C2659
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ad412a583a0835fab0f295acf928bba0bac1839d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'演算子' : 関数が演算子の左辺にあります  
+---
+# <a name="compiler-error-c2659"></a>コンパイラ エラー C2659
+'演算子' : 関数がオペランドの左辺にあります  
   
- 関数が、指定された演算子の左側にあります。  このエラーの最も一般的な原因は、開発者が変数のつもりで提供した演算子の左側にある ID を、コンパイラが関数として解析したことです。  詳細については、Wikipedia の「[Most vexing parse \(最も厄介な解析\)](http://en.wikipedia.org/wiki/Most_vexing_parse)」を参照してください。  この例は、混乱しやすい関数宣言と変数定義を示しています。  
+ 関数が、指定された演算子の左側にあります。 このエラーの最も一般的な原因は、開発者が変数のつもりで提供した演算子の左側にある ID を、コンパイラが関数として解析したことです。 について詳細については、Wikipedia の記事[一番面倒な解析](http://en.wikipedia.org/wiki/Most_vexing_parse)です。 この例は、混乱しやすい関数宣言と変数定義を示しています。  
   
 ```  
 // C2659a.cpp  
@@ -46,7 +49,7 @@ int main()
   
  この問題を解決するには、ID の宣言を変更して、その宣言が関数宣言として解析されないようにします。  
   
- C2659 エラーは、指定した演算子の左側にある関数の型を式で使用できない場合にも発生する可能性があります。  この例では、コードが関数ポインターを関数に割り当てるときに C2659 が生成されます。  
+ C2659 エラーは、指定した演算子の左側にある関数の型を式で使用できない場合にも発生する可能性があります。 この例では、コードが関数ポインターを関数に割り当てるときに C2659 が生成されます。  
   
 ```  
 // C2659b.cpp  

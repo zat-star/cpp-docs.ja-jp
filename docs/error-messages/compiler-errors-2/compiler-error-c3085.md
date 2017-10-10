@@ -19,32 +19,17 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: abe87e08241a5bb0115878173d354d33b1773257
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3d528d56a08cf6333e671ba6db18bbbe7a1be932
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3085"></a>コンパイラ エラー C3085
 'constructor': コンストラクターを 'keyword' にすることはできません  
   
- コンストラクターが正しく宣言されていません。 参照してください[オーバーライド指定子を](../../windows/override-specifiers-cpp-component-extensions.md)詳細についてはします。  
+ コンストラクターが正しく宣言されていません。 詳細については、「 [Override Specifiers](../../windows/override-specifiers-cpp-component-extensions.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では C3085 が生成されます。  
