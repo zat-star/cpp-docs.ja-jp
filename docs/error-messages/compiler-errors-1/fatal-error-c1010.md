@@ -1,43 +1,46 @@
 ---
-title: "致命的なエラー C1010 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1010"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1010"
+title: "致命的なエラー C1010 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1010
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1010
 ms.assetid: dfd035f1-a7a2-40bc-bc92-dc4d7f456767
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# 致命的なエラー C1010
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 65a1842e8f7c920e053b3cdbcd41ea09583133b8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-プリコンパイル ヘッダーを検索中に不明な EOF が見つかりました。'\#include '名前'' をソースに追加することをお勧めします。  
+---
+# <a name="fatal-error-c1010"></a>致命的なエラー C1010
+プリコンパイル ヘッダーを検索中に不明な EOF が見つかりました。 追加忘れました ' # 名 include' をソースですか?  
   
- [\/Yu](../../build/reference/yu-use-precompiled-header-file.md) で指定されたインクルード ファイルがソース ファイルにリストされていません。このオプションは、ほとんどの種類の Visual C\+\+ プロジェクトで既定で有効になっています。また、このオプションで指定される既定のインクルード ファイルは "stdafx.h" です。  
+ 指定されたインクルード ファイル[/Yu](../../build/reference/yu-use-precompiled-header-file.md)ソース ファイルには表示されません。  既定ではほとんどの Visual C プロジェクトの種類では、このオプションが有効になっているし、"stdafx.h"が既定値は、このオプションで指定されたファイルを含めます。  
   
- Visual Studio 環境では、このエラーを解決するには、以下のいずれかの方法を使用します。  
+ Visual Studio 環境でこのエラーを解決するのには、次のメソッドのいずれかを使用します。  
   
--   プロジェクトでプリコンパイル済みヘッダーを使用しない場合は、ソース ファイルの \[プリコンパイル済みヘッダーの作成\/使用\] プロパティを **\[プリコンパイル済みヘッダーを使用しない\]** に設定します。  このコンパイラ オプションを設定するには、次の手順を実行します。  
+-   プロジェクトでプリコンパイル済みヘッダーを使用しない場合は、設定、**プリコンパイル済みヘッダーの作成/使用**するソース ファイルのプロパティ**プリコンパイル済みヘッダーを使用して**です。 このコンパイラ オプションを設定するには、次の手順を実行します。  
   
-    1.  プロジェクトのソリューション エクスプローラー ペインで、プロジェクト名を右クリックし、**\[プロパティ\]** をクリックします。  
+    1.  プロジェクトの [ソリューション エクスプ ローラー] ウィンドウでプロジェクト名を右クリックし、をクリックして**プロパティ**です。  
   
-    2.  左ペインの \[**C\/C\+\+**\] フォルダーをクリックします。  
+    2.  左側のウィンドウでをクリックして、 **C/C++**フォルダーです。  
   
-    3.  \[プリコンパイル済みヘッダー\] ノードをクリックします。  
+    3.  クリックして、**プリコンパイル済みヘッダー**ノード。  
   
-    4.  右ペインの \[プリコンパイル済みヘッダーの作成\/使用\] をクリックし、**\[プリコンパイル済みヘッダーを使用しない\]** をクリックします。  
+    4.  右側のウィンドウでをクリックして**プリコンパイル済みヘッダーの作成/使用**、クリックして**プリコンパイル済みヘッダーを使用しない**です。  
   
--   誤ってヘッダー ファイル \(既定では stdafx.h\) を削除したり、名前を変更したり、現在のプロジェクトから除去したりしていないことを確認します。  また、このファイルは、ソース ファイル内で他のコードより前に、**\#include "stdafx.h"** を使用してインクルードされている必要があります \(このヘッダー ファイルは、\[ファイルを使用して PCH を作成\/使用\] プロジェクト プロパティとして指定されます\)。
+-   誤って削除、名前変更、またはヘッダー ファイルを削除するかどうかを確認 (既定では、stdafx.h) 現在のプロジェクトからです。 このファイルも含める必要がありますを使用して、ソース ファイル内の他のすべてのコードの前に**#include"stdafx.h"**です。 (このヘッダー ファイルとして指定**ファイルを作成/使用 PCH**プロジェクトのプロパティ)

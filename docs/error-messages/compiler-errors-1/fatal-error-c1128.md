@@ -19,26 +19,11 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7c70243c6fe3acf50e46c6bdf0880ed713b4b16c
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 83ec855a3280b1169ce3537ecf85944939449316
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="fatal-error-c1128"></a>致命的なエラー C1128
@@ -46,14 +31,14 @@ ms.lasthandoff: 02/24/2017
   
  .obj ファイルが、許容されるセクション数である COFF オブジェクト ファイル形式制限を超えました。  
   
- このセクション制限に到達できるを使用するため[/Gy](../../build/reference/gy-enable-function-level-linking.md)とデバッグ ビルドです。**/Gy**により、関数は、独自の COMDAT セクションに入ります。 デバッグ ビルドには、各 COMDAT 関数のデバッグ情報セクションがあります。  
+ このセクション制限に到達するを使用した結果を指定できます[/Gy](../../build/reference/gy-enable-function-level-linking.md)とデバッグ ビルドです。**/Gy**により、関数は、独自の COMDAT セクションに移動します。 デバッグ ビルドには、各 COMDAT 関数のデバッグ情報セクションがあります。  
   
  C1128 エラーは、インライン関数が多すぎることが原因で発生することもあります。  
   
- このエラーを解決するには、ソース ファイルを複数のソース コード ファイルに分割、なしでコンパイル**/Gy**を使用してコンパイル[/bigobj (セクション数を増やすので。Obj ファイル)](../../build/reference/bigobj-increase-number-of-sections-in-dot-obj-file.md)します。  せずにコンパイルする場合は、 **/Gy**、最適化処理を個別に指定する必要がありますので**/O2**と**/O1**両方を示すもので**/Gy**します。  
+ このエラーを解決するには、ソース ファイルを複数のソース コード ファイルに分割、なしでコンパイル**/Gy**、コンパイル時にまたは[/bigobj (増やすセクションの数にします。Obj ファイル)](../../build/reference/bigobj-increase-number-of-sections-in-dot-obj-file.md)です。  せずにコンパイルする場合**/Gy**、個別に、最適化を指定する必要がありますので**/O2**と**/O1**意味両方**/Gy**です。  
   
  可能であれば、デバッグ情報なしでコンパイルしてください。  
   
  また、テンプレートの固有のインスタンス化をコンパイラで出力するのではなく、別のソース コード ファイルにこれらを指定する必要もあります。  
   
- コードを移植するときに c1128 が最初に、x64 を使用する場合、コンパイラとかなり後に、x86 コンパイラです。 x64 は少なくとも 4 つのセクションではコンパイルされた各関数に関連付けられている必要が**/Gy**テンプレートまたはクラス インラインからインライン化: コード、pdata、およびヒント、および場合によっては xdata をデバッグします。  X86 は pdata を持ちません。
+ コードを移植するときに C1128 可能性があります最初に表示されます、x64 を使用するときにコンパイラ、および後になって x86 コンパイラです。 x64 には、コンパイルされた各関数に関連付けられている少なくとも 4 つのセクションがある**/Gy**テンプレートまたはインライン クラスからインラインまたは: pdata、コードし、ヒント、および可能性のある xdata をデバッグします。  X86 は pdata を持ちません。

@@ -19,36 +19,22 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 65aac590a3282f2fd71c460d14927f5695fcdc5a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 954ef1f8db47c5cd9c420e8099cc3060ebb8a32b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2434"></a>コンパイラ エラー C2434
-'symbol': __declspec(process) で宣言されたシンボルは/clr で動的に初期化できません: 純粋なモード  
+'symbol': __declspec(process) と共に宣言されたシンボルは/clr で動的に初期化できません: 純粋モード  
   
- **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは、Visual Studio 2015 で廃止されました。  
+ コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
- Process ごとの変数を動的に初期化することはできません**/clr: 純粋な**です。 詳細については、次を参照してください。 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)と[プロセス](../../cpp/process.md)します。  
+ プロセスごとの変数を動的に初期化することはできません**/clr: 純粋な**します。 詳細については、次を参照してください。 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)と[プロセス](../../cpp/process.md)です。  
   
 ## <a name="example"></a>例  
- 次の例では、c2434 エラーを生成します。  
+ 次の例では、C2434 を生成します。  
   
 ```  
 // C2434.cpp  

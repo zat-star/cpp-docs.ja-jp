@@ -65,32 +65,18 @@ caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d7d097b399d3681ef523d8787ecc38af472840f6
-ms.openlocfilehash: f47a6fe23a8a0bf18f9c5c4399162d836667cab6
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 07d87f9828bac1a025f9ac2375c79f29d96a89b4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/28/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-errors-c2200-through-c2299"></a>コンパイラ エラー C2200 C2299 から
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -99,7 +85,7 @@ ms.lasthandoff: 04/28/2017
 |[コンパイラ エラー C2200](compiler-error-c2200.md)|'*関数*': 関数は既に定義されています|  
 |[コンパイラ エラー C2201](compiler-error-c2201.md)|'*識別子*': エクスポート/インポートするために外部リンケージを持つ必要があります|  
 |コンパイラ エラー C2202|'*関数*': 値を返さないコントロール パスのすべて|  
-|[コンパイラ エラー C2203](compiler-error-c2203.md)|delete 演算子では配列の一部や特定のメンバーを削除することはできません。|  
+|[コンパイラ エラー C2203](compiler-error-c2203.md)|削除演算子は配列の境界を指定できません|  
 |[コンパイラ エラー C2204](compiler-error-c2204.md)|'*型*': 型定義のかっこ内が見つかりません|  
 |[コンパイラ エラー C2205](compiler-error-c2205.md)|'*識別子*': ブロック スコープを持つ外部変数を初期化することはできません|  
 |[コンパイラ エラー C2206](compiler-error-c2206.md)|'*関数*': typedef は関数定義に使用されることはできません|  
@@ -110,12 +96,12 @@ ms.lasthandoff: 04/28/2017
 |コンパイラ エラー C2211|パブリック デストラクターを持つ ref クラスから派生した ref クラスで非仮想デストラクターがパブリックでもする必要があります。|  
 |[コンパイラ エラー C2212](compiler-error-c2212.md)|'*識別子*': _ _based 指定は関数へのポインターの使用|  
 |[コンパイラ エラー C2213](compiler-error-c2213.md)|'*識別子*': _ _based の引数が無効です|  
-|コンパイラ エラー C2214|void に基づくポインターには ':>' を使用することが必要です。|  
+|コンパイラ エラー C2214|'void' に基づくポインターの使用を必要とします >。|  
 |コンパイラ エラー C2215|'*キーワード*' では使用できません '//ARCH:SSE '|  
 |[コンパイラ エラー C2216](compiler-error-c2216.md)|'*keyword1*'で使用することはできません'*keyword2*'|  
 |[コンパイラ エラー C2217](compiler-error-c2217.md)|'*attribute1*'が必要です'*attribute2*'|  
 |[コンパイラ エラー C2218](compiler-error-c2218.md)|'*calltype*' では使用できません '/arch: IA32'|  
-|[コンパイラ エラー C2219](compiler-error-c2219.md)|構文エラー: 型修飾子は '*' の後にのみ指定できます。|  
+|[コンパイラ エラー C2219](compiler-error-c2219.md)|構文エラー: 型修飾子は、後にする必要があります ' *'|  
 |[コンパイラ エラー C2220](compiler-error-c2220.md)|いいえ警告をエラーとして扱いました '*filetype*' に生成されたファイル|  
 |コンパイラ エラー C2221|互換性のために残されています。|  
 |[コンパイラ エラー C2222](compiler-error-c2222.md)|予期しない型 '*型*': 基底クラスまたはメンバーが必要です|  
@@ -148,7 +134,7 @@ ms.lasthandoff: 04/28/2017
 |[コンパイラ エラー C2249](compiler-error-c2249.md)|'*識別子*': アクセス経路を持たない*アクセシビリティ**メンバー*仮想ベースで宣言された'*クラス*'|  
 |[コンパイラ エラー C2250](compiler-error-c2250.md)|'*識別子*': あいまいな継承の*クラス*::*メンバー*'|  
 |[コンパイラ エラー C2251](compiler-error-c2251.md)|名前空間 '*名前空間*'メンバーを持たない'*識別子*'-もしかすると次の間 '*メンバー*' しますか?|  
-|[コンパイラ エラー C2252](compiler-error-c2252.md)|テンプレートの明示的なインスタンス化は名前空間スコープでのみ発生します|  
+|[コンパイラ エラー C2252](compiler-error-c2252.md)|テンプレートの明示的なインスタンス化は、名前空間スコープでのみ発生することができます。|  
 |[コンパイラ エラー C2253](compiler-error-c2253.md)|'*関数*': 純粋関数または抽象オーバーライド指定子の仮想関数でのみ許可されます|  
 |[コンパイラ エラー C2254](compiler-error-c2254.md)|'*関数*': 純粋関数または抽象オーバーライド指定子のフレンド関数では使用できません|  
 |[コンパイラ エラー C2255](compiler-error-c2255.md)|'*要素*': クラス定義外で許可されていません|  
@@ -175,13 +161,13 @@ ms.lasthandoff: 04/28/2017
 |[コンパイラ エラー C2276](compiler-error-c2276.md)|'*演算子*': メンバーにバインドされた関数の式に無効な操作|  
 |[コンパイラ エラー C2277](compiler-error-c2277.md)|'*関数*': このメンバー関数のアドレスは取得できません|  
 |コンパイラ エラー C2278|互換性のために残されています。|  
-|[コンパイラ エラー C2279](compiler-error-c2279.md)|例外の指定を typedef 宣言に表示することはできません。|  
-|[コンパイラ エラー c2280 を発行](compiler-error-c2280.md)|'*クラス*::*関数*': 削除された関数を参照しようとしています。|  
+|[コンパイラ エラー C2279](compiler-error-c2279.md)|typedef 宣言での例外の指定は使用できません。|  
+|[コンパイラ エラー C2280](compiler-error-c2280.md)|'*クラス*::*関数*': 削除された関数を参照しようとしています。|  
 |コンパイラ エラー C2281|'*クラス*::*関数*': 関数は、最初の宣言でのみ削除できます|  
 |コンパイラ エラー C2282|'*function1*'をオーバーライドできません'*function2*'|  
 |[コンパイラ エラー C2283](compiler-error-c2283.md)|'*識別子*': 純粋関数または抽象オーバーライド指定子の名前のないクラス/構造体では使用できません|  
 |コンパイラ エラー C2284|'*関数*': 組み込み関数の引数が無効ですパラメーター*数*|  
-|[コンパイラ エラー C2285](compiler-error-c2285.md)|メンバーへのポインターは既に確定しています。プラグマを無視します。|  
+|[コンパイラ エラー C2285](compiler-error-c2285.md)|メンバーへのポインターは既に確定プラグマは無視されました|  
 |[コンパイラ エラー C2286](compiler-error-c2286.md)|メンバーへのポインター '*識別子*' 表現が既にに設定されている*継承*の宣言は無視されます|  
 |[コンパイラ エラー C2287](compiler-error-c2287.md)|'*識別子*': 継承の処理形式:'*inheritiance*'は、必要なより汎用性の低い'*継承*'|  
 |コンパイラ エラー C2288|互換性のために残されています。|  
@@ -194,6 +180,6 @@ ms.lasthandoff: 04/28/2017
 |[コンパイラ エラー C2295](compiler-error-c2295.md)|エスケープ '*文字*': マクロ定義では正しくありません|  
 |[コンパイラ エラー C2296](compiler-error-c2296.md)|'*演算子*': 無効な左オペランドには型'*型*'|  
 |[コンパイラ エラー C2297](compiler-error-c2297.md)|'*演算子*': 無効な右オペランドには型'*型*'|  
-|[コンパイラ エラー C2298](compiler-error-c2298.md)|ポインターをメンバー関数へバインドするための呼び出しがありません|  
+|[コンパイラ エラー C2298](compiler-error-c2298.md)|メンバー関数へのポインターをバインドへの呼び出しがありません。|  
 |[コンパイラ エラー C2299](compiler-error-c2299.md)|'*関数*': 動作変更: 明示的な特殊化は、コピー コンス トラクターまたはコピー代入演算子をすることはできません|  
 

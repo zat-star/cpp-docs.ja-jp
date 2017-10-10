@@ -19,25 +19,11 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 1c712df22cec506556bbcc78d07f55cc841ef1bc
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2e912cc4910ab1362719d94f374f145e90747e69
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="fatal-error-c1076"></a>致命的なエラー C1076
@@ -47,9 +33,9 @@ ms.lasthandoff: 02/24/2017
   
  このエラーを解決するには、次の方法があります。  
   
-1.  使用して、 [/Zm](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)で指定された値に、コンパイラ メモリ制限を設定するオプション、 [C3859](../../error-messages/compiler-errors-2/compiler-error-c3859.md)エラー メッセージ。 詳細についてはこの値に設定する方法などの[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]の「解説」を参照してください[/Zm (指定プリコンパイル済みヘッダーのメモリ割り当て制限)](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)します。  
+1.  使用して、 [/Zm](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)で指定された値に、コンパイラ メモリ制限を設定するオプション、 [C3859](../../error-messages/compiler-errors-2/compiler-error-c3859.md)エラー メッセージ。 この値に設定する方法を含む詳細については[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]で「解説」セクションを参照してください[/Zm (指定プリコンパイル済みヘッダーのメモリ割り当て制限)](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)です。  
   
-2.  64 ビット オペレーティング システムで 32 ビット ホスト コンパイラを使用している場合は、代わりに 64 ビット ホスト コンパイラを使用します。 詳細については、次を参照してください。[方法: コマンドラインで 64 ビット Visual c ツールセットを有効にする](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)です。  
+2.  64 ビット オペレーティング システムで 32 ビット ホスト コンパイラを使用している場合は、代わりに 64 ビット ホスト コンパイラを使用します。 詳細については、次を参照してください。[する方法: コマンドラインで 64 ビット Visual c ツールセットを有効にする](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)です。  
   
 3.  不必要なインクルード ファイルを除去します。  
   
@@ -63,4 +49,4 @@ ms.lasthandoff: 02/24/2017
   
 8.  現在のファイルを小さなファイルに分割します。  
   
- 場合に、値を指定するビルドの開始後すぐに C1076 **/Zm**が、プログラムに対して高すぎる可能性があります。 削減、 **/Zm**値。
+ 場合の値が指定されたビルドの開始後すぐに C1076 **/Zm**プログラムに対して高すぎる可能性があります。 削減、 **/Zm**値。

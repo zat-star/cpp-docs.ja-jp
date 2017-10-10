@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a5a986fe1ecefc2223da921d76789defdc98070c
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 12b62d31c125dfc353623fa7cf10fce578698332
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2360"></a>コンパイラ エラー C2360
-'identifier' の初期化が 'case' ラベルでスキップされました  
+'identifier' の初期化が 'case' ラベルによって行われませんでした。  
   
- 初期化`identifier`をスキップできます、`switch`ステートメントです。 宣言はブロックで囲まれていない場合は、初期化子を含む宣言ジャンプすることはできません。 (ブロック内で宣言されている場合を除き、変数はスコープ内で最後までの`switch`ステートメントです)。  
+ 初期化`identifier`でスキップすることができます、`switch`ステートメントです。 宣言がブロックで囲まれている場合を除き、初期化子を含む宣言ジャンプすることはできません。 (ブロック内で宣言されている場合を除き、変数はスコープ内で最後までの`switch`ステートメントです)。  
   
- 次の例では、c2360 エラーが生成されます。  
+ 次の例では、C2360 が生成されます。  
   
 ```  
 // C2360.cpp  

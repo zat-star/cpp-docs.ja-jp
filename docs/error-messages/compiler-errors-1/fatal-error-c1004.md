@@ -1,50 +1,53 @@
 ---
-title: "致命的なエラー C1004 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1004"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1004"
+title: "致命的なエラー C1004 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1004
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1004
 ms.assetid: dbe034b0-6eb0-41b4-a50c-2fccf9e78ad4
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# 致命的なエラー C1004
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c6a9e74d7918e1cb2c9190c87f4f1ec75f89237b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-予期しない EOF が見つかりました。  
+---
+# <a name="fatal-error-c1004"></a>致命的なエラー C1004
+予期しないファイルの終わりが見つかりました  
   
- 構成体の展開処理を終了する前にソース ファイルの末尾に到達しました。  以下のいずれかの要素がコードで指定されていない可能性があります。  
+ コンパイラでは、コンストラクトを解決せず、ソース ファイルの末尾に達しました。 コードがない、次の要素のいずれか。  
   
--   右中かっこ \(}\)  
+-   右かっこ  
   
--   右かっこ \( \) \)  
+-   右かっこ  
   
--   コメント終端記号 \(\*\/\)  
+-   終了のコメント マーカー (*/)  
   
--   セミコロン \(;\)  
+-   セミコロン  
   
- このエラーを解決するには、以下を確認します。  
+ このエラーを解決するには、次を確認します。  
   
--   既定のディスク ドライブに一時ファイル作成ための十分な領域がありません。ソース ファイルの約 2 倍の領域が必要になります。  
+-   既定のディスク ドライブは、ソース ファイルと 2 倍の空き領域に関する必要な一時ファイルは、十分なスペースがします。  
   
--   false と評価された `#if` ディレクティブに対応する `#endif` ディレクティブがありません。  
+-   `#if`終了を false に評価されるディレクティブ`#endif`ディレクティブです。  
   
--   ソース ファイルの末尾にキャリッジ リターンとライン フィードがありません。  
+-   キャリッジ リターンとライン フィードを使用して、ソース ファイルは終了しません。  
   
- 次の例では警告 C1004 が生成されます。  
+ 次の例では、C1004 が生成されます。  
   
 ```  
 // C1004.cpp  
@@ -53,7 +56,7 @@ int main() {}
 // C1004  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C1004b.cpp  

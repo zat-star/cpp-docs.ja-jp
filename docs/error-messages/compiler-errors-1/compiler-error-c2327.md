@@ -19,33 +19,19 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 62834115e3ad9c9733326a1bc94e5fa51209f485
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2eefd1e3fb4f23087b0f08bf6a9ff55593d9a961
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2327"></a>コンパイラ エラー C2327
-'symbol': 型名、静的、または列挙子ではありません  
+'symbol': 型名、スタティック、または列挙子ではありません  
   
  入れ子になったクラス内のコードは、型名、静的メンバーまたは列挙子は外側のクラスのメンバーにアクセスしようとします。  
   
- コンパイルすると**/clr**C2327 の一般的な原因は、プロパティの型と同じ名前を持つプロパティです。  
+ コンパイルするときに**/clr**C2327 の一般的な原因は、プロパティの型と同じ名前を持つプロパティです。  
   
  次の例では、C2327 が生成されます。  
   
@@ -66,7 +52,7 @@ public:
 };  
 ```  
   
- C2327 は、メンバーの名前で型の名前が表示されていない場合にも発生します。  
+ C2327 は、メンバーの名前で型の名前が表示されていない場合にも発生することができます。  
   
 ```  
 // C2327b.cpp  
@@ -80,7 +66,7 @@ class S {
 };  
 ```  
   
- パラメーターのデータ型を完全に指定する必要がある、このような状況でも C2327 が発生します。  
+ C2327 がパラメーターのデータ型を完全に指定する必要がある、このような状況で発生します。  
   
 ```  
 // C2327c.cpp  
@@ -129,7 +115,7 @@ namespace NA {
 }  
 ```  
   
-次のサンプルは、プロパティがプロパティの型と同じ名前を持つ場合に、C2327 を示します。  
+次の例は、プロパティがプロパティの型と同じ名前を持つときに C2327 を示しています。  
   
 ```  
 // C2327f.cpp  

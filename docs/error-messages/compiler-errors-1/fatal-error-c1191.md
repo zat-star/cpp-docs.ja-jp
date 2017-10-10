@@ -1,34 +1,37 @@
 ---
-title: "致命的なエラー C1191 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1191"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1191"
+title: "致命的なエラー C1191 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1191
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1191
 ms.assetid: 2888c6c4-b4e6-449e-8ee0-7917f31086df
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# 致命的なエラー C1191
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 95795ddfcc27a7cd150dec565f0e52a4f7eca00e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="fatal-error-c1191"></a>致命的なエラー C1191
 'dll' はグローバル スコープでのみインポートできます。  
   
- \/clr プログラミングを使用するプログラムに mscorlib.dll をインポートするための命令は、名前空間や関数には使用できません。グローバル スコープで使用する必要があります。  
+ /Clr プログラミングを使用するプログラムに mscorlib.dll をインポートする命令は、名前空間または関数では使用できませんが、グローバル スコープで表示する必要があります。  
   
- 次の例では警告 C1191 が生成されます。  
+ 次の例では、C1191 が生成されます。  
   
 ```  
 // C1191.cpp  
@@ -38,7 +41,7 @@ namespace sample {
 }  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C1191b.cpp  

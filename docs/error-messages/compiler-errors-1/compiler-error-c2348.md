@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2348 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2348"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2348"
+title: "コンパイラ エラー C2348 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2348
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2348
 ms.assetid: 4c4d701f-ccf1-46fe-9ddb-3f341684f269
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2348
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2be3e9c8d83443355c3090dd3083f800ae55d76d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'type name' : C 形式の集合ではありません、埋め込み IDL 内でエクスポートできません。  
+---
+# <a name="compiler-error-c2348"></a>コンパイラ エラー C2348
+'type name': C スタイルの集合ではありません、埋め込み IDL 内でエクスポートできません。  
   
- [export](../../windows/export.md) 属性を使用して `struct` を .idl ファイルに配置する場合、`struct` に入れることができるのはデータだけです。  
+ 配置する、`struct`を含む .idl ファイル、[エクスポート](../../windows/export.md)、属性、`struct`データのみを含める必要があります。  
   
- 次の例では警告 C2348 が生成されます。  
+ 次の例では、C2348 が生成されます。  
   
 ```  
 // C2348.cpp  

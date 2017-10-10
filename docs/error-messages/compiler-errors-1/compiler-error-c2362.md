@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C2362 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2362"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2362"
+title: "コンパイラ エラー C2362 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2362
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2362
 ms.assetid: 7aafecbc-b3cf-45a6-9ec3-a17e3f222511
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2362
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e3a921084d696e6cf7abebc75d02d403cbcda2be
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'identifier' の初期化が 'goto label' によって行われませんでした。  
+---
+# <a name="compiler-error-c2362"></a>コンパイラ エラー C2362
+'goto ラベル' で 'identifier' の初期化がスキップされました  
   
- [\/Za](../../build/reference/za-ze-disable-language-extensions.md) を指定してコンパイルした場合は、ラベルにジャンプすることによって、識別子が初期化されなくなります。  
+ コンパイルするときに[/Za](../../build/reference/za-ze-disable-language-extensions.md)識別子が初期化される防止ラベルにジャンプします。  
   
- 初期化子を含む宣言は、実行されない閉じたブロック内でその宣言が行われている場合や変数が既に初期化されている場合を除いてスキップできません。  
+ 宣言が入力されていないブロックで囲まれている場合を除き、初期化子と共に宣言ジャンプできませんまたは変数が既に初期化されています。  
   
- 次の例では警告 C2326 が生成されます。  
+ 次の例では C2326 が生成されます。  
   
 ```  
 // C2362.cpp  
@@ -42,7 +45,7 @@ label1:;
 }  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C2362b.cpp  

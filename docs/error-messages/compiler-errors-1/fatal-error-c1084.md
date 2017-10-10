@@ -1,32 +1,35 @@
 ---
-title: "致命的なエラー C1084 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1084"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1084"
+title: "致命的なエラー C1084 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1084
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1084
 ms.assetid: b2f273ef-3a14-4d5f-8ce0-7a11a0388fe6
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 致命的なエラー C1084
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: caf1e64e91871087c9e47860a41c2824a811295a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="fatal-error-c1084"></a>致命的なエラー C1084
 filetype ファイルを読み取れません。'file': message  
   
- このエラーは一般的に、コンパイラによって行われた内部的なシステム API 呼び出しの失敗によって発生します。  このエラーが発生したときに表示されるメッセージは、多くの場合、[\_wcserror\_s](../../c-runtime-library/reference/strerror-s-strerror-s-wcserror-s-wcserror-s.md) または [FormatMessage](http://msdn.microsoft.com/library/windows/desktop/ms679351.aspx) によって生成されます。  
+ このエラーは一般的に、コンパイラによって行われた内部的なシステム API 呼び出しの失敗によって発生します。 このエラーが発生したときに表示されるメッセージはいずれかで生成されることが[_wcserror_s](../../c-runtime-library/reference/strerror-s-strerror-s-wcserror-s-wcserror-s.md)または[FormatMessage](http://msdn.microsoft.com/library/windows/desktop/ms679351.aspx)です。  
   
  次の手順を実行すると、C1084 の解決に役立つ場合があります。  
   
@@ -34,9 +37,9 @@ filetype ファイルを読み取れません。'file': message
   
 -   指定したファイルにアクセスするための適切なアクセス許可が設定されていることを確認します。  
   
--   コマンド ライン構文が「[コンパイラ コマンド ラインの構文](../../build/reference/compiler-command-line-syntax.md)」で説明されている規則に従っていることを確認します。  
+-   コマンドラインの構文ルールに準拠するに記載されていることを確認[コンパイラのコマンドライン構文](../../build/reference/compiler-command-line-syntax.md)です。  
   
--   環境変数 **TMP** および **TEMP** が適切に設定されていること、およびこれらの環境変数で参照されるディレクトリにアクセスするための適切なアクセス許可が設定されていることを確認します。  また、**TMP** および **TEMP** 環境変数で参照されるドライブに、十分な空き領域があることを確認します。  
+-   環境変数を確認**TMP**と**TEMP**は、正しくセットとこれらの環境変数が指すディレクトリにアクセスするために適切なアクセス許可。 によって参照されているドライブも確認、 **TMP**と**TEMP**環境変数には、十分な量空き領域にはが含まれています。  
   
 -   "ファイル番号が正しくありません" というメッセージが表示される場合は、指定したファイルがバックグラウンドでのコンパイル中にフォアグラウンドで閉じられている可能性があります。  
   
