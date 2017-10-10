@@ -1,38 +1,41 @@
 ---
-title: "コンパイラ エラー C2571 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2571"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2571"
+title: "コンパイラ エラー C2571 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2571
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2571
 ms.assetid: c6522616-dee9-4d7d-9bf8-30a7e1deaadf
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2571
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8bfb4f9af849efea2fa3aa8a84a57f1cfb4cd502
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : 仮想関数を共用体 'union' 内に含めることはできません。  
+---
+# <a name="compiler-error-c2571"></a>コンパイラ エラー C2571
+'function': 仮想関数は、'union' 共用体にすることはできません  
   
- 共用体が仮想関数を持つように宣言されています。  仮想関数を宣言できるのは、クラスまたは構造体だけです。解決方法は次のとおりです。  
+ 仮想関数を持つ共用体が宣言されています。 クラスまたは構造体でのみ仮想関数を宣言することができます。  考えられる解決策:  
   
-1.  共用体をクラスまたは構造体に変更します。  
+1.  クラスまたは構造体、共用体を変更します。  
   
-2.  関数を非仮想関数に変更します。  
+2.  非仮想関数を作成します。  
   
- 次の例では警告 C2571 が生成されます。  
+ 次の例では、C2571 が生成されます。  
   
 ```  
 // C2571.cpp  

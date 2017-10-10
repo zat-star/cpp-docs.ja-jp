@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 32fd980c9cf77ab449bd9ed9d4849ccdce70e343
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 75b82a9c892ecda312b13f1adc2925a9695b4db5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2734"></a>コンパイラ エラー C2734
-'identifier': extern ではない場合は、const オブジェクトを初期化する必要があります  
+'identifier': const オブジェクトは、extern いない場合、初期化する必要があります  
   
- 識別子が宣言されている`const`が初期化されていないか、`extern`です。  
+ 識別子が宣言されている`const`初期化されていませんが、または`extern`です。  
   
- 次の例では、c2734 エラーが生成されます。  
+ 次の例では、C2734 が生成されます。  
   
 ```  
 // C2734.cpp  

@@ -19,35 +19,21 @@ caps.latest.revision: 17
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 68971aec52fb03532b74be3b231598abfc0e8f6f
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e71bf7f08591ed80489b6e83590696cabdb57c03
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2599"></a>コンパイラ エラー C2599
 'enum': 列挙型の事前宣言が許可されていません  
   
- コンパイラは、管理されている列挙の事前宣言をサポートしていません。  
+ コンパイラがマネージ列挙型の事前宣言をサポートしていません。  
   
- 列挙型の事前宣言が許可されていません[/Za](../../build/reference/za-ze-disable-language-extensions.md)します。  
+ 列挙型の事前宣言がで許可されていません[/Za](../../build/reference/za-ze-disable-language-extensions.md)です。  
   
- 次の例は、c2599 エラーを生成します。  
+ 次の例では、c2599 エラーが生成されます。  
   
 ```  
 // C2599.cpp  

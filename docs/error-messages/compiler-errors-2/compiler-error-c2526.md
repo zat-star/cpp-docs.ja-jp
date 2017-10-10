@@ -1,29 +1,32 @@
 ---
-title: "コンパイラ エラー C2526 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2526"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2526"
+title: "コンパイラ エラー C2526 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2526
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2526
 ms.assetid: 0f8c554c-f990-457e-bcae-b6f273481825
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C2526
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f62f659c309735fa410c6538e6eb8f79a1a0dcea
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier1' : C のリンケージ関数は C\+\+ のクラス 'identifier2' を戻せません。  
+---
+# <a name="compiler-error-c2526"></a>コンパイラ エラー C2526
+'identifier1': C リンケージ関数でも、C++ クラスを 'identifier2' 返すことはできません  
   
- C のリンケージで定義した関数からユーザー定義型を返すことはできません。
+ C リンケージで定義された関数は、ユーザー定義型を返すことはできません。

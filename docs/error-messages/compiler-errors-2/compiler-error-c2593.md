@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C2593 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2593"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2593"
+title: "コンパイラ エラー C2593 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2593
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2593
 ms.assetid: 4a0fe9bb-2163-447d-91f6-1890ed8250f6
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2593
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: cb0b752259503f7e14cd78298e487f5304e13a0d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c2593"></a>コンパイラ エラー C2593
 'operator identifier' があいまいです。  
   
- オーバーロードされた演算子には、可能な演算子が 2 つ以上定義されています。  
+ 可能な演算子が 1 つ以上のオーバー ロードされた演算子が定義されます。  
   
- このエラーは、1 つ以上の実パラメーターで明示的なキャストを使用すると解決される場合があります。  
+ 1 つまたは複数の実引数の明示的なキャストを使用する場合、このエラーを解決する可能性があります。  
   
- 次の例では警告 C2593 が生成されます。  
+ 次の例では、C2593 が生成されます。  
   
 ```  
 // C2593.cpp  
@@ -48,9 +51,9 @@ int main() {
 }  
 ```  
   
- このエラーは、`CArchive` オブジェクトを使用して浮動小数点変数をシリアル化したことが原因で発生する場合があります。  コンパイラは、演算子 `<<` があいまいであると認識します。  `CArchive` でシリアル化できる C\+\+ プリミティブ型は、固定サイズ型の `BYTE`、`WORD`、`DWORD`、および `LONG` だけです。  整数型をシリアル化するには、これらのいずれかの型にキャストする必要があります。  浮動小数点型は、`CArchive::Write()` メンバー関数を使用してアーカイブする必要があります。  
+ このエラーは、浮動小数点変数を使用して、シリアル化によって発生することができます、`CArchive`オブジェクト。 コンパイラの識別、`<<`演算子があいまいであるとします。 プリミティブのみの C++ の種類を`CArchive`をシリアル化できる固定サイズの種類は、 `BYTE`、 `WORD`、 `DWORD`、および`LONG`です。 すべての整数型は、シリアル化のこれらの型のいずれかにキャストする必要があります。 使用して浮動小数点型をアーカイブする必要があります、`CArchive::Write()`メンバー関数。  
   
- 浮動小数点型の変数 \(`f`\) をアーカイブ `ar` にアーカイブする例を次に示します。  
+ 次の例に、浮動小数点変数をアーカイブする方法を示しています (`f`) アーカイブに`ar`:  
   
 ```  
 ar.Write(&f, sizeof( float ));  

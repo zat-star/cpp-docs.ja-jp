@@ -19,34 +19,20 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 95a136660a660843a13685b822c1e65c4f4259ea
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5a71216ee0c9b9bb824e9518691bc71730bb7465
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2674"></a>コンパイラ エラー C2674
-ジェネリック宣言はこのコンテキストでは使用できません  
+ジェネリック宣言はこのコンテキストで許可されていません  
   
- ジェネリック型の宣言が正しくありません。 詳細については、次を参照してください。[ジェネリック](../../windows/generics-cpp-component-extensions.md)します。  
+ ジェネリック型の宣言が正しくありません。 詳細については、「[ジェネリック](../../windows/generics-cpp-component-extensions.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、c2674 エラーを生成します。  
+ 次の例では、C2674 を生成します。  
   
 ```  
 // C2674.cpp  

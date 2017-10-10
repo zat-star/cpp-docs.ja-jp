@@ -19,31 +19,17 @@ caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: ecd5056d656865c893c60f63afbf7a558a839785
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8d396830b31e0d46781c3f008847f4cc9bd7bcc5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2715"></a>コンパイラ エラー C2715
 'type': スローまたはこの型をキャッチできません  
   
- 値の型引数ではなく有効なマネージ コードの例外の処理の使用時に (を参照してください[例外処理](../../windows/exception-handling-cpp-component-extensions.md)の詳細)。  
+ 値型は有効な引数での例外処理を使用してマネージ コードと (を参照してください[例外処理](../../windows/exception-handling-cpp-component-extensions.md)詳細については)。  
   
 ```  
 // C2715a.cpp  

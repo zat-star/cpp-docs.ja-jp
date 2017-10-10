@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2755 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2755"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2755"
+title: "コンパイラ エラー C2755 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2755
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2755
 ms.assetid: 8ee4eeb6-4757-4efe-9100-38ff4a96f1de
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2755
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 56889ff193d057104c25b31bea8029e9426a9bbc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'param' : 部分的特殊化の非型テンプレート パラメーターは、単純な識別子でなければなりません。  
+---
+# <a name="compiler-error-c2755"></a>コンパイラ エラー C2755
+'param': 部分的特殊化の非型テンプレート パラメーターは単純な識別子である必要があります  
   
- 非型パラメーターは、コンパイル時にコンパイラが単一の識別子または定数値に解決できる単純な識別子にする必要があります。  
+ 非型パラメーターは、コンパイラがコンパイル時に、単一の識別子または定数値に解決できる、単純な識別子である必要があります。  
   
- 次の例では警告 C2755 が生成されます。  
+ 次の例では、C2755 が生成されます。  
   
 ```  
 // C2755.cpp  

@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2694 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2694"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2694"
+title: "コンパイラ エラー C2694 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2694
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2694
 ms.assetid: 8dc2cec2-67ae-4e16-8c0c-374425aca8bc
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2694
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b81a6ee838a1d30928e8cebb8ef581c23644afcf
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'override': 仮想関数のオーバーライドは、基本クラス仮想メンバー関数 'base' よりも制限が少ない例外指定を含んでいます。  
+---
+# <a name="compiler-error-c2694"></a>コンパイラ エラー C2694
+'override': 基底クラスよりも制限の緩い例外の指定に仮想メンバー関数 'base' を持つ仮想関数をオーバーライドします。  
   
- 仮想関数がオーバーライドされましたが、[\/Za](../../build/reference/za-ze-disable-language-extensions.md) では、オーバーライドしている関数の方が[例外指定](../../cpp/exception-specifications-throw-cpp.md)の制限が少なくなっていました。  
+ 仮想関数がオーバーライドされるが[/Za](../../build/reference/za-ze-disable-language-extensions.md)、制限の緩い関数をオーバーライドする必要がある[例外の指定](../../cpp/exception-specifications-throw-cpp.md)です。  
   
- 次の例では警告 C2694 が生成されます。  
+ 次の例では、C2694 が生成されます。  
   
 ```  
 // C2694.cpp  

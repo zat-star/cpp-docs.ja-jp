@@ -19,34 +19,20 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ec9787e04d5c3539bf671a575a9487af94c3910d
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: cb0720c7fa9cde9a735c4353bb6bf1d8714ff0fd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2585"></a>コンパイラ エラー C2585
-'type' に明示的な変換はあいまいです。  
+'type' に明示的な変換があいまいです。  
   
- 型変換は、1 つの結果を生成できます。  
+ 型変換は、複数の結果を生成できます。  
   
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
-1.  多重継承に基づく、クラスまたは構造体の型から変換します。 変換関数や演算子がスコープ解決演算子を使用する必要があります、型は複数回にわたって、同じ基本クラスを継承している場合 (`::`)、変換に使用する継承されたクラスを指定します。  
+1.  多重継承に基づく、クラスまたは構造体の型から変換します。 変換関数または演算子がスコープ解決演算子を使用する必要があります、型では、同じ基本クラスが 2 回以上継承している場合 (`::`) の変換で使用する継承されたクラスを指定します。  
   
-2.  同じ変換を行う変換演算子とコンス トラクターを定義されています。
+2.  同じ変換を行う変換演算子と、コンス トラクターを定義しました。

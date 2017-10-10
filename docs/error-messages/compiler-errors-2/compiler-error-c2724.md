@@ -19,33 +19,19 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a90bad0c6e611544e98077918448d17e87b0a325
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 13c582f081d78e415b4c98bf300b18004fcc33bc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2724"></a>コンパイラ エラー C2724
-'identifier': 'static' いないに対して使用するかファイル スコープで定義されたメンバー関数  
+'identifier': 'static' 使用しないでファイル スコープで定義されたメンバー関数  
   
  静的メンバー関数は、外部リンケージで宣言する必要があります。  
   
- 次の例では、c2724 エラーが生成されます。  
+ 次の例では、C2724 が生成されます。  
   
 ```  
 // C2724.cpp  

@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2660 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2660"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2660"
+title: "コンパイラ エラー C2660 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2660
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2660
 ms.assetid: 2e01a1db-4f00-4df6-a04d-cb6f70a6922b
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# コンパイラ エラー C2660
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 1a93046493897b69e4b557607d823566d82070f5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c2660"></a>コンパイラ エラー C2660
 'function' : 関数に number 個のパラメーターを指定することはできません。  
   
  関数の呼び出しに指定されたパラメーターの数が間違っています。  
   
- MFC メンバー関数ではなく同じ名前の Windows API 関数を誤って呼び出すと、C2660 が発生します。  この問題を解決する方法は次のとおりです。  
+ MFC メンバー関数ではなく同じ名前の Windows API 関数を誤って呼び出すと、C2660 が発生します。 この問題を解決する方法は次のとおりです。  
   
 -   メンバー関数の呼び出し形式に合うように関数呼び出しを書き直します。  
   
--   スコープ解決演算子 \(`::`\) を使用して、グローバルな名前空間で関数名を検索するようにコンパイラに通知します。  
+-   スコープ解決演算子 (`::`) を使用して、グローバルな名前空間で関数名を検索するようにコンパイラに通知します。  
   
-## 使用例  
- 次の例では C2660 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例と、C2660 が生成されます。  
   
 ```  
 // C2660.cpp  
@@ -47,8 +50,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- C2660 エラーは、マネージ型の Dispose メソッドを直接呼び出す場合にも発生することがあります。  詳細については、「[デストラクターとファイナライザー](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)」を参照してください。  次の例では C2660 エラーが生成されます。  
+## <a name="example"></a>例  
+ C2660 エラーは、マネージ型の Dispose メソッドを直接呼び出す場合にも発生することがあります。 詳細については、次を参照してください。[デストラクターおよびファイナライザー](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Destructors_and_finalizers)です。 次の例と、C2660 が生成されます。  
   
 ```  
 // C2660_a.cpp  
@@ -68,7 +71,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  派生クラスによって関数が隠ぺいされると、C2660 が発生します。  
   
 ```  
@@ -98,7 +101,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  インデックス付きプロパティの呼び出しを正しく行わないと、C2660 が発生します。  
   
 ```  
@@ -122,7 +125,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  インデックス付きプロパティの呼び出しを正しく行わないと、C2660 が発生します。  
   
 ```  
@@ -144,7 +147,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  テンプレート クラスに定義した新しい演算子が、囲い型以外の型を持つオブジェクトを作成すると、C2660 が発生します。  
   
 ```  

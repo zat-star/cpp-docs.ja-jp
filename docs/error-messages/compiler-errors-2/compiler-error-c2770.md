@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3c631c71a513e3c13b0e04fdc70919a811c7b9c4
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 81179a10cc58c1b22f974b4367d471dde87bdc65
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2770"></a>コンパイラ エラー C2770
 'template' の無効な明示的な template_or_generic 個の引数  
   
- 許可されていない関数の型に明示的なテンプレートまたはジェネリック型引数を持つ関数テンプレート候補が発生しました。  
+ 許可されていない関数の型に明示的なテンプレートまたは汎用引数を持つ関数テンプレート候補が発生しました。  
   
- 次の例では、c2770 エラーが生成されます。  
+ 次の例では、C2770 が生成されます。  
   
 ```  
 // C2770.cpp  

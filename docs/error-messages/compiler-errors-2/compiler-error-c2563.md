@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2563 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2563"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2563"
+title: "コンパイラ エラー C2563 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2563
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2563
 ms.assetid: 54abba68-6458-4ca5-894d-3babdb7b3552
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2563
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8fe3ca54a90b91151288076fd657752e3195e318
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-仮引数リストまたは関数へのポインターが、適合していません。  
+---
+# <a name="compiler-error-c2563"></a>コンパイラ エラー C2563
+正式なパラメーター リストが一致しません  
   
- 関数の仮パラメーター リスト \(または関数へのポインター\) が、ほかの関数の仮パラメーター リスト \(またはメンバー関数へのポインター\) と一致していません。  このため、関数やポインターの代入ができません。  
+ 関数 (または関数へのポインター) の仮パラメーター リストには、別の関数 (またはメンバー関数へのポインター) のものと一致しません。 その結果、または関数ポインターの代入を行うことはできません。  
   
- 次の例では警告 C2563 が生成されます。  
+ 次の例では、C2563 が生成されます。  
   
 ```  
 // C2563.cpp  

@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C2664 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2664"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2664"
+title: "コンパイラ エラー C2664 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2664
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2664
 ms.assetid: 3595d66e-cf87-4fda-a896-c0cd81f95db4
 caps.latest.revision: 28
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 28
----
-# コンパイラ エラー C2664
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 933ef66a4f4fabea46c3f1ebaede1ea51429141c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : 引数 n を 'type1' から 'type2' へ変換できません。  
+---
+# <a name="compiler-error-c2664"></a>コンパイラ エラー c2664 を生成
+'function': 引数 n を 'type1' から 'type2' へ変換できません。  
   
- このパラメーター変換問題は、クラスのインスタンスが作成され、`explicit` キーワードでマークされたコンストラクターで暗黙的な変換が試みられた場合に生じる可能性があります。  明示的な変換の詳細については、「[変換](../../cpp/user-defined-type-conversions-cpp.md)」を参照してください。  
+ このパラメーター変換問題は、クラスのインスタンスが作成され、`explicit` キーワードでマークされたコンストラクターで暗黙的な変換が試みられた場合に生じる可能性があります。 明示的な変換の詳細については、次を参照してください。[ユーザー定義型の変換](../../cpp/user-defined-type-conversions-cpp.md)です。  
   
  パラメーターとしてオブジェクトへの参照を指定する関数に一時オブジェクトが渡される場合、その参照は `const` 参照である必要があります。  
   
- 予測される以外の型のパラメーターが関数に渡されると、適切なコンストラクターを使用して一時オブジェクトが作成されます。  この一時オブジェクトは関数に渡されます。  この場合、一時オブジェクトは参照の初期化に使用されます。  旧バージョンの言語では、すべての参照を一時オブジェクトで初期化できました。  
+ 予測される以外の型のパラメーターが関数に渡されると、適切なコンストラクターを使用して一時オブジェクトが作成されます。 この一時オブジェクトは関数に渡されます。 この場合、一時オブジェクトは参照の初期化に使用されます。 旧バージョンの言語では、すべての参照を一時オブジェクトで初期化できました。  
   
  C2664 を解決するには、  
   
@@ -40,9 +43,9 @@ caps.handback.revision: 28
   
  クラスがそのベース クラスのいずれかにメンバーを隠ぺいした場合も、C2664 が生成されます。  
   
- 詳細については、「[方法: System::String を wchar\_t\* または char\* に変換する](../../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)」を参照してください。  
+ 詳細については、次を参照してください。[する方法: system::string を wchar_t * または char 型を変換\*](../../dotnet/how-to-convert-system-string-to-wchar-t-star-or-char-star.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、C2664 を生成し、その修正方法を示しています。  
   
 ```  
@@ -65,7 +68,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  この例も、C2664 を生成し、その修正方法を示しています。  
   
 ```  
@@ -83,8 +86,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例では、`Test` を呼び出すリテラル文字列を使用して生成される C2664 と、その修正方法を示しています。  パラメーターは `szString` 参照であるため、適切なコンストラクターでオブジェクトが作成される必要があります。  結果は、参照の初期化に使用できない一時オブジェクトになります。  
+## <a name="example"></a>例  
+ 次の例では、`Test` を呼び出すリテラル文字列を使用して生成される C2664 と、その修正方法を示しています。 パラメーターは `szString` 参照であるため、適切なコンストラクターでオブジェクトが作成される必要があります。 結果は、参照の初期化に使用できない一時オブジェクトになります。  
   
 ```  
 // C2664c.cpp  
@@ -123,8 +126,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- `const` を適用するために C\+\+ の標準要件が強制的に適用されます。  次の例では C2664 エラーが生成されます。  
+## <a name="example"></a>例  
+ `const` を適用するために C++ の標準要件が強制的に適用されます。 次の例では C2664 エラーが生成されます。  
   
 ```  
 // C2664d.cpp  
@@ -147,7 +150,7 @@ int main()
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  C2664 が生成されるより複雑な状況と、その修正方法を示します。  
   
 ```  
@@ -191,8 +194,8 @@ int main( ) {
 }  
 ```  
   
-## 使用例  
- 関数呼び出しが満たされるように、列挙型変数はその基になる型に変換されません。  詳細については、「[列挙型クラス](../../windows/enum-class-cpp-component-extensions.md)」を参照してください。  次の例では、C2664 を生成し、その修正方法を示しています。  
+## <a name="example"></a>例  
+ 関数呼び出しが満たされるように、列挙型変数はその基になる型に変換されません。 詳細については、次を参照してください。[列挙型クラス](../../windows/enum-class-cpp-component-extensions.md)です。 次の例では、C2664 を生成し、その修正方法を示しています。  
   
 ```  
 // C2664f.cpp  
@@ -212,8 +215,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- MIDL コンパイラのバグにより、wchar\_t type は unsigned short として型ライブラリに出力されます。  このエラーを解決するには、型を C\+\+ ソース コードにキャストするか、型を文字列として idl ファイルに定義します。  
+## <a name="example"></a>例  
+ MIDL コンパイラのバグにより、wchar_t type は unsigned short として型ライブラリに出力されます。 このエラーを解決するには、型を C++ ソース コードにキャストするか、型を文字列として idl ファイルに定義します。  
   
 ```  
 // C2664g.idl  
@@ -234,9 +237,9 @@ library myproj1 {
 }  
 ```  
   
- コードを Visual C\+\+ 6.0 から新しいバージョンに移植するときに、`wchar_t` を使用しても C2664 が発生します。  Visual C\+\+ 6.0 以前では、`wchar_t` は `typedef` の `unsigned short` であるため、その型に暗黙的に変換されます。  Visual C\+\+ 6.0 より新しいバージョンでは、C\+\+ 標準で指定されているように、`wchar_t` は独自の組み込み型で、`unsigned short` に暗黙的に変換されません。  「[\/Zc:wchar\_t \(wchar\_t をネイティブ型として認識\)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md)」を参照してください。  
+ コードを Visual C++ 6.0 から新しいバージョンに移植するときに、`wchar_t` を使用しても C2664 が発生します。 Visual C++ 6.0 以前では、`wchar_t` は `typedef` の `unsigned short` であるため、その型に暗黙的に変換されます。 Visual C++ 6.0 より新しいバージョンでは、C++ 標準で指定されているように、`wchar_t` は独自の組み込み型で、`unsigned short` に暗黙的に変換されません。 参照してください[/Zc:wchar_t (wchar_t をネイティブ型)](../../build/reference/zc-wchar-t-wchar-t-is-native-type.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、C2664 を生成し、その修正方法を示しています。  
   
 ```  
@@ -257,7 +260,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  C2664 は、コンパイラがテンプレートの引数を推定できない場合にも発生します。  
   
 ```  

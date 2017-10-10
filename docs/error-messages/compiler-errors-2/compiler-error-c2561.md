@@ -1,42 +1,45 @@
 ---
-title: "コンパイラ エラー C2561 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2561"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2561"
+title: "コンパイラ エラー C2561 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2561
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2561
 ms.assetid: 0abe955b-53a6-4a3c-8362-b1a8eb40e8d1
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2561
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ce30ffb454deb7bc847e736458295d037826a0ad
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier' : 関数が値を戻すように宣言されていますが、関数定義に 'return' ステートメントがありません。  
+---
+# <a name="compiler-error-c2561"></a>コンパイラ エラー C2561
+'identifier': 関数が値を返す必要があります  
   
- 関数は値を返すように宣言されていますが、関数定義に `return` ステートメントがありません。  
+ 関数は、値を返すとして宣言されていますが、関数定義が含まれない、`return`ステートメントです。  
   
- このエラーは、不正な関数プロトタイプが原因で発生する場合があります。  
+ このエラーは、無効な関数プロトタイプによって発生することができます。  
   
-1.  関数が値を返さないときは、戻り値の型 [void](../../cpp/void-cpp.md) で関数を宣言します。  
+1.  関数が値を返さない場合は、戻り値の型と関数を宣言[void](../../cpp/void-cpp.md)です。  
   
-2.  関数のすべての分岐の戻り値が、プロトタイプで宣言されていることを確認します。  
+2.  関数のすべての分岐がプロトタイプで宣言された型の値を返すことを確認してください。  
   
-3.  `AX` レジスタに戻り値を格納するようなインライン アセンブリ ルーチンを持つ C\+\+ 関数は、return ステートメントが必要な場合もあります。  `AX` 内の値をテンポラリ変数にコピーし、関数からはこの変数を返すようにします。  
+3.  C++ の関数の戻り値を格納するインライン アセンブリ ルーチンを含む、`AX`レジスタは、return ステートメントを必要があります。 値をコピー`AX`を一時変数に、関数からその変数を返すとします。  
   
- 次の例では警告 C2561 が生成されます。  
+ 次の例では、C2561 が生成されます。  
   
 ```  
 // C2561.cpp  

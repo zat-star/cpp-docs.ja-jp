@@ -1,40 +1,43 @@
 ---
-title: "コンパイラ エラー C2663 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2663"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2663"
+title: "コンパイラ エラー C2663 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2663
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2663
 ms.assetid: 1e93e368-fd52-42bf-9908-9b6df467c8c9
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2663
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a9efe20b4a80b9ff6f337d32acd35320125008dc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : number オーバーロードに 'this' ポインターのための必要な定義がされていません。  
+---
+# <a name="compiler-error-c2663"></a>コンパイラ エラー C2663
+'function': 'this' ポインターの有効な変換がある番号のオーバー ロードがありません  
   
- `this` ポインターを、オーバーロードされたメンバー関数に変換できませんでした。  
+ コンパイラは変換できませんでした`this`メンバー関数のオーバー ロードされたバージョンのいずれかにします。  
   
- このエラーは、`const` 以外のメンバー関数が `const` オブジェクトから呼び出されたことが原因で発生する場合があります。解決方法は次のとおりです。  
+ このエラーは、以外を呼び出すことによって発生することができます`const`メンバー関数を`const`オブジェクト。  考えられる解決策:  
   
-1.  オブジェクト宣言から `const` を削除します。  
+1.  削除、`const`オブジェクトの宣言からです。  
   
-2.  オーバーロードするメンバー関数に `const` を追加します。  
+2.  追加`const`メンバー関数のオーバー ロードのいずれかにします。  
   
- 次の例では警告 C2663 が生成されます。  
+ 次の例では、C2663 が生成されます。  
   
 ```  
 // C2663.cpp  
