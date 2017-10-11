@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3203 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3203"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3203"
+title: "コンパイラ エラー C3203 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3203
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3203
 ms.assetid: 6356770e-22c1-434c-91fe-f60b0aa23b91
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C3203
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: eb8a9272a62080bd567989d90502d0ca2d003a57
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c3203"></a>コンパイラ エラー C3203
 'type': 非特殊クラス テンプレートまたはジェネリックは、テンプレートまたはジェネリック引数としてテンプレートまたはジェネリック パラメーター 'param' に使用できません。実際の型を指定してください  
   
- 無効な引数をクラス テンプレートまたはジェネリックに渡しました。  クラス テンプレートまたはジェネリックには、パラメーターとして型を渡す必要があります。  
+ 無効な引数をクラス テンプレートまたはジェネリックに渡しました。 クラス テンプレートまたはジェネリックには、パラメーターとして型を渡す必要があります。  
   
- このエラーは、Visual C\+\+ 2005 のために行われたコンパイラ準拠作業の結果として生成される場合があります。非特殊クラス テンプレートは、基底クラス リストのテンプレート引数として使用できません。  C3203 を解決するには、基底クラス リストでテンプレート パラメーターとしてテンプレート型パラメーターを使用するときに、明示的にテンプレート型パラメーターをテンプレート クラス名に追加します。  
+ このエラーは、Visual C++ 2005 のために行われたコンパイラ準拠作業の結果として生成される場合があります。非特殊クラス テンプレートは、基底クラス リストのテンプレート引数として使用できません。 C3203 を解決するには、基底クラス リストでテンプレート パラメーターとしてテンプレート型パラメーターを使用するときに、明示的にテンプレート型パラメーターをテンプレート クラス名に追加します。  
   
 ```  
 // C3203.cpp  

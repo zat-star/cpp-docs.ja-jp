@@ -1,42 +1,45 @@
 ---
-title: "致命的なエラー C1060 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1060"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1060"
+title: "致命的なエラー C1060 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1060
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1060
 ms.assetid: feaf305c-c84c-4160-b974-50e283412849
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# 致命的なエラー C1060
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 36abe3a63515dcb3b8f07ce5d0d169329ed5f7ab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="fatal-error-c1060"></a>致命的なエラー C1060
 ヒープの領域を使い果たしました。  
   
  オペレーティング システムまたはランタイム ライブラリがメモリの要求に対応できません。  
   
-### このエラーを解決するには次の方法があります。  
+### <a name="to-fix-this-error-try-the-following-possible-solutions"></a>このエラーを解決するには次の方法があります。  
   
-1.  コンパイラによってエラー [C1076](../Topic/Fatal%20Error%20C1076.md) および [C3859](../Topic/Compiler%20Error%20C3859.md) も発行される場合は、[\/Zm](../Topic/-Zm%20\(Specify%20Precompiled%20Header%20Memory%20Allocation%20Limit\).md) コンパイラ オプションを使用して、メモリの割り当て制限を低減します。  残りのメモリ割り当てを削減すると、アプリケーションに使用できるヒープ領域が増加します。  
+1.  場合は、コンパイラによってエラーが発行[C1076](../../error-messages/compiler-errors-1/fatal-error-c1076.md)と[C3859](../../error-messages/compiler-errors-2/compiler-error-c3859.md)を使用して、 [/Zm](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)を下げるには、メモリ割り当て制限コンパイラ オプション。 残りのメモリ割り当てを削減すると、アプリケーションに使用できるヒープ領域が増加します。  
   
-     [\/Zm](../Topic/-Zm%20\(Specify%20Precompiled%20Header%20Memory%20Allocation%20Limit\).md) オプションが既に設定されている場合は、削除してください。  オプションで指定されたメモリ割り当て制限が高すぎるために、ヒープ領域が足りなくなっている可能性があります。  [\/Zm](../Topic/-Zm%20\(Specify%20Precompiled%20Header%20Memory%20Allocation%20Limit\).md) オプションを削除すると、既定の制限がコンパイラによって使用されます。  
+     場合、 [/Zm](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)オプションは既に設定されている、それを削除してください。 オプションで指定されたメモリ割り当て制限が高すぎるために、ヒープ領域が足りなくなっている可能性があります。 削除する場合、コンパイラは既定の制限を使用して、 [/Zm](../../build/reference/zm-specify-precompiled-header-memory-allocation-limit.md)オプション。  
   
-2.  64 ビット プラットフォームでコンパイルする場合は、64 ビットのコンパイラ ツールセットを使用します。  詳細については、「[方法: 64 ビットの Visual C\+\+ ツールセットをコマンド ラインから有効にする](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)」を参照してください。  
+2.  64 ビット プラットフォームでコンパイルする場合は、64 ビットのコンパイラ ツールセットを使用します。 詳細については、次を参照してください。[する方法: コマンドラインで 64 ビット Visual c ツールセットを有効にする](../../build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line.md)です。  
   
-3.  32 ビットの Windows では、[3 GB](http://go.microsoft.com/fwlink/?LinkId=177831) の boot.ini スイッチを使用してみてください。  
+3.  32 ビット Windows での再試行を使用して、 [3 GB](http://go.microsoft.com/fwlink/?LinkId=177831) boot.ini スイッチ。  
   
 4.  Windows のスワップ ファイルのサイズを大きくします。  
   

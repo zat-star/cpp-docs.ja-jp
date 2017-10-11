@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3395 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3395"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3395"
+title: "コンパイラ エラー C3395 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3395
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3395
 ms.assetid: 26a9ebc9-ed97-47ce-b436-19aa2bcf6e50
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3395
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 93009d77c40535997ecc42ccb715f5fe81d79798
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'関数' : \_\_declspec\(dllexport\) は、\_\_clrcall 呼び出し規約を伴う関数に適用することはできません  
+---
+# <a name="compiler-error-c3395"></a>コンパイラ エラー C3395
+'function': 方式を伴う関数に適用できません、 \__clrcall 呼び出し規約  
   
- `__declspec(dllexport)` と [\_\_clrcall](../../cpp/clrcall.md) は互換性がありません。詳細については、「[dllexport、dllimport](../../cpp/dllexport-dllimport.md)」を参照してください。  
+ `__declspec(dllexport)`および[_ _clrcall](../../cpp/clrcall.md)は互換性がありません。  詳細については、次を参照してください。 [dllexport、dllimport](../../cpp/dllexport-dllimport.md)です。  
   
- 次の例では警告 C3395 が生成されます。  
+ 次の例では、C3395 が生成されます。  
   
 ```  
 // C3395.cpp  

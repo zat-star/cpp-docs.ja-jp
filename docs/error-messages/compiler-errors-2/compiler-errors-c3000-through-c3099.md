@@ -51,32 +51,18 @@ caps.latest.revision: 1
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 16d0f336ec66329d0a92a151e1bc224433b0b03a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 59ac61f0ae50f3a6b1d7170ea0b965c3bb8d0fe2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-errors-c3000-through-c3099"></a>コンパイラ エラー C3000 C3099 経由
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -101,12 +87,12 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3016](compiler-error-c3016.md)|'*識別子*': OpenMP 'for' ステートメントのインデックス変数必要がありますが、符号付き整数型|  
 |[コンパイラ エラー C3017](compiler-error-c3017.md)|OpenMP 'for' ステートメントの終了テストには、正しくない形式が含まれています|  
 |[コンパイラ エラー C3018](compiler-error-c3018.md)|'*識別子*': OpenMP 'for' テストまたはインクリメントは、インデックス変数を使用する必要があります'*変数*'|  
-|[コンパイラ エラー C3019](compiler-error-c3019.md)|OpenMP 'for' ステートメントのインクリメントには、正しくない形式が含まれています|  
+|[コンパイラ エラー C3019](compiler-error-c3019.md)|openmp 'for' ステートメントの増分値が正しくない形式|  
 |[コンパイラ エラー C3020](compiler-error-c3020.md)|'*変数*': OpenMP の 'for' ループのインデックス変数は、ループの本体では変更できません|  
 |[コンパイラ エラー C3021](compiler-error-c3021.md)|'*引数*': 引数は、空の OpenMP'*ディレクティブ*' ディレクティブ|  
 |[コンパイラ エラー C3022](compiler-error-c3022.md)|'*ディレクティブ*': 無効なスケジュールの種類の'*ディレクティブ*'on 'OpenMP*ディレクティブ*' ディレクティブ|  
 |[コンパイラ エラー C3023](compiler-error-c3023.md)|'*引数*': OpenMP への引数で予期しないトークン'*ディレクティブ*' 句|  
-|[コンパイラ エラー C3024](compiler-error-c3024.md)|'schedule(runtime)': chunk_size 式は使用できません|  
+|[コンパイラ エラー C3024](compiler-error-c3024.md)|'schedule (runtime)': chunk_size 式は許可されていません|  
 |[コンパイラ エラー C3025](compiler-error-c3025.md)|'*句*': 整数式が必要です|  
 |[コンパイラ エラー C3026](compiler-error-c3026.md)|'*句*': 定数式は、正の値である必要があります|  
 |[コンパイラ エラー C3027](compiler-error-c3027.md)|'*句*': 演算またはポインターの式が必要です|  
@@ -126,7 +112,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3041](compiler-error-c3041.md)|'*識別子*': 'copyprivate' 句の変数をそれを囲むコンテキスト内でプライベートにする必要があります|  
 |[コンパイラ エラー C3042](compiler-error-c3042.md)|'copyprivate' 句および 'nowait' 句は OpenMP に一緒に表示できません '*ディレクティブ*' ディレクティブ|  
 |[コンパイラ エラー C3043](compiler-error-c3043.md)|OpenMP 'critical' ディレクティブを 'critical' ディレクティブの中で、同じ名前で入れ子にすることはできません|  
-|[コンパイラ エラー C3044](compiler-error-c3044.md)|'section': OpenMP 'sections' ディレクティブの直下でのみ入れ子にすることができます|  
+|[コンパイラ エラー C3044](compiler-error-c3044.md)|'section': のみ許可 OpenMP 'sections' ディレクティブに直接入れ子に|  
 |[コンパイラ エラー C3045](compiler-error-c3045.md)|OpenMP 'sections' ディレクティブの後に複合ステートメントが必要です。 '{' が必要です|  
 |[コンパイラ エラー C3046](compiler-error-c3046.md)|OpenMP '#pragma omp sections' の領域で構造化ブロックがありません|  
 |[コンパイラ エラー C3047](compiler-error-c3047.md)|OpenMP 'sections' 領域の構造化ブロックの前には '#pragma omp section' が必要です|  
@@ -148,7 +134,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3063](compiler-error-c3063.md)|演算子 '*演算子*': すべてのオペランドが同じ列挙型を持つ必要があります|  
 |コンパイラ エラー C3064|'*識別子*': 単純型であるか、いずれかに解決する必要があります|  
 |[コンパイラ エラー C3065](compiler-error-c3065.md)|クラスでないスコープでのプロパティ宣言は使用できません|  
-|[コンパイラ エラー C3066](compiler-error-c3066.md)|これらの引数と共に、この型のオブジェクトを呼び出す複数の方法があります|  
+|[コンパイラ エラー C3066](compiler-error-c3066.md)|この型のオブジェクトを呼び出すことがいくつかの方法でこれらの引数|  
 |コンパイラ エラー C3067|組み込み演算子で、初期化子リストは使用できません。|  
 |[コンパイラ エラー C3068](compiler-error-c3068.md)|'*識別子*': 'naked' 関数が C++ 例外が発生した場合に、アンワインディングを必要とするオブジェクトを含めることはできません|  
 |[コンパイラ エラー C3069](compiler-error-c3069.md)|演算子 '*演算子*': 列挙型に許可されていません|  
@@ -156,19 +142,19 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3071](compiler-error-c3071.md)|演算子 '*演算子*' ref クラスまたは値型のインスタンスにのみ適用できます|  
 |[コンパイラ エラー C3072](compiler-error-c3072.md)|演算子 '*演算子*'、ref クラスを使用して ref のインスタンスに変換する単項 '%' 演算子がハンドル型にクラスのインスタンスに適用することはできません|  
 |[コンパイラ エラー C3073](compiler-error-c3073.md)|'*識別子*': ref クラスには、ユーザー定義のコピー コンス トラクターがありません。|  
-|コンパイラ エラー C3074|配列は、かっこで囲まれた初期化子では初期化できません|  
+|コンパイラ エラー C3074|配列をかっこで囲まれた初期化子で初期化できません。|  
 |[コンパイラ エラー C3075](compiler-error-c3075.md)|'*識別子*': 参照型のインスタンスを埋め込むことはできません'*型*'、値型|  
 |[コンパイラ エラー C3076](compiler-error-c3076.md)|'*識別子*': 参照型のインスタンスを埋め込むことはできません'*型*'、ネイティブ型で|  
 |[コンパイラ エラー C3077](compiler-error-c3077.md)|'*識別子*': ファイナライザーは、参照型のメンバーにのみなることができます|  
 |コンパイラ エラー C3078|新しい式で配列のサイズを指定する必要があります。|  
-|コンパイラ エラー C3079|初期化子リストは、この代入演算子の右オペランドとしては使用できません|  
+|コンパイラ エラー C3079|初期化子リストは、この代入演算子の右側のオペランドとして使用できません。|  
 |[コンパイラ エラー C3080](compiler-error-c3080.md)|'*ファイナライザー*': ファイナライザーは、ストレージ クラスの指定子を持つことはできません|  
 |コンパイラ エラー C3081|互換性のために残されています。|  
 |コンパイラ エラー C3082|互換性のために残されています。|  
 |[コンパイラ エラー C3083](compiler-error-c3083.md)|'*識別子*': シンボルの左側に、'::' 型でなければなりません|  
 |[コンパイラ エラー C3084](compiler-error-c3084.md)|'*識別子*': デストラクターまたはファイナライザーをすることはできません'*キーワード*'|  
 |[コンパイラ エラー C3085](compiler-error-c3085.md)|'*識別子*': コンス トラクターにすることはできません'*キーワード*'|  
-|コンパイラ エラー C3086|'std::initializer_list' が見つかりません。#include <initializer_list> が必要です|  
+|コンパイラ エラー C3086|'std::initializer_list' が見つかりません: する必要があります #include < initializer_list > の include|  
 |[コンパイラ エラー C3087](compiler-error-c3087.md)|'*識別子*': の呼び出し'*宣言*' 既にこのメンバーを初期化します|  
 |コンパイラ エラー C3088|'*クラス*': 属性コンス トラクターにする必要がありますは仮引数名前付け|  
 |コンパイラ エラー C3089|'*識別子*': パラメーター名が、どのデータ メンバーの名前と一致しません|  

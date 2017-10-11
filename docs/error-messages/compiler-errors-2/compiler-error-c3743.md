@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 1a7f7e7b561e20f962aef4757d1248f1b7d3c6f5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 71e35535a7e6c9916c6dd6ac563cfd5bdf76fbce
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3743"></a>コンパイラ エラー C3743
-event_receiver の 'layout_dependent' パラメーターが True の場合にのみ、すべてのインターフェイスをフック/アンフックできます。  
+できますのみフック/アンフック インターフェイス全体 event_receiver の 'layout_dependent' パラメーターが true の場合  
   
- [_ _Unhook](../../cpp/unhook.md)関数に渡される値に基づくかかるパラメーターの数が変化、`layout_dependent`内のパラメーター、 [event_receiver](../../windows/event-receiver.md)クラスです。  
+ [_ _Unhook](../../cpp/unhook.md)関数に渡された値に基づいて引き継ぎパラメーターの数によって異なります、`layout_dependent`内のパラメーター、 [event_receiver](../../windows/event-receiver.md)クラスです。  
   
- 次の例では、c3743 エラーが生成されます。  
+ 次の例では、C3743 が生成されます。  
   
 ```  
 // C3743.cpp  

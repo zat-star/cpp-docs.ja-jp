@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2854 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2854"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2854"
+title: "コンパイラ エラー C2854 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2854
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2854
 ms.assetid: 917fec9c-790a-4149-8dfc-00d17a09199c
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2854
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0f8423af7be34d431ab8ace8ca512d857611c6c3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-\#pragma hdrstop に構文エラーがあります。  
+---
+# <a name="compiler-error-c2854"></a>コンパイラ エラー C2854
+#pragma hdrstop に構文エラー  
   
- `#pragma hdrstop` に指定したファイル名が無効です。  プラグマの後ろにファイル名を指定する場合は、次に示すように、かっこと引用符で囲みます。  
+ `#pragma hdrstop`無効なファイル名を提供します。 プラグマの後にかっこと引用符内の省略可能なファイル名を指定できます。  
   
- 次の例では警告 C2854 が生成されます。  
+ 次の例では、C2854 が生成されます。  
   
 ```  
 // C2854.cpp  

@@ -19,32 +19,17 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 05edbf62dfe8d5ed916ccc971b8ae9a286e1aeb8
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8c1b4ac942c4b17785b57d6206cd2f5a8724bd99
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3056"></a>コンパイラ エラー C3056
 'symbol': シンボルは、'threadprivate' ディレクティブと同じスコープに存在しません  
   
- 使用するシンボル、 [threadprivate](../../parallel/openmp/reference/threadprivate.md)句と同じスコープである必要があります、`threadprivate`句。  
+ [threadprivate](../../parallel/openmp/reference/threadprivate.md) 句で使用されるシンボルは `threadprivate` 句と同じスコープである必要があります。  
   
  次の例では C3056 が生成されます。  
   

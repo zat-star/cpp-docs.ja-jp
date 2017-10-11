@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2675 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2675"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2675"
+title: "コンパイラ エラー C2675 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2675
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2675
 ms.assetid: 4b92a12b-bff8-4dd5-a109-620065fc146c
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C2675
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c9c5815e7c57eb2469599a26c2cbc5202018f27e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-単項演算子 'operator' : 'type' は、この演算子または定義済の演算子に適切な型への変換の定義を行いません。  
+---
+# <a name="compiler-error-c2675"></a>コンパイラ エラー C2675
+単項 'operator': 'type' はいないこの演算子または定義を適切な型への変換を定義済の演算子に  
   
- C2675 は、単項演算子を使用するときに、この演算子または定義済みの演算子に適切な型への変換を型が定義しない場合にも発生します。  この演算子を使うには、型を指定してこの演算子をオーバーロードするか、この演算子が定義された型への変換を定義する必要があります。  
+ C2675 は、単項演算子を使用する場合にも発生することができ、型が定義されていない演算子は、適切な型への変換を定義済の演算子にします。 この演算子を使うには、型を指定してこの演算子をオーバーロードするか、この演算子が定義された型への変換を定義する必要があります。  
   
-## 使用例  
- 次の例では C2675 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2675 を生成します。  
   
 ```  
 // C2675.cpp  

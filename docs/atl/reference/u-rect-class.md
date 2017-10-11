@@ -22,29 +22,15 @@ caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 5a375921fd51b19eb2e9020d3175a56df8549461
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: a8c7d4e7b34256d9544cd75dc71dbfb8294db30b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="urect-class"></a>_U_RECT クラス
-この引数アダプター クラスは、いずれかの`RECT`ポインターまたは参照をポインターとして実装されている関数に渡されます。  
+この引数のアダプター クラスは、いずれかの`RECT`ポインターまたは参照ポインターの観点から実装されている関数に渡されます。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -85,7 +71,7 @@ LPRECT ある m_lpRect です。
  The address of the reference argument is stored in the class's single data member, [m_lpRect](#_u_rect__m_lprect).  
   
 ```
-(RECT >/reportbuilder/reportbuilder_3_0_0_0.application rc); _U_RECT  
+_U_RECT (RECT & rc) です。  
 _U_RECT (LPRECT lpRect) です。
 ```  
   

@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3508 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3508"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3508"
+title: "コンパイラ エラー C3508 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3508
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3508
 ms.assetid: 16d08f89-2f32-44eb-9421-68acecddf49b
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3508
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f30abe3356b9375883c9a0211d8eb63a5fd2d59a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'type': 有効な Automation の型ではありません。  
+---
+# <a name="compiler-error-c3508"></a>コンパイラ エラー C3508
+'type': 有効な Automation 型ではありません  
   
- 無効な型が指定されています。  
+ 無効な型が指定されました。  
   
-## 使用例  
- 次の例では警告 C3508 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3508 が生成されます。  
   
 ```  
 // C3508.cpp  

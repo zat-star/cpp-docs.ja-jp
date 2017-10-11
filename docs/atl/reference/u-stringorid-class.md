@@ -1,66 +1,93 @@
 ---
-title: "_U_STRINGorID クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ATL._U_STRINGorID"
-  - "ATL::_U_STRINGorID"
-  - "_U_STRINGorID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_U_STRINGorID クラス"
-  - "U_STRINGorID クラス"
+title: "_U_STRINGorID クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ATL._U_STRINGorID
+- ATL::_U_STRINGorID
+- _U_STRINGorID
+dev_langs:
+- C++
+helpviewer_keywords:
+- _U_STRINGorID class
+- U_STRINGorID class
 ms.assetid: 443cdc00-d265-4b27-8ef3-2feb95f3e5e3
 caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 23
----
-# _U_STRINGorID クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: b02d539ae2a067c015988a847407bf631b6e8c1a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-この引数アダプター クラスによって、呼び出し元で **MAKEINTRESOURCE** マクロを使用して ID を文字列に変換せずに、リソース名 \(`LPCTSTR`\) またはリソース ID \(**UINT**\) を関数に渡すことができます。  
+---
+# <a name="ustringorid-class"></a>_U_STRINGorID クラス
+この引数のアダプター クラスは、いずれかのリソース名を使用できます ( `LPCTSTR`s) またはリソース Id ( **UINT**s)、呼び出し元の ID を使用して文字列を変換を必要とせず、関数に渡される、 **されるときは**マクロです。  
   
 > [!IMPORTANT]
->  このクラスおよびメンバーは、Windows のランタイムで実行するアプリケーションで使用することはできません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
+```
+class _U_STRINGorID
 ```  
   
-class _U_STRINGorID  
+## <a name="members"></a>メンバー  
   
+### <a name="public-constructors"></a>パブリック コンストラクター  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[_U_STRINGorID::_U_STRINGorID](#_u_stringorid___u_stringorid)|コンストラクターです。|  
+  
+### <a name="public-data-members"></a>パブリック データ メンバー  
+  
+|名前|説明|  
+|----------|-----------------|  
+|[_U_STRINGorID::m_lpstr](#_u_stringorid__m_lpstr)|リソースの識別子。|  
+  
+## <a name="remarks"></a>コメント  
+ このクラスがなど、Windows リソース管理 API にラッパーを実装するために設計された、 [FindResource](http://msdn.microsoft.com/library/windows/desktop/ms648042)、 [LoadIcon](http://msdn.microsoft.com/library/windows/desktop/ms648072)、および[LoadMenu](http://msdn.microsoft.com/library/windows/desktop/ms647990)を受け入れる関数`LPCTSTR`リソースの名前または ID のいずれかに可能な引数  
+  
+ 2 つのコンス トラクター オーバー ロードがクラスで定義: 1 つを受け入れる、`LPCTSTR`引数で、もう一方を受け入れる、 **UINT**引数。 **UINT**引数を使用して Windows リソース管理機能と互換性のあるリソースの種類に変換、**されるときは**マクロとそのクラスの 1 つのデータ メンバーに格納されている結果[m_lpstr](#_u_stringorid__m_lpstr)です。 引数、`LPCTSTR`コンス トラクターは変換せずに直接格納します。  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** atlwin.h  
+  
+##  <a name="_u_stringorid__m_lpstr"></a>_U_STRINGorID::m_lpstr  
+ クラスでは、渡された値をそのコンス トラクターのいずれかとしてパブリック`LPCTSTR`データ メンバーです。  
+  
+```
+LPCTSTR m_lpstr;
 ```  
   
-## メンバー  
+##  <a name="_u_stringorid___u_stringorid"></a>_U_STRINGorID::_U_STRINGorID  
+ **UINT**コンス トラクターを使用して Windows リソース管理機能と互換性のあるリソースの種類に引数を変換する、**されるときは**マクロと結果は、クラスの単一の保存データ メンバー、 [m_lpstr](#_u_stringorid__m_lpstr)です。  
   
-### パブリック コンストラクター  
+```
+_U_STRINGorID(UINT nID);  
+_U_STRINGorID(LPCTSTR lpString);
+```  
   
-|名前|説明|  
-|--------|--------|  
-|[\_U\_STRINGorID::\_U\_STRINGorID](../Topic/_U_STRINGorID::_U_STRINGorID.md)|コンストラクターです。|  
+### <a name="parameters"></a>パラメーター  
+ `nID`  
+ リソース id です。  
   
-### パブリック データ メンバー  
+ `lpString`  
+ リソースの名前です。  
   
-|名前|説明|  
-|--------|--------|  
-|[\_U\_STRINGorID::m\_lpstr](../Topic/_U_STRINGorID::m_lpstr.md)|リソース識別子。|  
+### <a name="remarks"></a>コメント  
+ 引数、`LPCTSTR`コンス トラクターは変換せずに直接格納します。  
   
-## 解説  
- このクラスは、リソースの名前または ID である可能性がある `LPCTSTR` の引数を受け取る [FindResource](http://msdn.microsoft.com/library/windows/desktop/ms648042)、[LoadIcon](http://msdn.microsoft.com/library/windows/desktop/ms648072)と [LoadMenu](http://msdn.microsoft.com/library/windows/desktop/ms647990) 関数などの Windows リソース管理 API に対するラッパーを実行するようにデザインされています  
-  
- クラスは 2 種類のコンストラクター オーバーロードを定義します: 1 つが `LPCTSTR` の引数を受け取り、そのほかのは **uint** の引数を受け取ります。  **uint** の引数は、クラスの一つのデータ メンバー、[m\_lpstr](../Topic/_U_STRINGorID::m_lpstr.md)に格納されている **MAKEINTRESOURCE** マクロと結果を使用して Windows の管理機能と互換性のあるリソースの種類に変換されます。  `LPCTSTR` のコンストラクターへの引数は変換されずに格納されます。  
-  
-## 必要条件  
- **Header:** atlwin.h  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
+

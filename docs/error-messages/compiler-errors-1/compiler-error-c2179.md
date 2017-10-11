@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2179 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2179"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2179"
+title: "コンパイラ エラー C2179 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2179
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2179
 ms.assetid: f929bfc6-3964-4e54-87d6-7529b9b6c0b9
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2179
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c0f311bcdbbdaa721e3897eae0a90ae892cf75d8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'型' : 属性引数は型パラメーターを使用することはできません。  
+---
+# <a name="compiler-error-c2179"></a>コンパイラ エラー C2179
+'type': 属性引数は、型パラメーターを使用できません  
   
- ジェネリック型のパラメーターは実行時に解決されます。  しかし、属性パラメーターはコンパイル時に解決する必要があります。  このため、ジェネリック型のパラメーターを属性への引数として使用することはできません。  
+ ジェネリック型パラメーターは、実行時に解決します。 ただし、属性パラメーターは、コンパイル時に解決する必要があります。 そのため、属性の引数としてジェネリック型パラメーターを使うことはできません。  
   
-## 使用例  
- 次の例では C2179 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2179 を生成します。  
   
 ```  
 // C2179.cpp  

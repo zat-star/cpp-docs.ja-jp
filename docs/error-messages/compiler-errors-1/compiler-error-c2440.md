@@ -19,25 +19,11 @@ caps.latest.revision: 27
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 0789875fee672856dbc0eff429d2363a43963940
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 23d6666e2b8e61a8761454729f4f7444a9800cbe
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2440"></a>コンパイラ エラー C2440
@@ -187,7 +173,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- C2440 は、 <xref:System.Array>。</xref:System.Array>である型が Visual C 配列のインスタンスを作成しようとする場合にも発生することができます。  詳細については、次を参照してください。[配列](../../windows/arrays-cpp-component-extensions.md)です。  次の例では C2440 が生成されます。  
+ C2440 は、型が <xref:System.Array> である Visual C++ 配列のインスタンスを作成しようとした場合にも発生することがあります。  詳細については、次を参照してください。[配列](../../windows/arrays-cpp-component-extensions.md)です。  次の例では C2440 が生成されます。  
   
 ```cpp  
 // C2440e.cpp  
@@ -212,7 +198,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
- Visual C コンパイラは、不要になった、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときにソース コードを使用する**/clr**プログラミングがコンパイルされました。  
+ Visual C コンパイラは、不要になった、 [const_cast 演算子](../../cpp/const-cast-operator.md)ダウン キャストするときにソース コードを使用する**/clr**プログラミングをコンパイルします。  
   
  この C2440 エラーを解決するには、正しいキャスト演算子を使用します。 詳細については、次を参照してください。[キャスト演算子](../../cpp/casting-operators.md)です。  
   
@@ -232,7 +218,7 @@ int main() {
 ```  
   
 ## <a name="example"></a>例  
-C2440 を Visual Studio 2015 Update 3 でコンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定れる個別の式、同じ種類のテンプレートの一致を識別するときに、`static_cast`操作します。 これで、コンパイラは型を正しく区別し、コードを全面的に頼るで前の`static_cast`動作が中断します。 この問題を解決するため、テンプレート パラメーターの型を一致または使用するテンプレート引数を変更して、`reinterpret_cast`または C スタイル キャストが必要です。
+C2440 を Visual Studio 2015 Update 3 でコンパイラ準拠の変更のために発生します。 以前は、コンパイラ正しくとして扱われましていない特定れる個別の式、同じ種類のテンプレートの一致を識別するときに、`static_cast`操作します。 これで、コンパイラは型を正しく区別し、コードを全面的に頼るで前の`static_cast`動作が中断します。 この問題を解決するには、テンプレート パラメーターの型の一致を使用するようにテンプレート引数を変更、`reinterpret_cast`または C スタイル キャストが必要です。
   
 次の例では C2440 エラーが生成されます。  
   
@@ -261,7 +247,7 @@ This error can appear in ATL code that uses the SINK_ENTRY_INFO macro defined in
 ## <a name="example"></a>例  
 ### <a name="copy-list-initialization"></a>Copy-list-initialization
 
-2017 およびそれ以降の visual Studio が正しく初期化子リストが Visual Studio 2015 でキャッチされていないと、クラッシュする可能性がありますを使用してオブジェクトの作成に関連するコンパイラ エラーを発生させるか、実行時の動作は未定義です。 C++ 17 のコピーでリストの初期化、コンパイラはオーバー ロードの解決、明示的なコンス トラクターを考慮する必要しますが、そのオーバー ロードが実際選択される場合、エラーが発生する必要があります。
+2017 およびそれ以降の visual Studio が正しく初期化子リストが、Visual Studio 2015 ではキャッチされず、クラッシュする可能性がありますを使用してオブジェクトの作成に関連するコンパイラ エラーを発生させるか、実行時の動作は未定義です。 C++ 17 のコピーでリストの初期化、コンパイラはオーバー ロードの解決、明示的なコンス トラクターを考慮する必要しますが、そのオーバー ロードが実際選択される場合、エラーが発生する必要があります。
 
 次の例では、Visual Studio 2015 ではなく Visual Studio 2017 をコンパイルします。
 

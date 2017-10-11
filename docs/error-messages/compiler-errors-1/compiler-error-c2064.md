@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2064 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2064"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2064"
+title: "コンパイラ エラー C2064 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2064
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2064
 ms.assetid: 6cda05da-f437-4f50-9813-ae69538713a3
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2064
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e0c82ae2de90a6e4e6e7e66648d84c2b55a9c2b0
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="compiler-error-c2064"></a>コンパイラ エラー C2064
 N 引数を取り込む関数には評価されません。  
   
- 式を使用して関数の呼び出しが行われています。  この式は、指定された引数値を取り込む関数へのポインターとして評価されません。  
+ 式を使用して関数の呼び出しが行われています。 この式は、指定された引数値を取り込む関数へのポインターとして評価されません。  
   
- この例のコードでは、関数ではないものを関数として呼び出そうとしています。  次の例では C2064 が生成されます。  
+ この例のコードでは、関数ではないものを関数として呼び出そうとしています。 次の例では C2064 が生成されます。  
   
 ```  
 // C2064.cpp  
@@ -40,7 +43,7 @@ void func() {
 }  
 ```  
   
- オブジェクト インスタンスのコンテキストから、静的でないメンバー関数へのポインターを呼び出す必要があります。  次の例では C2064 が生成され、その修正方法が示されています。  
+ オブジェクト インスタンスのコンテキストから、静的でないメンバー関数へのポインターを呼び出す必要があります。 次の例では C2064 が生成され、その修正方法が示されています。  
   
 ```  
 // C2064b.cpp  
@@ -60,7 +63,7 @@ int main() {
   
 ```  
   
- クラス内で、メンバー関数ポインターは、呼び出し元のオブジェクトのコンテキストも示す必要があります。  次の例では C2064 が生成され、その修正方法が示されています。  
+ クラス内で、メンバー関数ポインターは、呼び出し元のオブジェクトのコンテキストも示す必要があります。 次の例では C2064 が生成され、その修正方法が示されています。  
   
 ```  
 // C2064d.cpp  

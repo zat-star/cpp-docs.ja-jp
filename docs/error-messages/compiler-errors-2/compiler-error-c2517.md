@@ -19,28 +19,14 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 57cc04f43000ef06e00ad67b62bedc0137745278
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ffea60522817fe9e1942b1c622f19bdc135f0a45
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2517"></a>コンパイラ エラー C2517
-'identifier': 右の ':: ' は定義されていません  
+'identifier': 右の ':: ' が定義されていません  
   
- スコープ解決演算子の右側にある id (`::`) クラス、構造体、または、左側の共用体の定義済みのメンバーである必要があります。 クラス、構造体または共用体の名前がない場合は、グローバル スコープを持つ右側の識別子を宣言する必要があります。
+ スコープ解決演算子の右側の識別子 (`::`) クラス、構造体、または左側の共用体の定義済みのメンバーである必要があります。 クラス、構造体、または共用体の名前がない場合は、グローバル スコープの右側の識別子を宣言する必要があります。

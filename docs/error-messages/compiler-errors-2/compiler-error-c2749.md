@@ -19,36 +19,22 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f69795d2beda90a2b06957f3ab4c8bc35767139e
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 23eb174bd161f14351fae18ae4aba72f427da4ed
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2749"></a>コンパイラ エラー C2749
-'type': のみスローまたは/clr:safe を含むマネージ クラスへのハンドルをキャッチできます  
+'type': のみスローまたは/clr:safe を伴うマネージ クラスへのハンドルをキャッチできます  
   
- 使用する場合**/clr:safe**、のみスローまたは参照型をキャッチできます。  
+ 使用する場合**/clr:safe**、のみをスローまたは参照型をキャッチできます。  
   
  詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、c2749 エラーが生成されます。  
+ 次の例では、C2749 が生成されます。  
   
 ```  
 // C2749.cpp  

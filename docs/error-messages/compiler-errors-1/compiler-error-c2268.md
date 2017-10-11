@@ -19,32 +19,17 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 29a09917ab80eb536050885a3c2cd9984f82a59a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 38ac7b0aa76a16516652bfc1736826072ad473dd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2268"></a>コンパイラ エラー C2268
 'function' は、コンパイラで定義済みのライブラリ ヘルパーです。 ライブラリ ヘルパーは /GL でサポートされていません。オブジェクト ファイル 'file' を /GL なしでコンパイルしてください。  
   
- ソース コードで定義されている関数に、内部コンパイラ関数と同じ名前があります。 せず関数を含むモジュールをコンパイル[/GL](../../build/reference/gl-whole-program-optimization.md)です。  
+ ソース コードで定義されている関数に、内部コンパイラ関数と同じ名前があります。 その関数が含まれているモジュールを [/GL](../../build/reference/gl-whole-program-optimization.md)なしでコンパイルしてください。  
   
  次の例では C2268 が生成されます。  
   

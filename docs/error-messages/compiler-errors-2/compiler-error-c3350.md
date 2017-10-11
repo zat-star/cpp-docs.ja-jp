@@ -19,32 +19,17 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: d524add595c2f6d33803b6456c80b017607f601b
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3ec6d0823fe29b51a002f6c46f728f0c526c6169
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3350"></a>コンパイラ エラー C3350
 'delegate': delegate コンストラクターには数値の引数が必要です  
   
- デリゲートのインスタンスを作成するときは、デリゲート関数含む型のインスタンスと関数の&2; つの引数を渡す必要があります。  
+ デリゲートのインスタンスを作成するときは、デリゲート関数含む型のインスタンスと関数の 2 つの引数を渡す必要があります。  
   
  次の例では C3350 が生成されます。  
   

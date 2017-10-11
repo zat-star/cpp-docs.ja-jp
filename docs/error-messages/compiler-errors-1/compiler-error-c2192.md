@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 9c16cad57a05aba93452fc09d5fc17bd189923f1
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c56dae7438c8c8dd7d17332f65b5c32aff16db39
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2192"></a>コンパイラ エラー C2192
 パラメーター 'number' の宣言が異なる  
   
- C の関数は、もう一度別のパラメーター リストで宣言されました。 C では、オーバー ロードされた関数はサポートされません。  
+ C の関数は、異なるパラメーター リストで 2 番目の時間を宣言されました。 C では、オーバー ロードされた関数はサポートされません。  
   
- 次の例では、c2192 エラーが生成されます。  
+ 次の例では、C2192 が生成されます。  
   
 ```  
 // C2192.c  

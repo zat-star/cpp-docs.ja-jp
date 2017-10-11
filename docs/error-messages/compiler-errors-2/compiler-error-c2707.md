@@ -1,43 +1,46 @@
 ---
-title: "コンパイラ エラー C2707 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2707"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2707"
+title: "コンパイラ エラー C2707 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2707
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2707
 ms.assetid: 3deaf45c-74da-4c9d-acc6-b82412720b74
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2707
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 46ca756cf6491506cefc38e34992fa5e3fb67429
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier' : 組み込み関数のコンテキストが間違っています。  
+---
+# <a name="compiler-error-c2707"></a>コンパイラ エラー C2707
+'identifier': 組み込み関数のコンテキストが正しくありません  
   
- 構造化例外処理の組み込み関数は、以下のコンテキストでは使用できません。  
+ 構造化例外処理の組み込み関数は、特定のコンテキストでは有効では。  
   
--   `_exception_code()` が例外フィルターおよび `__except` ブロックの外側にあるとき  
+-   `_exception_code()`例外フィルター外または`__except`ブロック  
   
--   `_exception_info()` が例外フィルターの外側にあるとき  
+-   `_exception_info()`例外フィルター外  
   
--   `_abnormal_termination()`  が `__finally` ブロックの外側にあるとき  
+-   `_abnormal_termination()`外側、`__finally`ブロック  
   
- このエラーを解決するには、例外処理の組み込み関数が適切なコンテキストに置かれているかどうかを確認します。  
+ エラーを解決するのには、例外処理の組み込み関数が、適切なコンテキストに配置されることを確認します。  
   
-## 使用例  
- 次の例では C2707 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2707 を生成します。  
   
 ```  
 // C2707.cpp  

@@ -19,33 +19,19 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 6a37f560a9cf68306f0ffe7915efe3fa93f5a035
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 1aef83942bb84908cd032ae9f23a7492e299e7e5
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3852"></a>コンパイラ エラー C3852
-'' を持つメンバーが型 'type': 集約の初期化では、このメンバーは初期化できませんでした。  
+'member' は型 'type' を持つ: 集約の初期化では、このメンバーは初期化できませんでした。  
   
  集約の初期化で、既定の初期化を受け取ることができないデータ メンバーに集約の初期化の一部として、既定の初期化を代入しようとしました。  
   
- 次の例では、c3852 エラーを生成します。  
+ 次の例では、C3852 を生成します。  
   
 ```  
 // C3852.cpp  

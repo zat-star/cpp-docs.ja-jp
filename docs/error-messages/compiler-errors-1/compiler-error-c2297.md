@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C2297 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2297"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2297"
+title: "コンパイラ エラー C2297 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2297
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2297
 ms.assetid: 65849fe5-17e1-4b7e-b50c-f508b05ddaa4
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2297
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2c621e1e2c19f69e82110d34bec86f6927bf7436
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'operator' : 右のオペランドが正しくありません。  
+---
+# <a name="compiler-error-c2297"></a>コンパイラ エラー C2297
+'operator': 右オペランドが正しくありません  
   
- `operator` の右オペランドが無効です。  
+ 右側のオペランドでは使用`operator`が無効です。  
   
- たとえば、関数呼び出しを使用する場所で宣言が検出された場合です。  
+ たとえば、コンパイラ可能性がありますを参照してください、宣言関数呼び出しを使用します。  
   
- 次の例では警告 C2297 が生成されます。  
+ 次の例では、C2297 が生成されます。  
   
 ```  
 // C2297.cpp  

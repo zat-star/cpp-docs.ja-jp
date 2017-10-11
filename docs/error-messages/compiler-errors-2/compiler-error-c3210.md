@@ -19,34 +19,20 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 6bc6ec27e6f68288e22a4240989af5c6de469e9c
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f4825abf58b7c0277b3e7f00ce16bcd0d5b1df64
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3210"></a>コンパイラ エラー C3210
-'type': アクセスの宣言は、基本クラスのメンバーのみに適用できます  
+'type': アクセス宣言は、基底クラスのメンバーにのみ適用できます  
   
- A[宣言を使用して](../../cpp/using-declaration.md)指定が正しくありません。  
+ A[宣言を使用して](../../cpp/using-declaration.md)正しく指定されませんでした。  
   
 ## <a name="example"></a>例  
- 次の例では、c3210 エラーを生成します。  
+ 次の例では、C3210 を生成します。  
   
 ```  
 // C3210.cpp  

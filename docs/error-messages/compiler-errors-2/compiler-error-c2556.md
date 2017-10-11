@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2556 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2556"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2556"
+title: "コンパイラ エラー C2556 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2556
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2556
 ms.assetid: fc4399ad-45b3-49fd-be1f-0b13956a595a
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2556
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6678c34022c28dccfa5920809e7b8d6db0d39546
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier' : オーバーロード関数の戻り値は異なっていますが、引数リストは同一です。  
+---
+# <a name="compiler-error-c2556"></a>コンパイラ エラー C2556
+'identifier': オーバー ロードされた関数のみが異なる戻り値の型  
   
- オーバーロードされた関数は、戻り値は異なっていますが、パラメーター リストは同一です。  オーバーロードされた各関数の仮パラメーター リストは、それぞれ異なっている必要があります。  
+ オーバー ロードされた関数では、同じパラメーター リストが、戻り値の型があります。 各オーバー ロードされた関数は、個別の仮パラメーター リストにあります。  
   
- 次の例では警告 C2556 が生成されます。  
+ 次の例では、C2556 が生成されます。  
   
 ```  
 // C2556.cpp  

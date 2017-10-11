@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2635 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2635"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2635"
+title: "コンパイラ エラー C2635 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2635
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2635
 ms.assetid: 9deca2a8-2d61-42eb-9783-6578132ee3fb
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2635
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8a8ff1361a312c8d2abf7e07de3add2dbd3254ca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier1\*' から 'identifier2\*' への変換には仮想基本クラスから派生クラスへのキャストが必要です。  
+---
+# <a name="compiler-error-c2635"></a>コンパイラ エラー C2635
+変換できません、' identifier1 *'、' identifier2\*'; 仮想基底クラスからの変換は暗黙的に指定  
   
- この変換では `virtual` 基本クラスから派生クラスへのキャストが必要ですが、このキャストは許可されていません。  
+ 変換からのキャストが必要です、`virtual`基底クラスを派生クラスでは許可されていません。  
   
- 次の例では警告 C2635 が生成されます。  
+ 次の例では、C2635 が生成されます。  
   
 ```  
 // C2635.cpp  

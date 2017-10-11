@@ -1,40 +1,43 @@
 ---
-title: "コンパイラ エラー C3880 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3880"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3880"
+title: "コンパイラ エラー C3880 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3880
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3880
 ms.assetid: b0e05d1e-32d0-4034-9246-f37d23573ea9
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3880
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5e86108e0ab2608f7f59f160d9f7a849b83ef71a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'var' : リテラル データ メンバーになることはできません  
+---
+# <a name="compiler-error-c3880"></a>コンパイラ エラー C3880
+'var': リテラル データ メンバーにすることはできません  
   
- [literal](../../windows/literal-cpp-component-extensions.md) 属性の型は、次のいずれかの型であるか、コンパイル時にそれらの型に変換できる必要があります。  
+ 型、[リテラル](../../windows/literal-cpp-component-extensions.md)属性がある必要があります、または、次の種類のいずれかに、コンパイル時に変換できます。  
   
 -   整数型  
   
 -   string  
   
--   整数型または基になる型の列挙型 \(Enum\)  
+-   整数または基になる型の列挙型  
   
- 次の例では警告 C3880 が生成されます。  
+ 次の例では、C3880 が生成されます。  
   
 ```  
 // C3880.cpp  

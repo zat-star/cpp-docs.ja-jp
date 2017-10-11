@@ -1,36 +1,39 @@
 ---
-title: "致命的なエラー C1017 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1017"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1017"
+title: "致命的なエラー C1017 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1017
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1017
 ms.assetid: 5542e604-599d-4e36-8f83-1d454c5753c9
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 致命的なエラー C1017
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 478a0a17ef8e0f0e6cb6589798d901837e7aff75
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="fatal-error-c1017"></a>致命的なエラー C1017
 整数定数式が無効です。  
   
- この `#if` ディレクティブには、式が与えられていません。または、定数に評価できない式が与えられています。  
+ 内の式、`#if`ディレクティブが存在しない、または定数に評価されませんでした。  
   
- `#define` を使用して定義された定数は、`#if`、`#elif`、`#else` の各ディレクティブで使用する場合、整数定数として評価される値を持つ必要があります。  
+ 使用して定義されている定数`#define`値で使用されている場合は、整数の定数に評価される必要があります、 `#if`、 `#elif`、または`#else`ディレクティブです。  
   
- 次の例では警告 C1017 が生成されます。  
+ 次の例では、C1017 が生成されます。  
   
 ```  
 // C1017.cpp  
@@ -39,7 +42,7 @@ caps.handback.revision: 8
 #endif  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C1017b.cpp  
@@ -49,9 +52,9 @@ caps.handback.revision: 8
 #endif  
 ```  
   
- `CONSTANT_NAME` は整数ではなく文字列として評価されるため、`#if` ディレクティブによって致命的なエラー C1017 が生成されます。  
+ `CONSTANT_NAME`に文字列と整数ではありません、評価、`#if`ディレクティブで致命的なエラー C1017 が生成されます。  
   
- また、プリプロセスによって未定義の定数が 0 と評価された場合にも同じエラーが発生します。  この場合は、以下の例に示すように予期しない結果になることがあります。  `YES` は未定義であるため、0 と評価されます。  `#if` 式 `CONSTANT_NAME` は false になり、`YES` の場合に使用されるコードはプリプロセッサによって削除されます。  さらに、`NO` も未定義 \(0\) であるため、`#elif` 式 `CONSTANT_NAME==NO` は true \(`0 == 0`\) になり、結果としてプリプロセッサはステートメントの `#elif` 部分のコードを残します。これは、予測した動作とは正反対になります。  
+ それ以外の場合に、プリプロセッサは、0 として定数 undefined を評価します。 次の例に示すように意図しない結果は、原因になります。 `YES`0 に評価するためには、定義されません。 式`#if``CONSTANT_NAME`が false になり、コードで使用される`YES`はプリプロセッサによって削除されます。 `NO`定義されていない (ゼロ)。 このため`#elif``CONSTANT_NAME==NO`を true に評価 (`0 == 0`)、内のコードのままにするプリプロセッサの原因、 `#elif` 、ステートメントの部分 — 正反対が意図した動作です。  
   
 ```  
 // C1017c.cpp  
@@ -64,4 +67,4 @@ caps.handback.revision: 8
 #endif  
 ```  
   
- コンパイラがプリプロセッサ ディレクティブを処理する方法を確認するには、[\/P](../../build/reference/p-preprocess-to-a-file.md)、[\/E](../../build/reference/e-preprocess-to-stdout.md)、または [\/EP](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md) を使用してください。
+ プリプロセッサ ディレクティブの処理方法正確にコンパイラを表示する[/P](../../build/reference/p-preprocess-to-a-file.md)、 [/E](../../build/reference/e-preprocess-to-stdout.md)、または[/EP](../../build/reference/ep-preprocess-to-stdout-without-hash-line-directives.md)です。

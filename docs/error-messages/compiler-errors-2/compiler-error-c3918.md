@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3918 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3918"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3918"
+title: "コンパイラ エラー C3918 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3918
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3918
 ms.assetid: a8b3a90a-3fe1-4244-a5ff-a31cdae97d98
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C3918
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 1bf9cf676cf7435eaf1f0b924fbadcaddef842b4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-使用するには、'メンバー' がデータ メンバーでなければなりません  
+---
+# <a name="compiler-error-c3918"></a>コンパイラ エラー C3918
+使用状況データ メンバーにするには、' member' が必要です。  
   
- C3918 は、イベントに関連する複数の原因で発生する場合があります。  
+ C3918 は、イベントに関連するいくつかの理由で発生します。  
   
-## 使用例  
- 現在のコンテキストでクラス メンバーが要求されることにより、C3918 が発生する場合があります。  次の例では C3918 エラーが生成されます。  
+## <a name="example"></a>例  
+ C3918 は、クラス メンバーが、現在のコンテキストで必要なために発生することができます。 次の例では、C3918 を生成します。  
   
 ```  
 // C3918.cpp  
@@ -49,10 +52,10 @@ public:
 };  
 ```  
   
-## 使用例  
- C3918 は、単純なイベントで null をチェックしようとした場合にも発生する場合があります \(そのイベント名は、そのイベントのバッキング ストア デリゲートに対する直接アクセスには使用できなくなります\)。  
+## <a name="example"></a>例  
+ C3918 は null (イベントの名前は提供されなくへの直接アクセス バッキング ストアのデリゲートをイベントの) 単純なイベントを確認しようとする場合にも発生します。  
   
- 次の例では C3918 エラーが生成されます。  
+ 次の例では、C3918 を生成します。  
   
 ```  
 // C3918_2.cpp  
@@ -73,8 +76,8 @@ ref struct EventSource : public IEFace {
 };  
 ```  
   
-## 使用例  
- C3918 は、イベントを正しくサブスクライブしていない場合にも発生することがあります。  次の例では C3918 エラーが生成されます。  
+## <a name="example"></a>例  
+ C3918 は、サブスクライブしている場合正しくないイベントにも発生します。 次の例では、C3918 を生成します。  
   
 ```  
 // C3918_3.cpp  

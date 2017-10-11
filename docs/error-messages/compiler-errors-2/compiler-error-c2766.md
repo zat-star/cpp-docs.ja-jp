@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8dd90de8ac758a932c7859ec11507345b4836418
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a74f3808f566c4977d2cffccc0030770e7ae0577
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2766"></a>コンパイラ エラー C2766
-明示的な特殊化です。'特殊化' は既に定義されています  
+明示的な特殊化です。'specialization' は既に定義されています  
   
- 重複する明示的な特殊化することはできません。 詳細については、次を参照してください。[関数テンプレートの明示的な特殊化](../../cpp/explicit-specialization-of-function-templates.md)します。  
+ 重複する明示的な特殊化は許可されません。 詳細については、次を参照してください。[関数テンプレートの明示的な特殊化](../../cpp/explicit-specialization-of-function-templates.md)です。  
   
- 次の例では、c2766 エラーが生成されます。  
+ 次の例では、C2766 が生成されます。  
   
 ```  
 // C2766.cpp  

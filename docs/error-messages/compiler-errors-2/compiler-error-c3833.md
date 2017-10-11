@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3833 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3833"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3833"
+title: "コンパイラ エラー C3833 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3833
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3833
 ms.assetid: 8152be53-e01e-48cd-9eef-9de38723664c
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3833
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 54fcbe6fff8efca4ffc3dd6c5791fc706eaa1191
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'型' : pointer\_type に対する無効なターゲット型です  
+---
+# <a name="compiler-error-c3833"></a>コンパイラ エラー C3833
+'type': pointer_type の無効なターゲットの種類  
   
- [interior\_ptr](../../windows/interior-ptr-cpp-cli.md) または [pin\_ptr](../Topic/pin_ptr%20\(C++-CLI\).md) が正しく宣言されていません。  
+ [Interior_ptr](../../windows/interior-ptr-cpp-cli.md)または[pin_ptr](../../windows/pin-ptr-cpp-cli.md)宣言が正しくありません。  
   
- 次の例では警告 C3833 が生成されます。  
+ 次の例では、C3833 が生成されます。  
   
 ```  
 // C3833.cpp  
@@ -50,7 +53,7 @@ int main() {
 }  
 ```  
   
- 次の例では警告 C3833 が生成されます。  
+ 次の例では、C3833 が生成されます。  
   
 ```  
 // C3833b.cpp  

@@ -19,28 +19,14 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c2e134f99b269ebc8066f1a5b37ba80a9b146a48
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a89a62e6a4a1a302d29a2d8e440b955107119dee
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="fatal-error-c1113"></a>致命的なエラー C1113
-\#使用して、'file' で失敗しました  
+\#'file' で失敗しました。  
   
- Microsoft 中間言語 (MSIL) の形式でファイルのみに渡すことが、 [#using](../../preprocessor/hash-using-directive-cpp.md)ディレクティブです。 [/Clr](../../build/reference/clr-common-language-runtime-compilation.md)コンパイラ オプションを使用して、MSIL 出力ファイルを作成できます。 その他の[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]言語も MSIL ファイルを生成します。
+ Microsoft Intermediate Language (MSIL) 形式のファイルのみを渡すことができます、 [#using](../../preprocessor/hash-using-directive-cpp.md)ディレクティブです。 [/Clr](../../build/reference/clr-common-language-runtime-compilation.md)コンパイラ オプションでは、MSIL 出力ファイルを作成することができます。 その他の[!INCLUDE[vsprvs](../../assembler/masm/includes/vsprvs_md.md)]言語も MSIL ファイルを生成します。

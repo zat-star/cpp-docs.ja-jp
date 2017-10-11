@@ -19,33 +19,19 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: f6cd256454b51a103d9c4249b050c8c05781bc78
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 87df3fd92ac3fcad9b3e87f02f16b8151e678b77
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3744"></a>コンパイラ エラー C3744
-__unhook は最低 3 つのマネージ イベント引数を必要とします。  
+_ _unhook は最低 3 マネージ イベント引数をいる必要があります。  
   
- [_ _Unhook](../../cpp/unhook.md)関数は c++ マネージ拡張用にコンパイルするプログラムで使用するときに、3 つのパラメーターを受け取る必要があります。  
+ [_ _Unhook](../../cpp/unhook.md)関数は c++ マネージ拡張用にコンパイルされたプログラムで使用する場合、3 つのパラメーターを受け取る必要があります。  
   
- `__hook``__unhook` /clr プログラミングと互換性がありません。 + =、-= 演算子を使用してください。  
+ `__hook`および`__unhook`/clr プログラミングと互換性がありません。 代わりに、+ = および -= 演算子を使用します。  
   
- C3744 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
+ C3744 は古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  
 

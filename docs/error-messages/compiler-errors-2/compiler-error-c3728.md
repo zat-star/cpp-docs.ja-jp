@@ -19,30 +19,16 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 124c234c995f409bd2570333d5b5166de528e92a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 100ef8275f938406a4f6a7d3909e04f40ce1d16b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3728"></a>コンパイラ エラー C3728
-'event': イベントには、raise メソッドはありません。  
+'event': イベントに raise メソッドがありません  
   
- C# の場合、定義されているクラスの外部から発生するイベントが許可されていないに付属していたように、メタデータが、言語で作成、 [#using](../../preprocessor/hash-using-directive-cpp.md)ディレクティブ、および、Visual C プログラムでイベントを発生させるしようとしています。 CLR プログラミングを使用します。  
+ C# の場合、定義されたクラスの外部から発生するイベントが許可されていないに付属していたなど、言語でメタデータが作成された、 [#using](../../preprocessor/hash-using-directive-cpp.md)ディレクティブ、およびしようとする CLR プログラミングを使用した Visual C プログラムイベントを発生させます。  
   
- C# などの言語で開発したプログラムでイベントを発生させるイベントを含むクラスにもイベントが発生するパブリック メソッドを定義する必要があります。
+ C# などの言語で開発したプログラムではイベントを発生させるには、イベントを含むクラスにも、イベントを発生させるパブリック メソッドを定義する必要があります。

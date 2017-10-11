@@ -22,25 +22,11 @@ caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4e393abb2a904a0f5e101efe3d78d0645664397b
-ms.openlocfilehash: 503c2a29cf0e70020b012911c51b056f00562374
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: a269820c5a0965553989bc57d7c239aa95e527ef
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="atlcommodule70-structure"></a>_ATL_COM_MODULE70 構造体
@@ -60,22 +46,22 @@ struct _ATL_COM_MODULE70 {
   
 ## <a name="members"></a>メンバー  
  `cbSize`  
- バージョン管理に使用される、構造体のサイズ。  
+ バージョン管理に使用される、構造のサイズ。  
   
  `m_hInstTypeLib`  
  このモジュールのタイプ ライブラリへのハンドルのインスタンス。  
   
  **m_ppAutoObjMapFirst**  
- このモジュールのオブジェクトのマップ エントリの先頭を示す配列の要素のアドレスです。  
+ このモジュールのオブジェクトのマップ エントリの先頭を示す、配列要素のアドレスです。  
   
  **m_ppAutoObjMapLast**  
- このモジュールのオブジェクトのマップ エントリの終わりを示す配列の要素のアドレスです。  
+ このモジュールのオブジェクトのマップ エントリの終了を示す、配列要素のアドレスです。  
   
  `m_csObjMap`  
  オブジェクト マップ エントリへのアクセスをシリアル化するクリティカル セクション。 ATL で内部的に使用  
   
 ## <a name="remarks"></a>コメント  
- [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)の typedef と定義`_ATL_COM_MODULE70`します。  
+ [_ATL_COM_MODULE](atl-typedefs.md#_atl_com_module)の typedef として定義された`_ATL_COM_MODULE70`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  

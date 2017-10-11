@@ -19,26 +19,11 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 9ebc689db4ede54ec8ae33e2f9bc0a90afe31c69
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b09d2af16ca6d38e476e7298b2b5fb61b2b30129
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3287"></a>コンパイラ エラー C3287
@@ -46,7 +31,7 @@ ms.lasthandoff: 04/12/2017
   
  ユーザー定義のコレクション クラスには、 `MoveNext` と `Current`の定義を含める必要があります。  
   
- 参照してください[する方法: 各 Iterate Over a User-Defined コレクション](../../dotnet/how-to-iterate-over-a-user-defined-collection-with-for-each.md)詳細についてはします。  
+ 詳細については、「 [How to: Iterate Over a User-Defined Collection with for each](../../dotnet/how-to-iterate-over-a-user-defined-collection-with-for-each.md) 」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では C3287 が生成されます。  

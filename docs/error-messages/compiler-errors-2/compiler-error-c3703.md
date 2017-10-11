@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3703 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3703"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3703"
+title: "コンパイラ エラー C3703 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3703
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3703
 ms.assetid: 7e3677d9-f2be-4c26-998f-423564e9023c
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3703
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e6ef53628f3a24dd3e6f7f387491fc959d70aa04
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'event handler' : イベント ハンドラー メソッドはソース 'event' と同じストレージ クラスを必要とします。  
+---
+# <a name="compiler-error-c3703"></a>コンパイラ エラー C3703
+'イベント ハンドラー': イベント ハンドラー メソッドでは、ソース 'event' として同じストレージ クラスがあります  
   
- [イベント](../../cpp/event-handling.md)には、そのフック先のイベント ハンドラーと異なるストレージ クラスがあります。  このエラーが発生するのは、たとえば、イベント ハンドラーが静的メンバー関数であり、イベントが静的でない場合です。  このエラーを解決するには、イベントとイベント ハンドラーに同じストレージ クラスを与えます。  
+ [イベント](../../cpp/event-handling.md)は、イベント ハンドラーをフックするよりも別のストレージ クラスがあります。 たとえば、このエラーは、イベント ハンドラーが、静的メンバー関数と、イベントが静的でない場合に発生します。 このエラーを解決するには、イベントとイベント ハンドラー、同じストレージ クラスを付けます。  
   
- 次の例では警告 C3703 が生成されます。  
+ 次の例では、C3703 が生成されます。  
   
 ```  
 // C3703.cpp  

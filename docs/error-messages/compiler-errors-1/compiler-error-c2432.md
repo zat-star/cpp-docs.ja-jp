@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 574b0aa7ac1ca79d3a1c50c37319e53e7fd6b7ad
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: d89d894738978359fa0cedb9a9da6c4f9781c135
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2432"></a>コンパイラ エラー C2432
-'identifier' で 16 ビットのデータへの参照が正しくありません。  
+'identifier' での 16 ビット データへの参照が正しくありません。  
   
- 16 ビットのレジスタは、インデックスまたはベース レジスタとして使用されます。 コンパイラは、16 ビットのデータの参照をサポートしていません。 16 ビットのレジスタは、32 ビット コードをコンパイルするときに、インデックスまたはベース レジスタとして使用できません。  
+ 16 ビット レジスタは、インデックスまたはベース レジスタとして使用されます。 コンパイラは、16 ビットのデータの参照をサポートしていません。 16 ビット レジスタは、32 ビット コードのコンパイルするときに、インデックスまたはベース レジスタとして使用できません。  
   
- 次の例では、c2432 エラーが生成されます。  
+ 次の例では、C2432 が生成されます。  
   
 ```  
 // C2432.cpp  

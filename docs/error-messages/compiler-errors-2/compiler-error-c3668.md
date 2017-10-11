@@ -19,36 +19,22 @@ caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: de7503713b421e539821e2e0c3393372c4de9c13
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5db5144aac56112522f7ac707bd1b5f252929dc8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3668"></a>コンパイラ エラー C3668
-'method': オーバーライド指定子 'override' を持つメソッドは、基本クラス メソッドをオーバーライドしませんでした  
+'method': オーバーライド指定子 'override' を持つメソッドは、基底クラス メソッドをオーバーライドしませんでした  
   
- 関数は、存在しない関数をオーバーライドするしようとしました。  
+ 関数が存在しない関数をオーバーライドしようとするとします。  
   
- 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)します。  
+ 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
- 次の例では、c3668 エラーを生成します。  
+ 次の例では、C3668 を生成します。  
   
 ```  
 // C3668.cpp  

@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c750b58523a91a6b28b97e1895581ec7bdf71819
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b3d66496da2940a08d87f968678125b5836587ac
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2788"></a>コンパイラ エラー C2788
-'identifier': このオブジェクトに関連付けられている&1; つ以上の GUID  
+'identifier': このオブジェクトに関連付けられている 1 つ以上の GUID  
   
- [_ _Uuidof](../../cpp/uuidof-operator.md)演算子は、アタッチされている GUID またはユーザー定義型のオブジェクトと、ユーザー定義型を取ります。 このエラーは、引数が複数の Guid を持つオブジェクトである場合に発生します。  
+ [_ _Uuidof](../../cpp/uuidof-operator.md)操作はアタッチされている GUID またはユーザー定義型のオブジェクトで、ユーザー定義型を使用します。 このエラーは、引数が複数の Guid を持つオブジェクトである場合に発生します。  
   
- 次の例では、c2788 エラーが生成されます。  
+ 次の例では、C2788 が生成されます。  
   
 ```  
 // C2788.cpp  

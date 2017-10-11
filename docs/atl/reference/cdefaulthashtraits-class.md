@@ -21,25 +21,11 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 5191327e5e60935829750c7d1e04ba89fcddc771
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 932969a5d06a3bd06755ec60d43b3257a4de9785
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="cdefaulthashtraits-class"></a>CDefaultHashTraits クラス
@@ -62,18 +48,18 @@ class CDefaultHashTraits
   
 |名前|説明|  
 |----------|-----------------|  
-|[CDefaultHashTraits::Hash](#hash)|(静的)指定された要素のハッシュ値を計算するには、この関数を呼び出します。|  
+|[CDefaultHashTraits::Hash](#hash)|(静的)この関数では、指定された要素のハッシュ値を計算します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスには、指定された要素のハッシュ値を返す&1; つの静的関数が含まれています。 このクラスは、によって使用されて、 [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)します。  
+ このクラスには、指定された要素のハッシュ値を返す 1 つの静的関数が含まれています。 このクラスは、によって使用されて、 [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)です。  
   
- 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
   
 ##  <a name="hash"></a>CDefaultHashTraits::Hash  
- 指定された要素のハッシュ値を計算するには、この関数を呼び出します。  
+ この関数では、指定された要素のハッシュ値を計算します。  
   
 ```
 static ULONG Hash(const T& element) throw();

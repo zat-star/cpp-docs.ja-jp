@@ -30,26 +30,11 @@ caps.latest.revision: 26
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: c802f99eab05ea59971c69c53f999f1b8f12240f
+ms.translationtype: HT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ee67049241067285f564e59791f408347cc0c747
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="filename-search-functions"></a>ファイル名検索関数
@@ -108,17 +93,17 @@ ms.lasthandoff: 04/04/2017
  `_A_SYSTEM`  
  システム ファイル。 **/A** または **/A:S** オプションを使用しない限り、通常は **DIR** コマンドでは見られません。 値: 0x04。  
   
- `_findnext` は、前回の `_findfirst` への呼び出しで指定された `filespec` 引数に一致する次の名前を検索します。 `fileinfo` 引数は、 `_findfirst`への前の呼び出しによって初期化された構造体を指す必要があります。 一致が見つかった場合、 `fileinfo` 構造体の内容が前述のように変更されます。 それ以外の場合は、変更されません。 `_findclose` は指定した検索のハンドルを終了し、`_findfirst` と `_findnext` の両方に関連付けられているすべてのリソースを解放します。 `_findfirst` または `_findnext` のどちらかによって返されたハンドルは、削除などの変更操作が渡されたパスを形成するディレクトリで実行できるようになる前に、最初に `_findclose`に渡される必要があります。  
+ `_findnext` は、前回の `filespec` への呼び出しで指定された `_findfirst`引数に一致する次の名前を検索します。 `fileinfo` 引数は、 `_findfirst`への前の呼び出しによって初期化された構造体を指す必要があります。 一致が見つかった場合、 `fileinfo` 構造体の内容が前述のように変更されます。 それ以外の場合は、変更されません。 `_findclose` は指定した検索のハンドルを終了し、 `_findfirst` と `_findnext`の両方に関連付けられているすべてのリソースを解放します。 `_findfirst` または `_findnext` のどちらかによって返されたハンドルは、削除などの変更操作が渡されたパスを形成するディレクトリで実行できるようになる前に、最初に `_findclose`に渡される必要があります。  
   
  `_find` 関数を入れ子にできます。 たとえば、 `_findfirst` または `_findnext` への呼び出しでサブディレクトリのファイルを見つけた場合、 `_findfirst` または `_findnext`への別の呼び出しで新しい検索を開始することができます。  
   
- `_wfindfirst` と `_wfindnext` は、`_findfirst` と `_findnext` のワイド文字バージョンです。 ワイド文字バージョンの構造体の引数は IO.h と Wchar.h で定義されている `_wfinddata_t` データ型です。 このデータ型のフィールドは、 `_finddata_t` では名前フィールドが `_wfinddata_t` 型ではなく `wchar_t` 型であることを除き、 `char`データ型と同じです。 それ以外では、 `_wfindfirst` と `_wfindnext` の動作は `_findfirst` と `_findnext`と同じです。  
+ `_wfindfirst` と `_wfindnext` は、 `_findfirst` と `_findnext`のワイド文字バージョンです。 ワイド文字バージョンの構造体の引数は IO.h と Wchar.h で定義されている `_wfinddata_t` データ型です。 このデータ型のフィールドは、 `_finddata_t` では名前フィールドが `_wfinddata_t` 型ではなく `wchar_t` 型であることを除き、 `char`データ型と同じです。 それ以外では、 `_wfindfirst` と `_wfindnext` の動作は `_findfirst` と `_findnext`と同じです。  
   
  `_findfirst` と `_findnext` は 64 ビット時刻型を使用します。 従来の 32 ビット時刻型を使用する場合は、 `_USE_32BIT_TIME_T`を定義できます。 名前に `32` サフィックスを持つこれらの関数のバージョンは 32 ビット時刻型を使用し、 `64` サフィックスを持つものは 64 ビットの時刻型を使用します。  
   
- 関数 `_findfirst32i64`、 `_findnext32i64`、 `_wfindfirst32i64`、 `_wfindnext32i64` も 32 ビットの時刻の種類のバージョンの関数と同様に動作しますが、64 ビット ファイルの長さを使用して返す点が異なります。 関数 `_findfirst64i32`、`_findnext64i32`、`_wfindfirst64i32`、`_wfindnext64i32` は 64 ビットの時刻型ですが 32 ビット ファイルの長さを使用します。 これらの関数は、時間とファイル サイズの異なる型を持つフィールドの `_finddata_t` 型の適切なバリエーションを使用します。  
+ 関数 `_findfirst32i64`、 `_findnext32i64`、 `_wfindfirst32i64`、 `_wfindnext32i64` も 32 ビットの時刻の種類のバージョンの関数と同様に動作しますが、64 ビット ファイルの長さを使用して返す点が異なります。 関数 `_findfirst64i32`、 `_findnext64i32`、 `_wfindfirst64i32`、 `_wfindnext64i32` は 64 ビットの時刻型ですが 32 ビット ファイルの長さを使用します。 これらの関数は、時間とファイル サイズの異なる型を持つフィールドの `_finddata_t` 型の適切なバリエーションを使用します。  
   
- `_finddata_t` は実際には `_finddata64i32_t` (`_USE_32BIT_TIME_T` が定義されている場合は `_finddata32_t`) に評価されるマクロです。 `_finddata_t`のバリエーションの概要を次の表に示します:  
+ `_finddata_t` は実際には `_finddata64i32_t` ( `_finddata32_t` が定義されている場合は `_USE_32BIT_TIME_T` ) に評価されるマクロです。 `_finddata_t`のバリエーションの概要を次の表に示します:  
   
 |構造体|時刻型|ファイル サイズの型|  
 |---------------|---------------|--------------------|  

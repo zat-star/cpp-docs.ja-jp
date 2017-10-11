@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2458 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2458"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2458"
+title: "コンパイラ エラー C2458 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2458
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2458
 ms.assetid: ed21901f-1067-42f5-b275-19b480decf5c
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2458
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 511d6685ff6447793baa14468f6414fec99a3772
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'identifier' : クラス、構造体、共用体、列挙型が宣言内で再定義されています。  
+---
+# <a name="compiler-error-c2458"></a>コンパイラ エラー C2458
+'identifier': 定義内で再定義されています。  
   
- クラス、構造体、共用体、または列挙体はそれ自体の宣言内で再定義されています。  
+ クラス、構造体、共用体、または列挙型がそれ自体の宣言で再定義します。  
   
- 次の例では警告 C2458 が生成されます。  
+ 次の例では、C2458 生成されます。  
   
 ```  
 // C2458.cpp  

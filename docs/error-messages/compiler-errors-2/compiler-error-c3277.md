@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: b52f33b8d671c839fbeae249a1c2d728543e9cb3
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c5ce51c198c998b96dfa941cb088276b610142f1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3277"></a>コンパイラ エラー C3277
 マネージ '型' 内部 'enum' アンマネージ列挙体を定義することはできません。  
   
- 列挙体は、マネージ型の内部適切に定義されました。  
+ 列挙型が正しく定義されていないマネージ型の中。  
   
- 次の例では、c3277 エラーが生成されます。  
+ 次の例では、C3277 が生成されます。  
   
 ```  
 // C3277a.cpp  

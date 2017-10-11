@@ -41,32 +41,18 @@ caps.latest.revision: 14
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: bd3572d2941f911f10c067a24dd4e7323c3c3f8c
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c6d0fde64db90c53e5a745551e378000f898fe7e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-errors-c2400-through-c2499"></a>コンパイラ エラー C2400 C2499 から
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -77,7 +63,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2402](compiler-error-c2402.md)|'*識別子*': レジスタのインデックスでなければなりません'*コンテキスト*'。|  
 |[コンパイラ エラー C2403](compiler-error-c2403.md)|'*識別子*': レジスタはベースまたはインデックス内でなければなりません'*コンテキスト*'。|  
 |[コンパイラ エラー C2404](compiler-error-c2404.md)|'*識別子*': で使用できないレジスタ'*コンテキスト*'|  
-|[コンパイラ エラー C2405](compiler-error-c2405.md)|short 型の前方参照は、ラベルだけを参照するものでなければなりません。|  
+|[コンパイラ エラー C2405](compiler-error-c2405.md)|オフセットを含むを短い前方参照が正しくありません。|  
 |[コンパイラ エラー C2406](compiler-error-c2406.md)|'*識別子*': 定義されていません'*コンテキスト*'|  
 |[コンパイラ エラー C2407](compiler-error-c2407.md)|無効な 'float' が登録 '*コンテキスト*'|  
 |[コンパイラ エラー C2408](compiler-error-c2408.md)|PTR 演算子の引数の型 '*コンテキスト*'|  
@@ -115,12 +101,12 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2440](compiler-error-c2440.md)|'*変換*': から変換できません'*type_1*'to'*type_2*'。|  
 |[コンパイラ エラー C2441](compiler-error-c2441.md)|'*変数*': __declspec(process) と共に宣言されたシンボルで const を指定する必要があります: 純粋モード|  
 |コンパイラ エラー C2442|'*識別子*': 入れ子になった名前空間定義がインラインでまたは属性を持つことはできません|  
-|[コンパイラ エラー C2443](compiler-error-c2443.md)|この命令には同じサイズのオペランドが必要です。|  
+|[コンパイラ エラー C2443](compiler-error-c2443.md)|オペランドのサイズの競合|  
 |[コンパイラ エラー C2444](compiler-error-c2444.md)|'*識別子*': ANSI プロトタイプで見つかった ''、予期される型' {' または ';'|  
 |[コンパイラ エラー C2446](compiler-error-c2446.md)|'*演算子*': から変換なし'*type_1*'to'*type_2*'|  
 |[コンパイラ エラー C2447](compiler-error-c2447.md)|' {': 関数ヘッダーがありません (旧形式の仮引数リスト?)|  
 |[コンパイラ エラー C2448](compiler-error-c2448.md)|'*識別子*': 関数スタイルの初期化子は、関数の定義が表示されます|  
-|[コンパイラ エラー C2449](compiler-error-c2449.md)|'{' を見つけました (関数のヘッダーがないかもしれません)。|  
+|[コンパイラ エラー C2449](compiler-error-c2449.md)|見つかった ' {' ファイル スコープ (関数のヘッダーがありません)。|  
 |[コンパイラ エラー C2450](compiler-error-c2450.md)|型の式を切り替える '*型*' は無効です|  
 |[コンパイラ エラー C2451](compiler-error-c2451.md)|条件式の型 '*型*' は無効です|  
 |[コンパイラ エラー C2452](compiler-error-c2452.md)|'*型*': safe_cast に対する無効なソースの種類|  
@@ -136,10 +122,10 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2462](compiler-error-c2462.md)|'*識別子*':' new' 演算子で型を定義することはできません|  
 |[コンパイラ エラー C2464](compiler-error-c2464.md)|'*型*': 参照の割り当てに 'new' を使用することはできません|  
 |[コンパイラ エラー C2465](compiler-error-c2465.md)|名前のない構造体、共用体、または、列挙型がかっこの式内で定義されました。|  
-|[コンパイラ エラー C2466](compiler-error-c2466.md)|サイズが 0 の配列を割り当てまたは宣言しようとしました。|  
+|[コンパイラ エラー C2466](compiler-error-c2466.md)|サイズが 0 の配列を割り当てることができません。|  
 |[コンパイラ エラー C2467](compiler-error-c2467.md)|匿名の無効な宣言 '*user_defined_type*'|  
 |コンパイラ エラー C2468|コンス トラクターがクラスまたは仮想基底クラスと構造体には、' constexpr' にすることはできません。|  
-|[コンパイラ エラー C2469](compiler-error-c2469.md)|'new': 'void' 型のオブジェクトを割り当てることができません。|  
+|[コンパイラ エラー C2469](compiler-error-c2469.md)|'new': 'void' のオブジェクトを割り当てることはできません|  
 |[コンパイラ エラー C2470](compiler-error-c2470.md)|'*関数*': 関数の定義のようになりますが、パラメーターはありません ボックスの一覧です外見上の本体をスキップしています。|  
 |[コンパイラ エラー C2471](compiler-error-c2471.md)|プログラム データベースを更新できません '*filename*'|  
 |[コンパイラ エラー C2472](compiler-error-c2472.md)|'*関数*' マネージ コードで生成することはできません: '*メッセージ*' です混合イメージを生成する/clr と共にコンパイル。|  
@@ -154,14 +140,14 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2482](compiler-error-c2482.md)|'*識別子*': マネージまたは WINRT コードでは許可されませんスレッド ローカル データの動的な初期化|  
 |[コンパイラ エラー C2483](compiler-error-c2483.md)|'*識別子*': デストラクターまたは非集計型を使ったオブジェクトをマネージまたは WINRT コードでスレッド ストレージ存続期間で宣言することはできません|  
 |[コンパイラ エラー C2485](compiler-error-c2485.md)|'*識別子*': 認識されない拡張属性|  
-|[コンパイラ エラー C2486](compiler-error-c2486.md)|'__LOCAL_SIZE' の指定は 'naked' 属性の関数の中でのみ許されています。|  
+|[コンパイラ エラー C2486](compiler-error-c2486.md)|'_ _Local_size' は 'naked' 属性を持つ関数でのみ使用できます。|  
 |[コンパイラ エラー C2487](compiler-error-c2487.md)|'*識別子*': dll インターフェイス クラスのメンバーを dll インターフェイスと共に宣言することはできません|  
 |[コンパイラ エラー C2488](compiler-error-c2488.md)|'*識別子*': 'naked' のみに適用できます非メンバー関数の定義|  
 |[コンパイラ エラー C2489](compiler-error-c2489.md)|'*識別子*': 'naked' 関数では関数スコープで許可されません auto またはレジスタ変数の初期化|  
 |[コンパイラ エラー C2490](compiler-error-c2490.md)|'*キーワード*' 'naked' 属性を持つ関数では使用できません|  
 |[コンパイラ エラー C2491](compiler-error-c2491.md)|'*識別子*': dllimport の定義*関数*許可されていません|  
 |[コンパイラ エラー C2492](compiler-error-c2492.md)|'*変数*': スレッド ストレージ存続期間を使用してデータには、dll インターフェイスはありません。|  
-|[コンパイラ エラー C2493](compiler-error-c2493.md)|__based の形式が無効です。|  
+|[コンパイラ エラー C2493](compiler-error-c2493.md)|_ _based の無効な形式|  
 |[コンパイラ エラー C2494](compiler-error-c2494.md)|'*キーワード*' フィルター式内から呼び出すことはできませんまたは\_ \_finally/finally ブロック|  
 |[コンパイラ エラー C2495](compiler-error-c2495.md)|'*識別子*': '__declspec(noexcept)' は関数宣言または定義にのみ適用できます|  
 |[コンパイラ エラー C2496](compiler-error-c2496.md)|'*識別子*': 'selectany' は外部リンケージを持つデータ項目にのみ適用できます|  

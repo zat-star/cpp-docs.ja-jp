@@ -1,52 +1,55 @@
 ---
-title: "_swab | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "_swab"
-  - "stdlib/_swab"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-utility-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "_swab"
-  - "stdlib/_swab"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_swab 関数"
-  - "バイト, スワップ"
-  - "swab 関数"
-  - "スワップ (バイトを)"
+title: _swab | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- _swab
+- stdlib/_swab
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-utility-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- _swab
+- stdlib/_swab
+dev_langs:
+- C++
+helpviewer_keywords:
+- _swab function
+- swapping bytes
+- swab function
+- bytes, swapping
 ms.assetid: 017142f2-050c-4f6a-8b49-6b094f58ec94
 caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 18
----
-# _swab
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: a3043abf425055d8cb21108a30db2e6382e19c1a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="swab"></a>_swab
 バイトを交換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void _swab(  
@@ -56,52 +59,56 @@ void _swab(
 );  
 ```  
   
-#### パラメーター  
+## <a name="parameters"></a>パラメーター  
  `src`  
- コピーされ、交換されるデータ。  
+ コピーおよび交換されるデータ。  
   
  `dest`  
- 交換されるデータの格納場所。  
+ 交換したデータの格納場所。  
   
  `n`  
- コピーされ、交換されるバイト数。  
+ コピーおよび交換対象のバイト数。  
   
-## 解説  
- `n` が偶数の場合 `_swab` 関数は `src`から `n` バイト数をコピーし、隣接するバイトの各ペアを交換し、`dest`に結果を保存します。  `n` が奇数の場合、`_swab` は `src`の `n-1` 最初のバイトをコピーし、交換します。  `_swab` は通常、別のバイト順を使用するマシンに転送するためにバイナリ データを準備するために使用されます。  
+## <a name="return-value"></a>戻り値
+ `swab` 関数は値を返しません。 `src` または `dest` のポインターが NULL である場合、または `n` がゼロ未満の場合、この関数は `errno` を `EINVAL` に設定し、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」で説明されているように、無効なパラメーター ハンドラーが呼び出されます。  
   
-## 必要条件  
+ 戻り値の詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。
+ 
+## <a name="remarks"></a>コメント  
+ `n` が偶数の場合、`_swab` 関数は `src` から `n` バイトをコピーし、隣接するバイトの各ペアをスワップして、結果を `dest` に格納します。 `n` が奇数の場合、`_swab` 関数は `src` の最初の `n-1` バイトをコピーしてスワップします。最後のバイトはコピーされません。 `_swab` 関数は、通常、異なるバイト順を使用するコンピューターに転送するバイナリ データを準備するときに使用されます。  
   
+## <a name="requirements"></a>要件  
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`_swab`|\<stdlib.h\>|  
+|-------------|---------------------|  
+|`_swab`|C: \<stdlib.h> C++: \<cstdlib> または \<stdlib.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
-  
-```  
+## <a name="example"></a>例  
+```C 
 // crt_swab.c  
   
 #include <stdlib.h>  
 #include <stdio.h>  
   
 char from[] = "BADCFEHGJILKNMPORQTSVUXWZY";  
-char to[] =   "..........................";  
+char to[] =   "...........................";  
   
 int main()  
 {  
-    printf( "Before: %s\n        %s\n\n", from, to );  
-    _swab( from, to, sizeof( from ) );  
-    printf( "After:  %s\n        %s\n\n", from, to );  
+    printf("Before: %s  %d bytes\n        %s\n\n", from, sizeof(from), to);  
+    _swab(from, to, sizeof(from));  
+    printf("After:  %s\n        %s\n\n", from, to);  
 }  
 ```  
   
-  **前へ: BADCFEHGJILKNMPORQTSVUXWZY**  
- **..........................**  
-**後:  BADCFEHGJILKNMPORQTSVUXWZY**  
- **ABCDEFGHIJKLMNOPQRSTUVWXYZ**   
-## 同等の .NET Framework 関数  
- 使用できません。標準 C 関数を呼び出すには、`PInvoke` を使用します。詳細については、「[プラットフォーム呼び出しの例](../Topic/Platform%20Invoke%20Examples.md)」を参照してください。  
+```Output  
+Before: BADCFEHGJILKNMPORQTSVUXWZY  27 bytes  
+        ...........................  
   
-## 参照  
- [バッファー操作](../Topic/Buffer%20Manipulation.md)
+After:  BADCFEHGJILKNMPORQTSVUXWZY  
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ.  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [バッファー操作](../../c-runtime-library/buffer-manipulation.md)

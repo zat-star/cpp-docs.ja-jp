@@ -19,38 +19,24 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 7420231e64515b556cfe81fc695eda5f75231506
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f45e7617bbf162c23994897c42aab44abeacea88
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2743"></a>コンパイラ エラー C2743
-'type': _ _clrcall デストラクターまたはコピー コンス トラクターを持つネイティブ型をキャッチすることはできません  
+'type': _ _clrcall デストラクターまたはコピー コンス トラクターを持つネイティブ型をキャッチできません  
   
- コンパイルされたモジュール**/clr**のネイティブ型と型のデストラクターまたはコピー コンス トラクターが使用して例外をキャッチしようとしています。`__clrcall`呼び出し規約です。  
+ コンパイルされたモジュール**/clr**のネイティブ型と型のデストラクターまたはコピー コンス トラクターで使用されている例外をキャッチしようとしています。`__clrcall`呼び出し規約です。  
   
- コンパイルされたときに**/clr**、例外処理メンバー関数を必要とするネイティブ型[_ _cdecl](../../cpp/cdecl.md)および not [_ _clrcall](../../cpp/clrcall.md)します。 ネイティブ型を使用してメンバー関数と`__clrcall`でコンパイルされたモジュールの呼び出し規約をキャッチできません**/clr**します。  
+ コンパイルしたときに**/clr**、例外処理には、メンバー関数は、ネイティブ型にするが必要ですが[_ _cdecl](../../cpp/cdecl.md)および not [_ _clrcall](../../cpp/clrcall.md)です。 使用してメンバー関数を持つネイティブ型`__clrcall`でコンパイルされたモジュールの呼び出し規約をキャッチできない**/clr**です。  
   
  詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
 ## <a name="example"></a>例  
- 次の例では、c2743 エラーを生成します。  
+ 次の例では、C2743 を生成します。  
   
 ```  
 // C2743.cpp  

@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C3849 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3849"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3849"
+title: "コンパイラ エラー C3849 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3849
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3849
 ms.assetid: 5347140e-1a81-4841-98c0-b63d98264b64
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3849
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7fbe46ee4f83dc5477eeb67e0debf14fe4f9fad5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-型 'type' の式における関数スタイルの呼び出しは、使用できる number 個すべての演算子オーバーロードの const または volatile 修飾子を失う可能性があります。  
+---
+# <a name="compiler-error-c3849"></a>コンパイラ エラー C3849
+型 'type' の式における関数スタイルの呼び出しはすべての数値の使用可能な演算子のオーバー ロードの const または volatile 修飾子を失います。  
   
- const\-volatile 型の変数で呼び出すことができるのは、同等以上の const\-volatile 修飾で定義されているメンバー関数だけです。  
+ 指定した const volatile 型の変数は、メンバーが同じかそれ以上の const volatile 仕様で定義されている関数を呼び出すだけことができます。  
   
- このエラーを解決するには、適切なメンバー関数を指定します。  変換により修飾が失われる場合、const または volatile で修飾されたオブジェクトでの変換は実行できません。  修飾子を取得する変換は実行できますが、修飾子を失う変換は実行できません。  
+ このエラーを解決するには、適切なメンバー関数を提供します。 資格の変換が低下するときに、const または volatile 修飾オブジェクトに対して変換を実行できません。 修飾子を取得することができますが、変換で修飾子を失うことはできません。  
   
- 次の例では C3849 エラーが生成されます。  
+ 次の例では、C3849 を生成します。  
   
 ```  
 // C3849.cpp  

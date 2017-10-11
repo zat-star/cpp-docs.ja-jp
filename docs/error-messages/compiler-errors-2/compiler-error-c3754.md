@@ -19,34 +19,20 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 2a72db01b88f062f2b8866109cab6375930121ef
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 01fe6b5568da2e55d5ade4eca22a84ea4a0041e7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3754"></a>コンパイラ エラー C3754
-デリゲート コンス トラクター: 型 'type' のインスタンスで 'function' のメンバー関数を呼び出すことができません  
+delegate コンス トラクター: メンバー関数 'function' は型 'type' のインスタンスで呼び出すことはできません  
   
- 関数がない型へのポインターを使用して関数呼び出しが行われました。  
+ 関数を含まない型へのポインターを使用して関数呼び出しが行われました。  
   
 ## <a name="example"></a>例  
- 次の例では、c3754 エラーが生成されます。  
+ 次の例では、C3754 が生成されます。  
   
 ```  
 // C3754a.cpp  

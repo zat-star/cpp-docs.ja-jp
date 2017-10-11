@@ -19,37 +19,22 @@ caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: c89d7f1f13829422a330960ac319531fc551fb97
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e880eca87816973d531a2662486dde0ae7c77987
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3445"></a>コンパイラ エラー C3445
 コピーのリストの初期化の '*型*' 明示的なコンス トラクターを使用することはできません  
   
-ISO c++ 17 規格、に従ってコンパイラはコピーでリストの初期化でオーバー ロードの解決の明示的なコンス トラクターを考慮する必要しますが、そのオーバー ロードが実際選択される場合、エラーが発生する必要があります。  
+ISO c++ 17 規格に従って、コンパイラはコピーでリストの初期化でオーバー ロードの解決の明示的なコンス トラクターを考慮する必要しますが、そのオーバー ロードが実際選択される場合、エラーが発生する必要があります。  
   
 Visual Studio 2017 以降、コンパイラは、Visual Studio 2015 で見つからなかった初期化子リストを使用してオブジェクトの作成に関連するエラーを検索します。 これらのエラーは、クラッシュや未定義の実行時に動作する可能性があります。
 
 ## <a name="example"></a>例  
- 次の例では、C3445 が生成されます。  
+ 次の例では、C3445 を生成します。  
   
 ```cpp  
 // C3445.cpp  
@@ -66,7 +51,7 @@ int main()
 }
 ```  
   
-エラーを修正するには、直接の初期化を代わりに使用します。  
+エラーを修正するには、代わりに 直接の初期化を使用します。  
   
 ```cpp  
 // C3445b.cpp  

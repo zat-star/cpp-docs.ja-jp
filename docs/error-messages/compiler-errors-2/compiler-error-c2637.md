@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 44377a49d9c29f6f00c6fc850595b8000c25c0a3
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f676205e2850e411ddb5e5b996114c00c65087f2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2637"></a>コンパイラ エラー C2637
 'identifier': データ メンバーへのポインターを変更することはできません  
   
- データ メンバーへのポインターは、呼び出し規約を持つことはできません。 を解決するのには、呼び出し規約を削除するか、メンバー関数へのポインターを宣言します。  
+ データ メンバーへのポインターは、呼び出し規約にはできません。 を解決するのには、呼び出し規則を削除するか、メンバー関数へのポインターを宣言します。  
   
- 次の例では、c2637 エラーが生成されます。  
+ 次の例では、C2637 が生成されます。  
   
 ```  
 // C2637.cpp  

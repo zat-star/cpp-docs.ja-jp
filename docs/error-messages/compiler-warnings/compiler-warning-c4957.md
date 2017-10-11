@@ -19,26 +19,11 @@ caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 8eb7283942a8a89fc3322983c41c68082b6c5cee
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c43ddf0e336d9964d08939bb7c1dd145caf6c848
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4957"></a>コンパイラの警告 C4957
@@ -46,11 +31,11 @@ ms.lasthandoff: 04/12/2017
   
  キャストにより、検証不可能なイメージが生成されます。  
   
- 安全なキャストもあります (ユーザー定義の変換をトリガーする `static_cast` 、 `const_cast`など)。 A [safe_cast](../../windows/safe-cast-cpp-component-extensions.md)検証可能なコードを生成することが保証されます。  
+ 安全なキャストもあります (ユーザー定義の変換をトリガーする `static_cast` 、 `const_cast`など)。 [safe_cast](../../windows/safe-cast-cpp-component-extensions.md) は、検証可能なコードを生成することが保証されています。  
   
  詳細については、次を参照してください。[純粋なコードと検証可能なコード (C + + CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md)です。  
   
- この警告がエラーとして発行され、無効にする、[警告](../../preprocessor/warning.md)プラグマ、または[/wd](../../build/reference/compiler-option-warning-level.md)コンパイラ オプション。  
+ この警告は、エラーとして表示されます。無効にするには、 [warning](../../preprocessor/warning.md) プラグマ、または [/wd](../../build/reference/compiler-option-warning-level.md) コンパイラ オプションを使用します。  
   
  次の例では C4957 が生成されます。  
   

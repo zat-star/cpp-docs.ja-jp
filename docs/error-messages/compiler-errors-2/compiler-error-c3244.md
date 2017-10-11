@@ -19,32 +19,17 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 08758b22847e07442aafdfa2c7d9d5cf1381c5e2
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 225b3e95e2f0ba7e41959732f2c11b8860ef8b3b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3244"></a>コンパイラ エラー C3244
 'method': このメソッドは 'interface' によって ('interface' ではなく) 導入されました  
   
- しようとした[を明示的にオーバーライド](../../cpp/explicit-overrides-cpp.md)指定されたインターフェイスに存在しませんが、別の基底クラスが存在するメンバー。  
+ 指定されたインターフェイスにはなく、別の基底クラスにあるメンバーを [明示的にオーバーライド](../../cpp/explicit-overrides-cpp.md) しようとしました。  
   
  次の例では C3244 が生成されます。  
   

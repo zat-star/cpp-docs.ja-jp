@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2584 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2584"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2584"
+title: "コンパイラ エラー C2584 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2584
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2584
 ms.assetid: 836e2c0a-86c0-4742-b432-beb0191ad20e
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C2584
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 1ff3567f3f4981ecb86926ad76b0d23627da1fb2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'Class' : 直接クラス 'Base2' は派生クラス 'Base1' の基本クラスとして使われています。  
+---
+# <a name="compiler-error-c2584"></a>コンパイラ エラー C2584
+'Class': 直接基底 'Base2' がアクセスできません。既に 'Base1' のベース  
   
- `Class` が既に `Base1` から直接派生しています。  `Base2` も `Base1` から派生しています。  `Class` は `Base2` から派生できません。この派生は、再び `Base1` から間接的に継承することを意味しますが、`Base1` は既に直接基本クラスであるため無効だからです。  
+ `Class`既にから直接派生`Base1`です。 `Base2`派生`Base1`です。 `Class`派生できません`Base2`意味であるため (間接的に) からの継承されません`Base1`もう一度、これは無効ため`Base1`直接基底クラスでは既にです。  
   
-## 使用例  
- 次の例では C2584 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2584 を生成します。  
   
 ```  
 // C2584.cpp  

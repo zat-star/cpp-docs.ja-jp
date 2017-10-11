@@ -19,33 +19,19 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: da24e70142fa8b54b88e1d721cad01865f306202
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 980341a7871d314e3173449234fbb597a5b55d63
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3168"></a>コンパイラ エラー C3168
-'type': 基になる型列挙型に対しては無効です。  
+'type': 基になる列挙型の型が正しくありません。  
   
-用に指定した入力、基になる、`enum`型が無効でした。 基になる型は、C++ の整数型または対応する CLR 型にする必要があります。  
+型の指定を基になる、`enum`型が無効でした。 基になる型は、C++ の整数型または対応する CLR 型にする必要があります。  
   
-次の例では、c3168 エラーが生成されます。  
+次の例では、C3168 が生成されます。  
   
 ```  
 // C3168.cpp  

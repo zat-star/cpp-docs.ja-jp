@@ -24,29 +24,15 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 4cf4cad1a3b1a4ac0a21ef76a0eaca35732abf3a
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 5f37deebe0524ef0198e87a989b79d7a7ef49ede
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="ccomobjectnolock-class"></a>CComObjectNoLock クラス
-このクラスは実装**IUnknown**の非集約オブジェクトですがモジュールのロック数をコンス トラクターでインクリメントされません。  
+このクラスは実装**IUnknown**の非集約オブジェクトは、コンス トラクターでのモジュールのロック カウント インクリメントされません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -57,7 +43,7 @@ class CComObjectNoLock : public Base
   
 #### <a name="parameters"></a>パラメーター  
  `Base`  
- 派生したクラスに、 [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)または[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)オブジェクトでサポートするその他のインターフェイスからも、です。  
+ 派生したクラス、 [CComObjectRoot](../../atl/reference/ccomobjectroot-class.md)または[CComObjectRootEx](../../atl/reference/ccomobjectrootex-class.md)オブジェクトでサポートするその他のインターフェイスからも、します。  
   
 ## <a name="members"></a>メンバー  
   
@@ -77,9 +63,9 @@ class CComObjectNoLock : public Base
 |[CComObjectNoLock::Release](#release)|オブジェクトの参照カウントをデクリメントします。|  
   
 ## <a name="remarks"></a>コメント  
- `CComObjectNoLock`に似ていますが[と](../../atl/reference/ccomobject-class.md)を実装しているという点で[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)非集約オブジェクトです。 ただし、`CComObjectNoLock`増分値はモジュールのロックは、コンス トラクター内でカウントされます。  
+ `CComObjectNoLock`ような[CComObject](../../atl/reference/ccomobject-class.md)を実装することで[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509)非集約オブジェクトです。 ただし、`CComObjectNoLock`は増分値はモジュールのロックは、コンス トラクターでカウントします。  
   
- ATL では、`CComObjectNoLock`のクラス ファクトリを内部的にします。 一般に、このクラスを直接使用するがありません。  
+ ATL では、`CComObjectNoLock`クラス ファクトリの内部でします。 一般に、このクラスを直接使用するがありません。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  `Base`  
@@ -97,10 +83,10 @@ STDMETHOD_(ULONG, AddRef)();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 診断に役に立たないかテスト可能性のある値。  
+ 診断に役に立たず、テスト可能な値です。  
   
 ##  <a name="ccomobjectnolock"></a>CComObjectNoLock::CComObjectNoLock  
- コンストラクターです。 異なり[と](../../atl/reference/ccomobject-class.md)モジュールのロック カウントをインクリメントしません。  
+ コンストラクターです。 異なり[CComObject](../../atl/reference/ccomobject-class.md)モジュールのロック カウントをインクリメントしません。  
   
 ```
 CComObjectNoLock(void* = NULL);
@@ -108,7 +94,7 @@ CComObjectNoLock(void* = NULL);
   
 ### <a name="parameters"></a>パラメーター  
  **void\***  
- [in]この名前のないパラメーターは使用されません。 他の対称性が存在する**ほか***XXX*`Object`*XXX*コンス トラクターです。  
+ [in]この名前のないパラメーターは使用されません。 その他を含む対称に存在する場合**ほか***XXX*`Object`*XXX*コンス トラクターです。  
   
 ##  <a name="dtor"></a>CComObjectNoLock:: ~ CComObjectNoLock  
  デストラクターです。  
@@ -118,7 +104,7 @@ CComObjectNoLock(void* = NULL);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)します。  
+ 割り当てられているすべてのリソースを解放[FinalRelease](ccomobjectrootex-class.md#finalrelease)です。  
 
   
 ##  <a name="queryinterface"></a>CComObjectNoLock::QueryInterface  
@@ -133,7 +119,7 @@ STDMETHOD(QueryInterface)(REFIID iid, void** ppvObject);
  [in]要求されているインターフェイスの識別子。  
   
  `ppvObject`  
- [out]によって識別されるインターフェイス ポインターへのポインター`iid`します。 オブジェクトがこのインターフェイスをサポートしていない場合`ppvObject`に設定されている**NULL**します。  
+ [out]によって識別されるインターフェイス ポインターへのポインター`iid`です。 オブジェクトは、このインターフェイスをサポートしていない場合`ppvObject`に設定されている**NULL**です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
@@ -146,7 +132,7 @@ STDMETHOD_(ULONG, Release)();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- デバッグ ビルドで、**リリース**診断に役に立たないかテスト可能性のある値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
+ デバッグ ビルドで、**リリース**診断に役に立たず、テスト可能な値を返します。 非デバッグ ビルドでは、**リリース**常に 0 を返します。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

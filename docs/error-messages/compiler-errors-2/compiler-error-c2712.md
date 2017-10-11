@@ -19,31 +19,17 @@ caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 89b7d0ad3c7e175db1525c2f3fb8407240ce943c
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: af8f975960f34307c0e297f58f613eaf92018ef2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2712"></a>コンパイラ エラー C2712
 オブジェクト アンワインディングが必要な関数内で __try を使用できません。  
   
- エラー C2712 は、使用する場合に発生する可能性が[/EHsc](../../build/reference/eh-exception-handling-model.md)、構造化例外処理もに関数がアンワインド (破棄) を必要とするオブジェクト。  
+ 使用する場合、エラー C2712 が発生する可能性が[/EHsc](../../build/reference/eh-exception-handling-model.md)、構造化例外処理もと関数にアンワインディング (破棄) を必要とするオブジェクトとします。  
   
  考えられる解決策:  
   
@@ -53,12 +39,12 @@ ms.lasthandoff: 02/24/2017
   
 -   /EHsc を使用せずにコンパイルします。  
   
- エラー C2712 を使用して宣言されているメソッドを呼び出す場合にも発生する、 [_ _event](../../cpp/event.md)キーワードです。 コンパイラが、基になるイベント オブジェクトの操作を防止し、SEH で生成されたコードを囲むコードを生成するため、イベントは、マルチ スレッド環境で使用される可能性があります、 [try-finally ステートメント](../../cpp/try-finally-statement.md)します。 その結果、イベント メソッドを呼び出し、型にデストラクターが含まれる引数を値渡しで渡すと、エラー C2712 が発生します。 このような場合の解決策の&1; つとして、引数を定数参照として渡します。  
+ 使用して宣言されたメソッドを呼び出す場合もエラー C2712 が発生、 [_ _event](../../cpp/event.md)キーワード。 コンパイラが、基になるイベント オブジェクトの操作を防止し、SEH で生成されたコードを囲むコードを生成するイベントは、マルチ スレッド環境で使用される可能性があります、ため[try-finally ステートメント](../../cpp/try-finally-statement.md)です。 その結果、イベント メソッドを呼び出し、型にデストラクターが含まれる引数を値渡しで渡すと、エラー C2712 が発生します。 このような場合の解決策の 1 つとして、引数を定数参照として渡します。  
   
 ## <a name="example"></a>例  
- C2712 は使用してコンパイルする場合にも発生する**/clr: 純粋な**内のポインター-関数の静的な配列を宣言し、`__try`ブロックします。 静的メンバーには、動的な初期化を使用するコンパイラが必要です。 **/clr: 純粋な**、C++ 例外処理が含まれています。 しかし、`__try` ブロックでは C++ の例外処理を実行できません。  
+ コンパイルする場合も C2712 が発生**/clr: 純粋な**内から関数へのポインターの静的配列を宣言し、`__try`ブロックします。 静的メンバーには、動的な初期化を使用するコンパイラが必要です。 **/clr: 純粋な**、C++ 例外処理が含まれています。 しかし、`__try` ブロックでは C++ の例外処理を実行できません。  
   
- **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは、Visual Studio 2015 で廃止されました。  
+ コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
  次の例では、C2712 を生成し、その修正方法を示しています。  
   

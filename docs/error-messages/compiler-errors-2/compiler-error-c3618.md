@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3618 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3618"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3618"
+title: "コンパイラ エラー C3618 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3618
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3618
 ms.assetid: cacc105d-4389-4cb8-ae6c-41a3622e9a86
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3618
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3b014cb60c2e9a65888fa425f4046c118cfc31d2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : DllImport と記述されているメソッドを定義できません。  
+---
+# <a name="compiler-error-c3618"></a>コンパイラ エラー C3618
+'function': DllImport マークされたメソッドを定義することはできません  
   
- <xref:System.Runtime.InteropServices.DllImportAttribute> と記述されているメソッドは、specified.DLL で定義されます。  
+ マークされたメソッド<xref:System.Runtime.InteropServices.DllImportAttribute>が定義されている、指定しました。DLL です。  
   
-## 使用例  
- 次の例では C3618 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、c3618 エラーを生成します。  
   
 ```  
 // C3618.cpp  

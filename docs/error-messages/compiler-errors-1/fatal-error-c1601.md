@@ -19,28 +19,14 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: c940dd02ef78a6cb5834853920c126627e95a70d
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 926c2c89307bdb2da15c5ecc580485ef6634c59a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="fatal-error-c1601"></a>致命的なエラー C1601
 サポートされていないインライン アセンブラー オペコード  
   
- このエラーは、不完全なインストールのために発生した可能性が、コンパイラ .exe ファイルの不一致を示します。 たとえばがインストールしておく、サービス パックが、プロセッサ Pack ではありません。 必要なすべての製品をインストールします。
+ このエラーは、不完全なインストールのために発生した可能性コンパイラ .exe ファイルの不一致を示します。 たとえば、可能性がありますがインストールされました、サービス パックが、プロセッサ Pack ではありません。 すべての必要な製品をインストールします。

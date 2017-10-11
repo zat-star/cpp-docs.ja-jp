@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C3466 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3466"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3466"
+title: "コンパイラ エラー C3466 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3466
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3466
 ms.assetid: 69a877d9-a749-474b-bfc3-8d3fd53ba8fd
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3466
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b4610f7a47784dfa93339e06f09f6a576b02455d
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'型' : ジェネリック クラスの特殊化を転送することはできません  
+---
+# <a name="compiler-error-c3466"></a>コンパイラ エラー C3466
+'type': ジェネリック クラスの特殊化を転送することはできません  
   
- ジェネリック クラスの特殊化では型の転送を使用できません。  
+ 型のジェネリック クラスの特殊化の転送を使用することはできません。  
   
- 詳細については、「[Type Forwarding \(C\+\+\/CLI\)](../../windows/type-forwarding-cpp-cli.md)」を参照してください。  
+ 詳細については、次を参照してください。 [Type Forwarding (C + + CLI)](../../windows/type-forwarding-cpp-cli.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  コンポーネントを作成する例を次に示します。  
   
 ```  
@@ -42,8 +45,8 @@ public ref class GR {};
 public ref class GR2 {};  
 ```  
   
-## 使用例  
- 次の例では C3466 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では C3466 が生成されます。  
   
 ```  
 // C3466_b.cpp  

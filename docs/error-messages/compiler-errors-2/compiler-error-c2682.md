@@ -19,35 +19,21 @@ caps.latest.revision: 13
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 5b44d0cd891737f5fbd7a2870a6707568a729946
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3df494f5d78a862e260fa4edfe0a2740e4fc8cdd
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2682"></a>コンパイラ エラー C2682
 'type1' から 'type2' に変換する casting_operator を使用することはできません。  
   
- キャスト演算子は、互換性のない型の間で変換しようとしました。 たとえば、使用することはできません、 [dynamic_cast](../../cpp/dynamic-cast-operator.md)参照へのポインターを変換する演算子です。 `dynamic_cast`キャスト修飾子に演算子は使用できません。 型のすべての修飾子が一致する必要があります。  
+ キャスト演算子と互換性のない型を変換しようとしました。 たとえば、使用することはできません、 [dynamic_cast](../../cpp/dynamic-cast-operator.md)参照へのポインターを変換する演算子です。 `dynamic_cast`演算子を使用して、修飾子をキャストすることはできません。 型のすべての修飾子が一致する必要があります。  
   
  使用することができます、`const_cast`などの属性を削除するオペレーター `const`、 `volatile`、または`__unaligned`です。  
   
- 次の例では、c2682 エラーが生成されます。  
+ 次の例では、C2682 が生成されます。  
   
 ```  
 // C2682.cpp  
@@ -59,7 +45,7 @@ void g(A* pa) {
 }  
 ```  
   
- 次の例では、c2682 エラーが生成されます。  
+ 次の例では、C2682 が生成されます。  
   
 ```  
 // C2682b.cpp  

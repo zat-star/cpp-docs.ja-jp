@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2193 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2193"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2193"
+title: "コンパイラ エラー C2193 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2193
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2193
 ms.assetid: 9813e853-d581-4f51-bb75-4e242298a844
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2193
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e59b7e3ab659ee7760254680e51db9e2d4ca35d7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'identifier' : 既にセグメント内で割り当てられています。  
+---
+# <a name="compiler-error-c2193"></a>コンパイラ エラー C2193
+'identifier': セグメント内の既存の  
   
- `alloc_text` プラグマと `code_seg` プラグマによって、関数が 2 つの異なるセグメントに置かれました。  
+ 関数を使用して 2 つの異なるセグメントに格納された`alloc_text`と`code_seg`プラグマ。  
   
- 次の例では警告 C2193 が生成されます。  
+ 次の例では、C2193 が生成されます。  
   
 ```  
 // C2193.cpp  

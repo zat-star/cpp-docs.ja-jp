@@ -19,36 +19,21 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 91c2528bb922c271f9d607d0de4a7d0c95913022
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 74188570b1a049b6945c183ab950aebbc4ca30a7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3651"></a>コンパイラ エラー C3651
-'メンバー': 明示的なオーバーライドとしては使用できません、基本クラスのメンバーである必要があります  
+'member': 明示的なオーバーライドとして使用することはできません、基底クラスのメンバーである必要があります  
   
- 明示的なオーバーライドが指定されましたが、オーバーライドされている関数が型に基本型ではありませんでした。  
+ 明示的なオーバーライドが指定されましたが、オーバーライドされる関数がの型が基本型ではありませんでした。  
   
- 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)します。  
+ 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)です。  
   
- 次の例では、c3651 エラーが生成されます。  
+ 次の例では、C3651 が生成されます。  
   
 ```  
 // C3651.cpp  

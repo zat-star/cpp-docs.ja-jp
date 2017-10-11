@@ -19,25 +19,11 @@ caps.latest.revision: 1
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 05aee6ce5cba18d0517a134eb217a149098beb6e
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 373cd74b1649fb9c1bd87cad1903df183f153c0f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="fatal-error-c1510"></a>致命的なエラー C1510
@@ -45,7 +31,7 @@ ms.lasthandoff: 04/12/2017
   
  コンパイラは、言語リソース DLL を読み込むことができません。  
   
-この問題の 2 つの一般的な原因があります。 32 ビットのコンパイラおよびツールを使用する場合は、大きなプロジェクトのリンク中に 2 GB を超えるメモリを使用するには、このエラーを参照してください可能性があります。 ソリューションでは、64 ビットの Windows システムでは、64 ビットのネイティブを使用してまたはクロス コンパイラと、コードを生成するツールです。 これは、大規模なメモリの空き 64 ビット アプリを利用します。 場合は、32 ビット システムで実行しているために、32 ビット コンパイラを使用する必要があります、場合によっては向上することが 3 GB にリンカーに使用可能なメモリの量。 詳細については、次を参照してください。 [4 ギガバイト チューニング。 BCDEdit と Boot.ini](https://msdn.microsoft.com/library/vs/alm/bb613473(v=vs.85).aspx)と[BCDEdit/set increaseuserva](https://msdn.microsoft.com/library/ff542202.aspx)コマンド。  
+この問題の 2 つの一般的な原因があります。 32 ビットのコンパイラおよびツールを使用する場合は、大きなプロジェクトのリンク中に 2 GB を超えるメモリを使用するには、このエラーを参照してください可能性があります。 ソリューションでは、64 ビットの Windows システムでは、64 ビットのネイティブを使用してまたはクロス コンパイラと、コードを生成するツールです。 これは、大規模なメモリの空き 64 ビット アプリを利用します。 場合は、32 ビット システムで実行しているために、32 ビット コンパイラを使用する必要があります、場合によっては向上することが 3 GB にリンカーに使用可能なメモリの量。 詳細については、次を参照してください。 [4 ギガバイト チューニング: BCDEdit と Boot.ini](https://msdn.microsoft.com/library/vs/alm/bb613473(v=vs.85).aspx)と[BCDEdit/set increaseuserva](https://msdn.microsoft.com/library/ff542202.aspx)コマンド。  
 
 その他の一般的な原因は、Visual Studio インストールに壊れているか不完全です。 ここでは、修復または Visual Studio を再インストールをもう一度インストーラーを実行します。  
   

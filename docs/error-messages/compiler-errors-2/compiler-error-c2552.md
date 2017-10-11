@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2552 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2552"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2552"
+title: "コンパイラ エラー C2552 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2552
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2552
 ms.assetid: 0e0ab759-788a-4faf-9337-80d4b9e2e8c9
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C2552
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0e001837ca3d9ea9e5c5db1770188d030e21d7d9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c2552"></a>コンパイラ エラー C2552
 'identifier': 初期化子リストによる個別の識別子の初期化に誤りがあります  
   
  集約識別子は正しく初期化されませんでした。  
   
- [集約](../../c-language/initializing-aggregate-types.md)は次のように定義されます。  
+ [集計](../../c-language/initializing-aggregate-types.md)として定義されます。  
   
 -   配列  
   
@@ -42,7 +45,7 @@ caps.handback.revision: 12
   
     -   仮想関数  
   
- さらに、Visual C\+\+ は、コンストラクターを含む集約のデータ型を許可しません。  
+ さらに、Visual C++ は、コンストラクターを含む集約のデータ型を許可しません。  
   
  型で集約の初期化を試みると、C2552 が発生する場合があります。発生の理由となる状況を次に示します。  
   
@@ -56,7 +59,7 @@ caps.handback.revision: 12
   
 -   型が ref クラスまたは CLR インターフェイスである場合。  
   
--   型に、要素にデストラクターを持つ固定されていない次元配列 \(ゼロ配列\) がある場合。  
+-   型に、要素にデストラクターを持つ固定されていない次元配列 (ゼロ配列) がある場合。  
   
  次の例では警告 C2552 が生成されます。  
   

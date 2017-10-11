@@ -19,28 +19,14 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3b37be48c281f3c3e381abd3ed4c6704c8b5c528
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0fcfe83ada2c55540562fc17189d693675326c81
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3715"></a>コンパイラ エラー C3715
-'ポインター': 'class' へのポインターにする必要があります  
+'pointer': 'class' へのポインターにする必要があります  
   
- ポインターを指定した[_ _hook](../../cpp/hook.md)または[_ _unhook](../../cpp/unhook.md)する有効なクラスを指していません。 このエラーを解決することを確認、`__hook`と`__unhook`呼び出しが有効なクラスへのポインターを指定します。
+ 内のポインターを指定した[_ _hook](../../cpp/hook.md)または[_ _unhook](../../cpp/unhook.md)する有効なクラスを指していません。 このエラーを解決することを確認、`__hook`と`__unhook`呼び出しが有効なクラスへのポインターを指定します。

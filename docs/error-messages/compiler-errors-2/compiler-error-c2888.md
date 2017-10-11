@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 82bcc92c5b02416d77dadcd55d361fb80df64221
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 1d2d24f81bb658ab298998507dcb967bcef6644c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2888"></a>コンパイラ エラー C2888
-'identifier': 'namespace' は名前空間内でシンボルを定義することはできません  
+'identifier': 名前空間 'namespace' 内でシンボルを定義することはできません  
   
- A を囲む名前空間の名前空間に属するシンボルを定義する必要があります。  
+ A を囲む名前空間の名前空間に属しているシンボルを定義する必要があります。  
   
- 次の例では、c2888 エラーが生成されます。  
+ 次の例では、C2888 が生成されます。  
   
 ```  
 // C2888.cpp  

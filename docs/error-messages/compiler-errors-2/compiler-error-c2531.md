@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2531 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2531"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2531"
+title: "コンパイラ エラー C2531 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2531
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2531
 ms.assetid: c49afe15-55f8-4dc8-ac01-bf653622a7db
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2531
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5696fdd631f23f2ac53d5e9677085d8709817e38
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier' : ビット フィールドへの参照はできません。  
+---
+# <a name="compiler-error-c2531"></a>コンパイラ エラー C2531
+'identifier': ビット フィールドが正しくありませんへの参照。  
   
- ビット フィールドへの参照は許可されていません。  
+ ビット フィールドへの参照は許可されません。  
   
- 次の例では警告 C2531 が生成されます。  
+ 次の例では、C2531 が生成されます。  
   
 ```  
 // C2531.cpp  

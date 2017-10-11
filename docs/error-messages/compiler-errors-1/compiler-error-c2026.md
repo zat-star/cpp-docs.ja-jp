@@ -19,37 +19,23 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4fafe461008e3545243d693e0d9e34acd57163e0
-ms.openlocfilehash: c429f81c64b7710b7edc2b8540d98e8c790e4062
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 97937579c12730fecfa89c69d9e7cf51229b5c6c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2026"></a>コンパイラ エラー C2026
-文字列が大きすぎます。後ろの文字が切り捨てられました。  
+文字列が大きすぎるため、末尾の文字は切り捨てられます  
   
  文字列で 16380 1 バイト文字の制限を超えていました。  
   
  隣接する文字列の連結された場合、前に、文字列はで 16380 1 バイト文字より長くすることはできません。  
   
- この長さが約&50;% の Unicode 文字列もこのエラーを生成します。  
+ この長さが約 50% の Unicode 文字列もこのエラーを生成します。  
   
- 次のように定義されている文字列を使っている場合は、c2026 エラーが生成されます。  
+ 次のように定義された文字列があれば、C2026 が生成されます。  
   
 ```  
 char sz[] =  
@@ -59,7 +45,7 @@ long string here\
 ";  
 ```  
   
- ことが分割して次のようになります。  
+ 分割できますとおり。  
   
 ```  
 char sz[] =  
@@ -69,4 +55,4 @@ imagine a really, really "
 ";  
 ```  
   
- カスタム リソースまたは外部ファイル内の非常に大きな文字列リテラル (32 K またはそれ以上) を格納する可能性があります。 参照してください[新しいカスタム リソースまたはデータ リソースを作成する](../../windows/creating-a-new-custom-or-data-resource.md)の詳細。
+ カスタム リソースまたは外部ファイルで非常に大きな文字列リテラル (32 K 以上) を格納することがあります。 参照してください[新しいカスタム リソースまたはデータ リソースを作成する](../../windows/creating-a-new-custom-or-data-resource.md)詳細についてはします。

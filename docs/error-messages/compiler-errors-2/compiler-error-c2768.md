@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C2768 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2768"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2768"
+title: "コンパイラ エラー C2768 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2768
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2768
 ms.assetid: a7f6047a-6a80-4737-ad5c-c12868639fb5
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2768
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 79693c3d7b337302698d7854b5cd447ce7c68334
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : 明示的なテンプレート引数を使用することはできません。  
+---
+# <a name="compiler-error-c2768"></a>コンパイラ エラー C2768
+'function': 明示的なテンプレート引数の不正な使用  
   
- コンパイラは、関数定義が関数テンプレートの明示的な特化であると想定されたのか、または関数定義が新しい関数に対する定義であると想定されたのかを判断できませんでした。  
+ コンパイラは関数定義は関数テンプレートの明示的な特殊化であるはずだった場合、または関数の定義が、新しい関数になる場合を判断できませんでした。  
   
- このエラーは、コンパイラ準拠拡張機能の一部として、Visual Studio .NET 2003 に導入されました。  
+ このエラーは、Visual Studio .NET 2003 でコンパイラ準拠拡張機能の一部として導入されました。  
   
- 次の例では警告 C2768 が生成されます。  
+ 次の例では、C2768 が生成されます。  
   
 ```  
 // C2768.cpp  

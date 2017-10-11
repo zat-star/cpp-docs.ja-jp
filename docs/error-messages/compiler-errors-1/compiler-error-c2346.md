@@ -1,43 +1,46 @@
 ---
-title: "コンパイラ エラー C2346 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2346"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2346"
+title: "コンパイラ エラー C2346 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2346
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2346
 ms.assetid: 246145be-5645-4cd6-867c-e3bc39e33dca
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C2346
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: bf0133aba65b8477bd949cd90b51edbd407bcda7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-'関数' はネイティブとしてコンパイルできません: '理由'  
+---
+# <a name="compiler-error-c2346"></a>コンパイラ エラー C2346
+'function' はネイティブとしてコンパイルできません: 理由  
   
- 関数を MSIL にコンパイルできませんでした。  
+ コンパイラは、MSIL に関数をコンパイルできませんでした。  
   
- 詳細については、「[マネージ、アンマネージ](../../preprocessor/managed-unmanaged.md)」および「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ 詳細については、次を参照してください。[マネージ、アンマネージ](../../preprocessor/managed-unmanaged.md)と[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  MSIL にコンパイルできない関数をコードから削除します。  
+1.  MSIL にコンパイルすることはできません、関数内のコードを削除します。  
   
-2.  **\/clr** を使用してモジュールをコンパイルしたり、アンマネージ プラグマを使用して関数にアンマネージのマークを付けたりしないでください。  
+2.  いずれかのモジュールはコンパイルされません**/clr**、またはアンマネージのプラグマでアンマネージ関数をマークします。  
   
-## 使用例  
- 次の例では C2346 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2346 を生成します。  
   
 ```  
 // C2346.cpp  

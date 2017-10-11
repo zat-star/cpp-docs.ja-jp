@@ -19,33 +19,19 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 44caee95ba84535f5b34f1bae1e69d02deccdf48
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7d58e06d99975fd4ccff9ea4bace755ff1d758cb
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3714"></a>コンパイラ エラー C3714
-'method': イベント ハンドラー メソッドが必要、同じ呼び出し規約、ソースとして 'メソッド'  
+'method': イベント ハンドラー メソッドがあります、同じ呼び出し規約、ソースとして 'method'  
   
- ソース イベントのメソッドと同じ呼び出し規約を使用していないイベント ハンドラー メソッドが定義されます。 このエラーを修正するのには、ソースのイベント メソッドと同じ呼び出し規約 イベント ハンドラー メソッドを指定します。 たとえば、次のコードでの呼び出し規約は、`handler1`と`event1`一致 ([_ _cdecl](../../cpp/cdecl.md)または[_ _stdcall](../../cpp/stdcall.md)や他のユーザー)。 削除する規約キーワードを両方の宣言から呼び出すことによっても、問題を解決され、発生する`event1`と`handler1`に既定値に、 [thiscall](../../cpp/thiscall.md)呼び出し規約です。 参照してください[呼び出し規約](../../cpp/calling-conventions.md)の詳細。  
+ ソース イベントのメソッドとして同じ呼び出し規約を使用していないイベント ハンドラー メソッドを定義したとします。 このエラーを解決するには、イベント ハンドラー メソッドのソース イベントのメソッドと同じ呼び出し規約を提供します。 たとえば、次のコードでの呼び出し規約は、`handler1`と`event1`一致 ([_ _cdecl](../../cpp/cdecl.md)または[_ _stdcall](../../cpp/stdcall.md)または他のユーザー)。 削除する両方の宣言から規約キーワードを呼び出すことがも、問題の解決し、なる`event1`と`handler1`に既定値に、 [thiscall](../../cpp/thiscall.md)呼び出し規約です。 参照してください[呼び出し規約](../../cpp/calling-conventions.md)詳細についてはします。  
   
- 次の例では、c3714 エラーが生成されます。  
+ 次の例では、C3714 が生成されます。  
   
 ```  
 // C3714.cpp  

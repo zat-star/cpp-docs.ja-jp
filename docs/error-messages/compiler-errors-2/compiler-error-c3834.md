@@ -19,34 +19,20 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 2175483609a4c05cba7b02a2cd1693dd763e150e
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8a827b2abe6352f083dbd21bdd9647af9b3b1f5c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3834"></a>コンパイラ エラー C3834
-ピンされたポインターへの明示的なキャストは無効です。ピンされたローカル変数を使用してください。  
+無効な明示的なキャスト ピンされたポインターへピンされたローカル変数を代わりに使用します。  
   
- 固定されたポインターに明示的なキャストは許可されません。  
+ 固定されたポインターへの明示的なキャストは許可されません。  
   
 ## <a name="example"></a>例  
- 次の例では、c3834 エラーを生成します。  
+ 次の例では、C3834 を生成します。  
   
 ```  
 // C3834.cpp  

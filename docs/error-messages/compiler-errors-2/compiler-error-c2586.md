@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 13008ef58bbd6aa45382af165f8070f691dadb25
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c98f9a9f5e5f16cec23c8bc6de7efda7a7ce473d
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2586"></a>コンパイラ エラー C2586
-変換演算子を間接的に使うことはできません。  
+ユーザー定義の変換を正しくない構文: 無効な間接指定  
   
  変換演算子の間接参照を指定することはできません。  
   
- 次の例では、c2586 エラーが生成されます。  
+ 次の例では、C2586 が生成されます。  
   
 ```  
 // c2586.cpp  

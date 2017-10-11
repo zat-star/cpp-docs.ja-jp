@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2220 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2220"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2220"
+title: "コンパイラ エラー C2220 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2220
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2220
 ms.assetid: d610802c-64d7-40ad-a2a6-0ed0b6815a6c
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C2220
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: dc31519b2153c66ea9bab42f536ba7c6be5b2a10
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-warning treated as error \- no object file generated  
+---
+# <a name="compiler-error-c2220"></a>コンパイラ エラー C2220
+warning treated as error - no object file generated  
   
- [\/WX](../../build/reference/compiler-option-warning-level.md) を指定すると、警告はすべてエラーとして処理されます。  エラーが発生したため、オブジェクトまたは実行可能ファイルは生成されませんでした。  
+ [/WX](../../build/reference/compiler-option-warning-level.md)すべての警告をエラーとして扱うようにコンパイラに指示します。 エラーが発生したため、オブジェクトまたは実行可能ファイルは生成されませんでした。  
   
- このエラーは、**\/WX** フラグが設定され、コンパイル中に警告が発生したときにだけ表示されます。  このエラーを解決するには、プロジェクトのすべての警告を除去する必要があります。  
+ このエラーのみが表示されるときに、 **/WX**フラグが設定され、コンパイル時に警告が発生します。 このエラーを解決するには、プロジェクトのすべての警告を除去する必要があります。  
   
-### 解決するには、次のいずれかの手法を使用します。  
+### <a name="to-fix-use-one-of-the-following-techniques"></a>解決するには、次のいずれかの手法を使用します。  
   
 -   プロジェクトの警告の原因となった問題を解決します。  
   
--   警告レベルを低くしてコンパイルします。たとえば、**\/W4** の代わりに **\/W3** を使用します。  
+-   下の警告レベルをコンパイル — たとえば、使用して**/W3**の代わりに**/W4**です。  
   
--   特定の警告を無効にするか、表示されないようにするには、[warning](../../preprocessor/warning.md) プラグマを使用します。  
+-   使用して、[警告](../../preprocessor/warning.md)プラグマを無効にするか、特定の警告を抑制します。  
   
--   コンパイルに **\/WX** を使用しないでください。
+-   使用しない**/WX**をコンパイルします。

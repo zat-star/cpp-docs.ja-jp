@@ -19,32 +19,17 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 0085ecc5811be49bf36ecf70b38bed11c3ef3f0b
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b1a6a450c0c3faca9088b01e1016df5f4e5a4045
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3370"></a>コンパイラ エラー C3370
 'idl_module name': 未定義の idl_module  
   
- 使用する前に[idl_module](../../windows/idl-module.md)を DLL にエントリ ポイントを指定する必要があります最初に使用する`idl_module`DLL 名を指定します。  
+ [idl_module](../../windows/idl-module.md) を使用して DLL 内でエントリ ポイントを指定するには、まず `idl_module` を使用して DLL 名を指定する必要があります。  
   
  次の例では C3370 が生成されます。  
   

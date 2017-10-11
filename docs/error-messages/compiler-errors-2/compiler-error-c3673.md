@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3673 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3673"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3673"
+title: "コンパイラ エラー C3673 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3673
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3673
 ms.assetid: bb6d2079-05af-4e2c-be0e-75c892e6c590
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3673
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4958f3652119e105ed327d5476c084ad6707fb9a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'型' : クラスはコピー コンストラクターを含んでいません  
+---
+# <a name="compiler-error-c3673"></a>コンパイラ エラー C3673
+'type': クラスには、コピー コンス トラクターがありません。  
   
- CLR ref 型のオブジェクトをコピーするには、ユーザー定義のコンストラクターが必要です。  詳細については、「[参照型の C\+\+ スタック セマンティクス](../../dotnet/cpp-stack-semantics-for-reference-types.md)」を参照してください。  
+ CLR 参照型のオブジェクトをコピーするには、ユーザー定義のコンス トラクターが必要です。 詳細については、次を参照してください。[参照型の C++ スタック セマンティクス](../../dotnet/cpp-stack-semantics-for-reference-types.md)です。  
   
-## 使用例  
- 次の例では C3673 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3673 を生成します。  
   
 ```  
 // C3673.cpp  
@@ -47,8 +50,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例では C3673 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3673 を生成します。  
   
 ```  
 // C3673_b.cpp  

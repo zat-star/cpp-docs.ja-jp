@@ -1,34 +1,37 @@
 ---
-title: "致命的なエラー C1189 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C1189"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1189"
+title: "致命的なエラー C1189 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C1189
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1189
 ms.assetid: 2e5c8a78-edd4-411c-b619-558a96be148a
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# 致命的なエラー C1189
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6e8d3c9ff44a436688accfe267141390d23c0eb5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-\#error : ユーザーが指定したエラー メッセージ  
+---
+# <a name="fatal-error-c1189"></a>致命的なエラー C1189
+\#エラー: ユーザーが指定したエラー メッセージ  
   
- C1189 は `#error` ディレクティブによって生成されます。  エラー メッセージのテキストは、ディレクティブを記述する開発者が指定します。  詳細については、「[\#error ディレクティブ](../../preprocessor/hash-error-directive-c-cpp.md)」を参照してください。  
+ C1189 がによって生成された、`#error`ディレクティブです。 ディレクティブをコード開発者は、エラー メッセージのテキストを指定します。 詳細については、次を参照してください。 [#error ディレクティブ (c/c++)](../../preprocessor/hash-error-directive-c-cpp.md)です。  
   
- 次の例では C1189 エラーが生成されます。  この例では、`_WIN32` 識別子が定義されていないため、開発者がカスタム エラー メッセージを発行します。  
+ 次の例では、C1189 を生成します。 サンプルでは、開発者がカスタム エラー メッセージを発行、`_WIN32`識別子が定義されていません。  
   
 ```  
 // C1189.cpp  
@@ -38,9 +41,9 @@ caps.handback.revision: 13
 #endif  
 ```  
   
- **\/robust** MIDL コンパイラ オプションを使用して ATL プロジェクトをビルドした場合も、このエラーが表示されることがあります。  **\/robust** をに切り替えますビルド [!INCLUDE[win2kfamily](../../c-runtime-library/includes/win2kfamily_md.md)] のみおよび Windows のバージョンを使用します。  このエラーを解決するには、次の手順のうち 1 つを使用する:  
+ 使用して ATL プロジェクトをビルドする場合にもこのエラーが発生する可能性があります、 **/robust** MIDL コンパイラ オプション。 使用して、 **/robust**ビルドのみへの切り替え[!INCLUDE[win2kfamily](../../c-runtime-library/includes/win2kfamily_md.md)]およびそれ以降のバージョンの Windows です。 このエラーを解決するには、次の手順のいずれかを使用します。  
   
--   dlldatax.c ファイルで、次の行を変更します。  
+-   この行 dlldatax.c ファイルに変更します。  
   
 ```  
 #define _WIN32_WINNT 0x0400   // for WinNT 4.0 or Windows 95 with DCOM  
@@ -52,7 +55,7 @@ caps.handback.revision: 13
 #define _WIN32_WINNT 0x0500   // for WinNT 4.0 or Windows 95 with DCOM  
 ```  
   
--   **\[MIDL\]** プロパティ ページ フォルダーの **\[詳細\]** プロパティ ページを使用して、**\/robust** スイッチを削除し、**\/no\_robust** スイッチを指定します。  詳細については、「[\[詳細\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20Advanced.md)」を参照してください。  
+-   使用して、 **詳細設定**プロパティ ページで、 **MIDL**プロパティ ページ フォルダーを削除する、 **/robust**を指定し、 **/no_robust**スイッチです。 詳細については、次を参照してください。 [midl プロパティ ページ: 高度な](../../ide/midl-property-pages-advanced.md)します。  
   
-## 参照  
- [\#define ディレクティブ](../../preprocessor/hash-define-directive-c-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [#define ディレクティブ (C/C++)](../../preprocessor/hash-define-directive-c-cpp.md)

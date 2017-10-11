@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3138 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3138"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3138"
+title: "コンパイラ エラー C3138 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3138
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3138
 ms.assetid: 364ee9e8-9358-410e-bd35-9c4a226a3753
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3138
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0ba06bed1ce02c8a3030720152892e0e35760afa
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'interface' : 'attribute' インターフェイスは IDispatch、または IDispatch から継承したインターフェイスから継承する必要があります。  
+---
+# <a name="compiler-error-c3138"></a>コンパイラ エラー C3138
+'interface': 'attribute' インターフェイスは IDispatch、または IDispatch から継承したインターフェイスから継承する必要が  
   
- [dual](../Topic/dual.md) 属性または [dispinterface](../../windows/dispinterface.md) 属性を持つインターフェイスは、直接または間接的な基本インターフェイスとして `IDispatch` を持ちません。  
+ 持つインターフェイス、[デュアル](../../windows/dual.md)または[dispinterface](../../windows/dispinterface.md)属性がない`IDispatch`として直接または間接基底インターフェイスです。  
   
- 次のコードは C3138 を生成します。  
+ 次の例では、C3138 が生成されます。  
   
 ```  
 // C3138.cpp  

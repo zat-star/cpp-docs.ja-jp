@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 73ef7a00f1b1c080e3cbd4d4885b9384dfc762e7
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f7256762ef4cf9c3850bd95bb09d23394c2e64f3
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3717"></a>コンパイラ エラー C3717
-'method': イベントを発生させる方法を定義することはできません  
+'method': イベントを発生させるメソッドを定義することはできません  
   
- 実装を含むイベント メソッドが宣言されています。 [_ _Event](../../cpp/event.md)メソッドの宣言は、定義を持つことはできません。 このエラーを解決するには、いることを確認イベントのメソッド宣言しない定義します。 たとえば、次のコードから関数の本体を削除、`event1`コメントで示されたように宣言します。  
+ 実装を含むイベント メソッドが宣言されています。 [_ _Event](../../cpp/event.md)メソッドの宣言は、定義を持つことはできません。 このエラーを解決するには、定義を持つイベント メソッドの宣言がないことを確認します。 たとえば、次のコードで、関数本体からを削除、`event1`宣言、コメントで示されています。  
   
- 次の例では、c3717 エラーが生成されます。  
+ 次の例では、C3717 が生成されます。  
   
 ```  
 // C3717.cpp  

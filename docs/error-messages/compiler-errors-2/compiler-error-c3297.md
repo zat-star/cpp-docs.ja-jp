@@ -19,26 +19,11 @@ caps.latest.revision: 3
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: dcdcee9235e0007c4d7a6d662b455d98a1cb55da
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c2190bb4f2fe5c6195221deebe5b24097b614691
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3297"></a>コンパイラ エラー C3297
@@ -46,7 +31,7 @@ ms.lasthandoff: 02/24/2017
   
  値クラスがシールされています。 制約が値クラスの場合は、別の制約はそこから派生できません。  
   
- 詳細については、次を参照してください。[ジェネリック型パラメーターの制約 (C + +/CLI)](../../windows/constraints-on-generic-type-parameters-cpp-cli.md)します。  
+ 詳細については、次を参照してください。[ジェネリック型パラメーターの制約 (C + + CLI)](../../windows/constraints-on-generic-type-parameters-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
  次の例では C3297 が生成されます。  

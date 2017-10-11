@@ -19,35 +19,21 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 1f928242a26ed45a48cc9bc19be231e2d0e09a51
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 992e2a5d34b380146a99f6f78145b022eacd21d6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3641"></a>コンパイラ エラー C3641
-'function': の呼び出し規約を 'calling_convention'/clr でコンパイルされた関数が無効です: 純粋なまたは/clr:safe  
+'function': の呼び出し規約 'calling_convention'/clr でコンパイルされた関数が無効です:/clr:pure または/clr:safe  
   
- **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは、Visual Studio 2015 で廃止されました。  
+ コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
- のみ[_ _clrcall](../../cpp/clrcall.md)使用できるは呼び出し規約[/clr: 純粋な](../../build/reference/clr-common-language-runtime-compilation.md)です。  
+ のみ[_ _clrcall](../../cpp/clrcall.md)と呼び出し規約が許可されている[/clr: 純粋な](../../build/reference/clr-common-language-runtime-compilation.md)します。  
   
- 次の例では、c3641 エラーが生成されます。  
+ 次の例では、C3641 が生成されます。  
   
 ```  
 // C3641.cpp  

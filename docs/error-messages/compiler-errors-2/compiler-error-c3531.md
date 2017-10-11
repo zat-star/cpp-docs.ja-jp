@@ -1,39 +1,42 @@
 ---
-title: "コンパイラ エラー C3531 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3531"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3531"
+title: "コンパイラ エラー C3531 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3531
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3531
 ms.assetid: 2bdb9fdc-9ddf-403e-8b92-02763d434487
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3531
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7753e30e305b7b36adc3b4d2b535f755fa455bdd
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'symbol': 'auto' を含む型のシンボルには初期化子が必要です  
+---
+# <a name="compiler-error-c3531"></a>コンパイラ エラー C3531
+'symbol': 型持つにはは、'auto' が含まれていますシンボルは、initializer を持つ必要があります。  
   
- 指定した変数には、初期化子式がありません。  
+ 指定された変数の初期化子式ではありません。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  変数の宣言時に、等号 \(\=\) を使用した構文の単純な代入などの初期化子式を指定します。  
+1.  変数を宣言する場合、等号 (=) 構文を使用する単純な代入など、初期化子式を指定します。  
   
-## 使用例  
- 次の例では、変数 `x1`、`y1, y2, y3`、および `z2` が初期化されていないため、C3531 が発生します。  
+## <a name="example"></a>例  
+ 次の例では C3531 のため変数`x1`、 `y1, y2, y3`、および`z2`は初期化されていません。  
   
 ```  
 // C3531.cpp  
@@ -47,5 +50,5 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [auto キーワード](../../cpp/auto-keyword.md)

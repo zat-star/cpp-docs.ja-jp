@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3707 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3707"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3707"
+title: "コンパイラ エラー C3707 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3707
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3707
 ms.assetid: ac63a5dd-7a4b-48d2-9f2a-be9cb090134c
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3707
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7167ea0df9bc0846de16be40d722c63bfea11c32
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : ディスパッチ インターフェイスは dispid を必要とします。  
+---
+# <a name="compiler-error-c3707"></a>コンパイラ エラー C3707
+'function': dispinterface メソッドは dispid を持つ必要があります  
   
- `dispinterface` メソッドを使用する場合は、そのメソッドに `dispid` を割り当てる必要があります。  このエラーを解決するには、`dispinterface` メソッドに `dispid` を割り当てます。たとえば、以下のサンプルでは、メソッドの `id` 属性のコメント化を解除しています。  詳細については、「[dispinterface](../../windows/dispinterface.md)」および「[id](../../windows/id.md)」を参照してください。  
+ 使用する場合、`dispinterface`メソッドを割り当てる必要があります、`dispid`です。 このエラーを解決するには、割り当て、`dispid`を`dispinterface`例については、コメントを解除して、メソッド、`id`以下のサンプルのメソッドの属性です。 詳細については、属性を参照してください。 [dispinterface](../../windows/dispinterface.md)と[id](../../windows/id.md)です。  
   
- 次の例では警告 C3707 が生成されます。  
+ 次の例では、C3707 が生成されます。  
   
 ```  
 // C3707.cpp  

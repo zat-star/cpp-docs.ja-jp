@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3732 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3732"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3732"
+title: "コンパイラ エラー C3732 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3732
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3732
 ms.assetid: 2d55a7e1-9c39-4379-a093-2f7beb27e2ca
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3732
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c545391883d4e2becd21fbb4b3279e3f0c1d60f1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'interface' : COM イベントを実行するカスタム インターフェイスは IDispatch から継承できません。  
+---
+# <a name="compiler-error-c3732"></a>コンパイラ エラー C3732
+'interface': COM イベントを実行するカスタム インターフェースは IDispatch から継承できません  
   
- COM イベントをサポートするインターフェイスは `IDispatch` から継承できません。  詳細については、「[COM でのイベント処理](../../cpp/event-handling-in-com.md)」を参照してください。  
+ COM イベントをサポートするインターフェイスを継承できません`IDispatch`です。 詳細については、次を参照してください。 [COM でのイベント処理](../../cpp/event-handling-in-com.md)です。  
   
- 次のコードでは C3732 が生成されます。  
+ 次のエラー C3732 が生成されます。  
   
 ```  
 // C3732.cpp  

@@ -1,47 +1,50 @@
 ---
-title: "towctrans | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "towctrans"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-string-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "towctrans"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "towctrans 関数"
+title: towctrans | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- towctrans
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-string-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- towctrans
+dev_langs:
+- C++
+helpviewer_keywords:
+- towctrans function
 ms.assetid: 1ed1e70d-7b31-490f-a7d9-42564b5924ca
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# towctrans
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: fcd97b3af0bb7e469db18b1a7ff8290af5df1bc4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="towctrans"></a>towctrans
 文字を変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 wint_t towctrans(  
@@ -50,29 +53,29 @@ wint_t towctrans(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `c`  
- 変更する文字。  
+ 変換する文字。  
   
  `category`  
- [wctrans](../../c-runtime-library/reference/wctrans.md)の戻り値を含む ID。  
+ [wctrans](../../c-runtime-library/reference/wctrans.md) の戻り値を含む識別子。  
   
-## 戻り値  
- `towctrans` の後の文字 `c`は、`category`で変換規則を使用します。  
+## <a name="return-value"></a>戻り値  
+ `towctrans` が `category` 内の変換ルールを使用した後の文字 `c`。  
   
-## 解説  
- `category` の値は [wctrans](../../c-runtime-library/reference/wctrans.md)により早く正常な呼び出しによって返されることになります。  
+## <a name="remarks"></a>コメント  
+ `category` の値は、事前に [wctrans](../../c-runtime-library/reference/wctrans.md) を正常に呼び出して返す必要があります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |ルーチン|必須ヘッダー|  
-|----------|------------|  
-|`towctrans`|\<wctype.h\>|  
+|-------------|---------------------|  
+|`towctrans`|\<wctype.h>|  
   
- 互換性の詳細については、「C ランタイム ライブラリ」の「[互換性](../../c-runtime-library/compatibility.md)」を参照してください。  
+ 互換性の詳細については、概要の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 使用例  
- `towctrans`を使用するサンプルの `wctrans` を参照してください。  
+## <a name="example"></a>例  
+ `towctrans` の使用例については「`wctrans`」をご覧ください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [データ変換](../../c-runtime-library/data-conversion.md)

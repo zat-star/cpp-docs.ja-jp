@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 74129301f84a114a9321f1344238a3dcc1006c98
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 78d92952b53c15d6170b32a711848111a4b6fd28
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2459"></a>コンパイラ エラー C2459
-'identifier': を定義します。匿名のメンバーとして追加できません。  
+'identifier': 定義されています。匿名のメンバーとして追加できません。  
   
- クラス、構造体または共用体は、無名共用体のメンバーでは独自のスコープで再定義します。  
+ クラス、構造体、または共用体は、無名共用体のメンバーではそれ自体のスコープ内で再定義します。  
   
- 次の例では、c2459 エラーが生成されます。  
+ 次の例では、C2459 が生成されます。  
   
 ```  
 // C2459.cpp  

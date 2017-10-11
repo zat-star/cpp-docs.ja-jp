@@ -1,5 +1,5 @@
 ---
-title: "コンパイラ エラー c3039 エラー |Microsoft ドキュメント"
+title: "コンパイラ エラー C3039 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -19,32 +19,17 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 6d935f373201831c2689b5dbbc072955afd30415
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f3162ab8241781cda521fa4fc9dc51f14fa42897
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3039"></a>コンパイラ エラー C3039
 'var' : OpenMP 'for' ステートメントのインデックス変数を減少変数にすることはできません  
   
- インデックス変数は暗黙的にプライベートであるために、変数は使用できません、[削減](../../parallel/openmp/reference/reduction.md)、外側[並列](../../parallel/openmp/reference/parallel.md)ディレクティブです。  
+ インデックス変数は暗黙的にプライベートであるため、囲む [parallel](../../parallel/openmp/reference/reduction.md) ディレクティブ内の [reduction](../../parallel/openmp/reference/parallel.md) 句で、変数を使用することはできません。  
   
 ## <a name="example"></a>例  
  次の例では C3039 が生成されます。  

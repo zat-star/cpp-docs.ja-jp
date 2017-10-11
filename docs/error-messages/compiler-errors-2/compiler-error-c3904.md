@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C3904 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3904"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3904"
+title: "コンパイラ エラー C3904 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3904
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3904
 ms.assetid: 08297605-e4f2-4c6c-b637-011f1fd40631
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3904
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 31a6f728fdbfb9540245cf85879adef8c1827d2e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'property\_accessor': '数値' つのパラメーターを指定しなければなりません  
+---
+# <a name="compiler-error-c3904"></a>コンパイラ エラー C3904
+'property_accessor': パラメーター番号を指定する必要があります  
   
- プロパティの次元に対する `get` メソッドと `set` メソッドのパラメーターの数を確認してください。  
+ 内のパラメーターの数を確認、`get`と`set`プロパティの次元に対してメソッドです。  
   
--   `get` メソッドのパラメーターの数は、プロパティの次元数と同じであることが必要です。また、インデックス化されていないプロパティに対しては 0 であることが必要です。  
+-   パラメーターの数、`get`メソッドのプロパティの次元の数と等しくかインデックス付けされていないプロパティを 0 にする必要があります。  
   
--   `set` メソッドのパラメーターの数は、プロパティの次元数よりも 1 つ大きい数であることが必要です。  
+-   パラメーターの数、`set`メソッドは、いずれかを指定する必要があります、プロパティの次元数よりも詳細です。  
   
- 詳細については、「[プロパティ](../../windows/property-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、「 [property](../../windows/property-cpp-component-extensions.md)」を参照してください。  
   
-## 使用例  
- 次の例では C3904 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3904 を生成します。  
   
 ```  
 // C3904.cpp  
@@ -55,8 +58,8 @@ ref class X {
 };  
 ```  
   
-## 使用例  
- 次の例では C3904 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3904 を生成します。  
   
 ```  
 // C3904b.cpp  

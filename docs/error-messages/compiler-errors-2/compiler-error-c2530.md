@@ -19,41 +19,27 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7a5d6831c293f6ef25eb53cdfb6216f8142908d2
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f9438937ad99e66d9e623e1e3703dc6496f8153a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2530"></a>コンパイラ エラー C2530
 'identifier': 参照を初期化する必要があります  
   
- 既に宣言されていない場合、宣言されているときに、参照を初期化する必要があります。  
+ 既に宣言されていない限り、宣言されているときに参照を初期化する必要があります。  
   
--   キーワードを使用して[extern](../../cpp/using-extern-to-specify-linkage.md)します。  
+-   キーワードを使用して[extern](../../cpp/using-extern-to-specify-linkage.md)です。  
   
--   クラス、構造体または共用体のメンバーとして (および、コンス トラクターで初期化されます)。  
+-   クラス、構造体、または共用体のメンバーとして (および、コンス トラクターで初期化されます)。  
   
--   関数宣言または定義でのパラメーターです。  
+-   関数宣言または定義でパラメーター。  
   
 -   関数の戻り値の型。  
   
- 次の例では、c2530 エラーが生成されます。  
+ 次の例では、C2530 が生成されます。  
   
 ```  
 // C2530.cpp  

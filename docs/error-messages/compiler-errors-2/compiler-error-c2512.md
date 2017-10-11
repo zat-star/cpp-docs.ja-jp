@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2512 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2512"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2512"
+title: "コンパイラ エラー C2512 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2512
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2512
 ms.assetid: 15206da9-1164-451a-b869-280e00711aad
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2512
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 63090bc7dac08aa87bcd68e77c076185176a7285
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c2512"></a>コンパイラ エラー C2512
 'identifier' : クラス、構造体、共用体に既定のコンストラクターがありません。  
   
- 指定したクラス、構造体、または共用体で使用可能な既定のコンストラクターがありません。  ユーザー定義のコンストラクターが指定されていない場合のみ、コンパイラによって既定のコンストラクターが提供されます。  
+ 指定したクラス、構造体、または共用体で使用可能な既定のコンストラクターがありません。 ユーザー定義のコンストラクターが指定されていない場合のみ、コンパイラによって既定のコンストラクターが提供されます。  
   
- 非 void 型のパラメーターを受け取るコンストラクターを指定して、クラスをパラメーターなしで作成できるようにする場合 \(配列の要素として作成する場合など\)、既定のコンストラクターも指定する必要があります。  既定のコンストラクターには、すべてのパラメーターに既定値を使用したコンストラクターを指定できます。  
+ 非 void 型のパラメーターを受け取るコンストラクターを指定して、クラスをパラメーターなしで作成できるようにする場合 (配列の要素として作成する場合など)、既定のコンストラクターも指定する必要があります。 既定のコンストラクターには、すべてのパラメーターに既定値を使用したコンストラクターを指定できます。  
   
  次の例では、C2512 を生成し、その修正方法を示しています。  
   
@@ -46,7 +49,7 @@ int main() {
 }  
 ```  
   
- 次の例では、少し複雑な C2512 を示します。  このエラーを修正するには、クラスを定義してからそのコンストラクターを参照するようにコードを再配置します。  
+ 次の例では、少し複雑な C2512 を示します。 このエラーを修正するには、クラスを定義してからそのコンストラクターを参照するようにコードを再配置します。  
   
 ```  
 // C2512b.cpp  
@@ -74,7 +77,7 @@ void T::f() {
 }  
 ```  
   
- C2512 は、const または参照データ メンバーを含むクラスの既定のコンストラクターへの呼び出しによっても発生することがあります。  これらのメンバーは、コンストラクターの初期化子リスト内で初期化する必要があります。これにより、コンパイラは既定のコンストラクターを生成できなくなります。  
+ C2512 は、const または参照データ メンバーを含むクラスの既定のコンストラクターへの呼び出しによっても発生することがあります。 これらのメンバーは、コンストラクターの初期化子リスト内で初期化する必要があります。これにより、コンパイラは既定のコンストラクターを生成できなくなります。  
   
  次の例では、C2512 を生成し、その修正方法を示しています。  
   

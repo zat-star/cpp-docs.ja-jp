@@ -1,29 +1,32 @@
 ---
-title: "致命的なエラー C1192 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "c1192"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C1192"
+title: "致命的なエラー C1192 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- c1192
+dev_langs:
+- C++
+helpviewer_keywords:
+- C1192
 ms.assetid: 54cff717-a3eb-471d-9bd4-1c2e673dbbef
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# 致命的なエラー C1192
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f7cea5935018e1d9a011be61081e5d3b979b2eb1
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-\#using が 'file' で失敗しました。  
+---
+# <a name="fatal-error-c1192"></a>致命的なエラー C1192
+\#'file' で失敗しました。  
   
- [\#using](../../preprocessor/hash-using-directive-cpp.md) ディレクティブに渡すことができるのは、MSIL \(Microsoft Intermediate Language\) 形式のファイルだけです。  [\/clr](../../build/reference/clr-common-language-runtime-compilation.md) コンパイラ オプションを使用すると、MSIL 出力ファイルを作成できます。  ほかの Visual Studio 言語でも MSIL ファイルが生成されます。
+ Microsoft Intermediate Language (MSIL) 形式のファイルのみを渡すことができます、 [#using](../../preprocessor/hash-using-directive-cpp.md)ディレクティブです。 [/Clr](../../build/reference/clr-common-language-runtime-compilation.md)コンパイラ オプションでは、MSIL 出力ファイルを作成することができます。 その他の Visual Studio の言語では、MSIL ファイルも生成します。

@@ -22,25 +22,11 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 1d1253b7a7d69024465627cc9fb37fcd2afba693
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 410d34d59da33b6d929abbe2af0798a6cf46238b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="cdefaultcomparetraits-class"></a>CDefaultCompareTraits クラス
@@ -64,12 +50,12 @@ class CDefaultCompareTraits
 |名前|説明|  
 |----------|-----------------|  
 |[CDefaultCompareTraits::CompareElements](#compareelements)|(静的)2 つの要素が等しいかどうかを比較するには、この関数を呼び出します。|  
-|[CDefaultCompareTraits::CompareElementsOrdered](#compareelementsordered)|(静的)この関数では、大小の要素を特定します。|  
+|[CDefaultCompareTraits::CompareElementsOrdered](#compareelementsordered)|(静的)この関数では、大小の要素を決定します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスには、コレクション クラスのオブジェクトに格納されている要素を比較するための&2; つの静的関数が含まれています。 このクラスは、によって使用されて、 [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)します。  
+ このクラスには、コレクション クラスのオブジェクトに格納されている要素を比較する 2 つの静的関数が含まれています。 このクラスは、によって使用されて、 [CDefaultElementTraits クラス](../../atl/reference/cdefaultelementtraits-class.md)です。  
   
- 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcoll.h  
@@ -89,13 +75,13 @@ static bool CompareElements(const T& element1, const T& element2);
  2 番目の要素。  
   
 ### <a name="return-value"></a>戻り値  
- 要素が false でそれ以外の場合、等しい場合は true を返します。  
+ 要素が等しい場合は false それ以外の場合は true を返します。  
   
 ### <a name="remarks"></a>コメント  
- この関数の既定の実装は、等しいかどうか ( `==`) 演算子。 単純なデータ型以外のオブジェクトをこの関数は、オーバーライドする必要があります。  
+ この関数の既定の実装は、等しいかどうか ( `==`) 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
   
 ##  <a name="compareelementsordered"></a>CDefaultCompareTraits::CompareElementsOrdered  
- この関数では、大小の要素を特定します。  
+ この関数では、大小の要素を決定します。  
   
 ```
 static int CompareElementsOrdered(const T& element1, const T& element2);
@@ -109,7 +95,7 @@ static int CompareElementsOrdered(const T& element1, const T& element2);
  2 番目の要素。  
   
 ### <a name="return-value"></a>戻り値  
- 次の表に基づく整数が返されます。  
+ 次の表に基づいて整数が返されます。  
   
 |条件|戻り値|  
 |---------------|------------------|  
@@ -118,7 +104,7 @@ static int CompareElementsOrdered(const T& element1, const T& element2);
 |`element1` > `element2`|>0|  
   
 ### <a name="remarks"></a>コメント  
- この関数の既定の実装を使用して、 `==`、 ** \< **、および** > **演算子。 単純なデータ型以外のオブジェクトをこの関数は、オーバーライドする必要があります。  
+ この関数の既定の実装を使用して、 `==`、  **\<** 、および **>** 演算子。 単純なデータ型以外のオブジェクト、この関数は、オーバーライドする必要があります。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

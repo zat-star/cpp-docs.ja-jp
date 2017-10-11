@@ -27,29 +27,15 @@ caps.latest.revision: 21
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 4c38d778849a31d55a657fc1022c2e9f4a370eec
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 9d5722ece0c85c07445f22d93e4840b9188b246c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="cnoworkerthread-class"></a>CNoWorkerThread クラス
-引数としてこのクラスを使用して、`MonitorClass`動的キャッシュ管理を無効にする場合はキャッシュ クラスをテンプレート パラメーター。  
+引数としてこのクラスを使用して、`MonitorClass`動的キャッシュのメンテナンスを無効にする場合、キャッシュ クラスをテンプレート パラメーター。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -66,24 +52,24 @@ class CNoWorkerThread
   
 |名前|説明|  
 |----------|-----------------|  
-|[CNoWorkerThread::AddHandle](#addhandle)|同等の非機能[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)します。|  
-|[CNoWorkerThread::AddTimer](#addtimer)|同等の非機能[CWorkerThread::AddTimer](../../atl/reference/cworkerthread-class.md#addtimer)します。|  
-|[CNoWorkerThread::GetThreadHandle](#getthreadhandle)|同等の非機能[CWorkerThread::GetThreadHandle](../../atl/reference/cworkerthread-class.md#getthreadhandle)します。|  
-|[CNoWorkerThread::GetThreadId](#getthreadid)|同等の非機能[CWorkerThread::GetThreadId](../../atl/reference/cworkerthread-class.md#getthreadid)します。|  
-|[CNoWorkerThread::Initialize](#initialize)|同等の非機能[CWorkerThread::Initialize](../../atl/reference/cworkerthread-class.md#initialize)します。|  
-|[CNoWorkerThread::RemoveHandle](#removehandle)|同等の非機能[CWorkerThread::RemoveHandle](../../atl/reference/cworkerthread-class.md#removehandle)します。|  
-|[CNoWorkerThread::Shutdown](#shutdown)|同等の非機能[CWorkerThread::Shutdown](../../atl/reference/cworkerthread-class.md#shutdown)します。|  
+|[CNoWorkerThread::AddHandle](#addhandle)|該当するショートカットは機能しない[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)です。|  
+|[CNoWorkerThread::AddTimer](#addtimer)|該当するショートカットは機能しない[CWorkerThread::AddTimer](../../atl/reference/cworkerthread-class.md#addtimer)です。|  
+|[CNoWorkerThread::GetThreadHandle](#getthreadhandle)|該当するショートカットは機能しない[CWorkerThread::GetThreadHandle](../../atl/reference/cworkerthread-class.md#getthreadhandle)です。|  
+|[CNoWorkerThread::GetThreadId](#getthreadid)|該当するショートカットは機能しない[CWorkerThread::GetThreadId](../../atl/reference/cworkerthread-class.md#getthreadid)です。|  
+|[CNoWorkerThread::Initialize](#initialize)|該当するショートカットは機能しない[CWorkerThread::Initialize](../../atl/reference/cworkerthread-class.md#initialize)です。|  
+|[CNoWorkerThread::RemoveHandle](#removehandle)|該当するショートカットは機能しない[CWorkerThread::RemoveHandle](../../atl/reference/cworkerthread-class.md#removehandle)です。|  
+|[CNoWorkerThread::Shutdown](#shutdown)|該当するショートカットは機能しない[CWorkerThread::Shutdown](../../atl/reference/cworkerthread-class.md#shutdown)です。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスと同じパブリック インターフェイスを提供する[使用](../../atl/reference/cworkerthread-class.md)します。 提供するこのインターフェイスが予期される、`MonitorClass`キャッシュ クラスをテンプレート パラメーター。  
+ このクラスと同じパブリック インターフェイスを提供する[使用](../../atl/reference/cworkerthread-class.md)です。 このインターフェイスをによって提供されると予想される、`MonitorClass`キャッシュ クラスをテンプレート パラメーター。  
   
- このクラスのメソッドを実装して、何も行いません。 常に HRESULT を返すメソッドは、S_OK を返すし、常に、ハンドルまたはスレッドの ID を返すメソッドは、0 を返します。  
+ このクラスでメソッドを実装して、何もしません。 常に HRESULT を返すメソッドは、S_OK を返し、常に、ハンドルまたはスレッドの ID を返すメソッドは、0 を返します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
   
 ##  <a name="addhandle"></a>CNoWorkerThread::AddHandle  
- 同等の非機能[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)します。  
+ 該当するショートカットは機能しない[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)です。  
   
 ```
 HRESULT AddHandle(HANDLE /* hObject
@@ -98,10 +84,10 @@ HRESULT AddHandle(HANDLE /* hObject
  常に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="addtimer"></a>CNoWorkerThread::AddTimer  
- 同等の非機能[CWorkerThread::AddTimer](../../atl/reference/cworkerthread-class.md#addtimer)します。  
+ 該当するショートカットは機能しない[CWorkerThread::AddTimer](../../atl/reference/cworkerthread-class.md#addtimer)です。  
   
 ```
 HRESULT AddTimer(DWORD /* dwInterval
@@ -118,10 +104,10 @@ HRESULT AddTimer(DWORD /* dwInterval
  常に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="getthreadhandle"></a>CNoWorkerThread::GetThreadHandle  
- 同等の非機能[CWorkerThread::GetThreadHandle](../../atl/reference/cworkerthread-class.md#getthreadhandle)します。  
+ 該当するショートカットは機能しない[CWorkerThread::GetThreadHandle](../../atl/reference/cworkerthread-class.md#getthreadhandle)です。  
   
 ```
 HANDLE GetThreadHandle() throw();
@@ -131,10 +117,10 @@ HANDLE GetThreadHandle() throw();
  常に NULL が返されます。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="getthreadid"></a>CNoWorkerThread::GetThreadId  
- 同等の非機能[CWorkerThread::GetThreadId](../../atl/reference/cworkerthread-class.md#getthreadid)します。  
+ 該当するショートカットは機能しない[CWorkerThread::GetThreadId](../../atl/reference/cworkerthread-class.md#getthreadid)です。  
   
 ```
 DWORD GetThreadId() throw();
@@ -144,10 +130,10 @@ DWORD GetThreadId() throw();
  常に 0 を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="initialize"></a>CNoWorkerThread::Initialize  
- 同等の非機能[CWorkerThread::Initialize](../../atl/reference/cworkerthread-class.md#initialize)します。  
+ 該当するショートカットは機能しない[CWorkerThread::Initialize](../../atl/reference/cworkerthread-class.md#initialize)です。  
   
 ```
 HRESULT Initialize() throw();
@@ -157,10 +143,10 @@ HRESULT Initialize() throw();
  常に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="removehandle"></a>CNoWorkerThread::RemoveHandle  
- 同等の非機能[CWorkerThread::RemoveHandle](../../atl/reference/cworkerthread-class.md#removehandle)します。  
+ 該当するショートカットは機能しない[CWorkerThread::RemoveHandle](../../atl/reference/cworkerthread-class.md#removehandle)です。  
   
 ```
 HRESULT RemoveHandle(HANDLE /* hObject
@@ -171,10 +157,10 @@ HRESULT RemoveHandle(HANDLE /* hObject
  常に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。  
+ このクラスで提供される実装では、何も行われません。  
   
 ##  <a name="shutdown"></a>CNoWorkerThread::Shutdown  
- 同等の非機能[CWorkerThread::Shutdown](../../atl/reference/cworkerthread-class.md#shutdown)します。  
+ 該当するショートカットは機能しない[CWorkerThread::Shutdown](../../atl/reference/cworkerthread-class.md#shutdown)です。  
   
 ```
 HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
@@ -184,5 +170,5 @@ HRESULT Shutdown(DWORD dwWait = ATL_WORKER_THREAD_WAIT) throw();
  常に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このクラスで提供されている実装では、何も行いません。
+ このクラスで提供される実装では、何も行われません。
 

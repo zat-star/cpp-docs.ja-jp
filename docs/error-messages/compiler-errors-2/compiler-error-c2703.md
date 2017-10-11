@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2703 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2703"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2703"
+title: "コンパイラ エラー C2703 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2703
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2703
 ms.assetid: 384295c3-643d-47ae-a9a6-865b3036aa84
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C2703
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a11316af3f0b215842a517206fc0bcef8f7dff81
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-\_\_leave ステートメントが異常です。  
+---
+# <a name="compiler-error-c2703"></a>コンパイラ エラー C2703
+無効な _ _leave ステートメント  
   
- `__leave` ステートメントは `__try` ブロック内に置く必要があります。  
+ A`__leave`ステートメントは、内部になければなりません、`__try`ブロックします。  
   
- 次の例では警告 C2703 が生成されます。  
+ 次の例では、C2703 が生成されます。  
   
 ```  
 // C2703.cpp  

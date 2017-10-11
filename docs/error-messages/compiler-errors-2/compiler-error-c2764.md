@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C2764 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2764"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2764"
+title: "コンパイラ エラー C2764 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2764
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2764
 ms.assetid: 3754f5af-e094-4425-be20-d0c9a9b5baec
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2764
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 18e32646c3930dfae79ffd1ed13dfa014da4ce1a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'param' : テンプレート パラメーターは部分的特殊化  '特殊化' では使用されないか、または推論できません。  
+---
+# <a name="compiler-error-c2764"></a>コンパイラ エラー C2764
+'param': テンプレート パラメーターは使用されている、または部分的特殊化 'specialization' を推論できません。  
   
- テンプレート パラメーターは、部分的な特化では使用されません。  これにより、テンプレート パラメーターを推定できないため、部分的な特化を使用できません。  
+ テンプレート パラメーターは、部分的特殊化では使用されません。 これにより、部分的特殊化をテンプレート パラメーターを推測できないため使用できなくなります。  
   
-## 使用例  
- 次の例では警告 C2764 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2764 が生成されます。  
   
 ```  
 // C2764.cpp  

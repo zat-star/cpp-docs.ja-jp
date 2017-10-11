@@ -1,46 +1,49 @@
 ---
-title: "mbsinit | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "mbsinit"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "mbsinit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "mbsinit 関数"
+title: mbsinit | Microsoft Docs
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-standard-libraries
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- mbsinit
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+apitype: DLLExport
+f1_keywords:
+- mbsinit
+dev_langs:
+- C++
+helpviewer_keywords:
+- mbsinit function
 ms.assetid: 4618555b-baaa-4d04-93fa-36abae411034
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# mbsinit
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
+ms.openlocfilehash: 5b6105de398d50770aecc55cd10f209e6c4521ba
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
+---
+# <a name="mbsinit"></a>mbsinit
 マルチバイト文字の変換状態を追跡します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -49,19 +52,19 @@ caps.handback.revision: 11
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `ps`  
- [mbstate\_t](../../c-runtime-library/standard-types.md) の変数へのポインター。  
+ [mbstate_t](../../c-runtime-library/standard-types.md) 変数へのポインター。  
   
-## 戻り値  
- `ps` が NULL の場合、または、変換中に 0 以外の。  
+## <a name="return-value"></a>戻り値  
+ `ps` が NULL であるか変換の実行中でない場合は 0 以外の値。  
   
-## 解説  
- **mbstate\_t** のポインターを受け取り、ANSI 1 を使用することが機能する場合は、`mbstate_t` のアドレスを渡すと、バッファー内の最後のバイトが変換されたかに関する情報を返します。  
+## <a name="remarks"></a>コメント  
+ **mbstate_t** ポインターを受け取る ANSI 関数を使用する場合、`mbstate_t` のアドレスを渡すと、バッファー内の最後のバイトが変換済みであるかどうかを示す情報が返されます。  
   
- 適切なコード ページはマルチバイト文字をサポートするためにインストールする必要があります。  
+ マルチバイト文字をサポートするには適切なコード ページをインストールする必要があります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // crt_mbsinit.cpp  
@@ -155,7 +158,7 @@ int main(int argc, char* argv[])
 }  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Locale set to: "Japanese_Japan.932"  
@@ -167,5 +170,5 @@ MB String: AaBbCcxXyYzZ
 WC String: AaBbCcxXyYzZ  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [バイト分類](../../c-runtime-library/byte-classification.md)

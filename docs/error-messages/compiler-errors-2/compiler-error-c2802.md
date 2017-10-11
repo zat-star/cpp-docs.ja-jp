@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 031c5b75a0f4008196501b8fb798384a52bbdf77
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: adc1b4178caebe9893727aaf8ff802d6f030e986
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2802"></a>コンパイラ エラー C2802
-静的メンバー '演算子' には、正式なパラメーターがありません。  
+静的メンバー 'operator 演算子' は仮パラメーターがありません。  
   
- によって、演算子が宣言された、`static`メンバー関数には、少なくとも&1; つのパラメーターを持つ必要があります。  
+ によって演算子が宣言されている、`static`メンバー関数は、少なくとも 1 つのパラメーターが必要です。  
   
- 次の例では、c2802 エラーが生成されます。  
+ 次の例では、C2802 が生成されます。  
   
 ```  
 // C2802.cpp  

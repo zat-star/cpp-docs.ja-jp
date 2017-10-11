@@ -19,31 +19,17 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 08b8a7990efbf981aec342b99bbb558fd9fab8d5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 70ccaf34a0191f0bd69c95d2cb110f6e6542a6d1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2696"></a>コンパイラ エラー C2696
-マネージ型 'type' の一時オブジェクトを作成できません。  
+マネージ型 'type' の一時オブジェクトを作成することはできません。  
   
-参照`const`アンマネージ プログラムでコンス トラクターを呼び出すし、スタックに一時オブジェクトを作成するには、コンパイラが発生します。 ただし、マネージ クラスはスタックに作成できません。  
+参照`const`アンマネージ プログラム コンパイラ コンス トラクターを呼び出すし、スタック上に一時オブジェクトを作成することが原因です。 ただし、マネージ クラスは、スタックに作成されません。  
   
-C2696 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
+C2696 は古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  
 

@@ -19,30 +19,16 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 22e97d420ab85719b6310455d9ace502b4c895b1
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 45d40adbe1e8dd6abe509e532ba5ccc97b21c4d1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3661"></a>コンパイラ エラー C3661
-明示的なオーバーライド リストには、オーバーライドするメソッドが見つかりませんでした  
+明示的なオーバーライド リストをオーバーライドするメソッドが見つかりませんでした。  
   
- 明示的なオーバーライドは、1 つまたは複数の型名を指定します。  ただし、オーバーライドする関数のシグネチャに一致する型に必要なシグネチャを持つ関数がありませんでした。  オーバーライドすると型名に基づいて場合がある&1; つまたは複数の仮想関数オーバーライド関数のシグネチャと一致する指定した型に。  
+ 明示的なオーバーライドは、1 つまたは複数の型名を指定します。  ただし、オーバーライドする関数のシグネチャに一致する型に必要なシグネチャを持つ関数がありませんでした。  しようとするとオーバーライドする型名に基づいて、必要があります 1 つまたは複数の仮想関数オーバーライド関数のシグネチャと一致する指定した型に。  
   
- 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)します。
+ 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)です。

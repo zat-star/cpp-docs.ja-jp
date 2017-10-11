@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2203 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2203"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2203"
+title: "コンパイラ エラー C2203 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2203
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2203
 ms.assetid: 5497df43-86f6-43d5-b6cb-723c4c589b10
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2203
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ebb6260cbf41ffcd48ef60a1bd183e27db17e16a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-delete 演算子では配列の一部や特定のメンバーを削除することはできません。  
+---
+# <a name="compiler-error-c2203"></a>コンパイラ エラー C2203
+削除演算子は配列の境界を指定できません  
   
- **\/Za** \(ANSI\) オプションを指定しても、`delete` 演算子は配列全体しか削除できません。配列の一部分や配列の指定したメンバーは削除できません。  
+ **/Za** (ANSI) のオプション、`delete`演算子は、配列全体ですがない部分または配列の特定のメンバーを削除できます。  
   
- 次の例では警告 C2203 が生成されます。  
+ 次の例では、C2203 が生成されます。  
   
 ```  
 // C2203.cpp  

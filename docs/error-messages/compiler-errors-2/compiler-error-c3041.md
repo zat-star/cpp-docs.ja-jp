@@ -19,32 +19,17 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a3db28762b8c20c7157b0ae04ee943e654f06cfa
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: be6182f557b2a9ca0985216935fcea654a3ea36a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3041"></a>コンパイラ エラー C3041
 'var': 'copyprivate' 句の変数は、それを囲むコンテキスト内でプライベートである必要があります  
   
- 渡される変数[copyprivate](../../parallel/openmp/reference/copyprivate.md)外側のコンテキストで共有することはできません。  
+ [copyprivate](../../parallel/openmp/reference/copyprivate.md) に渡された変数は、それを囲むコンテキスト内で共有できません。  
   
  次の例では C3041 が生成されます。  
   

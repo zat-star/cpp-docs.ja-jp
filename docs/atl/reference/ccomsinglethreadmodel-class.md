@@ -27,25 +27,11 @@ caps.latest.revision: 19
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: ff5d8d2ced1d6fe0196888d8c746844ace8307f8
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: e7fe0d3ea0b8fc5b42546f12c17d890250752260
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="ccomsinglethreadmodel-class"></a>CComSingleThreadModel クラス
@@ -63,83 +49,83 @@ class CComSingleThreadModel
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComSingleThreadModel::AutoCriticalSection](#autocriticalsection)|クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。|  
-|[CComSingleThreadModel::CriticalSection](#criticalsection)|クラスを参照`CComFakeCriticalSection`します。|  
-|[CComSingleThreadModel::ThreadModelNoCS](#threadmodelnocs)|参照`CComSingleThreadModel`します。|  
+|[CComSingleThreadModel::AutoCriticalSection](#autocriticalsection)|クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)です。|  
+|[CComSingleThreadModel::CriticalSection](#criticalsection)|クラスを参照`CComFakeCriticalSection`です。|  
+|[CComSingleThreadModel::ThreadModelNoCS](#threadmodelnocs)|参照`CComSingleThreadModel`です。|  
   
 ### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComSingleThreadModel::Decrement](#decrement)|デクリメント指定された変数の値。 この実装は、スレッド セーフではありません。|  
+|[CComSingleThreadModel::Decrement](#decrement)|デクリメント、指定した変数の値。 この実装は、スレッド セーフではありません。|  
 |[CComSingleThreadModel::Increment](#increment)|指定された変数の値をインクリメントします。 この実装は、スレッド セーフではありません。|  
   
 ## <a name="remarks"></a>コメント  
- `CComSingleThreadModel`インクリメントおよびデクリメントするため、変数の値に対応するメソッドを提供します。 異なり[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらのメソッドがスレッド セーフではありません。  
+ `CComSingleThreadModel`インクリメントおよびデクリメントするため、変数の値に対応するメソッドを提供します。 異なり[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)、これらのメソッドはスレッド セーフではありません。  
 
- 通常、使用して`CComSingleThreadModel`2 つのいずれかを通して`typedef`名か、 [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)または[CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)します。 各によって参照されるクラス`typedef`次の表に示すように使用すると、スレッド処理モデルによって異なります。  
+ 通常、使用して`CComSingleThreadModel`2 つのいずれかで`typedef`名か、 [CComObjectThreadModel](atl-typedefs.md#ccomobjectthreadmodel)または[CComGlobalsThreadModel](atl-typedefs.md#ccomglobalsthreadmodel)です。 各によって参照されるクラス`typedef`次の表に示すように使用される、スレッド処理モデルによって異なります。  
 
   
-|typedef|シングル スレッド モデル|アパートメント スレッド モデル|フリー スレッド モデル|  
+|typedef|1 つのスレッド モデル|アパートメント スレッド モデル|フリー スレッド モデル|  
 |-------------|----------------------------|-------------------------------|--------------------------|  
 |`CComObjectThreadModel`|S|S|M|  
 |`CComGlobalsThreadModel`|S|M|M|  
   
- S= `CComSingleThreadModel`;M =`CComMultiThreadModel`  
+ S =`CComSingleThreadModel`です。M =`CComMultiThreadModel`  
   
- `CComSingleThreadModel`3 つの定義自体`typedef`名。 `ThreadModelNoCS`参照`CComSingleThreadModel`します。 `AutoCriticalSection``CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)を取得し、クリティカル セクションの所有権を解放するに関連付けられている、空のメソッドを提供します。  
+ `CComSingleThreadModel`3 つの定義自体`typedef`名。 `ThreadModelNoCS`参照`CComSingleThreadModel`です。 `AutoCriticalSection`および`CriticalSection`クラスを参照して[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)、取得する、クリティカル セクションの所有権を解放すると関連付けられている空のメソッドを提供します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="autocriticalsection"></a>CComSingleThreadModel::AutoCriticalSection  
- 使用する場合`CComSingleThreadModel`、`typedef`名`AutoCriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
+ 使用する場合`CComSingleThreadModel`、`typedef`名前`AutoCriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)です。  
   
 ```
 typedef CComFakeCriticalSection AutoCriticalSection;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `CComFakeCriticalSection`クリティカル セクションの管轄外のメソッドは、何も行いません。  
+ `CComFakeCriticalSection`クリティカル セクションの管轄外のメソッドは何も行われません。  
   
- [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`AutoCriticalSection`します。 次の表は、スレッド処理モデル クラスとによって参照されるクリティカル セクション クラス間のリレーションシップを示しています`AutoCriticalSection`:。  
+ [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`AutoCriticalSection`です。 次の表は、スレッド処理モデル クラスと、クリティカル セクションによって参照される間のリレーションシップ`AutoCriticalSection`:  
   
-|定義されたクラス|参照されるクラス|  
+|定義されたクラス|参照クラス|  
 |----------------------|----------------------|  
 |`CComSingleThreadModel`|`CComFakeCriticalSection`|  
 |`CComMultiThreadModel`|`CComAutoCriticalSection`|  
 |`CComMultiThreadModelNoCS`|`CComFakeCriticalSection`|  
   
- 他に、 `AutoCriticalSection`、使用することができます、`typedef`名[CriticalSection](#criticalsection)します。 指定しないでください`AutoCriticalSection`グローバル オブジェクトまたは静的クラス メンバーの場合は、CRT のスタートアップ コードを削除します。  
+ 加え`AutoCriticalSection`、使用することができます、`typedef`名前[CriticalSection](#criticalsection)です。 指定しないでください`AutoCriticalSection`グローバル オブジェクトまたは CRT スタートアップ コードを除去したい場合に、静的クラス メンバーにします。  
   
 ### <a name="example"></a>例  
- 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
+ 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
 ##  <a name="criticalsection"></a>CComSingleThreadModel::CriticalSection  
- 使用する場合`CComSingleThreadModel`、`typedef`名`CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)します。  
+ 使用する場合`CComSingleThreadModel`、`typedef`名前`CriticalSection`クラスを参照[CComFakeCriticalSection](../../atl/reference/ccomfakecriticalsection-class.md)です。  
   
 ```
 typedef CComFakeCriticalSection CriticalSection;
 ```  
   
 ### <a name="remarks"></a>コメント  
- `CComFakeCriticalSection`クリティカル セクションの管轄外のメソッドは、何も行いません。  
+ `CComFakeCriticalSection`クリティカル セクションの管轄外のメソッドは何も行われません。  
   
- [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`CriticalSection`します。 次の表は、スレッド処理モデル クラスとによって参照されるクリティカル セクション クラス間のリレーションシップを示しています`CriticalSection`:。  
+ [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`CriticalSection`です。 次の表は、スレッド処理モデル クラスと、クリティカル セクションによって参照される間のリレーションシップ`CriticalSection`:  
   
-|定義されたクラス|参照されるクラス|  
+|定義されたクラス|参照クラス|  
 |----------------------|----------------------|  
 |`CComSingleThreadModel`|`CComFakeCriticalSection`|  
 |`CComMultiThreadModel`|`CComCriticalSection`|  
 |`CComMultiThreadModelNoCS`|`CComFakeCriticalSection`|  
   
- 他に、 `CriticalSection`、使用することができます、`typedef`名[AutoCriticalSection](#autocriticalsection)します。 指定しないでください`AutoCriticalSection`グローバル オブジェクトまたは静的クラス メンバーの場合は、CRT のスタートアップ コードを削除します。  
+ 加え`CriticalSection`、使用することができます、`typedef`名前[AutoCriticalSection](#autocriticalsection)です。 指定しないでください`AutoCriticalSection`グローバル オブジェクトまたは CRT スタートアップ コードを除去したい場合に、静的クラス メンバーにします。  
   
 ### <a name="example"></a>例  
- 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
+ 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
 ##  <a name="decrement"></a>CComSingleThreadModel::Decrement  
- この静的関数デクリメント、変数の値が指す`p`します。  
+ この静的関数デクリメント、変数の値によって示される`p`です。  
   
 ```
 static ULONG WINAPI Decrement(LPLONG p) throw();
@@ -150,10 +136,10 @@ static ULONG WINAPI Decrement(LPLONG p) throw();
  [in]デクリメントする変数へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 減算の結果です。  
+ 減算の結果。  
   
 ##  <a name="increment"></a>CComSingleThreadModel::Increment  
- この静的関数デクリメント、変数の値が指す`p`します。  
+ この静的関数デクリメント、変数の値によって示される`p`です。  
   
 ```
 static ULONG WINAPI Increment(LPLONG p) throw();
@@ -164,26 +150,26 @@ static ULONG WINAPI Increment(LPLONG p) throw();
  [in]インクリメントする変数へのポインター。  
   
 ### <a name="return-value"></a>戻り値  
- 増分の結果です。  
+ 増分値の結果。  
   
 ##  <a name="threadmodelnocs"></a>CComSingleThreadModel::ThreadModelNoCS  
- 使用する場合`CComSingleThreadModel`、`typedef`名`ThreadModelNoCS`単に参照`CComSingleThreadModel`します。  
+ 使用する場合`CComSingleThreadModel`、`typedef`名前`ThreadModelNoCS`単に参照`CComSingleThreadModel`です。  
   
 ```
 typedef CComSingleThreadModel ThreadModelNoCS;
 ```  
   
 ### <a name="remarks"></a>コメント  
- [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`ThreadModelNoCS`します。 次の表は、スレッド処理モデル クラスとによって参照されるクラス間のリレーションシップを示しています`ThreadModelNoCS`:。  
+ [CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)と[CComMultiThreadModelNoCS](../../atl/reference/ccommultithreadmodelnocs-class.md)の定義を含む`ThreadModelNoCS`です。 次の表は、スレッド処理モデル クラスとによって参照されるクラスの関係を示しています`ThreadModelNoCS`:。  
   
-|定義されたクラス|参照されるクラス|  
+|定義されたクラス|参照クラス|  
 |----------------------|----------------------|  
 |`CComSingleThreadModel`|`CComSingleThreadModel`|  
 |`CComMultiThreadModel`|`CComMultiThreadModelNoCS`|  
 |`CComMultiThreadModelNoCS`|`CComMultiThreadModelNoCS`|  
   
 ### <a name="example"></a>例  
- 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)します。  
+ 参照してください[CComMultiThreadModel::AutoCriticalSection](../../atl/reference/ccommultithreadmodel-class.md#autocriticalsection)です。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

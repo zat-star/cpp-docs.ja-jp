@@ -19,32 +19,17 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 59af9d4586607cc532e2dd8e206fa30cee95b755
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0e8d665e473877ac78612ccaeb9e2e917ee4094c
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3058"></a>コンパイラ エラー C3058
 'symbol' : シンボルは、'copyin' 句の中で使用される前に 'threadprivate' として宣言されていません  
   
- シンボルを宣言する必要がありますまず[threadprivate](../../parallel/openmp/reference/threadprivate.md)をで使用する前に、 [copyin](../../parallel/openmp/reference/copyin.md)句。  
+ シンボルは、 [copyin](../../parallel/openmp/reference/threadprivate.md) 句で使用する前に、最初に [threadprivate](../../parallel/openmp/reference/copyin.md) として宣言されている必要があります。  
   
  次の例では C3058 が生成されます。  
   

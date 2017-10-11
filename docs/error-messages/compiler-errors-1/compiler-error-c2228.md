@@ -19,32 +19,17 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 3e1a7fb29d792a5b72c2f6b67021c134c224bac2
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6960d2a34a6a68925e04e0812730025d1ce2ff92
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2228"></a>コンパイラ エラー C2228
 '.identifier' の左側はクラス、構造体、共用体でなければなりません  
   
- ピリオド (.) の左側のオペランドはクラス、構造体または共用体ではありません。  
+ ピリオド (.) の左側のオペランドはクラス、構造体、または共用体ではありません。  
   
  次の例では C2228 が生成されます。  
   
@@ -67,6 +52,6 @@ int main() {
   
  マネージ拡張を使用する際に、間違った構文を使用した場合も、このエラーが表示されます。 他の Visual Studio の言語ではドット演算子を使用してマネージ クラスのメンバーにアクセスできますが、C++ でのオブジェクトへのポインターは、-> 演算子を使用してメンバーにアクセスする必要があることを意味します。  
   
- 正しくありません。`String * myString = checkedListBox1->CheckedItems->Item[0].ToString();`  
+ 誤: `String * myString = checkedListBox1->CheckedItems->Item[0].ToString();`  
   
- そうです：`String * myString = checkedListBox1->CheckedItems->Item[0]->ToString();`
+ 正: `String * myString = checkedListBox1->CheckedItems->Item[0]->ToString();`

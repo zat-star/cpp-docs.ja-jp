@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3671 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3671"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3671"
+title: "コンパイラ エラー C3671 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3671
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3671
 ms.assetid: d684e4ae-87e2-4424-80bb-6f346652c831
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3671
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b64c8be94bc6eb89fea04d7edee342e0015b8a9b
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function\_1' : 関数は 'function\_2' をオーバーライドしません  
+---
+# <a name="compiler-error-c3671"></a>コンパイラ エラー C3671
+'function_1': 関数 'function_2' をオーバーライドしません  
   
- 明示的なオーバーライド構文を使用する場合に関数がオーバーライドされないときは、コンパイルがエラーを生成します。詳細については、「[Explicit Overrides](../../windows/explicit-overrides-cpp-component-extensions.md)」を参照してください。  
+ 明示的なオーバーライド構文を使用する場合、コンパイラは、関数がオーバーライドされていない場合、エラーを生成します。  参照してください[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)詳細についてはします。  
   
-## 使用例  
- 次の例では C3671 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3671 を生成します。  
   
 ```  
 // C3671.cpp  

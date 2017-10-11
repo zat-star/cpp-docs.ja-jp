@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3748 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3748"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3748"
+title: "コンパイラ エラー C3748 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3748
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3748
 ms.assetid: 6fe71a0a-dd93-4ce6-9729-b9616360cf34
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3748
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 678fdb112114e7e6fa8aff148af488a17952fa47
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'interface' : アンマネージ インターフェイスはイベントを発生させることができません。  
+---
+# <a name="compiler-error-c3748"></a>コンパイラ エラー C3748
+'interface': マネージ インターフェイスはイベントを発生させる可能性がありますいません。  
   
- [\_\_event](../../cpp/event.md) キーワードは、インターフェイス内では使用できません。  
+ [_ _Event](../../cpp/event.md)インターフェイス内のキーワードが出現ことはできません。  
   
- 次の例では警告 C3748 が生成されます。  
+ 次の例では、C3748 が生成されます。  
   
 ```  
 // C3748.cpp  

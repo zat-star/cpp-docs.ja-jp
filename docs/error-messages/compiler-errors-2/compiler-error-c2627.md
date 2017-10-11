@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 2d0354971d4f512c7ba98a1e6d0f7cb014cba5af
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 2af1b475fb6eff2a37f333aa0ef5ed07eae791e2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2627"></a>コンパイラ エラー C2627
-'function': メンバー関数は無名共用体では許可されません  
+'function': メンバー関数が匿名共用体では使用できません  
   
- [無名共用体](../../cpp/unions.md#anonymous_unions)メンバー関数を持つことはできません。  
+ [匿名共用体](../../cpp/unions.md#anonymous_unions)メンバー関数を持つことはできません。  
   
- 次の例では、c2627 エラーが生成されます。  
+ 次の例では、C2627 が生成されます。  
   
 ```  
 // C2627.cpp  

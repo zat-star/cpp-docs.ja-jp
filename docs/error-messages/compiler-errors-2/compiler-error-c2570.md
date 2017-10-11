@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2570 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2570"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2570"
+title: "コンパイラ エラー C2570 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2570
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2570
 ms.assetid: d65d0b32-2fac-464a-bcdf-0ebcedf3bf32
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2570
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6b5d53463e889504f202b7d50b8c5ac877f27cf8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'identifier' : クラス、構造体、共用体から、共用体が派生しています。  
+---
+# <a name="compiler-error-c2570"></a>コンパイラ エラー C2570
+'identifier': 共用体は基底クラスを持つことはできません  
   
- 共用体が、クラス、構造体、または共用体から派生しています。  これは認められていません。  派生型はクラスまたは構造体として宣言してください。  
+ 共用体は、クラス、構造体、または共用体から派生します。 これは認められていません。 代わりに、クラスまたは構造体として、派生型を宣言します。  
   
- 次の例では警告 C2570 が生成されます。  
+ 次の例では、C2570 が生成されます。  
   
 ```  
 // C2570.cpp  

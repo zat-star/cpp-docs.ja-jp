@@ -19,28 +19,14 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 65bfd2b4f939d5dc59c5162b13251eb34896ed00
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c2db3d8ac30d51e04d425bd27e9d9d5c12e62931
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2722"></a>コンパイラ エラー C2722
-':: 演算子 ': 次の演算子のコマンドは正しくありません'演算子' を使用してください。  
+':: 演算子 ': 次の演算子コマンド; が無効です'operator 演算子' の使用します。  
   
  `operator`ステートメントの再定義`::new`または`::delete`です。 `new`と`delete`演算子はグローバルなため、スコープ解決演算子 (`::`) は意味がありません。 削除、`::`演算子。

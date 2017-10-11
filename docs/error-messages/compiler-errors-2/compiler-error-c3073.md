@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C3073 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3073"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3073"
+title: "コンパイラ エラー C3073 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3073
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3073
 ms.assetid: b24b9b8b-f9fb-4c3c-a1a0-97fad2081bfc
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3073
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 860cc8fccb545a8c66a8a5724b9854e9547deb10
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'型' : ref クラスには、ユーザー定義されたコピー コンストラクターがありません  
+---
+# <a name="compiler-error-c3073"></a>コンパイラ エラー C3073
+'type': ref クラスには、ユーザー定義のコピー コンス トラクターがありません。  
   
- [\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md) コンパイルでは、コンパイラは参照型のコピー コンストラクターを生成しません。  参照型のインスタンスがコピーされることがわかっている場合は、**\/clr** コンパイルで、その型の独自のコピー コンストラクターを定義する必要があります。  
+ [/Clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)コンパイル、コンパイラは参照型のコピー コンス トラクターを生成しません。 いずれかで**/clr**コンパイルでは、コピーする型のインスタンスの場合は参照型の独自のコピー コンス トラクターを定義する必要があります。  
   
- 詳細については、「[参照型の C\+\+ スタック セマンティクス](../../dotnet/cpp-stack-semantics-for-reference-types.md)」を参照してください。  
+ 詳細については、次を参照してください。[参照型の C++ スタック セマンティクス](../../dotnet/cpp-stack-semantics-for-reference-types.md)です。  
   
-## 使用例  
- 次の例では C3073 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3073 を生成します。  
   
 ```  
 // C3073.cpp  

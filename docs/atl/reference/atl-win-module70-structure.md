@@ -22,29 +22,15 @@ caps.latest.revision: 15
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4e393abb2a904a0f5e101efe3d78d0645664397b
-ms.openlocfilehash: 383384c8f08b98592f92b5d38850137c1c0c6d54
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 7f521b418b7d179eb506a5e9df2887addec059ef
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="atlwinmodule70-structure"></a>_ATL_WIN_MODULE70 構造体
-ATL のウィンドウ作成コードで使用されます。  
+ATL の windowing コードによって使用されます。  
   
 ## <a name="syntax"></a>構文  
   
@@ -59,7 +45,7 @@ struct _ATL_WIN_MODULE70 {
   
 ## <a name="members"></a>メンバー  
  `cbSize`  
- バージョン管理に使用される、構造体のサイズ。  
+ バージョン管理に使用される、構造のサイズ。  
   
  `m_csWindowCreate`  
  ウィンドウの登録コードへのアクセスをシリアル化に使用します。 ATL で内部的に使用  
@@ -68,10 +54,10 @@ struct _ATL_WIN_MODULE70 {
  Windows をそれらのオブジェクトにバインドするために使用します。 ATL で内部的に使用  
   
  **m_rgWindowClassAtoms**  
- ある終了時に正しく登録できるように、ウィンドウ クラスの登録を追跡するために使用されます。 ATL で内部的に使用  
+ 終了時に正しく登録いないことができるように、ウィンドウ クラスの登録を追跡するために使用されます。 ATL で内部的に使用  
   
 ## <a name="remarks"></a>コメント  
- [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)の typedef と定義`_ATL_WIN_MODULE70`します。  
+ [_ATL_WIN_MODULE](atl-typedefs.md#_atl_win_module)の typedef として定義された`_ATL_WIN_MODULE70`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  

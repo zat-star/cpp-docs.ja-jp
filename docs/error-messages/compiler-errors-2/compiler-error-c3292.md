@@ -19,32 +19,17 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 873f0a2e57aff09435763a5091cc8a384294690a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b5bad02a4c7eae9a30855596ccb1695430c4f15e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3292"></a>コンパイラ エラー C3292
 cli 名前空間はを再度開くことはできません  
   
- コード内で cli 名前空間を宣言することはできません。  詳細については、次を参照してください。[プラットフォーム、既定では、および cli 名前空間](../../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)します。  
+ コード内で cli 名前空間を宣言することはできません。  詳細については、次を参照してください。[プラットフォーム、既定値、および cli 名前空間](../../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
  次の例では C3292 が生成されます。  

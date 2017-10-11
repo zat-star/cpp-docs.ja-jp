@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3637 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3637"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3637"
+title: "コンパイラ エラー C3637 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3637
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3637
 ms.assetid: 72391377-8519-43d9-870a-73a6423deb74
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3637
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 111e4025122ca298939e696901cb37f079d4be21
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'関数' : friend 関数の定義を関数 '型' の特殊化にすることはできません。  
+---
+# <a name="compiler-error-c3637"></a>コンパイラ エラー C3637
+'function': friend 関数の定義は、関数型の特殊化をすることはできません  
   
- フレンド関数が、テンプレートまたはジェネリックに対して正しく定義されていません。  
+ フレンド関数は、テンプレートまたはジェネリックに対して適切に定義されました。  
   
- 次の例では警告 C3637 が生成されます。  
+ 次の例では、C3637 が生成されます。  
   
 ```  
 // C3637.cpp  
@@ -40,7 +43,7 @@ struct S {
 };  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C3637b.cpp  
@@ -53,7 +56,7 @@ struct S {
 };  
 ```  
   
- C3637 は、ジェネリックを使用しているときも発生します。  
+ C3637 は、ジェネリックを使用するときにも発生することができます。  
   
 ```  
 // C3637c.cpp  
@@ -67,7 +70,7 @@ struct S {
 };  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C3637d.cpp  

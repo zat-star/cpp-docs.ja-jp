@@ -19,33 +19,19 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: cb42a1c0e27896f8cbd19c4993c1e57997de5579
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4da505740eba9b291d8c4139cf9cd6fded70fdfa
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3020"></a>コンパイラ エラー C3020
-'var': OpenMP の for ループのインデックス変数は、ループの本体では変更できません  
+'var': OpenMP の 'for' ループのインデックス変数は、ループの本体では変更できません  
   
  OpenMP`for`ループ可能性があります (ループ カウンター) の本文内のインデックスを変更していない、`for`ループします。  
   
- 次の例では、c3020 エラーが生成されます。  
+ 次の例では、C3020 が生成されます。  
   
 ```  
 // C3020.cpp  
@@ -64,9 +50,9 @@ int main() {
 }  
 ```  
   
- 宣言された変数[lastprivate](../../parallel/openmp/reference/lastprivate.md)並列化されたループの内部インデックスとして使用できません。  
+ 宣言された変数[lastprivate](../../parallel/openmp/reference/lastprivate.md)並列化されたループ内のインデックスとして使用することはできません。  
   
- 次の例が示されます C3020&2; 番目の lastprivate その lastprivate が for ループ内で最も外側の idx_a への書き込みをトリガーするためです。 最初の lastprivate でエラーは、その lastprivate (技術的には、前回のイテレーションの最後) で、ループの最も外側の外部 idx_a への書き込みをトリガーするため。 次の例では、c3020 エラーを生成します。  
+ 次の例は、C3020 の 2 つ目の lastprivate その lastprivate が for ループ内で最も外側の idx_a への書き込みをトリガーするためです。 その lastprivate for ループ (技術的には、最後に、前回のイテレーションの) 最も外側の外部 idx_a への書き込みをトリガーするため、最初の lastprivate はエラーを提供しません。 次の例では、C3020 を生成します。  
   
 ```  
 // C3020b.cpp  

@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: d29b7a2f9a618639b934a32d92d2655766f094ba
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ee25c25fd1c808ece4a6ef7f8538b83216c4b180
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2890"></a>コンパイラ エラー C2890
-'class': ref クラスは、1 つのインターフェイスではない基本クラスを持つのみことができます  
+'class': ref クラスは、1 つのインターフェイスではない基底クラスを持つことができますのみ  
   
- 参照クラスには、基本クラスの&1; つしかありません。  
+ 参照クラスでは、1 つの基本クラスを持つことができますのみです。  
   
- 次の例では、c2890 エラーが生成されます。  
+ 次の例では、C2890 が生成されます。  
   
 ```  
 // C2890.cpp  

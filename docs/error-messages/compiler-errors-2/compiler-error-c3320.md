@@ -19,32 +19,17 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 4b4acfe97e38cf13e336b7c58ffc868c69cf7a09
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: fbc375682bb42070d49dd08b711926462c17f32b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3320"></a>コンパイラ エラー C3320
 'type': 型には、モジュール 'name' プロパティと同じ名前を指定することはできません  
   
-渡されたパラメーターと、エクスポートされたユーザー定義型 (UDT)、構造体、クラス、列挙型、または共用体の場合が同じ名前を持つことはできません、[モジュール](../../windows/module-cpp.md)属性の name プロパティです。  
+渡されるパラメーターとして、エクスポートされたユーザー定義型 (UDT)、構造体型、クラス、列挙型、または共用体の場合が、同じ名前を持つことはできません、[モジュール](../../windows/module-cpp.md)属性の name プロパティです。  
   
 ## <a name="example"></a>例  
 次の例では C3320 が生成されます。  

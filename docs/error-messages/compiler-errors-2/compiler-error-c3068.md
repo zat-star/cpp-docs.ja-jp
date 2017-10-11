@@ -1,47 +1,50 @@
 ---
-title: "コンパイラ エラー C3068 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3068"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3068"
+title: "コンパイラ エラー C3068 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3068
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3068
 ms.assetid: 613e3447-b4a8-4268-a661-297bed63ccdf
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3068
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 413376428e33cbc703b3371589777ba4fed0c1f7
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'関数' : 'naked' 関数は、C\+\+ 例外が発生した場合に、アンワインディングを必要とするオブジェクトを含むことはできません  
+---
+# <a name="compiler-error-c3068"></a>コンパイラ エラー C3068
+'function': 'naked' 関数が C++ 例外が発生した場合に、アンワインディングを必要とするオブジェクトを含めることはできません  
   
- 例外をスローした [naked](../Topic/naked%20\(C++\).md) 関数でスタック アンワインドを実行できませんでした。この関数で一時オブジェクトが作成され、C\+\+ 例外処理 \([\/EHsc](../../build/reference/eh-exception-handling-model.md)\) が指定されたためです。  
+ コンパイラでのスタックがアンワインドを実行できなかった、 [naked](../../cpp/naked-cpp.md)を一時オブジェクトは、関数と C++ 例外処理で作成されたために、例外をスローした関数 ([/EHsc](../../build/reference/eh-exception-handling-model.md)) が指定されました。  
   
- このエラーを解決するには、以下の操作の少なくとも 1 つを実行します。  
+ このエラーを解決するには、次の少なくとも 1 つの操作を行います。  
   
--   \/EHsc を指定してコンパイルしません。  
+-   /EHsc をコンパイルしません。  
   
--   関数は `naked` のマークを付けません。  
+-   関数としてのマークを付けないでください`naked`です。  
   
--   関数で一時オブジェクトを作成しません。  
+-   関数では、一時オブジェクトを作成できません。  
   
- 関数がスタックに一時オブジェクトを作成する場合、関数が例外をスローする場合、および C\+\+ 例外処理が有効な場合は、例外がスローされるとコンパイラはスタックをクリーンアップします。  
+ 関数は、関数は、例外をスローし、C++ 例外処理が有効になっている場合、スタックで、一時オブジェクトを作成する場合は、例外がスローされた場合、スタックをコンパイラがクリーンアップされます。  
   
- 例外がスローされると、prolog および epilog と呼ばれる naked 関数には存在しないコンパイラ生成のコードが、関数に対して実行されます。  
+ 例外がスローされます、コンパイラで生成されたコード、プロローグと呼ばれるエピローグとするが、naked 関数でなくては、関数に対して実行されます。  
   
-## 使用例  
- 次の例では警告 C3068 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3068 が生成されます。  
   
 ```  
 // C3068.cpp  

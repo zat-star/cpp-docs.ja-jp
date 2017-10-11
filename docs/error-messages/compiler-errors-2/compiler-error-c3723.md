@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3723 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3723"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3723"
+title: "コンパイラ エラー C3723 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3723
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3723
 ms.assetid: ef0fb1ff-3f9a-4093-a6b6-894d1ab0c4b9
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C3723
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6406d664cea17b75fa9ff703ae15e26d7baf042c
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : イベントを解決できません。  
+---
+# <a name="compiler-error-c3723"></a>コンパイラ エラー C3723
+'function': イベントを解決できませんでした  
   
- `function` では、呼び出すイベントを解決できません。  
+ `function`呼び出してイベントを解決できませんでした。  
   
- 次の例では警告 C3723 が生成されます。  
+ 次の例では、C3723 が生成されます。  
   
 ```  
 // C3723.cpp  
@@ -51,9 +54,9 @@ int main() {
 }  
 ```  
   
- `__hook` および `__unhook` は、\/clr プログラミングと互換性がありません。代わりに、\+\= 演算子および \-\= 演算子を使用してください。  
+ `__hook`および`__unhook`/clr プログラミングと互換性がありません。  代わりに、+ = および -= 演算子を使用します。  
   
- 次の例では警告 C3723 が生成されます。  
+ 次の例では、C3723 が生成されます。  
   
 ```  
 // C3723b.cpp  

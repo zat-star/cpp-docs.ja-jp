@@ -19,37 +19,23 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a804a858d625c4e787c1202182e275ec9bee3af1
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: acd48401d3abc17d994e861bf6fb046450d88ca6
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="fatal-error-c1071"></a>致命的なエラー C1071
 コメント内で予期しない EOF が見つかりました。  
   
- コンパイラでは、コメントのスキャン中に、ファイルの末尾に達しています。  
+ コンパイラでは、コメントのスキャン中に、ファイルの末尾に達しました。  
   
 ### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
 1.  コメントの終端記号がありません (*/)。  
   
-2.  ソース ファイルの最後の行のコメントの後ろに改行文字がありません。  
+2.  ソース ファイルの最後の行のコメントの後に改行文字がありません。  
   
  次の例では、C1071 が生成されます。  
   

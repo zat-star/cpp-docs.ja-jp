@@ -19,34 +19,20 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 970a3f032ac367ec24cb5b036e3f3723732da754
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: f2f821b1ba6dc523ba3a664fb9c8b658dee1c78f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3830"></a>コンパイラ エラー C3830
-'type1': 'type2'、値型は、インターフェイス クラスからのみ継承できますから継承できません。  
+'type1': 'type2' に値型はインターフェイス クラスからのみ継承できますから継承できません。  
   
- 値型では、基本クラスを継承できません。  詳細については、次を参照してください。[クラスと構造体](../../windows/classes-and-structs-cpp-component-extensions.md)します。  
+ 値の型は、基本クラスを継承できません。  詳細については、次を参照してください。[クラスと構造体](../../windows/classes-and-structs-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
- 次の例では、c3830 エラーが生成されます。  
+ 次の例では、C3830 が生成されます。  
   
 ```  
 // C3830a.cpp  

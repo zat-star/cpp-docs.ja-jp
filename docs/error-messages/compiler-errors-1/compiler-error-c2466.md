@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C2466 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2466"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2466"
+title: "コンパイラ エラー C2466 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2466
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2466
 ms.assetid: 75b251d1-7d0b-4a86-afca-26adedf74486
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C2466
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3c3ad19ce37aa51bd6b670da6e857d7eccce04ca
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-サイズが 0 の配列を割り当てようとしました。  
+---
+# <a name="compiler-error-c2466"></a>コンパイラ エラー C2466
+サイズが 0 の配列を割り当てることができません。  
   
- サイズが 0 の配列の割り当てまたは宣言が行われています。  配列サイズの定数式は、0 より大きい整数である必要があります。  添字が 0 の配列宣言が有効なのは、Microsoft 拡張機能が有効 \([\/Ze](../../build/reference/za-ze-disable-language-extensions.md) オプション指定時\) で、クラス、構造体、または共用体のメンバーに対して使用する場合だけです。  
+ 配列が割り当てられているか、サイズが 0 で宣言されています。 配列のサイズの定数式は、0 より大きい整数である必要があります。 添字が 0 の配列宣言はクラス、構造体、または共用体メンバーに対してのみ、Microsoft 拡張機能でのみ有効です。 ([/Ze](../../build/reference/za-ze-disable-language-extensions.md))。  
   
- 次の例では警告 C2466 が生成されます。  
+ 次の例では、C2466 が生成されます。  
   
 ```  
 // C2466.cpp  

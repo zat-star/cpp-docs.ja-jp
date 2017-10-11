@@ -1,39 +1,42 @@
 ---
-title: "コンパイラ エラー C2097 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2097"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2097"
+title: "コンパイラ エラー C2097 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2097
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2097
 ms.assetid: 7e5b2fd4-f61c-4b8a-b265-93e987a04bd3
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C2097
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: d6955a610e3109c3b16edf96913be4503ee4c647
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-初期化が正しく行われていません。  
+---
+# <a name="compiler-error-c2097"></a>コンパイラ エラー C2097
+初期化が正しくありません。  
   
-### 次のような原因をチェックして問題を解決するには  
+### <a name="to-fix-by-checking-the-following-possible-causes"></a>次のような原因をチェックして問題を解決するには  
   
-1.  定数ではない値での変数の初期化  
+1.  非定数の値を使用して変数を初期化します。  
   
-2.  long アドレスでの short アドレスの初期化  
+2.  長いアドレスを持つ short アドレスの初期化。  
   
-3.  **\/Za** オプションを指定してコンパイルしているときの、定数でない式でのローカルな構造体、共用体、配列の初期化  
+3.  ローカル構造体、共用体、または非定数の式をコンパイルするときに配列の初期化**/Za**です。  
   
-4.  コンマ演算子を含む式での初期化  
+4.  コンマ演算子を含む式で初期化します。  
   
-5.  定数でもシンボルでもない式での初期化
+5.  初期化式は定数でもシンボルを定義します。

@@ -33,29 +33,15 @@ caps.latest.revision: 26
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 979dc23eabc2ba2362f7301fc34ca89016d58f37
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 1802e1bd3a42767cbc5fa0705f9ccdfd3afa2589
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="catlpreviewctrlimpl-class"></a>CAtlPreviewCtrlImpl クラス
-このクラスは、リッチ プレビュー用に、シェルによって提供されるホスト ウィンドウに配置されるウィンドウの ATL 実装です。  
+このクラスは、ATL リッチ プレビュー用にシェルによって提供されるホスト ウィンドウに配置されているウィンドウの実装です。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -80,12 +66,12 @@ class CAtlPreviewCtrlImpl : public CWindowImpl<CAtlPreviewCtrlImpl>, public IPre
 |名前|説明|  
 |----------|-----------------|  
 |[CAtlPreviewCtrlImpl::Create](#create)|Windows のウィンドウを作成する豊富なプレビュー ハンドラーによって呼び出されます。|  
-|[CAtlPreviewCtrlImpl::Destroy](#destroy)|このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーが呼び出されます。|  
+|[CAtlPreviewCtrlImpl::Destroy](#destroy)|このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーによって呼び出されます。|  
 |[CAtlPreviewCtrlImpl::Focus](#focus)|このコントロールにフォーカスが入力を設定します。|  
 |[CAtlPreviewCtrlImpl::OnPaint](#onpaint)|WM_PAINT メッセージを処理します。|  
 |[CAtlPreviewCtrlImpl::Redraw](#redraw)|このコントロールを再描画するように指示します。|  
 |[CAtlPreviewCtrlImpl::SetHost](#sethost)|このコントロールの新しい親を設定します。|  
-|[CAtlPreviewCtrlImpl::SetPreviewVisuals](#setpreviewvisuals)|リッチ プレビュー ハンドラーによってコンテンツとき呼び出されます豊富なプレビュー機能のビジュアルを設定する必要があります。|  
+|[CAtlPreviewCtrlImpl::SetPreviewVisuals](#setpreviewvisuals)|によって呼び出されますリッチ プレビュー ハンドラーのリッチ プレビューでのビジュアルを設定する必要があるときにコンテンツ。|  
 |[CAtlPreviewCtrlImpl::SetRect](#setrect)|このコントロールの新しい外接する四角形を設定します。|  
   
 ### <a name="protected-methods"></a>プロテクト メソッド  
@@ -98,7 +84,7 @@ class CAtlPreviewCtrlImpl : public CWindowImpl<CAtlPreviewCtrlImpl>, public IPre
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAtlPreviewCtrlImpl::m_plf](#m_plf)|プレビュー ウィンドウにテキストを表示するために使用するフォントです。|  
+|[CAtlPreviewCtrlImpl::m_plf](#m_plf)|プレビュー ウィンドウでテキストを表示するために使用するフォントです。|  
   
 ### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
@@ -156,7 +142,7 @@ virtual BOOL Create(HWND hWndParent, const RECT* prc);
   
 ### <a name="parameters"></a>パラメーター  
  `hWndParent`  
- リッチ プレビュー用に、シェルによって提供されるホスト ウィンドウへのハンドル。  
+ リッチ プレビュー用にシェルによって提供される、ホスト ウィンドウへのハンドル。  
   
  `prc`  
  初期サイズとウィンドウの位置を指定します。  
@@ -167,7 +153,7 @@ virtual BOOL Create(HWND hWndParent, const RECT* prc);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="destroy"></a>CAtlPreviewCtrlImpl::Destroy  
- このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーが呼び出されます。  
+ このコントロールを破棄する必要があるときに、豊富なプレビュー ハンドラーによって呼び出されます。  
   
 ```
 virtual void Destroy();
@@ -184,7 +170,7 @@ virtual void DoPaint(HDC hdc);
   
 ### <a name="parameters"></a>パラメーター  
  `hdc`  
- 描画するためのデバイス コンテキストへのハンドル。  
+ 描画のデバイス コンテキストへのハンドル。  
   
 ### <a name="remarks"></a>コメント  
   
@@ -216,7 +202,7 @@ COLORREF m_clrText;
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="m_plf"></a>CAtlPreviewCtrlImpl::m_plf  
- プレビュー ウィンドウにテキストを表示するために使用するフォントです。  
+ プレビュー ウィンドウでテキストを表示するために使用するフォントです。  
   
 ```
 const LOGFONTW* m_plf;
@@ -246,7 +232,7 @@ LRESULT OnPaint(
  このパラメーターは使用されません。  
   
  `bHandled`  
- この関数を返すときは`TRUE`です。  
+ この関数が戻るときに、格納`TRUE`です。  
   
 ### <a name="return-value"></a>戻り値  
  常に 0 を返します。  
@@ -276,7 +262,7 @@ virtual void SetHost(HWND hWndParent);
 ### <a name="remarks"></a>コメント  
   
 ##  <a name="setpreviewvisuals"></a>CAtlPreviewCtrlImpl::SetPreviewVisuals  
- リッチ プレビュー ハンドラーによってコンテンツとき呼び出されます豊富なプレビュー機能のビジュアルを設定する必要があります。  
+ によって呼び出されますリッチ プレビュー ハンドラーのリッチ プレビューでのビジュアルを設定する必要があるときにコンテンツ。  
   
 ```
 virtual void SetPreviewVisuals(
@@ -293,7 +279,7 @@ virtual void SetPreviewVisuals(
  プレビュー ウィンドウのテキストの色。  
   
  `plf`  
- プレビュー ウィンドウにテキストを表示するために使用するフォントです。  
+ プレビュー ウィンドウでテキストを表示するために使用するフォントです。  
   
 ### <a name="remarks"></a>コメント  
   
@@ -306,7 +292,7 @@ virtual void SetRect(const RECT* prc, BOOL bRedraw);
   
 ### <a name="parameters"></a>パラメーター  
  `prc`  
- 新しいサイズと、プレビュー コントロールの位置を指定します。  
+ 新しいサイズとプレビュー コントロールの位置を指定します。  
   
  `bRedraw`  
  コントロールを再描画されるかどうかを指定します。  

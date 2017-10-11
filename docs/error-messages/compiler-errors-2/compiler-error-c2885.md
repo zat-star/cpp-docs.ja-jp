@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C2885 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2885"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2885"
+title: "コンパイラ エラー C2885 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2885
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2885
 ms.assetid: 7743e5f3-a034-44b4-9ee8-5a6254c27f8c
 caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
----
-# コンパイラ エラー C2885
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a19f209d53d7d0b37cddbf559fa3dc02ee50db7e
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'class::identifier' : 非クラス スコープでは有効な using 宣言ではありません  
+---
+# <a name="compiler-error-c2885"></a>コンパイラ エラー C2885
+':identifier': いない有効な using 宣言非クラス スコープで  
   
- [using](../../cpp/using-declaration.md) 宣言の使用方法が間違っています。  
+ 使用する、[を使用して](../../cpp/using-declaration.md)宣言が正しくないです。  
   
-## 使用例  
- このエラーは、Visual C\+\+ 2005 で行ったコンパイラ準拠作業の結果として生成されることがあります。`using` 宣言は、入れ子にされた型に対して使用できなくなりました。入れ子にされた型に対して作成する各参照を明示的に修飾し、その型を名前空間に入れるか、typedef を作成する必要があります。  
+## <a name="example"></a>例  
+ このエラーは、Visual C 2005 で行ったコンパイラ準拠作業の結果として生成されることができます: これが有効ではなく、`using`入れ子になった型宣言を入れ子にされた型、名前に、型を配置する各参照を明示的に修飾する必要がありますスペース、または、typedef を作成します。  
   
- 次の例では C2885 エラーが生成されます。  
+ 次の例では、C2885 を生成します。  
   
 ```  
 // C2885.cpp  
@@ -60,10 +63,10 @@ int main () {
 }  
 ```  
   
-## 使用例  
- クラス メンバーで `using` キーワードを使用する場合は、そのメンバーを別のクラス \(派生クラス\) の内部で定義する必要があります。  
+## <a name="example"></a>例  
+ 使用する場合、`using`クラスのメンバーでは、C++ のキーワードでは、そのメンバーを別のクラス (派生クラス) の内部を定義する必要があります。  
   
- 次の例では C2885 エラーが生成されます。  
+ 次の例では、C2885 を生成します。  
   
 ```  
 // C2885_b.cpp  

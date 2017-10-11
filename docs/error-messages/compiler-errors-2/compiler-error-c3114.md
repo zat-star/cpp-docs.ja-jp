@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C3114 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3114"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3114"
+title: "コンパイラ エラー C3114 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3114
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3114
 ms.assetid: b5d2df4f-87d0-4292-9981-25c6a6013c05
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3114
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e4ec82d31e26b33364a73384aae08f6adc48da02
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'引数': 有効な名前付き属性引数ではありません  
+---
+# <a name="compiler-error-c3114"></a>コンパイラ エラー C3114
+'argument': 名前付き属性引数を有効ではありません  
   
- 属性クラスのデータ メンバーを有効な名前付き引数にするには、それを `static`、`const`、または `literal` でマークしないでください。  プロパティの場合は、`static` にしないでください。また、get アクセサーおよび set アクセサーが必要です。  
+ 属性クラスのデータ メンバーを引数の名前が有効にするためには、そのマークしないでください`static`、 `const`、または`literal`です。 プロパティの有効期限がありますいない場合、プロパティを`static`とする必要があります get および set アクセサー。  
   
- 詳細については、「[property](../../windows/property-cpp-component-extensions.md)」および「[User\-Defined Attributes](../../windows/user-defined-attributes-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、次を参照してください。[プロパティ](../../windows/property-cpp-component-extensions.md)と[ユーザー定義の属性](../../windows/user-defined-attributes-cpp-component-extensions.md)です。  
   
-## 使用例  
- 次の例では C3114 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3114 を生成します。  
   
 ```  
 // C3114.cpp  

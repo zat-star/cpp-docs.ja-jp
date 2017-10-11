@@ -19,33 +19,19 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: a6fb6c0a2b2c3a7608c10794e77ecc8b5573dc7b
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 447d7d21cfc1ed95c9851ef310a4cb15bcdaf53e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c2989"></a>コンパイラ エラー C2989
-'class': クラス型は既に非クラス型として宣言されて  
+'class': クラス型が非クラスの種類として既に宣言されています  
   
- ジェネリック クラスまたはテンプレートには、非テンプレートまたは非ジェネリック クラスが再定義します。 ヘッダー ファイルの競合を確認します。  
+ ジェネリック クラスまたはテンプレートには、非テンプレートまたは非ジェネリック クラスが再定義します。 競合のヘッダー ファイルを確認してください。  
   
- クラス テンプレートの部分的特殊化を使用している場合は、サポート技術情報記事 Q240866 を参照してください。  
+ クラス テンプレートの部分的な特殊化を使用している場合は、サポート技術情報記事 Q240866 を参照してください。  
   
  次の例では、C2989 が生成されます。  
   
@@ -59,7 +45,7 @@ class C{};  // C2989
 class C2{};  
 ```  
   
- C2989 は、ジェネリックを使用するときにも発生します。  
+ C2989 は、ジェネリックを使用するときにも発生することができます。  
   
 ```  
 // C2989b.cpp  

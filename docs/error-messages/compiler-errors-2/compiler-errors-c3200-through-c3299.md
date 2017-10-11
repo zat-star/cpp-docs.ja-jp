@@ -47,32 +47,18 @@ caps.latest.revision: 1
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 1d63e4faaafe9ba208e17857a8ac60723c6c5cf5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 87910db946d51d740c93134b7085e5af7d3ccadc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-errors-c3200-through-c3299"></a>コンパイラ エラー C3200 C3299 経由
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -127,7 +113,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3246](compiler-error-c3246.md)|'*クラス*': から継承できません'*base_class*'として宣言されている' as*継承*'。|  
 |[コンパイラ エラー C3247](compiler-error-c3247.md)|'*コクラス*': コクラスは他のコクラスから継承できません*base_class*'|  
 |[コンパイラ エラー C3248](compiler-error-c3248.md)|互換性のために残されています。 '*関数*': 関数ではオーバーライドできません 'sealed' として宣言された'*関数*'|  
-|コンパイラ エラー C3249|'constexpr' 関数のステートメントまはたサブ式が誤っています。|  
+|コンパイラ エラー C3249|無効なステートメントまたはサブ式の 'constexpr' 関数|  
 |コンパイラ エラー C3250|'*宣言*': 'constexpr' 関数の本体で宣言することはできません|  
 |[コンパイラ エラー C3251](compiler-error-c3251.md)|値の型のインスタンスで基底クラス メソッドを呼び出せません。|  
 |[コンパイラ エラー C3252](compiler-error-c3252.md)|'*関数*': マネージまたは WinRT 型で、仮想メソッドのアクセシビリティを制限することはできません|  
@@ -137,7 +123,7 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C3256|'*関数*': 変数を使用して、定数式は生成されません|  
 |コンパイラ エラー C3257|互換性のために残されています。|  
 |コンパイラ エラー C3258|互換性のために残されています。|  
-|コンパイラ エラー C3259|'constexpr' 関数には 1 つの return ステートメントしか含めることができません。|  
+|コンパイラ エラー C3259|'constexpr' 関数は、1 つの return ステートメントを持つことができますのみ|  
 |コンパイラ エラー C3260|'*トークン*': ラムダ本体の前に予期しないトークンがありましたスキップしています。|  
 |コンパイラ エラー C3261|マネージまたは WinRT 配列を返す関数が、宣言の末尾に角かっこを配列にいる必要があります: '*識別子*([...])[]'|  
 |[コンパイラ エラー C3262](compiler-error-c3262.md)|無効な配列のインデックス:*数*に指定されたディメンション*数*-次元 '*型*'|  
@@ -162,7 +148,7 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C3281|'*関数*': グローバル演算子はマネージまたは WinRT 型を持つことはできません'*型*' シグネチャ内|  
 |[コンパイラ エラー C3282](compiler-error-c3282.md)|ジェネリック パラメーター リストは、マネージまたは WinRT クラス、構造体、または関数でのみ使用できます。|  
 |[コンパイラ エラー C3283](compiler-error-c3283.md)|'*インターフェイス*': インターフェイスは、インスタンス コンス トラクターを持つことはできません|  
-|[コンパイラ エラー C3284](compiler-error-c3284.md)|ジェネリック パラメーターに対する制約は、'*パラメーター*'function' の*declarator*'ジェネリック パラメーターの制約に一致する必要があります'*パラメーター*'function' の*declarator*'|  
+|[コンパイラ エラー C3284](compiler-error-c3284.md)|ジェネリック パラメーターに対する制約は、'*パラメーター*'function' の*宣言子*'ジェネリック パラメーターの制約に一致する必要があります'*パラメーター*'function' の*宣言子*'|  
 |[コンパイラ エラー C3285](compiler-error-c3285.md)|各ステートメントは、型の変数に対して使用できませんの '*型*'|  
 |[コンパイラ エラー C3286](compiler-error-c3286.md)|'*指定子*': 繰り返し変数は、ストレージ クラス指定子を持つことはできません|  
 |[コンパイラ エラー C3287](compiler-error-c3287.md)|型 '*型*' (GetEnumerator の戻り値の型) は、適切なパブリック MoveNext メンバー関数およびパブリック Current プロパティを持つ必要があります|  
@@ -176,6 +162,6 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C3295](compiler-error-c3295.md)|'#pragma*指定子*' グローバルでのみ使用できますか、名前空間のスコープ|  
 |[コンパイラ エラー C3296](compiler-error-c3296.md)|'*識別子*': この名前のプロパティが既に存在します|  
 |[コンパイラ エラー C3297](compiler-error-c3297.md)|' *constraint2*': は使用できません' *constraint1*'を制約としてため' *constraint1*' 値の制約|  
-|[コンパイラ エラー C3298](compiler-error-c3298.md)|' *constraint1*': は使用できません' *constraint2*'を制約としてため' *constraint2*'は ref 制約と' *constraint1*' 値の制約|  
+|[コンパイラ エラー C3298](compiler-error-c3298.md)|' *constraint1*': は使用できません' *constraint2*'を制約としてため' *constraint2*'は ref 制約と' *constraint1*'値を制約します。|  
 |[コンパイラ エラー C3299](compiler-error-c3299.md)|'*関数*': 制約を指定できませんそれらは基本メソッドから継承。|  
 

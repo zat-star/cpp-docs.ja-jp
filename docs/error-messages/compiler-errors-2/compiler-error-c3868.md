@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3868 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3868"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3868"
+title: "コンパイラ エラー C3868 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3868
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3868
 ms.assetid: f0e45c2a-2149-4885-a03b-0d230069f03a
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C3868
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 3fc2ce896658468e1ae53638512d92d925f0362a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'型': ジェネリック パラメーター 'パラメーター' での制約は、宣言での制約と異なります  
+---
+# <a name="compiler-error-c3868"></a>コンパイラ エラー C3868
+'type': ジェネリック パラメーター 'parameter' に対する制約と異なる宣言  
   
- 多重宣言では、同じジェネリック制約を指定する必要があります。詳細については、「[Generics](../../windows/generics-cpp-component-extensions.md)」を参照してください。  
+ 複数の宣言には、同じジェネリック制約が必要です。  詳細については、「[ジェネリック](../../windows/generics-cpp-component-extensions.md)」を参照してください。  
   
-## 使用例  
- 次の例では C3868 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3868 を生成します。  
   
 ```  
 // C3868.cpp  

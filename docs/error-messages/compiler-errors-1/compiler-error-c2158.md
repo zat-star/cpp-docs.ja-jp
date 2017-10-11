@@ -19,32 +19,17 @@ caps.latest.revision: 4
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 6fbe7cb8224e5424569244e8761d8eeb0f696886
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 84241663685ab1d12581b84bc761dcff77420fd2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="compiler-error-c2158"></a>コンパイラ エラー C2158
 'type': #pragma make_public ディレクティブは、現在テンプレートでないネイティブの型にのみサポートされています  
   
- [Make_public](../../preprocessor/make-public.md)プラグマは、ネイティブの非テンプレート型にのみ適用できます。  
+ [make_public](../../preprocessor/make-public.md) プラグマは、ネイティブの非テンプレート型にのみ適用できます。  
   
 ## <a name="example"></a>例  
  次の例では C2158 が生成されます。  

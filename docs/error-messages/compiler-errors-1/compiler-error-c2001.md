@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C2001 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C2001"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C2001"
+title: "コンパイラ エラー C2001 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C2001
+dev_langs:
+- C++
+helpviewer_keywords:
+- C2001
 ms.assetid: 0c3a7821-d8e5-4398-ab5a-4116d46e8dda
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C2001
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: aedba438451089aa2d71e06da7ce189ab97d4190
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/09/2017
 
-定数が 2 行目に続いています。  
+---
+# <a name="compiler-error-c2001"></a>コンパイラ エラー C2001
+定数の改行  
   
- 文字列定数を 2 行目に続ける場合は、次のいずれかの方法を使用してください。  
+ 文字列定数は、以下を実行する場合を除き、行目では継続できません。  
   
--   1 行目の最後に円記号 \(\\\) を付けます。  
+-   円記号で最初の行を終了します。  
   
--   1 行目の文字列を二重引用符で囲み、次の行の文字列は別の二重引用符で始めます。  
+-   二重引用符で最初の行の文字列を閉じて、もう 1 つの二重引用符で次の行に文字列を開きます。  
   
- 1 行目の最後にエスケープ シーケンス \\n を付けるだけでは不十分です。  
+ \N で最初の行を終了することは、十分ではありません。  
   
-## 使用例  
- 次の例では警告 C2001 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C2001 が生成されます。  
   
 ```  
 // C2001.cpp  
@@ -51,8 +54,8 @@ int main()
 }  
 ```  
   
-## 使用例  
- 行連結文字の次の行の先頭に置かれた空白文字はすべて文字列定数に含まれます。  上の例では、改行文字は文字列定数に埋め込まれていません。  改行文字を埋め込む例を次に示します。  
+## <a name="example"></a>例  
+ 文字列定数には、行連結文字の後に次の行の先頭にスペースが含まれています。 上記の例は、のいずれもは、文字列定数に改行文字を埋め込みません。 次に示すように、改行文字を埋め込むことができます。  
   
 ```  
 // C2001b.cpp  

@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C3867 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3867"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3867"
+title: "コンパイラ エラー C3867 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3867
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3867
 ms.assetid: bc5de03f-e01a-4407-88c3-2c63f0016a1e
 caps.latest.revision: 22
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 22
----
-# コンパイラ エラー C3867
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4f8e4612dc12274c689ec0d4e9406dea74c608f4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c3867"></a>コンパイラ エラー C3867
 'func': 関数呼び出しには引数リストがありません。メンバーへのポインターを作成するために '&func' を使用してください  
   
  メンバー関数をクラス名とアドレス演算子で修飾せずに、メンバー関数のアドレスを取得しようとしました。  
   
- このエラーは、ポインターからメンバーへの準拠が強化された Visual C\+\+ 2005 で実施されたコンパイラ準拠作業の結果として生成されることもあります。  Visual C\+\+ 2005 より前にコンパイルされたコードで C3867 が生成されるようになりました。  
+ このエラーは、ポインターからメンバーへの準拠が強化された Visual C++ 2005 で実施されたコンパイラ準拠作業の結果として生成されることもあります。 Visual C++ 2005 より前にコンパイルされたコードで C3867 が生成されるようになりました。  
   
-## 使用例  
- C3867 は、推奨されている解決方法を誤解して使用した場合にコンパイラで発生することがあります。  できる限り、最派生クラスを使用してください。  
+## <a name="example"></a>例  
+ C3867 は、推奨されている解決方法を誤解して使用した場合にコンパイラで発生することがあります。 できる限り、最派生クラスを使用してください。  
   
  次の例では C3867 を生成し、その修正方法を示しています。  
   
@@ -53,7 +56,7 @@ void Derived::Bar() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C3867 を生成し、その修正方法を示しています。  
   
 ```  
@@ -84,7 +87,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C3867 を生成し、その修正方法を示しています。  
   
 ```  
@@ -102,7 +105,7 @@ int main() {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C3867 が生成されます。  
   
 ```  
@@ -125,7 +128,7 @@ public:
 };  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C3867 が生成されます。  
   
 ```  

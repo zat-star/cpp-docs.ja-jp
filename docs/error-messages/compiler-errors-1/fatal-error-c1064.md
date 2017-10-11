@@ -19,28 +19,14 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ec599399bd6cb6a3e6b0d6f911d3874120a36069
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0d66623655cb37a7acf403d77a31e3ee8e4f5040
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="fatal-error-c1064"></a>致命的なエラー C1064
-コンパイラの制限 : コンパイラが、識別子の名前用の内部バッファーよりも長い識別子を読み取りました。  
+コンパイラの制限: トークンには、内部バッファーがオーバーフローしました。  
   
- 識別子は、識別子に使用される内部バッファーの長さを超えています。 名前を短きます。
+ 識別子は、識別子に使用する内部バッファーの長さを超えています。 名前を短くしてください。

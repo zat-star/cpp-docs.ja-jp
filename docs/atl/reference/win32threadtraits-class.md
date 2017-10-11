@@ -23,29 +23,15 @@ caps.latest.revision: 20
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: fa331e05d647b5e2b9a0a76581e75d6b40366f95
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: a777b3c1ae6056fe4ae414371cbed4eee1accd86
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="win32threadtraits-class"></a>Win32ThreadTraits クラス
-このクラスは、Windows のスレッドの作成機能を提供します。 スレッドでの CRT 関数を使用しない場合は、このクラスを使用します。  
+このクラスは、Windows のスレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。  
   
 > [!IMPORTANT]
 >  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
@@ -62,10 +48,10 @@ class Win32ThreadTraits
   
 |名前|説明|  
 |----------|-----------------|  
-|[Win32ThreadTraits::CreateThread](#createthread)|(静的)CRT 関数を使用しないでくださいスレッドを作成するには、この関数を呼び出します。|  
+|[Win32ThreadTraits::CreateThread](#createthread)|(静的)この関数では、CRT 関数を使用しないで、スレッドを作成します。|  
   
 ## <a name="remarks"></a>コメント  
- スレッドの特徴 (traits) は、特定の種類のスレッドの作成機能を提供するクラスです。 作成関数が、Windows と同じシグネチャとセマンティクスが[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)関数です。  
+ スレッドの特徴 (traits) は、特定の種類のスレッドの作成機能を提供するクラスです。 作成関数は、Windows と同じ署名とセマンティクスを持ちます[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)関数。  
   
  スレッドの特徴 (traits) は、次のクラスによって使用されます。  
   
@@ -79,7 +65,7 @@ class Win32ThreadTraits
  **ヘッダー:** atlbase.h  
   
 ##  <a name="createthread"></a>Win32ThreadTraits::CreateThread  
- CRT 関数を使用しないでくださいスレッドを作成するには、この関数を呼び出します。  
+ この関数では、CRT 関数を使用しないで、スレッドを作成します。  
   
 ```
 static HANDLE CreateThread(
@@ -99,24 +85,24 @@ static HANDLE CreateThread(
  新しいスレッドのスタック サイズ。  
   
  `pfnThreadProc`  
- 新しいスレッドのスレッドのプロシージャです。  
+ 新しいスレッドのスレッド プロシージャです。  
   
  `pvParam`  
- スレッドのプロシージャに渡されるパラメーター。  
+ スレッド プロシージャに渡されるパラメーター。  
   
  `dwCreationFlags`  
- フラグ (0 または CREATE_SUSPENDED) を作成します。  
+ (0 または CREATE_SUSPENDED) フラグを作成します。  
   
  `pdwThreadId`  
  [out]成功した場合、新しく作成されたスレッドのスレッド ID を受け取る DWORD 変数のアドレスです。  
   
 ### <a name="return-value"></a>戻り値  
- 失敗した場合、新しく作成されたスレッドにハンドルを返します。 呼び出す[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)拡張エラー情報を取得します。  
+ エラー発生時に、新しく作成されたスレッドにハンドルを返します。 呼び出す[GetLastError](http://msdn.microsoft.com/library/windows/desktop/ms679360)拡張エラー情報を取得します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)についてさらにこの関数のパラメーターです。  
+ 参照してください[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)この関数に対するパラメーターの詳細についてはします。  
   
- この関数は`CreateThread`スレッドを作成します。  
+ この関数が呼び出す`CreateThread`スレッドを作成します。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)

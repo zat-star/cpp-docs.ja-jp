@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: acdf43260574b02552a04481614c1ae2a2d1dded
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b1bcba6226a05379248a68f2047653333d98cdf8
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3866"></a>コンパイラ エラー C3866
 関数呼び出しに引数リストがありません。  
   
- 非静的メンバー関数の内部とデストラクターまたはファイナライザーの呼び出しでは、引数リストがありませんでした。  
+ 非静的メンバー関数の内部デストラクターまたはファイナライザーの呼び出しは、引数リストがありませんでした。  
   
- 次の例では、c3866 エラーが生成されます。  
+ 次の例では、C3866 が生成されます。  
   
 ```  
 // C3866.cpp  

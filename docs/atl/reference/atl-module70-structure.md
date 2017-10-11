@@ -22,25 +22,11 @@ caps.latest.revision: 16
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4e393abb2a904a0f5e101efe3d78d0645664397b
-ms.openlocfilehash: ea1d87d3d500fc08f3da16de6820ca003e899419
+ms.translationtype: MT
+ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
+ms.openlocfilehash: 104596d55ee2580cbee3cfc916ad9ef7390ce4c1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/09/2017
 
 ---
 # <a name="atlmodule70-structure"></a>_ATL_MODULE70 構造体
@@ -59,19 +45,19 @@ struct _ATL_MODULE70 {
   
 ## <a name="members"></a>メンバー  
  `cbSize`  
- バージョン管理に使用される、構造体のサイズ。  
+ バージョン管理に使用される、構造のサイズ。  
   
  `m_nLockCnt`  
- 参照カウントをどのくらいの期間、モジュールは残り続けることを確認します。  
+ 参照カウントをどのくらいの期間、モジュールは続けることを決定します。  
   
  **m_pTermFuncs**  
- 次の関数 ATL をシャット ダウン時に呼び出される登録されているを追跡します。  
+ ATL のシャット ダウン時に呼び出される登録されている関数をトラックします。  
   
  **m_csStaticDataInitAndTypeInfo**  
- マルチ スレッドのような状況で、内部データへのアクセスを調整するために使用します。  
+ マルチ スレッドの状況で、内部データへのアクセスを調整するために使用します。  
   
 ## <a name="remarks"></a>コメント  
- [_ATL_MODULE](atl-typedefs.md#_atl_module)の typedef と定義`_ATL_MODULE70`します。  
+ [_ATL_MODULE](atl-typedefs.md#_atl_module)の typedef として定義された`_ATL_MODULE70`です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
