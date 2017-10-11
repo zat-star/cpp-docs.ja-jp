@@ -19,35 +19,21 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 16c62e48a0190096e04dc4ccf0c17ca66c2f4094
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e6fa111a525d81c418d3285c05af86b700e8cb08
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3379"></a>コンパイラ エラー C3379
-'class': 入れ子になったクラス宣言の一部としてアセンブリ アクセス指定子を持つことはできません  
+'class': 入れ子になったクラスは、その宣言の一部としてアセンブリ アクセス指定子を持つことはできません  
   
- クラスまたは構造体などのマネージ型に適用すると、[パブリック](../../cpp/public-cpp.md)と[プライベート](../../cpp/private-cpp.md)キーワードは、クラスがアセンブリ メタデータを通じて公開されるかどうかを指定します。 `public`または`private`外側のクラスのアセンブリのアクセス権を継承する入れ子になったクラスに適用することはできません。  
+ クラスまたは構造体などのマネージ型に適用すると、[パブリック](../../cpp/public-cpp.md)と[プライベート](../../cpp/private-cpp.md)キーワードは、クラスがアセンブリ メタデータを通じて公開されるかどうかを示します。 `public`または`private`外側のクラスのアセンブリのアクセスを継承しますが、入れ子になったクラスには適用できません。  
   
  使用すると[/clr](../../build/reference/clr-common-language-runtime-compilation.md)、`ref`と`value`キーワードは、クラスが管理されていることを示します (を参照してください[クラスと構造体](../../windows/classes-and-structs-cpp-component-extensions.md))。  
   
- 次の例では、c3379 エラーが生成されます。  
+ 次の例では、C3379 が生成されます。  
   
 ```  
 // C3379a.cpp  

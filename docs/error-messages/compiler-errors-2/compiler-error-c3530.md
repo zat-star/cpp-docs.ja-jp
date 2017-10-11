@@ -19,38 +19,24 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ddaa07e0c06a871815f42c4f5d6760befdb06b30
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0d66e76fc3e44a037f52aa6e217fae848f1338d2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3530"></a>コンパイラ エラー C3530
-'auto' を他の型指定子と組み合わせることはできません  
+'auto' は、その他の型指定子と組み合わせることはできません。  
   
- 型指定子を併用、`auto`キーワードです。  
+ 型指定子を使用、`auto`キーワード。  
   
 ### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  使用する変数の宣言で型指定子を使用しないでください、`auto`キーワードです。  
+1.  使用する変数宣言で型指定子を使用しない、`auto`キーワード。  
   
 ## <a name="example"></a>例  
- 次の例では C3530 のため変数`x`が両方と宣言されている、`auto`キーワードと型`int`、例をコンパイルしたので、 **/Zc:auto**します。  
+ 次の例では C3530 のため変数`x`が両方で宣言されて、`auto`キーワードと型`int`、例をコンパイルしたため、 **/Zc:auto**です。  
   
 ```  
 // C3530.cpp  

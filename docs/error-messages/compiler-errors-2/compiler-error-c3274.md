@@ -19,32 +19,17 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8a09f1421a32714a04c49a849162290884e53391
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6fc2149b3aac1e3575500ed4ac6c3c1b283f1db4
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3274"></a>コンパイラ エラー C3274
 __finally/finally に対応する try がありません  
   
- A [_ _finally](../../cpp/try-finally-statement.md)または[最後に](../../dotnet/finally.md)ステートメントが見つかりましたが、対応する`try`です。 これを解決するには、 `__finally` ステートメントを削除するか、または `try` に対して `__finally`ステートメントを追加します。  
+ [__finally](../../cpp/try-finally-statement.md) または [finally](../../dotnet/finally.md) ステートメントに対応する `try`がありません。 これを解決するには、 `__finally` ステートメントを削除するか、または `try` に対して `__finally`ステートメントを追加します。  
   
  次の例では C3274 が生成されます。  
   

@@ -1,29 +1,32 @@
 ---
-title: "コンパイラ エラー C3374 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3374"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3374"
+title: "コンパイラ エラー C3374 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3374
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3374
 ms.assetid: 41431299-bd20-47d4-a0c8-1334dd79018b
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C3374
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 16c857cf431462abd2acc21cf7444ec0aad2d075
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c3374"></a>コンパイラ エラー C3374
 delegate インスタンスを作成する場合以外に、'関数' のアドレスを指定できません  
   
  delegate インスタンスを作成する以外のコンテキストで、関数のアドレスが取得されました。  
@@ -51,5 +54,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [方法: デリゲートを定義および使用する](../Topic/How%20to:%20Define%20and%20Use%20Delegates%20\(C++-CLI\).md)
+## <a name="see-also"></a>関連項目  
+ [方法: デリゲートを定義および使用する (C++/CLI)](../../dotnet/how-to-define-and-use-delegates-cpp-cli.md)

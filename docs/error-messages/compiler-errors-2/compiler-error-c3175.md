@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 098a3c1fc910f28a2e3f7902c8a109adc5add710
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b2b8ff8052a9d54e12a4eca6a54701708096352a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3175"></a>コンパイラ エラー C3175
-'function1': 'function2' のアンマネージ関数からマネージ型のメソッドを呼び出すことはできません  
+'function1': 関数 'function2' をアンマネージからマネージ型のメソッドを呼び出すことはできません  
   
  アンマネージ関数には、マネージ クラスのメンバー関数を呼び出すことはできません。  
   
- 次の例では、c3175 エラーが生成されます。  
+ 次の例では、C3175 が生成されます。  
   
 ```  
 // C3175_2.cpp  

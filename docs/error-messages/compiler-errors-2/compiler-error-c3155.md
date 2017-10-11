@@ -19,34 +19,20 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 651eb1a03eed55a3d383a32f027991a4a56d4371
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 75156c7b4611038b522501a20468595de10863af
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3155"></a>コンパイラ エラー C3155
-属性を、プロパティ インデクサーで使用することはできません  
+属性はプロパティ インデクサーでは使用できません。  
   
-インデックス付きプロパティの宣言が正しくありません。 詳細については、次を参照してください。[方法: プロパティを使用して C + で/cli CLI](../../dotnet/how-to-use-properties-in-cpp-cli.md)します。  
+インデックス付きプロパティの宣言が正しくありません。 詳細については、次を参照してください。[する方法: プロパティを使用して C + + CLI](../../dotnet/how-to-use-properties-in-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
-次の例では、c3155 エラーを生成します。  
+次の例では、C3155 を生成します。  
   
 ```  
 // C3155.cpp  

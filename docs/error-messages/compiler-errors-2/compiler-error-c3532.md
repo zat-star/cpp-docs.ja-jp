@@ -1,41 +1,44 @@
 ---
-title: "コンパイラ エラー C3532 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3532"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3532"
+title: "コンパイラ エラー C3532 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3532
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3532
 ms.assetid: 51067853-eda8-4f59-86e8-8924e16d3a95
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3532
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e78db21d00ea93378358a1147163276fb12bdfd5
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'type': 'auto' の使用方法に誤りがあります  
+---
+# <a name="compiler-error-c3532"></a>コンパイラ エラー C3532
+'type': 'auto' の不適切な使用  
   
- 指定された型は、`auto` キーワードを使用して宣言できません。  たとえば、`auto` キーワードを使用して配列またはメソッドの戻り値の型を宣言することはできません。  
+ 指定された型を宣言することはできません、`auto`キーワード。 たとえば、使用することはできません、`auto`配列またはメソッドを宣言するキーワードが型を取得します。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  初期化子式で有効な型が生成されることを確認します。  
+1.  初期化式が有効な型を生成することを確認します。  
   
 2.  配列またはメソッドの戻り値の型を宣言していないことを確認します。  
   
-## 使用例  
- 次の例では、`auto` キーワードでメソッドの戻り値の型を宣言できないため、C3532 が発生します。  
+## <a name="example"></a>例  
+ 次の例では C3532 のため、`auto`キーワードは、メソッドの戻り値の型を宣言できません。  
   
 ```  
 // C3532a.cpp  
@@ -43,8 +46,8 @@ caps.handback.revision: 6
 auto f(){}   // C3532  
 ```  
   
-## 使用例  
- 次の例では、`auto` キーワードで配列を宣言できないため、C3532 が発生します。  
+## <a name="example"></a>例  
+ 次の例では C3532 のため、`auto`キーワードは、配列を宣言できません。  
   
 ```  
 // C3532b.cpp  
@@ -61,5 +64,5 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [auto キーワード](../../cpp/auto-keyword.md)

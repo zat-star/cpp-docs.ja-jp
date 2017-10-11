@@ -19,32 +19,17 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 0485a84c778614acfdb4e71955ca35400c2c9689
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: fafe0e3131512aff530f88daf023d76a47b7d3ab
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3340"></a>コンパイラ エラー C3340
 'interface': コクラス 'class' で、インターフェイスの設定を同時に 'restricted' と 'default' にすることはできません  
   
- [制限](../../windows/restricted.md)属性および[既定](../../windows/default-cpp.md)属性は相互に排他的です。  
+ [restricted](../../windows/restricted.md) 属性と [default](../../windows/default-cpp.md) 属性は相互に排他的です。  
   
  次の例では C3340 が生成されます。  
   

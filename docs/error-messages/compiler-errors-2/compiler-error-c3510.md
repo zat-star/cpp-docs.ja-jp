@@ -1,38 +1,41 @@
 ---
-title: "コンパイラ エラー C3510 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3510"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3510"
+title: "コンパイラ エラー C3510 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3510
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3510
 ms.assetid: c48387bc-0300-4a4d-97f7-3fb90f82a451
 caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
----
-# コンパイラ エラー C3510
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 9603a4f94106d491ea5e14f30b36b1b230554ad2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-依存する型ライブラリ 'type\_lib'  
+---
+# <a name="compiler-error-c3510"></a>コンパイラ エラー C3510
+依存タイプ ライブラリ 'type_lib' を見つけることができません。  
   
- [no\_registry](../Topic/no_registry.md) および [auto\_search](../../preprocessor/auto-search.md) が `#import` に渡されましたが、コンパイラは参照タイプ ライブラリを検出できませんでした。  
+ [no_registry](../../preprocessor/no-registry.md)と[auto_search](../../preprocessor/auto-search.md)に渡された`#import`が、コンパイラが参照されるタイプ ライブラリを検索することができませんでした。  
   
- このエラーを解決するには、コンパイラですべてのタイプ ライブラリおよび参照タイプ ライブラリを利用できることを確認します。  
+ このエラーを解決するには、すべてのタイプ ライブラリおよび参照タイプ ライブラリがコンパイラに利用できることを確認します。  
   
- 次の例では警告 C3510 が生成されます。  
+ 次の例では、C3510 が生成されます。  
   
- 以下の 2 つのタイプ ライブラリが構築され、C3510a.tlb が削除されたか、パスに存在しないとします。  
+ します。 次の 2 つのタイプ ライブラリがビルドされた C3510a.tlb が削除されたか、パスではなくです。  
   
 ```  
 // C3510a.idl  
@@ -47,7 +50,7 @@ library C3510aLib
 };  
 ```  
   
- 以下は、2 つ目のタイプ ライブラリのソース コードです。  
+ ソース コードの 2 つ目のタイプ ライブラリ:  
   
 ```  
 // C3510b.idl  
@@ -63,7 +66,7 @@ library C3510bLib
 };  
 ```  
   
- 以下は、クライアント コードです。  
+ クライアント コード:  
   
 ```  
 // C3510.cpp  

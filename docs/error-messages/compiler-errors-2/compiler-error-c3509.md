@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3509 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3509"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3509"
+title: "コンパイラ エラー C3509 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3509
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3509
 ms.assetid: cc2db39a-2f98-4e40-b803-496e585494e6
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3509
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: bb8fcb4c51ce0a7e69154e77ac5990898275ba16
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'type': Automation 戻り値が無効です。パラメーターが 'retval' にマークされているときの戻り値は 'void'、'HRESULT' または 'SCODE' です。  
+---
+# <a name="compiler-error-c3509"></a>コンパイラ エラー C3509
+'type': 無効な Automation 戻り値の型です。パラメーターがマークされている 'retval'、戻り値の型の場合、'void'、'HRESULT' または 'SCODE' する必要があります。  
   
- COM インターフェイス内のメソッドは、void または HRESULT を返す必要があります。  
+ COM インターフェイスのメソッドは、void または HRESULT を返す必要があります。  
   
- 次の例では警告 C3509 が生成されます。  
+ 次の例では、C3509 が生成されます。  
   
 ```  
 // C3509.cpp  

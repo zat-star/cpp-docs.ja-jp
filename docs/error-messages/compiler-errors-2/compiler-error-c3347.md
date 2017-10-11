@@ -19,32 +19,17 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: d20934732a3b04bcd49485c3e0ba5b3562b147c5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 75d81462324690ae126938ffeab5a8eea9334426
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3347"></a>コンパイラ エラー C3347
 'arg': 必要な引数が属性 idl_module 内で指定されていません  
   
- 必須の引数に渡されなかった、 [idl_module](../../windows/idl-module.md)属性。  
+ [idl_module](../../windows/idl-module.md) 属性に必須の引数が渡されていません。  
   
  次の例では C3347 が生成されます。  
   

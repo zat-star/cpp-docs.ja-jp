@@ -1,38 +1,41 @@
 ---
-title: "Compiler Error C3498 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3498"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3498"
+title: "コンパイラ エラー C3498 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3498
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3498
 ms.assetid: 0a5a7817-0872-4119-83bf-980a19113374
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# Compiler Error C3498
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0429b9d21829f772596b6d0fd2c51d72b0924e26
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'var': マネージ型または WinRT 型を持つ変数のキャプチャはできません  
+---
+# <a name="compiler-error-c3498"></a>コンパイラ エラー C3498
+'var': マネージが変数または WinRTtype をキャプチャすることはできません  
   
  ラムダで、マネージ型または Windows ランタイム型を持つ変数をキャプチャすることはできません。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 -   マネージ変数または Windows ランタイム変数をラムダ式のパラメーター リストに渡します。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、マネージ型を持つ変数がラムダ式のキャプチャ リストに表示されるため、C3498 が生成されます。  
   
 ```  
@@ -48,7 +51,7 @@ int main()
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では、マネージ型の変数 `s` をラムダ式のパラメーター リストに渡すことにより、C3498 を解決します。  
   
 ```  
@@ -64,5 +67,5 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ラムダ式](../../cpp/lambda-expressions-in-cpp.md)

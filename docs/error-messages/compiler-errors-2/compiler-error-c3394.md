@@ -19,32 +19,17 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 9a0184512f1817e3f2de7119f483a2f5b5801344
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 69a4f9ebd8df95a5a65191b19d4d130eb6ede196
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3394"></a>コンパイラ エラー C3394
 制約句の構文エラー: 'identifier' が見つかりましたが、型を指定しなければなりません  
   
- 制約の形式が間違っています。  詳細については、次を参照してください。[ジェネリック型パラメーターの制約 (C + +/CLI)](../../windows/constraints-on-generic-type-parameters-cpp-cli.md)します。  
+ 制約の形式が間違っています。  詳細については、次を参照してください。[ジェネリック型パラメーターの制約 (C + + CLI)](../../windows/constraints-on-generic-type-parameters-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
  次の例では C3394 が生成されます。  

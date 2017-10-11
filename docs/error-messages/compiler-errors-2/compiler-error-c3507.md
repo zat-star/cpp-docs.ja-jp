@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3507 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3507"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3507"
+title: "コンパイラ エラー C3507 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3507
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3507
 ms.assetid: 75f89767-f6f9-40f6-9820-81a49e09abdf
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3507
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 697732f9e9c37735db591fc5a90d2380806fb7eb
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-ProgID に入力できる文字数は 39 以下です 'id'。また、'.' 以外の句読点を使用したり、数字を先頭に使用することはできません。  
+---
+# <a name="compiler-error-c3507"></a>コンパイラ エラー C3507
+ProgID は、超える 39 文字 'id';除いて、区切り記号も '.';また、数字で始まる  
   
- [progid](../Topic/progid.md) 属性に使用できる値には制限があります。  
+ [Progid](../../windows/progid.md)属性がかかることができる値に対する制限がします。  
   
- 次の例では警告 C3507 が生成されます。  
+ 次の例では、C3507 が生成されます。  
   
 ```  
 // C3507.cpp  

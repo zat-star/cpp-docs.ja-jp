@@ -1,39 +1,42 @@
 ---
-title: "コンパイラ エラー C3538 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3538"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3538"
+title: "コンパイラ エラー C3538 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3538
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3538
 ms.assetid: ef3698a5-7356-4c62-b9af-5d3a4baed958
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3538
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: da21036ddd4cc8b468f291079e0c475ca1b7c4b3
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
+---
+# <a name="compiler-error-c3538"></a>コンパイラ エラー C3538
 宣言リストでは 'auto' は常に同じ型に推測される必要があります  
   
  宣言リスト内で宣言されているすべての変数が、同じ型に解決されません。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
 1.  リスト内のすべての `auto` 宣言が同じ型を推測していることを確認します。  
   
-## 使用例  
- 次のステートメントは C3538 を生成します。  各ステートメントは複数の変数を宣言していますが、それぞれの 　`auto` キーワードの使用が同じ型を推測していません。  
+## <a name="example"></a>例  
+ 次のステートメントは C3538 を生成します。 各ステートメントは複数の変数を宣言していますが、それぞれの 　`auto` キーワードの使用が同じ型を推測していません。  
   
 ```  
 // C3538.cpp  
@@ -53,5 +56,5 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [auto キーワード](../../cpp/auto-keyword.md)

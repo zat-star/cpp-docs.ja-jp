@@ -19,32 +19,17 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: ea8cfac81b7c4a7856543c00e45ed3c067a4d8cf
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7d28da9839a82c63017d8cbd24e585e3af8aab2f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3204"></a>コンパイラ エラー C3204
 catch ブロック内から '_alloca' を呼び出すことはできません。  
   
- 呼び出しを使用する場合、このエラーが発生する[_alloca](../../c-runtime-library/reference/alloca.md)から catch ブロック内で。  
+ このエラーは、catch ブロック内から [_alloca](../../c-runtime-library/reference/alloca.md) への呼び出しを使用すると発生します。  
   
 ## <a name="example"></a>例  
  次の例では C3204 が生成されます。  

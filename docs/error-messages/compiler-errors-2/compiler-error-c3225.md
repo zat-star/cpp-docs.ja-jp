@@ -1,37 +1,40 @@
 ---
-title: "コンパイラ エラー C3225 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3225"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3225"
+title: "コンパイラ エラー C3225 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3225
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3225
 ms.assetid: f5f66973-256e-4298-ac46-c87819cbde34
 caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
----
-# コンパイラ エラー C3225
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4cf62ba7b0c3b95f22c27172546ccdd253ed9279
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'arg' のジェネリック型引数を '型' にすることはできません。値型またはハンドル型にしなければなりません  
+---
+# <a name="compiler-error-c3225"></a>コンパイラ エラー C3225
+'arg' のジェネリック型引数は 'type' をすることはできません、値型であるまたはハンドル型にする必要があります。  
   
- ジェネリック型引数が正しい型ではありませんでした。  
+ ジェネリック型引数は、適切な型でした。  
   
- 詳細については、「[Generics](../../windows/generics-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、「[ジェネリック](../../windows/generics-cpp-component-extensions.md)」を参照してください。  
   
-## 使用例  
- ジェネリック型をネイティブ型でインスタンス化することはできません。  次の例では C3225 エラーが生成されます。  
+## <a name="example"></a>例  
+ ネイティブ型を持つジェネリック型をインスタンス化することはできません。 次の例では、C3225 を生成します。  
   
 ```  
 // C3225.cpp  
@@ -49,8 +52,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- C\# を使用してコンポーネントを作成する例を次に示します。  制約で、ジェネリック型は値型でのみインスタンス化できることが指定されています。  
+## <a name="example"></a>例  
+ 次の例では、c# を使用してコンポーネントを作成します。 制約では、ジェネリック型が値型でインスタンス化できますのみ指定されることを確認します。  
   
 ```  
 // C3225_b.cs  
@@ -59,8 +62,8 @@ int main() {
 public class MyList<T> where T: struct {}  
 ```  
   
-## 使用例  
- この例では、C\# で作成したコンポーネントを使用しているので、MyList は <xref:System.Nullable> 以外の値型でのみインスタンス化できるという制約に違反します。  次の例では C3225 エラーが生成されます。  
+## <a name="example"></a>例  
+ このサンプルを使用して c# でコンポーネントを作成して MyList のみが有効な制約に違反する以外の値の型でインスタンス化される<xref:System.Nullable>です。 次の例では、C3225 を生成します。  
   
 ```  
 // C3225_c.cpp  

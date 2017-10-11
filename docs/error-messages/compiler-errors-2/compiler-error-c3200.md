@@ -1,32 +1,35 @@
 ---
-title: "コンパイラ エラー C3200 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3200"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3200"
+title: "コンパイラ エラー C3200 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3200
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3200
 ms.assetid: 44bb5e77-f0ec-421c-a732-b9ee7c0a3529
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C3200
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e4e1df5fb5c3da260ec5eba75d25e74207fbf8e2
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'template' : テンプレート パラメーター 'parameter' に対する無効なテンプレート引数です。クラス テンプレートが必要です。  
+---
+# <a name="compiler-error-c3200"></a>コンパイラ エラー C3200
+'template': テンプレート パラメーター 'parameter' に対する無効なテンプレート引数には、クラス テンプレートが必要です。  
   
- クラス テンプレートに渡された引数が無効です。  クラス テンプレートには、パラメーターとしてテンプレートを渡す必要があります。  次の例では、`Y<int, int> aY` の呼び出しによって C3200 が生成されます。  最初のパラメーターは、`Y<X, int> aY` などのテンプレートにする必要があります。  
+ クラス テンプレートに無効な引数が渡されます。 クラス テンプレートは、パラメーターとしてテンプレートを受け付けます。 次の例では、呼び出す`Y<int, int> aY`C3200 が生成されます。 最初のパラメーターをテンプレートをなどある必要があります`Y<X, int> aY`です。  
   
 ```  
 // C3200.cpp  

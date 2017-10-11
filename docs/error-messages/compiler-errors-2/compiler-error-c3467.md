@@ -19,34 +19,19 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: edea758c567f74202c12f7ee1391fb3f12faa980
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: e14104c0fe67ce371f2faf5debb4a07f0c938856
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3467"></a>コンパイラ エラー C3467
 'type': この型は既に転送されました  
   
- 同じ型の事前宣言が複数検出されました。 宣言は、型ごとに&1; 回しかできません。  
+ 同じ型の事前宣言が複数検出されました。 宣言は、型ごとに 1 回しかできません。  
   
- 詳細については、次を参照してください。[型の転送 (C + +/CLI)](../../windows/type-forwarding-cpp-cli.md)します。  
+ 詳細については、次を参照してください。 [Type Forwarding (C + + CLI)](../../windows/type-forwarding-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
  コンポーネントを作成する例を次に示します。  

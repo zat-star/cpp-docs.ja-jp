@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 783e05439168a63c21a3900c993813dd973a642a
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6ca9b4d5ca4362e1d728a854bb776573d25969d7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3364"></a>コンパイラ エラー C3364
-'delegate': デリゲート コンス トラクター: 引数がマネージ クラスのメンバー関数またはグローバル関数へのポインターにする必要があります  
+'delegate': delegate コンス トラクター: 引数がマネージ クラスのメンバー関数またはグローバル関数へのポインターにする必要があります  
   
- デリゲートのコンス トラクターの&2; 番目のパラメーターは、メンバー関数のアドレスまたは任意のクラスの静的メンバー関数のアドレスのいずれかを取得します。 両方は、単純なアドレスとして扱われます。  
+ デリゲートのコンス トラクターの 2 番目のパラメーターは、メンバー関数のアドレスまたは任意のクラスの静的メンバー関数のアドレスのいずれかを取得します。 両方の単純なアドレスとして扱われます。  
   
- 次の例では、c3364 エラーが生成されます。  
+ 次の例では、C3364 が生成されます。  
   
 ```  
 // C3364_2.cpp  

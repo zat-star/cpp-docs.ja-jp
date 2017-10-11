@@ -19,31 +19,17 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 3dfd76788c55e74625172dedf2ceb5b8bdfaa061
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7af33bd1854525bebd5d0cb423558d6077366431
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3182"></a>コンパイラ エラー C3182
-'class': メンバーを使用して宣言またはアクセスの宣言は、マネージ コードまたは WinRTtype 内で無効  
+'class': マネージまたは WinRTtype 内でメンバーを使用して宣言または access 宣言はできません  
   
- A[を使用して](../../cpp/using-declaration.md)宣言がマネージ クラスのすべてのフォーム内で有効ではありません。  
+ A[を使用して](../../cpp/using-declaration.md)マネージ クラスのすべてのフォーム内で正しくない宣言です。  
   
  次の例では C3182 が生成され、その修正方法が示されています。  
   

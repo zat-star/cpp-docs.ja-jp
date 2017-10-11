@@ -19,25 +19,11 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 4229a9d9811bad46035451c5d64b7ed06da476d2
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 84f725f64e22dc5da1736eb64696b03b0b7ea36a
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3181"></a>コンパイラ エラー C3181
@@ -45,9 +31,9 @@ ms.lasthandoff: 02/24/2017
   
 無効なパラメーターが渡された、 [typeid](../../windows/typeid-cpp-component-extensions.md)演算子。 パラメーターは、マネージ型である必要があります。  
   
-コンパイラでは、共通言語ランタイムの型にマップするネイティブ型のエイリアスが使用されることに注意してください。  
+コンパイラでは、共通言語ランタイムの型にマップされるネイティブ型のエイリアスが使用されることに注意してください。  
   
-次の例では、c3181 エラーが生成されます。  
+次の例では、C3181 が生成されます。  
   
 ```  
 // C3181a.cpp  

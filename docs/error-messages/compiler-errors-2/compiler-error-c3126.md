@@ -19,33 +19,19 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 619760ac4696f7cf083015216f0c940b207e0372
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 5b12b0ec06d45c68427856ab226e2ea09fc05920
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3126"></a>コンパイラ エラー C3126
-マネージ型 'type' には、' union' 共用体を定義することはできません。  
+共用体のマネージ型 'type' には、' union' は定義できません。  
   
- 共用体は、マネージ型の内部は定義できません。  
+ マネージ型の内部共用体を定義することはできません。  
   
- 次の例では、c3126 エラーが生成されます。  
+ 次の例では、C3126 が生成されます。  
   
 ```  
 // C3126_2.cpp  

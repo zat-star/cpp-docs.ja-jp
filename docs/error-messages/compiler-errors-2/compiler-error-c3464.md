@@ -19,26 +19,11 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: fadbe79764fd34144572528fc9de03d18f744222
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 69ddfd70c92c306a9e68d5eacc568b24b07c9745
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3464"></a>コンパイラ エラー C3464
@@ -46,7 +31,7 @@ ms.lasthandoff: 02/24/2017
   
  型の転送は、入れ子にされた型では動作しません。  
   
- 詳細については、次を参照してください。[型の転送 (C + +/CLI)](../../windows/type-forwarding-cpp-cli.md)します。  
+ 詳細については、次を参照してください。 [Type Forwarding (C + + CLI)](../../windows/type-forwarding-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
  コンポーネントを作成する例を次に示します。  

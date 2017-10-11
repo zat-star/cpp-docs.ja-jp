@@ -19,26 +19,11 @@ caps.latest.revision: 6
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 68d0930b7c80dfa997eddb55b01f9d9c313b611e
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 026b77ca4f9488c1178a2815ffb0a9c7c71bdf54
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3454"></a>コンパイラ エラー C3454
@@ -46,7 +31,7 @@ ms.lasthandoff: 04/12/2017
   
  クラスは、属性になるように定義する必要があります。  
   
- 詳細については、次を参照してください。[属性](../../windows/attribute.md)です。  
+ 詳細については、「 [attribute](../../windows/attribute.md)」を参照してください。  
   
 ## <a name="example"></a>例  
  次の例では C3454 が生成されます。  

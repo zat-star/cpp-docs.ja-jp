@@ -19,31 +19,17 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: 051300b1c670381c0450b373058644fc5a84e7d4
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 47a0231a161a2502c26786fceeb1b3634b236eaf
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3353"></a>コンパイラ エラー C3353
 'delegate': デリゲートはマネージ型または WinRT 型のグローバル関数またはメンバー関数からのみ作成できます  
   
- デリゲートの宣言、[委任](../../windows/delegate-cpp-component-extensions.md)キーワードは、グローバル スコープでのみ宣言できます。  
+ 宣言されたデリゲートを[委任](../../windows/delegate-cpp-component-extensions.md)キーワードでは、グローバル スコープでのみ宣言できます。  
   
  次の例では C3353 が生成されます。  
   

@@ -19,34 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: aeb26c5a3b1add0f3b8ec3eb9ba9ae2c20fb094e
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 9a03e0dbb61dc6f57b1a6fe3cd345d46f78b05a9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3415"></a>コンパイラ エラー C3415
 異なる属性 ('value') を持つ、複数の 'section_name' セクションが見つかりました  
   
- 競合する値がで指定された[セクション](../../preprocessor/section.md)プラグマ。  
+ 競合する値が [section](../../preprocessor/section.md) プラグマで指定されました。  
   
- `value`ntimage.h で指定されたセクションの現在の設定です。 例:  
+ `value` は、ntimage.h で指定された、セクションの現在の設定です。 例:  
   
 ```  
 // Section contains extended relocations.  
