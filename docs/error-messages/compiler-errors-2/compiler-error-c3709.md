@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 8162e214500b8d39edd1e02e917e00d2372c3abe
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4d56a4c18543ad71e524a4cc08eecd35ab6e7e2e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3709"></a>コンパイラ エラー C3709
-'function': 不適切な _ _hook でイベントを指定する構文/\__unhook  
+'function': _ _hook のイベントを指定するための構文が正しくありません/\__unhook  
   
- イベント ソースを指定すると[_ _hook](../../cpp/hook.md)または[_ _unhook](../../cpp/unhook.md)、最初のパラメーターが有効なイベント メソッドを指定する必要があり、2 番目のパラメーターが有効なイベント ソース オブジェクト (メソッドではない) にする必要があります。  
+ イベント ソースを指定すると[_ _hook](../../cpp/hook.md)または[_ _unhook](../../cpp/unhook.md)最初のパラメーターが有効なイベント メソッドにする必要があります、および 2 番目のパラメーターが有効なイベント ソース オブジェクト (メソッドではない) にする必要があります。  
   
- 次の例では、c3709 エラーが生成されます。  
+ 次の例では、C3709 が生成されます。  
   
 ```  
 // C3709.cpp  

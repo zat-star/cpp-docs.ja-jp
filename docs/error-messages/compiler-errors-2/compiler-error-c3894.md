@@ -1,36 +1,39 @@
 ---
-title: "コンパイラ エラー C3894 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3894"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3894"
+title: "コンパイラ エラー C3894 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3894
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3894
 ms.assetid: 6d5ac903-1dea-431d-8e3a-cebca4342983
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# コンパイラ エラー C3894
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 46dffabb57e871e1635738434e7efb4812850379
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'var' : initonly スタティック データ メンバーの左辺値は、クラス 'クラス' のクラス コンストラクターでのみ使用することができます  
+---
+# <a name="compiler-error-c3894"></a>コンパイラ エラー C3894
+'var': initonly スタティック データ メンバーの左辺値の使用はクラス 'class' のクラス コンス トラクターでのみ許可  
   
- 静的な [initonly](../../dotnet/initonly-cpp-cli.md) データ メンバーは、宣言の位置で左辺値として使用するか、または静的コンストラクター内でのみ使用できます。  
+ 静的[initonly](../../dotnet/initonly-cpp-cli.md)データ メンバーは、または静的コンス トラクターの宣言の位置で左辺値としてのみ使用できます。  
   
- インスタンス \(非静的な\) initonly データ メンバーは、宣言の位置で左辺値として使用するか、またはインスタンス \(非静的な\) コンストラクター内でのみ使用できます。  
+ インスタンス (静的ではない) initonly データ メンバーは、宣言、またはインスタンス (静的ではない) コンス トラクターでは、その時点で左辺値としてのみ使用できます。  
   
- 次の例では警告 C3894 が生成されます。  
+ 次の例では、C3894 が生成されます。  
   
 ```  
 // C3894.cpp  

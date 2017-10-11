@@ -19,35 +19,21 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: f2dc847b6d75a563379b46e1375f93ceab9c7531
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 266213deba94bdc925747d57dee184aca5f5f605
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4687"></a>コンパイラの警告 C4687
-'class': シールされた抽象クラスはインターフェイス 'インターフェイス' を実装することはできません  
+'class': シールされた抽象クラスはインターフェイス 'interface' を実装できません  
   
- シールされた抽象型は通常静的メンバー関数を保持すると便利です。  
+ シールされた抽象型は通常の静的メンバー関数を保持するために便利です。  
   
- 詳細については、次を参照してください。[抽象](../../windows/abstract-cpp-component-extensions.md)と[シール](../../windows/sealed-cpp-component-extensions.md)します。  
+ 詳細については、次を参照してください。[抽象](../../windows/abstract-cpp-component-extensions.md)と[シール](../../windows/sealed-cpp-component-extensions.md)です。  
   
- C4687 は既定では、エラーとして発行します。 C4687 を抑制することができます、[警告](../../preprocessor/warning.md)プラグマです。 シールされた抽象型にインターフェイスを実装する場合は、C4687 を抑制することができます。  
+ 既定では、エラーとして C4687 が発行されます。 C4687 を抑制することができます、[警告](../../preprocessor/warning.md)プラグマ。 シールされた抽象型にインターフェイスを実装する場合は、C4687 を抑制することができます。  
   
 ## <a name="example"></a>例  
  次の例では、C4687 を生成します。  

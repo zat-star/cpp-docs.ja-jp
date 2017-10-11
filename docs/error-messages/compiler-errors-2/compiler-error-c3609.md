@@ -19,31 +19,17 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: ffb46df64ac0a18847c3595f9fb3fffc3bd26c51
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: eb5d5127020ad1855c3fe7d94c362deeee53ccad
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3609"></a>コンパイラ エラー C3609
 'member': sealed 関数または final 関数は仮想である必要があります  
   
- [シール](../../windows/sealed-cpp-component-extensions.md)と[最終的な](../../cpp/final-specifier.md)キーワードでマークされたクラス、構造体、またはメンバー関数ではのみ`virtual`します。  
+ [シール](../../windows/sealed-cpp-component-extensions.md)と[最終](../../cpp/final-specifier.md)キーワードでマークされたクラス、構造体、またはメンバー関数ではのみ`virtual`です。  
   
  次の例では C3609 が生成されます。  
   

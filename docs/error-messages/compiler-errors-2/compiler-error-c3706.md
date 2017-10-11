@@ -1,38 +1,41 @@
 ---
-title: "コンパイラ エラー C3706 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3706"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3706"
+title: "コンパイラ エラー C3706 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3706
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3706
 ms.assetid: d20a33eb-d625-46c5-ac87-32075a590d07
 caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
----
-# コンパイラ エラー C3706
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 20f7e14d22e1994213624d88ccab098844aa6ac4
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'function' : COM イベントを発生させるには、COM インターフェイスを使用しなければなりません。  
+---
+# <a name="compiler-error-c3706"></a>コンパイラ エラー C3706
+'function': COM イベントを起動する COM インターフェイスでなければなりません  
   
- COM イベントを発生させるために使用するイベント インターフェイスは、COM インターフェイスであることが必要です。  この場合、インターフェイスは、Visual C\+\+ 属性を使用して定義されているか、embedded\_idl 属性を指定した [\#import](../Topic/%23import%20Directive%20\(C++\).md) を使用してタイプ ライブラリからインポートされている必要があります。  
+ COM イベントを発生させるを使用するイベント インターフェイスには、COM インターフェイスを使用する必要があります。 このような状況で、インターフェイス、Visual C 属性を使用して定義する必要がありますか、またはを使用してインポート[#import](../../preprocessor/hash-import-directive-cpp.md) #import の embedded_idl 属性を持つタイプ ライブラリからです。  
   
- COM イベントを使用するには、次の例に示す ATL ヘッダー ファイルの `#include` 行が必要です。  このエラーを解決するには、インターフェイスの定義に属性 [object](../Topic/object%20\(C++\).md)、[dual](../Topic/dual.md)、または [dispinterface](../../windows/dispinterface.md) を適用して、`IEvents` \(イベント インターフェイス\) を COM インターフェイスにします。  
+ なお、`#include`以下のサンプルに示すように、ATL ヘッダー ファイルの行が COM イベントを使用するために必要です。 このエラーを修正するように`IEvents`(イベントのインターフェイス)、次のいずれかの操作を適用することにより、COM インターフェイスのインターフェイス定義に属性:[オブジェクト](../../windows/object-cpp.md)、[デュアル](../../windows/dual.md)、または[dispinterface](../../windows/dispinterface.md)です。  
   
- インターフェイスが MIDL で生成されたヘッダー ファイルからのものである場合、コンパイラはそれを COM インターフェイスと認識しません。  
+ MIDL によって生成されたヘッダー ファイルからのインターフェイスの場合は、コンパイラが認識しないこと、COM インターフェイスとして。  
   
- 次の例では警告 C3706 が生成されます。  
+ 次の例では、C3706 が生成されます。  
   
 ```  
 // C3706.cpp  

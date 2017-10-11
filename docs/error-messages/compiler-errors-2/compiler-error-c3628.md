@@ -19,31 +19,17 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: e8723f85289d1094a6969d2bf26c30a85ccf382b
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 131b2829991d0d8c40b64c903afd45b485b9ba55
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3628"></a>コンパイラ エラー C3628
-'基本クラス': マネージまたは WinRTclasses はパブリック継承のみをサポート  
+'base class': マネージ配列または WinRTclasses はパブリック継承のみをサポート  
   
-WinRT、または管理を使用しようとしたクラスの[プライベート](../../cpp/private-cpp.md)または[保護](../../cpp/protected-cpp.md)基本クラスです。 A の管理や WinRT クラスを持つ基本クラスとしてのみ使用できる[パブリック](../../cpp/public-cpp.md)アクセスします。  
+マネージまたは WinRT の使用を試みましたクラスの[プライベート](../../cpp/private-cpp.md)または[保護](../../cpp/protected-cpp.md)基本クラスです。 マネージ配列または WinRT クラスを持つ基本クラスとしてのみ使用できます[パブリック](../../cpp/public-cpp.md)アクセスします。  
   
 次の例は C3628 を生成し、その修正方法を示しています。  
   

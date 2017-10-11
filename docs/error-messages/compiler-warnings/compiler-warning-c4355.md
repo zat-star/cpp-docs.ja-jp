@@ -19,35 +19,21 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 93b6a78365e493cbfea656e608b7bd3d77e600eb
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 061ad3df17cf9c86fbc5ac98048932aff8b0b25b
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4355"></a>コンパイラの警告 C4355
 'this' : ベース メンバー初期化リストで使用されました。  
   
- **この**ポインターが非静的メンバー関数内でのみ有効です。 これは、基底クラスの初期化子リストで使用できません。  
+ **この**ポインターが非静的メンバー関数内でのみ有効です。 これは、基本クラスの初期化子リストで使用できません。  
   
- 前に、基底クラスのコンス トラクターとクラス メンバーのコンス トラクターが呼び出されます**この**コンス トラクターです。 実際には、別のコンス トラクターに渡してオブジェクトへのポインターをクリアしました。 その他のコンス トラクターは、メンバーにアクセスまたは、このメンバー関数を呼び出して、結果が定義されていることができます。 使用しないでください、**この**すべての構築が完了するまでのポインター。  
+ 基底クラスのコンス トラクターおよびクラス メンバーのコンス トラクターは、前に呼び出されます**この**コンス トラクターです。 実際には、別のコンス トラクターに未構築のオブジェクトにポインターを渡さしました。 その他のコンス トラクターは、メンバーにアクセスまたはこのメンバー関数を呼び出し、結果は定義できません。 使用しないで、**この**すべての構築が完了するまでのポインター。  
   
- 既定では、この警告はオフに設定されています。 参照してください[コンパイラの警告ことは既定で無効](../../preprocessor/compiler-warnings-that-are-off-by-default.md)の詳細。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
  次の例では、C4355 が生成されます。  
   

@@ -19,38 +19,23 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 58d702067c186eeeea94768a03836b64577961ca
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: a4342c749c5db4d66f206209a146ad7d7aef7041
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4936"></a>コンパイラの警告 C4936
 この __declspec は、/clr または /clr:pure でコンパイルされるときのみサポートされます  
   
- **/Clr: 純粋な**コンパイラ オプションは Visual Studio 2015 で使用されなくなりました。  
+ **/Clr: 純粋な**コンパイラ オプションは Visual Studio 2015 で推奨されなくなりました。  
   
- A`__declspec`されたが、修飾子が使用されて`__declspec`修飾子は有効なは、いずれかでコンパイルした場合のみ、 [/clr](../../build/reference/clr-common-language-runtime-compilation.md)オプション。  
+ `__declspec` 修飾子が使用されましたが、この `__declspec` 修飾子は、いずれかの [/clr](../../build/reference/clr-common-language-runtime-compilation.md) オプションでコンパイルされた場合にのみ有効です。  
   
- 詳細については、次を参照してください。 [appdomain](../../cpp/appdomain.md)と[プロセス](../../cpp/process.md)します。  
+ 詳細については、「 [appdomain](../../cpp/appdomain.md) 」および「 [process](../../cpp/process.md)」を参照してください。  
   
- C4936 は、常にエラーとして表示されます。  C4936 で無効にすることができます、[警告](../../preprocessor/warning.md)プラグマです。  
+ C4936 は、常にエラーとして表示されます。  [warning](../../preprocessor/warning.md) プラグマを使用して、C4936 を無効にすることができます。  
   
  次の例では C4936 が生成されます。  
   

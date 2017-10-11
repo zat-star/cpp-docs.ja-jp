@@ -19,31 +19,17 @@ caps.latest.revision: 8
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: 31cef33981bbc2063bf68e433f9d3ba32780363d
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0cacac87535864c6268d0f078566b9ab224e9151
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3610"></a>コンパイラ エラー C3610
-'valuetype': 値の型 'ボックス化しなければなりません' 'メソッド' メソッドを呼び出すには、  
+'valuetype': 値型必要があります 'boxed' にメソッド 'method' を呼び出すことができます  
   
- 既定では、値型はマネージ ヒープにします。 などの .NET ランタイム クラスからメソッドを呼び出すことが前に`Object`値の型をマネージ ヒープに移動する必要があります。  
+ 既定では、値の型はマネージ ヒープにします。 など、.NET ランタイム クラスからメソッドを呼び出すことができます前に`Object`値の型をマネージ ヒープに移動する必要があります。  
   
- C3610 は古いコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**します。  
+ C3610 は古い形式のコンパイラ オプションを使用して到達のみ**/clr:oldSyntax**です。  
 

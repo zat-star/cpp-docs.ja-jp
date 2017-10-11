@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3611 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3611"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3611"
+title: "コンパイラ エラー C3611 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3611
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3611
 ms.assetid: 42f3e320-41de-420a-bd05-8924cab765aa
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラ エラー C3611
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: cfd4d0cb336f540387ad8f135c02c512a5282e26
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'関数': シール関数は純粋指定子を含むことはできません  
+---
+# <a name="compiler-error-c3611"></a>コンパイラ エラー C3611
+'function': シール関数は純粋指定子を持つことはできません  
   
- シール関数の宣言が正しくありません。詳細については、「[sealed](../../windows/sealed-cpp-component-extensions.md)」を参照してください。  
+ 封印された関数の宣言が正しくありません。  詳細については、次を参照してください。[シール](../../windows/sealed-cpp-component-extensions.md)です。  
   
-## 使用例  
- 次の例では C3611 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3611 を生成します。  
   
 ```  
 // C3611.cpp  

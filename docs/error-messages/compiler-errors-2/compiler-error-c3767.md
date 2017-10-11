@@ -19,26 +19,11 @@ caps.latest.revision: 12
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: c243063a9770542f137d5950e8a269f771960f74
-ms.openlocfilehash: b0cce511d895aae218c1b2ab04d129173b049983
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6ebbcbe30a0c9359116d259c36d702a968b333c9
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3767"></a>コンパイラ エラー C3767
@@ -46,10 +31,10 @@ ms.lasthandoff: 02/24/2017
   
  クラスで定義されたフレンド関数は、グローバル名前空間スコープで定義および宣言された関数として扱われることを想定していません。 ただし、引数依存の検索で検出することはできます。  
   
- また、C3767 は、互換性に影響する変更点によっても発生する: ネイティブ型は既定ではプライベートでは現在、 **/clr**コンパイル; を参照してください[可視性を入力](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Type_visibility)の詳細。  
+ C3767 は、重大な変更で起きている可能性も: ネイティブ型は、既定でプライベートようになりました、 **/clr**コンパイル; 参照してください[可視性を入力](../../dotnet/how-to-define-and-consume-classes-and-structs-cpp-cli.md#BKMK_Type_visibility)詳細についてはします。  
   
 ## <a name="example"></a>例  
- 次の例ではまた、C3767 が生成されます。  
+ 次の例では、C3767 が生成されます。  
   
 ```  
 // C3767a.cpp  
@@ -80,7 +65,7 @@ int main() {
 };  
 ```  
   
- 次の例ではまた、C3767 が生成されます。  
+ 次の例では、C3767 が生成されます。  
   
 ```  
 // C3767c.cpp  
@@ -102,9 +87,9 @@ ref class Der : public Base {
 };  
 ```  
   
- Visual C .NET 2002 では、コンパイラによってシンボルを検索する方法が変更されました。 以前は、指定された名前空間でシンボルが自動的に検索される場合がありました。 これで、引数依存の検索を使用します。  
+ Visual C .NET 2002 は、コンパイラは、シンボルを検索する方法を変更します。 以前は、指定された名前空間でシンボルが自動的に検索される場合がありました。 ここで、引数依存の検索を使用します。  
   
- 次の例ではまた、C3767 が生成されます。  
+ 次の例では、C3767 が生成されます。  
   
 ```  
 // C3767e.cpp  

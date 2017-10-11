@@ -19,33 +19,19 @@ caps.latest.revision: 7
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 0361be7eb3f86466ea7d379cd0919bb84addcfea
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ba08854d9d9ac6f0e644a64a80133b1d8b70a167
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3705"></a>コンパイラ エラー C3705
 'function': イベントのインターフェイスを見つけることができません  
   
- COM イベントを使用するイベント インターフェイスを定義する必要があります。 なお、`#include`次の例に示すように、ATL ヘッダー ファイルの行は、COM のイベントを使用するために必要なです。 このエラーを解決するには、定義をコメント解除、`IEvents`サンプル コードのインターフェイスです。  
+ COM イベントを使用するイベント インターフェイスを定義する必要があります。 なお、`#include`以下のサンプルに示すように、ATL ヘッダー ファイルの行が COM イベントを使用するために必要です。 このエラーを解決するには、定義のコメントを解除、`IEvents`のサンプル コードのインターフェイスです。  
   
- 次の例では、c3705 エラーが生成されます。  
+ 次の例では、C3705 が生成されます。  
   
 ```  
 // C3705.cpp  

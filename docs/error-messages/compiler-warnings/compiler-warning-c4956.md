@@ -19,36 +19,21 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 782735be55c043482679740afa9571ba7b29dfc4
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: bad7fac98e81e39457f484960ee566c16b6fe5bc
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4956"></a>コンパイラの警告 C4956
 'type' : この型は検証可能ではありません  
   
- この警告が生成されたときに[/clr:safe](../../build/reference/clr-common-language-runtime-compilation.md)が指定されているコードにはで検証可能ではない型が含まれています。  
+ この警告は、 [/clr:safe](../../build/reference/clr-common-language-runtime-compilation.md) が指定され、コードに検証不可能な型が含まれている場合に生成されます。  
   
  詳細については、次を参照してください。[純粋なコードと検証可能なコード (C + + CLI)](../../dotnet/pure-and-verifiable-code-cpp-cli.md)です。  
   
- この警告がエラーとして発行され、無効にする、[警告](../../preprocessor/warning.md)プラグマ、または[/wd](../../build/reference/compiler-option-warning-level.md)コンパイラ オプション。  
+ この警告は、エラーとして表示されます。無効にするには、 [warning](../../preprocessor/warning.md) プラグマ、または [/wd](../../build/reference/compiler-option-warning-level.md) コンパイラ オプションを使用します。  
   
  次の例では C4956 が生成されます。  
   

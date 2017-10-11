@@ -1,29 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4029 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4026"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4029"
+title: "コンパイラの警告 (レベル 1) C4029 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4026
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4029
 ms.assetid: a5c50bab-a189-44c9-aa5c-4377c7c8443a
 caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
----
-# コンパイラの警告 (レベル 1) C4029
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: dcbb309d51fe78e026745f37c6b0097fdc278f73
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-宣言されたパラメーター リストが定義と一致しません。  
+---
+# <a name="compiler-warning-level-1-c4029"></a>コンパイラの警告 (レベル 1) C4029
+宣言された仮パラメーター リストの定義と異なります  
   
- 関数宣言で指定されている仮パラメーターの型が、関数定義で指定されている仮パラメーターの型と一致しません。  関数定義のパラメーター リストが使用されます。
+ 関数宣言の仮パラメーターの型が関数の定義と一致しません。 コンパイラは、定義のパラメーター リストを使用します。

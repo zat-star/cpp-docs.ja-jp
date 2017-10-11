@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3736 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3736"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3736"
+title: "コンパイラ エラー C3736 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3736
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3736
 ms.assetid: 579b773c-41e7-40ea-8382-2e3ce2667f4c
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラ エラー C3736
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0c2d7f548a1795221a72d0ac7be01e8ed87fa6ce
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'event' : メソッド、またマネージ イベントの場合はデータ メンバーでなければなりません。  
+---
+# <a name="compiler-error-c3736"></a>コンパイラ エラー C3736
+'event': メソッドにする必要がありますか、またマネージ イベントの場合、データ メンバー  
   
- ネイティブ イベントと COM イベントはメソッドにする必要があります。.NET イベントは、データ メンバーにすることもできます。  
+ ネイティブ モードと COM イベントには、メソッドがある場合があります。 .NET イベントもデータ メンバーであることができます。  
   
- 次の例では警告 C3736 が生成されます。  
+ 次の例では、C3736 が生成されます。  
   
 ```  
 // C3736.cpp  

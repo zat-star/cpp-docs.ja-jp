@@ -19,33 +19,19 @@ caps.latest.revision: 9
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 84e8d54031024952925a5125fb3ab245680acf40
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: bbb82f1684da4c7a3fe659f3892e7b1004a7f814
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3656"></a>コンパイラ エラー C3656
-'オーバーライド': オーバーライド指定子を繰り返すことはできません  
+'override': オーバーライド指定子を繰り返すことはできません  
   
- 明示的なオーバーライド キーワードは、1 回だけ指定できます。 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)します。  
+ 明示的なオーバーライド キーワードは、1 回のみ指定できます。 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)です。  
   
- 次の例では、c3656 エラーが生成されます。  
+ 次の例では、C3656 が生成されます。  
   
 ```  
 // C3656.cpp  

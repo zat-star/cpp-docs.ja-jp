@@ -67,33 +67,18 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: 78e2d8ed0100bfa0ea39d0e4b2347d65153a4136
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: ec696a2a1fa323850210ba87c637c07dd5577ea1
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-errors-c2600-through-c2699"></a>コンパイラ エラー C2600 から C2699
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -144,7 +129,7 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C2642|互換性のために残されています。|  
 |コンパイラ エラー C2643|互換性のために残されています。|  
 |コンパイラ エラー C2644|互換性のために残されています。|  
-|[コンパイラ エラー C2645](compiler-error-c2645.md)|メンバー宣言に対するポインターに限定名が指定されていません (':: *' が見つかりました)。|  
+|[コンパイラ エラー C2645](compiler-error-c2645.md)|メンバーへのポインターの修飾名がない (見つかった ':: *')|  
 |[コンパイラ エラー C2646](compiler-error-c2646.md)|匿名構造体/共用体グローバルまたは名前空間スコープする必要があります static として宣言します。|  
 |[コンパイラ エラー C2647](compiler-error-c2647.md)|'*演算子*': 逆参照することはできません、'*type1*' で、'*type2*'|  
 |[コンパイラ エラー C2648](compiler-error-c2648.md)|'*識別子*': 静的メンバーが既定のパラメーターとしてメンバーの使用|  
@@ -168,12 +153,12 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2666](compiler-error-c2666.md)|'*関数*':*数*オーバー ロードがある同様の変換|  
 |[コンパイラ エラー C2667](compiler-error-c2667.md)|'*関数*': のいずれも*数*オーバー ロードが最適な変換を持つ|  
 |[コンパイラ エラー C2668](compiler-error-c2668.md)|'*関数*': オーバー ロードされた関数のあいまいな呼び出し|  
-|[コンパイラ エラー C2669](compiler-error-c2669.md)|無名共同体で許可されていないメンバー関数です。|  
+|[コンパイラ エラー C2669](compiler-error-c2669.md)|メンバー関数が匿名共用体では使用できません。|  
 |[コンパイラ エラー C2670](compiler-error-c2670.md)|'*関数*': 関数テンプレートは、パラメーターを変換できません*数*型から'*型*'|  
 |[コンパイラ エラー C2671](compiler-error-c2671.md)|'*関数*': 静的メンバー関数には、'this' ポインターはありません。|  
 |コンパイラ エラー C2672|'*関数*': 一致するオーバー ロードされた関数。|  
 |[コンパイラ エラー C2673](compiler-error-c2673.md)|'*関数*': グローバル関数には、'this' ポインターはありません。|  
-|[コンパイラ エラー C2674](compiler-error-c2674.md)|ジェネリック宣言はこのコンテキストでは使用できません|  
+|[コンパイラ エラー C2674](compiler-error-c2674.md)|ジェネリック宣言はこのコンテキストで許可されていません|  
 |[コンパイラ エラー C2675](compiler-error-c2675.md)|単項 '*演算子*':'*型*' 定義済の演算子にこの演算子または適切な型への変換を定義していません。|  
 |[コンパイラ エラー C2676](compiler-error-c2676.md)|バイナリ '*演算子*':'*型*' 定義済の演算子にこの演算子または適切な型への変換を定義していません。|  
 |[コンパイラ エラー C2677](compiler-error-c2677.md)|バイナリ '*演算子*': 型を扱うグローバル演算子が見つかりません'*型*' (または許容可能な変換はありません)|  
@@ -185,7 +170,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2683](compiler-error-c2683.md)|'*キャスト*':'*型*' ポリモーフィックな型ではありません|  
 |コンパイラ エラー C2684|'*宣言子*': マネージまたは WinRT クラスでは削除され、既定値にされた関数はサポートされていません|  
 |コンパイラ エラー C2685|'*宣言子*': 明示的な拘束指定子を持つ削除され、既定値にされた関数はサポートされていません|  
-|コンパイラ エラー C2686|同じパラメーターの型で静的な、または動的なメンバー関数をオーバーロードできません。|  
+|コンパイラ エラー C2686|同じパラメーターの型の静的および非静的メンバー関数はオーバー ロードできません。|  
 |[コンパイラ エラー C2687](compiler-error-c2687.md)|'*型*': 例外宣言の' void ' または不完全な型、ポインター、または不完全な型への参照を表すことはできません|  
 |[コンパイラ エラー C2688](compiler-error-c2688.md)|'*型*::*メンバー*': covariant の戻りを複数、または仮想継承が varargs 関数はサポートされていません|  
 |[コンパイラ エラー C2689](compiler-error-c2689.md)|'*関数*': ローカル クラス内でフレンド関数を定義することはできません|  

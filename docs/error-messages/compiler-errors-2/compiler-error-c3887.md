@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3887 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3887"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3887"
+title: "コンパイラ エラー C3887 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3887
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3887
 ms.assetid: a7e82426-ef99-437b-9562-2822004e18fe
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3887
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 7dccbd3a34764eedc53c69ddd69c693cc4782d2a
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'var' : リテラル データ メンバーの初期化子は定数指揮でなければなりません  
+---
+# <a name="compiler-error-c3887"></a>コンパイラ エラー C3887
+'var': リテラル データ メンバーの初期化子が定数式にする必要があります  
   
- [literal](../../windows/literal-cpp-component-extensions.md) データ メンバーは、定数式でのみ初期化できます。  
+ A[リテラル](../../windows/literal-cpp-component-extensions.md)データ メンバーは、定数式でのみ初期化できます。  
   
- 次の例では警告 C3887 が生成されます。  
+ 次の例では、C3887 が生成されます。  
   
 ```  
 // C3887.cpp  
@@ -40,7 +43,7 @@ ref struct Y1 {
 };  
 ```  
   
- 解決方法 :  
+ 考えられる解決策:  
   
 ```  
 // C3887b.cpp  

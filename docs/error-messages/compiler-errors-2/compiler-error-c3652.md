@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3652 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3652"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3652"
+title: "コンパイラ エラー C3652 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3652
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3652
 ms.assetid: 15d68737-177e-41f1-80e0-7c3e2afdf0fc
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# コンパイラ エラー C3652
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4bade460d97b8d7dcb38e7d37fa87f2910047c47
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'オーバーライド' : 明示的にオーバーライドする関数は仮想でなければなりません  
+---
+# <a name="compiler-error-c3652"></a>コンパイラ エラー C3652
+'override': 明示的にオーバーライドする関数は仮想である必要があります  
   
- 明示的にオーバーライドする関数は仮想であることが必要です。  詳細については、「[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)」を参照してください。  
+ 明示的にオーバーライドする関数は仮想である必要があります。 詳細については、次を参照してください。[明示的なオーバーライド](../../windows/explicit-overrides-cpp-component-extensions.md)です。  
   
- 次の例では警告 C3652 が生成されます。  
+ 次の例では、C3652 が生成されます。  
   
 ```  
 // C3652.cpp  

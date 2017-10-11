@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3711 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3711"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3711"
+title: "コンパイラ エラー C3711 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3711
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3711
 ms.assetid: 26d581cc-2153-4ee0-b814-a371184be3e1
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3711
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 0cfc4a2ffbbf65f1a1171a256ce08d5f498887a8
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'method' : マネージでないイベント ソース メソッドは、void または整数型を返さなければなりません。  
+---
+# <a name="compiler-error-c3711"></a>コンパイラ エラー C3711
+'method': マネージでないイベント ソース メソッドは、void または整数型を返す必要があります  
   
- イベント ソースで、`void` 型または整数型を返さないメソッドを定義しています。  このエラーを解決するには、イベントとイベント ハンドラーの戻り値の型を `void` 型にするか、または `int` や `long` などの整数型にします。  
+ Void が返されませんでしたイベント ソースまたは整数型では、メソッドを定義します。 このエラーを修正するように、イベントとイベント ハンドラーの戻り値の型`void`または整数型など、`int`または`long`です。  
   
- 次の例では警告 C3711 が生成されます。  
+ 次の例では、C3711 が生成されます。  
   
 ```  
 // C3711.cpp  

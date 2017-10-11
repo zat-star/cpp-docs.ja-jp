@@ -19,34 +19,19 @@ caps.latest.revision: 11
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ac033535632e94a365aa8dafd849f2ab28a3af7
-ms.openlocfilehash: 937510b3fadf3dd2aff81defc08ea2c74b8b7dec
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 6a922a0ee324afcf5f263abe2189e4071c5575c7
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-warning-c4950"></a>コンパイラの警告 C4950
 'type_or_member': obsolete としてマークされています  
   
-メンバーまたは型が不使用とマークされました、<xref:System.ObsoleteAttribute>属性</xref:System.ObsoleteAttribute>。  
+メンバーまたは型がで obsolete としてマークされた、<xref:System.ObsoleteAttribute>属性。  
   
-C4950 は、常にエラーとして表示されます。 使用してこの警告をオフにすることができます、[警告](../../preprocessor/warning.md)プラグマ ディレクティブまたは[/wd](../../build/reference/compiler-option-warning-level.md)コンパイラ オプション。  
+C4950 は、常にエラーとして表示されます。 この警告をオフを使用して、[警告](../../preprocessor/warning.md)プラグマ ディレクティブまたは[/wd](../../build/reference/compiler-option-warning-level.md)コンパイラ オプション。  
   
 ## <a name="example"></a>例  
 次の例では C4950 が生成されます。  

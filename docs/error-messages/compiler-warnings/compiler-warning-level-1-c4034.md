@@ -1,29 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4034 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4034"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4034"
+title: "コンパイラの警告 (レベル 1) C4034 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C4034
+dev_langs:
+- C++
+helpviewer_keywords:
+- C4034
 ms.assetid: 1d2f598d-bdfc-4a95-9617-424b591ed3e8
 caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
----
-# コンパイラの警告 (レベル 1) C4034
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 21514ce66b17fbf2a3192d1e28b04350457b2fc9
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-sizeof 演算子がサイズが 0 となったオペランドに適用されました。  
+---
+# <a name="compiler-warning-level-1-c4034"></a>コンパイラの警告 (レベル 1) C4034
+sizeof は 0 を返します  
   
- `sizeof` 演算子が、サイズ 0 になるオペランド \(空の構造体、共用体、クラス、列挙型、または `void` 型\) に適用されました。
+ `sizeof`サイズが 0 のオペランドに演算子を適用 (空の構造体、共用体、クラス、または列挙型、または型`void`)。

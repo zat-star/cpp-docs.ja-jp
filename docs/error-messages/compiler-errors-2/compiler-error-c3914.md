@@ -19,34 +19,20 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 65e7a7bd56096fbeec61b651ab494d82edef9c90
-ms.openlocfilehash: fd21be63cc46f6108bd84615e9dbeccbcb39b1cc
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4d38483d3edd477babb7a240a7b79841850f6a9e
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3914"></a>コンパイラ エラー C3914
-既定プロパティはスタティックであることはできません  
+既定のプロパティを静的にすることはできません。  
   
-既定のプロパティの宣言が正しくありません。  詳細については、次を参照してください。[方法: プロパティを使用して C + で/cli CLI](../../dotnet/how-to-use-properties-in-cpp-cli.md)します。  
+既定のプロパティの宣言が正しくありません。  詳細については、次を参照してください。[する方法: プロパティを使用して C + + CLI](../../dotnet/how-to-use-properties-in-cpp-cli.md)です。  
   
 ## <a name="example"></a>例  
-次の例では、C3914 を生成し、それを修正する方法について説明します。  
+次の例では、C3914 を生成し、その修正方法を示しています。  
   
 ```  
 // C3914.cpp  

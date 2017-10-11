@@ -19,31 +19,17 @@ caps.latest.revision: 10
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ce476fe84c4c998c1775cb9b492aaba5dae68da5
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8a8c9fa9112128b86123693aea7443d68e8531d0
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3839"></a>コンパイラ エラー C3839
 マネージ型または WinRT 型で配置を変更することはできません  
   
- 変数の配置では、管理、または Windows ランタイム型が CLR または Windows ランタイムによって制御され、変更できません[align](../../cpp/align-cpp.md)します。  
+ 変数の配置では、管理、または Windows ランタイム型が CLR または Windows ランタイムによって制御され、変更できません[整列](../../cpp/align-cpp.md)です。  
   
  次の例では C3839 が生成されます。  
   

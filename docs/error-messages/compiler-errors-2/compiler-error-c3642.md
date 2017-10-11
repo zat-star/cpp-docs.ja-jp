@@ -1,38 +1,41 @@
 ---
-title: "コンパイラ エラー C3642 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3642"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3642"
+title: "コンパイラ エラー C3642 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3642
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3642
 ms.assetid: 429790c2-9614-4d85-b31c-687c8d8f83ff
 caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
----
-# コンパイラ エラー C3642
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4b5d73344b99a42dfc4caf2b9f6b8cf7c9dc18bc
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'return\_type\/args' : \_\_clrcall 呼び出し規約を伴う関数を、ネイティブ コードから呼び出すことはできません  
+---
+# <a name="compiler-error-c3642"></a>コンパイラ エラー C3642
+' return_type/args ': _ _clrcall 呼び出し規約をネイティブ コードからの関数を呼び出すことはできません  
   
- [\_\_clrcall](../../cpp/clrcall.md) 呼び出し規約でマークされている関数をネイティブ \(アンマネージ\) コードから呼び出すことはできません。  
+ マークされている関数、 [_ _clrcall](../../cpp/clrcall.md)呼び出し規約は、ネイティブ (アンマネージ) コードから呼び出すことができません。  
   
- *return\_type\/args* は 関数名や、呼び出そうとしている `__clrcall` 関数の型です。関数ポインターから呼び出す場合は型が使用されます。  
+ *return_type/args*は関数の名前またはの種類、`__clrcall`関数を呼び出すしようとしています。  関数ポインターを通じて呼び出す場合に、型を使用します。  
   
- ネイティブ コンテキストからマネージ関数を呼び出すには、`__clrcall` 関数を呼び出す "ラッパー" 関数を追加できます。  または、CLR マーシャリング機構を使用します。詳細については、「[方法: PInvoke を使用して関数ポインターをマーシャリングする](../../dotnet/how-to-marshal-function-pointers-using-pinvoke.md)」を参照してください。  
+ マネージ関数を呼び出すネイティブ コンテキストから、「ラッパー」関数を呼び出すを追加することができます、`__clrcall`関数。 または、CLR マーシャ リング機構を使用することができます。参照してください[する方法: PInvoke を使用して関数ポインターをマーシャ リング](../../dotnet/how-to-marshal-function-pointers-using-pinvoke.md)詳細についてはします。  
   
- 次の例では警告 C3642 が生成されます。  
+ 次の例では、C3642 が生成されます。  
   
 ```  
 // C3642.cpp  

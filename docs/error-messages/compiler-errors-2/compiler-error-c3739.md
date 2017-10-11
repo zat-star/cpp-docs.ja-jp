@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3739 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3739"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3739"
+title: "コンパイラ エラー C3739 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3739
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3739
 ms.assetid: acffe894-08b8-4bf2-9249-9501e6e2bad3
 caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
----
-# コンパイラ エラー C3739
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: b3fa62f908f152e127669d1cd935fafdb75d413f
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'class' : event\_receiver の 'layout\_dependent' パラメーターが True の場合のみ、構文はサポートされます。  
+---
+# <a name="compiler-error-c3739"></a>コンパイラ エラー C3739
+'class': event_receiver の 'layout_dependent' パラメーターが true の場合にのみ、構文がサポート  
   
- イベントのインターフェイス全体のフックを試みましたが、[event\_receiver](../../windows/event-receiver.md) 属性の `layout_dependent` が true ではありません。イベントを一度に 1 つずつフックする必要があります。  
+ イベント インターフェイス全体をフックするしようとしましたが、`layout_dependent`で[event_receiver](../../windows/event-receiver.md)属性が true でない以外の場合は、一度に 1 つのイベントをフックする必要があります。  
   
- 次の例では警告 C3739 が生成されます。  
+ 次の例では、C3739 が生成されます。  
   
 ```  
 // C3739.cpp  

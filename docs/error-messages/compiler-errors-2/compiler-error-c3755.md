@@ -1,35 +1,38 @@
 ---
-title: "コンパイラ エラー C3755 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3755"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3755"
+title: "コンパイラ エラー C3755 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3755
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3755
 ms.assetid: 9317b55e-a52e-4b87-b915-5a208d6eda38
 caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
----
-# コンパイラ エラー C3755
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: c302a3a0a417b8668d18c8329b083648cb28ccab
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'delegate' : デリゲートを定義することはできません。  
+---
+# <a name="compiler-error-c3755"></a>コンパイラ エラー C3755
+'delegate': デリゲートを定義することがない可能性があります  
   
- [delegate](../../windows/delegate-cpp-component-extensions.md) は宣言できますが、定義できません。  
+ A [delegate (C++ コンポーネント拡張)](../../windows/delegate-cpp-component-extensions.md)宣言しますが、定義されていないことができます。  
   
-## 使用例  
- 次の例では C3755 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C3755 を生成します。  
   
 ```  
 // C3755.cpp  
@@ -37,8 +40,8 @@ caps.handback.revision: 10
 delegate void MyDel() {};   // C3755  
 ```  
   
-## 使用例  
- C3755 は、デリゲートのテンプレートを作成しようとした場合にも発生することがあります。  次の例では C3755 エラーが生成されます。  
+## <a name="example"></a>例  
+ C3755 は、デリゲートのテンプレートを作成しようとする場合にも発生することができます。 次の例では、C3755 を生成します。  
   
 ```  
 // C3755_b.cpp  

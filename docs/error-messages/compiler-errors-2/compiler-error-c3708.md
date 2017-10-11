@@ -1,34 +1,37 @@
 ---
-title: "コンパイラ エラー C3708 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3708"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3708"
+title: "コンパイラ エラー C3708 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords:
+- C3708
+dev_langs:
+- C++
+helpviewer_keywords:
+- C3708
 ms.assetid: 45e71564-9c7f-437f-98d8-a735ce162ed0
 caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
----
-# コンパイラ エラー C3708
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 8cc63e34c42f2c8d91c787530680d76e81192569
+ms.contentlocale: ja-jp
+ms.lasthandoff: 10/10/2017
 
-'インターフェイス': 'キーワード' の使用法が正しくありません。互換性のあるイベント ソースのメンバーででなければなりません。  
+---
+# <a name="compiler-error-c3708"></a>コンパイラ エラー C3708
+'interface': 'keyword'; の不適切な使用互換性のあるイベント ソースのメンバーである必要があります。  
   
- インターフェイスをイベントとして宣言するには、イベント ソースにイベント宣言を含める必要があります。  
+ イベントとしてインターフェイスを宣言するには、イベントの宣言は、イベント ソースでなければなりません。  
   
- 次の例では警告 C3708 が生成されます。  
+ 次の例では、C3708 が生成されます。  
   
 ```  
 // C3708.cpp  

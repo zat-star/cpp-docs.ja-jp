@@ -19,36 +19,22 @@ caps.latest.revision: 5
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: cc82b83860786ffc3f0aee73ede18ecadef16a7a
-ms.openlocfilehash: 989f17e8f59afc6a04ed4101204053fc971c6a62
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 4d6a255bebeccc0c63ba621a7c5886fd318ffd5f
 ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-error-c3808"></a>コンパイラ エラー C3808
-'type': ComImport 属性を持つクラス メンバー 'member'、抽象のみを定義できませんまたは関数の dllimport  
+'type': ComImport 属性を持つクラスは、メンバー 'member' を抽象のみを定義できませんまたは dllimport 関数が許可されています。  
   
- 派生した型<xref:System.Runtime.InteropServices.ComImportAttribute>は定義できません`member`</xref:System.Runtime.InteropServices.ComImportAttribute>。  
+ 派生した型<xref:System.Runtime.InteropServices.ComImportAttribute>は定義できません`member`です。  
   
- **/Clr: 純粋な**と**/clr:safe**コンパイラ オプションは、Visual Studio 2015 で廃止されました。  
+ コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
 ## <a name="example"></a>例  
- 次の例では、c3808 エラーを生成します。  
+ 次の例では、C3808 を生成します。  
   
 ```  
 // C3808.cpp  

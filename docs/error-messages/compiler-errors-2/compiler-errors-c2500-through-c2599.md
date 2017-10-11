@@ -65,32 +65,18 @@ caps.latest.revision: 15
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4bac7b2942f9d72674b8092dc7bf64174dd3c349
-ms.openlocfilehash: a41480c57b281c7a4fbb1e7697d11b5057b5da48
+ms.translationtype: MT
+ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
+ms.openlocfilehash: 31df41ea122c762428e153fe406efba1175c64f2
 ms.contentlocale: ja-jp
-ms.lasthandoff: 04/24/2017
+ms.lasthandoff: 10/10/2017
 
 ---
 # <a name="compiler-errors-c2500-through-c2599"></a>コンパイラ エラー C2500 C2599 から
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
   
 > [!NOTE]
->  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio)です。  
+>  すべて[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]MSDN でエラーが記載されています。 多くの場合は、診断メッセージは、すべての使用可能な情報を提供します。 エラー メッセージに追加の情報が必要と思われる場合は、どうぞお知らせください。 このページでフィードバック フォームを使用してまたはに Visual Studio のメニュー バーを選択する**ヘルプ**、**バグの報告を**、提案やバグ レポートを送信することができますか[Microsoft Connect](http://connect.microsoft.com/VisualStudio).  
   
  MSDN のパブリック フォーラムに関するエラーと警告の追加サポートが必要があります。 [Visual C の言語](http://go.microsoft.com/fwlink/?LinkId=158195)に関する質問や議論は、フォーラム、[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]言語の構文とコンパイラです。 [Visual C++ 全般](http://go.microsoft.com/fwlink/?LinkId=158194)に関する質問については、フォーラム[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]するその他のフォーラムでは説明しません。 エラーと警告に関するヘルプもあります[スタック オーバーフロー](http://stackoverflow.com/)です。  
   
@@ -136,20 +122,20 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2537](compiler-error-C2537.md)|'*指定子*': リンケージ仕様|  
 |コンパイラ エラー C2538|互換性のために残されています。|  
 |コンパイラ エラー C2539|互換性のために残されています。|
-|[コンパイラ エラー C2540](compiler-error-C2540.md)|配列のバウンドが定数式ではありません。|  
+|[コンパイラ エラー C2540](compiler-error-C2540.md)|バインドの配列として非定数式|  
 |[コンパイラ エラー C2541](compiler-error-C2541.md)|'*識別子*': ポインターではないオブジェクトは削除できません|  
 |[コンパイラ エラー C2542](compiler-error-C2542.md)|'*識別子*': クラスのオブジェクトが初期化にコンス トラクターを持たない|  
 |[コンパイラ エラー C2543](compiler-error-C2543.md)|予想 ']' 演算子 ' '|  
-|[コンパイラ エラー C2544](compiler-error-C2544.md)|関数呼出し演算子の右かっこ ')' がありません。|  
-|[コンパイラ エラー C2545](compiler-error-C2545.md)|'*演算子*': 演算子できません。|  
+|[コンパイラ エラー C2544](compiler-error-C2544.md)|予想 ')' に対して演算子 '()'|  
+|[コンパイラ エラー C2545](compiler-error-C2545.md)|'*演算子*': 演算子にできません。|  
 |コンパイラ エラー C2546|'*識別子*': PIA と NO-PIA PIA を最初に参照する必要がありますの両方で、型が定義されている場合|  
 |コンパイラ エラー C2547|'*識別子*': 公開されたメソッドのすべてのパラメーターを宣言で明示的に指定する必要があります|  
 |[コンパイラ エラー C2548](compiler-error-C2548.md)|'*関数*': パラメーターの既定のパラメーターがありません*パラメーター*|  
-|[コンパイラ エラー C2549](compiler-error-C2549.md)|ユーザー定義の変換では、戻り値の型を指定できません。|  
+|[コンパイラ エラー C2549](compiler-error-C2549.md)|ユーザー定義の変換は、戻り値の型を指定できません。|  
 |[コンパイラ エラー C2550](compiler-error-C2550.md)|'*識別子*': コンス トラクター初期化子リストはコンス トラクターの定義だけに許されます。|  
 |[コンパイラ エラー C2551](compiler-error-C2551.md)|'void *' 型には明示的なキャストが必要です|  
 |[コンパイラ エラー C2552](compiler-error-C2552.md)|'*識別子*': 初期化子リストで非集計は初期化できません|  
-|[コンパイラ エラー C2553](compiler-error-C2553.md)|'*型* *derived_class*::*関数*': オーバーライドする仮想関数の戻り値の型が異なる'*型* *base_class*::*関数*'|  
+|[コンパイラ エラー C2553](compiler-error-C2553.md)|'*型* *derived_class*::*関数*': 仮想関数の戻り値の型をオーバーライドすると'*型* *base_クラス*::*関数*'|  
 |[コンパイラ エラー C2555](compiler-error-C2555.md)|'*derived_class*::*関数*': 仮想関数をオーバーライドする型の戻り値と異なるから covariant ではありません'*base_class*::*関数*'|  
 |[コンパイラ エラー C2556](compiler-error-C2556.md)|'*type1* *クラス*::*関数*': オーバー ロードされた関数唯一の相違点からの戻り値の型'*type2* *クラス*::*関数*'|  
 |[コンパイラ エラー C2557](compiler-error-C2557.md)|'*識別子*': コンス トラクターのないプライベートおよびプロテクト メンバーを初期化することはできません|  
@@ -158,10 +144,10 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C2560|'*識別子*': ref 修飾子なしのメンバー関数を使って ref 修飾子を持つメンバー関数をオーバー ロードすることはできません|  
 |[コンパイラ エラー C2561](compiler-error-C2561.md)|'*関数*': 関数が値を返す必要があります|  
 |[コンパイラ エラー C2562](compiler-error-C2562.md)|'*関数*': 'void' 関数の値を返す|  
-|[コンパイラ エラー C2563](compiler-error-C2563.md)|仮パラメーター リストまたは関数へのポインターが、適合していません。|  
-|{1&gt;コンパイラ エラー C2564&lt;1}|互換性のために残されています。|  
+|[コンパイラ エラー C2563](compiler-error-C2563.md)|正式なパラメーター リストが一致しません|  
+|コンパイラ エラー C2564|互換性のために残されています。|  
 |コンパイラ エラー C2565|'*識別子*': ref 修飾子はコンス トラクター/デストラクターには|  
-|[コンパイラ エラー C2566](compiler-error-C2566.md)|条件式中のオーバーロード関数を評価することができません。|  
+|[コンパイラ エラー C2566](compiler-error-C2566.md)|条件式のオーバー ロードされた関数|  
 |[コンパイラ エラー C2567](compiler-error-C2567.md)|内のメタデータを開けません '*filename*'、 *possible_reason。*|  
 |[コンパイラ エラー C2568](compiler-error-C2568.md)|'*識別子*': 関数のオーバー ロードを解決するのにはできません。|  
 |[コンパイラ エラー C2569](compiler-error-C2569.md)|'*識別子*': 列挙および共用体は基底クラスとして使用できません|  
@@ -181,7 +167,7 @@ ms.lasthandoff: 04/24/2017
 |[コンパイラ エラー C2583](compiler-error-C2583.md)|'*識別子*':' const または volatile' 'this' ポインターがコンス トラクター/デストラクターの宣言|  
 |[コンパイラ エラー C2584](compiler-error-C2584.md)|'*クラス*': 直接クラス'*base_class2*'アクセスできません派生'*base_class1*'。|  
 |[コンパイラ エラー C2585](compiler-error-C2585.md)|明示的な変換を '*型*' があいまいです|  
-|[コンパイラ エラー C2586](compiler-error-C2586.md)|変換演算子を間接的に使うことはできません。|  
+|[コンパイラ エラー C2586](compiler-error-C2586.md)|ユーザー定義の変換を正しくない構文: 無効な間接指定|  
 |[コンパイラ エラー C2587](compiler-error-C2587.md)|'*識別子*': 既定のパラメーターとしてのローカル変数の無効な使用|  
 |[コンパイラ エラー C2588](compiler-error-C2588.md)|':: ~*識別子*': 無効なグローバル デストラクターとファイナライザー|  
 |[コンパイラ エラー C2589](compiler-error-C2589.md)|'*識別子*': の右側に無効なトークン ':: '|  
@@ -193,5 +179,5 @@ ms.lasthandoff: 04/24/2017
 |コンパイラ エラー C2595|'*識別子*' WinRT 型の属性をシールする必要があります|  
 |コンパイラ エラー C2596|'*識別子*' WinRT 属性フィールドには、'public enum class'、'int'、'unsigned int'、'bool'、'platform::type'、'platform::string' または ' Windows:: Foundation:: HResult' だけを指定できます|  
 |[コンパイラ エラー C2597](compiler-error-C2597.md)|非静的メンバーへの参照を無効な '*識別子*'|  
-|[コンパイラ エラー C2598](compiler-error-C2598.md)|リンケージ指定子がグローバル スコープで宣言されていません。|  
+|[コンパイラ エラー C2598](compiler-error-C2598.md)|リンケージ指定は、グローバル スコープである必要があります。|  
 |[コンパイラ エラー C2599](compiler-error-C2599.md)|'*識別子*': マネージまたは WinRT 列挙型の事前宣言が許可されていません|  
