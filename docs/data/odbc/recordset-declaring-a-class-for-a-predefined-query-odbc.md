@@ -1,56 +1,56 @@
 ---
-title: "レコードセット: 定義済みクエリを利用したクラスの宣言 (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ODBC レコードセット, クエリ"
-  - "定義済みクエリとレコードセット"
-  - "レコードセット, 定義済みクエリ"
-  - "レコードセット, ストアド プロシージャ"
-  - "ストアド プロシージャ, およびレコードセット"
+title: "レコード セット: 定義済みクエリ (ODBC) クラスの宣言 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ODBC recordsets, queries
+- predefined queries and recordsets
+- stored procedures, and recordsets
+- recordsets, predefined queries
+- recordsets, stored procedures
 ms.assetid: d27c4df9-dad2-4484-ba72-92ab0c8ff928
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1d5fdb93880ec29343d38acba7d7d42caf155214
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコードセット: 定義済みクエリを利用したクラスの宣言 (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="recordset-declaring-a-class-for-a-predefined-query-odbc"></a>レコードセット: 定義済みクエリを利用したクラスの宣言 (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
   
- このトピックでは、定義済みクエリ \(Microsoft SQL Server ではストアド プロシージャ\) 用のレコードセット クラスを作成する方法について説明します。  
+ このトピックでは、定義済みクエリ (Microsoft SQL Server と同様に、ストアド プロシージャとも呼ばれます) のレコード セット クラスを作成する方法について説明します。  
   
 > [!NOTE]
->  このトピックの内容は、バルク行フェッチが実装されていない `CRecordset` の派生オブジェクトを対象にしています。  バルク行フェッチを実装しているレコードセットでも、方法は基本的に同じです。  両者の差異については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  このトピックの内容は、バルク行フェッチが実装されていない `CRecordset` の派生オブジェクトを対象にしています。 バルク行フェッチが実装されている場合、プロセスはよく似ています。 バルク行フェッチを実装したレコード セットとそうでないものの違いを理解するのを参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- データベース管理システム \(DBMS: Database Management System\) によっては、定義済みクエリを作成し、そのクエリをプログラムから関数のように呼び出すことができます。  クエリは名前が付いており、パラメーターを取得したり、レコードを返したりできます。  ここでは、レコードを返す \(およびパラメーターを取得する\) 定義済みクエリを呼び出す手順について説明します。  
+ 一部のデータベース管理システム (Dbms) を使用すると、定義済みクエリを作成し、関数のように、プログラムから呼び出すことができます。 クエリは、名前を持つ、パラメーターを受け取る可能性があり、レコードを返す場合があります。 このトピックの手順では、定義済みクエリのレコードを返します (およびパラメーター) を呼び出す方法を説明します。  
   
- データベース クラスでは、定義済みクエリを更新できません。  スナップショットの定義済みクエリとダイナセットの定義済みクエリの違いは、更新可能かどうかではなく、ほかのユーザー \(またはほかのレコードセット\) による更新が反映されるかどうかです。  
+ データベース クラスでは、定義済みのクエリを更新することはできません。 定義済みクエリをスナップショットとダイナセットの定義済みクエリの違いはなく updateability 他のユーザー (または、プログラム内の他のレコード セット) によって行われた変更は、レコード セットに表示されるかどうか。  
   
 > [!TIP]
->  レコードを返さない定義済みクエリを呼び出す場合は、レコードセットは不要です。  次に説明する SQL ステートメントを用意し、`CDatabase` のメンバー関数 [ExecuteSQL](../Topic/CDatabase::ExecuteSQL.md) を呼び出して実行します。  
+>  レコード セットのレコードを返さないクエリを呼び出すをする必要はありません。 以下に示すように SQL ステートメントを準備する場合は、呼び出すことによって実行、`CDatabase`メンバー関数は、 [ExecuteSQL](../../mfc/reference/cdatabase-class.md#executesql)です。  
   
- 定義済みクエリを呼び出すために独立したレコードセット クラスを作成することもできますが、プログラマによる作業が必要です。  ウィザードでは、この目的のためのクラス作成がサポートされていません。  
+ 定義済みのクエリを呼び出すために単一のレコード セット クラスを作成することができますが、自分で作業のいくつか行う必要があります。 ウィザードは、この目的専用のクラスの作成をサポートしていません。  
   
-#### 定義済みクエリ \(ストアド プロシージャ\) を呼び出すクラスを作成するには  
+#### <a name="to-create-a-class-for-calling-a-predefined-query-stored-procedure"></a>定義済みクエリを呼び出すためのクラスを作成するには、(ストアド プロシージャ)  
   
-1.  クラスの追加の [MFC ODBC コンシューマー ウィザード](../../mfc/reference/adding-an-mfc-odbc-consumer.md) を使って、クエリによって大部分の列の値が指定されるテーブル用のレコードセット クラスを作成します。  これをベースにして目的のクラスを構築します。  
+1.  使用して、 [MFC ODBC コンシューマー ウィザード](../../mfc/reference/adding-an-mfc-odbc-consumer.md)から**クラスの追加**クエリによって返される列が最もを提供しているテーブルのレコード セット クラスを作成します。 これにより、簡単に開始します。  
   
-2.  ソース コードを直接編集して、クエリが返す列に対応するフィールド データ メンバーのうち、ウィザードで生成されなかったフィールド データ メンバーを追加します。  
+2.  ウィザードを作成できませんでしたが、そのクエリから返されるすべてのテーブルの列のフィールド データ メンバーを手動で追加します。  
   
-     たとえば、選択しなかった 2 つのテーブルに対してクエリがそれぞれ 3 つの列を返すときは、該当する型のフィールド データ メンバーを 6 つクラスに追加します。  
+     たとえば、クエリでは、2 つのテーブルから 3 つの列が返された場合は、クラスに (適切なデータ型) の 6 つのフィールド データ メンバーを追加します。  
   
-3.  ソース コードを直接編集して、追加したフィールド データ メンバーに該当する型の [RFX](../../data/odbc/record-field-exchange-rfx.md) 関数呼び出しをメンバー関数 [DoFieldExchange](../Topic/CRecordset::DoFieldExchange.md) に追加します。  
+3.  手動で追加[RFX](../../data/odbc/record-field-exchange-rfx.md)関数呼び出しに、 [DoFieldExchange](../../mfc/reference/crecordset-class.md#dofieldexchange)クラスには、それぞれのデータ型に対応する 1 つのメンバー関数は、フィールド データ メンバーを追加します。  
   
     ```  
     Immediately before these RFX calls, call <MSHelp:link keywords="_mfc_CFieldExchange.3a3a.SetFieldType" TABINDEX="0">SetFieldType</MSHelp:link>, as shown here:   
@@ -58,39 +58,39 @@ caps.handback.revision: 8
     ```  
   
     > [!NOTE]
-    >  結果セットで返されるデータ型と列の順序を知っている必要があります。  `DoFieldExchange` における RFX 関数呼び出しの順序は、結果セット列の順序に一致させます。  
+    >  データ型と設定の結果に返される列の順序を知る必要があります。 RFX 関数の順序はで呼び出します`DoFieldExchange`結果セットの列の順序が一致する必要があります。  
   
-4.  新しく加えたフィールド データ メンバーの初期化コードをレコードセット クラスのコンストラクターに付加します。  
+4.  レコード セット クラスのコンス トラクターで、新しいフィールド データ メンバーの初期化を手動で追加します。  
   
-     また、データ メンバー [m\_nFields](../Topic/CRecordset::m_nFields.md) の値を初期化処理の中の一環としてインクリメントする必要があります。  ウィザードは m\_nFields の値を初期化しますが、ウィザードが作成したフィールド データ メンバーだけが対象です。  たとえば、次のようになります。  
+     初期化値を増やす必要がありますも、 [m_nFields](../../mfc/reference/crecordset-class.md#m_nfields)データ メンバーです。 初期化が書き込まれますが、する追加のフィールド データ メンバーだけが対象です。 例:  
   
     ```  
     m_nFields += 6;  
     ```  
   
-     `CLongBinary` やバイト配列など、データ型によってはここで初期化できないこともあります。  
+     一部のデータ型は初期化できませんここでは、たとえば、`CLongBinary`またはバイト配列。  
   
-5.  パラメーターを持つクエリの場合は、各パラメーターに対応するパラメーター データ メンバー、RFX 関数呼び出し、初期化コードを追加します。  
+5.  クエリがパラメーターを受け取る場合は、各パラメーター、RFX 関数呼び出しごとに、および各初期化パラメーターのデータ メンバーを追加します。  
   
-6.  また、この手順の手順 4. でフィールドを追加するために `m_nFields` をインクリメントしたように、追加したパラメーターごとに `m_nParams` をインクリメントします。  詳細については、「[レコードセット : パラメーターを利用したレコードセット \(ODBC\)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)」を参照してください。  
+6.  インクリメントする必要があります`m_nParams`場合と同様に、パラメーターを追加の各`m_nFields`に対してこの手順の手順 4 でフィールドを追加します。 詳細については、次を参照してください。[レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)です。  
   
-7.  次のような SQL ステートメントの文字列を直接書きます。  
+7.  次の形式で SQL ステートメントの文字列を手動で作成するには。  
   
     ```  
     {CALL proc-name [(? [, ?]...)]}  
     ```  
   
-     **CALL** は ODBC キーワード、**proc\-name** はデータ ソースが認識できるクエリの名前、"?" 項目は実行時に \(パラメーターを使う場合\) パラメーター値に置き換えられるプレースホルダーです。  次に、パラメーターを 1 つ使う例を示します。  
+     場所**を呼び出す**ODBC キーワードで、 **proc 名前**は、データ ソースで認識されている、クエリの名前は、および"?"項目は、(存在する場合)、レコード セットには、実行時に指定のするパラメーター値のプレース ホルダー. 次の例では、1 つのパラメーターのプレース ホルダーを準備します。  
   
     ```  
     CString mySQL = "{CALL Delinquent_Accts (?)}";  
     ```  
   
-8.  レコードセットを開くためのコードを編集します。まず、レコードセットのパラメーター データ メンバーの値を設定し、次に、上で作成した SQL 文字列をパラメーター **lpszSQL** に渡して **Open** メンバー関数を呼び出します。  または、メンバー関数 `GetDefaultSQL` の戻り値をこの SQL 文字列に置き換えます。  
+8.  レコード セットを表示するコード、値を設定、レコード セットのパラメーターのデータ メンバーおよびを呼び出す、**開く**メンバー関数の場合、SQL 文字列を渡します、 **lpszSQL**パラメーター。 代わりに、によって返される文字列を置き換えるか、`GetDefaultSQL`クラスのメンバー関数。  
   
- 定義済みクエリを呼び出す手順の例を次に示します。ここでは、`Delinquent_Accts` という名前のクエリを呼び出しています。  このクエリは、セールス地域番号を表す 1 つのパラメーターを取り、`Acct_No`、`L_Name`、および `Phone` の 3 つの列を返します。  これらの列は、すべてテーブル Customers の列です。  
+ 次の例は、という名前の定義済みクエリを呼び出すための手順を示して`Delinquent_Accts`、販売地域番号の 1 つのパラメーターを受け取ります。 このクエリは、3 つの列を返します: `Acct_No`、 `L_Name`、`Phone`です。 すべての列では、Customers テーブルからです。  
   
- 次のレコードセットでは、クエリが返す列に対応するフィールド データ メンバーと、セールス地域番号を表すパラメーター \(実行時に値が決定されます\) を指定します。  
+ 次のレコード セットでは、クエリから返される、sales のパラメーターの地域の実行時に要求された数の列のフィールド データ メンバーを指定します。  
   
 ```  
 class CDelinquents : public CRecordset  
@@ -104,9 +104,9 @@ class CDelinquents : public CRecordset
 };  
 ```  
   
- このクラス宣言のうち、直接記述した `m_lDistParam` 以外の部分はウィザードによって生成されています。  ここでは、他のメンバーは示されていません。  
+ このクラスの宣言は、ウィザードで生成しを除くと、`m_lDistParam`メンバーが手動で追加されました。 ここで他のメンバーは表示されません。  
   
- `CDelinquents` コンストラクターのデータ メンバー初期化コードを次に示します。  
+ 次の例では、内のデータ メンバーの初期化、`CDelinquents`コンス トラクターです。  
   
 ```  
 CDelinquents::CDelinquents(CDatabase* pdb)  
@@ -123,9 +123,9 @@ CDelinquents::CDelinquents(CDatabase* pdb)
 }  
 ```  
   
- [m\_nFields](../Topic/CRecordset::m_nFields.md) と [m\_nParams](../Topic/CRecordset::m_nParams.md) の初期化コードに注目してください。  ウィザードは `m_nFields` を初期化します。`m_nParams` の初期化コードは追加します。  
+ 初期化に注意してください[m_nFields](../../mfc/reference/crecordset-class.md#m_nfields)と[m_nParams](../../mfc/reference/crecordset-class.md#m_nparams)です。 ウィザードを初期化`m_nFields`; を初期化する`m_nParams`です。  
   
- `CDelinquents::DoFieldExchange` の RFX 呼び出しの部分を次に示します。  
+ 次の例での RFX 関数の`CDelinquents::DoFieldExchange`:  
   
 ```  
 void CDelinquents::DoFieldExchange(CFieldExchange* pFX)  
@@ -139,9 +139,9 @@ void CDelinquents::DoFieldExchange(CFieldExchange* pFX)
 }  
 ```  
   
- このコードでは、戻り値として返される 3 つの列に対して RFX 関数が呼び出され、実行時に得られる値がパラメーターとして渡されます。  パラメーターは、`Dist_No` \(district Number 地域番号\) 列のキーとして渡されます。  
+ 次の 3 つの返される列の RFX を呼び出し、以外は、このコードは、実行時に渡すパラメーターのバインドを管理します。 パラメーターと適合する、 `Dist_No` (district 番号) 列。  
   
- 次に、SQL 文字列を設定し、この文字列でレコードセットを開く例を示します。  
+ 次の例では、SQL 文字列を設定する方法と、レコード セットを開くために使用する方法を示します。  
   
 ```  
 // Construct a CDelinquents recordset object  
@@ -154,13 +154,13 @@ if( rsDel.Open( CRecordset::snapshot, strSQL ) )
     // Use the recordset ...  
 ```  
   
- このコードは、スナップショットを構築し、ユーザーから得たパラメーターを渡し、定義済みクエリを呼び出します。  クエリが終了すると、指定した販売地域のレコードが返ります。  各レコードには、顧客番号、顧客名、および顧客電話番号の列が格納されます。  
+ このコードは、スナップショットを構築、前に、ユーザーから収集したパラメーターを渡し、定義済みのクエリを呼び出します。 クエリを実行すると、指定した販売地域のレコードを返します。 各レコードには、アカウント番号、顧客の姓、および顧客の電話番号の列が含まれています。  
   
 > [!TIP]
->  ストアド プロシージャの戻り値 \(出力パラメーター\) を処理する場合もあります。  詳細および例については、「[CFieldExchange::SetFieldType](../Topic/CFieldExchange::SetFieldType.md)」を参照してください。  
+>  ストアド プロシージャからの戻り値 (出力パラメーター) を処理する可能性があります。 例および詳細については、次を参照してください。[つ](../../mfc/reference/cfieldexchange-class.md#setfieldtype)です。  
   
-## 参照  
- [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md)   
- [レコードセット: クエリの再実行 \(ODBC\)](../../data/odbc/recordset-requerying-a-recordset-odbc.md)   
- [レコードセット: テーブルにアクセスするレコードセット クラスの宣言 \(ODBC\)](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md)   
- [レコードセット: 結合 \(ODBC\)](../Topic/Recordset:%20Performing%20a%20Join%20\(ODBC\).md)
+## <a name="see-also"></a>関連項目  
+ [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
+ [レコード セット: クエリの再実行 (ODBC)](../../data/odbc/recordset-requerying-a-recordset-odbc.md)   
+ [レコード セット: テーブル (ODBC) クラスの宣言](../../data/odbc/recordset-declaring-a-class-for-a-table-odbc.md)   
+ [レコードセット: 結合 (ODBC)](../../data/odbc/recordset-performing-a-join-odbc.md)

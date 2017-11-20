@@ -1,110 +1,111 @@
 ---
-title: "バッカス記法 (BNF: Backus Nauer Form) の構文について | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Backus Nauer Form (BNF) 構文"
-  - "BNF 表記"
+title: "ATL レジストラーおよびバッカスナウア Nauer フォーム (BNF) 構文 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- BNF notation
+- Backus Nauer Form (BNF) syntax
 ms.assetid: 994bbef0-9077-4aa8-bdfe-b7e830af9acc
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6ff141818e05f9b5b36b6d0cfc5a58170fa97ab0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# バッカス記法 (BNF: Backus Nauer Form) の構文について
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここで使用する ATL レジストラーのスクリプトは、BNF 構文で記述されています。BNF 構文では、次の表に示す表記を使用します。  
+# <a name="understanding-backus-nauer-form-bnf-syntax"></a>バッカスナウア Nauer Form (BNF) の構文の理解
+ATL レジストラーで使用されるスクリプトは、次の表に示すように表記を使用して BNF 構文を使用して、このトピックで説明します。  
   
-|表記規則\/記号|説明|  
-|--------------|--------|  
-|`::=`|等しいことを表します。|  
-|`&#124;`|または|  
-|`X+`|1 つ以上の `X` です。|  
-|`[X]`|`X` はオプションです。  オプションの区切り記号は、`[]` で表します。|  
-|**太字**のテキスト|リテラル文字列です。|  
-|*斜体*のテキスト|リテラル文字列を生成する方法を示します。|  
+|規則および記号|説明|  
+|------------------------|-------------|  
+|`::=`|同等の表記|  
+|`&#124;`|OR|  
+|`X+`|1 つまたは複数`X`s。|  
+|`[X]`|`X` は省略可能です。 省略可能な区切り記号で示されます`[]`です。|  
+|どの**太字**テキスト|文字列リテラルです。|  
+|どの*斜体*テキスト|文字列リテラルを作成する方法です。|  
   
- 上の表で示したように、レジストラー スクリプトではリテラル文字列を使用します。  これらのリテラル文字列は、スクリプトに実際に表示される文字列です。  ATL レジストラー スクリプトで使用するリテラル文字列を次の表に示します。  
+ 示されるように前の表に、レジストラー スクリプトは、文字列リテラルを使用します。 これらの値は、実際のテキストをスクリプト内で使用する必要があります。 次の表では、ATL レジストラー スクリプトで使用されるリテラル文字列について説明します。  
   
-|リテラル文字列|アクション|  
-|-------------|-----------|  
-|**ForceRemove**|次のキーが指定されている場合は、そのキーを完全に削除してから再作成します。|  
-|**NoRemove**|登録解除中に、次に指定されているキーを削除の対象外とします。|  
-|**val**|`<Key Name>` が実際の名前付きの値であることを示します。|  
-|**削除**|登録中に、次に指定されたキーを削除します。|  
-|**s**|次に指定された値が文字列 \(**REG\_SZ**\) であることを示します。|  
-|**d**|次に指定された値が **DWORD** 型 \(**REG\_DWORD**\) であることを示します。|  
-|**m**|次に指定された値が複数の文字列 \(**REG\_MULTI\_SZ**\) であることを示します。|  
-|**b**|次に指定された値がバイナリ値 \(**REG\_BINARY**\) であることを示します。|  
+|文字列リテラル|操作|  
+|--------------------|------------|  
+|**ForceRemove**|(存在する場合は、次のキーを完全に削除してから再作成します。|  
+|**NoRemove**|登録解除中に次のキーは削除されません。|  
+|**val**|指定する`<Key Name>`が実際には名前付きの値。|  
+|**削除**|登録中に次のキーを削除します。|  
+|**s**|次の値を文字列に指定します (**REG_SZ**)。|  
+|**d**|次の値を指定します、 **DWORD** (**REG_DWORD**)。|  
+|**m**|次の値を複数文字列に指定します (**REG_MULTI_SZ**)。|  
+|**b**|次の値が、バイナリ値を指定します (**REG_BINARY**)。|  
   
-## BNF 構文の例  
- ここでは、ATL レジストラー スクリプトでの表記法およびリテラル文字列の機能を理解するうえで役立つ構文の例を示します。  
+## <a name="bnf-syntax-examples"></a>BNF 構文例  
+ ATL レジストラー スクリプトで表記と文字列リテラルのしくみを理解するための構文例をいくつかのとおりです。  
   
-### 構文例 1  
+### <a name="syntax-example-1"></a>構文例 1  
   
 ```  
 <registry expression> ::= <Add Key>  
 ```  
   
- `registry expression` が `Add Key` と等しいことを示します。  
+ 指定する`registry expression`は等価`Add Key`です。  
   
-### 構文例 2  
+### <a name="syntax-example-2"></a>構文例 2  
   
 ```  
 <registry expression> ::= <Add Key> | <Delete Key>  
 ```  
   
- `registry expression` が `Add Key` または `Delete Key` と等しいことを示します。  
+ 指定する`registry expression`はいずれかに相当`Add Key`または`Delete Key`です。  
   
-### 構文例 3  
+### <a name="syntax-example-3"></a>構文例 3  
   
 ```  
 <Key Name> ::= '<AlphaNumeric>+'  
 ```  
   
- `Key Name` が 1 文字以上の `AlphaNumeric` と等しいことを示します。  
+ 指定する`Key Name`は 1 つ以上に相当`AlphaNumerics`です。  
   
-### 構文例 4  
+### <a name="syntax-example-4"></a>構文例 4  
   
 ```  
 <Add Key> ::= [ForceRemove | NoRemove | val]<Key Name>  
 ```  
   
- `Add Key` が `Key Name` と等しく、リテラル文字列 `ForceRemove`、`NoRemove`、および `val` がオプションであることを示します。  
+ 指定`Add Key`と等価`Key Name`、および文字列リテラル`ForceRemove`、 `NoRemove`、および`val`は省略可能です。  
   
-### 構文例 5  
+### <a name="syntax-example-5"></a>構文例 5  
   
 ```  
 <AlphaNumeric> ::= any character not NULL, that is, ASCII 0  
 ```  
   
- `AlphaNumeric` が NULL 以外の文字と等しいことを示します。  
+ 指定する`AlphaNumeric`を NULL 以外の文字と同じです。  
   
-### 構文例 6  
+### <a name="syntax-example-6"></a>構文例 6  
   
 ```  
 val 'testmulti' = m 'String 1\0String 2\0'  
 ```  
   
- キー名 `testmulti` は、`String 1` と `String 2` から成る複数の文字列値です。  
+ 指定したキー名`testmulti`は複数文字列値で構成されます`String 1`と`String 2`です。  
   
-### 構文例 7  
+### <a name="syntax-example-7"></a>構文例 7  
   
 ```  
 val 'testhex' = d '&H55'  
 ```  
   
- キー名 `testhex` は、16 進の 55 \(10 進の 85\) に設定された **DWORD** 値です。  この書式は、Visual Basic の仕様に見られる **&H** 表記を踏襲しています。  
+ 指定したキー名`testhex`は、 **DWORD**値は 16 進 55 (10 進 85) に設定します。 注この形式に従って、 **& H**として表記、Visual Basic の仕様に記載します。  
   
-## 参照  
- [レジストラー スクリプトの作成](../Topic/Creating%20Registrar%20Scripts.md)
+## <a name="see-also"></a>関連項目  
+ [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
+

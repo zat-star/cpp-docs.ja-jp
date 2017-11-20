@@ -1,81 +1,81 @@
 ---
-title: "/KEYFILE (アセンブリに署名するためのキーまたはキー ペアの指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/keyfile"
-  - "VC.Project.VCLinkerTool.KeyFile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/KEYFILE リンカー オプション"
-  - "KEYFILE リンカー オプション"
-  - "-KEYFILE リンカー オプション"
+title: "-KEYFILE (アセンブリに署名するには、キーまたはキー ペアの指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /keyfile
+- VC.Project.VCLinkerTool.KeyFile
+dev_langs: C++
+helpviewer_keywords:
+- /KEYFILE linker option
+- -KEYFILE linker option
+- KEYFILE linker option
 ms.assetid: 9b71f8c0-541c-4fe5-a0c7-9364f42ecb06
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 6a061abf3a8f16bdd38a8b41a3b97a5f4ba1a885
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /KEYFILE (アセンブリに署名するためのキーまたはキー ペアの指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="keyfile-specify-key-or-key-pair-to-sign-an-assembly"></a>/KEYFILE (アセンブリに署名するためのキーまたはキー ペアの指定)
 ```  
 /KEYFILE:filename  
 ```  
   
-## 解説  
- それぞれの文字について以下に説明します。  
+## <a name="remarks"></a>コメント  
+ ここで、  
   
- *filename*  
- キーを含むファイル。  コンテナー名に空白が含まれている場合は、文字列を二重引用符 \(" "\) で囲みます。  
+ *ファイル名*  
+ キーを含むファイルです。 二重引用符で囲まれた文字列に配置 ("")、スペースが含まれている場合。  
   
-## 解説  
- リンカーは、アセンブリ マニフェストに公開キーを挿入し、秘密キーを使用して最後のアセンブリに署名します。  キー ファイルを生成するには、コマンド ラインで「[sn \-k](../Topic/Sn.exe%20\(Strong%20Name%20Tool\).md) `file`」と入力します。  署名されたアセンブリは、厳密な名前を持つアセンブリとなります。  
+## <a name="remarks"></a>コメント  
+ リンカーは、アセンブリ マニフェストに公開キーを挿入し、最終的なアセンブリを秘密キーで署名します。 キー ファイルを生成する入力[sn-k](/dotnet/framework/tools/sn-exe-strong-name-tool) *filename*コマンドライン。 署名されたアセンブリでは、厳密な名前と呼ばれます。  
   
- [\/LN](../../build/reference/ln-create-msil-module.md) を指定してコンパイルした場合は、キー ファイルの名前がモジュールに保持され、[\#using](../../preprocessor/hash-using-directive-cpp.md) を通じてモジュールへの明示的な参照を含むアセンブリをコンパイルしたとき、または [\/ASSEMBLYMODULE](../../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md) とリンクしたときに作成されるアセンブリに組み込まれます。  
+ コンパイルする場合[/LN](../../build/reference/ln-create-msil-module.md)、キー ファイルの名前が、モジュール内に保持しを使用して、モジュールへの明示的な参照を含むアセンブリをコンパイルするときに作成されるアセンブリに組み込む[#using](../../preprocessor/hash-using-directive-cpp.md)とをリンクするとき、または[/ASSEMBLYMODULE](../../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md)です。  
   
- [\/KEYCONTAINER](../../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md) を使用して、暗号に関する情報をリンカーに渡すこともできます。  アセンブリに部分署名する場合は、[\/DELAYSIGN](../../build/reference/delaysign-partially-sign-an-assembly.md) を使用します。  アセンブリに対する署名の詳細については、「[厳密名アセンブリ \(アセンブリ署名\)](../../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)」を参照してください。  
+ リンカーに暗号化の情報を渡すことも[/KEYCONTAINER](../../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)です。 使用して[/DELAYSIGN](../../build/reference/delaysign-partially-sign-an-assembly.md)部分署名されているアセンブリを作成する場合。 参照してください[厳密な名前のアセンブリ (アセンブリ署名) (C + + CLI)](../../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)アセンブリに署名する方法についてです。  
   
- コマンド ライン オプションまたはカスタム属性のいずれかを使用して **\/KEYFILE** と **\/KEYCONTAINER** の両方が指定されている場合、リンカーはまずキー コンテナーを探します。  コンテナーが検出された場合、アセンブリはキー コンテナーの情報で署名されます。  キー コンテナーが見つからない場合は、\/KEYFILE で指定されたファイルを探します。  成功すると、キー ファイル内の情報を使用して、アセンブリが署名されます。キー情報はキー コンテナーに組み込まれるため \(sn \-i と同じ\)、次回のコンパイルではキー コンテナーが有効になります。  
+ 場合両方**/KEYFILE**と**/KEYCONTAINER**が指定されて、リンカーは、キー コンテナーをまず (コマンド ライン オプションまたはカスタム属性によって)、します。 それが成功すると、アセンブリはキー コンテナーの情報で署名されます。 リンカーが、キー コンテナーを見つけられない場合/KEYFILE で指定されたファイルを検索します。 ファイルが検出された場合、アセンブリはキー ファイルの情報で署名され、キー情報はキー コンテナーにインストールされるため (sn -i と同様)、次のコンパイル時にはキー コンテナーが有効になります。  
   
- キー ファイルには、公開キーだけが含まれていることがあります。  
+ キー ファイルには公開キーだけが含まれる場合があることに注意してください。  
   
- アセンブリの署名の詳細については、「[厳密な名前付きアセンブリの作成と使用](../Topic/Creating%20and%20Using%20Strong-Named%20Assemblies.md)」を参照してください。  
+ 参照してください[作成と使用](/dotnet/framework/app-domains/create-and-use-strong-named-assemblies)アセンブリに署名する方法についてです。  
   
- このほかにも、次のようなリンカー オプションがアセンブリの生成に影響します。  
+ アセンブリの生成に影響するその他のリンカー オプションは次のとおりです。  
   
--   [\/ASSEMBLYDEBUG \(DebuggableAttribute の追加\)](../Topic/-ASSEMBLYDEBUG%20\(Add%20DebuggableAttribute\).md)  
+-   [/ASSEMBLYDEBUG](../../build/reference/assemblydebug-add-debuggableattribute.md)  
   
--   [\/ASSEMBLYLINKRESOURCE](../../build/reference/assemblylinkresource-link-to-dotnet-framework-resource.md)  
+-   [/ASSEMBLYLINKRESOURCE](../../build/reference/assemblylinkresource-link-to-dotnet-framework-resource.md)  
   
--   [\/ASSEMBLYMODULE](../../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md)  
+-   [/ASSEMBLYMODULE](../../build/reference/assemblymodule-add-a-msil-module-to-the-assembly.md)  
   
--   [\/ASSEMBLYRESOURCE](../../build/reference/assemblyresource-embed-a-managed-resource.md)  
+-   [/ASSEMBLYRESOURCE](../../build/reference/assemblyresource-embed-a-managed-resource.md)  
   
--   [\/NOASSEMBLY](../../build/reference/noassembly-create-a-msil-module.md)  
+-   [/NOASSEMBLY](../../build/reference/noassembly-create-a-msil-module.md)  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにオプションを入力します。  
+4.  オプションを入力、**追加オプション**ボックス。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

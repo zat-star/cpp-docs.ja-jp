@@ -1,35 +1,35 @@
 ---
-title: "OLE DB コンシューマー テンプレートの操作 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB コンシューマー テンプレート, コンシューマー テンプレートの概要"
-  - "サンプル アプリケーション [C++], OLE DB テンプレート"
+title: "OLE DB コンシューマー テンプレートの操作 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- sample applications [C++], OLE DB Templates
+- OLE DB consumer templates, about consumer templates
 ms.assetid: 526aa897-5961-4396-85cb-c84f77113551
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: be52ccf8ba42b61d7393c32587e54a5a768d2f40
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# OLE DB コンシューマー テンプレートの操作
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-以下のトピックでは、OLE DB コンシューマー テンプレートの一般的な使用例を示しています。  
+# <a name="working-with-ole-db-consumer-templates"></a>OLE DB コンシューマー テンプレートの操作
+次のトピックでは、一般的なシナリオで、OLE DB コンシューマー テンプレートを使用する方法の例をいくつかを説明します。  
   
 -   [データベース属性によるデータ アクセスの簡略化](../../data/oledb/simplifying-data-access-with-database-attributes.md)  
   
--   [ウィザードで生成されたアクセサーのフィールド ステータスのデータ メンバー](../Topic/Field%20Status%20Data%20Members%20in%20Wizard-Generated%20Accessors.md)  
+-   [ウィザードで生成されたアクセサーのフィールド ステータスのデータ メンバー](../../data/oledb/field-status-data-members-in-wizard-generated-accessors.md)  
   
--   [単純な行セットの走査](../Topic/Traversing%20a%20Simple%20Rowset.md)  
+-   [単純な行セットの走査](../../data/oledb/traversing-a-simple-rowset.md)  
   
 -   [パラメーター クエリの実行](../../data/oledb/issuing-a-parameterized-query.md)  
   
@@ -57,15 +57,15 @@ caps.handback.revision: 8
   
 -   [通知の受信](../../data/oledb/receiving-notifications.md)  
   
- OLE DB コンシューマーの作成と実装の例については、「[OLE DB コンシューマーの作成](../../data/oledb/creating-an-ole-db-consumer.md)」を参照してください。  
+ 作成して、OLE DB コンシューマーの実装の例は、次を参照してください。[単純なコンシューマーの作成](../../data/oledb/creating-an-ole-db-consumer.md)です。  
   
- OLE DB コンシューマー テンプレートの使用例は、以下のサンプルにもあります。  
+ 次のサンプルで OLE DB コンシューマー テンプレートを使用する方法の例を見つけることもできます。  
   
--   [CatDB サンプル : データ ソース スキーマ ブラウザー](http://msdn.microsoft.com/ja-jp/003d516b-2bf6-444e-8be5-4ebaa0b66046)  
+-   [CatDB](http://msdn.microsoft.com/en-us/003d516b-2bf6-444e-8be5-4ebaa0b66046)  
   
--   [DBViewer](http://msdn.microsoft.com/ja-jp/07620f99-c347-4d09-9ebc-2459e8049832)  
+-   [DBViewer](http://msdn.microsoft.com/en-us/07620f99-c347-4d09-9ebc-2459e8049832)  
   
--   [MultiRead](http://msdn.microsoft.com/ja-jp/21459014-4409-413c-b826-a41f0413be61)  
+-   [MultiRead](http://msdn.microsoft.com/en-us/21459014-4409-413c-b826-a41f0413be61)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

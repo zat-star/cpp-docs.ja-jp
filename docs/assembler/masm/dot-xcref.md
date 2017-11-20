@@ -1,33 +1,30 @@
 ---
-title: ".XCREF | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".XCREF"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".XCREF directive"
+title: ".XCREF |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: .XCREF
+dev_langs: C++
+helpviewer_keywords: .XCREF directive
 ms.assetid: f8443482-2a7e-4764-bef8-8bfdaf06d2fe
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3b46991623c6a3e6e29a80caed2f086d1cc9eeee
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# .XCREF
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[.NOCREF](../../assembler/masm/dot-nocref.md) を参照してください。  
+# <a name="xcref"></a>.XCREF
+参照してください[です。NOCREF](../../assembler/masm/dot-nocref.md)です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,5 +32,5 @@ manager: "ghogen"
   
 ```  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>関連項目  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

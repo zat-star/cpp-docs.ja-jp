@@ -1,48 +1,48 @@
 ---
-title: "/Zc:forScope (for ループのスコープの強制準拠) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.ForceConformanceInForLoopScope"
-  - "VC.Project.VCCLWCECompilerTool.ForceConformanceInForLoopScope"
-  - "/zc:forScope"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zc コンパイラ オプション [C++]"
-  - "準拠コンパイラ オプション"
-  - "Zc コンパイラ オプション [C++]"
-  - "-Zc コンパイラ オプション [C++]"
+title: "-Zc: forScope (の強制準拠 for ループ スコープの) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.ForceConformanceInForLoopScope
+- VC.Project.VCCLWCECompilerTool.ForceConformanceInForLoopScope
+- /zc:forScope
+dev_langs: C++
+helpviewer_keywords:
+- /Zc compiler options [C++]
+- -Zc compiler options [C++]
+- Conformance compiler options
+- Zc compiler options [C++]
 ms.assetid: 3031f02d-3b14-4ad0-869e-22b0110c3aed
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 72595581e5054630e761f214c1a30c139fb7b69b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Zc:forScope (for ループのスコープの強制準拠)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-Microsoft の拡張機能 \([\/Ze](../../cpp/for-statement-cpp.md)\) の[for](../../build/reference/za-ze-disable-language-extensions.md) ループの標準 C\+\+ 動作を実装するために使用します。**\/Zc:forScope** は既定でオンになります。  
+# <a name="zcforscope-force-conformance-in-for-loop-scope"></a>/Zc:forScope (for ループのスコープの強制準拠)
+Microsoft の拡張機能 ( [/Ze](../../cpp/for-statement-cpp.md) ) の[for](../../build/reference/za-ze-disable-language-extensions.md)ループの標準 C++ 動作を実装するために使用します。  **/Zc:forScope** は既定でオンになります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Zc:forScope[-]  
 ```  
   
-## 解説  
- **\/Zc:forScope\-** オプションは使用されなくなりました。今後のバージョンからは削除されます。**\/Zc:forScope\-** を使うと、廃止予定の警告 D9035 が表示されます。  
+## <a name="remarks"></a>コメント  
+ **/Zc:forScope-** オプションは使用されなくなりました。今後のバージョンからは削除されます。 **/Zc:forScope-** を使うと、廃止予定の警告 D9035 が表示されます。  
   
- 標準動作とは、**for** ループの初期化子が **for** ループの後にスコープ外に出るようにすることです。**\/Zc:forScope\-** と [\/Ze](../../build/reference/za-ze-disable-language-extensions.md) では、**for** ループの初期化子は、ローカル スコープが終わるまでスコープ内にとどまります。  
+ 標準動作とは、 **for** ループの初期化子が **for** ループの後にスコープ外に出るようにすることです。 **/Zc:forScope-** と [/Ze](../../build/reference/za-ze-disable-language-extensions.md)では、 **for** ループの初期化子は、ローカル スコープが終わるまでスコープ内にとどまります。  
   
- 次のコードは **\/Ze** ではコンパイルされますが、**\/Za** ではコンパイルされません。  
+ 次のコードは **/Ze** ではコンパイルされますが、 **/Za**ではコンパイルされません。  
   
 ```cpp  
 // zc_forScope.cpp  
@@ -59,26 +59,26 @@ int main() {
 }  
 ```  
   
- **\/Zc:forScope\-** を使う場合、以前のスコープで行った宣言によって変数がスコープ内にあるときに、警告 C4288 \(既定ではオフ\) が表示されます。 これを示すために、サンプル コードから `//` の文字を削除して `int i` を宣言します。  
+ **/Zc:forScope-**を使う場合、以前のスコープで行った宣言によって変数がスコープ内にあるときに、警告 C4288 (既定ではオフ) が表示されます。 これを示すために、サンプル コードから `//` の文字を削除して `int i`を宣言します。  
   
- **\/Zc:forScope** の実行時の動作は、[conform](../../preprocessor/conform.md) プラグマを使って変更できます。  
+ **/Zc:forScope** の実行時の動作は、 [conform](../../preprocessor/conform.md) プラグマを使って変更できます。  
   
- 既存の .pch ファイルがあるプロジェクトで **\/Zc:forScope\-** を使う場合、警告が表示され、**\/Zc:forScope\-** は無視され、既存の .pch ファイルを使ってコンパイルが継続されます。 新しい .pch ファイルを生成する場合、[\/Yc \(プリコンパイル済みヘッダー ファイルの作成\)](../../build/reference/yc-create-precompiled-header-file.md) を使います。  
+ 既存の .pch ファイルがあるプロジェクトで **/Zc:forScope-** を使う場合、警告が表示され、 **/Zc:forScope-** は無視され、既存の .pch ファイルを使ってコンパイルが継続されます。 新しい .pch ファイルを生成する場合は、使用[/Yc (プリコンパイル済みヘッダー ファイルの作成)](../../build/reference/yc-create-precompiled-header-file.md)です。  
   
- Visual C\+\+ の準拠に関する問題について詳しくは、「[非標準動作](../Topic/Nonstandard%20Behavior.md)」をご覧ください。  
+ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。 詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  ナビゲーション ウィンドウで、**\[構成プロパティ\]**、**\[C\/C\+\+\]**、**\[言語\]** プロパティ ページを開きます。  
+2.  ナビゲーション ウィンドウで、 **[構成プロパティ]**、 **[C/C++]**、 **[言語]** プロパティ ページを開きます。  
   
-3.  **\[for ループ スコープの強制準拠\]** プロパティを変更します。  
+3.  **[for ループ スコープの強制準拠]** プロパティを変更します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.ForceConformanceInForLoopScope%2A>」を参照してください。  
   
-## 参照  
- [\/Zc \(準拠\)](../../build/reference/zc-conformance.md)   
- [\/Za、\/Ze \(言語拡張機能の無効化\)](../../build/reference/za-ze-disable-language-extensions.md)
+## <a name="see-also"></a>関連項目  
+ [/Zc (準拠)](../../build/reference/zc-conformance.md)   
+ [/Za、/Ze (言語拡張を無効にする)](../../build/reference/za-ze-disable-language-extensions.md)

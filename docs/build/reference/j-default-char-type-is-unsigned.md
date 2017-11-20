@@ -1,67 +1,67 @@
 ---
-title: "/J (既定の char 型の unsigned への変更) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.DefaultCharIsUnsigned"
-  - "VC.Project.VCCLWCECompilerTool.DefaultCharIsUnsigned"
-  - "/j"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/J コンパイラ オプション [C++]"
-  - "char 型"
-  - "既定の char 型が符号なし"
-  - "既定値, char 型"
-  - "J コンパイラ オプション [C++]"
-  - "-J コンパイラ オプション [C++]"
+title: "-J (既定の char 型の unsigned) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.DefaultCharIsUnsigned
+- VC.Project.VCCLWCECompilerTool.DefaultCharIsUnsigned
+- /j
+dev_langs: C++
+helpviewer_keywords:
+- defaults, char type
+- char data type
+- -J compiler option [C++]
+- /J compiler option [C++]
+- J compiler option [C++]
+- default char type is unsigned
 ms.assetid: 50973667-6638-491e-9c41-bff73acae19f
-caps.latest.revision: 19
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 19
+caps.latest.revision: "19"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 6a49220bf5ee4d990096140f4b2139992b03ad95
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /J (既定の char 型の unsigned への変更)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`signed char` から `unsigned char`に既定の `char` の種類を変更し、`int` の型に拡大変換される場合 `char` の型はゼロ拡張されたです。  
+# <a name="j-default-char-type-is-unsigned"></a>/J (既定の char 型の unsigned への変更)
+既定値が変更`char`から入力`signed char`に`unsigned char`、および`char`型は、ゼロ拡張に上位変換することは、`int`型です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /J  
 ```  
   
-## 解説  
- `char` 値が `signed`として明示的に宣言する場合は、**\/J** オプションは影響し、`int` の型に拡大変換される場合は、その値が印拡張されたです。  
+## <a name="remarks"></a>コメント  
+ 場合、`char`として値が明示的に宣言`signed`、 **/J**オプションには影響しません、および値を符号拡張に上位変換するには、`int`型です。  
   
- **\/J** オプションでは、識別子 `_CHAR_UNSIGNED` が定義されます。この識別子は、LIMITS.h ファイルの `#ifndef` で使用し、既定の `char` 型の範囲を定義します。  
+ **/J**オプションを定義`_CHAR_UNSIGNED`で使用される`#ifndef`既定値の範囲を定義する LIMITS.h ファイルで`char`型です。  
   
- ANSI C と C\+\+ では、`char` 型の特別な実装は必要ありません。  \/J オプションが必要になるのは、最終的に英語以外の言語に翻訳する文字データを扱う場合です。  
+ ANSI C および C++ での特定の実装が必要ありません、`char`型です。 このオプションは、最終的に英語以外の言語に変換する文字データを扱うときに便利です。  
   
 > [!NOTE]
->  ATL\/MFC でこのコンパイラ オプションを使用すると、エラーが発生する場合があります。  `_ATL_ALLOW_CHAR_UNSIGNED`を定義することで、このエラーを無効にすることはできますが、この代替手段はサポートされず、常に動作しないことがあります。  
+>  ATL と MFC でこのコンパイラ オプションを使用する場合、エラーを生成する可能性があります。 定義することでこのエラーを無効にすることが`_ATL_ALLOW_CHAR_UNSIGNED`、この回避策がサポートされておらず、常には動作しない可能性があります。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  **\[ソリューション エクスプローラー\]** で、プロジェクトのショートカット メニューを開き、**\[プロパティ\]** をクリックします。  
+1.  **ソリューション エクスプローラー**で、プロジェクトのショートカット メニューを開き、 **[プロパティ]**をクリックします。  
   
-2.  **\[構成プロパティ\]** の下の左ペインのプロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスで、**\[C\/C\+\+\]** を展開し、**\[コマンド ライン\]** を選択します。  
+2.  プロジェクトで**プロパティ ページ**ダイアログ ボックスの下の左ペインで**構成プロパティ**、展開**C/C++**し、**コマンドライン**.  
   
-3.  **\[追加のオプション\]** ペインで、**\/J** コンパイラ オプションを指定します。  
+3.  **追加オプション** ウィンドウで、指定、 **/J**コンパイラ オプション。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.DefaultCharIsUnsigned%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)

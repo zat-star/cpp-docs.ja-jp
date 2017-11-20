@@ -1,40 +1,40 @@
 ---
-title: "規則の検索パス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "推論規則 (NMAKE の)"
-  - "規則, 推論"
-  - "検索パス (NMAKE の推論規則の)"
+title: "検索パス規則 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- search paths in NMAKE inference rules
+- inference rules in NMAKE
+- rules, inference
 ms.assetid: 38feded6-536d-425d-bf40-fff3173a5506
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 808ec39bafd6ad5c7982f63055ba92fccff7a285
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 規則の検索パス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="search-paths-in-rules"></a>規則の検索パス
 ```  
 {frompath}.fromext{topath}.toext:  
    commands  
 ```  
   
-## 解説  
- 依存関係で指定されたパスが推論規則のパスと正確に一致する場合だけ、推論規則が依存関係に適用されます。  依存ファイルのディレクトリは *frompath* で指定し、ターゲットのディレクトリは *topath* で指定します。空白を入れることはできません。  パスは、拡張子ごとに 1 つだけ指定します。  一方の拡張子でパスを指定した場合は、もう一方の拡張子でもパスを指定する必要があります。  現在のディレクトリを指定するには、ピリオド \(.\) または空の中かっこ \({ }\) を使用します。  マクロでは、*frompath* と *topath* を表すことができます。マクロは、プリプロセス時に呼び出されます。  
+## <a name="remarks"></a>コメント  
+ 推論規則は、依存関係で正確に指定されたパスには推論規則のパスが一致する場合だけに、依存関係に適用されます。 依存ファイルのディレクトリ指定*frompath*とターゲットのディレクトリで*topath*; スペースは許可されていません。 各拡張機能の 1 つのみのパスを指定します。 拡張機能の 1 つ上のパスでは、別のパスが必要です。 現在のディレクトリを指定するには、ピリオド (.) または空のかっこ ({}) のいずれかを使用します。 マクロが表すことができる*frompath*と*topath*; プリプロセス時に呼び出されます。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 {dbi\}.cpp{$(ODIR)}.obj::  
@@ -65,5 +65,5 @@ caps.handback.revision: 7
         $(CC) $(CFLAGS) $<  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [規則の定義](../build/defining-a-rule.md)

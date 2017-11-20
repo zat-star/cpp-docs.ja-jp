@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _setmode
+apiname: _setmode
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,10 +21,8 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- _setmode
-dev_langs:
-- C++
+f1_keywords: _setmode
+dev_langs: C++
 helpviewer_keywords:
 - Unicode [C++], console output
 - files [C++], modes
@@ -35,30 +31,15 @@ helpviewer_keywords:
 - files [C++], translation
 - setmode function
 ms.assetid: 996ff7cb-11d1-43f4-9810-f6097182642a
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: f6d84d5f40b49edaf4e79059a6661a51ca6c209a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: d894433ea7ad4c0525c044e64aa1e9c6f66459e3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="setmode"></a>_setmode
 ファイルの変換モードを設定します。  
@@ -87,7 +68,7 @@ int _setmode (
  リターン コードの詳細については、「 [_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
- `_setmode` 関数は、`mode` で指定されたファイルの変換モードを `fd` に設定します。 `_O_TEXT` として `mode` を渡すと、テキスト (変換) モードが設定されます。 キャリッジ リターンとライン フィード (CR-LF) の組み合わせは、フィード文字の入力に 1 行に変換されます。 ライン フィード文字は、出力時に CR-LF の組み合わせに変換されます。 `_O_BINARY` を渡すと、バイナリ (未変換) モードが設定され、このモードではこれらの変換は抑制されます。  
+ `_setmode` 関数は、`mode` で指定されたファイルの変換モードを `fd` に設定します。 `_O_TEXT` として `mode` を渡すと、テキスト (変換) モードが設定されます。 キャリッジ リターンとライン フィード (CR-LF) の組み合わせは、1 つのライン フィード文字の入力に変換されます。 ライン フィード文字は、出力時に CR-LF の組み合わせに変換されます。 `_O_BINARY` を渡すと、バイナリ (未変換) モードが設定され、このモードではこれらの変換は抑制されます。  
   
  渡すことも`_O_U16TEXT`、 `_O_U8TEXT`、または`_O_WTEXT`このドキュメントの後半では、2 番目の例に示すように、Unicode モードを有効にします。 `_setmode` は、通常は `stdin` および `stdout` の既定の変換モードを変更するために使用しますが、任意のファイルで使用できます。 `_setmode` をストリームのファイル記述子に適用する場合は、ストリームに対して入力または出力操作を実行する前に `_setmode` を呼び出します。  
   

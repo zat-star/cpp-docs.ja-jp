@@ -1,37 +1,38 @@
 ---
-title: "インターフェイス (ATL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COM インターフェイス"
-  - "インターフェイス, COM"
+title: "インターフェイス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- COM interfaces
+- interfaces, COM
 ms.assetid: de6c8b12-6230-4fdc-af66-a28b91d5ee55
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 28fb749a705ed01b4c10d22cea0062c2f0d799c7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# インターフェイス (ATL)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-インターフェイスは、オブジェクトが外部の環境に機能を公開する方法です。  COM では、インターフェイスはオブジェクトによって実装される関数へのポインターのテーブル \(vtable C \+\+.など\) です。  テーブルは、関数がそのインターフェイスを表しますポイントし、そのインターフェイスのメソッドです。  オブジェクトは、選択するのと同じインターフェイスを公開できます。  
+# <a name="interfaces-atl"></a>インターフェイス (ATL)
+インターフェイスは、オブジェクトが外部への機能を公開する方法です。 COM では、インターフェイスは、(C++ vtable) のようなオブジェクトによって実装されている関数へのポインターのテーブルです。 テーブルは、インターフェイスを表し、指す関数は、そのインターフェイスのメソッド。 オブジェクトは、選択され、同数のインターフェイスを公開できます。  
   
- 各インターフェイスは、基本的な COM インターフェイス、[IUnknown](../atl/iunknown.md)に基づいています。  **IUnknown** のメソッドは、オブジェクトによって公開される他のインターフェイスに移動できます。  
+ 各インターフェイスは、基本的な COM インターフェイスに基づいて[IUnknown](../atl/iunknown.md)です。 メソッド**IUnknown**オブジェクトによって公開されるその他のインターフェイスに移動できます。  
   
- また、各インターフェイスは、インターフェイス ID \(IID\) が与えられます。  この一意性は、インターフェイスのバージョン管理をサポートすることが容易になります。  インターフェイスの IID の新しいバージョンが、新しいインターフェイスです。  
+ また、各インターフェイスには、一意のインターフェイス ID (IID) が与えられます。 この一意性しやすいインターフェイスのバージョン管理をサポートします。 インターフェイスの新しいバージョンは、新しい IID を持つ、新しいインターフェイスだけです。  
   
 > [!NOTE]
->  標準の COM の IID および OLE インターフェイスが定義されます。  
+>  標準の COM と OLE インターフェイスの Iid が定義されています。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [COM の概要](../atl/introduction-to-com.md)   
- [COM Objects and Interfaces](http://msdn.microsoft.com/library/windows/desktop/ms690343)
+ [COM オブジェクトとインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms690343)
+

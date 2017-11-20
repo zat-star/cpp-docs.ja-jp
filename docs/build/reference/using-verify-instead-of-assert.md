@@ -1,43 +1,42 @@
 ---
-title: "ASSERT に代わる VERIFY の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "assert"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ASSERT ステートメント"
-  - "アサーション, デバッグ"
-  - "アサーション, トラブルシューティング (ASSERT ステートメントの)"
-  - "デバッグ [MFC], ASSERT ステートメント"
-  - "デバッグ (アサーションを)"
-  - "VERIFY マクロ"
+title: "ASSERT に代わる VERIFY の使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: assert
+dev_langs: C++
+helpviewer_keywords:
+- ASSERT statements
+- debugging [MFC], ASSERT statements
+- VERIFY macro
+- assertions, troubleshooting ASSERT statements
+- debugging assertions
+- assertions, debugging
 ms.assetid: 4c46397b-3fb1-49c1-a09b-41a72fae3797
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a848e0b995aa138c68344f80123c94a013d82f73
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ASSERT に代わる VERIFY の使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-デバッグ バージョンの MFC アプリケーションを実行しても問題がない場合でも、  同じアプリケーションのリリース バージョンでは、クラッシュしたり、間違った結果を返したり、それ以外の異常な動作が発生したりする場合があります。  
+# <a name="using-verify-instead-of-assert"></a>ASSERT に代わる VERIFY の使用
+MFC アプリケーションのデバッグ バージョンを実行するときに問題がないとします。 ただし、同じアプリケーションのリリース バージョンがクラッシュした不適切な結果を返しますやは他のいくつかの異常な動作を示します。  
   
- 正しく動作するかどうかを確認するために ASSERT ステートメントに重要なコードを入れたことが原因で、この問題が発生することがあります。  MFC プログラムのリリース ビルドでは ASSERT ステートメントがコメント化されるため、リリース ビルドではこのコードは実行されません。  
+ この問題は、正しく動作することを確認する ASSERT ステートメントで重要なコードを配置するときに発生することができます。 ASSERT ステートメントは、MFC プログラムのリリース ビルドでコメント アウトされているため、コードは、リリース ビルドでは実行されません。  
   
- 関数呼び出しが成功することを確認するために ASSERT を使用している場合は、代わりに [VERIFY](../Topic/VERIFY.md) を使用してください。  VERIFY マクロは、アプリケーションのデバッグ ビルドとリリース ビルドの両方でその引数を評価します。  
+ ASSERT 関数呼び出しが成功したことを確認するを使用している場合は、使用を検討して[を確認してください](../../mfc/reference/diagnostic-services.md#verify)代わりにします。 VERIFY マクロは、両方のデバッグで、自分の引数を評価し、アプリケーションのリリース ビルドをします。  
   
- 別の方法として、関数の戻り値を一時的な変数に代入して、ASSERT ステートメントで変数をテストすることもできます。  
+ 手法は一時変数に関数の戻り値を代入し、ASSERT ステートメントで変数をテストする (推奨別)。  
   
- 次のコードを例に取ります。  
+ 次のコード フラグメントを確認してください。  
   
 ```  
 enum {  
@@ -49,15 +48,15 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );  
 ```  
   
- このコードは、デバッグ バージョンの MFC アプリケーションでは問題なく動作します。  `calloc( )` の呼び出しが失敗すると、ファイルと行番号を示す診断メッセージが表示されます。  しかし、リリース ビルドの MFC アプリケーションでは、次の状態になります。  
+ このコードは、MFC アプリケーションのデバッグ バージョンで完全に実行されます。 場合に呼び出し`calloc( )`失敗した場合、ファイルと行番号を含む診断メッセージが表示されます。 ただしでは、MFC アプリケーションの製品版ビルド。  
   
--   `calloc( )` の呼び出しは行われず、`buf` は初期化されない。  
+-   呼び出し`calloc( )`は決して行われず、まま`buf`初期化されていない、または  
   
--   `strcpy_s( )` が "`Hello, World`" をランダムなメモリにコピーし、アプリケーションがクラッシュしたりシステムの応答が停止したりする。  
+-   `strcpy_s( )`コピー"`Hello, World`"ランダムなメモリ、場合によってはアプリケーションがクラッシュまたは原因でシステムが応答を停止するにまたは  
   
--   `free()` が、割り当てられていないメモリを解放しようとする。  
+-   `free()`割り当てられていないメモリを解放しようとしています。  
   
- ASSERT を正しく使用するには、上記のコードを次のように変更する必要があります。  
+ ASSERT を正しく使用するには、次のコード サンプルを変更する必要があります。  
   
 ```  
 enum {  
@@ -70,7 +69,7 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );  
 ```  
   
- または、代わりに VERIFY を使用できます。  
+ または、代わりに検証を使用することができます。  
   
 ```  
 enum {  
@@ -82,5 +81,5 @@ strcpy_s( buf, sizeOfBuffer, "Hello, World" );
 free( buf );  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リリース ビルドの問題の解決](../../build/reference/fixing-release-build-problems.md)

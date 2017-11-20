@@ -1,41 +1,39 @@
 ---
-title: "DUMPBIN コマンド ライン | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "dumpbin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DUMPBIN プログラム, コマンド ライン"
+title: "DUMPBIN コマンドライン |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: dumpbin
+dev_langs: C++
+helpviewer_keywords: DUMPBIN program, command line
 ms.assetid: e6ad17d3-965d-41aa-9dfd-75bb073718d4
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 9fa962655157ea53b90f44eba1ded6471771f12d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DUMPBIN コマンド ライン
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="dumpbin-command-line"></a>DUMPBIN コマンド ライン
 DUMPBIN を実行するには、次の構文を使用します。  
   
 ```  
 DUMPBIN [options] files...  
 ```  
   
- 1 つ以上のバイナリ ファイルと、出力情報を指定するオプションを入力します。  情報は標準出力に表示されます。  この情報は、ファイルにリダイレクトすることも、\/OUT オプションで名前を指定したファイルに出力することもできます。  
+ 情報を制御するために必要なすべてのオプションと共に、1 つ以上のバイナリ ファイルを指定します。 DUMPBIN には、標準出力に情報が表示されます。 ファイルにリダイレクトするか、/OUT オプションを使用して、出力ファイル名を指定します。  
   
- オプションを指定せずにファイル名だけを指定して DUMPBIN を実行すると、\/SUMMARY を指定したときと同じ内容が出力されます。  
+ 実行すると DUMPBIN ファイルで、オプションを指定せず、DUMPBIN 表示、/SUMMARY 出力します。  
   
- 「`dumpbin`」とだけ入力してほかに何も指定しないと、オプションの使い方についての簡単な説明が表示されます。  
+ コマンドを入力すると`dumpbin`DUMPBIN がそのオプションをまとめたものを法を表示するその他のコマンド ライン入力なし。  
   
-## 参照  
- [C と C\+\+ のビルド ツール](../Topic/C-C++%20Build%20Tools.md)   
+## <a name="see-also"></a>関連項目  
+ [C/C++ ビルド ツール](../../build/reference/c-cpp-build-tools.md)   
  [DUMPBIN リファレンス](../../build/reference/dumpbin-reference.md)

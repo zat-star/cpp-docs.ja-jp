@@ -1,66 +1,66 @@
 ---
-title: "ウィンドウ サポート クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.windows"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, ウィンドウ"
-  - "ウィンドウ [C++], ATL"
+title: "Windows のサポート クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.atl.windows
+dev_langs: C++
+helpviewer_keywords:
+- ATL, windows
+- windows [C++], ATL
 ms.assetid: 750b14d5-d787-4d2b-9728-ac199ccad489
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 96ca4417cea6b4bdd1107d3f5d7b4ea9d85269e9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ウィンドウ サポート クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスはウィンドウをサポートします:  
+# <a name="windows-support-classes"></a>Windows のサポート クラス
+次のクラスは、windows をサポートを提供します。  
   
--   [\_U\_MENUorID](../atl/reference/u-menuorid-class.md) は **CreateWindow** と **CreateWindowEx**のラッパーを提供します。  
+-   [_U_MENUorID](../atl/reference/u-menuorid-class.md)用のラッパーを提供**CreateWindow**と**について**です。  
   
--   [CWindow](../atl/reference/cwindow-class.md) は、ウィンドウを操作するためのメソッドが含まれています。  `CWindow` は、`CWindowImpl`、`CDialogImpl`、および `CContainedWindow` の基本クラスです。  
+-   [CWindow](../atl/reference/cwindow-class.md)ウィンドウを操作するためのメソッドが含まれています。 `CWindow` は、`CWindowImpl`、`CDialogImpl`、および `CContainedWindow` の基本クラスです。  
   
--   [CWindowImpl](../Topic/CWindowImpl%20Class.md) は新しいウィンドウ クラスに基づいてウィンドウを実装します。  また、サブクラスまたはウィンドウにスーパークラス化できます。  
+-   [CWindowImpl](../atl/reference/cwindowimpl-class.md)新しいウィンドウ クラスに基づくウィンドウを実装します。 こともできますサブクラスまたはスーパークラス ウィンドウです。  
   
--   [CDialogImpl](../Topic/CDialogImpl%20Class.md) は、ダイアログ ボックスを実装します。  
+-   [CDialogImpl](../atl/reference/cdialogimpl-class.md)  ダイアログ ボックスを実装します。  
   
--   [CAxDialogImpl](../Topic/CAxDialogImpl%20Class.md) は、ダイアログ ボックス \(モーダルまたはモードレス\) ホストの ActiveX コントロール実装します。  
+-   [CAxDialogImpl](../atl/reference/caxdialogimpl-class.md) ActiveX コントロールをホストするダイアログ ボックス (モーダルまたはモードレス) を実装します。  
   
--   [CSimpleDialog](../atl/reference/csimpledialog-class.md) は、基本的な機能のダイアログ ボックス \(モーダルまたはモードレス\) 実装します。  
+-   [CSimpleDialog](../atl/reference/csimpledialog-class.md)基本的な機能を持つ ダイアログ ボックス (モーダルまたはモードレス) を実装します。  
   
--   [CAxWindow](../atl/reference/caxwindow-class.md) は、ActiveX コントロールをホストするウィンドウを操作します。  
+-   [CAxWindow](../atl/reference/caxwindow-class.md) ActiveX コントロールをホストするウィンドウを操作します。  
   
--   [CAxWindow2T](../Topic/CAxWindow2T%20Class.md) は、ActiveX コントロールおよびライセンスされた ActiveX コントロールをホストするためのサポートを持つウィンドウを操作するためのメソッドを提供します。  
+-   [CAxWindow2T](../atl/reference/caxwindow2t-class.md) ActiveX コントロールをホストし、ライセンスされた ActiveX コントロールをホストするためのサポートがウィンドウを操作するためのメソッドを提供します。  
   
--   [CContainedWindowT](../Topic/CContainedWindowT%20Class.md) は別のオブジェクトに含まれているウィンドウを実装します。  
+-   [CContainedWindowT](../atl/reference/ccontainedwindowt-class.md)別のオブジェクト内に含まれるウィンドウを実装します。  
   
--   [CWndClassInfo](../atl/reference/cwndclassinfo-class.md) は新しいウィンドウ クラス情報を管理します。  
+-   [CWndClassInfo](../atl/reference/cwndclassinfo-class.md)新しいウィンドウ クラスの情報を管理します。  
   
--   メッセージ マップの[CDynamicChain](../atl/reference/cdynamicchain-class.md) の サポートの動的チェイン。  
+-   [CDynamicChain](../atl/reference/cdynamicchain-class.md)メッセージ マップの動的な組み合わせをサポートしています。  
   
--   [CMessageMap](../atl/reference/cmessagemap-class.md) は、オブジェクトが他のオブジェクトにメッセージ マップを公開するようにします。  
+-   [CMessageMap](../atl/reference/cmessagemap-class.md)にそのメッセージを公開するオブジェクトが他のオブジェクトに対応付けが可能になります。  
   
--   [CWinTraits](../atl/reference/cwintraits-class.md) は、ATL ウィンドウ オブジェクトの特性を標準化する簡単な方法を提供します。  
+-   [CWinTraits](../atl/reference/cwintraits-class.md) ATL ウィンドウ オブジェクトの特徴を標準化する単純なメソッドを提供します。  
   
--   [CWinTraitsOR](../atl/reference/cwintraitsor-class.md) はウィンドウの作成に使用されるウィンドウ スタイルと拡張スタイルに既定値を指定します。  これらの値はウィンドウの作成時に指定された値に、論理 OR 演算子を使用して、に追加されます。  
+-   [CWinTraitsOR](../atl/reference/cwintraitsor-class.md)ウィンドウ スタイルとウィンドウを作成するために使用する拡張スタイルの既定値を提供します。 ウィンドウの作成時に提供される値に、論理 OR 演算子を使用してこれらの値が追加されます。  
   
-## 関連トピック  
- [ATL ウィンドウ クラス](../Topic/ATL%20Window%20Classes.md)  
+## <a name="related-articles"></a>関連トピック  
+ [ATL ウィンドウ クラス](../atl/atl-window-classes.md)  
   
- [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)  
+ [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../atl/atl-class-overview.md)   
  [メッセージ マップ マクロ](../atl/reference/message-map-macros-atl.md)   
- [ウィンドウ クラスに関するマクロ](../atl/reference/window-class-macros.md)
+ [Windows クラスに関するマクロ](../atl/reference/window-class-macros.md)
+

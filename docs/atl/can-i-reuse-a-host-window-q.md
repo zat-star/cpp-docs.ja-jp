@@ -1,29 +1,28 @@
 ---
-title: "ホスト ウィンドウを再利用できますか? | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ホスト ウィンドウ"
+title: "ホスト ウィンドウを再利用できますか。 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: host windows
 ms.assetid: bcd08ab1-cfcf-49e3-b4e8-ac134d141005
-caps.latest.revision: 12
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3c7ec1a356382451fecda37fa4aba2facc8c9d02
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ホスト ウィンドウを再利用できますか?
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ホスト ウィンドウの再利用はお勧めできません。  コードの保全性を保証するには、ホスト ウィンドウの有効期間として 1 つのコントロールの有効期間を設定する必要があります。  
+# <a name="can-i-reuse-a-host-window"></a>ホスト ウィンドウを再利用できますか。
+ホストの windows を再利用することは推奨されません。 コードの堅牢性を確実には、1 つのコントロールの有効期間に、ホスト ウィンドウの有効期間を関連付ける必要があります。  
   
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)
+## <a name="see-also"></a>関連項目  
+ [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)
+

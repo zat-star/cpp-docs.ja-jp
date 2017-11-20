@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,40 +14,24 @@ f1_keywords:
 - ATLSIMPSTR/ATL::CStrBufT::SetLength
 - ATLSIMPSTR/ATL::CStrBufT::AUTO_LENGTH
 - ATLSIMPSTR/ATL::CStrBufT::SET_LENGTH
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - strings [C++], custom memory management
 - CStrBufT class
 - shared classes, CStrBufT
 ms.assetid: 6b50fa8f-87e8-4ed4-a229-157ce128710f
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 2eb551d2db029de88aa9c1b456c44609b7fc0922
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 198151cbc97625db6d14c4f98af06d6a7d48c0c7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cstrbuft-class"></a>CStrBufT クラス
-このクラスは、自動リソースのクリーンアップを`GetBuffer`と`ReleaseBuffer`、既存の呼び出し`CStringT`オブジェクトです。  
+このクラスは、自動リソース クリーンアップ`GetBuffer`と`ReleaseBuffer`、既存の呼び出し`CStringT`オブジェクト。  
   
 ## <a name="syntax"></a>構文  
   
@@ -61,11 +44,11 @@ class CStrBufT
  *TCharType*  
  文字型、`CStrBufT`クラスです。 次のいずれかの値を指定します。  
   
-- `char`(の ANSI 文字列)  
+- `char`ANSI 文字列)  
   
 - `wchar_t`(する Unicode 文字の文字列)  
   
-- **TCHAR** (の ANSI および Unicode 文字列)  
+- **TCHAR** (用、ANSI と Unicode 文字の文字列)  
   
 ## <a name="members"></a>メンバー  
   
@@ -75,7 +58,7 @@ class CStrBufT
 |----------|-----------------|  
 |`PCXSTR`|定数文字列へのポインター。|  
 |`PXSTR`|文字列へのポインター。|  
-|`StringType`|このクラス テンプレートの特殊化で操作するためのバッファーは、文字列型です。|  
+|`StringType`|このクラス テンプレートの特殊化で操作するのには、バッファーが文字列型です。|  
   
 ### <a name="public-constructors"></a>パブリック コンストラクター  
   
@@ -100,26 +83,26 @@ class CStrBufT
   
 |名前|説明|  
 |----------|-----------------|  
-|[CStrBufT::AUTO_LENGTH](#auto_length)|リリース時に、文字列の長さを自動的に決定します。|  
-|[CStrBufT::SET_LENGTH](#set_length)|GetBuffer 時に文字列オブジェクトの長さを設定します。|  
+|[CStrBufT::AUTO_LENGTH](#auto_length)|自動的に解放時に文字列の長さを決定します。|  
+|[CStrBufT::SET_LENGTH](#set_length)|GetBuffer 時に、文字列オブジェクトの長さを設定します。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、呼び出しに置き換えることのラッパー クラスとして使用が[GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[ReleaseBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)、または[GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)と`ReleaseBuffer`です。  
+ このクラスへの呼び出しを置き換えるため、ラッパー クラスとして使用[GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[ReleaseBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)、または[GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)と`ReleaseBuffer`です。  
   
- ヘルパー クラスとして設計された`CStrBufT`について心配することがなく、文字列オブジェクトの文字バッファーを使用する開発者にとって便利な方法を提供またはを呼び出すタイミング`ReleaseBuffer`します。 これは、ラッパー オブジェクトが例外または終了する複数のコード パスの場合に自然にスコープから外れるので可能文字列リソースを解放するデストラクターを引き起こしています。  
+ ヘルパー クラスとして設計された`CStrBufT`について心配することがなく、文字列オブジェクトの文字バッファーを使用する開発者にとって便利な方法を呼び出すときに、または`ReleaseBuffer`です。 これは、ラッパー オブジェクトが例外または複数の既存コード パス以外の場合は必然的にスコープ外に出るため可能文字列リソースを解放するには、そのデストラクターが原因で。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpstr.h  
   
 ##  <a name="auto_length"></a>CStrBufT::AUTO_LENGTH  
- リリース時に、文字列の長さを自動的に決定します。  
+ 自動的に解放時に文字列の長さを決定します。  
   
 ```
 static const DWORD AUTO_LENGTH = 0x01;
 ```  
   
 ### <a name="remarks"></a>コメント  
- リリース時に、文字列の長さを自動的に決定します。 Null で終わる文字列でなければなりません。  
+ 自動的に解放時に文字列の長さを決定します。 文字列は、null で終了する必要があります。  
   
 ##  <a name="cstrbuft"></a>CStrBufT::CStrBufT  
  バッファー オブジェクトを構築します。  
@@ -137,39 +120,39 @@ explicit CStrBufT(StringType& str) throw(...);
  文字バッファーの最小長。  
   
  `dwFlags`  
- 文字列の長さが自動的に決定されているかどうかを判断します。 次のいずれかの値を指定します。  
+ 文字列の長さが自動的に決定されるかどうかを判断します。 次のいずれかの値を指定します。  
   
-- **AUTO_LENGTH**文字列の長さが自動的に決定するときに[CSimpleStringT::Release](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)が呼び出されます。 Null で終わる文字列でなければなりません。 既定値です。  
+- **AUTO_LENGTH**文字列の長さが自動的に決定するときに[CSimpleStringT::Release](../../atl-mfc-shared/reference/csimplestringt-class.md#releasebuffer)と呼びます。 文字列は、null で終了する必要があります。 既定値です。  
   
-- **SET_LENGTH**場合、文字列の長さが設定[CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)が呼び出されます。  
+- **SET_LENGTH**場合、文字列の長さが設定[CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と呼びます。  
   
 ### <a name="remarks"></a>コメント  
- 関連付けられている文字列オブジェクトの文字列バッファーを作成します。 構築時に、 [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)または[CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)が呼び出されます。  
+ 関連付けられている文字列オブジェクトの文字列バッファーを作成します。 構築時に、 [CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)または[CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)と呼びます。  
   
- コピー コンス トラクターは`private`です。  
+ なお、コピー コンス トラクターは`private`します。  
   
 ##  <a name="operator_pcxstr"></a>CStrBufT::operator PCXSTR  
- 関連付けられている文字列オブジェクトを C スタイルの文字列として格納される文字に直接アクセスします。  
+ 関連付けられている文字列オブジェクトを C スタイルの文字列として格納されている文字に直接アクセスします。  
   
 ```  
 operator PCXSTR() const throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 文字列のデータを指すポインター。  
+ 文字列のデータを指すポインターです。  
   
 ### <a name="remarks"></a>コメント  
- この関数では、文字列オブジェクトの文字バッファーへのポインターを返します。 このポインターでは、文字列オブジェクトの内容を変更することはできません。  
+ この関数では、文字列オブジェクトの文字バッファーへのポインターを返します。 このポインターでは、文字列オブジェクトの内容を変更できません。  
   
 ##  <a name="operator_pxstr"></a>CStrBufT::operator PXSTR  
- 関連付けられている文字列オブジェクトを C スタイルの文字列として格納される文字に直接アクセスします。  
+ 関連付けられている文字列オブジェクトを C スタイルの文字列として格納されている文字に直接アクセスします。  
   
 ```
 operator PXSTR() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 文字列のデータを指すポインター。  
+ 文字列のデータを指すポインターです。  
   
 ### <a name="remarks"></a>コメント  
  この関数では、文字列オブジェクトの文字バッファーへのポインターを返します。 開発者は、このポインターを持つ文字列オブジェクトの内容を変更できます。  
@@ -189,7 +172,7 @@ typedef CSimpleStringT<TCharType>::PXSTR PXSTR;
 ```  
   
 ##  <a name="set_length"></a>CStrBufT::SET_LENGTH  
- 文字列オブジェクトの長さを設定`GetBuffer`時間です。  
+ 文字列オブジェクトの長さを設定して`GetBuffer`時間。  
   
 ```
 static const DWORD SET_LENGTH = 0x02;
@@ -198,7 +181,7 @@ static const DWORD SET_LENGTH = 0x02;
 ### <a name="remarks"></a>コメント  
  GetBuffer 時に、文字列オブジェクトの長さを設定します。  
   
- かどうかを[CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)文字列バッファー オブジェクトの構築時に呼び出されます。  
+ かどうかを[CSimpleStringT::GetBuffer](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffer)と[CSimpleStringT::GetBufferSetLength](../../atl-mfc-shared/reference/csimplestringt-class.md#getbuffersetlength)文字列バッファー オブジェクトを作成するときと呼ばれます。  
   
 ##  <a name="setlength"></a>CStrBufT::SetLength  
  文字バッファーの長さを設定します。  
@@ -212,24 +195,23 @@ void SetLength(int nLength);
  文字列オブジェクトの文字バッファーの新しい長さ。  
   
 > [!NOTE]
->  コンス トラクターで指定された最小バッファーの長さ以下である必要があります`CStrBufT`します。  
+>  コンス トラクターで指定された最小バッファー長未満にする必要があります`CStrBufT`です。  
   
 ### <a name="remarks"></a>コメント  
- バッファー オブジェクトで表される文字列の長さを設定するには、この関数を呼び出します。  
+ バッファー オブジェクトによって表される文字列の長さを設定するには、この関数を呼び出します。  
   
 ##  <a name="stringtype"></a>CStrBufT::StringType  
- このクラス テンプレートの特殊化で操作するためのバッファーは、文字列型です。  
+ このクラス テンプレートの特殊化で操作するのには、バッファーが文字列型です。  
   
 ```
 typedef CSimpleStringT<TCharType> StringType;
 ```  
   
 ### <a name="remarks"></a>コメント  
- **TCharType**クラス テンプレートの特定に使用する文字の種類します。  
+ **TCharType**クラス テンプレートの特定に使用される文字型です。  
   
 ## <a name="see-also"></a>関連項目  
  [階層図](../../mfc/hierarchy-chart.md)   
- [ATL と MFC クラスの共有](../../atl-mfc-shared/atl-mfc-shared-classes.md)
-
+ [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
 
 

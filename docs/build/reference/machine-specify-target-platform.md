@@ -1,57 +1,57 @@
 ---
-title: "/MACHINE (ターゲット プラットフォームの指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.TargetMachine"
-  - "/machine"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/MACHINE リンカー オプション"
-  - "MACHINE リンカー オプション"
-  - "-MACHINE リンカー オプション"
-  - "マップ ファイル, 作成 (リンカーを)"
-  - "ターゲット プラットフォーム"
+title: "-コンピューター (ターゲット プラットフォームの指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.TargetMachine
+- /machine
+dev_langs: C++
+helpviewer_keywords:
+- mapfiles, creating linker
+- target platform
+- -MACHINE linker option
+- /MACHINE linker option
+- MACHINE linker option
 ms.assetid: 8d41bf4b-7e53-4ab9-9085-d852b08d31c2
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: e00c4f6478390c2c859b4340f38847873f4e7aed
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /MACHINE (ターゲット プラットフォームの指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="machine-specify-target-platform"></a>/MACHINE (ターゲット プラットフォームの指定)
 ```  
 /MACHINE:{ARM|EBC|X64|X86}  
 ```  
   
-## 解説  
- \/MACHINE オプションは、プログラムのターゲット プラットフォームを指定します。  
+## <a name="remarks"></a>コメント  
+ /MACHINE オプションは、プログラムのターゲット プラットフォームを指定します。  
   
- 通常、\/MACHINE オプションは指定する必要がありません。  LINK では、.obj ファイルからコンピューターの種類を推測するためです。  ただし、環境によっては、LINK がコンピューターの種類を判定できず、[リンカー ツール エラー LNK1113](../../error-messages/tool-errors/linker-tools-error-lnk1113.md) が発生する場合があります。  このようなエラー メッセージが出力された場合は、\/MACHINE オプションを指定してください。  
+ 通常、/MACHINE オプションは指定する必要がありません。 LINK では、.obj ファイルからコンピューターの種類を推測するためです。 ただし、状況によっては、リンクかを判断できません、コンピューターの種類と問題、[リンカ ツール エラー LNK1113](../../error-messages/tool-errors/linker-tools-error-lnk1113.md)です。 このようなエラー メッセージが出力された場合は、/MACHINE オプションを指定してください。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[リンカー\]** フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  **\[詳細\]** プロパティ ページをクリックします。  
+3.  クリックして、**詳細**プロパティ ページ。  
   
-4.  **\[対象コンピューター\]** プロパティを変更します。  
+4.  変更、**ターゲット マシン**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.TargetMachine%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

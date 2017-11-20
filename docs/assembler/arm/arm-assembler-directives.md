@@ -1,66 +1,64 @@
 ---
-title: "ARM Assembler Directives | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "ARM アセンブラー ディレクティブ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 9cfa8896-ec10-4e77-855a-3135c40d7d2a
-caps.latest.revision: 5
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1fee551d667b40b3fc36b3ca1f91e093148083a5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ARM Assembler Directives
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-第 7 章に記載されている、ARM アセンブリ言語、ほとんどの部分は、マイクロソフトの ARM アセンブラーを使用して、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)。  ただし、マイクロソフトの実装の一部アセンブリ ディレクティブからの ARM アセンブリ ディレクティブとは異なります。  ここでの相違点について説明します。  
+# <a name="arm-assembler-directives"></a>ARM アセンブラー ディレクティブ
+ほとんどの場合、Microsoft ARM アセンブラー言語を使用して、ARM アセンブリの第 7 章に記載されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。 ただし、一部のアセンブリ ディレクティブの Microsoft 実装は、ARM assembly ディレクティブによって異なります。 この記事では、相違点について説明します。  
   
-## マイクロソフトの実装の ARM アセンブリ ディレクティブ  
- エリア  
- Microsoft の ARM アセンブラーがこれらの領域の属性をサポートしています: 配置、コード、CODEALIGN、データ、NOINIT、読み取り専用、書き込み、サム、腕。  
+## <a name="microsoft-implementations-of-arm-assembly-directives"></a>Microsoft の ARM Assembly ディレクティブの実装  
+ 領域  
+ Microsoft ARM アセンブラーは、これらの領域の属性をサポートしています: 揃えるには、コード、CODEALIGN、データ、NOINIT、読み取り専用、読み取り/書き込み、つまみ、ARM です。  
   
- 親指と腕を除くすべてのマニュアルの説明に従って作業を[ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)。  
+ 親指と ARM 以外のすべての作業に記述されている、 [ARM アセンブラー ツール ガイド](http://go.microsoft.com/fwlink/?LinkId=246102)です。  
   
- マイクロソフトの ARM アセンブラーでは、つまみコード セクション親指のコードが含まれているコードのセクションを既定でことを示します。  ARMは、セクション ARMのコードが含まれていることを示します。  
+ Microsoft ARM アセンブラーでは、THUMB は、コード セクションが Thumb コードが含まれ、コードのセクションでは既定値を示します。  ARM では、セクションが ARM コードが含まれていることを示します。  
   
  ATTR  
  サポートされていません。  
   
- CODE16  
- マイクロソフトの ARM アセンブラーで許可されていない事前 UAL 親指の構文、意味を含むためにはサポートされません。  サム ディレクティブではなく、と共に UAL の構文を使用します。  
+ コード 16  
+ Microsoft ARM アセンブラーが許可されていない pre UAL Thumb 構文を使用すると、発生するので、サポートされていません。  代わりに、UAL 構文と共に THUMB ディレクティブを使用します。  
   
  一般的です  
- 共通領域の配置の仕様はサポートされていません。  
+ 一般的な領域の配置の指定はサポートされていません。  
   
  DCDO  
  サポートされていません。  
   
  DN、QN、SN  
- タイプか、レーン レジスタ エイリアスの仕様はサポートされていません。  
+ 型またはレジスタ エイリアスのレーンの仕様はサポートされていません。  
   
  エントリ  
  サポートされていません。  
   
  EQU  
- 定義されたシンボルの種類を指定することはできません。  
+ 定義済みの記号の型の指定はサポートされていません。  
   
- エクスポートおよびグローバル  
+ エクスポートとグローバル  
  ```  
-  
 EXPORTsym {[type]}  
-  
 ```  
   
- `sym`エクスポートするシンボルです。  `[type]`、を指定する場合は、いずれかにすることができます`[DATA]`シンボル データを指していることを示すためにまたは`[FUNC]`シンボルがコードを指していることを示します。  
+ `sym`エクスポートする記号です。  `[type]`を指定する場合はいずれかであることができます`[DATA]`シンボルがデータをポイントすることを示すためにまたは`[FUNC]`シンボルがコードを指していることを示すためにします。  
   
- シノニムのエクスポートはグローバルです。  
+ シノニムをエクスポートはグローバルです。  
   
  EXPORTAS  
  サポートされていません。  
@@ -68,51 +66,49 @@ EXPORTsym {[type]}
  フレーム  
  サポートされていません。  
   
- 関数およびプロシージャ  
- アセンブリ構文独自の仕様をサポートしていますが呼び出し元保存し、保存、呼び出し先は、レジスタをリストすることによって上のプロシージャを呼び出し規約マイクロソフトの ARM アセンブラー構文を受け付けますが、レジスタの一覧を無視します。  アセンブラーによって生成されるデバッグ情報の既定の呼び出し規約をサポートしています。  
+ 関数とプロシージャ  
+ Assembly 構文は、カスタムの仕様をサポートしていますは呼び出し元の保存と呼び出し先保存にあるもののレジスタを一覧表示して、プロシージャの呼び出し規約 Microsoft ARM アセンブラーは、構文を受け入れますが、登録リストは無視されます。  アセンブラーによって生成されるデバッグ情報には、既定の呼び出し規約のみがサポートしています。  
   
  インポートおよび EXTERN  
  ```  
-  
 IMPORT sym{, WEAK alias{, TYPE t}}  
-  
 ```  
   
  `sym`インポートするシンボルの名前です。  
   
- 弱い場合`alias`が指定されて、そのことを示します`sym` 、弱い外部です。  リンク時に、それを定義が見つからないかどうかへの参照がすべてではなくバインド`alias`。  
+ 弱い場合`alias`が指定されていることを示して`sym`弱い外部です。 リンク時に、その定義が見つからないかどうかは、すべての参照をバインド代わりに`alias`です。  
   
- 場合型 `t` 、次に指定される`t`を解決するリンカーを試みる必要がある方法を示す`sym`。  これらの値は`t`が可能です。   
-1： ライブラリの検索を実行しないでください`sym`   
-2： ライブラリの検索を実行`sym`   
-3\-`sym`用のエイリアスが`alias` \(既定値\)  
+ 場合型`t`が指定すると、`t`リンカーが解決を試行する方法を示す`sym`です。  これらの値`t`はことがあります。   
+1-のライブラリの検索を実行できません`sym`  
+2: ライブラリの検索を実行`sym`  
+3-`sym`のエイリアス`alias`(既定値)  
   
- EXTERN ではインポート、シノニムを除く`sym`がある場合のみで、現在のアセンブリへの参照をインポートします。  
+ EXTERN は点を除いて、インポートのシノニム`sym`への参照が現在のアセンブリ内にある場合にのみをインポートします。  
   
  MACRO  
- マクロの条件コードを保持する変数の使用はサポートされていません。  マクロのパラメーターがサポートされていない場合の既定値。  
+ マクロの状態コードを保持する変数の使用はサポートされていません。 既定値マクロのパラメーターはサポートされていません。  
   
  NOFP  
  サポートされていません。  
   
- 選択すると、TTL、SUBT  
- マイクロソフトの ARM アセンブラー一覧は生成されませんのでサポートされません。  
+ このことを選択すると、TTL、SUBT  
+ Microsoft ARM アセンブラーで番組表が生成されないために、サポートされていません。  
   
  PRESERVE8  
  サポートされていません。  
   
- 再配置  
- `RELOC n`のみ、命令またはデータ定義ディレクティブを実行します。  「再配置することができます匿名のシンボル」はありません。  
+ 再配置します。  
+ `RELOC n`命令またはデータ定義ディレクティブに従うだけことができます。 シンボルがありません。"匿名"を再配置できることがあります。  
   
- 必要とします。  
+ 必要があります。  
  サポートされていません。  
   
  REQUIRE8  
  サポートされていません。  
   
  THUMBX  
- Microsoft の ARM アセンブラー、サム 2EE の命令セットをサポートしていないために、サポートされません。  
+ Microsoft ARM アセンブラーが Thumb 2 ee 命令セットをサポートしていないためにサポートされていません。  
   
-## 参照  
- [ARM Assembler Command\-Line Reference](../../assembler/arm/arm-assembler-command-line-reference.md)   
- [ARM Assembler Diagnostic Messages](../../assembler/arm/arm-assembler-diagnostic-messages.md)
+## <a name="see-also"></a>関連項目  
+ [ARM アセンブラーのコマンド ライン リファレンス](../../assembler/arm/arm-assembler-command-line-reference.md)   
+ [ARM アセンブラー診断メッセージ](../../assembler/arm/arm-assembler-diagnostic-messages.md)

@@ -4,37 +4,21 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
+f1_keywords: atlcom/ATL::DECLARE_OLEMISC_STATUS
+dev_langs: C++
 ms.assetid: 727dbef2-a342-4157-9d64-a421805d9747
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: 433a816b19690f22f482f26f6ab70c73ed102673
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: fc74d545388199eab2aca63ecdea1fdd62a9ef23
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="object-status-macros"></a>オブジェクトの状態に関するマクロ
 このマクロは、ActiveX コントロールに属しているフラグを設定します。  
@@ -58,11 +42,10 @@ DECLARE_OLEMISC_STATUS( miscstatus )
  該当するすべての入りますフラグです。  
   
 ### <a name="remarks"></a>コメント  
- このマクロは、ActiveX コントロールの入りますフラグの設定に使用されます。 参照してください[IOleObject::GetMiscStatus](http://msdn.microsoft.com/library/windows/desktop/ms678521)詳細です。  
+ このマクロを使用すると、ActiveX コントロールの入りますフラグを設定します。 参照してください[IOleObject::GetMiscStatus](http://msdn.microsoft.com/library/windows/desktop/ms678521)詳細についてはします。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing #&124;](../../atl/codesnippet/cpp/object-status-macros_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#124](../../atl/codesnippet/cpp/object-status-macros_1.h)]  
   
 ## <a name="see-also"></a>関連項目  
  [マクロ](../../atl/reference/atl-macros.md)
-

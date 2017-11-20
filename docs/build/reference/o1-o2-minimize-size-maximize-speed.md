@@ -1,99 +1,77 @@
 ---
-title: "/O1、/O2 (プログラム サイズ、実行速度) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/o2"
-  - "/o1"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/O1 コンパイラ オプション [C++]"
-  - "/O2 コンパイラ オプション [C++]"
-  - "高速コード"
-  - "実行速度コンパイラ オプション [C++]"
-  - "プログラム サイズ コンパイラ オプション [C++]"
-  - "O1 コンパイラ オプション [C++]"
-  - "-O1 コンパイラ オプション [C++]"
-  - "O2 コンパイラ オプション [C++]"
-  - "-O2 コンパイラ オプション [C++]"
-  - "小さいコード"
+title: "-O1、O2 (サイズを最小限に抑える、速度) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 09/25/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /o2
+- /o1
+dev_langs: C++
+helpviewer_keywords:
+- maximize speed compiler option [C++]
+- minimize size compiler option [C++]
+- -O2 compiler option [C++]
+- fast code
+- small code
+- O2 compiler option [C++]
+- /O2 compiler option [C++]
+- -O1 compiler option [C++]
+- O1 compiler option [C++]
+- /O1 compiler option [C++]
 ms.assetid: 2d1423f5-53d9-44da-8908-b33a351656c2
-caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 4498f19e6a228bdfb23103ab2ee25d69fcfae1e3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /O1、/O2 (プログラム サイズ、実行速度)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="o1-o2-minimize-size-maximize-speed"></a>/O1、/O2 (プログラム サイズ、実行速度)
 
-ファイルのサイズおよび速度に影響を与える、定義済みのオプション セットを選択します。  
-  
-## 構文  
-  
-```  
-/O1  
-/O2  
-```  
-  
-## 解説  
- **\/O1** および **\/O2** について次の表で説明します。  
-  
-|オプション|等価オプション|コメント|  
-|-----------|-------------|----------|  
-|**\/O1** \(最小サイズ\)|**\/Og \/Os \/Oy \/Ob2 \/Gs \/GF \/Gy**|ほとんどの場合、最小サイズのコードを作成します。|  
-|**\/O2** \(最高速度\)|**\/Og \/Oi \/Ot \/Oy \/Ob2 \/Gs \/GF \/Gy**|ほとんどの場合、最高速のコードを作成します。これは、リリース ビルドの既定の設定です。|  
-  
- **\/O1** と **\/O2** を選択すると、名前付き戻り値の最適化も有効になります。この最適化では、スタック ベースの戻り値のコンストラクターとデストラクターがコピーされません。  次のサンプルを例に取ります。`Test` 関数はコンストラクターまたはデストラクターのコピーを作成しません。  プログラムを実行すると、名前付き戻り値の最適化の効果を参照するには、コンストラクター、デストラクター、およびコピー コンストラクターに出力ステートメントを追加します。  詳細については、参照します [Visual C\+\+ 2005 の名前付きな戻り値の最適化](http://go.microsoft.com/fwlink/?linkid=131571)。  
-  
-```  
-// O1_O2_NRVO.cpp  
-// compile with: /O1  
-struct A {  
-   A() {}  
-   ~A() {}  
-   A(const A& aa) {}  
-};  
-  
-A Test() {  
-   A a;  
-   return a;  
-}  
-int main() {  
-   A aa;  
-   aa = Test();  
-}  
-```  
-  
- **x86 固有の仕様→**  
-  
- これらのオプションでは、[\/Oy](../../build/reference/oy-frame-pointer-omission.md) \(フレーム ポインターの省略\) オプションを暗黙で使うことになります。  
-  
- **← x86 固有の仕様**  
-  
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
-  
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
-  
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
-  
-3.  **\[最適化\]** プロパティ ページをクリックします。  
-  
-4.  **\[最適化\]** プロパティを変更します。  
-  
-### このコンパイラ オプションをコードから設定するには  
-  
--   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.Optimization%2A>」を参照してください。  
-  
-## 参照  
- [\/O オプション \(コードの最適化\)](../../build/reference/o-options-optimize-code.md)   
- [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [\/EH \(例外処理モデル\)](../../build/reference/eh-exception-handling-model.md)
+生成されたコードの速度とサイズに影響するオプションの定義済みセットを選択します。
+
+## <a name="syntax"></a>構文
+
+> /O1  
+> /O2
+
+## <a name="remarks"></a>コメント
+
+**/O1**と**/O2**コンパイラ オプションで、一度にいくつかの特定の最適化オプションを設定する簡単な方法です。 **/O1**オプションは、多くの場合、最小のコードを作成する個々 の最適化オプションを設定します。 **/O2**オプションは、ほとんどの場合に最も高速のコードを作成するオプションを設定します。 **/O2**オプションは、リリース ビルドの既定値です。 この表の特定のオプションで設定されている**/O1**と**/O2**:
+
+|オプション|相当する機能|
+|------------|-------------------|
+|**/O1** (サイズを最小限に抑える)|[/Og](../../build/reference/og-global-optimizations.md) [/Os](../../build/reference/os-ot-favor-small-code-favor-fast-code.md) [/Oy](../../build/reference/oy-frame-pointer-omission.md) [/Ob2](../../build/reference/ob-inline-function-expansion.md) [/Gs](../../build/reference/gs-control-stack-checking-calls.md) [/GF](../../build/reference/gf-eliminate-duplicate-strings.md) [/Gy](../../build/reference/gy-enable-function-level-linking.md)|
+|**/O2** (速度を最大限に)|[/Og](../../build/reference/og-global-optimizations.md) [/Oi](../../build/reference/oi-generate-intrinsic-functions.md) [/Ot](../../build/reference/os-ot-favor-small-code-favor-fast-code.md) [/Oy](../../build/reference/oy-frame-pointer-omission.md) [/Ob2](../../build/reference/ob-inline-function-expansion.md) [/Gs](../../build/reference/gs-control-stack-checking-calls.md) [/GF](../../build/reference/gf-eliminate-duplicate-strings.md) [/Gy](../../build/reference/gy-enable-function-level-linking.md)|
+
+**/O1**と**/O2**は相互に排他的です。
+
+> [!NOTE]  
+> **x86 固有**  
+> これらのオプションは、フレーム ポインターの省略の使用を意味 ([/Oy](../../build/reference/oy-frame-pointer-omission.md)) オプション。
+
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには
+
+1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。
+
+1. **構成プロパティ**、開かれている**C/C++**を選択し、**最適化**プロパティ ページ。
+
+1. 変更、**最適化**プロパティです。
+
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには
+
+- 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.Optimization%2A>」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md)  
+[コンパイラ オプション](../../build/reference/compiler-options.md)  
+[コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)  
+[/EH (例外処理モデル)](../../build/reference/eh-exception-handling-model.md)

@@ -1,32 +1,32 @@
 ---
-title: "スタックの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "使用状況をスタック |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 383f0072-0438-489f-8829-cca89582408c
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: c7a74abff7a2971fe66fa2df878078ac95f58fe8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スタックの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-RSP の現在のアドレスを超えるメモリはすべて揮発性と見なされます。ユーザー デバッグ セッションまたは割り込みハンドラー中に、OS またはデバッガーがこのメモリを上書きすることがあります。  したがって、常に、スタック フレームに対して値の読み込みまたは書き込みを行う前に RSP を設定しておく必要があります。  
+# <a name="stack-usage"></a>スタックの使用
+RSP の現在のアドレスを超えるすべてのメモリは不安定なものと見なされます: OS、または、デバッガーは、ユーザーのデバッグ セッションでは、または、割り込みハンドラーの中にこのメモリを上書き可能性があります。 したがって、RSP は常に読み取りまたはスタックのフレームの値の書き込みを試行する前に設定する必要があります。  
   
- このセクションでは、ローカル変数のためのスタック領域の割り当てと、**alloca** 組み込み関数について説明します。  
+ このセクションでは、ローカル変数のスタック領域の割り当てを説明し、 **alloca**組み込みです。  
   
 -   [スタック割り当て](../build/stack-allocation.md)  
   
--   [動的なパラメーター スタック領域の構成](../Topic/Dynamic%20Parameter%20Stack%20Area%20Construction.md)  
+-   [動的なパラメーター スタック領域の構成](../build/dynamic-parameter-stack-area-construction.md)  
   
 -   [関数の型](../build/function-types.md)  
   
@@ -34,5 +34,5 @@ RSP の現在のアドレスを超えるメモリはすべて揮発性と見な�
   
 -   [alloca](../build/alloca.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [x64 ソフトウェア規約](../build/x64-software-conventions.md)

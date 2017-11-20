@@ -1,62 +1,61 @@
 ---
-title: "LINK からの出力 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "link"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".ilk ファイル"
-  - "DLL [C++], リンカー出力としての"
-  - "実行可能ファイル [C++], リンカー出力としての"
-  - "ファイル [C++], LINK"
-  - "ILK ファイル"
-  - "インポート ライブラリ [C++], 作成"
-  - "LINK ツール [C++], マップ ファイル"
-  - "LINK ツール [C++], 出力"
-  - "リンカー [C++], 出力ファイル"
-  - "マップ ファイル [C++]"
-  - "マップ ファイル [C++], LINK 出力"
-  - "出力ファイル [C++], リンカー"
+title: "LINK からの出力 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: link
+dev_langs: C++
+helpviewer_keywords:
+- mapfiles [C++]
+- ILK files
+- output files [C++], linker
+- files [C++], LINK
+- .ilk files
+- LINK tool [C++], output
+- import libraries [C++], creating
+- executable files [C++], as linker output
+- mapfiles [C++], LINK output
+- linker [C++], output files
+- DLLs [C++], as linker output
+- LINK tool [C++], mapfile
 ms.assetid: a98b557c-1947-447a-be1f-616fb45a9580
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d01f19f31f83324beab1e44efe181086d6432175
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# LINK からの出力
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-リンクからの出力には、.exe ファイル、DLL、マップ ファイル、およびメッセージがあります。  
+# <a name="link-output"></a>LINK からの出力
+Link からの出力には、.exe ファイル、Dll、マップ ファイル、およびメッセージが含まれています。  
   
-##  <a name="_core_output_files"></a> 出力ファイル  
- LINK からの既定の出力ファイルは、.exe ファイルです。  [\/DLL](../../build/reference/dll-build-a-dll.md) オプションを指定すると、.dll ファイルが出力されます。  出力ファイル名は、[\/OUT \(出力ファイル名\)](../../build/reference/out-output-file-name.md) オプションで指定できます。  
+##  <a name="_core_output_files"></a>出力ファイル  
+ 既定の出力ファイルのリンクからは、.exe ファイルです。 場合、 [/DLL](../../build/reference/dll-build-a-dll.md)オプションを指定すると、リンクは、.dll ファイルを構築します。 出力ファイル名を指定できます、[出力ファイル名 (/out)](../../build/reference/out-output-file-name.md)オプション。  
   
- インクリメンタル モードでリンクを行うと、以降のインクリメンタル ビルドで使うステータス情報が取り込まれた .ilk ファイルが作成されます。  .ilk ファイルについては、「[リンカー入力としての .ilk ファイル](../../build/reference/dot-ilk-files-as-linker-input.md)」を参照してください。  インクリメンタル リンクについては、[\/INCREMENTAL \(インクリメンタル リンクを行う\)](../../build/reference/incremental-link-incrementally.md) オプションに関するトピックを参照してください。  
+ Incremental モードでは、リンクは、プログラムの以降のインクリメンタル ビルドの状態情報を保持するために、.ilk ファイルを作成します。 .Ilk ファイルに関する詳細については、「 [.ilk ファイル](../../build/reference/dot-ilk-files-as-linker-input.md)です。 インクリメンタル リンクの詳細については、次を参照してください。、[インクリメンタル リンク (/incremental)](../../build/reference/incremental-link-incrementally.md)オプション。  
   
- LINK によって作成されるプログラムが、シンボルをエクスポートするプログラム \(通常は DLL ファイル\) の場合は、.lib ファイルも作成されます。ただし、ビルドに .exp ファイルを使った場合は作成されません。  インポート ライブラリのファイル名は [\/IMPLIB](../Topic/-IMPLIB%20\(Name%20Import%20Library\).md) オプションで指定できます。  
+ リンクを作成するときを含むプログラム (通常は DLL) のエクスポートも作成 .lib ファイル、ビルドで .exp ファイルが使用された場合を除き、します。 インポート ライブラリ ファイル名を指定できます、 [/IMPLIB](../../build/reference/implib-name-import-library.md)オプション。  
   
- [\/MAP \(マップ ファイルの生成\)](../../build/reference/map-generate-mapfile.md) オプションを指定すると、マップ ファイルが作成されます。  
+ 場合、[マップ ファイルの生成 (/map)](../../build/reference/map-generate-mapfile.md)オプションを指定すると、マップ ファイルが作成されます。  
   
- [\/DEBUG \(デバッグ情報の生成\)](../../build/reference/debug-generate-debug-info.md) オプションを指定すると、プログラムのデバッグ情報が取り込まれた PDB が作成されます。  
+ 場合、[デバッグ情報の生成 (/debug)](../../build/reference/debug-generate-debug-info.md)オプションを指定すると、プログラムのデバッグ情報を格納する pdb ファイルが作成されます。  
   
-##  <a name="_core_other_output"></a> その他の出力  
- コマンド ラインでオプションを指定せずに「`link`」とだけ入力すると、LINK オプションの使い方をまとめた情報が出力されます。  
+##  <a name="_core_other_output"></a>他の出力  
+ 入力すると`link`他のコマンド ライン入力しなくてもリンクがそのオプションを要約した法を表示します。  
   
- [\/NOLOGO \(開始メッセージを表示しない\)](../../build/reference/nologo-suppress-startup-banner-linker.md) オプションを指定していないと、著作権メッセージとバージョン メッセージが表示され、コマンド ファイルからの入力がエコーします。  
+ リンクは、著作権およびバージョン メッセージが表示され、しない限り、コマンド ファイルからの入力をエコー、[著作権 (/NOLOGO)](../../build/reference/nologo-suppress-startup-banner-linker.md)オプションを使用します。  
   
- [\/VERBOSE \(詳細情報の出力\)](../../build/reference/verbose-print-progress-messages.md) オプションを使うと、ビルドに関する補足情報が出力されます。  
+ 使用することができます、[進行状況メッセージを印刷 (/verbose)](../../build/reference/verbose-print-progress-messages.md)ビルドに関するその他の詳細を表示するにはオプションです。  
   
- エラー メッセージと警告メッセージは、LNK*nnnn* という形式で出力されます。  このエラー プリフィックスと番号の範囲は、LIB、DUMPBIN、および EDITBIN でも使用されます。  
+ リンク LNK フォームでのエラーと警告メッセージが発行された*nnnn*です。 このエラーのプレフィックスと番号の範囲は LIB、DUMPBIN、および EDITBIN によっても使われます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

@@ -1,40 +1,38 @@
 ---
-title: "方法: MSBuild プロジェクトにカスタム ビルド ツールを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "msbuild.cpp.howto.addcustombuildtools"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "msbuild (c++), 方法: カスタム ビルド ツールを追加する"
+title: "方法: カスタム ビルド ツール MSBuild プロジェクトを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: msbuild.cpp.howto.addcustombuildtools
+dev_langs: C++
+helpviewer_keywords: 'msbuild (c++), howto: add custom build tools'
 ms.assetid: de03899a-371d-4396-9bf9-34f45a65e909
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: f9dd91f7f4d28db62b8c74f087784ce1dbc8afd9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: MSBuild プロジェクトにカスタム ビルド ツールを追加する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="how-to-add-custom-build-tools-to-msbuild-projects"></a>方法: MSBuild プロジェクトにカスタム ビルド ツールを追加する
 カスタム ビルド ツールは、特定のファイルに関連付けられているユーザー定義のコマンド ライン ツールです。  
   
- 特定のファイルに対して、実行するコマンド ライン、追加の入力または出力ファイル、および表示するメッセージをプロジェクト ファイル \(.vcxproj\) で指定します。  **MSBuild** は、入力ファイルに対して出力ファイルが最新でないと判断すると、メッセージを表示し、コマンドを実行します。  
+ 特定のファイルを実行するには、プロジェクト ファイル (.vcxproj) コマンド ライン、追加の入力または出力ファイル、および表示するメッセージで指定します。 場合**MSBuild**出力ファイルが、入力ファイルに対して最新でないこと、メッセージが表示され、コマンド ライン ツールを実行することを決定します。  
   
- カスタム ビルド ツールをいつ実行するかを指定するには、プロジェクト ファイルで `CustomBuildBeforeTargets` と `CustomBuildAfterTargets` という XML 要素のいずれかまたは両方を使用します。  たとえば、MIDL コンパイラの後、かつ C\/C\+\+ コンパイラの前にカスタム ビルド ツールを実行するように指定できます。  ツールを特定のターゲットを実行する前に実行するには、`CustomBuildBeforeTargets` 要素を指定し、特定のターゲットを実行した後で実行するには `CustomBuildAfterTargets` 要素を指定します。また、ツールを 2 つのターゲットの間で実行するには、両方の要素を指定します。  どちらの要素も指定しない場合、カスタム ビルド ツールは既定の場所 \(**MIDL** ターゲットを実行する前\) で実行されます。  
+ カスタム ビルド ツールが実行される場合を指定するの一方または両方を使用して、`CustomBuildBeforeTargets`と`CustomBuildAfterTargets`プロジェクト ファイル内の XML 要素です。 たとえば、MIDL コンパイラ後と、C と C++ コンパイラの前に、カスタム ビルド ツールを実行することを指定する場合があります。 指定して、`CustomBuildBeforeTargets`要素は、特定のターゲットが実行されます。 前に、ツールを実行する、`CustomBuildAfterTargets`要素は特定の対象の後に、ツールを実行するか、ツールを実行する、2 つのターゲットの実行間隔の両方の要素。 前に、既定の場所で、カスタム ビルド ツールを実行するいずれの要素が指定されている場合、 **MIDL**ターゲットです。  
   
- カスタム ビルド ステップとカスタム ビルド ツールは、`CustomBuildBeforeTargets` XML 要素と `CustomBuildAfterTargets` XML 要素で指定された情報を共有します。  プロジェクト ファイルでは、これらのターゲットは 1 回だけ指定します。  
+ カスタム ビルド ステップとカスタム ビルド ツールで指定された情報を共有、`CustomBuildBeforeTargets`と`CustomBuildAfterTargets`XML 要素です。 これらのターゲットに、プロジェクト ファイルで 1 つの時間を指定します。  
   
-### カスタム ビルド ツールを追加するには  
+### <a name="to-add-a-custom-build-tool"></a>カスタム ビルド ツールを追加するには  
   
-1.  項目グループをプロジェクト ファイルに追加し、それぞれの入力ファイルに項目を追加します。  ここに示すように、コマンド、追加の入力と出力、およびメッセージを項目メタデータとして指定します。  この例は、"faq.txt" という名前のファイルがプロジェクトと同じディレクトリに存在していることを前提としています。  
+1.  プロジェクト ファイルに項目グループを追加し、各入力ファイルの項目を追加します。 次に示すように、項目メタデータとして、コマンド、追加の入力、出力、およびメッセージを指定します。 この例では、faq.txt「という名前」ファイルがプロジェクトと同じディレクトリに存在すると仮定します。  
   
     ```  
     <ItemGroup>  
@@ -46,9 +44,9 @@ caps.handback.revision: 8
     </ItemGroup>  
     ```  
   
-### カスタム ビルド ツールを実行するビルド内の場所を定義するには  
+### <a name="to-define-where-in-the-build-the-custom-build-tools-will-execute"></a>ここで、ビルドで、カスタム ビルド ツールが実行を定義するには  
   
-1.  次のプロパティ グループをプロジェクト ファイルに追加します。  少なくとも 1 つのターゲットを指定する必要がありますが、ビルド ステップを特定のターゲットの前または後にのみ実行する場合は、もう 1 つのターゲットを省略できます。  この例は、コンパイルの後、かつリンクの前にカスタム ステップを実行します。  
+1.  プロジェクト ファイルに次のプロパティ グループを追加します。 少なくとも 1 つのターゲットを指定する必要は関心がある場合のみ、ビルド ステップを実行する前に (または後) に、他の省略できます特定のターゲットです。 この例は、コンパイルした後は、リンクする前に、カスタムの手順を実行します。  
   
     ```  
     <PropertyGroup>  
@@ -57,7 +55,7 @@ caps.handback.revision: 8
     </PropertyGroup>  
     ```  
   
-## 参照  
- [チュートリアル: MSBuild を使用した Visual C\+\+ プロジェクトの作成](../build/walkthrough-using-msbuild-to-create-a-visual-cpp-project.md)   
- [方法: MSBuild プロジェクトでビルド イベントを使用する](../build/how-to-use-build-events-in-msbuild-projects.md)   
- [方法: MSBuild プロジェクトにカスタム ビルド ステップを追加する](../Topic/How%20to:%20Add%20a%20Custom%20Build%20Step%20to%20MSBuild%20Projects.md)
+## <a name="see-also"></a>関連項目  
+ [チュートリアル: MSBuild を使用した Visual C プロジェクトの作成](../build/walkthrough-using-msbuild-to-create-a-visual-cpp-project.md)   
+ [方法: MSBuild プロジェクトでビルド イベントを使用](../build/how-to-use-build-events-in-msbuild-projects.md)   
+ [方法: MSBuild プロジェクトにカスタム ビルド ステップを追加する](../build/how-to-add-a-custom-build-step-to-msbuild-projects.md)

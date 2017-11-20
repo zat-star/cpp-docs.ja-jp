@@ -1,71 +1,71 @@
 ---
-title: "エクスポート方式の使い分け | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".def ファイル [C++], エクスポート (DLL から)"
-  - "__declspec(dllexport) キーワード [C++]"
-  - "def ファイル [C++], エクスポート (DLL から)"
-  - "エクスポート (DLL を) [C++], メソッドの比較"
+title: "使用するエクスポート方式の使い分け |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- __declspec(dllexport) keyword [C++]
+- exporting DLLs [C++], method comparison
+- def files [C++], exporting from DLLs
+- .def files [C++], exporting from DLLs
 ms.assetid: 66d773ed-935c-45c2-ad03-1a060874b34d
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 013620a6353c281b2d60a8c4f847f57c60e5f10c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# エクスポート方式の使い分け
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-方法 2 .def ファイルまたは `__declspec(dllexport)` キーワードの関数をエクスポートできます。  どの方法を DLL に対して適切かを判断するには、次の事項を検討する:  
+# <a name="determining-which-exporting-method-to-use"></a>エクスポート方式の使い分け
+2 つの方法のいずれかで関数をエクスポートすることができます: .def ファイルまたは`__declspec(dllexport)`キーワード。 DLL の向上方法を決定するために、これらの質問を考慮してください。  
   
--   そのほかの関数を後でエクスポートする予定がある場合。  
+-   後でより多くの関数をエクスポートする予定ですか。  
   
--   DLL は、リビルド、またはその使用されます。使用するアプリケーションによってのみアプリケーション、第三者によって作成されたアプリケーションでリビルド例にできないか。  
+-   再構築できますが、使用したりできませんを再構築するアプリケーションでアプリケーションでのみ使用される DLL は、— たとえば、サード パーティによって作成されるアプリケーションですか?  
   
-## .def ファイルを使う場合の利点と欠点  
- .def ファイルを使って関数をエクスポートする場合、エクスポート序数のコントロールを提供します。  DLL にエクスポート関数を追加すると、そのほかのエクスポート関数よりも高い序数値を割り当てることができます。  こうすると、暗黙的なリンクを使用するアプリケーションは、新しい関数を含むインポート ライブラリとリンクし直す必要はありません。  これは、新しい機能を追加し、既に依存するアプリケーションで正しく動作し続けることを確認できるため、多くのアプリケーションで使用するための DLL をデザインする場合、非常に便利です。  たとえば、MFC DLL は、.def ファイルを使用して構築されます。  
+## <a name="pros-and-cons-of-using-def-files"></a>.Def ファイルを使用しての長所と短所  
+ エクスポート序数を制御できる .def ファイルのための関数をエクスポートしています。 DLL にエクスポートされた関数を追加する場合は、他のエクスポートされた関数よりも高い序数値を割り当てることができます。 これを行うときに、暗黙的なリンクを使用するアプリケーションを新しい関数を含むインポート ライブラリとリンクし直すにはありません。 これは、新しい機能を追加しても既に依存するアプリケーションでは正しく動作を続行することを確認するので、多くのアプリケーションで使用するための DLL を設計する場合に非常に便利です。 たとえば、MFC Dll は、.def ファイルを使用して構築されます。  
   
- .def ファイルを使うもう一つの利点は、関数をエクスポートするために `NONAME` 属性を使用できるようになります。  これは、DLL のエクスポート テーブル内の序数のみを配置します。  `NONAME` 属性を使用して DLL にエクスポート関数が多数あり、DLL ファイルのサイズを単純化するできます。  モジュール定義文を記述する方法の詳細については、「[モジュール定義ステートメントに関する規則](../build/reference/rules-for-module-definition-statements.md)」を参照してください。  順序をエクスポートする方法の詳細については、「[名前ではなく序数値による DLL 関数のエクスポート](../build/exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md)」を参照してください。  
+ .Def ファイルを使用して、もう 1 つの利点は、使用できること、`NONAME`関数をエクスポートする属性。 これによって、DLL のエクスポート テーブルに序数だけです。 Dll の場合を使用して、エクスポートされた関数の数が多い、`NONAME`属性は、DLL ファイルのサイズを減らすことができます。 モジュール定義ステートメントを記述する方法については、次を参照してください。[モジュール定義ステートメントに関する規則](../build/reference/rules-for-module-definition-statements.md)です。 序数エクスポート方法については、次を参照してください。[関数名ではなく序数値に、DLL のエクスポート](../build/exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md)です。  
   
- .def ファイルを使うの欠点は、C\+\+. C\+\+ ファイル内の関数をエクスポートする場合は、Visual C\+\+ コンパイラで装飾された名前でを避けるには、装飾名を .def ファイルに配置したり、extern 「C」を使用してエクスポート関数を定義する必要があります。  
+ .Def ファイルを使用しての欠点は、またはするは、C++ ファイルで関数をエクスポートする場合、.def に装飾名を格納する必要があるいずれかのファイルに行われる名前の装飾を回避する extern"C"を使用して、エクスポートされた関数を定義する Visual C コンパイラでします。  
   
- 配置の装飾名を .def ファイル\) は、[DUMPBIN](../build/reference/dumpbin-reference.md) ツールを使用するか、[\/MAP](../build/reference/map-generate-mapfile.md) リンカー オプションを使用してそれらを取得できます。  コンパイラが作成した装飾名はコンパイラ固有;です したがって、.def ファイルにコンパイラが作成した装飾名を指定すると、DLL へのリンクは、DLL の .def ファイルで呼び出し元のアプリケーションの一致でコンパイラと同じバージョンは、装飾名がエクスポートされる名前を使用して構成する必要があります。アプリケーション。  
+ 使用して取得できる装飾名を .def ファイルに配置した場合は、 [DUMPBIN](../build/reference/dumpbin-reference.md)ツールまたはリンカーを使用して[/map](../build/reference/map-generate-mapfile.md)オプション。 コンパイラによって生成される装飾名はコンパイラ固有です。したがって、.def ファイルに、コンパイラによって生成される装飾名を配置した場合は、DLL にリンクするアプリケーションも構築する必要が呼び出し元のアプリケーション内の装飾名が、エクスポートされた一致するように同じバージョンのコンパイラを使用して i の名前n DLL の .def ファイルがあります。  
   
-## \_\_declspec\(dllexport\) を使う場合の利点と欠点  
- `__declspec(dllexport)` を使用して .def ファイルを維持し、エクスポート関数の装飾名を取得することを考慮する必要がないため、便利です。  ただし、エクスポートするこの方法の有効性はリンクされたなアプリケーションの数リビルドする意思があるという制限されます。  新しいエクスポートで DLL をビルドし直すと、それを再度ビルドする場合は、異なるバージョンのコンパイラを使用する場合、エクスポートされた C\+\+ 関数の装飾名が変更されている可能性があるため、アプリケーションを再度ビルドする必要があります。  
+## <a name="pros-and-cons-of-using-declspecdllexport"></a>関数を使用しての長所と短所  
+ 使用して`__declspec(dllexport)`.def ファイルを管理して、エクスポートされた関数の装飾名の取得について心配する必要はありませんので便利です。 ただし、この方法でエクスポートの有用性を再構築してもよいリンクされたアプリケーションの数によって制限されます。 新しいエクスポートを含む DLL を再構築する場合は、再構築するさまざまなバージョンのコンパイラを使用する場合、エクスポートされた C++ 関数の装飾名は変わる可能性があるアプリケーションを再構築する必要があります。  
   
-### 目的に合ったトピックをクリックしてください  
+### <a name="what-do-you-want-to-do"></a>実行する操作  
   
--   [DEF ファイルを使った DLL からのエクスポート](../build/exporting-from-a-dll-using-def-files.md)  
+-   [使用して、DLL からエクスポートします。DEF ファイル](../build/exporting-from-a-dll-using-def-files.md)  
   
--   [\_\_declspec\(dllexport\) を使った DLL からのエクスポート](../build/exporting-from-a-dll-using-declspec-dllexport.md)  
+-   [関数を使った DLL からエクスポートします。](../build/exporting-from-a-dll-using-declspec-dllexport.md)  
   
--   [AFX\_EXT\_CLASS を使ったエクスポート\/インポート](../build/exporting-and-importing-using-afx-ext-class.md)  
+-   [AFX_EXT_CLASS を使ったエクスポート/インポート](../build/exporting-and-importing-using-afx-ext-class.md)  
   
--   [C 言語の実行形式で使う C\+\+ 関数のエクスポート](../build/exporting-cpp-functions-for-use-in-c-language-executables.md)  
+-   [C 言語の実行可能ファイルで使用するための C++ 関数をエクスポートします。](../build/exporting-cpp-functions-for-use-in-c-language-executables.md)  
   
--   [C\/C\+\+ 言語の実行形式で使う C 関数のエクスポート](../build/exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)  
+-   [C または C++ 言語の実行可能ファイルで使用するための C 関数をエクスポートします。](../build/exporting-c-functions-for-use-in-c-or-cpp-language-executables.md)  
   
--   [\_\_declspec\(dllimport\) を使ったアプリケーションへのインポート](../build/importing-into-an-application-using-declspec-dllimport.md)  
+-   [_Declspec (dllimport) を使用してアプリケーションをインポートします。](../build/importing-into-an-application-using-declspec-dllimport.md)  
   
--   [DLL の初期化](../build/initializing-a-dll.md)  
+-   [DLL を初期化します。](../build/run-time-library-behavior.md#initializing-a-dll)  
   
-### さらに詳しくは次のトピックをクリックしてください  
+### <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [インライン関数のインポートとエクスポート](../Topic/Importing%20and%20Exporting%20Inline%20Functions.md)  
+-   [インポートして、インライン関数をエクスポートします。](../build/importing-and-exporting-inline-functions.md)  
   
--   [相互インポート](../Topic/Mutual%20Imports.md)  
+-   [相互インポート](../build/mutual-imports.md)  
   
--   [装飾名](../Topic/Decorated%20Names.md)  
+-   [装飾名](../build/reference/decorated-names.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [DLL からのエクスポート](../build/exporting-from-a-dll.md)

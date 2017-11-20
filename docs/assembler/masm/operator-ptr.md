@@ -1,34 +1,34 @@
 ---
-title: "operator PTR | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PTR"
-  - "operator PTR"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PTR operator"
-  - "operator PTR"
+title: "PTR 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- PTR
+- operator PTR
+dev_langs: C++
+helpviewer_keywords:
+- PTR operator
+- operator PTR
 ms.assetid: df280f36-ca06-4578-b99d-0aa139b2b969
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 4921ce082f20f1c4fba0ae78c966c1b6a2bd0b54
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# operator PTR
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-最初の演算子は *式を*  強制します。指定 `type` を持つとして処理します。  2 番目の演算子は `type` へのポインターを指定します。  
+# <a name="operator-ptr"></a>PTR 演算子
+最初の演算子の強制、*式*を指定したを持つものとして扱う場合に`type`です。 2 番目の演算子へのポインターを指定する`type`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,5 +36,5 @@ caps.handback.revision: 6
 [[distance]] PTR type  
 ```  
   
-## 参照  
- [Operators Reference](../Topic/Operators%20Reference.md)
+## <a name="see-also"></a>関連項目  
+ [演算子リファレンス](../../assembler/masm/operators-reference.md)

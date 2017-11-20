@@ -1,37 +1,36 @@
 ---
-title: "/TSAWARE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/tsaware"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/TSAWARE editbin オプション"
-  - "TSAWARE editbin オプション"
-  - "-TSAWARE editbin オプション"
+title: "-TSAWARE |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /tsaware
+dev_langs: C++
+helpviewer_keywords:
+- -TSAWARE editbin option
+- /TSAWARE editbin option
+- TSAWARE editbin option
 ms.assetid: 84715050-c907-4118-8cff-2973411ae931
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 64cbd487020360004af2858cbb345f4e4b4ec5aa
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /TSAWARE
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="tsaware"></a>/TSAWARE
 ```  
 /TSAWARE[:NO]  
 ```  
   
-## 解説  
- このオプションを指定すると、[\/TSAWARE](../../build/reference/tsaware-create-terminal-server-aware-application.md) リンカー オプションを使用する場合と同じ方法で、プログラム イメージを変更できます。  
+## <a name="remarks"></a>コメント  
+ /TSAWARE EDITBIN ユーティリティ オプションでは、使用する場合と同じ方法でプログラム イメージを変更することができます、 [/TSAWARE](../../build/reference/tsaware-create-terminal-server-aware-application.md)リンカー オプション。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

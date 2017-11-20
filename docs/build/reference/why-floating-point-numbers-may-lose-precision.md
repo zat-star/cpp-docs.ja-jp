@@ -1,42 +1,42 @@
 ---
-title: "浮動小数点数の精度の低下 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DBL_EPSILON 定数"
-  - "浮動小数点数, 精度"
-  - "FLT_EPSILON 定数"
+title: "浮動小数点数は、有効桁数を失う可能性があります理由 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- DBL_EPSILON constant
+- FLT_EPSILON constant
+- floating-point numbers, precision
 ms.assetid: 1acb1add-ac06-4134-a2fd-aff13d8c4c15
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: ad6d78b6209b2a2d45f0d0e5874dff1271da880b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 浮動小数点数の精度の低下
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-通常、浮動小数点 10 進値には正確な 2 進表現がありません。  これは、CPU による浮動小数点データの表現方法に起因するものです。  このため、精度が減少したり、浮動小数点演算で予期しない結果になることがあります。  
+# <a name="why-floating-point-numbers-may-lose-precision"></a>浮動小数点数の精度の低下
+一般に、浮動小数点の 10 進値には正確なバイナリ表現がありません。 これは、CPU が浮動小数点データを表す方法の副作用です。 このため、有効桁数の一部が失われるが発生する可能性があり、浮動小数点演算が予期しない結果を生成可能性があります。  
   
- この動作は、次のいずれかの原因によって生じます。  
+ この動作は、次のいずれかの結果を示します。  
   
--   10 進数の 2 進表現が正確ではない。  
+-   10 進数のバイナリ表現を正確なことができない可能性があります。  
   
--   使用した数値の型が一致しない \(たとえば、float 型と double 型の混在\)。  
+-   使用する数値 (float や double のミキシングなど) の間で型の不一致があります。  
   
- これを解決するために多くのプログラマは、必要な値より大きい、またはより小さい値を確保するか、精度を維持する 2 進化 10 進数 \(BCD: Binary Coded Decimal\) ライブラリを入手して使用します。  
+ 動作を解決するには、取得する値が大きいか小さいものとは、必要なほとんどのプログラマ、またはこれらと精度を維持するための Binary Coded Decimal (BCD) ライブラリを使用します。  
   
- 浮動小数点値の 2 進表現は、浮動小数点計算の有効桁数および精度に影響を与えます。  Microsoft Visual C\+\+ では、[IEEE 浮動小数点形式](../../build/reference/ieee-floating-point-representation.md)を使用しています。  
+ 浮動小数点値のバイナリ表現では、有効桁数と浮動小数点演算の精度に影響します。 Microsoft Visual C を使用して[IEEE 浮動小数点形式](../../build/reference/ieee-floating-point-representation.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // Floating-point_number_precision.c  
@@ -63,9 +63,12 @@ int main() {
 }  
 ```  
   
-  **They are not equal\!  The value of c is  2.4679999352 or 2.468000**    
-## コメント  
- EPSILON には、1.192092896e\-07F として定義された float 用の定数 FLT\_EPSILON か、または 2.2204460492503131e\-016 として定義された double 用の定数 DBL\_EPSILON を使用できます。  これらの定数を使用するには、float.h をインクルードする必要があります。  これらの定数は、x\+1.0 が 1.0 に等しくならないような正の最小の数値 x として定義されています。  これは極度に小さい数値なので、大きな数値を含む計算を行う場合は、ユーザー定義の許容値を使用する必要があります。  
+```Output  
+They are not equal! The value of c is  2.4679999352 or 2.468000  
+```  
   
-## 参照  
+## <a name="comments"></a>コメント  
+ EPSILON、1.192092896e として float に対して定義されている FLT_EPSILON 定数を使用できます-07F、または倍精度 2.2204460492503131e として定義されている DBL_EPSILON-016 です。 これらの定数の float.h を含める必要があります。 これらの定数が定義されている最も小さい正の値として x 番号は、このような x + 1.0 は 1.0 に等しくします。 これは非常に小さい数であるため、非常に大きな数値に関連する計算のユーザー定義許容値を使用する必要があります。  
+  
+## <a name="see-also"></a>関連項目  
  [コードの最適化](../../build/reference/optimizing-your-code.md)

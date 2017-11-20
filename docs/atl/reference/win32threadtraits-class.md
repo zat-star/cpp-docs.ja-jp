@@ -4,31 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - Win32ThreadTraits
 - ATLBASE/ATL::Win32ThreadTraits
 - ATLBASE/ATL::Win32ThreadTraits::CreateThread
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - threading [ATL], Windows threads
 - threading [ATL], creation functions
 - Win32ThreadTraits class
 ms.assetid: 50279c38-eae1-4301-9ea6-97ccea580f3e
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.openlocfilehash: bbd0d6ce5d5edb4dfa7608f56a362fb9071b5b72
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
 ms.translationtype: MT
-ms.sourcegitcommit: c55726a1728185f699afbac4ba68a6dc0f70c2bf
-ms.openlocfilehash: a777b3c1ae6056fe4ae414371cbed4eee1accd86
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="win32threadtraits-class"></a>Win32ThreadTraits クラス
 このクラスは、Windows のスレッドの作成機能を提供します。 スレッド CRT 関数を使用しない場合は、このクラスを使用します。  
@@ -106,4 +103,3 @@ static HANDLE CreateThread(
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
-

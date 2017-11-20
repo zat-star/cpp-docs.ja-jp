@@ -1,55 +1,56 @@
 ---
-title: "イベント処理の原則 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デュアル インターフェイス, イベント インターフェイス"
-  - "イベント処理, アドバイズ (イベント ソースを)"
-  - "イベント処理, デュアルのイベント インターフェイス"
-  - "イベント処理, 実装"
-  - "インターフェイス, イベントとイベント シンク"
+title: "イベント処理の原則 (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- event handling, implementing
+- event handling, advising event sources
+- interfaces, event and event sink
+- dual interfaces, event interfaces
+- event handling, dual event interfaces
 ms.assetid: d17ca7cb-54f2-4658-ab8b-b721ac56801d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c37544f7b9083bbfa890961ef40e0c9f26aecc2c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# イベント処理の原則
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-すべてのイベントの処理に共通 3 ステップがあります。  :必要です。  
+# <a name="event-handling-principles"></a>イベント処理の原則
+3 つの手順はすべてのイベント処理に共通です。 する必要があります。  
   
--   では、オブジェクトのイベント インターフェイスを実装します。  
+-   オブジェクトのイベント インターフェイスを実装します。  
   
--   、オブジェクトがイベントを受信するイベント ソースに指示します。  
+-   オブジェクトがイベントを受信することは、イベント ソースにお勧めします。  
   
--   、のオブジェクトが、イベントを受信する必要がない場合に Unadvise イベント ソース。  
+-   オブジェクトが不要になったイベントを受信する必要がある場合は、イベント ソースをアドバイズです。  
   
- ユーザーがイベントのインターフェイスを実装する方法は、型によって異なります。  イベントのインターフェイスは、vtable、デュアル、ディスパッチ インターフェイスまたはのいずれかになります。  また、インターフェイスを定義するイベントのソースまで、デザイナー; これには、インターフェイスを実装するまで、あります。  
+ イベント インターフェイスを実装する方法は、その型によって異なります。 イベント インターフェイスには、vtable、デュアルまたはディスパッチ インターフェイスを指定できます。 インターフェイスを定義するイベント ソースのデザイナーには設定すると、そのインターフェイスを実装します。  
   
 > [!NOTE]
->  イベントのインターフェイスがデュアルである必要があり、技術的な理由がないと使用を避けるの一部の適切なデザイン理由は、倍になりますあります。  ただし、これは、イベント ソースのデザイナー\/実装によって行われる意思決定です。  イベント `sink`の観点から作業しているため、考慮することを選択できない可能性があるイベント インターフェイスをデュアル必要がありますが、無効を実装する。  デュアル インターフェイスの詳細については、[デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)を参照してください。  
+>  イベント インターフェイスをデュアルにすることはできません技術的な理由はありませんが、デュアルの使用を回避する適切な設計上の理由の数があります。 ただし、この設定は、イベントのデザイナー/インプリメンタによって行われた*ソース*です。 イベントの観点から作業しているため`sink`、デュアルのイベント インターフェイスを実装するが、任意の選択肢がなくても発生する可能性を許可する必要があります。 デュアル インターフェイスの詳細については、次を参照してください。[デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)です。  
   
- イベント ソースに指示することは 3 ステップ分割することがあります:  
+ イベント ソースを通知するのに分けることが 3 つの手順。  
   
--   [IConnectionPointContainer](http://msdn.microsoft.com/library/windows/desktop/ms683857)のソース オブジェクトを照会します。  
+-   ソース オブジェクトをクエリ[IConnectionPointContainer](http://msdn.microsoft.com/library/windows/desktop/ms683857)です。  
   
--   目的のイベント インターフェイスの IID を渡す呼び出し [IConnectionPointContainer::FindConnectionPoint](http://msdn.microsoft.com/library/windows/desktop/ms692476)。  成功すると、これはコネクション ポイント オブジェクトの [IConnectionPoint](http://msdn.microsoft.com/library/windows/desktop/ms694318) のインターフェイスを返します。  
+-   呼び出す[IConnectionPointContainer::FindConnectionPoint](http://msdn.microsoft.com/library/windows/desktop/ms692476)興味イベント インターフェイスの IID を渡します。 かどうか、正常に返されます、 [IConnectionPoint](http://msdn.microsoft.com/library/windows/desktop/ms694318)接続ポイント オブジェクトのインターフェイスです。  
   
--   イベント シンク **IUnknown** を渡す呼び出し [IConnectionPoint::Advise](http://msdn.microsoft.com/library/windows/desktop/ms678815)。  成功すると、これは接続を表す `DWORD` のクッキーを返します。  
+-   呼び出す[iconnectionpoint::advise](http://msdn.microsoft.com/library/windows/desktop/ms678815)渡す、 **IUnknown**イベント シンクのです。 かどうか、正常に返されます、`DWORD`の接続を表すクッキー。  
   
- 正常にイベントの受信の対象を登録した場合は、オブジェクトのイベント インターフェイスのメソッドは、イベントに従ってソース オブジェクトから発生すると呼び出されます。  はイベントを受け取る必要がない場合 [IConnectionPoint::Unadvise](http://msdn.microsoft.com/library/windows/desktop/ms686608)によってコネクション ポイントに、クッキーを渡すことができます。  これは、シンク ソースとの間の接続を解除。  
+ イベントの受信にご興味を正常に登録した後は、ソース オブジェクトによって発生したイベントに従ってオブジェクトのイベント インターフェイスのメソッドが呼び出されます。 不要になったイベントを受信する必要がある場合は、経由で接続ポイントに cookie を渡すことができます[IConnectionPoint::Unadvise](http://msdn.microsoft.com/library/windows/desktop/ms686608)です。 これにより、ソースとシンク間の接続が切断されます。  
   
- イベントを処理するときに循環参照が発生しないように注意してください。  
+ 参照を回避するように注意するイベントを処理するときのサイクルです。  
   
-## 参照  
- [イベント処理](../Topic/Event%20Handling%20and%20ATL.md)
+## <a name="see-also"></a>関連項目  
+ [イベント処理](../atl/event-handling-and-atl.md)
+

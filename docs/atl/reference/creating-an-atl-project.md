@@ -1,50 +1,50 @@
 ---
-title: "ATL プロジェクトの作成 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "vc.appwiz.ATL.project"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ATL_MIN_CRT マクロ"
-  - "ATL プロジェクト, 作成"
-  - "ATL70.DLL"
-  - "配布 (ATL コンポーネントとファイルを)"
+title: "ATL プロジェクトの作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: vc.appwiz.ATL.project
+dev_langs: C++
+helpviewer_keywords:
+- ATL projects, creating
+- ATL70.DLL
+- _ATL_MIN_CRT macro
+- distributing files with ATL components
 ms.assetid: 061d5f98-f669-440e-9380-42f017a0f9e8
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 190a10d83ab4935f8c0f891bbd449b7eb9762b62
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL プロジェクトの作成
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ATL プロジェクトを作成する最も簡単な方法は、**\[新しいプロジェクト\]** ダイアログ ボックスの Win32 Projects フォルダーにある ATL プロジェクト ウィザードを使用する方法です。  
+# <a name="creating-an-atl-project"></a>ATL プロジェクトの作成
+ATL プロジェクトを作成する最も簡単な方法は、の Win32 プロジェクト フォルダーにある、ATL プロジェクト ウィザードを使用して、**新しいプロジェクト ダイアログ ボックス**です。  
   
-### ATL プロジェクト ウィザードを使用して ATL プロジェクトを作成するには  
+### <a name="to-create-an-atl-project-using-the-atl-project-wizard"></a>ATL プロジェクト ウィザードを使用して ATL プロジェクトを作成するには  
   
-1.  「[Visual C\+\+ のアプリケーション ウィザードを使用したプロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)」の指示に従います。  
+1.  トピックの指示に従って、 [Visual C のアプリケーション ウィザードでプロジェクトを作成する](../../ide/creating-desktop-projects-by-using-application-wizards.md)です。  
   
-2.  **\[テンプレート\]** ペインの \[ATL プロジェクト\] アイコンをクリックし、ATL プロジェクト ウィザードを開きます。  
+2.  選択、 **ATL プロジェクト**を開くには、ATL プロジェクト ウィザードの [テンプレート] ペインでアイコン。  
   
-3.  `ATL Project Wizard` の [&#91;アプリケーション設定&#93;](../Topic/Application%20Settings,%20ATL%20Project%20Wizard.md) ページを使用して、アプリケーション設定を定義します。  
+3.  使用して、アプリケーションの設定を定義、[アプリケーション設定](../../atl/reference/application-settings-atl-project-wizard.md)のページ、`ATL Project Wizard`です。  
   
     > [!NOTE]
     >  ウィザードの既定の設定を使用する場合は、この手順を省略します。  
   
-4.  \[完了\] をクリックしてウィザードを閉じ、新しいプロジェクトを開発環境で開きます。  
+4.  をクリックして**完了**ウィザードを終了し、開発環境で、新しいプロジェクトを開きます。  
   
- 作成したプロジェクトは**ソリューション エクスプローラー**で確認できます。  ウィザードでプロジェクト用に作成されるファイルの詳細については、プロジェクトが生成する ReadMe.txt ファイルを参照してください。  ファイルの種類の詳細については、「[Visual C\+\+ プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)」を参照してください。  新しい ATL プロジェクトの構成およびその構成の変更方法の詳細については、「[ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)」を参照してください。  
+ 作成されたファイルを表示するには、プロジェクトが作成されると、**ソリューション エクスプ ローラー**です。 ウィザードでプロジェクト用に作成されるファイルの詳細については、プロジェクトが生成する ReadMe.txt ファイルを参照してください。 ファイルの種類の詳細については、次を参照してください。 [Visual c プロジェクトに対して作成されるファイルの種類](../../ide/file-types-created-for-visual-cpp-projects.md)です。 新しい ATL プロジェクト、およびそれらを変更する方法の構成の詳細については、次を参照してください。 [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)です。  
   
-## 参照  
- [コード ウィザードを使用した機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [コード ウィザードによる機能の追加](../../ide/adding-functionality-with-code-wizards-cpp.md)   
  [プロパティ ページ](../../ide/property-pages-visual-cpp.md)   
- [Deploying Applications](http://msdn.microsoft.com/ja-jp/4ff8881d-0daf-47e7-bfe7-774c625031b4)
+ [アプリケーションを展開します。](http://msdn.microsoft.com/en-us/4ff8881d-0daf-47e7-bfe7-774c625031b4)
+

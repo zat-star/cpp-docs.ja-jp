@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,38 +14,21 @@ f1_keywords:
 - ATLSECURITY/ATL::CAutoRevertImpersonation::Attach
 - ATLSECURITY/ATL::CAutoRevertImpersonation::Detach
 - ATLSECURITY/ATL::CAutoRevertImpersonation::GetAccessToken
-dev_langs:
-- C++
-helpviewer_keywords:
-- CAutoRevertImpersonation class
+dev_langs: C++
+helpviewer_keywords: CAutoRevertImpersonation class
 ms.assetid: 43732849-1940-4bd4-9d52-7a5698bb8838
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: f86f1e5067583b3c4c615c8ca3095e8b67b3fffe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: cd1d14e73ecc774a8074f47383345d1accc17dc4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cautorevertimpersonation-class"></a>CAutoRevertImpersonation クラス
-このクラスは、 [CAccessToken](../../atl/reference/caccesstoken-class.md)オブジェクトがスコープ外になったときに、この状態にします。  
+このクラスは、 [CAccessToken](../../atl/reference/caccesstoken-class.md)スコープ外になったときにこの状態オブジェクト。  
   
 ## <a name="syntax"></a>構文  
   
@@ -67,22 +49,22 @@ class CAutoRevertImpersonation
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAutoRevertImpersonation::Attach](#attach)|アクセス トークンの偽装復帰を自動化します。|  
+|[CAutoRevertImpersonation::Attach](#attach)|アクセス トークンの偽装の復帰を自動化します。|  
 |[CAutoRevertImpersonation::Detach](#detach)|自動偽装復帰をキャンセルします。|  
-|[CAutoRevertImpersonation::GetAccessToken](#getaccesstoken)|このオブジェクトに関連付けられている現在のトークン アクセスを取得します。|  
+|[CAutoRevertImpersonation::GetAccessToken](#getaccesstoken)|このオブジェクトに関連付けられている現在のトークンのアクセスを取得します。|  
   
 ## <a name="remarks"></a>コメント  
- [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストについて説明し、Windows NT または Windows 2000 のシステムにログオンしている各ユーザーに割り当てられているオブジェクトです。 これらのアクセス トークンを表すことが、`CAccessToken`クラスです。  
+ [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)プロセスまたはスレッドのセキュリティ コンテキストを記述し、Windows NT または Windows 2000 のシステムにログオンしている各ユーザーに割り当てられているオブジェクトです。 これらのアクセス トークンを表すことができます、`CAccessToken`クラスです。  
   
- アクセス トークンを偽装する必要があります。 必要に応じて、このクラスがありますが、アクセス トークンの偽装は実行されません。nonimpersonated 状態に自動バージョンの再設定のみを実行します。 これは、アクセス トークンの偽装にはいくつかの方法を実行できるためです。  
+ アクセス トークンを偽装する必要があります。 便宜上、このクラスが指定されましたが、; のアクセス トークンの権限の借用は行いません自動併存 nonimpersonated 状態のみを実行します。 これは、アクセス トークンの偽装にはいくつかの方法を実行できるためです。  
   
- Windows のアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
   
 ##  <a name="attach"></a>CAutoRevertImpersonation::Attach  
- アクセス トークンの偽装復帰を自動化します。  
+ アクセス トークンの偽装の復帰を自動化します。  
   
 ```
 void Attach(const CAccessToken* pAT) throw();
@@ -93,7 +75,7 @@ void Attach(const CAccessToken* pAT) throw();
  アドレス、 [CAccessToken](../../atl/reference/caccesstoken-class.md)オブジェクトを自動的に元に戻す  
   
 ### <a name="remarks"></a>コメント  
- このメソッドは、場合にのみ使用する必要があります、 [CAutoRevertImpersonation](../../atl/reference/cautorevertimpersonation-class.md)が NULL のオブジェクトが作成された`CAccessToken`ポインター、または[デタッチ](#detach)既に呼び出されています。 単純な状況では、このメソッドを使用する必要はありません。  
+ このメソッドは、場合にのみ使用する必要があります、 [CAutoRevertImpersonation](../../atl/reference/cautorevertimpersonation-class.md)オブジェクトが NULL で作成された`CAccessToken`ポインター、または[デタッチ](#detach)以前に呼び出されています。 単純な状況では、このメソッドを使用する必要はありません。  
   
 ##  <a name="cautorevertimpersonation"></a>CAutoRevertImpersonation::CAutoRevertImpersonation  
  `CAutoRevertImpersonation` オブジェクトを構築します。  
@@ -107,7 +89,7 @@ CAutoRevertImpersonation(const CAccessToken* pAT) throw();
  アドレス、 [CAccessToken](../../atl/reference/caccesstoken-class.md)オブジェクトを自動的に元に戻します。  
   
 ### <a name="remarks"></a>コメント  
- アクセス トークンの実際の偽装を実行するとは別にから、可能であればの作成前に、`CAutoRevertImpersonation`オブジェクトです。 この権限借用は元に戻す自動的にすると、`CAutoRevertImpersonation`オブジェクトがスコープから外れます。  
+ 可能であればの作成前に、アクセス トークンの実際の権限借用を個別に実行する必要があります、`CAutoRevertImpersonation`オブジェクト。 この権限の借用は元に戻す自動的にすると、`CAutoRevertImpersonation`オブジェクトがスコープから外れます。  
   
 ##  <a name="dtor"></a>CAutoRevertImpersonation:: ~ CAutoRevertImpersonation  
  オブジェクトを破棄し、アクセス トークンの偽装を元に戻します。  
@@ -117,7 +99,7 @@ CAutoRevertImpersonation(const CAccessToken* pAT) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 有効に現在権限借用を元に戻します、 [CAccessToken](../../atl/reference/caccesstoken-class.md)オブジェクトの構築時、またはを通じて提供される、[アタッチ](#attach)メソッドです。 ない場合`CAccessToken`が関連付けられている場合、デストラクターも何も起こりません。  
+ 有効に現在権限借用を元に戻します、 [CAccessToken](../../atl/reference/caccesstoken-class.md)オブジェクトの構築時、またはを通じて提供される、[アタッチ](#attach)メソッドです。 ない場合は`CAccessToken`が関連付けられている、デストラクターも何も起こりません。  
   
 ##  <a name="detach"></a>CAutoRevertImpersonation::Detach  
  自動偽装復帰をキャンセルします。  
@@ -127,26 +109,25 @@ const CAccessToken* Detach() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 関連付けられていたのアドレス[CAccessToken](../../atl/reference/caccesstoken-class.md)、またはアソシエーションが存在しない場合は NULL です。  
+ 以前関連付けられているアドレス[CAccessToken](../../atl/reference/caccesstoken-class.md)アソシエーションが存在しない場合は null です。  
   
 ### <a name="remarks"></a>コメント  
- 呼び出す**デタッチ**により、`CAutoRevertImpersonation`オブジェクトに対して有効で現在の偽装を元に戻すから、 [CAccessToken](../../atl/reference/caccesstoken-class.md)このオブジェクトに関連付けられているオブジェクト。 `CAutoRevertImpersonation`効果なしに破棄またはできる、同じまたは別に再関連付け`CAccessToken`オブジェクトを使用して[アタッチ](#attach)します。  
+ 呼び出す**デタッチ**により、`CAutoRevertImpersonation`オブジェクトに対して有効に現在権限借用を元に戻すから、 [CAccessToken](../../atl/reference/caccesstoken-class.md)このオブジェクトに関連付けられているオブジェクト。 `CAutoRevertImpersonation`効果なしで破棄またはできる、同じまたは別に再関連付け`CAccessToken`オブジェクトを使用して[アタッチ](#attach)です。  
   
 ##  <a name="getaccesstoken"></a>CAutoRevertImpersonation::GetAccessToken  
- このオブジェクトに関連付けられている現在のトークン アクセスを取得します。  
+ このオブジェクトに関連付けられている現在のトークンのアクセスを取得します。  
   
 ```
 const CAccessToken* GetAccessToken() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 関連付けられていたのアドレス[CAccessToken](../../atl/reference/caccesstoken-class.md)、またはアソシエーションが存在しない場合は NULL です。  
+ 以前関連付けられているアドレス[CAccessToken](../../atl/reference/caccesstoken-class.md)アソシエーションが存在しない場合は null です。  
   
 ### <a name="remarks"></a>コメント  
- 権限の借用のバージョンを再設定を含めるためにこのメソッドが呼び出された場合、`CAccessToken`オブジェクト、[デタッチ](#detach)メソッドを代わりに使用する必要があります。  
+ 権限借用のバージョンを再設定を含む目的でこのメソッドが呼び出された場合、`CAccessToken`オブジェクト、[デタッチ](#detach)メソッドを代わりに使用する必要があります。  
   
 ## <a name="see-also"></a>関連項目  
  [ATLSecurity サンプル](../../visual-cpp-samples.md)   
  [アクセス トークン](http://msdn.microsoft.com/library/windows/desktop/aa374909)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

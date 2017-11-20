@@ -1,84 +1,85 @@
 ---
-title: "ATL COM オブジェクトの基本事項 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL COM オブジェクト"
-  - "ATL, COM"
-  - "COM オブジェクト, ATL"
-  - "COM, および ATL"
+title: "ATL COM オブジェクトの基本 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- COM, and ATL
+- ATL, COM
+- ATL COM objects
+- COM objects, ATL
 ms.assetid: 0f9c9d98-cc28-45da-89ac-dc94cee422fe
-caps.latest.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: "25"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 30527a705d880e96620edfee5f7ad7897f9371a7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL COM オブジェクトの基本事項
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の図は、ATL COM オブジェクトの定義に使用するクラスとインターフェイスとの関係を示しています。  
+# <a name="fundamentals-of-atl-com-objects"></a>ATL COM オブジェクトの基本事項
+次の図は、クラスと ATL COM オブジェクトの定義に使用されるインターフェイス間の関係を示しています。  
   
- ![ATL 構造](../atl/media/vc307y1.png "vc307Y1")  
+ ![ATL 構造](../atl/media/vc307y1.gif "vc307y1")  
   
 > [!NOTE]
->  この図は、`CComObject` が `CYourClass` から派生し、`CComAggObject` および `CComPolyObject` に `CYourClass` がメンバー変数として含まれていることを示しています。  
+>  この図では`CComObject`から派生した`CYourClass`一方`CComAggObject`と`CComPolyObject`含める`CYourClass`メンバー変数とします。  
   
- ATL COM オブジェクトを定義するには、3 とおりの方法があります。  標準的な方法は、`CYourClass` から派生する `CComObject` クラスを使用する方法です。  2 つ目は、`CComAggObject` クラスを使用して集約オブジェクトを作成する方法です。  3 つ目は、`CComPolyObject` クラスを使用する方法です。  `CComPolyObject` はハイブリッドとして動作します。つまり、最初に作成された方法に応じて、`CComObject` クラスまたは `CComAggObject` クラスとして機能します。  `CComPolyObject` クラスの使用方法の詳細については、「[CComPolyObject クラス](../atl/reference/ccompolyobject-class.md)」を参照してください。  
+ ATL COM オブジェクトを定義する 3 つの方法はあります。 標準のオプションは使用する、`CComObject`クラスから派生する`CYourClass`です。 2 番目のオプションを使用して集約オブジェクトを作成する、`CComAggObject`クラスです。 3 番目のオプションは、使用する、`CComPolyObject`クラスです。 `CComPolyObject`ハイブリッドの役割を果たします: として機能できます、`CComObject`クラスか、または、`CComAggObject`最初の作成方法に応じて、クラスです。 使用する方法についての詳細、`CComPolyObject`クラスを参照してください[CComPolyObject クラス](../atl/reference/ccompolyobject-class.md)です。  
   
- 標準 ATL COM を使用する場合は、外部オブジェクトと内部オブジェクトの 2 つのオブジェクトを使用します。  外部クライアントは、外部オブジェクトで定義されたラッパー関数を通じて内部オブジェクトの機能にアクセスします。  外部オブジェクトの型は `CComObject` です。  
+ 2 つのオブジェクトを使用する標準の ATL COM を使用する場合: 外部オブジェクトと、内部オブジェクトです。 外部クライアント、外部オブジェクトで定義されているラッパー関数を使用して内部オブジェクトの機能にアクセスします。 外部オブジェクトの型が`CComObject`です。  
   
- 集約オブジェクトを使用する場合、外部オブジェクトは、内部オブジェクトの機能に対するラッパーを提供しません。  代わりに、外部オブジェクトは、外部クライアントによって直接アクセスされるポインターを提供します。  このシナリオでは、外部オブジェクトの型は `CComAggObject` です。  内部オブジェクトは、外部オブジェクトのメンバー変数であり、その型は `CYourClass` です。  
+ 集約オブジェクトを使用する場合、外部オブジェクトは、内部オブジェクトの機能のラッパーを提供しません。 代わりに、外側のオブジェクトは、外部クライアントがアクセスして直接のポインターを提供します。 このシナリオで、外部オブジェクトは、型の`CComAggObject`します。 内部オブジェクトは、外部のオブジェクトのメンバー変数と型である`CYourClass`です。  
   
- クライアントは内部オブジェクトと対話する際に外部オブジェクトを経由する必要がないため、通常は集約オブジェクトの方が効率的です。  また、集約オブジェクトのインターフェイスがクライアントから直接使用可能であれば、外部オブジェクトは集約オブジェクトの機能を認識する必要がありません。  ただし、すべてのオブジェクトを集約できるとは限りません。  オブジェクトを集約するには、そのオブジェクトが集約を考慮してデザインされている必要があります。  
+ クライアントは、内部オブジェクトと対話する外部のオブジェクトを通過する必要はありません、ため集約オブジェクトは通常はより効率的です。 また、外部のオブジェクトはありません集約オブジェクトの機能を認識する集約オブジェクトのインターフェイスはクライアントで直接利用できること。 ただし、すべてのオブジェクトを集計できます。 集計されるオブジェクトは、集約ことに注意を設計する必要があります。  
   
- ATL は、次の 2 段階で [IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509) を実装します。  
+ ATL を実装する[IUnknown](http://msdn.microsoft.com/library/windows/desktop/ms680509) 2 つのフェーズで。  
   
--   [CComObject](../atl/reference/ccomobject-class.md)、[CComAggObject](../atl/reference/ccomaggobject-class.md)、または [CComPolyObject](../atl/reference/ccompolyobject-class.md) が、**IUnknown** メソッドを実装します。  
+-   [CComObject](../atl/reference/ccomobject-class.md)、[すると](../atl/reference/ccomaggobject-class.md)、または[CComPolyObject](../atl/reference/ccompolyobject-class.md)を実装する、 **IUnknown**メソッドです。  
   
--   [CComObjectRoot](../atl/reference/ccomobjectroot-class.md) または [CComObjectRootEx](../atl/reference/ccomobjectrootex-class.md) が、**IUnknown** の参照カウントと外部ポインターを管理します。  
+-   [CComObjectRoot](../atl/reference/ccomobjectroot-class.md)または[CComObjectRootEx](../atl/reference/ccomobjectrootex-class.md)の外側のポインター、参照カウントを管理する**IUnknown**です。  
   
- ATL COM オブジェクトのその他の部分は、ほかのクラスで処理します。  
+ ATL COM オブジェクトの他の側面は、他のクラスによって処理されます。  
   
--   [CComCoClass](../Topic/CComCoClass%20Class.md) は、オブジェクトの既定のクラス ファクトリと集約モデルを定義します。  
+-   [CComCoClass](../atl/reference/ccomcoclass-class.md)オブジェクトの既定のクラス ファクトリと集計モデルを定義します。  
   
--   [IDispatchImpl](../atl/reference/idispatchimpl-class.md) は、オブジェクトのデュアル インターフェイスの `IDispatch Interface` 部分について、既定の実装を用意します。  
+-   [IDispatchImpl](../atl/reference/idispatchimpl-class.md)の既定の実装を提供、`IDispatch Interface`デュアル インターフェイス オブジェクト上の部分です。  
   
--   [ISupportErrorInfoImpl](../atl/reference/isupporterrorinfoimpl-class.md) は、エラー情報が正しく呼び出しチェイン上に反映されるか確認する **ISupportErrorInfo** インターフェイスを実装します。  
+-   [ISupportErrorInfoImpl](../atl/reference/isupporterrorinfoimpl-class.md)を実装する、 **ISupportErrorInfo**インターフェイスにより、エラー情報を呼び出しチェーンを正しく反映させることができます。  
   
-## このセクションの内容  
- [CComObjectRootEx の実装](../Topic/Implementing%20CComObjectRootEx.md)  
- `CComObjectRootEx` を実装するための COM マップ エントリの例を示します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [CComObjectRootEx の実装](../atl/implementing-ccomobjectrootex.md)  
+ 実装するための COM マップ エントリの例を示します`CComObjectRootEx`です。  
   
- [CComObject、CComAggObject、および CComPolyObject の実装](../atl/implementing-ccomobject-ccomaggobject-and-ccompolyobject.md)  
- **DECLARE\_\*\_AGGREGATABLE** マクロが `CComObject`、`CComAggObject`、および `CComPolyObject` にどのように影響するかについて説明します。  
+ [CComObject、CComAggObject、CComPolyObject の実装](../atl/implementing-ccomobject-ccomaggobject-and-ccompolyobject.md)  
+ について説明しますが、どのように**DECLARE_\*_AGGREGATABLE**マクロの使用に影響`CComObject`、 `CComAggObject`、および`CComPolyObject`です。  
   
  [IDispatch と IErrorInfo のサポート](../atl/supporting-idispatch-and-ierrorinfo.md)  
- `IDispatch` インターフェイスと **IErrorInfo** インターフェイスのサポートに使用する ATL 実装クラスを示します。  
+ クラスの一覧、ATL の実装をサポートするために使用する、`IDispatch`と**IErrorInfo**インターフェイスです。  
   
  [IDispEventImpl のサポート](../atl/supporting-idispeventimpl.md)  
- クラスに対するコネクション ポイントの実装手順について示します。  
+ クラスのコネクション ポイントを実装する手順について説明します。  
   
- [既定のクラス ファクトリと集約モデルの変更](../atl/changing-the-default-class-factory-and-aggregation-model.md)  
- 既定のクラス ファクトリおよび集約モデルの変更に使用するマクロを示します。  
+ [既定のクラス ファクトリと集計モデルの変更](../atl/changing-the-default-class-factory-and-aggregation-model.md)  
+ 使用して、既定のクラス ファクトリと集計モデルを変更するには、どのようなマクロを表示します。  
   
- [集約オブジェクトの作成](../atl/creating-an-aggregated-object.md)  
- 集約オブジェクトの作成手順を示します。  
+ [集計オブジェクトの作成](../atl/creating-an-aggregated-object.md)  
+ 集約オブジェクトを作成するための手順を一覧表示します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [ATL プロジェクトの作成](../atl/reference/creating-an-atl-project.md)  
- ATL COM オブジェクトの作成に関する情報を提供します。  
+ ATL COM オブジェクトを作成する方法についてを説明します。  
   
  [ATL](../atl/active-template-library-atl-concepts.md)  
- Active Template Library を使用したプログラミングの概念を説明するトピックへのリンクを示します。  
+ Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)
+

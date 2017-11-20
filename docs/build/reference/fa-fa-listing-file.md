@@ -1,94 +1,105 @@
 ---
-title: "/FA、/Fa (リスティング ファイル) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLWCECompilerTool.AssemblerListingLocation"
-  - "VC.Project.VCCLCompilerTool.ConfigureASMListing"
-  - "VC.Project.VCCLWCECompilerTool.AssemblerOutput"
-  - "VC.Project.VCCLCompilerTool.AssemblerListingLocation"
-  - "/fa"
-  - "VC.Project.VCCLCompilerTool.AssemblerOutput"
-  - "VC.Project.VCCLCompilerTool.UseUnicodeForAssemblerListing"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/FA コンパイラ オプション [C++]"
-  - "アセンブリのみのリスティング"
-  - "FA コンパイラ オプション [C++]"
-  - "-FA コンパイラ オプション [C++]"
-  - "リスティング ファイルの種類"
+title: "/FA、/Fa (リスティング ファイル) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLWCECompilerTool.AssemblerListingLocation
+- VC.Project.VCCLCompilerTool.ConfigureASMListing
+- VC.Project.VCCLWCECompilerTool.AssemblerOutput
+- VC.Project.VCCLCompilerTool.AssemblerListingLocation
+- /fa
+- VC.Project.VCCLCompilerTool.AssemblerOutput
+- VC.Project.VCCLCompilerTool.UseUnicodeForAssemblerListing
+dev_langs: C++
+helpviewer_keywords:
+- FA compiler option [C++]
+- /FA compiler option [C++]
+- -FA compiler option [C++]
+- listing file type
+- assembly-only listing
 ms.assetid: c7507d0e-c69d-44f9-b8e2-d2c398697402
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 44d21eae211bd2d01e202a516ef487c8d0df3684
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /FA、/Fa (リスティング ファイル)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="fa-fa-listing-file"></a>/FA、/Fa (リスティング ファイル)
+アセンブラー コードを含むリスティング ファイルを作成します。  
+  
+## <a name="syntax"></a>構文  
+  
+> **/FA**[**c**\][**s**\]**[u]**  
+> **/Fa**_パス名_  
+  
+## <a name="remarks"></a>コメント  
+`/FA`コンパイラ オプションは、コンパイル時に、通常、C または C++ ソース ファイルに対応する各翻訳単位のアセンブラー リスティング ファイルを生成します。 既定では ANSI としてエンコードされるリスティング ファイルのアセンブラーのみが含まれています。 省略可能な`c`、 `s`、および`u`引数`/FA`コントロールかどうかのコードをコンピューターまたはソース コードは、この一覧を表示するには、アセンブラーと共に出力と、一覧が utf-8 としてエンコードされているかどうか。  
+  
+既定では、各リスティング ファイルは、ソース ファイルと同じ基本名を取得し、.asm 拡張子を持ちます。 使用してマシン語コードが含まれている場合、`c`オプション、リスティング ファイル .cod 拡張子が付きます。 リスティング ファイルとそれが作成される場所を使用して、ディレクトリの拡張機能と名前を変更することができます、`/Fa`オプション。  
 
-アセンブリ コードを含むリスティング ファイルを作成します。  
+### <a name="fa-arguments"></a>/FA 引数  
+none  
+アセンブラー言語のみが一覧に含まれています。  
   
-## 構文  
+`c`  
+省略可能です。 一覧には、マシン語コードが含まれています。  
   
-```  
-/FA[c|s|u]  
-/Fapathname  
-```  
+`s`  
+省略可能です。 一覧には、ソース コードが含まれています。  
   
-## 解説  
- 引数を指定して、ソース コード、マシン語コード、リスティング ファイルの拡張子を制御します。  
+`u`省略可能です。 Utf-8 形式でリスティング ファイルをエンコードし、バイト オーダー マーカーが含まれています。 既定では、ファイルは ANSI としてエンコードされます。 使用して`u`任意のシステムに正しく表示されるリスト ファイルを作成するコンパイラへの入力としてのソース コード ファイルのかどうかは、Unicode を使用していますか。  
   
- 次の表は、**\/FA** に指定するさまざまな値についての説明です。  **\/FA** には複数の値を指定できます。  たとえば、**\/FAsu** と指定できます。  
+両方`s`と`u`を指定し、ソース コード ファイルの場合、Unicode エンコードを使用し、utf-8、.asm ファイル内のコード行が正しく表示されない場合があります以外です。  
   
-|オプション|リスティング内容およびファイル名の拡張子|  
-|-----------|--------------------------|  
-|**\/FA**|アセンブリ コード、.asm|  
-|**\/FAc**|マシン語コードとアセンブリ コード、.cod|  
-|**\/FAs**|ソース コードとアセンブリ コード、.asm<br /><br /> **\/FAcs** が指定されている場合、ファイル名の拡張子は .cod になります。|  
-|**\/FAu**|バイト順マーカー付きの出力ファイルが UTF\-8 形式で作成されます。  既定では、ファイル エンコーディングは ANSI ですが、リスティング ファイルがどのシステムでも正しく表示されるようにする場合、または Unicode ソース コード ファイルをコンパイラの入力として使用する場合は **\/FAu** を使用します。<br /><br /> **\/FAsu** を指定している場合、またはソース コード ファイルが UTF\-8 以外の Unicode エンコーディングを使用する場合は、.asm ファイルのコード行が正しく表示されないことがあります。|  
+### <a name="fa-argument"></a>/Fa 引数  
+none  
+1 つ*ソース*.asm ファイルがコンパイル時にソース コード ファイルごとに作成します。  
   
- 既定では、リスティング ファイルはソース ファイルと同じ基本名を使用します。  **\/Fa** オプションを使用して、リスティング ファイルの名前とディレクトリを変更できます。  
+*filename*という名前の一覧ファイル*filename*.asm は、現在のディレクトリに配置されます。 これは、1 つのソース コード ファイルをコンパイルするときにのみ有効です。  
   
-|\/Fa の使用方法|結果|  
-|----------------|--------|  
-|**\/Fa**|1 *source\_file*.asm は各ソース・コード ファイルに作成されます。|  
-|**\/Fa** *filename*|*filename*.asm は現在のディレクトリに配置されます。  1 つのソース コード ファイルをコンパイルする場合だけ有効です。|  
-|**\/Fa** *filename.extension*|*filename.extension* は 現在のディレクトリに配置されます。  1 つのソース コード ファイルをコンパイルする場合だけ有効です。|  
-|**\/Fa** *directory*\\|1 *source\_file*.asm は各ソース・コード ファイルの指定 *directory* に作成され、格納されます。  末尾に円記号 \(\\\) を付加する必要があります。  現在のディスクのパスだけを指定できます。|  
-|**\/Fa** *directory*\\*filename*|*filename*.asm は指定 `directory`に配置されます。  1 つのソース コード ファイルをコンパイルする場合だけ有効です。|  
-|**\/Fa** *directory*\\*filename.extension*|*filename.extension* は 指定 `directory`に配置されます。  1 つのソース コード ファイルをコンパイルする場合だけ有効です。|  
+*filename.extension*  
+という名前の一覧ファイル*filename.extension*は、現在のディレクトリに配置されます。 これは、1 つのソース コード ファイルをコンパイルするときにのみ有効です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+*ディレクトリ*\  
+1 つ*source_file*.asm ファイルが作成され、指定した配置*ディレクトリ*内の各ソース コード ファイル、コンパイルします。 必要なバック スラッシュを注意してください。 現在のディスク上のパスのみが許可されます。  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+*ディレクトリ*\\*ファイル名*という名前の一覧ファイル*filename*.asm が配置される、指定した*ディレクトリ*です。 これは、1 つのソース コード ファイルをコンパイルするときにのみ有効です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+*ディレクトリ*\\*filename.extension*  
+という名前の一覧ファイル*filename.extension*配置は、指定した*ディレクトリ*です。 これは、1 つのソース コード ファイルをコンパイルするときにのみ有効です。  
   
-3.  **\[出力ファイル\]** プロパティ ページをクリックします。  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-4.  **\[ASM リストの場所\]** プロパティ \(**\/Fa** の場合\) または **\[アセンブリの出力\]** プロパティ \(**\/FA** の場合\) を変更します。**\/FAu** は、**\[追加のオプション\]** ボックスの **\[コマンド ライン\]** プロパティ ページで指定する必要があります。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-### このコンパイラ オプションをコードから設定するには  
+2.  開く、 **C/C++**フォルダーを選択、**出力ファイル**プロパティ ページ。  
   
--   詳細については、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AssemblerListingLocation%2A>」または「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AssemblerOutput%2A>」を参照してください。  **\/FAu** を指定するには、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
+3.  変更、**アセンブラーの出力**プロパティを設定、`/FAc`と`/FAs`アセンブラー、コンピューター、およびソース コードのオプションです。 変更、**アセンブラー リストを使用して Unicode**プロパティを設定、 `/FAu` ANSI または utf-8 の出力オプション。 変更、 **ASM リストの場所**を設定する、`/Fa`ファイルの名前と場所を一覧表示するためのオプションです。  
   
-## 使用例  
- 次のコマンド ラインは、ソース コードとマシン語コードを含むリスティング ファイル HELLO.cod を作成します。  
+両方を設定**アセンブラーの出力**と**アセンブラー リストを使用して Unicode**プロパティ可能性があります[コマンドラインの警告 D9025](../../error-messages/tool-errors/command-line-warning-d9025.md)です。 IDE でこれらのオプションを組み合わせるを使用して、**追加オプション**フィールドで、**コマンド ライン**プロパティ ページの代わりにします。  
+  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
+  
+-   詳細については、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AssemblerListingLocation%2A>」または「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AssemblerOutput%2A>」を参照してください。 指定する`/FAu`を参照してください<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>です。  
+  
+## <a name="example"></a>例  
+次のコマンドラインは、結合されたソースを生成し、マシン語コード リスティング ファイル hello.cod:  
   
 ```  
 CL /FAcs HELLO.CPP  
 ```  
   
-## 参照  
- [出力ファイル \(\/F\) オプション](../../build/reference/output-file-f-options.md)   
+## <a name="see-also"></a>関連項目  
+ [出力ファイル (/F) オプション](../../build/reference/output-file-f-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [パス名の指定](../Topic/Specifying%20the%20Pathname.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [パス名の指定](../../build/reference/specifying-the-pathname.md)

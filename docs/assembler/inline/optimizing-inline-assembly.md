@@ -1,35 +1,35 @@
 ---
-title: "インライン アセンブリの最適化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], 最適化"
-  - "インライン アセンブラー, 最適化"
-  - "最適化, インライン アセンブラー"
-  - "最適化 (パフォーマンスの), インライン アセンブラー"
-  - "ストレージ, インライン アセンブリの最適化"
+title: "インライン アセンブリの最適化 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- storage, optimizing in inline assembly
+- optimization, inline assembly
+- inline assembly, optimizing
+- optimizing performance, inline assembly
+- __asm keyword [C++], optimizing
 ms.assetid: 52a7ec83-9782-4d96-94c1-53bb2ac9e8c8
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: e977c89408917643c79f55d415fac212726c50d6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# インライン アセンブリの最適化
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- 関数の `__asm` ブロックが存在すると複数の方法で最適化に影響します。  最初にコンパイラは `__asm` ブロック自体を最適化しません。  アセンブリ言語で記述した内容を正確に取得のようになります。  第 2 に`__asm` ブロックの影響のレジスタ変数の格納が存在する。  コンパイラはレジスタの内容が変更された場合 `__asm` ブロック `__asm` ブロックを渡す変数を使うと呼ばれます  最後に他のある関数全体の最適化は関数のアセンブリ言語の方法に影響されます。  
+# <a name="optimizing-inline-assembly"></a>インライン アセンブリの最適化
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ 存在、`__asm`関数内のブロックに影響を与えるいくつかの方法で最適化します。 コンパイラはまず、最適化するために、`__asm`自体をブロックします。 アセンブリ言語で記述するはまったく取得です。 2 番目の存在、`__asm`ブロックへの影響は、変数の記憶域を登録します。 コンパイラ間でのレジスタ格納変数の回避、`__asm`でレジスタの内容が変更する場合はブロック、`__asm`ブロックします。 最後に、いくつか他の関数全体の最適化を受ける関数内のアセンブリ言語を含めることによってです。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

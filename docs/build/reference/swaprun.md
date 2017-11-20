@@ -1,45 +1,44 @@
 ---
-title: "/SWAPRUN | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/swaprun"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/SWAPRUN editbin オプション"
-  - "SWAPRUN editbin オプション"
-  - "-SWAPRUN editbin オプション"
+title: "-SWAPRUN |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /swaprun
+dev_langs: C++
+helpviewer_keywords:
+- /SWAPRUN editbin option
+- -SWAPRUN editbin option
+- SWAPRUN editbin option
 ms.assetid: 6eefd7f3-ca47-48e3-8509-323d27cf4ae7
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: fde871c2e10f1b2bebafef6e668aadfc8fad5c47
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /SWAPRUN
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="swaprun"></a>/SWAPRUN
 ```  
 /SWAPRUN:{[!]NET|[!]CD}  
 ```  
   
-## 解説  
- このオプションは、イメージを編集して、スワップ ファイルへのイメージのコピーおよびスワップ ファイルからの実行をオペレーティング システムに指示します。  このオプションは、ネットワーク上または交換可能メディア上のイメージに対して使用します。  
+## <a name="remarks"></a>コメント  
+ このオプションは、オペレーティング システム イメージをスワップ ファイルにコピーし、そこから実行するよう通知する画像を編集します。 ネットワークまたはリムーバブル メディア上に存在するイメージには、このオプションを使用します。  
   
- 修飾子 NET および CD を追加または削除できます。  
+ 追加または NET または CD の修飾子を削除することができます。  
   
--   NET はネットワーク上のイメージを示します。  
+-   NET は、イメージがネットワーク上に存在することを示します。  
   
--   CD は CD\-ROM などの交換可能メディア上のイメージを示します。  
+-   CD では、イメージを CD-ROM やリムーバブル メディアに存在することを示します。  
   
--   \!NET および \!CD は NET および CD の逆操作を行います。  
+-   使用してください NET および!。NET と CD の効果を反転させる CD。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [EDITBIN オプション](../../build/reference/editbin-options.md)

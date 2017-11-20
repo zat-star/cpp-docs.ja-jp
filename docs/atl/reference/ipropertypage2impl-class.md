@@ -4,51 +4,34 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - IPropertyPage2Impl
 - ATLCTL/ATL::IPropertyPage2Impl
 - ATLCTL/ATL::IPropertyPage2Impl::EditProperty
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - property pages
 - IPropertyPage2 ATL implementation
 - IPropertyPage2Impl class
 ms.assetid: e89fbe90-203a-47f0-a5de-23616697e1ce
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 43680d12febbd94137009f66242198129d4b3630
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 40cdaeef31226cf47dcf4beb08f11242932578c6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ipropertypage2impl-class"></a>IPropertyPage2Impl クラス
-このクラスは実装**IUnknown**の既定の実装の継承と[IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md)します。  
+このクラスは実装**IUnknown**の既定の実装の継承と[IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md)です。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -59,7 +42,7 @@ class IPropertyPage2Impl : public IPropertyPageImpl<T>
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- 派生したクラスに、`IPropertyPage2Impl`です。  
+ 派生したクラス、`IPropertyPage2Impl`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -67,14 +50,14 @@ class IPropertyPage2Impl : public IPropertyPageImpl<T>
   
 |名前|説明|  
 |----------|-----------------|  
-|[IPropertyPage2Impl::EditProperty](#editproperty)|プロパティ ページがアクティブになったときにどのプロパティ コントロールがフォーカスを受け取るを指定します。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IPropertyPage2Impl::EditProperty](#editproperty)|プロパティ ページがアクティブになったときにどのプロパティ コントロールがフォーカスを受け取るを指定します。 ATL の実装を返します**E_NOTIMPL**です。|  
   
 ## <a name="remarks"></a>コメント  
- [IPropertyPage2](http://msdn.microsoft.com/library/windows/desktop/ms683996)拡張したインターフェイスで[IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246)追加することで、`EditProperty`メソッドです。 このメソッドは、プロパティ ページのオブジェクトで特定のプロパティを選択するクライアントを使用します。  
+ [IPropertyPage2](http://msdn.microsoft.com/library/windows/desktop/ms683996)インターフェイスを拡張[IPropertyPage](http://msdn.microsoft.com/library/windows/desktop/ms691246)追加することによって、`EditProperty`メソッドです。 このメソッドは、プロパティ ページ オブジェクトで特定のプロパティを選択するクライアントを使用します。  
   
- クラス`IPropertyPage2Impl`を返すだけ**E_NOTIMPL**の**IPropertyPage2::EditProperty**します。 ただし、既定の実装の継承[IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md)を実装および**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
+ クラス`IPropertyPage2Impl`を単純に返します**E_NOTIMPL**の**IPropertyPage2::EditProperty**です。 ただし、既定の実装を継承[IPropertyPageImpl](../../atl/reference/ipropertypageimpl-class.md)を実装して**IUnknown**ダンプ情報を送信することによってデバッグ デバイスを構築します。  
   
- クラスは一般から派生するプロパティ ページを作成するときに`IPropertyPageImpl`します。 特別なサポートを提供する**IPropertyPage2**、クラス定義を変更し、オーバーライド、`EditProperty`メソッドです。  
+ プロパティ ページを作成するとき、クラスがから派生した通常`IPropertyPageImpl`です。 特別なサポートを提供する**IPropertyPage2**、クラス定義を変更、および上書き、`EditProperty`メソッドです。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -96,13 +79,12 @@ HRESULT EditProperty(DISPID dispID);
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **E_NOTIMPL**します。  
+ 返します**E_NOTIMPL**です。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IPropertyPage2::EditProperty](http://msdn.microsoft.com/library/windows/desktop/ms690353)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IPropertyPage2::EditProperty](http://msdn.microsoft.com/library/windows/desktop/ms690353) Windows SDK にします。  
   
 ## <a name="see-also"></a>関連項目  
  [IPerPropertyBrowsingImpl クラス](../../atl/reference/iperpropertybrowsingimpl-class.md)   
  [ISpecifyPropertyPagesImpl クラス](../../atl/reference/ispecifypropertypagesimpl-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

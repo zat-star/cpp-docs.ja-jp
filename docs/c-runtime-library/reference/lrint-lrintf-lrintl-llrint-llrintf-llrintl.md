@@ -42,8 +42,7 @@ f1_keywords:
 - math/llrint
 - math/llrintf
 - math/llrintl
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - lrint function
 - lrintf function
@@ -52,16 +51,15 @@ helpviewer_keywords:
 - llrintf function
 - llrintl function
 ms.assetid: 28ccd5b3-5e6f-434f-997d-a21d51b8ce7f
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 731c3670e315889fdf35e84a234d658b6a904050
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: c3e857150812578a71ff1fba6d0c1a7db830f4bc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="lrint-lrintf-lrintl-llrint-llrintf-llrintl"></a>lrint、lrintf、lrintl、llrint、llrintf、llrintl
 現在の丸めモードと方向を使用して、指定された浮動小数点値を最も近い整数値に丸めます。  
@@ -120,7 +118,7 @@ long long int llrintl(
   
 |問題点|リターン|  
 |-----------|------------|  
-|`x` は戻りの型の範囲外です。<br /><br /> `x` = ±∞<br /><br /> `x` = NaN|FE_INVALID が発生し&0; を返します。|  
+|`x` は戻りの型の範囲外です。<br /><br /> `x` = ±∞<br /><br /> `x` = NaN|FE_INVALID が発生し 0 を返します。|  
   
 ## <a name="remarks"></a>コメント  
  C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取る `lrint` と `llrint` のオーバーロードを呼び出すことができます。 C プログラムでは、`lrint` および `llrint` は常に double を受け取ります。  

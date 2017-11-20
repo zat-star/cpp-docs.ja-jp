@@ -30,35 +30,20 @@ f1_keywords:
 - fesetround
 - fenv/fegetround
 - fenv/fesetround
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - fegetround function
 - fesetround function
 ms.assetid: 596af00b-be2f-4f57-b2f5-460485f9ff0b
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: d5dc5278320308f423040d0e07c6cb72af3dd362
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 7bc3fd0359f78e101565b5cb1bd01e0391df8bc6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="fegetround-fesetround"></a>fegetround、fesetround
 現在の浮動小数点丸めモードを取得または設定します。  
@@ -75,10 +60,10 @@ int fesetround(
   
 #### <a name="parameters"></a>パラメーター  
  `round_mode`  
- 浮動小数点丸めマクロの&1; つとして設定する丸めモード。 値が浮動小数点丸めマクロのどれとも等しくない場合は、丸めモードは変更されません。  
+ 浮動小数点丸めマクロの 1 つとして設定する丸めモード。 値が浮動小数点丸めマクロのどれとも等しくない場合は、丸めモードは変更されません。  
   
 ## <a name="return-value"></a>戻り値  
- 成功した場合、 `fegetround` は浮動小数点丸めマクロ値の&1; つとして、丸めモードを返します。 現在の丸めモードを決定できない場合は、負の値を返します。  
+ 成功した場合、 `fegetround` は浮動小数点丸めマクロ値の 1 つとして、丸めモードを返します。 現在の丸めモードを決定できない場合は、負の値を返します。  
   
  成功した場合、 `fesetround` は 0 を返します。 それ以外の場合、0 以外の値が返されます。  
   
@@ -108,7 +93,7 @@ int fesetround(
   
 -   `trunc`、 `ceil`、 `floor`、 `lround` のライブラリ関数。  
   
--   常に&0; 方向に丸める、浮動小数点数から整数への暗黙的なキャストと変換。  
+-   常に 0 方向に丸める、浮動小数点数から整数への暗黙的なキャストと変換。  
   
 -   常に最近似値に丸める、定数式での浮動小数点算術演算子の結果。  
   

@@ -1,39 +1,39 @@
 ---
-title: "ATL コントロールの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL プロジェクト, 追加 (コントロールを)"
-  - "コントロール [ATL], 追加 (プロジェクトに)"
+title: "ATL コントロールを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords:
+- ATL projects, adding controls
+- controls [ATL], adding to projects
 ms.assetid: 10223e7e-fdb7-4163-80c6-44aeafa8e6ce
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: fb5ad74cf1905b14db46cb119766914e5e57f6cc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL コントロールの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-このウィザードを使用して、使用する可能性のあるすべてのコンテナーのインターフェイスをサポートするユーザー インターフェイスのオブジェクトをプロジェクトに追加します。  これらのインターフェイスをサポートするには、プロジェクトが ATL アプリケーション、または ATL サポートを含む MFC アプリケーションとして作成されている必要があります。  [ATL プロジェクト ウィザード](../Topic/ATL%20Project%20Wizard.md)を使用して ATL アプリケーションを作成するか、または [MFC アプリケーションに ATL オブジェクトを追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)して MFC アプリケーション用の ATL サポートを実装できます。  
+# <a name="adding-an-atl-control"></a>ATL コントロールを追加します。
+このウィザードを使用すると、すべてのコンテナー インターフェイスをサポートするプロジェクトにユーザー インターフェイス オブジェクトを追加します。 これらのインターフェイスをサポートするために、必要がありますが作成されたプロジェクト、ATL アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーションに対する ATL のサポートを実装します。  
   
-### ATL コントロールをプロジェクトに追加するには  
+### <a name="to-add-an-atl-control-to-your-project"></a>ATL コントロールをプロジェクトに追加するには  
   
-1.  **ソリューション エクスプローラー**または[クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)で、ATL シンプル オブジェクトを追加するプロジェクトの名前を右クリックします。  
+1.  いずれかで**ソリューション エクスプ ローラー**または[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)、ATL シンプル オブジェクトを追加するプロジェクトの名前を右クリックします。  
   
-2.  ショートカット メニューの **\[追加\]** をクリックし、さらに **\[クラスの追加\]** をクリックします。  
+2.  をクリックして**追加**クリックしてショートカット メニューから**クラスの追加**です。  
   
-3.  [&#91;クラスの追加&#93;](../../ide/add-class-dialog-box.md) ダイアログ ボックスのテンプレート ペインの **\[ATL コントロール\]** をクリックしてから、**\[追加\]** をクリックして [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)を表示します。  
+3.  [クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスの [テンプレート] ペインで、クリックして**ATL コントロール**、順にクリック**追加**を表示する、 [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)です。  
   
- **ATL コントロール ウィザード**を使用すると、以下の 3 種類のコントロールを作成できます。  
+ 使用して、 **ATL コントロール ウィザード**、3 種類のコントロールのいずれかを作成することができます。  
   
 -   標準コントロール  
   
@@ -41,9 +41,10 @@ caps.handback.revision: 12
   
 -   DHTML コントロール  
   
- さらに、このウィザードの **\[オプション\]** ページの \[ライト コントロール\] を選択すると、コントロールのサイズを縮小し、ほとんどのコンテナーからも使用されないインターフェイスを削除できます。  
+ また、コントロールのサイズを小さくしを選択すると、ほとんどのコンテナーで使用されていないインターフェイスを削除する**最小限の制御**上、**オプション**ウィザードのページです。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [複合コントロールへの機能の追加](../../atl/adding-functionality-to-the-composite-control.md)   
  [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)   
- [ATLFire Sample](http://msdn.microsoft.com/ja-jp/5b2649f1-f45b-4cfb-9c4b-4d9459c26b09)
+ [ATLFire サンプル](http://msdn.microsoft.com/en-us/5b2649f1-f45b-4cfb-9c4b-4d9459c26b09)
+

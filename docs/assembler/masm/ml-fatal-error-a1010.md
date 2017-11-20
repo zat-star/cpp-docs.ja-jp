@@ -1,46 +1,44 @@
 ---
-title: "ML Fatal Error A1010 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "A1010"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "A1010"
+title: "ML の致命的なエラー A1010 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: A1010
+dev_langs: C++
+helpviewer_keywords: A1010
 ms.assetid: 9e0b5241-67f4-4740-8701-3b2d2d1ad9e4
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 22b9886587b07958650a0624386867d4bc69cfd9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ML Fatal Error A1010
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**" ブロックの入れ子 :**  
+# <a name="ml-fatal-error-a1010"></a>ML の致命的なエラー A1010
+**一致しないブロックの入れ子。**  
   
- ブロックの先頭と一致します。正規表現が存在しないことまたはブロックの最後に一致した先頭がありません。  次のいずれかに含まれる可能性があります :  
+ ブロックの先頭には、対応する end がなかったか、ブロックの終了が開始に対応するありませんでした。 次のいずれかが関係している可能性があります。  
   
--   [.IF](../Topic/.IF.md) [.REPEAT](../../assembler/masm/dot-repeat.md)または [.WHILE](../../assembler/masm/dot-while.md) 高レベルのディレクティブ。  
+-   などの高度なディレクティブ[です。IF](../../assembler/masm/dot-if.md)、[です。繰り返し](../../assembler/masm/dot-repeat.md)、または[です。中に](../../assembler/masm/dot-while.md)です。  
   
--   [IF](../../assembler/masm/if-masm.md) [繰り返し](../../assembler/masm/repeat.md)または  **と**  などの条件付きアセンブリのディレクティブ。  
+-   などの条件付きアセンブリ ディレクティブ[IF](../../assembler/masm/if-masm.md)、[繰り返します](../../assembler/masm/repeat.md)、または**中**です。  
   
 -   構造体または共用体の定義。  
   
--   プロシージャ定義。  
+-   プロシージャの定義。  
   
--   部分定義。  
+-   セグメントの定義。  
   
--   [POPCONTEXT](../../assembler/masm/popcontext.md) のディレクティブ。  
+-   A [POPCONTEXT](../../assembler/masm/popcontext.md)ディレクティブです。  
   
--   一致する [IF](../../assembler/masm/if-masm.md) のない [else](../Topic/ELSE%20\(MASM\).md)[ELSEIF](../../assembler/masm/elseif-masm.md)または **endif**  などの条件付きアセンブリのディレクティブ。  
+-   条件付きのアセンブリのように、ディレクティブ、 [ELSE](../../assembler/masm/else-masm.md)、 [ELSEIF](../../assembler/masm/elseif-masm.md)、または**ENDIF**が対応する[IF](../../assembler/masm/if-masm.md)です。  
   
-## 参照  
- [ML Error Messages](../../assembler/masm/ml-error-messages.md)
+## <a name="see-also"></a>関連項目  
+ [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

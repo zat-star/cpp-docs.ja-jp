@@ -1,95 +1,94 @@
 ---
-title: "/CLRSUPPORTLASTERROR (PInvoke 呼び出しの最終エラー コードの保持) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/CLRSUPPORTLASTERROR"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/CLRSUPPORTLASTERROR リンカー オプション"
-  - "-CLRSUPPORTLASTERROR リンカー オプション"
+title: "-CLRSUPPORTLASTERROR (Preserve 最終エラー コードの PInvoke 呼び出し) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /CLRSUPPORTLASTERROR
+dev_langs: C++
+helpviewer_keywords:
+- /CLRSUPPORTLASTERROR linker option
+- -CLRSUPPORTLASTERROR linker option
 ms.assetid: b7057990-4154-4b1d-9fc9-6236f7be7575
-caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 23f8215e94139417c6bd098b669904783fb88b36
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /CLRSUPPORTLASTERROR (PInvoke 呼び出しの最終エラー コードの保持)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**\/CLRSUPPORTLASTERROR** は既定で有効になっており、P\/Invoke 機構を通じて呼び出された関数の最終エラー コードを保持します。P\/Invoke は、**\/clr** を指定してコンパイルしたコードから DLL 内のネイティブ関数を呼び出すことができる機能です。  
+# <a name="clrsupportlasterror-preserve-last-error-code-for-pinvoke-calls"></a>/CLRSUPPORTLASTERROR (PInvoke 呼び出しの最終エラー コードの保持)
+**/CLRSUPPORTLASTERROR**、既定でオンになっている、DLL 内のコードからネイティブ関数を呼び出すことができる P/invoke 機構を通じて呼び出された関数の最後のエラー コードを保持してコンパイルした**/clr**です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /CLRSUPPORTLASTERROR{:NO | SYSTEMDLL}  
 ```  
   
-## 解説  
- 最終エラー コードを保持すると、パフォーマンスの低下につながります。パフォーマンスが最終エラー コードの保持による影響を受けないようにするには、**\/CLRSUPPORTLASTERROR:NO** でリンクします。  
+## <a name="remarks"></a>コメント  
+ 最後のエラー コードを保持するには、パフォーマンスの低下が含まれます。  最後のエラー コードを維持するためのパフォーマンスに与える影響が発生しないようにする場合とリンク**/CLRSUPPORTLASTERROR:NO**です。  
   
- **\/CLRSUPPORTLASTERROR:SYSTEMDLL** でリンクすると、パフォーマンスの影響を最小にできますが、保持されるのはシステム DLL の関数の最終エラー コードだけになります。システム DLL は次のいずれかとして定義されています。  
+ リンクして、パフォーマンスに与える影響を最小限に抑えることができます**/CLRSUPPORTLASTERROR:SYSTEMDLL**、システム Dll の関数の最後のエラー コードだけが保護されます。  システム DLL は、次のいずれかとして定義されます。  
   
 |||||  
 |-|-|-|-|  
-|ACLUI.DLL|ACTIVEDS.DLL|ADPTIF.DLL|ADVAPI32.DLL|  
-|ASYCFILT.DLL|AUTHZ.DLL|AVICAP32.DLL|AVIFIL32.DLL|  
-|CABINET.DLL|CLUSAPI.DLL|COMCTL32.DLL|COMDLG32.DLL|  
-|COMSVCS.DLL|CREDUI.DLL|CRYPT32.DLL|CRYPTNET.DLL|  
-|CRYPTUI.DLL|D3D8THK.DLL|DBGENG.DLL|DBGHELP.DLL|  
-|DCIMAN32.DLL|DNSAPI.DLL|DSPROP.DLL|DSUIEXT.DLL|  
-|GDI32.DLL|GLU32.DLL|HLINK.DLL|ICM32.DLL|  
-|IMAGEHLP.DLL|IMM32.DLL|IPHLPAPI.DLL|IPROP.DLL|  
-|KERNEL32.DLL|KSUSER.DLL|LOADPERF.DLL|LZ32.DLL|  
-|MAPI32.DLL|MGMTAPI.DLL|MOBSYNC.DLL|MPR.DLL|  
-|MPRAPI.DLL|MQRT.DLL|MSACM32.DLL|MSCMS.DLL|  
-|MSI.DLL|MSIMG32.DLL|MSRATING.DLL|MSTASK.DLL|  
-|MSVFW32.DLL|MSWSOCK.DLL|MTXEX.DLL|NDDEAPI.DLL|  
-|NETAPI32.DLL|NPPTOOLS.DLL|NTDSAPI.DLL|NTDSBCLI.DLL|  
-|NTMSAPI.DLL|ODBC32.DLL|ODBCBCP.DLL|OLE32.DLL|  
-|OLEACC.DLL|OLEAUT32.DLL|OLEDLG.DLL|OPENGL32.DLL|  
-|PDH.DLL|POWRPROF.DLL|QOSNAME.DLL|QUERY.DLL|  
-|RASAPI32.DLL|RASDLG.DLL|RASSAPI.DLL|RESUTILS.DLL|  
-|RICHED20.DLL|RPCNS4.DLL|RPCRT4.DLL|RTM.DLL|  
-|RTUTILS.DLL|SCARDDLG.DLL|SECUR32.DLL|SENSAPI.DLL|  
-|SETUPAPI.DLL|SFC.DLL|SHELL32.DLL|SHFOLDER.DLL|  
-|SHLWAPI.DLL|SISBKUP.DLL|SNMPAPI.DLL|SRCLIENT.DLL|  
-|STI.DLL|TAPI32.DLL|TRAFFIC.DLL|URL.DLL|  
-|URLMON.DLL|USER32.DLL|USERENV.DLL|USP10.DLL|  
-|UXTHEME.DLL|VDMDBG.DLL|VERSION.DLL|WINFAX.DLL|  
-|WINHTTP.DLL|WININET.DLL|WINMM.DLL|WINSCARD.DLL|  
-|WINTRUST.DLL|WLDAP32.DLL|WOW32.DLL|WS2\_32.DLL|  
-|WSNMP32.DLL|WSOCK32.DLL|WTSAPI32.DLL|XOLEHLP.DLL|  
+|ACLUI です。DLL|ACTIVEDS です。DLL|ADPTIF です。DLL|ADVAPI32 です。DLL|  
+|ASYCFILT です。DLL|AUTHZ です。DLL|AVICAP32 です。DLL|AVIFIL32 です。DLL|  
+|キャビネットします。DLL|CLUSAPI です。DLL|COMCTL32 です。DLL|COMDLG32 です。DLL|  
+|COMSVCS です。DLL|CREDUI です。DLL|CRYPT32 です。DLL|CRYPTNET です。DLL|  
+|CRYPTUI です。DLL|D3D8THK です。DLL|DBGENG です。DLL|DBGHELP です。DLL|  
+|DCIMAN32 です。DLL|DNSAPI です。DLL|DSPROP です。DLL|DSUIEXT です。DLL|  
+|GDI32 です。DLL|GLU32 です。DLL|HLINK です。DLL|ICM32 です。DLL|  
+|IMAGEHLP です。DLL|IMM32 です。DLL|IPHLPAPI です。DLL|IPROP です。DLL|  
+|KERNEL32 です。DLL|KSUSER です。DLL|「LOADPERF」です。DLL|LZ32 です。DLL|  
+|MAPI32 です。DLL|MGMTAPI です。DLL|MOBSYNC です。DLL|MPR です。DLL|  
+|MPRAPI です。DLL|MQRT です。DLL|MSACM32 です。DLL|MSCMS です。DLL|  
+|MSI です。DLL|MSIMG32 です。DLL|MSRATING です。DLL|MSTASK です。DLL|  
+|MSVFW32 です。DLL|MSWSOCK です。DLL|MTXEX です。DLL|NDDEAPI です。DLL|  
+|NETAPI32 です。DLL|NPPTOOLS です。DLL|NTDSAPI です。DLL|NTDSBCLI です。DLL|  
+|NTMSAPI です。DLL|ODBC32 です。DLL|ODBCBCP です。DLL|OLE32 です。DLL|  
+|OLEACC です。DLL|OLEAUT32 です。DLL|OLEDLG です。DLL|OPENGL32 です。DLL|  
+|PDH です。DLL|POWRPROF です。DLL|QOSNAME です。DLL|クエリを実行します。DLL|  
+|RASAPI32 です。DLL|RASDLG です。DLL|RASSAPI です。DLL|RESUTILS です。DLL|  
+|RICHED20 です。DLL|RPCNS4 です。DLL|RPCRT4 です。DLL|RTM です。DLL|  
+|RTUTILS です。DLL|SCARDDLG です。DLL|SECUR32 です。DLL|SENSAPI です。DLL|  
+|SETUPAPI です。DLL|SFC です。DLL|SHELL32 です。DLL|SHFOLDER です。DLL|  
+|SHLWAPI です。DLL|SISBKUP です。DLL|SNMPAPI です。DLL|SRCLIENT です。DLL|  
+|STI です。DLL|TAPI32 です。DLL|トラフィック。DLL|URL です。DLL|  
+|URLMON です。DLL|USER32 です。DLL|USERENV です。DLL|USP10 です。DLL|  
+|UXTHEME です。DLL|VDMDBG です。DLL|バージョン。DLL|WINFAX です。DLL|  
+|WINHTTP です。DLL|WININET の基礎です。DLL|WINMM です。DLL|WINSCARD です。DLL|  
+|WINTRUST です。DLL|WLDAP32 です。DLL|WOW32 です。DLL|WS2_32.DLL|  
+|WSNMP32 です。DLL|WSOCK32.DLL|WTSAPI32 です。DLL|XOLEHLP です。DLL|  
   
 > [!NOTE]
->  最終エラーの保持は、同じモジュールにある、CLR コードによって処理されるアンマネージ関数ではサポートされていません。  
+>  最後のエラーを保持するは、同じモジュールでの CLR コードで使用されるアンマネージ関数ではサポートされていません。  
   
--   詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+-   詳細については、「[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにオプションを入力します。  
+4.  オプションを入力、**追加オプション**ボックス。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 使用例  
- 次の例は、最終エラーを変更するエクスポート関数を 1 つ持つネイティブ DLL を定義します。  
+## <a name="example"></a>例  
+ 次の例では、最後のエラーを修正する 1 つのエクスポートされた関数をネイティブ DLL を定義します。  
   
 ```  
 // CLRSUPPORTLASTERROR_dll.cpp  
@@ -104,8 +103,8 @@ __declspec(dllexport) double MySqrt(__int64 n) {
 }  
 ```  
   
-## 使用例  
- 次の例では、DLL を処理し、**\/CLRSUPPORTLASTERROR** の使用方法を示しています。  
+## <a name="example"></a>例  
+ 次の例を使用する方法を示す、DLL を消費する**/CLRSUPPORTLASTERROR**です。  
   
 ```  
 // CLRSUPPORTLASTERROR_client.cpp  
@@ -151,8 +150,11 @@ int main() {
 }  
 ```  
   
-  **GetLastError for application call failed \(127\).**  
-**GetLastError for system call succeeded \(183\).**   
-## 参照  
+```Output  
+GetLastError for application call failed (127).  
+GetLastError for system call succeeded (183).  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

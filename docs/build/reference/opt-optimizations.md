@@ -1,43 +1,43 @@
 ---
-title: "/OPT (最適化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.OptimizeReferences"
-  - "/opt"
-  - "VC.Project.VCLinkerTool.OptimizeForWindows98"
-  - "VC.Project.VCLinkerTool.EnableCOMDATFolding"
-  - "VC.Project.VCLinkerTool.OptimizeFolding"
-  - "VC.Project.VCLinkerTool.FoldingIterations"
-  - "VC.Project.VCLinkerTool.OptimizeFoldingIterations"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/OPT リンカー オプション"
-  - "LINK ツール [C++], 制御 (最適化を)"
-  - "リンカー [C++], 最適化"
-  - "OPT リンカー オプション"
-  - "-OPT リンカー オプション"
-  - "最適化, リンカー"
+title: "-OPT (最適化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.OptimizeReferences
+- /opt
+- VC.Project.VCLinkerTool.OptimizeForWindows98
+- VC.Project.VCLinkerTool.EnableCOMDATFolding
+- VC.Project.VCLinkerTool.OptimizeFolding
+- VC.Project.VCLinkerTool.FoldingIterations
+- VC.Project.VCLinkerTool.OptimizeFoldingIterations
+dev_langs: C++
+helpviewer_keywords:
+- LINK tool [C++], controlling optimizations
+- -OPT linker option
+- linker [C++], optimizations
+- OPT linker option
+- optimization, linker
+- /OPT linker option
 ms.assetid: 8f229863-5f53-48a8-9478-243a647093ac
-caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 95b75930503ba36c398c4d7e7d5ee2f0e20bbf44
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /OPT (最適化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="opt-optimizations"></a>/OPT (最適化)
 LINK がビルド時に実行する最適化を制御します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /OPT:{REF | NOREF}  
@@ -45,70 +45,70 @@ LINK がビルド時に実行する最適化を制御します。
 /OPT:{LBR | NOLBR}  
 ```  
   
-## 引数  
- **REF** &#124; **NOREF**  
- **\/OPT:REF** を指定すると、参照されない関数とデータが削除されます。**\/OPT:NOREF** を指定すると、参照されない関数とデータが保持されます。  
+## <a name="arguments"></a>引数  
+ **REF** &#124;です。**NOREF**  
+ **/Opt:ref による**排除関数とデータが参照されていません。**/OPT:NOREF**関数および参照されないデータを保持します。  
   
- \/OFT:REF を有効にすると、LINK によって、未参照のパッケージ化された関数とデータが削除されます。  オブジェクトが [\/Gy](../../build/reference/gy-enable-function-level-linking.md) オプションを使用してコンパイルされた場合、そのオブジェクトには、パッケージ化された関数とデータ \(COMDAT\) が含まれます。  この最適化は、中間 COMDAT 除去として知られています。  非デバッグ ビルドでは、**\/OPT:REF** が既定で有効になっています。  この既定の動作をオーバーライドして、参照されていない関数をそのままプログラムに残しておくには、**\/OPT:NOREF** を指定します。  特定のシンボルが除去されないようにするには、[\/INCLUDE](../../build/reference/include-force-symbol-references.md) オプションを使用します。  
+ /OFT:REF を有効にすると、LINK によって、未参照のパッケージ化された関数とデータが削除されます。 オブジェクトを含むパッケージ化された関数とデータ (Comdat) を使用してコンパイルされた場合、 [/Gy](../../build/reference/gy-enable-function-level-linking.md)オプション。 この最適化は、中間 COMDAT 除去として知られています。 既定では、 **/opt:ref による**非デバッグ ビルドで有効にします。 プログラムで参照されていない Comdat を変更この既定値を上書きするには、次のように指定します。 **/OPT:NOREF**です。 使用することができます、 [/include](../../build/reference/include-force-symbol-references.md)シンボルの特定の削除のオーバーライド オプションを指定します。  
   
- **\/OPT:REF** が明示的に、または既定で有効になっている場合は、**\/OPT:ICF** の制限されたフォームが有効になり、同じ関数のみが圧縮されます。  **\/OPT:REF** だけを使用して、**\/OPT:ICF** を使用しない場合は、**\/OPT:REF,NOICF** または **\/OPT:NOICF** のいずれかを指定する必要があります。  
+ ときに**/opt:ref による**明示的にまたは、既定の制限されたフォームで有効になって**/OPT:ICF**が有効になっている同じ関数なりのみが圧縮されます。 場合は**/opt:ref による**ではなく**/OPT:ICF**、どちらかを指定する必要があります**/opt:ref による、NOICF**または**/OPT:NOICF**です。  
   
- [\/DEBUG](../../build/reference/debug-generate-debug-info.md) を指定すると、**\/OPT** の既定値が **NOREF** になり、すべての関数がイメージに保存されます。  この既定値をオーバーライドしてデバッグ ビルドを最適化するには、**\/OPT:REF** を指定します。  **\/OPT:REF** が **\/OPT:ICF** を意味するため、**\/OPT:NOICF** も指定して、デバッグ ビルドで同じ関数を保持することをお勧めします。  これにより、スタック トレースを読み取って、圧縮された関数にブレークポイントを設定しやすくなります。  **\/OPT:REF** オプションを使うと、インクリメンタル リンクが行われなくなります。  
+ 場合[/debug](../../build/reference/debug-generate-debug-info.md)が指定されているの既定の**/opt**は**NOREF**、され、イメージのすべての機能が保持されます。 この既定の動作をオーバーライドし、デバッグ ビルドを最適化するには指定**/opt:ref による**です。 **/Opt:ref による**意味**/OPT:ICF**も指定することをお勧め**/OPT:NOICF**デバッグ ビルドで同じ関数を保持します。 これにより、スタック トレースを読み取って、圧縮された関数にブレークポイントを設定しやすくなります。 **/Opt:ref による**オプションは、インクリメンタル リンクを無効になります。  
   
- `const` データが COMDAT であることを明示的に示す必要があります。[\_\_declspec\(selectany\)](../../cpp/selectany.md) で指定します。  
+ 明示的にマークする必要がある`const`データが COMDAT; 使用して[__declspec(selectany)](../../cpp/selectany.md)です。  
   
- **\/OPT:ICF** を指定しても、**\/OPT:REF** オプションは有効になりません。  
+ 指定する**/OPT:ICF**が有効にしません、 **/opt:ref による**オプション。  
   
- **ICF\[\=**  `iterations` **\] &#124; NOICF**  
- **\/OPT:ICF\[\=** `iterations` **\]** を使用すると、同一の COMDAT が折りたたまれ \(圧縮され\) ます。  リンカー出力から余分な COMDAT シンボルを削除できます。  省略可能な `iterations` パラメーターには、シンボルの重複を検出するための走査回数を指定します。  既定値は 2 回です。  イテレーションの回数を増やすと、前回のイテレーションで圧縮されなかった重複が検出されることがあります。  
+ **ICF [=** `iterations` **] &#124;です。NOICF**   
+ 使用して**/OPT:ICF [=**`iterations`**]**を同一の COMDAT の圧縮を実行します。 リンカー出力から余分な COMDAT シンボルを削除できます。 省略可能な `iterations` パラメーターには、シンボルの重複を検出するための走査回数を指定します。 既定値は 2 回です。 イテレーションの回数を増やすと、前回のイテレーションで圧縮されなかった重複が検出されることがあります。  
   
- **\/OPT:REF** を指定して **ICF** が既定で有効になっている場合と、**\/OPT:REF,ICF** を明示的に指定する場合とでは、リンカーの動作が異なります。  **\/OPT:REF** を指定して既定で **ICF** が有効になっている場合は、読み取り専用データが圧縮されません。これには、.rdata、.pdata、および .xdata が含まれます。  したがって、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] のイメージを生成するときに圧縮される関数の数が少なくなります。これらのモジュールの関数は、.pdata や .xdata などの読み取り専用データへの依存性が高いためです。  **ICF** の圧縮動作を十分に活用するには、**\/OPT:ICF** を明示的に指定してください。  
+ リンカーの動作が異なるときに**/opt:ref による**が指定されている — と**ICF**が既定で有効で — 場合よりも**/opt:ref による、ICF**が明示的に指定します。 フォーム**ICF**に対応した**/opt:ref による**単独で読み取り専用のデータはたたみ込まれません、これには、.rdata、.pdata、および .xdata が含まれます。 したがって、[!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)] のイメージを生成するときに圧縮される関数の数が少なくなります。これらのモジュールの関数は、.pdata や .xdata などの読み取り専用データへの依存性が高いためです。 十分に活用する**ICF**圧縮動作を明示的に指定して**/OPT:ICF**です。  
   
- COMDAT に関数を配置するには、**\/Gy** コンパイラ オプションを使用します。`const` データを配置するには、`__declspec(selectany)` で宣言します。  圧縮するデータを指定する方法については、「[selectany](../../cpp/selectany.md)」を参照してください。  
+ 使用する関数に配置する Comdat、 **/Gy**を配置する; コンパイラ オプション`const`宣言するデータ、`__declspec(selectany)`です。 データ圧縮を指定する方法については、次を参照してください。 [selectany](../../cpp/selectany.md)です。  
   
- 既定では、**REF** がオンの場合は、**ICF** もオンです。  **REF** が指定されている場合に、この既定値をオーバーライドするには、**NOICF** を使用します。  デバッグ ビルドで **\/OPT:REF** が指定されていない場合は、**\/OPT:ICF** を明示的に指定して、COMDAT 圧縮を有効にする必要があります。  ただし、**\/OPT:ICF** は、同一のデータまたは関数をマージできるため、スタック トレースに表示される関数名が変更されることがあります。  また、特定の関数にブレークポイントを設定したり、デバッガーで特定のデータを確認したりできなくなり、コードをシングル ステップ実行すると、予期しない関数が発生します。  したがって、コードを小さくする利点がこうした欠点を上回らない限り、デバッグ ビルドで **\/OPT:ICF** を使用することはお勧めしません。  
+ 既定では、 **ICF**がオンの場合**REF**にします。 場合に、この既定の動作をオーバーライドする**REF**が使用して指定すると、 **NOICF**です。 ときに**/opt:ref による**が指定されていないデバッグ ビルドで明示的に指定する必要があります**/OPT:ICF** COMDAT の圧縮を有効にします。 ただし、ため**/OPT:ICF**同一のデータまたは関数をマージすることができます、スタック トレースに表示される関数名を変更することができます。 また、特定の関数にブレークポイントを設定したり、デバッガーで特定のデータを確認したりできなくなり、コードをシングル ステップ実行すると、予期しない関数が発生します。 そのため、おしないで使用する**/OPT:ICF**デバッグ ビルドでより小さなコードの利点がこうした欠点を上回らない限り、します。  
   
 > [!NOTE]
->  **\/OPT:ICF** を使用すると、同じアドレスが、さまざまな関数または読み取り専用のデータ メンバー \(**\/Gy** を使用してコンパイルされた `const` 変数\) に割り当てられることがあります。このため、その関数や読み取り専用のデータ メンバーの一意のアドレスに依存するプログラムが中断される可能性があります。  詳細については、「[\/Gy \(関数レベルのリンクの有効化\)](../../build/reference/gy-enable-function-level-linking.md)」を参照してください。  
+>  **/OPT:ICF**同じアドレスを別の関数または読み取り専用のデータ メンバーに割り当てられる可能性があります (`const`変数を使用してコンパイル**/Gy**)、それに依存しているプログラムが中断されることができます関数または読み取り専用データ メンバーの一意のアドレス。 詳細については、「[/Gy (関数レベルのリンクの有効化)](../../build/reference/gy-enable-function-level-linking.md)」を参照してください。  
   
- **LBR** &#124; **NOLBR**  
- **\/OPT:LBR** オプションおよび **\/OPT:NOLBR** オプションは、ARM バイナリのみに適用されます。  特定の ARM プロセッサの分岐命令の範囲が限られているため、リンカーは、範囲外のアドレスへのジャンプを検出すると、分岐命令の終点アドレスを、実際の終点を対象とする分岐命令を含むコード "アイランド" のアドレスに置き換えます。  **\/OPT:LBR** を使用すると、長い分岐命令の検出と、中間コード アイランドの配置を最適化して、コード全体のサイズを最小化できます。  **\/OPT:NOLBR** は、長い分岐命令が検出されると、最適化を行わずに長い分岐命令のコード アイランドを生成するようにリンカーに指示します。  
+ **LBR** &#124;です。**NOLBR**  
+ **/OPT:LBR**と**/OPT:NOLBR**オプションは、ARM バイナリのみに適用します。 特定の ARM プロセッサの分岐命令の範囲が限られているため、リンカーは、範囲外のアドレスへのジャンプを検出すると、分岐命令の終点アドレスを、実際の終点を対象とする分岐命令を含むコード "アイランド" のアドレスに置き換えます。 使用することができます**/OPT:LBR**長い分岐命令の検出と、コード全体のサイズを最小限に抑える中間コード アイランドの配置を最適化します。 **/OPT:NOLBR**が検出されると、最適化を行わずに長い分岐命令のコード アイランドを生成するようにリンカーに指示します。  
   
- 既定で、**\/OPT:LBR** オプションは、インクリメンタル リンクが有効化されていない場合に設定されます。  非インクリメンタル リンクが必要で、長い分岐命令の最適化が不要な場合は、**\/OPT:NOLBR** を指定します。  **\/OPT:LBR** オプションを使うと、インクリメンタル リンクが行われなくなります。  
+ 既定では、 **/OPT:LBR**インクリメンタル リンクが有効でない場合に、オプションが設定されています。 非インクリメンタル リンクですがない時間の長い分岐命令の最適化をする場合、指定**/OPT:NOLBR**です。 **/OPT:LBR**オプションは、インクリメンタル リンクを無効になります。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  通常、最適化によってイメージのサイズが小さくなり、プログラムの実行速度が向上します。ただし、その代わりにリンク時間が長くなります。  
   
- [\/VERBOSE](../../build/reference/verbose-print-progress-messages.md) オプションを使用すると、**\/OPT:REF** によって取り除かれた関数や **\/OPT:ICF** によって折りたたまれた \(圧縮された\) 関数を表示できます。  
+ 使用することができます、 [/verbose](../../build/reference/verbose-print-progress-messages.md)によって削除された関数を参照するにはオプション**/opt:ref による**およびによって圧縮された関数**/OPT:ICF**です。  
   
-### Visual Studio 開発環境で OPT:ICF リンカー オプションまたは OPT:REF リンカー オプションを設定するには  
+### <a name="to-set-the-opticf-or-optref-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境で OPT:ICF リンカー オプションまたは OPT:REF リンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  左ペインで、**\[構成プロパティ\]**、**\[リンカー\]**、**\[最適化\]** の順に展開します。  
+2.  左側のウィンドウで展開**構成プロパティ**、**リンカー**、**最適化**です。  
   
 3.  次のいずれかのプロパティを変更します。  
   
-    -   **\[COMDAT の圧縮\]**  
+    -   **COMDAT の圧縮**  
   
-    -   **参考文献**  
+    -   **参照**  
   
-### Visual Studio 開発環境で OPT:LBR リンカー オプションを設定するには  
+### <a name="to-set-the-optlbr-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境で OPT:LBR リンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[リンカー\]** フォルダーを選択します。  
+2.  選択、**リンカー**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  **\[追加オプション\]** にオプションを入力します。  
+4.  オプションを入力して**追加オプション**:  
   
      `/opt:lbr`  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.EnableCOMDATFolding%2A> プロパティおよび <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.OptimizeReferences%2A> プロパティを参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

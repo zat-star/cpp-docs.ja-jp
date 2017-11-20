@@ -1,32 +1,30 @@
 ---
-title: "C/C++ 分離アプリケーションのビルド | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "分離アプリケーション [C++]"
+title: "分離アプリケーションの C と C++ のビルド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: isolated applications [C++]
 ms.assetid: 8a2fe4fa-0489-433e-bfc6-495844d8d73a
-caps.latest.revision: 11
-caps.handback.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 5af0dde80a143166d9824d2739632ca7e7ed4382
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# C/C++ 分離アプリケーションのビルド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-分離アプリケーションは、side\-by\-side アセンブリだけに依存し、その依存関係をマニフェストを使用してバインドします。  アプリケーションを完全に分離しなくても Windows で正常に動作しますが、アプリケーションを完全に分離しておくことにより、将来アプリケーションにサービスを提供する必要がある場合に時間を短縮できます。  アプリケーションを完全に分離する利点の詳細については、「[分離アプリケーション](http://msdn.microsoft.com/library/aa375190)」を参照してください。  
+# <a name="building-cc-isolated-applications"></a>C/C++ 分離アプリケーションのビルド
+分離アプリケーションでは、サイド バイ サイド アセンブリにのみ依存し、その依存関係が、マニフェストを使用してバインドします。 Windows 上で動作するために完全に分離するアプリケーションの必要はありません。ただし、アプリケーションを完全に分離に投資すること、可能性があります時間を節約してアプリケーションに将来のサービスを提供する必要がある場合。 アプリケーションを完全に分離の利点の詳細については、次を参照してください。[分離アプリケーション](http://msdn.microsoft.com/library/aa375190)です。  
   
- Visual C\+\+ を使用してネイティブな C\/C\+\+ アプリケーションをビルドする場合、Visual Studio プロジェクト システムは、既定でアプリケーションの Visual C\+\+ への依存関係を記述したマニフェスト ファイルを生成します。  アプリケーションが持つ依存関係がこれだけである場合、アプリケーションは、Visual C\+\+ で再ビルドされると分離アプリケーションになります。  実行時にアプリケーションが他のライブラリを使用している場合は、これらのライブラリを「[C\/C\+\+ side\-by\-side アセンブリのビルド](../build/building-c-cpp-side-by-side-assemblies.md)」で説明されている手順に従って side\-by\-side アセンブリとして再ビルドすることが必要になる場合があります。  
+ Visual C を使用してネイティブ C/C++ アプリケーションをビルドするときに既定では、Visual Studio プロジェクト システム マニフェスト ファイルを生成 Visual C ライブラリへのアプリケーションの依存関係について説明します。 これらは、唯一の依存関係、アプリケーションに場合、Visual Studio で、再構築は、独立したアプリケーションになります。 アプリケーションが実行時に、その他のライブラリを使用するかどうかに記載の手順に従って、サイド バイ サイド アセンブリとしてこれらのライブラリをリビルドする必要があります[C/C++ サイド バイ サイド アセンブリを構築する](../build/building-c-cpp-side-by-side-assemblies.md)です。  
   
-## 参照  
- [分離アプリケーションおよび side\-by\-side アセンブリの概念](../build/concepts-of-isolated-applications-and-side-by-side-assemblies.md)   
- [C\/C\+\+ 分離アプリケーションおよび side\-by\-side アセンブリのビルド](../build/building-c-cpp-isolated-applications-and-side-by-side-assemblies.md)
+## <a name="see-also"></a>関連項目  
+ [分離アプリケーションとサイド バイ サイド アセンブリの概念](../build/concepts-of-isolated-applications-and-side-by-side-assemblies.md)   
+ [C/C++ 分離アプリケーションおよび side-by-side アセンブリのビルド](../build/building-c-cpp-isolated-applications-and-side-by-side-assemblies.md)

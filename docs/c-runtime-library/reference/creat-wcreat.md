@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - _creat
 - tcreat
 - _tcreat
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - wcreat function
 - _wcreat function
@@ -41,31 +39,15 @@ helpviewer_keywords:
 - creat function
 - _tcreat function
 ms.assetid: 3b3b795d-1620-40ec-bd2b-a4bbb0d20fe5
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: f034e2b80cc1bd3e7b5fc4578a6f5e77a060593c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.openlocfilehash: 5e8f61cda7d26f75677093e2377adb29a913dd35
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="creat-wcreat"></a>_creat、_wcreat
 新しいファイルを作成します。 `_creat` と `_wcreat` は推奨されていません。代わりに [_sopen_s、_wsopen_s](../../c-runtime-library/reference/sopen-s-wsopen-s.md) をご利用ください。  

@@ -1,54 +1,55 @@
 ---
-title: "変更した ATL DHTML コントロールのテスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DHTML コントロール, テスト"
-  - "HTML コントロール, テスト"
-  - "テスト (コントロールを)"
+title: "変更した ATL DHTML コントロールのテスト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- HTML controls, testing
+- testing controls
+- DHTML controls, testing
 ms.assetid: 42316118-9433-410f-9d8a-0efcc1eff824
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 84b9aa9ffb04b807cba07fdd3577622f62f6ab45
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 変更した ATL DHTML コントロールのテスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-現在の動作を確認するには、新しいコントロールをテストします。  
+# <a name="testing-the-modified-atl-dhtml-control"></a>変更した ATL DHTML コントロールのテスト
+今すぐ動作を確認する、新しいコントロールを試します。  
   
-#### 変更したコントロールをビルドしてテストするには  
+#### <a name="to-build-and-test-the-modified-control"></a>作成および変更のコントロールをテストするには  
   
-1.  プロジェクトを再度ビルドし、テスト コンテナーで開きます。  テスト コンテナーにアクセスする方法の詳細については、[テスト コンテナーでテストのプロパティおよびイベント](../mfc/testing-properties-and-events-with-test-container.md) を参照してください。  
+1.  プロジェクトをリビルドし、テスト コンテナーで開きます。 参照してください[プロパティのテストおよびテスト コンテナーでイベント](../mfc/testing-properties-and-events-with-test-container.md)テスト コンテナーにアクセスする方法についてはします。  
   
-     追加したすべてのボタンを表示するようにコントロールのサイズを変更します。  
+     追加したボタンをすべて表示するコントロールのサイズを変更します。  
   
-2.  、HTML 変更によって挿入される 2 ボタンを確認します。  各ボタンは、で [ATL DHTML コントロールの変更](../atl/modifying-the-atl-dhtml-control.md)で指定したラベルに耐えます: **最新の情報に更新** と **HelloHTML**。  
+2.  HTML を変更して挿入した 2 つのボタンを調べます。 各ボタンで特定したラベルを持つ[ATL DHTML コントロールの変更](../atl/modifying-the-atl-dhtml-control.md):**更新**と**HelloHTML**です。  
   
-3.  の動作を確認するには、2 種類の新しいボタンをテストします。  
+3.  動作を確認する 2 つの新しいボタンをテストします。  
   
- これで、UI の一部ではなくメソッドをテストします。  
+ UI の部分ではないメソッドをテストします。  
   
-1.  コントロールを強調表示し、その境界線がアクティブになります。  
+1.  境界線がアクティブになるように、コントロールを強調表示します。  
   
-2.  **コントロール** で、メニューの **Invoke Methods**をクリックします。  
+2.  **コントロール** メニューのをクリックして**メソッドの呼び出し**です。  
   
- **\[メソッド名\]** ラベルとリストのメソッドを呼び出して、コンテナーのできるメソッドです: `MethodInvoked`と`GoToURL`。  他のすべてのメソッドは、UI によって制御されます。  
+ ラベルの付いたリスト内のメソッド**メソッド名**メソッドが、コンテナーが呼び出すことができます:`MethodInvoked`と`GoToURL`です。 その他のすべてのメソッドは、UI によって制御されます。  
   
-1.  `Invoke` を起動し、メソッドのメッセージ ボックスを表示するか、www.microsoft.com に移動するには、をクリックするか、メソッドを選択します。  
+1.  呼び出すし、をクリックする方法を選択`Invoke`メソッドのメッセージ ボックスを表示するか、www.microsoft.com に移動します。  
   
-2.  **Invoke Methods** のダイアログ ボックスで、**\[終値\]**をクリックします。  
+2.  **メソッドの呼び出し**ダイアログ ボックスで、をクリックして**閉じる**です。  
   
- ATL DHTML コントロールを構成するファイルとさまざまな要素について学習するには、[DHTML コントロールのプロジェクト要素の識別](../atl/identifying-the-elements-of-the-dhtml-control-project.md)を参照してください。  
+ さまざまな要素と ATL DHTML コントロールを構成するファイルの詳細については、次を参照してください。 [DHTML コントロール プロジェクトの要素の識別](../atl/identifying-the-elements-of-the-dhtml-control-project.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
+

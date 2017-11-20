@@ -1,33 +1,30 @@
 ---
-title: "@Model | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "@Model"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "@Model symbol"
+title: "@Model|Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: '@Model'
+dev_langs: C++
+helpviewer_keywords: '@Model symbol'
 ms.assetid: a67c04ac-6ba7-458c-8138-0346e5b85eb6
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d169c83878b19b7d5c011948705a5438b97787c5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# @Model
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**Tiny** モデルの場合は 1 **小さい**  モデルの場合は 2**Compact** モデルの場合は 3 **中**  モデルの場合は 4 **大**  モデルの場合は 5 **巨大**  モデルには 6 **フラット**  モデルの 7 桁 \(照合してください\)。  
+# <a name="model"></a>@Model
+場合は 1**極小**をモデル化の 2**小さな**をモデル化の 3 **COMPACT**をモデル化には 4**中**モデル、5 を**大**モデル、6**莫大**モデル、および 7 を**フラット**モデル (数値と等価なります)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,5 +32,5 @@ manager: "ghogen"
   
 ```  
   
-## 参照  
- [Symbols Reference](../../assembler/masm/symbols-reference.md)
+## <a name="see-also"></a>関連項目  
+ [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

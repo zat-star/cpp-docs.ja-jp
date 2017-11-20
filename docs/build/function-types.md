@@ -1,32 +1,32 @@
 ---
-title: "関数の型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "関数の型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 7e33d5f4-dabb-406d-afb3-13777b995028
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d43daef2095fb63bd79644c940627754e00e199b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 関数の型
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-関数には基本的に 2 つの型があります。  スタック フレームが必要な関数をフレーム関数といいます。  スタック フレームを必要としない関数をリーフ関数といいます。  
+# <a name="function-types"></a>関数の型
+基本的には、関数の 2 つの種類があります。 スタック フレームを必要とする関数には、フレームの関数は呼び出されます。 スタック フレームを必要としない関数には、リーフ関数は呼び出されます。  
   
- フレーム関数は、スタック領域を割り当てたり、他の関数を呼び出したり、不揮発性レジスタを保存したり、例外処理を使用したりする関数です。  フレーム関数には、関数テーブル エントリも必要です。  フレーム関数には、プロローグとエピローグが必要です。  フレーム関数は、動的にスタック領域を割り当てて、フレーム ポインターを使用することができます。  フレーム関数を配置すると、この呼び出し標準のすべての機能を実行できます。  
+ フレームの関数は、スタック領域の割り当て、他の関数を呼び出す、不揮発性レジスタの保存または例外処理を使用する関数です。 関数のテーブルのエントリも必要です。 フレームの関数は、プロローグとエピローグが必要です。 フレームの関数では、スタック領域を動的に割り当てることができます、フレーム ポインターを使用できます。 フレーム関数が呼び出し、破棄された時点の標準のすべての機能を持ちます。  
   
- フレーム関数から別の関数を呼び出さない場合、スタックの整列は必要ありません \(「[スタック割り当て](../build/stack-allocation.md)」を参照\)。  
+ フレームの関数が別の関数を呼び出さないかどうかは、スタックを整列する必要はありません (セクションで言及[スタック割り当て](../build/stack-allocation.md))。  
   
- リーフ関数は、関数テーブル エントリを必要としない関数です。  リーフ関数は、関数を呼び出したり、領域を割り当てたり、不揮発性レジスタを保存したりすることができません。  リーフ関数では、リーフ関数の実行時にスタックを整列しないままにすることができます。  
+ リーフ関数は、いずれかの関数のテーブルのエントリを必要としません。 任意の関数またはスタック領域の割り当てできないということを意味する RSP を含め、不揮発性レジスタに変更ができません。 実行時に、スタックのアライメントされていないままにすることができます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [スタックの使用](../build/stack-usage.md)

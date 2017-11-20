@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - arguments [C++], function
 - functions [C++], paramters
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - function arguments [C++], reference-type
 - passing parameters [C++], reference-type arguments
 ms.assetid: 0a70e831-9e76-46c0-821d-aeba13d73cc0
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: e74cbde44cad618720983fbda4a6cf9ce8b75dc1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 63eb2b4c7415dc463b38346909bd2b6fd902c332
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="reference-type-function-arguments"></a>Reference-Type Function Arguments (参照型関数の引数)
 多くの場合、大きなオブジェクトよりも、関数への参照を渡す方が効率的です。 これにより、コンパイラは、オブジェクトへのアクセスに使用される構文を保持しつつ、オブジェクトのアドレスを渡すことができます。 `Date` 構造体を使用する次の例について考えます。  
@@ -80,7 +77,7 @@ long JulianFromGregorian( const Date& GDate );
   
  このプロトタイプによって、関数 `JulianFromGregorian` が引数を変更しないことが保証されます。  
   
- 標準変換があるので、参照型を受け取るようなプロトタイプ関数がその場所に同じ型のオブジェクトを受け入れることができます*typename*に*typename* ** &**.  
+ 標準変換があるので、参照型を受け取るようなプロトタイプ関数がその場所に同じ型のオブジェクトを受け入れることができます*typename*に*typename*  **&**.  
   
 ## <a name="see-also"></a>関連項目  
  [参照](../cpp/references-cpp.md)

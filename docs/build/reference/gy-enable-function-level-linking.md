@@ -1,70 +1,70 @@
 ---
-title: "/Gy (関数レベルのリンクの有効化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.EnableFunctionLevelLinking"
-  - "/gy"
-  - "VC.Project.VCCLWCECompilerTool.EnableFunctionLevelLinking"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Gy コンパイラ オプション [C++]"
-  - "COMDAT 関数"
-  - "有効化 (関数レベルのリンクを) コンパイラ オプション [C++]"
-  - "Gy コンパイラ オプション [C++]"
-  - "-Gy コンパイラ オプション [C++]"
-  - "パッケージ化された関数"
+title: "-Gy (関数レベルのリンクの有効化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.EnableFunctionLevelLinking
+- /gy
+- VC.Project.VCCLWCECompilerTool.EnableFunctionLevelLinking
+dev_langs: C++
+helpviewer_keywords:
+- enable function-level linking compiler option [C++]
+- COMDAT function
+- Gy compiler option [C++]
+- -Gy compiler option [C++]
+- /Gy compiler option [C++]
+- packaged functions
 ms.assetid: 0d3cf14c-ed7d-4ad3-b4b6-104e56f61046
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: e7d83e4409d9c46c926859f39029ea68f2411def
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Gy (関数レベルのリンクの有効化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-各関数をパッケージ化された関数 \(COMDAT\) 形式でパッケージ化します。  
+# <a name="gy-enable-function-level-linking"></a>/Gy (関数レベルのリンクの有効化)
+コンパイラでパッケージ化された関数 (Comdat) の形式で個々 の関数をパッケージにできます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Gy[-]  
 ```  
   
-## 解説  
- リンカーでは、DLL または .exe ファイルの各関数を除外したり順序付けたりするために、その関数を COMDAT として別にパッケージ化する必要があります。  
+## <a name="remarks"></a>コメント  
+ リンカーは、関数が、除外したり、DLL ファイルまたは .exe ファイルの各関数の順序の Comdat として個別にパッケージ化することが必要です。  
   
- リンカー オプションの [\/OPT \(最適化\)](../../build/reference/opt-optimizations.md) を指定すると、.exe ファイルから未参照のパッケージ化された関数が除外されます。  
+ リンカー オプションを使用することができます[/OPT (最適化)](../../build/reference/opt-optimizations.md) .exe ファイルから参照されていないパッケージ化された関数を除外します。  
   
- リンカー オプションの [\/ORDER \(関数の順序\)](../../build/reference/order-put-functions-in-order.md) を指定すると、パッケージ化された関数が指定された順序で .exe ファイルに含められます。  
+ リンカー オプションを使用することができます[/ORDER (配置の順序での関数)](../../build/reference/order-put-functions-in-order.md)に .exe ファイルで指定された順序でパッケージ化された関数を含めます。  
   
- インライン関数は、呼び出しとしてインスタンス化される場合は \(たとえば、インライン化が無効な場合や関数のアドレスを取得する場合など\)、常にパッケージ化されます。  また、C\+\+ のクラス宣言内で定義されているメンバー関数は、自動的にパッケージ化されます。ただし、他の関数は自動的にはパッケージ化されないため、このオプションを指定してこれらの関数をパッケージ化します。  
+ インスタンスが呼び出される場合に、インライン関数が常にパッケージ化 (する場合に発生、たとえば、インライン展開がオフまたは関数のアドレスを取得する)。 さらに、クラス宣言で定義されている C++ メンバー関数は自動的にパッケージ化されます。その他の関数は使用できません、およびパッケージ化された関数としてコンパイルに必要なは、このオプションを選択します。  
   
 > [!NOTE]
->  エディット コンティニュに対して [\/ZI](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) オプションを使用すると、**\/Gy** オプションが自動的に設定されます。  
+>  [/ZI](../../build/reference/z7-zi-zi-debug-information-format.md) 、エディット コンティニュを使用するオプションが自動的に設定、 **/Gy**オプション。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コード生成\]** プロパティ ページをクリックします。  
+3.  クリックして、**コード生成**プロパティ ページ。  
   
-4.  **\[関数レベルでリンクする\]** プロパティを変更します。  
+4.  変更、**関数レベルのリンクを有効にする**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.EnableFunctionLevelLinking%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

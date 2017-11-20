@@ -1,33 +1,33 @@
 ---
-title: "方法: アンマネージ メモリ内にオブジェクト参照を保持する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "gcroot キーワード [C++], オブジェクト参照 (ネイティブ関数での)"
-  - "オブジェクト参照, ネイティブ関数で"
-  - "オブジェクト [C++], 参照 (ネイティブ関数での)"
-  - "参照, ネイティブ関数内のオブジェクトを"
+title: "方法: アンマネージ メモリ内のオブジェクト参照を保持 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- object references, in native functions
+- objects [C++], reference in native functions
+- references, to objects in native functions
+- gcroot keyword [C++], object reference in native function
 ms.assetid: a61eb8ce-3982-477d-8d3d-2173fd57166d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2d4f5a54d71a49d76b1fbc2ba31a0ffe42738b92
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: アンマネージ メモリ内にオブジェクト参照を保持する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-<xref:System.Runtime.InteropServices.GCHandle> をラップする gcroot.h を使用して、アンマネージ メモリ内に CLR オブジェクト参照を保持できます。  または、`GCHandle` を直接使用できます。  
+# <a name="how-to-hold-object-reference-in-unmanaged-memory"></a>方法: アンマネージ メモリ内にオブジェクト参照を保持する
+ラップされる gcroot.h を使用する<xref:System.Runtime.InteropServices.GCHandle>をアンマネージ メモリ内の CLR オブジェクトの参照を保持します。 また、使用することができます`GCHandle`直接です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // hold_object_reference.cpp  
@@ -59,9 +59,12 @@ int main() {
 }  
 ```  
   
-  **StringWrapper::x \=\= ManagedString**   
-## 使用例  
- `GCHandle` は、アンマネージ メモリにマネージ オブジェクト参照を保持するための手段を提供します。<xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> メソッドを使用してマネージ オブジェクトへの非透過的ハンドルを作成し、<xref:System.Runtime.InteropServices.GCHandle.Free%2A> を使用してそのハンドルを解放します。  また、<xref:System.Runtime.InteropServices.GCHandle.Target%2A> メソッドを使用すると、マネージ コードのハンドルからオブジェクト参照をもう一度取得できます。  
+```Output  
+StringWrapper::x == ManagedString  
+```  
+  
+## <a name="example"></a>例  
+ `GCHandle`アンマネージ メモリ内の参照をマネージ オブジェクトを保持するための手段を提供します。  使用する、<xref:System.Runtime.InteropServices.GCHandle.Alloc%2A>マネージ オブジェクトに不透明なハンドルを作成する方法と<xref:System.Runtime.InteropServices.GCHandle.Free%2A>解放します。 また、<xref:System.Runtime.InteropServices.GCHandle.Target%2A>メソッドでは、マネージ コードでハンドルから返されたオブジェクトの参照を取得することができます。  
   
 ```  
 // hold_object_reference_2.cpp  
@@ -94,6 +97,9 @@ int main() {
 }  
 ```  
   
-  **StringWrapper::m\_handle \=\= ManagedString**   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+```Output  
+StringWrapper::m_handle == ManagedString  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

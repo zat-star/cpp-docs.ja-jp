@@ -1,32 +1,32 @@
 ---
-title: "ユーザー レコード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB プロバイダー, ユーザー レコード"
-  - "レコード, ユーザー"
-  - "行セット, ユーザー レコード"
-  - "ユーザー レコード"
-  - "ユーザー レコード, 記述済み"
+title: "ユーザー レコード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- records, user
+- OLE DB providers, user record
+- user records
+- user records, described
+- rowsets, user record
 ms.assetid: 9c0d2864-2738-4f62-a750-1016d9c3523f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 08b0e369629bc93002ee73a31978ef8d00493f6d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ユーザー レコード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ユーザー レコードには、行セットの列データを表すコードとデータ構造体が用意されています。  ユーザー レコードは、コンパイル時または実行時に作成できます。  ATL OLE DB プロバイダー ウィザードを使用してプロバイダーを作成すると、次のような既定のユーザー レコードが作成されます。プロバイダー名 \(短縮名\) に "MyProvider" を指定したとします。  
+# <a name="user-record"></a>ユーザー レコード
+ユーザー レコードは、行セットの列データを表すコードとデータ構造を提供します。 コンパイル時または実行時に、ユーザー レコードを作成することができます。 ATL OLE DB プロバイダー ウィザードを使用してプロバイダーを作成するときに、ウィザードには、次のような ("MyProvider"のプロバイダー名 [短い名前] を指定したと仮定した場合)、既定のユーザー レコードが作成されます。  
   
 ```  
 class CWindowsFile:  
@@ -45,7 +45,7 @@ END_PROVIDER_COLUMN_MAP()
 };  
 ```  
   
- OLE DB プロバイダー テンプレートは、クライアントとのやり取りに関する OLE DB 固有のすべての処理を行います。  プロバイダーは、応答に必要な列データを取得するために `GetColumnInfo` 関数を呼び出します。この関数は、ユーザー レコードに記述する必要があります。  たとえば、次に示すように .h ファイルで宣言することにより、ユーザー レコードで `GetColumnInfo` を明示的にオーバーライドできます。  
+ OLE DB プロバイダー テンプレートは、クライアントとのやり取りに関するすべての OLE DB 仕様を処理します。 プロバイダーの呼び出しを応答に必要な列のデータを取得する、`GetColumnInfo`関数で、ユーザー レコードに配置する必要があります。 明示的なオーバーライド可能`GetColumnInfo`ユーザー レコードのなどの宣言するで、.h ファイルで次のようにします。  
   
 ```  
 template <class T>  
@@ -59,21 +59,21 @@ static ATLCOLUMNINFO* GetColumnInfo(CommandClass* pThis, ULONG* pcCols)
 static ATLCOLUMNINFO* GetColumnInfo(RowsetClass* pThis, ULONG* pcCols)  
 ```  
   
- ユーザー レコードの .cpp ファイルで、`GetColumnInfo` も実装する必要があります。  
+ 実装する必要がありますも`GetColumnInfo`ユーザー レコードの .cpp ファイルにします。  
   
- PROVIDER\_COLUMN\_MAP マクロを使用すると、`GetColumnInfo` 関数を簡単に作成できます。  
+ PROVIDER_COLUMN_MAP マクロがの作成を支援する`GetColumnInfo`関数。  
   
--   BEGIN\_PROVIDER\_COLUMN\_MAP は、関数プロトタイプと **ATLCOLUMNINFO** 構造体の静的配列を定義します。  
+-   BEGIN_PROVIDER_COLUMN_MAP 関数プロトタイプとの静的な配列を定義する**ATLCOLUMNINFO**構造体。  
   
--   PROVIDER\_COLUMN\_ENTRY マクロは、1 つの **ATLCOLUMNINFO** を定義して初期化します。  
+-   PROVIDER_COLUMN_ENTRY を定義し、1 つを初期化します**ATLCOLUMNINFO**です。  
   
--   END\_PROVIDER\_COLUMN\_MAP は、配列と関数を終了します。  また、配列要素カウントをパラメーター `pcCols` に入れます。  
+-   END_PROVIDER_COLUMN_MAP は、配列と関数を閉じます。 配列要素の数にも配置、`pcCols`パラメーター。  
   
- ユーザー レコードが実行時に作成される場合、**GetColumnInfo** はパラメーター `pThis` を使用して、行セットまたはコマンド インスタンスへのポインターを受け取ります。  コマンドと行セットは必ず `IColumnsInfo` インターフェイスをサポートするため、列情報はこのポインターから取得できます。  
+ ユーザー レコードが、実行時に作成されたときに**GetColumnInfo**を使用して、`pThis`行セットまたはコマンドのインスタンスへのポインターを受け取るパラメーター。 コマンドおよび行セットをサポートする必要があります、`IColumnsInfo`インターフェイスのため、このポインターから列情報を取得できます。  
   
- **CommandClass** と **RowsetClass** は、ユーザー レコードを使用するコマンドと行セットです。  
+ **CommandClass**と**RowsetClass**は、コマンドと、ユーザー レコードを使用する行セット。  
   
- ユーザー レコードで `GetColumnInfo` をオーバーライドする方法の例については、「[コンシューマーに返される列の動的な判断](../../data/oledb/dynamically-determining-columns-returned-to-the-consumer.md)」を参照してください。  
+ オーバーライドする方法の詳細な例については`GetColumnInfo`ユーザー レコードでは、次を参照してください。[動的に決定列コンシューマーに返される](../../data/oledb/dynamically-determining-columns-returned-to-the-consumer.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

@@ -1,55 +1,55 @@
 ---
-title: "/LARGEADDRESSAWARE (大きいアドレスの処理) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.LargeAddressAware"
-  - "/largeaddressaware"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/LARGEADDRESSAWARE リンカー オプション"
-  - "LARGEADDRESSAWARE リンカー オプション"
-  - "-LARGEADDRESSAWARE リンカー オプション"
+title: "-LARGEADDRESSAWARE (大きいアドレスの処理) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.LargeAddressAware
+- /largeaddressaware
+dev_langs: C++
+helpviewer_keywords:
+- LARGEADDRESSAWARE linker option
+- -LARGEADDRESSAWARE linker option
+- /LARGEADDRESSAWARE linker option
 ms.assetid: a29756c8-e893-47a9-9750-1f0d25359385
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 033e93b3f1f6457a1283a14371a3f7619fe60792
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /LARGEADDRESSAWARE (大きいアドレスの処理)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="largeaddressaware-handle-large-addresses"></a>/LARGEADDRESSAWARE (大きいアドレスの処理)
 ```  
 /LARGEADDRESSAWARE[:NO]  
 ```  
   
-## 解説  
- \/LARGEADDRESSAWARE オプションは、アプリケーションが 2 GB を超えるアドレスを処理できることをリンカーに知らせます。  64 ビット コンパイラでは、このオプションは既定で有効になっています。  32 ビット コンパイラでは、リンカーのコマンド ラインに \/LARGEADDRESSAWARE が指定されていない場合に、 \/LARGEADDRESSAWARE:NO が有効になります。  
+## <a name="remarks"></a>コメント  
+ /LARGEADDRESSAWARE オプションは、アプリケーションが、2 ギガバイトを超えるアドレスを処理できることをリンカーに指示します。 64 ビット コンパイラでは、このオプションは既定で有効にします。 32 ビットのコンパイラでは、リンカーのコマンドラインで/LARGEADDRESSAWARE が指定されない場合/LARGEADDRESSAWARE:NO が有効にします。  
   
- \/LARGEADDRESSAWARE オプションを指定してアプリケーションをリンクした場合は、DUMPBIN [\/HEADERS](../../build/reference/headers.md) でその情報が表示されます。  
+ アプリケーションが/LARGEADDRESSAWARE、DUMPBIN にリンクされているかどうかは[/HEADERS](../../build/reference/headers.md)それを情報が表示されます。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[システム\] プロパティ ページをクリックします。  
+3.  クリックして、**システム**プロパティ ページ。  
   
-4.  \[大きいサイズのアドレス\] プロパティを変更します。  
+4.  変更、**大きいサイズのアドレスを有効にする**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.LargeAddressAware%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

@@ -1,28 +1,28 @@
 ---
-title: "組み込みおよびインライン アセンブリ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "組み込みおよびインライン アセンブリ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 8affd4bb-279d-46f3-851f-8be0a9c5ed3f
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: c60932b719b25365c7d8f65a4649ef782a4f9888
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 組み込みおよびインライン アセンブリ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[vcprx64](../Token/vcprx64_md.md)] コンパイラの制約の 1 つに、インライン アセンブラーがサポートされていないことが挙げられます。  これは、C または C\+\+ で記述できない関数は、サブルーチンとして記述するか、コンパイラがサポートする組み込み関数として記述する必要があることを意味します。  特定の関数はパフォーマンス センシティブですが、それ以外の関数はパフォーマンス センシティブではありません。  パフォーマンス センシティブである関数は、組み込み関数として実装する必要があります。  
+# <a name="intrinsics-and-inline-assembly"></a>組み込みおよびインライン アセンブリ
+制約の 1 つ、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]コンパイラではインライン アセンブラーのサポートがありません。 関数をすることを意味は、サブルーチン、またはコンパイラによってサポートされる組み込み関数として記述する必要がいずれかの C または C++ で記述することはできません。 特定の関数は、他のユーザーがないときに、パフォーマンスの機密性の高いです。 パフォーマンスが重視される関数は、組み込み関数として実装する必要があります。  
   
- コンパイラがサポートしている組み込みの詳細については、「[コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)」を参照してください。  
+ コンパイラでサポートされている組み込み関数は「[コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [x64 ソフトウェア規約](../build/x64-software-conventions.md)

@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _configthreadlocale
+apiname: _configthreadlocale
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,8 +24,7 @@ apitype: DLLExport
 f1_keywords:
 - _configthreadlocale
 - configthreadlocale
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - configthreadlocale function
 - locales, per-thread
@@ -35,30 +32,15 @@ helpviewer_keywords:
 - per-thread locale
 - thread locale
 ms.assetid: 10e4050e-b587-4f30-80bc-6c76b35fc770
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1fca01932efb2f80d4aebf94db8900cee5d79805
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: a86fd9be56b18c3ad51e3b24e965ae67b6b38fe4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="configthreadlocale"></a>_configthreadlocale
 スレッドごとのロケール オプションを設定します。  
@@ -90,7 +72,7 @@ int _configthreadlocale(
  `0`  
  この特定のスレッドの現在の設定を取得します。  
   
- これらの関数の動作に影響する`setlocale`、 `_tsetlocale`、および`_wsetlocale`です。 スレッドごとのロケールが無効な場合、その後の呼び出しの場合`setlocale`または`_wsetlocale`グローバル ロケールを使用するすべてのスレッドのロケールが変更されます。 スレッドごとのロケールが有効な場合、`setlocale` または `_wsetlocale` は現在のスレッドのロケールだけに影響します。  
+ これらの関数の動作に影響`setlocale`、 `_tsetlocale`、 `_wsetlocale`、および`_setmbcp`です。 スレッドごとのロケールが無効になっていると、その後の呼び出しの場合`setlocale`または`_wsetlocale`グローバル ロケールを使用するすべてのスレッドのロケールを変更します。 スレッドごとのロケールが有効な場合、`setlocale` または `_wsetlocale` は現在のスレッドのロケールだけに影響します。  
   
  `_configurethreadlocale` を使用してスレッドごとのロケールを有効にした場合は、その後すぐに `setlocale` または `_wsetlocale` を呼び出して、そのスレッドで優先ロケールを設定することをお勧めします。  
   
@@ -216,4 +198,3 @@ The time in German locale is: 'Mittwoch, 12. Mai 2004'
  [_beginthread, _beginthreadex](../../c-runtime-library/reference/beginthread-beginthreadex.md)   
  [ロケール](../../c-runtime-library/locale.md)   
  [マルチスレッドとロケール](../../parallel/multithreading-and-locales.md)  
-

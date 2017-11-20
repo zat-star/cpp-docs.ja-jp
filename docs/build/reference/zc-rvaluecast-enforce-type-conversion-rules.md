@@ -1,47 +1,47 @@
 ---
-title: "/Zc:rvalueCast (型変換規則の適用) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "rvaluecast"
-  - "/Zc:rvalueCast"
-  - "VC.Project.VCCLCompilerTool.EnforceTypeConversionRules"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zc コンパイラ オプション (C++)"
-  - "適用 (型変換規則を)"
-  - "rvaluecast"
-  - "Zc コンパイラ オプション (C++)"
-  - "-Zc コンパイラ オプション (C++)"
+title: "-Zc: rvalueCast (型の変換規則の実施) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- rvaluecast
+- /Zc:rvalueCast
+- VC.Project.VCCLCompilerTool.EnforceTypeConversionRules
+dev_langs: C++
+helpviewer_keywords:
+- -Zc compiler options (C++)
+- rvaluecast
+- Enforce type conversion rules
+- /Zc compiler options (C++)
+- Zc compiler options (C++)
 ms.assetid: 7825277d-e565-4c48-b0fb-76ac0b0c6e38
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 068d1e0e9061645729728c4d0a3c956e521948cc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Zc:rvalueCast (型変換規則の適用)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**\/Zc:rvalueCast** オプションを指定した場合、コンパイラは C\+\+11 標準に従いキャスト操作の結果として右辺値参照型を正しく認識します。  このオプションを指定しない場合、コンパイラの動作は Visual Studio 2012 での動作と同じです。  既定では、**\/Zc:rvalueCast** は無効になっています。  標準に準拠し、キャスト使用時のエラーを回避するために、**\/Zc:rvalueCast** の使用をお勧めします。  
+# <a name="zcrvaluecast-enforce-type-conversion-rules"></a>/Zc:rvalueCast (型変換規則の適用)
+ときに、 **/Zc:rvalueCast**オプションを指定すると、コンパイラは、c++ 11 標準に従いキャスト操作の結果として右辺値参照型を正しく識別します。 このオプションを指定しない場合、コンパイラの動作は Visual Studio 2012 での動作と同じです。 既定では、 **/Zc:rvalueCast**は無効になっています。 使用することをお勧め標準に準拠しキャストの使用でエラーを回避するのには、 **/Zc:rvalueCast**です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Zc:rvalueCast[-]  
 ```  
   
-## 解説  
- **\/Zc:rvalueCast** が指定されると、コンパイラは C\+\+11 標準のセクション 5.4 に従って、非参照型になるキャスト式と、非関数型への右辺値参照になるキャスト式のみを右辺値参照型として扱います。  **\/Zc:rvalueCast\-** が指定されている場合、または既定では、コンパイラは非準拠となり、右辺値参照になるすべてのキャスト式を右辺値として扱います。  
+## <a name="remarks"></a>コメント  
+ 場合**/Zc:rvalueCast**が指定されている、コンパイラは、c++ 11 標準のセクション 5.4 をに従って扱いますなるキャスト式のみ非参照型で発生して、関数ではない型への右辺値参照になる式をキャスト右辺値の型。 既定では、または**/Zc:rvalueCast-**指定すると、コンパイラは、非準拠と右辺値と右辺値参照になるすべてのキャスト式を処理します。  
   
- **\/Zc:rvalueCast** は、右辺値参照型を受け取る関数に引数としてキャスト式を渡す場合に使用します。  コンパイラが誤ってキャスト式の型を決定すると、既定の動作ではコンパイラ エラー [C2664](../../error-messages/compiler-errors-2/compiler-error-c2664.md) が発生します。  この例では、\/Zc:rvalueCast を指定しない場合に、正しいコードでコンパイラ エラーが表示されます。  
+ 使用して**/Zc:rvalueCast**を右辺値参照型を受け取る関数に引数としてキャスト式を渡す場合です。 既定動作により、コンパイラ エラー [C2664](../../error-messages/compiler-errors-2/compiler-error-c2664.md)場合、コンパイラと誤って判断キャスト式の型。 この例では、/Zc:rvalueCast を指定しない場合に、正しいコードでコンパイラ エラーが表示されます。  
   
 ```cpp  
 // Test of /Zc:rvalueCast  
@@ -80,7 +80,7 @@ struct Test1 {
   
 ```  
   
- コンパイラの既定動作では、場合によっては C2102 エラーが報告されないことがあります。  この例で、**\/Zc:rvalueCast** を指定しない場合、ID のキャストによって作成された右辺値のアドレスを受け取ることができなくても、コンパイラはエラーを報告しません。  
+ コンパイラの既定動作では、場合によっては C2102 エラーが報告されないことがあります。 この例では、コンパイラはエラーを報告、id のキャストによって作成された右辺値のアドレスが作成された場合**/Zc:rvalueCast**が指定されていません。  
   
 ```cpp  
 int main() {  
@@ -91,17 +91,17 @@ int main() {
 }  
 ```  
   
- Visual C\+\+ の準拠に関する問題の詳細については、「[非標準動作](../Topic/Nonstandard%20Behavior.md)」を参照してください。  
+ Visual C++ の準拠に関する問題について詳しくは、「 [Nonstandard Behavior](../../cpp/nonstandard-behavior.md)」をご覧ください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーを選択します。  
+2.  選択、 **C/C++**フォルダーです。  
   
-3.  **\[コマンド ライン\]** プロパティ ページを選択します。  
+3.  選択、**コマンドライン**プロパティ ページ。  
   
-4.  **\/Zc:rvalueCast** が含まれるように **"追加オプション"** プロパティを変更し、**\[OK\]** をクリックします。  
+4.  変更、**追加オプション**含めるプロパティを**/Zc:rvalueCast**を選択し**OK**です。  
   
-## 参照  
- [\/Zc \(準拠\)](../../build/reference/zc-conformance.md)
+## <a name="see-also"></a>関連項目  
+ [/Zc (準拠)](../../build/reference/zc-conformance.md)

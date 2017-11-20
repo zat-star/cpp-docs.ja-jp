@@ -1,83 +1,83 @@
 ---
-title: "/I (追加インクルード ディレクトリ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLWCECompilerTool.AdditionalIncludeDirectories"
-  - "VC.Project.VCCLCompilerTool.AdditionalIncludeDirectories"
-  - "/I"
-  - "VC.Project.VCNMakeTool.IncludeSearchPath"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/I コンパイラ オプション [C++]"
-  - "追加インクルード ディレクトリのコンパイラ オプション"
-  - "I コンパイラ オプション [C++]"
-  - "-I コンパイラ オプション [C++]"
-  - "インクルード ディレクトリ, コンパイラ オプション [C++]"
-  - "設定 (include ディレクトリを)"
+title: "-(追加インクルード ディレクトリ) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLWCECompilerTool.AdditionalIncludeDirectories
+- VC.Project.VCCLCompilerTool.AdditionalIncludeDirectories
+- /I
+- VC.Project.VCNMakeTool.IncludeSearchPath
+dev_langs: C++
+helpviewer_keywords:
+- /I compiler option [C++]
+- Additional Include Directories compiler option
+- I compiler option [C++]
+- -I compiler option [C++]
+- set include directories
+- include directories, compiler option [C++]
 ms.assetid: 3e9add2a-5ed8-4d15-ad79-5b411e313a49
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 91868a657e4b537c286378276701915c1e160a77
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /I (追加インクルード ディレクトリ)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-インクルード ファイルを検索するディレクトリ一覧にディレクトリを追加します。  
+# <a name="i-additional-include-directories"></a>/I (追加インクルード ディレクトリ)
+インクルード ファイルを検索するディレクトリの一覧に、ディレクトリを追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /I[ ]directory  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `directory`  
- インクルード ファイルの検索対象ディレクトリ一覧に追加するディレクトリ。  
+ ディレクトリの一覧に追加するディレクトリは、インクルード ファイルを検索します。  
   
-## 解説  
- 複数のディレクトリを追加するには、このオプションを複数回使用します。  指定したインクルード ファイルが見つかるまでディレクトリが検索されます。  
+## <a name="remarks"></a>コメント  
+ 複数のディレクトリを追加するには、このオプションを複数回使用します。 指定したインクルード ファイルが見つかるまでにのみ、ディレクトリが検索されます。  
   
- このオプションは、[\/X \(標準インクルード パスの無視\)](../../build/reference/x-ignore-standard-include-paths.md) \(標準インクルード パスの無視\) オプションと併用できます。  
+ このオプションを使用するには、標準インクルード パスの無視を ([/X (標準インクルード パスの無視)](../../build/reference/x-ignore-standard-include-paths.md)) オプション。  
   
- ディレクトリは、次の順で検索されます。  
+ コンパイラは、次の順序でディレクトリを検索します。  
   
-1.  ソース ファイルが置かれているディレクトリ  
+1.  ソース ファイルを含むディレクトリ。  
   
-2.  **\/I** オプションで指定されたディレクトリ \(CL で出現する順序で検索\)  
+2.  指定されたディレクトリ、 **/I** CL で出現する順序でのオプションです。  
   
-3.  環境変数 **INCLUDE** で指定されているディレクトリ  
+3.  指定したディレクトリ、 **INCLUDE**環境変数。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  \[全般\] プロパティ ページをクリックします。  
+3.  クリックして、**全般**プロパティ ページ。  
   
-4.  **\[追加のインクルード ディレクトリ\]** プロパティを変更します。  
+4.  変更、**追加のインクルード ディレクトリ**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalIncludeDirectories%2A>」を参照してください。  
   
-## 使用例  
- 次のコマンドは、MAIN.c の要求するインクルード ファイルを検索します。検索順序は、MAIN.c が置かれているディレクトリ、\\INCLUDE ディレクトリ、\\MY\\INCLUDE ディレクトリ、環境変数 INCLUDE に代入されたディレクトリの順です。  
+## <a name="example"></a>例  
+ 次のコマンドは次の要求は次の順序でインクルード ファイル: MAIN.c を含む \MY\INCLUDE ディレクトリから、\INCLUDE ディレクトリで、最後にあるディレクトリ内でインクルードに割り当てられているディレクトリに最初に環境変数。  
   
 ```  
 CL /I \INCLUDE /I\MY\INCLUDE MAIN.C  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

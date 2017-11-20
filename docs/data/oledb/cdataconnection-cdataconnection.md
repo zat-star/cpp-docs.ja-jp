@@ -1,55 +1,54 @@
 ---
-title: "CDataConnection::CDataConnection | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDataConnection.CDataConnection"
-  - "ATL.CDataConnection.CDataConnection"
-  - "CDataConnection::CDataConnection"
-  - "ATL::CDataConnection::CDataConnection"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDataConnection クラス, コンストラクター"
+title: "Cdataconnection::cdataconnection |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDataConnection.CDataConnection
+- ATL.CDataConnection.CDataConnection
+- CDataConnection::CDataConnection
+- ATL::CDataConnection::CDataConnection
+dev_langs: C++
+helpviewer_keywords: CDataConnection class, constructor
 ms.assetid: ac25c9a0-44d3-4083-b13f-76c07772e12d
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e92019f3f49257e297bddb2f717cf416da62a3bc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDataConnection::CDataConnection
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`CDataConnection` オブジェクトをインスタンス化し、初期化します。  
+# <a name="cdataconnectioncdataconnection"></a>CDataConnection::CDataConnection
+インスタンスを作成し、初期化、`CDataConnection`オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      CDataConnection();   
+      CDataConnection();   
 CDataConnection(  
    const CDataConnection &ds  
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `ds`  
- \[\]既存のデータ接続への参照。  
+ [in]既存のデータ接続への参照。  
   
-## 解説  
- 最初のオーバーライドが既定の設定に `CDataConnection` の新しいオブジェクトを作成します。  
+## <a name="remarks"></a>コメント  
+ 最初のオーバーライドが新たに作成`CDataConnection`既定の設定を持つオブジェクト。  
   
- 2 番目のオーバーライドは、指定したデータ接続オブジェクトと同様の設定と `CDataConnection` の新しいオブジェクトを作成します。  
+ 2 番目のオーバーライドが新たに作成`CDataConnection`設定を指定するデータ接続オブジェクトと等価のオブジェクト。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDataConnection クラス](../../data/oledb/cdataconnection-class.md)

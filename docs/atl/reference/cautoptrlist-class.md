@@ -4,43 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CAutoPtrList
 - ATLCOLL/ATL::CAutoPtrList
 - ATLCOLL/ATL::CAutoPtrList::CAutoPtrList
-dev_langs:
-- C++
-helpviewer_keywords:
-- CAutoPtrList class
+dev_langs: C++
+helpviewer_keywords: CAutoPtrList class
 ms.assetid: 11de4aca-28b0-4ff2-a74a-cb602312ffbd
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: b39c3c08cf2970036bf8690c46a4f3518a7a55e1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 79ca570b8f4534287ae4ec40167de3bc3d947139
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cautoptrlist-class"></a>CAutoPtrList クラス
 このクラスは、スマート ポインターのリストを構築するときに役立つメソッドを提供します。  
@@ -58,7 +40,7 @@ class CAutoPtrList :
   
 #### <a name="parameters"></a>パラメーター  
  `E`  
- ポインター型。  
+ ポインター型です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -69,9 +51,9 @@ class CAutoPtrList :
 |[CAutoPtrList::CAutoPtrList](#cautoptrlist)|コンストラクターです。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは、コンス トラクターを提供し、メソッドからの派生元[CAtlList](../../atl/reference/catllist-class.md)と[CAutoPtrElementTraits](../../atl/reference/cautoptrelementtraits-class.md)スマート ポインターを格納するリスト オブジェクトの作成を支援するためにします。 クラス[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)配列オブジェクトの同様の機能を提供します。  
+ このクラスは、コンス トラクターを提供し、メソッドからの派生[CAtlList](../../atl/reference/catllist-class.md)と[CAutoPtrElementTraits](../../atl/reference/cautoptrelementtraits-class.md)スマート ポインターを格納するリスト オブジェクトの作成を支援するためにします。 クラス[CAutoPtrArray](../../atl/reference/cautoptrarray-class.md)配列オブジェクトの同様の機能を提供します。  
   
- 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)します。  
+ 詳細については、次を参照してください。 [ATL コレクション クラス](../../atl/atl-collection-classes.md)です。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CAtlList](../../atl/reference/catllist-class.md)  
@@ -93,10 +75,9 @@ CAutoPtrList(UINT nBlockSize = 10) throw();
  ブロック サイズを既定値は 10 です。  
   
 ### <a name="remarks"></a>コメント  
- ブロック サイズは、新しい要素が必要なときに割り当てられたメモリの量の測定値です。 ブロック サイズの増加はメモリ割り当てルーチンの呼び出しを減らすためより多くのリソースを使用します。  
+ ブロック サイズは、新しい要素が必要な場合に割り当てられたメモリの量の測定です。 ブロック サイズを大きくはメモリ割り当てルーチンに呼び出しを減らすことより多くのリソースを使用します。  
   
 ## <a name="see-also"></a>関連項目  
  [CAtlList クラス](../../atl/reference/catllist-class.md)   
  [CAutoPtrElementTraits クラス](../../atl/reference/cautoptrelementtraits-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

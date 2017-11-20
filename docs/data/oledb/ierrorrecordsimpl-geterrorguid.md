@@ -1,34 +1,33 @@
 ---
-title: "IErrorRecordsImpl::GetErrorGUID | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetErrorGUID"
-  - "IErrorRecordsImpl.GetErrorGUID"
-  - "IErrorRecordsImpl::GetErrorGUID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetErrorGUID メソッド"
+title: "Ierrorrecordsimpl::geterrorguid |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetErrorGUID
+- IErrorRecordsImpl.GetErrorGUID
+- IErrorRecordsImpl::GetErrorGUID
+dev_langs: C++
+helpviewer_keywords: GetErrorGUID method
 ms.assetid: 42c00755-50e5-401a-8246-adef9de5ced2
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a2b1ec6a783bc5b289a024be2b64917b064e581e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IErrorRecordsImpl::GetErrorGUID
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ierrorrecordsimplgeterrorguid"></a>IErrorRecordsImpl::GetErrorGUID
 エラー レコードからエラー GUID を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,15 +36,15 @@ caps.handback.revision: 9
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `rCurError`  
- **IErrorInfo** インターフェイスの `ERRORINFO` レコード。  
+ `ERRORINFO`レコードで、 **IErrorInfo**インターフェイスです。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  エラーの GUID への参照。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [IErrorRecordsImpl クラス](../../data/oledb/ierrorrecordsimpl-class.md)

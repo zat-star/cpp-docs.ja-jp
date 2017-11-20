@@ -1,66 +1,66 @@
 ---
-title: "CSQLLanguages、CSQLLanguageInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CSQLLanguageInfo"
-  - "m_szProgrammingLanguage"
-  - "m_szImplementation"
-  - "m_szIntegrity"
-  - "m_szBindingStyle"
-  - "m_szConformance"
-  - "m_szSource"
-  - "m_szYear"
-  - "CSQLLanguages"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CSQLLanguageInfo パラメーター クラス"
-  - "CSQLLanguages TYPEDEF クラス"
-  - "m_szBindingStyle"
-  - "m_szConformance"
-  - "m_szImplementation"
-  - "m_szIntegrity"
-  - "m_szProgrammingLanguage"
-  - "m_szSource"
-  - "m_szYear"
+title: "CSQLLanguages、CSQLLanguageInfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CSQLLanguageInfo
+- m_szProgrammingLanguage
+- m_szImplementation
+- m_szIntegrity
+- m_szBindingStyle
+- m_szConformance
+- m_szSource
+- m_szYear
+- CSQLLanguages
+dev_langs: C++
+helpviewer_keywords:
+- m_szBindingStyle
+- m_szProgrammingLanguage
+- m_szYear
+- m_szImplementation
+- m_szSource
+- m_szConformance
+- CSQLLanguages typedef class
+- CSQLLanguageInfo parameter class
+- m_szIntegrity
 ms.assetid: 9c36c5bb-6917-49c3-9ac3-942339893f19
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 61386746e83c5c9d26358855c9791e03f13f029f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CSQLLanguages、CSQLLanguageInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-パラメーター **CSQLLanguageInfo**クラスを実装するに **CSQLLanguages** typedef クラスを呼び出します。  
+# <a name="csqllanguages-csqllanguageinfo"></a>CSQLLanguages、CSQLLanguageInfo
+Typedef クラスを呼び出す**CSQLLanguages**そのパラメーター クラスを実装する**CSQLLanguageInfo**です。  
   
-## 解説  
- typedef クラスの使用の詳細については、" [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)typedef クラスの使用に関する詳細についてはします。  
   
- このクラスは、カタログに定義されたデータを処理する SQL 実装でサポートされる準拠レベル、オプションおよび言語を指定します。  
+ このクラスは、準拠レベル、オプション、およびカタログで定義されているデータには、SQL 実装処理によってサポートされている言語を識別します。  
   
- 次の表は、クラスのデータ メンバーとそれらに該当する OLE DB の列の一覧です。  スキーマと列の詳細については、" *OLE DB Programmer's Reference* の [SQL\_LANGUAGES の行セット](https://msdn.microsoft.com/en-us/library/ms714374.aspx) を参照してください。  
+ 次の表には、クラスのデータ メンバーとその対応する OLE DB 列が一覧表示します。 参照してください[SQL_LANGUAGES 行セット](https://msdn.microsoft.com/en-us/library/ms714374.aspx)で、 *OLE DB プログラマーズ リファレンス*スキーマと列の詳細についてはします。  
   
-|データ メンバー|OLE DB の列|  
-|--------------|---------------|  
-|m\_szSource|SQL\_LANGUAGE\_SOURCE|  
-|m\_szYear|SQL\_LANGUAGE\_YEAR|  
-|m\_szConformance|SQL\_LANGUAGE\_CONFORMANCE|  
-|m\_szIntegrity|SQL\_LANGUAGE\_INTEGRITY|  
-|m\_szImplementation|SQL\_LANGUAGE\_IMPLEMENTATION|  
-|m\_szBindingStyle|SQL\_LANGUAGE\_BINDING\_STYLE|  
-|m\_szProgrammingLanguage|SQL\_LANGUAGE\_PROGRAMMING\_LANGUAGE|  
+|データ メンバー|OLE DB 列|  
+|------------------|--------------------|  
+|m_szSource|SQL_LANGUAGE_SOURCE|  
+|m_szYear|SQL_LANGUAGE_YEAR|  
+|m_szConformance|SQL_LANGUAGE_CONFORMANCE|  
+|m_szIntegrity|SQL_LANGUAGE_INTEGRITY|  
+|m_szImplementation|SQL_LANGUAGE_IMPLEMENTATION|  
+|m_szBindingStyle|SQL_LANGUAGE_BINDING_STYLE|  
+|m_szProgrammingLanguage|SQL_LANGUAGE_PROGRAMMING_LANGUAGE|  
   
-## 要件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbsch.h  
   
-## 参照  
- [CRestrictions クラス](../Topic/CRestrictions%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CRestrictions クラス](../../data/oledb/crestrictions-class.md)

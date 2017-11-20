@@ -1,49 +1,50 @@
 ---
-title: "Platform::ChangedStateException クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Platform/Platform::ChangedStateException"
-  - "Platform/Platform::ChangedStateException::ChangedStateException"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Platform::ChangedStateException"
+title: "Platform::changedstateexception クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- VCCORLIB/Platform::ChangedStateException
+- VCCORLIB/Platform::ChangedStateException::ChangedStateException
+dev_langs: C++
+helpviewer_keywords: Platform::ChangedStateException
 ms.assetid: f894beac-9e80-4fac-ac25-89f1dbc0a6a4
-caps.latest.revision: 4
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: c567a49f3365f4c18c5acc174cdac09d0408f022
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Platform::ChangedStateException クラス
+# <a name="platformchangedstateexception-class"></a>Platform::ChangedStateException クラス
 オブジェクトの内部状態が変化したときにスローされ、メソッドの結果を無効にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 public ref class ChangedStateException : COMException,    IException,    IPrintable,    IEquatable  
 ```  
   
-## コメント  
+### <a name="remarks"></a>コメント  
  この例外がスローされる 1 つの例は、コレクション反復子またはコレクション ビューのメソッドが、親コレクションの変更後に呼び出された場合です。この結果、メソッドの結果は無効になります。  
   
- 詳細については、[COMException](../cppcx/platform-comexception-class.md) クラスを参照してください。  
+ 詳細については、 [COMException](../cppcx/platform-comexception-class.md) クラスを参照してください。  
   
-## 必要条件  
- **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  
+### <a name="requirements"></a>要件  
+ **クライアントがサポートされる最小:** Windows 8  
   
- **サポートされている最低限のサーバー:** [!INCLUDE[winserver8](../cppcx/includes/winserver8-md.md)]  
+ **サポートされているサーバーの最小値:** Windows Server 2012  
   
  **名前空間:** Platform  
   
  **メタデータ:** platform.winmd  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Platform::COMException クラス](../cppcx/platform-comexception-class.md)

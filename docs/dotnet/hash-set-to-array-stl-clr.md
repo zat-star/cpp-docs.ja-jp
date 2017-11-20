@@ -1,41 +1,39 @@
 ---
-title: "hash_set::to_array (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::to_array"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "to_array メンバー [STL/CLR]"
+title: "hash_set::to_array (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_set::to_array
+dev_langs: C++
+helpviewer_keywords: to_array member [STL/CLR]
 ms.assetid: 2aa61f13-85b8-4aa4-91b4-69ddcc5064dc
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 13af64f7d5ae9ee71fc3ab5c2f8e64a11492e034
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_set::to_array (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-新しい配列に被制御シーケンスをコピーします。  
+# <a name="hashsettoarray-stlclr"></a>hash_set::to_array (STL/CLR)
+被制御シーケンスを新しい配列にコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 cli::array<value_type>^ to_array();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスを格納した配列を返します。  配列のフォームの被制御シーケンスのコピーを取得するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数では、被制御シーケンスを格納する配列を返します。 使用する配列形式の被制御シーケンスのコピーを入手します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_to_array.cpp   
@@ -67,12 +65,15 @@ int main()
   
 ```  
   
-  **b c d**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+a b c d  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)

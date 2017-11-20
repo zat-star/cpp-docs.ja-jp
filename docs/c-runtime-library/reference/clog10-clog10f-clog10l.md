@@ -33,36 +33,21 @@ f1_keywords:
 - complex/clog10
 - complex/clog10f
 - complex/clog10l
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - clog10 function
 - clog10f function
 - clog10l function
 ms.assetid: 2ddae00d-ef93-4441-add3-f4d58358401b
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-translationtype: Machine Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 49087af703b0eca465edf288ad6af5d671dd1da2
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: bab5be9a8c686c2c6cd207232ddc6f98d11aa519
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="clog10-clog10f-clog10l"></a>clog10、clog10f、clog10l
 複素数の底 10 の対数を取得します。  

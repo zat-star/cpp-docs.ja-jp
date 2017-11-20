@@ -1,40 +1,81 @@
 ---
-title: "DLL に関してよく寄せられる質問 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DLL [C++], よく寄せられる質問"
-  - "FAQ [C++], DLL"
-  - "トラブルシューティング [C++], DLL"
+title: "MFC の DLL についてよく寄せられる質問 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- troubleshooting [C++], DLLs
+- DLLs [C++], frequently asked questions
+- FAQs [C++], DLLs
 ms.assetid: 09dd068e-fc33-414e-82f7-289c70680256
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: ddacf677dab37bc85492dff1ec13dde23132da15
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DLL に関してよく寄せられる質問
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="dll-frequently-asked-questions"></a>DLL に関してよく寄せられる質問  
+  
+次は、Dll に関する質問 (FAQ) をよく寄せられます。  
+    
+-   [MFC DLL に複数のスレッドを作成できますか。](#mfc_multithreaded_1)  
 
-以下は、DLL に関する Q & A 集です。  
+-   [マルチ スレッド アプリケーションは別のスレッド内の MFC DLL にアクセスできますか。](#mfc_multithreaded_2)  
   
--   [マルチスレッド アプリケーションで別のスレッド内の MFC DLL にアクセスする方法](../build/can-a-multithreaded-application-access-an-mfc-dll-in-different-threads-q.md)  
+-   [MFC クラスまたは MFC DLL 内で使用できない機能はありますか。](#mfc_prohibited_classes)  
   
--   [MFC DLL から複数のスレッドを作成する方法](../build/can-an-mfc-dll-create-multiple-threads-q.md)  
+-   [どのような最適化の手法を読み込むときに、クライアント アプリケーションのパフォーマンスを向上させるために使用する必要がありますか。](#mfc_optimization)  
   
--   [MFC DLL 内で使用できない MFC クラスまたは関数](../build/are-there-any-mfc-classes-or-functions-that-cannot-be-used-in-an-mfc-dll-q.md)  
+-   [標準 MFC DLL にメモリ リークが正常に見えるコード。メモリ リークを検出する方法は?](#memory_leak)  
+
+## <a name="mfc_multithreaded_1"></a>MFC DLL に複数のスレッドを作成できますか。  
   
--   [読み込み時にクライアント アプリケーションのパフォーマンスを向上するための最適化手法](../build/what-optimization-techniques-should-i-use.md)  
+初期化中に、MFC DLL を安全の作成を除く複数のスレッドの Win32 スレッド ローカル ストレージ (TLS) などの関数を使用する限り、 **TlsAlloc**スレッド ローカル ストレージを割り当てることです。 ただし、MFC DLL を使用して場合**_declspec**をスレッド ローカル ストレージを割り当て、クライアント アプリケーションは暗黙的にリンクされて DLL です。 クライアント アプリケーションが DLL への呼び出しに明示的にリンク**LoadLibrary** DLL は正常に読み込まれません。 MFC Dll 内の複数のスレッドの作成の詳細については、サポート技術情報の記事、"[prb]:: 呼び出し LoadLibrary() に負荷が DLL がする静的 TLS"(Q118816) を参照してください。  
   
--   [独自のコードには問題が見つからなくても標準 DLL でメモリ リークが発生する場合に、  メモリ リークを検出する方法](../build/memory-leak-in-my-dll.md)  
+ 起動中に、新しい MFC スレッドを作成する MFC DLL では、アプリケーションによって読み込まれるときの応答を停止します。 これは、スレッドが呼び出すことによって作成されるたびにも含まれます。`AfxBeginThread`または`CWinThread::CreateThread`内。  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)
+-   `InitInstance`の`CWinApp`-標準 MFC DLL 内のオブジェクトを派生します。  
+  
+-   指定された`DllMain`または**まず**正規 MFC DLL 内の関数。  
+  
+-   指定された`DllMain`または**まず**MFC 拡張 DLL で機能します。  
+  
+ 初期化中にスレッドを作成の詳細については、サポート技術情報の記事、「[prb]:: ことはできませんを作成、MFC スレッド中に DLL の起動」(Q142243) を参照してください。  
+  
+## <a name="mfc_multithreaded_2"></a>マルチ スレッド アプリケーションは別のスレッド内の MFC DLL にアクセスできますか。
+マルチ スレッド アプリケーションでは、MFC と動的にリンクする標準の MFC Dll と MFC 拡張 Dll を異なるスレッドからアクセスできます。 Visual c version 4.2 では、アプリケーションは、アプリケーションで作成された複数のスレッドから MFC と静的にリンクする標準の MFC Dll にアクセスします。  
+  
+ 前のバージョン 4.2、外部スレッドを 1 つだけに MFC と静的にリンクされるレギュラー MFC DLL にアタッチでした。 サポート技術情報の記事を参照してください (Visual C バージョン 4.2) より前の複数のスレッドから MFC と静的にリンクする正規の MFC Dll へのアクセス制限の詳細については、"複数のスレッドおよび MFC にリンクできます"(Q122676)。  
+  
+ USRDLL という用語は、Visual C のドキュメントでは使用されなくに注意してください。 MFC と静的にリンクされている標準 MFC DLL は、これまでの USRDLL と同じ特性を持ちます。  
+
+
+## <a name="mfc_prohibited_classes"></a>MFC クラスまたは MFC DLL 内で使用できない機能はありますか。
+拡張 Dll を使用して、 `CWinApp`-クライアント アプリケーションのクラスを派生します。 ない独自`CWinApp`-クラスを派生します。  
+  
+標準の MFC Dll が必要、`CWinApp`の MFC アプリケーションのように、クラスとそのアプリケーション クラスの 1 つのオブジェクトを派生します。 異なり、 `CWinApp` 、アプリケーションのオブジェクト、 `CWinApp` DLL のオブジェクトには、メイン メッセージ ポンプがありません。  
+  
+ ため、`CWinApp::Run`メカニズムは、DLL には適用されません、アプリケーションはメイン メッセージ ポンプを所有します。 DLL は、モードレス ダイアログ ボックスを開くかは、独自のメイン フレーム ウィンドウがあり場合、アプリケーションのメイン メッセージ ポンプを呼び出して、DLL のエクスポート ルーチンを呼び出す必要があります、 `CWinApp::PreTranslateMessage` DLL のアプリケーション オブジェクトのメンバー関数。  
+
+## <a name="mfc_optimization"></a>どのような最適化の手法を使用するクライアント アプリケーション &#39; を向上させるために秒のパフォーマンスを読み込むときにしますか?
+DLL が MFC では、標準への変更に静的にリンクされている標準 MFC DLL の場合は、MFC と動的にリンクする MFC DLL はファイル サイズを減らします。  
+  
+ DLL のエクスポート関数の数が多い場合は、.def ファイルを使用して関数をエクスポートする (を使用せずに**方式**) .def ファイルを使用して[NONAME 属性](../build/exporting-functions-from-a-dll-by-ordinal-rather-than-by-name.md)ごとに関数をエクスポートします。 NONAME 属性によって、序数値だけと、ファイルのサイズを削減でき、DLL のエクスポート テーブルに格納される関数名ではありません。  
+  
+ アプリケーションに暗黙的にリンクされている Dll は、アプリケーションの読み込み時に読み込まれます。 読み込むときに、パフォーマンスを向上するには、DLL を異なる Dll に分割してみてください。 1 つの DLL の読み込み後すぐに呼び出し元アプリケーションに必要なすべての機能を配置し、呼び出し元アプリケーションの DLL を暗黙的にリンクします。 呼び出し元のアプリケーションがすぐ必要がないその他の関数を別の DLL に配置しがアプリケーションに明示的にリンクする DLL です。 詳細については、次を参照してください。[リンク方式の使い分け](../build/linking-an-executable-to-a-dll.md#determining-which-linking-method-to-use)です。  
+
+## <a name="memory_leak"></a>あります &#39; s マイ コードでは、標準 MFC DLL 内のメモリ リークが正常に検索します。 メモリ リークを検出する方法は?  
+  
+メモリ リークの原因の 1 つは、MFC メッセージ ハンドラー関数内部で使用される一時オブジェクトで作成します。 MFC アプリケーションでこれらの一時オブジェクトが自動的にクリーンアップで、`CWinApp::OnIdle()`メッセージの処理の間に呼び出される関数。 ただし、MFC のダイナミック リンク ライブラリ (Dll) では、`OnIdle()`関数は自動的に呼び出されません。 その結果、一時オブジェクトが自動的にクリーンアップされません。 一時オブジェクトをクリーンアップする DLL を呼び出す必要があります明示的に`OnIdle(1)`定期的にします。  
+  
+## <a name="see-also"></a>関連項目  
+ [Visual C++ の DLL](../build/dlls-in-visual-cpp.md)

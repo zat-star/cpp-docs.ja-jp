@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _set_error_mode
+apiname: _set_error_mode
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -26,42 +24,26 @@ apitype: DLLExport
 f1_keywords:
 - set_error_mode
 - _set_error_mode
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _set_error_mode function
 - set_error_mode function
 ms.assetid: f0807be5-73d1-4a32-a701-3c9bdd139c5c
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 205a6bed342ce1489664a5e9e37880612492b04d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 12152137e899fbc5e8d73679bcda57fce5ff5f72
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="seterrormode"></a>_set_error_mode
 `__error_mode` を変更し、プログラム終了の可能性があるエラーの場合に C ランタイムがエラー メッセージを書き込む、既定以外の位置を決定します。  
   
 > [!IMPORTANT]
->  この API は、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
+>  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
   
 ## <a name="syntax"></a>構文  
   

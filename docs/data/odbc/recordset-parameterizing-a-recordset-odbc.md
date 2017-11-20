@@ -1,73 +1,74 @@
 ---
-title: "レコードセット: パラメーターを利用したレコードセット (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ODBC レコードセット, パラメーター化"
-  - "パラメーターを利用したレコードセット"
-  - "渡す (パラメーターを), クエリへの実行時の"
-  - "レコードセット, パラメーター化"
+title: "レコード セット: レコード セット (ODBC) のパラメーター化 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- parameterizing recordsets
+- ODBC recordsets, parameterizing
+- recordsets, parameterizing
+- passing parameters, to queries at runtime
 ms.assetid: 7d1dfeb6-5ee0-45e2-aacc-63bc52a465cd
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e282bf795435d21264ff4ab62575b9315781a0e0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコードセット: パラメーターを利用したレコードセット (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="recordset-parameterizing-a-recordset-odbc"></a>レコードセット: パラメーターを利用したレコードセット (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
   
- 場合によっては、ユーザー入力または計算結果に応じて実行時にレコードを選択できるようにする必要があります。  このような場合は、レコードセット パラメーターを使います。  
+ 場合もあります計算またはエンドユーザーから取得した情報を使用して、実行時にレコードを選択することにする可能性があります。 レコード セットのパラメーターを使用して、その目的を達成できます。  
   
  このトピックでは、次の内容について説明します。  
   
--   [レコードセットをパラメーター化する目的](#_core_parameterized_recordsets)  
+-   [パラメーター化されたレコード セットの目的は、](#_core_parameterized_recordsets)です。  
   
--   [レコードセットをパラメーター化するタイミングと理由](#_core_when_to_use_parameters)  
+-   [タイミングと理由は、レコード セットをパラメーター化することができます](#_core_when_to_use_parameters)です。  
   
--   [レコードセット クラスでパラメーター データ メンバーを宣言する方法](#_core_parameterizing_your_recordset_class)  
+-   [レコード セット クラスのデータ メンバーのパラメーターを宣言する方法](#_core_parameterizing_your_recordset_class)です。  
   
--   [パラメーターの情報を実行時にレコードセット オブジェクトに渡す方法](#_core_passing_parameter_values_at_run_time)  
+-   [実行時に、レコード セット オブジェクトにパラメーター情報を渡す方法](#_core_passing_parameter_values_at_run_time)です。  
   
-##  <a name="_core_parameterized_recordsets"></a> パラメーターを利用したレコードセット  
- パラメーター化したレコードセットでは、実行時にパラメーター値を渡すことができます。  これには、次の 2 つの利点があります。  
+##  <a name="_core_parameterized_recordsets"></a>パラメーター化されたレコード セット  
+ パラメーター化されたレコード セットを使用して、実行時にパラメーター情報を渡すことができます。 これにより、2 つの重要な影響があります。  
   
--   実行速度を向上できます。  
+-   実行速度を向上させることがあります。  
   
--   デザイン時に得られない情報 \(実行時のユーザー入力や計算結果など\) に基づき、実行時にクエリを構成できます。  
+-   これにより、情報が、ユーザーから取得した、または実行時に計算など、デザイン時に使用できない情報に基づいて、実行時にクエリを作成できます。  
   
- **Open** を呼び出してクエリを実行すると、パラメーターの値を使って **SQL SELECT** ステートメントが作成されます。  どのレコードセットでもパラメーターを使用できます。  
+ 呼び出すと**開く**クエリを実行するには、レコード セット情報を使用してパラメーター完了その**SQL SELECT**ステートメントです。 すべてのレコード セットをパラメーター化できます。  
   
-##  <a name="_core_when_to_use_parameters"></a> パラメーターを使用する状況  
- 通常、パラメーターは以下の場合に使います。  
+##  <a name="_core_when_to_use_parameters"></a>パラメーターを使用する場合  
+ パラメーターの一般的な用途は次のとおりです。  
   
--   定義済みのクエリに実行時の引数を渡す場合  
+-   定義済みクエリを実行時引数を渡します。  
   
-     ストアド プロシージャにパラメーターを渡すには、完全なカスタム ODBC **CALL** ステートメントを渡します。つまり、**Open** を呼び出すときに、パラメーター プレースホルダー付きの完全なカスタム ODBC CALL ステートメントを指定して、レコードセットの既定の SQL ステートメントをオーバーライドします。  詳細については、『MFC リファレンス』の「[CRecordset::Open](../Topic/CRecordset::Open.md)」、および「[SQL : レコードセットの SQL ステートメントのカスタマイズ \(ODBC\)](../../data/odbc/sql-customizing-your-recordset’s-sql-statement-odbc.md)」と「[レコードセット : 定義済みクエリを利用したクラスの宣言 \(ODBC\)](../../data/odbc/recordset-declaring-a-class-for-a-predefined-query-odbc.md)」を参照してください。  
+     ストアド プロシージャにパラメーターを渡す、完全なカスタム ODBC を指定する必要があります**呼び出す**ステートメント — パラメーター プレース ホルダーで — を呼び出すと**開く**、レコード セットの既定の SQL ステートメントをオーバーライドします。 詳細については、次を参照してください[:open](../../mfc/reference/crecordset-class.md#open)で、*クラス ライブラリ リファレンス*と[SQL: をカスタマイズするレコード セットの SQL ステートメント (ODBC)](../../data/odbc/sql-customizing-your-recordsets-sql-statement-odbc.md)と[。レコード セット: 定義済みクエリ (ODBC) クラスの宣言](../../data/odbc/recordset-declaring-a-class-for-a-predefined-query-odbc.md)です。  
+
   
--   そのつどパラメーター情報を変更して、クエリを繰り返し実行する場合  
+-   異なるパラメーター情報をそのつどを効率的に実行しています。  
   
-     たとえば、学生の登録情報データベースを検索して特定の学生の情報を検索するたびに、学生の氏名または ID パラメーターに、ユーザーが値を入力できるようにします。  レコードセットのメンバー関数 **Requery** を呼び出すと、指定された学生のレコードだけが選択されます。  
+     たとえば、エンドユーザーは学生登録データベースの特定の受講者に関する情報を検索するたびに指定できます受講者の名前または ID ユーザーから取得した、パラメーターとして。 次に、レコード セットを呼び出すと**Requery**メンバー関数の場合、クエリがそのスチューデントのレコードのみを選択します。  
   
-     **m\_StrFilter** に保持するレコードセット フィルター文字列は、次のように設定します。  
+     格納されたレコード セットのフィルター文字列**か**、次のようになります。  
   
     ```  
     "StudentID = ?"  
     ```  
   
-     学生の ID を変数 `strInputID` に格納するとします。  `strInputID` に学生 ID の値として 100 を代入すると、この変数の値は、フィルター文字列内の "?" で示されるパラメーター プレースホルダーに結び付けられます。  
+     変数の学生 ID を取得すると仮定`strInputID`です。 パラメーターを設定すると`strInputID`によって表されるパラメーターのプレース ホルダーに (たとえば、学生 ID 100)、変数の値がバインドされている、"?"フィルター文字列にします。  
   
-     パラメーター値を次のように代入します。  
+     パラメーターの値に割り当てます。  
   
     ```  
     strInputID = "100";  
@@ -75,36 +76,36 @@ caps.handback.revision: 10
     m_strParam = strInputID;  
     ```  
   
-     フィルター文字列は、次のように設定しないでください。  
+     このように、フィルター文字列を設定しません。  
   
     ```  
     m_strFilter = "StudentID = 100";   // 100 is incorrectly quoted  
                                        // for some drivers  
     ```  
   
-     フィルター文字列の引用符の使い方については、「[レコードセット : レコードのフィルター処理 \(ODBC\)](../../data/odbc/recordset-filtering-records-odbc.md)」を参照してください。  
+     フィルター文字列の引用符を正しく使用する方法の詳細については、次を参照してください。[レコード セット: レコードのフィルター処理 (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)です。  
   
-     クエリを再実行するたびに、パラメーターの値を新しい ID 値に設定します。  
+     パラメーター値が異なる新しい学生 ID のレコード セットを再実行するたびにです。  
   
     > [!TIP]
-    >  パラメーターを使用すると、単にフィルターを使用するより効率的です。  パラメーターを使ったレコードセットでは、SQL **SELECT** ステートメントを作成するのは 1 回で済みます。  パラメーター化されていないフィルターを使ったレコードセットでは、新しいフィルター値を設定して **Requery** を呼び出すたびに、**SELECT** ステートメントを作成する必要があります。  
+    >  パラメーターを使用することは、単にフィルターより効率的です。 データベースは、パラメーター化されたレコード セットの SQL を処理する必要があります**選択**ステートメントを 1 回のみです。 パラメーターを指定しないフィルター選択されたレコード セットの**選択**ステートメントを処理する必要があるたびに**Requery**新しいフィルター値を持つ。  
   
- フィルターの詳細については、「[レコードセット : レコードのフィルター処理 \(ODBC\)](../../data/odbc/recordset-filtering-records-odbc.md)」を参照してください。  
+ フィルターの詳細については、次を参照してください。[レコード セット: レコードのフィルター処理 (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)です。  
   
-##  <a name="_core_parameterizing_your_recordset_class"></a> パラメーターを利用したレコードセット クラスの作成  
+##  <a name="_core_parameterizing_your_recordset_class"></a>レコード セット クラスのパラメーター化  
   
 > [!NOTE]
->  ここで説明する内容は、バルク行フェッチが実装されていない `CRecordset` の派生オブジェクトを対象にしています。  バルク行フェッチを使用するレコードセットでも、パラメーターを実装する方法は基本的に同じです。  詳細については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  このセクションから派生したオブジェクトに適用されます`CRecordset`バルク行フェッチは実装されていません。 バルク行フェッチ、パラメーターを実装を使用している場合は、同様のプロセスです。 詳細については、次を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- レコードセット クラスを作成する前に、どのパラメーターが必要か、パラメーターのデータ型を何にするか、パラメーターをどのように利用するかを決める必要があります。  
+ レコード セット クラスを作成する前に、どのようなパラメーターする必要があります、そのデータ型とは何かと、レコード セットでの使用方法を決定します。  
   
-#### パラメーターを利用したレコードセット クラスを作成するには  
+#### <a name="to-parameterize-a-recordset-class"></a>レコード セット クラスをパラメーター化するには  
   
-1.  クラスの追加の [MFC ODBC コンシューマー ウィザード](../../mfc/reference/adding-an-mfc-odbc-consumer.md) を実行して、クラスを作成します。  
+1.  実行、 [MFC ODBC コンシューマー ウィザード](../../mfc/reference/adding-an-mfc-odbc-consumer.md)から**クラスの追加**クラスを作成します。  
   
-2.  レコードセットの列に対応するフィールド データ メンバーを指定します。  
+2.  レコード セットの列のフィールド データ メンバーを指定します。  
   
-3.  ウィザードがプロジェクト内のファイルにクラスを出力したら、その .h ファイルを編集してクラス宣言に 1 つ以上のパラメーター データ メンバーを直接書き込みます。  このようにしてパラメーターを追加したスナップショット クラスの例を次に示します。この例では、"上級生を選択せよ" というクエリを作成します。  
+3.  ウィザードでは、プロジェクト内のファイルにクラスを書き込み後、は、.h ファイルに移動し、手動で 1 つまたは複数のパラメーター データ メンバーをクラス宣言に追加します。 なります次の例のように、スナップショット クラスの一部のため、クエリの回答"受講者に含まれているスキルの限られたクラス?"  
   
     ```  
     class CStudentSet : public CRecordset  
@@ -119,43 +120,44 @@ caps.handback.revision: 10
     };  
     ```  
   
-     ウィザードによって生成されるフィールド データ メンバーの後にパラメーター データ メンバーを追加します。  命名規約として、ユーザー定義のパラメーター名の末尾には "Param" を付けます。  
+     ウィザードで生成されたフィールド データ メンバーの後に、パラメーター データ メンバーを追加します。 規則では、各ユーザー定義のパラメーター名に"Param"という単語を追加します。  
   
-4.  .cpp ファイル内の [DoFieldExchange](../Topic/CRecordset::DoFieldExchange.md) メンバー関数定義に変更を加えます。  追加したパラメーター データ メンバーごとに RFX 関数呼び出しを追加します。  RFX 関数の記述方法については、「[レコード フィールド エクスチェンジ : RFX の動作のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)」を参照してください。  すべてのパラメーターに対する RFX 呼び出しの前に、次の関数呼び出しを 1 回だけ行います。  
+4.  変更、 [DoFieldExchange](../../mfc/reference/crecordset-class.md#dofieldexchange) .cpp ファイルでメンバー関数の定義。 クラスに追加する各パラメーター データ メンバーに対して RFX 関数呼び出しを追加します。 RFX 関数の記述方法については、次を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。 1 回の呼び出しでパラメーターの rfx 関数を呼び出す前に。  
   
     ```  
     pFX->SetFieldType( CFieldExchange::param );  
     // RFX calls for parameter data members  
     ```  
   
-5.  レコードセット クラスのコンストラクターで、`m_nParams` のパラメーター数をインクリメントします。  
+5.  レコード セット クラスのコンス トラクターで、パラメーターのカウントをインクリメント`m_nParams`です。  
   
-     詳細については、「[レコード フィールド エクスチェンジ : ウィザード コードの操作](../../data/odbc/record-field-exchange-working-with-the-wizard-code.md)」を参照してください。  
+     詳細については、次を参照してください。[レコード フィールド エクス チェンジ: ウィザード コードの使用](../../data/odbc/record-field-exchange-working-with-the-wizard-code.md)です。  
   
-6.  このクラスのレコードセット オブジェクトを作成するコードを記述する場合は、SQL ステートメントの文字列の、パラメーター値に置き換える箇所に、プレースホルダーとして "?" \(疑問符\) を配置します。  
+6.  このクラスのレコード セット オブジェクトを作成するコードを記述する場合は、配置、"?"各内の場所に、SQL ステートメントの文字列パラメーターが置き換えられます (疑問符 (?))。  
   
-     プレースホルダーは、実行時に、パラメーター値に順番に置き換えられます。  [SetFieldType](../Topic/CFieldExchange::SetFieldType.md) 呼び出しの後で設定した最初のパラメーター データ メンバーは、SQL 文字列の最初の "?" プレースホルダーと置き換わります。以降のパラメーターと "?" プレースホルダーも同じように置き換わります。  
+     実行時に、"?"プレース ホルダーは、順序で、パラメーター値を渡します。 最初のパラメーター データ メンバーを設定した後、 [SetFieldType](../../mfc/reference/cfieldexchange-class.md#setfieldtype)呼び出すには、最初が置き換えられます"しますか?「SQL 文字列に 2 番目のパラメーター データ メンバーが置き換えられます、2 つ目」しますか?"などです。  
   
 > [!NOTE]
->  パラメーターの順序は重要です。`DoFieldExchange` 関数のパラメーターに対する RFX 呼び出しの順序は、SQL 文字列のパラメーター プレースホルダーの順序に一致させる必要があります。  
+>  パラメーターの順序は重要な: RFX の順序の呼び出しのパラメーターに対して、`DoFieldExchange`関数は、SQL 文字列内のパラメーター プレース ホルダーの順序と一致する必要があります。  
   
 > [!TIP]
->  最も多く使用される文字列は、クラスの [m\_strFilter](../Topic/CRecordset::m_strFilter.md) データ メンバーに指定した文字列ですが、ODBC ドライバーによっては、他の SQL 句のパラメーターも使用できます。  
+
+>  使用する最も可能性の高い文字列は、指定した文字列 (存在する場合) のクラスの[か](../../mfc/reference/crecordset-class.md#m_strfilter)データ メンバーが、一部の ODBC ドライバーは、他の SQL 句内のパラメーターをすることができます。  
   
-##  <a name="_core_passing_parameter_values_at_run_time"></a> 実行時にパラメーター値を渡す方法  
- パラメーター値は、メンバー関数 **Open** \(新規作成したレコード オブジェクトの場合\) またはメンバー関数 **Requery** \(既存のオブジェクトを再利用する場合\) を呼び出す前に設定します。  
+##  <a name="_core_passing_parameter_values_at_run_time"></a>実行時にパラメーター値の受け渡し  
+ 呼び出す前に、パラメーター値を指定する必要があります**開く**(新しいレコード セット オブジェクト) のまたは**Requery** (の既存のもの)。  
   
-#### パラメーターの値を実行時にレコードセット オブジェクトに渡すには  
+#### <a name="to-pass-parameter-values-to-a-recordset-object-at-run-time"></a>実行時に、レコード セット オブジェクトにパラメーター値を渡す  
   
-1.  レコードセット オブジェクトを構築します。  
+1.  レコード セット オブジェクトを構築します。  
   
-2.  **m\_strFilter** など、SQL ステートメント \(またはその一部\) を含む文字列を 1 つ以上用意します。  後でパラメーター値を代入するプレースホルダーには "?" を書いておきます。  
+2.  文字列または文字列を準備するなど、**か**SQL ステートメント、またはその一部を含む文字列。 Put"?"パラメーター情報が移動、プレース ホルダーです。  
   
-3.  実行時にパラメーター データ メンバーに値を代入します。  
+3.  オブジェクトの各パラメーターのデータ メンバーに、実行時のパラメーター値を割り当てます。  
   
-4.  メンバー関数 **Open** を呼び出します。既存のレコードセットを再利用する場合は **Requery** を呼び出します。  
+4.  呼び出す、**開く**メンバー関数 (または**Requery**、既存のレコード セットの)。  
   
- たとえば、実行時に得られたデータに基づきフィルター文字列を作成する場合を考えてみます。  `CStudentSet` クラスのレコードセット `rsStudent` が既に生成されている場合は、次のクエリを再実行して特定の情報を取得できます。  
+ たとえば、実行時に取得した情報を使用して、レコード セットのフィルター文字列を指定するとします。 クラスのレコード セットを作成したと仮定`CStudentSet`前: と呼ばれる`rsStudents`— 受講者情報の特定の種類のクエリを再実行したいとします。  
   
 ```  
 // Set up a filter string with   
@@ -174,12 +176,12 @@ if( !rsStudents.Requery( ) )
     return FALSE;  
 ```  
   
- これにより、レコードセットには、実行時にパラメーターによって指定されたフィルター条件に合致するレコードだけが格納されます。  この場合、レコードセットには上級生のレコードだけが格納されます。  
+ レコード セットには、そのレコードが、フィルターは、実行時パラメーターから構築されたで指定された条件を満たしている受講者にレコードが含まれています。 ここでは、レコード セットには、すべてのスキルの限られた生徒のレコードが含まれています。  
   
 > [!NOTE]
->  必要に応じて、[SetParamNull](../Topic/CRecordset::SetParamNull.md) を使用して、パラメーター データ メンバーの値を Null に設定することもできます。  パラメーター データ メンバーの値が NULL かどうかを調べるには [IsFieldNull](../Topic/CRecordset::IsFieldNull.md) を使います。  
+>  Null の場合にパラメーター データ メンバーの値を設定するには、必要な場合を使用して[SetParamNull](../../mfc/reference/crecordset-class.md#setparamnull)です。 パラメーター データ メンバーが Null の場合であるかどうかをチェックすることが同様を使用して[調べる](../../mfc/reference/crecordset-class.md#isfieldnull)です。  
   
-## 参照  
- [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md)   
- [レコードセット: レコードの追加、更新、削除 \(ODBC\)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)   
- [レコードセット: レコード選択のしくみ \(ODBC\)](../Topic/Recordset:%20How%20Recordsets%20Select%20Records%20\(ODBC\).md)
+## <a name="see-also"></a>関連項目  
+ [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
+ [レコード セット: 追加、更新、および削除 (Odbc)](../../data/odbc/recordset-adding-updating-and-deleting-records-odbc.md)   
+ [レコードセット: レコード選択のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-select-records-odbc.md)

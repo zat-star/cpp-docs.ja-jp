@@ -1,62 +1,61 @@
 ---
-title: "/DYNAMICBASE (ASLR (Address Space Layout Randomization) の使用) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.RandomizedBaseAddress"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DYNAMICBASE リンカー オプション"
-  - "DYNAMICBASE リンカー オプション"
-  - "-DYNAMICBASE リンカー オプション"
+title: "-DYNAMICBASE (使用するアドレス領域のレイアウトのランダム化) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VC.Project.VCLinkerTool.RandomizedBaseAddress
+dev_langs: C++
+helpviewer_keywords:
+- -DYNAMICBASE linker option
+- /DYNAMICBASE linker option
+- DYNAMICBASE linker option
 ms.assetid: 6c0ced8e-fe9c-4b63-b956-eb8a55fbceb2
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 2bce480d906210ebd8eb597902c7f1aac855c6ad
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /DYNAMICBASE (ASLR (Address Space Layout Randomization) の使用)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[windowsver](../Token/windowsver_md.md)] の ASLR \(Address Space Layout Randomization\) 機能を使用してロード時にランダムに再ベースできる実行可能イメージを生成するかどうかを指定します。  
+# <a name="dynamicbase-use-address-space-layout-randomization"></a>/DYNAMICBASE (ASLR (Address Space Layout Randomization) の使用)
+ランダムにリベースできる負荷時の address space layout randomization (機能) 機能を使用して、実行可能イメージを生成するかどうかを示す[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /DYNAMICBASE[:NO]  
 ```  
   
-## 解説  
- 既定では、\/DYNAMICBASE が有効になっています。  
+## <a name="remarks"></a>コメント  
+ 既定では、/DYNAMICBASE しています  
   
- このオプションは、ロード時にアプリケーションをランダムに再ベースするかどうかを示すように実行可能ファイルのヘッダーを変更します。  
+ このオプションは、アプリケーションが読み込み時にランダムに再配置するかどうかを示すために実行可能ファイルのヘッダーを変更します。  
   
- ASLR 機能は [!INCLUDE[windowsver](../Token/windowsver_md.md)] でサポートされています。  
+ アドレス空間のレイアウトのランダム化はサポートされて[!INCLUDE[windowsver](../../build/reference/includes/windowsver_md.md)]です。  
   
-### このリンカー オプションを Visual Studio で設定するには  
+### <a name="to-set-this-linker-option-in-visual-studio"></a>このリンカー オプションを Visual Studio で設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[構成プロパティ\]** ノードを展開します。  
+2.  展開して、**構成プロパティ**ノード。  
   
-3.  **\[リンカー\]** ノードを展開します。  
+3.  展開して、**リンカー**ノード。  
   
-4.  **\[詳細\]** プロパティ ページをクリックします。  
+4.  選択、**詳細**プロパティ ページ。  
   
-5.  **\[ランダム化されたベース アドレス\]** プロパティを変更します。  
+5.  変更、**のベース アドレスのランダム化された**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.RandomizedBaseAddress%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

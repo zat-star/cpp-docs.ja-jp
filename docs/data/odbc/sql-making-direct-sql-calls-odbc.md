@@ -1,47 +1,47 @@
 ---
-title: "SQL: SQL の直接呼び出し (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "直接呼び出し (ODBC から SQL を)"
-  - "ODBC, SQL 呼び出し"
-  - "SQL 呼び出し"
-  - "SQL, 呼び出し (ODBC から直接に)"
-  - "SQL, 直接呼び出し (ODBC からの)"
+title: "SQL: 直接 SQL 呼び出し (ODBC) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- SQL, direct calls from ODBC
+- SQL, calling directly from ODBC
+- ODBC, SQL calls
+- SQL calls
+- direct SQL calls from ODBC
 ms.assetid: 091988d2-f5a5-4c2d-aa09-8779a9fb9607
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: cac2844c64bf2157a9984a29b8885434eb07b811
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# SQL: SQL の直接呼び出し (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="sql-making-direct-sql-calls-odbc"></a>SQL: SQL の直接呼び出し (ODBC)
 このトピックでは、次の内容について説明します。  
   
--   SQL を直接呼び出す場合  
+-   SQL の直接を使用するときに呼び出されます。  
   
--   [SQL 関数を直接呼び出す方法](#_core_making_direct_sql_function_calls)  
+-   [データ ソースへの呼び出し方法を行う SQL を直接](#_core_making_direct_sql_function_calls)です。  
   
 > [!NOTE]
->  この内容は、MFC ODBC クラスに該当します。  MFC DAO クラスを使用している場合は、DAO ヘルプの「Comparison of Microsoft Jet Database Engine SQL and ANSI SQL」を参照してください。  
+>  この情報は、MFC ODBC クラスに適用されます。 MFC DAO クラスを使用する場合は、"比較の Microsoft Jet データベース エンジン SQL と ANSI SQL"DAO ヘルプのトピックを参照してください。  
   
-##  <a name="_core_when_to_call_sql_directly"></a> SQL を直接呼び出す場合  
- テーブルの新規作成、削除、変更、インデックスの作成など、[データ ソース \(ODBC\)](../../data/odbc/data-source-odbc.md)のスキーマを変更するような SQL 関数を利用するときは、DDL \(Database Definition Language\) を使って、SQL ステートメントを直接データ ソースに発行します。  ウィザードを使ってレコードセットを作成すると、レコードセットに含める列をアプリケーションのデザイン時に指定できます。  ただし、この方法では、アプリケーションの作成後にテーブルに追加された列にアクセスできません。  データベース クラスでは DDL が直接サポートされていませんが、新しく追加された列をレコードセットに動的に \(プログラム実行時に\) 結び付ける方法があります。  このバインディングを行う方法については、「[レコードセット: データ列を動的に結びつける方法 \(ODBC\)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)」を参照してください。  
+##  <a name="_core_when_to_call_sql_directly"></a>SQL を直接呼び出すときに  
+ 新しいテーブルを作成する (削除) のテーブルを削除、既存のテーブルを変更、インデックスを作成および変更を他の SQL 関数を実行、[データ ソース (ODBC)](../../data/odbc/data-source-odbc.md)スキーマ、データベースを使用してデータ ソースに直接 SQL ステートメントを実行する必要があります定義言語 (DDL) です。 (デザイン時)、テーブルのレコード セットを作成するウィザードを使用する場合は、レコード セットを表すテーブルの列を選択できます。 や他のユーザー データ ソースの追加列をテーブルに、後で、プログラムがコンパイルされた後にこれはできません。 データベース クラスは、直接サポートしていない DDL が実行時に動的に、レコード セットに新しい列をバインドするコードを記述することもできます。 このバインディングを行う方法については、次を参照してください。[レコード セット: 動的にバインディングのデータ列 (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)です。  
   
- DBMS 自体を使ってスキーマを更新することも、DDL 関数を実行するツールを使用することもできます。  ODBC 関数を呼び出して SQL ステートメントを送ることもできます。この場合は、レコードを返さない定義済みクエリ \(ストアド プロシージャ\) などを呼び出すことができます。  
+ DBMS 自体を使用するには、スキーマ、または DDL 関数を実行できるようにする別のツールを変更します。 レコードを返さない定義済みクエリ (ストアド プロシージャ) を呼び出すなどの SQL ステートメントを送信するための ODBC 関数呼び出しを使用することもできます。  
   
-##  <a name="_core_making_direct_sql_function_calls"></a> SQL 関数を直接呼び出す方法  
- [CDatabase クラス](../../mfc/reference/cdatabase-class.md) オブジェクトを使って SQL を直接呼び出すことができます。  SQL ステートメント文字列 \(通常は `CString`\) を作成し、この文字列を `CDatabase` オブジェクトのメンバー関数 [CDatabase::ExecuteSQL](../Topic/CDatabase::ExecuteSQL.md) に渡します。  ODBC 関数を呼び出して SQL ステートメントを送ると、通常レコードを返すステートメントであってもレコードは無視されます。  
+##  <a name="_core_making_direct_sql_function_calls"></a>SQL 関数の呼び出しを直接  
+ SQL 呼び出しを使用して、直接実行できる、 [CDatabase クラス](../../mfc/reference/cdatabase-class.md)オブジェクト。 SQL ステートメントの文字列を設定 (通常の`CString`) に渡すと、 [:executesql](../../mfc/reference/cdatabase-class.md#executesql)のメンバー関数、`CDatabase`オブジェクト。 通常のレコードを返す SQL ステートメントを送信する ODBC 関数呼び出しを使用する場合、レコードは無視されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [SQL](../../data/odbc/sql.md)

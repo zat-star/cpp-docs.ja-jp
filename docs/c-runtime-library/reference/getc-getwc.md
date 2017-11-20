@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - getwc
 - _gettchar
 - getc
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - characters, reading
 - _gettc function
@@ -41,30 +39,15 @@ helpviewer_keywords:
 - getwc function
 - gettc function
 ms.assetid: 354ef514-d0c7-404b-92f5-995f6a834bb3
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 9c49c803ade49a5434599690902856fd1f76d742
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 78a94d954631dfffbdcdc4bcad252599c673f44b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="getc-getwc"></a>getc、getwc
 ストリームから単一の文字を読み取ります。  
@@ -85,7 +68,7 @@ wint_t getwc(
  入力ストリーム。  
   
 ## <a name="return-value"></a>戻り値  
- 読み取られた文字を返します。 読み取りエラーまたはファイルの終端状態を示すために、`getc` は `EOF` を返し、`getwc` は `WEOF` を返します。 `getc` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`getc` と `getwc` によって無効なパラメーター ハンドラーが呼び出されます。 これらの関数を返すかどうかは、引き続き実行が許可された、 `EOF` (または`WEOF`用`getwc`) 設定と`errno`に`EINVAL`です。  
+ 読み取られた文字を返します。 読み取りエラーまたはファイルの終端状態を示すために、`getc` は `EOF` を返し、`getwc` は `WEOF` を返します。 `getc` の場合、`ferror` または `feof` を使用して、エラーまたはファイルの終端を確認します。 `stream` が `NULL` の場合は、「[パラメーターの検証](../../c-runtime-library/parameter-validation.md)」に説明されているように、`getc` と `getwc` によって無効なパラメーター ハンドラーが呼び出されます。 これらの関数を返すかどうかは、引き続き実行が許可された、 `EOF` (または`WEOF`の`getwc`) 設定と`errno`に`EINVAL`です。  
   
  エラー コードの詳細については、「[_doserrno、errno、_sys_errlist、_sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」をご覧ください。  
   

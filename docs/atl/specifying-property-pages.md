@@ -1,50 +1,50 @@
 ---
-title: "プロパティ ページの指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ISpecifyPropertyPages"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ISpecifyPropertyPages メソッド"
-  - "プロパティ ページ, 指定"
+title: "プロパティ ページ (ATL) を指定する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ISpecifyPropertyPages
+dev_langs: C++
+helpviewer_keywords:
+- ISpecifyPropertyPages method
+- property pages, specifying
 ms.assetid: ee8678cf-c708-49ab-b0ad-fc2db31f1ac3
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a4519bee0d1f9c5e433114f12a6568bde6b8c4fb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロパティ ページの指定
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ActiveX コントロールを作成する場合、通常、コントロールのプロパティを設定するために使用できるプロパティ ページに関連する必要があります。  コントロールのコンテナーは検索するために、コントロールのプロパティを設定するには、プロパティ ページを使用できる **ISpecifyPropertyPages** のインターフェイスを使用します。  コントロールのこのインターフェイスを実装する必要があります。  
+# <a name="specifying-property-pages"></a>プロパティ ページを指定します。
+ActiveX コントロールを作成するときに多くの場合に、コントロールのプロパティを設定するために使用するプロパティ ページに関連付けます。 コンテナーの使用を制御する、 **ISpecifyPropertyPages**インターフェイスについては、コントロールのプロパティを設定するプロパティ ページを使用できます。 コントロールにこのインターフェイスを実装する必要があります。  
   
- ATL を使用して **ISpecifyPropertyPages** を実装するには、次の手順を実行する:  
+ 実装する**ISpecifyPropertyPages** ATL を使用して、次の手順を実行します。  
   
-1.  [ISpecifyPropertyPagesImpl](../Topic/ISpecifyPropertyPagesImpl%20Class.md)からクラスを派生します。  
+1.  クラスを派生[ISpecifyPropertyPagesImpl](../atl/reference/ispecifypropertypagesimpl-class.md)です。  
   
-2.  クラスの COM マップに **ISpecifyPropertyPages** のエントリを追加します。  
+2.  エントリを追加**ISpecifyPropertyPages**クラスの COM マップにします。  
   
-3.  は、コントロールに関連付けられている各ページのプロパティ マップに [PROP\_PAGE](../Topic/PROP_PAGE.md) のエントリを追加します。  
+3.  追加、 [PROP_PAGE](reference/property-map-macros.md#prop_page)コントロールに関連付けられている各ページのプロパティ マップへのエントリ。  
   
 > [!NOTE]
->  標準コントロールを [&#91;ATL コントロール ウィザード&#93;](../atl/reference/atl-control-wizard.md)を使用して生成した場合、プロパティ `PROP_PAGE` マップにエントリを追加する場合にのみ必要があります。  ウィザードは、他の手順を行うために必要なコードが生成されます。  
+>  標準コントロールを使用して、生成するときに、 [ATL コントロール ウィザード](../atl/reference/atl-control-wizard.md)、のみを追加する必要が、`PROP_PAGE`プロパティ マップのエントリ。 ウィザードでは、必要な手順については、その他のコードを生成します。  
   
- 行儀は、コンテナーはプロパティの `PROP_PAGE` のエントリに対応するのと同じ順序で、指定したプロパティ ページを表示します。  通常は、ユーザーがコントロールと特定のページが最初に表示されるように、プロパティ マップに、カスタム ページのエントリの後に標準のプロパティ ページのエントリを設定する必要があります。  
+ 正常なコンテナーと同じ順序で指定のプロパティ ページが表示されます、`PROP_PAGE`プロパティ マップのエントリ。 一般に、ユーザーが最初に、コントロールに固有のページを参照しているためは、マップでは、プロパティ、カスタム ページのエントリ後に標準のプロパティ ページのエントリを配置する必要があります。  
   
-## 例  
- Calendar コントロールの次のクラスは、プロパティがカスタム日付のページと標準色のページを使用して設定できることをコンテナーに通知するために **ISpecifyPropertyPages** のインターフェイスを使用します。  
+## <a name="example"></a>例  
+ 予定表の次のクラスが使用を制御、 **ISpecifyPropertyPages**インターフェイスへのカスタムの日付 ページおよびストックの色 ページを使用してそのプロパティを設定できるコンテナーを通知します。  
   
- [!code-cpp[NVC_ATL_Windowing#72](../atl/codesnippet/CPP/specifying-property-pages_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#72](../atl/codesnippet/cpp/specifying-property-pages_1.h)]  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロパティ ページ](../atl/atl-com-property-pages.md)   
- [ATLPages サンプル](../top/visual-cpp-samples.md)
+ [例](../visual-cpp-samples.md)
+

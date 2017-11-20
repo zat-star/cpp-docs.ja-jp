@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,41 +12,24 @@ f1_keywords:
 - ATLUTIL/ATL::IWorkerThreadClient
 - ATLUTIL/ATL::CloseHandle
 - ATLUTIL/ATL::Execute
-dev_langs:
-- C++
-helpviewer_keywords:
-- IWorkerThreadClient interface
+dev_langs: C++
+helpviewer_keywords: IWorkerThreadClient interface
 ms.assetid: 56f4a2f5-007e-4a33-9e20-05187629f715
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 2127d13dc11edb353ef27396f3457dd9abdc4a99
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: cc456cd9b210a4dba9046937a8099b2db6b97470
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="iworkerthreadclient-interface"></a>IWorkerThreadClient インターフェイス
 `IWorkerThreadClient`クライアントによって実装されるインターフェイスは、[使用](../../atl/reference/cworkerthread-class.md)クラスです。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -65,7 +47,7 @@ __interface IWorkerThreadClient
 |[実行します。](#execute)|このオブジェクトに関連付けられたハンドルがシグナル状態にコードを実行するには、このメソッドを実装します。|  
   
 ## <a name="remarks"></a>コメント  
- シグナル状態になるハンドルへの応答のワーカー スレッド上で実行する必要があるコードがあるときは、このインターフェイスを実装します。  
+ シグナル状態になるハンドルへの応答でワーカー スレッドで実行する必要があるコードがある場合は、このインターフェイスを実装します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlutil.h  
@@ -82,15 +64,15 @@ HRESULT CloseHandle(HANDLE  hHandle);
  終了するハンドル。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、または失敗に関するエラーの hresult 値に S_OK を返します。  
+ 成功した場合、またはエラー発生時にエラーの hresult 値に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- このメソッドに渡されるハンドルがへの呼び出しで既にこのオブジェクトとの関連付けられている[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)します。  
+ このメソッドに渡されたハンドルはへの呼び出しによって、このオブジェクトに以前関連付けられていた[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)です。  
   
 ### <a name="example"></a>例  
- 次のコードの単純な実装を示しています。`IWorkerThreadClient::CloseHandle`します。  
+ 次のコードは、の簡単な実装を示しています。`IWorkerThreadClient::CloseHandle`です。  
   
- [!code-cpp[NVC_ATL_Utilities #&135;](../../atl/codesnippet/cpp/iworkerthreadclient-interface_1.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#135](../../atl/codesnippet/cpp/iworkerthreadclient-interface_1.cpp)]  
   
 ##  <a name="execute"></a>IWorkerThreadClient::Execute  
  このオブジェクトに関連付けられたハンドルがシグナル状態にコードを実行するには、このメソッドを実装します。  
@@ -104,20 +86,19 @@ HRESULT Execute(DWORD_PTR dwParam, HANDLE hObject);
  ユーザーのパラメーターです。  
   
  `hObject`  
- このハンドルは、シグナル状態になっています。  
+ シグナル状態になるハンドルです。  
   
 ### <a name="return-value"></a>戻り値  
- 成功した場合、または失敗に関するエラーの hresult 値に S_OK を返します。  
+ 成功した場合、またはエラー発生時にエラーの hresult 値に S_OK を返します。  
   
 ### <a name="remarks"></a>コメント  
- ハンドルおよび DWORD/へのポインターのこのメソッドに渡される以前に関連付けられていたこのオブジェクトへの呼び出しによって[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)します。  
+ このメソッドに渡される DWORD/ポインター、ハンドルされたへの呼び出しでこのオブジェクトに既に関連付け[CWorkerThread::AddHandle](../../atl/reference/cworkerthread-class.md#addhandle)です。  
   
 ### <a name="example"></a>例  
- 次のコードの単純な実装を示しています。`IWorkerThreadClient::Execute`します。  
+ 次のコードは、の簡単な実装を示しています。`IWorkerThreadClient::Execute`です。  
   
- [!code-cpp[NVC_ATL_Utilities #&136;](../../atl/codesnippet/cpp/iworkerthreadclient-interface_2.cpp)]  
+ [!code-cpp[NVC_ATL_Utilities#136](../../atl/codesnippet/cpp/iworkerthreadclient-interface_2.cpp)]  
   
 ## <a name="see-also"></a>関連項目  
  [クラス](../../atl/reference/atl-classes.md)   
- [クラスの使用](../../atl/reference/cworkerthread-class.md)
-
+ [CWorkerThread クラス](../../atl/reference/cworkerthread-class.md)

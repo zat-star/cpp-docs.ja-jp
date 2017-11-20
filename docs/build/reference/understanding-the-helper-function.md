@@ -1,68 +1,68 @@
 ---
-title: "ヘルパー関数について | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__delayLoadHelper 関数"
-  - "__delayLoadHelper2 関数"
-  - "遅延読み込み (DLL を), ヘルパー関数"
-  - "delayhlp.cpp"
-  - "delayimp.h"
-  - "delayimp.lib"
-  - "ヘルパー関数"
+title: "ヘルパー関数について |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- delayed loading of DLLs, helper function
+- __delayLoadHelper2 function
+- delayimp.lib
+- __delayLoadHelper function
+- delayhlp.cpp
+- delayimp.h
+- helper functions
 ms.assetid: 6279c12c-d908-4967-b0b3-cabfc3e91d3d
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 7b8604c90c4af46d98c3d9da72899670e86ca154
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ヘルパー関数について
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-実行時に DLL を実際に読み込むのは、リンカーがサポートする遅延読み込み用のヘルパー関数です。  ヘルパー関数の動作をカスタマイズするには、Delayimp.lib で提供されているヘルパー関数を使用する代わりに、独自の関数を作成し、プログラムにリンクします。  1 つのヘルパー関数で、すべての遅延読み込み DLL を処理できます。  
+# <a name="understanding-the-helper-function"></a>ヘルパー関数について
+リンカーでサポートされているに遅延読み込み用のヘルパー関数は、実行時に DLL を実際に読み込むです。 独自の関数を作成し、Delayimp.lib で提供されているヘルパー関数を使用する代わりに、プログラムにリンクすることでその動作をカスタマイズするヘルパー関数を変更できます。 1 つのヘルパー関数では、すべての遅延読み込み Dll は機能します。  
   
- 独自のヘルパー関数を作成すると、DLL またはインポートの名前に基づいて特定の処理を実行できます。  
+ DLL またはインポートの名前に基づく特定の処理を実行する場合は、ヘルパー関数のバージョンを提供できます。  
   
- ヘルパー関数は以下の処理を行います。  
+ ヘルパー関数では、次の操作を実行します。  
   
--   格納されているライブラリ ハンドルを調べて、ライブラリが読み込み済みかどうかを確認します。  
+-   あるかどうかは、既に読み込まれているを参照してください。 ライブラリに格納されたハンドルを確認します。  
   
--   **LoadLibrary** を呼び出して、DLL を読み込みます。  
+-   呼び出し**LoadLibrary** DLL の読み込みを試行するには  
   
--   **GetProcAddress** を呼び出して、プロシージャのアドレスを取得します。  
+-   呼び出し**GetProcAddress**プロシージャのアドレスの取得を試行するには  
   
--   遅延インポート読み込みサンクに制御を返して、現在読み込まれているエントリ ポイントを呼び出します。  
+-   遅延インポートを返します。 読み込みを今すぐに読み込まれたエントリ ポイントを呼び出すサンク  
   
- ヘルパー関数は、以下の時点で、プログラムの通知フックにコールバックできます。  
+ ヘルパー関数は、次の操作のたびに、プログラムで通知フックをコールバックできます。  
   
--   ヘルパー関数が起動したとき  
+-   再起動すると、ヘルパー関数  
   
--   ヘルパー関数から **LoadLibrary** を呼び出す直前  
+-   直前に**LoadLibrary**ヘルパー関数で呼び出されます  
   
--   ヘルパー関数から **GetProcAddress** を呼び出す直前  
+-   直前に**GetProcAddress**ヘルパー関数で呼び出されます  
   
--   ヘルパー関数から **LoadLibrary** への呼び出しが失敗した場合  
+-   場合に呼び出し**LoadLibrary**ヘルパー関数に失敗しました  
   
--   ヘルパー関数から **GetProcAddress** への呼び出しが失敗した場合  
+-   場合に呼び出し**GetProcAddress**ヘルパー関数に失敗しました  
   
--   ヘルパー関数の処理が終了した後  
+-   ヘルパーした後で、関数が行われる処理  
   
- これらの各フック ポイントでは、ヘルパー ルーチンの通常の処理を変更する値を返すことができます。ただし、遅延インポート読み込みサンクへ戻る処理は変更できません。  
+ これらの各フック ポイント遅延インポート ロード サンクを返す以外の何らかの形でヘルパー ルーチンの通常の処理を変更する値を返すことができます。  
   
- 既定のヘルパー コードは、vc\\include フォルダーの Delayhlp.cpp と Delayimp.h にあり、vc\\lib フォルダーの Delayimp.lib にコンパイルされています。  独自のヘルパー関数を作成しない場合は、コンパイル時にこのライブラリをインクルードする必要があります。  
+ 既定のヘルパー コードできます Delayhlp.cpp および Delayimp.h (に vc\include) あり vc\lib) の「Delayimp.lib でコンパイルされています。 独自のヘルパー関数を記述しない限り、コンパイル時にこのライブラリをインクルードする必要があります。  
   
- ヘルパー関数の詳細については、次のトピックを参照してください。  
+ 次のトピックでは、ヘルパー関数について説明します。  
   
--   [Visual C\+\+ 6.0 以降の DLL 遅延読み込みヘルパー関数の変更点](../../build/reference/changes-in-the-dll-delayed-loading-helper-function-since-visual-cpp-6-0.md)  
+-   [Visual C++ 6.0 以降の DLL 遅延読み込みヘルパー関数の変更点](../../build/reference/changes-in-the-dll-delayed-loading-helper-function-since-visual-cpp-6-0.md)  
   
 -   [呼び出し規約、パラメーター、および戻り値の型](../../build/reference/calling-conventions-parameters-and-return-type.md)  
   
@@ -72,5 +72,5 @@ caps.handback.revision: 8
   
 -   [遅延読み込みした DLL のアンロード](../../build/reference/explicitly-unloading-a-delay-loaded-dll.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカーによる DLL の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)

@@ -1,50 +1,48 @@
 ---
-title: "方法: カスタム ツールをプロジェクト プロパティに統合する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "msbuild.cpp.howto.integratecustomtools"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "msbuild (c++), 方法: カスタム ビルド ツールを統合する"
+title: "方法: プロジェクトのプロパティにカスタム ツールを統合 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 04/27/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: msbuild.cpp.howto.integratecustomtools
+dev_langs: C++
+helpviewer_keywords: 'msbuild (c++), howto: integrate custom tools'
 ms.assetid: f32d91a4-44e9-4de3-aa9a-1c7f709ad2ee
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 128b19c1175fb5f39599a9ccaeae66d1fc53fdab
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: カスタム ツールをプロジェクト プロパティに統合する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-基になる XML スキーマ ファイルを作成すると、Visual Studio の **\[プロパティ ページ\]** ウィンドウにカスタム ツール オプションを追加できます。  
+# <a name="how-to-integrate-custom-tools-into-the-project-properties"></a>方法: カスタム ツールをプロジェクト プロパティに統合する
+カスタム ツールのオプションを追加するには、Visual Studio に**プロパティ ページ**ウィンドウでは、基になる XML スキーマ ファイルを作成します。  
   
- **\[プロパティ ページ\]** ウィンドウの **\[構成プロパティ\]** セクションに、*規則*という設定グループが表示されます。  すべての規則には、ツールまたは機能のグループの設定が含まれます。  たとえば、**リンカー**規則には、リンカー ツールの設定が含まれます。  規則の設定は、*カテゴリ*に細分化できます。  
+ **構成プロパティ**のセクションで、**プロパティ ページ**ウィンドウとして知られている設定グループを表示する*ルール*です。 すべてのルールには、ツールまたは機能のグループの設定が含まれています。 たとえば、**リンカー**ルールには、リンカー ツールの設定が含まれています。 ルールの設定に分割できます*カテゴリ*です。  
   
- このドキュメントでは、カスタム ツールのプロパティを含む設定ディレクトリにファイルを作成して、Visual Studio が起動するときにそのプロパティが読み込まれるようにする方法を説明します。  ファイルを変更する方法の詳細については、Visual Studio の [プラットフォームの Extensibilty のパート２](http://go.microsoft.com/fwlink/?LinkID=191489) プロジェクト チーム ブログの投稿"を参照してください。  
+ このドキュメントでは、Visual Studio の起動時に、プロパティが読み込まれるように、カスタム ツールのプロパティを含むセット ディレクトリにファイルを作成する方法について説明します。 ファイルを変更する方法については、次を参照してください。[プラットフォーム機能拡張の第 2 部](http://go.microsoft.com/fwlink/?LinkID=191489)Visual Studio プロジェクトのチームのブログです。  
   
-### プロジェクト プロパティを追加または変更するには  
+### <a name="to-add-or-change-project-properties"></a>プロジェクトのプロパティを追加または変更  
   
-1.  XML エディターで XML ファイルを作成します。  
+1.  XML エディターでは、XML ファイルを作成します。  
   
-2.  そのファイルを %ProgramFiles%\\MSBuild\\Microsoft.Cpp\\v4.0\\ フォルダーに保存します。  **\[プロパティ ページ\]** ウィンドウのすべての規則は、このフォルダーの XML ファイルによって表現されます。  ファイルの名前がフォルダー内で一意であることを確認します。  
+2.  Visual Studio 2017 でファイルを保存`VCTargets\1033`フォルダーです。 インストールされている Visual Studio 2017 の各エディションと言語ごとに異なるパスがあります。 たとえば、Visual Studio Enterprise edition の英語でフォルダー パスは`%ProgramFiles%\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\1033`します。 言語および Visual Studio のエディションのパスを調整します。 内のすべてのルール、**プロパティ ページ**ウィンドウは、このフォルダーに XML ファイルで表されます。 フォルダー内のファイルの名前は一意にすることを確認します。  
   
-3.  %ProgramFiles%\\MSBuild\\Microsoft.Cpp\\v4.0\\cl.xml の内容をコピーし、変更を保存しないでファイルを閉じ、その内容を新しい XML ファイルに貼り付けます。  任意のXML スキーマ ファイルを使用できます。これは、テンプレートから起動するために使用できる方法の 1 つの例に過ぎません。  
+3.  内容をコピー`%ProgramFiles%\Microsoft Visual Studio\2017\<VS Edition>\Common7\IDE\VC\VCTargets\<LCID>\cl.xml`変更を保存せずに閉じたり、および新しい XML ファイルの内容を貼り付けます。 任意の XML スキーマ ファイルを使用することができます - これは、テンプレートを使用して開始するために使用できる機能を 1 つ。  
   
-4.  新しい XML ファイルで、必要に応じて内容を変更します。  ファイルの上部で **Rule Name** および **Rule.DisplayName** を変更します。  
+4.  新しい XML ファイルでは、ニーズに合わせてコンテンツを変更します。 変更することを確認、**ルール名**と**Rule.DisplayName**ファイルの上部にあります。  
   
-5.  変更を保存してファイルを閉じます。  
+5.  変更を保存し、ファイルを閉じます。  
   
-6.  Visual Studio が開始するとき、%ProgramFiles%\\MSBuild\\Microsoft.Cpp\\v4.0\\ の XML ファイルが読み込まれます。  したがって、新しいファイルをテストするには、Visual Studio を再起動します。  
+6.  ファイルを XML`%ProgramFiles%\Microsoft Visual Studio\2017\<VS Edition>\Common7\IDE\VC\VCTargets\<LCID>`は、Visual Studio の起動時に読み込まれます。 そのため、新しいファイルをテストするには、Visual Studio を再起動します。  
   
-7.  **ソリューション エクスプローラー**で、プロジェクトを右クリックし、**\[プロパティ\]** をクリックします。  **\[プロパティ ページ\]** ウィンドウの左ペインで、新しいコードと自分の規則の名前があることを確認します。  
+7.  **ソリューション エクスプ ローラー**、プロジェクトを右クリックし、クリックして**プロパティ**です。 **プロパティ ページ**ウィンドウの左側のウィンドウで、ルールの名前を持つ新しいノードがあることを確認してください。  
   
-## 参照  
- [MSBuild \(Visual C\+\+\)](../Topic/MSBuild%20\(Visual%20C++\).md)
+## <a name="see-also"></a>関連項目  
+ [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

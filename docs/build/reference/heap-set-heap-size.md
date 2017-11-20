@@ -1,63 +1,63 @@
 ---
-title: "/HEAP (ヒープ サイズの設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.HeapCommitSize"
-  - "/heap"
-  - "VC.Project.VCLinkerTool.HeapReserveSize"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/HEAP リンカー オプション"
-  - "ヒープ割り当て, 設定 (ヒープ サイズを)"
-  - "HEAP リンカー オプション"
-  - "-HEAP リンカー オプション"
+title: "-HEAP (ヒープ サイズの設定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.HeapCommitSize
+- /heap
+- VC.Project.VCLinkerTool.HeapReserveSize
+dev_langs: C++
+helpviewer_keywords:
+- -HEAP linker option
+- heap allocation, setting heap size
+- /HEAP linker option
+- HEAP linker option
 ms.assetid: a3f71927-7f1d-492c-9fdb-dfccb1a043da
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 702b8dfa6561d79f8ea9bf496e9652f89c8d34f5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /HEAP (ヒープ サイズの設定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="heap-set-heap-size"></a>/HEAP (ヒープ サイズの設定)
 ```  
 /HEAP:reserve[,commit]  
 ```  
   
-## 解説  
- \/HEAP オプションでは、ヒープ サイズをバイト単位で設定します。  このオプションは、.exe ファイルのビルドだけに使用します。  
+## <a name="remarks"></a>コメント  
+ /HEAP オプションは、ヒープのサイズをバイト単位で設定します。 このオプションは、.exe ファイルを作成するときにのみで使用します。  
   
- 引数 *reserve* には、仮想メモリのヒープ領域に割り当てる総サイズを指定します。  既定では、ヒープ サイズは 1 MB になります。  指定した値は、4 バイト単位に切り上げられます。  
+ *予約*引数は、仮想メモリの合計ヒープの割り当てを指定します。 既定のヒープ サイズは、1 MB です。 リンカーは、最も近い 4 バイトに指定した値を丸めます。  
   
- 引数 `commit` \(省略可能\) は、オペレーティング システムによって解釈が異なります。  Windows NT と Windows 2000 では、一度に確保する物理メモリ量です。  仮想メモリがコミットされると、ページング ファイル内にメモリ空間が予約されます。  `commit` の値を大きく設定すると、アプリケーションでさらにヒープ領域が必要になった場合に実行時間を短縮できます。ただし、起動時に必要なメモリ量が増え、起動時間が長くなる場合があります。  
+ 省略可能な`commit`引数は、オペレーティング システムによって解釈される可能性があります。 Windows NT または Windows 2000 では、一度に確保する物理メモリの量を指定します。 仮想メモリがコミットされると、ページング ファイル内にメモリ空間が予約されます。 高い`commit`値は、アプリケーションが複数のヒープ領域を必要がありますが、メモリの量と起動時間が増加時間を節約します。  
   
- 引数 *reserve* と引数 `commit` の値は、10 進表記か C 言語表記で指定します。  
+ 指定して、*予約*と`commit`10 進数または C 言語表記の値。  
   
- この機能は、[HEAPSIZE](../../build/reference/heapsize.md) を使ったモジュール定義ファイルでも使用できます。  
+ この機能を利用し、モジュール定義ファイルにも[HEAPSIZE](../../build/reference/heapsize.md)です。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[システム\] プロパティ ページをクリックします。  
+3.  クリックして、**システム**プロパティ ページ。  
   
-4.  \[ヒープ コミット サイズの設定\] プロパティを変更します。  
+4.  変更、**ヒープ コミット サイズ**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapReserveSize%2A>」および「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.HeapCommitSize%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

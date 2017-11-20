@@ -1,48 +1,47 @@
 ---
-title: "リンカー入力としての .obj ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".obj ファイル (リンカー入力)"
-  - "COFF ファイル"
-  - "LINK ツール [C++], .obj ファイル"
-  - "リンカー [C++], OBJ ファイル (入力)"
-  - "OBJ ファイル (リンカー入力)"
-  - "オブジェクト ファイル, リンカー出力"
-  - "OMF オブジェクト ファイル"
+title: ".リンカー入力としての Obj ファイル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- linker [C++], OBJ files as input
+- object files, linker output
+- OMF object files
+- LINK tool [C++], .obj files
+- COFF files
+- OBJ files as linker input
+- .obj files as linker input
 ms.assetid: 3028e423-8b10-4972-8eb4-6e9ae58f0a26
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: ca8346f9ff29d097450eda4d8bfbfee7f7a3f522
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リンカー入力としての .obj ファイル
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-リンカー ツール \(LINK.EXE\) では、COFF \(Common Object File Format\) の .obj ファイルをリンクできます。  
+# <a name="obj-files-as-linker-input"></a>リンカー入力としての .obj ファイル
+リンカー ツール (リンクします。EXE) のオブジェクト ファイル形式 COFF (Common) は、.obj ファイルを受け入れます。  
   
-## 解説  
- Microsoft では、Common Object File Format を定義するダウンロード可能なドキュメントを提供しています。  詳細について、ダウンロードのリビジョン 8.1 以降。[Microsoft Portable Executable and Common Object File Format の指定](http://go.microsoft.com/fwlink/?LinkId=93292)  
+## <a name="remarks"></a>コメント  
+ Microsoft では、共通のオブジェクト ファイル形式を定義するドキュメントのダウンロードを提供します。 詳細については、8.1 またはそれ以降のバージョンをダウンロード、 [Microsoft ポータブル実行可能ファイルと一般的なオブジェクト ファイル形式の仕様](http://go.microsoft.com/fwlink/?LinkId=93292)です。  
   
-## Unicode のサポート  
- Visual Studio 2005 以降の Microsoft Visual C\+\+ コンパイラでは、ISO\/IEC の C 規格および C\+\+ 規格で定義されている Unicode 文字の識別子がサポートされます。  以前のバージョンのコンパイラでは、ASCII 文字の識別子しかサポートされていませんでした。  コンパイラおよびリンカーでは、Unicode の関数名、クラス名、およびスタティクス名をサポートするために、.obj ファイルの COFF 記号に Unicode UTF\-8 エンコーディングが使用されます。  UTF\-8 エンコーディングは、旧バージョンの Visual Studio で使用されていた ASCII エンコーディングと上位互換性があります。  
+## <a name="unicode-support"></a>Unicode のサポート  
+ Visual Studio 2005 以降では、Microsoft Visual C コンパイラは、ISO/IEC C および C++ 標準で定義された識別子での Unicode 文字をサポートします。 以前のバージョンのコンパイラでは、識別子で ASCII 文字のみをサポートします。 関数、クラス、および静的変数の名前に Unicode をサポートするために、コンパイラとリンカーの Unicode utf-8 エンコードを使用 .obj ファイル内の COFF シンボル。 Utf-8 エンコードは以前のバージョンの Visual Studio によって使用される ASCII エンコーディングと互換性のある upwardly です。  
   
- コンパイラおよびリンカーの詳細については、「[コンパイラおよびリンカーでの Unicode のサポート](../../build/reference/unicode-support-in-the-compiler-and-linker.md)」を参照してください。  Unicode 規格の詳細について、構成を参照します [Unicode](http://go.microsoft.com/fwlink/?LinkId=37123)。  
+ コンパイラとリンカーの詳細については、次を参照してください。[コンパイラおよびリンカーでの Unicode サポート](../../build/reference/unicode-support-in-the-compiler-and-linker.md)です。 Unicode 規格の詳細については、次を参照してください。、 [Unicode](http://go.microsoft.com/fwlink/?LinkId=37123)組織。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [LINK の入力ファイル](../../build/reference/link-input-files.md)   
  [リンカー オプション](../../build/reference/linker-options.md)   
  [Unicode のサポート](../../text/support-for-unicode.md)   
- [コンパイラおよびリンカーでの Unicode のサポート](../../build/reference/unicode-support-in-the-compiler-and-linker.md)   
+ [コンパイラおよびリンカーで Unicode のサポート](../../build/reference/unicode-support-in-the-compiler-and-linker.md)   
  [Unicode 規格](http://go.microsoft.com/fwlink/?LinkId=37123)   
- [Common Object File Format の指定](http://go.microsoft.com/fwlink/?LinkId=93292)
+ [一般的なオブジェクト ファイル形式の仕様](http://go.microsoft.com/fwlink/?LinkId=93292)

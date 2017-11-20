@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -34,8 +33,7 @@ f1_keywords:
 - iswalpha
 - _istalpha_l
 - _iswalpha_l
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _iswalpha_l function
 - _isalpha_l function
@@ -47,30 +45,15 @@ helpviewer_keywords:
 - istalpha function
 - _istalpha function
 ms.assetid: ed6cc2be-c4b0-4475-87ac-bc06d8c23064
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 6e8a0fce6ad16a34a8c6e51d1810fd7116a79e17
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.openlocfilehash: e93b18a5fc29f74ba9ea9fb990d4a7a0715872b3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="isalpha-iswalpha-isalphal-iswalphal"></a>isalpha、iswalpha、_isalpha_l、_iswalpha_l
 整数が英字を表すかどうかを決定します。  
@@ -102,7 +85,7 @@ int _iswalpha_l(
  現在のロケールの代わりに使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` が特定の英字を表している場合は 0 以外の値を返します。 `isalpha`場合は 0 以外の値を返します`c`A - Z または a - z の範囲内がします。 `iswalpha` は、`iswupper`、または `iswlower` が 0 以外の値であるワイド文字の場合にのみ、0 以外の値を返します。つまり、実装定義セットの 1 つのワイド文字であり、その文字に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合です。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` が特定の英字を表している場合は 0 以外の値を返します。 `isalpha`場合は 0 以外の値を返します`c`A - Z または a - z の範囲内にあります。 `iswalpha` は、`iswupper`、または `iswlower` が 0 以外の値であるワイド文字の場合にのみ、0 以外の値を返します。つまり、実装定義セットの 1 つのワイド文字であり、その文字に対して `iswcntrl`、`iswdigit`、`iswpunct`、`iswspace` のすべてが 0 である場合です。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   

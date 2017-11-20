@@ -1,40 +1,40 @@
 ---
-title: "__asm ブロックの C マクロとしての定義 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], C のマクロとして"
-  - "マクロ, __asm ブロック"
-  - "Visual C, マクロ"
+title: "_ _Asm ブロックの C マクロとしての定義 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- macros, __asm blocks
+- Visual C, macros
+- __asm keyword [C++], as C macros
 ms.assetid: 677ba11c-21c8-4609-bba7-cd47312243b0
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 7b2751e966f93b760898b6869ffa684f4fed323c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __asm ブロックの C マクロとしての定義
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="defining-asm-blocks-as-c-macros"></a>__asm ブロックの C マクロとしての定義
+**Microsoft 固有の仕様**  
   
- C のマクロはソース・コードとアセンブリ コードを挿入できる便利な方法を提供しますがマクロが一つの論理行に配置するため特別な注意が必要です。  " " では無料のマクロを作成するには次の規則に従います。:  
+ C マクロ アセンブリ コード、ソース コードに挿入する便利な方法が、マクロが 1 つの論理行に展開するために十分な注意が求められています。 スムーズなマクロを作成するには、これらの規則に従います。  
   
--   中かっこで `__asm` ブロックに記述します。  
+-   囲む、`__asm`中かっこでブロックされます。  
   
--   各アセンブリ命令の前の `__asm` のキーワードを配置します。  
+-   Put、`__asm`各アセンブリ命令の前にキーワード。  
   
--   アセンブリのスタイル `; comment` コメント \(\) または単一行の C のコメント `// comment`\(\) ではなく 15 旧形式の C のコメント `/* comment */`\(\) を使用します。  
+-   旧スタイルの C コメントを使用して ( `/* comment */`) アセンブリ スタイルのコメントではなく ( `; comment`) または C の単一行コメント ( `// comment`)。  
   
- 示すために次の例では単純なマクロを定義したものです :  
+ 理解するには、次の例は、単純なマクロを定義します。  
   
 ```  
 #define PORTIO __asm      \  
@@ -46,23 +46,23 @@ caps.handback.revision: 7
 }  
 ```  
   
- 一見すると`__asm` の最後の 3 回のキーワードは過度な方法です。  がマクロが単一行に配置するためです :  
+ 一見、最後の 3 つ`__asm`キーワードが余分ないないと思われます。 必要であれば、ただし、単一行に、マクロが拡張されているため。  
   
 ```  
 __asm /* Port output */ { __asm mov al, 2  __asm mov dx, 0xD007 __asm out dx, al }  
 ```  
   
- `__asm` の 3 番目と 4 番目のキーワードはステートメントの区切り記号として指定する必要があります。  `__asm` ブロックで認識される唯一のステートメントの区切り記号は`__asm` の改行文字やキーワードです。  マクロで定義されたブロックが 1 台の論理行であるため`__asm` の各命令を区切る必要があります。  
+ 3 番目と 4 番目`__asm`ステートメント区切り記号としてのキーワードが必要です。 唯一のステートメント区切り文字が認識される`__asm`ブロックは、改行文字と`__asm`キーワード。 各命令を区切る必要があります、マクロとして定義されているブロックが 1 つの論理行であるため`__asm`です。  
   
- 中かっこが必要です。  これらを省略するとコンパイラはマクロ呼び出しの右側にある行 15 ので C または C\+\+ のステートメントとは異なるできます。  右中かっこがあるとコンパイラはアセンブリとアセンブリ命令終了コードとして C または C\+\+ のステートメントの後 `__asm` ブロック内に表示したかを通知することはできません。  
+ 中かっこは、同様に不可欠です。 これらを省略する場合、コンパイラはマクロ呼び出しの右側に同じ行の C または C++ ステートメントによって混同しないでくださいことができます。 コンパイラは、終わりかっこなしアセンブリ コードが停止して、その区別できません C または C++ ステートメントを表示した後、`__asm`アセンブリ命令としてブロックします。  
   
- アセンブリ スタイルは開始行の末尾にセミコロン \(\)**;** 次のコードはコメント アウトします。  これはマクロ内のコンパイラが論理行の末尾まですべて後コメントを無視するため問題が発生します。  これは単一行 15 ので C または C\+\+ のコメント \(`// comment`\) にも当てはまります。  エラーを回避するにはマクロで定義された `__asm` ブロックで 15 旧形式の C のコメント `/* comment */`\(\) を使用します。  
+ セミコロンで始まるアセンブリ スタイルのコメント (**;**)、行の末尾まで続行します。 コンパイラは論理行の末尾まで、コメントの後にすべてのものを無視するためのマクロの問題が発生します。 単一行の C または C++ のコメントの場合も同様です ( `// comment`)。 エラーを回避するのに旧スタイルの C のコメントを使用して ( `/* comment */`) で`__asm`マクロとして定義されているブロックです。  
   
- C. マクロとして記述 `__asm` ブロックに引数を受け取ることができます。  ただし通常の C のマクロとは異なり `__asm` マクロは値を返すことができません。  つまりC または C\+\+ の式にこれらのマクロを使用できません。  
+ `__asm`ブロックの C マクロが引数を受け取らないように書き込まれます。 通常 C マクロ、ただしとは異なり、`__asm`マクロが値を返すことはできません。 C または C++ の式でこのようなマクロは使用できません。  
   
- この種類のマクロを差別に起動しないように注意してください。  たとえば`__fastcall` の規約で宣言された関数のアセンブリ言語マクロを呼び出すと予期しない結果になることがあります。  \([登録をインライン アセンブリで使用および管理する](../../assembler/inline/using-and-preserving-registers-in-inline-assembly.md) を参照してください\)。  
+ この型のマクロの呼び出しを無秩序しないように注意します。 インスタンスで宣言された関数で、アセンブリ言語マクロを呼び出し、`__fastcall`規約予期しない結果が発生する可能性があります。 (を参照してください[を使用して、インライン アセンブリでのレジスタの維持](../../assembler/inline/using-and-preserving-registers-in-inline-assembly.md))。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

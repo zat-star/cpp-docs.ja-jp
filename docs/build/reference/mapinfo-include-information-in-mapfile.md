@@ -1,55 +1,55 @@
 ---
-title: "/MAPINFO (マップ ファイルに含める情報) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.MapLines"
-  - "VC.Project.VCLinkerTool.MapInfoFixups"
-  - "VC.Project.VCLinkerTool.MapExports"
-  - "/mapinfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/MAPINFO リンカー オプション"
-  - "MAPINFO リンカー オプション"
-  - "-MAPINFO リンカー オプション"
+title: "-MAPINFO (マップ ファイルに情報を含める) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.MapLines
+- VC.Project.VCLinkerTool.MapInfoFixups
+- VC.Project.VCLinkerTool.MapExports
+- /mapinfo
+dev_langs: C++
+helpviewer_keywords:
+- /MAPINFO linker option
+- MAPINFO linker option
+- -MAPINFO linker option
 ms.assetid: 533d2bce-f9b7-4fea-ae1c-0b4864c9d10b
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 81f85149af6f8774106530d4878679247d66f42e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /MAPINFO (マップ ファイルに含める情報)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapinfo-include-information-in-mapfile"></a>/MAPINFO (マップ ファイルに含める情報)
 ```  
 /MAPINFO:EXPORTS  
 ```  
   
-## 解説  
- \/MAPINFO オプションは、指定された情報をマップ ファイルに含めるようにリンカーに指示します。マップ ファイルは、[\/MAP](../../build/reference/map-generate-mapfile.md) オプションを指定すると作成されます。EXPORTS と指定すると、リンカーはエクスポートされた関数を含めます。  
+## <a name="remarks"></a>コメント  
+ /MAPINFO オプションを指定する場合に作成されたマップ ファイルに指定した情報を含めるようにリンカーに指示、 [/map](../../build/reference/map-generate-mapfile.md)オプション。  エクスポートを使用すると、リンカーは、エクスポートされた関数を含めることです。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[デバッグ\] プロパティ ページをクリックします。  
+3.  クリックして、**デバッグ**プロパティ ページ。  
   
-4.  \[マップファイルのエクスポート\] プロパティを変更します。  
+4.  変更、**マップファイルのエクスポート**プロパティ。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.MapExports%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

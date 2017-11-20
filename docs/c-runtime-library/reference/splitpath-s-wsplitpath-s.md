@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-cpp
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - splitpath_s
 - _splitpath_s
 - wsplitpath_s
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - splitpath_s function
 - pathnames
@@ -39,30 +37,15 @@ helpviewer_keywords:
 - path names
 - wsplitpath_s function
 ms.assetid: 30fff3e2-cd00-4eb6-b5a2-65db79cb688b
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: c4c6803731deba188a4f4dba118b04f626f58564
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: b95813c79efc42ba9d0425ab453628f20d512e23
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="splitpaths-wsplitpaths"></a>_splitpath_s、_wsplitpath_s
 パス名をコンポーネントに分割します。 これらは、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンの [_splitpath、_wsplitpath](../../c-runtime-library/reference/splitpath-wsplitpath.md) です。  
@@ -160,7 +143,7 @@ errno_t _wsplitpath_s(
  バッファーのいずれかが、結果を保持するには短すぎる場合、これらの関数はすべてのバッファーを空の文字列にクリアし、`errno` を `ERANGE` に設定して、`ERANGE` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_splitpath_s` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath_s` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_``wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
+ `_splitpath_s` 関数は、パスを 4 つのコンポーネントに分割します。 `_splitpath_s` は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wsplitpath_s` は `_splitpath_s` のワイド文字バージョンであり、`_wsplitpath_s` の引数はワイド文字列です。 それ以外では、これらの関数の動作は同じです  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   

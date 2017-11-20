@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -15,36 +14,20 @@ f1_keywords:
 - ATLCOM/ATL::CComCoClass::Error
 - ATLCOM/ATL::CComCoClass::GetObjectCLSID
 - ATLCOM/ATL::CComCoClass::GetObjectDescription
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - CComCoClass class
 - aggregation [C++], aggregation models
 ms.assetid: 67cfefa4-8df9-47fa-ad58-2d1a1ae25762
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 967c919bb68890c51be6a0800db90692346e2b7d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 966fe76858d24e47664667c043d88a953be91716
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ccomcoclass-class"></a>CComCoClass クラス
 このクラスは、クラスのインスタンスを作成して、そのプロパティを取得するためのメソッドを提供します。  
@@ -85,7 +68,7 @@ class CComCoClass
   
  これらの既定値のいずれかのクラスの定義で別のマクロを指定することによってオーバーライドできます。 例については、使用する[CComClassFactory2](../../atl/reference/ccomclassfactory2-class.md)の代わりに`CComClassFactory`を指定して、 [DECLARE_CLASSFACTORY2](aggregation-and-class-factory-macros.md#declare_classfactory2)マクロ。  
   
- [!code-cpp[NVC_ATL_COM 2](../../atl/codesnippet/cpp/ccomcoclass-class_1.h)]  
+ [!code-cpp[NVC_ATL_COM#2](../../atl/codesnippet/cpp/ccomcoclass-class_1.h)]  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcom.h  
@@ -112,7 +95,7 @@ static HRESULT CreateInstance(IUnknown* punkOuter, Q** pp);
  [out]作成が成功した場合、要求されたインターフェイス ポインターを受け取るポインター変数のアドレス。  
   
 ### <a name="return-value"></a>戻り値  
- 標準の `HRESULT` 値。 参照してください[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]戻り値の詳細についてはします。  
+ 標準の `HRESULT` 値。 参照してください[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)戻り値の詳細については、Windows SDK に含まれています。  
   
 ### <a name="remarks"></a>コメント  
  この関数の最初のオーバー ロードを使用して、一般的なオブジェクトの作成には作成されるオブジェクトを集計する必要がある場合は、2 番目のオーバー ロードを使用します。  
@@ -126,7 +109,7 @@ static HRESULT CreateInstance(IUnknown* punkOuter, Q** pp);
 ### <a name="example"></a>例  
  次の例では、`CDocument`から ATL ウィザードで生成されたクラスが派生`CComCoClass`を実装する、 **IDocument**インターフェイスです。 クラスは、オブジェクトのマップに、`OBJECT_ENTRY_NON_CREATEABLE_EX_AUTO`マクロ クライアントを使用して、ドキュメントのインスタンスを作成できないように[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。 `CApplication`ドキュメント クラスのインスタンスを作成する独自の COM インターフェイスの 1 つのメソッドを提供するコクラスがします。 簡単な方法は次のコード、ドキュメントを使用してクラスのインスタンスを作成するために、`CreateInstance`から継承されたメンバー、`CComCoClass`基本クラスです。  
   
- [!code-cpp[NVC_ATL_COM #11](../../atl/codesnippet/cpp/ccomcoclass-class_2.cpp)]  
+ [!code-cpp[NVC_ATL_COM#11](../../atl/codesnippet/cpp/ccomcoclass-class_2.cpp)]  
   
 ##  <a name="error"></a>CComCoClass::Error  
  この静的関数、`IErrorInfo`エラー情報をクライアントに提供するインターフェイスです。  
@@ -224,7 +207,7 @@ static LPCTSTR WINAPI GetObjectDescription();
 ### <a name="remarks"></a>コメント  
  既定の実装を返します**NULL**です。 このメソッドをオーバーライドすることができます、 [DECLARE_OBJECT_DESCRIPTION](object-map-macros.md#declare_object_description)マクロです。 例:  
   
- [!code-cpp[NVC_ATL_COM #12](../../atl/codesnippet/cpp/ccomcoclass-class_3.h)]  
+ [!code-cpp[NVC_ATL_COM#12](../../atl/codesnippet/cpp/ccomcoclass-class_3.h)]  
   
  `GetObjectDescription`によって呼び出される**IComponentRegistrar::GetComponents**です。 **IComponentRegistrar**オートメーション インターフェイスを使用すると、登録および登録解除、DLL 内の個々 のコンポーネントです。 ATL プロジェクト ウィザードを使用してコンポーネント レジスタのオブジェクトを作成するときに、ウィザードは自動的に実装、 **IComponentRegistrar**インターフェイスです。 **IComponentRegistrar**は通常 Microsoft Transaction Server によって使用されます。  
   
@@ -232,4 +215,3 @@ static LPCTSTR WINAPI GetObjectDescription();
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
-

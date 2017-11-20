@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - endthreadex
 - _endthreadex
 - endthread
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _endthread function
 - endthread function
@@ -39,30 +37,15 @@ helpviewer_keywords:
 - _endthreadex function
 - threading [C++], terminating threads
 ms.assetid: 18a91f2f-659e-40b4-b266-ec12dcf2abf5
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.mt:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: e329acaad53c8990f335394bbcb8f0401d71c463
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 8220d74a9ca94aaf4c3748a3b760a4d6cd3564ea
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="endthread-endthreadex"></a>_endthread、_endthreadex
 スレッドを終了します。 `_endthread` は、 `_beginthread` によって作成されたスレッドを終了し、  `_endthreadex` は、 `_beginthreadex`によって作成されたスレッドを終了します。  

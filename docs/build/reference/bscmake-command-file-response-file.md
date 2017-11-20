@@ -1,47 +1,47 @@
 ---
-title: "BSCMAKE コマンド ファイル (応答ファイル) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "BSCMAKE, コマンド ファイル"
-  - "BSCMAKE, 応答ファイル"
-  - "コマンド ファイル"
-  - "コマンド ファイル, BSCMAKE"
-  - "応答ファイル"
-  - "応答ファイル, BSCMAKE"
+title: "BSCMAKE コマンド ファイル (応答ファイル) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- BSCMAKE, response file
+- BSCMAKE, command file
+- response files, BSCMAKE
+- command files, BSCMAKE
+- response files
+- command files
 ms.assetid: abdffeea-35c7-4f2d-8c17-7d0d80bac314
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1d5dd2696a48a84672350b90b569c8f0caf7c3cd
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# BSCMAKE コマンド ファイル (応答ファイル)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンド ファイルでは、コマンド ライン入力の一部または全体を指定できます。  コマンド ファイルは、次の構文を使用して指定します。  
+# <a name="bscmake-command-file-response-file"></a>BSCMAKE コマンド ファイル (応答ファイル)
+コマンド ファイル内のコマンド ライン入力の一部またはすべてを指定することができます。 次の構文を使用してコマンド ファイルを指定します。  
   
 ```  
 BSCMAKE @filename  
 ```  
   
- コマンド ファイルは、1 つしか指定できません。  *filename* では、パスを指定できます。  *filename* の先頭には、アット マーク \(@\) を付けます。  拡張子は、必ずしも指定する必要はありません。  コマンド ラインでは、*filename* の後に追加の *sbrfiles* を指定できます。  コマンド ファイルは、コマンド ラインで指定する場合と同じ順序で BSCMAKE への入力が格納されているテキスト ファイルです。  コマンド ライン引数は、スペース、タブ、または改行文字を 1 つ以上使用して区切ります。  
+ 1 つのコマンド ファイルが許可されているとします。 パスを指定することができます*filename*です。 前に*filename*で、アット マーク (@)。 BSCMAKE では、拡張機能を想定しません。 追加を指定できます*sbrfiles*後のコマンド ラインで*filename*です。 コマンド ファイルは、コマンドラインで指定する場合と同じ順序では、BSCMAKE への入力を含むテキスト ファイルです。 コマンドラインの引数 1 つ以上のスペース、タブ、または改行文字で区切ります。  
   
- コマンド ファイルを使用して BSCMAKE を呼び出す場合は、次のコマンドを使用します。  
+ 次のコマンドは、BSCMAKE コマンド ファイルの使用を呼び出します。  
   
 ```  
 BSCMAKE @prog1.txt  
 ```  
   
- サンプルのコマンド ファイルは、次のとおりです。  
+ サンプルのコマンド ファイルを次に示します。  
   
 ```  
 /n /v /o main.bsc /El  
@@ -52,5 +52,5 @@ verdate.h c:\src\inc\screen.h
 file1.sbr file2.sbr file3.sbr file4.sbr  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

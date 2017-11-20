@@ -1,38 +1,35 @@
 ---
-title: "@SubStr | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "@SubStr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "@SubStr symbol"
+title: "@SubStr|Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: '@SubStr'
+dev_langs: C++
+helpviewer_keywords: '@SubStr symbol'
 ms.assetid: f4b8fc6e-14a0-46fe-8c27-6b3347a08504
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: cfa03139fb71caba092d3507d4b10080f210c00c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# @SubStr
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-*位置*  から開始して部分文字列マクロを返す関数。  
+# <a name="substr"></a>@SubStr
+始まる部分文字列を返すマクロ関数*位置*です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 @SubStr( string, position [[, length]] )  
 ```  
   
-## 参照  
- [Symbols Reference](../../assembler/masm/symbols-reference.md)
+## <a name="see-also"></a>関連項目  
+ [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

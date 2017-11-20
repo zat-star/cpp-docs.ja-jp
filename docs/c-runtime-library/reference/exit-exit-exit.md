@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-cpp
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -31,8 +30,7 @@ f1_keywords:
 - process/_Exit
 - stdlib/exit
 - stdlib/_Exit
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - exit function
 - _exit function
@@ -40,31 +38,15 @@ helpviewer_keywords:
 - function calls, terminating
 - process termination, calling
 ms.assetid: b1501fa6-27c2-478c-9e93-cc4fd802a01f
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 8d6f75bb19c2cfd89d8714ed87ff91ddf340055e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.openlocfilehash: 0f68ef6938c1f42ccde300838915292c5abe36af
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="exit-exit-exit"></a>終了、_Exit、_exit
 呼び出しプロセスを終了します。 `exit` 関数はクリーンアップ後に呼び出しプロセスを終了させます。一方、 `_exit` と `_Exit` は直ちに終了させます。  
@@ -93,7 +75,7 @@ void _exit(
 ## <a name="remarks"></a>コメント  
  `exit`関数、 `_Exit` 関数、 `_exit` 関数は呼び出しプロセスを終了します。 `exit` 関数はスレッド ローカル オブジェクトのデストラクターを呼び出してから、 `atexit` と `_onexit`によって登録された関数を、後入れ先出し (LIFO) の順序で呼び出し、プロセスが終了する前にすべてのファイル バッファーをフラッシュします。 `_Exit` 関数と `_exit` 関数は、スレッド ローカル オブジェクトの破棄も、 `atexit` や `_onexit` 関数の処理もせず、ストリーム バッファーのフラッシュもしないでプロセスを終了します。  
   
- `exit`、 `_Exit` 、 `_exit` 呼び出しは値を返しませんが、プロセスの終了後、 `status` の下位バイトは、ホスト環境または待機している呼び出しプロセスで使用できるようになります (存在する場合)。 通常、呼び出し元は、終了を示すために `status` 値を 0 に設定し、エラーを示す場合は他の値に設定します。 `status` 値は、オペレーティング システムのバッチ コマンド `ERRORLEVEL` で使用でき、0 の値を表す `EXIT_SUCCESS`、または 1 の値を表す `EXIT_FAILURE`の 2 種類の定数のうちのいずれかで表されます。  
+ `exit`、`_Exit`と`_exit`呼び出しは、値の値を返しません`status`ある場合は、プロセスが終了した後で、ホスト環境または呼び出し元プロセスの待機に使用可能になります。 通常、呼び出し元は、終了を示すために `status` 値を 0 に設定し、エラーを示す場合は他の値に設定します。 `status` 値は、オペレーティング システムのバッチ コマンド `ERRORLEVEL` で使用でき、0 の値を表す `EXIT_SUCCESS`、または 1 の値を表す `EXIT_FAILURE`の 2 種類の定数のうちのいずれかで表されます。  
   
  `exit`、 `_Exit`、 `_exit`、 `quick_exit`、 `_cexit`、 `_c_exit` 関数は次のように動作します。  
   
@@ -106,13 +88,18 @@ void _exit(
 |`_cexit`|完全な C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|  
 |`_c_exit`|最低限の C ライブラリの終了処理を実行し、呼び出し元に戻ります。 プロセスを終了しません。|  
   
- `exit`関数、  `_Exit` 関数、または `_exit` 関数を呼び出す場合、呼び出し時に存在する一時オブジェクトまたは自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトは、オブジェクトが静的として宣言されていない関数内で定義されます。 一時オブジェクトはコンパイラによって作成されたオブジェクトです。 `exit`、 `_Exit`、または `_exit`を呼び出す前に自動オブジェクトを破棄するには、次のように、明示的にオブジェクトのデストラクターを呼び出します。  
+`exit`関数、  `_Exit` 関数、または `_exit` 関数を呼び出す場合、呼び出し時に存在する一時オブジェクトまたは自動オブジェクトのデストラクターは呼び出されません。 自動オブジェクトは、関数で定義されている非静的ローカル オブジェクトです。 一時オブジェクトは、関数呼び出しによって返される値など、コンパイラによって作成されるオブジェクトです。 呼び出す前に自動オブジェクトを破棄する`exit`、 `_Exit`、または`_exit`、明示的に次のように、オブジェクトのデストラクターを呼び出します。  
   
-```  
-myObject.myClass::~myClass();  
+```cpp 
+void last_fn() {} 
+    struct SomeClass {} myInstance{};
+    // ...
+    myInstance.~SomeClass(); // explicit destructor call
+    exit(0);  
+}
 ```  
   
- `DLL_PROCESS_ATTACH` から `exit` を呼び出すために `DllMain`を使用しないでください。 `DLLMain` の関数を終了するには、 `FALSE` から `DLL_PROCESS_ATTACH`を返します。  
+`DLL_PROCESS_ATTACH` から `exit` を呼び出すために `DllMain`を使用しないでください。 終了する、`DLLMain`関数を返す`FALSE`から`DLL_PROCESS_ATTACH`です。  
   
 ## <a name="requirements"></a>要件  
   
@@ -124,7 +111,7 @@ myObject.myClass::~myClass();
   
 ## <a name="example"></a>例  
   
-```  
+```C  
 // crt_exit.c  
 // This program returns an exit code of 1. The  
 // error code could be tested in a batch file.  

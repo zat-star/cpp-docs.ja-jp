@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -25,35 +24,18 @@ f1_keywords:
 - ATLSECURITY/ATL::CSid::LoadAccount
 - ATLSECURITY/ATL::CSid::Sid
 - ATLSECURITY/ATL::CSid::SidNameUse
-dev_langs:
-- C++
-helpviewer_keywords:
-- CSid class
+dev_langs: C++
+helpviewer_keywords: CSid class
 ms.assetid: be58b7ca-5958-49c3-a833-ca341aaaf753
-caps.latest.revision: 24
+caps.latest.revision: "24"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: f1e731c82892c5622dcb437498d2d318086f66d8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: f5f49805438e124a6407a5a4c8428851ebe241d9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="csid-class"></a>CSid クラス
 このクラスは、用のラッパー、 `SID` (セキュリティ識別子) 構造体。  
@@ -115,14 +97,14 @@ class CSid
 |[演算子\<](#operator_lt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
 |[演算子 >](#operator_gt_)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
 |[演算子\<=](#operator_lt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
-|[演算子 > =](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
+|[operator > =](#operator_gt__eq)|2 つのセキュリティ記述子オブジェクトの相対値を比較します。|  
   
 ## <a name="remarks"></a>コメント  
  `SID`構造体は、可変長の構造体のユーザーまたはグループを一意に識別するために使用します。  
   
  アプリケーションは変更しないでください、`SID`構造に直接が代わりには、このラッパー クラスで提供されるメソッドを使用します。 関連項目[AtlGetOwnerSid](security-global-functions.md#atlgetownersid)、 [AtlSetGroupSid](security-global-functions.md#atlsetgroupsid)、 [AtlGetGroupSid](security-global-functions.md#atlgetgroupsid)、および[AtlSetOwnerSid](security-global-functions.md#atlsetownersid)です。  
   
- Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsecurity.h  
@@ -239,7 +221,7 @@ bool EqualPrefix(const CSid& rhs) const throw();
  返します**true**成功した場合、 **false**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[EqualPrefixSid](http://msdn.microsoft.com/library/windows/desktop/aa446621)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]詳細についてはします。  
+ 参照してください[EqualPrefixSid](http://msdn.microsoft.com/library/windows/desktop/aa446621)詳細については、Windows SDK に含まれています。  
   
 ##  <a name="getlength"></a>CSid::GetLength  
  長さを返します、`CSid`オブジェクト。  
@@ -525,7 +507,7 @@ SID_NAME_USE SidNameUse() const throw();
 |SidTypeWellKnownGroup|示します、`SID`のよく知られているグループ。|  
 |SidTypeDeletedAccount|示します、`SID`削除されたアカウントにします。|  
 |SidTypeInvalid|無効なことを示します`SID`です。|  
-|SidTypeUnknown|不明なことを示します`SID`型です。|  
+|SidTypeUnknown|不明なを示す`SID`型です。|  
 |SidTypeComputer|示します、`SID`コンピューター用です。|  
   
 ### <a name="remarks"></a>コメント  
@@ -536,4 +518,3 @@ SID_NAME_USE SidNameUse() const throw();
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティのグローバル関数](../../atl/reference/security-global-functions.md)   
  [演算子](../../atl/reference/atl-operators.md)
-

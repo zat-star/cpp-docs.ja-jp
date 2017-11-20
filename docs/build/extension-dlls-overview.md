@@ -1,56 +1,56 @@
 ---
-title: "拡張 DLL: 概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AFXDLL ライブラリ"
-  - "DLL [C++], 拡張機能"
-  - "拡張 DLL [C++], 拡張 DLL の概要"
-  - "MFC DLL [C++], 拡張 DLL"
-  - "共有 DLL バージョン [C++]"
+title: "拡張 Dll: 概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- AFXDLL library
+- MFC DLLs [C++], MFC extension DLLs
+- DLLs [C++], extension
+- shared DLL versions [C++]
+- extension DLLs [C++], about MFC extension DLLs
 ms.assetid: eb5e10b7-d615-4bc7-908d-e3e99b7b1d5f
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 39ed1531be553a66f22ac8b93e898a91cf5006e6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 拡張 DLL: 概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC 拡張 DLL は、既存の MFC ライブラリ クラスから派生した再利用可能なクラスを主に実装する DLL です。  拡張 DLL は、MFC のダイナミック リンク ライブラリ バージョン \(MFC の共有バージョン\) を使ってビルドされます。  ただし、拡張 DLL を使用できるのは、MFC の共有バージョンを使ってビルドされた MFC の実行可能ファイル \(アプリケーションまたはレギュラー DLL\) だけです。  拡張 DLL を使うと、MFC から新しいカスタム クラスを派生し、この拡張バージョンの MFC を、DLL を呼び出すアプリケーションに提供できます。  
+# <a name="mfc-extension-dlls-overview"></a>MFC 拡張 Dll: 概要
+MFC 拡張 DLL は、主に既存の Microsoft Foundation Class ライブラリ クラスから派生した再利用可能なクラスを実装する DLL です。 MFC 拡張 Dll は、MFC (MFC の共有バージョンとも呼ばれます) のダイナミック リンク ライブラリ バージョンを使用して構築されます。 のみ MFC の実行可能ファイル (アプリケーションまたはレギュラー MFC Dll) の MFC の共有バージョンで構築されたは、MFC 拡張 DLL を使用できます。 MFC 拡張 DLL では、MFC から新しいカスタム クラスを派生し、この拡張バージョンの MFC DLL を呼び出すアプリケーションを提供できます。  
   
- また、拡張 DLL を使うと、アプリケーションと DLL の間で MFC の派生オブジェクトをやり取りすることもできます。  やり取りされるオブジェクトに関連付けられたメンバー関数は、そのオブジェクトが作成されたモジュール内にあります。  これらの関数は MFC の共有 DLL バージョンの使用時に正しくエクスポートされるので、MFC のポインターまたは MFC の派生オブジェクトのポインターをアプリケーションと拡張 DLL との間で自由にやり取りできます。  
+ また、拡張 DLL を使うと、アプリケーションと DLL の間で MFC の派生オブジェクトをやり取りすることもできます。 やり取りされるオブジェクトに関連付けられたメンバー関数は、そのオブジェクトが作成されたモジュール内にあります。 MFC を自由に渡すことができますので、MFC の共有 DLL バージョンを使用する場合、これらの関数が正しくエクスポートされる、またはアプリケーションと MFC 拡張 Dll の間で MFC の派生オブジェクトのポインター。  
   
- 拡張 DLL の基本条件を満たす DLL の例については、MFC サンプルの [DLLHUSK](http://msdn.microsoft.com/ja-jp/dfcaa6ff-b8e2-4efd-8100-ee3650071f90) を参照してください。  特に Testdll1.cpp ファイルと Testdll2.cpp ファイルを参照してください。  
+ MFC 拡張 DLL の基本的な要件を満たしている DLL の例は、MFC のサンプルを参照してください。 [DLLHUSK](https://github.com/Microsoft/VCSamples/tree/master/VC2010Samples/MFC/advanced/dllhusk)です。 具体的には、Testdll1.cpp と Testdll2.cpp ファイルを確認します。  
   
- AFXDLL という用語は、Visual C\+\+ のドキュメントでは今後使われません。  拡張 DLL は、これまで AFXDLL と呼ばれていたものと同じ性質のものです。  
+ AFXDLL という用語は、Visual C のドキュメントでは使用されなくに注意してください。 MFC 拡張 DLL は、前者の AFXDLL と同じ特性を持ちます。  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>実行する操作  
   
--   [拡張 DLL の初期化](../build/initializing-extension-dlls.md)  
+-   [MFC 拡張 DLL を初期化します。](../build/run-time-library-behavior.md#initializing-extension-dlls)  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [拡張 DLLs](../build/extension-dlls.md)  
+-   [MFC 拡張 DLL](../build/extension-dlls.md)  
   
--   [レギュラー DLL でのデータベース、OLE、およびソケット拡張 DLL の使用](../build/using-database-ole-and-sockets-extension-dlls-in-regular-dlls.md)  
+-   [レギュラー MFC DLL でのデータベース、OLE、およびソケット MFC 拡張 DLL の使用](../build/using-database-ole-and-sockets-extension-dlls-in-regular-dlls.md)  
   
--   [非 MFC DLL: 概要](../Topic/Non-MFC%20DLLs:%20Overview.md)  
+-   [非 MFC DLL: 概要](../build/non-mfc-dlls-overview.md)  
   
--   [MFC と静的にリンクされるレギュラー DLL](../build/regular-dlls-statically-linked-to-mfc.md)  
+-   [MFC と静的にリンクされている標準の MFC Dll](../build/regular-dlls-statically-linked-to-mfc.md)  
   
--   [MFC と動的にリンクされるレギュラー DLL](../Topic/Regular%20DLLs%20Dynamically%20Linked%20to%20MFC.md)  
+-   [MFC と動的にリンクされている標準の MFC Dll](../build/regular-dlls-dynamically-linked-to-mfc.md)  
   
--   [MFC DLL ウィザード](../mfc/reference/mfc-dll-wizard.md)  
+-   [MFC DLL を作成します。](../mfc/reference/mfc-dll-wizard.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [DLL の種類](../build/kinds-of-dlls.md)

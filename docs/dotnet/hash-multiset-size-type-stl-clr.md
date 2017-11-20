@@ -1,41 +1,39 @@
 ---
-title: "hash_multiset::size_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multiset::size_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size_type メンバー [STL/CLR]"
+title: "hash_multiset::size_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_multiset::size_type
+dev_langs: C++
+helpviewer_keywords: size_type member [STL/CLR]
 ms.assetid: cf4e2a5f-6d46-4ade-9bb4-407e12f310b3
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7023df4ed7684aab49edf455ba04cf91d1ea1a83
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_multiset::size_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 要素間の符号付きな間隔の種類。  
+# <a name="hashmultisetsizetype-stlclr"></a>hash_multiset::size_type (STL/CLR)
+2 つの要素の間の距離を符号付きの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef int size_type;  
 ```  
   
-## 解説  
- 型は負の要素数を指定します。  
+## <a name="remarks"></a>コメント  
+ この型は、負でない要素の数を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multiset_size_type.cpp   
@@ -65,13 +63,16 @@ int main()
   
 ```  
   
-  **b c**  
-**end\(\)\- \(\) \= 3 を開始します。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+end()-begin() = 3  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_multiset](../dotnet/hash-multiset-stl-clr.md)   
- [hash\_multiset::empty](../dotnet/hash-multiset-empty-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
+ [hash_multiset::empty (STL/CLR)](../dotnet/hash-multiset-empty-stl-clr.md)

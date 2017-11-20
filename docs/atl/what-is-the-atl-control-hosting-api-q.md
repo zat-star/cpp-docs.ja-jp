@@ -1,52 +1,51 @@
 ---
-title: "ATL コントロール ホスト API とは何ですか? | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "API [C++], ホスト"
-  - "コントロール ホスト API"
-  - "コントロール [ATL], ホスト API"
+title: "ATL コントロール ホスト API しますか? | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- APIs [C++], hosting
+- control-hosting API
+- controls [ATL], hosting APIs
 ms.assetid: 75b27e45-cfba-4950-aa35-96cc7d8da753
-caps.latest.revision: 15
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4f04f5caa30ab860634f0f96ae18e9da03577ba2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL コントロール ホスト API とは何ですか?
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL のコントロール ホスト API は、ウィンドウを ActiveX コントロール コンテナーとして使用できるようにする、関数のセットです。  これらの関数は、ソース コードとして使用でき、ATL90.dll によって公開されるため、プロジェクトに静的または動的にリンクできます。  これらのコントロール ホスト関数を次の表に示します。  
+# <a name="what-is-the-atl-control-hosting-api"></a>ATL コントロール ホスト API しますか?
+ATL のコントロール ホスト API は、ActiveX コントロール コンテナーとして機能する任意のウィンドウを許可する一連の関数。 これらの関数は静的または動的にソース コードとして使用されるので、プロジェクトにリンクを ATL90.dll によって公開されています。 コントロール ホスト関数は、次の表に表示されます。  
   
-|Function|説明|  
-|--------------|--------|  
-|[AtlAxAttachControl](../Topic/AtlAxAttachControl.md)|ホスト オブジェクトを作成して指定されたウィンドウに接続し、既存のコントロールをアタッチします。|  
-|[AtlAxCreateControl](../Topic/AtlAxCreateControl.md)|ホスト オブジェクトを作成して指定されたウィンドウに接続し、コントロールを読み込みます。|  
-|[AtlAxCreateControlLic](../Topic/AtlAxCreateControlLic.md)|ライセンス ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。[AtlAxCreateControl](../Topic/AtlAxCreateControl.md) に似た関数です。|  
-|[AtlAxCreateControlEx](../Topic/AtlAxCreateControlEx.md)|ホスト オブジェクトを作成して指定されたウィンドウに接続し、コントロールを読み込みます \(イベント シンクのセットアップも可能です\)。|  
-|[AtlAxCreateControlLicEx](../Topic/AtlAxCreateControlLicEx.md)|ライセンス ActiveX コントロールを作成して初期化し、指定されたウィンドウでホストします。[AtlAxCreateControlLic](../Topic/AtlAxCreateControlLic.md) に似た関数です。|  
-|[AtlAxCreateDialog](../Topic/AtlAxCreateDialog.md)|ダイアログ リソースからモードレス ダイアログ ボックスを作成し、ウィンドウ ハンドルを返します。|  
-|[AtlAxDialogBox](../Topic/AtlAxDialogBox.md)|ダイアログ リソースからモーダル ダイアログ ボックスを作成します。|  
-|[AtlAxGetControl](../Topic/AtlAxGetControl.md)|ウィンドウでホストされるコントロールの **IUnknown** インターフェイス ポインターを返します。|  
-|[AtlAxGetHost](../Topic/AtlAxGetHost.md)|ウィンドウに接続されたホスト オブジェクトの **IUnknown** インターフェイス ポインターを返します。|  
-|[AtlAxWinInit](../Topic/AtlAxWinInit.md)|コントロール ホスト コードを初期化します。|  
-|[AtlAxWinTerm](../Topic/AtlAxWinTerm.md)|コントロール ホスト コードを初期化前の状態に戻します。|  
+|関数|説明|  
+|--------------|-----------------|  
+|[関連付け](reference/composite-control-global-functions.md#atlaxattachcontrol)|ホスト オブジェクトを作成する、指定されたウィンドウに接続し、既存のコントロールをアタッチします。|  
+|[して](reference/composite-control-global-functions.md#atlaxcreatecontrol)|ホスト オブジェクトを作成して接続し、指定されたウィンドウに、コントロールを読み込みます。|  
+|[して](reference/composite-control-global-functions.md#atlaxcreatecontrollic)|ライセンスされた ActiveX コントロールを作成、初期化、および指定したウィンドウでホスト[して](reference/composite-control-global-functions.md#atlaxcreatecontrol)です。|  
+|[行うに](reference/composite-control-global-functions.md#atlaxcreatecontrolex)|ホスト オブジェクトを作成して、指定されたウィンドウに接続し、コントロールを読み込みます (も許可するイベント シンクをセットアップする)。|  
+|[AtlAxCreateControlLicEx](reference/composite-control-global-functions.md#atlaxcreatecontrollicex)|ライセンスされた ActiveX コントロールを作成、初期化、および指定したウィンドウでホスト[して](reference/composite-control-global-functions.md#atlaxcreatecontrollic)です。|  
+|[AtlAxCreateDialog](reference/composite-control-global-functions.md#atlaxcreatedialog)|ダイアログ リソースからモードレス ダイアログ ボックスを作成し、ウィンドウのハンドルを返します。|  
+|[AtlAxDialogBox](reference/composite-control-global-functions.md#atlaxdialogbox)|ダイアログ リソースからモーダル ダイアログ ボックスを作成します。|  
+|[AtlAxGetControl](reference/composite-control-global-functions.md#atlaxgetcontrol)|返します、 **IUnknown**ウィンドウでホストされるコントロールのインターフェイス ポインター。|  
+|[AtlAxGetHost](reference/composite-control-global-functions.md#atlaxgethost)|返します、 **IUnknown**そのホスト オブジェクトのインターフェイス ポインターをウィンドウに接続されています。|  
+|[な](reference/composite-control-global-functions.md#atlaxwininit)|コントロール ホスト コードを初期化します。|  
+|[AtlAxWinTerm](reference/composite-control-global-functions.md#atlaxwinterm)|コントロール ホスト コードを非初期化します。|  
   
- 最初の 3 つの関数の `HWND` パラメーターは、既存のウィンドウであることが必要です。ほとんどの種類のウィンドウを指定できます。  これらの 3 つの関数のいずれかを明示的に呼び出す場合は \(通常、その必要はありません\)、既にホストとして使用しているウィンドウにハンドルを渡さないでください。渡した場合、既存のホスト オブジェクトが解放されません。  
+ `HWND`最初の 3 つの関数のパラメーターは (ほとんど) 任意の型の既存のウィンドウである必要があります。 これらの関数のいずれかを明示的に呼び出す場合 (通常は、する必要はありません)、ホストとして既に動作しているウィンドウへのハンドルを渡さないでください (この場合、既存のホスト オブジェクト解放されない)。  
   
- 最初の 7 つの関数は、暗黙的に [AtlAxWinInit](../Topic/AtlAxWinInit.md) を呼び出します。  
+ 最初の 7 つの関数呼び出しを行う[な](reference/composite-control-global-functions.md#atlaxwininit)暗黙的にします。  
   
 > [!NOTE]
->  コントロール ホスト API は、ActiveX コントロール コンテインメントに対する ATL のサポートの基礎となります。  ただし、ATL のラッパー クラスを十分に活用すると、これらの関数を呼び出す必要はほとんどありません。  詳細については、「[どの ATL クラスを使用すると ActiveX コントロール コンテインメントに役立ちますか?](../atl/which-atl-classes-facilitate-activex-control-containment-q.md)」を参照してください。  
+>  コントロール ホスト API では、ActiveX コントロール コンテインメントの ATL のサポートの基礎を形成します。 ただしが通常利用または ATL のラッパー クラスを最大限に活用する場合に、これらの関数を直接呼び出す必要はほとんどありません。 詳細については、次を参照してください。[する ATL クラスを容易に ActiveX コントロール コンテインメント](which-atl-classes-facilitate-activex-control-containment-q.md)です。  
   
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)
+## <a name="see-also"></a>関連項目  
+ [コントロール コンテインメントよく寄せられる質問](which-atl-classes-facilitate-activex-control-containment-q.md)

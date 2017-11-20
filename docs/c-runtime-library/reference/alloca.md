@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- _alloca
+apiname: _alloca
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -25,37 +23,21 @@ apitype: DLLExport
 f1_keywords:
 - _alloca
 - alloca
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - memory allocation, stack
 - alloca function
 - _alloca function
 ms.assetid: 74488eb1-b71f-4515-88e1-cdd03b6f8225
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 5875a26dc5758674665fba2fde5b51c2ff53420e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.openlocfilehash: 6068e1b3e6765b2a409fbc33d1a97b228c82abcd
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="alloca"></a>_alloca
 スタックにメモリを割り当てます。 安全なバージョンがあるために、この関数は推奨されていません参照してください[_malloca](../../c-runtime-library/reference/malloca.md)です。  
@@ -93,7 +75,7 @@ void *_alloca(
 > [!IMPORTANT]
 >  Windows XP では、try/catch ブロック内で `_alloca` を呼び出した場合、その catch ブロック内で [_resetstkoflw](../../c-runtime-library/reference/resetstkoflw.md) を呼び出す必要があります。  
   
- 使用する場合、上記の制限だけでなく、[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプション、`_alloca`では使用できません`__except`ブロックします。 詳細については、「 [/clr Restrictions](../../build/reference/clr-restrictions.md)」を参照してください。  
+ 使用する場合、上記の制限に加えて、[/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプション、`_alloca`では使用できません`__except`ブロックします。 詳細については、「 [/clr Restrictions](../../build/reference/clr-restrictions.md)」を参照してください。  
   
 ## <a name="requirements"></a>要件  
   

@@ -1,53 +1,53 @@
 ---
-title: "スカラー型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "スカラー型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 07c9195e-b6c7-4083-8ef0-8a93032e4d1e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 279c4eefb072c6caab85a61bba3abc73be22d3a7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スカラー型
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-データがどのように配置されていてもデータへのアクセスはできますが、パフォーマンスの低下を防ぐため \(または、その他さまざまな理由から\)、データは自然な境界に配置することをお勧めします。  列挙型 \(Enum\) は、定数整数であり、32 ビット整数として扱われます。  次の表は、型定義と、次のアライメント値を使用してアライメントする場合に推奨されるストレージを示しています。  
+# <a name="scalar-types"></a>スカラー型
+データへのアクセスは、どのように配置されてによって生じることができます、データが、パフォーマンスが失われる (やさまざまな理由) を回避する自然な境界に合わせて調整することをお勧めします。 列挙型が定数の整数であり、32 ビット整数値として扱われます。 次の表の種類の定義と推奨される記憶域を次のアラインメント値を使用して配置に関連します。  
   
--   バイト型 \(Byte\) – 8 ビット  
+-   バイトの 8 ビット  
   
--   ワード型 \(Word\) – 16 ビット  
+-   Word の 16 ビット  
   
--   ダブルワード型 \(Double Word\) – 32 ビット  
+-   ダブル ワード - 32 ビット  
   
--   クワドワード型 \(Quad Word\) – 64 ビット  
+-   クアッド ワード - 64 ビット  
   
--   オクタワード型 – 128 ビット  
+-   オクタワード - 128 ビット  
   
 |||||  
 |-|-|-|-|  
-|スカラー型|C データ型|ストレージ サイズ \(バイト単位\)|推奨アライメント|  
+|スカラー型|C データ型|ストレージ サイズ (バイト単位)|推奨される配置|  
 |**INT8**|`char`|1|Byte|  
 |**UINT8**|`unsigned char`|1|Byte|  
-|**INT16**|**short**|2|Word|  
-|**UINT16**|**unsigned short**|2|Word|  
-|**INT32**|**int、long**|4|ダブルワード型 \(Doubleword\)|  
-|**UINT32**|**unsigned int、unsigned long**|4|ダブルワード型 \(Doubleword\)|  
-|**INT64**|`__int64`|8|クワドワード型 \(Quadword\)|  
-|**UINT64**|**unsigned \_\_int64**|8|クワドワード型 \(Quadword\)|  
-|**FP32 \(単精度\)**|**float**|4|ダブルワード型 \(Doubleword\)|  
-|**FP64 \(倍精度\)**|**double**|8|クワドワード型 \(Quadword\)|  
-|**POINTER**|**\***|8|クワドワード型 \(Quadword\)|  
-|`__m64`|**struct \_\_m64**|8|クワドワード型 \(Quadword\)|  
-|`__m128`|**struct \_\_m128**|16|Octaword|  
+|**INT16 型**|**short**|2|Word|  
+|**UINT16 型**|**unsigned short**|2|Word|  
+|**INT32**|**int、long**|4|ダブルワード|  
+|**UINT32**|**符号なし int、unsigned long**|4|ダブルワード|  
+|**INT64**|`__int64`|8|Quadword|  
+|**UINT64**|**unsigned __int64**|8|Quadword|  
+|**FP32 (1 つの有効桁数)**|**float**|4|ダブルワード|  
+|**FP64 (有効桁数を 2 つ)**|**double**|8|Quadword|  
+|**ポインター**|**\***|8|Quadword|  
+|`__m64`|**構造体 _ _m64**|8|Quadword|  
+|`__m128`|**_ _m128 の構造体**|16|Octaword|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [型とストレージ](../build/types-and-storage.md)

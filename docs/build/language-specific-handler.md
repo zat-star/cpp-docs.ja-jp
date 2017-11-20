@@ -1,26 +1,26 @@
 ---
-title: "言語固有のハンドラー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "言語固有のハンドラー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 6503e0cd-2d3a-4330-a925-8bed8c27c2be
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3f9e548dc3c9262349fc05bd6bea19290b57ad94
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 言語固有のハンドラー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-言語固有のハンドラーの相対アドレスは、フラグ UNW\_FLAG\_EHANDLER またはフラグ UNW\_FLAG\_UHANDLER が設定される場合は常に UNWIND\_INFO にあります。  前のセクションで説明したとおり、言語固有のハンドラーは、例外ハンドラーの検索の一部またはアンワインドの一部として呼び出されます。  このハンドラーは、次のプロトタイプを持ちます。  
+# <a name="language-specific-handler"></a>言語固有のハンドラー
+存在する UNW_FLAG_EHANDLER または UNW_FLAG_UHANDLER フラグが設定されるたびに、言語固有のハンドラーの相対アドレスが UNWIND_INFO 内に存在します。 前のセクションで説明した、言語固有のハンドラーは、例外ハンドラーの検索の一部として、またはアンワインドの一部として呼び出されます。 次のプロトタイプがあります。  
   
 ```  
 typedef EXCEPTION_DISPOSITION (*PEXCEPTION_ROUTINE) (  
@@ -31,13 +31,13 @@ typedef EXCEPTION_DISPOSITION (*PEXCEPTION_ROUTINE) (
 );  
 ```  
   
- **ExceptionRecord** は、例外レコードへのポインターを提供します。例外レコードは標準 Wind64 定義を持ちます。  
+ **ExceptionRecord** Win64、標準の定義を持つ例外レコードへのポインターを提供します。  
   
- **EstablisherFrame** は、この関数の固定スタック割り当ての基底アドレスです。  
+ **EstablisherFrame**のこの関数の固定のスタック割り当てのベース アドレスです。  
   
- **ContextRecord** は、例外が発生したときの例外コンテキスト \(例外ハンドラーの場合\)、または現在の "アンワインド" コンテキスト \(終了ハンドラーの場合\) をポイントします。  
+ **ContextRecord** (例外ハンドラーの場合) では、例外が発生した時か、または現在の例外コンテキストへのポインター「アンワインド」コンテキスト (終了ハンドラーの場合)。  
   
- **DispatcherContext** は、この関数のディスパチャ コンテキストをポイントします。  次の定義を持ちます。  
+ **DispatcherContext**この関数のコンテキストをディスパッチャーを指します。 次の定義があります。  
   
 ```  
 typedef struct _DISPATCHER_CONTEXT {  
@@ -52,21 +52,21 @@ typedef struct _DISPATCHER_CONTEXT {
 } DISPATCHER_CONTEXT, *PDISPATCHER_CONTEXT;  
 ```  
   
- **ControlPc** は、この関数内の RIP 値です。  これは、例外アドレス、またはコントロールが構築関数をそのまま残したアドレスのいずれかになります。  これは、コントロールが、この関数内の保護された構成要素 \(\_\_try\/\_\_except または \_\_try\/\_\_finally の \_\_try ブロックなど\) の内側にあるかどうかを判断するのに使用する RIP です。  
+ **ControlPc** RIP のこの関数内の値です。 これは、例外のアドレスまたはアドレス コントロールを確立する関数のままです。 これは、この関数内で保護されているか、コンストラクト内のコントロールの判断に使用される RIP (_ _try ブロックなどの\__try/\__except または\__try/\__finally)。  
   
- **ImageBase** は、この関数を含むモジュールのイメージ ベース \(ロード アドレス\) で、相対アドレスを記録するために関数エントリおよびアンワインド情報内で使用される 32 ビット オフセットに追加されます。  
+ **ImageBase**基本 (読み込みアドレス) のイメージをこの関数は、関数のエントリで使用されている 32 ビット オフセットに追加して、アンワインド相対アドレスを記録する情報を格納しているモジュールです。  
   
- **FunctionEntry** は、RUNTIME\_FUNCTION 関数とそのアンワインド情報のイメージ ベース相対アドレスを保持する、RUNTIME\_FUNCTION 関数エントリへのポインターを提供します。  
+ **FunctionEntry** RUNTIME_FUNCTION へのポインターを提供しますが、関数を保持しているエントリを関数および情報イメージ ベースの相対アドレスはこの関数をアンワインドします。  
   
- **EstablisherFrame** は、この関数の固定スタック割り当ての基底アドレスです。  
+ **EstablisherFrame**のこの関数の固定のスタック割り当てのベース アドレスです。  
   
- **TargetIp** は、アンワインドの連結アドレスを指定するオプションの命令アドレスを提供します。  **EstablisherFrame** が指定されない場合、このアドレスは無視されます。  
+ **TargetIp**アンワインドの継続のアドレスを指定する省略可能な命令アドレスを提供します。 場合、このアドレスは無視されます**EstablisherFrame**が指定されていません。  
   
- **ContextRecord** は、システム例外ディスパッチまたはアンワインド コードで使用するための例外コンテキストをポイントします。  
+ **ContextRecord**システム例外ディスパッチ/アンワインド コードで使用するため、例外コンテキストを指します。  
   
- **LanguageHandler** は、呼び出される言語固有の言語ハンドラー ルーチンをポイントします。  
+ **LanguageHandler**呼び出されている言語に固有の言語ハンドラー ルーチンを指します。  
   
- **HandlerData** は、この関数の言語固有のハンドラー データをポイントします。  
+ **HandlerData**言語固有のハンドラーのデータをこの関数を指します。  
   
-## 参照  
- [例外処理 \(x64\)](../build/exception-handling-x64.md)
+## <a name="see-also"></a>関連項目  
+ [例外処理 (x64)](../build/exception-handling-x64.md)

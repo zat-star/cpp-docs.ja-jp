@@ -1,121 +1,122 @@
 ---
-title: "レジストリのスクリプトの例 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "レジストラー スクリプト [ATL]"
-  - "レジストリ, レジストラー"
-  - "スクリプト, 例"
-  - "スクリプト, レジストラー スクリプト"
+title: "レジストリ スクリプトの例 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- scripting, examples
+- registrar scripts [ATL]
+- scripts, Registrar scripts
+- registry, Registrar
 ms.assetid: b6df80e1-e08b-40ee-9243-9b381b172460
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bcb1b2307ccb16e7b842e221c48c0f2a99b31db6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レジストリのスクリプトの例
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックのスクリプト例では、システム レジストリにキーを追加する方法と、レジストラー COM サーバーを登録し、複数のパース ツリーを指定します。  
+# <a name="registry-scripting-examples"></a>レジストリ スクリプトの例
+このトピックでは、スクリプトの例では、システム レジストリにキーを追加、レジストラー COM サーバーを登録および複数のパース ツリーを指定する方法を示します。  
   
-## HKEY\_CURRENT\_USER にキーを追加します。  
- 次のパース ツリーはシステム レジストリにキーを一つ追加する簡単なスクリプトについて説明します。  特に、スクリプトは `HKEY_CURRENT_USER`に、キー `MyVeryOwnKey`を追加します。  また、新しいキーに `HowGoesIt?` 既定の文字列値を割り当てます:  
+## <a name="add-a-key-to-hkeycurrentuser"></a>HKEY_CURRENT_USER にキーを追加します。  
+ 次のパース ツリーは、システム レジストリに 1 つのキーを追加する単純なスクリプトを示しています。 具体的には、スクリプトは、キーに追加`MyVeryOwnKey`を`HKEY_CURRENT_USER`です。 既定の文字列値としても割り当てます`HowGoesIt`新しいキー。  
   
 ```  
 HKEY_CURRENT_USER  
 {  
-   'MyVeryOwnKey' = s 'HowGoesIt?'  
+ 'MyVeryOwnKey' = s 'HowGoesIt'  
 }  
 ```  
   
- このスクリプトは、次のように複数のサブキーを定義するために簡単に拡張できます:  
+ このスクリプトは、複数のサブキーを次のように定義に簡単に拡張できます。  
   
 ```  
 HKCU  
 {  
-   'MyVeryOwnKey' = s 'HowGoesIt?'  
-   {  
-      'HasASubkey'  
-      {  
-         'PrettyCool?' = d '55'  
-         val 'ANameValue' = s 'WithANamedValue'  
-      }  
-   }  
+ 'MyVeryOwnKey' = s 'HowGoesIt'  
+ {  
+ 'HasASubkey'  
+ {  
+ 'PrettyCool' = d '55'  
+    val 'ANameValue' = s 'WithANamedValue'  
+ }  
+ }  
 }  
 ```  
   
- これで、スクリプトは `MyVeryOwnKey`に、サブキー `HasASubkey`を追加します。  このサブキーに、`PrettyCool?` のサブキー \(55 の既定の `DWORD` 値を使用\) という `ANameValue` 両方の値を追加します \( `WithANamedValue`の文字列値\)。  
+ ここで、スクリプトは、サブキーを追加します。`HasASubkey`を`MyVeryOwnKey`です。 このサブキーに追加されます両方、`PrettyCool`サブキー (、既定値`DWORD`55 の値)、および`ANameValue`value という名前の (の文字列値を持つ`WithANamedValue`)。  
   
-##  <a name="_atl_register_the_registrar_com_server"></a> レジストラー COM サーバーを登録します。  
- 次のスクリプト レジストラー COM サーバー自体を登録します。  
+##  <a name="_atl_register_the_registrar_com_server"></a>レジストラー COM サーバーを登録します。  
+ 次のスクリプトは、レジストラー COM サーバー自体を登録します。  
   
 ```  
 HKCR  
 {  
-   ATL.Registrar = s 'ATL Registrar Class'  
-   {  
-      CLSID = s '{44EC053A-400F-11D0-9DCD-00A0C90391D3}'  
-   }  
-   NoRemove CLSID  
-   {  
-      ForceRemove {44EC053A-400F-11D0-9DCD-00A0C90391D3} =  
-                   s 'ATL Registrar Class'  
-      {  
-         ProgID = s 'ATL.Registrar'  
-         InprocServer32 = s '%MODULE%'  
-         {  
-            val ThreadingModel = s 'Apartment'  
-         }  
-      }  
-   }  
+    ATL.Registrar = s 'ATL Registrar Class'  
+ {  
+    CLSID = s '{44EC053A-400F-11D0-9DCD-00A0C90391D3}'  
+ }  
+    NoRemove CLSID  
+ {  
+    ForceRemove {44EC053A-400F-11D0-9DCD-00A0C90391D3} = 
+    s 'ATL Registrar Class'  
+ {  
+    ProgID = s 'ATL.Registrar'  
+    InprocServer32 = s '%MODULE%'  
+ {  
+    val ThreadingModel = s 'Apartment'  
+ }  
+ }  
+ }  
 }  
 ```  
   
- 実行時には、このパース ツリーは `HKEY_CLASSES_ROOT`に `ATL.Registrar` のキーを追加します。  この新しいキーに、と:  
+ この解析ツリーを追加、実行時に、`ATL.Registrar`キーを`HKEY_CLASSES_ROOT`です。 この新しいキーにし、it:  
   
--   `ATL Registrar Class` を、キーの既定の文字列値指定します。  
+-   指定`ATL Registrar Class`キーの既定の文字列値として。  
   
--   サブキーとして `CLSID` を追加します。  
+-   追加`CLSID`サブキーとして。  
   
--   `CLSID`に `{44EC053A-400F-11D0-9DCD-00A0C90391D3}` を指定します。  \(この値は `CoCreateInstance`で使用するレジストラーの CLSID\) です。  
+-   指定`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`の`CLSID`します。 (この値は、レジストラーので使用するための CLSID `CoCreateInstance`)。  
   
- `CLSID` が共有されるため、登録解除モードで削除しないでください。  ステートメントは、`NoRemove CLSID``CLSID` が登録解除モードの登録のモードで開き、無視することを示すことによって、これを行います。  
+ `CLSID`は、共有、削除しないで登録解除モードでします。 このステートメントでは、`NoRemove CLSID`は、ことを示すことで`CLSID`レジスタ モードで開かれているし、登録解除モードでは無視する必要があります。  
   
- `ForceRemove` のステートメントでは、キーを再作成する前にキーとサブキーをすべて削除して、ハウスキーピング関数を提供します。  これは、サブキーの名前が変更された場合に便利です。  このスクリプト例では `{44EC053A-400F-11D0-9DCD-00A0C90391D3}` が既に存在する場合は、`ForceRemove` 確認します。  これは、`ForceRemove`:  
+ `ForceRemove`ステートメントがキーを再作成する前に、キーとそのすべてのサブキーを削除することで、ハウスキーピング機能を提供します。 サブキーの名前が変更された場合に役立ちます。 これができます。 このスクリプトの例では`ForceRemove`かどうかをチェック`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`既に存在します。 その場合、 `ForceRemove`:  
   
--   再帰的に `{44EC053A-400F-11D0-9DCD-00A0C90391D3}` とサブキーをすべて削除します。  
+-   再帰的に削除`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`とそのすべてのサブキーです。  
   
--   `{44EC053A-400F-11D0-9DCD-00A0C90391D3}`を再作成します。  
+-   再作成`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。  
   
--   `ATL Registrar Class` をように `{44EC053A-400F-11D0-9DCD-00A0C90391D3}`の既定の文字列値追加します。  
+-   追加`ATL Registrar Class`の既定の文字列値として`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。  
   
- パース ツリーは 2 `{44EC053A-400F-11D0-9DCD-00A0C90391D3}`に、新しいサブキーを追加します。  最初のキー、`ProgID`は、ProgID である既定の文字列値を取得します。  2 番目のキー、`InprocServer32`は、セクションで説明するプリプロセッサの値である既定の文字列値、`%MODULE%`、この記事の [を使用して置き換え可能パラメーター \(レジストラー プリプロセッサ\)](../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)取得します。  `InprocServer32` は、名前付きの値、`Apartment`の文字列値を持つ `ThreadingModel`を取得します。  
+ 解析ツリーに 2 つの新しいサブキーを今すぐ追加`{44EC053A-400F-11D0-9DCD-00A0C90391D3}`です。 最初のキー `ProgID`ProgID は、既定の文字列値を取得します。 2 番目のキー `InprocServer32`、既定の文字列値を取得`%MODULE%`、つまり、」に説明されているプリプロセッサ値[置き換え可能パラメーターの使用 (レジストラーのプリプロセッサ)](../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)、この記事のです。 `InprocServer32`また、名前付きの値を取得`ThreadingModel`の文字列値を持つ`Apartment`します。  
   
-## 複数のパース ツリーを指定します。  
- スクリプトで複数のパース ツリーを指定するには、別の最後に 1 個のツリーを単純に設定します。  たとえば、次のスクリプトは `HKEY_CLASSES_ROOT` と `HKEY_CURRENT_USER`両方のパース ツリーに、`MyVeryOwnKey`キーを追加します:  
+## <a name="specify-multiple-parse-trees"></a>複数のパース ツリーを指定します。  
+ 1 つ以上の解析ツリーをスクリプトを指定するには、別の最後に 1 つのツリーを配置します。 たとえば、次のスクリプトが、キーを追加`MyVeryOwnKey`、両方のパース ツリーを`HKEY_CLASSES_ROOT`と`HKEY_CURRENT_USER`:  
   
 ```  
 HKCR  
 {  
-   'MyVeryOwnKey' = s 'HowGoesIt?'  
+ 'MyVeryOwnKey' = s 'HowGoesIt'  
 }  
 HKEY_CURRENT_USER  
 {  
-   'MyVeryOwnKey' = s 'HowGoesIt?'  
+ 'MyVeryOwnKey' = s 'HowGoesIt'  
 }  
 ```  
   
 > [!NOTE]
->  レジストラー スクリプトでは、KB は、最大のトークンのサイズです。  \(トークンは、構文を認識可能な要素です。前スクリプトの例では、`HKCR`、`HKEY_CURRENT_USER`、`'MyVeryOwnKey'`と `'HowGoesIt?'` は、すべてのトークンです。  
+>  レジストラー スクリプトでは、トークンの最大サイズは 4 K です。 (トークンは、構文内の認識可能な要素です)。前のスクリプトの例で`HKCR`、 `HKEY_CURRENT_USER`、 `'MyVeryOwnKey'`、および`'HowGoesIt'`すべてトークンです。  
   
-## 参照  
- [レジストラー スクリプトの作成](../Topic/Creating%20Registrar%20Scripts.md)
+## <a name="see-also"></a>関連項目  
+ [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
+

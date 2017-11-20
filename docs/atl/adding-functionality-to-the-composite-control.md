@@ -1,43 +1,44 @@
 ---
-title: "複合コントロールへの機能の追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], イベント"
-  - "複合コントロール, 処理 (イベントを)"
-  - "イベント ハンドラー [C++], ActiveX コントロール"
+title: "複合コントロールへの機能の追加 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- event handlers [C++], ActiveX controls
+- composite controls, handling events
+- ActiveX controls [C++], events
 ms.assetid: 98f85681-9564-480d-af38-03f9733fe58b
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7282ba7eb80fd30175751bb5234818a5e3cf1431
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 複合コントロールへの機能の追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-複合コントロールに必要なコントロールを挿入し、次は、新しい機能を追加します。  この新しい機能は、通常 2 種類に分類されます:  
+# <a name="adding-functionality-to-the-composite-control"></a>複合コントロールへの機能の追加
+複合コントロールに必要なコントロールを挿入した後、次の手順には、新しい機能の追加が含まれます。 この新しい機能は、通常、2 つのカテゴリに分類されます。  
   
--   さらに、特定の機能をサポートする追加のインターフェイスと、複合コントロールの動作をカスタマイズする。  
+-   追加のインターフェイスをサポートして、特定の機能による複合コントロールの動作をカスタマイズします。  
   
--   含まれている ActiveX コントロール \(またはコントロール\) からのイベントを処理する。  
+-   格納されている ActiveX コントロール (またはコントロール) からのイベントを処理します。  
   
- この記事の目的と範囲の場合、このセクションの後半では、ActiveX コントロールからのイベント処理のみに焦点を絞ります。  
+ 目的とこの記事の範囲は、このセクションの残りの部分は ActiveX コントロールからのイベントの処理についてのみ説明します。  
   
 > [!NOTE]
->  Windows コントロールからのメッセージを処理する必要がある場合は、ATL のメッセージ処理の詳細については [ウィンドウの実行](../atl/implementing-a-window.md) を参照してください。  
+>  Windows のコントロールからのメッセージを処理する必要がある場合は、次を参照してください[ウィンドウの実装](../atl/implementing-a-window.md)メッセージ atl の処理の詳細について。  
   
- ダイアログ リソースの ActiveX コントロールを挿入したら、コントロールを右クリックし、**\[イベント ハンドラーの追加\]**をクリックします。  、**\[追加して編集\]**を処理し、をクリックするイベントを選択します。  イベント ハンドラー コードは、コントロールの .h ファイルに追加されます。  
+ ActiveX コントロールをダイアログ リソースを挿入した後、コントロールを右クリックし、をクリックして**イベント ハンドラーの追加**です。 イベントを処理し、をクリックする選択**の追加し、編集**です。 イベント ハンドラーのコードは、コントロールの .h ファイルに追加されます。  
   
- [CComCompositeControl::AdviseSinkMap](../Topic/CComCompositeControl::AdviseSinkMap.md)への複合コントロールの ActiveX コントロールのコネクション ポイントは自動的に呼び出しによって接続されており、ドロップします。  
+ 複合コントロールの ActiveX コントロールの接続ポイントが自動的に接続されへの呼び出しを使用して切断[CComCompositeControl::AdviseSinkMap](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)です。  
   
-## 参照  
- [複合コントロールの基本](../Topic/ATL%20Composite%20Control%20Fundamentals.md)
+## <a name="see-also"></a>関連項目  
+ [複合コントロールの基本](../atl/atl-composite-control-fundamentals.md)
+

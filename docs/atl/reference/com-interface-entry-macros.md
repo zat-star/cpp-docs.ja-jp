@@ -4,41 +4,36 @@ ms.custom:
 ms.date: 03/28/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- COM interfaces, COM interface entry macros
+f1_keywords:
+- atlcom/ATL::COM_INTERFACE_ENTRY
+- atlcom/ATL::COM_INTERFACE_ENTRY_IID
+- atlcom/ATL::COM_INTERFACE_ENTRY_AGGREGATE
+- atlcom/ATL::COM_INTERFACE_ENTRY_AGGREGATE_BLIND
+- atlcom/ATL::COM_INTERFACE_ENTRY_AUTOAGGREGATE
+- atlcom/ATL::COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND
+- atlcom/ATL::COM_INTERFACE_ENTRY_BREAK
+- atlcom/ATL::COM_INTERFACE_ENTRY_CACHED_TEAR_OFF
+- atlcom/ATL::COM_INTERFACE_ENTRY_TEAR_OFF
+- atlcom/ATL::COM_INTERFACE_ENTRY_CHAIN
+- atlcom/ATL::COM_INTERFACE_ENTRY_FUNC
+- atlcom/ATL::COM_INTERFACE_ENTRY_FUNC_BLIND
+- atlcom/ATL::COM_INTERFACE_ENTRY_NOINTERFACE
+dev_langs: C++
+helpviewer_keywords: COM interfaces, COM interface entry macros
 ms.assetid: 19dcb768-2e1f-4b8d-a618-453a01a4bd00
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 7e9eb155d10a0a05916fc5f74cbe58fdf14b7475
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 281829593087a936f201000faaa42f698344d3b5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="cominterfaceentry-macros"></a>COM_INTERFACE_ENTRY マクロ  
  アクセスできるように、これらのマクロがその COM マップにオブジェクトのインターフェイスを入力`QueryInterface`です。 COM マップ エントリの順序は、対応する注文インターフェイスがチェックされます**IID**中に`QueryInterface`です。  
 
@@ -51,7 +46,7 @@ ms.lasthandoff: 03/31/2017
 |[定義](#com_interface_entry_aggregate)|インターフェイスがによって識別される`iid`、クエリが実行`COM_INTERFACE_ENTRY_AGGREGATE`転送`punk`です。|  
 |[COM_INTERFACE_ENTRY_AGGREGATE_BLIND](#com_interface_entry_aggregate_blind)|同じ[で定義](#com_interface_entry_aggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、`punk`です。|  
 |[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)|同じ[で定義](#com_interface_entry_aggregate)、場合を除く`punk`は**NULL**で説明されている集計を自動的に作成、`clsid`です。|  
-|[COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](#com_interface_entry_autoaggregate_blind)|同じ[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、 `punk`、場合`punk`は**NULL**、自動的にで説明されている集計の作成、`clsid`です。|  
+|[COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND](#com_interface_entry_autoaggregate_blind)|同じ[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、 `punk`、場合`punk`は**NULL**、自動的に作成しますにより記述された集計、`clsid`です。|  
 |[COM_INTERFACE_ENTRY_BREAK](#com_interface_entry_break)|呼び出さないと、 [DebugBreak](http://msdn.microsoft.com/library/windows/desktop/ms679297)について、指定したインターフェイスが照会されたときにします。|  
 |[COM_INTERFACE_ENTRY_CACHED_TEAR_OFF](#com_interface_entry_cached_tear_off)|すべてのインスタンスのインターフェイスに固有のデータを保存します。|  
 |[COM_INTERFACE_ENTRY_TEAR_OFF](#com_interface_entry_tear_off)|ティアオフ インターフェイスを公開します。|  
@@ -60,6 +55,8 @@ ms.lasthandoff: 03/31/2017
 |[COM_INTERFACE_ENTRY_FUNC_BLIND](#com_interface_entry_func_blind)|同じ[COM_INTERFACE_ENTRY_FUNC](#com_interface_entry_func)への呼び出しで結果の任意の IID のクエリを実行することを除いて、`func`です。|  
 |[COM_INTERFACE_ENTRY_NOINTERFACE](#com_interface_entry_nointerface)|返します**E_NOINTERFACE**と COM マップ処理について、指定したインターフェイスが照会されたときに終了します。|  
 
+## <a name="requirements"></a>要件
+**ヘッダー:** atlcom.h
 
 ## <a name="com_interface_entry"></a>COM_INTERFACE_ENTRY
 インターフェイスを COM インターフェイス マップに入力します。
@@ -106,7 +103,7 @@ COM_INTERFACE_ENTRY2(x, x2)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 118](../../atl/codesnippet/cpp/com-map-macros_2.h)]  
+ [!code-cpp[NVC_ATL_Windowing#118](../../atl/codesnippet/cpp/com-map-macros_2.h)]  
   
 ##  <a name="com_interface_entry_iid"></a>COM_INTERFACE_ENTRY_IID  
  インターフェイスを COM マップに入力し、インターフェイスの IID を指定するには、このマクロを使用します。  
@@ -124,7 +121,7 @@ COM_INTERFACE_ENTRY_IID(iid, x)
   
  
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 117](../../atl/codesnippet/cpp/com-map-macros_3.h)]  
+ [!code-cpp[NVC_ATL_Windowing#117](../../atl/codesnippet/cpp/com-map-macros_3.h)]  
   
 ##  <a name="com_interface_entry2_iid"></a>COM_INTERFACE_ENTRY2_IID  
  同じ[COM_INTERFACE_ENTRY2](#com_interface_entry2)異なる IID を指定する点を除いて、します。  
@@ -163,7 +160,7 @@ COM_INTERFACE_ENTRY_AGGREGATE(iid, punk)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 112](../../atl/codesnippet/cpp/com-map-macros_4.h)]  
+ [!code-cpp[NVC_ATL_Windowing#112](../../atl/codesnippet/cpp/com-map-macros_4.h)]  
   
 ##  <a name="com_interface_entry_aggregate_blind"></a>COM_INTERFACE_ENTRY_AGGREGATE_BLIND  
  同じ[で定義](#com_interface_entry_aggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、`punk`です。  
@@ -182,7 +179,7 @@ COM_INTERFACE_ENTRY_AGGREGATE_BLIND(punk)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 113](../../atl/codesnippet/cpp/com-map-macros_5.h)]  
+ [!code-cpp[NVC_ATL_Windowing#113](../../atl/codesnippet/cpp/com-map-macros_5.h)]  
   
 
 ##  <a name="com_interface_entry_autoaggregate"></a>COM_INTERFACE_ENTRY_AUTOAGGREGATE  
@@ -206,10 +203,10 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE(iid, punk, clsid)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 114](../../atl/codesnippet/cpp/com-map-macros_6.h)]  
+ [!code-cpp[NVC_ATL_Windowing#114](../../atl/codesnippet/cpp/com-map-macros_6.h)]  
   
 ##  <a name="com_interface_entry_autoaggregate_blind"></a>COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND  
- 同じ[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、 `punk`、場合`punk`は**NULL**、自動的にで説明されている集計の作成、`clsid`です。  
+ 同じ[COM_INTERFACE_ENTRY_AUTOAGGREGATE](#com_interface_entry_autoaggregate)にクエリを転送するために結果の任意の IID のクエリを実行することを除いて、 `punk`、場合`punk`は**NULL**、自動的に作成しますにより記述された集計、`clsid`です。  
   
 ```
 COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(punk, clsid)
@@ -228,7 +225,7 @@ COM_INTERFACE_ENTRY_AUTOAGGREGATE_BLIND(punk, clsid)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_Windowing # 115](../../atl/codesnippet/cpp/com-map-macros_7.h)]  
+ [!code-cpp[NVC_ATL_Windowing#115](../../atl/codesnippet/cpp/com-map-macros_7.h)]  
   
 ##  <a name="com_interface_entry_break"></a>COM_INTERFACE_ENTRY_BREAK  
  呼び出さないと、 [DebugBreak](http://msdn.microsoft.com/library/windows/desktop/ms679297)について、指定したインターフェイスが照会されたときにします。  
@@ -269,7 +266,7 @@ COM_INTERFACE_ENTRY_CACHED_TEAR_OFF(iid, x, punk)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM #54](../../atl/codesnippet/cpp/com-map-macros_8.h)]  
+ [!code-cpp[NVC_ATL_COM#54](../../atl/codesnippet/cpp/com-map-macros_8.h)]  
   
 ##  <a name="com_interface_entry_tear_off"></a>COM_INTERFACE_ENTRY_TEAR_OFF  
  ティアオフ インターフェイスを公開します。  
@@ -291,7 +288,7 @@ COM_INTERFACE_ENTRY_TEAR_OFF(iid, x)
   
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATL_COM 1](../../atl/codesnippet/cpp/com-map-macros_1.h)]  
+ [!code-cpp[NVC_ATL_COM#1](../../atl/codesnippet/cpp/com-map-macros_1.h)]  
   
 ##  <a name="com_interface_entry_chain"></a>COM_INTERFACE_ENTRY_CHAIN  
  処理が、COM マップ内のこのエントリに達すると、基底クラスの COM マップを処理します。  
@@ -301,17 +298,17 @@ COM_INTERFACE_ENTRY_CHAIN(classname)
 ```  
   
 ### <a name="parameters"></a>パラメーター  
- *クラス名*  
+ *classname*  
  [in]現在のオブジェクトの基本クラス。  
   
 ### <a name="remarks"></a>コメント  
  たとえば、次のコード。  
   
- [!code-cpp[NVC_ATL_Windowing # 116](../../atl/codesnippet/cpp/com-map-macros_9.h)]  
+ [!code-cpp[NVC_ATL_Windowing#116](../../atl/codesnippet/cpp/com-map-macros_9.h)]  
   
  COM マップ内の最初のエントリは、COM マップを格納するオブジェクトのインターフェイスである必要がありますに注意してください。 したがってで、COM マップ エントリを開始することはできません`COM_INTERFACE_ENTRY_CHAIN`、それが原因で、ポイントで検索する別のオブジェクトの COM マップ場所**COM_INTERFACE_ENTRY_CHAIN (**`COtherObject`**)**オブジェクトの COM マップに表示されます。 別のオブジェクトの COM マップを最初に検索する場合は、追加のインターフェイスのエントリを**IUnknown** COM マップにその他のオブジェクトの COM マップし、チェーンします。 例:  
   
- [!code-cpp[NVC_ATL_Windowing # 111](../../atl/codesnippet/cpp/com-map-macros_10.h)]  
+ [!code-cpp[NVC_ATL_Windowing#111](../../atl/codesnippet/cpp/com-map-macros_10.h)]  
   
   
   

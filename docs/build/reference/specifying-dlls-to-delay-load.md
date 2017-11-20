@@ -1,31 +1,31 @@
 ---
-title: "遅延読み込みする DLL の指定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/DELAYLOAD リンカー オプション"
-  - "遅延読み込み (DLL を)"
-  - "遅延読み込み (DLL を), 指定"
-  - "DELAYLOAD リンカー オプション"
+title: "遅延読み込みする Dll を指定する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- DELAYLOAD linker option
+- delayed loading of DLLs
+- delayed loading of DLLs, specifying
+- /DELAYLOAD linker option
 ms.assetid: 94cbecfe-7a42-40d1-a618-9f2786bac0d8
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: bfa7eb3c862c1ce5d1ed356ddd89c51ebff95860
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 遅延読み込みする DLL の指定
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[\/delayload](../../build/reference/delayload-delay-load-import.md):`dllname` リンカー オプションを使用して、遅延読み込みする DLL を指定できます。  独自のバージョンのヘルパー関数を使う計画がない場合は、プログラムを delayimp.lib \(デスクトップ アプリケーションの場合\) または dloadhelper.lib \(ストア アプリの場合\) とリンクする必要もあります。  
+# <a name="specifying-dlls-to-delay-load"></a>遅延読み込みする DLL の指定
+遅延読み込みする Dll を指定することができます、 [/delayload](../../build/reference/delayload-delay-load-import.md):`dllname`リンカー オプション。 独自のバージョンのヘルパー関数を使う計画がない場合は、プログラムを delayimp.lib (デスクトップ アプリケーションの場合) または dloadhelper.lib (ストア アプリの場合) とリンクする必要もあります。  
   
  DLL の遅延読み込みの簡単な例を以下に示します。  
   
@@ -42,7 +42,7 @@ int main() {
 }  
 ```  
   
- DEBUG バージョンのプロジェクトをビルドします。  デバッガーを使ってコードを段階的に実行すると、`MessageBox` に対する呼び出しを行なう場合のみ user32.dll が読み込まれることがわかります。  
+ DEBUG バージョンのプロジェクトをビルドします。 デバッガーを使ってコードを段階的に実行すると、`MessageBox` に対する呼び出しを行なう場合のみ user32.dll が読み込まれることがわかります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカーによる DLL の遅延読み込み](../../build/reference/linker-support-for-delay-loaded-dlls.md)

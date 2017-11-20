@@ -1,50 +1,50 @@
 ---
-title: "ATL ウィンドウ クラスの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ウィンドウ クラス"
+title: "ATL ウィンドウ クラスの概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: window classes
 ms.assetid: 503efc2c-a269-495d-97cf-3fb300d52f3d
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 253c7145f9b312890f20eddb6bb8eab425fd60c5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL ウィンドウ クラスの概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="introduction-to-atl-window-classes"></a>ATL ウィンドウ クラスの概要
+実装し、ウィンドウの操作は、次の ATL クラスが設計されています。  
+  
+-   [CWindow](../atl/reference/cwindow-class.md)するウィンドウ ハンドルをアタッチすることができます、`CWindow`オブジェクト。 呼び出して`CWindow`ウィンドウを操作するメソッド。  
+  
+-   [CWindowImpl](../atl/reference/cwindowimpl-class.md)新しいウィンドウを実装し、メッセージ マップでのメッセージを処理することができます。 作成ウィンドウでは、既存のウィンドウを新しい Windows クラス、スーパークラス、既存のクラスまたはサブクラスに基づいています。  
+  
+-   [CDialogImpl](../atl/reference/cdialogimpl-class.md)モーダルまたはモードレス ダイアログ ボックスとプロセス メッセージ メッセージ マップを実装することができます。  
+  
+-   [CContainedWindowT](../atl/reference/ccontainedwindowt-class.md)構築済みクラスのメッセージ マップが含まれているウィンドウを別のクラスの実装です。 使用して`CContainedWindowT`1 つのクラスでのメッセージ処理を一元管理することができます。  
+  
+-   [CAxDialogImpl](../atl/reference/caxdialogimpl-class.md) ActiveX コントロールをホストするダイアログ ボックス (モーダルまたはモードレス) を実装することができます。  
+  
+-   [CSimpleDialog](../atl/reference/csimpledialog-class.md)基本的な機能を持つモーダル ダイアログ ボックスを実装することができます。  
+  
+-   [CAxWindow](../atl/reference/caxwindow-class.md) ActiveX コントロールをホストするウィンドウを実装することができます。  
+  
+-   [CAxWindow2T](../atl/reference/caxwindow2t-class.md)ライセンスされた ActiveX コントロールをホストするウィンドウを実装することができます。  
+  
+ 特定のウィンドウ クラスに加えて、ATL は、ATL ウィンドウ オブジェクトの実装を容易にするために設計されたいくつかのクラスを提供します。 それらは次のとおりです。  
+  
+-   [CWndClassInfo](../atl/reference/cwndclassinfo-class.md)新しいウィンドウ クラスの情報を管理します。  
+  
+-   [CWinTraits](../atl/reference/cwintraits-class.md)と[CWinTraitsOR](../atl/reference/cwintraitsor-class.md) ATL ウィンドウ オブジェクトの特徴を標準化する単純なメソッドを提供します。  
+  
+## <a name="see-also"></a>関連項目  
+ [ウィンドウ クラス](../atl/atl-window-classes.md)
 
-次の ATL ウィンドウ クラスはを実装し、処理するように設計されています:  
-  
--   [CWindow](../atl/reference/cwindow-class.md) は `CWindow` の Windows ハンドルをオブジェクトにアタッチすることができます。  次に、ウィンドウを操作するための `CWindow` のメソッドを呼び出します。  
-  
--   [CWindowImpl](../Topic/CWindowImpl%20Class.md) では、メッセージ マップを含む新しいウィンドウとプロセス メッセージを実装できるようにします。  既存のウィンドウ新しいウィンドウ クラス、スーパークラス既存のクラス、またはサブクラスに基づいてウィンドウを作成できます。  
-  
--   [CDialogImpl](../Topic/CDialogImpl%20Class.md) では、メッセージ マップを持つモーダルまたはモードレス ダイアログ ボックスとプロセスのメッセージを実装できるようにします。  
-  
--   [CContainedWindowT](../Topic/CContainedWindowT%20Class.md) は、メッセージ マップに別のクラスに含まれているペインを実行するビルド済みのクラスです。  `CContainedWindowT` を使用して 1 個のクラスで処理するメッセージを集中化することができます。  
-  
--   ActiveX コントロールのホスト[CAxDialogImpl](../Topic/CAxDialogImpl%20Class.md) は、ダイアログ ボックス \(モーダルまたはモードレス\) 実装できるようにします。  
-  
--   [CSimpleDialog](../atl/reference/csimpledialog-class.md) は、基本的な機能のモーダル ダイアログ ボックスを実装できるようにします。  
-  
--   [CAxWindow](../atl/reference/caxwindow-class.md) は、ActiveX コントロールをホストするウィンドウを実装できるようにします。  
-  
--   [CAxWindow2T](../Topic/CAxWindow2T%20Class.md) は、ライセンスされた ActiveX コントロールをホストするウィンドウを実装できるようにします。  
-  
- 特定のウィンドウ クラスに加えて、ATL は ATL ウィンドウ オブジェクトの実装を簡単にするために設計された複数のクラスを提供します。  それらは次のとおりです。  
-  
--   [CWndClassInfo](../atl/reference/cwndclassinfo-class.md) は新しいウィンドウ クラス情報を管理します。  
-  
--   [CWinTraits](../atl/reference/cwintraits-class.md) と [CWinTraitsOR](../atl/reference/cwintraitsor-class.md) は、ATL ウィンドウ オブジェクトの特性を標準化する簡単な方法を提供します。  
-  
-## 参照  
- [ウィンドウ クラス](../Topic/ATL%20Window%20Classes.md)

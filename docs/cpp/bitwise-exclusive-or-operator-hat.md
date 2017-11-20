@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - operators [C++], bitwise
 - exclusive OR operator
@@ -19,16 +17,15 @@ helpviewer_keywords:
 - OR operator [C++], bitwise exclusive
 - operators [C++], logical
 ms.assetid: f9185d85-65d5-4f64-a6d6-679758d52217
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: c6d7713a28fa6c0dbe7a5543afa65cd927f614e7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 5cb405f2892ea344f145ae5f25716e1143cda38b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="bitwise-exclusive-or-operator-"></a>ビット処理排他的 OR 演算子: ^
 ## <a name="syntax"></a>構文  
@@ -43,7 +40,7 @@ expression ^ expression
 ビットごとの排他的 OR 演算子のオペランドは両方とも整数型である必要があります。 通常の算術変換は、「[標準変換](standard-conversions.md)オペランドに適用されます。  
   
 ## <a name="operator-keyword-for-"></a>^ の演算子キーワード  
-**Xor**演算子に相当するテキストは、 ** ^**です。 アクセスする方法を次の 2 つが、 **xor**をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
+**Xor**演算子に相当するテキストは、  **^**です。 アクセスする方法を次の 2 つが、 **xor**をプログラムで演算子: ヘッダー ファイルをインクルード`iso646.h`、コンパイル時に、または、 [/Za](../build/reference/za-ze-disable-language-extensions.md) (言語の拡張機能を無効にする) コンパイラ オプション。  
   
 ## <a name="example"></a>例  
   
@@ -63,6 +60,5 @@ int main() {
   
 ## <a name="see-also"></a>関連項目  
  [C++ の組み込み演算子、優先順位と結合規則](../cpp/cpp-built-in-operators-precedence-and-associativity.md)   
-
 
 

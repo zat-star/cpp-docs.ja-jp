@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -38,37 +37,21 @@ f1_keywords:
 - ATLSIMPSTR/ATL::CSimpleStringT::StringLength
 - ATLSIMPSTR/ATL::CSimpleStringT::Truncate
 - ATLSIMPSTR/ATL::CSimpleStringT::UnlockBuffer
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - shared classes, CSimpleStringT
 - strings [C++], ATL class
 - CSimpleStringT class
 ms.assetid: 15814fcb-5b8f-4425-a97e-3b61fc9b48d8
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 0b60a7b5c58c33ed4d8be67e1de603ef5f711742
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.openlocfilehash: 27f163b76d037ca91330890c7d38c37c182b6b1b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="csimplestringt-class"></a>CSimpleStringT クラス
 このクラスを表します、`CSimpleStringT`オブジェクト。  
@@ -111,7 +94,7 @@ class CSimpleStringT
   
 |名前|説明|  
 |----------|-----------------|  
-|[CSimpleStringT::Append](#append)|追加、`CSimpleStringT`既存オブジェクト`CSimpleStringT`オブジェクト。|  
+|[CSimpleStringT::Append](#append)|追加、`CSimpleStringT`を既存のオブジェクト`CSimpleStringT`オブジェクト。|  
 |[CSimpleStringT::AppendChar](#appendchar)|文字を追加すると、既存`CSimpleStringT`オブジェクト。|  
 |[CSimpleStringT::CopyChars](#copychars)|別の文字列に文字または文字をコピーします。|  
 |[CSimpleStringT::CopyCharsOverlapped](#copycharsoverlapped)|重複するバッファーを別の文字列に文字または文字をコピーします。|  
@@ -153,7 +136,7 @@ class CSimpleStringT
 
 
 ## <a name="append"></a>CSimpleStringT::Append
-追加、`CSimpleStringT`既存オブジェクト`CSimpleStringT`オブジェクト。  
+追加、`CSimpleStringT`を既存のオブジェクト`CSimpleStringT`オブジェクト。  
   
 ### <a name="syntax"></a>構文  
   
@@ -223,7 +206,7 @@ static void CopyChars(
  数`pchSrc`コピーする文字。  
   
 ### <a name="remarks"></a>コメント  
- 文字をコピーするには、このメソッドを呼び出す`pchSrc`に、`pchDest`文字列。  
+ 文字をコピーするには、このメソッドを呼び出す`pchSrc`を`pchDest`文字列。  
   
 ### <a name="example"></a>例  
  次の例は、`CSimpleStringT::CopyChars` の使い方を示しています。  
@@ -258,7 +241,7 @@ static void CopyCharsOverlapped(
  数`pchSrc`コピーする文字。  
   
 ### <a name="remarks"></a>コメント  
- 文字をコピーするには、このメソッドを呼び出す`pchSrc`に、`pchDest`文字列。 異なり`CopyChars`、`CopyCharsOverlapped`オーバー ラップする可能性がありますの文字バッファーからコピーするための安全なメソッドを提供します。  
+ 文字をコピーするには、このメソッドを呼び出す`pchSrc`を`pchDest`文字列。 異なり`CopyChars`、`CopyCharsOverlapped`オーバー ラップする可能性がありますの文字バッファーからコピーするための安全なメソッドを提供します。  
   
 ### <a name="example"></a>例  
  例を参照して[CSimpleStringT::CopyChars](#copychars)、またはソース コードを`CSimpleStringT::SetString`(atlsimpstr.h にあります)。  
@@ -430,13 +413,13 @@ PXSTR GetBuffer();
  `nMinBufferLength`  
  文字バッファーに保持できる文字の最小数。 この値では、null 終端文字のスペースは含まれません。  
   
- 場合`nMinBufferLength`は現在のバッファーの長さよりも大きく`GetBuffer`現在のバッファーを破棄し、要求されたサイズのバッファーに置き換えられます、オブジェクトの参照カウントを 0 にリセットします。 以前を呼び出した場合[LockBuffer](#lockbuffer)このバッファーでバッファーのロックが失われました。  
+ 場合`nMinBufferLength`が現在のバッファーの長さよりも大きい`GetBuffer`現在のバッファーを破棄し、要求されたサイズのバッファーに置き換えられ、オブジェクトの参照カウントを 0 にリセットします。 以前を呼び出した場合[LockBuffer](#lockbuffer)このバッファーでバッファーのロックが失われました。  
   
 ### <a name="return-value"></a>戻り値  
  `PXSTR`オブジェクトの (null で終わる) 文字バッファーへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- バッファーの内容を返すには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。 返された`PXSTR`定数ではありませんし、したがっての直接的な変更では、`CSimpleStringT`内容。  
+ バッファーの内容を返すには、このメソッドを呼び出す、`CSimpleStringT`オブジェクト。 返された`PXSTR`定数ではありませんし、したがっての直接的な変更では、`CSimpleStringT`内容。  
   
  によって返されたポインターを使用する場合`GetBuffer`文字列の内容を変更するを呼び出す必要があります[ReleaseBuffer](#releasebuffer)以外を使用する前に`CSimpleStringT`メンバー メソッド。  
   
@@ -476,7 +459,7 @@ PXSTR GetBufferSetLength(int nLength);
  A`PXSTR`オブジェクトの (null で終わる) 文字バッファーへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- 内部バッファーの指定された長さを取得するには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。 返された`PXSTR`のポインターは`const`できるので、直接変更`CSimpleStringT`内容。  
+ 内部バッファーの指定された長さを取得するには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。 返された`PXSTR`ポインターがない`const`できるので、直接変更`CSimpleStringT`内容。  
   
  によって返されたポインターを使用する場合[GetBufferSetLength](#getbuffersetlength)文字列の内容を変更するには、呼び出す`ReleaseBuffer`の内部状態を更新する`CsimpleStringT`以外を使用する前に`CSimpleStringT`メソッドです。  
   
@@ -601,7 +584,7 @@ PXSTR LockBuffer();
  ポインター、`CSimpleStringT`オブジェクトまたは null で終わる文字列。  
   
 ### <a name="remarks"></a>コメント  
- バッファーをロックするには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。 呼び出して`LockBuffer`、参照カウントの場合は-1 で、文字列のコピーを作成します。 参照カウント値が-1 の場合は、バッファー内の文字列は「ロック」の状態であると見なされます。 ロックの状態のときに、文字列が 2 つの方法で保護します。  
+ バッファーをロックするには、このメソッドを呼び出して、`CSimpleStringT`オブジェクト。 呼び出して`LockBuffer`、参照カウントの場合は-1 で、文字列のコピーを作成します。 参照カウント値が-1 の場合は、バッファー内の文字列が「ロック」の状態であると見なされます。 ロックの状態のときに、文字列が 2 つの方法で保護します。  
   
 -   その他の文字列を取得できませんデータへの参照をロックされた文字列の場合でも、ロックされた文字列に割り当てられている文字列。  
   
@@ -609,7 +592,7 @@ PXSTR LockBuffer();
   
  バッファーに文字列をロックすることにより、文字列のバッファーで排他的に保持はそのまま残ることを確認します。  
   
- 完了した後`LockBuffer`、呼び出す[として](#unlockbuffer)参照カウントを 1 にリセットされます。  
+ 完了したら後`LockBuffer`、呼び出す[として](#unlockbuffer)参照カウントを 1 にリセットします。  
   
 > [!NOTE]
 >  呼び出す場合[GetBuffer](#getbuffer)ロックされているバッファーに設定、`GetBuffer`パラメーター`nMinBufferLength`から現在のバッファーの長さより大きいバッファーのロックは失われます。 このような呼び出しを`GetBuffer`現在のバッファーを破棄し、要求されたサイズのバッファーに置き換えられ、参照カウントを 0 にリセットします。  
@@ -970,7 +953,7 @@ void SetString(PCXSTR pszSrc);
 ### <a name="remarks"></a>コメント  
  文字列をコピー、`CSimpleStringT`オブジェクト。 `SetString`バッファー内の古い文字列データを上書きします。  
   
- 両方のバージョンの`SetString`チェックするかどうか`pszSrc`null ポインターでは、スローする場合は、 **E_INVALIDARG**エラーです。  
+ 両方のバージョンの`SetString`を確認するかどうか`pszSrc`null ポインターでは、スローする場合は、 **E_INVALIDARG**エラーです。  
   
  パラメーターを 1 つのバージョンの`SetString`が必要ですが`pszSrc`に null で終わる文字列をポイントします。  
   

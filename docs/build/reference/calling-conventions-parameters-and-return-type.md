@@ -1,30 +1,30 @@
 ---
-title: "呼び出し規約、パラメーター、および戻り値の型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "呼び出し規約, ヘルパー関数"
-  - "ヘルパー関数, 呼び出し規約"
-  - "ヘルパー関数, 戻り値の型"
+title: "呼び出し規約、パラメーター、および戻り値の型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- calling conventions, helper functions
+- helper functions, calling conventions
+- helper functions, return types
 ms.assetid: 0ffa4558-6005-4803-be95-7a8ec8837660
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: bdaf30655808d5a43f6866039cc93a3833896921
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 呼び出し規約、パラメーター、および戻り値の型
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ヘルパー ルーチンのプロトタイプ:  
+# <a name="calling-conventions-parameters-and-return-type"></a>呼び出し規約、パラメーター、および戻り値の型
+ヘルパー ルーチンのプロトタイプ:   
   
 ```  
 FARPROC WINAPI __delayLoadHelper2(   
@@ -36,17 +36,17 @@ FARPROC WINAPI __delayLoadHelper2(
  それぞれの文字について以下に説明します。  
   
  `pidd`  
- `ImgDelayDescr` \(delayimp.h を参照\) への `const` ポインターは、さまざまなインポート関連のデータのオフセット、バインド情報のタイムスタンプ、および記述子コンテンツに関する追加情報を提供する属性セットを含みます。  現在、記述子のアドレスが相対仮想アドレス \(仮想アドレスと対照的\) であることを示す属性は `dlattrRva` しかありません。  
+ `const` (delayimp.h を参照) への `ImgDelayDescr` ポインターは、さまざまなインポート関連のデータのオフセット、バインド情報のタイムスタンプ、および記述子コンテンツに関する追加情報を提供する属性セットを含みます。 現在、記述子のアドレスが相対仮想アドレス (仮想アドレスと対照的) であることを示す属性は `dlattrRva` しかありません。  
   
- `PCImgDelayDescr` 構造の定義については、「[構造体と定数の定義](../../build/reference/structure-and-constant-definitions.md)」を参照してください。  
+ 定義については、`PCImgDelayDescr`構造体は、「[構造体と定数定義](../../build/reference/structure-and-constant-definitions.md)です。  
   
  `ppfnIATEntry`  
- 遅延読み込みインポート アドレス テーブル \(IAT\) のスロットへのポインターは、インポートされた関数のアドレスで更新されます。  ヘルパー ルーチンは、この場所に戻される値と同じ値を保存する必要があります。  
+ 遅延読み込みインポート アドレス テーブル (IAT) のスロットへのポインターは、インポートされた関数のアドレスで更新されます。 ヘルパー ルーチンは、この場所に戻される値と同じ値を保存する必要があります。  
   
-## 予想戻り値  
+## <a name="expected-return-values"></a>予想戻り値  
  関数が成功した場合、インポートされた関数のアドレスを返します。  
   
- 関数が失敗した場合、例外を発生させて 0 を返します。  発生される例外には 3 種類あります。  
+ 関数が失敗した場合、例外を発生させて 0 を返します。 発生される例外には 3 種類あります。  
   
 -   無効なパラメーター。`pidd` の属性が正しく指定されない場合に生じます。  
   
@@ -56,12 +56,12 @@ FARPROC WINAPI __delayLoadHelper2(
   
  これらの例外には自分で対処する責任があります。  
   
-## 解説  
- ヘルパー関数の呼び出し規約は `__stdcall` です。  戻り値の種類が適切でないため、FARPROC が使用されます。  この機能には C リンケージがあります。  
+## <a name="remarks"></a>解説  
+ ヘルパー関数の呼び出し規約は `__stdcall` です。 戻り値の種類が適切でないため、FARPROC が使用されます。 この機能には C リンケージがあります。  
   
- 遅延読み込みヘルパーの戻り値は、ヘルパー ルーチンを通知フックとして使用するつもりでない限り、渡された関数ポインターの場所に保存する必要があります。  その場合、戻すべき適切な関数ポインターを探すコードが必要です。  リンカーが生成するサンク コードは、その戻り値をインポートの実際のターゲットとして扱い、そこに直接ジャンプします。  
+ 遅延読み込みヘルパーの戻り値は、ヘルパー ルーチンを通知フックとして使用するつもりでない限り、渡された関数ポインターの場所に保存する必要があります。 その場合、戻すべき適切な関数ポインターを探すコードが必要です。 リンカーが生成するサンク コードは、その戻り値をインポートの実際のターゲットとして扱い、そこに直接ジャンプします。  
   
-## サンプル  
+## <a name="sample"></a>サンプル  
  次のコードは、簡単なフック関数を実装する方法を示しています。  
   
 ```  
@@ -141,5 +141,5 @@ PfnDliHook __pfnDliNotifyHook2 = delayHook;
 */  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ヘルパー関数について](../../build/reference/understanding-the-helper-function.md)
