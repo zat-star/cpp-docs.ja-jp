@@ -4,14 +4,11 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- c.strings
-dev_langs:
-- C++
+f1_keywords: c.strings
+dev_langs: C++
 helpviewer_keywords:
 - country/region strings
 - localization, locale
@@ -19,16 +16,15 @@ helpviewer_keywords:
 - setlocale function
 - language strings
 ms.assetid: a0e5a0c5-5602-4da0-b65f-de3d6c8530a2
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: 54a309b75d5e6b1773b7dd9bb294a1538397fd05
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
 ms.translationtype: HT
-ms.sourcegitcommit: 22da7776e46171467a37d46c3de3227f060eaf77
-ms.openlocfilehash: c03ad862cbba1038cfd651156f987cfbaf5b63f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/11/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="locale-names-languages-and-countryregion-strings"></a>ロケール名、言語、および国/地域識別文字列
 `setlocale` および `_create_locale` 関数の*ロケール*引数は、Windows NLS API でサポートされているロケール名、言語、国/地域コード、コード ページなどを使用して設定できます。 *ロケール*引数は次の形式になります。  
@@ -40,7 +36,7 @@ ms.lasthandoff: 08/11/2017
 &nbsp;&nbsp;&nbsp;&nbsp;| ""  
 &nbsp;&nbsp;&nbsp;&nbsp;| NULL  
   
- ロケール名形式が推奨されます。たとえば、英語 (米国) の `en-US`、またはボスニア語 (キリル、ボスニア - ヘルツェゴビナ) の `bs-Cyrl-BA` などです。 ロケール名のセットは「[ロケール名](http://msdn.microsoft.com/library/windows/desktop/dd373814.aspx)」に記述されています。 Windows オペレーティング システムのバージョンによってサポートされているロケール名の一覧については、「 **各国語サポートの (NLS) の API リファレンス** 」の [Culture Name](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)の列を参照してください。 このリソースは、ロケール名のサポートされている言語、スクリプト、および地域の部分を示しています。 既定以外の並べ替え順序を持つ、サポートされているロケール名については、「 **並べ替え順序の識別子** 」の [Locale name](http://msdn.microsoft.com/library/windows/desktop/dd374060.aspx)の列を参照してください。 Windows オペレーティング システムのバージョンごとの言語および地域のサポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。 Windows 10 以降では、有効な BCP-47 の言語タグに対応するロケール名が許可されています。 たとえば、`jp-US` は有効な BCP-47 タグですが、ロケール機能としては `US` にのみ有効です。  
+ ロケール名形式が推奨されます。たとえば、英語 (米国) の `en-US`、またはボスニア語 (キリル、ボスニア - ヘルツェゴビナ) の `bs-Cyrl-BA` などです。 ロケール名のセットは「 [ロケール名](http://msdn.microsoft.com/library/windows/desktop/dd373814.aspx)」に記述されています。 Windows オペレーティング システムのバージョンによってサポートされているロケール名の一覧については、「 **各国語サポートの (NLS) の API リファレンス** 」の [Culture Name](https://www.microsoft.com/resources/msdn/goglobal/default.mspx)の列を参照してください。 このリソースは、ロケール名のサポートされている言語、スクリプト、および地域の部分を示しています。 既定以外の並べ替え順序を持つ、サポートされているロケール名については、「 **並べ替え順序の識別子** 」の [Locale name](http://msdn.microsoft.com/library/windows/desktop/dd374060.aspx)の列を参照してください。 Windows オペレーティング システムのバージョンごとの言語および地域のサポートに関する詳細については、[MS-LCID]: Windows Language Code Identifier (LCID) Reference ([MS-LCID]: Windows 言語コード識別子 (LCID) リファレンス) の「[Appendix A: Product Behavior (付録 A: 製品の動作)](http://msdn.microsoft.com/goglobal/bb896001.aspx)」をご覧ください。 Windows 10 以降では、有効な BCP-47 の言語タグに対応するロケール名が許可されています。 たとえば、`jp-US` は有効な BCP-47 タグですが、ロケール機能としては `US` にのみ有効です。  
   
  ロケールを作成するために、言語識別文字列、または言語識別文字列と国/地域識別文字列が使用される場合、 *言語*[*_国_地域*[.*コード_ページ*]] form is stored in the locale setting for a category when a 言語 string, or 言語 string and country/region string, is used to create the locale. サポートされる言語識別文字列のセットは「 [Language Strings](../c-runtime-library/language-strings.md)」、サポートされるすべての国/地域識別文字列のリストは「 [Country/Region Strings](../c-runtime-library/country-region-strings.md)」に記述されています。 指定された言語が、指定された国または地域と関連付けられていない場合、指定された国または地域の既定の言語は、ロケール設定に格納されます。 この形式は、コードに埋め込まれた、またはストレージに対してシリアル化されたロケール文字列にはお勧めしません。これらの文字列は、ロケール名形式よりも、オペレーティング システムの更新によって変更される可能性が高いからです。  
   

@@ -4,47 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - layouts, stack frame
 - stack frame layout
 - __LOCAL_SIZE constant
 - stack, stack frame layout
 ms.assetid: 3b8addec-e809-48e4-b1d0-5bad133bd4b8
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: 871772eb8eef75f2a72c3da518b187884d69b980
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.openlocfilehash: 021fddcbc63fdfb6faf4c0a3919293046649bab5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="considerations-when-writing-prologepilog-code"></a>プロローグ/エピローグ コードの記述時の考慮事項
 **Microsoft 固有の仕様**  
   
- 独自のプロローグとエピローグのコード シーケンスを記述する前に、スタック フレームがどのように配置されるかを理解することが重要です。 **__LOCAL_SIZE** 事前定義済み定数の使用方法も知っておくと便利です。  
+ 独自のプロローグとエピローグのコード シーケンスを記述する前に、スタック フレームがどのように配置されるかを理解することが重要です。**__LOCAL_SIZE** 事前定義済み定数の使用方法も知っておくと便利です。  
   
 ##  <a name="_clang_c_stack_frame_layout"></a>C のスタック フレームのレイアウト  
  この例は、32 ビット関数で使用される標準プロローグ コードを示しています。  

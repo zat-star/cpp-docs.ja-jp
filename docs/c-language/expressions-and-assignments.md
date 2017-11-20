@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - assignment statements, values in expressions
 - expressions [C]
@@ -20,16 +18,15 @@ helpviewer_keywords:
 - assigning values in C
 - Visual C, assignments
 ms.assetid: 9c72919f-0768-4b47-85ca-afdfec6847f4
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 6ab58e3e787afa24114c1bbad2713a7ab2e51a99
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="expressions-and-assignments"></a>式と代入
 このセクションでは、C 言語での式の形成と値の割り当て方法について説明します。 定数、識別子、文字列、および関数呼び出しが、式で処理されるすべてのオペランドです。 C 言語には、通常の言語演算子がすべて用意されています。 このセクションでは、これらの演算子と、C または Microsoft C の独自の演算子について説明します。説明するトピックは次のとおりです。  

@@ -4,23 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: fc22ef82-9caa-425f-b201-2891bc123d1f
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 976b3c21e24a8e1e6c99664b31d32f85985d7f55
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="example-program"></a>サンプル プログラム
 次の C ソース プログラムは 2 つのソース ファイルで構成されています。 C プログラムで使用できるさまざまな宣言と定義の一部について、概要を示します。 後のセクションでは、これらの宣言、定義、および初期化を記述する方法と、**static** や `extern` のような C のキーワードを使用する方法について説明します。 `printf` 関数は C ヘッダー ファイル STDIO.H. で宣言されます。  

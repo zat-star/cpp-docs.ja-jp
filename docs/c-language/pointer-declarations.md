@@ -4,42 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - pointer declarations
 - declarations, pointers
 - const keyword [C]
 - pointers, declarations
 ms.assetid: 8b3b7fc7-f44d-480d-b6f9-cebe4e5462a6
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 02f33a5cd41dbbf45047915e3ad890311eba8cca
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: e7d8b351f7cc58d37d4da8bc273d8541aee54446
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="pointer-declarations"></a>ポインター宣言
 "ポインター宣言" はポインター変数に名前を付け、変数が指すオブジェクトの型を指定します。 ポインターとして宣言された変数は、メモリ アドレスを保持します。  
@@ -142,7 +125,7 @@ struct id
 } record;  
 ```  
   
- 変数 *record* には *id* という構造体型があります。 *pname* が、*name* という別の構造体型へのポインターとして宣言されていることに注意してください。 この宣言は、*name* 型を定義する前に指定できます。  
+ 変数 *record* には *id* という構造体型があります。*pname* が、*name* という別の構造体型へのポインターとして宣言されていることに注意してください。 この宣言は、*name* 型を定義する前に指定できます。  
   
 ## <a name="see-also"></a>関連項目  
  [宣言子と変数宣言](../c-language/declarators-and-variable-declarations.md)

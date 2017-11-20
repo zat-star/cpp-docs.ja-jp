@@ -4,55 +4,36 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- c.files
-dev_langs:
-- C++
+f1_keywords: c.files
+dev_langs: C++
 helpviewer_keywords:
 - files [C++], handling
 - files [C++], opening
 - files [C++], manipulating
 ms.assetid: 48119e2e-e94f-4602-b08b-b72440f731d8
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: fde5ffecc3046d181e5a0b6cfcd42ee3115fce97
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.openlocfilehash: 2e35d3f9a248d280f4ba617da89eb3993414a525
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="file-handling"></a>ファイル処理
 ファイル処理ルーチンは、ファイルの作成、削除、操作、およびファイル アクセス許可の設定、チェックに使用します。  
   
- C ランタイム ライブラリには、同時に開くことのできるファイル数の上限が 512 に設定されています。 上限を超える数のファイル記述子またはファイル ストリームを開こうとすると、プログラム エラーが発生します。 上限のファイル数を変更するには、[_setmaxstdio](../c-runtime-library/reference/setmaxstdio.md) を使用します。  
+ C ランタイム ライブラリには、同時に開くことのできるファイル数の上限が 512 に設定されています。 上限を超える数のファイル記述子またはファイル ストリームを開こうとすると、プログラム エラーが発生します。 上限のファイル数を変更するには、 [_setmaxstdio](../c-runtime-library/reference/setmaxstdio.md) を使用します。  
   
 ### <a name="file-handling-routines-file-descriptor"></a>ファイル処理ルーチン (ファイル記述子)  
   
  ファイル記述子で指定されたファイルを操作するには、次のルーチンを使います。  
   
-|ルーチン|用途|  
+|ルーチン|上限のファイル数を変更するには、|  
 |-------------|---------|  
 |[_chsize](../c-runtime-library/reference/chsize.md)、[_chsize_s](../c-runtime-library/reference/chsize-s.md)|ファイル サイズを変更します。|  
 |[_filelength、_filelengthi64](../c-runtime-library/reference/filelength-filelengthi64.md)|ファイル長を取得します。|  
@@ -67,32 +48,32 @@ ms.lasthandoff: 03/29/2017
   
  パスまたはファイル名で指定されたファイルを操作するには、次のルーチンを使います。  
   
-|ルーチン|用途|  
+|ルーチン|上限のファイル数を変更するには、|  
 |-------------|---------|  
-|[_access、_waccess](../c-runtime-library/reference/access-waccess.md)、[_access_s、_waccess_s](../c-runtime-library/reference/access-s-waccess-s.md)|ファイルのアクセス許可の設定をチェックします。|  
+|[_access, _waccess](../c-runtime-library/reference/access-waccess.md), [_access_s, _waccess_s](../c-runtime-library/reference/access-s-waccess-s.md)|ファイルのアクセス許可の設定をチェックします。|  
 |[_chmod、_wchmod](../c-runtime-library/reference/chmod-wchmod.md)|ファイルのアクセス許可の設定を変更します。|  
 |[_fullpath、_wfullpath](../c-runtime-library/reference/fullpath-wfullpath.md)|相対パス名を絶対パス名に展開します。|  
-|[_makepath、_wmakepath](../c-runtime-library/reference/makepath-wmakepath.md)、[_makepath_s、_wmakepath_s](../c-runtime-library/reference/makepath-s-wmakepath-s.md)|パス コンポーネントを単一の完全パスにマージします。|  
-|[_mktemp、_wmktemp](../c-runtime-library/reference/mktemp-wmktemp.md)、[_mktemp_s、_wmktemp_s](../c-runtime-library/reference/mktemp-s-wmktemp-s.md)|一意のファイル名を作成します。|  
+|[_makepath, _wmakepath](../c-runtime-library/reference/makepath-wmakepath.md), [_makepath_s, _wmakepath_s](../c-runtime-library/reference/makepath-s-wmakepath-s.md)|パス コンポーネントを単一の完全パスにマージします。|  
+|[_mktemp、_wmktemp](../c-runtime-library/reference/mktemp-wmktemp.md)、 [_mktemp_s, _wmktemp_s](../c-runtime-library/reference/mktemp-s-wmktemp-s.md)|一意のファイル名を作成します。|  
 |[remove、_wremove](../c-runtime-library/reference/remove-wremove.md)|ファイルの削除|  
 |[rename、_wrename](../c-runtime-library/reference/rename-wrename.md)|ファイル名の変更|  
-|[_splitpath、_wsplitpath](../c-runtime-library/reference/splitpath-wsplitpath.md)、[_splitpath_s、_wsplitpath_s](../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)|コンポーネントのパスを解析します。|  
+|[_splitpath、_wsplitpath](../c-runtime-library/reference/splitpath-wsplitpath.md)、 [_splitpath_s, _wsplitpath_s](../c-runtime-library/reference/splitpath-s-wsplitpath-s.md)|コンポーネントのパスを解析します。|  
 |[_stat、_stat64、_stati64、_wstat、_wstat64、_wstati64](../c-runtime-library/reference/stat-functions.md)|名前付きファイルのファイル ステータス情報を取得します。|  
-|[_umask](../c-runtime-library/reference/umask.md)、[_umask_s](../c-runtime-library/reference/umask-s.md)|プログラムが新しく作成したファイルに、既定のアクセス許可マスクを設定します。|  
+|[_umask](../c-runtime-library/reference/umask.md), [_umask_s](../c-runtime-library/reference/umask-s.md)|プログラムが新しく作成したファイルに、既定のアクセス許可マスクを設定します。|  
 |[_unlink、_wunlink](../c-runtime-library/reference/unlink-wunlink.md)|ファイルの削除|  
   
 ### <a name="file-handling-routines-open-file"></a>ファイル処理ルーチン (開いているファイル)  
   
  これらのルーチンは、ファイルを開きます。  
   
-|ルーチン|用途|  
+|ルーチン|上限のファイル数を変更するには、|  
 |-------------|---------|  
-|[fopen、_wfopen](../c-runtime-library/reference/fopen-wfopen.md)、[fopen_s、_wfopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)|ファイルを開き、開いているファイルへのポインターを返します。|  
+|[fopen, _wfopen](../c-runtime-library/reference/fopen-wfopen.md), [fopen_s, _wfopen_s](../c-runtime-library/reference/fopen-s-wfopen-s.md)|ファイルを開き、開いているファイルへのポインターを返します。|  
 |[_fsopen、_wfsopen](../c-runtime-library/reference/fsopen-wfsopen.md)|ファイル共有でストリームを開き、開いているファイルへのポインターを返します。|  
 |[_open、_wopen](../c-runtime-library/reference/open-wopen.md)|ファイルを開き、開いているファイルへのファイル記述子を返します。|  
-|[_sopen、_wsopen](../c-runtime-library/reference/sopen-wsopen.md)、[_sopen_s、_wsopen_s](../c-runtime-library/reference/sopen-s-wsopen-s.md)|ファイル共有でファイルを開き、開いているファイルへのファイル記述子を返します。|  
+|[_sopen, _wsopen](../c-runtime-library/reference/sopen-wsopen.md), [_sopen_s, _wsopen_s](../c-runtime-library/reference/sopen-s-wsopen-s.md)|ファイル共有でファイルを開き、開いているファイルへのファイル記述子を返します。|  
 |[_pipe](../c-runtime-library/reference/pipe.md)|読み取りおよび書き込み用のパイプを作成します。|  
-|[freopen、_wfreopen](../c-runtime-library/reference/freopen-wfreopen.md)、[freopen_s、_wfreopen_s](../c-runtime-library/reference/freopen-s-wfreopen-s.md)|ファイル ポインターを再度割り当てます。|  
+|[freopen, _wfreopen](../c-runtime-library/reference/freopen-wfreopen.md), [freopen_s, _wfreopen_s](../c-runtime-library/reference/freopen-s-wfreopen-s.md)|ファイル ポインターを再度割り当てます。|  
   
  次のルーチンを使うと、`FILE` 構造体、ファイル記述子、および Win32 ファイル ハンドル間でファイルの表示を変更できます。  
   

@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - volatile keyword [C], type qualifier
 - type qualifiers
@@ -19,30 +17,15 @@ helpviewer_keywords:
 - memory, access using volatile
 - volatile keyword [C], type specifier
 ms.assetid: bb4c6744-1dd7-40a8-b4eb-f5585be30908
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: 491ff4d2b6b1507680f9ad40f73e0055da638204
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.openlocfilehash: c4fad93505a5778c23171b413654624a32e825b2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="type-qualifiers"></a>型修飾子
 型修飾子は、2 つのうちいずれかの特性を識別子に割り当てます。 **const** 型修飾子は、変更不可能なオブジェクトを宣言します。 `volatile` 型修飾子は、同時実行されるスレッドなど、そのプログラムの制御範囲以外の要素によって値を変更できる項目を宣言します。  
@@ -81,7 +64,7 @@ int volatile vint;     /* Volatile integer        */
   
  次に、**const** と `volatile` の使用方法について説明します。  
   
--   **const** キーワードを使用できるのは、基本型、集約型、任意の型のオブジェクトへのポインター、または `typedef` を変更する場合です。 **const** 型修飾子のみを使用して項目を宣言した場合、その型は **const int** になります。 **const** 変数は初期化できます。また、ストレージの読み取り専用領域に配置できます。 **const** へのポインターを宣言する場合に **const** キーワードを使用すると便利です。この方法でポインターを宣言すると、関数がそのポインターを一切変更できなくなります。  
+-   **const** キーワードを使用できるのは、基本型、集約型、任意の型のオブジェクトへのポインター、または `typedef` を変更する場合です。 **const** 型修飾子のみを使用して項目を宣言した場合、その型は **const int** になります。**const** 変数は初期化できます。また、ストレージの読み取り専用領域に配置できます。 **const** へのポインターを宣言する場合に **const** キーワードを使用すると便利です。この方法でポインターを宣言すると、関数がそのポインターを一切変更できなくなります。  
   
 -   プログラムのどの時点でも、未知のプロセスが `volatile` 変数にアクセスし、その値を使用または変更できると見なされます。 したがって、コマンド ラインで指定した最適化にかかわらず、`volatile` 変数に値を割り当てたり参照したりするコードが必ず (それが何も影響しない場合でも) 生成されます。  
   

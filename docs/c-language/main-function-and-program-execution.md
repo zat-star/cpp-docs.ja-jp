@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - program startup [C++]
 - entry points, program
@@ -18,16 +16,15 @@ helpviewer_keywords:
 - main function
 - programs [C++], terminating
 ms.assetid: 5984f1bd-072d-4e06-8640-122fb1454401
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 7635595adedf961c014bf8792316ca4943dc84a7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="main-function-and-program-execution"></a>main 関数とプログラム実行
 すべての C プログラムには主要な (メイン) 関数があり、その名前は **main** である必要があります。 コードが Unicode プログラミング モデルに準拠する場合、**main** のワイド文字バージョンである **wmain** を使用できます。 **main** 関数は、プログラム実行の開始点として動作します。 通常は、プログラム内の他の関数への呼び出しを指示することによって、プログラムの実行を制御します。 プログラムは通常、**main** の最後に実行を停止しますが、さまざまな理由により、プログラムのその他の場所で終了する場合もあります。 特定のエラーが検出された場合などに、プログラムを強制的に終了することもできます。 そのためには、**exit** 関数を使用します。 [exit](../c-runtime-library/reference/exit-exit-exit.md) 関数の説明および使用例については、「*ランタイム ライブラリ リファレンス*」を参照してくださ。  

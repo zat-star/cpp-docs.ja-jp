@@ -2,7 +2,7 @@
 ## [concurrency 名前空間](concurrency-namespace.md)
 ### [concurrency 名前空間の関数](concurrency-namespace-functions.md)
 ### [concurrency 名前空間演算子](concurrency-namespace-operators.md)
-### [concurrency 名前空間定数&1;](concurrency-namespace-constants1.md)
+### [concurrency 名前空間定数 1](concurrency-namespace-constants1.md)
 ### [concurrency 名前空間を持つ列挙型](concurrency-namespace-enums.md)
 ### [affinity_partitioner クラス](affinity-partitioner-class.md)
 ### [agent クラス](agent-class.md)

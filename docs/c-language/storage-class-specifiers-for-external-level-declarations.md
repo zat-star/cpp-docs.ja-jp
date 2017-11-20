@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - external definitions
 - linkage [C++], external
@@ -25,16 +23,15 @@ helpviewer_keywords:
 - visibility, variables
 - static storage class specifiers
 ms.assetid: b76b623a-80ec-4d5d-859b-6cef422657ee
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 729d46f1e228127b712e1533c7eab5976f690663
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="storage-class-specifiers-for-external-level-declarations"></a>外部レベル宣言のストレージ クラス指定子
 外部変数はファイル スコープの変数です。 これらは、関数の外部で定義され、多くの関数に使用できる可能性があります。 関数は外部レベルでのみ定義できるため、入れ子にできません。 既定では、同じ名前の外部変数と関数へのすべての参照は、同じオブジェクトへの参照であり、"外部リンケージ" が含まれていることを意味します  (**static** キーワードを使用して、これをオーバーライドできます。 **static** の詳細については、このセクションで後述する情報をご覧ください)。  

@@ -4,23 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 406e7cc0-27cb-46b4-b38e-c200f3fddafd
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: fea2e0a3f52db6a9ed54b98fae0a66282cdb52b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="scope-of-this-manual"></a>このマニュアルの範囲
 C は、プログラミングに関する多くの決定が開発者に委ねられている柔軟な言語です。 この理念のため、C は型変換などに関してほとんど制限を課していません。 このプログラミング言語のこのような特性により、プログラミング作業は容易になりますが、プログラムがどのように動作するかを理解するために言語をよく理解する必要があります。 このブックでは、C 言語コンポーネントと Microsoft 実装の機能について説明します。 C 言語の構文は ANSI X3.159-1989、「*American National Standard for Information Systems - Programming Language - C*」(以降、ANSI C 標準と呼びます) からのものです (ただし、これは ANSI C 標準に含まれていません)。 「[C 言語の構文概要](../c-language/c-language-syntax-summary.md)」では、構文、および構文の定義を読み取り使用する方法を説明しています。  

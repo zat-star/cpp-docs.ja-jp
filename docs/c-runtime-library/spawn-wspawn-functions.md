@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -29,8 +28,7 @@ f1_keywords:
 - _tspawnv
 - _tspawnle
 - wspawn
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _tspawnve function
 - _spawn functions
@@ -54,31 +52,15 @@ helpviewer_keywords:
 - tspawnlpe function
 - _tspawnle function
 ms.assetid: bb47c703-5216-4e09-8023-8cf25bbf2cf9
-caps.latest.revision: 26
+caps.latest.revision: "26"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: a937c9d083a7e4331af63323a19fb207142604a0
-ms.openlocfilehash: 1794395cd9e6684788458aad424336efbc421c0a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 10de882f1d1942d2abec027da76aa40a201bfaad
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="spawn-wspawn-functions"></a>_spawn 系関数と _wspawn 系関数
 各 `_spawn` 関数は、新しいプロセスを作成して実行します。  
@@ -93,7 +75,7 @@ ms.lasthandoff: 02/24/2017
  関数名の最後の文字は、関数の種類を示します。  
   
  `e`  
-環境設定へのポインター配列  `envp` が新しいプロセスに渡されます。  
+ 環境設定へのポインター配列 `envp` が新しいプロセスに渡されます。  
   
  `l`  
  コマンド ライン引数が `_spawn` 関数に個別に渡されます。 このサフィックスは、通常は、新しいプロセスに渡すパラメーターの個数が事前にわかっている場合に使用します。  
@@ -102,7 +84,7 @@ ms.lasthandoff: 02/24/2017
  `PATH` 環境変数を使用して、実行するファイルを検索します。  
   
  `v`  
-コマンド ライン引数へのポインター配列  `argv` が `_spawn` 関数に渡されます。 このサフィックスは、通常は、新しいプロセスに渡すパラメーターの個数が可変の場合に使用します。  
+ コマンド ライン引数へのポインター配列 `argv` が `_spawn` 関数に渡されます。 このサフィックスは、通常は、新しいプロセスに渡すパラメーターの個数が可変の場合に使用します。  
   
 ## <a name="remarks"></a>コメント  
  `_spawn` 関数はそれぞれ新しいプロセスを作成して実行します。 それらの関数は、現在使用中のマルチバイト コード ページに従ってマルチバイト文字シーケンスを認識し、マルチバイト文字列の引数を適切な方法で自動的に処理します。 `_wspawn` 関数は、`_spawn` 関数のワイド文字バージョンで、マルチバイト文字の文字列を処理しません。 それ以外の点では、`_wspawn` 関数は対応する `_spawn` 関数と同じように動作します。  

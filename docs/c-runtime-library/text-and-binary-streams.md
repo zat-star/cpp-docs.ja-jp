@@ -4,26 +4,23 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - binary streams
 - text streams
 ms.assetid: 57035e4a-955d-4e04-a560-fcf67ce68b4e
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: fd9cfcc54e672d16b631662d9d41c02327ac2a57
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="text-and-binary-streams"></a>テキスト ストリームとバイナリ ストリーム
 テキスト ストリームは、読むことができるように、テキスト指向の表示として書き込まれた 1 行または複数行のテキストで構成されます。 テキスト ストリームから読み取る場合、プログラムは各行の末尾で `NL` を読み取ります。 テキスト ストリームに書き込む場合は、プログラムは行の末尾を示すために `NL` を書き込みます。 ファイル内のテキストを表現するためのターゲット環境間で異なる規則を一致させるために、ライブラリ関数が、プログラムとテキスト ストリームの間で送信される文字の表現と数を変更することがあります。  

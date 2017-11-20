@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apilocation:
@@ -16,38 +15,21 @@ apilocation:
 - msvcr110_clr0400.dll
 - msvcr80.dll
 apitype: DLLExport
-f1_keywords:
-- vprintf
-dev_langs:
-- C++
+f1_keywords: vprintf
+dev_langs: C++
 helpviewer_keywords:
 - vprintf function
 - formatted text [C++]
 ms.assetid: 02ac7c51-eab1-4bf0-bf4c-77065e3fa744
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: a9cf253e0d22ee539ff7d49d46b34f984e883e7e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.openlocfilehash: 1a888f46912aaa5292e9bcf1f83bc3e6926f73d2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="vprintf-functions"></a>vprintf 系関数
 `vprintf` の各関数は引数リストへのポインターを受け取り、指定されたデータを書式設定して特定の出力先に書き込みます。 各関数のパラメーターの検証内容は、ワイド文字列と 1 バイト文字列のどちらを使用するか、出力先がどこか、書式設定文字列でのパラメーターの使用順序を指定できるか、などの点が異なります。  

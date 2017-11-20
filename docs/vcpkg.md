@@ -5,22 +5,18 @@ keywords: vcpkg
 author: mikeblome
 ms.author: mblome
 ms.date: 05/30/2017
-ms.technology:
-- cpp-ide
+ms.technology: cpp-ide
 ms.tgt_pltfrm: windows
 ms.assetid: f50d459a-e18f-4b4e-814b-913e444cedd6
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 manager: ghogen
-ms.translationtype: Human Translation
-ms.sourcegitcommit: ed0e4505b68c2ea198e0771b6301e685daa8662e
 ms.openlocfilehash: de5825e64abac210561cb8cbe0dc3320a740cbee
-ms.contentlocale: ja-jp
-ms.lasthandoff: 06/30/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="vcpkg-c-package-manager-for-windows"></a>vcpkg: Windows 用の C++ パッケージ マネージャー 
 vcpkg はコマンド ライン パッケージ マネージャーであり、Windows でのサードパーティ ライブラリの取得とインストール作業を大幅に簡素化できます。 プロジェクトでサードパーティ ライブラリを使用する場合は、vcpkg を使用して、それらをインストールすることをお勧めします。 vcpkg では、オープン ソース ライブラリと専用ライブラリの両方がサポートされています。 vcpkg パブリック カタログ内のすべてのライブラリは、Visual Studio 2015 および Visual Studio 2017 との互換性がテストされています。 2017 年 5 月の時点で、カタログには 238 個を超えるライブラリが存在しており、C++ コミュニティでは継続的にライブラリをさらに追加しています。
 
@@ -158,4 +154,3 @@ vcpkg インスタンスの内容は次のとおりです。
   **`--triplet <t>`** ターゲット アーキテクチャのトリプレットを指定します。 (既定値: `%VCPKG_DEFAULT_TRIPLET%`。`vcpkg help triplet` も参照してください)
 
   **`--vcpkg-root <path>`** vcpkg ルート ディレクトリを指定します (既定値: `%VCPKG_ROOT%`)
-

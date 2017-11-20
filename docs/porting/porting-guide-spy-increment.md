@@ -4,37 +4,20 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: e558f759-3017-48a7-95a9-b5b779d5e51d
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 0eb057f9d229c659f339f996d1ff38f65fd2e018
-ms.openlocfilehash: b118e825ef61d826049a1452ee4275951c0ca440
-ms.contentlocale: ja-jp
-ms.lasthandoff: 06/01/2017
-
+ms.openlocfilehash: 79efd81177cc3235030600779e70c1e9a2043670
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="porting-guide-spy"></a>移植のガイド: Spy++
 この移植のケース スタディは、一般的な移植プロジェクトのアイデア、発生する可能性がある問題の種類、および移植の問題に対応するための一般的なヒントとコツを理解できるように設計されています。 プロジェクトの移植に関するエクスペリエンスは、コードの仕様により大きく依存するため、移植をわかりやすく案内するためのものではありません。  
@@ -496,7 +479,7 @@ class CTreeListBox : public CListBox
   
 ```  
   
- このコードは、組み込みの bool 型が Visual C++ でサポートされる前に作成されました。 このようなコードでは、BOOL は int の typedef でした。 int 型は符号付きの型であり、符号付き int のビット表現は、最初のビットを符号ビットとして使用するため、int 型のビットフィールドは、0 または -1 を表すものとして解釈できますが、想定と異なる可能性があります。  
+ このコードは、組み込みの bool 型が Visual C++ でサポートされる前に作成されました。 このようなコードでは、BOOL は int の typedef でした。int 型は符号付きの型であり、符号付き int のビット表現は、最初のビットを符号ビットとして使用するため、int 型のビットフィールドは、0 または -1 を表すものとして解釈できますが、想定と異なる可能性があります。  
   
  これらがなぜビットフィールドなのかは、コードを見てもわかりません。 オブジェクトのサイズを小さくすることを目的としているのでしょうか。または、オブジェクトのバイナリ形式が使用されている場所があるのでしょうか。 ビットフィールドを使用する理由が見当たらないため、これらを BOOL の通常のメンバーに変更しました。 ビットフィールドを使用して、オブジェクトのサイズを小さく維持することは、動作が保証されていません。 これは、コンパイラが型をレイアウトする方法に依存しています。  
   

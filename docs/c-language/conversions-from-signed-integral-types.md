@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - integral conversions, from signed
 - integers, converting
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - data type conversion [C++], signed and unsigned integers
 - type conversion [C++], signed and unsigned integers
 ms.assetid: 5eea32f8-8b14-413d-acac-c063b3d118d7
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: ccda8d6fa2573245f34a38f327395955bf92fdc2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="conversions-from-signed-integral-types"></a>Conversions from Signed Integral Types (符号付き整数型からの変換)
 符号付き整数が、それ以上のサイズの符号なし整数に変換される場合、符号付き整数の値が負でないときは、値は変更されません。 変換は、符号付き整数を符号拡張することによって行われます。 符号付き整数は、上位ビットを切り捨てることにより、短い符号付き整数に変換されます。 結果は、この例に示すように、符号なしの値として解釈されます。  

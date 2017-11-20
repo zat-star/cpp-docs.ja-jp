@@ -4,28 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- c.headers
-dev_langs:
-- C++
+f1_keywords: c.headers
+dev_langs: C++
 helpviewer_keywords:
 - include files, required in run time
 - header files, required in run time
 ms.assetid: f64d0bf5-e2c3-4b42-97d0-443b3d901d9f
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 45e9d2e6940955b07624b89cafd09b7d89d9cd2c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="required-and-optional-header-files"></a>必須ヘッダー ファイルと省略可能ヘッダー ファイル
 各ランタイム ルーチンの説明には、そのルーチンで必須および省略可能なインクルード ファイル、またはヘッダー (.H) ファイルの一覧が含まれています。 内部で呼び出される別のルーチンで使用されるルーチンまたは定義の関数の宣言を取得するには、必須ヘッダー ファイルを含める必要があります。 省略可能ヘッダー ファイルは通常、定義済みの定数、型定義、インライン マクロを活用するために含まれます。 次の表では、省略可能ヘッダー ファイルの内容の例をいくつか示します。  

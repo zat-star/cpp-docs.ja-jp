@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -24,8 +23,7 @@ f1_keywords:
 - _getts
 - gets
 - _getws
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - getws function
 - getts function
@@ -36,37 +34,21 @@ helpviewer_keywords:
 - gets function
 - standard input, reading from
 ms.assetid: 1ec2dd4b-f801-48ea-97c2-892590f16024
-caps.latest.revision: 32
+caps.latest.revision: "32"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: dd8739365a4523fe1ecb9aee9931b376edf2b390
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.openlocfilehash: fc8a2277995cc9ddbb36cbceda68e0ba4a862b59
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="gets-getws"></a>gets、_getws
-`stdin` ストリームから行を取得します。 これらの関数のセキュリティが強化されたバージョンを使用できます。「[gets_s、_getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」をご覧ください。  
+`stdin` ストリームから行を取得します。 これらの関数のセキュリティを強化したバージョンを使用できます。「 [gets_s, _getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」を参照してください。  
   
 > [!IMPORTANT]
->  これらは古い関数です。 Visual Studio 2015 以降では、CRT で使用できません。 これらの関数のセキュリティを強化したバージョン gets_s および _getws_s は、引き続き使用できます。 これらの代替関数の詳細については、「[gets_s、_getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」をご覧ください。  
+>  これらは古い関数です。 Visual Studio 2015 以降、これらは CRT で使用できません。 これらの関数のセキュリティを強化したバージョン gets_s および _getws_s は、引き続き使用できます。 これらの代替関数の詳細については、「 [gets_s, _getws_s](../c-runtime-library/reference/gets-s-getws-s.md)」を参照してください。  
   
 > [!IMPORTANT]
 >  この API は、Windows ランタイムで実行するアプリケーションでは使用できません。 詳しくは、「 [/ZW でサポートされない CRT 関数](http://msdn.microsoft.com/library/windows/apps/jj606124.aspx)」をご覧ください。  
@@ -98,12 +80,12 @@ wchar_t *_getws(
  正常に終了した場合はその引数を返します。 エラーが発生した場合またはファイルの終端に達した場合は、 `NULL` ポインターを返します。 どちらが発生したかを確認するには、[ferror](../c-runtime-library/reference/ferror.md) または [feof](../c-runtime-library/reference/feof.md) を使用します。 `buffer` が `NULL` の場合は、「[Parameter Validation](../c-runtime-library/parameter-validation.md)」(パラメーターの検証) で説明されているように、これらの関数は無効パラメーター ハンドラーを呼び出します。 実行の継続が許可された場合、これらの関数は `NULL` を返し、errno を `EINVAL` に設定します。  
   
 ## <a name="remarks"></a>コメント  
- `gets` 関数は、`stdin` 標準入力ストリームから行を読み取り、`buffer` に格納します。 行は、最初の改行文字 ('\n') までのすべての文字 (改行文字を含む) で構成されます。 `gets` は、行を返す前に、改行文字を null 文字 ('\0') に置き換えます。 これとは対照的に、`fgets` 関数は改行文字を保持します。 ワイド文字を扱う場合は、`_getws` ではなく `gets` を使用します。引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  
+ `gets` 関数は、`stdin` 標準入力ストリームから行を読み取り、`buffer` に格納します。 行は、最初の改行文字 ('\n') までのすべての文字 (改行文字を含む) で構成されます。 `gets` は、行を返す前に、改行文字を null 文字 ('\0') に置き換えます。 これとは対照的に、 `fgets` 関数は改行文字を保持します。 ワイド文字を扱う場合は、`_getws` ではなく `gets`を使用します。引数にはワイド文字列を指定します。また戻り値もワイド文字列です。  
   
 > [!IMPORTANT]
 >  gets で読み取る文字の数を制限する方法がないため、信頼できない入力によってバッファー オーバーランが発生しやすくなります。 代わりに、 `fgets` を使用してください。  
   
- C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「[セキュリティ保護されたテンプレート オーバーロード](../c-runtime-library/secure-template-overloads.md)」を参照してください。  
+ C++ では、これらの関数にテンプレートのオーバーロードがあります。このオーバーロードは、これらの関数に対応するセキュリティで保護された新しい関数を呼び出します。 詳細については、「 [Secure Template Overloads](../c-runtime-library/secure-template-overloads.md)」を参照してください。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   

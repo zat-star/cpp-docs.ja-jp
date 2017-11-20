@@ -4,41 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- c.constants
-dev_langs:
-- C++
-helpviewer_keywords:
-- global constants
+f1_keywords: c.constants
+dev_langs: C++
+helpviewer_keywords: global constants
 ms.assetid: 778d86fd-3ca6-4d2b-b4c5-aee6dc1efe6b
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: 4988dfbf58918951c3c162e8b198be4ddf6d529a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.openlocfilehash: afb5230ae5ee15061988f9e426393c7de16a788e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="global-constants"></a>グローバル定数
 Microsoft ランタイム ライブラリには、ライブラリ ルーチンで使用されるグローバル定数の定義が含まれています。 これらの定数を使用するには、各定数の説明に記載されている通りに、適切なヘッダー ファイルをインクルードします。 次の表は、グローバル定数の一覧です。  

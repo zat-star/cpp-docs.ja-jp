@@ -4,28 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - Visual C, portability of Microsoft C
 - portability [C++], Microsoft C to ANSI C
 - ANSI [C++], C standard
 - implementation-defined behavior
 ms.assetid: c9f50670-23cb-401f-8ad7-136972012eb9
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 1fda4b8a6c530d494640d486227d3bdda25ea728
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="implementation-defined-behavior"></a>実装定義の動作
 ANSI X3.159-1989 (*American National Standard for Information Systems* - *Programming Language* - *C*) には、移植性の問題に関するセクションがあります。 この ANSI セクションには、ANSI が特定の実装に対して開放している C 言語の領域が記載されています。 ここでは、C 言語のこれらの実装定義領域が Microsoft C でどのように処理されるかについて説明します。  

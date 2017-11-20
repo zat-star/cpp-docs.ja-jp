@@ -4,43 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: f662d2e4-8940-418d-8109-cb76cb8f8569
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: 220ecd24c6056737d0338cc584663e4664ac81b1
-ms.openlocfilehash: 76a4bae07fd93a393084b6f108fead3ec32988f1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: ffd33877602ebb666ffbd11ff76aa973927f307a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="porting-to-the-universal-windows-platform-c"></a>ユニバーサル Windows プラットフォームへの移植 (C++)
 このトピックでは、既存の C++ コードを Windows 10 アプリ プラットフォームであるユニバーサル Windows プラットフォームに移植する方法を説明します。 *ユニバーサル* という用語は、Windows 10 を実行するどのデバイスでもコードを実行できることを意味します。これには、デスクトップ、電話、タブレット、Windows 10 を実行する将来のデバイスが含まれます。 単一のプロジェクトを作成し、Windows 10 を実行している任意のデバイス上で適切に機能する単一の XAML ベースのユーザー インターフェイスも作成します。 XAML で動的なレイアウト機能を使用することで、アプリの UI をさまざまな表示サイズに適合させることができます。  
   
- Windows デベロッパー センターのドキュメントには、ユニバーサル Windows プラットフォームへの Windows 8.1 アプリの移植に関するガイドが含まれています。 「[Windows ランタイム 8 から UWP への移行](https://msdn.microsoft.com/windows/uwp/porting/w8x-to-uwp-root)」を参照してください。 ガイドでは主に C# コードに重点を置いていますが、ガイダンスのほとんどが C++ に適用可能です。 以下の手順にはより詳細な情報が記載されています。  
+ Windows デベロッパー センターのドキュメントには、ユニバーサル Windows プラットフォームへの Windows 8.1 アプリの移植に関するガイドが含まれています。 「 [Windows ランタイム 8 から UWP への移行](https://msdn.microsoft.com/windows/uwp/porting/w8x-to-uwp-root)」 を参照してください。 ガイドでは主に C# コードに重点を置いていますが、ガイダンスのほとんどが C++ に適用可能です。 以下の手順にはより詳細な情報が記載されています。  
   
  このトピックには、UWP へのコードの移植に関する次の手順が含まれています。  
   
@@ -133,4 +115,3 @@ could not find assembly 'platform.winmd': please specify the assembly search pat
 ## <a name="see-also"></a>関連項目  
  [Visual C++ 移植ガイド](../porting/porting-to-the-universal-windows-platform-cpp.md)   
  [ユニバーサル Windows プラットフォーム (UWP) 向けアプリの開発](/visualstudio/cross-platform/develop-apps-for-the-universal-windows-platform-uwp)
-

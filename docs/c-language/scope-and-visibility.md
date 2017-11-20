@@ -4,27 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - scope, levels
 - visibility
 - file scope [C++]
 ms.assetid: a019eb7c-66ed-46a7-bc9f-89a963930a56
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 9e9dca1b95af3971045a1ce86807ef28be096546
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="scope-and-visibility"></a>スコープおよび可視性
 識別子の "可視性" は、参照できるプログラムの部分、つまり "スコープ" を決定します。 識別子は、"スコープ" に含まれているプログラムの部分にのみ表示されます (つまり、使用可能)。表示されるファイル、関数、ブロック、または関数プロトタイプに制限される可能性があります (制限の昇順)。 識別子のスコープは、その名前が使用できるプログラムの一部です。 これは、"構文のスコープ" と呼ばれることもあります。 スコープには、関数、ファイル、ブロック、および関数プロトタイプの 4 種類があります。  
