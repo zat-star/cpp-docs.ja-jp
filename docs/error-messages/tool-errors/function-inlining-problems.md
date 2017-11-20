@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - /Ob1 C++ compiler option
 - inline functions, problems
@@ -18,37 +16,22 @@ helpviewer_keywords:
 - -Ob2 C++ compiler option
 - function inlining problems
 ms.assetid: 65d59943-4b3c-4a43-aeb6-dccbf7686740
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7f29cb8fb61dfc9f50cc5677e0d4f18f83627cdb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 4817093bf52ab5398f1d4a788b96bcff16384c1f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="function-inlining-problems"></a>関数インライン展開の問題
-関数のインライン化を使用している場合は、次の操作を行う必要があります。  
+関数のインライン展開を使用している必要があります。  
   
--   含めるヘッダー ファイルで実装されたインライン関数があります。  
+-   追加するヘッダー ファイルで実装されたインライン関数があります。  
   
--   インライン展開ヘッダー ファイルで点灯します。  
+-   インライン展開ヘッダー ファイルでオンにします。  
   
 ```  
 // LNK2019_function_inline.cpp  
@@ -80,11 +63,11 @@ int main() {
 }  
 ```  
   
- 使用している場合、`#pragma inline_depth`コンパイラ ディレクティブのことを確認する値が 2 以上設定されています。 オフになり、値が&0; のインライン展開されます。 またを使用していることを確認してください、 **/Ob1**または**/Ob2**コンパイラ オプション。  
+ 使用している場合、`#pragma inline_depth`コンパイラ ディレクティブを確認する値が 2 以上設定されています。 ゼロの値がオフにインライン展開されます。 使用しているかどうかを確認も、 **/Ob1**または**/Ob2**コンパイラ オプション。  
   
- 異なるモジュールでのインラインとインライン以外のコンパイル オプションが混在しても問題が発生場合があります。 関数のインライン化がオンで、C++ のライブラリが作成されたかどうか ([/Ob1](../../build/reference/ob-inline-function-expansion.md)または[/Ob2](../../build/reference/ob-inline-function-expansion.md)) が、対応するヘッダー ファイルが、機能の説明 (オプションではない) を無効になっていると、エラー LNK2001 が表示されます。 関数はヘッダー ファイルからはインライン関数では、コードにならないが、参照を解決するのにはアドレスがありませんが、ライブラリ ファイルに属していないためです。  
+ 異なるモジュールでのインライン バージョンおよびインライン以外のコンパイル オプションが混在と、問題が発生することができる場合があります。 C++ ライブラリがオンになっている関数のインライン展開で作成されたかどうか ([/Ob1](../../build/reference/ob-inline-function-expansion.md)または[/Ob2](../../build/reference/ob-inline-function-expansion.md)) が、関数を記述する、対応するヘッダー ファイル (オプションではありません) を無効になっていると、エラー LNK2001 が発生します。 関数は、コードにインライン展開されてから取得、ヘッダー ファイルが、参照を解決するのにはアドレスがありませんので、ライブラリ ファイルではありません。  
   
- 同様に、関数のインライン化を使用するプロジェクトをまだ関数を定義 .cpp ファイルではなく、ヘッダー ファイルは lnk2019 します。 ヘッダー ファイルが含まれるすべての場所で、適切なと見なされますが、関数は、インライン関数では、.cpp ファイルは、コンパイラを通過するときそのため、リンカーでは、他のモジュールで使用する場合の未解決の外部参照として、関数が表示されます。  
+ 同様に、関数のインライン展開を使用するプロジェクトをまだ関数を定義します .cpp ファイルではなく、ヘッダー ファイルは lnk2019 です。 ヘッダー ファイルが含まれるすべての場所、適切と見なされますが、関数はのみインライン関数では、.cpp ファイルは、コンパイラを通過するときそのため、リンカーでは、.cpp ファイルの他のモジュールで使用する場合、関数が表示されます。  
   
 ```  
 // LNK2019_FIP.h  
@@ -118,4 +101,4 @@ int main() {
 ```  
   
 ## <a name="see-also"></a>関連項目  
- [リンカ ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)
+ [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

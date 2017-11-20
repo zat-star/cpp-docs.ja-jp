@@ -1,35 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 3) C4570 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4570"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4570"
+title: "コンパイラの警告 (レベル 3) C4570 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4570
+dev_langs: C++
+helpviewer_keywords: C4570
 ms.assetid: feec1225-e6ad-4995-8d96-c22e864a77bd
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 8bd962f6d8ada4a1241758b6c4ed726c7950159f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 3) C4570
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'型' : 明示的に抽象として宣言されていませんが、抽象関数を含んでいます  
+# <a name="compiler-warning-level-3-c4570"></a>コンパイラの警告 (レベル 3) C4570
+'type': 抽象ですが、抽象関数として明示的に宣言されていません  
   
- [abstract](../../windows/abstract-cpp-component-extensions.md) 関数を含む型は、それ自体が abstract としてマークされている必要があります。  
+ 含む型[抽象](../../windows/abstract-cpp-component-extensions.md)関数自体としてマークしておくの要約です。  
   
-## 使用例  
- 次の例では C4570 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4570 を生成します。  
   
 ```  
 // C4570.cpp  

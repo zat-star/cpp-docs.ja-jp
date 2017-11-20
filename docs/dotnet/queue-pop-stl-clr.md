@@ -1,41 +1,39 @@
 ---
-title: "queue::pop (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::queue::pop"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pop メンバー [STL/CLR]"
+title: "queue::pop (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::queue::pop
+dev_langs: C++
+helpviewer_keywords: pop member [STL/CLR]
 ms.assetid: 38f6c03b-e8f8-4663-b3d6-18314cdc8e7d
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: de17790b127ad62c35db835c9555e7c410764812
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# queue::pop (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="queuepop-stlclr"></a>queue::pop (STL/CLR)
 最後の要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void pop();  
 ```  
   
-## 解説  
- メンバー関数は空でない必要があります。被制御シーケンスの最後の要素を削除します。  戻るに 1 個の要素でキューを短くするために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、空でない必要があります、被制御シーケンスの最後の要素を削除します。 使用するバックに 1 つの要素によって、キューを短くします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_queue_pop.cpp   
@@ -65,13 +63,16 @@ int main()
   
 ```  
   
-  **b c**  
- **b c**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+a b c  
+b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [queue::push](../Topic/queue::push%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [queue::push (STL/CLR)](../dotnet/queue-push-stl-clr.md)

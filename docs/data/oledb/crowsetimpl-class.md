@@ -1,98 +1,97 @@
 ---
-title: "CRowsetImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowsetImpl"
-  - "ATL.CRowsetImpl"
-  - "ATL::CRowsetImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CRowsetImpl クラス"
+title: "CRowsetImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CRowsetImpl
+- ATL.CRowsetImpl
+- ATL::CRowsetImpl
+dev_langs: C++
+helpviewer_keywords: CRowsetImpl class
 ms.assetid: e97614b3-b11d-4806-a0d3-b9401331473f
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2390a474e289ea41fd676759d12b92e8a22e462a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CRowsetImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-多くのインターフェイス実装の多重継承を必要とせずに標準 OLE DB の行セットの実装を提供します。  
+# <a name="crowsetimpl-class"></a>CRowsetImpl クラス
+多くの実装インターフェイスの多重継承を必要とせず、標準の OLE DB 行セットの実装を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
    class T,  
    class Storage,  
    class CreatorClass,  
-   class ArrayType = CAtlArray<Storage>,   
-   class RowClass = CSimpleRow,   
-   class RowsetInterface = IRowsetImpl < T, IRowset >   
+   class ArrayType = CAtlArray<Storage>,   
+   class RowClass = CSimpleRow,   
+   class RowsetInterface = IRowsetImpl < T, IRowset >   
 >  
-class CRowsetImpl :    
-   public CComObjectRootEx<CreatorClass::_ThreadModel>,   
-   public CRowsetBaseImpl<T, Storage, ArrayType, RowsetInterface>,   
+class CRowsetImpl :    
+   public CComObjectRootEx<CreatorClass::_ThreadModel>,   
+   public CRowsetBaseImpl<T, Storage, ArrayType, RowsetInterface>,   
    public IRowsetInfoImpl<T, CreatorClass::_PropClass>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `CRowsetImpl`から派生するユーザーのクラス。  
+ ユーザーのクラスから派生した`CRowsetImpl`です。  
   
  `Storage`  
  ユーザー レコード クラスです。  
   
  `CreatorClass`  
- 行セットのプロパティを含むクラス; 通常、コマンド。  
+ 行セットのプロパティを含むクラス通常はコマンド。  
   
  `ArrayType`  
- 行セットのデータの記憶領域として機能するクラス。  パラメーターの既定 `CAtlArray`にこの、が、必要な機能をサポートする任意のクラスを指定できます。  
+ 行セットのデータの記憶域として機能するクラスです。 このパラメーターの既定値`CAtlArray`が必要な機能をサポートする任意のクラスを指定できます。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[NameFromDBID](../../data/oledb/crowsetimpl-namefromdbid.md)|渡された `bstr` に **DBID** とコピーから文字列を格納します。|  
-|[SetCommandText](../../data/oledb/crowsetimpl-setcommandtext.md)|2 桁の文字列に **DBID**s を検証し、保存します。[m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)\)。|  
+|[NameFromDBID](../../data/oledb/crowsetimpl-namefromdbid.md)|文字列を抽出、 **DBID**をコピーし、`bstr`で渡されます。|  
+|[SetCommandText](../../data/oledb/crowsetimpl-setcommandtext.md)|検証し、格納、 **DBID**2 つの文字列で $s ([m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md))。|  
   
-### オーバーライド可能なメソッド  
+### <a name="overridable-methods"></a>オーバーライド可能なメソッド  
   
 |||  
 |-|-|  
 |[GetColumnInfo](../../data/oledb/crowsetimpl-getcolumninfo.md)|特定のクライアント要求の列情報を取得します。|  
-|[GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md)|その場合は、いずれか一方または両方のパラメーターがデータ メンバー [m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)に文字列値をコピー文字列値に含まれている参照するかどうかを調べます。|  
-|[ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md)|一方または両方の **DBID**s がある場合、文字列値が含まれている場合、参照するかどうかは、データ メンバー [m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)にコピーします。|  
+|[GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md)|いずれかまたは両方のパラメーターには、文字列値が含まれている場合を確認するためのチェックは、データ メンバーに文字列値をコピー [m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md)です。|  
+|[ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md)|いずれかを参照またはその両方をチェック**DBID**s が、文字列値を含めるし、場合は、そのデータ メンバーにコピー [m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md)です。|  
   
-### データ メンバー  
+### <a name="data-members"></a>データ メンバー  
   
 |||  
 |-|-|  
-|[m\_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md)|`CRowsetImpl`にユーザー レコード テンプレート引数で templatizes 既定で、`CAtlArray`。  別の配列型クラスの `CRowsetImpl`へ `ArrayType` テンプレート引数を変更することで実行できます。|  
-|[m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)|行セットの最初のコマンドが含まれています。|  
-|[m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)|行セットの最初のインデックスが含まれています。|  
+|[m_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md)|既定では、`CAtlArray`へのユーザー レコードのテンプレート引数で templatizes を`CRowsetImpl`です。 変更することによって、配列型の別のクラスを使用できます、`ArrayType`へのテンプレート引数`CRowsetImpl`です。|  
+|[m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)|行セットの最初のコマンドが含まれています。|  
+|[その](../../data/oledb/crowsetimpl-m-strindextext.md)|行セットの最初のインデックスが含まれています。|  
   
-## 解説  
- `CRowsetImpl` は 静的なアップキャスト形式のオーバーライドが含まれています。  メソッドは特定の行セットのコマンド テキストを検証する方法を制御します。  多重継承されるインターフェイス実装を作成して `CRowsetImpl`独自の式のクラスを作成できます。  、実装を提供する必要があるのは **実行**メソッドです。  どのようなによって行セットが作成されるか、作成者のメソッドは **実行**ごとに異なるシグネチャを要求します。  たとえば、実装する必要 `CRowsetImpl`\-派生クラス\) を使用している場合は、スキーマ行セットに、**実行** の次のメソッド シグネチャがあります:  
+## <a name="remarks"></a>コメント  
+ `CRowsetImpl`静的キャストの形式での上書きを提供します。 メソッドは、指定された行セットがコマンド テキストを検証する方法を制御します。 独自に作成することができます`CRowsetImpl`-複数継承の実装インターフェイスをすることでクラスのスタイルを設定します。 唯一の方法を実装を提供する必要があります**Execute**です。 行セットの種類を作成することによって作成者メソッドに異なる署名が要求するは**Execute**です。 たとえば、使用している場合、 `CRowsetImpl`-スキーマ行セットを実装するクラスを派生、 **Execute**メソッドは、次の署名には。  
   
  `HRESULT Execute(LONG* pcRows, ULONG cRestrictions, const VARIANT* rgRestrictions)`  
   
- 実装する必要 `CRowsetImpl`\-派生クラス\) を作成するコマンドまたはセッションの行セットに、**実行** の次のメソッド シグネチャがあります:  
+ 作成する場合、 `CRowsetImpl`-コマンドまたはセッションの行セットを実装するクラスを派生、 **Execute**メソッドは、次の署名になります。  
   
  `HRESULT Execute(LONG* pcRows, DBPARAMS* pParams)`  
   
- `CRowsetImpl`を実装するための **実行** \-派生のメソッド、内部データ バッファー \([m\_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md)\) を設定しなければなりません。  
+ いずれかを実装する、 `CRowsetImpl`-派生**Execute**メソッド、内部データ バッファーを設定する必要があります ([m_rgRowData](../../data/oledb/crowsetimpl-m-rgrowdata.md))。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h

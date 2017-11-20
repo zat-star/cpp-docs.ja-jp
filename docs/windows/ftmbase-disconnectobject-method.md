@@ -1,32 +1,30 @@
 ---
-title: "FtmBase::DisconnectObject メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ftm/Microsoft::WRL::FtmBase::DisconnectObject"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DisconnectObject メソッド"
+title: "Ftmbase::disconnectobject メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: ftm/Microsoft::WRL::FtmBase::DisconnectObject
+dev_langs: C++
+helpviewer_keywords: DisconnectObject method
 ms.assetid: 33253eec-3a65-4e72-8525-0249245a4790
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 618590f28dcb82be0bcb9c4407c9aa4eaa2432ce
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FtmBase::DisconnectObject メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-強制的にオブジェクトに対する外部接続を解放します。  オブジェクトのサーバーがシャットダウンする前にこのオブジェクトのメソッドの実装を呼び出します。  
+# <a name="ftmbasedisconnectobject-method"></a>FtmBase::DisconnectObject メソッド
+オブジェクトへのすべての外部接続を強制的に解放します。 オブジェクトのサーバーでは、シャット ダウンする前にこのメソッドのオブジェクトの実装を呼び出します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHODIMP DisconnectObject(  
@@ -34,17 +32,17 @@ STDMETHODIMP DisconnectObject(
 ) override;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `dwReserved`  
  今後使用するために予約されています。0 にする必要があります。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、エラーを示す HRESULT を返します。  
+## <a name="return-value"></a>戻り値  
+ 成功した場合は S_OK、そうでない場合はエラーを示す HRESULT。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [FtmBase クラス](../windows/ftmbase-class.md)

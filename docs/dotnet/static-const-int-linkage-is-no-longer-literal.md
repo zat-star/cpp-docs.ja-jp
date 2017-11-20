@@ -1,32 +1,32 @@
 ---
-title: "静的整数型定数リンケージの非リテラル化 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "定数, 宣言"
-  - "整数の定数式"
-  - "リテラル属性 [C++]"
+title: "Static Const Int リンケージの非リテラル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- literal attribute [C++]
+- constants, declaring
+- integral constant expressions
 ms.assetid: d2a5e3d2-ffb0-4b61-8114-bec5993a1195
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d2d4e955df4982ba2077098adc7bd47506b42239
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 静的整数型定数リンケージの非リテラル化
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-クラスの定数メンバーの宣言は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="static-const-int-linkage-is-no-longer-literal"></a>静的整数型定数リンケージの非リテラル化
+定数、クラスのメンバーの宣言は、Visual C を c++ マネージ拡張から変更されました。  
   
- `static const` の整数メンバーは引き続きサポートされていますが、その linkage 属性は変更されています。  現在は、literal の整数メンバーに以前の linkage 属性が格納されています。  たとえば、次のマネージ拡張クラスを考えます。  
+ `static const`整数メンバーはサポートされても、そのリンケージ属性が変更されました。 以前のリンケージ属性は、リテラルの整数メンバーで今すぐ実行されます。 たとえば、次のマネージ拡張クラスがあるとします。  
   
 ```  
 public __gc class Constants {  
@@ -35,37 +35,37 @@ public:
 };  
 ```  
   
- このコードは、このフィールドに対して次の CIL 基本属性を生成します \(literal 属性に注意してください\)。  
+ これには、(リテラルの属性に注意してください) のフィールドに対して、次の基になる CIL 属性が生成されます。  
   
 ```  
 .field public static literal int32   
 modopt([Microsoft.VisualC]Microsoft.VisualC.IsConstModifier) STANDARD_CLIENT_PRX = int32(0x00000004)  
 ```  
   
- このコードは新しい構文でもコンパイルされます。  
+ これは、新しい構文で引き続きコンパイル: 中  
   
 ```  
 public ref class Constants {  
 public:  
-   static const int LOG_DEBUG = 4;  
+   static const int LOG_DEBUG = 4;  
 };  
 ```  
   
- ただし、literal 属性はもう生成されません。したがって、CLR ランタイムからは定数として見なされません。  
+ 不要になったリテラルの属性を出力し、したがってとは見なされません、定数、CLR ランタイムによって。  
   
 ```  
 .field public static int32 modopt([Microsoft.VisualC]Microsoft.VisualC.IsConstModifier) STANDARD_CLIENT_PRX = int32(0x00000004)  
 ```  
   
- 以前と同じように中間言語の literal 属性を生成するには、新たにサポートされた `literal` データ メンバーの宣言を次のように変更する必要があります。  
+ 同じ間言語 literal 属性がある、するためには、宣言を変更する必要が新たにサポートする`literal`、次のように、データ メンバー  
   
 ```  
 public ref class Constants {  
 public:  
-   literal int LOG_DEBUG = 4;  
+   literal int LOG_DEBUG = 4;  
 };  
 ```  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
- [literal](../windows/literal-cpp-component-extensions.md)
+## <a name="see-also"></a>関連項目  
+ [クラスまたはインターフェイス内でメンバーの宣言 (C + + CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)   
+ [リテラル](../windows/literal-cpp-component-extensions.md)

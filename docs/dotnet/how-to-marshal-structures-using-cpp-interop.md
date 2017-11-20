@@ -1,38 +1,37 @@
 ---
-title: "方法: C++ Interop を使用して構造体をマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 相互運用機能, 構造体"
-  - "データ マーシャリング [C++], 構造体"
-  - "相互運用 [C++], 構造体"
-  - "マーシャリング [C++], 構造体"
-  - "構造体 [C++], マーシャリング"
+title: "方法: C++ Interop を使用してマーシャ リング構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- C++ Interop, structures
+- structures [C++], marshaling
+- data marshaling [C++], structures
+- interop [C++], structures
+- marshaling [C++], structures
 ms.assetid: c2080200-f983-4d6e-a557-cd870f060a54
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 640b3cdbfe9bd88faa337737b0423e3f759b41dc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C++ Interop を使用して構造体をマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、Visual C\+\+ の相互運用性の 1 つのファセットについて説明します。  詳細については、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」を参照してください。  
+# <a name="how-to-marshal-structures-using-c-interop"></a>方法: C++ Interop を使用して構造体をマーシャリングする
+このトピックでは、Visual C の相互運用性のファセットの 1 つを示します。 詳細については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。  
   
- 次のコード例では、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md) の \#pragma ディレクティブを使用してマネージ関数とアンマネージ関数を同じファイル内で実装していますが、これらの関数は、別個のファイルに定義された場合も同じように相互運用できます。  アンマネージ関数のみを含むファイルは、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルする必要はありません。  
+ 次のコード例、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)個別のファイルで定義されている場合、これらの関数が同様に、相互運用が、マネージ リソースと、同じファイル内の関数をアンマネージ #pragma ディレクティブを実装します。 アンマネージ関数のみを含むファイルを使用してコンパイルする必要はありません[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 使用例  
- マネージ関数からアンマネージ関数に、値渡しおよび参照渡しの両方で構造体を渡す方法を次の例に示します。  この例で示す構造体には単純な組み込みデータ型しか含まれていないので \(「[Blittable 型と非 Blittable 型](../Topic/Blittable%20and%20Non-Blittable%20Types.md)」を参照\)、特別なマーシャリングは必要ありません。  ポインターを含む構造体のような非 blittable 型の構造体をマーシャリングするには、「[方法: C\+\+ Interop を使用して埋め込みポインターをマーシャリングする](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)」を参照してください。  
+## <a name="example"></a>例  
+ 次の例では、マネージからアンマネージ関数では、両方の値と参照渡しで構造体を渡す方法を示します。 この例では、構造には、単純なだけ、組み込みのデータ型が含まれているため (を参照してください[blittable 型と非 Blittable 型](http://msdn.microsoft.com/Library/d03b050e-2916-49a0-99ba-f19316e5c1b3))、特殊なマーシャ リングする必要はありません。 ポインターが含まれるものなど、blittable でない構造体をマーシャ リングする、次を参照してください。[する方法: マーシャ リング埋め込みポインターを使用して C++ Interop](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)です。  
   
 ```  
 // PassStruct1.cpp  
@@ -88,8 +87,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- アンマネージ関数からマネージ関数に、値渡しおよび参照渡しの両方で構造体を渡す方法を次の例に示します。  この例で示す構造体には単純な組み込みデータ型しか含まれていないので \(「[Blittable 型と非 Blittable 型](../Topic/Blittable%20and%20Non-Blittable%20Types.md)」を参照\)、特別なマーシャリングは必要ありません。  ポインターを含む構造体のような非 blittable 型の構造体をマーシャリングするには、「[方法: C\+\+ Interop を使用して埋め込みポインターをマーシャリングする](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)」を参照してください。  
+## <a name="example"></a>例  
+ 次の例では、アンマネージからマネージ関数の場合、両方の値と参照渡しで構造体を渡す方法を示します。 この例では、構造には、単純なだけ、組み込みのデータ型が含まれているため (を参照してください[blittable 型と非 Blittable 型](http://msdn.microsoft.com/Library/d03b050e-2916-49a0-99ba-f19316e5c1b3))、特殊なマーシャ リングする必要はありません。 ポインターが含まれるものなど、blittable でない構造体をマーシャ リングする、次を参照してください。[する方法: マーシャ リング埋め込みポインターを使用して C++ Interop](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)です。  
   
 ```  
 // PassStruct2.cpp  
@@ -154,5 +153,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

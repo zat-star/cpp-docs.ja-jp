@@ -1,34 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4540 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4540"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4540"
+title: "コンパイラの警告 (レベル 1) C4540 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4540
+dev_langs: C++
+helpviewer_keywords: C4540
 ms.assetid: 8085e748-5f4d-43c2-b06d-eaf794edbf72
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 04ae3142d319659c1f76dfccf31fe870a82692e8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4540
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-dynamic\_cast がアクセスできない、またはあいまいなベースへの変換に使用されています; 'type1' から 'type2' の変換でランタイム テストが失敗します。  
+# <a name="compiler-warning-level-1-c4540"></a>コンパイラの警告 (レベル 1) C4540
+dynamic_cast がアクセスできないか、あいまいなベース; に変換するために使用実行時のテストは失敗し ('type2' への ' type1')  
   
- `dynamic_cast` を使用して、ある型から別の型への変換を行っています。  コンパイラは、基本クラスがアクセス不能 \(`private` など\) であるか、あいまい \(クラス階層に 2 回以上表示されるなど\) であるため、キャストが常に失敗する \(**NULL** を返す\) と判断しました。  
+ 使用する`dynamic_cast`を 1 つの型から変換します。 コンパイラでは、キャストが失敗は常に決定されます (返す**NULL**) 基底クラスにアクセスできないため (`private`のインスタンス) あいまいな (複数回表示されるクラスの階層内のインスタンス) またはします。  
   
- 以下にこの警告の例を示します。  クラス **B** はクラス **A** から派生します。  プログラムは `dynamic_cast` を使用して、クラス **B** \(派生クラス\) からクラス **A** へのキャストを行いますが、クラス **B** は `private` でアクセス不能なため、この操作は常に失敗します。  **A** のアクセスを **public** に変えると、この警告は解決します。  
+ この警告の例を次に示します。 クラス**B**クラスから派生した**A**です。プログラムを使用して`dynamic_cast`クラスにキャストする**B** (派生クラス) クラスに**A**、これは必ず失敗クラス**B**は`private`およびこのインターフェイスアクセス不可能です。 アクセスを変更する**A**に**パブリック**警告を解決します。  
   
 ```  
 // C4540.cpp  

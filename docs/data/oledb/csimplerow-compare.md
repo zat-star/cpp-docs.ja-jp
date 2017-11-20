@@ -1,52 +1,51 @@
 ---
-title: "CSimpleRow::Compare | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CSimpleRow.Compare"
-  - "CSimpleRow::Compare"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Compare メソッド"
+title: "Csimplerow::compare |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CSimpleRow.Compare
+- CSimpleRow::Compare
+dev_langs: C++
+helpviewer_keywords: Compare method
 ms.assetid: 0bb65f09-c7bc-449b-aa4e-c828cac13510
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8e49dcc0356c563312c0d73041ab412716694c1a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CSimpleRow::Compare
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-それらが同じ行のインスタンスを参照している 2 行を参照するために比較します。  
+# <a name="csimplerowcompare"></a>CSimpleRow::Compare
+同じ行インスタンスを参照しているかを参照してください。 2 つの行を比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT Compare(   
-   CSimpleRow* pRow    
+      HRESULT Compare(   
+   CSimpleRow* pRow    
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pRow`  
- `CSimpleRow` オブジェクトへのポインター。  
+ ポインター、`CSimpleRow`オブジェクト。  
   
-## 戻り値  
- `HRESULT` 値 \(通常は 2 行を示す `S_OK`は同じ行のインスタンスか、2 行を示す **S\_FALSE**が異なります。  そのほかの有効な戻り値の *OLE DB Programmer's Reference* の [IRowsetIdentity::IsSameRow](https://msdn.microsoft.com/en-us/library/ms719629.aspx) を参照してください。  
+## <a name="return-value"></a>戻り値  
+ `HRESULT`値、通常`S_OK`を示す 2 つの行が同じ行インスタンスまたは**S_FALSE**、2 つの行を示すことが異なります。 参照してください[IRowsetIdentity::IsSameRow](https://msdn.microsoft.com/en-us/library/ms719629.aspx)で、 *OLE DB プログラマーズ リファレンス*の考えられる他の戻り値。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [CSimpleRow クラス](../Topic/CSimpleRow%20Class.md)   
- [CSimpleRow::ReleaseRow](../Topic/CSimpleRow::ReleaseRow.md)   
+## <a name="see-also"></a>関連項目  
+ [CSimpleRow クラス](../../data/oledb/csimplerow-class.md)   
+ [Csimplerow::releaserow](../../data/oledb/csimplerow-releaserow.md)   
  [IRowsetImpl::RefRows](../../data/oledb/irowsetimpl-refrows.md)

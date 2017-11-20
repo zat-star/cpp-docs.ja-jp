@@ -4,44 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- for
-dev_langs:
-- C++
-helpviewer_keywords:
-- for OpenMP directive
+f1_keywords: for
+dev_langs: C++
+helpviewer_keywords: for OpenMP directive
 ms.assetid: 8b54e034-9db2-4c1a-a2b1-72e14e930506
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 59b424cc0efb429ed6d01fb46a469594b2737dbe
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 8c1e7f5df003796050958f803cc931a49d2d52d3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="for-openmp"></a>for (OpenMP)
-行われる動作、スレッド間で除算する並列領域内の for ループします。  
+行われる動作、スレッド間で除算、並行領域内の for ループします。  
   
 ## <a name="syntax"></a>構文  
   
@@ -54,10 +35,10 @@ ms.lasthandoff: 02/24/2017
  指定項目  
   
  `clause` (省略可能)  
- 0 個以上の句。 サポートされている句の一覧については、「解説」セクションを参照してください**の**です。  
+ 0 個以上の句。 サポートされている句の一覧については、「解説」セクションを参照してください**の**します。  
   
  `for_statement`  
- For ループ A があります。 ユーザー コードで未定義の動作が発生、ループ インデックス変数を変更します。  
+ For ループ A します。 ユーザー コードで未定義の動作が発生、ループは、インデックス変数を変更します。  
   
 ## <a name="remarks"></a>コメント  
  **の**ディレクティブは、次の OpenMP 句をサポートしています。  
@@ -68,17 +49,17 @@ ms.lasthandoff: 02/24/2017
   
 -   [nowait](../../../parallel/openmp/reference/nowait.md)  
   
--   [順序付けになります。](../../../parallel/openmp/reference/ordered-openmp-directives.md)  
+-   [順序付け](../../../parallel/openmp/reference/ordered-openmp-directives.md)  
   
 -   [private](../../../parallel/openmp/reference/private-openmp.md)  
   
--   [削減](../../../parallel/openmp/reference/reduction.md)  
+-   [reduction](../../../parallel/openmp/reference/reduction.md)  
   
--   [スケジュール](../../../parallel/openmp/reference/schedule.md)  
+-   [schedule](../../../parallel/openmp/reference/schedule.md)  
   
- 場合**並列**も指定されている`clause`句可能で、**並列**または**の**ディレクティブを除く**nowait**します。  
+ 場合**並列**も指定すると、`clause`認めることができる句によって、**並列**または**の**ディレクティブを除く**nowait**.  
   
- 詳細については、次を参照してください。 [2.4.1 for のコンストラクト](../../../parallel/openmp/2-4-1-for-construct.md)します。  
+ 詳細については、次を参照してください。 [2.4.1 for のコンストラクト](../../../parallel/openmp/2-4-1-for-construct.md)です。  
   
 ## <a name="example"></a>例  
   

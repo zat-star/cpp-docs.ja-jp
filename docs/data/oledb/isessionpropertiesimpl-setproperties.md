@@ -1,49 +1,48 @@
 ---
-title: "ISessionPropertiesImpl::SetProperties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ISessionPropertiesImpl.SetProperties"
-  - "SetProperties"
-  - "ISessionPropertiesImpl::SetProperties"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetProperties メソッド"
+title: "Isessionpropertiesimpl::setproperties |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ISessionPropertiesImpl.SetProperties
+- SetProperties
+- ISessionPropertiesImpl::SetProperties
+dev_langs: C++
+helpviewer_keywords: SetProperties method
 ms.assetid: 2e1219ed-0e1e-460e-84d6-031acfbfd3d2
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2833613789a67219eddaff57b7b6de54fce7f880
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ISessionPropertiesImpl::SetProperties
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**DBPROPSET\_SESSION** プロパティ グループのプロパティを設定します。  
+# <a name="isessionpropertiesimplsetproperties"></a>ISessionPropertiesImpl::SetProperties
+プロパティを設定、 **DBPROPSET_SESSION**プロパティ グループです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      STDMETHOD(SetProperties)(   
-   ULONG cPropertySets,   
-   DBPROPSET rgPropertySets[]    
+      STDMETHOD(SetProperties)(   
+   ULONG cPropertySets,   
+   DBPROPSET rgPropertySets[]    
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [ISessionProperties::SetProperties](https://msdn.microsoft.com/en-us/library/ms714405.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[ISessionProperties::SetProperties](https://msdn.microsoft.com/en-us/library/ms714405.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ISessionPropertiesImpl クラス](../../data/oledb/isessionpropertiesimpl-class.md)   
  [ISessionPropertiesImpl::GetProperties](../../data/oledb/isessionpropertiesimpl-getproperties.md)

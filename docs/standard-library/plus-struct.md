@@ -4,43 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-cpp
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- xfunctional/std::plus
-- plus
-dev_langs:
-- C++
+f1_keywords: xfunctional/std::plus
+dev_langs: C++
 helpviewer_keywords:
 - plus class
 - plus struct
 ms.assetid: 4594abd5-b2f2-4fac-9b6b-fc9a2723f8cf
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 65dd34958f89d80608cf21b360d76f0c26cda38a
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 7e44bc156e50966394c5d6fda09beddad7524225
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="plus-struct"></a>plus 構造体
 引数に対して加算演算 (二項 `operator+`) を実行する定義済みの関数オブジェクト。  
@@ -75,7 +56,7 @@ struct plus<void>
  加算演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
 ## <a name="return-value"></a>戻り値  
- `Left``+``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には二項 `operator+` によって返された型が含まれます。  
+ `Left + Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には二項 `operator+` によって返された型が含まれます。  
   
 ## <a name="example"></a>例  
   
@@ -135,7 +116,6 @@ The element-wise sums are: ( -4 -2 0 2 4 6 )
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 
 
 

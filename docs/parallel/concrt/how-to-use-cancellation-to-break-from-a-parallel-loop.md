@@ -1,44 +1,49 @@
 ---
-title: "方法: キャンセル処理を使用して並列ループを中断する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "並列検索アルゴリズム, 記述 [同時実行ランタイム]"
-  - "記述 (並列検索アルゴリズムを) [同時実行ランタイム]"
+title: "方法: キャンセルを使用して並列ループを中断する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- writing a parallel search algorithm [Concurrency Runtime]
+- parallel search algorithm, writing [Concurrency Runtime]
 ms.assetid: 421cd2de-f058-465f-b890-dd8fcc0df273
-caps.latest.revision: 19
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "19"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c8814c5b1856e912adf076c4d6fc9e476df8addf
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: キャンセル処理を使用して並列ループを中断する
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="how-to-use-cancellation-to-break-from-a-parallel-loop"></a>方法: キャンセル処理を使用して並列ループを中断する
+この例では、キャンセルを使用して基本的な並列検索アルゴリズムを実装する方法を示します。  
+  
+## <a name="example"></a>例  
 
-この例では、基本的な並列検索アルゴリズムを実装するためにキャンセルを使用する方法を示しています。  
+ 次の例では、キャンセルを使用して、配列内の要素を検索します。 `parallel_find_any`関数は、 [concurrency::parallel_for](reference/concurrency-namespace-functions.md#parallel_for)アルゴリズムと[concurrency::run_with_cancellation_token](reference/concurrency-namespace-functions.md#run_with_cancellation_token)関数を指定した値を格納する位置を検索します。 並列ループには、値が検出されると、呼び出し、 [concurrency::cancellation_token_source::cancel](reference/cancellation-token-source-class.md#cancel)将来の処理を取り消す方法です。  
+
+
   
-## 使用例  
- 次の例では、取り消し処理を使用して配列内の要素を検索します。  `parallel_find_any` 関数は [concurrency::parallel\_for](../Topic/parallel_for%20Function.md) アルゴリズムと指定された値を含む位置を検索するために [concurrency::run\_with\_cancellation\_token](../Topic/run_with_cancellation_token%20Function.md) 関数を使用します。  並列ループでは値を見つけると、今後の作業をキャンセルするに [concurrency::cancellation\_token\_source::cancel](../Topic/cancellation_token_source::cancel%20Method.md) のメソッドを呼び出します。  
+ [!code-cpp[concrt-parallel-array-search#1](../../parallel/concrt/codesnippet/cpp/how-to-use-cancellation-to-break-from-a-parallel-loop_1.cpp)]  
   
- [!code-cpp[concrt-parallel-array-search#1](../../parallel/concrt/codesnippet/CPP/how-to-use-cancellation-to-break-from-a-parallel-loop_1.cpp)]  
+
+ [Concurrency::parallel_for](reference/concurrency-namespace-functions.md#parallel_for)アルゴリズムが同時に動作します。 したがって、あらかじめ決められた順序で処理は実行しません。 配列値の複数のインスタンスが含まれている場合、結果は、その位置のいずれかを指定できます。  
+
   
- [concurrency::parallel\_for](../Topic/parallel_for%20Function.md) アルゴリズムは同時に処理を行います。  したがって、あらかじめ設定されている順序で操作を行うことはありません。  配列に値のインスタンスが複数含まれている場合、結果はそのいずれかの位置になります。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+ コード例をコピーし、Visual Studio プロジェクトに貼り付けるかという名前のファイルに貼り付けます`parallel-array-search.cpp`Visual Studio コマンド プロンプト ウィンドウで、次のコマンドを実行します。  
   
-## コードのコンパイル  
- プログラム例をコピーし、Visual Studio のプロジェクトに貼り付けるか、`並列配列search.cpp` という名前で、Visual Studio のコマンド プロンプト ウィンドウで次のコマンドを実行してファイルに貼り付けます。  
+ **cl.exe/EHsc 並列-配列-search.cpp**  
   
- **cl.exe \/EHsc parallel\-array\-search.cpp**  
-  
-## 参照  
- [キャンセル](../../parallel/concrt/cancellation-in-the-ppl.md)   
- [並列アルゴリズム](../Topic/Parallel%20Algorithms.md)   
- [parallel\_for 関数](../Topic/parallel_for%20Function.md)   
- [cancellation\_token\_source クラス](../../parallel/concrt/reference/cancellation-token-source-class.md)
+## <a name="see-also"></a>関連項目  
+ [PPL における取り消し処理](cancellation-in-the-ppl.md)   
+ [並列アルゴリズム](../../parallel/concrt/parallel-algorithms.md)   
+ [parallel_for 関数](reference/concurrency-namespace-functions.md#parallel_for)   
+ [cancellation_token_source クラス](../../parallel/concrt/reference/cancellation-token-source-class.md)

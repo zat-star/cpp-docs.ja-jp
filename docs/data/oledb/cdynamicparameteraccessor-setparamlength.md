@@ -1,36 +1,35 @@
 ---
-title: "CDynamicParameterAccessor::SetParamLength | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CDynamicParameterAccessor::SetParamLength"
-  - "CDynamicParameterAccessor.SetParamLength"
-  - "ATL.CDynamicParameterAccessor.SetParamLength"
-  - "CDynamicParameterAccessor::SetParamLength"
-  - "SetParamLength"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetParamLength メソッド"
+title: "Cdynamicparameteraccessor::setparamlength |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CDynamicParameterAccessor::SetParamLength
+- CDynamicParameterAccessor.SetParamLength
+- ATL.CDynamicParameterAccessor.SetParamLength
+- CDynamicParameterAccessor::SetParamLength
+- SetParamLength
+dev_langs: C++
+helpviewer_keywords: SetParamLength method
 ms.assetid: d8e0bbfe-e1ae-4a8f-9567-584fbb0c8385
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6a73599e67d0a2308416484cb4b7376d9449cfbb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDynamicParameterAccessor::SetParamLength
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バッファーに格納され、指定したパラメーターの長さを設定します。  
+# <a name="cdynamicparameteraccessorsetparamlength"></a>CDynamicParameterAccessor::SetParamLength
+バッファーに格納され、指定されたパラメーターの長さを設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -40,18 +39,18 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  *length*  
- \[\]指定されたパラメーターのバイト数。  
+ [in]指定されたパラメーターの長さを (バイト単位)。  
   
-## 解説  
- 成功の戻り **true** または失敗の **false**。  
+## <a name="remarks"></a>コメント  
+ 返します**true**成功した場合または**false**エラー発生時にします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

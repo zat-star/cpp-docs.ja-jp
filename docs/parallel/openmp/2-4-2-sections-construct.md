@@ -1,59 +1,57 @@
 ---
-title: "2.4.2 sections Construct | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.4.2 sections のコンストラクト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: e9e6e3ea-7fc9-4925-8f68-92b8a5bb1e76
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 22aa4cc1bde59234d70803c2e878d3fbf83f499e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 2.4.2 sections Construct
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**セクション**  のディレクティブはチームのスレッドで除算一連の構造体を指定する noniterative 作業共有の構造体を指定します。  各セクションはチームのスレッドによって回実行されます。   **セクション**  のディレクティブの構文は次のとおりです :  
+# <a name="242-sections-construct"></a>2.4.2 sections のコンストラクト
+**セクション**ディレクティブを識別、noniterative work-sharing コンス トラクターの構造体をチーム内のスレッドに分割するにはセットを指定します。 各セクションでは、チーム内のスレッドで 1 回実行されます。 構文、**セクション**ディレクティブは、次のようにします。  
   
 ```  
 #pragma omp sections [clause[[,] clause] ...] new-line  
    {  
    [#pragma omp section new-line]  
       structured-block  
-   [#pragma omp section new-line  
-      structured-block ]  
+   [#pragma omp section new-linestructured-block ]  
 ...  
 }  
 ```  
   
- 句は次のいずれかです :  
+ 句では、次のいずれかです。  
   
- **\(プライベート**   *変数*  の  *リスト* **\)**  
+ **プライベート (** *変数一覧* **)**  
   
- **\(firstprivate**  *変数*  の  *リスト* **\)**  
+ **firstprivate (** *変数一覧* **)**  
   
- **\(lastprivate**  *変数*  の  *リスト* **\)**  
+ **lastprivate (** *変数一覧* **)**  
   
- **\(縮小**  の  *演算子の* **:**  *変数*  の  *リスト* **\)**  
+ **削減 (** *演算子* **:***変数一覧* **)**   
   
  **nowait**  
   
- 各セクションは  **セクション**  のディレクティブに  **セクション**  のディレクティブが最初のセクションについては省略可能ですが継続されます。   **セクション**  のディレクティブはディレクティブの構文  **セクション**  の範囲で囲みます。  **nowait** が指定されていない場合 **セクション**  構造体の最後に暗黙的なバリアがあります。  
+ 各セクションの後、**セクション**ディレクティブ、ですが、**セクション**ディレクティブは、最初のセクションでは省略可能です。 **セクション**ディレクティブはの構文上の範囲内でなければなりません。、**セクション**ディレクティブです。 暗黙的なバリアの末尾には、**セクション**しない限り、構築、 **nowait**が指定されています。  
   
- **セクション**  のディレクティブに制限 : は次のとおりです。  
+ 制限は、**セクション**ディレクティブは、次のとおり。  
   
--   **セクション**  のディレクティブはディレクティブの構文  **セクション**  の範囲外で表示する必要があります。  
+-   A**セクション**の構文の範囲外ディレクティブが含まれなければ、**セクション**ディレクティブです。  
   
--   **nowait** の一つの句だけ  **セクション**  のディレクティブで指定できます。  
+-   1 つだけ**nowait**句に表示できる、**セクション**ディレクティブです。  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **プライベート  firstprivate lastprivate** と  **リダクション**  の句はページの 25 [セクション 2.7.2](../Topic/2.7.2%20Data-Sharing%20Attribute%20Clauses.md) が表示されます。
+-   **プライベート**、 **firstprivate**、 **lastprivate**、および**削減**句を参照してください[セクション 2.7.2](../../parallel/openmp/2-7-2-data-sharing-attribute-clauses.md) [25] ページ。

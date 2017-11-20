@@ -1,48 +1,47 @@
 ---
-title: "auto_gcroot::operator bool | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_gcroot.operator bool"
-  - "auto_gcroot::operator bool"
-  - "msclr.auto_gcroot.operator bool"
-  - "msclr::auto_gcroot::operator bool"
-  - "operator bool"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "bool 演算子"
+title: "auto_gcroot::operator bool |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_gcroot.operator bool
+- auto_gcroot::operator bool
+- msclr.auto_gcroot.operator bool
+- msclr::auto_gcroot::operator bool
+- operator bool
+dev_langs: C++
+helpviewer_keywords: bool operator
 ms.assetid: 87d38498-4221-4de8-8d02-c2dd2e6274ec
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 375816231f10545411cfdc359df556163c2c6039
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# auto_gcroot::operator bool
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-条件式に `auto_gcroot` を使用するための演算子。  
+# <a name="autogcrootoperator-bool"></a>auto_gcroot::operator bool
+使用するための演算子`auto_gcroot`条件式でします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 operator bool() const;  
 ```  
   
-## 戻り値  
- ラップされたオブジェクトが有効な場合`true` ; 別の方法で `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`ラップされたオブジェクトが無効である場合`false`それ以外の場合。  
   
-## 解説  
- 整数型に変換できないため `bool` より安全であるこの演算子は `_detail_class::_safe_bool` に変換します。  
+## <a name="remarks"></a>コメント  
+ この演算子は実際に変換`_detail_class::_safe_bool`よりも安全である`bool`整数型に変換できないためです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_operator_bool.cpp  
@@ -65,14 +64,17 @@ int main() {
 }  
 ```  
   
-  **s は無効です。**  
-**、s は有効です。**  
-**、s は無効です。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+s is invalid  
+now s is valid  
+now s is invalid  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)   
- [auto\_gcroot::operator\!](../dotnet/auto-gcroot-operator-logical-not.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
+ [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
+ [auto_gcroot::operator!](../dotnet/auto-gcroot-operator-logical-not.md)

@@ -1,32 +1,30 @@
 ---
-title: "list::merge (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::merge"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "merge メンバー [STL/CLR]"
+title: "list::merge (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::list::merge
+dev_langs: C++
+helpviewer_keywords: merge member [STL/CLR]
 ms.assetid: f8e93cd3-bd08-4086-859b-08a2899cc9a6
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6547cb0a60b0e65bbfd11acd03d1d5bf7d926c86
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# list::merge (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 つの順序付けされた被制御シーケンスをマージします。  
+# <a name="listmerge-stlclr"></a>list::merge (STL/CLR)
+2 つの被制御シーケンスの順序をマージします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void merge(list<Value>% right);  
@@ -34,21 +32,21 @@ template<typename Pred2>
     void merge(list<Value>% right, Pred2 pred);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  pred  
  要素のペアの比較子。  
   
- \[right\]  
- マージするコンテナー。  
+ 右  
+ コンテナーにマージします。  
   
-## 解説  
- 一つ目のメンバー関数は `right` によって制御されるシーケンスからすべての要素を削除し、被制御シーケンスに挿入します。  シーケンスには、両方とも `operator<` で事前に順番に配置する必要があります。。要素が値のいずれかのシーケンスで管理すると同時に減って必要があります。  結果のシーケンスには、`operator<`に並べ替えられます。  このシーケンスに 2 文字のシーケンスを値の代わりに増加またはマージするには、この値を大きくメンバー関数を使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数によって制御されるシーケンスからのすべての要素を削除する`right`被制御シーケンスに挿入します。 両方のシーケンスで以前注文`operator<`--いずれかのシーケンスの進行中の値で要素を縮小しません必要があります。 によって、結果のシーケンスが順序付けも`operator<`します。 このメンバー関数を使用するには値でも増加するシーケンスに値で増加する 2 つのシーケンスにマージします。  
   
- 2 つ目のメンバー関数は、まず 1 番目と同様に動作します。ただし、シーケンスは `pred` に並べ替えられます。`pred``(X, Y)` は、シーケンスの要素 `Y` に従ってすべての要素 `X` に false である必要があります。  述語関数に並べ替えられた 2 二つのシーケンスを結合または指定できます。デリゲートする場合に使用します。  
+ 2 番目のメンバー関数と同様、最初は、順序に並べする点を除いて`pred`  --  `pred(X, Y)`任意の要素に対して false である必要があります`X`要素に依存している`Y`順序で。 使用順を指定するデリゲートの述語関数で 2 つのシーケンスにマージします。  
   
- 関数は、どちらも安定したマージを実行します。。元の被制御シーケンスの要素のペアは、被制御シーケンスの反転されません。  また、被制御シーケンスの要素 `X` と `Y` のペアに同じ大小関係がある場合、。`!(X < Y) && !(X < Y)`。元の被制御シーケンスの要素は `right`によって制御されるシーケンスの要素の前面に表示されます。  
+ 両方関数は安定したマージの実行 - 結果として得られる被制御シーケンス内の元の被制御シーケンスのいずれかの要素のペアを逆にありません。 また場合の要素のペア`X`と`Y`結果の被制御シーケンスが大小-- `!(X < Y) && !(X < Y)` --によって制御されるシーケンスから要素の前に、の元の被制御シーケンス内の要素が表示されます`right`.  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_merge.cpp   
@@ -107,20 +105,23 @@ int main()
   
 ```  
   
-  **C\+\+. e**  
- **b \\ f**  
- **a b c d e f**  
-**c2.size\(\) \= 0**  
- **e.c a.**  
- **f e a b c d**  
- **f e e c a b c d**  
-**c1.size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+ a c e  
+ b d f  
+ a b c d e f  
+c2.size() = 0  
+ e c a  
+ f e d c b a  
+ f e e d c c b a a  
+c1.size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::sort](../dotnet/list-sort-stl-clr.md)   
- [list::splice](../Topic/list::splice%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::sort (STL/CLR)](../dotnet/list-sort-stl-clr.md)   
+ [list::splice (STL/CLR)](../dotnet/list-splice-stl-clr.md)

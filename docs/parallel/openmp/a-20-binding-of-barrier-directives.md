@@ -1,29 +1,28 @@
 ---
-title: "A.20   Binding of barrier Directives | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "Barrier ディレクティブのバインディングを A.20 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: a3fdcc26-6873-429b-998e-de451401483b
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8d88c431753d918c05866324dd6436a091d6057a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# A.20   Binding of barrier Directives
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`parallel` の最も近いのディレクティブにバインドする  **バリア**  のディレクティブのディレクティブの結合規則を呼び出します。  ディレクティブのバインディングの詳細についてはページの 32 [セクション 2.8](../../parallel/openmp/2-8-directive-binding.md) を参照してください。  
+# <a name="a20---binding-of-barrier-directives"></a>A.20 barrier ディレクティブのバインド
+ディレクティブのバインディングのルールの呼び出し、**バリア**、最も近い包含にバインドするディレクティブ`parallel`ディレクティブです。 ディレクティブのバインディングの詳細については、次を参照してください。[セクション 2.8](../../parallel/openmp/2-8-directive-binding.md) [32] ページ。  
   
- 次の例ではMain から *sub2* の呼び出しは  **バリア**  が *sub2* の並列領域に *sub3*\(に対応\) にバインドするためです。  Main から *sub1* の呼び出しは  **バリア**  はサブルーチン *sub2* の並列領域にバインドされるため準拠しています。  Main から *sub3* の呼び出しは  **バリア**  は並列領域にバインドせずに無視するための対応する。  または  **バリア**  は外側の並列領域のスレッドと *sub1* で作成されたすべてのスレッドのチームだけを同期しないことに注意してください。  
+ 呼び出し、次の例で*メイン*に*sub2*が準拠しているため、**バリア**(で*sub3*) 並列領域にバインド*sub2*です。 呼び出し*メイン*に*sub1*は準拠していませんので、**バリア**サブルーチンで並列領域にバインド*sub2*です。  呼び出し*メイン*に*sub3*が準拠しているため、**バリア**の並列領域にバインドしないと、無視されます。 またを注意してください、**バリア**のみチーム、外側の並行領域内のスレッドとで作成されたすべてのスレッドの同期をとる*sub1*です。  
   
 ```  
 int main()  

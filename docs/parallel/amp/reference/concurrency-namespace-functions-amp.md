@@ -17,18 +17,17 @@ f1_keywords:
 - amp/Concurrency::direct3d_printf
 - amp/Concurrency::global_memory_fence
 - amp/Concurrency::tile_static_memory_fence
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 2bef0985-cb90-4ece-90b9-66529aec73c9
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 22ba62ab8b3b4f9d14953dbab3edd8228ea85193
-ms.openlocfilehash: a976cc06b49b10d5bb8dcecb10e114efdd89faa8
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 26361befb1ca245a9efe8dd0db4ba4f30129bda6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="concurrency-namespace-functions-amp"></a>Concurrency 名前空間の関数 (AMP)
 ||||  
@@ -60,7 +59,7 @@ void __cdecl amp_uninitialize();
 ```  
   
 ##  <a name="atomic_compare_exchange"></a>atomic_compare_exchange  
- 1 番目の引数で指定されたメモリ位置に格納されている値を&2; 番目に指定された引数の値と等しいかどうかアトミックに比較し、値が同じ場合、メモリ位置の値は&3; 番目に指定された引数の値に変更されます。  
+ 1 番目の引数で指定されたメモリ位置に格納されている値を 2 番目に指定された引数の値と等しいかどうかアトミックに比較し、値が同じ場合、メモリ位置の値は 3 番目に指定された引数の値に変更されます。  
   
 ```  
 inline bool atomic_compare_exchange(
@@ -79,10 +78,10 @@ inline bool atomic_compare_exchange(
   
 ### <a name="parameters"></a>パラメーター  
  `_Dest`  
- 比較される値の&1; つが読み取られ、新しい値 (ある場合) が格納される位置。  
+ 比較される値の 1 つが読み取られ、新しい値 (ある場合) が格納される位置。  
   
  `_Expected_value`  
- 比較される&2; 番目の値が読み取られる位置。  
+ 比較される 2 番目の値が読み取られる位置。  
   
  `value`  
  `_Dest` が `_Dest` と等しい場合、`_Expected_value` によって指定したメモリ位置に格納される値。  
@@ -92,7 +91,7 @@ inline bool atomic_compare_exchange(
   
 
 ##  <a name="atomic_exchange"></a>atomic_exchange 関数 (C++ AMP)  
- 分割不可能な操作としては、先の場所の値を設定します。  
+ 分割不可能な操作として移行先の場所の値を設定します。  
   
 ```  
 inline int atomic_exchange(
@@ -125,7 +124,7 @@ inline float atomic_exchange(
   
 
 ##  <a name="atomic_fetch_add"></a>atomic_fetch_add 関数 (C++ AMP)  
- メモリ位置の値に値をアトミックに追加します。  
+ アトミックにメモリ位置の値に値を追加します。  
   
 ```  
 inline int atomic_fetch_add(
@@ -148,10 +147,10 @@ inline unsigned int atomic_fetch_add(
  追加する値。  
   
 ### <a name="return-value"></a>戻り値  
- メモリ位置の元の値。  
+ メモリの場所の元の値。  
   
 ##  <a name="atomic_fetch_and"></a>atomic_fetch_and 関数 (C++ AMP)  
- アトミックに、値とメモリ位置の値のビットごとの AND 演算を実行します。  
+ アトミック値とメモリの場所の値のビットごとの AND 演算を実行します。  
   
 ```  
 inline int atomic_fetch_and(
@@ -174,7 +173,7 @@ inline unsigned int atomic_fetch_and(
  ビットごとの AND の計算に使用する値。  
   
 ### <a name="return-value"></a>戻り値  
- メモリ位置の元の値。  
+ メモリの場所の元の値。  
   
 ##  <a name="atomic_fetch_dec"></a>atomic_fetch_dec  
  指定したメモリ位置に格納されている値をアトミックにデクリメントします。  
@@ -212,7 +211,7 @@ inline unsigned int atomic_fetch_inc(_Inout_ unsigned int* _Dest) restrict(amp);
  メモリ位置に格納されている元の値。  
   
 ##  <a name="atomic_fetch_max"></a>atomic_fetch_max  
- 最初の引数で指定されたメモリ位置に格納されている値と&2; 番目の引数で指定された値の間での最大値をアトミックに計算し、同じメモリ位置に格納します。  
+ 最初の引数で指定されたメモリ位置に格納されている値と 2 番目の引数で指定された値の間での最大値をアトミックに計算し、同じメモリ位置に格納します。  
   
 ```  
 inline int atomic_fetch_max(
@@ -229,7 +228,7 @@ inline unsigned int atomic_fetch_max(
   
 ### <a name="parameters"></a>パラメーター  
  `_Dest`  
- 比較される値の&1; つが読み取られ、2 つの値の最大値が格納される位置。  
+ 比較される値の 1 つが読み取られ、2 つの値の最大値が格納される位置。  
   
  `value`  
  指定した位置の値と比較する値。  
@@ -238,7 +237,7 @@ inline unsigned int atomic_fetch_max(
  指定した位置に格納される元の値。  
   
 ##  <a name="atomic_fetch_min"></a>atomic_fetch_min  
- 最初の引数で指定されたメモリ位置に格納されている値と&2; 番目の引数で指定された値の間での最小値をアトミックに計算し、同じメモリ位置に格納します。  
+ 最初の引数で指定されたメモリ位置に格納されている値と 2 番目の引数で指定された値の間での最小値をアトミックに計算し、同じメモリ位置に格納します。  
   
 ```  
 inline int atomic_fetch_min(
@@ -255,7 +254,7 @@ inline unsigned int atomic_fetch_min(
   
 ### <a name="parameters"></a>パラメーター  
  `_Dest`  
- 比較される値の&1; つが読み取られ、2 つの値の最小値が格納される位置。  
+ 比較される値の 1 つが読み取られ、2 つの値の最小値が格納される位置。  
   
  `value`  
  指定した位置の値と比較する値。  
@@ -264,7 +263,7 @@ inline unsigned int atomic_fetch_min(
  指定した位置に格納される元の値。  
   
 ##  <a name="atomic_fetch_or"></a>atomic_fetch_or 関数 (C++ AMP)  
- アトミックの値とメモリ位置の値のビットごとの OR 演算を実行します。  
+ アトミック値とメモリの場所の値を持つビットごとの OR 演算を実行します。  
   
 ```  
 inline int atomic_fetch_or(
@@ -287,7 +286,7 @@ inline unsigned int atomic_fetch_or(
  ビットごとの OR の計算に使用する値。  
   
 ### <a name="return-value"></a>戻り値  
- メモリ位置の元の値。  
+ メモリの場所の元の値。  
   
 ##  <a name="atomic_fetch_sub"></a>atomic_fetch_sub 関数 (C++ AMP)  
  メモリ位置からの値をアトミックに減算します。  
@@ -313,10 +312,10 @@ inline unsigned int atomic_fetch_sub(
  減算される値です。  
   
 ### <a name="return-value"></a>戻り値  
- メモリ位置の元の値。  
+ メモリの場所の元の値。  
   
 ##  <a name="atomic_fetch_xor"></a>atomic_fetch_xor 関数 (C++ AMP)  
- アトミックに実行値とメモリ位置のビットごとの XOR 演算します。  
+ アトミックに peforms 値とメモリ位置のビットごとの XOR 演算です。  
   
 ```  
 inline int atomic_fetch_xor(
@@ -336,10 +335,10 @@ inline unsigned int atomic_fetch_xor(
  メモリ位置へのポインター。  
   
  `value`  
- XOR の計算に使用する値。  
+ XOR 計算に使用する値。  
   
 ### <a name="return-value"></a>戻り値  
- メモリ位置の元の値。  
+ メモリの場所の元の値。  
   
 ##  <a name="copy"></a>  copy  
  C++ AMP オブジェクトをコピーします。 すべての同期データ転送の条件が満たされます。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。 この関数の一般的な形式は `copy(src, dest)` です。  
@@ -448,7 +447,7 @@ void copy(
  コピーされた要素のデータ型。  
   
 ##  <a name="copy_async"></a>copy_async  
- C++ AMP オブジェクトをコピーし、取得、 [completion_future](completion-future-class.md)待機できるオブジェクト。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。  この関数の一般的な形式は `copy(src, dest)` です。  
+ C++ AMP オブジェクトをコピーしを返します、 [completion_future](completion-future-class.md)待機できるオブジェクト。 アクセラレータでコードを実行しているときにデータをコピーすることはできません。  この関数の一般的な形式は `copy(src, dest)` です。  
   
 ```  
 template <typename value_type, int _Rank>  
@@ -549,14 +548,14 @@ concurrency::completion_future copy_async(
  待機できる `future<void>`。  
   
 ##  <a name="direct3d_abort"></a>direct3d_abort  
- 制限句 `restrict(amp)` を使用して関数の実行を中止します。 発生させますが、AMP のランタイムが呼び出しを検出、 [runtime_exception](runtime-exception-class.md)例外エラー メッセージが"リファレンス ラスタライザー: シェーダー中止命令ヒット"です。  
+ 制限句 `restrict(amp)` を使用して関数の実行を中止します。 発生させますが、AMP ランタイムが呼び出しを検出、 [runtime_exception](runtime-exception-class.md)エラー メッセージで例外"リファレンス ラスタライザー: シェーダー中止命令"です。  
   
 ```  
 void direct3d_abort() restrict(amp);
 ```  
   
 ##  <a name="direct3d_errorf"></a>direct3d_errorf  
- Visual Studio の出力ウィンドウに書式指定文字列を出力します。 これは制限句 `restrict(amp)` を使用して関数から呼び出されます。 発生させますが、AMP のランタイムが呼び出しを検出、 [runtime_exception](runtime-exception-class.md)例外と同じ書式指定文字列。  
+ Visual Studio の出力ウィンドウに書式指定文字列を出力します。 これは制限句 `restrict(amp)` を使用して関数から呼び出されます。 発生させますが、AMP ランタイムが呼び出しを検出、 [runtime_exception](runtime-exception-class.md)同じ書式指定文字列を使用して例外。  
   
 ```  
 void direct3d_errorf(
@@ -585,7 +584,7 @@ inline void global_memory_fence(const tile_barrier& _Barrier) restrict(amp);
  tile_barrier オブジェクト  
   
 ##  <a name="parallel_for_each"></a>parallel_for_each 関数 (C++ AMP)  
- 計算ドメインを越えて関数を実行します。 詳細については、次を参照してください。 [C++ AMP の概要](../../../parallel/amp/cpp-amp-overview.md)します。  
+ 計算ドメインを越えて関数を実行します。 詳細については、次を参照してください。 [C++ AMP の概要](../../../parallel/amp/cpp-amp-overview.md)です。  
   
 ```  
 template <int _Rank, typename _Kernel_type>  
@@ -677,5 +676,4 @@ inline void tile_static_memory_fence(const tile_barrier& _Barrier) restrict(amp)
  tile_barrier オブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
- [同時実行 Namespace (C++ AMP)](concurrency-namespace-cpp-amp.md)
-
+ [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)

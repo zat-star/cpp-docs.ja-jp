@@ -1,43 +1,41 @@
 ---
-title: "コンパイラ エラー C3535 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3535"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3535"
+title: "コンパイラ エラー C3535 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C3535
+dev_langs: C++
+helpviewer_keywords: C3535
 ms.assetid: 24449c98-f681-484d-a00b-32533dca3a88
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3ab054ceefa51ab944e2d048996e25559b0c86ba
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラ エラー C3535
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'type1' の型を 'type2' から推測できません  
+# <a name="compiler-error-c3535"></a>コンパイラ エラー C3535
+'type1' から 'type2' の型を推測できません。  
   
- `auto` キーワードを使用して宣言された変数の型が、初期化子式の型から推測できません。  たとえば、このエラーは初期化子式が型ではない `void` を評価する場合に発生します。  
+ 宣言された変数の型、`auto`キーワードは、初期化式の型から推論できません。 初期化式が評価された場合、たとえば、このエラーが発生`void`、これは、型ではありません。  
   
-### このエラーを解決するには  
+### <a name="to-correct-this-error"></a>このエラーを解決するには  
   
-1.  初期化子式の型が `void` ではないことを確認します。  
+1.  初期化式の型がないことを確認`void`です。  
   
-2.  宣言が基本型に対するポインターでないことを確認します。  詳細については、「[基本型](../../cpp/fundamental-types-cpp.md)」を参照してください。  
+2.  宣言が基本型へのポインターでないことを確認します。 詳細については、次を参照してください。[基本的な型](../../cpp/fundamental-types-cpp.md)です。  
   
-3.  宣言が型に対するポインターの場合、初期化子式がポインター型であることを確認します。  
+3.  宣言が、型へのポインターの場合は、初期化式、ポインター型であることを確認します。  
   
-## 使用例  
- 次の例では、初期化子式が `void` を評価するため、C3535 が発生します。  
+## <a name="example"></a>例  
+ 初期化式が評価されるため、次の例で C3535`void`です。  
   
 ```  
 // C3535a.cpp  
@@ -50,8 +48,8 @@ int main()
 }  
 ```  
   
-## 使用例  
- 次の例では、ステートメントが変数 `x` を推測される型へのポインターとして宣言していますが、初期化子式の型が double のため、C3535 が発生します。  その結果、コンパイラは変数のデータ型を推測できません。  
+## <a name="example"></a>例  
+ ステートメントの変数を宣言するため、次の例で C3535`x`推測される型が初期化子の型へのポインターとして式をダブルクリックします。 その結果、コンパイラは、変数の型を推測できません。  
   
 ```  
 // C3535b.cpp  
@@ -63,8 +61,8 @@ int main()
 }  
 ```  
   
-## 使用例  
- 次の例では、変数 `p` が推測される型へのポインターを宣言していますが、初期化子式がポインター型でないため、C3535 が発生します。  
+## <a name="example"></a>例  
+ 次の例では C3535 のため変数`p`推測される型へのポインターを宣言していますが、初期化式がポインター型ではありません。  
   
 ```  
 // C3535c.cpp  
@@ -74,6 +72,6 @@ A x;
 auto *p = x;  // C3535  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [auto キーワード](../../cpp/auto-keyword.md)   
  [基本型](../../cpp/fundamental-types-cpp.md)

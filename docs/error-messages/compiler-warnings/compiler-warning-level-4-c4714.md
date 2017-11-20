@@ -1,50 +1,48 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4714 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4714"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4714"
+title: "コンパイラの警告 (レベル 4) C4714 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4714
+dev_langs: C++
+helpviewer_keywords: C4714
 ms.assetid: 22c7fd0c-899d-4e9b-95f3-725b2c49fb46
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: c9cf416dd3bff91e8adf8e3f31e9b23b465706c9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4714
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-関数 'function' がインライン関数ではなく、\_\_forceinline として記述されています。  
+# <a name="compiler-warning-level-4-c4714"></a>コンパイラの警告 (レベル 4) C4714
+関数 'function' がマークされています _ _forceinline としてインライン関数  
   
- 指定された関数がインライン展開の対象として選択されましたが、実際にはインライン展開されませんでした。  
+ 指定された関数がインライン展開を選択されましたが、コンパイラが実行されなかった、インライン展開されます。  
   
- `__forceinline` は `__inline` より強力な指示ですが、インライン展開はコンパイラの判断によって行われます。この場合、関数のインライン展開を行うかどうかの判定には、コンパイラ独自の判断基準は使用されません。  
+ `__forceinline`よりコンパイラに示す値がより強力なの`__inline`、インライン展開も、コンパイラの裁量により、実行なしヒューリスティックを使用して判断の利点が、インライン展開この関数。  
   
- 機構上の理由に基づく判断により、特定の関数がインライン展開されないこともあります。  以下の関数はインライン展開されません。  
+ 場合によっては、コンパイラはインライン展開されない特定の関数機械的上の理由からします。 たとえば、コンパイラは、インライン展開されないを行います。  
   
--   インライン展開すると SEH と C\+\+ EH が混在する関数  
+-   SEH と C++ EH の両方の混在が失われる場合の関数。  
   
--   \-GX\/EHs\/EHa がオンのとき、コピー構築されたオブジェクトが値で渡される関数  
+-   コピーの一部の関数は、-GX/がの場合、値によって渡されるオブジェクトを構築します。  
   
--   \-GX\/EHs\/EHa がオンのとき、アンワインド可能オブジェクトを値で返す関数  
+-   -GX/がの場合、値によって、アンワインド可能オブジェクトを返す関数。  
   
--   \-Og\/Ox\/O1\/O2 を指定せずにコンパイルした場合、インライン アセンブリを使用する関数  
+-   インライン アセンブリ Og Ox/O1//o2 なしでコンパイルするときに機能します。  
   
--   可変の数のリストを取る関数  
+-   可変個引数リストは機能します。  
   
--   **try** \(C\+\+ 例外処理\) ステートメントを持つ関数  
+-   持つ関数、**再試行**(C++ 例外処理) のステートメント。  
   
- 次の例では警告 C4714 が生成されます。  
+ 次の例では、C4714 が生成されます。  
   
 ```  
 // C4714.cpp  

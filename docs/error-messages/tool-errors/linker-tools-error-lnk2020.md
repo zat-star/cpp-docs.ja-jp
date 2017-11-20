@@ -1,41 +1,39 @@
 ---
-title: "リンカ ツール エラー LNK2020 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK2020"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK2020"
+title: "リンカ ツール エラー LNK2020 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK2020
+dev_langs: C++
+helpviewer_keywords: LNK2020
 ms.assetid: 4dd017d0-5e83-471b-ac8a-538ac1ed6870
-caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d9a4bedb06ccad45a105c0e47fbc1f839891bea7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リンカ ツール エラー LNK2020
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="linker-tools-error-lnk2020"></a>リンカ ツール エラー LNK2020
 未解決のトークン 'token'  
   
- 未定義の外部エラーと同様ですが、参照はメタデータを経由しています。  メタデータには、すべての関数とデータが定義されている必要があります。  
+ 未定義の外部エラーに似ていますが、参照がメタデータからです。 メタデータですべての関数とデータを定義する必要があります。  
   
- このエラーを解決するには、次のどちらかの操作を実行します。  
+ 解決するのには  
   
--   欠けている関数またはデータを定義します。  
+-   不足している関数またはデータ定義または  
   
--   欠けている関数またはデータが既に定義されているオブジェクト ファイルあるいはライブラリを取り込みます。  
+-   オブジェクト ファイルまたは不足している関数またはデータが既に定義されているライブラリが含まれます。  
   
-## 使用例  
- 次の例では LNK2020 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、LNK2020 が生成されます。  
   
 ```  
 // LNK2020.cpp  
@@ -52,10 +50,10 @@ ref struct B {
 };  
 ```  
   
-## 使用例  
- LNK2020 は、マネージ テンプレート型の変数を作成し、その型をインスタンス化しない場合にも発生します。  
+## <a name="example"></a>例  
+ LNK2020 は、管理されているテンプレートの種類の変数を作成することが、型をインスタンス化しない場合にも発生します。  
   
- 次の例では LNK2020 エラーが生成されます。  
+ 次の例では、LNK2020 が生成されます。  
   
 ```  
 // LNK2020_b.cpp  

@@ -1,62 +1,61 @@
 ---
-title: "CDataSource::OpenFromInitializationString | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDataSource.OpenFromInitializationString"
-  - "OpenFromInitializationString"
-  - "CDataSource::OpenFromInitializationString"
-  - "ATL::CDataSource::OpenFromInitializationString"
-  - "ATL.CDataSource.OpenFromInitializationString"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OpenFromInitializationString メソッド"
+title: "Cdatasource::openfrominitializationstring |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDataSource.OpenFromInitializationString
+- OpenFromInitializationString
+- CDataSource::OpenFromInitializationString
+- ATL::CDataSource::OpenFromInitializationString
+- ATL.CDataSource.OpenFromInitializationString
+dev_langs: C++
+helpviewer_keywords: OpenFromInitializationString method
 ms.assetid: 5ef1f1fd-92a9-4e1c-ad80-d3601b094b8c
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: aa25389a5924dc235791d11ee7d37eb1febe4259
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDataSource::OpenFromInitializationString
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ユーザーが入力した初期化文字列で指定されるデータ ソースを開きます。  
+# <a name="cdatasourceopenfrominitializationstring"></a>CDataSource::OpenFromInitializationString
+ユーザーが指定した初期化文字列で指定されたデータ ソースを開きます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT OpenFromInitializationString(   
-   LPCOLESTR szInitializationString,   
-   bool fPromptForInfo = false    
+      HRESULT OpenFromInitializationString(   
+   LPCOLESTR szInitializationString,   
+   bool fPromptForInfo = false    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *szInitializationString*  
- \[入力\] 初期化文字列。  
+ [in]初期化文字列。  
   
  *fPromptForInfo*  
- \[入力\] この引数に **true** を指定すると、`OpenFromInitializationString` は **DBPROP\_INIT\_PROMPT** プロパティを **DBPROMPT\_COMPLETEREQUIRED** に設定します。この結果、必要な情報がある場合にだけ、ユーザーに入力を要求するようになります。  これは、初期化文字列がパスワードを必要とするデータベースを指定しているのに、初期化文字列内にパスワードが入っていない場合に便利です。  ユーザーは、データベースに接続しようとしたときにパスワード \(または、その他の見つからない情報\) の入力を求められます。  
+ [in]この引数に設定されている場合**true**、し`OpenFromInitializationString`設定は、 **DBPROP_INIT_PROMPT**プロパティを**DBPROMPT_COMPLETEREQUIRED**ユーザーがあることを指定します。詳細については、必要な場合にのみを要求します。 これは、初期化文字列が、パスワードが必要なデータベースを指定する場合に便利ですが、文字列にパスワードが含まれていません。 ユーザーはパスワード (またはその他の不足している情報) を要求する、データベースに接続しようとしています。  
   
- 既定値は **false** です。この場合、ユーザー入力が要求されることはありません。**DBPROP\_INIT\_PROMPT** が **DBPROMPT\_NOPROMPT** に設定されます。  
+ 既定値は**false**を指定することが求められます (設定**DBPROP_INIT_PROMPT**に**DBPROMPT_NOPROMPT**)。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- このメソッドは、oledb32.dll 内のサービス コンポーネントを使ってデータ ソース オブジェクトを開きます。この DLL には、リソース プーリング、自動トランザクション参加などのサービス コンポーネント機能の実装が含まれています。  
+## <a name="remarks"></a>コメント  
+ このメソッドは、oledb32.dll 内のサービス コンポーネントを使ってデータ ソース オブジェクトを開きます。この DLL には、リソース共有や自動トランザクション登録などのサービス コンポーネント機能の実装が含まれています。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CDataSource クラス](../Topic/CDataSource%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CDataSource クラス](../../data/oledb/cdatasource-class.md)

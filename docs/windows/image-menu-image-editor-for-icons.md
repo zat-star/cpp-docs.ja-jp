@@ -1,85 +1,84 @@
 ---
-title: "[イメージ] メニュー (アイコン用イメージ エディター) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.bitmap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "[イメージ] メニュー"
+title: "画像のメニュー (アイコン用イメージ エディター) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.editors.bitmap
+dev_langs: C++
+helpviewer_keywords: Image menu
 ms.assetid: ac2b4d53-1919-4fd1-a0af-d3c085c45af2
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 32b10c79d5ec2a8d25c0a942dd96a22b8e6a71e9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# [イメージ] メニュー (アイコン用イメージ エディター)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\[イメージ\] メニューが表示されるのは、イメージ エディターがアクティブな場合だけです。このメニューのコマンドを使用すると、イメージの編集、カラー パレットの管理、およびイメージ エディター ウィンドウのオプション設定ができます。  また、アイコンとカーソルの操作中は、デバイス イメージを使用するためのコマンドも利用できます。  
+# <a name="image-menu-image-editor-for-icons"></a>[イメージ] メニュー (アイコン用イメージ エディター)
+イメージ エディターがアクティブな場合にのみが表示されたら、[イメージ] メニューには、イメージを編集、カラー パレットを管理およびイメージ エディター ウィンドウのオプションを設定するコマンドがあります。 さらに、アイコンとカーソルを使用する場合は、デバイスのイメージを使用するためのコマンドを使用。  
   
- **\[色の反転\]**  
- 色を反転させます。  詳細については、「[選択領域の色の反転](../windows/inverting-the-colors-in-a-selection-image-editor-for-icons.md)」を参照してください。  
+ **色を反転します。**  
+ 色を反転させます。 詳細については、次を参照してください。[選択範囲の色の反転](../windows/inverting-the-colors-in-a-selection-image-editor-for-icons.md)です。  
   
- **\[左右反転\]**  
- イメージまたは選択領域の上下を反転させます。  詳細については、「[イメージの回転](../mfc/flipping-an-image-image-editor-for-icons.md)」を参照してください。  
+ **[左右反転]**  
+ イメージまたは選択領域の上下を反転させます。 詳細については、次を参照してください。[イメージの回転](../windows/flipping-an-image-image-editor-for-icons.md)です。  
   
- **\[上下反転\]**  
- イメージまたは選択領域の左右を反転させます。  詳細については、「[イメージの回転](../mfc/flipping-an-image-image-editor-for-icons.md)」を参照してください。  
+ **[上下反転]**  
+ イメージまたは選択領域の左右を反転させます。 詳細については、次を参照してください。[イメージの回転](../windows/flipping-an-image-image-editor-for-icons.md)です。  
   
- **\[90 度回転\]**  
- イメージまたは選択領域を 90 度回転させます。  詳細については、「[イメージの回転](../mfc/flipping-an-image-image-editor-for-icons.md)」を参照してください。  
+ **90 度回転します。**  
+ イメージまたは選択領域を 90 度回転させます。 詳細については、次を参照してください。[イメージの回転](../windows/flipping-an-image-image-editor-for-icons.md)です。  
   
- **\[\[色の設定\] ウィンドウの表示\]**  
- [&#91;色&#93; ウィンドウ](../Topic/Colors%20Window%20\(Image%20Editor%20for%20Icons\).md)が開き、イメージに使用する色を選択できます。  詳細については、「[色の調整](../mfc/working-with-color-image-editor-for-icons.md)」を参照してください。  
+ **[色] ウィンドウを表示します。**  
+ 開く、 [[色] ウィンドウ](../windows/colors-window-image-editor-for-icons.md)で、イメージに使用する色を選択できます。 詳細については、次を参照してください。[色の](../windows/working-with-color-image-editor-for-icons.md)します。  
   
- **\[選択したものをブラシとして使用する\]**  
- イメージの一部からカスタム ブラシを作成できます。  選択領域がカスタム ブラシになり、イメージにまたがって選択領域内の色を使用できます。  選択領域のコピーは、ドラッグするパスに残ります。  ゆっくりドラッグするほど、多数のコピーが作成されます。  詳細については、「[カスタム ブラシの作成](../Topic/Creating%20a%20Custom%20Brush%20\(Image%20Editor%20for%20Icons\).md)」を参照してください。  
+ **選択内容ブラシとして使用します。**  
+ イメージの部分からカスタム ブラシを作成できます。 選択内容では、画像内で選択されている色を分散するカスタム ブラシになります。 選択範囲のコピーは、ドラッグするパスに沿った残されます。 ドラッグするより緩やかに変化は、複数のコピーが行われます。 詳細については、次を参照してください。[カスタム ブラシの作成](../windows/creating-a-custom-brush-image-editor-for-icons.md)です。  
   
- **\[コピーして選択範囲をアウトライン\]**  
- 現在の選択領域のコピーを作成し、その外枠を描画します。  現在の選択領域に背景色が含まれる場合に[透明](../windows/choosing-a-transparent-or-opaque-background-image-editor-for-icons.md)を選択していると、背景色は解除されます。  
+ **コピーし、選択範囲をアウトライン**  
+ 現在の選択領域のコピーを作成し、その外枠を描画します。 背景色が現在の選択範囲に含まれている場合、除外する必要がある場合[透過的](../windows/choosing-a-transparent-or-opaque-background-image-editor-for-icons.md)選択します。  
   
- **\[色の設定\]**  
- [&#91;色の調整&#93; ダイアログ ボックス](../windows/custom-color-selector-dialog-box-image-editor-for-icons.md)が開き、イメージに使用する色をカスタマイズできます。  詳細については、「[色のカスタマイズまたは変更](../windows/customizing-or-changing-colors-image-editor-for-icons.md)」を参照してください。  
+ **色を調整します。**  
+ 開く、[カスタム カラー セレクター](../windows/custom-color-selector-dialog-box-image-editor-for-icons.md)イメージを使用する色をカスタマイズすることができます。 詳細については、次を参照してください。[のカスタマイズまたは変更する色](../windows/customizing-or-changing-colors-image-editor-for-icons.md)です。  
   
- **\[パレットの読み込み\]**  
- [&#91;パレットの読み込み&#93; ダイアログ ボックス](../windows/load-palette-colors-dialog-box-image-editor-for-icons.md)が開き、以前に .pal ファイルに保存したパレット カラーを読み込むことができます。  
+ **パレットの読み込み**  
+ 開く、[カラー パレットの読み込み ダイアログ ボックス](../windows/load-palette-colors-dialog-box-image-editor-for-icons.md)、.pal を付けてファイルに保存されているパレットの読み込みできます。  
   
- **\[パレットの保存\]**  
- パレット カラーを .pal ファイルに保存します。  
+ **パレットを保存します。**  
+ パレットの色を .pal を付けてファイルに保存します。  
   
- **\[背景色を不透明にする\]**  
- このオプションをオンにすると、現在の選択領域が不透明になります。  オフにすると、現在の選択領域が透明になります。  詳細については、「[透明または不透明な背景の選択](../windows/choosing-a-transparent-or-opaque-background-image-editor-for-icons.md)」を参照してください。  
+ **非透過を描画します。**  
+ 選択すると、現在の選択範囲を不透明です。 オフの場合、現在の選択は、透過的実行します。 詳細については、次を参照してください。[不透明または透明な背景を選択する](../windows/choosing-a-transparent-or-opaque-background-image-editor-for-icons.md)です。  
   
- **\[ツール バー エディター\]**  
- [&#91;新規ツール バー リソース&#93; ダイアログ ボックス](../mfc/new-toolbar-resource-dialog-box.md)を開きます。  
+ **ツール バー エディター**  
+ 開く、[新規ツールバー ダイアログ ボックス](../windows/new-toolbar-resource-dialog-box.md)です。  
   
- **\[グリッドの設定\]**  
- [&#91;グリッドの設定&#93; ダイアログ ボックス](../mfc/grid-settings-dialog-box-image-editor-for-icons.md)が開き、イメージに使用するグリッドを指定できます。  
+ **グリッドの設定**  
+ 開く、[グリッドの設定 ダイアログ ボックス](../windows/grid-settings-dialog-box-image-editor-for-icons.md)グリッドをイメージを指定できます。  
   
- **\[新しいイメージの種類\]**  
- [&#91;\<Device\> イメージ タイプの新規作成&#93; ダイアログ ボックス](../mfc/new-device-image-type-dialog-box-image-editor-for-icons.md)を開きます。  単一のアイコン リソースに、サイズの異なる複数のイメージを含めることができます。ウィンドウでは、表示方法に応じて適切なアイコン サイズを指定できます。  新しいデバイスの種類を指定してもアイコンのサイズは変更されず、アイコンの内側に新しいイメージが作成されます。  このオプションを使用できるのは、アイコンとカーソルだけです。  
+ **新しいイメージの種類**  
+ 開く、[新規\<デバイス > イメージの種類 ダイアログ ボックス](../windows/new-device-image-type-dialog-box-image-editor-for-icons.md)です。 1 つのアイコン リソースがサイズの異なるいくつかのイメージを含めることができます。windows では、表示する方法に応じて適切なアイコン サイズを使用できます。 新しいデバイスの種類は、アイコンのサイズを変更しませんではなくアイコンに新しいイメージを作成します。 アイコンとカーソルにのみ適用されます。  
   
- **\[現在のアイコン\/カーソルイメージの種類\]**  
- サブメニューを開きます。このサブメニューには、使用可能なカーソルまたはアイコンのイメージが先頭から 9 個表示されます。  このサブメニューの最後のコマンドは \[詳細\] であり、このコマンドをクリックすると [&#91;\<Device\> イメージを開く&#93; ダイアログ ボックス](../Topic/Open%20%3CDevice%3E%20Image%20Dialog%20Box%20\(Image%20Editor%20for%20Icons\).md)が開きます。  
+ **現在のアイコンとカーソル イメージ タイプ**  
+ サブメニューのイメージが一覧表示最初使用可能なカーソルまたはアイコン (最初の 9) を開きます。 サブメニューの場合の最後のコマンド**よりしています.**、開く、[開く\<デバイス > イメージ ダイアログ ボックス](../windows/open-device-image-dialog-box-image-editor-for-icons.md)です。  
   
- **\[イメージの種類の削除\]**  
- 選択したデバイス イメージを削除します。  
+ **イメージの種類を削除します。**  
+ 選択したデバイスのイメージを削除します。  
   
  **ツール**  
- [&#91;イメージ エディター&#93; ツール バー](../mfc/toolbar-image-editor-for-icons.md)から利用できるすべてのツールを含むサブメニューを表示します。  
+ 使用できるすべてのツールを含むサブメニューを起動、[イメージ エディター ツールバー](../windows/toolbar-image-editor-for-icons.md)です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
  なし  
   
-## 参照  
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>関連項目  
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

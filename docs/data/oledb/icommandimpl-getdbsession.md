@@ -1,34 +1,33 @@
 ---
-title: "ICommandImpl::GetDBSession | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ICommandImpl::GetDBSession"
-  - "GetDBSession"
-  - "ICommandImpl.GetDBSession"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetDBSession メソッド"
+title: "Icommandimpl::getdbsession |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ICommandImpl::GetDBSession
+- GetDBSession
+- ICommandImpl.GetDBSession
+dev_langs: C++
+helpviewer_keywords: GetDBSession method
 ms.assetid: e5b1cb13-453f-4698-90bf-f6bfe6814a54
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bb4a4f378d1446e722404a76a19d592a9eed0e20
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ICommandImpl::GetDBSession
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンドを作成するセッションへのインターフェイス ポインターを返します。  
+# <a name="icommandimplgetdbsession"></a>ICommandImpl::GetDBSession
+コマンドを作成したセッションにインターフェイス ポインターを返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,14 +37,14 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [ICommand::GetDBSession](https://msdn.microsoft.com/en-us/library/ms719622.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[ICommand::GetDBSession](https://msdn.microsoft.com/en-us/library/ms719622.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 解説  
- セッションからプロパティを取得する場合に有効です。  
+## <a name="remarks"></a>コメント  
+ セッションからのプロパティを取得するために便利です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
- [ICommandImpl クラス](../Topic/ICommandImpl%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [ICommandImpl クラス](../../data/oledb/icommandimpl-class.md)

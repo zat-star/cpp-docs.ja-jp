@@ -1,33 +1,32 @@
 ---
-title: "CRowsetImpl::SetCommandText | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CRowsetImpl.SetCommandText"
-  - "CRowsetImpl::SetCommandText"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetCommandText メソッド"
+title: "Crowsetimpl::setcommandtext |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CRowsetImpl.SetCommandText
+- CRowsetImpl::SetCommandText
+dev_langs: C++
+helpviewer_keywords: SetCommandText method
 ms.assetid: e016d7df-c1a0-4dee-b19b-c876680221fd
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a33af61311b9c202e5e0c68579ac4f21afd98f94
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CRowsetImpl::SetCommandText
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-2 桁の文字列に **DBID**s を検証し、保存します。[m\_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md) と [m\_strIndexText](../../data/oledb/crowsetimpl-m-strindextext.md)\)。  
+# <a name="crowsetimplsetcommandtext"></a>CRowsetImpl::SetCommandText
+検証し、格納、 **DBID**2 つの文字列で $s ([m_strCommandText](../../data/oledb/crowsetimpl-m-strcommandtext.md)と[その](../../data/oledb/crowsetimpl-m-strindextext.md))。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,23 +36,23 @@ caps.handback.revision: 9
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pTableID`  
- \[\]テーブルを表す **DBID** ID へのポインター。  
+ [in]ポインター、 **DBID**テーブル ID を表す  
   
  `pIndexID`  
- \[\]インデックスを表す **DBID** ID へのポインター。  
+ [in]ポインター、 **DBID**インデックス ID を表す  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- **SetCommentText** のメソッドは `CreateRowset`のテンプレート化されます `IOpenRowsetImpl`の静的メソッドによって呼び出されます。  
+## <a name="remarks"></a>コメント  
+ **SetCommentText**メソッドによって呼び出されます`CreateRowset`、テンプレート化のメソッドを静的な`IOpenRowsetImpl`します。  
   
- このメソッドは upcasted ポインターを通じて [ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md) と [GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md) を呼び出して、タスクに委任します。  
+ このメソッドは、呼び出すことによって作業を委任[ValidateCommandID](../../data/oledb/crowsetimpl-validatecommandid.md)と[GetCommandFromID](../../data/oledb/crowsetimpl-getcommandfromid.md) upcasted ポインターを使用します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CRowsetImpl クラス](../../data/oledb/crowsetimpl-class.md)

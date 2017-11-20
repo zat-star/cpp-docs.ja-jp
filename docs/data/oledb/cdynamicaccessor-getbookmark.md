@@ -1,56 +1,55 @@
 ---
-title: "CDynamicAccessor::GetBookmark | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicAccessor.GetBookmark"
-  - "GetBookmark"
-  - "CDynamicAccessor::GetBookmark"
-  - "ATL.CDynamicAccessor.GetBookmark"
-  - "ATL::CDynamicAccessor::GetBookmark"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetBookmark メソッド"
+title: "Cdynamicaccessor::getbookmark |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDynamicAccessor.GetBookmark
+- GetBookmark
+- CDynamicAccessor::GetBookmark
+- ATL.CDynamicAccessor.GetBookmark
+- ATL::CDynamicAccessor::GetBookmark
+dev_langs: C++
+helpviewer_keywords: GetBookmark method
 ms.assetid: 6d0a2970-0c62-4a34-bac7-149d8e990f81
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d9c8f6a2567684ffb7c7faee62cdca501c53ba0c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDynamicAccessor::GetBookmark
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="cdynamicaccessorgetbookmark"></a>CDynamicAccessor::GetBookmark
 現在の行のブックマークを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT GetBookmark(   
-   CBookmark< >* pBookmark    
+      HRESULT GetBookmark(   
+   CBookmark< >* pBookmark    
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `pBookmark`  
- \[\] [CBookmark クラス](../../data/oledb/cbookmark-class.md) オブジェクトへのポインター。  
+ [out]ポインター、 [CBookmark](../../data/oledb/cbookmark-class.md)オブジェクト。  
   
-## 戻り値  
- `HRESULT` 標準値のいずれか 1 つが。  
+## <a name="return-value"></a>戻り値  
+ 標準の`HRESULT`値。  
   
-## 解説  
- ブックマークを取得するために `VARIANT_TRUE` に **DBPROP\_IRowsetLocate** を設定する必要があります。  
+## <a name="remarks"></a>コメント  
+ 設定する必要があります**DBPROP_IRowsetLocate**に`VARIANT_TRUE`ブックマークを取得します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

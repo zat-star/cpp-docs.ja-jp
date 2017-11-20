@@ -4,45 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - unorm
 - AMP_SHORT_VECTORS/unorm
 - AMP_SHORT_VECTORS/Concurrency::graphics::unorm Constructor
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: bc30bd20-6452-4d5f-9158-3b11c4c16ed2
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 6817568b7dc111776033e935fd2ba3ad5dc4a69a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 5aa633b67bcd5b313faa475d911300635d727f5b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="unorm-class"></a>unorm クラス
-Unorm 数を表します。 各要素は、浮動小数点数を [0.0 f, 1.0 f] の範囲内です。  
+Unorm 数を表します。 各要素は、浮動小数点 [0.0 f, 1.0f] の範囲の数。  
   
 ## <a name="syntax"></a>構文  
   
@@ -56,18 +38,18 @@ class unorm;
   
 |名前|説明|  
 |----------|-----------------|  
-|[unorm コンス トラクター](#ctor)|オーバーロードされます。 既定のコンストラクター 0.0 f を初期化します。|  
+|[unorm コンス トラクター](#ctor)|オーバーロードされます。 既定のコンストラクター 0.0f を初期化します。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
 |----------|-----------------|  
 |unorm::operator--||  
-|unorm::operator float|変換演算子。 Unorm 数に変換、浮動小数点値。|  
+|unorm::operator float|変換演算子です。 Unorm 数、浮動小数点に変換する値をポイントします。|  
 |unorm::operator * =||  
 |unorm::operator/=||  
-|unorm::operator + +||  
-|unorm::operator + = 演算子||  
+|+ + unorm::operator||  
+|unorm::operator + =||  
 |unorm::operator =||  
 |unorm::operator =||  
   
@@ -81,7 +63,7 @@ class unorm;
   
 ##  <a name="ctor"></a>unorm 
 
- 既定のコンストラクター 0.0 f を初期化します。  
+ 既定のコンストラクター 0.0f を初期化します。  
   
 ```  
 unorm(
@@ -124,8 +106,7 @@ inline explicit unorm(
  初期化するために使用する値。  
   
  `_Other`  
- 初期化に使用される標準オブジェクト。  
+ 初期化するために使用される norm オブジェクト。  
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

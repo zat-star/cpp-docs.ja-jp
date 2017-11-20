@@ -1,49 +1,50 @@
 ---
-title: "Resizing an Entire Image (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Image editor [C++], resizing images"
-  - "size [C++], images"
-  - "images [C++], resizing"
-  - "resizing images"
+title: "イメージ全体 (アイコン用イメージ エディター) をサイズ変更 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Image editor [C++], resizing images
+- size [C++], images
+- images [C++], resizing
+- resizing images
 ms.assetid: 10782937-7eb4-4340-bdec-618ee7d7904b
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3c0b30af54c8bdf7fbe06d10d93801e24c64b9b3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Resizing an Entire Image (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-### \[プロパティ\] ウィンドウを使用してイメージ全体のサイズを変更するには  
+# <a name="resizing-an-entire-image-image-editor-for-icons"></a>イメージ全体のサイズ変更 (アイコン用イメージ エディター)
+### <a name="to-resize-an-entire-image-using-the-properties-window"></a>[プロパティ] ウィンドウを使用してイメージ全体のサイズを変更するには  
   
-1.  プロパティを変更するイメージを開きます。  
+1.  イメージを変更するプロパティを開きます。  
   
-2.  [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)の \[Width\] ボックスと \[Height\] ボックスに、必要な大きさを入力します。  
+2.  **幅**と**高さ**ボックス、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)、するサイズを入力します。  
   
-     イメージのサイズを大きくすると、右方向、下方向、またはその両方向に拡張され、新しい領域が現在の背景色で塗りつぶされます。  イメージが拡大されることはありません。  
+     イメージのサイズを増やすと、イメージ エディターは、右側にイメージまたはその両方を拡張し、新しい領域を現在の背景色で塗りつぶします。 イメージは拡張されていません。  
   
-     イメージのサイズを小さくすると、右端、下端、またはその両方がトリミングされます。  
+     イメージのサイズを小さくと、イメージ エディターは、右または下の辺に、あるいはその両方のイメージをトリミングします。  
   
     > [!NOTE]
-    >  \[Width\] プロパティと \[Height\] プロパティではイメージ全体のサイズを変更できますが、一部を選択したイメージのサイズ変更はできません。  
+    >  幅と高さのプロパティを使用すると、イメージのサイズのみ全体部分選択範囲のサイズを変更しないようにします。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
  要件  
   
  なし  
   
-## 参照  
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Resizing an Image](../Topic/Resizing%20an%20Image%20\(Image%20Editor%20for%20Icons\).md)
+## <a name="see-also"></a>関連項目  
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [イメージのサイズ変更](../windows/resizing-an-image-image-editor-for-icons.md)
+

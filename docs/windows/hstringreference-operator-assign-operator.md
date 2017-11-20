@@ -1,47 +1,45 @@
 ---
-title: "HStringReference::Operator= 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::HStringReference::operator="
-dev_langs: 
-  - "C++"
+title: "Hstringreference::operator = 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HStringReference::operator=
+dev_langs: C++
 ms.assetid: ea100ed3-e566-4c9e-b6a8-f296088dea9c
-caps.latest.revision: 2
-caps.handback.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "2"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2b6a9938308f0cbd8339c24d1876c09ae49df349
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# HStringReference::Operator= 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hstringreferenceoperator-operator"></a>HStringReference::Operator= 演算子
 別の HStringReference オブジェクトの値を現在の HStringReference オブジェクトに移動します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 HStringReference& operator=(HStringReference&& other) throw()  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `other`  
- HStringReference の既存のオブジェクト。  
+ 既存の HStringReference オブジェクト。  
   
-## 解説  
- `other` で既存のオブジェクトの値は HStringReference の現在のオブジェクトにコピーされ、`other` オブジェクトは破棄されます。  
+## <a name="remarks"></a>コメント  
+ 既存の値`other`オブジェクトが現在の HStringReference オブジェクトにコピーし、`other`オブジェクトは破棄されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [HStringReference クラス](../windows/hstringreference-class.md)

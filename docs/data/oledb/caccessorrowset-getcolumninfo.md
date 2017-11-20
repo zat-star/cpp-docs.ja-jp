@@ -1,34 +1,33 @@
 ---
-title: "CAccessorRowset::GetColumnInfo | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetColumnInfo"
-  - "CAccessorRowset.GetColumnInfo"
-  - "CAccessorRowset::GetColumnInfo"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetColumnInfo メソッド"
+title: "Caccessorrowset::getcolumninfo |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetColumnInfo
+- CAccessorRowset.GetColumnInfo
+- CAccessorRowset::GetColumnInfo
+dev_langs: C++
+helpviewer_keywords: GetColumnInfo method
 ms.assetid: 8ade2388-3c58-43cd-8ed6-499ee0531291
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3f982c516ef6c85ae2650bb26e2a7e1cdf28b7be
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CAccessorRowset::GetColumnInfo
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-開かれている行セットの列情報を取得します。  
+# <a name="caccessorrowsetgetcolumninfo"></a>CAccessorRowset::GetColumnInfo
+開かれた行セットから列情報を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -43,19 +42,19 @@ HRESULT GetColumnInfo(
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [IColumnsInfo::GetColumnInfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[icolumnsinfo::getcolumninfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- ユーザーは、返された列情報と文字列バッファーを解放する必要があります。  [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) を使用し、バインディングをオーバーライドする必要がある場合は、このメソッドの 2 番目の形式を使用します。  
+## <a name="remarks"></a>コメント  
+ ユーザーには、返される列情報と文字列バッファーを解放する必要があります。 使用する場合は、このメソッドの 2 番目のバージョンを使用して[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)バインディングをオーバーライドする必要があります。  
   
- 詳細については、*OLE DB Programmer's Reference*の [IColumnsInfo::GetColumnInfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx) を参照します。  
+ 詳細については、次を参照してください。 [icolumnsinfo::getcolumninfo](https://msdn.microsoft.com/en-us/library/ms722704.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CAccessorRowset クラス](../Topic/CAccessorRowset%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CAccessorRowset クラス](../../data/oledb/caccessorrowset-class.md)

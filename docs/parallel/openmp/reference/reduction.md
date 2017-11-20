@@ -1,58 +1,56 @@
 ---
-title: "reduction | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "reduction"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reduction OpenMP clause"
+title: "reduction |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: reduction
+dev_langs: C++
+helpviewer_keywords: reduction OpenMP clause
 ms.assetid: a2b051af-5a1b-4c00-9cc7-692bb43653fb
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 33c629253db2d891f5e52347db291a3eec00bd03
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# reduction
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-各スレッドに対してプライベートである一つ以上の変数が並列領域の最後にあるリダクション演算の項目であることを指定します。  
+# <a name="reduction"></a>reduction
+各スレッドに対してプライベートである 1 つまたは複数の変数、並列領域の末尾にあるリダクション演算の対象となることを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reduction(operation:var)  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `operation`  
- 並列領域のエッジにおける変数 \(\)`var` に対して実行する操作の演算子。  
+ 変数でを実行する操作の演算子 (`var`)、並列領域の最後。  
   
  `var`  
- 1 つスカラー縮小を実行する別の変数。  複数の変数を指定する場合はコンマで区切ります。変数名。  
+ スカラー リダクションを実行する 1 つ以上の変数です。 複数の変数が指定されている場合は、変数名をコンマで区切ります。  
   
-## 解説  
- `reduction` は次のディレクティブに対象 :  
+## <a name="remarks"></a>コメント  
+ `reduction`次のディレクティブに適用されます。  
   
--   [for](../Topic/for%20\(OpenMP\).md)  
+-   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
 -   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
--   [sections](../../../parallel/openmp/reference/sections-openmp.md)  
+-   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
   
- 詳細については、「[2.7.2.6 reduction](../../../parallel/openmp/2-7-2-6-reduction.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.7.2.6 削減](../../../parallel/openmp/2-7-2-6-reduction.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_reduction.cpp  
@@ -159,7 +157,11 @@ int main( )
 }  
 ```  
   
-  **並列セクションが 4 回並列実行されました。  1 から 10 まで連続した数字の合計は 55 です。**  
-**関数はすべてfunc1 して func5 成功しました。**    
-## 参照  
- [Clauses](../../../parallel/openmp/reference/openmp-clauses.md)
+```Output  
+The parallel section was executed 4 times in parallel.  
+The sum of the consecutive integers from 1 to 10, is 55  
+All of the the functions, func1 through func5 succeeded!  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [句](../../../parallel/openmp/reference/openmp-clauses.md)

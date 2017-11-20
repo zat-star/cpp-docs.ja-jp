@@ -1,32 +1,30 @@
 ---
-title: "push_heap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::push_heap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "push_heap 関数 [STL/CLR]"
+title: "push_heap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::push_heap
+dev_langs: C++
+helpviewer_keywords: push_heap function [STL/CLR]
 ms.assetid: 184fe1d9-5f75-4c11-adbb-84b6b5c8ecd3
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b04e0a52efd6f2a9923f9294efb3f4d48b29567a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# push_heap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-範囲の要素から構成される既存のヒープに範囲の末尾にある要素を追加します。  
+# <a name="pushheap-stlclr"></a>push_heap (STL/CLR)
+範囲の末尾にある要素を、範囲内の以前の要素で構成される既存のヒープに追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -35,13 +33,13 @@ template<class _RanIt, class _Pr> inline
     void push_heap(_RanIt _First, _RanIt _Last, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `push_heap`も同じように動作します。  詳細については、「[push\_heap](../Topic/push_heap.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`push_heap`です。 詳細については、次を参照してください。 [push_heap](../standard-library/algorithm-functions.md#push_heap)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

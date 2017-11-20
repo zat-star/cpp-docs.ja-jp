@@ -1,32 +1,30 @@
 ---
-title: "logical_not (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::logical_not"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "logical_not 関数 [STL/CLR]"
+title: "logical_not (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::logical_not
+dev_langs: C++
+helpviewer_keywords: logical_not function [STL/CLR]
 ms.assetid: 32a2c6e2-1c58-41ac-8827-f3ee5adfe81d
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 013f559376739584e393f79516b1626cc1fc99f3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# logical_not (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、いずれかの引数を false としてテストする場合のみ、呼び出されたときに true を返すファンクタを表します。  引数の型を使用して、指定する関数オブジェクトを使用します。  
+# <a name="logicalnot-stlclr"></a>logical_not (STL/CLR)
+このテンプレート クラスは、ファンクタを記述、呼び出されると、true を返す場合にのみ引数が false としてテストします。 使用する、引数の型の観点から、関数オブジェクトを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Arg>  
@@ -47,33 +45,33 @@ public:
     };  
 ```  
   
-#### パラメーター  
- 引数  
+#### <a name="parameters"></a>パラメーター  
+ arg  
  引数の型。  
   
-## メンバー関数  
+## <a name="member-functions"></a>メンバー関数  
   
 |型定義|説明|  
-|---------|--------|  
-|argument\_type|ファンクタの引数の型です。|  
-|delegate\_type|汎用デリゲートの型。|  
-|result\_type|ファンクタの結果の型です。|  
+|---------------------|-----------------|  
+|argument_type|ファンクタ引数の型。|  
+|delegate_type|汎用デリゲートの型。|  
+|result_type|ファンクタ結果の型。|  
   
 |メンバー|説明|  
-|----------|--------|  
-|logical\_not|ファンクタを構築します。|  
+|------------|-----------------|  
+|logical_not|ファンクタを構築します。|  
   
 |演算子|説明|  
-|---------|--------|  
-|operator\(\)|必要な関数を計算します。|  
-|演算子の delegate\_type^|デリゲートにファンクタをキャストします。|  
+|--------------|-----------------|  
+|演算子 ()|必要な関数を計算します。|  
+|演算子 delegate_type ^|デリゲートにファンクタをキャストします。|  
   
-## 解説  
- このテンプレート クラスは、1 引数のファンクタを表します。  これは、引数が false としてテストする場合のみオブジェクトが関数として呼び出されると、true を返すように `operator()` メンバー演算子を定義します。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスは、引数が 1 つファンクタをについて説明します。 このメンバー演算子を定義する`operator()`これにより、オブジェクトが関数として呼び出される場合、true を返しますのみかどうか、引数が false としてテストします。  
   
- 型が `delegate_type^` である適切に変換する関数の引数が、またはオブジェクトを渡すことができます。  
+ 型が関数の引数として、オブジェクトを渡すことができますも`delegate_type^`適切に変換されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_logical_not.cpp   
@@ -106,12 +104,15 @@ int main()
   
 ```  
   
-  **4 0**  
- **0 1**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 0  
+0 1  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [negate](../Topic/negate%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [negate (STL/CLR)](../dotnet/negate-stl-clr.md)

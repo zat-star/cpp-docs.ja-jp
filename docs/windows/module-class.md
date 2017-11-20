@@ -1,32 +1,30 @@
 ---
-title: "Module クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::Module"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Module クラス"
+title: "モジュール クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::Module
+dev_langs: C++
+helpviewer_keywords: Module class
 ms.assetid: dd67e3b8-c2e1-4f53-8c0f-565a140ba649
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b2536d406293d84db2ce5d5bd3e0292e0e57920e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Module クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-関連オブジェクトのコレクションを表します。  
+# <a name="module-class"></a>Module クラス
+関連するオブジェクトから成るコレクションを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -42,83 +40,83 @@ template<>
 class Module<OutOfProc> : public Module<InProc>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `moduleType`  
- [ModuleType](../Topic/ModuleType%20Enumeration.md) の一つ以上の列挙値の組み合わせ。  
+ 1 つまたは複数の組み合わせ[ModuleType](../windows/moduletype-enumeration.md)列挙値。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### 保護されたなクラス  
-  
-|名前|説明|  
-|--------|--------|  
-|[Module::GenericReleaseNotifier クラス](../windows/module-genericreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトが解放されると、イベント ハンドラーが呼び出されます。  イベント ハンドラーは、ラムダ ファンクタ、または関数へのポインターで指定されます。|  
-|[Module::MethodReleaseNotifier クラス](../Topic/Module::MethodReleaseNotifier%20Class.md)|現在のモジュールの最後のオブジェクトが解放されると、イベント ハンドラーが呼び出されます。  イベント ハンドラーは、オブジェクトやポインターにメソッドのメンバーによって指定されます。|  
-|[Module::ReleaseNotifier クラス](../Topic/Module::ReleaseNotifier%20Class.md)|モジュールの最後のオブジェクトが解放されると、イベント ハンドラーが呼び出されます。|  
-  
-### パブリック コンストラクター  
+### <a name="protected-classes"></a>プロテクト クラス  
   
 |名前|説明|  
-|--------|--------|  
-|[Module::~Module デストラクター](../windows/module-tilde-module-destructor.md)|Deinitializes モジュール クラスの現在のインスタンス。|  
+|----------|-----------------|  
+|[Module::GenericReleaseNotifier クラス](../windows/module-genericreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、ラムダ、ファンクタ、または関数へのポインターによって指定されます。|  
+|[Module::MethodReleaseNotifier クラス](../windows/module-methodreleasenotifier-class.md)|現在のモジュールの最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。 イベント ハンドラーは、オブジェクトとそのメソッドへのポインターのメンバーによって指定されます。|  
+|[Module::ReleaseNotifier クラス](../windows/module-releasenotifier-class.md)|モジュール内の最後のオブジェクトを解放すると、イベント ハンドラーを呼び出します。|  
   
-### プロテクト コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
+|[Module::~Module デストラクター](../windows/module-tilde-module-destructor.md)|モジュール クラスの現在のインスタンスの初期化を解除します。|  
+  
+### <a name="protected-constructors"></a>プロテクト コンストラクター  
+  
+|名前|説明|  
+|----------|-----------------|  
 |[Module::Module コンストラクター](../windows/module-module-constructor.md)|モジュール クラスの新しいインスタンスを初期化します。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[Module::Create メソッド](../windows/module-create-method.md)|モジュールのインスタンスを作成します。|  
-|[Module::DecrementObjectCount メソッド](../windows/module-decrementobjectcount-method.md)|モジュールで追跡されるオブジェクトの数をデクリメントします。|  
+|[Module::DecrementObjectCount メソッド](../windows/module-decrementobjectcount-method.md)|モジュールによって追跡されるオブジェクトの数をデクリメントします。|  
 |[Module::GetActivationFactory メソッド](../windows/module-getactivationfactory-method.md)|モジュールのアクティベーション ファクトリを取得します。|  
-|[Module::GetClassObject メソッド](../windows/module-getclassobject-method.md)|Retreives クラス ファクトリがキャッシュされます。|  
-|[Module::GetModule メソッド](../Topic/Module::GetModule%20Method.md)|モジュールのインスタンスを作成します。|  
+|[Module::GetClassObject メソッド](../windows/module-getclassobject-method.md)|クラス ファクトリのキャッシュを取得します。|  
+|[Module::GetModule メソッド](../windows/module-getmodule-method.md)|モジュールのインスタンスを作成します。|  
 |[Module::GetObjectCount メソッド](../windows/module-getobjectcount-method.md)|このモジュールによって管理されるオブジェクトの数を取得します。|  
-|[Module::IncrementObjectCount メソッド](../windows/module-incrementobjectcount-method.md)|モジュールで追跡されるオブジェクトの数をインクリメントします。|  
-|[Module::RegisterCOMObject メソッド](../windows/module-registercomobject-method.md)|一つ以上の COM オブジェクトを登録して、ほかのアプリケーションでは、に接続できます。|  
-|[Module::RegisterObjects メソッド](../windows/module-registerobjects-method.md)|レジスタまたは [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] COM オブジェクトは、ほかのアプリケーションでは、に接続できます。|  
-|[Module::RegisterWinRTObject メソッド](../windows/module-registerwinrtobject-method.md)|[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] の一つ以上のオブジェクトを登録して、ほかのアプリケーションでは、に接続できます。|  
-|[Module::Terminate メソッド](../windows/module-terminate-method.md)|シャットダウンするモジュールでインスタンス化されるすべてのファクトリを実現します。|  
-|[Module::UnregisterCOMObject メソッド](../Topic/Module::UnregisterCOMObject%20Method.md)|一つ以上の COM オブジェクトを登録解除されますが、他のアプリケーションは、接続することを防止できます。|  
-|[Module::UnregisterObjects メソッド](../windows/module-unregisterobjects-method.md)|他のアプリケーションがユーザーに接続できないように指定したモジュールのオブジェクトの登録を解除します。|  
-|[Module::UnregisterWinRTObject メソッド](../windows/module-unregisterwinrtobject-method.md)|他のアプリケーションがユーザーに接続できないように [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] の一つ以上のオブジェクトの登録を解除します。|  
+|[Module::IncrementObjectCount メソッド](../windows/module-incrementobjectcount-method.md)|モジュールによって追跡されるオブジェクトの数をインクリメントします。|  
+|[Module::RegisterCOMObject メソッド](../windows/module-registercomobject-method.md)|他のアプリケーションがそれらに接続できるように、1 つまたは複数の COM オブジェクトを登録します。|  
+|[Module::RegisterObjects メソッド](../windows/module-registerobjects-method.md)|他のアプリケーションがそれらに接続できるように、COM または Windows ランタイム オブジェクトを登録します。|  
+|[Module::RegisterWinRTObject メソッド](../windows/module-registerwinrtobject-method.md)|他のアプリケーションがそれらに接続できるように、1 つまたは複数の Windows ランタイム オブジェクトを登録します。|  
+|[Module::Terminate メソッド](../windows/module-terminate-method.md)|すべてのファクトリが、モジュールをシャット ダウンによってインスタンス化が発生します。|  
+|[Module::UnregisterCOMObject メソッド](../windows/module-unregistercomobject-method.md)|他のアプリケーションが接続することが原因で、1 つまたは複数の COM オブジェクトを解除します。|  
+|[Module::UnregisterObjects メソッド](../windows/module-unregisterobjects-method.md)|指定したモジュール内のオブジェクトの登録を解除して、他のアプリケーションがそれらに接続できないようにします。|  
+|[Module::UnregisterWinRTObject メソッド](../windows/module-unregisterwinrtobject-method.md)|他のアプリケーションがそれらに接続できないように、1 つまたは複数の Windows ランタイム オブジェクトを登録解除します。|  
   
-### プロテクト メソッド  
+### <a name="protected-methods"></a>プロテクト メソッド  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[Module::Create メソッド](../windows/module-create-method.md)|モジュールのインスタンスを作成します。|  
   
-### プロテクト データ メンバー  
+### <a name="protected-data-members"></a>プロテクト データ メンバー  
   
 |名前|説明|  
-|--------|--------|  
-|[Module::objectCount\_ データ メンバー](../windows/module-objectcount-data-member.md)|どれほど多くのクラスが [作成](../windows/make-function.md) 関数で作成されたかを追跡します。|  
-|[Module::releaseNotifier\_ データ メンバー](../windows/module-releasenotifier-data-member.md)|ReleaseNotifier オブジェクトへのポインターを保持します。|  
+|----------|-----------------|  
+|[Module::objectCount_ データ メンバー](../windows/module-objectcount-data-member.md)|多くのクラスが作成されたの追跡、[ように](../windows/make-function.md)関数。|  
+|[Module::releaseNotifier_ データ メンバー](../windows/module-releasenotifier-data-member.md)|ReleaseNotifier オブジェクトへのポインターを保持します。|  
   
-### \[マクロ\]  
+### <a name="macros"></a>[マクロ]  
   
 |||  
 |-|-|  
-|[ActivatableClass](../Topic/ActivatableClass%20Macros.md)|指定されたクラスのインスタンスを作成するファクトリを含む内部キャッシュを設定します。  このマクロは、既定のファクトリとグループ ID パラメーターを指定します。|  
-|[ActivatableClassWithFactory](../Topic/ActivatableClass%20Macros.md)|指定されたクラスのインスタンスを作成するファクトリを含む内部キャッシュを設定します。  このマクロは、特定のファクトリ パラメーターを指定することができます。|  
-|[ActivatableClassWithFactoryEx](../Topic/ActivatableClass%20Macros.md)|指定されたクラスのインスタンスを作成するファクトリを含む内部キャッシュを設定します。  このマクロは、特定のファクトリとグループ ID パラメーターを指定することができます。|  
+|[ActivatableClass](../windows/activatableclass-macros.md)|指定したクラスのインスタンスを作成できるファクトリを含む内部キャッシュを追加します。 このマクロは、既定のファクトリおよびグループの ID パラメーターを指定します。|  
+|[ActivatableClassWithFactory](../windows/activatableclass-macros.md)|指定したクラスのインスタンスを作成できるファクトリを含む内部キャッシュを追加します。 このマクロでは、特定の工場出荷時のパラメーターを指定することができます。|  
+|[ActivatableClassWithFactoryEx](../windows/activatableclass-macros.md)|指定したクラスのインスタンスを作成できるファクトリを含む内部キャッシュを追加します。 このマクロでは、特定のファクトリとグループの ID パラメーターを指定することができます。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `ModuleBase`  
   
  `Module`  
   
  `Module`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

@@ -1,49 +1,50 @@
 ---
-title: "CComObject、CComAggObject、および CComPolyObject の実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CComPolyObject"
-  - "CComAggObject"
-  - "CComObject"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CComAggObject クラス"
-  - "CComObject クラス, 実装"
-  - "CComPolyObject クラス, 実装"
-  - "CreateInstance メソッド"
+title: "CComObject と実装すると、および CComPolyObject |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CComPolyObject
+- CComAggObject
+- CComObject
+dev_langs: C++
+helpviewer_keywords:
+- CComPolyObject class, implementing
+- CreateInstance method
+- CComAggObject class
+- CComObject class, implementing
 ms.assetid: 5aabe938-104d-492e-9c41-9f7fb1c62098
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bb74d68bb8974f820ac09a0c56930d835a3fe7f3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CComObject、CComAggObject、および CComPolyObject の実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-テンプレートは [CComObject](../atl/reference/ccomobject-class.md)、[CComAggObject](../atl/reference/ccomaggobject-class.md)を並べ替え、[CComPolyObject](../atl/reference/ccompolyobject-class.md) は継承チェーンの最派生クラスは常にです。  これは **IUnknown**のすべてのメソッドを処理する必要があります: `QueryInterface`、`AddRef`と **\[リリース\]**。  また \(集約オブジェクトに対して使用された場合\)、`CComAggObject` と `CComPolyObject` は内側の演算子に必要な `QueryInterface` の特別な参照カウント、およびセマンティクスを提供します。  
+# <a name="implementing-ccomobject-ccomaggobject-and-ccompolyobject"></a>CComObject と実装すると、および CComPolyObject
+テンプレート クラス[CComObject](../atl/reference/ccomobject-class.md)、[すると](../atl/reference/ccomaggobject-class.md)、および[CComPolyObject](../atl/reference/ccompolyobject-class.md)継承チェーン内の最も派生クラスでは常にします。 すべてのメソッドは、処理する責任は**IUnknown**: `QueryInterface`、 `AddRef`、および**リリース**です。 さらに、`CComAggObject`と`CComPolyObject`(集約オブジェクトの使用) する場合、特別な参照カウントを提供および`QueryInterface`内部の不明なのために必要なセマンティクスです。  
   
- `CComObject`、`CComAggObject`、または `CComPolyObject` が使用されるかは次のマクロの 1 文字 \(またはなし\) 宣言するかによります:  
+ かどうか`CComObject`、 `CComAggObject`、または`CComPolyObject`使用以下のマクロのいずれか (またはなし) を宣言するかどうかによって異なります。  
   
 |マクロ|効果|  
-|---------|--------|  
-|`DECLARE_NOT_AGGREGATABLE`|`CComObject`を常に使用します。|  
-|`DECLARE_AGGREGATABLE`|あるオブジェクトが `CComObject` 集計する場合 `CComAggObject` を使用します。  `CComCoClass` は **DECLARE\_\*\_AGGREGATABLE** のマクロはいずれも、クラスで宣言されていない場合は、このマクロを、これが既定の設定が含まれています。|  
-|`DECLARE_ONLY_AGGREGATABLE`|`CComAggObject`を常に使用します。  オブジェクトが集約するエラーを返します。|  
-|`DECLARE_POLY_AGGREGATABLE`|ATL は **IClassFactory::CreateInstance** が呼び出されたときに **CComPolyObjectCYourClass** のインスタンスを作成します。  作成時に、外側の不明の値がチェックされます。  これは **null**場合、**IUnknown** は集約オブジェクトに実装されます。  外側の **null**が不明である、**IUnknown** は集約オブジェクトに実装されます。|  
+|-----------|------------|  
+|`DECLARE_NOT_AGGREGATABLE`|常に使用`CComObject`です。|  
+|`DECLARE_AGGREGATABLE`|使用して`CComAggObject`集約オブジェクトの場合と`CComObject`されていない場合。 `CComCoClass`このマクロを含むようにない場合、 **DECLARE_\*_AGGREGATABLE**マクロは、宣言されたクラスでは、これは既定値になります。|  
+|`DECLARE_ONLY_AGGREGATABLE`|常に使用`CComAggObject`です。 オブジェクトが集計されない場合は、エラーを返します。|  
+|`DECLARE_POLY_AGGREGATABLE`|ATL のインスタンスを作成する**CComPolyObject\<CYourClass >**とき**IClassFactory::CreateInstance**と呼びます。 作成中に、外側の不明な値がチェックされます。 場合は**NULL**、 **IUnknown**非集約オブジェクトには実装されています。 外側の unknown がない場合**NULL**、 **IUnknown**集約オブジェクトには実装されています。|  
   
- `CComAggObject` と `CComObject` を使用する利点は **IUnknown** の実装が作成されたオブジェクトの種類用に最適化されます。  たとえば、非集約オブジェクトは集約オブジェクトは外側の不明に内部の未知の参照カウントとポインターの両方を必要なだけが、参照カウントが必要です。  
+ 使用する利点`CComAggObject`と`CComObject`の実装は**IUnknown**作成されるオブジェクトの種類に適しています。 たとえば、集約オブジェクトには、内部の不明な参照カウントと外部へのポインターの両方が必要があるときに非集約オブジェクトによって参照カウントがのみが必要です。  
   
- `CComPolyObject` を使用する利点は集約されます。集約ケースを処理するモジュールで `CComAggObject` と `CComObject` の両方があることを避けるためです。  `CComPolyObject` の単一のオブジェクトは両方を処理します。  これは、vtable の 1 種類のコピーと関数の 1 のコピーは、モジュールであることを意味します。  、vtable の場合、これは大幅に、モジュールのサイズを抑えることができます。  ただし、ようになります `CComAggObject` と `CComObject`がやや多くのモジュールのサイズで vtable が小さく、集約または非集約オブジェクト用に最適化されていないため `CComPolyObject` を使用して行われます。  
+ 使用する利点`CComPolyObject`両方を避けることが`CComAggObject`と`CComObject`モジュールに、集計と非集計のケースに対処します。 1 つ`CComPolyObject`オブジェクトは両方のケースを処理します。 つまり、モジュールに vtable の 1 つだけのコピーと、関数のうちの 1 つのコピーが存在します。 Vtable が大きい場合は、モジュールのサイズを大幅に縮小このできます。 ただし、vtable が小さい場合を使用して`CComPolyObject`には、集計または非集約オブジェクトは、最適化されていないために、わずかに大きくモジュールのサイズになりますが`CComAggObject`と`CComObject`です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ATL COM オブジェクトの基本事項](../atl/fundamentals-of-atl-com-objects.md)   
- [集約とクラス ファクトリに関するマクロ](../atl/reference/aggregation-and-class-factory-macros.md)
+ [集計とクラス ファクトリに関するマクロ](../atl/reference/aggregation-and-class-factory-macros.md)
+

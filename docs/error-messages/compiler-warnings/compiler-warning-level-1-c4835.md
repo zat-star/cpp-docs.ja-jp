@@ -4,46 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C4835
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4835
+f1_keywords: C4835
+dev_langs: C++
+helpviewer_keywords: C4835
 ms.assetid: d2e44c62-7b0e-4a45-943d-97903e27ed9d
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 7eff3fd7ab97b978ccc9e146eabf500c7dbedf0f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: c1b01a84313d2d04e927420d1462dd8d5c2c495b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-warning-level-1-c4835"></a>コンパイラの警告 (レベル 1) C4835
-'variable': マネージ コードが最初にホスト アセンブリで実行されるまで、エクスポートされたデータの初期化子は実行されません  
+'variable': マネージ コードがホスト アセンブリで最初に実行されるまで、エクスポートされたデータの初期化子は実行されません  
   
- マネージ コンポーネント間でデータにアクセスするときにないネイティブな C++ インポートをエクスポート機構をお勧めします。 代わりに、マネージ型の中のデータ メンバーを宣言してメタデータを参照`#using`クライアントです。 詳細については、次を参照してください。 [#using ディレクティブ](../../preprocessor/hash-using-directive-cpp.md)します。  
+ マネージ コンポーネントの間でデータにアクセスするときにないネイティブの C++ のインポートを使用してをエクスポート機構をお勧めします。 代わりに、マネージ型の内部データ メンバーを宣言してメタデータを参照`#using`クライアントにします。 詳細については、次を参照してください。 [#using ディレクティブ](../../preprocessor/hash-using-directive-cpp.md)です。  
   
 ## <a name="example"></a>例  
  次の例では、C4835 を生成します。  
@@ -59,7 +40,7 @@ __declspec(dllexport) int *p = &n;   // C4835
 ```  
   
 ## <a name="example"></a>例  
- 次の例では、変数の値が予想外のものであることを示す、前の例でビルドされたコンポーネントを使用します。  
+ 次の例では、変数の値が期待どおりにないことを示す、前の例でビルドされたコンポーネントを使用します。  
   
 ```  
 // C4835_b.cpp  

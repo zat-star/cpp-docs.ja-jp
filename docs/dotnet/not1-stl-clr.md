@@ -1,50 +1,48 @@
 ---
-title: "not1 (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::not1"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "not1 関数 [STL/CLR]"
+title: "not1 (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::not1
+dev_langs: C++
+helpviewer_keywords: not1 function [STL/CLR]
 ms.assetid: a50cd819-10de-4d81-84da-8a34c5414a43
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c35f0b9df04ca9f8d6ed142567158decc9170ac8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# not1 (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ファンクタの `unary_negate` を生成します。  
+# <a name="not1-stlclr"></a>not1 (STL/CLR)
+生成、`unary_negate`ファンクタをします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Fun>  
     unary_negate<Fun> not1(Fun% functor);  
 ```  
   
-## テンプレート名  
- 関数  
- ファンクタの種類。  
+## <a name="template-parameters"></a>テンプレート パラメーター  
+ 楽しい  
+ ファンクタの型。  
   
-## 関数パラメーター  
- ファンクタ  
- ラップする必要ファンクタ。  
+## <a name="function-parameters"></a>関数パラメーター  
+ ファンクター  
+ ラップするファンクタ。  
   
-## 解説  
- このテンプレート関数は [unary\_negate](../dotnet/unary-negate-stl-clr.md)`<``Fun``>(functor)`を返します。  論理、渡すファンクタの 1 引数のファンクタをラップする便利な手段として使用します。  
+## <a name="remarks"></a>コメント  
+ テンプレート関数を返します[unary_negate (STL/CLR)](../dotnet/unary-negate-stl-clr.md)`<Fun>(functor)`です。 その論理否定を配信するファンクタに引数が 1 つファンクタをラップする便利な手段として使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_not1.cpp   
@@ -86,13 +84,16 @@ int main()
   
 ```  
   
-  **4 0**  
- **1 0**  
- **1 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 0  
+1 0  
+1 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [unary\_negate](../dotnet/unary-negate-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [unary_negate (STL/CLR)](../dotnet/unary-negate-stl-clr.md)

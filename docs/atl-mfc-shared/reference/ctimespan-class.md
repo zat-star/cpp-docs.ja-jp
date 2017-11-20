@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -22,8 +21,7 @@ f1_keywords:
 - ATLTIME/ATL::CTimeSpan::GetTotalMinutes
 - ATLTIME/ATL::CTimeSpan::GetTotalSeconds
 - ATLTIME/ATL::CTimeSpan::Serialize64
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - elapsed time, CTimeSpan object
 - timespan
@@ -32,30 +30,15 @@ helpviewer_keywords:
 - shared classes, CTimeSpan
 - time, elapsed
 ms.assetid: ee1e42f6-1839-477a-8435-fb26ad475140
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: b82b12f33ee3cad1da9acad0fb2cd81c6dcb6e82
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.openlocfilehash: cedcddeefb62fc639ba674225a039cfa81a743ac
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="ctimespan-class"></a>CTimeSpan クラス
 時間間隔の秒数として内部的に格納されている時間の量。  
@@ -95,7 +78,7 @@ class CTimeSpan
 |-|-|  
 |[演算子 + -](#operator_add_-)|追加し、減算`CTimeSpan`オブジェクト。|  
 |[演算子 + = =](#operator_add_eq_-_eq)|追加し、減算、`CTimeSpan`オブジェクトからこの`CTimeSpan`です。|  
-|[演算子 = =<>](#ctimespan_comparison_operators)|2 つの相対時間値を比較します。|  
+|[演算子 = = < などです。](#ctimespan_comparison_operators)|2 つの相対時間値を比較します。|  
   
 ## <a name="remarks"></a>コメント  
  `CTimeSpan`基本クラスはありません。  
@@ -134,7 +117,7 @@ bool operator>=(CTimeSpan span) const throw();
  これらの演算子は、2 つの相対時間値を比較します。 返される**true**条件の場合は true。 それ以外の場合**false**です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities #169](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_1.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#169](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_1.cpp)]  
   
 ##  <a name="ctimespan"></a>CTimeSpan::CTimeSpan  
  構築`CTimeSpan`さまざまな方法でオブジェクト。  
@@ -155,7 +138,7 @@ CTimeSpan(
  A`CTimeSpan`既に存在するオブジェクト。  
   
  `time`  
- A **_ _time64_t**時間間隔の秒数は、時刻の値。 Visual C version 6.0 およびそれ以前、`time`の値が`time_t`です。 Visual C .NET または後で暗黙的に変換する`time_t`パラメーターを**_ _time64_t**です。  
+ A **_ _time64_t**時間間隔の秒数は、時刻の値。  
   
  `lDays`, `nHours`, `nMins`, `nSecs`  
  日、時間、分、および秒、それぞれします。  
@@ -165,7 +148,7 @@ CTimeSpan(
   
 - **CTimeSpan ();**構築、初期化されていない`CTimeSpan`オブジェクト。  
   
-- **CTimeSpan (const CTimeSpan >/documents/report1.rdl」の);**構築、`CTimeSpan`から別のオブジェクト`CTimeSpan`値。  
+- **CTimeSpan (const CTimeSpan (& a)) です。**構築、`CTimeSpan`から別のオブジェクト`CTimeSpan`値。  
   
 - **CTimeSpan (_ _time64_t) です。**構築、`CTimeSpan`オブジェクトから、 **_ _time64_t**型です。  
   
@@ -181,7 +164,7 @@ CTimeSpan(
  Microsoft Foundation Class ライブラリのデバッグ バージョンでは、1 つ以上の時間帯は、コンポーネントが範囲外アサートすることに注意してください。 ユーザーの責任を呼び出す前に引数を検証することをお勧めします。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 162](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_2.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#162](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_2.cpp)]  
   
 ##  <a name="format"></a>CTimeSpan::Format  
  これに対応する書式設定された文字列を生成`CTimeSpan`です。  
@@ -216,7 +199,7 @@ CString Format(UINT nID) const;
  ライブラリのデバッグ バージョンでは、書式指定コードをチェックし、コードは、上記の一覧に含まれないかどうかをアサートします。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 163](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_3.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#163](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_3.cpp)]  
   
 ##  <a name="getdays"></a>CTimeSpan::GetDays  
  これで完了日の数を表す値を返します`CTimeSpan`です。  
@@ -232,7 +215,7 @@ LONGLONG GetDays() const throw();
  夏時間の原因となる注`GetDays`可能性があることにより意外結果が返されます。 たとえば、ときに夏時間が有効で**GetDays**年 4 月 1 日 1 時間を短縮し、そのため、1 日に完了とは見なされませんのでない 30 日、29 と 4 月 1 日から 5 月 1日までの日数の数を報告します。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 164](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_4.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#164](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_4.cpp)]  
   
 ##  <a name="gethours"></a>CTimeSpan::GetHours  
  現在の日付 (-23 ~ 23) の時間数を表す値を返します。  
@@ -245,7 +228,7 @@ LONG GetHours() const throw();
  現在の日付の時間数を返します。 範囲は、-23 ~ 23 です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 165](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_5.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#165](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_5.cpp)]  
   
 ##  <a name="getminutes"></a>CTimeSpan::GetMinutes  
  現在の時間 (-59 ~ 59) で分単位の数を表す値を返します。  
@@ -294,7 +277,7 @@ LONGLONG GetTotalHours() const throw();
  これで完了時間の合計数を返します`CTimeSpan`です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 166](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_6.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#166](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_6.cpp)]  
   
 ##  <a name="gettotalminutes"></a>CTimeSpan::GetTotalMinutes  
  この分数の合計数を表す値を返します`CTimeSpan`です。  
@@ -341,7 +324,7 @@ CTimeSpan operator-(CTimeSpan span) const throw();
  これら 2 つの演算子を使用すると、加算し、減算`CTimeSpan`をおよび他のオブジェクト。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 167](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_7.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#167](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_7.cpp)]  
   
 ##  <a name="operator_add_eq_-_eq"></a>CTimeSpan::operator + =、=  
  追加し、減算、`CTimeSpan`オブジェクトからこの`CTimeSpan`です。  
@@ -362,7 +345,7 @@ CTimeSpan& operator-=(CTimeSpan span) throw();
  これらの演算子を使用すると、加算し、減算、`CTimeSpan`オブジェクトからこの`CTimeSpan`です。  
   
 ### <a name="example"></a>例  
- [!code-cpp[NVC_ATLMFC_Utilities # 168](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_8.cpp)]  
+ [!code-cpp[NVC_ATLMFC_Utilities#168](../../atl-mfc-shared/codesnippet/cpp/ctimespan-class_8.cpp)]  
   
 ##  <a name="serialize64"></a>CTimeSpan::Serialize64  
   
@@ -391,6 +374,5 @@ CArchive& Serialize64(CArchive& ar);
  [time、_time32、_time64](../../c-runtime-library/reference/time-time32-time64.md)   
  [階層図](../../mfc/hierarchy-chart.md)   
  [ATL/MFC 共有クラス](../../atl-mfc-shared/atl-mfc-shared-classes.md)
-
 
 

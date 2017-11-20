@@ -1,42 +1,40 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4510 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4510"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4510"
+title: "コンパイラの警告 (レベル 4) C4510 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4510
+dev_langs: C++
+helpviewer_keywords: C4510
 ms.assetid: fd28d1d4-ad27-4dad-94c0-9dba46c93180
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 372dd9c789c54a38a5eed2c5f457c518989ede17
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4510
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'class' : 既定のコンストラクターを生成できません。  
+# <a name="compiler-warning-level-4-c4510"></a>コンパイラの警告 (レベル 4) C4510
+'class': 既定のコンス トラクターを生成できませんでした  
   
- 指定されたクラスの既定のコンストラクターを生成できず、ユーザー定義コンストラクターは作成されませんでした。  この型のオブジェクトは作成できません。  
+ コンパイラは、指定したクラスに対して既定のコンス トラクターを生成できませんし、ユーザー定義のコンス トラクターは作成されませんでした。 この型のオブジェクトを作成することはできません。  
   
- コンパイラが既定のコンストラクターを生成できないのは、次のような場合です。  
+ コンパイラの既定のコンス トラクターの生成を防ぐことがいくつかの状況があるなど。  
   
--   定数データ メンバーの場合  
+-   Const データ メンバーです。  
   
--   参照であるデータ メンバーの場合  
+-   参照であるデータ メンバーです。  
   
- このようなメンバーを初期化するクラス用に、ユーザー定義の既定のコンストラクターを作成する必要があります。  
+ これらのメンバーを初期化するクラスのユーザー定義の既定コンス トラクターを作成する必要があります。  
   
- 次の例では警告 C4510 が生成されます。  
+ 次の例では、C4510 が生成されます。  
   
 ```  
 // C4510.cpp  

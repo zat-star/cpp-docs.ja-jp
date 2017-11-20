@@ -1,32 +1,30 @@
 ---
-title: "FtmBase::GetMarshalSizeMax メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ftm/Microsoft::WRL::FtmBase::GetMarshalSizeMax"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetMarshalSizeMax メソッド"
+title: "Ftmbase::getmarshalsizemax メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: ftm/Microsoft::WRL::FtmBase::GetMarshalSizeMax
+dev_langs: C++
+helpviewer_keywords: GetMarshalSizeMax method
 ms.assetid: b416b1bf-c73e-45d5-abb8-04921c1a0c94
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3597d19e1bcdc6b1b14e150c66236585f8c35fb8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FtmBase::GetMarshalSizeMax メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定されたオブジェクトの指定されたインターフェイス ポインターをマーシャリングするために必要なバイト数の上限を取得します。  
+# <a name="ftmbasegetmarshalsizemax-method"></a>FtmBase::GetMarshalSizeMax メソッド
+指定したオブジェクトの指定されたインターフェイス ポインターをマーシャ リングするために必要なバイト数の上限値を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHODIMP GetMarshalSizeMax(  
@@ -39,36 +37,36 @@ STDMETHODIMP GetMarshalSizeMax(
 ) override;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- マーシャリングされる必要インターフェイスの識別子への参照。  
+ マーシャ リングするインターフェイスの識別子への参照。  
   
  `pv`  
- マーシャリングされる;インターフェイス ポインター。NULL の場合もあります。  
+ インターフェイス ポインターをマーシャ リングします。NULL にすることができます。  
   
  `dwDestContext`  
- 指定されたインターフェイスがマーシャリングを解除される前のコンテキスト。  
+ 移行先コンテキストで指定されたインターフェイスのマーシャ リングします。  
   
- 一つ以上の MSHCTX の列挙値を指定します。  
+ 1 つまたは複数の MSHCTX 列挙値を指定します。  
   
- 現在、マーシャリングを解除するには、現在のプロセス \(MSHCTX\_LOCAL\) と現在のプロセス \(MSHCTX\_INPROC\) の別のアパートメントにまたは同じコンピューター上の他のプロセスに発生します。  
+ 現時点では、マーシャ リング解除行える (MSHCTX_INPROC) 現在のプロセスの別のアパートメントまたは現在のプロセス (MSHCTX_LOCAL) と同じコンピューター上の別のプロセスです。  
   
  `pvDestContext`  
- 将来使用するために予約されて; NULL である必要があります。  
+ 将来使用するために予約されていますNULL にする必要があります。  
   
  `mshlflags`  
- データがクライアント プロセス—一般的なケース \(が送信されることも、複数のクライアントによって取得するできるグローバル テーブルに書き込まれる必要があるマーシャリングされるかどうかを示すためにフラグを設定します。  一つ以上の MSHLFLAGS の列挙値を指定します。  
+ マーシャ リングするデータが、クライアントのプロセスに送信されるかどうかを示すフラグ: 一般的な事例 — または複数のクライアントで取得できる、グローバル テーブルに書き込まれます。 1 つまたは複数の MSHLFLAGS 列挙値を指定します。  
   
  `pSize`  
- この操作が完了すると、マーシャリングのストリームに書き込むデータの容量の上限へのポインター。  
+ この操作の完了時、マーシャ リングのストリームに書き込まれるデータの量に上限の境界へのポインター。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は E\_FAIL または E\_NOINTERFACE。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、E_FAIL または E_NOINTERFACE します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [FtmBase クラス](../windows/ftmbase-class.md)

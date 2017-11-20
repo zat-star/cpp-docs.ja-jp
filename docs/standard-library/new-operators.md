@@ -10,14 +10,13 @@ f1_keywords:
 - new/std::operator delete
 - new/std::operator new
 ms.assetid: d1af4b56-9a95-4c65-ab01-bf43e982c7bd
-caps.latest.revision: 8
+caps.latest.revision: "8"
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
 ms.openlocfilehash: 32707847948c32f671e7ebd7def23165b59a63a8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ltnewgt-operators"></a>&lt;new&gt; 演算子
 ||||  
@@ -204,7 +203,7 @@ void* operator new[](std::size_t count,
   
  2 番目の関数は配置 `new[]` 式によって呼び出され、そのサイズの配列オブジェクトを表すために適切にアラインされた `count` バイトのストレージを割り当てます。 プログラムでは、この関数のシグネチャを持つ関数を定義できます。これは、C++ 標準ライブラリで定義されている既定のバージョンに置き換わります。 既定の動作では、その関数が成功した場合に **operatornew**( `count`) が返されます。 それ以外の場合は、Null ポインターが返されます。  
   
- 3 番目の関数は、**new** ( *args*) **T**[ **N**] の形式の配置 `new[]` 式によって呼び出されます。 ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 `ptr` が返されます。  
+ 3 番目の関数は、**new** ( *args*) **T****[ N]** の形式の配置 `new[]` 式によって呼び出されます。 ここで、*args* は 1 つのオブジェクトのポインターで構成されます。 `ptr` が返されます。  
   
  `operator new[]` によって割り当てられたストレージを解放するには、[operator delete&#91;&#93;](../standard-library/new-operators.md#op_delete_arr) を呼び出します。  
   
@@ -253,7 +252,6 @@ int main() {
   
 ## <a name="see-also"></a>関連項目  
  [\<new>](../standard-library/new.md)
-
 
 
 

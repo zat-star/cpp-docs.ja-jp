@@ -1,36 +1,35 @@
 ---
-title: "CDynamicParameterAccessor::GetParamStatus | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicParameterAccessor::GetParamStatus"
-  - "CDynamicParameterAccessor.GetParamStatus"
-  - "ATL.CDynamicParameterAccessor.GetParamStatus"
-  - "ATL::CDynamicParameterAccessor::GetParamStatus"
-  - "GetParamStatus"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetParamStatus メソッド"
+title: "Cdynamicparameteraccessor::getparamstatus |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDynamicParameterAccessor::GetParamStatus
+- CDynamicParameterAccessor.GetParamStatus
+- ATL.CDynamicParameterAccessor.GetParamStatus
+- ATL::CDynamicParameterAccessor::GetParamStatus
+- GetParamStatus
+dev_langs: C++
+helpviewer_keywords: GetParamStatus method
 ms.assetid: 9300225a-616c-4a7d-82d0-8c2ecd4d8185
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 483a6b8aea87d552d1397f70222323fbe8514747
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDynamicParameterAccessor::GetParamStatus
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バッファーに格納され、指定したパラメーターの状態を取得します。  
+# <a name="cdynamicparameteraccessorgetparamstatus"></a>CDynamicParameterAccessor::GetParamStatus
+バッファーに格納され、指定されたパラメーターのステータスを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,23 +37,23 @@ caps.handback.revision: 8
    DBORDINAL nParam,  
    DBSTATUS* pStatus  
 );  
-DBSTATUS* GetParamStatus(   
-   DBORDINAL nParam    
+DBSTATUS* GetParamStatus(   
+   DBORDINAL nParam    
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  `pStatus`  
- \[\]を含む変数へのポインター。指定したパラメーターの `DBSTATUS` の状態。  `DBSTATUS` 値の詳細については、*OLE DB Programmer's Reference*の [状態](https://msdn.microsoft.com/en-us/library/ms722617.aspx) を参照するか、oledb.h の `DBSTATUS` を検索します。  
+ [out]変数を含むへのポインター、`DBSTATUS`指定されたパラメーターの状態。 詳細について`DBSTATUS`値を参照してください[ステータス](https://msdn.microsoft.com/en-us/library/ms722617.aspx)で、 *OLE DB プログラマーズ リファレンス*、または検索`DBSTATUS`oledb.h でします。  
   
-## 解説  
- 最初のオーバーライドは **true** の成功または失敗を **false** を返します。  2 番目のオーバーライドを含むメモリを指定されたパラメーターの状態を指します。  
+## <a name="remarks"></a>コメント  
+ 最初の形式**true**成功した場合または**false**エラー発生時にします。 2 つ目は、指定されたパラメーターの状態を表すメモリへのポインターをオーバーライドします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

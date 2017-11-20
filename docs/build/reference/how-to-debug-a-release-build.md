@@ -1,49 +1,49 @@
 ---
-title: "方法 : リリース ビルドをデバッグする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デバッグ [C++], リリース ビルド"
-  - "リリース ビルド, デバッグ"
+title: "方法: リリース ビルドをデバッグ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- debugging [C++], release builds
+- release builds, debugging
 ms.assetid: d333e4d1-4e6c-4384-84a9-cb549702da25
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 2719adff3099d4507b1e2f70348023f9d8ec92eb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法 : リリース ビルドをデバッグする
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-アプリケーションのリリース ビルドをデバッグできます。  
+# <a name="how-to-debug-a-release-build"></a>方法 : リリース ビルドをデバッグする
+アプリケーションのリリース ビルドをデバッグすることができます。  
   
-### リリース ビルドをデバッグするには  
+### <a name="to-debug-a-release-build"></a>リリース ビルドをデバッグするには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[プロジェクトのプロパティの操作](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  開く、**プロパティ ページ**プロジェクトのダイアログ ボックス。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** ノードをクリックします。  **\[デバッグ情報の形式\]** を [&#91;C7 互換 \(\/Z7\)&#93;](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md) または **\[プログラム データベース \(\/Zi\)\]** に設定します。  
+2.  クリックして、 **C/C++**ノード。 設定**デバッグ情報の形式**に[C7 互換 (/Z7)](../../build/reference/z7-zi-zi-debug-information-format.md)または**プログラム データベース (/Zi)**です。  
   
-3.  **\[リンカー\]** を展開して **\[全般\]** ノードをクリックします。  **\[インクリメンタル リンクを有効にする\]** を [&#91;インクリメンタル リンクを行わない \(\/INCREMENTAL:NO\)&#93;](../../build/reference/incremental-link-incrementally.md) に設定します。  
+3.  展開**リンカー**  をクリックし、**全般**ノード。 設定**インクリメンタル リンクを有効にする**に[いいえ (//INCREMENTAL:NO)](../../build/reference/incremental-link-incrementally.md)です。  
   
-4.  **\[デバッグ\]** ノードをクリックします。  **\[デバッグ情報の生成\]** を [&#91;はい \(\/DEBUG\)&#93;](../../build/reference/debug-generate-debug-info.md) に設定します。  
+4.  選択、**デバッグ**ノード。 設定**デバッグ情報の生成**に[はい (/debug)](../../build/reference/debug-generate-debug-info.md)です。  
   
-5.  **\[最適化\]** ノードをクリックします。  **\[参照\]** を [&#91;\/OPT:REF&#93;](../../build/reference/opt-optimizations.md) に、**\[COMDAT の圧縮\]** を [&#91;\/OPT:ICF&#93;](../../build/reference/opt-optimizations.md) に設定します。  
+5.  選択、**最適化**ノード。 設定**参照**に[/opt:ref による](../../build/reference/opt-optimizations.md)と**COMDAT の圧縮を有効にする**に[/OPT:ICF](../../build/reference/opt-optimizations.md)です。  
   
-6.  これで、リリース ビルドのアプリケーションをデバッグできます。  問題の発生箇所を見つけるには、エラーが発生している個所までコードをステップ実行し \(または Just\-In\-Time デバッグを使用し\)、不正なパラメーターまたはコードを特定します。  
+6.  リリース ビルドのアプリケーションをデバッグできます。 障害が発生したが見つかるまで、問題、ステップ実行、コード (または使用ジャスト イン タイムのデバッグ) を検索し、不正確なパラメーターまたはコードを確認しています。  
   
-     アプリケーションがデバッグ ビルドでは動作してもリリース ビルドではエラーになる場合、コンパイラの最適化処理のいずれかがソース コード内の欠陥を検出している可能性があります。  問題を特定するには、ソース コード ファイルごとに選択した最適化を無効にし、その問題の原因であるファイルと最適化を見つけます \(このプロセスを高速化するには、まずすべてのファイルを 2 つのグループに分割して、1 つのグループの最適化を無効にし、そのグループに問題があれば、問題があるファイルを特定するまでそのグループの分割を続けます\)。  
+     アプリケーション デバッグ ビルドでは動作では、リリース ビルドに失敗した場合は、コンパイラの最適化のいずれかの可能性があるを公開する、ソース コードの欠陥です。 問題を特定するには、ファイルと、問題の原因となった、最適化が見つかるまで、各ソース コード ファイルの選択の最適化を無効にします。 (処理の時間を短縮するには、ファイルを 2 つのグループに分割、1 つのグループでの最適化を無効にするコンティニュできます、グループ内に問題が見つかったときに除算問題のファイルを特定できます。)  
   
-     デバッグ ビルド内のこのようなバグを検出するには、[\/RTC](../../build/reference/rtc-run-time-error-checks.md) を使用できます。  
+     使用することができます[/RTC](../../build/reference/rtc-run-time-error-checks.md)デバッグ ビルドでこのようなバグを公開しようとします。  
   
-     詳細については、「[コードの最適化](../../build/reference/optimizing-your-code.md)」を参照してください。  
+     詳細については、次を参照してください。[コードの最適化](../../build/reference/optimizing-your-code.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リリース ビルドの問題の解決](../../build/reference/fixing-release-build-problems.md)

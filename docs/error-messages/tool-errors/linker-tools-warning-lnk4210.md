@@ -4,64 +4,46 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK4210
-dev_langs:
-- C++
-helpviewer_keywords:
-- LNK4210
+f1_keywords: LNK4210
+dev_langs: C++
+helpviewer_keywords: LNK4210
 ms.assetid: db48cff8-a2be-4a77-8d03-552b42c228fa
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 127d4bdc85d07468f91656bc0aff5f4f2d015df5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 31d416638b00a5d517fe49526b49ef130a2e9d31
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# <a name="linker-tools-warning-lnk4210"></a>リンカー ツールの警告 LNK4210
-セクションが存在します。ある場合がありますハンドルされていない静的初期化子または終端文字  
+# <a name="linker-tools-warning-lnk4210"></a>リンカー ツールの警告 LNK4210  
   
- 静的初期化子、またはターミネータ、いくつかのコードが導入されましたが、アプリケーションの起動時に、CRT またはそれと等価な (これは、静的初期化子または終端文字を実行する必要があります) が実行されていません。 これが発生するコードの例:  
+> セクション*セクション*が存在する; がある可能性がありますハンドルされていない静的初期化子、または終末記号  
+  
+静的初期化子、または終末記号、いくつかのコードが導入されましたが、アプリケーションの起動時に、VCRuntime ライブラリ スタートアップ コードまたはその相当するもの (静的初期化子または終端文字を実行する必要があります) が実行されません。 静的初期化子、または終末記号を必要とするコードの例を次に示します。  
   
 -   コンス トラクター、デストラクター、または仮想関数テーブルを含むクラスのグローバル変数。  
   
--   グローバル変数が非コンパイル時定数を使用して初期化します。  
+-   グローバル変数が、非コンパイル時定数を使用して初期化します。  
   
- この問題を修正するのには、次のいずれかを試してください。  
+この問題を修正するのには、次のいずれかを試してください。  
   
--   静的初期化子を持つすべてのコードを削除します。  
+-   静的初期化子を含むすべてのコードを削除します。  
   
--   使用しないで[/NOENTRY](../../build/reference/noentry-no-entry-point.md)します。  /NOENTRY を削除した後、msvcrt.lib、libcmt.lib、libcmtd.lib をリンカーのコマンドラインに追加することもできます。  
+-   使用しないでください[/NOENTRY](../../build/reference/noentry-no-entry-point.md)です。 /NOENTRY を削除した後、削除する必要がありますも[/NODEFAULTLIB](../../build/reference/nodefaultlib-ignore-libraries.md)リンカー コマンドラインからです。  
   
--   Msvcrt.lib、libcmt.lib、libcmtd.lib をリンカーのコマンドラインに追加します。  
+-   ビルドは、/MT を使用している場合、libcmt.lib、libvcruntime.lib、および libucrt.lib をリンカー コマンドラインに追加します。 使用する場合、ビルド/MTd、libcmtd.lib、vcruntimed.lib、および libucrtd.lib を追加します。  
   
--   /Clr から移行する場合:/clr コンパイルは純粋な削除、 [/ENTRY](../../build/reference/entry-entry-point-symbol.md)リンカー コマンドラインのオプションです。 これは、CRT の初期化で、アプリケーションの起動時に実行する静的初期化子を有効になります。  
+-   /Clr から移動するとき:/clr:pure に純粋なコンパイルを削除、 [/ENTRY](../../build/reference/entry-entry-point-symbol.md)リンカー コマンドラインからのオプションです。 これは、CRT の初期化を有効にでき、アプリケーションの起動時に実行される静的初期化子。  
   
--   場合は、プロジェクトのビルドに[/ENTRY](../../build/reference/entry-entry-point-symbol.md)、/ENTRY が渡された場合、関数の他にも、`_DllMainCRTStartup`関数が CRT_INIT を呼び出す必要があります。 参照してください[ランタイム ライブラリの動作](../../build/run-time-library-behavior.md)とサポート技術情報の記事 Q94248、 [http://support.microsoft.com/default.aspx?scid=kb;en-us;94248](http://support.microsoft.com/default.aspx?scid=kb;en-us;94248)の詳細。  
+ [/GS](../../build/reference/gs-buffer-security-check.md)コンパイラ オプションで初期化が必要です、`__security_init_cookie`関数。 この初期化が既定では、VCRuntime ライブラリ スタートアップで実行されるコードで提供される`_DllMainCRTStartup`です。  
   
- [/GS](../../build/reference/gs-buffer-security-check.md)コンパイラ オプションには、CRT スタートアップ コードが必要です。  
+-   /ENTRY を使用して、プロジェクトをビルドし、/ENTRY が渡された場合、関数以外の`_DllMainCRTStartup`、関数を呼び出す必要があります`_CRT_INIT`CRT を初期化します。 DLL の/GS を使用して、静的初期化子が必要です、または MFC または ATL コードのコンテキストで呼び出される場合、この呼び出しを単独では十分なではありません。 参照してください[Dll および Visual C ランタイム ライブラリの動作](../../build/run-time-library-behavior.md)詳細についてはします。  
   
 ## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)

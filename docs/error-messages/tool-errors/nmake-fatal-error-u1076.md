@@ -1,35 +1,33 @@
 ---
-title: "NMAKE の致命的なエラー U1076 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "U1076"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "U1076"
+title: "NMAKE の致命的なエラー U1076 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: U1076
+dev_langs: C++
+helpviewer_keywords: U1076
 ms.assetid: f8a6c646-0c49-4ee3-bb74-ab916a7aa6ff
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 0cd06a1acbef229e8963f6efab13ed7a6cf8f7ce
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# NMAKE の致命的なエラー U1076
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-名前が長すぎます。  
+# <a name="nmake-fatal-error-u1076"></a>NMAKE の致命的なエラー U1076
+名が長すぎます  
   
- 文字列が次のいずれかの制限を超えました。  
+ 文字列では、いずれか、次の制限を超えています。  
   
--   1024 文字 \(マクロ名の場合\)  
+-   マクロ名を 1024 文字です。  
   
--   256 文字 \(ターゲット パス名の場合\)  
+-   ターゲット パス名は、256 文字です。  
   
--   2048 文字 \(コマンドの場合\)
+-   コマンドの 2048 文字です。

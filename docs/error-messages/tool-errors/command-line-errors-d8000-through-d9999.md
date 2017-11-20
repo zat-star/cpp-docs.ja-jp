@@ -1,32 +1,32 @@
 ---
-title: "コマンド ライン エラー D8000 から D9999 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
+title: "コマンド ライン エラー D8000 から D9999 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs: C++
 ms.assetid: d02ec7df-26a5-4198-ac92-87b29ec9d5c8
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "15"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 2210ff4805138fb77e6a61f430ace25b8be65ff6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コマンド ライン エラー D8000 から D9999
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、ビルド ツールによって生成されるエラーについて説明します。  特定のエラー メッセージに関するヘルプを表示するには、\[出力\] ウィンドウでエラー番号をクリックして F1 キーを押すか、または \[キーワード\] の **\[検索する文字列\]** ボックスにエラー番号を入力するか、次のリンクをクリックします。  
+# <a name="command-line-errors-d8000-through-d9999"></a>コマンド ライン エラー D8000 から D9999
+ここでは、ビルド ツールによって生成されるエラーについて説明します。 エラー番号は、出力ウィンドウの上にマウス ポインターをクリックするか特定のエラー メッセージに関するヘルプを表示し、内のエラー番号を入力、F1 キーを押して、**探します**ボックスに、インデックス、または次のリンクをクリックします。  
   
- [コマンド ライン エラー D8016](../Topic/Command-Line%20Error%20D8016.md)  
+ [コマンド ライン エラー D8016](../../error-messages/tool-errors/command-line-error-d8016.md)  
   
  [コマンド ライン エラー D8021](../../error-messages/tool-errors/command-line-error-d8021.md)  
   
- [コマンド ライン エラー D8022](../Topic/Command-Line%20Error%20D8022.md)  
+ [コマンド ライン エラー D8022](../../error-messages/tool-errors/command-line-error-d8022.md)  
   
  [コマンド ライン エラー D8027](../../error-messages/tool-errors/command-line-error-d8027.md)  
   
@@ -34,7 +34,7 @@ caps.handback.revision: 15
   
  [コマンド ライン エラー D8037](../../error-messages/tool-errors/command-line-error-d8037.md)  
   
- [コマンド ライン エラー D8045](../Topic/Command-Line%20Error%20D8045.md)  
+ [コマンド ライン エラー D8045](../../error-messages/tool-errors/command-line-error-d8045.md)  
   
  [コマンド ラインの警告 D9024](../../error-messages/tool-errors/command-line-warning-d9024.md)  
   
@@ -54,7 +54,7 @@ caps.handback.revision: 15
   
  [コマンド ラインの警告 D9041](../../error-messages/tool-errors/command-line-warning-d9041.md)  
   
- [コマンド ラインの警告 D9043](../Topic/Command-Line%20Warning%20D9043.md)  
+ [コマンド ラインの警告 D9043](../../error-messages/tool-errors/command-line-warning-d9043.md)  
   
-## 参照  
- [C\/C\+\+ ビルド エラー](../../error-messages/compiler-errors-1/c-cpp-build-errors.md)
+## <a name="see-also"></a>関連項目  
+ [C/C++ ビルド エラー](../../error-messages/compiler-errors-1/c-cpp-build-errors.md)

@@ -1,32 +1,30 @@
 ---
-title: "importidl | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.importidl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "importidl attribute"
+title: "importidl |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.importidl
+dev_langs: C++
+helpviewer_keywords: importidl attribute
 ms.assetid: 4b0a4b55-6c57-4e6e-bc7b-a12cc8063941
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8842141b1c6e8159023da9a7cc486e81460ef36b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# importidl
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-生成された .idl ファイルに指定の .idl ファイルに挿入します。  
+# <a name="importidl"></a>importidl
+指定された .idl ファイルを生成された .idl ファイルに挿入します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,16 +33,16 @@ caps.handback.revision: 10
 ) ];  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `idl_file`  
- 独自のアプリケーション用に生成される .idl ファイルとマージする .idl ファイルの名前を指定します。  
+ アプリケーションに対して生成される .idl ファイルにマージする .idl ファイルの名前を識別します。  
   
-## 解説  
- **importidl** C\+\+ 属性はプログラムで生成された .idl ファイルにライブラリ ブロックの外部セクション `idl_file`\(\) とプログラムで生成された .idl ファイルのライブラリのセクションにライブラリのセクション \(\) `idl_file` します。  
+## <a name="remarks"></a>コメント  
+ **Importidl** C++ 属性ライブラリ ブロックの外側でセクションの配置 (で`idl_file`) に、プログラムの生成された .idl ファイルとライブラリのセクション (で`idl_file`) ライブラリのセクションに、プログラムの生成された .idl ファイルです。  
   
- 生成された .idl ファイルを使用して渡します。コード化された .idl ファイルを使用する場合は**importidl** を操作することもできます。  
+ 使用することがあります**importidl**など、生成された .idl ファイルを手動でコーディングした .idl ファイルを使用する場合。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cpp_attr_ref_importidl.cpp  
@@ -53,24 +51,23 @@ caps.handback.revision: 10
 [importidl("import.idl")];  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|任意|  
-|**複数回の適用**|Ｘ|  
+|**対象**|任意の場所|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [Compiler Attributes](../windows/compiler-attributes.md)   
- [Stand\-Alone Attributes](../Topic/Stand-Alone%20Attributes.md)   
- [import](../windows/import.md)   
+## <a name="see-also"></a>関連項目  
+ [コンパイラ属性](../windows/compiler-attributes.md)   
+ [スタンドアロン属性](../windows/stand-alone-attributes.md)   
+ [インポート](../windows/import.md)   
  [importlib](../windows/importlib.md)   
- [include](../windows/include-cpp.md)   
+ [含まれます](../windows/include-cpp.md)   
  [includelib](../windows/includelib-cpp.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

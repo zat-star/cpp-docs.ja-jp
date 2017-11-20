@@ -4,42 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- xfunctional/std::mem_fun1_ref_t
-- mem_fun1_ref_t
-dev_langs:
-- C++
-helpviewer_keywords:
-- mem_fun1_ref_t class
+f1_keywords: xfunctional/std::mem_fun1_ref_t
+dev_langs: C++
+helpviewer_keywords: mem_fun1_ref_t class
 ms.assetid: 7d6742f6-19ba-4523-b3c8-0e5b8f11464f
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: 2a16a4ed9133f3d72562053845a99b58cfe2777c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
-
+ms.openlocfilehash: 8173e0c9c33b649ab298dc8ece2757f492edaecd
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="memfun1reft-class"></a>mem_fun1_ref_t クラス
 参照引数による初期化を行うときに、1 つの引数を使用する **non_const** メンバー関数を二項関数オブジェクトとして呼び出せるようにするアダプター クラス。  
@@ -73,7 +53,7 @@ class mem_fun1_ref_t : public binary_function<Type, Arg, Result> {
  適合可能な二項関数。  
   
 ## <a name="remarks"></a>コメント  
- このテンプレート クラスは `_Pm` のコピーをプライベート メンバー オブジェクトに格納します。これは、**Type** クラスのメンバー関数へのポインターである必要があります。 そのメンバー関数 `operator()` は、(**left**.\* `_Pm`)( **right**).  
+ このテンプレート クラスは `_Pm` のコピーをプライベート メンバー オブジェクトに格納します。これは、**Type** クラスのメンバー関数へのポインターである必要があります。 そのメンバー関数を定義`operator()`を返すよう (**左**.\*`_Pm`) (**右**)。  
   
 ## <a name="example"></a>例  
  `mem_fun1_ref_t` のコンストラクターは通常は直接使用されません。ヘルパー関数 `mem_fun_ref` を使用してメンバー関数を適合させます。 メンバー関数アダプターの使用例については、「[mem_fun_ref](../standard-library/functional-functions.md#mem_fun_ref)」を参照してください。  
@@ -86,7 +66,6 @@ class mem_fun1_ref_t : public binary_function<Type, Arg, Result> {
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 
 
 

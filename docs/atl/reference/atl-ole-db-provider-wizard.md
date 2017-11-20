@@ -4,48 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-f1_keywords:
-- vc.codewiz.class.atl.provider.overview
-dev_langs:
-- C++
+f1_keywords: vc.codewiz.class.atl.provider.overview
+dev_langs: C++
 helpviewer_keywords:
 - ATL OLE DB Provider Wizard
 - ATL projects, adding ATL OLE DB providers
 ms.assetid: cf91ba78-01d1-4d12-b673-e95d96bfbebe
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: a28a47d9af89470c63903ccc338c680361b1cada
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 170f10d06112969d9147c37b20572f0888140d0a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="atl-ole-db-provider-wizard"></a>ATL OLE DB プロバイダー ウィザード
 このウィザードでは、OLE DB プロバイダーを構成するクラスを作成します。  
   
 ## <a name="remarks"></a>コメント  
- 以降で[!INCLUDE[vs_orcas_long](../../atl/reference/includes/vs_orcas_long_md.md)]、このウィザードで生成された登録スクリプトは、下にある場合は、その COM コンポーネントを登録は**HKEY_CURRENT_USER**の代わりに**HKEY_LOCAL_MACHINE**です。 この動作を変更するには、設定、**すべてのユーザー コンポーネントを登録**ATL ウィザードのオプションです。  
+ Visual Studio 2008 以降では、このウィザードで生成された登録スクリプトは下にある場合は、その COM コンポーネントを登録、 **HKEY_CURRENT_USER**の代わりに**HKEY_LOCAL_MACHINE**です。 この動作を変更するには、設定、**すべてのユーザー コンポーネントを登録**ATL ウィザードのオプションです。  
   
  次の表では、ATL OLE DB プロバイダー ウィザードのオプションについて説明します。  
   
@@ -56,12 +38,12 @@ ms.lasthandoff: 04/04/2017
  コクラスの名前。 ProgID 名は、この名前の一致するように変更されます。  
   
  **属性付き**  
- このオプションは、ウィザードが属性またはテンプレートの宣言を使用してプロバイダー クラスを作成するかどうかを指定します。 このオプションを選択すると、ウィザードは、テンプレートの宣言 (これは、既定のオプション属性付きプロジェクトを作成する場合) の代わりに属性を使用します。 このオプションをオフにすると、ウィザードは、属性 (これは、既定のオプション属性なしのプロジェクトを作成する場合) ではなくテンプレートの宣言を使用します。  
+ このオプションは、属性またはテンプレート宣言を使用して、プロバイダー クラスを作成するかどうかを指定します。 このオプションを選択すると、ウィザードは、テンプレートの宣言 (これは、既定のオプション属性付きプロジェクトを作成する場合) の代わりに属性を使用します。 このオプションをオフにすると、ウィザードは、属性 (これは、既定のオプション属性なしのプロジェクトを作成する場合) ではなくテンプレートの宣言を使用します。  
   
  非属性プロジェクトを作成するときにこのオプションを選択する場合、ウィザードは、警告するプロジェクトは属性付きプロジェクトに変換され、続行するかどうするかどうかを確認します。  
   
  **ProgID**  
- ProgID、またはプログラム識別子は、GUID ではなく、アプリケーションが使用できるテキスト文字列です。 ProgID 名の形式*projectname.coclassname です*です。  
+ ProgID、またはプログラム識別子は、アプリケーションが GUID の代わりに使用できるテキスト文字列です。 ProgID 名の形式*projectname.coclassname です*です。  
   
  **Version**  
  プロバイダーのバージョン番号。 既定値は 1 です。  
@@ -95,5 +77,4 @@ ms.lasthandoff: 04/04/2017
   
 ## <a name="see-also"></a>関連項目  
  [ATL OLE DB プロバイダー](../../atl/reference/adding-an-atl-ole-db-provider.md)
-
 

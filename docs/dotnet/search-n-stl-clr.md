@@ -1,32 +1,30 @@
 ---
-title: "search_n (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::search_n"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "search_n 関数 [STL/CLR]"
+title: "search_n (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::search_n
+dev_langs: C++
+helpviewer_keywords: search_n function [STL/CLR]
 ms.assetid: 34d9fd07-b160-4b1e-a632-303200740dfc
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bdf58555a995b5be0c5726f3136afc8eafd64bfc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# search_n (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-二項述語で指定した値に特定の値やリレーションシップを持つ要素の指定された数値の範囲の最初のサブシーケンスを検索します。  
+# <a name="searchn-stlclr"></a>search_n (STL/CLR)
+特定の値を持つか、二項述語によって指定される値と関連する、指定された数の要素で構成される範囲内の最初のサブシーケンスを検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _FwdIt1, class _Diff2, class _Ty> inline  
@@ -37,13 +35,13 @@ template<class _FwdIt1, class _Diff2, class _Ty, class _Pr> inline
         _Diff2 _Count, const _Ty& _Val, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `search_n`も同じように動作します。  詳細については、「[search\_n](../Topic/search_n.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`search_n`です。 詳細については、次を参照してください。 [search_n](../standard-library/algorithm-functions.md#search_n)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

@@ -1,36 +1,35 @@
 ---
-title: "CDynamicAccessor::SetBlobHandling | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CDynamicAccessor::SetBlobHandling"
-  - "CDynamicAccessor.SetBlobHandling"
-  - "ATL::CDynamicAccessor::SetBlobHandling"
-  - "SetBlobHandling"
-  - "ATL.CDynamicAccessor.SetBlobHandling"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetBlobHandling メソッド"
+title: "Cdynamicaccessor::setblobhandling |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CDynamicAccessor::SetBlobHandling
+- CDynamicAccessor.SetBlobHandling
+- ATL::CDynamicAccessor::SetBlobHandling
+- SetBlobHandling
+- ATL.CDynamicAccessor.SetBlobHandling
+dev_langs: C++
+helpviewer_keywords: SetBlobHandling method
 ms.assetid: fa8b0bb3-a21b-4d64-aeef-e79bf61d079c
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c6117d0ebc2e41ee70900d17dd9a4804c232a070
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDynamicAccessor::SetBlobHandling
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-現在の行の BLOB の処理値を設定します。  
+# <a name="cdynamicaccessorsetblobhandling"></a>CDynamicAccessor::SetBlobHandling
+BLOB の現在の行の値の処理を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -39,23 +38,23 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `eBlobHandling`  
- BLOB データをどのように処理されるかどうかを指定します。  これは、次の値を設定できます。:  
+ BLOB データを処理する方法を指定します。 次の値がかかることができます。  
   
--   **DBBLOBHANDLING\_DEFAULT**: BLOB データとして `nBlobSize` 大 \(ように `SetBlobSizeLimit`で設定された\) 列のデータを処理し、`ISequentialStream` または `IStream` オブジェクトを通じて取得してください。  このオプションは `nBlobSize` より大きい、または BLOB データとして **DBTYPE\_IUNKNOWN** として一覧表示されている任意のデータを含む列をバインドするようにしようとします。  
+-   **DBBLOBHANDLING_DEFAULT**: よりも大きい列のデータを処理`nBlobSize`(によって設定`SetBlobSizeLimit`) として BLOB データとを通じて取得、`ISequentialStream`または`IStream`オブジェクト。 このオプションはよりも大きいデータを含むすべての列をバインドしよう`nBlobSize`として示すまたは**DBTYPE_IUNKNOWN** BLOB データとして。  
   
--   **DBBLOBHANDLING\_NOSTREAMS**: BLOB データとして `nBlobSize` 大 \(ように `SetBlobSizeLimit`で設定された\) 列のデータを処理し、プロバイダーは、コンシューマー所有割り当てられたメモリの参照によって取得してください。  このオプションは、複数の BLOB の列には、プロバイダーは、アクセサー 1 人の `ISequentialStream` の 1 種類のオブジェクトだけをサポートするテーブルに役立ちます。  
+-   **DBBLOBHANDLING_NOSTREAMS**: よりも大きい列のデータを処理`nBlobSize`(によって設定`SetBlobSizeLimit`) として BLOB データと、プロバイダーに割り当てられた、コンシューマー所有のメモリ内の参照を取得します。 このオプションは、1 つ以上の BLOB 列を含むテーブルに対して便利とプロバイダーがサポートする 1 つだけ`ISequentialStream`アクセサーごとのオブジェクト。  
   
--   **DBBLOBHANDLING\_SKIP**: \(バインド\) は Blob を含むとして修飾する列を省略します \(アクセサーに列の値をバインドしませんされますが、まだ取得しません列のステータスと長さを取得します。  
+-   **DBBLOBHANDLING_SKIP**: Skip (バインドしない) を含む Blob として修飾列 (アクセサーはバインドまたは列の値を取得されませんが、列のステータスや長さも取得されます)。  
   
-## 解説  
- **開く**を呼び出す前に `SetBlobHandling` を呼び出す必要があります。  
+## <a name="remarks"></a>コメント  
+ 呼び出す必要があります`SetBlobHandling`呼び出す前に**開く**です。  
   
- コンストラクター メソッド [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) は **DBBLOBHANDLING\_DEFAULT**BLOB の処理に値を設定します。  
+ コンス トラクター メソッド[CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) BLOB 処理する値を設定**DBBLOBHANDLING_DEFAULT**です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicAccessor クラス](../../data/oledb/cdynamicaccessor-class.md)

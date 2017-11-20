@@ -1,41 +1,41 @@
 ---
-title: "軽量タスク | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "軽量タスク"
+title: "軽量タスク |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: lightweight tasks
 ms.assetid: b6dcfc7a-9fa9-4144-96a6-2845ea272017
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9b9caa028d7f870ecdd6c67503c6bc9448cff1d3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 軽量タスク
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、同時実行ランタイムでの軽量タスクの役割について説明します。  *軽量タスク*は、`concurrency::Scheduler` オブジェクトまたは `concurrency::ScheduleGroup` オブジェクトから直接スケジュールするタスクです。  軽量タスクは、Windows API の [CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453) 関数に指定する関数と類似しています。  したがって、軽量タスクは、既存のコードを改変して同時実行ランタイムのスケジュール機能を使用する場合に有用です。  同時実行ランタイム自体は、非同期エージェントのスケジュールおよび非同期メッセージ ブロック間におけるメッセージの送信に、軽量タスクを使用します。  
+# <a name="lightweight-tasks"></a>軽量タスク
+このドキュメントでは、軽量タスク、同時実行ランタイムでの役割について説明します。 A*軽量タスク*から直接スケジュールするタスク、`concurrency::Scheduler`または`concurrency::ScheduleGroup`オブジェクト。 軽量タスクが Windows API に提供する関数に似た[CreateThread](http://msdn.microsoft.com/library/windows/desktop/ms682453)関数。 したがって、軽量タスクは、同時実行ランタイムのスケジュール機能を使用する既存のコードを改変する場合に役立ちます。 同時実行ランタイム自体では、軽量タスクを使用して、非同期エージェントをスケジュールし、非同期メッセージ ブロックの間でメッセージを送信します。  
   
 > [!TIP]
->  同時実行ランタイムには既定のスケジューラが備わっているため、アプリケーションでスケジューラを作成する必要はありません。  タスク スケジューラではアプリケーションのパフォーマンスを微調整できるため、同時実行ランタイムを初めて使用する場合は、[並列パターン ライブラリ \(PPL\)](../../parallel/concrt/parallel-patterns-library-ppl.md) または[非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)から始めることをお勧めします。  
+>  同時実行ランタイムには既定のスケジューラが用意されているため、アプリケーションにスケジューラを作成する必要はありません。 始めることをお勧めタスク スケジューラを使用してアプリケーションのパフォーマンスを微調整できますが、ため、[並列パターン ライブラリ (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)または[非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)場合同時実行ランタイムに新しいです。  
   
- 軽量タスクは、非同期エージェントおよびタスク グループよりもオーバーヘッドが少なくて済みます。  たとえば、軽量タスクが終了しても、ランタイムは通知を行いません。  さらに、軽量タスクからスローされた例外を、ランタイムはキャッチまたは処理しません。  例外処理および軽量タスクの詳細については、「[例外処理](../Topic/Exception%20Handling%20in%20the%20Concurrency%20Runtime.md)」を参照してください。  
+ 軽量タスクは、非同期エージェントやタスク グループよりもオーバーヘッドが少ないを実行します。 たとえば、ランタイムは通知されず、軽量タスクが終了したとき。 さらに、ランタイムはキャッチまたは処理は、軽量タスクからスローされる例外。 例外処理や軽量タスクの詳細については、次を参照してください。[例外処理](../../parallel/concrt/exception-handling-in-the-concurrency-runtime.md)です。  
   
- ほとんどのタスクで、タスク グループ、並列アルゴリズムなどの、より信頼性の高い機能を使用することをお勧めします。これらを使用することにより、複雑なタスクをより基本的なタスクに簡単に分割することができるためです。  タスク グループの詳細については、「[タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)」を参照してください。  並列アルゴリズムの詳細については、「[並列アルゴリズム](../Topic/Parallel%20Algorithms.md)」を参照してください。  
+ ほとんどのタスク、タスク グループなどのより堅牢な機能を使用して、並列アルゴリズムができるためより簡単に複雑なタスクに分割より基本的なものをお勧めします。 タスク グループの詳細については、次を参照してください。[タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)です。 並列アルゴリズムの詳細については、次を参照してください。[並列アルゴリズム](../../parallel/concrt/parallel-algorithms.md)です。  
   
- 軽量タスクを作成するには、[concurrency::ScheduleGroup::ScheduleTask](../Topic/ScheduleGroup::ScheduleTask%20Method.md)、[concurrency::CurrentScheduler::ScheduleTask](../Topic/CurrentScheduler::ScheduleTask%20Method.md)、または [concurrency::Scheduler::ScheduleTask](../Topic/Scheduler::ScheduleTask%20Method.md) のメソッドを呼び出します。  シャットダウンするために終了したとき、親スケジューラが待機または [concurrency::event](../Topic/event%20Class.md) オブジェクトなどの同期機構を使用する軽量タスクを待機する。  
+ 軽量タスクを作成するには、 [concurrency::ScheduleGroup::ScheduleTask](reference/schedulegroup-class.md#scheduletask)、 [concurrency::CurrentScheduler::ScheduleTask](reference/currentscheduler-class.md#scheduletask)、または[concurrency::Scheduler::ScheduleTask](reference/scheduler-class.md#scheduletask)メソッドです。 軽量タスクが終了するまで待つ、シャット ダウンまたはなどの同期機構を使用する親スケジューラの待機、 [concurrency::event](../../parallel/concrt/reference/event-class.md)オブジェクト。  
   
-## 例  
- 既存のコードを改変して軽量タスクを使用する方法を示した例については、「[チュートリアル: 既存のコードを改変して軽量タスクを使用する](../Topic/Walkthrough:%20Adapting%20Existing%20Code%20to%20Use%20Lightweight%20Tasks.md)」を参照してください。  
+## <a name="example"></a>例  
+ 例については、軽量タスクを使用する既存のコードを改変する方法については、次を参照してください。[チュートリアル: 既存のコードを使用して軽量タスクを適応させる](../../parallel/concrt/walkthrough-adapting-existing-code-to-use-lightweight-tasks.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [タスク スケジューラ](../../parallel/concrt/task-scheduler-concurrency-runtime.md)   
- [チュートリアル: 既存のコードを改変して軽量タスクを使用する](../Topic/Walkthrough:%20Adapting%20Existing%20Code%20to%20Use%20Lightweight%20Tasks.md)
+ [チュートリアル: 既存のコードを改変して軽量タスクを使用する](../../parallel/concrt/walkthrough-adapting-existing-code-to-use-lightweight-tasks.md)
+

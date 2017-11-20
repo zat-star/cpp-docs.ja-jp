@@ -4,43 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- PRJ0046
-dev_langs:
-- C++
-helpviewer_keywords:
-- PRJ0046
+f1_keywords: PRJ0046
+dev_langs: C++
+helpviewer_keywords: PRJ0046
 ms.assetid: 59442319-4481-4b97-a4a5-16f52fc718e7
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 6ee50dcaafc15feafc3c2edcbe739622be09e557
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 4855a4dbd4516ca1106e6acd35471bd8d4bae42e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="project-build-error-prj0046"></a>プロジェクト ビルド エラー PRJ0046
-指定されたコマンド ラインが空だったため、コマンド ラインを起動できませんでした。  
+指定された 1 つが空であるために、コマンドラインを起動できませんでした。  
   
- メイクファイルの構成に空のコマンドラインが指定されましたコマンドラインが必要です。
+ メイクファイルの構成の空のコマンドラインが指定されましたコマンドラインが必要です。

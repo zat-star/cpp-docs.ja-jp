@@ -1,32 +1,30 @@
 ---
-title: "coclass | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.coclass"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "coclass attribute"
+title: "コクラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.coclass
+dev_langs: C++
+helpviewer_keywords: coclass attribute
 ms.assetid: 42da6a10-3af9-4b43-9a1d-689d00b61eb3
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d1699d47e9c3ca8778922af16587915fb3e6df45
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# coclass
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="coclass"></a>coclass
 COM インターフェイスを実装する COM オブジェクトを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,55 +32,55 @@ COM インターフェイスを実装する COM オブジェクトを作成し�
   
 ```  
   
-## 解説  
- **コクラス**  C\+\+ 属性は生成された .idl ファイルはコクラスの構造を配置します。  
+## <a name="remarks"></a>コメント  
+ **コクラス**C++ 属性は、生成された .idl ファイル内のコクラス構成要素を配置します。  
   
- コクラスを定義する場合は[uuid](../windows/uuid-cpp-attributes.md)[バージョン](../windows/version-cpp.md)[スレッド](../windows/threading-cpp.md)[vi\_progid](../windows/vi-progid.md) と [ProgID](../Topic/progid.md) の属性を指定できます。  これらのどちらでも指定しない場合が生成されます。  
+ コクラスを定義するときに指定することも、 [uuid](../windows/uuid-cpp-attributes.md)、[バージョン](../windows/version-cpp.md)、[スレッド](../windows/threading-cpp.md)、 [vi_progid](../windows/vi-progid.md)、および[progid](../windows/progid.md)属性。 いずれかのファイルが指定されていない場合それが生成されます。  
   
- 2 個のヘッダー ファイルにが含まれている場合  **コクラス**  のクラスはGUID を属性付き ATL オブジェクトと属性を指定しない場合コンパイラはこれらのクラスに同じ GUID を使用してMIDL のエラーが発生します。  したがって  **コクラス**  を使用すると`uuid` の属性を使用します。  
+ 2 つのヘッダー ファイルを持つクラスが含まれている場合、**コクラス**属性を GUID を指定しない、コンパイラは両方のクラスに対して、同じ GUID を使用し、MIDL のエラーが発生します。  したがって、使用する必要があります、`uuid`属性を使用するときに**コクラス**です。  
   
  **ATL プロジェクト**  
   
- この属性はATL プロジェクトのクラスまたは構造体の定義の前にある場合は:  
+ この属性は、ATL プロジェクトでは、クラスまたは構造体の定義を前に。  
   
--   コードまたはデータがオブジェクトの自動登録をサポートするために挿入します。  
+-   コードまたはオブジェクトの自動登録をサポートするためにデータを挿入します。  
   
--   コードまたはデータがオブジェクトの COM クラス ファクトリをサポートするために挿入します。  
+-   コードまたはオブジェクトの COM クラス ファクトリをサポートするためにデータを挿入します。  
   
--   コードまたはデータが **IUnknown** を実行しオブジェクトの COM オブジェクトの作成を行うに挿入します。  
+-   コードまたは実装するデータが挿入**IUnknown**と COM で作成可能オブジェクトのオブジェクトを作成します。  
   
- 具体的には次の基本クラスはターゲット オブジェクトに追加されます :  
+ 具体的には、次の基本クラスは、ターゲット オブジェクトに追加されます。  
   
--   [CComCoClass のクラス](../Topic/CComCoClass%20Class.md) はオブジェクトの既定のクラス ファクトリと集約モデルを提供します。  
+-   [CComCoClass クラス](../atl/reference/ccomcoclass-class.md)オブジェクトの既定のクラス ファクトリと集計モデルを提供します。  
   
--   [CComObjectRootEx のクラス](../atl/reference/ccomobjectrootex-class.md) に [スレッド](../windows/threading-cpp.md) の属性で指定されたスレッド処理モデルのクラスに基づくテンプレートがあります。   **スレッド**  の属性を指定しない場合既定のアパートメント スレッド モデルはです。  
+-   [CComObjectRootEx クラス](../atl/reference/ccomobjectrootex-class.md)によって指定されたスレッド処理モデル クラスに基づくテンプレートを持つ、[スレッド](../windows/threading-cpp.md)属性。 場合、**スレッド**属性が指定されていない、既定のスレッド モデルがアパートメントです。  
   
--   [IProvideClassInfo2Impl](../atl/reference/iprovideclassinfo2impl-class.md) は [作成](../windows/noncreatable.md) の属性がターゲット オブジェクトに対して指定する追加されます。  
+-   [IProvideClassInfo2Impl](../atl/reference/iprovideclassinfo2impl-class.md)場合は、追加、 [noncreatable](../windows/noncreatable.md)ターゲット オブジェクトの属性が指定されていません。  
   
- 最後に埋め込み IDL を使用して定義されていないデュアル インターフェイスが [IDispatchImpl](../atl/reference/idispatchimpl-class.md) の対応するクラスに置き換えられます。  デュアル インターフェイスに埋め込み IDL で定義されている場合基本クラスのリストに特定のインターフェイスは変更されません。  
+ 最後に、埋め込み IDL で定義されていない任意のデュアル インターフェイスが置き換えられます、対応する[IDispatchImpl](../atl/reference/idispatchimpl-class.md)クラスです。 デュアル インターフェイスが埋め込み IDL で定義されている場合は、基底のリストに特定のインターフェイスは変更されません。  
   
- **コクラス**  の属性は次の関数を `CComCoClass`基本クラスの静的メソッドとして挿入されたコードまたは `GetObjectCLSID` で使用できるようにするには :  
+ **コクラス**属性も使用可能、次の関数の場合または挿入されたコードを使用して`GetObjectCLSID`、基本クラスの静的メソッドとして`CComCoClass`:  
   
--   `UpdateRegistry` は前のクラス ファクトリを登録します。  
+-   `UpdateRegistry`ターゲット クラスのクラス ファクトリを登録します。  
   
--   または `GetObjectCLSID` の登録に関連する対象のクラスの CLSID を取得するために使用できます。  
+-   `GetObjectCLSID`、、登録に関連することもできますをターゲット クラスの CLSID を取得します。  
   
--   **GetObjectFriendlyName** の既定ではは 「形式 \<target *クラス name\>*`Object` 」の文字列。  この関数が既に存在する場合は追加されません。  自動的に生成する場合よりわかりやすい名前を返すため対象クラスにはこの関数を追加します。  
+-   **GetObjectFriendlyName**既定の形式の文字列が返されます"\<*対象のクラス名*> `Object`"です。 この関数が既に存在する場合は追加されません。 この関数を自動的に生成されたものよりもわかりやすい名を返す対象クラスに追加します。  
   
--   **GetProgID** は登録に関連する [ProgID](../Topic/progid.md) の属性で指定された文字列を返します。  
+-   **GetProgID**、登録に関連すると指定した文字列を返します、 [progid](../windows/progid.md)属性。  
   
--   **GetVersionIndependentProgID** に **GetProgID** と同じ機能を持ちますが[vi\_progid](../windows/vi-progid.md) で指定された文字列を返します。  
+-   **GetVersionIndependentProgID**と同じ機能を持つ**GetProgID**で指定された文字列を返しますが、 [vi_progid](../windows/vi-progid.md)です。  
   
- COM マップに関連するターゲット クラスに次の変更が行われます。:  
+ 対象のクラスには、COM マップに関連する、次の変更が行われました。  
   
--   COM マップ先はクラスがから派生する [COM インターフェイスのエントリ ポイント](../mfc/com-interface-entry-points.md) で指定されているすべてのエントリは[集約](../windows/aggregates.md) の属性で必要な属性と属性はすべてのインターフェイスのエントリが追加されます。  
+-   COM マップが追加され、すべてのインターフェイスのターゲット クラスの派生元のエントリとで指定されたすべてのエントリが、 [COM インターフェイス エントリ ポイント](../mfc/com-interface-entry-points.md)属性またはで必要な[集計](../windows/aggregates.md)属性。  
   
--   [OBJECT\_ENTRY\_AUTO](../Topic/OBJECT_ENTRY_AUTO.md) マクロは COM マップに挿入されます。  このマクロは機能の点で [OBJECT\_ENTRY](http://msdn.microsoft.com/ja-jp/abd10ee2-54f0-4f94-9ec2-ddf8f4c8c8cd) に似ていますが対象のクラスの COM マップの一部である必要はありません。  
+-   [OBJECT_ENTRY_AUTO](../atl/reference/object-map-macros.md#object_entry_auto)マクロは、COM マップに挿入します。
   
- クラスの .idl ファイル内に生成されるクラスとコクラスの名前と同じ名前になります。  たとえばMIDL で生成されるヘッダー ファイルを使用してクライアントのコクラス CMyClass のクラス ID にアクセスするには次の例を使用 CLSID\_CMyClass 参照します。  
+ クラスの .idl ファイル内に生成されるコクラスの名前は、クラスと同じ名前になります。  たとえばと次の例を参照する、MIDL によって生成されたヘッダー ファイルを使用して、クライアントで CMyClass、コクラスのクラス ID にアクセスする CLSID_CMyClass を使用します。  
   
-## 使用例  
- 次のコードは  **コクラス**  属性の使用方法を示します :  
+## <a name="example"></a>例  
+ 次のコードを使用する方法を示しています、**コクラス**属性。  
   
 ```  
 // cpp_attr_ref_coclass1.cpp  
@@ -100,7 +98,7 @@ appobject, uuid("9E66A294-4365-11D2-A997-00C04FA37DDB")]
 class CMyClass : public I {};  
 ```  
   
- 次の例では  **コクラス**  の属性によって挿入されたコードに表示される関数の既定の実装をオーバーライドする方法を説明します。  挿入されたコードの表示の詳細については [\/Fx](../build/reference/fx-merge-injected-code.md) を参照してください。  このクラスで使用するインターフェイス挿入されるコードでの基本クラスが表示されます。    クラスが挿入されたコードが既定で含まれておりコクラスのベースとして明示的にそのクラスを指定する場合はさらに属性プロバイダーはコード内の指定した形式を使用します。  
+ 次の例は、によって挿入されたコードに表示される関数の既定の実装をオーバーライドする方法を示します、**コクラス**属性。 挿入されたコードを参照する方法の詳細については、「 [/Fx](../build/reference/fx-merge-injected-code.md) 」を参照してください。 すべての基底クラスまたはインターフェイス クラスを使用することは、挿入されたコードに表示されます。   さらに、挿入されたコードで既定では、クラスが含まれている、明示的に指定するクラスをベースとして、コクラスの場合は、属性プロバイダーは、コードで指定されたフォームを使用します。  
   
 ```  
 // cpp_attr_ref_coclass2.cpp  
@@ -136,22 +134,22 @@ public:
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct`|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**class**、 `struct`|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [COM Attributes](../Topic/COM%20Attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [appobject](../Topic/appobject.md)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [COM 属性](../windows/com-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [appobject](../windows/appobject.md)

@@ -1,40 +1,40 @@
 ---
-title: "出力パラメーター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB, ストアド プロシージャ"
-  - "プロシージャ呼び出し"
-  - "プロシージャ呼び出し, ストアド プロシージャ"
-  - "ストアド プロシージャ, 呼び出し"
-  - "ストアド プロシージャ, パラメーター"
+title: "出力パラメーター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB, stored procedures
+- stored procedures, calling
+- stored procedures, parameters
+- procedure calls
+- procedure calls, stored procedures
 ms.assetid: 4f7c2700-1c2d-42f3-8c9f-7e83962b2442
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3d1f1a4c84c4567b325bb19e3696170f7960b46b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 出力パラメーター
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ストアド プロシージャの呼び出しは、SQL コマンドの呼び出しと似ています。  主な違いは、ストアド プロシージャが出力パラメーターと戻り値を使用することです。  
+# <a name="output-parameters"></a>出力パラメーター
+ストアド プロシージャの呼び出しは、SQL コマンドの呼び出しに似ています。 主な違いは、ストアド プロシージャが出力パラメーター (または「出力パラメーター」) を使用して、戻り値です。  
   
- 次のストアド プロシージャでは、最初の "?" が戻り値 \(phone\) で、2 番目の "?" が入力パラメーター \(name\) です。  
+ 次のストアド プロシージャ、最初 '? '戻り値 (phone) と、2 つ目は、'?' (名) の入力パラメーターは。  
   
 ```  
 DEFINE_COMMAND(CMySProcAccessor, _T("{ ? = SELECT phone FROM shippers WHERE name = ? }")  
 ```  
   
- パラメーター マップで、入力パラメーターと出力パラメーターを指定します。  
+ パラメーターのマップでは、in、out パラメーターを指定します。  
   
 ```  
 BEGIN_PARAM_MAP(CMySProcAccessor)  
@@ -45,12 +45,12 @@ BEGIN_PARAM_MAP(CMySProcAccessor)
 END_PARAM_MAP()  
 ```  
   
- アプリケーションでは、ストアド プロシージャから返された出力を処理する必要があります。  別の OLE DB プロバイダーが、結果の処理中に別の時点で出力パラメーターと戻り値を返します。  たとえば、SQL Server 用の Microsoft OLE DB プロバイダー \(SQLOLEDB\) は、ストアド プロシージャから返された結果セットがコンシューマーによって取得または取り消されるまで、出力パラメーターとリターン コードを提供しません。  出力は、サーバーからの最後の TDS パケットで返されます。  
+ アプリケーションでは、ストアド プロシージャから返される出力を処理する必要があります。 さまざまな OLE DB プロバイダーでは、出力パラメーターを取得し、結果の処理中に、異なる時刻で値を返します。 やなどの Microsoft OLE DB プロバイダーの SQL Server (SQLOLEDB) はない出力パラメーターを指定する、コンシューマーが取得されたまたはストアド プロシージャによって返される結果セットを取り消されるまでのコードを返します。 出力は、サーバーから最後の TDS パケットで返されます。  
   
-## 行数  
- OLE DB コンシューマー テンプレートを使用して、出力パラメーターを持つストアド プロシージャを実行する場合は、行セットを閉じるまで行数が設定されません。  
+## <a name="row-count"></a>行の数  
+ 出力パラメーターを持つストアド プロシージャを実行する OLE DB コンシューマー テンプレートを使用する場合、行セットを終了するまで、行の数は設定されません。  
   
- たとえば、1 つの行セットと 1 つの出力パラメーターがあるストアド プロシージャについて考えます。  
+ たとえば、行セットと、出力パラメーターを持つストアド プロシージャについて考えてみます。  
   
 ```  
 create procedure sp_test  
@@ -61,7 +61,7 @@ as
 return 0  
 ```  
   
- @\_rowcount 出力パラメーターは、test テーブルから実際に返された行数を報告します。  ただし、このストアド プロシージャでは、最大行数が 50 に制限されます。  たとえば、test テーブルに 100 行ある場合、このコードは先頭の 50 行だけを取得するため、rowcount は 50 になります。  テーブルに 30 行しかない場合、rowcount は 30 になります。  この値をフェッチする前に、**Close** または **CloseAll** を呼び出して、出力パラメーターにデータを設定する必要があります。  
+ @_rowcount行の数は、実際にテストのテーブルから返された出力パラメーターをレポートします。 ただし、このストアド プロシージャは、最大 50 個の行の数を制限します。 たとえば、テストで 100 行があった場合、行数は 50 になります (ため、このコードは、上位 50 行のみを取得します)。 発生した場合のみ 30 行の表に、行カウントが 30 になります。 呼び出す必要があります**閉じる**または**CloseAll**をその値をフェッチする前に、出力パラメーターを設定します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ストアド プロシージャの使用](../../data/oledb/using-stored-procedures.md)

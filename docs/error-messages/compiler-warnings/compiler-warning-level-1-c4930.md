@@ -1,34 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4930 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4930"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4930"
+title: "コンパイラの警告 (レベル 1) C4930 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4930
+dev_langs: C++
+helpviewer_keywords: C4930
 ms.assetid: 89a206c9-c536-4186-8e81-1cde3e7f4f5b
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 457124730ea38f1e91f7dab0c709568f23cf6fc2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4930
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'prototype' : プロトタイプされている関数が呼び出されませんでした \(変数の定義が意図されていますか?\)。  
+# <a name="compiler-warning-level-1-c4930"></a>コンパイラの警告 (レベル 1) C4930
+'プロトタイプ': プロトタイプ関数が呼び出されません (でした変数の定義が対象としていますか?)  
   
- 未使用の関数プロトタイプが見つかりました。  プロトタイプが変数宣言として指定されている場合は、左右のかっこを削除してください。  
+ 未使用の関数プロトタイプが検出されました。 プロトタイプは、変数の宣言として用意されていますが場合、は、開く/閉じるかっこを削除します。  
   
- 次の例では警告 C4930 が生成されます。  
+ 次の例では、C4930 が生成されます。  
   
 ```  
 // C4930.cpp  
@@ -48,9 +46,9 @@ int main() {
 }  
 ```  
   
- コンパイラが関数のプロトタイプ宣言と関数の呼び出しとを区別できなかった場合にも C4930 が発生します。  
+ C4930 は、コンパイラは関数のプロトタイプの宣言と関数呼び出しの間で区別できないときも発生します。  
   
- 次の例では警告 C4930 が生成されます。  
+ 次の例では、C4930 が生成されます。  
   
 ```  
 // C4930b.cpp  
@@ -121,4 +119,4 @@ int main()
 }  
 ```  
   
- 上の例では、引数を 1 つも受け取らないメソッドの結果が、名前のないローカル クラス変数のコンストラクターの引数として渡されています。  このようなあいまいな呼び出しを解決するには、ローカル変数に名前を付けるか、メソッド呼び出しのプレフィックスとしてオブジェクト インスタンスを \(適切なポインタメンバー演算子を付けて\) 指定します。
+ 上記のサンプルで、引数を受け取らないメソッドの結果は、名前のないローカル クラス変数のコンス トラクターに引数として渡されます。 呼び出しは、ローカル変数の名前を付けるか、オブジェクト インスタンスを適切なメンバーへのポインター演算子と共にメソッドの呼び出しを付けることによりあいまいさを解決できます。

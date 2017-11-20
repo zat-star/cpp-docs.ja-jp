@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,38 +13,21 @@ f1_keywords:
 - ATLBASE/ATL::CComAllocator::Allocate
 - ATLBASE/ATL::CComAllocator::Free
 - ATLBASE/ATL::CComAllocator::Reallocate
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComAllocator class
+dev_langs: C++
+helpviewer_keywords: CComAllocator class
 ms.assetid: 0cd706fd-0c7b-42d3-9054-febe2966fc8e
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: d395d347e81b24462a41de5ae3b9d8791d7f82fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: b1ba2b12110e4c312b84b2a24831687e782cc339
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ccomallocator-class"></a>CComAllocator クラス
-このクラスは、COM メモリ ルーチンを使用してメモリを管理するためのメソッドを提供します。  
+このクラスは、COM メモリ ルーチンを使用しているメモリを管理するためのメソッドを提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -60,11 +42,11 @@ class CComAllocator
 |名前|説明|  
 |----------|-----------------|  
 |[CComAllocator::Allocate](#allocate)|メモリの割り当てにこの静的メソッドを呼び出します。|  
-|[CComAllocator::Free](#free)|割り当てられたメモリを解放するこの静的メソッドを呼び出します。|  
+|[CComAllocator::Free](#free)|この静的メソッドを呼び出して割り当てられたメモリを解放します。|  
 |[CComAllocator::Reallocate](#reallocate)|この静的メソッドを呼び出してメモリを再割り当てください。|  
   
 ## <a name="remarks"></a>コメント  
- このクラスは使用[CComHeapPtr](../../atl/reference/ccomheapptr-class.md) COM メモリ割り当てルーチンを提供します。 対応するクラス[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)、CRT ルーチンを使用するのと同じメソッドを提供します。  
+ このクラスによって使用[CComHeapPtr](../../atl/reference/ccomheapptr-class.md) COM メモリ割り当てルーチンを提供します。 対応するクラス[CCRTAllocator](../../atl/reference/ccrtallocator-class.md)、CRT ルーチンを使用する場合と同じ方法を提供します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
@@ -84,10 +66,10 @@ static void* Allocate(size_t nBytes) throw();
  メモリが不足している場合、割り当てられた領域に void ポインターを返すか、NULL を返します。  
   
 ### <a name="remarks"></a>コメント  
- メモリを割り当てます。 参照してください[CoTaskMemAlloc](http://msdn.microsoft.com/library/windows/desktop/ms692727)詳細です。  
+ メモリを割り当てます。 参照してください[CoTaskMemAlloc](http://msdn.microsoft.com/library/windows/desktop/ms692727)詳細についてはします。  
   
 ##  <a name="free"></a>CComAllocator::Free  
- 割り当てられたメモリを解放するための静的なこの関数を呼び出します。  
+ 割り当てられたメモリを解放する、この静的関数を呼び出します。  
   
 ```
 static void Free(void* p) throw();
@@ -98,7 +80,7 @@ static void Free(void* p) throw();
  割り当てられたメモリへのポインター。  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられたメモリを解放します。 参照してください[CoTaskMemFree](http://msdn.microsoft.com/library/windows/desktop/ms680722)詳細です。  
+ 割り当てられたメモリを解放します。 参照してください[CoTaskMemFree](http://msdn.microsoft.com/library/windows/desktop/ms680722)詳細についてはします。  
   
 ##  <a name="reallocate"></a>CComAllocator::Reallocate  
  メモリを再割り当てする場合は、この静的関数を呼び出します。  
@@ -115,13 +97,12 @@ static void* Reallocate(void* p, size_t nBytes) throw();
  再割り当てするバイト数。  
   
 ### <a name="return-value"></a>戻り値  
- メモリが不足している場合、割り当てられた領域に void ポインターを返します  
+ 十分なメモリがある場合、割り当てられた領域に void ポインターを返します  
   
 ### <a name="remarks"></a>コメント  
- 割り当てられたメモリの量を変更します。 参照してください[CoTaskMemRealloc](http://msdn.microsoft.com/library/windows/desktop/ms687280)詳細です。  
+ 割り当てられたメモリの量を変更します。 参照してください[CoTaskMemRealloc](http://msdn.microsoft.com/library/windows/desktop/ms687280)詳細についてはします。  
   
 ## <a name="see-also"></a>関連項目  
  [CComHeapPtr クラス](../../atl/reference/ccomheapptr-class.md)   
  [CCRTAllocator クラス](../../atl/reference/ccrtallocator-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -1,27 +1,26 @@
 ---
-title: "A.29   Use of Work-Sharing Constructs Inside a critical Construct | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "A.29 使用の動作共有構築内 critical コンストラクト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: d5c8a83f-2f51-4f23-8ddf-d267e347507f
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2aac51541574ee1cf0363a77f40891ac37a18c49
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# A.29   Use of Work-Sharing Constructs Inside a critical Construct
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例では `critical` の構造内の作業の構造を共有する方法について説明します。  この例では作業の構造と共有 `critical` の構造が同じ並列領域に対応バインドされないためです。  
+# <a name="a29---use-of-work-sharing-constructs-inside-a-critical-construct"></a>A.29 critical コンストラクト内での work-sharing コンストラクトの使用
+次の例では、内部 work-sharing コンス トラクターの使用方法を示します、`critical`を構築します。 この例では準拠作業の共有を作成し、`critical`コンストラクトを同じ並列領域にバインドしないでください。  
   
 ```  
 void f()  

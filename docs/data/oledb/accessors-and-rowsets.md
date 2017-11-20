@@ -1,79 +1,79 @@
 ---
-title: "アクセサーと行セット | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセサー [C++]"
-  - "アクセサー [C++], 行セット"
-  - "配列行セット"
-  - "バルク行セット"
-  - "CAccessorBase クラス"
-  - "CAccessorRowset クラス, アクセサーの種類"
-  - "CArrayRowset クラス, アクセサー"
-  - "CBulkRowset クラス, アクセサー"
-  - "CRowset クラス, アクセサーと行セット"
-  - "OLE DB コンシューマー テンプレート, アクセサー"
-  - "OLE DB コンシューマー テンプレート, 行セットのサポート"
-  - "行セット [C++], アクセス"
-  - "行セット [C++], サポートされる種類"
-  - "単一行セット"
+title: "アクセサーと行セット |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- accessors [C++]
+- OLE DB consumer templates, rowset support
+- OLE DB consumer templates, accessors
+- rowsets [C++], accessing
+- bulk rowsets
+- CAccessorRowset class, accessor types
+- single rowsets
+- CArrayRowset class, accessors
+- CBulkRowset class, accessors
+- array rowsets
+- CAccessorBase class
+- CRowset class, accessors and rowsets
+- accessors [C++], rowsets
+- rowsets [C++], supported types
 ms.assetid: edc9c8b3-1a2d-4c2d-869f-7e058c631042
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b0514524c3f96791c05b3d3ae33b8196deb7e554
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# アクセサーと行セット
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データを設定および取得するために、OLE DB テンプレートは [CAccessorRowset](../Topic/CAccessorRowset%20Class.md) クラスを通じてアクセサーと行セットを使用します。  このクラスは、異なる種類の複数のアクセスを扱うことができます。  
+# <a name="accessors-and-rowsets"></a>アクセサーと行セット
+アクセサーと行を設定し、データの取得、OLE DB テンプレートを使用して、 [CAccessorRowset](../../data/oledb/caccessorrowset-class.md)クラスです。 このクラスは、さまざまな種類の複数のアクセサーを処理できます。  
   
-## アクセサーの種類  
- すべてのアクセサーは、[CAccessorBase](../../data/oledb/caccessorbase-class.md) から派生します。  `CAccessorBase` には、パラメーターと列バインディングの両方が用意されています。  
+## <a name="accessor-types"></a>アクセサーの種類  
+ 派生してすべてのアクセサー [CAccessorBase](../../data/oledb/caccessorbase-class.md)です。 `CAccessorBase`パラメーターと列のバインドの両方を提供します。  
   
- アクセサーの種類を次の図に示します。  
+ 次の図は、アクセサーの種類を示します。  
   
- ![アクセサー タイプ](../../data/oledb/media/vcaccessortypes.gif "vcAccessorTypes")  
+ ![アクセサー タイプ](../../data/oledb/media/vcaccessortypes.gif "vcaccessortypes")  
 アクセサー クラス  
   
--   [CAccessor](../Topic/CAccessor%20Class.md) このアクセサーは、デザイン時にデータベース ソースの構造を理解している場合に使用します。  `CAccessor` は、バッファーを含むデータベース レコードをデータ ソースに静的にバインドします。  
+-   [CAccessor](../../data/oledb/caccessor-class.md)デザイン時にデータベースのソースの構造がわかっている場合にこのアクセサーを使用します。 `CAccessor`静的にバッファーを含むデータベース レコードをデータ ソースにバインドします。  
   
--   [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md) このアクセサーは、デザイン時にデータベースの構造を理解していない場合に使用します。  `CDynamicAccessor` は、`IColumnsInfo::GetColumnInfo` を呼び出し、データベースの列情報を取得します。  このクラスは、アクセサーとバッファーを作成し、管理します。  
+-   [CDynamicAccessor](../../data/oledb/cdynamicaccessor-class.md)このアクセサーはデザイン時に、データベースの構造を認識していない場合に使用します。 `CDynamicAccessor`呼び出し`IColumnsInfo::GetColumnInfo`データベース列の情報を取得します。 作成し、アクセサーと、バッファーを管理します。  
   
--   [CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-class.md) このアクセサーは、不明なコマンドの種類を扱う場合に使用します。  コマンドを準備すると、プロバイダーが `ICommandWithParameters` をサポートしている場合に、`CDynamicParameterAccessor` は `ICommandWithParameters` インターフェイスからパラメーター情報を取得できます。  
+-   [CDynamicParameterAccessor](../../data/oledb/cdynamicparameteraccessor-class.md)不明なコマンドの種類を処理するためこのアクセサーを使用します。 コマンドを準備するときに`CDynamicParameterAccessor`からパラメーター情報を取得することができます、`ICommandWithParameters`プロバイダーがサポートされている場合、インターフェイス`ICommandWithParameters`です。  
   
--   [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md)、[CDynamicStringAccessorA](../../data/oledb/cdynamicstringaccessora-class.md)、および [CDynamicStringAccessorW](../../data/oledb/cdynamicstringaccessorw-class.md) これらのアクセサーは、データベース スキーマに関する情報が不明な場合に使用します。  `CDynamicStringAccessorA` はデータを ANSI 文字列として取得し、`CDynamicStringAccessorW` はデータを Unicode 文字列として取得します。  
+-   [CDynamicStringAccessor](../../data/oledb/cdynamicstringaccessor-class.md)、 [CDynamicStringAccessorA](../../data/oledb/cdynamicstringaccessora-class.md)、および[CDynamicStringAccessorW](../../data/oledb/cdynamicstringaccessorw-class.md)データベース スキーマの知識があるない場合に、これらのクラスを使用します。 `CDynamicStringAccessorA`ANSI 文字列としてデータを取得します`CDynamicStringAccessorW` Unicode 文字列としてデータを取得します。  
   
--   [CManualAccessor](../Topic/CManualAccessor%20Class.md) このクラスでは、プロバイダーが変換できるデータ型の場合、どのデータ型でも使用できます。  結果列とコマンド パラメーターの両方を処理します。  
+-   [CManualAccessor](../../data/oledb/cmanualaccessor-class.md)このクラスでは、プロバイダーは、型を変換できる場合どのようなデータ型を使用できます。 コマンドのパラメーターと結果の列の両方を処理します。  
   
- 次の表に、OLE DB テンプレート アクセサーの各種類のサポートをまとめます。  
+ 次の表は、OLE DB テンプレートのアクセサーの種類でのサポートをまとめたものです。  
   
-|アクセサーの種類|動的|パラメーターの処理|バッファー|複数のアクセサー|  
-|--------------|--------|---------------|-----------|--------------|  
-|`CAccessor`|No|Yes|User|Yes|  
-|`CDynamicAccessor`|Yes|No|OLE DB テンプレート|No|  
-|`CDynamicParameterAccessor`|Yes|Yes|OLE DB テンプレート|No|  
-|`CDynamicStringAccessor[A,W]`|Yes|No|OLE DB テンプレート|No|  
-|`CManualAccessor`|Yes|Yes|User|Yes|  
+|アクセサーの種類|動的|パラメーターを処理します。|バッファー|複数のアクセサー|  
+|-------------------|-------------|--------------------|------------|------------------------|  
+|`CAccessor`|いいえ|はい|User|はい|  
+|`CDynamicAccessor`|はい|いいえ|OLE DB テンプレート|いいえ|  
+|`CDynamicParameterAccessor`|はい|はい|OLE DB テンプレート|いいえ|  
+|`CDynamicStringAccessor[A,W]`|はい|いいえ|OLE DB テンプレート|いいえ|  
+|`CManualAccessor`|はい|はい|User|はい|  
   
-## 行セットの種類  
- OLE DB テンプレートは、3 種類の行セットをサポートします \(前の図を参照\)。[CRowset](../Topic/CRowset%20Class.md) で実装される単一行セット、[CBulkRowset](../Topic/CBulkRowset%20Class.md) で実装されるバルク行セット、および [CArrayRowset](../../data/oledb/carrayrowset-class.md) で実装される配列行セットです。  単一行セットは、`MoveNext` が呼び出されたときに単一の行ハンドルをフェッチします。  バルク行セットは、複数の行ハンドルをフェッチできます。  配列行セットは、配列構文を使用してアクセスできる行セットです。  
+## <a name="rowset-types"></a>行セットの種類  
+ OLE DB テンプレート (上記の図を参照してください) の行セットの 3 種類のサポート: 単一の行セット (によって実装される[CRowset](../../data/oledb/crowset-class.md))、行セットを一括 (によって実装される[CBulkRowset](../../data/oledb/cbulkrowset-class.md))、(実装行セットの配列とによって[CArrayRowset](../../data/oledb/carrayrowset-class.md))。 1 つの行の処理時に 1 つの行セットのフェッチ`MoveNext`と呼びます。 一括行セットは、複数の行ハンドルをフェッチできます。 配列行セットとは、配列の構文を使用してアクセスできる行セットです。  
   
- 行セットの種類を次の図に示します。  
+ 次の図は、行セットの種類を示します。  
   
- ![RowsetType グラフィック](../Image/vcRowsetTypes.gif "vcRowsetTypes")  
+ ![RowsetType グラフィック](../../data/oledb/media/vcrowsettypes.gif "vcrowsettypes")  
 行セット クラス  
   
- [スキーマ行セット](../../data/oledb/obtaining-metadata-with-schema-rowsets.md)は、データ ストアのデータにアクセスせずに、メタデータと呼ばれる、データ ストアに関する情報にアクセスします。  スキーマ行セットは、通常、データベースの構造がコンパイル時に不明な場合に使用します。スキーマ行セットは実行時に取得する必要があります。  
+ [スキーマ行セット](../../data/oledb/obtaining-metadata-with-schema-rowsets.md)データのデータにアクセスできませんを保存せずにメタデータと呼ばれる、データ ストアに関する情報にアクセスします。 スキーマ行セットが、データベースの構造がコンパイル時に不明を実行時に取得する必要がある状況に用いられます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

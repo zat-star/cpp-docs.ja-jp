@@ -1,30 +1,29 @@
 ---
-title: "1.4 準拠 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "1.4 コンプライアンス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 662ad260-b9a1-43b7-b269-ef6ff0714e05
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d8481c0efb54a397db004f321fb48c217cba8ebc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 1.4 準拠
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-OpenMP C と C++ API の実装は、 *OpenMP 準拠* かどうか認識し、第 1 章、2、3、4、レイアウトとは、この仕様のすべての要素のセマンティクスを保持しており付録 C A、B、D、E、および F は情報目的のみの場合、仕様の一部ではないです。 API のサブセットのみを含む実装は、OpenMP 準拠していません。  
+# <a name="14-compliance"></a>1.4 準拠
+OpenMP C と C++ API の実装は*OpenMP 準拠*かどうかを認識し、章 1、2、3、4、レイアウトとは、この仕様のすべての要素のセマンティクスを保持および付録 C A、B、D、E、および F情報は、目的でのみと仕様の一部ではないです。 API のサブセットのみを含む実装は、OpenMP 準拠ではありません。  
   
- OpenMP C および C++ API の実装でサポートされているベース言語拡張であります。 基本言語は、このドキュメントで言語構成要素または表示拡張機能をサポートしない場合、OpenMP の実装をサポートするためには不要です。  
+ OpenMP C および C++ API、実装でサポートされているベース言語拡張であります。 基本言語は、このドキュメントで言語コンストラクトまたは表示される拡張機能をサポートしない場合、OpenMP の実装をサポートするように必要はありません。  
   
- すべての C および C++ の標準ライブラリ関数と組み込み関数 (つまり、コンパイラが特定のナレッジには、関数) スレッド セーフである必要があります。 並列領域内の別のスレッドでスレッド セーフな関数の非同期の使用には、未定義の動作は発生しません。 ただし、動作はありませんシリアル領域と同じです。 (ランダムな番号の生成機能は、例を示します)。  
+ すべての C および C++ の標準ライブラリ関数および組み込み関数 (つまり、コンパイラが特定のナレッジには、関数) のスレッド セーフである必要があります。 並行領域内の別のスレッドでスレッド セーフである関数の非同期の使用には、未定義の動作は生成されません。 ただし、動作はありませんシリアル領域のものと同じです。 (ランダムな番号生成関数は、例を示します)。  
   
- 特定の動作があることを指定 OpenMP C と C++ API *実装で定義されます。* OpenMP に準拠した実装を定義し、このような場合は、その動作を文書化する必要があります。 参照してください [付録 E](../Topic/E.%20Implementation-Defined%20Behaviors%20in%20OpenMP%20C-C++.md), 、実装で定義される動作の一覧については、97 ページです。
+ OpenMP C と C++ API では、特定の動作は、ことを指定します*実装で定義します。* OpenMP に準拠した実装を定義し、このような場合は、その動作を文書化する必要があります。 参照してください[付録 E](../../parallel/openmp/e-implementation-defined-behaviors-in-openmp-c-cpp.md)、実装定義の動作の一覧については、97 のページです。

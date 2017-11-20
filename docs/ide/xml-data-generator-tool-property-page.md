@@ -1,47 +1,46 @@
 ---
-title: "[XML データ ジェネレーター ツール] プロパティ ページ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCXMLDataGeneratorTool.GeneratedProxyLanguage"
-  - "VC.Project.VCXMLDataGeneratorTool.Output"
-  - "VC.Project.VCXMLDataGeneratorTool.SupressStartupBanner"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "[XML データ ジェネレーター ツール] プロパティ ページ"
+title: "XML データ ジェネレーター ツール プロパティ ページ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCXMLDataGeneratorTool.GeneratedProxyLanguage
+- VC.Project.VCXMLDataGeneratorTool.Output
+- VC.Project.VCXMLDataGeneratorTool.SupressStartupBanner
+dev_langs: C++
+helpviewer_keywords: XML Data Generator Tool property page
 ms.assetid: b2ef1c12-3419-429d-bb9d-bd7d9ffe1ffb
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8bf594f6c6a647ee930b173d58bed91e0ced778e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# [XML データ ジェネレーター ツール] プロパティ ページ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\[XML データ ジェネレーター ツール\] プロパティ ページは、プロジェクトにデータセットを追加すると使用可能になります。  
+# <a name="xml-data-generator-tool-property-page"></a>[XML データ ジェネレーター ツール] プロパティ ページ
+**XML データ ジェネレーター ツール**プロジェクトにデータセットを追加するときに、プロパティ ページができるようになります。  
   
- \[XML データ ジェネレーター ツール\] プロパティ ページには、以下のプロパティが含まれています。  
+ **XML データ ジェネレーター ツール**プロパティ ページには、次のプロパティが含まれています。  
   
- **\[出力ファイル\]**  
+ **出力ファイル**  
  使用する出力ファイル名を指定します。  
   
- **\[著作権情報の非表示\]**  
- 著作権情報および情報メッセージを表示しません。  
+ **著作権情報を抑制します。**  
+ 著作権情報と情報メッセージの表示を抑制します。  
   
- **\[生成するプロキシ言語\]**  
- マネージ コードを出力するかどうかを指定します。  
+ **生成されたプロキシ言語**  
+ マネージ コードを出力するかどうかを判断します。  
   
- **\[XML データ ジェネレーター ツール\]** プロパティ ページを表示する方法については、「[方法 : &#91;プロパティ ページ&#93; でプロジェクトのプロパティを指定する](../Topic/How%20to:%20Specify%20Project%20Properties%20with%20Property%20Pages.md)」を参照してください。  
+ アクセスする方法については、 **XML データ ジェネレーター ツール**プロパティ ページを参照してください[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
- プログラムでこのオブジェクトのメンバーにアクセスする方法については、「<xref:Microsoft.VisualStudio.VCProjectEngine.VCXMLDataGeneratorTool>」を参照してください。  
+ このオブジェクトのメンバーにアクセスする方法については、次を参照してください。<xref:Microsoft.VisualStudio.VCProjectEngine.VCXMLDataGeneratorTool>  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [プロパティ ページ](../ide/property-pages-visual-cpp.md)

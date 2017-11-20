@@ -1,50 +1,48 @@
 ---
-title: "リンカー ツールの警告 LNK4098 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK4098"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK4098"
+title: "リンカー ツールの警告 LNK4098 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK4098
+dev_langs: C++
+helpviewer_keywords: LNK4098
 ms.assetid: 1f1b1408-1316-4e34-80f5-6a02f2db0ac1
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 0acc9ba4a43e37712e3643b49975fc15a4cce280
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リンカー ツールの警告 LNK4098
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-defaultlib 'library' は別のライブラリの使用と競合しています。\/NODEFAULTLIB:library を使用してください。  
+# <a name="linker-tools-warning-lnk4098"></a>リンカー ツールの警告 LNK4098
+defaultlib 'library' と競合していますが; 他のライブラリの使用/NODEFAULTLIB:library を使用してください。  
   
- 互換性がないライブラリのリンクを試みています。  
+ 互換性のないライブラリとリンクしようとするとします。  
   
 > [!NOTE]
->  ランタイム ライブラリには、異なる型を混合しないためのディレクティブがあります。  同じプログラムで、異なる型を使用したり、ランタイム ライブラリのデバッグ バージョンと非デバッグ バージョンを混用すると、この警告が発生します。  たとえば、1 つのファイルをある種類のランタイム ライブラリを使用するためにコンパイルし、もう 1 つのファイルでは別の種類のランタイム ライブラリを使用するためにコンパイルして \(たとえば、シングルスレッドとマルチスレッドのライブラリ\)、リンクすると、この警告が発生します。  全ファイルで同じランタイム ライブラリを使うようにコンパイルする必要があります。  詳細については、「[\/MD、\/MT、\/LD \(ランタイム ライブラリの使用\)](../../build/reference/md-mt-ld-use-run-time-library.md)」を参照してください。  
+>  ランタイム ライブラリには、さまざまな種類が混在しないためのディレクティブが含まれています。 この警告のさまざまな種類を使用するか、デバッグしようとする場合と非デバッグ バージョンのランタイム ライブラリは、同じプログラムで表示されます。 たとえば、(たとえば、マルチ スレッドではなく単一スレッドなど) 別の種類を使用するファイルし、それらをリンクしようとしています。 もう 1 種類のランタイム ライブラリのいずれかを使用する 1 つのファイルをコンパイルする場合は、この警告が表示されます。 同じランタイム ライブラリを使用するすべてのソース ファイルをコンパイルする必要があります。 参照してください、[ランタイム ライブラリの使用](../../build/reference/md-mt-ld-use-run-time-library.md)(**/MD**、 **/MT**、 **/LD**) 詳細については、コンパイラ オプション。  
   
- リンカーの [\/VERBOSE:LIB](../../build/reference/verbose-print-progress-messages.md) スイッチで、リンカーの検索するライブラリを決めることができます。  LNK4098 が発生しているときに、たとえばシングルスレッドで非デバッグ モードのライブラリを使用する実行可能ファイルを作成する場合は、**\/VERBOSE:LIB** オプションを使用してリンカーが検索するライブラリを調べることができます。  リンカーはライブラリの検索時に LIBC.lib を出力しますが、LIBCMT.lib、MSVCRT.lib、LIBCD.lib、LIBCMTD.lib、MSVCRTD.lib は出力しません。  無視するライブラリごとに [\/NODEFAULTLIB](../../build/reference/nodefaultlib-ignore-libraries.md) を使用すると、不適切なランタイム ライブラリを無視するようにリンカーに指示できます。  
+ リンカーを使用する[/VERBOSE:LIB](../../build/reference/verbose-print-progress-messages.md)スイッチをリンカーが検索するライブラリを決定します。 非デバッグ ランタイム ライブラリ、使用の LNK4098 し、実行可能ファイルを使用して、たとえば、シングル スレッドを作成する場合に発生した場合、 **/VERBOSE:LIB**リンカーが検索するライブラリを検索するにはオプションです。 リンカーは、検索されたライブラリとして LIBC.lib、LIBCMT.lib、MSVCRT.lib、LIBCD.lib、LIBCMTD.lib、しなかったり MSVCRTD.lib を印刷する必要があります。 使用して、正しくないランタイム ライブラリを無視するようにリンカーに指示することができます[/NODEFAULTLIB](../../build/reference/nodefaultlib-ignore-libraries.md)を無視するライブラリごとにします。  
   
- 使用するライブラリによってどのライブラリを無視した方がよいかを次の表に示します。  
+ 次の表では、使用する場合、ランタイム ライブラリによって、どのライブラリを無視するかを示します。  
   
-|使用するランタイム ライブラリ|無視するライブラリ|  
-|---------------------|---------------|  
-|シングルスレッド \(libc.lib\)|libcmt.lib、msvcrt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
-|マルチスレッド \(libcmt.lib\)|libc.lib、msvcrt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
-|DLL を使用するマルチスレッド \(msvcrt.lib\)|libc.lib、libcmt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
-|デバッグ用のシングルスレッド \(libcd.lib\)|libc.lib、libcmt.lib、msvcrt.lib、libcmtd.lib、msvcrtd.lib|  
-|デバッグ用のマルチスレッド \(libcmtd.lib\)|libc.lib、libcmt.lib、msvcrt.lib、libcd.lib、msvcrtd.lib|  
-|DLL を使用するデバッグ用のマルチスレッド \(msvcrtd.lib\)|libc.lib、libcmt.lib、msvcrt.lib、libcd.lib、libcmtd.lib|  
+|このランタイム ライブラリを使用するには|これらのライブラリを無視します。|  
+|-----------------------------------|----------------------------|  
+|シングル スレッド (libc.lib)|libcmt.lib、msvcrt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
+|マルチ スレッド (libcmt.lib)|libc.lib、msvcrt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
+|マルチ スレッド DLL (msvcrt.lib) を使用します。|libc.lib、libcmt.lib、libcd.lib、libcmtd.lib、msvcrtd.lib|  
+|シングル スレッド (libcd.lib) のデバッグします。|libc.lib、libcmt.lib、msvcrt.lib、libcmtd.lib、msvcrtd.lib|  
+|マルチ スレッド (libcmtd.lib) のデバッグします。|libc.lib、libcmt.lib、msvcrt.lib、libcd.lib、msvcrtd.lib|  
+|DLL (msvcrtd.lib) を使用するマルチ スレッドをデバッグします。|libc.lib、libcmt.lib、msvcrt.lib、libcd.lib、libcmtd.lib|  
   
- たとえば、この警告を受信したときに、非デバッグ モードのシングルスレッドのランタイム ライブラリを使用する場合には、次のリンカー オプションを使用します。  
+ たとえば、この警告を受信した非デバッグ、シングル スレッドのバージョンのランタイム ライブラリを使用する実行可能ファイルを作成する場合は、リンカー、次のオプションを使用する可能性があります。  
   
 ```  
 /NODEFAULTLIB:libcmt.lib /NODEFAULTLIB:msvcrt.lib /NODEFAULTLIB:libcd.lib /NODEFAULTLIB:libcmtd.lib /NODEFAULTLIB:msvcrtd.lib  

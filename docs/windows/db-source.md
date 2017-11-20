@@ -1,32 +1,30 @@
 ---
-title: "db_source | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.db_source"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "db_source attribute"
+title: "db_source |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.db_source
+dev_langs: C++
+helpviewer_keywords: db_source attribute
 ms.assetid: 0ec8bbf7-ade2-4899-bf4c-8608b92779bc
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 89f07745d2a9f0f832f42c512e0671b4114a80c9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# db_source
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="dbsource"></a>db_source
 データ ソースへの接続を作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,31 +35,31 @@ caps.handback.revision: 10
 ) ]  
 ```  
   
-#### パラメーター  
- *db\_source*  
- データ ソースに接続するための接続文字列。  接続文字列の形式についてはMicrosoft Data Access Components SDK [接続文字列データ リンク](https://msdn.microsoft.com/en-us/library/ms718376.aspx) を \(MDAC\) 参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ *db_source*  
+ データ ソースに接続するために使用する接続文字列。 接続文字列の形式の場合、次を参照してください。[接続文字列およびデータ リンク](https://msdn.microsoft.com/en-us/library/ms718376.aspx)で、Microsoft Data Access Components (MDAC) SDK。  
   
- *名前* \(省略可能\)  
- クラスの `db_source` を使用する場合  *は* そのフィールドに適用される `db_source` の属性を持つデータ ソース オブジェクトのインスタンスです \(例 1\) を参照してください。  メソッドの実装で `db_source` のインラインを使用する場合  *は*  データ ソースにアクセスするために使用できるメソッドのローカル変数 \(\) \(2\) 例を参照してください。  **db\_command** の `source_name` のパラメーターとデータ ソースにコマンドを関連付ける場合はこの  *名前を*  渡します。  
+ *name* (省略可能)  
+ 使用すると`db_source`クラスで*名前*を持つデータ ソース オブジェクトのインスタンス、 `db_source` (1 の例を参照してください) に適用される属性です。 使用すると`db_source`メソッドの実装にインライン*名前*データにアクセスするために使用する変数 (ローカル メソッド) は、ソース (例 2 を参照してください)。 これを渡す*名前*を`source_name`のパラメーター **db_command**に関連付けるコマンド データ ソース。  
   
- `hresult` \(省略可能\)  
- このデータベース コマンドの `HRESULT` を受け取る変数を識別します。  変数がない場合は属性によって自動的に挿入されます。  
+ `hresult` (省略可能)  
+ このデータベース コマンドの `HRESULT` を受け取る変数を示します。 変数が存在しない場合は、属性によって自動的に挿入されます。  
   
-## 解説  
- `db_source` はOLE DB コンシューマーがデータ ソースとともに接続を表す [は CSession です。](../data/oledb/csession-class.md) のオブジェクトと [CDataSource](../Topic/CDataSource%20Class.md) を作成します。  
+## <a name="remarks"></a>コメント  
+ `db_source`作成、 [CDataSource](../data/oledb/cdatasource-class.md)と[CSession](../data/oledb/csession-class.md)を一緒に OLE DB コンシューマーのデータ ソースとの接続を表すオブジェクト。  
   
- クラスの `db_source` を使用すると`CSession` のオブジェクトがクラスのメンバーになります。  
+ 使用すると`db_source`クラスで、`CSession`オブジェクト クラスのメンバーになります。  
   
- メソッドで `db_source` を使用すると挿入されたコードはメソッドのスコープ内で実行され`CSession` のオブジェクトはローカル変数として作成されます。  
+ 使用する場合`db_source`メソッドのスコープ内で、挿入されたコードを実行メソッドでは、および`CSession`オブジェクトは、ローカル変数として作成します。  
   
- `db_source` はクラスまたはメソッド内でデータ ソースのプロパティを追加します。  \(`source_name` のパラメーターとして `db_source`  *名パラメーターを*  受け取る場合は **db\_command** とともに使用されます。  
+ `db_source`クラスまたはメソッド内では、データ ソースのプロパティを追加します。 組み合わせて使用**db_command** (受け取り、 `db_source` *名前*パラメーターとしてその`source_name`パラメーター)。  
   
- コンシューマー属性プロバイダーがクラスにこの属性を適用するとコンパイラは *YourClassName* はクラスを受け取るとコンパイラは\_YourClassNameAccessor から派生 *YourClassName と*  いうクラスを作成する名前です \_YourClassNameAccessor にクラスの名前を変更します。  \[クラス ビュー\] でこれらのクラスを参照してください。  
+ コンシューマー属性プロバイダーは、クラスにこの属性を適用する場合、コンパイラの名前は変更するクラス\_*すると*アクセサー、場所*すると*指定した名前は、クラス、および、コンパイラと呼ばれるクラスを作成また*すると*から派生した\_*すると*アクセサー。  クラス ビューでは、両方のクラスが表示されます。  
   
- アプリケーションで使用するこの属性の例のサンプル [AtlAgent](http://msdn.microsoft.com/ja-jp/52bef5da-c1a0-4223-b4e6-9e464b6db409) と [MultiRead](http://msdn.microsoft.com/ja-jp/5a2a915a-77dc-492f-94b2-1b809995dd5e) を参照してください。  
+ アプリケーションで使用されるこの属性の例は、サンプルを参照してください。 [AtlAgent](http://msdn.microsoft.com/en-us/52bef5da-c1a0-4223-b4e6-9e464b6db409)と[MultiRead](http://msdn.microsoft.com/en-us/5a2a915a-77dc-492f-94b2-1b809995dd5e)です。  
   
-## 使用例  
- このサンプルではNorthwind データベースを使用してデータ ソース `ds` への接続を作成するにはクラスの `db_source` を呼び出します。  `ds` は `CMyCommand` のクラスによって内部的に使用できるデータ ソースのハンドルです。  
+## <a name="example"></a>例  
+ このサンプルを呼び出す`db_source`データ ソースへの接続を作成するためのクラスに`ds`Northwind データベースを使用します。 `ds`データ ソースには、内部的に使用できるハンドル、`CMyCommand`クラスです。  
   
 ```  
 // db_source_1.cpp  
@@ -77,19 +75,18 @@ caps.handback.revision: 10
 class CMyCommand {};  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**クラス**  `struct` のメンバーはローカル メソッド|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**class**、 `struct`、member、method、local|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [OLE DB Consumer Attributes](../windows/ole-db-consumer-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [OLE DB コンシューマー属性](../windows/ole-db-consumer-attributes.md)   

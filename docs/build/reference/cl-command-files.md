@@ -1,59 +1,58 @@
 ---
-title: "CL のコマンド ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "cl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cl.exe コンパイラ, コマンド ファイル"
-  - "コマンド ファイル"
-  - "コマンド ファイル, CL コンパイラ"
+title: "CL のコマンド ファイル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: cl
+dev_langs: C++
+helpviewer_keywords:
+- cl.exe compiler, command files
+- command files
+- command files, CL compiler
 ms.assetid: ec3cea06-2af0-4fe9-a94c-119c9d31b3a9
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 8e42c349436bd0df4f1e26b35d238b6e1ee75c32
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CL のコマンド ファイル
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コマンド ファイルは、オプションとファイル名を格納するテキスト ファイルです。このファイル内のオプションは、[コマンド ライン](../../build/reference/compiler-command-line-syntax.md)または[環境変数 CL](../../build/reference/cl-environment-variables.md) で指定したオプションと同じように処理されます。  コマンド ファイルは、環境変数 CL またはコマンド ラインで引数として指定できます。  コマンド ラインまたは環境変数 CL ではオプションとファイル名を 1 行しか指定できませんが、コマンド ファイルでは複数行指定できます。  
+# <a name="cl-command-files"></a>CL のコマンド ファイル
+コマンド ファイルは、オプションとそれ以外の場合で入力するとファイル名を含むテキスト ファイル、[コマンドライン](../../build/reference/compiler-command-line-syntax.md)または指定を使用して、[環境変数 CL](../../build/reference/cl-environment-variables.md)です。 CL は、環境変数 CL またはコマンドラインで引数としてコンパイラ コマンド ファイルを受け取ります。 コマンド ラインまたは環境変数 CL ではオプションとファイル名を 1 行しか指定できませんが、コマンド ファイルでは複数行指定できます。  
   
- コマンド ファイル内のオプションとファイル名が処理される順序は、そのコマンド ファイルの名前が環境変数 CL 内またはコマンド ライン上のどこにあるかによって異なります。  ただし、コマンド ファイル内に \/link オプションを指定すると、コマンド ファイル内の同じ行にある残りのすべてのオプションがリンカーに渡されます。  コマンド ファイル内の後続行にあるオプションと、コマンド ファイルを呼び出した地点より後ろにあるコマンド ライン オプションは、コンパイラ オプションとして処理されます。  オプションの指定順序については、「[CL オプションの指定順序](../../build/reference/order-of-cl-options.md)」を参照してください。  
+ オプションとファイル名、コマンド ファイルには、環境変数 CL またはコマンドラインでコマンド ファイル名の場所に従って処理されます。 ただし、コマンド ファイルで、/link オプションが表示された場合は、行の残りのすべてのオプションがリンカーに渡されます。 コマンド ファイル内の後続の行にオプションおよびコマンド ファイルの呼び出しの後にコマンド ライン オプションは、まだコンパイラ オプションとして受け入れられます。 オプションの順序がその解釈に与える影響の詳細については、次を参照してください。 [CL オプションの指定順序](../../build/reference/order-of-cl-options.md)です。  
   
- コマンド ファイルには CL の起動コマンドそのものは記述できません。  各オプションは 1 行で記述する必要があります。円記号 \(\\\) を使っても、単一のオプションを複数行に記述できません。  
+ コマンド ファイルでは、CL コマンドを含めることはできません。 各オプションの開始し、同じ行で終了する必要があります。バック スラッシュを使用することはできません (\\) を 2 つの行にわたってオプションを結合します。  
   
- コマンド ファイルを指定するときは、ファイル名の先頭にアット マーク \(@\) を付けます。ファイル名には、絶対パスも相対パスも指定できます。  
+ コマンド ファイルを指定する、アット マーク (@) 後にファイル名です。ファイル名には、絶対または相対パスを指定できます。  
   
- たとえば、RESP というコマンド ファイルに、次のコマンドが指定されていたとします。  
+ たとえば、次のコマンドが応答するという名前のファイルの場合。  
   
 ```  
 /Og /link LIBC.LIB  
 ```  
   
- 次に、次の CL コマンドを指定したとします。  
+ 次のような CL コマンドを指定します。  
   
 ```  
 CL /Ob2 @RESP MYAPP.C  
 ```  
   
- CL の起動コマンドに続くオプションは、次のように展開されます。  
+ CL のコマンドは次のとおりです。  
   
 ```  
 CL /Ob2 /Og MYAPP.C /link LIBC.LIB  
 ```  
   
- コマンド ラインに指定したオプションとコマンド ファイル内のオプションが効果的に組み合わされています。  
+ コマンドラインとコマンド ファイルが効果的に組み合わせることに注意してください。  
   
-## 参照  
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
+## <a name="see-also"></a>関連項目  
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)

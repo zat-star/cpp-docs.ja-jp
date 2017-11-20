@@ -1,35 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4701 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4701"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4701"
+title: "コンパイラの警告 (レベル 4) C4701 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4701
+dev_langs: C++
+helpviewer_keywords: C4701
 ms.assetid: d7c76c66-1f3f-4d3c-abe4-5d94c84a5a1f
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 696e3086f139d70ada9afdf1af02a007cbe1609f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4701
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-使用される可能性があり、初期化されていないローカル変数「name」  
+# <a name="compiler-warning-level-4-c4701"></a>コンパイラの警告 (レベル 4) C4701
+初期化されていない可能性があるローカル変数 'name' の使用  
   
- ローカル変数 *name* 操作で値が使用されることがあります。  この場合、予期しない結果が生じる可能性があります。  
+ ローカル変数*名前*値を割り当てられることがなく使用される可能性があります。 これは、予期しない結果に可能性があります。  
   
-## 使用例  
- 次のコードは、C4703 C4701 が生成されます。  
+## <a name="example"></a>例  
+ 次のコードには、C4701 と C4703 が生成されます。  
   
 ```cpp  
 #include <malloc.h>  
@@ -51,8 +49,13 @@ void main()
 }  
 ```  
   
-  **c:\\src\\test.cpp\(10\) : 警告 C4701: 使用される可能性があり、初期化されていないローカル変数" p」**  
- **c:\\src\\test.cpp\(10\) : 警告 C4703: 使用される可能性があり、初期化されていないローカル ポインター変数「p」** この警告を解決するには、この例に示すように、変数を初期化してください:  
+```Output  
+c:\src\test.cpp(10) : warning C4701: potentially uninitialized local variable 'p' used  
+c:\src\test.cpp(10) : warning C4703: potentially uninitialized local pointer variable 'p' used  
+  
+```  
+  
+ この警告を解決するには、この例で示すように、変数を初期化します。  
   
 ```cpp  
 #include <malloc.h>  
@@ -74,6 +77,6 @@ void main()
 }  
 ```  
   
-## 参照  
- [コンパイラの警告 \(レベル 4\) C4703](../../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md)   
- [警告、\/sdl および改善は変数を検出初期化前の状態に戻しました](http://blogs.msdn.com/b/sdl/archive/2012/06/06/warnings-sdl-and-improving-uninitialized-variable-detection.aspx)
+## <a name="see-also"></a>関連項目  
+ [コンパイラの警告 (レベル 4) C4703](../../error-messages/compiler-warnings/compiler-warning-level-4-c4703.md)   
+ [警告、/sdl、および初期化されていない変数の検出の向上](http://blogs.msdn.com/b/sdl/archive/2012/06/06/warnings-sdl-and-improving-uninitialized-variable-detection.aspx)

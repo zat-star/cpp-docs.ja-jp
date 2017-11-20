@@ -1,26 +1,26 @@
 ---
-title: "構造体と定数の定義 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "構造体と定数定義 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 1df7cf46-b853-4788-a257-100d5c37997f
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a93975903451e609676baa6b32641e41221fa005
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 構造体と定数の定義
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-既定のヘルパー ルーチンでは、フック関数とのやり取りを行うとき、および例外処理時に、いくつかの構造体を使用します。  以下の通知値とエラー値、情報構造体、およびフック関数へのポインター型が、フック関数に渡されます。  
+# <a name="structure-and-constant-definitions"></a>構造体と定数の定義
+既定のヘルパー ルーチンでは、いくつかの構造を使用して、通信用のフック関数とは、例外の中にします。 通知とエラー値、情報構造体、およびフックに渡されるフック関数へのポインター型を次に示します。  
   
 ```  
 //  
@@ -78,5 +78,5 @@ typedef struct ImgDelayDescr {
     } ImgDelayDescr, * PImgDelayDescr;  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ヘルパー関数について](../../build/reference/understanding-the-helper-function.md)

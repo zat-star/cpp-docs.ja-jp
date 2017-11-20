@@ -1,70 +1,71 @@
 ---
-title: "Previewing Resources | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.resvw.resource.previewing"
-  - "vs.resvw.resource.previewing"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "resources [Visual Studio], viewing"
-  - "resource previews"
-  - "code, viewing"
+title: "リソースのプレビュー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.resvw.resource.previewing
+- vs.resvw.resource.previewing
+dev_langs: C++
+helpviewer_keywords:
+- resources [Visual Studio], viewing
+- resource previews
+- code, viewing
 ms.assetid: d6abda66-0e2b-4ac3-a59a-a57b8c6fb70b
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bce36839b0736eabdbc850d9a2b2f9434cc820d1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Previewing Resources
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-リソースをプレビューすると、グラフィカル リソースを開かずに表示できます。  リソース識別子は数字に変換されるため、コンパイル後の実行可能ファイルでもプレビューが役立ちます。  数字の識別子から得られる情報は十分ではないため、リソースをプレビューしてリソースをすばやく識別できます。  
+# <a name="previewing-resources"></a>リソースのプレビュー
+リソースをプレビューするには、グラフィカルなリソースを開かずに表示することができます。 プレビューは、リソース識別子を数値に変更されるため、コンパイルした後にも実行可能ファイルに役立ちます。 多くの場合、これらの数値識別子は、十分な情報を提供しない、ため、リソースのプレビューがすばやく識別できます。  
   
- 次に示すリソースの種類のレイアウトをプレビューできます。  
+ 次のリソースの種類の視覚的なレイアウトをプレビューすることができます。  
   
 -   ビットマップ  
   
 -   ダイアログ  
   
--   Icon  
+-   アイコン  
   
 -   メニュー  
   
--   Cursor  
+-   カーソル  
   
 -   ツール バー  
   
- アクセラレータ、マニフェスト、ストリング テーブル、バージョン情報の各リソースには、視覚的なプレビュー機能は適用されません。  
+ 視覚的なプレビュー機能は、アクセラレータ、マニフェスト、文字列テーブル、およびバージョン情報リソースには適用されません。  
   
-### リソースをプレビューするには  
+### <a name="to-preview-resources"></a>リソースをプレビューするには  
   
-1.  [&#91;リソース ビュー&#93;](../windows/resource-view-window.md) またはドキュメント ウィンドウで、IDD\_ABOUTBOX などの目的のリソースを選択します。  
+1.  [リソース ビュー](../windows/resource-view-window.md)またはドキュメントのウィンドウで、IDD_ABOUTBOX、リソースを選択します。  
   
-     **メモ** プロジェクトに .rc ファイルがまだ含まれていない場合は、「[リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
+     **メモ** プロジェクトに .rc ファイルがまだ含まれていない場合は、「 [リソース スクリプト ファイルの新規作成](../windows/how-to-create-a-resource-script-file.md)」を参照してください。  
   
-2.  [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)で、\[プロパティ ページ\] をクリックします。  
+2.  [プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)をクリックして、**プロパティ ページ**ボタンをクリックします。  
   
-     または  
+     \- または  
   
-3.  **\[表示\]** メニューの **\[プロパティ ページ\]** をクリックします。  
+3.  **ビュー**  メニューのをクリックして**プロパティ ページ**です。  
   
-     リソースのプロパティ ページが開き、リソースのプレビューが表示されます。  上下の方向キーを使用して、\[リソース ビュー\] またはドキュメント ウィンドウのツリー コントロールを移動できます。  \[プロパティ ページ\] は開いたままになり、フォーカスがあるプレビュー可能なリソースが表示されます。  
+     リソースのプロパティ ページでは、そのリソースのプレビューの表示を開きます。 上矢印を使用して、下向きの矢印キー リソース ビューまたはドキュメント ウィンドウのツリー コントロールを移動することができます。 プロパティ ページは開いたままにし、フォーカスがあり、プレビューを表示することは、任意のリソースを表示します。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
- **要件**  
+ **Requirements**  
   
  Win32  
   
-## 参照  
- [How to: Open a Resource Script File Outside of a Project \(Standalone\)](../windows/how-to-open-a-resource-script-file-outside-of-a-project-standalone.md)   
- [Resource Editors](../mfc/resource-editors.md)
+## <a name="see-also"></a>関連項目  
+ [方法: プロジェクト (スタンドアロン) の外側でリソース スクリプト ファイルを開く](../windows/how-to-open-a-resource-script-file-outside-of-a-project-standalone.md)   
+ [リソース エディター](../windows/resource-editors.md)
+

@@ -1,61 +1,61 @@
 ---
-title: "レコード フィールド エクスチェンジ (RFX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [MFC]"
-  - "データ [MFC], 移動 (ソースとレコードセット間の)"
-  - "データベース クラス [C++], RFX"
-  - "ODBC [C++], RFX"
-  - "RFX (ODBC) [C++]"
+title: "レコード フィールド エクス (チェンジ RFX) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- RFX (ODBC) [C++]
+- data [MFC], moving between sources and recordsets
+- database classes [C++], RFX
+- data [MFC]
+- ODBC [C++], RFX
 ms.assetid: f5ddfbf0-2901-48d7-9848-4fb84de3c7ee
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6494773de5bd64e66c2031a618d7a8d899215c2d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコード フィールド エクスチェンジ (RFX)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-MFC ODBC データベース クラスは、データ ソースと[レコードセット](../../data/odbc/recordset-odbc.md) オブジェクトの間でデータを自動的にやり取りできます。  [CRecordset](../Topic/CRecordset%20Class.md) から派生したクラスでバルク行フェッチを使用しない場合、データはレコード フィールド エクスチェンジ \(RFX\) 機構を通じて転送されます。  
+# <a name="record-field-exchange-rfx"></a>レコード フィールド エクスチェンジ (RFX)
+MFC ODBC データベース クラスが、データ ソースの間でデータの移動を自動化し、[レコード セット](../../data/odbc/recordset-odbc.md)オブジェクト。 クラスを派生する[CRecordset](../../mfc/reference/crecordset-class.md)バルク行フェッチを使用しないと、レコード フィールド エクス (チェンジ RFX) メカニズムによってデータを転送します。  
   
 > [!NOTE]
->  `CRecordset` の派生クラスにバルク行フェッチが実装されている場合、フレームワークでは、バルク レコード フィールド エクスチェンジ \(Bulk RFX: Bulk Record Field Exchange\) 機構を使用してデータを転送します。  詳細については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  派生にバルク行フェッチを実装している場合`CRecordset`クラス、フレームワーク バルク レコード フィールド エクス チェンジ (Bulk RFX) 機構を使ってデータを転送します。 詳細については、次を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- RFX は、ダイアログ データ エクスチェンジ \(DDX: Dialog Data Exchange\) に似た機構です。  データ ソースとレコードセットのフィールド データ メンバー間でデータをやり取りするには、レコードセットの関数 [DoFieldExchange](../Topic/CRecordset::DoFieldExchange.md) を何度も呼び出して、フレームワークと [ODBC](../../data/odbc/odbc-basics.md) の間で大量のデータをやり取りする必要があります。  RFX を利用すると、型の一貫性が保証され、**::SQLBindCol** などの ODBC 関数の呼び出しが自動化されます。  DDX の詳細については、「[ダイアログ データ エクスチェンジとダイアログ データ バリデーション](../../mfc/dialog-data-exchange-and-validation.md)」を参照してください。  
+ Rfx 関数は、ダイアログ データ エクス (チェンジ DDX) に似ています。 レコード セットの複数の呼び出しデータ ソースとレコード セットのフィールド データ メンバーの間でデータ移動が必要です[DoFieldExchange](../../mfc/reference/crecordset-class.md#dofieldexchange)関数かなりの相互作用、framework 間および[ODBC](../../data/odbc/odbc-basics.md). RFX メカニズムがタイプ セーフし、などの ODBC 関数を呼び出すことの作業を保存する**:: SQLBindCol**です。 DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../../mfc/dialog-data-exchange-and-validation.md)です。  
   
- これらの機能は、RFX の存在を意識せずに利用できます。  MFC のアプリケーション ウィザードまたは クラスの追加 を使って宣言したレコードセット クラス \(手順については「[MFC ODBC コンシューマーの追加](../../mfc/reference/adding-an-mfc-odbc-consumer.md)」を参照\) には、RFX が自動的に組み込まれます。  各レコードセット クラスの派生元は、フレームワークが提供する基本クラス `CRecordset` です。  MFC のアプリケーション ウィザードでは、初期レコードセット クラスを作成できます。  クラスの追加 では、必要に応じて、その他のレコードセット クラスを追加できます。  詳細については、「[MFC ODBC コンシューマーの追加](../../mfc/reference/adding-an-mfc-odbc-consumer.md)」を参照してください。  
+ RFX は意識する必要はほとんどの場合です。 MFC アプリケーション ウィザードを使用して、レコード セット クラスを宣言するかどうかまたは**クラスの追加**(」の説明に従って[MFC ODBC コンシューマーの追加](../../mfc/reference/adding-an-mfc-odbc-consumer.md))、RFX がそれらに自動的に組み込まれています。 レコード セット クラスは基底クラスから派生する必要があります`CRecordset`フレームワークによって提供されます。 MFC アプリケーション ウィザードでは、最初のレコード セット クラスを作成できます。 **クラスの追加**したり、必要に応じて、他のレコード セット クラスを追加することができます。 詳細と例については、次を参照してください。 [MFC ODBC コンシューマーの追加](../../mfc/reference/adding-an-mfc-odbc-consumer.md)です。  
   
- ただし、次の 3 つの処理を行う場合は、RFX コードを手動で追加する必要があります。  
+ 場合に 3 つのケースでは、少量の RFX コードを追加する必要があります手動で。  
   
--   パラメーター化されたクエリを使用する場合。  詳細については、「[レコードセット : パラメーターを利用したレコードセット \(ODBC\)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)」を参照してください。  
+-   パラメーター化クエリを使用します。 詳細については、次を参照してください。[レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)です。  
   
--   レコードセット オブジェクトを使って複数のテーブルの列を結合する場合。  詳細については、「[レコードセット : 結合 \(ODBC\)](../Topic/Recordset:%20Performing%20a%20Join%20\(ODBC\).md)」を参照してください。  
+-   結合 (2 つ以上のテーブルの列の 1 つのレコード セットの使用) を実行します。 詳細については、次を参照してください。[レコード セット: 結合 (Odbc)](../../data/odbc/recordset-performing-a-join-odbc.md)です。  
   
--   データ列を動的に結び付ける場合。  この方法よりもパラメーターを用いた方法の方が一般的です。  詳細については、「[レコードセット : データ列を動的に結び付ける方法 \(ODBC\)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)」を参照してください。  
+-   データ列を動的にバインドします。 これは、パラメーター化ほど一般的です。 詳細については、次を参照してください。[レコード セット: データ列を動的に結びつける (ODBC)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)です。  
   
- RFX の詳細については、「[レコード フィールド エクスチェンジ : RFX の動作のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)」を参照してください。  
+ RFX の高度な知識を必要がある場合は、次を参照してください。[レコード フィールド エクス チェンジ: RFX のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)です。  
   
- レコードセット オブジェクトの使用方法の詳細については、次のトピックを参照してください。  
+ 次のトピックでは、レコード セット オブジェクトの使い方の詳細について説明します。  
   
--   [レコード フィールド エクスチェンジ : RFX の使い方](../../data/odbc/record-field-exchange-using-rfx.md)  
+-   [レコード フィールド エクスチェンジ: RFX の使い方](../../data/odbc/record-field-exchange-using-rfx.md)  
   
--   [レコード フィールド エクスチェンジ : RFX 関数の使い方](../../data/odbc/record-field-exchange-using-the-rfx-functions.md)  
+-   [レコード フィールド エクスチェンジ: RFX 関数の使い方](../../data/odbc/record-field-exchange-using-the-rfx-functions.md)  
   
--   [レコード フィールド エクスチェンジ : RFX の動作のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)  
+-   [レコード フィールド エクスチェンジ: RFX の動作のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)  
   
-## 参照  
- [ODBC \(Open Database Connectivity\)](../Topic/Open%20Database%20Connectivity%20\(ODBC\).md)   
- [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md)   
- [MFC ODBC コンシューマー](../../mfc/reference/adding-an-mfc-odbc-consumer.md)   
- [\[データベース サポート\] \(MFC アプリケーション ウィザード\)](../Topic/Database%20Support,%20MFC%20Application%20Wizard.md)   
- [CRecordset クラス](../Topic/CRecordset%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [Open Database Connectivity (ODBC)](../../data/odbc/open-database-connectivity-odbc.md)   
+ [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
+ [MFC ODBC コンシューマーします。](../../mfc/reference/adding-an-mfc-odbc-consumer.md)   
+ [データベースのサポート、MFC アプリケーション ウィザード](../../mfc/reference/database-support-mfc-application-wizard.md)   
+ [CRecordset クラス](../../mfc/reference/crecordset-class.md)

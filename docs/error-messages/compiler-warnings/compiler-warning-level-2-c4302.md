@@ -1,36 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 2) C4302 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4302"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4302"
+title: "コンパイラの警告 (レベル 2) C4302 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4302
+dev_langs: C++
+helpviewer_keywords: C4302
 ms.assetid: f5e1c939-e134-4cca-ba1e-9b15a81549ae
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: afb3c41a0bd97753daf2be042ab1b699fd5cc6d8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 2) C4302
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'変換' : 'type 1' から 'type 2' へ切り詰めます。  
+# <a name="compiler-warning-level-2-c4302"></a>コンパイラの警告 (レベル 2) C4302
+'conversion': 切り捨てから 'type 1' を 'type 2'  
   
- 大きい型から小さい型への変換が見つかりました。  情報が失われている可能性があります。  
+ 大きい型から小さい型への変換が検出されました。 情報が失われる可能性があります。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[Compiler Warnings That Are Off by Default](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
- 次の例では警告 C4302 が生成されます。  
+ 次の例では、C4302 が生成されます。  
   
 ```  
 // C4302.cpp  

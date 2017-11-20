@@ -4,50 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- C3391
-dev_langs:
-- C++
-helpviewer_keywords:
-- C3391
+f1_keywords: C3391
+dev_langs: C++
+helpviewer_keywords: C3391
 ms.assetid: c32532b9-7db4-4ccd-84b9-479e5a1a19d1
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: b551b1a7e0ae03a7de5108a1d114155786972847
-ms.openlocfilehash: 7b5922ccf353162dc32c99e3818227639d0f5985
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 8501d0a645d656bd0c86f093d1591985f9a3499a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-error-c3391"></a>コンパイラ エラー C3391
-'type_arg': ジェネリック パラメーター ジェネリック 'generic_type' の ' param' に無効な型引数は、null 非許容値型である必要があります  
+'type_arg': ジェネリック パラメーター 'param' のジェネリック 'generic_type' の無効な型引数が null 非許容値型にする必要があります  
   
-ジェネリック型のインスタンス化が正しく行われませんでした。 型定義をご確認ください。 詳細については、次を参照してください<xref:System.Nullable>と[ジェネリック](../../windows/generics-cpp-component-extensions.md)。</xref:System.Nullable> 。  
+ジェネリック型のインスタンス化が正しく行われませんでした。 型定義を確認してください。 詳細については、次を参照してください。<xref:System.Nullable>と[ジェネリック](../../windows/generics-cpp-component-extensions.md)です。  
   
 ## <a name="example"></a>例  
-C + でのジェネリック型を作成するときにサポートされていない特定の制約を持つジェネリック型を含むコンポーネントを作成する次の例を使用して c#/cli CLI です。 詳細については、次を参照してください。[型パラメーターの制約](/dotnet/articles/csharp/programming-guide/generics/constraints-on-type-parameters)します。  
+C + におけるジェネリック型を作成するときにサポートされていない特定の制約を持つジェネリック型を含むコンポーネントを作成する C# の場合、次のサンプルを使用して + CLI です。 詳細については、「[型パラメーターの制約](/dotnet/csharp/programming-guide/generics/constraints-on-type-parameters)」を参照してください。  
   
 ```cs  
 // C3391.cs  
@@ -57,7 +37,7 @@ public class GR<N>
 where N : struct {}  
 ```  
   
-C3391.dll コンポーネントが利用できる場合、次の例には、c3391 エラーが生成されます。  
+C3391.dll コンポーネントが利用できる場合、次の例には C3391 が生成されます。  
   
 ```cpp  
 // C3391_b.cpp  

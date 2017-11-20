@@ -1,53 +1,53 @@
 ---
-title: "FreeLibrary と AfxFreeLibrary | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "FreeLibrary"
-  - "AfxFreeLibrary"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "拡張 DLL [C++]、アンロード"
-  - "AfxFreeLibrary メソッド"
-  - "アンロード (DLL を)"
-  - "FreeLibrary メソッド"
-  - "DLL [C++]、リンク"
-  - "明示的なリンク [C++]"
-  - "DLL [C++]、アンロード"
+title: "FreeLibrary と AfxFreeLibrary |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- FreeLibrary
+- AfxFreeLibrary
+dev_langs: C++
+helpviewer_keywords:
+- extension DLLs [C++], unloading
+- AfxFreeLibrary method
+- unloading DLLs
+- FreeLibrary method
+- DLLs [C++], linking
+- explicit linking [C++]
+- DLLs [C++], unloading
 ms.assetid: 4a48d290-3971-43e9-8e97-ba656cd0c8f8
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 276d93489a714dda5edd721c532c28c03b3ca41f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FreeLibrary と AfxFreeLibrary
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-DLL モジュールが不要になったときに [FreeLibrary](http://go.microsoft.com/fwlink/p/?LinkID=259188) DLL の呼び出しに関数を明示的にリンクするプロセス。  この関数は、モジュールの参照回数を減らし、参照回数が 0 になると、プロセスのアドレス空間へのマップからそのモジュールを削除します。  
+# <a name="freelibrary-and-afxfreelibrary"></a>FreeLibrary と AfxFreeLibrary
+DLL の呼び出しに明示的にリンクされるプロセス、 [FreeLibrary](http://go.microsoft.com/fwlink/p/?LinkID=259188) DLL モジュールが不要になったときに機能します。 これは、モジュールの参照カウントをデクリメントに機能し、参照カウントが 0 の場合は、プロセスのアドレス空間から割り当てを解除します。  
   
- MFC アプリケーションでは、拡張 DLL をアンロードするために `FreeLibrary` の代わりに [AfxFreeLibrary](../Topic/AfxFreeLibrary.md) を使用します。  `AfxFreeLibrary` のインターフェイス \(関数プロトタイプ\) は、`FreeLibrary` と同じです。  
+ MFC アプリケーションで使用して[AfxFreeLibrary](../mfc/reference/application-information-and-management.md#afxfreelibrary)の代わりに`FreeLibrary`MFC 拡張 DLL をアンロードします。 インターフェイス (関数プロトタイプ)`AfxFreeLibrary`と同じ`FreeLibrary`です。  
   
-## 目的に合ったトピックをクリックしてください  
+## <a name="what-do-you-want-to-do"></a>実行する操作  
   
--   [暗黙的なリンク](../Topic/Linking%20Implicitly.md)  
+-   [DLL を暗黙的にリンクする方法](../build/linking-an-executable-to-a-dll.md#linking-implicitly)  
   
--   [リンク方式の使い分け](../build/determining-which-linking-method-to-use.md)  
+-   [リンク方式を使い分け](../build/linking-an-executable-to-a-dll.md#determining-which-linking-method-to-use)  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
 -   [LoadLibrary と AfxLoadLibrary](../build/loadlibrary-and-afxloadlibrary.md)  
   
 -   [GetProcAddress](../build/getprocaddress.md)  
   
-## 参照  
- [Visual C\+\+ の DLL](../build/dlls-in-visual-cpp.md)   
+## <a name="see-also"></a>関連項目  
+ [Visual C の Dll](../build/dlls-in-visual-cpp.md)   
  [FreeLibrary](http://go.microsoft.com/fwlink/p/?LinkID=259188)   
- [AfxFreeLibrary](../Topic/AfxFreeLibrary.md)
+ [AfxFreeLibrary](../mfc/reference/application-information-and-management.md#afxfreelibrary)

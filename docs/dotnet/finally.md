@@ -1,36 +1,35 @@
 ---
-title: "finally | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "finally キーワード [C++]"
+title: "最後に |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: finally keyword [C++]
 ms.assetid: b55f3c8e-1af0-43e8-bcfb-99c3685d2578
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 55e2b77fbbcc607d802c4ea9e54d7ef56d473bd5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# finally
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`try` と `catch` 句に加えて、CLR の例外処理は `finally` 句をサポートします。  セマンティクスは構造化例外処理 \(SEH\) の `__finally` ブロックと同じです。  `__finally` ブロックは `try` または `catch` ブロックに進むことができます。  
+# <a name="finally"></a>finally
+加え`try`と`catch`句、CLR の例外処理のサポート、`finally`句。 セマンティクスは次のと同じ、`__finally`構造化例外処理 (SEH) をブロックします。 A`__finally`ブロックに従って、`try`または`catch`ブロックします。  
   
-## 解説  
- `finally` ブロックの目的は、発生した例外の後に残っているリソースをクリーンアップすることです。  例外がスローされなくてが `finally` ブロックが必ず実行されることに注意してください。  `catch` ブロックはマネージ例外が `try` 関連のブロック内でスローされれば場合にのみ実行されます。  
+## <a name="remarks"></a>コメント  
+ 目的、`finally`例外が発生した後に残されているリソースをクリーンアップするのには、ブロックします。 なお、`finally`ブロックは常に実行、例外がスローされなかった場合でもです。 `catch`マネージ例外がスローされた場合、ブロックは実行のみが関連付けられている`try`ブロックします。  
   
- `finally` は状況依存のキーワードです。詳細については、「[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)」を参照してください。  
+ `finally`状況依存のキーワードです。参照してください[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)詳細についてはします。  
   
-## 使用例  
- 次の例では `finally` の単純なブロックを示します。:  
+## <a name="example"></a>例  
+ 次の例では、単純な`finally`ブロック。  
   
 ```  
 // keyword__finally.cpp  
@@ -57,8 +56,11 @@ int main() {
 }  
 ```  
   
-  **catch**  
-**MyException**  
-**最終的に**   
-## 参照  
- [Exception Handling](../windows/exception-handling-cpp-component-extensions.md)
+```Output  
+in catch  
+MyException  
+in finally  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [例外処理](../windows/exception-handling-cpp-component-extensions.md)

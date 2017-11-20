@@ -1,44 +1,44 @@
 ---
-title: "Compiler Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "cl.exe compiler, attributes"
-  - "attributes [C++], compiler"
+title: "コンパイラ属性 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- cl.exe compiler, attributes
+- attributes [C++], compiler
 ms.assetid: 53cd9bee-1521-48ec-b171-80feac2096cc
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 72c8ee6a0d3b5a61e5fb60236269f89055a56a9b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Compiler Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンパイラの属性はさまざまな機能が用意されています。  
+# <a name="compiler-attributes"></a>コンパイラ属性
+コンパイラ属性は、さまざまな機能を提供します。  
   
-|属性|Description|  
-|--------|-----------------|  
-|[out](../windows/emitidl.md)|その後の IDL 属性が生成される .idl ファイルを処理して配置されているかどうかを判定します。|  
-|[event\_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
-|[ソース](../windows/event-source.md)|イベント ソースを作成します。|  
-|[export](../windows/export.md)|データ構造を .idl ファイル内に配置します。|  
-|[implements](../Topic/implements%20\(C++\).md)|IDL のコクラスのメンバーにはディスパッチ インターフェイスを指定します。|  
-|[importidl](../windows/importidl.md)|生成された .idl ファイルに指定の .idl ファイルに挿入します。|  
-|[importlib](../windows/importlib.md)|作成されたタイプ ライブラリに別のタイプ ライブラリで使用できるようにコンパイル済みの型を作成します。|  
-|[includelib](../windows/includelib-cpp.md)|生成された .idl ファイルに含める .idl ファイルまたは .h ファイルを指定します。|  
-|[library\_block](../windows/library-block.md)|.idl ファイルのライブラリ ブロック内の構造を配置します。|  
-|[no\_injected\_text](../windows/no-injected-text.md)|コンパイラで属性を使用した結果としてコードを挿入できません。|  
-|[satype](../windows/satype.md)|**SAFEARRAY** のデータ型を指定します。|  
-|[version](../windows/version-cpp.md)|クラスまたはインターフェイスの複数のバージョンでの特定のバージョンを指定します。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[emitidl](../windows/emitidl.md)|すべての後続の IDL 属性が処理して生成された .idl ファイル内に配置するかどうかを判断します。|  
+|[event_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
+|[event_source](../windows/event-source.md)|イベント ソースを作成します。|  
+|[export](../windows/export.md)|.Idl ファイルに配置するデータ構造が発生します。|  
+|[実装します。](../windows/implements-cpp.md)|IDL coclass のメンバーであることを強制するディスパッチ インターフェイスを指定します。|  
+|[importidl](../windows/importidl.md)|指定された .idl ファイルを生成された .idl ファイルに挿入します。|  
+|[importlib](../windows/importlib.md)|既に他のタイプ ライブラリでコンパイル済みの型を、作成中のタイプ ライブラリで使用できるようにします。|  
+|[includelib](../windows/includelib-cpp.md)|生成された .idl ファイルに含まれる、.idl ファイルまたは .h ファイルが発生します。|  
+|[library_block](../windows/library-block.md)|.Idl ファイルのライブラリ ブロックの内部構造を配置します。|  
+|[no_injected_text](../windows/no-injected-text.md)|コンパイラがコードの属性を使用した結果として挿入するを防ぎます。|  
+|[satype](../windows/satype.md)|データ型を指定します、 **SAFEARRAY**です。|  
+|[version](../windows/version-cpp.md)|インターフェイスまたはクラスの複数のバージョン間で特定のバージョンを識別します。|  
   
-## 参照  
- [Attributes by Group](../windows/attributes-by-group.md)
+## <a name="see-also"></a>関連項目  
+ [グループ別の属性](../windows/attributes-by-group.md)

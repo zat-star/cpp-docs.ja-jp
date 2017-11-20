@@ -1,65 +1,65 @@
 ---
-title: "/SWAPRUN (リンカー出力をスワップ ファイルに読み込む) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.SwapRunFromNet"
-  - "/swaprun"
-  - "VC.Project.VCLinkerTool.SwapRunFromCD"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/SWAPRUN リンカー オプション"
-  - "ファイル [C++], LINK"
-  - "LINK ツール [C++], 出力"
-  - "リンカー [C++], コピー (出力をスワップ ファイルに)"
-  - "出力ファイル, リンカー"
-  - "スワップ ファイル (リンカー出力用の)"
-  - "SWAPRUN リンカー オプション"
-  - "-SWAPRUN リンカー オプション"
+title: "-SWAPRUN (ロード リンカー出力をスワップ ファイル) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.SwapRunFromNet
+- /swaprun
+- VC.Project.VCLinkerTool.SwapRunFromCD
+dev_langs: C++
+helpviewer_keywords:
+- -SWAPRUN linker option
+- files [C++], LINK
+- LINK tool [C++], output
+- linker [C++], copying output to swap file
+- swap file for linker output
+- output files, linker
+- /SWAPRUN linker option
+- SWAPRUN linker option
 ms.assetid: 4a1e7f46-4399-4161-8dfc-d6a71beaf683
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: f41a89e74ec2e9ed34e0add12717dd0c135ce723
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /SWAPRUN (リンカー出力をスワップ ファイルに読み込む)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="swaprun-load-linker-output-to-swap-file"></a>/SWAPRUN (リンカー出力をスワップ ファイルに読み込む)
 ```  
 /SWAPRUN:{NET|CD}  
 ```  
   
-## 解説  
- \/SWAPRUN オプションは、リンカー出力をスワップ ファイルにコピーし、そのコピーからイメージを実行するように、オペレーティング システムに指示します。  これは Windows NT 4.0 以降の機能です。  
+## <a name="remarks"></a>コメント  
+ /SWAPRUN オプション、リンカーは、オペレーティング システムを最初のコピーをスワップ ファイルに出力し、そこからイメージを実行します。 これは、Windows NT 4.0 以降) の機能です。  
   
- NET を指定すると、オペレーティング システムは、まずネットワークからのバイナリ イメージをスワップ ファイルにコピーし、そのファイルからイメージを読み込みます。  このオプションは、ネットワーク上でアプリケーションを実行するときに便利です。  CD を指定すると、オペレーティング システムは、リムーバブル ディスク上のイメージをページ ファイルにコピーし、そのファイルからイメージを読み込みます。  
+ NET を指定すると、オペレーティング システムのバイナリ イメージをネットワークからスワップ ファイルをコピーはまず作成し、そこから読み込んでいます。 このオプションは、ネットワーク経由でアプリケーションを実行するために役立ちます。 CD を指定すると、オペレーティング システムがリムーバブル ディスク上のイメージをページファイルにコピーし、読み込むことです。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[システム\] プロパティ ページをクリックします。  
+3.  クリックして、**システム**プロパティ ページ。  
   
 4.  次のいずれかのプロパティを変更します。  
   
-    -   **\[CD からスワップ実行\]**  
+    -   **CD からスワップ実行**  
   
-    -   **\[ネットワークからスワップ実行\]**  
+    -   **ネットワークからスワップ実行**  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.SwapRunFromCD%2A> プロパティおよび <xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.SwapRunFromNet%2A> プロパティを参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

@@ -1,34 +1,32 @@
 ---
-title: "リンカ ツール エラー LNK2011 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK2011"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK2011"
+title: "リンカ ツール エラー LNK2011 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK2011
+dev_langs: C++
+helpviewer_keywords: LNK2011
 ms.assetid: 04991ef5-49d5-46c7-8eee-a9d1d3fc541e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a660356f719003a06c17d1fddba948e9d903e00a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リンカ ツール エラー LNK2011
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プリコンパイル済みオブジェクトはリンクされていません。イメージは動作しない可能性があります。  
+# <a name="linker-tools-error-lnk2011"></a>リンカ ツール エラー LNK2011
+プリコンパイル済みのオブジェクトがリンクされていません。イメージは動作しない可能性があります。  
   
- プリコンパイル済みヘッダーを使用するときには、プリコンパイル済みヘッダーと同時に作成したファイルもリンクする必要があります。  他のソース ファイルで使うためのプリコンパイル済みヘッダーを作る時に使用したソース ファイルがあるときには、オブジェクト ファイルも含めてください。  
+ プリコンパイル済みヘッダーを使用する場合は、すべてのプリコンパイル済みヘッダーで作成されたオブジェクト ファイルはでリンクされているリンクが必要です。 使用する他のソース ファイルで使用するためのプリコンパイル済みヘッダーを生成するソース ファイルがあれば、オブジェクト ファイルも含める必要があります。  
   
- たとえば、STUB.cpp というファイルをコンパイルして、ほかのソース ファイル用にプリコンパイル済みヘッダーを作ったときは、STUB.obj も一緒にリンクする必要があります。そうしないと、このエラーが発生します。  以下の例では、第 1 行でプリコンパイル済みヘッダー COMMON.pch を作成しています。このファイルは第 2 行と第 3 行で PROG1.cpp と PROG2.cpp と共に使用されます。  STUB.cpp には、PROG1.cpp および PROG2.cpp と同じ `#include` 行だけがあり、プリコンパイル済みヘッダーを作成するためだけに使用されます。  最後の行では、STUB.obj もリンクする必要があります。STUB.obj を指定しないと、LNK2011 が発生します。  
+ 使用するためのプリコンパイル済みヘッダー ファイルを作成するその他のソース STUB.cpp という名前のファイルをコンパイルする場合 stub.obj も一緒にリンクする必要がありますなど、このエラーが表示されます。 次のコマンドラインはいずれかの線を使用して、COMMON.pch PROG1.cpp と PROG2.cpp 2 および 3 の行で使用されている、プリコンパイル済みヘッダーを作成します。 STUB.cpp だけを含んだファイル`#include`行 (同じ`#include`PROG1.cpp、PROG2.cpp 行) と、プリコンパイル済みヘッダーの生成にのみ使用されます。 最後の行で、LNK2011 を回避する stub.obj も一緒にリンクされます必要があります。  
   
 ```  
 cl /c /Yccommon.h stub.cpp  

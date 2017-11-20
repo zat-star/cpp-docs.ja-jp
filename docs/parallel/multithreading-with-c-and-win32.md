@@ -1,58 +1,58 @@
 ---
-title: "C と Win32 を使用するマルチスレッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "マルチスレッド処理 [C++], C と Win32"
-  - "スレッド処理 [C]"
-  - "スレッド処理 [C++], C と Win32"
-  - "Visual C, マルチスレッド"
-  - "Win32 [C++], マルチスレッド"
-  - "Win32 アプリケーション [C++], マルチスレッド"
-  - "Windows API [C++], マルチスレッド"
+title: "C と Win32 を使用するマルチ スレッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Windows API [C++], multithreading
+- multithreading [C++], C and Win32
+- Visual C, multithreading
+- Win32 applications [C++], multithreading
+- threading [C++], C and Win32
+- Win32 [C++], multithreading
+- threading [C]
 ms.assetid: 67cdc99e-1ad9-452b-a042-ed246b70040e
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0e2ce9377d0ea4b2bd7b04255eb1c8099341af39
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# C と Win32 を使用するマルチスレッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Microsoft Visual C\+\+ では、Windows XP、Windows 2000、Windows NT、Windows Me、Windows 98 などの Microsoft Windows 用のマルチスレッド アプリケーションを作成できます。  アプリケーションでキーボードとマウスの同時入力などの複数の処理を管理する場合は、複数のスレッド \(マルチスレッド\) の使用を検討してください。  たとえば、あるスレッドがマウス関連の処理をしている間に、別のスレッドでキーボード入力を処理できます。  さらに 3 番目のスレッドで、マウス スレッドとキーボード スレッドからのデータに基づいて表示画面を更新することもできます。  また別のスレッドで、同時にディスク ファイルにアクセスしたり、通信 \(COM\) ポートからデータを受信することもできます。  
+# <a name="multithreading-with-c-and-win32"></a>C と Win32 を使用するマルチスレッド
+Microsoft Visual C は、Microsoft Windows でマルチ スレッド アプリケーションを作成するためのサポートを提供します。 Windows XP、Windows 2000、Windows NT、Windows Me、および Windows 98 です。 アプリケーションでキーボードとマウスの同時入力などの複数の処理を管理する場合は、複数のスレッド (マルチスレッド) の使用を検討してください。 たとえば、あるスレッドがマウス関連の処理をしている間に、別のスレッドでキーボード入力を処理できます。 さらに 3 番目のスレッドで、マウス スレッドとキーボード スレッドからのデータに基づいて表示画面を更新することもできます。 また別のスレッドで、同時にディスク ファイルにアクセスしたり、通信 (COM) ポートからデータを受信することもできます。  
   
- Visual C\+\+ では、複数のスレッドを含むプログラムを作成する方法として、MFC \(Microsoft Foundation Class\) ライブラリを使用する方法と、C ランタイム ライブラリと Win32 API を使用する方法の 2 つがあります。  MFC でマルチスレッド アプリケーションを作成する方法については、C を使用するマルチスレッドに関する次のトピックを読んだ後、「[C\+\+ と MFC を使用するマルチスレッド](../parallel/multithreading-with-cpp-and-mfc.md)」を参照してください。  
+ Visual C++ では、複数のスレッドを含むプログラムを作成する方法として、MFC (Microsoft Foundation Class) ライブラリを使用する方法と、C ランタイム ライブラリと Win32 API を使用する方法の 2 つがあります。 MFC でマルチ スレッド アプリケーションの作成方法の詳細については、次を参照してください[C++ と MFC を使用するマルチ スレッド](../parallel/multithreading-with-cpp-and-mfc.md)c でのマルチ スレッドに関する次のトピックを読む。  
   
- 以下のトピックでは、マルチスレッド プログラムの作成をサポートする Visual C\+\+ の機能について説明します。  
+ 以下のトピックでは、マルチスレッド プログラムの作成をサポートする Visual C++ の機能について説明します。  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [マルチスレッド プログラム](../parallel/multithread-programs.md)  
+-   [どのようなマルチ スレッド処理については、](../parallel/multithread-programs.md)  
   
--   [ライブラリのマルチスレッド サポート](../parallel/library-support-for-multithreading.md)  
+-   [ライブラリのサポートのマルチ スレッド](../parallel/library-support-for-multithreading.md)  
   
--   [マルチスレッドのためのインクルード ファイル](../parallel/include-files-for-multithreading.md)  
+-   [ファイルをインクルードするマルチ スレッド](../parallel/include-files-for-multithreading.md)  
   
 -   [スレッド コントロールのための C ランタイム ライブラリ関数](../parallel/c-run-time-library-functions-for-thread-control.md)  
   
--   [マルチスレッドの C サンプル プログラム](../parallel/sample-multithread-c-program.md)  
+-   [C のサンプルのマルチ スレッド プログラム](../parallel/sample-multithread-c-program.md)  
   
--   [マルチスレッド Win32 プログラムの作成](../Topic/Writing%20a%20Multithreaded%20Win32%20Program.md)  
+-   [マルチ スレッド Win32 プログラムの作成](../parallel/writing-a-multithreaded-win32-program.md)  
   
--   [マルチスレッド プログラムのコンパイルとリンク](../parallel/compiling-and-linking-multithread-programs.md)  
+-   [コンパイルとリンクのマルチ スレッド プログラム](../parallel/compiling-and-linking-multithread-programs.md)  
   
--   [マルチスレッド プログラムの問題を回避する方法](../Topic/Avoiding%20Problem%20Areas%20with%20Multithread%20Programs.md)  
+-   [マルチ スレッド プログラムの問題の回避](../parallel/avoiding-problem-areas-with-multithread-programs.md)  
   
--   [スレッド ローカル ストレージ \(TLS: Thread Local Storage\)](../parallel/thread-local-storage-tls.md)  
+-   [スレッド ローカル ストレージ (TLS)](../parallel/thread-local-storage-tls.md)  
   
-## 参照  
- [旧形式のコードのためのマルチスレッド サポート \(Visual C\+\+\)](../parallel/multithreading-support-for-older-code-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [旧形式のコードのためのマルチスレッド サポート (Visual C++)](../parallel/multithreading-support-for-older-code-visual-cpp.md)

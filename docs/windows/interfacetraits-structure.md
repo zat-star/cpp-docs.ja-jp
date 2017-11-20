@@ -1,39 +1,36 @@
 ---
-title: "InterfaceTraits 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::InterfaceTraits"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "InterfaceTraits 構造体"
+title: "InterfaceTraits 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::InterfaceTraits
+dev_langs: C++
+helpviewer_keywords: InterfaceTraits structure
 ms.assetid: ede0c284-19a7-4892-9738-ff3da4923d0a
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 494942ce3c50889cae7a8867dc2b86ed6a609313
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# InterfaceTraits 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="interfacetraits-structure"></a>InterfaceTraits 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
    typename I0  
 >  
 struct __declspec(novtable) InterfaceTraits;  
-  
 template<  
    typename CloakedType  
 >  
@@ -43,49 +40,49 @@ template<>
 struct __declspec(novtable) InterfaceTraits<Nil>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `I0`  
  インターフェイスの名前。  
   
  `CloakedType`  
- RuntimeClass、実装と ChainInterfaces のサポートされるインターフェイス ID の一覧にないインターフェイスです。  
+ RuntimeClass、Implements、および ChainInterfaces ことなく、一連のがインターフェイスはインターフェイス Id をサポートします。  
   
-## 解説  
- インターフェイスのような共通の特性を実装します。  
+## <a name="remarks"></a>コメント  
+ インターフェイスの一般的な特徴を実装します。  
   
- 2 番目のテンプレートはマスク インターフェイス用に特化したクラスです。  3 番目のテンプレートは、パラメーター用に特化したクラスです。  
+ 2 番目のテンプレートは、クロークされているインターフェイスに特殊化です。 3 番目のテンプレートは、Nil パラメーターに特殊化です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |`Base`|`I0` テンプレート パラメーターのシノニムです。|  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[InterfaceTraits::CanCastTo メソッド](../Topic/InterfaceTraits::CanCastTo%20Method.md)|指定したポインターが `Base`へのポインターにキャストすることができるかどうかを示します。|  
-|[InterfaceTraits::CastToBase メソッド](../windows/interfacetraits-casttobase-method.md)|`Base`へのポインターに指定したポインターをキャストします。|  
-|[InterfaceTraits::CastToUnknown メソッド](../windows/interfacetraits-casttounknown-method.md)|IUnknown へのポインターに指定したポインターをキャストします。|  
-|[InterfaceTraits::FillArrayWithIid メソッド](../windows/interfacetraits-fillarraywithiid-method.md)|インデックスの引数で指定された配列の要素に `Base` のインターフェイス ID を割り当てます。|  
-|[InterfaceTraits::Verify メソッド](../Topic/InterfaceTraits::Verify%20Method.md)|ベースが派生されることを確認します。|  
+|----------|-----------------|  
+|[InterfaceTraits::CanCastTo メソッド](../windows/interfacetraits-cancastto-method.md)|指定したポインターをへのポインターにキャストできるかどうかを示す`Base`です。|  
+|[InterfaceTraits::CastToBase メソッド](../windows/interfacetraits-casttobase-method.md)|ポインターへのポインターをキャスト`Base`です。|  
+|[InterfaceTraits::CastToUnknown メソッド](../windows/interfacetraits-casttounknown-method.md)|IUnknown へのポインターへのポインターをキャストします。|  
+|[InterfaceTraits::FillArrayWithIid メソッド](../windows/interfacetraits-fillarraywithiid-method.md)|インターフェイス ID を割り当てます`Base`インデックス引数で指定された配列の要素にします。|  
+|[InterfaceTraits::Verify メソッド](../windows/interfacetraits-verify-method.md)|ベースが正しく派生したことを確認します。|  
   
-### パブリック定数  
+### <a name="public-constants"></a>パブリック定数  
   
 |名前|説明|  
-|--------|--------|  
-|[InterfaceTraits::IidCount 定数](../Topic/InterfaceTraits::IidCount%20Constant.md)|InterfaceTraits の現在のオブジェクトに関連付けられたインターフェイス ID の数値を保持します。|  
+|----------|-----------------|  
+|[InterfaceTraits::IidCount 定数](../windows/interfacetraits-iidcount-constant.md)|Id が現在の InterfaceTraits オブジェクトに関連付けられているインターフェイスの数を保持します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `InterfaceTraits`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

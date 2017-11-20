@@ -1,39 +1,39 @@
 ---
-title: "OLE DB アプリケーションでのリソース プール | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB プロバイダー, リソース プール"
-  - "OLE DB サービス [OLE DB], リソース プール"
-  - "OLE DB, リソース プール"
-  - "リソース プール [OLE DB], サービス"
+title: "OLE DB アプリケーションでのリソース プール |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB services [OLE DB], resource pooling
+- resource pooling [OLE DB], services
+- OLE DB, resource pooling
+- OLE DB providers, resource pooling
 ms.assetid: 2ead1bcf-bbd4-43ea-a307-bb694b992fc1
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a11fe27fad42e7a27e55a8b4f494980aa9f708a6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# OLE DB アプリケーションでのリソース プール
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-アプリケーションのプールを利用するには、**IDataInitialize** または **IDBPromptInitialize** を通じてデータ ソースを取得することにより OLE DB サービスが起動していることを確認する必要があります。  `CoCreateInstance` を直接使用し、プロバイダーの CLSID に基づいてプロバイダーを呼び出す場合は、OLE DB サービスは起動しません。  
+# <a name="resource-pooling-in-your-ole-db-application"></a>OLE DB アプリケーションでのリソース プール
+アプリケーションでのプールを活用するには、OLE DB サービスが使用して、データ ソースを取得することによって呼び出されることを確認してください**IDataInitialize**または**IDBPromptInitialize**です。 直接使用する場合`CoCreateInstance`呼び出すには、プロバイダーの CLSID に基づく、プロバイダー、OLE DB サービスは呼び出されません。  
   
- OLE DB サービスは、**IDataInitialize** または **IDBPromptInitialize** への参照が保持されている限り、または接続が使用中である限り、接続されたデータ ソースのプールを維持します。  COM\+ 1.0 サービスまたはインターネット インフォメーション サービス \(IIS: Internet Information Services\) の環境では、プールは自動的に維持されます。  アプリケーションが COM\+ 1.0 サービスまたは IIS 環境の外部でプールを利用する場合は、**IDataInitialize** または **IDBPromptInitialize** への参照を保持するか、少なくとも 1 つの接続を持続する必要があります。  アプリケーションにより最後の接続が解放されたときにプールが破棄されないようにするには、アプリケーションが有効な間は参照を保持するか接続を持続します。  
+ OLE DB サービスが接続されているデータ ソースへの参照と同じくらいのプールを維持**IDataInitialize**または**IDBPromptInitialize**が保持されているか、使用中の接続がある限りです。 プールは、COM + 1.0 Services またはインターネット インフォメーション サービス (IIS) の環境内で自動的に維持されます。 参照を保持する必要がある場合は、アプリケーションでは、COM + 1.0 Services または IIS 環境の外部でプールの利用、 **IDataInitialize**または**IDBPromptInitialize**には、少なくとも 1 つにするか接続です。 最後の接続はをアプリケーションによってリリースされたときに、プールが破棄されないことを確認するには、アプリケーションの有効期間にわたって接続保持するか、参照を保持します。  
   
- OLE DB サービスは、`Initialize` が呼び出された場合に接続が引き出されるプールを識別します。  接続がプールから引き出された後は、別のプールには移動できません。  したがって、`Initialize` を呼び出す前に、プロバイダー固有のインターフェイスに対して `UnInitialize` や `QueryInterface` を呼び出すなど、初期化情報を変更する処理をアプリケーションで行うことは避けてください。  また、**DBPROMPT\_NOPROMPT** 以外のプロンプト値で確立された接続はプールされません。  ただし、プロンプトを通じて確立された接続から取得された初期化文字列は、同じデータ ソースへの追加のプール接続を確立するために使用できます。  
+ OLE DB サービスが接続の描画時に元となる、プールを特定する`Initialize`と呼びます。 接続がプールから描画されると、後に、別のプールに移動できません。 したがって、呼び出しなどの初期化情報を変更するアプリケーションでの作業を実行しないように`UnInitialize`呼び出しまたは`QueryInterface`呼び出す前に、プロバイダー固有のインターフェイスの`Initialize`します。 またで確立された接続プロンプトの値以外の**DBPROMPT_NOPROMPT**プールされていません。 ただし、プロンプトを通じて確立された接続から取得された初期化文字列は、同じデータ ソースに追加されているプールされた接続を確立するために使用できます。  
   
- 一部のプロバイダーは、セッションごとに独立した接続を確立する必要があります。  これらの追加接続は、分散トランザクションがある場合、そこで別個に確保する必要があります。  OLE DB サービスは、データ ソースごとに 1 つのセッションをキャッシュおよび再利用しますが、アプリケーションが 1 つのデータ ソースから一度に複数のセッションを要求した場合、プロバイダーは追加の接続を確立することになり、プールされていない追加のトランザクションを確保することになります。  実際には、単一データ ソースから複数のセッションを作成するよりも、プール環境で各セッションに別個のデータ ソースを作成する方が効率的です。  
+ 一部のプロバイダーは、セッションごとに別々 の接続を作成する必要があります。 これらの接続を追加する必要がありますとは別にトランザクションに参加させる、分散、いずれかが存在する場合。 OLE DB サービスをキャッシュし、データ ソースごとに 1 つのセッションを再利用、プロバイダーが追加の接続を行うとは別のトランザクション参加リストの実行を最後可能性があります、アプリケーションは、1 つのデータ ソースから一度に 1 つ以上のセッションを要求している場合プールされていません。 1 つのデータ ソースから複数のセッションを作成するよりもされているプールされた環境でセッションごとに個別のデータ ソースを作成する方が効率的です。  
   
- 最後に、ADO は OLE DB サービスを自動的に利用するため、ADO を使用して接続を確立でき、その場合はプールと確保が自動的に行われます。  
+ 最後に、ADO 自動的に利用するための OLE DB サービス、ADO を使用して接続を確立し、プールと参加リストが自動的に行われます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB リソース プールとサービス](../../data/oledb/ole-db-resource-pooling-and-services.md)

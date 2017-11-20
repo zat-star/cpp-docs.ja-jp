@@ -1,58 +1,56 @@
 ---
-title: "vector::erase (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::erase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "erase メンバー [STL/CLR]"
+title: "vector::erase (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector::erase
+dev_langs: C++
+helpviewer_keywords: erase member [STL/CLR]
 ms.assetid: 624905eb-83c0-499b-a07a-c10aebd7acc3
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7edabb5d02b09944f5745a6d6cfc264fb120eade
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# vector::erase (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="vectorerase-stlclr"></a>vector::erase (STL/CLR)
 指定した位置にある要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator erase(iterator where);  
 iterator erase(iterator first, iterator last);  
 ```  
   
-#### パラメーター  
- 最初  
- 消去する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 消去する範囲の開始しています。  
   
  last  
- 消去する範囲の最後。  
+ 消去する範囲の終了。  
   
  where  
  消去する要素。  
   
-## 解説  
- 一つ目のメンバー関数は `where`が指す被制御シーケンスの要素を削除します。  単一の要素を削除する場合に使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数によって示される、被制御シーケンスの要素を削除する`where`です。 それを使用するには 1 つの要素を削除します。  
   
- 2 つ目のメンバー関数は、範囲 `[``first``,``last``)`の被制御シーケンスの要素を削除します。  使用するゼロ以上の連続する要素を削除するには、それを。  
+ 2 番目のメンバー関数は、範囲 [`first`, `last`) の被制御シーケンスの要素を削除します。 これを使用するには 0 個以上の連続する要素を削除します。  
   
- このメンバー関数は、そのような要素が存在しない場合、要素を削除した後に残った一つ目の要素を指定する場合は [vector::end](../dotnet/vector-end-stl-clr.md)`()` 反復子を返します。  
+ 両方のメンバー関数が、削除された要素の後に残る最初の要素を指定する反復子を返しますまたは[vector::end (STL/CLR)](../dotnet/vector-end-stl-clr.md) `()`このような要素が存在しない場合。  
   
- 要素をオフにすると、要素のコピーの数は削除とシーケンスの最後の近端間の要素数で直線的です。一つ以上の要素をシーケンスの先頭または末尾に無効に \(要素のコピーが行われません。\)  
+ 要素を消去するには、ときに要素のコピーの数は消去の終了と、シーケンスの最も近い最後の要素の数に比例します。 (シーケンスの先頭または末尾にある 1 つまたは複数の要素を消去するには、ときに要素のコピーは発生しません。)  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_erase.cpp   
@@ -92,16 +90,19 @@ int main()
   
 ```  
   
-  **b c**  
-**erase\(begin\(\)\= b\)**   
- **b c d e**  
-**erase\(begin\(\)、end\(\)\-1\) \= e**  
-**size\(\) \= 1**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+ a b c  
+erase(begin()) = b  
+ b c d e  
+erase(begin(), end()-1) = e  
+size() = 1  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::clear](../dotnet/vector-clear-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::clear (STL/CLR)](../dotnet/vector-clear-stl-clr.md)

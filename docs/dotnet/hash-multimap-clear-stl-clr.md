@@ -1,41 +1,39 @@
 ---
-title: "hash_multimap::clear (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multimap::clear"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "clear メンバー [STL/CLR]"
+title: "hash_multimap::clear (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_multimap::clear
+dev_langs: C++
+helpviewer_keywords: clear member [STL/CLR]
 ms.assetid: 8ad99f08-93b3-42b7-be07-f9a8ec556554
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8bda656c05db383f944e66d90f9117d4dcb80a9f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_multimap::clear (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultimapclear-stlclr"></a>hash_multimap::clear (STL/CLR)
 すべての要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void clear();  
 ```  
   
-## 解説  
- メンバー関数は、実質的に [hash\_multimap::erase](../dotnet/hash-multimap-erase-stl-clr.md)`(`[hash\_multimap::begin](../dotnet/hash-multimap-begin-stl-clr.md)`(),`[hash\_multimap::end](../dotnet/hash-multimap-end-stl-clr.md)`())`を呼び出します。  被制御シーケンスが空であることを確認するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数が効果的に呼び出し[hash_multimap::erase (STL/CLR)](../dotnet/hash-multimap-erase-stl-clr.md) `(` [hash_multimap::begin (STL/CLR)](../dotnet/hash-multimap-begin-stl-clr.md) `(),` [hash_multimap::end (STL/CLR)](../dotnet/hash-multimap-end-stl-clr.md)`())`. これを使用するには、被制御シーケンスが空であることを確認します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multimap_clear.cpp   
@@ -73,15 +71,18 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 0**  
- **\[1 つ\[\]b 2\]**  
-**size\(\) \= 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+size() = 0  
+ [a 1] [b 2]  
+size() = 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_multimap](../dotnet/hash-multimap-stl-clr.md)   
- [hash\_multimap::erase](../dotnet/hash-multimap-erase-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
+ [hash_multimap::erase (STL/CLR)](../dotnet/hash-multimap-erase-stl-clr.md)

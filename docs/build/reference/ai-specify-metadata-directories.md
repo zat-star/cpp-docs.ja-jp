@@ -1,62 +1,62 @@
 ---
-title: "/AI (メタデータ ディレクトリの指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.AdditionalUsingDirectories"
-  - "VC.Project.VCNMakeTool.AssemblySearchPath"
-  - "/AI"
-  - "VC.Project.VCCLWCECompilerTool.AdditionalUsingDirectories"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/AI コンパイラ オプション [C++]"
-  - "AI コンパイラ オプション [C++]"
-  - "-AI コンパイラ オプション [C++]"
+title: "-AI (メタデータ ディレクトリの指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.AdditionalUsingDirectories
+- VC.Project.VCNMakeTool.AssemblySearchPath
+- /AI
+- VC.Project.VCCLWCECompilerTool.AdditionalUsingDirectories
+dev_langs: C++
+helpviewer_keywords:
+- /AI compiler option [C++]
+- AI compiler option [C++]
+- -AI compiler option [C++]
 ms.assetid: fb9c1846-504c-4a3b-bb39-c8696de32f6f
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 74f8b429d920a070df01e69deab4e570afb6dd72
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /AI (メタデータ ディレクトリの指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ai-specify-metadata-directories"></a>/AI (メタデータ ディレクトリの指定)
 `#using` ディレクティブに渡されたファイル参照を解決するために、コンパイラによって検索されるディレクトリを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /AIdirectory  
 ```  
   
-## 引数  
+## <a name="arguments"></a>引数  
  `directory`  
  コンパイラが検索するディレクトリまたはパス。  
   
-## 解説  
- **\/AI** 呼び出しに渡すことができるディレクトリは 1 つだけです。  コンパイラで検索するパスごとに **\/AI** オプションを 1 つずつ指定します。  たとえば、`#using` ディレクティブのコンパイラ検索パスに C:\\Project\\Meta と C:\\Common\\Meta の両方を追加するには、`/AI"C:\Project\Meta" /AI"C:\Common\Meta"` をコンパイラ コマンド ラインに追加するか、Visual Studio の **\[追加の \#using ディレクトリ\]** プロパティに各ディレクトリを追加します。  
+## <a name="remarks"></a>コメント  
+ 1 つだけのディレクトリを渡すことができます、 **/AI**呼び出しです。 いずれかを指定**/AI**コンパイラで検索するパスごとにオプションです。 例については、コンパイラ検索パスに C:\Project\Meta と C:\Common\Meta の両方を追加する`#using`、ディレクティブを追加`/AI"C:\Project\Meta" /AI"C:\Common\Meta"`コンパイラのコマンドラインを各ディレクトリを追加または、**に関する追加の #using ディレクトリの using**Visual Studio でのプロパティです。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  ナビゲーション ペインで、**\[構成プロパティ\]**、**\[C\/C\+\+\]**、**\[全般\]** の順に選択します。  
+2.  ナビゲーション ウィンドウで、次のように選択します。**構成プロパティ**、 **c/c++**、**全般**です。  
   
-3.  **\[追加の \#using ディレクトリ\]** プロパティを変更します。  
+3.  変更、**に関する追加の #using ディレクトリを using**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalUsingDirectories%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalUsingDirectories%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [\#using ディレクティブ](../../preprocessor/hash-using-directive-cpp.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [#using ディレクティブ](../../preprocessor/hash-using-directive-cpp.md)

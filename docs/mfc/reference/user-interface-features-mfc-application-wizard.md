@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.appwiz.mfc.exe.ui
-dev_langs:
-- C++
-helpviewer_keywords:
-- MFC Application Wizard, user interface features
+f1_keywords: vc.appwiz.mfc.exe.ui
+dev_langs: C++
+helpviewer_keywords: MFC Application Wizard, user interface features
 ms.assetid: 59e7b829-a665-42eb-be23-3f2a36eb2dad
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
 ms.openlocfilehash: 78bc0d034c7f4e3b5c34596ee83de1b68d8d9173
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="user-interface-features-mfc-application-wizard"></a>[ユーザー インターフェイスの機能] (MFC アプリケーション ウィザード)
 このトピックでは、アプリケーションの外観を指定するのに使用できるオプションについて説明します。 プロジェクトのユーザー インターフェイスの機能で指定したアプリケーションの種類によって異なります、[アプリケーションの種類、MFC アプリケーション ウィザード](../../mfc/reference/application-type-mfc-application-wizard.md)MFC アプリケーション ウィザードのページです。 たとえば、シングル ドキュメント インターフェイス アプリケーションを作成する場合は、子フレームのスタイルを追加できません。  
@@ -71,5 +66,4 @@ ms.lasthandoff: 10/09/2017
   
 ## <a name="see-also"></a>関連項目  
  [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
-
 

@@ -1,54 +1,54 @@
 ---
-title: "/Zl (既定のライブラリ名の省略) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/zi"
-  - "VC.Project.VCCLCompilerTool.OmitDefaultLibName"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Zl コンパイラ オプション [C++]"
-  - "既定のライブラリ, 省略 (名前を)"
-  - "省略 (既定のライブラリ名を) コンパイラ オプション"
-  - "ZI コンパイラ オプション"
-  - "-Zl コンパイラ オプション [C++]"
+title: "-Zl (既定のライブラリ名を省略) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /zi
+- VC.Project.VCCLCompilerTool.OmitDefaultLibName
+dev_langs: C++
+helpviewer_keywords:
+- -Zl compiler option [C++]
+- ZI compiler option
+- Omit Default Library Name compiler option
+- /Zl compiler option [C++]
+- default libraries, omitting names
 ms.assetid: b27d39d0-44d6-498c-84ae-27c1326fee59
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 8b0d4f865d060ceaf99a808d87574cb6d088f139
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Zl (既定のライブラリ名の省略)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-.obj ファイルから、既定の C ランタイム ライブラリ名を削除します。  既定では、リンカーに正しいライブラリを指示するために、コンパイラによって .obj ファイルにライブラリ名が埋め込まれます。  
+# <a name="zl-omit-default-library-name"></a>/Zl (既定のライブラリ名の省略)
+.Obj ファイルから既定の C ランタイム ライブラリ名を省略します。 既定では、コンパイラでライブラリ名が .obj ファイルにプッシュされ、リンカーに適切なライブラリが示されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Zl  
 ```  
   
-## 解説  
- 既定のライブラリの詳細については、「[\/MD、\/ML、\/MT、\/LD \(ランタイム ライブラリの使用\)](../../build/reference/md-mt-ld-use-run-time-library.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 既定のライブラリの詳細については、次を参照してください。[ランタイム ライブラリの使用](../../build/reference/md-mt-ld-use-run-time-library.md)です。  
   
- **\/Zl** オプションは、ライブラリに格納する予定の .obj ファイルをコンパイルするときに使います。  単一の .obj ファイルでライブラリ名を省略しても節約できるスペースはわずかですが、多数のオブジェクト モジュールから成るライブラリ全体ではかなりのスペースを節約できます。  
+ 使用することができます**/Zl**ライブラリに格納する .obj ファイルをコンパイルします。 少量の単一の .obj ファイルの領域のみを保存するライブラリの名前を省略すると、保存領域の合計は重要で多数のオブジェクト モジュールを含むライブラリ。  
   
- これは、高度なオプションです。  このオプションを設定すると、特定の C ランタイム ライブラリのサポートが削除されますが、アプリケーションではそのサポートが要求されている可能性があります。アプリケーションがこのサポートに依存している場合は、リンク時エラーが発生します。  このオプションを使用する場合は、要求されるコンポーネントを何か別の方法で提供する必要があります。  
+ このオプションは、高度なオプションです。 このオプションを設定すると、リンク時のエラーの結果として得られる場合はこのサポートに依存するアプリケーション、アプリケーションで必要になる特定の C ランタイム ライブラリのサポートが削除されます。 このオプションを使用する場合は、その他の何らかの方法で必要なコンポーネントを提供する必要があります。  
   
- [\/NODEFAULTLIB \(ライブラリを無視する\)](../../build/reference/nodefaultlib-ignore-libraries.md)を使用します。リンカーは、すべての .obj ファイルでライブラリ参照を無視するように指示します。  
+ 使用して[/NODEFAULTLIB (ライブラリの無視)](../../build/reference/nodefaultlib-ignore-libraries.md)です。 ライブラリを無視するようにリンカーに指示するには、すべての .obj ファイルで参照します。  
   
- 詳細については、「[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)」を参照してください。  
+ 詳しくは、「[CRT ライブラリの機能](../../c-runtime-library/crt-library-features.md)」をご覧ください。  
   
- **\/Zl** を指定してコンパイルする場合、`_VC_NODEFAULTLIB` が定義されます。たとえば、次のようになります。  
+ コンパイルするときに**/Zl**、`_VC_NODEFAULTLIB`が定義されています。  例:  
   
 ```  
 // vc_nodefaultlib.cpp  
@@ -62,20 +62,20 @@ void Test() {
 }  
 ```  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[詳細\]** プロパティ ページをクリックします。  
+3.  クリックして、**詳細**プロパティ ページ。  
   
-4.  **\[既定ライブラリ名の省略\]** プロパティを変更します。  
+4.  変更、**既定ライブラリ名の省略**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.OmitDefaultLibName%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

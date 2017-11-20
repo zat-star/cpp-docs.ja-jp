@@ -1,69 +1,66 @@
 ---
-title: "CDynamicParameterAccessor::GetParamIO | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetParamIO"
-  - "CDynamicParameterAccessor::GetParamIO"
-  - "ATL.CDynamicParameterAccessor.GetParamIO"
-  - "CDynamicParameterAccessor.GetParamIO"
-  - "ATL::CDynamicParameterAccessor::GetParamIO"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetParamIO メソッド"
+title: "Cdynamicparameteraccessor::getparamio |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetParamIO
+- CDynamicParameterAccessor::GetParamIO
+- ATL.CDynamicParameterAccessor.GetParamIO
+- CDynamicParameterAccessor.GetParamIO
+- ATL::CDynamicParameterAccessor::GetParamIO
+dev_langs: C++
+helpviewer_keywords: GetParamIO method
 ms.assetid: 9c485e39-c67e-4df7-a707-c773019c4d1e
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d09eee048e737b19b21f6d71518d2b70702df8a7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDynamicParameterAccessor::GetParamIO
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定したパラメーターを入力または出力パラメーターであるかどうかを判定します。  
+# <a name="cdynamicparameteraccessorgetparamio"></a>CDynamicParameterAccessor::GetParamIO
+指定されたパラメーターが入力または出力パラメーターであるかどうかを判断します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      bool GetParamIO(   
-   DBORDINAL nParam,   
-   DBPARAMIO * pParamIO    
+      bool GetParamIO(   
+   DBORDINAL nParam,   
+   DBPARAMIO * pParamIO    
 ) const throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nParam`  
- \[\]パラメーター数 \(1\) からのオフセット。  パラメーターは 0 戻り値のために予約されています。  パラメーターの数は、SQL またはストアド プロシージャ呼び出しの順序に基づいてパラメーターのインデックスです。  例については、" [SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md) を参照してください。  
+ [in]パラメーターの数 (1 からのオフセット)。 に対するパラメーター 0 は、戻り値に予約されています。 パラメーター数は、SQL またはストアド プロシージャの呼び出しでその順序に基づいて、パラメーターのインデックスです。 参照してください[SetParam](../../data/oledb/cdynamicparameteraccessor-setparam.md)例についてはします。  
   
  *pParamIO*  
- 格納する変数へのポインターは、指定されたパラメーターの **DBPARAMIO** の型 \(入力または出力\)。  次のように定義されます。:  
+ 変数を含むへのポインター、 **DBPARAMIO**指定されたパラメーターの型 (入力または出力) します。 次のように定義されます。  
   
- `typedef DWORD DBPARAMIO;`  
+```  
+typedef DWORD DBPARAMIO;  
   
- `enum DBPARAMIOENUM`  
+enum DBPARAMIOENUM {  
+    DBPARAMIO_NOTPARAM   = 0,  
+    DBPARAMIO_INPUT      = 0x1,  
+    DBPARAMIO_OUTPUT     = 0x2  
+};  
+```  
   
- `{   DBPARAMIO_NOTPARAM   = 0,`  
+## <a name="return-value"></a>戻り値  
+ 返します**true**成功した場合または**false**エラー発生時にします。  
   
- `DBPARAMIO_INPUT      = 0x1,`  
-  
- `DBPARAMIO_OUTPUT     = 0x2`  
-  
- `};`  
-  
-## 戻り値  
- 成功の戻り **true** または失敗の **false**。  
-  
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CDynamicParameterAccessor クラス](../../data/oledb/cdynamicparameteraccessor-class.md)

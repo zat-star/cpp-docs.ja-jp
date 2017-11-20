@@ -4,47 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- C4646
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4646
+f1_keywords: C4646
+dev_langs: C++
+helpviewer_keywords: C4646
 ms.assetid: 23677e8e-603e-40e0-b99a-2e4894a1278e
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: 9fe7c1ca87dd80133e4073f41ad434dd24052db5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.openlocfilehash: 50ecb1bbdd1dbb9445af6bb9987a2f2a4250b215
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-warning-level-3-c4646"></a>コンパイラの警告 (レベル 3) C4646
 __declspec(noreturn) で宣言された関数に、non-void 戻り値の型があります。  
   
- マークされた関数、 [noreturn](../../cpp/noreturn.md) `__declspec`修飾子が必要、 [void](../../cpp/void-cpp.md)型を返します。  
+ [noreturn](../../cpp/noreturn.md) `__declspec` 修飾子でマークされた関数は [void](../../cpp/void-cpp.md) 型が必要です。  
   
  次の例では C4646 が生成されます。  
   

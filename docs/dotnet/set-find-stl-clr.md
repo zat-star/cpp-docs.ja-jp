@@ -1,45 +1,43 @@
 ---
-title: "set::find (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::find"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "find メンバー [STL/CLR]"
+title: "set::find (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::set::find
+dev_langs: C++
+helpviewer_keywords: find member [STL/CLR]
 ms.assetid: 916e581c-2815-4c07-a51a-6c5ddfa730c1
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3e38c5986abee9ed07331c41b4ea79bd0e909c49
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# set::find (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="setfind-stlclr"></a>set::find (STL/CLR)
 指定したキーに一致する要素を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator find(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- 被制御シーケンスの 1 個以上の要素に `key`と順序付け等価メンバー関数がある場合は、それらの要素の 1 を指定する反復子を返します。; それ以外の場合は [set::end](../dotnet/set-end-stl-clr.md)`()`を返します。  指定したキーに一致する、被制御シーケンス内の要素を、現在の検索に使用されます。  
+## <a name="remarks"></a>コメント  
+ 被制御シーケンス内の少なくとも 1 つの要素と同じ順序付けがかどうか`key`、メンバー関数は、それらの要素のいずれかを指定する反復子を返します。 それ以外の場合を返します[set::end (STL/CLR)](../dotnet/set-end-stl-clr.md)`()`です。 指定したキーに一致する制御シーケンス内の要素を検索に使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_find.cpp   
@@ -70,20 +68,23 @@ int main()
   
 ```  
   
-  **b c**  
-**A \= false を探します。**  
-**b \= b 探します。**  
-**C \= false を探します。**   
-## 説明  
- 要素が必要です。複数のいずれかを `find` が保証されないことに注意してください。  
+```Output  
+ a b c  
+find A = False  
+find b = b  
+find C = False  
+```  
   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+## <a name="description"></a>説明  
+ なお`find`をいくつかの要素が見つかったは保証されません。  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [set::equal\_range](../dotnet/set-equal-range-stl-clr.md)   
- [set::lower\_bound](../Topic/set::lower_bound%20\(STL-CLR\).md)   
- [set::upper\_bound](../Topic/set::upper_bound%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [set::equal_range (STL/CLR)](../dotnet/set-equal-range-stl-clr.md)   
+ [set::lower_bound (STL/CLR)](../dotnet/set-lower-bound-stl-clr.md)   
+ [set::upper_bound (STL/CLR)](../dotnet/set-upper-bound-stl-clr.md)

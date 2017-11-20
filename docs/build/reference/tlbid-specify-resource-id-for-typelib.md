@@ -1,64 +1,64 @@
 ---
-title: "/TLBID (タイプ ライブラリのリソース ID の指定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/tlbid"
-  - "VC.Project.VCLinkerTool.TypeLibraryResourceID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".tlb ファイル, 指定 (リソース ID を)"
-  - "/TLBID リンカー オプション"
-  - "tlb ファイル, 指定 (リソース ID を)"
-  - "TLBID リンカー オプション"
-  - "-TLBID リンカー オプション"
-  - "タイプ ライブラリ, 指定 (リソース ID を)"
+title: "-TLBID (タイプ ライブラリのリソース ID を指定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /tlbid
+- VC.Project.VCLinkerTool.TypeLibraryResourceID
+dev_langs: C++
+helpviewer_keywords:
+- tlb files, specifying resource ID
+- -TLBID linker option
+- .tlb files, specifying resource ID
+- /TLBID linker option
+- TLBID linker option
+- type libraries, specifying resource ID
 ms.assetid: 434b28a2-4656-4d52-ac82-8b18bf486fb2
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 9a260882b7e4623149e9e82a3a635f7230b6985a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /TLBID (タイプ ライブラリのリソース ID の指定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="tlbid-specify-resource-id-for-typelib"></a>/TLBID (タイプ ライブラリのリソース ID の指定)
 ```  
 /TLBID:id  
 ```  
   
-## 解説  
- それぞれの文字について以下に説明します。  
+## <a name="remarks"></a>コメント  
+ ここで、  
   
  `id`  
- リンカーによって作成されたタイプ ライブラリに対してユーザーが指定した値。  リソース ID の既定値 1 をオーバーライドします。  
+ リンカーによって作成されたタイプ ライブラリのユーザー指定の値。 1 の既定のリソース ID をオーバーライドします。  
   
-## 解説  
- 属性を使用するプログラムをコンパイルすると、タイプ ライブラリが作成されます。  リンカーがタイプ ライブラリに割り当てるリソース ID は 1 です。  
+## <a name="remarks"></a>コメント  
+ 属性を使用してプログラムをコンパイルするときに、リンカーは、タイプ ライブラリを作成します。 リンカーでは、タイプ ライブラリを 1 のリソース ID を割り当てます。  
   
- リンカーによって割り当てられたリソース ID が既存のリソースと競合する場合は、\/TLBID を使って別の ID を指定できます。  `id` に渡すことができる値の範囲は 1 ～ 65535 です。  
+ このリソース ID は、既存のリソースのいずれかの競合する場合は、/TLBID を使って別の ID を指定できます。 渡すことができる値の範囲`id`は 1 ~ 65535 です。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[埋め込み IDL\]プロパティ ページをクリックします。  
+3.  クリックして、**埋め込み IDL**プロパティ ページ。  
   
-4.  \[タイプ ライブラリのリソース ID\] プロパティを変更します。  
+4.  変更、 **TypeLib リソース ID**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.TypeLibraryResourceID%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

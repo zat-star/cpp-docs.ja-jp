@@ -1,32 +1,30 @@
 ---
-title: "replace_copy_if (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::replace_copy_if"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "replace_copy_if 関数 [STL/CLR]"
+title: "replace_copy_if (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::replace_copy_if
+dev_langs: C++
+helpviewer_keywords: replace_copy_if function [STL/CLR]
 ms.assetid: 60edf9b8-34e6-4d94-a611-363ef7b7fb80
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7e144636c5d1ce1a4ae7776ccedf675d5db473d6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# replace_copy_if (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-結果を新しい先の範囲にコピーしながら、指定された述語を満たすかどうかをソース範囲内の各要素を調べ、置き換えます。  
+# <a name="replacecopyif-stlclr"></a>replace_copy_if (STL/CLR)
+ソース範囲内の各要素が指定された述語を満たすかどうかを調べ、満たす場合は置き換えて結果を新しいターゲット範囲にコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt, class _OutIt, class _Pr, class _Ty> inline  
@@ -34,13 +32,13 @@ template<class _InIt, class _OutIt, class _Pr, class _Ty> inline
         _Pr _Pred, const _Ty% _Val);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `replace_copy_if`も同じように動作します。  詳細については、「[replace\_copy\_if](../Topic/replace_copy_if.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`replace_copy_if`です。 詳細については、次を参照してください。 [replace_copy_if](../standard-library/algorithm-functions.md#replace_copy_if)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

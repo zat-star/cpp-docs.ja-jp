@@ -1,44 +1,44 @@
 ---
-title: "XML データへのアクセス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CStreamRowset クラス, 取得 (XML データを)"
-  - "CXMLAccessor クラス, 取得 (XML データを)"
-  - "データ [C++], XML データ アクセス"
-  - "データ アクセス [C++], XML データ"
-  - "行セット [C++], 取得 (XML データを)"
-  - "XML [C++], アクセス (データに)"
+title: "XML データにアクセスする |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- data access [C++], XML data
+- XML [C++], accessing data
+- CXMLAccessor class, retrieving XML data
+- data [C++], XML data access
+- rowsets [C++], retrieving XML data
+- CStreamRowset class, retrieving XML data
 ms.assetid: 6b693d55-a554-4846-8118-e8773b79b572
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4cccb224553bc217bbbcd37030f03419f6f5d55e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# XML データへのアクセス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データ ソースから XML データを取得するには、2 つの方法があります。1 つは [CStreamRowset](../../data/oledb/cstreamrowset-class.md) を使用する方法で、もう 1 つは [CXMLAccessor](../../data/oledb/cxmlaccessor-class.md) を使用する方法です。  
+# <a name="accessing-xml-data"></a>XML データへのアクセス
+データ ソースから XML データを取得する 2 つの異なるメソッドがある: いずれかを使用して[CStreamRowset](../../data/oledb/cstreamrowset-class.md)およびその他の用途[CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)です。  
   
 |機能|CStreamRowset|CXMLAccessor|  
-|--------|-------------------|------------------|  
-|転送されるデータの量|すべての列と行のデータを一度に取得します。|すべての列から一度に 1 行だけデータを取得します。  `MoveNext` などのメソッドを使用して行を移動する必要があります。|  
-|文字列の書式設定|SQL Server は、書式を XML 文字列に設定し、コンシューマーに送信します。|ネイティブな形式で行セット データを取得 \(プロバイダーがそのデータを Unicode 文字列として送信することを要求\) し、そのデータを含む文字列を XML 書式で作成します。|  
-|書式設定の制御|SQL Server 2000 に固有のプロパティを設定することにより、XML 文字列の書式設定の方法をある程度制御できます。|生成された XML 文字列の書式は制御できません。|  
+|-------------------|-------------------|------------------|  
+|転送されるデータ量|1 回にすべての列と行からデータを取得します。|すべての列からデータが一度に 1 つだけの行を取得します。 などのメソッドを使用して行を移動する必要があります`MoveNext`です。|  
+|文字列の書式設定|SQL Server では、XML 文字列を書式設定され、コンシューマーに送信されます。|ネイティブ形式 (プロバイダーが Unicode 文字列として送信する要求) の行セットのデータを取得し、次の XML 形式のデータを含む文字列を構築します。|  
+|書式設定の制御します。|SQL Server 2000 に固有のプロパティを設定して、XML 文字列を書式設定する方法を制御の程度があります。|あるない生成された XML 文字列の形式を制御します。|  
   
- `CStreamRowset` を使用すると、より効率的に XML 形式でデータを取得できますが、この方法は SQL Server 2000 でだけサポートされます。  
+ 中に`CStreamRowset`SQL Server 2000 でのみサポートされている XML 形式でデータの取得の詳細の全体的な効率的な方法を提供します。  
   
-## CStreamRowset を使用した XML データの取得  
- `CCommand` または `CTable` の宣言で、行セットの種類として [CStreamRowset](../../data/oledb/cstreamrowset-class.md) を指定します。  独自のアクセサーと共に使用するか、またはアクセサーなしで使用できます。たとえば、次のようにします。  
+## <a name="retrieving-xml-data-using-cstreamrowset"></a>CStreamRowset を使用して XML データを取得します。  
+ 指定した[CStreamRowset](../../data/oledb/cstreamrowset-class.md)で行セットの種類として、`CCommand`または`CTable`宣言します。 またはと共に使用して、独自のアクセサー アクセサーはありません、たとえば。  
   
 ```  
 CCommand<CAccessor<CMyAccessor>, CStreamRowset> myCmd;  
@@ -50,31 +50,31 @@ CCommand<CAccessor<CMyAccessor>, CStreamRowset> myCmd;
 CCommand<CNoAccessor, CStreamRowset> myCmd;  
 ```  
   
- 通常、たとえば `CRowset` を `TRowset` クラスとして指定して `CCommand::Open` を呼び出すと、`IRowset` ポインターが取得されます。  `ICommand::Execute` は `IRowset` ポインターを返し、そのポインターは `CRowset` オブジェクトの `m_spRowset` メンバーに格納されます。  `MoveFirst`、`MoveNext`、`GetData` などのメソッドは、このポインターを使用してデータを取得します。  
+ 通常どおり呼び出す`CCommand::Open`(指定すると、たとえば、`CRowset`として、`TRowset`クラス)、取得、`IRowset`ポインター。 `ICommand::Execute`返します、`IRowset`に格納されているポインター、`m_spRowset`のメンバー、`CRowset`オブジェクト。 などのメソッド`MoveFirst`、 `MoveNext`、および`GetData`ポインターを使用してデータを取得します。  
   
- 対照的に、`CStreamRowset` を `TRowset` クラスとして指定して `CCommand::Open` を呼び出すと、`ICommand::Execute` は `ISequentialStream` ポインターを返します。このポインターは、[CStreamRowset](../../data/oledb/cstreamrowset-class.md) の `m_spStream` データ メンバーに格納されます。  その後、`Read` メソッドを使用して、XML 形式でデータ \(Unicode 文字列\) を取得できます。  たとえば、次のようになります。  
+ これに対し、呼び出す`CCommand::Open`(指定しますが、`CStreamRowset`として、`TRowset`クラス)、`ICommand::Execute`を返します、`ISequentialStream`に格納されているポインター、`m_spStream`データ メンバーの[CStreamRowset](../../data/oledb/cstreamrowset-class.md). 使用して、`Read`の XML 形式 (Unicode 文字列) のデータを取得します。 例:  
   
 ```  
 myCmd.m_spStream->Read()  
 ```  
   
- SQL Server 2000 は、XML 書式設定を実行し、行セットのすべての列とすべての行を 1 つの XML 文字列として返します。  
+ SQL Server 2000 では、XML 書式設定を実行し、すべての列と 1 つの XML 文字列として、行セットのすべての行を返します。  
   
- `Read` メソッドの使用例については、「[単純なコンシューマーの実装](../../data/oledb/implementing-a-simple-consumer.md)」の「コンシューマーへの XML サポートの追加」を参照してください。  
+ 使用例については、`Read`メソッド、「XML コンシューマー サポートの追加する」を参照してください[単純なコンシューマーを実装する](../../data/oledb/implementing-a-simple-consumer.md)です。  
   
 > [!NOTE]
->  `CStreamRowset` を使用する XML サポートが機能するのは SQL Server 2000 だけです。また、この場合は、\(MDAC と共にインストールされる\) OLE DB Provider for SQL Server 2000 が必要です。  
+>  XML の使用をサポート`CStreamRowset`SQL Server 2000 でのみ動作し、(MDAC と共にインストールされた) SQL Server 2000 の OLE DB プロバイダーがある必要があります。  
   
-## CXMLAccessor を使用した XML データの取得  
- [CXMLAccessor](../../data/oledb/cxmlaccessor-class.md) を使用すると、データ ストアのスキーマについて何も知らなくても、データ ソースのデータを文字列データとしてアクセスできます。  `CXMLAccessor` は `CDynamicStringAccessorW` と同じように動作しますが、データ ストアからアクセスされたすべてのデータを XML 形式の \(タグ付き\) データとして変換する点が異なります。  XML タグ名は、データ ストアの列名に可能な限り一致するように付けられます。  
+## <a name="retrieving-xml-data-using-cxmlaccessor"></a>CXMLAccessor を使用して XML データを取得します。  
+ [CXMLAccessor](../../data/oledb/cxmlaccessor-class.md)データ ストアのスキーマの知識があるない場合に文字列データとしてデータ ソースからデータにアクセスすることができます。 `CXMLAccessor`同様に動作`CDynamicStringAccessorW`前者 (タグあり) のデータを XML 形式として、データ ストアからアクセスされるすべてのデータを変換する点が異なります。 XML タグ名は、データ ストアの列名をできるだけ一致します。  
   
- ほかのアクセサー クラスの場合と同様に `CXMLAccessor` を使用し、テンプレート パラメーターとして `CCommand` または `CTable` に渡します。  
+ 使用して`CXMLAccessor`、他のアクセサー クラスと、同様にテンプレート パラメーターとして渡す`CCommand`または`CTable`:  
   
 ```  
 CTable<CXMLAccessor, CRowset> rs;  
 ```  
   
- [GetXMLRowData](../Topic/CXMLAccessor::GetXMLRowData.md) を使用してテーブルから一度に 1 行のデータを取得し、`MoveNext` などのメソッドを使用して行を移動します。たとえば、次のようにします。  
+ 使用して[GetXMLRowData](../../data/oledb/cxmlaccessor-getxmlrowdata.md) 、一度に 1 行のテーブルからデータを取得しなどのメソッドを使用して行を移動する`MoveNext`、例を示します。  
   
 ```  
 // Open data source, session, and rowset  
@@ -90,7 +90,7 @@ while( SUCCEEDED(hr) && hr != DB_S_ENDOFROWSET )
 }  
 ```  
   
- [GetXMLColumnData](../Topic/CXMLAccessor::GetXMLColumnData.md) を使用すると、列 \(データ型\) 情報を XML 形式の文字列データとして取得できます。  
+ 使用することができます[GetXMLColumnData](../../data/oledb/cxmlaccessor-getxmlcolumndata.md) XML 形式の文字列データとして列 (データ型) の情報を取得します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

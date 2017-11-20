@@ -1,33 +1,33 @@
 ---
-title: "方法: Detect /clr コンパイルを検出する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/clr コンパイラ オプション [C++], 検出 (使用を)"
-  - "コンパイル, 検出 (/clr を)"
+title: "方法: clr コンパイルの検出 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- compilation, detecting /clr
+- /clr compiler option [C++], detecting use of
 ms.assetid: a9310045-4810-4637-a64a-0b31a08791c1
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 471e4727d7c3484e66af5bc9add196c0fa2651f3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: Detect /clr コンパイルを検出する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**\/clr**  を指定してモジュールをコンパイルしているかどうかを調べるには、`_MANAGED` マクロ、または `_M_CEE` マクロを使用します。  詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+# <a name="how-to-detect-clr-compilation"></a>方法: Detect /clr コンパイルを検出する
+使用して、`_MANAGED`または`_M_CEE`かどうかにコンパイルされたモジュールを表示するマクロ**/clr**です。 詳細については、「[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
   
- マクロの詳細については、「[定義済みマクロ](../preprocessor/predefined-macros.md)」を参照してください。  
+ マクロの詳細については、次を参照してください。[定義済みマクロ](../preprocessor/predefined-macros.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // detect_CLR_compilation.cpp  
@@ -43,5 +43,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

@@ -1,37 +1,35 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4487 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4487"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4487"
+title: "コンパイラの警告 (レベル 4) C4487 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4487
+dev_langs: C++
+helpviewer_keywords: C4487
 ms.assetid: 796144cf-cd3c-4edc-b6a4-96192b7eb4f0
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 01ae890c5566132462a5bd259341e62b97610ece
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4487
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'derived\_class\_function' : 継承された仮想でないメソッド 'base\_class\_function' と一致しますが、'new' に明示的に設定されていません  
+# <a name="compiler-warning-level-4-c4487"></a>コンパイラの警告(レベル 4) C4487
+'derived_class_function': 継承された非仮想メソッド 'base_class_function' と一致しますが、'new' に明示的に設定されていません  
   
- 派生クラスの関数のシグネチャが非仮想基本クラスの関数のシグネチャと同じです。  C4487 は、派生クラスの関数は基本クラスの関数をオーバーライドしないことを示します。  この警告を解決するには、派生クラスの関数を `new` として明示的にマークします。  
+ 派生クラスで関数が非仮想基底クラス関数と同じシグネチャを持ちます。 C4487 は、派生クラスの関数が基底クラスの関数をオーバーライドできません。 派生クラスとしての関数を明示的にマーク`new`この警告を解決します。  
   
- 詳細については、「[new \(new slot in vtable\)](../../windows/new-new-slot-in-vtable-cpp-component-extensions.md)」を参照してください。  
+ 詳細については、次を参照してください。 [new (の新しいスロット vtable)](../../windows/new-new-slot-in-vtable-cpp-component-extensions.md)です。  
   
-## 使用例  
- 次の例では C4487 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4487 を生成します。  
   
 ```  
 // C4487.cpp  

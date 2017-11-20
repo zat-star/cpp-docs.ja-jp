@@ -1,60 +1,58 @@
 ---
-title: "AsyncStatusInternal 列挙型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "async/Microsoft::WRL::Details::AsyncStatusInternal"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AsyncStatusInternal 列挙型"
+title: "AsyncStatusInternal 列挙型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: async/Microsoft::WRL::Details::AsyncStatusInternal
+dev_langs: C++
+helpviewer_keywords: AsyncStatusInternal enumeration
 ms.assetid: b783923f-3f1c-4487-9384-be572cbc62d7
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1f014cb2bdf1fa6077dd6922e40e0253b5297c29
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# AsyncStatusInternal 列挙型
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="asyncstatusinternal-enumeration"></a>AsyncStatusInternal 列挙型
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 enum AsyncStatusInternal;  
 ```  
   
-## 解説  
- 非同期操作の状態の内部列挙体と **Windows::Foundation::AsyncStatus** の列挙体間のマッピングを指定します。  
+## <a name="remarks"></a>コメント  
+ 非同期操作の状態の内部列挙値の間のマッピングを指定し、 **Windows::Foundation::AsyncStatus**列挙します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
  `_Created`  
- ::Windows::Foundation::AsyncStatus::Created への等価  
+ 等価:: Windows::Foundation::AsyncStatus:: を作成  
   
  `_Started`  
- ::Windows::Foundation::AsyncStatus::Started への等価  
+ 等価:: Windows::Foundation::AsyncStatus:: 開始  
   
  `_Completed`  
- ::Windows::Foundation::AsyncStatus::Completed への等価  
+ 等価:: Windows::Foundation::AsyncStatus:: 完了  
   
  `_Cancelled`  
- ::Windows::Foundation::AsyncStatus::Cancelled への等価  
+ 等価:: Windows::Foundation::AsyncStatus:: 取り消されました  
   
  `_Error`  
- ::Windows::Foundation::AsyncStatus::Error への等価  
+ 等価:: Windows::Foundation::AsyncStatus::Error  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** async.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

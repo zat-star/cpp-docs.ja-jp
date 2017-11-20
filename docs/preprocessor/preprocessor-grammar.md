@@ -1,91 +1,91 @@
 ---
-title: "プリプロセッサの文法 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文法, プリプロセッサ"
-  - "プリプロセッサ"
-  - "プリプロセッサ, 文法"
+title: "プリプロセッサの文法 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- preprocessor
+- grammar, preprocessor
+- preprocessor, grammar
 ms.assetid: 6cd33fad-0b08-4592-9be8-7359c43e24e9
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3c64c5a1855d80d5abc60d959bd68b33a380583b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プリプロセッサの文法
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**\#define**  *identifier* *token\-string*opt  
+# <a name="preprocessor-grammar"></a>プリプロセッサの文法
+**#define***識別子**トークン文字列*オプトイン    
   
- *\#* **define**  *identifier*\[**\(** *identifier*opt**,** *...* **,** *identifier*opt **\)**\] *token\-string*opt  
+ *#***定義***識別子*[**(** *識別子*opt**、** *.* **、** *識別子*opt **)**]*トークン文字列*オプトイン    
   
- **defined\(**  *identifier* **\)**  
+ **定義 (***識別子* **)**   
   
- **defined**  *identifier*  
+ **定義されている***識別子*   
   
- `#include` **"***path\-spec***"**  
+ `#include`**"***パス spec***"**  
   
- `#include` **\<***path\-spec***\>**  
+ `#include` **\<** *パス仕様***>**  
   
- **\#line**  *digit\-sequence*  **"** *filename* **"** opt  
+ **#line***桁シーケンス***"** *filename* **"**オプトイン      
   
- *\#* **undef**  *identifier*  
+ *#***undef***識別子*   
   
- **\#error**  *token\-string*  
+ **#error***トークン文字列*   
   
- **\#pragma**  *token\-string*  
+ **#pragma***トークン文字列*   
   
- *conditional*:  
- *if\-part elif\-parts* opt *else\-part*opt *endif\-line*  
+ *条件付き*:  
+ *if 部分 elif パーツ*opt*else 部分*opt*endif 行*  
   
- *if\-part* :  
- *if\-linetext*  
+ *if 部分*:  
+ *if linetext*  
   
- *if\-line*:  
- **\#if**  *constant\-expression*  
+ *if 行*:  
+ **#if***定数式*   
   
- **\#ifdef**  *identifier*  
+ **#ifdef***識別子*   
   
- **\#ifndef**  *identifier*  
+ **#ifndef***識別子*   
   
- *elif\-parts* :  
- *elif\-line text*  
+ *elif パーツ*:  
+ *elif 行のテキスト*  
   
- *elif\-parts elif\-line text*  
+ *elif パーツ elif 行テキスト*  
   
- *elif\-line* :  
- **\#elif**  *constant\-expression*  
+ *elif 行*:  
+ **#elif***定数式*   
   
- *else\-part* :  
- *else\-linetext*  
+ *他の部分から成る*:  
+ *else linetext*  
   
- *else\-line* :  
+ *else 行*:  
  `#else`  
   
- *endif\-line* :  
+ *endif 行*:  
  `#endif`  
   
- *digit\-sequence*:  
+ *桁シーケンス*:  
  *digit*  
   
- *digit\-sequence digit*  
+ *digit-sequence digit*  
   
- *digit*: 次のいずれか  
+ *桁*: のいずれか  
  **0 1 2 3 4 5 6 7 8 9**  
   
- *token\-string*:  
+ *トークン文字列*:  
  トークンの文字列  
   
- *token*:  
+ *トークン*:  
  *keyword*  
   
  *identifier*  
@@ -96,17 +96,17 @@ caps.handback.revision: 7
   
  `punctuator`  
   
- *filename*:  
+ *filename* :  
  有効なオペレーティング システム ファイル名  
   
- *path\-spec*:  
+ *パス spec* :  
  有効なファイル パス  
   
- *text*:  
+ *テキスト*:  
  テキストの任意のシーケンス  
   
 > [!NOTE]
->  `constant`、`constant`\-*expression*、*identifier*、*keyword*、`operator`、`punctuator` の各非終端要素については、『*C\+\+ 言語リファレンス*』の付録 A「[文法概要](../misc/grammar-summary-cpp.md)」で詳述します。  
+>  次の非終端はでは展開、[構文規則](../cpp/lexical-conventions.md)のセクションで、 *C++ 言語リファレンス*: `constant`、 `constant` -*式*、*識別子*、*キーワード*、 `operator`、および`punctuator`です。  
   
-## 参照  
- [文法の概要](../preprocessor/grammar-summary-c-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [文法の概要 (C/C++)](../preprocessor/grammar-summary-c-cpp.md)

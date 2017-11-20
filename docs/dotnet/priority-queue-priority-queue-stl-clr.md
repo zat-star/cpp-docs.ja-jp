@@ -1,32 +1,30 @@
 ---
-title: "priority_queue::priority_queue (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::priority_queue::priority_queue"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "priority_queue メンバー [STL/CLR]"
+title: "priority_queue::priority_queue (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::priority_queue::priority_queue
+dev_langs: C++
+helpviewer_keywords: priority_queue member [STL/CLR]
 ms.assetid: aab423d7-959e-48fd-9028-e9f45f43cb8a
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 77486fdadaafe9b98e93998b73a4f5eb42f7865b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# priority_queue::priority_queue (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのアダプター オブジェクトを構築します。  
+# <a name="priorityqueuepriorityqueue-stlclr"></a>priority_queue::priority_queue (STL/CLR)
+コンテナー アダプター オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 priority_queue();  
@@ -44,84 +42,74 @@ template<typename InIt>
         value_compare^ pred, container_type% cont);  
 ```  
   
-#### パラメーター  
- cont  
+#### <a name="parameters"></a>パラメーター  
+ 続き  
  コピーするコンテナー。  
   
- 最初  
- 挿入する範囲の先頭。  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
  pred  
- 被制御シーケンスの順序述語。  
+ 被制御シーケンスの述語を順序付けです。  
   
- \[right\]  
+ 右  
  挿入するオブジェクトまたは範囲。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `priority_queue();`  
   
- 既定の順序述語と空のラップされたコンテナーを作成します。  既定の順序述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 既定の順序の述語を空のラップされたコンテナーを作成します。 これを使用するには、既定の順序の述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `priority_queue(priority_queue<Value, Container>% right);`  
   
- `right.get_container()`のコピーであること `right.value_comp()`述語にラップされたコンテナーを作成します。  キュー `right`オブジェクトによって制御されるシーケンスのコピーで同じ順序述語の最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right.get_container()`、順序の指定の述語と`right.value_comp()`です。 キュー オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`、同じ順序の指定の述語に置き換えます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `priority_queue(priority_queue<Value, Container>^ right);`  
   
- `right->get_container()`のコピーであること `right->value_comp()`述語にラップされたコンテナーを作成します。  キュー `*right`オブジェクトによって制御されるシーケンスのコピーで同じ順序述語の最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right->get_container()`、順序の指定の述語と`right->value_comp()`です。 キュー オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`*right`、同じ順序の指定の述語に置き換えます。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit priority_queue(value_compare^ pred);`  
   
- 述語 `pred`命令と空のラップされたコンテナーを作成します。  順序指定述語の空の最初の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語で、空のラップされたコンテナーを作成`pred`です。 これを使用して、順序指定された述語を持つ、空の初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `priority_queue(value_compare^ pred, container_type cont);`  
   
- 空のラップされたコンテナーを、および述語 `pred`で作成し、既存のコンテナーの被制御シーケンスを指定するのに使用する順序指定述語の `cont` のすべての要素を押します。  
+ 順序の指定の述語で、空のラップされたコンテナーを作成`pred`のすべての要素をプッシュ`cont`順序指定された述語で、既存のコンテナーからの初期被制御シーケンスを指定するために使用します。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
- `template<typename InIt>`  
+ `template<typename InIt> priority_queue(InIt first, InIt last);`  
   
- `priority_queue(InIt first, InIt last);`  
+ 既定の順序付け述語で、空のラップされたコンテナーを作成し、シーケンスをプッシュ [`first`、 `last`)。 これを使用して、順序指定された述語を持つ、指定した eqeuence からの初期被制御シーケンスを指定します。  
   
- 空のラップされたコンテナーを、既定命令述語で作成し、シーケンス `[``first``,``last``)`を押します。  述語の指定順序指定 eqeuence の被制御シーケンスを指定する場合に使用します。  
+ : コンス トラクター  
   
- 次のコンストラクターを見てください。  
+ `template<typename InIt> priority_queue(InIt first, InIt last, value_compare^ pred);`  
   
- `template<typename InIt>`  
+ 順序の指定の述語で、空のラップされたコンテナーを作成`pred`、シーケンスにプッシュし、[`first`、 `last`)。 これを使用して、順序指定された述語を持つ、指定した seqeuence からの初期被制御シーケンスを指定します。  
   
- `priority_queue(InIt first, InIt last,`  
+ : コンス トラクター  
   
- `value_compare^ pred);`  
+ `template<typename InIt> priority_queue(InIt first, InIt last, value_compare^ pred, container_type% cont);`  
   
- 空のラップされたコンテナーを、および述語 `pred`で作成し、シーケンス `[``first``,``last``)`を押します。  述語の指定順序指定 seqeuence の被制御シーケンスを指定する場合に使用します。  
+ 順序の指定の述語で、空のラップされたコンテナーを作成`pred`のすべての要素をプッシュ`cont`さらに、シーケンス [`first`、 `last`)。 これを使用して、順序指定された述語を持つ既存のコンテナーと、指定した seqeuence からの初期被制御シーケンスを指定します。  
   
- 次のコンストラクターを見てください。  
+## <a name="example"></a>例  
   
- `template<typename InIt>`  
-  
- `priority_queue(InIt first, InIt last,`  
-  
- `value_compare^ pred, container_type% cont);`  
-  
- 空のラップされたコンテナーを、および述語 `pred`で作成し、シーケンス `[``first``,``last``)`と `cont` のすべての要素を押します。  順序指定述語の既存のコンテナーと指定 seqeuence の被制御シーケンスを指定する場合に使用します。  
-  
-## 使用例  
-  
-```  
+```cpp  
 // cliext_priority_queue_construct.cpp   
 // compile with: /clr   
 #include <cliext/queue>   
@@ -204,24 +192,27 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **b c**  
-**size\(\) \= 0**  
- **C\+\+ b.**  
- **C\+\+ b.**  
- **b c**  
- **C\+\+ b.**  
- **b c b c**  
- **b c**  
- **b c**  
- **C\+\+ b.**   
-## 必要条件  
- **ヘッダー:** \<cliext とキュー\>  
+```Output  
+size() = 0  
+ c a b  
+size() = 0  
+ a c b  
+ a c b  
+ c a b  
+ a c b  
+ a a b c c b  
+ c a b  
+ c a b  
+ a c b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/キュー >  
   
-## 参照  
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [priority\_queue::assign](../dotnet/priority-queue-assign-stl-clr.md)   
- [priority\_queue::generic\_container](../dotnet/priority-queue-generic-container-stl-clr.md)   
- [priority\_queue::operator\=](../dotnet/priority-queue-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [priority_queue::assign (STL/CLR)](../dotnet/priority-queue-assign-stl-clr.md)   
+ [priority_queue::generic_container (STL/CLR)](../dotnet/priority-queue-generic-container-stl-clr.md)   
+ [priority_queue::operator= (STL/CLR)](../dotnet/priority-queue-operator-assign-stl-clr.md)

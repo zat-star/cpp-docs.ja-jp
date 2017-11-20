@@ -1,31 +1,42 @@
 ---
-title: "C ランタイム エラー R6028 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "R6028"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "R6028"
+title: "C ランタイム エラー R6028 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: R6028
+dev_langs: C++
+helpviewer_keywords: R6028
 ms.assetid: 81e99079-4388-4244-a4f7-4641c508871c
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d4b5a8913d3591cc85a3d756b7b834559f10415a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# C ランタイム エラー R6028
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="c-runtime-error-r6028"></a>C ランタイム エラー R6028
 ヒープを初期化できません。  
   
- このエラーは、オペレーティング システムでアプリケーションのメモリ プールを作成できなかった場合に発生します。  具体的には、C ランタイム \(CRT\) が `HeapCreate` という Win32 関数を呼び出し、失敗したことを示す NULL が返されます。  
+> [!NOTE]
+>  アプリの実行中にこのエラー メッセージが発生した場合、アプリがシャット ダウン、内部メモリの問題があるためです。 このエラーは、多くの理由が考えられますが、非常に低いメモリの状態、プログラムでバグまたは欠陥のあるハードウェア ドライバーの原因多くの場合。  
+>   
+>  このエラーを解決するには、次の手順を試してみます。  
+>   
+>  -   その他の実行中のアプリケーションを閉じるか、メモリを解放する、コンピューターを再起動します。  
+> -   使用して、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を修復またはプログラムを再インストールします。  
+> -   使用して、アプリが他のアプリまたはドライバーの最新のインストール前に動作していた場合、**アプリおよび機能**または**プログラムと機能**] ページで、**コントロール パネルの [**を削除する、新しいアプリケーションまたはドライバー、およびアプリをもう一度やり直してください。  
+> -   ハードウェアの製造元の web サイトを確認または**Windows Update**で、**コントロール パネルの **ソフトウェアとドライバーの更新。  
+> -   アプリの更新バージョンを確認します。 問題が解決しない場合は、アプリ ベンダーにお問い合わせください。  
   
- アプリケーションの起動中にこのエラーが発生した場合は、欠陥があるドライバーが読み込まれているため、システムでヒープ要求を満たすことができない可能性があります。  Windows Update またはハードウェアのベンダーの Web サイトで、更新されたドライバーがないかどうかを確認してください。
+ **プログラマのための情報**  
+  
+ このエラーは、オペレーティング システムでアプリケーションのメモリ プールを作成できなかった場合に発生します。 具体的には、C ランタイム (CRT) が `HeapCreate` という Win32 関数を呼び出し、失敗したことを示す NULL が返されます。  
+  
+ アプリケーションの起動中にこのエラーが発生した場合は、欠陥があるドライバーが読み込まれているため、システムでヒープ要求を満たすことができない可能性があります。 Windows Update またはハードウェアのベンダーの Web サイトで、更新されたドライバーがないかどうかを確認してください。

@@ -1,64 +1,65 @@
 ---
-title: "DHTML コントロール プロジェクトの要素の識別 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DHTML コントロール, ATL サポート"
-  - "HTML コントロール, ATL サポート"
+title: "DHTML コントロール プロジェクトの要素の識別 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- HTML controls, ATL support
+- DHTML controls, ATL support
 ms.assetid: b627547a-3768-4346-9900-4b7a21fb8e27
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0dfa6a3a2e399ff108bdd97b3dfb9a16b627aefe
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DHTML コントロール プロジェクトの要素の識別
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ほとんどの DHTML コントロール コードは、ATL コントロール用に作成されたのとまったく同じです。  [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)によるジェネリック コード、作業の基本的な理解するには、" "および" " [ATL プロジェクトの作成](../atl/reference/creating-an-atl-project.md) 読み取りと [ATL COM オブジェクトの基本](../atl/fundamentals-of-atl-com-objects.md)。  
+# <a name="identifying-the-elements-of-the-dhtml-control-project"></a>DHTML コントロール プロジェクトの要素の識別
+DHTML コントロール コードのほとんどが正確にそのような ATL コントロールに対して作成されます。 ジェネリック コードの基本を理解するには、使用、 [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)、セクションを参照して[ATL プロジェクトを作成する](../atl/reference/creating-an-atl-project.md)と[ATL COM オブジェクトの基本事項](../atl/fundamentals-of-atl-com-objects.md)です。  
   
- DHTML コントロールは、すべての ATL のコントロールに似ていますが、を除く:  
+ DHTML コントロールは、ATL コントロールに似ていますを除く。  
   
--   標準のインターフェイスに加えて、実装します \(C\+\+ コードと HTML ユーザー インターフェイス \(UI\) の通信に使用される追加のインターフェイスを実装します。  このインターフェイスを使用する C\+\+ コードへの HTML の UI を呼び出します。  
+-   コントロールが実装する標準のインターフェイスだけでなく、C++ コードと HTML のユーザー インターフェイス (UI) の間の通信に使用される追加のインターフェイスを実装します。 HTML UI は、このインターフェイスを使用して C++ コードを呼び出します。  
   
--   これは、コントロールの UI の HTML リソースを作成します。  
+-   UI コントロールの HTML リソースを作成します。  
   
--   この型は、型 [IWebBrowser2](https://msdn.microsoft.com/en-us/library/aa752127.aspx)のスマート ポインターのメンバー変数 `m_spBrowser`を通じて DHTML オブジェクト モデルへのアクセスを可能にします。  DHTML オブジェクト モデルの一部にアクセスするには、このポインターを使用します。  
+-   メンバー変数を介して DHTML オブジェクト モデルへのアクセスを許可する`m_spBrowser`、型のスマート ポインターは[IWebBrowser2](https://msdn.microsoft.com/library/aa752127.aspx)です。 DHTML オブジェクト モデルの一部にアクセスするのにには、このポインターを使用します。  
   
- 次の図は、DLL、DHTML コントロール、Web ブラウザーと HTML リソースの関係を示しています。  
+ 次の図は、DLL、DHTML コントロール、Web ブラウザー、および HTML リソース間のリレーションシップを示しています。  
   
- ![DHTML コントロール プロジェクトの要素](../atl/media/vc52en1.gif "vc52EN1")  
+ ![DHTML コントロール プロジェクトの要素の](../atl/media/vc52en1.gif "vc52en1")  
   
 > [!NOTE]
->  このグラフィックスの名前はプレースホルダーです。  には、HTML リソースと、コントロールに公開する ATL コントロール ウィザードに割り当てる名前にインターフェイスの名前に基づいています。  
+>  このグラフィックの名前は、プレース ホルダーです。 HTML リソースと、コントロールに公開されるインターフェイスの名前は、ATL コントロール ウィザードで割り当てた名前に基づいています。  
   
- この図で、要素は次のとおりです:  
+ この図に、要素です。  
   
--   **My DLL** ATL プロジェクト ウィザードを使用して作成された DLL。  
+-   **DLL** ATL プロジェクト ウィザードを使用して作成された DLL です。  
   
--   **DHTML Control** \(`m_spBrowser`\) ATL オブジェクト ウィザードを使用して作成される DHTML コントロール。  このコントロールは、Web ブラウザーのオブジェクトのインターフェイス、**IWebBrowser2**を使用して Web ブラウザーのオブジェクトとメソッドにアクセスします。  コントロール自体は、コントロールに必要なそのほかの標準インターフェイスに加え、次の 2 種類のインターフェイスを公開します。  
+-   **DHTML コントロール**(`m_spBrowser`)、DHTML コントロール、ATL オブジェクト ウィザードを使用して作成します。 このコントロールは、Web ブラウザーのオブジェクトのインターフェイス、Web ブラウザーのオブジェクトとそのメソッドにアクセス**IWebBrowser2**です。 コントロール自体は、コントロールに必要なその他の標準のインターフェイスに加え、次の 2 つインターフェイスを公開します。  
   
-    -   **IDHCTL1** コンテナーでのみ使用するコントロールによって公開されるインターフェイス。  
+    -   **IDHCTL1**コンテナーでのみ使用される、コントロールによって公開されるインターフェイス。  
   
-    -   **IDHCTLUI1** C\+\+ コードと HTML ユーザー インターフェイス間で通信するためのディスパッチ インターフェイス。  Web ブラウザーでは、コントロールを表示するには、コントロールのディスパッチ インターフェイスを使用します。  `window.external`を呼び出すことにより、このディスパッチ インターフェイス メソッドの名前の前にコントロールのユーザー インターフェイスからこのディスパッチ インターフェイスのさまざまなメソッドを呼び出すことで開始する。  このコントロールの UI を構成する HTML スクリプト内のタグの `window.external` にアクセスします。  リソース ファイルの外部メソッドの呼び出しに関する詳細については、[DHTML から C\+\+ コードの呼び出し](../Topic/Calling%20C++%20Code%20from%20DHTML.md)を参照してください。  
+    -   **IDHCTLUI1** C++ コードと HTML のユーザー インターフェイスの間で通信するためのディスパッチ インターフェイスです。 Web ブラウザーでは、コントロールを表示するのにコントロールのディスパッチ インターフェイスを使用します。 呼び出すことによって、コントロールのユーザー インターフェイスからこのディスパッチ インターフェイスのさまざまなメソッドを呼び出すことができます`window.external`、その後に起動するこのディスパッチ インターフェイスでメソッド名。 アクセスは`window.external`このコントロールの UI を構成する HTML 内のスクリプト タグからです。 リソース ファイル内の外部メソッドの呼び出しの詳細については、次を参照してください。 [DHTML からの C++ コードを呼び出す](../atl/calling-cpp-code-from-dhtml.md)です。  
   
--   **IDR\_CTL1** HTML リソースのリソース id。  そのファイル名が、この場合は DHCTL1UI.htm です。  DHTML コントロールは、テキスト エディターを使用して編集できるように標準の HTML タグを含む外部ウィンドウのディスパッチを指示 HTML リソースを使用します。  
+-   **IDR_CTL1** HTML リソースのリソース ID です。 そのファイル名は、DHCTL1UI.htm をここでです。 DHTML コントロールでは、標準の HTML タグとテキスト エディターを使用して編集できる外部ウィンドウ ディスパッチ コマンドを含む HTML リソースを使用します。  
   
--   **Web Browser** では、HTML リソースの HTML に基づいて Web ブラウザー コントロールの UI を表示します。  Web ブラウザーの **IWebBrowser2** インターフェイスへのポインターは、DHTML オブジェクト モデルへのアクセスを許可して DHTML コントロールで使用できます。  
+-   **Web ブラウザー** Web ブラウザーが HTML リソース内の HTML に基づいた、コントロールの UI を表示します。 Web ブラウザーへのポインター **IWebBrowser2**インターフェイスは、DHTML オブジェクト モデルへのアクセスを許可する DHTML コントロールで使用できます。  
   
- ATL コントロール ウィザードでは、HTML リソースと .cpp ファイルの両方の既定のコントロール コードが生成されます。  ウィザードによって生成されるようにコントロールをコンパイルおよび実行し、Web ブラウザーまたは ActiveX コントロール テスト コンテナーでコントロールが表示されます。  次の図は、テスト コンテナーに表示されるボタンを 3 つ対して既定の ATL DHTML コントロールを示しています:  
+ ATL コントロール ウィザードでは、HTML リソースおよび .cpp ファイルの両方で既定のコードを持つコントロールを生成します。 コンパイルし、ウィザードで生成されたコントロールを実行し、Web ブラウザーまたは ActiveX コントロール テスト コンテナーのいずれかのコントロールを表示できます。 次の図は、テスト コンテナーに表示される 3 つのボタンと ATL DHTML コントロールの既定値を示しています。  
   
- ![ATL DHTML コントロール](../Image/vc52EN2.gif "vc52EN2")  
+ ![ATL DHTML コントロール](../atl/media/vc52en2.gif "vc52en2")  
   
- 最初に [ATL DHTML コントロールの作成](../atl/creating-an-atl-dhtml-control.md) が表示されます。DHTML コントロールを作成します。  テスト コンテナーにアクセスする方法の詳細については、[テスト コンテナーでテストのプロパティおよびイベント](../mfc/testing-properties-and-events-with-test-container.md) を参照してください。  
+ 参照してください[ATL DHTML コントロールを作成する](../atl/creating-an-atl-dhtml-control.md)DHTML コントロールの構築を開始します。 参照してください[プロパティのテストおよびテスト コンテナーでイベント](../mfc/testing-properties-and-events-with-test-container.md)テスト コンテナーにアクセスする方法についてはします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [DHTML コントロールのサポート](../atl/atl-support-for-dhtml-controls.md)
+

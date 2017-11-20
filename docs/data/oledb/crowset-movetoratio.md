@@ -1,74 +1,73 @@
 ---
-title: "CRowset::MoveToRatio | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "MoveToRatio"
-  - "CRowset<TAccessor>::MoveToRatio"
-  - "CRowset::MoveToRatio"
-  - "CRowset<TAccessor>.MoveToRatio"
-  - "ATL.CRowset.MoveToRatio"
-  - "ATL::CRowset::MoveToRatio"
-  - "CRowset.MoveToRatio"
-  - "ATL.CRowset<TAccessor>.MoveToRatio"
-  - "ATL::CRowset<TAccessor>::MoveToRatio"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MoveToRatio メソッド"
+title: "Crowset::movetoratio |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- MoveToRatio
+- CRowset<TAccessor>::MoveToRatio
+- CRowset::MoveToRatio
+- CRowset<TAccessor>.MoveToRatio
+- ATL.CRowset.MoveToRatio
+- ATL::CRowset::MoveToRatio
+- CRowset.MoveToRatio
+- ATL.CRowset<TAccessor>.MoveToRatio
+- ATL::CRowset<TAccessor>::MoveToRatio
+dev_langs: C++
+helpviewer_keywords: MoveToRatio method
 ms.assetid: 1fa313bd-8fd1-4608-8e85-44993b97dd88
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bc5c5a46eabd6b308a8b91fba8f7844950d55985
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CRowset::MoveToRatio
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-フェッチは行セットの分数で表現した位置から開始します。  
+# <a name="crowsetmovetoratio"></a>CRowset::MoveToRatio
+行セット内の小数部の位置から始まる行がフェッチされます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT MoveToRatio(   
-   DBCOUNTITEM nNumerator,   
-   DBCOUNTITEM nDenominator,   
-   bool bForward = true    
+      HRESULT MoveToRatio(   
+   DBCOUNTITEM nNumerator,   
+   DBCOUNTITEM nDenominator,   
+   bool bForward = true    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nNumerator`  
- \[\]がの小数部の位置がデータをフェッチする型を決定するために使用される分子\)。  
+ [in]小数部を決定するため、分子元となるデータをフェッチする位置を指定します。  
   
  `nDenominator`  
- \[\]がの小数部の位置がデータをフェッチする型を決定するために使用される分母\)。  
+ [in]分母の小数部を決定するためデータをフェッチする位置を指定します。  
   
  `bForward`  
- \[\]前方または後方に移動するかどうかを示します。  既定は前方です。  
+ [in]前方または後方に移動するかどうかを示します。 既定値は順方向です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- `MoveToRatio` は 次の数式にほぼ一致する行をフェッチします:  
+## <a name="remarks"></a>コメント  
+ `MoveToRatio`次の数式にほぼに従って行がフェッチされます。  
   
  `( nNumerator *  RowsetSize ) / nDenominator`  
   
- `RowsetSize` が行セット単位であるため、行が使用されます。  この数式の精度は特定のプロバイダーによって異なります。  詳細については、「[IRowsetScroll::GetRowsAtRatio](https://msdn.microsoft.com/en-us/library/ms709602.aspx)」を参照してください。  
+ ここで`RowsetSize`行数で指定された、行セットのサイズです。 この式の精度は、特定のプロバイダーによって異なります。 詳細については、「 [::getrowsatratio](https://msdn.microsoft.com/en-us/library/ms709602.aspx)です。  
   
- このメソッドは、すべてのプロバイダーでサポートされない省略可能なインターフェイス `IRowsetScroll`が必要ですが、; この場合、メソッドの戻り **E\_NOINTERFACE**。  また `VARIANT_TRUE` にテーブルの **開く** を呼び出す前に **DBPROP\_IRowsetScroll** を設定または命じなければ、行セットが含まれます。  
+ このメソッドには、省略可能なインターフェイスが必要とする`IRowsetScroll`、する可能性がありますすべてのプロバイダーでサポートされていない以外の場合は、そうでは、返されます**E_NOINTERFACE**です。 設定する必要もあります**DBPROP_IRowsetScroll**に`VARIANT_TRUE`呼び出す前に**開く**テーブルまたは行セットを含むコマンドをします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CRowset クラス](../Topic/CRowset%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CRowset クラス](../../data/oledb/crowset-class.md)

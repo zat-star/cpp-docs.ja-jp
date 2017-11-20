@@ -1,36 +1,35 @@
 ---
-title: "vector (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<cliext/vector> ヘッダー [STL/CLR]"
-  - "<vector> ヘッダー [STL/CLR]"
-  - "vector クラス [STL/CLR]"
+title: "ベクトル (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector
+dev_langs: C++
+helpviewer_keywords:
+- vector class [STL/CLR]
+- <cliext/vector> header [STL/CLR]
+- <vector> header [STL/CLR]
 ms.assetid: f90060d5-097a-4e9d-9a26-a634b5b9c6c2
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4ee3debcaf651a2a11ef51cac405edf816c5b8ba
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# vector (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、オブジェクトをコントロールとランダム アクセスを持つ要素の可変長シーケンスを記述します。  ストレージの連続したブロックとして要素のシーケンスを管理するために `vector` コンテナーを使用します。  ブロックは、オンデマンドを越える配列として実装されます。  
+# <a name="vector-stlclr"></a>vector (STL/CLR)
+このテンプレート クラスでは、ランダム アクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナーを使用する`vector`ストレージの連続ブロックとして要素のシーケンスを管理します。 ブロックは、必要に応じて大きくを配列として実装されます。  
   
- 以下の説明では `GValue` は `Value` な型が `Value^`場合、後者は ref 型である同じです。  
+ 下記に、`GValue`と同じ`Value`ref 型を後者には、しない限り、どのケースでは`Value^`します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value>  
@@ -46,100 +45,101 @@ template<typename Value>
     { ..... };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  値  
  被制御シーケンス内の要素の型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
 |型定義|説明|  
-|---------|--------|  
-|[vector::const\_iterator](../dotnet/vector-const-iterator-stl-clr.md)|被制御シーケンスの定数反復子の型です。|  
-|[vector::const\_reference](../dotnet/vector-const-reference-stl-clr.md)|要素への定数参照の型です。|  
-|[vector::const\_reverse\_iterator](../dotnet/vector-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
-|[vector::difference\_type](../dotnet/vector-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[vector::generic\_container](../dotnet/vector-generic-container-stl-clr.md)|コンテナーのジェネリック インターフェイスの種類。|  
-|[vector::generic\_iterator](../dotnet/vector-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
-|[vector::generic\_reverse\_iterator](../Topic/vector::generic_reverse_iterator%20\(STL-CLR\).md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
-|[vector::generic\_value](../dotnet/vector-generic-value-stl-clr.md)|コンテナーのジェネリック インターフェイスの要素の型。|  
-|[vector::iterator](../dotnet/vector-iterator-stl-clr.md)|被制御シーケンスの反復子の型です。|  
-|[vector::reference](../dotnet/vector-reference-stl-clr.md)|要素への参照の型です。|  
-|[vector::reverse\_iterator](../dotnet/vector-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
-|[vector::size\_type](../dotnet/vector-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[vector::value\_type](../Topic/vector::value_type%20\(STL-CLR\).md)|要素の型。|  
+|---------------------|-----------------|  
+|[vector::const_iterator (STL/CLR)](../dotnet/vector-const-iterator-stl-clr.md)|被制御シーケンスの定数反復子の型です。|  
+|[vector::const_reference (STL/CLR)](../dotnet/vector-const-reference-stl-clr.md)|要素への定数参照の型です。|  
+|[vector::const_reverse_iterator (STL/CLR)](../dotnet/vector-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
+|[vector::difference_type (STL/CLR)](../dotnet/vector-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[vector::generic_container (STL/CLR)](../dotnet/vector-generic-container-stl-clr.md)|コンテナーのジェネリック インターフェイスの型。|  
+|[vector::generic_iterator (STL/CLR)](../dotnet/vector-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
+|[vector::generic_reverse_iterator (STL/CLR)](../dotnet/vector-generic-reverse-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
+|[vector::generic_value (STL/CLR)](../dotnet/vector-generic-value-stl-clr.md)|コンテナーのジェネリック インターフェイスの要素の型。|  
+|[vector::iterator (STL/CLR)](../dotnet/vector-iterator-stl-clr.md)|被制御シーケンスの反復子の型です。|  
+|[vector::reference (STL/CLR)](../dotnet/vector-reference-stl-clr.md)|要素への参照の型です。|  
+|[vector::reverse_iterator (STL/CLR)](../dotnet/vector-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
+|[vector::size_type (STL/CLR)](../dotnet/vector-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[vector::value_type (STL/CLR)](../dotnet/vector-value-type-stl-clr.md)|要素の型。|  
   
 |メンバー関数|説明|  
-|------------|--------|  
-|[vector::assign](../Topic/vector::assign%20\(STL-CLR\).md)|すべての要素を置き換えます。|  
-|[vector::at](../dotnet/vector-at-stl-clr.md)|指定した位置にある要素にアクセスします。|  
-|[vector::back](../dotnet/vector-back-stl-clr.md)|最後の要素にアクセスします。|  
-|[vector::begin](../dotnet/vector-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
-|[vector::capacity](../dotnet/vector-capacity-stl-clr.md)|コンテナーに割り当てられたストレージの容量を報告します。|  
-|[vector::clear](../dotnet/vector-clear-stl-clr.md)|すべての要素を削除します。|  
-|[vector::empty](../Topic/vector::empty%20\(STL-CLR\).md)|要素が存在しないかどうかをテストします。|  
-|[vector::end](../dotnet/vector-end-stl-clr.md)|被制御シーケンスの末尾を指定します。|  
-|[vector::erase](../dotnet/vector-erase-stl-clr.md)|指定した位置にある要素を削除します。|  
-|[vector::front](../dotnet/vector-front-stl-clr.md)|最初の要素にアクセスします。|  
-|[vector::insert](../Topic/vector::insert%20\(STL-CLR\).md)|指定した位置の要素を追加します。|  
-|[vector::pop\_back](../Topic/vector::pop_back%20\(STL-CLR\).md)|最後の要素を削除します。|  
-|[vector::push\_back](../dotnet/vector-push-back-stl-clr.md)|新しい最後の要素を追加します。|  
-|[vector::rbegin](../dotnet/vector-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
-|[vector::rend](../dotnet/vector-rend-stl-clr.md)|反転被制御シーケンスの末尾を指定します。|  
-|[vector::reserve](../Topic/vector::reserve%20\(STL-CLR\).md)|コンテナーの最小の増加容量を確認します。|  
-|[vector::resize](../Topic/vector::resize%20\(STL-CLR\).md)|要素の数を変更します。|  
-|[vector::size](../dotnet/vector-size-stl-clr.md)|要素の数をカウントします。|  
-|[vector::swap](../dotnet/vector-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
-|[vector::to\_array](../dotnet/vector-to-array-stl-clr.md)|新しい配列に被制御シーケンスをコピーします。|  
-|[vector::vector](../dotnet/vector-vector-stl-clr.md)|コンテナー オブジェクトを構築します。|  
+|---------------------|-----------------|  
+|[vector::assign (STL/CLR)](../dotnet/vector-assign-stl-clr.md)|すべての要素を置換します。|  
+|[vector::at (STL/CLR)](../dotnet/vector-at-stl-clr.md)|指定した位置にある要素にアクセスします。|  
+|[vector::back (STL/CLR)](../dotnet/vector-back-stl-clr.md)|最後の要素にアクセスします。|  
+|[vector::begin (STL/CLR)](../dotnet/vector-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
+|[vector::capacity (STL/CLR)](../dotnet/vector-capacity-stl-clr.md)|コンテナーに割り当てられたストレージのサイズを報告します。|  
+|[vector::clear (STL/CLR)](../dotnet/vector-clear-stl-clr.md)|すべての要素を削除します。|  
+|[vector::empty (STL/CLR)](../dotnet/vector-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
+|[vector::end (STL/CLR)](../dotnet/vector-end-stl-clr.md)|被制御シーケンスの末尾を指定します。|  
+|[vector::erase (STL/CLR)](../dotnet/vector-erase-stl-clr.md)|指定した位置にある要素を削除します。|  
+|[vector::front (STL/CLR)](../dotnet/vector-front-stl-clr.md)|最初の要素にアクセスします。|  
+|[vector::insert (STL/CLR)](../dotnet/vector-insert-stl-clr.md)|指定した位置にある要素を追加します。|  
+|[vector::pop_back (STL/CLR)](../dotnet/vector-pop-back-stl-clr.md)|最後の要素を削除します。|  
+|[vector::push_back (STL/CLR)](../dotnet/vector-push-back-stl-clr.md)|新しい最後の要素を追加します。|  
+|[vector::rbegin (STL/CLR)](../dotnet/vector-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
+|[vector::rend (STL/CLR)](../dotnet/vector-rend-stl-clr.md)|反転被制御シーケンスの末尾を指定します。|  
+|[vector::reserve (STL/CLR)](../dotnet/vector-reserve-stl-clr.md)|コンテナーの容量の最小の増加のことを確認します。|  
+|[vector::resize (STL/CLR)](../dotnet/vector-resize-stl-clr.md)|要素の数を変更します。|  
+|[vector::size (STL/CLR)](../dotnet/vector-size-stl-clr.md)|要素の数をカウントします。|  
+|[vector::swap (STL/CLR)](../dotnet/vector-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
+|[vector::to_array (STL/CLR)](../dotnet/vector-to-array-stl-clr.md)|被制御シーケンスを新しい配列にコピーします。|  
+|[vector::vector (STL/CLR)](../dotnet/vector-vector-stl-clr.md)|コンテナー オブジェクトを構築します。|  
   
 |プロパティ|説明|  
-|-----------|--------|  
-|[vector::back\_item](../dotnet/vector-back-item-stl-clr.md)|最後の要素にアクセスします。|  
-|[vector::front\_item](../dotnet/vector-front-item-stl-clr.md)|最初の要素にアクセスします。|  
+|--------------|-----------------|  
+|[vector::back_item (STL/CLR)](../dotnet/vector-back-item-stl-clr.md)|最後の要素にアクセスします。|  
+|[vector::front_item (STL/CLR)](../dotnet/vector-front-item-stl-clr.md)|最初の要素にアクセスします。|  
   
 |演算子|説明|  
-|---------|--------|  
-|[vector::operator\=](../dotnet/vector-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
-|[vector::operator](../dotnet/vector-operator-stl-clr.md)|指定した位置にある要素にアクセスします。|  
-|[operator\!\= \(vector\)](../Topic/operator!=%20\(vector\)%20\(STL-CLR\).md)|`vector` オブジェクトが `vector` の別のオブジェクトと等しくないかどうかを判定します。|  
-|[operator\< \(vector\)](../dotnet/operator-less-than-vector-stl-clr.md)|`vector` オブジェクトが `vector` の別のオブジェクトより小さいかどうかを判定します。|  
-|[operator\<\= \(vector\)](../dotnet/operator-less-or-equal-vector-stl-clr.md)|`vector` オブジェクトが `vector` の別のオブジェクト以下かどうかを判定します。|  
-|[operator\=\= \(vector\)](../Topic/operator==%20\(vector\)%20\(STL-CLR\).md)|`vector` オブジェクトが `vector` の別のオブジェクトと等しいかどうかを判定します。|  
-|[operator\> \(vector\)](../dotnet/operator-greater-than-vector-stl-clr.md)|`vector` オブジェクトが `vector` の別のオブジェクトより大きいかどうかを判定します。|  
-|[operator\>\= \(vector\)](../Topic/operator%3E=%20\(vector\)%20\(STL-CLR\).md)|`vector` オブジェクトが `vector` の別のオブジェクト以上かどうかを判定します。|  
+|--------------|-----------------|  
+|[vector::operator= (STL/CLR)](../dotnet/vector-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
+|[vector::operator(STL/CLR)](../dotnet/vector-operator-stl-clr.md)|指定した位置にある要素にアクセスします。|  
+|[operator!= (vector) (STL/CLR)](../dotnet/operator-inequality-vector-stl-clr.md)|かどうかを`vector`オブジェクトが他と等しくない`vector`オブジェクト。|  
+|[operator< (vector) (STL/CLR)](../dotnet/operator-less-than-vector-stl-clr.md)|かどうかを`vector`オブジェクトが他よりも小さい`vector`オブジェクト。|  
+|[operator<= (vector) (STL/CLR)](../dotnet/operator-less-or-equal-vector-stl-clr.md)|かどうかを`vector`オブジェクトが別に小さい`vector`オブジェクト。|  
+|[operator== (vector) (STL/CLR)](../dotnet/operator-equality-vector-stl-clr.md)|かどうかを`vector`オブジェクトが他と等しい`vector`オブジェクト。|  
+|[operator> (vector) (STL/CLR)](../dotnet/operator-greater-than-vector-stl-clr.md)|かどうかを`vector`オブジェクトが他よりも大きい`vector`オブジェクト。|  
+|[operator>= (vector) (STL/CLR)](../dotnet/operator-greater-or-equal-vector-stl-clr.md)|かどうかを`vector`オブジェクトがより大きいか等しい間`vector`オブジェクト。|  
   
-## インターフェイス  
+## <a name="interfaces"></a>インターフェイス  
   
 |インターフェイス|説明|  
-|--------------|--------|  
-|<xref:System.ICloneable>|オブジェクトを複製します。|  
-|<xref:System.Collections.IEnumerable>|要素によるシーケンス。|  
-|<xref:System.Collections.ICollection>|要素のグループを保持します。|  
-|<xref:System.Collections.Generic.IEnumerable%601>|指定された要素を通じてシーケンス。|  
-|<xref:System.Collections.Generic.ICollection%601>|指定された要素のグループを保持します。|  
-|<xref:System.Collections.Generic.IList%601>|指定された要素の順序付けグループを保持します。|  
-|IVectorValue\<\>|一般的なコンテナーを保持します。|  
+|---------------|-----------------|  
+|<xref:System.ICloneable>|オブジェクトが重複してください。|  
+|<xref:System.Collections.IEnumerable>|要素を順番にします。|  
+|<xref:System.Collections.ICollection>|要素のグループを管理します。|  
+|<xref:System.Collections.Generic.IEnumerable%601>|型指定された要素を順番にします。|  
+|<xref:System.Collections.Generic.ICollection%601>|型指定された要素のグループを管理します。|  
+|<xref:System.Collections.Generic.IList%601>|型指定された要素の順序付きのグループを管理します。|  
+|IVector < 値\>|ジェネリックなコンテナーを管理します。|  
   
-## 解説  
- オブジェクトは、オンデマンドで表示され、`Value` 要素に格納された配列によって制御されるシーケンスに対するストレージ領域を割り当てます。  increase は新しい要素を付けるコストが定数時間償却されるようにします。  つまり、末尾に要素を追加すると、被制御シーケンスの長さを大きくすると、平均すると向上しません。  そのため、ベクターは、テンプレート クラス [スタック](../dotnet/stack-stl-clr.md)の基になるコンテナーにすることをお勧めします。  
+## <a name="remarks"></a>コメント  
+ オブジェクトは、割り当てし、ストアドの配列を制御するシーケンスの記憶域を解放`Value`要素で、必要に応じて大ききます。 拡張は、新しい要素を追加するだけのコストが償却定数時間であるような方法で発生します。 つまりの末尾に要素を追加のコストが増加せず、平均、被制御シーケンスを大きくの長さとして。 つまり、ベクトルとは、テンプレート クラスを基になるコンテナーで有力候補[スタック (STL/CLR)](../dotnet/stack-stl-clr.md)です。  
   
- `vector` を意味が直接最初の \(詳細\) 要素のゼロからカウント ダウン最後の \(戻る\) 要素の [vector::size](../dotnet/vector-size-stl-clr.md)`() - 1` に数値位置がある要素を参照できるランダム アクセス反復子がサポートされています。  ベクターがテンプレート クラス [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)の基になるコンテナーにふさわしい候補であることを意味します。  
+ A`vector`に (前) の最初の要素の 0 から数えて、数値の位置を直接指定された要素を参照できることを意味サポート ランダム アクセス反復子`size() - 1`(バックアップ) の最後の要素にします。 ベクターが基になるコンテナー テンプレート クラスに適した候補であることも意味[priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)です。  
   
- ベクターの反復子は、指定した要素のバイアスとともに関連するベクター オブジェクトへのハンドルを格納します。  関連するコンテナー オブジェクトでのみ反復子を使用できます。  ベクター要素のバイアスは位置と同じになります。  
+ ベクターの反復子は、指定した要素のバイアスと共にその関連付けられたベクター オブジェクトへのハンドルを格納します。 反復子は、それらの関連するコンテナー オブジェクトにのみ使用できます。 ベクトルの要素の時差とはその位置と同じです。  
   
- 要素を挿入したりオフにしたりすることで、指定した位置に格納される要素の値を変更して、反復子で指定される値も変更できます。\(ホールを挿入する前に作成するか、消去の後に穴を満たすためにコンテナーは要素を上下にコピーする必要があります\)。いずれにしても、ベクターの反復子は、バイアス値が範囲 `[0,`[vector::size](../dotnet/vector-size-stl-clr.md)`()]`に限り有効です。  また、有効な反復子は dereferencable です。指定した要素の値にアクセスするか、または変更するために使用できます。。バイアスが `size()`と等しくない場合。  
+ 挿入または要素を消去するには、反復子によって指定された値を変更することも、指定された位置に格納されている要素の値を変更できます。 (コンテナーは、要素にコピーまたは下矢印を挿入する前に穴を作成するか、消去後に穴を入力する必要があります)。いずれにしても、ベクターの反復子は有効ですが、範囲内にそのバイアス限り`[0, size()]`です。 さらに、有効な反復子は dereferencable--これを使用して、アクセスまたはそのバイアスと等しくない場合に限り指定--要素の値を変更することができます`size()`です。  
   
- 要素に設定するか、削除して、格納されている値のデストラクターを呼び出します。  コンテナーが破棄されると、すべての要素を消去します。  したがって、要素の型が ref クラスにあるコンテナー要素がコンテナーを重視されることを確認します。  ただし、Handles のコンテナーが `not` の要素を破棄されます。  
+ 消去、または要素を削除する、格納されている値のデストラクターを呼び出します。 コンテナーを破棄するには、すべての要素が消去されます。 したがって、要素型が ref クラスは、コンテナーを実現する要素よりも長くありませんコンテナー ただし、ハンドルのコンテナーには、その要素は破棄されません。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/vector >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [一覧](../dotnet/list-stl-clr.md)   
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [スタック](../dotnet/stack-stl-clr.md)   
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)
+## <a name="see-also"></a>関連項目  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [vector::size (STL/CLR)](../dotnet/vector-size-stl-clr.md)  
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)

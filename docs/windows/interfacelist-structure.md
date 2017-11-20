@@ -1,32 +1,30 @@
 ---
-title: "InterfaceList 構造体 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::InterfaceList"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "InterfaceList 構造体"
+title: "InterfaceList 構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::InterfaceList
+dev_langs: C++
+helpviewer_keywords: InterfaceList structure
 ms.assetid: 6ec3228d-eb3e-4b7e-aef1-7dcf17bdf61a
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a9c7c14dc24bf76444b62adb0870b85fac449e67
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# InterfaceList 構造体
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="interfacelist-structure"></a>InterfaceList 構造体
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -36,32 +34,32 @@ template <
 struct InterfaceList;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- インターフェイス名; 再帰的なリストの最初のインターフェイス。  
+ インターフェイスの名前です。再帰的なリストの最初のインターフェイスです。  
   
  `U`  
- インターフェイス名; 再帰的な一覧内の残りのインターフェイス。  
+ インターフェイスの名前です。再帰的なリスト内の残りインターフェイスです。  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  インターフェイスの再帰的なリストを作成するために使用します。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
-|`FirstT`|テンプレート パラメーター `T`のシノニムです。|  
-|`RestT`|テンプレート パラメーター `U`のシノニムです。|  
+|----------|-----------------|  
+|`FirstT`|テンプレート パラメーターのシノニム`T`です。|  
+|`RestT`|テンプレート パラメーターのシノニム`U`です。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `InterfaceList`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

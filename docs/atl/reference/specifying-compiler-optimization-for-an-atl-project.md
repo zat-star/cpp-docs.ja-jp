@@ -4,47 +4,30 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - vc.appwiz.ATL.optimization
 - vc.appwiz.ATL.vtable
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - ATL_DISABLE_NO_VTABLE macro
 - ATL projects, compiler optimization
 - ATL_NO_VTABLE macro
 ms.assetid: 7f379318-66d5-43dd-a53d-530758d3a228
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: abdad4367e75c1971ba5d11af1a60992d1bb3dd4
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 0b9b3d6b3fabe2a24a4b296709e835d07a63e441
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="specifying-compiler-optimization-for-an-atl-project"></a>ATL プロジェクトのコンパイラの最適化を指定します。
-既定では、 [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)ATL_NO_VTABLE マクロを使用した新しいクラスを次のように生成されます。  
+既定では、 [ATL コントロール ウィザード](../../atl/reference/atl-control-wizard.md)ATL_NO_VTABLE マクロを持つ新しいクラスを次のように生成されます。  
   
 ```  
 class ATL_NO_VTABLE CProjName  
@@ -63,28 +46,27 @@ class ATL_NO_VTABLE CProjName
 #endif  
 ```  
   
- ATL_NO_VTABLE マクロが展開 _ATL_DISABLE_NO_VTABLE を定義していない場合`declspec(novtable)`します。 使用して`declspec(novtable)`クラスで宣言により、vtable ポインター クラスのコンス トラクターおよびデストラクター内で初期化されるからです。 プロジェクトをビルドするときに、リンカーは、vtable と vtable がポイントするすべての関数が解消されます。  
+ ATL_NO_VTABLE マクロが展開 _ATL_DISABLE_NO_VTABLE を定義していない場合`declspec(novtable)`です。 使用して`declspec(novtable)`クラスで宣言防止 vtable ポインター クラスのコンス トラクターおよびデストラクター内で初期化されます。 プロジェクトをビルドするときに、リンカーは、vtable と vtable がポイントするすべての関数が解消されます。  
   
- ATL_NO_VTABLE を使用する必要があるあり、その結果`declspec(novtable)`、直接作成可能な型ではない基底クラスのみを持つ。 使用しないでください`declspec(novtable)`プロジェクトで、最派生クラスを使用して、このクラス (通常[と](../../atl/reference/ccomobject-class.md)、[すると](../../atl/reference/ccomaggobject-class.md)、または[CComPolyObject](../../atl/reference/ccompolyobject-class.md))、プロジェクトの vtable ポインターを初期化します。  
+ ATL_NO_VTABLE を使用する必要があるあり、その結果`declspec(novtable)`、直接作成可能ではない基底クラスのみを持つ。 使用しないでください`declspec(novtable)`プロジェクトで、最派生クラスであるためこのクラス (通常[CComObject](../../atl/reference/ccomobject-class.md)、[すると](../../atl/reference/ccomaggobject-class.md)、または[CComPolyObject](../../atl/reference/ccompolyobject-class.md))プロジェクトの vtable ポインターを初期化します。  
   
- 使用する任意のオブジェクトのコンス トラクターから仮想関数を呼び出す必要がありますいない`declspec(novtable)`します。 これらの呼び出しを移動する必要があります、 [FinalConstruct](ccomobjectrootex-class.md#finalconstruct)メソッドです。  
+ 使用する任意のオブジェクトのコンス トラクターから仮想関数を呼び出す必要がありますいない`declspec(novtable)`です。 これらの呼び出しを移動する必要があります、 [FinalConstruct](ccomobjectrootex-class.md#finalconstruct)メソッドです。  
 
   
- いないことを確認する必要があるかどうかを使用している場合、`declspec(novtable)`修飾子は、任意のクラス定義から ATL_NO_VTABLE マクロを削除するかを指定してグローバルに無効ことができます  
+ 使用するかどうかがわからない場合、`declspec(novtable)`修飾子は、任意のクラス定義から ATL_NO_VTABLE マクロを削除するか、グローバルを無効にすることを指定します。  
   
 ```  
 #define _ATL_DISABLE_NO_VTABLE  
 ```  
   
- stdafx.h で他のすべての ATL の前にヘッダー ファイルが含まれます。  
+ stdafx.h でその他のすべての ATL の前にヘッダー ファイルが含まれます。  
   
 ## <a name="see-also"></a>関連項目  
  [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)   
  [Visual C プロジェクトの種類](../../ide/visual-cpp-project-types.md)   
- [アプリケーション ウィザードを使用して、デスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   
+ [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../../ide/creating-desktop-projects-by-using-application-wizards.md)   
  [ATL および C ランタイム コードによるプログラミング](../../atl/programming-with-atl-and-c-run-time-code.md)   
- [ATL COM オブジェクトの基礎](../../atl/fundamentals-of-atl-com-objects.md)   
+ [ATL COM オブジェクトの基本事項](../../atl/fundamentals-of-atl-com-objects.md)   
  [novtable](../../cpp/novtable.md)   
  [ATL プロジェクトの既定の構成](../../atl/reference/default-atl-project-configurations.md)
-
 

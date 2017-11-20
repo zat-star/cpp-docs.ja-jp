@@ -1,31 +1,31 @@
 ---
-title: "自動変数 (関数スコープ) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "自動変数"
-  - "関数 [C++], スコープ"
-  - "スコープ, 宣言 (関数内部で)"
-  - "変数, 自動"
+title: "自動変数 (関数スコープ) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+dev_langs: C++
+helpviewer_keywords:
+- automatic variables
+- variables, automatic
+- functions [C++], scope
+- scope, declared within functions
 ms.assetid: 6e1a14c2-1fb0-4937-8628-8d963cc35ed4
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 5101d25a043248fe7f9a83813462e75b792d7fd3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 自動変数 (関数スコープ)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-関数の内部で宣言した変数は、その関数のスコープでだけ使用できます。  
+# <a name="automatic-function-scope-variables"></a>自動変数 (関数スコープ)
+関数内で宣言された変数は、その関数のスコープ内でのみ使用できます。  
   
 ```  
 // LNK2019_AV.cpp  
@@ -42,7 +42,7 @@ int main() {
 }  
 ```  
   
- 次に、以下のコードを実行します。  
+ それから  
   
 ```  
 // LNK2019_AV_2.cpp  
@@ -62,5 +62,5 @@ void test(void) {
 }  
 ```  
   
-## 参照  
- [リンカ ツール エラー LNK2019](../Topic/Linker%20Tools%20Error%20LNK2019.md)
+## <a name="see-also"></a>関連項目  
+ [リンカー ツール エラー LNK2019](../../error-messages/tool-errors/linker-tools-error-lnk2019.md)

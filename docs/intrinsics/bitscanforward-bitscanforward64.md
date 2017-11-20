@@ -1,67 +1,74 @@
 ---
-title: "_BitScanForward, _BitScanForward64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_BitScanForward"
-  - "_BitScanForward_cpp"
-  - "_BitScanForward64_cpp"
-  - "_BitScanForward64"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_BitScanForward intrinsic"
-  - "BitScanForward intrinsic"
-  - "bsf instruction"
+title: "_BitScanForward、_BitScanForward64 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _BitScanForward
+- _BitScanForward_cpp
+- _BitScanForward64_cpp
+- _BitScanForward64
+dev_langs: C++
+helpviewer_keywords:
+- _BitScanForward intrinsic
+- bsf instruction
+- BitScanForward intrinsic
 ms.assetid: 405e60fb-0815-42a7-9b02-6fc035122203
-caps.latest.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 94fe30e65cc501e16fe31bd04b5cb786a323ccdb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# _BitScanForward, _BitScanForward64
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="bitscanforward-bitscanforward64"></a>_BitScanForward、_BitScanForward64
+**Microsoft 固有の仕様**  
   
- マスク データの最下位ビット \(LSB\) から最上位ビット \(MSB\) に向かって設定済みビット \(1\) を検索します。  
+ マスク データの最下位ビット (LSB) から最上位ビット (MSB) に向かって設定済みビット (1) を検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned char _BitScanForward(    unsigned long * Index,    unsigned long Mask ); unsigned char _BitScanForward64(    unsigned long * Index,    unsigned __int64 Mask );  
+unsigned char _BitScanForward(  
+   unsigned long * Index,  
+   unsigned long Mask  
+);  
+unsigned char _BitScanForward64(  
+   unsigned long * Index,  
+   unsigned __int64 Mask  
+);  
 ```  
   
-#### パラメーター  
- \[出力\] `Index`  
- 最初に見つかった設定済みビット \(1\) のビット位置が読み込まれます。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Index`  
+ 最初に見つかった設定済みビット (1) のビット位置が読み込まれます。  
   
- \[入力\] `Mask`  
+ [入力] `Mask`  
  検索する 32 ビットまたは 64 ビットの値。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  マスクが 0 の場合は 0。それ以外の場合は 0 以外。  
   
-## 解説  
- 設定済みビットが見つかった場合は、最初に見つかった設定済みビットのビット位置が最初のパラメーターで返されます。  設定済みビットが見つからない場合は 0 が返されます。それ以外の場合は 1 が返されます。  
+## <a name="remarks"></a>コメント  
+ 設定済みビットが見つかった場合は、最初に見つかった設定済みビットのビット位置が最初のパラメーターで返されます。 設定済みビットが見つからない場合は 0 が返されます。それ以外の場合は 1 が返されます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_BitScanForward`|x86、ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`_BitScanForward64`|ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_BitScanForward`|x86、ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`_BitScanForward64`|ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // BitScanForward.cpp  
@@ -92,20 +99,20 @@ int main()
 }  
 ```  
   
-## 入力  
+## <a name="input"></a>入力  
   
 ```  
 12  
 ```  
   
-## 出力例  
+## <a name="sample-output"></a>出力例  
   
 ```  
 Enter a positive integer as the mask:   
 Mask: 12 Index: 2  
 ```  
   
-### END Microsoft 固有の仕様  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

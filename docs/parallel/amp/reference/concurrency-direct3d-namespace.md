@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -14,35 +13,18 @@ f1_keywords:
 - amp_short_vectors/Concurrency::direct3d
 - amp_graphics/Concurrency::direct3d
 - amp_math/Concurrency::direct3d
-dev_langs:
-- C++
-helpviewer_keywords:
-- direct3d namespace
+dev_langs: C++
+helpviewer_keywords: direct3d namespace
 ms.assetid: 9566a2f1-4d5f-43e4-a3ac-676643d38420
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 94e0542910484166a01bd79beb9dfaa805aae6cd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 849f430caaaf8dacef53ecedd5dc4897041b624a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="concurrencydirect3d-namespace"></a>Concurrency::direct3d 名前空間
 `direct3d` 名前空間は、D3D の相互運用性をサポートする関数を提供します。 これにより、AMP コードでの計算に D3D のリソースをシームレスに使用できるようになると共に、AMP で作成したリソースを D3D コードで使用することができ、冗長な中間コピーを作成する必要がありません。 C++ AMP を使用することによって、DirectX アプリケーションの計算中心のセクションの処理を加速し、AMP の計算から生成されるデータに対して D3D API を使用できます。  
@@ -104,4 +86,3 @@ namespace direct3d;
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

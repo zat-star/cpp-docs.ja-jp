@@ -1,5 +1,5 @@
 ---
-title: "Concurrency::graphics 名前空間関数 |Microsoft ドキュメント"
+title: "Concurrency::graphics 名前空間の関数 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -9,18 +9,17 @@ ms.topic: article
 f1_keywords:
 - amp_graphics/Concurrency::fast_math::copy_async
 - amp_graphics/Concurrency::fast_math::copy
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: ace01cd5-29d3-4356-930e-c81a61c5f934
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: a9def518f951e6fbae788b69893cc7205053b411
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 4277b01f702807435132cd92785aefe7f3ab30f8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="concurrencygraphics-namespace-functions"></a>Concurrency::graphics 名前空間の関数
 |||  
@@ -174,7 +173,7 @@ void copy (
  ソース コンテナーへの終了の反復子。  
   
 ##  <a name="copy_async"></a>copy_async 関数 (concurrency::graphics Namespace)  
- 転送先のバッファーにソース テクスチャを非同期的にコピーまたはソース バッファー転送先のバッファーをコピーし、し、返す、 [completion_future](completion-future-class.md)待機できるオブジェクト。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。  
+ コピー先のバッファーにソース テクスチャを非同期的にコピーまたは転送先のバッファーにコピー元のバッファーをコピーしてから返します、 [completion_future](completion-future-class.md)待機できるオブジェクト。 アクセラレータでコードを実行しているときにデータはコピーできません。 この関数の一般的な形式は `copy(src, dest)` です。  
   
 ```  
 template<
@@ -322,4 +321,3 @@ concurrency::completion_future copy_async(_Src_type& _Src,
 
 ## <a name="see-also"></a>関連項目  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

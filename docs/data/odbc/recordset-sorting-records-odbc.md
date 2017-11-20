@@ -1,42 +1,42 @@
 ---
-title: "レコードセット: レコードの並べ替え (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ODBC レコードセット, 並べ替え"
-  - "レコードセット, 並べ替え"
-  - "並べ替え (データの), レコードセットのデータ"
+title: "レコード セット: レコードの並べ替え (ODBC) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- sorting data, recordset data
+- ODBC recordsets, sorting
+- recordsets, sorting
 ms.assetid: b40b152e-0a91-452e-be7b-e5bc27f744c7
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6ca9e8547149ae36722c40e146392085e6ccf08e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコードセット: レコードの並べ替え (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="recordset-sorting-records-odbc"></a>レコードセット: レコードの並べ替え (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
   
- このトピックでは、レコードセットを並べ替える方法について説明します。  並べ替えを行うときは、基準にする列と、昇順 \(`ASC`\) または降順 \(**DESC**\) を指定できます。`ASC` が既定値です。  たとえば、2 つの列を指定した場合は、最初に指定した列を基準にして並べ替えが行われ、次に 2 番目に指定した列を基準にして並べ替えが行われます。  並べ替えの内容は、SQL **ORDER BY** 句で定義します。  レコードセットの SQL クエリに **ORDER BY** 句を追加すると、選択されたレコードの並べ替えが行われます。  
+ このトピックでは、レコード セットを並べ替える方法について説明します。 並べ替えには、基になる 1 つまたは複数の列を指定することができ、昇順または降順を指定することができます (`ASC`または**DESC**です。`ASC`は、既定値) の列を指定します。 たとえば、2 つの列を指定する場合、レコードは順で並べ替えてという名前の最初の列でという名前の 2 番目の列に。 SQL **ORDER BY**句は、並べ替えを定義します。 フレームワークを追加すると、 **ORDER BY**句をレコード セットの SQL クエリを選択範囲の並び順句コントロール。  
   
- レコードセットの並べ替え順序は、レコードセット オブジェクトの構築後、メンバー関数 **Open** を呼び出す前に \(既に開かれているレコードセット オブジェクトを再利用する場合はメンバー関数 **Requery** を呼び出す前に\) 指定します。  
+ 呼び出す前に、オブジェクトを構築した後は、レコード セットの並べ替え順序を確立する必要があります、**開く**メンバー関数 (を呼び出す前に、または、 **Requery**既存のレコード セット オブジェクトのメンバー関数ある**開く**メンバー関数)。  
   
-#### レコードセット オブジェクトの並べ替え順序を指定するには、  
+#### <a name="to-specify-a-sort-order-for-a-recordset-object"></a>レコード セット オブジェクトの並べ替え順序を指定するには  
   
-1.  新しいレコードセット オブジェクトを構築します。既存のオブジェクトを利用する場合は、**Requery** を呼び出せる状態にします。  
+1.  新しいレコード セット オブジェクトを構築 (を呼び出す準備または**Requery**既存の)。  
   
-2.  レコードセット オブジェクトの [m\_strSort](../Topic/CRecordset::m_strSort.md) データ メンバーの値を設定します。  
+2.  オブジェクトの値を設定[レコード](../../mfc/reference/crecordset-class.md#m_strsort)データ メンバーです。  
   
-     並べ替えは、NULL で終わる文字列で指定します。  この文字列は、SQL **ORDER BY** 句から **ORDER BY** キーワードを除いた部分です。  次のように設定します。  
+     並べ替えは、null で終わる文字列です。 内容が含まれている、 **ORDER BY**句がキーワードではなく**ORDER BY**です。 たとえば、次のように使用します。  
   
     ```  
     recordset.m_strSort = "LastName DESC, FirstName DESC";  
@@ -48,11 +48,11 @@ caps.handback.revision: 8
     recordset.m_strSort = "ORDER BY LastName DESC, FirstName DESC";  
     ```  
   
-3.  必要に応じて、その他のオプション \(フィルター、ロック方法、パラメーターなど\) を設定します。  
+3.  たとえば、フィルターやロック モードは、パラメーターなどの必要なその他のオプションを設定します。  
   
-4.  新規オブジェクトでは **Open** を呼び出します。既存のオブジェクトを利用するときは **Requery** を呼び出します。  
+4.  呼び出す**開く**に新しいオブジェクト (または**Requery**既存のオブジェクト)。  
   
- 選択されたレコードは指定された順に並べ替えられます。  たとえば、学生レコードをまず姓に基づいて、次に名前に基づいて、それぞれ降順で並べ替えるには、次のように設定します。  
+ 選択したレコードは順序付けと指定します。 たとえば、姓、名の降順で学生レコードのセットを並べ替えるに、次のように行います。  
   
 ```  
 // Construct the recordset  
@@ -63,12 +63,12 @@ rsStudent.m_strSort = "LastName DESC, FirstName DESC";
 rsStudent.Open( );  
 ```  
   
- このレコードセットには、全学生のレコードが姓名に基づいて降順で \(Z から A へ\) 並べ替えられて格納されています。  
+ レコード セットには、すべての降順で並べ替えられます (Z A から) last name、によって、最初の名前で、学生レコードが含まれています。  
   
 > [!NOTE]
->  **Open** に新しい SQL 文字列を渡すと、レコードセットの既定の SQL 文字列がオーバーライドされます。この場合、カスタム文字列に **ORDER BY** 句が含まれているときは、並べ替えを設定しないでください。  
+>  独自の SQL 文字列を渡すことによって、レコード セットの既定の SQL 文字列を上書きする場合**開く**、カスタム文字列がある場合は、並べ替えを設定しないでください、 **ORDER BY**句。  
   
-## 参照  
- [レコードセット \(ODBC\)](../../data/odbc/recordset-odbc.md)   
- [レコードセット: パラメーターを利用したレコードセット \(ODBC\)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   
- [レコードセット: レコードのフィルター処理 \(ODBC\)](../../data/odbc/recordset-filtering-records-odbc.md)
+## <a name="see-also"></a>関連項目  
+ [レコード セット (ODBC)](../../data/odbc/recordset-odbc.md)   
+ [レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   
+ [レコードセット: レコードのフィルター処理 (ODBC)](../../data/odbc/recordset-filtering-records-odbc.md)

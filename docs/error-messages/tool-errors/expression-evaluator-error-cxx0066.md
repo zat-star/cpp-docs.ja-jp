@@ -1,32 +1,31 @@
 ---
-title: "式エバリュエーター エラー CXX0066 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "CXX0066"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAN0066"
-  - "CXX0066"
+title: "式エバリュエーター エラー CXX0066 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: CXX0066
+dev_langs: C++
+helpviewer_keywords:
+- CXX0066
+- CAN0066
 ms.assetid: 1321e4e1-b441-424b-9e76-c208d4a6f6ea
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: acead0e3ea66f3d304aa0f921cc96962020abbb1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 式エバリュエーター エラー CXX0066
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-静的メンバーはありません  
+# <a name="expression-evaluator-error-cxx0066"></a>式エバリュエーター エラー CXX0066
+静的メンバーは存在しません  
   
- 静的クラス メンバーが見つからないか、定義されていません。  このエラーは、宣言されているが定義されていない静的クラス メンバーや、デバッグ情報を含まないモジュールでのみ定義、参照されている静的クラス メンバーが使用されたときに発生します。  
+ クラスの静的メンバーは見つかりませんでしたまたはが定義されていません。 このエラーが発生することができます、静的クラスからが宣言されているメンバー定義またはのみ定義され、デバッグ情報が含まれていないモジュール内で参照します。  
   
- このエラーは CAN0066 と同じものです。
+ このエラーは、can0066 と同じものと同じです。

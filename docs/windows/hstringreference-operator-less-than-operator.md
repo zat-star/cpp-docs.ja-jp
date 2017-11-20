@@ -1,54 +1,50 @@
 ---
-title: "HStringReference::Operator&lt; 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "corewrappers/Microsoft::WRL::Wrappers::HStringReference::operator<"
-dev_langs: 
-  - "C++"
+title: "Hstringreference::operator&lt;演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: corewrappers/Microsoft::WRL::Wrappers::HStringReference::operator<
+dev_langs: C++
 ms.assetid: 55aa48e8-7c96-4123-9ebe-42b4cd8b9377
-caps.latest.revision: 2
-caps.handback.revision: 2
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "2"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 46d839cd10144877ee4af561ce9e1ab52343de83
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# HStringReference::Operator&lt; 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-最初のパラメーターが 2 番目のパラメーターより小さいかどうかを示します。  
+# <a name="hstringreferenceoperatorlt-operator"></a>Hstringreference::operator&lt;演算子
+最初のパラメーターがあるか、2 番目のパラメーターより小さいことを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
-  
 inline bool operator<(  
     const HStringReference& lhs,   
     const HStringReference& rhs) throw()  
-  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `lhs`  
- 比較する最初のパラメーター。  `lhs` は HStringReference への参照である場合があります。  
+ 比較する最初のパラメーター。 `lhs`HStringReference への参照ができます。  
   
  `rhs`  
- 比較する 2 番目のパラメーター。`rhs` は HStringReference への参照である場合があります。  
+ 比較する 2 番目のパラメーターです。  `rhs`HStringReference への参照ができます。  
   
-## 戻り値  
- `lhs` パラメーターである場合 `rhs` パラメーター未満`true` ; それ以外の場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`場合、`lhs`パラメーターより小さい`rhs`パラメーターです。 それ以外の場合、`false`です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** corewrappers.h  
   
- **名前空間:** Microsoft::WRL::Wrappers  
+ **Namespace:** Microsoft::WRL::Wrappers  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [HStringReference クラス](../windows/hstringreference-class.md)

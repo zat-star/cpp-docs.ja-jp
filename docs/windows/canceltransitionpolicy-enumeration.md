@@ -1,52 +1,51 @@
 ---
-title: "CancelTransitionPolicy 列挙型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::CancelTransitionPolicy::TransitionFromCanceled"
-  - "module/Microsoft::WRL::CancelTransitionPolicy::RemainCanceled"
-  - "module/Microsoft::WRL::CancelTransitionPolicy"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CancelTransitionPolicy 列挙型"
+title: "CancelTransitionPolicy 列挙型 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- module/Microsoft::WRL::CancelTransitionPolicy::TransitionFromCanceled
+- module/Microsoft::WRL::CancelTransitionPolicy::RemainCanceled
+- module/Microsoft::WRL::CancelTransitionPolicy
+dev_langs: C++
+helpviewer_keywords: CancelTransitionPolicy Enumeration
 ms.assetid: 5de49f7d-e5e3-43e9-bbca-666caf226cef
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7f21959daf740155a70787f7c35f8467d1fb2149
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CancelTransitionPolicy 列挙型
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-完了の終了状態への遷移への非同期操作の例では、クライアント要求された取り消された状態に対してまたはエラーがどのように動作するかを示します。  
+# <a name="canceltransitionpolicy-enumeration"></a>CancelTransitionPolicy 列挙型
+どの非同期操作しようのターミナル状態に移行することを示します。 完了するか、クライアントが要求の取り消された状態に関してエラーが動作する必要があります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 enum CancelTransitionPolicy;  
 ```  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### 値  
+### <a name="values"></a>値  
   
 |名前|説明|  
-|--------|--------|  
-|`RemainCanceled`|非同期操作がクライアントからの要求された Canceled 状態に置かれている場合は、これで完了したターミナルまたはエラー状態に遷移に対して取り消された状態に収めることを示します。|  
-|`TransitionFromCanceled`|非同期操作がクライアントからの要求された Canceled 状態に置かれている場合は、これによって取り消された状態からエラーまたはこのフラグを利用する呼び出しに従い、完了の終了状態への遷移状態があることを示します。|  
+|----------|-----------------|  
+|`RemainCanceled`|非同期操作は、クライアントが要求の取り消された状態では現在の場合は、完了したターミナルまたはエラー状態に遷移するのではなく、取り消された状態にそのまま残ることを示します。|  
+|`TransitionFromCanceled`|状態が取り消された状態の終了状態が完了したを移行する必要があることを示しますこの場合は、非同期操作は、クライアントが要求の取り消された状態では現在、またはこのフラグを使用する呼び出しによって決定されるエラー。|  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** async.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

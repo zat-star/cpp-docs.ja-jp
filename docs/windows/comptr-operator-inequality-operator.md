@@ -1,31 +1,29 @@
 ---
-title: "ComPtr::operator!= 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::ComPtr::operator!="
-dev_langs: 
-  - "C++"
+title: "Comptr::operator! = 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: client/Microsoft::WRL::ComPtr::operator!=
+dev_langs: C++
 ms.assetid: 63647240-dec7-4eb9-9272-96c07d01493c
-caps.latest.revision: 3
-caps.handback.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ce13c5dabf267be5d7c8a77a51d1450f182d226d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ComPtr::operator!= 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ComPtr の 2 種類のオブジェクトが異なるかどうかを示します。  
+# <a name="comptroperator-operator"></a>ComPtr::operator!= 演算子
+2 つの ComPtr オブジェクトが等しくないかどうかを示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 bool operator!=(  
@@ -45,23 +43,23 @@ bool operator!=(
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `a`  
  ComPtr オブジェクトへの参照。  
   
  `b`  
- 別の ComPtr オブジェクトへの参照。  
+ もう 1 つの ComPtr オブジェクトへの参照。  
   
-## 戻り値  
- 一つ目の演算子は `b`に対応するオブジェクト `a` 等しくない場合があります `true` ; それ以外の場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ 最初の演算子によって生成`true`場合オブジェクト`a`がオブジェクトと等しくない`b`、それ以外の`false`します。  
   
- 2 番目と 3 番目の演算子は、オブジェクトが `a``nullptr`と等しく `true` ;を説明します。それ以外の場合は `false`。  
+ 2 番目と 3 番目の演算子の yield`true`場合オブジェクト`a`は等しくありません`nullptr`、それ以外の`false`します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
- [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)   
+## <a name="see-also"></a>関連項目  
+ [Microsoft::wrl Namespace](../windows/microsoft-wrl-namespace.md)   
  [ComPtr クラス](../windows/comptr-class.md)

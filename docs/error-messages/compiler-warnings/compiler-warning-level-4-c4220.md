@@ -1,34 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4220 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4220"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4220"
+title: "コンパイラの警告 (レベル 4) C4220 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4220
+dev_langs: C++
+helpviewer_keywords: C4220
 ms.assetid: aba18868-825f-4763-9af6-3296406a80e4
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 82e921ecbb19ff705c7e2341d39d07991d6cb30a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4220
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-varargs は残りの引数と一致させます。  
+# <a name="compiler-warning-level-4-c4220"></a>コンパイラの警告 (レベル 4) C4220
+varargs は残りのパラメーターを一致します。  
   
- 既定の Microsoft 拡張機能 \(\/Ze\) では、関数へのポインターは、可変個の同様の引数を持つ関数へのポインターと一致します。  
+ 既定 Microsoft 拡張機能 (/Ze)、関数へのポインターは、似ていますが、変数の引数を持つ関数へのポインターと一致します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // C4220.c  
@@ -43,4 +41,4 @@ int main()
 }  
 ```  
   
- このようなポインターは ANSI 互換オプション \([\/Za](../../build/reference/za-ze-disable-language-extensions.md)\) では一致しません。
+ このようなポインターは、ANSI 互換では一致しません ([/Za](../../build/reference/za-ze-disable-language-extensions.md))。

@@ -1,39 +1,38 @@
 ---
-title: "方法: ネイティブ型のハンドルを宣言する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-f1_keywords: 
-  - "gcroot"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "gcroot キーワード [C++]"
-  - "ハンドル, 宣言"
-  - "型 [C++], 宣言 (ハンドルを)"
+title: "方法: ネイティブ型のハンドルを宣言 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+f1_keywords: gcroot
+dev_langs: C++
+helpviewer_keywords:
+- handles, declaring
+- gcroot keyword [C++]
+- types [C++], declaring handles in
 ms.assetid: b8c0eead-17e5-4003-b21f-b673f997d79f
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b7507a0c941fa651f55fdf462b9d832cfd929632
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: ネイティブ型のハンドルを宣言する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ネイティブ型のハンドルの型を宣言することはできません。vcclr.h には C\+\+ ヒープから CLR オブジェクトを参照するためのタイプ セーフなラッパー テンプレート `gcroot` を提供します。  このテンプレートでは、仮想ハンドルをネイティブ型に埋め込み、それを基になる型のように取り扱います。  ほとんどの場合は、`gcroot` オブジェクトを埋め込み型としてキャストなしに使用できます。  ただし、[for each、in](../dotnet/for-each-in.md) では、基になるマネージ参照を取得するためには `static_cast` を使用する必要があります。  
+# <a name="how-to-declare-handles-in-native-types"></a>方法: ネイティブ型のハンドルを宣言する
+ネイティブ型のハンドル型を宣言することはできません。 vcclr.h の提供、タイプ セーフ ラッパー テンプレート`gcroot`C++ ヒープから CLR オブジェクトを参照します。 このテンプレートでは、ネイティブ型に仮想のハンドルを埋め込むし、基になる型の場合と同様に扱うことできます。 ほとんどの場合、使用することができます、`gcroot`キャストなし埋め込み型としてオブジェクト。 は、[ごとで](../dotnet/for-each-in.md)を使用する必要がある`static_cast`を基になるマネージ参照を取得します。  
   
- `gcroot` テンプレートは、System::Runtime::InteropServices::GCHandle 値クラスの機能を使用して実装されます。これは、ガベージ コレクションされるヒープを識別する "ハンドル" を提供します。  ハンドル自身はガベージ コレクションされず、不要になると `gcroot` クラスのデストラクター \(このデストラクターは手動で呼び出すことはできません\) によって解放されます。  `gcroot` オブジェクトをネイティブ ヒープにインスタンス化する場合、そのリソースに delete を呼び出す必要があります。  
+ `gcroot`テンプレートは、ガベージ コレクトされたヒープに「ハンドル」を提供する System::Runtime::InteropServices::GCHandle 値クラスの機能を使用して実装されます。 ハンドル自身がガベージ コレクションし、のデストラクターによって使用されていないときに解放されます、`gcroot`クラス (このデストラクターは手動で呼び出すことはできません)。 インスタンス化する場合、`gcroot`呼び出す必要があります、ネイティブ ヒープのオブジェクトでそのリソースを削除します。  
   
- ランタイムは、ハンドルと参照する CLR オブジェクトとの間の関連付けを維持します。  ガベージ コレクションされたヒープで CLR オブジェクトが移動された場合、ハンドルはオブジェクトの新しいアドレスを返します。  `gcroot` テンプレートに割り当てる前に、変数を固定しておく必要はありません。  
+ ランタイムは、ハンドルおよび参照する CLR オブジェクト間の関連付けを維持します。 CLR オブジェクトがガベージ コレクトされたヒープを使用して移動、ときに、ハンドルは、オブジェクトの新しいアドレスを返します。 変数に代入される前にピン留めする必要はありません、`gcroot`テンプレート。  
   
-## 使用例  
- 次の例は、ネイティブ スタックに `gcroot` オブジェクトを作成する方法を示します。  
+## <a name="example"></a>例  
+ このサンプルを作成する方法を示しています、`gcroot`ネイティブ スタック上のオブジェクト。  
   
 ```  
 // mcpp_gcroot.cpp  
@@ -54,9 +53,12 @@ int main() {
 }  
 ```  
   
-  **hello**   
-## 使用例  
- 次の例は、ネイティブ ヒープに `gcroot` オブジェクトを作成する方法を示します。  
+```Output  
+hello  
+```  
+  
+## <a name="example"></a>例  
+ このサンプルを作成する方法を示しています、`gcroot`ネイティブ ヒープのオブジェクト。  
   
 ```  
 // mcpp_gcroot_2.cpp  
@@ -80,9 +82,12 @@ int main() {
 }  
 ```  
   
-  **hello**   
-## 使用例  
- 次の例は、ボックス化された型の `gcroot` を使用して、`gcroot` でネイティブ型の値型 \(参照型ではなく\) への参照を保持する方法を示します。  
+```Output  
+hello  
+```  
+  
+## <a name="example"></a>例  
+ このサンプルを使用する方法を示します`gcroot`を使用して、値型 (参照型ではなく) への参照をネイティブ型に保持するために`gcroot`ボックス化された型にします。  
   
 ```  
 // mcpp_gcroot_3.cpp  
@@ -108,6 +113,9 @@ int main() {
 }  
 ```  
   
-  **String in V: Hello**   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+```Output  
+String in V: Hello  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

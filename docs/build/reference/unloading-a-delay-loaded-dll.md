@@ -1,31 +1,31 @@
 ---
-title: "遅延読み込みした DLL のアンロード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__FUnloadDelayLoadedDLL2"
-  - "遅延読み込み (DLL を), アンロード"
+title: "遅延読み込みした DLL のアンロード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- __FUnloadDelayLoadedDLL2
+- delayed loading of DLLs, unloading
 ms.assetid: 6463bc71-020e-4aff-a4ca-90360411c54e
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 0962059e6e55ce68133960cc9f8d1de8c7f0ef61
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 遅延読み込みした DLL のアンロード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-既定の遅延読み込みヘルパー関数では、遅延読み込み記述子が、pUnloadIAT フィールドに元のインポート アドレス テーブル \(IAT: Import Address Table\) のポインターとコピーを持つかどうかを調べます。  これらを持つ場合は、ポインターをインポート遅延記述子に対するリストに保存します。  これにより、ヘルパー関数は名前で DLL を検索し、明示的にアンロードできます。  
+# <a name="unloading-a-delay-loaded-dll"></a>遅延読み込みした DLL のアンロード
+既定値が指定した遅延読み込みヘルパーは、遅延読み込み記述子がポインターの元のインポート アドレス テーブル (IAT) のコピーと pUnloadIAT フィールドを確認します。 その場合へのポインターをインポート遅延記述子のリストで保存します。 これにより、その DLL を明示的にアンロードをサポートするために名前で DLL を検索するヘルパー関数。  
   
- 遅延読み込みした DLL の明示的アンロードには、以下の構造体と関数を使用します。  
+ 次に、関連付けられている構造体と遅延読み込みした DLL を明示的にアンロードするための関数を示します。  
   
 ```  
 //  
@@ -52,21 +52,21 @@ ExternC
 PUnloadInfo __puiHead;  
 ```  
   
- UnloadInfo 構造体は、演算子 **new** と **delete** の代わりに **LocalAlloc** と **LocalFree** を使用する C\+\+ クラスで実装します。  これらのオプションは、\_\_puiHead を使用して標準リンク リストの先頭に保存されます。  
+ UnloadInfo 構造が使用する C++ クラスで実装されている**LocalAlloc**と**LocalFree** 、演算子として実装**新しい**と演算子**削除**それぞれします。 これらのオプションは、リストの先頭として _puihead を使用して、標準のリンク リストに保持されます。  
   
- \_\_FUnloadDelayLoadedDLL を呼び出すと、指定した名前が読み込み済みの DLL のリスト内で検索されます \(完全に一致する名前だけが検索されます\)。  指定した名前が見つかると、pUnloadIAT の IAT のコピーが実行中の IAT の先頭にコピーされ、サンク ポインターが復元されます。ライブラリは **FreeLibrary** によって解放され、一致する **UnloadInfo** レコードがリストからリンク解除され、削除された後、TRUE が返されます。  
+ 通話 __FUnloadDelayLoadedDLL は名前を検索しようとしています (厳密な一致が必要です)、読み込まれた Dll のリストで指定します。 見つかると、pUnloadIAT 内の IAT のコピーがコピー、ライブラリを使用して解放がサンクのポインターを復元する実行中の IAT の上にある、 **FreeLibrary**、一致する**UnloadInfo**からレコードのリンクを解除一覧および削除され、TRUE が返されます。  
   
- \_\_FUnloadDelayLoadedDLL2 関数の引数では、大文字と小文字が区別されます。  たとえば、次のように指定します。  
+ 関数 __FUnloadDelayLoadedDLL2 への引数は、大文字小文字を区別します。 たとえば、次のように指定。  
   
 ```  
 __FUnloadDelayLoadedDLL2("user32.DLL");  
 ```  
   
- 次のようには指定しないでください。  
+ および not。  
   
 ```  
 __FUnloadDelayLoadedDLL2("User32.DLL");.  
 ```  
   
-## 参照  
- [Understanding the Helper Function](http://msdn.microsoft.com/ja-jp/6279c12c-d908-4967-b0b3-cabfc3e91d3d)
+## <a name="see-also"></a>関連項目  
+ [ヘルパー関数について](understanding-the-helper-function.md)

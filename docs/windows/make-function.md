@@ -1,32 +1,30 @@
 ---
-title: "Make 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Make"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Make 関数"
+title: "Make 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Make
+dev_langs: C++
+helpviewer_keywords: Make function
 ms.assetid: 66704143-df99-4a95-904d-ed99607e1034
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ec9edad09252402578788eeccb8e9ea7508ab98d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Make 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] の指定クラスを初期化します。  同じモジュールで定義されたコンポーネントをインスタンス化するには、この関数を使用します。  
+# <a name="make-function"></a>Make 関数
+指定した Windows ランタイム クラスを初期化します。 同じモジュールで定義されているコンポーネントのインスタンスを作成するのにには、この関数を使用します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <  
@@ -170,74 +168,74 @@ template <
 ComPtr<T> Make();  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- `WRL::RuntimeClass`から継承するユーザーが指定するクラス。  
+ ユーザー指定のクラスから継承する`WRL::RuntimeClass`です。  
   
  `TArg1`  
- 指定したランタイム クラスに渡される引数 1 の型。  
+ 1 の指定したランタイム クラスに渡される引数の型。  
   
  `TArg2`  
  指定したランタイム クラスに渡される引数 2 の型。  
   
  `TArg3`  
- 指定したランタイム クラスに渡される引数 3 の型。  
+ 指定したランタイム クラスに渡される 3 の引数の型。  
   
  `TArg4`  
  指定したランタイム クラスに渡される引数 4 の型。  
   
  `TArg5`  
- 指定したランタイム クラスに渡される引数 5 の型。  
+ 指定したランタイム クラスに渡される 5 の引数の型。  
   
  `TArg6`  
- 指定したランタイム クラスに渡される引数 6 の型。  
+ 指定したランタイム クラスに渡される 6 の引数の型。  
   
  `TArg7`  
- 指定したランタイム クラスに渡される引数 7 の型。  
+ 指定したランタイム クラスに渡される 7 の引数の型。  
   
  `TArg8`  
- 指定したランタイム クラスに渡される引数 8 の型。  
+ 指定したランタイム クラスに渡される 8 の引数の型。  
   
  `TArg9`  
- 指定したランタイム クラスに渡される引数 9 の型。  
+ 指定したランタイム クラスに渡される 9 の引数の型。  
   
  `arg1`  
- 指定したランタイム クラスに渡される引数 1。  
+ 指定したランタイム クラスに渡される引数 1 です。  
   
  `arg2`  
- 指定したランタイム クラスに渡される引数 2。  
+ 指定したランタイム クラスに渡される引数 2 です。  
   
  `arg3`  
- 指定したランタイム クラスに渡される引数 3。  
+ 指定したランタイム クラスに渡される引数 3 です。  
   
  `arg4`  
- 指定したランタイム クラスに渡される引数 4。  
+ 指定したランタイム クラスに渡される引数 4 です。  
   
  `arg5`  
- 指定したランタイム クラスに渡される引数 5。  
+ 指定したランタイム クラスに渡される引数 5 です。  
   
  `arg6`  
- 指定したランタイム クラスに渡される引数 6。  
+ 指定したランタイム クラスに渡される引数 6 です。  
   
  `arg7`  
- 指定したランタイム クラスに渡される引数 7。  
+ 指定したランタイム クラスに渡される引数 7 です。  
   
  `arg8`  
- 指定したランタイム クラスに渡される引数 8。  
+ 指定したランタイム クラスに渡される引数 8 です。  
   
  `arg9`  
- 指定したランタイム クラスに渡される引数 9。  
+ 指定したランタイム クラスに渡される引数 9 です。  
   
-## 戻り値  
- 正常終了した場合 `ComPtr<T>` オブジェクト; それ以外の場合は `nullptr`。  
+## <a name="return-value"></a>戻り値  
+ A`ComPtr<T>`成功、それ以外の場合は、オブジェクト`nullptr`です。  
   
-## 解説  
- この関数で [Microsoft::WRL::Details::MakeAndInitialize](../windows/makeandinitialize-function.md)間で、この例の違いについては [方法: WRL コンポーネントを直接インスタンス化する](../windows/how-to-instantiate-wrl-components-directly.md) を参照してください。  
+## <a name="remarks"></a>コメント  
+ 参照してください[する方法: 直接に WRL コンポーネントをインスタンス化](../windows/how-to-instantiate-wrl-components-directly.md)この関数の間の違いについて学習して[Microsoft::WRL::Details::MakeAndInitialize](../windows/makeandinitialize-function.md)、および例についてはします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

@@ -1,47 +1,45 @@
 ---
-title: "lock::~lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "~lock"
-  - "msclr.lock.~lock"
-  - "lock.~lock"
-  - "msclr::lock::~lock"
-  - "lock::~lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "~lock デストラクター"
+title: "ロック:: ~ ロック |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ~lock
+- msclr.lock.~lock
+- lock.~lock
+- msclr::lock::~lock
+- lock::~lock
+dev_langs: C++
+helpviewer_keywords: ~lock destructor
 ms.assetid: 55fa9f6c-d7a6-48ef-9236-ee03342c1d20
-caps.latest.revision: 10
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2fe737a0e40c1b45e7c5622ee377663e997e87ac
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# lock::~lock
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`lock` オブジェクトを破棄します。  
+# <a name="locklock"></a>lock::~lock
+Destructs、`lock`オブジェクト。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 ~lock();  
 ```  
   
-## 解説  
- デストラクターは [lock::release](../Topic/lock::release.md)を呼び出します。  
+## <a name="remarks"></a>コメント  
+ デストラクター [lock::release](../dotnet/lock-release.md)です。  
   
-## 使用例  
- この例は、複数のスレッド間でクラスの単一のインスタンスを使用します。クラスは、データへのアクセスが各スレッドに対して一貫していることを確認するために、独自のロックを使用します。メイン アプリケーション スレッドは、ワーカー スレッドがまだ、すべてのワーカー スレッド終了まで待機が完了したタスクを定期的に確認するために、クラス インスタンスの同じロックを使用します。  
+## <a name="example"></a>例  
+ この例では、複数のスレッド間でクラスの 1 つのインスタンスで使用します。  クラスは、その内部データへのアクセスがスレッドごとに一貫していることを確認するのに自体に対するロックを使用します。  メイン アプリケーション スレッドは、ワーカー スレッドがまだ存在していて、そのタスクを完了したすべてのワーカー スレッドまで終了を待機を定期的に確認するクラスの同じインスタンスでロックを使用します。  
   
 ```  
 // msl_lock_dtor.cpp  
@@ -115,22 +113,25 @@ int main() {
 }  
 ```  
   
-  **スレッド 3 で、カウンター \= 0**  
-**スレッド 3 で、カウンター \= 10**  
-**スレッド 5 で、カウンター \= 0**  
-**スレッド 5 で、カウンター \= 10**  
-**スレッド 7 で、カウンター \= 0**  
-**スレッド 7 で、カウンター \= 10**  
-**スレッド 4 で、カウンター \= 0**  
-**スレッド 4 で、カウンター \= 10**  
-**スレッド 6 で、カウンター \= 0**  
-**スレッド 6 で、カウンター \= 10**  
-**完了しているすべてのスレッド。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+In thread 3, Counter = 0  
+In thread 3, Counter = 10  
+In thread 5, Counter = 0  
+In thread 5, Counter = 10  
+In thread 7, Counter = 0  
+In thread 7, Counter = 10  
+In thread 4, Counter = 0  
+In thread 4, Counter = 10  
+In thread 6, Counter = 0  
+In thread 6, Counter = 10  
+All threads completed.  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
  [lock のメンバー](../dotnet/lock-members.md)   
  [lock::lock](../dotnet/lock-lock.md)

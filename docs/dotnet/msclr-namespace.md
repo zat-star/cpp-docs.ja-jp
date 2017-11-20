@@ -1,37 +1,36 @@
 ---
-title: "msclr 名前空間 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ のサポート ライブラリ, msclr"
-  - "C++ のサポート ライブラリ, namespace"
-  - "msclr"
-  - "名前空間 [C++], C++"
-  - "名前空間 [C++], C++ のサポート ライブラリ"
-  - "名前空間 [C++], msclr"
-  - "Visual C++, msclr"
-  - "Visual C++, 名前空間"
+title: "msclr 名前空間 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: msclr
+dev_langs: C++
+helpviewer_keywords:
+- namespaces [C++], C++ Support Library
+- namespaces [C++], C++
+- C++ Support Library, msclr
+- namespaces [C++], msclr
+- Visual C++, msclr
+- Visual C++, namespaces
+- C++ Support Library, namespace
+- msclr
 ms.assetid: 799460e2-9ae2-4b59-a81c-611df356834f
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c250a340bc840c824eea7501d5aa85705f2b83ef
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# msclr 名前空間
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`msclr` 名前空間は C\+\+ サポート ライブラリのすべてのクラスが含まれています。  これらのクラス詳細については、「[C\+\+ のサポート ライブラリ](../dotnet/cpp-support-library.md)」を参照してください。  
+# <a name="msclr-namespace"></a>msclr 名前空間
+`msclr`名前空間には、C++ サポート ライブラリのすべてのクラスが含まれています。 これらのクラスの詳細については、次を参照してください。 [C++ サポート ライブラリ](../dotnet/cpp-support-library.md)です。  
   
-## 参照  
- [C\+\+ のサポート ライブラリ](../dotnet/cpp-support-library.md)
+## <a name="see-also"></a>関連項目  
+ [C++ のサポート ライブラリ](../dotnet/cpp-support-library.md)

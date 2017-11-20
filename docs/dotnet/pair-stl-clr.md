@@ -1,32 +1,30 @@
 ---
-title: "pair (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::pair"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pair クラス [STL/CLR]"
+title: "ペア (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::pair
+dev_langs: C++
+helpviewer_keywords: pair class [STL/CLR]
 ms.assetid: 3326b4d9-a52a-49e5-8103-9aa5e8b352de
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ca6ee4a44ea9e126be16b785b9ae52c7a852bc5e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# pair (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、値のペアをラップするオブジェクトを表します。  
+# <a name="pair-stlclr"></a>pair (STL/CLR)
+このテンプレート クラスでは、値のペアをラップするオブジェクトについて説明します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value1,  
@@ -34,41 +32,41 @@ template<typename Value1,
     ref class pair;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  Value1  
- 最初にラップされた値の型。  
+ ラップされた最初の値の型。  
   
  Value2  
  2 番目のラップされた値の型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
 |型定義|説明|  
-|---------|--------|  
-|[pair::first\_type](../dotnet/pair-first-type-stl-clr.md)|最初のラップされた値の型。|  
-|[pair::second\_type](../dotnet/pair-second-type-stl-clr.md)|2 番目のラップされた値の型。|  
+|---------------------|-----------------|  
+|[pair::first_type (STL/CLR)](../dotnet/pair-first-type-stl-clr.md)|最初のラップされた値の型。|  
+|[pair::second_type (STL/CLR)](../dotnet/pair-second-type-stl-clr.md)|2 番目のラップされた値の型。|  
   
 |メンバー オブジェクト|説明|  
-|-----------------|--------|  
-|[pair::first](../dotnet/pair-first-stl-clr.md)|最初に格納されている値。|  
-|[pair::second](../dotnet/pair-second-stl-clr.md)|2 番目の格納されている値。|  
+|-------------------|-----------------|  
+|[pair::first (STL/CLR)](../dotnet/pair-first-stl-clr.md)|最初に格納されている値。|  
+|[pair::second (STL/CLR)](../dotnet/pair-second-stl-clr.md)|2 つ目は、値を格納します。|  
   
 |メンバー関数|説明|  
-|------------|--------|  
-|[pair::pair](../dotnet/pair-pair-stl-clr.md)|pair オブジェクトを構築します。|  
-|[pair::swap](../Topic/pair::swap%20\(STL-CLR\).md)|2 組のかっこの内容を交換します。|  
+|---------------------|-----------------|  
+|[pair::pair (STL/CLR)](../dotnet/pair-pair-stl-clr.md)|組オブジェクトを構築します。|  
+|[pair::swap (STL/CLR)](../dotnet/pair-swap-stl-clr.md)|2 つのペアのコンテンツを交換します。|  
   
 |演算子|説明|  
-|---------|--------|  
-|[pair::operator\=](../dotnet/pair-operator-assign-stl-clr.md)|値の格納されたペアを置き換えます。|  
+|--------------|-----------------|  
+|[pair::operator= (STL/CLR)](../dotnet/pair-operator-assign-stl-clr.md)|ストアド値のペアを置き換えます。|  
   
-## 解説  
- オブジェクトが値のペアを格納します。  単一のオブジェクトに値 2 を結合するには、このテンプレート クラスを使用します。  `cliext::pair` \(ここで説明した\) マネージ型だけを格納することに注意してください; アンマネージ型のペアを格納するには、宣言されている `<utility>`で `std::pair`を使用します。  
+## <a name="remarks"></a>コメント  
+ オブジェクトは、値のペアを格納します。 このテンプレート クラスを使用して、2 つの値を 1 つのオブジェクトに結合します。 なお`cliext::pair`(ここで説明) ストアのみマネージ型以外の型を使用してアンマネージのペアを格納する`std::pair`で宣言された`<utility>`です。  
   
-## 必要条件  
- **ヘッダー:** \<cliext\/ユーティリティ\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext ユーティリティ/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [make\_pair](../dotnet/make-pair-stl-clr.md)
+## <a name="see-also"></a>関連項目  
+ [make_pair (STL/CLR)](../dotnet/make-pair-stl-clr.md)

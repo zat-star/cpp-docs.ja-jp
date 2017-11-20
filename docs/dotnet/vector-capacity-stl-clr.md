@@ -1,41 +1,39 @@
 ---
-title: "vector::capacity (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::capacity"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "capacity メンバー [STL/CLR]"
+title: "vector::capacity (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector::capacity
+dev_langs: C++
+helpviewer_keywords: capacity member [STL/CLR]
 ms.assetid: f82d8da9-8b4d-4288-8d18-8e9ca5911d87
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 97693360d03f0c861f1c2f1b956fcbd136d7c6f6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# vector::capacity (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーに割り当てられたストレージの容量を報告します。  
+# <a name="vectorcapacity-stlclr"></a>vector::capacity (STL/CLR)
+コンテナーに割り当てられたストレージのサイズを報告します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 size_type capacity();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンス [vector::size](../dotnet/vector-size-stl-clr.md)、少なくとも`()`大きな値を格納するために現在割り当てられているストレージが返されます。  被制御シーケンスのストレージを再割り当てする前にコンテナーの拡大できるかを決定するために使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスと少なくとも同じ大きさの値を保持するために現在割り当てられている記憶域を返します[vector::size (STL/CLR)](../dotnet/vector-size-stl-clr.md)`()`です。 これを使用するにを被制御シーケンスの記憶域を再割り当てする必要があります、前にどの程度コンテナー サイズを大きくを判断します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_capacity.cpp   
@@ -66,17 +64,20 @@ int main()
   
 ```  
   
-  **b c**  
-**capacity\(\) \= 4、OK \= True を**  
-**capacity\(\) \= 9、OK \= True を**   
-## 説明  
- true の `ok` すべてのテスト レポート限り実際の容量が次に示す値と異なることに注意してください。  
+```Output  
+ a b c  
+capacity() = 4, ok = True  
+capacity() = 9, ok = True  
+```  
   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+## <a name="description"></a>説明  
+ 実際の容量がここに示した長いと、すべての値からによって異なることに注意してください`ok`テストは true を報告します。  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::reserve](../Topic/vector::reserve%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::reserve (STL/CLR)](../dotnet/vector-reserve-stl-clr.md)

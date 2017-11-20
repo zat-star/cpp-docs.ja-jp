@@ -1,38 +1,38 @@
 ---
-title: "インポート ライブラリとエクスポート ファイル | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "エクスポート ファイル"
-  - "インポート ライブラリ"
-  - "インポート ライブラリ, 作成"
-  - "LIB [C++], /DEF オプション"
-  - "LIB [C++], インポート ライブラリとエクスポート ファイル"
+title: "インポート ライブラリとエクスポート ファイルの操作 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- LIB [C++], /DEF option
+- import libraries
+- LIB [C++], import libraries and export files
+- export files
+- import libraries, creating
 ms.assetid: d8175596-9773-4c2f-959d-b05b065a5161
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a78f6e4c7cdb5dbd25354d93d9bafc2892098c7d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# インポート ライブラリとエクスポート ファイル
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-\/DEF オプションを指定して LIB を実行すると、インポート ライブラリとエクスポート ファイルが作成されます。  LINK では、エクスポート ファイルを使用してエクスポートを含むプログラム \(通常、DLL\) をビルドし、インポート ライブラリを使用してこれらのエクスポートに対するほかのプログラムからの参照を解決します。  
+# <a name="working-with-import-libraries-and-export-files"></a>インポート ライブラリとエクスポート ファイル
+/DEF オプションを使用して LIB を使用して、インポート ライブラリとエクスポート ファイルを作成することができます。 リンクの使用を含むプログラムをビルドするファイルのエクスポートが (通常、ダイナミック リンク ライブラリ (DLL)) をエクスポートし、他のプログラムでこれらのエクスポートへの参照を解決するのには、インポート ライブラリを使用します。  
   
- .dll をビルドする前の予備ステップでインポート ライブラリを作成する場合は、.dll をビルドするときに、インポート ライブラリのビルド時に渡したものと同じオブジェクト ファイル セットを渡す必要があることに注意してください。  
+ .Dll を作成する前に、準備手順で、インポート ライブラリを作成する場合を渡す必要がある同じ一連のオブジェクト ファイル、.dll を構築するときにインポート ライブラリを構築するときに渡したものとに注意してください。  
   
- 通常、LIB を使ってインポート ライブラリを作成する必要はありません。  エクスポートを含むプログラム \(実行可能ファイルまたは DLL ファイル\) をリンクすると、エクスポートを記述したインポート ライブラリが自動的に作成されます。  これらのエクスポートを参照するプログラムを後でリンクする場合は、このインポート ライブラリを指定します。  
+ ほとんどの状況では LIB を使用して、インポート ライブラリを作成する必要はありません。 エクスポートを含むプログラム (実行可能ファイルまたは DLL) をリンクするときのリンクは自動的にエクスポートを記述したインポート ライブラリを作成します。 後で、これらのエクスポートを参照しているプログラムをリンクする場合は、インポート ライブラリを指定します。  
   
- ただし、DLL のエクスポート先のプログラムから直接または間接的にインポートする場合は、LIB を使ってインポート ライブラリを作成する必要があります。  LIB でインポート ライブラリを作成すると、エクスポート ファイルも作成されます。  DLL のいずれかをリンクするときは、このエクスポート ファイルを使う必要があります。  
+ ただし、DLL のエクスポートからもインポートするプログラムをかどうか直接的または間接的に行う必要があります LIB インポート ライブラリのいずれかを作成します。 LIB は、インポート ライブラリを作成するときも、エクスポート ファイルを作成します。 Dll のいずれかをリンクするときに、エクスポート ファイルを使用する必要があります。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [LIB リファレンス](../../build/reference/lib-reference.md)

@@ -1,31 +1,31 @@
 ---
-title: "ブックマークの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ブックマーク, OLE DB"
-  - "OLE DB プロバイダー テンプレート, ブックマーク"
-  - "OLE DB プロバイダー, ブックマーク サポート"
-  - "行セット, ブックマーク"
+title: "ブックマークの使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- rowsets, bookmarks
+- OLE DB provider templates, bookmarks
+- bookmarks, OLE DB
+- OLE DB providers, bookmark support
 ms.assetid: 7fa1d1a8-5063-4aa9-93ee-815bb9c98fae
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4b7c5c1a7722e378e313e1b0fe8e9ed10d97ddb9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ブックマークの使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-行セットを開く前に、ブックマークを使用することをプロバイダーに通知する必要があります。  これを通知するには、プロパティ セットの **DBPROP\_BOOKMARKS** プロパティを **true** に設定します。  プロバイダーはブックマークを列 0 として取得するため、静的アクセサーを使用している場合は、`BOOKMARK_ENTRY` という特殊マクロと `CBookmark` クラスを使用する必要があります。  `CBookmark` クラスはテンプレート クラスで、引数はブックマーク バッファーの長さ \(バイト単位\) です。  ブックマークに必要なバッファーの長さは、プロバイダーによって異なります。  次の例のように ODBC OLE DB プロバイダーを使用している場合、バッファーは 4 バイトにする必要があります。  
+# <a name="using-bookmarks"></a>ブックマークの使用
+行セットを開く前に、ブックマークを使用することをプロバイダーに指示する必要があります。 これを行うには、次のように設定します。、 **DBPROP_BOOKMARKS**プロパティを**true**プロパティで設定します。 特殊マクロを使用する必要がありますので、プロバイダーが列 0 としてブックマークを取得`BOOKMARK_ENTRY`と`CBookmark`クラスの静的アクセサーを使用している場合。 `CBookmark`引数がブックマーク バッファーの長さ (バイト単位) は、テンプレート クラスです。 ブックマークに必要なバッファーの長さは、プロバイダーによって異なります。 次の例で示すように、ODBC OLE DB プロバイダーを使用する場合、バッファーは 4 バイトにする必要があります。  
   
 ```  
 class CProducts  
@@ -45,7 +45,7 @@ CTable<CAccessor<CProducts> > product;
 product.Open(session, "Products", &propset);  
 ```  
   
- `CDynamicAccessor` を使用している場合、バッファーは実行時に動的に割り当てられます。  この場合は、バッファーの長さを指定しない特別なバージョンの `CBookmark` を使用できます。  次のコード例に示すように、`GetBookmark` 関数を使用して、現在のレコードからブックマークを取得します。  
+ 使用する場合`CDynamicAccessor`バッファーが実行時に動的に割り当てられます。 特殊なバージョンを使用するこの例では、`CBookmark`バッファー長を指定しません。 関数を使用して`GetBookmark`このコード サンプルで示すように、現在のレコード、ブックマークを取得します。  
   
 ```  
 CTable<CDynamicAccessor> product;  
@@ -58,7 +58,7 @@ product.MoveNext();
 product.GetBookmark(&bookmark);  
 ```  
   
- プロバイダーでのブックマークのサポートについては、「[プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)」を参照してください。  
+ プロバイダーのブックマークをサポートする方法については、次を参照してください。[プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

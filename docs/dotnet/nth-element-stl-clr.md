@@ -1,32 +1,30 @@
 ---
-title: "nth_element (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::nth_element"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "nth_element 関数 [STL/CLR]"
+title: "nth_element (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::nth_element
+dev_langs: C++
+helpviewer_keywords: nth_element function [STL/CLR]
 ms.assetid: 19fc1695-62a9-4f85-9920-d153c1c6481f
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e0dc54dda65163f5682b2ee20e5e0b08a63acbd9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# nth_element (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-その前のすべての要素が、以下であるシーケンス内に大きなされ、すべての要素がまたはそれに相当するように正しく範囲のシーケンスの `n`th 要素を検索する要素の範囲を、パーティションに分割します。  
+# <a name="nthelement-stlclr"></a>nth_element (STL/CLR)
+パーティションの範囲の要素を正しく検索、`n`番目の要素範囲のシーケンスの前にすべての要素が、シーケンス内にあるすべての要素から、以下になるようより大きいか等しいことにします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -36,13 +34,13 @@ template<class _RanIt, class _Pr> inline
         _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `nth_element`も同じように動作します。  詳細については、「[nth\_element](../Topic/nth_element.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`nth_element`です。 詳細については、次を参照してください。 [nth_element](../standard-library/algorithm-functions.md#nth_element)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

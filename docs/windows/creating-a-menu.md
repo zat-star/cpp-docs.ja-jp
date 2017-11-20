@@ -1,60 +1,59 @@
 ---
-title: "Creating a Menu | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.menu"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "mnemonics, associating menu items"
-  - "menus, associating commands with mnemonic keys"
-  - "menus, creating"
+title: "メニューの作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.editors.menu
+dev_langs: C++
+helpviewer_keywords:
+- mnemonics, associating menu items
+- menus, associating commands with mnemonic keys
+- menus, creating
 ms.assetid: 66f94448-9b97-4b73-bf97-10d4bf87cc65
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 953de61b199acda1b6cf4f9e0d06b1bd1875ab1c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Creating a Menu
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="creating-a-menu"></a>メニューの作成
 > [!NOTE]
->  \[リソース\] ウィンドウは Express Edition では使用できません。  
+>  [リソース] ウィンドウは Express Edition では使用できません。  
   
-### 標準メニューを作成するには  
+### <a name="to-create-a-standard-menu"></a>標準メニューを作成するには  
   
-1.  **\[表示\]** メニューの **\[リソース ビュー\]** をクリックし、**\[メニュー\]** 見出しを右クリックし、**\[リソースの追加\]** をクリックします。**\[メニュー\]** をクリックします。  
+1.  **[表示]** メニューの **[リソース ビュー]** をクリックし、 **[メニュー]** 見出しを右クリックし、 **[リソースの追加]**をクリックします。 **[メニュー]**をクリックします。  
   
-2.  メニュー バーで、"ここへ入力" と表示されている四角形の **\[新しい項目\]** ボックスを選びます。  
+2.  メニュー バーで、"ここへ入力" と表示されている四角形の **[新しい項目]** ボックスを選びます。  
   
-     ![メニュー エディターの新しい項目ボックス](../windows/media/vcmenueditornewitembox.gif "vcMenuEditorNewItemBox")  
-\[新しい項目\] ボックス  
+     ![新しい項目ボックス、メニュー エディターに](../windows/media/vcmenueditornewitembox.gif "vcMenuEditorNewItemBox")  
+[新しい項目] ボックス  
   
 3.  たとえば「ファイル」など、新しいメニューの名前を入力します。  
   
-     入力したテキストは、**メニュー** エディターと、[プロパティ ウィンドウ](../Topic/Properties%20Window.md)の **\[キャプション\]** ボックスの両方に表示されます。 新しいメニューのプロパティはこのどちらからでも編集できます。  
+     入力したテキストは、 **メニュー** エディターと、 **プロパティ ウィンドウ** の [[キャプション]](/visualstudio/ide/reference/properties-window)ボックスの両方に表示されます。 新しいメニューのプロパティはこのどちらからでも編集できます。  
   
-     メニュー バーで新しいメニューの名前を指定すると、さらに別のメニューを追加できるように \[新しい項目\] ボックスが右に移動し、最初のメニューの下に新しい \[新しい項目\] ボックスが表示されます。この新しいボックスでメニュー コマンドを追加できます。  
+     メニュー バーで新しいメニューの名前を指定すると、さらに別のメニューを追加できるように [新しい項目] ボックスが右に移動し、最初のメニューの下に新しい [新しい項目] ボックスが表示されます。この新しいボックスでメニュー コマンドを追加できます。  
   
      ![拡張された新しい項目ボックス](../windows/media/vcmenueditornewitemboxexpanded.gif "vcMenuEditorNewItemBoxExpanded")  
-メニュー名の入力後にフォーカスが移動した \[新しい項目\] ボックス  
+メニュー名の入力後にフォーカスが移動した [新しい項目] ボックス  
   
     > [!NOTE]
-    >  メニュー バーで単一項目のメニューを作成するには、\[Popup\] プロパティを \[False\] に設定します。  
+    >  メニュー バーで単一項目のメニューを作成するには、[Popup] プロパティを [False] に設定します。  
   
- マネージ プロジェクトにリソースを追加する方法については、『*.NET Framework 開発者ガイド*』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、リソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」をご覧ください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
- **要件**  
+ **Requirements**  
   
  Win32  
   
-## 参照  
- [Menu Editor](../Topic/Menu%20Editor.md)
+## <a name="see-also"></a>関連項目  
+ [メニュー エディター](../windows/menu-editor.md)

@@ -1,35 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4293 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4293"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4293"
+title: "コンパイラの警告 (レベル 1) C4293 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4293
+dev_langs: C++
+helpviewer_keywords: C4293
 ms.assetid: babecd96-eb51-41a5-9835-462c7a46dbad
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 357ff16726bb4ab38e6b8d9d3e2708bcf9e44579
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4293
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'演算子' : シフト数が負の値であるか、大きすぎます。定義されていない動作です  
+# <a name="compiler-warning-level-1-c4293"></a>コンパイラの警告 (レベル 1) C4293
+'operator': シフト数が負の値または大きすぎて、未定義の動作  
   
- シフト数が負の値であるか大きすぎる場合は、生成されるイメージの動作が未定義です。  
+ シフト数が負の値または大きすぎる場合、結果のイメージの動作は定義されません。  
   
-## 使用例  
- 次の例では警告 C4293 が生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4293 が生成されます。  
   
 ```  
 // C4293.cpp  

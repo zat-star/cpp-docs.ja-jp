@@ -1,42 +1,41 @@
 ---
-title: "方法: Windows パフォーマンス カウンターを読み取る (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "カウンター, 読み取り (Windows パフォーマンス カウンターを)"
-  - "パフォーマンス"
-  - "パフォーマンス カウンター"
-  - "パフォーマンス カウンター, 読み取り (Windows パフォーマンス カウンターを)"
-  - "パフォーマンス モニター"
-  - "パフォーマンス モニター, Windows パフォーマンス カウンター"
-  - "パフォーマンス, カウンター"
+title: "方法: Windows パフォーマンス カウンターを読み取る (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- performance counters
+- performance counters, reading Windows performance counters
+- performance monitoring, Windows performance counters
+- performance, counters
+- counters, reading Windows performance counters
+- performance
+- performance monitoring
 ms.assetid: 9e1c836c-cb0f-4f37-9a93-3dca6412d6b1
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3ad77e459d32ed0fc0b3798d2a37b4754d556f20
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: Windows パフォーマンス カウンターを読み取る (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-一部のアプリケーションおよび Windows サブシステムでは、Windows パフォーマンス システムを使用してパフォーマンス データが公開されます。  これらのカウンターにアクセスするには、<xref:System.Diagnostics.PerformanceCounterCategory> クラスと <xref:System.Diagnostics.PerformanceCounter> クラスを使用します。これらのクラスは、<xref:System.Diagnostics?displayProperty=fullName> 名前空間に存在します。  
+# <a name="how-to-read-windows-performance-counters-ccli"></a>方法: Windows パフォーマンス カウンターを読み取る (C++/CLI)
+一部のアプリケーションおよび Windows サブシステムは、Windows のパフォーマンス システムからパフォーマンス データを公開します。 これらのカウンターを使用してアクセスできる、<xref:System.Diagnostics.PerformanceCounterCategory>と<xref:System.Diagnostics.PerformanceCounter>内に存在するクラス、<xref:System.Diagnostics?displayProperty=fullName>名前空間。  
   
- これらのクラスを使用して、Windows によって更新されるカウンターを取得して表示し、プロセッサのビジー時間率を示す方法を次のコード例に示します。  
+ 次のコード例では、これらのクラスを使用して取得し、プロセッサがビジー時間の割合を示すために Windows によって更新されるカウンターを表示します。  
   
 > [!NOTE]
->  この例を Windows Vista で実行するには管理特権が必要です。  
+>  この例では、Windows Vista を管理者権限で実行する必要があります。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // processor_timer.cpp  
@@ -125,7 +124,7 @@ int main()
 }  
 ```  
   
-## 参照  
- [Introduction to Monitoring Performance](http://msdn.microsoft.com/ja-jp/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)   
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [パフォーマンスの監視の概要](http://msdn.microsoft.com/en-us/d40f10b9-e2b7-4ec8-a9b3-706929e5bf35)   
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

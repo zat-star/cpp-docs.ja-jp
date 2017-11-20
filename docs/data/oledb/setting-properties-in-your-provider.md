@@ -1,59 +1,59 @@
 ---
-title: "プロバイダーでのプロパティの設定 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB プロバイダー, プロパティ"
-  - "プロパティ [C++], OLE DB プロバイダー"
+title: "プロバイダーでプロパティの設定 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB providers, properties
+- properties [C++], OLE DB provider
 ms.assetid: 26a8b493-7ec4-4686-96d0-9ad5d2bca5ac
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 80b82e1fb69200f45716b2ad62a44160862f7d08
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロバイダーでのプロパティの設定
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-必要なプロパティのプロパティ グループとプロパティ ID を検索します。  詳細については、『OLE DB Programmer's Reference』の「[OLE DB Properties](https://msdn.microsoft.com/en-us/library/ms722734.aspx)」を参照してください。  
+# <a name="setting-properties-in-your-provider"></a>プロバイダーでのプロパティの設定
+目的のプロパティのプロパティ グループとプロパティ ID が見つかりません。 詳細については、次を参照してください。 [OLE DB プロパティ](https://msdn.microsoft.com/en-us/library/ms722734.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
- ウィザードで生成されたプロバイダー コードで、プロパティ グループに対応するプロパティ マップを検索します。  通常、プロパティ グループの名前はオブジェクト名に対応します。  コマンドと行セットのプロパティは、コマンドまたは行セットにあります。データ ソースと初期化のプロパティは、データ ソース オブジェクトにあります。  
+ ウィザードによって生成されたプロバイダーのコードでは、プロパティ グループに対応するプロパティのマップを検索します。 プロパティ グループの名前は、通常、オブジェクトの名前に対応します。 コマンドまたは行セットのコマンドや行セットのプロパティが見つかりませんデータ ソースと初期化プロパティは、データ ソース オブジェクトに含まれています。  
   
- プロパティ マップで、[PROPERTY\_INFO\_ENTRY\_EX](../../data/oledb/property-info-entry-ex.md) マクロを追加します。  PROPERTY\_INFO\_ENTRY\_EX は、4 つのパラメーターを持ちます。  
+ プロパティ マップを追加、 [PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md)マクロです。 PROPERTY_INFO_ENTRY_EX は 4 つのパラメーターを受け取ります。  
   
--   プロパティのプロパティ ID。  プロパティ名から最初の 7 文字 \("DBPROP\_"\) を削除する必要があります。  たとえば、**DBPROP\_MAXROWS** を追加する場合は、`MAXROWS` を最初の要素として渡します。  これがカスタム プロパティである場合は、GUID 名全体 \(`DBMYPROP_MYPROPERTY` など\) を渡します。  
+-   プロパティに対応するプロパティ ID。 プロパティ名の先頭から最初の 7 文字 (「dbprop _」) を削除する必要があります。 たとえば、追加する**DBPROP_MAXROWS**、渡す`MAXROWS`最初の要素として。 カスタム プロパティの場合は、GUID のフル_ネームを渡す (たとえば、 `DBMYPROP_MYPROPERTY`)。  
   
--   プロパティのバリアント型 \(『OLE DB Programmer's Reference』の「[OLE DB Properties](https://msdn.microsoft.com/en-us/library/ms722734.aspx)」を参照\)。  データ型に対応する **VT\_** の型 \(`VT_BOOL` や `VT_I2` など\) を入力します。  
+-   プロパティのバリアント型 (で[OLE DB プロパティ](https://msdn.microsoft.com/en-us/library/ms722734.aspx)で、 *OLE DB プログラマーズ リファレンス*)。 入力、 **vt _ を付けます**型 (など`VT_BOOL`または`VT_I2`) データ型に対応します。  
   
--   プロパティが読み取りおよび書き込み可能かどうかを示すフラグと、プロパティが属するグループ。  たとえば、次のコードは行セット グループに属する読み取り\/書き込みプロパティを示します。  
+-   プロパティの読み取りと書き込みのありそれが属するグループを示すフラグ。 たとえば、次のコードは、行セットのグループに属している、読み取り/書き込みプロパティを示します。  
   
     ```  
     DBPROPFLAGS_ROWSET | DBPROPFLAGS_READ | DBPROPFLAGS_WRITE  
     ```  
   
--   プロパティの基本値。  これには、ブール型の **VARIANT\_FALSE** や整数型の 0 などがあります。  プロパティは、変更されない限りこの値を保持します。  
+-   プロパティのベース値。 これは、場合があります**VARIANT_FALSE**ブール値を入力するか、たとえば、整数型では、0 です。 プロパティが変更されない限り、この値を持ちます。  
   
     > [!NOTE]
-    >  一部のプロパティは、ブックマークや更新などの他のプロパティに接続またはチェーンされています。  このため、コンシューマーが 1 つのプロパティを true に設定すると、別のプロパティも設定される場合があります。  OLE DB プロバイダー テンプレートは、[CUtlProps::OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md) メソッドを通じてこれをサポートします。  
+    >  一部のプロパティは接続されているか、ブックマークや更新などその他のプロパティにチェーンします。 コンシューマーが 1 つのプロパティを true に設定すると、ときに別のプロパティも設定できます。 OLE DB プロバイダー テンプレートでは、これをサポート メソッドを介して[cutlprops::onpropertychanged](../../data/oledb/cutlprops-onpropertychanged.md)です。  
   
-## Microsoft OLE DB プロバイダーが無視するプロパティ  
- Microsoft OLE DB プロバイダーは、以下の OLE DB プロパティを無視します。  
+## <a name="properties-ignored-by-microsoft-ole-db-providers"></a>Microsoft OLE DB プロバイダーでは無視されますプロパティ  
+ Microsoft OLE DB プロバイダーは、次の OLE DB プロパティを無視します。  
   
--   **DBPROP\_MAXROWS** は、読み取り専用プロバイダー \(DBPROP\_IRowsetChange と DBPROP\_IRowsetUpdate が false の場合\) に対してだけ動作します。それ以外の場合、このプロパティはサポートされません。  
+-   **DBPROP_MAXROWS**読み取り専用プロバイダーに対してのみ機能 (つまり、DBPROP_IRowsetChange および DBPROP_IRowsetUpdate がいる場合は false) です。 それ以外の場合このプロパティがサポートされていません。  
   
--   **DBPROP\_MAXPENDINGROWS** は無視されます。プロバイダーは独自の制限値を指定します。  
+-   **DBPROP_MAXPENDINGROWS**は無視されます。 プロバイダーは独自の制限を指定します。  
   
--   **DBPROP\_MAXOPENROWS** は無視されます。プロバイダーは独自の制限値を指定します。  
+-   **DBPROP_MAXOPENROWS**は無視されます。 プロバイダーは独自の制限を指定します。  
   
--   **DBPROP\_CANHOLDROWS** は無視されます。プロバイダーは独自の制限値を指定します。  
+-   **DBPROP_CANHOLDROWS**は無視されます。 プロバイダーは独自の制限を指定します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

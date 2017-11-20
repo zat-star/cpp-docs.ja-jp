@@ -4,54 +4,35 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C4142
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4142
+f1_keywords: C4142
+dev_langs: C++
+helpviewer_keywords: C4142
 ms.assetid: 1fdfc3dc-60a2-4f00-b133-20e400f9b7a6
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 81fbb15b9589d5ddfdcc949dce24aec2a3c1716e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 7426b1ff7b22382617e2ab6cec4e54456a117aec
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-warning-level-1-c4142"></a>コンパイラの警告 (レベル 1) C4142
-型が再定義されていますが、それはコード生成上何の効果もありません。  
+型の害のない再定義されています  
   
- 型は、生成されたコードに影響が方法で再定義しません。  
+ 型は、生成されたコードに影響が方法で再定義されていません。  
   
  次のような原因をチェックして問題を解決するには:  
   
 -   派生クラスのメンバー関数では、基本クラスの対応するメンバー関数から異なる戻り値の型があります。  
   
--   定義された型、`typedef`コマンドでは、さまざまな構文を使用して再定義されます。  
+-   定義されている型、`typedef`別の構文を使用して、コマンドが再定義します。  
   
- 次の例では、c4142 警告が生成されます。  
+ 次の例では、C4142 が生成されます。  
   
 ```  
 // C4142.c  

@@ -1,32 +1,30 @@
 ---
-title: "defaultcollelem | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.defaultcollelem"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "defaultcollelem attribute"
+title: "defaultcollelem |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.defaultcollelem
+dev_langs: C++
+helpviewer_keywords: defaultcollelem attribute
 ms.assetid: 3dbbd293-8b83-4f70-a36b-64cc1d0b6713
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8bfb6fb41e61fded3994beb6c9a31fd7661c5e2f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# defaultcollelem
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="defaultcollelem"></a>defaultcollelem
 Visual Basic コードの最適化に使用されます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,11 +32,11 @@ Visual Basic コードの最適化に使用されます。
   
 ```  
   
-## 解説  
- **defaultcollelem\(L\)** C\+\+ 属性に [defaultcollelem\(L\)](http://msdn.microsoft.com/library/windows/desktop/aa366792) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Defaultcollelem** C++ 属性と同じ機能を持つ、 [defaultcollelem](http://msdn.microsoft.com/library/windows/desktop/aa366792) MIDL 属性。  
   
-## 使用例  
- 次のコードは **defaultcollelem\(L\)** の属性を使用してインターフェイス メソッドを示しています :  
+## <a name="example"></a>例  
+ インターフェイス メソッドを使用して、次のコードを示しています、 **defaultcollelem**属性。  
   
 ```  
 // cpp_attr_ref_defaultcollelem.cpp  
@@ -55,20 +53,19 @@ __interface IMyForm
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|インターフェイス メソッド|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Method Attributes](../windows/method-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [メソッド属性](../windows/method-attributes.md)   

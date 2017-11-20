@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- C3238
-dev_langs:
-- C++
-helpviewer_keywords:
-- C3238
+f1_keywords: C3238
+dev_langs: C++
+helpviewer_keywords: C3238
 ms.assetid: 19942497-b3c5-4df0-9144-142ced92468b
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
 ms.openlocfilehash: 51af2859cec319678f6b13caf7231a8f62a6177c
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-error-c3238"></a>コンパイラ エラー C3238
 'type' : この名前の型は、アセンブリ 'assembly' に既に転送されました  

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -16,36 +15,18 @@ f1_keywords:
 - PPLTASKS/concurrency::task_continuation_context::use_current
 - PPLTASKS/concurrency::task_continuation_context::use_default
 - PPLTASKS/concurrency::task_continuation_context::use_synchronous_execution
-dev_langs:
-- C++
-helpviewer_keywords:
-- task_continuation_context class
+dev_langs: C++
+helpviewer_keywords: task_continuation_context class
 ms.assetid: 1fb5a76a-3682-45c2-a615-8b6b527741f0
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 8afd599e5ee489500d7f8c498d03c91ace6b99ed
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 48ef4f4646aedf648e3bb9efb572c203d7047378
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="taskcontinuationcontext-class"></a>task_continuation_context クラス
 `task_continuation_context` クラスを使用すると、継続する場所を指定できます。 このクラスは、Windows ストア アプリから使用する場合にのみ役に立ちます。 Windows ストア アプリを使用していない場合、タスク継続の実行コンテキストはランタイムによって決まり、構成できません。  
@@ -62,7 +43,7 @@ class task_continuation_context : public details::_ContextCallback;
   
 |名前|説明|  
 |----------|-----------------|  
-|[get_current_winrt_context](#get_current_winrt_context)|Winrt の現在のスレッド コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。|  
+|[get_current_winrt_context](#get_current_winrt_context)|現在の winrt スレッド コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。|  
 |[use_arbitrary](#use_arbitrary)|タスクの継続コンテキストを作成します。このコンテキストを使用すると、ランタイムで継続用の実行コンテキストを選択できます。|  
 |[use_current](#use_current)|現在の実行コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。|  
 |[use_default](#use_default)|タスクの既定の継続コンテキストを作成します。|  
@@ -79,7 +60,7 @@ class task_continuation_context : public details::_ContextCallback;
  **名前空間:** concurrency  
 
 ## <a name="get_current_winrt_context"></a>get_current_winrt_context
- WinRT の現在のスレッド コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。  
+ 現在の WinRT スレッド コンテキストを表すタスクの継続コンテキスト オブジェクトを返します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -88,14 +69,14 @@ static task_continuation_context get_current_winrt_context();
 ```  
   
 ## <a name="return-value"></a>戻り値  
- 現在の Windows ランタイムのスレッド コンテキスト。 Windows 以外のランタイム コンテキストから呼び出された場合は、空の task_continuation_context を返します。  
+ 現在の Windows ランタイムのスレッド コンテキスト。 非 Windows ランタイム コンテキストから呼び出された場合は、空の task_continuation_context を返します。  
   
 ## <a name="remarks"></a>コメント  
- `get_current_winrt_context`メソッドは、呼び出し元の Windows ランタイムのスレッド コンテキストをキャプチャします。 空のコンテキストは、Windows ランタイムの呼び出し元に戻ります。  
+ `get_current_winrt_context`メソッドは、呼び出し元の Windows ランタイムのスレッド コンテキストをキャプチャします。 非 Windows ランタイムの呼び出し元に、空のコンテキストを返します。  
   
- によって返される値`get_current_winrt_context`ランタイムに、継続元タスクがアパートメントに対応であるかに関係なく、キャプチャされたコンテキスト (STA と MTA) のアパートメント モデルの継続を実行することを示すために使用できます。 アパートメントに対応するタスクとは、Windows Runtime `IAsyncInfo` インターフェイスのラップを解除するタスク、またはそのようなタスクの子となるタスクです。  
+ によって返される値`get_current_winrt_context`ランタイムに、継続元タスクがアパートメントに対応するにはかどうかに関係なく、キャプチャされたコンテキスト (STA と MTA) のアパートメント モデルの継続を実行することを示すために使用できます。 アパートメントに対応するタスクとは、Windows Runtime `IAsyncInfo` インターフェイスのラップを解除するタスク、またはそのようなタスクの子となるタスクです。  
   
- このメソッドは、`use_current`メソッドにも使用せずに C + ネイティブの C++ コード/cli CX 拡張のサポート。 使用する上級ユーザー作成用のものでは +/ネイティブと Windows ランタイムの呼び出し元の両方のライブラリ コードは CX に依存しません。 この機能が必要な限り、お勧めします`use_current`のみが C + を使用できるメソッド/cli CX クライアントです。  
+ このメソッドがに似ていますが、`use_current`メソッドも使用せず C + ネイティブの C++ コードに + CX 拡張機能のサポート。 使用する上級ユーザー作成のものでは +/ネイティブと Windows ランタイムの呼び出し元の両方のライブラリ コードは CX に依存しません。 この機能が必要な場合を除き、ことをお勧め、 `use_current` C + に使用されるメソッド + CX クライアント。  
   
   
 ##  <a name="use_arbitrary"></a>use_arbitrary 
@@ -165,11 +146,10 @@ static task_continuation_context use_synchronous_execution();
  同期の実行コンテキスト。  
   
 ## <a name="remarks"></a>コメント  
- `use_synchronous_execution`メソッドは、継続元タスクの完了を引き起こしているコンテキストで同期的に実行する継続タスクを強制します。  
+ `use_synchronous_execution`メソッドは、その継続元タスクの完了の原因と、コンテキストで同期的に実行する継続タスクを強制します。  
   
- 継続元タスクが既に完了して、継続が関連付けられている場合、継続は継続タスクをアタッチするコンテキストで同期的に実行します。  
+ 継続元タスクが既に完了して、継続が関連付けられている場合、継続は継続をアタッチするコンテキストで同期的に実行します。  
   
  
 ## <a name="see-also"></a>関連項目  
  [concurrency 名前空間](concurrency-namespace.md)
-

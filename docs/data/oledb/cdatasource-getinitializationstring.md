@@ -1,60 +1,59 @@
 ---
-title: "CDataSource::GetInitializationString | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL::CDataSource::GetInitializationString"
-  - "CDataSource.GetInitializationString"
-  - "GetInitializationString"
-  - "CDataSource::GetInitializationString"
-  - "ATL.CDataSource.GetInitializationString"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetInitializationString メソッド"
+title: "Cdatasource::getinitializationstring |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL::CDataSource::GetInitializationString
+- CDataSource.GetInitializationString
+- GetInitializationString
+- CDataSource::GetInitializationString
+- ATL.CDataSource.GetInitializationString
+dev_langs: C++
+helpviewer_keywords: GetInitializationString method
 ms.assetid: 97134723-6e99-4004-a56d-ec57543dbf3b
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0cc70e9cb1c775cf9c19f7269a5305624d27210b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CDataSource::GetInitializationString
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-現在開いているデータ ソースの初期化文字列を取得します。  
+# <a name="cdatasourcegetinitializationstring"></a>CDataSource::GetInitializationString
+現在開かれているデータ ソースの初期化文字列を取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      HRESULT GetInitializationString(   
-   BSTR* pInitializationString,   
-   bool bIncludePassword = false    
+      HRESULT GetInitializationString(   
+   BSTR* pInitializationString,   
+   bool bIncludePassword = false    
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *pInitializationString*  
- \[\]初期化文字列へのポインター。  
+ [out]初期化文字列へのポインター。  
   
  *bIncludePassword*  
- \[\]文字列にパスワードが含まれている場合 **true** ; それ **false**。  
+ [in]**true**文字列にパスワードが含まれている場合は、それ以外の場合**false**です。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 解説  
- 発生した初期化文字列がこのデータ ソースの接続を再開するために使用できます。  
+## <a name="remarks"></a>コメント  
+ 結果として得られる初期化文字列を使用して、後でこのデータ ソース接続を再び開くことができます。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CDataSource クラス](../Topic/CDataSource%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CDataSource クラス](../../data/oledb/cdatasource-class.md)

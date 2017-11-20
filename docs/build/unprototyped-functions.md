@@ -1,26 +1,26 @@
 ---
-title: "プロトタイプ宣言されていない関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "プロトタイプ宣言されていない関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 34200b8c-5b52-4f0d-aff8-9f70d82868ed
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: dbc9324753f6ec2c9a332af00a00dd85116e1943
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロトタイプ宣言されていない関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-完全にプロトタイプ宣言されていない関数の場合、呼び出し元は整数値を整数として、浮動小数点値を倍精度として渡します。  浮動小数点値だけの場合、呼び出し先の整数レジスタに float 型の値を渡す必要があるときには、整数レジスタと浮動小数点レジスタの両方に float 型の値が含まれます。  
+# <a name="unprototyped-functions"></a>プロトタイプ宣言されていない関数
+ない完全なプロトタイプ関数では、呼び出し元は、整数値として整数と浮動小数点値として渡します倍精度。 浮動小数点値の場合にのみ、整数レジスタと浮動小数点レジスタの両方値が含まれます、float 場合に、呼び出し先は、整数レジスタに値が必要です。  
   
 ```  
 func1();  
@@ -29,5 +29,5 @@ func2() {   // RCX = 2, RDX = XMM1 = 1.0, and R8 = 7
 }  
 ```  
   
-## 参照  
- [呼び出し規約](../build/calling-convention.md)
+## <a name="see-also"></a>関連項目  
+ [呼び出し規則](../build/calling-convention.md)

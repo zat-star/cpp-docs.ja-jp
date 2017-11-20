@@ -1,27 +1,26 @@
 ---
-title: "A.6   Using the lastprivate Clause | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "Lastprivate 句を使用して A.6 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: cf3bf0cc-aa46-4e44-9433-e2969e3be2c1
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e35ad34ce3bd1f97a58273522520d6ab67710505
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# A.6   Using the lastprivate Clause
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-正しい実装はループの最後の反復が変数に割り当てる値によって異なります。  このようなプログラムは `lastprivate` の句 \(ページの 27[セクション 2.7.2.3](../Topic/2.7.2.3%20lastprivate.md)\) に引数チェックなどのループが順次実行時に変数の値が同じになるように変数をすべて記述する必要があります。  
+# <a name="a6---using-the-lastprivate-clause"></a>A.6 lastprivate 句の使用
+正しい実行場合によっては、ループの最後の反復変数に代入する値に依存します。 このようなプログラムへの引数としてこのようなすべての変数を一覧表示する必要があります、`lastprivate`句 ([セクション 2.7.2.3](../../parallel/openmp/2-7-2-3-lastprivate.md) [27] ページ) できるように、変数の値は、ループが順番に実行されるときと同じです。  
   
 ```  
 #pragma omp parallel  
@@ -33,4 +32,4 @@ manager: "ghogen"
 a[i]=b[i];  
 ```  
   
- 前の例では並列領域のエッジ `i` 値はシーケンスの場合と同様に`n – 1` になります。
+ 前の例では、値で`i`並列領域の末尾が等しくなる`n-1`順次実行の場合のように、します。

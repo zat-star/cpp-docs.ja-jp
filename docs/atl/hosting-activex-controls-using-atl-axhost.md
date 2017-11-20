@@ -1,60 +1,61 @@
 ---
-title: "ATL AXHost を使用した ActiveX コントロールのホスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ActiveX コントロール [C++], ホスト"
-  - "AXHost メソッド"
-  - "Calendar コントロール (ActiveX)"
-  - "Calendar コントロール (ActiveX), ホスト (ATL AXHost を使用した)"
-  - "CAxWindow2T クラス"
-  - "ホスト (ActiveX コントロールを)"
+title: "ATL AXHost を使用して ActiveX コントロールをホストしている |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- CAxWindow2T class
+- Calendar control (ActiveX), hosting with ATL AXHost
+- Calendar control (ActiveX)
+- ActiveX controls [C++], hosting
+- hosting ActiveX controls
+- AXHost method
 ms.assetid: 2c1200ec-effb-4814-820a-509519699468
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bb2e7da3ed12b48f82f5769dd8436f0440031226
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL AXHost を使用した ActiveX コントロールのホスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックの例では AXHost を作成する方法、およびさまざまな ATL 関数を使用して ActiveX コントロールをホストする方法を示します。  コントロールもアクセス ホストされているコントロールからのイベントを [IDispEventImpl](../atl/reference/idispeventimpl-class.md) \(を使用\) シンクする方法を示します。  サンプルは、メイン ウィンドウまたは子ウィンドウのカレンダー コントロールをホストします。  
+# <a name="hosting-activex-controls-using-atl-axhost"></a>ATL AXHost を使用して ActiveX コントロールをホストしています。
+このトピックのサンプルでは、AXHost を作成する方法と ATL のさまざまな機能を使用して ActiveX コントロールをホストする方法を示します。 コントロールとシンク イベントにアクセスする方法も示しています (を使用して[IDispEventImpl](../atl/reference/idispeventimpl-class.md)) でホストされるコントロールからです。 このサンプルでは、メイン ウィンドウ、または子ウィンドウで、カレンダー コントロールをホストします。  
   
- `USE_METHOD` のシンボルの定義に注意してください。  1 ~ 8.の間で変わるようにこのシンボル値を変更できます。  シンボル値は、コントロールを作成する方法を決定します:  
+ 定義に注意してください、`USE_METHOD`シンボル。 1 ~ 8 で変更するには、この記号の値を変更することができます。 記号の値は、コントロールの作成方法を決定します。  
   
--   `USE_METHOD`、コントロールのホストにホストのサブクラスをウィンドウの変換、その作成する呼び出しの偶数の値。  奇数の値の場合、コードはホストとして機能する子ウィンドウを作成します。  
+-   値が偶数`USE_METHOD`ウィンドウのホストのサブクラスを作成する呼び出し、コントロールのホストに変換します。 奇数の値には、コードは、ホストとして機能する子ウィンドウを作成します。  
   
--   1 ~ 4 の `USE_METHOD` の値では、コントロールへのアクセスとイベントの沈降は、ホストを作成する呼び出しによって実行されます。  5 ~ 8 の値は、インターフェイスのホストを照会し、シンクをなしにトラップ。  
+-   値が`USE_METHOD`コントロールへのアクセスを 1 4 から、およびイベント シンクもホストを作成する呼び出しで行われます。 値は 5 ~ 8 では、ホストにインターフェイスを照会し、シンクをフックします。  
   
- :概要を次に示します。  
+ 次に概要を示します。  
   
-|USE\_METHOD|ホスト|アクセスおよびイベントの沈降を制御します。|という名前の関数|  
-|-----------------|---------|---------------------------|--------------|  
-|1|子ウィンドウ|1 ステップ|CreateControlLicEx|  
-|2|メイン ウィンドウ|1 ステップ|AtlAxCreateControlLicEx|  
-|3|子ウィンドウ|1 ステップ|CreateControlEx|  
-|4|メイン ウィンドウ|1 ステップ|AtlAxCreateControlEx|  
+|USE_METHOD|Host|アクセス制御とイベント シンク|使用する関数|  
+|-----------------|----------|--------------------------------------|---------------------------|  
+|1|子ウィンドウ|1 つの手順|CreateControlLicEx|  
+|2|メイン ウィンドウ|1 つの手順|AtlAxCreateControlLicEx|  
+|3|子ウィンドウ|1 つの手順|CreateControlEx|  
+|4|メイン ウィンドウ|1 つの手順|AtlAxCreateControlEx|  
 |5|子ウィンドウ|複数のステップ|CreateControlLic|  
 |6|メイン ウィンドウ|複数のステップ|AtlAxCreateControlLic|  
 |7|子ウィンドウ|複数のステップ|CreateControl|  
-|8|メイン ウィンドウ|複数のステップ|AtlAxCreateControl|  
+|9|メイン ウィンドウ|複数のステップ|AtlAxCreateControl|  
   
- [!code-cpp[NVC_ATL_AxHost#1](../atl/codesnippet/CPP/hosting-activex-controls-using-atl-axhost_1.cpp)]  
+ [!code-cpp[NVC_ATL_AxHost#1](../atl/codesnippet/cpp/hosting-activex-controls-using-atl-axhost_1.cpp)]  
   
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)   
- [AtlAxCreateControl](../Topic/AtlAxCreateControl.md)   
- [AtlAxCreateControlEx](../Topic/AtlAxCreateControlEx.md)   
- [AtlAxCreateControlLic](../Topic/AtlAxCreateControlLic.md)   
- [AtlAxCreateControlLicEx](../Topic/AtlAxCreateControlLicEx.md)   
- [CAxWindow2T クラス](../Topic/CAxWindow2T%20Class.md)   
+## <a name="see-also"></a>関連項目  
+ [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)   
+ [して](reference/composite-control-global-functions.md#atlaxcreatecontrol)   
+ [行うに](reference/composite-control-global-functions.md#atlaxcreatecontrolex)   
+ [して](reference/composite-control-global-functions.md#atlaxcreatecontrollic)   
+ [AtlAxCreateControlLicEx](reference/composite-control-global-functions.md#atlaxcreatecontrolex)   
+ [CAxWindow2T クラス](../atl/reference/caxwindow2t-class.md)   
  [IAxWinHostWindowLic インターフェイス](../atl/reference/iaxwinhostwindowlic-interface.md)
+

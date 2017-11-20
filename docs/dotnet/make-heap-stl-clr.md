@@ -1,32 +1,30 @@
 ---
-title: "make_heap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::make_heap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "make_heap 関数 [STL/CLR]"
+title: "make_heap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::make_heap
+dev_langs: C++
+helpviewer_keywords: make_heap function [STL/CLR]
 ms.assetid: bc1bed28-7a26-4540-901d-5584cd117ea1
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 970cbe054aed2f5809e5acc05bad480e8f634349
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# make_heap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-条件を並べ替える二項述語で指定される可能性があるかをの最初の要素がよりも大きく、ヒープに指定した範囲の要素が変換されます。  
+# <a name="makeheap-stlclr"></a>make_heap (STL/CLR)
+指定された範囲の要素を、最初の要素が最大であるヒープに変換します。並べ替えの基準は二項述語によって指定できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -35,13 +33,13 @@ template<class _RanIt, class _Pr> inline
     void make_heap(_RanIt _First, _RanIt _Last, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `make_heap`も同じように動作します。  詳細については、「[make\_heap](../Topic/make_heap.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`make_heap`です。 詳細については、次を参照してください。 [make_heap](../standard-library/algorithm-functions.md#make_heap)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

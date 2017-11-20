@@ -1,38 +1,38 @@
 ---
-title: "方法: PInvoke を使用してマネージ コードからネイティブ DLL を呼び出す | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ マーシャリング [C++], 呼び出し (ネイティブ DLL を)"
-  - "相互運用 [C++], 呼び出し (ネイティブ DLL を)"
-  - "マーシャリング [C++], 呼び出し (ネイティブ DLL を)"
-  - "プラットフォーム呼び出し [C++], 呼び出し (ネイティブ DLL を)"
+title: "方法: PInvoke を使用してマネージ コードからネイティブ Dll を呼び出す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- platform invoke [C++], calling native DLLs
+- interop [C++], calling native DLLs
+- marshaling [C++], calling native DLLs
+- data marshaling [C++], calling native DLLs
 ms.assetid: 3273eb4b-38d1-4619-92a6-71bda542be72
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8ebf8d806b5decdbc3e694fc62146a55ef53151c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: PInvoke を使用してマネージ コードからネイティブ DLL を呼び出す
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プラットフォーム呼び出し \(P\/Invoke\) 機能を使用して、マネージ コードからアンマネージ DLL で実装される関数を呼び出すことができます。  DLL のソース コードが利用できない場合、相互運用できるようにするには P\/Invoke を使用する以外方法はありません。  ただし、他の .NET 言語とは異なり、Visual C\+\+ には P\/Invoke 以外の方法が用意されています。  詳細については、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」を参照してください。  
+# <a name="how-to-call-native-dlls-from-managed-code-using-pinvoke"></a>方法: PInvoke を使用してマネージ コードからネイティブ DLL を呼び出す
+アンマネージ Dll に実装されている関数は、Platform Invoke (P/invoke) 機能を使用してマネージ コードから呼び出すことができます。 DLL のソース コードが使用できない場合は、相互運用するための唯一のオプションは P/invoke です。 ただし、Visual C は、他の .NET 言語とは異なり、P/invoke する代わりを提供します。 詳細については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。  
   
-## 使用例  
- 次のコード例は、Win32 [GetSystemMetrics](http://msdn.microsoft.com/library/windows/desktop/ms724385) 関数を使用して、現在の画面の解像度をピクセル単位で取得します。  
+## <a name="example"></a>例  
+ 次のコード例は、Win32 を使用して[問題](http://msdn.microsoft.com/library/windows/desktop/ms724385)ピクセルでの画面の現在の解像度を取得します。  
   
- 引数として組み込みの型のみを使用して値を返す関数の場合、特別な作業を行う必要ありません。  関数ポインター、配列、構造体など、その他のデータ型の場合、適切なデータ マーシャリングを確実に行うために追加の属性が必要です。  
+ 組み込み型のみを引数として使用し、値を返す関数の場合は、追加の作業は必要ありません。 関数ポインター、配列、および構造体など、他のデータ型では、適切なデータのマーシャ リングすることを確認する追加の属性が必要です。  
   
- この例で示すように、P\/Invoke 宣言がグローバル名前空間に存在することがないように、P\/Invoke 宣言を値クラスの静的メンバーにすることをお勧めします。  
+ 必要ありませんは、この例で示したように、グローバル名前空間に存在しないように P/invoke 宣言のある値クラスの静的メンバーを作成するようにします。  
   
 ```  
 // pinvoke_basic.cpp  
@@ -59,5 +59,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ での明示的な PInvoke \(DllImport 属性\) の使用方法 ](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)
+## <a name="see-also"></a>関連項目  
+ [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

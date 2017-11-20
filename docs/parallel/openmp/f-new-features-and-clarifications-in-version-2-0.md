@@ -1,50 +1,49 @@
 ---
-title: "F. New Features and Clarifications in Version 2.0 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "F です。 新機能とバージョン 2.0 では説明 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 0d4beb66-f2d5-468c-8cd3-4b00dcbab061
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4f2d0399925c27e75c465f905f52e7e2ed2ba86f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# F. New Features and Clarifications in Version 2.0
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-この移動の付録は Version 1.0 と Version 2.0 で行われた OpenMP C\/C\+\+ の仕様への主な変更点について説明します。  次の項目は仕様に追加された新機能です :  
+# <a name="f-new-features-and-clarifications-in-version-20"></a>F です。 新機能とバージョン 2.0 の説明
+この付録の内容は、バージョン 1.0 からバージョン 2.0 に移行する際、OpenMP C と C++ 仕様に加えられた主な変更点をまとめたものです。 次の項目は、仕様に追加された新機能を示します。  
   
--   コンマはOpenMP のディレクティブ \(7\)[セクション 2.1](../Topic/2.1%20Directive%20Format.md) のページで使用できます。  
+-   OpenMP ディレクティブにコンマを使用できる ([セクション 2.1](../../parallel/openmp/2-1-directive-format.md)ページ 7 で)。  
   
--   `num_threads` の句が追加されました。  この句はユーザーが parallel コンストラクト \(ページの場合特定のスレッドの数を 8\)[セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 要求できるようにします。  
+-   追加、`num_threads`句。 この句を使用するユーザーは、parallel コンストラクトのスレッド数が特定の要求 ([セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページの)。  
   
--   `threadprivate` のディレクティブはの静的なブロック スコープの変数 \(ページの 23[セクション 2.7.1](../../parallel/openmp/2-7-1-threadprivate-directive.md)\) に拡張されました。  
+-   `threadprivate`ディレクティブが静的ブロック スコープ変数を受け入れるように拡張されて ([セクション 2.7.1](../../parallel/openmp/2-7-1-threadprivate-directive.md)ページ 23)。  
   
--   たとえばC99 可変長の配列は `private``firstprivate` と `lastprivate` の句 \(ページの 25[セクション 2.7.2](../Topic/2.7.2%20Data-Sharing%20Attribute%20Clauses.md)\) の一覧で完全な型でありしたがって指定の場所で完全な型を指定できます。  
+-   C99 可変長配列は完全な型したがってを指定する任意の場所完全な型は許可されているのインスタンスの一覧に`private`、 `firstprivate`、および`lastprivate`句 ([セクション 2.7.2](../../parallel/openmp/2-7-2-data-sharing-attribute-clauses.md) [25] ページ)。  
   
--   並列領域のプライベート変数は入れ子になったディレクティブ \(ページの 25[セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md)\) の再指定されたプライベートです。  
+-   並行領域内のプライベート変数マークできるは、入れ子になったディレクティブでもう一度プライベート ([セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md) [25] ページ)。  
   
--   `copyprivate` の句が追加されました。  またチームのメンバーの 1 人から他のメンバーに値をブロードキャストにプライベート変数を使用するようにの機能を提供します。  これは値に対して共有変数を使用するにはこのような共有変数を提供することが困難になる場合は代わりになります \(たとえば各レベルで別の変数を必要とする再帰\)。  `copyprivate` の句は  **シングル**  のディレクティブ \(ページの 32[セクション 2.7.2.8](../Topic/2.7.2.8%20copyprivate.md)\) でのみ使用できます。  
+-   `copyprivate`句が追加されました。 他のメンバーにチームの 1 つのメンバーから値をブロードキャストするプライベート変数を使用するためのメカニズムを提供します。 このような共有変数を提供することは困難 (たとえば、レベルごとに異なる変数を必要とする再帰) がある場合に、値の共有変数を使用する代わりにすることをお勧めします。 `copyprivate`句でのみ使用できます、**単一**ディレクティブ ([セクション 2.7.2.8](../../parallel/openmp/2-7-2-8-copyprivate.md) [32] ページ)。  
   
--   MPI ルーチンのようなタイミング ルーチン `omp_get_wtick` と `omp_get_wtime` が追加されました。  これらの関数はクロックのタイミング [セクション 3.3.1](../../parallel/openmp/3-3-1-omp-get-wtime-function.md) \(柱とページの 45 ページの 44 [セクション 3.3.2](../Topic/3.3.2%20omp_get_wtick%20Function.md)\) を実行するために必要です。  
+-   タイミング ルーチンの加算`omp_get_wtick`と`omp_get_wtime`MPI ルーチンに似ています。 これらの関数はウォール クロックを実行するために必要な ([セクション 3.3.1](../../parallel/openmp/3-3-1-omp-get-wtime-function.md)ページ 44 と[セクション 3.3.2](../../parallel/openmp/3-3-2-omp-get-wtick-function.md) 45 ページで)。  
   
--   OpenMP C\/C\+\+ の実装で定義されている動作のリストを持つ付録が追加されました。  実装ではこのような場合の動作を定義および文書化する必要があります \(ページの 97[付録 E](../Topic/E.%20Implementation-Defined%20Behaviors%20in%20OpenMP%20C-C++.md)\)。  
+-   OpenMP C と C++ の実装で定義される動作の一覧を付録が追加されました。 実装を定義して、ドキュメントのこのような場合は、その動作に必要な ([付録 E](../../parallel/openmp/e-implementation-defined-behaviors-in-openmp-c-cpp.md)ページ 97 で)。  
   
--   次の変更はC\/C\+\+ の前に示す OpenMP API の固有の機能を明確にするかまたは修正するために実行されます :  
+-   次の変更の提供を明確にするか、C と C++ の以前の OpenMP API 仕様の機能を修正します。  
   
-    -   `omp_in_parallel` がゼロ以外を返します `omp_set_nested` と `omp_set_dynamic` 場合の動作は未定義であることを明記しました \(ページの 39[セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md)ページの 40 [セクション 3.1.9](../../parallel/openmp/3-1-9-omp-set-nested-function.md)\)。  
+    -   明確にされましたの動作`omp_set_nested`と`omp_set_dynamic`とき`omp_in_parallel`0 以外を返しますが定義されていません ([セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md) 39、ページ上および[セクション 3.1.9](../../parallel/openmp/3-1-9-omp-set-nested-function.md) 40 ページの)。  
   
-    -   入れ子になった並列が使用されることを明記ディレクティブの入れ子 \(33 ページ [セクション 2.9](../../parallel/openmp/2-9-directive-nesting.md)\)。  
+    -   入れ子になった並列を使用する場合は、ディレクティブの入れ子を明確にされました。 ([セクション 2.9](../../parallel/openmp/2-9-directive-nesting.md) 33 ページ上)。  
   
-    -   ロック初期化およびロックのデストラクション関数は並列領域 \(ページの 42[セクション 3.2.1](../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)ページの 42 [セクション 3.2.2](../Topic/3.2.2%20omp_destroy_lock%20and%20omp_destroy_nest_lock%20Functions.md)\) で呼び出すことができます。  
+    -   並列領域で、ロックの初期化関数とロック破棄関数を呼び出すことができる ([セクション 3.2.1](../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)ページ 42 でと[セクション 3.2.2](../../parallel/openmp/3-2-2-omp-destroy-lock-and-omp-destroy-nest-lock-functions.md)ページ 42 で)。  
   
-    -   新しい例が追加されました \(ページの 51[付録 A](../Topic/A.%20Examples.md)\)。
+    -   新しい例が追加されました ([付録 A](../../parallel/openmp/a-examples.md) 51 ページ)。

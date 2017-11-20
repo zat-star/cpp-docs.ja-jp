@@ -12,19 +12,18 @@ f1_keywords:
 - system_error/std::make_error_condition
 - system_error/std::system_category
 ms.assetid: 57d6f15f-f0b7-4e2f-80fe-31d3c320ee33
-caps.latest.revision: 11
+caps.latest.revision: "11"
 manager: ghogen
 helpviewer_keywords:
 - std::generic_category
 - std::make_error_code
 - std::make_error_condition
 - std::system_category
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 4ecf60434799708acab4726a95380a2d3b9dbb3a
-ms.openlocfilehash: bcc9ee1b015699ab0c44bb362bcf82bc0597eb22
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/19/2017
-
+ms.openlocfilehash: c7f287ae121e9e359e96194444052e8a4d272093
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ltsystemerrorgt-functions"></a>&lt;system_error&gt; 関数
 ||||  
@@ -40,7 +39,7 @@ extern const error_category& generic_category();
 ```  
   
 ### <a name="remarks"></a>コメント  
- `generic_category`オブジェクトは、実装の[error_category](../standard-library/error-category-class.md)です。  
+ `generic_category`オブジェクトの実装は、 [error_category](../standard-library/error-category-class.md)です。  
   
 ##  <a name="make_error_code"></a>  make_error_code  
  エラー コード オブジェクトを作成します。  
@@ -86,11 +85,10 @@ extern const error_category& system_category();
 ```  
   
 ### <a name="remarks"></a>コメント  
- `system_category`オブジェクトは、実装の[error_category](../standard-library/error-category-class.md)です。  
+ `system_category`オブジェクトの実装は、 [error_category](../standard-library/error-category-class.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [<system_error>](../standard-library/system-error.md)
-
 
 
 

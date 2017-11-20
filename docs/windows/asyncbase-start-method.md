@@ -1,32 +1,30 @@
 ---
-title: "AsyncBase::Start メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "async/Microsoft::WRL::AsyncBase::Start"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Start メソッド"
+title: "Asyncbase::start メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: async/Microsoft::WRL::AsyncBase::Start
+dev_langs: C++
+helpviewer_keywords: Start method
 ms.assetid: 67405c9d-0d1a-4c1e-8ea4-6ba01c1f90d9
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 92455a964cbf166d4684e4e0233e4b52fffbf516
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# AsyncBase::Start メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-非同期操作を開始できます。  
+# <a name="asyncbasestart-method"></a>AsyncBase::Start メソッド
+非同期操作を開始します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHOD(  
@@ -34,16 +32,16 @@ STDMETHOD(
 )(void);  
 ```  
   
-## 戻り値  
- 操作を開始したり、既に開始している場合は S\_OK; それ以外の場合は E\_ILLEGAL\_STATE\_CHANGE。  
+## <a name="return-value"></a>戻り値  
+ S_OK 場合は、操作の開始または既に開始です。それ以外の場合、E_ILLEGAL_STATE_CHANGE です。  
   
-## 解説  
- Start\(\) は IAsyncInfo::Start の既定の実装では、実際の作業を行いません。  実際には、非同期操作を開始するには、OnStart\(\) の純粋仮想メソッドをオーバーライドします。  
+## <a name="remarks"></a>コメント  
+ Start() は、IAsyncInfo::Start の既定の実装は、実際の作業は行われません。 実際には、非同期操作を開始するには、OnStart() 純粋仮想メソッドをオーバーライドします。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** async.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [AsyncBase クラス](../windows/asyncbase-class.md)

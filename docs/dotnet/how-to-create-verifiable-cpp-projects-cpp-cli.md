@@ -1,66 +1,65 @@
 ---
-title: "方法: 確認可能な C++ プロジェクトを作成する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "変換, C++ プロジェクト"
-  - "検証可能なアセンブリ [C++], 作成"
-  - "Visual C++ プロジェクト"
+title: "方法: 確認可能な C++ プロジェクトの作成 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- verifiable assemblies [C++], creating
+- conversions, C++ projects
+- Visual C++ projects
 ms.assetid: 4ef2cc1a-e3e5-4d67-8d8d-9c614f8ec5d3
-caps.latest.revision: 11
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: aad327c26c8684804c294fe5eb6b5bf41507f603
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: 確認可能な C++ プロジェクトを作成する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ アプリケーション ウィザードでは、検証可能なプロジェクトは作成されませんが、プロジェクトを検証可能になるように変換できます。  このトピックでは、プロジェクトのプロパティを設定し、Visual C\+\+ プロジェクトを変換するようにプロジェクト ソース ファイルを変更して検証可能なアプリケーションを作成する方法について説明します。  
+# <a name="how-to-create-verifiable-c-projects-ccli"></a>方法: 確認可能な C++ プロジェクトを作成する (C++/CLI)
+Visual C アプリケーションのウィザードは、検証可能なプロジェクトを作成できませんが、検証可能であるにプロジェクトを変換することができます。 このトピックでは、プロジェクトのプロパティを設定し、検証可能なアプリケーションを生成するために、Visual C プロジェクトを変換するプロジェクトのソース ファイルを変更する方法について説明します。  
   
-## コンパイラとリンカーの設定  
- 既定では、.NET プロジェクトでは、\/clr コンパイラ フラグを使用して、x86 ハードウェアを対象とするようにリンカーを設定します。  検証可能なコードでは、\/clr:safe フラグを使用する必要があります。また、ネイティブなマシン語命令ではなく MSIL を生成するようにリンカーに指示する必要もあります。  
+## <a name="compiler-and-linker-settings"></a>コンパイラとリンカーの設定  
+ 既定は、.NET プロジェクトは/clr コンパイラ フラグを使用し、ハードウェアの x86 を対象とするようにリンカーを構成します。 検証可能なコードは、/clr:safe フラグを使用する必要があり、ネイティブ機械語命令ではなく MSIL を生成するようにリンカーに指示する必要があります。  
   
-#### コンパイラとリンカーの設定を変更するには  
+#### <a name="to-change-the-compiler-and-linker-settings"></a>コンパイラとリンカーの設定を変更するには  
   
-1.  プロジェクトのプロパティ ページを表示します。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトのプロパティ ページを表示します。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
-2.  **\[構成プロパティ\]** ノードの **\[全般\]** ページで、**\[共通言語ランタイム サポート\]** プロパティを **\[安全な MSIL 共通言語ランタイム サポート \(\/clr:safe\)\]** に設定します。  
+2.  **全般**ページで、**構成プロパティ**、ノード セット、**共通言語ランタイム サポート**プロパティを**安全な MSIL 共通言語ランタイム サポート (//clr:safe)**です。  
   
-3.  **\[リンカー\]** ノードの **\[詳細\]** ページで、**\[CLR イメージ タイプ\]** プロパティを **\[安全 IL イメージの強制 \(\/CLRIMAGETYPE:SAFE\)\]** に設定します。  
+3.  **詳細**ページで、、**リンカー** 、ノード セット、 **CLR イメージ タイプ**プロパティを**安全 IL イメージの強制 (//clrimagetype:safe)**です。  
   
-## ネイティブ データ型の削除  
- ネイティブ データ型は検証可能ではないので、実際に使用されていない場合でも、ネイティブな型を含むすべてのヘッダー ファイルを削除する必要があります。  
+## <a name="removing-native-data-types"></a>ネイティブ データ型を削除します。  
+ ネイティブ データ型は検証可能ではないので、実際に使用されていない場合でも、ネイティブ型を含むすべてのヘッダー ファイルを削除する必要があります。  
   
 > [!NOTE]
->  次の手順は、Windows フォーム アプリケーション \(.NET\) プロジェクトおよびコンソール アプリケーション \(.NET\) プロジェクトに該当します。  
+>  次の手順は、Windows フォーム アプリケーション (.NET) とコンソール アプリケーション (.NET) のプロジェクトに適用されます。  
   
-#### ネイティブ データ型への参照を削除するには  
+#### <a name="to-remove-references-to-native-data-types"></a>ネイティブ データ型への参照を削除するには  
   
-1.  Stdafx.h ファイルの内容をすべてコメント アウトします。  
+1.  Stdafx.h ファイル内のすべてのコメントします。  
   
-## エントリ ポイントの設定  
- 検証可能なアプリケーションでは C ランタイム ライブラリ \(CRT\) を使用できないため、これらのアプリケーションは、標準的なエントリ ポイントとして main 関数を呼び出す場合には、CRT に依存できません。  つまり、最初にリンカーに呼び出す関数の名前を明示的に指定する必要があります。この場合は、main\(\) や \_tmain\(\) ではなく Main\(\) を使用して、CRT 以外のエントリ ポイントを示しますが、エントリ ポイントは明示的に指定する必要があるため、この名前は任意です。  
+## <a name="configuring-an-entry-point"></a>エントリ ポイントを構成します。  
+ 検証可能なアプリケーションでは、C ランタイム ライブラリ (CRT) を使用できないため、標準的なエントリ ポイントとして main 関数を呼び出すには、CRT 依存ことはできません。 つまり、リンカーに最初に呼び出される関数の名前を明示的に指定する必要があります。 (この場合、main() または _tmain() の代わりに、CRT 以外のエントリ ポイントを指定する Main() が使用されるが、この名前は任意のエントリ ポイントは、明示的に指定する必要があります、ため)。  
   
 > [!NOTE]
->  次の手順は、コンソール アプリケーション \(.NET\) プロジェクトに該当します。  
+>  次の手順は、コンソール アプリケーション (.NET) プロジェクトに適用されます。  
   
-#### エントリ ポイントを設定するには  
+#### <a name="to-configure-an-entry-point"></a>エントリ ポイントを構成するには  
   
-1.  プロジェクトのメインとなる .cpp ファイルで \_tmain\(\) を Main\(\) に変更します。  
+1.  プロジェクトのメインの .cpp ファイルの Main() を _tmain() を変更します。  
   
-2.  プロジェクトのプロパティ ページを表示します。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../misc/how-to-open-project-property-pages.md)」を参照してください。  
+2.  プロジェクトのプロパティ ページを表示します。 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
-3.  **\[リンカー\]** ノードの **\[詳細\]** ページで、**\[Entry Point\]** に、プロパティ値として「`Main`」と入力します。  
+3.  **詳細設定**ページで、、**リンカー**ノード、入力`Main`として、**エントリ ポイント**プロパティの値。  
   
-## 参照  
- [純粋なコードと検証可能なコード](../dotnet/pure-and-verifiable-code-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [純粋なコードと検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)

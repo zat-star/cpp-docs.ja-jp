@@ -1,34 +1,31 @@
 ---
-title: "ComPtrRef::operator== 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::Details::ComPtrRef::operator=="
-dev_langs: 
-  - "C++"
+title: "Comptrref::operator = = 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: client/Microsoft::WRL::Details::ComPtrRef::operator==
+dev_langs: C++
 ms.assetid: 95fcf781-b473-4317-88cd-e938778d3c3e
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: cc55ab734229cc256f47185349ce79049d05723b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ComPtrRef::operator== 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="comptrrefoperator-operator"></a>ComPtrRef::operator== 演算子
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
-  
 bool operator==(  
    const Details::ComPtrRef<ComPtr<T>>& a,  
    const Details::ComPtrRef<ComPtr<U>>& b  
@@ -55,28 +52,28 @@ bool operator==(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `a`  
  ComPtrRef オブジェクトへの参照。  
   
  `b`  
- 匿名型`void*` \(\) への ComPtrRef の別のオブジェクトへの参照、またはポインター。  
+ 別の ComPtrRef オブジェクト、または匿名型へのポインターへの参照を (`void*`)。  
   
-## 戻り値  
- 一つ目の演算子は `b`にオブジェクトへ `a` オブジェクトが等しい `true` ;を説明します。それ以外の場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ 最初の演算子によって生成`true`場合オブジェクト`a`がオブジェクトと等しい`b`、それ以外の`false`します。  
   
- 2 番目と 3 番目の演算子は、オブジェクトが `a``nullptr`と等しい `true` ;を説明します。それ以外の場合は `false`。  
+ 2 番目と 3 番目の演算子の yield`true`場合オブジェクト`a`と等しい`nullptr`、それ以外の`false`します。  
   
- 4 番目と 5 番目の演算子は `b`にオブジェクトへ `a` オブジェクトが等しい `true` ;を説明します。それ以外の場合は `false`。  
+ 4 番目と 5 番目の演算子の yield`true`場合オブジェクト`a`がオブジェクトと等しい`b`、それ以外の`false`します。  
   
-## 解説  
- ComPtrRef 2 の二つのオブジェクトが等しいかどうかを示します。  
+## <a name="remarks"></a>コメント  
+ 2 つの ComPtrRef オブジェクトが等しいかどうかを示します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)   
- [ComPtrRef クラス](../Topic/ComPtrRef%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [Microsoft::WRL::Details Namespace](../windows/microsoft-wrl-details-namespace.md)   
+ [ComPtrRef クラス](../windows/comptrref-class.md)

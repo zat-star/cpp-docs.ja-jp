@@ -1,32 +1,30 @@
 ---
-title: "SafeDivide | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeDivide"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeDivide 関数"
+title: "SafeDivide |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: SafeDivide
+dev_langs: C++
+helpviewer_keywords: SafeDivide function
 ms.assetid: b5b27484-ad6e-46b1-ba9f-1c7120dd103b
-caps.latest.revision: 5
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 59998367d71658a0561a4bda8d71bf6c4f61f313
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# SafeDivide
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ゼロ除算を避けながら、2 つの数値を除算します。  
+# <a name="safedivide"></a>SafeDivide
+ゼロ除算を防止する方法の 2 つの数値を除算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename T, typename U>  
@@ -37,35 +35,35 @@ inline bool SafeDivide (
 ) throw ();  
 ```  
   
-#### パラメーター  
- \[入力\] `t`  
- 除数。  これは T 型である必要があります。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `t`  
+ 除数。 T 型でなければなりません  
   
- \[入力\] `u`  
- 被除数。  これは U 型である必要があります。  
+ [入力] `u`  
+ 被除数。 U 型です。 これでなければなりません  
   
- \[出力\] `result`  
- `SafeDivide` が結果を格納するパラメーター。  
+ [出力] `result`  
+ パラメーターで`SafeDivide`結果を格納します。  
   
-## 戻り値  
- エラーが発生しなかった場合は `true`。エラーが発生した場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`エラーが発生しない場合です。`false`場合は、エラーが発生します。  
   
-## 解説  
- このメソッドは [SafeInt ライブラリ](../windows/safeint-library.md)に含まれており、[SafeInt クラス](../windows/safeint-class.md)のインスタンスを作成せずに単一の除算演算を実行するために用意されています。  
+## <a name="remarks"></a>コメント  
+ このメソッドの一部である[SafeInt ライブラリ](../windows/safeint-library.md)のインスタンスを作成せず、1 つの分割操作のものでは、 [SafeInt クラス](../windows/safeint-class.md)です。  
   
 > [!NOTE]
->  このメソッドは、単一の数値演算を保護する必要がある場合にのみ使用してください。  複数の演算を実行する場合は、スタンドアロンの関数を個別に呼び出すのではなく、`SafeInt` クラスを使用する必要があります。  
+>  このメソッドは、単一の数値演算を保護する必要がありますにのみ使用する必要があります。 使用する必要があります複数の操作がある場合、`SafeInt`個々 のスタンドアロン関数の呼び出しではなくクラスです。  
   
- テンプレートの種類である T と U の詳細については、「[SafeInt 関数](../windows/safeint-functions.md)」を参照してください。  
+ テンプレート型 T および U の詳細については、次を参照してください。 [SafeInt 関数](../windows/safeint-functions.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** Microsoft::Utilities  
+ **Namespace:** Microsoft::Utilities  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [SafeInt 関数](../windows/safeint-functions.md)   
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   
  [SafeModulus](../windows/safemodulus.md)   
- [SafeMultiply](../Topic/SafeMultiply.md)
+ [SafeMultiply](../windows/safemultiply.md)

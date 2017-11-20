@@ -1,32 +1,30 @@
 ---
-title: "critical | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "Critical"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "critical OpenMP directive"
+title: "重要な |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: Critical
+dev_langs: C++
+helpviewer_keywords: critical OpenMP directive
 ms.assetid: 2ab87d6d-5ca4-43ae-9f0a-1f517a6a2bab
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c3527d7716edc30a7b8265881f0a3bd674c68957
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# critical
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-コードが 1 台のスレッドは一度に実行されることを指定します。  
+# <a name="critical"></a>critical
+されたコードが、一度に 1 つのスレッドで実行するのみを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma omp critical [(name)]  
@@ -35,18 +33,18 @@ caps.handback.revision: 12
 }  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
- \(省略可能\) \(\)`name`  
- クリティカル コードを一意に識別する名前です。  名前をかっこで囲む必要があることに注意してください。  
+ (`name`) (省略可能)  
+ クリティカルなコードを識別する名前。 その名前は、かっこで囲む必要がありますに注意してください。  
   
-## 解説  
- **重大**  のディレクティブはOpenMP 句をサポートしていません。  
+## <a name="remarks"></a>コメント  
+ **重大**ディレクティブに OpenMP 句がサポートされていません。  
   
- 詳細については、「[2.6.2 critical Construct](../../../parallel/openmp/2-6-2-critical-construct.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.6.2 重要な構築](../../../parallel/openmp/2-6-2-critical-construct.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_critical.cpp  
@@ -90,16 +88,19 @@ int main()
 }  
 ```  
   
-  **41**  
-**18467**  
-**6334**  
-**26500**  
-**19169**  
-**15724**  
-**11478**  
-**29358**  
-**26962**  
-**24464**  
-**最大値 \= 29358**    
-## 参照  
- [Directives](../../../parallel/openmp/reference/openmp-directives.md)
+```Output  
+41  
+18467  
+6334  
+26500  
+19169  
+15724  
+11478  
+29358  
+26962  
+24464  
+max = 29358  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

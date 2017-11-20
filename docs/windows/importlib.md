@@ -1,49 +1,47 @@
 ---
-title: "importlib | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.importlib"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "importlib attribute"
+title: "importlib |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.importlib
+dev_langs: C++
+helpviewer_keywords: importlib attribute
 ms.assetid: f129e459-b8d3-4aca-a0bc-ee53e18b62ed
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 27c74785f56d7cb339eff25a645191ece1e14b32
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# importlib
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="importlib"></a>importlib
 既に他のタイプ ライブラリでコンパイル済みの型を、作成中のタイプ ライブラリで使用できるようにします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-        [ importlib(  
+      [ importlib(  
    "tlb_file"  
 ) ];  
 ```  
   
-#### パラメーター  
- *tlb\_file*  
- 現在のプロジェクトのタイプ ライブラリにインポートする .tlb ファイルの名前 \(引用符で囲む\)。  
+#### <a name="parameters"></a>パラメーター  
+ *tlb_file*  
+ 現在のプロジェクトのタイプ ライブラリにインポートする .tlb ファイルの名前 (引用符で囲む)。  
   
-## 解説  
- **importlib** C\+\+ 属性は、生成された .idl ファイルのライブラリ ブロックに `importlib` ステートメントが配置されるようにします。  **importlib** 属性には、[importlib](http://msdn.microsoft.com/library/windows/desktop/aa367050) MIDL 属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Importlib** C++ 属性により、`importlib`ステートメントが生成された .idl ファイルのライブラリ ブロックに配置されます。 **Importlib**属性と同じ機能を持つ、 [importlib](http://msdn.microsoft.com/library/windows/desktop/aa367050) MIDL 属性。  
   
-## 使用例  
- 以下のコードは、**importlib** の使い方の例を示しています。  
+## <a name="example"></a>例  
+ 次のコードを使用する方法の例を示します**importlib**:  
   
 ```  
 // cpp_attr_ref_importlib.cpp  
@@ -52,9 +50,9 @@ caps.handback.revision: 11
 [importlib("importlib.tlb")];  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
@@ -63,12 +61,12 @@ caps.handback.revision: 11
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [Compiler Attributes](../windows/compiler-attributes.md)   
- [Stand\-Alone Attributes](../Topic/Stand-Alone%20Attributes.md)   
- [import](../windows/import.md)   
+## <a name="see-also"></a>関連項目  
+ [コンパイラ属性](../windows/compiler-attributes.md)   
+ [スタンドアロン属性](../windows/stand-alone-attributes.md)   
+ [インポート](../windows/import.md)   
  [importidl](../windows/importidl.md)   
- [include](../windows/include-cpp.md)   
+ [含まれます](../windows/include-cpp.md)   
  [includelib](../windows/includelib-cpp.md)

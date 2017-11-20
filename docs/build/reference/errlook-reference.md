@@ -1,45 +1,45 @@
 ---
-title: "ERRLOOK リファレンス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ErrLook ツール"
-  - "エラー ルックアップ ツール"
+title: "ERRLOOK リファレンス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ErrLook tool
+- Error lookup tool
 ms.assetid: 6040ffc1-2355-4a45-8998-84cbcba4ca91
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 05d80bca74117ca23f8e839dda6ef23d9e08e3d7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ERRLOOK リファレンス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-\[ツール\] メニューで使用できる**エラー検索**ユーティリティは、入力値に基づいてシステム エラー メッセージまたはモジュール エラー メッセージを取得します。  16 進値または 10 進値を Visual Studio デバッガーから **\[値\]** エディット コントロールにドラッグ アンド ドロップした場合、ERRLOOK はエラー メッセージ テキストを自動的に取得します。  値を入力するには、**\[値\]** エディット コントロールに入力する方法と、クリップボードから値を渡して \[検索\] をクリックする方法があります。  
+# <a name="errlook-reference"></a>ERRLOOK リファレンス
+ユーティリティ、として、[ツール] メニューから利用できる**エラー ルックアップ**、入力された値に基づいて、システム エラー メッセージまたはモジュール エラー メッセージを取得します。 ERRLOOK がエラー メッセージ テキストを取得する際に自動的にしてからドラッグ アンド ドロップ、16 進数または 10 進数の値に、Visual Studio デバッガー、**値**コントロールを編集します。 入力することも、値でそれを入力するか、**値**エディット コントロールまたはでクリップボードから貼り付けるをクリックすると**ルックアップ**です。  
   
- \[コピー\] \(Ctrl \+ C\)、\[切り取り\] \(Ctrl \+ X\)、および \[貼り付け\] \(Ctrl \+ V\) の各アクセラレータ キーは、最初にテキストを強調表示した場合には、**\[値\]** エディット コントロールと \[エラー メッセージ\] エディット コントロールの両方に対して機能します。  
+ アクセラレータ キーは、コピー (CTRL + C)、切り取り (CTRL + X)、および貼り付け (CTRL + V) の作業を両方とも、**値**と**エラー メッセージ**最初のテキストが強調表示した場合にコントロールを編集します。  
   
-## このセクションの内容  
- [&#91;値&#93; エディット コントロール](../../build/reference/value-edit-control.md)  
- ERRLOOK の \[値\] エディット コントロールについて説明します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [[値] エディット コントロール](../../build/reference/value-edit-control.md)  
+ ERRLOOK の [値] エディット コントロールについて説明します。  
   
- [&#91;エラー メッセージ&#93; エディット コントロール](../../build/reference/error-message-edit-control.md)  
- ERRLOOK の \[エラー メッセージ\] エディット コントロールについて説明します。  
+ [[エラー メッセージ] エディット コントロール](../../build/reference/error-message-edit-control.md)  
+ ERRLOOK の [エラー メッセージ] エディット コントロールについて説明します。  
   
- [&#91;モジュール&#93; ボタン](../../build/reference/modules-button.md)  
- ERRLOOK の \[モジュール\] ボタンについて説明します。  
+ [[モジュール] ボタン](../../build/reference/modules-button.md)  
+ ERRLOOK の [モジュール] ボタンについて説明します。  
   
- [&#91;検索&#93; ボタン](../../build/reference/look-up-button.md)  
- ERRLOOK の \[検索\] ボタンについて説明します。  
+ [[検索] ボタン](../../build/reference/look-up-button.md)  
+ ERRLOOK の [検索] ボタンについて説明します。  
   
-## 関連項目  
- [C と C\+\+ のビルド ツール](../Topic/C-C++%20Build%20Tools.md)  
- Visual C\+\+ に付属の C\/C\+\+ ビルド ツールについて説明するトピックへのリンクがあります。
+## <a name="related-sections"></a>関連項目  
+ [C/C++ のビルド ツール](../../build/reference/c-cpp-build-tools.md)  
+ Visual C++ に付属の C/C++ ビルド ツールについて説明するトピックへのリンクがあります。

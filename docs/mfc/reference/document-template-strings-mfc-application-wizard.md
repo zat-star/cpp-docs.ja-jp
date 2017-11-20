@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- vc.appwiz.mfc.exe.doctemp
-dev_langs:
-- C++
-helpviewer_keywords:
-- MFC Application Wizard, document template strings
+f1_keywords: vc.appwiz.mfc.exe.doctemp
+dev_langs: C++
+helpviewer_keywords: MFC Application Wizard, document template strings
 ms.assetid: 8109f662-3182-4682-977a-2503321c678a
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
 ms.openlocfilehash: 96cbb565ffae20d449b2164280fa461b2acfd4fd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="document-template-strings-mfc-application-wizard"></a>[ドキュメント テンプレート文字列] (MFC アプリケーション ウィザード)
 MFC アプリケーション ウィザードのこのページではドキュメント管理とローカライズ化のために次のオプションを指定または変更します。 ドキュメント テンプレート文字列が含むアプリケーションの使用可能な**ドキュメント/ビュー アーキテクチャ サポート**で、[アプリケーションの種類](../../mfc/reference/application-type-mfc-application-wizard.md)です。 これらはダイアログ ボックスを使用できません。 ドキュメント テンプレート文字列のほとんどは表示されているアプリケーションのユーザーによって使用されるためにローカライズされます、**リソース言語**に示されている、**アプリケーションの種類**ウィザードのページです。  
@@ -51,5 +46,4 @@ MFC アプリケーション ウィザードのこのページではドキュメ
   
 ## <a name="see-also"></a>関連項目  
  [MFC アプリケーション ウィザード](../../mfc/reference/mfc-application-wizard.md)
-
 

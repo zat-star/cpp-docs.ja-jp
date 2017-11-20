@@ -1,61 +1,59 @@
 ---
-title: "NotifyHandler | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "NotifyHandler"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "NotifyHandler 関数"
+title: "NotifyHandler |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: NotifyHandler
+dev_langs: C++
+helpviewer_keywords: NotifyHandler function
 ms.assetid: 5ff953ec-de35-42bc-8b3c-d384d636c139
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ea725b470d08688ed824991d308677970e2c8277
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# NotifyHandler
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-独自のメッセージ マップの `NOTIFY_HANDLER` マクロの 3 番目のパラメーターで識別される関数の名前。  
+# <a name="notifyhandler"></a>NotifyHandler
+3 番目のパラメーターで識別される関数の名前、`NOTIFY_HANDLER`メッセージ マップ マクロです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-  
-      LRESULT   
-      NotifyHandler  
-      (  
-   int idCtrl,  
-   LPNMHDR pnmh,  
-   BOOL& bHandled   
-);  
+ 
+    LRESULT 
+    NotifyHandler 
+ (
+    int idCtrl,  
+    LPNMHDR pnmh,  
+    BOOL& bHandled);
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `idCtrl`  
- メッセージを送信するコントロールの ID。  
+ メッセージを送信するコントロールの識別子。  
   
  *pnmh*  
- 通知コードと追加情報を含む [NMHDR](http://msdn.microsoft.com/library/windows/desktop/bb775514) の構造体のアドレス。  ある通知メッセージは、最初のメンバーとして **NMHDR** の構造が大きいこのパラメーターの構造体へのポインター。  
+ アドレス、 [NMHDR](http://msdn.microsoft.com/library/windows/desktop/bb775514)通知コードおよびその他の情報を含む構造体。 このパラメーターを持つより大きな構造体をポイントするいくつかの通知メッセージについて、 **NMHDR**構造はその最初のメンバーとして。  
   
  `bHandled`  
- メッセージ マップでは、**\[真\]** に *NotifyHandler が* 呼び出される前に `bHandled` を設定します。  *NotifyHandler が* 完全にメッセージを処理しない限り、**FALSE** にメッセージがさらに処理する必要があることを示すために `bHandled` を設定する必要があります。  
+ メッセージ マップ セット`bHandled`に**TRUE**する前に*NotifyHandler*と呼びます。 場合*NotifyHandler* 、メッセージを完全に処理しませんに設定する必要があります`bHandled`に**FALSE**を示すメッセージがさらに処理を必要があります。  
   
-## 戻り値  
- メッセージの処理の結果。  正常に終了した場合は 0。  
+## <a name="return-value"></a>戻り値  
+ メッセージの処理の結果。 正常終了した場合は 0 を返します。  
   
-## 解説  
- メッセージ マップのこのメッセージ ハンドラーの使用例については、[NOTIFY\_HANDLER](../Topic/NOTIFY_HANDLER.md)を参照してください。  
+## <a name="remarks"></a>コメント  
+ メッセージ マップでこのメッセージ ハンドラーを使用しての例は、次を参照してください。 [NOTIFY_HANDLER](reference/message-map-macros-atl.md#notify_handler))。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ウィンドウの実装](../atl/implementing-a-window.md)   
  [メッセージ マップ](../atl/message-maps-atl.md)   
- [WM\_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)
+ [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)
+

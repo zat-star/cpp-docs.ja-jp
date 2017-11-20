@@ -1,53 +1,52 @@
 ---
-title: "default (OpenMP) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "default"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "default OpenMP clause"
-  - "defaults, OpenMP clause"
+title: "既定値 (OpenMP) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: default
+dev_langs: C++
+helpviewer_keywords:
+- default OpenMP clause
+- defaults, OpenMP clause
 ms.assetid: 96055106-a8f0-40b3-8319-e412b6e07bf8
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: caafb7818c32dad7b21ac7a05d10f77753c1da73
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# default (OpenMP)
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-並列領域で unscoped 変数の動作を指定します。  
+# <a name="default-openmp"></a>default (OpenMP)
+並列領域で、対象範囲外の変数の動作を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 default(shared | none)  
 ```  
   
-## 解説  
- `shared` が有効である `default` 句で指定されていない場合 [shared](../../../parallel/openmp/reference/shared-openmp.md) の句で指定されている並列領域内の変数は処理されることを意味します。  `none` は並列領域 [shared](../../../parallel/openmp/reference/shared-openmp.md)[reduction](../../../parallel/openmp/reference/reduction.md)[firstprivate](../Topic/firstprivate.md)または [lastprivate](../../../parallel/openmp/reference/lastprivate.md) の句で使用する [private](../../../parallel/openmp/reference/private-openmp.md) としてスコープの変数を指定するとコンパイラ エラーが発生することを意味します。  
+## <a name="remarks"></a>コメント  
+ `shared`を有効になっている場合、`default`句が指定されていないこと、並行領域内の変数として扱われることを指定したことを意味、[共有](../../../parallel/openmp/reference/shared-openmp.md)句。 `none`すべての変数とスコープは設定されませんを並列領域で使用される、[プライベート](../../../parallel/openmp/reference/private-openmp.md)、[共有](../../../parallel/openmp/reference/shared-openmp.md)、[削減](../../../parallel/openmp/reference/reduction.md)、 [firstprivate](../../../parallel/openmp/reference/firstprivate.md)、または[lastprivate](../../../parallel/openmp/reference/lastprivate.md)句には、コンパイラ エラーが発生します。  
   
- `default` は次のディレクティブに対象 :  
+ `default`次のディレクティブに適用されます。  
   
 -   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
--   [for](../Topic/for%20\(OpenMP\).md)  
+-   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
--   [sections](../../../parallel/openmp/reference/sections-openmp.md)  
+-   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
   
- 詳細については、「[2.7.2.5 default](../../../parallel/openmp/2-7-2-5-default.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.7.2.5 既定](../../../parallel/openmp/2-7-2-5-default.md)です。  
   
-## 使用例  
- `default` 使用例については[private](../../../parallel/openmp/reference/private-openmp.md) を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[プライベート](../../../parallel/openmp/reference/private-openmp.md)の使用例については`default`します。  
   
-## 参照  
- [Clauses](../../../parallel/openmp/reference/openmp-clauses.md)
+## <a name="see-also"></a>関連項目  
+ [句](../../../parallel/openmp/reference/openmp-clauses.md)

@@ -4,29 +4,25 @@ ms.custom:
 ms.date: 05/17/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK2019
-dev_langs:
-- C++
+f1_keywords: LNK2019
+dev_langs: C++
 helpviewer_keywords:
 - nochkclr.obj
 - LNK2019
 - _check_commonlanguageruntime_version
 ms.assetid: 4392be92-195c-4eb2-bd4d-49cfac3ca291
-caps.latest.revision: 39
+caps.latest.revision: "39"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: ce3fddc9977f0abda1d776fd66172dbb49e86d3a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 4cb4413b8c0b53b407724dd16083027b89b91b37
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="linker-tools-error-lnk2019"></a>リンカ ツール エラー LNK2019
 未解決の外部シンボル '*シンボル*'関数で参照されている'*関数*'  
@@ -61,6 +57,8 @@ LNK2019 エラーが発生する一般的な問題には次のものがありま
   
 -   **Windows アプリケーション用の設定を使用してコンソール アプリケーションをビルドしている。** エラー メッセージがような場合**WinMain が関数で参照されている未解決の外部シンボル**`function_name`を使用してリンク**/SUBSYSTEM:CONSOLE**の代わりに**/SUBSYSTEM:WINDOWS**. この設定の詳細と、Visual Studio でこのプロパティを設定する手順の詳細については、「 [/SUBSYSTEM (Specify Subsystem)](../../build/reference/subsystem-specify-subsystem.md)」を参照してください。  
   
+-   **64 ビット ライブラリを 32 ビット コード、または 64 ビット コードを 32 ビット ライブラリにリンクしようとするとします。** ライブラリと、コードにリンクされているオブジェクト ファイルは、コードと同じアーキテクチャをコンパイルする必要があります。 いることを確認、プロジェクトと同じアーキテクチャ向けのプロジェクト参照にコンパイルされたライブラリです。 確認、 [/LIBPATH](../../build/reference/libpath-additional-libpath.md)または**追加のライブラリ ディレクトリ**path オプションが適切なアーキテクチャ用に作成されたライブラリをリンカー ポイントによって使用されます。
+
 -   **異なるソース ファイル内でインライン展開されている関数に対して異なるコンパイラ オプションを使用しています。** .cpp ファイルで定義されている関数のインライン展開を使用している場合に、異なるソース ファイルで関数のインライン展開のコンパイラ オプションが混在していると、LNK2019 が発生することがあります。 詳細については、「 [Function Inlining Problems](../../error-messages/tool-errors/function-inlining-problems.md)」を参照してください。  
   
 -   **自動変数をそのスコープ外で使用している。** 自動変数 (関数スコープ) は、その関数のスコープ内でのみ使用できます。 これらの変数を `extern` として宣言して他のソース ファイルで使用することはできません。 例については、「 [Automatic (Function Scope) Variables](../../error-messages/tool-errors/automatic-function-scope-variables.md)」を参照してください。  
@@ -194,5 +192,4 @@ int main() {
 ## <a name="additional-resources"></a>その他の技術情報  
   
 LNK2001 の考えられる原因および解決方法に関する詳細については、スタック オーバーフローの質問を参照してください。 [、未定義の参照/未解決外部シンボルというエラーと、その修正方法?](http://stackoverflow.com/q/12573816/2002113)です。  
-
 

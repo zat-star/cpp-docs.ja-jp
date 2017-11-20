@@ -1,32 +1,30 @@
 ---
-title: "RuntimeClassBaseT::AsIID メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::RuntimeClassBaseT::AsIID"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AsIID メソッド"
+title: "Runtimeclassbaset::asiid メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::RuntimeClassBaseT::AsIID
+dev_langs: C++
+helpviewer_keywords: AsIID method
 ms.assetid: 90d7df8a-cf9e-4eef-8837-bc1a25f3fa1a
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 796718c4533bf8730ca7a4c733e5809fb0fde880
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# RuntimeClassBaseT::AsIID メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="runtimeclassbasetasiid-method"></a>RuntimeClassBaseT::AsIID メソッド
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -39,30 +37,30 @@ __forceinline static HRESULT AsIID(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- インターフェイス ID を実装する型には、パラメーター `riid`で指定します。  
+ パラメーターで指定されたインターフェイス ID を実装する型`riid`です。  
   
  `implements`  
- テンプレート パラメーター `T`で指定されている型の変数。  
+ テンプレート パラメーターで指定された型の変数`T`です。  
   
  `riid`  
- 取得するインターフェイスの ID。  
+ 取得するインターフェイス ID です。  
   
  `ppvObject`  
- この操作が正常に終了した場合、インターフェイスへのポインターへのポインターは `riid`パラメーターで指定します。  
+ ポインターに-を - インターフェイスへのポインターがパラメーターで指定されたこの操作が成功した場合は、`riid`です。  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は、エラーを示す HRESULT を返します。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合、エラーを説明する HRESULT。  
   
-## 解説  
- 指定されたインターフェイス ID へのポインターを取得します  
+## <a name="remarks"></a>コメント  
+ 指定したインターフェイス ID へのポインターを取得します  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [RuntimeClassBaseT 構造体](../windows/runtimeclassbaset-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

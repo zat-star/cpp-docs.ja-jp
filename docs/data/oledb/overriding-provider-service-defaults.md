@@ -1,44 +1,44 @@
 ---
-title: "プロバイダー サービスの既定のオーバーライド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB サービス [OLE DB], オーバーライド (既定値を)"
-  - "サービス プロバイダー [OLE DB]"
+title: "プロバイダー サービスの既定をオーバーライドする |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- service providers [OLE DB]
+- OLE DB services [OLE DB], overriding defaults
 ms.assetid: 08e366c0-74d8-463b-93a6-d58a8dc195f8
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 479f3464db46fda4c566feeaeec2f7fe5384ee87
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロバイダー サービスの既定のオーバーライド
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロバイダーの **OLEDB\_SERVICES** のレジストリ値は、データ ソース オブジェクトの [DBPROP\_INIT\_OLEDBSERVICES](https://msdn.microsoft.com/en-us/library/ms716898.aspx) 初期化プロパティの既定値として返されます。  
+# <a name="overriding-provider-service-defaults"></a>プロバイダー サービスの既定のオーバーライド
+プロバイダーのレジストリ値を**OLEDB_SERVICES**の既定値として返される、 [DBPROP_INIT_OLEDBSERVICES](https://msdn.microsoft.com/en-us/library/ms716898.aspx)データ ソース オブジェクトのプロパティを初期化します。  
   
- レジストリ エントリが存在する限り、プロバイダーのオブジェクトは集約されます。ユーザーは初期化の前に **DBPROP\_INIT\_OLEDBSERVICES** プロパティを設定することにより、プロバイダーの有効なサービスの既定の設定をオーバーライドできます。  特定のサービスを有効または無効にするために、一般には、**DBPROP\_INIT\_OLEDBSERVICES** プロパティの現在値を取得し、有効または無効にする特定のプロパティのビットを設定またはクリアして、プロパティのリセットを行います。  **DBPROP\_INIT\_OLEDBSERVICES** は、OLE DB で直接設定するか、ADO または **IDataInitialize::GetDatasource** に渡される接続文字列で設定できます。  各サービスを有効または無効にする値を次の表に示します。  
+ レジストリ エントリが存在する限り、プロバイダーのオブジェクトの集計し、ユーザーは、プロバイダーの既定の設定して有効にするサービスの設定をオーバーライドできます、 **DBPROP_INIT_OLEDBSERVICES**プロパティ初期化の前にします。 有効にするにまたは特定のサービスを無効にするには、ユーザー、通常、現在の値を取得、 **DBPROP_INIT_OLEDBSERVICES**設定プロパティ、またはを有効または無効になっている、特定のプロパティのビットをクリアし、プロパティをリセットします。 **DBPROP_INIT_OLEDBSERVICES** OLE DB や ADO に渡された接続文字列で直接設定することができますか**idatainitialize::getdatasource**です。 個々 のサービスの有効/無効にする、対応する値は、次の表に一覧表示されます。  
   
-|既定の有効なサービス|DBPROP\_INIT\_OLEDBSERVICES プロパティ値|接続文字列内の値|  
-|----------------|----------------------------------------|--------------|  
-|すべてのサービス \(既定\)|**DBPROPVAL\_OS\_ENABLEALL**|"OLE DB Services \= \-1;"|  
-|プールと自動確保を除くすべて|**DBPROPVAL\_OS\_ENABLEALL &**<br /><br /> **~DBPROPVAL\_OS\_RESOURCEPOOLING &**<br /><br /> **~DBPROPVAL\_OS\_TXNENLISTMENT**|"OLE DB Services \= \-4;"|  
-|クライアント カーソルを除くすべて|**DBPROPVAL\_OS\_ENABLEALL**&<br /><br /> ~**DBPROPVAL\_OS\_CLIENTCURSOR**|"OLE DB Services \= \-5;"|  
-|プール、自動確保、およびクライアント カーソルを除くすべて|**DBPROPVAL\_OS\_ENABLEALL &**<br /><br /> **~DBPROPVAL\_OS\_TXNENLISTMENT &**<br /><br /> **~DBPROPVAL\_OS\_CLIENTCURSOR**|"OLE DB Services \= \-7;"|  
-|サービスなし|~**DBPROPVAL\_OS\_ENABLEALL**|"OLE DB Services \= 0;"|  
+|既定のサービスを有効になっています。|DBPROP_INIT_OLEDBSERVICES プロパティ値|接続文字列内の値します。|  
+|------------------------------|------------------------------------------------|--------------------------------|  
+|すべてのサービス (既定値)|**DBPROPVAL_OS_ENABLEALL**|"OLE DB サービス =-1 です"。|  
+|以外のすべてのプールと自動確保|**DBPROPVAL_OS_ENABLEALL (& A)**<br /><br /> **~ DBPROPVAL_OS_RESOURCEPOOLING (& A)**<br /><br /> **~ DBPROPVAL_OS_TXNENLISTMENT**|"OLE DB サービス =-4;"|  
+|以外のすべてのクライアント カーソル|**DBPROPVAL_OS_ENABLEALL** &<br /><br /> ~**DBPROPVAL_OS_CLIENTCURSOR**|"OLE DB サービス =-5;"|  
+|プールが、自動確保、およびクライアント カーソルを除くすべて|**DBPROPVAL_OS_ENABLEALL (& A)**<br /><br /> **~ DBPROPVAL_OS_TXNENLISTMENT (& A)**<br /><br /> **~ DBPROPVAL_OS_CLIENTCURSOR**|"OLE DB サービス =-7;"|  
+|サービスはありません。|~**DBPROPVAL_OS_ENABLEALL**|"OLE DB サービス = 0 になります"。|  
   
- レジストリ エントリがプロバイダーに対して存在しない場合、コンポーネント マネージャーはプロバイダーのオブジェクトを集約せず、ユーザーにより明示的に要求された場合でもサービスは起動しません。  
+ プロバイダーのレジストリ エントリが存在しない場合は、コンポーネント マネージャーは、プロバイダーのオブジェクトを集計されないと、サービスは起動しません、ユーザーによって明示的に要求された場合でもです。  
   
-## 参照  
- [Resource Pooling](https://msdn.microsoft.com/en-us/library/ms713655.aspx)   
- [How Consumers Use Resource Pooling](https://msdn.microsoft.com/en-us/library/ms715907.aspx)   
- [How Providers Work Effectively with Resource Pooling](https://msdn.microsoft.com/en-us/library/ms714906.aspx)   
+## <a name="see-also"></a>関連項目  
+ [リソース プール](https://msdn.microsoft.com/en-us/library/ms713655.aspx)   
+ [コンシューマーがリソース プールを使用する方法](https://msdn.microsoft.com/en-us/library/ms715907.aspx)   
+ [プロバイダーのしくみ効果的では、リソース プール](https://msdn.microsoft.com/en-us/library/ms714906.aspx)   
  [OLE DB サービスの有効化と無効化](../../data/oledb/enabling-and-disabling-ole-db-services.md)

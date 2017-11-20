@@ -1,37 +1,37 @@
 ---
-title: "QueryInterface | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "QueryInterface"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "インターフェイス, 可用性"
-  - "インターフェイス, ポインター"
-  - "QueryInterface メソッド"
+title: "QueryInterface |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: QueryInterface
+dev_langs: C++
+helpviewer_keywords:
+- interfaces, pointers
+- interfaces, availability
+- QueryInterface method
 ms.assetid: 62fce95e-aafa-4187-b50b-e6611b74c3b3
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b269ed51cc9a1648de7a52f9c250919c9ef4c1c3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# QueryInterface
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-オブジェクトが機能を表現できる機構が、静的に提供する \(インスタンス化される前に\) ですが、基本的な COM の機構は [QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521)という **IUnknown** のメソッドを使用することです。  
+# <a name="queryinterface"></a>QueryInterface
+基本的な COM 機構は使用するメカニズムでオブジェクトが静的に (前にインスタンス化される) を提供する機能を表すことができますが、 **IUnknown**呼び出されるメソッド[QueryInterface](http://msdn.microsoft.com/library/windows/desktop/ms682521).  
   
- すべてのインターフェイスは **IUnknown**から派生しているため、すべてのインターフェイスに `QueryInterface`の実装があります。  実装に関係なく、このメソッドは呼び出し元は、ポインターを取得するインターフェイスの IID を使用してオブジェクトを照会します。  また `AddRef`の呼び出し中にインターフェイスをサポートするオブジェクト、`QueryInterface` がインターフェイスへのポインターを取得します。  それ以外の場合は **E\_NOINTERFACE** のエラー コードを返します。  
+ 派生したすべてのインターフェイスは**IUnknown**ですべてのインターフェイスの実装を持つため、`QueryInterface`です。 実装に関係なくは、このメソッドは、呼び出し元がポインターを希望するインターフェイスの IID を使用してオブジェクトを照会します。 オブジェクトは、そのインターフェイスをサポートしている場合`QueryInterface`もの呼び出し中に、インターフェイスへのポインターを取得`AddRef`です。 返しますそれ以外の場合、 **E_NOINTERFACE**エラー コード。  
   
- [参照カウント](../atl/reference-counting.md) の規則には常に従う必要があります。  ゼロに参照カウントをデクリメントするためのインターフェイス ポインターの **\[リリース\]** を呼び出すと、このポインターを使用しないでください。  ときどきオブジェクト \(つまり、参照カウントをインクリメントしませんの 1 つがインターフェイスへのポインターを取得する\) への弱い参照を取得する必要がある `QueryInterface` を **\[リリース\]**後に呼び出さないことで行います。は適切ではありません。  このような方法で取得されたポインターは無効なため、使用しないでください。  [\_ATL\_DEBUG\_INTERFACES](../Topic/_ATL_DEBUG_INTERFACES.md) が定義されているため、このマクロを定義すると、参照カウント バグを検出する便利な方法です。この場合も簡単に明確になります。  
+ 従う必要があります注[参照カウント](../atl/reference-counting.md)常時ルール。 呼び出す場合**リリース**をゼロに参照カウントをデクリメントするためのインターフェイス ポインターで使用しないでそのポインターもう一度です。 場合によっては、オブジェクトへの弱い参照を取得する必要があります (つまり、する場合、参照カウントをインクリメントせずにそのインターフェイスのいずれかへのポインターを取得)、呼び出すことによってこれに余裕がないが、`QueryInterface`続く**リリース**です。 このような方法で取得したポインターは有効は使用できません。 これより容易に明らかになるとき[_ATL_DEBUG_INTERFACES](reference/debugging-and-error-reporting-macros.md#_atl_debug_interfaces)が定義されている場合は、検索する参照がカウントのバグの便利な方法は、このマクロを定義するようにします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [COM の概要](../atl/introduction-to-com.md)   
- [QueryInterface: Navigating in an Object](http://msdn.microsoft.com/library/windows/desktop/ms687230)
+ [QueryInterface: オブジェクト間の移動](http://msdn.microsoft.com/library/windows/desktop/ms687230)
+

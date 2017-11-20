@@ -1,45 +1,43 @@
 ---
-title: "hash_set::lower_bound (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::lower_bound"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lower_bound メンバー [STL/CLR]"
+title: "hash_set::lower_bound (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_set::lower_bound
+dev_langs: C++
+helpviewer_keywords: lower_bound member [STL/CLR]
 ms.assetid: 54fe8ee5-1977-4192-9cc6-b51e84b03a16
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ee6c0cbea5a6e4b2d4730de7bb55564bb8200e85
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_set::lower_bound (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定したキーに一致する範囲の先頭を検索します。  
+# <a name="hashsetlowerbound-stlclr"></a>hash_set::lower_bound (STL/CLR)
+指定したキーに一致する範囲の先頭を検出します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 iterator lower_bound(key_type key);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  key  
- 検索するキー値。  
+ 検索対象のキー値。  
   
-## 解説  
- このメンバー関数は `key` と同じバケットにハッシュし、`key`に並べる等価である被制御シーケンスの最初の要素 `X` が決まります。  そのような要素が存在しない場合、[hash\_set::end](../dotnet/hash-set-end-stl-clr.md)`()`;を返します それ以外の場合は `X`を指定する反復子を返します。  被制御シーケンスで指定したキーに一致する要素のシーケンスの先頭を現在の検索に使用されます。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、最初の要素を決定する`X`同じバケットにハッシュされる被制御シーケンス内`key`と同じ順序が`key`です。 このような要素が存在しないかどうかが返されます[hash_set::end (STL/CLR)](../dotnet/hash-set-end-stl-clr.md)`()`; 指定する反復子を返しますそれ以外の場合`X`です。 これを使用して、指定したキーと一致する、被制御シーケンス内で現在の要素のシーケンスの先頭を検索します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_lower_bound.cpp   
@@ -71,18 +69,21 @@ int main()
   
 ```  
   
-  **b c**  
-**lower\_bound\(L'x'\)\=\=end\(\) \= true**  
-**\*lower\_bound \(L'a\) \= a**  
-**\*lower\_bound \(L'b \= b\)**    
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+lower_bound(L'x')==end() = True  
+*lower_bound(L'a') = a  
+*lower_bound(L'b') = b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set::count](../dotnet/hash-set-count-stl-clr.md)   
- [hash\_set::equal\_range](../dotnet/hash-set-equal-range-stl-clr.md)   
- [hash\_set::find](../Topic/hash_set::find%20\(STL-CLR\).md)   
- [hash\_set::upper\_bound](../dotnet/hash-set-upper-bound-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set::count (STL/CLR)](../dotnet/hash-set-count-stl-clr.md)   
+ [hash_set::equal_range (STL/CLR)](../dotnet/hash-set-equal-range-stl-clr.md)   
+ [hash_set::find (STL/CLR)](../dotnet/hash-set-find-stl-clr.md)   
+ [hash_set::upper_bound (STL/CLR)](../dotnet/hash-set-upper-bound-stl-clr.md)

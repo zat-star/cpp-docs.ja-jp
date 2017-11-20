@@ -1,48 +1,51 @@
 ---
-title: "イベント処理インターフェイスの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, イベント処理"
-  - "イベント処理, ATL"
-  - "インターフェイス, イベントとイベント シンク"
+title: "イベント処理インターフェイスを実装する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ATL, event handling
+- event handling, ATL
+- interfaces, event and event sink
 ms.assetid: eb2a5b33-88dc-4ce3-bee0-c5c38ea050d7
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3ea192e863fe9813a762c0c948cc141b068c3f43
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# イベント処理インターフェイスの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL は、イベントの処理に必要な 3 つすべての要素の使用: イベント インターフェイスを実装し、イベント ソースとイベント ソースを unadvising に指示されます。  に実行する必要がある正確な手順は、イベント インターフェイスの型と、アプリケーションのパフォーマンス要件によって異なります。  
+# <a name="implementing-the-event-handling-interface"></a>イベント処理インターフェイスを実装します。
+ATL を支援するイベントを処理するために必要なすべての 3 つの要素: イベント インターフェイスを実装する、イベント ソースのことを通知するイベント ソースをアドバイズとします。 実行する必要があります具体的な手順は、イベント インターフェイスと、アプリケーションのパフォーマンス要件の種類によって異なります。  
   
- ATL を使用してインターフェイスを実装する最も一般的な方法は次のとおりです:  
+ ATL を使用してインターフェイスを実装する最も一般的な方法は次のとおりです。  
   
 -   カスタム インターフェイスから直接派生します。  
   
--   タイプ ライブラリに記述されているデュアル インターフェイスの [IDispatchImpl](../atl/reference/idispatchimpl-class.md) から派生します。  
+-   派生する[IDispatchImpl](../atl/reference/idispatchimpl-class.md)デュアル インターフェイスのタイプ ライブラリに記述します。  
   
--   タイプ ライブラリに記述されているディスパッチ インターフェイスの [IDispEventImpl](../atl/reference/idispeventimpl-class.md) から派生します。  
+-   派生する[IDispEventImpl](../atl/reference/idispeventimpl-class.md)ディスパッチ インターフェイスのタイプ ライブラリに記述します。  
   
--   実行時に型情報を読み込まないことで、効率を改善する場合のタイプ ライブラリに記述されていないディスパッチ インターフェイスの [IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md) から取得するか。  
+-   派生する[されます](../atl/reference/idispeventsimpleimpl-class.md)ディスパッチ インターフェイスの場合、タイプ ライブラリまたは実行時に型情報を読み込まないようにして効率を向上する場合に説明しません。  
   
- カスタム、デュアル インターフェイスを実装する場合は、[AtlAdvise](../Topic/AtlAdvise.md) か [CComPtrBase::Advise](../Topic/CComPtrBase::Advise.md)を呼び出して、イベント ソースに指示する必要があります。  独自の呼び出しによって返されるクッキーを追跡する必要があります。  接続を解除呼び出し [AtlUnadvise](../Topic/AtlUnadvise.md)。  
+
+ イベント ソースに呼び出すことによってお知らせくださいカスタムまたはデュアル インターフェイスを実装している場合[AtlAdvise](reference/connection-point-global-functions.md#atladvise)または[CComPtrBase::Advise](../atl/reference/ccomptrbase-class.md#advise)です。 自分での呼び出しによって返されるクッキーを追跡する必要があります。 呼び出す[AtlUnadvise](reference/connection-point-global-functions.md#atlunadvise)への接続を切断します。  
+
   
- `IDispEventImpl` か `IDispEventSimpleImpl`を使用してディスパッチ インターフェイスを実装すると、[IDispEventSimpleImpl::DispEventAdvise](../Topic/IDispEventSimpleImpl::DispEventAdvise.md)を呼び出して、イベント ソースに指示する必要があります。  接続を解除呼び出し [IDispEventSimpleImpl::DispEventUnadvise](../Topic/IDispEventSimpleImpl::DispEventUnadvise.md)。  
+ 使用して、ディスパッチ インターフェイスを実装する場合は`IDispEventImpl`または`IDispEventSimpleImpl`、イベント ソースに呼び出すことによってお知らせください[IDispEventSimpleImpl::DispEventAdvise](../atl/reference/idispeventsimpleimpl-class.md#dispeventadvise)です。 呼び出す[IDispEventSimpleImpl::DispEventUnadvise](../atl/reference/idispeventsimpleimpl-class.md#dispeventunadvise)への接続を切断します。  
   
- 複合コントロールの基本クラスとして `IDispEventImpl` を使用すると、シンク マップに示されたイベント ソースが自動的に表示され、[CComCompositeControl::AdviseSinkMap](../Topic/CComCompositeControl::AdviseSinkMap.md)を使用して unadvised です。  
+ 使用している場合`IDispEventImpl`複合コントロールの基底クラスとシンク マップに一覧表示するイベント ソースはされ、推奨を使用して自動的にアドバイズ[CComCompositeControl::AdviseSinkMap](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)です。  
   
- `IDispEventImpl` と `IDispEventSimpleImpl` のクラスは、のクッキーを管理します。  
+ `IDispEventImpl`と`IDispEventSimpleImpl`クラスでは、cookie を管理します。  
   
-## 参照  
- [イベント処理](../Topic/Event%20Handling%20and%20ATL.md)
+## <a name="see-also"></a>関連項目  
+ [イベント処理](../atl/event-handling-and-atl.md)
+

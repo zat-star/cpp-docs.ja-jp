@@ -1,34 +1,33 @@
 ---
-title: "3.1.3 omp_get_max_threads Function | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "3.1.3 omp_get_max_threads 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 5548897c-546e-4d19-b37b-a76f6b30a0a9
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e021f0873aa94f53a1218a3278a744a0c7740e65
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 3.1.3 omp_get_max_threads Function
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**num\_threads** 句のない並列領域がコードにある場合そのチームを形成するために使用するスレッドの数以上大きいことが保証される整数 **omp\_get\_max\_threads** の関数はを返します。  形式は次のとおりです。  
+# <a name="313-ompgetmaxthreads-function"></a>3.1.3 omp_get_max_threads 関数
+**Omp_get_max_threads**関数には、少なくともチームを形成する場合、並行領域なしに使用されるスレッドの数と同じ大きさが保証される整数を返します、 **num_threads**句その時点でコードを検出することでした。 形式は次のとおりです。  
   
 ```  
 #include <omp.h>  
 int omp_get_max_threads(void);  
 ```  
   
- 次に **omp\_get\_max\_threads** の値の下限を搭載しています :  
+ 次の値の下限の境界を表現する**omp_get_max_threads**:  
   
 ```  
   
@@ -37,16 +36,16 @@ threads-used-for-next-team
   
 ```  
   
- スレッドの数を要求するために次の並列領域が **num\_threads** の句を使用した場合の結果 **omp\_get\_max\_threads** の下限により長いを保持することに注意してください。  
+ 場合は、後続の並行領域を使用して、 **num_threads**句の結果の下限の境界の保証、スレッドの特定の番号を要求する**omp_get_max_threads**なしの long を保持します。  
   
- **omp\_get\_max\_threads** 関数の戻り値が動的に次の並列領域でチームのすべてのスレッドに対して十分なメモリを割り当てるために使用できます。  
+ **Omp_get_max_threads**以降の並列領域で形成されるチームのすべてのスレッドに十分な記憶域を動的に割り当てるには関数の戻り値を使用できます。  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **omp\_get\_num\_threads** の関数はページの 37 [セクション 3.1.2](../../parallel/openmp/3-1-2-omp-get-num-threads-function.md) が表示されます。  
+-   **omp_get_num_threads**関数を参照してください[セクション 3.1.2](../../parallel/openmp/3-1-2-omp-get-num-threads-function.md) [37] ページ。  
   
--   **omp\_set\_num\_threads** の関数はページの 36 [セクション 3.1.1](../../parallel/openmp/3-1-1-omp-set-num-threads-function.md) が表示されます。  
+-   **omp_set_num_threads**関数を参照してください[セクション 3.1.1](../../parallel/openmp/3-1-1-omp-set-num-threads-function.md)ページ 36 にします。  
   
--   **omp\_set\_dynamic** の関数はページの 39 [セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md) が表示されます。  
+-   **omp_set_dynamic**関数を参照してください[セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md)ページ 39 にします。  
   
--   **num\_threads** の句はページの 8. [セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) が表示されます。
+-   **num_threads**句を参照してください[セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページのです。

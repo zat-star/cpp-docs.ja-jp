@@ -1,45 +1,43 @@
 ---
-title: "collection_adapter::swap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::collection_adapter::swap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "swap メンバー [STL/CLR]"
+title: "collection_adapter::swap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::collection_adapter::swap
+dev_langs: C++
+helpviewer_keywords: swap member [STL/CLR]
 ms.assetid: 778f85bf-c6e3-48ff-bc97-0488f3e8f143
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ef46dd324b2da8ed34298c82245af25ef0ce479b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# collection_adapter::swap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="collectionadapterswap-stlclr"></a>collection_adapter::swap (STL/CLR)
 2 つのコンテナーのコンテンツを交換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void swap(collection_adapter<Coll>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- コンテンツの交換先のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コンテンツを交換するコンテナー。  
   
-## 解説  
- このメンバー関数は `*this` と `right`間に保存された BCL ハンドルを交換します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数は、スワップの間で格納されている BCL ハンドル`*this`と`right`です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_collection_adapter_swap.cpp   
@@ -83,15 +81,18 @@ int main()
   
 ```  
   
-  **b c**  
- **X x x x X**  
- **X x x x X**  
- **b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+a b c  
+x x x x x  
+x x x x x  
+a b c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md)   
- [collection\_adapter::operator\=](../dotnet/collection-adapter-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md)   
+ [collection_adapter::operator= (STL/CLR)](../dotnet/collection-adapter-operator-assign-stl-clr.md)

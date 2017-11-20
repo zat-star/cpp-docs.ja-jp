@@ -1,32 +1,30 @@
 ---
-title: "unary_delegate (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::unary_delegate"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "unary_delegate 関数 [STL/CLR]"
+title: "unary_delegate (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::unary_delegate
+dev_langs: C++
+helpviewer_keywords: unary_delegate function [STL/CLR]
 ms.assetid: b3ee253c-98e8-466e-a272-505e47aed061
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 50a59472b2aa2873cf1efe00741f3ddfd98f0e5e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# unary_delegate (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-genereic クラスは 1 引数をデリゲートについて説明します。  引数と戻り値の型を使用して、指定するデリゲートを使用します。  
+# <a name="unarydelegate-stlclr"></a>unary_delegate (STL/CLR)
+Genereic クラスでは、引数が 1 つのデリゲートについて説明します。 使用するデリゲートの引数と戻り値の型を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 generic<typename Arg,  
@@ -34,31 +32,31 @@ generic<typename Arg,
     delegate Result unary_delegate(Arg);  
 ```  
   
-#### パラメーター  
- 引数  
+#### <a name="parameters"></a>パラメーター  
+ arg  
  引数の型。  
   
  結果  
  戻り値の型。  
   
-## 解説  
- genereic デリゲートは 1 引数を関数について説明します。  
+## <a name="remarks"></a>コメント  
+ Genereic デリゲートでは、引数が 1 つの関数について説明します。  
   
- これで T: System.ComponentModel.IComponent  
+ 注意してください。  
   
  `unary_delegare<int, int> Fun1;`  
   
  `unary_delegare<int, int> Fun2;`  
   
- では、型 `Fun1` と `Fun2` はシノニムです:  
+ 種類`Fun1`と`Fun2`シノニムでは、中に。  
   
  `delegate int Fun1(int);`  
   
  `delegate int Fun2(int);`  
   
- これらは同じデータ型ではありません。  
+ 同じ型ではありません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_unary_delegate.cpp   
@@ -82,14 +80,17 @@ int main()
   
 ```  
   
-  **ハッシュ \(L'a\) \= 5**  
-**ハッシュ \(L'b\) \= 22**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+hash(L'a') = 5  
+hash(L'b') = 22  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [binary\_delegate](../Topic/binary_delegate%20\(STL-CLR\).md)   
- [binary\_delegate\_noreturn](../dotnet/binary-delegate-noreturn-stl-clr.md)   
- [unary\_delegate\_noreturn](../dotnet/unary-delegate-noreturn-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [binary_delegate (STL/CLR)](../dotnet/binary-delegate-stl-clr.md)   
+ [binary_delegate_noreturn (STL/CLR)](../dotnet/binary-delegate-noreturn-stl-clr.md)   
+ [unary_delegate_noreturn (STL/CLR)](../dotnet/unary-delegate-noreturn-stl-clr.md)

@@ -1,51 +1,50 @@
 ---
-title: "ISessionPropertiesImpl::GetProperties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ISessionPropertiesImpl::GetProperties"
-  - "ISessionPropertiesImpl.GetProperties"
-  - "GetProperties"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetProperties メソッド"
+title: "Isessionpropertiesimpl::getproperties |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ISessionPropertiesImpl::GetProperties
+- ISessionPropertiesImpl.GetProperties
+- GetProperties
+dev_langs: C++
+helpviewer_keywords: GetProperties method
 ms.assetid: 48726c2a-9599-4fc5-9940-a932faef91ab
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 44e708420162235164355a25e5ec8f8714b4fbf0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ISessionPropertiesImpl::GetProperties
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-セッションで現在設定されている **DBPROPSET\_SESSION** プロパティ グループのプロパティのリストを返します。  
+# <a name="isessionpropertiesimplgetproperties"></a>ISessionPropertiesImpl::GetProperties
+プロパティの一覧を返します、 **DBPROPSET_SESSION**セッションで現在設定されているプロパティ グループです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-      STDMETHOD(GetProperties)(   
-   ULONG cPropertyIDSets,   
-   const DBPROPIDSET rgPropertyIDSets[],   
-   ULONG * pcPropertySets,   
-   DBPROPSET ** prgPropertySets    
+      STDMETHOD(GetProperties)(   
+   ULONG cPropertyIDSets,   
+   const DBPROPIDSET rgPropertyIDSets[],   
+   ULONG * pcPropertySets,   
+   DBPROPSET ** prgPropertySets    
 );  
 ```  
   
-#### パラメーター  
- *OLE DB Programmer's Reference*の [ISessionProperties::GetProperties](https://msdn.microsoft.com/en-us/library/ms723643.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[ISessionProperties::GetProperties](https://msdn.microsoft.com/en-us/library/ms723643.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ISessionPropertiesImpl クラス](../../data/oledb/isessionpropertiesimpl-class.md)   
  [ISessionPropertiesImpl::SetProperties](../../data/oledb/isessionpropertiesimpl-setproperties.md)

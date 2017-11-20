@@ -1,41 +1,41 @@
 ---
-title: "データ ソースとセッション | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "接続 [C++], データ ソース"
-  - "データ ソース [C++], OLE DB"
-  - "OLE DB コンシューマー テンプレート (C++), データ ソース"
+title: "データ ソースとセッション |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- data sources [C++], OLE DB
+- connections [C++], data source
+- OLE DB consumer templates [C++], data sources
 ms.assetid: 6ee52216-e082-4869-a1d6-ce561cfb76e5
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 500ed062dd81681466ada4c749f8a835b9822cb2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# データ ソースとセッション
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の図は、データ ソースとの接続とデータ ソースへのアクセスをサポートするクラスを示します。  各クラスは、標準の OLE DB コンポーネントの実装に基づいています。  
+# <a name="data-sources-and-sessions"></a>データ ソースとセッション
+次の図に接続して、データ ソースへのアクセスをサポートするクラスを示します。 各クラスは、標準の OLE DB コンポーネントの実装に基づいています。  
   
- ![データ ソースとセッション クラス](../../data/oledb/media/vcdatasourcesessionclasses.png "vcDataSourceSessionClasses")  
-データ ソース クラスとセッション クラス  
+ ![データ ソースとセッション クラス](../../data/oledb/media/vcdatasourcesessionclasses.gif "vcdatasourcesessionclasses")  
+データ ソースとセッション クラス  
   
- 次のクラスがあります。  
+ クラスは、次のとおりです。  
   
--   [CDataSource](../Topic/CDataSource%20Class.md) このクラスはデータ ソース オブジェクトをインスタンス化し、OLE DB プロバイダーを通じたデータ ソースとの接続を作成および管理します。  データ ソースは、データ ソース アドレスや認証情報などの情報を接続文字列の形式で受け取ります。  
+-   [CDataSource](../../data/oledb/cdatasource-class.md)このクラスのインスタンスを作成して、OLE DB プロバイダー経由のデータ ソースへの接続を管理するデータ ソース オブジェクトを作成します。 データ ソースは、接続文字列の形式でデータ ソースのアドレスや認証情報などの情報を取得します。  
   
-     システムに登録されている使用可能なプロバイダーの一覧を取得するために、接続の確立前にヘルパー クラスの [CEnumerator](../../data/oledb/cenumerator-class.md) を使用する場合もあります。  これにより、プロバイダーをデータ ソースとして選択できます。  たとえば、**\[データ リンク プロパティ\]** ダイアログ ボックスでは、このクラスを使用して、\[プロバイダー\] タブにプロバイダーの一覧を作成します。  これは、**SQLBrowseConnect** 関数または **SQLDriverConnect** 関数と等価です。  
+     注目に値すヘルパー クラス[CEnumerator](../../data/oledb/cenumerator-class.md)はシステムに登録されている使用可能なプロバイダーの一覧を取得する任意の接続が確立される前に、よく使用します。 これにより、データ ソースとして、プロバイダーを選択できます。 たとえば、**データ リンク プロパティ** ダイアログ ボックスでは、このクラスを使用して、プロバイダーの一覧を事前設定、**プロバイダー**タブです。等価である、 **SQLBrowseConnect**または**SQLDriverConnect**関数。  
   
--   [CSession](../../data/oledb/csession-class.md) このクラスは、データ ソースへの単一アクセス セッションを表すセッション オブジェクトをインスタンス化します。  ただし、1 つのデータ ソースに複数のセッションを作成できます。  各セッションに対して、行セット、コマンド、およびその他のオブジェクトを作成し、データ ソースのデータにアクセスできます。  セッションはトランザクションを処理します。  
+-   [CSession](../../data/oledb/csession-class.md)このクラスのインスタンスを作成、セッション オブジェクト、データ ソースに単一のアクセスのセッションを表します。 ただし、データ ソース内の複数のセッションを作成できます。 セッションごとに、データ ソースからデータにアクセスするには、行セット、コマンド、およびその他のオブジェクトを作成できます。 セッションは、トランザクションを処理します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

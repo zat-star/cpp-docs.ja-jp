@@ -1,32 +1,30 @@
 ---
-title: "stack::stack (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack::stack"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "stack メンバー [STL/CLR]"
+title: "stack::stack (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack::stack
+dev_langs: C++
+helpviewer_keywords: stack member [STL/CLR]
 ms.assetid: f1cfb3fe-4d22-41e5-906b-e8faa0bcde9b
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e12c704561cd56ac251479861740c7df205f1e37
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# stack::stack (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コンテナーのアダプター オブジェクトを構築します。  
+# <a name="stackstack-stlclr"></a>stack::stack (STL/CLR)
+コンテナー アダプター オブジェクトを構築します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 stack();  
@@ -35,39 +33,39 @@ stack(stack<Value, Container>^ right);
 explicit stack(container_type% wrapped);  
 ```  
   
-#### パラメーター  
- \[right\]  
+#### <a name="parameters"></a>パラメーター  
+ 右  
  コピーするオブジェクト。  
   
- ラップされる  
- 使用するラップされたコンテナー。  
+ ラップされました。  
+ 使用するラップされたコンテナーです。  
   
-## 解説  
- 次のコンストラクターを見てください。  
+## <a name="remarks"></a>コメント  
+ : コンス トラクター  
   
  `stack();`  
   
- 空のラップされたコンテナーを作成します。  空の最初の被制御シーケンスを指定する場合に使用します。  
+ 空のラップされたコンテナーを作成します。 空の初期被制御シーケンスの指定に使用するとします。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `stack(stack<Value, Container>% right);`  
   
- `right.get_container()`のコピーであるラップされたコンテナーを作成します。  スタック `right`オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right.get_container()`です。 Stack オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `stack(stack<Value, Container>^ right);`  
   
- `right->get_container()`のコピーであるラップされたコンテナーを作成します。  スタック `*right`オブジェクトによって制御されるシーケンスのコピーである最初の被制御シーケンスを指定する場合に使用します。  
+ ラップされたコンテナーのコピーを作成する`right->get_container()`です。 Stack オブジェクトによって制御されるシーケンスのコピーである初期被制御シーケンスを指定するために使用`*right`です。  
   
- 次のコンストラクターを見てください。  
+ : コンス トラクター  
   
  `explicit stack(container_type% wrapped);`  
   
- ラップされたコンテナーとして既存のコンテナー `wrapped` を使用します。  既存のコンテナーからスタックを構築するときに使用します。  
+ 既存のコンテナーを使用して`wrapped`ラップのコンテナーとして。 既存のコンテナーからのスタックを構築するために使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_stack_construct.cpp   
@@ -107,17 +105,20 @@ int main()
   
 ```  
   
-  **size\(\) \= 0**  
- **X x x x X**  
- **X x x x X**  
- **X x x x X**   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+```Output  
+size() = 0  
+ x x x x x  
+ x x x x x  
+ x x x x x  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/stack >  
   
-## 参照  
- [スタック](../dotnet/stack-stl-clr.md)   
- [stack::assign](../Topic/stack::assign%20\(STL-CLR\).md)   
- [stack::generic\_container](../Topic/stack::generic_container%20\(STL-CLR\).md)   
- [stack::operator\=](../dotnet/stack-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [スタック (STL/CLR)](../dotnet/stack-stl-clr.md)   
+ [stack::assign (STL/CLR)](../dotnet/stack-assign-stl-clr.md)   
+ [stack::generic_container (STL/CLR)](../dotnet/stack-generic-container-stl-clr.md)   
+ [stack::operator= (STL/CLR)](../dotnet/stack-operator-assign-stl-clr.md)

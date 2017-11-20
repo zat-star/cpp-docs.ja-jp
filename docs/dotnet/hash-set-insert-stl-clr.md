@@ -1,32 +1,30 @@
 ---
-title: "hash_set::insert (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_set::insert"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "insert メンバー [STL/CLR]"
+title: "hash_set::insert (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_set::insert
+dev_langs: C++
+helpviewer_keywords: insert member [STL/CLR]
 ms.assetid: 0a9bc9aa-012e-4101-9e8c-f1f4b6b76af7
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f8aa213c24886951f57cf6c8d670fb430a8da530
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_set::insert (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashsetinsert-stlclr"></a>hash_set::insert (STL/CLR)
 要素を追加します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 cliext::pair<iterator, bool> insert(value_type val);  
@@ -36,36 +34,36 @@ template<typename InIter>
 void insert(System::Collections::Generic::IEnumerable<value_type>^ right);  
 ```  
   
-#### パラメーター  
- 最初  
- 挿入する範囲の先頭。  
+#### <a name="parameters"></a>パラメーター  
+ 先頭  
+ 挿入する範囲の開始しています。  
   
  last  
- 挿入する範囲の最後。  
+ 挿入する範囲の終了。  
   
- \[right\]  
- 挿入する列挙体。  
+ 右  
+ 列挙型を挿入します。  
   
  val  
  挿入するキー値。  
   
  where  
- コンテナー内の挿入位置 \(ヒントのみ\)。  
+ (ヒントのみ) を挿入するためのコンテナー内の場所。  
   
-## 解説  
- メンバー関数は残りのオペランドで指定されたシーケンスを挿入します。  
+## <a name="remarks"></a>コメント  
+ 各メンバー関数は、残りのオペランドで指定されたシーケンスを挿入します。  
   
- 一つ目のメンバー関数は、値 `val`要素を挿入することにコミットする `X`値のペアを返します。  `X.second` が TRUE の場合、`X.first` は新しく挿入される要素を指定して; それ以外の場合は `X.first` は等しい要素を指定し、その項目が既に存在している Orders 新しい要素は挿入されません。  単一の要素を挿入する場合に使用します。  
+ 最初のメンバー関数が値を持つ要素を挿入するよう努めて`val`、値のペアを返しますと`X`です。 場合`X.second`が true の場合、`X.first`新しく挿入される要素を指定以外の場合`X.first`それと同等の要素を指定既に順序付けが存在し、新しい要素が挿入されません。 使用する 1 つの要素を挿入します。  
   
- 2 つ目のメンバー関数は、ヒントとして `where` を使用して値 `val`要素 \(パフォーマンスを向上させるため\)、戻り値が新しく挿入される要素を指定する反復子を挿入します。  ユーザーがわかっている要素の横にある可能性のある単一の要素を挿入する場合に使用します。  
+ 2 番目のメンバー関数は、値を持つ要素を挿入します。`val`を使用して、 `where` (パフォーマンスを向上させる) をヒントとしてし、新しく挿入される要素を指定する反復子を返します。 使用することがわかって要素に隣接する可能性のある 1 つの要素を挿入します。  
   
- 3 つ目のメンバー関数は、シーケンス `[``first``,``last``)`を挿入します。  別のシーケンスからコピーしたゼロ使用します。または、より多くの要素を挿入するために。  
+ 3 番目のメンバー関数は、シーケンスを挿入します。 [`first`、 `last`)。 使用する別のシーケンスからコピーした 0 個以上の要素を挿入します。  
   
- 4 つ目のメンバー関数は `right`で指定されたシーケンスを挿入します。  列挙子によって指定されたシーケンスを挿入する場合に使用します。  
+ 4 番目のメンバー関数で指定されたシーケンスを挿入する、`right`です。 使用する列挙子によって説明されているシーケンスを挿入します。  
   
- 各要素の挿入は、被制御シーケンス内の要素数に比例する対数に時間がかかります。  ただし、挿入はカーソルに隣接する要素を指定するヒントを持つ償却された定数時間で実行できます。  
+ 各要素の挿入では、被制御シーケンス内の要素の数の対数に比例して時間がかかります。 挿入は、カーソル位置に隣接する要素を指定するヒントの指定、償却定数時間でただし、実行できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_set_insert.cpp   
@@ -126,18 +124,21 @@ int main()
   
 ```  
   
-  **b c**  
-**挿入 L'x \(\) \= \[X true\]**  
-**挿入 L'b \(\) \= \[false b\]**  
- **b c X**  
-**insert\(begin\(\)、L'y y \=\)**   
- **X\-Y b c**  
- **b c X**  
- **X\-Y b c**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+insert(L'x') = [x True]  
+insert(L'b') = [b False]  
+ a b c x  
+insert(begin(), L'y') = y  
+ a b c x y  
+ a b c x  
+ a b c x y  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_set >  
   
-## 参照  
- [hash\_set](../dotnet/hash-set-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)

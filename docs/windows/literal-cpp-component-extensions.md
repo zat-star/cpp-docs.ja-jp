@@ -1,61 +1,59 @@
 ---
-title: "literal (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "literal"
-  - "literal_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "literal keyword [C++]"
+title: "リテラル (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- literal
+- literal_cpp
+dev_langs: C++
+helpviewer_keywords: literal keyword [C++]
 ms.assetid: 6b1a1f36-2e1d-4a23-8eb6-172f4f3c477f
-caps.latest.revision: 20
-caps.handback.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "20"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d13c8b081f3bcc3efbf20be3c31e2601baa6ca02
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# literal (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**\/clr** コンパイルの `literal` が `static const` 変数のネイティブ等価なので変数 \(データ メンバー\) を説明しました。  
+# <a name="literal-c-component-extensions"></a>リテラル (C++ コンポーネント拡張)
+としてマークされている変数 (データ メンバー)`literal`で、 **/clr**コンパイルに等しいネイティブな`static const`変数。  
   
-## すべてのプラットフォーム  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
  **解説**  
   
- \(この言語機能にはランタイムに適用される特記事項がありません。\)  
+ (この言語機能にはランタイムに適用される特記事項がありません。)  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
  **解説**  
   
- \(この言語機能には Windows ランタイムのみに適用される特記事項がありません。\)  
+ (この言語機能には Windows ランタイムのみに適用される特記事項がありません。)  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
   
-## 解説  
- `literal` とマークされたデータ メンバーは、宣言時に値が定数整数、列挙型、または文字列型である初期化されなければ。  初期化子式の型から静的な定数のデータ メンバーの型への変換はユーザー定義変換を必要とすることはできません。  
+## <a name="remarks"></a>コメント  
+ としてマークされているデータ メンバー`literal`宣言時に初期化する必要があります、値が定数の整数型、列挙型、または文字列型にする必要があります。 初期化式の型から const static データ メンバーの種類への変換では、ユーザー定義の変換は必要ありません必要があります。  
   
- メモリは、ランタイム リテラル フィールドには; コンパイラは、クラスのメタデータのみに値を挿入します。  
+ 実行時以外にリテラル フィールドに対して割り当てられたメモリがありません。コンパイラは、クラスのメタデータにのみその値を挿入します。  
   
- 変数に指定された `static const` は他のコンパイラとメタデータでは使用できません。  
+ 変数のマーク`static const`は他のコンパイラをメタデータに使用できません。  
   
- 詳細については、「[スタティック](../misc/static-cpp.md)」および「[const](../cpp/const-cpp.md)」を参照してください。  
+ 詳細については、次を参照してください。[静的](../cpp/storage-classes-cpp.md)と[const](../cpp/const-cpp.md)です。  
   
- `literal` は状況依存のキーワードです。  詳細については、「[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)」を参照してください。  
+ `literal` は状況依存のキーワードです。 参照してください[状況依存のキーワード](../windows/context-sensitive-keywords-cpp-component-extensions.md)詳細についてはします。  
   
-## 使用例  
- この例では `literal` の変数が `static`を意味することを示しています。  
+## <a name="example"></a>例  
+ 次の例、`literal`変数意味`static`です。  
   
 ```  
 // mcppv2_literal.cpp  
@@ -69,8 +67,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例は、メタデータでリテラルの影響を示す:  
+## <a name="example"></a>例  
+ 次の例は、メタデータには、リテラルの影響を示しています。  
   
 ```  
 // mcppv2_literal2.cpp  
@@ -81,7 +79,7 @@ public ref struct A {
 };  
 ```  
   
- `sc` と `lit`のメタデータの相違を確認する: `modopt` のディレクティブが意味する `sc`に適用される他のコンパイラで無視できることを示します。  
+ メタデータの違いに注意してください`sc`と`lit`:`modopt`にディレクティブが適用される`sc`、他のコンパイラが無視できることを意味します。  
   
 ```  
 .field public static int32 modopt([mscorlib]System.Runtime.CompilerServices.IsConst) sc = int32(0x0000000A)  
@@ -91,8 +89,8 @@ public ref struct A {
 .field public static literal int32 lit = int32(0x0000000A)  
 ```  
   
-## 使用例  
- C\# で記述された次の例では、前の例で作成したメタデータを参照し、`literal` と `static const` 変数の影響を示す:  
+## <a name="example"></a>例  
+ C# で作成されたため、次の例は前の例で作成されたメタデータを参照しての影響を示します`literal`と`static const`変数。  
   
 ```  
 // mcppv2_literal3.cs  
@@ -123,8 +121,8 @@ class B {
 }  
 ```  
   
-## 要件  
- コンパイラ オプション: **\/clr**  
+## <a name="requirements"></a>要件  
+ コンパイラ オプション: **/clr**  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>関連項目  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

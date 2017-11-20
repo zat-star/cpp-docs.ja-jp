@@ -1,45 +1,43 @@
 ---
-title: "stable_partition (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stable_partition"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "stable_partition 関数 [STL/CLR]"
+title: "stable_partition (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stable_partition
+dev_langs: C++
+helpviewer_keywords: stable_partition function [STL/CLR]
 ms.assetid: b82c194c-ae38-4afb-b255-a95a4c2b3101
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: cba7b0a8726bd4373320d0e60fd9d31d7e5899ee
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# stable_partition (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 に span 要素を送信し、それらを実行する前単項述語を設定して、それらの要素が設定、分類して同等の要素の相対順序を保持します。  
+# <a name="stablepartition-stlclr"></a>stable_partition (STL/CLR)
+範囲内の要素を 2 つの分離されたセットに分類し、等価要素の相対順序は維持して、単項述語を満たす要素が単項述語を満たさない要素よりも前に来るように配置します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _BidIt, class _Pr> inline  
     _BidIt stable_partition(_BidIt _First, _BidIt _Last, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `stable_partition`も同じように動作します。  詳細については、「[stable\_partition](../Topic/stable_partition.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`stable_partition`です。 詳細については、次を参照してください。 [stable_partition](../standard-library/algorithm-functions.md#stable_partition)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

@@ -1,144 +1,140 @@
 ---
-title: "プロパティ ページ (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.NotAProp.Edit"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビルド マクロ"
-  - "マクロ, プロジェクト ファイル"
-  - "プロジェクト プロパティ [C++], 既定値"
-  - "プロジェクト プロパティ [C++], 設定"
-  - "プロジェクト ファイル マクロ"
-  - "プロパティ ページ, プロジェクト設定"
-  - "ユーザー定義マクロ"
-  - "ユーザー定義の値"
-  - "Visual C++ プロジェクト, プロパティ"
+title: "プロパティ ページ (Visual C) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VC.Project.NotAProp.Edit
+dev_langs: C++
+helpviewer_keywords:
+- project-file macro
+- project properties [C++], default values
+- user-defined values
+- project properties [C++], setting
+- macros, project-file
+- property pages, project settings
+- Visual C++ projects, properties
+- build macro
+- user-defined macros
 ms.assetid: 13ffe3ea-1bc3-4bee-be5e-053a8a99cce4
-caps.latest.revision: 22
-caps.handback.revision: 22
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "22"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0d276a9ada16c4959be0b5ee20d43bf78e65217b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロパティ ページ (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プロパティ ページを使用することで、Visual Studio プロジェクトの設定を指定できます。  Visual Studio プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開くには、**\[プロジェクト\]** メニューで **\[プロパティ\]** をクリックします。  
+# <a name="property-pages-visual-c"></a>プロパティ ページ (Visual C++)
+プロパティ ページを使用することで、Visual Studio プロジェクトの設定を指定できます。 開くには、**プロパティ ページ** ダイアログ ボックス、Visual Studio のプロジェクトで、**プロジェクト** メニューのをクリックして**プロパティ**です。  
   
- すべてのビルド構成に適用されるようにプロジェクト設定を指定することや、ビルド構成ごとに異なるプロジェクト プロパティを指定することができます。  たとえば、リリース構成の設定や、その他のデバッグ構成の設定を指定することができます。  
+ すべてのビルド構成に適用されるようにプロジェクト設定を指定することや、ビルド構成ごとに異なるプロジェクト プロパティを指定することができます。 たとえば、リリース構成の設定や、その他のデバッグ構成の設定を指定することができます。  
   
- すべての利用可能なページが、**\[プロパティ ページ\]** ダイアログ ボックスに表示されるとは限りません。  表示されるページは、プロジェクト内のファイルの種類によって異なります。  
+ 使用可能なすべてのページが表示されるとは限りません、**プロパティ ページ** ダイアログ ボックス。 表示されるページは、プロジェクト内のファイルの種類によって異なります。  
   
- 詳細については、「[プロジェクトのプロパティの操作](../ide/working-with-project-properties.md)」を参照してください。  
+ 詳細については、次を参照してください。[のプロジェクト プロパティの操作](../ide/working-with-project-properties.md)です。  
   
-## 既定のプロパティと変更されたプロパティの比較  
- **\[新しいプロジェクト\]** ダイアログ ボックスを使用してプロジェクトを作成すると、[!INCLUDE[vsprvs](../assembler/masm/includes/vsprvs_md.md)] が指定されたプロジェクト テンプレートを使用してプロジェクト プロパティを初期化します。  そのため、テンプレート内のプロパティ値は、そのプロジェクトの種類の既定値と見なすことができます。  他のプロジェクトの種類では、プロパティの既定値が異なる場合があります。  
+## <a name="default-properties-vs-modified-properties"></a>既定のプロパティと変更されたプロパティの比較  
+ 使用すると、**新しいプロジェクト**、Visual Studio プロジェクトを作成する ダイアログ ボックスでは、指定されたプロジェクト テンプレートを使用して、プロジェクトのプロパティを初期化します。 そのため、テンプレート内のプロパティ値は、そのプロジェクトの種類の既定値と見なすことができます。 他のプロジェクトの種類では、プロパティの既定値が異なる場合があります。  
   
- プロジェクト プロパティ値は、変更されている場合は太字で表示されます。  プロジェクト プロパティは、次に示す理由によって変更される場合があります。  
+ プロジェクト プロパティ値は、変更されている場合は太字で表示されます。 プロジェクト プロパティは、次に示す理由によって変更される場合があります。  
   
 -   アプリケーション ウィザードが、プロジェクト テンプレートで指定されているプロパティ値とは異なるプロパティ値を必要とするために、プロパティを変更する。  
   
--   **\[新しいプロジェクト\]** ダイアログ ボックスで異なるプロパティ値を指定する。  
+-   異なるプロパティ値を指定する、**新しいプロジェクト** ダイアログ ボックス。  
   
 -   プロジェクトのプロパティ ページで異なるプロパティ値を指定する。  
   
 > [!TIP]
->  MSBuild がプロジェクトのビルドに使用する最終的なプロパティ値のセットを確認するには、プリプロセッサの出力ファイルを調べます。このファイルは、次のコマンド ラインを使用して生成できます。**MSBuild \/preprocess:***preprocessor\_output\_filename*opt *project\_filename*opt  
+>  MSBuild がプロジェクトのビルドに使用するプロパティ値の最終的なセットを表示するには、ファイルを確認、プリプロセッサの出力をこのコマンドラインを使用して生成できます: **MSBuild 前処理/:***preprocessor_output_filename*opt*project_filename*オプトイン  
   
-## プロパティのリセット  
- プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスが表示され、**ソリューション エクスプローラー**内でプロジェクト ノードが選択されている場合、多くのプロパティに対して、**\[親またはプロジェクトの既定値から継承\]** を選択するか、別の方法で値を変更することができます。  
+## <a name="resetting-properties"></a>プロパティのリセット  
+ 表示すると、**プロパティ ページ**プロジェクトおよびプロジェクト ノードのダイアログ ボックスがオンに**ソリューション エクスプ ローラー**、多くのプロパティを選択できます**親またはプロジェクトから継承既定値**値を変更または別の方法です。  
   
- プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスが表示され、**ソリューション エクスプローラー**内でファイルが選択されている場合、多くのプロパティに対して、**\[親またはプロジェクトの既定値から継承\]** を選択するか、別の方法で値を変更することができます。  ただし、プロジェクトの既定値とは異なるプロパティ値を持つファイルがプロジェクトに数多く含まれている場合、プロジェクトのビルドにかかる時間が長くなります。  
+ 表示すると、**プロパティ ページ**プロジェクトとファイルのダイアログ ボックスがオンに**ソリューション エクスプ ローラー**、多くのプロパティを選択できます**親またはプロジェクトの既定値から継承**値を変更または別の方法です。 ただし、プロジェクトの既定値とは異なるプロパティ値を持つファイルがプロジェクトに数多く含まれている場合、プロジェクトのビルドにかかる時間が長くなります。  
   
 > [!TIP]
->  最新の選択状態が表示されるように **\[プロパティ ページ\]** ダイアログ ボックスを更新するには、**\[適用\]** をクリックします。  
+>  更新する、**プロパティ ページ** ダイアログ ボックス、最新の選択を表示するようクリックして**適用**です。  
   
- プロジェクトの既定値の大部分は、システム \(プラットフォーム\) の既定値です。  プロジェクトの既定値の一部は、プロジェクトの **\[全般\]** 構成プロパティ ページの **\[プロジェクトの既定値\]** セクション内のプロパティが更新されたときに適用されるスタイル シートから派生しています。  詳細については、「[\[全般\] プロパティ ページ \(プロジェクト\)](../Topic/General%20Property%20Page%20\(Project\).md)」を参照してください。  
+ プロジェクトの既定値の大部分は、システム (プラットフォーム) の既定値です。 いくつかのプロジェクトの既定のプロパティを更新する場合に適用されるスタイル シートから派生して、**プロジェクトの既定値**のセクション、**全般**プロジェクトのプロパティ ページを構成します。 詳細については、次を参照してください。 [[全般] プロパティ ページ (プロジェクト)](../ide/general-property-page-project.md)です。  
   
-## ユーザー定義の値の指定  
- 特定のプロパティに対して値を定義する必要があります。  ユーザー定義の値には、1 つ以上の英数字またはプロジェクト ファイル マクロ名を含めることができます。  これらのプロパティの一部には、ユーザー定義の値を 1 つしか受け取ることができないものもありますが、その他のプロパティはセミコロンで区切られた複数の値の一覧を受け取ることができます。  
+## <a name="specifying-user-defined-values"></a>ユーザー定義の値の指定  
+ 特定のプロパティに対して値を定義する必要があります。 ユーザー定義の値には、1 つ以上の英数字またはプロジェクト ファイル マクロ名を含めることができます。 これらのプロパティの一部には、ユーザー定義の値を 1 つしか受け取ることができないものもありますが、その他のプロパティはセミコロンで区切られた複数の値の一覧を受け取ることができます。  
   
- プロパティに対してユーザー定義の値 \(プロパティが複数のユーザー定義の値を受け取ることができる場合は値の一覧\) を指定するには、プロパティ名の右側の列で、次の操作のいずれかを実行します。  
+ プロパティに対してユーザー定義の値 (プロパティが複数のユーザー定義の値を受け取ることができる場合は値の一覧) を指定するには、プロパティ名の右側の列で、次の操作のいずれかを実行します。  
   
 -   値または値の一覧を入力します。  
   
--   ドロップダウン矢印をクリックします。  **\[編集\]** を使用できる場合はこれをクリックし、テキスト ボックスに値または値の一覧を入力します。  別の方法で一覧を指定するには、テキスト ボックス内で各値を別の行に入力します。  プロパティ ページに、セミコロンで区切られた値が表示されます。  
+-   ドロップダウン矢印をクリックします。 場合**編集**が利用可能なそれをクリックし、テキスト ボックスに入力値または値の一覧です。 別の方法で一覧を指定するには、テキスト ボックス内で各値を別の行に入力します。 プロパティ ページに、セミコロンで区切られた値が表示されます。  
   
-     プロジェクト ファイル マクロを値として挿入するには、**\[マクロ\]** をクリックし、次にマクロ名をダブルクリックします。  
+     値としてプロジェクト ファイル マクロを挿入するクリックして**マクロ**しマクロ名をダブルクリックします。  
   
--   ドロップダウン矢印をクリックします。  **\[参照\]** を使用できる場合はこれをクリックし、1 つ以上の値を選択します。  
+-   ドロップダウン矢印をクリックします。 場合**参照**が利用可能なそれをクリックし、1 つまたは複数の値を選択します。  
   
- 複数値プロパティについては、プロパティ名の右側の列にあるドロップダウン矢印をクリックし、**\[編集\]** をクリックすると、**\[親またはプロジェクトの既定値から継承\]** オプションを使用できます。  既定では、このオプションはオンになっています。  
+ 複数値プロパティの**親またはプロジェクトの既定値から継承**オプションは、プロパティ名の右側に列のドロップダウン矢印をクリックし、をクリックすると、使用可能な**編集**です。 既定では、このオプションはオンになっています。  
   
- プロパティ ページには、別のレベルから継承する複数値プロパティの、現在のレベルでの設定のみが表示される点に注意してください。  たとえば、**ソリューション エクスプローラー**でファイルが選択されている場合、C\/C\+\+ の **\[プリプロセッサの定義\]** プロパティを選択すると、ファイル レベルの定義は表示されますが、継承したプロジェクト レベルの定義は表示されません。  現在のレベルの値と継承した値を両方表示するには、プロパティ名の右側の列にあるドロップダウン矢印をクリックし、**\[編集\]** をクリックします。  [Visual C\+\+ プロジェクト モデル](http://msdn.microsoft.com/ja-jp/06c1bbd9-4c79-4f97-ad6d-2b1dea8ecd1f)を使用する場合、この動作はファイルおよびプロジェクト上のオブジェクトにも有効です。  つまり、ファイル レベルのプロパティの値を照会しても、プロジェクト レベルの同じプロパティの値は取得されません。  プロジェクト レベルのプロパティの値は、明示的に取得する必要があります。  また、プロパティの継承された値の一部はスタイル シートに由来する場合があり、これはプログラムによってアクセスすることはできません。  
+ プロパティ ページには、別のレベルから継承する複数値プロパティの、現在のレベルでの設定のみが表示される点に注意してください。 たとえば、ファイルが選択されて**ソリューション エクスプ ローラー** C/C++ を選択して**プリプロセッサの定義**プロパティ、ファイル レベルの定義が表示されますが、プロジェクト レベルの定義を継承表示されません。 現在のレベルと継承した値を表示、プロパティ名の右側に列のドロップダウン矢印をクリックし、をクリックする**編集**です。 使用する場合、 [Visual C プロジェクト モデル](http://msdn.microsoft.com/en-us/06c1bbd9-4c79-4f97-ad6d-2b1dea8ecd1f)、この動作がファイルとプロジェクトのオブジェクトに対して有効にします。 つまり、ファイル レベルのプロパティの値を照会しても、プロジェクト レベルの同じプロパティの値は取得されません。 プロジェクト レベルのプロパティの値は、明示的に取得する必要があります。 また、プロパティの継承された値の一部はスタイル シートに由来する場合があり、これはプログラムによってアクセスすることはできません。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
   
-1.  [&#91;参照の検索パスの追加&#93; ダイアログ ボックス](http://msdn.microsoft.com/ja-jp/4520d80d-aa9f-4d11-b92b-2f64a1fd5cb2)  
+ 
+  [詳細、マニフェスト ツールは、構成プロパティ、\<プロジェクト名 > プロパティ ページ ダイアログ ボックス](../ide/advanced-manifest-tool.md)   
   
-2.  [\[詳細\] \(\[\<プロジェクト名\> プロパティ ページ\] ダイアログ ボックス \- \[構成プロパティ\] \- \[マニフェスト ツール\]\)](../Topic/Advanced,%20Manifest%20Tool,%20Configuration%20Properties,%20%3CProjectname%3E%20Property%20Pages%20Dialog%20Box.md)  
+  [[コマンド ライン] プロパティ ページ](../ide/command-line-property-pages.md)  
   
-3.  [\[コマンド ライン\] プロパティ ページ](../Topic/Command%20Line%20Property%20Pages.md)  
+  [[カスタム ビルド ステップ] プロパティ ページ: 全般](../ide/custom-build-step-property-page-general.md)  
   
-4.  [\[カスタム ビルド ステップ\] プロパティ ページ: 全般](../Topic/Custom%20Build%20Step%20Property%20Page:%20General.md)  
+  [参照の追加](../ide/adding-references-in-visual-cpp-projects.md)  
   
-5.  [参照の追加](../ide/adding-references-in-visual-cpp-projects.md)  
+  [[全般] プロパティ ページ (ファイル)](../ide/general-property-page-file.md)  
   
-6.  [\[全般\] プロパティ ページ \(ファイル\)](../Topic/General%20Property%20Page%20\(File\).md)  
+  [[全般] プロパティ ページ (プロジェクト)](../ide/general-property-page-project.md)  
+   
+  [一般に、マニフェスト ツール、構成プロパティ、\<プロジェクト名 > プロパティ ページ ダイアログ ボックス](../ide/general-manifest-tool-configuration-properties.md)  
   
-7.  [\[全般\] プロパティ ページ \(プロジェクト\)](../Topic/General%20Property%20Page%20\(Project\).md)  
+  [[HLSL] プロパティ ページ](../ide/hlsl-property-pages.md)  
   
-8.  [\[全般\] \(\[\<プロジェクト名\> プロパティ ページ\] ダイアログ ボックス \- \[構成プロパティ\] \- \[マニフェスト ツール\]\)](../Topic/General,%20Manifest%20Tool,%20Configuration%20Properties,%20%3CProjectname%3E%20Property%20Pages%20Dialog%20Box.md)  
+  [[詳細] ([HLSL] プロパティ ページ)](../ide/hlsl-property-pages-advanced.md)  
   
-9. [\[HLSL\] プロパティ ページ](../Topic/HLSL%20Property%20Pages.md)  
+  [[全般] ([HLSL] プロパティ ページ)](../ide/hlsl-property-pages-general.md)  
   
-10. [\[詳細\] \(\[HLSL\] プロパティ ページ\)](../Topic/HLSL%20Property%20Pages:%20Advanced.md)  
+  [[HLSL] プロパティ ページ: 出力ファイル](../ide/hlsl-property-pages-output-files.md)  
   
-11. [\[全般\] \(\[HLSL\] プロパティ ページ\)](../Topic/HLSL%20Property%20Pages:%20General.md)  
+  [入力と出力、ツール、構成プロパティをマニフェスト\<プロジェクト名 > プロパティ ページ ダイアログ ボックス](../ide/input-and-output-manifest-tool.md)  
   
-12. [\[HLSL\] プロパティ ページ: 出力ファイル](../Topic/HLSL%20Property%20Pages:%20Output%20Files.md)  
+  [COM、マニフェスト ツールは、[構成プロパティを分離\<プロジェクト名 > プロパティ ページ] ダイアログ ボックス](../ide/isolated-com-manifest-tool.md)  
   
-13. [\[入力と出力\] \(\[\<プロジェクト名\> プロパティ ページ\] ダイアログ ボックス \- \[構成プロパティ\] \- \[マニフェスト ツール\]\)](../Topic/Input%20and%20Output,%20Manifest%20Tool,%20Configuration%20Properties,%20%3CProjectname%3E%20Property%20Pages%20Dialog%20Box.md)  
+  [[リンカー] プロパティ ページ](../ide/linker-property-pages.md)  
   
-14. [\[分離された COM\] \(\[\<プロジェクト名\> プロパティ ページ\] ダイアログ ボックス \- \[構成プロパティ\] \- \[マニフェスト ツール\]\)](../Topic/Isolated%20COM,%20Manifest%20Tool,%20Configuration%20Properties,%20%3CProjectname%3E%20Property%20Pages%20Dialog%20Box.md)  
+  [[マネージ リソース] プロパティ ページ](../ide/managed-resources-property-page.md)  
   
-15. [\[リンカー\] プロパティ ページ](../Topic/Linker%20Property%20Pages.md)  
+  [[マニフェスト ツール] プロパティ ページ](../ide/manifest-tool-property-pages.md)  
   
-16. [\[マネージ リソース\] プロパティ ページ](../Topic/Managed%20Resources%20Property%20Page.md)  
+  [[MIDL] プロパティ ページ](../ide/midl-property-pages.md)  
   
-17. [マニフェスト ツールのプロパティ ページ](../ide/manifest-tool-property-pages.md)  
+  [[詳細] ([MIDL] プロパティ ページ)](../ide/midl-property-pages-advanced.md)  
   
-18. [\[MIDL\] プロパティ ページ](../Topic/MIDL%20Property%20Pages.md)  
+  [[全般] ([MIDL] プロパティ ページ)](../ide/midl-property-pages-general.md)  
   
-19. [\[詳細\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20Advanced.md)  
+  [[出力] ([MIDL] プロパティ ページ)](../ide/midl-property-pages-output.md)  
   
-20. [\[全般\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20General.md)  
+  [NMake プロパティ ページ](../ide/nmake-property-page.md)  
   
-21. [\[出力\] \(\[MIDL\] プロパティ ページ\)](../Topic/MIDL%20Property%20Pages:%20Output.md)  
+  [[リソース] プロパティ ページ](../ide/resources-property-pages.md)  
   
-22. [\[Nmake\] プロパティ ページ](../Topic/NMake%20Property%20Page.md)  
+  [[VC++ ディレクトリ] プロパティ ページ](../ide/vcpp-directories-property-page.md)  
   
-23. [\[リソース\] プロパティ ページ](../Topic/Resources%20Property%20Pages.md)  
+  [[Web 参照] プロパティ ページ](../ide/web-references-property-page.md)  
   
-24. [\[VC\+\+ ディレクトリ\] プロパティ ページ](../Topic/VC++%20Directories%20Property%20Page.md)  
+  [[XML データ ジェネレーター ツール] プロパティ ページ](../ide/xml-data-generator-tool-property-page.md)  
   
-25. [\[Web 参照\] プロパティ ページ](../Topic/Web%20References%20Property%20Page.md)  
+  [[XML ドキュメント ジェネレーター] プロパティ ページ](../ide/xml-document-generator-tool-property-pages.md)  
   
-26. [\[XML データ ジェネレーター ツール\] プロパティ ページ](../Topic/XML%20Data%20Generator%20Tool%20Property%20Page.md)  
-  
-27. [\[XML ドキュメント ジェネレーター\] プロパティ ページ](../Topic/XML%20Document%20Generator%20Tool%20Property%20Pages.md)  
-  
-## 参照  
- [方法 : プロジェクトの依存関係を作成および削除する](../Topic/How%20to:%20Create%20and%20Remove%20Project%20Dependencies.md)   
- [方法 : 構成を作成および編集する](../Topic/How%20to:%20Create%20and%20Edit%20Configurations.md)   
- [アプリケーションの配置](http://msdn.microsoft.com/ja-jp/4ff8881d-0daf-47e7-bfe7-774c625031b4)
+## <a name="see-also"></a>関連項目  
+ [方法: を作成し、プロジェクトの依存関係を削除します。](/visualstudio/ide/how-to-create-and-remove-project-dependencies)   
+ [方法 : 構成を作成および編集する](/visualstudio/ide/how-to-create-and-edit-configurations)   

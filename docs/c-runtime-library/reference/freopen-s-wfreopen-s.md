@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,8 +27,7 @@ f1_keywords:
 - freopen_s
 - _tfreopen_s
 - _wfreopen_s
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _tfreopen_s function
 - _wfreopen_s function
@@ -38,30 +36,15 @@ helpviewer_keywords:
 - wfreopen_s function
 - freopen_s function
 ms.assetid: ad25a4da-6ad4-476b-a86d-660b221ca84d
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: e9500d86661334d59d29496031e8160fbdc99b2d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 6141ed6252bfd196c15cc2e7be4361a840c722d6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="freopens-wfreopens"></a>freopen_s、_wfreopen_s
 ファイル ポインターを再度割り当てます。 これらのバージョンの [freopen、_wfreopen](../../c-runtime-library/reference/freopen-wfreopen.md) は、「[CRT のセキュリティ機能](../../c-runtime-library/security-features-in-the-crt.md)」の説明にあるとおり、セキュリティが強化されたバージョンです。  
@@ -132,7 +115,7 @@ errno_t _wfreopen(
   
  既存のファイルを破棄するため、`"w"` と `"w+"` の型は注意して使用します。  
   
- アクセスの種類が `"a"` または `"a+"` の場合にファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` 関数または `rewind` 関数を使用して移動できますが、書き込み操作の前に必ずファイルの終端に戻されます。 したがって、既存のデータは上書きされません。  
+ アクセスの種類が `"a"` または `"a+"` の場合にファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` 関数または `rewind` 関数を使用して移動できますが、書き込み操作の前に必ずファイルの終端に戻されます。したがって、既存のデータは上書きされません。  
   
  `"a"` モードでは、ファイルへの追加の前に EOF マーカーは削除されません。 追加が行われても、MS-DOS TYPE コマンドでは元の EOF マーカーまでのデータしか表示されず、ファイルに追加されたデータは表示されません。 `"a+"` モードでは、ファイルへの追加の前に EOF マーカーが削除されます。 追加が終了すると、MS-DOS の TYPE コマンドでファイル内すべてのデータが表示されます。 Ctrl + Z EOF マーカーで終了するストリーム ファイルに追加するには、 `"a+"` モードを使用する必要があります。  
   

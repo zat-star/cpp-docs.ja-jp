@@ -1,82 +1,87 @@
 ---
-title: "/ORDER (関数の順序) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.FunctionOrder"
-  - "/order"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/ORDER リンカー オプション"
-  - "LINK ツール [C++], プログラムの最適化"
-  - "LINK ツール [C++], スワップ調整"
-  - "ORDER リンカー オプション"
-  - "-ORDER リンカー オプション"
-  - "ページング, 最適化"
+title: "順序 (関数の順序) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.FunctionOrder
+- /order
+dev_langs: C++
+helpviewer_keywords:
+- ORDER linker option
+- -ORDER linker option
+- LINK tool [C++], program optimizing
+- /ORDER linker option
+- LINK tool [C++], swap tuning
+- paging, optimizing
 ms.assetid: ecf5eb3e-e404-4e86-9a91-4e5ec157261a
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 695c716b29e8d43c0190b4721285f6b4f6959e29
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /ORDER (関数の順序)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
+# <a name="order-put-functions-in-order"></a>/ORDER (関数の順序)
 
-```  
-/ORDER:@filename  
-```  
-  
-## パラメーター  
- *filename*  
- COMDAT 関数のリンク順序を指定するテキスト ファイル。  
-  
-## 解説  
- \/ORDER オプションは、特定の COMDAT を指定された順序でイメージに取り込み、プログラムを最適化します。  指定された関数は、イメージの各セクションに指定された順序で配置されます。  
-  
- 引数 *filename* で指定するテキスト ファイル \(応答ファイル\) には、COMDAT をリンクする順に記述します。  *filename* ファイルには、1 行ごとに COMDAT の名前を 1 つ記述します。  COMDAT は、\/Gy オプションでコンパイルしたオブジェクト ファイルに入っています。  関数名は、大文字と小文字が区別されます。  
-  
- LINK は、装飾された形式の識別子を使用します。  .obj ファイルの作成時に、コンパイラが識別子を装飾します。  リンカーに対して装飾形式で識別子を指定する必要がある場合は、[DUMPBIN](../../build/reference/dumpbin-reference.md) ツールでその装飾形式を確認できます。  装飾名の詳細については、「[装飾名](../Topic/Decorated%20Names.md)」を参照してください。  
-  
- \/ORDER オプションを複数指定すると、最後の指定が有効になります。  
-  
- 関数の順序を指定すると、プログラムのページング動作を最適化できます。呼び出し元の関数と呼び出し先の関数を同じグループにまとめることにより、スワップを調整できるからです。  また、頻繁に呼び出される関数を同じグループにまとめることもできます。  このような手法を使うと、関数を呼び出したときにその関数がメモリ内にあるため、ディスクからページングする必要がなくなる場合が増えます。  
-  
- 名前が疑問符 \(?\) またはアット マーク \(@\) で始まる場合を除いて、*filename* 内のすべての修飾名の先頭にアンダースコア \(\_\) が付加されます。  たとえば、オブジェクト ファイル内に `extern "C" int func(int)` および `int main(void)` が含まれる場合、DUMPBIN [\/SYMBOLS](../../build/reference/symbols.md) では次のように修飾された名前が表示されます。  
-  
-```  
-009 00000000 SECT3  notype ()    External     | _func  
-00A 00000008 SECT3  notype ()    External     | _main  
-```  
-  
- ただし、オーダー ファイルに指定する関数名は、`func` および `main` です。  
-  
- この \/ORDER オプションを使うと、インクリメンタル リンクが行われなくなります。  
-  
+(COMDAT) 関数を個別にパッケージのリンクの順序を指定します。
+
+## <a name="syntax"></a>構文
+
+>/注文: @*ファイル名*
+
+### <a name="parameters"></a>パラメーター
+
+*ファイル名*  
+COMDAT 関数のリンクの順序を指定するテキスト ファイルです。
+
+## <a name="remarks"></a>コメント
+
+**/Order**コンパイラ オプションでは、関数が呼び出す関数と共に関数をグループ化して、プログラムのページングの動作を最適化することができます。 頻繁に呼び出される関数を一緒にグループすることもできます。 呼ばれるこれらの手法*スワップ調整*または*ページング最適化*、呼び出された関数が、メモリが必要な場合はディスクからポケットベル通知を送信する必要はありませんする可能性は向上します。
+
+オブジェクト ファイルに、ソース コードをコンパイルするときと呼ばれる独自のセクションの各関数にコンパイラに通知することができます、 *COMDAT*を使用して、 [/Gy (関数レベルのリンクを有効にする)](../../build/reference/gy-enable-function-level-linking.md)コンパイラオプション。 **/Order**リンカー オプションを指定した順序で実行可能イメージに Comdat を配置するリンカーに指示します。
+
+COMDAT の順序を指定するには、作成、*応答ファイル*、リンカーによって配置される順序で行ごとに 1 つには、名前で各 COMDAT を一覧表示するテキスト ファイルです。 このファイルの名前を渡す、*ファイル名*のパラメーター、 **/order**オプション。 C++ 関数の場合、COMDAT の名前は、関数名の装飾形式です。 C 関数の非装飾名を使用して`main`、として宣言されている C++ 関数と`extern "C"`です。 関数名および装飾名は大文字小文字を区別します。 装飾名の詳細については、次を参照してください。[装飾名](../../build/reference/decorated-names.md)です。 
+
+使用して、Comdat の装飾名を検索する、 [DUMPBIN](../../build/reference/dumpbin-reference.md)ツールの[/symbols](../../build/reference/symbols.md)オブジェクト ファイルでオプションです。 リンカー先頭にアンダー スコアが自動的に追加 (\_) 関数への応答で名前ファイルの名前の先頭に疑問符 (?) またはアット マークしない限り、(@)。 たとえば、ソース ファイル、example.cpp、関数が含まれます`int cpp_func(int)`、`extern "C" int c_func(int)`と`int main(void)`のコマンドは、`DUMPBIN /SYMBOLS example.obj`これら装飾名を一覧表示。
+
+```Output
+...
+088 00000000 SECT1A notype ()    External     | ?cpp_func@@YAHH@Z (int __cdecl cpp_func(int))
+089 00000000 SECT22 notype ()    External     | _c_func
+08A 00000000 SECT24 notype ()    External     | _main
+...
+```
+
+この場合、名前を指定`?cpp_func@@YAHH@Z`、 `c_func`、および`main`応答ファイルにします。
+
+1 つ以上の場合**/order**リンカー オプション オプションが表示される、指定された最後の 1 つは有効になります。
+
+**/Order**オプションは、インクリメンタル リンクを無効になります。 リンカー警告が表示される[LNK4075](../../error-messages/tool-errors/linker-tools-warning-lnk4075.md)インクリメンタル リンクが有効になっている場合、または指定した場合に、このオプションを指定すると、 [/ZI (増分 PDB)](../../build/reference/z7-zi-zi-debug-information-format.md)コンパイラ オプション。 この警告をミュートするには、使用することができます、 [/INCREMENTAL:NO](../../build/reference/incremental-link-incrementally.md)インクリメンタル リンクをオフにして、使用するリンカー オプション、 [/Zi (生成 PDB)](../../build/reference/z7-zi-zi-debug-information-format.md)インクリメンタル リンクせずに PDB を生成するコンパイラ オプション。
+
 > [!NOTE]
->  LINK では、静的関数の順序を指定できません。静的関数の名前はパブリック シンボル名ではないためです。  \/ORDER が指定された場合、オーダー ファイル中の、静的あるいは見つからないシンボルごとにリンカー警告 LNK4037 が生成されます。  
-  
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
-  
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
-  
-2.  \[リンカー\] フォルダーをクリックします。  
-  
-3.  \[最適化\] プロパティ ページをクリックします。  
-  
-4.  \[関数の順序\] プロパティを変更します。  
-  
-### このリンカーをコードから設定するには  
-  
--   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.FunctionOrder%2A>」を参照してください。  
-  
-## 参照  
- [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
- [リンカー オプション](../../build/reference/linker-options.md)
+> 静的関数名は、パブリック シンボル名ではないために、リンクで静的関数を注文することはできません。 ときに**/order**指定すると、リンカー警告[LNK4037](../../error-messages/tool-errors/linker-tools-warning-lnk4037.md)が静的であるか、見つかりませんである注文の応答ファイル内の各シンボルを生成します。
+
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには
+
+1. プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
+
+1. **構成プロパティ**、開かれている**リンカー**を選択し、**最適化**プロパティ ページ。
+
+1. 変更、**関数の順序**応答ファイルの名前を格納するプロパティです。
+
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには
+
+- 「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.FunctionOrder%2A>」を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+[リンカー オプションの設定](../../build/reference/setting-linker-options.md)  
+[リンカー オプション](../../build/reference/linker-options.md)

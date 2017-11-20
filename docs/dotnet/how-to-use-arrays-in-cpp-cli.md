@@ -1,34 +1,32 @@
 ---
-title: "方法: C++/CLI で配列を使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], 1 次元"
+title: "方法: 配列を使用して、C + + CLI |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: arrays [C++], single-dimension
 ms.assetid: 301cfb3e-199f-42c8-8151-629dce9e87f3
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8867d6a2a7871d1785e1a1fdbeb9856de4bd9904
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C++/CLI で配列を使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ここでは [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)]で配列を使用する方法について説明します。  
+# <a name="how-to-use-arrays-in-ccli"></a>方法: C++/CLI で配列を使用する
+C + での配列を使用する方法を説明 + CLI です。  
   
-## 次元配列の配列  
- 次の例では、参照値とネイティブ ポインター型の次元配列の配列を作成する方法を示します。  また、関数のディメンションの配列を返す方法、および関数に引数として一つのディメンションの配列を渡す方法を示します。  
+## <a name="single-dimension-arrays"></a>1 次元の配列  
+ 次の例では、参照、値、およびネイティブ ポインター型の 1 次元配列を作成する方法を示します。 1 次元配列を引数として関数に渡す方法と関数から、1 次元配列を返す方法も示しています。  
   
-```  
+```cpp  
 // mcppv2_sdarrays.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -138,25 +136,31 @@ int main() {
    for (i = 0 ; i < ARRAY_SIZE ; i++)  
       Console::WriteLine("MyStruct1[{0}] = {1}", i, MyStruct1[i].m_i);  
 }  
-  
 ```  
   
- **出力**  
+```Output  
+MyClass0[0] = 0  
+MyClass0[1] = 1  
   
-  **MyClass0 \[\] 0 \= 0**  
-**MyClass0 \[\] 1 \= 1**  
-**IntArray \[\] 0 \= 10**  
-**IntArray \[\] 1 \= 11**  
-**MyClass1 \[\] 0 \= 20**  
-**MyClass1 \[\] 1 \= 21**  
-**MyClass2 \[\] 0 \= 30**  
-**MyClass2 \[\] 1 \= 31**  
-**MyClass2 \[\] 0 \= 32**  
-**MyClass2 \[\] 1 \= 33**  
-**MyStruct1 \[\] 0 \= 40**  
-**MyStruct1 \[\] 1 \= 41** 次の例は、一つのディメンションのマネージ配列の集約の初期化を実行する方法を示します。  
+IntArray[0] = 10  
+IntArray[1] = 11  
   
+MyClass1[0] = 20  
+MyClass1[1] = 21  
+  
+MyClass2[0] = 30  
+MyClass2[1] = 31  
+  
+MyClass2[0] = 32  
+MyClass2[1] = 33  
+  
+MyStruct1[0] = 40  
+MyStruct1[1] = 41  
 ```  
+  
+ 次の例では、1 次元のマネージ配列に集約の初期化を実行する方法を示します。  
+  
+```cpp  
 // mcppv2_sdarrays_aggregate_init.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -193,21 +197,23 @@ int main() {
    array<N*>^ native1 = gcnew array<N*>{new N(0), new N(1), new N(2)};  
    array<N*>^ native2 = {new N(0), new N(1), new N(2)};  
 }  
-  
 ```  
   
- **出力**  
+```Output  
+MyClass0[0, 0] = 0  
+MyClass0[0, 1] = 0  
+MyClass0[1, 0] = 1  
+MyClass0[1, 1] = 1  
   
-  **0、0 MyClass0 \[\] \= 0**  
-**0、1 MyClass0 \[\] \= 0**  
-**1、0 MyClass0 \[\] \= 1**  
-**1、1 MyClass0 \[\] \= 1**  
-**0、0 IntArray \[\] \= 10**  
-**0、1 IntArray \[\] \= 10**  
-**1、0 IntArray \[\] \= 11**  
-**1、1 IntArray \[\] \= 11** この例で複数の次元のマネージ配列の集約の初期化を実行する方法を示します。:  
-  
+IntArray[0, 0] = 10  
+IntArray[0, 1] = 10  
+IntArray[1, 0] = 11  
+IntArray[1, 1] = 11  
 ```  
+  
+ この例では、マルチ ディメンションのマネージ配列で集約の初期化を実行する方法を示します。  
+  
+```cpp  
 // mcppv2_mdarrays_aggregate_initialization.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -249,10 +255,10 @@ int main() {
 }  
 ```  
   
-## ジャグ配列  
- ここでは、参照、値、およびネイティブ ポインター型のマネージ配列の次元配列の配列を作成する方法を示します。  また、関数からマネージ配列の次元配列の配列を返す方法、および関数に引数として一つのディメンションの配列を渡す方法を示します。  
+## <a name="jagged-arrays"></a>ジャグ配列  
+ このセクションでは、参照、値、およびネイティブ ポインター型のマネージ配列の 1 次元配列を作成する方法を示します。 1 次元配列を引数として関数に渡す方法と、関数からマネージ配列の 1 次元配列を返す方法も示しています。  
   
-```  
+```cpp  
 // mcppv2_array_of_arrays.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -330,23 +336,26 @@ int main() {
    for (i = 0 ; i < ARRAY_SIZE ; i++)  
       Console::WriteLine(MyStruct1[i].m_i);  
 }  
-  
 ```  
   
- **出力**  
+```Output  
+MyClass0[0] = 0  
+MyClass0[0] = 0  
+MyClass0[1] = 1  
+MyClass0[1] = 1  
   
-  **MyClass0 \[\] 0 \= 0**  
-**MyClass0 \[\] 0 \= 0**  
-**MyClass0 \[\] 1 \= 1**  
-**MyClass0 \[\] 1 \= 1**  
-**IntArray \[\] 0 \= 10**  
-**IntArray \[\] 0 \= 10**  
-**IntArray \[\] 1 \= 11**  
-**IntArray \[\] 1 \= 11**  
-**40**  
-**41** 次の例は、ジャグ配列と集約の初期化を実行する方法を示します。  
+IntArray[0] = 10  
+IntArray[0] = 10  
+IntArray[1] = 11  
+IntArray[1] = 11  
   
+40  
+41  
 ```  
+  
+ 次の例では、ジャグ配列と集約の初期化を実行する方法を示します。  
+  
+```cpp  
 // mcppv2_array_of_arrays_aggregate_init.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -431,25 +440,28 @@ int main() {
       Console::WriteLine();  
    }  
 }  
-  
 ```  
   
- **出力**  
+```Output  
+MyClass0[0] = 0  
+MyClass0[0] = 0  
+MyClass0[1] = 1  
+MyClass0[1] = 1  
   
-  **MyClass0 \[\] 0 \= 0**  
-**MyClass0 \[\] 0 \= 0**  
-**MyClass0 \[\] 1 \= 1**  
-**MyClass0 \[\] 1 \= 1**  
-**\[ 1 2 \]**  
-**\[ 3 4 5 \]**  
-**\[ 0 1 \]**  
-**\[ 2 3 4 \]**  
-**\[ ef b c d\]**  
-**\[ g h\]**   
-## テンプレート型のパラメーターとして、マネージ配列  
- この例では、テンプレートに対するパラメーターとしてマネージ配列を使用する方法を示します。:  
+[ 1 2 ]  
+[ 3 4 5 ]  
   
+[ 0 1 ]  
+[ 2 3 4 ]  
+  
+[ a b c d e f ]  
+[ g h ]  
 ```  
+  
+## <a name="managed-arrays-as-template-type-parameters"></a>テンプレート型パラメーターとして配列を管理  
+ この例では、マネージ配列をテンプレートにパラメーターとして使用する方法を示します。  
+  
+```cpp  
 // mcppv2_template_type_params.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -469,16 +481,16 @@ int main() {
    retval += larr->Length - 10;  
    Console::WriteLine("Return Code: {0}", retval);  
 }  
-  
 ```  
   
- **出力**  
-  
-  **リターン コード: 0**   
-## マネージ配列の typedef  
- この例では、マネージ配列の typedef を作成する方法を示します。:  
-  
+```Output  
+Return Code: 0  
 ```  
+  
+## <a name="typedefs-for-managed-arrays"></a>マネージ配列の typedef  
+ この例では、マネージ配列の typedef を作成する方法を示します。  
+  
+```cpp  
 // mcppv2_typedef_arrays.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -489,15 +501,14 @@ typedef array<array<G^>^> jagged_array;
 int main() {  
    jagged_array ^ MyArr = gcnew jagged_array (10);  
 }  
-  
 ```  
   
-## 配列を並べ替える。  
- C\+\+ の標準配列とは異なり、マネージ配列には共通の動作を継承する配列内の基本クラスの暗黙的な派生です。  例では、配列内の項目を並べ替えるために使用できる `Sort` のメソッドです。  
+## <a name="sorting-arrays"></a>配列の並べ替え  
+ 標準の C++ 配列とは異なりマネージ配列は、共通の動作を継承する元となる配列の基本クラスから暗黙的に派生します。 例としては、`Sort`メソッドで、任意の配列内の項目の並べ替えに使用できます。  
   
- 基本的な組み込み型を含む配列の場合、`Sort` のメソッドを呼び出すことができます。  並べ替え基準をオーバーライドできます。複合型の配列に並べ替え場合に行うことが必要です。  この場合、配列の要素の型は [IComparable::CompareTo](https://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx) のメソッドを実装しなければなりません。  
+ 呼び出すことができます、基本の組み込み型を含む配列に対して、`Sort`メソッドです。 並べ替えの条件をオーバーライドして、これは、必要な複雑な型の配列の並べ替えを行うときにします。 この場合、配列要素の型を実装する必要があります、 [IComparable::CompareTo](https://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx)メソッドです。  
   
-```  
+```cpp  
 // array_sort.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -508,15 +519,14 @@ int main() {
    for (int i=0; i < a->Length; i++)  
       Console::Write("{0} ", a[i] );  
 }  
-  
 ```  
   
-## 配列をカスタム条件を使用して並べ替えます  
- 基本的な組み込み型を含む配列を並べ替えるには、`Array::Sort` のメソッドを呼び出します。  ただし、複合型または既定の並べ替え条件をオーバーライドするために保持している配列を並べ替えるには、[IComparable::CompareTo](https://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx) のメソッドをオーバーライドします。  
+## <a name="sorting-arrays-by-using-custom-criteria"></a>カスタム条件を使用して配列の並べ替え  
+ 基本の組み込み型を含む配列を並べ替えるを呼び出すだけ、`Array::Sort`メソッドです。 ただし、既定の並べ替え条件を上書きする上書きまたは複合型を含む配列を並べ替えに、 [IComparable::CompareTo](https://msdn.microsoft.com/en-us/library/system.icomparable.compareto.aspx)メソッドです。  
   
- 次の例では、`Element` という名前の構造は <xref:System.IComparable>から派生され、並べ替え基準として 2 個の整数の平均を使用する <xref:System.IComparable.CompareTo%2A> のメソッドを提供するために書き込まれます。  
+ 次の例では構造体の名前`Element`から派生した<xref:System.IComparable>、記述を提供して、<xref:System.IComparable.CompareTo%2A>並べ替え基準として 2 つの整数の平均値を使用するメソッド。  
   
-```  
+```cpp  
 using namespace System;  
   
 value struct Element : public IComparable {  
@@ -558,10 +568,10 @@ int main() {
 }  
 ```  
   
-## 配列の共変性  
- 直接または間接基本クラス B が特定の参照 D クラスは Type B.の配列変数に、D 型の配列に代入できます。  
+## <a name="array-covariance"></a>配列の共変性  
+ 直接または間接基底クラス B を持つ参照クラス D を指定するには、種類 D の配列に代入できますタイプ b の配列変数  
   
-```  
+```cpp  
 // clr_array_covariance.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -572,11 +582,11 @@ int main() {
 }  
 ```  
   
- 配列要素への代入は配列の動的な型に代入互換性があります。  互換性のない型がある配列要素への代入は `System::ArrayTypeMismatchException` をスローします。  
+ 配列要素への代入は代入互換性である配列の動的な型にします。 互換性のない型を持つ配列要素への代入と、`System::ArrayTypeMismatchException`がスローされます。  
   
- 配列の共変性は値クラス型の配列には適用されません。  たとえば、Int32 の配列は Object^ の配列にボックス化を使用して、変換することはできません。  
+ 配列の共変性は、値クラス型の配列に適用されません。 たとえば、int32 型の配列をオブジェクトに変換できません ^ 配列、ボックス化を使用しても描画されません。  
   
-```  
+```cpp  
 // clr_array_covariance2.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -609,5 +619,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [Arrays](../windows/arrays-cpp-component-extensions.md)
+## <a name="see-also"></a>関連項目  
+ [配列](../windows/arrays-cpp-component-extensions.md)

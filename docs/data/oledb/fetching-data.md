@@ -1,37 +1,37 @@
 ---
-title: "データのフェッチ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [C++], フェッチ"
-  - "フェッチ"
-  - "OLE DB コンシューマー テンプレート (C++), フェッチ (データを)"
-  - "行セット [C++], フェッチ"
+title: "データのフェッチ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- data [C++], fetching
+- rowsets [C++], fetching
+- fetching
+- OLE DB consumer templates [C++], fetching data
 ms.assetid: b07f747f-9855-4f27-a03d-b1d5b10fa284
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 5ae486150a23af4c1aa04177650d675087ce4e16
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# データのフェッチ
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データ ソース、セッション、および行セットのオブジェクトを開いた後、データをフェッチできます。  使用するアクセサーの種類によっては、列をバインドする必要がある場合もあります。  
+# <a name="fetching-data"></a>データのフェッチ
+データ ソース、セッション、および行セット オブジェクトを開いた後は、データをフェッチできます。 で使用するアクセサーの種類によっては、列をバインドする必要があります。  
   
-### データをフェッチするには  
+### <a name="to-fetch-data"></a>データをフェッチするには  
   
-1.  適切な **Open** コマンドを使用して行セットを開きます。  
+1.  使用して、適切な行セットを開く**開く**コマンド。  
   
-2.  `CManualAccessor` を使用している場合、まだ連結していない場合は出力列を連結します。  列をバインドするには、次の例に示すように、`GetColumnInfo` を呼び出してから、バインディングのあるアクセサーを作成します。  
+2.  使用している場合`CManualAccessor`をまだ行っていない場合は、出力列をバインドします。 列をバインドするには、呼び出す`GetColumnInfo`、し、次の例で示すように、バインディングで、アクセサーを作成します。  
   
     ```  
     // From the DBViewer Sample CDBTreeView::OnQueryEdit  
@@ -48,7 +48,7 @@ caps.handback.revision: 8
     rs.Bind();  
     ```  
   
-3.  データを取得する `while` ループを記述します。  ループでは、次に示すように、`MoveNext` を呼び出してカーソルを進め、戻り値が S\_OK かどうかをテストします。  
+3.  書き込み、`while`ループを使用してデータを取得します。 ループで呼び出す`MoveNext`カーソルを進めるし、次の例のように、S_OK に対して戻り値をテストします。  
   
     ```  
     while (rs.MoveNext() == S_OK)  
@@ -58,9 +58,9 @@ caps.handback.revision: 8
     }  
     ```  
   
-4.  `while` ループ内で、アクセサーの種類に応じてデータをフェッチできます。  
+4.  内で、`while`ループ、アクセサーの種類に従ってデータをフェッチすることができます。  
   
-    -   [CAccessor](../Topic/CAccessor%20Class.md) クラスを使用する場合は、データ メンバーを含むユーザー レコードが必要です。  次の例に示すように、これらのデータ メンバーを使用してデータにアクセスできます。  
+    -   使用する場合、 [CAccessor](../../data/oledb/caccessor-class.md)クラス、データ メンバーを含んでいるユーザー レコードを持つ必要があります。 次の例で示すように、これらのデータ メンバーを使用して、データにアクセスできます。  
   
         ```  
         while (rs.MoveNext() == S_OK)  
@@ -72,7 +72,7 @@ caps.handback.revision: 8
         }  
         ```  
   
-    -   `CDynamicAccessor` クラスまたは `CDynamicParameterAccessor` クラスを使用する場合は、次の例に示すように、`GetValue` アクセス関数および `GetColumn` アクセス関数を使用してデータをフェッチできます。  使用しているデータの型を判断するには、`GetType` を使用します。  
+    -   使用する場合、`CDynamicAccessor`または`CDynamicParameterAccessor`クラスにアクセスする関数を使用してデータをフェッチできます`GetValue`と`GetColumn`次の例で示すように、します。 使用しているデータの種類を決定する場合は、使用して`GetType`です。  
   
         ```  
         while (rs.MoveNext() == S_OK)  
@@ -87,7 +87,7 @@ caps.handback.revision: 8
         }  
         ```  
   
-    -   `CManualAccessor` を使用する場合は、次の例に示すように、独自のデータ メンバーを指定してバインドし、それらのメンバーに直接アクセスする必要があります。  
+    -   使用する場合`CManualAccessor`、独自のデータ メンバーを指定、自分でバインドおよび次の例で示すように直接アクセスする必要があります。  
   
         ```  
         while (rs.MoveNext() == S_OK)  
@@ -99,5 +99,5 @@ caps.handback.revision: 8
         }  
         ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレートの操作](../../data/oledb/working-with-ole-db-consumer-templates.md)

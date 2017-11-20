@@ -1,45 +1,43 @@
 ---
-title: "IDispEventImpl の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IDispEventImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IDispEventImpl クラス, 使用"
+title: "IDispEventImpl (ATL) を使用して |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IDispEventImpl
+dev_langs: C++
+helpviewer_keywords: IDispEventImpl class, using
 ms.assetid: 82d53b61-9d0d-45c5-aff9-2fafa468a9ca
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b469facafd4f386b97b5cfbc5d1661cdb6f5d3ec
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IDispEventImpl の使い方
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-イベントを処理するために `IDispEventImpl` を使用するときに必要とする:  
+# <a name="using-idispeventimpl"></a>IDispEventImpl を使用します。
+使用する場合`IDispEventImpl`イベントを処理する必要があります。  
   
--   [IDispEventImpl](../atl/reference/idispeventimpl-class.md)からクラスを派生します。  
+-   クラスを派生[IDispEventImpl](../atl/reference/idispeventimpl-class.md)です。  
   
--   クラスに [イベント シンク マップ](../Topic/BEGIN_SINK_MAP.md) を追加します。  
+-   クラスには、イベント シンク マップを追加します。  
   
--   [SINK\_ENTRY](../Topic/SINK_ENTRY.md) または [SINK\_ENTRY\_EX](../Topic/SINK_ENTRY_EX.md) マクロを使用してイベント シンク マップにエントリを追加します。  
+-   イベント シンク マップを使用して、エントリを追加、 [SINK_ENTRY](reference/composite-control-macros.md#sink_entry)または[SINK_ENTRY_EX](reference/composite-control-macros.md#sink_entry_ex)マクロです。  
   
--   処理の対象となるメソッドを実装します。  
+-   興味のある処理でメソッドを実装します。  
   
--   unadvise イベント ソースをお勧めします。  
+-   案内し、イベント ソースをアドバイズします。  
   
-## 例  
- 次の例 **\[アプリケーション\]** Word のオブジェクトから発生した **DocumentChange** のイベントを処理する方法を示します。  このイベントは **ApplicationEvents** ディスパッチ インターフェイスのメソッドとして定義されます。  
+## <a name="example"></a>例  
+ 次の例は、処理する方法を示します、 **DocumentChange**によって Word のイベントが発生した**アプリケーション**オブジェクト。 このイベントは、メソッドとしてで定義されている、 **ApplicationEvents**ディスパッチ インターフェイスです。  
   
- この例では [ATLEventHandling sample](../top/visual-cpp-samples.md)からです。  
+ 例は、[コード](../visual-cpp-samples.md)です。  
   
  `[`  
   
@@ -69,14 +67,15 @@ caps.handback.revision: 7
   
  `};`  
   
- 例では、Word のタイプ ライブラリから必要なヘッダー ファイルを生成するために `#import` を使用します。  Word の他のバージョンでこの例を使用する場合は、正しい mso dll ファイルを指定する必要があります。  たとえば、Office 2000 は mso9.dll を提供し、Office XP では mso.dll を提供します。  このコードは、stdafx.h から単純化されています:  
+ この例では`#import`を Word のタイプ ライブラリから、必要なヘッダー ファイルを生成します。 Word の他のバージョンでこの例を使用する場合は、正しい mso dll ファイルを指定する必要があります。 たとえば、Office 2000 mso9.dll を提供し、OfficeXP が mso.dll を提供します。 このコードは、stdafx.h からが簡素化されます。  
   
- [!code-cpp[NVC_ATL_EventHandlingSample#1](../atl/codesnippet/CPP/using-idispeventimpl_1.h)]  
+ [!code-cpp[NVC_ATL_EventHandlingSample#1](../atl/codesnippet/cpp/using-idispeventimpl_1.h)]  
   
- 次のコードは NotSoSimple.h に表示されます。  関連するコードをコメント アウトしても表示されます:  
+ NotSoSimple.h に次のコードが表示されます。 関連するコードにはコメントで注意します。  
   
- [!code-cpp[NVC_ATL_EventHandlingSample#2](../atl/codesnippet/CPP/using-idispeventimpl_2.h)]  
+ [!code-cpp[NVC_ATL_EventHandlingSample#2](../atl/codesnippet/cpp/using-idispeventimpl_2.h)]  
   
-## 参照  
- [イベント処理](../Topic/Event%20Handling%20and%20ATL.md)   
- [ATLEventHandling sample](../top/visual-cpp-samples.md)
+## <a name="see-also"></a>関連項目  
+ [イベント処理](../atl/event-handling-and-atl.md)   
+ [コード](../visual-cpp-samples.md)
+

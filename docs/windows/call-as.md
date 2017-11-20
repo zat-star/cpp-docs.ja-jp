@@ -1,32 +1,30 @@
 ---
-title: "call_as | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.call_as"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "call_as attribute"
+title: "call_as |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.call_as
+dev_langs: C++
+helpviewer_keywords: call_as attribute
 ms.assetid: a09d7f1f-353b-4870-9b45-f0284161695d
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4ce0123f6f06d47d920ed55a1460944393960ff6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# call_as
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-リモート関数が呼び出されるとローカル関数が呼び出されるようにリモート関数にマップする方法 [ローカル](../windows/local-cpp.md) の関数を有効にします。  
+# <a name="callas"></a>call_as
+有効な[ローカル](../windows/local-cpp.md)リモート関数が呼び出されると、ローカル関数が呼び出されるように、リモート関数にマップする関数。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,15 +33,15 @@ caps.handback.revision: 10
 ) ]  
 ```  
   
-#### パラメーター  
- *機能性*  
- リモート関数が呼び出されたときに呼び出しの対象とするローカル関数。  
+#### <a name="parameters"></a>パラメーター  
+ *function*  
+ リモート関数が呼び出されるときに呼び出される場合、ローカル関数です。  
   
-## 解説  
- **call\_as\(A\)** C\+\+ 属性に [call\_as\(A\)](http://msdn.microsoft.com/library/windows/desktop/aa366748) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Call_as** C++ 属性と同じ機能を持つ、 [call_as](http://msdn.microsoft.com/library/windows/desktop/aa366748) MIDL 属性。  
   
-## 使用例  
- リモート処理可能関数 \(\)**Remf1** リモート **f1** に関数 \(\) をマップする方法に **call\_as\(A\)** を使用する方法を次のコード例に示します :  
+## <a name="example"></a>例  
+ 次のコードは、使用する方法を示しています。 **call_as**リモート処理不可能関数にマップする (**f1**) をリモート化可能関数 (**Remf1**)。  
   
 ```  
 // cpp_attr_ref_call_as.cpp  
@@ -57,21 +55,20 @@ __interface IMInterface {
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|インターフェイス メソッド|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Method Attributes](../windows/method-attributes.md)   
- [local](../windows/local-cpp.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [メソッドの属性](../windows/method-attributes.md)   
+ [地元の](../windows/local-cpp.md)   

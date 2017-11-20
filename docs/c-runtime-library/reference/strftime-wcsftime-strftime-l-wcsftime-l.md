@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -30,8 +29,7 @@ f1_keywords:
 - _tcsftime
 - strftime
 - wcsftime
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _strftime_l function
 - strftime function
@@ -41,31 +39,15 @@ helpviewer_keywords:
 - _tcsftime function
 - time strings
 ms.assetid: 6330ff20-4729-4c4a-82af-932915d893ea
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 1a5331b77e218c5fe5796b2df6d0f61578657758
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: ec9c46f1a6d52a8769e5db454d44baf9ec9d8a8a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="strftime-wcsftime-strftimel-wcsftimel"></a>strftime、wcsftime、_strftime_l、_wcsftime_l
 時刻の文字列の書式を指定します。  
@@ -128,9 +110,9 @@ size_t _wcsftime_l(
  `strftime`と`wcsftime`関数形式、`tm`時刻の値`timeptr`に従って、指定された`format`引数と、バッファー内の結果ストア`strDest`です。 文字列には最大 `maxsize` 文字を含めることができます。 `timeptr` 構造のフィールドについては、「[asctime](../../c-runtime-library/reference/asctime-wasctime.md)」をご覧ください。 `wcsftime` は `strftime` のワイド文字版です。その文字列ポインター引数はワイド文字の文字列を指します。 それ以外では、これらの関数の動作は同じです。  
   
 > [!NOTE]
->  Visual C++ 2005 より前のバージョンでは、`wcsftime` の `format` パラメーターがデータ型 `const wchar_t *` としてドキュメントに説明されていましたが、実際に実装された `format` データ型は `const char *` でした。 実装、`format`データ型が、現在と以前のドキュメント「、を反映するように更新された`const wchar_t *`です。  
+>  Visual C++ 2005 より前のバージョンでは、`wcsftime` の `format` パラメーターがデータ型 `const wchar_t *` としてドキュメントに説明されていましたが、実際に実装された `format` データ型は `const char *` でした。 実装、`format`データ型が、現在と以前のドキュメントを反映するように更新された`const wchar_t *`です。  
   
- この関数は、パラメーターを検証します。 場合`strDest`、 `format`、または`timeptr`null ポインターでは、または、`tm`によってアドレス指定されるデータ構造体`timeptr`が正しくありません (たとえば、日付や時刻の値が範囲外にある場合)、または、`format`文字列に無効な書式設定コードが含まれている場合、無効なパラメーター ハンドラーが呼び出されます」の説明に従って[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EINVAL` に設定します。  
+ この関数は、パラメーターを検証します。 場合`strDest`、 `format`、または`timeptr`null ポインターでは、または、`tm`によってアドレス指定されるデータ構造体`timeptr`が正しくありません (たとえば、日付や時刻の値が範囲外が含まれる場合)、または、`format`文字列無効な書式設定コードが含まれています」の説明に従って、無効なパラメーター ハンドラーが呼び出される[パラメーターの検証](../../c-runtime-library/parameter-validation.md)です。 実行の継続が許可された場合、この関数は 0 を返し、`errno` を `EINVAL` に設定します。  
   
 ### <a name="generic-text-routine-mappings"></a>汎用テキスト ルーチンのマップ  
   

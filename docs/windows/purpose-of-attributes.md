@@ -1,38 +1,37 @@
 ---
-title: "Purpose of Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "attributes [C++], about attributes"
+title: "属性の目的 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: attributes [C++], about attributes
 ms.assetid: 3aff8bfa-a2a3-4fcb-a2c6-1d96a2b4c68d
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3feb2d9d72fbfcda7237ed0889158b1ee4f2a844
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Purpose of Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-属性は言語の標準的な構造を現在中断できない方向の C\+\+ の機能を拡張します。  言語機能を動的に拡張する属性値を別のプロバイダー \(DLL\)。  属性の主な目的はコンポーネント開発者のレベルの生産性を向上させるだけでなく COM コンポーネントの作成には簡単にするためです。  属性クラスはデータ メンバーまたはメンバー関数などほとんどの C\+\+ 構成要素に適用できます。  次にこの新しいテクノロジが提供する利点を強調表示する :  
+# <a name="purpose-of-attributes"></a>属性の目的
+属性は、言語の従来の構造を分断することがなく、方向は現在不可能で C++ を拡張します。 属性は、プロバイダーの言語機能を動的に拡張する (個別の Dll) を使用します。 属性の主な目的では、コンポーネントの開発者の生産性を高めるだけでなく、COM コンポーネントのオーサリングを簡略化します。 属性を適用するクラス、データ メンバー、またはメンバー関数など、ほぼすべての C++ コンストラクトにします。 この新しいテクノロジが提供する利点の強調表示を次に示します。  
   
--   使い慣れた単純な呼び出し規約を公開します。  
+-   使い慣れたと単純な呼び出し規約を公開します。  
   
--   ではマクロとは異なりデバッガーによって認識されるコードを挿入します。  
+-   使用には、マクロとは異なり、デバッガーによって認識されているコードが挿入されます。  
   
--   異常な実装の詳細なしで簡単な基本クラスからの派生ができます。  
+-   により、簡単に耐え難い負担の実装の詳細なしの基本クラスから派生をします。  
   
--   COM コンポーネントで必要な数の簡単な属性で大量の IDL コードに置き換えます。  
+-   大量のいくつかの簡潔な属性を持つ COM コンポーネントで必要な IDL コードに置き換えます。  
   
- たとえば一般的な ATL クラスの単純なイベント シンクを実行するには`CMyReceiver` など特定のクラスに [event\_receiver](../windows/event-receiver.md) 属性を適用できます。  **event\_receiver** の属性はオブジェクト ファイルに適切なコードを挿入して Visual C\+\+ コンパイラでコンパイルします。  
+ たとえば、ATL のジェネリック クラスの単純なイベント シンクを実装する可能性がありますを適用する、 [event_receiver](../windows/event-receiver.md)など特定のクラスに属性`CMyReceiver`です。 **Event_receiver**属性は、オブジェクト ファイルに適切なコードを挿入する、Visual C コンパイラでコンパイルされます。  
   
 ```  
 [event_receiver(com)]  
@@ -43,7 +42,7 @@ class CMyReceiver
 }  
 ```  
   
- 作成できるイベント ソースからのイベントを処理するには**CMyReceiver** のメソッド `handler1` と `handler2` \(組み込み関数 [\_\_hook](../cpp/hook.md) を使用して設定できます。[ソース](../windows/event-source.md) を使用します。  
+ 設定することができます、 **CMyReceiver**メソッド`handler1`と`handler2`イベントを処理する (組み込み関数を使用して[_ _hook](../cpp/hook.md))を使用してを作成することができるイベントソースから[event_source](../windows/event-source.md)です。  
   
-## 参照  
- [Concepts](../windows/attributed-programming-concepts.md)
+## <a name="see-also"></a>関連項目  
+ [概念](../windows/attributed-programming-concepts.md)

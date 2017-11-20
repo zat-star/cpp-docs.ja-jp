@@ -1,79 +1,78 @@
 ---
-title: "/Za、/Ze (言語拡張機能の無効化) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLWCECompilerTool.DisableLanguageExtensions"
-  - "/za"
-  - "/ze"
-  - "VC.Project.VCCLCompilerTool.DisableLanguageExtensions"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Za コンパイラ オプション [C++]"
-  - "/Ze コンパイラ オプション [C++]"
-  - "Disable Language Extensions コンパイラ オプション"
-  - "有効化 (言語拡張機能を)"
-  - "言語拡張"
-  - "言語拡張, 無効化 (コンパイラで)"
-  - "Za コンパイラ オプション [C++]"
-  - "-Za コンパイラ オプション [C++]"
-  - "Ze コンパイラ オプション [C++]"
-  - "-Ze コンパイラ オプション [C++]"
+title: "-Za、-ze (言語拡張を無効にする) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLWCECompilerTool.DisableLanguageExtensions
+- /za
+- /ze
+- VC.Project.VCCLCompilerTool.DisableLanguageExtensions
+dev_langs: C++
+helpviewer_keywords:
+- -Za compiler option [C++]
+- Za compiler option [C++]
+- language extensions, disabling in compiler
+- -Ze compiler option [C++]
+- language extensions
+- enable language extensions
+- /Za compiler option [C++]
+- /Ze compiler option [C++]
+- Disable Language Extensions compiler option
+- Ze compiler option [C++]
 ms.assetid: 65e49258-7161-4289-a176-7c5c0656b1a2
-caps.latest.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "18"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1e1d0c5f76c0eb71b631ef9bffbc1e60e5ceb069
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Za、/Ze (言語拡張機能の無効化)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**\/Za** コンパイラ オプションは、ANSI C または ANSI C\+\+ と互換性のない言語構成要素にエラーを出力します。  既定である**\/Ze** コンパイラ オプションは Microsoft 拡張機能を有効にします。  
+# <a name="za-ze-disable-language-extensions"></a>/Za、/Ze (言語拡張機能の無効化)
+**/Za**コンパイラ オプションは、ANSI C89 または ISO C 11 と互換性がない言語構成要素のエラーを出力します。 **/Ze**コンパイラ オプションは、既定では、Microsoft 拡張機能を有効にします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Za  
 /Ze  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
 > [!NOTE]
->  **\/Ze** オプションの使用は推奨されていません。  詳細については、「[Deprecated Compiler Options in Visual C\+\+ 2005](http://msdn.microsoft.com/ja-jp/aa59fce3-50b8-4f66-9aeb-ce09a7a84cce)」を参照してください。  
+>  **/Ze**オプションは、その動作は既定であるために推奨されません。 使用することをお勧め、 [/Zc (準拠)](../../build/reference/zc-conformance.md)コンパイラ オプションを特定の言語拡張機能を制御します。 非推奨のコンパイラ オプションの一覧は、次を参照してください。、**廃止予定とコンパイラ オプションの削除**」の「[コンパイラ オプションの一覧をカテゴリ別](../../build/reference/compiler-options-listed-by-category.md)です。  
   
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] コンパイラでは、ANSI C または ANSI C\+\+ 規格以外の機能を多数用意しています。  これらの機能はまとめて、C および C\+\+ の Microsoft 拡張機能として知られています。  これらの拡張機能は、**\/Ze** オプションを指定すると使用可能になり、**\/Za** オプションを指定すると使用不能になります。  詳細については、「[Microsoft C\/C\+\+ の拡張機能](../../build/reference/microsoft-extensions-to-c-and-cpp.md)」を参照してください。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]コンパイラは、いくつかの ANSI C89、ISO C99 または ISO C 標準で指定されたもの以外の機能を提供しています。 これらの機能は、C および C++ に Microsoft 拡張機能として総称はします。 これらの拡張機能は既定では、使用可能でない場合に、 **/Za**オプションを指定します。 特定の拡張機能の詳細については、次を参照してください。 [C および C++ の Microsoft 拡張機能](../../build/reference/microsoft-extensions-to-c-and-cpp.md)します。  
   
- プログラムをほかの環境に移植する予定がある場合は、拡張機能を無効にします。  このオプションを選択してコンパイルを行うと、拡張キーワードが単に識別子として処理されるため、Microsoft のその他の拡張機能が無効になり、C プログラム用の組み込みマクロとして `__STDC__` マクロが自動的に定義されます。  
+ 指定して、言語拡張機能を無効にすることをお勧め、 **/Za**オプションの場合は、プログラムを他の環境に移植する予定です。 ときに**/Za**を指定すると、コンパイラに示す Microsoft 単純な識別子としてのキーワードの拡張し、他の Microsoft 拡張機能を無効にし、自動的に定義、 `__STDC__` C プログラムの定義済みマクロです。  
   
- その他のコンパイラ オプションを **\/Za** と共に使用すると、コンパイラが ANSI への準拠を確保する方法に影響が及ぶことがあります。  たとえば、**\/Za** と [\/fp \(浮動小数点の動作の指定\)](../../build/reference/fp-specify-floating-point-behavior.md) を併用すると、予期しない動作が発生する可能性があります。  
+ 使用されるその他のコンパイラ オプション**/Za**コンパイラにより、標準への準拠方法に影響を与えることができます。 たとえば、 **/Za**と[/fp (浮動小数点の動作を指定)](../../build/reference/fp-specify-floating-point-behavior.md) ISO C99 や c++ 11 標準に準拠していない浮動小数点型の昇格の動作が発生可能性があります。  
   
- **\/Za** の標準動作を指定する方法については、[\/Zc](../../build/reference/zc-conformance.md) コンパイラ オプションに関するトピックを参照してください。  
+ 特定の標準に準拠した動作の設定を指定する方法は、次を参照してください。、 [/Zc](../../build/reference/zc-conformance.md)コンパイラ オプション。  
   
- [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] の準拠の問題の詳細については、「[Visual C\+\+ での互換性と準拠の問題](../../misc/compatibility-and-compliance-issues-in-visual-cpp.md)」を参照してください。  
+ 準拠の問題の詳細については[!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)]を参照してください[非標準動作](../../cpp/nonstandard-behavior.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  ナビゲーション ウィンドウで、次のように選択します。**構成プロパティ**、 **c/c++**、**言語**します。  
   
-3.  **\[言語\]** プロパティ ページをクリックします。  
+3.  変更、**言語拡張機能を無効にする**プロパティです。  
   
-4.  **\[言語拡張を無効にする\]** プロパティを変更します。  
-  
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.DisableLanguageExtensions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [/Zc (準拠)](../../build/reference/zc-conformance.md)

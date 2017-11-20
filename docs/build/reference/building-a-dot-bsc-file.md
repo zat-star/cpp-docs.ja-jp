@@ -1,34 +1,33 @@
 ---
-title: ".bsc ファイルのビルド | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".bsc ファイル, ビルド"
-  - "bsc ファイル, ビルド"
+title: "構築します。Bsc ファイル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- .bsc files, building
+- bsc files, building
 ms.assetid: 304e240d-692a-4f8b-b9ed-891c01bbb2ad
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1e78ab48d04538901aa8d8e18fc4e13f1343f724
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# .bsc ファイルのビルド
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-BSCMAKE では、新しいブラウザー情報ファイルを新しく作成された .sbr ファイルから作成できます。  また、前回のビルドから変更のあったオブジェクト ファイルの .sbr ファイルを使用して、既存の .bsc ファイルを管理することもできます。  
+# <a name="building-a-bsc-file"></a>.bsc ファイルのビルド
+BSCMAKE では、新しく作成された .sbr ファイルから新しいブラウザー情報ファイルを作成できます。 前回のビルド以降に変更されたオブジェクト ファイルの .sbr ファイルを使用して既存の .bsc ファイルを管理することもできます。  
   
--   [.sbr ファイルの作成](../../build/reference/creating-an-dot-sbr-file.md)  
+-   [.Sbr ファイルを作成する方法](../../build/reference/creating-an-dot-sbr-file.md)  
   
 -   [BSCMAKE による .bsc ファイルのビルド方法](../../build/reference/how-bscmake-builds-a-dot-bsc-file.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [BSCMAKE リファレンス](../../build/reference/bscmake-reference.md)

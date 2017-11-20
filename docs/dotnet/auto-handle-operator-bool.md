@@ -1,48 +1,47 @@
 ---
-title: "auto_handle::operator bool | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_handle.operator bool"
-  - "msclr.auto_handle.operator bool"
-  - "operator bool"
-  - "msclr::auto_handle::operator bool"
-  - "auto_handle::operator bool"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_handle::operator bool"
+title: "auto_handle::operator bool |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_handle.operator bool
+- msclr.auto_handle.operator bool
+- operator bool
+- msclr::auto_handle::operator bool
+- auto_handle::operator bool
+dev_langs: C++
+helpviewer_keywords: auto_handle::operator bool
 ms.assetid: 2e535e99-cf87-4008-b588-02c587d77453
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 45454de445b0f8304a78e46a098e23173bb9889f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# auto_handle::operator bool
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-条件式に `auto_handle` を使用するための演算子。  
+# <a name="autohandleoperator-bool"></a>auto_handle::operator bool
+使用するための演算子`auto_handle`条件式でします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 operator bool();  
 ```  
   
-## 戻り値  
- ラップされたオブジェクトが有効な場合`true` ; 別の方法で `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`ラップされたオブジェクトが無効である場合`false`それ以外の場合。  
   
-## 解説  
- 整数型に変換できないため `bool` より安全であるこの演算子は `_detail_class::_safe_bool` に変換します。  
+## <a name="remarks"></a>コメント  
+ この演算子は実際に変換`_detail_class::_safe_bool`よりも安全である`bool`整数型に変換できないためです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_handle_operator_bool.cpp  
@@ -65,14 +64,17 @@ int main() {
 }  
 ```  
   
-  **s1 が無効です。**  
-**s2 は有効です。**  
-**s2 で無効です。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+s1 is invalid  
+s2 is valid  
+s2 is now invalid  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle Members](../dotnet/auto-handle-members.md)   
- [auto\_handle::operator\!](../dotnet/auto-handle-operator-logical-not.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
+ [auto_handle メンバー](../dotnet/auto-handle-members.md)   
+ [auto_handle::operator!](../dotnet/auto-handle-operator-logical-not.md)

@@ -6,16 +6,43 @@ ms.reviewer:
 ms.suite: 
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords: []
+f1_keywords:
+- valarray/std::operator!=
+- valarray/std::operator%
+- valarray/std::operator&amp;
+- valarray/std::operator&amp;&amp;
+- valarray/std::operator&gt;
+- valarray/std::operator&gt;&gt;
+- valarray/std::operator&gt;=
+- valarray/std::operator&lt;
+- valarray/std::operator&lt;&lt;
+- valarray/std::operator&lt;=
+- valarray/std::operator*
+- valarray/std::operator+
+- valarray/std::operator-
+- valarray/std::operator/
+- valarray/std::operator==
+- valarray/std::operator^
+- valarray/std::operator|
+- valarray/std::operator||
+dev_langs: C++
 ms.assetid: 8a53562c-90ab-4eb3-85d3-ada5259d90b0
-caps.latest.revision: 8
+caps.latest.revision: "8"
 manager: ghogen
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 66798adc96121837b4ac2dd238b9887d3c5b7eef
-ms.openlocfilehash: aa730db3fd5e9a3ea4919bb255d49532f7440981
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/29/2017
-
+helpviewer_keywords:
+- std::operator!= (valarray), std::operator&amp; (valarray)
+- std::operator&amp;&amp; (valarray)
+- std::operator&gt; (valarray)
+- std::operator&gt;&gt; (valarray)
+- std::operator&gt;= (valarray)
+- std::operator&lt; (valarray)
+- std::operator&lt;&lt; (valarray)
+- std::operator&lt;= (valarray), std::operator== (valarray)
+ms.openlocfilehash: b422f33addb61eed4ce04eeef74a76a597f799ee
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ltvalarraygt-operators"></a>&lt;valarray&gt; 演算子
 ||||  
@@ -232,7 +259,7 @@ operator&(
  ビットごとの AND 演算の要素ごとの組み合わせ要素が valarray の`left`と`right`です。  
   
 ### <a name="remarks"></a>コメント  
- ビットごとの演算は、`char` および `int` データ型とそのバリエーションのビットを操作するためにのみ使用できます。**float**、**double**、**longdouble**、`void``bool` など、より複雑なデータ型には使用できません。  
+ ビットごとの演算は、`char` および `int` データ型とそのバリエーションのビットを操作するためにのみ使用できます。**float**、**double**、**longdouble**、`void`、`bool` など、より複雑なデータ型には使用できません。  
   
  ビットごとの **AND** は論理 **AND** と同じ真理値表を持ちますが、個々のビットのレベルでデータ型に適用されます。 [operator&&](../standard-library/valarray-operators.md#amp) は要素レベルで適用され、すべての非ゼロ値を true と見なし、結果はブール値から成る valarray になります。 それに対して、ビットごとの **ANDoperator&** は、ビットごとの演算の結果に応じて、0 でも 1 でもない値を含む valarray になる場合があります。  
   
@@ -314,7 +341,7 @@ operator&&(
  それぞれの要素を論理 **AND** で結合する 2 つの valarray のうち 2 つ目の valarray、または valarray の各要素と結合する要素型の指定値。  
   
 ### <a name="return-value"></a>戻り値  
- 要素は、ブール型の、論理の要素ごとの組み合わせの valarray **AND**操作の`left`と`right`です。  
+ 要素は、ブール型の、論理の要素ごとの組み合わせの valarray **AND**の操作`left`と`right`です。  
   
 ### <a name="remarks"></a>コメント  
  論理 **ANDoperator&&** は要素レベルで適用され、すべての非ゼロ値を true と見なし、結果はブール値から成る valarray になります。 それに対して、ビットごとのバージョンの **AND** である [operator&](../standard-library/valarray-operators.md#op_amp) は、ビットごとの演算の結果に応じて、0 でも 1 でもない値を含む valarray になる場合があります。  
@@ -1328,10 +1355,10 @@ operator^(
  それぞれの要素をビットごとに **XOR** で結合する 2 つの valarray のうち 2 つ目の valarray、または valarray の各要素とビットごとに結合する要素型の指定値。  
   
 ### <a name="return-value"></a>戻り値  
- ビットごとの要素ごとの組み合わせ要素を持つ valarray **XOR**操作の`left`と`right`です。  
+ ビットごとの要素ごとの組み合わせ要素を持つ valarray **XOR**の操作`left`と`right`です。  
   
 ### <a name="remarks"></a>コメント  
- ビットごとの演算は、`char` および `int` データ型とそのバリエーションのビットを操作するためにのみ使用できます。**float**、**double**、`long double`、`void``bool` など、より複雑なデータ型には使用できません。  
+ ビットごとの演算は、内のビットを操作する場合にのみ使用できます`char`と`int`データ型とバリアントなく**float**、**二重**、 `long double`、 `void`、 `bool`またはその他より複雑なデータ型。  
   
  ビットごとの排他的 `OR`( **XOR**) は次の意味を持ちます: ビット *b*1 と *b*2 に対して、*b*1 **XOR** *b*2 は、片方のビットだけが true の場合は **true**、両方のビットが false または両方のビットが true の場合は **false** です。  
   
@@ -1417,7 +1444,7 @@ operator|(
  それぞれの要素をビットごとに `OR` で結合する 2 つの valarray のうち 2 つ目の valarray、または valarray の各要素とビットごとに結合する要素型の指定値。  
   
 ### <a name="return-value"></a>戻り値  
- ビットごとの要素ごとの組み合わせ要素を持つ valarray`OR`操作の`left`と`right`です。  
+ ビットごとの要素ごとの組み合わせ要素を持つ valarray`OR`の操作`left`と`right`です。  
   
 ### <a name="remarks"></a>コメント  
  ビットごとの演算は、`char` および `int` データ型とそのバリエーションのビットを操作するためにのみ使用できます。**float**、**double**、**longdouble**、`void`、`bool` など、より複雑なデータ型には使用できません。  
@@ -1509,7 +1536,7 @@ operator||(
  型の要素を持つ valarray`bool`要素ごとの論理 OR 演算の組み合わせと`left`と`right`です。  
   
 ### <a name="remarks"></a>コメント  
- 論理 `OR``operator||` は要素レベルで適用され、すべての非ゼロ値を **true** と見なし、結果はブール値から成る valarray になります。 それに対して、ビットごとのバージョンの `OR` である [operator&#124;](../standard-library/valarray-operators.md#op_or) は、ビットごとの演算の結果に応じて、0 でも 1 でもない値を含む valarray になる場合があります。  
+ 論理`OR``operator||`として 0 以外のすべての値をカウントする要素レベルで適用される**true**、され、結果はブール値の valarray。 それに対して、ビットごとのバージョンの `OR` である [operator&#124;](../standard-library/valarray-operators.md#op_or) は、ビットごとの演算の結果に応じて、0 でも 1 でもない値を含む valarray になる場合があります。  
   
 ### <a name="example"></a>例  
   
@@ -1564,5 +1591,4 @@ The element-by-element result of the logical OR operator|| is the
   
 ## <a name="see-also"></a>関連項目  
  [\<valarray>](../standard-library/valarray.md)
-
 

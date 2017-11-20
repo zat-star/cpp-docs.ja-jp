@@ -1,55 +1,54 @@
 ---
-title: "&lt;see&gt; (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "<see>"
-  - "see"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<see> C++ XML タグ"
-  - "see C++ XML タグ"
+title: "&lt;参照してください&gt;(Visual C) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- <see>
+- see
+dev_langs: C++
+helpviewer_keywords:
+- <see> C++ XML tag
+- see C++ XML tag
 ms.assetid: 20ef66f4-b278-45cf-8613-63919edf5720
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 25dc28c993289942d0eafd2f20fb5c849f1658c4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# &lt;see&gt; (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\<see\> タグを使用すると、テキスト内でリンクを指定できます。  示すテキストに [\<seealso\>](../Topic/%3Cseealso%3E%20\(Visual%20C++\).md) を使用します。バッチ処理することを確認またはで表示する場合があります。  
+# <a name="ltseegt-visual-c"></a>&lt;参照してください&gt;(Visual C)
+\<see> タグを使用すると、テキスト内でリンクを指定できます。 使用して[ \<seealso >](../ide/seealso-visual-cpp.md) 「参照」セクションに表示するテキストを示すためにします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 <see cref="member"/>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `member`  
- 現在のコンパイル環境からの呼び出しに利用できる、メンバーまたはフィールドへの参照。  単一引用符で囲みます。  
+ 現在のコンパイル環境からの呼び出しに利用できる、メンバーまたはフィールドへの参照。  名前は、一重引用符または二重引用符で囲みます。  
   
- コンパイラは、指定されたコード要素が出力 XML 内の要素名に渡します。は、`member` を解決することを確認します。  コンパイラは `member`を検索警告が発行されます。  
+ コンパイラは、指定されたコード要素が存在し、解決されることを確認`member`出力 XML 内の要素名にします。  コンパイラは、`member` が見つからない場合に警告を発行します。  
   
-## 解説  
- コンパイル時に [\/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定してドキュメント コメントをファイルに出力します。  
+## <a name="remarks"></a>コメント  
+ コンパイル時に [/doc](../build/reference/doc-process-documentation-comments-c-cpp.md) を指定して、ドキュメント コメントをファイルに出力します。  
   
- \<see\>使用例については [\<summary\>](../ide/summary-visual-cpp.md) を参照してください。  
+ 参照してください[\<概要 >](../ide/summary-visual-cpp.md)の使用例については\<を参照してください >。  
   
- Visual C\+\+ コンパイラでは、ドキュメント コメントで 1 回のパスの cref 参照の解決を試みます。  したがって、C\+\+ のルックアップ規則を使用して、シンボルがコンパイラによって参照がある未解決です。  詳細については、「[\<seealso\>](../Topic/%3Cseealso%3E%20\(Visual%20C++\).md)」を参照してください。  
+ Visual C++ コンパイラは、ドキュメント コメントを通じて 1 回渡すことで cref 参照の解決を試みます。  したがって、C++ のルックアップ規則を使用する場合、コンパイラによってシンボルが見つからないと、参照が未解決としてマークされます。 参照してください[ \<seealso >](../ide/seealso-visual-cpp.md)詳細についてはします。  
   
-## 使用例  
- 次の例では、コンパイラは参照の解決は、ジェネリック型への cref 参照のできるかこのようなに示します。  
+## <a name="example"></a>例  
+ コンパイラは、参照を解決するように、次の例は、ジェネリック型に cref 参照を作成する方法を示します。  
   
 ```  
 // xml_see_cref_example.cpp  
@@ -76,5 +75,5 @@ generic<class T>
 ref class C {};  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [XML に関するドキュメント](../ide/xml-documentation-visual-cpp.md)

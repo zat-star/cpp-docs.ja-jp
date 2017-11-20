@@ -1,35 +1,34 @@
 ---
-title: "marshal_context::marshal_as | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "marshal_context::marshal_as"
-  - "marshal_context.marshal_as"
-  - "msclr.interop.marshal_context.marshal_as"
-  - "msclr::interop::marshal_context::marshal_as"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "marshal_context クラス [C++], 操作"
+title: "marshal_context::marshal_as |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- marshal_context::marshal_as
+- marshal_context.marshal_as
+- msclr.interop.marshal_context.marshal_as
+- msclr::interop::marshal_context::marshal_as
+dev_langs: C++
+helpviewer_keywords: marshal_context class [C++], operations
 ms.assetid: 24a1afee-51c0-497c-948c-f77fe43635c8
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8cf8d8728a71f268db994efdc60f4be0dc5a65a2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# marshal_context::marshal_as
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-特定のデータ オブジェクトのマーシャリングをマネージとネイティブ データ型間の変換します。  
+# <a name="marshalcontextmarshalas"></a>marshal_context::marshal_as
+マネージとネイティブ データ型の間で変換する特定のデータ オブジェクトのマーシャ リングを実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 To_Type marshal_as<To_Type>(  
@@ -37,22 +36,22 @@ To_Type marshal_as<To_Type>(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `input`  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `input`  
  `To_Type` 変数にマーシャリングしようとする値。  
   
-## 戻り値  
- `input`の値を変換した後の `To_Type` 型の変数。  
+## <a name="return-value"></a>戻り値  
+ `To_Type`の値を変換した後の `input` 型の変数。  
   
-## 解説  
- この関数は、特定のデータ オブジェクトのマーシャリングを実行します。  [C\+\+ におけるマーシャリングの概要](../dotnet/overview-of-marshaling-in-cpp.md)の表に示す変換でのみ、この関数を使用します。  
+## <a name="remarks"></a>コメント  
+ この関数は、特定のデータ オブジェクトのマーシャ リングを実行します。 この関数内のテーブルで示された変換でのみ使用[概要の C++ におけるマーシャ リング](../dotnet/overview-of-marshaling-in-cpp.md)です。  
   
- サポートされていない 2 つのデータ型をマーシャリングしようとすると、`marshal_as` は、コンパイル時にエラー [C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md) を生成します。  詳細については、このエラーと共に提供されるメッセージを参照してください。  `C4996` エラーは、使用されなくなった関数の場合に加えて、他の状況で生成される可能性もあります。  このエラーを生成するには、2 種類の条件はサポートされていないデータ型のペアをマーシャリングすると、コンテキストを必要とする変換に `marshal_as` を使用しようとしています。  
+ サポートされていないデータ型のペアをマーシャ リングしようとする場合`marshal_as`でエラーが発生[C4996](../error-messages/compiler-warnings/compiler-warning-level-3-c4996.md)コンパイル時にします。 詳細については、このエラーと共に提供されるメッセージを参照してください。 `C4996` エラーは、使用されなくなった関数の場合に加えて、他の状況で生成される可能性もあります。 このエラーを生成する 2 つの条件がサポートされていないデータ型のペアをマーシャ リングしようとしてとを使用しようとしています。`marshal_as`のコンテキストを必要とする変換です。  
   
- マーシャリング ライブラリは、複数のヘッダー ファイルで構成されます。  どの変換でもただ 1 つのファイルが必要ですが、他の変換で必要とされる追加ファイルをインクルードすることもできます。  どのマーシャリング ファイルが各変換に含める必要があるか `Marshaling Overview in C++` の表に示します。  
+ マーシャリング ライブラリは、複数のヘッダー ファイルで構成されます。 どの変換でもただ 1 つのファイルが必要ですが、他の変換で必要とされる追加ファイルをインクルードすることもできます。 内のテーブル`Marshaling Overview in C++`マーシャ リング ファイルは、各変換に含める必要があることを示します。  
   
-## 使用例  
- この例では `System::String` にマーシャリングするためのコンテキストを `const char *` から変数の型を作成します。  変換されたデータはコンテキストを削除する行の後には有効ではありません。  
+## <a name="example"></a>例  
+ この例からのマーシャ リング コンテキストを作成する、`System::String`を`const char *`変数の型。 変換後のデータは、コンテキストを削除する行の後に有効なされません。  
   
 ```  
 // marshal_context_test.cpp  
@@ -74,12 +73,12 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **Header file:** \<msclr\\marshal.h、\> \<msclr\\marshal\_windows.h、\> \<msclr\\marshal\_cppstd.h、または\> \<msclr\\marshal\_atl.h\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル:** \<msclr\marshal.h >、 \<msclr\marshal_windows.h >、 \<msclr\marshal_cppstd.h >、または\<msclr\marshal_atl.h >  
   
- **名前空間:** msclr::interop  
+ **Namespace:** msclr::interop  
   
-## 参照  
- [C\+\+ におけるマーシャリングの概要](../dotnet/overview-of-marshaling-in-cpp.md)   
- [marshal\_as](../dotnet/marshal-as.md)   
- [marshal\_context クラス](../dotnet/marshal-context-class.md)
+## <a name="see-also"></a>関連項目  
+ [C++ におけるマーシャ リングの概要](../dotnet/overview-of-marshaling-in-cpp.md)   
+ [marshal_as](../dotnet/marshal-as.md)   
+ [marshal_context クラス](../dotnet/marshal-context-class.md)

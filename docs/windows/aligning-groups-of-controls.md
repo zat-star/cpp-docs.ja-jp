@@ -1,56 +1,56 @@
 ---
-title: "Aligning Groups of Controls | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "controls [C++], aligning"
+title: "コントロール グループの配置 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: controls [C++], aligning
 ms.assetid: a4f49a73-4a17-44b3-8568-aa35f646b5cf
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1aa48fe2288418468e2ba89b2e4cdb18563254c6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Aligning Groups of Controls
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コントロール グループを配置するには、次の操作を行います。  
+# <a name="aligning-groups-of-controls"></a>コントロール グループの配置
+次の手順では、コントロールのグループを配置する方法を示します。  
   
-### コントロール グループを配置するには  
+### <a name="to-align-groups-of-controls"></a>コントロールのグループを配置するには  
   
-1.  配置する[コントロールを選択](../mfc/selecting-multiple-controls.md)します。  最も優先度の高いコントロールにするものを最初に選択するか、またはコントロールを優先度の高いコントロールに設定してから、配置コマンドやサイズ変更コマンドを実行してください。  
+1.  [コントロールを選択する](../windows/selecting-multiple-controls.md)配置します。 主要なコントロールを最初にする対象のコントロールをオンにしてくださいまたは配置を実行しているか、コマンドをサイズ変更する前に基準となるコントロールに設定します。  
   
-     コントロール グループの最終的な位置は、最も優先度の高いコントロールの位置によって決まります。  最も優先度の高いコントロールの選択の詳細については、「[最も優先度の高いコントロールの指定](../mfc/specifying-the-dominant-control.md)」を参照してください。  
+     コントロールのグループの最後の位置は、主要なコントロールの位置によって異なります。 主要なコントロールを選択する方法の詳細については、次を参照してください。 [Dominant コントロールの指定](../windows/specifying-the-dominant-control.md)です。  
   
-2.  \[書式\] メニューの \[整列\] をクリックし、以下の配置のうちの 1 つを選択します。  
+2.  **形式**] メニューの [選択**Align**、以下の配置の 1 つを選択。  
   
-    -   \[左\] : 選択したコントロールの左端を揃えて配置します。  
+    -   **左揃え**: 選択したコントロールの左端に揃えます。  
   
-    -   \[上下中央\] : 選択したコントロールを中心点に合わせて水平方向に整列します。  
+    -   **センター**: 選択したコントロールを水平方向の中心点を揃えて配置します。  
   
-    -   \[右\] : 選択したコントロールの右端を揃えて配置します。  
+    -   **権限**: 選択したコントロールの右端に揃えて配置します。  
   
-    -   \[上\] : 選択したコントロールの上端を揃えて配置します。  
+    -   **などを揃えたり**: 選択したコントロールをそれらの上端に沿って配置されます。  
   
-    -   \[左右中央\] : 選択したコントロールを中央の点に合わせて垂直方向に整列します。  
+    -   **左右**: 選択したコントロールを中央の点に合わせて垂直方向に整列します。  
   
-    -   \[下\] : 選択したコントロールの下端を揃えて配置します。  
+    -   **下部**: 選択したコントロールの下端に揃えて配置します。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
  要件  
   
  Win32  
   
-## 参照  
- [Arrangement of Controls on Dialog Boxes](../mfc/arrangement-of-controls-on-dialog-boxes.md)   
- [Controls in Dialog Boxes](../mfc/controls-in-dialog-boxes.md)   
+## <a name="see-also"></a>関連項目  
+ [ダイアログ ボックスのコントロールの配置](../windows/arrangement-of-controls-on-dialog-boxes.md)   
+ [ダイアログ ボックスのコントロール](../windows/controls-in-dialog-boxes.md)   
  [コントロール](../mfc/controls-mfc.md)
+

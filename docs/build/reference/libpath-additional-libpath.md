@@ -1,62 +1,62 @@
 ---
-title: "/LIBPATH (追加ライブラリのパス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/libpath"
-  - "VC.Project.VCLinkerTool.AdditionalLibraryDirectories"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/LIBPATH リンカー オプション"
-  - "追加のライブラリ パス リンカー オプション"
-  - "環境ライブラリ パスのオーバーライド"
-  - "LIBPATH リンカー オプション"
-  - "-LIBPATH リンカー オプション"
-  - "ライブラリのパス リンカー オプション"
+title: "-LIBPATH (追加ライブラリのパス) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /libpath
+- VC.Project.VCLinkerTool.AdditionalLibraryDirectories
+dev_langs: C++
+helpviewer_keywords:
+- LIBPATH linker option
+- /LIBPATH linker option
+- Additional Libpath linker option
+- environment library path override
+- -LIBPATH linker option
+- library path linker option
 ms.assetid: 7240af0b-9a3d-4d53-8169-2a92cd6958ba
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a2bef6a2294bab34cf9dfc59e352e1b79376b146
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /LIBPATH (追加ライブラリのパス)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="libpath-additional-libpath"></a>/LIBPATH (追加ライブラリのパス)
 ```  
 /LIBPATH:dir  
 ```  
   
-## 解説  
- それぞれの文字について以下に説明します。  
+## <a name="remarks"></a>コメント  
+ ここで、  
   
  `dir`  
- 環境変数 LIB で指定されたパスよりも前に検索するパスを指定します。  
+ パスを指定、LIB 環境オプションで指定されたパスを検索する前に、リンカーが検索されます。  
   
-## 解説  
- \/LIBPATH オプションは、環境ライブラリ パスをオーバーライドします。  まず、このオプションで指定されたパスで検索し、次に環境変数 LIB で指定されたパスで検索します。  入力する \/LIBPATH オプションごとに、1 つのディレクトリしか指定できません。  複数のディレクトリを指定する場合は、ディレクトリごとに \/LIBPATH オプションを指定します。  リンカーは、指定された順でディレクトリを検索します。  
+## <a name="remarks"></a>コメント  
+ /LIBPATH オプションを使用して、環境ライブラリ パスをオーバーライドします。 リンカーは、まずこのオプションで指定されたパスで検索し、LIB 環境変数で指定されたパスで検索されます。 ディレクトリを入力する各/LIBPATH オプションを 1 つのみを指定することができます。 1 つ以上のディレクトリを指定する場合は、複数の/LIBPATH オプションを指定する必要があります。 リンカーの順序で指定されたディレクトリが検索されます。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[全般\] プロパティ ページをクリックします。  
+3.  クリックして、**全般**プロパティ ページ。  
   
-4.  \[追加のライブラリ ディレクトリ\] プロパティを変更します。  
+4.  変更、**追加のライブラリ ディレクトリ**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.AdditionalLibraryDirectories%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

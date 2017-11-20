@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -454,48 +453,31 @@ f1_keywords:
 - concrt/Concurrency::details::_Timer::_Stop
 - concrt/Concurrency::details::_TaskCollectionBase::_M_pParent
 - agents/Concurrency::_Network_link_iterator::operator->
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - DWORD typedef
 - HANDLE typedef
 - LPSECURITY_ATTRIBUTES typedef
 - HRESULT typedef
 ms.assetid: a057c776-7caa-4605-8f33-9815cf6f9b27
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: fa774c7f025b581d65c28d65d83e22ff2d798230
-ms.openlocfilehash: 88de4e73c29e222009a4ca90b3b22c4701b21e70
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: b97785b2853b278e93f5f13aa2c40741d10c9d9c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="reference-concurrency-runtime"></a>参照 (同時実行ランタイム)
-このセクションには、同時実行ランタイムに関する参照情報が含まれています。
-**注**C++ 言語の標準には、ライブラリなどの実装のアンダー スコア (_) 文字で始まる識別子の使用が予約されています。 この名前はコードで使用しないでください。 この規則に従った名前を持つコード要素の動作は永続的に保証されたものではなく、今後のリリースで変更されることがあります。 こうした理由から、このようなコード要素は、同時実行ランタイムのドキュメントから省略されています。
+このセクションには、同時実行ランタイムに関するリファレンス情報が含まれています。
+**注**標準 C++ の言語には、ライブラリなどの実装のアンダー スコア (_) 文字で始まる識別子の使用が予約されています。 この名前はコードで使用しないでください。 この規則に従った名前を持つコード要素の動作は永続的に保証されたものではなく、今後のリリースで変更されることがあります。 これらの理由から、このようなコード要素は、同時実行ランタイムのドキュメントから省略されています。
 
 ## <a name="in-this-section"></a>このセクションの内容
-[同時実行 Namespace](concurrency-namespace.md) concurrency 名前空間には、クラスが用意されていて、C++ 向けの並列プログラミング フレームワークである同時実行ランタイムへのアクセスを提供する関数。 詳細については、「[同時実行ランタイム](../concurrency-runtime.md)」を参照してください。
+[同時実行 Namespace](concurrency-namespace.md) concurrency 名前空間は、クラスを提供し、同時実行ランタイム、C++ 向けの並列プログラミング フレームワークへのアクセスを提供する関数。 詳細については、「[同時実行ランタイム](../concurrency-runtime.md)」を参照してください。
 
 [std 名前空間](std-namespace.md)
 [stdx 名前空間](stdx-namespace.md)
-
 
 

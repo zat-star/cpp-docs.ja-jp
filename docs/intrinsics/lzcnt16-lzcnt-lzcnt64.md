@@ -1,42 +1,42 @@
 ---
-title: "__lzcnt16、__lzcnt、__lzcnt64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__lzcnt64"
-  - "__lzcnt16"
-  - "__lzcnt"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__lzcnt 組み込み"
-  - "lzcnt 命令"
-  - "lzcnt16 組み込み"
-  - "lzcnt 組み込み"
-  - "__lzcnt16 組み込み"
-  - "lzcnt64 組み込み"
-  - "__lzcnt64 組み込み"
+title: "_ _lzcnt16、_ _lzcnt、_ _lzcnt64 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __lzcnt64
+- __lzcnt16
+- __lzcnt
+dev_langs: C++
+helpviewer_keywords:
+- __lzcnt intrinsic
+- lzcnt instruction
+- lzcnt16 intrinsic
+- lzcnt intrinsic
+- __lzcnt16 intrinsic
+- lzcnt64 intrinsic
+- __lzcnt64 intrinsic
 ms.assetid: 412113e7-052e-46e5-8bfa-d5ad72abc10e
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 983d8ff684887ba670e81bf6561d2f47022ff744
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __lzcnt16、__lzcnt、__lzcnt64
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="lzcnt16-lzcnt-lzcnt64"></a>__lzcnt16、__lzcnt、__lzcnt64
+**Microsoft 固有の仕様**  
   
- 先行するゼロの数を 16 ビット32 ビットまたはバイトの整数します。  
+ 数、16、32 ビットまたは 64 バイトの整数で 0 が先頭の数。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 unsigned short __lzcnt16(  
@@ -50,29 +50,31 @@ unsigned __int64 __lzcnt64(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `value`  
- 先行ゼロを確認する 16 ビット32 ビットまたは 64 ビット符号なし整数。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `value`  
+ 16、32 ビット、または先行ゼロをスキャンする 64 ビット符号なし整数。  
   
-## 戻り値  
- `value` のパラメーターに先行するゼロのビット数。  `value` がゼロの場合戻り値は入力のオペランド \(1632または 64\) のサイズです。  `value` の最上位ビットが 1 の場合戻り値はになります。  
+## <a name="return-value"></a>戻り値  
+ 先行ゼロのビットの数、`value`パラメーター。 場合`value`0 の場合は、戻り値が入力オペランド (16、32、または 64) のサイズ。 場合、最もの上位ビット`value`は 1 つは、戻り値は 0 です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__lzcnt16`|高度なビット操作|  
-|`__lzcnt`|高度なビット操作|  
-|`__lzcnt64`|64 ビット モードの高度なビット操作。|  
+|---------------|------------------|  
+|`__lzcnt16`|AMD: 高度なビット操作 (ABM)<br /><br /> Intel: Haswell|  
+|`__lzcnt`|AMD: 高度なビット操作 (ABM)<br /><br /> Intel: Haswell|  
+|`__lzcnt64`|AMD:、64 ビット モードでのビット操作 (ABM) が高度な。<br /><br /> Intel: Haswell|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- これらの組み込みは `lzcnt` 命令を生成します。  `lzcnt` 命令の戻り値は引数のサイズと同じになります。値。  32 ビット モードでは64 ビットの汎用レジスタしたがって64 ビット `lzcnt` はありません。  
+## <a name="remarks"></a>コメント  
+ これらの組み込みの各を生成、`lzcnt`命令します。  値のサイズを`lzcnt`命令は、その引数のサイズと同じを返します。  32 ビット モードではありません。 64 ビットの汎用レジスタ、したがっていいえ 64 ビット`lzcnt`です。  
   
- `lzcnt` の命令に対するハードウェア サポートを確認するには `InfoType=0x80000001` の `__cpuid` 組み込みを呼び出し`CPUInfo[2] (ECX)` のビット 5 をチェックします。  このビットは命令がサポートされている場合は 0 になりは 1。  `lzcnt` 命令をサポートするハードウェアのこの組み込みを使用するコードを実行すると結果は予測できません。  
+ ハードウェア サポートの決定を`lzcnt`命令呼び出し、`__cpuid`で組み込み`InfoType=0x80000001`のビット 5 をチェックし、`CPUInfo[2] (ECX)`です。 このビットはある命令がサポートされている場合は 1 と 0 それ以外の場合。 かどうかはコードを実行するを使用するこの組み込みをサポートしていないハードウェア、`lzcnt`命令、結果は予測できません。  
   
-## 使用例  
+ サポートしていない Intel プロセッサで、`lzcnt`として命令が実行される命令のバイト エンコーディング`bsr`(スキャン リバース ビット)。 コードの移植性に問題がある場合は、使用を検討してください、`_BitScanReverse`組み込み代わりにします。 詳細については、次を参照してください。 [_BitScanReverse、_BitScanReverse64](../intrinsics/bitscanreverse-bitscanreverse64.md)です。  
+  
+## <a name="example"></a>例  
   
 ```  
 // Compile this test with: /EHsc  
@@ -100,15 +102,18 @@ int main()
   
 ```  
   
-  **\_\_lzcnt16 \(0x0\) \= 16**  
- **\_\_lzcnt16 \(0xff\) \= 8**  
- **\_\_lzcnt16 \(0xffff\) \= 0**  
- **\_\_lzcnt \(0x0\) \= 32**  
- **\_\_lzcnt \(0xff\) \= 24**  
- **\_\_lzcnt \(0xffff\) \= 16**  
- **\_\_lzcnt \(0\) \= 0xffffffff**   
-## 終了 Microsoft 固有の仕様→  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+__lzcnt16(0x0) = 16  
+__lzcnt16(0xff) = 8  
+__lzcnt16(0xffff) = 0  
+__lzcnt(0x0) = 32  
+__lzcnt(0xff) = 24  
+__lzcnt(0xffff) = 16  
+__lzcnt(0xffffffff) = 0  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+ このコンテンツの一部は、高度なマイクロ デバイス, Inc. によって Copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

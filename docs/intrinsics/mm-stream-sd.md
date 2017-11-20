@@ -1,35 +1,34 @@
 ---
-title: "_mm_stream_sd | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_mm_stream_sd"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_mm_stream_sd 組み込み"
-  - "movntsd 命令"
+title: "_mm_stream_sd |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: _mm_stream_sd
+dev_langs: C++
+helpviewer_keywords:
+- _mm_stream_sd intrinsic
+- movntsd instruction
 ms.assetid: 2b4bea5e-e64e-45fa-9afc-88a2e4b82cfc
-caps.latest.revision: 14
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: b5489fc1503a57011560a679d5e4f226279e4aa0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# _mm_stream_sd
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="mmstreamsd"></a>_mm_stream_sd
+**Microsoft 固有の仕様**  
   
- キャッシュを汚さないのメモリ位置に 64 ビットのデータを書き込みます。  
+ キャッシュを汚染せずに、64 ビットのデータをメモリ位置に書き込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void _mm_stream_sd(  
@@ -38,30 +37,30 @@ void _mm_stream_sd(
 );  
 ```  
   
-#### パラメーター  
- \[出力\] `Dest`  
- データ ソースが書き込まれる場所へのポインター。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Dest`  
+ ソース データの書き込み先の場所へのポインター。  
   
- \[入力\] `Source`  
- 下位 64 ビットに記述する必要 `double` の値を含むビットの値。  
+ [入力] `Source`  
+ 128 ビットの値を含む、`double`値の 64 ビットの下で記述する.  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  なし。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
+|---------------|------------------|  
 |`_mm_stream_sd`|SSE4a|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- この組み込みでは `movntsd` 命令を生成します。  この命令に対するハードウェア サポートを確認するには`InfoType=0x80000001` の `__cpuid` 組み込みを呼び出し`CPUInfo[2] (ECX)` のビット 6 をチェックします。  このビットはハードウェアでこの命令がサポートされる場合は 0 になりは 1。  
+## <a name="remarks"></a>コメント  
+ この組み込みを生成、`movntsd`命令します。 この命令のハードウェア サポートを確認するのには、呼び出し、`__cpuid`で組み込み`InfoType=0x80000001`のビット 6 をチェックし、`CPUInfo[2] (ECX)`です。 ハードウェアがサポートする場合、この命令と 0 それ以外の場合、このビットは 1 です。  
   
- `movntsd` 命令をサポートするハードウェアの `_mm_stream_sd` 組み込みを使用するコードを実行すると結果は予測できません。  
+ 使用するコードを実行する場合、`_mm_stream_sd`サポートしていないハードウェアの組み込み、`movntsd`命令、結果は予測できません。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // Compile this sample with: /EHsc  
@@ -84,13 +83,15 @@ int main()
   
 ```  
   
-  **d \[0\] \= \-1d \[1\] \= 1**    
-## 終了 Microsoft 固有の仕様→  
- アドバンストのマイクロアーキテクチャのデバイセズ Inc の著作の著作権2007 年\)   All rights reserved.  アドバンストのマイクロアーキテクチャのデバイセズのアクセス許可と再生されInc  
+```Output  
+d[0] = -1, d[1] = 1  
+```  
   
-## 参照  
- [\_mm\_stream\_ss](../Topic/_mm_stream_ss.md)   
- [\_mm\_store\_sd](http://msdn.microsoft.com/ja-jp/8e672d0d-0a96-45b9-a783-392a2457de42)   
- [\_mm\_sfence](http://msdn.microsoft.com/ja-jp/b6c0d18e-3628-4318-826b-45f66782e870)   
- [Streaming SIMD Extensions that Support the Cache](http://msdn.microsoft.com/ja-jp/8f03493a-d5f5-4457-892e-0b6540494872)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+ 高度なマイクロ デバイス, Inc. によって copyright 2007All rights reserved. 高度なマイクロ デバイス, Inc. のアクセス許可を持つ再現  
+  
+## <a name="see-also"></a>関連項目  
+ [_mm_stream_ss](../intrinsics/mm-stream-ss.md)   
+ [_mm_store_sd](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_store_sd)   
+ [_mm_sfence](https://software.intel.com/sites/landingpage/IntrinsicsGuide/#text=_mm_sfence)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

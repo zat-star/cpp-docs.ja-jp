@@ -1,32 +1,30 @@
 ---
-title: "find_first_of (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::find_first_of"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "find_first_of 関数 [STL/CLR]"
+title: "find_first_of (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::find_first_of
+dev_langs: C++
+helpviewer_keywords: find_first_of function [STL/CLR]
 ms.assetid: d559bad4-fc12-4201-af49-db0e7eec48e8
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 910760f9964c612096a97e175ff0a8771a91003a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# find_first_of (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-対象範囲内の複数の値の最初の発生や二項述語で指定した要素のセットで指定されたで同じ複数要素の最初のオカレンスを検索します。  
+# <a name="findfirstof-stlclr"></a>find_first_of (STL/CLR)
+対象範囲内で複数の値のうち最初に出現するもの、つまり二項述語で指定された意味で、指定された要素のセットと等価である複数の要素のうち最初に出現するものを検索します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _FwdIt1, class _FwdIt2> inline  
@@ -37,13 +35,13 @@ template<class _FwdIt1, class _FwdIt2, class _Pr> inline
         _FwdIt2 _First2, _FwdIt2 _Last2, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `find_first_of`も同じように動作します。  詳細については、「[find\_first\_of](../Topic/find_first_of.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`find_first_of`です。 詳細については、次を参照してください。 [find_first_of](../standard-library/algorithm-functions.md#find_first_of)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

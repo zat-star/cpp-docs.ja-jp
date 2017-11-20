@@ -1,32 +1,30 @@
 ---
-title: "pop_heap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::pop_heap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "pop_heap 関数 [STL/CLR]"
+title: "pop_heap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::pop_heap
+dev_langs: C++
+helpviewer_keywords: pop_heap function [STL/CLR]
 ms.assetid: d9bde0ed-2122-4d83-b4b3-f47f6fb3729a
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: cf4f3e94035af0ce12ddcfabdee21459918a039c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# pop_heap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-最も大きな要素をヒープの頭から次に\-範囲の最後の位置を削除し、残りの要素から新しいヒープを形成します。  
+# <a name="popheap-stlclr"></a>pop_heap (STL/CLR)
+ヒープの先頭と範囲内の最後から 2 番目の位置との間で最大の要素を削除し、残りの要素から新しいヒープを形成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -35,13 +33,13 @@ template<class _RanIt, class _Pr> inline
     void pop_heap(_RanIt _First, _RanIt _Last, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `pop_heap`も同じように動作します。  詳細については、「[pop\_heap](../Topic/pop_heap.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`pop_heap`です。 詳細については、次を参照してください。 [pop_heap](../standard-library/algorithm-functions.md#pop_heap)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

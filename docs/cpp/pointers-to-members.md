@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - declarations, pointers
 - class members [C++], pointers to
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - members [C++], pointers to
 - pointers, declarations
 ms.assetid: f42ddb79-9721-4e39-95b1-c56b55591f68
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 98a6db086443c15964a1dcf0a345b2fbaccfa233
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: d8a8a8c4d88f0ccd7c879eb361643ea22e2ec41b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="pointers-to-members"></a>メンバーへのポインター
 メンバーへのポインターの宣言は、ポインター宣言の特殊なケースです。  これらは次のシーケンスで宣言します。  
@@ -52,7 +49,7 @@ ms.lasthandoff: 09/25/2017
   
     -   :: 演算子。  
   
-    -   ** \* **演算子。  
+    -   **\*** 演算子。  
   
     -   省略可能な**const**や`volatile`指定子。  
   
@@ -60,9 +57,9 @@ ms.lasthandoff: 09/25/2017
   
     -   初期化子 (省略可能):  
   
- ** = **演算子。  
+ **=** 演算子。  
   
- ** & **演算子。  
+ **&** 演算子。  
   
  クラスの修飾名。  
   
@@ -116,7 +113,7 @@ strcpy_s( pwChildWindow->*pwCaption, cUntitledLen, szUntitled );
 (pwChildWindow->*pwCaption)[cUntitledLen - 1] = '2'; //same as //pwChildWindow->szWinCaption[cUntitledLen - 1] = '2';  
 ```  
   
- 間の違い、 **.\***と** -> \* **演算子 (メンバーへのポインター演算子) は、 **.\***演算子メンバーが選択オブジェクトまたはオブジェクト参照を指定するには、中に、 ** -> \* **演算子はポインターを通じてメンバーを選択します。 (詳細については、これらの演算子は、次を参照してください[メンバーへのポインター演算子を含む式](../cpp/pointer-to-member-operators-dot-star-and-star.md)。)。  
+ 間の違い、 **.\***と **-> \*** 演算子 (メンバーへのポインター演算子) は、 **.\***演算子メンバーが選択オブジェクトまたはオブジェクト参照を指定するには、中に、  **-> \*** 演算子はポインターを通じてメンバーを選択します。 (詳細については、これらの演算子は、次を参照してください[メンバーへのポインター演算子を含む式](../cpp/pointer-to-member-operators-dot-star-and-star.md)。)。  
   
  メンバーへのポインター演算子の結果は、メンバーの種類: この場合、 **char \***です。  
   

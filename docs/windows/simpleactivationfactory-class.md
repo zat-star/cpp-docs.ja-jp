@@ -1,32 +1,30 @@
 ---
-title: "SimpleActivationFactory クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::SimpleActivationFactory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SimpleActivationFactory クラス"
+title: "SimpleActivationFactory クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::SimpleActivationFactory
+dev_langs: C++
+helpviewer_keywords: SimpleActivationFactory class
 ms.assetid: aff768e0-0038-4fd7-95d2-ad7d308da41c
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3c56d03b74080ae65f84ffbad8c4dd2092be1082
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# SimpleActivationFactory クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-基本的な機能を Windows ランタイムまたは標準的な COM の基本クラスを作成する手順について説明します。  
+# <a name="simpleactivationfactory-class"></a>SimpleActivationFactory クラス
+Windows ランタイムまたはクラシック COM の基底クラスを作成するための基本的なメカニズムを提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<  
@@ -35,28 +33,28 @@ template<
 class SimpleActivationFactory : public ActivationFactory<>;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `Base`  
  基本クラスです。  
   
-## 解説  
- 基本クラスが既定のコンストラクターを提供する必要があります。  
+## <a name="remarks"></a>コメント  
+ 基本クラスには、既定のコンス トラクターを提供する必要があります。  
   
- 次のコード例は [ActivatableClassWithFactoryEx](../Topic/ActivatableClass%20Macros.md) マクロの SimpleActivationFactory を使用する方法を示します。  
+ 次のコード例で SimpleActivationFactory を使用する方法を示します、 [ActivatableClassWithFactoryEx](../windows/activatableclass-macros.md)マクロです。  
   
  `ActivatableClassWithFactoryEx(MyClass, SimpleActivationFactory, MyServerName);`  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
+|----------|-----------------|  
 |[SimpleActivationFactory::ActivateInstance メソッド](../windows/simpleactivationfactory-activateinstance-method.md)|指定されたインターフェイスのインスタンスを作成します。|  
-|[SimpleActivationFactory::GetRuntimeClassName メソッド](../windows/simpleactivationfactory-getruntimeclassname-method.md)|`Base` クラス テンプレート パラメーターで指定されたクラスのインスタンスのランタイム クラスの名前を取得します。|  
-|[SimpleActivationFactory::GetTrustLevel メソッド](../Topic/SimpleActivationFactory::GetTrustLevel%20Method.md)|`Base` クラス テンプレート パラメーターで指定されたクラスのインスタンスの信頼レベルを取得します。|  
+|[SimpleActivationFactory::GetRuntimeClassName メソッド](../windows/simpleactivationfactory-getruntimeclassname-method.md)|によって指定されたクラスのインスタンスのランタイム クラス名を取得、`Base`クラス テンプレート パラメーター。|  
+|[SimpleActivationFactory::GetTrustLevel メソッド](../windows/simpleactivationfactory-gettrustlevel-method.md)|によって指定されたクラスのインスタンスの信頼レベルを取得、`Base`クラス テンプレート パラメーター。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `I0`  
   
  `ChainInterfaces`  
@@ -79,10 +77,10 @@ class SimpleActivationFactory : public ActivationFactory<>;
   
  `SimpleActivationFactory`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

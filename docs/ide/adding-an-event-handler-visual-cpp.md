@@ -1,58 +1,56 @@
 ---
-title: "イベント ハンドラーの追加 (Visual C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.codewiz.eventhandler.overview"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント ハンドラー, 追加"
-  - "MSBuild, プロパティ"
-  - "プロパティ [Visual Studio], MSBuild"
+title: "イベント ハンドラー (Visual C) を追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.codewiz.eventhandler.overview
+dev_langs: C++
+helpviewer_keywords:
+- event handlers, adding
+- properties [Visual Studio], MSBuild
+- MSBuild, properties
 ms.assetid: 050bebf0-a9e0-474b-905c-796fe5ac8fc3
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 172a9c2dd7f2af941c9b0ae5d2600d2717d15b1f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# イベント ハンドラーの追加 (Visual C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-リソース エディターから、[イベント ハンドラー ウィザード](../ide/event-handler-wizard.md)を使用して、ダイアログ ボックス コントロールに新規イベント ハンドラーを追加したり、既存のイベント ハンドラーを編集したりできます。  
+# <a name="adding-an-event-handler-visual-c"></a>イベント ハンドラーの追加 (Visual C++)
+リソース エディターで、新しいイベント ハンドラーを追加または編集 ダイアログ ボックス コントロールを使用して、既存のイベント ハンドラー、[イベント ハンドラー ウィザード](../ide/event-handler-wizard.md)です。  
   
- [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)を使用すると、ダイアログ ボックスを実装するクラスにイベントを追加できます。  ダイアログ ボックス クラス以外のクラスにイベントを追加するには、イベント ハンドラー ウィザードを使用します。  
+ イベントを追加すると、ダイアログ ボックスを使用して、実装するクラス、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。 ダイアログ ボックス クラス以外のクラスにイベントを追加する場合は、イベント ハンドラー ウィザードを使用します。  
   
-### ダイアログ ボックス コントロールにイベント ハンドラーを追加するには  
+### <a name="to-add-an-event-handler-to-a-dialog-box-control"></a>ダイアログ ボックス コントロールにイベント ハンドラーを追加するには  
   
-1.  [&#91;リソース ビュー&#93;](../windows/resource-view-window.md) でダイアログ ボックスのリソースをダブルクリックし、コントロールを含むダイアログ ボックスのリソースを[ダイアログ エディター](../mfc/dialog-editor.md)で開きます。  
+1.  ダイアログ ボックスのリソースをダブルクリックして[リソース ビュー](../windows/resource-view-window.md)でコントロールを含むダイアログ ボックスのリソースを開く、[ダイアログ エディター](../windows/dialog-editor.md)です。  
   
-2.  通知されたイベントを処理するコントロールを右クリックします。  
+2.  通知イベントを処理するコントロールを右クリックします。  
   
-3.  ショートカット メニューの **\[イベント ハンドラーの追加\]** をクリックし、イベント ハンドラー ウィザードを表示します。  
+3.  ショートカット メニューをクリックして**イベント ハンドラーの追加**イベント ハンドラー ウィザードを表示します。  
   
-4.  \[メッセージの種類\] ボックスからイベントを選択し、\[クラスの一覧\] ボックスに追加します。  
+4.  イベントを選択して、**メッセージの種類**ボックスで選択されたクラスに追加する、**クラス リスト**ボックス。  
   
-5.  \[関数ハンドラー名\] ボックスで、既定の名前を受け入れるか、または任意の名前を指定します。  
+5.  既定の名前を受け入れ、**関数ハンドラー名**ボックス、または任意の名前を指定します。  
   
-6.  \[追加して編集\] をクリックして、イベント ハンドラーをプロジェクトに追加して新しい関数をテキスト エディターで開いたら、適切なイベント ハンドラーのコードを追加します。  
+6.  をクリックして**の追加と編集**をプロジェクトに、イベント ハンドラーを追加し、適切なイベント ハンドラーのコードを追加する新しい関数をテキスト エディターを開きます。  
   
-     選択したメッセージ タイプに選択したクラスのイベント ハンドラーが既に存在した場合は、\[追加して編集\] は無効です。この場合は \[コードを編集\] が有効になります。  \[コードを編集\] をクリックすると、テキスト エディターで既存の関数が開きます。  
+     場合は、選択したメッセージの種類に選択したクラスのイベント ハンドラーは既に**の追加と編集**が使用できないと**コードを編集**は使用できます。 をクリックして**コード編集**で既存の関数のテキスト エディターを開きます。  
   
- [&#91;プロパティ&#93; ウィンドウ](../Topic/Properties%20Window.md)でイベント ハンドラーを追加することもできます。  詳細については、「[ダイアログ ボックス コントロールへのイベント ハンドラーの追加](../mfc/adding-event-handlers-for-dialog-box-controls.md)」を参照してください。  
+ またはからのイベント ハンドラーを追加することができます、[プロパティ ウィンドウ](/visualstudio/ide/reference/properties-window)します。 参照してください[ダイアログ ボックス コントロールのイベント ハンドラーを追加する](../windows/adding-event-handlers-for-dialog-box-controls.md)詳細についてはします。  
   
-## 参照  
- [コード ウィザードを使用した機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)   
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
+## <a name="see-also"></a>関連項目  
+ [コード ウィザードによる機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)   
+ [クラスの追加](../ide/adding-a-class-visual-cpp.md)   
  [メンバー変数の追加](../ide/adding-a-member-variable-visual-cpp.md)   
  [メンバー関数の追加](../ide/adding-a-member-function-visual-cpp.md)   
  [MFC メッセージ ハンドラー](../mfc/reference/adding-an-mfc-message-handler.md)   
- [クラス各部へのジャンプ](../ide/navigating-the-class-structure-visual-cpp.md)
+ [クラス各部へ](../ide/navigating-the-class-structure-visual-cpp.md)

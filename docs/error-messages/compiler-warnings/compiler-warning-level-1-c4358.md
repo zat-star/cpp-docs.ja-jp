@@ -4,46 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C4358
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4358
+f1_keywords: C4358
+dev_langs: C++
+helpviewer_keywords: C4358
 ms.assetid: a9848f84-14b3-405e-81bf-ee3e91a51511
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 24ff4675d9286757599472ad5f1094be3157ea43
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 8f09125123ea075c1d0c9fbce5fdd432dfa64407
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-warning-level-1-c4358"></a>コンパイラの警告 (レベル 1) C4358
-'operator': 戻り値の組み合わせのデリゲートの型が 'void';返される値は未定義  
+'operator': 戻り値の結合されたデリゲートの型が 'void';返される値が定義されていません  
   
- 2 つのデリゲートが結合されましたが、戻り値は void ではありません。 Void 以外の戻り値を持つ&2; つのデリゲートを組み合わせると場合、コンパイラはデリゲートの戻り値が使用されている場合は、適切な割り当てを行うことはできません。  
+ 2 つのデリゲートを結合されましたが、戻り値は void ではありません。 非 void の戻り値を持つ 2 つのデリゲートを結合し、コンパイラは、デリゲートの戻り値が使用されている場合、適切な代入を行うことはできません。  
   
  次の例では、C4358 が生成されます。  
   

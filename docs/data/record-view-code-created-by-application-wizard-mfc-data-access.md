@@ -1,30 +1,30 @@
 ---
-title: "アプリケーション ウィザードで作成されたレコード ビューのコード (MFC データ アクセス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション ウィザード [C++], レコード ビュー コード"
-  - "レコード ビュー, アプリケーション ウィザード コード"
-  - "レコード ビュー, 更新 (コントロールを)"
+title: "アプリケーション ウィザード (MFC データ アクセス) で作成したコードの表示を記録 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- application wizards [C++], record view code
+- record views, refreshing controls
+- record views, application wizard code
 ms.assetid: 18fd4703-5939-491d-b759-985f767b951f
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a9475dd6192eb6bc1abd00e3614c18482be415c8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# アプリケーション ウィザードで作成されたレコード ビューのコード (MFC データ アクセス)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)を使用すると、ビューの `OnInitialUpdate` および `OnGetRecordset` メンバー関数がオーバーライドされます。  このフレームワークによってフレーム ウィンドウ、ドキュメント、およびビューが作成された後、`OnInitialUpdate` が呼び出されてビューが初期化されます。  `OnInitialUpdate` は、レコードセットへのポインターをドキュメントから取得します。  基本クラス [CView::OnInitialUpdate](../Topic/CView::OnInitialUpdate.md) 関数が呼び出されると、レコードセットが開きます。  次のコードは、`CRecordView` に対するこの処理を示しています。`CDaoRecordView` に対するコードもほぼ同じです。  
+# <a name="record-view-code-created-by-application-wizard--mfc-data-access"></a>アプリケーション ウィザードで作成されたレコード ビューのコード (MFC データ アクセス)
+[MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)上書きの表示の`OnInitialUpdate`と`OnGetRecordset`メンバー関数。 このフレームワークによってフレーム ウィンドウ、ドキュメント、およびビューが作成された後、`OnInitialUpdate` が呼び出されてビューが初期化されます。 `OnInitialUpdate` は、レコードセットへのポインターをドキュメントから取得します。 基底クラスへの呼び出し[:oninitialupdate](../mfc/reference/cview-class.md#oninitialupdate)関数は、レコード セットを開きます。 次のコードは、このプロセスを示します、 `CRecordView`:  
   
 ```  
 void CSectionForm::OnInitialUpdate()  
@@ -34,10 +34,10 @@ void CSectionForm::OnInitialUpdate()
 }  
 ```  
   
- レコードセットが開くと、レコードが選択されます。  [CRecordset::Open](../Topic/CRecordset::Open.md) または [CDaoRecordset::Open](../Topic/CDaoRecordset::Open.md) を使用すると最初のレコードが現在のレコードに設定され、DDX により、レコードセットのフィールド データ メンバーからビュー内の該当するフォーム コントロールにデータが移動されます。  RFX の詳細については、「[レコード フィールド エクスチェンジ \(RFX\)](../data/odbc/record-field-exchange-rfx.md)」を参照してください。  DDX の詳細については、「[ダイアログ データ エクスチェンジとダイアログ データ バリデーション](../mfc/dialog-data-exchange-and-validation.md)」を参照してください。  ドキュメント\/ビューの作成プロセスについては、「[クラスを使用した Windows アプリケーションの作成](../Topic/Using%20the%20Classes%20to%20Write%20Applications%20for%20Windows.md)」を参照してください。  
+ レコードセットが開くと、レコードが選択されます。 [:Open](../mfc/reference/crecordset-class.md#open)最初のレコードは、現在のレコードと DDX にデータを移動、レコード セットのフィールド データ メンバーから、対応するコントロールをフォーム ビューでします。 RFX の詳細については、次を参照してください。[レコード フィールド エクス チェンジ (RFX)](../data/odbc/record-field-exchange-rfx.md)です。 DDX の詳細については、次を参照してください。[ダイアログ データ エクス チェンジと検証](../mfc/dialog-data-exchange-and-validation.md)です。 ドキュメント/ビューの作成手順については、次を参照してください。[クラスを Windows アプリケーションの作成に使用する](../mfc/using-the-classes-to-write-applications-for-windows.md)です。  
   
 > [!NOTE]
->  エンド ユーザーには、レコードセットからレコード ビュー コントロールを更新するための機能を提供する必要があります。  この機能がないと、ユーザーがコントロールの値を無効な値に変更した場合に、現在のレコードを一切操作できなくなる可能性があります。  コントロールを更新するには、`CWnd` のメンバー関数 [UpdateData](../Topic/CWnd::UpdateData.md) をパラメーター **FALSE** で呼び出します。  
+>  エンド ユーザーには、レコードセットからレコード ビュー コントロールを更新するための機能を提供する必要があります。 この機能がないと、ユーザーがコントロールの値を無効な値に変更した場合に、現在のレコードを一切操作できなくなる可能性があります。 更新するには、コントロールを呼び出す、`CWnd`メンバー関数は、 [UpdateData](../mfc/reference/cwnd-class.md#updatedata)のパラメーターを持つ**FALSE**です。  
   
-## 参照  
- [レコード ビューの使用法](../data/using-a-record-view-mfc-data-access.md)
+## <a name="see-also"></a>関連項目  
+ [レコード ビューを使用します。](../data/using-a-record-view-mfc-data-access.md)

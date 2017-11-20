@@ -4,47 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- C4681
-dev_langs:
-- C++
-helpviewer_keywords:
-- C4681
+f1_keywords: C4681
+dev_langs: C++
+helpviewer_keywords: C4681
 ms.assetid: a4e6d85f-3e21-4b45-a551-c23d3c554d3f
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0d9cbb01d1ad0f2ea65d59334cb88140ef18fce0
-ms.openlocfilehash: d1112a7e06f816aded9c31eaef75125fefc24dcf
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/12/2017
-
+ms.openlocfilehash: 8b7fc5dd2b1dff15df49f6494f06c3b13fe887df
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-warning-level-4-c4681"></a>コンパイラの警告 (レベル 4) C4681
 'class': コクラスは、イベント ソースである既定のインターフェイスを指定していません  
   
- A[ソース](../../windows/source-cpp.md)クラスのインターフェイスが指定されませんでした。  
+ クラスに [source](../../windows/source-cpp.md) インターフェイスが指定されていません。  
   
  次の例では C4681 が生成されます。  
   

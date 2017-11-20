@@ -1,41 +1,39 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4325 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4325"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4325"
+title: "コンパイラの警告 (レベル 1) C4325 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4325
+dev_langs: C++
+helpviewer_keywords: C4325
 ms.assetid: 8127a08c-d626-481b-aa7b-04a3fdc9a9ec
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 5b5ce2e90705a1f3a899ef31313d1a402d2ecc04
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4325
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**無視された標準セクション '**   
- ***section* ' の属性**  
+# <a name="compiler-warning-level-1-c4325"></a>コンパイラの警告 (レベル 1) C4325
+**標準のセクションの属性 '**   
+ ***セクション*' は無視されます**  
   
- 標準セクションの属性は変更できません。  たとえば、次のようになります。  
+ 標準のセクションの属性は変更できません。 例:  
   
 ```  
 #pragma section(".sdata", long)  
 ```  
   
- この場合、**short** データ型を使用する `.sdata` 標準セクションは **long** データ型で上書きされます。  
+ これは、上書き、`.sdata`標準のセクションを使用して、**短い**データ型、**長い**データ型。  
   
- 属性を変更できない標準セクションは、次のとおりです。  
+ 変更することがありますいない属性を含めるには、標準のセクション  
   
 -   .data  
   
@@ -55,7 +53,7 @@ caps.handback.revision: 6
   
 -   .srdata  
   
- 後でさらにセクションが追加される場合があります。  
+ その他のセクションでは、後で追加可能性があります。  
   
-## 参照  
- [セクション](../../preprocessor/section.md)
+## <a name="see-also"></a>関連項目  
+ [section](../../preprocessor/section.md)

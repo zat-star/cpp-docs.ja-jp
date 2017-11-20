@@ -4,48 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- RC2101
-dev_langs:
-- C++
-helpviewer_keywords:
-- RC2101
+f1_keywords: RC2101
+dev_langs: C++
+helpviewer_keywords: RC2101
 ms.assetid: 580f9d74-162f-41e9-9438-ddbe3457c359
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 686c0b218ac4260fb796f60c1484c576a0c805b9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 53cc158d63f56c0dc44e2c6f00a127be1e058f7c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="resource-compiler-error-rc2101"></a>リソース コンパイラ エラー RC2101
 プリプロセス済みの RC ファイルに無効なディレクティブ  
   
- リソース コンパイラのファイルに含まれる、 **#pragma**ディレクティブです。  
+ リソース コンパイラのファイルが含まれています、 **#pragma**ディレクティブです。  
   
- 使用して、 **#ifndef**インクルード ファイルを処理する際に、リソース コンパイラが定義される RC_INVOKED 定数とプリプロセッサ ディレクティブです。 場所、 **#pragma** RC_INVOKED 定数が定義されている場合に処理されていないコードのブロックの内部ディレクティブです。 C と C++ コンパイラでのみ、リソース コンパイラではなく、ブロック内のコードが処理されます。 次のサンプル コードでは、この手法を示します。  
+ 使用して、 **#ifndef**プリプロセッサ ディレクティブの中でインクルード ファイルを処理する際に、リソース コンパイラが定義される RC_INVOKED 定数。 場所、 **#pragma** RC_INVOKED 定数が定義されている場合は処理されていないコードのブロックの内側ディレクティブです。 C と C++ コンパイラでのみ、リソース コンパイラではなく、ブロック内のコードが処理されます。 次のサンプル コードは、この手法を示します。  
   
 ```  
 #ifndef RC_INVOKED  
@@ -53,6 +34,6 @@ ms.lasthandoff: 02/24/2017
 #endif  
 ```  
   
- **#Pragma**プリプロセッサ ディレクティブ意味がない、です。RC ファイルです。 **#Include**プリプロセッサ ディレクティブで頻繁に使用します。ヘッダー ファイル (プロジェクト ベースのカスタム ヘッダー ファイルまたはその製品のいずれかで Microsoft によって提供される標準ヘッダー ファイル) を含める RC ファイルです。 これらのいくつかのインクルード ファイルを含む、 **#pragma**ディレクティブです。 ヘッダー ファイルは、1 つまたは複数の他のヘッダー ファイルを含む、問題のあるファイルを含めることができますので**#pragma**ディレクティブをすぐにわかりにくいかもしれません。  
+ **#Pragma**プリプロセッサ ディレクティブ意味がない、します。RC ファイルです。 **#Include**プリプロセッサ ディレクティブで頻繁に使用します。ヘッダー ファイル (プロジェクト ベースのカスタム ヘッダー ファイルまたはその製品のいずれかの Microsoft によって提供される標準ヘッダー ファイル) を含める RC ファイルです。 これらのいくつかのインクルード ファイルが含まれて、 **#pragma**ディレクティブです。 ヘッダー ファイルが 1 つまたは複数の他のヘッダー ファイル、問題のあるを格納しているファイルを含めることができますので**#pragma**ディレクティブをすぐに判断できない可能性があります。  
   
- **#Ifndef** RC_INVOKED 手法は、プロジェクト ベースのヘッダー ファイルでヘッダー ファイルを含む制御できます。
+ **#Ifndef**プロジェクト ベースのヘッダー ファイル内のヘッダー ファイルを含む RC_INVOKED 方法を制御できます。

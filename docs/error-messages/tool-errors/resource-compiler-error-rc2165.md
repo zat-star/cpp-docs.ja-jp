@@ -1,33 +1,31 @@
 ---
-title: "リソース コンパイラ エラー RC2165 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "RC2165"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "RC2165"
+title: "リソース コンパイラ エラー RC2165 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: RC2165
+dev_langs: C++
+helpviewer_keywords: RC2165
 ms.assetid: bf7d4630-9355-47e3-87fa-6693fcf0ef0d
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: f4ad086ee01099613609cad158f08a512457f0a1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リソース コンパイラ エラー RC2165
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-string not found in DLGINCLUDE statement  
+# <a name="resource-compiler-error-rc2165"></a>リソース コンパイラ エラー RC2165
+文字列が DLGINCLUDE ステートメントで見つかりません  
   
- このステートメントには、有効なインクルード ファイルが指定されていません。  
+ ステートメントでは、有効なインクルード ファイルが指定されていません。  
   
- **DLGINCLUDE** ステートメントには、次に示す構文を使用する必要があります。  
+ **DLGINCLUDE**ステートメントは、次の構文を使用する必要があります。  
   
- **DLGINCLUDE \**filename*.h\***
+ **DLGINCLUDE"*filename*.h"* *

@@ -1,38 +1,38 @@
 ---
-title: "__emul、__emulu | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__emulu_cpp"
-  - "__emul"
-  - "__emul_cpp"
-  - "__emulu"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__emul 組み込み"
-  - "__emulu 組み込み"
+title: "_ _emul、_ _emulu |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __emulu_cpp
+- __emul
+- __emul_cpp
+- __emulu
+dev_langs: C++
+helpviewer_keywords:
+- __emul intrinsic
+- __emulu intrinsic
 ms.assetid: 79545236-cca2-40b8-a4e1-8abce9b26311
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d41c645ee08dab91eeee66d1f96cb9b8aff8178a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __emul、__emulu
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="emul-emulu"></a>__emul、__emulu
+**Microsoft 固有の仕様**  
   
- 32 ビット整数になることをドレインする乗算を保持します。  
+ オーバーフローする保持できる 32 ビット整数の乗算を実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 __int64 __emul(  
@@ -45,31 +45,31 @@ unsigned __int64 __emulu(
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `a`  
- 乗算の最初の整数のオペランド。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `a`  
+ 乗算の最初の整数オペランド。  
   
- \[入力\] `b`  
- 乗算の 2 番目の整数のオペランド。  
+ [入力] `b`  
+ 乗算の 2 番目の整数オペランド。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  乗算の結果。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__emul`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__emulu`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__emul`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__emulu`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- `__emul` は 2 個の 32 ビット符号付きの値を受け取り64 ビット符号付き整数値としての乗算結果を返します。  
+## <a name="remarks"></a>コメント  
+ `__emul`2 つの 32 ビット符号付きの値を受け取り、64 ビット符号付き整数値として、乗算の結果を返します。  
   
- `__emulu` は 2 個の 32 ビット符号なし整数値を受け取り64 ビット符号なし整数値としての乗算結果を返します。  
+ `__emulu`2 つの 32 ビット符号なし整数値を受け取り、64 ビット符号なし整数値として、乗算の結果を返します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // emul.cpp  
@@ -101,14 +101,14 @@ int main()
 }  
 ```  
   
-## 出力  
+## <a name="output"></a>出力  
   
 ```  
 -268435456 * 2 = -536870912  
 4294967295 * 251658240 = 1080863910317260800  
 ```  
   
-### 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

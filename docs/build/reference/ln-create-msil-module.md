@@ -1,61 +1,60 @@
 ---
-title: "/LN (MSIL モジュールの作成) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/LN"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/LN コンパイラ オプション [C++]"
-  - "-LN コンパイラ オプション [C++]"
+title: "-LN (MSIL モジュールの作成) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /LN
+dev_langs: C++
+helpviewer_keywords:
+- -LN compiler option [C++]
+- /LN compiler option [C++]
 ms.assetid: 4f38f4f4-3176-4caf-8200-5c7585dc1ed3
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 807fd762ab2780b70a395f62efbc72945228b1fa
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /LN (MSIL モジュールの作成)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-アセンブリ マニフェストを出力ファイルに挿入しません。  
+# <a name="ln-create-msil-module"></a>/LN (MSIL モジュールの作成)
+アセンブリ マニフェストを出力ファイルに挿入できないことを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /LN  
 ```  
   
-## 解説  
- 既定では、アセンブリ マニフェストが出力ファイルに挿入され、**\/LN** は無効になっています。  
+## <a name="remarks"></a>コメント  
+ 既定では、 **/LN**は無効 (アセンブリ マニフェストを出力ファイルに挿入します)。  
   
- **\/LN** を使用するときは、[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md) オプションのいずれか 1 つも使用する必要があります。  
+ ときに**/LN**を使用するのいずれか、 [/clr (共通言語ランタイムのコンパイル)](../../build/reference/clr-common-language-runtime-compilation.md)オプションが使用することも必要があります。  
   
- マニフェストにアセンブリ メタデータがないマネージ プログラムをモジュールと呼びます。  [\/c \(リンクを行わないコンパイル\)](../../build/reference/c-compile-without-linking.md) および **\/LN** を指定してコンパイルする場合は、リンカー フェースで [\/NOASSEMBLY \(MSIL モジュールの作成\)](../../build/reference/noassembly-create-a-msil-module.md) を指定して出力ファイルを作成します。  
+ マニフェスト内にアセンブリ メタデータがないマネージ プログラムには、モジュールが呼び出されます。 コンパイルする場合[(コンパイルなしのリンク)/c](../../build/reference/c-compile-without-linking.md)と**/LN**、指定[/NOASSEMBLY (MSIL モジュールの作成)](../../build/reference/noassembly-create-a-msil-module.md)フェーズでは、リンカー出力ファイルを作成します。  
   
- コンポーネント ベースの方法を使用してアセンブリをビルドする場合は、モジュールを作成できます。つまり、型を作成してモジュールにコンパイルした後、1 つ以上のモジュールからアセンブリを生成できます。モジュールからアセンブリを作成する方法の詳細については、「[リンカー入力としての .netmodule ファイル](../Topic/.netmodule%20Files%20as%20Linker%20Input.md)」または「[Al.exe \(アセンブリ リンカー\)](../Topic/Al.exe%20\(Assembly%20Linker\).md)」を参照してください。  
+ アセンブリをビルドするため、コンポーネント ベースのアプローチを実行する場合、モジュールを作成することがあります。  つまり、型を作成し、モジュールにコンパイルできます。  次に、1 つまたは複数のモジュールからアセンブリを生成することができます。  モジュールからアセンブリを作成する方法の詳細については、次を参照してください。[リンカー入力としての .netmodule ファイル](../../build/reference/netmodule-files-as-linker-input.md)または[Al.exe (アセンブリ リンカー)](/dotnet/framework/tools/al-exe-assembly-linker)です。  
   
- モジュールの既定のファイル拡張子は"です。  
+ モジュールの既定のファイル拡張子は、.netmodule です。  
   
- Visual C\+\+ 2005 より前の [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] リリースでは、モジュールは **\/clr:noAssembly** を指定して作成されました。  
+ [!INCLUDE[vcprvc](../../build/includes/vcprvc_md.md)] Visual C 2005 以前のリリースで作成された、モジュール**/clr:noAssembly**です。  
   
- Visual C\+\+ リンカーは、入力、リンカーによって生成される出力ファイルはリンカーに渡された .netmodules のいずれかへの実行時に依存しないアセンブリまたは"であるため .netmodule ファイルをリンクできます。詳細については、「[リンカー入力としての .netmodule ファイル](../Topic/.netmodule%20Files%20as%20Linker%20Input.md)」を参照してください。  
+ Visual C リンカーは、入力として .netmodule ファイルを受け入れるし、アセンブリまたは .netmodule ない実行時の依存をリンカー入力した .netmodule のいずれかのリンカーによって生成される出力ファイルが表示されます。  詳細については、「 [リンカー入力としての .netmodule ファイル](../../build/reference/netmodule-files-as-linker-input.md)」を参照してください。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
--   リンカー フェーズで [\/NOASSEMBLY \(MSIL モジュールの作成\)](../../build/reference/noassembly-create-a-msil-module.md) を指定して出力ファイルを作成します。  
+-   指定[/NOASSEMBLY (MSIL モジュールの作成)](../../build/reference/noassembly-create-a-msil-module.md)フェーズでは、リンカー出力ファイルを作成します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   このコンパイラ オプションは、コードからは変更できません。  
+-   このコンパイラ オプションをプログラムで変更できません。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

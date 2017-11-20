@@ -1,65 +1,65 @@
 ---
-title: "/OUT (出力ファイル名) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLinkerTool.OutputFile"
-  - "/out"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/OUT C++ リンカー オプション"
-  - "リンカー [C++], 出力ファイル"
-  - "OUT リンカー オプション"
-  - "-OUT リンカー オプション"
-  - "出力ファイル, name リンカー オプション"
+title: "-OUT (出力ファイル名) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLinkerTool.OutputFile
+- /out
+dev_langs: C++
+helpviewer_keywords:
+- output files, name linker option
+- -OUT linker option
+- OUT linker option
+- /OUT C++ linker option
+- linker [C++], output files
 ms.assetid: 976210a4-e51f-4cfb-af5e-c16344455834
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1dbf2e353ffb060a7bba2f38617e8fa86a1ab9c5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /OUT (出力ファイル名)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="out-output-file-name"></a>/OUT (出力ファイル名)
 ```  
 /OUT:filename  
 ```  
   
-## 解説  
- それぞれの文字について以下に説明します。  
+## <a name="remarks"></a>コメント  
+ ここで、  
   
- *filename*  
- ユーザー指定の出力ファイル名。  既定の名前を置き換えます。  
+ *ファイル名*  
+ 出力ファイルのユーザー指定の名前。 既定の名前に置き換えます。  
   
-## 解説  
- \/OUT オプションは、リンカーで生成されるプログラムの既定の名前と場所をオーバーライドします。  
+## <a name="remarks"></a>コメント  
+ /OUT オプションでは、既定の名前と、リンカーによって作成されるプログラムの場所を上書きします。  
   
- 既定では、出力ファイル名は、最初の .obj ファイルのベース名に拡張子 .exe か .dll を付けた名前になります。  
+ 既定では、リンカーは、指定された最初の .obj ファイル (.exe または .dll)、適切な拡張のベース名を使用して、ファイル名を形成します。  
   
- このオプションは、マップ ファイルまたはインポート ライブラリの既定のベース名を制御します。  詳細については、「[\/MAP \(マップ ファイルの生成\)](../../build/reference/map-generate-mapfile.md)」および「[\/IMPLIB \(インポート ライブラリ名の設定\)](../Topic/-IMPLIB%20\(Name%20Import%20Library\).md)」を参照してください。  
+ マップまたはインポート ライブラリの既定の基本名は、このオプションです。 詳細については、「[マップ ファイルの生成](../../build/reference/map-generate-mapfile.md)(/map) と[/IMPLIB](../../build/reference/implib-name-import-library.md)です。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[全般\] プロパティ ページをクリックします。  
+3.  クリックして、**全般**プロパティ ページ。  
   
-4.  \[出力ファイル\] プロパティを変更します。  
+4.  変更、**出力ファイル**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.OutputFile%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

@@ -1,46 +1,44 @@
 ---
-title: "list::remove_if (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::list::remove_if"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "remove_if メンバー [STL/CLR]"
+title: "list::remove_if (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::list::remove_if
+dev_langs: C++
+helpviewer_keywords: remove_if member [STL/CLR]
 ms.assetid: cbc66192-751b-41c5-b557-d5d7bbc2a840
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0707efbf12782336d74d6e0012146cc1b2b4a01b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# list::remove_if (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定したテストに合格する要素を削除します。  
+# <a name="listremoveif-stlclr"></a>list::remove_if (STL/CLR)
+指定されたテストに合格した要素を削除します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Pred1>  
     void remove_if(Pred1 pred);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  pred  
- 要素が削除されるように、テストします。  
+ 削除する要素をテストします。  
   
-## 解説  
- このメンバー関数は、被制御シーケンス \(消去\) から `pred``(X)` が true の要素 `X` を削除します。  または、関数デリゲートとして指定された条件を満たすすべての要素を削除する場合に使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンス (消去) から削除のすべての要素`X`を`pred(X)`は true です。 これを使用するには関数またはデリゲートとして指定することが条件を満たすすべての要素を削除します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_list_remove_if.cpp   
@@ -79,17 +77,20 @@ int main()
   
 ```  
   
-  **b \\ b c**  
- **b \\ b c**  
- **b \\ b**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/リスト\>  
+```Output  
+a b b b c  
+a b b b c  
+b b b  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/一覧 >  
   
-## 参照  
- [一覧](../dotnet/list-stl-clr.md)   
- [list::clear](../dotnet/list-clear-stl-clr.md)   
- [list::erase](../dotnet/list-erase-stl-clr.md)   
- [list::remove](../dotnet/list-remove-stl-clr.md)   
- [list::unique](../dotnet/list-unique-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [list::clear (STL/CLR)](../dotnet/list-clear-stl-clr.md)   
+ [list::erase (STL/CLR)](../dotnet/list-erase-stl-clr.md)   
+ [list::remove (STL/CLR)](../dotnet/list-remove-stl-clr.md)   
+ [list::unique (STL/CLR)](../dotnet/list-unique-stl-clr.md)

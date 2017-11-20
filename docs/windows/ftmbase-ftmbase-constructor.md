@@ -1,41 +1,39 @@
 ---
-title: "FtmBase::FtmBase コンストラクター | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ftm/Microsoft::WRL::FtmBase::FtmBase"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "FtmBase、コンストラクター"
+title: "Ftmbase::ftmbase コンス トラクター |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: ftm/Microsoft::WRL::FtmBase::FtmBase
+dev_langs: C++
+helpviewer_keywords: FtmBase, constructor
 ms.assetid: 37e326dd-5ec3-405c-8e6e-96271f95e474
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 07216b1647aafea94773928e9acdb9560d57d238
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FtmBase::FtmBase コンストラクター
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="ftmbaseftmbase-constructor"></a>FtmBase::FtmBase コンストラクター
 FtmBase クラスの新しいインスタンスを初期化します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 FtmBase();  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [FtmBase クラス](../windows/ftmbase-class.md)

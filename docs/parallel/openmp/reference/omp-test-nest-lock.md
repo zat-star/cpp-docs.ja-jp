@@ -1,32 +1,30 @@
 ---
-title: "omp_test_nest_lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "omp_test_nest_lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp_test_nest_lock OpenMP function"
+title: "omp_test_nest_lock |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: omp_test_nest_lock
+dev_langs: C++
+helpviewer_keywords: omp_test_nest_lock OpenMP function
 ms.assetid: 4c909bbe-80e0-4100-aca6-d415d7dc5294
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 938a79bc164a940050dea126dc513d2f61cb9feb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# omp_test_nest_lock
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-入れ子にできるロックを設定しようとするとスレッドが実行をブロックします。  
+# <a name="omptestnestlock"></a>omp_test_nest_lock
+入れ子にできるロックを設定しようとしていますが、スレッドの実行をブロックしません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 int omp_test_nest_lock(  
@@ -34,16 +32,16 @@ int omp_test_nest_lock(
 );  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `lock`  
- [omp\_init\_nest\_lock](../Topic/omp_init_nest_lock.md) 型の変数を初期化 [omp\_nest\_lock\_t](../Topic/omp_nest_lock_t.md)。  
+ 型の変数[omp_nest_lock_t](../../../parallel/openmp/reference/omp-nest-lock-t.md)で初期化された[omp_init_nest_lock](../../../parallel/openmp/reference/omp-init-nest-lock.md)です。  
   
-## 解説  
- 詳細については、「[3.2.5 omp\_test\_lock and omp\_test\_nest\_lock Functions](../Topic/3.2.5%20omp_test_lock%20and%20omp_test_nest_lock%20Functions.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [3.2.5 omp_test_lock 関数と omp_test_nest_lock 関数](../../../parallel/openmp/3-2-5-omp-test-lock-and-omp-test-nest-lock-functions.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // omp_test_nest_lock.cpp  
@@ -81,36 +79,39 @@ int main() {
 }  
 ```  
   
-  **スレッド 1 の派生 nestable\_lock**   
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 1 の派生 nestable\_lock 再度**  
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 1 で解放された nestable\_lock**   
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 1 で解放された nestable\_lock**   
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 3 の派生 nestable\_lock**   
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 3 の派生 nestable\_lock 再度**  
-**スレッド 0 ~ nestable\_lock を回避できます。**  
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 3 で解放された nestable\_lock**   
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 3 で解放された nestable\_lock**   
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 0 の派生 nestable\_lock**   
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 0 の派生 nestable\_lock 再度**  
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 0 で解放された nestable\_lock**   
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 0 で解放された nestable\_lock**   
-**スレッド 2 ~ nestable\_lock を回避できます。**  
-**スレッド 2 の派生 nestable\_lock**   
-**スレッド 2 の派生 nestable\_lock 再度**  
-**スレッド 2 で解放された nestable\_lock**   
-**スレッド 2 で解放された nestable\_lock**    
-## 参照  
- [Functions](../../../parallel/openmp/reference/openmp-functions.md)
+```Output  
+Thread 1 - acquired nestable_lock  
+Thread 0 - failed to acquire nestable_lock  
+Thread 1 - acquired nestable_lock again  
+Thread 0 - failed to acquire nestable_lock  
+Thread 1 - released nestable_lock  
+Thread 0 - failed to acquire nestable_lock  
+Thread 1 - released nestable_lock  
+Thread 0 - failed to acquire nestable_lock  
+Thread 3 - acquired nestable_lock  
+Thread 0 - failed to acquire nestable_lock  
+Thread 3 - acquired nestable_lock again  
+Thread 0 - failed to acquire nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 3 - released nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 3 - released nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 0 - acquired nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 0 - acquired nestable_lock again  
+Thread 2 - failed to acquire nestable_lock  
+Thread 0 - released nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 0 - released nestable_lock  
+Thread 2 - failed to acquire nestable_lock  
+Thread 2 - acquired nestable_lock  
+Thread 2 - acquired nestable_lock again  
+Thread 2 - released nestable_lock  
+Thread 2 - released nestable_lock  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [関数](../../../parallel/openmp/reference/openmp-functions.md)

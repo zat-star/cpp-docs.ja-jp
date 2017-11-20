@@ -1,67 +1,67 @@
 ---
-title: "/PDB (プログラム データベースの使用) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/pdb"
-  - "VC.Project.VCLinkerTool.ProgramDatabaseFile"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".pdb ファイル, 作成"
-  - "/PDB リンカー オプション"
-  - "PDB ファイル, 作成"
-  - "PDB リンカー オプション"
-  - "-PDB リンカー オプション"
+title: "PDB (プログラム データベースを使用) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- /pdb
+- VC.Project.VCLinkerTool.ProgramDatabaseFile
+dev_langs: C++
+helpviewer_keywords:
+- -PDB linker option
+- /PDB linker option
+- PDB linker option
+- PDB files, creating
+- .pdb files, creating
 ms.assetid: d23db0ce-10cb-427a-bc60-d6b2a852723d
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 0ea27dd7106e8490e9ba8ec9eacdcbbb02d33036
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /PDB (プログラム データベースの使用)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="pdb-use-program-database"></a>/PDB (プログラム データベースの使用)
 ```  
 /PDB:filename  
 ```  
   
-## 解説  
- それぞれの文字について以下に説明します。  
+## <a name="remarks"></a>コメント  
+ ここで、  
   
- *filename*  
- リンカーによって作成されるプログラム データベース \(PDB\) に対してユーザーが指定する名前。  既定の名前を置き換えます。  
+ *ファイル名*  
+ プログラム データベース (PDB)、リンカーによって作成されるユーザー指定の名前。 既定の名前に置き換えます。  
   
-## 解説  
- 既定では、[\/DEBUG \(デバッグ情報の生成\)](../../build/reference/debug-generate-debug-info.md) を指定すると、デバッグ情報を取り込んだプログラム データベース \(PDB\) が作成されます。  .PDB の既定のファイル名は、プログラムのベース名に拡張子 .pdb を付けたものです。  
+## <a name="remarks"></a>コメント  
+ 既定では、ときに[/debug](../../build/reference/debug-generate-debug-info.md)を指定すると、リンカーはデバッグ情報が保持されているプログラム データベース (PDB) を作成します。 PDB の既定のファイル名は、プログラムおよび拡張子 .pdb の基本の名前を持ちます。  
   
- \/PDB:*filename* を使用して、PDB ファイルの名前を指定します。  \/DEBUG を指定しなかった場合、\/PDB オプションは無視されます。  
+ /PDB を使用して:*filename* PDB ファイルの名前を指定します。 /DEBUG が指定されていない場合、/PDB オプションは無視されます。  
   
- PDB ファイルは、最大 2 GB です。  
+ PDB ファイルには、最大 2 GB を指定できます。  
   
- 詳細については、「[リンカー入力としての .pdb ファイル](../../build/reference/dot-pdb-files-as-linker-input.md)」を参照してください。  
+ 詳細については、次を参照してください。[リンカー入力としての .pdb ファイル](../../build/reference/dot-pdb-files-as-linker-input.md)です。  
   
-### Visual Studio 開発環境でこのリンカー オプションを設定するには  
+### <a name="to-set-this-linker-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのリンカー オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[Visual C\+\+ プロジェクトのプロパティの設定](../../ide/working-with-project-properties.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「 [Visual C プロジェクト プロパティの設定](../../ide/working-with-project-properties.md)です。  
   
-2.  \[リンカー\] フォルダーをクリックします。  
+2.  クリックして、**リンカー**フォルダーです。  
   
-3.  \[デバッグ\] プロパティ ページをクリックします。  
+3.  クリックして、**デバッグ**プロパティ ページ。  
   
-4.  \[プログラム データベース ファイルの生成\] プロパティを変更します。  
+4.  変更、**プログラム データベース ファイルの生成**プロパティです。  
   
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCLinkerTool.ProgramDatabaseFile%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

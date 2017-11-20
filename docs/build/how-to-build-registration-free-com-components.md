@@ -1,42 +1,41 @@
 ---
-title: "方法 : 登録を必要としない COM をビルドする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "COM コンポーネント, 登録を必要としない"
+title: "方法: 登録を必要としない COM コンポーネントをビルド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: COM components, registration-free
 ms.assetid: 7e585d6a-0314-45b2-8f1b-cae9ac4df037
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: bba711f88a53a3d9b6f9eae1faed09670e95d497
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法 : 登録を必要としない COM をビルドする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-登録を必要としない COM コンポーネントは、マニフェストが DLL に組み込まれた COM コンポーネントです。  
+# <a name="how-to-build-registration-free-com-components"></a>方法 : 登録を必要としない COM をビルドする
+登録を必要としない COM コンポーネントは、Dll に組み込まれているマニフェストのある COM コンポーネントです。  
   
-### マニフェストを COM コンポーネントに組み込むには  
+### <a name="to-build-manifests-into-com-components"></a>COM コンポーネントにマニフェストをビルドするには  
   
 1.  COM コンポーネントのプロジェクトのプロパティ ページを開きます。  
   
-2.  **\[構成プロパティ\]** ノードを展開し、次に **\[マニフェスト ツール\]** ノードを展開します。  
+2.  展開、**構成プロパティ** ノードの順に展開し、**マニフェスト ツール**ノード。  
   
-3.  **\[入力と出力\]** プロパティ ページをクリックし、**\[埋め込みマニフェスト\]** プロパティを **\[はい\]** に設定します。  
+3.  選択、**の入力し、出力**プロパティ ページ、および設定、**埋め込みマニフェスト**プロパティを等しく**はい**です。  
   
-4.  \[OK\] をクリックします。  
+4.  **[OK]** をクリックします。  
   
 5.  ソリューションをビルドします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [分離アプリケーション](http://msdn.microsoft.com/library/aa375190)   
- [side\-by\-side アセンブリ](_win32_side_by_side_assemblies)   
- [方法 : COM コンポーネントを使用する分離アプリケーションをビルドする](../Topic/How%20to:%20Build%20Isolated%20Applications%20to%20Consume%20COM%20Components.md)
+ [サイド バイ サイド アセンブリの概要](http://msdn.microsoft.com/library/ff951640)   
+ [方法 : COM コンポーネントを使用する分離アプリケーションをビルドする](../build/how-to-build-isolated-applications-to-consume-com-components.md)

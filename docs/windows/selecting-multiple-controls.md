@@ -1,58 +1,59 @@
 ---
-title: "Selecting Multiple Controls | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Dialog editor, selecting controls"
-  - "dialog box controls, selecting in editor"
-  - "controls [C++], selecting"
-  - "controls [C++], removing from groups"
+title: "複数のコントロールの選択 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Dialog editor, selecting controls
+- dialog box controls, selecting in editor
+- controls [C++], selecting
+- controls [C++], removing from groups
 ms.assetid: efbdbade-0a3a-4328-b36e-a6376c06e8de
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 20cf4099079b2298d0a6c348b70a5cc86f44d948
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Selecting Multiple Controls
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-### 複数のコントロールを選択するには  
+# <a name="selecting-multiple-controls"></a>複数のコントロールの選択
+### <a name="to-select-multiple-controls"></a>複数のコントロールを選択するには  
   
-1.  [&#91;ツールボックス&#93; ウィンドウ](../Topic/Toolbox.md)で、\[ポインター\] ツールを選択します。  
+1.  [ツールボックス ウィンドウ](/visualstudio/ide/reference/toolbox)、select、**ポインター**ツールです。  
   
-2.  ポインターをドラッグして、ダイアログ ボックスで選択するコントロールを囲むように選択ボックスを描画します。  
+2.  選択ボックスで、ダイアログ ボックスで選択するコントロールの周囲へのポインターをドラッグします。  
   
-     マウス ボタンを離すと、選択ボックスに全体または一部が含まれているコントロールがすべて選択されます。  
+     マウス ボタンを離すと、すべて内側と、選択ボックスが選択されているを交差を制御します。  
   
-     または  
+     \- または  
   
--   **Shift** キーを押しながら、選択範囲に含める各コントロールをクリックします。  
+-   SHIFT キーを押しながら、選択範囲に含めるか、コントロールをクリックします。  
   
-     または  
+     \- または  
   
--   **Ctrl** キーを押しながら、選択範囲に含める各コントロールをクリックします。  
+-   Ctrl キーを押しながら、選択範囲に含めるには、コントロールをクリックします。  
   
-#### 選択したコントロールのグループからコントロールを削除するか、グループにコントロールを追加するには  
+#### <a name="to-remove-a-control-from-a-group-of-selected-controls-or-to-add-a-control-to-a-group-of-selected-controls"></a>選択したコントロールのグループからコントロールを削除するには、か、コントロールを選択したコントロールのグループに追加するには  
   
-1.  選択したコントロールのグループで、**Shift** キーを押しながら、既存の選択範囲から削除するコントロールまたは追加するコントロールをクリックします。  
+1.  コントロールのグループの選択、SHIFT キーを押しながらし、削除するか、既存の選択に追加するコントロール をクリックします。  
   
     > [!NOTE]
-    >  Ctrl キーを押しながら選択範囲内でクリックしたコントロールは、その選択範囲内で最も優先度の高いコントロールになります。  詳細については、「[最も優先度の高いコントロールの指定](../mfc/specifying-the-dominant-control.md)」を参照してください。  
+    >  CTRL キーを押しながら、選択範囲内でクリックをその選択範囲内の主要なコントロールを制御するにはなります。 詳細については、次を参照してください。 [Dominant コントロールの指定](../windows/specifying-the-dominant-control.md)です。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
-### 要件  
+### <a name="requirements"></a>要件  
  Win32  
   
-## 参照  
- [Selecting Controls](../mfc/selecting-controls.md)   
- [Controls in Dialog Boxes](../mfc/controls-in-dialog-boxes.md)
+## <a name="see-also"></a>関連項目  
+ [コントロールの選択](../windows/selecting-controls.md)   
+ [ダイアログ ボックスのコントロール](../windows/controls-in-dialog-boxes.md)
+

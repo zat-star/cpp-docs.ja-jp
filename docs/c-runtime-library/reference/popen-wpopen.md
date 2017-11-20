@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -31,8 +30,7 @@ f1_keywords:
 - _popen
 - _wpopen
 - _tpopen
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - tpopen function
 - pipes, creating
@@ -42,30 +40,15 @@ helpviewer_keywords:
 - wpopen function
 - _wpopen function
 ms.assetid: eb718ff2-c87d-4bd4-bd2e-ba317c3d6973
-caps.latest.revision: 15
+caps.latest.revision: "15"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: e257f037a05c45f5b98e64ea55bd125af443b0be
-ms.openlocfilehash: 57476fe794b255bb1822a4446c505897d1668362
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/29/2017
-
+ms.openlocfilehash: 73c9e19556857c78a530f0a2ac89580ea3fec69c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="popen-wpopen"></a>_popen、_wpopen
 パイプを作成し、コマンドを実行します。  
@@ -75,16 +58,15 @@ ms.lasthandoff: 03/29/2017
   
 ## <a name="syntax"></a>構文  
   
-```  
-  
-      FILE *_popen(  
-const char *command,  
-const char *mode   
-);  
-FILE *_wpopen(  
-const wchar_t *command,  
-const wchar_t *mode   
-);  
+```
+FILE *_popen(
+const char *command,
+const char *mode
+);
+FILE *_wpopen(
+const wchar_t *command,
+const wchar_t *mode
+);
 ```  
   
 #### <a name="parameters"></a>パラメーター  
@@ -115,7 +97,7 @@ const wchar_t *mode
  テキスト モードで開きます。  
   
 > [!NOTE]
->  Windows プログラムで使用すると、`_popen` 関数は無効なファイル ポインターを返し、その結果、プログラムは無期限に応答を停止します。 `_popen` は、コンソール アプリケーションで正しく動作します。 入力と出力をリダイレクトする Windows アプリケーションを作成するには、[!INCLUDE[winsdkshort](../../atl-mfc-shared/reference/includes/winsdkshort_md.md)] の「[リダイレクトされた入出力を持つ子プロセスの作成](http://msdn.microsoft.com/library/windows/desktop/ms682499)」をご覧ください。  
+>  Windows プログラムで使用すると、`_popen` 関数は無効なファイル ポインターを返し、その結果、プログラムは無期限に応答を停止します。 `_popen` は、コンソール アプリケーションで正しく動作します。 入力と出力をリダイレクトする Windows アプリケーションを作成するを参照してください。[リダイレクトされた入出力を子プロセスを作成する](http://msdn.microsoft.com/library/windows/desktop/ms682499)Windows SDK に含まれています。  
   
  `_wpopen` 関数は、`_popen` 関数のワイド文字バージョンです。`_wpopen` 関数の *path* 引数は、ワイド文字列です。 それ以外では、`_wpopen` と `_popen` の動作は同じです。  
   

@@ -1,52 +1,52 @@
 ---
-title: "国際化のアプローチ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "文字セット [C++], 国際対応プログラミング戦略"
-  - "グローバリゼーション [C++], 文字セット"
-  - "言語の移植性が高いコード [C++]"
-  - "ローカリゼーション [C++], 文字セット"
-  - "MBCS [C++], 国際対応戦略"
-  - "Unicode [C++], グローバル化 (アプリケーションを)"
-  - "Win32 [C++], 国際対応プログラミング戦略"
-  - "Windows API [C++], 国際対応プログラミング戦略"
+title: "国際対応戦略 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- globalization [C++], character sets
+- language-portable code [C++]
+- MBCS [C++], internationalization strategies
+- Windows API [C++], international programming strategies
+- Win32 [C++], international programming strategies
+- Unicode [C++], globalizing applications
+- character sets [C++], international programming strategies
+- localization [C++], character sets
 ms.assetid: b09d9854-0709-4b9a-a00c-b0b8bc4199b1
-caps.latest.revision: 8
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 944ba06bd7b3d81abb2ab431494096f9ade77574
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 国際化のアプローチ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-国際市場を視野に入れた場合、ターゲットとするオペレーティング システムと市場に応じて、さまざまなアプローチが考えられます。  
+# <a name="internationalization-strategies"></a>国際化のアプローチ
+ターゲット オペレーティング システムと市場、に応じていくつかの国際対応戦略がある場合。  
   
--   Unicode を採用し、オーバーヘッドなしに Windows 2000 と Windows NT 上で実行できるようにする。この場合、Windows 95 や Windows 98 では実行できません。  
+-   アプリケーションでは、Unicode を使用して、したがって Windows 2000 および Windows NT ではなく Windows 95 または Windows 98 を実行します。  
   
-     Unicode 固有の機能を使用し、文字はすべて 16 ビット幅とします。目的に応じてプログラムの一部に ANSI 文字を使用してもかまいません。  C のランタイム ライブラリには、Unicode だけを使ったプログラミングに適した関数、マクロ、およびデータ型が用意されています。  MFC は、Unicode を完全にサポートしています。  
+     Unicode 固有の機能を使用して、(プログラムの一部の ANSI 文字を使用するには特別な目的で) には、すべての文字が 16 ビット幅。 C ランタイム ライブラリは、Unicode 専用のプログラミングの関数、マクロ、およびデータ型を提供します。 MFC は、完全に Unicode に対応します。  
   
--   MBCS を採用し、すべての Win32 プラットフォームで動作できるようにする。  
+-   アプリケーションでは、MBCS を使用し、任意の Win32 プラットフォームで実行できます。  
   
-     MBCS 固有の機能を使用します。  文字列は、1 バイト文字だけでも、2 バイト文字だけでも構成できます。また、両方を混在させることもできます。  C のランタイム ライブラリには、MBCS だけを使ったプログラミングに適した関数、マクロ、およびデータ型が用意されています。  MFC は、MBCS を完全にサポートしています。  
+     MBCS 固有の機能を使用するとします。 文字列には、1 バイト文字、2 バイト文字、またはその両方を含めることができます。 C ランタイム ライブラリは、MBCS 専用のプログラミングの関数、マクロ、およびデータ型を提供します。 MFC は、MBCS に対応しています。  
   
--   **\_UNICODE** シンボルまたは **\_MBCS** シンボルを定義して再コンパイルすることにより、アプリケーションのソース コードの移植性を高める。いずれのシンボルを使用するアプリケーションも作成できます。  詳細については、「[Tchar.h における汎用テキストのマッピング](../Topic/Generic-Text%20Mappings%20in%20Tchar.h.md)」を参照してください。  
+-   移植性を高めるのため、アプリケーションのソース コードが記述された — シンボルの再コンパイルして**_UNICODE**または記号**_MBCS**定義されている、いずれかを使用するバージョンを生成できます。 詳細については、次を参照してください。 [Tchar.h における汎用テキスト マッピング](../text/generic-text-mappings-in-tchar-h.md)です。  
   
--   アプリケーションは、Windows 95、Windows 98、および Windows の Unicode ラッパー ライブラリがない関数が記述されているように、My を使用します [Windows 98 と Windows 2000 の両方で動作する Unicode 一つのアプリケーションをデザインします。](http://go.microsoft.com/fwlink/p/?LinkId=250770)。  ラッパー ライブラリは購入することもできます。  
+-   アプリケーションでは、ラッパーのライブラリを使用で説明されているものと同じように、Windows 95、Windows 98、および Windows ME で Unicode 関数を見つからない[両方の Windows 98 および Windows 2000 で実行されている 1 つの Unicode アプリを設計](http://go.microsoft.com/fwlink/p/?LinkId=250770)です。 ラッパー ライブラリは商業的でも使用できます。  
   
-     完全に移植性のある C のランタイム関数や、マクロ、データ型を使います。  MFC は柔軟性に富み、これらを問題なくサポートします。  
+     完全に移植できる C ランタイム関数、マクロ、およびデータ型を使用するとします。 MFC の柔軟性は、これらの方法のいずれかをサポートします。  
   
- 残りのトピックでは、Unicode または MBCS としてビルドできる完全に移植可能なコードの記述について重点的に説明します。  
+ これらのトピックの残りの部分は、Unicode と MBCS をビルドすると完全に移植可能なコードの作成に集中できます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Unicode と MBCS](../text/unicode-and-mbcs.md)   
  [ロケールとコード ページ](../text/locales-and-code-pages.md)

@@ -1,58 +1,58 @@
 ---
-title: "置き換え可能パラメーター (レジストラーのプリプロセッサ) の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "AddReplacement"
-  - "ClearReplacements"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "%MODULE%"
+title: "置き換え可能パラメーター (ATL レジストラー) を使用して |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- AddReplacement
+- ClearReplacements
+dev_langs: C++
+helpviewer_keywords: '%MODULE%'
 ms.assetid: 0b376994-84a6-4967-8d97-8c01dfc94efe
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6909db6a68a9e637ed0cf8513f49ba306007ce6f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 置き換え可能パラメーター (レジストラーのプリプロセッサ) の使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-置き換え可能パラメーターは、レジストラー クライアントがランタイムのデータを指定することができます。  これを行うには、レジストラーは、スクリプトの置き換え可能パラメーターに関連付けられた値を入力する置換マップを保持します。  レジストラーは実行時に入力を行います。  
+# <a name="using-replaceable-parameters-the-registrar39s-preprocessor"></a>置き換え可能パラメーター (レジストラー &#39; s プリプロセッサ) を使用します。
+置き換え可能パラメーターを使用すると、レジストラーのクライアントを実行時のデータを指定します。 これを行うには、レジストラーが先は、スクリプトで置き換え可能パラメーターに関連付けられている値が入った置換マップを保持します。 レジストラーでは、実行時にこれらのエントリを作成します。  
   
-##  <a name="_atl_using_.25.module.25"></a> を使用して %MODULE%  
- [&#91;ATL コントロール ウィザード&#93;](../atl/reference/atl-control-wizard.md) が自動的に `%MODULE%`を使用するスクリプトを生成します。  ATL は、サーバー上の DLL または EXE の実際の場所でこの置き換え可能パラメーターを使用します。  
+##  <a name="_atl_using_.25.module.25"></a>% モジュールを使用します。  
+ [ATL コントロール ウィザード](../atl/reference/atl-control-wizard.md)を使用するスクリプトを自動的に生成`%MODULE%`です。 ATL は、サーバーの DLL または EXE の実際の場所をこの置き換え可能パラメーターを使用します。  
   
-## スクリプトのデータの実行時のデータのバインド  
- プリプロセッサのもう一つの使用は、スクリプトのデータのランタイム データを連結することです。  たとえば、最後に追加した文字列「`, 1`」が付いているモジュールの完全パスを含む。エントリが必要であるとします。  最初に、次の拡張を定義する:  
+## <a name="concatenating-run-time-data-with-script-data"></a>実行時のデータとスクリプトのデータを連結します。  
+ プリプロセッサの別の使用は、実行時のデータとスクリプトのデータを連結します。 たとえば、文字列を持つモジュールへの完全パスを含むエントリが必要な"`, 1`"最後に追加します。 最初に、次の展開を定義します。  
   
 ```  
 'MySampleKey' = s '%MODULE%, 1'  
 ```  
   
- 次に、[スクリプトの開始](../atl/invoking-scripts.md)に示すメソッドを処理するスクリプトの 1 つがを呼び出す前に置換をマップに追加します:  
+ 次を呼び出す前にスクリプトの処理で表示されているメソッドのいずれかの[スクリプトの呼び出し](../atl/invoking-scripts.md)代わりにマップを追加。  
   
- [!CODE [NVC_ATL_Utilities#113](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#113)]  
+ [!code-cpp[NVC_ATL_Utilities#113](../atl/codesnippet/cpp/using-replaceable-parameters-the-registrar-s-preprocessor_1.cpp)]  
   
- スクリプトの解析中、レジストラーは `c:\mycode\mydll.dll, 1`に `'%MODULE%, 1'` を展開します。  
-  
-> [!NOTE]
->  レジストラー スクリプトでは、KB は、最大のトークンのサイズです。   \(トークンは、構文を認識可能な要素です。これは、プリプロセッサによって作成された、または配置されたトークンが含まれています。  
+ スクリプトの解析中に、レジストラーが展開され`'%MODULE%, 1'`に`c:\mycode\mydll.dll, 1`です。  
   
 > [!NOTE]
->  実行時に置換値を代入するには、[DECLARE\_REGISTRY\_RESOURCE](../Topic/DECLARE_REGISTRY_RESOURCE.md) または [DECLARE\_REGISTRY\_RESOURCEID](../Topic/DECLARE_REGISTRY_RESOURCEID.md) のマクロにスクリプトの呼び出しを削除します。  代わりに、メソッドを [CAtlModule::UpdateRegistryFromResourceD](../Topic/CAtlModule::UpdateRegistryFromResourceD.md) か [CAtlModule::UpdateRegistryFromResourceS](../Topic/CAtlModule::UpdateRegistryFromResourceS.md)を呼び出す置き換え、**\_ATL\_REGMAP\_ENTRY** の構造体の配列を渡す。`UpdateRegistry` に独自のメソッドで。  **\_ATL\_REGMAP\_ENTRY** の配列は、{、}**NULLNULL**設定されていると、このエントリは常に最後のエントリです。1 文字以上のエントリが必要です。  それ以外の場合は、アクセス違反のエラーが **UpdateRegistryFromResource** が呼び出された場合に生成されます。  
+>  レジストラー スクリプトでは、トークンの最大サイズは 4 K です。 (トークンは、構文内の認識可能な要素です)。これには、作成またはプリプロセッサによって展開されたトークンが含まれます。  
   
 > [!NOTE]
->  プロジェクトをビルドしたときに出力が **%MODULE%** レジストラー スクリプト パラメーターの実行時に作成されるパス名の前後に実行可能ファイル、ATL 自動的に引用符を追加する。  パス名に引用符がしない場合 **%MODULE\_RAW%** に新しいパラメーターを使用します。  
+>  実行時に置換値を置換するために、スクリプト内の呼び出しを削除、[に](../atl/reference/registry-macros.md#declare_registry_resource)または[代入](../atl/reference/registry-macros.md#declare_registry_resourceid)マクロです。 代わりに、独自に置き換える`UpdateRegistry`メソッドを呼び出す[として](../atl/reference/catlmodule-class.md#updateregistryfromresourced)または[方法については](../atl/reference/catlmodule-class.md#updateregistryfromresources)の配列を渡すと**_ATL_REGMAP_ENTRY**構造体。 配列**_ATL_REGMAP_ENTRY**には、少なくとも 1 つのエントリに設定されている必要があります {**NULL**、**NULL**}、し、このエントリが最後のエントリには常にします。 それ以外の場合、アクセス違反エラーになるときに生成**UpdateRegistryFromResource**と呼びます。  
+  
+> [!NOTE]
+>  ATL が自動的に実行時に作成されるパス名を囲む引用符を追加、実行可能ファイルを出力するプロジェクトをビルドする際、 **% モジュール**レジストラー スクリプトのパラメーターです。 パス名に引用符を含めるしたくない場合は、新しい使用**%module_raw**パラメーター代わりにします。  
 >   
->  **%MODULE%** か **%MODULE\_RAW%** が使用されている場合は出力パス名が、ATL DLL に引用符を追加しないプロジェクトをビルドするとき。  
+>  DLL を出力するプロジェクトを作成するときに ATL には追加されません引用符がある場合、パス名場合**% モジュール**または**%module_raw**を使用します。  
   
-## 参照  
- [レジストラー スクリプトの作成](../Topic/Creating%20Registrar%20Scripts.md)
+## <a name="see-also"></a>関連項目  
+ [レジストラー スクリプトの作成](../atl/creating-registrar-scripts.md)
+

@@ -1,38 +1,38 @@
 ---
-title: "依存ファイルの検索パス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "依存, NMAKE"
-  - "NMAKE プログラム, 依存"
+title: "依存ファイルのパスを検索 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- NMAKE program, dependents
+- dependents, NMAKE
 ms.assetid: bf998e47-da74-48b5-891d-d3d8ce57264b
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: cf777c89c78ab844b61138c30a5a9a25ca6b91d6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 依存ファイルの検索パス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-各依存ファイルには、次の構文で示されているように、省略可能な検索パスがあります。  
+# <a name="search-paths-for-dependents"></a>依存ファイルの検索パス
+各依存ファイルには、次のように指定された、省略可能な検索パスがあります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 {directory[;directory...]}dependent  
 ```  
   
-## 解説  
- 依存ファイルは、まず現在のディレクトリで検索され、次に指定された順序どおりにほかのディレクトリで検索されます。  マクロでは、検索パスの一部または全体を指定できます。  ディレクトリ名は中かっこ \({ }\) で囲みます。複数のディレクトリは、セミコロン \(;\) で区切ります。  空白やタブは使用できません。  
+## <a name="remarks"></a>コメント  
+ (Nmake の) は、現在のディレクトリでは、最初にし、指定された順序内のディレクトリで依存関係を検索します。 マクロには、検索パスの一部またはすべてを指定できます。 ディレクトリ名を囲む中かっこ ({});複数のディレクトリをセミコロン (;) で区切ります。 スペースまたはタブは許可されません。  
   
-## 参照  
- [依存ファイル](../build/dependents.md)
+## <a name="see-also"></a>関連項目  
+ [依存](../build/dependents.md)

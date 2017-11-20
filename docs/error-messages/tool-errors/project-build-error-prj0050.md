@@ -1,33 +1,31 @@
 ---
-title: "プロジェクト ビルド エラー PRJ0050 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "PRJ0050"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PRJ0050"
+title: "プロジェクト ビルド エラー PRJ0050 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: PRJ0050
+dev_langs: C++
+helpviewer_keywords: PRJ0050
 ms.assetid: ceef3b37-0acf-4abd-ac62-aa830b4fa145
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a712c370de6f5a3a8cc9d0fd96e7937deddd201e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロジェクト ビルド エラー PRJ0050
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-出力の登録に失敗しました。レジストリを変更するための適切なアクセス許可があるかどうかを確認してください。  
+# <a name="project-build-error-prj0050"></a>プロジェクト ビルド エラー PRJ0050
+出力を登録できませんでした。 レジストリを変更する適切なアクセス許可があることを確認してください。  
   
- Visual C\+\+ ビルド システムは、ビルドの出力 \(dll または .exe\) を登録できませんでした。  管理者としてログオンし、レジストリを変更する必要があります。  
+ Visual C ビルド システムは、(dll または .exe)、ビルドの出力を登録できませんでした。 レジストリの変更に管理者としてログオンする必要があります。  
   
- .dll をビルドしている場合、regsvr32.exe を使用して手動で .dll の登録を試みることができます。この際、ビルドが失敗した理由が表示されます。  
+ .Dll を構築する場合は、regsvr32.exe を使用して手動で .dll を登録しようとすることができます、このビルドが失敗した理由に関する情報を表示する必要があります。  
   
- .dll をビルドしていない場合、エラーの原因になったコマンドのビルド ログを確認します。
+ .Dll を作成していない場合、エラーが発生したコマンドのビルド ログを調べます。

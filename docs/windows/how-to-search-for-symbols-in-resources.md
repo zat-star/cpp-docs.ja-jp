@@ -1,51 +1,51 @@
 ---
-title: "How to: Search for Symbols in Resources | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "symbols, finding"
-  - "resources [Visual Studio], searching for symbols"
+title: "方法: リソース内のシンボルの検索 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- symbols, finding
+- resources [Visual Studio], searching for symbols
 ms.assetid: 6efef8e8-d0d4-4c49-b895-314974e7791a
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 04b2bb47977a349bfd06dc6770aab80626395714
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# How to: Search for Symbols in Resources
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-### リソース内のシンボルを検索するには  
+# <a name="how-to-search-for-symbols-in-resources"></a>方法: リソース内のシンボルを検索する
+### <a name="to-find-symbols-in-resources"></a>リソース内のシンボルを検索するには  
   
-1.  **\[編集\]** メニューの **\[シンボルの検索\]** を選択します。  
+1.  **編集**] メニューの [選択**シンボルの検索**です。  
   
-2.  [&#91;シンボルの検索&#93;](http://msdn.microsoft.com/ja-jp/63e93d9c-784f-418d-a76a-723da5ff5d96) ダイアログ ボックスの **\[検索する文字列\]** ボックスの一覧から以前の検索文字列を選択するか、または「ID\_ACCEL1」のように、検索するアクセラレータ キーを入力します。  
+2.  [シンボルの検索 ダイアログ ボックス](http://msdn.microsoft.com/en-us/63e93d9c-784f-418d-a76a-723da5ff5d96)で、**検索**ボックス、ドロップダウン リストから、以前の検索文字列を選択するか (用、id_accel1 を検索するアクセラレータ キーを入力します。  
   
     > [!TIP]
-    >  検索に[正規表現](../Topic/Using%20Regular%20Expressions%20in%20Visual%20Studio.md)を使用するには、**\[編集\]** メニューの **\[シンボルの検索\]** コマンドではなく [&#91;フォルダーを指定して検索&#93;](../Topic/Find%20Command.md) コマンドを使用する必要があります。  正規表現を有効にするには、[&#91;検索&#93;](http://msdn.microsoft.com/ja-jp/dad03582-4931-4893-83ba-84b37f5b1600) ダイアログ ボックスの **\[使用: 正規表現\]** チェック ボックスをオンにしてください。  次に、**\[検索する文字列\]** ボックスの右側にある右矢印ボタンをクリックすると、検索の正規表現のリストを表示できます。  このリストで正規表現を選択すると、**\[検索する文字列\]** ボックスの検索文字列として設定されます。  
+    >  使用する[正規表現](/visualstudio/ide/using-regular-expressions-in-visual-studio)検索に使用する必要があります、 [Findinfiles コマンド](/visualstudio/ide/reference/find-command)から、**編集**の代わりにメニューを開き、**シンボルの検索**コマンド。 正規表現を有効にする必要があります、**使用: 正規表現** チェック ボックスをオンに、[検索 ダイアログ ボックス](http://msdn.microsoft.com/en-us/dad03582-4931-4893-83ba-84b37f5b1600)です。 右側にある右矢印ボタンをクリックすることができ、**検索**検索の正規表現の一覧を表示するボックスです。 この一覧から式を選択するときに、検索文字列として設定、**検索**ボックス。  
   
-3.  **\[検索\]** オプションのいずれかを選択します。  
+3.  いずれかを選択、**検索**オプション。  
   
-4.  **\[次を検索\]** をクリックします。  
+4.  をクリックして**次を検索する**です。  
   
     > [!NOTE]
     >  文字列リソース、アクセラレータ リソース、またはバイナリ リソース内のシンボルは検索できません。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。 マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](/dotnet/framework/resources/index)で、 *.NET Framework 開発者ガイド 』。* 」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、リソース文字列をプロパティに割り当てる方法については、「 [Walkthrough: Using Resources for Localization with ASP.NET](http://msdn.microsoft.com/Library/bb4e5b44-e2b0-48ab-bbe9-609fb33900b6)を選択します。  
   
  **必要条件**  
   
  Win32  
   
-## 参照  
- [Symbols: Resource Identifiers](../mfc/symbols-resource-identifiers.md)   
- [Resource Files](../mfc/resource-files-visual-studio.md)   
- [Resource Editors](../mfc/resource-editors.md)
+## <a name="see-also"></a>関連項目  
+ [シンボル: リソース識別子](../windows/symbols-resource-identifiers.md)   
+ [リソース ファイル (Visual Studio)](../windows/resource-files-visual-studio.md)   
+ [リソース エディター](../windows/resource-editors.md)

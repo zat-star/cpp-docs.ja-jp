@@ -1,32 +1,30 @@
 ---
-title: "RuntimeClass::GetWeakReference メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::RuntimeClass::GetWeakReference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetWeakReference メソッド"
+title: "Runtimeclass::getweakreference メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::RuntimeClass::GetWeakReference
+dev_langs: C++
+helpviewer_keywords: GetWeakReference method
 ms.assetid: 26656ace-7f20-4364-87c9-4a75dd30912e
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9a0406991fca38b586b27c7f8a0d01cf2e4689af
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# RuntimeClass::GetWeakReference メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-RuntimeClass の現在のオブジェクトの弱い参照オブジェクトへのポインターを取得します。  
+# <a name="runtimeclassgetweakreference-method"></a>RuntimeClass::GetWeakReference メソッド
+RuntimeClass、現在の弱い参照オブジェクトへのポインターを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHOD(  
@@ -34,17 +32,17 @@ STDMETHOD(
 )(_Deref_out_ IWeakReference **weakReference);  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `weakReference`  
- この操作が完了すると、弱い参照オブジェクトへのポインター。  
+ この操作の完了時、弱い参照オブジェクトへのポインター。  
   
-## 戻り値  
- 常には S\_OK を返します。  
+## <a name="return-value"></a>戻り値  
+ 常に S_OK です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [RuntimeClass クラス](../windows/runtimeclass-class.md)

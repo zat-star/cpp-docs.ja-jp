@@ -1,44 +1,43 @@
 ---
-title: "シリアル化 (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".NET Framework [C++], シリアル化"
-  - "マネージ コード [C++], シリアル化"
-  - "NonSerializedAttribute クラス, マネージ アプリケーション"
-  - "SerializableAttribute クラス, マネージ アプリケーション"
-  - "シリアル化 [C++]"
-  - "シリアル化 [C++], シリアル化の概要"
+title: "シリアル化 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- serialization [C++]
+- SerializableAttribute class, managed applications
+- NonSerializedAttribute class, managed applications
+- managed code [C++], serializing
+- .NET Framework [C++], serialization
+- serialization [C++], about serialization
 ms.assetid: 869010ca-74e1-4989-b409-4643cdb94084
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 57ec673e945d0db14ce8fee0d477d7aeb2a9e238
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# シリアル化 (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-マネージ クラスのシリアル化 \(各フィールドまたはプロパティを含む\) は、<xref:System.SerializableAttribute> クラスと <xref:System.NonSerializedAttribute> クラスでサポートされます。シリアル化とは、オブジェクトまたはメンバーの状態を永続的なメディアに格納するプロセスです。  
+# <a name="serialization-ccli"></a>シリアル化 (C++/CLI)
+シリアル化 (オブジェクトまたは永続的なメディアにメンバーの状態を保存するプロセス) のマネージ クラス (個々 のフィールドまたはプロパティを含む) でサポートされて、<xref:System.SerializableAttribute>と<xref:System.NonSerializedAttribute>クラスです。  
   
-## 解説  
- **SerializableAttribute** カスタム属性をマネージ クラスに適用してクラス全体をシリアル化するか、特定のフィールドまたはプロパティだけに適用してマネージ クラスの一部をシリアル化します。  マネージ クラスのフィールドまたはプロパティをシリアル化から除外するには **NonSerializedAttribute** カスタム属性を使用します。  
+## <a name="remarks"></a>コメント  
+ 適用、 **SerializableAttribute**クラス全体をシリアル化またはだけに特定のフィールドまたはプロパティをマネージ クラスの部分をシリアル化を適用するマネージ クラスへのカスタム属性です。 使用して、 **NonSerializedAttribute**シリアル化の対象から除外フィールドやマネージ クラスのプロパティにカスタム属性です。  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 次の例では、`MyClass` クラス \(および `m_nCount` プロパティ\) がシリアル化可能としてマークされます。  ただし、`m_nData` プロパティは、**NonSerialized** カスタム属性で示されるようにシリアル化されません。  
+### <a name="description"></a>説明  
+ 次の例では、クラス`MyClass`(プロパティと`m_nCount`) シリアル化可能としてマークされています。 ただし、`m_nData`によって示されるプロパティはシリアル化されません、 **NonSerialized**カスタム属性。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // serialization_and_mcpp.cpp  
@@ -55,8 +54,8 @@ private:
 };  
 ```  
   
-### コメント  
- 両方の属性は、"短い形式の名前" \(**Serializable** および **NonSerialized**\) を使用して参照できます。  詳細については、「[属性の適用](../Topic/Applying%20Attributes.md)」で説明します。  
+### <a name="comments"></a>コメント  
+ その「短い名前」を使用して両方の属性を参照できることに注意してください (**Serializable**と**NonSerialized**)。 詳細についてはこの[属性の適用](/dotnet/standard/attributes/applying-attributes)です。  
   
-## 参照  
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

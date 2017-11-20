@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -16,38 +15,21 @@ f1_keywords:
 - AMP/Concurrency::extent::size
 - AMP/Concurrency::extent::tile
 - AMP/Concurrency::extent::rank Constant
-dev_langs:
-- C++
-helpviewer_keywords:
-- extent structure
+dev_langs: C++
+helpviewer_keywords: extent structure
 ms.assetid: edb5de3d-3935-4dbb-8365-4cc6c4fb0269
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 28c90118eeb83df75f19b49f47ac884bff111b8f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 22b7a25d0695b7e12a4fbecbf47bbc7feb32148f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="extent-class-c-amp"></a>extent クラス (C++ AMP)
-ベクターを表します*N*の境界を指定する整数値、 *N*-0 の原点が次元空間です。 ベクターの値は最上位から最下位へ順に並べ替えられます。  
+ベクターを表します*N*の境界を指定する整数値、 *N*-0 の原点が次元の空間です。 ベクターの値は最上位から最下位へ順に並べ替えられます。  
   
 ### <a name="syntax"></a>構文  
   
@@ -90,7 +72,7 @@ class extent;
 |[operator%=](#operator_mod_eq)|その要素がある数で除算された場合、`extent` オブジェクトの各要素の剰余を計算します。|  
 |[operator*=](#operator_star_eq)|`extent` オブジェクトの各要素をある数で乗算します。|  
 |[operator/=](#operator_min_eq)|`extent` オブジェクトの各要素をある数で除算します。|  
-|[extent:\[\]](#operator_at)|指定したインデックス位置にある要素を返します。|  
+|[extent::operator\[\]](#operator_at)|指定したインデックス位置にある要素を返します。|  
 |[operator+](#operator_add)|対応する `extent` 要素および `index` 要素を追加することによって作成された新しい `extent` オブジェクトを返します。|  
 |[operator++](#operator_add_add)|`extent` オブジェクトの各要素をインクリメントします。|  
 |[operator+=](#operator_add_eq)|指定した数を `extent` オブジェクトの各要素に加算します。|  
@@ -110,7 +92,7 @@ class extent;
 
 ## <a name="contains"></a>含まれています 
 
-示すかどうか、指定した[インデックス](index-class.md)'範囲' オブジェクト内で値が含まれます。  
+示すかどうか、指定した[インデックス](index-class.md)'範囲' オブジェクト内に含まれる値。  
   
 ### <a name="syntax"></a>構文  
   
@@ -166,7 +148,7 @@ explicit extent(const int _Array[_Rank])restrict(amp,cpu);
   
 ##  <a name="operator_mod_eq"></a>operator % = 
 
-その要素がある数で除算された場合は、'範囲' 内の各要素の剰余 (余り) を計算します。  
+その要素がある数で除算された場合は、'エクステント' 内の各要素の剰余 (余り) を計算します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -176,14 +158,14 @@ extent<_Rank>& operator%=(int _Rhs) restrict(cpu, direct3d);
   
 ### <a name="parameters"></a>パラメーター  
  `_Rhs`  
- 5/3 の余りを数。  
+ 剰余を検索する数値。  
   
 ### <a name="return-value"></a>戻り値  
  `extent` オブジェクト。  
   
 ##  <a name="operator_star_eq"></a>演算子 * = 
 
-指定した数で '範囲' オブジェクト内の各要素を乗算します。  
+指定された数で 'エクステント' オブジェクト内の各要素を乗算します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -229,7 +211,7 @@ extent<_Rank> operator++(int)restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  前置演算子の場合は、`extent` オブジェクト (`*this`) です。 後置演算子の場合は、新しい `extent` オブジェクトです。  
   
-##  <a name="operator_add_eq"></a>operator + = 
+##  <a name="operator_add_eq"></a>演算子 + = 
 
 '範囲' オブジェクトの各要素に指定された数を追加します。  
   
@@ -248,7 +230,7 @@ extent<_Rank>& operator+=(int _Rhs) restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  結果として得られる `extent` オブジェクト。  
   
-##  <a name="operator_min"></a>演算子の 
+##  <a name="operator_min"></a>演算子- 
 
 この `extent` オブジェクトの対応する要素から指定された `index` オブジェクトの各要素を減算して、新しい `extent` オブジェクトを作成します。  
   
@@ -265,7 +247,7 @@ extent<_Rank> operator-(const index<_Rank>& _Rhs) restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  新しい `extent` オブジェクト。  
   
-##  <a name="operator_min_min"></a>-演算子 
+##  <a name="operator_min_min"></a>operator- 
 
 デクリメント '範囲' オブジェクト内の各要素。  
   
@@ -279,9 +261,9 @@ extent<_Rank> operator--(int)restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  前置演算子の場合は、`extent` オブジェクト (`*this`) です。 後置演算子の場合は、新しい `extent` オブジェクトです。  
   
-##  <a name="operator_div_eq"></a>演算子/= 
+##  <a name="operator_div_eq"></a>operator/= 
 
-'範囲' オブジェクト内の各要素を指定した数で除算します。  
+'範囲' オブジェクト内の各要素を指定された数で除算します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -298,7 +280,7 @@ extent<_Rank>& operator/=(int _Rhs) restrict(amp,cpu);
   
 ##  <a name="operator_min_eq"></a>-= 演算子 
 
-'範囲' オブジェクトの各要素から指定した数を減算します。  
+'範囲' オブジェクトの各要素から指定した数値を減算します。  
   
 ### <a name="syntax"></a>構文  
   
@@ -317,7 +299,7 @@ extent<_Rank>& operator-=(int _Rhs) restrict(amp,cpu);
   
 ##  <a name="operator_eq"></a>演算子 = 
 
-これには、別の '範囲' オブジェクトの内容をコピーします。  
+これには、別の 'エクステント' オブジェクトの内容をコピーします。  
   
 ### <a name="syntax"></a>構文  
   
@@ -332,7 +314,7 @@ extent<_Rank>& operator=(const extent<_Rank>& _Other) restrict(amp,cpu);
 ### <a name="return-value"></a>戻り値  
  この `extent` オブジェクトへの参照。  
   
-##  <a name="operator_at"></a>extent:\[\] 
+##  <a name="operator_at"></a>extent::operator\[\] 
 指定したインデックス位置にある要素を返します。  
   
 ### <a name="syntax"></a>構文  
@@ -361,7 +343,7 @@ static const int rank = _Rank;
   
 ##  <a name="size"></a>サイズ 
 
-全体の線形サイズを返す、`extent`オブジェクト (要素単位)。  
+線形サイズの合計を返します、`extent`オブジェクト (要素単位)。  
   
 ### <a name="syntax"></a>構文  
 
@@ -385,11 +367,10 @@ tiled_extent<_Dim0, _Dim1, _Dim2> tile() const ;
 ```  
 ### <a name="parameters"></a>パラメーター
 `_Dim0`タイル化された範囲の最上位のコンポーネントです。
-`_Dim1`タイル化された範囲の次に、最上位のコンポーネント。
+`_Dim1`並べて表示されたエクステントの次に、最上位のコンポーネント。
 `_Dim2`タイル化された範囲の最下位のコンポーネントです。
 
 
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

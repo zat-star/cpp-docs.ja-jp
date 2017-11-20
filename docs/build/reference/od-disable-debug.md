@@ -1,62 +1,61 @@
 ---
-title: "/Od (無効 (デバッグ)) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/od"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/Od コンパイラ オプション [C++]"
-  - "無効化 (デバッグ) コンパイラ オプション [C++]"
-  - "無効化 (最適化を)"
-  - "高速コンパイル"
-  - "最適化の無効化"
-  - "Od コンパイラ オプション [C++]"
-  - "-Od コンパイラ オプション [C++]"
+title: "-Od (無効 (デバッグ)) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /od
+dev_langs: C++
+helpviewer_keywords:
+- no optimizations
+- fast compiling
+- /Od compiler option [C++]
+- disable optimizations
+- Od compiler option [C++]
+- -Od compiler option [C++]
+- disable (debug) compiler option [C++]
 ms.assetid: b1ac31b7-e086-4eeb-be5e-488f7513f5f5
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: c1d26742d4922dac176f198037ad1cce29e722d0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /Od (無効 (デバッグ))
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プログラムの最適化処理がすべて無効になり、コンパイル速度が向上します。  
+# <a name="od-disable-debug"></a>/Od (無効 (デバッグ))
+すべてのプログラムでの最適化をオフにして、コンパイル速度が向上します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /Od  
 ```  
   
-## 解説  
- これは、既定のオプションです。  **\/Od** オプションを使用するとコードが移動されないので、デバッグが簡単になります。  デバッグ用コンパイラ オプションの詳細については、「[\/Z7、\/Zi、\/ZI \(デバッグ情報の形式\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ このオプションは、既定値です。 **/Od**コードの移動を抑制デバッグ プロセスが簡単になります。 デバッグ コンパイラ オプションの詳細については、次を参照してください。 [/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[最適化\]** プロパティ ページをクリックします。  
+3.  クリックして、**最適化**プロパティ ページ。  
   
-4.  **\[最適化\]** プロパティを変更します。  
+4.  変更、**最適化**プロパティです。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
 -   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.Optimization%2A>」を参照してください。  
   
-## 参照  
- [\/O オプション \(コードの最適化\)](../../build/reference/o-options-optimize-code.md)   
+## <a name="see-also"></a>関連項目  
+ [/O オプション (コードの最適化)](../../build/reference/o-options-optimize-code.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)   
- [\/Z7、\/Zi、\/ZI \(デバッグ情報の形式\)](../Topic/-Z7,%20-Zi,%20-ZI%20\(Debug%20Information%20Format\).md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)   
+ [/Z7、/Zi、/ZI (デバッグ情報の形式)](../../build/reference/z7-zi-zi-debug-information-format.md)

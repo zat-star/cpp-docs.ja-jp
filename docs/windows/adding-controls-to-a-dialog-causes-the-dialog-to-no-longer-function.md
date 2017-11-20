@@ -1,71 +1,72 @@
 ---
-title: "Adding Controls to a Dialog Causes the Dialog to No Longer Function | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "controls [C++], troubleshooting"
-  - "common controls, troubleshooting"
-  - "troubleshooting controls"
-  - "dialog boxes, troubleshooting"
-  - "dialog box controls, troubleshooting"
-  - "InitCommonControls"
+title: "不要になった関数に、ダイアログ ボックス コントロールをダイアログ ボックスに追加すると、|Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- controls [C++], troubleshooting
+- common controls, troubleshooting
+- troubleshooting controls
+- dialog boxes, troubleshooting
+- dialog box controls, troubleshooting
+- InitCommonControls
 ms.assetid: b2dd4574-ea59-4343-8d65-b387cead5da6
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: fb068822956508b747b8c97d7cd46e5bc19e8e58
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Adding Controls to a Dialog Causes the Dialog to No Longer Function
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ダイアログ ボックスにコモン コントロールやリッチ エディット コントロールを追加しても、ダイアログ ボックスのテスト時に表示されないか、またはダイアログ ボックス自体が表示されません。  
+# <a name="adding-controls-to-a-dialog-causes-the-dialog-to-no-longer-function"></a>コントロールを追加してもダイアログ ボックスに表示されない
+ダイアログ ボックスに、コモン コントロールまたはリッチ エディット コントロールを追加すると、これは表示されません ダイアログ ボックスをテストするとダイアログ ボックス自体は表示されません。  
   
- **この問題の例**  
+ **問題の例**  
   
-1.  Win32 プロジェクトを作成し、コンソール アプリケーションではなく Windows アプリケーションを作成できるように、アプリケーション設定を変更します。  
+1.  Windows アプリケーション (コンソール アプリケーションではなく) を作成するようにアプリケーションの設定を変更する、Win32 プロジェクトを作成します。  
   
-2.  [リソース ビュー](../windows/resource-view-window.md)で、.rc ファイルをダブルクリックします。  
+2.  [リソース ビュー](../windows/resource-view-window.md)、.rc ファイルをダブルクリックします。  
   
-3.  ダイアログ オプションの \[バージョン情報\] ボックスをクリックします。  
+3.  ダイアログ オプションでダブルクリックして、**に関する**ボックス。  
   
-4.  ダイアログ ボックスに IP アドレス コントロールを追加します。  
+4.  追加、 **IP アドレス コントロール** ダイアログ ボックスにします。  
   
-5.  保存して \[すべてリビルド\] をクリックします。  
+5.  保存と**すべてリビルド**です。  
   
 6.  プログラムを実行します。  
   
-7.  ダイアログ ボックスで、\[ヘルプ\] メニューの \[バージョン情報\] をクリックしても、ダイアログ ボックスは表示されません。  
+7.  ダイアログ ボックスの **[ヘルプ]** メニューのをクリックして、**に関する**コマンド以外のダイアログ ボックスが表示されます。  
   
  **原因**  
   
- 現在のダイアログ エディターでは、以下の表に示すコモン コントロールやリッチ エディット コントロールをダイアログ ボックスにドラッグ アンド ドロップしても、プロジェクトにコードが自動的に追加されません。  また、Visual Studio では、この問題が発生してもエラー メッセージや警告メッセージは表示されません。  したがって、コントロールのコードを手動で追加する必要があります。  
+ 現時点では、ダイアログ エディターが自動的に追加されませんコードをプロジェクトにリッチ エディット コントロールをダイアログ ボックスまたはドラッグ アンド ドロップ、次の一般的なコントロールするときにします。 また、Visual Studio の管轄エラーまたは警告がこの問題が発生したとき。 コントロールのコードを手動で追加する必要があります。  
   
 ||||  
 |-|-|-|  
-|Slider Control|Tree Control|Date Time Picker|  
-|Spin Control|Tab Control|Month Calendar|  
-|Progress Control|Animation Control|IP Address Control|  
-|Hot Key|Rich Edit Control|Combo Box|  
-|List Control|Rich Edit 2.0 Control|カスタム コントロール|  
+|スライダー コントロール|ツリー コントロール|Date Time Picker|  
+|スピン コントロール|タブ コントロール|月間予定表|  
+|プログレス コントロール|アニメーション コントロール|IP アドレスの管理|  
+|ホット キー|リッチ エディット コントロール|拡張コンボ ボックス|  
+|リスト コントロール|リッチ エディット 2.0 コントロール|カスタム コントロール|  
   
-## コモン コントロールの場合の解決法  
- ダイアログ ボックスでコモン コントロールを使用するには、ダイアログ ボックスを作成する前に [InitCommonControlsEx](http://msdn.microsoft.com/library/windows/desktop/bb775697) または **AFXInitCommonControls** を呼び出す必要があります。  
+## <a name="the-fix-for-common-controls"></a>コモン コントロールの修正方法  
+ コモン コントロール ダイアログ ボックスを使用するために呼び出す必要がある[InitCommonControlsEx](http://msdn.microsoft.com/library/windows/desktop/bb775697)または**AFXInitCommonControls**  ダイアログ ボックスを作成する前にします。  
   
-## リッチ エディット コントロールの場合の解決法  
- リッチ エディット コントロールの場合は、**LoadLibrary** を呼び出す必要があります。  詳細については、[!INCLUDE[winsdkshort](../atl/reference/includes/winsdkshort_md.md)] の「[MFC でのリッチ エディット 1.0 コントロールの使用](../Topic/Using%20the%20RichEdit%201.0%20Control%20with%20MFC.md)」と「[About Rich Edit Controls](http://msdn.microsoft.com/library/windows/desktop/bb787873)」、および「[リッチ エディット コントロールの概要](../mfc/overview-of-the-rich-edit-control.md)」を参照してください。  
+## <a name="the-fix-for-richedit-controls"></a>リッチ エディット コントロールの修正方法  
+ 呼び出す必要があります**LoadLibrary**リッチ エディット コントロールのです。 詳細については、次を参照してください。 [MFC での RichEdit 1.0 コントロールの使用](../windows/using-the-richedit-1-0-control-with-mfc.md)、[リッチのエディット コントロールについて](http://msdn.microsoft.com/library/windows/desktop/bb787873)で、 [!INCLUDE[winsdkshort](../atl-mfc-shared/reference/includes/winsdkshort_md.md)]、および[リッチ エディット コントロールの概要](../mfc/overview-of-the-rich-edit-control.md)です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
  Win32  
   
-## 参照  
- [Troubleshooting the Dialog Editor](../mfc/troubleshooting-the-dialog-editor.md)   
- [Dialog Editor](../mfc/dialog-editor.md)
+## <a name="see-also"></a>関連項目  
+ [ダイアログ エディターのトラブルシューティング](../windows/troubleshooting-the-dialog-editor.md)   
+ [ダイアログ エディター](../windows/dialog-editor.md)
+

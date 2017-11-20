@@ -1,35 +1,34 @@
 ---
-title: "方法: ファイル システムの変更を監視する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント [C++], 監視"
-  - "例 [C++], 監視 (ファイル システムの変更を)"
-  - "ファイル システム イベント [C++]"
-  - "FileSystemWatcher クラス, 例"
-  - "監視 (ファイル システムイ ベントを)"
+title: "方法: ファイル システムの変更を監視 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- monitoring file system events
+- FileSystemWatcher class, examples
+- examples [C++], monitoring file system changes
+- events [C++], monitoring
+- file system events [C++]
 ms.assetid: 207a3069-e63d-417e-8b56-00ab44f29c52
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7b0b75ea559cac35ef764818d3a99162a72cfc62
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: ファイル システムの変更を監視する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のコード例では、<xref:System.IO.FileSystemWatcher> を使用して、作成、変更、削除、または名前の変更の対象となるファイルに対応するイベントを登録します。  ディレクトリを定期的にポーリングしてファイルへの変更を調べる代わりに、<xref:System.IO.FileSystemWatcher> クラスを使用して、変更が検出されたときにイベントを発生させることができます。  
+# <a name="how-to-monitor-file-system-changes-ccli"></a>方法: ファイル システムの変更を監視する (C++/CLI)
+次のコード例では<xref:System.IO.FileSystemWatcher>作成、変更、削除、または名前が変更されたファイルに対応するイベントを登録します。 ディレクトリのファイルへの変更を定期的にポーリングするには、代わりに使用することができます、<xref:System.IO.FileSystemWatcher>変更が検出されたときにイベントを発生させるクラスです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // monitor_fs.cpp  
@@ -91,7 +90,7 @@ int main()
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [System.IO 名前空間](https://msdn.microsoft.com/en-us/library/system.io.aspx)   
- [ファイルおよびストリーム入出力](../Topic/File%20and%20Stream%20I-O.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+ [ファイルおよびストリーム入出力](http://msdn.microsoft.com/Library/4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

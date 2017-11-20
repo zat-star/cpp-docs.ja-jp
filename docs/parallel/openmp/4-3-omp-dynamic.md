@@ -1,29 +1,28 @@
 ---
-title: "4.3 OMP_DYNAMIC | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "4.3 OMP_DYNAMIC |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: a15edefb-1f85-4f06-a427-beb3cfc4434f
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2b23719d1559a00b807f724a3e31eb7b673a5a17
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 4.3 OMP_DYNAMIC
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**OMP\_DYNAMIC** の環境変数が動的に調整 **omp\_set\_dynamic** ライブラリ ルーチンを呼び出して明示的に有効にするか無効か並列領域の実行に使用できるスレッドの数の動的調整を有効または無効にします。  この値は **True** または **False** である必要があります。  
+# <a name="43-ompdynamic"></a>4.3 OMP_DYNAMIC
+**OMP_DYNAMIC**環境変数を有効または動的に調整が明示的に有効になっているか、を呼び出すことによって無効にしない限り、並列領域を実行するために使用できるスレッドの数が動的に調整を無効になります**omp_set_dynamic**ライブラリ ルーチンです。 その値がある必要があります**TRUE**または**FALSE**です。  
   
- **True** に設定するとランタイム環境によって並列領域を実行するために使用するスレッドの数を調整することはシステム リソースを使用します。  **False** に設定して動的変更が無効になります。  既定の状態は実装定義されます。  
+ 場合に設定**TRUE**、並列領域の実行に使用されるスレッドの数は、システム リソースを最大限に活用する、ランタイム環境で調整される可能性があります。  場合設定**FALSE**、動的に調整が無効になっています。 既定の条件では、実装定義されます。  
   
  例:  
   
@@ -31,8 +30,8 @@ manager: "ghogen"
 setenv OMP_DYNAMIC TRUE  
 ```  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   並列領域の詳細についてはページの 8. [セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) を参照してください。  
+-   並列領域の詳細については、次を参照してください。[セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページのです。  
   
--   **omp\_set\_dynamic** の関数はページの 39 [セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md) が表示されます。
+-   **omp_set_dynamic**関数を参照してください[セクション 3.1.7](../../parallel/openmp/3-1-7-omp-set-dynamic-function.md)ページ 39 にします。

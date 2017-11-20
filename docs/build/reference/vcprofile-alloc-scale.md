@@ -1,51 +1,49 @@
 ---
-title: "VCPROFILE_ALLOC_SCALE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VCPROFILE_ALLOC_SCALE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "VCPROFILE_ALLOC_SCALE 環境変数"
+title: "VCPROFILE_ALLOC_SCALE |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: VCPROFILE_ALLOC_SCALE
+dev_langs: C++
+helpviewer_keywords: VCPROFILE_ALLOC_SCALE environment variable
 ms.assetid: 5cb5ce27-f9b8-489b-b46c-d6e9bcab2d34
-caps.latest.revision: 4
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: ed767299778b65a7275bbfd225daaf46ec0e98be
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# VCPROFILE_ALLOC_SCALE
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロファイル データを格納するために割り当てるメモリ容量を変更します。  
+# <a name="vcprofileallocscale"></a>VCPROFILE_ALLOC_SCALE
+プロファイル データを保持するために割り当てられたメモリの量を変更します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 VCPROFILE_ALLOC_SCALE=scale_value  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `scale_value`  
- テスト シナリオを実行するために必要なメモリ容量のスケール値。既定値は 1 です。  
+ テスト シナリオの実行対象とするメモリの量のスケール値。  既定値は 1 です。  
   
-## 解説  
- まれに、テスト シナリオの実行中に、プロファイル データを収集するために使用できるメモリが不足する場合があります。このような場合は、`VCPROFILE_ALLOC_SCALE` を使用してメモリ容量を増やすことができます。  
+## <a name="remarks"></a>コメント  
+ まれなケースではありません十分なメモリをサポートするために使用可能なテストのシナリオを実行している場合は、プロファイル データを収集します。  その場合は、メモリの量を向上することが`VCPROFILE_ALLOC_SCALE`です。  
   
- テストの実行中にメモリ不足を示すエラー メッセージが表示された場合は、メモリ不足エラーなしでテストが完了するまで、`VCPROFILE_ALLOC_SCALE` により大きな値を割り当てます。  
+ 十分なメモリがあることを示すテストの実行中にエラー メッセージを受信する場合より大きい値を割り当てる`VCPROFILE_ALLOC_SCALE`テストの実行がメモリ不足のエラーなく完了するまでです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 set VCPROFILE_ALLOC_SCALE=2  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ガイド付き最適化のプロファイルの環境変数](../../build/reference/environment-variables-for-profile-guided-optimizations.md)

@@ -1,32 +1,32 @@
 ---
-title: "/CLR における例外処理動作の相違点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "EXCEPTION_CONTINUE_EXECUTION マクロ"
-  - "set_se_translator 関数"
+title: "例外処理と CLR での動作の相違 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- EXCEPTION_CONTINUE_EXECUTION macro
+- set_se_translator function
 ms.assetid: 2e7e8daf-d019-44b0-a51c-62d7aaa89104
-caps.latest.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 20
+caps.latest.revision: "20"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 16962e39533eb2ac3d698622f8bb3a27d068b0ad
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /CLR における例外処理動作の相違点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[マネージ例外の基本概念](../dotnet/basic-concepts-in-using-managed-exceptions.md) は マネージ アプリケーションで例外処理について説明します。  このトピックでは、例外処理の標準動作の違いは、および制限について説明します。  詳細については、「[\_set\_se\_translator 関数](../c-runtime-library/reference/set-se-translator.md)」を参照してください。  
+# <a name="differences-in-exception-handling-behavior-under-clr"></a>/CLR における例外処理動作の相違点
+[マネージ例外の使用の基本的な概念](../dotnet/basic-concepts-in-using-managed-exceptions.md)マネージ アプリケーションでの例外処理について説明します。 このトピックでは例外処理および制限がいくつかの標準の動作の違いは詳しく説明します。 詳細については、次を参照してください。 [_set_se_translator 関数](../c-runtime-library/reference/set-se-translator.md)です。  
   
-##  <a name="vcconjumpingoutofafinallyblock"></a> Finally ブロックの外部にジャンプします。留める。  
- ネイティブ C\/C\+\+ コードでは、構造化例外処理を使用して**finally** \(SEH\) のブロックの外部にジャンプします。留めるも警告が生成されるが許可されます。[\/clr](../build/reference/clr-common-language-runtime-compilation.md)で、**finally** ブロックの外部にジャンプします。留めるはエラーになります。:  
+##  <a name="vcconjumpingoutofafinallyblock"></a>ジャンプ、Finally ブロック  
+ ネイティブ C/C++ コードで、_ _ からジャンプ**finally**構造化例外処理 (SEH) を使用してブロックを使用すると、ただし、警告が生成されます。  [/Clr](../build/reference/clr-common-language-runtime-compilation.md)、out の移動、**最後に**ブロックが発生したエラー。  
   
 ```  
 // clr_exception_handling_4.cpp  
@@ -39,10 +39,10 @@ int main() {
 }   // C3276  
 ```  
   
-##  <a name="vcconraisingexceptionswithinanexceptionfilter"></a> 例外フィルター内の例外を発生させる。  
- 例外がマネージ コード内の [例外フィルター](../cpp/writing-an-exception-filter.md) の処理中に発生させると、例外は、フィルターは 0 をキャッチされ、処理されます。  
+##  <a name="vcconraisingexceptionswithinanexceptionfilter"></a>例外フィルター内の例外を発生させる  
+ 処理中に例外が発生すると、[例外フィルター](../cpp/writing-an-exception-filter.md) 、マネージ コード内で例外がキャッチされ、フィルターは 0 を返しますとして扱われます。  
   
- \([GetExceptionInformation](http://msdn.microsoft.com/library/windows/desktop/ms679357)で返される\) ため、入れ子になった例外が発生させるネイティブ コードの動作とは対照的に、**EXCEPTION\_RECORD** 構造体の **ExceptionRecord** フィールドが設定され、**ExceptionFlags** 0x10 ビット フィールド セットです。  次の例は、動作の違いを示しています。:  
+ これは、動作とは対照的に入れ子になった例外が発生するネイティブ コード、 **ExceptionRecord**フィールドで、 **EXCEPTION_RECORD**構造 (によって返される[GetExceptionInformation](http://msdn.microsoft.com/library/windows/desktop/ms679357)) が設定されていると、 **ExceptionFlags**フィールドが 0x10 ビットを設定します。 次の例では、動作の違いを示します。  
   
 ```  
 // clr_exception_handling_5.cpp  
@@ -95,17 +95,17 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 Caught a nested exception  
 We should execute this handler if compiled to native  
 ```  
   
-##  <a name="vccondisassociatedrethrows"></a> 分離再スロー  
- **\/clr** は catch ハンドラーの外部の例外のサポートされません \(的として再スローしてという\) 再スローを。  この種類の例外は、標準 C\+\+ が再スローするとして扱われます。  アクティブなマネージ例外があるとの関連付けが解除され、検出された場合再スローすれば、例外は、. C\+\+ 例外としてラップされ、次に再スローされます。  この種類の例外は、型 [System::SEHException](https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.sehexception.aspx)例外としてのみキャッチできません。  
+##  <a name="vccondisassociatedrethrows"></a>分離再スロー  
+ **/clr**は catch ハンドラー (分離 rethrow と呼ばれます) の外部で例外を再スローをサポートしていません。 この種類の例外は処理として標準 C++ の再スローします。 分離の再スローがアクティブなマネージ例外がある場合に、検出した場合、例外は、C++ 例外としてラップされ、再スローされます。 型の例外として、この種類の例外をキャッチのみできます[System::SEHException](https://msdn.microsoft.com/en-us/library/system.runtime.interopservices.sehexception.aspx)です。  
   
- 次の例は、. C\+\+ 例外として再スローされるマネージ例外です:  
+ 次の例では、C++ 例外として再スローされるマネージ例外を示します。  
   
 ```  
 // clr_exception_handling_6.cpp  
@@ -147,16 +147,16 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 caught an SEH Exception  
 ```  
   
-##  <a name="vcconexceptionfiltersandexception_continue_execution"></a> 例外のフィルター処理と EXCEPTION\_CONTINUE\_EXECUTION  
- フィルターがマネージ アプリケーションの `EXCEPTION_CONTINUE_EXECUTION` を返した場合、フィルターを `EXCEPTION_CONTINUE_SEARCH`を返すとして扱われます。  これらの定数の詳細については、「[try\-except のステートメント](../cpp/try-except-statement.md)」を参照してください。  
+##  <a name="vcconexceptionfiltersandexception_continue_execution"></a>例外フィルターおよび EXCEPTION_CONTINUE_EXECUTION  
+ フィルターを返す場合`EXCEPTION_CONTINUE_EXECUTION`マネージ アプリケーションではフィルターが返したかように扱われます`EXCEPTION_CONTINUE_SEARCH`です。 これらの定数の詳細については、次を参照してください。[を再試行してください-ステートメントを除く](../cpp/try-except-statement.md)です。  
   
- 次の例に、この違いを示します。  
+ 次の例では、この違いを示しています。  
   
 ```  
 // clr_exception_handling_7.cpp  
@@ -187,14 +187,14 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 Counter=-3  
 ```  
   
-##  <a name="vcconthe_set_se_translatorfunction"></a> \_set\_se\_translator 関数  
- 変換関数、`_set_se_translator`の呼び出しは、影響してプロパティを設定するには、アンマネージ コードでのみキャッチします。  次の例では、この制限を示します。:  
+##  <a name="vcconthe_set_se_translatorfunction"></a>_Set_se_translator 関数  
+ 変換関数の設定への呼び出しによって`_set_se_translator`、アンマネージ コードでキャッチのみに影響します。 次の例では、この制限を示しています。  
   
 ```  
 // clr_exception_handling_8.cpp  
@@ -271,7 +271,7 @@ int main( int argc, char ** argv ) {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 This is invoked since _set_se_translator is not supported when /clr is used  
@@ -279,7 +279,7 @@ In my_trans_func.
 Caught an SEH exception with exception code: e0000101  
 ```  
   
-## 参照  
- [Exception Handling](../windows/exception-handling-cpp-component-extensions.md)   
- [safe\_cast](../windows/safe-cast-cpp-component-extensions.md)   
+## <a name="see-also"></a>関連項目  
+ [例外処理](../windows/exception-handling-cpp-component-extensions.md)   
+ [safe_cast](../windows/safe-cast-cpp-component-extensions.md)   
  [例外処理](../cpp/exception-handling-in-visual-cpp.md)

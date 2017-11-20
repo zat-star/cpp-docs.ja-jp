@@ -1,39 +1,38 @@
 ---
-title: "Extensions That Are Specific to C++/CLI | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
+title: "拡張機能固有の C + + CLI |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
 ms.assetid: 81e3fd32-6c8f-490b-9190-a6dc291545c8
-caps.latest.revision: 4
-caps.handback.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9e980eb24edcde87f75a6154e8598b359613e056
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Extensions That Are Specific to C++/CLI
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ドキュメントのこのセクションで説明する次の言語機能は [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)]にのみ適用されます。  
+# <a name="extensions-that-are-specific-to-ccli"></a>C++/CLI に固有の拡張機能
+次の言語の機能は、ドキュメントのこのセクションで説明されて、適用のみ C + + CLI です。  
   
- [\_\_identifier \(C\+\+\/CLI\)](../windows/identifier-cpp-cli.md)  
+ [__identifier (C++/CLI)](../windows/identifier-cpp-cli.md)  
   
- [C\-Style Casts with \/clr \(C\+\+\/CLI\)](../windows/c-style-casts-with-clr-cpp-cli.md)  
+ [C スタイル キャストと/clr (C + + CLI)](../windows/c-style-casts-with-clr-cpp-cli.md)  
   
- [interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md)  
+ [interior_ptr (C++/CLI)](../windows/interior-ptr-cpp-cli.md)  
   
- [pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md)  
+ [pin_ptr (C++/CLI)](../windows/pin-ptr-cpp-cli.md)  
   
- [Type Forwarding \(C\+\+\/CLI\)](../windows/type-forwarding-cpp-cli.md)  
+ [型の転送 (C++/CLI)](../windows/type-forwarding-cpp-cli.md)  
   
- [Variable Argument Lists \(...\) \(C\+\+\/CLI\)](../windows/variable-argument-lists-dot-dot-dot-cpp-cli.md)  
+ [可変個引数リスト (...) (C++/CLI)](../windows/variable-argument-lists-dot-dot-dot-cpp-cli.md)  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>関連項目  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

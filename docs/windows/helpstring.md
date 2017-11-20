@@ -1,32 +1,30 @@
 ---
-title: "helpstring | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.helpstring"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "helpstring attribute [C++]"
+title: "helpstring |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.helpstring
+dev_langs: C++
+helpviewer_keywords: helpstring attribute [C++]
 ms.assetid: 0401e905-a63e-4fad-98d0-d1efea111966
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 27cf95f5017775fbf7a0315341cea19931f64068
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# helpstring
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-適用先の要素の記述に使用される文字列を指定します。  
+# <a name="helpstring"></a>helpstring
+適用すると、要素の記述に使用される文字の文字列を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,35 +33,34 @@ caps.handback.revision: 9
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `string`  
  ヘルプ文字列のテキスト。  
   
-## 解説  
- **helpstring\(I\)** C\+\+ 属性に [helpstring\(I\)](http://msdn.microsoft.com/library/windows/desktop/aa366856) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Helpstring** C++ 属性と同じ機能を持つ、 [helpstring](http://msdn.microsoft.com/library/windows/desktop/aa366856) MIDL 属性。  
   
-## 使用例  
- **helpstring\(I\)** を使用する方法の例に [defaultvalue](../Topic/defaultvalue.md) の例を参照してください。  
+## <a name="example"></a>例  
+ 例を参照して[defaultvalue](../windows/defaultvalue.md)の使用方法の例については**helpstring**です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|`interface` `typedef` のメソッドプロパティ **クラス**|  
-|**複数回の適用**|Ｘ|  
+|**対象**|`interface`、 `typedef`、**クラス**、メソッド、プロパティ|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Interface Attributes](../windows/interface-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Method Attributes](../windows/method-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [helpfile](../Topic/helpfile.md)   
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [インターフェイス属性](../windows/interface-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [メソッドの属性](../windows/method-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [ヘルプ ファイル](../windows/helpfile.md)   
  [helpcontext](../windows/helpcontext.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

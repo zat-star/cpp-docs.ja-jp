@@ -1,72 +1,69 @@
 ---
-title: "/doc (ドキュメント コメントの処理) (C/C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCCLCompilerTool.GenerateXMLDocumentationFiles"
-  - "/doc"
-  - "VC.Project.VCCLCompilerTool.XMLDocumentationFileName"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/doc コンパイラ オプション [C++]"
-  - "コメント, C++ コード"
-  - "-doc コンパイラ オプション [C++]"
-  - "XML ドキュメント, コメント (ソース ファイルの)"
+title: "-doc (ドキュメント コメントの処理) (C/C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCCLCompilerTool.GenerateXMLDocumentationFiles
+- /doc
+- VC.Project.VCCLCompilerTool.XMLDocumentationFileName
+dev_langs: C++
+helpviewer_keywords:
+- /doc compiler option [C++]
+- comments, C++ code
+- XML documentation, comments in source files
+- -doc compiler option [C++]
 ms.assetid: b54f7e2c-f28f-4f46-9ed6-0db09be2cc63
-caps.latest.revision: 17
-caps.handback.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 083eb8742308f986e3261711039bbd29a914d97e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /doc (ドキュメント コメントの処理) (C/C++)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コンパイラが、ソース コード ファイル内のドキュメント コメントを処理し、ドキュメント コメントを含む各ソース コード ファイルの .xdc ファイルを作成します。  
+# <a name="doc-process-documentation-comments-cc"></a>/doc (ドキュメント コメントの処理) (C/C++)
+コンパイラがドキュメント コメントの処理にソース コード ファイル内およびドキュメントのコメントのある各ソース コード ファイルの .xdc ファイルを作成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /doc[name]  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `name`  
- コンパイラが作成する .xdc ファイルの名前。  コンパイルで .cpp ファイルが 1 つ渡される場合のみ有効です。  
+ コンパイラで作成される .xdc ファイルの名前。 1 つの .cpp ファイルがコンパイル時に渡されるときにのみ有効です。  
   
-## 解説  
- .xdc ファイルは、xdcmake.exe で処理され .xml ファイルに挿入されます。  詳細については、「[XDCMake リファレンス](../../ide/xdcmake-reference.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ .Xdc ファイルは、xdcmake.exe を .xml ファイルに処理されます。 詳細については、次を参照してください。 [XDCMake リファレンス](../../ide/xdcmake-reference.md)です。  
   
- ドキュメント コメントをソース コード ファイルに追加できます。  詳細については、「[ドキュメント コメント用の推奨タグ](../Topic/Recommended%20Tags%20for%20Documentation%20Comments%20\(Visual%20C++\).md)」を参照してください。  
+ ソース コード ファイルには、ドキュメントのコメントを追加できます。 詳細については、次を参照してください。[ドキュメント コメントとして推奨されるタグ](../../ide/recommended-tags-for-documentation-comments-visual-cpp.md)です。  
   
- **\/doc** は **\/clr:oldSyntax** と互換性がありません。詳細については、「[\/clr \(共通言語ランタイムのコンパイル\)](../../build/reference/clr-common-language-runtime-compilation.md)」を参照してください。  
+ IntelliSense を備えた、生成された .xml ファイルを使用するには、.xml ファイルをサポートし、.xml ファイルを格納するアセンブリと同じアセンブリと同じディレクトリ内のファイル名を確認します。 アセンブリが、Visual Studio プロジェクトで参照されている場合、.xml ファイルも存在します。 詳細については、次を参照してください。 [IntelliSense の使用](/visualstudio/ide/using-intellisense)と[XML コード コメント](/visualstudio/ide/supplying-xml-code-comments)です。  
   
- 生成された .xml ファイルで IntelliSense 機能を使用するには、サポートするアセンブリの名前と .xml ファイル名を同じにして、そのファイルをアセンブリと同じディレクトリに置いてください。  アセンブリが Visual Studio プロジェクトで参照されると、.xml ファイルも検出されます。  詳細については、「[IntelliSense の使用方法](../Topic/Using%20IntelliSense.md)」および「[XML コード コメントの追加](../Topic/Supplying%20XML%20Code%20Comments.md)」を参照してください。  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+2.  展開して、**構成プロパティ**ノード。  
   
-2.  **\[構成プロパティ\]** ノードを展開します。  
+3.  展開して、 **C/C++**ノード。  
   
-3.  **\[C\/C\+\+\]** ノードを展開します。  
+4.  選択、**出力ファイル**プロパティ ページ。  
   
-4.  **\[出力ファイル\]** プロパティ ページをクリックします。  
+5.  変更、 **XML ドキュメント ファイルの生成**プロパティです。  
   
-5.  **\[XML ドキュメント ファイルの生成\]** プロパティを変更します。  
-  
-### このリンカーをコードから設定するには  
+### <a name="to-set-this-linker-option-programmatically"></a>このリンカーをコードから設定するには  
   
 1.  「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.GenerateXMLDocumentationFiles%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

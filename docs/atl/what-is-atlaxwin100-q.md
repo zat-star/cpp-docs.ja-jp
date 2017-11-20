@@ -1,31 +1,29 @@
 ---
-title: "AtlAxWin100 について | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "AtlAxWin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "AtlAxWin メソッド"
+title: "AtlAxWin100 とは何ですか。 | Microsoft Docs"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: AtlAxWin
+dev_langs: C++
+helpviewer_keywords: AtlAxWin method
 ms.assetid: 8efb6e14-df2a-40f1-a129-61b83965b5bd
-caps.latest.revision: 14
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6cc60bbb4efad8c4e01da124cb066a4d3c151056
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# AtlAxWin100 について
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`AtlAxWin100` は、ATL のコントロール ホスト機能の提供に役立つウィンドウ クラスの名前です。  このクラスのインスタンスを作成すると、ウィンドウ プロシージャがコントロール ホスト API を自動的に使用して、ウィンドウに関連付けられたホスト オブジェクトを作成し、ウィンドウのタイトルとして指定したコントロールと共にホスト オブジェクトを読み込みます。  
+# <a name="what-is-atlaxwin100"></a>AtlAxWin100 とは何ですか。
+`AtlAxWin100`ATL のコントロール ホスト機能を提供できるウィンドウ クラスの名前です。 このクラスのインスタンスを作成するときに、ウィンドウ プロシージャは自動的に使用されているウィンドウに関連付けられているホスト オブジェクトを作成し、ウィンドウのタイトルとして指定したコントロールに読み込むコントロール ホスト API を使用します。  
   
-## 参照  
- [コントロール コンテインメント : Q & A 集](../atl/atl-control-containment-faq.md)
+## <a name="see-also"></a>関連項目  
+ [コントロール コンテインメントよく寄せられる質問](../atl/atl-control-containment-faq.md)
+

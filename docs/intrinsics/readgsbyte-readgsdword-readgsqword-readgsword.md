@@ -1,79 +1,79 @@
 ---
-title: "__readgsbyte、__readgsdword、__readgsqword、__readgsword | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__readgsbyte"
-  - "__readgsdword"
-  - "__readgsqword"
-  - "__readgsword"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__readgsword 組み込み"
-  - "__readgsdword 組み込み"
-  - "__readgsqword 組み込み"
-  - "__readgsbyte 組み込み"
+title: "_ _readgsbyte、_ _readgsdword、_ _readgsqword、_ _readgsword |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __readgsbyte
+- __readgsdword
+- __readgsqword
+- __readgsword
+dev_langs: C++
+helpviewer_keywords:
+- __readgsword intrinsic
+- __readgsdword intrinsic
+- __readgsqword intrinsic
+- __readgsbyte intrinsic
 ms.assetid: f822632d-854c-4558-a71b-cdfc3eea2236
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 10fe156448e62d0d072522a262194a7aba9426cb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __readgsbyte、__readgsdword、__readgsqword、__readgsword
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="readgsbyte-readgsdword-readgsqword-readgsword"></a>__readgsbyte、__readgsdword、__readgsqword、__readgsword
+**Microsoft 固有の仕様**  
   
- GS セグメントの先頭を基準としたオフセットで指定された場所からメモリを読み取る。  
+ GS セグメントの先頭の相対オフセットで指定された場所からメモリを読み取ります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned char __readgsbyte(   
-   unsigned long Offset   
+unsigned char __readgsbyte(   
+   unsigned long Offset   
 );  
-unsigned short __readgsword(   
-   unsigned long Offset   
+unsigned short __readgsword(   
+   unsigned long Offset   
 );  
-unsigned long __readgsdword(   
+unsigned long __readgsdword(   
    unsigned long Offset  
 );  
-unsigned __int64 __readgsqword(   
-   unsigned long Offset   
+unsigned __int64 __readgsqword(   
+   unsigned long Offset   
 );  
 ```  
   
-#### パラメーター  
- \[入力\] `Offset`  
- から読み取る `GS` の先頭からのオフセット。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `Offset`  
+ 先頭からのオフセット`GS`から読み取れません。  
   
-## 戻り値  
- \(呼び出された関数の名前が示す位置\) `GS:[``Offset``]` のバイトワードまたはダブル ワード間のメモリの内容。  
+## <a name="return-value"></a>戻り値  
+ メモリの内容をバイト、ワード、ダブルワード、quadword (ように呼び出される関数の名前で示されます) の場所に`GS:[Offset]`です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__readgsbyte`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__readgsdword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__readgsqword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`__readgsword`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__readgsbyte`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__readgsdword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__readgsqword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`__readgsword`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- これらの組み込みはカーネル モードでのみ使用できルーチンは組み込みとしてのみ使用できます。  
+## <a name="remarks"></a>コメント  
+ これらの組み込みはカーネル モードで使用可能なのみと、ルーチンは、組み込みとしてのみです。  
   
-## 終了 Microsoft 固有の仕様→  
+**Microsoft 固有の仕様はここまで**  
   
-## 参照  
- [\_\_writegsbyte、\_\_writegsdword、\_\_writegsqword、\_\_writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+## <a name="see-also"></a>関連項目  
+ [_ _writegsbyte、 \__writegsdword、 \__writegsqword、 \__writegsword](../intrinsics/writegsbyte-writegsdword-writegsqword-writegsword.md)   
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

@@ -1,57 +1,55 @@
 ---
-title: "IOpenRowsetImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IOpenRowsetImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IOpenRowsetImpl クラス"
+title: "IOpenRowsetImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: IOpenRowsetImpl
+dev_langs: C++
+helpviewer_keywords: IOpenRowsetImpl class
 ms.assetid: d259cedc-1db4-41cf-bc9f-5030907ab486
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 89a37274fd4040b24c36983fea968674acf4fcab
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IOpenRowsetImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`IOpenRowset` インターフェイスの実装を提供します。  
+# <a name="iopenrowsetimpl-class"></a>IOpenRowsetImpl クラス
+実装を提供、`IOpenRowset`インターフェイスです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <class SessionClass>  
 class IOpenRowsetImpl : public IOpenRowset  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `SessionClass`  
- クラス、`IOpenRowsetImpl`から派生します。  
+ 派生したクラス、`IOpenRowsetImpl`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### メソッド  
+### <a name="methods"></a>メソッド  
   
 |||  
 |-|-|  
-|[CreateRowset](../../data/oledb/iopenrowsetimpl-createrowset.md)|行セット オブジェクトを作成します。  直接ユーザーによって呼び出された場合。|  
-|[OpenRowset](../Topic/IOpenRowsetImpl::OpenRowset.md)|単一のベース テーブルまたはインデックスのすべての行を含む行セットを開き、返します。ATLDB.H\) ではなく、|  
+|[CreateRowset](../../data/oledb/iopenrowsetimpl-createrowset.md)|行セット オブジェクトを作成します。 ユーザーが直接呼び出されません。|  
+|[OpenRowset](../../data/oledb/iopenrowsetimpl-openrowset.md)|開き、単一のベース テーブルまたはインデックスからすべての行を含む行セットを返します。 (にない ATLDB です。H)|  
   
-## 解説  
- [IOpenRowset](https://msdn.microsoft.com/en-us/library/ms716946.aspx) インターフェイスは、セッション オブジェクトのために必須です。  これは、単一のベース テーブルまたはインデックスのすべての行を含む行セットを開き、返します。  
+## <a name="remarks"></a>コメント  
+ [IOpenRowset](https://msdn.microsoft.com/en-us/library/ms716946.aspx)セッション オブジェクトの必須インターフェイスです。 それが開き、単一のベース テーブルまたはインデックスからすべての行を含む行セットを返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

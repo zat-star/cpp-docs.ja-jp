@@ -4,27 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - standard conversions, categories of
 - L-values [C++]
 - conversions, standard
 ms.assetid: ce7ac8d3-5c99-4674-8229-0672de05528d
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 97967ad789fe5491aec2be983f28a08e2c143b95
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 954ba431378317a3f9079677f49223a336af5d9e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="standard-conversions"></a>標準変換
 C++ 言語では、基本型間での変換が定義されています。 また、ポインター、参照、およびメンバーへのポインターの派生型についても変換が定義されています。 これらの変換を "標準変換" といいます  (種類、標準の型、および派生型に関する詳細については、次を参照してください[型](http://msdn.microsoft.com/en-us/6882ee83-ea32-4373-8d57-c3efbbc15af0)。)。  
@@ -80,11 +77,11 @@ long_num2 = int_num * long_num2;
   
  値保持の上位変換および符号の有無を保持する上位変換は、通常、同じ結果を生成します。 ただし、昇格されたオブジェクトが次のいずれかである場合は、異なる結果になる可能性があります。  
   
--   オペランド** / **、 `%`、 `/=`、 `%=`、 ** < **、 ** \< = **、** > **、または**>=**  
+-   オペランド **/** 、 `%`、 `/=`、 `%=`、  **<** 、  **\< =** 、 **>** 、または**>=**  
   
      これらの演算子は、結果を判断するために符号に依存します。 したがって、これらのオペランドに適用した場合、値保持と符号保持の上位変換により、異なる結果が生成されます。  
   
--   左オペランド** >> **または**>>=**  
+-   左オペランド **>>** または**>>=**  
   
      これらの演算子は、シフト演算を実行するときに符号付き数量と符号なし数量を別々に扱います。 符号付きの数量の場合、数量を右にシフトすると、符号は空いたビット位置に移されます。 符号なし数量の場合、空いたビット位置は 0 で埋められます。  
   
@@ -253,7 +250,7 @@ int main()
  ポインター `pA` は、型 `A *` へのポインターを意味するものとして解釈できる型 `A` です。 メンバー `bObject` `(`など`BComponent`と`BMemberFunc`) を入力する一意`B`はこれにを通してアクセスできないと`pA`です。 `pA` ポインターは、クラス `A` で定義されているオブジェクトのこれらの特性 (メンバー関数とデータ) にのみアクセスを許可します。  
   
 ### <a name="pointer-to-function"></a>関数へのポインター  
- 関数へのポインター型に変換できる**void \***場合は、型**void \* **がそのポインターを保持するのに十分です。  
+ 関数へのポインター型に変換できる**void \***場合は、型**void \*** がそのポインターを保持するのに十分です。  
   
 ### <a name="pointer-to-void"></a>void へのポインター  
  `void` 型へのポインターは他の任意の型へのポインターに変換できますが、(C の場合とは異なり) 明示的な型キャストを使用する場合に限られます  (を参照してください[明示的な型変換を含む式](http://msdn.microsoft.com/en-us/060ad6b4-9592-4f3e-8509-a20ac84a85ae)型キャストの詳細についてはします)。任意の型へのポインターは型 `void` へのポインターに暗黙に変換できます。型の不完全オブジェクトへのポインターは、`void` へのポインターに変換でき (暗黙)、逆向きにも変換できます (明示的)。 このような変換の結果は、元のポインターの値と同じです。 オブジェクトを宣言しても、サイズまたは基底クラスを決定するための十分な情報がない場合は、オブジェクトは不完全であると見なされます。  

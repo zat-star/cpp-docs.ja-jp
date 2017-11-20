@@ -1,36 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 4) C4623 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4623"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4623"
+title: "コンパイラの警告 (レベル 4) C4623 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4623
+dev_langs: C++
+helpviewer_keywords: C4623
 ms.assetid: e630d8d0-f6ea-469c-a74f-07b027587225
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a8d2827c32f38025611a65657395860fbb19e440
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 4) C4623
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="compiler-warning-level-4-c4623"></a>コンパイラの警告 (レベル 4) C4623
 '`derived class`' : 基底クラスの既定のコンストラクターがアクセスできないか削除されているため、既定のコンストラクターは暗黙的に削除済みとして定義されました  
   
- コンストラクターは基底クラスでアクセスできないため、派生クラスでは生成されません。  スタックにこの型のオブジェクトを作成しようとすると、コンパイル エラーが発生します。  
+ コンストラクターは基底クラスでアクセスできないため、派生クラスでは生成されません。 スタックにこの型のオブジェクトを作成しようとすると、コンパイル エラーが発生します。  
   
- 既定では、この警告はオフに設定されています。  詳細については、「[既定で無効になっているコンパイラ警告](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。  
+ 既定では、この警告はオフに設定されています。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。  
   
-## 使用例  
+## <a name="example"></a>例  
  次の例では C4623 警告が生成されます。  
   
 ```  

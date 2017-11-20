@@ -1,32 +1,30 @@
 ---
-title: "includes (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::includes"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "includes 関数 [STL/CLR]"
+title: "(STL/CLR) が含まれています |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::includes
+dev_langs: C++
+helpviewer_keywords: includes function [STL/CLR]
 ms.assetid: 566307f4-92e0-4acc-ba49-caa48f3ec744
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 007eb0c908d37e3caa462dd51680d5062572b399
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# includes (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-要素間の順序、または等価条件が二項述語で指定される可能性があるかどうか、1 個の並べ替えられた範囲がすべての要素に含まれる並べ替えられた範囲をすぐに含むテスト。  
+# <a name="includes-stlclr"></a>includes (STL/CLR)
+1 つの並べ替えられた範囲に、別の並べ替えられた範囲内のすべての要素が含まれるかどうかをテストします。要素間の順序または等価の基準は二項述語によって指定できます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _InIt1, class _InIt2> inline  
@@ -37,13 +35,13 @@ template<class _InIt1, class _InIt2, class _Pr> inline
         _InIt2 _First2, _InIt2 _Last2, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `includes`も同じように動作します。  詳細については、「[includes](../Topic/includes.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`includes`です。 詳細については、次を参照してください。[が含まれています](../standard-library/algorithm-functions.md#includes)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

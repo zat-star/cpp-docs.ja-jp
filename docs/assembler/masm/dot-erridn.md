@@ -1,41 +1,38 @@
 ---
-title: ".ERRIDN] | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - ".ERRIDN[[I]]"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".ERRIDN[[I]] ディレクティブ"
+title: ".ERRIDN] |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: .ERRIDN[[I]]
+dev_langs: C++
+helpviewer_keywords: .ERRIDN[[I]] directive
 ms.assetid: 89507db3-7d40-4a5e-a378-24d30feda9d1
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 992a145d238d371ac7964a05ef5b4babeb4a2a42
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# .ERRIDN]
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-テキストの項目が同じでエラーが発生します。  
+# <a name="erridn"></a>.ERRIDN]
+テキスト アイテムが同一の場合は、エラーを生成します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
 .ERRIDN[[I]] <textitem1>, <textitem2> [[, message]]  
 ```  
   
-## 解説  
- **i** が指定されている場合比較では大文字と小文字が区別されません。  
+## <a name="remarks"></a>コメント  
+ 場合**すれば**が指定すると、比較では大文字小文字を区別します。  
   
-## 参照  
- [Directives Reference](../../assembler/masm/directives-reference.md)
+## <a name="see-also"></a>関連項目  
+ [ディレクティブ リファレンス](../../assembler/masm/directives-reference.md)

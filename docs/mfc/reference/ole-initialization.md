@@ -4,28 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - afxdisp/AfxOleInit
 - afxdisp/AfxEnableControlContainer
-dev_langs:
-- C++
-helpviewer_keywords:
-- OLE initialization
+dev_langs: C++
+helpviewer_keywords: OLE initialization
 ms.assetid: aa8a54a7-24c3-4344-b2c6-dbcf6084fa31
-caps.latest.revision: 13
+caps.latest.revision: "13"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
+ms.openlocfilehash: 5fd0a194dc8f5b9272921a0445ecf5754ec2a4e7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
 ms.translationtype: MT
-ms.sourcegitcommit: 4a770b6508067913aec51b8b3878f33e30eed4bb
-ms.openlocfilehash: d86083701e6fb0510eb0fa79f0812fca95445881
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ole-initialization"></a>OLE の初期化
 アプリケーションでは、OLE システム サービスを使用できます、前に OLE システム Dll の初期化する必要があり、Dll が適切なバージョンであることを確認します。 **AfxOleInit**関数を OLE システム Dll を初期化します。  
@@ -81,4 +77,3 @@ BOOL AFXAPI AfxOleInit();
 
 ## <a name="see-also"></a>関連項目  
  [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)
-
