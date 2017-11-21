@@ -1,79 +1,44 @@
 ---
-title: "データ アクセス プログラミング (MFC/ATL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ [C++], データ アクセス テクノロジ"
-  - "データ アクセス [C++], クラス ライブラリ (データベース用)"
-  - "データベース [C++], MFC"
-  - "MFC [C++], データ アクセス アプリケーション"
-  - "OLE DB [C++], データ アクセス テクノロジ"
+title: "データ アクセス プログラミング (MFC に ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- MFC [C++], data access applications
+- databases [C++], MFC
+- OLE DB [C++], data access technologies
+- data [C++], data access technologies
+- data access [C++], class libraries for databases
 ms.assetid: def97b2c-b5a6-445f-afeb-308050fd4852
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b6a7d07941e15fad7d1b58560fb6efeb7d41c90d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# データ アクセス プログラミング (MFC/ATL)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="data-access-programming-mfcatl"></a>データ アクセス プログラミング (MFC/ATL)
+長年にわたって、Visual C ++ ではデータベースを操作するいくつかの方法を提供してきました。 2011 年に Microsoft は、ネイティブ コードから SQL Server 製品にアクセスするのに望ましいテクノロジである ODBC に合わせて調整中であると発表しました。 ODBC は業界標準であり、これを使用することで、複数のプラットフォームおよびデータ ソースでのコードの最大の移植性が得られます。 ほとんどの SQL データベース製品および多くの NoSQL 製品で ODBC がサポートされます。 ODBC は、低レベルの ODBC API を呼び出して直接使用できます。あるいは、MFC ODBC ラッパー クラス、またはサードパーティの C++ ラッパー ライブラリを使用することもできます。 
 
-Visual C\+\+ では、さまざまな方法でデータベースにアクセスできます。  データ アクセス プログラミングには、データベース API での処理が簡単になるように、ATL \(Active Template Class Library\)、MFC \(Microsoft Foundation Class\) ライブラリなどのクラス ライブラリの 1 つを使用することをお勧めします。  
+OLE DB は、COM 仕様に基づく低レベルで高パフォーマンスの API であり、Windows でのみサポートされます。 プログラムで[リンク サーバー](https://msdn.microsoft.com/library/ms188279.aspx)にアクセスする場合は、OLE DB を使用します。 ATL には OLE DB テンプレートが用意されており、カスタム OLE DB プロバイダーとコンシューマーを容易に作成できます。 最新バージョンの OLE DB は、SQL Native Client 11 に付属しています。  
+
+レガシ アプリケーションで OLE DB またはより高レベルの ADO インターフェイスを使用して SQL Server に接続し、リンク サーバーにアクセスしない場合は、近い将来に ODBC に移行することを検討する必要があります。 クロスプラット フォームの移植性または最新の SQL Server の機能が不要な場合は、Microsoft OLE DB Provider for ODBC (MSDASQL) を使用できる可能性があります。  MSDASQL では、OLE DB と ADO (内部的に OLEDB を使用する) に構築されたアプリケーションから、ODBC ドライバーを介してデータ ソースにアクセスできます。 変換レイヤーと同様に、MSDASQL はデータベースのパフォーマンスに影響する可能性があります。 アプリケーションに対する影響が大きいかどうかを判別するためにテストする必要があります。 MSDASQL は Windows オペレーティング システムに付属しており、Windows Server 2008 および Windows Vista SP1 が、64 ビット バージョンのテクノロジを含めるための最初の Windows リリースです。
+
+単一の DLL に OLE DB と ODBC ドライバーをパッケージ化する、SQL Native Client コンポーネント (SNAC) は、ODBC アプリケーションでは推奨されていません。 SQL Server 2012 バージョンの SNAC (SQLNCLI11.DLL) は SQL Server 2016 に付属しています。他の SQL Server コンポーネントがこれに依存しているためです。 ただし、ODBC 経由で SQL Server または Azure SQL Database に接続する新しい C++ アプリケーションでは、[最新の ODBC ドライバー](https://docs.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server)を使用する必要があります。 詳細については、「[SQL Server Native Client プログラミング](https://msdn.microsoft.com/en-us/library/ms130892.aspx)」を参照してください。
+
+C++/CLI を使用する場合は、引き続き、通常どおり ADO.NET を使用できます。 詳細については、「[ADO.NET によるデータ アクセス (C++/CLI)](../dotnet/data-access-using-adonet-cpp-cli.md)」と「[Visual Studio でのデータ アクセス](/visualstudio/data-tools/accessing-data-in-visual-studio)」を参照してください。  
   
-> [!NOTE]
->  このトピックでは、Visual C\+\+ でのデータベース プログラミングに使用できる以前のテクノロジについて説明します。  Visual C\+\+ および SQL Server 2005 を使用したデータ アクセス プログラミングについては、「[データ アクセス](../dotnet/data-access-using-adonet-cpp-cli.md)」、「[Visual Studio でのデータへのアクセス](../Topic/Accessing%20data%20in%20Visual%20Studio.md)」、および「[Creating SQL Server 2005 Objects In Managed Code](http://msdn.microsoft.com/ja-jp/5358a825-e19b-49aa-8214-674ce5fed1da)」を参照してください。  
-  
- ライブラリ クラスでは以下の種類のデータ アクセスをサポートします。  
-  
--   ATL に用意されている OLE DB テンプレートとデータベース属性  
-  
--   MFC に用意されているオープン データベース コネクティビティ \(ODBC: Open Database Connectivity\) と ODBC ドライバー  
-  
- これらのライブラリは、データベースの使い方を簡略化するための抽象化をサポートしており、C\+\+ のスピード、パワー、柔軟性を完備しています。  いずれの方法も、データにアクセスする作業をライブラリのアプリケーション フレームワークに統合しています。  
-  
- また、データベースの API 関数は、COM、ODBC、または DAO の SDK \(Software Development Kit\) から直接呼び出すこともできます。  COM、DAO、または ODBC の API 関数を直接使用するプログラミングについては、COM SDK、DAO SDK、または ODBC SDK を参照してください。  
-  
- データの格納形式に関係なく、データにアクセスする必要がある場合は、ATL OLE DB を使用します。  Microsoft Jet \(.mdb\) データベースを使用しておらず、データ ソースを完全に切り離して独立のものとして使用するために ODBC API を操作するには、MFC ODBC クラスを使用します。  Microsoft Jet \(.mdb\) データベースまたは外部データベース \(ODBC データ ソースなど\) を操作する場合は、MFC DAO クラスを使用します。  
-  
-> [!NOTE]
->  Microsoft は、新しいプロジェクトには OLE DB または ODBC を使用することをお勧めします。  DAO は、既存のアプリケーションを保守するためだけに使用します。  
-  
- データベース機能は、スタンドアロンのアプリケーションとして記述するだけでなく、さまざまなプログラムでデータの格納\/再抽出のための機構として有効に活用できます。  
-  
-|詳細情報|参照トピック|  
-|----------|------------|  
-|**データベース テクノロジの選択**||  
-|ODBC と   DAO|[DAO と ODBC の使い分け](../data/should-i-use-dao-or-odbc-q.md)|  
-|製品サポート技術者が記述したデータベース トピックの追加項目を検索するための Microsoft サポート技術情報の使用方法|[データベース トピックに関する Microsoft サポート技術情報の項目の検索](../data/where-can-i-find-microsoft-knowledge-base-articles-on-database-topics-q.md)|  
-|**ATL データベース サポート \(OLE DB\)**||  
-|OLE DB プログラミング \(概念説明のトピック\)|[OLE DB プログラミングの概要](../data/oledb/ole-db-programming-overview.md)|  
-|OLE DB コンシューマー テンプレートの使用方法 \(概念説明のトピック\)|[OLE DB コンシューマー テンプレート](../data/oledb/ole-db-consumer-templates-cpp.md)|  
-|OLE DB コンシューマー属性|[OLE DB コンシューマー属性](../windows/ole-db-consumer-attributes.md)|  
-|OLE DB プロバイダー テンプレートの使用方法 \(概念説明のトピック\)|[OLE DB プロバイダー テンプレート](../data/oledb/ole-db-provider-templates-cpp.md)|  
-|MFC プロジェクトへの OLE DB コンシューマーの追加|[OLE DB コンシューマーの作成](../data/oledb/creating-an-ole-db-consumer.md)|  
-|**MFC データベース サポート \(ODBC と DAO\)**||  
-|DAO と ODBC について|[DAO と ODBC の相違](../data/what-are-dao-and-odbc-q.md)|  
-|MFC データベース クラスをいつ使用するか|[データベース クラスを使う場面](../data/when-should-i-use-the-database-classes-q.md)|  
-|MFC データベース プログラミング モデルについて学ぶには|[MFC データベースのプログラミング モデル](../data/what-is-the-mfc-database-programming-model-q.md)|  
-|MFC DAO クラスと MFC ODBC クラスを使い分けるには|[DAO と ODBC の使い分け](../data/should-i-use-dao-or-odbc-q.md)|  
-|DAO と ODBC を使ってアクセスできるデータ ソース|[DAO と ODBC を使ってアクセスできるデータ ソース](../data/what-data-sources-can-i-access-with-dao-and-odbc-q.md)|  
-|ODBC \(Open Database Connectivity\)|[ODBC と MFC](../data/odbc/odbc-and-mfc.md)|  
-|クラス使用時の DAO または ODBC API を直接呼び出し|[DAO または ODBC の直接呼び出し](../data/can-i-call-dao-or-odbc-directly-q.md)|  
-|提供される ODBC ドライバーの種類|[ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)|  
-|データベース クラスが MFC のドキュメント\/ビュー アーキテクチャを利用する方法|[MFC : ドキュメントとビューを用いたデータベース クラスの使用](../data/mfc-using-database-classes-with-documents-and-views.md)|  
-|MFC データベース サポートのインストール。Visual C\+\+ に既定でインストールされる ODBC ドライバー。インストールされる ODBC および DAO SDK コンポーネント|[MFC データベース サポートのインストール](../data/installing-mfc-database-support.md)|  
-|**データ バインディング コントロール \(ADO および RDO\)**||  
-|データ バインディング コントロールを使用するプログラムの書き方|[データ バインディング コントロール \(ADO および RDO\)](../Topic/Data-Bound%20Controls%20\(ADO%20and%20RDO\).md)|  
-|ActiveX コントロールを使用したデータ バインディング|[MFC ActiveX コントロール : ActiveX コントロールにおけるデータ バインディングの使用](../mfc/mfc-activex-controls-using-data-binding-in-an-activex-control.md)|  
-|ActiveX コントロールの配布|[MFC ActiveX コントロール : ActiveX コントロールの配布](../mfc/mfc-activex-controls-distributing-activex-controls.md)|  
-  
-## 参照  
- [データ アクセス](../Topic/Data%20Access%20in%20Visual%20C++.md)
+-   ODBC ラッパー クラスに加え、MFC では、Access データベースに接続するための Data Access Objects (DAO) ラッパー クラスも提供されます。  ただし、DAO は廃止されています。 CDaoDatabase または CDaoRecordset に基づくすべてのコードをアップグレードする必要があります。 
+
+Microsoft Windows でのデータ アクセス テクノロジの歴史の詳細については、ウィキペディアの「[Microsoft Data Access Components](https://en.wikipedia.org/wiki/Microsoft_Data_Access_Components)」を参照してください。  
+
+## <a name="see-also"></a>関連項目  
+ [データ アクセス](data-access-in-cpp.md) [Microsoft Open Database Connectivity (ODBC)](https://docs.microsoft.com/sql/odbc/microsoft-open-database-connectivity-odbc) [データ アクセス テクノロジのロードマップ](https://msdn.microsoft.com/en-us/library/ms810810.aspx)

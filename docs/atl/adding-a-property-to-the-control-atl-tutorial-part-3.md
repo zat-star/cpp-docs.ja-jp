@@ -1,68 +1,69 @@
 ---
-title: "コントロールへのプロパティの追加 (ATL チュートリアル、パート 3) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
+title: "プロパティの追加 (ATL チュートリアル、パート 3) のコントロールに |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
 ms.assetid: f775fe34-103b-4f07-9999-400e987ee030
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f9bd5890dbe73cfcd99b2c3b37a25618775f592e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コントロールへのプロパティの追加 (ATL チュートリアル、パート 3)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`IPolyCtl` は、コントロールのカスタム プロパティとメソッドを含む、プロパティをそのに追加するインターフェイスです。  
+# <a name="adding-a-property-to-the-control-atl-tutorial-part-3"></a>コントロールへのプロパティの追加 (ATL チュートリアル、パート 3)
+`IPolyCtl`コントロールのカスタム プロパティとメソッドを格納しているインターフェイスは、プロパティを追加します。  
   
-### プロパティをプロパティの追加ウィザードを追加するには  
+### <a name="to-add-a-property-using-the-add-property-wizard"></a>プロパティの追加ウィザードを使用してプロパティを追加するには  
   
-1.  クラス ビューで、多角形の分岐を展開します。  
+1.  クラス ビューでは、多角形のブランチを展開します。  
   
 2.  IPolyCtl を右クリックします。  
   
-3.  ショートカット メニューのをクリック **追加**は、を **\[プロパティの追加\]**をクリックします。  
+3.  ショートカット メニューをクリックして**追加**、クリックして**プロパティの追加**です。  
   
      プロパティの追加ウィザードが表示されます。  
   
-4.  プロパティ型のドロップダウン リストで、を選択 `SHORT`。  
+4.  プロパティの種類のドロップダウン リストで選択`SHORT`です。  
   
-5.  **\*\*\* プロパティ名。\*\*\***として型 `[側面]`  
+5.  型`Sides`として、**プロパティ名。**  
   
-6.  プロパティの追加が終了をクリック **\[完了\]**。  
+6.  をクリックして**完了**プロパティの追加を完了します。  
   
- インターフェイスにプロパティを追加すると、.idl ファイルをコンパイル MIDL \(プログラム\) は値を取得するための `Get` のメソッドと新しい値を設定するための `Put` のメソッドを定義します。  メソッドは、プロパティ名の `put_` と `get_` の追加によって示されます。  
+ MIDL (.idl ファイルをコンパイルするプログラム) を定義、インターフェイスにプロパティを追加すると、`Get`をその値を取得するメソッドと`Put`新しい値を設定するためのメソッドです。 付加することによって、メソッドの名前として`put_`と`get_`プロパティ名にします。  
   
- プロパティの追加ウィザードは、.idl ファイルに必要な行を追加します。  また、PolyCtl.h のクラス定義に `Get` と `Put` の関数プロトタイプを追加し、PolyCtl.cpp に空の実装を追加します。  PolyCtl.cpp を開き、関数 `get_Sides` と `put_Sides`を検索することによってこれをチェックできます。  
+ プロパティの追加ウィザードでは、.idl ファイルに必要な行を追加します。 さらに、`Get`と`Put`関数のプロトタイプ PolyCtl.h でクラスの定義にし、PolyCtl.cpp に空の実装を追加します。 これをチェックするには PolyCtl.cpp を開き、関数を探して`get_Sides`と`put_Sides`です。  
   
- これでプロパティを設定および取得するスケルトン関数がある場所が格納されていることが必要です。  プロパティを格納し、関数を適宜更新する変数を作成します。  
+ 今すぐ設定して、プロパティを取得するスケルトンの関数がある場合、格納する場所が必要があります。 プロパティを格納および関数を適宜更新する変数を作成します。  
   
-#### 変数をプロパティを格納し、設定された更新し、メソッドを取得するために作成するには  
+#### <a name="to-create-a-variable-to-store-the-property-and-update-the-put-and-get-methods"></a>Get メソッドと、put を更新プロパティを格納する変数を作成するには  
   
-1.  ソリューション エクスプローラーで、開いている PolyCtl.h は `m_clrFillColor`の定義の後に、次のコードを追加し、:  
+1.  ソリューション エクスプ ローラーから PolyCtl.h を開きの定義の後に、次の行を追加`m_clrFillColor`:  
   
-     [!code-cpp[NVC_ATL_Windowing#44](../atl/codesnippet/CPP/adding-a-property-to-the-control-atl-tutorial-part-3_1.h)]  
+     [!code-cpp[NVC_ATL_Windowing#44](../atl/codesnippet/cpp/adding-a-property-to-the-control-atl-tutorial-part-3_1.h)]  
   
-2.  `m_nSides`の既定値を指定します。  PolyCtl.h のコンストラクターに行を追加すると、既定の図形に三角形をする:  
+2.  既定値を設定`m_nSides`です。 PolyCtl.h でコンス トラクターに 1 行を追加することにより図形の三角形の既定にします。  
   
-     [!code-cpp[NVC_ATL_Windowing#45](../atl/codesnippet/CPP/adding-a-property-to-the-control-atl-tutorial-part-3_2.h)]  
+     [!code-cpp[NVC_ATL_Windowing#45](../atl/codesnippet/cpp/adding-a-property-to-the-control-atl-tutorial-part-3_2.h)]  
   
-3.  `Get` メソッドと `Put` メソッドを実装します。  `get_Sides` と `put_Sides` の関数の宣言は PolyCtl.h に追加されました。  次のコードで `get_Sides` の PolyCtl.cpp と `put_Sides` のコードに置き換えます。:  
+3.  実装、`Get`と`Put`メソッドです。 `get_Sides`と`put_Sides`PolyCtl.h に関数宣言が追加されました。 コードの PolyCtl.cpp で置き換え`get_Sides`と`put_Sides`を次のコード。  
   
-     [!code-cpp[NVC_ATL_Windowing#46](../atl/codesnippet/CPP/adding-a-property-to-the-control-atl-tutorial-part-3_3.cpp)]  
+     [!code-cpp[NVC_ATL_Windowing#46](../atl/codesnippet/cpp/adding-a-property-to-the-control-atl-tutorial-part-3_3.cpp)]  
   
- `get_Sides` のメソッドは `pVal` のポインターを通じて `Sides` プロパティの現在の値を返します。  `put_Sides` のメソッドでは、コードはユーザーが指定できる値に `Sides` のプロパティを設定していることを確認します。  最小は最大値の適切な制限と 2 点の配列の両側に使用されるため、100 にする必要があります。  
+ `get_Sides`の現在の値を返します、`Sides`プロパティを介して、`pVal`ポインター。 `put_Sides`メソッド、コードにより、ユーザーが設定、`Sides`プロパティに許容される値。 最小値は 2 である必要があり、100 は、最大値の妥当な制限は、点の配列のそれぞれの側を使用することがあるためです。  
   
- これ `Sides`というプロパティがあります。  次の手順では、を使用するように描画コードを変更します。  
+ 今すぐというプロパティがある`Sides`です。 次の手順では、それを使用する描画コードを変更します。  
   
- [手順 2 に戻します](../atl/adding-a-control-atl-tutorial-part-2.md) &#124; [手順 4 ~](../atl/changing-the-drawing-code-atl-tutorial-part-4.md)  
+ [手順 2 に戻る](../atl/adding-a-control-atl-tutorial-part-2.md)&#124;です。[手順 4 に進む](../atl/changing-the-drawing-code-atl-tutorial-part-4.md)  
   
-## 参照  
- [チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)
+## <a name="see-also"></a>関連項目  
+ [チュートリアル](../atl/active-template-library-atl-tutorial.md)
+

@@ -4,45 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- RegistryDataExchange function, global functions
+f1_keywords:
+- atlbase/ATL::AtlGetPerUserRegistration
+- afxpriv/ATL::AfxRegCreateKey
+- afxpriv/ATL::AfxRegDeleteKey
+- atlbase/ATL::AtlRegisterTypeLib
+- afxpriv/ATL::AfxRegOpenKey
+- afxpriv/ATL::AfxRegOpenKeyEx
+- afxdisp/ATL::AfxUnregisterPreviewHandler
+- atlbase/ATL::AtlSetPerUserRegistration
+- atlbase/ATL::AtlUnRegisterTypeLib
+- atlbase/ATL::AtlLoadTypeLib
+- atlbase/ATL::AtlUpdateRegistryFromResourceD
+- atlbase/ATL::RegistryDataExchange
+dev_langs: C++
+helpviewer_keywords: RegistryDataExchange function, global functions
 ms.assetid: d58b8a4e-975c-4417-8b34-d3c847f679b3
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 9f05db468d5d7fffce149d7a92ba29615c3ae7c1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 6f9dd09983a7b8cb781e26a6a3ed049d82d03632
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="registry-and-typelib-global-functions"></a>レジストリとタイプ ライブラリに関するグローバル関数
 これらの関数は、読み込みと登録、タイプ ライブラリのサポートを提供します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションで次の表に示す関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  次の表に示す関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 |||  
 |-|-|  
@@ -186,7 +181,7 @@ ATLAPI AtlRegisterTypeLib(HINSTANCE hInstTypeLib, LPCOLESTR lpszIndex);
  成功した場合、S_OK またはエラー発生時にエラーの hresult 値を返します。  
   
 ### <a name="remarks"></a>コメント  
- このヘルパー関数で使用されるが[AtlComModuleUnregisterServer](server-registration-global-functions.md#atlcommoduleunregisterserver)と[CAtlComModule::RegisterTypeLib](../../atl/reference/catlcommodule-class.md#registertypelib)です。  
+ このヘルパー関数がによって使用されて[AtlComModuleUnregisterServer](server-registration-global-functions.md#atlcommoduleunregisterserver)と[CAtlComModule::RegisterTypeLib](../../atl/reference/catlcommodule-class.md#registertypelib)です。  
 ### <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h
 
@@ -269,7 +264,7 @@ BOOL AFXAPI AfxUnRegisterPreviewHandler(LPCTSTR lpszCLSID);
  **ヘッダー :** afxdisp.h  
 
 ## <a name="atlsetperuserregistration"></a>AtlSetPerUserRegistration
-アプリケーションがレジストリ アクセスにリダイレクトするかどうかを設定、 **HKEY_CURRENT_USER** (**HKCU**) ノード。  
+アプリケーションがレジストリ アクセスをリダイレクトするかどうかを設定、 **HKEY_CURRENT_USER** (**HKCU**) ノード。  
   
 ### <a name="syntax"></a>構文  
   
@@ -395,9 +390,7 @@ HRESULT RegistryDataExchange(
  **ヘッダー:** atlbase.h
 
 ## <a name="see-also"></a>関連項目  
- [関数](atl-functions.md)
- [レジストリ データ交換マクロ](registry-data-exchange-macros.md)
-
+ [関数](atl-functions.md)[レジストリ データ交換マクロ](registry-data-exchange-macros.md)
 
 
 

@@ -1,45 +1,43 @@
 ---
-title: "hash_multimap::swap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multimap::swap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "swap メンバー [STL/CLR]"
+title: "hash_multimap::swap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_multimap::swap
+dev_langs: C++
+helpviewer_keywords: swap member [STL/CLR]
 ms.assetid: 4baa60c2-865a-4e17-acd5-01b7c3c5cd44
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 522918e123a606783fc0703853bb2c9baf40ea6b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_multimap::swap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultimapswap-stlclr"></a>hash_multimap::swap (STL/CLR)
 2 つのコンテナーのコンテンツを交換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void swap(hash_multimap<Key, Mapped>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- コンテンツの交換先のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コンテンツを交換するコンテナー。  
   
-## 解説  
- このメンバー関数は、`this` と `right` の間で被制御シーケンスを交換します。  この処理は定数時間で実行され、例外はスローしません。  2 個のコンテナーのコンテンツを交換する単純として使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、 `this` と `right`の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multimap_swap.cpp   
@@ -82,15 +80,18 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
- **d 4 \[\] \[e 5 \[\]f 6\]**  
- **d 4 \[\] \[e 5 \[\]f 6\]**  
- **1 \[\] \[b 2 \[\]c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+[a 1] [b 2] [c 3]  
+[d 4] [e 5] [f 6]  
+[d 4] [e 5] [f 6]  
+[a 1] [b 2] [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_multimap](../dotnet/hash-multimap-stl-clr.md)   
- [hash\_multimap::operator\=](../dotnet/hash-multimap-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_multimap (STL/CLR)](../dotnet/hash-multimap-stl-clr.md)   
+ [hash_multimap::operator= (STL/CLR)](../dotnet/hash-multimap-operator-assign-stl-clr.md)

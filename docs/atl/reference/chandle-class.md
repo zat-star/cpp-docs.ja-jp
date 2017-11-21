@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -16,38 +15,21 @@ f1_keywords:
 - ATLBASE/ATL::CHandle::Close
 - ATLBASE/ATL::CHandle::Detach
 - ATLBASE/ATL::CHandle::m_h
-dev_langs:
-- C++
-helpviewer_keywords:
-- CHandle class
+dev_langs: C++
+helpviewer_keywords: CHandle class
 ms.assetid: 883e9db5-40ec-4e29-9c74-4dd2ddd2e35d
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 604a4bf49490ad2599c857eb3afd527d67e1e25b
-ms.openlocfilehash: bbc0703ae5eaab01c0819be7e378509c7dc579ef
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: ed254b49c61f873e1d85fd0600c371c03ac246a2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="chandle-class"></a>CHandle クラス
-このクラスは、作成してオブジェクトのハンドルを使用するためのメソッドを提供します。  
+このクラスは、作成およびオブジェクトのハンドルを使用するためのメソッドを提供します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -68,9 +50,9 @@ class CHandle
   
 |名前|説明|  
 |----------|-----------------|  
-|[CHandle::Attach](#attach)|アタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトを既存のハンドル。|  
-|[CHandle::Close](#close)|終了するには、このメソッドを呼び出して、`CHandle`オブジェクトです。|  
-|[CHandle::Detach](#detach)|ハンドルをデタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトです。|  
+|[CHandle::Attach](#attach)|アタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトを既存のハンドルにします。|  
+|[CHandle::Close](#close)|終了するには、このメソッドを呼び出して、`CHandle`オブジェクト。|  
+|[CHandle::Detach](#detach)|ハンドルをデタッチするには、このメソッドを呼び出して、`CHandle`オブジェクト。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -86,16 +68,16 @@ class CHandle
 |[CHandle::m_h](#m_h)|ハンドルを格納するメンバー変数です。|  
   
 ## <a name="remarks"></a>コメント  
- A`CHandle`ハンドルが必要な場合に、オブジェクトを使用できます。 その主な違いは、`CHandle`オブジェクトは自動的に削除されます。  
+ A `CHandle` 、ハンドルが必要なときに、オブジェクトを使用できます: がある主な相違点、`CHandle`オブジェクトが自動的に削除されます。  
   
 > [!NOTE]
->  一部の API 関数は、INVALID_HANDLE_VALUE を使用して他のユーザーに、空または無効なハンドルとして NULL を使用します。 `CHandle`NULL ではだけが使用では、実際のハンドルとして INVALID_HANDLE_VALUE を扱います。 INVALID_HANDLE_VALUE を返すことができる API を呼び出す場合は、呼び出す前にこの値の確認する必要があります[CHandle::Attach](#attach)に渡すか、`CHandle`コンス トラクターを代わりに NULL を渡します。  
+>  INVALID_HANDLE_VALUE を使用して他のユーザーに対し、いくつかの API 関数は、空または無効なハンドルとして NULL を使用します。 `CHandle`NULL では、のみの使用は、INVALID_HANDLE_VALUE を実際のハンドルとして扱われます。 INVALID_HANDLE_VALUE を返すことができる API を呼び出す場合は、呼び出す前にこの値をチェックする必要があります[CHandle::Attach](#attach)に渡すか、`CHandle`コンス トラクターを代わりに NULL を渡します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlbase.h  
   
 ##  <a name="attach"></a>CHandle::Attach  
- アタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトを既存のハンドル。  
+ アタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトを既存のハンドルにします。  
   
 ```
 void Attach(HANDLE h) throw();
@@ -103,10 +85,10 @@ void Attach(HANDLE h) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `h`  
- `CHandle`ハンドルの所有権を`h`します。  
+ `CHandle`ハンドルの所有権を`h`です。  
   
 ### <a name="remarks"></a>コメント  
- 代入、`CHandle`オブジェクトを`h`を処理します。 デバッグ ビルドは atlassert 場合`h`は NULL です。 ハンドルの妥当性に関するその他のチェックは行われません。  
+ 割り当てます、`CHandle`オブジェクトを`h`を処理します。 デバッグ ビルドは atlassert 場合`h`は NULL です。 ハンドルの妥当性に関するその他のチェックは行われません。  
   
 ##  <a name="chandle"></a>CHandle::CHandle  
  コンストラクターです。  
@@ -122,7 +104,7 @@ explicit CHandle(HANDLE h) throw();
  既存のハンドルまたは`CHandle`です。  
   
 ### <a name="remarks"></a>コメント  
- 新たに作成`CHandle`オブジェクト、必要に応じて 既存のハンドルを使用して、または`CHandle`オブジェクトです。  
+ 新たに作成`CHandle`オブジェクト、必要に応じて 既存のハンドルを使用してまたは`CHandle`オブジェクト。  
   
 ##  <a name="dtor"></a>CHandle:: ~ CHandle  
  デストラクターです。  
@@ -132,20 +114,20 @@ explicit CHandle(HANDLE h) throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 解放、`CHandle`を呼び出してオブジェクト[CHandle::Close](#close)します。  
+ 解放、`CHandle`呼び出して[CHandle::Close](#close)です。  
   
 ##  <a name="close"></a>CHandle::Close  
- 終了するには、このメソッドを呼び出して、`CHandle`オブジェクトです。  
+ 終了するには、このメソッドを呼び出して、`CHandle`オブジェクト。  
   
 ```
 void Close() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 開いているオブジェクト ハンドルを閉じます。 ハンドルがある場合に、ケース NULL の場合**閉じる**が既に呼び出されると、ATLASSERT がデバッグ ビルドで発生します。  
+ 開いているオブジェクト ハンドルを閉じます。 ハンドルが NULL の場合、大文字の場合となる**閉じる**は既に呼び出されると、ATLASSERT がデバッグ ビルドで発生します。  
   
 ##  <a name="detach"></a>CHandle::Detach  
- ハンドルをデタッチするには、このメソッドを呼び出して、`CHandle`オブジェクトです。  
+ ハンドルをデタッチするには、このメソッドを呼び出して、`CHandle`オブジェクト。  
   
 ```
 HANDLE Detach() throw();
@@ -173,13 +155,13 @@ CHandle& operator=(CHandle& h) throw();
   
 ### <a name="parameters"></a>パラメーター  
  `h`  
- `CHandle`ハンドルの所有権を`h`します。  
+ `CHandle`ハンドルの所有権を`h`です。  
   
 ### <a name="return-value"></a>戻り値  
- 新しいへの参照を返す`CHandle`オブジェクトです。  
+ 新しいへの参照を返します`CHandle`オブジェクト。  
   
 ### <a name="remarks"></a>コメント  
- 場合、`CHandle`オブジェクトが現在のハンドルを含む、閉じられます。 `CHandle`オブジェクトに渡されるが、そのハンドルの参照を NULL に設定します。 これにより、2 つ`CHandle`オブジェクトは、同じアクティブなハンドルを格納できません。  
+ 場合、`CHandle`オブジェクトが現在のハンドルを含む、閉じられます。 `CHandle`オブジェクトに渡されるが、そのハンドルの参照を NULL に設定します。 これにより、2 つ`CHandle`オブジェクトは、同じアクティブなハンドルを含めることはありません。  
   
 ##  <a name="operator_handle"></a>CHandle::operator ハンドル  
  格納されたハンドルの値を返します。  
@@ -189,8 +171,7 @@ operator HANDLE() const throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- 格納されている値を返す[CHandle::m_h](#m_h)します。  
+ 格納されている値を返します[CHandle::m_h](#m_h)です。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
-

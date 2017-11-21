@@ -1,36 +1,36 @@
 ---
-title: "オブジェクトの安全性クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.objects.safety"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "オブジェクトの安全性クラス"
-  - "安全性クラス"
+title: "オブジェクトの安全性クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.atl.objects.safety
+dev_langs: C++
+helpviewer_keywords:
+- safety classes
+- object safety classes
 ms.assetid: 00060b28-49e2-4ec1-9a22-f501e07821d6
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4c53a7446375aae8e6c049d28e9b3ecb767171bf
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# オブジェクトの安全性クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスはオブジェクトの安全性をサポートします:  
+# <a name="object-safety-classes"></a>オブジェクトの安全性クラス
+次のクラスは、オブジェクトの安全性のサポートを提供します。  
   
--   [IObjectSafetyImpl](../atl/reference/iobjectsafetyimpl-class.md) は、オブジェクトが初期化の安全性やスクリプトに安全としてマークされるようにします。  
+-   [IObjectSafetyImpl](../atl/reference/iobjectsafetyimpl-class.md)初期化に対して安全またはスクリプトを実行しても安全とマークするオブジェクトを使用します。  
   
-## 関連トピック  
- [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)  
+## <a name="related-articles"></a>関連トピック  
+ [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../atl/atl-class-overview.md)
+

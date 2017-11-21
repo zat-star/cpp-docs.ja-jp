@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -13,39 +12,22 @@ f1_keywords:
 - ATLCOMCLI/ATL::CAdapt
 - ATLCOMCLI/ATL::CAdapt::CAdapt
 - ATLCOMCLI/ATL::CAdapt::m_T
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - address-of operator
 - adapter objects
 - '& operator, address-of operator'
 - CAdapt class
 ms.assetid: 0bb695a5-72fe-43d1-8f39-7e4da6e34765
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 8cdedc5cfac9d49df812ae6fcfcc548201b1edb5
-ms.openlocfilehash: 84346b548e6d0fc7a1ce3078385aee45dfd0031e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 37ce02b9493c47a2c93d9e54e14f73b5c980317d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cadapt-class"></a>CAdapt クラス
 このテンプレートは、オブジェクトのアドレス以外の値を返すために、アドレス演算子を再定義するクラスをラップするときに使用されます。  
@@ -73,9 +55,9 @@ class CAdapt
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAdapt::operator const T >/documents/report1.rdl」の](#operator_const_t_amp)|`const` への `m_T` 参照を返します。|  
-|[CAdapt::operator T >/documents/report1.rdl」の](#operator_t_amp)|`m_T` への参照を返します。|  
-|[CAdapt::operator](#operator_lt)|適合された型のオブジェクトを `m_T` と比較します。|  
+|[CAdapt::operator const T (& a)](#operator_const_t_amp)|`const` への `m_T` 参照を返します。|  
+|[CAdapt::operator T (& a)](#operator_t_amp)|`m_T` への参照を返します。|  
+|[CAdapt::operator <](#operator_lt)|適合された型のオブジェクトを `m_T` と比較します。|  
 |[CAdapt::operator =](#operator_eq)|適合された型のオブジェクトを `m_T` に割り当てます。|  
 |[CAdapt::operator = =](#operator_eq_eq)|適合された型のオブジェクトを `m_T` と比較します。|  
   
@@ -86,13 +68,13 @@ class CAdapt
 |[CAdapt::m_T](#m_t)|適合しているデータ。|  
   
 ## <a name="remarks"></a>コメント  
- `CAdapt`アドレス演算子を再定義するクラスをラップするために使用する単純なテンプレートは、( `operator &`) を返すオブジェクトのアドレス以外のものです。 このようなクラスの例としては、ATL の `CComBSTR`、`CComPtr`、および `CComQIPtr` クラス、そしてコンパイラ COM サポート クラスである `_com_ptr_t` が含まれます。 これらのクラスはすべて、いずれかのデータ メンバーのアドレスを返すために address-of 演算子を再定義します (`BSTR` の場合には `CComBSTR`、他のクラスの場合にはインターフェイス ポインター)。  
+ `CAdapt`address-of 演算子を再定義するクラスをラップするために使用する簡単なテンプレートは、( `operator &`) を返すオブジェクトのアドレス以外のものです。 このようなクラスの例としては、ATL の `CComBSTR`、`CComPtr`、および `CComQIPtr` クラス、そしてコンパイラ COM サポート クラスである `_com_ptr_t` が含まれます。 これらのクラスはすべて、いずれかのデータ メンバーのアドレスを返すために address-of 演算子を再定義します (`BSTR` の場合には `CComBSTR`、他のクラスの場合にはインターフェイス ポインター)。  
   
- `CAdapt` の主な役割は、クラス `T` によって定義された address-of 演算子を隠しながら、適合されたクラスの特性を保持することです。 `CAdapt`この役割を果たしており、パブリック メンバーを保持している[m_T](#m_t)、型の`T`との特殊化を許可するには、変換演算子、比較演算子、およびコピー コンス トラクターを定義することで`CAdapt`型のオブジェクトであるかのように`T`します。  
+ `CAdapt` の主な役割は、クラス `T` によって定義された address-of 演算子を隠しながら、適合されたクラスの特性を保持することです。 `CAdapt`パブリック メンバーを保持してこのロールを満たす[m_T](#m_t)、型の`T`との特殊化を許可するには、変換演算子、比較演算子、およびコピー コンス トラクターを定義することによって`CAdapt`されるかのように扱われます型のオブジェクト`T`です。  
   
  アダプター クラス `CAdapt` は、いくつかの container-style クラスで、含まれるオブジェクトのアドレスを address-of 演算子を使用して取得できることが想定されているために、役立ちます。 address-of 演算子の再定義によって、この要件に混乱が生じ、通常はコンパイル エラーが発生し、"単に動作" することが想定されているクラスで、適合されていない型の使用が妨げられることがあります。 `CAdapt` では、こうした問題を回避するための手段が提供されています。  
   
- 通常 container-style クラスでは、`CAdapt`、`CComBSTR`、`CComPtr`、または `CComQIPtr` オブジェクトを保存する場合に `_com_ptr_t` を使用します。 これは、C++11 Standard のサポート前には C++ Standard Library コンテナーで最も一般的に必要とされていましたが、C++11 Standard Library コンテナーは `operator&()` をオーバーロードした型と共に自動的に動作します。 標準ライブラリが内部的に使用してこれを実現[std::addressof()](http://msdn.microsoft.com/library/6243ddc8-486a-4961-8b0c-33e9dc2e0648)オブジェクトの真のアドレスを取得します。  
+ 通常 container-style クラスでは、`CAdapt`、`CComBSTR`、`CComPtr`、または `CComQIPtr` オブジェクトを保存する場合に `_com_ptr_t` を使用します。 これは、C++11 Standard のサポート前には C++ Standard Library コンテナーで最も一般的に必要とされていましたが、C++11 Standard Library コンテナーは `operator&()` をオーバーロードした型と共に自動的に動作します。 標準ライブラリでは、これを実現内部的に使用して、 [std::addressof](../../standard-library/memory-functions.md#addressof)オブジェクトの場合は true。 アドレスを取得します。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcomcli.h  
@@ -110,10 +92,10 @@ CAdapt(CAdapt<T>&& rSrCA) noexcept; // (Visual Studio 2017)
   
 ### <a name="parameters"></a>パラメーター  
  `rSrc`  
- 新しく構築されたアダプタ オブジェクトにコピーされる適合している型の変数を指定します。  
+ 新しく構築されたアダプタ オブジェクトにコピーするのに適合している型の変数です。  
   
  *rSrCA*  
- 含まれているデータが含まれる必要がありますコピー (または移動される) を新しく構築されたアダプター オブジェクトにアダプター オブジェクト。  
+ アダプター オブジェクトが含まれているデータをコピー (または移動する)、新しく構築されたアダプタ オブジェクトにします。  
   
 ##  <a name="m_t"></a>CAdapt::m_T  
  適合しているデータを保持します。  
@@ -123,30 +105,30 @@ T m_T;
 ```  
   
 ### <a name="remarks"></a>コメント  
- これは、**パブリック**データ メンバーにアクセスできる直接的または間接的に[演算子 const T >/documents/report1.rdl」の](#operator_const_t_amp)と[演算子 T >/documents/report1.rdl」の](#operator_t_amp)です。  
+ これは、**パブリック**データ メンバーにアクセスできる直接的または間接的に[演算子 const T &](#operator_const_t_amp)と[演算子 T (& a)](#operator_t_amp)です。  
   
 ##  <a name="operator_const_t_amp"></a>CAdapt::operator const T&amp;  
- 返します。、 **const**への参照、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`します。  
+ 返します、 **const**への参照、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`です。  
   
 ```  
 operator const T&() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- A **const**への参照を`m_T`します。  
+ A **const**への参照を`m_T`です。  
   
 ##  <a name="operator_t_amp"></a>CAdapt::operator T&amp;  
- 参照を返す、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`します。  
+ 参照を返します、 [m_T](#m_t) 、そのアダプタ オブジェクトを型のオブジェクトの場合と同様に扱うことを許可するメンバー`T`です。  
   
 ```  
 operator T&();
 ```     
   
 ### <a name="return-value"></a>戻り値  
- 参照を`m_T`します。  
+ 参照を`m_T`です。  
   
 ##  <a name="operator_lt"></a>CAdapt::operator&lt;  
- 適合された型のオブジェクトと比較[m_T](#m_t)します。  
+ 適合された型のオブジェクトと比較[m_T](#m_t)です。  
   
 ```
 bool operator<(const T& rSrc) const;
@@ -172,14 +154,13 @@ CAdapt& operator= (CAdapt<T>&& rSrCA) noexcept; // (Visual Studio 2017)
  `rSrc`  
  コピーされる適合された型のオブジェクトへの参照。 
 
- `rSrCA`
-移動するオブジェクトへの参照。 
+ `rSrCA`移動するオブジェクトへの参照。 
   
 ### <a name="return-value"></a>戻り値  
  現在のオブジェクトへの参照。  
   
 ##  <a name="operator_eq_eq"></a>CAdapt::operator = =  
- 適合された型のオブジェクトと比較[m_T](#m_t)します。  
+ 適合された型のオブジェクトと比較[m_T](#m_t)です。  
   
 ```
 bool operator== (const T& rSrc) const;
@@ -194,4 +175,3 @@ bool operator== (const T& rSrc) const;
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)
-

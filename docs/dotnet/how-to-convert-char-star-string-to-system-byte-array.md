@@ -1,34 +1,33 @@
 ---
-title: "方法: char * 文字列を System::Byte 配列に変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "配列 [C++], 文字"
-  - "文字配列, 変換 (System::Byte 配列に)"
-  - "例 [C++], 配列"
-  - "例 [C++], 文字列"
+title: "方法: char に変換 * system::byte 配列に文字列 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- examples [C++], strings
+- arrays [C++], character
+- character arrays, converting to System::Byte arrays
+- examples [C++], arrays
 ms.assetid: de9bc4eb-773c-4796-a496-9b90ca986503
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4d0750884c9d7d5bfb1b9566b26cdce5c8c1962c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: char * 文字列を System::Byte 配列に変換する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="how-to-convert-char--string-to-systembyte-array"></a>方法: char * 文字列を System::Byte 配列に変換する
 `char *` 文字列を <xref:System.Byte> 配列に変換する最も効率的な方法は、<xref:System.Runtime.InteropServices.Marshal> クラスを使用することです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // convert_native_string_to_Byte_array.cpp  
@@ -60,5 +59,5 @@ int main() {
 Native String  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

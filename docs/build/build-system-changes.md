@@ -1,78 +1,77 @@
 ---
-title: "ビルド システムの変更点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.msbuild.changes"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビルド システムの変更点, $(Inherit)"
-  - "ビルド システムの変更点, $(NoInherit)"
-  - "ビルド システムの変更点, .vsprops"
-  - "ビルド システムの変更点, カスタム ビルド規則"
-  - "ビルド システムの変更点, MSBuild"
-  - "ビルド システムの変更点, プロジェクト ファイル (.vcxprog)"
-  - "MSBuild, ビルド システムの変更点"
+title: "ビルド システムの変更 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.msbuild.changes
+dev_langs: C++
+helpviewer_keywords:
+- Build system changes, project file (.vcxprog)
+- Build system changes, custom build rules
+- Build system changes, MSBuild
+- MSBuild, build system changes
+- Build system changes, .vsprops
+- Build system changes, $(Inherit)
+- Build system changes, $(NoInherit)
 ms.assetid: e564d95f-a6cc-4d97-b57e-1a71daf66f4a
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 90266f54dd6972e68abe770bad4ee323eebf46b7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ビルド システムの変更点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MSBuild システムを Visual C\+\+ のプロジェクトをビルドするために使用されます。  ただし、Visual Studio 2008 以前のリリースでは、VCBuild システムが使用されました。  VCBuild に応じた概念、現在のシステムでとファイルの種類は別々に存在しないか、表されません。  ここでは、現在のビルド システムの違いについて説明します。  
+# <a name="build-system-changes"></a>ビルド システムの変更点
+MSBuild システムを使用すると、Visual C プロジェクトをビルドします。 ただし、Visual Studio 2008 以前のリリースで、VCBuild システムが使用されます。 特定ファイルの種類と VCBuild に依存していたの概念は、存在しないかは現在のシステムで異なる方法で表されます。 このドキュメントでは、現在のビルド システムの違いについて説明します。  
   
-## .vcproj から .vcxproj へ  
- プロジェクト ファイルでは .vcproj ファイル名拡張子が使用されなくなりました。  Visual C\+\+ の以前のリリースで作成されたプロジェクト ファイルは、Visual Studio により、現在のシステムで使用されている形式に自動的に変換されます。  手動でプロジェクトをアップグレードする方法の詳細については、「[\/Upgrade](../Topic/-Upgrade%20\(devenv.exe\).md)」を参照してください。  
+## <a name="vcproj-is-now-vcxproj"></a>.vcproj は .vcxproj はようになりました。  
+ プロジェクト ファイルは、不要になった .vcproj ファイル名拡張子を使用します。 Visual Studio には、以前のリリースの Visual C は、現在のシステムによって使用される形式にして作成されたプロジェクト ファイルに自動的に変換します。 プロジェクトを手動でアップグレードする方法の詳細については、次を参照してください。 [/Upgrade (devenv.exe)](/visualstudio/ide/reference/upgrade-devenv-exe)です。  
   
- 現在のリリースでは、プロジェクト ファイルのファイル名拡張子は .vcxproj です。  
+ 現在のリリースでは、プロジェクト ファイルのファイル名拡張子は、.vcxproj がします。  
   
-## .vsprops から .props へ  
- 以前のリリースでは、*プロジェクトのプロパティ シート*は .vsprops というファイル名拡張子を持つ XML ベースのファイルです。  プロジェクトのプロパティ シートを使用すると、コンパイラやリンカーなどのビルド ツールのスイッチを指定し、ユーザー定義のマクロを作成できます。  
+## <a name="vsprops-is-now-props"></a>.vsprops は .props はようになりました。  
+ 以前のリリースで、*プロジェクト プロパティ シートの*.vsprops ファイル名拡張子を持つ XML ベースのファイルです。 プロジェクトのプロパティ シートでは、コンパイラやリンカーなどのビルド ツールのスイッチを指定し、ユーザー定義のマクロを作成することができます。  
   
- 現在のリリースでは、プロジェクトのプロパティ シートのファイル名拡張子は .props です。  
+ 現在のリリースでは、プロジェクトのプロパティ シートのファイル名拡張子は、.props です。  
   
-## カスタム ビルド規則と .rules ファイル  
- 以前のリリースでは、*規則ファイル*は .rules というファイル名拡張子を持つ XML ベースのファイルです。  規則ファイルを使用すると、カスタム ビルド規則を定義し、それらの規則を Visual C\+\+ プロジェクトのビルド処理に取り入れることができます。  カスタム ビルド規則は、1 つ以上のファイル名拡張子に関連付けることができます。これを使用すると、1 つ以上の出力ファイルを作成するツールに入力ファイルを渡すことができます。  
+## <a name="custom-build-rules-and-rules-files"></a>カスタム ビルド規則と .rules ファイル  
+ 以前のリリースで、*規則ファイル*.rules ファイル名拡張子を持つ XML ベースのファイルです。 規則ファイルでは、カスタム ビルド規則を定義して、Visual C プロジェクトのビルド プロセスに組み込むことができます。 指定できますが、1 つまたは複数のファイル名拡張子に関連付けられているカスタム ビルド規則では、1 つ作成するツールへの入力ファイルを渡すことができます、または以上の出力ファイル。  
   
- このリリースでは、カスタム ビルド規則は、.rules ファイルではなく、3 種類のファイル \(.xml、.props、および .targets\) により表されます。  Visual C\+\+ の以前のリリースを使用して作成された .rules ファイルを現在のリリースに移行すると、同等の .xml、.props、および .targets ファイルが作成され、元の .rules ファイルと共にプロジェクトに保存されます。  
+ このリリースでは、カスタム ビルド規則は次の 3 つのファイルの種類、.xml、.props、および .rules ファイルではなく、.targets によって表されます。 Visual C の以前のリリースを使用して作成された .rules ファイルを現在のリリースに移行すると、同等の .xml、.props、および .targets ファイルが作成され、元の .rules ファイルと共に、プロジェクトに格納します。  
   
 > [!IMPORTANT]
->  現在のリリースでは、[!INCLUDE[TLA2#tla_ide](../build/includes/tla2sharptla_ide_md.md)] は新しい規則の作成をサポートしていません。  そのため、Visual C\+\+ の以前のリリースを使用して作成されたプロジェクトの規則ファイルを使用する最も簡単な方法は、現在のリリースにプロジェクトを移行することです。  
+>  現在のリリースで、[!INCLUDE[TLA2#tla_ide](../build/includes/tla2sharptla_ide_md.md)]新しい規則の作成をサポートしていません。 そのため、Visual C の以前のリリースを使用して作成されたプロジェクトの規則ファイルを使用する最も簡単な方法は、プロジェクトに移行する、現在のリリースです。  
   
-## 継承マクロ  
- 以前のリリースでは、**$\(Inherit\)** マクロによって、継承されたプロパティがプロジェクト ビルド システムで構成されたコマンド ラインに指定される順序を指定します。  また、**$\(NoInherit\)** マクロを使用すると、$\(Inherit\) の指定がすべて無視され、通常は継承されるプロパティが継承されなくなります。  たとえば、既定では、$\(Inherit\) マクロを使用すると、[\/I \(追加インクルード ディレクトリ\)](../build/reference/i-additional-include-directories.md) コンパイラ オプションを使用して指定したファイルがコマンド ラインに追加されます。  
+## <a name="inheritance-macros"></a>継承マクロ  
+ 以前のリリースで、 **$ (inherit)**マクロは、プロジェクトのビルド システムによって作成されているコマンド ラインで継承されたプロパティの表示順序を指定します。 **$ (Noinherit)**マクロする任意のプロパティの継承される、いないことを継承して無視するように $ (inherit) の出現します。 たとえば、既定では、$ (inherit) マクロを使用して指定されたファイル、 [/I (追加インクルード ディレクトリ)](../build/reference/i-additional-include-directories.md)コンパイラ オプションをコマンドラインに追加されます。  
   
- 現在のリリースでは、プロパティの値を 1 つ以上のリテラル値とプロパティ マクロの連結として指定することで、継承がサポートされます。  **$\(Inherit\)** マクロと **$\(NoInherit\)** マクロはサポートされていません。  
+ 現在のリリースでは、継承がリテラル値とプロパティのマクロの 1 つまたは複数の連結としてプロパティの値を指定することによってサポートされます。 **$ (Inherit)**と**$ (noinherit)**マクロはサポートされていません。  
   
- 次の例では、セミコロン区切りのリストをプロパティ ページのプロパティに割り当てます。  リストは、リテラル *\<value\>* の値を連結してからマクロ表記を使用してアクセスする `MyProperty` のプロパティ、**$\(***MyProperty***\)**構成されます。  
+ 次の例では、セミコロン区切りのリストは、[プロパティ] ページのプロパティに割り当てられます。 一覧から成るの連結、 *\<値 >*リテラルのパスと値の`MyProperty`マクロ表記を使用してアクセスされるプロパティ**$(** *MyProperty***)**です。  
   
 ```  
 Property=<value>;$(MyProperty)  
 ```  
   
-## .vcxproj.user ファイル  
- ユーザー ファイル \(.vcxproj.user\) には、デバッグと配置の設定などのユーザー固有のプロパティが格納されます。  vcxproj.user ファイルは、特定のユーザーのすべてのプロジェクトに適用されます。  
+## <a name="vcxprojuser-files"></a>。 vcxproj.user ファイル  
+ ユーザー ファイル (. vcxproj.user) の例、デバッグと配置の設定、ユーザー固有のプロパティを格納します。 Vcxproj.user ファイルは、特定のユーザーのすべてのプロジェクトに適用されます。  
   
-## .vcxproj.filters ファイル  
- **ソリューション エクスプローラー**を使用してファイルをプロジェクトに追加するときには、フィルター ファイル \(.vcxproj.filters\) により、ファイル名拡張子に基づいて、ファイルの追加先となる**ソリューション エクスプローラー**のツリー ビュー内の場所が定義されます。  
+## <a name="vcxprojfilters-file"></a>。 vcxproj.filters ファイル  
+ ときに**ソリューション エクスプ ローラー**フィルター ファイル、プロジェクトにファイルを追加するために使用 (. vcxproj.filters) 内の場所を定義、**ソリューション エクスプ ローラー**ツリー ビューでファイルを追加すると、そのファイル名拡張子に基づいて。  
   
-## VC\+\+ ディレクトリの設定  
- Visual C\+\+ ディレクトリの設定は、[\[VC\+\+ ディレクトリ\] プロパティ ページ](../Topic/VC++%20Directories%20Property%20Page.md)で指定します。  以前のリリースの Visual Studio では、ディレクトリの設定がユーザーごとに適用され、sysincl.dat ファイルで除外ディレクトリが指定されていました。  
+## <a name="vc-directories-settings"></a>Vc++ ディレクトリの設定  
+ Visual C ディレクトリの設定で指定された、 [vc++ ディレクトリ プロパティ ページ](../ide/vcpp-directories-property-page.md)です。 Visual Studio の以前のリリースでディレクトリの設定、ユーザーごとの適用し、sysincl.dat ファイルで除外されているディレクトリの一覧を指定します。  
   
- コマンド ラインで [devenv \/resetsettings](../Topic/-ResetSettings%20\(devenv.exe\).md) を実行する場合、VC\+\+ ディレクトリの設定は変更できません。  また、**\[ツール\]** メニューを開き、**\[設定のインポートとエクスポート\]** をクリックし、**\[すべての設定をリセット\]** を選択した場合も、設定は変更できません。  
+ 実行する場合は、vc++ ディレクトリの設定を変更することはできません[devenv/resetsettings](/visualstudio/ide/reference/resetsettings-devenv-exe)コマンドライン。 変更することもできません、設定を開く場合、**ツール** メニューのをクリックして**のインポートとエクスポートの設定**、クリックして、**すべての設定をリセット**オプション。  
   
- Visual C\+\+ の以前のリリースで作成された .vssettings ファイルの VC\+\+ ディレクトリ設定は移行してください。  **\[ツール\]** メニューを開き、**\[設定のインポートとエクスポート\]** をクリックし、**\[選択された環境設定をインポート\]** を選択し、ウィザードの指示に従います。  または、Visual Studio の初回起動時に、**\[既定の環境設定の選択\]** ダイアログ ボックスで、**\[以前のバージョンから有効な設定を移行し、以下で選択した既定の設定と合わせて適用する\]** を選択します。  
+ Visual C の以前のリリースによって作成される .vssettings ファイルから vc++ ディレクトリの設定を移行します。 開いている、**ツール**] メニューのをクリックして**インポートおよびエクスポート設定**[**選択された環境設定をインポート**、ウィザードの指示に従います。 時、または起動時 Visual Studio を初めて、上、 **既定の環境設定**ダイアログ ボックスで、**以前のバージョンから有効な設定を移行し、既定の設定だけでなく、それらを適用以下の選択**です。  
   
-## 参照  
- [MSBuild \(Visual C\+\+\)](../Topic/MSBuild%20\(Visual%20C++\).md)
+## <a name="see-also"></a>関連項目  
+ [MSBuild (Visual C++)](../build/msbuild-visual-cpp.md)

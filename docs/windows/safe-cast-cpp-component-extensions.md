@@ -1,41 +1,38 @@
 ---
-title: "safe_cast (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "safe_cast"
-  - "safe_cast_cpp"
-  - "stdcli::language::safe_cast"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "safe_cast keyword [C++]"
+title: "safe_cast (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords:
+- safe_cast
+- safe_cast_cpp
+- stdcli::language::safe_cast
+dev_langs: C++
+helpviewer_keywords: safe_cast keyword [C++]
 ms.assetid: 4fa688bf-a8ec-49bc-a4c5-f48134efa4f7
-caps.latest.revision: 26
-caps.handback.revision: 24
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "26"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: bf02b1c8aa84688df5ef29f4c5e69fa818b31904
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# safe_cast (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`safe_cast` 操作は、指定された式を指定した型で返します \(成功した場合\)。失敗した場合は、`InvalidCastException` をスローします。  
+# <a name="safecast-c-component-extensions"></a>safe_cast (C++ コンポーネント拡張)
+`safe_cast` 操作は、指定された式を指定した型で返します (成功した場合)。失敗した場合は、`InvalidCastException` をスローします。  
   
-## すべてのランタイム  
- \(この言語機能にはランタイムに適用される特記事項がありません。\)  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ (この言語機能にはランタイムに適用される特記事項がありません。)  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
-  
 [default]:: safe_cast<  
 type-id  
 >(  
@@ -44,17 +41,16 @@ expression
   
 ```  
   
-### パラメーター  
+### <a name="parameters"></a>パラメーター  
   
-### コメント  
+### <a name="remarks"></a>コメント  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
- `safe_cast` を使用して、指定された式の型を変更することができます。  変数またはパラメーターを特定の型に問題なく変換できることがわかっている場合、try\-catch ブロックを使用せずに safe\_cast を使用して、開発中のプログラミング エラーを検出することができます。  詳細については、「[キャスト \(C\+\+\/CX\)](http://msdn.microsoft.com/library/windows/apps/hh755802.aspx)」を参照してください。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ `safe_cast` を使用して、指定された式の型を変更することができます。 変数またはパラメーターを特定の型に問題なく変換できることがわかっている場合、try-catch ブロックを使用せずに safe_cast を使用して、開発中のプログラミング エラーを検出することができます。 詳細については、次を参照してください。[キャスト (C + + CX)](http://msdn.microsoft.com/library/windows/apps/hh755802.aspx)です。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
-  
 [default]:: safe_cast<  
 type-id  
 >(  
@@ -63,23 +59,23 @@ expression
   
 ```  
   
-### パラメーター  
- *type\-id*  
- 変換後の *expression* の型。  参照型または値型へのハンドル、値型、参照型または値型への追跡参照。  
+### <a name="parameters"></a>パラメーター  
+ *種類 id*  
+ 変換後の型*式*にします。 参照型または値型へのハンドル、値型、参照型または値型への追跡参照。  
   
- *expression*  
+ *式*  
  参照型または値型へのハンドル、値型、参照型または値型への追跡参照として評価される式。  
   
-### コメント  
- `safe_cast` は *type\-id* で指定された型に *expression* を変換できない `InvalidCastException` をスローします。  `InvalidCastException` をキャッチするには、[\/EH \(例外処理モデル\)](../build/reference/eh-exception-handling-model.md) コンパイラ オプションを指定し、try\/catch ステートメントを使用します。  
+### <a name="remarks"></a>コメント  
+ `safe_cast`スロー`InvalidCastException`変換できない場合*式*で指定された型に*タイプ id*です。キャッチする`InvalidCastException`を指定して、 [/EH (例外処理モデル)](../build/reference/eh-exception-handling-model.md)コンパイラ オプション、および try ブロックと catch ステートメントを使用します。  
   
-### 必要条件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/ZW**  
   
-### 使用例  
+### <a name="examples"></a>例  
  **例**  
   
- [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]で `safe_cast` を使用する方法を次のコード例に示します。  
+ 次のコード例を使用する方法を示しています`safe_cast`Windows ランタイムとします。  
   
 ```cpp#  
 // safe_cast_ZW.cpp  
@@ -109,14 +105,16 @@ int main(Array<String^>^ args) {
   
  **出力**  
   
-  **Caught expected exception: InvalidCastException**   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+```Output  
+Caught expected exception: InvalidCastException  
+```  
+  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  `safe_cast` を使用して、式の型を変更し、検証可能な MSIL コードを生成できます。  
   
-### 構文  
+### <a name="syntax"></a>構文  
   
 ```cpp  
-  
 [cli]:: safe_cast<  
 type-id  
 >(  
@@ -125,46 +123,36 @@ expression
   
 ```  
   
-### パラメーター  
- *type\-id*  
+### <a name="parameters"></a>パラメーター  
+ *種類 id*  
  参照型または値型へのハンドル、値型、参照型または値型への追跡参照。  
   
- *expression*  
+ *式*  
  参照型または値型へのハンドル、値型、参照型または値型への追跡参照として評価される式。  
   
-### コメント  
- 式 `safe_cast<`*type\-id*`>(`*expression*`)` は type\-id 型のオブジェクトにオペランド式を変換します。  
+### <a name="remarks"></a>コメント  
+ 式`safe_cast<`*タイプ id*`>(`*式*`)` type-id 型のオブジェクトにオペランド式を変換します。  
   
- `safe_cast` を使用できるほとんどの場所で、[static\_cast](../cpp/static-cast-operator.md) を使用できます。  ただし、`safe_cast` では確実に検証可能な MSIL が生成されますが、`static_cast` では検証不可能な MSIL が生成される場合があります。  検証可能なコードの詳細については、「[純粋なコードと検証可能なコード](../dotnet/pure-and-verifiable-code-cpp-cli.md)」および「[Peverify.exe \(PEVerify ツール\)](../Topic/Peverify.exe%20\(PEVerify%20Tool\).md)」を参照してください。  
+ コンパイラは、受け入れる、 [static_cast](../cpp/static-cast-operator.md)を使用できるほとんどの場所で、`safe_cast`です。  ただし、`safe_cast` では確実に検証可能な MSIL が生成されますが、`static_cast` では検証不可能な MSIL が生成される場合があります。  参照してください[純粋なコードと検証可能なコード (C + + CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)と[Peverify.exe (PEVerify ツール)](/dotnet/framework/tools/peverify-exe-peverify-tool)検証可能なコードについての詳細。  
   
  `static_cast` と同様に、`safe_cast` はユーザー定義の変換を呼び出します。  
   
- キャストの詳細については、「[キャスト演算子](../cpp/casting-operators.md)」を参照してください。  
+ キャストの詳細については、次を参照してください。[キャスト演算子](../cpp/casting-operators.md)です。  
   
- `safe_cast` は **const\_cast**  \(**const** のキャスト\) を適用しません。  
+ `safe_cast`該当なし、 **const_cast** (キャスト**const**)。  
   
- `safe_cast` は cli 名前空間に存在します。  詳細については、「[Platform, default, and cli Namespaces](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)」を参照してください。  
+ `safe_cast` は cli 名前空間に存在します。  参照してください[プラットフォーム、既定値、および cli 名前空間](../windows/platform-default-and-cli-namespaces-cpp-component-extensions.md)詳細についてはします。  
   
- **safe\_cast** の詳細については、以下を参照してください。  
+ 詳細については**safe_cas**t を参照してください。  
   
--   [C\-Style Casts with \/clr \(C\+\+\/CLI\)](../windows/c-style-casts-with-clr-cpp-cli.md)  
+-   [C スタイル キャストと/clr (C + + CLI)](../windows/c-style-casts-with-clr-cpp-cli.md)  
   
--   [方法: C\+\+\/CLI で safe\_cast を使用する](../Topic/How%20to:%20Use%20safe_cast%20in%20C++-CLI.md)  
+-   [方法: C++/CLI で safe_cast を使用する](../dotnet/how-to-use-safe-cast-in-cpp-cli.md)  
+
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/clr**  
   
--   [方法: safe\_cast を使用してダウンキャストする](../misc/how-to-downcast-with-safe-cast.md)  
-  
--   [方法: safe\_cast 型およびジェネリック型を使用する](../misc/how-to-use-safe-cast-and-generic-types.md)  
-  
--   [方法: safe\_cast およびユーザー定義の変換を使用する](../misc/how-to-use-safe-cast-and-user-defined-conversions.md)  
-  
--   [方法: safe\_cast およびボックス化を使用する](../Topic/How%20to:%20Use%20safe_cast%20and%20Boxing.md)  
-  
--   [方法: safe\_cast およびボックス化の解除を使用する](../misc/how-to-use-safe-cast-and-unboxing.md)  
-  
-### 必要条件  
- コンパイラ オプション: **\/clr**  
-  
-### 使用例  
+### <a name="examples"></a>例  
  **例**  
   
  コンパイラで `static_cast` を使用できないが `safe_cast` を使用できる状況の例の 1 つは、関連していないインターフェイス型の間でのキャストです。  `safe_cast` を使用した場合、コンパイラは変換エラーを生成せず、キャストが可能であるかどうかを実行時に検証します。  
@@ -195,6 +183,9 @@ int main() {
   
  **出力**  
   
-  **Caught expected exception**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+```Output  
+Caught expected exception  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

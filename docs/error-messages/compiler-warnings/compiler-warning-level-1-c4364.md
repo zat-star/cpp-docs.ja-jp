@@ -1,36 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4364 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4364"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4364"
+title: "コンパイラの警告 (レベル 1) C4364 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4364
+dev_langs: C++
+helpviewer_keywords: C4364
 ms.assetid: 1477634c-d60f-4570-ad16-1aaeae24ac7f
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 94004ea52d76d39657da1fdb79e0b61777524d47
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4364
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-\#using for assembly 'ファイル' の \#using は、以前に  location\(line\_number\) で as\_friend 属性なしに使用されました。as\_friend は適用されません  
+# <a name="compiler-warning-level-1-c4364"></a>コンパイラの警告 (レベル 1) C4364
+\#アセンブリ 'file' location(line_number); as_friend 属性なしで以前に確認されたの使用as_friend は適用されません。  
   
- `#using` ディレクティブは指定されたメタデータ ファイルに対して繰り返し使用されましたが、`as_friend` 修飾子は初回時に使用されませんでした。このためコンパイラは 2 回目の `as_friend` を無視します。  
+ A`#using`ディレクティブが指定したメタデータ ファイルは、繰り返されましたが、`as_friend`修飾子が最初に見つかった位置で使用されていない以外の場合は、コンパイラは、2 つ目を無視`as_friend`です。  
   
- 詳細については、「[フレンド アセンブリ \(C\+\+\)](../../dotnet/friend-assemblies-cpp.md)」を参照してください。  
+ 詳細については、次を参照してください。[フレンド アセンブリ (C++)](../../dotnet/friend-assemblies-cpp.md)です。  
   
-## 使用例  
+## <a name="example"></a>例  
  コンポーネントを作成する例を次に示します。  
   
 ```  
@@ -39,8 +37,8 @@ caps.handback.revision: 8
 ref class A {};  
 ```  
   
-## 使用例  
- 次の例では C4364 エラーが生成されます。  
+## <a name="example"></a>例  
+ 次の例では、C4364 を生成します。  
   
 ```  
 // C4364_b.cpp  

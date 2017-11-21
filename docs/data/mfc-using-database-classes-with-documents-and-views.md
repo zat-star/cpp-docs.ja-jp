@@ -1,86 +1,81 @@
 ---
-title: "MFC: ドキュメントとビューを用いたデータベース クラスの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CDaoRecordView クラス, 使用 (データベース アプリケーションで)"
-  - "CDaoRecordView クラス, 使用 (データベース フォームで)"
-  - "CRecordView クラス, 使用 (データベース フォームで)"
-  - "DAO [C++], フォーム (データベース アプリケーションの)"
-  - "DAO レコードセット [C++]"
-  - "DAO レコードセット [C++], ドキュメントとビュー"
-  - "データベース アプリケーション [C++], フォーム"
-  - "データベース クラス [C++], MFC"
-  - "ドキュメント/ビュー アーキテクチャ [C++], データベースで"
-  - "ドキュメント [C++], データベース アプリケーション"
-  - "フォーム [C++], データベース アプリケーション"
-  - "ODBC [C++], フォーム"
-  - "ODBC レコードセット [C++], ドキュメントとビュー"
-  - "レコード ビュー [C++], フォーム ベースのアプリケーション"
-  - "レコードセット [C++], ドキュメントとビュー"
-  - "ビュー [C++], データベース アプリケーション"
+title: "MFC: ドキュメントとビューを用いたデータベース クラスの使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- documents [C++], database applications
+- recordsets [C++], documents and views
+- CRecordView class, using in database forms
+- views [C++], database applications
+- forms [C++], database applications
+- record views [C++], form-based applications
+- document/view architecture [C++], in databases
+- database applications [C++], forms
+- database classes [C++], MFC
+- ODBC recordsets [C++], documents and views
+- ODBC [C++], forms
 ms.assetid: 83979974-fc63-46ac-b162-e8403a572e2c
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b63e864b519dd55eedf96d525a25897c81f16ac0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# MFC: ドキュメントとビューを用いたデータベース クラスの使用
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-DAO でも ODBC でも、MFC データベース クラスを使用する場合に必ずしもドキュメント\/ビュー アーキテクチャを使用する必要はありません。  このトピックでは、特に、ドキュメントとビューの操作方法について説明します。  内容は以下のとおりです。  
+# <a name="mfc-using-database-classes-with-documents-and-views"></a>MFC : ドキュメントとビューを用いたデータベース クラスの使用
+ドキュメント/ビュー アーキテクチャの有無は、MFC データベース クラスを使用することができます。 このトピックでは、ドキュメントとビューの操作を強調します。 これを説明します。  
   
--   [フォーム ベース アプリケーションを作成する](#_core_writing_a_form.2d.based_application)ときに、ドキュメントのメイン ビューとして `CRecordView` オブジェクトまたは `CDaoRecordView` オブジェクトを使用する方法  
+-   [フォーム ベースのアプリケーションを記述する方法](#_core_writing_a_form.2d.based_application)を使用して、`CRecordView`オブジェクト、ドキュメントのメイン ビューとして。  
   
--   [ドキュメントとビューの中でレコードセット オブジェクトを使う方法](#_core_using_recordsets_in_documents_and_views)  
+-   [ドキュメントとビューのレコード セット オブジェクトを使用する方法](#_core_using_recordsets_in_documents_and_views)です。  
   
--   [そのほかの注意点](#_core_other_factors)  
+-   [他の考慮事項](#_core_other_factors)です。  
   
- ドキュメントやビューを使用しない方法については、「[MFC : ドキュメントとビューを用いないデータベース クラスの使用](../data/mfc-using-database-classes-without-documents-and-views.md)」を参照してください。  
+ 代替方法については、次を参照してください。 [MFC: 用いないデータベース クラスとビュー](../data/mfc-using-database-classes-without-documents-and-views.md)です。  
   
-##  <a name="_core_writing_a_form.2d.based_application"></a> フォーム ベース アプリケーションの作成  
- データ アクセス用の多くのアプリケーションは、フォームを使います。  フォーム内のコントロールがユーザー インターフェイスの役割を果たします。ユーザーはこれらのコントロールを使って、データを検証、入力、編集します。  フォームを使うアプリケーションを作成するときは、`CRecordView` クラスまたは `CDaoRecordView` クラスを使用します。  MFC アプリケーション ウィザードを実行し、\[データベース サポート\] ページで **ODBC** というクライアントの種類を選択すると、プロジェクトのビュー クラスに `CRecordView` が使用されます。  ウィザードは現在 DAO をサポートしていないため、`CDaoRecordView` を使用する場合は手動でコーディングする必要があります。  
+##  <a name="_core_writing_a_form.2d.based_application"></a>フォーム ベースのアプリケーションの作成  
+ 多くのデータ アクセス アプリケーションは、フォームに基づいています。 ユーザー インターフェイスは、コントロールをユーザーを調べ、入力すると、またはデータの編集を含む形式です。 クラスを使用するのには、アプリケーションのフォーム ベース、`CRecordView`です。 MFC アプリケーション ウィザードを実行し、選択する**ODBC**でクライアントの種類、**データベース サポート** ページで、プロジェクトを使用して`CRecordView`ビュー クラス。
   
- フォーム ベース アプリケーションでは、各レコード ビュー オブジェクトが `CRecordset` オブジェクトまたは `CDaoRecordset` オブジェクトへのポインターを持っています。  フレームワークのレコード フィールド エクスチェンジ \(RFX: Record Field Exchange\) 機能によって、レコードセットとデータ ソース間でデータが交換されます。  ダイアログ データ エクスチェンジ \(DDX: Dialog Data Exchange\) 機構によって、レコードセット オブジェクトのフィールド データ メンバーとフォーム上のコントロール間でデータが交換されます。  `CRecordView` または `CDaoRecordView` には、フォーム上のレコード間を移動するための既定のコマンド ハンドラー関数もあります。  
+ レコード ビューの各オブジェクトはフォーム ベースのアプリケーションへのポインターを格納、`CRecordset`オブジェクト。 フレームワークのレコード フィールド エクス (チェンジ RFX) メカニズムでは、レコード セットと、データ ソース間でデータを交換します。 ダイアログ データでは、レコード セット オブジェクトのフィールド データ メンバーと、フォーム上のコントロールの間 (DDX) メカニズム交換データを交換します。 `CRecordView`関数も提供既定コマンド ハンドラー形式のレコード間を移動するためです。  
   
- フォーム ベース アプリケーションをアプリケーション ウィザードで作成するには、「[フォーム ベースの MFC アプリケーションの作成](../Topic/Creating%20a%20Forms-Based%20MFC%20Application.md)」および「[&#91;データベース サポート&#93; \(MFC アプリケーション ウィザード\)](../mfc/reference/database-support-mfc-application-wizard.md)」を参照してください。  
+ アプリケーション ウィザードを使用して、フォーム ベースのアプリケーションを作成するを参照してください。[フォーム ベースの MFC アプリケーションを作成する](../mfc/reference/creating-a-forms-based-mfc-application.md)と[データベースのサポート、MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)です。  
   
- フォームの詳細については、「[レコード ビュー](../data/record-views-mfc-data-access.md)」を参照してください。  
+ フォームの詳細については、次を参照してください。[レコード ビュー](../data/record-views-mfc-data-access.md)です。  
   
-##  <a name="_core_using_recordsets_in_documents_and_views"></a> ドキュメントやビューとレコードセットの併用  
- 単純なフォーム ベース アプリケーションでは、ドキュメントを使用しません。  アプリケーションが複雑になると、データベースの代わりにドキュメントを使用して、データ ソースに接続されている `CDatabase` オブジェクトまたは `CDaoDatabase` オブジェクトを保存します。  フォーム ベース アプリケーションでは、通常、レコードセット オブジェクトへのポインターをビュー内に保存します。  フォームを使用しないデータベース アプリケーションでは、レコードセットと、`CDatabase` オブジェクトまたは `CDaoDatabase` オブジェクトをドキュメントに保存します。  次に、データベース アプリケーションにおけるドキュメントの使用例を示します。  
+##  <a name="_core_using_recordsets_in_documents_and_views"></a>ドキュメントとビュー内のレコード セットを使用します。  
+ 多くの単純なフォーム ベースのアプリケーションでは、ドキュメントは必要ありません。 アプリケーションがより複雑な多くの場合、データベースのプロキシとして、ドキュメントを使用する場合は、格納、`CDatabase`データ ソースに接続するオブジェクト。 通常、フォーム ベースのアプリケーションでは、ビューにレコード セット オブジェクトへのポインターを格納します。 他の種類のデータベース アプリケーションは、レコード セットを格納および`CDatabase`ドキュメント内のオブジェクト。 データベース アプリケーションでドキュメントの使用例を次に示します。  
   
--   ローカルでレコードセットにアクセスするアプリケーションでは、必要に応じて、ドキュメントまたはビューのメンバー関数で、`CRecordset` オブジェクトまたは `CDaoRecordset` オブジェクトをローカルに作成します。  
+-   ローカル コンテキストのレコード セットにアクセスする場合は、作成、`CRecordset`必要に応じて、ドキュメントや、ビューのメンバー関数でローカル オブジェクトです。  
   
-     レコードセット オブジェクトを関数のローカル変数として宣言します。  コンストラクターに **NULL** を渡すと、フレームワークによって `CDatabase` または `CDaoDatabase` の一時オブジェクトが作成され、開かれます。  または、`CDatabase` あるいは `CDaoDatabase` のオブジェクトへのポインターを渡します。  このレコードセットは関数の中だけで使用してください。ローカルなレコードセットは、関数の終了時に自動的に破棄されます。  
+     関数のローカル変数として、レコード セット オブジェクトを宣言します。 渡す**NULL** 、コンス トラクターを作成し、一時的なを開くのために、フレームワークが`CDatabase`オブジェクト。 代わりへのポインターを渡す、`CDatabase`オブジェクト。 関数内でレコード セットを使用してを関数が終了したときに自動的に破棄されます。  
   
-     レコードセットのコンストラクターに **NULL** を渡すと、フレームワークはそのレコードセットのメンバー関数 `GetDefaultConnect` の戻り値を使って `CDatabase` または `CDaoDatabase` を作成し、開きます。  `GetDefaultConnect` はウィザードが自動的に作成します。  
+     渡す場合**NULL**レコード セットのコンス トラクターに、フレームワークは、レコード セットによって返される情報を使用して`GetDefaultConnect`メンバー関数を作成する、`CDatabase`オブジェクトを開きます。 ウィザード実装`GetDefaultConnect`します。  
   
--   ドキュメントの存続中にレコードセットにアクセスするときは、ドキュメントに 1 個以上の `CRecordset` または `CDaoRecordset` のオブジェクトを埋め込みます。  
+-   レコード セットをドキュメントの有効期間中にアクセスする場合は、1 つまたは複数を埋め込む`CRecordset`ドキュメント内のオブジェクト。  
   
-     このレコードセット オブジェクトは、ドキュメントの初期化時または必要に応じて、構築します。  レコードセットが既に存在する場合はそのポインターを返し、まだ存在していない場合はレコードセットを構築して開く関数を作成することもできます。  必要に応じて、レコードセットを閉じ、削除し、再作成します。または、メンバー関数 **Requery** を呼び出して、レコードを更新します。  
+     ドキュメントを初期化するときに、または必要に応じて、レコード セット オブジェクトを構築します。 既に存在する場合、または構築まだ存在しない場合は、レコード セットを開き、レコード セットにポインターを返す関数を記述する場合があります。 閉じる、削除、および、必要に応じて、レコード セットを再作成または呼び出すその**Requery**レコードを更新するメンバー関数。  
   
--   ドキュメントの存続中にデータ ソースにアクセスするときは、`CDatabase` または `CDaoDatabase` のオブジェクトをドキュメントに埋め込むか、`CDatabase` あるいは `CDaoDatabase` のオブジェクトへのポインターをドキュメントに保持します。  
+-   ドキュメントの有効期間中に、データ ソースにアクセスする場合を埋め込む、`CDatabase`オブジェクトまたはへのポインターを格納、`CDatabase`内のオブジェクト。  
   
-     `CDatabase` または `CDaoDatabase` のオブジェクトはデータ ソースとの接続を管理します。  このオブジェクトはドキュメントの構築時に自動的に構築されますが、ドキュメントの初期化時に CDatabase オブジェクトのメンバー関数 **Open** を呼び出す必要があります。  ドキュメントのメンバー関数でレコードセット オブジェクトを構築するときは、ドキュメントが持つ `CDatabase` または `CDaoDatabase` のオブジェクトへのポインターを渡します。  これによってレコードセットとデータ ソースが関連付けられます。  通常、データベース オブジェクトは、ドキュメントを閉じると、破棄されます。  レコードセット オブジェクトは、通常、関数のスコープからはずれると、破棄されます。  
+     `CDatabase`オブジェクトは、データ ソースへの接続を管理します。 ドキュメントの構築時に、自動的にオブジェクトを構築し、呼び出すその**開く**ドキュメントの初期化時に、メンバー関数。 ドキュメントへのポインターを渡すドキュメント メンバー関数内のレコード セット オブジェクトを構築するときに`CDatabase`オブジェクト。 これにより、各レコード セットがそのデータ ソースと関連付けられます。 データベース オブジェクトが破棄されるは、ドキュメントを閉じるときに通常します。 関数のスコープを終了すると、レコード セット オブジェクトが通常破棄されます。  
   
-##  <a name="_core_other_factors"></a> その他の要素  
- フォーム ベース アプリケーションでは、フレームワークが提供するドキュメントのシリアル化機構を通常は使用しません。このような場合は、\[ファイル\] メニューの \[新規作成\] コマンドおよび \[開く\] コマンドの削除、無効化、および書き換えもできます。  詳細については、「[シリアル化 : シリアル化とデータベースの入出力](../mfc/serialization-serialization-vs-database-input-output.md)」を参照してください。  
+##  <a name="_core_other_factors"></a>その他の要因  
+ フォーム ベースのアプリケーションが含まれていない、framework のドキュメントのシリアル化機構を使用するため、削除、無効化、または置換をする可能性があります、`New`と**開く**コマンドを使って、**ファイル**メニュー。 記事を参照して[シリアル化: シリアル化とします。データベースの入力/出力](../mfc/serialization-serialization-vs-database-input-output.md)です。  
   
- フレームワークがサポートする各種のユーザー インターフェイスも利用できます。  たとえば、分割ウィンドウで複数の `CRecordView` または `CDaoRecordView` のオブジェクトを使用したり、各種のマルチ ドキュメント インターフェイス \(MDI: Multiple Document Interface\) 子ウィンドウを使って複数のレコードセットを開いたりできます。  
+ 作成する場合がありますもフレームワークがサポートする多くのユーザー インターフェイス可能性を使用します。 たとえば、複数を使用する可能性があります`CRecordView`分割ウィンドウ内のオブジェクトは、複数ドキュメント インターフェイス (MDI) 子ウィンドウ、別の複数のレコード セットを開きます。  
   
- ビューの内容の印刷機能も `CRecordView` または `CDaoRecordView` で作成したフォームかどうかには関係なく、実装できます。  `CRecordView` クラスと `CDaoRecordView` クラスは `CFormView` の派生クラスであるため、印刷はサポートされませんが、メンバー関数 `OnPrint` をオーバーライドすると印刷が可能になります。  詳細については、「[CFormView クラス](../mfc/reference/cformview-class.md)」クラスを参照してください。  
+ ビューには、任意の印刷を実装することができますは、フォーム実装されるか`CRecordView`または、それ以外です。 派生したクラスとして`CFormView`、`CRecordView`が印刷をサポートしていませんが、オーバーライドできます、`OnPrint`印刷を許可するメンバー関数。 詳細については、クラスを参照してください。 [CFormView](../mfc/reference/cformview-class.md)です。  
   
- ドキュメントやビューをまったく使用しない方法もあります。  これについては、「[MFC : ドキュメントとビューを用いないデータベース クラスの使用](../data/mfc-using-database-classes-without-documents-and-views.md)」を参照してください。  
+ すべてのドキュメントとビューを使用する可能性がありますされません。 その場合を参照してください[MFC: 用いないデータベース クラスとビュー](../data/mfc-using-database-classes-without-documents-and-views.md)です。  
   
-## 参照  
- [MFC データベース クラス \(ODBC と DAO\)](../Topic/MFC%20Database%20Classes%20\(ODBC%20and%20DAO\).md)
+## <a name="see-also"></a>関連項目  
+ [MFC データベース クラス (../data/mfc-database-classes-odbc-and-dao.md)

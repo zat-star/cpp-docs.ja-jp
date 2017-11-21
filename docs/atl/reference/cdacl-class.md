@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,35 +16,18 @@ f1_keywords:
 - ATLSECURITY/ATL::CDacl::GetAceCount
 - ATLSECURITY/ATL::CDacl::RemoveAce
 - ATLSECURITY/ATL::CDacl::RemoveAllAces
-dev_langs:
-- C++
-helpviewer_keywords:
-- CDacl class
+dev_langs: C++
+helpviewer_keywords: CDacl class
 ms.assetid: 2dc76616-6362-4967-b6cf-e2d39ca37ddd
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 18da3b079cba8bbccba1a5d9655107620fc41eb8
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: f45a4fc1d69cf0caefb08a7a408ecc836d092851
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cdacl-class"></a>CDacl クラス
 このクラスは、DACL (随意アクセス制御リスト) 構造体のラッパーです。  
@@ -73,7 +55,7 @@ class CDacl : public CAcl
 |名前|説明|  
 |----------|-----------------|  
 |[CDacl::AddAllowedAce](#addallowedace)|許可される ACE (アクセス制御エントリ) を追加、`CDacl`オブジェクト。|  
-|[CDacl::AddDeniedAce](#adddeniedace)|拒否されたエースからの追加、`CDacl`オブジェクト。|  
+|[CDacl::AddDeniedAce](#adddeniedace)|拒否された、ACE の追加、`CDacl`オブジェクト。|  
 |[CDacl::GetAceCount](#getacecount)|Ace (アクセス制御エントリ) の数を返します、`CDacl`オブジェクト。|  
 |[CDacl::RemoveAce](#removeace)|特定の ACE (アクセス制御エントリ) を削除、`CDacl`オブジェクト。|  
 |[CDacl::RemoveAllAces](#removeallaces)|含まれている Ace のすべてを削除、`CDacl`オブジェクト。|  
@@ -91,7 +73,7 @@ class CDacl : public CAcl
   
  作成、追加、削除、およびから Ace を削除する指定されたクラスのメソッドを使用して、`CDacl`オブジェクト。 関連項目[AtlGetDacl](security-global-functions.md#atlgetdacl)と[AtlSetDacl](security-global-functions.md#atlsetdacl)です。  
   
- Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ Windows でアクセス制御モデルの概要については、次を参照してください。[アクセス制御](http://msdn.microsoft.com/library/windows/desktop/aa374860)Windows SDK に含まれています。  
   
 ## <a name="inheritance-hierarchy"></a>継承階層  
  [CAcl](../../atl/reference/cacl-class.md)  
@@ -272,4 +254,3 @@ void RemoveAllAces() throw();
  [Ace](http://msdn.microsoft.com/library/windows/desktop/aa374868)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [セキュリティに関するグローバル関数](../../atl/reference/security-global-functions.md)
-

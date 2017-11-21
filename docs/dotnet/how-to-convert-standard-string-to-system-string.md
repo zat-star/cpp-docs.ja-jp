@@ -1,32 +1,32 @@
 ---
-title: "方法: 標準文字列を System::String に変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "標準 C++ ライブラリ, 変換 (文字列を System::String に)"
-  - "文字列変換 [C++], 標準 C++ ライブラリ文字列"
-  - "文字列 [C++], 変換"
+title: "方法: system::string を標準文字列に変換 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- C++ Standard Library, converting strings to System::String
+- string conversion [C++], C++ Standard Library string
+- strings [C++], converting
 ms.assetid: 1fde79a0-9d0b-44e5-981b-e8f2676c199d
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: eca51cbafdb858b511facfaee5ff4dd55786c856
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: 標準文字列を System::String に変換する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、標準 C\+\+ ライブラリ文字列 \([\<string\>](../standard-library/string.md)\) を <xref:System.String> に変換する方法を説明します。  
+# <a name="how-to-convert-standard-string-to-systemstring"></a>方法: 標準文字列を System::String に変換する
+このトピックの内容表示は、C++ 標準ライブラリの文字列を変換する方法 ([\<文字列 >](../standard-library/string.md)) に、<xref:System.String>です。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // convert_standard_string_to_system_string.cpp  
@@ -48,8 +48,11 @@ int main() {
 }  
 ```  
   
-  **テスト**  
-**テスト**  
-**テスト**   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+```Output  
+test  
+test  
+test  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

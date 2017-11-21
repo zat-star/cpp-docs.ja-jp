@@ -1,64 +1,63 @@
 ---
-title: "User-Defined Attributes  (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/15/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "metadata, extending"
-  - "custom attributes, extending metadata"
+title: "ユーザー定義の属性 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- metadata, extending
+- custom attributes, extending metadata
 ms.assetid: 98b29048-a3ea-4698-8441-f149cdaec9fb
-caps.latest.revision: 27
-caps.handback.revision: 25
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "27"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b7c96ff7be36ac90560d36c3c0989379eea24777
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# User-Defined Attributes  (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-カスタム属性を使用すると、インターフェイスのメタデータが、クラス、構造体、メソッド、パラメーター、または列挙体拡張できます。  
+# <a name="user-defined-attributes--c-component-extensions"></a>ユーザー定義の属性 (C++ コンポーネント拡張)
+カスタム属性を使用すると、インターフェイス、クラスまたは構造体、メソッド、パラメーター、または列挙型のメタデータを拡張できます。  
   
-## すべてのランタイム  
- すべてのランタイム サポート カスタム属性。  
+## <a name="all-runtimes"></a>すべてのランタイム  
+ すべてのランタイムでは、カスタム属性をサポートします。  
   
-## Windows ランタイム  
- C\+\+\/CX 属性サポート プロパティのみが、属性コンストラクターまたはメソッド。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ C + + CX 属性のプロパティのみをサポートがないコンス トラクターまたはメソッドの属性です。  
   
-### 解説  
+### <a name="remarks"></a>コメント  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/ZW**  
   
-## 共通言語ランタイム  
- カスタム属性は、マネージ要素のメタデータを拡張することができます。  詳細については、「[属性](../Topic/Extending%20Metadata%20Using%20Attributes.md)」を参照してください。  
+## <a name="common-language-runtime"></a>共通言語ランタイム  
+ カスタム属性を使用して、管理対象要素のメタデータを拡張できます。 詳細については、「[属性](/dotnet/standard/attributes/index)」を参照してください。  
   
-### 解説  
- このトピックに示す情報と構文が [attribute](../windows/attribute.md)で提供される情報により優先されるようになっています。  
+### <a name="remarks"></a>コメント  
+ および構文についてこのトピックでに表示される情報を置き換えることを意図した[属性](../windows/attribute.md)です。  
   
- 型を定義し、<xref:System.Attribute> に型の基本クラスをでき、オプションで <xref:System.AttributeUsageAttribute> 属性を適用することにより、カスタム属性を定義することもできます。  
+ カスタム属性を定義するには、型を定義して<xref:System.Attribute>の種類、および必要に応じて、基本クラスを適用する、<xref:System.AttributeUsageAttribute>属性。  
   
- たとえば、Microsoft Transaction Server \(MTS\) で 1.0 トランザクションに関する動作、同期、負荷分散 ODL などのカスタム属性を使用してタイプ ライブラリに挿入されたカスタム GUID で指定されました。  したがって、MTS サーバーのクライアントはタイプ ライブラリを読み込むことによって特性を確認できます。  .NET Framework では、タイプ ライブラリのように、メタデータであり、ODL のカスタム属性のようにカスタム属性です。  また、タイプ ライブラリを読み込む方法は型のリフレクション操作に似ています。  
+ たとえばの Microsoft MTS) 1.0 では、トランザクションの場合、同期に関する動作の負荷分散などが ODL カスタム属性を使用してタイプ ライブラリに追加されたカスタム Guid により指定されました。 そのため、MTS サーバーのクライアントでは、タイプ ライブラリを参照しての特性を決定する可能性があります。 .NET Framework でタイプ ライブラリのアナログは、メタデータで、ODL カスタム属性のアナログはカスタム属性です。 また、タイプ ライブラリを読み取る型にリフレクションを使用してに似ています。  
   
  詳細については、次のトピックを参照してください。  
   
--   [Attribute Targets](../windows/attribute-targets-cpp-component-extensions.md)  
+-   [属性の対象](../windows/attribute-targets-cpp-component-extensions.md)  
   
--   [Attribute Parameter Types](../windows/attribute-parameter-types-cpp-component-extensions.md)  
+-   [属性パラメーターの型](../windows/attribute-parameter-types-cpp-component-extensions.md)  
   
- Visual C\+\+ のアセンブリの署名の詳細については、「[厳密名アセンブリ \(アセンブリ署名\)](../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)」を参照してください。  
+ Visual C でアセンブリの署名については、次を参照してください。[厳密な名前のアセンブリ (アセンブリ署名) (C + + CLI)](../dotnet/strong-name-assemblies-assembly-signing-cpp-cli.md)です。  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>例  
  **例**  
   
  次の例では、カスタム属性を定義する方法を示します。  
@@ -80,7 +79,7 @@ ref class MyClass {};
   
  **例**  
   
- 次の例では、カスタム属性の主な機能を示しています。  たとえば、この例では、カスタム属性の一般的な使用方法を示しています。: クライアントに十分に記述できるサーバーをインスタンス化します。  
+ 次の例は、カスタム属性の重要な機能の一部を示しています。 たとえば、次の例がカスタム属性の一般的な使用方法を示しています。 完全に記述できる自体をクライアントにサーバーをインスタンス化します。  
   
 ```cpp  
 // extending_metadata_b.cpp  
@@ -157,18 +156,27 @@ int main() {
   
  **出力**  
   
-  **優先度 \= 0 を処理します。**  
- **サービス アクセス \= 書き込みます**  
- **優先度 \= 3 を処理します。**  
- **サービス アクセス \= 書き込みます**  
- **優先度 \= 1 を処理します。**  
- **\= 読み取りアクセスを提供します。** **例**  
+```Output  
+Service Priority = 0  
   
- Object^ の型はバリアント型を置き換えます。  次の例では、パラメーターとして Object^ の配列を指定するカスタム属性を定義しています。  
+Service Access = Write  
   
- 属性引数は、コンパイル時の定数である; ほとんどの場合、定数リテラル。  
+Service Priority = 3  
   
- カスタム属性ブロックから System::Type の値を返す方法については、" [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) を参照してください。  
+Service Access = Write  
+  
+Service Priority = 1  
+  
+Service Access = Read  
+```  
+  
+ **例**  
+  
+ オブジェクト ^ タイプ バリアント データ型によって置き換えられます。 次の例は、オブジェクトの配列を受け取るカスタム属性を定義 ^ パラメーターとして。  
+  
+ 属性の引数はコンパイル時定数である必要があります。ほとんどの場合、定数リテラルを使用する必要があります。  
+  
+ 参照してください[typeid](../windows/typeid-cpp-component-extensions.md)については、カスタム属性ブロックから system::type の値を返す方法です。  
   
 ```cpp  
 // extending_metadata_e.cpp  
@@ -188,7 +196,7 @@ public ref class SomeClass {};
   
  **例**  
   
- ランタイムはカスタム属性クラスのパブリックな部分にシリアル化する必要があります。カスタム属性を作成すると、カスタム属性の名前付き引数は、コンパイル定数だけです。メタデータのクラスのレイアウトに付けられたビットのシーケンスであることに注意してください\)。  
+ ランタイムは、シリアル化可能なカスタム属性クラスのパブリックの部分である必要がある必要があります。  カスタム属性を作成するときに、カスタム属性の名前付き引数はコンパイル時の定数に限定されます。  (考えると、メタデータにクラス レイアウトに追加されたビットのシーケンスとして。)  
   
 ```cpp  
 // extending_metadata_f.cpp  
@@ -207,5 +215,5 @@ ref struct A : Attribute {
 ref struct B {};  
 ```  
   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+## <a name="see-also"></a>関連項目  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

@@ -1,35 +1,33 @@
 ---
-title: "コンパイラ エラー C3541 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C3541"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C3541"
+title: "コンパイラ エラー C3541 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C3541
+dev_langs: C++
+helpviewer_keywords: C3541
 ms.assetid: 252cfd4c-5fd2-415e-a17d-6b0c254350db
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 78b4c228999560807aa28dbaecfaa8f0af7b379a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラ エラー C3541
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'auto' を含む型に typeid は適用できません  
+# <a name="compiler-error-c3541"></a>コンパイラ エラー C3541
+'type': typeid は 'auto' を含む型に適用することはできません  
   
- [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md) 演算子に `auto` 指定子が含まれるため、指定された型に適用できません。  
+ [Typeid](../../windows/typeid-cpp-component-extensions.md)演算子が含まれているので、示された型には適用できません、`auto`指定子。  
   
-## 使用例  
- 次の例では、C3541 が発生します。  
+## <a name="example"></a>例  
+ 次の例では、C3541 が生成されます。  
   
 ```  
 // C3541.cpp  
@@ -43,7 +41,7 @@ int main() {
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [auto キーワード](../../cpp/auto-keyword.md)   
- [\/Zc:auto \(変数の型の推測\)](../../build/reference/zc-auto-deduce-variable-type.md)   
- [typeid](../Topic/typeid%20%20\(C++%20Component%20Extensions\).md)
+ [/Zc:auto (変数の型の推測)](../../build/reference/zc-auto-deduce-variable-type.md)   
+ [typeid](../../windows/typeid-cpp-component-extensions.md)

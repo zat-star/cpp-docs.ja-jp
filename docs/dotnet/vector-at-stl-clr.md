@@ -1,45 +1,43 @@
 ---
-title: "vector::at (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::vector::at"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "at メンバー [STL/CLR]"
+title: "vector::at (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::vector::at
+dev_langs: C++
+helpviewer_keywords: at member [STL/CLR]
 ms.assetid: 9af9f829-48b8-4906-ba4a-b43454acb2c7
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 902652b8b74c11f79aad09079ea3ebb42d0d2ff0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# vector::at (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="vectorat-stlclr"></a>vector::at (STL/CLR)
 指定した位置にある要素にアクセスします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 reference at(size_type pos);  
 ```  
   
-#### パラメーター  
- pos  
+#### <a name="parameters"></a>パラメーター  
+ 発注書  
  アクセスする要素の位置。  
   
-## 解説  
- このメンバー関数は `pos`位置で被制御シーケンスの要素への参照を返します。  位置を知っている要素を読み取りまたは書き込みを行う場合に使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、位置にある被制御シーケンスの要素への参照を返します`pos`です。 読み取ったり書き込んだりする要素の位置に使用することがわかっています。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_vector_at.cpp   
@@ -68,13 +66,16 @@ int main()
   
 ```  
   
-  **b c**  
- **x c**   
-## 必要条件  
- **ヘッダー:** の \<cliext とベクター\>  
+```Output  
+a b c  
+a x c  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/vector >  
   
-## 参照  
- [ベクター](../dotnet/vector-stl-clr.md)   
- [vector::operator](../dotnet/vector-operator-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [vector::operator(STL/CLR)](../dotnet/vector-operator-stl-clr.md)

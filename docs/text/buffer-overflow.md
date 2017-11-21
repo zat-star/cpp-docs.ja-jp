@@ -1,30 +1,30 @@
 ---
-title: "バッファー オーバーフロー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "バッファー オーバーフロー [C++]"
-  - "バッファー [C++], 文字サイズ"
-  - "MBCS [C++], バッファー オーバーフロー"
+title: "バッファー オーバーフローが発生 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- buffers [C++], character sizes
+- buffer overflows [C++]
+- MBCS [C++], buffer overflow
 ms.assetid: f2b7e40a-f02b-46d8-a449-51d26fc0c663
-caps.latest.revision: 8
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: c5d5cb06359cb8328347426efbe3618276e1ebf1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# バッファー オーバーフロー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-文字のサイズが異なると、文字をバッファーへ入れるときに問題となります。  文字列 `sz` から文字をバッファー `rgch` へコピーする次のコードを考えてみます。  
+# <a name="buffer-overflow"></a>バッファー オーバーフロー
+文字のサイズを変更すると、バッファーに文字を配置するときに問題が発生することができます。 次のコードは、文字列から文字をコピー、 `sz`、バッファーに`rgch`:  
   
 ```  
 cb = 0;  
@@ -32,7 +32,7 @@ while( cb < sizeof( rgch ) )
     rgch[ cb++ ] = *sz++;  
 ```  
   
- 問題は、最後にコピーされたバイトが先行バイトかどうかということです。  次のコードはバッファーをオーバーフローする可能性があるため、この問題は解決されません。  
+ この質問が: 最後のバイトが先行バイトをコピーしますか? 次は問題が解決しない、バッファー オーバーフローする可能性がある可能性があるため。  
   
 ```  
 cb = 0;  
@@ -44,7 +44,7 @@ while( cb < sizeof( rgch ) )
 }  
 ```  
   
- `_mbccpy` 呼び出しは、1 バイトか 2 バイトかに関係なく、文字全体をコピーするため、正しく動作するように見えます。  しかし、コピーされる最後の文字が 2 バイトの場合に最後の文字がバッファーに入らなくなる可能性については考慮されていません。  その点を解決するには次のようにします。  
+ `_mbccpy`呼び出しが、正しいことを実現しようとしています。-1 バイトまたは 2 バイトであるかどうか、完全な文字をコピーします。 コピーされる最後の文字可能性がありますで処理できないこと、バッファーの文字が 2 バイト幅である場合に取りません。 解決するには。  
   
 ```  
 cb = 0;  
@@ -56,11 +56,11 @@ while( (cb + _mbclen( sz )) <= sizeof( rgch ) )
 }  
 ```  
   
- このコードは、`_mbclen` を使って `sz` が指す現在の文字のサイズを調べることにより、ループ テストでバッファーのオーバーフローをテストしています。  `_mbsnbcpy` 関数を呼び出すことにより、`while` ループのコードを 1 行のコードで置き換えることができます。  たとえば、次のようになります。  
+ このコードは、ループでバッファーのオーバーフローのテストを使用してテスト`_mbclen`によって示される現在の文字のサイズをテストする`sz`です。 呼び出すことによって、`_mbsnbcpy`関数内のコードを置き換えることができます、`while`コードの 1 つの行をループします。 例:  
   
 ```  
 _mbsnbcpy( rgch, sz, sizeof( rgch ) );  
 ```  
   
-## 参照  
- [MBCS のプログラミングについて](../Topic/MBCS%20Programming%20Tips.md)
+## <a name="see-also"></a>関連項目  
+ [MBCS のプログラミングについて](../text/mbcs-programming-tips.md)

@@ -1,41 +1,39 @@
 ---
-title: "hash_map::value_comp (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_map::value_comp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "value_comp メンバー [STL/CLR]"
+title: "hash_map::value_comp (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_map::value_comp
+dev_langs: C++
+helpviewer_keywords: value_comp member [STL/CLR]
 ms.assetid: b11a2dee-07e8-450c-8f85-979c0a15ae64
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9ce47b23e3db1b7194f80cb2ef4ce1fda21b10e6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_map::value_comp (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 要素の値の順序のデリゲートをコピーします。  
+# <a name="hashmapvaluecomp-stlclr"></a>hash_map::value_comp (STL/CLR)
+2 つの要素値の順序付けのデリゲートをコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 value_compare^ value_comp();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの並べ替えに使用されるごとにデリゲートを返します。  2 要素の値を比較するときに使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数では、被制御シーケンスの並べ替えに使用される順序付けのデリゲートを返します。 使用する 2 つの要素値を比較します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_map_value_comp.cpp   
@@ -63,15 +61,18 @@ int main()
   
 ```  
   
-  **\(\[\] L'a、1、1、L'a \[\]\) \= True を比較します。**  
-**\(\[\] L'a、1、2、L'b \[\]\) \= True を比較します。**  
-**\(\[\] L'b、2、1、L'a \[\]\) \= false を比較します。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+compare([L'a', 1], [L'a', 1]) = True  
+compare([L'a', 1], [L'b', 2]) = True  
+compare([L'b', 2], [L'a', 1]) = False  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_map](../dotnet/hash-map-stl-clr.md)   
- [hash\_map::value\_compare](../dotnet/hash-map-value-compare-stl-clr.md)   
- [hash\_map::value\_type](../dotnet/hash-map-value-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
+ [hash_map::value_compare (STL/CLR)](../dotnet/hash-map-value-compare-stl-clr.md)   
+ [hash_map::value_type (STL/CLR)](../dotnet/hash-map-value-type-stl-clr.md)

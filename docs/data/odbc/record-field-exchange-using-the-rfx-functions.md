@@ -1,60 +1,60 @@
 ---
-title: "レコード フィールド エクスチェンジ: RFX 関数の使い方 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ型 [C++], ODBC レコード フィールド エクスチェンジ"
-  - "DoFieldExchange メソッド, および RFX 関数"
-  - "関数呼び出し, RFX 関数"
-  - "ODBC [C++], データ型"
-  - "ODBC [C++], RFX"
-  - "RFX (ODBC) [C++], データ型"
-  - "RFX (ODBC) [C++], 関数構文とパラメーター"
+title: "レコード フィールド エクス チェンジ: RFX 関数の使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ODBC [C++], data types
+- data types [C++], ODBC record field exchange
+- RFX (ODBC) [C++], function syntax and parameters
+- DoFieldExchange method, and RFX functions
+- ODBC [C++], RFX
+- RFX (ODBC) [C++], data types
+- function calls, RFX functions
 ms.assetid: c594300b-5a29-4119-a68b-e7ca32def696
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 6c330ee2f9d3952068e2a400cd8f6e23103dc20e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコード フィールド エクスチェンジ: RFX 関数の使い方
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、`DoFieldExchange` オーバーライドの中心部分となる RFX 関数呼び出しの使用方法について説明します。  
+# <a name="record-field-exchange-using-the-rfx-functions"></a>レコード フィールド エクスチェンジ: RFX 関数の使い方
+このトピックの本文を構成する RFX 関数の呼び出しを使用する方法について説明、`DoFieldExchange`をオーバーライドします。  
   
 > [!NOTE]
->  このトピックの内容は、バルク行フェッチが実装されていない [CRecordset](../Topic/CRecordset%20Class.md) の派生クラスを対象にしています。  バルク行フェッチを使用している場合は、バルク レコード フィールド エクスチェンジ \(Bulk RFX: Bulk Record Field Exchange\) が実装されています。  Bulk RFX と RFX は似ています。  両者の差異については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  このトピックの対象から派生したクラス[CRecordset](../../mfc/reference/crecordset-class.md)バルク行フェッチは実装されていません。 バルク行フェッチを使用している場合は、バルク レコード フィールド エクス チェンジ (Bulk RFX) が実装されます。 バルク rfx 関数は rfx 関数に似ています。 相違点を理解するのを参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- RFX グローバル関数は、データ ソースの列とレコードセットのフィールド データ メンバー間でデータを交換します。  レコードセットのメンバー関数 [DoFieldExchange](../Topic/CRecordset::DoFieldExchange.md) に RFX 関数呼び出しコードを作成します。  ここでは、RFX 関数の概要と RFX 関数が用意されているデータ型について説明します。  新しく定義したデータ型に対する RFX 関数を独自に作成する方法については、「[テクニカル ノート 43: RFX ルーチン](../Topic/TN043:%20RFX%20Routines.md)」で説明されています。  
+ RFX のグローバル関数は、データ ソースとフィールド データ メンバーで、レコード セット内の列の間でデータを交換します。 レコード セットの RFX 関数を記述する[DoFieldExchange](../../mfc/reference/crecordset-class.md#dofieldexchange)メンバー関数。 このトピックでは、関数を簡単に説明し、どの rfx 関数は、使用可能なデータ型を示します。 [テクニカル ノート 43](../../mfc/tn043-rfx-routines.md)追加のデータ型の RFX 関数を記述する方法について説明します。  
   
-##  <a name="_core_rfx_function_syntax"></a> RFX 関数の構文  
- 各 RFX 関数は、次の 3 つのパラメーターを使用します \(これ以外に 1 個または 2 個のオプション パラメーターを使用する関数もあります\)。  
+##  <a name="_core_rfx_function_syntax"></a>RFX 関数の構文  
+ 各 RFX 関数は 3 つのパラメーターを受け取ります (および、省略可能な 4 番目または 5 番目のパラメーターを受け取る一部)。  
   
--   [CFieldExchange](../../mfc/reference/cfieldexchange-class.md) オブジェクトへのポインターを返します。  `DoFieldExchange` に渡された `pFX` ポインターをそのまま渡します。  
+-   ポインター、 [CFieldExchange](../../mfc/reference/cfieldexchange-class.md)オブジェクト。 に沿って渡します、`pFX`にポインターを渡す`DoFieldExchange`です。  
   
--   データ ソース中の列名。  
+-   データ ソースに列の名前が表示されます。  
   
--   レコードセット クラス内の対応するフィールド データ メンバーまたはパラメーター データ メンバーの名前。  
+-   対応するフィールド データ メンバーまたはレコード セット クラス内のパラメーターのデータ メンバーの名前。  
   
--   転送する文字列または配列の最大長を指定できる関数もあります。  既定値は 255 バイトですが、必要に応じて変更できます。  最大値は、`CString` オブジェクトの最大値である **INT\_MAX** \(2,147,483,647 バイト\) ですが、通常はそれ以前にドライバーの限界に達します。  
+-   (省略可能)で、関数、文字列または配列を転送中の最大長の一部です。 既定値は 255 (バイト単位) が、これを変更する可能性があります。 最大サイズはの最大サイズに基づいて、`CString`オブジェクト- **INT_MAX** (2,147, 483,647) バイト-サイズにする前にドライバーの制限が発生する可能性がありますが、します。  
   
--   `RFX_Text` 関数では、列のデータ型を指定する第 5 パラメーターを取る場合もあります。  
+-   (省略可能)`RFX_Text`関数、ことがありますパラメーターを使用する 5 番目の列のデータ型を指定します。  
   
- 詳細については、『MFC リファレンス』の「[マクロ、グローバル関数、およびグローバル変数](../Topic/Macros,%20Global%20Functions,%20and%20Global%20Variables.md)」で各 RFX 関数の解説を参照してください。  パラメーターの特殊な使い方の例については、「[レコードセット : 集計値の計算 \(ODBC\)](../../data/odbc/recordset-obtaining-sums-and-other-aggregate-results-odbc.md)」を参照してください。  
+ 詳細については、下にある RFX 関数を参照してください。[マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)で、*クラス ライブラリ リファレンス*です。 特殊な使い方の例については、パラメーターの使用を参照してください[レコード セット: 集計およびその他の集計計算 (ODBC)](../../data/odbc/recordset-obtaining-sums-and-other-aggregate-results-odbc.md)です。  
   
-##  <a name="_core_rfx_data_types"></a> RFX 関数とデータ型  
- クラス ライブラリには、データ ソースとレコードセット間で各種のデータ型を転送するための RFX 関数が多数用意されています。  次の表に、RFX 関数とデータ型の対応を示します。  RFX 関数を直接呼び出すには、データ型に応じてこれらの関数を使い分けます。  
+##  <a name="_core_rfx_data_types"></a>RFX データ型  
+ クラス ライブラリには、データ ソースとレコード セットの間で多数の異なるデータ型を転送するための RFX 関数が用意されています。 次の一覧には、データ型での RFX 関数の概要を示します。 RFX 関数呼び出しを記述する必要がありますの場合、データ型でこれらの関数から選択します。  
   
 |関数|データ型|  
-|--------|----------|  
+|--------------|---------------|  
 |`RFX_Bool`|**BOOL**|  
 |`RFX_Byte`|**BYTE**|  
 |`RFX_Binary`|`CByteArray`|  
@@ -66,12 +66,13 @@ caps.handback.revision: 8
 |`RFX_Text`|`CString`|  
 |`RFX_Date`|`CTime`|  
   
- 詳細については、『MFC リファレンス』の「[マクロ、グローバル関数、およびグローバル変数](../Topic/Macros,%20Global%20Functions,%20and%20Global%20Variables.md)」で各 RFX 関数の解説を参照してください。  C\+\+ のデータ型の SQL のデータ型への対応については、「[SQL : SQL と C\+\+ のデータ型 \(ODBC\)](../../data/odbc/sql-sql-and-cpp-data-types-odbc.md)」の表「ANSI SQL データ型と C\+\+ データ型の対応」を参照してください。  
+
+ 詳細については、マニュアルを参照して、RFX 関数 [マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)で、*クラス ライブラリ リファレンス*です。 C++ のデータ型が SQL データ型にマップする方法については、ANSI SQL データ型にマップ C++ のデータ型の表を参照してください。  [SQL: SQL と C++ のデータ型 (ODBC)](../../data/odbc/sql-sql-and-cpp-data-types-odbc.md)です。  
   
-## 参照  
- [レコード フィールド エクスチェンジ \(RFX\)](../../data/odbc/record-field-exchange-rfx.md)   
- [レコード フィールド エクスチェンジ: RFX の動作のしくみ](../../data/odbc/record-field-exchange-how-rfx-works.md)   
- [レコードセット: パラメーターを利用したレコードセット \(ODBC\)](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   
- [レコードセット: データ列を動的に結びつける方法 \(ODBC\)](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)   
- [CRecordset クラス](../Topic/CRecordset%20Class.md)   
+## <a name="see-also"></a>関連項目  
+ [レコード フィールド エクス (チェンジ RFX)](../../data/odbc/record-field-exchange-rfx.md)   
+ [レコード フィールド エクス チェンジ: RFX の動作方法](../../data/odbc/record-field-exchange-how-rfx-works.md)   
+ [レコード セット: レコード セット (ODBC) のパラメーター化](../../data/odbc/recordset-parameterizing-a-recordset-odbc.md)   
+ [レコード セット: 動的に結びつける方法 (ODBC) のデータ列](../../data/odbc/recordset-dynamically-binding-data-columns-odbc.md)   
+ [CRecordset クラス](../../mfc/reference/crecordset-class.md)   
  [CFieldExchange クラス](../../mfc/reference/cfieldexchange-class.md)

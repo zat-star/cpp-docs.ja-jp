@@ -1,33 +1,30 @@
 ---
-title: "operator&gt;= (set) (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set::operator>="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator>= メンバー [STL/CLR]"
+title: "演算子&gt;= (set) (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::set::operator>=
+dev_langs: C++
+helpviewer_keywords: operator>= member [STL/CLR]
 ms.assetid: d08a0fc9-02e4-4e05-b469-bac325c38370
-caps.latest.revision: 15
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 37b295712e1a6bd0703c4ca0ed09675622ad8b70
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# operator&gt;= (set) (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-大きなリスト、または等価比較に使用します。  
+# <a name="operatorgt-set-stlclr"></a>演算子&gt;= (set) (STL/CLR)
+リストよりも大きいまたは等しい比較します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Key>  
@@ -35,17 +32,17 @@ template<typename Key>
         set<Key>% right);  
 ```  
   
-#### パラメーター  
- \[left\]  
- 比較の左辺のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 左へ  
+ 比較する左のコンテナー。  
   
- \[right\]  
- 比較の右辺のコンテナー。  
+ 右  
+ 比較する右のコンテナー。  
   
-## 解説  
- 演算子関数の戻り値 `!(``left``<``right``)`。  2 組の要素によって比較された要素の場合 `left` が `right` の前に順序付けされていないかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ 演算子関数を返します`!(left < right)`です。 テストするために使用するかどうか`left`する前に順序付けされていない`right`と 2 つのセットは、要素で要素を比較します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_set_operator_ge.cpp   
@@ -85,19 +82,22 @@ int main()
   
 ```  
   
-  **b c**  
- **b d**  
-**\[\] \>b c \= b c \[\]当てはまります。**  
-**\[\] \>b c d \= b \[\] false です。**   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+```Output  
+ a b c  
+ a b d  
+[a b c] >= [a b c] is True  
+[a b c] >= [a b d] is False  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext と set >  
   
-## 参照  
- [設定](../dotnet/set-stl-clr.md)   
- [operator\=\= \(set\)](../dotnet/operator-equality-set-stl-clr.md)   
- [operator\!\= \(set\)](../dotnet/operator-inequality-set-stl-clr.md)   
- [operator\< \(set\)](../dotnet/operator-less-than-set-stl-clr.md)   
- [operator\> \(set\)](../Topic/operator%3E%20\(set\)%20\(STL-CLR\).md)   
- [operator\<\= \(set\)](../dotnet/operator-less-or-equal-set-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [設定 (STL/CLR)](../dotnet/set-stl-clr.md)   
+ [演算子 = = (set) (STL/CLR)](../dotnet/operator-equality-set-stl-clr.md)   
+ [operator! = (set) (STL/CLR)](../dotnet/operator-inequality-set-stl-clr.md)   
+ [演算子\<(set) (STL/CLR)](../dotnet/operator-less-than-set-stl-clr.md)   
+ [operator > (set) (STL/CLR)](../dotnet/operator-greater-than-set-stl-clr.md)   
+ [operator<= (set) (STL/CLR)](../dotnet/operator-less-or-equal-set-stl-clr.md)

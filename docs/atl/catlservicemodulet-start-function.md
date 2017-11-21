@@ -1,37 +1,37 @@
 ---
-title: "CAtlServiceModuleT::Start 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CServiceModule.Start"
-  - "CServiceModule::Start"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Start メソッド"
+title: "CAtlServiceModuleT::Start 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CServiceModule.Start
+- CServiceModule::Start
+dev_langs: C++
+helpviewer_keywords: Start method
 ms.assetid: b5193a23-41bc-42d2-8d55-3eb43dc62238
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c3eb7009e8092184effad5e1874297c8c04b213e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CAtlServiceModuleT::Start 関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次 `CAtlServiceModuleT::Start`を呼び出すサービスが実行されると、**\_tWinMain** は **CAtlServiceModuleT::WinMain**を呼び出します。  
+# <a name="catlservicemoduletstart-function"></a>CAtlServiceModuleT::Start 関数
+サービスが実行されると**_tWinMain**呼び出し**起動時**、さらに呼び出す`CAtlServiceModuleT::Start`です。  
   
- `CAtlServiceModuleT::Start` は起動関数に各サービスをマップする **SERVICE\_TABLE\_ENTRY** の構造体の配列を設定します。  この配列は Win32 API 関数、[StartServiceCtrlDispatcher](http://msdn.microsoft.com/library/windows/desktop/ms686324)に渡されます。  理論的には、EXE 1 は、複数サービスを処理し、配列は **SERVICE\_TABLE\_ENTRY** の複数の構造を持つことができます。  現在、ATL 生成されたサービスは EXE ごとに 1 回サービスのみが。  したがって、配列に起動関数としてサービス名と **\_ServiceMain** を含む単一エントリがあります。  **\_ServiceMain** は静的でないメンバー関数を呼び出す `CAtlServiceModuleT`、`ServiceMain`の静的メンバー関数です。  
+ `CAtlServiceModuleT::Start`配列を設定**SERVICE_TABLE_ENTRY**のスタートアップの機能を各サービスをマップする構造。 この配列は、Win32 API 関数に渡され[余分](http://msdn.microsoft.com/library/windows/desktop/ms686324)です。 1 つの EXE は理論上は、複数のサービスを処理する可能性があり、配列が複数あって**SERVICE_TABLE_ENTRY**構造体。 現時点では、ただし、ATL で生成されたサービスをサポートしている EXE ごとにサービスを 1 つだけです。 したがって、配列では、サービス名を含む 1 つのエントリと**_ServiceMain**スタートアップ関数とします。 **_ServiceMain**の静的メンバー関数は、`CAtlServiceModuleT`非静的メンバー関数を呼び出す`ServiceMain`です。  
   
 > [!NOTE]
->  **StartServiceCtrlDispatcher** のエラーは、Services Control Manager \(SCM\) に接続する、プログラムがサービスとして実行されていないことを意味します。  この場合は、プログラムがローカル サーバーとして実行できるように `CAtlServiceModuleT::Run` を直接呼び出します。  ローカル サーバーとしてプログラムを実行する方法の詳細については、[デバッグのヒント](../atl/debugging-tips.md)を参照してください。  
+>  エラー**余分**にサービス コントロールへの接続マネージャー (SCM) こと可能性があります、プログラムがサービスとして実行されていないこと。 この場合、呼び出しプログラム`CAtlServiceModuleT::Run`直接、プログラムがローカル サーバーとして実行できるようにします。 ローカル サーバーとして、プログラムの実行の詳細については、次を参照してください。[デバッグのヒント](../atl/debugging-tips.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [サービス](../atl/atl-services.md)   
- [CAtlServiceModuleT::Start](../Topic/CAtlServiceModuleT::Start.md)
+ [CAtlServiceModuleT::Start](../atl/reference/catlservicemodulet-class.md#start)
+

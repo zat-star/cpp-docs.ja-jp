@@ -1,41 +1,39 @@
 ---
-title: "deque::difference_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::deque::difference_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "difference_type メンバー [STL/CLR]"
+title: "deque::difference_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::deque::difference_type
+dev_langs: C++
+helpviewer_keywords: difference_type member [STL/CLR]
 ms.assetid: deb00a44-80c7-42f8-ad17-1d36377dec88
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 5ae72f643d6c2f567667a0bae740dd56ed05a5b5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# deque::difference_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 個の要素間の符号付きな間隔の種類。  
+# <a name="dequedifferencetype-stlclr"></a>deque::difference_type (STL/CLR)
+2 つの要素間の距離を符号付きの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef int difference_type;  
 ```  
   
-## 解説  
- 型は符号付きな要素数を表します。  
+## <a name="remarks"></a>コメント  
+ この型は、符号付き要素の数を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_deque_difference_type.cpp   
@@ -70,14 +68,17 @@ int main()
   
 ```  
   
-  **b c**  
-**end\(\)\- \(\) \= 3 を開始します。**  
-**begin\(\)\- end \(\) \= \-3**   
-## 必要条件  
- **ヘッダー:** \<cliext\/deque\>  
+```Output  
+ a b c  
+end()-begin() = 3  
+begin()-end() = -3  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/deque >  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [deque::size\_type](../dotnet/deque-size-type-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [deque::size_type (STL/CLR)](../dotnet/deque-size-type-stl-clr.md)

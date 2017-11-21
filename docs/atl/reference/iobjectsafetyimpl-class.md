@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -14,44 +13,28 @@ f1_keywords:
 - ATLCTL/ATL::IObjectSafetyImpl::GetInterfaceSafetyOptions
 - ATLCTL/ATL::IObjectSafetyImpl::SetInterfaceSafetyOptions
 - ATLCTL/ATL::IObjectSafetyImpl::m_dwCurrentSafety
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - controls [ATL], safe
 - safe for scripting and initialization (controls)
 - IObjectSafety, ATL implementation
 - IObjectSafetyImpl class
 ms.assetid: 64e32082-d910-4a8a-a5bf-ebed9145359d
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: cdcc008797e94988fb42fd6239603fa300a84233
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 3b1c0369acceb792af26b7e9c8e8fd49f82a4468
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="iobjectsafetyimpl-class"></a>IObjectSafetyImpl クラス
 このクラスの既定の実装を提供する、`IObjectSafety`インターフェイスを取得し、オブジェクトの安全性レベルを設定するクライアントを許可します。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -89,7 +72,7 @@ class IObjectSafetyImpl
 ## <a name="remarks"></a>コメント  
  クラス`IObjectSafetyImpl`の既定の実装を提供`IObjectSafety`です。 `IObjectSafety`インターフェイスにより、クライアントが取得され、オブジェクトの安全性レベルを設定します。 たとえば、web ブラウザーを呼び出すことができます**IObjectSafety::SetInterfaceSafetyOptions**初期化に対して安全またはスクリプトを実行して安全なコントロールを作成します。  
   
- 使用して、 [IMPLEMENTED_CATEGORY](category-macros.md#implemented_category)マクロを**CATID_SafeForScripting**と**CATID_SafeForInitializing**コンポーネントのカテゴリは、コンポーネントが安全でないことを指定する代替方法を提供します。  
+ 使用して、 [IMPLEMENTED_CATEGORY](category-macros.md#implemented_category)マクロを**CATID_SafeForScripting**と**CATID_SafeForInitializing**コンポーネントのカテゴリは、代替手法を提供コンポーネントが安全でないことを指定する方法です。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -117,7 +100,7 @@ HRESULT GetInterfaceSafetyOptions(
 > [!IMPORTANT]
 >  サポートする任意のオブジェクト`IObjectSafety`に独自のセキュリティと任意のオブジェクトを代行させるを担当します。 プログラマ必要があります、ユーザーのコンテキストでのコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングと適切なゾーン チェックを実行します。  
   
- 参照してください[IObjectSafety::GetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768223.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IObjectSafety::GetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768223.aspx) Windows SDK にします。  
   
 ##  <a name="m_dwcurrentsafety"></a>IObjectSafetyImpl::m_dwCurrentSafety  
  オブジェクトの現在の安全性レベルを格納します。  
@@ -142,9 +125,8 @@ HRESULT SetInterfaceSafetyOptions(
 > [!IMPORTANT]
 >  サポートする任意のオブジェクト`IObjectSafety`に独自のセキュリティと任意のオブジェクトを代行させるを担当します。 プログラマ必要があります、ユーザーのコンテキストでのコードを実行する際に生じる問題を考慮、クロスサイト スクリプティングと適切なゾーン チェックを実行します。  
   
- 参照してください[IObjectSafety::SetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768225.aspx)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IObjectSafety::SetInterfaceSafetyOptions](https://msdn.microsoft.com/library/aa768225.aspx) Windows SDK にします。  
   
 ## <a name="see-also"></a>関連項目  
  [IObjectSafety インターフェイス](https://msdn.microsoft.com/library/aa768224.aspx)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

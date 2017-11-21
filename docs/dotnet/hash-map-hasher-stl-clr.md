@@ -1,42 +1,40 @@
 ---
-title: "hash_map::hasher (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_map::hasher"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "hasher メンバー [STL/CLR]"
+title: "hash_map::hasher (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_map::hasher
+dev_langs: C++
+helpviewer_keywords: hasher member [STL/CLR]
 ms.assetid: 72e4c4c9-ea35-4f75-98bb-e53979706de1
-caps.latest.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 15
+caps.latest.revision: "17"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1e51ad2ff52894286c7313596464762e4c516c92
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_map::hasher (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmaphasher-stlclr"></a>hash_map::hasher (STL/CLR)
 キーのハッシュのデリゲート。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Microsoft::VisualC::StlClr::UnaryDelegate<GKey, int>  
     hasher;  
 ```  
   
-## 解説  
- 型は Integer にキー値を変換するデリゲートについて説明します。  
+## <a name="remarks"></a>コメント  
+ この型は、キーの値を整数に変換するデリゲートを表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_map_hasher.cpp   
@@ -56,13 +54,16 @@ int main()
   
 ```  
   
-  **ハッシュ \(L'a\) \= 1616896120**  
-**ハッシュ \(L'b\) \= 570892832**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+hash(L'a') = 1616896120  
+hash(L'b') = 570892832  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_map](../dotnet/hash-map-stl-clr.md)   
- [hash\_map::hash\_delegate](../dotnet/hash-map-hash-delegate-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
+ [hash_map::hash_delegate (STL/CLR)](../dotnet/hash-map-hash-delegate-stl-clr.md)

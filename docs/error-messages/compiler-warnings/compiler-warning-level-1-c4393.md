@@ -1,34 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4393 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4393"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4393"
+title: "コンパイラの警告 (レベル 1) C4393 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4393
+dev_langs: C++
+helpviewer_keywords: C4393
 ms.assetid: 353a0539-d1ea-4c1b-8849-c9b321ec9842
-caps.latest.revision: 9
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 76c29081f2423464f235e7ff15b76b7bdcb35d3a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4393
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'var' : コンストに 'literal' データ メンバーでプログラム上の作用がありません。無視されます  
+# <a name="compiler-warning-level-1-c4393"></a>コンパイラの警告 (レベル 1) C4393
+'var': const リテラル データ メンバーに影響を与えません無視されます。  
   
- [リテラル](../../windows/literal-cpp-component-extensions.md) のデータ メンバーも定数として指定されました。リテラル データ メンバーは定数を意味するため、宣言に定数を追加する必要はありません。  
+ A[リテラル](../../windows/literal-cpp-component-extensions.md)データ メンバーを定数としても指定されました。  リテラル データ メンバーには、const からわかるように、のでする必要はありませんを追加する宣言に定数。  
   
- 次の例では警告 C4393 が生成されます。  
+ 次の例では、C4393 が生成されます。  
   
 ```  
 // C4393.cpp  

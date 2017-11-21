@@ -1,41 +1,39 @@
 ---
-title: "collection_adapter::size_type (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::collection_adapter::size_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size_type メンバー [STL/CLR]"
+title: "collection_adapter::size_type (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::collection_adapter::size_type
+dev_langs: C++
+helpviewer_keywords: size_type member [STL/CLR]
 ms.assetid: 3a0270cd-02ec-422f-85e2-577c71871057
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 183ef6fa3219f4f20e8791a01cd133ac1ea4b9f2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# collection_adapter::size_type (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 要素間の符号付きな間隔の種類。  
+# <a name="collectionadaptersizetype-stlclr"></a>collection_adapter::size_type (STL/CLR)
+2 つの要素の間の距離を符号付きの型。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 typedef int size_type;  
 ```  
   
-## 解説  
- 型は負の要素数を指定します。  
+## <a name="remarks"></a>コメント  
+ この型は、負でない要素の数を表します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_collection_adapter_size_type.cpp   
@@ -62,12 +60,15 @@ int main()
   
 ```  
   
-  **X x x x x X**  
-**size\(\) \= 6**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+ x x x x x x  
+size() = 6  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [collection\_adapter](../Topic/collection_adapter%20\(STL-CLR\).md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [collection_adapter (STL/CLR)](../dotnet/collection-adapter-stl-clr.md)

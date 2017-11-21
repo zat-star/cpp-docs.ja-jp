@@ -1,36 +1,35 @@
 ---
-title: "stack (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::stack"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<cliext/stack> ヘッダー [STL/CLR]"
-  - "<stack> ヘッダー [STL/CLR]"
-  - "stack クラス [STL/CLR]"
+title: "スタック (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::stack
+dev_langs: C++
+helpviewer_keywords:
+- <stack> header [STL/CLR]
+- <cliext/stack> header [STL/CLR]
+- stack class [STL/CLR]
 ms.assetid: 6ee96b9f-8a33-4cf7-b7e0-6535c24bdefb
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: dad00eecc05b8b3020dcf024b297b4b090317ee4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# stack (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、オブジェクトをコントロール、後入れ先出し \(LIFO\) アクセスを持つ要素の可変長シーケンスを記述します。  後で入れ子になったコレクション型スタックとして基になるコンテナーを管理するためにコンテナーのアダプター `stack` を使用します。  
+# <a name="stack-stlclr"></a>stack (STL/CLR)
+このテンプレート クラスでは、後入れ先出しのアクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナー アダプターを使用する`stack`プッシュ ダウン スタックとの基になるコンテナーを管理します。  
   
- 以下の説明では `GValue` は `Value` な型が `Value^`場合、後者は ref 型である同じです。  同様に、`GContainer` は `Container` な型が `Container^`場合、後者は ref 型である同じです。  
+ 下記に、`GValue`と同じ`Value`ref 型を後者には、しない限り、どのケースでは`Value^`します。 同様に、`GContainer`と同じ`Container`ref 型を後者には、しない限り、どのケースでは`Container^`します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Value,  
@@ -42,71 +41,71 @@ template<typename Value,
     { ..... };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  値  
  被制御シーケンス内の要素の型。  
   
- \[コンテナー\]  
+ コンテナー  
  基になるコンテナーの型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
 |型定義|説明|  
-|---------|--------|  
-|[stack::const\_reference](../dotnet/stack-const-reference-stl-clr.md)|要素への定数参照の型です。|  
-|[stack::container\_type](../dotnet/stack-container-type-stl-clr.md)|基になるコンテナーの型。|  
-|[stack::difference\_type](../dotnet/stack-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[stack::generic\_container](../Topic/stack::generic_container%20\(STL-CLR\).md)|コンテナーのアダプターのジェネリック インターフェイスの種類。|  
-|[stack::generic\_value](../dotnet/stack-generic-value-stl-clr.md)|コンテナーのアダプターのジェネリック インターフェイスの要素の型。|  
-|[stack::reference](../dotnet/stack-reference-stl-clr.md)|要素への参照の型です。|  
-|[stack::size\_type](../dotnet/stack-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
-|[stack::value\_type](../dotnet/stack-value-type-stl-clr.md)|要素の型。|  
+|---------------------|-----------------|  
+|[stack::const_reference (STL/CLR)](../dotnet/stack-const-reference-stl-clr.md)|要素への定数参照の型です。|  
+|[stack::container_type (STL/CLR)](../dotnet/stack-container-type-stl-clr.md)|基になるコンテナーの型。|  
+|[stack::difference_type (STL/CLR)](../dotnet/stack-difference-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[stack::generic_container (STL/CLR)](../dotnet/stack-generic-container-stl-clr.md)|コンテナー アダプターのジェネリック インターフェイスの型。|  
+|[stack::generic_value (STL/CLR)](../dotnet/stack-generic-value-stl-clr.md)|コンテナー アダプターのジェネリック インターフェイスの要素の型。|  
+|[stack::reference (STL/CLR)](../dotnet/stack-reference-stl-clr.md)|要素への参照の型です。|  
+|[stack::size_type (STL/CLR)](../dotnet/stack-size-type-stl-clr.md)|2 つの要素間の距離を表す、符号付きの型です。|  
+|[stack::value_type (STL/CLR)](../dotnet/stack-value-type-stl-clr.md)|要素の型。|  
   
 |メンバー関数|説明|  
-|------------|--------|  
-|[stack::assign](../Topic/stack::assign%20\(STL-CLR\).md)|すべての要素を置き換えます。|  
-|[stack::empty](../dotnet/stack-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
-|[stack::get\_container](../Topic/stack::get_container%20\(STL-CLR\).md)|基になるコンテナーにアクセスします。|  
-|[stack::pop](../Topic/stack::pop%20\(STL-CLR\).md)|最後の要素を削除します。|  
-|[stack::push](../dotnet/stack-push-stl-clr.md)|新しい最後の要素を追加します。|  
-|[stack::size](../dotnet/stack-size-stl-clr.md)|要素の数をカウントします。|  
-|[stack::stack](../dotnet/stack-stack-stl-clr.md)|コンテナー オブジェクトを構築します。|  
-|[stack::top](../dotnet/stack-top-stl-clr.md)|最後の要素にアクセスします。|  
-|[stack::to\_array](../dotnet/stack-to-array-stl-clr.md)|新しい配列に被制御シーケンスをコピーします。|  
+|---------------------|-----------------|  
+|[stack::assign (STL/CLR)](../dotnet/stack-assign-stl-clr.md)|すべての要素を置換します。|  
+|[stack::empty (STL/CLR)](../dotnet/stack-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
+|[stack::get_container (STL/CLR)](../dotnet/stack-get-container-stl-clr.md)|基になるコンテナーにアクセスします。|  
+|[stack::pop (STL/CLR)](../dotnet/stack-pop-stl-clr.md)|最後の要素を削除します。|  
+|[stack::push (STL/CLR)](../dotnet/stack-push-stl-clr.md)|新しい最後の要素を追加します。|  
+|[stack::size (STL/CLR)](../dotnet/stack-size-stl-clr.md)|要素の数をカウントします。|  
+|[stack::stack (STL/CLR)](../dotnet/stack-stack-stl-clr.md)|コンテナー オブジェクトを構築します。|  
+|[stack::top (STL/CLR)](../dotnet/stack-top-stl-clr.md)|最後の要素にアクセスします。|  
+|[stack::to_array (STL/CLR)](../dotnet/stack-to-array-stl-clr.md)|被制御シーケンスを新しい配列にコピーします。|  
   
 |プロパティ|説明|  
-|-----------|--------|  
-|[stack::top\_item](../dotnet/stack-top-item-stl-clr.md)|最後の要素にアクセスします。|  
+|--------------|-----------------|  
+|[stack::top_item (STL/CLR)](../dotnet/stack-top-item-stl-clr.md)|最後の要素にアクセスします。|  
   
 |演算子|説明|  
-|---------|--------|  
-|[stack::operator\=](../dotnet/stack-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
-|[operator\!\= \(stack\)](../dotnet/operator-inequality-stack-stl-clr.md)|`stack` オブジェクトが `stack` の別のオブジェクトと等しくないかどうかを判定します。|  
-|[operator\< \(stack\)](../dotnet/operator-less-than-stack-stl-clr.md)|`stack` オブジェクトが `stack` の別のオブジェクトより小さいかどうかを判定します。|  
-|[operator\<\= \(stack\)](../dotnet/operator-less-or-equal-stack-stl-clr.md)|`stack` オブジェクトが `stack` の別のオブジェクト以下かどうかを判定します。|  
-|[operator\=\= \(stack\)](../dotnet/operator-equality-stack-stl-clr.md)|`stack` オブジェクトが `stack` の別のオブジェクトと等しいかどうかを判定します。|  
-|[operator\> \(stack\)](../dotnet/operator-greater-than-stack-stl-clr.md)|`stack` オブジェクトが `stack` の別のオブジェクトより大きいかどうかを判定します。|  
-|[operator\>\= \(stack\)](../Topic/operator%3E=%20\(stack\)%20\(STL-CLR\).md)|`stack` オブジェクトが `stack` の別のオブジェクト以上かどうかを判定します。|  
+|--------------|-----------------|  
+|[stack::operator= (STL/CLR)](../dotnet/stack-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
+|[operator!= (stack) (STL/CLR)](../dotnet/operator-inequality-stack-stl-clr.md)|かどうかを`stack`オブジェクトが他と等しくない`stack`オブジェクト。|  
+|[operator< (stack) (STL/CLR)](../dotnet/operator-less-than-stack-stl-clr.md)|かどうかを`stack`オブジェクトが他よりも小さい`stack`オブジェクト。|  
+|[operator<= (stack) (STL/CLR)](../dotnet/operator-less-or-equal-stack-stl-clr.md)|かどうかを`stack`オブジェクトが別に小さい`stack`オブジェクト。|  
+|[operator== (stack) (STL/CLR)](../dotnet/operator-equality-stack-stl-clr.md)|かどうかを`stack`オブジェクトが他と等しい`stack`オブジェクト。|  
+|[operator> (stack) (STL/CLR)](../dotnet/operator-greater-than-stack-stl-clr.md)|かどうかを`stack`オブジェクトが他よりも大きい`stack`オブジェクト。|  
+|[operator>= (stack) (STL/CLR)](../dotnet/operator-greater-or-equal-stack-stl-clr.md)|かどうかを`stack`オブジェクトがより大きいか等しい間`stack`オブジェクト。|  
   
-## インターフェイス  
+## <a name="interfaces"></a>インターフェイス  
   
 |インターフェイス|説明|  
-|--------------|--------|  
-|<xref:System.ICloneable>|オブジェクトを複製します。|  
-|IStackValue\<のコンテナー\>|一般的なコンテナーのアダプターを保持します。|  
+|---------------|-----------------|  
+|<xref:System.ICloneable>|オブジェクトが重複してください。|  
+|IStack\<値、コンテナー >|汎用的なコンテナーのアダプターを管理します。|  
   
-## 解説  
- オブジェクトは、基になるコンテナーを通じて被制御シーケンスに対するストレージの `Value` 要素を保存し、必要に応じて拡大、型 `Container`の割り当て。  オブジェクトは、後入れ先出し \(LIFO\) キュー \(LIFO、キュー、スタック\) を実装する、最後の要素を押しながらポップすることへのアクセスを制限します。  
+## <a name="remarks"></a>コメント  
+ オブジェクトは、割り当てし、型の基になるコンテナーを制御するシーケンスの記憶域を解放`Container`、格納する`Value`要素および要求時に増加します。 オブジェクトは、プッシュおよびポップだけの最後の要素、後入れ先出しキュー (LIFO キュー、またはスタックとも呼ばれます) の実装へのアクセスを制限します。  
   
-## 必要条件  
- **ヘッダー:** \<cliext とスタック\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/stack >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [deque](../dotnet/deque-stl-clr.md)   
- [一覧](../dotnet/list-stl-clr.md)   
- [priority\_queue](../Topic/priority_queue%20\(STL-CLR\).md)   
- [キュー](../Topic/queue%20\(STL-CLR\).md)   
- [ベクター](../dotnet/vector-stl-clr.md)   
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)
+## <a name="see-also"></a>関連項目  
+ [deque (STL/CLR)](../dotnet/deque-stl-clr.md)   
+ [一覧 (STL/CLR)](../dotnet/list-stl-clr.md)   
+ [priority_queue (STL/CLR)](../dotnet/priority-queue-stl-clr.md)   
+ [キュー (STL/CLR)](../dotnet/queue-stl-clr.md)   
+ [ベクトル (STL/CLR)](../dotnet/vector-stl-clr.md)   
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)

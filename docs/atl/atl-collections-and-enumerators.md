@@ -1,54 +1,55 @@
 ---
-title: "ATL のコレクションと列挙子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コレクション インターフェイス"
-  - "コレクション, ATL クラス"
-  - "列挙子インターフェイス"
-  - "列挙子, ATL クラス"
+title: "ATL のコレクションと列挙子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- enumerator interfaces
+- collections, ATL classes
+- enumerators, ATL classes
+- collection interfaces
 ms.assetid: b2d37119-3ab2-4e0a-b65b-f377f07e4098
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4738e3f5256fe654dd64541dfd021ba2b4fce090
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL のコレクションと列挙子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`collection` は、データ項目 \(生データなどのオブジェクト\) のグループへのアクセスを許可するインターフェイスを提供する COM オブジェクトです。  オブジェクトのグループへのアクセスを提供する標準に準拠のインターフェイスは、*コレクションのインターフェイス*と呼びます。  
+# <a name="atl-collections-and-enumerators"></a>ATL のコレクションと列挙子
+A `collection` (生データやその他のオブジェクト) のデータ項目のグループにアクセスできるようにするインターフェイスを提供する COM オブジェクトです。 一定の基準に従ってと呼ばれますが、オブジェクトのグループへのアクセスを提供するインターフェイス、*コレクション インターフェイス*です。  
   
- 少なくとも、コレクション インターフェイスのコレクションは、インデックスに基づいてコレクションの項目を返すとコレクションの列挙子を返す `_NewEnum` のプロパティ返す **\[アイテム\]** のプロパティ項目の数を **Count** のプロパティを提供する必要があります。  オプションで、コレクションのインターフェイスは、**\[クリア\]** のメソッドを **追加** と項目がに挿入またはすべての項目を削除するには、コレクションから削除されるように **\[削除\]** のメソッドを提供します。  
+ コレクション インターフェイスを提供する必要がありますには、少なくとも、**カウント**プロパティをコレクション内の項目数を返す、**項目**をインデックスに基づくコレクションから項目を返すプロパティと`_NewEnum`コレクションの列挙子を返します。 コレクション インターフェイスを提供できます必要に応じて、**追加**と**削除**項目を挿入したり、コレクションから削除されるようにするメソッドと**クリア**を削除する方法すべての項目。  
   
- `enumerator` はコレクション内の項目を反復処理するためのインターフェイスを提供する COM オブジェクトです。  列挙子インターフェイスは 4 個の要求されたメソッドによってコレクションの要素への順次アクセスを提供します: `Next`、**\[スキップ\]**、**\[リセット\]**と `Clone`。  
+ `enumerator`コレクション内の項目を反復処理するインターフェイスを提供する COM オブジェクトです。 4 つの必要なメソッドを使用してコレクションの要素へのシリアル アクセスを提供する列挙子インターフェイス: `Next`、 **Skip**、**リセット**、および`Clone`です。  
   
- [IEnumXXXX](https://msdn.microsoft.com/en-us/library/ms680089.aspx) の原型的な \(完全に\) とインターフェイスについて説明します。して列挙子インターフェイスについて学習できます。  
+ 典型的な (ただし、まったく虚数部) の説明を読むによって列挙子インターフェイスの詳細を学習できます[として](https://msdn.microsoft.com/library/ms680089.aspx)インターフェイスです。  
   
-## このセクションの内容  
+## <a name="in-this-section"></a>このセクションの内容  
  [ATL のコレクションと列挙子クラス](../atl/atl-collection-and-enumerator-classes.md)  
- 簡単に説明しすると、列挙子がコレクションを実行できる ATL クラスについて説明し、リンクを提供します。  
+ 簡単な説明し、コレクションと列挙子を支援する ATL クラスへのリンクが実装を提供します。  
   
- [コレクションと列挙子インターフェイスのデザイン原則](../atl/design-principles-for-collection-and-enumerator-interfaces.md)  
- インターフェイスの種類に関するさまざまなデザイン原則について説明します。  
+ [コレクションと列挙子インターフェイスのデザインの原則](../atl/design-principles-for-collection-and-enumerator-interfaces.md)  
+ インターフェイスの種類ごとの背後にあるさまざまなデザインの原則について説明します。  
   
- [STL ベースのコレクションの実行](../atl/implementing-an-stl-based-collection.md)  
- 標準テンプレート ライブラリの \(STL\) のベースのコレクションの実装によって拡張する例です。  
+ [C++ 標準ライブラリに基づくコレクションの実装](../atl/implementing-an-stl-based-collection.md)  
+ C++ 標準ライブラリ ベースのコレクションの実装の手順を説明する拡張例です。  
   
-## 関連項目  
- [&#91;ATL&#93;](../atl/active-template-library-atl-concepts.md)  
- Active Template Library を使用したプログラミングの概念を説明するトピックへのリンクを示します。  
+## <a name="related-sections"></a>関連項目  
+ [ATL](../atl/active-template-library-atl-concepts.md)  
+ Active Template Library を使用してプログラミングする方法に関する概念説明のトピックへのリンクを提供します。  
   
- ATLCollections sample  
- `ICollectionOnSTLImpl` と `CComEnumOnSTL`の使用方法を示すサンプル、およびカスタム コピー ポリシー クラスの実装します。  
+ [ATLCollections サンプル](../visual-cpp-samples.md)  
+ 使用方法を示すサンプル`ICollectionOnSTLImpl`と`CComEnumOnSTL`、およびカスタム コピー ポリシー クラスの実装です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)
+

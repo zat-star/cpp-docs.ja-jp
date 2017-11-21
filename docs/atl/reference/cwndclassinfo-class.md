@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,35 +18,18 @@ f1_keywords:
 - ATLWIN/ATL::m_szAutoName
 - ATLWIN/ATL::m_wc
 - ATLWIN/ATL::pWndProc
-dev_langs:
-- C++
-helpviewer_keywords:
-- CWndClassInfo class
+dev_langs: C++
+helpviewer_keywords: CWndClassInfo class
 ms.assetid: c36fe7e1-75f1-4cf5-a06f-9f59c43fe6fb
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 071a6683a459c1b668cfa3eb5e866b461d82ab29
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 27e87210bc92554b960469336af591ec5ada485a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="cwndclassinfo-class"></a>CWndClassInfo クラス
 このクラスは、ウィンドウ クラスの情報を登録するためのメソッドを提供します。  
@@ -94,9 +76,9 @@ class CWndClassInfo
   
  既存のウィンドウ クラスに基づくウィンドウを作成する場合は、派生クラスから`CWindowImpl`を含めると、`DECLARE_WND_SUPERCLASS`クラスの定義でマクロです。 例:  
   
- [!code-cpp[NVC_ATL_Windowing # 43](../../atl/codesnippet/cpp/cwndclassinfo-class_1.h)]  
+ [!code-cpp[NVC_ATL_Windowing#43](../../atl/codesnippet/cpp/cwndclassinfo-class_1.h)]  
   
- ウィンドウ クラスの詳細については、次を参照してください。[ウィンドウ クラス](http://msdn.microsoft.com/library/windows/desktop/ms632596)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ ウィンドウ クラスの詳細については、次を参照してください。[ウィンドウ クラス](http://msdn.microsoft.com/library/windows/desktop/ms632596)Windows SDK に含まれています。  
   
  詳細については、ATL で windows を使用して、記事を参照してください。 [ATL ウィンドウ クラス](../../atl/atl-window-classes.md)です。  
   
@@ -152,7 +134,7 @@ TCHAR m_szAutoName[13];
 ```  
   
 ### <a name="remarks"></a>コメント  
- `CWndClassInfo`使用して`m_szAutoName`場合にのみ、 **NULL**に渡される、`WndClassName`パラメーターを[DECLARE_WND_CLASS](window-class-macros.md#declare_wnd_class)、[場合は](window-class-macros.md#declare_wnd_class_ex)または[DECLARE_WND_SUPERCLASS](window-class-macros.md#declare_wnd_superclass)です。 ATL は、ウィンドウ クラスが登録されているときに、名前が作成します。  
+ `CWndClassInfo`使用して`m_szAutoName`場合にのみ、 **NULL**渡され、`WndClassName`パラメーターを[DECLARE_WND_CLASS](window-class-macros.md#declare_wnd_class)、[場合は](window-class-macros.md#declare_wnd_class_ex)または[DECLARE_WND_SUPERCLASS](window-class-macros.md#declare_wnd_superclass)です。 ATL は、ウィンドウ クラスが登録されているときに、名前が作成します。  
   
 ##  <a name="m_wc"></a>CWndClassInfo::m_wc  
  ウィンドウ クラスの情報を保持して、 [WNDCLASSEX](http://msdn.microsoft.com/library/windows/desktop/ms633577)構造体。  
@@ -162,7 +144,7 @@ WNDCLASSEX m_wc;
 ```  
   
 ### <a name="remarks"></a>コメント  
- 指定した場合、 [DECLARE_WND_CLASS](window-class-macros.md#declare_wnd_class) (既定で[CWindowImpl](../../atl/reference/cwindowimpl-class.md)) または[場合は](window-class-macros.md#declare_wnd_class_ex)マクロ、`m_wc`新しいウィンドウ クラスに関する情報が含まれています。  
+ 指定した場合、 [DECLARE_WND_CLASS](window-class-macros.md#declare_wnd_class) (既定で[CWindowImpl](../../atl/reference/cwindowimpl-class.md)) または[場合は](window-class-macros.md#declare_wnd_class_ex)マクロ、`m_wc`に関する情報を含む、新しいウィンドウ クラスです。  
   
  指定した場合、 [DECLARE_WND_SUPERCLASS](window-class-macros.md#declare_wnd_superclass)マクロ、`m_wc`スーパークラスに関する情報が含まれています: ウィンドウ クラスを既存のクラスに基づきますが、別のウィンドウ プロシージャを使用します。 [スーパークラス](#m_lpszorigname)と[は](#pwndproc)既存のウィンドウ クラスの名前とウィンドウ プロシージャをそれぞれに保存します。  
   

@@ -1,77 +1,174 @@
 ---
-title: "Platform::Collections::InputIterator クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "collection/Platform::Collections::InputIterator"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "InputIterator クラス"
+title: "Platform::Collections::InputIterator クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: COLLECTION/Platform::Collections::InputIterator::InputIterator
+dev_langs: C++
+helpviewer_keywords: InputIterator Class
 ms.assetid: ef72eea4-32a9-42b9-8119-ce87dbdcd3be
-caps.latest.revision: 4
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 15dd1d6ece1af3d561801c497b87f7be4f7d5397
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Platform::Collections::InputIterator クラス
-[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)]から派生したコレクション用の、標準テンプレート ライブラリ InputIterator を提供します。  
+# <a name="platformcollectionsinputiterator-class"></a>Platform::Collections::InputIterator クラス
+Windows ランタイムから派生したコレクションの標準テンプレート ライブラリ InputIterator を提供します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-template <  
-   typename X  
->  
+template <typename X>  
 class InputIterator;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `X`  
  InputIterator テンプレート クラスの型名。  
   
-## メンバー  
+### <a name="members"></a>メンバー  
   
-### パブリック typedef  
+### <a name="public-typedefs"></a>パブリック typedef  
   
 |名前|説明|  
-|--------|--------|  
-|`difference_type`|ポインターの相違点 \(ptrdiff\_t\)。|  
-|`iterator_category`|入力反復子のカテゴリ \(::std::input\_iterator\_tag\)。|  
-|`pointer`|`const` `X` へのポインター|  
-|`reference`|`const` `X` への参照|  
+|----------|-----------------|  
+|`difference_type`|ポインターの相違点 (ptrdiff_t)。|  
+|`iterator_category`|入力反復子のカテゴリ (::std::input_iterator_tag)。|  
+|`pointer`|ポインター、`const X`|  
+|`reference`|参照を`const X`|  
 |`value_type`|`X` 型名。|  
   
-### パブリック コンストラクター  
+### <a name="public-constructors"></a>パブリック コンストラクター  
   
 |名前|説明|  
-|--------|--------|  
-|[InputIterator::InputIterator コンストラクター](../cppcx/inputiterator-inputiterator-constructor.md)|InputIterator クラスの新しいインスタンスを初期化します。|  
+|----------|-----------------|  
+|[Inputiterator::inputiterator](#ctor)|InputIterator クラスの新しいインスタンスを初期化します。|  
   
-### パブリック演算子  
+### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
-|--------|--------|  
-|[InputIterator::operator\!\= 演算子](../cppcx/inputiterator-operator-inequality-operator.md)|現在の InputIterator が、指定された InputIterator と等しくないかどうかを示します。|  
-|[InputIterator::operator\* 演算子](../cppcx/inputiterator-operator-decrementoperator.md)|現在の InputIterator により指定された要素への参照を取得します。|  
-|[InputIterator::operator\+\+ 演算子](../cppcx/inputiterator-operator-increment-operator.md)|現在の InputIterator をインクリメントします。|  
-|[InputIterator::operator\=\= 演算子](../cppcx/inputiterator-operator-equality-operator.md)|現在の InputIterator が、指定された InputIterator と等しいかどうかを示します。|  
-|[InputIterator::operator\-\> 演算子](../cppcx/inputiterator-operator-arrow-operator.md)|現在の InputIterator により参照される要素のアドレスを取得します。|  
+|----------|-----------------|  
+|[InputIterator::operator!= 演算子](#operator-inequality)|現在の InputIterator が、指定された InputIterator と等しくないかどうかを示します。|  
+|[InputIterator::operator* 演算子](#operator-decrement)|現在の InputIterator により指定された要素への参照を取得します。|  
+|[InputIterator::operator++ 演算子](#operator-increment)|現在の InputIterator をインクリメントします。|  
+|[InputIterator::operator== 演算子](#operator-equality)|現在の InputIterator が、指定された InputIterator と等しいかどうかを示します。|  
+|[InputIterator::operator-> 演算子](#operator-arrow)|現在の InputIterator により参照される要素のアドレスを取得します。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `InputIterator`  
   
-## 必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Platform::Collections  
+
+## <a name="ctor"></a>Inputiterator::inputiterator コンス トラクター
+InputIterator クラスの新しいインスタンスを初期化します。  
   
-## 参照  
- [\(NOTINBUILD\) プラットフォーム名前空間](http://msdn.microsoft.com/ja-jp/f3ce3eab-028c-4204-ba9f-9ab8af17c8c4)
+### <a name="syntax"></a>構文  
+  
+```  
+InputIterator();  
+explicit InputIterator(Windows::Foundation::Collections<X>^ iter);  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `iter`  
+ 反復子オブジェクト。  
+  
+
+
+## <a name="operator-arrow"></a>Inputiterator::operator-&gt;演算子
+現在の InputIterator により指定される要素のアドレスを取得します。  
+  
+### <a name="syntax"></a>構文  
+  
+```  
+pointer operator->() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の InputIterator により指定される要素のアドレス。  
+  
+
+
+## <a name="operator-dereference"></a>Inputiterator::operator * 演算子
+現在の InputIterator により指定された要素への参照を取得します。  
+  
+### <a name="syntax"></a>構文  
+  
+```  
+reference operator*() const;  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の InputIterator により指定された要素。  
+  
+
+
+## <a name="operator-equality"></a>Inputiterator::operator = = 演算子
+現在の InputIterator が、指定された InputIterator と等しいかどうかを示します。  
+  
+### <a name="syntax"></a>構文  
+  
+```  
+bool operator== (const InputIterator& other) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `other`  
+ 別の InputIterator。  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の InputIterator が `true` と等しい場合は `other`。それ以外の場合は `false`。  
+  
+
+
+## <a name="operator-increment"></a>Inputiterator::operator++ 演算子
+現在の InputIterator をインクリメントします。  
+  
+### <a name="syntax"></a>構文  
+  
+```    
+InputIterator& operator++();   
+InputIterator operator++(int);  
+```  
+  
+### <a name="return-value"></a>戻り値  
+ 最初の構文は、現在の InputIterator をインクリメントしてから返します。 2 番目の構文は、現在の InputIterator のコピーを返し、現在の InputIterator をインクリメントします。  
+  
+### <a name="remarks"></a>コメント  
+ 最初の InputIterator 構文は、現在の InputIterator の前置インクリメントを実行します。  
+  
+ 2 番目の構文は、現在の InputIterator の後置インクリメントを実行します。 2 つ目の構文の `int` 型は、実際の整数オペランドではなく後置インクリメント演算を示します。  
+  
+
+
+## <a name="operator-inequality"></a>Inputiterator::operator! = 演算子
+現在の InputIterator が、指定された InputIterator と等しくないかどうかを示します。  
+  
+### <a name="syntax"></a>構文  
+  
+```  
+bool operator!=(const InputIterator& other) const;  
+```  
+  
+### <a name="parameters"></a>パラメーター  
+ `other`  
+ 別の InputIterator。  
+  
+### <a name="return-value"></a>戻り値  
+ 現在の InputIterator が `true` と等しくない場合は `other`。それ以外の場合は `false`。   
+
+  
+## <a name="see-also"></a>関連項目  
+ [プラットフォーム Namespace](platform-namespace-c-cx.md)

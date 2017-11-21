@@ -4,46 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
 - CSimpleArrayEqualHelper
 - ATLSIMPCOLL/ATL::CSimpleArrayEqualHelper
 - ATLSIMPCOLL/ATL::CSimpleArrayEqualHelper::IsEqual
-dev_langs:
-- C++
-helpviewer_keywords:
-- CSimpleArrayEqualHelper class
+dev_langs: C++
+helpviewer_keywords: CSimpleArrayEqualHelper class
 ms.assetid: a2b55d89-78c9-42ef-842c-5304c6d20ad6
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5a0c6a1062330f952bb8fa52bc934f6754465513
-ms.openlocfilehash: 4a87879683257c66de5fe4e720dd29fa4c47031d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 0d53e09c64aa19b4e843297b64bad132c64a75a2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="csimplearrayequalhelper-class"></a>CSimpleArrayEqualHelper クラス
-このクラスは、ヘルパーを[CSimpleArray](../../atl/reference/csimplearray-class.md)クラスです。  
+このクラスは、のヘルパー、 [CSimpleArray](../../atl/reference/csimplearray-class.md)クラスです。  
   
 ## <a name="syntax"></a>構文  
   
@@ -62,16 +44,16 @@ class CSimpleArrayEqualHelper
   
 |名前|説明|  
 |----------|-----------------|  
-|[CSimpleArrayEqualHelper::IsEqual](#isequal)|(静的)2 つのテスト`CSimpleArray`オブジェクトの要素が等しいかどうか。|  
+|[CSimpleArrayEqualHelper::IsEqual](#isequal)|(静的)2 つのテスト`CSimpleArray`object 要素が等しいかどうか。|  
   
 ## <a name="remarks"></a>コメント  
- この特徴 (traits) クラスを補足するため、`CSimpleArray`クラスです。 格納された&2; つの要素を比較するは、メソッドを提供する`CSimpleArray`オブジェクトです。 既定では、要素を使用して比較**operator=()**配列に、独自の等値演算子に関連付けられていない複合データ型が含まれている場合は、このクラスをオーバーライドする必要がありますが、します。  
+ この特徴 (traits) クラスを補足するため、`CSimpleArray`クラスです。 格納されている 2 つの要素を比較するためにメソッドを提供する`CSimpleArray`オブジェクト。 既定では、要素を使用して比較**operator=()**配列には、独自の等値演算子の複合データ型が含まれています、このクラスをオーバーライドする必要があります。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlsimpcoll.h  
   
 ##  <a name="isequal"></a>CSimpleArrayEqualHelper::IsEqual  
- 2 つのテスト`CSimpleArray`オブジェクトの要素が等しいかどうか。  
+ 2 つのテスト`CSimpleArray`object 要素が等しいかどうか。  
   
 ```
 static bool IsEqual(
@@ -87,10 +69,9 @@ static bool IsEqual(
  T 型のオブジェクト  
   
 ### <a name="return-value"></a>戻り値  
- 要素が false でそれ以外の場合、等しい場合は true を返します。  
+ 要素が等しい場合は false それ以外の場合は true を返します。  
   
 ## <a name="see-also"></a>関連項目  
  [CSimpleArray クラス](../../atl/reference/csimplearray-class.md)   
  [CSimpleArrayEqualHelperFalse クラス](../../atl/reference/csimplearrayequalhelperfalse-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,35 +18,18 @@ f1_keywords:
 - ATLCORE/ATL::CAtlBaseModule::RemoveResourceInstance
 - ATLCORE/ATL::CAtlBaseModule::SetResourceInstance
 - ATLCORE/ATL::CAtlBaseModule::m_bInitFailed
-dev_langs:
-- C++
-helpviewer_keywords:
-- CAtlBaseModule class
+dev_langs: C++
+helpviewer_keywords: CAtlBaseModule class
 ms.assetid: 55ade80c-9b0c-4c51-933e-2158436c1096
-caps.latest.revision: 18
+caps.latest.revision: "18"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 4897f6cf7e12a18401720ad663c90491bb0e599d
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 3249240ef90224dc1a297a848f1eba55d915fdac
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="catlbasemodule-class"></a>CAtlBaseModule クラス
 このクラスは、すべての ATL プロジェクトでインスタンス化します。  
@@ -71,20 +53,20 @@ class CAtlBaseModule : public _ATL_BASE_MODULE
 |名前|説明|  
 |----------|-----------------|  
 |[CAtlBaseModule::AddResourceInstance](#addresourceinstance)|格納されているハンドルの一覧に、リソースのインスタンスを追加します。|  
-|[CAtlBaseModule::GetHInstanceAt](#gethinstanceat)|指定したリソースのインスタンスへのハンドルを返します。|  
-|[CAtlBaseModule::GetModuleInstance](#getmoduleinstance)|モジュールのインスタンスを返す、`CAtlBaseModule`オブジェクトです。|  
-|[CAtlBaseModule::GetResourceInstance](#getresourceinstance)|リソース インスタンスを返し、`CAtlBaseModule`オブジェクトです。|  
+|[CAtlBaseModule::GetHInstanceAt](#gethinstanceat)|指定されたリソース インスタンスへのハンドルを返します。|  
+|[CAtlBaseModule::GetModuleInstance](#getmoduleinstance)|モジュールのインスタンスを返します、`CAtlBaseModule`オブジェクト。|  
+|[CAtlBaseModule::GetResourceInstance](#getresourceinstance)|リソース インスタンスを返します、`CAtlBaseModule`オブジェクト。|  
 |[CAtlBaseModule::RemoveResourceInstance](#removeresourceinstance)|格納されているハンドルの一覧から、リソースのインスタンスを削除します。|  
-|[CAtlBaseModule::SetResourceInstance](#setresourceinstance)|リソース インスタンスを設定、`CAtlBaseModule`オブジェクトです。|  
+|[CAtlBaseModule::SetResourceInstance](#setresourceinstance)|リソース インスタンスを設定、`CAtlBaseModule`オブジェクト。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CAtlBaseModule::m_bInitFailed](#m_binitfailed)|モジュールの初期化が失敗したかどうかを示す変数。|  
+|[CAtlBaseModule::m_bInitFailed](#m_binitfailed)|モジュールの初期化が失敗したかどうかを示す変数です。|  
   
 ## <a name="remarks"></a>コメント  
- インスタンス`CAtlBaseModule`名前付き _AtlBaseModule がモジュールのインスタンスへのハンドル、リソース (既定では、1 つだけ) を含むモジュールと主要なリソースを提供するモジュールへのハンドルの配列へのハンドルを含むすべての ATL プロジェクトに存在します。 `CAtlBaseModule`複数のスレッドから安全にアクセスします。  
+ インスタンス`CAtlBaseModule`名前付き _AtlBaseModule がモジュールのインスタンスへのハンドルを含むリソース (既定では、1 つ)、モジュールとプライマリを提供するモジュールへのハンドルの配列へのハンドルを含む、すべての ATL プロジェクト内に存在リソース。 `CAtlBaseModule`複数のスレッドから安全にアクセスします。  
   
  このクラスは廃止された置換[CComModule](../../atl/reference/ccommodule-class.md) ATL の以前のバージョンで使用されるクラス  
   
@@ -108,7 +90,7 @@ bool AddResourceInstance(HINSTANCE hInst) throw();
  追加するリソースのインスタンス。  
   
 ### <a name="return-value"></a>戻り値  
- リソースが正常にあれば true を返す、追加 false それ以外の場合。  
+ リソースが正常にした場合は true、追加 false それ以外の場合。  
   
 ##  <a name="catlbasemodule"></a>CAtlBaseModule::CAtlBaseModule  
  コンストラクターです。  
@@ -121,7 +103,7 @@ CAtlBaseModule() throw();
  `CAtlBaseModule` を作成します。  
   
 ##  <a name="gethinstanceat"></a>CAtlBaseModule::GetHInstanceAt  
- 指定したリソースのインスタンスへのハンドルを返します。  
+ 指定されたリソース インスタンスへのハンドルを返します。  
   
 ```
 HINSTANCE GetHInstanceAt(int i) throw();
@@ -129,13 +111,13 @@ HINSTANCE GetHInstanceAt(int i) throw();
   
 ### <a name="parameters"></a>パラメーター  
  *i*  
- リソースのインスタンスの数。  
+ リソース インスタンスの数。  
   
 ### <a name="return-value"></a>戻り値  
- 対応するリソース インスタンスが存在しない場合は、リソースのインスタンス、または NULL にハンドルを返します。  
+ リソースに対応するインスタンスが存在しない場合は、リソースのインスタンス、または NULL にハンドルを返します。  
   
 ##  <a name="getmoduleinstance"></a>CAtlBaseModule::GetModuleInstance  
- モジュールのインスタンスを返す、`CAtlBaseModule`オブジェクトです。  
+ モジュールのインスタンスを返します、`CAtlBaseModule`オブジェクト。  
   
 ```
 HINSTANCE GetModuleInstance() throw();
@@ -145,24 +127,24 @@ HINSTANCE GetModuleInstance() throw();
  モジュールのインスタンスを返します。  
   
 ##  <a name="getresourceinstance"></a>CAtlBaseModule::GetResourceInstance  
- リソースのインスタンスを返します。  
+ リソース インスタンスを返します。  
   
 ```
 HINSTANCE GetResourceInstance() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- リソースのインスタンスを返します。  
+ リソース インスタンスを返します。  
   
 ##  <a name="m_binitfailed"></a>CAtlBaseModule::m_bInitFailed  
- モジュールの初期化が失敗したかどうかを示す変数。  
+ モジュールの初期化が失敗したかどうかを示す変数です。  
   
 ```
 static bool m_bInitFailed;
 ```  
   
 ### <a name="remarks"></a>コメント  
- モジュールが初期化されて、false の初期化に失敗した場合に true を返します。  
+ True の場合、モジュールが初期化されて、false の初期化に失敗した場合。  
   
 ##  <a name="removeresourceinstance"></a>CAtlBaseModule::RemoveResourceInstance  
  格納されているハンドルの一覧から、リソースのインスタンスを削除します。  
@@ -176,10 +158,10 @@ bool RemoveResourceInstance(HINSTANCE hInst) throw();
  削除するリソースのインスタンス。  
   
 ### <a name="return-value"></a>戻り値  
- リソースがあった場合、false を正常に削除されたそれ以外の場合は true を返します。  
+ 場合、リソースが正常に削除された場合は false それ以外の場合は true を返します。  
   
 ##  <a name="setresourceinstance"></a>CAtlBaseModule::SetResourceInstance  
- リソース インスタンスを設定、`CAtlBaseModule`オブジェクトです。  
+ リソース インスタンスを設定、`CAtlBaseModule`オブジェクト。  
   
 ```
 HINSTANCE SetResourceInstance(HINSTANCE hInst) throw();
@@ -190,9 +172,8 @@ HINSTANCE SetResourceInstance(HINSTANCE hInst) throw();
  リソースの新しいインスタンス。  
   
 ### <a name="return-value"></a>戻り値  
- 更新されたリソースのインスタンスを返します。  
+ 更新されたリソース インスタンスを返します。  
   
 ## <a name="see-also"></a>関連項目  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)
-

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -17,35 +16,18 @@ f1_keywords:
 - ATLCORE/ATL::CComCriticalSection::Term
 - ATLCORE/ATL::CComCriticalSection::Unlock
 - ATLCORE/ATL::CComCriticalSection::m_sec
-dev_langs:
-- C++
-helpviewer_keywords:
-- CComCriticalSection class
+dev_langs: C++
+helpviewer_keywords: CComCriticalSection class
 ms.assetid: 44e1edd2-90be-4bfe-9739-58e8b419e7d1
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 050e7483670bd32f633660ba44491c8bb3fc462d
-ms.openlocfilehash: a7c4fbc87ff06bb09766eb3e4ad0d7c5275eed65
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: ef8ca542ef9bda72bd89b633d42db727bce3e94a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ccomcriticalsection-class"></a>CComCriticalSection クラス
 このクラスは、取得し、クリティカル セクション オブジェクトの所有権を解放するためのメソッドを提供します。  
@@ -70,22 +52,22 @@ class CComCriticalSection
 |----------|-----------------|  
 |[CComCriticalSection::Init](#init)|作成し、クリティカル セクション オブジェクトを初期化します。|  
 |[CComCriticalSection::Lock](#lock)|クリティカル セクション オブジェクトの所有権を取得します。|  
-|[CComCriticalSection::Term](#term)|クリティカル セクション オブジェクトによって使用されているシステム リソースを解放します。|  
+|[CComCriticalSection::Term](#term)|クリティカル セクション オブジェクトによって使用されるシステム リソースを解放します。|  
 |[CComCriticalSection::Unlock](#unlock)|クリティカル セクション オブジェクトの所有権を解放します。|  
   
 ### <a name="public-data-members"></a>パブリック データ メンバー  
   
 |名前|説明|  
 |----------|-----------------|  
-|[CComCriticalSection::m_sec](#m_sec)|A **CRITICAL_SECTION**オブジェクトです。|  
+|[CComCriticalSection::m_sec](#m_sec)|A **CRITICAL_SECTION**オブジェクト。|  
   
 ## <a name="remarks"></a>コメント  
- `CComCriticalSection`クラスのような[CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)点が明示的に初期化し、クリティカル セクションを解放する必要があります。  
+ `CComCriticalSection`クラスに似ています[CComAutoCriticalSection](../../atl/reference/ccomautocriticalsection-class.md)ただし、するには、明示的に初期化して、リリースの重要なセクションです。  
   
- 通常、使用して`CComCriticalSection`を通じて、`typedef`名[CriticalSection](ccommultithreadmodel-class.md#criticalsection)します。 この名前を参照して`CComCriticalSection`と[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)が使用されています。  
+ 通常、使用して`CComCriticalSection`を通じて、`typedef`名前[CriticalSection](ccommultithreadmodel-class.md#criticalsection)です。 この名前を参照して`CComCriticalSection`とき[CComMultiThreadModel](../../atl/reference/ccommultithreadmodel-class.md)が使用されています。  
 
   
- 参照してください[CComCritSecLock クラス](../../atl/reference/ccomcritseclock-class.md)呼び出しよりもこのクラスを使用するより安全な方法を`Lock`と`Unlock`直接します。  
+ 参照してください[CComCritSecLock クラス](../../atl/reference/ccomcritseclock-class.md)呼び出しよりも、このクラスを使用するより安全な方法を`Lock`と`Unlock`直接です。  
   
 ## <a name="requirements"></a>要件  
  **ヘッダー:** atlcore.h  
@@ -98,30 +80,30 @@ CComCriticalSection() throw();
 ```  
   
 ### <a name="remarks"></a>コメント  
- セット、 [m_sec](#m_sec)データ メンバーを NULL に**します。**  
+ セット、 [m_sec](#m_sec)データ メンバーを NULL に**です。**  
   
 ##  <a name="init"></a>CComCriticalSection::Init  
- Win32 関数を呼び出す[InitializeCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms683472)に格納されている、クリティカル セクション オブジェクトを初期化しますが、 [m_sec](#m_sec)データ メンバーです。  
+ Win32 関数を呼び出す[InitializeCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms683472)に含まれているクリティカル セクション オブジェクトを初期化しますが、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
 HRESULT Init() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`成功した場合、 **E_OUTOFMEMORY**または**E_FAIL**失敗します。  
+ 返します`S_OK`成功した場合、 **E_OUTOFMEMORY**または**E_FAIL**エラー発生時にします。  
   
 ##  <a name="lock"></a>CComCriticalSection::Lock  
- Win32 関数を呼び出す[EnterCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682608)、スレッドがクリティカル セクション オブジェクトに含まれているの所有権を取得するまで待機したどの、 [m_sec](#m_sec)データ メンバーです。  
+ Win32 関数を呼び出す[EnterCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682608)、スレッドに含まれているクリティカル セクション オブジェクトの所有権を取得できるまで待機したどの、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
 HRESULT Lock() throw();
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。`S_OK`成功した場合、 **E_OUTOFMEMORY**または**E_FAIL**失敗します。  
+ 返します`S_OK`成功した場合、 **E_OUTOFMEMORY**または**E_FAIL**エラー発生時にします。  
   
 ### <a name="remarks"></a>コメント  
- 呼び出して、クリティカル セクション オブジェクトを初期化まず必要があります、 [Init](#init)メソッドです。 保護されているコードの実行が完了すると、スレッドで呼び出す必要があります[Unlock](#unlock)クリティカル セクションの所有権を解放します。  
+ 呼び出して、クリティカル セクション オブジェクトを初期化最初必要があります、 [Init](#init)メソッドです。 保護されているコードの実行が完了すると、スレッドで呼び出す必要があります[Unlock](#unlock)クリティカル セクションの所有権を解放します。  
   
 ##  <a name="m_sec"></a>CComCriticalSection::m_sec  
  クリティカル セクション オブジェクトすべてで使用を含む`CComCriticalSection`メソッドです。  
@@ -131,7 +113,7 @@ CRITICAL_SECTION m_sec;
 ```  
   
 ##  <a name="term"></a>CComCriticalSection::Term  
- Win32 関数を呼び出す[DeleteCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682552)に含まれているクリティカル セクション オブジェクトによって使用されているすべてのリソースを解放、 [m_sec](#m_sec)データ メンバーです。  
+ Win32 関数を呼び出す[DeleteCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms682552)に含まれているクリティカル セクション オブジェクトによって使用されているすべてのリソースを解放する、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
 HRESULT Term() throw();
@@ -141,10 +123,10 @@ HRESULT Term() throw();
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 1 回`Term`が呼び出された、重要なセクションは、同期には使用できなくします。  
+ 1 回`Term`が呼び出されると、重要な項目の同期 セクションを使用できなくできます。  
   
 ##  <a name="unlock"></a>CComCriticalSection::Unlock  
- Win32 関数を呼び出す[により](http://msdn.microsoft.com/library/windows/desktop/ms684169)に含まれているクリティカル セクション オブジェクトの所有権を解放する、 [m_sec](#m_sec)データ メンバーです。  
+ Win32 関数を呼び出す[LeaveCriticalSection](http://msdn.microsoft.com/library/windows/desktop/ms684169)に含まれているクリティカル セクション オブジェクトの所有権を解放する、 [m_sec](#m_sec)データ メンバーです。  
   
 ```
 HRESULT Unlock() throw();
@@ -154,10 +136,9 @@ HRESULT Unlock() throw();
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 所有権を取得するスレッドを呼び出す必要があります、[ロック](#lock)メソッドです。 各呼び出し`Lock`に対応する呼び出しを必要と`Unlock`クリティカル セクションの所有権を解放します。  
+ 所有権を取得するスレッドを呼び出す必要があります、[ロック](#lock)メソッドです。 各呼び出し`Lock`に対応する呼び出しが必要です`Unlock`クリティカル セクションの所有権を解放します。  
   
 ## <a name="see-also"></a>関連項目  
  [CComFakeCriticalSection クラス](../../atl/reference/ccomfakecriticalsection-class.md)   
  [クラスの概要](../../atl/atl-class-overview.md)   
  [CComCritSecLock クラス](../../atl/reference/ccomcritseclock-class.md)
-

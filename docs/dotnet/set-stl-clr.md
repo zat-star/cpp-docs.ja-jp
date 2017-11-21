@@ -1,36 +1,35 @@
 ---
-title: "set (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::set"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "<cliext/set> ヘッダー [STL/CLR]"
-  - "<set> ヘッダー [STL/CLR]"
-  - "set クラス [STL/CLR]"
+title: "設定 (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::set
+dev_langs: C++
+helpviewer_keywords:
+- <cliext/set> header [STL/CLR]
+- <set> header [STL/CLR]
+- set class [STL/CLR]
 ms.assetid: 27d3628c-741a-43a7-bef1-5085536f679e
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 18
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: cafab92b157fb0da39471d96a23a69e2ce209e5b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# set (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、オブジェクトをコントロールと双方向アクセスできる要素の可変長シーケンスを記述します。  a として要素のシーケンスを管理するには、コンテナー `set` \(ほとんど\) バランスをとりましたノードの順序が指定された、ツリー、保存の 1 要素を使用します。  
+# <a name="set-stlclr"></a>set (STL/CLR)
+このテンプレート クラスでは、双方向のアクセス権を持つ要素の可変長シーケンスを制御するオブジェクトについて説明します。 コンテナーを使用する`set`1 つの要素を格納する各ノードのバランスの取れた (ほとんど) の順序付けられたツリーとして要素のシーケンスを管理します。  
   
- 以下の説明では `GValue` は `GKey`な型が `Key^`場合、後者は ref 型である `Key` と同じの場合と同じです。  
+ 下記に、`GValue`と同じ`GKey`、さらには同じ`Key`ref 型を後者には、しない限り、どのケースでは`Key^`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Key>  
@@ -46,113 +45,113 @@ template<typename Key>
     { ..... };  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  キー  
- 被制御シーケンス内の要素のキー コンポーネントの型。  
+ 被制御シーケンス内の要素の主要な構成要素の型。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
 |型定義|説明|  
-|---------|--------|  
-|[set::const\_iterator](../dotnet/set-const-iterator-stl-clr.md)|被制御シーケンスの定数反復子の型です。|  
-|[set::const\_reference](../dotnet/set-const-reference-stl-clr.md)|要素への定数参照の型です。|  
-|[set::const\_reverse\_iterator](../dotnet/set-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
-|[set::difference\_type](../dotnet/set-difference-type-stl-clr.md)|2 個の要素間の a \(場合に署名する\) 間隔の種類。|  
-|[set::generic\_container](../dotnet/set-generic-container-stl-clr.md)|コンテナーのジェネリック インターフェイスの種類。|  
-|[set::generic\_iterator](../dotnet/set-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
-|[set::generic\_reverse\_iterator](../Topic/set::generic_reverse_iterator%20\(STL-CLR\).md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
-|[set::generic\_value](../dotnet/set-generic-value-stl-clr.md)|コンテナーのジェネリック インターフェイスの要素の型。|  
-|[set::iterator](../Topic/set::iterator%20\(STL-CLR\).md)|被制御シーケンスの反復子の型です。|  
-|[set::key\_compare](../dotnet/set-key-compare-stl-clr.md)|2 種類のキーの順序のデリゲート。|  
-|[set::key\_type](../dotnet/set-key-type-stl-clr.md)|順序付けキーの型です。|  
-|[set::reference](../dotnet/set-reference-stl-clr.md)|要素への参照の型です。|  
-|[set::reverse\_iterator](../dotnet/set-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
-|[set::size\_type](../Topic/set::size_type%20\(STL-CLR\).md)|2 個の要素間の a \(負\) 間隔の種類。|  
-|[set::value\_compare](../Topic/set::value_compare%20\(STL-CLR\).md)|2 要素の値の順序のデリゲート。|  
-|[set::value\_type](../dotnet/set-value-type-stl-clr.md)|要素の型。|  
+|---------------------|-----------------|  
+|[set::const_iterator (STL/CLR)](../dotnet/set-const-iterator-stl-clr.md)|被制御シーケンスの定数反復子の型です。|  
+|[set::const_reference (STL/CLR)](../dotnet/set-const-reference-stl-clr.md)|要素への定数参照の型です。|  
+|[set::const_reverse_iterator (STL/CLR)](../dotnet/set-const-reverse-iterator-stl-clr.md)|被制御シーケンスの定数反転反復子の型です。|  
+|[set::difference_type (STL/CLR)](../dotnet/set-difference-type-stl-clr.md)|2 つの要素間の距離を (場合によっては符号付き) の型。|  
+|[set::generic_container (STL/CLR)](../dotnet/set-generic-container-stl-clr.md)|コンテナーのジェネリック インターフェイスの型。|  
+|[set::generic_iterator (STL/CLR)](../dotnet/set-generic-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反復子の型。|  
+|[set::generic_reverse_iterator (STL/CLR)](../dotnet/set-generic-reverse-iterator-stl-clr.md)|コンテナーのジェネリック インターフェイスの反転反復子の型。|  
+|[set::generic_value (STL/CLR)](../dotnet/set-generic-value-stl-clr.md)|コンテナーのジェネリック インターフェイスの要素の型。|  
+|[set::iterator (STL/CLR)](../dotnet/set-iterator-stl-clr.md)|被制御シーケンスの反復子の型です。|  
+|[set::key_compare (STL/CLR)](../dotnet/set-key-compare-stl-clr.md)|2 つのキーの順序付けのデリゲート。|  
+|[set::key_type (STL/CLR)](../dotnet/set-key-type-stl-clr.md)|順序付けキーの型です。|  
+|[set::reference (STL/CLR)](../dotnet/set-reference-stl-clr.md)|要素への参照の型です。|  
+|[set::reverse_iterator (STL/CLR)](../dotnet/set-reverse-iterator-stl-clr.md)|被制御シーケンスの反転反復子の型です。|  
+|[set::size_type (STL/CLR)](../dotnet/set-size-type-stl-clr.md)|(負符号) 距離は 2 つの要素の型。|  
+|[set::value_compare (STL/CLR)](../dotnet/set-value-compare-stl-clr.md)|2 つの要素値の順序付けのデリゲート。|  
+|[set::value_type (STL/CLR)](../dotnet/set-value-type-stl-clr.md)|要素の型。|  
   
 |メンバー関数|説明|  
-|------------|--------|  
-|[set::begin](../dotnet/set-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
-|[set::clear](../Topic/set::clear%20\(STL-CLR\).md)|すべての要素を削除します。|  
-|[set::count](../dotnet/set-count-stl-clr.md)|指定したキーに一致する要素数をカウントします。|  
-|[set::empty](../dotnet/set-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
-|[set::end](../dotnet/set-end-stl-clr.md)|被制御シーケンスの末尾を指定します。|  
-|[set::equal\_range](../dotnet/set-equal-range-stl-clr.md)|指定したキーに一致する範囲を検索します。|  
-|[set::erase](../Topic/set::erase%20\(STL-CLR\).md)|指定した位置にある要素を削除します。|  
-|[set::find](../dotnet/set-find-stl-clr.md)|指定したキーに一致する要素を検索します。|  
-|[set::insert](../Topic/set::insert%20\(STL-CLR\).md)|要素を追加します。|  
-|[set::key\_comp](../dotnet/set-key-comp-stl-clr.md)|2 種類のキーの順序のデリゲートをコピーします。|  
-|[set::lower\_bound](../Topic/set::lower_bound%20\(STL-CLR\).md)|指定したキーに一致する範囲の先頭を検索します。|  
-|[set::make\_value](../dotnet/set-make-value-stl-clr.md)|値オブジェクトを構築します。|  
-|[set::rbegin](../dotnet/set-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
-|[set::rend](../dotnet/set-rend-stl-clr.md)|反転被制御シーケンスの末尾を指定します。|  
-|[set::set](../Topic/set::set%20\(STL-CLR\).md)|コンテナー オブジェクトを構築します。|  
-|[set::size](../dotnet/set-size-stl-clr.md)|要素の数をカウントします。|  
-|[set::swap](../dotnet/set-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
-|[set::to\_array](../dotnet/set-to-array-stl-clr.md)|新しい配列に被制御シーケンスをコピーします。|  
-|[set::upper\_bound](../Topic/set::upper_bound%20\(STL-CLR\).md)|指定したキーに一致する範囲の末尾を検索します。|  
-|[set::value\_comp](../dotnet/set-value-comp-stl-clr.md)|2 要素の値の順序のデリゲートをコピーします。|  
+|---------------------|-----------------|  
+|[set::begin (STL/CLR)](../dotnet/set-begin-stl-clr.md)|被制御シーケンスの先頭を指定します。|  
+|[set::clear (STL/CLR)](../dotnet/set-clear-stl-clr.md)|すべての要素を削除します。|  
+|[set::count (STL/CLR)](../dotnet/set-count-stl-clr.md)|指定したキーに一致する要素の数をカウントします。|  
+|[set::empty (STL/CLR)](../dotnet/set-empty-stl-clr.md)|要素が存在しないかどうかをテストします。|  
+|[set::end (STL/CLR)](../dotnet/set-end-stl-clr.md)|被制御シーケンスの末尾を指定します。|  
+|[set::equal_range (STL/CLR)](../dotnet/set-equal-range-stl-clr.md)|指定したキーに一致する範囲を検索します。|  
+|[set::erase (STL/CLR)](../dotnet/set-erase-stl-clr.md)|指定した位置にある要素を削除します。|  
+|[set::find (STL/CLR)](../dotnet/set-find-stl-clr.md)|指定したキーに一致する要素を検索します。|  
+|[set::insert (STL/CLR)](../dotnet/set-insert-stl-clr.md)|要素を追加します。|  
+|[set::key_comp (STL/CLR)](../dotnet/set-key-comp-stl-clr.md)|2 つのキーの順序付けのデリゲートをコピーします。|  
+|[set::lower_bound (STL/CLR)](../dotnet/set-lower-bound-stl-clr.md)|指定したキーに一致する範囲の先頭を検出します。|  
+|[set::make_value (STL/CLR)](../dotnet/set-make-value-stl-clr.md)|値オブジェクトを構築します。|  
+|[set::rbegin (STL/CLR)](../dotnet/set-rbegin-stl-clr.md)|反転被制御シーケンスの先頭を指定します。|  
+|[set::rend (STL/CLR)](../dotnet/set-rend-stl-clr.md)|反転被制御シーケンスの末尾を指定します。|  
+|[set::set (STL/CLR)](../dotnet/set-set-stl-clr.md)|コンテナー オブジェクトを構築します。|  
+|[set::size (STL/CLR)](../dotnet/set-size-stl-clr.md)|要素の数をカウントします。|  
+|[set::swap (STL/CLR)](../dotnet/set-swap-stl-clr.md)|2 つのコンテナーのコンテンツを交換します。|  
+|[set::to_array (STL/CLR)](../dotnet/set-to-array-stl-clr.md)|被制御シーケンスを新しい配列にコピーします。|  
+|[set::upper_bound (STL/CLR)](../dotnet/set-upper-bound-stl-clr.md)|指定したキーに一致する範囲の末尾を検索します。|  
+|[set::value_comp (STL/CLR)](../dotnet/set-value-comp-stl-clr.md)|2 つの要素値の順序付けのデリゲートをコピーします。|  
   
 |演算子|説明|  
-|---------|--------|  
-|[set::operator\=](../dotnet/set-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
-|[operator\!\= \(set\)](../dotnet/operator-inequality-set-stl-clr.md)|`set` オブジェクトが `set` の別のオブジェクトと等しくないかどうかを判定します。|  
-|[operator\< \(set\)](../dotnet/operator-less-than-set-stl-clr.md)|`set` オブジェクトが `set` の別のオブジェクトより小さいかどうかを判定します。|  
-|[operator\<\= \(set\)](../dotnet/operator-less-or-equal-set-stl-clr.md)|`set` オブジェクトが `set` の別のオブジェクト以下かどうかを判定します。|  
-|[operator\=\= \(set\)](../dotnet/operator-equality-set-stl-clr.md)|`set` オブジェクトが `set` の別のオブジェクトと等しいかどうかを判定します。|  
-|[operator\> \(set\)](../Topic/operator%3E%20\(set\)%20\(STL-CLR\).md)|`set` オブジェクトが `set` の別のオブジェクトより大きいかどうかを判定します。|  
-|[operator\>\= \(set\)](../dotnet/operator-greater-or-equal-set-stl-clr.md)|`set` オブジェクトが `set` の別のオブジェクト以上かどうかを判定します。|  
+|--------------|-----------------|  
+|[set::operator= (STL/CLR)](../dotnet/set-operator-assign-stl-clr.md)|被制御シーケンスを置き換えます。|  
+|[operator!= (set) (STL/CLR)](../dotnet/operator-inequality-set-stl-clr.md)|かどうかを`set`オブジェクトが他と等しくない`set`オブジェクト。|  
+|[operator< (set) (STL/CLR)](../dotnet/operator-less-than-set-stl-clr.md)|かどうかを`set`オブジェクトが他よりも小さい`set`オブジェクト。|  
+|[operator<= (set) (STL/CLR)](../dotnet/operator-less-or-equal-set-stl-clr.md)|かどうかを`set`オブジェクトが別に小さい`set`オブジェクト。|  
+|[operator== (set) (STL/CLR)](../dotnet/operator-equality-set-stl-clr.md)|かどうかを`set`オブジェクトが他と等しい`set`オブジェクト。|  
+|[operator> (set) (STL/CLR)](../dotnet/operator-greater-than-set-stl-clr.md)|かどうかを`set`オブジェクトが他よりも大きい`set`オブジェクト。|  
+|[operator>= (set) (STL/CLR)](../dotnet/operator-greater-or-equal-set-stl-clr.md)|かどうかを`set`オブジェクトがより大きいか等しい間`set`オブジェクト。|  
   
-## インターフェイス  
+## <a name="interfaces"></a>インターフェイス  
   
 |インターフェイス|説明|  
-|--------------|--------|  
-|<xref:System.ICloneable>|オブジェクトを複製します。|  
-|<xref:System.Collections.IEnumerable>|要素によるシーケンス。|  
-|<xref:System.Collections.ICollection>|要素のグループを保持します。|  
-|<xref:System.Collections.Generic.IEnumerable%601>|指定された要素を通じてシーケンス。|  
-|<xref:System.Collections.Generic.ICollection%601>|指定された要素のグループを保持します。|  
-|ITreeKey\<の値\>|一般的なコンテナーを保持します。|  
+|---------------|-----------------|  
+|<xref:System.ICloneable>|オブジェクトが重複してください。|  
+|<xref:System.Collections.IEnumerable>|要素を順番にします。|  
+|<xref:System.Collections.ICollection>|要素のグループを管理します。|  
+|<xref:System.Collections.Generic.IEnumerable%601>|型指定された要素を順番にします。|  
+|<xref:System.Collections.Generic.ICollection%601>|型指定された要素のグループを管理します。|  
+|ITree\<キー、値 >|ジェネリックなコンテナーを管理します。|  
   
-## 解説  
- オブジェクトは、個々のノードとして被制御シーケンスに対するストレージの割り当て。  これは a に他方に 1 ノードの内容をコピーして、要素 \(ほとんど\) は、分散を実行しません。ノード間のリンクの変更に並べるさせてツリーで、挿入されません。  これはブロックの最初の要素を除いた要素を自由に挿入および削除できることを意味します。  
+## <a name="remarks"></a>コメント  
+ オブジェクトは、割り当てし、個々 のノードとして、制御するシーケンスの記憶域を解放します。 順序付けられた 1 つのノードの内容を別にコピーからではなく、ノード間のリンクを変更することにより保持される (ほとんど) バランスの良いツリーに要素を挿入します。 つまり、挿入し、残りの要素を中断することがなく自由に要素を削除することができます。  
   
- オブジェクトの型は [set::key\_compare](../dotnet/set-key-compare-stl-clr.md)の格納されたデリゲート オブジェクトを呼び出すことによって制御されるシーケンスを並べ替えます。  設定を作成したときに保存されたデリゲート オブジェクトを指定する; デリゲート オブジェクトを指定しない場合、既定は比較 `operator<(key_type, key_type)`です。  メンバー関数 [set::key\_comp](../dotnet/set-key-comp-stl-clr.md)`()`を呼び出すことで、保存されたオブジェクトにアクセスします。  
+ オブジェクトがストアド デリゲート型のオブジェクトを呼び出すことによって、制御するシーケンスを並べ替えます[set::key_compare (STL/CLR)](../dotnet/set-key-compare-stl-clr.md)です。 セットを構築するときにストアド デリゲート オブジェクトを指定することができます。デリゲート オブジェクトを指定しないと、既定値が比較`operator<(key_type, key_type)`です。 このメンバー関数を呼び出すことによってこのストアド オブジェクトにアクセスする[set::key_comp (STL/CLR)](../dotnet/set-key-comp-stl-clr.md)`()`です。  
   
- このようなデリゲート オブジェクトは型 [set::key\_type](../dotnet/set-key-type-stl-clr.md)のキーに厳密な弱い順序付けを課さなければ必要があります。  このいずれかの 2 種類のキー `X` と `Y`のメジャー、:  
+ このようなデリゲート オブジェクト必要があります、厳密弱順序強制型のキーで[set::key_type (STL/CLR)](../dotnet/set-key-type-stl-clr.md)です。 つまり、任意の 2 つのキーの`X`と`Y`:  
   
- `key_comp()(X, Y)` は 呼び出しごとに同じブール型の結果を返します。  
+ `key_comp()(X, Y)`すべての呼び出しでブール値を同じ結果を返します。  
   
- `key_comp()(X, Y)` が TRUE の場合、`key_comp()(Y, X)` が false である必要があります。  
+ 場合`key_comp()(X, Y)`が true の場合、 `key_comp()(Y, X)` false である必要があります。  
   
- `key_comp()(X, Y)` が TRUE の場合、`X` は `Y`の前に並べると呼ばれます。  
+ 場合`key_comp()(X, Y)`が true の場合、`X`をする前に並べ替えるといいます`Y`です。  
   
- `!key_comp()(X, Y) && !key_comp()(Y, X)` が TRUE の場合、同じ大小関係があると `Y` は `X` と呼ばれます。  
+ 場合`!key_comp()(X, Y) && !key_comp()(Y, X)`が true の場合、`X`と`Y`大小関係が等しいと呼ばれます。  
   
- 被制御シーケンスの `Y` に先行する要素 `X` では、`key_comp()(Y, X)` は false です。\(既定のデリゲート オブジェクトのキーは値でも減りません\)。[set](../dotnet/set-stl-clr.md)テンプレート クラスとは異なり、テンプレート クラス `set` オブジェクトはすべての要素のキーが一意である必要はありません。\(複数のキーは同じ大小関係を持つことができます。  
+ 任意の要素に対して`X`の直前まで`Y`、被制御シーケンスの`key_comp()(Y, X)`は false。 (既定のデリゲート オブジェクトのキーしない値が減少します。)テンプレート クラスとは異なり[設定](../dotnet/set-stl-clr.md)、テンプレート クラスのオブジェクト`set`すべての要素のキーが一意であることは不要です。 (2 つまたは複数のキーが持てると同じ順序です。)  
   
- 各要素は ey と値として機能します。  このシーケンスは、\(対数時間\) 要素の数の対数に比例した回数のアクションで任意の要素の参照、挿入、および削除を有効にすることで表されます。  要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
+ 各要素は、欄と値の両方として機能します。 シーケンスは、シーケンス (対数時間) の検索、挿入、削除、任意の要素数の要素の数の対数に比例して操作できるような方法で表されます。 要素を挿入しても反復子の有効性は失われません。また、要素を削除した場合は、削除された要素を指す反復子だけが無効化されます。  
   
- 設定は、つまり、被制御シーケンスの要素を指定する反復子を持つ隣接する要素にステップ インできる双方向の反復子がサポートされています。  特別なヘッド ノードは [set::end](../dotnet/set-end-stl-clr.md)`()`が返す反復子に対応します。  存在する場合、被制御シーケンスの最後の要素にアクセスするためにこの反復子をデクリメントすることができます。  ヘッド ノードに到達する設定の反復子をインクリメントすることができます `end()`と等号を比較します。  ただし、`end()`が返す反復子を逆参照できません。  
+ セットは、ステップ隣接する要素を被制御シーケンス内の要素を指定する反復子を指定することができますが、双方向反復子をサポートします。 特殊なヘッド ノードによって返される反復子に対応[set::end (STL/CLR)](../dotnet/set-end-stl-clr.md)`()`です。 存在する場合、被制御シーケンスの最後の要素に到達するこの反復子をデクリメントすることができます。 ヘッド ノードに到達するセットの反復子をインクリメントすることができは、比較に等しい`end()`です。 によって返される反復子を逆参照することはできませんが、`end()`です。  
   
- 直接数値位置が設定の要素を参照できないことに注意してください。。これはランダム アクセス反復子を必要とします。  
+ ランダム アクセス反復子が必要です--数値の位置を直接指定されたセットの要素を参照することはできないことに注意してください。  
   
- 設定の反復子は、関連するコンテナーにハンドルを格納する関連設定ノードへのハンドルを格納します。  関連するコンテナー オブジェクトでのみ反復子を使用できます。  設定の反復子は、関連付けられたセット ノードが設定に関連付けられている限り有効です。  また、有効な反復子は dereferencable です。指定した要素の値にアクセスするか、または変更するために使用できます。。これは `end()`と等しくない場合。  
+ セットの反復子は、その関連付けセットのノードに関連付けられているコンテナーへのハンドルを格納するへのハンドルを格納します。 反復子は、それらの関連するコンテナー オブジェクトにのみ使用できます。 セットの反復子は、その関連付けセットのノードにいくつかのセットに関連付けられている限り有効です。 さらに、有効な反復子が dereferencable--と等しくない場合に限り指定--要素の値を変更またはアクセスを行うこともできます`end()`です。  
   
- 要素に設定するか、削除して、格納されている値のデストラクターを呼び出します。  コンテナーが破棄されると、すべての要素を消去します。  したがって、要素の型が ref クラスにあるコンテナー要素がコンテナーを重視されることを確認します。  ただし、Handles のコンテナーが `not` の要素を破棄されます。  
+ 消去、または要素を削除する、格納されている値のデストラクターを呼び出します。 コンテナーを破棄するには、すべての要素が消去されます。 したがって、要素型が ref クラスは、コンテナーを実現する要素よりも長くありませんコンテナー ただし、ハンドルのコンテナーは`not`その要素を破棄します。  
   
-## 必要条件  
- **ヘッダー:** \<cliext および設定\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext と set >  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [hash\_map](../dotnet/hash-map-stl-clr.md)   
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [hash\_set](../dotnet/hash-set-stl-clr.md)   
- [マップ](../dotnet/map-stl-clr.md)   
- [set](../dotnet/set-stl-clr.md)   
- [set](../dotnet/set-stl-clr.md)   
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)
+## <a name="see-also"></a>関連項目  
+ [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [hash_set (STL/CLR)](../dotnet/hash-set-stl-clr.md)   
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [設定](../dotnet/set-stl-clr.md)   
+ [設定](../dotnet/set-stl-clr.md)   
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)

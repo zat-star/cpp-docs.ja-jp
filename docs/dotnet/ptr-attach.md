@@ -1,35 +1,34 @@
 ---
-title: "ptr::Attach | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::com::ptr::Attach"
-  - "ptr::Attach"
-  - "ptr.Attach"
-  - "msclr.com.ptr.Attach"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Attach メソッド"
+title: "ptr::Attach |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::com::ptr::Attach
+- ptr::Attach
+- ptr.Attach
+- msclr.com.ptr.Attach
+dev_langs: C++
+helpviewer_keywords: Attach method
 ms.assetid: 81d930de-cb2a-4c30-9bd6-94d65942c47a
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a776a19d3b06fce5c7355ba512693d63e529d3b6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ptr::Attach
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`com::ptr`に COM オブジェクトを接続します。  
+# <a name="ptrattach"></a>ptr::Attach
+COM オブジェクトをアタッチ、`com::ptr`です。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void Attach(  
@@ -37,20 +36,20 @@ void Attach(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_right`  
- COM アプリケーションにアタッチするには、ポインターを提供します。  
+ アタッチする COM インターフェイス ポインター。  
   
-## 例外  
- `com::ptr` が COM オブジェクトへの参照を既に所有する場合、`Attach` は <xref:System.InvalidOperationException> をスローします。  
+## <a name="exceptions"></a>例外  
+ 場合、 `com::ptr` COM オブジェクトへの参照が既に所有して`Attach`スロー<xref:System.InvalidOperationException>です。  
   
-## 解説  
- `Attach` への呼び出しは、COM オブジェクトを参照しますが、それに呼び出し元の参照を解放しません。  
+## <a name="remarks"></a>コメント  
+ 呼び出し`Attach`COM オブジェクトを参照していますが、呼び出し元の参照を解放しません。  
   
- `Attach` に `NULL` を渡すと、あるアクションが発生しません。  
+ 渡す`NULL`に`Attach`行われているも何も起こりません。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。  の `ReplaceDocument` のメンバー関数の最初の呼び出し `Release` は前に所有されているオブジェクトの新規ドキュメント オブジェクトを追加するに `Attach` を呼び出します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。 `ReplaceDocument`メンバー関数を最初に呼び出す`Release`いずれかで所有していたオブジェクトを呼び出し、続いて`Attach`ドキュメントでは新しいオブジェクトをアタッチします。  
   
 ```  
 // comptr_attach.cpp  
@@ -124,12 +123,12 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
- **名前空間** msclr::com  
+ **Namespace** msclr::com  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
- [ptr::operator\=](../dotnet/ptr-operator-assign.md)   
+## <a name="see-also"></a>関連項目  
+ [ptr メンバー](../dotnet/ptr-members.md)   
+ [ptr::operator =](../dotnet/ptr-operator-assign.md)   
  [ptr::Release](../dotnet/ptr-release.md)

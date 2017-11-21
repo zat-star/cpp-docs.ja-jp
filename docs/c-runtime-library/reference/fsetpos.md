@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-apiname:
-- fsetpos
+apiname: fsetpos
 apilocation:
 - msvcrt.dll
 - msvcr80.dll
@@ -23,38 +21,21 @@ apilocation:
 - ucrtbase.dll
 - api-ms-win-crt-stdio-l1-1-0.dll
 apitype: DLLExport
-f1_keywords:
-- fsetpos
-dev_langs:
-- C++
+f1_keywords: fsetpos
+dev_langs: C++
 helpviewer_keywords:
 - streams, setting position indicators
 - fsetpos function
 ms.assetid: 6d19ff48-1a2b-47b3-9f23-ed0a47b5a46e
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 1facc7aec41e7ab1c8b420f6792d76cce0d2b029
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 504ab55aadc315dcf06c07a999f2a7d3dfca630b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="fsetpos"></a>fsetpos
 ストリームの位置インジケーターを設定します。  
@@ -81,7 +62,7 @@ int fsetpos(
  リターン コードの詳細については、「[_doserrno、errno、_sys_errlist、および _sys_nerr](../../c-runtime-library/errno-doserrno-sys-errlist-and-sys-nerr.md)」を参照してください。  
   
 ## <a name="remarks"></a>コメント  
- `fsetpos`関数設定のファイル位置インジケーター`stream`を値の`pos`を呼び出す前に取得される`fgetpos`に対して`stream`です。 関数は、ファイルの終端のインジケーターをクリアし、任意の効果を元に戻します[ungetc](../../c-runtime-library/reference/ungetc-ungetwc.md)で`stream`です。 `fsetpos` を呼び出した後で、`stream` 上の次の操作は、入力または出力になります。  
+ `fsetpos`関数のファイル位置インジケーターを設定する`stream`の値に`pos`を呼び出す前に取得される`fgetpos`に対して`stream`です。 関数は、ファイルの終端のインジケーターをクリアし、任意の効果を元に戻します[ungetc](../../c-runtime-library/reference/ungetc-ungetwc.md)で`stream`です。 `fsetpos` を呼び出した後で、`stream` 上の次の操作は、入力または出力になります。  
   
 ## <a name="requirements"></a>要件  
   

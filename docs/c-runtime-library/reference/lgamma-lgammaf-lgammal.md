@@ -1,57 +1,58 @@
 ---
 title: "lgamma、lgammaf、lgammal | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "cpp"
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-apiname: 
-  - "lgamma"
-  - "lgammaf"
-  - "lgammal"
-apilocation: 
-  - "msvcrt.dll"
-  - "msvcr80.dll"
-  - "msvcr90.dll"
-  - "msvcr100.dll"
-  - "msvcr100_clr0400.dll"
-  - "msvcr110.dll"
-  - "msvcr110_clr0400.dll"
-  - "msvcr120.dll"
-  - "msvcr120_clr0400.dll"
-  - "ucrtbase.dll"
-  - "api-ms-win-crt-math-l1-1-0.dll"
-apitype: "DLLExport"
-f1_keywords: 
-  - "lgamma"
-  - "lgammaf"
-  - "lgammal"
-  - "math/lgamma"
-  - "math/lgammaf"
-  - "math/lgammal"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lgamma 関数"
-  - "lgammal 関数"
-  - "lgammaf 関数"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology:
+- cpp
+- devlang-cpp
+ms.tgt_pltfrm: 
+ms.topic: article
+apiname:
+- lgamma
+- lgammaf
+- lgammal
+apilocation:
+- msvcrt.dll
+- msvcr80.dll
+- msvcr90.dll
+- msvcr100.dll
+- msvcr100_clr0400.dll
+- msvcr110.dll
+- msvcr110_clr0400.dll
+- msvcr120.dll
+- msvcr120_clr0400.dll
+- ucrtbase.dll
+- api-ms-win-crt-math-l1-1-0.dll
+apitype: DLLExport
+f1_keywords:
+- lgamma
+- lgammaf
+- lgammal
+- math/lgamma
+- math/lgammaf
+- math/lgammal
+dev_langs: C++
+helpviewer_keywords:
+- lgamma function
+- lgammal function
+- lgammaf function
 ms.assetid: 6e326c58-7077-481a-a329-c82ae56ae9e6
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: afc048d131bd75a9645c045b3bceae90344c07eb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# lgamma、lgammaf、lgammal
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="lgamma-lgammaf-lgammal"></a>lgamma、lgammaf、lgammal
 指定した値のガンマ関数の絶対値の自然対数を決定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 double lgamma(  
@@ -76,37 +77,37 @@ long double lgammal(
   
 ```  
   
-#### パラメーター  
- \[入力\] `x`  
- 計算する値。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `x`  
+ 計算される値です。  
   
-## 戻り値  
- 成功した場合、値のガンマ関数の絶対値の自然対数を返す `x.`  
+## <a name="return-value"></a>戻り値  
+ 正常に終了した場合、`x.` のガンマ関数の絶対値の自然対数を返します。  
   
-|懸案事項|リターン|  
-|----------|----------|  
-|`x` \= NaN|NaN|  
-|`x` \= ±0|\+ INFINITY|  
-|`x`負の整数を \=|\+ INFINITY|  
-|±INFINITY|\+ INFINITY|  
-|極エラー|\+ HUGE\_VAL、\+ HUGE\_VALF、または \+ なります。|  
-|オーバーフロー エラーの範囲|±HUGE\_VAL、±HUGE\_VALF、または ±HUGE\_VALL|  
+|問題点|リターン|  
+|-----------|------------|  
+|`x` = NaN|NaN|  
+|`x` = ±0|+INFINITY|  
+|`x`= 負の整数|+INFINITY|  
+|±INFINITY|+INFINITY|  
+|極エラー|+HUGE_VAL、+HUGE_VALF、または +HUGE_VALL|  
+|オーバーフロー範囲エラー|±HUGE_VAL、±HUGE_VALF、または ±HUGE_VALL|  
   
- エラーが報告されるの説明に従って [\_matherr](../../c-runtime-library/reference/matherr.md)します。  
+ エラーは、[_matherr](../../c-runtime-library/reference/matherr.md) で指定されたとおりに報告されます。  
   
-## 解説  
- オーバー ロードを呼び出すことができますので、C ではオーバー ロード、 `lgamma` を受け取り、float 型と long double 型を返します。 C プログラムでは、`lgamma` は常に double を受け取って返します。  
+## <a name="remarks"></a>コメント  
+ C++ ではオーバーロードが可能であるため、float 型および long double 型を受け取って返す `lgamma` のオーバーロードを呼び出すことができます。 C プログラムでは、`lgamma` は常に double を受け取って返します。  
   
- この関数が数値の階乗の対数を返します x が、有理数の場合は、\(`x`\-1\)。  
+ x が有理数の場合、この関数は (`x`-1) の階乗の対数を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-|関数|C ヘッダー|C\+\+ ヘッダー|  
-|--------|------------|----------------|  
-|`lgamma`、`lgammaf`、 `lgammal`|\<math.h\>|\<cmath\>|  
+|関数|C ヘッダー|C++ ヘッダー|  
+|--------------|--------------|------------------|  
+|`lgamma`、`lgammaf`、`lgammal`|\<math.h>|\<cmath>|  
   
- 互換性について詳しくは、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
   
-## 参照  
- [関数リファレンス \(アルファベット順\)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
+## <a name="see-also"></a>関連項目  
+ [関数リファレンス (アルファベット順)](../../c-runtime-library/reference/crt-alphabetical-function-reference.md)   
  [tgamma、tgammaf、tgammal](../../c-runtime-library/reference/tgamma-tgammaf-tgammal.md)

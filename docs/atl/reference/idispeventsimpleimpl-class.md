@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,41 +18,24 @@ f1_keywords:
 - ATLCOM/ATL::IDispEventSimpleImpl::GetTypeInfoCount
 - ATLCOM/ATL::IDispEventSimpleImpl::Invoke
 - ATLCOM/ATL::IDispEventSimpleImpl::Unadvise
-dev_langs:
-- C++
-helpviewer_keywords:
-- IDispEventSimpleImpl class
+dev_langs: C++
+helpviewer_keywords: IDispEventSimpleImpl class
 ms.assetid: 971d82b7-a921-47fa-a4d8-909bed377ab0
-caps.latest.revision: 27
+caps.latest.revision: "27"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: 392e8a8d8d38b0eaacce4ab013c46476516f46f7
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: a6500a73151f2d04c6f6ec9185aca385f9c3108a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="idispeventsimpleimpl-class"></a>されますクラス
 このクラスの実装を提供する、`IDispatch`メソッド、せず、タイプ ライブラリから型情報を取得します。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -80,7 +62,7 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
 |----------|-----------------|  
 |[IDispEventSimpleImpl::Advise](#advise)|既定のイベント ソースとの接続を確立します。|  
 |[IDispEventSimpleImpl::DispEventAdvise](#dispeventadvise)|イベント ソースとの接続を確立します。|  
-|[IDispEventSimpleImpl::DispEventUnadvise](#dispeventunadvise)|イベント ソースとの接続を解除します。|  
+|[IDispEventSimpleImpl::DispEventUnadvise](#dispeventunadvise)|イベント ソースとの接続が中断されます。|  
 |[IDispEventSimpleImpl::GetIDsOfNames](#getidsofnames)|返します**E_NOTIMPL**です。|  
 |[IDispEventSimpleImpl::GetTypeInfo](#gettypeinfo)|返します**E_NOTIMPL**です。|  
 |[IDispEventSimpleImpl::GetTypeInfoCount](#gettypeinfocount)|返します**E_NOTIMPL**です。|  
@@ -105,7 +87,7 @@ class ATL_NO_VTABLE IDispEventSimpleImpl : public _IDispEventLocator<nID, pdiid>
  **IDispEventSimplImpl**と同じ機能を提供[IDispEventImpl](../../atl/reference/idispeventimpl-class.md)、タイプ ライブラリからインターフェイスに関する型情報を取得しません。 のみに基づいたコードが生成`IDispEventImpl`、使用することができますが、`IDispEventSimpleImpl`コードを手動で追加することで。 使用する`IDispEventSimpleImpl`としないイベント インターフェイスを記述するタイプ ライブラリがあるかをタイプ ライブラリの使用に関連するオーバーヘッドを回避します。  
   
 > [!NOTE]
-> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`または`IDispEventSimpleImpl`基底クラスのメンバーに直接アクセスする主な COM オブジェクトの状態のまま別の COM id として機能するクラス。  
+> `IDispEventImpl`および`IDispEventSimpleImpl`の独自の実装を提供**iunknown::queryinterface**それぞれを有効にする`IDispEventImpl`または`IDispEventSimpleImpl`基底クラス メンバーへの直接アクセスを許可する一方、個別の COM id として機能するクラスで、メインの COM オブジェクトです。  
   
  ActiveX イベント シンクのみサポートしている戻り値の型 HRESULT または void、イベント ハンドラー メソッドからの CE ATL の実装その他の戻り値はサポートされていませんし、その動作は未定義です。  
   
@@ -206,7 +188,7 @@ STDMETHOD(GetIDsOfNames)(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[::getidsofnames](http://msdn.microsoft.com/en-us/6f6cf233-3481-436e-8d6a-51f93bf91619) Windows SDK にします。  
   
 ##  <a name="gettypeinfo"></a>IDispEventSimpleImpl::GetTypeInfo  
  この実装**が**返します**E_NOTIMPL**です。  
@@ -219,7 +201,7 @@ STDMETHOD(GetTypeInfo)(
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[が](http://msdn.microsoft.com/en-us/cc1ec9aa-6c40-4e70-819c-a7c6dd6b8c99)Windows SDK にします。  
   
 ##  <a name="gettypeinfocount"></a>IDispEventSimpleImpl::GetTypeInfoCount  
  この実装**IDispatch::GetTypeInfoCount**返します**E_NOTIMPL**です。  
@@ -229,7 +211,7 @@ STDMETHOD(GetTypeInfoCount)(UINT* /* pctinfo */);
 ```  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IDispatch::GetTypeInfoCount](http://msdn.microsoft.com/en-us/da876d53-cb8a-465c-a43e-c0eb272e2a12) Windows SDK にします。  
   
 ##  <a name="invoke"></a>IDispEventSimpleImpl::Invoke  
  この実装**idispatch::invoke**イベント シンク マップに一覧表示、イベント ハンドラーの呼び出しです。  
@@ -279,4 +261,3 @@ HRESULT Unadvise(IUnknown* pUnk);
  [IDispEventImpl クラス](../../atl/reference/idispeventimpl-class.md)   
  [SINK_ENTRY_INFO](composite-control-macros.md#sink_entry_info)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

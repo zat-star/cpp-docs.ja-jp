@@ -4,47 +4,40 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
-dev_langs:
-- C++
+f1_keywords:
+- atlsecurity/ATL::AtlGetDacl
+- atlsecurity/ATL::AtlSetDacl
+- atlsecurity/ATL::AtlGetGroupSid
+- atlsecurity/ATL::AtlSetGroupSid
+- atlsecurity/ATL::AtlGetOwnerSid
+- atlsecurity/ATL::AtlSetOwnerSid
+- atlsecurity/ATL::AtlGetSacl
+- atlsecurity/ATL::AtlSetSacl
+- atlsecurity/ATL::AtlGetSecurityDescriptor
+dev_langs: C++
 helpviewer_keywords:
 - SIDs [C++], modifying SID objects
 - ACL object global functions
 - security IDs [C++]
 ms.assetid: 6a584bfe-16b7-47f4-8439-9c789c41567a
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: ff5afaaf2746d9e07eb9e06a079d34adb2f67109
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: d60eb8f3fbb782deadc89a3d9c3e3c44974d849c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="security-global-functions"></a>セキュリティのグローバル関数
 これらの関数は、オブジェクトの SID と ACL オブジェクトを変更するためのサポートを提供します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでは、次の表に示す関数を使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  次の表に示す関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 |||  
 |-|-|  
@@ -65,7 +58,7 @@ ms.lasthandoff: 04/04/2017
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlGetDacl(
@@ -94,7 +87,7 @@ inline bool AtlGetDacl(
  指定されたオブジェクトの随意アクセス制御リスト (DACL: Discretionary Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlSetDacl(
@@ -115,7 +108,7 @@ inline bool AtlSetDacl(
  新しいセキュリティ情報を含む DACL です。  
   
  `dwInheritanceFlowControl`  
- 継承のフロー制御します。 この値は、0 (既定)、PROTECTED_DACL_SECURITY_INFORMATION または UNPROTECTED_DACL_SECURITY_INFORMATION にすることができます。  
+ 継承のフロー制御します。 この値は、0 (既定)、PROTECTED_DACL_SECURITY_INFORMATION または UNPROTECTED_DACL_SECURITY_INFORMATION を指定できます。  
   
 ### <a name="return-value"></a>戻り値  
  正常に終了した場合は true を返します。失敗した場合は false を返します。  
@@ -129,7 +122,7 @@ inline bool AtlSetDacl(
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlGetGroupSid(
@@ -158,7 +151,7 @@ inline bool AtlGetGroupSid(
  オブジェクトのグループ セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlSetGroupSid(
@@ -187,7 +180,7 @@ inline bool AtlSetGroupSid(
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を取得します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlGetOwnerSid(
@@ -216,7 +209,7 @@ inline bool AtlGetOwnerSid(
  オブジェクトの所有者セキュリティ識別子 (SID: Security Identifier) を設定します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlSetOwnerSid(
@@ -245,7 +238,7 @@ inline bool AtlSetOwnerSid(
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を取得します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlGetSacl(
@@ -281,7 +274,7 @@ inline bool AtlGetSacl(
  指定されたオブジェクトのシステム アクセス制御リスト (SACL: System Access Control List) の情報を設定します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlSetSacl(
@@ -323,7 +316,7 @@ inline bool AtlSetSacl(
  指定されたオブジェクトのセキュリティ記述子を取得します。  
   
 > [!IMPORTANT]
->  実行するアプリケーションでこの関数は使用できません、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]です。  
+>  この関数は、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ```
 inline bool AtlGetSecurityDescriptor(
@@ -363,4 +356,3 @@ inline bool AtlGetSecurityDescriptor(
    
 ## <a name="see-also"></a>関連項目  
  [関数](../../atl/reference/atl-functions.md)
-

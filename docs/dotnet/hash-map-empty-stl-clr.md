@@ -1,41 +1,39 @@
 ---
-title: "hash_map::empty (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_map::empty"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "empty メンバー [STL/CLR]"
+title: "hash_map::empty (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_map::empty
+dev_langs: C++
+helpviewer_keywords: empty member [STL/CLR]
 ms.assetid: 2a145e16-a48a-4304-8fa6-5b2361693083
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b0fc23e13e04604bfb1f63349140dcca23332e0d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_map::empty (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmapempty-stlclr"></a>hash_map::empty (STL/CLR)
 要素が存在しないかどうかをテストします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 bool empty();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスが空の場合に true を返します。  これは [hash\_map::size](../dotnet/hash-map-size-stl-clr.md)`() == 0`と同じです。  hash\_map が空であるかどうかをテストするときに使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、被制御シーケンスが空の場合に true を返します。 等価である[hash_map::size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md)`() == 0`です。 これを使用するには、hash_map が空かどうかをテストします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_map_empty.cpp   
@@ -66,16 +64,19 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
-**size\(\) \= 3**  
-**empty\(\) \= false**  
-**size\(\) \= 0**  
-**empty\(\) \= true**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_map\>  
+```Output  
+ [a 1] [b 2] [c 3]  
+size() = 3  
+empty() = False  
+size() = 0  
+empty() = True  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_map >  
   
-## 参照  
- [hash\_map](../dotnet/hash-map-stl-clr.md)   
- [hash\_map::size](../dotnet/hash-map-size-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_map (STL/CLR)](../dotnet/hash-map-stl-clr.md)   
+ [hash_map::size (STL/CLR)](../dotnet/hash-map-size-stl-clr.md)

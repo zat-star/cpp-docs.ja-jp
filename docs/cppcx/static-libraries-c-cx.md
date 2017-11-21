@@ -1,42 +1,46 @@
 ---
-title: "スタティック ライブラリ (C++/CX) | Microsoft Docs"
-ms.custom: ""
-ms.date: "02/03/2017"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "article"
+title: "スタティック ライブラリ (C + + CX) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 02/03/2017
+ms.prod: windows-client-threshold
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: article
 ms.assetid: 7faf53c8-fa21-42cc-8246-d32533ef9dfa
-caps.latest.revision: 10
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 5f86d24c693cfcd5eecf8b37f0e4567c9c7af3a0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スタティック ライブラリ (C++/CX)
-[!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリケーションで使用されるスタティック ライブラリには、ISO 標準 C\+\+ コード、および [!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリケーション プラットフォームから除外されていない Win32 API への呼び出しも含めることができます。 スタティック ライブラリは [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントを使用します。また、特定の制約を持つ [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントを作成する場合があります。  
+# <a name="static-libraries-ccx"></a>スタティック ライブラリ (C++/CX)
+ユニバーサル Windows プラットフォーム アプリで使用されるスタティック ライブラリは、STL 型、およびユニバーサル Windows プラットフォーム アプリのプラットフォームから除外されていない Win32 Api への呼び出しを含む、ISO 標準の C++ コードを含めることができます。 スタティック ライブラリは、Windows ランタイム コンポーネントを処理し、特定の制限の Windows ランタイム コンポーネントを作成します。  
   
-## スタティック ライブラリの作成  
+## <a name="creating-static-libraries"></a>スタティック ライブラリの作成  
   
-#### [!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリケーションで使用するスタティック ライブラリを作成するには、次の手順に従います。  
+#### <a name="to-create-a-static-library-for-use-in-a-universal-windows-platform-app"></a>ユニバーサル Windows プラットフォーム アプリで使用するためのスタティック ライブラリを作成するには  
   
-1.  メニュー バーで、[!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリの **\[ファイル\]** \> **\[新規\]** \> **\[プロジェクト\]** \> **\[空のスタティック ライブラリ\]** を選択します。  
+1.  メニュー バーで、次のように選択します**ファイル** > **新規** > **プロジェクト** > **空のスタティック ライブラリ**。ユニバーサル windows プラットフォーム アプリ。  
   
-2.  **ソリューション エクスプローラー**で、プロジェクトのショートカット メニューを開き、**\[プロパティ\]** をクリックします。**\[プロパティ\]** ダイアログ ボックスから **\[構成プロパティ\]** \> **\[全般\]** ページを開き、[!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリケーション サポートを **\[あり\]** に設定します。  
+2.  **ソリューション エクスプローラー**で、プロジェクトのショートカット メニューを開き、 **[プロパティ]**をクリックします。 **プロパティ** ダイアログ ボックスで、**構成プロパティ** > **全般**にユニバーサル Windows プラットフォーム アプリのサポートを設定 ページで、 **はい**です。  
   
-3.  **\[構成プロパティ\]** \> **\[C\/C\+\+\]** ページで、**\[**[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)]**拡張機能を使用\]** を **\[はい \(\/ZW\)\]** に設定します。  
+3.  **構成プロパティ** > **C/C++**  ページで、設定**消費**Windows ランタイム**拡張子**に**はい (/ZW)**です。  
   
- 除外されている Win32 API の呼び出しを行う場合に新規のスタティック ライブラリをコンパイルするときに [!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリの場合、コンパイラは生成エラー C3861「識別子が見つかりません。」 サポートされている別の方法を探すように、 [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)], を参照してください [Alternatives to Windows APIs in Windows Store apps](http://msdn.microsoft.com/ja-jp/75568012-61e0-41cc-a4df-c698f54f21ec)します。  
+ ユニバーサル Windows プラットフォーム アプリの除外されている Win32 API への呼び出しを行う場合に新規のスタティック ライブラリをコンパイルするときにコンパイラによってエラー C3861「識別子が見つかりませんでした」が発生 Windows ランタイムのサポートされている別の方法を探すを参照してください。 [Windows ストア アプリでの Windows Api に代わる方法](http://msdn.microsoft.com/en-us/75568012-61e0-41cc-a4df-c698f54f21ec)です。  
   
- C\+\+ スタティック ライブラリ プロジェクトを [!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] アプリ ソリューションに追加する場合、[!INCLUDE[win8_appname_long](../cppcx/includes/win8-appname-long-md.md)] サポート プロパティが **\[はい\]** に設定されるように、ライブラリ プロジェクトのプロパティ設定を更新する必要がある場合があります。 この設定がなくてもコードはビルドとリンクを実行しますが、[!INCLUDE[win8_appstore_long](../cppcx/includes/win8-appstore-long-md.md)] アプリケーションの検証を試みるとエラーが発生します。 スタティック ライブラリは、そのライブラリを利用するプロジェクトと同じコンパイラ設定でコンパイルする必要があります。  
+ C++ スタティック ライブラリ プロジェクトをユニバーサル Windows プラットフォーム アプリ ソリューションに追加する場合は、ユニバーサル Windows プラットフォームのサポート プロパティに設定するように、ライブラリ プロジェクトのプロパティの設定を更新する必要があります**はい**です。 この設定がなくてもコードはビルドとリンクを実行しますが、 [!INCLUDE[win8_appstore_long](../cppcx/includes/win8-appstore-long-md.md)]アプリケーションの検証を試みるとエラーが発生します。 スタティック ライブラリは、そのライブラリを利用するプロジェクトと同じコンパイラ設定でコンパイルする必要があります。  
   
  `ref` パブリック クラス、パブリック インターフェイス クラス、またはパブリック値クラスを作成するスタティック ライブラリを使用すると、リンクは次の警告を出します。  
   
-> **warning LNK4264:** は \/ZW でコンパイルされたオブジェクト ファイルをスタティック ライブラリにアーカイブしています。[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)]型を作成する場合、[!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] メタデータを含むスタティック ライブラリとのリンクはお勧めできません。  
+> **警告 LNK4264:**をスタティック ライブラリ; に/ZW でコンパイルされたオブジェクト ファイルをアーカイブには、Windows ランタイム型を作成するときに推奨されないことを Windows ランタイム メタデータを含むスタティック ライブラリとリンクに注意してください。  
   
- スタティック ライブラリが、ライブラリ自体の外部で使用される [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントを生成しない場合のみ、安心して警告を無視できます。 ライブラリが、自らが定義したコンポーネントを利用していない場合、パブリック メタデータに型情報が含まれている状況でも、リンカーは実装を最適化できます。 このことは、スタティック ライブラリ内のパブリック コンポーネントはコンパイルされるが、実行時にアクティブにならないことを意味します。 この理由により、他のコンポーネントまたはアプリケーションで使用することを意図した任意の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] コンポーネントは、ダイナミック リンク ライブラリ \(DLL\) で実装する必要があります。  
+ スタティック ライブラリは、ライブラリ自体の外部で使用される Windows ランタイム コンポーネントを生成しない場合のみに安全に、警告を無視できます。 ライブラリが、自らが定義したコンポーネントを利用していない場合、パブリック メタデータに型情報が含まれている状況でも、リンカーは実装を最適化できます。 このことは、スタティック ライブラリ内のパブリック コンポーネントはコンパイルされるが、実行時にアクティブにならないことを意味します。 このため、ダイナミック リンク ライブラリ (DLL) で他のコンポーネントまたはアプリケーションで消費される Windows ランタイム コンポーネントを実装しなければなりません。  
   
-## 参照  
- [スレッドとマーシャリング](../cppcx/threading-and-marshaling-c-cx.md)
+## <a name="see-also"></a>関連項目  
+ [スレッドとマーシャ リング](../cppcx/threading-and-marshaling-c-cx.md)

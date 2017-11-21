@@ -1,82 +1,83 @@
 ---
-title: "CComBSTR を使用したプログラミング (ATL) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CComBSTR クラス, プログラミング"
-  - "Unicode, 使用 (CComBSTR [ATL] を)"
+title: "CComBSTR (ATL) を使用したプログラミング |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- CComBSTR class, programming with
+- Unicode, using CComBSTR [ATL]
 ms.assetid: d3bd0851-d132-4be9-9c4c-6ccba17acb2b
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4d75d2df47f69384ead62712836eee057aed94f3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CComBSTR を使用したプログラミング (ATL)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL クラス [CComBSTR](../atl/reference/ccombstr-class.md) は `BSTR` のデータ型のラッパーを提供します。  `CComBSTR` が便利なツールですが、注意を必要とするいくつかの状態になります。  
+# <a name="programming-with-ccombstr-atl"></a>CComBSTR を使用したプログラミング (ATL)
+ATL クラス[CComBSTR](../atl/reference/ccombstr-class.md)をラップするラッパーを提供、`BSTR`データ型。 中に`CComBSTR`便利なツールは、注意を必要とするいくつかの状況があります。  
   
 -   [変換の問題](#programmingwithccombstr_conversionissues)  
   
 -   [範囲の問題](#programmingwithccombstr_scopeissues)  
   
--   [CComBSTR のオブジェクトを明示的に解放できます。](#programmingwithccombstr_explicitlyfreeing)  
+-   [CComBSTR オブジェクトを明示的に解放します。](#programmingwithccombstr_explicitlyfreeing)  
   
--   [ループの CComBSTR のオブジェクトを使用する](#programmingwithccombstr_usingloops)  
+-   [CComBSTR オブジェクト ループで使用します。](#programmingwithccombstr_usingloops)  
   
 -   [メモリ リークの問題](#programmingwithccombstr_memoryleaks)  
   
-##  <a name="programmingwithccombstr_conversionissues"></a> 変換の問題  
- `CComBSTR` の複数のメソッドが Unicode に自動的に ANSI 文字列の引数をに変換しますが、メソッドは Unicode 形式の文字列を常に返します。  ANSI に、出力文字列を変換するには、ATL 変換クラスを使用します。  ATL 変換クラスの詳細については、[ATL と MFC の文字列変換マクロ](../Topic/ATL%20and%20MFC%20String%20Conversion%20Macros.md)を参照してください。  
+##  <a name="programmingwithccombstr_conversionissues"></a>変換の問題  
+ いくつか`CComBSTR`メソッドでは ANSI 文字列引数を Unicode に自動的に変換されます、メソッドは常に Unicode 形式の文字列を返します。 出力文字列を ANSI に変換する、するには、ATL 変換クラスを使用します。 ATL 変換クラスの詳細については、次を参照してください。 [ATL および MFC 文字列変換マクロ](reference/string-conversion-macros.md)です。  
   
-### 例  
- [!CODE [NVC_ATL_Utilities#114](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#114)]  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities#114](../atl/codesnippet/cpp/programming-with-ccombstr-atl_1.cpp)]  
   
- `CComBSTR` のオブジェクトを変更する場合にリテラル文字列を使用する場合はワイド文字列を使用します。  これは、不要な変換が低くなります。  
+ 変更する、文字列リテラルを使用している場合、`CComBSTR`オブジェクト、ワイド文字列を使用します。 これにより、不要な変換が低減されます。  
   
-### 例  
- [!CODE [NVC_ATL_Utilities#115](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#115)]  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities#115](../atl/codesnippet/cpp/programming-with-ccombstr-atl_2.cpp)]  
   
-##  <a name="programmingwithccombstr_scopeissues"></a> 範囲の問題  
- すべての行儀が、クラスと同様に、`CComBSTR` がスコープ外に出るとリソースを解放します。  関数が `CComBSTR` の文字列へのポインターを返す場合、これは、ポインターが既に解放されているメモリを参照すると問題ができます。  このような場合、次に示すように **\[コピー\]** のメソッドを使用します。  
+##  <a name="programmingwithccombstr_scopeissues"></a>範囲の問題  
+ 同様に、適切に動作クラス`CComBSTR`はスコープ外になったときにそのリソースを解放します。 関数へのポインターを返す場合、`CComBSTR`文字列、この問題が発生、ポインターは、既に解放されたメモリを参照するためです。 このような場合を使用して、**コピー**メソッドを次のようにします。  
   
-### 例  
- [!CODE [NVC_ATL_Utilities#116](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#116)]  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities#116](../atl/codesnippet/cpp/programming-with-ccombstr-atl_3.cpp)]  
   
-##  <a name="programmingwithccombstr_explicitlyfreeing"></a> CComBSTR のオブジェクトを明示的に解放できます。  
- オブジェクトがスコープ外になる前に明示的に `CComBSTR` のオブジェクトに含まれる文字列を解放することはできます。  文字列がリリースされた場合は、`CComBSTR` のオブジェクトは無効です。  
+##  <a name="programmingwithccombstr_explicitlyfreeing"></a>CComBSTR オブジェクトを明示的に解放します。  
+ 含まれる文字列を明示的に解放することは、`CComBSTR`オブジェクトのオブジェクトがスコープ外に出る前にします。 文字列が解放される場合、`CComBSTR`オブジェクトが無効です。  
   
-### 例  
- [!CODE [NVC_ATL_Utilities#117](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#117)]  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities#117](../atl/codesnippet/cpp/programming-with-ccombstr-atl_4.cpp)]  
   
-##  <a name="programmingwithccombstr_usingloops"></a> ループの CComBSTR のオブジェクトを使用する  
- 特定の操作を、**\[追加\]** の `+=` の演算子やメソッドなどの実行するに `CComBSTR` のクラスがバッファーを割り当てるため、短いループ内の文字列操作を実行することはお勧めできません。  この場合、`CStringT` は、より優れたパフォーマンスを実現します。  
+##  <a name="programmingwithccombstr_usingloops"></a>CComBSTR オブジェクト ループで使用します。  
+ として、`CComBSTR`クラスなど、特定の操作を実行時にバッファーを割り当て、`+=`演算子または**Append**メソッド、しないでループ文字列操作を実行することです。 このような場合は、`CStringT`パフォーマンスが向上します。  
   
-### 例  
- [!CODE [NVC_ATL_Utilities#118](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#118)]  
+### <a name="example"></a>例  
+ [!code-cpp[NVC_ATL_Utilities#118](../atl/codesnippet/cpp/programming-with-ccombstr-atl_5.cpp)]  
   
-##  <a name="programmingwithccombstr_memoryleaks"></a> メモリ リークの問題  
- **\[out\]** のパラメーターとして関数に初期化された `CComBSTR` のアドレスを渡すと、メモリ リークが発生します。  
+##  <a name="programmingwithccombstr_memoryleaks"></a>メモリ リークの問題  
+ 初期化されたのアドレスを渡す`CComBSTR`として関数に、 **[out]**メモリ リークを発生させます。  
   
- 次の例では、文字列 `"Initialized"` を保持するために割り当てる文字列は、関数 `MyGoodFunction` が文字列を置き換える場合漏ります。  
+ 文字列を保持するために次の例では、文字列が割り当てられている`"Initialized"`タイミングがリーク関数`MyGoodFunction`は、文字列を置換します。  
   
- [!CODE [NVC_ATL_Utilities#119](../CodeSnippet/VS_Snippets_Cpp/NVC_ATL_Utilities#119)]  
+ [!code-cpp[NVC_ATL_Utilities#119](../atl/codesnippet/cpp/programming-with-ccombstr-atl_6.cpp)]  
   
- リークを回避するには、**\[out\]** のアドレスをパラメーターとして渡す前に `CComBSTR` のあるオブジェクトの **\[空\]** のメソッドを呼び出します。  
+ メモリ リークを避けるためには、呼び出し、**空**既存のメソッド`CComBSTR`オブジェクトとしてアドレスを渡す前に、 **[out]**パラメーター。  
   
- 関数パラメーターが **\[in, out\]**同じコードがリークが発生しないことに注意してください。  
+ エントリの場合は、関数のパラメーターが、同じコードは、リークが発生しませんに注意してください**[で, out]**です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [概念](../atl/active-template-library-atl-concepts.md)   
  [CStringT クラス](../atl-mfc-shared/reference/cstringt-class.md)   
- [wstring](../Topic/wstring.md)   
+ [wstring](../standard-library/basic-string-class.md)   
  [文字列変換に関するマクロ](../atl/reference/string-conversion-macros.md)
+

@@ -1,60 +1,60 @@
 ---
-title: "トランザクション (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データベース [C++], トランザクション"
-  - "ODBC [C++], トランザクション"
-  - "ODBC レコードセット [C++], トランザクション"
-  - "ODBC レコードセット [C++], 更新"
-  - "レコードセット [C++], トランザクション"
-  - "レコードセット [C++], 更新"
-  - "トランザクション [C++], MFC ODBC クラス"
+title: "トランザクション (ODBC) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ODBC recordsets [C++], updating
+- transactions [C++], MFC ODBC classes
+- ODBC [C++], transactions
+- recordsets [C++], updating
+- databases [C++], transactions
+- recordsets [C++], transactions
+- ODBC recordsets [C++], transactions
 ms.assetid: a2ec0995-2029-45f2-8092-6efd6f2a77f4
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 38348bb2c1e78111e996cf84ae4bc81aceb96895
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# トランザクション (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="transaction-odbc"></a>トランザクション (ODBC)
 このトピックの内容は、MFC ODBC クラスに該当します。  
   
- トランザクションとは、[データ ソース](../../data/odbc/data-source-odbc.md)に対する一連の更新操作をまとめてバッチ処理することです。トランザクション内の更新操作は、すべて一度にコミットされるか、まったく処理されない \(ロールバックされる\) かのいずれかです。  トランザクションを使わないときは、コミットを発行しなくても、データ ソースに対する更新操作が自動的に行われます。  
+ トランザクションは、グループ、または一連の更新をバッチ処理する方法、[データソース](../../data/odbc/data-source-odbc.md)すべてが 1 回にコミットされるかは、トランザクションをロールバックするようにします。 トランザクションを使用しない場合、データ ソースへの変更は、要求時にコミットされるのではなく、自動的にコミットされます。  
   
 > [!NOTE]
->  ODBC データベース ドライバーによっては、トランザクションをサポートしていないものもあります。  ドライバーがサポートするトランザクションを調べるには、[CDatabase](../../mfc/reference/cdatabase-class.md) オブジェクトまたは [CRecordset](../Topic/CRecordset%20Class.md) オブジェクトのメンバー関数 `CanTransact` を呼び出します。  ただし、`CanTransact` はデータ ソースが全トランザクションをフル サポートしているかどうかを確認できないので注意してください。  また、開いている `CRecordset` オブジェクトに対するトランザクションの影響を調べるには、**CommitTrans** と **Rollback** の後にそれぞれ `CDatabase::GetCursorCommitBehavior` と `CDatabase::GetCursorRollbackBehavior` を必ず呼び出してください。  
+>  すべての ODBC データベース ドライバーでは、トランザクションをサポートします。 呼び出す、`CanTransact`のメンバー関数、 [CDatabase](../../mfc/reference/cdatabase-class.md)または[CRecordset](../../mfc/reference/crecordset-class.md)ドライバーが指定されたデータベースのトランザクションをサポートするかどうかを確認するオブジェクト。 なお`CanTransact`が決まるわけでは、データ ソースが完全なトランザクションのサポートを提供するかどうか。 呼び出す必要があります`CDatabase::GetCursorCommitBehavior`と`CDatabase::GetCursorRollbackBehavior`後**CommitTrans**と**ロールバック**開くときに、トランザクションの結果を確認する`CRecordset`オブジェクト。  
   
- `CRecordset` オブジェクトのメンバー関数 `AddNew` や **Edit** の呼び出しは、**Update** を呼び出すとすぐにデータ ソースに反映されます。  **Delete** の呼び出しもすぐに反映されます。  これに対して、`AddNew`、**Edit**、**Update**、**Delete** への複数の呼び出しで構成したトランザクションによる操作は、明示的に **CommitTrans** を呼び出さない限りコミットされません。  トランザクションを利用すると、複数の操作を一度に実行できます。  必要なリソースが確保できなかったか、その他の条件によってトランザクション全体が実行できなかった場合は、トランザクションをコミットせずに、ロールバックして操作を無効にします。  この場合、トランザクション内のすべての更新操作はデータ ソースに反映されません。  
-  
-> [!NOTE]
->  バルク行フェッチが実装されている場合、現段階の `CRecordset` クラスでは、データ ソースへの更新をサポートしていません。  つまり、`AddNew`、**Edit**、**Delete**、または **Update** を呼び出すことはできません。  ただし、更新を処理するための関数を独自に記述し、その関数をトランザクション内で呼び出すことはできます。  バルク行フェッチの詳細については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+ 呼び出し、`AddNew`と**編集**のメンバー関数は、`CRecordset`オブジェクトのデータ ソースを呼び出すと即座に影響**更新**です。 **削除**呼び出しもすぐに有効です。 複数回呼び出すので構成されるトランザクションを使用する一方、 `AddNew`、**編集**、**更新**、および**削除**、これは実行しますが、までコミットされていません。呼び出す**CommitTrans**明示的にします。 トランザクションを確立してにロールバックする機能を維持したまま、一連のような呼び出しを実行できます。 重要なリソースが利用できない、またはその他の条件により、トランザクション全体を完了できなく、することができますトランザクションをロールバックそのコミットの代わりにします。 その場合は、データ ソースのどのトランザクションに属する変更に影響します。  
   
 > [!NOTE]
->  `CDatabase` オブジェクトに関連付けられた ODBC **HDBC**、またはその **HDBC** に基づいた ODBC **HSTMT** を使用する限り、トランザクションは、レコードセットだけではなく、直接実行した SQL ステートメントにも影響を及ぼします。  
-  
- 複数のレコードを同時に更新する場合は、特にトランザクションが便利です。  複数のレコードを使用しているときは、最後のレコードが更新される前に例外がスローされると、問題が起こります。  このような一連の操作を 1 つのトランザクションにグループ化すると、更新処理をやり直して \(ロールバックして\) 各レコードをトランザクション実行前の状態に戻すことができます。  たとえば、銀行預金処理で口座 A から口座 B に振り替えるとき、A からの引き落とし操作と B への預け入れ操作は、必ず両方とも成功させるか、両方とも失敗させるかのいずれかにする必要があります。  
-  
- データベース クラスでは、トランザクションは `CDatabase` オブジェクトを通じて行います。  `CDatabase` オブジェクトは、データ ソースへの接続を表します。`CDatabase` オブジェクトに結び付けられている 1 つ以上のレコードセットが、レコードセット メンバー関数を使って、データベース内のテーブルを操作します。  
+>  クラスの現在のところ、`CRecordset`バルク行フェッチを実装している場合は、データ ソースへの更新をサポートしません。 つまりへの呼び出しを行うことはできません`AddNew`、**編集**、**削除**、または**更新**です。 ただし、することができます関数を記述する独自の更新を実行し、特定のトランザクション内でこれらの関数を呼び出します。 バルク行フェッチの詳細については、次を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
 > [!NOTE]
->  サポートされるトランザクションのレベルは 1 つだけです。  つまり、トランザクションを入れ子にすることも、複数のデータベース オブジェクトにわたるトランザクションを使用することもできません。  
+>  レコード セットに影響を与える、他のトランザクションに影響を与える、ODBC を使用する限り、直接実行する SQL ステートメント**HDBC**に関連付けられている、`CDatabase`オブジェクトまたは ODBC **HSTMT**に基づいて**HDBC**です。  
   
- トランザクション実行のしくみの詳細については、次のトピックを参照してください。  
+ トランザクションは、同時に更新する必要がある複数のレコードが存在する場合に特に便利です。 ここでは、最後の更新が行われる前に、例外がスローされた場合に発生する可能性がありますなど半分完了トランザクション、されないようにします。 このような更新プログラムをトランザクションにグループ化、変更からの回復 (ロールバック) でき、状態に戻す、レコードを返します。 たとえば、銀行引き落とし口座 A から口座 B、両方、資金を正しく処理する B に A、預金を引き出しが成功する必要がありますかトランザクション全体が失敗する必要があります。  
   
--   [トランザクション : レコードセットからのトランザクション実行 \(ODBC\)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)  
+ データベース クラスで使用したトランザクションを実行して`CDatabase`オブジェクト。 A`CDatabase`オブジェクト データ ソースへの接続を表し、1 つまたは複数のレコード セットに関連付けられている`CDatabase`オブジェクトは、レコード セットのメンバー関数を使用して、データベースのテーブルを操作します。  
   
--   [トランザクション : トランザクションが更新処理に与える影響 \(ODBC\)](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)  
+> [!NOTE]
+>  トランザクションの 1 つだけのレベルはサポートされています。 トランザクションを入れ子にすることはできません。 また、トランザクションが複数のデータベース オブジェクトにまたがることができます。  
   
-## 参照  
- [ODBC \(Open Database Connectivity\)](../Topic/Open%20Database%20Connectivity%20\(ODBC\).md)
+ 次のトピックでは、トランザクションの実行方法の詳細についてを説明します。  
+  
+-   [トランザクション: レコードセットからのトランザクション実行 (ODBC)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)  
+  
+-   [トランザクション: トランザクションが更新処理に与える影響 (ODBC)](../../data/odbc/transaction-how-transactions-affect-updates-odbc.md)  
+  
+## <a name="see-also"></a>関連項目  
+ [ODBC (Open Database Connectivity)](../../data/odbc/open-database-connectivity-odbc.md)

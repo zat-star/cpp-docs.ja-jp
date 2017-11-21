@@ -1,67 +1,67 @@
 ---
-title: "トランザクション: トランザクションが更新処理に与える影響 (ODBC) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CommitTrans メソッド"
-  - "ODBC レコードセット, トランザクション"
-  - "Rollback メソッド, ODBC トランザクション"
-  - "トランザクション, ロールバック"
-  - "トランザクション, 更新 (レコードセットを)"
+title: "トランザクション: トランザクションに与える影響 (ODBC) の更新プログラム |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- transactions, updating recordsets
+- ODBC recordsets, transactions
+- transactions, rolling back
+- CommitTrans method
+- Rollback method, ODBC transactions
 ms.assetid: 9e00bbf4-e9fb-4332-87fc-ec8ac61b3f68
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ee5e34ce0af330ec9a788ceda758a412e3d7ac2d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# トランザクション: トランザクションが更新処理に与える影響 (ODBC)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-トランザクション中の[データ ソース](../../data/odbc/data-source-odbc.md)の更新は、エディット バッファーを使って管理されます \(トランザクションを利用しない場合も同じです\)。  エディット バッファーは、レコードセットのフィールド データ メンバーの集合であり、現在のレコードが保存されます。`AddNew` や **Edit** の実行中は、エディット バッファーの内容は一時的に待避されます。  **Delete** 処理の場合は、現在のレコードの内容は待避されません。  エディット バッファーと現在のレコードの詳細については、「[レコードセット : レコード更新のしくみ \(ODBC\)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md)」を参照してください。  
+# <a name="transaction-how-transactions-affect-updates-odbc"></a>トランザクション: トランザクションが更新処理に与える影響 (ODBC)
+更新、[データソース](../../data/odbc/data-source-odbc.md)エディット バッファー (トランザクションの外部で使用される同じメソッド) を使用してトランザクション中には、管理します。 レコード セットのフィールド データ メンバーは総称して、レコード セットのバックアップを取得中に一時的に現在のレコードを格納しているエディット バッファーとして機能する`AddNew`または**編集**です。 中に、**削除**操作、現在のレコードはトランザクション内でバックアップされません。 エディット バッファーおよび更新プログラムが現在のレコードを格納する方法の詳細については、次を参照してください。[レコード セット: レコード更新のしくみ (ODBC)](../../data/odbc/recordset-how-recordsets-update-records-odbc.md)です。  
   
 > [!NOTE]
->  バルク行フェッチを実装している場合は、`AddNew`、**Edit**、または **Delete** を呼び出すことはできません。  その代わり、データ ソースの更新を処理するための関数を独自に記述する必要があります。  バルク行フェッチの詳細については、「[レコードセット : バルク行フェッチ \(ODBC\)](../Topic/Recordset:%20Fetching%20Records%20in%20Bulk%20\(ODBC\).md)」を参照してください。  
+>  バルク行フェッチを実装した場合を呼び出すことはできません`AddNew`、**編集**、または**削除**です。 代わりに、データ ソースへの更新を実行する、独自の関数を記述する必要があります。 バルク行フェッチの詳細については、次を参照してください。[レコード セット: レコードのフェッチ (ODBC)](../../data/odbc/recordset-fetching-records-in-bulk-odbc.md)です。  
   
- トランザクション中の `AddNew`、**Edit**、**Delete** の操作は、コミットすることも、ロールバックすることもできます。  **CommitTrans** と **Rollback** による現在のレコードの操作は、エディット バッファーに正しく反映されないことがあります。  現在のレコードの内容をエディット バッファーに正しく反映させるには、`CRecordset` の更新用関数 AddNew、Edit、Delete と `CDatabase` のメンバー関数 **CommitTrans**、**Rollback** の連係を正しく理解する必要があります。  
+ トランザクションを処理中に`AddNew`、**編集**、および**削除**操作をコミットまたはロールバックすることができます。 効果**CommitTrans**と**ロールバック**エディット バッファーには復元されませんを現在のレコードが発生する可能性があります。 現在のレコードが適切に復元することを確認するには、理解しておく必要がどのように**CommitTrans**と**ロールバック**のメンバー関数`CDatabase`の更新機能で機能`CRecordset`.  
   
-##  <a name="_core_how_committrans_affects_updates"></a> CommitTrans が更新処理に与える影響  
- 次の表に **CommitTrans** がトランザクションに与える影響を示します。  
+##  <a name="_core_how_committrans_affects_updates"></a>CommitTrans が更新プログラムに与える影響  
+ 次の表の効果を説明する**CommitTrans**トランザクションにします。  
   
-### CommitTrans が更新処理に与える影響  
+### <a name="how-committrans-affects-updates"></a>CommitTrans が更新プログラムに与える影響  
   
 |操作|データ ソースの状態|  
-|--------|----------------|  
-|`AddNew` と **Update** を実行後、**CommitTrans** を実行|データ ソースに新規レコードが追加されます。|  
-|`AddNew` 実行後、\(**Update** を呼び出さずに\) **CommitTrans** を実行|新規レコードは失われ、  データ ソースには追加されません。|  
-|**Edit** と **Update** を実行後、**CommitTrans** を実行|更新結果がデータ ソースに反映されます。|  
-|**Edit** 実行後、\(**Update** を呼び出さずに\) **CommitTrans** を実行|レコードの更新結果は失われ、  データ ソース上のレコードは変化しません。|  
-|**Delete** 実行後、**CommitTrans** を実行|データ ソース上のレコードが削除されます。|  
+|---------------|---------------------------|  
+|`AddNew`および**更新**、し**CommitTrans**|新しいレコードは、データ ソースに追加されます。|  
+|`AddNew`(なし**更新**)、し**CommitTrans**|新しいレコードが失われます。 レコードがデータ ソースに追加されません。|  
+|**編集**と**更新**、し**CommitTrans**|データ ソースにコミットを編集します。|  
+|**編集**(せず**更新**)、し**CommitTrans**|レコードの更新結果は失われます。 レコードは、データ ソースでは変更されません。|  
+|**削除**し**CommitTrans**|レコードがデータ ソースから削除されました。|  
   
-##  <a name="_core_how_rollback_affects_updates"></a> Rollback がトランザクションに与える影響  
- 次の表に、**Rollback** がトランザクションに与える影響を示します。  
+##  <a name="_core_how_rollback_affects_updates"></a>トランザクションのロールバックの影響  
+ 次の表の効果を説明する**ロールバック**トランザクションにします。  
   
-### Rollback がトランザクションに与える影響  
+### <a name="how-rollback-affects-transactions"></a>トランザクションのロールバックの影響  
   
-|操作|現在のレコードの状態|必要な処理|データ ソースの状態|  
-|--------|----------------|-----------|----------------|  
-|`AddNew` と **Update** を実行後、**Rollback** を実行|現在のレコードは、新規レコードを作るために一時的に待避されます。  新規レコードは、エディット バッファーに格納されます。  **Update** 実行後、現在のレコードの内容がエディット バッファーに戻されます。||**Update** によるデータ ソースへの追加は無効化されます。|  
-|`AddNew` 実行後、\(**Update** を呼び出さずに\) **Rollback** を実行|現在のレコードは、新規レコードを作るために一時的に待避されます。  エディット バッファーには新規レコードが格納されます。|エディット バッファーに空の新規レコードを作るには、もう 1 回 `AddNew` を呼び出します。  エディット バッファーに元の値を復元する場合は、**Move**\(0\) を呼び出します。|**Update** が呼び出されていないので、データ ソースは変更されません。|  
-|**Edit** と **Update** を実行後、**Rollback** を実行|編集前の現在のレコードは一時的に待避されます。  エディット バッファーには、編集後のレコードの内容が格納されます。  **Update** が呼び出された後も、編集前のレコードは待避されて残っています。|ダイナセットの場合 : いったん他のレコードにスクロールしてから再び元のレコードに戻ると、編集前のレコードがエディット バッファーに戻されます。<br /><br /> スナップショットの場合 : **Requery** を呼び出すと、データ ソースの内容がレコードセットに呼び戻されます。|**Update** によるデータ ソースへの変更は無効化されます。|  
-|**Edit** 実行後、\(**Update** を呼び出さずに\) **Rollback** を実行|編集前の現在のレコードは一時的に待避されます。  エディット バッファーには、編集後のレコードの内容が格納されます。|エディット バッファーに戻すには、もう 1 回 **Edit** を呼び出します。|**Update** が呼び出されていないので、データ ソースは変更されません。|  
-|**Delete** 実行後、**Rollback** を実行|現在のレコードの内容が削除されます。|**Requery** を呼び出すと、データ ソースの内容がレコードセットに呼び戻されます。|データ ソースに対する削除は無効化されます。|  
+|操作|現在のレコードの状態|する必要があります。|データ ソースの状態|  
+|---------------|------------------------------|-------------------|---------------------------|  
+|`AddNew`および**更新**、し**ロールバック**|現在のレコードのコンテンツは、新しいレコードを確保するために一時的に格納されます。 新しいレコードは、エディット バッファーに入力されます。 後に**更新**が呼び出されると、現在のレコードをエディット バッファーに復元します。||によるデータ ソースへの追記を**更新**を反転します。|  
+|`AddNew`(なし**更新**)、し**ロールバック**|現在のレコードのコンテンツは、新しいレコードを確保するために一時的に格納されます。 編集バッファーに新しいレコードが含まれています。|呼び出す`AddNew`に空の新しいレコードをエディット バッファーを戻します。 呼び出すまたは**移動**をエディット バッファーに古い値を復元するには、(0) です。|**更新**呼び出されませんでした、データ ソースに加えられた変更はありませんでした。|  
+|**編集**と**更新**、し**ロールバック**|現在のレコードの編集前のバージョンは一時的に格納されます。 エディット バッファーの内容には、編集が行われています。 後に**更新**が呼び出されたが、編集前のレコードのバージョンがまだ一時的に格納されています。|*ダイナセット*: 現在のレコードから外してをエディット バッファーに、レコードの編集前のバージョンを復元するバックアップをスクロールします。<br /><br /> *スナップショット*: 呼び出す**Requery**をデータ ソースからレコード セットを更新します。|データ ソースによって行われた変更**更新**が取り消されます。|  
+|**編集**(せず**更新**)、し**ロールバック**|現在のレコードの編集前のバージョンは一時的に格納されます。 エディット バッファーの内容には、編集が行われています。|呼び出す**編集**もう一度をエディット バッファーにレコードの編集前のバージョンを復元します。|**更新**呼び出されませんでした、データ ソースに加えられた変更はありませんでした。|  
+|**削除**し**ロールバック**|現在のレコードの内容が削除されます。|呼び出す**Requery**をデータ ソースから現在のレコードの内容を復元します。|データ ソースからデータの削除が取り消されます。|  
   
-## 参照  
- [トランザクション \(ODBC\)](../../data/odbc/transaction-odbc.md)   
- [トランザクション \(ODBC\)](../../data/odbc/transaction-odbc.md)   
- [トランザクション: レコードセットからのトランザクション実行 \(ODBC\)](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)   
+## <a name="see-also"></a>関連項目  
+ [トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)   
+ [トランザクション (ODBC)](../../data/odbc/transaction-odbc.md)   
+ [トランザクション: レコード セット (ODBC) からのトランザクションの実行](../../data/odbc/transaction-performing-a-transaction-in-a-recordset-odbc.md)   
  [CDatabase クラス](../../mfc/reference/cdatabase-class.md)   
- [CRecordset クラス](../Topic/CRecordset%20Class.md)
+ [CRecordset クラス](../../mfc/reference/crecordset-class.md)

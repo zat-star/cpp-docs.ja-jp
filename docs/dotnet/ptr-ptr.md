@@ -1,35 +1,34 @@
 ---
-title: "ptr::ptr | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ptr::ptr"
-  - "ptr.ptr"
-  - "msclr.com.ptr.ptr"
-  - "msclr::com::ptr::ptr"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ptr::ptr"
+title: "ptr::ptr |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- ptr::ptr
+- ptr.ptr
+- msclr.com.ptr.ptr
+- msclr::com::ptr::ptr
+dev_langs: C++
+helpviewer_keywords: ptr::ptr
 ms.assetid: 4f5883b4-7c0a-46c6-aa9f-4e49eed463eb
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 99016a9006bb13be70fe38fd222ad25a08792b20
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ptr::ptr
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`com::ptr` を COM オブジェクトをラップするために構築します。  
+# <a name="ptrptr"></a>ptr::ptr
+構築、`com::ptr`を COM オブジェクトをラップします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 ptr();  
@@ -38,19 +37,19 @@ ptr(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `P`  
  COM インターフェイス ポインター。  
   
-## 解説  
- 非引数のコンストラクターは、基になるオブジェクトのハンドルに `nullptr` を割り当てます。  `com::ptr` への後続の呼び出しで、オブジェクトが実際に添付または作成されるまで内部オブジェクトを使用すると、自動的に失敗します。  
+## <a name="remarks"></a>コメント  
+ 引数を受け取らないコンス トラクターが代入`nullptr`を基になるオブジェクトのハンドル。 後続の呼び出し、`com::ptr`内部オブジェクトを検証し、オブジェクトが実際に作成またはアタッチされるまで、サイレント モードで失敗します。  
   
- 1 引数のコンストラクターでは、COM オブジェクトへの参照を追加しますが、呼び出し元の参照を解放しないため、呼び出し元は実際にはコントロールを中止できるように COM オブジェクト `Release` を呼び出す必要があります。  `com::ptr` のデストラクターが呼び出されるときに自動的に COM オブジェクトの参照を解放します。  
+ 引数が 1 つのコンス トラクターは、COM オブジェクトへの参照を追加しますが、呼び出し元の参照を解放しないため、呼び出し元を呼び出す必要があります`Release`本当に制御を放棄する COM オブジェクトにします。 ときに、`com::ptr`のデストラクターが呼び出される COM オブジェクトへの参照を自動的に解放します。  
   
- このコンストラクターに `NULL` を渡すことで、引数バージョンを呼び出すことと同じです。  
+ 渡す`NULL`このコンス トラクターには、引数なしのバージョンの呼び出しと同じです。  
   
-## 使用例  
- この例では、プライベート メンバー `IXMLDOMDocument` オブジェクトをラップするために `com::ptr` を使用する CLR クラスを実装します。  これは、コンストラクターの両方のバージョンの使用方法を示します。  
+## <a name="example"></a>例  
+ この例を使用して CLR クラスを実装して、`com::ptr`をそのプライベート メンバーをラップする`IXMLDOMDocument`オブジェクト。 コンス トラクターの両方のバージョンの使用方法を示します。  
   
 ```  
 // comptr_ptr.cpp  
@@ -111,12 +110,12 @@ int main() {
 }  
 ```  
   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\com\\ptr.h\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\com\ptr.h >  
   
- **名前空間** msclr::com  
+ **Namespace** msclr::com  
   
-## 参照  
- [ptr Members](../dotnet/ptr-members.md)   
+## <a name="see-also"></a>関連項目  
+ [ptr メンバー](../dotnet/ptr-members.md)   
  [ptr::CreateInstance](../dotnet/ptr-createinstance.md)   
  [ptr::~ptr](../dotnet/ptr-tilde-ptr.md)

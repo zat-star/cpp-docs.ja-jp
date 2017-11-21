@@ -1,47 +1,48 @@
 ---
-title: "Adding an ATL Dialog Box | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL プロジェクト, 追加 (ダイアログ リソースを)"
-  - "ダイアログ ボックス, ATL"
-  - "MFC ダイアログ ボックス, ATL ダイアログ"
+title: "ATL ダイアログ ボックスを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords:
+- ATL projects, adding dialog resources
+- MFC dialog boxes, ATL dialogs
+- dialog boxes, ATL
 ms.assetid: 152a378f-7b24-4f66-aeba-c740973f03a6
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 74eb8615a3dcda140713c9ecab8ab9a3400bf0bf
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Adding an ATL Dialog Box
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ATL ダイアログをプロジェクトに追加するには、ATL プロジェクト、または ATL サポートを含む MFC プロジェクトを用意する必要があります。  [ATL プロジェクト ウィザード](../Topic/ATL%20Project%20Wizard.md)を使用して ATL アプリケーションを作成するか、または [MFC アプリケーションに ATL オブジェクトを追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)して MFC アプリケーション用の ATL サポートを実装できます。  
+# <a name="adding-an-atl-dialog-box"></a>ATL ダイアログ ボックスを追加します。
+ATL ダイアログをプロジェクトに追加するには、プロジェクトは ATL プロジェクト、または ATL のサポートを含む MFC プロジェクトをする必要があります。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するか、 [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーションに対する ATL のサポートを実装します。  
   
- 既定では、ATL ダイアログ ウィザードは [CAxDialogImpl](../Topic/CAxDialogImpl%20Class.md) クラスから派生するダイアログ ボックスを実装します。  このクラスには、ActiveX コントロールと Windows コントロールをホストするためのサポートが含まれます。  ActiveX コントロール サポートのオーバーヘッドが不要な場合は、ウィザードでコードが生成された後で、`CAxDialogImpl` クラスのすべてのインスタンスを基本クラス [CSimpleDialog](../../atl/reference/csimpledialog-class.md) または [CDialogImpl](../Topic/CDialogImpl%20Class.md) に置き換えてください。  
+ ATL ダイアログ ウィザード実装から派生したダイアログ ボックスを既定では、 [CAxDialogImpl](../../atl/reference/caxdialogimpl-class.md)です。 このクラスには、ActiveX や Windows のコントロールをホストするためのサポートが含まれています。 ウィザードは、コードを生成した後に ActiveX コントロール サポートのオーバーヘッドをしない場合は、すべてのインスタンスを置き換える`CAxDialogImpl`いずれかで[CSimpleDialog](../../atl/reference/csimpledialog-class.md)または[CDialogImpl](../../atl/reference/cdialogimpl-class.md)基底クラスとして.  
   
 > [!NOTE]
->  `CSimpleDialog` クラスでは、Windows コモン コントロールだけをサポートするモーダル ダイアログ ボックスが作成されます。  `CDialogImpl` では、モーダル ダイアログ ボックスまたはモードレス ダイアログ ボックスのいずれかが作成されます。  
+>  `CSimpleDialog`Windows コモン コントロールのみをサポートするモーダル ダイアログ ボックスのみを作成します。 `CDialogImpl`いずれかのモーダルまたはモードレスのダイアログ ボックスを作成します。  
   
-### プロジェクトに ATL ダイアログ リソースを追加するには  
+### <a name="to-add-an-atl-dialog-resource-to-your-project"></a>ATL ダイアログ リソースをプロジェクトに追加するには  
   
-1.  [ATL プロジェクト ウィザード](../Topic/ATL%20Project%20Wizard.md)を使用して ATL プロジェクトを作成します。  
+1.  ATL プロジェクトを使用して、作成、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)です。  
   
-2.  [クラス ビュー](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925)でプロジェクト名を右クリックし、ショートカット メニューの \[追加\] をクリックします。  \[クラスの追加\] をクリックします。  
+2.  [クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)プロジェクト名を右クリックし、クリックして、**追加**ショートカット メニューからです。 をクリックして**クラスを追加**です。  
   
-3.  [&#91;クラスの追加&#93;](../../ide/add-class-dialog-box.md) ダイアログ ボックスのテンプレート ペインの \[ATL ダイアログ\] をクリックします。  \[開く\] をクリックして [ATL ダイアログ ウィザード](../../atl/reference/atl-dialog-wizard.md)を表示します。  
+3.  [テンプレート] ペインで、[クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスで、をクリックして**ATL ダイアログ**です。 をクリックして**開く**を表示する、 [ATL ダイアログ ウィザード](../../atl/reference/atl-dialog-wizard.md)です。  
   
- 詳細については、「[ダイアログ ボックスの実装](../../atl/implementing-a-dialog-box.md)」を参照してください。  
+ 詳細については、次を参照してください。 [ ダイアログ ボックスを実装する](../../atl/implementing-a-dialog-box.md)です。  
   
-## 参照  
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
- [ウィンドウ クラス](../Topic/ATL%20Window%20Classes.md)   
+## <a name="see-also"></a>関連項目  
+ [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
+ [ウィンドウ クラス](../../atl/atl-window-classes.md)   
  [メッセージ マップ](../../atl/message-maps-atl.md)
+

@@ -1,35 +1,33 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4711 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4711"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4711"
+title: "コンパイラの警告 (レベル 1) C4711 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4711
+dev_langs: C++
+helpviewer_keywords: C4711
 ms.assetid: 270506ab-fead-4328-b714-2978113be238
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 0747f4345b36dc1b8e9f0dda97f6981b243405df
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4711
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-関数 'function' にインライン展開を選択しました。  
+# <a name="compiler-warning-level-1-c4711"></a>コンパイラの警告 (レベル 1) C4711
+関数 'function' がインライン展開を選択しました  
   
- インライン展開の指定はありませんが、コンパイラは指定された関数をインライン展開しました。  
+ コンパイラは実行のマークされていますが、指定された関数のインライン展開インライン展開されます。  
   
- [\/Ob2](../../build/reference/ob-inline-function-expansion.md) を指定すると、C4711 エラーが有効になります。  
+ 場合に、C4711 が有効になっている[/Ob2](../../build/reference/ob-inline-function-expansion.md)を指定します。  
   
- インライン展開はコンパイラの判断によって行われます。  この警告は、情報を提供するためだけのものです。  
+ コンパイラの裁量により、インライン展開が実行されます。 これは、情報提供の警告です。  
   
- 既定では、この警告はオフに設定されています。  警告を有効にするには、[\#pragma warning](../../preprocessor/warning.md) を使用します。  詳細については、「[既定で無効になっているコンパイラ警告](../Topic/Compiler%20Warnings%20That%20Are%20Off%20by%20Default.md)」を参照してください。
+ 既定では、この警告はオフに設定されています。 警告を有効にするには、 [#pragma 警告](../../preprocessor/warning.md)です。 詳細については、「 [既定で無効になっているコンパイラ警告](../../preprocessor/compiler-warnings-that-are-off-by-default.md) 」を参照してください。

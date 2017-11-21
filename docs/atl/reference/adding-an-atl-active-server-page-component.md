@@ -1,52 +1,53 @@
 ---
-title: "ATL Active Server Page コンポーネントの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ASP コンポーネント"
-  - "ASP コンポーネント, 追加"
-  - "ATL ASP コンポーネント"
-  - "ATL, ASP コンポーネント"
+title: "ATL Active Server Page コンポーネントを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords:
+- ASP components, adding
+- ASP components
+- ATL, ASP components
+- ATL ASP components
 ms.assetid: 7be2204c-6e58-4099-8892-001b848c8987
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 844e38be9b182a597054b931eae81ce22621dce2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL Active Server Page コンポーネントの追加
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ATL \(Active Template Library\) オブジェクトをプロジェクトに追加するには、プロジェクトを ATL COM アプリケーション、または ATL サポートを含む MFC アプリケーションとして作成しておく必要があります。  [ATL プロジェクト ウィザード](../Topic/ATL%20Project%20Wizard.md)を使用すると、ATL アプリケーションを作成できます。また、[&#91;クラスの追加&#93; ダイアログ ボックス](../../ide/add-class-dialog-box.md)の \[MFC に ATL サポートを追加\] を選択するか、または [ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)することによって、MFC アプリケーションに対する ATL サポートを実装できます。  
+# <a name="adding-an-atl-active-server-page-component"></a>ATL Active Server Page コンポーネントを追加します。
+アクティブ テンプレート ライブラリ (ATL) オブジェクトをプロジェクトに追加するには、プロジェクト必要がありますが作成されて、ATL COM アプリケーションまたは ATL サポートを含む MFC アプリケーションとして。 使用することができます、 [ATL プロジェクト ウィザード](../../atl/reference/atl-project-wizard.md)ATL アプリケーションを作成するには [ **MFC に ATL サポートを追加**から、[クラスの追加] ダイアログ ボックス](../../ide/add-class-dialog-box.md)ダイアログ ボックスで、こともできます[ATL オブジェクトを MFC アプリケーションに追加](../../mfc/reference/adding-atl-support-to-your-mfc-project.md)MFC アプリケーション用の ATL サポートを実装します。  
   
- ASP \(Active Server Pages\) コンポーネントは IIS \(Internet Information Server\) アーキテクチャの一部であり、次に示す高度な Web 開発機能を備えています。  
+ Active Server Pages コンポーネントは、次の高度な Web 開発機能を提供するインターネット インフォメーション サービス アーキテクチャの一部です。  
   
--   ASP コンポーネントを HTML ページに埋め込むと、ブラウザーに依存しない動的コンテンツを作成できます。  
+-   ASP のコンポーネントは、ブラウザーに依存しない、動的なコンテンツを作成する HTML ページに埋め込むことができます。  
   
--   ASP ページを使用して標準ベースのデータベース接続を実行できます。  
+-   ASP ページを使用して、標準ベースのデータベース接続を提供することができます。  
   
--   Web ベースのアプリケーションに対して ASP エラー処理機能を使用できます。  
+-   ASP のエラー処理機能を使用するには、Web ベース アプリケーション用。  
   
-### ATL ASP \(Active Server Pages\) コンポーネントをプロジェクトに追加するには  
+### <a name="to-add-an-atl-active-server-pages-component-to-your-project"></a>ATL Active Server Page コンポーネントをプロジェクトに追加するには  
   
-1.  **ソリューション エクスプローラー**または [&#91;クラス ビュー&#93;](http://msdn.microsoft.com/ja-jp/8d7430a9-3e33-454c-a9e1-a85e3d2db925) で、ATL Active Server Pages コンポーネントを追加するプロジェクト名を右クリックします。  
+1.  いずれかで**ソリューション エクスプ ローラー**または[クラス ビュー](http://msdn.microsoft.com/en-us/8d7430a9-3e33-454c-a9e1-a85e3d2db925)、ATL Active Server Page コンポーネントを追加するプロジェクトの名前を右クリックします。  
   
-2.  ショートカット メニューの \[追加\] をポイントし、\[クラスの追加\] をクリックします。  
+2.  ショートカット メニューをクリックして**追加**、クリックして**クラスの追加**です。  
   
-3.  [&#91;クラスの追加&#93;](../../ide/add-class-dialog-box.md) ダイアログ ボックスのテンプレート ペインの \[ATL Active Server Page コンポーネント\] をクリックし、次に \[開く\] をクリックして [ATL Active Server Page コンポーネント ウィザード](../../atl/reference/atl-active-server-page-component-wizard.md)を表示します。  
+3.  [クラスの追加](../../ide/add-class-dialog-box.md)ダイアログ ボックスの [テンプレート] ペインで、クリックして**ATL Active Server Page コンポーネント**、順にクリック**開く**を表示する、 [ATL Active ServerPage コンポーネント ウィザード](../../atl/reference/atl-active-server-page-component-wizard.md)です。  
   
-## 参照  
- [クラスの追加](../Topic/Adding%20a%20Class%20\(Visual%20C++\).md)   
- [ATL プロジェクトでの新しいインターフェイスの追加](../Topic/Adding%20a%20New%20Interface%20in%20an%20ATL%20Project.md)   
- [オブジェクトへのコネクション ポイントの追加](../../atl/adding-connection-points-to-an-object.md)   
+## <a name="see-also"></a>関連項目  
+ [クラスの追加](../../ide/adding-a-class-visual-cpp.md)   
+ [ATL プロジェクトで新しいインターフェイスの追加](../../atl/reference/adding-a-new-interface-in-an-atl-project.md)   
+ [オブジェクトへの接続ポイントの追加](../../atl/adding-connection-points-to-an-object.md)   
  [メソッドの追加](../../ide/adding-a-method-visual-cpp.md)   
  [MFC クラス](../../mfc/reference/adding-an-mfc-class.md)   
- [一般 C\+\+ クラスの追加](../../ide/adding-a-generic-cpp-class.md)
+ [一般 C++ クラスの追加](../../ide/adding-a-generic-cpp-class.md)
+

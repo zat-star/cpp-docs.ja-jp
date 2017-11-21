@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 2/1/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,34 +18,17 @@ f1_keywords:
 - ATLIFASE/ATL::IRegistrar::StringUnregister
 - ATLIFASE/ATL::IRegistrar::ResourceRegister
 - ATLIFASE/ATL::IRegistrar::ResourceUnregister
-dev_langs:
-- C++
-helpviewer_keywords:
-- Iregistrar Interface
+dev_langs: C++
+helpviewer_keywords: Iregistrar Interface
 ms.assetid: e88c04b7-0c93-4ae8-aeb9-ecd78f87421e
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 199cdfd91a7d1b9882b57118c852352f6fdda43e
-ms.openlocfilehash: e73e095d253d5ec5ca53e4e446019b2da79e5d39
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 6f79815d873a7c9f5f8c5f0397248f54776a7c20
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="iregistrar-interface"></a>IRegistrar インターフェイス
 このインターフェイスは atliface.h で定義され、内部関数によって使用される不要メンバーなど[ため](catlmodule-class.md#updateregistryfromresourced)です。   
@@ -57,7 +39,7 @@ ms.lasthandoff: 02/24/2017
 typedef interface IRegistrar IRegistrar;
 ```  
 ## <a name="remarks"></a>コメント
-トピックを参照して[置き換え可能パラメーターを使用して (レジストラーのプリプロセッサ)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)詳細です。  
+トピックを参照して[置き換え可能パラメーターの使用 (レジストラーのプリプロセッサ)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)詳細についてはします。  
 
 ## <a name="members"></a>メンバー  
   
@@ -68,7 +50,7 @@ typedef interface IRegistrar IRegistrar;
 |[IRegistrar::ResourceRegisterSz](#resourceregistersz)|リソースを登録します。 |  
 |[IRegistrar::ResourceUnregisterSz](#resourceunregistersz)| リソースの登録を解除します。|  
 |[IRegistrar::FileRegister](#fileregister)|ファイルを登録します。|  
-|[IRegistrar::FileUnregister](#fileunregister)|ファイルを登録解除します。|  
+|[IRegistrar::FileUnregister](#fileunregister)|ファイルの登録を解除します。|  
 |[IRegistrar::StringRegister](#stringregister)|文字列を登録します。|  
 |[IRegistrar::StringUnregister](#stringunregister)|文字列の登録を解除します。|  
 |[IRegistrar::ResourceRegister](#resourceregister)|リソースを登録します。|  
@@ -112,7 +94,7 @@ virtual HRESULT STDMETHODCALLTYPE FileRegister(
   
   
 ##  <a name="fileunregister"></a>IRegistrar::FileUnregister  
-ファイルを登録解除します。
+ファイルの登録を解除します。
 
 ```
 virtual HRESULT STDMETHODCALLTYPE FileUnregister( 
@@ -121,14 +103,14 @@ virtual HRESULT STDMETHODCALLTYPE FileUnregister(
   
  
 ##  <a name="stringregister"></a>IRegistrar::StringRegister  
-  指定された文字列データを登録します。
+  指定した文字列データを登録します。
 ```
 virtual HRESULT STDMETHODCALLTYPE StringRegister( 
     /* [in] */ _In_z_ LPCOLESTR data) = 0;
 ```  
   
 ##  <a name="stringunregister"></a>IRegistrar::StringUnregister
- 指定された文字列データの登録を解除します。  
+ 指定した文字列データの登録を解除します。  
   
 ```
 virtualHRESULT STDMETHODCALLTYPE StringUnregister( 
@@ -158,8 +140,7 @@ virtualHRESULT STDMETHODCALLTYPE ResourceUnregister(
 ```  
  
 ## <a name="see-also"></a>関連項目  
- [置き換え可能パラメーター (レジストラーのプリプロセッサ) を使用します。](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)  
+ [置き換え可能パラメーターの使用 (レジストラー プリプロセッサ)](../../atl/using-replaceable-parameters-the-registrar-s-preprocessor.md)  
  [クラスの概要](../../atl/atl-class-overview.md)   
  [モジュール クラス](../../atl/atl-module-classes.md)   
  [レジストリ コンポーネント (レジストラー)](../../atl/atl-registry-component-registrar.md)  
-

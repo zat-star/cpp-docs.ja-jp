@@ -1,42 +1,40 @@
 ---
-title: "map::key_compare (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::key_compare"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "key_compare メンバー [STL/CLR]"
+title: "map::key_compare (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::map::key_compare
+dev_langs: C++
+helpviewer_keywords: key_compare member [STL/CLR]
 ms.assetid: 6cde0e22-f1cb-4b92-b76d-bab6cbd9c825
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c390832895130aa362fb78db6594e1a22a894748
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# map::key_compare (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類のキーの順序のデリゲート。  
+# <a name="mapkeycompare-stlclr"></a>map::key_compare (STL/CLR)
+2 つのキーの順序付けのデリゲート。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 Microsoft::VisualC::StlClr::BinaryDelegate<GKey, GKey, bool>  
     key_compare;  
 ```  
   
-## 解説  
- 型は、Key 引数の順序を決定するデリゲートのシノニムです。  
+## <a name="remarks"></a>コメント  
+ 型は、そのキーの引数の順序を決定するデリゲートのシノニムです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_key_compare.cpp   
@@ -72,19 +70,23 @@ int main()
   
 ```  
   
-  **\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= True を比較します。**  
-**\(L'b、L'a\) \= false を比較します。**  
-**\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= false を比較します。**  
-**\(L'b、L'a\) \= True を比較します。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = True  
+compare(L'b', L'a') = False  
   
- **名前空間:** の cliext  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = False  
+compare(L'b', L'a') = True  
+```  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::key\_comp](../dotnet/map-key-comp-stl-clr.md)   
- [map::key\_type](../dotnet/map-key-type-stl-clr.md)   
- [map::value\_compare](../dotnet/map-value-compare-stl-clr.md)
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext マップ/>  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::key_comp (STL/CLR)](../dotnet/map-key-comp-stl-clr.md)   
+ [map::key_type (STL/CLR)](../dotnet/map-key-type-stl-clr.md)   
+ [map::value_compare (STL/CLR)](../dotnet/map-value-compare-stl-clr.md)

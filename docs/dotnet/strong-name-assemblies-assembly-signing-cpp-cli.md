@@ -1,37 +1,36 @@
 ---
-title: "厳密名アセンブリ (アセンブリ署名) (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".NET Framework [C++], アセンブリの署名"
-  - "アセンブリ [C++]"
-  - "アセンブリ [C++], 署名"
-  - "リンカー [C++], アセンブリの署名"
-  - "署名 (アセンブリに)"
-  - "厳密な名前を付けたアセンブリ [C++]"
+title: "厳密名アセンブリ (アセンブリ署名) (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- assemblies [C++]
+- signing assemblies
+- .NET Framework [C++], assembly signing
+- assemblies [C++], signing
+- linker [C++], assembly signing
+- strong-named assemblies [C++]
 ms.assetid: c337cd3f-e5dd-4c6f-a1ad-437e85dba1cc
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 32a9502bbb1143e23ee542c1d9fff593925c527a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 厳密名アセンブリ (アセンブリ署名) (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、アセンブリに署名する方法について説明します。アセンブリに署名することを、多くの場合、アセンブリに厳密名を付けるともいいます。  
+# <a name="strong-name-assemblies-assembly-signing-ccli"></a>厳密名アセンブリ (アセンブリ署名) (C++/CLI)
+このトピックでは、アセンブリに厳密な名前を付けるとも呼ば、アセンブリに署名する方法について説明します。  
   
-## 解説  
- Visual C\+\+ を使用するときは、リンカー オプションを使用してアセンブリに署名することにより、アセンブリ署名の CLR 属性に関する問題を回避します。  
+## <a name="remarks"></a>コメント  
+ Visual C を使用する場合は、アセンブリの署名の CLR 属性に関連する問題を回避するアセンブリに署名するリンカー オプションを使用します。  
   
 -   <xref:System.Reflection.AssemblyDelaySignAttribute>  
   
@@ -39,21 +38,21 @@ manager: "ghogen"
   
 -   <xref:System.Reflection.AssemblyKeyNameAttribute>  
   
- 属性を使用しない理由として、アセンブリ メタデータではキー名が参照可能であり、ファイル名に機密情報が含まれている場合にはセキュリティ上のリスクが発生することがあります。  また、Visual C\+\+ 開発環境で使用されるビルド プロセスでは、CLR 属性を使用してアセンブリに厳密名を付け、その後 mt.exe などの後処理ツールをアセンブリで実行した場合、アセンブリに署名したキーが無効化されます。  
+ 属性を使用しない理由には、キー名がアセンブリのメタデータは、セキュリティ リスクとなることができます、ファイル名には、機密情報が含まれている場合に表示されているファクトが含まれます。 また、Visual C 開発環境で使用されるビルド プロセスには、アセンブリに署名されている CLR 属性を使用して、アセンブリに厳密な名前を指定し、アセンブリで mt.exe などに処理後のツールを実行すると、キーが無効になります。  
   
- コマンド ラインで作成し、リンカー オプションを使用してアセンブリに署名し、次に後処理ツール \(mt.exe など\) を実行する場合、sn.exe でアセンブリに再度署名する必要があります。  代わりに、作成後のアセンブリの署名を後回しにし、後処理ツールを実行してから署名できます。  
+ コマンドラインでビルド、リンカー オプションを使用して、アセンブリに署名、処理後のツール (mt.exe) などを実行するとは、sn.exe を使用してアセンブリを再署名する必要があります。 または、ビルド、遅延署名アセンブリし、処理後のツールを実行した後、署名を完了します。  
   
- 開発環境を構築するときに署名の属性を使用する場合は、ビルド後のイベントで sn.exe \([Sn.exe \(厳密名ツール\)](../Topic/Sn.exe%20\(Strong%20Name%20Tool\).md)\) を明示的に呼び出すと、正しくアセンブリに署名できます。  詳細については、「[ビルド イベントの指定](../ide/specifying-build-events.md)」を参照してください。  属性およびビルド後のイベントを使用すると、リンカー オプションを使用する場合と比較して、ビルドにかかる時間が短くなります。  
+ 正常に sn.exe を明示的に呼び出すことによってアセンブリに署名することができます、開発環境でのビルド時に署名の属性を使用する場合 ([Sn.exe (厳密名ツール)](/dotnet/framework/tools/sn-exe-strong-name-tool)) のビルド後イベントにします。 詳細については、次を参照してください。[ビルド イベントの指定](../ide/specifying-build-events.md)です。 ビルド時間が小さい属性およびリンカー オプションを使用すると比較して、ビルド後のイベントを使用する場合あります。  
   
- 次のリンカー オプションはアセンブリの署名をサポートしています。  
+ 次のリンカー オプションは、アセンブリの署名をサポートします。  
   
--   [\/DELAYSIGN \(アセンブリの部分署名\)](../build/reference/delaysign-partially-sign-an-assembly.md)  
+-   [/DELAYSIGN (アセンブリの部分署名)](../build/reference/delaysign-partially-sign-an-assembly.md)  
   
--   [\/KEYFILE \(アセンブリに署名するためのキーまたはキー ペアの指定\)](../build/reference/keyfile-specify-key-or-key-pair-to-sign-an-assembly.md)  
+-   [/KEYFILE (アセンブリに署名するには、キーまたはキー ペアの指定)](../build/reference/keyfile-specify-key-or-key-pair-to-sign-an-assembly.md)  
   
--   [\/KEYCONTAINER \(アセンブリに署名するためのキー コンテナーの指定\)](../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)  
+-   [/KEYCONTAINER (アセンブリに署名するキー コンテナーの指定)](../build/reference/keycontainer-specify-a-key-container-to-sign-an-assembly.md)  
   
- 厳密なアセンブリの詳細については、「[厳密な名前付きアセンブリの作成と使用](../Topic/Creating%20and%20Using%20Strong-Named%20Assemblies.md)」を参照してください。  
+ 厳密なアセンブリの詳細については、次を参照してください。[作成と使用](/dotnet/framework/app-domains/create-and-use-strong-named-assemblies)です。  
   
-## 参照  
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

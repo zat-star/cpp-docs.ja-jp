@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -28,8 +27,7 @@ f1_keywords:
 - _wfullpath_dbg
 - _fullpath_dbg
 - fullpath_dbg
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _fullpath_dbg function
 - relative file paths
@@ -38,30 +36,15 @@ helpviewer_keywords:
 - _wfullpath_dbg function
 - wfullpath_dbg function
 ms.assetid: 81f72f85-07da-4f5c-866a-598e0fb03f6b
-caps.latest.revision: 16
+caps.latest.revision: "16"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 6af4d6ba5df2305b5181e47cf0a0557650aa0406
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: d4a89e5599823bb60d65f0845044185fbbe560dd
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="fullpathdbg-wfullpathdbg"></a>_fullpath_dbg、_wfullpath_dbg
 メモリの割り当てに `malloc` のデバッグ バージョンを使用する [_fullpath、_wfullpath](../../c-runtime-library/reference/fullpath-wfullpath.md) のバージョン。  
@@ -110,7 +93,7 @@ wchar_t *_wfullpath_dbg(
  各関数は、絶対パス名 (`absPath`) を格納するバッファーへのポインターを返します。 エラーがある場合 (たとえば、`relPath` で渡される値に無効または見つからないドライブ文字が含まれている場合や、作成された絶対パス名 (`absPath`) の長さが `maxLength` よりも長い場合など)、この関数は `NULL` を返します。  
   
 ## <a name="remarks"></a>コメント  
- `_fullpath_dbg`と`_wfullpath_dbg`関数と同じ`_fullpath`と`_wfullpath`する点を除いて、`_DEBUG`が定義されている場合、これらの関数を使用してデバッグ バージョンの`malloc`、 `_malloc_dbg`、最初のパラメーターとして NULL を渡す場合にメモリを割り当てられません。 `_malloc_dbg` のデバッグ機能の詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
+ `_fullpath_dbg`と`_wfullpath_dbg`関数と同じ`_fullpath`と`_wfullpath`する点を除いて、`_DEBUG`は定義されている場合、これらの関数でのデバッグ バージョンを使用`malloc`、 `_malloc_dbg`NULL の場合は、メモリを割り当てられません最初のパラメーターとして渡されます。 `_malloc_dbg` のデバッグ機能の詳細については、「[_malloc_dbg](../../c-runtime-library/reference/malloc-dbg.md)」をご覧ください。  
   
  多くの場合、これらの関数を明示的に呼び出す必要はありません。 代わりに、`_CRTDBG_MAP_ALLOC` フラグを定義できます。 `_CRTDBG_MAP_ALLOC` が定義されている場合、`_fullpath` および `_wfullpath` の呼び出しはそれぞれ `_fullpath_dbg` および `_wfullpath_dbg` にマップし直され、`blockType` が `_NORMAL_BLOCK` に設定されます。 そのため、ヒープ ブロックを `_CLIENT_BLOCK` としてマークする場合以外は、これらの関数を明示的に呼び出す必要はありません。 詳細については、[デバッグ ヒープ上のメモリ ブロックの型](/visualstudio/debugger/crt-debug-heap-details)に関する記事をご覧ください。  
   
@@ -127,7 +110,7 @@ wchar_t *_wfullpath_dbg(
 |`_fullpath_dbg`|\<crtdbg.h>|  
 |`_wfullpath_dbg`|\<crtdbg.h>|  
   
- 互換性について詳しくは、「はじめに」の「[互換性](../../c-runtime-library/compatibility.md)」をご覧ください。  
+ 互換性の詳細については、「C ランタイム ライブラリ」の「 [互換性](../../c-runtime-library/compatibility.md) 」を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [ファイル処理](../../c-runtime-library/file-handling.md)   

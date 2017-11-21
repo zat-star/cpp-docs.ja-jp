@@ -1,36 +1,36 @@
 ---
-title: "__declspec(dllimport) を使った関数呼び出しのインポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__declspec"
-  - "dllimport"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__declspec(dllimport) キーワード [C++]"
-  - "dllimport 属性 [C++], 関数呼び出しのインポート"
-  - "関数呼び出し [C++], インポート"
-  - "インポート (関数呼び出しを) [C++]"
+title: "_Declspec (dllimport) を使用して関数呼び出しのインポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- __declspec
+- dllimport
+dev_langs: C++
+helpviewer_keywords:
+- importing function calls [C++]
+- dllimport attribute [C++], function call imports
+- __declspec(dllimport) keyword [C++]
+- function calls [C++], importing
 ms.assetid: 6b53c616-0c6d-419a-8e2a-d2fff20510b3
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: d1501506d4575c5f7fe1ff1dc7823cbd1545b974
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __declspec(dllimport) を使った関数呼び出しのインポート
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のコード例は、**\_declspec\(dllimport\)** を使って DLL からアプリケーションに関数呼び出しをインポートする方法を示しています。  `func1` は **main** 関数を含む .exe ファイルとは別の DLL にある関数であるものとします。  
+# <a name="importing-function-calls-using-declspecdllimport"></a>__declspec(dllimport) を使った関数呼び出しのインポート
+次のコード例は、使用する方法を示しています。 **_declspec(dllimport)** DLL から関数の呼び出しをアプリケーションにインポートします。 あると想定`func1`関数を含む .exe ファイルとは別の DLL に存在するは、**メイン**関数。  
   
- **\_\_declspec\(dllimport\)** を使用しない場合のコードは、次のようになります。  
+ せず**_declspec**、このコードを指定します。  
   
 ```  
 int main(void)   
@@ -39,29 +39,29 @@ int main(void)
 }  
 ```  
   
- コンパイラは、次のようなコードを生成します。  
+ コンパイラでは、次のようなコードが生成されます。  
   
 ```  
 call func1  
 ```  
   
- リンカーは、この呼び出しを次のように変換します。  
+ リンカーは、次のように呼び出しを変換します。  
   
 ```  
 call 0x4000000         ; The address of 'func1'.  
 ```  
   
- `func1` が別の DLL にある場合は、`func1` のアドレスを知る方法がないので、リンカーは `func1` を直接解決できません。  16 ビット環境では、リンカーはこのコードのアドレスを .exe ファイル内のリストに追加します。ローダーは実行時にコードの正しいアドレスを追加します。  32 ビット環境および 64 ビット環境では、リンカーはコードのアドレスを通知するサンクを生成します。  32 ビット環境におけるサンクの例を次に示します。  
+ 場合`func1`に存在する別の DLL、リンカーがこの直接解決できないのアドレスを知ることがあるないため`func1`はします。 16 ビット環境では、リンカーは、ローダーは実行時に、適切なアドレスと修正プログラムの .exe ファイルの一覧にこのコードのアドレスを追加します。 32 ビットおよび 64 ビット環境では、リンカーは、アドレスを通知するサンクを生成します。 32 ビット環境では、サンクはようになります。  
   
 ```  
 0x40000000:    jmp DWORD PTR __imp_func1  
 ```  
   
- ここで、`imp_func1` は、.exe ファイルのインポート アドレス テーブル内にある `func1` のスロット用アドレスです。  このため、すべてのアドレスがリンカーに認識されます。  ローダーの役割は、読み込み時に .exe ファイルのインポート アドレス テーブルを更新して、すべてが正しく動作する状態を保つことです。  
+ ここで`imp_func1`のアドレス、 `func1` .exe ファイルのインポート アドレス テーブル内のスロット。 このため、すべてのアドレスはリンカーに認識します。 ローダーは、正常に動作するすべての読み込み時に、.exe ファイルのインポート アドレス テーブルを更新するだけにできます。  
   
- したがって、リンカーは不要なサンクを生成しないので、**\_\_declspec\(dllimport\)** を使用することをお勧めします。  サンクを使うとコードが大きくなり \(RISC システム上では、複数の命令になることもあります\)、キャッシュ パフォーマンスが低下する場合があります。  関数が DLL 内にあることをコンパイラに通知すると、間接呼び出しが自動的に生成されます。  
+ したがってを使用して**_declspec**が必要ない場合、リンカーがサンクを生成しないためにお勧めします。 サンクを大きくコード (RISC システムでできますいくつかの手順) し、キャッシュのパフォーマンスが低下することができます。 コンパイラに通知する DLL には、関数は場合、間接的な呼び出しを生成できます。  
   
- コードは次のようになります。  
+ これでこのコードに示します。  
   
 ```  
 __declspec(dllimport) void func1(void);  
@@ -71,15 +71,15 @@ int main(void)
 }  
 ```  
   
- 次の命令が生成されます。  
+ この命令が生成されます。  
   
 ```  
 call DWORD PTR __imp_func1  
 ```  
   
- サンクおよび `jmp` 命令がないので、コードは小さく高速になります。  
+ 存在しないサンク`jmp`命令、コード サイズが小さく、高速なためです。  
   
- DLL 内部で関数を呼び出す場合は、間接呼び出しを使用する必要はありません。  関数のアドレスは、既にわかっています。  間接呼び出しの前に関数のアドレスの読み込みと格納を行うには、時間と領域が必要になるため、直接呼び出しの方が高速でコンパクトです。  **\_\_declspec\(dllimport\)** を使用するのは、DLL の外部から DLL 関数を呼び出すときだけです。  DLL のビルド時に、DLL 内部の関数で **\_\_declspec\(dllimport\)** を使用しないでください。  
+ その一方で、DLL 内部には、関数の呼び出しのたくない間接呼び出しを使用しています。 関数のアドレスを知っています。 時間と領域が必要なための読み込みし、間接的な呼び出しの前に関数のアドレスを格納する、直接の呼び出しは常により高速で小さいです。 使用する場合のみ**_declspec (dllimport)** DLL 自体の外部から DLL 関数を呼び出すとき。 使用しないでください**_declspec (dllimport)**関数を DLL 内部にその DLL のビルド時にします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アプリケーションへのインポート](../build/importing-into-an-application.md)

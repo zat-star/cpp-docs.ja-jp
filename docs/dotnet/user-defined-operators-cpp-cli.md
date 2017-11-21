@@ -1,81 +1,79 @@
 ---
-title: "ユーザー定義の演算子 (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ユーザー定義の演算子 (/clr の)"
+title: "ユーザー定義の演算子 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: user-defined operators under /clr
 ms.assetid: 42f93b4a-6de4-4e34-b07b-5a62ac014f2c
-caps.latest.revision: 16
-caps.handback.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 73a397664d5e5a9074731b6eac879fe965580f05
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ユーザー定義の演算子 (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-マネージ型のユーザー定義演算子は静的メンバーまたはインスタンス メンバーとして、またはグローバル スコープで使用できます。  ただし、静的な演算子だけ Visual C\+\+ 以外の言語で作成されたクライアントからメタデータにアクセスできます。  
+# <a name="user-defined-operators-ccli"></a>ユーザー定義の演算子 (C++/CLI)
+マネージ型の場合、ユーザー定義の演算子は、静的メンバーまたはインスタンス メンバーまたはグローバル スコープで許可されます。 ただし、Visual C 以外の言語で記述されたクライアントにメタデータを通じてアクセスできるは静的演算子のみです。  
   
- 参照型では、静的なユーザー定義演算子のパラメーターの 1 つが、これらの 1 にする必要があります:  
+ 参照型でこれらのいずれかの静的ユーザー定義演算子のパラメーターの 1 つする必要があります。  
   
--   外側の型のインスタンスへの`type` ハンドル \(^\)。  
+-   ハンドル (`type` ^) それを囲む型のインスタンスにします。  
   
--   外側の型のインスタンスに対するハンドルへの参照型の間接参照 \(`type`^& または type^%\)。  
+-   参照型の間接参照 (`type`^ (& a) または型 ^ %)、それを囲む型のインスタンスへのハンドル。  
   
- 値型の場合は、静的なユーザー定義演算子のパラメーターの 1 つが、これらの 1 にする必要があります:  
+ 値の型でこれらのいずれかの静的なユーザー定義演算子のパラメーターの 1 つする必要があります。  
   
--   外側の値型と同じ型。  
+-   外側の値の型と同じ型です。  
   
--   外側の型へのポインター型の間接`type` \(^\)。  
+-   ポインター型の間接参照 (`type`^)、それを囲む型にします。  
   
--   外側の型の参照型の間接参照 \(`type`%または `type`&\)。  
+-   参照型の間接参照 (`type`% または`type`&)、それを囲む型にします。  
   
--   ハンドルへの参照型の間接参照 \(`type`^% または `type`^&\)。  
+-   参照型の間接参照 (`type`^ % または`type`^ (& a)) をハンドルします。  
   
- 次の演算子を定義する:  
+ 次の演算子を定義できます。  
   
-|演算子|単項とバイナリ形式か。|  
-|---------|-----------------|  
-|\!|単項|  
-|\!\=|Binary|  
-|%|Binary|  
+|演算子|単項/バイナリ フォームしますか。|  
+|--------------|--------------------------|  
+|!|単項|  
+|!=|2 項|  
+|%|2 項|  
 |&|単項演算子および 2 項演算子|  
-|&&|Binary|  
-|\*|単項演算子および 2 項演算子|  
-|\+|単項演算子および 2 項演算子|  
-|\+\+|単項|  
-|,|Binary|  
-|\-|単項演算子および 2 項演算子|  
-|\-\-|単項|  
-|\-\>|単項|  
-|\/|Binary|  
-|\<|Binary|  
-|\<\<|Binary|  
-|\<\=|Binary|  
-|\=|Binary|  
-|\=\=|Binary|  
-|\>|Binary|  
-|\>\=|Binary|  
-|\>\>|Binary|  
-|^|Binary|  
+|&&|2 項|  
+|*|単項演算子および 2 項演算子|  
+|+|単項演算子および 2 項演算子|  
+|++|単項|  
+|、|2 項|  
+|-|単項演算子および 2 項演算子|  
+|--|単項|  
+|->|単項|  
+|/|2 項|  
+|<|2 項|  
+|<<|2 項|  
+|\<=|2 項|  
+|=|2 項|  
+|==|2 項|  
+|>|2 項|  
+|>=|2 項|  
+|>>|2 項|  
+|^|2 項|  
 |false|単項|  
-|true|単項|  
-|&#124;|Binary|  
-|&#124;&#124;|Binary|  
+|TRUE|単項|  
+|&#124;|2 項|  
+|&#124;&#124;|2 項|  
 |~|単項|  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // mcppv2_user-defined_operators.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -135,17 +133,20 @@ int main() {
 }  
 ```  
   
-  **\-5**  
-**\-4**  
-**\-3**  
-**\-2**  
-**\-1**  
-**\-2**  
-**\-3**   
-## 使用例  
- 次の例では、コンパイルに **\/clr** を使用するときにのみ使用できる演算子の統合を示します。  演算子の統合は、代入演算子の左側には CLR 型の位置に 1 が定義されていない場合、二項演算子の割り当てのフォームを作成します。  
-  
+```Output  
+-5  
+-4  
+-3  
+-2  
+-1  
+-2  
+-3  
 ```  
+  
+## <a name="example"></a>例  
+ 次の例は、使用する場合にのみ使用される演算子合成**/clr**をコンパイルします。 複合演算子を使用する、バイナリ演算子の割り当てフォームを作成場合は 1 つが定義されていません、代入演算子の左側にあるが、CLR 型を持ちます。  
+  
+```cpp  
 // mcppv2_user-defined_operators_2.cpp  
 // compile with: /clr  
 ref struct A {  
@@ -165,6 +166,9 @@ int main() {
 }  
 ```  
   
-  **30**   
-## 参照  
- [Classes and Structs](../windows/classes-and-structs-cpp-component-extensions.md)
+```Output  
+30  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)

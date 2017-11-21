@@ -1,32 +1,30 @@
 ---
-title: "sort_heap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::sort_heap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "sort_heap 関数 [STL/CLR]"
+title: "sort_heap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::sort_heap
+dev_langs: C++
+helpviewer_keywords: sort_heap function [STL/CLR]
 ms.assetid: a8fa6b76-90cd-413b-9c5b-f65b93d4bbed
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 65160180d97b4db264fc0fa77afa7c6284d2863f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# sort_heap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-並べ替えられた範囲にヒープを変換します。  
+# <a name="sortheap-stlclr"></a>sort_heap (STL/CLR)
+ヒープを並べ替えられた範囲に変換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _RanIt> inline  
@@ -35,13 +33,13 @@ template<class _RanIt, class _Pr> inline
     void sort_heap(_RanIt _First, _RanIt _Last, _Pr _Pred);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `sort_heap`も同じように動作します。  詳細については、「[sort\_heap](../Topic/sort_heap.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`sort_heap`です。 詳細については、次を参照してください。 [sort_heap](../standard-library/algorithm-functions.md#sort_heap)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

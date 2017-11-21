@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -33,8 +32,7 @@ f1_keywords:
 - _isalnum_l
 - isalnum
 - _istalnum
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _istalnum function
 - _ismbcalnum_l function
@@ -45,30 +43,15 @@ helpviewer_keywords:
 - _istalnum_l function
 - _iswalnum_l function
 ms.assetid: 0dc51306-ade8-4944-af27-e4176fc89093
-caps.latest.revision: 20
+caps.latest.revision: "20"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3f91eafaf3b5d5c1b8f96b010206d699f666e224
-ms.openlocfilehash: 14e5ecd35a6f844dd7d304f10167e690f7df970e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/01/2017
-
+ms.openlocfilehash: 25207b525ec1c5e4c19d114281a0daff2d38ea1f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="isalnum-iswalnum-isalnuml-iswalnuml"></a>isalnum、iswalnum、_isalnum_l、_iswalnum_l
 整数が英数字を表すかどうかを決定します。  
@@ -100,7 +83,7 @@ int _iswalnum_l(
  使用するロケール。  
   
 ## <a name="return-value"></a>戻り値  
- これらの各ルーチンは、`c` が特定の英数字を表している場合は 0 以外の値を返します。 `isalnum`場合に 0 以外の値を返します`isalpha`または`isdigit`は 0 です`c`,、つまり場合`c`が範囲内で、A ~ Z、a ~ z、または 0 - 9 です。 `iswalnum` または `iswalpha` が `iswdigit` に対して 0 以外の値の場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
+ これらの各ルーチンは、`c` が特定の英数字を表している場合は 0 以外の値を返します。 `isalnum`場合は、0 以外の値を返します`isalpha`または`isdigit`は 0 です`c`,、つまり場合`c`が範囲内で、A ~ Z、a ~ z、または 0 - 9。 `iswalnum` または `iswalpha` が `iswdigit` に対して 0 以外の値の場合、`c` は 0 以外の値を返します。 これらの各ルーチンは、`c` がテスト条件を満たしていない場合は 0 を返します。  
   
  これらの関数のうち `_l` サフィックスが付けられたバージョンは、現在のロケールの代わりに渡されたロケール パラメーターを使用します。 詳細については、「[ロケール](../../c-runtime-library/locale.md)」をご覧ください。  
   

@@ -4,32 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- ConvertStringToBSTR
-dev_langs:
-- C++
-helpviewer_keywords:
-- ConvertStringToBSTR function
+f1_keywords: ConvertStringToBSTR
+dev_langs: C++
+helpviewer_keywords: ConvertStringToBSTR function
 ms.assetid: 071f9b3b-9643-4e06-a1e5-de96ed15bab2
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 3778f84f152b9ce5dd1121d9cf01d7c1a4472a1e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 2e6e62a4de1e1bc4e38bc05fa1012867c2e7fc3e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="convertstringtobstr"></a>ConvertStringToBSTR
 **Microsoft 固有の仕様**  
   
- 変換、 **char \* **値を`BSTR`です。  
+ 変換、 **char \*** 値を`BSTR`です。  
   
 ## <a name="syntax"></a>構文  
   
@@ -42,7 +37,7 @@ ms.lasthandoff: 09/25/2017
   
 #### <a name="parameters"></a>パラメーター  
  `pSrc`  
- A **char \* **変数。  
+ A **char \*** 変数。  
   
 ## <a name="example"></a>例  
   

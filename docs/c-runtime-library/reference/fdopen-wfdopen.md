@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -29,8 +28,7 @@ f1_keywords:
 - _wfdopen
 - wfdopen
 - tfdopen
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - wfdopen function
 - _fdopen function
@@ -40,30 +38,15 @@ helpviewer_keywords:
 - _tfdopen function
 - streams, associating with files
 ms.assetid: 262757ff-1e09-4472-a5b6-4325fc28f971
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 3efc15f9d9fa6544ad7af2c3809ee6562b7f36e0
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: bacc1decd25c5c7291295a9e97eeacb35d55662c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="fdopen-wfdopen"></a>_fdopen、_wfdopen
 ストリームを前回下位入出力で開いたファイルに関連付けます。  
@@ -124,7 +107,7 @@ FILE *_wfdopen(
  `"a+"`  
  読み取りと追加の両方のモードでファイルを開きます。 ファイルが存在しない場合は、作成します。  
   
- アクセスの種類 `"a"` または `"a+"` を使用してファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` または `rewind` を使用して移動できますが、書き込み操作の前に必ずファイルの末尾に戻されます。 したがって、既存のデータは上書きされません。 `"r+"`、`"w+"`、または `"a+"` のいずれかのアクセスの種類を指定すると、読み取りと書き込みの両方を行うことができます (ファイルは "更新" モードで開きます)。 ただし、読み取りと書き込みを切り替える場合は、その前に `fflush`、`fsetpos`、`fseek`、または `rewind` のいずれかの操作を実行する必要があります。 必要であれば、`fsetpos` または `fseek` 操作の現在の位置を指定できます。  
+ アクセスの種類 `"a"` または `"a+"` を使用してファイルを開くと、すべての書き込み操作はファイルの末尾から行われます。 ファイル ポインターは `fseek` または `rewind` を使用して移動できますが、書き込み操作の前に必ずファイルの末尾に戻されます。したがって、既存のデータは上書きされません。 `"r+"`、`"w+"`、または `"a+"` のいずれかのアクセスの種類を指定すると、読み取りと書き込みの両方を行うことができます (ファイルは "更新" モードで開きます)。 ただし、読み取りと書き込みを切り替える場合は、その前に `fflush`、`fsetpos`、`fseek`、または `rewind` のいずれかの操作を実行する必要があります。 必要であれば、`fsetpos` または `fseek` 操作の現在の位置を指定できます。  
   
  上記の値に加え、`mode` に次の文字を追加して、改行文字の変換モードを指定することもできます。  
   
@@ -138,7 +121,7 @@ FILE *_wfdopen(
  関連付けられた `filename` のコミット フラグを有効にして、 `fflush` または `_flushall` のいずれかが呼び出された場合に、ファイル バッファーの内容がディスクに直接書き込まれるようにします。  
   
  `n`  
- 関連付けられた `filename` のコミット フラグを "コミットなし" にリセットします。 既定値です。 プログラムを Commode.obj とリンクする場合は、グローバル コミット フラグもオーバーライドします。 プログラムを明示的に Commode.obj とリンクしない場合、グローバル コミット フラグの既定の設定は "コミットなし" です。  
+ 関連付けられた `filename` のコミット フラグを "コミットなし" にリセットします。 既定値です。 プログラムを Commode.obj とリンクする場合は、グローバル コミット フラグもオーバーライドします。プログラムを明示的に Commode.obj とリンクしない場合、グローバル コミット フラグの既定の設定は "コミットなし" です。  
   
  `t`、`c`、および `n` `mode` オプションは、`fopen` と `_fdopen` の Microsoft の拡張機能です。 ANSI の移植性を維持する場合には使用しないでください。  
   
@@ -149,7 +132,7 @@ FILE *_wfdopen(
 |`mode` 文字列の文字|`_open`/`_sopen` に相当する `oflag` 値|  
 |---------------------------------|---------------------------------------------------|  
 |`a`|`_O_WRONLY &#124; _O_APPEND` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_APPEND`)|  
-|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT`)|  
+|`a+`|`_O_RDWR &#124; _O_APPEND` (通常は `_O_RDWR &#124; _O_APPEND &#124; _O_CREAT` )|  
 |`r`|`_O_RDONLY`|  
 |`r+`|`_O_RDWR`|  
 |`w`|`_O_WRONLY` (通常は `_O_WRONLY &#124; _O_CREAT &#124; _O_TRUNC`)|  

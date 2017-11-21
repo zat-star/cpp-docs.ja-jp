@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
 apiname:
@@ -26,8 +25,7 @@ apitype: DLLExport
 f1_keywords:
 - fseek
 - _fseeki64
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - _fseeki64 function
 - fseeki64 function
@@ -36,30 +34,15 @@ helpviewer_keywords:
 - file pointers [C++]
 - seek file pointers
 ms.assetid: f6bb1f8b-891c-426e-9e14-0e7e5c62df70
-caps.latest.revision: 23
+caps.latest.revision: "23"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 0d0c0bf620f1b89b9decceed3db9434dae4f9437
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 723dbef32f053bd522dcb25c78d6ed805bce6ee5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="fseek-fseeki64"></a>fseek、_fseeki64
 指定した場所にファイル ポインターを移動します。  
@@ -104,7 +87,7 @@ int _fseeki64(
  `SEEK_SET`  
  ファイルの先頭。  
   
- `fseek` と `_fseeki64` を使用して、ファイル内の任意の場所にポインターを移動できます。 ポインターは、ファイルの末尾を越えて配置することもできます。 `fseek`および`_fseeki64`ファイルの終端のインジケーターをクリアし、前の効果が無視`ungetc`に対して呼び出す`stream`です。  
+ `fseek` と `_fseeki64` を使用して、ファイル内の任意の場所にポインターを移動できます。 ポインターは、ファイルの末尾を越えて配置することもできます。 `fseek`および`_fseeki64`ファイルの終端のインジケーターをクリアし、前にすべての結果を否定`ungetc`に対して呼び出す`stream`です。  
   
  データを追加するためにファイルを開く場合、現在のファイルの位置は、次の書き込みが発生する場所ではなく最後の I/O 操作によって決まります。 追加のために開かれたファイルで I/O 操作がまだ発生していない場合、ファイルの位置はファイルの先頭です。  
   

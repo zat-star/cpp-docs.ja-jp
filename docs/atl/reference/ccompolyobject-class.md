@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -19,37 +18,21 @@ f1_keywords:
 - ATLCOM/ATL::CComPolyObject::QueryInterface
 - ATLCOM/ATL::CComPolyObject::Release
 - ATLCOM/ATL::CComPolyObject::m_contained
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aggregate objects [C++], in ATL
 - aggregation [C++], ATL objects
 - CComPolyObject class
 ms.assetid: eaf67c18-e855-48ca-9b15-f1df3106121b
-caps.latest.revision: 19
+caps.latest.revision: "19"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: ee44fcec146ef8a8c68b917020ae52e2300eed5e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: 49945127d726c1a83ed01f70dee2190622a4c68d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ccompolyobject-class"></a>CComPolyObject クラス
 このクラスは実装**IUnknown**集計または非集約オブジェクト。  
@@ -80,7 +63,7 @@ class CComPolyObject : public IUnknown,
 |名前|説明|  
 |----------|-----------------|  
 |[CComPolyObject::AddRef](#addref)|オブジェクトの参照カウントをインクリメントします。|  
-|[CComPolyObject::CreateInstance](#createinstance)|(静的)新規作成することができます**CComPolyObject** `contained` **>**のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
+|[CComPolyObject::CreateInstance](#createinstance)|(静的)新規作成することができます**CComPolyObject <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。|  
 |[CComPolyObject::FinalConstruct](#finalconstruct)|最終初期化を実行`m_contained`です。|  
 |[CComPolyObject::FinalRelease](#finalrelease)|最終的な破棄を実行`m_contained`です。|  
 |[CComPolyObject::QueryInterface](#queryinterface)|要求されたインターフェイスへのポインターを取得します。|  
@@ -154,7 +137,7 @@ CComPolyObject(void* pv);
  呼び出し、割り当てられているすべてのリソースを解放[FinalRelease](#finalrelease)、およびモジュールのロック カウントをデクリメントします。  
   
 ##  <a name="createinstance"></a>CComPolyObject::CreateInstance  
- 新規作成することができます**CComPolyObject** `contained` **>**のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
+ 新規作成することができます**CComPolyObject <** `contained`  **>** のオーバーヘッドなしオブジェクト[CoCreateInstance](http://msdn.microsoft.com/library/windows/desktop/ms686615)です。  
   
 ```
 static HRESULT WINAPI CreateInstance(  
@@ -164,7 +147,7 @@ static HRESULT WINAPI CreateInstance(
   
 ### <a name="parameters"></a>パラメーター  
  `pp`  
- [out]ポインター、 **CComPolyObject** `contained` **>**ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
+ [out]ポインター、 **CComPolyObject <** `contained`  **>** ポインター。 場合`CreateInstance`は成功せず`pp`に設定されている**NULL**です。  
   
 ### <a name="return-value"></a>戻り値  
  標準の `HRESULT` 値。  
@@ -247,4 +230,3 @@ STDMETHOD_(ULONG, Release)();
  [CComObjectRootEx クラス](../../atl/reference/ccomobjectrootex-class.md)   
  [DECLARE_POLY_AGGREGATABLE](aggregation-and-class-factory-macros.md#declare_poly_aggregatable)   
  [クラスの概要](../../atl/atl-class-overview.md)
-

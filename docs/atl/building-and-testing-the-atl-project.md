@@ -1,31 +1,32 @@
 ---
-title: "ATL プロジェクトのビルドとテスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "複合コントロール, ビルドとテスト (プロジェクトを)"
-  - "複合コントロール, コンテナー"
+title: "ATL プロジェクトのテストのビルドと |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- composite controls, building and testing the project
+- composite controls, containers for
 ms.assetid: 5c1541f8-f6cb-4c22-bd22-c66bcfbaa077
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2bb3fc7d9d1e47546e4475057a11dcf560a84c1a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL プロジェクトのビルドとテスト
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="building-and-testing-the-atl-project"></a>ビルドと ATL プロジェクトのテスト
+説明したよう[複合コントロールの挿入](../atl/inserting-a-composite-control.md)、新しい複合コントロールをホストする既定の HTML ページ、プロジェクトの初期のコンポーネントの 1 つです。 複合コントロールの変更が完了したらをクリックして**ソリューションのビルド**または**ソリューションのリビルド**から、**ビルド**メニュー。 プロジェクトを正常にビルドするとは、Internet Explorer または他のブラウザーに、複合コントロール プロジェクトのルート ディレクトリ内にある、HTML ページを読み込んで、コントロールの機能をテストします。  
+  
+ テスト コンテナー ツールまたは ActiveX コントロールをホストできるその他のアプリケーションを使用して複合コントロールをテストすることもできます。 Test Container にアクセスする方法について詳しくは、「 [テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md) 」をご覧ください。  
+  
+## <a name="see-also"></a>関連項目  
+ [複合コントロールの基本](../atl/atl-composite-control-fundamentals.md)
 
-[複合コントロールの挿入](../atl/inserting-a-composite-control.md)に既に説明したように、プロジェクトの最初の要素の 1 つが、新しい複合コントロールをホストする既定の HTML ページです。  複合コントロールの変更が終わったら **\[ビルド\]** のメニューの **\[ソリューションのビルド\]** か **\[ソリューションのリビルド\]** をクリックします。  一度にプロジェクトのビルドは、Internet Explorer または別のブラウザーでは、複合コントロール プロジェクトのルート ディレクトリにある HTML ページを読み込み、コントロールの機能をテストします。  
-  
- また、テスト コンテナーのツールを使用して、複合コントロール、または ActiveX コントロールをホストする他のアプリケーションもテストできます。  テスト コンテナーへのアクセス方法については、「[テスト コンテナーでのプロパティとイベントのテスト](../mfc/testing-properties-and-events-with-test-container.md)」を参照してください。  
-  
-## 参照  
- [複合コントロールの基本](../Topic/ATL%20Composite%20Control%20Fundamentals.md)

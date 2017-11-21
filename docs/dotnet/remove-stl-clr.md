@@ -1,45 +1,43 @@
 ---
-title: "remove (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::remove"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "remove 関数 [STL/CLR]"
+title: "削除 (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::remove
+dev_langs: C++
+helpviewer_keywords: remove function [STL/CLR]
 ms.assetid: 85a11883-3e25-49aa-b4a0-b2cffd6dc110
-caps.latest.revision: 4
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 11badfc92a6b307c64f1fb9d4b24373173cae7a3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# remove (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-残りの要素の順序を自由におよび指定した値の新しい範囲の末尾を返さないで指定した範囲に指定された値を削除します。  
+# <a name="remove-stlclr"></a>remove (STL/CLR)
+特定の範囲から指定された値を除去します。残りの要素の順序に影響を及ぼすことはなく、指定された値を含まない新しい範囲の末尾を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class _FwdIt, class _Ty> inline  
     _FwdIt remove(_FwdIt _First, _FwdIt _Last, const _Ty% _Val);  
 ```  
   
-## 解説  
- この関数は、STL 関数 `remove`も同じように動作します。  詳細については、「[remove](../Topic/remove.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ この関数の動作は、C++ 標準ライブラリ関数と同じ`remove`です。 詳細については、次を参照してください。[削除](http://msdn.microsoft.com/Library/77e2585c-441e-448d-bd1d-c893d1356ed8)です。  
   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アルゴリズム\>  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アルゴリズム/>  
   
- **名前空間:** の cliext  
+ **Namespace:** cliext  
   
-## 参照  
- [algorithm](../Topic/algorithm%20\(STL-CLR\).md)
+## <a name="see-also"></a>関連項目  
+ [algorithm (STL/CLR)](../dotnet/algorithm-stl-clr.md)

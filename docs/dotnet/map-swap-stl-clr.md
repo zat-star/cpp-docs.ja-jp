@@ -1,45 +1,43 @@
 ---
-title: "map::swap (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::map::swap"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "swap メンバー [STL/CLR]"
+title: "map::swap (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::map::swap
+dev_langs: C++
+helpviewer_keywords: swap member [STL/CLR]
 ms.assetid: b36ed982-21ce-40e5-9636-ecdbaf1b7eec
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b9123c5d54e93bd0e5cb205567b6aa428369125c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# map::swap (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="mapswap-stlclr"></a>map::swap (STL/CLR)
 2 つのコンテナーのコンテンツを交換します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void swap(map<Key, Mapped>% right);  
 ```  
   
-#### パラメーター  
- \[right\]  
- コンテンツの交換先のコンテナー。  
+#### <a name="parameters"></a>パラメーター  
+ 右  
+ コンテンツを交換するコンテナー。  
   
-## 解説  
- このメンバー関数は、`this` と `right` の間で被制御シーケンスを交換します。  この処理は定数時間で実行され、例外はスローしません。  2 個のコンテナーのコンテンツを交換する単純として使用します。  
+## <a name="remarks"></a>コメント  
+ このメンバー関数は、 `this` と `right`の間で被制御シーケンスを交換します。 定数時間では、例外をスローしません。 2 つのコンテナーの内容を交換する簡単な方法として使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_map_swap.cpp   
@@ -82,15 +80,18 @@ int main()
   
 ```  
   
-  **1 \[\] \[b 2 \[\]c 3\]**  
- **d 4 \[\] \[e 5 \[\]f 6\]**  
- **d 4 \[\] \[e 5 \[\]f 6\]**  
- **1 \[\] \[b 2 \[\]c 3\]**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+[a 1] [b 2] [c 3]  
+[d 4] [e 5] [f 6]  
+[d 4] [e 5] [f 6]  
+[a 1] [b 2] [c 3]  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext マップ/>  
   
-## 参照  
- [マップ](../dotnet/map-stl-clr.md)   
- [map::operator\=](../dotnet/map-operator-assign-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [マップ (STL/CLR)](../dotnet/map-stl-clr.md)   
+ [map::operator= (STL/CLR)](../dotnet/map-operator-assign-stl-clr.md)

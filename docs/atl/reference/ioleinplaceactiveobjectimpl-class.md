@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: reference
 f1_keywords:
@@ -18,43 +17,27 @@ f1_keywords:
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::OnFrameWindowActivate
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::ResizeBorder
 - ATLCTL/ATL::IOleInPlaceActiveObjectImpl::TranslateAccelerator
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - IOleInPlaceActiveObjectImpl class
 - ActiveX controls [C++], communication between container and control
 - IOleInPlaceActiveObject, ATL implementation
 ms.assetid: 44e6cc6d-a2dc-4187-98e3-73cf0320dea9
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 0e0c08ddc57d437c51872b5186ae3fc983bb0199
-ms.openlocfilehash: 766ac40bb0a09902914feab1acc54a960261a768
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: b72f211d605958c345d84ae7297f5d513b7adc18
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ioleinplaceactiveobjectimpl-class"></a>IOleInPlaceActiveObjectImpl クラス
 このクラスは、インプレース コントロールとコンテナー間の通信を支援するメソッドを提供します。  
   
 > [!IMPORTANT]
->  このクラスとそのメンバーは、[!INCLUDE[wrt](../../atl/reference/includes/wrt_md.md)]で実行するアプリケーションでは使用できません。  
+>  このクラスとそのメンバーは、Windows ランタイムで実行するアプリケーションでは使用できません。  
   
 ## <a name="syntax"></a>構文  
   
@@ -65,7 +48,7 @@ class IOleInPlaceActiveObjectImpl
   
 #### <a name="parameters"></a>パラメーター  
  `T`  
- 派生したクラスに、`IOleInPlaceActiveObjectImpl`です。  
+ 派生したクラス、`IOleInPlaceActiveObjectImpl`です。  
   
 ## <a name="members"></a>メンバー  
   
@@ -73,17 +56,17 @@ class IOleInPlaceActiveObjectImpl
   
 |名前|説明|  
 |----------|-----------------|  
-|[IOleInPlaceActiveObjectImpl::ContextSensitiveHelp](#contextsensitivehelp)|状況依存のヘルプを有効にします。 ATL の実装を返します**E_NOTIMPL**します。|  
-|[IOleInPlaceActiveObjectImpl::EnableModeless](#enablemodeless)|モードレス ダイアログ ボックスを有効にします。 ATL の実装を返します`S_OK`します。|  
+|[IOleInPlaceActiveObjectImpl::ContextSensitiveHelp](#contextsensitivehelp)|状況依存のヘルプを有効にします。 ATL の実装を返します**E_NOTIMPL**です。|  
+|[IOleInPlaceActiveObjectImpl::EnableModeless](#enablemodeless)|モードレス ダイアログ ボックスを有効にします。 ATL の実装を返します`S_OK`です。|  
 |[IOleInPlaceActiveObjectImpl::GetWindow](#getwindow)|ウィンドウ ハンドルを取得します。|  
-|[IOleInPlaceActiveObjectImpl::OnDocWindowActivate](#ondocwindowactivate)|コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。 ATL の実装を返します`S_OK`します。|  
-|[IOleInPlaceActiveObjectImpl::OnFrameWindowActivate](#onframewindowactivate)|コンテナーの最上位のフレーム ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。 ATL の実装を返します|  
-|[IOleInPlaceActiveObjectImpl::ResizeBorder](#resizeborder)|境界線のサイズを変更する必要があるコントロールに通知します。 ATL の実装を返します`S_OK`します。|  
-|[IOleInPlaceActiveObjectImpl::TranslateAccelerator](#translateaccelerator)|コンテナーのメニューのアクセラレータ キー メッセージを処理します。 ATL の実装を返します**E_NOTIMPL**します。|  
+|[IOleInPlaceActiveObjectImpl::OnDocWindowActivate](#ondocwindowactivate)|コントロールは、コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブ化されたときに通知します。 ATL の実装を返します`S_OK`です。|  
+|[IOleInPlaceActiveObjectImpl::OnFrameWindowActivate](#onframewindowactivate)|コントロールは、コンテナーの最上位のフレーム ウィンドウがアクティブ化または非アクティブ化されたときに通知します。 ATL の実装を返します|  
+|[IOleInPlaceActiveObjectImpl::ResizeBorder](#resizeborder)|境界線のサイズを変更する必要があるコントロールに通知します。 ATL の実装を返します`S_OK`です。|  
+|[IOleInPlaceActiveObjectImpl::TranslateAccelerator](#translateaccelerator)|コンテナーからメニュー アクセス キーのメッセージを処理します。 ATL の実装を返します**E_NOTIMPL**です。|  
   
   
 ## <a name="remarks"></a>コメント  
- [IOleInPlaceActiveObject](http://msdn.microsoft.com/library/windows/desktop/ms691299)インターフェイス インプレース コントロールとコンテナー間の通信を支援するなど、コントロールとコンテナーのアクティブな状態を通信して、コントロールを示す必要。 自体のサイズを変更します。 クラス`IOleInPlaceActiveObjectImpl`の既定の実装を提供`IOleInPlaceActiveObject`サポートと**IUnknown**ダンプ情報を送信することによってデバッグでデバイスをビルドします。  
+ [IOleInPlaceActiveObject](http://msdn.microsoft.com/library/windows/desktop/ms691299)インターフェイスが、インプレース コントロールとコンテナー間の通信を支援し; たとえば、コントロールとコンテナーのアクティブな状態を通信して、コントロールに通知する必要があるサイズを変更します。できません。 クラス`IOleInPlaceActiveObjectImpl`の既定の実装を提供`IOleInPlaceActiveObject`をサポートしていると**IUnknown**ダンプ情報を送信することによってデバッグ デバイスを構築します。  
   
  **関連資料** [ATL チュートリアル](../../atl/active-template-library-atl-tutorial.md)、 [ATL プロジェクトの作成](../../atl/reference/creating-an-atl-project.md)  
   
@@ -103,10 +86,10 @@ HRESULT ContextSensitiveHelp(BOOL fEnterMode);
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 返します。 **E_NOTIMPL**します。  
+ 返します**E_NOTIMPL**です。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleWindow::ContextSensitiveHelp](http://msdn.microsoft.com/library/windows/desktop/ms680059)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleWindow::ContextSensitiveHelp](http://msdn.microsoft.com/library/windows/desktop/ms680059) Windows SDK にします。  
   
 ##  <a name="enablemodeless"></a>IOleInPlaceActiveObjectImpl::EnableModeless  
  モードレス ダイアログ ボックスを有効にします。  
@@ -119,7 +102,7 @@ HRESULT EnableModeless(BOOL fEnable);
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleInPlaceActiveObject::EnableModeless](http://msdn.microsoft.com/library/windows/desktop/ms680115)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleInPlaceActiveObject::EnableModeless](http://msdn.microsoft.com/library/windows/desktop/ms680115) Windows SDK にします。  
   
 ##  <a name="getwindow"></a>IOleInPlaceActiveObjectImpl::GetWindow  
  コンテナーは、コントロールのウィンドウ ハンドルを取得するには、この関数を呼び出します。  
@@ -129,12 +112,12 @@ HRESULT GetWindow(HWND* phwnd);
 ```  
   
 ### <a name="remarks"></a>コメント  
- コンテナーによっては、現在のウィンドウがある場合でも、ウィンドウなしされているコントロールでは動作しません。 ATL の実装で場合、 **CComControl::m_bWasOnceWindowless**データ メンバーは**TRUE**、返します**E_FAIL**します。 それ以外の場合\* *phwnd*は**NULL**、`GetWindow`割り当てます*phwnd*コントロール クラスのデータ メンバーに`m_hWnd`し、返します`S_OK`します。  
+ コンテナーをいくつかは、現在のウィンドウがある場合でも、ウィンドウなしされているコントロールでは機能しません。 ATL の実装では場合、 **CComControl::m_bWasOnceWindowless**データ メンバーは**TRUE**、この関数を返します**E_FAIL**です。 それ以外の場合\* *phwnd*は**NULL**、`GetWindow`割り当てます*phwnd*コントロール クラスのデータ メンバーに`m_hWnd`を返します`S_OK`.  
   
- 参照してください[IOleWindow::GetWindow](http://msdn.microsoft.com/library/windows/desktop/ms687282)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[IOleWindow::GetWindow](http://msdn.microsoft.com/library/windows/desktop/ms687282) Windows SDK にします。  
   
 ##  <a name="ondocwindowactivate"></a>IOleInPlaceActiveObjectImpl::OnDocWindowActivate  
- コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。  
+ コントロールは、コンテナーのドキュメント ウィンドウがアクティブ化または非アクティブ化されたときに通知します。  
   
 ```
 HRESULT OnDocWindowActivate(BOOL fActivate);
@@ -144,10 +127,10 @@ HRESULT OnDocWindowActivate(BOOL fActivate);
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleInPlaceActiveObject::OnDocWindowActivate](http://msdn.microsoft.com/library/windows/desktop/ms687281)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[ioleinplaceactiveobject::ondocwindowactivate](http://msdn.microsoft.com/library/windows/desktop/ms687281) Windows SDK にします。  
   
 ##  <a name="onframewindowactivate"></a>IOleInPlaceActiveObjectImpl::OnFrameWindowActivate  
- コンテナーの最上位のフレーム ウィンドウがアクティブ化または非アクティブになるコントロールに通知します。  
+ コントロールは、コンテナーの最上位のフレーム ウィンドウがアクティブ化または非アクティブ化されたときに通知します。  
   
 ```
 HRESULT OnFrameWindowActivate(BOOL fActivate);
@@ -157,7 +140,7 @@ HRESULT OnFrameWindowActivate(BOOL fActivate);
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleInPlaceActiveObject::OnFrameWindowActivate](http://msdn.microsoft.com/library/windows/desktop/ms683969)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[ioleinplaceactiveobject::onframewindowactivate](http://msdn.microsoft.com/library/windows/desktop/ms683969) Windows SDK にします。  
   
 ##  <a name="resizeborder"></a>IOleInPlaceActiveObjectImpl::ResizeBorder  
  境界線のサイズを変更する必要があるコントロールに通知します。  
@@ -173,10 +156,10 @@ HRESULT ResizeBorder(
  `S_OK` を返します。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleInPlaceActiveObject::ResizeBorder](http://msdn.microsoft.com/library/windows/desktop/ms680053)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[ioleinplaceactiveobject:](http://msdn.microsoft.com/library/windows/desktop/ms680053) Windows SDK にします。  
   
 ##  <a name="translateaccelerator"></a>IOleInPlaceActiveObjectImpl::TranslateAccelerator  
- コンテナーのメニューのアクセラレータ キー メッセージを処理します。  
+ コンテナーからメニュー アクセス キーのメッセージを処理します。  
   
 ```
 HRESULT TranslateAccelerator(LPMSG lpmsg);
@@ -190,10 +173,9 @@ HRESULT TranslateAccelerator(LPMSG lpmsg);
  **S_FALSE**メッセージが変換されていない場合。  
   
 ### <a name="remarks"></a>コメント  
- 参照してください[IOleInPlaceActiveObject::TranslateAccelerator](http://msdn.microsoft.com/library/windows/desktop/ms693360)で、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)]です。  
+ 参照してください[ioleinplaceactiveobject::translateaccelerator](http://msdn.microsoft.com/library/windows/desktop/ms693360) Windows SDK にします。  
   
 ## <a name="see-also"></a>関連項目  
  [CComControl クラス](../../atl/reference/ccomcontrol-class.md)  
  [ActiveX コントロールのインターフェイス](http://msdn.microsoft.com/library/windows/desktop/ms692724)  
  [クラスの概要](../../atl/atl-class-overview.md)
-
