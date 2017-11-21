@@ -1,65 +1,69 @@
 ---
-title: "スケジューラ ポリシー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "スケジューラ ポリシー"
+title: "スケジューラ ポリシー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: scheduler policies
 ms.assetid: 58fb68bd-4a57-40a8-807b-6edb6f083cd9
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 85b9c40d5253c707567a7cb0a1c751b1392fc995
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スケジューラ ポリシー
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、同時実行ランタイムでのスケジューラ ポリシーの役割について説明します。  スケジューラでタスクを管理する場合、*スケジューラ ポリシー*によって、スケジューラが使用する方法を制御します。  たとえば、`THREAD_PRIORITY_NORMAL` で実行されるタスクと `THREAD_PRIORITY_HIGHEST`で実行するそのほかのタスクを必要とするアプリケーションがあるとします。2 種類のスケジューラ インスタンスを作成する: `THREAD_PRIORITY_NORMAL` と `ContextPriority` ポリシーを指定すると `THREAD_PRIORITY_HIGHEST`と同じポリシーを指定する別の 1 つ。  
+# <a name="scheduler-policies"></a>スケジューラ ポリシー
+このドキュメントでは、同時実行ランタイム スケジューラ ポリシーの役割について説明します。 A*スケジューラ ポリシー*スケジューラがタスクを管理するときに使用する方法を制御します。 たとえば、一部のタスクで実行を必要とするアプリケーション`THREAD_PRIORITY_NORMAL`およびその他のタスクで実行する`THREAD_PRIORITY_HIGHEST`です。  2 つのスケジューラ インスタンスを作成することができます: いずれかを指定する、`ContextPriority`ポリシーが`THREAD_PRIORITY_NORMAL`もう 1 つを同じポリシーを指定する`THREAD_PRIORITY_HIGHEST`です。  
   
- スケジューラ ポリシーを使用して、使用できる処理リソースを分割して、各スケジューラに固定の一連のリソースを割り当てることができます。  たとえば、4 つまでのプロセッサに対応した並列アルゴリズムを考えてみます。  この場合、タスクで同時に使用されるプロセッサを 4 つまでに制限するスケジューラ ポリシーを作成できます。  
+ スケジューラ ポリシーを使用するは、使用可能な処理リソースを分割し、各スケジューラにリソースの固定セットを割り当てます。 たとえば、4 つのプロセッサに対応する並列アルゴリズムを検討してください。 4 つ以下のプロセッサを同時に使用するには、そのタスクを制限するスケジューラ ポリシーを作成することができます。  
   
 > [!TIP]
->  同時実行ランタイムは既定のスケジューラを提供します。  したがって、アプリケーションで 1 を作成する必要はありません。  タスク スケジューラではアプリケーションのパフォーマンスを微調整できるため、同時実行ランタイムを初めて使用する場合は、[並列パターン ライブラリ \(PPL\)](../../parallel/concrt/parallel-patterns-library-ppl.md) または[非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)から始めることをお勧めします。  
+>  同時実行ランタイムでは、既定のスケジューラを提供します。 そのため、アプリケーションで 1 つを作成する必要はありません。 始めることをお勧めタスク スケジューラを使用してアプリケーションのパフォーマンスを微調整できますが、ため、[並列パターン ライブラリ (PPL)](../../parallel/concrt/parallel-patterns-library-ppl.md)または[非同期エージェント ライブラリ](../../parallel/concrt/asynchronous-agents-library.md)場合同時実行ランタイムに新しいです。  
   
- スケジューラ インスタンスの作成に [concurrency::CurrentScheduler::Create](../Topic/CurrentScheduler::Create%20Method.md)、[concurrency::Scheduler::Create](../Topic/Scheduler::Create%20Method.md)、または [concurrency::Scheduler::SetDefaultSchedulerPolicy](../Topic/Scheduler::SetDefaultSchedulerPolicy%20Method.md) のメソッドを使用すると、スケジューラの動作を指定するキーと値のペアのコレクションを含む [concurrency::SchedulerPolicy](../../parallel/concrt/reference/schedulerpolicy-class.md) オブジェクトを提供します。  `SchedulerPolicy` コンストラクターは、可変個の引数を受け取ります。  1 番目の引数は、指定するポリシー要素の数です。  残りの引数は、各ポリシー要素を表すキーと値のペアです。  次の例では、3 つのポリシー要素を指定する `SchedulerPolicy` オブジェクトが作成されます。  ランタイムは、指定されていないポリシー キーに対して既定値を使用します。  
+ 使用すると、 [concurrency::CurrentScheduler::Create](reference/currentscheduler-class.md#create)、 [:create](reference/scheduler-class.md#create)、または[concurrency::Scheduler::SetDefaultSchedulerPolicy](reference/scheduler-class.md#setdefaultschedulerpolicy)メソッドを提供する、スケジューラ インスタンスを作成、 [concurrency::schedulerpolicy](../../parallel/concrt/reference/schedulerpolicy-class.md)スケジューラの動作を指定するキー/値ペアのコレクションを格納するオブジェクト。 `SchedulerPolicy`コンス トラクターは、可変個の引数を受け取ります。 最初の引数を指定しようとしているポリシー要素の数です。 残りの引数は、ポリシー要素ごとのキーと値のペアです。 次の例を作成、`SchedulerPolicy`ポリシーの 3 つの要素を指定するオブジェクト。 ランタイムは、指定されていないポリシー キーの既定値を使用します。  
+
   
- [!code-cpp[concrt-scheduler-policy#2](../../parallel/concrt/codesnippet/CPP/scheduler-policies_1.cpp)]  
+ [!code-cpp[concrt-scheduler-policy#2](../../parallel/concrt/codesnippet/cpp/scheduler-policies_1.cpp)]  
   
- [concurrency::PolicyElementKey](../Topic/PolicyElementKey%20Enumeration.md) の列挙体はタスク スケジューラに関連付けられているポリシー キーを定義します。  次の表で、ポリシー キーと、ランタイムが各ポリシー キーに対して使用する既定値について説明します。  
+
+ [Concurrency::PolicyElementKey](reference/concurrency-namespace-enums.md#policyelementkey)列挙体は、タスク スケジューラに関連付けられているポリシー キーを定義します。 次の表は、ポリシーのキーと、それぞれのランタイムで使用される既定値について説明します。  
   
 |ポリシー キー|説明|既定値|  
-|-------------|--------|---------|  
-|`SchedulerKind`|タスクをスケジュールするために使用するスレッドの種類を指定する [concurrency::SchedulerType](../Topic/SchedulerType%20Enumeration.md) 値。|`ThreadScheduler` \(通常スレッドを使用\)。  このキーの有効な値です。|  
-|`MaxConcurrency`|スケジューラが使用する同時実行リソースの最大数を指定する `unsigned int` 値。|[concurrency::MaxExecutionResources](../Topic/MaxExecutionResources%20Constant.md)|  
-|`MinConcurrency`|スケジューラが使用する同時実行リソースの最小数を指定する `unsigned int` 値。|`1`|  
-|`TargetOversubscriptionFactor`|各処理リソースに割り当てるスレッドの数を指定する `unsigned int` 値。|`1`|  
-|`LocalContextCacheSize`|各仮想プロセッサのローカル キューにキャッシュすることができるコンテキストの最大数を指定する `unsigned int` 値。|`8`|  
-|`ContextStackSize`|各コンテキスト用に予約するスタックのサイズ \(キロバイト単位\) を指定する `unsigned int` 値。|`0` \(既定のスタック サイズを使用\)|  
-|`ContextPriority`|各コンテキストのスレッド優先順位を指定する `int` 値。  これには、[SetThreadPriority](http://msdn.microsoft.com/library/windows/desktop/ms686277) または `INHERIT_THREAD_PRIORITY` に渡すことができる任意の値を使用できます。|`THREAD_PRIORITY_NORMAL`|  
-|`SchedulingProtocol`|使用するスケジューリング アルゴリズムを指定する [concurrency::SchedulingProtocolType](../Topic/SchedulingProtocolType%20Enumeration.md) 値。|`EnhanceScheduleGroupLocality`|  
-|`DynamicProgressFeedback`|統計ベースの進行状況情報にリソースのバランスを再調整するかどうかを指定する [concurrency::DynamicProgressFeedbackType](../Topic/DynamicProgressFeedbackType%20Enumeration.md) 値。<br /><br /> **メモ** このポリシーに設定しないでください。`ProgressFeedbackDisabled` これは、ランタイムによる使用が予約されています。|`ProgressFeedbackEnabled`|  
+|----------------|-----------------|-------------------|  
+|`SchedulerKind`|A [concurrency::SchedulerType](reference/concurrency-namespace-enums.md#schedulertype)タスクのスケジュール設定に使用するスレッドの種類を指定する値。|`ThreadScheduler`(通常のスレッドを使用)。 これは、このキーの唯一の有効な値です。|  
+|`MaxConcurrency`|`unsigned int`スケジューラが使用する同時実行リソースの最大数を指定する値。|[concurrency::MaxExecutionResources](reference/concurrency-namespace-constants1.md#maxexecutionresources)|  
+|`MinConcurrency`|`unsigned int`スケジューラが使用する同時実行リソースの最小数を指定する値。|`1`|  
+|`TargetOversubscriptionFactor`|`unsigned int`処理の各リソースに割り当てるスレッドの数を指定する値。|`1`|  
+|`LocalContextCacheSize`|`unsigned int`各仮想プロセッサのローカル キューでキャッシュできるコンテキストの最大数を指定する値。|`8`|  
+|`ContextStackSize`|`unsigned int` (キロバイト単位)、各コンテキスト用に予約するスタックのサイズを指定する値。|`0`(既定のスタック サイズを使用)|  
+|`ContextPriority`|`int`各コンテキストのスレッドの優先度を指定する値。 これに渡すことができる任意の値を指定できます[SetThreadPriority](http://msdn.microsoft.com/library/windows/desktop/ms686277)または`INHERIT_THREAD_PRIORITY`です。|`THREAD_PRIORITY_NORMAL`|  
+
+|`SchedulingProtocol`|A [concurrency::SchedulingProtocolType](reference/concurrency-namespace-enums.md#schedulingprotocoltype)を使用するスケジューリング アルゴリズムを指定する値です |。`EnhanceScheduleGroupLocality`|  
+|`DynamicProgressFeedback`|A [concurrency::DynamicProgressFeedbackType](reference/concurrency-namespace-enums.md#dynamicprogressfeedbacktype)進行状況の統計情報に基づく情報に従って、リソースを再配分するかどうかを指定する値。<br /><br /> **注**にこのポリシーを設定しないで`ProgressFeedbackDisabled`ランタイムで使用するために予約されているためです |。`ProgressFeedbackEnabled`|  
+
   
- 各スケジューラは、タスクをスケジュールするとき、独自のポリシーを使用します。  1 個のスケジューラに関連付けられているポリシーは、そのほかのスケジューラの動作には影響しません。  また、`Scheduler` オブジェクトを作成した後にスケジューラ ポリシーを変更することはできません。  
+ 各スケジューラは、タスクをスケジュールするときに、独自のポリシーを使用します。 1 つのスケジューラに関連付けられているポリシーは、その他のスケジューラの動作には影響しません。 作成した後に、スケジューラ ポリシーを変更することはできませんさらに、`Scheduler`オブジェクト。  
   
 > [!IMPORTANT]
->  ランタイムによって作成されるスレッドの属性を制御するには、スケジューラ ポリシーだけを使用します。  これにより、未定義の動作が発生する可能性があるため、ランタイムによって作成されるスレッドの関係または優先順位を変更しないでください。  
+>  スケジューラ ポリシーのみを使用すると、ランタイムは、作成スレッドの属性を制御できます。 スレッドの関係または未定義の動作が発生する可能性がありますので、ランタイムによって作成されるスレッドの優先順位は変わりません。  
   
- スケジューラを明示的に作成しない場合は、ランタイムによって既定のスケジューラが作成されます。  そのスケジューラで使用できるアプリケーションで既定のスケジューラを使用するがポリシーを指定する場合は、並列処理をスケジュールする前に [concurrency::Scheduler::SetDefaultSchedulerPolicy](../Topic/Scheduler::SetDefaultSchedulerPolicy%20Method.md) のメソッドを呼び出します。  `Scheduler::SetDefaultSchedulerPolicy` メソッドを呼び出さない場合、ランタイムは表の既定ポリシー値を使用します。  
+ ランタイムは、明示的に作成しないいずれかの場合に、既定のスケジューラを作成します。 かどうか、アプリケーションで、既定のスケジューラを使用する必要しますが、呼び出しを使用するには、そのスケジューラ ポリシーを指定する、 [concurrency::Scheduler::SetDefaultSchedulerPolicy](reference/scheduler-class.md#setdefaultschedulerpolicy)メソッド並列処理をスケジュールする前にします。 呼び出さない場合、`Scheduler::SetDefaultSchedulerPolicy`メソッドは、テーブルから値を既定のポリシー ランタイム使用します。  
   
- スケジューラのポリシーのコピーを取得するために [concurrency::CurrentScheduler::GetPolicy](../Topic/CurrentScheduler::GetPolicy%20Method.md) と [concurrency::Scheduler::GetPolicy](../Topic/Scheduler::GetPolicy%20Method.md) のメソッドを使用します。  これらのメソッドから取得するポリシー値は、スケジューラを作成するときに指定したポリシー値とは異なる場合があります。  
+ 使用して、 [concurrency::CurrentScheduler::GetPolicy](reference/currentscheduler-class.md#getpolicy)と[concurrency::Scheduler::GetPolicy](reference/scheduler-class.md#getpolicy)スケジューラ ポリシーのコピーを取得するメソッド。 これらのメソッドから受信したポリシー値スケジューラを作成するときに指定するポリシー値と異なることができます。  
   
-## 例  
- スケジューラの動作を制御するために特定のスケジューラ ポリシーを使用して例を確認するには [方法: 特定のスケジューラ ポリシーを指定する](../Topic/How%20to:%20Specify%20Specific%20Scheduler%20Policies.md) と [方法: 特定のスケジューラ ポリシーを使用するエージェントを作成する](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md)を参照してください。  
+## <a name="example"></a>例  
+ スケジューラの動作を制御する特定のスケジューラ ポリシーを使用する例を検証するを参照してください[する方法: 特定のスケジューラ ポリシーの指定](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)と[する方法: エージェントを使用して特定のスケジューラ ポリシーを作成します。。](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md).  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [タスク スケジューラ](../../parallel/concrt/task-scheduler-concurrency-runtime.md)   
- [方法: 特定のスケジューラ ポリシーを指定する](../Topic/How%20to:%20Specify%20Specific%20Scheduler%20Policies.md)   
+ [方法: 特定のスケジューラ ポリシーを指定します。](../../parallel/concrt/how-to-specify-specific-scheduler-policies.md)   
  [方法: 特定のスケジューラ ポリシーを使用するエージェントを作成する](../../parallel/concrt/how-to-create-agents-that-use-specific-scheduler-policies.md)
+

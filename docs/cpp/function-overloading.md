@@ -4,32 +4,29 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - function overloading [C++], about function overloading
 - function overloading
 - declaring functions [C++], overloading
 ms.assetid: 3c9884cb-1d5e-42e8-9a49-6f46141f929e
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 9076fdd48e466d68d5dcecec2c339a98f39a8bb1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 2486357766d2dbd9f5d4250e2d0fb38e02ba51bc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="function-overloading"></a>関数のオーバーロード
 C++ では、同じスコープ内で同じ名前の複数の関数を指定できます。 これらは、オーバーロードされた関数と呼ばれます。これについては、オーバーロードに関するトピックで詳しく説明します。 オーバーロードされた関数により、プログラマは、引数の種類と数に応じて関数に異なるセマンティクスを指定できます。  
   
- たとえば、**印刷**、文字列を受け取る関数 (または**char \* **) 引数が型の引数を受け取る 1 よりも大幅に異なるタスクを実行**二重**. オーバーロードにより、統一性のある名前付けが可能になり、プログラマは `print_sz` や `print_d` のような名前を作成する必要がなくなります。 次の表は、同じスコープ内の同じ名前を持つ関数を区別するために、C++ で関数宣言のどの部分が使用されるかをまとめたものです。  
+ たとえば、**印刷**、文字列を受け取る関数 (または**char \*** ) 引数が型の引数を受け取る 1 よりも大幅に異なるタスクを実行**二重**. オーバーロードにより、統一性のある名前付けが可能になり、プログラマは `print_sz` や `print_d` のような名前を作成する必要がなくなります。 次の表は、同じスコープ内の同じ名前を持つ関数を区別するために、C++ で関数宣言のどの部分が使用されるかをまとめたものです。  
   
 ### <a name="overloading-considerations"></a>オーバーロードに関する考慮事項  
   
@@ -183,7 +180,7 @@ F1 = Add( 3, 6 );
   
  この 2 つのセット間の積集合が空であることに注意してください。 このため、エラー メッセージが生成されます。  
   
- 引数の一致を使用して関数* n *は既定の引数と見なさ* n *+1 の個別の関数、それぞれ異なる数の引数にします。  
+ 引数の一致を使用して関数 *n* は既定の引数と見なさ *n* +1 の個別の関数、それぞれ異なる数の引数にします。  
   
  省略記号 (...) はワイルドカードとして機能します。これは任意の実際の引数と一致します。 オーバーロード関数セットを非常に注意して設計しないと、これが多くのあいまいさの原因になる可能性があります。  
   
@@ -269,19 +266,19 @@ volatile Over&
   
 1.  完全一致。 関数の呼び出しに使用された型と関数プロトタイプで宣言された型の完全な一致は、常に最適な一致です。 単純変換のシーケンスは、完全一致として分類されます。 ただし、次の変換を実行しないシーケンスは、実行するシーケンスよりも優先順位が高いと見なされます。  
   
-    -   ポインターへのポインターから**const** (`type` ** \* **に**const** `type` ** \* **).  
+    -   ポインターへのポインターから**const** (`type`  **\*** に**const** `type`  **\*** ).  
   
-    -   ポインターへのポインターから`volatile`(`type` ** \* **に`volatile` `type` ** \* **)。  
+    -   ポインターへのポインターから`volatile`(`type`  **\*** に`volatile` `type`  **\*** )。  
   
-    -   参照への参照から**const** (`type` ** & **に**const** `type` ** & **).  
+    -   参照への参照から**const** (`type`  **&** に**const** `type`  **&** ).  
   
-    -   参照への参照から`volatile`(`type` ** & **に`volatile` `type` ** & **)。  
+    -   参照への参照から`volatile`(`type`  **&** に`volatile` `type`  **&** )。  
   
 2.  上位変換を使用した一致。 のみ整数の上位変換からの変換を含む完全一致として分類されていない任意のシーケンス**float**に**二重**、および単純変換が上位変換を使用して、一致として分類します。 完全一致による一致ほどではありませんが、標準変換を使用するより上位変換を使用する方が一致の程度が高くなります。  
   
 3.  標準変換を使用した一致。 完全一致としても、標準変換および単純変換だけを含む上位変換を使用した一致としても分類されないシーケンスは、標準変換を使用した一致として分類されます。 このカテゴリ内では、次の規則が適用されます。  
   
-    -   ポインターから直接または間接基底クラスへのポインターに、派生クラスへの変換が変換することをお勧め**void \* **または**const void \***です。  
+    -   ポインターから直接または間接基底クラスへのポインターに、派生クラスへの変換が変換することをお勧め**void \*** または**const void \***です。  
   
     -   派生クラスへのポインターから基底クラスへのポインターに変換すると、基底クラスが直接基底クラスに近ければ近いほど、一致の程度が向上します。 次の図に示すクラスの階層構造を考えます。  
   

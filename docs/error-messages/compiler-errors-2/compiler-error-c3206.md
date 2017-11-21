@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- C3206
-dev_langs:
-- C++
-helpviewer_keywords:
-- C3206
+f1_keywords: C3206
+dev_langs: C++
+helpviewer_keywords: C3206
 ms.assetid: d62995b5-e349-4418-bbe8-8a5e776ca7b0
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: 4faf775e3a3a179e49f013b21a948c49a4f89f74
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 600ea77821fc457a631f96d48b2416f958dce667
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="compiler-error-c3206"></a>コンパイラ エラー C3206
 'function': 'param' の型引数が無効です。クラス型 'typename' の型引数リストがありません  
@@ -96,11 +91,8 @@ int main() {
 }  
 ```  
   
- このエラーは、クラス テンプレートがテンプレート型引数として許可されていない Visual C++ .NET 2003 でコンパイラ準拠作業が実施された結果、生成されることもあります。  
-  
- クラス テンプレートは、テンプレート型引数として許可されません。 これは、Visual C++ .NET 2003 では動作しましたが、C++ では無効です。  
-  
- 次の例は Visual C++ .NET 2002 ではコンパイルされますが、Visual C++ .NET 2003 では失敗します。  
+ 
+ クラス テンプレートは、テンプレート型引数として許可されません。 次の例では、C3206 が発生します。  
   
 ```  
 // C3206e.cpp  
@@ -134,7 +126,7 @@ int main() {
 }  
 ```  
   
- テンプレート template パラメーターが必要な場合、Visual C++ .NET 2003 バージョンと Visual C++ .NET 2002 バージョンの両方で有効にエラーを解決するには、テンプレート template パラメーターを受け取るテンプレート クラスに関数をラップする必要があります。  
+ テンプレート template パラメーターが必要な場合は、テンプレート template パラメーターを受け取るテンプレート クラスで関数をラップする必要があります。  
   
 ```  
 // C3206g.cpp  

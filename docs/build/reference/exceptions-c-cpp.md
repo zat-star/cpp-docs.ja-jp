@@ -1,43 +1,42 @@
 ---
-title: "例外 (C/C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ERROR_MOD_NOT_FOUND"
-  - "vcppException"
-  - "ERROR_SEVERITY_ERROR"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 例外処理, 遅延読み込み (DLL を)"
-  - "遅延読み込み (DLL を), 例外"
-  - "ERROR_MOD_NOT_FOUND 例外"
-  - "ERROR_SEVERITY_ERROR 例外"
-  - "vcppException"
+title: "例外 (C/C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ERROR_MOD_NOT_FOUND
+- vcppException
+- ERROR_SEVERITY_ERROR
+dev_langs: C++
+helpviewer_keywords:
+- vcppException
+- C++ exception handling, delayed loading of DLLs
+- delayed loading of DLLs, exceptions
+- ERROR_SEVERITY_ERROR exception
+- ERROR_MOD_NOT_FOUND exception
 ms.assetid: c03be05d-1c39-4f35-84cf-00c9af3bae9a
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 40d78e9246d0bb682d63ae094f96123dd4b883e1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 例外 (C/C++)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-エラーが見つかると、次の 2 つの例外コードが発生します。  
+# <a name="exceptions-cc"></a>例外 (C/C++)
+2 つの例外コードは、エラーが発生したときに発生する可能性が。  
   
--   **LoadLibrary** エラーの例外コード  
+-   **LoadLibrary**エラー  
   
--   **GetProcAddress** エラーの例外コード  
+-   **GetProcAddress**エラー  
   
- 例外情報は以下のとおりです。  
+ 例外情報を次に示します。  
   
 ```  
 //  
@@ -47,11 +46,11 @@ manager: "ghogen"
 #define VcppException(sev,err)  ((sev) | (FACILITY_VISUALCPP<<16) | err)  
 ```  
   
- スローされる例外コードは、標準の VcppException\(ERROR\_SEVERITY\_ERROR, ERROR\_MOD\_NOT\_FOUND\) 値と VcppException\(ERROR\_SEVERITY\_ERROR, ERROR\_PROC\_NOT\_FOUND\) 値です。  **DelayLoadInfo** 構造体へのポインターが LPDWORD 値で渡されます。**GetExceptionInformation** では、[EXCEPTION\_RECORD](http://msdn.microsoft.com/library/windows/desktop/aa363082) 構造体の ExceptionInformation\[0\] フィールドにこの値を取得します。  
+ スローされた例外コードは、標準的な VcppException (ERROR_SEVERITY_ERROR、ERROR_MOD_NOT_FOUND) と VcppException (ERROR_SEVERITY_ERROR、ERROR_PROC_NOT_FOUND) 値です。 例外へのポインターを渡す、 **DelayLoadInfo** LPDWORD の値を取得できる構造**GetExceptionInformation**で、 [EXCEPTION_RECORD](http://msdn.microsoft.com/library/windows/desktop/aa363082)構造体、ExceptionInformation [0] のフィールド。  
   
- また、grAttrs フィールドで不正なビットが設定されている場合は、例外 ERROR\_INVALID\_PARAMETER がスローされます。  この例外は、どの点からみても致命的です。  
+ さらに、不適切なビットが grAttrs フィールドに設定されている場合、例外が試行がスローされます。 この例外は、すべてを消して致命的です。  
   
- 詳細については、「[構造体と定数の定義](../../build/reference/structure-and-constant-definitions.md)」を参照してください。  
+ 参照してください[構造体と定数定義](../../build/reference/structure-and-constant-definitions.md)詳細についてはします。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [エラー処理と通知](../../build/reference/error-handling-and-notification.md)

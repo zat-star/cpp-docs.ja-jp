@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - aggregate types [C++]
 - union keyword [C], declarations
@@ -17,30 +15,15 @@ helpviewer_keywords:
 - union keyword [C]
 - aggregates [C++], initializing
 ms.assetid: a8f8ed75-39db-4592-93b9-d3920d915810
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Human Translation
-ms.sourcegitcommit: d6eb43b2e77b11f4c85f6cf7e563fe743d2a7093
-ms.openlocfilehash: 819c7b2ebce439ae9d753dd24cc3fd8df8c3d85e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 05/18/2017
-
+ms.openlocfilehash: a50d9624c617904144ba9173a5e7fa0ce2064508
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="initializing-aggregate-types"></a>集約型の初期化
 "集約" 型は、構造体、共用体、または配列型です。 集約型に集約型のメンバーが含まれる場合、初期化の規則が再帰的に適用されます。  
@@ -56,11 +39,11 @@ ms.lasthandoff: 05/18/2017
   
  *initializer-list*  **,**  *initializer*  
   
- 初期化子リストは、コンマで区切った初期化子のリストです。** リストの各初期化子は定数式または初期化子リストです。 したがって、初期化子リストは入れ子にできます。 このフォームは、このセクションの例に示すように集約型の集約メンバーを初期化する場合に便利です。 ただし、自動識別子の初期化子が単一の式である場合は、定数式である必要はありません。識別子に割り当てるための適切な型を持っているだけでかまいません。  
+ *初期化子リスト*は、コンマで区切った初期化子のリストです。 リストの各初期化子は定数式または初期化子リストです。 したがって、初期化子リストは入れ子にできます。 このフォームは、このセクションの例に示すように集約型の集約メンバーを初期化する場合に便利です。 ただし、自動識別子の初期化子が単一の式である場合は、定数式である必要はありません。識別子に割り当てるための適切な型を持っているだけでかまいません。  
   
  各初期化子リストについて、定数式の値が、集約変数の対応するメンバーに順に割り当てられます。  
   
- 初期化子リストの値の数が集約型より少ない場合、集約型の残りのメンバーまたは要素は 0 に初期化されます**。 明示的に初期化されない自動識別子の初期値は定義されません。 初期化子リストに集約型よりも多くの値がある場合、エラーが発生します**。 これらの規則は、埋め込まれた各初期化子リストと、集約全体に適用されます。  
+ *初期化子リスト*の値の数が集約型より少ない場合、集約型の残りのメンバーまたは要素は 0 に初期化されます。 明示的に初期化されない自動識別子の初期値は定義されません。 *初期化子リスト*に集約型よりも多くの値がある場合、エラーが発生します。 これらの規則は、埋め込まれた各初期化子リストと、集約全体に適用されます。  
   
  構造体の初期化子は、同じ型の式、または中かっこ (**{ }**) で囲まれているメンバーの初期化子のリストです。 名前のないビット フィールド メンバーは初期化されません。  
   

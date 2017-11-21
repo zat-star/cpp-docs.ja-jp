@@ -1,69 +1,69 @@
 ---
-title: "予約語 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "code"
-  - "CONFORMING"
-  - "DISCARDABLE"
-  - "Description"
-  - "base"
-  - "APPLOADER"
-  - "Data"
-  - "DYNAMIC"
-  - "DEV386"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - ".def ファイル [C++], 予約語"
-  - "def ファイル [C++], 予約語"
-  - "リンカー [C++], 予約語"
-  - "予約語 [C++]"
+title: "予約語 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- code
+- CONFORMING
+- DISCARDABLE
+- Description
+- base
+- APPLOADER
+- Data
+- DYNAMIC
+- DEV386
+dev_langs: C++
+helpviewer_keywords:
+- .def files [C++], reserved words
+- def files [C++], reserved words
+- linker [C++], reserved words
+- reserved words [C++]
 ms.assetid: 9b9f49e5-0739-45ab-a37e-81e3915ceb25
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 1a7040ac0093471be657c2ed7a064719abcd0230
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 予約語
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-以下は、リンカーの予約語です。  これらの名前は、それが二重引用符 \(""\) で囲まれている場合のみ、[モジュール定義ステートメント](../Topic/Module-Definition%20\(.Def\)%20Files.md)で引数として使用できます。  
+# <a name="reserved-words"></a>予約語
+次の単語は、リンカーによって予約されています。 これらの名前を引数として使用できます[モジュール定義ステートメント](../../build/reference/module-definition-dot-def-files.md)名前が二重引用符で囲まれている場合にのみ ("") です。  
   
 ||||  
 |-|-|-|  
-|**APPLOADER**1|**INITINSTANCE**2|**PRELOAD**|  
-|**BASE**|**IOPL**|**PRIVATE**|  
-|**CODE**|**LIBRARY**1|**PROTMODE**2|  
-|**CONFORMING**|**LOADONCALL**1|**PURE**1|  
-|**DATA**|**LONGNAMES**2|**READONLY**|  
-|**DESCRIPTION**|`MOVABLE`1|**READWRITE**|  
-|**DEV386**|**MOVEABLE**1|**REALMODE**1|  
-|**DISCARDABLE**|**MULTIPLE**|**RESIDENT**|  
-|**DYNAMIC**|**NAME**|**RESIDENTNAME**1|  
-|**EXECUTE\-ONLY**|**NEWFILES**2|**SECTIONS**|  
-|**EXECUTEONLY**|`NODATA`1|**SEGMENTS**|  
-|**EXECUTEREAD**|**NOIOPL**1|**SHARED**|  
-|**EXETYPE**|**NONAME**|**SINGLE**|  
-|**EXPORTS**|**NONCONFORMING**1|**STACKSIZE**|  
-|**FIXED**1|**NONDISCARDABLE**|**STUB**|  
-|**FUNCTIONS**2|**NONE**|**VERSION**|  
-|**HEAPSIZE**|**NONSHARED**|**WINDOWAPI**|  
-|**IMPORTS**|**NOTWINDOWCOMPAT**1|**WINDOWCOMPAT**|  
-|**IMPURE**1|**OBJECTS**|**WINDOWS**|  
-|**INCLUDE**2|**OLD**1||  
+|**APPLOADER**1|**INITINSTANCE**2|**プリロード**|  
+|**ベース**|**に対しては IOPL**|**プライベート**|  
+|**コード**|**ライブラリ**1|**PROTMODE**2|  
+|**準拠しています。**|**LOADONCALL**1|**純粋な**1|  
+|**データ**|****2|**読み取り専用**|  
+|**説明**|**移動可能な**1|**読み取り/書き込み**|  
+|**DEV386**|**MOVEABLE**1|**リアルモード**1|  
+|**破棄可能**|**複数**|**常駐**|  
+|**動的**|**名**|**RESIDENTNAME**1|  
+|**実行専用**|**NEWFILES**2|**セクション**|  
+|**EXECUTEONLY**|**NODATA**1|**セグメント**|  
+|**読み取り**|**NOIOPL**1|**共有**|  
+|**EXETYPE**|**NONAME**|**1 つ**|  
+|**エクスポート**|**準拠していない**1|**スタックサイズ**|  
+|**固定**1|**NONDISCARDABLE**|**スタブ**|  
+|**関数**2|**[なし]**|**バージョン**|  
+|**ヒープサイズ**|**非共有**|**WINDOWAPI**|  
+|**インポート**|**NOTWINDOWCOMPAT**1|**WINDOWCOMPAT**|  
+|**純粋でない**1|**オブジェクト**|**WINDOWS**|  
+|**含める**2|**古い**1||  
   
- 1 リンカーでは、この予約語を検出すると、警告 "無視" を出力します。  ただし、この言葉は予約されたままです。  
+ 1 この用語に到達したときに、、リンカーは (「無視」)、警告を出力します。 ただし、単語は、まだ予約されています。  
   
- 2 リンカーではこの予約語を無視しますが、警告は出力しません。  
+ 2、リンカーは、この単語は無視されますが、警告は出力されません。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [リンカー オプションの設定](../../build/reference/setting-linker-options.md)   
  [リンカー オプション](../../build/reference/linker-options.md)

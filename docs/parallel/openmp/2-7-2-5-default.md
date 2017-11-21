@@ -1,51 +1,50 @@
 ---
-title: "2.7.2.5 default | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.7.2.5 既定の |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: c856df07-705c-4ad3-9105-a268dd33e939
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 26dff1f0e8b3b88b4891617a2eef2bb2d82240eb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 2.7.2.5 default
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**既定**  の句はユーザーが変数のデータの共有の属性に影響を与えることができます。   **既定**  句の構文は次のとおりです。:  
+# <a name="2725-default"></a>2.7.2.5 default
+**既定**句は、ユーザーに影響を与える変数のデータ共有属性を使用できます。 構文、**既定**句を次に示します。  
   
 ```  
 default(shared | none)  
 ```  
   
- **既定値 \(共有\)** を指定するには修飾される **threadprivate** または **Cons**`t`\- 場合明示的に  **共有**  の句の現在表示されている変数をリストと同じです。   **既定**  の明示的な句がない場合既定では  **既定値 \(共有\)** を指定した場合と同じです。  
+ 指定する**default(shared)**は明示的にリスト内の現在表示されている各変数に相当、**共有**句である場合を除き**threadprivate**または**cons**`t`で修飾します。 ない場合、明示的な**既定**句、既定の動作は同じ場合**default(shared)**指定されました。  
   
- **既定値 \(なし\)** を指定するには次のうちいずれかの parallel コンストラクトの構文の範囲変数への参照にもなる必要がある必要があります :  
+ 指定する**default (none)** parallel コンストラクトの構文の範囲内の変数への参照をすべて true に設定する必要がありますには、少なくとも次のいずれかのことが必要です。  
   
--   変数が参照を含む構造体のデータの共有の属性の句で明示的に表示されます。  
+-   変数は、参照を含む構造のデータ共有属性句で明示的に表示されます。  
   
--   変数はparallel コンストラクトで宣言されます。  
+-   変数は、parallel コンストラクト内で宣言されます。  
   
--   変数は **threadprivate** です。  
+-   変数が**threadprivate**です。  
   
--   変数に  **定数** \- 修飾型はになります。  
+-   変数が、 **const**-型を修飾します。  
   
--   変数は**For** または  **並列の**  のディレクティブの後に変数がループの中に表示されます **For** のループのループ制御変数です。  
+-   変数が、ループ コントロール変数の**の**直後に続くループ、**の**または**の並列**ディレクティブ、および変数の参照、ループ内が表示されます。.  
   
- 変数をクロージャ ディレクティブの **lastprivate** により **firstprivate** で指定するか **リダクション**  の句は外側のコンテキストで変数への暗黙的な参照が発生します。  これらの暗黙的な参照は上記の要件に応じてあります。  
+ 変数を指定する、 **firstprivate**、 **lastprivate**、または**削減**かっこで囲んだディレクティブの句では、変数への暗黙的な参照をにより、外側コンテキスト。 このような暗黙的な参照は、上に示した要件に応じたもです。  
   
- **既定**  の一つの句だけ  **並列**  のディレクティブで指定される場合があります。  
+ 1 つだけ**既定**句で指定できる、**並列**ディレクティブです。  
   
- 変数の既定のデータの共有の属性は  **プライベート firstprivatelastprivate リダクション** 次の例に示すように  **共有**  の句を使用してオーバーライドできます :  
+ 変数の既定値を使用してデータ共有属性をオーバーライドすることができます、**プライベート**、 **firstprivate**、 **lastprivate**、**削減**、および**共有**句、次の例に示すようにします。  
   
 ```  
 #pragma  omp  parallel  for  default(shared)  firstprivate(i)\  

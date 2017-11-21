@@ -1,29 +1,28 @@
 ---
-title: "4.1 OMP_SCHEDULE | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "4.1 OMP_SCHEDULE |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: d0dce411-2351-4ee9-a1cc-c0322a58b65c
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 97ecedc5c2940173dd107ff3825f741ffa422889
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 4.1 OMP_SCHEDULE
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**OMP\_SCHEDULE** は **For**およびスケジュールの型  **ランタイム**  がある  **並列の**  のディレクティブにのみ適用されます。  このようなすべてのループのスケジュールの型とチャンクのサイズは実行時に認識されたスケジュールの型のいずれかにこの環境変数を設定してで設定できオプションのに *chunk\_size*。  
+# <a name="41-ompschedule"></a>4.1 OMP_SCHEDULE
+**OMP_SCHEDULE**にのみ適用されます**の**と**の並列**をスケジュールの種類を持つディレクティブ**ランタイム**です。 このようなループのスケジュールの種類とチャンク サイズは、認識されているスケジュールの種類のいずれかをする、省略可能なこの環境変数を設定して実行時に設定できます*chunk_size*です。  
   
- **For** およびスケジュール  **ランタイム**  以外の型を持つ  **並列の**  のディレクティブでは**OMP\_SCHEDULE** は無視されます。  この環境変数の既定値は実装定義されます。  オプションの設定の場合は正の値である場合 *chunk\_size*。   **静的**  のスケジュールの場合は一定である1 という値とした場合を除き*chunk\_size*。   **静的**  スケジュールには既定のチャンクのサイズはループに適用されるスレッドの数ループの反復空間に設定されます。  
+ **の**と**の並列**型を持つスケジュール以外のディレクティブ**ランタイム**、 **OMP_SCHEDULE**は無視されます。 この環境変数の既定値は、実装定義です。 場合、省略可能な*chunk_size*が設定されている値は正の値である必要があります。 場合*chunk_size*設定、値 1 が想定されている以外の場合、**静的**スケジュールします。 **静的**スケジュール、既定のチャンク サイズは、ループのイテレーション領域をループに適用されるスレッドの数で割った値に設定されています。  
   
  例:  
   
@@ -32,8 +31,8 @@ setenv OMP_SCHEDULE "guided,4"
 setenv OMP_SCHEDULE "dynamic"  
 ```  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **For** のディレクティブはページの 11. [セクション 2.4.1](../../parallel/openmp/2-4-1-for-construct.md) が表示されます。  
+-   ****ディレクティブを参照してください[セクション 2.4.1](../../parallel/openmp/2-4-1-for-construct.md) [11] ページ。  
   
--   **並列の**  のディレクティブはページの 16 [セクション 2.5.1](../Topic/2.5.1%20parallel%20for%20Construct.md) が表示されます。
+-   **並列**ディレクティブを参照してください[セクション 2.5.1](../../parallel/openmp/2-5-1-parallel-for-construct.md) 16 ページです。

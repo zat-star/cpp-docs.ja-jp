@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - local variables, lifetime
 - variables, automatic
@@ -26,16 +24,15 @@ helpviewer_keywords:
 - lifetime
 - global variables, lifetime
 ms.assetid: ff0b42cb-3f0f-49a3-a94f-d1d825d8ddfe
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: ac1e1904ea5b1d7280f614ec65af2be71f862104
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="lifetime"></a>有効期間
 「有効期間」は、変数または関数が存在するプログラムが実行中である期間です。 識別子のストレージ存続期間でその有効期間が決まります。  
@@ -52,7 +49,7 @@ ms.lasthandoff: 10/09/2017
   
  グローバルな有効期間がある識別子は、ソース プログラムの実行中に常に存在していますが (たとえば、外部で宣言された変数や **static** キーワードで宣言されたローカル変数)、プログラムのすべての部分に表示されない場合があります。 可視性については、「[スコープと可視性](../c-language/scope-and-visibility.md)」を参照してください。非終端要素の *storage-class-specifier* については、「[ストレージ クラス](../c-language/c-storage-classes.md)」を参照してください。  
   
- `malloc` などの特別なライブラリ ルーチンを使用して作成された場合は、必要に応じて (動的に) メモリを割り当てることができます。 動的メモリ割り当てはライブラリ ルーチンを使用するため、言語の一部とは見なされません。 「ランタイム ライブラリ リファレンス**」の [malloc](../c-runtime-library/reference/malloc.md) 関数を参照してください。  
+ `malloc` などの特別なライブラリ ルーチンを使用して作成された場合は、必要に応じて (動的に) メモリを割り当てることができます。 動的メモリ割り当てはライブラリ ルーチンを使用するため、言語の一部とは見なされません。 「*ランタイム ライブラリ リファレンス*」の [malloc](../c-runtime-library/reference/malloc.md) 関数を参照してください。  
   
 ## <a name="see-also"></a>関連項目  
  [有効期間、スコープ、可視性、およびリンケージ](../c-language/lifetime-scope-visibility-and-linkage.md)

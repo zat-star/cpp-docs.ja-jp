@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - extern keyword [C]
 - storage class specifiers, extern
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - external linkage, storage-class specifiers
 - external linkage, extern modifier
 ms.assetid: 6e16d927-291f-49e4-986c-9d91a482a441
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 16d1bf59dfd4b3ef5f037aed9c0f6febfdf1a2e8
 ms.openlocfilehash: 0f11789f985c67b59b076bed7ec849a864688743
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="extern-storage-class-specifier"></a>extern ストレージ クラス指定子
 `extern` のストレージ クラス指定子で宣言された変数は、プログラムのソース ファイルのいずれかの外部レベルで定義されている同じ名前の変数への参照です。 内部 `extern` 宣言は、ブロック内で外部レベル変数定義を表示するために使用されます。 外部レベルで宣言されていない限り、`extern` キーワードを使用して宣言された変数は、宣言されたブロックでのみ使用できます。  
@@ -83,7 +80,7 @@ void other( void )
   
  `other` 関数では、**static** ポインター変数 `external_i` を初期化するために、グローバル変数 `i` のアドレスが使用されます。 グローバル変数の有効期間が **static** である、つまりプログラム実行中にアドレスが変わることがないので、これは機能します。 次に、変数 `i` は、初期値 16 を持つローカル変数として再定義されます。 この再定義は、ローカル変数用にその名前が使用されていることによって隠されている外部レベルの `i` の値には影響しません。 グローバル `i` の値には、ポインター `external_i` を通じて、このブロック内で間接的な方法でのみアクセスできるようになりました。 ポインターに **auto** 変数 `i` のアドレスを割り当てようとしましたが、ブロックが入力されるたびに異なる可能性があるため機能しません。 変数 `a` は **static** 変数として宣言され、2 に初期化されます。 内部レベルの **static** 変数は宣言されているブロック内でのみ表示されるため、`a` は `main` の `a` と競合しません。  
   
- 変数 `a` は 2 だけ増加し、結果は 4 です。 `other` 関数が同じプログラムで再び呼び出される場合、`a` の初期値は 4 になります。 内部静的変数は、プログラムが終了したときに値を保持し、値を保持したまま、宣言されているブロックに入ります。****  
+ 変数 `a` は 2 だけ増加し、結果は 4 です。 `other` 関数が同じプログラムで再び呼び出される場合、`a` の初期値は 4 になります。 内部**静的**変数は、プログラムが終了したときに値を保持し、値を保持したまま、宣言されているブロックに入ります。  
   
 ## <a name="see-also"></a>関連項目  
  [内部レベル宣言のストレージ クラス指定子](../c-language/storage-class-specifiers-for-internal-level-declarations.md)
