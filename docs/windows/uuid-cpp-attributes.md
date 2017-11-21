@@ -1,33 +1,30 @@
 ---
-title: "uuid (C++ Attributes) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.uuid"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "uuid attribute"
+title: "uuid (C++ 属性) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.uuid
+dev_langs: C++
+helpviewer_keywords: uuid attribute
 ms.assetid: 90562a94-5e28-451b-a4b0-cadda7f66efe
-caps.latest.revision: 11
-caps.handback.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b2a4c4ce8023901eb901555519c38c2fa07500dc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# uuid (C++ Attributes)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="uuid-c-attributes"></a>uuid (C++ 属性)
 クラスまたはインターフェイスの一意の ID を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,39 +33,38 @@ manager: "ghogen"
 ) ]  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *uuid*  
- 128 ビットの一意の識別子。  
+ 128 ビットの一意の識別子です。  
   
-## 解説  
- インターフェイスまたはクラスの定義で C\+\+ 属性 `uuid` を指定しない場合は、Visual C\+\+ コンパイラが指定します。  `uuid` を指定する場合は、引用符を含める必要があります。  
+## <a name="remarks"></a>コメント  
+ インターフェイスまたはクラスの定義を指定しないかどうか、 `uuid` C++ 属性、Visual C コンパイラはいずれかで提供されます。 指定すると、`uuid`引用符を含める必要があります。  
   
- `uuid` を指定しない場合は、コンピューター上にある異なる属性のプロジェクトの同名のインターフェイスやクラスに対して、1 つの GUID がコンパイラによって生成されます。  
+ 指定しない場合`uuid`コンパイラが、コンピューター上の別の属性をプロジェクト内のインターフェイスまたは同じ名前のクラスは、同じ GUID を生成します。  
   
- Uuidgen.exe または Guidgen.exe を使用すると、独自の ID を生成できます。  これらのツールのいずれかを実行するには、**\[スタート\]** をクリックし、メニューの \[ファイル名を指定して実行\] をクリックします。  次に、必要なツールの名前を入力します。  
+ Uuidgen.exe または Guidgen.exe を使用すると、独自の一意の Id を生成します。 (これらのツールのいずれかを実行する をクリックして**開始** をクリック**実行**メニュー。 Enter、必要なツールの名前です。)  
   
- ATL も使用しないプロジェクトでは、`uuid` 属性の指定は [uuid](../cpp/uuid-cpp.md) の \_\_declspec 修飾子の指定と同じです。  クラスの `uuid` の取得には [\_\_uuidof](../cpp/uuidof-operator.md) を使用できます。  
+ ATL にも使用しないプロジェクトで使用されている場合を指定して、`uuid`属性を指定することと同じ、 [uuid](../cpp/uuid-cpp.md) _ _declspec 修飾子です。 取得する、`uuid`を使用できる、クラスの[_ _uuidof](../cpp/uuidof-operator.md)  
   
-## 使用例  
- `uuid` の使用例については、「[bindable](../windows/bindable.md)」を参照してください。  
+## <a name="example"></a>例  
+ 参照してください、[バインド可能な](../windows/bindable.md)のサンプルの使用例`uuid`です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|**class**、`struct`、`interface`、**union**、`enum`|  
-|**複数回の適用**|Ｘ|  
+|**対象**|**クラス**、 `struct`、 `interface`、**共用体**、`enum`|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Interface Attributes](../windows/interface-attributes.md)   
- [Class Attributes](../windows/class-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [インターフェイス属性](../windows/interface-attributes.md)   
+ [クラス属性](../windows/class-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
  [uuid](http://msdn.microsoft.com/library/windows/desktop/aa367302)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

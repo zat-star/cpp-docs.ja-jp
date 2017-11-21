@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -30,35 +29,18 @@ f1_keywords:
 - AMP/Concurrency::array_view::extent
 - AMP/Concurrency::array_view::source_accelerator_view
 - AMP/Concurrency::array_view::value_type
-dev_langs:
-- C++
-helpviewer_keywords:
-- array_view class
+dev_langs: C++
+helpviewer_keywords: array_view class
 ms.assetid: 7e7ec9bc-05a2-4372-b05d-752b50006c5a
-caps.latest.revision: 21
+caps.latest.revision: "21"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: d2d39abf526a58b8442107b5ee816f316ae841f5
-ms.openlocfilehash: e921ae841aa1eade25fdf2ec272039cc41007a9e
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/31/2017
-
+ms.openlocfilehash: d0378e35d182409cd4077b3f7c6fc270d116f18c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="arrayview-class"></a>array_view クラス
 別のコンテナーに保持されるデータの N 次元のビューを表します。  
@@ -104,13 +86,13 @@ class array_view<const value_type, _Rank> : public _Array_view_base<_Rank, sizeo
 |[discard_data](#discard_data)|このビューの基となる現在のデータを破棄します。|  
 |[get_extent](#get_extent)|array_view オブジェクトの範囲オブジェクトを返します。|  
 |[get_ref](#get_ref)|インデックス付けされた要素への参照を返します。|  
-|[get_source_accelerator_view](#get_source_accelerator_view)|返します、 [accelerator_view](accelerator-view-class.md)場所のデータ ソース、`array_view`存在します。|  
+|[get_source_accelerator_view](#get_source_accelerator_view)|返します、 [accelerator_view](accelerator-view-class.md)場所のデータ ソース、`array_view`が配置されています。|  
 |[更新](#refresh)|バインドされたメモリが `array_view` インターフェイスの外部で変更されたことを `array_view` オブジェクトに通知します。 このメソッドの呼び出しによって、すべてのキャッシュされた情報が表示されます。|  
 |[reinterpret_as](#reinterpret_as)|`array_view` オブジェクトのすべての要素を含む 1 次元配列を返します。|  
 |[section](#section)|指定された原点に `array_view` オブジェクトのサブセクションを返し、これは必要に応じて範囲が指定されます。|  
 |[synchronize](#synchronize)|`array_view` オブジェクトへの変更をそのソース データに同期して戻します。|  
-|[synchronize_async](#synchronize_async)|変更を非同期に同期、`array_view`そのソース データへのオブジェクト。|  
-|[synchronize_to](#synchronize_to)|加えられた変更と同期、`array_view`オブジェクトを指定した[accelerator_view](accelerator-view-class.md)です。|  
+|[synchronize_async](#synchronize_async)|変更を非同期に同期、`array_view`戻るをそのソース データ オブジェクト。|  
+|[synchronize_to](#synchronize_to)|加えられた変更と同期、`array_view`を指定したオブジェクト[accelerator_view](accelerator-view-class.md)です。|  
 |[synchronize_to_async](#synchronize_to_async)|変更を非同期に同期、`array_view`を指定したオブジェクト[accelerator_view](accelerator-view-class.md)です。|  
 |[view_as](#view_as)|この `array_view` を使用して異なるランクの `array_view` オブジェクトを生成します。|  
   
@@ -741,7 +723,7 @@ void synchronize() const restrict(cpu);
   
 ##  <a name="synchronize_async"></a>synchronize_async 
 
- 変更を非同期に同期、`array_view`そのソース データへのオブジェクト。  
+ 変更を非同期に同期、`array_view`戻るをそのソース データ オブジェクト。  
   
 ```  
 concurrency::completion_future synchronize_async(access_type _Access_type = access_type_read) const restrict(cpu);
@@ -844,4 +826,3 @@ array_view<const value_type,_New_rank> view_as(
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

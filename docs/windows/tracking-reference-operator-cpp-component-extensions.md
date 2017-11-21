@@ -1,50 +1,48 @@
 ---
-title: "Tracking Reference Operator (C++ Component Extensions) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "%"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "tracking references"
-  - "% tracking reference [C++]"
+title: "演算子の追跡参照 (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: '%'
+dev_langs: C++
+helpviewer_keywords:
+- tracking references
+- '% tracking reference [C++]'
 ms.assetid: 142a7269-ab69-4b54-a6d7-833bef06228f
-caps.latest.revision: 31
-caps.handback.revision: 29
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "31"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 733c99dc4895907ba943f32dc7048ce6cfc01528
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Tracking Reference Operator (C++ Component Extensions)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-*追跡参照* \(`%`\) は、通常の C\+\+ 参照 \(`&`\) のように動作します。ただし、オブジェクトが追跡参照に割り当てられている場合は、オブジェクトの参照カウントがインクリメントされます。  
+# <a name="tracking-reference-operator-c-component-extensions"></a>参照演算子の追跡 (C++ コンポーネント拡張)
+A*追跡参照*(`%`) 通常の C++ 参照のように動作 (`&`) オブジェクトの参照カウントがインクリメントされますが、オブジェクトが追跡参照に割り当てられている場合、します。  
   
-## すべてのプラットフォーム  
+## <a name="all-platforms"></a>すべてのプラットフォーム  
  追跡参照には次の特徴があります。  
   
 -   オブジェクトを追跡参照に割り当てると、オブジェクトの参照カウントがインクリメントされます。  
   
--   ネイティブ参照 \(&\) は \* を逆参照した結果です。  追跡参照 \(%\) は ^ を逆参照した結果です。  オブジェクトに対する % がある限り、そのオブジェクトはメモリに残り続けることになります。  
+-   ネイティブ参照 (&) は * を逆参照した結果です。 追跡参照 (%) は ^ を逆参照した結果です。 オブジェクトに対する % がある限り、そのオブジェクトはメモリに残り続けることになります。  
   
--   ドット \(`.`\) メンバー アクセス演算子は、オブジェクトのメンバーにアクセスするために使用されます。  
+-   ドット (`.`) メンバー アクセス演算子は、オブジェクトのメンバーにアクセスするために使用されます。  
   
--   追跡参照は、値型およびハンドル \(たとえば `String^`\) に対して有効です。  
+-   追跡参照は、値型およびハンドル (たとえば `String^`) に対して有効です。  
   
--   追跡参照に null 値または `nullptr` 値を割り当てることはできません。  追跡参照は、必要に応じて何度でも、別の有効なオブジェクトに再割り当てされる場合があります。  
+-   追跡参照に null 値または `nullptr` 値を割り当てることはできません。 追跡参照は、必要に応じて何度でも、別の有効なオブジェクトに再割り当てされる場合があります。  
   
 -   追跡参照は、アドレスを受け取る単項演算子としては使用できません。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
- 追跡参照は、% が参照カウントされている点を除くと、標準 C\+\+ 参照のように動作します。  次のスニペットでは、% 型と ^ 型の間で変換を行う方法を示します。  
+## <a name="windows-runtime"></a>Windows ランタイム  
+ 追跡参照は、% が参照カウントされている点を除くと、標準 C++ 参照のように動作します。 次のスニペットでは、% 型と ^ 型の間で変換を行う方法を示します。  
   
 ```  
 Foo^ spFoo = ref new Foo();  
@@ -69,32 +67,25 @@ ref class Foo sealed {};
     {  
         if (f != nullptr) { UseFooHelper(*f); }  
     }  
-  
 ```  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
- C\+\+\/CLI では、ガベージ コレクション ヒープ上の CLR 型オブジェクトにバインドする場合、ハンドルへの追跡参照を使用できます。  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
+ C++/CLI では、ガベージ コレクション ヒープ上の CLR 型オブジェクトにバインドする場合、ハンドルへの追跡参照を使用できます。  
   
  CLR では、ガベージ コレクターが参照先オブジェクトを移動させるたびに、追跡参照変数の値が自動的に更新されます。  
   
- 追跡参照はスタック上でのみ宣言できます。  追跡参照をクラスのメンバーにすることはできません。  
+ 追跡参照はスタック上でのみ宣言できます。 追跡参照をクラスのメンバーにすることはできません。  
   
- ガベージ コレクション ヒープ上のオブジェクトへのネイティブ C\+\+ 参照を持つことはできません。  
+ ガベージ コレクション ヒープ上のオブジェクトへのネイティブ C++ 参照を持つことはできません。  
   
- C\+\+\/CLI での追跡参照の詳細については、以下を参照してください。  
+ C++/CLI での追跡参照の詳細については、以下を参照してください。  
   
--   [方法: C\+\+\/CLI で追跡参照を使用する](../dotnet/how-to-use-tracking-references-in-cpp-cli.md)  
+-   [方法: C++/CLI で追跡参照を使用する](../dotnet/how-to-use-tracking-references-in-cpp-cli.md)
   
--   [方法: 追跡参照と値型を使用する](../misc/how-to-use-tracking-references-and-value-types.md)  
-  
--   [方法: 追跡参照と内部ポインターを使用する](../misc/how-to-use-tracking-references-and-interior-pointers.md)  
-  
--   [方法: ネイティブ、値、または参照のパラメーターを受け取るテンプレート関数を記述する](../misc/how-to-write-template-functions-that-take-native-value-or-reference-parameters.md)  
-  
-### 使用例  
+### <a name="examples"></a>例  
  **例**  
   
- 次の C\+\+\/CLI の例では、ネイティブ型およびマネージ型で追跡参照を使用する方法を示します。  
+ 次の C++/CLI の例では、ネイティブ型およびマネージ型で追跡参照を使用する方法を示します。  
   
 ```  
 // tracking_reference_1.cpp  
@@ -135,7 +126,7 @@ int main() {
   
  **例**  
   
- 次の C\+\+\/CLI の例では、配列に追跡参照をバインドする方法を示します。  
+ 次の C++/CLI の例では、配列に追跡参照をバインドする方法を示します。  
   
 ```  
 // tracking_reference_2.cpp  
@@ -154,5 +145,7 @@ int main() {
   
  **出力**  
   
-  **21**  
- **222**
+```Output  
+21  
+222  
+```

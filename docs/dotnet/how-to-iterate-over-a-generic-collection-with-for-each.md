@@ -1,31 +1,30 @@
 ---
-title: "方法: for each を使用してジェネリック コレクションを反復処理する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ジェネリック コレクション, 反復処理"
+title: "方法: for each を使用してジェネリック コレクションを反復 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords: generic collection, iterating over
 ms.assetid: 00288d53-3d41-44d0-be5b-b3033456ceaa
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7d4d01ef87b51195f7ff7a05acbdad4a34ca566c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: for each を使用してジェネリック コレクションを反復処理する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ の [Generics](../windows/generics-cpp-component-extensions.md) 機能はジェネリック コレクションを作成することができます。  
+# <a name="how-to-iterate-over-a-generic-collection-with-for-each"></a>方法: for each を使用してジェネリック コレクションを反復処理する
+[ジェネリック](../windows/generics-cpp-component-extensions.md)Visual C の機能では、ジェネリック コレクションを作成することができます。  
   
-## 使用例  
- このサンプルでは、単純で一般的な値型のコレクションで `for each` を使用する方法を示します。  
+## <a name="example"></a>例  
+ このサンプルを使用する方法を示します`for each`単純なジェネリック値型のコレクションを使用します。  
   
 ```  
 // for_each_generics.cpp  
@@ -92,8 +91,11 @@ int main() {
 }  
 ```  
   
-  **10**  
-**20**  
-**30**   
-## 参照  
+```Output  
+10  
+20  
+30  
+```  
+  
+## <a name="see-also"></a>関連項目  
  [for each、in](../dotnet/for-each-in.md)

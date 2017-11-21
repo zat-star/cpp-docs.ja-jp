@@ -1,32 +1,31 @@
 ---
-title: "方法: Windows のバージョンを取得する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Windows [C++], 取得 (バージョンを Visual C++ で)"
-  - "Windows [C++], version"
+title: "方法: Windows のバージョンの取得 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Windows [C++], version
+- Windows [C++], retrieving version using Visual C++
 ms.assetid: 7e6f567b-d378-49bb-aa59-2240f69a022d
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 65e2c342b1c7be86035955cf2d22fde838c0c3ee
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: Windows のバージョンを取得する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プラットフォームと、使用しているオペレーティング システムのバージョン情報を取得する方法を次のコード例に示します。  この情報は、<xref:System.Environment.OSVersion%2A?displayProperty=fullName> プロパティに格納されており、大まかな Windows のバージョンを記述する一覧と、オペレーティング システムの完全なビルドを含む <xref:System.Environment.Version%2A> オブジェクトから構成されます。  
+# <a name="how-to-retrieve-the-windows-version-ccli"></a>方法: Windows のバージョンを取得する (C++/CLI)
+次のコード例では、現在のオペレーティング システムのプラットフォームおよびバージョン情報を取得する方法を示します。 この情報が格納されている、<xref:System.Environment.OSVersion%2A?displayProperty=fullName>プロパティ広い意味での Windows のバージョンを表す列挙体で構成されると<xref:System.Environment.Version%2A>オペレーティング システムの正確なビルドを含むオブジェクトです。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // os_ver.cpp  
@@ -64,6 +63,6 @@ int main()
 }  
 ```  
   
-## 参照  
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

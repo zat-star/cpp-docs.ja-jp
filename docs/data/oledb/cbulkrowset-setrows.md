@@ -1,40 +1,39 @@
 ---
-title: "CBulkRowset::SetRows | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ATL.CBulkRowset.SetRows"
-  - "CBulkRowset::SetRows"
-  - "CBulkRowset<TAccessor>.SetRows"
-  - "ATL.CBulkRowset<TAccessor>.SetRows"
-  - "CBulkRowset<TAccessor>::SetRows"
-  - "ATL::CBulkRowset<TAccessor>::SetRows"
-  - "ATL::CBulkRowset::SetRows"
-  - "CBulkRowset.SetRows"
-  - "SetRows"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SetRows メソッド"
+title: "Cbulkrowset::setrows |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- ATL.CBulkRowset.SetRows
+- CBulkRowset::SetRows
+- CBulkRowset<TAccessor>.SetRows
+- ATL.CBulkRowset<TAccessor>.SetRows
+- CBulkRowset<TAccessor>::SetRows
+- ATL::CBulkRowset<TAccessor>::SetRows
+- ATL::CBulkRowset::SetRows
+- CBulkRowset.SetRows
+- SetRows
+dev_langs: C++
+helpviewer_keywords: SetRows method
 ms.assetid: 7e92312a-bfd0-4c24-a799-62bef663f28e
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 543ea1fcc1a87319e9a9ca952417f76f140663f6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CBulkRowset::SetRows
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-各呼び出しによって取得される行ハンドルの数を設定します。  
+# <a name="cbulkrowsetsetrows"></a>CBulkRowset::SetRows
+各呼び出しで取得する行ハンドルの数を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -43,15 +42,15 @@ caps.handback.revision: 8
 ) throw( );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nRows`  
- \[\]行セット \(行数\) の新しいサイズ。  
+ [in]行セット (行の数) の新しいサイズ。  
   
-## 解説  
- この関数を呼び出すと、行セットを開く前に置く必要があります。  
+## <a name="remarks"></a>コメント  
+ この関数を呼び出す場合は、行セットが開かれる前にあります。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [CBulkRowset クラス](../Topic/CBulkRowset%20Class.md)
+## <a name="see-also"></a>関連項目  
+ [CBulkRowset クラス](../../data/oledb/cbulkrowset-class.md)

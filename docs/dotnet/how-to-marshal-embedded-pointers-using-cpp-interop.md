@@ -1,37 +1,36 @@
 ---
-title: "方法: C++ Interop を使用して埋め込みポインターをマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 相互運用機能, 埋め込みポインター"
-  - "データ マーシャリング [C++], 埋め込みポインター"
-  - "相互運用 [C++], 埋め込みポインター"
-  - "マーシャリング [C++], 埋め込みポインター"
-  - "ポインター [C++], マーシャリング"
-  - "構造体 [C++], マーシャリング (埋め込みポインターの)"
+title: "方法: 埋め込み C++ Interop を使用してポインターをマーシャ リングする. |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- structures [C++], marshaling embedded pointers
+- interop [C++], embedded pointers
+- C++ Interop, embedded pointers
+- marshaling [C++], embedded pointers
+- pointers [C++], marshaling
+- data marshaling [C++], embedded pointers
 ms.assetid: 05fb8858-97f2-47aa-86b2-2c0ad713bdb2
-caps.latest.revision: 12
-caps.handback.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3916d80089d78925b6b5746146490f901c093c09
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C++ Interop を使用して埋め込みポインターをマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のコード例では、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md) の \#pragma ディレクティブを使用してマネージ関数とアンマネージ関数を同じファイル内で実装していますが、これらの関数は、別個のファイルに定義された場合も同じように相互運用できます。  アンマネージ関数のみを含むファイルは、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルする必要はありません。  
+# <a name="how-to-marshal-embedded-pointers-using-c-interop"></a>方法: C++ Interop を使用して埋め込みポインターをマーシャリングする
+次のコード例、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)個別のファイルで定義されている場合、これらの関数が同様に、相互運用が、マネージ リソースと、同じファイル内の関数をアンマネージ #pragma ディレクティブを実装します。 アンマネージ関数のみを含むファイルを使用してコンパイルする必要はありません[/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 使用例  
- 次の例は、ポインターを含む構造体を受け取るアンマネージ関数をマネージ関数から呼び出す方法を示します。  マネージ関数は、構造体のインスタンスを作成し、[ref new, gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md) キーワードの代わりに新しいキーワードを使用して埋め込みポインターを初期化します。  これにより、ネイティブ ヒープ上にメモリが割り当てられるため、ガベージ コレクションを抑制するために配列を固定する必要がなくなります。  ただし、メモリ リークを回避するためにメモリを明示的に削除する必要があります。  
+## <a name="example"></a>例  
+ 次の例では、マネージ関数からポインターを含む構造体を受け取るアンマネージ関数を呼び出すことが方法を示します。 マネージ関数は、構造体のインスタンスを作成し、新しいキーワードを使用して埋め込みポインターを初期化します (の代わりに、 [ref new、gcnew](../windows/ref-new-gcnew-cpp-component-extensions.md)キーワード) です。 ネイティブ ヒープにメモリを割り当ててこのため、ガベージ コレクションを抑制する配列を固定する必要はありません。 ただし、メモリの漏えいを防ぐため、メモリを明示的に削除する必要があります。  
   
 ```  
 // marshal_embedded_pointer.cpp  
@@ -74,27 +73,30 @@ int main() {
 }  
 ```  
   
-  **\[managed\] count \= 10**  
-**array\[0\] \= 72.624326996796**  
-**array\[1\] \= 81.7325359590969**  
-**array\[2\] \= 76.8022689394663**  
-**array\[3\] \= 55.8161191436537**  
-**array\[4\] \= 20.6033154021033**  
-**array\[5\] \= 55.8884794618415**  
-**array\[6\] \= 90.6027066011926**  
-**array\[7\] \= 44.2177873310716**  
-**array\[8\] \= 97.754975314138**  
-**array\[9\] \= 27.370445768987**  
-**\[unmanaged\] count \= 10**  
-**array\[0\] \= 72.624327**  
-**array\[1\] \= 81.732536**  
-**array\[2\] \= 76.802269**  
-**array\[3\] \= 55.816119**  
-**array\[4\] \= 20.603315**  
-**array\[5\] \= 55.888479**  
-**array\[6\] \= 90.602707**  
-**array\[7\] \= 44.217787**  
-**array\[8\] \= 97.754975**  
-**array\[9\] \= 27.370446**   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+```Output  
+[managed] count = 10  
+array[0] = 72.624326996796  
+array[1] = 81.7325359590969  
+array[2] = 76.8022689394663  
+array[3] = 55.8161191436537  
+array[4] = 20.6033154021033  
+array[5] = 55.8884794618415  
+array[6] = 90.6027066011926  
+array[7] = 44.2177873310716  
+array[8] = 97.754975314138  
+array[9] = 27.370445768987  
+[unmanaged] count = 10  
+array[0] = 72.624327  
+array[1] = 81.732536  
+array[2] = 76.802269  
+array[3] = 55.816119  
+array[4] = 20.603315  
+array[5] = 55.888479  
+array[6] = 90.602707  
+array[7] = 44.217787  
+array[8] = 97.754975  
+array[9] = 27.370446  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

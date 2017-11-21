@@ -1,57 +1,56 @@
 ---
-title: "レコード ビューのデザインと作成 (MFC データ アクセス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アプリケーション ウィザード [C++], 作成 (レコード ビュー クラスを)"
-  - "デザイン (フォームを)"
-  - "デザイン (レコード ビューを)"
-  - "フォーム [C++], デザイン"
-  - "レコード ビュー, 作成"
-  - "レコード ビュー, デザイン"
+title: "デザインとレコード ビュー (MFC データ アクセス) を作成 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- designing forms
+- record views, creating
+- forms [C++], designing
+- record views, designing
+- application wizards [C++], creating record view classes
+- designing record views
 ms.assetid: 1d6f5439-754f-4b8b-a19d-841a4657827b
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a164bd7d07fac68de5b2e8fb4b49fa4e399c7cb2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# レコード ビューのデザインと作成 (MFC データ アクセス)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)を使用して、レコード ビュー クラスを作成することができます。  アプリケーション ウィザードを使用すると、レコード ビュー クラスと、それに対応するダイアログ テンプレート リソース \(コントロールは含まれません\) が作成されます。  ダイアログ テンプレート リソースにコントロールを追加するには、Visual C\+\+ ダイアログ エディターを使用する必要があります。  一方、**\[クラスの追加\]** を使用する場合は、ダイアログ エディターでダイアログ テンプレート リソースを作成してから、レコード ビュー クラスを作成する必要があります。  
+# <a name="designing-and-creating-a-record-view--mfc-data-access"></a>レコード ビューのデザインと作成 (MFC データ アクセス)
+使用してレコード ビュー クラスを作成することができます、 [MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)です。 アプリケーション ウィザードを使用すると、レコード ビュー クラスと、それに対応するダイアログ テンプレート リソース (コントロールは含まれません) が作成されます。 ダイアログ テンプレート リソースにコントロールを追加するには、Visual C++ ダイアログ エディターを使用する必要があります。 その一方で、使用する場合**クラスの追加**、最初にダイアログ テンプレート リソースを作成 ダイアログ ボックス エディターし、レコード ビュー クラスを作成する必要があります。  
   
- 次の情報は、`CRecordView` および `CDaoRecordView` の両方に適用されます。  
   
-#### MFC アプリケーション ウィザードを使用してレコード ビューを作成するには  
+#### <a name="to-create-your-record-view-with-the-mfc-application-wizard"></a>MFC アプリケーション ウィザードを使用してレコード ビューを作成するには  
   
-1.  「[&#91;データベース サポート&#93; \(MFC アプリケーション ウィザード\)](../mfc/reference/database-support-mfc-application-wizard.md)」を参照してください。  
+1.  参照してください[データベース サポートは、MFC アプリケーション ウィザード](../mfc/reference/database-support-mfc-application-wizard.md)です。  
   
-#### フォームをデザインするには  
+#### <a name="to-design-your-form"></a>フォームをデザインするには  
   
-1.  「[ダイアログ エディター](../mfc/dialog-editor.md)」を参照してください。  
+1.  参照してください[ダイアログ エディター](../windows/dialog-editor.md)です。  
   
-#### レコード ビュー クラスを作成するには  
+#### <a name="to-create-your-record-view-class"></a>レコード ビュー クラスを作成するには  
   
-1.  「[MFC ODBC コンシューマーの追加](../mfc/reference/adding-an-mfc-odbc-consumer.md)」を参照してください。  
+1.  参照してください[MFC ODBC コンシューマーの追加](../mfc/reference/adding-an-mfc-odbc-consumer.md)です。  
   
  次のトピックでは、レコード ビューの使用に関するいくつかの事項について詳しく説明しています。  
   
--   [レコード ビュー: レコード ビュー内の移動](../Topic/Supporting%20Navigation%20in%20a%20Record%20View%20%20\(MFC%20Data%20Access\).md)  
+-   [レコード ビュー: レコード ビューのナビゲーションをサポートします。](../data/supporting-navigation-in-a-record-view-mfc-data-access.md)  
   
--   [レコード ビュー: レコード ビューの使用法](../data/using-a-record-view-mfc-data-access.md)  
+-   [レコード ビュー: レコード ビューを使用します。](../data/using-a-record-view-mfc-data-access.md)  
   
--   [レコード ビュー: セカンド レコードセットを利用してリスト ボックスを表示する方法](../data/filling-a-list-box-from-a-second-recordset-mfc-data-access.md)  
+-   [レコード ビュー: セカンド レコード セットから、リスト ボックスの入力](../data/filling-a-list-box-from-a-second-recordset-mfc-data-access.md)  
   
-## 参照  
- [レコード ビュー \(MFC データ アクセス\)](../data/record-views-mfc-data-access.md)   
- [レコードセット \(ODBC\)](../data/odbc/recordset-odbc.md)   
+## <a name="see-also"></a>関連項目  
+ [レコード ビュー (MFC データ アクセス)](../data/record-views-mfc-data-access.md)   
+ [レコード セット (ODBC)](../data/odbc/recordset-odbc.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

@@ -1,56 +1,57 @@
 ---
-title: "デュアル インターフェイスの実装 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "デュアル インターフェイス, 実装"
-  - "IDispatchImpl クラス, 実装 (デュアル インターフェイスを)"
+title: "デュアル インターフェイス (ATL) の実装 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- IDispatchImpl class, implementing dual interfaces
+- dual interfaces, implementing
 ms.assetid: d1da3633-b445-4dcd-8a0a-3efdafada3ea
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b4895e7b1cd0e38b33c1efe66e9070073403ee01
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# デュアル インターフェイスの実装
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-デュアル インターフェイスの `IDispatch` のメソッドの既定の実装を提供する [IDispatchImpl](../atl/reference/idispatchimpl-class.md) のクラスを使用してデュアル インターフェイスを実装できます。  詳細については、「[Implementing the IDispatch Interface](http://msdn.microsoft.com/ja-jp/0e171f7f-0022-4e9b-ac8e-98192828e945)」を参照してください。  
+# <a name="implementing-a-dual-interface"></a>デュアル インターフェイスの実装
+使用して、デュアル インターフェイスを実装することができます、 [IDispatchImpl](../atl/reference/idispatchimpl-class.md)の既定の実装を提供するクラス、`IDispatch`デュアル インターフェイスのメソッドです。 詳細については、「 [Implementing the IDispatch Interface](http://msdn.microsoft.com/en-us/0e171f7f-0022-4e9b-ac8e-98192828e945)」を参照してください。  
   
- このクラスを使用するには、次の手順に従います。  
+ このクラスを使用します。  
   
--   タイプ ライブラリのデュアル インターフェイスを定義します。  
+-   タイプ ライブラリで、デュアル インターフェイスを定義します。  
   
--   `IDispatchImpl` \(テンプレート引数としてインターフェイスとタイプ ライブラリに関するパス情報\) の特化したクラスからクラスを派生します。  
+-   特化したクラスからの派生クラス`IDispatchImpl`(テンプレート引数として、インターフェイスとタイプ ライブラリに関する情報を渡す)。  
   
--   `QueryInterface`によってデュアル インターフェイスを公開するための COM マップにエントリ \(複数可\) を追加します。  
+-   デュアル インターフェイスを介して公開する COM マップ エントリ (またはエントリ) を追加`QueryInterface`です。  
   
--   クラスの vtable インターフェイスの一部を実装します。  
+-   クラスの vtable 一部インターフェイスを実装します。  
   
--   インターフェイス定義を含むタイプ ライブラリが実行時にオブジェクトで使用できることを確認します。  
+-   実行時に、インターフェイス定義が含まれるタイプ ライブラリが、オブジェクトで使用できることを確認します。  
   
-## ATL シンプル オブジェクト ウィザード  
- 次によって、実行時に新しいインターフェイスおよび新しいクラスを作成する場合は、[ATL クラスの追加&#93;ダイアログ ボックス](../ide/add-class-dialog-box.md)と [&#91;ATL シンプル オブジェクト ウィザード&#93;](../atl/reference/atl-simple-object-wizard.md)を使用できます。  
+## <a name="atl-simple-object-wizard"></a>ATL シンプル オブジェクト ウィザード  
+ 新しいインターフェイスとそれを実装する新しいクラスを作成する場合は、使用、[クラスの追加 ダイアログ ボックス](../ide/add-class-dialog-box.md)、し、 [ATL シンプル オブジェクト ウィザード](../atl/reference/atl-simple-object-wizard.md)です。  
   
-## \[インターフェイス実装ウィザード\]  
- 既存のインターフェイスがある場合は、必要な基本クラスを追加するに [&#91;インターフェイス実装ウィザード&#93;](../Topic/Adding%20a%20New%20Interface%20in%20an%20ATL%20Project.md) を使用して、既存の COM クラスにエントリとスケルトン メソッドの実装をマップします。  
+## <a name="implement-interface-wizard"></a>インターフェイス実装ウィザード  
+ 既存のインターフェイスがあれば、行うこともできます、[インターフェイス実装ウィザード](../atl/reference/adding-a-new-interface-in-an-atl-project.md)を既存のクラスに必要な基本クラス、COM マップ エントリ、およびメソッドのスケルトンの実装を追加します。  
   
 > [!NOTE]
->  タイプ ライブラリのメジャー バージョン番号とマイナー バージョン番号が `IDispatchImpl` の基本クラスにテンプレートの引数として渡すように生成された基本クラスを調整する必要がある場合があります。  インターフェイス実装ウィザードは、のタイプ ライブラリのバージョン番号をチェックしません。  
+>  タイプ ライブラリのメジャーおよびマイナー バージョン番号は、テンプレート引数として渡されるように、生成された基本クラスを調整する必要があります、`IDispatchImpl`基本クラスです。 インターフェイスの実装ウィザードでは、タイプ ライブラリのバージョン番号をチェックしません。  
   
-## IDispatch の実行  
- COM マップに該当するエントリを指定することで、ディスパッチ インターフェイスの実装を `IDispatchImpl` の基本クラスを使用して、対応するデュアル インターフェイスを記述するタイプ ライブラリが存在する限り用意するために [COM\_INTERFACE\_ENTRY2](../Topic/COM_INTERFACE_ENTRY2.md) \(または [COM\_INTERFACE\_ENTRY\_IID](../Topic/COM_INTERFACE_ENTRY_IID.md) のマクロを使用\)。  これは、共通 `IDispatch` のインターフェイスを実装するにしたがって、たとえばです。  ATL シンプル オブジェクト ウィザード実装とは `IDispatch` をこのように実行するために適切なマップ エントリの追加とはどちらも想定するウィザードを実装します。  
+## <a name="implementing-idispatch"></a>IDispatch を実装します。  
+ 使用することができます、`IDispatchImpl`基本 COM マップに適切なエントリを指定するだけでディスパッチ インターフェイスの実装を提供するクラス (を使用して、 [COM_INTERFACE_ENTRY2](reference/com-interface-entry-macros.md#com_interface_entry2)または[COM_INTERFACE_ENTRY_IID](reference/com-interface-entry-macros.md#com_interface_entry_iid)マクロ)、対応するデュアル インターフェイスを記述するタイプ ライブラリがある限り、します。 実装する非常に一般的である、`IDispatch`インターフェイスこの方法の例を示します。 ATL シンプル オブジェクト ウィザードとインターフェイス実装ウィザードを実装することを想定両方`IDispatch`この方法でためそれらが適切なエントリ、マップに追加します。  
   
 > [!NOTE]
->  ATL は、互換性のあるデュアル インターフェイスの定義を含むタイプ ライブラリを必要とせずに、ディスパッチ インターフェイスを実行できるように [IDispEventImpl](../atl/reference/idispeventimpl-class.md) と [IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md) のクラスを提供します。  
+>  ATL には、 [IDispEventImpl](../atl/reference/idispeventimpl-class.md)と[されます](../atl/reference/idispeventsimpleimpl-class.md)互換性デュアル インターフェイスの定義が含まれるタイプ ライブラリを必要とせずにディスパッチ インターフェイスを実装するクラスが用意されます。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [デュアル インターフェイスと ATL](../atl/dual-interfaces-and-atl.md)
+

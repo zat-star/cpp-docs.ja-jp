@@ -1,50 +1,49 @@
 ---
-title: "式エバリュエーター エラー CXX0036 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "CXX0036"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAN0036"
-  - "CXX0036"
+title: "式エバリュエーター エラー CXX0036 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: CXX0036
+dev_langs: C++
+helpviewer_keywords:
+- CXX0036
+- CAN0036
 ms.assetid: 383404be-df5b-4eec-b113-df21bb5d269d
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 58d5fa976306c6e8a2545ce852bf3e808bc5b2d9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 式エバリュエーター エラー CXX0036
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-不正なコンテキスト {...} が指定されています  
+# <a name="expression-evaluator-error-cxx0036"></a>式エバリュエーター エラー CXX0036
+コンテキストが正しくありません {...} specification  
   
- このメッセージは、コンテキスト演算子 \(**{}**\) の使用におけるいくつかの間違いのいずれかによって生成されます。  
+ このメッセージは、コンテキスト演算子の使用でエラーがいくつかのいずれかで生成されることができます (**{}**)。  
   
--   コンテキスト演算子 \(**{}**\) の構文が間違って指定されました。  
+-   コンテキスト演算子の構文 (**{}**) が間違って指定されました。  
   
-     コンテキスト演算子の構文は次のとおりです。  
+     コンテキスト演算子の構文です。  
   
-     {*関数*,*モジュール*,*dll*} *式*  
+     {*関数*、*モジュール*、*dll*}*式*  
   
-     この構文によってコンテキスト*式*が指定されます。  コンテキスト演算子の優先順位と使い方は型キャストと同じです。  
+     これが指定のコンテキスト*式*です。 コンテキスト演算子は、型キャストと同じ優先順位と使用状況がします。  
   
-     末尾のコンマは省略できます。  *関数*,*モジュール*,*dll* の中にコンマ \(,\) が含まれているときは、名前全体をかっこで囲んでください。  
+     末尾のコンマは省略できます。 いずれかの*関数*、*モジュール*、または*dll*リテラルのコンマが含まれる名前全体をかっこで囲む必要があります。  
   
--   関数名が正しく指定されていないか、使用するモジュールや DLL の中に関数が存在しません。  
+-   関数名は、綴りが間違っている、または、指定されたモジュールまたはダイナミック リンク ライブラリに存在しません。  
   
-     C では大文字、小文字は区別して扱われます。定義と同じように関数名を記述してください。  
+     C は大文字小文字を区別の言語であるため*関数*ソースで定義されている正確なケースで指定する必要があります。  
   
--   モジュールや DLL が見つかりません。  
+-   モジュールまたは DLL が見つかりませんでした。  
   
-     モジュールや DLL の完全パス名を確認してください。  
+     指定されたモジュールまたは DLL の完全なパス名を確認してください。  
   
- このエラーは CAN0036 と同じものです。
+ このエラーは、can0036 と同じものと同じです。

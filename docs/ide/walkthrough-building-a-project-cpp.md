@@ -1,68 +1,69 @@
 ---
-title: "チュートリアル: プロジェクトの構築 (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ビルド (プロジェクトを) [C++]"
-  - "プロジェクト [C++]、ビルド"
-  - "プロジェクトのビルド [C++]"
+title: "チュートリアル: プロジェクトの構築 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- building projects [C++]
+- projects [C++], building
+- project building [C++]
 ms.assetid: d459bc03-88ef-48d0-9f9a-82d17f0b6a4d
-caps.latest.revision: 14
-caps.handback.revision: 12
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "14"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 713a74cc889721259ca99f1622ef5e9919edf573
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# チュートリアル: プロジェクトの構築 (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このチュートリアルでは、コードに意図的に Visual C\+\+ 構文のエラーを挿入し、コンパイル エラーがどのように表示されるかを確認し、その修正方法について説明します。  プロジェクトをコンパイルすると、エラー メッセージによって問題の内容と発生した場所が示されます。  
+# <a name="walkthrough-building-a-project-c"></a>チュートリアル: プロジェクトの構築 (C++)
+このチュートリアルでは、コードに意図的に Visual C++ 構文のエラーを挿入し、コンパイル エラーがどのように表示されるかを確認し、その修正方法について説明します。 プロジェクトをコンパイルすると、エラー メッセージによって問題の内容と発生した場所が示されます。  
   
-## 必須コンポーネント  
+## <a name="prerequisites"></a>必須コンポーネント  
   
--   このチュートリアルは、C\+\+ 言語の基本を理解していることを前提としています。  
+-   このチュートリアルは、C++ 言語の基本を理解していることを前提としています。  
   
--   また、これまでの関連チュートリアル \(「[C\+\+ デスクトップ開発のための Visual Studio IDE の使用](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)」を参照\) を完了していることも必要です。  
+-   以前関連チュートリアルに記載されているが完了したことも想定[C++ デスクトップ開発用 Visual Studio IDE を使用して](../ide/using-the-visual-studio-ide-for-cpp-desktop-development.md)です。  
   
-### コンパイル エラーを修正するには  
+### <a name="to-fix-compilation-errors"></a>コンパイル エラーを修正するには  
   
 1.  TestGames.cpp で、次のように最後の行のセミコロンを削除します。  
   
      `return 0`  
   
-2.  メニュー バーの **\[ビルド\]**、**\[ソリューションのビルド\]** の順にクリックします。  
+2.  メニュー バーの **[ビルド]**、 **[ソリューションのビルド]**の順にクリックします。  
   
-3.  **\[エラー リスト\]** ウィンドウに、プロジェクトのビルド中にエラーが発生したことを示すメッセージが表示されます。  たとえば、エラーの説明は次のようになります。  
+3.  内のメッセージ、**エラー一覧**ウィンドウは、プロジェクトのビルドでエラーがあったことを示します。 たとえば、エラーの説明は次のようになります。  
   
      `error C2143: syntax error : missing ';' before '}'`  
   
-     このエラーに関するヘルプ情報を表示するには、**\[エラー リスト\]** ウィンドウでそのエラーを強調表示し、F1 キーを押します。  
+     このエラーに関するヘルプ情報を表示することで強調表示、**エラー一覧**ウィンドウし、F1 キーを押します。  
   
 4.  構文エラーのある行の最後に、セミコロンを戻します。  
   
      `return 0;`  
   
-5.  メニュー バーの **\[ビルド\]**、**\[ソリューションのビルド\]** の順にクリックします。  
+5.  メニュー バーの **[ビルド]**、 **[ソリューションのビルド]**の順にクリックします。  
   
-     **\[出力\]** ウィンドウに、プロジェクトが正常にコンパイルされたことを示すメッセージが表示されます。  
+     内のメッセージ、**出力**ウィンドウは、プロジェクトが正常にコンパイルされることを示します。  
   
-  **1\>\-\-\-\-\-\- Build started: Project: Game, Configuration: Debug Win32 \-\-\-\-\-\-**  
-**1\>  TestGames.cpp**  
-**1\>  Game.vcxproj \-\> C:\\Users\\\<username\>\\Documents\\Visual Studio *\<version\>*\\Projects\\Game\\Debug\\Game.exe**  
-**\=\=\=\=\=\=\=\=\=\= Build: 1 succeeded, 0 failed, 0 up\-to\-date, 0 skipped \=\=\=\=\=\=\=\=\=\=**  
+    ```Output  
+    1>------ Build started: Project: Game, Configuration: Debug Win32 ------  
+    1>  TestGames.cpp  
+    1>  Game.vcxproj -> C:\Users\<username>\Documents\Visual Studio <version>\Projects\Game\Debug\Game.exe  
+    ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========  
+    ```  
   
-## 次の手順  
- **前へ :** [チュートリアル: プロジェクトとソリューションの使用 \(C\+\+\)](../Topic/Walkthrough:%20Working%20with%20Projects%20and%20Solutions%20\(C++\).md) &#124; **次へ :** [チュートリアル: プロジェクトのテスト \(C\+\+\)](../ide/walkthrough-testing-a-project-cpp.md)  
+## <a name="next-steps"></a>次の手順  
+ **前:** [チュートリアル: プロジェクトとソリューション (C++)](../ide/walkthrough-working-with-projects-and-solutions-cpp.md) &#124;です。**次:**[チュートリアル: プロジェクトのテスト (C++)](../ide/walkthrough-testing-a-project-cpp.md)  
   
-## 参照  
- [Visual C\+\+ Guided Tour](http://msdn.microsoft.com/ja-jp/499cb66f-7df1-45d6-8b6b-33d94fd1f17c)   
- [DELETE\_PENDING\_Building and Debugging](http://msdn.microsoft.com/ja-jp/9f6ba537-5ea0-46fb-b6ba-b63d657d84f1)
+## <a name="see-also"></a>関連項目  
+ [C++ 言語リファレンス](../cpp/cpp-language-reference.md)   
+ [C/C++ プログラムのビルド](../build/building-c-cpp-programs.md)

@@ -1,62 +1,60 @@
 ---
-title: "ISessionPropertiesImpl クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "ISessionPropertiesImpl"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ISessionPropertiesImpl クラス"
+title: "ISessionPropertiesImpl クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: ISessionPropertiesImpl
+dev_langs: C++
+helpviewer_keywords: ISessionPropertiesImpl class
 ms.assetid: ca0ba254-c7dc-4c52-abec-cf895a0c6a63
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f8824ac2081ffd214402a23c6a5975e027ecf9ae
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ISessionPropertiesImpl クラス
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[ISessionProperties](https://msdn.microsoft.com/en-us/library/ms713721.aspx) インターフェイスの実装を提供します。  
+# <a name="isessionpropertiesimpl-class"></a>ISessionPropertiesImpl クラス
+実装を提供、 [ISessionProperties](https://msdn.microsoft.com/en-us/library/ms713721.aspx)インターフェイスです。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template <class T, class PropClass = T>  
 class ATL_NO_VTABLE ISessionPropertiesImpl :  
-   public ISessionProperties,    
+   public ISessionProperties,    
    public CUtlProps<PropClass>  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
- クラス、`ISessionPropertiesImpl`から派生します。  
+ 派生したクラス、`ISessionPropertiesImpl`です。  
   
  `PropClass`  
- ユーザー定義のクラスは `T`になります。  
+ その既定値はユーザー定義プロパティ クラス`T`です。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### インターフェイス メソッド  
+### <a name="interface-methods"></a>インターフェイス メソッド  
   
 |||  
 |-|-|  
-|[GetProperties](../../data/oledb/isessionpropertiesimpl-getproperties.md)|セッションで現在設定されているセッション プロパティ グループのプロパティのリストを返します。|  
+|[GetProperties](../../data/oledb/isessionpropertiesimpl-getproperties.md)|セッションで現在設定されているセッション プロパティ グループ内のプロパティの一覧を返します。|  
 |[SetProperties](../../data/oledb/isessionpropertiesimpl-setproperties.md)|セッション プロパティ グループのプロパティを設定します。|  
   
-## 解説  
- セッションの必須インターフェイス。  このクラスには、静的関数を [プロパティ セット マップ](../Topic/BEGIN_PROPSET_MAP.md)によって定義された呼び出してセッション プロパティを実装します。  プロパティ セット マップには、セッション クラスで指定する必要があります。  
+## <a name="remarks"></a>コメント  
+ セッションの必須インターフェイス。 このクラスでは、セッションのプロパティを実装によって定義された静的関数を呼び出すことによって、[プロパティ セット マップ](../../data/oledb/begin-propset-map.md)です。 セッション クラスでは、プロパティ セットのマップを指定してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)

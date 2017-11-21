@@ -1,43 +1,45 @@
 ---
-title: "Platform::Metadata::RuntimeClassName | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Platform/Platform::Metadata::RuntimeClassName"
-helpviewer_keywords: 
-  - "RuntimeClassName"
-  - "Platform::Metadata::RuntimeClassName"
+title: "Platform::Metadata::RuntimeClassName |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: VCCORLIB/Platform::Metadata::RuntimeClassName
+helpviewer_keywords:
+- RuntimeClassName
+- Platform::Metadata::RuntimeClassName
 ms.assetid: fdef8f85-ab94-4edd-ba50-ee0da9358ff6
-caps.latest.revision: 2
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 2
+caps.latest.revision: "2"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 301e012c1d421348ea252019d892b2e526d6aefc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Platform::Metadata::RuntimeClassName
+# <a name="platformmetadataruntimeclassname"></a>Platform::Metadata::RuntimeClassName
 クラス定義に適用された場合、プライベート クラスが GetRuntimeClassName 関数から有効な名前を返すことを確認します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
-```vb  
+```cpp  
 [Platform::Metadata::RuntimeClassName] name  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  name  
   
  Windows ランタイムで表示される既存のパブリックの種類の名前です。  
   
-## 解説  
+### <a name="remarks"></a>コメント  
  プライベート ref クラスのこの属性を使用して、カスタム ランタイムの種類の名前、および既存の名前が要件を満たさない場合を指定します。 名前としてクラスが実装するパブリック インターフェイスを指定します。  
   
-## 使用例  
+### <a name="example"></a>例  
  この属性を使用する方法の例を次に示します。 この例では、HellowWorldImpl のランタイムの種類の名前は Test::Native::MyComponent::IHelloWorld です。  
   
 ```  
@@ -69,5 +71,5 @@ namespace Test
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Platform::Metadata 名前空間](../cppcx/platform-metadata-namespace.md)

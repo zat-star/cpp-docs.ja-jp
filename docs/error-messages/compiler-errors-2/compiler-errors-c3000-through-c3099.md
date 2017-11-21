@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 04/21/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
 f1_keywords:
@@ -44,19 +43,17 @@ helpviewer_keywords:
 - C3092
 - C3093
 - C3098
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 01b7b9cb-b351-4b5a-8cb0-1fcddb08d2ab
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
 ms.openlocfilehash: 59ac61f0ae50f3a6b1d7170ea0b965c3bb8d0fe2
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="compiler-errors-c3000-through-c3099"></a>コンパイラ エラー C3000 C3099 経由
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
@@ -168,4 +165,3 @@ ms.lasthandoff: 10/10/2017
 |[コンパイラ エラー C3097](compiler-error-c3097.md)|'*属性*': 属性はと共にスコープされなければなりません' アセンブリ:' または ' モジュール:'|  
 |コンパイラ エラー C3098|'*識別子*': 属性には、ユーザー定義のコンス トラクターがありません|  
 |[コンパイラ エラー C3099](compiler-error-c3099.md)|'*キーワード*': [system::attributeusageattribute] を使用して/[Windows::Foundation::Metadata::AttributeUsageAttribute] マネージまたは WinRT 属性|  
-

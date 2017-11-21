@@ -1,27 +1,26 @@
 ---
-title: "A.25   Examples of the copyprivate Data Attribute Clause | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "Copyprivate データ属性の句の例については A.25 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 7b1cb6a5-5691-4b95-b3ac-d7543ede6405
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d141ec66aa7ed0bac53c8242a87d08e092272eaa
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# A.25   Examples of the copyprivate Data Attribute Clause
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**例 1:** が `copyprivate` の句 \(ページの 32[セクション 2.7.2.8](../Topic/2.7.2.8%20copyprivate.md)\) 他のスレッドのプライベート変数のすべてのインスタンスにシングル スレッドによって直接取得した値をブロードキャストするために使用できます。  
+# <a name="a25---examples-of-the-copyprivate-data-attribute-clause"></a>A.25 copyprivate データ属性句の例
+**例 1:** 、`copyprivate`句 ([セクション 2.7.2.8](../../parallel/openmp/2-7-2-8-copyprivate.md) [32] ページ) 他のスレッド内のプライベート変数のすべてのインスタンスに直接の 1 つのスレッドによって取得された値をブロードキャストするために使用できます。  
   
 ```  
 float x, y;  
@@ -41,9 +40,9 @@ void init( )
 }  
 ```  
   
- 定期的な *init が*  並列領域から呼び出された場合動作はディレクティブがあるかどうかに影響されません。  *get\_values* ルーチンの呼び出しが 1 台のスレッドによって実行された後スレッドは *a**b**x* によって指定されるプライベート オブジェクトまでの構造から離れずしすべてのスレッドの *y は* 読み取られた値で定義されるようになっています。  
+ ルーチン*init*が呼び出されたシリアル領域から、その動作は、ディレクティブの存在による影響されませんが。 呼び出し後、 *get_values*ルーチンが 1 つのスレッドによって実行された、スレッドなしのまま、コンス トラクターで指定されたプライベート オブジェクトまで*、*、 *b*、 *x*、および*y*すべてのスレッドで読み取られた値の定義になります。  
   
- 前の例ではよる読み取り  **例 2:** は特定のスレッドによってはマスター スレッドを実行する必要があることを前提としています。  この場合`copyprivate` の句がブロードキャストを直接することはできません。一時共有オブジェクトへのアクセスを提供するために使用できます。  
+ **例 2:**前の例とは対照的には、マスター スレッドと、特定のスレッドによって、読み取りを行う必要がありますとします。 ここで、`copyprivate`ブロードキャストを直接実行する句を使用することはできませんが、一時的な共有オブジェクトへのアクセスを提供するために使用できます。  
   
 ```  
 float read_next( )   
@@ -74,7 +73,7 @@ float read_next( )
 }  
 ```  
   
- **例 3:**並列領域内に必要なロック オブジェクトの数が簡単に入る前に決定できないことを前提としています。  `copyprivate` の句は並列領域内に割り当てられた共有ロック オブジェクトへのアクセスを提供するために使用できます。  
+ **例 3:**並行領域内で必要なロック オブジェクトの数はそれを入力する前に簡単に特定できないとします。 `copyprivate`その並行領域内で割り当てられている共有ロック オブジェクトへのアクセスを提供する句を使用できます。  
   
 ```  
 #include <omp.h>  

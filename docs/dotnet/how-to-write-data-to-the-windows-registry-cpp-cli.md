@@ -1,34 +1,33 @@
 ---
-title: "方法: Windows レジストリにデータを書き込む (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "レジストリ, 書き込み"
-  - "Visual C++, 書き込み (Windows レジストリに)"
+title: "方法: Windows レジストリにデータを書き込む (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- registry, writing to
+- Visual C++, writing to Windows Registry
 ms.assetid: 3d40b978-4baa-4779-bfe3-47e2917b757f
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8bb95ab9a70fd0144256f85d3fae6ccc3c034c1c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: Windows レジストリにデータを書き込む (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-<xref:Microsoft.Win32.Registry.CurrentUser> キーを使用して、**Software** キーに対応する <xref:Microsoft.Win32.RegistryKey> クラスの書き込み可能インスタンスを作成する方法を次のコード例に示します。  その後、<xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A> メソッドを使用して、新しいキーを作成し、キーと値のペアを追加します。  
+# <a name="how-to-write-data-to-the-windows-registry-ccli"></a>方法: Windows レジストリにデータを書き込む (C++/CLI)
+次のコード例では、<xref:Microsoft.Win32.Registry.CurrentUser>の書き込み可能インスタンスを作成するキー、<xref:Microsoft.Win32.RegistryKey>に対応するクラス、**ソフトウェア**キー。 その後、<xref:Microsoft.Win32.RegistryKey.CreateSubKey%2A> メソッドを使用して、新しいキーを作成し、キーと値のペアを追加します。  
   
-## 例  
+## <a name="example"></a>例  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // registry_write.cpp  
@@ -74,9 +73,9 @@ int main()
 }  
 ```  
   
-## 解説  
- .NET Framework を使用すると、<xref:Microsoft.Win32.Registry> クラスと [RegistryKey](https://msdn.microsoft.com/en-us/library/microsoft.win32.registrykey.aspx) クラスを使用してレジストリにアクセスできます。この 2 つのクラスはどちらも <xref:Microsoft.Win32> 名前空間で定義されています。  **Registry** クラスは、<xref:Microsoft.Win32.RegistryKey> クラスの静的インスタンスのコンテナーです。  各インスタンスは、ルート レジストリ ノードを表します。  インスタンスは、<xref:Microsoft.Win32.Registry.ClassesRoot>、<xref:Microsoft.Win32.Registry.CurrentConfig>、<xref:Microsoft.Win32.Registry.CurrentUser>、<xref:Microsoft.Win32.Registry.LocalMachine>、および <xref:Microsoft.Win32.Registry.Users> です。  
+## <a name="remarks"></a>コメント  
+ レジストリにアクセスする .NET Framework を使用して、<xref:Microsoft.Win32.Registry>と[RegistryKey](https://msdn.microsoft.com/en-us/library/microsoft.win32.registrykey.aspx)はどちらもクラスで定義、<xref:Microsoft.Win32>名前空間。 **レジストリ**クラスの静的インスタンスのコンテナーが、<xref:Microsoft.Win32.RegistryKey>クラスです。 各インスタンスは、ルート レジストリ ノードを表します。 インスタンスは、<xref:Microsoft.Win32.Registry.ClassesRoot>、<xref:Microsoft.Win32.Registry.CurrentConfig>、<xref:Microsoft.Win32.Registry.CurrentUser>、<xref:Microsoft.Win32.Registry.LocalMachine>、および <xref:Microsoft.Win32.Registry.Users> です。  
   
-## 参照  
- [方法: Windows レジストリからデータを読み込む](../dotnet/how-to-read-data-from-the-windows-registry-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [方法: Windows レジストリからデータを読み取る (C + + CLI)](../dotnet/how-to-read-data-from-the-windows-registry-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

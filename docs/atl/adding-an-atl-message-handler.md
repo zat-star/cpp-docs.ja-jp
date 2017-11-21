@@ -1,40 +1,41 @@
 ---
-title: "ATL メッセージ ハンドラーの追加 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, メッセージ ハンドラー"
-  - "ATL, ウィンドウ"
-  - "メッセージ ハンドラー [C++]"
-  - "メッセージ処理 [C++], ATL メッセージ ハンドラー"
-  - "ウィンドウ [C++], ATL"
+title: "ATL メッセージ ハンドラーを追加する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- message handlers [C++]
+- ATL, windows
+- message handling [C++], ATL message handler
+- windows [C++], ATL
+- ATL, message handlers
 ms.assetid: cdea38a1-0d9b-4f8d-bbd5-b4f063fb3eeb
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a30c8d2c26893ddf101d7084a91215c7ed55bf48
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL メッセージ ハンドラーの追加
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-コントロールにメッセージ ハンドラー \(Windows メッセージを処理するメンバー関数\) を追加するには、まずクラス ビューでコントロールを選択します。  次 **\*\*\* プロパティ \*\*\*** のウィンドウを開き、**\[メッセージ\]** のアイコンを選択し、必要なメッセージのオブジェクトのボックスのドロップダウン コントロールをクリックします。  これは、コントロールの .cpp ファイルのスケルトン ハンドラーのヘッダー ファイルと実装のメッセージ ハンドラーの宣言を追加します。  また、メッセージ マップを追加し、ハンドラーのエントリが追加されます。  
+# <a name="adding-an-atl-message-handler"></a>ATL メッセージ ハンドラーを追加します。
+コントロールにメッセージ ハンドラー (Windows メッセージを処理するメンバー関数) を追加するに最初にクラス ビューでコントロールを選択します。 開き、**プロパティ**ウィンドウで、**メッセージ**アイコン、および反対の必須のメッセージ ボックスで、ドロップダウン リストを制御 をクリックします。 これは、コントロールのヘッダー ファイルと、コントロールの .cpp ファイルで、ハンドラーのスケルトンの実装で、メッセージ ハンドラーの宣言を追加します。 メッセージ マップを追加し、ハンドラーのエントリを追加します。  
   
- ATL メッセージ ハンドラーを追加すると、MFC クラスにメッセージ ハンドラーを追加することに似ています。  詳細については、[MFC のメッセージ ハンドラーを追加できます。](../mfc/reference/adding-an-mfc-message-handler.md) を参照してください。  
+ ATL でメッセージのハンドラーを追加することは、MFC クラスへのメッセージ ハンドラーの追加に似ています。 参照してください[MFC メッセージ ハンドラーを追加する](../mfc/reference/adding-an-mfc-message-handler.md)詳細についてはします。  
   
- 次の条件は、ATL メッセージ ハンドラーを追加することだけです:  
+ 次の条件は、ATL メッセージ ハンドラーを追加する場合にのみ適用されます。  
   
--   メッセージ ハンドラーは、MFC と同じ名前付け規則に従います。  
+-   メッセージ ハンドラーでは、MFC と同じ名前付け規則に従います。  
   
--   新しいメッセージ マップのエントリはメイン メッセージ マップに追加されます。  ウィザードは代替メッセージ マップとチェーンを認識しません。  
+-   新しいメッセージ マップ エントリは、メイン メッセージ マップに追加されます。 ウィザードでは、代替のメッセージ マップとの組み合わせは認識されません。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ウィンドウの実装](../atl/implementing-a-window.md)
+

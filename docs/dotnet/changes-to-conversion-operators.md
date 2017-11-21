@@ -1,34 +1,34 @@
 ---
-title: "変換演算子に対する変更点 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "変換演算子"
-  - "変換, explicit"
-  - "explicit キーワード [C++]"
-  - "演算子 [C++], 明示的な型変換"
-  - "型変換, 明示的な変換"
+title: "変換演算子の変更 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- conversion operators
+- operators [C++], explicit type conversion
+- type conversion, explicit conversions
+- conversions, explicit
+- explicit keyword [C++]
 ms.assetid: 9b83925c-71b7-4bd3-ac2e-843dd7c7f184
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7ab69a7dbba33e37d23a880a6a9b36f7ed37d7d2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 変換演算子に対する変更点
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-変換演算子の構文は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="changes-to-conversion-operators"></a>変換演算子に対する変更点
+変換演算子の構文は、Visual C を c++ マネージ拡張から変更されました。  
   
- その 1 つの例が `op_Implicit` を記述することによる変換の指定です。  たとえば、その言語仕様に従って記述された `MyDouble` の定義を考えてみます。  
+ 1 つの例は、記述する`op_Implicit`変換を指定します。 定義をここでは`MyDouble`言語仕様から取得します。  
   
 ```  
 __gc struct MyDouble {  
@@ -38,9 +38,9 @@ __gc struct MyDouble {
 };  
 ```  
   
- これは、整数を指定すると、その整数を `MyDouble` に変換するアルゴリズムが `op_Implicit` 演算子によって提供されることを記述しています。  さらに、その変換はコンパイラによって暗黙的に実行されます。  同様に、`MyDouble` オブジェクトを指定すると、2 つの `op_Explicit` 演算子がそのオブジェクトを整数またはマネージ `String` エンティティのいずれかに変換するアルゴリズムを提供します。  ただし、ユーザーによって明示的に要求されない場合、コンパイラは変換を実行しません。  
+ これは、コードは、整数、その整数に変換するためのアルゴリズムが指定された、`MyDouble`によって提供される、`op_Implicit`演算子。 さらに、その変換は、コンパイラによって暗黙的に実行します。 同様に、指定された、`MyDouble`オブジェクト、2 つ`op_Explicit`演算子は、そのオブジェクトに変換する整数値またはマネージのいずれかのそれぞれのアルゴリズムを使用する`String`エンティティです。 ただし、ユーザーによって明示的に要求されない限り、コンパイラは、変換を実行できません。  
   
- C\# では、これは次のようになります。  
+ C# の場合、この次のとおり。  
   
 ```  
 class MyDouble {  
@@ -50,13 +50,13 @@ class MyDouble {
 };  
 ```  
   
- C\+\+ マネージ拡張よりも、C\# コードの方が C\+\+ に近い感じがします。  新しい構文では、この違和感が解消されています。  
+ C# コードは、C++ マネージ拡張のバージョンよりも C++ と同様により検索します。 新しい構文ではありません。  
   
- ISO\-C\+\+ 委員会は、予期しない結果を防ぐために、キーワード `explicit` を採用しました。たとえば、`Array` クラスは、配列の次元を表す整数型の引数を 1 つ受け取りますが、この場合、意図に反して、あらゆる整数が `Array` オブジェクトに変換されます。  これを回避する手段の 1 つに、コンストラクターにダミーの第 2 引数を指定する方法があります。  
+ ISO C 委員会に導入されたキーワード、 `explicit`、- などの予想外の結果を軽減するために、`Array`ディメンションは任意の整数を暗黙的に変換すると、1 つの整数の引数をクラス、`Array`オブジェクトを必要ありません。 これを防止する方法の 1 つはコンス トラクターの 2 番目の引数がダミーのデザインの手法  
   
- 一方、C\+\+ でクラス型を設計しているときに、変換ペアを作成するのは良い考えとは言えません。  その最も良い例は標準文字列クラスです。  暗黙の変換では、単一引数コンストラクターが C スタイル配列を受け付けます。  しかし、対応する暗黙の変換演算子、つまり文字列オブジェクトを C スタイル配列に変換する演算子は提供されません。代わりに、ユーザーが名前付き関数、この場合は `c_str()` を明示的に呼び出すことが要求されます。  
+ その一方で、C++ でのクラス型の設計する場合変換ペアを指定しないで必要があります。 そのための最適な例は、標準文字列クラスです。 暗黙的な変換は、C スタイルの文字列を受け取るコンス トラクターを単一の引数です。 ただし、これは提供されませんが、文字列に変換するオブジェクトを C スタイルの文字列ではなく、ユーザーに明示的に名前付き関数でこのケースを呼び出す必要がありますの対応する暗黙的な変換演算子`c_str()`です。  
   
- 変換演算子への暗黙的および明示的処理の追加 \(および変換セットの単一宣言形式へのカプセル化\) は、C\+\+ の当初の変換演算子サポートに対する機能改善と考えられます。こうした動きが最終的に `explicit` キーワードの導入へとつながっています。  [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] 言語の変換演算子に対するサポートは次のとおりです。変換アルゴリズムの暗黙のアプリケーションをサポートする演算子の既定の動作が原因で、C\# よりはいくぶん短めです。  
+ そのため、変換演算子 (および宣言の 1 つのフォームへの変換のセットをカプセル化として)、暗黙的または明示的な動作を関連付けることがある、に最終的に至った変換演算子の元のC++のサポートの改善`explicit`キーワード。 変換演算子の Visual C の言語サポート次のよう、c# の場合よりも若干簡略化、変換アルゴリズムの暗黙のアプリケーションをサポートする演算子の既定の動作のためには。  
   
 ```  
 ref struct MyDouble {  
@@ -67,7 +67,7 @@ public:
 };  
 ```  
   
- もう 1 つの変更点は、単一引数コンストラクターが、`explicit` として宣言された場合と同じように扱われることです。  つまり、その呼び出しを発生させるには、明示的なキャストが必要です。  ただし、明示的な変換演算子が定義されている場合はそれが呼び出され、単一引数コンストラクターは呼び出されません。  
+ 別の変更は、引数を 1 つのコンス トラクターとして宣言されているかのように処理する`explicit`です。 これは、その呼び出しをトリガーするために、明示的なキャストが必要であることを意味します。 ただし、明示的な変換演算子が定義されている場合と、単一の引数を持つコンス トラクター、されませんが呼び出されることに注意してください。  
   
-## 参照  
- [クラスまたはインターフェイス内でのメンバー宣言 \(C\+\+\/CLI\)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [クラスまたはインターフェイス内でのメンバー宣言 (C++/CLI)](../dotnet/member-declarations-within-a-class-or-interface-cpp-cli.md)

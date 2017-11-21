@@ -1,34 +1,32 @@
 ---
-title: "initonly (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "initonly_cpp"
-  - "initonly"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "initonly 属性 [C++]"
+title: "initonly (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- initonly_cpp
+- initonly
+dev_langs: C++
+helpviewer_keywords: initonly attribute [C++]
 ms.assetid: f745d7fa-dc08-46f1-9b97-0977be58a008
-caps.latest.revision: 16
-caps.handback.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7957c92ca243a9055bfce62232067e51b3f395d0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# initonly (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**initonly** は 変数の代入は、宣言の一部としてのみ、または同じクラスの静的コンストラクターが発生する可能性があることを示す状況依存のキーワードです。  
+# <a name="initonly-ccli"></a>initonly (C++/CLI)
+**initonly**をその変数の代入を示す状況依存のキーワードが、同じクラスの静的コンス トラクターまたは宣言の一部としてのみ実行します。  
   
- 次の例は、`initionly` を使用する方法を示しています。  
+ `initionly` を使用する方法を次の例に示します。  
   
 ```  
 // mcpp_initonly.cpp  
@@ -46,5 +44,5 @@ ref struct Y1 {
 };  
 ```  
   
-## 参照  
- [Classes and Structs](../windows/classes-and-structs-cpp-component-extensions.md)
+## <a name="see-also"></a>関連項目  
+ [クラスと構造体](../windows/classes-and-structs-cpp-component-extensions.md)

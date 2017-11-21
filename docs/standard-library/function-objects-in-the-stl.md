@@ -4,43 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - functors
 - C++ Standard Library, functors
 - C++ Standard Library, function objects
 - function objects
 ms.assetid: 85f8a735-2c7b-4f10-9c4d-95c666ec4192
-caps.latest.revision: 6
+caps.latest.revision: "6"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: a82768750e6a7837bb81edd8a51847f83c294c20
-ms.openlocfilehash: 7050def4c0350e4bdbba3baf348fe5b971e0b20a
-ms.contentlocale: ja-jp
-ms.lasthandoff: 04/04/2017
-
+ms.openlocfilehash: 90b37372123031026017e23c683a5a65555577ca
+ms.sourcegitcommit: b3ffb717e2af6ca8072b56bf4aa96b3afff73414
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/30/2017
 ---
 # <a name="function-objects-in-the-c-standard-library"></a>C++ 標準ライブラリの関数オブジェクト
 *関数オブジェクト*、つまり *ファンクター*は、operator() を実装する任意の型です。 この演算子は *呼び出し演算子* と呼ばれます。 *適用演算子*と呼ばれることもあります。 C++ 標準ライブラリで、関数オブジェクトは、主にコンテナーの並べ替え条件として、およびアルゴリズム内で使用されます。  
@@ -50,15 +32,17 @@ ms.lasthandoff: 04/04/2017
 ## <a name="creating-a-function-object"></a>関数オブジェクトの作成  
  関数オブジェクトを作成するには、型を作成し、次のように operator() を実装します。  
   
+```
 class Functor  
-   {  
-   public:  
-   int operator()(int a, int b)  
-   {  
-   return a <b;  
-   }  
-   };  
-  
+{  
+public:  
+    int operator()(int a, int b)  
+    {  
+        return a < b;  
+    }  
+};  
+```
+
  `main` 関数の最後の行は関数オブジェクトを呼び出す方法を示しています。 これは関数呼び出しに見えますが、実際には Functor 型の operator() を呼び出しています。 関数オブジェクト呼び出しと関数の呼び出しが類似しているため、関数オブジェクトという用語が生じました。  
   
 ## <a name="function-objects-and-containers"></a>関数オブジェクトとコンテナー  
@@ -88,5 +72,4 @@ ForwardIterator remove_if(
   
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 

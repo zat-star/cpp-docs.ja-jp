@@ -1,98 +1,107 @@
 ---
-title: "Visual C++ プロジェクトの種類 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プログラム [C++]、プロジェクト"
-  - "プロジェクト テンプレート [Visual Studio]、C++"
-  - "TODO コメント [C++]"
-  - "プロジェクト [C++]、種類"
-  - "テンプレート [C++]、プロジェクト"
-  - "アプリケーション [C++]、プロジェクト"
-  - "Visual C++ プロジェクト、種類"
+title: "Visual C プロジェクトの種類 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 10/30/2017
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- programs [C++], projects
+- project templates [Visual Studio], C++
+- TODO comments [C++]
+- projects [C++], types
+- templates [C++], projects
+- applications [C++], projects
+- Visual C++ projects, types
 ms.assetid: 7337987e-1e7b-4120-9a4b-94f0401f15e7
-caps.latest.revision: 20
-caps.handback.revision: 20
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "20"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 625489b69b3831d78bbe9bc80d92838e1e79b0c8
+ms.sourcegitcommit: 69632887f7a85f4841c49b4c1353d3144927a52c
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/11/2017
 ---
-# Visual C++ プロジェクトの種類
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
+# <a name="visual-c-project-types"></a>Visual C++ プロジェクトの種類
 
-プロジェクト テンプレートを使用して、基本的なプログラムの構造、メニュー、ツール バー、アイコン、参照、および作成するプロジェクトの種類に適した `#include` ステートメントを作成できます。 Visual Studio には、数種類の Visual C\+\+ プロジェクト テンプレートが含まれ、これらのテンプレートの多くにはウィザードが用意されているため、プロジェクトを作成しながらカスタマイズを行うことができます。 プロジェクトを作成したらすぐにプロジェクトをビルドし、アプリケーションを実行できます。アプリケーションを開発しながら、断続的にビルドすることをお勧めします。  
-  
- プロジェクトの作成にテンプレートを使用する必要はありませんが、多くの場合、テンプレートを使用した方が効率的です。用意されたプロジェクト ファイルおよび構造を修正する方が、初めから作成するよりも簡単なためです。  
+プロジェクト テンプレートを使用して、基本的なプログラムの構造、メニュー、ツール バー、アイコン、参照、および作成するプロジェクトの種類に適した `#include` ステートメントを作成できます。 Visual Studio には、数種類の Visual C++ プロジェクト テンプレートが含まれ、これらのテンプレートの多くにはウィザードが用意されているため、プロジェクトを作成しながらカスタマイズを行うことができます。 プロジェクトを作成した後にすぐには、それをビルドおよびアプリケーションを実行します。アプリケーションの開発を断続的に構築することをお勧めします。
+
+プロジェクトの作成にテンプレートを使用する必要はありませんが、多くの場合、テンプレートを使用した方が効率的です。用意されたプロジェクト ファイルおよび構造を修正する方が、初めから作成するよりも簡単なためです。  
   
 > [!NOTE]
->  C\+\+ プロジェクト テンプレートを使用して C 言語プロジェクトを作成できます。 生成されたプロジェクトで、.cpp ファイル名拡張子を持つファイルを検索して .c に変更します。 次に、プロジェクト \(ソリューションではない\) の **\[プロジェクトのプロパティ\]** ページで、**\[構成プロパティ\]**、**\[C\/C\+\+\]** の順に展開し、**\[詳細\]** を選択します。**\[コンパイル言語の選択\]** 設定を **\[C コードとしてコンパイル \(\/TC\)\]** に変更します。  
-  
-## プロジェクト テンプレート  
- Visual Studio には、次の Visual C\+\+ プロジェクト テンプレートが用意されています。  
-  
-### ストア アプリ  
-  
-||  
-|-|  
-|[ストア アプリ用の C\#、VB、C\+\+ のプロジェクト テンプレート](http://go.microsoft.com/fwlink/p/?LinkID=262279)|  
-  
-### ATL  
-  
-|プロジェクト テンプレート|プロジェクトを作成する方法|  
-|-------------------|-------------------|  
-|ATL プロジェクト|[ATL プロジェクトの作成](../atl/reference/creating-an-atl-project.md)|  
-  
-### CLR  
-  
-|プロジェクト テンプレート|  
-|-------------------|  
-|[\(NOTINBUILD\)Class ライブラリ テンプレート \(C\+\+\)](http://msdn.microsoft.com/ja-jp/0d779bfa-5c5a-4b10-a9d5-a6791764a78f)|  
-|[方法 : CLR コンソール アプリケーションを作成する](../Topic/How%20to:%20Create%20CLR%20Console%20Applications%20\(C++-CLI\).md)|  
-|[NOTINBUILD CLR 空のプロジェクト テンプレート \(C\+\+\)](http://msdn.microsoft.com/ja-jp/f57c5572-5581-440f-b684-eec646764f08)|  
-  
-### 全般  
-  
-|プロジェクト テンプレート|プロジェクトを作成する方法|  
-|-------------------|-------------------|  
-|空のプロジェクト|[ソリューションとプロジェクトの作成](../Topic/Creating%20Solutions%20and%20Projects.md)|  
-|カスタム ウィザード|[カスタム ウィザードの作成](../ide/creating-a-custom-wizard.md)|  
-|メイクファイル プロジェクト|[メイクファイル プロジェクトの作成](../ide/creating-a-makefile-project.md)|  
-  
-### MFC  
-  
-|プロジェクト テンプレート|プロジェクトを作成する方法|  
-|-------------------|-------------------|  
-|MFC ActiveX コントロール|[MFC ActiveX コントロールの作成](../mfc/reference/creating-an-mfc-activex-control.md)|  
-|MFC アプリケーション|[MFC アプリケーションの作成](../mfc/reference/creating-an-mfc-application.md)|  
-|MFC DLL|[MFC DLL プロジェクトの作成](../mfc/reference/creating-an-mfc-dll-project.md)|  
-  
-### テスト  
-  
-|プロジェクト テンプレート|プロジェクトを作成する方法|  
-|-------------------|-------------------|  
-|マネージ テスト プロジェクト|[単体テスト プロジェクトを作成する](../Topic/Create%20a%20unit%20test%20project.md)|  
-|ネイティブ単体テスト プロジェクト|[テスト エクスプローラーを使用したネイティブ コードの単体テスト](http://msdn.microsoft.com/ja-jp/8a09d6d8-3613-49d8-9ffe-11375ac4736c)|  
-  
-### Win32  
-  
-|プロジェクト テンプレート|プロジェクトを作成する方法|  
-|-------------------|-------------------|  
-|Win32 コンソール プロジェクト|[コンソール アプリケーションの作成](../windows/creating-a-console-application.md)|  
-|Win32 プロジェクト|[方法: Windows デスクトップ アプリケーションの作成](../Topic/How%20to:%20Create%20a%20Windows%20Desktop%20Application.md)|  
-  
-## TODO コメント  
- プロジェクト テンプレートによって生成されたファイルの多くには TODO コメントが含まれています。このコメントは、独自のソース コードを作成できる場所を特定するのに役立ちます。 コードの追加方法について詳しくは、「[コード ウィザードを使用した機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)」および「[Working with Resource Files](../mfc/working-with-resource-files.md)」をご覧ください。  
-  
-## 参照  
- [アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../ide/creating-desktop-projects-by-using-application-wizards.md)   
- [アプリケーションを作成するためのプロジェクトの使用](http://msdn.microsoft.com/ja-jp/3339fa90-bac2-4b95-8361-662a2e0e7dfe)   
- [CLR プロジェクト](../ide/files-created-for-clr-projects.md)
+> C++ プロジェクト テンプレートを使用して C 言語プロジェクトを作成できます。 生成されたプロジェクトで、.cpp ファイル名拡張子を持つファイルを検索して .c に変更します。 次に、プロジェクト (ソリューションではない) の **[プロジェクトのプロパティ]** ページで、 **[構成プロパティ]**、 **[C/C++]** の順に展開し、 **[詳細]**を選択します。 **[コンパイル言語の選択]** 設定を **[C コードとしてコンパイル (/TC)]**に変更します。
+
+## <a name="project-templates"></a>プロジェクト テンプレート
+
+Visual Studio に含まれるプロジェクト テンプレートは、製品のバージョンとインストールされているワークロードによって異なります。 C++ のワークロードでデスクトップの開発をインストールした場合、Visual Studio はこれらの Visual C プロジェクト テンプレートを持ちます。
+
+### <a name="windows-desktop"></a>Windows デスクトップ
+
+|プロジェクト テンプレート|説明|  
+|----------------------|-----------------------------| 
+|[Windows コンソール アプリケーション](../windows/creating-a-console-application.md)|Windows コンソール アプリケーションを作成するためのプロジェクトです。|
+|[Windows デスクトップ アプリケーション](../windows/walkthrough-creating-windows-desktop-applications-cpp.md)|Windows デスクトップ (Win32) アプリケーションを作成するためのプロジェクトです。|
+|[ダイナミック リンク ライブラリ](../build/walkthrough-creating-and-using-a-dynamic-link-library-cpp.md)|ダイナミック リンク ライブラリ (DLL) を作成するためのプロジェクトです。|
+|[スタティック ライブラリ](../windows/walkthrough-creating-and-using-a-static-library-cpp.md)|スタティック ライブラリ (LIB) を作成するためのプロジェクトです。|
+|Windows デスクトップの作成ウィザード|追加のオプションで Windows デスクトップ アプリケーションおよびライブラリを作成するためのウィザード。|
+
+### <a name="general"></a>全般
+
+|プロジェクト テンプレート|説明|
+|----------------------|-----------------------------|
+|空のプロジェクト|アプリケーション、ライブラリ、または DLL を作成するための空のプロジェクトです。 コードや必要なリソースを追加する必要があります。|
+|[メイクファイル プロジェクト](../ide/creating-a-makefile-project.md)|外部を使用するためのプロジェクトでは、システムを構築します。|
+|共有アイテム プロジェクト|複数のプロジェクト間でファイルを共有するためのプロジェクトです。|
+
+### <a name="atl"></a>ATL
+
+|プロジェクト テンプレート|説明|
+|----------------------|-----------------------------|
+|[ATL プロジェクト](../atl/reference/creating-an-atl-project.md)|Active Template Library を使用するためのプロジェクトです。|
+
+### <a name="test"></a>テスト
+
+|プロジェクト テンプレート|説明|
+|----------------------|-----------------------------|
+|[ネイティブ単体テスト プロジェクト](/visualstudio/test/writing-unit-tests-for-c-cpp-with-the-microsoft-unit-testing-framework-for-cpp)|ネイティブ C++ 単体テストを含むプロジェクトです。|
+
+### <a name="mfc"></a>MFC
+
+MFC および ATL サポートを Visual Studio のインストールにコンポーネントを追加する場合は、これらのプロジェクト テンプレートが Visual Studio に追加されます。
+
+|プロジェクト テンプレート|説明|
+|----------------------|-----------------------------|
+|[MFC アプリケーション](../mfc/reference/creating-an-mfc-application.md)|Microsoft Foundation Class (MFC) ライブラリを使用するアプリケーションを作成するためのプロジェクトです。|
+|[MFC ActiveX コントロール](../mfc/reference/creating-an-mfc-activex-control.md)|MFC ライブラリを使用する ActiveX コントロールを作成するためのプロジェクトです。|
+|[MFC DLL](../mfc/reference/creating-an-mfc-dll-project.md)|ダイナミック リンク ライブラリを作成するためのプロジェクトでは、MFC ライブラリを使用します。|
+
+### <a name="windows-universal-apps"></a>Windows ユニバーサル アプリ
+
+Visual Studio のインストールに、C++ Windows ユニバーサル プラットフォーム ツール コンポーネントを追加する場合は、これらのプロジェクト テンプレートが Visual Studio に追加されます。
+
+C++ での Windows ユニバーサル アプリの概要については、次を参照してください。[ユニバーサル Windows アプリ (C++)](../windows/universal-windows-apps-cpp.md)です。
+
+|プロジェクト テンプレート|説明|
+|----------------------|-----------------------------|
+|空のアプリケーション|定義済みのコントロールまたはレイアウトを持たない単一ページ ユニバーサル Windows プラットフォーム (UWP) アプリ用のプロジェクト。|
+|DirectX 11 アプリ|DirectX 11 を使用するユニバーサル Windows プラットフォーム アプリ用のプロジェクトです。|
+|DirectX 12 アプリ|DirectX 12 を使用するユニバーサル Windows プラットフォーム アプリ用のプロジェクトです。|
+|DirectX 11 および XAML アプリ|DirectX 11 と XAML を使用するユニバーサル Windows プラットフォーム アプリ用のプロジェクトです。|
+|単体テスト アプリ|ユニバーサル Windows プラットフォーム (UWP) アプリの単体テスト アプリを作成するプロジェクトです。|
+|[DLL]|ユニバーサル Windows プラットフォーム アプリまたはランタイム コンポーネントで使用できるネイティブ ダイナミック リンク ライブラリ (DLL) 用のプロジェクト。|
+|スタティック ライブラリ|ユニバーサル Windows プラットフォーム アプリまたはランタイム コンポーネントで使用できるネイティブ スタティック リンク ライブラリ (LIB) 用のプロジェクトです。|
+|Windows ランタイム コンポーネント|アプリを記述するプログラミング言語に関係なく、ユニバーサル Windows プラットフォーム アプリで使用できる Windows ランタイム コンポーネント用のプロジェクトです。|
+|Windows アプリケーション パッケージのプロジェクト|UWP パッケージを作成するプロジェクトでは、サイド ロードや Microsoft ストアを経由して分散するデスクトップ アプリケーションを使用できます。|
+
+## <a name="todo-comments"></a>TODO コメント
+
+プロジェクト テンプレートによって生成されたファイルの多くには TODO コメントが含まれています。このコメントは、独自のソース コードを作成できる場所を特定するのに役立ちます。 コードを追加する方法の詳細については、次を参照してください。[コード ウィザードを使用した機能の追加](../ide/adding-functionality-with-code-wizards-cpp.md)と[リソース ファイルの操作](../windows/working-with-resource-files.md)です。
+
+## <a name="see-also"></a>関連項目
+
+[アプリケーション ウィザードを使用したデスクトップ プロジェクトの作成](../ide/creating-desktop-projects-by-using-application-wizards.md)   

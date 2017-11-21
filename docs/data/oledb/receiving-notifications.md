@@ -1,40 +1,40 @@
 ---
-title: "通知の受信 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント [C++], 通知 (OLE DB での)"
-  - "通知 [C++], イベント"
-  - "通知 [C++], OLE DB コンシューマー"
-  - "OLE DB コンシューマー, 通知"
-  - "OLE DB プロバイダー, 通知"
-  - "受信 (OLE DB で通知を)"
-  - "行セット, イベント通知"
+title: "通知を受け取る |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- notifications [C++], OLE DB consumers
+- receiving notifications in OLE DB
+- events [C++], notifications in OLE DB
+- notifications [C++], events
+- OLE DB consumers, notifications
+- rowsets, event notifications
+- OLE DB providers, notifications
 ms.assetid: 305a1103-0c87-40c8-94bc-7fbbdd52ae32
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ed9c82d97a1d96777ae9b7e3c28b8ffa0de4507a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 通知の受信
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-OLE DB では、イベント発生時に通知を受信するためのインターフェイスを用意しています。  これらのインターフェイスについては、『OLE DB Programmer's Reference』の「[Chapter 12: OLE DB Object Notifications](https://msdn.microsoft.com/en-us/library/ms725406.aspx)」を参照してください。  これらのイベントのセットアップでは、標準の COM コネクション ポイント機構を使用します。  たとえば、`IRowsetNotify` を通じてイベントを取得する ATL オブジェクトは、クラスから派生した一覧に `IRowsetNotify` を追加し、これを **COM\_INTERFACE\_ENTRY** マクロを通じて公開することで、`IRowsetNotify` インターフェイスを実装します。  
+# <a name="receiving-notifications"></a>通知の受信
+OLE DB は、イベントが発生したときに通知を受信するためのインターフェイスを提供します。 については、 [OLE DB オブジェクト通知](https://msdn.microsoft.com/en-us/library/ms725406.aspx)で、 *OLE DB プログラマーズ リファレンス*です。 これらのイベントのセットアップでは、標準の COM 接続ポイント メカニズムを使用します。 たとえばが使用してイベントを取得する ATL オブジェクト`IRowsetNotify`を実装、`IRowsetNotify`インターフェイスを追加して`IRowsetNotify`クラスから派生した一覧、およびを通じて公開することを**COM_INTERFACE_ENTRY**マクロです。  
   
- `IRowsetNotify` には、さまざまな時点で呼び出すことができる 3 つのメソッドがあります。  これらのメソッドの 1 つに対してだけ応答する場合は、[IRowsetNotifyImpl](../Topic/IRowsetNotifyImpl%20Class.md) クラスを使用します。このクラスは、関係のないメソッドに対しては **E\_NOTIMPL** を返します。  
+ `IRowsetNotify`呼び出すことができるさまざまなタイミングで、次の 3 つのメソッドがあります。 これらのメソッドの 1 つのみに応答する場合は、使用、 [IRowsetNotifyImpl](../../data/oledb/irowsetnotifyimpl-class.md)クラス**E_NOTIMPL**の興味のあるいないメソッドです。  
   
- 行セットを作成するときは、返された行セット オブジェクトで **IConnectionPointContainer** をサポートすることをプロバイダーに通知する必要があります。これは通知のセットアップに必要です。  
+ 行セットを作成するときにする必要がありますプロバイダーに指示をサポートする、返された行セット オブジェクトを表示する**IConnectionPointContainer**、必要な通知を設定します。  
   
- ATL オブジェクトから行セットを開き、`AtlAdvise` 関数を使用して通知シンクをセットアップする方法を次のコード例に示します。  `AtlAdvise` は、`AtlUnadvise` を呼び出したときに使用されるクッキーを返します。  
+ 次のコードは、ATL オブジェクトから行セットを開き、使用する方法を示しています、`AtlAdvise`通知シンクを設定する関数。 `AtlAdvise`呼び出すときに使用される cookie が返されます`AtlUnadvise`です。  
   
 ```  
 CDBPropSet propset(DBPROPSET_ROWSET);  
@@ -45,5 +45,5 @@ product.Open(session, _T("Products"), &propset);
 AtlAdvise(product.m_spRowset, GetUnknown(), IID_IRowsetNotify, &m_dwCookie);  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アクセサーの使用](../../data/oledb/using-accessors.md)

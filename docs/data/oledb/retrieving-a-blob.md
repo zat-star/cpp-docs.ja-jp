@@ -1,32 +1,32 @@
 ---
-title: "BLOB の取得 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "BLOB (バイナリ ラージ オブジェクト), 取得"
-  - "OLE DB, BLOB (バイナリ ラージ オブジェクト)"
-  - "取得 (BLOB を)"
+title: "BLOB の取得 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- retrieving BLOBs
+- BLOB (binary large object), retrieving
+- OLE DB, BLOBs (binary large objects)
 ms.assetid: 2893eb0a-5c05-4016-8914-1e40ccbaf0b3
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ac10d34fbb5e0cc6320d6c7f8ff1a52efc36f1b0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# BLOB の取得
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-バイナリ ラージ オブジェクト \(BLOB: Binary Large Object\) は、さまざまな方法で取得できます。  **DBTYPE\_BYTES** を使用して、BLOB をバイト シーケンスとして取得できます。または、`ISequentialStream` などのインターフェイスを使用できます。  詳細については、『OLE Programmer's Reference』の「[BLOBS and OLE Objects](https://msdn.microsoft.com/en-us/library/ms711511.aspx)」を参照してください。  
+# <a name="retrieving-a-blob"></a>BLOB の取得
+さまざまな方法でバイナリ ラージ オブジェクト (BLOB) を取得することができます。 使用することができます**DBTYPE_BYTES**バイトのシーケンスとして BLOB を取得またはのようなインターフェイスを使用する`ISequentialStream`です。 詳細については、次を参照してください。 [BLOB と OLE オブジェクト](https://msdn.microsoft.com/en-us/library/ms711511.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
- 以下のコードでは、`ISequentialStream` を使用して BLOB を取得する方法を示しています。  [BLOB\_ENTRY](../Topic/BLOB_ENTRY.md) マクロでは、インターフェイスと、インターフェイスに使用するフラグを指定できます。  テーブルを開いた後で、`ISequentialStream` に対して **Read** を繰り返し呼び出して、BLOB からバイトを読み込みます。  `MoveNext` を呼び出して次のレコードを取得する前に、**Release** を呼び出してインターフェイス ポインターを破棄します。  
+ 次のコードを使用して BLOB を取得する方法を示しています。`ISequentialStream`です。 マクロ[BLOB_ENTRY](../../data/oledb/blob-entry.md)インターフェイスとインターフェイスに使用するフラグを指定することができます。 コードを呼び出す、テーブルを開いたら、**読み取り**繰り返しで`ISequentialStream`BLOB からバイトを読み取ります。 コードの呼び出し**リリース**呼び出す前に、インターフェイス ポインターを破棄する`MoveNext`を次のレコードを取得します。  
   
 ```  
 class CCategories  
@@ -55,8 +55,8 @@ while (categories.MoveNext() == S_OK)
 }  
 ```  
   
- BLOB データを処理するマクロの詳細については、「[OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../Topic/Macros%20and%20Global%20Functions%20for%20OLE%20DB%20Consumer%20Templates.md)」の「列マップ マクロ」を参照してください。  
+ BLOB データを処理するマクロの詳細についてを参照してください「の列マップ マクロ」[用マクロおよびグローバル関数 OLE DB コンシューマー テンプレート](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [アクセサーの使用](../../data/oledb/using-accessors.md)   
- [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../Topic/Macros%20and%20Global%20Functions%20for%20OLE%20DB%20Consumer%20Templates.md)
+ [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)

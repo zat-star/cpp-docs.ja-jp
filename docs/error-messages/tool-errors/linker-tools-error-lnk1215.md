@@ -1,33 +1,31 @@
 ---
-title: "リンカ ツール エラー LNK1215 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "LNK1215"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "LNK1215"
+title: "リンカ ツール エラー LNK1215 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: LNK1215
+dev_langs: C++
+helpviewer_keywords: LNK1215
 ms.assetid: 0774d8e6-f0c1-4efb-8723-7e1be6863d81
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 8685cbf849aed56b1b7ce1a6cebd78c161f70ca7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リンカ ツール エラー LNK1215
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-メタデータの操作に失敗しました。\(HRESULT\) : error  
+# <a name="linker-tools-error-lnk1215"></a>リンカ ツール エラー LNK1215
+メタデータの操作に失敗しました (HRESULT): エラー  
   
- リンカーは .NET ランタイムを通じてメタデータの更新を試みましたが、.NET ランタイムからエラーを受け取りました。  
+ リンカーは、.NET ランタイムを通じてメタデータ更新を実行しようとしているときに、.NET ランタイムからエラーを受信します。  
   
- `HRESULT` は .NET ランタイム メソッドからの HRESULT です。  `error` は .NET が用意したテキストです。  
+ `HRESULT`.NET ランタイム メソッドから HRESULT です。 `error`します。NET が指定したテキスト。  
   
- リンカーと .NET ランタイムが一致していない可能性があります。Visual C\+\+ を再インストールしてください。
+ 一致しないリンカーと .NET ランタイムがある可能性があります。Visual C を再インストールします。

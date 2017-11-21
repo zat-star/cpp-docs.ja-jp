@@ -1,42 +1,42 @@
 ---
-title: "OLE DB 準拠合致テスト | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "準拠合致テスト"
-  - "準拠合致テスト [OLE DB]"
-  - "OLE DB プロバイダー, テスト"
-  - "テスト (プロバイダーを)"
-  - "テスト, OLE DB プロバイダー"
+title: "OLE DB 準拠合致テストを渡す |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- testing, OLE DB providers
+- testing providers
+- conformance testing
+- conformance testing [OLE DB]
+- OLE DB providers, testing
 ms.assetid: d1a4f147-2edd-476c-b452-0e6a0ac09891
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8ef7e32f56fdff81c7a66a1dfcc6c613201e2f49
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# OLE DB 準拠合致テスト
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-プロバイダーに一貫性を持たせるために、Data Access SDK には OLE DB 準拠合致テストのセットが用意されています。  このテストは、プロバイダーのすべての機能を調べて、プロバイダーが予測どおりに機能するかどうかを検証するためのテストです。  OLE DB 準拠合致テストは、Microsoft Data Access SDK にあります。  ここでは、準拠合致テストに合格するために行う事柄について説明します。  OLE DB 準拠合致テストの実行については、SDK を参照してください。  
+# <a name="passing-ole-db-conformance-tests"></a>OLE DB 準拠合致テスト
+プロバイダーを一貫したものにするには、Data Access SDK は、OLE DB 準拠合致テストのセットを提供します。 テストは、プロバイダーのすべての側面を確認し、妥当なという保証は正常に、プロバイダーの機能を提供します。 Microsoft Data Access SDK では、OLE DB 準拠合致テストを検索できます。 このセクションでは、準拠テストに合格する必要があることについて説明します。 OLE DB 準拠合致テストの実行方法の詳細については、SDK を参照してください。  
   
-## 準拠合致テストの実行  
- Visual C\+\+ 6.0 では、OLE DB プロバイダー テンプレートで、値とプロパティを確認するための多数のフック関数が追加されました。  これらの関数のほとんどは、準拠合致テストに対応するために追加されました。  
+## <a name="running-the-conformance-tests"></a>準拠合致テストを実行しています。  
+ Visual C 6.0 では、OLE DB プロバイダー テンプレートは、多数の値とプロパティを確認するためのフック関数を追加します。 これらの関数のほとんどは、準拠合致テストへの応答に追加されました。  
   
 > [!NOTE]
->  プロバイダーが OLE DB 準拠合致テストに合格するには、いくつかの検証関数を追加する必要があります。  
+>  OLE DB 準拠のテストに合格するプロバイダーのいくつかの検証機能を追加する必要があります。  
   
- このプロバイダーは、2 つの検証ルーチンを必要とします。  最初のルーチンである `CRowsetImpl::ValidateCommandID` は、行セット クラスの一部です。  これは、プロバイダー テンプレートによって行セットの作成時に呼び出されます。  サンプルは、このルーチンを使用して、インデックスをサポートしないことをコンシューマーに通知します。  最初の呼び出しは `CRowsetImpl::ValidateCommandID` に対するものです。プロバイダーは、「[プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)」で `CMyProviderRowset` のインターフェイス マップに追加された **\_RowsetBaseClass** typedef を使用するため、長いテンプレート引数を渡す必要はありません。  次に、インデックス パラメーターが **NULL** でない場合 \(コンシューマーがインデックスを使用することを示します\) は **DB\_E\_NOINDEX** を返します。  コマンド ID の詳細については、OLE DB 仕様で **IOpenRowset::OpenRowset** を検索してください。  
+ このプロバイダーでは、2 つの検証ルーチンが必要です。 最初のルーチン`CRowsetImpl::ValidateCommandID`、行セット クラスの一部です。 プロバイダー テンプレートによって、行セットの作成時に呼び出されます。 このサンプルでは、このルーチンを使用してインデックスをサポートしないコンシューマーに通知します。 最初の呼び出しが`CRowsetImpl::ValidateCommandID`(注プロバイダーが使用する、 **_RowsetBaseClass**に対するインターフェイス マップに追加された typedef`CMyProviderRowset`で[プロバイダーのブックマーク サポート](../../data/oledb/provider-support-for-bookmarks.md)する必要はありませんので、テンプレートの引数の長い行を入力)。 次に、返す**DB_E_NOINDEX**インデックス パラメーターがない場合**NULL** (コンシューマーが私たちのインデックスを使用することを示します)。 コマンド Id の詳細については、OLE DB 仕様を参照して、探して**iopenrowset::openrowset**です。  
   
- 次のコードは、**ValidateCommandID** 検証ルーチンです。  
+ 次のコードは、 **ValidateCommandID**検証ルーチン。  
   
 ```  
 /////////////////////////////////////////////////////////////////////  
@@ -56,30 +56,30 @@ HRESULT ValidateCommandID(DBID* pTableID, DBID* pIndexID)
 }  
 ```  
   
- プロバイダー テンプレートは、**DBPROPSET\_ROWSET** グループのプロパティが変更されるたびに、`OnPropertyChanged` メソッドを呼び出します。  他のグループのプロパティを扱う場合は、そのプロパティを適切なオブジェクトに追加します。この例では、**DBPROPSET\_SESSION** チェックは `CMyProviderSession` クラスに追加します。  
+ プロバイダー テンプレートの呼び出し、`OnPropertyChanged`メソッド、プロパティの誰かが変更されるたびに、 **DBPROPSET_ROWSET**グループ。 適切なオブジェクトに追加の他のグループのプロパティを処理する場合 (つまり、 **DBPROPSET_SESSION**移動するチェック、`CMyProviderSession`クラス)。  
   
- コードは、最初に、プロパティが別のプロパティにリンクされているかどうかを調べます。  プロパティがチェーンされている場合は、**DBPROP\_BOOKMARKS** プロパティが True に設定されます。  OLE DB 仕様の付録 C には、プロパティに関する情報が記載されています。  この情報では、プロパティが別のプロパティにチェーンされているかどうかも示します。  
+ コードは、まず別、プロパティがリンクされているかどうかを確認します。 プロパティをチェーンされている場合は設定、 **DBPROP_BOOKMARKS**プロパティを True にします。 OLE DB 仕様の「付録 C には、プロパティに関する情報が含まれていますいます。 この情報も示しますプロパティがもう 1 つにチェーンされているかどうか。  
   
- また、`IsValidValue` ルーチンをコードに追加する場合もあります。  テンプレートはプロパティの設定を行う前に `IsValidValue` を呼び出します。  プロパティ値を設定するときに追加の処理が必要な場合は、このメソッドをオーバーライドします。  プロパティ セットごとに、これらのメソッドを 1 つ持つことができます。  
+ 追加する場合がありますも、`IsValidValue`ルーチンをコードにします。 テンプレートの呼び出し`IsValidValue`プロパティを設定しようとしています。 プロパティの値を設定するときに、追加の処理を必要とする場合は、このメソッドをオーバーライドします。 プロパティ セットごとにこれらのメソッドのいずれかのことができます。  
   
-## スレッド処理の問題  
- 既定では、ATL OLE DB プロバイダー ウィザードの OLE DB プロバイダー ウィザードは、アパートメント モデルで実行するプロバイダーのコードを生成します。  このコードを準拠合致テストで実行すると、最初は失敗します。  この原因は、OLE DB 準拠合致テストの実行に使用されるツールである Ltm.exe が、既定でフリー スレッドになっているためです。  OLE DB プロバイダー ウィザードのコードは、パフォーマンスと使いやすさの向上のために、既定ではアパートメント スレッド モデルになります。  
+## <a name="threading-issues"></a>スレッド処理の問題  
+ 既定では、OLE DB プロバイダー ウィザード ATL OLE DB プロバイダー ウィザードでは、アパートメント モデルで実行するプロバイダーのコードを生成します。 準拠合致テストでこのコードを実行しようとすると、最初にエラーが表示されます。 これは、空き Ltm.exe、OLE DB 準拠合致テストを実行するためのツールの既定値は、スレッドします。 OLE DB プロバイダー ウィザード コードは、アパートメント モデルのパフォーマンスと使いやすさを既定値です。  
   
  この問題を解決するには、LTM を変更するか、プロバイダーを変更します。  
   
-#### アパートメント スレッド モードで実行するように LTM を変更するには  
+#### <a name="to-change-ltm-to-run-in-apartment-threaded-mode"></a>モードをスレッド アパートメントで実行する LTM を変更するには  
   
-1.  LTM メイン メニューの \[Tools\] をクリックし、次に **\[Options\]** をクリックします。  
+1.  LTM メイン メニューで、をクリックして**ツール**、クリックして**オプション**です。  
   
-2.  \[General\] タブで、スレッド モデルを \[Free Threaded\] から \[Apartment\] に変更します。  
+2.  **全般**からスレッド モデルの変更 タブで、**空きスレッド**に**Apartment Threaded**です。  
   
- フリー スレッド モードで実行するようにプロバイダーを変更するには  
+ プロバイダーを変更する、空きスレッド モードで実行します。  
   
--   プロバイダー プロジェクトで、`CComSingleThreadModel` のすべてのインスタンスを検索し、`CComMultiThreadModel` に置き換えます。これは、データ ソース、セッション、および行セット ヘッダー内にあります。  
+-   プロバイダーのプロジェクトでのすべてのインスタンスを検索`CComSingleThreadModel`置き換えます`CComMultiThreadModel`、データ ソース、セッション、および行セットのヘッダーに必要があります。  
   
--   .rgs ファイルでスレッド モデルを \[Apartment\] から \[Both\] に変更します。  
+-   .Rgs ファイルで、変更、スレッディング モデルから**アパートメント**に**両方**です。  
   
--   フリー スレッド プログラミングの適切なプログラミング規則 \(つまり、書き込み時のロック\) に従います。  
+-   フリー スレッドのプログラミング (つまり、書き込み時のロック) の規則に従って適切なプログラミングします。  
   
-## 参照  
- [高度なプロバイダー手法](../Topic/Advanced%20Provider%20Techniques.md)
+## <a name="see-also"></a>関連項目  
+ [高度なプロバイダー手法](../../data/oledb/advanced-provider-techniques.md)

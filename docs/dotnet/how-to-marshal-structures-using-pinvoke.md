@@ -1,54 +1,54 @@
 ---
-title: "方法: PInvoke を使用して構造体をマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ マーシャリング [C++], 構造体"
-  - "相互運用 [C++], 構造体"
-  - "マーシャリング [C++], 構造体"
-  - "プラットフォーム呼び出し [C++], 構造体"
+title: "方法: PInvoke を使用してマーシャ リング構造体 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- data marshaling [C++], structures
+- platform invoke [C++], structures
+- interop [C++], structures
+- marshaling [C++], structures
 ms.assetid: 35997e6f-9251-4af3-8c6e-0712d64d6a5d
-caps.latest.revision: 30
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 28
+caps.latest.revision: "30"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 52fa9aece3f31cf20029e58352d459f91bb56526
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: PInvoke を使用して構造体をマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このドキュメントでは、P\/Invoke を使用して <xref:System.String> のインスタンスを提供するマネージ関数から、C スタイルの文字列を受け入れるネイティブ関数を呼び出す方法を説明します。  P\/Invoke はほとんどコンパイル時のエラーを報告せず、タイプ セーフでなく、実装に時間がかかることがあるため、P\/Invoke の代わりに C\+\+ Interop を使用することが推奨されていますが、アンマネージ API が DLL としてパッケージされてソース コードとして使用できない場合は、P\/Invoke を使用する以外に方法はありません。  P\/Invoke を使用しない場合は、次のドキュメントを参照してください。  
+# <a name="how-to-marshal-structures-using-pinvoke"></a>方法: PInvoke を使用して構造体をマーシャリングする
+このドキュメントには、C スタイルの文字列は、のインスタンスを提供するマネージ関数から呼び出すことがそのまま使用するネイティブ関数がについて説明します<xref:System.String>P/invoke を使用しています。 代わりに、C++ Interop 機能を使用することをお勧めします P/invoke P/invoke はほとんどのコンパイル時エラーを報告があるので、タイプ セーフではありませんしを実装する、アンマネージ API が DLL としてパッケージ化され、ソース コードが面倒になることができます。P/invoke は唯一のオプションを使用できる、です。 それ以外の場合、次のドキュメントを参照してください。  
   
--   [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)  
+-   [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)  
   
--   [How to: Marshal Structures Using PInvoke](../dotnet/how-to-marshal-structures-using-pinvoke.md)  
+-   [方法: PInvoke を使用して構造体をマーシャリングする](../dotnet/how-to-marshal-structures-using-pinvoke.md)  
   
- ネイティブ構造体とマネージ構造体は、既定では、メモリ上で別々にレイアウトされているため、マネージ境界またはアンマネージ境界を超えて構造体を正しく渡すには、データの整合性を維持するための特別な手順が必要です。  
+ 既定では、ネイティブおよびマネージ構造体レイアウトが異なる、メモリ内、正常に追加の手順をデータの整合性を維持するマネージ/アンマネージの境界を越えて構造体を渡すことが必要です。  
   
- このドキュメントは、ネイティブ構造体と等価なマネージ構造体を定義するために必要な手順、およびその結果の構造体をアンマネージ関数に渡す方法について説明します。  このドキュメントでは、文字列またはポインターを含まない単純な構造体を使用することを前提とします。  blittable でない相互運用性については、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」を参照してください。  P\/Invoke は、戻り値として blittable でない値を指定できません。  blittable 型の場合、マネージ コードとアンマネージ コードでの表現は同じになります。  詳細については、「[Blittable 型と非 Blittable 型](../Topic/Blittable%20and%20Non-Blittable%20Types.md)」を参照してください。  
+ このドキュメントでは、ネイティブの構造と結果の構造をアンマネージ関数に渡される方法に相当するマネージを定義するために必要な手順について説明します。 このドキュメントであると推定単純な構造体 — 文字列またはポインターを含まないもの — 使用されます。 非 blittable 型の相互運用性については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)です。 P/invoke では、戻り値として非 blittable 型を持つことはできません。 マネージ コードとアンマネージ コードで同じ表現である Blittable 型です。 詳細については、次を参照してください。 [blittable 型と非 Blittable 型](http://msdn.microsoft.com/Library/d03b050e-2916-49a0-99ba-f19316e5c1b3)です。  
   
- マネージ境界またはアンマネージ境界を超えて単純な blittable 構造体をマーシャリングするには、まず、各ネイティブ構造体のマネージ バージョンを定義する必要があります。  データ レイアウト以外のネイティブ バージョンとマネージ バージョンの 2 つの構造体の間に関係は存在しないので、これらの構造体には任意の有効な名前を指定できます。  したがって、マネージ バージョンには、ネイティブ バージョンと同じサイズのフィールドを同じ順序で含めることが重要です \(マネージ バージョンとネイティブ バージョンの構造体が等価であることを確認する機構はありません。したがって、互換性が維持されていない場合も、実行時までわかりません。  プログラマは、確実に 2 つの構造体に同じデータ レイアウトを構築する必要があります\)。  
+ 単純なをマーシャ リングするマネージ/アンマネージの境界を越えて blittable 型の構造体最初必要があります各ネイティブ構造体のマネージ バージョンが定義されています。 これらの構造体は、任意の有効な名前を持つことができます。2 つの構造、データ レイアウト以外のネイティブおよびマネージのバージョン間の関係はありません。 したがって、管理対象のバージョンには、サイズとネイティブ バージョンと同じ順序で同じフィールドが含まれている重要なは。 (非互換性は実行時までに明らかなならないため、構造体のマネージ コードとネイティブ バージョンが、同等であることを確認するメカニズムはありません。 これは 2 つの構造が同じデータ レイアウトを持つことを確認するプログラマの責任です。)  
   
- パフォーマンスの向上のために、マネージ構造体のメンバーを再配置する場合があるため、<xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性を使用して、構造体が連続して配置されていることを示す必要があります。  構造体のパッキング設定をネイティブ構造体が使用するのと同じものに明示的に設定するのも賢明な方法です \(ただし既定では、Visual C\+\+ は両方のマネージ コードに対して 8 バイトの構造体のパッキングを使用します\)。  
+ 使用する必要はパフォーマンス向上のためのマネージ構造体のメンバーを並べ替え場合があります、ため、<xref:System.Runtime.InteropServices.StructLayoutAttribute>構造が順番にレイアウトされることを示すために属性。 構造体のパッキング ネイティブ構造体で使用されるものと同じにする設定を明示的に設定することをお勧めします。 (が既定では、Visual C では、8 バイト構造体のマネージ コードの両方のパッキングします。)  
   
-1.  次に、構造体を受け入れるアンマネージ関数に対応するエントリ ポイントを宣言するには、<xref:System.Runtime.InteropServices.DllImportAttribute> を使用します。ただし、関数シグネチャ内ではマネージ バージョンの構造体を使用します。これは、この 2 つのバージョンの構造体に同じ名前を使用する場合は問題になります。  
+1.  次に、使用<xref:System.Runtime.InteropServices.DllImportAttribute>は問題にならないポイントに同じ名前の両方のバージョンを使用する場合、関数シグネチャに構造体のマネージ バージョンを使用して、構造体をそのまま使用するアンマネージ関数に対応するエントリ ポイントを宣言する、構造体。  
   
-2.  これで、マネージ コードは、マネージ バージョンの構造体を、実際にマネージ関数であるかのようにアンマネージ関数に渡すことができるようになりました。  次の例のように、値または参照のいずれかを使用してこれらの構造体を渡すことができます。  
+2.  今すぐ実際にはマネージ関数のように、マネージ コードは、構造体の管理対象のバージョンをアンマネージ関数に渡すことができます。 これらの構造体渡せる値か、参照によって次の例で示すようです。  
   
-## 使用例  
- 次のコードは、アンマネージ モジュールとマネージ モジュールで構成されます。  アンマネージ モジュールは、Location と呼ばれる構造体と、Location 構造体の 2 つのインスタンスを受け入れる GetDistance と呼ばれる関数を定義する DLL です。  2 つ目のモジュールは、GetDistance 関数をインポートするマネージ コマンド ライン アプリケーションですが、Location 構造体と等価のマネージ構造体である MLocation について GetDistance 関数を定義します。  実際には、2 つのバージョンの構造体に同じ名前を使用する場合がありますが、マネージ バージョンについて DllImport プロトタイプが定義されていることを示すため、ここでは両者に別々の名前を使用します。  
+## <a name="example"></a>例  
+ 次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールは、場所と場所の構造体の 2 つのインスタンスを受け入れる GetDistance をという名前の関数と呼ばれる構造を定義する DLL です。 2 番目のモジュールは、GetDistance 関数のインポートが MLocation 場所の構造体のマネージそれと同等の観点から定義する管理対象のコマンド ライン アプリケーションです。 実際にはこれらの同じ名前はおそらく; 構造の両方のバージョンを使用します。ただし、別の名前は、管理対象のバージョンの観点から DllImport プロトタイプが定義されていることを示すためにここで使用されます。  
   
- \/clr を指定してマネージ モジュールをコンパイルします。\/clr:pure を使用してもかまいません。  
+ マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
- ただし、DLL のどの部分も、従来の \#include ディレクティブを使用してのマネージ コードへの公開はしていません。  実際には、DLL には実行時にしかアクセスしないため、DllImport を使ってインポートされた関数についての問題は、コンパイル時には検出されません。  
+ 従来を使用してマネージ コードに、DLL の一部は公開されていませんことに注意してください #include ディレクティブです。 実際には、DLL は実行時にのみ、アクセスため DllImport でインポートされた関数に関する問題はコンパイル時に検出されません。  
   
 ```  
 // TraditionalDll3.cpp  
@@ -94,7 +94,7 @@ void InitLocation(Location* lp) {
 }  
 ```  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // MarshalStruct_pi.cpp  
@@ -133,9 +133,12 @@ int main() {
 }  
 ```  
   
-  **\[unmanaged\] loc1\(0,0\) loc2\(100,100\)**  
-**\[managed\] distance \= 141.42135623731**  
-**\[unmanaged\] Initializing location...**  
-**\[managed\] x\=50 y\=50**   
-## 参照  
- [C\+\+ での明示的な PInvoke \(DllImport 属性\) の使用方法 ](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)
+```Output  
+[unmanaged] loc1(0,0) loc2(100,100)  
+[managed] distance = 141.42135623731  
+[unmanaged] Initializing location...  
+[managed] x=50 y=50  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

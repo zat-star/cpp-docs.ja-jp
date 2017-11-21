@@ -1,27 +1,26 @@
 ---
-title: "3.1.5 omp_get_num_procs Function | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "3.1.5 omp_get_num_procs 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: bbfbf17b-0c68-4ba6-a25d-07c36ecb551f
-caps.latest.revision: 5
-caps.handback.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 48e91bb2e728111cf76649ce89efcf991c794782
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 3.1.5 omp_get_num_procs Function
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-`omp_get_num_procs` 関数の戻り値はプログラムの実行時に使用できる関数であるプロセッサの数によって呼び出されます。  形式は次のとおりです。  
+# <a name="315-ompgetnumprocs-function"></a>3.1.5 omp_get_num_procs 関数
+`omp_get_num_procs`関数は、関数が呼び出された時点で、プログラムに使用できるプロセッサの数を返します。 形式は次のとおりです。  
   
 ```  
 #include <omp.h>  

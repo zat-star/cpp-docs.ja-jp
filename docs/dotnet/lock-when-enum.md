@@ -1,34 +1,33 @@
 ---
-title: "lock_when Enum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::lock_when"
-  - "msclr.lock_when"
-  - "lock_when"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock_when 列挙型"
+title: "lock_when 列挙 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::lock_when
+- msclr.lock_when
+- lock_when
+dev_langs: C++
+helpviewer_keywords: lock_when enum
 ms.assetid: 6b87bbe9-63cd-450d-a02e-bb91ffd0dcea
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c13325f92f3b17f5881be1deffd9710108ecf4be
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# lock_when Enum
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Translate 無制限のロックを延期しました。  
+# <a name="lockwhen-enum"></a>lock_when Enum
+遅延のロックを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 enum lock_when {  
@@ -36,11 +35,11 @@ enum lock_when {
 };  
 ```  
   
-## 解説  
- [lock::lock](../dotnet/lock-lock.md)に渡されると、`lock_later` はロックで実行される必要があることを指定します。  
+## <a name="remarks"></a>コメント  
+ 渡される[lock::lock](../dotnet/lock-lock.md)、`lock_later`ロックがいないに今すぐ実行することを指定します。  
   
-## 使用例  
- この例は、複数のスレッド間でクラスの単一のインスタンスを使用します。クラスは、データへのアクセスが各スレッドに対して一貫していることを確認するために、独自のロックを使用します。メイン アプリケーション スレッドは、ワーカー スレッドがまだ、すべてのワーカー スレッド終了まで待機が完了したタスクを定期的に確認するために、クラス インスタンスの同じロックを使用します。  
+## <a name="example"></a>例  
+ この例では、複数のスレッド間でクラスの 1 つのインスタンスで使用します。  クラスは、その内部データへのアクセスがスレッドごとに一貫していることを確認するのに自体に対するロックを使用します。  メイン アプリケーション スレッドは、ワーカー スレッドがまだ存在していて、そのタスクを完了したすべてのワーカー スレッドまで終了を待機を定期的に確認するクラスの同じインスタンスでロックを使用します。  
   
 ```  
 // msl_lock_lock_when.cpp  
@@ -114,21 +113,24 @@ int main() {
 }  
 ```  
   
-  **スレッド 3 で、カウンター \= 0**  
-**スレッド 3 で、カウンター \= 10**  
-**スレッド 5 で、カウンター \= 0**  
-**スレッド 5 で、カウンター \= 10**  
-**スレッド 7 で、カウンター \= 0**  
-**スレッド 7 で、カウンター \= 10**  
-**スレッド 4 で、カウンター \= 0**  
-**スレッド 4 で、カウンター \= 10**  
-**スレッド 6 で、カウンター \= 0**  
-**スレッド 6 で、カウンター \= 10**  
-**完了しているすべてのスレッド。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+In thread 3, Counter = 0  
+In thread 3, Counter = 10  
+In thread 5, Counter = 0  
+In thread 5, Counter = 10  
+In thread 7, Counter = 0  
+In thread 7, Counter = 10  
+In thread 4, Counter = 0  
+In thread 4, Counter = 10  
+In thread 6, Counter = 0  
+In thread 6, Counter = 10  
+All threads completed.  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
  [lock](../dotnet/lock.md)

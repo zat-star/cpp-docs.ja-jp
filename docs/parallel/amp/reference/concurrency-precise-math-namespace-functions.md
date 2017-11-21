@@ -1,5 +1,5 @@
 ---
-title: "Concurrency::precise_math 名前空間関数 |Microsoft ドキュメント"
+title: "Concurrency::precise_math 名前空間の関数 |Microsoft ドキュメント"
 ms.custom: 
 ms.date: 11/04/2016
 ms.reviewer: 
@@ -94,18 +94,17 @@ f1_keywords:
 - amp_math/Concurrency::precise_math::tgamma
 - amp_math/Concurrency::precise_math::trunc
 - amp_math/Concurrency::precise_math::truncf
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: fae53ab4-d1c5-45bb-a6a0-a74258e9aea3
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 727bbabf3c3b016e7c2666e3f77cf15b7e36d2a8
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 2f11d008afed6743594043ee2dd95d98c09f5505
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="concurrencyprecisemath-namespace-functions"></a>Concurrency::precise_math 名前空間の関数
 ||||  
@@ -141,7 +140,7 @@ ms.lasthandoff: 03/17/2017
 |[modff](#modff)|[nan](#nan)|[nanf](#nanf)|  
 |[nearbyint](#nearbyint)|[nearbyintf](#nearbyintf)|[nextafter](#nextafter)|  
 |[nextafterf](#nextafterf)|[phi](#phi)|[phif](#phif)|  
-|[pow](#pow)|[powf](#powf)|[プロビット](#probit)|  
+|[pow](#pow)|[powf](#powf)|[probit](#probit)|  
 |[probitf](#probitf)|[rcbrt](#rcbrt)|[rcbrtf](#rcbrtf)|  
 |[remainder](#remainder)|[remainderf](#remainderf)|[remquo](#remquo)|  
 |[remquof](#remquof)|[round](#round)|[roundf](#roundf)|  
@@ -202,7 +201,7 @@ inline double acosh(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の双曲線逆余弦の値を返します  
+ 引数の逆双曲線余弦の値を返します  
   
 ##  <a name="acoshf"></a>acoshf  
  引数の逆ハイパーボリック コサインを計算します。  
@@ -216,7 +215,7 @@ inline float acoshf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の双曲線逆余弦の値を返します  
+ 引数の逆双曲線余弦の値を返します  
   
 ##  <a name="asin"></a>  asin  
  引数の逆正弦を計算します。  
@@ -250,7 +249,7 @@ inline float asinf(float _X) restrict(amp);
  引数の逆正弦値を返します  
   
 ##  <a name="asinh"></a>asinh  
- 引数の双曲線逆正弦を計算します。  
+ 引数の双曲線逆正弦を計算します  
   
 ```  
 inline float asinh(float _X) restrict(amp);
@@ -264,10 +263,10 @@ inline double asinh(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の双曲線逆正弦値を返します  
+ 引数の逆双曲線正弦の値を返します  
   
 ##  <a name="asinhf"></a>asinhf  
- 引数の双曲線逆正弦を計算します。  
+ 引数の双曲線逆正弦を計算します  
   
 ```  
 inline float asinhf(float _X) restrict(amp);
@@ -278,7 +277,7 @@ inline float asinhf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の双曲線逆正弦値を返します  
+ 引数の逆双曲線正弦の値を返します  
   
 ##  <a name="atan"></a>  atan  
  引数の逆正接を計算します。  
@@ -355,7 +354,7 @@ inline float atanf(float _X) restrict(amp);
  引数の逆正接値を返します  
   
 ##  <a name="atanh"></a>atanh  
- 引数の双曲線逆正接を計算します。  
+ 引数の双曲線逆正接を計算します  
   
 ```  
 inline float atanh(float _X) restrict(amp);
@@ -372,7 +371,7 @@ inline double atanh(double _X) restrict(amp);
  引数の逆双曲線正接の値を返します  
   
 ##  <a name="atanhf"></a>atanhf  
- 引数の双曲線逆正接を計算します。  
+ 引数の双曲線逆正接を計算します  
   
 ```  
 inline float atanhf(float _X) restrict(amp);
@@ -386,7 +385,7 @@ inline float atanhf(float _X) restrict(amp);
  引数の逆双曲線正接の値を返します  
   
 ##  <a name="cbrt"></a>cbrt  
- 引数の実際の立方根を計算します。  
+ 引数の実際の立方根を計算します  
   
 ```  
 inline float cbrt(float _X) restrict(amp);
@@ -403,7 +402,7 @@ inline double cbrt(double _X) restrict(amp);
  引数の実際の立方根を返します  
   
 ##  <a name="cbrtf"></a>cbrtf  
- 引数の実際の立方根を計算します。  
+ 引数の実際の立方根を計算します  
   
 ```  
 inline float cbrtf(float _X) restrict(amp);
@@ -448,7 +447,7 @@ inline float ceilf(float _X) restrict(amp);
  引数の切り上げ値を返します  
   
 ##  <a name="copysign"></a>copysign  
- 引数の絶対値 _X と _Y の符号を持つ値が生成されます。  
+ 引数の絶対値 _X と _Y の符号と値を生成します。  
   
 ```  
 inline float copysign(
@@ -469,10 +468,10 @@ inline double copysign(
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の絶対値 _X と _Y の符号を持つ値を返します  
+ 引数の絶対値 _X と _Y の符号と値を返します  
   
 ##  <a name="copysignf"></a>copysignf  
- 引数の絶対値 _X と _Y の符号を持つ値が生成されます。  
+ 引数の絶対値 _X と _Y の符号と値を生成します。  
   
 ```  
 inline float copysignf(
@@ -488,7 +487,7 @@ inline float copysignf(
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の絶対値 _X と _Y の符号を持つ値を返します  
+ 引数の絶対値 _X と _Y の符号と値を返します  
   
 ##  <a name="cos"></a>  cos  
  引数の余弦を計算します。  
@@ -553,7 +552,7 @@ inline float coshf(float _X) restrict(amp);
  引数の双曲線余弦の値を返します  
   
 ##  <a name="cospi"></a>cospi  
- Pi の余弦の値が計算されます * _X  
+ Pi のコサインの値を計算 * _X  
   
 ```  
 inline float cospi(float _X) restrict(amp);
@@ -567,10 +566,10 @@ inline double cospi(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- Pi の余弦の値を返す * _X  
+ Pi の余弦の値を返します * _X  
   
 ##  <a name="cospif"></a>cospif  
- Pi の余弦の値が計算されます * _X  
+ Pi のコサインの値を計算 * _X  
   
 ```  
 inline float cospif(float _X) restrict(amp);
@@ -581,10 +580,10 @@ inline float cospif(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- Pi の余弦の値を返す * _X  
+ Pi の余弦の値を返します * _X  
   
 ##  <a name="erf"></a>erf 関数  
- _X のエラー関数を計算します。  
+ _X の誤差関数を計算します  
   
 ```  
 inline float erf(float _X) restrict(amp);
@@ -632,7 +631,7 @@ inline float erfcf(float _X) restrict(amp);
  _X の相補誤差関数を返します  
   
 ##  <a name="erfcinv"></a>erfcinv  
- _X の逆の相補誤差関数を計算します。  
+ _X の逆相補誤差関数を計算します。  
   
 ```  
 inline float erfcinv(float _X) restrict(amp);
@@ -646,10 +645,10 @@ inline double erfcinv(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の逆の相補誤差関数を返します  
+ _X の逆相補誤差関数を返します  
   
 ##  <a name="erfcinvf"></a>erfcinvf  
- _X の逆の相補誤差関数を計算します。  
+ _X の逆相補誤差関数を計算します。  
   
 ```  
 inline float erfcinvf(float _X) restrict(amp);
@@ -660,10 +659,10 @@ inline float erfcinvf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の逆の相補誤差関数を返します  
+ _X の逆相補誤差関数を返します  
   
 ##  <a name="erff"></a>erff  
- _X のエラー関数を計算します。  
+ _X の誤差関数を計算します  
   
 ```  
 inline float erff(float _X) restrict(amp);
@@ -708,7 +707,7 @@ inline float erfinvf(float _X) restrict(amp);
  _X の逆関数します。  
   
 ##  <a name="exp10"></a>exp10  
- 底&10; する引数のべき乗を計算します。  
+ 底 10 する引数のべき乗を計算します  
   
 ```  
 inline float exp10(float _X) restrict(amp);
@@ -722,10 +721,10 @@ inline double exp10(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 底&10; する引数のべき乗を返します。  
+ 底が 10 をする引数のべき乗を返します  
   
 ##  <a name="exp10f"></a>exp10f  
- 底&10; する引数のべき乗を計算します。  
+ 底 10 する引数のべき乗を計算します  
   
 ```  
 inline float exp10f(float _X) restrict(amp);
@@ -736,7 +735,7 @@ inline float exp10f(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 底&10; する引数のべき乗を返します。  
+ 底が 10 をする引数のべき乗を返します  
   
 ##  <a name="expm1"></a>expm1  
  e を底とする引数のべき乗マイナス 1 を計算します。  
@@ -750,7 +749,7 @@ inline double expm1(double exponent) restrict(amp);
   
 ### <a name="parameters"></a>パラメーター  
  `exponent`  
- 指数項*n*算術式の`e` <sup>n</sup>ここで、`e`自然対数の底です。  
+ 指数用語 *n* 算術式の`e` <sup> n</sup>ここで、`e`自然対数の底です。  
   
 ### <a name="return-value"></a>戻り値  
  e を底とする引数のべき乗マイナス 1 を返します。  
@@ -764,7 +763,7 @@ inline float expm1f(float exponent) restrict(amp);
   
 ### <a name="parameters"></a>パラメーター  
  `exponent`  
- 指数項*n*算術式の`e` <sup>n</sup>ここで、`e`自然対数の底です。  
+ 指数用語 *n* 算術式の`e` <sup> n</sup>ここで、`e`自然対数の底です。  
   
 ### <a name="return-value"></a>戻り値  
  e を底とする引数のべき乗マイナス 1 を返します。  
@@ -895,7 +894,7 @@ inline float fdimf(
 ### <a name="return-value"></a>戻り値
 _X と _Y _X の _Y; より大きい場合の違いそれ以外の場合、+0。 
   
-##  <a name="floor"></a>フロア  
+##  <a name="floor"></a>floor  
  引数の切り捨てを計算します。  
   
 ```  
@@ -910,7 +909,7 @@ inline double floor(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の切り捨て値を返します  
+ 引数の切り捨てを返します  
   
 ##  <a name="floorf"></a>floorf  
  引数の切り捨てを計算します。  
@@ -924,10 +923,10 @@ inline float floorf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の切り捨て値を返します  
+ 引数の切り捨てを返します  
 
 ## <a name="a-namefma-fma"></a><a name="fma">fma  
-1 番目と&2; 番目に指定された引数の積を計算し、その結果に&3; 番目に指定された引数を加えます。全体の計算は単一の操作として実行されます。
+1 番目と 2 番目に指定された引数の積を計算し、その結果に 3 番目に指定された引数を加えます。全体の計算は単一の操作として実行されます。
 ```
 inline float fma(
    float _X,
@@ -947,10 +946,10 @@ inline double fma(
 `_Z`3 番目の浮動小数点引数。
 
 ### <a name="return-value"></a>戻り値
-式の結果 (_X * _Y) + _Z します。 全体の計算は単一の操作として実行されます。つまり、サブ式は無限の精度で計算され、最終結果だけが丸められます。 
+式の結果 (_X * _Y) + _Z です。 全体の計算は単一の操作として実行されます。つまり、サブ式は無限の精度で計算され、最終結果だけが丸められます。 
 
 ## <a name="fmaf"></a>fmaf  
-1 番目と&2; 番目に指定された引数の積を計算し、その結果に&3; 番目に指定された引数を加えます。全体の計算は単一の操作として実行されます。
+1 番目と 2 番目に指定された引数の積を計算し、その結果に 3 番目に指定された引数を加えます。全体の計算は単一の操作として実行されます。
 ```
 inline float fmaf(
    float _X,
@@ -964,7 +963,7 @@ inline float fmaf(
 `_Z`3 番目の浮動小数点引数。
 
 ### <a name="return-value"></a>戻り値
-式の結果 (_X * _Y) + _Z します。 全体の計算は単一の操作として実行されます。つまり、サブ式は無限の精度で計算され、最終結果だけが丸められます。
+式の結果 (_X * _Y) + _Z です。 全体の計算は単一の操作として実行されます。つまり、サブ式は無限の精度で計算され、最終結果だけが丸められます。
   
 ##  <a name="fmax"></a>fmax  
  引数の最大数値を判断します。  
@@ -1053,7 +1052,7 @@ inline float fminf(
  引数の最小数値を返します。  
   
 ##  <a name="fmod"></a>fmod 関数 (C++ AMP)  
- 2 番目の指定された引数で除算した&1; 番目の指定された引数の剰余を計算します。  
+ 2 番目の指定された引数で除算した 1 番目の指定された引数の剰余を計算します。  
   
 ```  
 inline float fmod(
@@ -1074,10 +1073,10 @@ inline double fmod(
  2 番目の浮動小数点引数。  
   
 ### <a name="return-value"></a>戻り値  
- 残りの部分`_X`で割った値`_Y`; の値である、 `_X`  -  `_Y` *n*ここで、 *n*整数は、ようにの大きさ`_X`  -  `_Y` *n*の絶対値よりも小さい`_Y`します。  
+ 残りの部分`_X`で割った値`_Y`; の値である、 `_X`  -  `_Y`  *n*ここで、  *n* は、整数になるようの大きさ`_X`  -  `_Y`  *n* がの絶対値よりも小さい`_Y`です。  
   
 ##  <a name="fmodf"></a>fmodf  
- 2 番目の指定された引数で除算した&1; 番目の指定された引数の剰余を計算します。  
+ 2 番目の指定された引数で除算した 1 番目の指定された引数の剰余を計算します。  
   
 ```  
 inline float fmodf(
@@ -1093,10 +1092,10 @@ inline float fmodf(
  2 番目の浮動小数点引数。  
   
 ### <a name="return-value"></a>戻り値  
- 残りの部分`_X`で割った値`_Y`; の値である、 `_X`  -  `_Y` *n*ここで、 *n*整数は、ようにの大きさ`_X`  -  `_Y` *n*の絶対値よりも小さい`_Y`します。  
+ 残りの部分`_X`で割った値`_Y`; の値である、 `_X`  -  `_Y`  *n*ここで、  *n* は、整数になるようの大きさ`_X`  -  `_Y`  *n* がの絶対値よりも小さい`_Y`です。  
   
 ##  <a name="fpclassify"></a>fpclassify  
- 引数の値を NaN、無限、通常、ある、0 と分類します。  
+ 引数の値に NaN、無限、通常のある、0 として分類します。  
   
 ```  
 inline int fpclassify(float _X) restrict(amp);
@@ -1131,7 +1130,7 @@ inline double frexp(
  浮動小数点値  
   
  `_Exp`  
- 浮動小数点値の _X の整数の指数を返します  
+ 浮動小数点値での _X の整数の指数を返します  
   
 ### <a name="return-value"></a>戻り値  
  仮数 _X を返します  
@@ -1150,13 +1149,13 @@ inline float frexpf(
  浮動小数点値  
   
  `_Exp`  
- 浮動小数点値の _X の整数の指数を返します  
+ 浮動小数点値での _X の整数の指数を返します  
   
 ### <a name="return-value"></a>戻り値  
  仮数 _X を返します  
   
 ##  <a name="hypot"></a>hypot  
- _X と _Y の平方和の平方根を計算します。  
+ _X と _Y の 2 乗の合計の平方根を計算します。  
   
 ```  
 inline float hypot(
@@ -1180,7 +1179,7 @@ inline double hypot(
  _X と _Y の平方和の平方根を返します  
   
 ##  <a name="hypotf"></a>hypotf  
- _X と _Y の平方和の平方根を計算します。  
+ _X と _Y の 2 乗の合計の平方根を計算します。  
   
 ```  
 inline float hypotf(
@@ -1244,7 +1243,7 @@ inline int isfinite(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数は有限値を持つ場合にのみ、0 以外の値を返します  
+ 引数に有限値がある場合にのみ、0 以外の値を返します  
   
 ##  <a name="isinf"></a>isinf  
  引数が無限値であるかどうかを判断します。  
@@ -1281,7 +1280,7 @@ inline int isnan(double _X) restrict(amp);
  引数が NaN 値を持つ場合にのみ、0 以外の値を返します  
   
 ##  <a name="isnormal"></a>isnormal  
- 引数が通常のかどうかを判断します。  
+ 引数は、通常、かどうかを決定します。  
   
 ```  
 inline int isnormal(float _X) restrict(amp);
@@ -1295,7 +1294,7 @@ inline int isnormal(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数は、標準の値を持つ場合にのみ、0 以外の値を返します  
+ 引数が標準の値を持つ場合にのみ、0 以外の値を返します  
   
 ##  <a name="ldexp"></a>ldexp  
  指定された仮数と指数から実数を計算します。  
@@ -1341,7 +1340,7 @@ inline float ldexpf(
  _X * 2^_Exp を返します  
   
 ##  <a name="lgamma"></a>lgamma  
- ガンマ値、引数の絶対値の自然対数を計算します。  
+ ガンマ値、引数の絶対値の自然対数を計算します  
   
 ```  
 inline float lgamma(
@@ -1365,7 +1364,7 @@ inline double lgamma(
  ガンマ値、引数の絶対値の自然対数を返します  
   
 ##  <a name="lgammaf"></a>lgammaf  
- ガンマ値、引数の絶対値の自然対数を計算します。  
+ ガンマ値、引数の絶対値の自然対数を計算します  
   
 ```  
 inline float lgammaf(
@@ -1415,7 +1414,7 @@ inline double log10(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="log10f"></a>log10f  
  10 を底とする引数の対数を計算します。  
@@ -1429,10 +1428,10 @@ inline float log10f(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="log1p"></a>log1p  
- 1 と引数の e を底と対数を計算します。  
+ 1 を足した引数の e を底と対数を計算します。  
   
 ```  
 inline float log1p(float _X) restrict(amp);
@@ -1446,10 +1445,10 @@ inline double log1p(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 1 と引数の e を底と対数を返します  
+ 1 を足した引数の e を底と対数を返します  
   
 ##  <a name="log1pf"></a>log1pf  
- 1 と引数の e を底と対数を計算します。  
+ 1 を足した引数の e を底と対数を計算します。  
   
 ```  
 inline float log1pf(float _X) restrict(amp);
@@ -1460,7 +1459,7 @@ inline float log1pf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 1 と引数の e を底と対数を返します  
+ 1 を足した引数の e を底と対数を返します  
   
 ##  <a name="log2"></a>log2  
  2 を底とする引数の対数を計算します。  
@@ -1477,7 +1476,7 @@ inline double log2(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="log2f"></a>log2f  
  2 を底とする引数の対数を計算します。  
@@ -1491,10 +1490,10 @@ inline float log2f(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の底&10; の対数を返します  
+ 引数の底 10 の対数を返します  
   
 ##  <a name="logb"></a>logb  
- 浮動小数点形式での符号付き整数値として、_X の指数部を抽出します。  
+ 浮動小数点形式で符号付き整数値として、_X の指数部を抽出します。  
   
 ```  
 inline float logb(float _X) restrict(amp);
@@ -1511,7 +1510,7 @@ inline double logb(double _X) restrict(amp);
  _X の符号付き指数を返します  
   
 ##  <a name="logbf"></a>logbf  
- 浮動小数点形式での符号付き整数値として、_X の指数部を抽出します。  
+ 浮動小数点形式で符号付き整数値として、_X の指数部を抽出します。  
   
 ```  
 inline float logbf(float _X) restrict(amp);
@@ -1593,7 +1592,7 @@ inline double nan(int _X) restrict(amp);
  整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X に示されている内容で、使用可能な場合は、簡易な NaN を返します  
+ _X に示されているコンテンツを使用可能な場合は簡易な NaN を返します  
   
 ##  <a name="nanf"></a>nanf  
  簡易な NaN を返します  
@@ -1607,10 +1606,10 @@ inline float nanf(int _X) restrict(amp);
  整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X に示されている内容で、使用可能な場合は、簡易な NaN を返します  
+ _X に示されているコンテンツを使用可能な場合は簡易な NaN を返します  
   
 ##  <a name="nearbyint"></a>nearbyint  
- 現在の丸めの方向を使用して、浮動小数点形式の整数値への引数を丸めます。  
+ 現在の丸めの方向を使用して、浮動小数点形式で整数値への引数を丸めます。  
   
 ```  
 inline float nearbyint(float _X) restrict(amp);
@@ -1627,7 +1626,7 @@ inline double nearbyint(double _X) restrict(amp);
  丸められた整数値を返します。  
   
 ##  <a name="nearbyintf"></a>nearbyintf  
- 現在の丸めの方向を使用して、浮動小数点形式の整数値への引数を丸めます。  
+ 現在の丸めの方向を使用して、浮動小数点形式で整数値への引数を丸めます。  
   
 ```  
 inline float nearbyintf(float _X) restrict(amp);
@@ -1730,7 +1729,7 @@ inline double pow(
   
 ### <a name="parameters"></a>パラメーター  
  `_X`  
- 基本浮動小数点の値  
+ 基本浮動小数点値  
   
  `_Y`  
  浮動小数点値、指数  
@@ -1748,14 +1747,14 @@ inline float powf(
   
 ### <a name="parameters"></a>パラメーター  
  `_X`  
- 基本浮動小数点の値  
+ 基本浮動小数点値  
   
  `_Y`  
  浮動小数点値、指数  
   
 ### <a name="return-value"></a>戻り値  
   
-##  <a name="probit"></a>プロビット  
+##  <a name="probit"></a>probit  
  引数の逆累積分布関数を返します  
   
 ```  
@@ -1787,7 +1786,7 @@ inline float probitf(float _X) restrict(amp);
  引数の逆累積分布関数を返します  
   
 ##  <a name="rcbrt"></a>rcbrt  
- 引数の平方根の逆数を返します。  
+ キューブのルート、引数の逆数を返します。  
   
 ```  
 inline float rcbrt(float _X) restrict(amp);
@@ -1801,10 +1800,10 @@ inline double rcbrt(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の平方根の逆数を返します。  
+ キューブのルート、引数の逆数を返します。  
   
 ##  <a name="rcbrtf"></a>rcbrtf  
- 引数の平方根の逆数を返します。  
+ キューブのルート、引数の逆数を返します。  
   
 ```  
 inline float rcbrtf(float _X) restrict(amp);
@@ -1815,7 +1814,7 @@ inline float rcbrtf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- 引数の平方根の逆数を返します。  
+ キューブのルート、引数の逆数を返します。  
   
 ##  <a name="remainder"></a>残りの部分  
  剰余を計算します _X REM _Y。  
@@ -1861,7 +1860,7 @@ inline float remainderf(
  _X REM _Y を返します  
   
 ##  <a name="remquo"></a>remquo  
- 2 番目の指定された引数で除算した&1; 番目の指定された引数の剰余を計算します。 また、1 番目に指定された引数の有効桁数を&2; 番目に指定された引数の有効桁で割った商を計算し、3 番目の引数で指定された位置を使用して商を返します。  
+ 2 番目の指定された引数で除算した 1 番目の指定された引数の剰余を計算します。 また、1 番目に指定された引数の有効桁数を 2 番目に指定された引数の有効桁で割った商を計算し、3 番目の引数で指定された位置を使用して商を返します。  
   
 ```  
 inline float remquo(
@@ -1890,7 +1889,7 @@ inline double remquo(
  `_X` を `_Y` で割った剰余を返します。  
   
 ##  <a name="remquof"></a>remquof  
- 2 番目の指定された引数で除算した&1; 番目の指定された引数の剰余を計算します。 また、1 番目に指定された引数の有効桁数を&2; 番目に指定された引数の有効桁で割った商を計算し、3 番目の引数で指定された位置を使用して商を返します。  
+ 2 番目の指定された引数で除算した 1 番目の指定された引数の剰余を計算します。 また、1 番目に指定された引数の有効桁数を 2 番目に指定された引数の有効桁で割った商を計算し、3 番目の引数で指定された位置を使用して商を返します。  
   
 ```  
 inline float remquof(
@@ -1912,7 +1911,7 @@ inline float remquof(
 ### <a name="return-value"></a>戻り値  
  `_X` を `_Y` で割った剰余を返します。  
   
-##  <a name="round"></a>ラウンド  
+##  <a name="round"></a>丸める  
  _X を最も近い整数値に丸めます。  
   
 ```  
@@ -1975,7 +1974,7 @@ inline float rsqrtf(float _X) restrict(amp);
  引数の平方根の逆数を返します。  
   
 ##  <a name="scalb"></a>scalb  
- 電源 _Y に FLT_RADIX により _X を乗算します。  
+ 乗算する電源 _Y FLT_RADIX により _X  
   
 ```  
 inline float scalb(
@@ -1996,10 +1995,10 @@ inline double scalb(
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X を返す * (FLT_RADIX ^ _Y)  
+ _X を返します * (FLT_RADIX ^ _Y)  
   
 ##  <a name="scalbf"></a>scalbf  
- 電源 _Y に FLT_RADIX により _X を乗算します。  
+ 乗算する電源 _Y FLT_RADIX により _X  
   
 ```  
 inline float scalbf(
@@ -2015,10 +2014,10 @@ inline float scalbf(
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X を返す * (FLT_RADIX ^ _Y)  
+ _X を返します * (FLT_RADIX ^ _Y)  
   
 ##  <a name="scalbn"></a>scalbn  
- 電源 _Y に FLT_RADIX により _X を乗算します。  
+ 乗算する電源 _Y FLT_RADIX により _X  
   
 ```  
 inline float scalbn(
@@ -2039,10 +2038,10 @@ inline double scalbn(
  整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X を返す * (FLT_RADIX ^ _Y)  
+ _X を返します * (FLT_RADIX ^ _Y)  
   
 ##  <a name="scalbnf"></a>scalbnf  
- 電源 _Y に FLT_RADIX により _X を乗算します。  
+ 乗算する電源 _Y FLT_RADIX により _X  
   
 ```  
 inline float scalbnf(
@@ -2058,7 +2057,7 @@ inline float scalbnf(
  整数値  
   
 ### <a name="return-value"></a>戻り値  
- _X を返す * (FLT_RADIX ^ _Y)  
+ _X を返します * (FLT_RADIX ^ _Y)  
   
 ##  <a name="signbit"></a>signbit  
  _X の符号が負の値であるかどうかを決定します。  
@@ -2075,7 +2074,7 @@ inline int signbit(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号が負の値場合にのみ、0 以外の値を返します  
+ _X の符号が負の場合にのみ、0 以外の値を返します  
   
 ##  <a name="signbitf"></a>signbitf  
  _X の符号が負の値であるかどうかを決定します。  
@@ -2089,7 +2088,7 @@ inline int signbitf(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- _X の符号が負の値場合にのみ、0 以外の値を返します  
+ _X の符号が負の場合にのみ、0 以外の値を返します  
   
 ##  <a name="sin"></a>  sin  
  引数の正弦値を計算します。  
@@ -2200,7 +2199,7 @@ inline float sinhf(float _X) restrict(amp);
  引数の双曲線正弦の値を返します  
   
 ##  <a name="sinpi"></a>sinpi  
- Pi のサイン (正弦) 値を計算 * _X  
+ Pi の正弦値を計算 * _X  
   
 ```  
 inline float sinpi(float _X) restrict(amp);
@@ -2214,10 +2213,10 @@ inline double sinpi(double _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- Pi のサイン (正弦) 値を返す * _X  
+ Pi の正弦値を返します * _X  
   
 ##  <a name="sinpif"></a>sinpif  
- Pi のサイン (正弦) 値を計算 * _X  
+ Pi の正弦値を計算 * _X  
   
 ```  
 inline float sinpif(float _X) restrict(amp);
@@ -2228,7 +2227,7 @@ inline float sinpif(float _X) restrict(amp);
  浮動小数点値  
   
 ### <a name="return-value"></a>戻り値  
- Pi のサイン (正弦) 値を返す * _X  
+ Pi の正弦値を返します * _X  
   
 ##  <a name="sqrt"></a>  sqrt  
  引数の squre ルートを計算します。  
@@ -2418,4 +2417,3 @@ inline float truncf(float _X) restrict(amp);
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency::precise_math 名前空間](concurrency-precise-math-namespace.md)
-

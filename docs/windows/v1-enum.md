@@ -1,32 +1,30 @@
 ---
-title: "v1_enum | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.v1_enum"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "v1_enum attribute"
+title: "v1_enum |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.v1_enum
+dev_langs: C++
+helpviewer_keywords: v1_enum attribute
 ms.assetid: 2fe92d92-81b9-4a1c-b6ce-437d0eb770ca
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 93c11fec97b5ee239bfd929974c09709811837ff
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# v1_enum
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指定した列挙体が16 ビットの既定値ではなく 32 ビット エンティティとして送信するように指示します。  
+# <a name="v1enum"></a>v1_enum
+指定した列挙型は、既定の 16 ビットではなく、32 ビットのエンティティとして送信するように指示します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -34,11 +32,11 @@ caps.handback.revision: 9
   
 ```  
   
-## 解説  
- **v1\_enum** C\+\+ 属性に [v1\_enum](http://msdn.microsoft.com/library/windows/desktop/aa367303) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **V1_enum** C++ 属性と同じ機能を持つ、 [v1_enum](http://msdn.microsoft.com/library/windows/desktop/aa367303) MIDL 属性。  
   
-## 使用例  
- 次のコードは **v1\_enum** の使用方法を示します :  
+## <a name="example"></a>例  
+ 次のコードは、の使い方を示しています**v1_enum**:。  
   
 ```  
 // cpp_attr_ref_v1_enum.cpp  
@@ -52,20 +50,19 @@ enum eList {
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|列挙型|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [Typedef、Enum、Union、および Struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   

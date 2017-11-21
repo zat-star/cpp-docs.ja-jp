@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -44,35 +43,18 @@ f1_keywords:
 - AMPRT/Concurrency::accelerator::supports_double_precision
 - AMPRT/Concurrency::accelerator::supports_limited_double_precision
 - AMPRT/Concurrency::accelerator::version
-dev_langs:
-- C++
-helpviewer_keywords:
-- accelerator class
+dev_langs: C++
+helpviewer_keywords: accelerator class
 ms.assetid: 37eed593-cf87-4611-9cdc-e98df6c2377a
-caps.latest.revision: 29
+caps.latest.revision: "29"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: d1e68b3533452ec1e47053086c59654337c995fa
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 5bdb3d081e9f7f1c2333d8bc577401b95ab0f858
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="accelerator-class"></a>accelerator クラス
 アクセラレータは、データ並列計算用に最適化されたハードウェアの機能です。 アクセラレータは、PCIe バス (GPU など) にアタッチされているデバイスである場合や主要 CPU の拡張命令セットである場合があります。  
@@ -100,7 +82,7 @@ class accelerator;
 |[get_all](#get_all)|使用可能なすべてのアクセラレータを表す `accelerator` オブジェクトのベクターを返します。|  
 |[get_auto_selection_view](#get_auto_selection_view)|自動選択 `accelerator_view` を返します。|  
 |[get_dedicated_memory](#get_dedicated_memory)|`accelerator` の専用のメモリ (KB 単位) を返します。|  
-|[get_default_cpu_access_type](#get_default_cpu_access_type)|既定値を返す[access_type](concurrency-namespace-enums-amp.md#access_type)このアクセラレータで作成されるバッファーのです。|  
+|[get_default_cpu_access_type](#get_default_cpu_access_type)|既定値を返します[access_type](concurrency-namespace-enums-amp.md#access_type)このアクセラレータで作成されるバッファーのです。|  
 |[get_default_view](#get_default_view)|`accelerator_view` に関連付けられている既定の `accelerator` オブジェクトを返します。|  
 |[get_description](#get_description)|`accelerator` デバイスの短い説明を返します。|  
 |[get_device_path](#get_device_path)|デバイスのパスを返します。|  
@@ -112,7 +94,7 @@ class accelerator;
 |[get_supports_limited_double_precision](#get_supports_limited_double_precision)|`accelerator` が倍精度サポートを制限するかどうかを決定します。|  
 |[get_version](#get_version)|`accelerator` のバージョンを返します。|  
 |[set_default](#set_default)|既定のアクセラレータのパスを返します。|  
-|[set_default_cpu_access_type](#set_default_cpu_access_type)|既定の CPU 設定[access_type](concurrency-namespace-enums-amp.md#access_type)配列、およびこれに行われる暗黙的なメモリ割り当て`accelerator`します。|  
+|[set_default_cpu_access_type](#set_default_cpu_access_type)|既定の CPU 設定[access_type](concurrency-namespace-enums-amp.md#access_type)配列および暗黙的なメモリ割り当てがこれに加えられた`accelerator`です。|  
   
 ### <a name="public-operators"></a>パブリック演算子  
   
@@ -129,12 +111,12 @@ class accelerator;
 |[cpu_accelerator](#cpu_accelerator)|CPU `accelerator` の文字列定数を取得します。|  
 |[dedicated_memory](#dedicated_memory)|`accelerator` の専用のメモリ (KB 単位) を取得します。|  
 |[default_accelerator](#default_accelerator)|既定の `accelerator` の文字列定数を取得します。|  
-|[default_cpu_access_type](#default_cpu_access_type)|取得または設定の既定の CPU [access_type](concurrency-namespace-enums-amp.md#access_type)配列、およびこれに行われる暗黙的なメモリ割り当て`accelerator`します。|  
+|[default_cpu_access_type](#default_cpu_access_type)|取得または設定の既定の CPU [access_type](concurrency-namespace-enums-amp.md#access_type)配列および暗黙的なメモリ割り当てがこれに加えられた`accelerator`です。|  
 |[default_view](#default_view)|`accelerator_view` に関連付けられている既定の `accelerator` オブジェクトを取得します。|  
-|[説明](#description)|`accelerator` デバイスの短い説明を取得します。|  
+|[description](#description)|`accelerator` デバイスの短い説明を取得します。|  
 |[device_path](#device_path)|デバイスのパスを取得します。|  
 |[direct3d_ref](#direct3d_ref)|Direct3D 参照 `accelerator` の文字列定数を取得します。|  
-|[direct3d_warp](#direct3d_warp)|文字列の定数を取得、 `accelerator` Streaming SIMD Extensions (SSE) を使用するマルチコア Cpu で C++ AMP コードの実行に使用できるオブジェクトします。|  
+|[direct3d_warp](#direct3d_warp)|文字列の定数を取得、`accelerator`オブジェクトを Streaming SIMD Extensions (SSE) を使用するマルチコア Cpu で C++ AMP コードを実行するために使用します。|  
 |[has_display](#has_display)|`accelerator` がディスプレイにアタッチされているかどうかを示すブール値を取得します。|  
 |[is_debug](#is_debug)|`accelerator` に、広範なエラー レポートに有効なデバッグ レイヤーがあるかどうかを示します。|  
 |[is_emulated](#is_emulated)|`accelerator` がエミュレートされるかどうかを示します。|  
@@ -156,7 +138,7 @@ class accelerator;
   
  **名前空間:** Concurrency  
   
-##  <a name="dtor"></a></a> ~ アクセラレータ 
+##  <a name="dtor"></a></a> ~ accelerator 
 
  `accelerator` オブジェクトを破棄します。  
   
@@ -168,7 +150,7 @@ class accelerator;
   
 ##  <a name="ctor"></a>アクセラレータ 
 
- 新しいインスタンスを初期化、 [accelerator クラス](accelerator-class.md)します。  
+ 新しいインスタンスを初期化、 [accelerator クラス](accelerator-class.md)です。  
   
 ```  
 accelerator();
@@ -189,7 +171,7 @@ accelerator(const accelerator& _Other);
   
 ##  <a name="cpu_accelerator"></a>cpu_accelerator 
 
- CPU アクセラレータの文字列定数を取得します。  
+ CPU アクセラレータの定数文字列を取得します。  
   
 ```  
 static const wchar_t cpu_accelerator[];  
@@ -205,7 +187,7 @@ accelerator_view create_view(queuing_mode qmode = queuing_mode_automatic);
   
 ### <a name="parameters"></a>パラメーター  
  `qmode`  
- キュー モード。  
+ キュー モードです。  
   
 ### <a name="return-value"></a>戻り値  
  新しい`accelerator_view`指定されたキュー モードを使用して、このアクセラレータでのオブジェクト。  
@@ -228,7 +210,7 @@ static const wchar_t default_accelerator[];
   
 ##  <a name="default_cpu_access_type"></a>default_cpu_access_type 
 
- 既定の cpu [access_type](concurrency-namespace-enums-amp.md#access_type)配列および暗黙的なメモリの割り当てに対するこの`accelerator`します。  
+ 既定の cpu [access_type](concurrency-namespace-enums-amp.md#access_type)配列および暗黙的なメモリの割り当てに対するこの`accelerator`です。  
   
 ```  
 __declspec(property(get= get_default_cpu_access_type)) access_type default_cpu_access_type;  
@@ -260,7 +242,7 @@ __declspec(property(get= get_device_path)) std::wstring device_path;
   
 ##  <a name="direct3d_ref"></a>direct3d_ref 
 
- Direct3D 参照アクセラレータの文字列定数を取得します。  
+ Direct3D 参照アクセラレータの定数文字列を取得します。  
   
 ```  
 static const wchar_t direct3d_ref[];  
@@ -268,7 +250,7 @@ static const wchar_t direct3d_ref[];
   
 ##  <a name="direct3d_warp"></a>direct3d_warp 
 
- 文字列の定数を取得、 `accelerator` Streaming SIMD Extensions (SSE) を使用するマルチコア Cpu で C++ AMP コードの実行に使用できるオブジェクトします。  
+ 文字列の定数を取得、`accelerator`オブジェクトを Streaming SIMD Extensions (SSE) を使用するマルチコア Cpu で C++ AMP コードを実行するために使用します。  
   
 ```  
 static const wchar_t direct3d_warp[];  
@@ -346,7 +328,7 @@ std::wstring get_description() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 簡単な説明、`accelerator`デバイスです。  
+ 簡単な説明、`accelerator`デバイス。  
   
 ##  <a name="get_device_path"></a>get_device_path 
 
@@ -359,7 +341,7 @@ std::wstring get_device_path() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- 一意のデバイスをシステム全体にわたるインスタンスのパス。  
+ インスタンスのシステム全体の一意のデバイス パス。  
   
 ##  <a name="get_has_display"></a>get_has_display 
 
@@ -428,7 +410,7 @@ bool get_supports_double_precision() const;
   
 ##  <a name="get_supports_limited_double_precision"></a>get_supports_limited_double_precision 
 
- アクセラレータが倍精度演算のサポートを制限されているかどうかを示すブール値を返します。 アクセラレータが一部のみがサポート、乗算定着し、追加 (FMA)、除算、逆数、および間のキャスト`int`と`double`はサポートされていません。  
+ アクセラレータの倍精度演算のサポートが制限されているかどうかを示すブール値を返します。 アクセラレータが一部のみがサポート、乗算: fused し (fma)、除算、逆数、およびの間でキャスト`int`と`double`はサポートされていません。  
   
 ```  
 bool get_supports_limited_double_precision() const;
@@ -437,7 +419,7 @@ bool get_supports_limited_double_precision() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `true`アクセラレータの倍精度演算; のサポートが制限されている場合それ以外の場合、`false`です。  
+ `true`アクセラレータの倍精度演算; のサポートが少ない場合それ以外の場合、`false`です。  
   
 ##  <a name="get_version"></a>get_version 
 
@@ -462,7 +444,7 @@ __declspec(property(get= get_has_display)) bool has_display;
   
 ##  <a name="is_debug"></a>is_debug 
 
- 示すブール値を取得するかどうか、`accelerator`広範なエラー レポートに有効なデバッグ レイヤーを持ちます。  
+ 示すブール値を取得するかどうか、`accelerator`広範なエラー レポートに有効なデバッグ レイヤーがします。  
   
 ```  
 __declspec(property(get= get_is_debug)) bool is_debug;  
@@ -470,7 +452,7 @@ __declspec(property(get= get_is_debug)) bool is_debug;
   
 ##  <a name="is_emulated"></a>is_emulated 
 
- 示すブール値を取得するかどうか、`accelerator`がエミュレートされます。  
+ 示すブール値を取得するかどうか、`accelerator`はエミュレートされます。  
   
 ```  
 __declspec(property(get= get_is_emulated)) bool is_emulated;  
@@ -491,7 +473,7 @@ bool operator!= (const accelerator& _Other) const;
  `accelerator`これと比較するオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- `false`場合は、2 つ`accelerator`オブジェクトが等しい。 そうしないと、`true`です。  
+ `false`場合、2 つ`accelerator`オブジェクトが同一で、それ以外の`true`します。  
   
 ##  <a name="operator_eq"></a>演算子 = 
 
@@ -523,7 +505,7 @@ bool operator== (const accelerator& _Other) const;
  `accelerator`これと比較するオブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- `true`場合、その他の`accelerator`オブジェクトはこれと同じ`accelerator`オブジェクト。 それ以外の場合、`false`です。  
+ `true`場合、他の`accelerator`オブジェクトはこれと同じ`accelerator`オブジェクト。 それ以外の場合、`false`です。  
   
 ##  <a name="set_default"></a>set_default 
 
@@ -565,7 +547,7 @@ __declspec(property(get= get_supports_cpu_shared_memory)) bool supports_cpu_shar
   
 ##  <a name="supports_double_precision"></a>supports_double_precision 
 
- アクセラレータが倍精度浮動小数点演算をサポートするかどうかを示すブール値を取得します。  
+ アクセラレータが倍精度演算をサポートするかどうかを示すブール値を取得します。  
   
 ```  
 __declspec(property(get= get_supports_double_precision)) bool supports_double_precision;  
@@ -573,7 +555,7 @@ __declspec(property(get= get_supports_double_precision)) bool supports_double_pr
   
 ##  <a name="supports_limited_double_precision"></a>supports_limited_double_precision 
 
- アクセラレータが倍精度演算のサポートを制限されているかどうかを示すブール値を取得します。 アクセラレータが一部のみがサポート、乗算定着し、追加 (FMA)、除算、逆数、および間のキャスト`int`と`double`はサポートされていません。  
+ アクセラレータの倍精度演算のサポートが制限されているかどうかを示すブール値を取得します。 アクセラレータが一部のみがサポート、乗算: fused し (fma)、除算、逆数、およびの間でキャスト`int`と`double`はサポートされていません。  
   
 ```  
 __declspec(property(get= get_supports_limited_double_precision)) bool supports_limited_double_precision;  
@@ -589,7 +571,7 @@ __declspec(property(get= get_version)) unsigned int version;
   
 ##  <a name="dtor"></a></a> ~ accelerator_view 
 
- 破棄、 [accelerator_view](accelerator-view-class.md)オブジェクトです。  
+ 破棄、 [accelerator_view](accelerator-view-class.md)オブジェクト。  
   
 ```  
 ~accelerator_view();
@@ -599,7 +581,7 @@ __declspec(property(get= get_version)) unsigned int version;
   
 ##  <a name="accelerator"></a>アクセラレータ 
 
- 取得、`accelerator`のオブジェクト、 [accelerator_view](accelerator-view-class.md)オブジェクトです。  
+ 取得、`accelerator`オブジェクトに対して、 [accelerator_view](accelerator-view-class.md)オブジェクト。  
   
 ```  
 __declspec(property(get= get_accelerator)) Concurrency::accelerator accelerator;  
@@ -607,7 +589,7 @@ __declspec(property(get= get_accelerator)) Concurrency::accelerator accelerator;
   
 ##  <a name="ctor"></a>accelerator_view 
 
- 新しいインスタンスを初期化、 [accelerator_view](accelerator-view-class.md)クラス、既存のコピーを`accelerator_view`オブジェクトです。  
+ 新しいインスタンスを初期化、 [accelerator_view](accelerator-view-class.md)クラス、既存のコピーを`accelerator_view`オブジェクト。  
   
 ```  
 accelerator_view(const accelerator_view& _Other);
@@ -630,7 +612,7 @@ concurrency::completion_future create_marker();
   
 ##  <a name="flush"></a>フラッシュ 
 
- キューに格納されたすべての保留中のコマンドを送信する、 [accelerator_view](accelerator-view-class.md)実行するためのアクセラレータへのオブジェクト。  
+ キューに格納されたすべての保留コマンドの送信、 [accelerator_view](accelerator-view-class.md)実行のためにアクセラレータにオブジェクト。  
   
 ```  
 void flush();
@@ -641,7 +623,7 @@ void flush();
   
 ##  <a name="get_accelerator"></a>get_accelerator 
 
- 返します。、`accelerator`のオブジェクト、 [accelerator_view](accelerator-view-class.md)オブジェクトです。  
+ 返します、`accelerator`オブジェクトに対して、 [accelerator_view](accelerator-view-class.md)オブジェクト。  
   
 ```  
 accelerator get_accelerator() const;
@@ -650,11 +632,11 @@ accelerator get_accelerator() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- `accelerator`のオブジェクト、`accelerator_view`オブジェクトです。  
+ `accelerator`オブジェクトに対して、`accelerator_view`オブジェクト。  
   
 ##  <a name="get_is_auto_selection"></a>get_is_auto_selection 
 
- 選択を示すかどうか、ランタイムは自動的に適切なアクセラレータ accelerator_view に渡されるブール値を返す、 [parallel_for_each](../../../parallel/concrt/reference/concurrency-namespace-functions.md#parallel_for_each)します。  
+ かどうか、ランタイムは自動的に適切なアクセラレータ選択 accelerator_view に渡されるかを示すブール値を返します、 [parallel_for_each](../../../parallel/concrt/reference/concurrency-namespace-functions.md#parallel_for_each)です。  
   
 ```  
 bool get_is_auto_selection() const;
@@ -667,7 +649,7 @@ bool get_is_auto_selection() const;
   
 ##  <a name="get_is_debug"></a>get_is_debug 
 
- 示すブール値を返すかどうか、 [accelerator_view](accelerator-view-class.md)広範なエラー レポートに有効なデバッグ レイヤーが付きます。  
+ 示すブール値を返すかどうか、 [accelerator_view](accelerator-view-class.md)オブジェクトに広範なエラー レポートに有効なデバッグ レイヤー。  
   
 ```  
 bool get_is_debug() const;
@@ -680,7 +662,7 @@ bool get_is_debug() const;
   
 ##  <a name="get_queuing_mode"></a>get_queuing_mode 
 
- キュー モードを返す、 [accelerator_view](accelerator-view-class.md)オブジェクトです。  
+ キュー モードを返します、 [accelerator_view](accelerator-view-class.md)オブジェクト。  
   
 ```  
 queuing_mode get_queuing_mode() const;
@@ -689,11 +671,11 @@ queuing_mode get_queuing_mode() const;
 ```  
   
 ### <a name="return-value"></a>戻り値  
- キュー モード、`accelerator_view`オブジェクトです。  
+ キュー モード、`accelerator_view`オブジェクト。  
   
 ##  <a name="get_version"></a>get_version 
 
- バージョンを返す、 [accelerator_view](accelerator-view-class.md)します。  
+ バージョンを返します、 [accelerator_view](accelerator-view-class.md)です。  
   
 ```  
 unsigned int get_version() const;
@@ -706,7 +688,7 @@ unsigned int get_version() const;
   
 ##  <a name="is_auto_selection"></a>is_auto_selection 
 
- 選択を示すかどうか、ランタイムは自動的に適切なアクセラレータ accelerator_view に渡されるブール値を取得、 [parallel_for_each](../../../parallel/concrt/reference/concurrency-namespace-functions.md#parallel_for_each)します。  
+ かどうか、ランタイムは自動的に適切なアクセラレータ選択 accelerator_view に渡されるかを示すブール値を取得、 [parallel_for_each](../../../parallel/concrt/reference/concurrency-namespace-functions.md#parallel_for_each)です。  
   
 ```  
 __declspec(property(get= get_is_auto_selection)) bool is_auto_selection;  
@@ -722,7 +704,7 @@ __declspec(property(get= get_is_debug)) bool is_debug;
   
 ##  <a name="operator_neq"></a>operator! = 
 
- この比較[accelerator_view](accelerator-view-class.md)と他のオブジェクトを返します`false`は同じである場合、それ以外の場合を返します`true`します。  
+ これと比較[accelerator_view](accelerator-view-class.md)と他のオブジェクトを返す`false`これらが同一である場合を返しますそれ以外の場合、`true`です。  
   
 ```  
 bool operator!= (const accelerator_view& _Other) const;
@@ -739,7 +721,7 @@ bool operator!= (const accelerator_view& _Other) const;
   
 ##  <a name="operator_eq"></a>演算子 = 
 
- 指定した内容をコピー [accelerator_view](accelerator-view-class.md)をこのオブジェクトです。  
+ 指定した内容をコピー [accelerator_view](accelerator-view-class.md)をこのオブジェクト。  
   
 ```  
 accelerator_view& operator= (const accelerator_view& _Other);
@@ -750,11 +732,11 @@ accelerator_view& operator= (const accelerator_view& _Other);
  コピー元の `accelerator_view` オブジェクト。  
   
 ### <a name="return-value"></a>戻り値  
- 変更したへの参照を`accelerator_view`オブジェクトです。  
+ 変更されたへの参照を`accelerator_view`オブジェクト。  
   
 ##  <a name="operator_eq_eq"></a>演算子 = = 
 
- この比較[accelerator_view](accelerator-view-class.md)と他のオブジェクトを返します`true`は同じである場合、それ以外の場合を返します`false`します。  
+ これと比較[accelerator_view](accelerator-view-class.md)と他のオブジェクトを返す`true`これらが同一である場合を返しますそれ以外の場合、`false`です。  
   
 ```  
 bool operator== (const accelerator_view& _Other) const;
@@ -771,7 +753,7 @@ bool operator== (const accelerator_view& _Other) const;
   
 ##  <a name="queuing_mode"></a>queuing_mode 
 
- キュー モードを取得、 [accelerator_view](accelerator-view-class.md)オブジェクトです。  
+ キュー モードを取得、 [accelerator_view](accelerator-view-class.md)オブジェクト。  
   
 ```  
 __declspec(property(get= get_queuing_mode)) Concurrency::queuing_mode queuing_mode;  
@@ -779,7 +761,7 @@ __declspec(property(get= get_queuing_mode)) Concurrency::queuing_mode queuing_mo
   
 ##  <a name="version"></a>バージョン 
 
- バージョンを取得、 [accelerator_view](accelerator-view-class.md)します。  
+ バージョンを取得、 [accelerator_view](accelerator-view-class.md)です。  
   
 ```  
 __declspec(property(get= get_version)) unsigned int version;  
@@ -787,7 +769,7 @@ __declspec(property(get= get_version)) unsigned int version;
   
 ##  <a name="wait"></a>待機 
 
- 送信されたすべてのコマンドの待機、 [accelerator_view](accelerator-view-class.md)を完了するオブジェクト。  
+ 送信されたすべてのコマンドを待って、 [accelerator_view](accelerator-view-class.md)が終了するオブジェクト。  
   
 ```  
 void wait();
@@ -798,4 +780,3 @@ void wait();
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency 名前空間 (C++ AMP)](concurrency-namespace-cpp-amp.md)
-

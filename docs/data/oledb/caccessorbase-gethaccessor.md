@@ -1,34 +1,33 @@
 ---
-title: "CAccessorBase::GetHAccessor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "GetHAccessor"
-  - "CAccessorBase::GetHAccessor"
-  - "CAccessorBase.GetHAccessor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetHAccessor メソッド"
+title: "Caccessorbase::gethaccessor |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- GetHAccessor
+- CAccessorBase::GetHAccessor
+- CAccessorBase.GetHAccessor
+dev_langs: C++
+helpviewer_keywords: GetHAccessor method
 ms.assetid: 1bb98762-0752-4aae-a0b6-ba96bec03621
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ba60cb6dd108b0ea451baabf5941caeead11a42f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CAccessorBase::GetHAccessor
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-指定アクセサーのアクセサー ハンドルを取得します。  
+# <a name="caccessorbasegethaccessor"></a>CAccessorBase::GetHAccessor
+指定されたアクセサーのアクセサー ハンドルを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,15 +36,15 @@ caps.handback.revision: 8
 ) const;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nAccessor`  
- \[\]アクセサーのゼロの数。  
+ [in]アクセサーのゼロ オフセットの数です。  
   
-## 戻り値  
- アクセサーのハンドル。  
+## <a name="return-value"></a>戻り値  
+ アクセサーのハンドルです。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CAccessorBase クラス](../../data/oledb/caccessorbase-class.md)

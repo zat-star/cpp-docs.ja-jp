@@ -1,41 +1,40 @@
 ---
-title: "方法: STL/CLR コンテナーを .NET コレクションに変換する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "STL/CLR コンテナー [STL/CLR]"
-  - "STL/CLR, 変換 (.NET コレクションに)"
+title: "方法: STL/CLR コンテナーを .NET コレクションに変換 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
+helpviewer_keywords:
+- STL/CLR Containers [STL/CLR]
+- STL/CLR, converting to .NET collections
 ms.assetid: 70b2dfd9-869c-4e0f-9a29-b1ee0cb0d107
-caps.latest.revision: 8
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 817f04af0f6d2c24296b5775a9863b8c34dccd30
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: STL/CLR コンテナーを .NET コレクションに変換する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、等価の .NET コレクションに STL\/CLR のコンテナーを変換する方法を示します。  一例として、.NET <xref:System.Collections.Generic.ICollection%601> に [vector](../dotnet/vector-stl-clr.md) STL\/CLR を変換する方法、および .NET <xref:System.Collections.Generic.IDictionary%602>に [マップ](../dotnet/map-stl-clr.md) STL\/CLR を変換する方法について説明しますが、プロシージャは、すべてのコレクションおよびコンテナーに似ています。  
+# <a name="how-to-convert-from-a-stlclr-container-to-a-net-collection"></a>方法: STL/CLR コンテナーを .NET コレクションに変換する
+このトピックでは、同等の .NET のコレクションを STL/CLR コンテナーに変換する方法を示します。 例として、STL/CLR に変換する方法を示します[ベクター](../dotnet/vector-stl-clr.md) .net <xref:System.Collections.Generic.ICollection%601> 、STL/CLR を変換する方法および[マップ](../dotnet/map-stl-clr.md).net<xref:System.Collections.Generic.IDictionary%602>プロシージャはすべてのコレクションと似ていますが、およびコンテナーです。  
   
-### コンテナーのコレクションを作成するには  
+### <a name="to-create-a-collection-from-a-container"></a>コンテナーからコレクションを作成するには  
   
 1.  次の方法のいずれかを使用します。  
   
-    -   コンテナーの一部を変換し、[make\_collection](../dotnet/make-collection-stl-clr.md) 関数を呼び出し、.NET のコレクションにコピーされる STL\/CLR のコンテナーの開始の反復子と最後の反復子を渡します。  このテンプレート関数は、テンプレート引数として STL\/CLR の反復子を取得します。  最初の例では、このメソッドを示しています。  
+    -   コンテナーの一部を変換するには、呼び出し、 [make_collection](../dotnet/make-collection-stl-clr.md)関数、および .NET コレクションにコピーするのには、begin の反復子と STL/CLR コンテナーの末尾の反復子に渡します。 STL/CLR 反復子は、このテンプレート関数は、テンプレート引数として受け取ります。 最初の例では、この方法を示します。  
   
-    -   全体のコンテナーを変換するには、適切な .NET のコレクション インターフェイスまたはインターフェイス コレクションにコンテナーをキャストしてください。  2 番目の例では、このメソッドを示しています。  
+    -   コンテナー全体を変換するには、.NET コレクションに適切なインターフェイスまたはインターフェイスのコレクション コンテナーをキャストします。 2 番目の例では、この方法を示します。  
   
-## 使用例  
- この例では、`vector` STL\/CLR を作成し、5 個の要素を追加します。  次に、`make_collection` 関数を呼び出して、.NET のコレクションを作成します。  最後に、新しく作成されたコレクションの内容が表示されます。  
+## <a name="example"></a>例  
+ この例では、作成、STL/CLR`vector`し 5 つの要素を追加します。 その後、呼び出すことによって .NET コレクションを作成、`make_collection`関数。 最後に、新しく作成されたコレクションの内容を表示します。  
   
 ```  
 // cliext_convert_vector_to_icollection.cpp  
@@ -70,12 +69,15 @@ int main(array<System::String ^> ^args)
 }  
 ```  
   
-  **System::Collections::Generic::ICollection の内容は次のとおりです。:**  
-**3**  
-**5**  
-**7**   
-## 使用例  
- この例では、`map` STL\/CLR を作成し、5 個の要素を追加します。  次に、.NET <xref:System.Collections.Generic.IDictionary%602> を作成し、`map` を直接割り当てられます。  最後に、新しく作成されたコレクションの内容が表示されます。  
+```Output  
+The contents of the System::Collections::Generic::ICollection are:  
+3  
+5  
+7  
+```  
+  
+## <a name="example"></a>例  
+ この例では、作成、STL/CLR`map`し 5 つの要素を追加します。 .NET を作成し、<xref:System.Collections.Generic.IDictionary%602>を割り当てると、`map`に直接できます。 最後に、新しく作成されたコレクションの内容を表示します。  
   
 ```  
 // cliext_convert_map_to_idictionary.cpp  
@@ -107,13 +109,16 @@ int main(array<System::String ^> ^args)
 }  
 ```  
   
-  **IDictionary の内容は次のとおりです。:**  
-**Key: 0.00 Value: 0**  
-**Key: 13.00 Value: 13**  
-**Key: 22.00 Value: 22**  
-**Key: 42.00 Value: 42**  
-**Key: 74.00 Value: 74**   
-## 参照  
- [STL\/CLR ライブラリ](../dotnet/stl-clr-library-reference.md)   
- [方法: .NET コレクションを STL\/CLR コンテナーに変換する](../dotnet/how-to-convert-from-a-dotnet-collection-to-a-stl-clr-container.md)   
- [range\_adapter](../dotnet/range-adapter-stl-clr.md)
+```Output  
+The contents of the IDictionary are:  
+Key: 0.00 Value: 0  
+Key: 13.00 Value: 13  
+Key: 22.00 Value: 22  
+Key: 42.00 Value: 42  
+Key: 74.00 Value: 74  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [STL/CLR ライブラリ リファレンス](../dotnet/stl-clr-library-reference.md)   
+ [方法: STL/CLR コンテナーを .NET コレクションに変換](../dotnet/how-to-convert-from-a-dotnet-collection-to-a-stl-clr-container.md)   
+ [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

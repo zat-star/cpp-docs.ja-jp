@@ -1,55 +1,56 @@
 ---
-title: "ODBC: ODBC API 関数の直接呼び出し | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "API [C++], 呼び出し"
-  - "カタログ関数 (ODBC)"
-  - "カタログ関数 (ODBC), 呼び出し"
-  - "直接呼び出し (ODBC API)"
-  - "ODBC [C++], API 関数"
-  - "ODBC [C++], カタログ関数"
-  - "ODBC API 関数 [C++]"
-  - "ODBC API 関数 [C++], 呼び出し"
-  - "ODBC クラス [C++], および ODBC API"
+title: "ODBC: ODBC API を呼び出す関数を直接 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ODBC API functions [C++], calling
+- ODBC [C++], catalog functions
+- ODBC API functions [C++]
+- APIs [C++], calling
+- ODBC classes [C++], vs. ODBC API
+- direct ODBC API calls
+- catalog functions (ODBC)
+- catalog functions (ODBC), calling
+- ODBC [C++], API functions
 ms.assetid: 4295f1d9-4528-4d2e-bd6a-c7569953c7fa
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: b7304d83eca004952eb65ed6c5d16e4ce816bb56
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ODBC: ODBC API 関数の直接呼び出し
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データベース クラスを使うと、ODBC を使うより簡単なインターフェイスで[データ ソース](../../data/odbc/data-source-odbc.md)にアクセスできます。  ただし、データベース クラスは、すべての ODBC API をカプセル化するわけではありません。  データベース クラスがサポートしていない機能を使うには、ODBC API 関数を直接呼び出す必要があります。  たとえば、ODBC カタログ関数 \(**::SQLColumns**、**::SQLProcedures**、**::SQLTables** など\) は直接呼び出します。  
+# <a name="odbc-calling-odbc-api-functions-directly"></a>ODBC: ODBC API 関数の直接呼び出し
+データベース クラスを提供するシンプルなインターフェイス、[データソース](../../data/odbc/data-source-odbc.md)ODBC よりもします。 その結果、クラスには、すべての ODBC API はカプセル化されません。 クラスの機能の外側にあるすべての機能を直接 ODBC API 関数を呼び出す必要があります。 たとえば、ODBC カタログ関数を呼び出す必要があります (**:: SQLColumns**、 **:: SQLProcedures**、 **:: SQLTables**、およびその他) 直接です。  
   
 > [!NOTE]
->  ODBC データ ソースには、ここで説明するように、MFC ODBC クラス経由でアクセスできます。また、MFC DAO \(Data Access Object\) クラス経由でもアクセスできます。  
+>  ODBC データ ソースには、ここで説明するように、MFC ODBC クラス経由でアクセスできます。また、MFC DAO (Data Access Object) クラス経由でもアクセスできます。  
   
- ODBC API 関数を直接呼び出すには、フレームワークを使わずに関数を呼び出すときと同じ手順で行います。  手順は次のとおりです。  
+ ODBC API 関数の呼び出しを直接行う必要がありますフレームワークなしの呼び出しを行っていた場合にとる同じ手順を実行します。 これらの手順します。  
   
--   戻り値用の領域を確保します。  
+-   呼び出しが返された結果の記憶域を割り当てます。  
   
--   関数のパラメーター書式に応じて、ODBC **HDBC** ハンドルか **HSTMT** ハンドルを渡します。  [AFXGetHENV](../Topic/AfxGetHENV.md) マクロを使って ODBC ハンドルを取得します。  
+-   ODBC を渡す**HDBC**または**HSTMT**関数のパラメーター シグネチャによって、処理します。 使用して、 [AFXGetHENV](../../mfc/reference/database-macros-and-globals.md#afxgethenv)マクロ ODBC ハンドルを取得します。  
   
-     メンバー変数 **CDatabase::m\_hdbc** および **CRecordset::m\_hstmt** を使えるため、領域の割り当てや初期化は必要はありません。  
+     メンバー変数**CDatabase::m_hdbc**と**CRecordset::m_hstmt**を利用できるようにで割り当てるし、自分で初期化する必要はありません。  
   
--   呼び出しの準備または呼び出しの後始末のために、ODBC 関数を必要に応じて呼び出します。  
+-   おそらくを準備するか、メインの呼び出しを補足する追加の ODBC 関数を呼び出します。  
   
--   割り当てた領域を解放して、終了します。  
+-   完了したら、記憶域を解放します。  
   
- 各手順の詳細については、MSDN ドキュメントの [ODBC \(Open Database Connectivity\)](https://msdn.microsoft.com/en-us/library/ms710252.aspx) SDK を参照してください。  
+ 次の手順の詳細については、次を参照してください。、[オープン データベース コネクティビティ (ODBC)](https://msdn.microsoft.com/en-us/library/ms710252.aspx) SDK MSDN ドキュメントにします。  
   
- 上記の手順に加え、関数の戻り値のチェックや、非同期呼び出しの終了を待たないようにするための手順なども必要です。  これらの追加手順については、`AFX_SQL_ASYNC` マクロや `AFX_SQL_SYNC` マクロを使うと簡単です。  詳細については、『MFC リファレンス』の「[マクロ、グローバル関数、およびグローバル変数](../Topic/Macros,%20Global%20Functions,%20and%20Global%20Variables.md)」を参照してください。  
+ この手順に加えて、関数の戻り値を確認して、プログラムが完了するために非同期呼び出しの待機していないことを確認する追加の手順を実行する必要があります。 使用して最後の手順を簡略化できます、`AFX_SQL_ASYNC`と`AFX_SQL_SYNC`マクロです。 詳細については、次を参照してください。[マクロとグローバル](../../mfc/reference/mfc-macros-and-globals.md)で、 *『 MFC リファレンス*です。  
+
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ODBC の基礎](../../data/odbc/odbc-basics.md)

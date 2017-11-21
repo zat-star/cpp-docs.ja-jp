@@ -1,32 +1,30 @@
 ---
-title: "parallel | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "parallel"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "parallel OpenMP directive"
+title: "並列 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: parallel
+dev_langs: C++
+helpviewer_keywords: parallel OpenMP directive
 ms.assetid: b8e90073-e85b-4d39-8ed8-0364441794fb
-caps.latest.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 289a4928c9c46f6d758ddc2f30ed864488ab725e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# parallel
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-複数のスレッドで同時に実行されるコードである並列領域を定義します。  
+# <a name="parallel"></a>parallel
+同時に複数のスレッドで実行されるコードである並列領域を定義します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 #pragma omp parallel [clauses]  
@@ -35,37 +33,37 @@ caps.handback.revision: 12
 }  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
- `clause` \(省略可能\)  
- ゼロ以上の句。   **並列**  でサポートされる用語のリストについては" 解説 " を参照してください。  
+ `clause` (省略可能)  
+ 0 個以上の句。  サポートされている句の一覧については、「解説」セクションを参照してください**並列**です。  
   
-## 解説  
- **並列**  の OpenMP のディレクティブは次の句をサポートします :  
+## <a name="remarks"></a>コメント  
+ **並列**ディレクティブは、次の OpenMP 句をサポートしています。  
   
--   [copyin](../Topic/copyin.md)  
+-   [copyin](../../../parallel/openmp/reference/copyin.md)  
   
 -   [default](../../../parallel/openmp/reference/default-openmp.md)  
   
--   [firstprivate](../Topic/firstprivate.md)  
+-   [firstprivate](../../../parallel/openmp/reference/firstprivate.md)  
   
 -   [if](../../../parallel/openmp/reference/if-openmp.md)  
   
--   [num\_threads](../../../parallel/openmp/reference/num-threads.md)  
+-   [num_threads](../../../parallel/openmp/reference/num-threads.md)  
   
 -   [private](../../../parallel/openmp/reference/private-openmp.md)  
   
 -   [reduction](../../../parallel/openmp/reference/reduction.md)  
   
--   [shared](../../../parallel/openmp/reference/shared-openmp.md)  
+-   [共有](../../../parallel/openmp/reference/shared-openmp.md)  
   
- **並列**  は[sections](../../../parallel/openmp/reference/sections-openmp.md) と [for](../Topic/for%20\(OpenMP\).md) のディレクティブで使用できます。  
+ **並列**でも使用できます、[セクション](../../../parallel/openmp/reference/sections-openmp.md)と[の](../../../parallel/openmp/reference/for-openmp.md)ディレクティブです。  
   
- 詳細については、「[2.3 parallel Construct](../../../parallel/openmp/2-3-parallel-construct.md)」を参照してください。  
+ 詳細については、次を参照してください。 [2.3 parallel コンストラクト](../../../parallel/openmp/2-3-parallel-construct.md)です。  
   
-## 使用例  
- 次の例ではスレッドの数を設定し並列領域を定義する方法を示します。  既定ではスレッドの数はコンピューターの論理プロセッサの数と同じになります。  したがってたとえば有効なハイパー スレッディングである 1 台の物理的なプロセッサが搭載されたコンピューターの場合2 種類の論理プロセッサおよび 2 のスレッドを使用します。  
+## <a name="example"></a>例  
+ 次の例では、スレッドの数を設定し、並行領域を定義する方法を示します。 既定では、スレッドの数は、コンピューター上の論理プロセッサの数と同じです。 たとえば、ハイパースレッディングが有効になっている 1 つの物理プロセッサを搭載したマシンがある場合は、2 つの論理プロセッサと 2 つのスレッドがあります。  
   
 ```  
 // omp_parallel.cpp  
@@ -82,12 +80,15 @@ int main() {
 }  
 ```  
   
-  **Hello スレッドから 0**   
-**Hello スレッドから 1**   
-**Hello スレッドから 2**   
-**Hello スレッドから 3**    
-## コメント  
- 出力順序が異なるコンピューターによって異なる場合があることに注意してください。  
+```Output  
+Hello from thread 0  
+Hello from thread 1  
+Hello from thread 2  
+Hello from thread 3  
+```  
   
-## 参照  
- [Directives](../../../parallel/openmp/reference/openmp-directives.md)
+## <a name="comment"></a>コメント  
+ 出力の順序は、別のコンピューターで異なることに注意してください。  
+  
+## <a name="see-also"></a>関連項目  
+ [ディレクティブ](../../../parallel/openmp/reference/openmp-directives.md)

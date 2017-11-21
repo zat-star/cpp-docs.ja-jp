@@ -1,48 +1,48 @@
 ---
-title: "ストアド プロシージャの使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB プロバイダー テンプレート, ストアド プロシージャ"
-  - "OLE DB, ストアド プロシージャ"
-  - "ストアド プロシージャ, ストアド プロシージャの概要"
-  - "ストアド プロシージャ, OLE DB"
-  - "ストアド プロシージャ, Visual C++"
+title: "ストアド プロシージャを使用して |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB, stored procedures
+- stored procedures, Visual C++
+- stored procedures, about stored procedures
+- OLE DB provider templates, stored procedures
+- stored procedures, OLE DB
 ms.assetid: 90507e4c-eca2-46c9-ad8c-07e10dc1d41b
-caps.latest.revision: 16
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "16"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 7b7707234d0a1bf8abd37ae6751060ed7c7109fe
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ストアド プロシージャの使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ストアド プロシージャは、データベースに格納されている実行可能なオブジェクトです。  ストアド プロシージャの呼び出しは、SQL コマンドの呼び出しと似ています。  クライアント アプリケーションでステートメントを実行または準備する代わりに、データ ソースに対してストアド プロシージャを使用すると、パフォーマンスの向上、ネットワーク オーバーヘッドの削減、一貫性と正確性の向上などのさまざまな利点が得られます。  
+# <a name="using-stored-procedures"></a>ストアド プロシージャの使用
+ストアド プロシージャは、データベースに格納されている実行可能オブジェクトです。 ストアド プロシージャの呼び出しは、SQL コマンドの呼び出しに似ています。 (またはの代わりに実行するクライアント アプリケーションでステートメントを準備する)、データ ソースでストアド プロシージャを使用すると、パフォーマンスの向上、ネットワーク オーバーヘッドの削減、および一貫性の向上、および精度を含め、いくつかの利点が提供することができます。  
   
- ストアド プロシージャは、任意の数 \(ゼロを含む\) の入力または出力パラメーターを持つことができ、戻り値を返すことができます。  パラメーター値を特定のデータ値としてハードコーディングすることも、パラメーター マーカー \(疑問符 "?"\) を使用することもできます。  
+ ストアド プロシージャは、任意の数 (0 を含む) を持つことができます入力または出力パラメーターと戻り値を渡すことができます。 特定のデータ値またはパラメーター マーカーを使用して、ハード コード パラメーターの値ことができます (疑問符 () '?')。  
   
 > [!NOTE]
->  Visual C\+\+ を使って作成した CLR の SQL Server ストアド プロシージャは、**\/clr:safe** コンパイラ オプションでコンパイルする必要があります。  
+>  CLR の SQL Server で Visual C を使用して作成したストアド プロシージャをコンパイルする必要があります、 **/clr:safe**コンパイラ オプション。  
   
- SQL Server 用の OLE DB プロバイダー \(SQLOLEDB\) は、ストアド プロシージャがデータを返すために使用する以下の機構をサポートします。  
+ OLE DB プロバイダーの SQL Server (SQLOLEDB) には、データを返すプロシージャを使用して格納されている次のメカニズムがサポートされています。  
   
--   プロシージャ内のすべての SELECT ステートメントは結果セットを生成します。  
+-   プロシージャで SELECT ステートメントごとでは、結果セットを生成します。  
   
--   プロシージャは、出力パラメーターを通じてデータを返すことができます。  
+-   プロシージャは、出力パラメーターを使用してデータを返すことができます。  
   
 -   プロシージャは、整数のリターン コードを持つことができます。  
   
 > [!NOTE]
->  OLE DB Provider for Jet はストアド プロシージャをサポートしていないため、このプロバイダーではストアド プロシージャを使用できません。クエリ文字列には定数だけを使用できます。  
+>  できませんストアド プロシージャを使用する、OLE DB provider for Jet そのプロバイダーがストアド プロシージャをサポートしていないためクエリ文字列では、定数のみを使用します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレートの操作](../../data/oledb/working-with-ole-db-consumer-templates.md)

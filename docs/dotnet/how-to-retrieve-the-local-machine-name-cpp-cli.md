@@ -1,33 +1,32 @@
 ---
-title: "方法: ローカル コンピューター名を取得する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コンピューター名"
-  - "コンピューター名, 取得"
-  - "マシン名, 取得"
+title: "方法: ローカル マシン名を取得 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- computer name, retrieving
+- machine name, retrieving
+- computer name
 ms.assetid: 6c7acb9a-3f9b-43b2-a756-bd4fb859e697
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0957ff70d5163c142282a15ac597de5504537636
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: ローカル コンピューター名を取得する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ローカル マシン名 \(ネットワーク上で表示されるコンピューター名\) を取得する方法を次のコード例に示します。  これを実行するには、<xref:System.Environment.MachineName%2A> 文字列を取得します。この文字列は、<xref:System.Environment> 名前空間で定義されています。  
+# <a name="how-to-retrieve-the-local-machine-name-ccli"></a>方法: ローカル コンピューター名を取得する (C++/CLI)
+次のコード例は、ローカル コンピューター名の取得を示します (ネットワークにコンピューターの名前が表示されます)。 これを行うに取得することによって、<xref:System.Environment.MachineName%2A>で定義されている文字列を<xref:System.Environment>名前空間。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // machine_name.cpp  
@@ -41,6 +40,6 @@ int main()
 }  
 ```  
   
-## 参照  
- [Windows の操作](../dotnet/windows-operations-cpp-cli.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [Windows の操作 (C + + CLI)](../dotnet/windows-operations-cpp-cli.md)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

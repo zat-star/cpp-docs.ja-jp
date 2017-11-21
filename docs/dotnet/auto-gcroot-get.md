@@ -1,44 +1,43 @@
 ---
-title: "auto_gcroot::get | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::auto_gcroot::get"
-  - "msclr.auto_gcroot.get"
-  - "auto_gcroot::get"
-  - "auto_gcroot.get"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_gcroot::get"
+title: "auto_gcroot::get |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::auto_gcroot::get
+- msclr.auto_gcroot.get
+- auto_gcroot::get
+- auto_gcroot.get
+dev_langs: C++
+helpviewer_keywords: auto_gcroot::get
 ms.assetid: 0e922019-1cf5-4220-b5ab-6c4a2a6b40ec
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 4c5dbf86956de4a4df226bd87e970197f300f03b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# auto_gcroot::get
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-含まれるオブジェクトを取得します。  
+# <a name="autogcrootget"></a>auto_gcroot::get
+含まれているオブジェクトを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 _element_type get() const;  
 ```  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  含まれるオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_get.cpp  
@@ -78,15 +77,18 @@ int main() {
 }  
 ```  
   
-  **ClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**Hello 最初に A ~\!**  
-**Hello 最初に A ~\!**  
-**ClassA のデストラクター: 最初**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+in ClassA constructor:first  
+Hello from first A!  
+Hello from first A!  
+Hello from first A!  
+in ClassA destructor:first  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
+ [auto_gcroot のメンバー](../dotnet/auto-gcroot-members.md)

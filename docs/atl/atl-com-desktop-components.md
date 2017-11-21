@@ -1,70 +1,71 @@
 ---
-title: "ATL COM デスクトップ コンポーネント | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, 概要 (ATL の)"
-  - "ATL, リファレンス"
+title: "ATL COM デスクトップ コンポーネント |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ATL, reference
+- ATL, about ATL
 ms.assetid: 291f38d1-d2de-4687-86a9-99b4fd35706c
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d27371a994f13ebe8c91452d44645c5d3f5eac29
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL COM デスクトップ コンポーネント
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL リファレンスでは、Active Template Library \(ATL\)、コンポーネント オブジェクト モデル \(COM\) のプログラミングを簡単にする、テンプレート ベースの一連の C\+\+ クラス オブジェクト。  ATL を十分に活用するには、COM を使用する知識を強くお勧めします。  
+# <a name="atl-com-desktop-components"></a>ATL COM デスクトップ コンポーネント
+ATL リファレンスでは、アクティブ テンプレート ライブラリ (ATL)、コンポーネント オブジェクト モデル (COM) オブジェクトのプログラミングを簡略化するテンプレート ベースの C++ クラスのセットを説明します。 完全に活用するために ATL、COM を熟知して作業を強くお勧めします。  
   
-## このセクションの内容  
- [ATL クラスの概要](../atl/atl-class-overview.md)  
- リンクとカテゴリ別に編成される ATL クラスの簡単な説明を提供します。  
+## <a name="in-this-section"></a>このセクションの内容  
+ [ATL のクラスの概要](../atl/atl-class-overview.md)  
+ カテゴリにより分類 ATL クラスの簡単な説明とへのリンクを提供します。  
   
  [ATL クラス](../atl/reference/atl-classes.md)  
- アルファベット順に編成されるクラスのリファレンスです。  
+ アルファベット順クラスに関する参考資料を提供します。  
   
  [ATL 関数](../atl/reference/atl-functions.md)  
- アルファベット順に編成されるグローバル関数に関するリファレンス情報を提供します。  カテゴリに関数を整理するトピックを示します。  
+ アルファベット順グローバル関数に関するリファレンス情報を提供します。 カテゴリに関数のトピックが含まれます。  
   
- [ATL グローバル変数](../Topic/ATL%20Global%20Variables.md)  
- アルファベット順に編成されるグローバル変数に関するリファレンス情報を提供します。  
+ [ATL グローバル変数](../atl/reference/atl-global-variables.md)  
+ アルファベット順のグローバル変数に関するリファレンス情報を提供します。  
   
  [ATL マクロ](../atl/reference/atl-macros.md)  
- アルファベット順に編成されているマクロでのリファレンス資料を提供します。  カテゴリにマクロを整理するトピックを示します。  
+ アルファベット順のマクロの参考資料を提供します。 マクロのカテゴリにトピックが含まれます。  
   
- [ATL の構造](../atl/reference/atl-structures.md)  
- アルファベット順に編成されている構造体でのリファレンス資料を提供します。  
+ [構造体](../atl/reference/atl-structures.md)  
+ 構造体のアルファベット順での参考資料を提供します。  
   
- [ATL typedef](../atl/reference/atl-typedefs.md)  
- アルファベット順に編成された typedef でリファレンス情報を紹介します  
+ [ATL Typedef](../atl/reference/atl-typedefs.md)  
+ Typedef のアルファベット順での参考資料を提供します。  
   
  [原型](../atl/reference/atl-archetypes.md)  
- データ メンバー、メソッド、静的関数、および typedef、またはそのほかの機能のコレクションを提供する概念的なクラスであるアルファベット順に ATL 元へのリンクを提供します。  
+ メソッド、データ メンバー、静的関数、typedef、またはその他の機能は、アルファベット順のコレクションを提供するクラスの理論上は、ATL 原型へのリンクを提供します。  
   
- [旧式の ATL のトピック](http://msdn.microsoft.com/ja-jp/7af0223d-148e-4a4c-bf9c-3e916a3b67ec)  
- 旧式または使用されていないクラス、関数とマクロでのリファレンス資料を提供します。  
+ [古い ATL トピック](http://msdn.microsoft.com/en-us/7af0223d-148e-4a4c-bf9c-3e916a3b67ec)  
+ クラス、マクロ、およびいる旧式の関数に関するリファレンス情報を提供します。  
   
-## 関連項目  
+## <a name="related-sections"></a>関連項目  
  [ATL](../atl/active-template-library-atl-concepts.md)  
- Active Template Library \(ATL\) を使用してプログラミングする方法について説明するトピックを示します。  
+ アクティブ テンプレート ライブラリ (ATL) を使用してプログラミングする方法に関するトピックを提供します。  
   
- [ATL チュートリアル](../Topic/Active%20Template%20Library%20\(ATL\)%20Tutorial.md)  
- 一つのコントロールを作成することによってプロセス内の ATL ベースを示します。  
+ [ATL チュートリアル](../atl/active-template-library-atl-tutorial.md)  
+ コントロールの作成について説明し、プロセスで、ATL の基本事項をいくつかを示します。  
   
- [ATL のサンプル](../top/visual-cpp-samples.md)  
- ATL を使用する方法を COM オブジェクトの作成に示すサンプル コードします。  
+ [ATL のサンプル](../visual-cpp-samples.md)  
+ ATL を使用して、COM オブジェクトを記述する方法を示すサンプル コードです。  
   
- [OLE DB テンプレート](../Topic/OLE%20DB%20Templates.md)  
+ [OLE DB テンプレート](../data/oledb/ole-db-templates.md)  
  OLE DB のコンシューマーおよびプロバイダーのテンプレートのリファレンスが用意されています。このテンプレート クラスのセットは、一般的に使用される多くの OLE DB インターフェイスを実装します。  
   
- [Visual C\+\+ ライブラリ](http://msdn.microsoft.com/ja-jp/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
- Visual C\+\+ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および標準 C\+\+ ライブラリが含まれます。
+ [Visual C++ ライブラリ](http://msdn.microsoft.com/en-us/fec23c40-10c0-4857-9cdc-33a3b99b30ae)  
+ Visual C++ に用意されているさまざまなライブラリへのリンクがあります。ATL、MFC、OLE DB の各テンプレート、C ランタイム ライブラリ、および C++ 標準ライブラリが含まれます。
+

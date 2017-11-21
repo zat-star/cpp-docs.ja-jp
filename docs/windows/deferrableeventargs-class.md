@@ -1,28 +1,28 @@
 ---
-title: "DeferrableEventArgs クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-dev_langs: 
-  - "C++"
+title: "DeferrableEventArgs クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+dev_langs: C++
 ms.assetid: ece89267-7b72-40e1-8185-550c865b070a
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 27107c794dfd4987eb0519dfeaa9762f47d0417c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DeferrableEventArgs クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="deferrableeventargs-class"></a>DeferrableEventArgs クラス
 遅延のイベント引数の型に使用されるテンプレート クラス。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 template <  
@@ -33,31 +33,31 @@ class DeferrableEventArgs : public TEventArgsInterface
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `TEventArgsInterface`  
  遅延イベントの引数を宣言するインターフェイスの型。  
   
  `TEventArgsClass`  
  `TEventArgsInterface` を実装するクラス。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック メソッド  
+### <a name="public-methods"></a>パブリック メソッド  
   
 |名前|説明|  
-|--------|--------|  
-|[DeferrableEventArgs::GetDeferral メソッド](../windows/deferrableeventargs-getdeferral-method.md)|遅延イベントを表す [遅延Deferral](http://go.microsoft.com/fwlink/?LinkId=526520) オブジェクトへの参照を取得します。|  
+|----------|-----------------|  
+|[DeferrableEventArgs::GetDeferral メソッド](../windows/deferrableeventargs-getdeferral-method.md)|参照を取得、[遅延](http://go.microsoft.com/fwlink/?LinkId=526520)遅延イベントを表すオブジェクト。|  
 |[DeferrableEventArgs::InvokeAllFinished メソッド](../windows/deferrableeventargs-invokeallfinished-method.md)|遅延イベントを処理するすべての処理が完了したことを示すために呼び出されます。|  
   
-## 解説  
- このクラスのインスタンスは、遅延イベントのイベント ハンドラーに渡されます。  テンプレート パラメーターは、遅延イベントの特定の種類のイベント引数の詳細を定義するインターフェイスと、そのインターフェイスを実装するクラスを表します。  
+## <a name="remarks"></a>コメント  
+ このクラスのインスタンスは、遅延イベントのイベント ハンドラーに渡されます。 テンプレート パラメーターは、遅延イベントの特定の種類のイベント引数の詳細を定義するインターフェイスと、そのインターフェイスを実装するクラスを表します。  
   
- クラスは遅延イベントのイベント ハンドラーの最初の引数として表示されます。  [GetDeferral](../windows/deferrableeventargs-getdeferral-method.md) メソッドを呼び出して [遅延](http://go.microsoft.com/fwlink/?LinkId=526520) オブジェクトを取得し、そこから遅延イベントに関するすべての情報法を取得できます。  イベント処理を完了した後、遅延オブジェクトで Complete を呼び出す必要があります。  次に、イベント ハンドラー メソッドの終わりで、[InvokeAllFinished](../windows/deferrableeventargs-invokeallfinished-method.md) を呼び出す必要があります。これにより、すべての遅延イベントの完了が正しく伝達されます。  
+ クラスは遅延イベントのイベント ハンドラーの最初の引数として表示されます。 呼び出すことができます、 [GetDeferral](../windows/deferrableeventargs-getdeferral-method.md)取得するメソッド、[遅延](http://go.microsoft.com/fwlink/?LinkId=526520)遅延イベントに関するすべての情報の取得元のオブジェクト。 イベント処理を完了した後、遅延オブジェクトで Complete を呼び出す必要があります。 呼び出す必要があります、 [InvokeAllFinished](../windows/deferrableeventargs-invokeallfinished-method.md)イベント ハンドラー メソッドの最後に、これにより、すべて遅延イベントの完了が正しく伝達します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** event.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [Microsoft::WRL 名前空間](../windows/microsoft-wrl-namespace.md)

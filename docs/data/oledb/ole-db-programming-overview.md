@@ -1,62 +1,40 @@
 ---
-title: "OLE DB プログラミングの概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB, OLE DB の概要"
-  - "Universal Data Access"
+title: "OLE DB プログラミングの概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- Universal Data Access
+- OLE DB, about OLE DB
 ms.assetid: a5a69730-2793-4277-a67d-6f3c8edab6df
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1f3d97dda514b3cdb0773adb3d7830e611bca3d9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# OLE DB プログラミングの概要
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここでは、OLE DB の概要、および OLE DB とほかのデータベース テクノロジとの相違点を示します。  OLE DB は、Microsoft によって開発されたパフォーマンスの高い COM ベース データベース テクノロジです。  OLE DB が他の Microsoft のデータベース テクノロジと比べて際立っている点は、Universal Data Access の提供方法です。  
+# <a name="ole-db-programming-overview"></a>OLE DB プログラミングの概要
+OLE DB は、高パフォーマンス、COM ベース データベース テクノロジです。 格納されている形式に関係なくデータにアクセスする一般的な方法を提供します。 一般的に、ビジネスの現場では、大量の情報が企業データベースの外部に格納されています。 このような情報は、ファイル システム (FAT や NTFS など)、インデックス付きのシーケンシャル ファイル、パーソナル データベース (Access など)、スプレッドシート (Excel など)、プロジェクト プランニング アプリケーション (Project など)、および電子メール (Outlook など) に含まれています。 OLE DB をデータ ストアがある OLE DB プロバイダーにある限り、同じ方法であらゆる種類のデータ ストアにアクセスできます。
   
-## Universal Data Access  
- Universal Data Access には、データの格納形式に関係なく、データに同じようにアクセスするための方法が用意されています。  一般的に、ビジネスの現場では、大量の情報が企業データベースの外部に格納されています。  このような情報は、ファイル システム \(FAT や NTFS など\)、インデックス付きのシーケンシャル ファイル、パーソナル データベース \(Access など\)、スプレッドシート \(Excel など\)、プロジェクト プランニング アプリケーション \(Project など\)、および電子メール \(Outlook など\) に含まれています。  
+ OLE DB を使用すると、DBMS かどうかにかかわらず、多様なデータ ソースにアクセスするアプリケーションを開発できます。 OLE DB では、特定のデータ ソースに適した DBMS 機能をサポートする COM インターフェイスを使用することにより、汎用アクセスが可能になります。 COM では、データ ソース間だけでなく、ほかのアプリケーションとの間でも、サービスおよび最大化された相互運用性の不要な二重化が削減されます。  
   
- 関連付けられている各種アプリケーションを使用してこのデータにアクセスすることは、ワークフローの重大なボトルネックになるか、少なくとも面倒な作業になります。  ほとんどの企業でこのような状況が見られ、データベース管理システム \(DBMS: Database Management System\) で情報を統合することによって問題に対処しています。  ただし、このような手段はコストが高く、時間がかかり、多くの場合は現実的な対処方法ではありません。  
+## <a name="benefits-of-com"></a>COM の利点  
+ このような場合に COM が役に立ちます。 OLE DB は、COM インターフェイスのセットです。 インターフェイスの統一されたセットを通じてデータにアクセスすることにより、相互に協調するコンポーネントのマトリックスとしてデータベースを編成できます。  
   
- 代替の手段として、Universal Data Access ソリューションの開発があります。  OLE DB と ADO には Universal Data Access 機能が用意されています。  この 2 つのうち、OLE DB の方がパフォーマンスが高く、Visual C\+\+ アプリケーションでの使用に適しています。  
+ COM の仕様に基づき、OLE DB は、DBMS 機能の一貫性があり再利用できる部分を分解してカプセル化する、拡張可能で保守性の高いインターフェイスの集合を定義します。 これらのインターフェイスは、行コンテナー、クエリ プロセッサ、トランザクション コーディネーターなどの DBMS コンポーネントの境界を定義し、多様な情報源への統一されたトランザクション アクセスを可能にします。  
+ 
   
- Universal Data Access は 2 つの機能を意味します。1 つは、分散クエリと呼ばれ、複数の \(分散\) データ ソースに同じ方法でアクセスする機能です。もう 1 つは、DBMS 以外のデータ ソースからデータベース アプリケーションにアクセスできるようにする機能です。  
-  
--   分散クエリ  
-  
-     複数の \(分散\) データ ソースのデータへの統一的なアクセスが可能な機能。  データ ソースは、2 つの独立した Access データベースのように同じ種類の場合と、SQL Server データベースと Access データベースのように異なる種類の場合があります。  "統一的なアクセス" とは、すべてのデータ ソースに対して同一のクエリを実行できることを意味します。  
-  
--   非 DBMS アクセス  
-  
-     DBMS 以外のデータ ソースをデータベース アプリケーションからアクセス可能にする機能。  DBMS データ ソースの例として、IMS、DB2、Oracle、SQL Server、Access、および Paradox があります。  DBMS 以外のデータ ソースの例として、ファイル システム、電子メール、スプレッドシート、およびプロジェクト管理ツール内の情報があります。  
-  
- 販売部門が、ある特定の地域の顧客から 1 週間の期間内に受信したすべての電子メール メッセージを検索する場合について考えます。  このクエリでは、電子メール アプリケーションのメールボックス ファイルを検索し、Access アプリケーションの顧客テーブルを検索して顧客名を指定する必要があります。  Access は DBMS アプリケーションですが、Outlook は違います。  
-  
- OLE DB を使用すると、DBMS かどうかにかかわらず、多様なデータ ソースにアクセスするアプリケーションを開発できます。  OLE DB では、特定のデータ ソースに適した DBMS 機能をサポートする COM インターフェイスを使用することにより、汎用アクセスが可能になります。  COM では、データ ソース間だけでなく、ほかのアプリケーションとの間でも、サービスおよび最大化された相互運用性の不要な二重化が削減されます。  
-  
-## COM の利点  
- このような場合に COM が役に立ちます。  OLE DB は、COM インターフェイスのセットです。  インターフェイスの統一されたセットを通じてデータにアクセスすることにより、相互に協調するコンポーネントのマトリックスとしてデータベースを編成できます。  
-  
- COM の仕様に基づき、OLE DB は、DBMS 機能の一貫性があり再利用できる部分を分解してカプセル化する、拡張可能で保守性の高いインターフェイスの集合を定義します。  これらのインターフェイスは、行コンテナー、クエリ プロセッサ、トランザクション コーディネーターなどの DBMS コンポーネントの境界を定義し、多様な情報源への統一されたトランザクション アクセスを可能にします。  
-  
- 通常、OLE DB アプリケーションは DLL として作成されますが、COM の実装では、コンポーネント化されたコードを使用することによって、名前付けやバージョンの問題などの DLL の短所を克服します。  OLE DB では、グローバル一意識別子 \(GUID: Globally Unique Identifier\) を使用して、インターフェイスの呼び出しや他のコンポーネントへのアクセスを行います。  
-  
- 最後に、COM は、参照カウントを使用してコンポーネントの使用状況を追跡します。  インターフェイスでメソッドを呼び出すと、参照カウントがインクリメントされます。メソッドから戻るときに、参照カウントがデクリメントされます。  カウントが 0 になると、そのメソッドが属しているコンポーネントが解放されます。  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プログラミング](../../data/oledb/ole-db-programming.md)   
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
- [OLE DB テンプレート](../Topic/OLE%20DB%20Templates.md)
+ [OLE DB テンプレート](../../data/oledb/ole-db-templates.md)

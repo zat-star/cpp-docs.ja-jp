@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - class scope [C++], rules
 - classes [C++], scope
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - names [C++], class
 - scope [C++], class names
 ms.assetid: 47e26482-0111-466f-b857-598c15d05105
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 2e4a728d23dc9a04b62c9852823f359c3a7cb150
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 2261f5c2b843f607f8f0906764aee833c6a100f4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="summary-of-scope-rules"></a>スコープ規則の概要
 名前の使用はスコープ内で明確である必要があります (オーバーロードが決定される段階まで)。 名前が関数を表している場合、関数はパラメーターの数と型に対し明確でなければなりません。 名前があいまいでない、残っている場合[メンバー アクセス](../cpp/member-access-control-cpp.md)規則が適用されます。  
@@ -46,7 +43,7 @@ ms.lasthandoff: 09/25/2017
 ## <a name="qualified-names"></a>修飾名  
  バイナリ スコープ解決演算子 (`::`) と共に使用される名前は、"修飾名" と呼ばれます。 バイナリ スコープ解決演算子の後ろに指定される名前は、演算子の左側で指定されたクラスのメンバーまたはその基底クラスのメンバーである必要があります。  
   
- メンバー選択演算子の後に指定した名前 (**です。** または** -> **) 演算子の左側またはその基底クラスのメンバーで指定されたオブジェクトのクラス型のメンバーである必要があります。 メンバー選択演算子の右側に指定した名前 (**->**) はオブジェクトの場合も、別のクラス型の条件の左側にある** -> **クラス オブジェクトとクラスがオーバー ロードされたメンバー選択演算子を定義すること (**->**) その他の任意のクラス型へのポインターに評価されます。 (このプロビジョニングはで詳しく説明[クラス メンバー アクセス](../cpp/member-access.md))。  
+ メンバー選択演算子の後に指定した名前 (**です。** または **->** ) 演算子の左側またはその基底クラスのメンバーで指定されたオブジェクトのクラス型のメンバーである必要があります。 メンバー選択演算子の右側に指定した名前 (**->**) はオブジェクトの場合も、別のクラス型の条件の左側にある **->** クラス オブジェクトとクラスがオーバー ロードされたメンバー選択演算子を定義すること (**->**) その他の任意のクラス型へのポインターに評価されます。 (このプロビジョニングはで詳しく説明[クラス メンバー アクセス](../cpp/member-access.md))。  
   
  コンパイラは、次の順序で名前を検索し、名前が見つかると検索を停止します。  
   

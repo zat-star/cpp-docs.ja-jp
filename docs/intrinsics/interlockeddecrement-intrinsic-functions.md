@@ -1,72 +1,72 @@
 ---
-title: "_InterlockedDecrement の組み込み関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_InterlockedDecrement16_rel_cpp"
-  - "_InterlockedDecrement16_acq_cpp"
-  - "_InterlockedDecrement16_rel"
-  - "_InterlockedDecrement64_acq"
-  - "_InterlockedDecrement_nf"
-  - "_InterlockedDecrement16_nf"
-  - "_InterlockedDecrement64_rel_cpp"
-  - "_InterlockedDecrement_rel_cpp"
-  - "_InterlockedDecrement16_acq"
-  - "_InterlockedDecrement64_acq_cpp"
-  - "_InterlockedDecrement_rel"
-  - "_InterlockedDecrement64_nf"
-  - "_InterlockedDecrement16_cpp"
-  - "_InterlockedDecrement64"
-  - "_InterlockedDecrement_cpp"
-  - "_InterlockedDecrement64_rel"
-  - "_InterlockedDecrement16"
-  - "_InterlockedDecrement"
-  - "_InterlockedDecrement64_cpp"
-  - "_InterlockedDecrement_acq"
-  - "_InterlockedDecrement_acq_cpp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_InterlockedDecrement 組み込み"
-  - "_InterlockedDecrement_acq 組み込み"
-  - "_InterlockedDecrement_nf 組み込み"
-  - "_InterlockedDecrement_rel 組み込み"
-  - "_InterlockedDecrement16 組み込み"
-  - "_InterlockedDecrement16_acq 組み込み"
-  - "_InterlockedDecrement16_nf 組み込み"
-  - "_InterlockedDecrement16_rel 組み込み"
-  - "_InterlockedDecrement64 組み込み"
-  - "_InterlockedDecrement64_acq 組み込み"
-  - "_InterlockedDecrement64_nf 組み込み"
-  - "_InterlockedDecrement64_rel 組み込み"
-  - "InterlockedDecrement 組み込み"
-  - "InterlockedDecrement_acq 組み込み"
-  - "InterlockedDecrement_rel 組み込み"
-  - "InterlockedDecrement16 組み込み"
-  - "InterlockedDecrement64 組み込み"
-  - "InterlockedDecrement64_acq 組み込み"
-  - "InterlockedDecrement64_rel 組み込み"
+title: "_InterlockedDecrement の組み込み関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _InterlockedDecrement16_rel_cpp
+- _InterlockedDecrement16_acq_cpp
+- _InterlockedDecrement16_rel
+- _InterlockedDecrement64_acq
+- _InterlockedDecrement_nf
+- _InterlockedDecrement16_nf
+- _InterlockedDecrement64_rel_cpp
+- _InterlockedDecrement_rel_cpp
+- _InterlockedDecrement16_acq
+- _InterlockedDecrement64_acq_cpp
+- _InterlockedDecrement_rel
+- _InterlockedDecrement64_nf
+- _InterlockedDecrement16_cpp
+- _InterlockedDecrement64
+- _InterlockedDecrement_cpp
+- _InterlockedDecrement64_rel
+- _InterlockedDecrement16
+- _InterlockedDecrement
+- _InterlockedDecrement64_cpp
+- _InterlockedDecrement_acq
+- _InterlockedDecrement_acq_cpp
+dev_langs: C++
+helpviewer_keywords:
+- InterlockedDecrement64_rel intrinsic
+- InterlockedDecrement64 intrinsic
+- _InterlockedDecrement16 intrinsic
+- _InterlockedDecrement16_acq intrinsic
+- _InterlockedDecrement intrinsic
+- _InterlockedDecrement_nf intrinsic
+- _InterlockedDecrement_acq intrinsic
+- _InterlockedDecrement64_rel intrinsic
+- _InterlockedDecrement16_rel intrinsic
+- InterlockedDecrement intrinsic
+- InterlockedDecrement16 intrinsic
+- _InterlockedDecrement16_nf intrinsic
+- InterlockedDecrement64_acq intrinsic
+- _InterlockedDecrement_rel intrinsic
+- InterlockedDecrement_acq intrinsic
+- _InterlockedDecrement64_acq intrinsic
+- _InterlockedDecrement64 intrinsic
+- _InterlockedDecrement64_nf intrinsic
+- InterlockedDecrement_rel intrinsic
 ms.assetid: 5268fce3-86b5-4b2b-b96c-2e531a3fb9b5
-caps.latest.revision: 23
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 23
+caps.latest.revision: "23"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 53ff88665394e7333c2ced65117fbaacd17ba602
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# _InterlockedDecrement の組み込み関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="interlockeddecrement-intrinsic-functions"></a>_InterlockedDecrement の組み込み関数
+**Microsoft 固有の仕様**  
   
- Win32 [!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] [InterlockedDecrement](http://msdn.microsoft.com/library/ms683580.aspx) 関数のコンパイラ組み込みサポートを提供します。  
+ Win32 のコンパイラ組み込みサポートを提供[!INCLUDE[winSDK](../atl/includes/winsdk_md.md)] [InterlockedDecrement](http://msdn.microsoft.com/library/ms683580.aspx)関数。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 long _InterlockedDecrement(  
@@ -107,34 +107,34 @@ __int64 _InterlockedDecrement64_nf(
 );  
 ```  
   
-#### パラメーター  
- \[入力、出力\] `lpAddend`  
+#### <a name="parameters"></a>パラメーター  
+ [入力、出力] `lpAddend`  
  デクリメントする変数へのポインター。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  戻り値は、デクリメントして生成された値です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_InterlockedDecrement`、`_InterlockedDecrement16`、`_InterlockedDecrement64`|x86、ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_InterlockedDecrement`、`_InterlockedDecrement16`、`_InterlockedDecrement64`|x86、ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
 |`_InterlockedDecrement_acq`, `_InterlockedDecrement_rel`, `_InterlockedDecrement_nf`, `_InterlockedDecrement16_acq`, `_InterlockedDecrement16_rel`, `_InterlockedDecrement16_nf`, `_InterlockedDecrement64_acq`, `_InterlockedDecrement64_rel`, `_InterlockedDecrement64_nf`,|ARM|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  `_InterlockedDecrement` には、格納するデータ型、およびプロセッサ固有の取得または解放のセマンティクスを使用するかどうかに基づき、異なるいくつかの種類があります。  
   
  `_InterlockedDecrement` 関数は 32 ビット整数値で動作しますが、`_InterlockedDecrement16` は 16 ビット整数値および `_InterlockedDecrement64` は 64 ビット整数値で動作します。  
   
- ARM プラットフォームでは、クリティカル セクションの最初と最後などで取得と解放のセマンティクスを必要とする場合は、`_acq` および `_rel` サフィックスの付いた組み込みを使用します。  `_nf` \("フェンスなし"\) サフィックスの付いた組み込みはメモリ バリアとしては機能しません。  
+ ARM プラットフォームでは、クリティカル セクションの最初と最後などで取得と解放のセマンティクスを必要とする場合は、`_acq` および `_rel` サフィックスの付いた組み込みを使用します。 `_nf` ("フェンスなし") サフィックスの付いた組み込みはメモリ バリアとしては機能しません。  
   
- `lpAddend` パラメーターが指す変数は 32 ビットの境界に合わせて調整する必要があります。そのようにしない場合、この関数はマルチプロセッサの x86 システムおよび x 86 システム以外のシステムで失敗します。  詳細については、「[align](../cpp/align-cpp.md)」を参照してください。  
+ `lpAddend` パラメーターが指す変数は 32 ビットの境界に合わせて調整する必要があります。そのようにしない場合、この関数はマルチプロセッサの x86 システムおよび x 86 システム以外のシステムで失敗します。 詳細については、次を参照してください。[整列](../cpp/align-cpp.md)です。  
   
  これらのルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // compiler_intrinsics_interlocked.cpp  
@@ -202,7 +202,7 @@ void __cdecl SimpleThread(void* pParam) {
 }  
 ```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)   
- [C\+\+ キーワード](../cpp/keywords-cpp.md)   
- [x86 コンパイラとの競合](../Topic/Conflicts%20with%20the%20x86%20Compiler.md)
+## <a name="see-also"></a>関連項目  
+ [コンパイラ組み込み関数](../intrinsics/compiler-intrinsics.md)   
+ [キーワード](../cpp/keywords-cpp.md)   
+ [x86 コンパイラとの競合](../build/conflicts-with-the-x86-compiler.md)

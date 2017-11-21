@@ -1,41 +1,41 @@
 ---
-title: "方法: PInvoke を使用して埋め込みポインターをマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "データ マーシャリング [C++], 埋め込みポインター"
-  - "埋め込みポインター [C++]"
-  - "相互運用 [C++], 埋め込みポインター"
-  - "マーシャリング [C++], 埋め込みポインター"
-  - "プラットフォーム呼び出し [C++], 埋め込みポインター"
+title: "方法: 埋め込み PInvoke を使用してポインターをマーシャ リングする. |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- embedded pointers [C++]
+- interop [C++], embedded pointers
+- platform invoke [C++], embedded pointers
+- marshaling [C++], embedded pointers
+- data marshaling [C++], embedded pointers
 ms.assetid: f12c1b9a-4f82-45f8-83c8-3fc9321dbb98
-caps.latest.revision: 21
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 21
+caps.latest.revision: "21"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c8f6716a11919c300dc3153ca678767503a35088
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: PInvoke を使用して埋め込みポインターをマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-プラットフォーム呼び出し \(P\/Invoke\) 機能を使用して、マネージ コードからアンマネージ DLL で実装される関数を呼び出すことができます。  DLL のソース コードが利用できない場合、相互運用できるようにするには P\/Invoke を使用する以外方法はありません。  ただし、他の .NET 言語とは異なり、Visual C\+\+ には P\/Invoke 以外の方法が用意されています。  詳細については、「[C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)」および「[方法: C\+\+ Interop を使用して埋め込みポインターをマーシャリングする](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)」を参照してください。  
+# <a name="how-to-marshal-embedded-pointers-using-pinvoke"></a>方法: PInvoke を使用して埋め込みポインターをマーシャリングする
+アンマネージ Dll に実装されている関数は、Platform Invoke (P/invoke) 機能を使用してマネージ コードから呼び出すことができます。 DLL のソース コードが使用できない場合は、相互運用するための唯一のオプションは P/invoke です。 ただし、Visual C は、他の .NET 言語とは異なり、P/invoke する代わりを提供します。 詳細については、次を参照してください。[を使用して C++ Interop (暗黙の PInvoke)](../dotnet/using-cpp-interop-implicit-pinvoke.md)と[する方法: マーシャ リング埋め込みポインターを使用して C++ Interop](../dotnet/how-to-marshal-embedded-pointers-using-cpp-interop.md)です。  
   
-## 使用例  
- ネイティブ コードに構造体を渡す場合、データ レイアウトにおいてネイティブ構造体と等価なマネージ構造体を作成する必要があります。  ただし、ポインターを含む構造体の場合、特別な処理が必要です。  ネイティブ構造体に埋め込まれた各ポインターについて、その構造体のマネージ バージョンに <xref:System.IntPtr> 型のインスタンスを含める必要があります。  また、<xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A>、<xref:System.Runtime.InteropServices.Marshal.StructureToPtr%2A>、および <xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A> の各メソッドを使用して、これらのインスタンスのメモリを明示的に割り当て、初期化し、開放する必要があります。  
+## <a name="example"></a>例  
+ ネイティブ コードに構造体を渡すには、データ レイアウトの観点からネイティブ構造体と同じであるマネージ構造体を作成する必要があります。 ただし、ポインターを含む構造には、特別な処理が必要です。 構造体のマネージのバージョンのネイティブ構造体に埋め込まれた各ポインターのインスタンスを含める必要があります、<xref:System.IntPtr>型です。 また、メモリのこれらのインスタンスは、明示的に割り当てられる必要があります、初期化され、リリースを使用して、 <xref:System.Runtime.InteropServices.Marshal.AllocCoTaskMem%2A>、 <xref:System.Runtime.InteropServices.Marshal.StructureToPtr%2A>、および<xref:System.Runtime.InteropServices.Marshal.FreeCoTaskMem%2A>メソッドです。  
   
- 次のコードは、アンマネージ モジュールとマネージ モジュールで構成されます。  アンマネージ モジュールは、ポインターを含む ListString と呼ばれる構造体を受け取る関数、および TakesListStruct と呼ばれる関数を定義する DLL です。  マネージ モジュールは、TakesListStruct 関数をインポートし、MListStruct と呼ばれる構造体を定義するコマンド ライン アプリケーションです。MListStruct は、<xref:System.IntPtr> インスタンスで表される double\* を除き、ネイティブな ListStruct と等価です。  main 関数は、TakesListStruct を呼び出す前に、このフィールドが参照するメモリを割り当てて初期化します。  
+ 次のコードはアンマネージとマネージ モジュールで構成されます。 アンマネージ モジュールをポインターを含む ListString と呼ばれる構造体を受け取る関数と TakesListStruct に呼び出される関数を定義する DLL です。 TakesListStruct 関数をインポートし、倍 * で表示する点を除いてネイティブ ListStruct に相当する MListStruct と呼ばれる構造体を定義するコマンド ライン アプリケーションは、マネージ モジュールは、<xref:System.IntPtr>インスタンス。 TakesListStruct を呼び出す前に、メイン関数を割り当ててこのフィールドを参照するメモリを初期化します。  
   
- \/clr を指定してマネージ モジュールをコンパイルします。\/clr:pure を使用してもかまいません。  
+ マネージ モジュールは、/clr は/clr でコンパイル: 純粋なが動作します。 コンパイラ オプションの **/clr:pure** と **/clr:safe** は Visual Studio 2015 で使用されていません。  
   
-```  
+```cpp  
 // TraditionalDll6.cpp  
 // compile with: /EHsc /LD  
 #include <stdio.h>  
@@ -65,7 +65,7 @@ void TakesListStruct(ListStruct list) {
 }  
 ```  
   
-```  
+```cpp  
 // EmbeddedPointerMarshalling.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -107,7 +107,7 @@ int main() {
 }  
 ```  
   
- ただし、DLL のどの部分も、従来の \#include ディレクティブを使用してのマネージ コードへの公開はしていません。  実際には、DLL には実行時にしかアクセスしないため、<xref:System.Runtime.InteropServices.DllImportAttribute> を使ってインポートされた関数についての問題は、コンパイル時には検出されません。  
+ 従来を使用してマネージ コードに、DLL の一部は公開されていませんことに注意してください #include ディレクティブです。 実際には、DLL は実行時にのみでの機能に問題が取り込まれるように<xref:System.Runtime.InteropServices.DllImportAttribute>はコンパイル時に、検出されません。  
   
-## 参照  
- [C\+\+ での明示的な PInvoke \(DllImport 属性\) の使用方法 ](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)
+## <a name="see-also"></a>関連項目  
+ [C++ での明示的な PInvoke (DllImport 属性) の使用方法](../dotnet/using-explicit-pinvoke-in-cpp-dllimport-attribute.md)

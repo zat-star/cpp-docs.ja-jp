@@ -1,48 +1,49 @@
 ---
-title: "Toolbar Button Properties | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "size, toolbar buttons"
-  - "toolbar buttons (in Toolbar editor), setting properties"
-  - "Toolbar editor, toolbar button properties"
-  - "status bars, active toolbar button text"
-  - "command IDs, toolbar buttons"
-  - "width, toolbar buttons"
+title: "ツール バー ボタン プロパティ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- size, toolbar buttons
+- toolbar buttons (in Toolbar editor), setting properties
+- Toolbar editor, toolbar button properties
+- status bars, active toolbar button text
+- command IDs, toolbar buttons
+- width, toolbar buttons
 ms.assetid: b2705814-7c5d-4f24-8f77-07559b0cdda2
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 98c78922ee3987bf459f01a62253e9835ad3e377
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Toolbar Button Properties
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ツール バー ボタンのプロパティは、次のとおりです。  
+# <a name="toolbar-button-properties"></a>ツール バー ボタンのプロパティ
+ツール バー ボタンのプロパティは次のとおりです。  
   
-|プロパティ|Description|  
-|-----------|-----------------|  
-|**ID**|ボタンの ID を定義します。  ドロップダウン リストに共通の ID 名が表示されます。|  
-|**幅**|ボタンの幅を設定します。  推奨値は 16 ピクセルです。|  
-|**高さ**|ボタンの高さを設定します。  1 つのボタンの高さがツール バーのすべてのボタンの高さに反映されるので注意してください。  推奨値は 15 ピクセルです。|  
-|**\[確認\]**|ステータス バーに表示されるメッセージを定義します。  \\n および名前を追加すると、ツール バー ボタンにツール ヒントが追加されます。  詳細については、「[ツール バー ボタンのツール ヒントの作成](../mfc/creating-a-tool-tip-for-a-toolbar-button.md)」を参照してください。|  
+|プロパティ|説明|  
+|--------------|-----------------|  
+|**ID**|ボタンの ID を定義します。 ボックスの一覧は、一般的な**ID**名。|  
+|**幅**|ボタンの幅を設定します。 16 ピクセルをお勧めします。|  
+|**高さ**|ボタンの高さを設定します。 1 つのボタンの高さがツールバーのすべてのボタンの高さを変更することに注意してください。 15 ピクセルをお勧めします。|  
+|**プロンプト**|ステータス バーに表示されるメッセージを定義します。 \N と名を追加すると、そのツール バー ボタンにツールヒントが追加されます。 詳細については、次を参照してください。[ツールヒントを作成する](../windows/creating-a-tool-tip-for-a-toolbar-button.md)です。|  
   
- **\[Width\]** と **\[Height\]** はすべてのボタンに適用されます。  ツール バーの作成に使用するビットマップの最大幅は 2048 です。  したがって、ボタンの幅を 512 に設定するとボタンを 4 つしか追加できず、幅を 513 に設定するとボタンを 3 つしか追加できません。  
+ **幅**と**高さ**のすべてのボタンに適用します。 ツールバーを作成するために使用するビットマップが 2048 の最大の幅です。 これを 512 ボタンの幅を設定する場合は、4 つのボタンをのみ持つことができ、513 幅を設定する場合は、3 つのボタンをのみ持つことができます。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
  MFC または ATL  
   
-## 参照  
- [Changing the Properties of a Toolbar Button](../mfc/changing-the-properties-of-a-toolbar-button.md)   
- [Toolbar Editor](../mfc/toolbar-editor.md)
+## <a name="see-also"></a>関連項目  
+ [ツール バー ボタンのプロパティの変更](../windows/changing-the-properties-of-a-toolbar-button.md)   
+ [ツール バー エディター](../windows/toolbar-editor.md)
+

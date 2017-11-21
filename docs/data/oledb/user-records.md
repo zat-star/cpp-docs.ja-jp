@@ -1,43 +1,42 @@
 ---
-title: "ユーザー レコード | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "COLUMN_ENTRY_MAP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "アクセサー [C++], 行セット"
-  - "アクセサー [C++], static"
-  - "BEGIN_ACCESSOR マクロ, 例"
-  - "BEGIN_ACCESSOR_MAP マクロ"
-  - "CAccessor クラス, 例"
-  - "COLUMN_ENTRY マクロ"
-  - "COLUMN_ENTRY_MAP マクロ"
-  - "OLE DB コンシューマー テンプレート, ユーザー レコード"
-  - "行セット [C++], アクセサー"
-  - "ユーザー レコード, OLE DB コンシューマー テンプレート"
+title: "ユーザー レコード |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: COLUMN_ENTRY_MAP
+dev_langs: C++
+helpviewer_keywords:
+- rowsets [C++], accessors
+- COLUMN_ENTRY macro
+- COLUMN_ENTRY_MAP macro
+- user records, OLE DB consumer templates
+- OLE DB consumer templates, user records
+- CAccessor class, example
+- BEGIN_ACCESSOR_MAP macro
+- accessors [C++], rowsets
+- accessors [C++], static
+- BEGIN_ACCESSOR macro, example
 ms.assetid: 2de9e5eb-53ce-42b1-80fa-57d46600a80c
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9acb0a85ce469351ce1dcd34707f2125815f6c92
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ユーザー レコード
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-静的アクセサー \(**CAccessor** から派生したアクセサー\) を使用するには、コンシューマーがユーザー レコードを保持している必要があります。  ユーザー レコードは、入力や出力を処理するためのデータ要素を含む C\+\+ クラスです。  ATL OLE DB コンシューマー ウィザードは、コンシューマーに対してユーザー レコードを生成します。  ユーザー レコードには、コマンドの処理などの省略可能なタスク用のメソッドを追加できます。  
+# <a name="user-records"></a>ユーザー レコード
+静的アクセサーを使用する (から派生したアクセサー **CAccessor)**、コンシューマー ユーザー レコードが存在する必要があります。 ユーザー レコードは、入力を処理または出力のデータ要素を含む C++ クラスです。 ATL OLE DB コンシューマー ウィザードでは、コンシューマーにユーザー レコードが生成されます。 メソッドは、コマンドの処理などのオプションのタスクのユーザー レコードを追加できます。  
   
- 次のコードは、コマンドを処理するサンプル レコードです。  ユーザー レコードでは、`BEGIN_COLUMN_MAP` は、プロバイダーからコンシューマーに渡されるデータ行セットを表します。  `BEGIN_PARAM_MAP` は、一連のコマンド パラメーターを表します。  この例では、[CCommand](../../data/oledb/ccommand-class.md) クラスを使用してコマンド パラメーターを処理します。  マップ エントリのデータ メンバーは、1 つの連続するメモリ ブロック内でのクラスの各インスタンスのオフセットを表します。  `COLUMN_ENTRY` マクロは、プロバイダー側の `PROVIDER_COLUMN_ENTRY` マクロに対応します。  
+ 次のコードでは、コマンドを処理するサンプル レコードを示します。 ユーザー レコードの`BEGIN_COLUMN_MAP`プロバイダーからコンシューマーに渡されるデータ行セットを表します。 `BEGIN_PARAM_MAP`コマンド パラメーターのセットを表します。 この例では、 [CCommand](../../data/oledb/ccommand-class.md)コマンドのパラメーターを処理するクラス。 マップ エントリのデータ メンバーは、1 つの連続するクラスのインスタンスごとにメモリ ブロックのオフセットを表します。 `COLUMN_ENTRY`マクロに対応している、`PROVIDER_COLUMN_ENTRY`プロバイダー側でマクロです。  
   
- **COLUMN\_MAP** マクロと **PARAM\_MAP** マクロの詳細については、「[OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../Topic/Macros%20and%20Global%20Functions%20for%20OLE%20DB%20Consumer%20Templates.md)」を参照してください。  
+ 詳細については、 **COLUMN_MAP**と**PARAM_MAP**マクロを参照してください[OLE DB コンシューマー テンプレート用マクロ](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)です。  
   
 ```  
 class CArtists  
@@ -62,13 +61,13 @@ END_PARAM_MAP()
 };  
 ```  
   
-## ウィザード生成ユーザー レコード  
- ATL OLE DB コンシューマー ウィザードでコンシューマーを生成する場合は、OLE DB テンプレートまたは OLE DB 属性を使用できます。  どちらを使用するかによって、生成されるコードが異なります。  このコードの詳細については、「[コンシューマー ウィザードで生成されたクラス](../../data/oledb/consumer-wizard-generated-classes.md)」を参照してください。  
+## <a name="wizard-generated-user-records"></a>ウィザードで生成されたユーザー レコード  
+ コンシューマーを生成する ATL OLE DB コンシューマー ウィザードを使用する場合は、OLE DB テンプレートまたは OLE DB 属性を使用する選択肢があります。 生成されたコードは、各ケースで異なります。 このコードの詳細については、次を参照してください。[コンシューマー クラス](../../data/oledb/consumer-wizard-generated-classes.md)です。  
   
-## ユーザー レコードによる複数のアクセサーのサポート  
- 複数のアクセサーを使用する必要がある場合の詳細については、「[行セットでの複数アクセサーの使用](../Topic/Using%20Multiple%20Accessors%20on%20a%20Rowset.md)」を参照してください。  
+## <a name="user-record-support-for-multiple-accessors"></a>ユーザー レコードの複数アクセサーのサポート  
+ 複数のアクセサーを使用する必要があるシナリオの詳細については、次を参照してください。[行セットでの複数のアクセサーを使用して](../../data/oledb/using-multiple-accessors-on-a-rowset.md)です。  
   
- 次の例は、行セットに対して複数のアクセサーをサポートするように変更されたユーザー レコードを示しています。  `BEGIN_COLUMN_MAP` と `END_COLUMN_MAP` の代わりに、各アクセサーに対して [BEGIN\_ACCESSOR\_MAP](../../data/oledb/begin-accessor-map.md) と [BEGIN\_ACCESSOR](../../data/oledb/begin-accessor.md) を使用しています。  `BEGIN_ACCESSOR` マクロは、アクセサー番号 \(0 からのオフセット\) と、アクセサーが自動アクセサーかどうかを指定します。  自動アクセサーは、[MoveNext](../../data/oledb/crowset-movenext.md) が呼び出されると、`GetData` を呼び出してデータを自動的に取得します。  非自動アクセサーでは、データを明示的に取得する必要があります。  非自動アクセサーは、ビットマップ イメージのような、すべてのレコードに対して取得する必要のない大きなデータ フィールドとバインドする場合に使用します。  
+ 次の例では、ユーザー レコードが、行セットで複数のアクセサーをサポートするように変更を示します。 代わりに`BEGIN_COLUMN_MAP`と`END_COLUMN_MAP`を使用して[BEGIN_ACCESSOR_MAP](../../data/oledb/begin-accessor-map.md)と[BEGIN_ACCESSOR](../../data/oledb/begin-accessor.md)アクセサーごとにします。 `BEGIN_ACCESSOR`マクロは、アクセサーの数 (0 からのオフセット) および、アクセサーが自動でかどうかを指定します。 Autoaccessors 呼び出し`GetData`データへの呼び出しを自動的に取得する[MoveNext](../../data/oledb/crowset-movenext.md)です。 非自動アクセサーでは、明示的にデータを取得する必要があります。 すべてのレコードを取得するたくない (ビットマップ イメージ) のような大規模なデータ フィールドにバインドする場合は、非自動アクセサーを使用します。  
   
 ```  
 class CMultiArtists  
@@ -92,5 +91,5 @@ END_ACCESSOR_MAP()
 };  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレート](../../data/oledb/ole-db-consumer-templates-cpp.md)

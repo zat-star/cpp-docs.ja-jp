@@ -1,56 +1,54 @@
 ---
-title: "DontUseNewUseMake クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::DontUseNewUseMake"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DontUseNewUseMake クラス"
+title: "DontUseNewUseMake クラス |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::DontUseNewUseMake
+dev_langs: C++
+helpviewer_keywords: DontUseNewUseMake class
 ms.assetid: 8b38d07b-fc14-4cea-afb9-4c1a7dde0093
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 62f8abc151758ac9253698390cbab3e2ba62a4c5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DontUseNewUseMake クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="dontusenewusemake-class"></a>DontUseNewUseMake クラス
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 class DontUseNewUseMake;  
 ```  
   
-## 解説  
- RuntimeClass で演算子を使用することを `new` します。  その結果、[関数を作成します。](../windows/make-function.md) を代わりに使用する必要があります。  
+## <a name="remarks"></a>コメント  
+ 演算子を使用できないように`new`RuntimeClass にします。 したがって、使用する必要があります、[関数](../windows/make-function.md)代わりにします。  
   
-## メンバー  
+## <a name="members"></a>メンバー  
   
-### パブリック演算子  
+### <a name="public-operators"></a>パブリック演算子  
   
 |名前|説明|  
-|--------|--------|  
-|[DontUseNewUseMake::operator new 演算子](../windows/dontusenewusemake-operator-new-operator.md)|演算子をオーバーロードし、`new` します RuntimeClass で使用されることを示します。|  
+|----------|-----------------|  
+|[DontUseNewUseMake::operator new 演算子](../windows/dontusenewusemake-operator-new-operator.md)|演算子をオーバー ロード`new`と RuntimeClass で使用されていることを防ぎます。|  
   
-## 継承階層  
+## <a name="inheritance-hierarchy"></a>継承階層  
  `DontUseNewUseMake`  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)   
+## <a name="see-also"></a>関連項目  
+ [Microsoft::WRL::Details Namespace](../windows/microsoft-wrl-details-namespace.md)   
  [Make 関数](../windows/make-function.md)

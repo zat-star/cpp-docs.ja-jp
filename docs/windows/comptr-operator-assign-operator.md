@@ -1,33 +1,30 @@
 ---
-title: "ComPtr::operator= 演算子 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "client/Microsoft::WRL::ComPtr::operator="
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "operator= 演算子"
+title: "Comptr::operator = 演算子 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: client/Microsoft::WRL::ComPtr::operator=
+dev_langs: C++
+helpviewer_keywords: operator= operator
 ms.assetid: 1a0c2752-f7d8-4819-9443-07b88b69ef02
-caps.latest.revision: 3
-caps.handback.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 238c58e8fda169d86dc4be625ed16efa81c21fef
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ComPtr::operator= 演算子
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-現在の ComPtr に値を割り当てます。  
+# <a name="comptroperator-operator"></a>ComPtr::operator= 演算子
+値を現在の ComPtr に割り当てます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 WRL_NOTHROW ComPtr& operator=(  
@@ -62,35 +59,35 @@ WRL_NOTHROW ComPtr& operator=(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `U`  
- クラス。  
+ クラスです。  
   
  `other`  
- 型または他の ComPtr オブジェクトへのポインター、参照、rvalue 参照。  
+ もう 1 つの ComPtr、または型へのポインター、参照、または右辺値参照。  
   
-## 戻り値  
- 現在の ComPtr オブジェクトへの参照。  
+## <a name="return-value"></a>戻り値  
+ 現在の ComPtr への参照。  
   
-## 解説  
- この演算子の一つ目のバージョンは、現在の ComPtr に空の値が代入されます。  
+## <a name="remarks"></a>コメント  
+ この演算子の最初のバージョンでは、現在の ComPtr に空の値を割り当てます。  
   
- 2 番目のバージョンでは、Web インターフェイス ポインターが現在の ComPtr インターフェイス ポインターと同じでない場合は、2 番目のインターフェイス ポインターが現在の ComPtr に割り当てられます。  
+ 2 番目のバージョンでは、割り当てのインターフェイス ポインターが現在の ComPtr インターフェイス ポインターと同じでない場合、2 番目のインターフェイス ポインターが現在の ComPtr に割り当てられます。  
   
- 3 番目のバージョンでは、Web インターフェイス ポインターが現在の ComPtr に割り当てられます。  
+ 3 番目のバージョンでは、割り当てのインターフェイス ポインターが現在の ComPtr に割り当てられます。  
   
- 4 番目の形式では、割り当て値のインターフェイス ポインターが現在の ComPtr インターフェイス ポインターと同じでない場合は、2 番目のインターフェイス ポインターが現在の ComPtr に割り当てられます。  
+ 4 番目のバージョンでは、割り当ての値のインターフェイス ポインターが現在の ComPtr インターフェイス ポインターと同じでない場合、2 番目のインターフェイス ポインターが現在の ComPtr に割り当てられます。  
   
- 5 番目のバージョンはコピーの;演算子です。ComPtr オブジェクトへの参照が現在の ComPtr に割り当てられます。  
+ 5 番目のバージョンがコピー演算子です。ComPtr への参照は、現在の ComPtr に割り当てられます。  
   
- 6 番目のバージョンは、移動セマンティクスを使用するコピーの;演算子です。任意の型を静的なキャストと現在の ComPtr オブジェクトに割り当てられた場合 ComPtr への rvalue 参照。  
+ 6 番目のバージョンがコピー演算子を使用する移動セマンティクスです。ComPtr キャストし、現在の ComPtr に代入して、任意の型が静的な場合に右辺値参照。  
   
- 7 番目のバージョンは、移動セマンティクスを使用するコピーの;演算子です。型 `U` の ComPtr への rvalue 参照は静的なキャストしました、現在の ComPtr オブジェクトに割り当てられたです。  
+ 7 番目のバージョンがコピー演算子を使用する移動セマンティクスです。型の ComPtr への右辺値参照`U`静的キャストし、現在の ComPtr に割り当てられています。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** client.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ComPtr クラス](../windows/comptr-class.md)

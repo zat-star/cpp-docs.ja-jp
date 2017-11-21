@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-standard-libraries
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- xlocmon/std::moneypunct_byname
-dev_langs:
-- C++
-helpviewer_keywords:
-- moneypunct_byname class
+f1_keywords: xlocmon/std::moneypunct_byname
+dev_langs: C++
+helpviewer_keywords: moneypunct_byname class
 ms.assetid: e8a544d2-6aee-420d-b513-deb385c9b416
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: b876a62bc2646c1131f92cabe806ec662a58aa8f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
 ms.translationtype: MT
-ms.sourcegitcommit: 65f4e356ad0d46333b0d443d0fd6ac0b9f2b6f58
-ms.openlocfilehash: b13028649eeccad5fbc832098a3b070bb81dad45
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/03/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="moneypunctbyname-class"></a>moneypunct_byname クラス
 特定のロケールの `moneypunct` ファセットとして使用できるオブジェクトを表す派生テンプレート クラス。通貨の入力フィールドまたは出力フィールドを書式設定できるようにします。  
@@ -60,7 +55,6 @@ protected:
   
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)
-
 
 
 

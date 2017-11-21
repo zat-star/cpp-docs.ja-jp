@@ -1,30 +1,30 @@
 ---
-title: "end 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/22/2017"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "collection/Windows::Foundation::Collections::end"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "end 関数"
+title: "end Function |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 01/22/2017
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: collection/Windows::Foundation::Collections::end
+dev_langs: C++
+helpviewer_keywords: end Function
 ms.assetid: fb837bff-fc76-4bae-9096-facf0e03041c
-caps.latest.revision: 4
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: f4030728c296a6dd234b6ad181d83ef072b06dd9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# end 関数
+# <a name="end-function"></a>end 関数
 指定されたインターフェイス パラメーターによってアクセスされるコレクションの末尾を越えて指す反復子を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -46,28 +46,28 @@ template <typename T>
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  テンプレート型パラメーター。  
   
  `v`  
- IVector\<T\> または IVectorView\<T\> インターフェイスによりアクセスされる Vector\<T\> または VectorView\<T\> オブジェクトのコレクション。  
+ ベクターのコレクション\<T > または VectorView\<T >、IVector によってアクセスされるオブジェクト\<T >、または IVectorView\<T > インターフェイスです。  
   
  `i`  
- IIterable\<T\> インターフェイスによってアクセスされる任意の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] オブジェクトのコレクション。  
+ Windows ランタイムの任意のコレクション オブジェクトを IIterable によりアクセスされる\<T > インターフェイスです。  
   
-## 戻り値  
+### <a name="return-value"></a>戻り値  
  コレクションの末尾を越えて指す反復子。  
   
-## 解説  
+### <a name="remarks"></a>コメント  
  最初の 2 つのテンプレート関数は反復子を返し、3 番目のテンプレート関数は入力反復子を返します。  
   
- `end` によって返される [Platform::Collections::VectorViewIterator](../cppcx/platform-collections-vectorviewiterator-class.md) オブジェクトは、`VectorProxy<T>` 型の要素を格納するプロキシ反復子です。 ただし、プロキシ オブジェクトは、ユーザー コードにはほとんどは表示されません。 詳細については、「[Collections \(C\+\+\/CX\) \(コレクション \(C\+\+\/CX\)\)](../cppcx/collections-c-cx.md)」を参照してください。  
+ [によって返される](../cppcx/platform-collections-vectorviewiterator-class.md) Platform::Collections::VectorViewIterator `end` オブジェクトは、 `VectorProxy<T>`型の要素を格納するプロキシ反復子です。 ただし、プロキシ オブジェクトは、ユーザー コードにはほとんどは表示されません。 詳細については、「 [Collections (C++/CX) (コレクション (C++/CX))](../cppcx/collections-c-cx.md)」を参照してください。  
   
-## 必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Windows::Foundation::Collections  
   
-## 参照  
- [Windows::Foundation::Collections 名前空間](../cppcx/windows-foundation-collections-namespace-c-cx.md)
+## <a name="see-also"></a>関連項目  
+ [:Foundation Namespace](../cppcx/windows-foundation-collections-namespace-c-cx.md)

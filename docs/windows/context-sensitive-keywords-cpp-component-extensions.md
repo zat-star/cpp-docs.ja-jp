@@ -1,33 +1,30 @@
 ---
-title: "状況依存のキーワード (C++ コンポーネント拡張) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/16/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "internal_CPP"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "状況依存のキーワード"
+title: "状況依存のキーワード (C++ コンポーネント拡張) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: internal_CPP
+dev_langs: C++
+helpviewer_keywords: context-sensitive keywords
 ms.assetid: e33da089-f434-44e9-8cce-4668d05a8939
-caps.latest.revision: 19
-caps.handback.revision: 17
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "19"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 68ff63d5b596d575f26ec0f56a3ac7a568c8471e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 状況依存のキーワード (C++ コンポーネント拡張)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-*状況依存のキーワード*は、特定のコンテキストでのみ認識される言語要素です。  特定のコンテキスト以外では、状況依存のキーワードをユーザー定義の記号として使用することができます。  
+# <a name="context-sensitive-keywords--c-component-extensions"></a>状況依存のキーワード (C++ コンポーネント拡張)
+*状況依存のキーワード*は特定のコンテキストでのみ認識される言語要素です。 特定のコンテキスト以外では、状況依存のキーワードをユーザー定義の記号として使用することができます。  
   
-## すべてのランタイム  
+## <a name="all-runtimes"></a>すべてのランタイム  
  **解説**  
   
  以下は、状況依存のキーワードの一覧です。  
@@ -36,7 +33,7 @@ manager: "ghogen"
   
 -   [delegate](../windows/delegate-cpp-component-extensions.md)  
   
--   [イベント](../windows/event-cpp-component-extensions.md)  
+-   [event](../windows/event-cpp-component-extensions.md)  
   
 -   [finally](../dotnet/finally.md)  
   
@@ -44,9 +41,9 @@ manager: "ghogen"
   
 -   [initonly](../dotnet/initonly-cpp-cli.md)  
   
--   `internal`\(「[メンバーの可視性](../Topic/Member%20Visibility.md)」を参照\)  
+-   `internal`   
   
--   [literal](../windows/literal-cpp-component-extensions.md)  
+-   [リテラル](../windows/literal-cpp-component-extensions.md)  
   
 -   [override](../windows/override-cpp-component-extensions.md)  
   
@@ -54,27 +51,27 @@ manager: "ghogen"
   
 -   [sealed](../windows/sealed-cpp-component-extensions.md)  
   
--   `where` \([Generics](../windows/generics-cpp-component-extensions.md) の一部\)  
+-   `where`(一部の[ジェネリック](../windows/generics-cpp-component-extensions.md))  
   
- 読みやすくするために、状況依存のキーワードをユーザー定義の記号として使用することを制限することもできます。  
+ 読みやすくするため、ユーザー定義シンボルとしての状況依存のキーワードの使用を制限することがあります。  
   
-## [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)]  
+## <a name="windows-runtime"></a>Windows ランタイム  
  **解説**  
   
- \(この機能のプラットフォーム固有の解説はありません。\)  
+ (この機能のプラットフォーム固有の解説はありません。)  
   
-### 要件  
- コンパイラ オプション: **\/ZW**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/ZW**  
   
-## [!INCLUDE[clr_for_headings](../dotnet/includes/clr_for_headings_md.md)]  
+## <a name="common-language-runtime"></a>共通言語ランタイム 
  **解説**  
   
- \(この機能のプラットフォーム固有の解説はありません。\)  
+ (この機能のプラットフォーム固有の解説はありません。)  
   
-### 要件  
- コンパイラ オプション: **\/clr**  
+### <a name="requirements"></a>要件  
+ コンパイラ オプション: **/clr**  
   
-### 例  
+### <a name="examples"></a>例  
  **例**  
   
  次のコード例は、適切なコンテキストでは、`property` 状況依存キーワードを使用してプロパティと変数を定義できることを示しています。  
@@ -102,6 +99,9 @@ int main() {
   
  **出力**  
   
-  **100**   
-## 参照  
- [Component Extensions for Runtime Platforms](../windows/component-extensions-for-runtime-platforms.md)
+```Output  
+100  
+```  
+  
+## <a name="see-also"></a>関連項目  
+ [ランタイム プラットフォームのコンポーネントの拡張機能](../windows/component-extensions-for-runtime-platforms.md)

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
 f1_keywords:
@@ -15,8 +14,7 @@ f1_keywords:
 - __finally_cpp
 - __try_cpp
 - __finally
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - __try keyword [C++]
 - __finally keyword [C++]
@@ -27,16 +25,15 @@ helpviewer_keywords:
 - __leave keyword [C++], try-finally statement
 - structured exception handling [C++], try-finally
 ms.assetid: 826e0347-ddfe-4f6e-a7bc-0398e0edc7c2
-caps.latest.revision: 14
+caps.latest.revision: "14"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 5bfaa7d2a2f75fa479f135a61c15f9fcf3bbf5ca
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: c8fd9128593d1a4ae266376ca5c8cd18ca2d119f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="try-finally-statement"></a>try-finally ステートメント
 **Microsoft 固有の仕様**  
@@ -79,7 +76,7 @@ __finally {
   
  たとえば、次の図に示すように、一連の関数呼び出しで、関数 A を関数 D にリンクするとします。 各関数には、1 つの終了ハンドラーがあります。 関数 D で例外が発生し、A で処理されると、スタックがアンワインドされるときに、終了ハンドラーは D、C、B の順に呼び出されます。  
   
- ![終了 & #45 の順序以外のハンドラーの実行](../cpp/media/vc38cx1.gif "vc38CX1")  
+ ![終了 &#45;の順序以外のハンドラーの実行](../cpp/media/vc38cx1.gif "vc38CX1")  
 終了順序 - ハンドラーの実行  
   
 > [!NOTE]

@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 04/21/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
 f1_keywords:
@@ -40,19 +39,17 @@ helpviewer_keywords:
 - C3267
 - C3281
 - C3294
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 6b3104f6-63bc-4823-b6f3-b8a16be4b87f
-caps.latest.revision: 1
+caps.latest.revision: "1"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: 10c64a5969e8a735ad4e7797ecf41ab0674c82cc
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 87910db946d51d740c93134b7085e5af7d3ccadc
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="compiler-errors-c3200-through-c3299"></a>コンパイラ エラー C3200 C3299 経由
 ドキュメントのこの部分の記事には、Visual C++ コンパイラ エラーのサブセクションに関する情報が記載されています。 ここから情報にアクセスできます。または、Visual Studio の **出力** ウィンドウで、エラー番号を選択して F1 キーを押すと情報にアクセスできます。  
@@ -138,9 +135,9 @@ ms.lasthandoff: 10/10/2017
 |[コンパイラ エラー C3271](compiler-error-c3271.md)|'*フィールド*': 無効な値'*数*':fieldoffset 属性に対する|  
 |[コンパイラ エラー C3272](compiler-error-c3272.md)|'*シンボル*': クラス/構造体のメンバーであると、シンボルには FieldOffset が必要な*type_name* :explicit で定義されています。|  
 |[コンパイラ エラー C3273](compiler-error-c3273.md)|'*キーワード*': C++ try ブロックでは使用できません|  
-|[コンパイラ エラー C3274](compiler-error-c3274.md)|最後に/\_\_最後に一致することがなく次のように再試行します。|  
+|[コンパイラ エラー C3274](compiler-error-c3274.md)|最後に/(& m); #95 &#95; 最後に一致することがなく次のように再試行します。|  
 |[コンパイラ エラー C3275](compiler-error-c3275.md)|'*識別子*': 修飾子なしには、この記号は使用できません|  
-|[コンパイラ エラー C3276](compiler-error-c3276.md)|'*キーワード*': からの最後にジャンプ/\_\_finally ブロック未定義の動作に終了処理時に|  
+|[コンパイラ エラー C3276](compiler-error-c3276.md)|'*キーワード*': からの最後にジャンプ/(& m); #95 &#95; finally ブロック未定義の動作に終了処理時に|  
 |[コンパイラ エラー C3277](compiler-error-c3277.md)|アンマネージ列挙体を定義できません '*列挙*'内部マネージ'*型*'。|  
 |[コンパイラ エラー C3278](compiler-error-c3278.md)|インターフェイス メソッドまたはピュア メソッドの呼び出しを直接 '*関数*' は、実行時に失敗|  
 |[コンパイラ エラー C3279](compiler-error-c3279.md)|cli 名前空間で宣言されたクラス テンプレートの明示的なインスタンス生成と同様に、部分的または明示的な特殊化は許可されていません|  
@@ -164,4 +161,3 @@ ms.lasthandoff: 10/10/2017
 |[コンパイラ エラー C3297](compiler-error-c3297.md)|' *constraint2*': は使用できません' *constraint1*'を制約としてため' *constraint1*' 値の制約|  
 |[コンパイラ エラー C3298](compiler-error-c3298.md)|' *constraint1*': は使用できません' *constraint2*'を制約としてため' *constraint2*'は ref 制約と' *constraint1*'値を制約します。|  
 |[コンパイラ エラー C3299](compiler-error-c3299.md)|'*関数*': 制約を指定できませんそれらは基本メソッドから継承。|  
-

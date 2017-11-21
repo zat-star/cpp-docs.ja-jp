@@ -4,12 +4,10 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - array-element initializers
 - initializing arrays [C++], initializers
@@ -17,16 +15,15 @@ helpviewer_keywords:
 - declarators, as initializers
 - initializers, array element
 ms.assetid: ce301ed8-aa1c-47b2-bb39-9f0541b4af85
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: d58a1d8ed688f927719411bdae29fe08969961c5
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 17231b9d541163d5b14509bafb991fcd32215fca
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="initializers"></a>初期化子
 初期化子は変数の初期値を指定します。 変数は次のコンテキストで初期化できます。  
@@ -530,11 +527,10 @@ int main()
  ![参照型の初期化の判定グラフ](../cpp/media/vc38s71.gif "vc38S71")  
 参照型の初期化の判定グラフ  
   
- 参照`volatile`型 (として宣言されている`volatile` *typename* ** & ** *識別子*) で初期化できます`volatile`として宣言されていないオブジェクトまたは同じ型のオブジェクト`volatile`です。 することはできませんただし、で初期化する同じ**const**その型のオブジェクト。 参照を同様に、 **const**型 (として宣言されている**const** *typename* ** & ** *識別子*) で初期化できます**const**同じ種類のオブジェクト (またはとして宣言されていないオブジェクトまたはその型への変換が含まれている**const**)。 ただし、同じ型の `volatile` オブジェクトにより初期化することはできません。  
+ 参照`volatile`型 (として宣言されている`volatile` *typename*  **&**  *識別子*) で初期化できます`volatile`として宣言されていないオブジェクトまたは同じ型のオブジェクト`volatile`です。 することはできませんただし、で初期化する同じ**const**その型のオブジェクト。 参照を同様に、 **const**型 (として宣言されている**const** *typename*  **&**  *識別子*) で初期化できます**const**同じ種類のオブジェクト (またはとして宣言されていないオブジェクトまたはその型への変換が含まれている**const**)。 ただし、同じ型の `volatile` オブジェクトにより初期化することはできません。  
   
  いずれかで修飾されていない参照、 **const**または`volatile`キーワードは、どちらもとして宣言されたオブジェクトでのみ初期化できます**const**も`volatile`します。  
   
 ### <a name="initialization-of-external-variables"></a>外部変数の初期化  
  自動、static、および外部変数の宣言には、初期化子を含めることができます。 ただし、外部変数の宣言では、変数が `extern` として宣言されていない場合にのみ初期化子を含めることができます。
   
-

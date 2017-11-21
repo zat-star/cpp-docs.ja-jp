@@ -1,46 +1,46 @@
 ---
-title: "Platform::CallbackContext 列挙型 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/30/2016"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "Platform/Platform::CallbackContext"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Platform::CallbackContext 列挙型"
+title: "Platform::callbackcontext 列挙 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 12/30/2016
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: VCCORLIB/Platform::CallbackContext
+dev_langs: C++
+helpviewer_keywords: Platform::CallbackContext Enumeration
 ms.assetid: 60e0c7cb-5d8f-482a-bdca-ca9335ae4899
-caps.latest.revision: 3
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: fba35e6847339287d3fa2a3d922c0d9e481a0754
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Platform::CallbackContext 列挙型
-コールバック関数 \(イベント ハンドラー\) が実行するスレッド コンテキストを指定します。  
+# <a name="platformcallbackcontext-enumeration"></a>Platform::CallbackContext 列挙型
+コールバック関数 (イベント ハンドラー) が実行するスレッド コンテキストを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```cpp  
 enum class CallbackContext {};  
 ```  
   
-## メンバー  
+### <a name="members"></a>メンバー  
   
 |型コード|説明|  
-|----------|--------|  
+|---------------|-----------------|  
 |どれでも可|コールバック関数は、任意のスレッド コンテキストで実行できます。|  
 |同|コールバック関数は、非同期操作を開始したスレッド コンテキストでのみ実行できます。|  
   
-## 必要条件  
- **サポートされている最低限のクライアント:** [!INCLUDE[win8](../cppcx/includes/win8-md.md)]  
+### <a name="requirements"></a>要件  
+ **クライアントがサポートされる最小:** Windows 8  
   
- **サポートされている最低限のサーバー:** [!INCLUDE[winserver8](../cppcx/includes/winserver8-md.md)]  
+ **サポートされているサーバーの最小値:** Windows Server 2012  
   
  **名前空間:** Platform  
   

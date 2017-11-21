@@ -1,34 +1,34 @@
 ---
-title: "インライン アセンブリでの C++ 関数の呼び出し | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], 呼び出し (関数を)"
-  - "関数呼び出し, C++ 関数"
-  - "関数呼び出し, インライン アセンブラー内"
-  - "関数 [C++], インライン アセンブラー内での呼び出し"
-  - "インライン アセンブラー, 呼び出し (関数を)"
-  - "Visual C++, 関数"
+title: "インライン アセンブリでは関数を呼び出して C |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- function calls, C functions
+- function calls, in inline assembly
+- functions [C], calling in inline assembly
+- Visual C, functions
+- inline assembly, calling functions
+- __asm keyword [C++], calling functions
 ms.assetid: f8a8d568-d175-4e23-9b24-36ef60a4cab3
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3cd162026792bf8458c3725011b583d1eeb00772
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# インライン アセンブリでの C 関数の呼び出し
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- `__asm` ブロックは C ライブラリ ルーチンを含めて C 関数を呼び出すことができます。  次の例では `printf` ライブラリ ルーチンを呼び出します :  
+# <a name="calling-c-functions-in-inline-assembly"></a>インライン アセンブリでの C 関数の呼び出し
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ `__asm`ブロックは、C のライブラリ ルーチンを含む、C 関数を呼び出すことができます。 次の例では、`printf`ライブラリ ルーチン。  
   
 ```  
 // InlineAssembler_Calling_C_Functions_in_Inline_Assembly.cpp  
@@ -58,15 +58,15 @@ int main( void )
 }  
 ```  
   
- 関数の引数がスタックに渡されるため\) は関数を呼び出す前に必要な引数 \(上の例の文字列ポインター単にキーを押します。  引数は逆順にプッシュされます。したがって指定した順序でスタックから取れます。  C のステートメントをエミュレートします。  
+ 単に必要な引数をプッシュする関数の引数はスタックで渡される、ため — 文字列ポインターは、前の例で、関数を呼び出す前にします。 引数は、目的の順序でスタックから送られてきたので逆の順序では、プッシュされます。 C ステートメントをエミュレートするために  
   
 ```  
 printf( format, hello, world );  
 ```  
   
- `world` 例では`hello` と `format` へのポインターをこの順序で押してから`printf` を呼び出します。  
+ 例では、プッシュへのポインター `world`、 `hello`、および`format`、その順序、および呼び出し`printf`です。  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

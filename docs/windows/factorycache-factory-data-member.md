@@ -1,45 +1,43 @@
 ---
-title: "FactoryCache::factory データ メンバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::Details::FactoryCache::factory"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "factory データ メンバー"
+title: "Factorycache::factory データ メンバー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::Details::FactoryCache::factory
+dev_langs: C++
+helpviewer_keywords: factory data member
 ms.assetid: a8c68ace-71ef-48a4-b5e6-b0f4a070060a
-caps.latest.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c24fc67eae713b218f878923931ea3d5f9ac1413
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FactoryCache::factory データ メンバー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[cppwrl](../windows/includes/cppwrl_md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="factorycachefactory-data-member"></a>FactoryCache::factory データ メンバー
+Windows ランタイム C++ テンプレート ライブラリのインフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 IUnknown* factory;  
 ```  
   
-## 解説  
- [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] または COM クラス ファクトリへのポインター。  
+## <a name="remarks"></a>コメント  
+ Windows ランタイムまたは COM クラス ファクトリを指します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [FactoryCache 構造体](../Topic/FactoryCache%20Structure.md)   
+## <a name="see-also"></a>関連項目  
+ [FactoryCache 構造体](../windows/factorycache-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

@@ -1,40 +1,34 @@
 ---
-title: "コンパイラの警告 (レベル 2) C4356 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4356"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4356"
+title: "コンパイラの警告 (レベル 2) C4356 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4356
+dev_langs: C++
+helpviewer_keywords: C4356
 ms.assetid: 3af3defe-de33-43b6-bd6c-2c2e09e34f3f
-caps.latest.revision: 10
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 10
+caps.latest.revision: "10"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: cd32ad76e83a51ad361b7d0226fa73fd88b58214
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
-# コンパイラの警告 (レベル 2) C4356
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'member' : 静的データ メンバーは、派生クラスを使って初期化できません。  
+# <a name="compiler-warning-level-2-c4356"></a>コンパイラの警告 (レベル 2) C4356
+'member': 静的データ メンバーは派生クラスを使用して初期化することはできません  
   
- 静的データ メンバーの初期化の形式が間違っています。  コンパイラは初期化を受け入れました。  
+ 静的データ メンバーの初期化の形式が正しくありません。 コンパイラでは、初期化が受け入れられます。 警告を回避するには、基本クラスを使用してメンバーを初期化します。  
   
- これは、Visual C\+\+ .NET 2003 コンパイラでの互換性に影響する変更点です。  
+ 使用して、[警告](../../preprocessor/warning.md)プラグマをこの警告を抑制します。  
   
- すべてのバージョンの Visual C\+\+ で同じ動作をするコードを作成するには、基本クラスを通じてメンバーを初期化します。  
-  
- この警告が表示されないようにするには、[warning](../../preprocessor/warning.md) プラグマを使用します。  
-  
- 次の例では警告 C4356 が生成されます。  
+ 次の例では、C4356 が生成されます。  
   
 ```  
 // C4356.cpp  

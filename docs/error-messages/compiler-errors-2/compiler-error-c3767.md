@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- C3767
-dev_langs:
-- C++
-helpviewer_keywords:
-- C3767
+f1_keywords: C3767
+dev_langs: C++
+helpviewer_keywords: C3767
 ms.assetid: 5247cdcd-639c-4527-bd37-37e74c4e8fab
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: corob-msft
 ms.author: corob
 manager: ghogen
+ms.openlocfilehash: c5f19cfe3b08eb9799f6792928c18e1d76b072e8
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
 ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
-ms.openlocfilehash: 6ebbcbe30a0c9359116d259c36d702a968b333c9
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/10/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
 # <a name="compiler-error-c3767"></a>コンパイラ エラー C3767
 '関数' : 候補の関数はアクセス可能ではありません。  
@@ -87,42 +82,4 @@ ref class Der : public Base {
 };  
 ```  
   
- Visual C .NET 2002 は、コンパイラは、シンボルを検索する方法を変更します。 以前は、指定された名前空間でシンボルが自動的に検索される場合がありました。 ここで、引数依存の検索を使用します。  
-  
- 次の例では、C3767 が生成されます。  
-  
-```  
-// C3767e.cpp  
-namespace N {  
-   class C {  
-      friend void FriendFunc() {}  
-      friend void AnotherFriendFunc(C* c) {}  
-   };  
-}  
-  
-int main() {  
-   using namespace N;  
-   FriendFunc();   // C3767 error  
-   C* pC = new C();  
-   AnotherFriendFunc(pC);   // found via argument-dependent lookup  
-}  
-```  
-  
- Visual C .NET 2003 および Visual C .NET 2002 で有効なコードでは、クラス スコープでフレンドを宣言し、名前空間スコープで定義します。  
-  
-```  
-// C3767f.cpp  
-class MyClass {  
-   int m_private;  
-   friend void func();  
-};  
-  
-void func() {  
-   MyClass s;  
-   s.m_private = 0;  
-}  
-  
-int main() {  
-   func();  
-}  
-```
+ 

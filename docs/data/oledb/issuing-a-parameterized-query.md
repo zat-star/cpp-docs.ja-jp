@@ -1,28 +1,27 @@
 ---
-title: "パラメーター クエリの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "パラメーター クエリ, 実行 (CCommand クラスを使用して)"
+title: "パラメーター化クエリを発行する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: parameter queries, running using CCommand class
 ms.assetid: aedb0fce-52a4-4c97-a5c9-b2114be6c3b0
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8386358a2dea8949d069384029ea110e8463a45d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# パラメーター クエリの実行
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例では、Microsoft Access データベースのテーブルから \(30 歳を超える\) 年齢フィールドのあるレコードを取得する、単純なパラメーター クエリを実行します。  パラメーターをサポートするには、ユーザー レコードに追加の割り当てが必要です。  次に示す ATL プロジェクト内のコードでは、「[単純な行セットの走査](../Topic/Traversing%20a%20Simple%20Rowset.md)」の例で使用した `CTable` クラスの代わりに `CCommand` クラスを使用します。  
+# <a name="issuing-a-parameterized-query"></a>パラメーター クエリの実行
+次の例では、Microsoft Access データベース内のテーブルから (つまり、30 より大きい) 時効フィールドを持つレコードを取得する単純なパラメーター化クエリを発行します。 パラメーターをサポートするためには、追加のマップが、ユーザー レコードに必要です。 次のコードでは、ATL プロジェクトでは、使用、`CCommand`クラスの代わりに、`CTable`前の例で使用されるクラス[単純な行セットの走査](../../data/oledb/traversing-a-simple-rowset.md)です。  
   
 ```  
 #include <atldbcli.h>  
@@ -50,7 +49,7 @@ while (artists.MoveNext() == S_OK)
 }  
 ```  
   
- ユーザー レコード `CArtists` は次のようになります。  
+ ユーザー レコード`CArtists`、次に示します。  
   
 ```  
 class CArtists  
@@ -76,5 +75,5 @@ END_PARAM_MAP()
 };  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB コンシューマー テンプレートの操作](../../data/oledb/working-with-ole-db-consumer-templates.md)

@@ -1,58 +1,59 @@
 ---
-title: "Toolbar (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.bitmap"
-  - "vc.editors.icon"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Graphics toolbar"
-  - "Image editor [C++], toolbar"
-  - "Image editor [C++], Option selector"
-  - "Properties window"
-  - "Option selector, Image editor"
+title: "ツールバー (アイコン用イメージ エディター) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- vc.editors.bitmap
+- vc.editors.icon
+dev_langs: C++
+helpviewer_keywords:
+- Graphics toolbar
+- Image editor [C++], toolbar
+- Image editor [C++], Option selector
+- Properties window
+- Option selector, Image editor
 ms.assetid: a0af4209-6273-4106-a7c1-0edecc9b5755
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c4ed86aeda3fdd0aab702d8c1a7fdba6f1ec1080
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Toolbar (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-\[イメージ エディター\] ツール バーには、描画、ペイント、テキスト入力、消去、およびビューの操作のためのツールが含まれます。  また、各ツールを使用するためのオプションを選択できるオプション セレクターもあります。  たとえば、ブラシの幅、拡大率、線の種類などを選択できます。  
+# <a name="toolbar-image-editor-for-icons"></a>ツール バー (アイコン用イメージ エディター)
+**イメージ エディター**ツールバーには、描画、ペイント、テキストを入力する、消去、およびビューの操作用のツールが含まれています。 オプション セレクター、各ツールを使用するオプションを選択することができますも含まれています。 たとえば、さまざまなブラシの幅、拡大率、および線のスタイルから選択することができます。  
   
 > [!NOTE]
->  \[イメージ エディター\] ツール バーで利用できるツールはすべて、\[イメージ\] メニューの \[ツール\] コマンドからも利用できます。  
+>  使用できるすべてのツール、**イメージ エディター**ツールバーも使用できます、**イメージ**メニュー (下にある、**ツール**コマンド)。  
   
- ![&#91;イメージ エディター&#93; ツール バー](../mfc/media/vcimageeditortoolbar.gif "vcImageEditorToolbar")  
-\[イメージ エディター\] ツール バー  
+ ![イメージ エディター ツールバー](../mfc/media/vcimageeditortoolbar.gif "vcImageEditorToolbar")  
+[イメージ エディター] ツール バー  
   
- \[イメージ エディター\] ツール バーとオプション セレクターを使用するには、必要なツールまたはオプションをクリックします。  
+ 使用する、**イメージ エディター**ツールバーと**オプション**セレクター、[ツール] をクリックまたはするオプションです。  
   
 > [!TIP]
->  ツール バー ボタンの上にカーソルを置くと、ツール ヒントが表示されます。  これらのヒントによって、各ボタンの機能がわかります。  
+>  ツール ヒントは、ツールバーのボタンの上にカーソルを置くと表示されます。 これらのヒントを使用する各ボタンの機能を特定できます。  
   
- オプション セレクターを使用すると、線の幅やブラシのストロークなどを指定できます。  \[オプション\] ボタンのアイコンは、選択したツールに応じて変わります。  
+ **オプション**セレクター線、マーカーなどの幅を指定することができます。上のアイコン、**オプション**セレクター ボタンが選択したツールを変更します。  
   
- ![&#91;イメージ エディター&#93; ツール バーの図形セレクター](../mfc/media/vcimageeditortoolbaroptionselector.gif "vcImageEditorToolbarOptionSelector")  
-\[イメージ エディター\] ツール バーのオプション セレクター  
+ ![描画 &#45; イメージ エディターのツールバーの図形セレクター](../mfc/media/vcimageeditortoolbaroptionselector.gif "vcImageEditorToolbarOptionSelector")  
+イメージ エディターのツールバーでオプション セレクター  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
-## 要件  
+## <a name="requirements"></a>要件  
  なし  
   
-## 参照  
- [Displaying or Hiding the Toolbar](../mfc/displaying-or-hiding-the-toolbar-image-editor-for-icons.md)   
- [Accelerator Keys](../mfc/accelerator-keys-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>関連項目  
+ [表示するか、ツールバーを非表示](displaying-or-hiding-the-toolbar-image-editor-for-icons.md)   
+ [アクセラレータ キー](../windows/accelerator-keys-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

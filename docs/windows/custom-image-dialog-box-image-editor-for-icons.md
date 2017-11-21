@@ -1,43 +1,40 @@
 ---
-title: "[カスタム イメージの種類] ダイアログ ボックス (アイコン用イメージ エディター) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.editors.customimage"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "[カスタム イメージの種類] ダイアログ ボックス"
+title: "カスタム イメージ ダイアログ ボックス (アイコン用イメージ エディター) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.editors.customimage
+dev_langs: C++
+helpviewer_keywords: Custom Image dialog box
 ms.assetid: 68e2cc5c-19de-428e-bc25-ec6b260247d0
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 84b05f0ac4270e19eee14f1a16683d82d082cda1
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# [カスタム イメージの種類] ダイアログ ボックス (アイコン用イメージ エディター)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-カスタムのサイズと色数を指定してイメージを新規作成できます。  Windows で使用されるアイコン サイズの詳細については、Windows SDK 資料の「[アイコン](_win32_Icons_cpp)」を参照してください。  
+# <a name="custom-image-dialog-box-image-editor-for-icons"></a>[カスタム イメージの種類] ダイアログ ボックス (アイコン用イメージ エディター)
+カスタムのサイズと色の数で新しいイメージを作成できます。
+ **幅**  
+ ピクセル単位 (1 ~ 512、制限 2048 の) でカスタム イメージの幅を入力する場所を提供します。  
   
- **\[幅\]**  
- カスタム イメージの幅をピクセル単位で入力できます。値の範囲は 1 ～ 512 で、上限は 2048 です。  
+ **高さ**  
+ ピクセル (1 ~ 512、制限 2048 の) でカスタム イメージの高さを入力する場所を提供します。  
   
- **\[高さ\]**  
- カスタム イメージの高さをピクセル単位で入力できます。値の範囲は 1 ～ 512 で、上限は 2048 です。  
+ **色**  
+ カスタム イメージの色の数を選択するための場所: 2、16、または 256 です。  
   
- **\[色\]**  
- カスタム イメージの色数として 2、16、または 256 のいずれかを選択できます。  
-  
-## 要件  
+## <a name="requirements"></a>要件  
  なし  
   
-## 参照  
- [\[\<デバイス\> イメージ タイプの新規作成\] ダイアログ ボックス](../Topic/New%20%3CDevice%3E%20Image%20Type%20Dialog%20Box%20\(Image%20Editor%20for%20Icons\).md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>関連項目  
+ [新しい\<デバイス > イメージの種類 ダイアログ ボックス](../windows/new-device-image-type-dialog-box-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)

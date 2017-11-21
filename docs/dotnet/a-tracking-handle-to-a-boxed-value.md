@@ -1,48 +1,47 @@
 ---
-title: "追跡ハンドルからボックス化変換された値へ | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ボックス化された値型, 追跡 (ハンドルを)"
+title: "ボックス化された値を追跡ハンドル |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: boxed value types, tracking handle to
 ms.assetid: 16c92048-5b74-47d5-8eca-dfea3d38879a
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a986dcea2eec183ae09eb9af275082922257ef76
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 追跡ハンドルからボックス化変換された値へ
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-値型を参照するために追跡ハンドルを使用する方法は、[!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] では C\+\+ マネージ拡張から変更されています。  
+# <a name="a-tracking-handle-to-a-boxed-value"></a>追跡ハンドルからボックス化変換された値へ
+値型を参照する追跡ハンドルの使用法は、Visual C を c++ マネージ拡張から変更されました。  
   
- ボックス化は CLR 統一型システムの特性です。  値型はその状態を直接格納し、一方、参照型は暗黙的なペアです。名前付きエンティティは、マネージ ヒープに割り当てられた名前のないオブジェクトのハンドルです。  たとえば、値型を `Object` に割り当てたり初期化したりするには、最初に関連メモリを割り当て、次に値型の状態をコピーし、さらにこの匿名値\/参照ハイブリッドの値を返して、値型を CLR ヒープ内に配置する必要があります。値型をボックス化するイメージは CLR ヒープで発生します。  これを C\# で記述すると次のようになります。  
+ ボックス化とは、統合された CLR 型システムの特性です。 値の型は、参照型は、暗黙の組の中に直接その状態を格納します。 名前付きエンティティは、マネージ ヒープ上に割り当てられた名前のないオブジェクトへのハンドル。 初期化や型の値を割り当てる、 `Object`、たとえば、必要な値の型が - これは、ボックス化の画像は、発生場所 - CLR ヒープ内に配置すること最初、関連付けられているメモリの割り当て、次の値の型の状態をコピーして、この匿名の値の参照/ハイブリッドのアドレスを返すとします。 したがって、ときに 1 つを書き込みます (C#)  
   
 ```  
 object o = 1024; // C# implicit boxing  
 ```  
   
- 実際には、簡素化されたコードで示されるよりもかなり多くのことが行われます。  C\# のデザインは、内部で行われている操作の複雑さだけでなく、ボックス化自体の抽象化の複雑さも隠します。  これに対し、C\+\+ マネージ拡張はこれが効率性の誤った認識につながると考え、ユーザーに正しい感覚を持たせるために、明示的な命令を要求します。  
+ 多く起こっているはによる外見上、わかりやすくするためのコードよりもあります。 C# のデザインには、だけでなく、どのような操作が、内部で行われているが、ボックス化自体の抽象化の複雑さが隠されています。 C++ マネージ拡張、その一方で、懸念の false 感の効率性につながるこれは、明示的な命令を要求することによって、ユーザーの面に配置します。  
   
 ```  
 Object *o = __box( 1024 ); // Managed Extensions explicit boxing  
 ```  
   
- [!INCLUDE[cpp_current_long](../Token/cpp_current_long_md.md)] ではボックス化の使用は暗黙的です。  
+ Visual C で暗黙的なボックス化とは。  
   
 ```  
 Object ^o = 1024; // new syntax implicit boxing  
 ```  
   
- `__box` キーワードは、C\# や [!INCLUDE[vbprvb](../Token/vbprvb_md.md)] などの言語によるデザインでは削除される、より重要なサービスのためにマネージ拡張で使用されています。つまり、マネージ ヒープ上でボックス化変換されたインスタンスを直接操作するための、ボキャブラリとトラッキング ハンドルの両方を提供します。  たとえば次の小規模プログラムを考えてみます。  
+ `__box`キーワードは、重要なサービスのいずれかの存在しない場合は、マネージ拡張で c# および Visual Basic などの言語からデザインによって: ボキャブラリと追跡の両方を直接操作すると、マネージ ヒープ上のボックス化されたインスタンスの処理を提供します。 たとえば、次の小さなプログラムがあるとします。  
   
 ```  
 int main() {  
@@ -59,13 +58,13 @@ int main() {
 }  
 ```  
   
- `WriteLine` の 3 回の呼び出しで生成されるコードは、ボックス化された値型の値にアクセスする際の各コストを示します \(これらの相違を指摘していただいた Yves Dolce に感謝します\)。ここで、強調した行は各呼び出しに関連するオーバーヘッドを示しています。  
+ 3 回の呼び出しで生成された基になるコード`WriteLine`指示された行がそれぞれに関連するオーバーヘッドを表示する (ご協力に感謝していただいた Yves Dolce これらの相違を指す)、入力のボックス化された値にアクセスするさまざまなコストを表示します。呼び出し。  
   
 ```  
 // Console::WriteLine( S"result :: {0}", result.ToString() ) ;  
 ldstr      "result :: {0}"  
 ldloca.s   result  // ToString overhead  
-call       instance string  [mscorlib]System.Double::ToString()  // ToString overhead  
+call       instance string  [mscorlib]System.Double::ToString()  // ToString overhead  
 call       void [mscorlib]System.Console::WriteLine(string, object)  
   
 // Console::WriteLine( S"result :: {0}", __box(result) ) ;  
@@ -80,9 +79,9 @@ ldloc.0
 call     void [mscorlib]System.Console::WriteLine(string, object)  
 ```  
   
- ボックス化された値型を `Console::WriteLine` に直接渡すことで、ボックス化と `ToString()` の呼び出しが不要になります \(もちろん、`br` を初期化するためのボックス化がこの前にあります。`br` を初期化しなければ、それ以降の処理を行うことはできません\)。  
+ ボックス化された値の型を直接渡す`Console::WriteLine`ボックス化とを呼び出す必要がある`ToString()`です。 (当然ながら、初期化するために以前のボックス化がある`br`ため何も実際に配置しない限り、`br`動作をします。  
   
- 新しい構文では、ボックス化された値型のサポートが大幅に改善され、型システムに統合されると同時に、その強力さが保持されています。  たとえば、上の小規模プログラムを変換すると次のようになります。  
+ 新しい構文ではボックス化された値の型がサポートかなりより洗練されたに統合されると、型システムの電源を維持したままです。 たとえば、以前のバージョンの小さなプログラムの翻訳を次に示します。  
   
 ```  
 int main()  
@@ -98,6 +97,6 @@ int main()
 }  
 ```  
   
-## 参照  
- [値型とその動作 \(C\+\+\/CLI\)](../dotnet/value-types-and-their-behaviors-cpp-cli.md)   
- [方法: 明示的にボックス化を要求する](../Topic/How%20to:%20Explicitly%20Request%20Boxing.md)
+## <a name="see-also"></a>関連項目  
+ [値の型とその動作 (C + + CLI)](../dotnet/value-types-and-their-behaviors-cpp-cli.md)   
+ [方法: 明示的にボックス化を要求する](../dotnet/how-to-explicitly-request-boxing.md)

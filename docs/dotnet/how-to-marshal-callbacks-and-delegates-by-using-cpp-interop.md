@@ -1,43 +1,42 @@
 ---
-title: "方法: C++ Interop を使用してコールバックおよびデリゲートをマーシャリングする | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C++ 相互運用機能, コールバックとデリゲート"
-  - "コールバック [C++], マーシャリング"
-  - "データ マーシャリング [C++], コールバックとデリゲート"
-  - "デリゲート [C++], マーシャリング"
-  - "相互運用 [C++], コールバックとデリゲート"
-  - "マーシャリング [C++], コールバックとデリゲート"
+title: "方法: C++ Interop を使用してマーシャ リング コールバックおよびデリゲート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- data marshaling [C++], callbacks and delegates
+- C++ Interop, callbacks and delegates
+- interop [C++], callbacks and delegates
+- delegates [C++], marshaling
+- marshaling [C++], callbacks and delegates
+- callbacks [C++], marshaling
 ms.assetid: 2313e9eb-5df9-4367-be0f-14b4712d8d2d
-caps.latest.revision: 23
-caps.handback.revision: 23
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "23"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 2a835dbdbce23f7f92f13fabd038d6e294345981
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C++ Interop を使用してコールバックおよびデリゲートをマーシャリングする
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、Visual C\+\+ を使用してマネージ コードとアンマネージ コード間でコールバックおよびデリゲート \(コールバックのマネージ バージョン\) をマーシャリングする方法を説明します。  
+# <a name="how-to-marshal-callbacks-and-delegates-by-using-c-interop"></a>方法: C++ Interop を使用してコールバックおよびデリゲートをマーシャリングする
+このトピックでは、コールバックのマーシャ リングする方法を示していて、Visual C を使用してマネージ コードとアンマネージ コード間でのデリゲート (コールバックの管理対象のバージョン)。  
   
- 次のコード例では、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md) の \#pragma ディレクティブを使用してマネージ関数とアンマネージ関数を同じファイル内で実装していますが、これらの関数は、別個のファイルに定義することもできます。  アンマネージ関数のみを含むファイルは、[\/clr \(共通言語ランタイムのコンパイル\)](../build/reference/clr-common-language-runtime-compilation.md) でコンパイルする必要はありません。  
+ 次のコード例、[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)関数は、個別のファイルで定義することもでしたが、マネージ リソースと同じファイル内の関数をアンマネージ #pragma ディレクティブを実装します。 アンマネージ関数のみを含むファイルを使用してコンパイルする必要はありません、 [/clr (共通言語ランタイムのコンパイル)](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 使用例  
- 次の例は、マネージ デリゲートを発生させるためにアンマネージ API を構成する方法を示します。  マネージ デリケートが作成され、相互運用メソッドの 1 つ \(<xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A>\) を使用して、デリゲートの基になるエントリ ポイントを取得します。  次に、このアドレスは、アンマネージ関数に渡されます。アンマネージ関数は、自身がマネージ関数として実装されていることを認識せずにこのアドレスを呼び出します。  
+## <a name="example"></a>例  
+ 次の例では、マネージ デリゲートをトリガーするアンマネージ API を構成する方法を示します。 マネージ デリゲートを作成し、相互運用機能のいずれかの<xref:System.Runtime.InteropServices.Marshal.GetFunctionPointerForDelegate%2A>デリゲートの基になるエントリ ポイントを取得するために使用します。 このアドレスは、マネージ関数として実装されている事実を認識していなくても呼び出すアンマネージ関数に渡されます。  
   
- デリゲートを再配置したり、ガベージ コレクターで破棄されることを回避するために、[pin\_ptr \(C\+\+\/CLI\)](../Topic/pin_ptr%20\(C++-CLI\).md) を使用してデリゲートを固定することはできますが、その必要はありません。  早すぎるガベージ コレクションからデリゲートを保護することは必要ですが、デリゲートを固定すると、デリゲートが必要以上に保護され、コレクションを実行できなくなるだけでなく再配置もできなくなります。  
+ 注意してが可能であれば、必須ではありません、暗証番号 (pin) を使用してデリゲート[pin_ptr (C + + CLI)](../windows/pin-ptr-cpp-cli.md)から再配置したり、ガベージ コレクターによって破棄されていることがないようにします。 不完全なガベージ コレクションからの保護は、必要なが必要です。 これにより、コレクションが再配置を防ぐことができます、以上に保護を提供ピン留めします。  
   
- ガベージ コレクションによってデリゲートを再配置する場合、デリゲートの基になるマネージ コールバックには影響しません。したがって、<xref:System.Runtime.InteropServices.GCHandle.Alloc%2A> を使用してデリゲートへの参照を追加すると、デリゲートの再配置は可能になりますが、デリゲートの破棄は回避できます。  pin\_ptr の代わりに GCHandle を使用すると、マネージ ヒープでのフラグメントの可能性を削減できます。  
+ デリゲートは、ガベージ コレクション再配置されている場合に影響しません、基にマネージ コールバックのため<xref:System.Runtime.InteropServices.GCHandle.Alloc%2A>デリゲートの再配置を許可するが、破棄を防止は、デリゲートへの参照を追加するために使用します。 Pin_ptr ではなく GCHandle を使用するには、マネージ ヒープの断片化可能性が少なくなります。  
   
 ```  
 // MarshalDelegate1.cpp  
@@ -85,8 +84,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次の例は、上の例に類似していますが、この場合は、指定した関数ポインターはアンマネージ API によって格納されるので、随時この関数ポインターを呼び出して、任意の期間ガベージ コレクションを抑止することを要求できます。  その結果、次の例は、<xref:System.Runtime.InteropServices.GCHandle> のグローバル インスタンスを使用して、関数のスコープに関係なくデリゲートが再配置されることを防ぎます。  最初の例で説明したとおり、これらの例では pin\_ptr を使用する必要はありませんが、使用したとしても、この場合 pin\_ptr のスコープが単一の関数に制限されているため、動作しません。  
+## <a name="example"></a>例  
+ 次の例は、前の例に似ていますが、ここでは、指定された関数ポインターが格納、アンマネージ API でそのことができますが呼び出されるように、いつでも任意の長さの時間のガベージ コレクションが抑制されることを必要とします。 次の例のグローバル インスタンスを使用してその結果、<xref:System.Runtime.InteropServices.GCHandle>を防止デリゲート関数のスコープに依存しない、効果的に再配置します。 前述の最初の例は pin_ptr を使用してこれらの例については、必要はありませんが、ここではありませんどおり、pin_ptr のスコープは 1 つの関数に制限されます。  
   
 ```  
 // MarshalDelegate2.cpp  
@@ -146,5 +145,5 @@ int main() {
 }  
 ```  
   
-## 参照  
- [C\+\+ Interop \(暗黙の PInvoke\) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)
+## <a name="see-also"></a>関連項目  
+ [C++ Interop (暗黙の PInvoke) の使用](../dotnet/using-cpp-interop-implicit-pinvoke.md)

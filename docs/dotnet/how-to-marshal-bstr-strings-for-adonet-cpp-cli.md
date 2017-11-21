@@ -1,41 +1,40 @@
 ---
-title: "方法: ADO.NET の BSTR 文字列をマーシャリングする (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ADO.NET [C++], マーシャリング (BSTR 文字列を)"
-  - "BSTR, 文字列"
-  - "文字列 [C++], マーシャリング (BSTR 文字列を)"
+title: "方法: ADO.NET の BSTR 文字列をマーシャ リング (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- BSTRs, strings
+- ADO.NET [C++], marshaling BSTR strings
+- strings [C++], marshaling BSTR strings
 ms.assetid: 5daf4d9e-6ae8-4604-908f-855e37c8d636
-caps.latest.revision: 11
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9423dcc177db68319ea6d8e1771fe4b18a86c5c0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: ADO.NET の BSTR 文字列をマーシャリングする (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-データベースに COM 文字列 \(`BSTR`\) を追加する方法、およびデータベースの <xref:System.String?displayProperty=fullName> を `BSTR` にマーシャリングする方法について説明します。  
+# <a name="how-to-marshal-bstr-strings-for-adonet-ccli"></a>方法: ADO.NET の BSTR 文字列をマーシャリングする (C++/CLI)
+COM 文字列を追加する方法を示します (`BSTR`) をマーシャ リングする方法、およびデータベースを<xref:System.String?displayProperty=fullName>をデータベースから、`BSTR`です。  
   
-## 使用例  
- この例では、ADO.NET <xref:System.Data.DataTable> オブジェクトとやり取りするための DatabaseClass というクラスが作成されます。  このクラスはネイティブな C\+\+ `class` です \(`ref class` や `value class` とは異なります\)。  これは、ネイティブ コードからこのクラスを使用するために必要なもので、マネージ型をネイティブ コードで使用することはできません。  このクラスは、クラスの宣言の前に `#pragma managed` ディレクティブが付いていることからわかるように、CLR を対象としてコンパイルされます。  このディレクティブの詳細については、「[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)」を参照してください。  
+## <a name="example"></a>例  
+ この例では、クラス DatabaseClass が作成される、ADO.NET と対話する<xref:System.Data.DataTable>オブジェクト。 このクラスは、ネイティブ C++ `class` (に比べて、`ref class`または`value class`)。 これは、機能は、ネイティブ コードからこのクラスを使用して、マネージ型をネイティブ コードで使用することはできませんので必要です。 このクラスはによって示される、CLR をターゲットにコンパイルされます、`#pragma managed`クラス宣言の前のディレクティブ。 このディレクティブの詳細については、次を参照してください。[マネージ、アンマネージ](../preprocessor/managed-unmanaged.md)です。  
   
- DatabaseClass クラスのプライベート メンバーは `gcroot<DataTable ^> table` です。  ネイティブ型にはマネージ型は含まれないため、`gcroot` キーワードが必要です。  `gcroot` の詳細については、「[方法: ネイティブ型のハンドルを宣言する](../dotnet/how-to-declare-handles-in-native-types.md)」を参照してください。  
+ DatabaseClass クラスのプライベート メンバーに注意してください:`gcroot<DataTable ^> table`です。 ネイティブ型はマネージ型を含めることはできませんので、`gcroot`キーワードが必要です。 詳細については`gcroot`を参照してください[する方法: ネイティブ型内のハンドルを宣言](../dotnet/how-to-declare-handles-in-native-types.md)です。  
   
- この例のコードの他の部分は、`#pragma unmanaged` ディレクティブが `main` の前についていることからわかるように、ネイティブな C\+\+ コードです。  この例では、DatabaseClass の新しいインスタンスを作成し、そのメソッドを呼び出し、テーブルを作成してテーブルのいくつかの行を設定します。  COM 文字列は、データベース列 StringCol の値として渡されます。  DatabaseClass 内では、<xref:System.Runtime.InteropServices?displayProperty=fullName> 名前空間にあるマーシャリング機能を使用して、これらの文字列がマネージ文字列にマーシャリングされます。  具体的には、<xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A> メソッドは `BSTR` を <xref:System.String> にマーシャリングするときに、また <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> メソッドは <xref:System.String> を `BSTR` にマーシャリングするときに使用されます。  
+ この例では、コードの残りの部分は、ネイティブの C++ コードで示される、`#pragma unmanaged`ディレクティブの前`main`です。 この例ではお DatabaseClass の新しいインスタンスを作成する、テーブルを作成し、テーブル内のいくつかの行を設定するには、そのメソッドを呼び出します。 COM 文字列 StringCol データベース列の値として渡されることに注意してください。 内部 DatabaseClass、これらの文字列をマーシャ リングの機能を使用して管理対象の文字列にマーシャ リングします。、<xref:System.Runtime.InteropServices?displayProperty=fullName>名前空間。 メソッドでは具体的には、<xref:System.Runtime.InteropServices.Marshal.PtrToStringBSTR%2A>をマーシャ リングするために使用、`BSTR`を<xref:System.String>、およびメソッド<xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A>をマーシャ リングするために使用、<xref:System.String>を`BSTR`です。  
   
 > [!NOTE]
->  <xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A> によって割り当てられたメモリは、<xref:System.Runtime.InteropServices.Marshal.FreeBSTR%2A> または `SysFreeString` を呼び出して解放する必要があります。  
+>  によって割り当てられたメモリ<xref:System.Runtime.InteropServices.Marshal.StringToBSTR%2A>を呼び出して、割り当てを解除する必要があります<xref:System.Runtime.InteropServices.Marshal.FreeBSTR%2A>または`SysFreeString`です。  
   
 ```  
 // adonet_marshal_string_bstr.cpp  
@@ -143,22 +142,25 @@ int main()
 }  
 ```  
   
-  **StringCol: This is string 1.**  
-**StringCol: This is string 2.**   
-## コードのコンパイル  
+```Output  
+StringCol: This is string 1.  
+StringCol: This is string 2.  
+```  
   
--   コマンド ラインからコードをコンパイルするには、コード例を adonet\_marshal\_string\_native.cpp というファイルに保存し、次のステートメントを入力します。  
+## <a name="compiling-the-code"></a>コードのコンパイル  
+  
+-   コマンドラインからコードをコンパイルするには、コード サンプルを adonet_marshal_string_native.cpp をという名前のファイルで保存し、次のステートメントを入力します。  
   
     ```  
     cl /clr /FU System.dll /FU System.Data.dll /FU System.Xml.dll adonet_marshal_string_native.cpp  
     ```  
   
-## .NET Framework セキュリティ  
- ADO.NET に関するセキュリティの詳細については、「[ADO.NET アプリケーションのセキュリティ保護](../Topic/Securing%20ADO.NET%20Applications.md)」を参照してください。  
+## <a name="net-framework-security"></a>.NET Framework セキュリティ  
+ ADO.NET に関連するセキュリティ問題については、次を参照してください。 [ADO.NET アプリケーションのセキュリティで保護する](/dotnet/framework/data/adonet/securing-ado-net-applications)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  <xref:System.Runtime.InteropServices>   
- [データ アクセス](../dotnet/data-access-using-adonet-cpp-cli.md)   
- [ADO.NET](../Topic/ADO.NET.md)   
- [Interoperability](http://msdn.microsoft.com/ja-jp/afcc2e7d-3f32-48d2-8141-1c42acf29084)   
- [ネイティブと .NET の相互運用性](../Topic/Native%20and%20.NET%20Interoperability.md)
+ [ADO.NET を使用してデータ アクセス (C + + CLI)](../dotnet/data-access-using-adonet-cpp-cli.md)   
+ [ADO.NET](/dotnet/framework/data/adonet/index)   
+ [相互運用性](http://msdn.microsoft.com/en-us/afcc2e7d-3f32-48d2-8141-1c42acf29084)   
+ [ネイティブと .NET の相互運用性](../dotnet/native-and-dotnet-interoperability.md)

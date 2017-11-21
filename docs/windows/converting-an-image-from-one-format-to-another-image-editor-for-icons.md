@@ -1,48 +1,49 @@
 ---
-title: "Converting an Image From One Format to Another (Image Editor for Icons) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "images [C++], stand-alone editing"
-  - "Image editor [C++], converting image formats"
-  - "graphics [C++], converting formats"
-  - "images [C++], converting formats"
+title: "1 つの形式からイメージを変換するもう 1 つ (アイコン用イメージ エディター) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- images [C++], stand-alone editing
+- Image editor [C++], converting image formats
+- graphics [C++], converting formats
+- images [C++], converting formats
 ms.assetid: 0409c2bd-3bd8-4d72-9c71-c683b6cf51be
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 227bf99f0f92555e6fd1eb94b5e85886949b9f60
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Converting an Image From One Format to Another (Image Editor for Icons)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-GIF 形式または JPEG 形式のイメージをイメージ エディターで開き、ビットマップとして保存できます。  また、ビットマップ ファイルを開き、GIF 形式または JPEG 形式で保存することもできます。  開発環境で編集する場合、操作するイメージはプロジェクトの一部でなくてもかまいません。「[プロジェクト外部でのイメージの編集](../Topic/Editing%20an%20Image%20Outside%20of%20a%20Project%20\(Image%20Editor%20for%20Icons\).md)」を参照してください。  
+# <a name="converting-an-image-from-one-format-to-another-image-editor-for-icons"></a>イメージの形式変換 (アイコン用イメージ エディター)
+Gif 形式または JPEG イメージ、イメージ エディター内を開き、ビットマップとして保存できます。 また、ビットマップ ファイルを開くでき、gif 形式または JPEG として保存します。 使用するイメージでなくても、開発環境で編集するためのプロジェクトの一部 (を参照してください[スタンドアロン イメージ編集](../windows/editing-an-image-outside-of-a-project-image-editor-for-icons.md))。  
   
-### イメージの形式を変換するには  
+### <a name="to-convert-an-image-from-one-format-to-another"></a>イメージを別の 1 つの形式に変換するには  
   
-1.  イメージ エディターでイメージを開きます。  
+1.  内のイメージを開く、**イメージ**エディターです。  
   
-2.  \[ファイル\] メニューの \[名前を付けて ***filename*** を保存\] をクリックします。  
+2.  **ファイル**] メニューの [選択**保存*filename*として**です。  
   
-3.  \[名前を付けてファイルを保存\] ダイアログ ボックスの \[ファイル名\] ボックスに、ファイル名と必要なファイル形式を示す拡張子を入力します。  
+3.  **ファイルに名前を付けて** ダイアログ ボックスで、**ファイル名**ボックスに、ファイル名とを希望の形式を示す拡張子を入力します。  
   
-4.  **\[保存\]** をクリックします。  
+4.  **[保存]**をクリックします。  
   
- マネージ プロジェクトにリソースを追加する方法については、『.NET Framework 開発者ガイド』の「[アプリケーションのリソース](../Topic/Resources%20in%20Desktop%20Apps.md)」を参照してください。マネージ プロジェクトにリソース ファイルを手動で追加する方法、リソースへのアクセス方法、静的なリソースの表示方法、およびリソース文字列をプロパティに割り当てる方法については、「[チュートリアル : Windows フォームのローカリゼーション](http://msdn.microsoft.com/ja-jp/9a96220d-a19b-4de0-9f48-01e5d82679e5)」および「[Walkthrough: Using Resources for Localization with ASP.NET](../Topic/Walkthrough:%20Using%20Resources%20for%20Localization%20with%20ASP.NET.md)」を参照してください。  
+ マネージ プロジェクトにリソースを追加する方法についてを参照してください[デスクトップ アプリでのリソース](https://msdn.microsoft.com/library/f45fce5x.aspx)で、 *.NET Framework 開発者ガイド 』。* マネージ プロジェクトにリソース ファイルを手動で追加する、リソースにアクセスする、静的リソースの表示方法、およびリソース文字列のプロパティを割り当てる方法については、次を参照してください。[デスクトップ アプリのリソース ファイルの作成](https://msdn.microsoft.com/library/xbx3z216.aspx)です。 詳細については、管理対象アプリ内のリソースのグローバリゼーションとローカリゼーションは、次を参照してください。[グローバライズと .NET Framework アプリケーションのローカライズ](https://msdn.microsoft.com/library/h6270d0z.aspx)です。  
   
  要件  
   
  なし  
   
-## 参照  
- [Editing Graphical Resources](../mfc/editing-graphical-resources-image-editor-for-icons.md)   
- [Image Editor for Icons](../mfc/image-editor-for-icons.md)
+## <a name="see-also"></a>関連項目  
+ [グラフィカル リソースの編集](../windows/editing-graphical-resources-image-editor-for-icons.md)   
+ [アイコン用イメージ エディター](../windows/image-editor-for-icons.md)
+

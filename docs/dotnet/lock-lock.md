@@ -1,35 +1,34 @@
 ---
-title: "lock::lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "lock::lock"
-  - "lock.lock"
-  - "msclr.lock.lock"
-  - "msclr::lock::lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock コンストラクター"
+title: "lock::lock |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- lock::lock
+- lock.lock
+- msclr.lock.lock
+- msclr::lock::lock
+dev_langs: C++
+helpviewer_keywords: lock constructor
 ms.assetid: c9ad6c71-36ec-49c5-8ebd-f5c3a0cc94f0
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0bc0c0e61b4500bae9589cbf6b536f1a23ae45c8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# lock::lock
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-完全に、指定した時間の間、または、ロックの取得を待機するオプションで、`lock` オブジェクトを構築します。  
+# <a name="locklock"></a>lock::lock
+構築、`lock`オブジェクト、必要に応じて、指定された時間、またはまったく恒久的に、ロックの取得を待機しています。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<class T> lock(  
@@ -49,27 +48,27 @@ template<class T> lock(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_object`  
  ロックするオブジェクト。  
   
  `_timeout`  
- ミリ秒のまたは <xref:System.TimeSpan>にタイムアウト値。  
+ タイムアウト値 (ミリ秒単位) として、<xref:System.TimeSpan>です。  
   
-## 例外  
- ロックの取得がタイムアウトの前に発生する <xref:System.ApplicationException> をスローします。  
+## <a name="exceptions"></a>例外  
+ スロー<xref:System.ApplicationException>ロックの取得がタイムアウトする前に発生しない場合。  
   
-## 解説  
- コンストラクターの最初の 3 種類のフォームは何も指定されていない場合、指定されたタイムアウト期間します \(または <xref:System.Threading.Timeout.Infinite> 内の `_object` をロックできます。  
+## <a name="remarks"></a>コメント  
+ コンス トラクターの最初の 3 つのフォームに対するロックの取得しようとしました。 `_object` 、指定されたタイムアウト期間内 (または<xref:System.Threading.Timeout.Infinite>が指定されない場合)。  
   
- コンストラクターの 4 番目のフォームは `_object`のロックを取得しません。  `lock_later` は [lock\_when Enum](../dotnet/lock-when-enum.md)のメンバーです。  この場合、ロックを取得するに [lock::acquire](../dotnet/lock-acquire.md) または [lock::try\_acquire](../Topic/lock::try_acquire.md) を使用します。  
+ コンス トラクターの 4 番目の形式でのロックを取得しない`_object`です。 `lock_later`メンバーである、 [lock_when 列挙](../dotnet/lock-when-enum.md)です。 使用して[lock::acquire](../dotnet/lock-acquire.md)または[lock::try_acquire](../dotnet/lock-try-acquire.md)ここでは、ロックを取得します。  
   
- ファイルは自動的にデストラクターが呼び出されるときに解放されます。  
+ デストラクターが呼び出されたときに、ロックが自動的に解放されます。  
   
- `_object` に <xref:System.Threading.ReaderWriterLock> は指定できません。この場合、コンパイル エラーが発生します。  
+ `_object` として <xref:System.Threading.ReaderWriterLock> を使用することはできません。  場合は、コンパイラ エラーが発生します。  
   
-## 使用例  
- この例は、複数のスレッド間でクラスの単一のインスタンスを使用します。クラスは、データへのアクセスが各スレッドに対して一貫していることを確認するために、独自のロックを使用します。メイン アプリケーション スレッドは、ワーカー スレッドがまだ、すべてのワーカー スレッド終了まで待機が完了したタスクを定期的に確認するために、クラス インスタンスの同じロックを使用します。  
+## <a name="example"></a>例  
+ この例では、複数のスレッド間でクラスの 1 つのインスタンスで使用します。  クラスは、その内部データへのアクセスがスレッドごとに一貫していることを確認するのに自体に対するロックを使用します。  メイン アプリケーション スレッドは、ワーカー スレッドがまだ存在していて、そのタスクを完了したすべてのワーカー スレッドまで終了を待機を定期的に確認するクラスの同じインスタンスでロックを使用します。  
   
 ```  
 // msl_lock_lock.cpp  
@@ -143,24 +142,27 @@ int main() {
 }  
 ```  
   
-  **スレッド 3 で、カウンター \= 0**  
-**スレッド 3 で、カウンター \= 10**  
-**スレッド 5 で、カウンター \= 0**  
-**スレッド 5 で、カウンター \= 10**  
-**スレッド 7 で、カウンター \= 0**  
-**スレッド 7 で、カウンター \= 10**  
-**スレッド 4 で、カウンター \= 0**  
-**スレッド 4 で、カウンター \= 10**  
-**スレッド 6 で、カウンター \= 0**  
-**スレッド 6 で、カウンター \= 10**  
-**完了しているすべてのスレッド。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+In thread 3, Counter = 0  
+In thread 3, Counter = 10  
+In thread 5, Counter = 0  
+In thread 5, Counter = 10  
+In thread 7, Counter = 0  
+In thread 7, Counter = 10  
+In thread 4, Counter = 0  
+In thread 4, Counter = 10  
+In thread 6, Counter = 0  
+In thread 6, Counter = 10  
+All threads completed.  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
  [lock のメンバー](../dotnet/lock-members.md)   
- [lock::~lock](../dotnet/lock-tilde-lock.md)   
+ [ロック:: ~ ロック](../dotnet/lock-tilde-lock.md)   
  [lock::acquire](../dotnet/lock-acquire.md)   
- [lock::try\_acquire](../Topic/lock::try_acquire.md)
+ [lock::try_acquire](../dotnet/lock-try-acquire.md)

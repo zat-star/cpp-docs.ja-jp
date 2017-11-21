@@ -1,32 +1,30 @@
 ---
-title: "DEFINE_COMMAND_EX | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "DEFINE_COMMAND_EX"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "DEFINE_COMMAND_EX マクロ"
+title: "DEFINE_COMMAND_EX |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: DEFINE_COMMAND_EX
+dev_langs: C++
+helpviewer_keywords: DEFINE_COMMAND_EX macro
 ms.assetid: d3e2ef20-1455-46d2-8499-8ab84bbb90a4
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9b3386f420e3af97ab01defbe57303a8100a2965
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# DEFINE_COMMAND_EX
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-[CCommand](../../data/oledb/ccommand-class.md) クラスを使用すると、行セットを作成するために使用するコマンドを指定します。  Unicode サポートおよび ANSI アプリケーション。  
+# <a name="definecommandex"></a>DEFINE_COMMAND_EX
+使用する場合、行セットの作成に使用されるコマンドを指定、 [CCommand](../../data/oledb/ccommand-class.md)クラスです。 Unicode と ANSI のアプリケーションをサポートしています。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,23 +36,23 @@ wszCommand
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *x*  
- \[\]ユーザー レコード \(コマンド\) クラスの名前。  
+ [in]ユーザー レコード (コマンド) クラスの名前。  
   
  `wszCommand`  
- \[\]ときに [CCommand](../../data/oledb/ccommand-class.md)を使用して行セットを作成するために使用するコマンド文字列。  
+ [in]使用する場合、行セットの作成に使用されるコマンド文字列[CCommand](../../data/oledb/ccommand-class.md)です。  
   
-## 解説  
- 指定したコマンド文字列には、既定として [CCommand::Open](../../data/oledb/ccommand-open.md) のメソッドでコマンド テキストを指定しない場合に使用されます。  
+## <a name="remarks"></a>コメント  
+ コマンド文字列を指定するには、コマンド テキストを指定しない場合は、既定値として使用されます、 [ccommand::open](../../data/oledb/ccommand-open.md)メソッドです。  
   
- このマクロは、アプリケーションの種類に関係なく、Unicode 文字列を使用できます。  このマクロは [DEFINE\_COMMAND](../../data/oledb/define-command.md) に Unicode または ANSI アプリケーションをサポートするため、お勧めします。  
+ このマクロは、アプリケーションの種類に関係なく、Unicode 文字列を受け取ります。 このマクロは優先[DEFINE_COMMAND](../../data/oledb/define-command.md) Unicode をサポートするための ANSI アプリケーションだけでなくです。  
   
-## 使用例  
- [BOOKMARK\_ENTRY](../../data/oledb/bookmark-entry.md)を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[BOOKMARK_ENTRY](../../data/oledb/bookmark-entry.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../Topic/Macros%20and%20Global%20Functions%20for%20OLE%20DB%20Consumer%20Templates.md)
+## <a name="see-also"></a>関連項目  
+ [OLE DB コンシューマー テンプレート用マクロおよびグローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)

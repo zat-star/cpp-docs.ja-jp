@@ -1,69 +1,68 @@
 ---
-title: "__stosd | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__stosd"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "stosd 命令"
-  - "rep stosd 命令"
-  - "__stosd 組み込み"
+title: "_ _stosd |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: __stosd
+dev_langs: C++
+helpviewer_keywords:
+- stosd instruction
+- rep stosd instruction
+- __stosd intrinsic
 ms.assetid: 03104247-1cea-49f6-b6f8-287917bf5680
-caps.latest.revision: 15
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: a489531113ce17cee28414a07662114e58a61341
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __stosd
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="stosd"></a>__stosd
+**Microsoft 固有の仕様**  
   
- ストアの文字列 \(`rep stosd`\) 命令を生成します。  
+ ストア文字列命令が生成されます (`rep stosd`)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-void __stosd(   
-   unsigned long* Dest,   
-   unsigned long Data,   
-   size_t Count   
+void __stosd(   
+   unsigned long* Dest,   
+   unsigned long Data,   
+   size_t Count   
 );  
 ```  
   
-#### パラメーター  
- \[出力\] `Dest`  
- 操作のコピー先。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Dest`  
+ 操作の出力先。  
   
- \[入力\] `Data`  
+ [入力] `Data`  
  格納するデータ。  
   
- \[入力\] `Count`  
- 書き込むダブル ワードのブロックの長さ。  
+ [入力] `Count`  
+ 書き込むダブルワードのブロックの長さ。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__stosd`|x86[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__stosd`|x86、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- 結果はダブル ワード `Data` が `Dest` が指すメモリ位置に `Count` のダブル ワードのブロックに記述する必要があります。  
+## <a name="remarks"></a>コメント  
+ 結果ダブルワードは`Data`のブロックに書き込まれる`Count`によって示されるメモリ位置にダブルワード`Dest`です。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // stosd.c  
@@ -88,8 +87,11 @@ printf_s( "%u %u %u %u",
 }  
 ```  
   
-  **0 99999 99999 0**   
-## 終了 Microsoft 固有の仕様→  
+```Output  
+0 99999 99999 0  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

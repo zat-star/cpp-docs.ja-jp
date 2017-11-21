@@ -1,35 +1,34 @@
 ---
-title: "auto_gcroot::reset | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "msclr::auto_gcroot::reset"
-  - "auto_gcroot::reset"
-  - "msclr.auto_gcroot.reset"
-  - "auto_gcroot.reset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "reset メソッド"
+title: "auto_gcroot::reset |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- msclr::auto_gcroot::reset
+- auto_gcroot::reset
+- msclr.auto_gcroot.reset
+- auto_gcroot.reset
+dev_langs: C++
+helpviewer_keywords: reset method
 ms.assetid: dd58467f-3885-4a15-99fb-ed6dd5d19622
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 066ebb82b8a583351cb8a902750ec14071f0612b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# auto_gcroot::reset
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-現在のスレッドによって所有されるオブジェクトを破棄し、必要に応じて新しいオブジェクトを所有します。  
+# <a name="autogcrootreset"></a>auto_gcroot::reset
+現在所有されているオブジェクトを破棄し、必要に応じて、新しいオブジェクトを所有しているを実行します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void reset(  
@@ -37,11 +36,11 @@ void reset(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_new_ptr`  
- \(省略可能\) 新しいオブジェクト。  
+ (省略可能)新しいオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_gcroot_reset.cpp  
@@ -81,19 +80,22 @@ int main()
 }  
 ```  
   
-  **ClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**ClassA のコンストラクター: 第 2**  
-**ClassA のデストラクター: 最初**  
-**2 番目の A から Hello\!**  
-**ClassA のデストラクター: 第 2**  
-**done**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_gcroot.h\>  
+```Output  
+ClassA constructor: first  
+Hello from first A!  
+ClassA constructor: second  
+ClassA destructor: first  
+Hello from second A!  
+ClassA destructor: second  
+done  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\auto_gcroot.h >  
   
-## 参照  
- [auto\_gcroot Members](../dotnet/auto-gcroot-members.md)   
- [auto\_gcroot::release](../dotnet/auto-gcroot-release.md)   
- [auto\_gcroot::attach](../dotnet/auto-gcroot-attach.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
+ [auto_gcroot メンバー](../dotnet/auto-gcroot-members.md)   
+ [auto_gcroot::release](../dotnet/auto-gcroot-release.md)   
+ [auto_gcroot::attach](../dotnet/auto-gcroot-attach.md)

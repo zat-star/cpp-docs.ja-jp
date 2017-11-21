@@ -1,32 +1,30 @@
 ---
-title: "binder1st (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::binder1st"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "binder1st 関数 [STL/CLR]"
+title: "binder1st (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::binder1st
+dev_langs: C++
+helpviewer_keywords: binder1st function [STL/CLR]
 ms.assetid: a989c9cc-a485-45d9-bd19-519018e6974b
-caps.latest.revision: 18
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 16
+caps.latest.revision: "18"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ae786f50700d59c5f4a24ed0ec7de1c11718f352
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# binder1st (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このテンプレート クラスは、呼び出されたときに保存された最初の引数と指定された 2 番目の引数という保存された 2 引数のファンクタを返す 1 引数のファンクタを表します。  保存されたファンクタの観点からは、指定する関数オブジェクトを使用します。  
+# <a name="binder1st-stlclr"></a>binder1st (STL/CLR)
+このテンプレート クラスは、引数が 1 つファンクタを記述、呼び出されると、そのストアドの 2 つの引数ファンクタ ストアド最初の引数と 2 番目の指定された引数で呼び出されますが返されます。 使用するそのストアド ファンクタの観点から、関数オブジェクトを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Fun>  
@@ -49,35 +47,35 @@ public:
     };  
 ```  
   
-#### パラメーター  
- 関数  
- 保存されたファンクタの種類。  
+#### <a name="parameters"></a>パラメーター  
+ 楽しい  
+ ストアド ファンクタの型。  
   
-## メンバー関数  
+## <a name="member-functions"></a>メンバー関数  
   
 |型定義|説明|  
-|---------|--------|  
-|delegate\_type|汎用デリゲートの型。|  
-|first\_argument\_type|ファンクタの最初の引数の型。|  
-|result\_type|ファンクタの結果の型です。|  
-|second\_argument\_type|ファンクタ 2 番目の引数の型です。|  
-|stored\_function\_type|ファンクタの種類。|  
+|---------------------|-----------------|  
+|delegate_type|汎用デリゲートの型。|  
+|first_argument_type|ファンクタ最初の引数の型。|  
+|result_type|ファンクタ結果の型。|  
+|second_argument_type|ファンクタ 2 番目の引数の型。|  
+|stored_function_type|ファンクタの型。|  
   
 |メンバー|説明|  
-|----------|--------|  
+|------------|-----------------|  
 |binder1st|ファンクタを構築します。|  
   
 |演算子|説明|  
-|---------|--------|  
-|operator\(\)|必要な関数を計算します。|  
-|delegate\_type^\(\)演算子|デリゲートにファンクタをキャストします。|  
+|--------------|-----------------|  
+|演算子 ()|必要な関数を計算します。|  
+|演算子 delegate_type^()|デリゲートにファンクタをキャストします。|  
   
-## 解説  
- このテンプレート クラスは、2 引数のファンクタと最初の引数を格納する 1 引数のファンクタを表します。  これは、オブジェクトが関数として呼び出されると、保存された最初の引数と指定された 2 番目の引数で保存されたファンクタを呼び出した結果を返すように、メンバー演算子を定義します `operator()`。  
+## <a name="remarks"></a>コメント  
+ このテンプレート クラスでは、2 つの引数ファンクターと最初の引数を格納する引数が 1 つファンクタについて説明します。 このメンバー演算子を定義する`operator()`ストアドの最初の引数と 2 番目の引数が指定されたストアド ファンクターを呼び出すときの結果が返されるオブジェクトが関数として呼び出されたとき、ようにことです。  
   
- 型が `delegate_type^` である適切に変換する関数の引数が、またはオブジェクトを渡すことができます。  
+ 型が関数の引数として、オブジェクトを渡すことができますも`delegate_type^`適切に変換されます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_binder1st.cpp   
@@ -120,13 +118,16 @@ int main()
   
 ```  
   
-  **4 3**  
- **\-1 0**  
- **\-1 0**   
-## 必要条件  
- **ヘッダー:** の \<cliext と機能\>  
+```Output  
+4 3  
+-1 0  
+-1 0  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/機能 >  
   
-## 参照  
- [bind1st](../dotnet/bind1st-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [bind1st (STL/CLR)](../dotnet/bind1st-stl-clr.md)

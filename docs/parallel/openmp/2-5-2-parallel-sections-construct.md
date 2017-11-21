@@ -1,43 +1,41 @@
 ---
-title: "2.5.2 parallel sections Construct | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.5.2 parallel sections のコンストラクト |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 94220e27-14f8-465c-bd8d-eb960b4b5dee
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 086552c72e37822920e0afa213c7966befa052f7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 2.5.2 parallel sections Construct
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**並列セクション**  のディレクティブは  **セクション**  の一つのディレクティブだけを含む  **並列**  領域を指定するためのフォームへのショートカットを提供します。  セマンティクスは明示的にすぐに  **セクション**  のディレクティブに続く  **並列**  のディレクティブを指定することと同じです。   **並列セクション**  のディレクティブの構文は次のとおりです :  
+# <a name="252-parallel-sections-construct"></a>2.5.2 parallel sections のコンストラクト
+**Parallel sections の**ディレクティブを指定するショートカット フォームを提供する、**並列**が 1 つのみが含まれる領域**セクション**ディレクティブです。 セマンティクスは明示的に指定することと同じ、**並列**ディレクティブの直後に続く、**セクション**ディレクティブです。 構文、 **parallel sections の**ディレクティブは、次のようにします。  
   
 ```  
 #pragma omp parallel sections  [clause[[,] clause] ...] new-line  
    {  
    [#pragma omp section new-line]  
       structured-block  
-   [#pragma omp section new-line  
-      structured-block  ]  
+   [#pragma omp section new-linestructured-block  ]  
    ...  
 }  
 ```  
   
- *句は*  **nowait** の句以外  **並列**  と  **セクション**  のディレクティブによって使用される句の 1 つです。  
+ *句*で受け入れられる句のいずれかになります、**並列**と**のセクションでは**、ディレクティブを除く、 **nowait**句。  
   
-## cref:  
+## <a name="cross-references"></a>クロス リファレンス  
   
--   **並列**  のディレクティブはページの 8. [セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) が表示されます。  
+-   **並列**ディレクティブを参照してください[セクション 2.3](../../parallel/openmp/2-3-parallel-construct.md) 8 ページのです。  
   
--   **セクション**  のディレクティブはページの 14 [セクション 2.4.2](../../parallel/openmp/2-4-2-sections-construct.md) が表示されます。
+-   **セクションでは**ディレクティブを参照してください[2.4.2](../../parallel/openmp/2-4-2-sections-construct.md) [14] ページ。

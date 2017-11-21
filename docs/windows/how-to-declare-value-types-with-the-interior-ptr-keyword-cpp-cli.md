@@ -1,40 +1,39 @@
 ---
-title: "How to: Declare Value Types with the interior_ptr Keyword (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_ptr keyword"
-  - "value types, declaring"
+title: "方法: interior_ptr キーワードを含む値の型を宣言 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- _ptr keyword
+- value types, declaring
 ms.assetid: 49eea66e-eeba-49bd-95b0-ba297be436e3
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: df675ca7168157c5ffa9529ab630b2100abda11a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# How to: Declare Value Types with the interior_ptr Keyword (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-`interior_ptr` は値型で使用できます。  
+# <a name="how-to-declare-value-types-with-the-interiorptr-keyword-ccli"></a>方法: interior_ptr キーワードを含む値型を宣言する (C++/CLI)
+`interior_ptr`値型で使用できます。  
   
 > [!IMPORTANT]
->  この言語機能は **\/clr** コンパイラ オプションによって、**\/ZW** コンパイラ オプションによってサポートされます。  
+>  この言語機能をサポートに、 **/clr**コンパイラ オプションがなく、 **/ZW**コンパイラ オプション。  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)] の次のサンプルでは、値型の `interior_ptr` を使用する方法を示します。  
+### <a name="description"></a>説明  
+ 次の C + + CLI サンプルを使用する方法を示します、`interior_ptr`値型を持つ。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // interior_ptr_value_types.cpp  
@@ -64,7 +63,7 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 1  
@@ -75,14 +74,14 @@ int main() {
 3  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 値型には、`this` のポインターは interior\_ptr に評価されます。  
+### <a name="description"></a>説明  
+ 値の型で、`this`ポインターが、interior_ptr に評価します。  
   
- 値型 `V`の非静的なメンバー関数本体で、`this` は値が関数が呼び出されるオブジェクトのアドレスの型 `interior_ptr<V>` の式です。  
+ 値型の非静的メンバー関数の本体で`V`、`this`型の式は、`interior_ptr<V>`値が、関数が呼び出された対象のオブジェクトのアドレス。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // interior_ptr_value_types_this.cpp  
@@ -96,14 +95,14 @@ value struct V {
 };  
 ```  
   
-## 例  
+## <a name="example"></a>例  
   
-### 説明  
- 次の例は、静的メンバーを持つアドレス演算子を使用する方法を示します。  
+### <a name="description"></a>説明  
+ 次の例では、静的メンバーとアドレス演算子を使用する方法を示します。  
   
- 静的な Visual C\+\+ 型メンバーのアドレスをネイティブ ポインターについて説明します。静的な値型のメンバーのアドレスは、値型のメンバーがランタイム ヒープに割り当てられ、ガベージ コレクターによって移動できるため、マネージ ポインターです。  
+ Visual C 型の静的メンバーのアドレスは、ネイティブ ポインターを生成します。  静的な値型のメンバーのアドレスは、値型のメンバーがランタイム ヒープに割り当てられているし、ガベージ コレクターが移動できるため、マネージ ポインターです。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 // interior_ptr_value_static.cpp  
@@ -129,7 +128,7 @@ int main() {
 }  
 ```  
   
-### 出力  
+### <a name="output"></a>出力  
   
 ```  
 22  
@@ -137,5 +136,5 @@ int main() {
 hello  
 ```  
   
-## 参照  
- [interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [interior_ptr (C++/CLI)](../windows/interior-ptr-cpp-cli.md)

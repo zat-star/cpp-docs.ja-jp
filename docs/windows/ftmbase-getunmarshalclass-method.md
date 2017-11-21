@@ -1,32 +1,30 @@
 ---
-title: "FtmBase::GetUnmarshalClass メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "ftm/Microsoft::WRL::FtmBase::GetUnmarshalClass"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "GetUnmarshalClass メソッド"
+title: "Ftmbase::getunmarshalclass メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: ftm/Microsoft::WRL::FtmBase::GetUnmarshalClass
+dev_langs: C++
+helpviewer_keywords: GetUnmarshalClass method
 ms.assetid: 535fc539-5b97-4967-b158-f7568f13d341
-caps.latest.revision: 3
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 3
+caps.latest.revision: "3"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 967c8e8cc397a7f9efdb145bf337049627f24a2c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FtmBase::GetUnmarshalClass メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-対応するプロキシのコードを含む DLL を検索するときに COM を使用する CLSID を取得します。  COM は、プロキシの初期化されていないインスタンスを作成するには、この DLL を読み込みます。  
+# <a name="ftmbasegetunmarshalclass-method"></a>FtmBase::GetUnmarshalClass メソッド
+COM を使用して、対応するプロキシ コードを含む DLL を検索する CLSID を取得します。 COM は、プロキシの初期化されていないインスタンスを作成するには、この DLL を読み込みます。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 STDMETHODIMP GetUnmarshalClass(  
@@ -39,35 +37,35 @@ STDMETHODIMP GetUnmarshalClass(
 ) override;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- マーシャリングされる必要インターフェイスの識別子への参照。  
+ マーシャ リングするインターフェイスの識別子への参照。  
   
  `pv`  
- マーシャリングされる;インターフェイスへのポインター。呼び出し元が指定したインターフェイスへのポインターが NULL でも指定できます。  
+ マーシャ リングする; インターフェイスへのポインター呼び出し元では、目的のインターフェイスには、ポインターにいない場合、NULL を指定できます。  
   
  `dwDestContext`  
- 指定されたインターフェイスがマーシャリングを解除される前のコンテキスト。  
+ 移行先コンテキストで指定されたインターフェイスのマーシャ リングします。  
   
- 一つ以上の MSHCTX の列挙値を指定します。  
+ 1 つまたは複数の MSHCTX 列挙値を指定します。  
   
- マーシャリング解除は現在のプロセス \(MSHCTX\_LOCAL\) と現在のプロセス \(MSHCTX\_INPROC\) の別のアパートメントにまたは同じコンピューター上の他のプロセスに発生します。  
+ マーシャ リング解除 (MSHCTX_INPROC) 現在のプロセスの別のアパートメントまたは現在のプロセス (MSHCTX_LOCAL) と同じコンピューター上の別のプロセスで発生します。  
   
  `pvDestContext`  
- 将来使用するために予約されて; NULL である必要があります。  
+ 将来使用するために予約されていますNULL にする必要があります。  
   
  `mshlflags`  
- この操作が完了すると、クライアント プロセス内のプロキシを作成するために使用される CLSID へのポインター。  
+ この操作の完了時、クライアント プロセスでプロキシを作成するために使用する CLSID へのポインター。  
   
  `pCid`  
   
-## 戻り値  
- 成功した場合は S\_OK; それ以外の場合は S\_FALSE。  
+## <a name="return-value"></a>戻り値  
+ 正常終了した場合は S_OK、それ以外の場合は S_FALSE。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** ftm.h  
   
  **名前空間:** Microsoft::WRL  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [FtmBase クラス](../windows/ftmbase-class.md)

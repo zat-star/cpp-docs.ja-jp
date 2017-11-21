@@ -1,32 +1,30 @@
 ---
-title: "CUtlProps::OnInterfaceRequested | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CUtlProps"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OnInterfaceRequested メソッド"
+title: "Cutlprops::oninterfacerequested |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: CUtlProps
+dev_langs: C++
+helpviewer_keywords: OnInterfaceRequested method
 ms.assetid: a5e1a879-cff3-4e01-b902-2249a152984f
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 860870628d8558ad252657c06d90f195fd707eb8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CUtlProps::OnInterfaceRequested
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-コンシューマーが呼び出すと省略可能なインターフェイスの要求は、オブジェクト作成の 1 種類のメソッド インターフェイスです。  
+# <a name="cutlpropsoninterfacerequested"></a>CUtlProps::OnInterfaceRequested
+コンシューマー メソッドを呼び出すと、オブジェクトのいずれかで作成インターフェイスは、省略可能なインターフェイスの要求を処理します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,16 +33,16 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- \[\]要求されたインターフェイスの IID。  詳細については、*OLE DB Programmer's Reference* の `ICommand::Execute` の `riid` パラメーターの説明を参照してください \(*MDAC SDK*\)。  
+ [in]要求されたインターフェイスの IID です。 詳細については、の説明を参照して、`riid`のパラメーター`ICommand::Execute`で、 *OLE DB プログラマーズ リファレンス*(で、 *MDAC SDK*)。  
   
-## 解説  
- **OnInterfaceRequested** は、コンシューマーがオブジェクト作成インターフェイスの 1 種類のメソッドを呼び出すと省略可能なインターフェイスのコンシューマーの要求を処理します \(**IDBCreateSession**、**IDBCreateCommand**、`IOpenRowset`、または `ICommand`など\)。  ここで要求されたインターフェイスに対応する OLE DB のプロパティを設定します。  たとえば、コンシューマーが **IID\_IRowsetLocate**を要求した場合、**OnInterfaceRequested** は **DBPROP\_IRowsetLocate** インターフェイスを設定します。  すると、行セットの作成時に、正しい状態を保持します。  
+## <a name="remarks"></a>コメント  
+ **OnInterfaceRequested**コンシューマー メソッドを呼び出すと、オブジェクトのいずれかで作成インターフェイスは、省略可能なインターフェイスのコンシューマーの要求を処理 (など**IDBCreateSession**、 **IDBCreateCommand**、 `IOpenRowset`、または`ICommand`)。 要求されたインターフェイスに対応する OLE DB プロパティを設定します。 たとえば、コンシューマーが要求する**IID_IRowsetLocate**、 **OnInterfaceRequested**設定、 **DBPROP_IRowsetLocate**インターフェイスです。 これにより行セットの作成時に適切な状態を維持します。  
   
- このメソッドは、コンシューマーが **IOpenRowset::OpenRowset** または `ICommand::Execute`を呼び出すときに呼び出されます。  
+ このメソッドは、コンシューマーが呼び出したときに**iopenrowset::openrowset**または`ICommand::Execute`です。  
   
- コンシューマーがオブジェクトを開き、省略可能なインターフェイスを要求した場合、プロバイダーはプロパティを `VARIANT_TRUE`がそのインターフェイスに関連付けられた属性を設定する必要があります。  処理する特定のプロパティを有効にするには **OnInterfaceRequested** はプロバイダーの **実行** のメソッドが呼び出される前に呼び出されます。  既定で、**OnInterfaceRequested** は次のインターフェイスを処理します:  
+ プロバイダーがそのインターフェイスに関連付けられているプロパティに設定する場合は、コンシューマーは、オブジェクトを開くし、省略可能なインターフェイスを要求、`VARIANT_TRUE`です。 プロパティに固有の処理を許可する**OnInterfaceRequested**プロバイダーの前に呼び出されます**Execute**メソッドが呼び出されます。 既定では、 **OnInterfaceRequested**次のインターフェイスを処理します。  
   
 -   `IRowsetLocate`  
   
@@ -56,10 +54,10 @@ caps.handback.revision: 8
   
 -   `IRowsetScroll`  
   
- そのほかのインターフェイスを処理しは関数を処理するデータ ソース、セッション、コマンド、および行セット クラスでこの関数をオーバーライドします。  オーバーライドを設定する標準に移動するとプロパティの設定は、チェーン プロパティを設定するようにプロパティ インターフェイスを取得します。[OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md)を参照してください。  
+ その他のインターフェイスを処理する場合は、関数を処理する、データ ソース、セッション、コマンド、または行セット クラスでは、この関数をオーバーライドします。 上書きは、プロパティを設定すると、連鎖プロパティも設定されることを確認するインターフェイスを通常の設定/取得するプロパティを通過する必要があります (を参照してください[OnPropertyChanged](../../data/oledb/cutlprops-onpropertychanged.md))。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CUtlProps クラス](../../data/oledb/cutlprops-class.md)

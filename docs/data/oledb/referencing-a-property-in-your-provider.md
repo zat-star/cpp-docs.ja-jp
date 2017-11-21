@@ -1,40 +1,40 @@
 ---
-title: "プロバイダーでのプロパティの参照 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB プロバイダー, プロパティ"
-  - "参照, プロパティ (プロバイダーの) への"
-  - "参照 (プロバイダーのプロパティを)"
+title: "プロバイダーでプロパティを参照 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- OLE DB providers, properties
+- references, to properties in providers
+- referencing properties in providers
 ms.assetid: bfbb3851-5eed-467a-a179-4a97a9515525
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9ccd06ab229f5bf6643145c03d8396d48c45a303
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# プロバイダーでのプロパティの参照
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-必要なプロパティのプロパティ グループとプロパティ ID を検索します。  詳細については、『OLE DB Programmer's Reference』の「[OLE DB Properties](https://msdn.microsoft.com/en-us/library/ms722734.aspx)」を参照してください。  
+# <a name="referencing-a-property-in-your-provider"></a>プロバイダーでのプロパティの参照
+目的のプロパティのプロパティ グループとプロパティ ID が見つかりません。 詳細については、次を参照してください。 [OLE DB プロパティ](https://msdn.microsoft.com/en-us/library/ms722734.aspx)で、 *OLE DB プログラマーズ リファレンス*です。  
   
- ここで説明するコードは、行セットからプロパティを取得する例です。  セッションまたはコマンドを使用するコードは似ていますが、使用するインターフェイスは異なります。  
+ 次の例では、行セットからプロパティを取得しようとしていることを前提としています。 セッションまたはコマンドを使用するコードは似ていますが、別のインターフェイスを使用します。  
   
- プロパティ グループをコンストラクターへのパラメーターとして使用して [CDBPropSet](../Topic/CDBPropSet%20Class.md) オブジェクトを作成します。  たとえば、次のようになります。  
+ 作成、 [CDBPropSet](../../data/oledb/cdbpropset-class.md)オブジェクトのコンス トラクターにパラメーターとしてプロパティのグループを使用します。 例:  
   
 ```  
 CDBPropSet propset(DBPROPSET_ROWSET);  
 ```  
   
- [AddProperty](../../data/oledb/cdbpropset-addproperty.md) を呼び出します。このとき、プロパティに割り当てるプロパティ ID と値を渡します。  値の型は使用するプロパティによって異なります。  
+ 呼び出す[AddProperty](../../data/oledb/cdbpropset-addproperty.md)プロパティに割り当てられるには、プロパティ ID と値を渡します。 値の型は、使用しているプロパティに依存します。  
   
 ```  
 CDBPropSet propset(DBPROPSET_ROWSET);  
@@ -43,7 +43,7 @@ propset.AddProperty(DBPROP_UPDATABILITY,
 DBPROPVAL_UP_INSERT | DBPROPVAL_UP_CHANGE | DBPROPVAL_UP_DELETE);  
 ```  
   
- `IRowset` インターフェイスを使用して **GetProperties** を呼び出します。  プロパティ セットをパラメーターとして渡します。  完成したコードを次に示します。  
+ 使用して、`IRowset`を呼び出すインターフェイス**GetProperties**です。 パラメーターとして設定されたプロパティを渡します。 最終的なコードを次に示します。  
   
 ```  
 CAgentRowset<CMyProviderCommand>* pRowset = (CAgentRowset<CMyProviderCommand>*) pThis;  
@@ -72,5 +72,5 @@ if (pPropSet)
 }  
 ```  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレートの操作](../../data/oledb/working-with-ole-db-provider-templates.md)

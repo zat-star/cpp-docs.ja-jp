@@ -1,54 +1,52 @@
 ---
-title: "make_collection (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::make_collection"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "make_collection 関数 [STL/CLR]"
+title: "make_collection (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::make_collection
+dev_langs: C++
+helpviewer_keywords: make_collection function [STL/CLR]
 ms.assetid: c25fb0cb-ebd8-4198-a565-bad28d32ee19
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 08c0730567b327896ee3e5b5d7ed86b8de4b391a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# make_collection (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-反復子のペアから `range_adapter` を作成します。  
+# <a name="makecollection-stlclr"></a>make_collection (STL/CLR)
+ように、`range_adapter`反復子のペアにします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename Iter>  
     range_adapter<Iter> make_collection(Iter first, Iter last);  
 ```  
   
-#### パラメーター  
- Iter  
+#### <a name="parameters"></a>パラメーター  
+ `Iter`  
  ラップされた反復子の型。  
   
- 最初  
+ `first`  
  ラップする最初の反復子。  
   
- last  
- ラップする 2 番目の反復子。  
+ `last`  
+ ラップする 2 つ目の反復子。  
   
-## 解説  
- このテンプレート関数は `gcnew range_adapter<Iter>(``first``,``last``)`を返します。  反復子のペアの `range_adapter``<Iter>` オブジェクトを構築するときに使用します。  
+## <a name="remarks"></a>コメント  
+ このテンプレート関数は `gcnew range_adapter<Iter>(first, last)` を返します。 構築するために使用する、`range_adapter<Iter>`反復子のペアからのオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
-```  
+```cpp  
 // cliext_make_collection.cpp   
 // compile with: /clr   
 #include <cliext/adapter>   
@@ -91,15 +89,18 @@ int main()
   
 ```  
   
-  **b c**  
-**Count \= 3**  
-**IsSynchronized \= false**  
-**SyncRoot のない nullptr \= true**  
- **&#124; b c &#124;**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/アダプター\>  
+```Output  
+ a b c  
+Count = 3  
+IsSynchronized = False  
+SyncRoot not nullptr = True  
+ | a b c |  
+```  
   
- **名前空間:** の cliext  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext アダプター/>  
   
-## 参照  
- [range\_adapter](../dotnet/range-adapter-stl-clr.md)
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [range_adapter (STL/CLR)](../dotnet/range-adapter-stl-clr.md)

@@ -1,36 +1,32 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4346 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4346"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4346"
+title: "コンパイラの警告 (レベル 1) C4346 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4346
+dev_langs: C++
+helpviewer_keywords: C4346
 ms.assetid: 68ee562d-cca9-4a2a-9a1b-14ad1a1e7396
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 17e4644901d127bf11637bc24ea155072f83e03c
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
-# コンパイラの警告 (レベル 1) C4346
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'name' : 依存名は型ではありません。  
+# <a name="compiler-warning-level-1-c4346"></a>コンパイラの警告 (レベル 1) C4346
+'name': 依存名は、型ではありません  
   
- 依存名を型として扱う場合は [typename](../Topic/typename.md) キーワードが必要です。  これは、ISO C\+\+ 標準に準拠するために行われた、Visual C\+\+ .NET 2003 コンパイラでの互換性に影響する変更点です。  
+ [Typename](../../cpp/typename.md)依存名の型として扱われる場合は、キーワードが必要です。 Visual C のすべてのバージョンで同様に動作するコードの場合は、追加`typename`宣言にします。  
   
- すべてのバージョンの Visual C\+\+ で同じ動作をするコードを作成するには、`typename` を宣言に追加します。  
-  
- 次の例では警告 C4346 が生成されます。  
+ 次の例では、C4346 が生成されます。  
   
 ```  
 // C4346.cpp  
@@ -43,7 +39,7 @@ struct C {
 };  
 ```  
   
- **typename** キーワードが必要な他のコード例を次に示します。  
+ 次のサンプルは、その他の例を示しています。 ここで、 **typename**キーワードが必要。  
   
 ```  
 // C4346b.cpp  
@@ -64,7 +60,7 @@ struct M : public L<typename T::Type, T::Value>
 };  
 ```  
   
- また、以下のコードがあります。  
+ でこれを  
   
 ```  
 // C4346c.cpp  

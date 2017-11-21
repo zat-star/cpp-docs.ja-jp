@@ -4,43 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- devlang-cpp
+ms.technology: cpp-standard-libraries
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- xfunctional/std::logical_and
-- logical_and
-dev_langs:
-- C++
+f1_keywords: xfunctional/std::logical_and
+dev_langs: C++
 helpviewer_keywords:
 - logical_and class
 - logical_and struct
 ms.assetid: 1a375cc2-0592-4d57-a553-78009c7ad610
-caps.latest.revision: 22
+caps.latest.revision: "22"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- ru-ru
-- zh-cn
-- zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-translationtype: Machine Translation
-ms.sourcegitcommit: 2d05749ba2837a3879c91886b9266de47dd2ece6
-ms.openlocfilehash: 8108658a9efceeb048aac2c9aa4ffd160626a31b
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 683fa6e8711deb5f61e4a41e7e9a64313d8abda8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="logicaland-struct"></a>logical_and 構造体
 引数に対して論理積演算 (`operator&&`) を実行する定義済みの関数オブジェクト。  
@@ -75,7 +56,7 @@ struct logical_and<void>
  論理積演算の右オペランド。 特殊化されていないテンプレートでは、`Type` 型の左辺値参照引数を使用します。 特殊化されたテンプレートは、推論された型 `U` の左辺値および右辺値参照引数の完全転送を行います。  
   
 ## <a name="return-value"></a>戻り値  
- `Left``&&``Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator&&` によって返された型が含まれます。  
+ `Left && Right` の結果。 特殊化されたテンプレートは、結果の完全転送を行います。結果には `operator&&` によって返された型が含まれます。  
   
 ## <a name="remarks"></a>コメント  
  ユーザー定義型の場合、オペランドの評価のショートサーキットはありません。 どちらの引数も `operator&&` によって評価されます。  
@@ -160,7 +141,6 @@ The deque which is the conjuction of d1 & d2 is:
 ## <a name="see-also"></a>関連項目  
  [C++ 標準ライブラリ内のスレッド セーフ](../standard-library/thread-safety-in-the-cpp-standard-library.md)   
  [C++ 標準ライブラリ リファレンス](../standard-library/cpp-standard-library-reference.md)
-
 
 
 

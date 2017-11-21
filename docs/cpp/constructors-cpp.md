@@ -4,27 +4,24 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - constructors [C++]
 - objects [C++], creating
 - instance constructors
 ms.assetid: 3e9f7211-313a-4a92-9584-337452e061a9
-caps.latest.revision: 17
+caps.latest.revision: "17"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: ece3414dbc7f4d362fa7dcc6f060e408b50e54e6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: 77007b3d3805bb2fa159680c88d8e41825336da2
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="constructors-c"></a>コンストラクター (C++)
 コンストラクターは、そのクラスのインスタンスを初期化する一種のメンバー関数です。 コンストラクターにはクラスと同じ名前があり、戻り値はありません。 コンストラクターは任意の数のパラメーターを持つことができ、クラスは任意の数のオーバーロードされたコンストラクターを持つことができます。 コンストラクターには、"public"、"protected"、"private" の中から任意のアクセシビリティを設定できます。 コンストラクターを定義していない場合、パラメーターを受け取らない既定のコンストラクターがコンパイラによって生成されます。既定のコンストラクターを削除済みとして宣言することで、この動作をオーバーライドできます。  
@@ -613,7 +610,7 @@ class Derived : T {
   
  コンパイラによって生成されたコピー コンストラクターは、新しいオブジェクトを設定し、コピーするオブジェクトのコンテンツのメンバーごとのコピーを実行します。 基底クラスまたはメンバーのコンストラクターが存在する場合は、それらが呼び出されます。存在しない場合は、ビット単位のコピーが実行されます。  
   
- 場合はすべて基底クラスとメンバー クラス クラスの`type`を受け入れるコピー コンス トラクターがある、 **const**コンパイラによって生成されたコピー コンス トラクターの引数が型の 1 つの引数を受け取ります**const** `type`**&**. それ以外の場合、コンパイラによって生成されたコピー コンス トラクターが型の単一の引数を受け入れる`type` ** &**です。  
+ 場合はすべて基底クラスとメンバー クラス クラスの`type`を受け入れるコピー コンス トラクターがある、 **const**コンパイラによって生成されたコピー コンス トラクターの引数が型の 1 つの引数を受け取ります**const** `type`**&**. それ以外の場合、コンパイラによって生成されたコピー コンス トラクターが型の単一の引数を受け入れる`type`  **&**です。  
   
  初期化するために、コンス トラクターを使用することができます、 **const**または`volatile`としては、オブジェクトがそれ自体のコンス トラクターを宣言することはできません**const**または`volatile`です。 コンス トラクターにのみ有効なストレージ クラスが**インライン**; 他のストレージ クラス修飾子の使用を含む、`__declspec`キーワード、コンス トラクターを持つ、コンパイラ エラーが発生します。  
   
@@ -699,4 +696,3 @@ int main()
   
  `Base::Base` は仮想関数 `f` を呼び出します。 `Derived::f` オブジェクトは `d` 型なので、通常は `Derived` が呼び出されます。 `Base::Base` 関数はコンストラクターなので、オブジェクトはまだ `Derived` 型ではなく、`Base::f` が呼び出されます。  
   
-

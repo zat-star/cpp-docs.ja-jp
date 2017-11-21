@@ -1,34 +1,33 @@
 ---
-title: "CAccessorBase::IsAutoAccessor | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IsAutoAccessor"
-  - "CAccessorBase.IsAutoAccessor"
-  - "CAccessorBase::IsAutoAccessor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "IsAutoAccessor メソッド"
+title: "Caccessorbase::isautoaccessor |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IsAutoAccessor
+- CAccessorBase.IsAutoAccessor
+- CAccessorBase::IsAutoAccessor
+dev_langs: C++
+helpviewer_keywords: IsAutoAccessor method
 ms.assetid: c330da15-2947-4050-ad00-8f776adc58fb
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a08251ddf32f815390c28677f03536e1c2cec7d9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# CAccessorBase::IsAutoAccessor
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データの移動操作中にアクセサーを自動的に取得されれば、true を返します。  
+# <a name="caccessorbaseisautoaccessor"></a>CAccessorBase::IsAutoAccessor
+移動操作中にデータが自動的に取得アクセサーの場合は true を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -37,15 +36,15 @@ caps.handback.revision: 8
 ) const;  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `nAccessor`  
- \[\]アクセサーのゼロの数。  
+ [in]アクセサーのゼロ オフセットの数です。  
   
-## 戻り値  
- アクセサー番号の場合 **true** を返します。  それ以外の場合は **false** を返します。  
+## <a name="return-value"></a>戻り値  
+ 返します**true**アクセサーが自動場合。 それ以外の場合は **false**を返します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [CAccessorBase クラス](../../data/oledb/caccessorbase-class.md)

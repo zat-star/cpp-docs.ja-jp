@@ -1,38 +1,37 @@
 ---
-title: "IRowsetNotifyImpl::OnFieldChange | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IRowsetNotifyImpl.OnFieldChange"
-  - "IRowsetNotifyImpl::OnFieldChange"
-  - "OnFieldChange"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OnFieldChange メソッド"
+title: "Irowsetnotifyimpl::onfieldchange |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IRowsetNotifyImpl.OnFieldChange
+- IRowsetNotifyImpl::OnFieldChange
+- OnFieldChange
+dev_langs: C++
+helpviewer_keywords: OnFieldChange method
 ms.assetid: f26b492c-c86e-423b-9374-175e510a2860
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f6816ca96d3fe00e48d0fdca7b560eb628150d4d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IRowsetNotifyImpl::OnFieldChange
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-列の値に対する変更をコンシューマーに通知します。  
+# <a name="irowsetnotifyimplonfieldchange"></a>IRowsetNotifyImpl::OnFieldChange
+列の値の変更をコンシューマーに通知します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-STDMETHOD(OnFieldChange)(   
+STDMETHOD(OnFieldChange)(   
 /* [in] */ IRowset* /* pRowset */,  
 /* [in] */ HROW /* hRow */,  
 /* [in] */ DBORDINAL /* cColumns */,  
@@ -42,18 +41,18 @@ STDMETHOD(OnFieldChange)( 
 /* [in] */ BOOL /* fCantDeny */)  
 ```  
   
-#### パラメーター  
- パラメーターの説明 [IRowsetNotify::OnFieldChange](https://msdn.microsoft.com/en-us/library/ms715961.aspx) を参照してください。  
+#### <a name="parameters"></a>パラメーター  
+ 参照してください[は、](https://msdn.microsoft.com/en-us/library/ms715961.aspx)パラメーターの説明をします。  
   
-## 戻り値  
- 戻り値の説明の [IRowsetNotify::OnFieldChange](https://msdn.microsoft.com/en-us/library/ms715961.aspx) を参照してください。  
+## <a name="return-value"></a>戻り値  
+ 参照してください[は、](https://msdn.microsoft.com/en-us/library/ms715961.aspx)戻り値についてです。  
   
-## 解説  
- このメソッドは [IRowsetNotify::OnFieldChange](https://msdn.microsoft.com/en-us/library/ms715961.aspx) のメソッドをラップします。  詳細については、OLE DB Programmer's Reference のそのメソッドの説明を参照してください。  
+## <a name="remarks"></a>コメント  
+ このメソッドをラップ、[は、](https://msdn.microsoft.com/en-us/library/ms715961.aspx)メソッドです。 詳細については、OLE DB プログラマーズ リファレンス内のメソッドの説明を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldbcli.h  
   
-## 参照  
- [IRowsetNotifyImpl クラス](../Topic/IRowsetNotifyImpl%20Class.md)   
- [IRowsetNotify::OnFieldChange](https://msdn.microsoft.com/en-us/library/ms715961.aspx)
+## <a name="see-also"></a>関連項目  
+ [IRowsetNotifyImpl クラス](../../data/oledb/irowsetnotifyimpl-class.md)   
+ [は、](https://msdn.microsoft.com/en-us/library/ms715961.aspx)

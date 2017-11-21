@@ -1,34 +1,33 @@
 ---
-title: "式エバリュエーター エラー CXX0038 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "CXX0038"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CAN0038"
-  - "CXX0038"
+title: "式エバリュエーター エラー CXX0038 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: CXX0038
+dev_langs: C++
+helpviewer_keywords:
+- CXX0038
+- CAN0038
 ms.assetid: 3327dc4e-1726-4924-a519-6ffd766a389c
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 52026cc44638cc09d7c1356abfed19db210dbec6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 式エバリュエーター エラー CXX0038
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-関数の引数の数かタイプまたはその両方が適合しません  
+# <a name="expression-evaluator-error-cxx0038"></a>式エバリュエーター エラー CXX0038
+関数の引数の数/型が一致しません  
   
- 関数呼び出しの形式がプロトタイプと一致しません。  
+ 指定された関数の呼び出しが関数のプロトタイプと一致しません。  
   
- 関数呼び出しの引数の数が正しいかどうか確認してください。  必要に応じて、引数の型をプロトタイプと一致するようにキャストしてください。  
+ 正しい数の引数による呼び出しを再入力します。 型は、必要に応じて、プロトタイプと一致する各引数をキャストします。  
   
- このエラーは CAN0038 と同じものです。
+ このエラーは、can0038 と同じものと同じです。

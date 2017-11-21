@@ -1,33 +1,30 @@
 ---
-title: "@data | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "@data"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "@data symbol"
+title: "@data|Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: '@data'
+dev_langs: C++
+helpviewer_keywords: '@data symbol'
 ms.assetid: d3e99fb0-4c9e-40a8-9e2d-15de3b01a2fe
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 59e68b8f5c5b98c761bbccb46d09d79ba5e38163
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# @data
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-既定のグループの名前。   **フラット**  を除くすべてのモデルの DGROUP になります。   **フラット**  のメモリ モデル \(テキスト マクロ\) に  **フラット**  になります。  
+# <a name="data"></a>@data
+既定のデータ グループの名前。 タを除くすべてのモデルを評価し**フラット**です。 評価される**フラット**下にある、**フラット**メモリ モデル (テキスト マクロ)。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,5 +32,5 @@ manager: "ghogen"
   
 ```  
   
-## 参照  
- [Symbols Reference](../../assembler/masm/symbols-reference.md)
+## <a name="see-also"></a>関連項目  
+ [シンボル リファレンス](../../assembler/masm/symbols-reference.md)

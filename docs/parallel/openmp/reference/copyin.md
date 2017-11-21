@@ -4,44 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- copyin
-dev_langs:
-- C++
-helpviewer_keywords:
-- copyin OpenMP clause
+f1_keywords: copyin
+dev_langs: C++
+helpviewer_keywords: copyin OpenMP clause
 ms.assetid: 369efa88-613c-4cb1-9e11-7b9ee08a4b25
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: ff466d0ec280d4e31d49328a725da88d87bd2435
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: af833219039a03e7e403f7e3cd10210057f3abfa
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="copyin"></a>copyin
-スレッドのマスター スレッドの値にアクセスできるように、 [threadprivate](../../../parallel/openmp/reference/threadprivate.md)変数です。  
+スレッドのマスター スレッドの値にアクセスできるように、 [threadprivate](../../../parallel/openmp/reference/threadprivate.md)変数。  
   
 ## <a name="syntax"></a>構文  
   
@@ -53,21 +34,21 @@ copyin(var)
  指定項目  
   
  `var`  
- `threadprivate` Parallel コンストラクトの前に存在するマスター スレッド内の変数の値で初期化される変数です。  
+ `threadprivate` Parallel コンストラクトの前に存在する場合に、マスター スレッド内の変数の値で初期化される変数です。  
   
 ## <a name="remarks"></a>コメント  
  `copyin`次のディレクティブに適用されます。  
   
--   [並列](../../../parallel/openmp/reference/parallel.md)  
+-   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
 -   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
 -   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
   
- 詳細については、次を参照してください。 [2.7.2.7 copyin](../../../parallel/openmp/2-7-2-7-copyin.md)します。  
+ 詳細については、次を参照してください。 [2.7.2.7 copyin](../../../parallel/openmp/2-7-2-7-copyin.md)です。  
   
 ## <a name="example"></a>例  
- 参照してください[threadprivate](../../../parallel/openmp/reference/threadprivate.md)を使用する例については`copyin`です。  
+ 参照してください[threadprivate](../../../parallel/openmp/reference/threadprivate.md)の使用例については`copyin`します。  
   
 ## <a name="see-also"></a>関連項目  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

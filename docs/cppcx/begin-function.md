@@ -1,30 +1,30 @@
 ---
-title: "begin 関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "01/22/2017"
-ms.prod: "windows-client-threshold"
-ms.technology: ""
-ms.reviewer: ""
-ms.suite: ""
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "collection/Windows::Foundation::Collections::begin"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "begin 関数"
+title: "begin 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 01/22/2017
+ms.technology: cpp-windows
+ms.reviewer: 
+ms.suite: 
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: collection/Windows::Foundation::Collections::begin
+dev_langs: C++
+helpviewer_keywords: begin Function
 ms.assetid: 5a44fb33-e247-49fd-b7a1-4a5b42e9e1e4
-caps.latest.revision: 4
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 4
+caps.latest.revision: "4"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 4bd4d94d2e65a4ad285a1a87c211169482cee1a9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# begin 関数
+# <a name="begin-function"></a>begin 関数
 指定されたインターフェイス パラメーターによってアクセスされるコレクションの先頭を指す反復子を返します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -46,28 +46,28 @@ template <typename T>
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `T`  
  テンプレート型パラメーター。  
   
  `v`  
- IVector\<T\> または IVectorView\<T\> インターフェイスによりアクセスされる Vector\<T\> または VectorView\<T\> オブジェクトのコレクション。  
+ ベクターのコレクション\<T > または VectorView\<T >、IVector によってアクセスされるオブジェクト\<T > または IVectorView\<T > インターフェイスです。  
   
  `i`  
- IIterable\<T\> インターフェイスによってアクセスされる任意の [!INCLUDE[wrt](../cppcx/includes/wrt-md.md)] オブジェクトのコレクション。  
+ IIterable によってアクセスされる任意の Windows ランタイム オブジェクトのコレクション\<T > インターフェイスです。  
   
-## 戻り値  
+### <a name="return-value"></a>戻り値  
  コレクションの先頭を指す反復子。  
   
-## 解説  
+### <a name="remarks"></a>コメント  
  最初の 2 つのテンプレート関数は反復子を返し、3 番目のテンプレート関数は入力反復子を返します。  
   
- begin によって返される VectorIterator オブジェクトは、VectorProxy\<T\> 型の要素を格納するプロキシ反復子です。 ただし、プロキシ オブジェクトは、ユーザー コードにはほとんどは表示されません。 詳細については、「[Collections \(C\+\+\/CX\) \(コレクション \(C\+\+\/CX\)\)](../cppcx/collections-c-cx.md)」を参照してください。  
+ によって返されるオブジェクトの開始 VectorIterator は、型 VectorProxy の要素を格納するプロキシ反復子\<T > です。 ただし、プロキシ オブジェクトは、ユーザー コードにはほとんどは表示されません。 詳細については、「 [Collections (C++/CX) (コレクション (C++/CX))](../cppcx/collections-c-cx.md)」を参照してください。  
   
-## 必要条件  
+### <a name="requirements"></a>要件  
  **ヘッダー:** collection.h  
   
  **名前空間:** Windows::Foundation::Collections  
   
-## 参照  
- [Windows::Foundation::Collections 名前空間](../cppcx/windows-foundation-collections-namespace-c-cx.md)
+## <a name="see-also"></a>関連項目  
+ [:Foundation Namespace](../cppcx/windows-foundation-collections-namespace-c-cx.md)

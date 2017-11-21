@@ -1,39 +1,38 @@
 ---
-title: "方法: リフレクションを使用してプラグイン コンポーネント アーキテクチャを実装する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プラグイン [C++]"
-  - "リフレクション [C++], プラグイン"
+title: "プラグイン アーキテクチャを実装する (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- plug-ins [C++]
+- reflection [C++}, plug-ins
 ms.assetid: 4f31e42b-78d1-48b9-8fdc-f28c75e8e77e
-caps.latest.revision: 13
-caps.handback.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8d959702a7de8df9d90ca6dd855725901543dc92
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: リフレクションを使用してプラグイン コンポーネント アーキテクチャを実装する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-単純な "プラグイン" アーキテクチャを実装するためにリフレクションを使用する方法を次のコード例に示します。  最初のコード例はアプリケーションで、次のコード例はプラグインです。  アプリケーションは、コマンド ライン引数として指定されたプラグイン DLL 内の任意のフォーム ベースのクラスを使用して、アプリケーション自体を表示するマルチ ドキュメント フォームです。  
+# <a name="how-to-implement-a-plug-in-component-architecture-using-reflection-ccli"></a>方法: リフレクションを使用してプラグイン コンポーネント アーキテクチャを実装する (C++/CLI)
+次のコード例では、単純な「プラグイン」アーキテクチャを実装するためにリフレクションをデモンストレーションします。 最初のリストは、アプリケーションを 2 番目のプラグイン。 アプリケーションは、コマンドライン引数として提供されるプラグイン DLL 内のフォーム ベースのクラスを使用してそれ自体のメンバーを追加する複数のドキュメント形式です。  
   
- アプリケーションは、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName> メソッドを使用して、指定されたアセンブリの読み込みを試みます。  正常に処理できた場合、<xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=fullName> メソッドを使用して、アセンブリ内部の型を列挙します。  次に、<xref:System.Type.IsAssignableFrom%2A?displayProperty=fullName> メソッドを使用して、各型の互換性を確認します。  この例では、指定されたアセンブリ内で検出したクラスを、<xref:System.Windows.Forms.Form> クラスから派生させ、プラグインとして分類する必要があります。  
+ このアプリケーションを使用して、指定されたアセンブリの読み込みを試みます、<xref:System.Reflection.Assembly.Load%2A?displayProperty=fullName>メソッドです。 成功すると、アセンブリの内部型は列挙を使用して、<xref:System.Reflection.Assembly.GetTypes%2A?displayProperty=fullName>メソッドです。 各型が使用して、互換性のチェックし、<xref:System.Type.IsAssignableFrom%2A?displayProperty=fullName>メソッドです。 この例では、指定されたアセンブリ内のクラスはから派生した、<xref:System.Windows.Forms.Form>クラスをプラグインとして修飾します。  
   
- その後、<xref:System.Activator.CreateInstance%2A?displayProperty=fullName> メソッドを使用して、互換性のあるクラスのインスタンスを生成します。このメソッドは、引数として <xref:System.Type> を受け入れ、新しいインスタンスにポインターを返します。  次に、新しい各インスタンスをフォームにアタッチし、表示します。  
+ 互換性のあるクラスがインスタンス化し、<xref:System.Activator.CreateInstance%2A?displayProperty=fullName>を受け入れるメソッド、<xref:System.Type>を引数として、新しいインスタンスにポインターを返します。 それぞれの新しいインスタンスをフォームにアタッチし、表示はします。  
   
- ただし、<xref:System.Reflection.Assembly.Load%2A> メソッドは、ファイル拡張子を含むアセンブリ名を受け入れません。  アプリケーションの main 関数は、指定された拡張子をトリムします。したがって、次のコード例はいずれの場合も動作します。  
+ なお、<xref:System.Reflection.Assembly.Load%2A>メソッドは、ファイル拡張子を含むアセンブリ名を受け付けません。 アプリケーションでは、メインの関数は、次のコード例はいずれの場合は、指定された拡張子を削除します。  
   
-## 使用例  
- 次のコードは、プラグインを受け入れるアプリケーションを定義します。  アセンブリ名は、最初の引数として指定する必要があります。  このアセンブリには、少なくとも 1 つのパブリックな <xref:System.Windows.Forms.Form> 派生型を含める必要があります。  
+## <a name="example"></a>例  
+ 次のコードでは、プラグインを受け入れる、アプリケーションを定義します。アセンブリ名は、最初の引数として指定する必要があります。 このアセンブリは、少なくとも 1 つの公開を含める必要があります<xref:System.Windows.Forms.Form>派生型です。  
   
 ```  
 // plugin_application.cpp  
@@ -77,8 +76,8 @@ int main() {
 }  
 ```  
   
-## 使用例  
- 次のコードは、<xref:System.Windows.Forms.Form> から派生したクラスを 3 つ定義します。  結果のアセンブリ名の名前が上の一覧の実行可能ファイルに渡されると、コンパイル時にこれらのクラスはすべてホスト アプリケーションから不明であったにもかかわらず、3 つすべてのクラスが検出され、インスタンス化されます。  
+## <a name="example"></a>例  
+ 次のコードから派生した 3 つのクラスを定義する<xref:System.Windows.Forms.Form>です。 実行可能ファイルの前の一覧で、結果として得られるアセンブリの名前が渡されると、これら 3 つのクラスの各が検出され、そうでなかったコンパイル時に、ホスト アプリケーションに認識されているすべてのファクトに関係なく、インスタンス化します。  
   
 ```  
 // plugin_assembly.cpp  
@@ -128,5 +127,5 @@ protected:
 };  
 ```  
   
-## 参照  
- [リフレクション](../dotnet/reflection-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [リフレクションの問題 (C++/CLI)](../dotnet/reflection-cpp-cli.md)

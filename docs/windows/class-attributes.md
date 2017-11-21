@@ -1,66 +1,66 @@
 ---
-title: "Class Attributes | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "attributes [C++], class attributes"
-  - "class attributes"
+title: "クラスの属性 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+dev_langs: C++
+helpviewer_keywords:
+- attributes [C++], class attributes
+- class attributes
 ms.assetid: fad04ea1-d8ff-46d4-bb42-2b4500a6ab60
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9d6883774f6deeae2d8c372b68362c743d206eb9
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Class Attributes
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次の属性は [クラス](../cpp/class-cpp.md) C\+\+ のキーワードが適用されます。  
+# <a name="class-attributes"></a>クラス属性
+次の属性に適用される、[クラス](../cpp/class-cpp.md)C++ のキーワードです。  
   
-|属性|Description|  
-|--------|-----------------|  
-|[aggregatable](../Topic/aggregatable.md)|クラスが集約をサポートすることを示します。|  
-|[集約](../windows/aggregates.md)|コントロールが対象のクラスを集約することを示します。|  
-|[appobject](../Topic/appobject.md)|コクラスを完全な .exe アプリケーションに関連付けられている特定しコクラスの関数とプロパティがこのタイプ ライブラリでグローバルに使用できるオブジェクトとしてアプリケーションを示します。|  
-|[case](../windows/case-cpp.md)|共用体で [switch\_type](../windows/switch-type.md) の属性を使用します。|  
-|[コクラス](../windows/coclass.md)|ActiveX コントロールを作成します。|  
-|[com\_interface\_entry](../Topic/com_interface_entry%20\(C++\).md)|COM インターフェイス マップにエントリを追加します。|  
-|[コントロール](../windows/control.md)|ユーザー定義型はコントロールであることを指定します。|  
-|[custom](../windows/custom-cpp.md)|独自の属性を定義できます。|  
-|[db\_command](../windows/db-command.md)|OLE DB のコマンドを作成します。|  
-|[db\_param](../windows/db-param.md)|指定したメンバー変数を入力または出力パラメーターに関連付け変数を区切ります。|  
-|[db\_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
-|[db\_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
+|属性|説明|  
+|---------------|-----------------|  
+|[aggregatable](../windows/aggregatable.md)|クラスが集計をサポートしていることを示します。|  
+|[aggregates](../windows/aggregates.md)|コントロールがターゲット クラスを集約することを示します。|  
+|[appobject](../windows/appobject.md)|完全 .exe アプリケーションに関連付けられ、関数と、コクラスのプロパティがグローバルに使用できることでこのタイプ ライブラリを示しますアプリケーション オブジェクトとしてコクラスを識別します。|  
+|[case](../windows/case-cpp.md)|使用される、 [switch_type](../windows/switch-type.md)共用体の属性です。|  
+|[coclass](../windows/coclass.md)|ActiveX コントロールを作成します。|  
+|[com_interface_entry](../windows/com-interface-entry-cpp.md)|インターフェイスのエントリを COM マップに追加します。|  
+|[control](../windows/control.md)|ユーザー定義型がコントロールであることを指定します。|  
+|[カスタム](../windows/custom-cpp.md)|独自の属性を定義できます。|  
+|[db_command](../windows/db-command.md)|OLE DB コマンドを作成します。|  
+|[db_param](../windows/db-param.md)|入力または出力パラメーターを持つ指定したメンバー変数を関連付けるし、変数を区切ります。|  
+|[db_source](../windows/db-source.md)|データ ソースへの接続を作成します。|  
+|[db_table](../windows/db-table.md)|OLE DB テーブルを開きます。|  
 |[default](../windows/default-cpp.md)|コクラス内で定義されるカスタムまたはディスパッチ インターフェイスが既定のプログラミング インターフェイスを表すことを示します。|  
-|[defaultvtable](../windows/defaultvtable.md)|コントロールの既定の vtable インターフェイスとインターフェイスを定義します。|  
-|[event\_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
-|[ソース](../windows/event-source.md)|イベント ソースを作成します。|  
-|[helpcontext](../windows/helpcontext.md)|ヘルプ ファイルに要素に関するユーザーの情報を表示できるようにするためのコンテキスト ID を指定します。|  
-|[helpfile](../Topic/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
-|[helpstringcontext](../windows/helpstringcontext.md)|.hlp または .chm ファイルでヘルプ トピックの ID を指定します。|  
-|[helpstring](../windows/helpstring.md)|適用先の要素の記述に使用される文字列を指定します。|  
-|[hidden](../Topic/hidden.md)|項目が存在してもユーザー指向ブラウザーに表示されないことを示します。|  
-|[implements](../Topic/implements%20\(C++\).md)|IDL のコクラスのメンバーにはディスパッチ インターフェイスを指定します。|  
-|[implements\_category](../Topic/implements_category.md)|によってクラスのコンポーネント カテゴリを実行します。|  
-|[module](../windows/module-cpp.md)|.idl ファイルのライブラリ ブロックを定義します。|  
-|[作成](../windows/noncreatable.md)|単独ではインスタンス化できないオブジェクトを定義します。|  
-|[ProgID](../Topic/progid.md)|コントロールの ProgID を定義します。|  
-|[registration\_script](../windows/registration-script.md)|指定のレジスタ スクリプトを実行します。|  
-|[requestedit](../windows/requestedit.md)|プロパティが **OnRequestEdit** 通知をサポートすることを示します。|  
-|[source](../Topic/source%20\(C++\).md)|クラスにコネクション ポイントにコントロールのソース インターフェイスを指定します。  プロパティまたはメソッドで **ソース**  の属性にはメンバーがイベントのソースであるかバリアント オブジェクトを返すことを示します。|  
-|[support\_error\_info](../windows/support-error-info.md)|ターゲット オブジェクトのエラー レポートをサポートします。|  
-|[スレッド](../windows/threading-cpp.md)|コントロール用のスレッド モデルを指定します。|  
+|[defaultvtable](../windows/defaultvtable.md)|コントロールの既定の vtable インターフェイスとしてインターフェイスを定義します。|  
+|[event_receiver](../windows/event-receiver.md)|イベント レシーバーを作成します。|  
+|[event_source](../windows/event-source.md)|イベント ソースを作成します。|  
+|[helpcontext](../windows/helpcontext.md)|コンテキスト ID をユーザーに関する情報を表示、ヘルプ ファイル内のこの要素を指定します。|  
+|[helpfile](../windows/helpfile.md)|タイプ ライブラリのヘルプ ファイルの名前を設定します。|  
+|[helpstringcontext](../windows/helpstringcontext.md)|.Hlp または .chm ファイルには、ヘルプ トピックの ID を指定します。|  
+|[helpstring](../windows/helpstring.md)|適用すると、要素の記述に使用される文字の文字列を指定します。|  
+|[hidden](../windows/hidden.md)|項目が存在しますが、ユーザー指向ブラウザーで表示する必要がありますされませんを示します。|  
+|[実装します。](../windows/implements-cpp.md)|IDL coclass のメンバーであることを強制するディスパッチ インターフェイスを指定します。|  
+|[implements_category](../windows/implements-category.md)|クラスの実装済みのコンポーネントのカテゴリを指定します。|  
+|[モジュール](../windows/module-cpp.md)|.idl ファイルのライブラリ ブロックを定義します。|  
+|[noncreatable](../windows/noncreatable.md)|単独でインスタンス化できないオブジェクトを定義します。|  
+|[progid](../windows/progid.md)|コントロールの ProgID を定義します。|  
+|[registration_script](../windows/registration-script.md)|指定した登録スクリプトを実行します。|  
+|[requestedit](../windows/requestedit.md)|プロパティをサポートしていることを示します、 **OnRequestEdit**通知します。|  
+|[ソース](../windows/source-cpp.md)|クラスのコネクション ポイント用のコントロールのソース インターフェイスを指定します。 プロパティまたはメソッドで、**ソース**属性は、メンバーがオブジェクトまたはイベントのソースであるバリアント型を返すことを示します。|  
+|[support_error_info](../windows/support-error-info.md)|ターゲット オブジェクトのエラー報告をサポートしています。|  
+|[スレッド処理](../windows/threading-cpp.md)|コントロールのスレッド モデルを指定します。|  
 |[uuid](../windows/uuid-cpp-attributes.md)|クラスまたはインターフェイスの一意の ID を指定します。|  
-|[version](../windows/version-cpp.md)|クラスの複数のバージョンでの特定のバージョンを指定します。|  
-|[vi\_progid](../windows/vi-progid.md)|ProgID のバージョンに依存しない形式を指定します。|  
+|[version](../windows/version-cpp.md)|クラスの複数のバージョン間で特定のバージョンを識別します。|  
+|[vi_progid](../windows/vi-progid.md)|ProgID のバージョンに依存しない形式を指定します。|  
   
-## 参照  
- [Attributes by Usage](../windows/attributes-by-usage.md)
+## <a name="see-also"></a>関連項目  
+ [使用法別の属性](../windows/attributes-by-usage.md)

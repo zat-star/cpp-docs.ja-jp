@@ -1,45 +1,45 @@
 ---
-title: "メッセージ ハンドラー関数 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "NOFITY_HANDLER"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ATL, メッセージ ハンドラー"
-  - "COMMAND_HANDLER マクロ"
-  - "CommandHandler メソッド"
-  - "メッセージ マップ, ATL"
-  - "MESSAGE_HANDLER マクロ"
-  - "MessageHandler メソッド"
-  - "NOTIFY_HANDLER マクロ, メッセージ ハンドラー関数"
-  - "NotifyHandler メソッド"
+title: "メッセージ ハンドラー関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: NOFITY_HANDLER
+dev_langs: C++
+helpviewer_keywords:
+- MESSAGE_HANDLER macro
+- COMMAND_HANDLER macro
+- CommandHandler method
+- MessageHandler method
+- NotifyHandler method
+- message maps, ATL
+- NOTIFY_HANDLER macro, message handler functions
+- ATL, message handlers
 ms.assetid: 2007a8c5-0143-42f1-91ab-809f235f9d50
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3441a5d71ede812edb121253f858b647896e5516
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# メッセージ ハンドラー関数
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ATL はメッセージ ハンドラー関数の 3 種類が用意されています:  
+# <a name="message-handler-functions"></a>メッセージ ハンドラー関数
+ATL には、次の 3 つの種類のメッセージ ハンドラー関数が用意されています。  
   
-|メッセージ ハンドラーの型|対応するメッセージのマクロ|  
-|-------------------|-------------------|  
-|[MessageHandler](../atl/messagehandler.md)|[MESSAGE\_HANDLER](../Topic/MESSAGE_HANDLER.md)|  
-|[CommandHandler](../Topic/CommandHandler.md)|[COMMAND\_HANDLER](../Topic/COMMAND_HANDLER.md)|  
-|[NotifyHandler](../atl/notifyhandler.md)|[NOTIFY\_HANDLER](../Topic/NOTIFY_HANDLER.md)|  
+|メッセージ ハンドラーの種類|対応するメッセージ マクロ|  
+|-----------------------------|---------------------------------|  
+|[MessageHandler](../atl/messagehandler.md)|[MESSAGE_HANDLER](reference/message-map-macros-atl.md#message_handler)|  
+|[CommandHandler](../atl/commandhandler.md)|[COMMAND_HANDLER](reference/message-map-macros-atl.md#command_handler)|  
+|[NotifyHandler](../atl/notifyhandler.md)|[NOTIFY_HANDLER](reference/message-map-macros-atl.md#notify_handler)|  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ウィンドウの実装](../atl/implementing-a-window.md)   
  [メッセージ マップ](../atl/message-maps-atl.md)   
- [WM\_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)
+ [WM_NOTIFY](http://msdn.microsoft.com/library/windows/desktop/bb775583)
+

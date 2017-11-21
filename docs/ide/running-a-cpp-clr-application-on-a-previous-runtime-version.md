@@ -1,46 +1,45 @@
 ---
-title: "以前のランタイム バージョンでの C++ /clr アプリケーションの実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "app.config ファイル, ランタイム バージョンの指定"
-  - "アプリケーションの配置 [C++], ランタイム バージョンの指定"
-  - "アプリケーション [C++], ランタイム バージョンの指定"
-  - "下位互換性 [C++], ランタイム バージョンの指定"
-  - "共通言語ランタイム [C++], バージョン指定"
-  - "互換性 [C++], ランタイム バージョンの指定"
-  - "配置 (アプリケーションを) [C++], ランタイム バージョンの指定"
-  - "バージョン [C++]"
+title: "以前のランタイム バージョンで C++ と clr アプリケーションの実行 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- applications [C++], runtime version specified
+- versions [C++]
+- app.config files, runtime version specified
+- compatibility [C++], runtime version specified
+- backward compatibility [C++], runtime version specified
+- application deployment [C++], runtime version specified
+- common language runtime [C++], version specified
+- deploying applications [C++], runtime version specified
 ms.assetid: 940171b7-6937-4b14-8e87-c199e23f4f2e
-caps.latest.revision: 17
-caps.handback.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: b8e0a9860c3c6d4fef87a76aad037f70c1ea787f
+ms.sourcegitcommit: ca2f94dfd015e0098a6eaf5c793ec532f1c97de1
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/31/2017
 ---
-# 以前のランタイム バージョンでの C++ /clr アプリケーションの実行
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-他に特に指定しない限り、Visual C\+\+ .NET Framework アプリケーションは、コンパイラがアプリケーションのビルドに使用する共通言語ランタイムの \(CLR\) のバージョンで実行されるビルドします。  ただし、ランタイムの 1 種類のバージョンに必要な機能を提供する他のバージョンでも実行するようにビルドされたアプリケーションに対してできます。  
+# <a name="running-a-c-clr-application-on-a-previous-runtime-version"></a>以前のランタイム バージョンでの C++ /clr アプリケーションの実行
+未指定のそれ以外の場合、コンパイラが、アプリケーションをビルドに使用するバージョンの共通言語ランタイム (CLR) で実行する、C++ の .NET Framework のアプリケーションが作成されています。 ただし、1 つのバージョンの必要な機能を提供するその他のバージョンで実行するランタイムの構築された .exe アプリケーションです。  
   
- これを行うには、`supportedRuntime` タグではランタイム バージョン情報を含む app.config ファイルを提供します。  
+ これを実現するには、ランタイム バージョン情報を含む app.config ファイルを提供、`supportedRuntime`タグ。  
   
- 実行時には、app.config ファイルは *filename.ext* がアプリケーションを起動し、実行可能ファイルと同じディレクトリにある実行可能ファイルの名前です。フォーム *filename.ext*.config の名前で。  たとえば、アプリケーションが TestApp.exe である場合、app.config ファイルの名前は TestApp.exe.config になります。  
+ 実行時に、app.config ファイルが、フォームの名前をいる必要があります*.ext という*.config を場所*.ext という*アプリケーションを開始した実行可能ファイルの名前を指定し、これと同じディレクトリに存在する必要があります実行可能ファイルです。 たとえば、アプリケーションが TestApp.exe をという名前の場合、app.config ファイルの名前は TestApp.exe.config します。  
   
- 複数のランタイム バージョンをアプリケーションが複数のランタイム バージョンがインストールされているコンピューターで実行する場合、アプリケーションは構成ファイルに指定され、インストール、最初のバージョンを使用します。  
+ 1 つ以上のランタイム バージョンを指定して、1 つ以上インストールされているランタイム バージョンをあるコンピューターでアプリケーションを実行する場合、アプリケーションがインストールされている構成ファイルで指定されている最初のバージョンを使用します。  
   
- 詳細については、「[How to: Configure an App to Target a .NET Framework Version](http://msdn.microsoft.com/ja-jp/5247b307-89ca-417b-8dd0-e8f9bd2f4717)」を参照してください。  
+ 詳細については、次を参照してください。[する方法: .NET Framework のバージョンを対象とするアプリを構成する](http://msdn.microsoft.com/en-us/5247b307-89ca-417b-8dd0-e8f9bd2f4717)です。  
   
- にバージョン 1.0 または CLR バージョン 1.1 で実行するには、Visual C\+\+ コンパイラでビルドされたアプリケーションは [\/clr:initialAppDomain](../build/reference/clr-common-language-runtime-compilation.md)を使用してコンパイルする必要があります。  
+ Version 1.0 または CLR では、Visual C でビルドしたアプリケーションのバージョン 1.1 で実行するのには、コンパイラを使用してコンパイルする必要があります[/clr:initialAppDomain](../build/reference/clr-common-language-runtime-compilation.md)です。  
   
-## 参照  
- [デスクトップ アプリケーションの配置](../Topic/Deploying%20Native%20Desktop%20Applications%20\(Visual%20C++\).md)
+## <a name="see-also"></a>関連項目  
+ [デスクトップ アプリケーションの配置](../ide/deploying-native-desktop-applications-visual-cpp.md)

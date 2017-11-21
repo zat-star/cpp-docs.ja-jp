@@ -4,41 +4,22 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- omp_init_nest_lock
-dev_langs:
-- C++
-helpviewer_keywords:
-- omp_init_nest_lock OpenMP function
+f1_keywords: omp_init_nest_lock
+dev_langs: C++
+helpviewer_keywords: omp_init_nest_lock OpenMP function
 ms.assetid: cf749ec5-de78-4186-9588-ac7c42b02463
-caps.latest.revision: 12
+caps.latest.revision: "12"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 566eb7c49666071fa4f5ee0fbd6c0d36d98477d1
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 911fd8069041135f20e8a7924cf5d943abcc2978
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="ompinitnestlock"></a>omp_init_nest_lock
 ロックを初期化します。  
@@ -55,12 +36,12 @@ void omp_init_nest_lock(
  指定項目  
   
  `lock`  
- 型の変数[omp_nest_lock_t](../../../parallel/openmp/reference/omp-nest-lock-t.md)します。  
+ 型の変数[omp_nest_lock_t](../../../parallel/openmp/reference/omp-nest-lock-t.md)です。  
   
 ## <a name="remarks"></a>コメント  
- 初期の入れ子のカウントは&0; です。  
+ 初期の入れ子のカウントは 0 です。  
   
- 詳細については、次を参照してください。 [3.2.1 omp_init_lock 関数と omp_init_nest_lock 関数](../../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)します。  
+ 詳細については、次を参照してください。 [3.2.1 omp_init_lock 関数と omp_init_nest_lock 関数](../../../parallel/openmp/3-2-1-omp-init-lock-and-omp-init-nest-lock-functions.md)です。  
   
 ## <a name="example"></a>例  
   

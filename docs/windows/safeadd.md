@@ -1,32 +1,30 @@
 ---
-title: "SafeAdd | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "SafeAdd"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "SafeAdd 関数"
+title: "SafeAdd |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: SafeAdd
+dev_langs: C++
+helpviewer_keywords: SafeAdd function
 ms.assetid: 3f82b91d-59fe-4ee1-873b-d056182fa8be
-caps.latest.revision: 5
-author: "ghogen"
-ms.author: "ghogen"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: ghogen
+ms.author: ghogen
+manager: ghogen
+ms.openlocfilehash: 394a79554acad936a180a8bde0a04b5e6d10069f
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# SafeAdd
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-オーバーフローが生じないように 2 つの数値を加算します。  
+# <a name="safeadd"></a>SafeAdd
+オーバーフローを防止する方法の 2 つの数値を加算します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 template<typename T, typename U>  
@@ -37,33 +35,33 @@ inline bool SafeAdd (
 ) throw ();  
 ```  
   
-#### パラメーター  
- \[入力\] `t`  
- 加算する 1 番目の数値。  これは T 型である必要があります。  
+#### <a name="parameters"></a>パラメーター  
+ [入力] `t`  
+ 追加する最初の数。 T 型でなければなりません  
   
- \[入力\] `u`  
- 加算する 2 番目の数値。  これは U 型である必要があります。  
+ [入力] `u`  
+ 追加する 2 番目の数値。 U 型です。 これでなければなりません  
   
- \[出力\] `result`  
- `SafeAdd` が結果を格納するパラメーター。  
+ [出力] `result`  
+ パラメーターで`SafeAdd`結果を格納します。  
   
-## 戻り値  
- エラーが発生しなかった場合は `true`。エラーが発生した場合は `false`。  
+## <a name="return-value"></a>戻り値  
+ `true`エラーが発生しない場合です。`false`場合は、エラーが発生します。  
   
-## 解説  
- このメソッドは [SafeInt ライブラリ](../windows/safeint-library.md)に含まれており、[SafeInt クラス](../windows/safeint-class.md)のインスタンスを作成せずに単一の加算演算を実行するために用意されています。  
+## <a name="remarks"></a>コメント  
+ このメソッドの一部である[SafeInt ライブラリ](../windows/safeint-library.md)のインスタンスを作成せず、1 つの追加操作のものでは、 [SafeInt クラス](../windows/safeint-class.md)です。  
   
 > [!NOTE]
->  このメソッドは、単一の数値演算を保護する必要がある場合にのみ使用してください。  複数の演算を実行する場合は、スタンドアロンの関数を個別に呼び出すのではなく、`SafeInt` クラスを使用する必要があります。  
+>  このメソッドは、単一の数値演算を保護する必要がありますにのみ使用する必要があります。 使用する必要があります複数の操作がある場合、`SafeInt`個々 のスタンドアロン関数の呼び出しではなくクラスです。  
   
- テンプレートの種類である T と U の詳細については、「[SafeInt 関数](../windows/safeint-functions.md)」を参照してください。  
+ テンプレート型 T および U の詳細については、次を参照してください。 [SafeInt 関数](../windows/safeint-functions.md)です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** safeint.h  
   
- **名前空間:** Microsoft::Utilities  
+ **Namespace:** Microsoft::Utilities  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [SafeInt 関数](../windows/safeint-functions.md)   
  [SafeInt ライブラリ](../windows/safeint-library.md)   
  [SafeInt クラス](../windows/safeint-class.md)   

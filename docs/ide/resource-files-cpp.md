@@ -1,44 +1,43 @@
 ---
-title: "リソース ファイル (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ファイルの種類 [C++], リソース ファイル"
-  - "リソース ファイル"
-  - "リソース [C++]"
+title: "リソース ファイル (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- resource files
+- resources [C++]
+- file types [C++], resource files
 ms.assetid: 338a4a0f-0c62-4ef1-a34f-5d86262d93a4
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c674bc7711de8a7991ad6906d62a768f9360e6b8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# リソース ファイル (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-リソースとは、ユーザーに情報を提供するインターフェイス要素です。  ビットマップ、アイコン、ツール バー、およびカーソルは、すべてリソースです。  一部のリソースは、メニューの選択やダイアログ ボックスへのデータ入力などの操作を実行するために使用できます。  
+# <a name="resource-files-c"></a>リソース ファイル (C++)
+リソースは、ユーザーに情報を提供するインターフェイス要素を示します。 ビットマップ、アイコン、ツールバー、およびカーソルは、すべてのリソースです。 メニューから選択 ダイアログ ボックスでデータを入力するなどの操作を実行する一部のリソースを操作できます。  
   
- 詳細については、「[リソース ファイルの操作](../mfc/working-with-resource-files.md)」を参照してください。  
+ 参照してください[のリソースを操作](../windows/working-with-resource-files.md)詳細についてはします。  
   
-|ファイル名|ディレクトリの場所|ソリューション エクスプローラーでの場所|Description|  
-|-----------|---------------|--------------------------|-----------------|  
-|*Projname*.rc|*Projname*|ソース ファイル|プロジェクト用のリソース スクリプト ファイル。  リソース スクリプト ファイルの内容は、プロジェクトの種類、およびプロジェクトに対して選択したサポート \(ツール バー、ダイアログ ボックス、HTML など\) に応じて異なります。ファイルの内容は以下のとおりです。<br /><br /> -   既定のメニュー定義<br />-   アクセラレータ テーブルと文字列テーブル<br />-   既定の **\[バージョン情報\]** ダイアログ ボックス<br />-   その他のダイアログ ボックス<br />-   アイコン ファイル \(res\\*Projname*.ico\)<br />-   バージョン情報<br />-   ビットマップ<br />-   ツール バー<br />-   HTML ファイル<br /><br /> リソース ファイルには、Microsoft Foundation Class の標準リソース用の Afxres.rc ファイルも定義されています。|  
-|Resource.h|*Projname*|ヘッダー ファイル|プロジェクトが使用するリソースが定義されたリソース ヘッダー ファイル。|  
-|*Projname*.rc2|*Projname*\\res|ソース ファイル|プロジェクトが使用する追加のリソースが含まれるスクリプト ファイル。  .rc2 ファイルは、プロジェクトの .rc ファイルの先頭にインクルードできます。<br /><br /> .rc2 ファイルは、複数の異なるプロジェクトで使用するリソースをインクルードするのに便利です。  リソースを .rc2 ファイルに組み込み、.rc2 ファイルを主要な .rc ファイルにインクルードすると、プロジェクトごとに同じリソースを繰り返し作成する必要がありません。|  
-|*Projname*.def|*Projname*|ソース ファイル|DLL プロジェクトの場合は、プロジェクトのモジュール定義ファイル。  コントロールの場合は、コントロールの名前と説明、およびランタイム ヒープのサイズが含まれます。|  
-|*Projname*.ico|*Projname*\\res|リソース ファイル|プロジェクトまたはコントロール用のアイコン ファイル。  アプリケーションを最小化すると、このアイコンが表示されます。  これは、アプリケーションの **\[バージョン情報\]** ボックスにも使用されます。  既定では、MFC と ATL にはそれぞれ MFC アイコンと ATL アイコンが用意されています。|  
-|*Projname*Doc.ico|*Projname*\\res|リソース ファイル|ドキュメント\/ビュー アーキテクチャのサポートが含まれる MFC プロジェクト用のアイコン ファイル。|  
-|Toolbar.bmp|*Projname*\\res|リソース ファイル|アプリケーションやコントロールをツール バーやパレットに表示するためのビットマップ ファイル。  このビットマップは、プロジェクトのリソース ファイルにインクルードされます。  初期ツール バーと初期ステータス バーは、**CMainFrame** クラスで生成されます。|  
-|ribbon.mfcribbon\-ms|*Projname*\\res|リソース ファイル|リボンのボタン、コントロール、および属性を定義する XML コードを含むリソース ファイルです。  詳細については、「[リボン デザイナー \(MFC\)](../mfc/ribbon-designer-mfc.md)」を参照してください。|  
+|ファイル名|ディレクトリの場所|ソリューション エクスプローラーでの場所|説明|  
+|---------------|------------------------|--------------------------------|-----------------|  
+|*Projname*.rc|*Projname*|ソース ファイル|プロジェクトにリソース スクリプト ファイル。 リソース スクリプト ファイルには、プロジェクト、およびプロジェクト (たとえば、ツールバー、ダイアログ ボックス、または HTML) で選択されたサポートの種類に応じて、次が含まれています。<br /><br /> で既定メニュー定義します。<br />-アクセラレータ、文字列テーブルです。<br />-既定値**に関する** ダイアログ ボックス。<br />-その他のダイアログ ボックス。<br />アイコンのファイル (res\\*Projname*.ico)。<br />-バージョン情報です。<br />-ビットマップ。<br />ツールバー。<br />HTML ファイルです。<br /><br /> リソース ファイルには、Microsoft Foundation Class の標準のリソースについては、ファイル Afxres.rc が含まれています。|  
+|Resource.h|*Projname*|ヘッダー ファイル|プロジェクトで使用したリソースの定義を含むリソースのヘッダー ファイル。|  
+|*Projname*.rc2|*Projname*\res|ソース ファイル|プロジェクトで使用されるその他のリソースを含むスクリプト ファイル。 プロジェクトの .rc ファイルの上部にある .rc2 ファイルを含めることができます。<br /><br /> .Rc2 ファイルは、複数の異なるプロジェクトで使用されるリソースを含める場合に便利です。 さまざまなプロジェクトの複数回、同じリソースを作成する代わりに、.rc2 ファイルにし、.rc2 ファイルをメインの .rc ファイルに挿入できます。|  
+|*Projname*.def|*Projname*|ソース ファイル|DLL プロジェクトのモジュール定義ファイル。 コントロールの名前と、コントロールの説明と、ランタイム ヒープのサイズを提供します。|  
+|*Projname*.ico|*Projname*\res|リソース ファイル (Visual Studio)|プロジェクトまたはコントロールのアイコン ファイルです。 このアイコンは、アプリケーションが最小化したときに表示されます。 アプリケーションのでは使用も**に関する**ボックス。 既定では、MFC には、[MFC] アイコンと ATL には、[ATL] アイコンが用意されています。|  
+|*Projname*Doc.ico|*Projname*\res|リソース ファイル (Visual Studio)|ドキュメント/ビュー アーキテクチャ サポートを含む MFC プロジェクトのアイコン ファイルです。|  
+|Toolbar.bmp|*Projname*\res|リソース ファイル (Visual Studio)|アプリケーションまたはツール バーまたはパレット内のコントロールを表すビットマップ ファイルです。 このビットマップは、プロジェクトのリソース ファイルに含まれます。 初期のツールバーとステータス バーがで構築された、 **CMainFrame**クラスです。|  
+|ribbon.mfcribbon ms|*Projname*\res|リソース ファイル (Visual Studio)|リボンのボタン、コントロール、および属性を定義する XML コードを含むリソース ファイル。 詳細については、「 [Ribbon Designer (MFC)](../mfc/ribbon-designer-mfc.md)」を参照してください。|  
   
-## 参照  
- [Visual C\+\+ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)
+## <a name="see-also"></a>関連項目  
+ [Visual C++ プロジェクトに対して作成されるファイルの種類](../ide/file-types-created-for-visual-cpp-projects.md)

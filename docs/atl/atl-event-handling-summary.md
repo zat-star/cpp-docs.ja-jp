@@ -1,57 +1,59 @@
 ---
-title: "ATL のイベント処理の概要 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "イベント処理, 実装"
+title: "ATL イベント処理の概要 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: event handling, implementing
 ms.assetid: e8b47ef0-0bdc-47ff-9dd6-34df11dde9a2
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8c4aec5679ae7a880bd5305037e880de9ff7d93a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ATL のイベント処理の概要
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-一般に、COM イベントを処理するのは比較的簡単です。  3 種類の主要な手順があります:  
+# <a name="atl-event-handling-summary"></a>ATL イベント処理の概要
+一般に、COM イベントの処理は、比較的単純なプロセスです。 次の 3 つの主要なステップがあります。  
   
--   では、オブジェクトのイベント インターフェイスを実装します。  
+-   オブジェクトのイベント インターフェイスを実装します。  
   
--   、オブジェクトがイベントを受信するイベント ソースに指示します。  
+-   オブジェクトがイベントを受信することは、イベント ソースにお勧めします。  
   
--   、のオブジェクトが、イベントを受信する必要がない場合に Unadvise イベント ソース。  
+-   オブジェクトが不要になったイベントを受信する必要がある場合は、イベント ソースをアドバイズです。  
   
-## インターフェイスの実装  
- ATL を使用してインターフェイスを実装する 4 主に二つの方法があります。  
+## <a name="implementing-the-interface"></a>インターフェイスの実装  
+ ATL を使用してインターフェイスを実装するには、主に 4 つの方法があります。  
   
-|から派生させる。|インターフェイスの種類に適した|すべての methods\* を実装する必要があります。|実行時にタイプ ライブラリが必要です|  
-|--------------|---------------------|----------------------------------|------------------------|  
+|を派生します。|インターフェイスの種類に適した|すべてのメソッド * を実装する必要があります。|実行時にタイプ ライブラリが必要です。|  
+|-----------------|---------------------------------|---------------------------------------------|-----------------------------------------|  
 |インターフェイス|Vtable|はい|いいえ|  
-|[IDispatchImpl](../atl/reference/idispatchimpl-class.md)|Dual|はい|はい|  
+|[IDispatchImpl](../atl/reference/idispatchimpl-class.md)|デュアル|はい|はい|  
 |[IDispEventImpl](../atl/reference/idispeventimpl-class.md)|ディスパッチ インターフェイス|いいえ|はい|  
-|[IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md)|ディスパッチ インターフェイス|いいえ|いいえ|  
+|[されます](../atl/reference/idispeventsimpleimpl-class.md)|ディスパッチ インターフェイス|いいえ|いいえ|  
   
- \* ATL のサポート クラスを使用すると、は **IUnknown** または `IDispatch` のメソッドを手動で実装する必要はありません。  
+ \*実装に必要なことはありません ATL サポート クラスを使用する場合、 **IUnknown**または`IDispatch`メソッド手動でします。  
   
-## アドバイズ イベント ソースと Unadvising  
- ATL を使用してイベント ソースに指示すると unadvising 3 主に二つの方法があります。  
+## <a name="advising-and-unadvising-the-event-source"></a>通知のイベント ソースをアドバイズと  
+ ATL を使用してイベント ソースをアドバイズと 3 つの主な方法します。  
   
-|関数に指示します。|Unadvise 関数|使用するように最も適した|クッキーを追跡するために必要ですか。|コメント|  
-|---------------|-----------------|------------------|------------------------|----------|  
-|[AtlAdvise](../Topic/AtlAdvise.md)、[CComPtrBase::Advise](../Topic/CComPtrBase::Advise.md)|[AtlUnadvise](../Topic/AtlUnadvise.md)|Vtable またはデュアル インターフェイス|はい|`AtlAdvise` は、グローバル ATL 関数です。  `CComPtrBase::Advise` は [CComPtr](../atl/reference/ccomptr-class.md) と [CComQIPtr](../atl/reference/ccomqiptr-class.md)によって使用されます。|  
-|[IDispEventSimpleImpl::DispEventAdvise](../Topic/IDispEventSimpleImpl::DispEventAdvise.md)|[IDispEventSimpleImpl::DispEventUnadvise](../Topic/IDispEventSimpleImpl::DispEventUnadvise.md)|[IDispEventImpl](../atl/reference/idispeventimpl-class.md) か [IDispEventSimpleImpl](../atl/reference/idispeventsimpleimpl-class.md)|いいえ|基本クラスは、より多くの作業を行うため `AtlAdvise` ほどのパラメーター。|  
-|[CComCompositeControl::AdviseSinkMap \(true\)](../Topic/CComCompositeControl::AdviseSinkMap.md)|[CComCompositeControl::AdviseSinkMap \(False\)](../Topic/CComCompositeControl::AdviseSinkMap.md)|複合コントロールの ActiveX コントロール|いいえ|`CComCompositeControl::AdviseSinkMap` は、イベント シンク マップのすべてのエントリに指示されます。  同じ関数のエントリ unadvises。  このメソッドは `CComCompositeControl` のクラスによって自動的に呼び出されます。|  
-|[CAxDialogImpl::AdviseSinkMap \(true\)](../Topic/CAxDialogImpl::AdviseSinkMap.md)|[CAxDialogImpl::AdviseSinkMap \(False\)](../Topic/CAxDialogImpl::AdviseSinkMap.md)|ダイアログ ボックスの ActiveX コントロール|いいえ|`CAxDialogImpl::AdviseSinkMap` は unadvises ダイアログ リソースのすべての ActiveX コントロールをお勧めします。  この設定は自動的に行われます。|  
+|アドバイズ関数|アドバイズ関数|使用する場合に最も適して|クッキーを追跡する必要があります。|コメント|  
+|---------------------|-----------------------|--------------------------------|---------------------------------------------|--------------|  
+
+|[AtlAdvise](reference/connection-point-global-functions.md#atladvise)、 [CComPtrBase::Advise](../atl/reference/ccomptrbase-class.md#advise)|[AtlUnadvise](reference/connection-point-global-functions.md#atlunadvise)|Vtable またはデュアル インターフェイス |[はい] |`AtlAdvise`グローバル ATL 関数です。 `CComPtrBase::Advise`によって使用される[CComPtr](../atl/reference/ccomptr-class.md)と[CComQIPtr](../atl/reference/ccomqiptr-class.md)|。  
+
+|[IDispEventSimpleImpl::DispEventAdvise](../atl/reference/idispeventsimpleimpl-class.md#dispeventadvise)|[IDispEventSimpleImpl::DispEventUnadvise](../atl/reference/idispeventsimpleimpl-class.md#dispeventunadvise)|[IDispEventImpl](../atl/reference/idispeventimpl-class.md)または[されます](../atl/reference/idispeventsimpleimpl-class.md)|いいえ |少ないパラメーター`AtlAdvise`のでより多くの作業は、基本クラスです |。  
+|[CComCompositeControl::AdviseSinkMap(TRUE)](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)|[CComCompositeControl::AdviseSinkMap(FALSE)](../atl/reference/ccomcompositecontrol-class.md#advisesinkmap)|複合コントロールでの ActiveX コントロール |いいえ |`CComCompositeControl::AdviseSinkMap`イベント シンク マップのすべてのエントリが示されます。 同じ関数では、エントリをアドバイズです。 このメソッドはによって自動的に、`CComCompositeControl`クラスです |。  
+|[CAxDialogImpl::AdviseSinkMap(TRUE)](../atl/reference/caxdialogimpl-class.md#advisesinkmap)|[CAxDialogImpl::AdviseSinkMap(FALSE)](../atl/reference/caxdialogimpl-class.md#advisesinkmap)|ダイアログ ボックスでの ActiveX コントロール |いいえ |`CAxDialogImpl::AdviseSinkMap`アドバイスを提供し、ダイアログ リソース内のすべての ActiveX コントロールをアドバイズです。 これは、自動的にする |。  
   
-## 参照  
- [イベント処理](../Topic/Event%20Handling%20and%20ATL.md)   
+## <a name="see-also"></a>関連項目  
+ [イベント処理](../atl/event-handling-and-atl.md)   
  [IDispEventImpl のサポート](../atl/supporting-idispeventimpl.md)
+

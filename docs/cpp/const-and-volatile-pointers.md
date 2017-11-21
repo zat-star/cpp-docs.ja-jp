@@ -4,28 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - volatile keyword [C++], and pointers
 - pointers, and const
 - pointers, and volatile
 - const keyword [C++], volatile pointers
 ms.assetid: 0c92dc6c-400e-4342-b345-63ddfe649d7e
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: bebd757f304de2377ab2337e5b41a577a2b492b6
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: ebf8d12c7c3b0f9578724fe772f24c0bc8c845ac
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="const-and-volatile-pointers"></a>const ポインターと volatile ポインター
 [Const](../cpp/const-cpp.md)と[揮発性](../cpp/volatile-cpp.md)キーワードは、ポインターの処理方法を変更します。 **Const**キーワードは、初期化後に、ポインターを変更できないことを指定します。 ポインターはその後、変更から保護します。  
@@ -99,7 +96,7 @@ errno_t strcpy_s( char *strDestination, size_t numberOfElements, const char *str
  前のステートメントは、関数を宣言[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)へのポインター型の 3 つの引数の 2 つが、`char`です。 引数が参照によって渡されますないため、値によって関数は両方を変更するために解放`strDestination`と`strSource`場合`strSource`として宣言されていない**const**です。 宣言`strSource`として**const**により、呼び出し元`strSource`呼び出された関数では変更できません。  
   
 > [!NOTE]
->  標準変換があるため*typename* ** \* **に**const** *typename* ** \***、型の引数を渡すことは**char \* **に[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)です。 ただし、この逆は true になります。削除する暗黙的な変換が存在しない、 **const**オブジェクトまたはポインターからの属性です。  
+>  標準変換があるため*typename*  **\*** に**const** *typename*  **\***、型の引数を渡すことは**char \*** に[strcpy_s](../c-runtime-library/reference/strcpy-s-wcscpy-s-mbscpy-s.md)です。 ただし、この逆は true になります。削除する暗黙的な変換が存在しない、 **const**オブジェクトまたはポインターからの属性です。  
   
  A **const**指定された型のポインターを同じ型のポインターに割り当てることができます。 ただし、ポインター外にある**const**に割り当てることはできません、 **const**ポインター。 次のコードは、正しい代入と正しくない代入を示します。  
   

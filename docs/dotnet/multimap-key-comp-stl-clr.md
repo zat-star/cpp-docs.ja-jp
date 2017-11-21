@@ -1,41 +1,39 @@
 ---
-title: "multimap::key_comp (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::multimap::key_comp"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "key_comp メンバー [STL/CLR]"
+title: "multimap::key_comp (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::multimap::key_comp
+dev_langs: C++
+helpviewer_keywords: key_comp member [STL/CLR]
 ms.assetid: 05250549-d589-4e1d-8ae9-321ff4ad384b
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 949ae36cf90fbef3eab2060c6add796ef0f49916
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# multimap::key_comp (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-2 種類のキーの順序のデリゲートをコピーします。  
+# <a name="multimapkeycomp-stlclr"></a>multimap::key_comp (STL/CLR)
+2 つのキーの順序付けのデリゲートをコピーします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 key_compare^key_comp();  
 ```  
   
-## 解説  
- このメンバー関数は、被制御シーケンスの並べ替えに使用されるごとにデリゲートを返します。  2 つのキーを比較する場合にこれを使用します。  
+## <a name="remarks"></a>コメント  
+ メンバー関数では、被制御シーケンスの並べ替えに使用される順序付けのデリゲートを返します。 2 つのキーの比較に使用するとします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_multimap_key_comp.cpp   
@@ -71,18 +69,22 @@ int main()
   
 ```  
   
-  **\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= True を比較します。**  
-**\(L'b、L'a\) \= false を比較します。**  
-**\(L'a、L'a\) \= false を比較します。**  
-**\(L'a、L'b\) \= false を比較します。**  
-**\(L'b、L'a\) \= True を比較します。**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/マップ\>  
+```Output  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = True  
+compare(L'b', L'a') = False  
   
- **名前空間:** の cliext  
+compare(L'a', L'a') = False  
+compare(L'a', L'b') = False  
+compare(L'b', L'a') = True  
+```  
   
-## 参照  
- [multimap](../dotnet/multimap-stl-clr.md)   
- [multimap::key\_compare](../dotnet/multimap-key-compare-stl-clr.md)   
- [multimap::key\_type](../dotnet/multimap-key-type-stl-clr.md)
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext マップ/>  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [multimap (STL/CLR)](../dotnet/multimap-stl-clr.md)   
+ [multimap::key_compare (STL/CLR)](../dotnet/multimap-key-compare-stl-clr.md)   
+ [multimap::key_type (STL/CLR)](../dotnet/multimap-key-type-stl-clr.md)

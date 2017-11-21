@@ -1,52 +1,57 @@
 ---
-title: "MFC ライブラリの再配布 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "MFC, 再配布"
-  - "再頒布 (MFC ライブラリを)"
+title: "MFC ライブラリの再配布 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-ide
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- MFC, redistributing
+- redistributing MFC library
 ms.assetid: 72714ce1-385e-4c1c-afa5-96b03e873866
-caps.latest.revision: 32
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 29
+caps.latest.revision: "32"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 5bde60a4e0c8ec9c0f9091edd40397a371e0e66e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# MFC ライブラリの再配布
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-MFC のすべての DLL は共有バージョンの C ランタイム \(CRT\) ライブラリを使用するため、アプリケーションを MFC ライブラリに動的にリンクする場合は、Msvcr100.dll を再配布する必要があります。  また、Mfc100u.dll または Mfc100.dll も再配布する必要があります。  
+# <a name="redistributing-the-mfc-library"></a>MFC ライブラリの再配布
+アプリケーションを MFC ライブラリを動的にリンクする場合は、一致する MFC DLL を再配布する必要があります。 たとえば、MFC アプリが Visual Studio 2015 に同梱されている MFC のバージョンを使用して組み込まれている場合必要があります再配布する mfc140.dll または mfc140u.dll、ナロー文字または Unicode のサポート用にアプリをコンパイルするかどうかによって異なります。  
   
- アプリケーションを MFC と静的にリンクした場合 \(つまり、**\[プロパティ ページ\]** ダイアログ ボックスの **\[全般\]** タブの **\[スタティック ライブラリで MFC を使用する\]** を指定した場合\)、Mfc100u.dll または Mfc100.dll を再配布する必要はありません。  静的リンクはアプリケーションのテストや内部での配置を行う場合でも該当しますが、MFC の再配布にはそれを使用しないことをお勧めします。  Visual C\+\+ ライブラリの配置の推奨される方法については、「[配置方法の選択](../ide/choosing-a-deployment-method.md)」を参照してください。  
+> [!NOTE]
+>  Mfc140.dll ファイルは、Visual Studio 2015 RTM で再頒布可能ファイルのディレクトリから省略されました。 Windows \system32 と Windows\syswow64 ディレクトリに代わりに Visual Studio 2015 でインストールのバージョンを使用することができます。  
   
- アプリケーションで WebBrowser コントロールを実装した MFC クラス \([CHtmlView クラス](../mfc/reference/chtmlview-class.md) や [CHtmlEditView クラス](../mfc/reference/chtmleditview-class.md) など\) を使用する場合は、ターゲット コンピューターのコモン コントロール ファイルが最新になるように、Microsoft Internet Explorer  の最新バージョンをインストールすることもお勧めします。\(少なくとも、Internet Explorer 4.0 以降が必要です\)。Internet Explorer コンポーネントの最小インストールの方法については、マイクロソフト サポート オンラインの 「Article 185375: How To Create a Single EXE Install of Internet Explorer \(記事 185375: Internet Explorer のインストール ファイルである単一の exe ファイルの作成方法\)」を参照してください。  
+ すべての MFC Dll は、C ランタイム ライブラリ (CRT) の共有バージョンを使用するため、CRT を再配布する必要もあります。 Visual Studio 2015 に付属する MFC のバージョンでは、Windows 10 の一部として配布される、ユニバーサル CRT ライブラリを使用します。 以前のバージョンの Windows で Visual Studio 2015 を使用してビルドされた MFC アプリケーションを実行するには、ユニバーサル CRT を再配布する必要があります。 オペレーティング システム コンポーネントとして、またはローカル配置を使用して、ユニバーサル CRT を再配布する方法については、次を参照してください。 [Universal CRT を導入](http://go.microsoft.com/fwlink/?LinkId=617977)です。 一元的な展開でサポートされているバージョンの Windows のユニバーサル CRT をダウンロードするを参照してください。 [Windows 10 の Universal C Runtime](http://go.microsoft.com/fwlink/p/?LinkId=619489)です。 Windows SDK のローカル展開 ucrtbase.dll の再頒布可能パッケージ アーキテクチャ固有のバージョンはあります。 既定では、Visual Studio は、C:\Program Files (x86) \Windows Kits\10\Redist\ucrt\DLLs\ でこれらをアーキテクチャ固有のサブディレクトリにインストールします。  
   
- アプリケーションで MFC データベース クラス \([CRecordset クラス](../Topic/CRecordset%20Class.md)や [CRecordView クラス](../mfc/reference/crecordview-class.md)など\) を使用する場合は、必要な ODBC および ODBC ドライバーを再配布する必要があります。  詳細については、「[データベース サポート ファイルの再頒布](../ide/redistributing-database-support-files.md)」を参照してください。  
+ アプリが以前のバージョンの MFC ライブラリを使用して組み込まれている場合は、再頒布可能ファイルのディレクトリから一致する CRT DLL を再配布する必要があります。 たとえば、MFC アプリケーションが Visual Studio 2013 (vc120) ツールセットを使用して組み込まれている場合、msvcr120.dll を再配布する必要があります。 一致する mfc の再配布する必要があるも`<version>`u.dll または mfc`<version>`.dll です。  
   
- MFC アプリケーションが Windows フォーム コントロールを使用している場合は、アプリケーションと共に mfcmifc80.dll を再配布する必要があります。  この DLL は厳密な名前で署名された .NET アセンブリです。アプリケーションと共にアプリケーションのローカル フォルダーに再配布することもできますし、[Gacutil.exe \(グローバル アセンブリ キャッシュ ツール\)](../Topic/Gacutil.exe%20\(Global%20Assembly%20Cache%20Tool\).md) を使用してグローバル アセンブリ キャッシュ \(GAC: Global Assembly Cache\) に配置して再配布することもできます。  
+ アプリケーションを MFC を静的にリンクする場合 (を指定する場合は、**スタティック ライブラリで MFC を使用する**上、**全般** タブで、**プロパティ ページ** ダイアログ ボックス)、することはありませんMFC DLL を再配布します。 静的リンクはアプリケーションのテストや内部での配置を行う場合でも該当しますが、MFC の再配布にはそれを使用しないことをお勧めします。 Visual C ライブラリを展開するための推奨される方法の詳細については、次を参照してください。[配置方法の選択](../ide/choosing-a-deployment-method.md)です。  
   
- MFC DLL を再配布する場合は、デバッグ バージョンではなく、リテール バージョンを再配布することを確認してください。  DLL のデバッグ バージョンは再配布できません。  MFC DLL の"デバッグ バージョンの名前は、ファイル名の末尾に "d"が付きます \(たとえば、Mfc100d.dll\)。  
+ アプリケーションで WebBrowser コントロールを実装する MFC クラスを使用するかどうか (たとえば、 [CHtmlView クラス](../mfc/reference/chtmlview-class.md)または[CHtmlEditView クラス](../mfc/reference/chtmleditview-class.md)) の最新バージョンをインストールすることをお勧めします。Microsoft Internet Explorer を対象となるコンピューターが最新の共通のコントロール ファイルを保持するようです。 (少なくとも、Internet Explorer 4.0 以降が必要です)。Internet Explorer コンポーネントの最小インストールの方法については、マイクロソフト サポート オンラインの 「Article 185375: How To Create a Single EXE Install of Internet Explorer (記事 185375: Internet Explorer のインストール ファイルである単一の exe ファイルの作成方法)」を参照してください。  
   
- MFC ソースを変更し、その MFC DLL をリビルドする場合は、変更後の MFC DLL が Visual Studio にインクルードされている MFC DLL と競合しないように名前を変更する必要があります。  MFC DLL のリビルドおよび名前の変更は、できる限り行わないでください。  詳細については、MFC のテクニカル ノート 33 を参照してください。  
+ アプリケーションは、MFC データベース クラスを使用する場合 (たとえば、 [CRecordset クラス](../mfc/reference/crecordset-class.md)と[CRecordView クラス](../mfc/reference/crecordview-class.md))、ODBC と ODBC ドライバー、アプリケーションが使用する再配布する必要があります。 詳細については、次を参照してください。[データベース サポート ファイルの再配布](../ide/redistributing-database-support-files.md)です。  
   
- MFC を再配布するには、VCRedist\_*architecture*.exe を使用するか、Visual Studio と共にインストールされるマージ モジュールを使用するか、MFC DLL をアプリケーションと同じフォルダー内に配置します。  MFC の再配布方法の詳細については、「[Visual C\+\+ ファイルの再配布](../Topic/Redistributing%20Visual%20C++%20Files.md)」を参照してください。  
+ MFC アプリケーションが Windows フォーム コントロールを使用している場合は、アプリケーションと共に mfcmifc80.dll を再配布する必要があります。 この DLL は、そのアプリケーションのローカル フォルダーまたはを使用してグローバル アセンブリ キャッシュ (GAC) に展開することで、アプリケーションと共に再配布できる厳密名署名の .NET アセンブリ、 [Gacutil.exe (グローバル アセンブリ キャッシュ ツール)](/dotnet/framework/tools/gacutil-exe-gac-tool)です。  
   
-## テクニカル ノート 56: ローカライズされた MFC コンポーネントのインストール  
- MFC ローカリゼーション DLL をインストールしてアプリケーションをローカライズする場合は、再頒布可能マージ ファイル \(.msm\) を使用する必要があります。  たとえば、アプリケーションを x86 コンピューターにローカライズする場合は、Microsoft\_VC100\_MFCLOC\_x86.msm ファイルを x86 コンピューターのインストール パッケージにマージする必要があります。  
+ MFC DLL を再配布する場合は、デバッグ バージョンではなく、リテール バージョンを再配布することを確認してください。 DLL のデバッグ バージョンは再配布できません。 MFC Dll のデバッグ バージョンの名前が付いて、"d"、たとえば、Mfc140d.dll です。  
   
- 再頒布可能 .msm ファイルには、ローカライズに使用される DLL が含まれます。  サポートされているそれぞれの言語に対して、1 つの DLL があります。  これらの DLL は、インストール プロセスによって、ターゲット コンピューターの %windir%\\system32\\ フォルダーにインストールされます。  
+ いずれかの vcredist _ を使用して、再配布する MFC*アーキテクチャ*.exe、Visual Studio を使用または MFC DLL をアプリケーションと同じフォルダーに配置することによってインストールされているマージ モジュール。 MFC の再配布する方法の詳細については、次を参照してください。 [Visual c ファイルの再配布](../ide/redistributing-visual-cpp-files.md)です。  
   
- MFC アプリケーションのローカライズ方法の詳細については、マイクロソフト サポート オンラインの「[テクニカル ノート 57: MFC コンポーネントのローカライズ](../mfc/tn057-localization-of-mfc-components.md)」および「[文書番号 208983: \[HOWTO\] MFC LOC DLL を使用する方法](http://go.microsoft.com/fwlink/?LinkId=198025)」を参照してください。  
+## <a name="installation-of-localized-mfc-components"></a>テクニカル ノート 56: ローカライズされた MFC コンポーネントのインストール  
+ MFC ローカリゼーション DLL をインストールしてアプリケーションをローカライズする場合は、再頒布可能マージ ファイル (.msm) を使用する必要があります。 例では、x86 アプリケーションをローカライズする場合のコンピューター、Microsoft_VC をマージする必要があります`<version>`x86 のインストール パッケージに _MFCLOC_x86.msm コンピューター。  
   
- MFC のローカライズ用 DLL を再配布するには、MFC DLL をアプリケーションのローカル フォルダーに配置します。  Visual C\+\+ ライブラリの再配布方法の詳細については、「[Visual C\+\+ ファイルの再配布](../Topic/Redistributing%20Visual%20C++%20Files.md)」を参照してください。  
+ 再頒布可能 .msm ファイルには、ローカライズに使用される DLL が含まれます。 サポートされているそれぞれの言語に対して、1 つの DLL があります。 これらの DLL は、インストール プロセスによって、ターゲット コンピューターの %windir%\system32\ フォルダーにインストールされます。  
   
-## 参照  
- [Visual C\+\+ ファイルの再配布](../Topic/Redistributing%20Visual%20C++%20Files.md)
+ MFC アプリケーションをローカライズする方法の詳細については、次を参照してください。 [TN057: MFC コンポーネントのローカライズ](../mfc/tn057-localization-of-mfc-components.md)、も[記事 208983: MFC LOC Dll を使用する方法](http://go.microsoft.com/fwlink/?LinkId=198025)、Microsoft サポート web サイトです。  
+  
+ MFC のローカライズ用 DLL を再配布するには、MFC DLL をアプリケーションのローカル フォルダーに配置します。 Visual C ライブラリを再配布する方法の詳細については、次を参照してください。 [Visual c ファイルの再配布](../ide/redistributing-visual-cpp-files.md)です。  
+  
+## <a name="see-also"></a>関連項目  
+ [Visual C++ ファイルの再配布](../ide/redistributing-visual-cpp-files.md)

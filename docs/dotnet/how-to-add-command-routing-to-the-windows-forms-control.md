@@ -1,41 +1,41 @@
 ---
-title: "方法: Windows フォーム コントロールにコマンド ルーティングを追加する | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コマンド ルーティング [C++] であり、Windows フォーム コントロールに追加します。"
-  - "ルーティング コマンドを Windows フォーム コントロール [C++]"
+title: "方法: コマンドの追加にルーティングする Windows フォーム コントロール |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- command routing [C++], adding to Windows Forms controls
+- Windows Forms controls [C++], command routing
 ms.assetid: bf138ece-b463-442a-b0a0-de7063a760c0
-caps.latest.revision: 13
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "13"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 21f3fda51f9df72d9af78a03783771e74fbf3370
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: Windows フォーム コントロールにコマンド ルーティングを追加する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[CWinFormsView](../mfc/reference/cwinformsview-class.md) を MFC のコマンド (フレームのメニュー項目やツール バー ボタンなど) を処理できるようにするユーザー コントロールにコマンドおよび更新コマンド UI メッセージをルーティングします。  
+# <a name="how-to-add-command-routing-to-the-windows-forms-control"></a>方法: Windows フォーム コントロールにコマンド ルーティングを追加する
+[CWinFormsView](../mfc/reference/cwinformsview-class.md) MFC コマンド (たとえば、フレームのメニュー項目やツールバーのボタン) を処理することを許可するユーザー コントロールにコマンドおよび更新コマンド UI メッセージをルーティングします。  
   
- ユーザー コントロールを使用して [ICommandTarget::Initialize](../Topic/ICommandTarget::Initialize.md) 内のコマンド ソース オブジェクトへの参照を格納する `m_CmdSrc`, 、次の例のように、します。 `ICommandTarget` を使用するには、mfcmifc80.dll への参照を追加する必要があります。  
+ ユーザー コントロールを使用して[ICommandTarget::Initialize](../mfc/reference/icommandtarget-interface.md#initialize)内のコマンド ソース オブジェクトへの参照を格納する`m_CmdSrc`次の例で示すように、します。 `ICommandTarget` を使用するには、mfcmifc80.dll への参照を追加する必要があります。  
   
- `CWinFormsView` は、共通の MFC ビューの通知をマネージ ユーザー コントロールに転送することによって処理します。 これらの通知を含める、 [OnInitialUpdate](../Topic/IView::OnInitialUpdate.md), 、[OnUpdate](../Topic/IView::OnUpdate.md) と [OnActivateView](../Topic/IView::OnActivateView.md) のメソッド、 [IView インターフェイス](../Topic/IView%20Interface.md)します。  
+ `CWinFormsView` は、共通の MFC ビューの通知をマネージ ユーザー コントロールに転送することによって処理します。 これらの通知が含まれて、[フィルターと並べ替え順序](../mfc/reference/iview-interface.md#oninitialupdate)、 [OnUpdate](../mfc/reference/iview-interface.md#onupdate)と[OnActivateView](../mfc/reference/iview-interface.md#onactivateview)メソッドです。  
   
- このトピックでは、終了したものと [する方法: ダイアログ ボックスでユーザー コントロールおよびホストを作成](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md) と [する方法: ユーザー コントロールおよびホスト MDI ビューを作成](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)します。  
+ このトピックでは、終了したと仮定[する方法: ダイアログ ボックスで、ユーザー コントロールとホストを作成](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md)と[する方法: ユーザー コントロールとホスト MDI ビューを作成](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)です。  
   
 ### <a name="to-create-the-mfc-host-application"></a>MFC ホスト アプリケーションを作成するには  
   
-1.  作成した Windows フォーム コントロール ライブラリを開く [方法: ダイアログ ボックスでユーザー コントロールおよびホストを作成する](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md)です。  
+1.  作成した Windows フォーム コントロール ライブラリを開く[する方法: ダイアログ ボックスで、ユーザー コントロールとホストを作成する](../dotnet/how-to-create-the-user-control-and-host-in-a-dialog-box.md)です。  
   
-2.  プロジェクト ノードを右クリックして行うことができる mfcmifc80.dll への参照を追加 **ソリューション エクスプ ローラー**, [ **追加**, 、**参照**, 、Microsoft Visual Studio 10.0 10.0\VC\atlmfc\lib をクリックしています。  
+2.  プロジェクト ノードを右クリックして行うことができる mfcmifc80.dll への参照を追加**ソリューション エクスプ ローラー**を選択すると、**追加**、**参照**を参照し、Microsoft Visual Studio 10.0\VC\atlmfc\lib です。  
   
 3.  UserControl1.Designer.cs を開いて、次の using ステートメントを追加します。  
   
@@ -78,26 +78,26 @@ caps.handback.revision: 13
     }  
     ```  
   
-7.  作成した MFC アプリケーションを開いて [方法: ユーザー コントロールおよびホスト MDI ビューを作成](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)します。  
+7.  作成した MFC アプリケーションを開く[する方法: ユーザー コントロールとホスト MDI ビューの作成](../dotnet/how-to-create-the-user-control-and-host-mdi-view.md)です。  
   
 8.  `singleMenuHandler` を呼び出すメニュー オプションを追加します。  
   
-     移動 **リソース ビュー** (Ctrl + Shift + E)、展開、 **メニュー** フォルダー、およびダブルクリック **[idr_mfc02type]**します。 これにより、メニュー エディターが表示されます。  
+     移動して**リソース ビュー** (Ctrl + Shift + E)、展開、**メニュー**フォルダー、およびをダブルクリック**[idr_mfc02type]**です。 これにより、メニュー エディターが表示されます。  
   
-     下部のメニュー オプションを追加、 **ビュー** メニュー。 メニュー オプションの ID を確認、 **プロパティ** ウィンドウです。 ファイルを保存します。  
+     下部にあるメニューのオプションを追加、**ビュー**メニュー。 メニュー オプションの ID を確認、**プロパティ**ウィンドウです。 ファイルを保存します。  
   
-      **ソリューション エクスプ ローラー**, Resource.h ファイルを開き、追加したメニュー オプションの ID 値をコピーして最初のパラメーターとしてその値を貼り付けます、 `m_CmdSrc.AddCommandHandler` c# プロジェクトの呼び出す `Initialize` メソッド (交換 `32771` 必要な場合)。  
+     **ソリューション エクスプ ローラー**、Resource.h ファイルを開き、追加したメニュー オプションの ID 値をコピーおよび最初のパラメーターとしてその値を貼り付け、 `m_CmdSrc.AddCommandHandler` c# プロジェクトの呼び出す`Initialize`(に置き換えるメソッド`32771`必要な場合)。  
   
 9. プロジェクトをビルドして実行します。  
   
      **[ビルド]** メニューの **[ソリューションのビルド]**をクリックします。  
   
-      **デバッグ** ] メニューのをクリックして **デバッグなしで開始**します。  
+     **デバッグ** メニューのをクリックして**デバッグなしで開始**です。  
   
      追加したメニュー オプションを選択します。 .dll 内のメソッドが呼び出されます。  
   
-## <a name="see-also"></a>「  
- [MFC ビューとして Windows フォーム ユーザー コントロールのホスト](../dotnet/hosting-a-windows-forms-user-control-as-an-mfc-view.md)   
- [ICommandSource インターフェイス](../mfc/reference/icommandsource-interface.md)   
- [関数のインターフェイス](../mfc/reference/icommandtarget-interface.md)   
- [CommandHandler](../Topic/CommandHandler%20Delegate.md)
+## <a name="see-also"></a>関連項目  
+ [MFC ビューとして Windows フォーム ユーザー コントロールをホストしています。](../dotnet/hosting-a-windows-forms-user-control-as-an-mfc-view.md)   
+ [関数のインターフェイス](../mfc/reference/icommandsource-interface.md)   
+ [ICommandTarget インターフェイス](../mfc/reference/icommandtarget-interface.md)   
+ [CommandHandler](http://msdn.microsoft.com/Library/22096734-e074-4aca-8523-4b15590109f9)

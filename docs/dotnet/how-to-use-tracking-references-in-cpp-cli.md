@@ -1,34 +1,32 @@
 ---
-title: "方法: C++/CLI で追跡参照を使用する | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CLR 型, 渡す (参照渡しで)"
+title: "方法: 追跡参照は c++ を使用して + CLI |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: CLR types, passing by reference
 ms.assetid: d91e471c-34ff-4786-9e0d-c6db0494b946
-caps.latest.revision: 11
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f7e03106c9a4e49e727e278538ca984b740ad446
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C++/CLI で追跡参照を使用する
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-この記事では、参照によってパスの共通言語ランタイム \(CLR\) の型への [!INCLUDE[cppcli](../build/reference/includes/cppcli_md.md)] の追跡参照 \(%\) を使用する方法を示します。  
+# <a name="how-to-use-tracking-references-in-ccli"></a>方法: C++/CLI で追跡参照を使用する
+この記事は、C + で追跡参照 (%) を使用する方法を示しています。 + CLI 参照渡しする共通言語ランタイム (CLR) 型です。  
   
-## CLR 型の参照を渡します。  
- 次の例では、参照を CLR 型を渡すために追跡参照を使用する方法を示します。  
+## <a name="to-pass-clr-types-by-reference"></a>CLR 型を参照渡しするには  
+ 次の例では、追跡参照を使用して CLR 型を参照渡しする方法を示します。  
   
-```  
+```cpp  
 // tracking_reference_handles.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -75,11 +73,13 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **zip \=\= 20100** 次の例は、追跡参照とデータ アクセス変更方法を追跡参照からのアドレスに [interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md)を取得する方法を示します。  
-  
+```Output  
+zip == 20100  
 ```  
+  
+ そのアドレスの取得の追跡参照を返します。 次の例を示しています、 [interior_ptr (C + + CLI)](../windows/interior-ptr-cpp-cli.md)、し変更を追跡参照を使用してデータにアクセスする方法を示しています。  
+  
+```cpp  
 // tracking_reference_data.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -124,14 +124,15 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **Target\=B: R \(int\)**   
-**Target\=B: N \(int i\)**    
-## 参照と内部ポインターの追跡  
- 次のコード サンプル、トラッキング参照と内部ポインターの間で変換できることを示します。  
-  
+```Output  
+ctor: R(int)  
+ctor: N(int i)  
 ```  
+  
+## <a name="tracking-references-and-interior-pointers"></a>追跡参照と内部ポインター  
+ 次のコード サンプルでは、追跡参照と内部ポインターの間で変換することができることを示します。  
+  
+```cpp  
 // tracking_reference_interior_ptr.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -177,20 +178,30 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **Target\=B: R \(int\)**   
-**Target\=B: N \(int i\)**    
-## 参照型と値型の追跡  
- このサンプルでは、値型に対する追跡参照して簡単なボックス化を示します:  
-  
-```  
-// tracking_reference_valuetypes_1.cpp// compile with: /clrusing namespace System;int main() {   int i = 10;   int % j = i;   Object ^ o = j;   // j is implicitly boxed and assigned to o}  
+```Output  
+ctor: R(int)  
+ctor: N(int i)  
 ```  
   
- 次の例では、値型の両方の追跡参照とネイティブ参照があることを示しています。  
+## <a name="tracking-references-and-value-types"></a>追跡参照と値の型  
+ このサンプルは、値型への追跡参照を使用して単純なボックス化を示しています。  
   
+```cpp  
+// tracking_reference_valuetypes_1.cpp
+// compile with: /clr
+
+using namespace System;
+
+int main() {
+   int i = 10;   
+   int % j = i;   
+   Object ^ o = j;   // j is implicitly boxed and assigned to o
+}  
 ```  
+  
+ [次へ] のサンプルでは、追跡参照と値の型をネイティブ参照の両方はできることを示します。  
+  
+```cpp  
 // tracking_reference_valuetypes_2.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -207,13 +218,15 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **13**  
-**13**  
-**13** 次の例では、値型とネイティブ型とともに参照を使用できることを示します。  
-  
+```Output  
+13  
+13  
+13  
 ```  
+  
+ 次の例では、追跡参照と値の型およびネイティブ型を使用することを示します。  
+  
+```cpp  
 // tracking_reference_valuetypes_3.cpp  
 // compile with: /clr  
 value struct G {  
@@ -239,14 +252,16 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **4**  
-**4**  
-**5**  
-**5** このサンプルでは、ガベージ コレクション ヒープの値型への追跡参照をバインドできることを意味します:  
-  
+```Output  
+4  
+4  
+5  
+5  
 ```  
+  
+ このサンプルでは、ガベージ コレクトされたヒープに値型への追跡参照をバインドすることができますを示しています。  
+  
+```cpp  
 // tracking_reference_valuetypes_4.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -275,16 +290,17 @@ int main() {
 }  
 ```  
   
- **出力**  
-  
-  **元の Hyper\-V: 2、参照された Hyper\-V を追跡: 1**  
-**参照された Hyper\-V を追跡: 3**  
-**囲まれた新しいコピー Hyper\-V: 1**  
-**元の Hyper\-V: 4 の最初に囲まれた Hyper\-V ハンドルへの参照: 1**   
-## ネイティブ、値または参照パラメーターを受け取るテンプレート関数  
- テンプレート関数のシグネチャの追跡参照を使用して、関数が型がネイティブであるパラメーター、CLR 値、または CLR 参照から呼び出すことができるようになります。  
-  
+```Output  
+Original V: 2, Tracking reference to boxed V: 1  
+Tracking reference to boxed V: 3  
+Boxed new copy V: 1  
+Original V: 4, Reference to handle of originally boxed V: 1  
 ```  
+  
+## <a name="template-functions-that-take-native-value-or-reference-parameters"></a>ネイティブを受け取るテンプレート関数、値、または参照パラメーター  
+ 追跡参照を使用すると、テンプレート関数のシグネチャで、パラメーターの型がネイティブ、CLR の値、または CLR 参照で関数を呼び出すことがあることを確認します。  
+  
+```cpp  
 // tracking_reference_template.cpp  
 // compile with: /clr  
 using namespace System;  
@@ -305,7 +321,7 @@ public:
    }  
 };  
   
-// Class Defintions  
+// Class Definitions  
 ref struct R {  
    int i;  
 };  
@@ -323,10 +339,11 @@ int main() {
 }  
 ```  
   
- **出力**  
+```Output  
+T %  
+T %  
+T &  
+```  
   
-  **% T**  
-**% T**  
-**T &**   
-## 参照  
- [Tracking Reference Operator](../windows/tracking-reference-operator-cpp-component-extensions.md)
+## <a name="see-also"></a>関連項目  
+ [参照演算子の追跡](../windows/tracking-reference-operator-cpp-component-extensions.md)

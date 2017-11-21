@@ -1,72 +1,64 @@
 ---
-title: "IDBSchemaRowsetImpl::CheckRestrictions | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "CheckRestrictions"
-  - "IDBSchemaRowsetImpl::CheckRestrictions"
-  - "IDBSchemaRowsetImpl.CheckRestrictions"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CheckRestrictions メソッド"
+title: "Idbschemarowsetimpl::checkrestrictions |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- CheckRestrictions
+- IDBSchemaRowsetImpl::CheckRestrictions
+- IDBSchemaRowsetImpl.CheckRestrictions
+dev_langs: C++
+helpviewer_keywords: CheckRestrictions method
 ms.assetid: 3c9d77d2-0e4b-48fa-80db-d735da19f1cf
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d6e057c56e824327d726e073a02f0fa636553c40
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IDBSchemaRowsetImpl::CheckRestrictions
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="idbschemarowsetimplcheckrestrictions"></a>IDBSchemaRowsetImpl::CheckRestrictions
 スキーマ行セットに対して制限の妥当性をチェックします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
-HRESULT CheckRestrictions(  
-   REFGUID   
-rguidSchema  
-,  
-   ULONG   
-cRestrictions  
-,  
-   const VARIANT   
-rgRestrictions  
-[]  
+      HRESULT CheckRestrictions(  
+   REFGUID rguidSchema,  
+   ULONG cRestrictions,  
+   const VARIANT rgRestrictions[]  
 );  
-  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `rguidSchema`  
- \[入力\] 要求するスキーマ行セット GUID \(`DBSCHEMA_TABLES` など\) への参照。  
+ [入力] 要求するスキーマ行セット GUID ( `DBSCHEMA_TABLES`など) への参照。  
   
  `cRestrictions`  
- \[入力\] コンシューマーがスキーマ行セットに渡した制限の数。  
+ [入力] コンシューマーがスキーマ行セットに渡した制限の数。  
   
  `rgRestrictions`  
- \[入力\] 設定する制限値の長さ *cRestrictions* の配列。 詳細については、[SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) の `rgRestrictions` パラメーターの説明を参照してください。  
+ [入力] 設定する制限値の長さ *cRestrictions* の配列。 詳細については、 `rgRestrictions` SetRestrictions [の](../../data/oledb/idbschemarowsetimpl-setrestrictions.md)パラメーターの説明を参照してください。  
   
-## 解説  
- `CheckRestrictions` を使用して、スキーマ行セットに対して制限の妥当性をチェックします。 CheckRestrictions は、`DBSCHEMA_TABLES`、**DBSCHEMA\_COLUMNS**、および **DBSCHEMA\_PROVIDER\_TYPES** の各スキーマ行セットの制限をチェックします。 これを呼び出して、コンシューマーの **IDBSchemaRowset::GetRowset** 呼び出しが正しいかどうかを判断してください。 上記以外のスキーマ行セットをサポートする場合は、このタスクを実行する独自の関数を作成する必要があります。  
+## <a name="remarks"></a>コメント  
+ `CheckRestrictions` を使用して、スキーマ行セットに対して制限の妥当性をチェックします。 CheckRestrictions は、 `DBSCHEMA_TABLES`、 **DBSCHEMA_COLUMNS**、および **DBSCHEMA_PROVIDER_TYPES** の各スキーマ行セットの制限をチェックします。 これを呼び出して、コンシューマーの **IDBSchemaRowset::GetRowset** 呼び出しが正しいかどうかを判断してください。 上記以外のスキーマ行セットをサポートする場合は、このタスクを実行する独自の関数を作成する必要があります。  
   
- `CheckRestrictions` は、コンシューマーが、プロバイダーによってサポートされている正しい制限および制限の種類 \(文字列の場合は `VT_BSTR` など\) を持つ [GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md) を呼び出しているかどうかを判断します。 また、正しい制限数がサポートされているかどうかも判断します。`CheckRestrictions` は、既定で [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) 呼び出しを通じて、任意の行セットについてプロバイダーがサポートしている制限の種類を確認します。 次に、コンシューマーが呼び出した制限とプロバイダーがサポートしている制限を比較することで、処理は成功または失敗します。  
+ `CheckRestrictions` は、コンシューマーが、プロバイダーによってサポートされている正しい制限および制限の種類 (文字列の場合は [など) を持つ](../../data/oledb/idbschemarowsetimpl-getrowset.md) GetRowset `VT_BSTR` を呼び出しているかどうかを判断します。 また、正しい制限数がサポートされているかどうかも判断します。 `CheckRestrictions` は、既定で [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) 呼び出しを通じて、任意の行セットについてプロバイダーがサポートしている制限の種類を確認します。 次に、コンシューマーが呼び出した制限とプロバイダーがサポートしている制限を比較することで、処理は成功または失敗します。  
   
- スキーマ行セットの詳細については、[!INCLUDE[winSDK](../../atl/includes/winsdk_md.md)] の *OLE DB プログラマーズ リファレンス*の「[IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)」を参照してください。  
+ スキーマ行セットの詳細については、次を参照してください。 [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)で、 *OLE DB プログラマーズ リファレンス*Windows SDK に含まれています。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [IDBSchemaRowsetImpl クラス](../../data/oledb/idbschemarowsetimpl-class.md)   
- [IDBSchemaRowsetImpl Class Members](http://msdn.microsoft.com/ja-jp/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
- [スキーマ行セット クラスと Typedef クラス](../Topic/Schema%20Rowset%20Classes%20and%20Typedef%20Classes.md)
+ [IDBSchemaRowsetImpl クラス メンバー](http://msdn.microsoft.com/en-us/e74f6f82-541c-42e7-b4c6-e2d4656a0649)   
+ [スキーマ行セット クラスと Typedef クラス](../../data/oledb/schema-rowset-classes-and-typedef-classes.md)

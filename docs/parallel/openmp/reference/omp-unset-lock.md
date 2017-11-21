@@ -1,32 +1,30 @@
 ---
-title: "omp_unset_lock | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "omp_unset_lock"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "omp_unset_lock OpenMP function"
+title: "omp_unset_lock 関数 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: omp_unset_lock
+dev_langs: C++
+helpviewer_keywords: omp_unset_lock OpenMP function
 ms.assetid: 68fcb728-040b-4bad-979e-aaecb9097a4e
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: a9ace2f59a46750f99d9e302bae84b0dc660ecbc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# omp_unset_lock
-[!INCLUDE[vs2017banner](../../../assembler/inline/includes/vs2017banner.md)]
-
-ロックを解除します。  
+# <a name="ompunsetlock"></a>omp_unset_lock
+ロックを解放します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void omp_unset_lock(  
@@ -34,17 +32,17 @@ void omp_unset_lock(
 );  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  指定項目  
   
  `lock`  
- [omp\_init\_lock](../../../parallel/openmp/reference/omp-init-lock.md) と関数のスレッドを実行して所有する型の変数初期化 [omp\_lock\_t](../../../parallel/openmp/reference/omp-lock-t.md)。  
+ 型の変数[omp_lock_t](../../../parallel/openmp/reference/omp-lock-t.md)で初期化された[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)スレッドによって所有されている、および関数で実行します。  
   
-## 解説  
- 詳細については、「[3.2.4 omp\_unset\_lock and omp\_unset\_nest\_lock Functions](../Topic/3.2.4%20omp_unset_lock%20and%20omp_unset_nest_lock%20Functions.md)」を参照してください。  
+## <a name="remarks"></a>コメント  
+ 詳細については、次を参照してください。 [3.2.4 omp_unset_lock 関数と omp_unset_nest_lock 関数](../../../parallel/openmp/3-2-4-omp-unset-lock-and-omp-unset-nest-lock-functions.md)です。  
   
-## 使用例  
- `omp_unset_lock` 使用例については[omp\_init\_lock](../../../parallel/openmp/reference/omp-init-lock.md) を参照してください。  
+## <a name="example"></a>例  
+ 参照してください[omp_init_lock 関数](../../../parallel/openmp/reference/omp-init-lock.md)の使用例については`omp_unset_lock`します。  
   
-## 参照  
- [Functions](../../../parallel/openmp/reference/openmp-functions.md)
+## <a name="see-also"></a>関連項目  
+ [関数](../../../parallel/openmp/reference/openmp-functions.md)

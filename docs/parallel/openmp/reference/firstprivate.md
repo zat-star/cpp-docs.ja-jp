@@ -4,44 +4,25 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
-f1_keywords:
-- firstprivate
-dev_langs:
-- C++
-helpviewer_keywords:
-- firstprivate OpenMP clause
+f1_keywords: firstprivate
+dev_langs: C++
+helpviewer_keywords: firstprivate OpenMP clause
 ms.assetid: db479766-6d3b-4bbd-b28e-b192d826788c
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 3168772cbb7e8127523bc2fc2da5cc9b4f59beb8
-ms.openlocfilehash: 03bea93209428a0edbd4c87779d46c633bbe6259
-ms.contentlocale: ja-jp
-ms.lasthandoff: 02/24/2017
-
+ms.openlocfilehash: 0645eee74ab162c444531c141b297665653907b8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="firstprivate"></a>firstprivate
-Parallel コンストラクトの前に存在するために、各スレッドが、変数の独自のインスタンスを持つことと、変数の値を持つ、変数を初期化する必要がありますを指定します。  
+Parallel コンストラクトの前に存在するために、各スレッドは、変数の独自のインスタンスである必要があり、変数の値を持つ変数を初期化する必要がありますを指定します。  
   
 ## <a name="syntax"></a>構文  
   
@@ -62,16 +43,16 @@ firstprivate(var)
   
 -   [for](../../../parallel/openmp/reference/for-openmp.md)  
   
--   [並列](../../../parallel/openmp/reference/parallel.md)  
+-   [parallel](../../../parallel/openmp/reference/parallel.md)  
   
 -   [セクション](../../../parallel/openmp/reference/sections-openmp.md)  
   
--   [1 つ](../../../parallel/openmp/reference/single.md)  
+-   [single](../../../parallel/openmp/reference/single.md)  
   
- 詳細については、次を参照してください。 [2.7.2.2 firstprivate](../../../parallel/openmp/2-7-2-2-firstprivate.md)します。  
+ 詳細については、次を参照してください。 [2.7.2.2 firstprivate](../../../parallel/openmp/2-7-2-2-firstprivate.md)です。  
   
 ## <a name="example"></a>例  
- 使用する例については`firstprivate`、例を参照して[プライベート](../../../parallel/openmp/reference/private-openmp.md)します。  
+ 使用する例については`firstprivate`、例を参照してください[プライベート](../../../parallel/openmp/reference/private-openmp.md)です。  
   
 ## <a name="see-also"></a>関連項目  
  [句](../../../parallel/openmp/reference/openmp-clauses.md)

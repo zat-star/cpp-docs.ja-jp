@@ -1,44 +1,43 @@
 ---
-title: "auto_handle::get | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "auto_handle::get"
-  - "msclr::auto_handle::get"
-  - "auto_handle.get"
-  - "msclr.auto_handle.get"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "auto_handle::get"
+title: "auto_handle::get |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- auto_handle::get
+- msclr::auto_handle::get
+- auto_handle.get
+- msclr.auto_handle.get
+dev_langs: C++
+helpviewer_keywords: auto_handle::get
 ms.assetid: 8c75727b-8f21-44b3-be3e-7eb8858da4f7
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 3b8442ec99e19099e5f77ec6f9010e0f8fc235f8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# auto_handle::get
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-含まれるオブジェクトを取得します。  
+# <a name="autohandleget"></a>auto_handle::get
+含まれているオブジェクトを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 _element_type ^ get();  
 ```  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  含まれるオブジェクト。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // msl_auto_handle_get.cpp  
@@ -78,15 +77,18 @@ int main() {
 }  
 ```  
   
-  **ClassA のコンストラクター: 最初**  
-**Hello 最初に A ~\!**  
-**Hello 最初に A ~\!**  
-**Hello 最初に A ~\!**  
-**ClassA のデストラクター: 最初**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\auto\_handle.h\>  
+```Output  
+in ClassA constructor:first  
+Hello from first A!  
+Hello from first A!  
+Hello from first A!  
+in ClassA destructor:first  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\auto_handle.h >  
   
-## 参照  
- [auto\_handle Members](../dotnet/auto-handle-members.md)
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
+ [auto_handle のメンバー](../dotnet/auto-handle-members.md)

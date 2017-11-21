@@ -1,67 +1,74 @@
 ---
-title: "_bittestandset, _bittestandset64 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "_bittestandset_cpp"
-  - "_bittestandset64_cpp"
-  - "_bittestandset64"
-  - "_bittestandset"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "_bittestandset intrinsic"
-  - "_bittestandset64 intrinsic"
-  - "bts instruction"
+title: "_bittestandset、_bittestandset64 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- _bittestandset_cpp
+- _bittestandset64_cpp
+- _bittestandset64
+- _bittestandset
+dev_langs: C++
+helpviewer_keywords:
+- bts instruction
+- _bittestandset intrinsic
+- _bittestandset64 intrinsic
 ms.assetid: 6d6c8670-fea0-4c1c-9aad-2bb842715203
-caps.latest.revision: 16
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 14
+caps.latest.revision: "16"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: bfbfecc50a8f6b9f11f67e609e4fe05f4696e005
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# _bittestandset, _bittestandset64
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="bittestandset-bittestandset64"></a>_bittestandset、_bittestandset64
+**Microsoft 固有の仕様**  
   
- アドレス `a` のビット `b` を検査する命令を生成し、そのビットの現在値を返してビットに 1 を設定します。  
+ アドレス `b` のビット `a` を検査する命令を生成し、そのビットの現在値を返してビットに 1 を設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-unsigned char _bittestandset(    long *a,    long b ); unsigned char _bittestandset64(    __int64 *a,    __int64 b );  
+unsigned char _bittestandset(  
+   long *a,  
+   long b  
+);  
+unsigned char _bittestandset64(  
+   __int64 *a,  
+   __int64 b  
+);  
 ```  
   
-#### パラメーター  
- \[入力、出力\] `a`  
+#### <a name="parameters"></a>パラメーター  
+ [入力、出力] `a`  
  検査するメモリへのポインター。  
   
- \[入力\] `b`  
+ [入力] `b`  
  テストするビット位置。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
  指定した位置にあるビット。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`_bittestandset`|x86、ARM、[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
-|`_bittestandset64`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`_bittestandset`|x86、ARM、[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
+|`_bittestandset64`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
+## <a name="remarks"></a>コメント  
  このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // bittestandset.cpp  
@@ -137,13 +144,16 @@ int main()
 }  
 ```  
   
-  **Flags: 0x2**  
-**Flags: 0x6**  
-**Flags: 0xe**  
-**Flags: 0x6**  
-**Flags: 0x4**  
-**Flags: 0x0**   
-## END Microsoft 固有の仕様  
+```Output  
+Flags: 0x2  
+Flags: 0x6  
+Flags: 0xe  
+Flags: 0x6  
+Flags: 0x4  
+Flags: 0x0  
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

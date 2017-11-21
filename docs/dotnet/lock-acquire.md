@@ -1,36 +1,35 @@
 ---
-title: "lock::acquire | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "lock::acquire"
-  - "acquire"
-  - "msclr.lock.acquire"
-  - "msclr::lock::acquire"
-  - "lock.acquire"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "acquire メソッド"
+title: "lock::acquire |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords:
+- lock::acquire
+- acquire
+- msclr.lock.acquire
+- msclr::lock::acquire
+- lock.acquire
+dev_langs: C++
+helpviewer_keywords: acquire method
 ms.assetid: c214274e-7519-4739-82aa-91b04a32d3f9
-caps.latest.revision: 14
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 12
+caps.latest.revision: "14"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f1145c0ba2f5394fd7744fe91a1b949dca256c1a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# lock::acquire
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-ロックを、または、ロックを、指定した時間だけに完全に取得するには、オプションで待機するオブジェクトを取得します。  
+# <a name="lockacquire"></a>lock::acquire
+必要に応じて、指定された時間、またはすべてではなく、forever、ロックの取得を待機しているオブジェクトのロックを取得します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 void acquire();  
@@ -42,20 +41,20 @@ void acquire(
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `_timeout`  
- ミリ秒のまたは <xref:System.TimeSpan>にタイムアウト値。  
+ タイムアウト値 (ミリ秒単位) として、<xref:System.TimeSpan>です。  
   
-## 例外  
- ロックの取得がタイムアウトの前に発生する <xref:System.ApplicationException> をスローします。  
+## <a name="exceptions"></a>例外  
+ スロー<xref:System.ApplicationException>ロックの取得がタイムアウトする前に発生しない場合。  
   
-## 解説  
- タイムアウト値を指定しない場合は、既定のタイムアウトは、<xref:System.Threading.Timeout.Infinite>です。  
+## <a name="remarks"></a>コメント  
+ 既定のタイムアウトは、タイムアウト値が指定されていない場合<xref:System.Threading.Timeout.Infinite>です。  
   
- ロックが既に得られたら、この関数は何も行いません。  
+ 場合は、ロックは既に取得されて、この関数は何も行いません。  
   
-## 使用例  
- この例は、複数のスレッド間でクラスの単一のインスタンスを使用します。クラスは、データへのアクセスが各スレッドに対して一貫していることを確認するために、独自のロックを使用します。メイン アプリケーション スレッドは、ワーカー スレッドがまだ、すべてのワーカー スレッド終了まで待機が完了したタスクを定期的に確認するために、クラス インスタンスの同じロックを使用します。  
+## <a name="example"></a>例  
+ この例では、複数のスレッド間でクラスの 1 つのインスタンスで使用します。  クラスは、その内部データへのアクセスがスレッドごとに一貫していることを確認するのに自体に対するロックを使用します。  メイン アプリケーション スレッドは、ワーカー スレッドがまだ存在していて、そのタスクを完了したすべてのワーカー スレッドまで終了を待機を定期的に確認するクラスの同じインスタンスでロックを使用します。  
   
 ```  
 // msl_lock_acquire.cpp  
@@ -129,22 +128,25 @@ int main() {
 }  
 ```  
   
-  **スレッド 3 で、カウンター \= 0**  
-**スレッド 3 で、カウンター \= 10**  
-**スレッド 5 で、カウンター \= 0**  
-**スレッド 5 で、カウンター \= 10**  
-**スレッド 7 で、カウンター \= 0**  
-**スレッド 7 で、カウンター \= 10**  
-**スレッド 4 で、カウンター \= 0**  
-**スレッド 4 で、カウンター \= 10**  
-**スレッド 6 で、カウンター \= 0**  
-**スレッド 6 で、カウンター \= 10**  
-**完了しているすべてのスレッド。**   
-## 必要条件  
- **ヘッダー ファイル** \<msclr\\lock.h\>  
+```Output  
+In thread 3, Counter = 0  
+In thread 3, Counter = 10  
+In thread 5, Counter = 0  
+In thread 5, Counter = 10  
+In thread 7, Counter = 0  
+In thread 7, Counter = 10  
+In thread 4, Counter = 0  
+In thread 4, Counter = 10  
+In thread 6, Counter = 0  
+In thread 6, Counter = 10  
+All threads completed.  
+```  
   
- **名前空間** の msclr  
+## <a name="requirements"></a>要件  
+ **ヘッダー ファイル** \<msclr\lock.h >  
   
-## 参照  
+ **Namespace** msclr  
+  
+## <a name="see-also"></a>関連項目  
  [lock のメンバー](../dotnet/lock-members.md)   
- [lock::try\_acquire](../Topic/lock::try_acquire.md)
+ [lock::try_acquire](../dotnet/lock-try-acquire.md)

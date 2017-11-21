@@ -1,27 +1,26 @@
 ---
-title: "A.26   Using the threadprivate Directive | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "Threadprivate ディレクティブを使用して A.26 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: 6eda76c2-c4f1-4208-a900-e0ea98a53eca
-caps.latest.revision: 7
-caps.handback.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: f6c24a3c00dad6e196d015518071978884260c93
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# A.26   Using the threadprivate Directive
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-次の例では各スレッドに他のカウンターを指定するに `threadprivate` のディレクティブ \(ページの 23[セクション 2.7.1](../../parallel/openmp/2-7-1-threadprivate-directive.md)\) を使用する方法を示します。  
+# <a name="a26---using-the-threadprivate-directive"></a>A.26 threadprivate ディレクティブの使用
+次の例を使用する方法を示します、`threadprivate`ディレクティブ ([セクション 2.7.1](../../parallel/openmp/2-7-1-threadprivate-directive.md) 23 ページの) スレッドごとに別々 にカウンターを提供します。  
   
  **例 1:**  
   

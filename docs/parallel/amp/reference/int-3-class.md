@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -78,33 +77,17 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::int_3::get_zyx
 - amp_short_vectors/Concurrency::graphics::int_3::xz
 - amp_short_vectors/Concurrency::graphics::int_3::set_yz
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: d4af182f-30f1-455c-b16d-aa99cd314038
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: d9a9b8eed7fcf46dee258c55471e79420666e043
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 020e74f8c225ee8416c1fc836f560fa1be6bd1fc
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="int3-class"></a>int_3 クラス
 3 個の整数の short ベクターを表します。  
@@ -174,19 +157,19 @@ class int_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|int_3:-||  
-|int_3:--||  
+|int_3::operator-||  
+|int_3::operator--||  
 |int_3::operator % =||  
-|int_3::operator = >/documents/report1.rdl」||  
+|int_3::operator & =||  
 |int_3::operator * =||  
 |int_3::operator/=||  
 |int_3::operator ^ =||  
-|int_3::operator | =||  
+|int_3::operator &#124; =||  
 |int_3::operator ~||  
 |int_3::operator++||  
-|int_3::operator + = 演算子||  
-|int_3:\<=||  
-|int_3::operator =||  
+|int_3::operator + =||  
+|int_3::operator <\<=||  
+|int_3::operator = =||  
 |int_3::operator-=||  
 |int_3::operator >> =||  
   
@@ -283,7 +266,7 @@ explicit inline int_3(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V`  
  初期化の値です。  
@@ -301,4 +284,3 @@ static const int size = 3;
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

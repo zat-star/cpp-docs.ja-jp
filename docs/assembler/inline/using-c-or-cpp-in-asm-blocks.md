@@ -1,68 +1,67 @@
 ---
-title: "__asm ブロックでの C または C++ の使用 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__asm キーワード [C++], C/C++ の要素"
-  - "コメント, __asm ブロック内"
-  - "定数, __asm ブロック内"
-  - "インライン アセンブラー, 混在命令 (C/C++ のステートメント)"
-  - "マクロ, __asm ブロック"
-  - "プリプロセス ディレクティブ"
-  - "プリプロセス ディレクティブ, __asm ブロックでの使用"
-  - "プリプロセッサ, ディレクティブ"
-  - "シンボル, __asm ブロック内"
-  - "型名, __asm ブロックでの使用"
-  - "typedef 名, __asm ブロックでの使用"
+title: "_ _Asm ブロックでの C または C++ の使用 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- inline assembly, mixing instructions with C/C++ statements
+- symbols, in __asm blocks
+- macros, __asm blocks
+- preprocessor directives, used in __asm blocks
+- type names, used in __asm blocks
+- preprocessor directives
+- preprocessor, directives
+- constants, in __asm blocks
+- comments, in __asm blocks
+- typedef names, used in __asm blocks
+- __asm keyword [C++], C/C++ elements in
 ms.assetid: ae8b2b52-6b75-42e3-ac0c-ad02d922ed97
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: fbdb081e10ad08d20580aeec7d42028fbc119560
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __asm ブロックでの C または C++ の使用
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-## Microsoft 固有の仕様 →  
- インライン アセンブリ命令が C または C\+\+ のステートメントと混合できるためC または C\+\+ の変数を名前でとそれらの言語の他の多くの要素を使用することはできます。  
+# <a name="using-c-or-c-in-asm-blocks"></a>__asm ブロックでの C または C++ の使用
+## <a name="microsoft-specific"></a>Microsoft 固有の仕様  
+ インライン アセンブリの命令は、C または C++ ステートメントと混合できる、ため、C または C++ の変数を名前で参照し、それらの言語の他の多くの要素を使用します。  
   
- `__asm` ブロックは次の言語要素を使用して :  
+ `__asm`ブロックは、次の言語要素を使用できます。  
   
--   ラベルを含むシンボルおよび変数と関数名  
+-   ラベルと変数および関数の名前を含むシンボル  
   
--   `enum` の記号定数とメンバーを含む定数  
+-   定数、シンボリック定数を含むと`enum`メンバー  
   
 -   マクロとプリプロセッサ ディレクティブ  
   
--   コメント \(\/\*\*\/ と **\/\/** 両方\)  
+-   コメント (両方 **/ \* \* /** と **//**  )  
   
--   MASM \(の種類を有効な場所で型名\)  
+-   (任意の場所、MASM 型は有効になります) の名前を入力します。  
   
--   一般に **PTR** と  **種類**  などの演算子を使用した `typedef` の名前または構造体または共用体のメンバーを指定します。  
+-   `typedef`などの演算子と共に使用される通常名前**PTR**と**型**または構造体または共用体のメンバーを指定するには  
   
- `__asm` ブロック内ではC 表記またはアセンブラー小数点表記を持つ整数定数を指定できます \(0x100 と 100h たとえばはと等価です。  これは `#define`\(15\) を使用して C の定数を定義しC または C\+\+ の両方でプログラムのアセンブリの一部を使用できるようになります。  または 8 進数で 0 とそれらに付けて定数を指定できます。  たとえば0777 は 8 進定数を指定します。  
+ 内で、`__asm`ブロック、C の表記またはアセンブラー小数点表記のいずれかの整数定数を指定することができます (0x100 と h 100 は同等ですが、たとえば)。 定義できます (を使用して`#define`) C 内で定数をし、プログラムの C または C++ とアセンブリの両方の部分で使用します。 使用される定数を指定することもできます。 その前に、0、8 進数。 たとえば、0777 は 8 進数の定数を指定します。  
   
-## さらに詳しくは次のトピックをクリックしてください  
+## <a name="what-do-you-want-to-know-more-about"></a>さらに詳しくは次のトピックをクリックしてください  
   
--   [\_\_asm のブロックで演算子を使用する](../../assembler/inline/using-operators-in-asm-blocks.md)  
+-   [__asm ブロックでの演算子の使用](../../assembler/inline/using-operators-in-asm-blocks.md)  
   
--   [C または C\+\+ の Symbols\_in \_\_asm のを使用してブロック](../Topic/Using%20C%20or%20C++%20Symbols%20in%20__asm%20Blocks.md)  
+-   [_ _Asm ブロックの C または C++ Symbols_in を使用します。](../../assembler/inline/using-c-or-cpp-symbols-in-asm-blocks.md)  
   
--   [\_\_asm ブロックの C または C\+\+ のデータにアクセス](../Topic/Accessing%20C%20or%20C++%20Data%20in%20__asm%20Blocks.md)  
+-   [__asm ブロックの C または C++ のデータへのアクセス](../../assembler/inline/accessing-c-or-cpp-data-in-asm-blocks.md)  
   
--   [インライン アセンブリを使用するための関数](../../assembler/inline/writing-functions-with-inline-assembly.md)  
+-   [インライン アセンブリでの関数の記述](../../assembler/inline/writing-functions-with-inline-assembly.md)  
   
- **終了 Microsoft 固有の仕様→**  
+ **Microsoft 固有の仕様はここまで**  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [インライン アセンブラー](../../assembler/inline/inline-assembler.md)

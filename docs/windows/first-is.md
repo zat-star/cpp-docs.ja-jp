@@ -1,32 +1,30 @@
 ---
-title: "first_is | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.first_is"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "first_is attribute"
+title: "first_is |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.first_is
+dev_langs: C++
+helpviewer_keywords: first_is attribute
 ms.assetid: 89acbf56-3b38-4d44-83e8-1ce2f6f74ffd
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 478b4f501e16ab9fff2e66a4b36fac6e8d29ac70
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# first_is
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-送信される最初の要素のインデックスを指定します。  
+# <a name="firstis"></a>first_is
+転送する最初の配列要素のインデックスを指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,15 +33,15 @@ caps.handback.revision: 9
 ) ]  
 ```  
   
-#### パラメーター  
- *expression*  
- 一つ以上の C 言語の式。  空の引数のスロットを使用できます。  
+#### <a name="parameters"></a>パラメーター  
+ *式*  
+ 1 つ以上の C 言語の式。 空の引数スロットを指定します。  
   
-## 解説  
- **first\_is** C\+\+ 属性に [first\_is](http://msdn.microsoft.com/library/windows/desktop/aa366831) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **First_is** C++ 属性と同じ機能を持つ、 [first_is](http://msdn.microsoft.com/library/windows/desktop/aa366831) MIDL 属性。  
   
-## 使用例  
- 次のコードは配列 " を指定するさまざまな方法を示します :  
+## <a name="example"></a>例  
+ 次のコードは、配列のセクションを指定するさまざまな方法を示しています。  
   
 ```  
 // cpp_attr_ref_first_is.cpp  
@@ -65,25 +63,24 @@ requestedit] HRESULT get_I([out, retval]long *i);
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|`struct` または  **共用体**  インターフェイスのパラメーターインターフェイス メソッドのフィールドについて。|  
-|**複数回の適用**|Ｘ|  
+|**対象**|フィールドに`struct`または**共用体**パラメーターをインターフェイスでは、インターフェイス メソッド|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
- [Parameter Attributes](../windows/parameter-attributes.md)   
- [last\_is](../windows/last-is.md)   
- [max\_is](../windows/max-is.md)   
- [length\_is](../windows/length-is.md)   
- [size\_is](../Topic/size_is.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
+ [パラメーター属性](../windows/parameter-attributes.md)   
+ [last_is](../windows/last-is.md)   
+ [max_is](../windows/max-is.md)   
+ [length_is](../windows/length-is.md)   
+ [size_is](../windows/size-is.md)   

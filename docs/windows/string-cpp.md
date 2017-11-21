@@ -1,33 +1,30 @@
 ---
-title: "string (C++) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.string"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "string attribute"
+title: "文字列 (C++) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.string
+dev_langs: C++
+helpviewer_keywords: string attribute
 ms.assetid: ddde900a-2e99-4fcd-86e8-57e1bdba7c93
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 0293785b9552b2e5696b9334e81aebf44c3bc4b7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# string (C++)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-配列の 1 番 `char``wchar_t` **バイト**  \(または値\) 配列またはポインターが文字列のように扱うことを示します。  
+# <a name="string-c"></a>string (C++)
+示します、1 次元`char`、 `wchar_t`、**バイト**(または同等の) このような配列へのポインターまたは配列を文字列として扱う必要があります。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,11 +32,11 @@ manager: "ghogen"
   
 ```  
   
-## 解説  
- **文字列**  C\+\+ 属性に [文字列](http://msdn.microsoft.com/library/windows/desktop/aa367270) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **文字列**C++ 属性と同じ機能を持つ、[文字列](http://msdn.microsoft.com/library/windows/desktop/aa367270)MIDL 属性。  
   
-## 使用例  
- 次のコードはインターフェイスおよび型定義の  **文字列**  を使用する方法を示します :  
+## <a name="example"></a>例  
+ 次のコードは、使用する方法を示しています**文字列**インターフェイスと typedef:。  
   
 ```  
 // cpp_attr_ref_string.cpp  
@@ -54,21 +51,20 @@ __interface IFireTabCtrl
 };  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|配列の配列またはポインターインターフェイスインターフェイス メソッドのパラメーター|  
-|**複数回の適用**|Ｘ|  
+|**対象**|配列または配列、インターフェイスのパラメーター、インターフェイス メソッドへのポインター|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Array Attributes](../windows/array-attributes.md)   
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [配列属性](../windows/array-attributes.md)   
  [export](../windows/export.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

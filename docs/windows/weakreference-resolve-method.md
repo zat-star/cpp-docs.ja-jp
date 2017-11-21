@@ -1,32 +1,30 @@
 ---
-title: "WeakReference::Resolve メソッド | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "implements/Microsoft::WRL::Details::WeakReference::Resolve"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "Resolve メソッド"
+title: "Weakreference::resolve メソッド |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: implements/Microsoft::WRL::Details::WeakReference::Resolve
+dev_langs: C++
+helpviewer_keywords: Resolve method
 ms.assetid: fc65a4b7-48a0-4d64-a793-37f566fdd8e7
-caps.latest.revision: 5
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "5"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 9dc2eef072e64d38b96afd045bae6a9b23d59d94
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# WeakReference::Resolve メソッド
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-WRL のインフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="weakreferenceresolve-method"></a>WeakReference::Resolve メソッド
+WRL インフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,29 +34,29 @@ STDMETHOD(Resolve)
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `riid`  
- インターフェイス ID  
+ インターフェイス ID。  
   
  `ppvObject`  
- この操作が完了すると、強い参照カウントが 0 以外のは現在の強い参照のコピー。  
+ この操作の完了時、強力な参照カウントが 0 以外の場合は、現在の強い参照のコピー。  
   
-## 戻り値  
+## <a name="return-value"></a>戻り値  
   
--   この操作が正常に終了した場合、強い参照カウントがゼロでは S\_OK を返します。  `ppvObject` パラメーターに `nullptr` が設定されています。  
+-   この操作が成功して、強力な参照カウントがゼロの場合は S_OK、します。 `ppvObject` パラメーターを `nullptr` に設定します。  
   
--   この操作が正常に終了した場合、強い参照カウントは 0 以外の S\_OK です。  `ppvObject` パラメーターは、強い参照に設定されます。  
+-   この操作が成功して、強力な参照カウントが 0 でない場合は S_OK です。 `ppvObject`パラメーターは、強い参照に設定します。  
   
--   この操作は、原因を示す HRESULT に失敗しました。  
+-   それ以外の場合、原因を示す HRESULT この操作に失敗しました。  
   
-## 解説  
- 強い参照カウントが 0 以外のは現在の強い参照値に指定したポインターを設定します。  
+## <a name="remarks"></a>コメント  
+ 強力な参照カウントが 0 以外の場合は、現在の強い参照値に指定されたポインターを設定します。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** implements.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [WeakReference クラス](../windows/weakreference-class1.md)   
+## <a name="see-also"></a>関連項目  
+ [WeakReference Class1](../windows/weakreference-class1.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

@@ -1,32 +1,30 @@
 ---
-title: "PROPERTY_INFO_ENTRY_VALUE | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "PROPERTY_INFO_ENTRY_VALUE"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "PROPERTY_INFO_ENTRY_VALUE マクロ"
+title: "PROPERTY_INFO_ENTRY_VALUE |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: PROPERTY_INFO_ENTRY_VALUE
+dev_langs: C++
+helpviewer_keywords: PROPERTY_INFO_ENTRY_VALUE macro
 ms.assetid: 9690f7f3-fb20-4a7e-a75f-8a3a1cb1ce0d
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 25eb1627f4024fd18dbf0d22114c2e762ab8b897
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# PROPERTY_INFO_ENTRY_VALUE
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="propertyinfoentryvalue"></a>PROPERTY_INFO_ENTRY_VALUE
 プロパティ セットの特定のプロパティを表します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,23 +33,23 @@ dwPropID
 , value )  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *dwPropID*  
- \[\]プロパティを識別するためにプロパティ セット GUID とともに使用できる A [DBPROPID](https://msdn.microsoft.com/en-us/library/ms723882.aspx) 値。  
+ [入力] プロパティ セット GUID と組み合わせて使用してプロパティを特定する [DBPROPID](https://msdn.microsoft.com/en-us/library/ms723882.aspx) 値。  
   
  *value*  
- \[\]型 `DWORD`プロパティ値。  
+ [入力] `DWORD`型のプロパティ値。  
   
-## 解説  
- このマクロを使用すると、直接型 `DWORD`プロパティの値を指定できます。  ATLDB.H で定義されている既定値にプロパティを設定するには [PROPERTY\_INFO\_ENTRY](../../data/oledb/property-info-entry.md)を使用します。  値を、プロパティのフラグを設定するには、オプションは、[PROPERTY\_INFO\_ENTRY\_EX](../../data/oledb/property-info-entry-ex.md)を使用します。  
+## <a name="remarks"></a>コメント  
+ このマクロでは、型のプロパティの値を直接指定できる`DWORD`です。 既定値は、プロパティを設定します。H、使用[PROPERTY_INFO_ENTRY](../../data/oledb/property-info-entry.md)です。 値、フラグ、およびプロパティのオプションを設定するには、使用[PROPERTY_INFO_ENTRY_EX](../../data/oledb/property-info-entry-ex.md)です。  
   
-## 使用例  
- [BEGIN\_PROPSET\_MAP](../Topic/BEGIN_PROPSET_MAP.md)を参照してください。  
+## <a name="example"></a>例  
+ 「 [BEGIN_PROPSET_MAP](../../data/oledb/begin-propset-map.md)」を参照してください。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [OLE DB プロバイダー テンプレート用マクロ](../../data/oledb/macros-for-ole-db-provider-templates.md)   
  [OLE DB プロバイダー テンプレート](../../data/oledb/ole-db-provider-templates-cpp.md)   
  [OLE DB プロバイダー テンプレートのアーキテクチャ](../../data/oledb/ole-db-provider-template-architecture.md)   

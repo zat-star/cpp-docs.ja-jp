@@ -1,28 +1,27 @@
 ---
-title: "OLE DB プロバイダーへの文字列の格納 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "ユーザー レコード, 編集"
+title: "OLE DB プロバイダーで文字列を格納する |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords: user records, editing
 ms.assetid: 36cb9635-067c-4cad-8f85-962f28026f6a
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: de8fdb6583f175505fc6a77070e30412aee38ae8
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# OLE DB プロバイダーへの文字列の格納
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ATL OLE DB プロバイダー ウィザードでは、MyProviderRS.h に `CWindowsFile` という既定のユーザー レコードが作成されます。  2 つの文字列を処理するには、`CWindowsFile` を変更するか、次のコードに示すように独自のユーザー レコードを追加します。  
+# <a name="storing-strings-in-the-ole-db-provider"></a>OLE DB プロバイダーへの文字列の格納
+ATL OLE DB プロバイダー ウィザードと呼ばれる既定のユーザー レコードの作成 myproviderrs.h、`CWindowsFile`です。 変更するか、2 つの文字列を処理する`CWindowsFile`または次のコードに示すように、ユーザー レコードを追加します。  
   
 ```  
 ////////////////////////////////////////////////////////////////////////  
@@ -49,11 +48,11 @@ END_PROVIDER_COLUMN_MAP()
 };  
 ```  
   
- データ メンバー `szCommand` と `szText` は、2 つの文字列を表します。必要に応じて、`szCommand2` と `szText2` で追加の列を用意します。  `dwBookmark` データ メンバーは、この単純な読み取り専用プロバイダーには不要ですが、後で `IRowsetLocate` インターフェイスを追加する際に使用します。「[単純な読み取り専用プロバイダーの機能の拡張](../../data/oledb/enhancing-the-simple-read-only-provider.md)」を参照してください。  `==` 演算子はインスタンスを比較します。この演算子の実装は省略できます。  
+ データ メンバー`szCommand`と`szText`で 2 つの文字列を表す`szCommand2`と`szText2`必要な場合は、追加の列を提供します。 データ メンバー`dwBookmark`この単純な読み取り専用プロバイダーは必要ありませんが、後で追加するため、`IRowsetLocate`インターフェイス; を参照してください[、単純な読み取り専用プロバイダーの向上](../../data/oledb/enhancing-the-simple-read-only-provider.md)です。 `==`インスタンスを比較演算子 (この演算子の実装は省略可能)。  
   
- この処理が終了すると、プロバイダーはいつでもコンパイルして実行できます。  プロバイダーをテストするには、対応する機能を持つコンシューマーが必要です。  「[単純なコンシューマーの実装](../../data/oledb/implementing-a-simple-consumer.md)」に、このようなテスト コンシューマーの作成方法を示します。  テスト コンシューマーをプロバイダーと共に実行します。  \[テスト コンシューマー\] ダイアログ ボックスの \[実行\] ボタンをクリックしたときに、テスト コンシューマーが適切な文字列をプロバイダーから取得することを確認します。  
+ これは、プロバイダーはコンパイルして実行する準備ができます。 プロバイダーをテストするには、照合機能を持つコンシューマー必要があります。 [単純なコンシューマーを実装する](../../data/oledb/implementing-a-simple-consumer.md)このようなテスト コンシューマーを作成する方法を示します。 プロバイダーをテスト コンシューマーを実行します。 クリックすると、テストのコンシューマーが、プロバイダーから適切な文字列を取得することを確認、**実行**ボタンをクリックして、**テスト コンシューマー**  ダイアログ ボックス。  
   
- プロバイダーのテストが正常に終了すると、追加のインターフェイスを実装することにより、プロバイダーの機能を拡張できます。  「[単純な読み取り専用プロバイダーの機能の拡張](../../data/oledb/enhancing-the-simple-read-only-provider.md)」で例を示します。  
+ プロバイダーを正常にテストするときに、追加のインターフェイスを実装することでその機能を強化することができます。 例が示すように[単純な読み取り専用プロバイダーの向上](../../data/oledb/enhancing-the-simple-read-only-provider.md)です。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [単純な読み取り専用プロバイダーの実装](../../data/oledb/implementing-the-simple-read-only-provider.md)

@@ -4,32 +4,27 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
-helpviewer_keywords:
-- partial ordering of function templates
+dev_langs: C++
+helpviewer_keywords: partial ordering of function templates
 ms.assetid: 0c17347d-0e80-47ad-b5ac-046462d9dc73
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: f460497071445cff87308fa9bf6e0d43c6f13a3e
-ms.openlocfilehash: 252f80416f581ecc2c126bc44ab22c1b63c50130
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: d211a3ab33377b817c23734f01947cde92f8aad7
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-
 # <a name="partial-ordering-of-function-templates-c"></a>関数テンプレートの部分的な順序付け (C++)
 
 関数呼び出しの引数リストと一致する複数の関数テンプレートを使用できます。 C++ では、呼び出す関数を指定するために、関数テンプレートの部分的な順序が定義されています。 順序が部分的なのは、同等に特殊化されていると見なされるテンプレートが存在するためです。
 
-コンパイラは、使用できる最も特殊化されたテンプレート関数を一致候補から選択します。 たとえば、関数テンプレート型を受け取り、 __T__、およびを別の関数テンプレート__T\* __が使用できる、 __T\* __バージョンと呼びます特殊化の詳細、およびジェネリックをお勧めする__T__バージョンでも両方は使用可能な一致、引数がポインター型、されるたびにします。
+コンパイラは、使用できる最も特殊化されたテンプレート関数を一致候補から選択します。 たとえば、関数テンプレート型を受け取り、 __T__、およびを別の関数テンプレート__T\*__ が使用できる、 __T\*__ バージョンと呼びます特殊化の詳細、およびジェネリックをお勧めする__T__バージョンでも両方は使用可能な一致、引数がポインター型、されるたびにします。
 
 1 つの関数テンプレート候補がより特殊化されたかどうかを確認するには、次の手順を使用します。
 
@@ -47,11 +42,11 @@ ms.lasthandoff: 09/25/2017
 
      1. 特定の型を受け取るテンプレートは、ジェネリック型引数を受け取るテンプレートよりも特殊化されます。
 
-     2. のみをテンプレート__T\* __は 1 つだけ行うよりも特殊化__T__仮定の型、 __X\* __に対して有効な引数には、__T__テンプレート引数が、 __X__に対して有効な引数ではありません、 __T\* __テンプレートの引数。
+     2. のみをテンプレート__T\*__ は 1 つだけ行うよりも特殊化__T__仮定の型、 __X\*__ に対して有効な引数には、__T__テンプレート引数が、 __X__に対して有効な引数ではありません、 __T\*__ テンプレートの引数。
 
      3. __const T__はより特殊化__T__ので、 __const X__に対して有効な引数には、 __T__テンプレート引数が、 __X__有効な引数ではありません、 __const T__テンプレートの引数。
 
-     4. __const T\* __はより特殊化__T\*__ので、 __const X\* __に対して有効な引数には、 __T\*__テンプレート引数が、 __X\* __に対して有効な引数ではありません、 __const T\* __テンプレートの引数。
+     4. __const T\*__ はより特殊化__T\*__ので、 __const X\*__ に対して有効な引数には、 __T\*__テンプレート引数が、 __X\*__ に対して有効な引数ではありません、 __const T\*__ テンプレートの引数。
 
 ## <a name="example"></a>例
 
@@ -99,4 +94,3 @@ Even more specialized function for const T*
 ## <a name="see-also"></a>関連項目
 
 [関数テンプレート](../cpp/function-templates.md)
-

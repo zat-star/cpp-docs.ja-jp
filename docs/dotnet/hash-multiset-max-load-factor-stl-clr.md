@@ -1,48 +1,46 @@
 ---
-title: "hash_multiset::max_load_factor (STL/CLR) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "cliext::hash_multiset::max_load_factor"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "max_load_factor メンバー [STL/CLR]"
+title: "hash_multiset::max_load_factor (STL/CLR) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: cliext::hash_multiset::max_load_factor
+dev_langs: C++
+helpviewer_keywords: max_load_factor member [STL/CLR]
 ms.assetid: ca0a6e8e-b889-47e4-9edd-c5a321fdeb8f
-caps.latest.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 13
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 44d9384ef11776193ad5e520f140a9f46d66b61b
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# hash_multiset::max_load_factor (STL/CLR)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="hashmultisetmaxloadfactor-stlclr"></a>hash_multiset::max_load_factor (STL/CLR)
 バケットあたりの最大要素数を取得または設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 float max_load_factor();  
 void max_load_factor(float new_factor);  
 ```  
   
-#### パラメーター  
- new\_factor  
- 保存する新しい最大テーブル占有率。  
+#### <a name="parameters"></a>パラメーター  
+ new_factor  
+ 新しい最大値を格納する要素を読み込みます。  
   
-## 解説  
- 一つ目のメンバー関数は、現在のスレッドに格納されている最大テーブル占有率を返します。  最大平均バケットのサイズを決定するために使用します。  
+## <a name="remarks"></a>コメント  
+ 最初のメンバー関数は、現在格納されている最大占有率を返します。 使用する最大バケットの平均サイズを決定します。  
   
- 2 つ目のメンバー関数は `new_factor`のストアの最大テーブル占有率を置き換えます。  自動に再ハッシュすることは、後続の挿入まで発生しません。  
+ 2 番目のメンバー関数とストアの最大テーブル占有率が置き換えられます`new_factor`です。 自動再ハッシュは行われませんまで後続の挿入します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // cliext_hash_multiset_max_load_factor.cpp   
@@ -88,23 +86,28 @@ int main()
   
 ```  
   
-  **b c**  
-**bucket\_count\(\) \= 16**  
-**load\_factor\(\) \= 0.1875**  
-**max\_load\_factor\(\) \= 4**  
-**bucket\_count\(\) \= 16**  
-**load\_factor\(\) \= 0.1875**  
-**max\_load\_factor\(\) \= 0.25**  
-**bucket\_count\(\) \= 128**  
-**load\_factor\(\) \= 0.0234375**  
-**max\_load\_factor\(\) \= 0.25**   
-## 必要条件  
- **ヘッダー:** の \<cliext\/hash\_set\>  
+```Output  
+ a b c  
+bucket_count() = 16  
+load_factor() = 0.1875  
+max_load_factor() = 4  
   
- **名前空間:** の cliext  
+bucket_count() = 16  
+load_factor() = 0.1875  
+max_load_factor() = 0.25  
   
-## 参照  
- [hash\_multiset](../dotnet/hash-multiset-stl-clr.md)   
- [hash\_multiset::bucket\_count](../dotnet/hash-multiset-bucket-count-stl-clr.md)   
- [hash\_multiset::load\_factor](../Topic/hash_multiset::load_factor%20\(STL-CLR\).md)   
- [hash\_multiset::rehash](../Topic/hash_multiset::rehash%20\(STL-CLR\).md)
+bucket_count() = 128  
+load_factor() = 0.0234375  
+max_load_factor() = 0.25  
+```  
+  
+## <a name="requirements"></a>要件  
+ **ヘッダー:** \<cliext/hash_set >  
+  
+ **Namespace:** cliext  
+  
+## <a name="see-also"></a>関連項目  
+ [hash_multiset (STL/CLR)](../dotnet/hash-multiset-stl-clr.md)   
+ [hash_multiset::bucket_count (STL/CLR)](../dotnet/hash-multiset-bucket-count-stl-clr.md)   
+ [hash_multiset::load_factor (STL/CLR)](../dotnet/hash-multiset-load-factor-stl-clr.md)   
+ [hash_multiset::rehash (STL/CLR)](../dotnet/hash-multiset-rehash-stl-clr.md)

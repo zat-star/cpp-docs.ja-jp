@@ -1,34 +1,33 @@
 ---
-title: "方法: C# lock キーワードを実装する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "get-started-article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "lock C# キーワード [C++]"
-  - "lock ステートメント"
+title: "方法: lock c# キーワードを実装する (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: get-started-article
+dev_langs: C++
+helpviewer_keywords:
+- lock statement
+- lock C# keyword [C++]
 ms.assetid: 436fe544-ffb7-49b9-9798-90794e9974de
-caps.latest.revision: 12
-caps.handback.revision: 12
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "12"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 8f126968805e38d1435f4f24862183f84d089b36
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: C# lock キーワードを実装する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-このトピックでは、Visual C\+\+ で C\# `lock` キーワードを実装する方法について説明します。  詳細については、「[lock ステートメント](../Topic/lock%20Statement%20\(C%23%20Reference\).md)」を参照してください。  
+# <a name="how-to-implement-the-lock-c-keyword-ccli"></a>方法: C# lock キーワードを実装する (C++/CLI)
+このトピックは、c# を実装する方法を示しています。 `lock` Visual c でキーワード。 
   
- C\+\+ サポート ライブラリ内の `lock` クラスも使用できます。  詳細については、「[同期 \(lock クラス\)](../dotnet/synchronization-lock-class.md)」を参照してください。  
+ 使用することも、 `lock` C++ サポート ライブラリ内のクラスです。 参照してください[同期 (lock クラス)](../dotnet/synchronization-lock-class.md)詳細についてはします。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // CS_lock_in_CPP.cpp  
@@ -65,5 +64,5 @@ int main()
 }  
 ```  
   
-## 参照  
- [他の .NET 言語との相互運用性](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [他の .NET 言語との相互運用性 (C++/CLI)](../dotnet/interoperability-with-other-dotnet-languages-cpp-cli.md)

@@ -1,69 +1,68 @@
 ---
-title: "__movsq | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "__movsq"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "__movsq 組み込み"
-  - "rep movsq 命令"
-  - "movsq 命令"
+title: "_ _movsq |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: __movsq
+dev_langs: C++
+helpviewer_keywords:
+- __movsq intrinsic
+- rep movsq instruction
+- movsq instruction
 ms.assetid: be116a6e-2176-4ca4-93b1-9ccf3e7e7835
-caps.latest.revision: 13
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "13"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 2c0211faafad29b24b45297e9221fd375d67c81d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# __movsq
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-**Microsoft 固有の仕様 →**  
+# <a name="movsq"></a>__movsq
+**Microsoft 固有の仕様**  
   
- 繰り返し移動の文字列 \(`rep movsq`\) 命令を生成します。  
+ 繰り返しの移動の文字列を生成します (`rep movsq`) 命令します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
-void __movsq(   
-   unsigned char* Dest,   
-   unsigned char* Source,   
-   size_t Count   
+void __movsq(   
+   unsigned char* Dest,   
+   unsigned char* Source,   
+   size_t Count   
 );  
 ```  
   
-#### パラメーター  
- \[出力\] `Dest`  
- 操作のコピー先。  
+#### <a name="parameters"></a>パラメーター  
+ [出力] `Dest`  
+ 操作の出力先。  
   
- \[入力\] `Source`  
+ [入力] `Source`  
  操作のソース。  
   
- \[入力\] `Count`  
- コピーするクワドワードの数。  
+ [入力] `Count`  
+ コピーする quadwords の数。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
 |組み込み|アーキテクチャ|  
-|----------|-------------|  
-|`__movsq`|[!INCLUDE[vcprx64](../Token/vcprx64_md.md)]|  
+|---------------|------------------|  
+|`__movsq`|[!INCLUDE[vcprx64](../assembler/inline/includes/vcprx64_md.md)]|  
   
- **ヘッダー ファイル** \<intrin.h\>  
+ **ヘッダー ファイル** \<intrin.h >  
   
-## 解説  
- 結果は `Source` が指す `Count` の最初の各が `Dest` の文字列にコピーされます。  
+## <a name="remarks"></a>コメント  
+ 結果を最初`Count`によって示される quadwords`Source`にコピーされます、`Dest`文字列。  
   
- このルーチンは組み込みとしてのみ使用できます。  
+ このルーチンは、組み込みとしてのみ使用できます。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // movsq.cpp  
@@ -86,8 +85,11 @@ int main()
 }  
 ```  
   
-  **950 850 750 650 550 450 350 250 150 50**   
-## 終了 Microsoft 固有の仕様→  
+```Output  
+950 850 750 650 550 450 350 250 150 50   
+```  
   
-## 参照  
- [コンパイラ組み込み](../intrinsics/compiler-intrinsics.md)
+**Microsoft 固有の仕様はここまで**  
+  
+## <a name="see-also"></a>関連項目  
+ [コンパイラの組み込み](../intrinsics/compiler-intrinsics.md)

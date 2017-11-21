@@ -1,32 +1,30 @@
 ---
-title: "FactoryCache::cookie データ メンバー | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "reference"
-f1_keywords: 
-  - "module/Microsoft::WRL::Details::FactoryCache::cookie"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "クッキー データ メンバー"
+title: "Factorycache::cookie データ メンバー |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: reference
+f1_keywords: module/Microsoft::WRL::Details::FactoryCache::cookie
+dev_langs: C++
+helpviewer_keywords: cookie data member
 ms.assetid: b1bc79af-a896-4e3b-8afa-64733022eddf
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c3cca7b708f7fc2a0fdaa5b975396958b967210a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# FactoryCache::cookie データ メンバー
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-[!INCLUDE[cppwrl](../windows/includes/cppwrl_md.md)] インフラストラクチャをサポートします。コードから直接使用するためのものではありません。  
+# <a name="factorycachecookie-data-member"></a>FactoryCache::cookie データ メンバー
+Windows ランタイム C++ テンプレート ライブラリのインフラストラクチャをサポートし、コードから直接使用するものではありません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 union {   
@@ -35,14 +33,14 @@ union {
 } cookie;  
 ```  
   
-## 解説  
- 登録された [!INCLUDE[wrt](../atl/reference/includes/wrt_md.md)] または COM クラス オブジェクトを識別し、オブジェクトの登録を解除するために後で使用します。値を生成します。  
+## <a name="remarks"></a>コメント  
+ オブジェクトを識別、登録されている Windows ランタイムまたは COM クラス、およびオブジェクトの登録を解除する際に使用する値が含まれています。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** module.h  
   
- **名前空間:** Microsoft::WRL::Details  
+ **Namespace:** Microsoft::WRL::Details  
   
-## 参照  
- [FactoryCache 構造体](../Topic/FactoryCache%20Structure.md)   
+## <a name="see-also"></a>関連項目  
+ [FactoryCache 構造体](../windows/factorycache-structure.md)   
  [Microsoft::WRL::Details 名前空間](../windows/microsoft-wrl-details-namespace.md)

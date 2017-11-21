@@ -1,34 +1,33 @@
 ---
-title: "IRowsetChangeImpl::FlushData | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "IRowsetChangeImpl::FlushData"
-  - "IRowsetChangeImpl.FlushData"
-  - "FlushData"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "FlushData メソッド"
+title: "Irowsetchangeimpl::flushdata |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- IRowsetChangeImpl::FlushData
+- IRowsetChangeImpl.FlushData
+- FlushData
+dev_langs: C++
+helpviewer_keywords: FlushData method
 ms.assetid: fd4bc73b-bc25-4aab-90d5-0bed92670c88
-caps.latest.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 31555e1f8305a281955902b71fdc71fbcc5405e5
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# IRowsetChangeImpl::FlushData
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-データ ストアにコミットをプロバイダーによって Overidden。  
+# <a name="irowsetchangeimplflushdata"></a>IRowsetChangeImpl::FlushData
+データをそのストアにコミットするためのプロバイダーによってオーバーライドされします。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -38,18 +37,18 @@ caps.handback.revision: 8
 );  
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  *hRowToFlush*  
- \[\]データの行へのハンドル。  この行の種類は `IRowsetImpl` クラス`CSimpleRow` \(既定\) の *RowClass の* テンプレート引数によって決定されます。  
+ [in]データの行へのハンドルします。 この行の型を特定、 *RowClass*のテンプレート引数、`IRowsetImpl`クラス (`CSimpleRow`既定)。  
   
  *hAccessorToFlush*  
- \[\]含むアクセサーのハンドル、バインディング情報と **PROVIDER\_MAP** の型情報 \([IAccessorImpl](../../data/oledb/iaccessorimpl-class.md)を参照してください。  
+ [in]バインディング情報およびで型情報が含まれて、アクセサーへのハンドル、 **PROVIDER_MAP** (を参照してください[IAccessorImpl](../../data/oledb/iaccessorimpl-class.md))。  
   
-## 戻り値  
- 標準の `HRESULT` を返します。  
+## <a name="return-value"></a>戻り値  
+ 標準の `HRESULT`。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
  **ヘッダー:** atldb.h  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [IRowsetChangeImpl クラス](../../data/oledb/irowsetchangeimpl-class.md)

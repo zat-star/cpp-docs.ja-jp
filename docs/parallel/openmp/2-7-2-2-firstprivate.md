@@ -1,38 +1,37 @@
 ---
-title: "2.7.2.2 firstprivate | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "2.7.2.2 firstprivate |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: ece6ff12-2be1-4e4f-866c-d39345fd87b5
-caps.latest.revision: 8
-caps.handback.revision: 8
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "8"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: ac868b33e8a53778faa3fba9724974e4af6ffb90
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 2.7.2.2 firstprivate
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**firstprivate** の句は  **プライベート**  の句によって提供される機能のスーパーセットが用意されています。  **firstprivate** 句の構文は次のとおりです。:  
+# <a name="2722-firstprivate"></a>2.7.2.2 firstprivate
+**Firstprivate**句によって提供される機能のスーパー セットを提供する、**プライベート**句。 構文、 **firstprivate**句を次に示します。  
   
 ```  
 firstprivate(variable-list)  
 ```  
   
- *変数*  の一覧で指定された変数に 25 ページ [セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md) に説明されているように  **プライベート**  句のセマンティクスがあります。  スレッドごとに一度行ったように初期化するコンストラクターが実行されます。スレッドの構造の実行前に発生します。  parallel コンストラクトの **firstprivate** の句では新しいプライベート オブジェクトの初期値はそのスレッドの parallel コンストラクト直前に元のオブジェクトの値です。  作業共有の構造体の **firstprivate** の句では実行するスレッドごとに新しいプライベート オブジェクトの初期値は作業共有の構造同じスレッドが共有作業の構造が発生する時点までに元のオブジェクトの値です。  またC\+\+ では各スレッドの新しいプライベート オブジェクトがオブジェクトから構築されたコピー元のオブジェクト。  
+ 指定された変数*変数一覧*が**プライベート**句セマンティクス、」の説明に従って[セクション 2.7.2.1](../../parallel/openmp/2-7-2-1-private.md) [25] ページ。 初期化または構築は、コンストラクトのスレッドの実行前に、スレッドあたり 1 回実行された場合に発生します。 **Firstprivate** parallel コンストラクトの句、新しいプライベート オブジェクトの初期値は、元のオブジェクトが見つかると、スレッドの parallel コンストラクトの直前に存在する値。 **Firstprivate** work-sharing コンス トラクターの句、work-sharing コンス トラクターを実行する各スレッドの新しいプライベート オブジェクトの初期値が時間内に、ポイントする前に存在する元のオブジェクトの値を同じスレッドでは、work-sharing コンス トラクターが発生します。 さらに、C++ オブジェクトの各スレッドの新しいプライベート オブジェクトは、元のオブジェクトから構築されたコピーです。  
   
- **firstprivate** の句に制限 : は次のとおりです。  
+ 制限、 **firstprivate**句は、次のようにします。  
   
--   **firstprivate** の句で指定された変数は不適切な型または参照型はありません。  
+-   指定された変数、 **firstprivate**句が不完全な型または参照型は必要ありません。  
   
--   **firstprivate** にアクセスでき明確なコピー コンストラクターが必要であると指定されたクラス型の変数。  
+-   として指定されているクラス型の変数**firstprivate**あいまいでないアクセス可能なコピー コンス トラクターを持つ必要があります。  
   
--   並列領域内でプライベートにするか **並列**  のディレクティブの  **リダクション**  の句に表示される変数はparallel コンストラクトにバインドする共有作業のディレクティブで **firstprivate** の句で指定することはできません。
+-   変数は、並行領域内でプライベートをまたはに表示される、**削減**の句、**並列**ディレクティブを指定することはできません、 **firstprivate**句で、parallel コンストラクトにバインドされる動作共有ディレクティブです。

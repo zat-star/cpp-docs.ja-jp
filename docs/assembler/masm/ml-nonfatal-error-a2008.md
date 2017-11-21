@@ -1,46 +1,44 @@
 ---
-title: "ML Nonfatal Error A2008 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "A2008"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "A2008"
+title: "ML の致命的でないエラー A2008 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: A2008
+dev_langs: C++
+helpviewer_keywords: A2008
 ms.assetid: ca24157f-c88a-4678-ae06-3bc3cd956001
-caps.latest.revision: 6
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 6
+caps.latest.revision: "6"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 7bcef41e81ea0f3d6229cf828a661fdc8f8fdec4
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ML Nonfatal Error A2008
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-**構文エラー :**  
+# <a name="ml-nonfatal-error-a2008"></a>ML の致命的でないエラー A2008
+**構文エラー:**  
   
- 現在の場所でトークンが構文エラーを引き起こしました。  
+ 現在の場所にトークンには、構文エラーが発生しました。  
   
- 次のいずれかが発生する可能性があります :  
+ 次のいずれかが発生した可能性があります。  
   
--   ドットのプレフィックスがに追加されるかまたはディレクティブから除外されました。  
+-   ドット プレフィックスを追加またはディレクティブから省略するとします。  
   
--   予約語を識別子として **C サイズ** \(やなど\) が使用されていました。  
+-   予約語 (など**C**または**サイズ**) 識別子として使用されました。  
   
--   現在のプロセッサコプロセッサの選択では利用できなかった命令が使用されました。  
+-   現在のプロセッサまたはコプロセッサの選択を利用できなかった命令が使用されました。  
   
--   比較の実行時の関係演算子は演算子の代わりに条件付きアセンブリのステートメント \(`==` など\) が使用されていました [EQ](../../assembler/masm/operator-eq.md)\(など\)。  
+-   比較の実行時演算子 (など`==`)、関係演算子ではなく条件付きの assembly ステートメントで使用されていた (など[EQ](../../assembler/masm/operator-eq.md))。  
   
--   命令またはディレクティブに十分なオペランドが指定されました。  
+-   命令またはディレクティブが少なすぎますオペランドが指定されました。  
   
 -   旧式のディレクティブが使用されました。  
   
-## 参照  
- [ML Error Messages](../../assembler/masm/ml-error-messages.md)
+## <a name="see-also"></a>関連項目  
+ [ML エラー メッセージ](../../assembler/masm/ml-error-messages.md)

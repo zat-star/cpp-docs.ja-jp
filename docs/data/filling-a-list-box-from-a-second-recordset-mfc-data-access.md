@@ -1,53 +1,49 @@
 ---
-title: "セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "CComboBox クラス, 格納 (セカンド行セットからオブジェクトに)"
-  - "CListCtrl クラス, 格納 (セカンド レコードセットから)"
-  - "コンボ ボックス [C++], 格納 (セカンド レコードセットから)"
-  - "DAO レコードセット"
-  - "DAO レコードセット, 格納 (リスト ボックスまたはコンボ ボックスに)"
-  - "格納 (リストまたはコンボ ボックスに)"
-  - "リスト ボックス, 格納 (セカンド レコードセットから)"
-  - "複数のレコードセット (レコード ビューの)"
-  - "ODBC レコードセット [C++], 格納 (リスト ボックスまたはコンボ ボックスに)"
-  - "レコード ビュー, 格納 (リスト ボックスに)"
-  - "レコードセット [C++], 格納 (リスト ボックスまたはコンボ ボックスに)"
+title: "リスト ボックスから 2 番目のレコード セット (MFC データ アクセス) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- record views, filling list boxes
+- list boxes, filling from second recordset
+- recordsets [C++], filling list boxes or combo boxes
+- CComboBox class, filling object from second rowset
+- ODBC recordsets [C++], filling list boxes or combo boxes
+- combo boxes [C++], filling from second recordset
+- CListCtrl class, filling from second recordset
 ms.assetid: 360c0834-da6b-4dc0-bcea-80e9acd611f0
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: de1282b80517a1c264121fbc0b749d3ca4ca2add
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-既定では、1 つのレコード ビューは 1 つのレコードセット オブジェクトに関連付けられ、そのオブジェクトのフィールドがレコード ビューのコントロールに対応付けられます。  場合によっては、レコード ビューにリスト ボックス コントロールまたはコンボ ボックス コントロールを配置して、そこに別の \(セカンド\) レコードセット オブジェクトの複数の値を設定することが必要となります。  ユーザーは、そのリスト ボックスを使用して、レコード ビューに表示された新しいカテゴリの情報を選択できます。  このトピックでは、いつどのようにこの処理を実行するかについて説明します。  
+# <a name="filling-a-list-box-from-a-second-recordset--mfc-data-access"></a>セカンド レコードセットを利用してリスト ボックスを表示する方法 (MFC データ アクセス)
+既定では、1 つのレコード ビューは 1 つのレコードセット オブジェクトに関連付けられ、そのオブジェクトのフィールドがレコード ビューのコントロールに対応付けられます。 場合によっては、レコード ビューにリスト ボックス コントロールまたはコンボ ボックス コントロールを配置して、そこに別の (セカンド) レコードセット オブジェクトの複数の値を設定することが必要となります。 ユーザーは、そのリスト ボックスを使用して、レコード ビューに表示された新しいカテゴリの情報を選択できます。 このトピックでは、いつどのようにこの処理を実行するかについて説明します。  
   
 > [!TIP]
->  コンボ ボックスまたはリスト ボックスにデータ ソースから値を設定すると、処理が遅くなることがあります。  多数のレコードを含むレコードセットからコントロールに値を設定しようとする場合は、注意が必要です。  
+>  コンボ ボックスまたはリスト ボックスにデータ ソースから値を設定すると、処理が遅くなることがあります。 多数のレコードを含むレコードセットからコントロールに値を設定しようとする場合は、注意が必要です。  
   
- このトピックで使用するモデルは、フォームのコントロールに値を設定するメイン レコードセットと、リスト ボックスまたはコンボ ボックスに値を設定するセカンド レコードセットで構成されます。  リスト ボックスから文字列を選択すると、その文字列に基づいてメイン レコードセットのクエリが再実行されるようにプログラミングされています。  次の手順ではコンボ ボックスを使用しますが、リスト ボックスの場合も同様です。  
+ このトピックで使用するモデルは、フォームのコントロールに値を設定するメイン レコードセットと、リスト ボックスまたはコンボ ボックスに値を設定するセカンド レコードセットで構成されます。 リスト ボックスから文字列を選択すると、その文字列に基づいてメイン レコードセットのクエリが再実行されるようにプログラミングされています。 次の手順ではコンボ ボックスを使用しますが、リスト ボックスの場合も同様です。  
   
-#### セカンド レコードセットからコンボ ボックスまたはリスト ボックスの値を設定するには  
+#### <a name="to-fill-a-combo-box-or-list-box-from-a-second-recordset"></a>セカンド レコードセットからコンボ ボックスまたはリスト ボックスの値を設定するには  
   
-1.  レコードセット オブジェクト \(ODBC の場合は [CRecordset](../Topic/CRecordset%20Class.md)、DAO の場合は [CDaoRecordset](../mfc/reference/cdaorecordset-class.md)\) を作成します。  
+1.  レコード セット オブジェクトを作成 ([CRecordset](../mfc/reference/crecordset-class.md)です。  
   
-2.  コンボ ボックス コントロールを表す [CComboBox](../mfc/reference/ccombobox-class.md) オブジェクトへのポインターを取得します。  
+2.  ポインターを取得、 [CComboBox](../mfc/reference/ccombobox-class.md)コンボ ボックス コントロールのオブジェクト。  
   
 3.  コンボ ボックスの以前の内容をすべて空にします。  
   
-4.  レコードセットのすべてのレコードについて、各レコードの文字列に対してそれぞれ [CComboBox::AddString](../Topic/CComboBox::AddString.md) を呼び出し、コンボ ボックスに追加します。  
+4.  レコード セット内のすべてのレコードを移動を呼び出す[ccombobox::addstring](../mfc/reference/ccombobox-class.md#addstring)の現在のレコードをコンボ ボックスに追加する各文字列。  
   
 5.  コンボ ボックスの選択内容を初期化します。  
   
@@ -79,8 +75,8 @@ void CSectionForm::OnInitialUpdate()
   
  この関数では、提供されるコースごとに 1 つのレコードを含むセカンド レコードセット `m_courseSet` と、レコード ビュー クラスに格納された `CComboBox` コントロール `m_ctlCourseList` を使用しています。  
   
- この関数は、ドキュメントから `m_courseSet` を取得して開きます。  次に、`m_ctlCourseList` を空にして、`m_courseSet` を 1 レコードずつ処理します。  各レコードに対してコンボ ボックスの `AddString` メンバー関数が呼び出されて、レコードからコース ID 値が追加されます。  最後に、コンボ ボックスの選択内容が設定されます。  
+ この関数は、ドキュメントから `m_courseSet` を取得して開きます。 次に、`m_ctlCourseList` を空にして、`m_courseSet` を 1 レコードずつ処理します。 各レコードに対してコンボ ボックスの `AddString` メンバー関数が呼び出されて、レコードからコース ID 値が追加されます。 最後に、コンボ ボックスの選択内容が設定されます。  
   
-## 参照  
- [レコード ビュー \(MFC データ アクセス\)](../data/record-views-mfc-data-access.md)   
+## <a name="see-also"></a>関連項目  
+ [レコード ビュー (MFC データ アクセス)](../data/record-views-mfc-data-access.md)   
  [ODBC ドライバーの一覧](../data/odbc/odbc-driver-list.md)

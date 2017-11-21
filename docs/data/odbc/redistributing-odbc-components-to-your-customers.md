@@ -1,48 +1,46 @@
 ---
-title: "ODBC の構成要素の配布 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "コンポーネント [C++]"
-  - "コンポーネント [C++], 配布"
-  - "コンポーネント [C++], 再配布"
-  - "ODBC データ ソース アドミニストレーター"
-  - "ODBC コンポーネント, 再配布"
-  - "ODBC, 配布 (コンポーネントを)"
+title: "お客様の ODBC コンポーネントの再配布 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- ODBC components, redistributing
+- ODBC, distributing components
+- components [C++], distributing
+- ODBC Administrator
+- components [C++]
+- components [C++], redistributing
 ms.assetid: 17b065b4-a307-4b89-99ac-d05831cfab87
-caps.latest.revision: 7
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 861eceef234b77b96179c51979cb7d1c0d09eeeb
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# ODBC の構成要素の配布
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ODBC データ ソース アドミニストレーターの機能をアプリケーションに取り込んだ場合は、これらのプログラムを実行するために必要なファイルも頒布する必要があります。  必要なファイルは、Visual C\+\+ の CD\-ROM の \\OS\\System フォルダーにあります。  同じフォルダーにある Redistrb.wri ファイルと使用許諾契約書の両方に、再頒布できる ODBC ファイルの一覧があります。  
+# <a name="redistributing-odbc-components-to-your-customers"></a>ODBC の構成要素の配布
+Odbc データ ソース アドミニストレーターの機能をアプリケーションに組み込む場合必要がありますもファイルを配布するユーザーに、これらのプログラムを実行しています。 これらの ODBC ファイルは、Visual C++ CD-ROM の \OS\System ディレクトリに存在します。 Redistrb.wri ファイルと同じディレクトリに使用許諾契約書は、再配布する ODBC ファイルの一覧を含みます。  
   
- ODBC ドライバーをアプリケーションに同梱する場合は、必ずこのファイルまたはライセンス確認書を調べてください。  DLL などのファイルについても、どのファイルをユーザーに送るかを調べる必要があります。  
+ 出荷する ODBC ドライバーのマニュアルを参照します。 出荷するには、Dll とその他のファイルを確認する必要があります。 参照する必要がありますも[ODBC の構成要素を顧客に](../../data/odbc/redistributing-odbc-components-to-your-customers.md)、ODBC コンポーネントを再配布する方法について説明しています。  
   
- ODBC コンポーネントと ODBC ドライバーについては、「[データベース サポートのインストール](../../data/installing-database-support-mfc-atl.md)」を参照してください。また、ActiveX コントロールの再頒布方法については、「[コントロールを再配布する](../Topic/Redistributing%20Controls.md)」を参照してください。  
+ さらに、ほとんどの場合にその他の 1 つのファイルを含める必要があります。 Odbccr32.dll は、ODBC カーソル ライブラリです。 このライブラリは、前方と後方スクロールの機能レベル 1 のドライバーを使用します。 スナップショットのサポートの機能も提供します。 ODBC カーソル ライブラリの詳細については、次を参照してください。 [ODBC: ODBC カーソル ライブラリ](../../data/odbc/odbc-the-odbc-cursor-library.md)です。  
   
- ほとんどの場合は、ODBC カーソル ライブラリ用の ODBCCR32.DLL というファイルの頒布も必要です。  Odbccr32.dll は ODBC カーソル ライブラリです。  このライブラリは、レベル 1 ドライバーに前方および後方のスクロール機能を提供します。  また、スナップショットのサポートに必要な機能も提供します。  ODBC カーソル ライブラリの詳細については、「[ODBC : ODBC カーソル ライブラリ](../../data/odbc/odbc-the-odbc-cursor-library.md)」を参照してください。  
+ 次のトピックでは、データベース クラスと ODBC を使用してについて詳しく説明します。  
   
- ODBC をデータベース クラスと一緒に使用する方法の詳細については、次のトピックを参照してください。  
+-   [ODBC: ODBC カーソル ライブラリ](../../data/odbc/odbc-the-odbc-cursor-library.md)  
   
--   [ODBC : ODBC カーソル ライブラリ](../../data/odbc/odbc-the-odbc-cursor-library.md)  
+-   [ODBC: ODBC データ ソースの設定](../../data/odbc/odbc-configuring-an-odbc-data-source.md)  
   
--   [ODBC : ODBC データ ソースの設定](../../data/odbc/odbc-configuring-an-odbc-data-source.md)  
+-   [ODBC: ODBC API 関数の直接呼び出し](../../data/odbc/odbc-calling-odbc-api-functions-directly.md)  
   
--   [ODBC : ODBC API 関数の直接呼び出し](../../data/odbc/odbc-calling-odbc-api-functions-directly.md)  
-  
-## 参照  
+## <a name="see-also"></a>関連項目  
  [ODBC の基礎](../../data/odbc/odbc-basics.md)   
  [ODBC データ ソース アドミニストレーター](../../data/odbc/odbc-administrator.md)

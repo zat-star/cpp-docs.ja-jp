@@ -1,32 +1,31 @@
 ---
-title: "B. Stubs for Run-time Library Functions | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
+title: "B:  ランタイム ライブラリ関数のスタブ |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
 ms.assetid: fdfdabe0-f678-4551-80d5-827b62354427
-caps.latest.revision: 6
-caps.handback.revision: 6
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "6"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: e360e075cf8c721b9357746b2afa3a08df3c851a
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# B. Stubs for Run-time Library Functions
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-ここではOpenMP C および C\+\+ API で定義されているランタイム ライブラリ関数はスタブを提供します。  スタブはOpenMP C および C\+\+ の API をサポートしないプラットフォームへの移植性に用意されています。  これらのプラットフォームではOpenMP のプログラムを含むライブラリを使用するこれらの関数のスタブ リンクする必要があります。  スタブ プログラムの関数はOpenMP のディレクティブは無視されますを前提としています。  したがってシリアルセマンティクスをエミュレートします。  
+# <a name="b-stubs-for-run-time-library-functions"></a>B:  ランタイム ライブラリ関数のスタブ
+このセクションでは、OpenMP C および C++ API で定義されているランタイム ライブラリ関数のスタブを提供します。 OpenMP C および C++ API をサポートしていないプラットフォームに移植性を有効にする、スタブが提供されます。 これらのプラットフォームでは、OpenMP プログラムは、これらのスタブ関数を含むライブラリにリンクする必要があります。 スタブ関数では、OpenMP プログラム内のディレクティブを無視することを前提としています。 そのため、シリアル セマンティクスがエミュレートします。  
   
 > [!NOTE]
->  ロック機能に表示されるロック変数はこれらの関数によって排他的にアクセスする必要があります。  これはユーザーのプログラムで初期化されたときまたは別の方法で変更しないでください。  ユーザーはスタブ関数が使用する設定に基づいてロックの実装ではOpenMP C および C\+\+ の実装で使用される機能について検討する必要があります。  
+>  ロック関数で表示されるロック変数は、これらの関数からのみアクセスされる必要があります。 これは、初期化したりしないでそれ以外の場合、ユーザーのプログラムで変更します。 ユーザーは、スタブ関数によって使用されるスキームに基づいてロックを実装する OpenMP C および C++ の実装で使用されるメカニズムを想定しないようにします。  
   
-### コード  
+### <a name="code"></a>コード  
   
 ```  
 #include <stdio.h>  

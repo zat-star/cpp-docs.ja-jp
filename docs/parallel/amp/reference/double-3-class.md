@@ -4,8 +4,7 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-windows
+ms.technology: cpp-windows
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
@@ -78,33 +77,17 @@ f1_keywords:
 - amp_short_vectors/Concurrency::graphics::double_3::get_yx
 - amp_short_vectors/Concurrency::graphics::double_3::rbg
 - amp_short_vectors/Concurrency::graphics::double_3::get_yxz
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: baeb3ff0-2862-4c81-857e-b1a4c085be25
-caps.latest.revision: 10
+caps.latest.revision: "10"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
-ms.translationtype: Machine Translation
-ms.sourcegitcommit: 5faef5bd1be6cc02d6614a6f6193c74167a8ff23
-ms.openlocfilehash: 4ead4c4bd9aac91c4a0db7e2dfbc4976664120bd
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/17/2017
-
+ms.openlocfilehash: 50f85b5582fbafa3d79a611f92009d9254b58101
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="double3-class"></a>double_3 クラス
 3 個の倍精度浮動小数点数の short ベクターを表します。  
@@ -174,13 +157,13 @@ class double_3;
   
 |名前|説明|  
 |----------|-----------------|  
-|double_3:-||  
+|double_3::operator-||  
 |double_3:--||  
 |double_3::operator * =||  
 |double_3::operator/=||  
 |double_3::operator++||  
-|double_3::operator + = 演算子||  
-|double_3::operator =||  
+|double_3::operator + =||  
+|double_3::operator = =||  
 |double_3::operator-=||  
   
 ### <a name="public-constants"></a>パブリック定数  
@@ -291,7 +274,7 @@ explicit inline double_3(
  1 の要素を初期化する値。  
   
  `_V2`  
- 2 の要素を初期化する値。  
+ 2 要素を初期化する値。  
   
  `_V`  
  初期化の値です。  
@@ -307,4 +290,3 @@ static const int size = 3;
   
 ## <a name="see-also"></a>関連項目  
  [Concurrency::graphics 名前空間](concurrency-graphics-namespace.md)
-

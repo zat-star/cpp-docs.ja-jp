@@ -1,46 +1,46 @@
 ---
-title: "スキーマ行セットのサポート | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "OLE DB コンシューマー テンプレート, スキーマ行セット"
-  - "OLE DB プロバイダー, スキーマ行セット"
-  - "OLE DB, スキーマ行セット"
-  - "スキーマ行セット"
+title: "スキーマ行セットのサポート |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- schema rowsets
+- OLE DB consumer templates, schema rowsets
+- OLE DB providers, schema rowsets
+- OLE DB, schema rowsets
 ms.assetid: 71c5e14b-6e33-4502-a2d9-a1dc6d6e9ba0
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: d3cd1a75df607678546c53b53df134f45eb87026
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スキーマ行セットのサポート
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-スキーマ行セットを使用すると、コンシューマーは、基になる構造やスキーマを知らなくてもデータ ストアに関する情報を取得できます。  たとえば、データ ストア内のテーブルは、ユーザー定義の階層で構成されている場合があります。この場合、スキーマに関する情報を得るにはスキーマを読み取る以外に方法はありません。別の例として、Visual C\+\+ の各種ウィザードはスキーマ行セットを使用してコンシューマーのアクセサーを生成します。コンシューマーが情報を取得できるように、プロバイダーのセッション オブジェクトは [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx) インターフェイスにメソッドを公開します。  Visual C\+\+ アプリケーションでは、[IDBSchemaRowsetImpl](../../data/oledb/idbschemarowsetimpl-class.md) クラスを使用して **IDBSchemaRowset** を実装します。  
+# <a name="supporting-schema-rowsets"></a>スキーマ行セットのサポート
+スキーマ行セットでは、コンシューマーはその基になる構造体、またはスキーマを知らなくてもデータ ストアの情報を取得できるようにします。 たとえば、データ ストアには、そのため、読み込むことを除く、スキーマの知識を確認する方法ではありませんは、ユーザー定義の階層に編成されるテーブルがあります。 (別の例としてメモ、Visual C ウィザードでスキーマ行セットを使用して、コンシューマーのアクセサーを生成することです。)これを行うコンシューマーを許可するには、プロバイダーのセッション オブジェクトでメソッドを公開、 [IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)インターフェイスです。 Visual C アプリケーションで使用して、 [IDBSchemaRowsetImpl](../../data/oledb/idbschemarowsetimpl-class.md)を実装するクラス**IDBSchemaRowset**です。  
   
- `IDBSchemaRowsetImpl` は、以下のメソッドをサポートします。  
+ `IDBSchemaRowsetImpl`次のメソッドをサポートしています。  
   
--   [CheckRestrictions](../../data/oledb/idbschemarowsetimpl-checkrestrictions.md) は、スキーマ行セットに対する制約の有効性を調べます。  
+-   [CheckRestrictions](../../data/oledb/idbschemarowsetimpl-checkrestrictions.md)スキーマ行セットに対して制限の妥当性をチェックします。  
   
--   [CreateSchemaRowset](../../data/oledb/idbschemarowsetimpl-createschemarowset.md) は、テンプレート パラメーターで指定されたオブジェクトの COM オブジェクト作成関数を実装します。  
+-   [CreateSchemaRowset](../../data/oledb/idbschemarowsetimpl-createschemarowset.md) COM オブジェクトの作成関数をテンプレート パラメーターで指定されたオブジェクトを実装します。  
   
--   [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md) は、特定のスキーマ行セットでユーザーがサポートする制約を指定します。  
+-   [SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md)特定のスキーマ行セットをサポートする制限を指定します。  
   
--   [IDBSchemaRowset::GetRowset](../../data/oledb/idbschemarowsetimpl-getrowset.md) は、インターフェイスから継承したスキーマ行セットを返します。  
+-   [Idbschemarowset::getrowset](../../data/oledb/idbschemarowsetimpl-getrowset.md) (インターフェイスから継承) スキーマ行セットを返します。  
   
--   [GetSchemas](../../data/oledb/idbschemarowsetimpl-getschemas.md) は、インターフェイスから継承した `IDBSchemaRowsetImpl::GetRowset` を使ってアクセスできるスキーマ行セットの一覧を返します。  
+-   [GetSchemas](../../data/oledb/idbschemarowsetimpl-getschemas.md)によってアクセス可能なスキーマ行セットの一覧を返します`IDBSchemaRowsetImpl::GetRowset`(インターフェイスから継承)。  
   
-## ATL OLE DB プロバイダー ウィザードのサポート  
- ATL OLE DB プロバイダー ウィザードは、セッション ヘッダー ファイルに以下の 3 つのスキーマ クラスを作成します。  
+## <a name="atl-ole-db-provider-wizard-support"></a>ATL OLE DB プロバイダー ウィザードでサポート  
+ ATL OLE DB プロバイダー ウィザードでは、セッションのヘッダー ファイルに次の 3 つのスキーマ クラスを作成します。  
   
 -   **C** *ShortName* **SessionTRSchemaRowset**  
   
@@ -48,25 +48,25 @@ caps.handback.revision: 11
   
 -   **C** *ShortName* **SessionPTSchemaRowset**  
   
- これらのクラスは、スキーマ情報に関するコンシューマーの要求に応答します。OLE DB 仕様ではこれらの 3 つのスキーマ行セットをサポートするように指定されています。  
+ これらのクラスがスキーマについて; コンシューマーの要求に応答します。OLE DB 仕様は、これらの 3 つのスキーマ行セットがサポートされている必要がありますに注意してください。  
   
--   **C** *ShortName* **SessionTRSchemaRowset** は、テーブル情報 \(`DBSCHEMA_TABLES` スキーマ行セット\) の要求を処理します。  
+-   **C** *ShortName* **SessionTRSchemaRowset**テーブル情報の要求を処理 (、`DBSCHEMA_TABLES`スキーマ行セット)。  
   
--   **C** *ShortName* **SessionColSchemaRowset** は、列情報 \(**DBSCHEMA\_COLUMNS** スキーマ行セット\) の要求を処理します。  ウィザードは、これらのクラスのサンプル実装を提供します。この実装は DOS プロバイダーのスキーマ情報を返します。  
+-   **C** *ShortName* **SessionColSchemaRowset**列情報の要求を処理 (、 **DBSCHEMA_COLUMNS**スキーマ行セット)。 ウィザードでは、これらのクラスでは、DOS プロバイダーのスキーマ情報を返すサンプル実装を提供します。  
   
--   **C** *ShortName* **SessionPTSchemaRowset** は、プロバイダーの種類に関するスキーマ情報 \(**DBSCHEMA\_PROVIDER\_TYPES** スキーマ行セット\) の要求を処理します。  ウィザードに用意されている既定の実装は `S_OK` を返します。  
+-   **C** *ShortName* **SessionPTSchemaRowset**プロバイダーの種類に関するスキーマ情報の要求を処理 (、 **DBSCHEMA_PROVIDER_TYPES**スキーマ行セット)。 ウィザードによって提供される既定の実装を返します`S_OK`です。  
   
- これらのクラスをカスタマイズして、プロバイダーに適したスキーマ情報を処理できます。  
+ これらのクラスは、プロバイダーに対応するスキーマ情報を処理するをカスタマイズすることができます。  
   
--   **C** *ShortName* **SessionTRSchemaRowset** では、カタログ、テーブル、および記述フィールド \(**trData.m\_szType**、**trData.m\_szTable**、**trData.m\_szDesc**\) を指定する必要があります。  ウィザードで生成された例では、1 行 \(テーブル\) だけを使用します。  他のプロバイダーは複数のテーブルを返すことがあります。  
+-   **C***ShortName***SessionTRSchemaRowset**、カタログ、テーブル、および説明のフィールドに入力する必要があります (**trData.m_szType**、**trData.m_szTable**、および**trData.m_szDesc**)。 ウィザードで生成された例は、1 つだけ行 (テーブル) を使用します。 その他のプロバイダーは、1 つ以上のテーブルを返す可能性があります。  
   
--   **C** *ShortName* **SessionColSchemaRowset** では、テーブルの名前を **DBID** として渡します。  
+-   **C***ShortName***SessionColSchemaRowset**、として、テーブルの名前を渡す、 **DBID**です。  
   
-## 制約の設定  
- スキーマ行セットのサポートで重要な概念は、制約の設定です。これは、`SetRestrictions` を使用して行います。  制約により、コンシューマーは一致する行だけをフェッチできます。たとえば、テーブル "MyTable" 内のすべての列を検索します。  制約は省略できます。制約が 1 つもサポートされていない場合 \(既定\) は、常にすべてのデータが返されます。  制約をサポートするプロバイダーの例については、[UpdatePV](http://msdn.microsoft.com/ja-jp/c8bed873-223c-4a7d-af55-f90138c6f38f) サンプルに関するトピックを参照してください。  
+## <a name="setting-restrictions"></a>制限を設定します。  
+ スキーマ行セットのサポートで重要な概念を設定すると、制限事項を使用して操作を行う`SetRestrictions`です。 制限により、コンシューマーは一致する行だけをフェッチできます (たとえば、テーブル "MyTable" 内のすべての列を検索します)。 制限は省略可能であり、制限がサポートされていない場合 (既定)、常にすべてのデータが返されます。 制約をサポートするプロバイダーの例は、次を参照してください。、 [UpdatePV](http://msdn.microsoft.com/en-us/c8bed873-223c-4a7d-af55-f90138c6f38f)サンプルです。  
   
-## スキーマ マップの設定  
- 次のようなスキーマ マップを UpdatePV の Session.h に設定します。  
+## <a name="setting-up-the-schema-map"></a>スキーマ マップを設定します。  
+ UpdatePV で Session.h のようにスキーマ マップを設定します。  
   
 ```  
 BEGIN_SCHEMA_MAP(CUpdateSession)  
@@ -76,9 +76,9 @@ BEGIN_SCHEMA_MAP(CUpdateSession)
 END_SCHEMA_MAP()  
 ```  
   
- **IDBSchemaRowset** をサポートするには、`DBSCHEMA_TABLES`、**DBSCHEMA\_COLUMNS**、および **DBSCHEMA\_PROVIDER\_TYPES** をサポートする必要があります。  スキーマ行セットは任意に追加できます。  
+ サポートする**IDBSchemaRowset**、サポートする必要があります`DBSCHEMA_TABLES`、 **DBSCHEMA_COLUMNS**、および**DBSCHEMA_PROVIDER_TYPES**です。 各自の判断で、追加のスキーマ行セットを追加できます。  
   
- スキーマ行セット クラスは `Execute` メソッドで宣言します。UpdatePV の `CUpdateSessionTRSchemaRowset` の例を示します。  
+ スキーマ行セット クラスの宣言、`Execute`などのメソッド`CUpdateSessionTRSchemaRowset`UpdatePV で。  
   
 ```  
 class CUpdateSessionTRSchemaRowset :   
@@ -90,32 +90,32 @@ class CUpdateSessionTRSchemaRowset :
                     ULONG cRestrictions, const VARIANT* rgRestrictions)  
 ```  
   
- `CUpdateSession` は `IDBSchemaRowsetImpl` を継承するため、すべての制約処理メソッドを持ちます。  `CSchemaRowsetImpl` を使用して、上記のスキーマ マップの一覧にある 3 つの子クラス \(`CUpdateSessionTRSchemaRowset`、`CUpdateSessionColSchemaRowset`、および `CUpdateSessionPTSchemaRowset`\) を宣言します。  これらの子クラスには、それぞれの制約 \(検索条件\) のセットを処理する `Execute` メソッドがあります。  各 `Execute` メソッドは、`cRestrictions` パラメーターと `rgRestrictions` パラメーターの値を比較します。  これらのパラメーターの説明については、「[IDBSchemaRowsetImpl::SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md)」を参照してください。  
+ なお`CUpdateSession`から継承`IDBSchemaRowsetImpl`メソッドを処理するすべての制限があるため、します。 使用して`CSchemaRowsetImpl`、(上記のスキーマ マップに表示)、3 つの子クラスを宣言します。 `CUpdateSessionTRSchemaRowset`、 `CUpdateSessionColSchemaRowset`、および`CUpdateSessionPTSchemaRowset`です。 これらの各子クラスが、`Execute`制約 (検索条件) のそれぞれのセットを処理するメソッド。 各`Execute`メソッドの値を比較し、`cRestrictions`と`rgRestrictions`パラメーター。 これらのパラメーターの説明を参照して[SetRestrictions](../../data/oledb/idbschemarowsetimpl-setrestrictions.md)です。  
   
- 特定のスキーマ行セットに対応している制限の種類については、[!INCLUDE[winsdkshort](../../atl/reference/includes/winsdkshort_md.md)] の『OLE DB Programmer's Reference』で、「[IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)」にあるスキーマ行セット GUID の表を参照してください。  
+ 特定のスキーマ行セットに対応する制限についての詳細については、スキーマ行セット Guid の表を参照してくださいで[IDBSchemaRowset](https://msdn.microsoft.com/en-us/library/ms713686.aspx)で、 *OLE DB プログラマーズ リファレンス*で、Windows SDK。  
   
- たとえば、`DBSCHEMA_TABLES` で **TABLE\_NAME** 制約をサポートした場合は、以下の操作を行います。  
+ たとえば、サポートする場合、 **TABLE_NAME**に制限`DBSCHEMA_TABLES`、するは、次の操作します。  
   
- 最初に、`DBSCHEMA_TABLES` を検索し、次の 4 つの制約を順番にサポートしていることを確認します。  
+ 最初に、検索`DBSCHEMA_TABLES`し (順序で) の 4 つの制限をサポートしていることを確認します。  
   
-|スキーマ行セット制約|制約値|  
-|----------------|---------|  
-|**TABLE\_CATALOG**|0x1 \(バイナリ 1\)|  
-|**TABLE\_SCHEMA**|0x2 \(バイナリ 10\)|  
-|**TABLE\_NAME**|0x4 \(バイナリ 100\)|  
-|**TABLE\_TYPE**|0x8 \(バイナリ 1000\)|  
+|スキーマ行セットの制限|制限値|  
+|-------------------------------|-----------------------|  
+|**TABLE_CATALOG**|0x1 (バイナリ 1)|  
+|**TABLE_SCHEMA、**|0x2 (バイナリ 10)|  
+|**TABLE_NAME**|0x4 (バイナリ 100)|  
+|**TABLE_TYPE**|0x8 (バイナリ 1000)|  
   
- 各制約用に 1 ビットの値が用意されています。  サポートするのは **TABLE\_NAME** だけなので、`rgRestrictions` 要素に 0x4 を返します。  **TABLE\_CATALOG** と **TABLE\_NAME** をサポートした場合は、0x5 \(バイナリ 101\) を返します。  
+ 次に、1 ビットごとの制限があることに注意してください。 サポートするため**TABLE_NAME**のみ、0x4 でを返すと、`rgRestrictions`要素。 サポートする場合**TABLE_CATALOG**と**TABLE_NAME**0x5 (バイナリ 101) を返すとします。  
   
- 既定では、実装はすべての要求に 0 \(制約をサポートしない\) を返します。  UpdatePV は、制約をサポートしないプロバイダーの例です。  
+ 既定では、実装は、すべての要求の (制約をサポートしません) 0 を返します。 UpdatePV では、制約をサポートするプロバイダーの例を示します。  
   
-### 例  
- このコードは、[UpdatePV](http://msdn.microsoft.com/ja-jp/c8bed873-223c-4a7d-af55-f90138c6f38f) サンプルから引用しました。  UpdatePv は、3 つの必須スキーマ行セット \(`DBSCHEMA_TABLES`、**DBSCHEMA\_COLUMNS**、および **DBSCHEMA\_PROVIDER\_TYPES**\) をサポートします。  このトピックでは、プロバイダーでスキーマ サポートを実装する方法の例として、**DBSCHEMA\_TABLE** 行セットの実装を説明します。  
+### <a name="example"></a>例  
+ このコードはから取得、 [UpdatePV](http://msdn.microsoft.com/en-us/c8bed873-223c-4a7d-af55-f90138c6f38f)サンプルです。 UpdatePv は、次の 3 つの必要なスキーマ行セットをサポートしています: `DBSCHEMA_TABLES`、 **DBSCHEMA_COLUMNS**、および**DBSCHEMA_PROVIDER_TYPES**です。 プロバイダーでスキーマのサポートを実装する方法の例は、としてこのトピックでを実装する、 **DBSCHEMA_TABLE**行セット。  
   
 > [!NOTE]
->  サンプル コードは、ここに記載されているコードと異なる場合がありますが、その場合はサンプル コードの方が最新バージョンであると考えてください。  
+>  サンプル コードがここでは記載されている内容と異なる場合があります。サンプル コードは、最新のバージョンと見なす必要があります。  
   
- スキーマ サポートを追加する最初の手順として、サポートする制約を決定します。  スキーマ行セットで使用できる制約を判断するために、OLE DB 仕様で **IDBSchemaRowset** の定義を参照します。  主要な定義に続いて、スキーマ行セット名、制約数、および制限列が記載されたテーブルを参照します。  サポートするスキーマ行セットを選択し、制約数と制限列をメモしておきます。  たとえば、`DBSCHEMA_TABLES` は 4 つの制約 \(**TABLE\_CATALOG**、**TABLE\_SCHEMA**、**TABLE\_NAME**、および **TABLE\_TYPE**\) をサポートします。  
+ スキーマのサポートを追加する最初の手順をサポートする制限を判断します。 OLE DB 仕様の定義で見て、調べるには、スキーマ行セットの制限がある、 **IDBSchemaRowset**です。 次の主要な定義には、スキーマ行セットの名前、制限事項、数、および制限列を含むテーブル参照してください。 サポートし、制限事項と制限列の数のメモするスキーマ行セットを選択します。 たとえば、 `DBSCHEMA_TABLES` 4 つの制限をサポートしています (**TABLE_CATALOG**、 **、table_schema、**、 **TABLE_NAME**、および**TABLE_TYPE**):  
   
 ```  
 void SetRestrictions(ULONG cRestrictions, GUID* rguidSchema,   
@@ -134,25 +134,25 @@ void SetRestrictions(ULONG cRestrictions, GUID* rguidSchema,
 }  
 ```  
   
- 各ビットは、それぞれ制限列を表します。  制約をサポートする場合 \(つまり、制約条件によりクエリを実行できるようにする場合\) は、そのビットを 1 にセットします。  制約をサポートしない場合は、そのビットを 0 にセットします。  上のコード行では、UpdatePV は `DBSCHEMA_TABLES` 行セットで **TABLE\_NAME** 制約と **TABLE\_TYPE** 制約をサポートします。  これらは、3 番目 \(ビット マスク 100\) と 4 番目 \(ビット マスク 1000\) の制約です。  したがって、UpdatePv のビットマスクは 1100 \(0x0C\) になります。  
+ ビットは、それぞれの制限列を表します。 制約をサポートする場合は、クエリによって)、そのビットを 1 に設定します。 制約をサポートしない場合は、そのビットを 0 に設定します。 上記のコードの行から UpdatePV サポートしている、 **TABLE_NAME**と**TABLE_TYPE**に関する制限事項、`DBSCHEMA_TABLES`行セット。 これらは、(ビット マスク 100) の 3 番目と 4 番目の (ビット マスク 1000) 制約。 そのため、対応するビットマスクの UpdatePv は 1100 (0x0C) です。  
   
 ```  
 if (InlineIsEqualGUID(rguidSchema[l], DBSCHEMA_TABLES))  
     rgRestrictions[l] = 0x0C;  
 ```  
   
- 次の `Execute` 関数は、通常の行セットの場合と同様です。  3 つの引数 \(`pcRowsAffected`、`cRestrictions`、および `rgRestrictions`\) があります。  `pcRowsAffected` 変数は、プロバイダーがスキーマ行セットの行数を返すための出力パラメーターです。  `cRestrictions` パラメーターは、コンシューマーがプロバイダーに渡した制約数を保持する入力パラメーターです。  `rgRestrictions` パラメーターは、制約値を保持する **VARIANT** 値の配列です。  
+ 次`Execute`関数は、正規行セットのと似ています。 次の 3 つの引数がある: `pcRowsAffected`、 `cRestrictions`、および`rgRestrictions`です。 `pcRowsAffected`変数は、出力パラメーターをプロバイダーがスキーマ行セット内の行数を返すことができます。 `cRestrictions`パラメーターは、コンシューマーによってプロバイダーに渡される制限の番号を含む入力パラメーターです。 `rgRestrictions`パラメーターは配列の**バリアント**を制限値を含む値です。  
   
 ```  
 HRESULT Execute(DBROWCOUNT* pcRowsAffected, ULONG cRestrictions,   
                 const VARIANT* rgRestrictions)  
 ```  
   
- `cRestrictions` 変数は、プロバイダーによってサポートされているかどうかに関係なく、スキーマ行セットの制約の合計数に基づいています。  UpdatePv は、2 つの制約 \(3 番目と 4 番目\) をサポートするため、このコードでは、3 以上の `cRestrictions` 値だけを検索します。  
+ `cRestrictions`変数は、プロバイダーがそれをサポートするかどうかに関係なく、スキーマ行セットの制限の合計数に基づいています。 UpdatePv では、2 つの制限 (3 番目と 4 分) をサポートするため次のコードだけを検索、`cRestrictions`値より大きいか等しいを 3 つまでです。  
   
- **TABLE\_NAME** 制約の値は、`rgRestrictions[2]` に格納されます。0 から始まる配列の 3 番目の制約は 2 になります。  制約を実際にサポートするには、その制約が `VT_EMPTY` でないことを確認する必要があります。  **VT\_NULL** は `VT_EMPTY` とは異なります。  **VT\_NULL** は有効な制約値を表します。  
+ 値、 **TABLE_NAME**に制限が格納されている`rgRestrictions[2]`(ここでも、0 から始まる配列内の 3 番目の制限は 2)。 制限がないことを確認する必要があります`VT_EMPTY`実際にサポートするようにします。 なお**VT_**は等しくありません`VT_EMPTY`です。 **VT_**有効な制限値を指定します。  
   
- テーブル名の UpdatePv 定義は、テキスト ファイルの絶対パス名です。  制約値を抽出し、ファイルのオープンを試みることにより、そのファイルが実際に存在することを確認します。  ファイルが存在しない場合は、`S_OK` を返します。  これは少し奇妙に思えますが、コードがコンシューマーに対して実際に示しているのは、指定された名前でサポートされているテーブルがなかったということです。  この `S_OK` は、コードが正常に実行されたことを意味します。  
+ テーブル名の UpdatePv 定義とは、テキスト ファイルへの完全修飾パス名です。 制限値を抽出しようと、ファイルを開き、ファイルが実際に存在することを確認します。 ファイルが存在しない場合は、返す`S_OK`です。 これは、下位ビットですが、指定された名前によってサポートされているテーブルが含まれていなかったことは、どのようなコードが実際にコンシューマーを示しています。 `S_OK`戻り値はことに正しく実行されるコードを意味します。  
   
 ```  
 USES_CONVERSION;  
@@ -189,7 +189,7 @@ if (cRestrictions >= 3 && rgRestrictions[2].vt != VT_EMPTY)
 }  
 ```  
   
- 4 番目の制約 \(**TABLE\_TYPE**\) のサポートは、3 番目の制約のサポートと同様です。  値が `VT_EMPTY` でないことを確認します。  この制約は、テーブルタイプ \(**TABLE**\) だけを返します。  `DBSCHEMA_TABLES` に対して有効な値を判断するには、『OLE DB Programmer's Reference』の「Appendix B: Schema Rowsets」で、「**TABLES** rowset」のセクションを参照してください。  
+ 4 番目の制限をサポートする (**TABLE_TYPE**) は、3 番目の制限に似ています。 値がないことを確認するチェック`VT_EMPTY`です。 この制限は、テーブル型のみを返します**テーブル**です。 有効な値を決定する、 `DBSCHEMA_TABLES`、付録 B のファイルの場所、 *OLE DB プログラマーズ リファレンス*で、**テーブル**行セットのセクションでします。  
   
 ```  
 // TABLE_TYPE restriction:  
@@ -208,7 +208,7 @@ if (cRestrictions >=4 && rgRestrictions[3].vt != VT_EMPTY)
 }  
 ```  
   
- ここでは、行セットの行エントリが実際に作成されます。  変数 `trData` は、OLE DB プロバイダー テンプレートに定義されている構造体 **CTABLESRow** に対応します。  **CTABLESRow** は、OLE DB 仕様の付録 B にある **TABLES** 行セット定義に対応します。  一度にサポートできるのは 1 つのテーブルだけなので、追加できる行も 1 行だけです。  
+ これは、行セットの行エントリを実際に作成します。 変数`trData`に対応する**CTABLESRow**、OLE DB プロバイダー テンプレートで定義されている構造体。 **CTABLESRow**に対応する、**テーブル**OLE DB 仕様の付録 B の行セットの定義。 のみ、一度に 1 つのテーブルをサポートできるため、追加する 1 つの行があるだけです。  
   
 ```  
 // Bring over the data:  
@@ -217,7 +217,7 @@ wcspy_s(trData.m_szDesc, OLESTR("The Directory Table"), 19);
 wcsncpy_s(trData.m_szTable, T2OLE(szFile), _TRUNCATE());  
 ```  
   
- UpdatePV は、**TABLE\_NAME**、**TABLE\_TYPE**、および **DESCRIPTION** の 3 列だけを設定します。  情報を取得する列をメモしておく必要があります。`GetDBStatus` を実装する場合にこの情報が必要になるためです。  
+ UpdatePV のみの 3 つの列の設定: **TABLE_NAME**、 **TABLE_TYPE**、および**説明**です。 実装する場合、この情報が必要なので、情報を返す列のメモをする必要があります`GetDBStatus`:  
   
 ```  
     _ATLTRY  
@@ -235,7 +235,7 @@ wcsncpy_s(trData.m_szTable, T2OLE(szFile), _TRUNCATE());
 }  
 ```  
   
- `GetDBStatus` 関数は、スキーマ行セットを適切に動作させるために重要です。  **TABLES** 行セットのすべての列のデータを返すわけではないため、データを返す \(または返さない\) 列を指定する必要があります。  
+ `GetDBStatus`関数は、スキーマ行セットの適切な操作を非常に重要です。 各列のデータを返さないため、**テーブル**行セット、のどの列のデータを返すと、これがないを指定する必要があります。  
   
 ```  
 virtual DBSTATUS GetDBStatus(CSimpleRow* , ATLCOLUMNINFO* pColInfo)  
@@ -256,13 +256,13 @@ virtual DBSTATUS GetDBStatus(CSimpleRow* , ATLCOLUMNINFO* pColInfo)
 }  
 ```  
   
- `Execute` 関数では、**TABLES** 行セットの **TABLE\_NAME**、**TABLE\_TYPE**、および **DESCRIPTION** の各フィールドについてのデータを返します。OLE DB 仕様の付録 B を参照して、フィールドを上から順に数えると、これらが 3、4、および 6 番目にあることがわかります。  これらの各列について、**DBSTATUS\_S\_OK** を返します。  その他すべての列については、**DBSTATUS\_S\_ISNULL** を返します。  コンシューマーは、返された値が **NULL** かどうかを認識しない場合があるため、このステータスを返すことは重要です。  ここでも、**NULL** 値は空値のと同等ではないことに注意してください。  
+ `Execute`関数のデータを返します、 **TABLE_NAME**、 **TABLE_TYPE**、および**説明**からのフィールド、**テーブル**行セット、OLE DB 仕様の「付録 B で検索して序数 3、4、および 6 である (先頭からカウント ダウン) を決定します。 これらの列のそれぞれについて、返す**DBSTATUS_S_OK**です。 その他のすべての列を返す**DBSTATUS_S_ISNULL**です。 この状態を返すに重要で、コンシューマーは、返された値がであるため**NULL**または、それ以外です。 なお、 **NULL**空のと同じではありません。  
   
- OLE DB スキーマ行セット インターフェイスの詳細については、『OLE DB Programmer's Reference』の [IDBSchemaRowset](../../data/oledb/idbschemarowsetimpl-class.md) インターフェイスに関するトピックを参照してください。  
+ OLE DB スキーマ行セット インターフェイスの詳細については、次を参照してください。、 [IDBSchemaRowset](../../data/oledb/idbschemarowsetimpl-class.md) OLE DB プログラマーズ リファレンスのインターフェイスです。  
   
- コンシューマーが **IDBSchemaRowset** メソッドを使用する方法については、「[スキーマ行セットを使用したメタデータの取得](../../data/oledb/obtaining-metadata-with-schema-rowsets.md)」を参照してください。  
+ コンシューマーが使用する方法について**IDBSchemaRowset**メソッドを参照してください[のスキーマ行セットのメタデータの取得](../../data/oledb/obtaining-metadata-with-schema-rowsets.md)です。  
   
- スキーマ行セットをサポートするプロバイダーの例については、[UpdatePV](http://msdn.microsoft.com/ja-jp/c8bed873-223c-4a7d-af55-f90138c6f38f) サンプルを参照してください。  
+ スキーマ行セットをサポートするプロバイダーの例は、次を参照してください。、 [UpdatePV](http://msdn.microsoft.com/en-us/c8bed873-223c-4a7d-af55-f90138c6f38f)サンプルです。  
   
-## 参照  
- [高度なプロバイダー手法](../Topic/Advanced%20Provider%20Techniques.md)
+## <a name="see-also"></a>関連項目  
+ [高度なプロバイダー手法](../../data/oledb/advanced-provider-techniques.md)

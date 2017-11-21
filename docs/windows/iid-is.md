@@ -1,32 +1,30 @@
 ---
-title: "iid_is | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.iid_is"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "iid_is attribute"
+title: "iid_is |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.iid_is
+dev_langs: C++
+helpviewer_keywords: iid_is attribute
 ms.assetid: 2f9b42a9-7130-4b08-9b1e-0d5d360e10ff
-caps.latest.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 9
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: c2f4ccdf469ac41c6313626cc80e2256a50e7782
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# iid_is
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-指す COM インターフェイスの IID をインターフェイス ポインターを指定します。  
+# <a name="iidis"></a>iid_is
+インターフェイス ポインターによって指さ COM インターフェイスの IID を指定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -35,15 +33,15 @@ caps.handback.revision: 9
 ) ]  
 ```  
   
-#### パラメーター  
- *expression*  
- COM インターフェイスの IID を指定する C\+\+. の言語の式はインターフェイス ポインターが指す。  
+#### <a name="parameters"></a>パラメーター  
+ *式*  
+ インターフェイス ポインターが指す、COM インターフェイスの IID を指定する C 言語の式。  
   
-## 解説  
- **iid\_is** C\+\+ 属性に [iid\_is](http://msdn.microsoft.com/library/windows/desktop/aa367044) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Iid_is** C++ 属性と同じ機能を持つ、 [iid_is](http://msdn.microsoft.com/library/windows/desktop/aa367044) MIDL 属性。  
   
-## 使用例  
- 次のコードは **iid\_is** の使用方法を示します :  
+## <a name="example"></a>例  
+ 次のコードを使用する示します**iid_is**:  
   
 ```  
 // cpp_attr_ref_iid_is.cpp  
@@ -60,20 +58,19 @@ __interface IFireTabCtrl : IDispatch
 [module(name="ATLFIRELib")];  
 ```  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
-|**対象**|インターフェイスのパラメーター データ メンバー|  
-|**複数回の適用**|Ｘ|  
+|**対象**|インターフェイスのパラメーター、データ メンバー|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 詳細については[属性コンテキスト](../windows/attribute-contexts.md) を参照してください。  
+ 詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Parameter Attributes](../windows/parameter-attributes.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [パラメーター属性](../windows/parameter-attributes.md)   

@@ -1,38 +1,36 @@
 ---
-title: "コンパイラの警告 (レベル 1) C4090 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "error-reference"
-f1_keywords: 
-  - "C4090"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "C4090"
+title: "コンパイラの警告 (レベル 1) C4090 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: error-reference
+f1_keywords: C4090
+dev_langs: C++
+helpviewer_keywords: C4090
 ms.assetid: baad469d-23d4-45aa-ad9c-305b32d61e9a
-caps.latest.revision: 7
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 7
+caps.latest.revision: "7"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: 3b508e27d72454568e26d2f1d173b05c8a65c250
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# コンパイラの警告 (レベル 1) C4090
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-'operation' : 異なる 'modifier' 修飾子です。  
+# <a name="compiler-warning-level-1-c4090"></a>コンパイラの警告 (レベル 1) C4090
+'operation': 異なる 'modifier' 修飾子  
   
- 演算に使用される変数の定義では、コンパイラが検出しなければ修飾されないようにする修飾子が指定されています。  この式は、変更されずにコンパイルされます。  
+ 操作で使用される変数は、コンパイラによって検出せず変更中であるため、指定された修飾子を伴って定義されます。 式は、変更せずにコンパイルされます。  
   
- この警告は、**const** アイテムまたは `volatile` アイテムへのポインターが、**const** または `volatile` を指すように宣言されていないポインターに代入されていることが原因で発生する場合があります。  
+ ポインターの場合に、この警告が発生することが、 **const**または`volatile`項目が指すとして宣言されていないポインターに割り当てられている**const**または`volatile`です。  
   
- この警告は C プログラムに対して生成されます。  C\+\+ プログラムの場合は、[C2440](../../error-messages/compiler-errors-1/compiler-error-c2440.md) エラーが生成されます。  
+ この警告は、C プログラムに対して実行されます。 C++ プログラムでは、コンパイラ エラーが発生: [C2440](../../error-messages/compiler-errors-1/compiler-error-c2440.md)です。  
   
- 次の例では警告 C4090 が生成されます。  
+ 次の例では、C4090 が生成されます。  
   
 ```  
 // C4090.c  

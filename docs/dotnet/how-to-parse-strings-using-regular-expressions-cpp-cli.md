@@ -1,34 +1,33 @@
 ---
-title: "方法: 正規表現を使用して文字列を解析する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/14/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "例 [C++], 文字列"
-  - "解析 (文字列を) [C++]"
-  - "正規表現 [C++], 解析 (文字列を)"
-  - "文字列 [C++], 解析"
+title: "方法: 正規表現を使用して文字列の解析 (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- parsing strings [C++]
+- examples [C++], strings
+- regular expressions [C++], parsing strings
+- strings [C++], parsing
 ms.assetid: 5b0c7ca3-9bba-4389-a45c-6d373cff91b0
-caps.latest.revision: 9
-caps.handback.revision: 9
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "9"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: fed9fd05ed9916e4d285c64a398b48b82d99f884
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: 正規表現を使用して文字列を解析する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-<xref:System.Text.RegularExpressions?displayProperty=fullName> 名前空間の <xref:System.Text.RegularExpressions.Regex> クラスを使用して単純な文字列を解析する方法を次のコード例に示します。  複数のワード デリニエイタの型を含む文字列が構成されます。  次に、<xref:System.Text.RegularExpressions.Regex> クラスを <xref:System.Text.RegularExpressions.Match> クラスと共に使用して文字列が解析されます。  さらに、センテンス内の各単語を個別に表示します。  
+# <a name="how-to-parse-strings-using-regular-expressions-ccli"></a>方法: 正規表現を使用して文字列を解析する (C++/CLI)
+<xref:System.Text.RegularExpressions.Regex> 名前空間の <xref:System.Text.RegularExpressions?displayProperty=fullName> クラスを使用して単純な文字列を解析する方法を次のコード例に示します。 複数のワード デリニエイタの型を含む文字列が構成されます。 次に、<xref:System.Text.RegularExpressions.Regex> クラスを <xref:System.Text.RegularExpressions.Match> クラスと共に使用して文字列が解析されます。 さらに、センテンス内の各単語を個別に表示します。  
   
-## 使用例  
+## <a name="example"></a>例  
   
 ```  
 // regex_parse.cpp  
@@ -62,6 +61,6 @@ int main( )
 }  
 ```  
   
-## 参照  
- [.NET Framework の正規表現](../Topic/.NET%20Framework%20Regular%20Expressions.md)   
- [C\+\+\/CLI による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)
+## <a name="see-also"></a>関連項目  
+ [.NET Framework 正規表現](/dotnet/standard/base-types/regular-expressions)   
+ [C++/CLI (Visual C++) による .NET プログラミング](../dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)

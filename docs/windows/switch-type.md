@@ -1,32 +1,30 @@
 ---
-title: "switch_type | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "language-reference"
-f1_keywords: 
-  - "vc-attr.switch_type"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "switch_type attribute"
+title: "switch_type |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: language-reference
+f1_keywords: vc-attr.switch_type
+dev_langs: C++
+helpviewer_keywords: switch_type attribute
 ms.assetid: e24544dc-b3bc-48ae-b249-f967db49271e
-caps.latest.revision: 11
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 99ec139c1ff10456639249c94451877a18cbbf51
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# switch_type
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-discriminant 共用体として使用されている変数の型を指定します。  
+# <a name="switchtype"></a>switch_type
+共用体の判別変数として使用される変数の型を識別します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
   
@@ -36,14 +34,14 @@ type
   
 ```  
   
-#### パラメーター  
+#### <a name="parameters"></a>パラメーター  
  `type`  
- スイッチは文字型整数ブール型列挙型のいずれかになります。  
+ スイッチの種類は、整数、文字、ブール値、または列挙型を指定できます。  
   
-## 解説  
- **switch\_type** C\+\+ 属性に [switch\_type](http://msdn.microsoft.com/library/windows/desktop/aa367276) の MIDL の属性と同じ機能があります。  
+## <a name="remarks"></a>コメント  
+ **Switch_type** C++ 属性と同じ機能を持つ、 [switch_type](http://msdn.microsoft.com/library/windows/desktop/aa367276) MIDL 属性。  
   
- C\+\+ 属性は [カプセル化された共用体](http://msdn.microsoft.com/library/windows/desktop/aa366811) をサポートしていません。  [Nonencapsulated の共用体](http://msdn.microsoft.com/library/windows/desktop/aa367119) は次の形式でのみサポートされています :  
+ C++ 属性をサポートしていない[共用体をカプセル化された](http://msdn.microsoft.com/library/windows/desktop/aa366811)です。 [カプセル化されていない共用体](http://msdn.microsoft.com/library/windows/desktop/aa367119)次の形式でのみサポートされます。  
   
 ```  
 // cpp_attr_ref_switch_type.cpp  
@@ -62,24 +60,23 @@ struct SizedValue2 {
 };  
 ```  
   
-## 使用例  
- **switch\_type** の使用例については [case](../windows/case-cpp.md) の例を参照してください。  
+## <a name="example"></a>例  
+ 参照してください、[ケース](../windows/case-cpp.md)のサンプルの使用例**switch_type**です。  
   
-## 必要条件  
+## <a name="requirements"></a>要件  
   
-### 属性コンテキスト  
+### <a name="attribute-context"></a>属性コンテキスト  
   
 |||  
 |-|-|  
 |**対象**|`typedef`|  
-|**複数回の適用**|Ｘ|  
+|**反復可能**|いいえ|  
 |**必要な属性**|なし|  
 |**無効な属性**|なし|  
   
- 属性コンテキストの詳細については、「[属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
+ 属性コンテキストの詳細については、「 [属性コンテキスト](../windows/attribute-contexts.md)」を参照してください。  
   
-## 参照  
- [IDL Attributes](../windows/idl-attributes.md)   
- [Typedef, Enum, Union, and Struct Attributes](../windows/typedef-enum-union-and-struct-attributes.md)   
+## <a name="see-also"></a>関連項目  
+ [IDL 属性](../windows/idl-attributes.md)   
+ [Typedef、Enum、Union、および struct 型の属性](../windows/typedef-enum-union-and-struct-attributes.md)   
  [export](../windows/export.md)   
- [Attributes Samples](http://msdn.microsoft.com/ja-jp/558ebdb2-082f-44dc-b442-d8d33bf7bdb8)

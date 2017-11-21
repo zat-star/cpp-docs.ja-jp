@@ -1,57 +1,56 @@
 ---
-title: "方法: /clr:safe に移行する (C++/CLI) | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/clr コンパイラ オプション [C++], 移行 (/clr:safe に)"
-  - "移行 [C++], 検証可能なアセンブリ"
-  - "アップグレード (Visual C++ アプリケーションの), 検証可能なアセンブリ"
-  - "検証可能なアセンブリ [C++], 移行"
+title: "方法: clr への移行: セーフ (C + + CLI) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- migration [C++], verifiable assemblies
+- upgrading Visual C++ applications, verifiable assemblies
+- verifiable assemblies [C++], migrating to
+- /clr compiler option [C++], migrating to /clr:safe
 ms.assetid: 75f9aae9-1dcc-448a-aa11-2d96f972f9d2
-caps.latest.revision: 15
-caps.handback.revision: 15
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
+caps.latest.revision: "15"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 1e653c477864f4e8676da8125ce9e75df37188e6
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# 方法: /clr:safe に移行する (C++/CLI)
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ では、**\/clr:safe** を使用して検証可能なコンポーネントを生成できます。この場合、コンパイラは、検証可能でないコード コンストラクターを検出するたびにエラーを生成します。  
+# <a name="how-to-migrate-to-clrsafe-ccli"></a>方法: /clr:safe に移行する (C++/CLI)
+Visual C は検証可能なコンポーネントを使用して生成できます**/clr:safe**、各検証不能なコード構成体のエラーを生成するコンパイラを実行します。  
   
-## 解説  
- 次の問題により、検証可能性エラーが生成されます。  
+## <a name="remarks"></a>コメント  
+ 次の問題は、検証エラーを生成します。  
   
--   ネイティブ型。  ネイティブ型を使用していない場合でも、ネイティブ クラス、構造体、ポインター、または配列の宣言によりコンパイルできなくなります。  
+-   ネイティブ型です。 使用していない場合でも、ネイティブ クラス、構造体、ポインター、または配列の宣言はコンパイルをできなくなります。  
   
 -   グローバル変数  
   
--   共通言語ランタイム関数呼び出しなどの任意のアンマネージ ライブラリへの関数呼び出し  
+-   共通言語ランタイムの関数呼び出しを含む、任意のアンマネージ ライブラリへの関数呼び出し  
   
--   検証可能な関数には、ダウンキャストのために [static\_cast 演算子](../cpp/static-cast-operator.md) を含めることはできません。  プリミティブ型どうしのキャストには、[static\_cast 演算子](../cpp/static-cast-operator.md) を使用できますが、ダウンキャストには、[safe\_cast](../windows/safe-cast-cpp-component-extensions.md) または C スタイルのキャスト \(これは、[safe\_cast](../windows/safe-cast-cpp-component-extensions.md) として実装される\) を使用する必要があります。  
+-   検証可能な関数を含めることはできません、 [static_cast 演算子](../cpp/static-cast-operator.md)ダウン キャストのためです。 [Static_cast 演算子](../cpp/static-cast-operator.md)使用できますが、プリミティブ型の間でキャストのダウン キャストの[safe_cast](../windows/safe-cast-cpp-component-extensions.md)または C スタイルのキャスト (として実装されている、 [safe_cast](../windows/safe-cast-cpp-component-extensions.md))使用する必要があります。  
   
--   検証可能な関数には、[reinterpret\_cast 演算子](../cpp/reinterpret-cast-operator.md) \(または同等の C スタイル キャスト\) を含めることができません。  
+-   検証可能な関数を含めることはできません、 [reinterpret_cast Operator](../cpp/reinterpret-cast-operator.md) (または任意の C スタイル キャストと同等)。  
   
--   検証可能な関数は、[interior\_ptr \(C\+\+\/CLI\)](../windows/interior-ptr-cpp-cli.md) 上で数値型を実行できません。  可能なのは、代入と逆参照だけです。  
+-   検証可能な関数が算術演算を実行できません、 [interior_ptr (C + + CLI)](../windows/interior-ptr-cpp-cli.md)です。 割り当てるし、逆参照、可能性がありますのみです。  
   
--   検証可能な関数は、参照型へのポインターだけをスローまたはキャッチします。このため、値型はスローする前にボックス化する必要があります。  
+-   検証可能な関数は、スローのみまたはスローする前に、値の型をボックス化する必要がありますので、参照型へのポインターをキャッチします。  
   
--   検証可能な関数は、検証可能な関数しか呼び出すことができません。`AtEntry` や `AtExit` を含む共通言語ランタイムの呼び出しが許可されないため、グローバル コンストラクターも使用できません。  
+-   検証可能な関数は、検証可能な関数を呼び出すことができますのみ (含まれているなど、共通言語ランタイムへの呼び出しは許可されません`AtEntry` / `AtExit`、グローバル コンス トラクターが許可されていないため)。  
   
--   検証可能なクラスは、<xref:System.Runtime.InteropServices.LayoutKind> を使用できません。  
+-   検証可能なクラスを使用できない<xref:System.Runtime.InteropServices.LayoutKind>です。  
   
--   EXE をビルドする場合、main 関数はパラメーターを宣言できないため、<xref:System.Environment.GetCommandLineArgs%2A> を使用してコマンド ライン引数を取得する必要があります。  
+-   ため、パラメーターを宣言できません main 関数に EXE をビルドするには場合、<xref:System.Environment.GetCommandLineArgs%2A>コマンドライン引数を取得するために使用する必要があります。  
   
--   仮想関数への非仮想呼び出しを行います。  たとえば、次のようになります。  
+-   仮想関数への非仮想呼び出しを行います。 例:  
   
     ```  
     // not_verifiable.cpp  
@@ -68,17 +67,17 @@ Visual C\+\+ では、**\/clr:safe** を使用して検証可能なコンポー�
     }  
     ```  
   
- また、次のキーワードは検証可能なコードで使用できません。  
+ また、次のキーワードは、検証可能なコードでは使用できません。  
   
--   [unmanaged](../preprocessor/managed-unmanaged.md) プラグマと [pack](../preprocessor/pack.md) プラグマ  
+-   [アンマネージ](../preprocessor/managed-unmanaged.md)と[パック](../preprocessor/pack.md)プラグマ  
   
--   [naked](../Topic/naked%20\(C++\).md) 修飾子と [align](../cpp/align-cpp.md) [\_\_declspec](../cpp/declspec.md) 修飾子  
+-   [naked](../cpp/naked-cpp.md)と[整列](../cpp/align-cpp.md) [_ _declspec](../cpp/declspec.md)修飾子  
   
--   [\_\_asm](../assembler/inline/asm.md)  
+-   [__asm](../assembler/inline/asm.md)  
   
--   [\_\_based](../cpp/based-grammar.md)  
+-   [__based](../cpp/based-grammar.md)  
   
--   [\_\_try](../cpp/try-except-statement.md) と `__except`  
+-   [_ _try](../cpp/try-except-statement.md)と`__except`  
   
-## 参照  
- [純粋なコードと検証可能なコード](../dotnet/pure-and-verifiable-code-cpp-cli.md)
+## <a name="see-also"></a>関連項目  
+ [純粋なコードと検証可能なコード (C++/CLI)](../dotnet/pure-and-verifiable-code-cpp-cli.md)
