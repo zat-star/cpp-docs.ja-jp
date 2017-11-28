@@ -1,47 +1,46 @@
 ---
-title: "/QIfist (_ftol を呼び出さない) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/qifist"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "QIfist コンパイラ オプション [C++]"
-  - "-QIfist コンパイラ オプション [C++]"
-  - "/QIfist コンパイラ オプション [C++]"
+title: "-Qifist (_ftol を呼び出さない) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /qifist
+dev_langs: C++
+helpviewer_keywords:
+- QIfist compiler option [C++]
+- -QIfist compiler option [C++]
+- /QIfist compiler option [C++]
 ms.assetid: 1afd32a5-f658-4b66-85f4-e0ce4cb955bd
-caps.latest.revision: 17
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 17
+caps.latest.revision: "17"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: f5143ef57821d629fe6e2dccde04d82f8e8c9eef
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /QIfist (_ftol を呼び出さない)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-浮動小数点型から整数型への変換が必要なときには、ヘルパー関数 `_ftol` を呼び出しません。  
+# <a name="qifist-suppress-ftol"></a>/QIfist (_ftol を呼び出さない)
+使用しないでください。 浮動小数点型から整数型への変換が必要なときには、ヘルパー関数 `_ftol` を呼び出しません。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /QIfist  
 ```  
   
-## 解説  
+## <a name="remarks"></a>コメント  
   
 > [!NOTE]
->  **\/QIfist** は x86 に対応するコンパイラでのみ使用できます。このコンパイラ オプションは [!INCLUDE[vcprx64](../Token/vcprx64_md.md)] や ARM に対応するコンパイラでは使用できません。  
+>  **/Qifist**はでのみ使用 x86 を対象とするコンパイラは、このコンパイラ オプションは、コンパイラで使用可能な[!INCLUDE[vcprx64](../../assembler/inline/includes/vcprx64_md.md)]orARM です。  
   
- `_ftol` 関数では、浮動小数点型から整数型への変換に加えて、浮動小数点制御ワードのビット 10 と 11 を設定して、FPU \(Floating\-Point Unit\) の丸めモードをゼロ \(切り捨て\) にします。  したがって、浮動小数点型から整数型への変換は、ANSI C 規格どおりに行われ、小数部分を破棄することが保証されます。  **\/QIfist** を使用すると、この保証が適用されません。  丸めモードは、Intel 社のリファレンス マニュアルに示されたとおり、次の 4 とおりのうちのいずれかになります。  
+ `_ftol` 関数では、浮動小数点型から整数型への変換に加えて、浮動小数点制御ワードのビット 10 と 11 を設定して、FPU (Floating-Point Unit) の丸めモードをゼロ (切り捨て) にします。 したがって、浮動小数点型から整数型への変換は、ANSI C 規格どおりに行われ、小数部分を破棄することが保証されます。 使用する場合**/QIfist**、この保証が適用されません。 丸めモードは、Intel 社のリファレンス マニュアルに示されたとおり、次の 4 とおりのうちのいずれかになります。  
   
--   一番近い値に丸める \(中間の場合は偶数\)。  
+-   一番近い値に丸める (中間の場合は偶数)。  
   
 -   負の無限大に丸める。  
   
@@ -49,30 +48,30 @@ caps.handback.revision: 17
   
 -   ゼロに丸める。  
   
- C のランタイム関数 [\_control87、\_controlfp、\_\_control87\_2](../Topic/_control87,%20_controlfp,%20__control87_2.md) を使用して、FPU の丸め動作を変更できます。  FPU の既定の丸めモードでは、一番近い値に丸められます。**\/QIfist** を使用すると、アプリケーションのパフォーマンスが向上しますが、それにはリスクが伴います。  稼動環境で **\/QIfist** を使ってビルドしたコードを使用する場合は、その前に、丸めモードの影響を受けるコード部分を十分にテストする必要があります。  
+ 使用することができます、 [_control87、_controlfp、 \__control87_2](../../c-runtime-library/reference/control87-controlfp-control87-2.md) C ランタイム関数を FPU の丸め動作を変更します。 FPU の既定の丸めモードでは、一番近い値に丸められます。 使用して**/QIfist**リスクが伴いますが、アプリケーションのパフォーマンスを向上させることができます。 ビルドされたコードを使用する前に、丸めモードと小文字を区別する、コードの部分を十分にテストする必要があります**/QIfist**実稼働環境でします。  
   
- [\/arch \(x86\)](../../build/reference/arch-x86.md) と **\/QIfist** は、同じコンパイル単位では使用できません。  
+ [/arch (x86)](../../build/reference/arch-x86.md)と**/QIfist**同じコンパイル単位では使用できません。  
   
 > [!NOTE]
->  ビットの丸め動作により、すべての計算の後で浮動小数点も丸められるため、**\/QIfist** は既定で無効です。このため、C スタイルの丸め \(つまりゼロに丸める\) のフラグを設定すると、浮動小数点の計算が異なる場合があります。  浮動小数点数の小数部分の切り捨てについて予想される動作にコードが依存する場合は、**\/QIfist** を使用しないでください。  不明な場合は、**\/QIfist** を使用しないでください。  
+>  **/Qifist**が有効で既定では丸めビット浮動小数点の浮動小数点への影響にもあるために指していません丸め処理を行う (これが発生するすべての計算後) ため、C スタイル (0) の方向に丸め処理を行うためのフラグを設定するときに、浮動小数点計算が異なる可能性があります。 **/Qifist**は、浮動小数点数の小数部の切り捨てについて予想される動作時に、コードが依存している場合、使用できません。 不明な場合は使用しないで**/QIfist**です。  
   
- **\/QIfist** は使用されなくなりました。  浮動小数点型から整数型への変換処理の速度が飛躍的に向上しました。  詳細については、「[Deprecated Compiler Options in Visual C\+\+ 2005](http://msdn.microsoft.com/ja-jp/aa59fce3-50b8-4f66-9aeb-ce09a7a84cce)」を参照してください。  
+ **/QIfist**オプションには、Visual Studio 2005 以降では推奨されません。 浮動小数点型から整数型への変換処理の速度が飛躍的に向上しました。 非推奨のコンパイラ オプションの一覧は、次を参照してください。**廃止予定とコンパイラ オプションの削除**で[コンパイラ オプションの一覧をカテゴリ別](../../build/reference/compiler-options-listed-by-category.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  \[追加のオプション\]ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
- [\/Q オプション \(低水準の操作\)](../../build/reference/q-options-low-level-operations.md)   
+## <a name="see-also"></a>関連項目  
+ [/Q オプション (低水準の操作)](../../build/reference/q-options-low-level-operations.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

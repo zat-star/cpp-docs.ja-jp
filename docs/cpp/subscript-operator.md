@@ -4,30 +4,26 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-f1_keywords:
-- '[]'
-dev_langs:
-- C++
+f1_keywords: '[]'
+dev_langs: C++
 helpviewer_keywords:
 - operators [C++], subscript
 - postfix operators [C++]
 - '[] operator'
 - subscript operator [C++], syntax
 ms.assetid: 69c31494-52da-4dd0-8bbe-6ccbfd50f197
-caps.latest.revision: 9
+caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 21831cbd727477336c53e9d72e4bea95e123aa81
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: e1b40b16c3ee349419259ae1e2240e28e3e7e911
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="subscript-operator"></a>添字演算子:
 ## <a name="syntax"></a>構文  
@@ -38,7 +34,7 @@ postfix-expression [ expression ]
 ```  
   
 ## <a name="remarks"></a>コメント  
- (どの基本式もかまいません)、添字演算子が続く後置式****配列のインデックスを指定します。  
+ (どの基本式もかまいません)、添字演算子が続く後置式**[ ]**配列のインデックスを指定します。  
   
  マネージ配列については、次を参照してください。[配列](../windows/arrays-cpp-component-extensions.md)です。  
   
@@ -52,7 +48,7 @@ cout << 2[nArray] << endl;            // prints "2"
   
  上の例では、式 `nArray[2]` は `2[nArray]` と同じです。 理由添字式の結果は*e1***[** *e2* **]**によって得られます。  
   
- **\*((** *e2* **)** * + * **(***e1***))**  
+ **\*((** *e2* **)**  *+*  **(***e1***))**  
   
  式から得られるアドレスが*e2*アドレスからのバイト*e1*です。 配列内の次のオブジェクトを生成するアドレスのスケールではなく、 *e2*です。 例:  
   

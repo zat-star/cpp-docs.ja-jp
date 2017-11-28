@@ -1,70 +1,69 @@
 ---
-title: "/F (スタック サイズの設定) | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "/f"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/F コンパイラ オプション [C++]"
-  - "F コンパイラ オプション [C++]"
-  - "-F コンパイラ オプション [C++]"
-  - "設定 (スタック サイズの) コンパイラ オプション"
-  - "スタック, 設定 (サイズの)"
+title: "-F (スタック サイズの設定) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: /f
+dev_langs: C++
+helpviewer_keywords:
+- set stack size compiler option
+- F compiler option [C++]
+- -F compiler option [C++]
+- /F compiler option [C++]
+- stack, setting size
 ms.assetid: 17320b6f-8305-445b-9ec2-75833f4b29e0
-caps.latest.revision: 11
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 11
+caps.latest.revision: "11"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: b75c5c014dfcfa2e90a507d2948c573632e650a0
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# /F (スタック サイズの設定)
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
+# <a name="f-set-stack-size"></a>/F (スタック サイズの設定)
 プログラムのスタック サイズをバイト単位で設定します。  
   
-## 構文  
+## <a name="syntax"></a>構文  
   
 ```  
 /F number  
 ```  
   
-## Arguments  
+## <a name="arguments"></a>引数  
  `number`  
- スタック サイズのバイト数。  
+ スタック サイズ (バイト単位)。  
   
-## 解説  
- このオプションを指定しない場合、スタック サイズは既定で 1 MB に設定されます。  引数 `number` は、10 進表記または C 言語表記で指定できます。  この引数の範囲は、1 からリンカーの最大許容スタック サイズまでです。  指定した値は、4 バイト単位に切り上げられます。  **\/F** と `number` の間の空白は省略可能です。  
+## <a name="remarks"></a>コメント  
+ このオプションを指定せず、スタック サイズは 1 MB に既定値です。 `number` 10 進数または C 言語表記で引数を指定できます。 引数の範囲は 1 からリンカーによって受け付け最大スタック サイズです。 リンカーは、最も近い 4 バイトに指定した値を丸めます。 間の空白**/F**と`number`は省略可能です。  
   
- スタック オーバーフロー メッセージが返された場合は、スタック サイズを増やしてください。  
+ スタック オーバーフローのメッセージが返された場合にスタック サイズを大きく必要があります。  
   
- スタック サイズは、次の方法で設定することもできます。  
+ スタック サイズを設定することもできます。  
   
--   **\/STACK** リンカー オプションを使用する。  詳細については、「[\/STACK](../../build/reference/stack.md)」を参照してください。  
+-   使用して、 **/stack**リンカー オプション。 詳細については、次を参照してください。 [/stack](../../build/reference/stack.md)です。  
   
--   .exe ファイルで EDITBIN を使用する。  詳細については、「[EDITBIN リファレンス](../Topic/EDITBIN%20Reference.md)」を参照してください。  
+-   .Exe ファイルを EDITBIN を使用します。 詳細については、次を参照してください。 [EDITBIN リファレンス](../../build/reference/editbin-reference.md)です。  
   
-### Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
+### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>Visual Studio 開発環境でこのコンパイラ オプションを設定するには  
   
-1.  プロジェクトの **\[プロパティ ページ\]** ダイアログ ボックスを開きます。  詳細については、「[方法 : プロジェクト プロパティ ページを開く](../../misc/how-to-open-project-property-pages.md)」を参照してください。  
+1.  プロジェクトの **[プロパティ ページ]** ダイアログ ボックスを開きます。 詳細については、「[のプロジェクト プロパティの操作](../../ide/working-with-project-properties.md)です。  
   
-2.  **\[C\/C\+\+\]** フォルダーをクリックします。  
+2.  **[C/C++]** フォルダーをクリックします。  
   
-3.  **\[コマンド ライン\]** プロパティ ページをクリックします。  
+3.  **[コマンド ライン]** プロパティ ページをクリックします。  
   
-4.  **\[追加のオプション\]** ボックスにコンパイラ オプションを入力します。  
+4.  **[追加のオプション]** ボックスにコンパイラ オプションを入力します。  
   
-### このコンパイラ オプションをコードから設定するには  
+### <a name="to-set-this-compiler-option-programmatically"></a>このコンパイラ オプションをコードから設定するには  
   
--   <xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A> を参照してください。  
+-   「<xref:Microsoft.VisualStudio.VCProjectEngine.VCCLCompilerTool.AdditionalOptions%2A>」を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

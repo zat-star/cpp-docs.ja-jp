@@ -1,63 +1,63 @@
 ---
-title: "Microsoft C/C++ の拡張機能 | Microsoft Docs"
-ms.custom: ""
-ms.date: "12/03/2016"
-ms.prod: "visual-studio-dev14"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "! 演算子, 拡張機能 (C++ の)"
-  - "!= 演算子"
-  - "& 演算子, 拡張機能 (C/C++ の)"
-  - "&& 演算子"
-  - "&= 演算子"
-  - "^ 演算子, 拡張機能 (C/C++ の)"
-  - "^= 演算子, C++ の拡張機能"
-  - "| 演算子, 拡張"
-  - "|| 演算子"
-  - "|= 演算子"
-  - "~ 演算子, 拡張機能 (C/C++ の)"
-  - "And 演算子, 拡張機能 (C/C++ の)"
-  - "and_eq 演算子"
-  - "compl メソッド"
-  - "拡張"
-  - "拡張, C 言語"
-  - "iso646.h ヘッダー"
-  - "Microsoft C/C++ の拡張機能"
-  - "NOT 演算子"
-  - "not_eq 演算子"
-  - "Or 演算子, Microsoft C/C++ の拡張機能"
-  - "or_eq 演算子"
-  - "Visual C, Microsoft 拡張機能"
-  - "Visual C++, 拡張機能 (C/C++ の)"
-  - "Xor 演算子, Microsoft C/C++ の拡張機能"
-  - "xor_eq 演算子"
+title: "C および C++ の Microsoft 拡張機能 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+dev_langs: C++
+helpviewer_keywords:
+- or_eq operator
+- ~ operator, extensions to C/C++
+- '& operator, extensions to C/C++'
+- '&= operator'
+- iso646.h header
+- Xor operator, Microsoft extensions to C/C++
+- '!= operator'
+- '! operator, extension to C++'
+- Or operator, Microsoft extensions to C/C++
+- ^ operator, extensions to C/C++
+- ^= operator, C++ extensions
+- xor_eq operator
+- and_eq operator
+- Microsoft extensions to C/C++
+- '|= operator'
+- '|| operator'
+- And operator, extensions to C/C++
+- NOT operator
+- '&& operator'
+- extensions, C language
+- Visual C++, extensions to C/C++
+- '| operator, extensions'
+- not_eq operator
+- Visual C, Microsoft extensions
+- extensions
+- compl method
 ms.assetid: e811a74a-45ba-4c00-b206-2f2321b8689a
-caps.latest.revision: 18
-caps.handback.revision: 18
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
+caps.latest.revision: "18"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: e349f9656a6ae0d7f1ae78abbee13ca4bed5f52d
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# Microsoft C/C++ の拡張機能
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-Visual C\+\+ は、ANSI C および ANSI C\+\+ 標準を次のように拡張します。  
+# <a name="microsoft-extensions-to-c-and-c"></a>Microsoft C/C++ の拡張機能
+Visual C++ は、ANSI C および ANSI C++ 標準を次のように拡張します。  
   
-## キーワード  
- 複数のキーワードが追加されます。  「[C\+\+ キーワード](../../cpp/keywords-cpp.md)」の一覧で、先頭に 2 つのアンダースコアがあるキーワードは Visual C\+\+ の拡張機能です。  
+## <a name="keywords"></a>キーワード  
+ 複数のキーワードが追加されます。 一覧で[キーワード](../../cpp/keywords-cpp.md)キーワードを先頭に 2 つのアンダー スコアを持つは、Visual C の拡張機能です。  
   
-## 静的な定数型の整数 \(または列挙\) メンバーのクラス外定義  
- 標準 \(**\/Za**\) では、以下に示すように、データ メンバーのクラス外定義が必要です。  
+## <a name="out-of-class-definition-of-static-const-integral-or-enum-members"></a>静的な定数型の整数 (または列挙) メンバーのクラス外定義  
+ 標準 (**/Za**)、次のように、データ メンバーのクラスの定義を行う必要があります。  
   
 ```  
-class CMyClass  {  
+  
+      class CMyClass  {  
    static const int max = 5;  
    int m_array[max];  
 }  
@@ -65,18 +65,18 @@ class CMyClass  {
 const int CMyClass::max;   // out of class definition  
 ```  
   
- **\/Ze** では、静的で定数型の整数および列挙のデータ メンバーのクラス外定義は省略可能です。  クラス内に初期化子を持つことができるのは、静的で定数型の整数と列挙だけです。初期化式には、定数型の式を使用する必要があります。  
+ **/Ze**クラスの定義は静的で定数の整数、および列挙データ メンバーの省略可能です。 クラス内に初期化子を持つことができるのは、静的で定数型の整数と列挙だけです。初期化式には、定数型の式を使用する必要があります。  
   
- クラス外定義がヘッダー ファイルに指定され、そのヘッダー ファイルを複数のソース ファイルでインクルードする場合は、エラーを防ぐために [selectany](../../cpp/selectany.md) を使用します。  たとえば、次のようになります。  
+ エラーを避けるためには、クラスの定義がヘッダーでファイルとヘッダー ファイルが含まれている複数のソース ファイルで提供される場合に、次のように使用します。 [selectany](../../cpp/selectany.md)です。 例:  
   
 ```  
 __declspec(selectany) const int CMyClass::max = 5;  
 ```  
   
-## キャスト  
- C\+\+ コンパイラおよび C コンパイラは、次の種類の非 ANSI キャストをサポートします。  
+## <a name="casts"></a>キャスト  
+ C++ コンパイラおよび C コンパイラは、次の種類の非 ANSI キャストをサポートします。  
   
--   左辺値を生成するための非 ANSI キャスト。  たとえば、次のようになります。  
+-   左辺値を生成するための非 ANSI キャスト。 例:  
   
     ```  
     char *p;  
@@ -84,7 +84,7 @@ __declspec(selectany) const int CMyClass::max = 5;
     ```  
   
     > [!NOTE]
-    >  この拡張機能は、C 言語でのみ使用できます。  C\+\+ コードで次の ANSI C 標準形式を使用して、ポインターを別の型へのポインターであるかのように変更できます。  
+    >  この拡張機能は、C 言語でのみ使用できます。 C++ コードで次の ANSI C 標準形式を使用して、ポインターを別の型へのポインターであるかのように変更できます。  
   
      この例を次のように書き換えると、ANSI C 規格に準拠します。  
   
@@ -92,7 +92,7 @@ __declspec(selectany) const int CMyClass::max = 5;
     p = ( char * )(( int * )p + 1 );  
     ```  
   
--   関数ポインターからデータ ポインターへの非 ANSI キャスト。  たとえば、次のようになります。  
+-   関数ポインターからデータ ポインターへの非 ANSI キャスト。 例:  
   
     ```  
     int ( * pfunc ) ();   
@@ -106,8 +106,8 @@ __declspec(selectany) const int CMyClass::max = 5;
     pdata = ( int * ) (uintptr_t) pfunc;  
     ```  
   
-## 可変長の引数リスト  
- C\+\+ および C コンパイラでは、可変個の引数を指定する関数宣言子を使用できます。その後ろには、型を指定する関数定義を記述します。  
+## <a name="variable-length-argument-lists"></a>可変長の引数リスト  
+ C++ および C コンパイラでは、可変個の引数を指定する関数宣言子を使用できます。その後ろには、型を指定する関数定義を記述します。  
   
 ```  
 void myfunc( int x, ... );  
@@ -115,14 +115,14 @@ void myfunc( int x, char * c )
 { }  
 ```  
   
-## 単一行コメント  
- C コンパイラでは、次のように 2 つのスラッシュ \(\/\/\) で始まる単一行コメントがサポートされています。  
+## <a name="single-line-comments"></a>単一行コメント  
+ C コンパイラでは、次のように 2 つのスラッシュ (//) で始まる単一行コメントがサポートされています。  
   
 ```  
 // This is a single-line comment.  
 ```  
   
-## スコープ  
+## <a name="scope"></a>スコープ  
  C コンパイラでは、次のようなスコープ関連のコードを記述できます。  
   
 -   extern を static として再定義する。  
@@ -172,7 +172,7 @@ void myfunc( int x, char * c )
     }  
     ```  
   
-## データの宣言と定義  
+## <a name="data-declarations-and-definitions"></a>データの宣言と定義  
  C コンパイラでは、以下のデータ宣言およびデータ定義の機能をサポートしています。  
   
 -   初期化子内に文字定数と文字列定数を混在させる。  
@@ -181,7 +181,7 @@ void myfunc( int x, char * c )
     char arr[5] = {'a', 'b', "cde"};  
     ```  
   
--   ビット フィールドを **unsigned int** や **signed int** 以外のベース型で指定する。  
+-   ビット フィールド以外の基本型を持つ**符号なし int**または**int を署名**です。  
   
 -   型がない宣言子:  
   
@@ -203,7 +203,7 @@ void myfunc( int x, char * c )
     };  
     ```  
   
--   名前のない \(無名\) 構造体を使用する。  
+-   名前のない (無名) 構造体を使用する。  
   
     ```  
     struct  
@@ -213,7 +213,7 @@ void myfunc( int x, char * c )
     };  
     ```  
   
--   名前のない \(無名\) 共用体を使用する。  
+-   名前のない (無名) 共用体を使用する。  
   
     ```  
     union  
@@ -233,11 +233,11 @@ void myfunc( int x, char * c )
     }  
     ```  
   
-## 浮動小数点組み込み型の関数  
- C\+\+ および C コンパイラは、**x86 固有の仕様→\>**`atan`、`atan2`、`cos`、`exp`、`log`、`log10`、`sin`、`sqrt`、`tan` の各関数の**←x86 固有の仕様**インライン生成をサポートします \(**\/Oi** が指定されている場合\)。  C コンパイラの場合、これらの組み込みでは `errno` 変数が設定されないため、ANSI に準拠しなくなります。  
+## <a name="intrinsic-floating-point-functions"></a>浮動小数点組み込み型の関数  
+ C++ コンパイラおよび C コンパイラの両方がインラインの生成をサポート**x86 特定 >**の`atan`、 `atan2`、 `cos`、 `exp`、 `log`、 `log10`、 `sin`、 `sqrt`、および`tan`関数**END x86 固有**とき**/Oi**が指定されています。 C コンパイラの場合、これらの組み込みでは `errno` 変数が設定されないため、ANSI に準拠しなくなります。  
   
-## const ポインター パラメーターの参照を予測している関数に非 const ポインター パラメーターを渡す  
- これは C\+\+ の拡張機能です。  このコードは **\/Ze** でコンパイルされます。  
+## <a name="passing-a-non-const-pointer-parameter-to-a-function-that-expects-a-reference-to-a-const-pointer-parameter"></a>const ポインター パラメーターの参照を予測している関数に非 const ポインター パラメーターを渡す  
+ これは C++ の拡張機能です。 このコードはコンパイル時に**/Ze**:  
   
 ```  
 typedef   int   T;  
@@ -259,33 +259,33 @@ void func ()
 }  
 ```  
   
-## ISO646.H が有効でない  
- **\/Ze** で次の演算子の表示形式を使用する場合は、iso646.h をインクルードする必要があります。  
+## <a name="iso646h-not-enabled"></a>ISO646.H が有効でない  
+ **/Ze**、次の演算子のテキスト形式を使用する場合は、iso646.h をインクルードする必要があります。  
   
--   && \(and\)  
+-   && (and)  
   
--   &\= \(and\_eq\)  
+-   &= (and_eq)  
   
--   & \(bitand\)  
+-   & (bitand)  
   
--   &#124; \(bitor\)  
+-   &#124;です。(bitor)  
   
--   ~ \(compl\)  
+-   ~ (compl)  
   
--   \!\(not\)  
+-   ! (not)  
   
--   \!\= \(not\_eq\)  
+-   != (not_eq)  
   
--   &#124;&#124; \(or\)  
+-   &#124; &#124;です。(または)  
   
--   &#124;\= \(or\_eq\)  
+-   &#124; = (or_eq)  
   
--   ^ \(xor\)  
+-   ^ (xor)  
   
--   ^\= \(xor\_eq\)  
+-   ^= (xor_eq)  
   
-## リテラル文字列のアドレスの型が const char \(\*\) \[\] ではなく const char \[\] である  
- **\/Za** で char const \(\*\)\[4\] を出力し、**\/Ze** で char const \[4\] を出力する例を次に示します。  
+## <a name="address-of-string-literal-has-type-const-char--not-const-char--"></a>リテラル文字列のアドレスの型が const char (*) [] ではなく const char [] である  
+ 次の例の出力は const char (\*) [4] **/Za**、char const [4] **/Ze**です。  
   
 ```  
 #include <stdio.h>  
@@ -297,7 +297,7 @@ int main()
 }  
 ```  
   
-## 参照  
- [\/Za、\/Ze \(言語拡張機能の無効化\)](../../build/reference/za-ze-disable-language-extensions.md)   
+## <a name="see-also"></a>関連項目  
+ [/Za、/Ze (言語拡張を無効にする)](../../build/reference/za-ze-disable-language-extensions.md)   
  [コンパイラ オプション](../../build/reference/compiler-options.md)   
- [コンパイラ オプションの設定](../Topic/Setting%20Compiler%20Options.md)
+ [コンパイラ オプションの設定](../../build/reference/setting-compiler-options.md)

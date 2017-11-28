@@ -4,27 +4,22 @@ ms.custom:
 ms.date: 05/17/2017
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-tools
+ms.technology: cpp-tools
 ms.tgt_pltfrm: 
 ms.topic: error-reference
-f1_keywords:
-- LNK1104
-dev_langs:
-- C++
-helpviewer_keywords:
-- LNK1104
+f1_keywords: LNK1104
+dev_langs: C++
+helpviewer_keywords: LNK1104
 ms.assetid: 9ca6f929-0efc-4055-8354-3cf5b4e636dc
-caps.latest.revision: 8
+caps.latest.revision: "8"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-ms.translationtype: MT
-ms.sourcegitcommit: 35b46e23aeb5f4dbfd2a0dd44b906389dd5bfc88
 ms.openlocfilehash: ebc0b23a7d92c94373b9ae5be01a0ef50476e433
-ms.contentlocale: ja-jp
-ms.lasthandoff: 10/09/2017
-
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="linker-tools-error-lnk1104"></a>リンカ ツール エラー LNK1104
 ファイルを開くことができません '*filename*'  
@@ -70,4 +65,3 @@ ms.lasthandoff: 10/09/2017
 -   場合、 *filename* LNK の名前は*n*、一時ファイルのリンカーによって生成されるファイル名は、TMP 環境変数で指定されたディレクトリが存在しない、または 1 つ以上のTMP 環境変数のディレクトリを指定することがあります。 TMP 環境変数の 1 つだけのディレクトリ パスを指定する必要があります。  
   
 -   ライブラリ名でエラー メッセージが発生し、以前の Microsoft Visual C++ 開発システムから最近.mak ファイルを移植した場合、ライブラリは無効になることがあります。 ライブラリ名が正しいと指定した場所にまだ存在していることを確認または新しい場所を指すように、LIB パスを更新します。  
-
