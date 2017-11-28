@@ -4,16 +4,14 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-ide
+ms.technology: cpp-ide
 ms.tgt_pltfrm: 
 ms.topic: article
 f1_keywords:
 - visual c++
 - visual c
 - vc
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - unmanaged code, C++
 - development environment, Visual C++
@@ -21,7 +19,7 @@ helpviewer_keywords:
 - Visual C++
 - Visual C++, reference
 ms.assetid: e8dcc44c-a3e2-4ffe-887c-fd15b18dc458
-caps.latest.revision: 61
+caps.latest.revision: "61"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
@@ -35,17 +33,11 @@ translation.priority.ht:
 - ru-ru
 - zh-cn
 - zh-tw
-translation.priority.mt:
-- cs-cz
-- pl-pl
-- pt-br
-- tr-tr
-ms.translationtype: Human Translation
-ms.sourcegitcommit: da3c2e6ce7247d3e8c9a401bc0a133cb8d46a970
-ms.openlocfilehash: 81a7d724a4a3b2e5aa7de47461d20cc3385896eb
-ms.contentlocale: ja-jp
-ms.lasthandoff: 03/15/2017
-
+ms.openlocfilehash: bd4ac59b539b972a50a192e116e536598c03ed63
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="visual-c-in-visual-studio"></a>Visual Studio の Visual C++
 Visual Studio 2017 プログラミング言語および開発ツールにより、ネイティブのユニバーサル Windows アプリ、ネイティブのデスクトップとサーバー アプリケーション、Windows だけでなく Android や iOS でも実行されるクロスプラットフォーム ライブラリ、および.NET Framework で実行されるマネージ アプリを開発できます。  
@@ -64,8 +56,7 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  [Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)  
  Visual C++ の新機能。  
 
- [Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md) 
- Visual Studio 2017 の C++ 準拠の強化について説明します。 
+ [Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md) Visual Studio 2017 の C++ 準拠の強化について説明します。 
 
  [Visual C++ 言語への準拠](visual-cpp-language-conformance.md)  
  Visual C++ の各機能の準拠状態を一覧にしています。
@@ -83,7 +74,7 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  Windows 10 とユニバーサル Windows プラットフォームに C++ コードを移植するなど、Visual Studio 2017 の Visual C++ へのコードの移植およびプロジェクトのアップグレードのガイダンス。  
   
  [Visual C++ チーム ブログ](http://blogs.msdn.com/b/vcblog/)  
- [!INCLUDE[vcprvc](build/includes/vcprvc_md.md)] の開発者による新機能と最新の情報に関する詳細。  
+ [!INCLUDE[vcprvc](build/includes/vcprvc_md.md)]の開発者による新機能と最新の情報に関する詳細。  
   
  [Visual Studio のダウンロード](http://go.microsoft.com/fwlink/?LinkId=235233)  
  Visual C++ をダウンロード。  
@@ -129,9 +120,9 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  プロジェクトの作成、ソース コード ファイルの処理、ライブラリへのリンク、コンパイル、デバッグ、プロファイル、配置などの方法については、「[IDE と Visual C++ 開発用ツール](ide/ide-and-tools-for-visual-cpp-development.md)」を参照してください。  
   
 ## <a name="c-language-reference"></a>C++ 言語リファレンス  
- C++ 言語については、「[C++ 言語リファレンス](cpp/cpp-language-reference.md)」を参照してください。  
+ C++ 言語については、「 [C++ Language Reference](cpp/cpp-language-reference.md)」を参照してください。  
   
- C++ プリプロセッサの詳細については、「[C/C++ プリプロセッサ リファレンス](preprocessor/c-cpp-preprocessor-reference.md)」を参照してください。  
+ C++ プリプロセッサの詳細については、「 [C/C++ Preprocessor Reference](preprocessor/c-cpp-preprocessor-reference.md)」を参照してください。  
   
 ## <a name="c-libraries-in-visual-studio"></a>Visual Studio での C++ ライブラリ  
  以下のセクションでは、Visual C++ に含まれる様々な C++ ライブラリについて説明します。  
@@ -160,7 +151,7 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  [C++/CLI (Visual C++) による .NET プログラミング](dotnet/dotnet-programming-with-cpp-cli-visual-cpp.md)  
  共通言語ランタイム (CLR) のプログラミング。  
   
- 「[STL/CLR ライブラリ リファレンス](dotnet/stl-clr-library-reference.md)」および「[C++ のサポート ライブラリ](dotnet/cpp-support-library.md)」のドキュメントも参照してください。  
+ 「 [STL/CLR](dotnet/stl-clr-library-reference.md) 」および「 [C++ Support Library](dotnet/cpp-support-library.md)」のドキュメントも参照してください。  
   
 ## <a name="other-c-libraries"></a>その他の C++ のライブラリ  
  このセクションには、Visual Studio に含まれてはいないものの、ダウンロードして Visual C++ で使用できるライブラリへのリンクが含まれています。  
@@ -185,4 +176,3 @@ Visual Studio 2017 プログラミング言語および開発ツールにより�
  [C 言語リファレンス](c-language/c-language-reference.md)   
  [C ランタイム ライブラリ リファレンス](c-runtime-library/c-run-time-library-reference.md)   
  [コンパイラの組み込みとアセンブリ言語](intrinsics/compiler-intrinsics-and-assembly-language.md)
-

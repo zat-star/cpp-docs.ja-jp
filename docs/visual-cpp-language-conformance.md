@@ -1,53 +1,33 @@
 ---
 title: "Visual C++ 言語への準拠 | Microsoft Docs"
-ms.custom: 
-ms.date: 3/1/2017
-ms.reviewer: 
-ms.suite: 
-ms.technology:
-- cpp-language
-ms.tgt_pltfrm: 
+ms.date: 11/15/2017
+ms.technology: cpp-language
 ms.topic: article
-dev_langs:
-- C++
+dev_langs: C++
 ms.assetid: 475da6e9-0d78-4b4e-bd23-f41c406c4efe
-caps.latest.revision: 11
+caps.latest.revision: "11"
 author: corob-msft
 ms.author: corob
 manager: ghogen
-translation.priority.ht:
-- cs-cz
-- de-de
-- es-es
-- fr-fr
-- it-it
-- ja-jp
-- ko-kr
-- pl-pl
-- pt-br
-- ru-ru
-- tr-tr
-- zh-cn
-- zh-tw
+ms.openlocfilehash: 8e9d4d86abd15f59e94ce7e51d40e119f8ebd336
+ms.sourcegitcommit: 1b480aa74886930b3bd0435d71cfcc3ccda36424
 ms.translationtype: HT
-ms.sourcegitcommit: 76cd1737728b60a720c0aa8bbc5218ecb66416f2
-ms.openlocfilehash: 7f5bb05bf5912dafa99877ed7c9ff6bc4393b28f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 08/14/2017
-
+ms.contentlocale: ja-JP
+ms.lasthandoff: 11/15/2017
 ---
-# <a name="visual-c-language-conformance"></a>Visual C++ 言語への準拠 
-このトピックでは、Visual Studio 2017 およびそれ以前のバージョンにおいて、Visual C++ 向けのコンパイラ機能と標準ライブラリ機能が ISO C++03、C++11、C++14、C++17 とドラフト C++20 の言語標準にどの程度準拠しているかをまとめています。 コンパイラと標準ライブラリの各機能の名前には、機能を説明する ISO C++ 標準提案書のリンクが埋め込まれています (ただし、発行時点で提案書が利用できるものに限ります)。 "サポート状況" 列には、機能のサポートが初めて搭載された Visual Studio のバージョンが記載されています。  
-  
+# <a name="visual-c-language-conformance"></a>Visual C++ 言語への準拠
+
+このトピックでは、Visual Studio 2017 およびそれ以前のバージョンにおいて、Visual C++ 向けのコンパイラ機能と標準ライブラリ機能が ISO C++03、C++11、C++14、C++17 とドラフト C++20 の言語標準にどの程度準拠しているかをまとめています。 コンパイラと標準ライブラリの各機能の名前には、機能を説明する ISO C++ 標準提案書のリンクが埋め込まれています (ただし、発行時点で提案書が利用できるものに限ります)。 "サポート状況" 列には、機能のサポートが初めて搭載された Visual Studio のバージョンが記載されています。
+
 Visual Studio 2017 で加えられた準拠の強化とその他の変更点の詳細については、「[Visual Studio 2017 の C++ 準拠の強化](cpp-conformance-improvements-2017.md)」と「[Visual Studio 2017 の Visual C++ の新機能](what-s-new-for-visual-cpp-in-visual-studio.md)」をご覧ください。 以前のバージョンにおける準拠の変更点については、[Visual C++ の変更履歴](porting/visual-cpp-change-history-2003-2015.md)に関するページと「[Visual C++ 2003 ～ 2015 の新機能](porting/visual-cpp-what-s-new-2003-through-2015.md)」をご覧ください。 C++ チームからの最新情報は、[Visual C++ チーム ブログ](https://blogs.msdn.microsoft.com/vcblog/)でご覧いただけます。  
 
  > [!NOTE]
  > Visual Studio 2015 と Visual Studio 2017 では、バイナリに関して重大な変更はありません。
-  
-## <a name="compiler-features"></a>コンパイラ機能  
-  
-|機能分野| |  
-|----|---|  
+
+## <a name="compiler-features"></a>コンパイラ機能
+
+|機能分野| |
+|----|---|
 |__C++03/11 コア言語機能__|__サポート状況__|
 |&nbsp;&nbsp;その他すべて|VS 2015 <sup>[A](#note_A)</sup>|
 |&nbsp;&nbsp;名前の 2 段階参照|部分的 <sup>[B](#note_B)</sup>|
@@ -89,15 +69,17 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |&nbsp;&nbsp;[P0217R3 構造化バインド](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0217r3.html)|VS 2017 15.3 <sup>[17](#note_17)</sup>|
 |&nbsp;&nbsp;[P0292R2 constexpr if-statements](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0292r2.html)|VS 2017 15.3 <sup>[G](#note_G)</sup>|
 |&nbsp;&nbsp;[P0305R1 初期化子のある選択ステートメント](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0305r1.html)|VS 2017 15.3 <sup>[17](#note_17)</sup>|
-|&nbsp;&nbsp;[P0245R1 Hexfloat リテラル](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0245r1.html)|いいえ|
+|&nbsp;&nbsp;[P0245R1 Hexfloat リテラル](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0245r1.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[N4268 より多くの非型テンプレート引数の許可](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4268.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[N4295 フォールド式](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4295.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0003R5 dynamic-exception-specifications の削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0003r5.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0012R1 noexcept を型システムに追加する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0012r1.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0035R4 オーバーアラインの動的メモリ割り当て](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0035r4.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0386R2 インライン変数](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0386r2.pdf)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0522R0 テンプレートのパラメーターと互換性のある引数を照合する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0522r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0036R0 空の単項 fold をいくつか削除する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0036r0.pdf)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
 |&nbsp;&nbsp;[N4261 限定変換の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4261.html)|いいえ|
-|&nbsp;&nbsp;[N4268 より多くの非型テンプレート引数の許可](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4268.html)|いいえ|
-|&nbsp;&nbsp;[N4295 フォールド式](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4295.html)|いいえ|
-|&nbsp;&nbsp;[P0003R5 dynamic-exception-specifications の削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0003r5.html)|いいえ|
-|&nbsp;&nbsp;[P0012R1 noexcept を型システムに追加する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0012r1.html)|いいえ|
 |&nbsp;&nbsp;[P0017R1 集約の初期化 (拡張)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0017r1.html)|いいえ|
-|&nbsp;&nbsp;[P0035R4 オーバーアラインの動的メモリ割り当て](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0035r4.html)|いいえ|
-|&nbsp;&nbsp;[P0036R0 空の単項 fold をいくつか削除する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0036r0.pdf)|いいえ|
 |&nbsp;&nbsp;[P0091R3 クラス テンプレートのテンプレート引数の推論](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0091r3.html)<br />&nbsp;&nbsp;[P0512R0 クラス テンプレートの引数の推論の問題](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0512r0.pdf)|いいえ|
 |&nbsp;&nbsp;[P0127R2 auto による非型テンプレート パラメーターの宣言](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0127r2.html)|いいえ|
 |&nbsp;&nbsp;[P0135R1 コピー省略の保証](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0135r1.html)|いいえ <sup>[H](#note_H)</sup>|
@@ -105,11 +87,9 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |&nbsp;&nbsp;[P0145R3 式の評価順序の調整](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0145r3.pdf)<br />&nbsp;&nbsp;[P0400R0 関数の引数の評価順序](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0400r0.html)|いいえ|
 |&nbsp;&nbsp;[P0195R2 using-declarations のパック拡張](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0195r2.html)|いいえ|
 |&nbsp;&nbsp;[P0283R2 識別できない属性を無視する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0283r2.html)|いいえ|
-|&nbsp;&nbsp;[P0386R2 インライン変数](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0386r2.pdf)|いいえ|
-|&nbsp;&nbsp;[P0522R0 テンプレートのパラメーターと互換性のある引数を照合する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0522r0.html)|いいえ|
 |&nbsp;&nbsp;[P0702R1 初期化子リスト ctors のクラス テンプレート引数の推論の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0702r1.html)|いいえ|
 |__C++20 Core 言語機能__|__サポート状況__|
-|&nbsp;&nbsp;[P0306R4 コンマ省略とコンマ削除のための \_\_VA_OPT\_\_ の追加](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0306r4.pdf)|いいえ|
+|&nbsp;&nbsp;[P0306R4 コンマ省略とコンマ削除のための &#95;&#95;VA_OPT&#95;&#95; の追加](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0306r4.pdf)|いいえ|
 |&nbsp;&nbsp;[P0329R4 指定の初期化](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0329r4.pdf)|いいえ|
 |&nbsp;&nbsp;[P0409R2 ラムダ キャプチャ [=, this] の許可](http://open-std.org/JTC1/SC22/WG21/docs/papers/2017/p0409r2.html)|いいえ|
 |&nbsp;&nbsp;[P0428R2 汎用ラムダの使い慣れたテンプレート構文](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0428r2.pdf)|いいえ|
@@ -127,24 +107,24 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |&nbsp;&nbsp;[P0674R1 配列の make_shared()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0674r1.html)|いいえ|
 |__C++17 標準ライブラリの機能__|__サポート状況__|
 |&nbsp;&nbsp;[P0433R2 標準ライブラリへの、クラス テンプレートのテンプレートの推論の統合](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0433r2.html)<br />&nbsp;&nbsp;[P0739R0 標準ライブラリへのクラス テンプレート引数の推論の統合の強化](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0739r0.html)|いいえ|
-|&nbsp;&nbsp;[P0607R0 標準ライブラリのインライン変数](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0607r0.html)|いいえ|
 |&nbsp;&nbsp;[P0426R1 char_traits の constexpr](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0426r1.html)|いいえ|
 |&nbsp;&nbsp;[P0030R1 hypot(x, y, z)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0030r1.pdf)|いいえ|
-|&nbsp;&nbsp;[P0033R1 enable_shared_from_this の言葉の言い換え](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0033r1.html)|いいえ|
 |&nbsp;&nbsp;[P0220R1 ライブラリ基礎 V1](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0220r1.html)|部分的 <sup>[J](#note_J)</sup>|
-|&nbsp;&nbsp;[P0414R2 shared_ptr\<T[]>, shared_ptr\<T[N]>](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0414r2.html)<br />&nbsp;&nbsp;[P0497R0 配列の shared_ptr の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0497r0.html)|いいえ|
-|&nbsp;&nbsp;[P0083R3 マップと設定のスプライス](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0083r3.pdf)<br />&nbsp;&nbsp;[P0508R0 insert_return_type の明確化](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0508r0.html)|いいえ|
-|&nbsp;&nbsp;[P0005R4 not_fn()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0005r4.html)<br />&nbsp;&nbsp;[P0358R1 not_fn() の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html)|いいえ|
 |&nbsp;&nbsp;[P0067R5 基本文字列変換](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0067r5.html)|いいえ|
-|&nbsp;&nbsp;[P0618R0 \<codecvt> を非推奨にする](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0618r0.html)|いいえ|
-|&nbsp;&nbsp;[P0521R0 shared_ptr::unique() の廃止](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0521r0.html)|いいえ|
-|&nbsp;&nbsp;[P0174R2 残留ライブラリ パーツの廃止](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0174r2.html)|いいえ|
-|&nbsp;&nbsp;[P0003R5 動的例外指定の削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0003r5.html)|いいえ|
-|&nbsp;&nbsp;[P0302R1 std::function のアロケーター サポートの削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0302r1.html)|いいえ|
 |&nbsp;&nbsp;[N4562 Library Fundamentals: \<memory_resource>](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4562.html#memory.resource.synop)<br />&nbsp;&nbsp;[P0337R0 polymorphic_allocator 割り当ての削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0337r0.html)|いいえ|
 |&nbsp;&nbsp;[P0024R2 並列アルゴリズム](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0024r2.html)<br />&nbsp;&nbsp;[P0336R1 並列実行ポリシーの名前変更](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0336r1.pdf)<br />&nbsp;&nbsp;[P0394R4 並列アルゴリズムの例外処理の terminate()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0394r4.html)<br />&nbsp;&nbsp;[P0452R1 \<numeric> 並列アルゴリズムの統合](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0452r1.html)|いいえ|
 |&nbsp;&nbsp;[P0226R1 数学的特殊関数](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0226r1.pdf)|いいえ|
 |&nbsp;&nbsp;[P0218R1 \<filesystem>](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0218r1.html)<br />&nbsp;&nbsp;[P0219R1 ファイル システムの相対パス](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0219r1.html)<br />&nbsp;&nbsp;[P0317R1 ファイル システムのディレクトリ エントリのキャッシュ](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p03179r1.html)<br />&nbsp;&nbsp;[P0392R0 ファイル システム パスの string_view のサポート](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0392r0.pdf)<br />&nbsp;&nbsp;[P0430R2 POSIX 以外のファイル システムのサポート](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0430r2.pdf)<br />&nbsp;&nbsp;[P0492R2 ファイル システムに関する NB コメントの解決](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0492r2.html)|いいえ <sup>[K](#note_K)</sup>|
+|&nbsp;&nbsp;[P0003R5 動的例外指定の削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0003r5.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0005R4 not_fn()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0005r4.html)<br />&nbsp;&nbsp;[P0358R1 not_fn() の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0358r1.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0033R1 enable_shared_from_this の言葉の言い換え](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0033r1.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0083R3 マップと設定のスプライス](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0083r3.pdf)<br />&nbsp;&nbsp;[P0508R0 insert_return_type の明確化](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0508r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0174R2 残留ライブラリ パーツの廃止](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0174r2.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0302R1 std::function のアロケーター サポートの削除](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0302r1.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0414R2 shared_ptr\<T[]>, shared_ptr\<T[N]>](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0414r2.html)<br />&nbsp;&nbsp;[P0497R0 配列の shared_ptr の修正](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0497r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0521R0 shared_ptr::unique() の廃止](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0521r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0607R0 標準ライブラリのインライン変数](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0607r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
+|&nbsp;&nbsp;[P0618R0 \<codecvt> を非推奨にする](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2017/p0618r0.html)|VS 2017 15.5 <sup>[17](#note_17)</sup>|
 |&nbsp;&nbsp;[N4562 Library Fundamentals: ボイヤー-ムーア法による search()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4562.html#func.searchers.boyer_moore)<br/>&nbsp;&nbsp;[P0253R1 サーチャーの戻り値の型を修正する](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0253r1.pdf)|VS 2017 15.3 <sup>[17](#note_17)</sup>|
 |&nbsp;&nbsp;[P0031R0 \<array> (再度) と \<iterator> の constexpr](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/p0031r0.html)|VS 2017 15.3 <sup>[17](#note_17)</sup>|
 |&nbsp;&nbsp;[P0040R3 メモリ管理ツールの拡張](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2016/p0040r3.html)|VS 2017 15.3 <sup>[17](#note_17)</sup>|
@@ -230,11 +210,12 @@ Visual Studio 2017 で加えられた準拠の強化とその他の変更点の�
 |&nbsp;&nbsp;[N3421 透過的な演算子のファンクター (less\<> など)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3421.htm)|VS 2013|
 |&nbsp;&nbsp;[N3655 \<type_traits> のエイリアス テンプレート (decay_t など)](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3655.pdf)|VS 2013|
 |&nbsp;&nbsp;[N3656 make_unique()](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3656.htm)|VS 2013|
-|&nbsp;&nbsp;[N3924 rand() を推奨しない](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3924.pdf)|N/A|  
-  
-複数の提案書がまとめて記載されている箇所は、ある機能が報告されて標準になり、その後、その機能を強化または拡張するための提案書が 1 つ以上報告されたことを示しています。 これらの機能はまとめて実装されます。  
-  
-### <a name="supported-values"></a>サポート状況の値  
+|&nbsp;&nbsp;[N3924 rand() を推奨しない](http://www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3924.pdf)|N/A|
+
+複数の提案書がまとめて記載されている箇所は、ある機能が報告されて標準になり、その後、その機能を強化または拡張するための提案書が 1 つ以上報告されたことを示しています。 これらの機能はまとめて実装されます。
+
+### <a name="supported-values"></a>サポート状況の値
+
 __いいえ__は、未実装という意味です。  
 __一部__は、Visual Studio 2017 への実装が一部のみであるという意味です。 詳細については、「ノート」セクションを参照してください。  
 __該当なし__は、提案書で機能が説明されていないことを意味しています。 これらのペーパーでは、標準の言語が変更されています。ただし、実装者のいかなる作品も作成されていません。 ここに記載するのは、完全性を期すためです。  
@@ -244,8 +225,10 @@ __VS 2015__ は、Visual Studio 2015 RTM でサポートされている機能を
 __VS 2015.2__ と __VS 2015.3__ はそれぞれ、Visual Studio 2015 更新プログラム 2 と Visual Studio 2015 更新プログラム 3 でサポートされている機能を示します。  
 __VS 2017__ は、Visual Studio 2017 RTM でサポートされている機能を示します。  
 __VS 2017 15.3__ は、Visual Studio 2017 バージョン 15.3 でサポートされている機能を示します。  
-  
-### <a name="notes"></a>メモ  
+__VS 2017 15.5__ は、Visual Studio 2017 バージョン 15.5 でサポートされている機能を示します。
+
+### <a name="notes"></a>メモ
+
 <a name="note_A"></a>__A__ これにより、C++11 で使用されていない、C++03 の動的例外指定が無視されます。 この指定を実装する予定はありません。将来の C++ 標準から削除される予定です。  
 <a name="note_B"></a>__B__ 2 フェーズの名前参照のコンパイラのサポートは改良されましたが、まだ完成はしていません。  
 <a name="note_C"></a>__C__ Visual Studio 2015 更新プログラム 2 以降、SFINAE 式がコンパイラでサポートされています。標準ライブラリにはそれで十分でしたが、サポートは不完全なままです。  
@@ -263,7 +246,8 @@ __VS 2017 15.3__ は、Visual Studio 2017 バージョン 15.3 でサポート�
 <a name="note_C11"></a>__C11__ ユニバーサル CRT では、C++17 で必要となる C11 標準ライブラリの部分を実装しました。C99 `strftime()` E/O 代替変換指定子、C11 `fopen()` 排他モード、C11 `aligned_alloc()` は除きます。 C11 は `aligned_alloc()` を、Microsoft の `free()` の実装と互換性のない方法で指定した、つまり、その `free()` は高度に割り当てられたアロケーションを処理できなければならないため、後者が実装される可能性は低いです。  
 <a name="note_rem"></a>__rem__ 機能が [/std:c++17](./build/reference/std-specify-language-standard-version.md) (または [/std:c++latest](./build/reference/std-specify-language-standard-version.md)) コンパイラ オプションが指定されたときに削除されます。 これらの機能には、`_HAS_AUTO_PTR_ETC`、`_HAS_FUNCTION_ALLOCATOR_SUPPORT`、`_HAS_OLD_IOSTREAMS_MEMBERS`、`_HAS_UNEXPECTED` のオプトアウト マクロがあります。
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>関連項目
+
 [C++ 言語リファレンス](cpp/cpp-language-reference.md)  
 [C++ 標準ライブラリ](standard-library/cpp-standard-library-reference.md)   
 [Visual Studio 2017 での C++ 準拠の改善](cpp-conformance-improvements-2017.md)  
@@ -271,4 +255,3 @@ __VS 2017 15.3__ は、Visual Studio 2017 バージョン 15.3 でサポート�
 [Visual C++ 2003 ～ 2015 の変更履歴](porting/visual-cpp-change-history-2003-2015.md)  
 [2003 から 2015 の Visual C++ の新機能](porting/visual-cpp-what-s-new-2003-through-2015.md)  
 [Visual C++ チーム ブログ](https://blogs.msdn.microsoft.com/vcblog/)  
-
