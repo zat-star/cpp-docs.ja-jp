@@ -4,31 +4,28 @@ ms.custom:
 ms.date: 11/04/2016
 ms.reviewer: 
 ms.suite: 
-ms.technology:
-- cpp-language
+ms.technology: cpp-language
 ms.tgt_pltfrm: 
 ms.topic: language-reference
-dev_langs:
-- C++
+dev_langs: C++
 helpviewer_keywords:
 - subscript operator [C++], interpretation of
 - arrays [C++], subscripting
 - interpreting subscript operators [C++]
 - operators [C++], interpretation of subscript
 ms.assetid: 8852ca18-9d5b-43f7-b8bd-abc89364fbf2
-caps.latest.revision: 7
+caps.latest.revision: "7"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.translationtype: HT
-ms.sourcegitcommit: 6ffef5f51e57cf36d5984bfc43d023abc8bc5c62
-ms.openlocfilehash: 1a83ff6aea4380688d3b6298b93e04caab1dbb7f
-ms.contentlocale: ja-jp
-ms.lasthandoff: 09/25/2017
-
+ms.openlocfilehash: fcd376a5322c525c59b2423bd59507699f0a7c4c
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
 # <a name="interpretation-of-subscript-operator"></a>添字演算子の解釈
-その他の演算子、添字演算子のように (****)、ユーザーによって再定義することができます。 添字演算子の既定の動作では、オーバーロードしない場合、次のメソッドを使用して配列名と添字を組み合わせます。  
+その他の演算子、添字演算子のように (**[ ]**)、ユーザーによって再定義することができます。 添字演算子の既定の動作では、オーバーロードしない場合、次のメソッドを使用して配列名と添字を組み合わせます。  
   
  \*((*配列名*) + (*添字*))  
   
@@ -38,7 +35,7 @@ ms.lasthandoff: 09/25/2017
   
  **((**   
  ***配列名*) + (**   
- ***添字*1***max*2 * \* max*3*...max に書き換え*n) ** + ***添字*2 * \* max*3*...max に書き換え*n)。   」を参照してください。 」を参照してください。 *+**添字*n))  
+ ***添字*1***max*2  *\* max*3*.. .max に書き換え*n)  **+** *添字*2  *\* max*3*.. .max に書き換え*n)。 。 。 *+**添字*n))  
   
 ## <a name="see-also"></a>関連項目  
  [配列](../cpp/arrays-cpp.md)

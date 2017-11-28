@@ -1,96 +1,96 @@
 ---
-title: "LIB の実行 | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "VC.Project.VCLibrarianTool.TargetMachine"
-  - "Lib"
-  - "VC.Project.VCLibrarianTool.PrintProgress"
-  - "VC.Project.VCLibrarianTool.SuppressStartupBanner"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "/ コマンド ファイル"
-  - "/MACHINE ターゲット プラットフォーム オプション"
-  - "/NOLOGO ライブラリ マネージャー オプション"
-  - "/VERBOSE ライブラリ マネージャー オプション"
-  - "コロン コマンド ファイル"
-  - "コマンド ファイル"
-  - "コマンド ファイル, LIB"
-  - "ダッシュ (-) オプション指定子"
-  - "スラッシュ (/) オプション指定子"
-  - "LIB [C++], 実行 (LIB を)"
-  - "MACHINE ターゲット プラットフォーム オプション"
-  - "-MACHINE ターゲット プラットフォーム オプション"
-  - "NOLOGO ライブラリ マネージャー オプション"
-  - "-NOLOGO ライブラリ マネージャー オプション"
-  - "セミコロン, コマンド ファイル"
-  - "スラッシュ (/)"
-  - "VERBOSE ライブラリ マネージャー オプション"
-  - "-VERBOSE ライブラリ マネージャー オプション"
+title: "LIB の実行 |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-tools
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords:
+- VC.Project.VCLibrarianTool.TargetMachine
+- Lib
+- VC.Project.VCLibrarianTool.PrintProgress
+- VC.Project.VCLibrarianTool.SuppressStartupBanner
+dev_langs: C++
+helpviewer_keywords:
+- -MACHINE target platform option
+- command files, LIB
+- MACHINE target platform option
+- colon command files
+- VERBOSE library manager option
+- /NOLOGO library manager option
+- dash option specifier
+- /MACHINE target platform option
+- forward slash option specifier
+- -NOLOGO library manager option
+- LIB [C++], running LIB
+- -VERBOSE library manager option
+- /VERBOSE library manager option
+- command files
+- NOLOGO library manager option
+- slash (/)
+- semicolon, command files
+- / command files
 ms.assetid: d54f5c81-7147-4b2c-a8db-68ce6eb1eabd
-caps.latest.revision: 8
-author: "corob-msft"
-ms.author: "corob"
-manager: "ghogen"
-caps.handback.revision: 8
+caps.latest.revision: "8"
+author: corob-msft
+ms.author: corob
+manager: ghogen
+ms.openlocfilehash: c8bf42ec1eb4fed681f28cd73b87b3e42b36fe7e
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# LIB の実行
-[!INCLUDE[vs2017banner](../../assembler/inline/includes/vs2017banner.md)]
-
-LIB の動作は、各種のコマンド ライン オプションで制御できます。  
+# <a name="running-lib"></a>LIB の実行
+LIB のコントロールには、さまざまなコマンド ライン オプションを使用できます。  
   
-## LIB コマンド ライン  
- LIB を実行するには、コマンド `lib` を入力し、その後ろに操作内容に応じてオプションとファイル名を指定します。  あらかじめコマンド ファイルにコマンド ラインを入力しておくこともできます。コマンド ファイルについては、次のセクションで説明します。  LIB では、環境変数を使いません。  
+## <a name="lib-command-line"></a>LIB コマンドライン  
+ LIB を実行するコマンドを入力`lib`オプションとタスクのファイル名を続けて使用している LIB を実行します。 LIB は、コマンド ファイルは、次のセクションで説明されているようにコマンドラインの入力も受け入れます。 LIB 環境変数を使用しません。  
   
 > [!NOTE]
->  Win32 Software Development Kit for Windows NT に組み込まれている LINK32.exe ツールおよび LIB32.exe ツールに慣れている場合は、`link32 -lib` コマンドまたは `lib32` コマンドを使用してライブラリの管理やインポート ライブラリの作成を行う人も多いでしょう。  これらのコマンドの代わりに `lib` コマンドを使う場合は、メイクファイルとバッチ ファイルを書き換えてください。  
+>  場合は、LINK32.exe に慣れているし、ツールで、Microsoft Win32 ソフトウェア開発キット用 Windows NT が使用している、いずれかのコマンド指定の LIB32.exe`link32 -lib`またはコマンド`lib32`のライブラリを管理して、作成ライブラリをインポートします。 使用するメイクファイルおよびバッチ ファイルを変更してください、`lib`コマンドを使用します。  
   
-## LIB コマンド ファイル  
- コマンド ファイルを使ってコマンド ライン引数を LIB に渡すには、次の構文を使用します。  
+## <a name="lib-command-files"></a>LIB コマンド ファイル  
+ 次の構文を使用してコマンド ファイルの LIB をコマンドライン引数を渡すことができます。  
   
 ```  
 LIB @commandfile  
 ```  
   
- `commandfile` はテキスト ファイルの名前です。  アット マーク \(@\) とファイル名の間には、スペースやタブを挿入できません。  既定の拡張子はないので、必ず拡張子を付けた完全なファイル名を指定してください。  ワイルドカードは使用できません。  ファイル名には、絶対パスでも相対パスでも指定できます。  
+ ファイル`commandfile`テキスト ファイルです。 スペースやタブは使用できませんの間、アット マーク (@) とファイル名。 既定の拡張機能はありません。任意の拡張子を含めた、完全なファイル名を指定する必要があります。 ワイルドカードは使用できません。 ファイル名では、絶対または相対パスを指定できます。  
   
- コマンド ファイルでは、コマンド ラインと同じように引数間をスペースまたはタブで区切ることも、改行で区切ることもできます。  コメントの先頭にはセミコロン \(;\) を付けます。  セミコロンからその行の終わりまでのテキストは、すべて無視されます。  
+ コマンド ファイル内の引数できます。 で区切るスペースまたはタブ、; コマンドラインでことができます。改行文字で区切ることもできます。 セミコロン (;) を使用すると、コメントをマークできます。 LIB は、行の末尾にセミコロンからすべてのテキストを無視します。  
   
- コマンド ファイルには、コマンド ライン全体を指定することも、その一部だけを指定することもできます。同じ LIB コマンドで、複数のコマンド ファイルを使うこともできます。  コマンド ファイルの入力は、コマンド ラインでそれに対応する場所に入力されたものとして処理されます。  コマンド ファイルは入れ子にできません。  \/NOLOGO オプションを指定しない限り、コマンド ファイルの内容がエコーされます。  
+ コマンド ファイルのすべてまたはコマンドラインの一部を指定でき、LIB コマンドで 1 つ以上のコマンド ファイルを使用することができます。 LIB は、コマンドラインでその場所に、指定した場合と、コマンド ファイルの入力を受け入れます。 コマンド ファイルを入れ子にすることはできません。 /NOLOGO オプションを使用しない限り、コマンド ファイルの内容がエコーされます。  
   
-## LIB のオプションの使用  
- オプションを指定するには、オプション指定子の \- \(ダッシュ\) または \/ \(スラッシュ\) の後ろにオプション名を入力します。  オプション名の省略形は使用できません。  引数を取るオプションにはコロン \(:\) を付け、その後ろに引数を指定します。  1 つのオプションの指定には、スペースやタブは挿入できません。  複数のオプションを指定する場合は、各オプションを 1 つ以上のスペースまたはタブで区切ります。  オプション名とその引数として指定するキーワードやファイル名では、大文字と小文字は区別されません。ただし、引数として識別子を渡す場合は、識別子の大文字と小文字が区別されます。  オプションは、コマンド ラインとコマンド ファイルで指定した順に処理されます。  同じオプションが違う引数で繰り返し指定されている場合は、最後に指定されたオプションが優先します。  
+## <a name="using-lib-options"></a>LIB のオプションを使用します。  
+ オプションは、ダッシュ (-) またはスラッシュ (/)、オプションの名前を続けて、オプション指定子で構成されます。 オプション名の省略形は使用できません。 いくつかのオプションは、コロン (:) の後ろに指定された引数を取る。 1 つのオプションの指定には、スペースやタブは挿入できません。 複数のオプションを指定する場合は、各オプションを 1 つ以上のスペースまたはタブで区切ります。 オプション名、およびその引数キーワードやファイル名は大文字と小文字が区別されませんが、引数として使用される識別子は大文字小文字を区別します。 LIB は、コマンドラインで指定された順序とコマンド ファイル内のオプションを処理します。 オプションは異なる引数を持つで繰り返される場合は、処理される最後の 1 つが優先されます。  
   
- 以下のオプションは、LIB のすべてのモードで使用できます。  
+ LIB のすべてのモードに、次のオプションが適用されます。  
   
- \/ERRORREPORT\[NONE &#124; PROMPT &#124; QUEUE &#124; SEND \]  
- 実行時に lib.exe が失敗した場合、\/ERRORREPORT を使用して、Microsoft に内部エラーに関する情報を送信できます。  
+ /ERRORREPORT [なし (&) #124 です。プロンプト &#124;です。キュー &#124;です。SEND]  
+ Lib.exe は、実行時に失敗した場合、これらの内部エラーに関する情報を Microsoft に送信する/ERRORREPORT を使用することができます。  
   
- \/ERRORREPORT の詳細については、「[\/errorReport \(内部コンパイラ エラーの報告\)](../Topic/-errorReport%20\(Report%20Internal%20Compiler%20Errors\).md)」を参照してください。  
+ /ERRORREPORT の詳細については、次を参照してください。 [/errorReport (内部コンパイラ エラーの報告)](../../build/reference/errorreport-report-internal-compiler-errors.md)です。  
   
- \/LTCG  
- リンク時コード生成を使用してライブラリがビルドされます。詳細については、「[\/LTCG \(リンク時のコード生成\)](../../build/reference/ltcg-link-time-code-generation.md)」を参照してください。  
+ /LTCG  
+ リンク時コード生成を使用してビルドするライブラリが発生します。  詳細については、次を参照してください。 [/LTCG](../../build/reference/ltcg-link-time-code-generation.md)です。  
   
- \/MACHINE  
- プログラムのターゲット プラットフォームを指定します。  通常、\/MACHINE オプションは必要ありません。  LIB では、.obj ファイルからコンピューターの種類を推測するためです。  ただし、環境によっては LIB がコンピューターの種類を判定できず、エラー メッセージを出力する場合もあります。  このようなエラー メッセージが出力された場合は、\/MACHINE オプションを指定してください。  \/EXTRACT モードでは、検証しか行われません。  利用可能なコンピューターの種類を調べるには、コマンド ラインで「`lib /?`」と入力してください。  
+ /MACHINE  
+ プログラムのターゲット プラットフォームを指定します。 通常、/MACHINE を指定する必要はありません。 LIB は、.obj ファイルからコンピューターの種類を推測します。 ただし、いくつかの状況で、LIB はコンピューターの種類を決定することはできませんし、エラー メッセージを発行します。 このようなエラー メッセージが出力された場合は、/MACHINE オプションを指定してください。 /EXTRACT モードでは、このオプションはのみ検証します。 使用して`lib /?`コマンドラインでため使用可能なコンピューターの種類を参照してください。  
   
- \/NOLOGO  
- LIB の著作権情報とバージョン情報が表示されなくなり、コマンド ファイルもエコーされません。  
+ /NOLOGO  
+ LIB 著作権メッセージとバージョン番号の表示を中止し、コマンド ファイルのエコーを防止します。  
   
- \/VERBOSE  
- 追加されている .obj ファイルの名前など、セッションの進行状況を詳しく表示します。  この情報は標準出力に送られるので、ファイルにリダイレクトできます。  
+ /VERBOSE  
+ 追加される .obj ファイルの名前を含め、セッションの進行状況に関する詳細を表示します。 情報は標準出力に送信され、ファイルにリダイレクトすることもできます。  
   
- \/WX\[:NO\]  
- 警告をエラーとして扱います。  詳細については、「[\/WX \(リンカー警告をエラーとして扱う\)](../../build/reference/wx-treat-linker-warnings-as-errors.md)」を参照してください。  
+ /WX [: なし]  
+ 警告をエラーとして扱います。 参照してください[/WX (リンカー警告のエラーとして)](../../build/reference/wx-treat-linker-warnings-as-errors.md)詳細についてはします。  
   
- これ以外のオプションは、モード固有です。  モード固有のオプションについては、各モードの説明を参照してください。  
+ その他のオプションは、モード固有にのみ適用されます。 これらのオプションについては、各モードの説明を参照してください。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [LIB リファレンス](../../build/reference/lib-reference.md)

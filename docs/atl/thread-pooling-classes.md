@@ -1,38 +1,38 @@
 ---
-title: "スレッド プール クラス | Microsoft Docs"
-ms.custom: ""
-ms.date: "11/04/2016"
-ms.reviewer: ""
-ms.suite: ""
-ms.technology: 
-  - "devlang-cpp"
-ms.tgt_pltfrm: ""
-ms.topic: "article"
-f1_keywords: 
-  - "vc.atl.threads.pooling"
-dev_langs: 
-  - "C++"
-helpviewer_keywords: 
-  - "プール (ワーカー スレッドの)"
-  - "スレッド プール, クラス"
-  - "スレッド処理 [ATL], プール"
+title: "スレッド プール クラス (ATL) |Microsoft ドキュメント"
+ms.custom: 
+ms.date: 11/04/2016
+ms.reviewer: 
+ms.suite: 
+ms.technology: cpp-windows
+ms.tgt_pltfrm: 
+ms.topic: article
+f1_keywords: vc.atl.threads.pooling
+dev_langs: C++
+helpviewer_keywords:
+- thread pooling, classes
+- threading [ATL], pooling
+- pooling worker threads
 ms.assetid: 01fa2c1c-12ae-4781-b772-0a74b6365a8c
-caps.latest.revision: 10
-author: "mikeblome"
-ms.author: "mblome"
-manager: "ghogen"
-caps.handback.revision: 5
+caps.latest.revision: "10"
+author: mikeblome
+ms.author: mblome
+manager: ghogen
+ms.openlocfilehash: 89801ec258ae387683c5bedf74ca447902f8c4d3
+ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/24/2017
 ---
-# スレッド プール クラス
-[!INCLUDE[vs2017banner](../assembler/inline/includes/vs2017banner.md)]
-
-次のクラスはスレッド プールをサポートします:  
+# <a name="thread-pooling-classes"></a>スレッド プール クラス
+次のクラスは、スレッド プールをサポートします。  
   
--   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md) に複数のスレッド プールされているアパートメントのサポートを持つ EXE モジュールを実装します。  
+-   [CComAutoThreadModule](../atl/reference/ccomautothreadmodule-class.md) EXE モジュール、複数のスレッド プールのアパートメントのサポートを実装します。  
   
--   [CComApartment](../atl/reference/ccomapartment-class.md) は、スレッドがプールされている EXE モジュールのアパートメントを管理します。  
+-   [CComApartment](../atl/reference/ccomapartment-class.md)アパートメント スレッド プールの EXE モジュールを管理します。  
   
--   [CComSimpleThreadAllocator](../atl/reference/ccomsimplethreadallocator-class.md) の管理は EXE モジュールのオプションを遅らせます。  
+-   [CComSimpleThreadAllocator](../atl/reference/ccomsimplethreadallocator-class.md) EXE モジュールのスレッドの選択を管理します。  
   
-## 参照  
+## <a name="see-also"></a>関連項目  
  [クラスの概要](../atl/atl-class-overview.md)
+
