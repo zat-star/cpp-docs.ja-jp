@@ -15,11 +15,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 76c544adcf930b7e80417ed35f9c402d27cff04f
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- data-storage
+ms.openlocfilehash: 9816a09c43f2b61ac908bd4c485deec080817953
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="bookmarkentry"></a>BOOKMARK_ENTRY
 ブックマーク列をバインドします。  
@@ -86,10 +89,10 @@ END_COLUMN_MAP()
 };
 ```
   
-## <a name="requirements"></a>要件  
+## <a name="requirements"></a>必要条件  
  **ヘッダー:** atldbcli.h  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [マクロと OLE DB コンシューマー テンプレート用グローバル関数](../../data/oledb/macros-and-global-functions-for-ole-db-consumer-templates.md)   
  [CBookmark クラス](../../data/oledb/cbookmark-class.md)   
  [DBPROP_BOOKMARKS](https://msdn.microsoft.com/en-us/library/ms709728.aspx)

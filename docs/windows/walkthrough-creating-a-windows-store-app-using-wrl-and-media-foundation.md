@@ -13,11 +13,14 @@ caps.latest.revision: "9"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: eb26f38ece8c098e6f10ba2ec90738787cb20ff3
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload:
+- cplusplus
+- uwp
+ms.openlocfilehash: 25cc08c22ac0d33945a73744a0be6045971d9330
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-creating-a-windows-store-app-using-wrl-and-media-foundation"></a>チュートリアル: WRL および Media Foundation を使用した Windows ストア アプリの作成
 Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用して、使用するユニバーサル Windows プラットフォーム アプリを作成する方法を学習[Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)です。  
@@ -128,7 +131,7 @@ Windows ランタイム C++ テンプレート ライブラリ (WRL) を使用�
 ## <a name="next-steps"></a>次の手順  
  例では、既定の Web カメラから写真を 1 枚ずつキャプチャする方法を示します。 [メディア拡張機能サンプル](http://code.msdn.microsoft.com/windowsapps/Media-extensions-sample-7b466096)は以上です。 そのサンプルでは、Web カメラ デバイスを列挙し、ローカル スキーム ハンドラーを使用する方法や、個別の写真とビデオ ストリームの両方で機能する追加のメディア効果について示します。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [Windows ランタイム C++ テンプレート ライブラリ (WRL)](../windows/windows-runtime-cpp-template-library-wrl.md)   
  [Microsoft メディア ファンデーション](http://msdn.microsoft.com/library/windows/apps/ms694197)   
  [メディア拡張機能サンプル](http://code.msdn.microsoft.com/windowsapps/Media-extensions-sample-7b466096)

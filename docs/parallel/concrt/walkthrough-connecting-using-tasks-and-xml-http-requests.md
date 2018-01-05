@@ -17,11 +17,12 @@ caps.latest.revision: "16"
 author: mikeblome
 ms.author: mblome
 manager: ghogen
-ms.openlocfilehash: 1f309673b5f0362657434bf3160d1062fdefe881
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: 5fef2e682f8e2036eb2919c20879c60e879ec845
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="walkthrough-connecting-using-tasks-and-xml-http-requests"></a>チュートリアル: タスクおよび XML HTTP 要求を使用した接続
 この例を使用する方法を示しています、 [IXMLHTTPRequest2](http://msdn.microsoft.com/en-us/bbc11c4a-aecf-4d6d-8275-3e852e309908)と[IXMLHTTPRequest2Callback](http://msdn.microsoft.com/en-us/aa4b3f4c-6e28-458b-be25-6cce8865fc71)インターフェイスで web サービスに HTTP GET および POST 要求を送信するタスクと、[!INCLUDE[win8_appname_long](../../build/includes/win8_appname_long_md.md)]アプリ。 タスクと `IXMLHTTPRequest2` を組み合わせることによって、他のタスクと共に構成するコードを記述できます。 たとえば、タスクのチェーンの一部としてダウンロード タスクを使用できます。 ダウンロード タスクは、処理が取り消された場合にも応答できます。  
@@ -116,7 +117,7 @@ ms.lasthandoff: 10/24/2017
 ## <a name="next-steps"></a>次の手順  
  [同時実行ランタイムのチュートリアル](../../parallel/concrt/concurrency-runtime-walkthroughs.md)  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [タスクの並列化](../../parallel/concrt/task-parallelism-concurrency-runtime.md)   
  [PPL における取り消し処理](cancellation-in-the-ppl.md)   
  [C++ で非同期プログラミング](http://msdn.microsoft.com/en-us/512700b7-7863-44cc-93a2-366938052f31)   

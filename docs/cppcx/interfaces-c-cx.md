@@ -12,11 +12,12 @@ caps.latest.revision: "20"
 author: ghogen
 ms.author: ghogen
 manager: ghogen
-ms.openlocfilehash: 0d986077561357f1a2530f097dc4bfbc78f1413e
-ms.sourcegitcommit: ebec1d449f2bd98aa851667c2bfeb7e27ce657b2
+ms.workload: cplusplus
+ms.openlocfilehash: d858a940205ab47f1ee07f720a0f8aa1bcaaf42f
+ms.sourcegitcommit: 8fa8fdf0fbb4f57950f1e8f4f9b81b4d39ec7d7a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/24/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="interfaces-ccx"></a>インターフェイス (C++/CX)
 ref クラスは多くても 1 つの具象基底クラスからしか継承できませんが、任意の数のインターフェイス クラスを実装できます。 インターフェイス クラス (インターフェイス構造体) 自体は、複数のインターフェイス クラスを継承 (または要求) でき、メンバー関数をオーバーロードすることができ、型パラメーターを持つことができます。  
@@ -97,7 +98,7 @@ ref クラスは多くても 1 つの具象基底クラスからしか継承で�
   
 -   template 宣言された ref クラスは、プライベートである必要があります。 ジェネリック インターフェイスを実装でき、テンプレート パラメーターを渡すことができます*T*を汎用引数*T*です。テンプレート化された ref クラスの各インスタンス化は、それ自体が ref クラスです。  
   
-## <a name="see-also"></a>関連項目  
+## <a name="see-also"></a>参照  
  [型システム](../cppcx/type-system-c-cx.md)   
  [Visual C 言語リファレンス](../cppcx/visual-c-language-reference-c-cx.md)   
  [名前空間参照](../cppcx/namespaces-reference-c-cx.md)
